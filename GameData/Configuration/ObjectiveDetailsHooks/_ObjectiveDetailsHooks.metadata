@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root node_name="objective_details_hook">
+
+	<attribute key="category" type="node-dropdown" node_source="ObjectiveCategory" is_required="true" />
+	<attribute key="click_behavior" type="string-dropdown" is_required="true">
+		<option>None</option>
+		<option>DoNothing</option>
+		<option>UseClickHandler</option>
+		<option>CenterOnRelatedEntity1</option>
+		<option>CenterOnRelatedEntity1Planet</option>
+		<option>CenterOnRelatedPlanet1</option>
+	</attribute>
+	<attribute key="difficulty_method" type="string-dropdown" is_required="true">
+		<option>None</option>
+		<option>Nothing</option>
+		<option>GetPlayerDifficultyToRouteToPlanet_RelatedEntity1</option>
+		<option>GetPlayerDifficultyToRouteToPlanet_RelatedEntity1_DivideBy1000</option>
+		<option>GetPlayerDifficultyToRouteToPlanet_RelatedPlanet1</option>
+	</attribute>
+	<attribute key="focus_type" type="string-dropdown" is_required="true">
+		<option>None</option>
+		<option>FocusOnRelatedEntity1</option>
+		<option>DarkenAllPlanet</option>
+		<option>FocusUnexploredPlanets</option>
+		<option>FocusOnRelatedPlanet1</option>
+	</attribute>
+	<attribute key="serialization_type" type="string-dropdown" is_required="true">
+		<option>None</option>
+		<option>Nothing</option>
+		<option>RelatedEntity1AndDisplayName</option>
+		<option>RelatedEntity1Only</option>
+		<option>RelatedInt1Only</option>
+		<option>RelatedPlanet1Only</option>
+		<option>RelatedPlanet1AndRelatedInt1</option>
+		<option>RelatedInt1AndRelatedInt2</option>
+		<option>RelatedInt1AndRelatedInt2AndRelatedInt3</option>
+		<option>RelatedInt1AndRelatedInt2AndRelatedString</option>
+		<option>RelatedInt1AndRelatedInt2AndRelatedInt3AndRelatedString</option>
+		<option>RelatedStringOnly</option>
+		<option>RelatedInt1AndRelatedString</option>
+		<option>RelatedEntity1AndRelatedInt1</option>
+		<option>RelatedInt1AndDisplayName</option>
+	</attribute>
+	<attribute key="importance_calculation" type="string-dropdown" is_required="true">
+		<option>NotSettable</option>
+		<option>RelatedEntity1Importance</option>
+		<option>RelatedPlanet1Importance</option>
+	</attribute>
+	<attribute key="default_display_name" type="string" />
+	<attribute key="display_name_color" type="string" />
+	<attribute key="use_related_entity1_color_for_display_name" type="bool" />
+	<attribute key="finish_display_name_with_related_entity1_name_and_planet" type="bool" />
+	<attribute key="finish_display_name_with_related_entity1_planet_only" type="bool" />
+	<attribute key="finish_display_name_with_related_planet1" type="bool" />
+	<attribute key="finish_display_name_with_related_string" type="bool" />
+	<attribute key="use_default_display_name_instead_of_display_name_base" type="bool" />
+	<attribute key="use_related_string_as_color" type="bool" />
+	<attribute key="dll_name" type="string" is_required="true" />
+	<attribute key="type_name" type="string" is_required="true" />
+</root>

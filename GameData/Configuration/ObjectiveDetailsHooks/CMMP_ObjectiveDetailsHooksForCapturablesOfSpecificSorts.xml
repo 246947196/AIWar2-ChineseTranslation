@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--  All of these are for that "one" group of categories by various attributes of ships
+        ***********************************************************************-->
+  
+  <objective_details_hook name="CapturablesThatGiveMore_Sniper" category="CapturablesThatGiveMore_Sniper"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.HackShipGranter"
+          use_related_entity1_color_for_display_name="true" finish_display_name_with_related_entity1_name_and_planet="true"
+          click_behavior="CenterOnRelatedEntity1" focus_type="FocusOnRelatedEntity1"
+          serialization_type="RelatedEntity1AndDisplayName" importance_calculation="RelatedEntity1Importance"
+          difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedEntity1"/>
+
+  <objective_details_hook name="CapturablesThatGiveMore_Melee" category="CapturablesThatGiveMore_Melee"
+          copy_from="CapturablesThatGiveMore_Sniper"/>
+
+  <objective_details_hook name="CapturablesThatGiveMore_EngineDamage" category="CapturablesThatGiveMore_EngineDamage"
+          copy_from="CapturablesThatGiveMore_Sniper"/>
+
+  <objective_details_hook name="CapturablesThatGiveMore_Gravity" category="CapturablesThatGiveMore_Gravity"
+          copy_from="CapturablesThatGiveMore_Sniper"/>
+
+  <objective_details_hook name="CapturablesThatGiveMore_Tractors" category="CapturablesThatGiveMore_Tractors"
+          copy_from="CapturablesThatGiveMore_Sniper"/>
+
+  <objective_details_hook name="CapturablesThatGiveMore_ParalysisDamage" category="CapturablesThatGiveMore_ParalysisDamage"
+          copy_from="CapturablesThatGiveMore_Sniper"/>
+
+  <objective_details_hook name="CapturablesThatGiveMore_Cloaking" category="CapturablesThatGiveMore_Cloaking"
+          copy_from="CapturablesThatGiveMore_Sniper"/>
+
+  <objective_details_hook name="CapturablesThatGiveMore_Tachyon" category="CapturablesThatGiveMore_Tachyon"
+          copy_from="CapturablesThatGiveMore_Sniper"/>
+
+  <objective_details_hook name="CapturablesThatGiveMore_Frigates" category="CapturablesThatGiveMore_Frigates"
+          copy_from="CapturablesThatGiveMore_Sniper"/>
+
+  <objective_details_hook name="CapturablesThatGiveMore_BubbleShields" category="CapturablesThatGiveMore_BubbleShields"
+          copy_from="CapturablesThatGiveMore_Sniper"/>
+
+  <objective_details_hook name="CapturablesThatGiveMore_AreaOfEffect" category="CapturablesThatGiveMore_AreaOfEffect"
+          copy_from="CapturablesThatGiveMore_Sniper"/>
+
+  <objective_details_hook name="CapturablesThatGiveMore_DroneLauncher" category="CapturablesThatGiveMore_DroneLauncher"
+          copy_from="CapturablesThatGiveMore_Sniper"/>
+
+  <objective_details_hook name="CapturablesThatGiveMore_AntiHighArmor" category="CapturablesThatGiveMore_AntiHighArmor"
+          copy_from="CapturablesThatGiveMore_Sniper"/>
+
+  <objective_details_hook name="CapturablesThatGiveMore_AntiLowArmor" category="CapturablesThatGiveMore_AntiLowArmor"
+          copy_from="CapturablesThatGiveMore_Sniper"/>
+
+  <objective_details_hook name="CapturablesThatGiveMore_AntiHighEnergyUsage" category="CapturablesThatGiveMore_AntiHighEnergyUsage"
+          copy_from="CapturablesThatGiveMore_Sniper"/>
+
+  <objective_details_hook name="CapturablesThatGiveMore_AntiLowEnergyUsage" category="CapturablesThatGiveMore_AntiLowEnergyUsage"
+          copy_from="CapturablesThatGiveMore_Sniper"/>
+
+  <objective_details_hook name="CapturablesThatGiveMore_AntiHighAlbedo" category="CapturablesThatGiveMore_AntiHighAlbedo"
+          copy_from="CapturablesThatGiveMore_Sniper"/>
+
+  <objective_details_hook name="CapturablesThatGiveMore_AntiLowAlbedo" category="CapturablesThatGiveMore_AntiLowAlbedo"
+          copy_from="CapturablesThatGiveMore_Sniper"/>
+
+  <objective_details_hook name="CapturablesThatGiveMore_AntiHighMass_tX" category="CapturablesThatGiveMore_AntiHighMass_tX"
+          copy_from="CapturablesThatGiveMore_Sniper"/>
+
+  <objective_details_hook name="CapturablesThatGiveMore_AntiLowMass_tX" category="CapturablesThatGiveMore_AntiLowMass_tX"
+          copy_from="CapturablesThatGiveMore_Sniper"/>
+
+  <objective_details_hook name="CapturablesThatGiveMore_AntiHighEngine_gx" category="CapturablesThatGiveMore_AntiHighEngine_gx"
+          copy_from="CapturablesThatGiveMore_Sniper"/>
+
+  <objective_details_hook name="CapturablesThatGiveMore_AntiLowEngine_gx" category="CapturablesThatGiveMore_AntiLowEngine_gx"
+          copy_from="CapturablesThatGiveMore_Sniper"/>
+
+  <objective_details_hook name="CapturablesThatGiveMore_AntiShield" category="CapturablesThatGiveMore_AntiShield"
+          copy_from="CapturablesThatGiveMore_Sniper"/>
+
+  <objective_details_hook name="CapturablesThatGiveMore_Fast" category="CapturablesThatGiveMore_Fast"
+          copy_from="CapturablesThatGiveMore_Sniper"/>
+
+</root>
