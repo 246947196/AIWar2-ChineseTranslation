@@ -28,7 +28,9 @@ AIWar2_ChineseTranslation/
 │   └── plugins/
 │       └── I18NFont4UnityGame/
 │           ├── I18NFont4UnityGame.dll ← 中文字体插件
-│           └── sarasa_gothic          ← 字体文件
+│           ├── mi_sans               ← 小米字体（默认）
+│           ├── sarasa_gothic          ← 更纱黑体
+│           └── unifont                ← Unicode 字体
 ├── GameData/Configuration/            ← 翻译后的 XML 文件
 ├── deploy.ps1                         ← 一键部署脚本
 ├── check_translation.ps1              ← 检查脚本

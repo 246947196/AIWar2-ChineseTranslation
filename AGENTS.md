@@ -122,7 +122,9 @@ if ($bytes.Length -ge 3 -and $bytes[0] -eq 0xEF -and $bytes[1] -eq 0xBB -and $by
 | 组件 | 路径 | 说明 |
 |------|------|------|
 | 插件 DLL | `BepInEx\plugins\I18NFont4UnityGame\I18NFont4UnityGame.dll` | 插件主程序 |
-| 字库文件 | `BepInEx\plugins\I18NFont4UnityGame\sarasa_gothic` | 中文字体文件（更纱黑体） |
+| 字库文件 | `BepInEx\plugins\I18NFont4UnityGame\mi_sans` | 小米字体（默认） |
+| 字库文件 | `BepInEx\plugins\I18NFont4UnityGame\sarasa_gothic` | 更纱黑体 |
+| 字库文件 | `BepInEx\plugins\I18NFont4UnityGame\unifont` | Unicode 字体 |
 | 配置文件 | `BepInEx\config\xiaoye97.I18NFont4UnityGame.cfg` | 插件配置 |
 
 ### 配置文件内容
@@ -136,13 +138,17 @@ if ($bytes.Length -ge 3 -and $bytes[0] -eq 0xEF -and $bytes[1] -eq 0xBB -and $by
 ## put font package to <GameName>/BepInEx/plugins/I18NFont4UnityGame
 # Setting type: String
 # Default value: unifont
-FontName = sarasa_gothic
+FontName = mi_sans
 ```
 
 ### 字库文件说明
 
-- **字体名称**：sarasa_gothic（更纱黑体）
+| 字体 | 文件大小 | 说明 |
+|------|---------|------|
+| mi_sans | 约 4.6 MB | 小米字体，当前默认使用 |
+| sarasa_gothic | 约 9.9 MB | 更纱黑体 |
+| unifont | 约 2.2 MB | Unicode 字体 |
+
 - **用途**：为不支持中文的游戏提供中文字符显示
 - **文件格式**：Unity AssetBundle（文件头为 "UnityFS"）
-- **文件大小**：约 9.9 MB
-- **说明**：这是一个 Unity 资源包文件，包含了更纱黑体字体，由 I18NFont4UnityGame 插件加载使用
+- **说明**：这些是 Unity 资源包文件，包含中文字体，由 I18NFont4UnityGame 插件加载使用
