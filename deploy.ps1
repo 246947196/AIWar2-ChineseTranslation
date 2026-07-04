@@ -11,9 +11,11 @@ Write-Host ""
 Write-Host "Deploying BepInEx framework..." -ForegroundColor Yellow
 Copy-Item "$translationDir\winhttp.dll" "$gameDir\" -Force
 Copy-Item "$translationDir\doorstop_config.ini" "$gameDir\" -Force
+New-Item -ItemType Directory -Path "$gameDir\BepInEx\core" -Force | Out-Null
+New-Item -ItemType Directory -Path "$gameDir\BepInEx\patchers" -Force | Out-Null
+New-Item -ItemType Directory -Path "$gameDir\BepInEx\config" -Force | Out-Null
 Copy-Item "$translationDir\BepInEx\core\*" "$gameDir\BepInEx\core\" -Force
 Copy-Item "$translationDir\BepInEx\patchers\AssemblyRedirector.dll" "$gameDir\BepInEx\patchers\" -Force
-New-Item -ItemType Directory -Path "$gameDir\BepInEx\config" -Force | Out-Null
 Copy-Item "$translationDir\BepInEx\config\xiaoye97.I18NFont4UnityGame.cfg" "$gameDir\BepInEx\config\" -Force
 Write-Host "BepInEx framework deployed" -ForegroundColor Green
 
