@@ -245,14 +245,39 @@ Get-ChildItem $baseDir -Recurse -Filter "*.cs" | ForEach-Object {
 
 `deploy.ps1` 已集成 DLL 部署，运行 `.\deploy.ps1` 即可部署所有翻译文件（XML + DLL）。
 
-### 8.8 已知限制
+### 8.8 依赖关系与编译顺序
+
+```
+AIWarExternalCode (基础项目)
+  └─ 依赖: ArcenUniversal, ArcenAIW2Core, ArcenAIW2ThirdParty, ArcenAIW2Visualization
+
+AIWarExternalVisualizationCode
+  └─ 依赖: ArcenUniversal, ArcenAIW2Core, ArcenAIW2Visualization, ArcenAIW2ThirdParty
+  └─ 依赖: AIWarExternalCode (编译产物)
+
+AIWarExternalDeepProcessingCode
+  └─ 依赖: ArcenUniversal, ArcenAIW2Core
+  └─ 依赖: AIWarExternalCode (编译产物)
+```
+
+**编译顺序：** AIWarExternalCode → AIWarExternalDeepProcessingCode + AIWarExternalVisualizationCode
+
+### 8.9 翻译优先级
+
+| 优先级 | 目录 | 内容 |
+|--------|------|------|
+| 高 | `src/UIs/` | 主菜单、设置、存档、侧边栏等 UI 文本 |
+| 中 | `src/EntityText/` | 实体文本格式化（属性、描述、统计） |
+| 低 | `src/BaseInfo/`, `src/Sim/` | 游戏逻辑文件（通常不需要翻译） |
+
+### 8.10 已知限制
 
 - 部分大型文件（如 `Window_InGameHoverEntityInfo.cs` 8390 行、`Window_PrototypeInGameHoverEntityInfo.cs` 9824 行）的长篇描述文本未翻译，保留英文
 - 翻译时只能替换字符串字面量，不能修改代码逻辑
 - 编译器版本必须与原版一致（Roslyn 4.12.0），否则会产生运行时错误
-- **文件编码**：所有含中文的 .cs 文件必须为 UTF-8 with BOM 编码，否则游戏中文显示为方框。翻译完成后需执行 BOM 转换脚本
+- **文件编码**：所有含中文的 .cs 文件必须为 UTF-8 with BOM 编码，否则游戏中文显示为方框
 
-### 8.9 汉化统计
+### 8.11 汉化统计
 
 | 项目 | 已翻译文件数 | 状态 |
 |------|------------|------|
@@ -261,7 +286,7 @@ Get-ChildItem $baseDir -Recurse -Filter "*.cs" | ForEach-Object {
 | AIWarExternalVisualizationCode | 45 | ✅ 完成 |
 | **合计** | **778** | **✅ 全部完成** |
 
-### 8.10 翻译注意事项
+### 8.12 翻译注意事项
 
 1. **使用 Edit 工具**：翻译时必须使用 Edit 工具逐字符串替换，禁止使用 Write 覆写整个文件
 2. **只改引号内内容**：只能替换 `"..."` 内的文本，不能修改引号外的任何代码
