@@ -294,3 +294,5 @@ WardenFleetType\KDL_VanillaEntries.xml
 294: XMLMods\ExoticShips\GameEntity\ExS_DLC2_Ships_Frigates.xml
 295: XMLMods\ExoticShips\GameEntity\ExS_DLC2_Ships_FleetShips.xml
 296: XMLMods\ExoticShips\GameEntity\ExS_DLC3_Ships_Frigates.xml
+297: Expansions\1_The_Spire_Rises\GameData\Configuration\ScourgeTypeData\TSR_ScourgeTypeData.xml
+298: Expansions\2_Zenith_Onslaught\GameData\Configuration\ScourgeTypeData\ZO_ScourgeTypeData.xml

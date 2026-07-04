@@ -65,6 +65,61 @@ AIWar2_ChineseTranslation/
 
 `GameData/Configuration/` 下的 XML 文件包含实体名称、描述、日志等文本内容。直接替换整个 XML 文件。
 
+### 4.2 XML 文件翻译范围
+
+**重要：并非所有 XML 文件都需要翻译。** 只有包含玩家可见文本的文件才需要翻译。
+
+#### 需要翻译的文件类型
+
+| 文件类型 | 说明 | 示例 |
+|---------|------|------|
+| `GameEntity/` | 实体名称、描述 | `KDL_Ships_FleetShips.xml` |
+| `JournalEntries/` | 剧情日志 | `Lore_Journal.xml` |
+| `Achievement/` | 成就名称和描述 | `KDL_Achievements.xml` |
+| `Tips/` | 游戏提示 | `CMP_Tips_GettingStarted.xml` |
+| `Tutorials/` | 教程文本 | `Tutorial 1 - Basic Planetary Controls.xml` |
+| `SpecialFaction/` | 阵营名称和描述 | `KDL_VanillaEntries.xml` |
+| `HackingType/` | 黑客类型描述 | `PlanetHacks.xml` |
+| `ScourgeTypeData/` | 天灾战士描述 | `TSR_ScourgeTypeData.xml` |
+
+#### 不需要翻译的文件类型（纯配置文件）
+
+| 文件类型 | 说明 | 原因 |
+|---------|------|------|
+| `External*` | 外部接口配置 | 技术标识符，非玩家可见 |
+| `Balance_*` | 数值平衡配置 | 纯数值，无文本 |
+| `UIPrefab/` | UI 预制体路径 | 文件路径，非文本 |
+| `UIWindow/` | 窗口配置 | 类名和路径，非文本 |
+| `AIShipGroup/` | AI 舰队分组 | 编号配置，非文本 |
+| `AIShipGroupCategory/` | AI 舰队分组类别 | 编号配置，非文本 |
+| `CameraType/` | 相机类型 | 技术配置 |
+| `FramerateType/` | 帧率类型 | 数值配置 |
+| `ParticlePattern/` | 粒子效果路径 | 文件路径 |
+| `SpaceboxDefinition/` | 天空盒定义 | 文件路径 |
+| `PlanetDefinition/` | 星球定义 | 数值配置 |
+| `TextEmbededSprites/` | 文本嵌入精灵 | 图标配置 |
+| `TextStyles/` | 文本样式 | 样式配置 |
+| `TextVarMaps/` | 文本变量映射 | 变量配置 |
+| `SurrogateTable/` | 代理表 | 编号配置 |
+| `SpecialFactionProcessingGroup/` | 特殊阵营处理组 | 编号配置 |
+
+#### 如何判断文件是否需要翻译
+
+1. **检查 Description 字段**：如果文件包含 `Description="..."` 且内容非空，则需要翻译
+2. **检查 Name 字段**：如果 Name 字段是英文句子（如 "Burlust warriors glory in combat"），则需要翻译；如果是技术标识符（如 "PlanetExplosion"、"Window_MainMenu"），则不需要翻译
+3. **检查文件类型**：参考上述列表，External*、Balance_* 等类型通常不需要翻译
+
+#### 当前翻译状态
+
+| 类别 | 文件数 | 已翻译 | 需要翻译 | 状态 |
+|------|--------|--------|----------|------|
+| 基础游戏 XML | 397 | 296 | 0 | ✅ 完成 |
+| DLC1 XML | 64 | 30 | 0 | ✅ 完成 |
+| DLC2 XML | 69 | 35 | 0 | ✅ 完成 |
+| DLC3 XML | 90 | 60 | 0 | ✅ 完成 |
+| XMLMods | 5 | 5 | 0 | ✅ 完成 |
+| **合计** | **625** | **426** | **0** | **✅ 完成** |
+
 ### 4.2 DLL 替换 (Preloader Patcher)
 
 BepInEx Preloader 在游戏程序集加载前调用 Patcher，通过 Mono.Cecil 读取并替换 `PatchedAssemblies/` 中的 DLL 文件。
@@ -286,5 +341,33 @@ AIWar2_ChineseTranslation/
 |------|-----------|-------------|
 | DLC JournalEntries | 14 | 14 |
 | DLC Achievement | 3 | 3 |
+| DLC ScourgeTypeData | 2 | 2 |
 | ExoticShips 模组 | 5 | 5 |
-| **合计** | **22** | **22** |
+| **合计** | **24** | **24** |
+
+### 9.7 完整翻译清单
+
+| 类型 | 文件数 | 内容 |
+|------|--------|------|
+| 基础游戏 GameEntity | 34 | 所有舰船、建筑、防御设施 |
+| 基础游戏 JournalEntries | 9 | 所有剧情日志 |
+| 基础游戏 Achievement | 1 | 成就 |
+| 基础游戏 Tips | 12 | 所有游戏提示 |
+| 基础游戏 Tutorials | 6 | 所有教程 |
+| 基础游戏 SpecialFaction | 6 | 阵营名称和描述 |
+| 基础游戏 HackingType | 5 | 黑客类型 |
+| DLC1 JournalEntries | 3 | 尖塔族剧情 |
+| DLC1 Achievement | 1 | 成就 |
+| DLC1 GameEntity | 21 | DLC1 舰船和实体 |
+| DLC1 其他 | 5 | 设置、阵营等 |
+| DLC2 JournalEntries | 4 | 天顶星剧情 |
+| DLC2 Achievement | 1 | 成就 |
+| DLC2 GameEntity | 17 | DLC2 舰船和实体 |
+| DLC2 ScourgeTypeData | 1 | 天顶战士描述 |
+| DLC2 其他 | 11 | 设置、阵营等 |
+| DLC3 JournalEntries | 7 | 奈因祖尔剧情 |
+| DLC3 Achievement | 1 | 成就 |
+| DLC3 GameEntity | 22 | DLC3 舰船和实体 |
+| DLC3 其他 | 28 | 设置、阵营等 |
+| XMLMods | 5 | ExoticShips 模组舰船 |
+| **总计** | **209** | - |

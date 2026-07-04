@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- Nota Bene: You need to add a handler in the DescriptionAppender in the AstroTrains C# -->
+  <!-- If both NumUnitsToSpawn and strengthToSpawn are > 0 then we first create NumUnitsToSpawn of the tagged units, then also create StrengthToSpawn of them -->
+  <item name="Burlust"
+        id="1"
+        tag_for_warrior="ScourgeBurlust"
+        synergy_one_tag="ScourgeEvuck"
+        synergy_one_transformation="ScourgeBurlustEvuck"
+        color="ff2323"
+        description="巴鲁斯特战士以战斗为荣，在低生命值时造成更多伤害"
+        />
+  <item name="Evuck"
+        id="2"
+        tag_for_warrior="ScourgeEvuck"
+	synergy_one_tag="ScourgePeltian"
+        synergy_one_transformation="ScourgeEvuckPeltian"
+        color="7bb3ff"
+        description="伊瓦克战士擅长隐形，非常擅长摧毁建筑"
+        />
+  <item name="Thoraxian"
+        id="3"
+        tag_for_warrior="ScourgeThoraxian"
+	synergy_one_tag="ScourgeNeinzul"
+        synergy_one_transformation="ScourgeThoraxianNeinzul"
+        color="23ffff"
+        description="索拉克西安战士强大且擅长近战"
+        />
+  <item name="Peltian"
+        id="4"
+        tag_for_warrior="ScourgePeltian"
+	synergy_one_tag="ScourgeThoraxian"
+        synergy_one_transformation="ScourgePeltianThoraxian"
+        color="2265ff"
+        description="佩尔提安战士擅长远程伤害"
+        />
+  <item name="Neinzul"
+        id="5"
+        tag_for_warrior="ScourgeNeinzul"
+	synergy_one_tag="ScourgeBurlust"
+        synergy_one_transformation="ScourgeNeinzulBurlust"
+        color="7b52a2"
+        description="奈因祖尔战士具有吸血能力并能制造僵尸"
+        />
+    <item name="Spire"
+        id="6"
+        tag_for_warrior="ScourgeSpire"
+	synergy_one_tag="ScourgeBurlust"
+        synergy_one_transformation="ScourgeSpireBurlust"
+        synergy_two_tag="ScourgeNeinzul"
+        synergy_two_transformation="ScourgeSpireNeinzul"
+        synergy_three_tag="ScourgeThoraxian"
+        synergy_three_transformation="ScourgeSpireThoraxian"
+        synergy_four_tag="ScourgeNeinzul"
+        synergy_four_transformation="ScourgeSpireNeinzul"
+        synergy_five_tag="ScourgePeltian"
+        synergy_five_transformation="ScourgeSpirePeltian"
+        synergy_six_tag="ScourgeEvuck"
+        synergy_six_transformation="ScourgeSpireEvuck"
+        color="c0c0c0"
+        description="尖塔战士拥有巨大的激光武器"
+        />
+
+</root>

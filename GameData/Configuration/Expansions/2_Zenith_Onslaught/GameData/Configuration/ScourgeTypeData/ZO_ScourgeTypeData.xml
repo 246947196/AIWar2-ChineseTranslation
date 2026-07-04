@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <item name="Zenith"
+        id="7"
+        tag_for_warrior="ScourgeZenith"
+	synergy_one_tag="ScourgeBurlust"
+	synergy_one_transformation="ScourgeZenithBurlust"
+        synergy_two_tag="ScourgeNeinzul"
+        synergy_two_transformation="ScourgeZenithNeinzul"
+        color="a9a9a9"
+        description="天顶战士具有快速治愈能力并能对敌人造成伤害增幅"
+        />
+
+</root>
