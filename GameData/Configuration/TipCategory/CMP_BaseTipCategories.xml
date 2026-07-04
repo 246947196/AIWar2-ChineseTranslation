@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  
+  <tip_category name="GettingStarted" display_name="新手入门" sort_priority="100"
+        description="专门为新指挥官提供的实用提示。" />
+
+  <tip_category name="ReturningPlayers" display_name="回归玩家" sort_priority="200"
+        description="专门为从原版转战续作的玩家提供的信息。如果你没玩过原版，建议跳过此部分。" />
+  <!--
+  <tip_category name="FleetManagement" display_name="舰队管理" sort_priority="300"
+        description="详细的策略和信息，帮助您管理舰队。" />
+
+  <tip_category name="EconomicManagement" display_name="经济管理" sort_priority="400"
+        description="详细的策略和信息，帮助您管理经济。" />-->
+
+  <tip_category name="OffensiveStrategies" display_name="进攻策略" sort_priority="1000"
+        description="关于如何攻击敌人的详细策略和信息。" />
+
+  <tip_category name="DefensiveStrategies" display_name="防御策略" sort_priority="1200"
+        description="关于如何保护自己的详细策略和信息。" />
+  
+  <tip_category name="Hacking" display_name="黑客技术" sort_priority="1400"
+        description="关于使用通用纳米机器对抗自己或敌人的所有知识。" />
+
+  <tip_category name="AIFleets" display_name="AI 分舰队" sort_priority="2000"
+        description="关于 AI 会对你发动的不同类型部队的介绍。" />
+		
+  <tip_category name="AIMechanisms" display_name="AI 机制" sort_priority="2500"
+        description="关于 AI 会尝试的不同类型攻击及类似手段的介绍。" />		
+
+  <tip_category name="OtherFactions" display_name="其他阵营" sort_priority="3000"
+        description="关于除 AI 和你自己之外其他阵营的详细策略和信息。" />
+
+  <tip_category name="GalaxyMap" display_name="星系地图" sort_priority="7000"
+        description="关于如何理解星系地图的介绍。" />
+
+  <tip_category name="Modding" display_name="模组制作" sort_priority="8000"
+        description="这部分内容不是关于如何玩游戏，而是关于如果你想制作模组该怎么做。" />
+
+  <tip_category name="QuickTips" display_name="快速提示" sort_priority="9000" is_used_for_main_menu="true"
+        description="相当随机的琐事和有用建议，每次打开主菜单时会随机显示为“每日提示”。" />
+
+  <tip_category name="Fuel" display_name="燃料" sort_priority="10000"
+        description="这些提示与燃料机制相关，该机制旨在为游戏增加更多挑战。燃料对于后勤专家和死亡愿望模式是必需的，对于其他所有战役类型是可选的。" />
+
+</root>

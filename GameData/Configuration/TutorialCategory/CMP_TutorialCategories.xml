@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  
+  <tut_category name="Basics" display_name="基础" sort_priority="100"
+        description="关于如何开始游戏的入门教程。" />
+
+  <tut_category name="Factions" display_name="派系" sort_priority="500"
+        description="关于如何使用特定派系进行游戏的教程。" />
+
+  <tut_category name="Examples" display_name="示例" sort_priority="999"
+        description="这些不是真正的教程，而是为那些希望设置教程或场景的人提供的示例（无需编程！）。" />
+
+</root>

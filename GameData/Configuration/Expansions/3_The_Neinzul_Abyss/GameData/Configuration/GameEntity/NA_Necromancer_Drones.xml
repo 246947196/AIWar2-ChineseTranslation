@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  
+<!-- Skeleton-Related Ships and structures. -->
+
+<!-- Basic Skeleton type. No role at all except to get shot at by his former buddies, but is fairly resistant to that! Also notable for going in the wormholes first to get shot at first. Very much a "Protector". !--> 
+  
+
+    <entity name="SkeletonWarriorDrone" copy_from="SkeletonWarrior" thematic_groups="Neinzul,Necromancer,Drone"
+            special_entity_type="DroneGeneral"
+            icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+            display_name="骷髅战士无人机"
+	        description="骷髅的升级版无人机形态。中程战斗机，具备轻微武器干扰能力。"
+			immune_to_repairs="false"
+			multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"
+                        >
+      <fleet_membership name="SkeletonDrones" ship_cap_group="Strike" weight="100" cap="20"/>
+    </entity>
+	
+	
+    <entity name="SkeletonArcherDrone" copy_from="SkeletonArcher" thematic_groups="Neinzul,Necromancer,Drone"
+            special_entity_type="DroneGeneral"
+            icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+            display_name="骷髅弓箭手无人机"
+	    description="骷髅的升级版无人机形态。远程、脆弱的单位。"
+	    immune_to_repairs="false"
+	    multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"
+            >
+      <fleet_membership name="SkeletonDrones" ship_cap_group="Strike" weight="100" cap="20"/>
+    </entity>
+	
+	
+
+    <entity name="SkeletonDetonatorDrone" copy_from="SkeletonDetonator"  thematic_groups="Neinzul,Necromancer,Drone"
+            special_entity_type="DroneGeneral"
+            icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+            display_name="流氓无人机"
+	    display_name_for_sidebar="流氓无人机"
+	    description="骷髅的升级版无人机形态。隐形且灵活，其攻击可绕过护盾。"
+	    immune_to_repairs="false"
+	    multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"
+            >
+      <fleet_membership name="SkeletonDrones" ship_cap_group="Strike" weight="100" cap="20"/>
+    </entity>
+
+<entity name="SkeletonMageDrone" copy_from="SkeletonMage" thematic_groups="Neinzul,Necromancer,Drone"
+        special_entity_type="DroneGeneral"
+        icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+        display_name="骷髅法师无人机"
+	description="骷髅的升级版无人机形态。法师挥舞着可怕的连锁闪电武器，可暂时减慢目标速度。"
+	immune_to_repairs="false"
+	multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"
+        >
+  <fleet_membership name="SkeletonDrones" ship_cap_group="Strike" weight="100" cap="10"/>
+    </entity>
+
+
+    <!-- Wight Drones -->
+    <entity name="SpectralWightDrone" copy_from="SpectralWight" thematic_groups="Neinzul,Necromancer,Drone"
+            special_entity_type="DroneGeneral"
+			icon_overlay="Overlays1/Drone"
+            display_name="幽灵尸鬼无人机"
+            display_name_for_sidebar="幽灵尸鬼无人机"
+	    description="无人机形态的尸鬼，会在自身周围释放邪恶闪电，对被牵引的目标施加干扰效果。"
+	    immune_to_repairs="false"
+	    multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"
+            >
+      <fleet_membership name="WightDrones" ship_cap_group="Strike" weight="100" cap="10"/>
+    </entity>
+
+    <entity name="InfectiousWightDrone" copy_from="InfectiousWight" thematic_groups="Neinzul,Necromancer,Drone"
+            special_entity_type="DroneGeneral"
+			icon_overlay="Overlays1/Drone"
+            display_name="感染性尸鬼无人机"
+            display_name_for_sidebar="感染性尸鬼无人机"
+	    description="一种特别致命的无人机形态尸鬼，每次攻击都能将死灵法术传播给多个目标。"
+	    immune_to_repairs="false"
+	    multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"
+            >
+      <fleet_membership name="WightDrones" ship_cap_group="Strike" weight="100" cap="10"/>
+    </entity>
+
+
+
+
+</root>

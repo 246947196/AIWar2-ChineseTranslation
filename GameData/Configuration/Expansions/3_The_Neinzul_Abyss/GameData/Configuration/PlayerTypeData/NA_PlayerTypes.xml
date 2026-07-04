@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  
+<player_type name="NecromancerEmpire"
+    display_name="死灵法师帝国" short_name="Necro Empire" auto_name_postfix=" (Necro Empire)" uncontrolled_name="Necro Empire" lobby_prefix="Necro Empire"
+    default_center_color="c0BDA51"
+    default_trim_color="c36454F"
+    sort_order="300"
+    tags="Necromancer,NecromancerEmpire"
+    base_info_source="NecromancerEmpireFactionBaseInfo"
+    deep_info_source="NecromancerEmpireFactionDeepInfo"
+    
+    is_subject_to_energy_brownouts="false"
+    hacks_fail_when_hacking_points_exhausted="false"
+    ship_counts_go_up_from_upgrades="false"
+    does_not_collect_science_or_hacking_with_other_players="true"
+    uses_any_random_hacker_for_hacks="true"
+    reject_tech_upgrades_that_benefit_nothing="true"
+    only_show_tech_upgrades_that_benefit_me="true"
+    fleets_only_show_mobile_strength_in_sidebar="true"
+    allegiance_factions_i_always_enemy="Templar"
+    excess_metal_auto_gifts_to_player_types="NecromancerEmpire,NecromancerSidekick"
+    mark_level_increase_does_not_increase_ship_cap="true"
+    
+    uses_energy_and_fuel="false"
+    uses_metal="false"
+    uses_necromancer_hacking_and_science="true"
+    
+    mapgen_should_fuel_seed_for_me_if_fuel_is_enabled="false"
+    mapgen_should_arses_seed_for_me="false"
+    mapgen_should_majordatacenters_seed_for_me="false"
+    mapgen_should_superterminals_seed_for_me="false"
+    mapgen_should_minorcapturables_seed_for_me="false"
+    mapgen_require_minorcapturable_tag=""
+    mapgen_should_zenithpowergenerators_seed_for_me="false"
+    mapgen_should_zenithmatterconverters_seed_for_me="false"
+    mapgen_should_officerfleets_seed_for_me="false"
+    mapgen_require_officerfleet_tag=""
+    mapgen_should_citadels_seed_for_me="false"
+    mapgen_require_citadel_tag=""
+    mapgen_should_supportfleets_seed_for_me="false"
+    mapgen_require_supportfleet_tag=""
+    mapgen_should_destroyers_seed_for_me="false"
+    mapgen_should_cruisers_seed_for_me="false"
+    mapgen_should_frses_seed_for_me="false"
+    mapgen_should_lonespire_seed_for_me="false"
+    mapgen_should_techvaults_seed_for_me="false"
+    mapgen_should_earlyofficers_seed_for_me="false"
+    mapgen_require_earlyofficer_tag=""
+    mapgen_should_tsses_seed_for_me="false"
+    mapgen_should_odsses_seed_for_me="false"
+    mapgen_should_mobilestrikefleets_seed_for_me="false"
+    mapgen_require_mobilestrikefleet_tag=""
+    mapgen_should_spirearchive_seed_for_me="false"
+    mapgen_should_outguard_seed_for_me="false"
+    mapgen_should_all_guard_posts_be_armed="true"
+    
+    uses_resource_1="true"
+    resource_1_display_name="Essence"
+    resource_1_color="e16cff"
+    resource_1_icon="Res_NecromancerEssence" 
+    
+    is_allowed_to_buy_from_zenith_trader="true"
+    is_considered_a_full_empire="true"
+    takes_ownership_of_starting_planet="true"
+    city_centers_can_control="true"
+    can_lose_game="true"
+    mapgen_should_coprocessors_seed_for_me="true"
+    mapgen_should_distributionnodes_seed_for_me="true"
+    mapgen_should_datacenters_seed_for_me="true"
+
+    description="死灵法师帝国是一个强大的、非传统的基于帝国的玩家阵营。使用死灵法师帝国不利于极低AIP的游戏风格。
+
+死灵法师是一名奈因祖尔科技法师，能够复活被摧毁的舰船为其效力。它来到这片星系区域，从强大的能量源——裂隙中汲取生命之力，以变得更强大。一般来说，死灵法师必须击败其最强大的敌人才能变得更强。
+
+选择死灵法师帝国作为阵营，将会额外生成一批与AI结盟的远古之民，以及一个名为圣殿骑士的独特阵营。
+
+死灵法师帝国拥有强大的进攻和防御机制，但其静态防御不如人类帝国。同时运用舰队进行进攻和防御至关重要。奈因祖尔工兵与死灵法师能完美配合，弥补静态防御的不足。死灵法师帝国完全有能力与普通人类帝国所能面对的任何敌人正面抗衡，但掌握起来更为复杂。
+
+死灵法师仅适用于默认的“人类崛起”战役类型；“挑战者”及更高难度官方并不支持。
+
+请查看游戏内提示以获取更详细的说明。"/>
+
+<player_type name="NecromancerSidekick"
+        display_name="死灵法师副手" short_name="Necro Sidekick" auto_name_postfix=" (Necro Sidekick)" uncontrolled_name="Necro Sidekick" lobby_prefix="Necro Sidekick"
+        copy_from="NecromancerEmpire"
+        sort_order="310"
+        tags="Necromancer,NecromancerSidekick,Sidekick"
+        base_info_source="NecromancerSidekickFactionBaseInfo"
+        deep_info_source="NecromancerSidekickFactionDeepInfo"
+        
+        is_allowed_to_buy_from_zenith_trader="false"
+        is_considered_a_full_empire="false"
+        takes_ownership_of_starting_planet="false"
+        city_centers_can_control="false"
+        can_lose_game="false"
+        starts_with_allied_empire="true"
+               
+        mapgen_should_coprocessors_seed_for_me="false"
+        mapgen_should_distributionnodes_seed_for_me="false"
+        mapgen_should_datacenters_seed_for_me="false"
+
+        description="死灵法师副手是一个强大的、可由玩家操控的阵营——且不会失败。它只能在与其他玩家阵营结盟时使用，通常用于多人游戏。
+
+死灵法师是一名奈因祖尔科技法师，能够复活被摧毁的舰船为其效力。它来到这片星系区域，从强大的能量源——裂隙中汲取生命之力，以变得更强大。一般来说，死灵法师必须击败其最强大的敌人才能变得更强。
+
+选择死灵法师副手作为阵营，将会额外生成一批与AI结盟的远古之民，以及一个名为圣殿骑士的独特阵营。
+
+如果死灵法师副手不采取太多行动，那么它适用于任何游戏风格。但如果副手全力参与游戏，通常会使AIP大幅上升。
+
+副手的玩法与死灵法师帝国相似，但有以下区别。首先，它必须与一个帝国阵营（人类帝国、方舟帝国、死灵法师帝国等）在同一星球上起始。其次，它本身不会失败；副手与它的帝国盟友同胜同负。
+
+副手有一个实验性的自动防御模式（可通过死灵法师星系设置启用），能让其舰船自动协助盟友。
+
+死灵法师仅适用于默认的“人类崛起”战役类型；“挑战者”及更高难度官方并不支持。
+
+请查看游戏内提示以了解死灵法师阵营的运作方式。"/>
+
+
+</root>

@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!--	
+		Marauders
+		*********************************************************
+	-->
+	<beacon_faction_option name="Marauders"
+		blocked_from_seeding_if_any_of_these_factions_included="HumanMarauders"
+		tag_from_which_to_seed_one_beacon="MarauderBeacon"
+		beacon_tier_for_seeding="Medium">
+		<!-- 1 Enemy + 1 Friendly -->
+		<!-- Intensity 1 -->
+		<hack_choice name="Intensity1EnemyAndFriendly" factions_included="HumanMarauders,HumanMarauders" display_name="强度 1，敌对与友方" description="非常弱小，对所有势力怀有敌意。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="1" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Hostile To All" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+			<custom_field_value included_faction_index="1" field_name="Intensity" field_value="1" />
+			<custom_field_value included_faction_index="1" field_name="Allegiance" field_value="Friendly To Players" />
+			<custom_field_value included_faction_index="1" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 2 -->
+		<hack_choice name="Intensity2EnemyAndFriendly" factions_included="HumanMarauders,HumanMarauders" display_name="强度 2，敌对与友方" description="弱小，对所有势力怀有敌意。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="2" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Hostile To All" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+			<custom_field_value included_faction_index="1" field_name="Intensity" field_value="2" />
+			<custom_field_value included_faction_index="1" field_name="Allegiance" field_value="Friendly To Players" />
+			<custom_field_value included_faction_index="1" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 3 -->
+		<hack_choice name="Intensity3EnemyAndFriendly" factions_included="HumanMarauders,HumanMarauders" display_name="强度 3，敌对与友方" description="不太强大，对所有势力怀有敌意。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="3" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Hostile To All" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+			<custom_field_value included_faction_index="1" field_name="Intensity" field_value="3" />
+			<custom_field_value included_faction_index="1" field_name="Allegiance" field_value="Friendly To Players" />
+			<custom_field_value included_faction_index="1" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 4 -->
+		<hack_choice name="Intensity4EnemyAndFriendly" factions_included="HumanMarauders,HumanMarauders" display_name="强度 4，敌对与友方" description="中等强度，对所有势力仍有很大威胁。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="4" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Hostile To All" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+			<custom_field_value included_faction_index="1" field_name="Intensity" field_value="4" />
+			<custom_field_value included_faction_index="1" field_name="Allegiance" field_value="Friendly To Players" />
+			<custom_field_value included_faction_index="1" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 5 -->
+		<hack_choice name="Intensity5EnemyAndFriendly" factions_included="HumanMarauders,HumanMarauders" display_name="强度 5，敌对与友方" description="不是非常强大，但对所有势力仍有很大威胁。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="5" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Hostile To All" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+			<custom_field_value included_faction_index="1" field_name="Intensity" field_value="5" />
+			<custom_field_value included_faction_index="1" field_name="Allegiance" field_value="Friendly To Players" />
+			<custom_field_value included_faction_index="1" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 6 -->
+		<hack_choice name="Intensity6EnemyAndFriendly" factions_included="HumanMarauders,HumanMarauders" display_name="强度 6，敌对与友方" description="对所有势力都很危险。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="6" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Hostile To All" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+			<custom_field_value included_faction_index="1" field_name="Intensity" field_value="6" />
+			<custom_field_value included_faction_index="1" field_name="Allegiance" field_value="Friendly To Players" />
+			<custom_field_value included_faction_index="1" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 7 -->
+		<hack_choice name="Intensity7EnemyAndFriendly" factions_included="HumanMarauders,HumanMarauders" display_name="强度 7，敌对与友方" description="对所有势力更危险。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="7" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Hostile To All" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+			<custom_field_value included_faction_index="1" field_name="Intensity" field_value="7" />
+			<custom_field_value included_faction_index="1" field_name="Allegiance" field_value="Friendly To Players" />
+			<custom_field_value included_faction_index="1" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 8 -->
+		<hack_choice name="Intensity8EnemyAndFriendly" factions_included="HumanMarauders,HumanMarauders" display_name="强度 8，敌对与友方" description="对所有势力极其危险。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="8" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Hostile To All" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+			<custom_field_value included_faction_index="1" field_name="Intensity" field_value="8" />
+			<custom_field_value included_faction_index="1" field_name="Allegiance" field_value="Friendly To Players" />
+			<custom_field_value included_faction_index="1" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 9 -->
+		<hack_choice name="Intensity9EnemyAndFriendly" factions_included="HumanMarauders,HumanMarauders" display_name="强度 9，敌对与友方" description="对所有势力极度危险。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="9" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Hostile To All" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+			<custom_field_value included_faction_index="1" field_name="Intensity" field_value="9" />
+			<custom_field_value included_faction_index="1" field_name="Allegiance" field_value="Friendly To Players" />
+			<custom_field_value included_faction_index="1" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 10 -->
+		<hack_choice name="Intensity10EnemyAndFriendly" factions_included="HumanMarauders,HumanMarauders" display_name="强度 10，敌对与友方" description="对所有势力极度危险。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="10" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Hostile To All" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+			<custom_field_value included_faction_index="1" field_name="Intensity" field_value="10" />
+			<custom_field_value included_faction_index="1" field_name="Allegiance" field_value="Friendly To Players" />
+			<custom_field_value included_faction_index="1" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+		<!-- Enemy To All -->
+		<!-- Intensity 1 -->
+		<hack_choice name="Intensity1EnemyToAll" factions_included="HumanMarauders" display_name="强度 1，对所有势力敌对" description="非常弱小，对所有势力怀有敌意。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="1" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Hostile To All" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 2 -->
+		<hack_choice name="Intensity2EnemyToAll" factions_included="HumanMarauders" display_name="强度 2，对所有势力敌对" description="弱小，对所有势力怀有敌意。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="2" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Hostile To All" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 3 -->
+		<hack_choice name="Intensity3EnemyToAll" factions_included="HumanMarauders" display_name="强度 3，对所有势力敌对" description="不太强大，对所有势力怀有敌意。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="3" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Hostile To All" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 4 -->
+		<hack_choice name="Intensity4EnemyToAll" factions_included="HumanMarauders" display_name="强度 4，对所有势力敌对" description="中等强度，对所有势力仍有很大威胁。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="4" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Hostile To All" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 5 -->
+		<hack_choice name="Intensity5EnemyToAll" factions_included="HumanMarauders" display_name="强度 5，对所有势力敌对" description="不是非常强大，但对所有势力仍有很大威胁。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="5" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Hostile To All" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 6 -->
+		<hack_choice name="Intensity6EnemyToAll" factions_included="HumanMarauders" display_name="强度 6，对所有势力敌对" description="对所有势力都很危险。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="6" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Hostile To All" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 7 -->
+		<hack_choice name="Intensity7EnemyToAll" factions_included="HumanMarauders" display_name="强度 7，对所有势力敌对" description="对所有势力更危险。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="7" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Hostile To All" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 8 -->
+		<hack_choice name="Intensity8EnemyToAll" factions_included="HumanMarauders" display_name="强度 8，对所有势力敌对" description="对所有势力极其危险。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="8" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Hostile To All" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 9 -->
+		<hack_choice name="Intensity9EnemyToAll" factions_included="HumanMarauders" display_name="强度 9，对所有势力敌对" description="对所有势力极度危险。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="9" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Hostile To All" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 10 -->
+		<hack_choice name="Intensity10EnemyToAll" factions_included="HumanMarauders" display_name="强度 10，对所有势力敌对" description="对所有势力极度危险。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="10" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Hostile To All" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Allied to players -->
+		<!-- Intensity 1 -->
+		<hack_choice name="Intensity1FriendlyToPlayers" factions_included="HumanMarauders" display_name="强度 1，对玩家友好" description="非常弱小，但愿意成为您的朋友并提供帮助。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="1" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 2 -->
+		<hack_choice name="Intensity2FriendlyToPlayers" factions_included="HumanMarauders" display_name="强度 2，对玩家友好" description="弱小，但愿意成为您的朋友并提供帮助。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="2" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 3 -->
+		<hack_choice name="Intensity3FriendlyToPlayers" factions_included="HumanMarauders" display_name="强度 3，对玩家友好" description="不太强大，但愿意成为您的朋友并提供帮助。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="3" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 4 -->
+		<hack_choice name="Intensity4FriendlyToPlayers" factions_included="HumanMarauders" display_name="强度 4，对玩家友好" description="中等强度，但愿意成为您的朋友并提供帮助。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="4" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 5 -->
+		<hack_choice name="Intensity5FriendlyToPlayers" factions_included="HumanMarauders" display_name="强度 5，对玩家友好" description="不是非常强大，但愿意成为您的朋友并提供帮助。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="5" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 6 -->
+		<hack_choice name="Intensity6FriendlyToPlayers" factions_included="HumanMarauders" display_name="强度 6，对玩家友好" description="危险，但愿意成为您的朋友并提供帮助。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="6" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 7 -->
+		<hack_choice name="Intensity7FriendlyToPlayers" factions_included="HumanMarauders" display_name="强度 7，对玩家友好" description="更危险，但愿意成为您的朋友并提供帮助。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="7" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 8 -->
+		<hack_choice name="Intensity8FriendlyToPlayers" factions_included="HumanMarauders" display_name="强度 8，对玩家友好" description="极其危险，但愿意成为您的朋友并提供帮助。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="8" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 9 -->
+		<hack_choice name="Intensity9FriendlyToPlayers" factions_included="HumanMarauders" display_name="强度 9，对玩家友好" description="极度危险，但愿意成为您的朋友并提供帮助。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="9" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 10 -->
+		<hack_choice name="Intensity10FriendlyToPlayers" factions_included="HumanMarauders" display_name="强度 10，对玩家友好" description="极度危险，但愿意成为您的朋友并提供帮助。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="10" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+	</beacon_faction_option>
+	<!--
+		Nanocaust On Its Own
+		*********************************************************
+	-->
+	<beacon_faction_option name="JustTheNanocaust" 
+		blocked_from_seeding_if_any_of_these_factions_included="Nanocaust"
+		tag_from_which_to_seed_one_beacon="NanocaustBeacon"
+		beacon_tier_for_seeding="Major">
+		<!-- Intensity 1, And Enemy To All -->
+		<hack_choice name="Intensity1EnemyToAll" factions_included="Nanocaust" display_name="强度 1，全敌对" description="极为弱小，对所有势力抱有敌意。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="1" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Hostile To All" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 2, And Enemy To All -->
+		<hack_choice name="Intensity2EnemyToAll" factions_included="Nanocaust" display_name="强度 2，对所有势力敌对" description="弱小，对所有势力怀有敌意。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="2" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Hostile To All" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 3, And Enemy To All -->
+		<hack_choice name="Intensity3EnemyToAll" factions_included="Nanocaust" display_name="强度 3，对所有势力敌对" description="不太强大，对所有势力怀有敌意。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="3" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Hostile To All" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 4, And Enemy To All -->
+		<hack_choice name="Intensity4EnemyToAll" factions_included="Nanocaust" display_name="强度 4，对所有势力敌对" description="中等强度，对所有势力仍有很大威胁。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="4" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Hostile To All" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 5, And Enemy To All -->
+		<hack_choice name="Intensity5EnemyToAll" factions_included="Nanocaust" display_name="强度 5，对所有势力敌对" description="不是非常强大，但对所有势力仍有很大威胁。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="5" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Hostile To All" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 6, And Enemy To All -->
+		<hack_choice name="Intensity6EnemyToAll" factions_included="Nanocaust" display_name="强度 6，全敌对" description="对所有势力更危险。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="6" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Hostile To All" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 7, And Enemy To All -->
+		<hack_choice name="Intensity7EnemyToAll" factions_included="Nanocaust" display_name="强度 7，全敌对" description="对所有势力非常危险。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="7" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Hostile To All" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 8, And Enemy To All -->
+		<hack_choice name="Intensity8EnemyToAll" factions_included="Nanocaust" display_name="强度 8，全敌对" description="对所有势力极其危险。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="8" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Hostile To All" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 9, And Enemy To All -->
+		<hack_choice name="Intensity9EnemyToAll" factions_included="Nanocaust" display_name="强度 9，对所有势力敌对" description="对所有势力极度危险。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="9" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Hostile To All" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 10, And Enemy To All -->
+		<hack_choice name="Intensity10EnemyToAll" factions_included="Nanocaust" display_name="强度 10，对所有势力敌对" description="对所有势力极度危险。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="10" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Hostile To All" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 1, And Enemy To Players Only -->
+		<hack_choice name="Intensity1EnemyToPlayersOnly" factions_included="Nanocaust" display_name="强度 1，仅对玩家敌对" description="极其弱小，尤其仇视您。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="1" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Hostile To Players Only" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 2, And Enemy To Players Only -->
+		<hack_choice name="Intensity2EnemyToPlayersOnly" factions_included="Nanocaust" display_name="强度 2，仅对玩家敌对" description="弱小，尤其仇视您。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="2" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Hostile To Players Only" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 3, And Enemy To Players Only -->
+		<hack_choice name="Intensity3EnemyToPlayersOnly" factions_included="Nanocaust" display_name="强度 3，仅对玩家敌对" description="不太强大，尤其仇视您。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="3" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Hostile To Players Only" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 4, And Enemy To Players Only -->
+		<hack_choice name="Intensity4EnemyToPlayersOnly" factions_included="Nanocaust" display_name="强度 4，仅对玩家敌对" description="中等强度，尤其仇视您。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="4" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Hostile To Players Only" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+		
+		<!-- Intensity 5, And Enemy To Players Only -->
+		<hack_choice name="Intensity5EnemyToPlayersOnly" factions_included="Nanocaust" display_name="强度 5，仅对玩家敌对" description="不是非常强大，尤其仇视您。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="5" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Hostile To Players Only" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 6, And Enemy To Players Only -->
+		<hack_choice name="Intensity6EnemyToPlayersOnly" factions_included="Nanocaust" display_name="强度 6，仅对玩家敌对" description="逐渐变强，尤其仇视您。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="6" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Hostile To Players Only" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 7, And Enemy To Players Only -->
+		<hack_choice name="Intensity7EnemyToPlayersOnly" factions_included="Nanocaust" display_name="强度 7，仅对玩家敌对" description="强大，尤其仇视您。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="7" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Hostile To Players Only" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 8, And Enemy To Players Only -->
+		<hack_choice name="Intensity8EnemyToPlayersOnly" factions_included="Nanocaust" display_name="强度 8，仅对玩家敌对" description="非常强大，尤其仇视您。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="8" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Hostile To Players Only" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 9, And Enemy To Players Only -->
+		<hack_choice name="Intensity9EnemyToPlayersOnly" factions_included="Nanocaust" display_name="强度 9，仅对玩家敌对" description="极其强大，尤其仇视您。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="9" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Hostile To Players Only" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 10, And Enemy To Players Only -->
+		<hack_choice name="Intensity10EnemyToPlayersOnly" factions_included="Nanocaust" display_name="强度 10，仅对玩家敌对" description="极其强大，尤其仇视您。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="10" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Hostile To Players Only" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 1, And Friendly To Players -->
+		<hack_choice name="Intensity1FriendlyToPlayers" factions_included="Nanocaust" display_name="强度 1，对玩家友好" description="极其弱小，但愿意成为您的朋友并提供帮助。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="1" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+			<custom_field_value included_faction_index="0" field_name="SpawnNearPlayer" field_value="true" />
+		</hack_choice>
+
+		<!-- Intensity 2, And Friendly To Players -->
+		<hack_choice name="Intensity2FriendlyToPlayers" factions_included="Nanocaust" display_name="强度 2，对玩家友好" description="弱小，但愿意成为您的朋友并提供帮助。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="2" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+			<custom_field_value included_faction_index="0" field_name="SpawnNearPlayer" field_value="true" />
+		</hack_choice>
+
+		<!-- Intensity 3, And Friendly To Players -->
+		<hack_choice name="Intensity3FriendlyToPlayers" factions_included="Nanocaust" display_name="强度 3，对玩家友好" description="不太强大，但愿意成为您的朋友并提供帮助。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="3" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+			<custom_field_value included_faction_index="0" field_name="SpawnNearPlayer" field_value="true" />
+		</hack_choice>
+
+		<!-- Intensity 4, And Friendly To Players -->
+		<hack_choice name="Intensity4FriendlyToPlayers" factions_included="Nanocaust" display_name="强度 4，对玩家友好" description="中等强度，但愿意成为您的朋友并提供帮助。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="4" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+			<custom_field_value included_faction_index="0" field_name="SpawnNearPlayer" field_value="true" />
+		</hack_choice>
+
+		<!-- Intensity 5, And Friendly To Players -->
+		<hack_choice name="Intensity5FriendlyToPlayers" factions_included="Nanocaust" display_name="强度 5，对玩家友好" description="不是非常强大，但愿意成为您的朋友并提供帮助。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="5" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+			<custom_field_value included_faction_index="0" field_name="SpawnNearPlayer" field_value="true" />
+		</hack_choice>
+
+		<!-- Intensity 6, And Friendly To Players -->
+		<hack_choice name="Intensity6FriendlyToPlayers" factions_included="Nanocaust" display_name="强度 6，对玩家友好" description="逐渐变强，但愿意成为您的朋友并提供帮助。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="6" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+			<custom_field_value included_faction_index="0" field_name="SpawnNearPlayer" field_value="true" />
+		</hack_choice>
+
+		<!-- Intensity 7, And Friendly To Players -->
+		<hack_choice name="Intensity7FriendlyToPlayers" factions_included="Nanocaust" display_name="强度 7，对玩家友好" description="强大，但愿意成为您的朋友并提供帮助。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="7" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+			<custom_field_value included_faction_index="0" field_name="SpawnNearPlayer" field_value="true" />
+		</hack_choice>
+
+		<!-- Intensity 8, And Friendly To Players -->
+		<hack_choice name="Intensity8FriendlyToPlayers" factions_included="Nanocaust" display_name="强度 8，对玩家友好" description="非常强大，但愿意成为您的朋友并提供帮助。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="8" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+			<custom_field_value included_faction_index="0" field_name="SpawnNearPlayer" field_value="true" />
+		</hack_choice>
+
+		<!-- Intensity 9, And Friendly To Players -->
+		<hack_choice name="Intensity9FriendlyToPlayers" factions_included="Nanocaust" display_name="强度 9，对玩家友好" description="极其强大，但愿意成为您的朋友并提供帮助。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="9" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+			<custom_field_value included_faction_index="0" field_name="SpawnNearPlayer" field_value="true" />
+		</hack_choice>
+
+		<!-- Intensity 10, And Friendly To Players -->
+		<hack_choice name="Intensity10FriendlyToPlayers" factions_included="Nanocaust" display_name="强度 10，对玩家友好" description="极其强大，但愿意成为您的朋友并提供帮助。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="10" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+			<custom_field_value included_faction_index="0" field_name="SpawnNearPlayer" field_value="true" />
+		</hack_choice>		
+	</beacon_faction_option>
+
+	<!--	
+		Devourer Golem
+		*********************************************************
+	-->
+	<beacon_faction_option name="JustTheDevourerGolem"
+		blocked_from_seeding_if_any_of_these_factions_included="DevourerGolem"
+		tag_from_which_to_seed_one_beacon="DevourerBeacon"
+		beacon_tier_for_seeding="Minor">
+		<!-- Enemy To All -->
+		<hack_choice name="EnemyToAll" factions_included="DevourerGolem" display_name="吞噬者魔像 - 全敌对" description="中等强度，对所有势力怀有敌意。">
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Hostile To All" />
+		</hack_choice>
+	</beacon_faction_option>
+
+	<!--	
+		HRF
+		*********************************************************
+	-->
+	<beacon_faction_option name="JustTheHumanResistanceFighters"
+		blocked_from_seeding_if_any_of_these_factions_included="HumanResistanceFighters"
+		tag_from_which_to_seed_one_beacon="HRFBeacon"
+		beacon_tier_for_seeding="AlwaysSeed">
+		<!-- Intensity 1 -->
+		<hack_choice name="Intensity1" factions_included="HumanResistanceFighters" display_name="强度 1" description="极其弱小，与您结盟。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="1" />
+		</hack_choice>
+
+		<!-- Intensity 2 -->
+		<hack_choice name="Intensity2" factions_included="HumanResistanceFighters" display_name="强度 2" description="非常弱小，与您结盟。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="2" />
+		</hack_choice>
+
+		<!-- Intensity 3 -->
+		<hack_choice name="Intensity3" factions_included="HumanResistanceFighters" display_name="强度 3" description="弱小，与您结盟。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="3" />
+		</hack_choice>
+
+		<!-- Intensity 4 -->
+		<hack_choice name="Intensity4" factions_included="HumanResistanceFighters" display_name="强度 4" description="有点弱小，与您结盟。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="4" />
+		</hack_choice>
+
+		<!-- Intensity 5 -->
+		<hack_choice name="Intensity5" factions_included="HumanResistanceFighters" display_name="强度 5" description="稍有能力，与您结盟。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="5" />
+		</hack_choice>
+
+		<!-- Intensity 6 -->
+		<hack_choice name="Intensity6" factions_included="HumanResistanceFighters" display_name="强度 6" description="有能力且与您结盟。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="6" />
+		</hack_choice>
+
+		<!-- Intensity 7 -->
+		<hack_choice name="Intensity7" factions_included="HumanResistanceFighters" display_name="强度 7" description="相当有帮助，且与您结盟。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="7" />
+		</hack_choice>
+
+		<!-- Intensity 8 -->
+		<hack_choice name="Intensity8" factions_included="HumanResistanceFighters" display_name="强度 8" description="相当有帮助，且与您结盟。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="8" />
+		</hack_choice>
+
+		<!-- Intensity 9 -->
+		<hack_choice name="Intensity9" factions_included="HumanResistanceFighters" display_name="强度 9" description="有帮助，且与您结盟。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="9" />
+		</hack_choice>
+
+		<!-- Intensity 10 -->
+		<hack_choice name="Intensity10" factions_included="HumanResistanceFighters" display_name="强度 10" description="更有帮助一些，且与您结盟。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="10" />
+		</hack_choice>
+	</beacon_faction_option>
+</root>

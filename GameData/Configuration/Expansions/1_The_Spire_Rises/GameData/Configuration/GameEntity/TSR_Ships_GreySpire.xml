@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!-- Grey Spire Dyson Sphere -->
+	<entity name="GreySphere"
+            thematic_groups="DysonSphere,Spire"
+			tags="GreySphere,DysonSphere,SplinteringSpireCoalitionSpawner,ShowsOnNormalDisplayMode,HackForShipType" voice_group="Spire" 
+
+			draw_in_galaxy_view="true"
+			visuals="Assets/_DLC1/GraySpire/GraySpireDysonSphere/GraySpireDysonSphere.prefab"  visuals_bundle="exp1_the_spire_rises" 
+			target_type_for_player="NeverTarget"
+			icon_name="Ships1/Dyson_Sphere" icon_overlay="Overlays2/DysonSphereGraySpire"
+			category="Ship"
+
+			gimbal_icon_size_multiplier="1.5"
+			visual_model_draw_cutoff="3000"
+			size_scale="10"
+			visuals_scale_multiplier="80" 
+			y_offset_of_ship_in_visual_space="-900" 
+			is_always_forced_to_planet_center="true" 
+			displaces_other_immobile_objects_as_if_were_planet_tier="true" 
+			added_displacement_buffer="1000"
+			y_offset_of_icon="50"
+			collision_priority="810"
+			force_background_planet_to_disappear="true"			
+			display_name="昴宿星团 - 灰色尖塔戴森球"
+			display_name_for_sidebar="昴宿星团"
+			description="由尖塔种族的一个分支建造的小型戴森球。"
+			behavior="Stationary"
+			starting_mark_level="Markless"
+			
+			cost_for_ai_to_purchase="100000"
+			hull_points="600000" shield_points="400000" speed="Immobile"
+			metal_cost="605000" energy_consumption="1000000"
+			armor_mm="340" albedo="1" mass_tx="17"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			description_appender_dll="AIWarExternalCode"
+			description_appender_type="Arcen.AIW2.External.SphereDescriptionAppender"
+			priority_as_ai_target="IgnoreMe" priority_as_frd_target="IgnoreMe" priority_to_protect="IgnoreMe"
+			eligible_for_hacks="HackToStealWarhead_SpireSphere,IncreaseSphereProduction,IncreaseSphereMaxStrength,IncreaseSphereHopRange"
+			grants_stuff_to_be_added_to_player_fleets="true"
+			grants_stuff_to_be_added_to_player_fleets_strikecraft_options="4"
+			
+			grants_minor_faction_planet_control="true"
+			custom_ConsideredPlayerFriendly="true"
+			>
+		<ship_class_data can_be_damaged="false" />
+  </entity>
+
+	<!--	Gray Spire
+			Slightly stronger than Dyson -->
+			
+	<entity name="Illumin" tags="GraySpire,GraySpireTierZero"
+			visuals="Assets/_DLC1/GraySpire/GraySpireIllumin/GraySpireIllumin.prefab" visuals_bundle="exp1_the_spire_rises"
+			icon_name="Ships2/GraySpireIllumin"
+			voice_group="Spire"
+			category="Ship"
+			size_scale="2.5"
+			visuals_scale_multiplier="1"
+			collision_priority="100"
+			display_name="照明者"
+			display_name_for_sidebar="照明者"
+			description="照明者级护卫舰是灰色尖塔常用的一种警戒舰艇。"			
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="150"
+			hull_points="15000" shield_points="0" speed="Normal1"
+			metal_cost="9600" energy_consumption="1000"
+			armor_mm="50" albedo="0.5" engine_gx="23" mass_tx="1"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			npc_ship_cap_type="FrigatesAndGuardians"	
+			priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="Expendable"
+			>			
+				<ship_class_data can_be_zombified_and_similar="false" />	
+				<system name="W1" display_name="尖塔线圈光束"
+						category="Weapon" firing_timing="OnlyInRange"
+						damage_per_shot="3750" range="Small4" shot_speed="Normal" rate_of_fire="ExtremelyLow"
+						shot_type_data="HeavyBeamInvisible"
+						beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_Cyan"
+						hits_all_intersecting_targets="true"				
+						shots_detonate_immediately="true"
+						is_coilbeam="true"			
+				>
+			</system>			
+	</entity>
+
+
+	<entity name="Lightseeker" tags="GraySpire,GraySpireTierOne"      
+			visuals="Assets/_DLC1/GraySpire/GraySpireLightseeker/GraySpireLightseeker.prefab" visuals_bundle="exp1_the_spire_rises"
+			icon_name="Ships2/GraySpireLightSeeker"
+			voice_group="Spire"
+			category="Ship"
+			size_scale="5.25"
+			visuals_scale_multiplier="1.5" 
+			y_offset_of_ship_in_visual_space="-8"
+			collision_priority="100"
+			display_name="寻光者"
+			display_name_for_sidebar="寻光者"
+			description="寻光者级重型护卫舰是灰色尖塔使用的一种先进警戒舰艇。"			
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="600"
+			hull_points="375000" shield_points="0" speed="BelowAverage2"
+			metal_cost="28800" energy_consumption="1000"
+			armor_mm="70" albedo="0.5" engine_gx="23" mass_tx="2"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			npc_ship_cap_type="FrigatesAndGuardians"		
+			priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="Expendable"
+			>		
+			<ship_class_data can_be_zombified_and_similar="false" />	
+			<system name="W1" display_name="轨道炮"
+					category="Weapon" firing_timing="OnlyInRange"
+					damage_per_shot="11200" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Normal" 
+					shots_per_salvo="5" shots_per_target="5" fires_salvos_sequentially="true"
+					shot_type_data="ExtremeLongRangeRailgun"			
+			>
+			</system>		
+	</entity>	
+
+	<entity name="Dawn" tags="GraySpire,GraySpireTierTwo"  
+			visuals="Assets/_DLC1/GraySpire/GraySpireDawn/GraySpireDawn.prefab" visuals_bundle="exp1_the_spire_rises"
+			icon_name="Ships2/GraySpireDawn"
+			voice_group="Spire"
+			category="Ship"
+			size_scale="16"
+			visuals_scale_multiplier="2.2" 
+			collision_priority="100"
+			display_name="黎明号"
+			display_name_for_sidebar="黎明号"
+			description="黎明号轻型巡洋舰是灰色尖塔开发的一种先进指挥控制舰艇。
+当它的等离子体投射物爆炸时，还会对附近多个单位造成减弱的伤害。"			
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="1600" strength_multiplier="1.5"
+			hull_points="2625000" shield_points="0" speed="BelowAverage2"
+			metal_cost="116000" energy_consumption="3000"
+			armor_mm="180" albedo="0.5" engine_gx="23" mass_tx="5.2"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			npc_ship_cap_type="FrigatesAndGuardians"	
+			priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="Expendable"
+			>	
+			<ship_class_data can_be_zombified_and_similar="false" />
+			<system name="W1" display_name="能量炸弹"
+					category="Weapon" firing_timing="OnlyInRange"
+					damage_per_shot="50000" range="High2" shot_speed="Slow" rate_of_fire="Normal" fires_salvos_sequentially="true"
+					shot_type_data="PlasmaTorpedo"
+					area_of_effect_size="3000"
+					maximum_number_of_targets_hit_per_shot="15"
+					base_engine_stun_per_shot="60" engine_stun_to_engine_gx_less_than="12"
+					aoe_and_beam_damage_multiplier_to_non_primary_target="6"
+			>
+			</system>		
+	</entity>
+
+
+
+  <!-- Below this is where the OLD Warheads start. These are kept for save compatibility reasons. These count as Strikecraft, which causes an issue when one is destroyed, lowering the base cap to 0, even though their current multiplied cap is 2.
+  This is just to help organise it a little - Puffin !
+  ************************************************************************************************
+  ************************************************************************************************
+  ************************************************************************************************-->	
+
+
+
+	<entity copy_from="LightningWarhead" name="LightningWarheadFromSphere" thematic_groups="Hidden" 
+			aip_when_granted_by_hack="0" mark_level_scale_style="OldWarheadCap"
+			>
+	</entity>
+	<entity copy_from="StormWarhead" name="StormWarheadFromSphere" thematic_groups="Hidden" 
+			aip_when_granted_by_hack="0" mark_level_scale_style="OldWarheadCap"
+			>
+	</entity>
+	<entity copy_from="EMPWarhead" name="EMPWarheadFromSphere" thematic_groups="Hidden" 
+			aip_when_granted_by_hack="0" mark_level_scale_style="OldWarheadCap"
+			>
+	</entity>
+	
+	<entity copy_from="NuclearWarhead" name="NuclearWarheadFromSphere" thematic_groups="Hidden" 
+			aip_when_granted_by_hack="0" mark_level_scale_style="OldWarheadCap"
+			>
+	</entity>	
+	
+	<entity copy_from="LightningWarhead" name="LightningWarheadFromWarSphere" thematic_groups="Hidden" 
+			aip_when_granted_by_hack="0" mark_level_scale_style="OldWarheadCap"
+			>
+	</entity>
+	<entity copy_from="StormWarhead" name="StormWarheadFromWarSphere" thematic_groups="Hidden" 
+			aip_when_granted_by_hack="0" mark_level_scale_style="OldWarheadCap"
+			>
+	</entity>
+	<entity copy_from="EMPWarhead" name="EMPWarheadFromWarSphere" thematic_groups="Hidden" 
+			aip_when_granted_by_hack="0" mark_level_scale_style="OldWarheadCap"
+			>
+	</entity>
+	
+	<entity copy_from="NuclearWarhead" name="NuclearWarheadFromWarSphere" thematic_groups="Hidden" 
+			aip_when_granted_by_hack="0" mark_level_scale_style="OldWarheadCap"
+			>
+	</entity>
+	
+	
+  <!-- Below this is where the NEW Warheads start. These are for future games. These have the cap set directly to 2, and do not count as Strikecraft, thus avoiding the previous issue.
+  This is just to help organise it a little - Puffin !
+  ************************************************************************************************
+  ************************************************************************************************
+  ************************************************************************************************-->	
+	
+	<entity copy_from="LightningWarhead" name="NewLightningWarheadFromSphere" thematic_groups="Hidden" 
+			aip_when_granted_by_hack="0"
+			>
+		<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="100" cap="2" faction="SpireSphere_Gray"/>
+	</entity>
+	<entity copy_from="StormWarhead" name="NewStormWarheadFromSphere" thematic_groups="Hidden" 
+			aip_when_granted_by_hack="0"
+			>
+		<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="100" cap="2" faction="SpireSphere_Gray"/>
+	</entity>
+	<entity copy_from="EMPWarhead" name="NewEMPWarheadFromSphere" thematic_groups="Hidden" 
+			aip_when_granted_by_hack="0"
+			>
+		<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="100" cap="2" faction="SpireSphere_Gray"/>
+	</entity>
+	
+	<entity copy_from="NuclearWarhead" name="NewNuclearWarheadFromSphere" thematic_groups="Hidden" 
+			aip_when_granted_by_hack="0"
+			>
+		<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="100" cap="1" faction="SpireSphere_Gray"/>
+	</entity>	
+	
+	<entity copy_from="LightningWarhead" name="NewLightningWarheadFromWarSphere" thematic_groups="Hidden" 
+			aip_when_granted_by_hack="0"
+			>
+		<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="100" cap="2" faction="SplinteringSpireSubfactionGrey"/>
+	</entity>
+	<entity copy_from="StormWarhead" name="NewStormWarheadFromWarSphere" thematic_groups="Hidden" 
+			aip_when_granted_by_hack="0"
+			>
+		<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="100" cap="2" faction="SplinteringSpireSubfactionGrey"/>
+	</entity>
+	<entity copy_from="EMPWarhead" name="NewEMPWarheadFromWarSphere" thematic_groups="Hidden" 
+			aip_when_granted_by_hack="0"
+			>
+		<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="100" cap="2" faction="SplinteringSpireSubfactionGrey"/>
+	</entity>
+	
+	<entity copy_from="NuclearWarhead" name="NewNuclearWarheadFromWarSphere" thematic_groups="Hidden" 
+			aip_when_granted_by_hack="0"
+			>
+		<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="100" cap="1" faction="SplinteringSpireSubfactionGrey"/>
+	</entity>	
+	
+	
+<!-- These ones are for old saves, before the SpireSphere faction got split into Gray and Chromatic directly. !-->	
+	
+	<entity copy_from="LightningWarhead" name="NewLightningWarheadFromOldSphere" thematic_groups="Hidden" 
+			aip_when_granted_by_hack="0"
+			>
+		<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="100" cap="2" faction="SpireSphere"/>
+	</entity>
+	<entity copy_from="StormWarhead" name="NewStormWarheadFromOldSphere" thematic_groups="Hidden" 
+			aip_when_granted_by_hack="0"
+			>
+		<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="100" cap="2" faction="SpireSphere"/>
+	</entity>
+	<entity copy_from="EMPWarhead" name="NewEMPWarheadFromOldSphere" thematic_groups="Hidden" 
+			aip_when_granted_by_hack="0"
+			>
+		<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="100" cap="2" faction="SpireSphere"/>
+	</entity>
+	
+	<entity copy_from="NuclearWarhead" name="NewNuclearWarheadFromOldSphere" thematic_groups="Hidden" 
+			aip_when_granted_by_hack="0"
+			>
+		<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="100" cap="1" faction="SpireSphere"/>
+	</entity>	
+	
+	
+</root>

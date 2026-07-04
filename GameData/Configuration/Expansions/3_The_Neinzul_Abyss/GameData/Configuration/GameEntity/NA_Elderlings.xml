@@ -1,0 +1,1198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+    <entity name="ElderlingEgg"
+	    thematic_groups="Neinzul,Elderling" npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+            tags="ElderlingEgg,EssenceGranter"
+	    draw_in_galaxy_view="true"
+	    visuals="Assets/_DLC3/Elderlings/ElderlingEgg/NeinzulElderlingEgg.prefab" visuals_bundle="exp3_neinzul_abyss"
+	    icon_name="Ships4/ElderlingEgg" gimbal_icon_size_multiplier="1.5"
+	    y_offset_of_icon="30"
+	    voice_group="Silent"
+	    category="Ship"
+	    visuals_scale_multiplier="70" lod_distance_multiplier="1.4"
+	    y_offset_of_ship_in_visual_space="0"
+	    size_scale="6"
+	    collision_priority="810"
+	    display_name="长者卵"
+	    display_name_for_sidebar="长卵"
+	    description="这是奈因祖尔长者的卵。它很快就会孵化成成年长者。成年长者在被消灭时会提供更多资源，并且通常在更高印记等级时提供的资源更多。"
+	    behavior="Stationary"
+            metal_to_grant_on_death="30000"
+	    starting_mark_level="Markless"
+	    cost_for_ai_to_purchase="500"
+            grants_minor_faction_planet_control="true"
+            hull_points="1500000" shield_points="3000000" speed="Immobile"
+            metal_cost="500" energy_consumption="15000"
+            moonstone_cost="0"
+            bloodstone_cost="0"
+            armor_mm="90" albedo="0.6" mass_tx="6"
+            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            target_type_for_player="NeverAutotargetButAllowManualTarget"
+            should_never_count_as_threat="true"
+            priority_as_ai_target="IrreplaceableMisc" priority_as_frd_target="NotDangerous" priority_to_protect="Irreplaceable"
+            description_appender_dll="AIWarExternalCode"
+	    description_appender_type="Arcen.AIW2.External.ElderlingsDescriptionAppender"
+            >
+            <data_extension name="DLC3"
+                            necromancer_resource_one_to_grant_on_death="1"
+                            immune_to_necromancy="true"
+                            />
+
+    </entity>
+
+	<entity  copy_from="MinorFactionBeacon" name="ElderlingsBeacon" tags="Beacon,ElderlingsBeacon"
+		 is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+		 thematic_groups="Beacon" icon_overlay="Overlays2/Race_Neinzul"
+		 display_name="长者信标"
+		 display_name_for_sidebar="长者信标"
+		 description="一群奈因祖尔长者已入侵星系。每位长者都会守护地图上的一片区域，并缓慢繁衍。最终，会有越来越多的长者在星系中巡逻。
+
+消灭长者将获得科研点数。
+
+&lt;color=#f25e1c&gt;高影响：&lt;/color&gt; 如果不定期清除长者，他们会让在星系中移动变得非常困难。"
+target_type_for_player="NeverTarget"
+          >
+	</entity>
+
+    <!-- Notes: I'd like 8-10 elderlings. Each elderling will eventually also grant a matching Necromancer Flagship Blueprint, so please design that too.
+         The 8-10 elderlings should include at least 2 of each Low/Med/High tier.
+
+It's intended that Elderlings should feel a bit like the devourer golem; slow but scary. Possibly it should have a speed boost when entering the planet 
+
+      TODO: also define AI variants for the Heroic AI Type. Perhaps one of the elderling variants should be weak enough to be a regular Guardian
+-->
+
+    <!-- To allow an Elderling to be hacked for a blueprint, here's what you need to do.
+         First, give the elderling 
+                eligible_for_hacks="TransformElderling"
+                name_for_elderling_transformation="HackedElderlingType"
+         Then you define the HackedElderlingType and make sure to give it this field:
+         necromancer_upgrade_to_grant_on_death="NecromanerUpgradeName"
+         Then in the NA_NecromancerUpgrade.xml, you will define the Upgrade;
+         it's a ClaimBlueprints upgrade, and you should copy/paste an existing one
+         and then specify the RleatedShipTypeName="NewNecromancerFlagshipType"
+         Then in the Necromancer XML you define the new flagship type.
+
+         After that it should just work out of the box
+    -->
+    
+<!--Feeble Elderling. Tier 0. Provides way more essence than other Elderlings -->	
+    <entity name="FeebleElderling" copy_from="SlothfulElderling"
+            tags="LowestElderling,Elderling,EssenceGranter"
+            display_name="虚弱长者"
+            icon_name="Ships4/ElderlingLow" icon_overlay="Overlays2/NecromancerFlagship_Base"
+	          display_name_for_sidebar="虚弱长"
+            visuals="Assets/_DLC3/Elderlings/FeebleElderling/FeebleElderling.prefab" visuals_bundle="exp3_neinzul_abyss"
+            size_scale="15"
+		        visuals_scale_multiplier="80" y_offset_of_ship_in_visual_space="50" 
+            hull_points="140000" shield_points="700000" speed="BelowAverage2"
+            description="这只特别虚弱的长者应该是死灵法师的易捕猎物。与它的同类相比，它蕴含更多的精华，尤其是在获得额外印记等级时。"
+            should_never_count_as_threat="true"
+            eligible_for_hacks="TrackElderling"
+            ship_class_name="Elderling"
+            >
+        <data_extension name="DLC3"
+            necromancer_resource_granter_dll="AIWarExternalCode"
+            necromancer_resource_granter_type="Arcen.AIW2.External.ElderlingResourceGranter"
+            name_for_elderling_transformation="∅"
+            immune_to_necromancy="true"
+            />
+        <system name="V1" range="Normal3" max_mark_level_to_function="0" />
+		<system name="V2" display_name="虚弱炸药"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="2000" range="Normal1" shot_speed="Normal" rate_of_fire="Normal"
+				shots_per_salvo="10" fires_salvos_sequentially="false"
+				shot_type_data="PikeShot_Gold"
+				>
+        </system>
+    </entity>
+
+
+<!--Basic Elderlings -->
+	
+    <entity name="SlothfulElderling" thematic_groups="Neinzul,Elderling" 
+	        display_name="懒惰长者" display_name_for_sidebar="懒惰长"
+			tags="LowElderling,Elderling,EssenceGranter"
+			visuals="Assets/_DLC3/Elderlings/SlothfulElderling/SlothfulElderling.prefab" visuals_bundle="exp3_neinzul_abyss"
+            icon_name="Ships4/ElderlingLow" icon_overlay="Overlays2/NecromancerFlagship_Slothful"  gimbal_icon_size_multiplier="1.0"
+            uses_large_health_bar="true"
+            category="Ship"
+            size_scale="15"
+		        visuals_scale_multiplier="180" y_offset_of_ship_in_visual_space="150"
+            draw_in_galaxy_view="true"
+            collision_priority="200"
+			y_offset_of_icon="140"
+			description="这只虚弱的长者在星系中巡逻。它生性懒惰，厌恶敏捷性，会在远距离进行短时间的爆发攻击，擅长击落引擎强大或移动迅速的舰船。"
+			voice_group="Silent"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused" 
+			cost_for_ai_to_purchase="5500"	strength_multiplier="1"
+			mark_level_scale_style="Elderlings"
+			hull_points="1500000" shield_points="500000" speed="BelowAverage2"
+			metal_cost="800000" energy_consumption="25000"
+			armor_mm="180" albedo="0.7" engine_gx="16" mass_tx="7"
+			science_to_grant_on_death="25"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+                description_appender_dll="AIWarExternalCode"
+				description_appender_type="Arcen.AIW2.External.ElderlingsDescriptionAppender"                
+                eligible_for_hacks="TransformElderling,SummonTranscendantElderling,TrackElderling"
+                ship_class_name="Elderling"
+                >
+        <data_extension name="DLC3"
+            necromancer_resource_granter_dll="AIWarExternalCode"
+            necromancer_resource_granter_type="Arcen.AIW2.External.ElderlingResourceGranter"
+            immune_to_necromancy="true"
+            name_for_elderling_transformation="HackedSlothfulElderling"/>
+
+		<system name="V1" display_name="懒惰齐射"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1000" range="High2" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+				shot_type_data="EngineDisruptingShell"	 shots_per_salvo="30" added_shots_per_salvo_per_mark="5"
+				use_alternate_rate_of_fire_after_x_shots="10" alternate_rate_of_fire="Sloth"  use_alternate_rate_of_fire_for_x_shots_before_reverting="1"
+				>
+				<outgoing_damage_modifier based_on="engine_gx" comparison_type="AtLeast" compared_to="14" multiplier="5" />
+				<outgoing_damage_modifier based_on="CurrentSpeedIfMoving" comparison_type="MultiplesOf" compared_to="200" multiplier="1" max_multiplier="10" />
+		</system>  
+    </entity>
+	
+	<entity name="HackedSlothfulElderling" copy_from="SlothfulElderling"
+            display_name="献祭懒惰长者" display_name_for_sidebar="懒惰长"
+			tags="Elderling,HackedElderling"
+			icon_overlay="Overlays2/SkeletonLord"
+            description="这只懒惰长者已被转化。如果它被死灵法师消灭，死灵法师的旗舰将能够根据这只长者的特性转化为更强大的旗舰，但不会获得精华。"
+            speed="AboveAverage2"
+            eligible_for_hacks="SummonTranscendantElderling,TrackElderling"
+            starting_mark_level="Mark7"
+			aip_on_death="5"
+            ship_class_name="HackedElderling"
+    >
+      <data_extension name="DLC3"
+            necromancer_resource_granter_dll="∅"
+            necromancer_resource_granter_type="∅"
+            necromancer_upgrade_to_grant_on_death="ClaimSlothfulFlagship"
+            name_for_elderling_transformation="∅"
+            immune_to_necromancy="true"
+          />
+    </entity>
+
+
+	<entity name="CyclopeanElderling" thematic_groups="Neinzul,Elderling"
+	        display_name="独眼长者"  display_name_for_sidebar="独眼长"
+			tags="LowElderling,Elderling,EssenceGranter"            
+            draw_in_galaxy_view="true"
+            starting_mark_level="Mark1"	tech_upgrades_that_benefit_me="Unused" 
+	  	    description="这只低级长者在星系中巡逻。它发射的聚变线圈光束能绕过大多数个人护盾，击中所有相交的舰船。其耐打程度令人惊讶。"
+			visuals="Assets/_DLC3/Elderlings/CyclopeanElderling/CyclopeanElderling.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships4/ElderlingLow" icon_overlay="Overlays2/NecromancerFlagship_Cyclopean"  gimbal_icon_size_multiplier="1.25"
+			voice_group="Saboteur"
+			category="Ship"
+			size_scale="15"
+			visuals_scale_multiplier="90"
+			collision_priority="200"
+			y_offset_of_icon="140"
+			uses_large_health_bar="true"
+			cost_for_ai_to_purchase="5500" strength_multiplier="1"
+			mark_level_scale_style="Elderlings"
+			hull_points="2000000" shield_points="500000" speed="Normal2"
+			metal_cost="500000" energy_consumption="45000"
+			armor_mm="280" engine_gx="16" albedo="0.7" mass_tx="7"
+			science_to_grant_on_death="25"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+				description_appender_dll="AIWarExternalCode"
+				description_appender_type="Arcen.AIW2.External.ElderlingsDescriptionAppender"
+				eligible_for_hacks="SummonTranscendantElderling,TrackElderling,TransformElderling"
+            ship_class_name="Elderling"
+			>
+        <data_extension name="DLC3"
+            necromancer_resource_granter_dll="AIWarExternalCode"
+            necromancer_resource_granter_type="Arcen.AIW2.External.ElderlingResourceGranter"
+            name_for_elderling_transformation="HackedCyclopeanElderling"
+            immune_to_necromancy="true"/>
+
+		<system name="R9" display_name="独眼光束"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="16000" range="AboveAverage4" shot_speed="Normal" rate_of_fire="Normal"
+			shot_type_data="HeavyBeamInvisible"
+			beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_PurpleBright"
+			hits_all_intersecting_targets="true"				
+			shots_detonate_immediately="true"
+			is_coilbeam="true"	
+			base_percent_damage_bypasses_personal_shields="0.65"
+			>
+		</system>
+	</entity>
+
+	<entity name="HackedCyclopeanElderling" copy_from="CyclopeanElderling"
+			display_name="献祭独眼长者" display_name_for_sidebar="独眼长"
+			tags="Elderling,HackedElderling"
+			icon_overlay="Overlays2/SkeletonLord"
+             description="这只独眼长者已被转化。如果它被死灵法师消灭，死灵法师的旗舰将能够根据这只长者的特性转化为更强大的旗舰，但不会获得精华。"
+            speed="AboveAverage2"
+            eligible_for_hacks="SummonTranscendantElderling,TrackElderling"
+            starting_mark_level="Mark7"
+			aip_on_death="5"
+            ship_class_name="HackedElderling"
+            >
+        <data_extension name="DLC3"
+            necromancer_resource_granter_dll="∅"
+            necromancer_resource_granter_type="∅"
+            necromancer_upgrade_to_grant_on_death="ClaimCyclopeanFlagship"
+            name_for_elderling_transformation="∅"
+            immune_to_necromancy="true"
+            />
+    </entity>
+	      
+  
+	<entity name="WrathfulElderling" copy_from="SlothfulElderling"
+			display_name="愤怒长者"  display_name_for_sidebar="愤怒长"
+			visuals="Assets/_DLC3/Elderlings/WrathfulElderling/WrathfulElderling.prefab" visuals_bundle="exp3_neinzul_abyss"
+			size_scale="25"
+            visuals_scale_multiplier="180" y_offset_of_ship_in_visual_space="150"
+			tags="LowElderling,Elderling,EssenceGranter"
+			icon_name="Ships4/ElderlingLow" icon_overlay="Overlays2/NecromancerFlagship_Wrathful" gimbal_icon_size_multiplier="1.1"
+            draw_in_galaxy_view="true"
+            starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused" strength_multiplier="1"
+			science_to_grant_on_death="25"
+			description="这只虚弱的长者在星系中巡逻。当它或它的对手受到伤害时，会获得力量提升。"
+			hull_points="1000000" shield_points="1000000"
+				description_appender_dll="AIWarExternalCode"
+				description_appender_type="Arcen.AIW2.External.ElderlingsDescriptionAppender"
+				eligible_for_hacks="SummonTranscendantElderling,TrackElderling,TransformElderling"
+                ship_class_name="Elderling"
+			>
+        <data_extension name="DLC3"
+            necromancer_resource_granter_dll="AIWarExternalCode"
+            necromancer_resource_granter_type="Arcen.AIW2.External.ElderlingResourceGranter"
+            name_for_elderling_transformation="HackedWrathfulElderling"
+            immune_to_necromancy="true"
+            />
+		<system name="V1" range="AboveAverage1" max_mark_level_to_function="0" />
+		<system name="R9" display_name="愤怒弹幕"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1500" range="AboveAverage1" shot_speed="VeryFast" rate_of_fire="Misery"
+				shots_per_salvo="10" shots_per_target="5" fires_salvos_sequentially="false"
+				shot_type_data="EnergyWave"	
+				>
+			<outgoing_damage_modifier based_on="MyHullPercentageMissing" comparison_type="MultiplesOf" compared_to="20" multiplier="1" />
+			<outgoing_damage_modifier based_on="TargetHullPercentageMissing" comparison_type="MultiplesOf" compared_to="20" multiplier="1" />				
+		</system>
+    </entity>
+
+    
+    <entity name="HackedWrathfulElderling" copy_from="WrathfulElderling"
+            tags="Elderling,HackedElderling"
+            icon_overlay="Overlays2/SkeletonLord"
+            display_name="献祭愤怒长者"
+	    display_name_for_sidebar="愤怒长"
+            description="这只愤怒长者已被转化。如果它被死灵法师消灭，死灵法师的旗舰将能够根据这只长者的特性转化为更强大的旗舰，但不会获得精华。"
+            speed="AboveAverage2"
+            eligible_for_hacks="SummonTranscendantElderling,TrackElderling"
+            starting_mark_level="Mark7"
+			aip_on_death="5"
+            ship_class_name="HackedElderling"
+    >
+      <data_extension name="DLC3"
+            necromancer_resource_granter_dll="∅"
+            necromancer_resource_granter_type="∅"
+            necromancer_upgrade_to_grant_on_death="ClaimWrathfulFlagship"
+            name_for_elderling_transformation="∅"
+            immune_to_necromancy="true"
+          />
+    </entity>
+
+    
+
+<!-- Advanced Elderlings -->
+    <entity name="DecadentElderling"  thematic_groups="Neinzul,Elderling"
+            display_name="堕落长者" display_name_for_sidebar="堕落长"
+			tags="MedElderling,Elderling,EssenceGranter"
+			visuals="Assets/_DLC3/Elderlings/DecadentElderling/DecadentElderling.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships4/ElderlingMedium" icon_overlay="Overlays2/NecromancerFlagship_Decadent"  gimbal_icon_size_multiplier="1.5"
+            draw_in_galaxy_view="true"
+			uses_large_health_bar="true"
+            category="Ship"
+            size_scale="25"
+			visuals_scale_multiplier="150"
+            collision_priority="600"
+			y_offset_of_icon="140"
+            starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused" 
+            cost_for_ai_to_purchase="10500" strength_multiplier="1"
+			mark_level_scale_style="Elderlings"
+			hull_points="6000000" shield_points="3000000" speed="BelowAverage1"	
+			metal_cost="800000" energy_consumption="45000"
+			armor_mm="180" albedo="0.7" engine_gx="22" mass_tx="7"
+			description="这只中级长者在星系中巡逻。它会将舰船拉向自己，以便吞噬它们，并在此过程中补充生命值。"
+            description_appender_dll="AIWarExternalCode"
+			description_appender_type="Arcen.AIW2.External.ElderlingsDescriptionAppender"            
+            eligible_for_hacks="SummonTranscendantElderling,TrackElderling,TransformElderling"
+			science_to_grant_on_death="50"
+				ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+				ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+				ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+				voice_group="Silent"
+				priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+                ship_class_name="Elderling"
+			>
+        <data_extension name="DLC3"
+            necromancer_resource_granter_dll="AIWarExternalCode"
+            necromancer_resource_granter_type="Arcen.AIW2.External.ElderlingResourceGranter"
+            immune_to_necromancy="true"
+            name_for_elderling_transformation="HackedDecadentElderling"/>
+
+		<system name="WT" display_name="堕落鱼钩"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="2000" range="AboveAverage4" shot_speed="Normal" rate_of_fire="Low" 
+				shots_per_salvo="50" fires_salvos_sequentially="false"
+				base_engine_stun_per_shot="16" added_engine_stun_per_shot_per_mark="4" engine_stun_to_engine_gx_less_than="14"
+				max_engine_stun_seconds="40" added_target_evaluator="EngineDamageAsMajorPrimary"
+				base_knockback_per_shot="-3000" added_knockback_per_shot_per_mark="-1000" knockback_to_ships_mass_tx_less_than="5.5"
+				shot_type_data="HeavyBeamInvisible" beam_length_multiplier="1" beam_weapon_visual_style="Laser_PurpleBright"
+				>	
+		</system>
+		<system name="WJ" display_name="吞噬"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1000" range="Small5" shot_speed="Normal" rate_of_fire="VeryLow" fires_salvos_sequentially="true"
+				shots_per_salvo="10" shot_type_data="MeleeInvisible"
+				health_change_by_max_health_divided_by_this_per_attack="40"
+				can_devour="true" devour_mass_lower_than="5.1"
+				only_targets_mobile_units="true"
+				>    
+		</system>
+	  </entity>
+
+	<entity name="HackedDecadentElderling" copy_from="DecadentElderling"
+            tags="Elderling,HackedElderling"
+            icon_overlay="Overlays2/SkeletonLord"
+            display_name="献祭堕落长者"
+	    display_name_for_sidebar="堕落长"
+            description="这只堕落长者已被转化。如果它被死灵法师消灭，死灵法师的旗舰将能够根据这只长者的特性转化为更强大的旗舰，但不会获得精华。"
+            speed="AboveAverage2"
+            eligible_for_hacks="SummonTranscendantElderling,TrackElderling"
+            starting_mark_level="Mark7"
+			aip_on_death="10"
+            ship_class_name="HackedElderling"
+    >
+        <data_extension name="DLC3"
+            necromancer_resource_granter_dll="∅"
+            necromancer_resource_granter_type="∅"
+            necromancer_upgrade_to_grant_on_death="ClaimDecadentFlagship"
+            name_for_elderling_transformation="∅"
+            immune_to_necromancy="true"
+            />
+    </entity>
+
+
+
+
+    <entity name="AccursedElderling" thematic_groups="Neinzul,Elderling" 
+			display_name="受诅长者" display_name_for_sidebar="受诅长"
+            tags="MedElderling,Elderling,EssenceGranter"
+	        visuals="Assets/_DLC3/Elderlings/AccursedElderling/AccursedElderling.prefab" visuals_bundle="exp3_neinzul_abyss"
+	        icon_name="Ships4/ElderlingMedium" icon_overlay="Overlays2/NecromancerFlagship_Accursed"  gimbal_icon_size_multiplier="1.25"
+	        voice_group="Starship"
+	        category="Ship"
+	        size_scale="25"
+	        visuals_scale_multiplier="180"
+	        collision_priority="600"
+			y_offset_of_icon="140"
+	        uses_large_health_bar="true"
+			description="这只中级长者在星系中巡逻。它比同尺寸的长者更弱，但每当敌人向它开火时，敌人都会受到伤害。它的主武器能对单个目标造成巨大伤害，并能无视任何个人护盾。"
+			assist_range="Normal5" 
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="10500"
+			mark_level_scale_style="Elderlings"
+			hull_points="3000000" shield_points="4000000" speed="BelowAverage1"
+			metal_cost="500000" energy_consumption="45000"
+		    armor_mm="120" engine_gx="16" albedo="0.7" mass_tx="7"
+			returns_this_percentage_of_damage_if_damaged_by_enemy_attack="0.15"
+			
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			absolute_max_cap_when_in_fleets="1"
+            priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+            draw_in_galaxy_view="true"
+            description_appender_dll="AIWarExternalCode"
+			description_appender_type="Arcen.AIW2.External.ElderlingsDescriptionAppender"
+              science_to_grant_on_death="50"
+              eligible_for_hacks="SummonTranscendantElderling,TrackElderling,TransformElderling"
+              ship_class_name="Elderling"
+	      >
+        <data_extension name="DLC3"
+            necromancer_resource_granter_dll="AIWarExternalCode"
+            necromancer_resource_granter_type="Arcen.AIW2.External.ElderlingResourceGranter"
+            immune_to_necromancy="true"
+            name_for_elderling_transformation="HackedAccursedElderling"/>
+		<system name="W1" display_name="致残诅咒"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="333333" range="AboveAverage4" shot_speed="Slow" rate_of_fire="Normal" fires_salvos_sequentially="true"
+				shot_type_data="MassDriver"
+				base_paralysis_seconds_per_shot="4" paralysis_to_ships_mass_tx_less_than="6"		
+				base_percent_damage_bypasses_personal_shields="0.5"	
+				>
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="1.2" />
+		</system>
+    </entity>
+	
+	<entity name="HackedAccursedElderling" copy_from="AccursedElderling"
+            tags="Elderling,HackedElderling"
+            icon_overlay="Overlays2/SkeletonLord"
+            display_name="献祭受诅长者"
+	    display_name_for_sidebar="受诅长"
+            description="这只受诅长者已被转化。如果它被死灵法师消灭，死灵法师的旗舰将能够根据这只长者的特性转化为更强大的旗舰，但不会获得精华。"
+            speed="AboveAverage2"
+            eligible_for_hacks="SummonTranscendantElderling,TrackElderling"
+            starting_mark_level="Mark7"
+			aip_on_death="10"
+            ship_class_name="HackedElderling"
+    >
+        <data_extension name="DLC3"
+            necromancer_resource_granter_dll="∅"
+            necromancer_resource_granter_type="∅"
+            necromancer_upgrade_to_grant_on_death="ClaimAccursedFlagship"
+            name_for_elderling_transformation="∅"
+            immune_to_necromancy="true"
+            />
+    </entity>
+	
+
+
+    <entity name="EnviousElderling" copy_from="DecadentElderling" thematic_groups="Neinzul,Elderling"
+	        visuals="Assets/_DLC3/Elderlings/EnviousElderling/EnviousElderling.prefab" visuals_bundle="exp3_neinzul_abyss"
+			display_name="嫉妒长者" display_name_for_sidebar="嫉妒长"
+		    tags="MedElderling,Elderling,EssenceGranter"
+			icon_name="Ships4/ElderlingMedium" icon_overlay="Overlays2/NecromancerFlagship_Envious" gimbal_icon_size_multiplier="1.5"
+			size_scale="22" visuals_scale_multiplier="170" collision_priority="600" y_offset_of_icon="140"
+			draw_in_galaxy_view="true"
+			starting_mark_level="Mark1"
+			science_to_grant_on_death="50"
+			hull_points="5000000" shield_points="4000000" speed="Normal3"
+			metal_cost="500000" energy_consumption="45000"
+		    armor_mm="350" engine_gx="22" albedo="0.7" mass_tx="7"
+			
+			description="这只中级长者在星系中巡逻。它比其他长者速度更快，会将离它过近的舰船牵引过来，包括和它自身大小相当的舰船。"
+            description_appender_dll="AIWarExternalCode"
+			description_appender_type="Arcen.AIW2.External.ElderlingsDescriptionAppender"
+            ship_class_name="Elderling"
+			>
+        <data_extension name="DLC3"
+            necromancer_resource_granter_dll="AIWarExternalCode"
+            necromancer_resource_granter_type="Arcen.AIW2.External.ElderlingResourceGranter"
+            immune_to_necromancy="true"
+            name_for_elderling_transformation="HackedEnviousElderling"/>
+		<system name="WT" range="Normal3" max_mark_level_to_function="0" />
+		<system name="WJ" range="Normal3" max_mark_level_to_function="0" />
+		<system name="RT" display_name="嫉妒能量波"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="2000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="SlightlyLow"
+				shots_per_salvo="50" fires_salvos_sequentially="false"
+				multiplier_damage_to_tractored_unit="5"
+				shot_type_data="ParasiteCurvedPinkShot"			
+				>
+		</system>
+		<system name="RJ" display_name="牵引光束"
+					category="Passive" 
+					tractor_range="AboveAverage1" tractor_count="50" tractor_count_added_per_mark="50"  tractor_hits_albedo_less_than="0.7" tractor_hits_engine_gx_less_than="19" tractor_hits_mass_less_than="7"
+					>
+		</system>
+    </entity>
+	
+	<entity name="HackedEnviousElderling" copy_from="EnviousElderling" display_name="献祭嫉妒长者" display_name_for_sidebar="嫉妒长"
+            tags="Elderling,HackedElderling"
+			icon_overlay="Overlays2/SkeletonLord"
+            description="这只嫉妒长者已被转化。如果它被死灵法师消灭，死灵法师的旗舰将能够根据这只长者的特性转化为更强大的旗舰，但不会获得精华。"
+            speed="AboveAverage2"
+            eligible_for_hacks="SummonTranscendantElderling,TrackElderling"
+            starting_mark_level="Mark7"
+			aip_on_death="10"
+            ship_class_name="HackedElderling"
+        >
+        <data_extension name="DLC3"
+            necromancer_resource_granter_dll="∅"
+            necromancer_resource_granter_type="∅"
+            necromancer_upgrade_to_grant_on_death="ClaimEnviousFlagship"
+            name_for_elderling_transformation="∅"
+            immune_to_necromancy="true"
+            />
+    </entity>
+
+<!--Elite Elderlings -->
+    <entity name="BlasphemousElderling"  thematic_groups="Neinzul,Elderling"
+            display_name="亵渎长者" display_name_for_sidebar="亵渎长"
+			tags="HighElderling,Elderling,EssenceGranter"
+			visuals="Assets/_DLC3/Elderlings/BlasphemousElderling/BlasphemousElderling.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships4/ElderlingHigh" icon_overlay="Overlays2/NecromancerFlagship_Blasphemous" gimbal_icon_size_multiplier="1.5" 
+			voice_group="Silent"
+			category="Ship"
+			size_scale="30"
+			visuals_scale_multiplier="200"  y_offset_of_ship_in_visual_space="140"
+			collision_priority="810"
+			y_offset_of_icon="140"
+			description="这只完全成熟的长者在星系中巡逻。它拥有一门专门针对大型目标的爆能炮。为了对付成群的舰船，它可以将六道光束聚焦于一点，攻击所有相交的目标，并根据长者比目标高出的印记等级造成伤害。与亵渎长者印记等级相同的舰船将不受影响，而印记等级比长者低六级的舰船将被汽化。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="18800"	
+			mark_level_scale_style="Elderlings"
+			hull_points="5000000" shield_points="10000000" speed="BelowAverage1"
+			metal_cost="5000000" energy_consumption="100000"
+			armor_mm="210" albedo="0.85" engine_gx="22" mass_tx="12"
+            science_to_grant_on_death="100"
+            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"					
+			shows_on_galaxy_map_for_explored_planets="true"
+			draw_in_galaxy_view="true" 
+			eligible_for_hacks="SummonTranscendantElderling,TrackElderling,TransformElderling"
+			priority_as_ai_target="NormalStarship" priority_as_frd_target="BiggerStarship" priority_to_protect="SlightlyLessExpendable"
+				description_appender_dll="AIWarExternalCode"
+				description_appender_type="Arcen.AIW2.External.ElderlingsDescriptionAppender"
+                ship_class_name="Elderling"
+			>
+        <data_extension name="DLC3"
+            necromancer_resource_granter_dll="AIWarExternalCode"
+            necromancer_resource_granter_type="Arcen.AIW2.External.ElderlingResourceGranter"
+            immune_to_necromancy="true"
+            name_for_elderling_transformation="HackedBlasphemousElderling"/>
+		<system name="R9" display_name="亵渎光束"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="4000" range="AboveAverage5" shot_speed="Normal" rate_of_fire="FairlyLow"
+				shot_type_data="HeavyBeamInvisible"
+				hits_all_intersecting_targets="true"
+				shots_detonate_immediately="true"
+				maximum_number_of_targets_hit_per_shot="40"
+				number_beams_to_fire="5" beam_weapon_visual_style="Laser_PurpleBright"
+				distance_from_center_for_beam_emission="50"  
+				ion_percentage_per_mark_level_lower="0.05" ion_damage_to_albedo_less_than="0.7"
+				only_targets_mobile_units="true"
+				>
+		</system>
+		<system name="WS" display_name="亵渎爆能炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="10000" range="AboveAverage5" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="true"
+				shot_type_data="Sabot"				
+				>
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="5" />
+		</system>
+    </entity>
+
+<entity name="HackedBlasphemousElderling" copy_from="BlasphemousElderling" display_name="献祭亵渎长者" display_name_for_sidebar="亵渎长"
+            tags="Elderling,HackedElderling"
+			icon_overlay="Overlays2/SkeletonLord"
+            description="这只亵渎长者已被转化。如果它被死灵法师消灭，死灵法师的旗舰将能够根据这只长者的特性转化为更强大的旗舰，但不会获得精华。"
+            speed="AboveAverage2"
+            eligible_for_hacks="SummonTranscendantElderling,TrackElderling"
+			starting_mark_level="Mark7"
+			aip_on_death="15"
+            ship_class_name="HackedElderling"
+			>
+        <data_extension name="DLC3"
+            necromancer_resource_granter_dll="∅"
+            necromancer_resource_granter_type="∅"
+            necromancer_upgrade_to_grant_on_death="ClaimBlasphemousFlagship"
+            name_for_elderling_transformation="∅"
+            immune_to_necromancy="true"
+            />
+    </entity>
+
+
+
+    <entity name="PlagueswarmElderling" thematic_groups="Neinzul,Elderling" 
+	        display_name="瘟疫群长者" display_name_for_sidebar="瘟群长"
+			tags="HighElderling,Elderling,EssenceGranter"
+			visuals="Assets/_DLC3/Elderlings/PlagueswarmElderling/PlagueswarmElderling.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships4/ElderlingHigh" icon_overlay="Overlays2/NecromancerFlagship_Plagueswarm" gimbal_icon_size_multiplier="1.5" 
+			voice_group="Silent"
+			category="Ship"
+			size_scale="30"
+			visuals_scale_multiplier="250"  y_offset_of_ship_in_visual_space="140"
+			collision_priority="810"
+			y_offset_of_icon="140"
+			description="一只成熟的长者，在星系中巡逻。它使用腐蚀性射线进行攻击，造成持续伤害。它周围环绕着一团腐蚀性的瘟疫宿主，会吸取范围内的目标，形成腐蚀性的病毒蜂群。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="16800"
+			mark_level_scale_style="Elderlings"
+			hull_points="7500000" shield_points="7500000" speed="BelowAverage1"
+			metal_cost="5000000" energy_consumption="100000"
+			armor_mm="180" albedo="0.85" engine_gx="22" mass_tx="12"
+			science_to_grant_on_death="100"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"					
+			shows_on_galaxy_map_for_explored_planets="true"
+			draw_in_galaxy_view="true" 
+			fleet_design_template_i_use_for_drones="NeinzulViralSwarmerDrones"
+			drone_starting_behavior_type="Attacker_Full"	
+			build_points_per_second="10"
+			build_point_cost_for_per_second_construction="20"
+			personal_ship_cap_for_per_second_build_point_construction="18"
+			tag_to_spawn_from_for_build_point_for_per_second_construction="PlagueHost"
+            eligible_for_hacks="TransformElderling,SummonTranscendantElderling,TrackElderling"
+            priority_as_ai_target="NormalStarship" priority_as_frd_target="BiggerStarship" priority_to_protect="SlightlyLessExpendable"
+				description_appender_dll="AIWarExternalCode"
+				description_appender_type="Arcen.AIW2.External.ElderlingsDescriptionAppender"			
+                ship_class_name="Elderling"
+			>
+        <data_extension name="DLC3"
+              necromancer_resource_granter_dll="AIWarExternalCode"
+              necromancer_resource_granter_type="Arcen.AIW2.External.ElderlingResourceGranter"
+              immune_to_necromancy="true"
+              name_for_elderling_transformation="HackedPlagueswarmElderling"/>
+    <system name="W1" display_name="邪术射线"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="1000" range="Normal3" shot_speed="Fast" rate_of_fire="High" 
+			shots_per_salvo="32" fires_salvos_sequentially="true"
+			shot_type_data="NecroticRay" 
+			base_percent_damage_bypasses_personal_shields="1"
+			corrosion_damage="9000"
+			corrosion_damage_added_per_mark="4500"
+			>			
+    </system>
+    </entity>
+	
+    <entity name="HackedPlagueswarmElderling" copy_from="PlagueswarmElderling" display_name="献祭瘟疫群长者" display_name_for_sidebar="瘟群长"
+			thematic_groups="Neinzul,Elderling,Necromancer"
+            tags="Elderling,HackedElderling"
+			icon_overlay="Overlays2/SkeletonLord"
+            description="这只瘟疫群长者已被转化。它周围环绕着一团瘟疫宿主，会吸取范围内的目标，形成病毒蜂群。"
+            eligible_for_hacks="SummonTranscendantElderling,TrackElderling"
+			science_to_grant_on_death="0"
+			aip_on_death="15"
+            ship_class_name="HackedElderling"
+            >
+        <data_extension name="DLC3"
+            necromancer_resource_granter_dll="∅"
+            necromancer_resource_granter_type="∅"
+            necromancer_upgrade_to_grant_on_death="ClaimPlagueswarmFlagship"
+            name_for_elderling_transformation="∅"
+            immune_to_necromancy="true"/>
+    </entity>	
+	
+    <entity name="PlagueHost" tags="PlagueHost"
+	        thematic_groups="Neinzul,Elderling"
+			visuals="Assets/_DLC3/Elderlings/PlagueHost/PlagueHost.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships4/PlagueHost" gimbal_icon_size_multiplier="1"
+			voice_group="Silent"
+			category="Ship" is_strikecraft="true"
+			size_scale="5"
+			visuals_scale_multiplier="40"
+			collision_priority="100" 
+			display_name="瘟疫宿主"
+			description="奈因祖尔的微小传染性生物。"
+			starting_mark_level="Markless" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="6" strength_multiplier="0.2"
+			hull_points="8000" shield_points="0" speed="Immobile"
+			metal_cost="100" energy_consumption="100"
+			armor_mm="40" albedo="0.65" mass_tx="0.21"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			orbits_flagship_at_range="4800"
+			degrees_to_orbit_per_second="12"
+			attempts_to_reach_orbital_point_at_speed="8000"
+			dies_if_parent_dies="true"
+			immune_to_swapping_between_fleets="true"
+			unit_to_make_with_build_points="ViralSwarmer"
+            base_ship_line_for_build_points="ViralSwarmer"
+            build_points_per_damage_dealt="1"	
+            priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+            ship_class_name="Elderling"
+            >	
+    <system name="W1" display_name="传染性胆汁"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="2500" range="Small5" shot_speed="Fast" rate_of_fire="Devourer" fires_salvos_sequentially="true"
+			shot_type_data="DoubleShot_Green"
+			base_percent_damage_bypasses_personal_shields="1"
+			corrosion_damage="2500"
+			>		
+    </system>
+    </entity>	
+
+    <entity name="ViralSwarmer"
+	        thematic_groups="Neinzul,Elderling"
+	        special_entity_type="DroneGeneral"
+			visuals="Assets/_DLC3/Elderlings/ViralSwarmer/ViralSwarmer.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships4/ViralSwarmer" gimbal_icon_size_multiplier="1"
+			voice_group="Silent"
+			category="Ship" is_strikecraft="true"
+			size_scale="3"
+			visuals_scale_multiplier="16"
+			collision_priority="100"
+			display_name="病毒蜂群"
+			display_name_for_sidebar="奈因病毒群"
+			description="由瘟疫宿主吸取的物质形成。"
+			starting_mark_level="Markless" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="6" strength_multiplier="0.2"
+			hull_points="8000" shield_points="0" speed="AboveAverage3"
+			metal_cost="1000" energy_consumption="100"
+			armor_mm="40" albedo="0.65" engine_gx="10" mass_tx="0.21"
+			blocks_ceasefire_on_planet="true"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			cannot_target_or_alert_ai_reinforcement_spots="true"
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="1"
+			always_self_attritions="true"				
+			unit_to_make_with_build_points="ViralSwarmer"
+            base_ship_line_for_build_points="ViralSwarmer"
+            build_points_per_damage_dealt="1"	
+            priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+            >
+	<fleet_membership name="NeinzulViralSwarmerDrones" ship_cap_group="Strike" weight="100" cap="50"/>		
+    <system name="W1" display_name="聚变切割器"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="1250" range="AlmostNone" shot_speed="Fast" rate_of_fire="Devourer" fires_salvos_sequentially="true"
+			shot_type_data="MeleeInvisible" added_target_evaluator="Melee"
+			base_percent_damage_bypasses_personal_shields="1"
+			corrosion_damage="1250"
+			>		
+    </system>
+    </entity>
+
+    <entity name="DrakeElderling"   thematic_groups="Neinzul,Elderling"
+			display_name="冥河龙长者" display_name_for_sidebar="冥河龙"
+			tags="HighElderling,Elderling,EssenceGranter"
+			visuals="Assets/_DLC3/Elderlings/DrakeElderling/DrakeElderling.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships4/ElderlingHigh" icon_overlay="Overlays2/NecromancerFlagship_Drake" gimbal_icon_size_multiplier="1.5" 
+			voice_group="Silent"
+			category="Ship"
+			size_scale="30"
+			visuals_scale_multiplier="240" y_offset_of_ship_in_visual_space="150"
+			collision_priority="810"
+			y_offset_of_icon="140"
+			description="一只成熟的长者，在星系中巡逻。它能喷吐火焰……还有火球。"
+			starting_mark_level="Mark1"
+			cost_for_ai_to_purchase="16800"
+			mark_level_scale_style="Elderlings"
+			hull_points="10000000" shield_points="5000000" speed="BelowAverage1"
+			metal_cost="5000000" energy_consumption="100000"
+			armor_mm="350" albedo="0.85" engine_gx="22" mass_tx="12"
+			science_to_grant_on_death="100"
+			blocks_ceasefire_on_planet="true"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"					
+			shows_on_galaxy_map_for_explored_planets="true"
+			draw_in_galaxy_view="true"
+			build_points_per_second="5"
+			build_point_cost_for_per_second_construction="10"
+			personal_ship_cap_for_per_second_build_point_construction="5"
+			tag_to_spawn_from_for_build_point_for_per_second_construction="Fireball"
+			eligible_for_hacks="TransformElderling,SummonTranscendantElderling,TrackElderling"
+            priority_as_ai_target="NormalStarship" priority_as_frd_target="BiggerStarship" priority_to_protect="SlightlyLessExpendable"
+            description_appender_dll="AIWarExternalCode"
+	        description_appender_type="Arcen.AIW2.External.ElderlingsDescriptionAppender"			
+            ship_class_name="Elderling"
+			>
+        <data_extension name="DLC3"
+            necromancer_resource_granter_dll="AIWarExternalCode"
+            necromancer_resource_granter_type="Arcen.AIW2.External.ElderlingResourceGranter"
+            immune_to_necromancy="true"
+            name_for_elderling_transformation="HackedDrakeElderling"/>
+    <system name="V9" display_name="火焰波"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="9000" range="Normal3" shot_speed="Fast" rate_of_fire="Devourer" 
+			shots_per_salvo="32" fires_salvos_sequentially="true"
+			shot_type_data="FlameWave"
+			>			
+    </system>	
+    </entity>
+	
+    <entity name="HackedDrakeElderling" copy_from="DrakeElderling" display_name="献祭冥河巨蜥长者" display_name_for_sidebar="巨蜥长"
+			thematic_groups="Neinzul,Elderling,Necromancer"
+            tags="Elderling,HackedElderling"
+			icon_overlay="Overlays2/SkeletonLord"
+            description="这只冥河巨蜥长者已被转化。它能喷火……还能吐出火球。"
+            eligible_for_hacks="SummonTranscendantElderling,TrackElderling"
+			science_to_grant_on_death="0"
+			aip_on_death="15"
+            ship_class_name="HackedElderling"
+            >
+        <data_extension name="DLC3"
+            necromancer_resource_granter_dll="∅"
+            necromancer_resource_granter_type="∅"
+            necromancer_upgrade_to_grant_on_death="ClaimDrakeFlagship"
+            name_for_elderling_transformation="∅"
+            immune_to_necromancy="true"/>
+    </entity>	
+
+
+    <entity name="Fireball" tags="Fireball"
+	        thematic_groups="Neinzul,Elderling"
+			visuals="Assets/_DLC3/Necromancer/Fireball/Fireball.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships4/Fireball"
+			voice_group="Silent"
+			category="Ship" is_strikecraft="true"
+			size_scale="2"
+			visuals_scale_multiplier="30"
+			collision_priority="100"
+			display_name="火球"
+			description="一个燃烧的火球。"
+			starting_mark_level="Markless" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="6" strength_multiplier="0.2"
+			hull_points="50000" shield_points="0" speed="Immobile"
+			metal_cost="10" energy_consumption="0"
+			armor_mm="40" albedo="0.65" mass_tx="2"
+			blocks_ceasefire_on_planet="true"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			orbits_parent_at_range="4800" 
+			degrees_to_orbit_per_second="60" 
+			attempts_to_reach_orbital_point_at_speed="8000"
+			dies_if_parent_dies="true"
+			immune_to_swapping_between_fleets="true"
+            priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+            >	
+    <system name="W1" display_name="火球"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="100000" range="VeryTiny4" shot_speed="Fast" rate_of_fire="Devourer" fires_salvos_sequentially="true"
+			shot_type_data="MeleeInvisible" added_target_evaluator="Melee"
+			health_change_by_max_health_divided_by_this_per_attack="-1"
+			>		
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+
+<!-- Transcendant Elderlings -->
+    
+<entity name="EldritchElderling" thematic_groups="Neinzul,Elderling"
+        tags="Elderling,TranscendantElderling,EssenceGranter"
+        icon_name="Ships4/ElderlingTranscendant" gimbal_icon_size_multiplier="1.5" 
+	display_name="黄日邪能长者"
+	display_name_for_sidebar="黄邪长"
+	voice_group="Silent"
+	category="Ship"
+	  visuals="Assets/_DLC3/Elderlings/EldritchElderling/YellowSunEldritchEldering.prefab" visuals_bundle="exp3_neinzul_abyss"
+	  size_scale="45"
+	visuals_scale_multiplier="350" y_offset_of_ship_in_visual_space="400"
+	collision_priority="810"
+	y_offset_of_icon="180"
+	description="这只巨大的长者诞生于黄日，被不明智的人召唤到了星系中。"
+	starting_mark_level="Markless"
+	cost_for_ai_to_purchase="350000"
+	mark_level_scale_style="Elderlings"
+	hull_points="50000000" shield_points="30000000" speed="High"
+	metal_cost="10000000" energy_consumption="100000"
+	armor_mm="350" albedo="0.85" engine_gx="18" mass_tx="14"
+	aip_on_death="25"
+	max_number_of_weapon_points="10"
+	blocks_ceasefire_on_planet="true"
+	ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+	ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+	ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"					
+	shows_on_galaxy_map_for_explored_planets="true"
+	draw_in_galaxy_view="true"
+	eligible_for_hacks="TrackElderling"
+        priority_as_ai_target="NormalStarship" priority_as_frd_target="BiggerStarship" priority_to_protect="SlightlyLessExpendable"
+        description_appender_dll="AIWarExternalCode"
+		description_appender_type="Arcen.AIW2.External.ElderlingsDescriptionAppender"	
+        ship_class_name="HackedElderling"		
+	>
+        <data_extension name="DLC3"
+            necromancer_resource_one_to_grant_on_death="100"
+            immune_to_necromancy="true"
+            name_for_elderling_transformation="∅"
+            necromancer_upgrade_to_grant_on_death="ClaimTranscendentFlagship"
+            />
+	<system name="V9" display_name="黄日耀斑"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="15000" range="High1" shot_speed="Normal" rate_of_fire="High"
+			shot_type_data="HeavyBeamInvisible"
+			hits_all_intersecting_targets="true"				
+			shots_detonate_immediately="true"
+			maximum_number_of_targets_hit_per_shot="30"
+			number_beams_to_fire="20" beam_weapon_visual_style="Laser_YellowBright"
+			degrees_offset_per_beam="1"	
+			number_of_weapon_points_to_gain_on_firing="1" 		
+			>
+	</system>	
+	 <system name="W2" display_name="超新星"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="30000" range="Planetary" shot_speed="Normal" rate_of_fire="Sloth" fires_salvos_sequentially="true"
+			shot_type_data="LightningExplosionAOEShot"
+			area_of_effect_size="999999"				
+			shots_detonate_immediately="true"
+			maximum_number_of_targets_hit_per_shot="500"
+			additional_damage_modifier_per_weapon_point="1" number_of_weapon_points_to_consume_on_firing="10"
+			>
+			<outgoing_damage_modifier based_on="Albedo" comparison_type="AtLeast" compared_to="0.7" multiplier="0.01" />
+    </system>	
+    </entity>
+
+
+
+
+
+  <!-- Second visual copy, because couldn't decide. -->
+  <entity name="EldritchElderlingRedGiant" copy_from="EldritchElderling"
+        tags="Elderling,TranscendantElderling,EssenceGranter"
+        display_name="红巨星邪能长者"
+	      display_name_for_sidebar="红邪长"
+	      description="这只巨大的长者诞生于红巨星，被不明智的人召唤到了星系中。"
+        visuals="Assets/_DLC3/Elderlings/EldritchElderling/RedGiantEldritchEldering.prefab" visuals_bundle="exp3_neinzul_abyss"
+          >
+    <system name="V9" display_name="红巨星耀斑" beam_weapon_visual_style="Laser_RedBlack"></system>
+  </entity>
+
+    <!-- AI Copies for the Heroic (and Jabberwock) AI Types. 
+         Note that the Guardian-tier are significantly weaker than their regular versions. -->
+    <!-- TODO: These should probably have overriden description (and perhaps display name -->
+    
+	
+	<!--Guardian Tier -->
+	<entity name="AIFeebleElderling" copy_from="FeebleElderling" thematic_groups="Hidden"
+            display_name="AI虚弱长者" display_name_for_sidebar="AI虚长"
+			size_scale="9" visuals_scale_multiplier="60" gimbal_icon_size_multiplier="1.4"
+			cost_for_ai_to_purchase="450"
+			starting_mark_level="Mark1"
+			mark_level_scale_style="Guardians"
+			description="AI已驯服这只虚弱长者。"
+			speed="AboveAverage1"
+			draw_in_galaxy_view="false"
+			science_to_grant_on_death="0"
+            eligible_for_hacks="None"
+            description_appender_type="∅"
+			multiplier_to_all_healths="0.15" damage_multiplier_to_all_weapons="0.4"
+            ship_class_name="∅"
+            >
+        <data_extension name="DLC3"
+            necromancer_resource_granter_dll="∅"
+            necromancer_resource_granter_type="∅"
+            necromancer_hacking_to_grant_on_death="0"
+            immune_to_necromancy="false"
+            name_for_elderling_transformation="∅"
+            />
+      <ai_ship_group_membership name="ElderlingGuardians" weight="100"/>
+    </entity>
+	<entity name="AISlothfulElderling" copy_from="SlothfulElderling" thematic_groups="Hidden"
+			display_name="AI懒惰长者" display_name_for_sidebar="AI懒长"
+			size_scale="9" visuals_scale_multiplier="60" gimbal_icon_size_multiplier="1.4"
+			cost_for_ai_to_purchase="1150"
+			starting_mark_level="Mark1"
+			mark_level_scale_style="Guardians"
+			description="AI已驯服这只懒惰长者。它会进行爆发式射击，擅长对付引擎强大的敌人。"
+			draw_in_galaxy_view="false"
+            science_to_grant_on_death="0"
+            eligible_for_hacks="None"
+            description_appender_type="∅"
+			multiplier_to_all_healths="0.1" damage_multiplier_to_all_weapons="0.2"
+            ship_class_name="∅"
+            >
+        <data_extension name="DLC3"
+            necromancer_resource_granter_dll="∅"
+            necromancer_resource_granter_type="∅"
+            immune_to_necromancy="false"
+            name_for_elderling_transformation="∅"
+            />
+        <ai_ship_group_membership name="ElderlingGuardians" weight="100"/>
+    </entity>
+	<entity name="AIWrathfulElderling" copy_from="WrathfulElderling" thematic_groups="Hidden"
+			display_name="AI愤怒长者" display_name_for_sidebar="AI怒长"
+			size_scale="9" visuals_scale_multiplier="60" gimbal_icon_size_multiplier="1.4" y_offset_of_ship_in_visual_space="50"
+			cost_for_ai_to_purchase="950" strength_multiplier="1.75"
+			starting_mark_level="Mark1"
+			mark_level_scale_style="Guardians"
+			description="AI已驯服这只愤怒长者。当它或它的猎物受到伤害时，会变得更强。"
+			speed="AboveAverage2"
+			draw_in_galaxy_view="false"
+            science_to_grant_on_death="0"
+            eligible_for_hacks="None"
+            description_appender_type="∅"
+			multiplier_to_all_healths="0.1" damage_multiplier_to_all_weapons="0.3"
+            ship_class_name="∅"
+            >
+        <data_extension name="DLC3"
+            necromancer_resource_granter_dll="∅"
+            necromancer_resource_granter_type="∅"
+            immune_to_necromancy="false"
+            name_for_elderling_transformation="∅"
+            />
+        <ai_ship_group_membership name="ElderlingGuardians" weight="100"/>
+    </entity>
+	<entity name="AICyclopeanElderling" copy_from="CyclopeanElderling" thematic_groups="Hidden"
+			display_name="AI独眼长者" display_name_for_sidebar="AI独长"
+			size_scale="9" visuals_scale_multiplier="60" gimbal_icon_size_multiplier="1.4"
+			cost_for_ai_to_purchase="1100"
+			starting_mark_level="Mark1"
+			mark_level_scale_style="Guardians"
+			description="AI已驯服这只独眼长者。它发射的光束可以绕过护盾。"
+			speed="AboveAverage1"
+			draw_in_galaxy_view="false"
+            science_to_grant_on_death="0"
+            eligible_for_hacks="None"
+            description_appender_type="∅"
+			multiplier_to_all_healths="0.1" damage_multiplier_to_all_weapons="0.3"
+            ship_class_name="∅"
+            >
+        <data_extension name="DLC3"
+            necromancer_resource_granter_dll="∅"
+            necromancer_resource_granter_type="∅"
+            immune_to_necromancy="false"
+            name_for_elderling_transformation="∅"
+            />
+        <ai_ship_group_membership name="ElderlingGuardians" weight="100"/>
+    </entity>
+	<entity name="AIAccursedElderling" copy_from="AccursedElderling" thematic_groups="Hidden"
+			display_name="AI受诅长者" display_name_for_sidebar="AI诅长"
+			size_scale="9" visuals_scale_multiplier="60" gimbal_icon_size_multiplier="1.4"
+			cost_for_ai_to_purchase="1650"
+			starting_mark_level="Mark1"
+			mark_level_scale_style="Guardians"
+			description="AI已驯服这只受诅长者。它能使巨大的舰船瘫痪，并将伤害反射回来源。"
+			speed="Normal2"
+			draw_in_galaxy_view="false"
+            science_to_grant_on_death="0"
+            eligible_for_hacks="None"
+            description_appender_type="∅"
+			multiplier_to_all_healths="0.02" damage_multiplier_to_all_weapons="0.02"
+            ship_class_name="∅"
+            >
+        <data_extension name="DLC3"
+            necromancer_resource_granter_dll="∅"
+            necromancer_resource_granter_type="∅"
+            immune_to_necromancy="false"
+            name_for_elderling_transformation="∅"
+            />
+      <ai_ship_group_membership name="ElderlingGuardians" weight="100"/>
+    </entity>
+	
+
+	
+	<!--Dire Guardian Tier -->	
+	<entity name="AIDecadentElderling" copy_from="DecadentElderling" thematic_groups="Hidden"
+            display_name="AI堕落长者" special_entity_type="AIDireGuardian" display_name_for_sidebar="AI堕长"
+			starting_mark_level="Mark7"
+			description="AI已驯服这只堕落长者。它会将舰船拉向自己并吞噬，在此过程中恢复生命值。"
+			draw_in_galaxy_view="true"
+            science_to_grant_on_death="0"
+            eligible_for_hacks="None"
+            description_appender_type="∅"
+			hull_points="900000" shield_points="450000"
+			cost_for_ai_to_purchase="12500"
+            ship_class_name="∅"
+            >
+        <data_extension name="DLC3"
+            necromancer_resource_granter_dll="∅"
+            necromancer_resource_granter_type="∅"
+            immune_to_necromancy="false"
+            name_for_elderling_transformation="∅"
+            />
+        <ai_ship_group_membership name="ElderlingDireGuardians" weight="100"/>
+		<system name="WT"
+				knockback_to_ships_mass_tx_less_than="5" />
+		<system name="WJ"
+				devour_mass_lower_than="5" />
+    </entity>
+    <entity name="AIEnviousElderling" copy_from="EnviousElderling" thematic_groups="Hidden"
+            display_name="AI嫉妒长者" special_entity_type="AIDireGuardian" display_name_for_sidebar="AI妒长"
+			starting_mark_level="Mark7"
+			description="AI已驯服这只嫉妒长者。它拥有先进的牵引光束，可以束缚与其自身大小相当的舰船。"
+			draw_in_galaxy_view="true"
+            science_to_grant_on_death="0"
+            eligible_for_hacks="None"
+            description_appender_type="∅"
+			hull_points="750000" shield_points="600000"
+			cost_for_ai_to_purchase="13750"
+            ship_class_name="∅"
+            >
+        <data_extension name="DLC3"
+            necromancer_resource_granter_dll="∅"
+            necromancer_resource_granter_type="∅"
+            immune_to_necromancy="false"
+            name_for_elderling_transformation="∅"
+            />
+        <ai_ship_group_membership name="ElderlingDireGuardians" weight="100"/>
+    </entity>
+
+    <entity name="AIBlasphemousElderling" copy_from="BlasphemousElderling" thematic_groups="Hidden"
+            display_name="AI亵渎长者" display_name_for_sidebar="AI亵长"
+			starting_mark_level="Mark7" special_entity_type="AIDireGuardian" strength_multiplier="2"
+			description="AI已驯服这只亵渎长者。它会将五道光束集中在一点，对印记等级低于自身的舰船造成更多伤害。"
+			draw_in_galaxy_view="true"
+            science_to_grant_on_death="0"
+			eligible_for_hacks="None"
+            description_appender_type="∅"
+			multiplier_to_all_healths="0.15" damage_multiplier_to_all_weapons="0.2"
+            ship_class_name="∅"
+            >
+        <data_extension name="DLC3"
+            necromancer_resource_granter_dll="∅"
+            necromancer_resource_granter_type="∅"
+            immune_to_necromancy="false"
+            name_for_elderling_transformation="∅"
+            />
+        <ai_ship_group_membership name="ElderlingDireGuardians" weight="25"/>
+    </entity>
+
+
+	<!--Exo Leaders -->
+    <entity name="AIPlagueswarmElderling" copy_from="PlagueswarmElderling" thematic_groups="Hidden"
+            display_name="AI 疫潮长者" display_name_for_sidebar="AI 疫长者"
+			tags="BecomesNecromancyMummy" special_entity_type="LoneGolem"
+			starting_mark_level="Mark7"
+			description="人工智能已驯服这只疫潮长者。它会召唤环绕自身的疫源体，这些疫源体在造成伤害时会生成病毒潮。"
+			draw_in_galaxy_view="true"
+            science_to_grant_on_death="0"
+            eligible_for_hacks="None"
+            description_appender_type="∅"
+			multiplier_to_all_healths="0.35" damage_multiplier_to_all_weapons="0.35"
+            ship_class_name="AIExoElderling"
+            >
+        <data_extension name="DLC3"
+            necromancer_resource_granter_dll="∅"
+            necromancer_resource_granter_type="∅"
+            immune_to_necromancy="false"
+            name_for_elderling_transformation="∅"
+            />
+        <ai_ship_group_membership name="ElderlingExoLeaders" weight="100"/>
+    </entity>
+
+    <entity name="AIDrakeElderling" copy_from="DrakeElderling" thematic_groups="Hidden"
+            display_name="AI 冥河幼龙长者" display_name_for_sidebar="AI 幼龙长者"
+			tags="BecomesNecromancyMummy" special_entity_type="LoneGolem"
+			starting_mark_level="Mark7" 
+			description="人工智能已驯服这只冥河幼龙长者。它会喷火……还有火球。"
+			draw_in_galaxy_view="true"
+            science_to_grant_on_death="0"
+            eligible_for_hacks="None"
+            description_appender_type="∅"
+			multiplier_to_all_healths="0.35" damage_multiplier_to_all_weapons="0.35"
+            ship_class_name="AIExoElderling"
+            >
+        <data_extension name="DLC3"
+            necromancer_resource_granter_dll="∅"
+            necromancer_resource_granter_type="∅"
+            immune_to_necromancy="false"
+            name_for_elderling_transformation="∅"
+            />
+        <ai_ship_group_membership name="ElderlingExoLeaders" weight="100"/>
+    </entity>
+
+    <entity name="AIEldritchElderling" copy_from="EldritchElderling" thematic_groups="Hidden"
+            display_name="AI 邪异长者" display_name_for_sidebar="AI 邪长者"
+            tags="BecomesNecromancyMummy" special_entity_type="LoneGolem"
+			cost_for_ai_to_purchase="55000"
+			starting_mark_level="Markless" 
+			description="人工智能已驯服这只邪异长者。它拥有诡异且强大的力量。"
+			draw_in_galaxy_view="true"
+            science_to_grant_on_death="0"
+            eligible_for_hacks="None"
+            description_appender_type="∅"
+            aip_on_death="0"
+			multiplier_to_all_healths="0.1" damage_multiplier_to_all_weapons="0.15"
+            ship_class_name="AIExoElderling"
+            >
+        <data_extension name="DLC3"
+            necromancer_resource_one_to_grant_on_death="0"
+            necromancer_resource_one_to_grant_on_death_per_mark="0"
+            immune_to_necromancy="false"
+            name_for_elderling_transformation="∅"
+            />
+        <ai_ship_group_membership name="ElderlingExoLeaders" weight="25"/>
+    </entity>
+
+</root>

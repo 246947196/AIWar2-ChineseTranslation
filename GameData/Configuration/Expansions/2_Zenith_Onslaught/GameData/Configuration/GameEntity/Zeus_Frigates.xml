@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+<!-- Minelayer Frigate. Ambush frigate that produces temporary mines and has a pull attack to bring enemies within activation range.
+		Ideally, this and variants have a 'mine' overlay-->
+ <entity name="MinelayerFrigate" required_expansion_list="2_Zenith_Onslaught"
+            thematic_groups="Frigate"
+			special_entity_type="Frigate" gimbal_icon_size_multiplier="1.25"
+			visuals="Assets/_DLC2/General/MinelayerFrigate/MinelayerFrigate.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships1/Starship" icon_overlay="Overlays1/Starship_Minelayer"
+			size_scale="5"
+			visuals_scale_multiplier="14" lod_distance_overrides="100,400,15000"
+			category="Ship"
+			y_offset_of_icon="15"
+			collision_priority="500"
+			display_name="布雷护卫舰"
+			display_name_for_sidebar="布雷FFM"
+			description="制造陷阱的护卫舰，主武器威力一般，但能制造强大的地雷，对爆炸范围内的所有目标造成伤害。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Medium,Ambush"
+			cost_for_ai_to_purchase="1600"	strength_multiplier="1.2"		
+			hull_points="130000" shield_points="65000" speed="AboveAverage3"
+			metal_cost="150000" energy_consumption="12500"
+			armor_mm="85" engine_gx="16" albedo="0.4" mass_tx="5"
+			damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.20"
+			voice_group="Starship"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+      priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+      >
+    <fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="100" cap="6"/>
+    <fleet_membership name="FrigatesWithSupport" ship_cap_group="Frigate" weight="100" cap="6"/>
+	<fleet_membership name="SniperMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+	<fleet_membership name="UnusualMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<system name="R5" display_name="激光脉冲"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1250" range="Normal1" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="true"
+				shot_type_data="LaserPulse_DeepBlue"				
+				>
+		</system>
+		<system name="L" display_name="部署近距雷场"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="5" range="Normal1" shot_speed="Slow" rate_of_fire="Low" fires_salvos_sequentially="true" 				
+				shot_type_data="DroneProximityMinefield"
+				shots_per_salvo="1" 
+				>
+		</system>
+		 <system name="WM" display_name="引爆"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1" range="AlmostNone" seek_range="Normal1" shot_speed="Instant" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+				shot_type_data="MeleeInvisible" added_target_evaluator="Melee"
+				system_is_hidden_for_ui="true"				
+				>	
+		</system>
+  </entity>
+  
+ <!--Heavy Minelayer Frigate. Has tractor mines and frigate has deathgrip bonus. Strongest direct damage dealer of the variants-->
+
+<entity name="HeavyMinelayerFrigate"	copy_from="MinelayerFrigate"
+        display_name="重型布雷护卫舰" icon_name="Ships1/Starship_Heavy" icon_overlay="Overlays1/Starship_Minelayer"
+			display_name_for_sidebar="重型布雷FFH"
+			
+			description="耐用且速度较慢的护卫舰。擅长制造牵引敌人的锚雷，使敌人更容易受到护卫舰主武器的攻击。"
+			tech_upgrades_that_benefit_me="Heavy,Ambush"
+			strength_multiplier="1"	
+			hull_points="165000" shield_points="82500" speed="Normal1"
+			armor_mm="120" metal_cost="120000"
+			damage_taken_cannot_be_more_than_this_percentage_of_max_health="1"
+			>
+			<fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="100" cap="9"/>
+			<fleet_membership name="FrigatesWithSupport" ship_cap_group="Frigate" weight="100" cap="9"/>
+			<fleet_membership name="SniperMix" ship_cap_group="Frigate" weight="100" cap="9"/>
+			<fleet_membership name="UnusualMix" ship_cap_group="Frigate" weight="100" cap="9"/>
+			<system name="R5" damage_per_shot="650" range="Small5" shots_per_salvo="10" rate_of_fire="SlightlyLow"
+				multiplier_damage_to_tractored_unit="4"			
+				>
+			</system>
+			<system name="L"  range="Small5"			
+				shot_type_data="DroneAnchorMinefield"
+				>
+			</system>
+			<system name="L2" display_name="部署标枪锚雷"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="5" range="Normal1" shot_speed="Slow" rate_of_fire="VeryLow" fires_salvos_sequentially="true" 				
+				shot_type_data="DZAnchor"
+				shots_per_salvo="1" 
+				>
+		</system>
+</entity>	
+
+<!-- Light Minelayer Frigate. Has unstable gravity-generator mines and frigate has enginestun weapon and bonus to slow units. -->
+<entity name="LightMinelayerFrigate" copy_from="MinelayerFrigate" display_name="轻型布雷护卫舰"
+			display_name_for_sidebar="轻型布雷FFL" icon_name="Ships1/Starship_Light" icon_overlay="Overlays1/Starship_Minelayer"
+			
+			description="脆弱但灵活的护卫舰，拥有多种减速敌人的手段。其主武器带有引擎眩晕效果，且对减速状态的敌人造成额外伤害，该护卫舰的专长是在战斗中部署不稳定的重力发生器。"
+			tech_upgrades_that_benefit_me="Light,Ambush"
+			strength_multiplier="2"	
+			hull_points="80000" shield_points="40000" speed="High"
+			armor_mm="50" metal_cost="120000"
+			damage_taken_cannot_be_more_than_this_percentage_of_max_health="1"			
+			>
+			<fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="100" cap="9"/>
+			<fleet_membership name="FrigatesWithSupport" ship_cap_group="Frigate" weight="100" cap="9"/>
+			<fleet_membership name="SniperMix" ship_cap_group="Frigate" weight="100" cap="9"/>
+			<fleet_membership name="UnusualMix" ship_cap_group="Frigate" weight="100" cap="9"/>
+			<system name="R5" damage_per_shot="200" range="AboveAverage4" shots_per_salvo="10" rate_of_fire="Misery" fires_salvos_sequentially="false"
+				base_engine_stun_per_shot="5" 
+                engine_stun_to_engine_gx_less_than="22"
+				max_engine_stun_seconds="5" added_target_evaluator="EngineDamageAsMinorPart"
+				> 
+				<outgoing_damage_modifier based_on="CurrentSpeedIfMoving" comparison_type="AtMost" compared_to="400" multiplier="3" />
+			</system>
+		<system name="L" display_name="部署不稳定重力发生器"  
+				rate_of_fire="VeryLow" range="AboveAverage4"			
+				shot_type_data="DroneGravityMinefield"
+				shots_per_salvo="1" 
+				>
+		</system>
+		 <system name="WM" 	max_mark_level_to_function="0"	
+				>	
+		</system>
+		<incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="4400" multiplier="0.25" />
+</entity>
+
+</root>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <setting_subcategory parent="Extended" name="VictoryConditions" display_name="胜利条件" color="46f0ff"
+      description="与触发游戏胜利画面相关的设置。"/>
+	  
+  <setting_subcategory parent="Extended" name="AIP" display_name="AI进度" color="46f0ff"
+      description="与AI进度及其增长相关的设置。"/>
+	  
+  <setting_subcategory parent="Extended" name="Resources_Hacking" display_name="黑客点数" color="46f0ff"
+      description="与黑客攻击及其点数获取相关的设置。"/>
+	  
+  <setting_subcategory parent="Extended" name="Resources_Science" display_name="科学点数" color="46f0ff"
+      description="与科学研究及其点数获取相关的设置。"/>
+
+  <setting_subcategory parent="Extended" name="Resources_Fuel" display_name="燃料" color="46f0ff"
+      description="与燃料相关的设置。
+
+这些设置主要是为了使平衡更容易，它们可能会在将来被更改或移除。"/>
+
+  <setting_subcategory parent="Extended" name="EnergyAndMetal" display_name="能源和金属" color="46f0ff"
+      description="调整整体金属和能源稀缺性。"/>
+    
+</root>

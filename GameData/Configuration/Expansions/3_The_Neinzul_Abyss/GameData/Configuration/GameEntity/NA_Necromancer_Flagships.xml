@@ -1,0 +1,916 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+    <!-- Necromancer Flagships. Each Necropolis starts with a Base Flagship, but you can change the Flagship form by getting Blueprints.
+    Some (weaker) Blueprints are available from Rifts, but the interesting/powerful flagships are only obtained from fighting Elderlings. -->
+    <entity name="NecromancerBaseFlagship" tags="NecromancerFlagship,ShowsOnNormalDisplayMode,NecroGuardPostConverter,NecroBaseFlagship" 
+	    thematic_groups="Neinzul,Necromancer"
+	    special_entity_type="MobileCustomCityFedFleetFlagship"
+            draw_in_galaxy_view="true" shows_on_galaxy_map_for_explored_planets="true" always_visible_to_players="true"
+            visuals="Assets/_DLC3/Necromancer/_FlagshipBase/Dark/NecromancerFlagship.prefab" visuals_bundle="exp3_neinzul_abyss"
+	    icon_name="Ships4/NecromancerFlagship" icon_overlay="Overlays2/NecromancerFlagship_Base" gimbal_icon_size_multiplier="1.2"
+	    y_offset_of_icon="15"
+	    voice_group="Silent"
+	    category="Ship"
+	    size_scale="16"
+	    visuals_scale_multiplier="60" y_offset_of_ship_in_visual_space="-30"
+	    collision_priority="10000"
+	    display_name="旗舰"
+            display_name_for_sidebar="旗舰"
+	    description="这是最低等级的死灵法师旗舰。"
+	    starting_mark_level="Mark1"
+	    cost_for_ai_to_purchase="500" strength_multiplier="1.1"
+	    hull_points="600000" shield_points="300000" speed="High"
+	    armor_mm="180" albedo="0.7" engine_gx="22" mass_tx="7"
+	    metal_cost="500000" energy_consumption="40000"	
+	    ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+	    special_factory_type="Necromancer Necropolis"
+	    eligible_for_hacks="TransformNecromancerFlagship" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" tech_upgrade_that_is_used_for_my_direct_science="Direct_NecromancerFlagships"	is_upgradeable_by_direct_science="true"
+            priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="MidFavoriteToy"
+	    multiplier_to_all_costs="1" multiplier_to_all_healths="1" damage_multiplier_to_all_weapons="1" 
+		assist_range="Normal1"
+		firing_delay_for_transported_ships="6"
+		is_scrapping_by_player_disallowed="true"
+		module_points_from_start="4" module_points_added_per_mark_level="1"
+            >
+    <metal_flow purpose="SelfConstruction" throughput="2500"/>
+    <metal_flow purpose="ClaimingNeutrals" throughput="500" increase_per_mark_level="200"/>
+    <metal_flow purpose="RepairingHullsOfFriendlies" throughput="250" increase_per_mark_level="250"/>
+    <metal_flow purpose="RepairingShieldsOfFriendlies" throughput="250" increase_per_mark_level="250"/>
+    <metal_flow purpose="RepairingEnginesOfFriendlies" throughput="250" increase_per_mark_level="250"/>
+    <metal_flow purpose="AssistSelfConstruction" throughput="200" increase_per_mark_level="200"/>
+    <metal_flow purpose="AssistFactoryConstruction" throughput="200" increase_per_mark_level="200"/>	
+    <system name="R1" display_name="消耗微型火箭"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="1200" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Low" 
+			shots_per_salvo="16" fires_salvos_sequentially="false"
+			shot_type_data="NanocaustCurvedSicklyGreenShot"
+			added_target_evaluator="NecromancyAsPrimary"
+			>
+			<outgoing_damage_modifier based_on="CurrentHullPercentage" comparison_type="AtMost" compared_to="50" multiplier="2" />
+		    <outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="HullOnly" comparison_type="LessThan" compared_to="1" multiplier="1.5" />
+			<death_effect_damage type="Necromancy" tier_name="Major"/>
+    </system>	
+	<system name="M1" unique_module_index="1" display_name="强化船体"
+	  module_point_cost="2" module_screen_sort_group="10"
+	  category="Passive"
+	  module_stat_adjuster="HullHealth" module_stat_adjuster_multiplier="1.5"
+		>
+	</system>
+	<system name="M2" unique_module_index="2" display_name="强化护盾"
+	  module_point_cost="2" module_screen_sort_group="20"
+	  category="Passive"
+	  module_stat_adjuster="ShieldHealth" module_stat_adjuster_multiplier="1.5"
+		>
+	</system>
+	<system name="FF" unique_module_index="3" display_name="力场"
+	  module_point_cost="4" module_screen_sort_group="30" modular_sidebar_name_prefix="Pr" modular_full_name_prefix="Protector "
+	  category="Passive"
+	  module_stat_adjuster="BubbleForcefield" module_stat_adjuster_multiplier="1" module_stat_adjuster_radius="4600"
+		>
+	</system>
+	<system name="TB" unique_module_index="4" display_name="牵引光束"
+	  module_point_cost="2" module_screen_sort_group="40" modular_sidebar_name_prefix="E" modular_full_name_prefix="Ensnaring "
+	  category="Passive"
+	  tractor_range="AboveAverage1" tractor_count="22" tractor_count_added_per_mark="5" tractor_hits_albedo_less_than="0.5" tractor_hits_engine_gx_less_than="14"
+		>
+	</system>
+	<system name="GC" unique_module_index="5" display_name="引力核心"
+	  module_point_cost="4" module_screen_sort_group="50" modular_sidebar_name_prefix="G" modular_full_name_prefix="Gravitic "
+	  category="Passive"
+	  base_gravity_speed_multiplier="0.7" gravity_hits_engine_gx_less_than="14" gravity_range="AboveAverage3"
+		>
+	</system>
+	<system name="DC" unique_module_index="6" display_name="反隐形装置"
+	  module_point_cost="1" module_screen_sort_group="60" 
+	  category="Passive" 
+	  tachyon_points="50" tachyon_range="AboveAverage3" tachyon_points_added_per_mark="10" tachyon_hits_albedo_less_than="0.75"
+		>
+	</system>
+	<system name="CL" unique_module_index="7" display_name="隐形装置"
+	  module_point_cost="4" module_screen_sort_group="70" modular_sidebar_name_prefix="CL" modular_full_name_prefix="Cloaked "
+	  category="Passive"
+	  cloaking_points="2000" cloaking_points_added_per_mark="1000"
+		>
+	</system>
+	<system name="W2" unique_module_index="8" display_name="反护盾等离子束"
+	  module_point_cost="1" module_screen_sort_group="80" modular_sidebar_name_prefix="P"
+	  category="Weapon" firing_timing="OnlyInRange"
+	  damage_per_shot="500" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+	  shot_type_data="PlasmaBolt"
+		>
+	<outgoing_damage_modifier applies_to="AllShields" based_on="MaxBubbleForcefield" comparison_type="GreaterThan" compared_to="10000" multiplier="10" />
+	<death_effect_damage type="Necromancy" tier_name="Minor"/>
+	</system>	
+	<system name="W3" unique_module_index="9" display_name="聚变炸弹"
+	  module_point_cost="3" module_screen_sort_group="80" modular_sidebar_name_prefix="F"
+	  category="Weapon" firing_timing="OnlyInRange"
+	  damage_per_shot="5000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+	  shot_type_data="FusionBolt"
+	  base_percent_damage_bypasses_personal_shields="1"
+		>
+	<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="3" />
+	<death_effect_damage type="Necromancy" tier_name="Minor"/>
+	</system>	
+	<system name="M3" unique_module_index="10" display_name="增强船体"
+	  module_point_cost="1" module_screen_sort_group="10"
+	  category="Passive"
+	  module_stat_adjuster="HullHealth" module_stat_adjuster_multiplier="1.25"
+		>
+	</system>
+	<system name="M4" unique_module_index="11" display_name="增强护盾"
+	  module_point_cost="1" module_screen_sort_group="20"
+	  category="Passive"
+	  module_stat_adjuster="ShieldHealth" module_stat_adjuster_multiplier="1.25"
+		>
+	</system>
+	<ship_class_data can_be_zombified_and_similar="false" can_be_fleet_supercharged="false" />
+   </entity>
+
+    <!-- Upgrades available from Rifts -->
+
+    <entity name="NecromancerBlasterFlagship" tags="NecromancerFlagship,ShowsOnNormalDisplayMode,NecroGuardPostConverter"
+	        thematic_groups="Neinzul,Necromancer"
+            draw_in_galaxy_view="true" shows_on_galaxy_map_for_explored_planets="true" always_visible_to_players="true"
+	    special_entity_type="MobileCustomCityFedFleetFlagship"
+	    icon_name="Ships4/NecromancerFlagship" icon_overlay="Overlays2/NecromancerFlagship_Blaster"	 gimbal_icon_size_multiplier="1.2"
+	    y_offset_of_icon="15"
+	    voice_group="Silent"
+	    category="Ship"
+            visuals="Assets/_DLC3/Necromancer/_FlagshipBase/Blaster/NecromancerBlasterFlagship.prefab" visuals_bundle="exp3_neinzul_abyss"
+	    size_scale="16"
+	    visuals_scale_multiplier="60" y_offset_of_ship_in_visual_space="-30"
+	    collision_priority="10000"
+	    display_name="恐怖旗舰"
+            display_name_for_sidebar="恐舰"
+	    description="这艘死灵法师旗舰拥有两种麻痹武器，一种针对小型舰船，另一种针对中型舰船。"
+	    starting_mark_level="Mark1"
+	    cost_for_ai_to_purchase="500" strength_multiplier="1.1"
+	    hull_points="800000" shield_points="400000" speed="High"
+	    armor_mm="180" albedo="0.7" engine_gx="22" mass_tx="7"
+	    metal_cost="750000" energy_consumption="40000"	
+	    ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+	    special_factory_type="Necromancer Necropolis"
+	    eligible_for_hacks="TransformNecromancerFlagship" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" tech_upgrade_that_is_used_for_my_direct_science="Direct_NecromancerFlagships" is_upgradeable_by_direct_science="true"
+        priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="MidFavoriteToy"
+	    multiplier_to_all_costs="1" multiplier_to_all_healths="1" damage_multiplier_to_all_weapons="1"
+		assist_range="Normal1"
+		firing_delay_for_transported_ships="6"
+		is_scrapping_by_player_disallowed="true"
+		module_points_from_start="4" module_points_added_per_mark_level="1"		
+            >
+    <metal_flow purpose="SelfConstruction" throughput="2500"/>
+	<metal_flow purpose="ClaimingNeutrals" throughput="500" increase_per_mark_level="200"/>
+    <metal_flow purpose="RepairingHullsOfFriendlies" throughput="250" increase_per_mark_level="250"/>
+    <metal_flow purpose="RepairingShieldsOfFriendlies" throughput="250" increase_per_mark_level="250"/>
+    <metal_flow purpose="RepairingEnginesOfFriendlies" throughput="250" increase_per_mark_level="250"/>
+    <metal_flow purpose="AssistSelfConstruction" throughput="200" increase_per_mark_level="200"/>
+    <metal_flow purpose="AssistFactoryConstruction" throughput="200" increase_per_mark_level="200"/>
+    <system name="WX" display_name="麻痹死灵加农炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1250" range="High2" shot_speed="VeryFast" rate_of_fire="Misery"
+				shots_per_salvo="20" added_shots_per_salvo_per_mark="5" fires_salvos_sequentially="false"
+				shot_type_data="ParalysisProngedShot_Blue"
+				base_paralysis_seconds_per_shot="4" paralysis_to_ships_mass_tx_less_than="4"
+				>
+    </system>
+	<system name="R8" display_name="麻痹死灵爆破炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="2000" range="High2" shot_speed="VeryFast" rate_of_fire="Misery" fires_salvos_sequentially="true"
+				shot_type_data="Sabot" added_shots_per_salvo_per_mark="1"
+				base_paralysis_seconds_per_shot="4" paralysis_to_ships_mass_tx_less_than="6"				
+				>
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="5" />
+				<death_effect_damage type="Necromancy" tier_name="Major"/>
+    </system>
+	<system name="M1" unique_module_index="1" display_name="强化船体"
+	  module_point_cost="2" module_screen_sort_group="10"
+	  category="Passive"
+	  module_stat_adjuster="HullHealth" module_stat_adjuster_multiplier="1.5"
+		>
+	</system>
+	<system name="M2" unique_module_index="2" display_name="强化护盾"
+	  module_point_cost="2" module_screen_sort_group="20"
+	  category="Passive"
+	  module_stat_adjuster="ShieldHealth" module_stat_adjuster_multiplier="1.5"
+		>
+	</system>
+	<system name="FF" unique_module_index="3" display_name="力场"
+	  module_point_cost="4" module_screen_sort_group="30" modular_sidebar_name_prefix="Pr" modular_full_name_prefix="Protector "
+	  category="Passive"
+	  module_stat_adjuster="BubbleForcefield" module_stat_adjuster_multiplier="1" module_stat_adjuster_radius="4600"
+		>
+	</system>
+	<system name="TB" unique_module_index="4" display_name="牵引光束"
+	  module_point_cost="2" module_screen_sort_group="40" modular_sidebar_name_prefix="E" modular_full_name_prefix="Ensnaring "
+	  category="Passive"
+	  tractor_range="AboveAverage1" tractor_count="22" tractor_count_added_per_mark="5" tractor_hits_albedo_less_than="0.5" tractor_hits_engine_gx_less_than="14"
+		>
+	</system>
+	<system name="GC" unique_module_index="5" display_name="引力核心"
+	  module_point_cost="4" module_screen_sort_group="50" modular_sidebar_name_prefix="G" modular_full_name_prefix="Gravitic "
+	  category="Passive"
+	  base_gravity_speed_multiplier="0.7" gravity_hits_engine_gx_less_than="14" gravity_range="AboveAverage3"
+		>
+	</system>
+	<system name="DC" unique_module_index="6" display_name="反隐形装置"
+	  module_point_cost="1" module_screen_sort_group="60" 
+	  category="Passive" 
+	  tachyon_points="50" tachyon_range="AboveAverage3" tachyon_points_added_per_mark="10" tachyon_hits_albedo_less_than="0.75"
+		>
+	</system>
+	<system name="CL" unique_module_index="7" display_name="隐形装置"
+	  module_point_cost="4" module_screen_sort_group="70" modular_sidebar_name_prefix="CL" modular_full_name_prefix="Cloaked "
+	  category="Passive"
+	  cloaking_points="2000" cloaking_points_added_per_mark="1000"
+		>
+	</system>
+	<system name="W2" unique_module_index="8" display_name="反护盾等离子束"
+	  module_point_cost="1" module_screen_sort_group="80" modular_sidebar_name_prefix="P"
+	  category="Weapon" firing_timing="OnlyInRange"
+	  damage_per_shot="500" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+	  shot_type_data="PlasmaBolt"
+		>
+	<outgoing_damage_modifier applies_to="AllShields" based_on="MaxBubbleForcefield" comparison_type="GreaterThan" compared_to="10000" multiplier="10" />
+	<death_effect_damage type="Necromancy" tier_name="Minor"/>
+	</system>	
+	<system name="W3" unique_module_index="9" display_name="聚变炸弹"
+	  module_point_cost="3" module_screen_sort_group="80" modular_sidebar_name_prefix="F"
+	  category="Weapon" firing_timing="OnlyInRange"
+	  damage_per_shot="5000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+	  shot_type_data="FusionBolt"
+	  base_percent_damage_bypasses_personal_shields="1"
+		>
+	<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="3" />
+	<death_effect_damage type="Necromancy" tier_name="Minor"/>
+	</system>	
+		<system name="M3" unique_module_index="10" display_name="增强船体"
+	  module_point_cost="1" module_screen_sort_group="10"
+	  category="Passive"
+	  module_stat_adjuster="HullHealth" module_stat_adjuster_multiplier="1.25"
+		>
+	</system>
+	<system name="M4" unique_module_index="11" display_name="增强护盾"
+	  module_point_cost="1" module_screen_sort_group="20"
+	  category="Passive"
+	  module_stat_adjuster="ShieldHealth" module_stat_adjuster_multiplier="1.25"
+		>
+	</system>
+	<ship_class_data can_be_zombified_and_similar="false" can_be_fleet_supercharged="false" />
+    </entity>
+	
+	
+    <entity name="NecromancerTankFlagship" tags="NecromancerFlagship,ShowsOnNormalDisplayMode,NecroGuardPostConverter"
+	        thematic_groups="Neinzul,Necromancer"
+            special_entity_type="MobileCustomCityFedFleetFlagship"
+            draw_in_galaxy_view="true" shows_on_galaxy_map_for_explored_planets="true" always_visible_to_players="true"
+            icon_name="Ships4/NecromancerFlagship" icon_overlay="Overlays2/NecromancerFlagship_Tank" gimbal_icon_size_multiplier="1.2"
+            y_offset_of_icon="15"
+            voice_group="Silent"
+            category="Ship"
+            visuals="Assets/_DLC3/Necromancer/NecromancerFlagshipTank/NecromancerFlagshipTank.prefab" visuals_bundle="exp3_neinzul_abyss"
+	          size_scale="24"
+	          visuals_scale_multiplier="60" y_offset_of_ship_in_visual_space="-1"
+            collision_priority="10000"
+            display_name="坚不可摧旗舰"
+            display_name_for_sidebar="坚舰"
+            description="这艘死灵法师旗舰拥有极高的耐久度，并且配备一门强大的加农炮。它经过强化，能够抵抗重创，并且在非战斗状态下能够自我修复。"
+            starting_mark_level="Mark1"
+            cost_for_ai_to_purchase="500" strength_multiplier="1.1"
+            hull_points="1000000" shield_points="500000" speed="High"
+            armor_mm="180" albedo="0.7" engine_gx="22" mass_tx="7"
+            metal_cost="750000" energy_consumption="40000"
+			seconds_to_fully_regenerate_hull="120"
+			damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.1"
+            ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+            special_factory_type="Necromancer Necropolis"
+            eligible_for_hacks="TransformNecromancerFlagship" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" tech_upgrade_that_is_used_for_my_direct_science="Direct_NecromancerFlagships" is_upgradeable_by_direct_science="true"
+            priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="MidFavoriteToy"
+            multiplier_to_all_costs="1" multiplier_to_all_healths="1" damage_multiplier_to_all_weapons="1"
+			assist_range="Normal1"
+			firing_delay_for_transported_ships="6"
+			is_scrapping_by_player_disallowed="true"
+			module_points_from_start="4" module_points_added_per_mark_level="1"
+		  >
+    <metal_flow purpose="SelfConstruction" throughput="2500"/>
+	<metal_flow purpose="ClaimingNeutrals" throughput="500" increase_per_mark_level="200"/>
+    <metal_flow purpose="RepairingHullsOfFriendlies" throughput="250" increase_per_mark_level="250"/>
+    <metal_flow purpose="RepairingShieldsOfFriendlies" throughput="250" increase_per_mark_level="250"/>
+    <metal_flow purpose="RepairingEnginesOfFriendlies" throughput="250" increase_per_mark_level="250"/>
+    <metal_flow purpose="AssistSelfConstruction" throughput="200" increase_per_mark_level="200"/>
+    <metal_flow purpose="AssistFactoryConstruction" throughput="200" increase_per_mark_level="200"/>
+	<system name="WX" display_name="死灵加农炮"
+            category="Weapon" firing_timing="OnlyInRange"
+            damage_per_shot="20000" range="Normal3" shot_speed="Normal" rate_of_fire="Misery" fires_salvos_sequentially="true"
+            shot_type_data="ElegantCurl"
+            added_target_evaluator="NecromancyAsPrimary"
+            >
+            <death_effect_damage type="Necromancy" tier_name="Major"/>
+        </system>
+	<system name="M1" unique_module_index="1" display_name="强化船体"
+	  module_point_cost="2" module_screen_sort_group="10"
+	  category="Passive"
+	  module_stat_adjuster="HullHealth" module_stat_adjuster_multiplier="1.5"
+		>
+	</system>
+	<system name="M2" unique_module_index="2" display_name="强化护盾"
+	  module_point_cost="2" module_screen_sort_group="20"
+	  category="Passive"
+	  module_stat_adjuster="ShieldHealth" module_stat_adjuster_multiplier="1.5"
+		>
+	</system>
+	<system name="FF" unique_module_index="3" display_name="力场"
+	  module_point_cost="4" module_screen_sort_group="30" modular_sidebar_name_prefix="Pr" modular_full_name_prefix="Protector "
+	  category="Passive"
+	  module_stat_adjuster="BubbleForcefield" module_stat_adjuster_multiplier="1" module_stat_adjuster_radius="4600"
+		>
+	</system>
+	<system name="TB" unique_module_index="4" display_name="牵引光束"
+	  module_point_cost="2" module_screen_sort_group="40" modular_sidebar_name_prefix="E" modular_full_name_prefix="Ensnaring "
+	  category="Passive"
+	  tractor_range="AboveAverage1" tractor_count="22" tractor_count_added_per_mark="5" tractor_hits_albedo_less_than="0.5" tractor_hits_engine_gx_less_than="14"
+		>
+	</system>
+	<system name="GC" unique_module_index="5" display_name="引力核心"
+	  module_point_cost="4" module_screen_sort_group="50" modular_sidebar_name_prefix="G" modular_full_name_prefix="Gravitic "
+	  category="Passive"
+	  base_gravity_speed_multiplier="0.7" gravity_hits_engine_gx_less_than="14" gravity_range="AboveAverage3"
+		>
+	</system>
+	<system name="DC" unique_module_index="6" display_name="反隐形装置"
+	  module_point_cost="1" module_screen_sort_group="60" 
+	  category="Passive" 
+	  tachyon_points="50" tachyon_range="AboveAverage3" tachyon_points_added_per_mark="10" tachyon_hits_albedo_less_than="0.75"
+		>
+	</system>
+	<system name="CL" unique_module_index="7" display_name="隐形装置"
+	  module_point_cost="4" module_screen_sort_group="70" modular_sidebar_name_prefix="CL" modular_full_name_prefix="Cloaked "
+	  category="Passive"
+	  cloaking_points="2000" cloaking_points_added_per_mark="1000"
+		>
+	</system>
+	<system name="W2" unique_module_index="8" display_name="反护盾等离子束"
+	  module_point_cost="1" module_screen_sort_group="80" modular_sidebar_name_prefix="P"
+	  category="Weapon" firing_timing="OnlyInRange"
+	  damage_per_shot="500" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+	  shot_type_data="PlasmaBolt"
+		>
+	<outgoing_damage_modifier applies_to="AllShields" based_on="MaxBubbleForcefield" comparison_type="GreaterThan" compared_to="10000" multiplier="10" />
+	<death_effect_damage type="Necromancy" tier_name="Minor"/>
+	</system>	
+	<system name="W3" unique_module_index="9" display_name="聚变炸弹"
+	  module_point_cost="3" module_screen_sort_group="80" modular_sidebar_name_prefix="F"
+	  category="Weapon" firing_timing="OnlyInRange"
+	  damage_per_shot="5000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+	  shot_type_data="FusionBolt"
+	  base_percent_damage_bypasses_personal_shields="1"
+		>
+	<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="3" />
+	<death_effect_damage type="Necromancy" tier_name="Minor"/>
+	</system>	
+		<system name="M3" unique_module_index="10" display_name="增强船体"
+	  module_point_cost="1" module_screen_sort_group="10"
+	  category="Passive"
+	  module_stat_adjuster="HullHealth" module_stat_adjuster_multiplier="1.25"
+		>
+	</system>
+	<system name="M4" unique_module_index="11" display_name="增强护盾"
+	  module_point_cost="1" module_screen_sort_group="20"
+	  category="Passive"
+	  module_stat_adjuster="ShieldHealth" module_stat_adjuster_multiplier="1.25"
+		>
+	</system>
+	<ship_class_data can_be_zombified_and_similar="false" can_be_fleet_supercharged="false" />
+    </entity>
+
+ 
+    <entity name="NecromancerStarburstFlagship" tags="NecromancerFlagship,ShowsOnNormalDisplayMode,NecroGuardPostConverter"
+	    thematic_groups="Neinzul,Necromancer"    
+        special_entity_type="MobileCustomCityFedFleetFlagship"
+        draw_in_galaxy_view="true" shows_on_galaxy_map_for_explored_planets="true" always_visible_to_players="true"
+        visuals="Assets/_DLC3/Necromancer/NecromancerFlagshipStarburst/NecromancerFlagshipStarburst.prefab" visuals_bundle="exp3_neinzul_abyss"
+        icon_name="Ships4/NecromancerFlagship" icon_overlay="Overlays2/NecromancerFlagship_Harrowing" gimbal_icon_size_multiplier="1.2"
+        y_offset_of_icon="15"
+        voice_group="Silent"
+        category="Ship"
+        size_scale="20"
+        visuals_scale_multiplier="70"
+        collision_priority="10000"
+        display_name="星爆旗舰"
+        display_name_for_sidebar="星爆舰"
+        description="这艘死灵法师旗舰配备一门星爆光束武器，能够向所有方向发射。"
+        starting_mark_level="Mark1"
+        cost_for_ai_to_purchase="500" strength_multiplier="1.1"
+        hull_points="800000" shield_points="400000" speed="High"
+	    armor_mm="180" albedo="0.7" engine_gx="22" mass_tx="7"
+	    metal_cost="750000" energy_consumption="40000"
+        ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+        ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+        special_factory_type="Necromancer Necropolis"
+        eligible_for_hacks="TransformNecromancerFlagship" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" tech_upgrade_that_is_used_for_my_direct_science="Direct_NecromancerFlagships" is_upgradeable_by_direct_science="true"
+        priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="MidFavoriteToy"
+        multiplier_to_all_costs="1" multiplier_to_all_healths="1" damage_multiplier_to_all_weapons="1"
+        assist_range="Normal1"
+		firing_delay_for_transported_ships="6"
+		is_scrapping_by_player_disallowed="true"
+		module_points_from_start="4" module_points_added_per_mark_level="1"
+		>
+        <metal_flow purpose="SelfConstruction" throughput="2500"/>
+		<metal_flow purpose="ClaimingNeutrals" throughput="500" increase_per_mark_level="200"/>
+		<metal_flow purpose="RepairingHullsOfFriendlies" throughput="250" increase_per_mark_level="250"/>
+		<metal_flow purpose="RepairingShieldsOfFriendlies" throughput="250" increase_per_mark_level="250"/>
+		<metal_flow purpose="RepairingEnginesOfFriendlies" throughput="250" increase_per_mark_level="250"/>
+		<metal_flow purpose="AssistSelfConstruction" throughput="200" increase_per_mark_level="200"/>
+		<metal_flow purpose="AssistFactoryConstruction" throughput="200" increase_per_mark_level="200"/>
+        <system name="B2" display_name="星爆"
+            category="Weapon" firing_timing="OnlyInRange"
+            damage_per_shot="2000" range="AboveAverage2" shot_speed="Normal" rate_of_fire="Devourer"
+            shot_type_data="HeavyBeamInvisible"
+            beam_length_multiplier="1.3"
+            hits_all_intersecting_targets="true"
+            shots_detonate_immediately="true"
+            maximum_number_of_targets_hit_per_shot="15"
+            number_beams_to_fire="20" beam_weapon_visual_style="Lightning_Purple"
+            degrees_offset_per_beam="18"
+            seconds_for_beam_to_rotate_fully="30"
+            use_alternate_rate_of_fire_after_x_shots="10" alternate_rate_of_fire="PeriodicActivation"  use_alternate_rate_of_fire_for_x_shots_before_reverting="1"
+            added_target_evaluator="NecromancyAsPrimary"
+            >
+            <death_effect_damage type="Necromancy" tier_name="Major"/>
+        </system>
+		<system name="M1" unique_module_index="1" display_name="强化船体"
+	  module_point_cost="2" module_screen_sort_group="10"
+	  category="Passive"
+	  module_stat_adjuster="HullHealth" module_stat_adjuster_multiplier="1.5"
+		>
+	</system>
+	<system name="M2" unique_module_index="2" display_name="强化护盾"
+	  module_point_cost="2" module_screen_sort_group="20"
+	  category="Passive"
+	  module_stat_adjuster="ShieldHealth" module_stat_adjuster_multiplier="1.5"
+		>
+	</system>
+	<system name="FF" unique_module_index="3" display_name="力场"
+	  module_point_cost="4" module_screen_sort_group="30" modular_sidebar_name_prefix="Pr" modular_full_name_prefix="Protector "
+	  category="Passive"
+	  module_stat_adjuster="BubbleForcefield" module_stat_adjuster_multiplier="1" module_stat_adjuster_radius="4600"
+		>
+	</system>
+	<system name="TB" unique_module_index="4" display_name="牵引光束"
+	  module_point_cost="2" module_screen_sort_group="40" modular_sidebar_name_prefix="E" modular_full_name_prefix="Ensnaring "
+	  category="Passive"
+	  tractor_range="AboveAverage1" tractor_count="22" tractor_count_added_per_mark="5" tractor_hits_albedo_less_than="0.5" tractor_hits_engine_gx_less_than="14"
+		>
+	</system>
+	<system name="GC" unique_module_index="5" display_name="引力核心"
+	  module_point_cost="4" module_screen_sort_group="50" modular_sidebar_name_prefix="G" modular_full_name_prefix="Gravitic "
+	  category="Passive"
+	  base_gravity_speed_multiplier="0.7" gravity_hits_engine_gx_less_than="14" gravity_range="AboveAverage3"
+		>
+	</system>
+	<system name="DC" unique_module_index="6" display_name="反隐形装置"
+	  module_point_cost="1" module_screen_sort_group="60" 
+	  category="Passive" 
+	  tachyon_points="50" tachyon_range="AboveAverage3" tachyon_points_added_per_mark="10" tachyon_hits_albedo_less_than="0.75"
+		>
+	</system>
+	<system name="CL" unique_module_index="7" display_name="隐形装置"
+	  module_point_cost="4" module_screen_sort_group="70" modular_sidebar_name_prefix="CL" modular_full_name_prefix="Cloaked "
+	  category="Passive"
+	  cloaking_points="2000" cloaking_points_added_per_mark="1000"
+		>
+	</system>
+	<system name="W2" unique_module_index="8" display_name="反护盾等离子束"
+	  module_point_cost="1" module_screen_sort_group="80" modular_sidebar_name_prefix="P"
+	  category="Weapon" firing_timing="OnlyInRange"
+	  damage_per_shot="500" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+	  shot_type_data="PlasmaBolt"
+		>
+	<outgoing_damage_modifier applies_to="AllShields" based_on="MaxBubbleForcefield" comparison_type="GreaterThan" compared_to="10000" multiplier="10" />
+	<death_effect_damage type="Necromancy" tier_name="Minor"/>
+	</system>	
+	<system name="W3" unique_module_index="9" display_name="聚变炸弹"
+	  module_point_cost="3" module_screen_sort_group="80" modular_sidebar_name_prefix="F"
+	  category="Weapon" firing_timing="OnlyInRange"
+	  damage_per_shot="5000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+	  shot_type_data="FusionBolt"
+	  base_percent_damage_bypasses_personal_shields="1"
+		>
+	<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="3" />
+	<death_effect_damage type="Necromancy" tier_name="Minor"/>
+	</system>	
+		<system name="M3" unique_module_index="10" display_name="增强船体"
+	  module_point_cost="1" module_screen_sort_group="10"
+	  category="Passive"
+	  module_stat_adjuster="HullHealth" module_stat_adjuster_multiplier="1.25"
+		>
+	</system>
+	<system name="M4" unique_module_index="11" display_name="增强护盾"
+	  module_point_cost="1" module_screen_sort_group="20"
+	  category="Passive"
+	  module_stat_adjuster="ShieldHealth" module_stat_adjuster_multiplier="1.25"
+		>
+	</system>
+		<ship_class_data can_be_zombified_and_similar="false" can_be_fleet_supercharged="false" />
+    </entity>
+
+    <!-- From Elderlings -->
+	<!-- Low Tier Elderlings-->
+    <entity name="NecromancerWrathfulFlagship" copy_from="NecromancerBaseFlagship" thematic_groups="Neinzul,Necromancer"
+	    tags="NecromancerFlagship,ShowsOnNormalDisplayMode,NecroGuardPostConverter"
+	    special_entity_type="MobileCustomCityFedFleetFlagship"
+		visuals="Assets/_DLC3/Necromancer/NecromancerFlagshipWrathful/NecromancerFlagshipWrathful.prefab" visuals_bundle="exp3_neinzul_abyss"
+		size_scale="24" visuals_scale_multiplier="65" y_offset_of_ship_in_visual_space="100" y_offset_of_icon="140"
+	    display_name="愤怒旗舰"
+            icon_name="Ships4/NecromancerFlagship" icon_overlay="Overlays2/NecromancerFlagship_Wrathful"
+            display_name_for_sidebar="愤舰"
+	    hull_points="1000000" shield_points="500000" metal_cost="1000000"
+		description="这艘死灵法师旗舰自身或目标受到的伤害越多，造成的伤害就越高；它是通过献祭一名愤怒的古灵获得的。"
+            >
+    <system name="R1" range="Normal3" max_mark_level_to_function="0" />
+	<system name="R9" display_name="愤怒弹幕"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1500" range="AboveAverage1" shot_speed="VeryFast" rate_of_fire="Misery"
+				shots_per_salvo="10" fires_salvos_sequentially="false"
+				shot_type_data="EnergyWave"	
+				>
+			<outgoing_damage_modifier based_on="MyHullPercentageMissing" comparison_type="MultiplesOf" compared_to="20" multiplier="1" />
+			<outgoing_damage_modifier based_on="TargetHullPercentageMissing" comparison_type="MultiplesOf" compared_to="20" multiplier="1" />				
+			<death_effect_damage type="Necromancy" tier_name="Major"/>
+	</system>
+    </entity>
+
+    <entity name="NecromancerSlothfulFlagship" copy_from="NecromancerBaseFlagship"
+			tags="NecromancerFlagship,ShowsOnNormalDisplayMode,NecroGuardPostConverter"
+	        display_name="怠惰旗舰"
+            icon_name="Ships4/NecromancerFlagship" icon_overlay="Overlays2/NecromancerFlagship_Slothful"
+			visuals="Assets/_DLC3/Necromancer/NecromancerFlagshipSlothful/NecromancerFlagshipSlothful.prefab" visuals_bundle="exp3_neinzul_abyss"
+			size_scale="24" visuals_scale_multiplier="60" y_offset_of_ship_in_visual_space="120" y_offset_of_icon="140"
+            display_name_for_sidebar="惰舰"
+	        hull_points="1000000" shield_points="500000" metal_cost="1000000"
+			description="这艘死灵法师旗舰进行齐射攻击，对引擎强大或移动迅速的舰船造成额外伤害；它是通过献祭一名怠惰的古灵获得的。"
+            >
+		<system name="R1" range="Normal3" max_mark_level_to_function="0" />
+		<system name="V1" display_name="怠惰齐射"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1000" range="High2" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+				shot_type_data="EngineDisruptingShell"	 shots_per_salvo="30" added_shots_per_salvo_per_mark="5"
+				use_alternate_rate_of_fire_after_x_shots="10" alternate_rate_of_fire="Sloth"  use_alternate_rate_of_fire_for_x_shots_before_reverting="1"
+				>
+			<outgoing_damage_modifier based_on="engine_gx" comparison_type="AtLeast" compared_to="14" multiplier="5" />
+			<outgoing_damage_modifier based_on="CurrentSpeedIfMoving" comparison_type="MultiplesOf" compared_to="200" multiplier="1" max_multiplier="10" />
+			<death_effect_damage type="Necromancy" tier_name="Major"/>
+		</system>  
+    </entity>
+	
+		<entity name="NecromancerCyclopeanFlagship" copy_from="NecromancerBaseFlagship" thematic_groups="Neinzul,Necromancer"
+	    tags="NecromancerFlagship,ShowsOnNormalDisplayMode,NecroGuardPostConverter"
+		special_entity_type="MobileCustomCityFedFleetFlagship"
+		visuals="Assets/_DLC3/Necromancer/NecromancerFlagshipCyclopean/NecromancerFlagshipCyclopean.prefab" visuals_bundle="exp3_neinzul_abyss"
+		size_scale="24" visuals_scale_multiplier="60" y_offset_of_ship_in_visual_space="100" y_offset_of_icon="140"
+	    display_name="独眼旗舰"
+            icon_name="Ships4/NecromancerFlagship" icon_overlay="Overlays2/NecromancerFlagship_Cyclopean"
+            display_name_for_sidebar="独舰"
+	    hull_points="1100000" shield_points="550000" metal_cost="1000000"
+		description="这艘死灵法师旗舰拥有一道聚变线圈光束，可绕过大多数护盾并攻击所有相交的敌人；它是通过献祭一名独眼古灵获得的。"
+            >
+    	<system name="R1" range="Normal3" max_mark_level_to_function="0" />
+		<system name="R9" display_name="死灵法师独眼光束"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="16000" range="AboveAverage4" shot_speed="Normal" rate_of_fire="Normal"
+			shot_type_data="HeavyBeamInvisible"
+			beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_Purple"
+			hits_all_intersecting_targets="true"				
+			shots_detonate_immediately="true"
+			is_coilbeam="true"	
+			base_percent_damage_bypasses_personal_shields="0.65" 
+			>				
+		<death_effect_damage type="Necromancy" tier_name="Major"/>
+		</system>
+    </entity>
+	
+	
+	
+	
+	
+<!-- Medium Tier Elderling Flagships -->	
+	<entity name="NecromancerDecadentFlagship" copy_from="NecromancerBaseFlagship" thematic_groups="Neinzul,Necromancer"
+	    tags="NecromancerFlagship,ShowsOnNormalDisplayMode,NecroGuardPostConverter"
+		special_entity_type="MobileCustomCityFedFleetFlagship"
+		visuals="Assets/_DLC3/Necromancer/NecromancerFlagshipDecadent/NecromancerFlagshipDecadent.prefab" visuals_bundle="exp3_neinzul_abyss"
+		size_scale="24" visuals_scale_multiplier="60" y_offset_of_ship_in_visual_space="100" y_offset_of_icon="140"
+	    display_name="堕落旗舰"
+        icon_name="Ships4/NecromancerFlagship" icon_overlay="Overlays2/NecromancerFlagship_Decadent"
+        display_name_for_sidebar="堕舰"
+	    hull_points="1600000" shield_points="500000" metal_cost="1500000"
+		description="这艘死灵法师旗舰会将舰船拉向自身并吞噬它们；它是通过献祭一名堕落的古灵获得的。"
+            >
+    	<system name="R1" range="Normal3" max_mark_level_to_function="0" />
+		<system name="WT" display_name="堕落鱼钩"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1000" range="AboveAverage4" shot_speed="Normal" rate_of_fire="Low" 
+				shots_per_salvo="50" fires_salvos_sequentially="false"
+				base_engine_stun_per_shot="16" added_engine_stun_per_shot_per_mark="4" engine_stun_to_engine_gx_less_than="14"
+				max_engine_stun_seconds="40" added_target_evaluator="EngineDamageAsMajorPrimary"
+				base_knockback_per_shot="-3000" added_knockback_per_shot_per_mark="-1000" knockback_to_ships_mass_tx_less_than="5.5"
+				shot_type_data="HeavyBeamInvisible" beam_length_multiplier="1" beam_weapon_visual_style="Laser_Purple"
+				>	
+		<death_effect_damage type="Necromancy" tier_name="Major"/>
+		</system>
+		<system name="WJ" display_name="吞噬"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1000" range="Small5" shot_speed="Normal" rate_of_fire="VeryLow" fires_salvos_sequentially="true"
+				shots_per_salvo="10"
+				shot_type_data="MeleeInvisible"
+				health_change_by_max_health_divided_by_this_per_attack="10"
+				can_devour="true"
+				devour_mass_lower_than="5.1"
+				>    
+		<death_effect_damage type="Necromancy" tier_name="Major"/>
+		</system>
+    </entity>
+	
+		
+	<entity name="NecromancerAccursedFlagship" copy_from="NecromancerBaseFlagship" thematic_groups="Neinzul,Necromancer"
+			tags="NecromancerFlagship,ShowsOnNormalDisplayMode,NecroGuardPostConverter"
+			special_entity_type="MobileCustomCityFedFleetFlagship"
+			visuals="Assets/_DLC3/Necromancer/NecromancerFlagshipAccursed/NecromancerFlagshipAccursed.prefab" visuals_bundle="exp3_neinzul_abyss"
+			size_scale="24" visuals_scale_multiplier="60" y_offset_of_ship_in_visual_space="30" y_offset_of_icon="140"
+			display_name="受诅旗舰"
+            icon_name="Ships4/NecromancerFlagship" icon_overlay="Overlays2/NecromancerFlagship_Accursed"	
+            display_name_for_sidebar="诅舰"
+			hull_points="1300000" shield_points="650000" metal_cost="1500000"
+			description="这艘死灵法师旗舰能对单个目标造成巨大伤害，绕过大多数护盾并造成瘫痪，且敌人每次攻击时都会受到伤害；它是通过献祭一名受诅的古灵获得的。"
+			returns_this_percentage_of_damage_if_damaged_by_enemy_attack="0.15"	
+		   >
+    	<system name="R1" range="Normal3" max_mark_level_to_function="0" />
+		<system name="W1" display_name="致残诅咒"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="166666" range="AboveAverage4" shot_speed="Slow" rate_of_fire="Normal" fires_salvos_sequentially="true"
+				shot_type_data="MassDriver"
+				base_paralysis_seconds_per_shot="4" paralysis_to_ships_mass_tx_less_than="6"		
+				base_percent_damage_bypasses_personal_shields="0.5"	
+				>
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="1.2" />
+		<death_effect_damage type="Necromancy" tier_name="Major"/>
+		</system>
+    </entity>
+	
+	<!--Does not get the Tractor module so this needs its own entity -->
+	<entity name="NecromancerEnviousFlagship"  thematic_groups="Neinzul,Necromancer"
+			tags="NecromancerFlagship,ShowsOnNormalDisplayMode,NecroGuardPostConverter"
+			special_entity_type="MobileCustomCityFedFleetFlagship"
+			draw_in_galaxy_view="true" shows_on_galaxy_map_for_explored_planets="true" always_visible_to_players="true"
+            visuals="Assets/_DLC3/Necromancer/NecromancerFlagshipEnvious/NecromancerFlagshipEnvious.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships4/NecromancerFlagship" icon_overlay="Overlays2/NecromancerFlagship_Envious" gimbal_icon_size_multiplier="1.2" y_offset_of_icon="140"
+				voice_group="Silent"
+				category="Ship"
+				size_scale="24"
+				visuals_scale_multiplier="50" y_offset_of_ship_in_visual_space="30"
+				collision_priority="10000"
+			display_name="嫉妒旗舰"
+            display_name_for_sidebar="嫉舰"
+           	starting_mark_level="Mark1"
+			cost_for_ai_to_purchase="500" strength_multiplier="1.1"
+			armor_mm="180" albedo="0.7" engine_gx="22" mass_tx="7"
+			metal_cost="1500000" energy_consumption="40000"
+			hull_points="1100000" shield_points="1100000" speed="High"
+			description="这艘死灵法师旗舰拥有先进的牵引光束，可牵制与其自身大小相当的舰船；它是通过献祭一名嫉妒的古灵获得的。"
+			returns_this_percentage_of_damage_if_damaged_by_enemy_attack="0.15"	
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			special_factory_type="Necromancer Necropolis"
+			eligible_for_hacks="TransformNecromancerFlagship" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" tech_upgrade_that_is_used_for_my_direct_science="Direct_NecromancerFlagships"	is_upgradeable_by_direct_science="true"
+				priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="MidFavoriteToy"
+			multiplier_to_all_costs="1" multiplier_to_all_healths="1" damage_multiplier_to_all_weapons="1" 
+			assist_range="Normal1"
+			firing_delay_for_transported_ships="6"
+			is_scrapping_by_player_disallowed="true"
+			module_points_from_start="4" module_points_added_per_mark_level="1"
+			>
+		<system name="W1" display_name="嫉妒能量波"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="2000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="SlightlyLow"
+				shots_per_salvo="50" fires_salvos_sequentially="false"
+				multiplier_damage_to_tractored_unit="5"
+				shot_type_data="ParasiteCurvedPinkShot"			
+				>
+		<death_effect_damage type="Necromancy" tier_name="Major"/>
+		</system>
+		<system name="RJ" display_name="牵引光束"
+					category="Passive" 
+					tractor_range="AboveAverage1" tractor_count="50" tractor_count_added_per_mark="50"  tractor_hits_albedo_less_than="0.7" tractor_hits_engine_gx_less_than="19" tractor_hits_mass_less_than="7"
+					>
+		</system>
+		<system name="M1" unique_module_index="1" display_name="强化船体"
+		  module_point_cost="2" module_screen_sort_group="10"
+		  category="Passive"
+		  module_stat_adjuster="HullHealth" module_stat_adjuster_multiplier="1.5"
+			>
+		</system>
+		<system name="M2" unique_module_index="2" display_name="强化护盾"
+		  module_point_cost="2" module_screen_sort_group="20"
+		  category="Passive"
+		  module_stat_adjuster="ShieldHealth" module_stat_adjuster_multiplier="1.5"
+			>
+		</system>
+		<system name="FF" unique_module_index="3" display_name="力场"
+		  module_point_cost="4" module_screen_sort_group="30" modular_sidebar_name_prefix="Pr" modular_full_name_prefix="Protector "
+		  category="Passive"
+		  module_stat_adjuster="BubbleForcefield" module_stat_adjuster_multiplier="1" module_stat_adjuster_radius="4600"
+			>
+		</system>
+		<system name="GC" unique_module_index="4" display_name="引力核心"
+		  module_point_cost="4" module_screen_sort_group="50" modular_sidebar_name_prefix="G" modular_full_name_prefix="Gravitic "
+		  category="Passive"
+		  base_gravity_speed_multiplier="0.7" gravity_hits_engine_gx_less_than="14" gravity_range="AboveAverage3"
+			>
+		</system>
+		<system name="DC" unique_module_index="5" display_name="反隐形装置"
+		  module_point_cost="1" module_screen_sort_group="60" 
+		  category="Passive" 
+		  tachyon_points="50" tachyon_range="AboveAverage3" tachyon_points_added_per_mark="10" tachyon_hits_albedo_less_than="0.75"
+			>
+		</system>
+		<system name="CL" unique_module_index="6" display_name="隐形装置"
+		  module_point_cost="4" module_screen_sort_group="70" modular_sidebar_name_prefix="CL" modular_full_name_prefix="Cloaked "
+		  category="Passive"
+		  cloaking_points="2000" cloaking_points_added_per_mark="1000"
+			>
+		</system>
+		<system name="W2" unique_module_index="7" display_name="反护盾等离子束"
+		  module_point_cost="3" module_screen_sort_group="80" modular_sidebar_name_prefix="P"
+		  category="Weapon" firing_timing="OnlyInRange"
+		  damage_per_shot="2500" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+		  shot_type_data="PlasmaBolt"
+			>
+		<outgoing_damage_modifier applies_to="AllShields" based_on="MaxBubbleForcefield" comparison_type="GreaterThan" compared_to="10000" multiplier="10" />
+		<death_effect_damage type="Necromancy" tier_name="Minor"/>
+		</system>	
+		<system name="W3" unique_module_index="8" display_name="聚变炸弹"
+		  module_point_cost="3" module_screen_sort_group="80" modular_sidebar_name_prefix="F"
+		  category="Weapon" firing_timing="OnlyInRange"
+		  damage_per_shot="5000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+		  shot_type_data="FusionBolt"
+		  base_percent_damage_bypasses_personal_shields="1"
+			>
+		<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="3" />
+		<death_effect_damage type="Necromancy" tier_name="Minor"/>
+		</system>
+		<system name="M3" unique_module_index="10" display_name="增强船体"
+		  module_point_cost="1" module_screen_sort_group="10"
+		  category="Passive"
+		  module_stat_adjuster="HullHealth" module_stat_adjuster_multiplier="1.25"
+			>
+		</system>
+		<system name="M4" unique_module_index="11" display_name="增强护盾"
+		  module_point_cost="1" module_screen_sort_group="20"
+		  category="Passive"
+		  module_stat_adjuster="ShieldHealth" module_stat_adjuster_multiplier="1.25"
+			>
+		</system>
+		<ship_class_data can_be_zombified_and_similar="false" can_be_fleet_supercharged="false" />	
+    </entity>
+	
+	
+<!-- Elite Tier Elderling Flagships -->		
+      <entity name="NecromancerBlasphemousFlagship" copy_from="NecromancerBaseFlagship"
+	    tags="NecromancerFlagship,ShowsOnNormalDisplayMode,NecroGuardPostConverter"			
+			visuals="Assets/_DLC3/Necromancer/NecromancerFlagshipBlasphemous/NecromancerFlagshipBlasphemous.prefab" visuals_bundle="exp3_neinzul_abyss"
+			size_scale="24" visuals_scale_multiplier="60" y_offset_of_ship_in_visual_space="80" y_offset_of_icon="140"
+	        display_name="渎神旗舰"
+            icon_name="Ships4/NecromancerFlagship" icon_overlay="Overlays2/NecromancerFlagship_Blasphemous"
+            display_name_for_sidebar="渎舰"
+	        hull_points="2000000" shield_points="1000000" metal_cost="3000000"
+			description="这艘死灵法师旗舰是通过献祭一名渎神长者获得的。它配备一门专门针对大型目标的爆破炮。在对付大量舰船时，它可以将六道光束聚焦于一点，攻击相交的目标，并根据旗舰比目标高出的等级造成伤害。"		
+            >
+    <system name="R1" range="Normal3" max_mark_level_to_function="0" />
+	<system name="R9" display_name="渎神光束"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="4000" range="AboveAverage5" shot_speed="Normal" rate_of_fire="FairlyLow"
+				shot_type_data="HeavyBeamInvisible"
+				hits_all_intersecting_targets="true"
+				shots_detonate_immediately="true"
+				maximum_number_of_targets_hit_per_shot="40"
+				number_beams_to_fire="5" beam_weapon_visual_style="Laser_PurpleBright"
+				distance_from_center_for_beam_emission="50"  
+				ion_percentage_per_mark_level_lower="0.05" ion_damage_to_albedo_less_than="0.7"
+				only_targets_mobile_units="true"
+				>
+				<death_effect_damage type="Necromancy" tier_name="Major"/>
+		</system>
+		<system name="WS" display_name="渎神爆破炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="10000" range="AboveAverage5" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="true"
+				shot_type_data="Sabot"				
+				>
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="5" />
+				<death_effect_damage type="Necromancy" tier_name="Major"/>
+		</system>		
+    </entity>
+	
+	
+	<entity name="NecromancerPlagueswarmFlagship" copy_from="NecromancerBaseFlagship"
+	    tags="NecromancerFlagship,ShowsOnNormalDisplayMode,NecroGuardPostConverter"
+	        display_name="瘟疫群旗舰"			
+			visuals="Assets/_DLC3/Necromancer/NecromancerFlagshipPlagueswarm/NecromancerFlagshipPlagueswarm.prefab" visuals_bundle="exp3_neinzul_abyss"
+			size_scale="24" visuals_scale_multiplier="60" y_offset_of_ship_in_visual_space="160" y_offset_of_icon="140"
+            icon_name="Ships4/NecromancerFlagship" icon_overlay="Overlays2/NecromancerFlagship_Plagueswarm"
+            display_name_for_sidebar="瘟舰"
+	        hull_points="1000000" shield_points="2000000" metal_cost="3000000"
+			description="这艘死灵法师旗舰使用腐蚀性射线进行攻击，造成持续伤害。它周围环绕着一群瘟疫宿主，这些瘟疫宿主会吸取范围内的目标，形成病毒蜂拥者。这艘旗舰是通过献祭一名瘟疫群长者获得的。"
+			fleet_design_template_i_use_for_drones="NeinzulViralSwarmerDrones"
+			drone_starting_behavior_type="Attacker_Full"	
+			build_points_per_second="10"
+			build_point_cost_for_per_second_construction="20"
+			personal_ship_cap_for_per_second_build_point_construction="18"
+			tag_to_spawn_from_for_build_point_for_per_second_construction="PlagueHost"			
+            >
+    <system name="R1" range="Normal3" max_mark_level_to_function="0" />
+	<system name="W1" display_name="邪术死灵射线"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="500" range="Normal3" shot_speed="Fast" rate_of_fire="High" 
+			shots_per_salvo="32" fires_salvos_sequentially="true"
+			shot_type_data="NecroticRay"
+			added_target_evaluator="NecromancyAsPrimary" 
+			base_percent_damage_bypasses_personal_shields="1"
+			corrosion_damage="4500"
+			corrosion_damage_added_per_mark="4000"
+			>			
+			<death_effect_damage type="Necromancy" tier_name="Major"/>
+    </system>			
+    </entity>
+	
+
+    <entity name="NecromancerDrakeFlagship" copy_from="NecromancerBaseFlagship"
+	    tags="NecromancerFlagship,ShowsOnNormalDisplayMode,NecroGuardPostConverter"
+        visuals="Assets/_DLC3/Necromancer/NecromancerFlagshipDrake/NecromancerFlagshipDrake.prefab" visuals_bundle="exp3_neinzul_abyss"
+        size_scale="28"
+        visuals_scale_multiplier="65" y_offset_of_ship_in_visual_space="160" y_offset_of_icon="140"
+	        display_name="冥河幼龙旗舰"
+            icon_name="Ships4/NecromancerFlagship" icon_overlay="Overlays2/NecromancerFlagship_Drake"
+            display_name_for_sidebar="冥舰"
+	        hull_points="1500000" shield_points="1500000" metal_cost="3000000"
+			description="这艘死灵法师旗舰能喷射火焰……还有火球；它是通过献祭一名冥河幼龙长者获得的。"	
+			build_points_per_second="5"
+			build_point_cost_for_per_second_construction="10"
+			personal_ship_cap_for_per_second_build_point_construction="50"
+			tag_to_spawn_from_for_build_point_for_per_second_construction="Fireball"		
+            >
+    <system name="R1" range="Normal3" max_mark_level_to_function="0" />
+	<system name="V9" display_name="火焰波"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="5000" range="Normal3" shot_speed="Fast" rate_of_fire="Devourer" 
+			shots_per_salvo="32" fires_salvos_sequentially="true"
+			shot_type_data="FlameWave"
+			added_target_evaluator="NecromancyAsPrimary"
+			>
+			<death_effect_damage type="Necromancy" tier_name="Major"/>
+    </system>			
+    </entity>
+
+ <!--Transcendant Flagship -->
+	<entity name="NecromancerTranscendantFlagship" copy_from="NecromancerBaseFlagship"
+	    tags="NecromancerFlagship,ShowsOnNormalDisplayMode,NecroGuardPostConverter"
+        visuals="Assets/_DLC3/Necromancer/NecromancerFlagshipDragon/NecromancerFlagshipDragon.prefab" visuals_bundle="exp3_neinzul_abyss"
+        size_scale="30"
+        visuals_scale_multiplier="65" y_offset_of_ship_in_visual_space="60" y_offset_of_icon="140"
+	        display_name="超凡旗舰"
+            icon_name="Ships4/NecromancerFlagship" icon_overlay="Overlays2/NecromancerFlagship_Drake"
+            display_name_for_sidebar="超舰"
+	        hull_points="3000000" shield_points="2500000" metal_cost="5000000"
+			description="这艘死灵法师旗舰会发射毁灭性的光束扇面，为其二级“超新星”武器充能；它是通过击杀一名超凡长者获得的。"
+	        max_number_of_weapon_points="10"
+			>
+		<system name="R1" range="Normal3" max_mark_level_to_function="0" />
+		<system name="V9" display_name="黄色太阳耀斑"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="5000" range="High1" shot_speed="Normal" rate_of_fire="High"
+			shot_type_data="HeavyBeamInvisible"
+			hits_all_intersecting_targets="true"				
+			shots_detonate_immediately="true"
+			maximum_number_of_targets_hit_per_shot="30"
+			number_beams_to_fire="20" beam_weapon_visual_style="Laser_PurpleBright"
+			degrees_offset_per_beam="1"	
+			number_of_weapon_points_to_gain_on_firing="1" 		
+			>
+			<death_effect_damage type="Necromancy" tier_name="Major"/>
+		</system>	
+		<system name="SN" display_name="超新星"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="10000" range="Planetary" shot_speed="Normal" rate_of_fire="Sloth" fires_salvos_sequentially="true"
+			shot_type_data="LightningExplosionAOEShot"
+			area_of_effect_size="999999"				
+			shots_detonate_immediately="true"
+			maximum_number_of_targets_hit_per_shot="500"
+			additional_damage_modifier_per_weapon_point="1" number_of_weapon_points_to_consume_on_firing="10"
+			>
+			<outgoing_damage_modifier based_on="Albedo" comparison_type="AtLeast" compared_to="0.7" multiplier="0.01" />
+			<death_effect_damage type="Necromancy" tier_name="Major"/>
+		</system>	
+	</entity>
+	
+</root>

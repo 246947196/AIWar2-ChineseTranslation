@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+<!-- These units are Venators; they are AI-only units deliberately intended to counter specific player unit compositions.
+     These use ReactiveShipLines -->
+
+<!-- Note that the damage modifiers are hard coded to the values in Fleet::GetMarkLevelShipLines -->
+<!-- Armor related venators -->
+  <entity name="RagingVenator"
+      thematic_groups="AI,Venator" 
+	  special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+	  visuals="Assets/_DLC3/Venators/WoefulVenator/WoefulVenator.prefab" visuals_bundle="exp3_neinzul_abyss"
+	  icon_name="Ships4/VenatorWoeful"
+	  uses_large_health_bar="true"
+	  category="Ship"
+	  size_scale="10"
+	  visuals_scale_multiplier="6"
+	  y_offset_of_icon="16"
+	  collision_priority="400"
+	  display_name="凄惨复仇者"
+	  display_name_for_sidebar="凄惨复"
+	  description="发射快速电子脉冲，对低护甲单位造成额外伤害。"
+	  blocks_enemy_claim_flows="true"
+	  voice_group="Silent"
+	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+	  cost_for_ai_to_purchase="900" strength_multiplier="1.5"			
+	  hull_points="84000" shield_points="26000" speed="AboveAverage1"
+	  metal_cost="100000" energy_consumption="7500"
+	  armor_mm="50" albedo="0.3" engine_gx="7" mass_tx="5"
+	  ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+          priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+	  >
+    <ai_ship_group_membership name="VenatorGuardians" weight="100"/>
+    <ai_ship_group_membership name="AntiLowArmorGuardians" weight="100"/>
+    <system name="R5" display_name="电子脉冲"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="250" shots_per_salvo="10" range="AboveAverage1" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="true"
+				shot_type_data="LaserPulse_RedLevel2"
+				>
+      <outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="50" multiplier="10" />
+    </system>
+  </entity>
+
+    <entity name="ChuffedVenator"
+	  thematic_groups="AI,Venator" 
+	  special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+	  visuals="Assets/_DLC3/Venators/SadisticVenator/SadisticVenator.prefab" visuals_bundle="exp3_neinzul_abyss"
+	  icon_name="Ships4/VenatorSadistic"
+	  uses_large_health_bar="true"
+	  category="Ship"
+	  size_scale="11"
+	  visuals_scale_multiplier="9"
+	  y_offset_of_icon="16"
+	  collision_priority="400"
+	  display_name="残暴复仇者"
+	  display_name_for_sidebar="残暴复"
+	  description="发射快速电子脉冲，对高护甲单位造成额外伤害。"
+	  blocks_enemy_claim_flows="true"
+	  voice_group="Silent"
+	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+	  cost_for_ai_to_purchase="900" strength_multiplier="1.5"			
+	  hull_points="84000" shield_points="26000" speed="AboveAverage1"
+	  metal_cost="100000" energy_consumption="7500"
+	  armor_mm="50" albedo="0.3" engine_gx="7" mass_tx="5"
+	  ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+          priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			>
+      <ai_ship_group_membership name="AntiHighArmorGuardians" weight="100"/>
+      <ai_ship_group_membership name="VenatorGuardians" weight="100"/>
+    <system name="R5" display_name="电子脉冲"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="2500" range="AboveAverage1" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="true"
+				shot_type_data="LaserPulse_RedLevel2"
+				>
+      <outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtLeast" compared_to="120" multiplier="10" />
+    </system>
+  </entity>
+
+  <!-- Spire related venators -->
+  <entity name="NadirVenator"
+          thematic_groups="AI,Venator"   
+          special_entity_type="AIDireGuardian"
+          tags="DireGuardian"
+	  gimbal_icon_size_multiplier="1.25"
+	  visuals="Assets/_DLC3/Venators/NadirVenator/NadirVenator.prefab" visuals_bundle="exp3_neinzul_abyss"
+	  icon_name="Ships4/VenatorNadir"
+	  uses_large_health_bar="true"
+	  category="Ship"
+	  size_scale="16"
+	  visuals_scale_multiplier="3"
+	  y_offset_of_icon="16"
+	  collision_priority="400"
+	  display_name="深渊复仇者"
+	  display_name_for_sidebar="深渊复"
+	  description="一艘灵活且耐打的舰船，专为反尖塔作战设计。该舰船拥有特殊调校的防御，可帮助偏转尖塔光束的威力，并且在接近敌人时，能对最耐打的敌舰造成巨大伤害。其针对远程攻击的吸血破坏装置有最小激活距离。"
+	  blocks_enemy_claim_flows="true"
+	  voice_group="Silent"
+	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+	  cost_for_ai_to_purchase="12000" strength_multiplier="1.5"			
+	  hull_points="550000" shield_points="250000" speed="AboveAverage6"
+	  metal_cost="100000" energy_consumption="7500"
+	  armor_mm="50" albedo="0.3" engine_gx="20" mass_tx="5"
+	  ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+          priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+          damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.05"
+	  >
+    <ai_ship_group_membership name="VenatorDireGuardians" weight="100"/>
+    <ai_ship_group_membership name="AntiSpireGuardians" weight="100"/>
+		<system name="WM" display_name="原子干扰器"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1440" range="AlmostNone" seek_range="Normal1" shot_speed="Fast" rate_of_fire="SlightlyLow" fires_salvos_sequentially="false"
+				shot_type_data="MeleeInvisible" added_target_evaluator="Melee"
+				health_change_per_damage_dealt="1"
+				>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="8" multiplier="10" />
+		</system>
+		<system name="WS" display_name="反射吸血破坏装置"
+				category="Weapon" firing_timing="WhenParentEntityHit" range="Normal1"
+				damage_per_shot="150" shot_speed="Normal" fires_salvos_sequentially="false"
+				shot_type_data="Sabot"
+				rate_of_fire="Devourer"
+				health_change_per_damage_dealt="2"
+				>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="8" multiplier="100" />
+			<outgoing_damage_modifier based_on="AttackDistance" comparison_type="LessThan" compared_to="8000" multiplier="0" />
+		</system>
+
+  </entity>
+
+  <!-- Energy related venators -->
+    <entity name="DozingVenator"
+	  thematic_groups="AI,Venator" 
+	  special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+	  visuals="Assets/_DLC3/Venators/EcstaticVenator/EcstaticVenator.prefab" visuals_bundle="exp3_neinzul_abyss"
+	  icon_name="Ships4/VenatorEcstatic"
+	  uses_large_health_bar="true"
+	  category="Ship"
+	  size_scale="11"
+	  visuals_scale_multiplier="5"
+	  y_offset_of_icon="16"
+	  collision_priority="400"
+	  display_name="狂喜复仇者"
+	  display_name_for_sidebar="狂喜复"
+	  description="发射快速电子脉冲，对高能量单位造成额外伤害。"
+	  blocks_enemy_claim_flows="true"
+	  voice_group="Silent"
+	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+	  cost_for_ai_to_purchase="900" strength_multiplier="1.5"			
+	  hull_points="84000" shield_points="26000" speed="AboveAverage1"
+	  metal_cost="100000" energy_consumption="7500"
+	  armor_mm="50" albedo="0.3" engine_gx="7" mass_tx="5"
+	  ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+          priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+	  >
+      <ai_ship_group_membership name="VenatorGuardians" weight="100"/>
+    <ai_ship_group_membership name="AntiHighEnergyGuardians" weight="100"/>
+    <system name="R5" display_name="电子脉冲"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="2500" range="AboveAverage1" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="true"
+				shot_type_data="LaserPulse_RedLevel2"
+				>
+      <outgoing_damage_modifier based_on="EnergyUsage" comparison_type="AtLeast" compared_to="7500" multiplier="10" />
+    </system>
+  </entity>
+
+  <!-- Venators against parasites -->
+
+    <entity name="DebauchedVenator"
+	  thematic_groups="AI,Venator" 
+	  special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+	  visuals="Assets/_DLC3/Venators/DebuachedVenator/DebuachedVenator.prefab" visuals_bundle="exp3_neinzul_abyss"
+	  icon_name="Ships4/VenatorDebuached"
+	  uses_large_health_bar="true"
+	  category="Ship"
+	  size_scale="11"
+	  visuals_scale_multiplier="5.5"
+	  y_offset_of_icon="16"
+	  collision_priority="400"
+	  display_name="放荡复仇者"
+	  display_name_for_sidebar="放荡复"
+	  description="这艘复仇者免疫僵尸化。"
+	  blocks_enemy_claim_flows="true"
+	  voice_group="Silent"
+	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+	  cost_for_ai_to_purchase="900" strength_multiplier="1.5"			
+	  hull_points="84000" shield_points="26000" speed="AboveAverage1"
+	  metal_cost="100000" energy_consumption="7500"
+	  armor_mm="50" albedo="0.3" engine_gx="7" mass_tx="5"
+	  ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+          priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			>
+      <ai_ship_group_membership name="AntiZombificationGuardians" weight="100"/>
+      <ai_ship_group_membership name="VenatorGuardians" weight="100"/>
+    <system name="R5" display_name="电子脉冲"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1500" shots_per_salvo="10" range="AboveAverage1" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="true"
+				shot_type_data="LaserPulse_RedLevel2"
+				>
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+  </entity>
+
+      <entity name="QuixoticVenator"
+	  thematic_groups="AI,Venator"  
+	  special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+	  visuals="Assets/_DLC3/Venators/QuixoticVenator/QuixoticVenator.prefab" visuals_bundle="exp3_neinzul_abyss"
+	  icon_name="Ships4/VenatorQuixotic"
+	  uses_large_health_bar="true"
+	  category="Ship"
+	  size_scale="11"
+	  visuals_scale_multiplier="6"
+	  y_offset_of_icon="16"
+	  collision_priority="400"
+	  display_name="古怪复仇者"
+	  display_name_for_sidebar="古怪复"
+	  description="这艘复仇者专门针对近战单位。"
+	  blocks_enemy_claim_flows="true"
+	  voice_group="Silent"
+	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+	  cost_for_ai_to_purchase="900" strength_multiplier="1.5"			
+	  hull_points="84000" shield_points="26000" speed="AboveAverage1"
+	  metal_cost="100000" energy_consumption="7500"
+	  armor_mm="50" albedo="0.3" engine_gx="7" mass_tx="5"
+	  ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+          priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			>
+        <ai_ship_group_membership name="AntiMeleeReactiveGuardians" weight="100"/>
+        <ai_ship_group_membership name="VenatorGuardians" weight="100"/>
+    <system name="R5" display_name="电子脉冲"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="10000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="true"
+				shot_type_data="LaserPulse_RedLevel2"
+				>
+    </system>
+	<system name="B8" display_name="冲击波"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1000" range="Small1" shot_speed="Instant" rate_of_fire="PeriodicActivation" fires_salvos_sequentially="true"
+				shot_type_data="ExplosiveInvisible"
+				area_of_effect_size="3200"					
+				maximum_number_of_targets_hit_per_shot="50" cloaking_percent_loss_from_firing="0.25"
+				base_knockback_per_shot="2000" added_knockback_per_shot_per_mark="500" knockback_to_ships_mass_tx_less_than="2" added_target_evaluator="CanKnockback"
+				base_engine_stun_per_shot="15" added_engine_stun_per_shot_per_mark="3" max_engine_stun_seconds="30" engine_stun_to_engine_gx_less_than="22" 
+				use_alternate_rate_of_fire_after_x_shots="1" alternate_rate_of_fire="Devourer"  use_alternate_rate_of_fire_for_x_shots_before_reverting="4"
+				>
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+  </entity>
+
+  
+      <entity name="QuaintVenator"
+	  thematic_groups="AI,Venator" 
+	  special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+	  visuals="Assets/_DLC3/Venators/QuaintVenator/QuaintVenator.prefab" visuals_bundle="exp3_neinzul_abyss"
+	  icon_name="Ships4/VenatorQuaint"
+	  uses_large_health_bar="true"
+	  category="Ship"
+	  size_scale="11"
+	  visuals_scale_multiplier="5"
+	  y_offset_of_icon="16"
+	  collision_priority="400"
+	  display_name="精致复仇者"
+	  display_name_for_sidebar="精致复"
+	  description="这艘复仇者专门针对狙击手。"
+	  blocks_enemy_claim_flows="true"
+	  voice_group="Silent"
+	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+	  cost_for_ai_to_purchase="900" strength_multiplier="1.5"			
+	  hull_points="84000" shield_points="26000" speed="AboveAverage1"
+	  metal_cost="100000" energy_consumption="7500"
+	  armor_mm="50" albedo="0.3" engine_gx="7" mass_tx="5"
+	  ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+          priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			>
+        <ai_ship_group_membership name="AntiSniperGuardians" weight="100"/>
+        <ai_ship_group_membership name="VenatorGuardians" weight="100"/>
+      <system name="R5" display_name="轨道炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="2500" range="EssentiallyInfinite" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="false"				
+				shot_type_data="ExtremeLongRangeRailgun" cloaking_percent_loss_from_firing="0.1"				
+				>
+                <outgoing_damage_modifier based_on="AttackDistance" comparison_type="AtLeast" compared_to="26000" multiplier="10" />
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="LessThan" compared_to="5" multiplier="0.5" />
+    </system>
+	<incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="8080" multiplier="0.10" />
+	<ship_class_data can_be_zombified_and_similar="false" />
+  </entity>
+
+  <entity name="TruantVenator"
+      thematic_groups="AI,Venator" 
+	  special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+	  visuals="Assets/_DLC3/Venators/TruantVenator/TruantVenator.prefab" visuals_bundle="exp3_neinzul_abyss"
+	  icon_name="Ships4/VenatorTruant"
+	  uses_large_health_bar="true"
+	  category="Ship"
+	  size_scale="10"
+	  visuals_scale_multiplier="4"
+	  y_offset_of_icon="16"
+	  collision_priority="400"
+	  display_name="逃课复仇者"
+	  display_name_for_sidebar="逃课复"
+	  description="这艘复仇者专门针对隐形单位。"
+	  blocks_enemy_claim_flows="true"
+	  voice_group="Silent"
+	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+	  cost_for_ai_to_purchase="900" strength_multiplier="1.5"			
+	  hull_points="84000" shield_points="26000" speed="AboveAverage1"
+	  metal_cost="100000" energy_consumption="7500"
+	  armor_mm="50" albedo="0.3" engine_gx="7" mass_tx="5"
+	  ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+          priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+		  >
+    <ai_ship_group_membership name="AntiCloakingGuardians" weight="100"/>
+    <ai_ship_group_membership name="AntiHighAlbedoGuardians" weight="100"/>
+    <ai_ship_group_membership name="VenatorGuardians" weight="100"/>
+    <system name="R5" display_name="电子脉冲"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="500" shots_per_salvo="5" range="AboveAverage1" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="true"
+				shot_type_data="LaserPulse_RedLevel2"
+				>
+	 <outgoing_damage_modifier based_on="Albedo" comparison_type="AtLeast" compared_to="0.7" multiplier="10" />			
+    </system>
+	 <system name="T" display_name="超光速粒子阵列"
+				category="Passive"
+				tachyon_points="150" tachyon_points_added_per_mark="25" tachyon_range="Small3" tachyon_hits_albedo_less_than="0.75"
+				>
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+  </entity>
+
+  <entity name="FoppishVenator"
+      thematic_groups="AI,Venator" 
+	  special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+	  visuals="Assets/_DLC3/Venators/FoppishVenator/FoppishVenator.prefab" visuals_bundle="exp3_neinzul_abyss"
+	  icon_name="Ships4/VenatorFoppish"
+	  uses_large_health_bar="true"
+	  category="Ship"
+	  size_scale="10"
+	  visuals_scale_multiplier="2"
+	  y_offset_of_icon="16"
+	  collision_priority="400"
+	  display_name="浮夸复仇者"
+	  display_name_for_sidebar="浮夸复"
+	  description="这艘复仇者专门针对大型、高质量舰船，使用腐蚀伤害绕过护盾并造成持续伤害。"
+	  blocks_enemy_claim_flows="true"
+	  voice_group="Silent"
+	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+	  cost_for_ai_to_purchase="900" strength_multiplier="1.5"
+	  hull_points="84000" shield_points="26000" speed="AboveAverage1"
+	  metal_cost="100000" energy_consumption="7500"
+	  armor_mm="50" albedo="0.3" engine_gx="7" mass_tx="5"
+	  ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+          priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			>
+    <ai_ship_group_membership name="AntiHighMassGuardians" weight="100"/>
+    <ai_ship_group_membership name="VenatorGuardians" weight="100"/>
+    <system name="R5" display_name="腐蚀冲击"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="2500" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Normal"
+				shot_type_data="DoubleShot_Green" 
+                all_damage_is_corrosive="true"
+				>
+	<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="10" /> 
+	</system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+  </entity>
+
+<entity name="VerdantVenator" display_name="爆破复仇者" display_name_for_sidebar="爆破复"
+        thematic_groups="AI,Venator"   
+		special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+		visuals="Assets/_DLC3/Venators/DemolitionVenator/DemolitionVenator.prefab" visuals_bundle="exp3_neinzul_abyss"
+		icon_name="Ships4/VenatorDemolition"
+		uses_large_health_bar="true"
+		category="Ship"
+		size_scale="14"
+		visuals_scale_multiplier="3"
+		y_offset_of_icon="16"
+		collision_priority="400"
+		description="这艘复仇者专门针对泡泡力场和炮塔，但会被大多数移动对手克制。"
+		blocks_enemy_claim_flows="true"
+		voice_group="Silent"
+		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+		cost_for_ai_to_purchase="900" strength_multiplier="1.5"			
+		hull_points="84000" shield_points="26000" speed="AboveAverage3"
+		metal_cost="10000" energy_consumption="200"
+		armor_mm="30" albedo="0.3" engine_gx="14" mass_tx="0.21"
+		ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+		priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+		>
+    <ai_ship_group_membership name="AntiForcefieldReactiveGuardians" weight="100"/>
+    <ai_ship_group_membership name="VenatorGuardians" weight="100"/>
+	<system name="R5" display_name="毒刺螺栓"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="100" range="Small2" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+				shot_type_data="StingerBolt"
+				>
+	<outgoing_damage_modifier applies_to="AllShields" based_on="MaxBubbleForcefield" comparison_type="GreaterThan" compared_to="10000" multiplier="100" />
+    </system>
+	<system name="WL" display_name="聚变炸弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="5000" shots_per_salvo="5" range="Small5" shot_speed="Slow" rate_of_fire="Low" fires_salvos_sequentially="true"
+				shot_type_data="FusionBomb" only_targets_static_units="true"
+				base_percent_damage_bypasses_personal_shields="1" 
+				>
+    </system>
+	<incoming_damage_modifier based_on="engine_gx" comparison_type="LessThan" compared_to="1" multiplier="0.25" />
+  </entity>
+
+</root>

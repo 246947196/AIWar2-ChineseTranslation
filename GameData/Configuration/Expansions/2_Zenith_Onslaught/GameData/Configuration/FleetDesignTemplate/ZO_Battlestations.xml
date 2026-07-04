@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>    
+
+	<!-- A couple additional starting battlestation layouts for DLC2 with a focus on minefields -->
+	<fleet_design name="ReversalMinelayerDefenses"
+        display_name="逆转防御"
+        description="大量地雷，外加伏击和震荡炮塔，当你真正想让入侵者吃瘪时使用。
+两次选择相同的起始战斗站，第二个将随机化。"
+        design_logic="InitialPlayerBattlestation" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+		<ship_membership name="RevealerBattlestation" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+		<ship_membership name="InterplanetaryEngineer" ship_cap_group="Civilian" weight="100" cap="4"/>
+		<ship_membership name="AmbushTurret" ship_cap_group="Turret" weight="100" cap="50"/>
+		<ship_membership name="ConcussionTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+		<ship_membership name="KineticMinefield" ship_cap_group="OtherDefense" weight="100" cap="25"/>
+		<ship_membership name="WarpMinefield" ship_cap_group="OtherDefense" weight="100" cap="45"/>
+		<ship_membership name="ParalysisMinefield" ship_cap_group="OtherDefense" weight="100" cap="60"/>
+		<ship_membership name="TachyonArray" ship_cap_group="OtherDefense" weight="100" cap="10"/>
+	</fleet_design>
+	
+	<fleet_design name="DisruptionMinelayerDefenses"
+        display_name="干扰防御"
+        description="大量地雷，外加长矛和光束炮塔，当你想控制瓶颈点时使用。
+两次选择相同的起始战斗站，第二个将随机化。"
+        design_logic="InitialPlayerBattlestation" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+		<ship_membership name="GraviticBattlestation" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+		<ship_membership name="InterplanetaryEngineer" ship_cap_group="Civilian" weight="100" cap="4"/>
+		<ship_membership name="PikeTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+		<ship_membership name="BeamCannon" ship_cap_group="Turret" weight="100" cap="5"/>
+		<ship_membership name="ImplosionMinefield" ship_cap_group="OtherDefense" weight="100" cap="45"/>
+		<ship_membership name="JammerMinefield" ship_cap_group="OtherDefense" weight="100" cap="25"/>
+		<ship_membership name="Minefield" ship_cap_group="OtherDefense" weight="100" cap="45"/>
+		<ship_membership name="TachyonArray" ship_cap_group="OtherDefense" weight="100" cap="10"/>
+	</fleet_design>
+	
+</root>

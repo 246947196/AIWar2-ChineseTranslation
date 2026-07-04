@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--Many different factions can use each one!  Define these in the mods or DLC that use them.  Don't worry about making them use DLC3.
+      The central code will handle that.-->
+
+  <!--Specific To Certain Factions - Logic in them is arbitrary and must be handled by the faction in question-->
+
+  <!--BADGER_TODO: NextUpgradeToResearch.  Not sure what the options should be.-->
+
+
+  <!--Partial records relating to other DLC-->
+  <vassal_order name="Scourge_NextArmoryShouldBe" is_partial_record="true" required_expansion_list="1_The_Spire_Rises">
+    <option name="Zenith" display_name="天顶星"/>
+  </vassal_order>
+</root>

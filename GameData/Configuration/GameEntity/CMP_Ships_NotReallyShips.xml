@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>  
+  <entity name="BaseInvisibleEntity"
+      thematic_groups="Hidden"  is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+      visuals="assets/arcenbundle/other/smalltemporaryrock.prefab"
+      icon_name="Ships2/RallyFlag" gimbal_icon_size_multiplier="0.7"
+      does_not_need_sidebar_icon="true"
+      category="Ship" 
+      size_scale="0.80"
+      collision_priority="9000"
+      display_name="(你不应该看到这个)"
+      display_name_for_sidebar="不应看到"
+      description="(你不应该看到这个)"
+      behavior="Stationary"
+      target_type_for_player="AutotargetIfTakingPlanet"
+      starting_mark_level="Markless"
+      cost_for_ai_to_purchase="200"
+      hull_points="50000" shield_points="1000" speed="Immobile"
+      metal_cost="80000" energy_consumption="0"
+      armor_mm="180" albedo="1" mass_tx="5"
+      ship_or_structure_explosion_sfx="StructureLarge_Explosion"
+      ship_or_structure_explosion_if_on_other_planet_sfx="StructureLostOnOtherPlanet_Explosion"
+      ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+      voice_group="Silent"
+      
+      priority_as_ai_target="IgnoreMe" priority_as_frd_target="IgnoreMe" priority_to_protect="IgnoreMe"
+  />
+
+  <!--Chris notes: the Planet_Mark1 and whatnot overlays are things that have to be recompiled into the sprite atlas
+                   via TexturePacker before they will show up.  Otherwise if you just update the gui images directly,
+                   it won't work out well and will seem like unity is glitching.  Wow that can take up a lot of useless time.-->
+  <entity copy_from="BaseInvisibleEntity"
+      name="Mark1_NotVisible" icon_name="Ships2/AI_NotVisible" icon_overlay="Overlays2/Planet_Mark1" is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+      />
+  <entity copy_from="BaseInvisibleEntity"
+      name="Mark1_Visible" icon_name="Ships2/AI_Visible" icon_overlay="Overlays2/Planet_Mark1" is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+      />
+
+  <entity copy_from="BaseInvisibleEntity"
+      name="Mark2_NotVisible" icon_name="Ships2/AI_NotVisible" icon_overlay="Overlays2/Planet_Mark2" is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+      />
+  <entity copy_from="BaseInvisibleEntity"
+      name="Mark2_Visible" icon_name="Ships2/AI_Visible" icon_overlay="Overlays2/Planet_Mark2" is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+      />
+
+  <entity copy_from="BaseInvisibleEntity"
+      name="Mark3_NotVisible" icon_name="Ships2/AI_NotVisible" icon_overlay="Overlays2/Planet_Mark3" is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+      />
+  <entity copy_from="BaseInvisibleEntity"
+      name="Mark3_Visible" icon_name="Ships2/AI_Visible" icon_overlay="Overlays2/Planet_Mark3" is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+      />
+
+  <entity copy_from="BaseInvisibleEntity"
+      name="Mark4_NotVisible" icon_name="Ships2/AI_NotVisible" icon_overlay="Overlays2/Planet_Mark4" is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+      />
+  <entity copy_from="BaseInvisibleEntity"
+      name="Mark4_Visible" icon_name="Ships2/AI_Visible" icon_overlay="Overlays2/Planet_Mark4" is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+      />
+
+  <entity copy_from="BaseInvisibleEntity"
+      name="Mark5_NotVisible" icon_name="Ships2/AI_NotVisible" icon_overlay="Overlays2/Planet_Mark5" is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+      />
+  <entity copy_from="BaseInvisibleEntity"
+      name="Mark5_Visible" icon_name="Ships2/AI_Visible" icon_overlay="Overlays2/Planet_Mark5" is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+      />
+
+  <entity copy_from="BaseInvisibleEntity"
+      name="Mark6_NotVisible" icon_name="Ships2/AI_NotVisible" icon_overlay="Overlays2/Planet_Mark6" is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+      />
+  <entity copy_from="BaseInvisibleEntity"
+      name="Mark6_Visible" icon_name="Ships2/AI_Visible" icon_overlay="Overlays2/Planet_Mark6" is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+      />
+
+  <entity copy_from="BaseInvisibleEntity"
+      name="Mark7_NotVisible" icon_name="Ships2/AI_NotVisible" icon_overlay="Overlays2/Planet_Mark7" is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+      />
+  <entity copy_from="BaseInvisibleEntity"
+      name="Mark7_Visible" icon_name="Ships2/AI_Visible" icon_overlay="Overlays2/Planet_Mark7" is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+      />
+  
+
+  <entity copy_from="BaseInvisibleEntity"
+      name="NonAIPlanet_NotVisible" icon_name="Ships2/NonAIPlanet_NotVisible" is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+      />
+  <entity copy_from="BaseInvisibleEntity"
+      name="NonAIPlanet_Visible" icon_name="Ships2/NonAIPlanet_Visible" is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+      />
+
+  <entity copy_from="BaseInvisibleEntity"
+      name="AIHome_NotVisible" icon_name="Ships2/HomePlanet" icon_overlay="Overlays1/Planet_AIHome" is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+      />
+  <entity copy_from="BaseInvisibleEntity"
+      name="AIHome_Visible" icon_name="Ships2/HomePlanet" icon_overlay="Overlays1/Planet_AIHome" is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+      />
+
+  <entity copy_from="BaseInvisibleEntity"
+      name="AIBastion_NotVisible" icon_name="Ships2/ImportantPlanet" icon_overlay="Overlays1/Planet_AIBastion" is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+      />
+  <entity copy_from="BaseInvisibleEntity"
+      name="AIBastion_Visible" icon_name="Ships2/ImportantPlanet" icon_overlay="Overlays1/Planet_AIBastion" is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+      />
+
+  <entity copy_from="BaseInvisibleEntity"
+      name="DarkZenithPlanet_NotVisible" icon_name="Ships2/ImportantPlanet" icon_overlay="Overlays1/Planet_DarkZenith" is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+      />
+  <entity copy_from="BaseInvisibleEntity"
+      name="DarkZenithPlanet_Visible" icon_name="Ships2/ImportantPlanet" icon_overlay="Overlays1/Planet_DarkZenith" is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+      />
+
+  <entity copy_from="BaseInvisibleEntity"
+      name="ZenithArchitraveTerritory_NotVisible" icon_name="Ships2/ImportantPlanet" icon_overlay="Overlays1/Planet_ZenithArchitrave" is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+      />
+  <entity copy_from="BaseInvisibleEntity"
+      name="ZenithArchitraveTerritory_Visible" icon_name="Ships2/ImportantPlanet" icon_overlay="Overlays1/Planet_ZenithArchitrave" is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+      />
+
+  <entity copy_from="BaseInvisibleEntity"
+      name="ZenithArchitraveHome_NotVisible" icon_name="Ships2/HomePlanet" icon_overlay="Overlays1/Planet_ZenithArchitrave" is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+      />
+  <entity copy_from="BaseInvisibleEntity"
+      name="ZenithArchitraveHome_Visible" icon_name="Ships2/HomePlanet" icon_overlay="Overlays1/Planet_ZenithArchitrave" is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+      />
+
+  <entity copy_from="BaseInvisibleEntity"
+      name="OwnedByNobody_NotVisible" icon_name="Ships2/OwnedByNobody_NotVisible" is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+      />
+  <entity copy_from="BaseInvisibleEntity"
+      name="OwnedByNobody_Visible" icon_name="Ships2/OwnedByNobody_Visible" is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+      />
+  
+  <entity copy_from="BaseInvisibleEntity"
+      name="Unexplored" icon_name="Ships1/Unexplored" is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+      />
+  <entity copy_from="BaseInvisibleEntity"
+      name="NonAIPlanetHome" icon_name="Ships2/NonAIPlanetHome" is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+      />
+
+  <entity copy_from="BaseInvisibleEntity"
+      name="Planet_Fimbulwinter" icon_name="Ships1/Unexplored" icon_overlay="Overlays1/Planet_Fimbulwinter" is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+      />
+
+  <entity copy_from="BaseInvisibleEntity"
+      name="Planet_Nomad" icon_name="Ships1/Unexplored" icon_overlay="Overlays1/Planet_Nomad" is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+      />
+
+  <entity copy_from="BaseInvisibleEntity"
+      name="Planet_DoNotPathThrough" icon_name="Ships1/Unexplored" icon_overlay="Overlays1/Planet_DoNotPathThrough" is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+      />
+  
+</root>

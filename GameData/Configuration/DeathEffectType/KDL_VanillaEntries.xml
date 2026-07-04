@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<item name="Zombification" scale="10000"
+       	dll_name="AIWarExternalDeepProcessingCode" type_name="Arcen.AIW2.External.DeathEffect_Zombification"
+        description_prefix="僵尸化"
+        description_damage_name="僵尸化"
+        description_conditions="如果目标是移动战斗单位（部分免疫除外）"
+        description_of_effects="该舰船的阵营获得一个目标的盟友副本"
+        description_added_note_for_player="僵尸将自行移动和攻击。"
+		is_some_kind_of_normal_zombification="true"
+        >
+		<offense_tier name="None" ability_multiplier="0" />
+		<offense_tier name="Minor" ability_multiplier="0.1" />
+		<offense_tier name="Major" ability_multiplier="1" />
+		<offense_tier name="Overlord" ability_multiplier="2" />
+		<offense_tier name="Mugger" ability_multiplier="3" />
+		<offense_tier name="Thanatos" ability_multiplier="4" />
+		<offense_tier name="Botnet" ability_multiplier="5" />
+		<offense_tier name="ParasiteFusionBomber" ability_multiplier="10" />
+		<offense_tier name="ParasitePikeCorvette" ability_multiplier="10" />
+        <offense_tier name="Tethuida" ability_multiplier="10" />		
+		<offense_tier name="Parasite" ability_multiplier="20" />
+		<offense_tier name="SuperficialDamage" ability_multiplier="1000" />
+		<offense_tier name="Unavoidable" ability_multiplier="10000" />
+	</item>
+
+        <item name="Zombification_HostileToAll" scale="10000"
+       	dll_name="AIWarExternalDeepProcessingCode" type_name="Arcen.AIW2.External.DeathEffect_Zombification_HostileToAll"
+        description_prefix="敌对所有僵尸化"
+        description_damage_name="僵尸化"
+        description_conditions="如果目标是移动战斗单位（部分免疫除外）"
+        description_of_effects="创建一个对所有人敌对的目标副本"
+        description_added_note_for_player="僵尸将自行移动和攻击。"
+		is_some_kind_of_normal_zombification="true"
+        >
+		<offense_tier name="None" ability_multiplier="0" />
+		<offense_tier name="Minor" ability_multiplier="0.1" />
+		<offense_tier name="Major" ability_multiplier="1" />
+		<offense_tier name="Overlord" ability_multiplier="2" />
+		<offense_tier name="Mugger" ability_multiplier="3" />
+		<offense_tier name="Thanatos" ability_multiplier="4" />
+		<offense_tier name="Botnet" ability_multiplier="5" />
+		<offense_tier name="ParasiteFusionBomber" ability_multiplier="10" />
+		<offense_tier name="ParasitePikeCorvette" ability_multiplier="10" />
+		<offense_tier name="Tethuida" ability_multiplier="10" />
+		<offense_tier name="Parasite" ability_multiplier="20" />
+		<offense_tier name="SuperficialDamage" ability_multiplier="1000" />
+		<offense_tier name="Unavoidable" ability_multiplier="10000" />
+
+	</item>
+
+  <item name="Metabolization" scale="10000"
+       	dll_name="AIWarExternalDeepProcessingCode" type_name="Arcen.AIW2.External.DeathEffect_Metabolization"
+        description_prefix="代谢"
+        description_damage_name="代谢"
+        description_conditions=""
+        description_of_effects="该舰船的阵营立即获得目标金属成本的20%，最多5000金属。"
+        description_added_note_for_player=""
+        >
+    <offense_tier name="None" ability_multiplier="0" />
+    <offense_tier name="Minor" ability_multiplier="0.1" />
+    <offense_tier name="Major" ability_multiplier="1" />
+	<offense_tier name="BigMajor" ability_multiplier="5" />
+	<offense_tier name="Gangsaw" ability_multiplier="10" />
+	<offense_tier name="SupportWithoutDPS" ability_multiplier="50" />
+	<offense_tier name="SuperficialDamage" ability_multiplier="1000" />
+	<offense_tier name="Unavoidable" ability_multiplier="10000" />
+  </item>
+  
+  <item name="GreaterMetabolization" scale="10000"
+       	dll_name="AIWarExternalDeepProcessingCode" type_name="Arcen.AIW2.External.DeathEffect_GreaterMetabolization"
+        description_prefix="高级代谢"
+        description_damage_name="代谢"
+        description_conditions=""
+        description_of_effects="该舰船的阵营立即获得目标金属成本的50%，最多50000金属。"
+        description_added_note_for_player=""
+        >
+    <offense_tier name="None" ability_multiplier="0" />
+    <offense_tier name="Minor" ability_multiplier="0.1" />
+    <offense_tier name="Major" ability_multiplier="1" />
+	<offense_tier name="BigMajor" ability_multiplier="5" />
+	<offense_tier name="BountyHunter" ability_multiplier="10" />
+	<offense_tier name="SupportWithoutDPS" ability_multiplier="50" />
+	<offense_tier name="SuperficialDamage" ability_multiplier="1000" />
+	<offense_tier name="Unavoidable" ability_multiplier="10000" />
+  </item>
+
+    <item name="Necromancy" scale="1000"
+       	dll_name="AIWarExternalDeepProcessingCode" type_name="Arcen.AIW2.External.DeathEffect_Necromancy"
+        description_prefix="死灵术"
+        description_damage_name="死灵"
+        description_conditions=""
+        description_of_effects="该舰船的阵营立即将此舰船转化为仆从"
+        description_added_note_for_player=""
+        >
+    <offense_tier name="None" ability_multiplier="0" />
+    <offense_tier name="Minor" ability_multiplier="0.5" />
+    <offense_tier name="Major" ability_multiplier="1" />
+  </item>
+
+</root>

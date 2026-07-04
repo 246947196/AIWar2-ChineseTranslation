@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<ship_class_data name="DefaultShipClass" display_name="舰船类别" short_name="默认"
+		
+		is_default="true"
+		
+		can_receive_debuffs="true"
+		gravitic_core_effect_multiplier="1"
+		
+		can_receive_death_effects="true"
+		can_be_zombified_and_similar="true"
+		can_be_subjected_to_special_mechanics="true"
+		can_be_tractored="true"
+        can_be_infested="true"
+		can_be_blocked_by_black_hole_machines="true"
+		
+		can_be_buffed="true"
+		damage_buff_max_multiplier="100"
+		hull_buff_max_multiplier="100"
+		shield_buff_max_multiplier="100"
+		speed_buff_max_multiplier="100"
+		speed_buff_base_bonus="0"
+		
+		can_be_fleet_supercharged="true"
+		can_be_fleet_supercharged_damage="true"
+		can_be_fleet_supercharged_hull="true"
+		can_be_fleet_supercharged_shield="true"
+		can_be_fleet_supercharged_speed="true"
+		
+		final_incoming_non_exotic_damage_multiplier="1"
+		final_incoming_non_exotic_damage_added="0"
+		
+		can_be_damaged="true"
+	>
+		<debuff_modifier debuff_type="EngineSlow" multiplier="1" added_count="0" />
+		<death_effect_modifier death_effect_type="Zombification" multiplier="1" added_count="0" />
+		<ammo_damage_modifier ammo_type="DefaultAmmo" multiplier="1" added_count="0" />
+		<exotic_damage_modifier exotic_type="Attrition" multiplier="1" added_count="0" />
+	</ship_class_data>
+    
+	<!-- For tooltip testing -->
+	<ship_class_data name="HorribleShipClass" display_name="恐怖舰船类别" short_name="恐怖"
+		
+		gravitic_core_effect_multiplier="0.7"
+		
+		can_be_tractored="false"
+		can_be_blocked_by_black_hole_machines="false"
+		
+		can_be_buffed="true"
+		damage_buff_max_multiplier="4"
+		hull_buff_max_multiplier="3"
+		shield_buff_max_multiplier="2"
+		speed_buff_max_multiplier="1"
+        
+        can_be_fleet_supercharged_damage="false"
+        can_be_fleet_supercharged_speed="false"
+	>
+		<debuff_modifier debuff_type="EngineSlow" multiplier="2" added_count="2" />
+		<debuff_modifier debuff_type="WeaponSlow" multiplier="2" added_count="-2" />
+		<debuff_modifier debuff_type="Paralysis" multiplier="2" added_count="0" />
+		<debuff_modifier debuff_type="Acid" multiplier="0.5" added_count="2" />
+		<debuff_modifier debuff_type="WeaponPhase" multiplier="0.5" added_count="-2" />
+		<debuff_modifier debuff_type="Knockback" multiplier="0.5" added_count="0" />
+		<debuff_modifier debuff_type="TachyonBeams" multiplier="0" added_count="0" />
+		<death_effect_modifier death_effect_type="Zombification" multiplier="1.5" added_count="0" />
+		<death_effect_modifier death_effect_type="Metabolization" multiplier="1" added_count="100" />
+		<death_effect_modifier death_effect_type="GreaterMetabolization" multiplier="0" added_count="0" />
+		<death_effect_modifier death_effect_type="Nanocaustation" multiplier="4" added_count="0" />
+		<death_effect_modifier death_effect_type="Necromancy" multiplier="0.25" added_count="100" />
+		<ammo_damage_modifier ammo_type="DefaultAmmo" multiplier="2" added_count="250" />
+		<exotic_damage_modifier exotic_type="Attrition" multiplier="3" added_count="0" />
+		<exotic_damage_modifier exotic_type="Electrotoxicity" multiplier="0.5" added_count="0" />
+		<exotic_damage_modifier exotic_type="RevengeShot" multiplier="1" added_count="50" />
+		<exotic_damage_modifier exotic_type="Ion" multiplier="0" added_count="0" />
+	</ship_class_data>
+    
+	<ship_class_data name="HeroShip" display_name="英雄舰船" short_name="英雄"
+		can_receive_debuffs="false"
+		can_receive_death_effects="false"
+		can_receive_exotic_damage="false"
+		can_be_subjected_to_special_mechanics="false"
+	>
+	</ship_class_data>
+    
+	<ship_class_data name="ExowarTier1" display_name="外星战争舰船 第1级" short_name="外星战船 T1"
+        can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.8" can_be_devoured="false"
+	>
+		<debuff_modifier debuff_type="WeaponPhase" multiplier="0" />
+	</ship_class_data>
+	
+	<ship_class_data name="ExowarTier2" display_name="外星战争舰船 第2级" short_name="外星战船 T2" copy_from="ExowarTier1"
+        final_incoming_exotic_damage_multiplier="0.65"
+	>
+	</ship_class_data>
+	
+	<ship_class_data name="ExowarTier3" display_name="外星战争舰船 第3级" short_name="外星战船 T3" copy_from="ExowarTier1"
+        final_incoming_exotic_damage_multiplier="0.5"
+	>
+	</ship_class_data>
+	
+	<ship_class_data name="ExowarTier4" display_name="外星战争舰船 第4级" short_name="外星战船 T4" copy_from="ExowarTier1"
+        final_incoming_exotic_damage_multiplier="0.35"
+	>
+	</ship_class_data>
+	
+	<ship_class_data name="ExowarTier5" display_name="外星战争舰船 第5级" short_name="外星战船 T5" copy_from="ExowarTier1"
+        final_incoming_exotic_damage_multiplier="0.2"
+	>
+	</ship_class_data>
+	
+	<ship_class_data name="AIEye" display_name="AI之眼" short_name="AI之眼"
+		can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.25" can_be_devoured="false"
+	>
+		<debuff_modifier debuff_type="WeaponPhase" multiplier="0" added_count="0" />
+	</ship_class_data>
+	
+	<ship_class_data name="Superweapon" display_name="超级武器" short_name="超级武器"
+		can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.25" can_be_devoured="false"
+	>
+		<debuff_modifier debuff_type="WeaponPhase" multiplier="0" added_count="0" />
+	</ship_class_data>
+	
+	
+	<ship_class_data name="AstroTrain" display_name="星际列车" short_name="星际列车"
+		can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.75" can_be_devoured="false"
+	>
+		<debuff_modifier debuff_type="WeaponPhase" multiplier="0" />
+	</ship_class_data>
+	
+	<ship_class_data name="MediumAstroTrain" copy_from="AstroTrain" display_name="中型星际列车" short_name="星际列车 M"
+		final_incoming_exotic_damage_multiplier="0.5"
+	>
+	</ship_class_data>
+	
+	<ship_class_data name="LargeAstroTrain" copy_from="AstroTrain" display_name="大型星际列车" short_name="星际列车 L"
+		final_incoming_exotic_damage_multiplier="0.25"
+	>
+	</ship_class_data>
+	
+	<ship_class_data name="AstroTrainPrototype" copy_from="MediumAstroTrain" display_name="原型机" short_name="原型机"
+	>
+	</ship_class_data>
+
+    <ship_class_data name="Elderling" display_name="远古者" short_name="远古者"
+        >
+        <death_effect_modifier death_effect_type="Zombification" multiplier="0" added_count="0" />
+        <death_effect_modifier death_effect_type="Zombification_HostileToAll" multiplier="0" added_count="0" />
+    </ship_class_data>
+
+    <ship_class_data name="HackedElderling" display_name="远古者" short_name="远古者"
+        >
+        <death_effect_modifier death_effect_type="Zombification" multiplier="0" added_count="0" />
+        <death_effect_modifier death_effect_type="Zombification_HostileToAll" multiplier="0" added_count="0" />
+        <death_effect_modifier death_effect_type="Nanocaustation" multiplier="0" added_count="0" />
+    </ship_class_data>
+
+    <ship_class_data name="AIExoElderling" display_name="远古者" short_name="远古者"
+        >
+        <death_effect_modifier death_effect_type="Zombification" multiplier="0" added_count="0" />
+        <death_effect_modifier death_effect_type="Zombification_HostileToAll" multiplier="0" added_count="0" />
+        <death_effect_modifier death_effect_type="Nanocaustation" multiplier="0" added_count="0" />
+    </ship_class_data>
+
+</root>

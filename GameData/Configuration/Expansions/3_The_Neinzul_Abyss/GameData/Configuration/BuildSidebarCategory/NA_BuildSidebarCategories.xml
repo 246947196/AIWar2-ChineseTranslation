@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>  
+  
+  <!--The purpose of these build categories is to organize things for the player on the sidebar.
+      And by "things," I mean "stuff that you build via direct placement."
+      
+      Those sorts of things include anything that a Battlestation or a Command Station
+      or the Zenith Trader makes available to you at a planet.
+      
+      Other than how things are organized on the sidebar, this has no effect on anything.
+      Repeat: this is purely a visual organization thing on the sidebar 
+      for player ships/structures that are directly built.
+      
+      It has no gameplay, seeding, or other structural significance and doesn't
+      affect how the game plays.-->
+  
+  <build_category name="NecropolisSkeletons" sort_index="10" display_name="骷髅"
+                  description="用于强化你的骷髅的建筑。"
+                  />
+  <build_category name="NecropolisWights" sort_index="16" display_name="幽灵战士"
+                  description="用于强化你的幽灵战士的建筑。"
+                  />
+  <build_category name="NecropolisMummies" sort_index="17" display_name="木乃伊"
+                  description="用于强化你的木乃伊的建筑。"
+  />
+
+  <build_category name="NecropolisUnitConstructors" sort_index="20" display_name="舰船"
+                  description="用于建造新舰船的建筑。"
+                  />
+  <build_category name="NecromancerUtility" sort_index="5" display_name="实用设施"
+                  description="用于建设你的死灵法师墓地的建筑。"
+      />
+
+  <build_category name="NecromancerDefenses" sort_index="25" display_name="防御设施"
+                  description="用于建造防御型建筑的设施。"
+  />
+  <build_category name="NecromancerNecropoleis" sort_index="25" display_name="墓地"
+                  description="建造新的墓地。" granted_by_any_mobile_fleet="true"
+                  for_player_type_tags="Necromancer"
+                  custom_sidebar_category_info_dll="AIWarExternalCode"
+                  custom_sidebar_category_info_type="Arcen.AIW2.External.DirectBuild_Necropolis"
+                  />
+</root>

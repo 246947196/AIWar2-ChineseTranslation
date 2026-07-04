@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+<!-- Destroyers. Elite frigates with cap of 2, featuring unique orbiting ward
+		Ambush: Predator Destroyer
+		Artillery (Concussion): Hellfire Destroyer
+		Core (Generalist): Behemoth Destroyer
+		Disruptive: Wrangler Destroyer
+		Exotic  (Technologist): Siren Destroyer
+		Melee:  Destroyer
+		Piercing (Fusion):  Destroyer
+		Raid: Assassin Destroyer
+		Splash: Tornado Destroyer
+		Subterfuge: Argos  Destroyer
+		   -->
+		
+		
+		
+		<!--Destroyers-->
+<!--Ambush : Predator Destoyer.  -->	
+	<entity name="PredatorDestroyer"
+	        thematic_groups="Human,Destroyer"
+	        special_entity_type="Destroyer"
+			visuals="Assets/_DLC3/Destroyers/PredatorDestroyer/PredatorDestroyer.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships2/Destroyer" icon_overlay="Overlays2/Destroyer_Predator" gimbal_icon_size_multiplier="1.25"
+			voice_group="Saboteur"
+			category="Ship"
+			size_scale="6.5"
+			visuals_scale_multiplier="4.5"
+			uses_large_health_bar="true"
+			collision_priority="100"
+			display_name="捕食者驱逐舰"
+			display_name_for_sidebar="捕食者DS" aip_when_granted_by_hack="15"
+			description="驱逐舰是一种精英级舰船，每支舰队限有两艘；它们不算作标准舰船生产线，但有资格获得FRS舰船提供的全舰队加成。捕食者驱逐舰配备了隐形装置，首次进入星系时会在短时间内造成更多伤害。它周围簇拥着猎鹰守卫，这些守卫擅长消灭新抵达的敌人。"
+			starting_mark_level="Mark3" tech_upgrades_that_benefit_me="Ambush"
+			cost_for_ai_to_purchase="16000" strength_multiplier="1"
+			hull_points="381000" shield_points="200000"  speed="AboveAverage3"
+			metal_cost="250000" energy_consumption="22000"
+			armor_mm="120" engine_gx="17" albedo="0.7" mass_tx="5.5"
+			build_points_per_second="1000" build_point_cost_for_per_second_construction="3000"
+			tag_to_spawn_from_for_build_point_for_per_second_construction="AmbushWard"
+			personal_ship_cap_for_per_second_build_point_construction="30"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			absolute_max_cap_when_in_fleets="2"
+            priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+			>
+		<fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="100" cap="2"/>			
+	    <system name="R5" display_name="脉冲炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1500" range="Normal3" shot_speed="Normal" rate_of_fire="Low" fires_salvos_sequentially="true"
+				shots_per_salvo="5" shots_per_target="5" 
+				shot_type_data="LaserPulse_DeepBlue"				
+				>
+			<outgoing_damage_modifier based_on="MyTimeAtPlanet" comparison_type="LessThan" compared_to="20" multiplier="5" />		
+		</system>
+		<system name="V2" display_name="增强脉冲炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="6000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="PeriodicActivation" fires_salvos_sequentially="true"
+				shots_per_salvo="5" shots_per_target="5" 
+				shot_type_data="LaserPulse_RedLevel3"
+				>
+			<outgoing_damage_modifier based_on="MyTimeAtPlanet" comparison_type="LessThan" compared_to="20" multiplier="5" />
+        </system>
+		<system name="C" display_name="隐形装置" category="Passive" cloaking_points="2000" cloaking_points_added_per_mark="1000"  ></system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+	
+	
+		<!--Artillery (Concussion): Hellfire Destoyer.  -->	
+	<entity name="HellfireDestroyer"
+	        thematic_groups="Human,Destroyer"
+	        special_entity_type="Destroyer"
+		visuals="Assets/_DLC3/Destroyers/HellfireDestroyer/HellfireDestroyer.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships2/Destroyer" icon_overlay="Overlays2/Destroyer_Hellfire" gimbal_icon_size_multiplier="1.25"
+			voice_group="Saboteur"
+			category="Ship"
+			size_scale="6.5"
+			visuals_scale_multiplier="4"
+			uses_large_health_bar="true"
+			collision_priority="100"
+			display_name="地狱火驱逐舰"
+			display_name_for_sidebar="地狱火DS" aip_when_granted_by_hack="15"
+			description="驱逐舰是一种精英级舰船，每支舰队限有两艘；它们不算作标准舰船生产线，但有资格获得FRS舰船提供的全舰队加成。地狱火驱逐舰是一种远程导弹炮台，可集中攻击多个目标或分散齐射，对大型敌人造成更多伤害。它由动能守卫保护，这些守卫会将靠得太近的小型舰船推开。"
+			starting_mark_level="Mark3" tech_upgrades_that_benefit_me="Concussion"
+			cost_for_ai_to_purchase="16000" strength_multiplier="1"
+			hull_points="381000" shield_points="200000"  speed="Normal1"
+			metal_cost="250000" energy_consumption="22000"
+			armor_mm="120" engine_gx="16" albedo="0.4" mass_tx="5.5"
+			build_points_per_second="200" build_point_cost_for_per_second_construction="2000"
+			tag_to_spawn_from_for_build_point_for_per_second_construction="ArtilleryWard"
+			personal_ship_cap_for_per_second_build_point_construction="6"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			absolute_max_cap_when_in_fleets="2"
+            priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+			>
+		<fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="100" cap="2"/>			
+		<system name="R1" display_name="地狱火导弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="650" range="AboveAverage1" shot_speed="Normal" rate_of_fire="ExtremelyLow"
+				shots_per_salvo="50" shots_per_target="10" fires_salvos_sequentially="true"
+				shot_type_data="FusionRocket"				
+				>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="2" multiplier="3" />
+		</system> 
+	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+
+
+<!--Core (Generalist) : Behemoth Destoyer.  -->	
+	<entity name="BehemothDestroyer"
+	        thematic_groups="Human,Destroyer"
+	        special_entity_type="Destroyer"
+		visuals="Assets/_DLC3/Destroyers/BehemothDestroyer/BehemothDestroyer.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships2/Destroyer" icon_overlay="Overlays2/Destroyer_Behemoth" gimbal_icon_size_multiplier="1.25"
+			voice_group="Saboteur"
+			category="Ship"
+			size_scale="8.5"
+			visuals_scale_multiplier="5"
+			uses_large_health_bar="true"
+			collision_priority="100"
+			display_name="巨兽驱逐舰"
+			display_name_for_sidebar="巨兽DS" aip_when_granted_by_hack="15"
+			description="驱逐舰是一种精英级舰船，每支舰队限有两艘；它们不算作标准舰船生产线，但有资格获得FRS舰船提供的全舰队加成。巨兽驱逐舰是一座机动化的小型堡垒，由多层拦截守卫保护。"
+			starting_mark_level="Mark3" tech_upgrades_that_benefit_me="Generalist"
+			cost_for_ai_to_purchase="16000" strength_multiplier="1"
+			hull_points="428500" shield_points="285700" speed="BelowAverage2"
+			metal_cost="250000" energy_consumption="22000"
+			armor_mm="210" engine_gx="16" albedo="0.4" mass_tx="5.5"
+			build_points_per_second="1000" build_point_cost_for_per_second_construction="3000"
+			tag_to_spawn_from_for_build_point_for_per_second_construction="CoreWard"
+			personal_ship_cap_for_per_second_build_point_construction="40"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			absolute_max_cap_when_in_fleets="2"
+            priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+			>
+		<fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="100" cap="2"/>			
+		<system name="R1" display_name="巨兽弹幕"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="750" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Normal" 
+				shots_per_salvo="10" fires_salvos_sequentially="false"				
+				shot_type_data="FusionRocket" cloaking_percent_loss_from_firing="1"
+				>
+		</system>
+		<system name="R2" display_name="巨兽能量波"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="3000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Low" 
+				shots_per_salvo="2" fires_salvos_sequentially="false"				
+				shot_type_data="EnergyWave" cloaking_percent_loss_from_firing="1"
+				>
+		</system>	
+	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+
+
+
+
+<!--Disruptive : Wrangler Destoyer.  -->	
+	<entity name="WranglerDestroyer"
+	        thematic_groups="Human,Destroyer"
+	        special_entity_type="Destroyer"
+		visuals="Assets/_DLC3/Destroyers/WranglerDestroyer/WranglerDestroyer.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships2/Destroyer" icon_overlay="Overlays2/Destroyer_Wrangler" gimbal_icon_size_multiplier="1.25"
+			voice_group="Saboteur"
+			category="Ship"
+			size_scale="6.5"
+			visuals_scale_multiplier="3.6"
+			uses_large_health_bar="true"
+			collision_priority="100"
+			display_name="牧马人驱逐舰"
+			display_name_for_sidebar="牧马人DS" aip_when_granted_by_hack="15"
+			description="驱逐舰是一种精英级舰船，每支舰队限有两艘；它们不算作标准舰船生产线，但有资格获得FRS舰船提供的全舰队加成。牧马人驱逐舰可以用反向牵引光束套住较大的舰船并搭便车。它的武器专门针对被牵引的敌人，每次攻击都能吸取一些生命值。它周围环绕着钳制守卫，这些守卫会牵引靠得太近的小型舰船。"
+			starting_mark_level="Mark3" tech_upgrades_that_benefit_me="Disruptive"
+			cost_for_ai_to_purchase="16000" strength_multiplier="1"
+			hull_points="381000" shield_points="200000" speed="AboveAverage3"
+			metal_cost="250000" energy_consumption="22000"
+			armor_mm="120" engine_gx="18" albedo="0.4" mass_tx="5.5"
+			build_points_per_second="200" build_point_cost_for_per_second_construction="3000"
+			tag_to_spawn_from_for_build_point_for_per_second_construction="DisruptiveWard"
+			personal_ship_cap_for_per_second_build_point_construction="4"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			absolute_max_cap_when_in_fleets="2"
+            priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+			>
+		<fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="100" cap="2"/>			
+		<system name="WD" display_name="聚焦战斗炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="100" range="Normal2" shot_speed="Normal" rate_of_fire="Normal"
+				shots_per_salvo="10" shots_per_target="10" fires_salvos_sequentially="false"
+				shot_type_data="DoubleShot_Red" cloaking_percent_loss_from_firing="1"
+				multiplier_damage_to_tractored_unit="5"
+				health_change_per_damage_dealt="0.1"
+				>	
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="6" multiplier="4" />
+		</system>
+		<system name="T" display_name="牵引光束"
+				category="Passive" 
+				tractor_range="Normal2" tractor_count="1"  tractor_hits_albedo_less_than="1" tractor_hits_engine_gx_less_than="99" tractor_hits_mass_greater_than="6" tractor_hits_mass_less_than="13"
+				>
+		</system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+
+<!--Exotic : Siren Destoyer.  -->	
+	<entity name="SirenDestroyer"
+	        thematic_groups="Human,Destroyer"
+	        special_entity_type="Destroyer"
+		visuals="Assets/_DLC3/Destroyers/SirenDestroyer/SirenDestroyer.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships2/Destroyer" icon_overlay="Overlays2/Destroyer_Siren" gimbal_icon_size_multiplier="1.25"
+			voice_group="Saboteur"
+			category="Ship"
+			size_scale="7.5"
+			visuals_scale_multiplier="3.4"
+			uses_large_health_bar="true"
+			collision_priority="100"
+			display_name="塞壬驱逐舰"
+			display_name_for_sidebar="塞壬DS" aip_when_granted_by_hack="15"
+			description="驱逐舰是一种精英级舰船，每支舰队限有两艘；它们不算作标准舰船生产线，但有资格获得FRS舰船提供的全舰队加成。塞壬驱逐舰会在小范围内喷射酸液，使目标在短时间内受到来自所有来源的更多伤害。它会产生塞壬守卫，单个守卫很弱，但大量聚集时会造成巨大伤害。"
+			starting_mark_level="Mark3" tech_upgrades_that_benefit_me="Technologist"
+			cost_for_ai_to_purchase="16000" strength_multiplier="1"
+			hull_points="381000" shield_points="200000"  speed="Normal3"
+			metal_cost="250000" energy_consumption="22000"
+			armor_mm="120" engine_gx="16" albedo="0.4" mass_tx="5.5"
+			build_points_per_second="3000" build_point_cost_for_per_second_construction="3000"
+			tag_to_spawn_from_for_build_point_for_per_second_construction="ExoticWard"
+			personal_ship_cap_for_per_second_build_point_construction="60"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			absolute_max_cap_when_in_fleets="2"
+            priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+			>
+		<fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="100" cap="2"/>			
+	    <system name="WD" display_name="酸性喷雾"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="PeriodicActivation"
+				shots_per_salvo="5" fires_salvos_sequentially="false"
+				shot_type_data="DoubleShot_Green" cloaking_percent_loss_from_firing="0.1"
+				area_of_effect_size="500"
+				maximum_number_of_targets_hit_per_shot="10"
+				damage_amplification="true" damage_amplification_duration="10" damage_amplification_flat="50" damage_amplification_flat_added_per_mark="5"
+				>	
+		</system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+
+
+<!--Melee : Chainsaw Destoyer.  -->	
+	<entity name="ChainsawDestroyer"
+	        thematic_groups="Human,Destroyer"
+	        special_entity_type="Destroyer"
+		visuals="Assets/_DLC3/Destroyers/ChainsawDestroyer/ChainsawDestroyer.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships2/Destroyer" icon_overlay="Overlays2/Destroyer_Chainsaw" gimbal_icon_size_multiplier="1.25"
+			voice_group="Saboteur"
+			category="Ship"
+			size_scale="6.8"
+			visuals_scale_multiplier="3.2"
+			uses_large_health_bar="true"
+			collision_priority="100"
+			display_name="电锯驱逐舰"
+			display_name_for_sidebar="电锯DS" aip_when_granted_by_hack="15"
+			description="驱逐舰是一种精英级舰船，每支舰队限有两艘；它们不算作标准舰船生产线，但有资格获得FRS舰船提供的全舰队加成。电锯驱逐舰是一种近战战舰，它会撕碎目标，使其在短时间内受到来自所有来源的更多伤害。它周围环绕着爆炸守卫，这些守卫会撞击敌人，在小范围内造成伤害。"
+			starting_mark_level="Mark3" tech_upgrades_that_benefit_me="Melee"
+			cost_for_ai_to_purchase="16000" strength_multiplier="1"
+			hull_points="381000" shield_points="200000"  speed="AboveAverage4"
+			metal_cost="250000" energy_consumption="22000"
+			armor_mm="120" engine_gx="18" albedo="0.4" mass_tx="5.5"
+			build_points_per_second="1000" build_point_cost_for_per_second_construction="3000"
+			tag_to_spawn_from_for_build_point_for_per_second_construction="MeleeWard"
+			personal_ship_cap_for_per_second_build_point_construction="20"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			absolute_max_cap_when_in_fleets="2"
+            priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+			>
+		<fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="100" cap="2"/>			
+		<system name="WM" display_name="电锯"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="4000" range="AlmostNone" seek_range="Normal1" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="true"
+				shot_type_data="MeleeInvisible"			
+				damage_amplification="true" damage_amplification_duration="4" damage_amplification_mult="1.25"
+				health_change_per_damage_dealt="0.1"
+				>
+		</system>	
+	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+
+<!--Piercing (Fusion) : Nuclear Destoyer.  -->	
+	<entity name="NuclearDestroyer"
+	        thematic_groups="Human,Destroyer"
+	        special_entity_type="Destroyer"
+		visuals="Assets/_DLC3/Destroyers/NuclearDestroyer/NuclearDestroyer.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships2/Destroyer" icon_overlay="Overlays2/Destroyer_Nuclear" gimbal_icon_size_multiplier="1.25"
+			voice_group="Saboteur"
+			category="Ship"
+			size_scale="6.8"
+			visuals_scale_multiplier="3.5"
+			uses_large_health_bar="true"
+			collision_priority="100"
+			display_name="核子驱逐舰"
+			display_name_for_sidebar="核子DS" aip_when_granted_by_hack="15"
+			description="驱逐舰是一种精英级舰船，每支舰队限有两艘；它们不算作标准舰船生产线，但有资格获得FRS舰船提供的全舰队加成。核子驱逐舰会发射微型弹头，绕过受影响目标在其影响范围内的护盾。它伴随着一个强大的聚变守卫，发动更有针对性的攻击，绕过大多数护盾。"
+			starting_mark_level="Mark3" tech_upgrades_that_benefit_me="Fusion"
+			cost_for_ai_to_purchase="16000" strength_multiplier="1"
+			hull_points="428500" shield_points="285700" speed="BelowAverage2"
+			metal_cost="250000" energy_consumption="22000"
+			armor_mm="210" engine_gx="16" albedo="0.4" mass_tx="5.5"
+			build_points_per_second="150" build_point_cost_for_per_second_construction="3000"
+			tag_to_spawn_from_for_build_point_for_per_second_construction="PiercingWard"
+			personal_ship_cap_for_per_second_build_point_construction="1"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			absolute_max_cap_when_in_fleets="2"
+            priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+			>
+		<fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="100" cap="2"/>			
+		<system name="WT" display_name="微型弹头"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="20000" range="High1" shot_speed="Slow" rate_of_fire="ExtremelyLow" fires_salvos_sequentially="false"
+				shot_type_data="PlasmaTorpedoAOEBurstAtEnd" cloaking_percent_loss_from_firing="1"	
+				area_of_effect_size="700" 
+				aoe_spreads_damage_among_available_targets="true" maximum_number_of_targets_hit_per_shot="20"
+				base_percent_damage_bypasses_personal_shields="0.9"
+				>
+			<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="HullOnly" comparison_type="AtLeast" compared_to="50" multiplier="1.5" />
+		</system>		
+	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+
+
+
+<!--Raid : Assassin Destoyer.  -->	
+	<entity name="AssassinDestroyer"
+	        thematic_groups="Human,Destroyer"
+	        special_entity_type="Destroyer"
+		visuals="Assets/_DLC3/Destroyers/AssassinDestroyer/AssassinDestroyer.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships2/Destroyer" icon_overlay="Overlays2/Destroyer_Assassin" gimbal_icon_size_multiplier="1.25"
+			voice_group="Saboteur"
+			category="Ship"
+			size_scale="7"
+			visuals_scale_multiplier="1.6"
+			uses_large_health_bar="true"
+			collision_priority="100"
+			display_name="刺客驱逐舰"
+			display_name_for_sidebar="刺客DS" aip_when_granted_by_hack="15"
+			description="驱逐舰是一种精英级舰船，每支舰队限有两艘；它们不算作标准舰船生产线，但有资格获得FRS舰船提供的全舰队加成。刺客驱逐舰会毫不退缩地攻击比它大数倍的单位，由其闪光守卫保护，这些守卫会吸引敌方火力。它的主要武器在刺客或其目标越弱时造成的伤害越高，将敌人转化为金属残骸。"
+			starting_mark_level="Mark3" tech_upgrades_that_benefit_me="Raid"
+			cost_for_ai_to_purchase="16000" strength_multiplier="1"
+			hull_points="381000" shield_points="200000"  speed="AboveAverage4"
+			metal_cost="250000" energy_consumption="22000"
+			armor_mm="120" engine_gx="18" albedo="0.7" mass_tx="5.5"
+			build_points_per_second="500" build_point_cost_for_per_second_construction="3000"
+			tag_to_spawn_from_for_build_point_for_per_second_construction="RaidWard"
+			personal_ship_cap_for_per_second_build_point_construction="3"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			absolute_max_cap_when_in_fleets="2"
+            priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+			>
+		<fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="100" cap="2"/>			
+	    <system name="WD" display_name="末日加速器"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="500" range="Small4" shot_speed="Normal" rate_of_fire="Misery"
+				shots_per_salvo="10" shots_per_target="10" fires_salvos_sequentially="false"
+				shot_type_data="DoubleShot_Red"				
+				>
+			<outgoing_damage_modifier based_on="MyHullPercentageMissing" comparison_type="MultiplesOf" compared_to="20" multiplier="1" />
+			<outgoing_damage_modifier based_on="TargetHullPercentageMissing" comparison_type="MultiplesOf" compared_to="20" multiplier="1" />
+			<death_effect_damage type="GreaterMetabolization" tier_name="BountyHunter"/> 		  
+		</system>
+	<system name="C" display_name="隐形装置" category="Passive" cloaking_points="2000" cloaking_points_added_per_mark="1000"  ></system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+
+<!--Splash : Tornado Destoyer.  -->	
+	<entity name="TornadoDestroyer"
+	        thematic_groups="Human,Destroyer"
+	        special_entity_type="Destroyer"
+			visuals="Assets/_DLC3/Destroyers/TornadoDestroyer/TornadoDestroyer.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships2/Destroyer" icon_overlay="Overlays2/Destroyer_Tornado" gimbal_icon_size_multiplier="1.25"
+			voice_group="Saboteur"
+			category="Ship"
+			size_scale="7"
+			visuals_scale_multiplier="3.6"
+			uses_large_health_bar="true"
+			collision_priority="100"
+			display_name="龙卷风驱逐舰"
+			display_name_for_sidebar="龙卷风DS" aip_when_granted_by_hack="15"
+			description="驱逐舰是一种精英级舰船，每支舰队限有两艘；它们不算作标准舰船生产线，但有资格获得FRS舰船提供的全舰队加成。龙卷风驱逐舰配备了增强型燃烧弹发射器，会使目标的武器过热，降低其射速。特斯拉守卫围绕着龙卷风驱逐舰旋转，对其影响范围内的单位造成电击伤害，对高能耗单位造成的伤害更高。"
+			starting_mark_level="Mark3" tech_upgrades_that_benefit_me="Splash"
+			cost_for_ai_to_purchase="16000" strength_multiplier="1"
+			hull_points="428500" shield_points="285700" speed="Normal1"
+			metal_cost="250000" energy_consumption="22000"
+			armor_mm="210" engine_gx="16" albedo="0.4" mass_tx="5.5"
+			build_points_per_second="200" build_point_cost_for_per_second_construction="1600"
+			tag_to_spawn_from_for_build_point_for_per_second_construction="SplashWard"
+			personal_ship_cap_for_per_second_build_point_construction="4"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			absolute_max_cap_when_in_fleets="2"
+            priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+			>
+		<fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="100" cap="2"/>			
+	    <system name="WJ" display_name="挥发性燃烧弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="450" range="AboveAverage1" shot_speed="Normal" rate_of_fire="RatherLow" 
+				shots_per_salvo="5" fires_salvos_sequentially="true"
+				shot_type_data="FlakShotAOEBurstAtEnd"
+				area_of_effect_size="900"
+				maximum_number_of_targets_hit_per_shot="15"
+				base_enemy_weapon_reload_slowing_seconds_per_shot="6" added_enemy_weapon_reload_slowing_seconds_per_shot_per_mark="3" enemy_weapon_reload_slowing_to_armor_mm_less_than="70" max_enemy_weapon_reload_slowing_seconds="24"
+				>
+			<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtLeast" compared_to="70" multiplier="6" />
+		</system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+
+
+<!--Subterfuge : Argos Destoyer.  -->	
+	<entity name="ArgosDestroyer"
+	        thematic_groups="Human,Destroyer"
+	        special_entity_type="Destroyer"
+		visuals="Assets/_DLC3/Destroyers/ArgosDestroyer/ArgosDestroyer.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships2/Destroyer" icon_overlay="Overlays2/Destroyer_Argos"  gimbal_icon_size_multiplier="1.25"
+			voice_group="Saboteur"
+			category="Ship"
+			size_scale="7.4"
+			visuals_scale_multiplier="4"
+			uses_large_health_bar="true"
+			collision_priority="100"
+			display_name="阿格斯驱逐舰"
+			display_name_for_sidebar="阿格斯DS" aip_when_granted_by_hack="15"
+			description="驱逐舰是一种精英级舰船，每支舰队限有两艘；它们不算作标准舰船生产线，但有资格获得FRS舰船提供的全舰队加成。阿格斯驱逐舰周围环绕着许多眼柄守卫，目标的能耗越高，这些守卫造成的伤害就越高。它还配备了强大的超光速粒子阵列，能用蜘蛛加农炮使成群的敌方舰船瘫痪。"
+			starting_mark_level="Mark3" tech_upgrades_that_benefit_me="Subterfuge"
+			cost_for_ai_to_purchase="16000" strength_multiplier="1"
+			hull_points="381000" shield_points="200000" speed="AboveAverage1"
+			metal_cost="250000" energy_consumption="22000"
+			armor_mm="120" engine_gx="18" albedo="0.7" mass_tx="5.5"
+			build_points_per_second="400" build_point_cost_for_per_second_construction="1600"
+			tag_to_spawn_from_for_build_point_for_per_second_construction="SubterfugeWard"
+			personal_ship_cap_for_per_second_build_point_construction="15"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			absolute_max_cap_when_in_fleets="2"
+            priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+			>
+		<fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="100" cap="2"/>			
+		<system name="Q4" display_name="蜘蛛加农炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="150" range="AboveAverage2" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="false"
+				shots_per_salvo="30" shots_per_target="10"
+				base_engine_stun_per_shot="12" added_engine_stun_per_shot_per_mark="3" engine_stun_to_engine_gx_less_than="14"
+				max_engine_stun_seconds="30" added_target_evaluator="EngineDamageAsMajorPrimary"
+				shot_type_data="EngineDisruptingShell"
+				>
+			<outgoing_damage_modifier based_on="engine_gx" comparison_type="AtLeast" compared_to="14" multiplier="5" />
+		</system>
+		<system name="T" display_name="超光速粒子阵列"
+				category="Passive" tachyon_points="125" tachyon_points_added_per_mark="25" tachyon_range="Normal4"  tachyon_hits_albedo_less_than="0.75">
+		</system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+
+
+
+
+
+
+</root>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <setting_subcategory parent="Game" name="UX" display_name="用户体验" color="46f0ff"
+      description="关于易用性和用户体验的相关设置。"/>
+  <setting_subcategory parent="Game" name="Tips" display_name="游戏提示" color="46f0ff"
+      description="游戏会在侧边栏显示各种提示。除非您已经很熟悉游戏，否则建议保持开启。"/>
+  <setting_subcategory parent="Game" name="Autosave" display_name="自动保存" color="46f0ff"
+      description="游戏会定期自动保存，并保留一定数量的存档。"/>
+  <setting_subcategory parent="Game" name="Pause" display_name="自动暂停" color="46f0ff"
+      description="游戏会在特定情况下自动暂停。您可以调整此行为。"/>
+  <setting_subcategory parent="Game" name="AccidentPrevention" display_name="误操作预防" color="46f0ff"
+      description="游戏提供了一些防止意外消耗资源的安全措施。您可以在此关闭这些保护。"/>
+  <setting_subcategory parent="Game" name="Warnings" display_name="警告提示" color="46f0ff"
+      description="调整游戏在特定情况下显示的警告信息。"/>
+  <setting_subcategory parent="Game" name="Intel" display_name="情报显示" color="46f0ff"
+      description="调整游戏中显示给您的信息内容。"/>
+  <setting_subcategory parent="Game" name="Experiments" display_name="实验功能" color="46f0ff"
+      description="这些是实验性的游戏功能，我们通常需要玩家反馈。"/>
+
+  <setting_subcategory parent="Display" name="FullscreenMode" display_name="全屏模式" color="46f0ff"
+      description="这些设置仅在游戏全屏模式下生效(非窗口模式)。"/>
+  <setting_subcategory parent="Display" name="WindowedMode" display_name="窗口模式" color="46f0ff"
+      description="这些设置仅在游戏窗口模式下生效(非全屏模式)。"/>
+  <setting_subcategory parent="Display" name="ColorGrading" display_name="色彩分级" color="46f0ff"
+      description="调整游戏整体色彩风格和对比度。"/>
+  <setting_subcategory parent="Display" name="FullscreenEffects" display_name="全屏效果(后期处理)" color="46f0ff"
+      description="调整与全屏后期处理效果相关的设置。这些可能与个人偏好或硬件兼容性有关。"/>
+  <setting_subcategory parent="Display" name="AntiAliasing" display_name="抗锯齿" color="46f0ff"
+      description="调整抗锯齿相关设置，这也是一个全屏效果。"/>
+
+  <setting_subcategory parent="Display" name="Tooltips" display_name="工具提示" color="46f0ff"
+      description="调整工具提示中显示的内容。"/>
+  <setting_subcategory parent="Display" name="HUD" display_name="抬头显示(HUD)" color="46f0ff"
+      description="游戏界面(大部分UI)的相关配置。"/>
+  <setting_subcategory parent="Display" name="HUDMouse" display_name="HUD鼠标控制" color="46f0ff"
+      description="调整鼠标在HUD中的行为。"/>
+  <setting_subcategory parent="Display" name="Sidebar" display_name="侧边栏" color="46f0ff"
+      description="游戏侧边栏的相关配置。"/>
+  <setting_subcategory parent="Display" name="SelectedShips" display_name="选中舰船/舰队窗口" color="46f0ff"
+      description="调整屏幕右下角显示的选中舰船/舰队窗口。"/>  
+  <setting_subcategory parent="Display" name="HUDScale" display_name="HUD缩放" color="46f0ff"
+      description="调整游戏HUD和图标在屏幕上的显示大小。"/>
+
+  <setting_subcategory parent="Audio" name="MasterControls" display_name="主音量控制" color="46f0ff"
+      description="音频的主控制设置。"/>
+  <setting_subcategory parent="Audio" name="SelectiveMuting" display_name="选择性静音" color="46f0ff"
+      description="根据需要关闭特定音频。"/>
+  <setting_subcategory parent="Audio" name="SoundMixing" display_name="声音混合" color="46f0ff"
+      description="调整游戏中不同音效的相对音量。"/>
+  
+  <setting_subcategory parent="Automation" name="AutoBuildAtPlanets" display_name="行星自动建造" color="46f0ff"
+      description="设置在每个新建指挥站的行星上自动建造基本建筑或单位。"/>
+  <setting_subcategory parent="Automation" name="Combat" display_name="战斗" color="46f0ff"
+      description="调整战斗时单位的自动行为。"/>
+  <setting_subcategory parent="Automation" name="Fleets" display_name="舰队" color="46f0ff"
+      description="调整舰队的自动行为。"/>
+
+  <setting_subcategory parent="Performance" name="VisualAndRAMLoad" display_name="视觉与内存负载优化" color="46f0ff"
+      description="这些选项可以降低游戏的视觉负载(CPU和GPU，主要是GPU)和内存需求。"/>
+  <setting_subcategory parent="Performance" name="VisualLoad" display_name="视觉负载优化" color="46f0ff"
+      description="这些选项可以降低游戏的视觉负载(CPU和GPU，主要是GPU)。"/>
+  <setting_subcategory parent="Performance" name="CPULoad" display_name="CPU负载优化" color="46f0ff"
+      description="这些选项可以降低游戏的CPU负载。"/>
+  <setting_subcategory parent="Performance" name="Logging" display_name="日志记录" color="46f0ff"
+      description="这些选项会记录性能相关信息，但会稍微降低游戏速度。"/>
+
+  <setting_subcategory parent="Camera" name="EdgePanning" display_name="边缘平移" color="46f0ff"
+      description="边缘平移可能很烦人，但很多玩家已经习惯了这种方式。"/>
+  
+  <setting_subcategory parent="Camera" name="MainCamera" display_name="主行星视角镜头" color="46f0ff"
+      description="查看特定行星时的镜头设置。"/>
+  <setting_subcategory parent="Camera" name="MainCameraSpeeds" display_name="主镜头控制速度" color="46f0ff"
+      description="查看特定行星时的镜头控制速度设置。"/>
+  <setting_subcategory parent="Camera" name="GalaxyCamera" display_name="星图镜头" color="46f0ff"
+      description="查看星图时的镜头设置。"/>
+  <setting_subcategory parent="Camera" name="GalaxyCameraSpeeds" display_name="星图控制速度" color="46f0ff"
+      description="查看星图时的镜头控制速度设置。"/>
+
+  <setting_subcategory parent="Networking" name="NetPrivacy" display_name="隐私" color="46f0ff"
+      description="如果您在进行多人游戏直播，可能希望隐藏某些信息以保护隐私。不过功能完整性会限制我们能隐藏的内容。"/>
+  <setting_subcategory parent="Networking" name="YourIPs" display_name="您的IP地址信息"  show_network_extras="true" color="46f0ff"
+      description="显示您的IP地址信息，方便您需要时使用。"/>
+
+  <setting_subcategory parent="Debug" name="General" display_name="常规调试" color="46f0ff"
+      description="常规调试设置。"/>
+  <setting_subcategory parent="Debug" name="Experimental" display_name="实验性调试" color="46f0ff"
+      description="这些设置可能会在将来成为正式功能，目前仅供评估。"/>
+  <setting_subcategory parent="Debug" name="TooltipAdditions" display_name="工具提示增强" color="46f0ff"
+      description="为各种工具提示添加额外的调试信息。"/>
+  <setting_subcategory parent="Debug" name="GameplayLogging" display_name="游戏日志记录" color="46f0ff"
+      description="记录各种游戏功能的日志，用于平衡或检查正确性。"/>
+  <setting_subcategory parent="Debug" name="AILogging" display_name="AI日志记录" color="46f0ff"
+      description="记录各种AI功能的日志，用于平衡或检查正确性。"/>
+  <setting_subcategory parent="Debug" name="EscapeMenuAdditions" display_name="Esc菜单增强" color="46f0ff"
+      description="为Esc菜单添加额外信息。"/>
+  <setting_subcategory parent="Debug" name="DataIntegrity" display_name="数据完整性" color="46f0ff"
+      description="记录各种数据的日志，以便验证预期的更改或检查更改后的正确性。"/>
+  <setting_subcategory parent="Debug" name="Serialization" display_name="序列化" color="46f0ff"
+      description="在保存游戏时记录数据序列化或反序列化的日志。"/>
+  <setting_subcategory parent="Debug" name="GameFramework" display_name="游戏框架" color="46f0ff"
+      description="调试游戏底层框架的各个部分。"/>
+  <setting_subcategory parent="Debug" name="VisualLayer" display_name="视觉层" color="46f0ff"
+      description="调试将模拟转换为屏幕显示内容的可视化层。"/>
+  <setting_subcategory parent="Debug" name="DetailedLogs" display_name="详细日志" color="46f0ff"
+      description="记录各种详细或深奥主题的日志。"/>
+  <setting_subcategory parent="Debug" name="NetworkLogging" display_name="网络日志" color="46f0ff"
+      description="记录网络相关的各种日志，用于排查问题。"/>
+  <setting_subcategory parent="Debug" name="Testing" display_name="测试" color="46f0ff"
+      description="更改游戏功能以协助设置测试场景。"/>
+  <setting_subcategory parent="Debug" name="Debug_Combat" display_name="战斗调试" color="46f0ff"
+      description="与战斗相关的调试设置。"/>
+
+  <setting_subcategory parent="Mods" name="FrameworkMods" display_name="框架模组" color="ffeb79" show_framework_mods_list="true"
+      description="这些模组本身不直接提供功能，而是为其他模组提供支持。其他模组会在需要时启用它们。"/>
+
+  <setting_subcategory is_used_somewhere_else_andskips_parent="true" name="MultipleHumanEmpires" display_name="多人人类帝国" color="5096ff"
+      description="本游戏中有多个人类帝国。这些选项允许您配置本帝国与其他人类帝国的关系。"/>
+  <setting_subcategory is_used_somewhere_else_andskips_parent="true" name="PlayersControlling" display_name="玩家控制" color="5096ff"
+      description="在多人游戏中，多个玩家可以共同控制一个派系。您甚至可以在单人游戏开始后，在多人模式下加载存档，让朋友加入控制您的帝国。"/>
+  <setting_subcategory is_used_somewhere_else_andskips_parent="true" name="PlayersOtherSettings" display_name="其他设置(游戏中不可编辑)" color="5096ff"
+      description="这些设置只能在游戏大厅中、开始新游戏前编辑。"/>
+	
+  <setting_subcategory parent="TooltipCustomization" name="Tooltips_General" display_name="通用工具提示" color="46f0ff"
+      description="适用于工具提示的通用设置，或适用于多个工具提示类别的设置。"/>
+  <setting_subcategory parent="TooltipCustomization" name="Tooltips_Entity" display_name="实体工具提示" color="46f0ff"
+      description="适用于舰船和建筑工具提示的设置。"/>
+  <setting_subcategory parent="TooltipCustomization" name="Tooltips_TechSidebar" display_name="科技侧边栏工具提示" color="46f0ff"
+      description="适用于科技侧边栏内工具提示的设置。"/>
+</root>

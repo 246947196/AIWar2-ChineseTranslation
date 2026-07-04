@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root> 
+  <teamcolor is_hidden="true" name="Hidden_Yellow" special_status="hovered" color_hex="fffc21" />
+  <teamcolor is_hidden="true" name="Hiden_Black" special_status="black" color_hex="000000" />
+  <teamcolor is_hidden="true" name="Hiden_White" special_status="white" color_hex="ffffff" />
+
+  <!-- Colors organized by shade, but with duplicates in later groupings removed. -->
+  <teamcolor name="c9966CC" color_hex="9966CC" sort_order="1"/>
+  <teamcolor name="c702963" color_hex="702963" sort_order="2"/>
+  <teamcolor name="cDE3163" color_hex="DE3163" sort_order="3"/>
+  <teamcolor name="c301934" color_hex="301934" sort_order="4"/>
+  <teamcolor name="c614051" color_hex="614051" sort_order="5"/>
+  <teamcolor name="cB53389" color_hex="B53389" sort_order="6"/>
+  <teamcolor name="cFF00FF" color_hex="FF00FF" sort_order="7"/>
+  <teamcolor name="cDF73FF" color_hex="DF73FF" sort_order="8"/>
+  <teamcolor name="c4B0082" color_hex="4B0082" sort_order="9"/>
+  <teamcolor name="cFFF0F5" color_hex="FFF0F5" sort_order="10"/>
+  <teamcolor name="LavenderFloral" color_hex="B57EDC" sort_order="11"/>
+  <teamcolor name="Mauve"  color_hex="CD80FF" sort_order="11.2" comment="Has the most RAM"/>
+  <teamcolor name="cE6E6FA" color_hex="E6E6FA" sort_order="12"/>
+  <teamcolor name="cC8A2C8" color_hex="C8A2C8" sort_order="13"/>
+  <teamcolor name="cFF0090" color_hex="FF0090" sort_order="14"/>
+  <teamcolor name="cE0B0FF" color_hex="E0B0FF" sort_order="15"/>
+  <teamcolor name="cDA70D6" color_hex="DA70D6" sort_order="16"/>
+  <teamcolor name="c8E4585" color_hex="8E4585" sort_order="17"/>
+  <teamcolor name="cCCCCFF" color_hex="CCCCFF" sort_order="18"/>
+  <teamcolor name="c800080" color_hex="800080" sort_order="19"/>
+  <teamcolor name="cC71585" color_hex="C71585" sort_order="20"/>
+  <teamcolor name="cFF007F" color_hex="FF007F" sort_order="21"/>
+  <teamcolor name="cD8BFD8" color_hex="D8BFD8" sort_order="22"/>
+  <teamcolor name="c66023C" color_hex="66023C" sort_order="23"/>
+  <teamcolor name="cC54B8C" color_hex="C54B8C" sort_order="24"/>
+  <teamcolor name="c8F00FF" color_hex="8F00FF" sort_order="25"/>
+  <teamcolor name="c324AB2" color_hex="324AB2" sort_order="26"/>
+  <teamcolor name="cC9A0DC" color_hex="C9A0DC" sort_order="27"/>
+  <teamcolor name="c5D8AA8" color_hex="5D8AA8" sort_order="28"/>
+  <teamcolor name="c72A0C1" color_hex="72A0C1" sort_order="29"/>
+  <teamcolor name="cF0F8FF" color_hex="F0F8FF" sort_order="30"/>
+  <teamcolor name="c007FFF" color_hex="007FFF" sort_order="31"/>
+  <teamcolor name="c89CFF0" color_hex="89CFF0" sort_order="32"/>
+  <teamcolor name="c318CE7" color_hex="318CE7" sort_order="33" special_status="defaultbody" />
+  <teamcolor name="c0000FF" color_hex="0000FF" sort_order="34"/>
+  <teamcolor name="c6699CC" color_hex="6699CC" sort_order="35"/>
+  <teamcolor name="c0095B6" color_hex="0095B6" sort_order="36"/>
+  <teamcolor name="c0070FF" color_hex="0070FF" sort_order="37"/>
+  <teamcolor name="ByzantineBlue" color_hex="3457D5" sort_order="38"/>
+  <teamcolor name="Blue" color_hex="1A2DFF" sort_order="38.2" />
+  <teamcolor name="cA3C1AD" color_hex="A3C1AD" sort_order="39"/>
+  <teamcolor name="c7BAFD4" color_hex="7BAFD4" sort_order="40"/>
+  <teamcolor name="cB2FFFF" color_hex="B2FFFF" sort_order="41"/>
+  <teamcolor name="c007BA7" color_hex="007BA7" sort_order="42"/>
+  <teamcolor name="c0047AB" color_hex="0047AB" sort_order="43"/>
+  <teamcolor name="c75B2DD" color_hex="75B2DD" sort_order="44"/>
+  <teamcolor name="c6495ED" color_hex="6495ED" sort_order="45"/>
+  <teamcolor name="c00FFFF" color_hex="00FFFF" sort_order="46"/>
+  <teamcolor name="c0000B8" color_hex="0000B8" sort_order="47"/>
+  <teamcolor name="c00BFFF" color_hex="00BFFF" sort_order="48"/>
+  <teamcolor name="c1560BD" color_hex="1560BD" sort_order="49"/>
+  <teamcolor name="c1E90FF" color_hex="1E90FF" sort_order="50"/>
+  <teamcolor name="c00009C" color_hex="00009C" sort_order="51"/>
+  <teamcolor name="c1034A6" color_hex="1034A6" sort_order="52"/>
+  <teamcolor name="c7DF9FF" color_hex="7DF9FF" sort_order="53"/>
+  <teamcolor name="c96C8A2" color_hex="96C8A2" sort_order="54"/>
+  <teamcolor name="c16166B" color_hex="16166B" sort_order="55"/>
+  <teamcolor name="c6082B6" color_hex="6082B6" sort_order="56"/>
+  <teamcolor name="c6F00FF" color_hex="6F00FF" sort_order="57"/>
+  <teamcolor name="c002FA7" color_hex="002FA7" sort_order="58"/>
+  <teamcolor name="c5A4FCF" color_hex="5A4FCF" sort_order="59"/>
+  <teamcolor name="cADD8E6" color_hex="ADD8E6" sort_order="60"/>
+  <teamcolor name="c6050DC" color_hex="6050DC" sort_order="61"/>
+  <teamcolor name="cE1EBEE" color_hex="E1EBEE" sort_order="62"/>
+  <teamcolor name="c73C2FB" color_hex="73C2FB" sort_order="63"/>
+  <teamcolor name="c0000CD" color_hex="0000CD" sort_order="64"/>
+  <teamcolor name="c191970" color_hex="191970" sort_order="65"/>
+  <teamcolor name="c000080" color_hex="000080" sort_order="66"/>
+  <teamcolor name="cA4DDED" color_hex="A4DDED" sort_order="67"/>
+  <teamcolor name="c002147" color_hex="002147" sort_order="68"/>
+  <teamcolor name="c273BE2" color_hex="273BE2" sort_order="69"/>
+  <teamcolor name="c1C39BB" color_hex="1C39BB" sort_order="70"/>
+  <teamcolor name="c000f89" color_hex="000f89" sort_order="71"/>
+  <teamcolor name="c9EB9D4" color_hex="9EB9D4" sort_order="72"/>
+  <teamcolor name="c003153" color_hex="003153" sort_order="73"/>
+  <teamcolor name="c4169E1" color_hex="4169E1" sort_order="74"/>
+  <teamcolor name="c0F52BA" color_hex="0F52BA" sort_order="75"/>
+  <teamcolor name="c87CEEB" color_hex="87CEEB" sort_order="76"/>
+  <teamcolor name="c4682b4" color_hex="4682b4" sort_order="77"/>
+  <teamcolor name="c008080" color_hex="008080" sort_order="78"/>
+  <teamcolor name="c81D8D0" color_hex="81D8D0" sort_order="79"/>
+  <teamcolor name="c2D68C4" color_hex="2D68C4" sort_order="80"/>
+  <teamcolor name="c3E8EDE" color_hex="3E8EDE" sort_order="81"/>
+  <teamcolor name="c40E0D0" color_hex="40E0D0" sort_order="82"/>
+  <teamcolor name="c3284BF" color_hex="3284BF" sort_order="83"/>
+  <teamcolor name="c120A8F" color_hex="120A8F" sort_order="84"/>
+  <teamcolor name="c40826D" color_hex="40826D" sort_order="85"/>
+  <teamcolor name="c00356B" color_hex="00356B" sort_order="86"/>
+  <teamcolor name="c2e5090" color_hex="2e5090" sort_order="87"/>
+  <teamcolor name="c0014A8" color_hex="0014A8" sort_order="88"/>
+  <teamcolor name="c7FFFD4" color_hex="7FFFD4" sort_order="89"/>
+  <teamcolor name="cF0FFFF" color_hex="F0FFFF" sort_order="90"/>
+  <teamcolor name="c29AB87" color_hex="29AB87" sort_order="91"/>
+  <teamcolor name="cAAF0D1" color_hex="AAF0D1" sort_order="92"/>
+  <teamcolor name="c3EB489" color_hex="3EB489" sort_order="93"/>
+  <teamcolor name="c00A693" color_hex="00A693" sort_order="94"/>
+  <teamcolor name="c01796F" color_hex="01796F" sort_order="95"/>
+  <teamcolor name="c00CCCC" color_hex="00CCCC" sort_order="96"/>
+  <teamcolor name="c2E8B57" color_hex="2E8B57" sort_order="97"/>
+  <teamcolor name="c007A74" color_hex="007A74" sort_order="98"/>
+  <teamcolor name="c43B3AE" color_hex="43B3AE" sort_order="99"/>
+  <teamcolor name="c8DB600" color_hex="8DB600" sort_order="100"/>
+  <teamcolor name="c7BA05B" color_hex="7BA05B" sort_order="101"/>
+  <teamcolor name="c568203" color_hex="568203" sort_order="102"/>
+  <teamcolor name="BrightGreen" color_hex="66FF00" sort_order="103"/>
+  <teamcolor name="Green" color_hex="8DFF1A" sort_order="103.2"/>
+  <teamcolor name="c004225" color_hex="004225" sort_order="104"/>
+  <teamcolor name="c1B4D3E" color_hex="1B4D3E" sort_order="105"/>
+  <teamcolor name="c1E4D2B" color_hex="1E4D2B" sort_order="106"/>
+  <teamcolor name="c00563B" color_hex="00563B" sort_order="107"/>
+  <teamcolor name="c7FFF00" color_hex="7FFF00" sort_order="108"/>
+  <teamcolor name="c004953" color_hex="004953" sort_order="109"/>
+  <teamcolor name="c013220" color_hex="013220" sort_order="110"/>
+  <teamcolor name="c4A5D23" color_hex="4A5D23" sort_order="111"/>
+  <teamcolor name="c556B2F" color_hex="556B2F" sort_order="112"/>
+  <teamcolor name="c177245" color_hex="177245" sort_order="113"/>
+  <teamcolor name="c00693E" color_hex="00693E" sort_order="114"/>
+  <teamcolor name="c50C878" color_hex="50C878" sort_order="115"/>
+  <teamcolor name="c4F7942" color_hex="4F7942" sort_order="116"/>
+  <teamcolor name="c228B22" color_hex="228B22" sort_order="117"/>
+  <teamcolor name="c00FF00" color_hex="00FF00" sort_order="118"/>
+  <teamcolor name="cADFF2F" color_hex="ADFF2F" sort_order="119"/>
+  <teamcolor name="c3FFF00" color_hex="3FFF00" sort_order="120"/>
+  <teamcolor name="c49796B" color_hex="49796B" sort_order="121"/>
+  <teamcolor name="cF0FFF0" color_hex="F0FFF0" sort_order="122"/>
+  <teamcolor name="HunterGreen" color_hex="355E3B" sort_order="123"/>
+  <teamcolor name="c138808" color_hex="138808" sort_order="124"/>
+  <teamcolor name="c009900" color_hex="009900" sort_order="125"/>
+  <teamcolor name="c4CBB17" color_hex="4CBB17" sort_order="126"/>
+  <teamcolor name="cA9BA9D" color_hex="A9BA9D" sort_order="127"/>
+  <teamcolor name="c7CFC00" color_hex="7CFC00" sort_order="128"/>
+  <teamcolor name="c90EE90" color_hex="90EE90" sort_order="129"/>
+  <teamcolor name="cBFFF00" color_hex="BFFF00" sort_order="130"/>
+  <teamcolor name="c32CD32" color_hex="32CD32" sort_order="131"/>
+  <teamcolor name="c74C365" color_hex="74C365" sort_order="132"/>
+  <teamcolor name="c0BDA51" color_hex="0BDA51" sort_order="133"/>
+  <teamcolor name="cF5FFFA" color_hex="F5FFFA" sort_order="134"/>
+  <teamcolor name="c8A9A5B" color_hex="8A9A5B" sort_order="135"/>
+  <teamcolor name="c317873" color_hex="317873" sort_order="136"/>
+  <teamcolor name="c39FF14" color_hex="39FF14" sort_order="137"/>
+  <teamcolor name="c808000" color_hex="808000" sort_order="138"/>
+  <teamcolor name="c006600" color_hex="006600" sort_order="139"/>
+  <teamcolor name="c123524" color_hex="123524" sort_order="140"/>
+  <teamcolor name="c00A550" color_hex="00A550" sort_order="141"/>
+  <teamcolor name="c93C572" color_hex="93C572" sort_order="142"/>
+  <teamcolor name="c6c7c59" color_hex="6c7c59" sort_order="143"/>
+  <teamcolor name="c76FF7A" color_hex="76FF7A" sort_order="144"/>
+  <teamcolor name="c009E60" color_hex="009E60" sort_order="145"/>
+  <teamcolor name="c008000" color_hex="008000" sort_order="146"/>
+  <teamcolor name="cA7FC00" color_hex="A7FC00" sort_order="147"/>
+  <teamcolor name="c00FF7F" color_hex="00FF7F" sort_order="148"/>
+  <teamcolor name="c9ACD32" color_hex="9ACD32" sort_order="149"/>
+  <teamcolor name="cFFBF00" color_hex="FFBF00" sort_order="150"/>
+  <teamcolor name="cFBCEB1" color_hex="FBCEB1" sort_order="151"/>
+  <teamcolor name="cE9D66B" color_hex="E9D66B" sort_order="152"/>
+  <teamcolor name="cFDEE00" color_hex="FDEE00" sort_order="153"/>
+  <teamcolor name="cF5F5DC" color_hex="F5F5DC" sort_order="154"/>
+  <teamcolor name="cF0DC82" color_hex="F0DC82" sort_order="155"/>
+  <teamcolor name="cDFFF00" color_hex="DFFF00" sort_order="156"/>
+  <teamcolor name="cE4D00A" color_hex="E4D00A" sort_order="157"/>
+  <teamcolor name="cFFFDD0" color_hex="FFFDD0" sort_order="158"/>
+  <teamcolor name="cB8860B" color_hex="B8860B" sort_order="159"/>
+  <teamcolor name="cCDB280" color_hex="CDB280" sort_order="160"/>
+  <teamcolor name="cEEDC82" color_hex="EEDC82" sort_order="161"/>
+  <teamcolor name="GoldByShade" color_hex="FFD700" sort_order="162"/>
+  <teamcolor name="Gold" color_hex="FFD70D" sort_order="162.2"/>
+  <teamcolor name="cD4AF37" color_hex="D4AF37" sort_order="163"/>
+  <teamcolor name="cDAA520" color_hex="DAA520" sort_order="164"/>
+  <teamcolor name="cE6A817" color_hex="E6A817" sort_order="165"/>
+  <teamcolor name="cF8DE7E" color_hex="F8DE7E" sort_order="166"/>
+  <teamcolor name="cFACA16" color_hex="FACA16" sort_order="167"/>
+  <teamcolor name="cC3B091" color_hex="C3B091" sort_order="168"/>
+  <teamcolor name="cFFFACD" color_hex="FFFACD" sort_order="169"/>
+  <teamcolor name="cC19A6B" color_hex="C19A6B" sort_order="170"/>
+  <teamcolor name="cFBEC5D" color_hex="FBEC5D" sort_order="171"/>
+  <teamcolor name="cFFC40C" color_hex="FFC40C" sort_order="172"/>
+  <teamcolor name="cFFDB58" color_hex="FFDB58" sort_order="173"/>
+  <teamcolor name="cFADA5E" color_hex="FADA5E" sort_order="174"/>
+  <teamcolor name="cFFDEAD" color_hex="FFDEAD" sort_order="175"/>
+  <teamcolor name="cCFB53B" color_hex="CFB53B" sort_order="176"/>
+  <teamcolor name="cFFEFD5" color_hex="FFEFD5" sort_order="177"/>
+  <teamcolor name="cF4C431" color_hex="F4C431" sort_order="178"/>
+  <teamcolor name="cffd800" color_hex="ffd800" sort_order="179"/>
+  <teamcolor name="cFFBA00" color_hex="FFBA00" sort_order="180"/>
+  <teamcolor name="cE4D96F" color_hex="E4D96F" sort_order="181"/>
+  <teamcolor name="cFFCC33" color_hex="FFCC33" sort_order="182"/>
+  <teamcolor name="cF3E5AB" color_hex="F3E5AB" sort_order="183"/>
+  <teamcolor name="Yellow2" color_hex="FFFF00" sort_order="184"/>
+  <teamcolor name="Yellow" color_hex="FFFF1A" sort_order="184.2"/>
+  <teamcolor name="cFF9966" color_hex="FF9966" sort_order="185"/>
+  <teamcolor name="cFF6F5E" color_hex="FF6F5E" sort_order="186"/>
+  <teamcolor name="c964B00" color_hex="964B00" sort_order="187"/>
+  <teamcolor name="cCC5500" color_hex="CC5500" sort_order="188"/>
+  <teamcolor name="CarrotOrange" color_hex="ED9121" sort_order="189"/>
+  <teamcolor name="Orange" color_hex="FF7A1A" sort_order="189.2" />
+  <teamcolor name="cF7E7CE" color_hex="F7E7CE" sort_order="190"/>
+  <teamcolor name="cFF7F50" color_hex="FF7F50" sort_order="191"/>
+  <teamcolor name="c6F4E37" color_hex="6F4E37" sort_order="192"/>
+  <teamcolor name="cE9967A" color_hex="E9967A" sort_order="193"/>
+  <teamcolor name="cE9692C" color_hex="E9692C" sort_order="194"/>
+  <teamcolor name="cFF7E00" color_hex="FF7E00" sort_order="195"/>
+  <teamcolor name="cE25822" color_hex="E25822" sort_order="196"/>
+  <teamcolor name="cEF9B0F" color_hex="EF9B0F" sort_order="197"/>
+  <teamcolor name="cFF4F00" color_hex="FF4F00" sort_order="198"/>
+  <teamcolor name="cC04000" color_hex="C04000" sort_order="199"/>
+  <teamcolor name="cFFC800" color_hex="FFC800" sort_order="200"/>
+  <teamcolor name="cEAA221" color_hex="EAA221" sort_order="201"/>
+  <teamcolor name="cFF7F00" color_hex="FF7F00" sort_order="202"/>
+  <teamcolor name="cFFA500" color_hex="FFA500" sort_order="203"/>
+  <teamcolor name="cFF4500" color_hex="FF4500" sort_order="204"/>
+  <teamcolor name="cFFA000" color_hex="FFA000" sort_order="205"/>
+  <teamcolor name="cFFE5B4" color_hex="FFE5B4" sort_order="206"/>
+  <teamcolor name="cFFCC99" color_hex="FFCC99" sort_order="207"/>
+  <teamcolor name="cFADFAD" color_hex="FADFAD" sort_order="208"/>
+  <teamcolor name="cD99058" color_hex="D99058" sort_order="209"/>
+  <teamcolor name="cEC5800" color_hex="EC5800" sort_order="210"/>
+  <teamcolor name="cFF5A36" color_hex="FF5A36" sort_order="211"/>
+  <teamcolor name="cFF8F00" color_hex="FF8F00" sort_order="212"/>
+  <teamcolor name="cFF7518" color_hex="FF7518" sort_order="213"/>
+  <teamcolor name="cB7410E" color_hex="B7410E" sort_order="214"/>
+  <teamcolor name="cFF7900" color_hex="FF7900" sort_order="215"/>
+  <teamcolor name="cFF8C69" color_hex="FF8C69" sort_order="216"/>
+  <teamcolor name="cCBA135" color_hex="CBA135" sort_order="217"/>
+  <teamcolor name="cFAD6A5" color_hex="FAD6A5" sort_order="218"/>
+  <teamcolor name="cF94D00" color_hex="F94D00" sort_order="219"/>
+  <teamcolor name="cF28500" color_hex="F28500" sort_order="220"/>
+  <teamcolor name="cCD5700" color_hex="CD5700" sort_order="221"/>
+  <teamcolor name="cF88379" color_hex="F88379" sort_order="222"/>
+  <teamcolor name="cFF6347" color_hex="FF6347" sort_order="223"/>
+  <teamcolor name="cE34234" color_hex="E34234" sort_order="224"/>
+  <teamcolor name="cA52A2A" color_hex="A52A2A" sort_order="225"/>
+  <teamcolor name="c9F8170" color_hex="9F8170" sort_order="226"/>
+  <teamcolor name="c3D2B1F" color_hex="3D2B1F" sort_order="227"/>
+  <teamcolor name="c79443B" color_hex="79443B" sort_order="228"/>
+  <teamcolor name="cCD7F32" color_hex="CD7F32" sort_order="229"/>
+  <teamcolor name="c800020" color_hex="800020" sort_order="230"/>
+  <teamcolor name="cE97451" color_hex="E97451" sort_order="231"/>
+  <teamcolor name="c8A3324" color_hex="8A3324" sort_order="232"/>
+  <teamcolor name="cA0785A" color_hex="A0785A" sort_order="233"/>
+  <teamcolor name="c954535" color_hex="954535" sort_order="234"/>
+  <teamcolor name="c7B3F00" color_hex="7B3F00" sort_order="235"/>
+  <teamcolor name="cB87333" color_hex="B87333" sort_order="236"/>
+  <teamcolor name="c893F45" color_hex="893F45" sort_order="237"/>
+  <teamcolor name="Coyote" color_hex="81613E" sort_order="238"/>
+  <teamcolor name="Brown" color_hex="66380A" sort_order="238.2" />
+  <teamcolor name="cEDC9AF" color_hex="EDC9AF" sort_order="239"/>
+  <teamcolor name="cE1A95F" color_hex="E1A95F" sort_order="240"/>
+  <teamcolor name="cC2B280" color_hex="C2B280" sort_order="241"/>
+  <teamcolor name="cE5AA70" color_hex="E5AA70" sort_order="242"/>
+  <teamcolor name="c6C541E" color_hex="6C541E" sort_order="243"/>
+  <teamcolor name="cE48400" color_hex="E48400" sort_order="244"/>
+  <teamcolor name="cF4F0EC" color_hex="F4F0EC" sort_order="245"/>
+  <teamcolor name="c674C47" color_hex="674C47" sort_order="246"/>
+  <teamcolor name="c800000" color_hex="800000" sort_order="247"/>
+  <teamcolor name="cCC7722" color_hex="CC7722" sort_order="248"/>
+  <teamcolor name="c926644" color_hex="926644" sort_order="249"/>
+  <teamcolor name="cA45A52" color_hex="A45A52" sort_order="250"/>
+  <teamcolor name="cA81C07" color_hex="A81C07" sort_order="251"/>
+  <teamcolor name="c80461B" color_hex="80461B" sort_order="252"/>
+  <teamcolor name="cF4A460" color_hex="F4A460" sort_order="253"/>
+  <teamcolor name="c59260B" color_hex="59260B" sort_order="254"/>
+  <teamcolor name="c704214" color_hex="704214" sort_order="255"/>
+  <teamcolor name="c882D17" color_hex="882D17" sort_order="256"/>
+  <teamcolor name="cCB410B" color_hex="CB410B" sort_order="257"/>
+  <teamcolor name="cD2B48C" color_hex="D2B48C" sort_order="258"/>
+  <teamcolor name="c483C32" color_hex="483C32" sort_order="259"/>
+  <teamcolor name="c635147" color_hex="635147" sort_order="260"/>
+  <teamcolor name="c645452" color_hex="645452" sort_order="261"/>
+  <teamcolor name="cF5DEB3" color_hex="F5DEB3" sort_order="262"/>
+  <teamcolor name="cE32636" color_hex="E32636" sort_order="263"/>
+  <teamcolor name="cE52B50" color_hex="E52B50" sort_order="264"/>
+  <teamcolor name="Red" color_hex="FF033E" sort_order="265" display_name="美国玫瑰红" />
+  <teamcolor name="c660000" color_hex="660000" sort_order="266"/>
+  <teamcolor name="cC41E3A" color_hex="C41E3A" sort_order="267"/>
+  <teamcolor name="c960018" color_hex="960018" sort_order="268"/>
+  <teamcolor name="cB31B1B" color_hex="B31B1B" sort_order="269"/>
+  <teamcolor name="c58111A" color_hex="58111A" sort_order="270"/>
+  <teamcolor name="cE44D2E" color_hex="E44D2E" sort_order="271"/>
+  <teamcolor name="cFF3800" color_hex="FF3800" sort_order="272"/>
+  <teamcolor name="cDC143C" color_hex="DC143C" sort_order="273"/>
+  <teamcolor name="c8B0000" color_hex="8B0000" sort_order="274"/>
+  <teamcolor name="cFF003F" color_hex="FF003F" sort_order="275"/>
+  <teamcolor name="cFF3365" color_hex="FF3365" sort_order="275.2"/>
+  <teamcolor name="cB22222" color_hex="B22222" sort_order="276"/>
+  <teamcolor name="cFF004F" color_hex="FF004F" sort_order="277"/>
+  <teamcolor name="cCD5C5C" color_hex="CD5C5C" sort_order="278"/>
+  <teamcolor name="cFF3300" color_hex="FF3300" sort_order="279"/>
+  <teamcolor name="cC81D11" color_hex="C81D11" sort_order="280"/>
+  <teamcolor name="cFFCBDB" color_hex="FFCBDB" sort_order="281"/>
+  <teamcolor name="cE30B5C" color_hex="E30B5C" sort_order="282"/>
+  <teamcolor name="cFF0000" color_hex="FF0000" sort_order="283"/>
+  <teamcolor name="cAB4E52" color_hex="AB4E52" sort_order="284"/>
+  <teamcolor name="c65000B" color_hex="65000B" sort_order="285"/>
+  <teamcolor name="cCC0000" color_hex="CC0000" sort_order="286"/>
+  <teamcolor name="cE0115F" color_hex="E0115F" sort_order="287"/>
+  <teamcolor name="Scarlet2" color_hex="FF2400" sort_order="288"/>
+  <teamcolor name="Scarlet" color_hex="780E02" sort_order="288.2" />
+  <teamcolor name="cE2725B" color_hex="E2725B" sort_order="289"/>
+  <teamcolor name="cA91101" color_hex="A91101" sort_order="290"/>
+  <teamcolor name="c7C3030" color_hex="7C3030" sort_order="291"/>
+  <teamcolor name="cC80815" color_hex="C80815" sort_order="292"/>
+  <teamcolor name="c722F37" color_hex="722F37" sort_order="293"/>
+  <teamcolor name="cF19CBB" color_hex="F19CBB" sort_order="294"/>
+  <teamcolor name="cFF91AF" color_hex="FF91AF" sort_order="295"/>
+  <teamcolor name="cE4C4CF" color_hex="E4C4CF" sort_order="296"/>
+  <teamcolor name="cFB607F" color_hex="FB607F" sort_order="297"/>
+  <teamcolor name="cFFA6C9" color_hex="FFA6C9" sort_order="298"/>
+  <teamcolor name="cF56FA1" color_hex="F56FA1" sort_order="299"/>
+  <teamcolor name="cEF3038" color_hex="EF3038" sort_order="300"/>
+  <teamcolor name="cFF1493" color_hex="FF1493" sort_order="301"/>
+  <teamcolor name="cF64A8A" color_hex="F64A8A" sort_order="302"/>
+  <teamcolor name="cF400A1" color_hex="F400A1" sort_order="303"/>
+  <teamcolor name="cFF00CC" color_hex="FF00CC" sort_order="304"/>
+  <teamcolor name="cFF69B4" color_hex="FF69B4" sort_order="305"/>
+  <teamcolor name="cFBAED2" color_hex="FBAED2" sort_order="306"/>
+  <teamcolor name="cE4007C" color_hex="E4007C" sort_order="307"/>
+  <teamcolor name="c997A8D" color_hex="997A8D" sort_order="308"/>
+  <teamcolor name="cFE28A2" color_hex="FE28A2" sort_order="309"/>
+  <teamcolor name="cCC8899" color_hex="CC8899" sort_order="310"/>
+  <teamcolor name="RosePink" color_hex="FF66CC" sort_order="311"/>
+  <teamcolor name="Pink" color_hex="FF1A8D" sort_order="311.2"/>
+  <teamcolor name="cFF91A4" color_hex="FF91A4" sort_order="312"/>
+  <teamcolor name="cFC0FC0" color_hex="FC0FC0" sort_order="313"/>
+  <teamcolor name="cDE6FA1" color_hex="DE6FA1" sort_order="314"/>
+  <teamcolor name="cFF6FFF" color_hex="FF6FFF" sort_order="315"/>
+  <teamcolor name="cAB274F" color_hex="AB274F" sort_order="316"/>
+  <teamcolor name="cDE5D83" color_hex="DE5D83" sort_order="317"/>
+  <teamcolor name="cFF1DCE" color_hex="FF1DCE" sort_order="318"/>
+  <teamcolor name="cD0417E" color_hex="D0417E" sort_order="319"/>
+  <teamcolor name="cCA1F7B" color_hex="CA1F7B" sort_order="320"/>
+  <teamcolor name="c9F4576" color_hex="9F4576" sort_order="321"/>
+  <teamcolor name="cFE4EDA" color_hex="FE4EDA" sort_order="322"/>
+  <teamcolor name="c8E3A59" color_hex="8E3A59" sort_order="323"/>
+  <teamcolor name="cFF33CC" color_hex="FF33CC" sort_order="324"/>
+  <teamcolor name="cCF71AF" color_hex="CF71AF" sort_order="325"/>
+  <teamcolor name="cCC33CC" color_hex="CC33CC" sort_order="326"/>
+  <teamcolor name="cCF3476" color_hex="CF3476" sort_order="327"/>
+  <teamcolor name="cF75394" color_hex="F75394" sort_order="328"/>
+  <teamcolor name="c000000" color_hex="000000" sort_order="329"/>
+  <teamcolor name="Black" color_hex="191919" sort_order="329.2" />
+  <teamcolor name="c3D0C02" color_hex="3D0C02" sort_order="330"/>
+  <teamcolor name="c4B3621" color_hex="4B3621" sort_order="331"/>
+  <teamcolor name="c36454F" color_hex="36454F" sort_order="332"/>
+  <teamcolor name="c555D50" color_hex="555D50" sort_order="333"/>
+  <teamcolor name="c1B1B1B" color_hex="1B1B1B" sort_order="334"/>
+  <teamcolor name="c343434" color_hex="343434" sort_order="335"/>
+  <teamcolor name="c1A1110" color_hex="1A1110" sort_order="336"/>
+  <teamcolor name="c353839" color_hex="353839" sort_order="337"/>
+  <teamcolor name="c414A4C" color_hex="414A4C" sort_order="338"/>
+  <teamcolor name="c242124" color_hex="242124" sort_order="339"/>
+  <teamcolor name="cF2F3F4" color_hex="F2F3F4" sort_order="340" special_status="defaulttrim"/>
+  <teamcolor name="cFAEBD7" color_hex="FAEBD7" sort_order="341"/>
+  <teamcolor name="cFAF0BE" color_hex="FAF0BE" sort_order="342"/>
+  <teamcolor name="cFFF8DC" color_hex="FFF8DC" sort_order="343"/>
+  <teamcolor name="cFFF8E7" color_hex="FFF8E7" sort_order="344"/>
+  <teamcolor name="cF0EAD6" color_hex="F0EAD6" sort_order="345"/>
+  <teamcolor name="cFFFAF0" color_hex="FFFAF0" sort_order="346"/>
+  <teamcolor name="cF8F8FF" color_hex="F8F8FF" sort_order="347"/>
+  <teamcolor name="cFFFFF0" color_hex="FFFFF0" sort_order="350"/>
+  <teamcolor name="cFAF0E6" color_hex="FAF0E6" sort_order="353"/>
+  <teamcolor name="cF4E9D8" color_hex="F4E9D8" sort_order="354"/>
+  <teamcolor name="cFDF5E6" color_hex="FDF5E6" sort_order="357"/>
+  <teamcolor name="cFFE5D4" color_hex="FFE5D4" sort_order="359"/>
+  <teamcolor name="cEAE0C8" color_hex="EAE0C8" sort_order="360"/>
+  <teamcolor name="cFFF5EE" color_hex="FFF5EE" sort_order="361"/>
+  <teamcolor name="cFFFAFA" color_hex="FFFAFA" sort_order="362"/>
+  <teamcolor name="cFEFDFF" color_hex="FEFDFF" sort_order="363"/>
+  <teamcolor name="cFFFFFF" color_hex="FFFFFF" sort_order="364"/>
+  <teamcolor name="cF5F5F5" color_hex="F5F5F5" sort_order="365"/>
+  <teamcolor name="White" color_hex="E5E5E5" sort_order="366" />
+  <teamcolor name="Gray" color_hex="A1A1A1" sort_order="367" />
+  <teamcolor name="c808080" color_hex="808080" sort_order="368"/>
+  <teamcolor name="Ash" color_hex="B2BEB5" sort_order="369"/>
+  <teamcolor name="BattleshipGray" color_hex="848482" sort_order="370"/>
+  <teamcolor name="CadetGray" color_hex="91A3B0" sort_order="371"/>
+  <teamcolor name="CoolGray" color_hex="8C92AC" sort_order="372"/>
+  <teamcolor name="DavysGray" color_hex="555555" sort_order="373"/>
+  <teamcolor name="PaynesGrey" color_hex="536878" sort_order="374"/>
+  <teamcolor name="Gunmetal2" color_hex="536267" sort_order="375"/>
+  <teamcolor name="Gunmetal" color_hex="5D5D5D" sort_order="375.2"/>
+  <teamcolor name="Platinum" color_hex="E5E4E2" sort_order="376"/>
+  <teamcolor name="Silver" color_hex="C0C0C0" sort_order="377"/>
+  <teamcolor name="Timberwolf" color_hex="DBD7D2" sort_order="378"/>
+
+  <!-- old colors (retained to not break old saves, for now) -->
+  <teamcolor is_hidden="true" color_hex="1AFFA0" sort_order="06" name="Cyan" display_name="这不是青色，是绿色" comment="色相 155"/>
+  <teamcolor is_hidden="true" color_hex="1AEDFF" sort_order="07" name="Turquoise" display_name="绿松石色" comment="色相 185"/>
+  <teamcolor is_hidden="true" color_hex="1AA0FF" sort_order="08" name="ElectricBlue" display_name="电蓝色" comment="色相 205"/>
+  <teamcolor is_hidden="true" color_hex="7D12B3" sort_order="10" name="Purple" display_name="紫色" comment="色相 285，明度 70"/>
+  
+  <teamcolor is_hidden="true" name="BrownLight" display_name="浅棕色" color_hex="af885f"  />
+  <teamcolor is_hidden="true" name="Sandpaper" color_hex="bea78f"  />
+  <teamcolor is_hidden="true" name="YellowNeon" display_name="霓虹黄" color_hex="f3ff39" />
+  <teamcolor is_hidden="true" name="RedHot" display_name="艳红色" color_hex="ff4a32" />
+  <teamcolor is_hidden="true" name="RedBland" display_name="淡红色" color_hex="bd4a44" />  
+  <teamcolor is_hidden="true" name="GreenNeon" display_name="霓虹绿" special_status="hoveredselected" color_hex="00ff01" />
+  <teamcolor is_hidden="true" name="GreenOlive" display_name="橄榄绿" color_hex="70c600"  />
+  <teamcolor is_hidden="true" name="PurpleBright" display_name="亮紫色" color_hex="cb80ff"  />
+  <teamcolor is_hidden="true" name="PinkDeep" display_name="深粉色" color_hex="d310c3"   />
+  <teamcolor is_hidden="true" name="PinkHot" display_name="艳粉色" color_hex="ff00c0"  />
+  <teamcolor is_hidden="true" name="PinkPale" display_name="淡粉色" color_hex="ffa7e9"   />
+  <teamcolor is_hidden="true" name="BlueBasic" display_name="基础蓝" color_hex="006cff"  />
+  <teamcolor is_hidden="true" name="BlueDeep" display_name="深蓝色" color_hex="3f3fc1"  />
+  <teamcolor is_hidden="true" name="BlueFlat" display_name="纯蓝色" color_hex="0038ed"  />
+  <teamcolor is_hidden="true" name="CyanBright" display_name="亮青色" color_hex="99feff" />
+  <teamcolor is_hidden="true" name="GrayDarker" display_name="深灰色" color_hex="6e6e6e" />
+  <teamcolor is_hidden="true" color_hex="ff0000" name="AIWC_Red" display_name="AIWC 红色"/>
+  <teamcolor is_hidden="true" color_hex="0000ff" name="AIWC_Blue" display_name="AIWC 蓝色"/>
+  <teamcolor is_hidden="true" color_hex="2480BB" name="AIWC_RoyalBlue" display_name="AIWC 皇家蓝"/>
+  <teamcolor is_hidden="true" color_hex="87CEEB" name="AIWC_SkyBlue" display_name="AIWC 天蓝色"/>
+  <teamcolor is_hidden="true" color_hex="ffff3C" name="AIWC_YellowFull" display_name="AIWC 纯黄色"/>
+  <teamcolor is_hidden="true" color_hex="008000" name="AIWC_Green" display_name="AIWC 绿色"/>
+  <teamcolor is_hidden="true" color_hex="32CD32" name="AIWC_LimeGreen" display_name="AIWC 酸橙绿"/>
+  <teamcolor is_hidden="true" color_hex="84DA00" name="AIWC_LightGreen" display_name="AIWC 浅绿色"/>
+  <teamcolor is_hidden="true" color_hex="14D264" name="AIWC_Teal" display_name="AIWC 蓝绿色"/>
+  <teamcolor is_hidden="true" color_hex="800080" name="AIWC_Purple" display_name="AIWC 紫色"/>
+  <teamcolor is_hidden="true" color_hex="A44F4F" name="AIWC_BrownishPurple" display_name="AIWC 棕紫色"/>
+  <teamcolor is_hidden="true" color_hex="CD5C5C" name="AIWC_IndianRed" display_name="AIWC 印度红"/>
+  <teamcolor is_hidden="true" color_hex="ff69B4" name="AIWC_HotPink" display_name="AIWC 艳粉色"/>
+  <teamcolor is_hidden="true" color_hex="B58950" name="AIWC_LightBrown" display_name="AIWC 浅棕色"/>
+  <teamcolor is_hidden="true" color_hex="510000" name="AIWC_DeepMaroon" display_name="AIWC 深褐红色"/>
+  <teamcolor is_hidden="true" color_hex="8C8C8C" name="AIWC_LighterGray" display_name="AIWC 浅灰色"/>
+  <teamcolor is_hidden="true" color_hex="505050" name="AIWC_DarkGray" display_name="AIWC 深灰色"/>
+  <teamcolor is_hidden="true" color_hex="101010" name="AIWC_Black" display_name="AIWC 黑色"/>
+  <teamcolor is_hidden="true" color_hex="913D00" name="AIWC_OrangeBrown" display_name="AIWC 橙棕色"/>
+  <teamcolor is_hidden="true" color_hex="A52A2A" name="AIWC_Brown" display_name="AIWC 棕色"/>
+  <teamcolor is_hidden="true" color_hex="F35001" name="AIWC_DarkerOrange" display_name="AIWC 深橙色"/>
+  <teamcolor is_hidden="true" color_hex="ffAA00" name="AIWC_BrightOrange" display_name="AIWC 亮橙色"/>
+</root>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <thematic_group_type name="DarkSpire" display_name="黑暗尖塔势力"
+       sort_order="50" group_type="NPCUnitClass"
+       description="一群特别令人厌恶的尖塔势力单位。"/>
+
+  <thematic_group_type name="DarkZenith" display_name="黑暗天顶势力"
+       sort_order="50" group_type="NPCUnitClass"
+       description="一群来自另一个维度、扭曲而可怕的天顶势力单位。"/>
+
+  <thematic_group_type name="Architrave" display_name="天顶拱肩势力"
+       sort_order="50" group_type="NPCUnitClass"
+       description="一群好战且有领地意识的天顶势力单位。"/>
+
+
+  <thematic_group_type name="Templar" display_name="圣殿骑士势力"
+       sort_order="50" group_type="NPCUnitClass"
+       description="资料片3"/>
+
+  <thematic_group_type name="Elderling" display_name="长者势力"
+       sort_order="50" group_type="NPCUnitClass"
+       description="资料片3"/>
+
+  <thematic_group_type name="Sapper" display_name="奈因祖尔工兵势力"
+       sort_order="50" group_type="NPCUnitClass"
+       description="资料片3"/>
+
+  <thematic_group_type name="Venator" display_name="追捕者势力"
+       sort_order="50" group_type="NPCUnitClass"
+       description="资料片3"/>
+
+  <thematic_group_type name="Outguard" display_name="外卫势力"
+       sort_order="50" group_type="NPCUnitClass"
+       description="外卫势力单位在你遇到它们后可以雇佣，但通常无法直接控制。"/>
+
+
+  <thematic_group_type name="AstroTrain" display_name="星际列车势力"
+       sort_order="50" group_type="NPCUnitClass"
+       description="机器人人工智能信使、它们的基础设施和护卫，以及只有它们能建造并用来对抗你的东西。"/>
+
+  <thematic_group_type name="FallenSpire" display_name="堕落尖塔势力"
+       sort_order="50" group_type="NPCUnitClass"
+       description="通常在堕落尖塔战役中遇到的尖塔主题单位，也可能成为敌人。"/>
+
+  <thematic_group_type name="Scourge" display_name="天灾势力"
+       sort_order="50" group_type="NPCUnitClass"
+       description="由不幸的外星种族与机械融合而成的怪异怪物，被人工智能作为盟友。"/>
+
+  <thematic_group_type name="Macrophage" display_name="巨噬体势力"
+       sort_order="50" group_type="NPCUnitClass"
+       description="巨大的生物，在银河系中游荡，捕食过往船只以获取其中的金属。"/>
+
+  <thematic_group_type name="Marauder" display_name="掠夺者势力"
+       sort_order="50" group_type="NPCUnitClass"
+       description="生活在深空的人类流浪者单位。机会主义者，总是寻找可掠夺的东西。"/>
+
+  <thematic_group_type name="DysonSphere" display_name="天顶戴森球势力"
+       sort_order="50" group_type="NPCUnitClass"
+       description="与天顶戴森球相关的各种单位，这是一个庞大的构造体，很少主动关注周围的情况。"/>
+
+  <thematic_group_type name="Nanocaust" display_name="纳米灾变势力"
+       sort_order="50" group_type="NPCUnitClass"
+       description="纳米机器人瘟疫单位，将感染传播到其他船只并接管它们以供自己使用。"/>
+
+  <!-- DLC3! !-->
+
+  <thematic_group_type name="Migrant" display_name="移民舰队势力"
+       sort_order="50" group_type="NPCUnitClass"
+       description="资料片3"/>
+
+  <thematic_group_type name="Custodian" display_name="守护者势力"
+       sort_order="50" group_type="NPCUnitClass"
+       description="资料片3"/>
+
+  <thematic_group_type name="WildHive" display_name="野生蜂群势力"
+       sort_order="50" group_type="NPCUnitClass"
+       description="资料片3"/>
+</root>

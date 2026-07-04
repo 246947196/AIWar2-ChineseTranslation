@@ -1,0 +1,718 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+       Chris note, you probably want to define a "Base Copy" and an "AI specific copy" for all the offensive units, so we can balance
+       AI types that get these units  
+       Chris, also note you need to create a few GladiatorGuardPosts; basically just take 1 or 2 existing guard posts, give it some ZA flair/abilities and say 'good enough. -->
+  
+<!-- 
+     *Golems Counterparts for the ZA and DZ. Those are meant to be whiter and blacker themes based off the officer golems. They are evolution paths from the Zenith effective 'descendants' as far as humanity is concerned, of the Zenith golem corpses that litter the galaxy.
+	 *Mechanic-wise, ZA-golems are defensive-minded to fit with the isolationist and defensive presence. The DZ-golems are offensive-minded to fit with the aggressive presence in the galaxy, that they are invading.
+	 *Stats-wise, both Golems have 20-30% better stats than the 'base' variants and a unique twist on their abilities.
+	 *Variant of golems (and possibly others officers) can be transformed into by their base variant with hacking points. The idea is to implement a mechanic where to transform the base variant, you need to kill the variant in the game to 'acquire' it. This way 'reskinned' units becomes exciting because they are a reward, rather than 'just a way to skip on development', for the player.
+	 
+-->
+
+<!--
+	List of units (Base/ZA/DZ):
+	*Armored Golem:
+	-Fortress Golem: stronger weapons with more shots and a hailstorm anti-swarmer gun (multi-shot with AOE low damage)*
+	-Beach Golem: Added slow firing EMP weapon that weapon jam ALL hostile units within long-medium range for 15s with 30s reload.*
+	*Artillery Golem:
+	-Barrage Golem: Mass-missile shooter with salvos*
+	-Cannon Golem: Bombard-style anti-high tx with multi-shot*
+	*Regenerator Golem:
+	-Preserver Golem: added 95% dmg resistance against long range*
+	-Consumer Golem: gain vampirism on its weapons*
+	*Cursed Golem:
+	-Blasphemy Golem: Gain a secondary weapon to paralyze small targets*
+	-Expletive Golem: Gain salvo-shot with high bonus dmg vs immobile targets.*
+	*Botnet Golem:
+	-Nethack Golem: Can shot and zombify all targets but not immobile ones*
+	-HackBot Golem: Can shot all, and zombify below 5tx.*
+	*Black Widow Golem:
+	-Hugger Golem: tractor many smalls and dmg resist vs distant units*
+	-Widowmaker Golem: tractor with planetary and bonus dmg vs tractored*
+	*Hive Golem:
+	-Golden Wasp Golem: Higher drone cap with paralyze*
+	-Queen Bee Golem: Higher drone cap with DLC2 mechanic or vampirism*
+
+-->
+
+<!--Notes:
+
+			Do the player golems
+			
+			
+			
+			!!!Leaves the mention of "Destroy it to allow humanity to use its forms" on humans golems, so players can see it as a hint when trying to transform the base golems into variants.!!!
+			
+			The damage_per_shot between player's and AI's golems is AI=3.6*Player
+			
+			Add a dmg resistance against tractored units or something else for the Black Widow variant
+			
+			Replace weight : capturable_seed_weight="1" capturable_max_per_galaxy="0" capturable_can_seed_at_all="false"
+	
+			by : capturable_seed_weight="1" capturable_max_per_galaxy="0" capturable_can_seed_at_all="false"
+	
+			Using search and replace
+			
+			Remove tags="ShowsOnNormalDisplayMode" from all golems
+
+-->
+
+<!--Armored Golem variants-->
+
+<!--Fortress Golem: stronger weapons with more shots and a hailstorm anti-swarmer gun (multi-shot with AOE low damage)-->
+	
+<entity name="FortressGolem" copy_from="ArmoredGolem" skip_export="true" tags="ShowsOnNormalDisplayMode"
+  thematic_groups="GolemEvolved,Zenith"
+	display_name="堡垒魔像"
+	display_name_for_sidebar="堡垒魔像"
+	
+	description="根据天顶星价值观进化而来的装甲魔像。比其祖先更强大。它可怕的武器能撕碎无装甲的舰队。"
+	multiplier_to_all_costs="1.2" multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.2"
+	fleet_leader_type="ArmoredGolem" hacking_cost_for_other_fleet_leaders_of_same_type_to_become_me="30"
+	capturable_seed_weight="1" capturable_max_per_galaxy="0" capturable_can_seed_at_all="false"
+	
+	>	
+    <system name="WX" display_name="天顶星弹道漩涡"
+		damage_per_shot="2000"
+		shots_per_salvo="30"
+		>
+		<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="50" multiplier="3" />
+    </system>
+</entity>
+
+<entity name="ZAFortressGolem" copy_from="AIArmoredGolem" skip_export="true"
+  thematic_groups="GolemEnemy,Zenith"
+	display_name="AI堡垒魔像" 
+	display_name_for_sidebar="堡垒魔像"
+	description="根据天顶星价值观进化而来的装甲魔像。比其祖先更强大。它可怕的武器能撕碎无装甲的舰队。人类可以改造他们的魔像以使用这种形态。"
+		multiplier_to_all_costs="1.2" multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.2" multiplier_to_all_scales="1.3"
+>
+    <system name="WX" display_name="天顶星弹道漩涡"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="9000" range="AboveAverage3" shot_speed="Slow" rate_of_fire="Misery"
+				shots_per_salvo="30" fires_salvos_sequentially="false"
+				shot_type_data="ElegantCurl"
+				>
+		<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="50" multiplier="3" />
+    </system>
+</entity>
+
+<!--Beach Golem: Added slow firing EMP weapon that weapon-jam a vast numbers of enemies for 15s. -->
+<entity name="BeachGolem" copy_from="ArmoredGolem" skip_export="true" tags="ShowsOnNormalDisplayMode"
+  thematic_groups="GolemEvolved,Zenith"
+	display_name="海滩魔像"
+	display_name_for_sidebar="海滩魔像"
+	description="根据黑暗天顶星价值观进化而来的装甲魔像。比其祖先更强大。它会发出强大的脉冲，使整个军队的武器失灵。"
+	multiplier_to_all_costs="1.2" multiplier_to_all_healths="1.2" damage_multiplier_to_all_weapons="1.3"
+	fleet_leader_type="ArmoredGolem" hacking_cost_for_other_fleet_leaders_of_same_type_to_become_me="30"
+	capturable_seed_weight="1" capturable_max_per_galaxy="0" capturable_can_seed_at_all="false"
+	
+>
+	<system name="WS" display_name="黑潮线圈"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="700" range="AboveAverage1" shot_speed="Normal" rate_of_fire="PeriodicActivation" fires_salvos_sequentially="false"
+			shot_type_data="LightningExplosionAOEShot" added_target_evaluator="WeaponJamAsPrimary"
+			area_of_effect_size="9000"			
+			shots_detonate_immediately="true"
+			maximum_number_of_targets_hit_per_shot="200"
+			
+			base_enemy_weapon_reload_slowing_seconds_per_shot="15"
+			max_enemy_weapon_reload_slowing_seconds="20"				
+			enemy_weapon_reload_slowing_to_armor_mm_less_than="100"			
+			>				
+    </system>
+</entity>
+
+<entity name="DZBeachGolem" copy_from="AIArmoredGolem" skip_export="true" 
+  thematic_groups="GolemEnemy,Zenith"
+	display_name="AI海滩魔像"
+	display_name_for_sidebar="海滩魔像"
+	description="根据黑暗天顶星价值观进化而来的装甲魔像。比其祖先更强大。它会发出强大的脉冲，使整个军队的武器失灵。人类可以改造他们的魔像以使用这种形态。"
+		multiplier_to_all_costs="1.2" multiplier_to_all_healths="1.2" damage_multiplier_to_all_weapons="1.3"
+>
+	<system name="WS" display_name="黑潮线圈"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="2500" range="AboveAverage1" shot_speed="Normal" rate_of_fire="PeriodicActivation" fires_salvos_sequentially="false"
+			shot_type_data="LightningExplosionAOEShot" 
+			added_target_evaluator="WeaponJamAsPrimary"
+			area_of_effect_size="9000"			
+			shots_detonate_immediately="true"
+			maximum_number_of_targets_hit_per_shot="200"
+
+			base_enemy_weapon_reload_slowing_seconds_per_shot="15"
+			max_enemy_weapon_reload_slowing_seconds="20"				
+			enemy_weapon_reload_slowing_to_armor_mm_less_than="100"			
+			>		
+    </system>
+</entity>
+	
+
+<!--Artillery Golem variants-->
+
+<!--Barrage Golem: Mass-missile shooter with salvos-->
+<entity name="BarrageGolem" copy_from="ArtilleryGolem" skip_export="true" tags="ShowsOnNormalDisplayMode"
+  thematic_groups="GolemEvolved,Zenith"
+	display_name="弹幕魔像"
+	display_name_for_sidebar="弹幕魔像"
+	description="根据天顶星价值观进化而来的火炮魔像。比其祖先更强大。它能发射大量的反装甲导弹齐射。"
+	multiplier_to_all_costs="1.2" multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.2" multiplier_to_all_scales="1.3"
+	fleet_leader_type="ArtilleryGolem" hacking_cost_for_other_fleet_leaders_of_same_type_to_become_me="30"
+	capturable_seed_weight="1" capturable_max_per_galaxy="0" capturable_can_seed_at_all="false"
+	
+>
+	<system name="WU" display_name="天顶星洪流"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="600" range="InsanelyHigh" shot_speed="Slow" rate_of_fire="ExtremelyLow" fires_salvos_sequentially="false"
+			shot_type_data="EngineDisruptingShell"	 
+			shots_per_salvo="200"
+			use_alternate_rate_of_fire_after_x_shots="1" 
+			alternate_rate_of_fire="Devourer"  use_alternate_rate_of_fire_for_x_shots_before_reverting="5"
+			>
+			<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtLeast" compared_to="90" multiplier="2" />
+    </system>
+</entity>
+
+<entity name="ZABarrageGolem" copy_from="AIArtilleryGolem" skip_export="true"
+  thematic_groups="GolemEnemy,Zenith"
+	display_name="AI弹幕魔像"
+	display_name_for_sidebar="弹幕魔像" 
+	description="根据天顶星价值观进化而来的火炮魔像。比其祖先更强大。它能发射大量的反装甲导弹齐射。人类可以改造他们的魔像以使用这种形态。"
+	multiplier_to_all_costs="1.2" multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.2"
+>
+	<system name="WU" display_name="天顶星洪流"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="2200" range="InsanelyHigh" shot_speed="Slow" rate_of_fire="ExtremelyLow" fires_salvos_sequentially="false"
+			shot_type_data="EngineDisruptingShell"	 
+			shots_per_salvo="200"
+			use_alternate_rate_of_fire_after_x_shots="1" 
+			alternate_rate_of_fire="Devourer"  use_alternate_rate_of_fire_for_x_shots_before_reverting="5"
+			>
+			<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtLeast" compared_to="90" multiplier="2" />
+    </system>
+	
+</entity>
+
+<!--Cannon Golem: Bombard-style anti-high tx with multi-shot-->
+<entity name="CannonGolem" copy_from="ArtilleryGolem" skip_export="true" tags="ShowsOnNormalDisplayMode"
+  thematic_groups="GolemEvolved,Zenith"
+	display_name="加农炮魔像" 
+	display_name_for_sidebar="加农炮魔像"
+	description="根据天顶星价值观进化而来的火炮魔像。比其祖先更强大。它的炮弹能穿透巨大的敌人。人类可以改造他们的魔像以使用这种形态。"
+	multiplier_to_all_costs="1.2" multiplier_to_all_healths="1.2" damage_multiplier_to_all_weapons="1.3"
+	fleet_leader_type="ArtilleryGolem" hacking_cost_for_other_fleet_leaders_of_same_type_to_become_me="30"
+	capturable_seed_weight="1" capturable_max_per_galaxy="0" capturable_can_seed_at_all="false"
+	
+>
+	<system name="WU" display_name="天顶星巨型加农炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="40000" range="InsanelyHigh" shot_speed="Slow" rate_of_fire="Normal" fires_salvos_sequentially="true"
+				shots_per_salvo="5"
+				shot_type_data="MassDriver"	
+				>
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="1.2" />
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="7" multiplier="2" />
+	</system>
+</entity>
+
+<entity name="DZCannonGolem" copy_from="AIArtilleryGolem" skip_export="true" 
+  thematic_groups="GolemEnemy,Zenith"
+	display_name="AI加农炮魔像" 
+	display_name_for_sidebar="加农炮魔像"
+	description="根据天顶星价值观进化而来的火炮魔像。比其祖先更强大。它的炮弹能穿透巨大的敌人。人类可以改造他们的魔像以使用这种形态。"
+	multiplier_to_all_costs="1.2" multiplier_to_all_healths="1.2" damage_multiplier_to_all_weapons="1.3"
+>
+	<system name="WU" display_name="天顶星巨型加农炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="144000" range="InsanelyHigh" shot_speed="Slow" rate_of_fire="Normal" fires_salvos_sequentially="true"
+				shots_per_salvo="5"
+				shot_type_data="MassDriver"	
+				>
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="1.2" />
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="7" multiplier="2" />
+	</system>
+</entity>
+		
+	
+<!--Regenerator Golem variants-->
+
+<!--Preserver Golem: added 95% dmg resistance against long range-->
+<entity name="PreserverGolem" copy_from="RegeneratorGolem" skip_export="true" tags="ShowsOnNormalDisplayMode"
+  thematic_groups="GolemEvolved,Zenith"
+	display_name="守护者魔像" 
+	display_name_for_sidebar="守护者魔像"
+	description="根据天顶星价值观进化而来的再生魔像。比其祖先更强大。它对远程伤害免疫。人类可以改造他们的魔像以使用这种形态。"
+	multiplier_to_all_costs="1.2" multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.2"
+	fleet_leader_type="RegeneratorGolem" hacking_cost_for_other_fleet_leaders_of_same_type_to_become_me="30"
+	capturable_seed_weight="1" capturable_max_per_galaxy="0" capturable_can_seed_at_all="false"
+	
+>
+	<incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="9000" multiplier="0.05" />
+</entity>
+
+<entity name="ZAPreserverGolem" copy_from="AIRegeneratorGolem" skip_export="true" 
+  thematic_groups="GolemEnemy,Zenith"
+	display_name="AI守护者魔像" 
+	display_name_for_sidebar="守护者魔像"
+	description="根据天顶星价值观进化而来的再生魔像。比其祖先更强大。它对远程伤害免疫。人类可以改造他们的魔像以使用这种形态。"
+	multiplier_to_all_costs="1.2" multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.2"
+>
+	<incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="9000" multiplier="0.05" />
+</entity>
+
+<!--Consumer Golem: gain vampirism on its weapons-->
+<entity name="ConsumerGolem" copy_from="RegeneratorGolem" skip_export="true" tags="ShowsOnNormalDisplayMode"
+  thematic_groups="GolemEvolved,Zenith"
+	display_name="吞噬者魔像"
+	display_name_for_sidebar="吞噬者魔像"
+	description="根据天顶星价值观进化而来的再生魔像。比其祖先更强大。它在造成伤害时会大幅自我修复。人类可以改造他们的魔像以使用这种形态。"
+	multiplier_to_all_costs="1.2" multiplier_to_all_healths="1.2" damage_multiplier_to_all_weapons="1.3"
+	fleet_leader_type="RegeneratorGolem" hacking_cost_for_other_fleet_leaders_of_same_type_to_become_me="30"
+	capturable_seed_weight="1" capturable_max_per_galaxy="0" capturable_can_seed_at_all="false"
+>
+    <system name="WD" health_change_per_damage_dealt="2.5" />
+</entity>	
+
+<entity name="DZConsumerGolem" copy_from="AIRegeneratorGolem" skip_export="true"
+  thematic_groups="GolemEnemy,Zenith"
+	display_name="AI吞噬者魔像" 
+	display_name_for_sidebar="吞噬者魔像"
+	description="根据天顶星价值观进化而来的再生魔像。比其祖先更强大。它在造成伤害时会大幅自我修复。人类可以改造他们的魔像以使用这种形态。"
+		multiplier_to_all_costs="1.2" multiplier_to_all_healths="1.2" damage_multiplier_to_all_weapons="1.3"
+>
+    <system name="WD" health_change_per_damage_dealt="2.5" />
+</entity>
+	
+<!--Cursed Golem variants-->
+
+<!--Blasphemy Golem: Gain a secondary weapon to paralyze small targets-->
+<entity name="BlasphemyGolem" copy_from="CursedGolem" skip_export="true" tags="ShowsOnNormalDisplayMode"
+  thematic_groups="GolemEvolved,Zenith"
+	display_name="亵渎者魔像" 
+	display_name_for_sidebar="亵渎者魔像"
+	description="根据天顶星价值观进化而来的诅咒魔像。比其祖先更强大。它可以瘫痪整个战斗机编队和一支护卫舰小队。人类可以改造他们的魔像以使用这种形态。"
+	multiplier_to_all_costs="1.2" multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.2"
+	fleet_leader_type="CursedGolem" hacking_cost_for_other_fleet_leaders_of_same_type_to_become_me="30"
+	capturable_seed_weight="1" capturable_max_per_galaxy="0" capturable_can_seed_at_all="false"
+	
+>
+				
+    <system name="V4" display_name="天顶星麻痹蛛网发射器"
+			damage_per_shot="250"
+			shots_per_salvo="300"
+			>
+    </system>
+	<system name="V5" display_name="天顶星麻痹炸弹"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="250"
+			shot_type_data="Sabot"
+			shots_per_salvo="1" 
+			fires_salvos_sequentially="false"
+			area_of_effect_size="900"
+			maximum_number_of_targets_hit_per_shot="9" 
+            base_paralysis_seconds_per_shot="4"
+			paralysis_to_ships_mass_tx_less_than="6"				
+			>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="5" />
+    </system>
+</entity>
+
+<entity name="ZABlasphemyGolem" copy_from="AICursedGolem" skip_export="true" 
+  thematic_groups="GolemEnemy,Zenith"
+	display_name="AI亵渎者魔像" 
+	display_name_for_sidebar="亵渎者魔像"
+	description="根据天顶星价值观进化而来的诅咒魔像。比其祖先更强大。它可以瘫痪整个战斗机编队和一支护卫舰小队。人类可以改造他们的魔像以使用这种形态。"
+	multiplier_to_all_costs="1.2" multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.2"
+
+>
+				
+    <system name="V4" display_name="天顶星麻痹蛛网发射器"
+			damage_per_shot="900"
+			shots_per_salvo="300"
+			>
+    </system>
+	<system name="V5" display_name="天顶星麻痹炸弹"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="900"
+			shot_type_data="Sabot"
+			shots_per_salvo="1" 
+			fires_salvos_sequentially="false"
+			area_of_effect_size="900"
+			maximum_number_of_targets_hit_per_shot="9" 
+            base_paralysis_seconds_per_shot="4"
+			paralysis_to_ships_mass_tx_less_than="6"				
+			>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="5" />
+    </system>
+</entity>
+
+<!--Expletive Golem: Gain salvo-shot with high bonus dmg vs immobile targets.-->
+<entity name="ExpletiveGolem" copy_from="CursedGolem" skip_export="true" tags="ShowsOnNormalDisplayMode"
+  thematic_groups="GolemEvolved,Zenith"
+	display_name="咒骂者魔像" 
+	display_name_for_sidebar="咒骂者魔像"
+	description="根据天顶星价值观进化而来的诅咒魔像。比其祖先更强大。它的穿甲弹武器可以眩晕并摧毁银河系中最庞大的船只。人类可以改造他们的魔像以使用这种形态。"
+	multiplier_to_all_costs="1.2" multiplier_to_all_healths="1.2" damage_multiplier_to_all_weapons="1.3"
+	fleet_leader_type="CursedGolem" hacking_cost_for_other_fleet_leaders_of_same_type_to_become_me="30"
+	capturable_seed_weight="1" capturable_max_per_galaxy="0" capturable_can_seed_at_all="false"
+	
+>
+<system name="V5" display_name="天顶星黑色穿甲弹"
+				damage_per_shot="1000"
+				fires_salvos_sequentially="true"
+				shot_type_data="Sabot"	
+                base_paralysis_seconds_per_shot="8" paralysis_to_ships_mass_tx_less_than="8"				
+				>
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="50" />
+    </system>
+</entity>	
+
+<entity name="DZExpletiveGolem" copy_from="AICursedGolem" skip_export="true" 
+  thematic_groups="GolemEnemy,Zenith"
+	display_name="AI咒骂者魔像" 
+	display_name_for_sidebar="咒骂者魔像"
+	description="根据天顶星价值观进化而来的诅咒魔像。比其祖先更强大。它的穿甲弹武器可以眩晕并摧毁银河系中最庞大的船只。人类可以改造他们的魔像以使用这种形态。"
+	multiplier_to_all_costs="1.2" multiplier_to_all_healths="1.2" damage_multiplier_to_all_weapons="1.3"
+>
+<system name="V5" display_name="天顶星黑色穿甲弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="3600" range="High2" shot_speed="VeryFast" rate_of_fire="Misery" fires_salvos_sequentially="true"
+				shot_type_data="Sabot"	
+                base_paralysis_seconds_per_shot="8" paralysis_to_ships_mass_tx_less_than="8"				
+				>
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="50" />
+    </system>
+</entity>
+	
+<!--Botnet Golem variants-->
+
+<!--Nethack Golem: Can shot and zombify all targets but not immobile ones-->
+<entity name="NethackGolem" copy_from="BotnetGolem" skip_export="true" tags="ShowsOnNormalDisplayMode"
+  thematic_groups="GolemEvolved,Zenith"
+	display_name="网络黑客魔像" 
+	display_name_for_sidebar="网络黑客魔像"
+	description="根据天顶星价值观进化而来的僵尸网络魔像。比其祖先更强大。它可以攻击并将所有移动目标变为僵尸。人类可以改造他们的魔像以使用这种形态。"
+	multiplier_to_all_costs="1.2" multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.2"
+	fleet_leader_type="BotnetGolem" hacking_cost_for_other_fleet_leaders_of_same_type_to_become_me="30"
+	capturable_seed_weight="1" capturable_max_per_galaxy="0" capturable_can_seed_at_all="false"
+	
+		>
+	<system name="WR" display_name="疯狂动员者"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="3000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Misery" fires_salvos_sequentially="false"
+			only_targets_mobile_units="true"
+			shot_type_data="ParasiteCurvedPinkShot" added_target_evaluator="ZombifyAsPrimary"		
+			>
+			</system>
+</entity>
+
+<entity name="ZANethackGolem" copy_from="AIBotnetGolem" skip_export="true"
+  thematic_groups="GolemEnemy,Zenith"
+	display_name="AI网络黑客魔像" 
+	display_name_for_sidebar="网络黑客魔像"
+	description="根据天顶星价值观进化而来的僵尸网络魔像。比其祖先更强大。它可以攻击并将除固定目标外的所有目标变为僵尸。人类可以改造他们的魔像以使用这种形态。"
+	multiplier_to_all_costs="1.2" multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.2"
+		>
+	<system name="WR" display_name="疯狂动员者"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="10800" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Misery"
+			shots_per_salvo="80" fires_salvos_sequentially="false"
+			only_targets_mobile_units="true"
+			shot_type_data="ParasiteCurvedPinkShot" added_target_evaluator="ZombifyAsPrimary"				
+			>
+			
+
+			<outgoing_damage_modifier based_on="engine_gx" comparison_type="AtMost" compared_to="1" multiplier="0" />
+			</system>
+    </entity>
+
+<!--HackBot Golem: Can shot all, and zombify below 5tx.-->
+<entity name="HackbotGolem" copy_from="BotnetGolem" skip_export="true" tags="ShowsOnNormalDisplayMode"
+  thematic_groups="GolemEvolved,Zenith"
+	display_name="骇客机器人魔像" 
+	display_name_for_sidebar="骇客机器人魔像"
+	description="根据天顶星价值观进化而来的僵尸网络魔像。比其祖先更强大。它可以攻击并将所有低于一定质量的目标变为僵尸。人类可以改造他们的魔像以使用这种形态。"
+	multiplier_to_all_costs="1.2" multiplier_to_all_healths="1.2" damage_multiplier_to_all_weapons="1.3"
+	fleet_leader_type="BotnetGolem" hacking_cost_for_other_fleet_leaders_of_same_type_to_become_me="30"
+	capturable_seed_weight="1" capturable_max_per_galaxy="0" capturable_can_seed_at_all="false"
+	
+>
+	<system name="WR" display_name="愚蠢之力"
+		category="Weapon" firing_timing="OnlyInRange"
+		damage_per_shot="3000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Misery" fires_salvos_sequentially="false"
+		only_targets_mobile_units="true"
+		shot_type_data="ParasiteCurvedPinkShot" added_target_evaluator="ZombifyAsPrimary"				
+		>
+		<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="6" multiplier="0" />
+		</system>
+
+</entity>	
+
+<entity name="DZHackbotGolem" copy_from="AIBotnetGolem" skip_export="true" 
+  thematic_groups="GolemEnemy,Zenith"
+	display_name="AI骇客机器人魔像" 
+	display_name_for_sidebar="骇客机器人魔像"
+	description="根据天顶星价值观进化而来的僵尸网络魔像。比其祖先更强大。它可以攻击并将所有低于一定质量的目标变为僵尸。人类可以改造他们的魔像以使用这种形态。"
+	multiplier_to_all_costs="1.2" multiplier_to_all_healths="1.2" damage_multiplier_to_all_weapons="1.3"
+>
+	<system name="WR" display_name="愚蠢之力"
+		category="Weapon" firing_timing="OnlyInRange"
+		damage_per_shot="10800" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Misery"
+		shots_per_salvo="80" fires_salvos_sequentially="false"
+		only_targets_mobile_units="true"
+		shot_type_data="ParasiteCurvedPinkShot" added_target_evaluator="ZombifyAsPrimary"				
+		>
+		<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="6" multiplier="0" />
+		</system>
+
+</entity>
+	
+<!--Black Widow Golem variants-->
+
+<!--Hugger Golem: tractor many smalls and dmg resist vs distant units-->
+<entity name="HuggerGolem" copy_from="BlackWidowGolem" skip_export="true" tags="ShowsOnNormalDisplayMode"
+  thematic_groups="GolemEvolved,Zenith"
+	display_name="拥抱者魔像" 
+	display_name_for_sidebar="拥抱者魔像"
+	description="根据天顶星价值观进化而来的黑寡妇魔像。比其祖先更强大。它可以牵引大量战斗机并抵抗它们的武器攻击。人类可以改造他们的魔像以使用这种形态。"
+	multiplier_to_all_costs="1.2" multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.2"
+	fleet_leader_type="BlackWidowGolem" hacking_cost_for_other_fleet_leaders_of_same_type_to_become_me="30"
+	capturable_seed_weight="1" capturable_max_per_galaxy="0" capturable_can_seed_at_all="false"
+	
+>
+	<system name="T" display_name="天顶星牵引光束"
+				category="Passive"
+				tractor_range="AboveAverage2" tractor_count="700" tractor_hits_albedo_less_than="0.4" tractor_hits_engine_gx_less_than="18"
+				>
+    </system>
+	<incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="3500" multiplier="0.25" />
+</entity>
+
+<entity name="ZAHuggerGolem" copy_from="AIBlackWidowGolem" skip_export="true" 
+  thematic_groups="GolemEnemy,Zenith"
+	display_name="AI 拥抱者魔像" 
+	display_name_for_sidebar="拥抱者魔像"
+	description="根据天顶星价值观进化而来的黑寡妇魔像。比其祖先更强大。它可以牵引大量战机并抵御它们的武器攻击。人类可以改造他们的魔像以使用这种形态。"
+	multiplier_to_all_costs="1.2" multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.2"
+>
+    
+	<system name="T" display_name="天顶星牵引光束"
+				category="Passive"
+				tractor_range="AboveAverage2" tractor_count="700" tractor_hits_albedo_less_than="0.4" tractor_hits_engine_gx_less_than="18"
+				>
+    </system>
+	<incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="3500" multiplier="0.25" />
+</entity>
+
+<!--Widowmaker Golem: tractor with planetary and bonus dmg vs tractored-->
+<entity name="WidowmakerGolem" copy_from="BlackWidowGolem" skip_export="true" tags="ShowsOnNormalDisplayMode"
+  thematic_groups="GolemEvolved,Zenith"
+	display_name="毒蛛终结者魔像" 
+	display_name_for_sidebar="毒蛛终结者魔像"
+	description="根据天顶星价值观进化而来的黑寡妇魔像。比其祖先更强大。它可以在引力井内的任何位置牵引敌人，并对被牵引的船只造成额外伤害。人类可以改造他们的魔像以使用这种形态。"
+	multiplier_to_all_costs="1.2" multiplier_to_all_healths="1.2" damage_multiplier_to_all_weapons="1.3"
+	fleet_leader_type="BlackWidowGolem" hacking_cost_for_other_fleet_leaders_of_same_type_to_become_me="30"
+	capturable_seed_weight="1" capturable_max_per_galaxy="0" capturable_can_seed_at_all="false"
+	
+>	
+			<system name="Q4" display_name="天顶星蜘蛛加农炮"
+				damage_per_shot="800" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Misery"
+				shots_per_salvo="40" added_shots_per_salvo_per_mark="20" 
+				fires_salvos_sequentially="false"
+				base_enemy_weapon_reload_slowing_seconds_per_shot="4"
+				max_enemy_weapon_reload_slowing_seconds="12"
+				enemy_weapon_reload_slowing_to_armor_mm_less_than="100"
+				multiplier_damage_to_tractored_unit="3"
+				added_target_evaluator="WeaponJamAsPrimary"
+				>
+    </system>
+	  <system name="T" display_name="天顶星牵引光束"
+				category="Passive"
+				tractor_range="ExtremelyHigh" tractor_count="700" tractor_hits_albedo_less_than="0.4" tractor_hits_engine_gx_less_than="18"
+				>
+    </system>
+</entity>	
+
+<entity name="DZWidowmakerGolem" copy_from="AIBlackWidowGolem" skip_export="true" 
+  thematic_groups="GolemEnemy,Zenith"
+	display_name="AI毒蛛终结者魔像" 
+	display_name_for_sidebar="毒蛛终结者魔像"
+	description="根据天顶星价值观进化而来的黑寡妇魔像。比其祖先更强大。它可以在引力井内的任何位置牵引敌人，并对被牵引的船只造成额外伤害。人类可以改造他们的魔像以使用这种形态。"
+	multiplier_to_all_costs="1.2" multiplier_to_all_healths="1.2" damage_multiplier_to_all_weapons="1.3"
+>	
+    
+			<system name="Q4" display_name="天顶星蜘蛛加农炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="2880" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Misery"
+				shots_per_salvo="80" fires_salvos_sequentially="false"
+				base_enemy_weapon_reload_slowing_seconds_per_shot="4"
+				max_enemy_weapon_reload_slowing_seconds="12"
+				enemy_weapon_reload_slowing_to_armor_mm_less_than="100"
+				multiplier_damage_to_tractored_unit="3"
+				added_target_evaluator="WeaponJamAsPrimary"
+				>
+    </system>
+	  <system name="T" display_name="天顶星牵引光束"
+				category="Passive"
+				tractor_range="ExtremelyHigh" tractor_count="700" tractor_hits_albedo_less_than="0.4" tractor_hits_engine_gx_less_than="18"
+				>
+    </system>
+</entity>
+
+<!--Hive Golem variants-->
+
+<!--Golden Wasp Golem: Higher drone cap with paralyze-->
+<entity name="GoldenWaspGolem" copy_from="HiveGolem" skip_export="true" tags="ShowsOnNormalDisplayMode"
+  thematic_groups="GolemEvolved,Zenith"
+	display_name="金蜂魔像" visuals="Assets/_FinalGameMeshes/Golems/HiveGolem/HiveGolemYellowjacket/HiveGolemYellowjacket.prefab" visuals_bundle="exp2_zenith_onslaught"
+	display_name_for_sidebar="金蜂魔像"
+	description="根据天顶星价值观进化而来的蜂巢魔像。比其祖先更强大。它会持续生成金蜂，这是一种能瘫痪目标的凶猛无人机。人类可以改造他们的魔像以使用这种形态。"
+	fleet_design_template_i_use_for_drones="GoldenWaspDrones"
+	multiplier_to_all_costs="1.2" multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.2"
+	fleet_leader_type="HiveGolem" hacking_cost_for_other_fleet_leaders_of_same_type_to_become_me="30"
+	capturable_seed_weight="1" capturable_max_per_galaxy="0" capturable_can_seed_at_all="false"
+	
+>
+</entity>
+
+<entity name="ZAGoldenWaspGolem" copy_from="AIHiveGolem" skip_export="true"
+  thematic_groups="GolemEnemy,Zenith"
+	display_name="AI金蜂魔像" visuals="Assets/_FinalGameMeshes/Golems/HiveGolem/HiveGolemYellowjacket/HiveGolemYellowjacket.prefab" visuals_bundle="exp2_zenith_onslaught"
+	display_name_for_sidebar="金蜂魔像"
+	description="根据天顶星价值观进化而来的蜂巢魔像。比其祖先更强大。它会持续生成金蜂，这是一种能瘫痪目标的凶猛无人机。人类可以改造他们的魔像以使用这种形态。"
+	fleet_design_template_i_use_for_drones="ZAGoldenWaspDrones"
+		multiplier_to_all_costs="1.2" multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.2"
+>
+</entity>
+
+<entity name="GoldenWaspDrone" display_name="金蜂"
+  thematic_groups="GolemEvolved,Zenith,Drone"
+					display_name_for_sidebar="金蜂" gimbal_icon_size_multiplier="0.7" voice_group="Zenith"
+           special_entity_type="DroneGeneral"
+           visuals="assets/_finalgamemeshes/golems/yellowjacket/goldenwasp.prefab" visuals_bundle="exp2_zenith_onslaught"
+           icon_name="Ships1/YellowJacket"
+		   icon_overlay="Overlays1/Drone"
+           category="Ship"
+           size_scale="0.60"
+		   visuals_scale_multiplier="3"
+           description="由金蜂魔像发射。非常强大。"
+           starting_mark_level="Mark1" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" 
+		   self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="2"
+           cost_for_ai_to_purchase="50"
+           hull_points="4000" shield_points="2000" speed="AboveAverage5"
+           metal_cost="3000" energy_consumption="350"
+			armor_mm="30" albedo="0.3" engine_gx="7" mass_tx="0.21"
+           ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+           ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+		   priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+		   
+		   multiplier_to_all_costs="1.2" multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.2"
+		   
+    >
+    <fleet_membership name="GoldenWaspDrones" ship_cap_group="Strike" weight="100" cap="400"/>	
+    <system name="WD" display_name="麻痹刺击"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="500" range="Tiny4" shot_speed="Fast" rate_of_fire="Misery" fires_salvos_sequentially="true"
+				shot_type_data="DoubleShot_Green"
+				
+				base_paralysis_seconds_per_shot="4" added_paralysis_seconds_per_shot_per_mark="0" paralysis_to_ships_mass_tx_less_than="4"
+				>
+								
+    </system>
+	<ship_class_data can_be_fleet_supercharged="false" />
+</entity>
+
+<entity name="ZAGoldenWaspDrone" display_name="金蜂"
+  thematic_groups="GolemEnemy,Zenith,Drone"
+		display_name_for_sidebar="金蜂" copy_from="GoldenWaspDrone"
+		hull_points="8000" shield_points="4000" starting_mark_level="Markless"
+		multiplier_to_all_costs="1.2" multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.2"
+>
+    <fleet_membership name="ZAGoldenWaspDrones" ship_cap_group="Strike" weight="100" cap="540"/>	
+    <system name="WD" damage_per_shot="1500" health_change_per_damage_dealt="2.5"
+	/>
+	
+</entity>
+
+<!--Queen Bee Golem: Higher drone cap with DLC2 mechanic or vampirism)-->
+
+<entity name="QueenBeeGolem" copy_from="HiveGolem" skip_export="true" tags="ShowsOnNormalDisplayMode"  
+  thematic_groups="GolemEvolved,Zenith"
+	display_name="蜂后魔像"   visuals="Assets/_FinalGameMeshes/Golems/HiveGolem/HiveGolemQueen/HiveGolemQueen.prefab" visuals_bundle="exp2_zenith_onslaught"
+	display_name_for_sidebar="蜂后魔像"
+	description="根据天顶星价值观进化而来的蜂巢魔像。比其祖先更强大。它会持续生成蜂后无人机，这些凶猛的无人机能够自我修复。人类可以改造他们的魔像以使用这种形态。"
+	fleet_design_template_i_use_for_drones="QueenBeeDrones"
+		multiplier_to_all_costs="1.2" multiplier_to_all_healths="1.2" damage_multiplier_to_all_weapons="1.3"
+	fleet_leader_type="HiveGolem" hacking_cost_for_other_fleet_leaders_of_same_type_to_become_me="30"
+	capturable_seed_weight="1" capturable_max_per_galaxy="0" capturable_can_seed_at_all="false"
+	
+>
+</entity>
+
+
+
+<entity name="DZQueenBeeGolem" copy_from="AIHiveGolem" skip_export="true" 
+  thematic_groups="GolemEnemy,Zenith"
+	display_name="AI 蜂后魔像" visuals="Assets/_FinalGameMeshes/Golems/HiveGolem/HiveGolemQueen/HiveGolemQueen.prefab" visuals_bundle="exp2_zenith_onslaught"
+	display_name_for_sidebar="蜂后魔像" 
+	description="根据天顶星价值观进化而来的蜂巢魔像。比其祖先更强大。它会持续生成蜂后，这些恶毒的无人机能够自我修复。人类可以改造他们的魔像以使用这种形态。"
+	fleet_design_template_i_use_for_drones="DZQueenBeeDrones"
+	multiplier_to_all_costs="1.2" multiplier_to_all_healths="1.2" damage_multiplier_to_all_weapons="1.3"
+>
+</entity>
+
+<entity name="QueenBeeDrone" display_name="蜂后无人机"
+  thematic_groups="GolemEvolved,Zenith,Drone"
+					display_name_for_sidebar="蜂后无人机" gimbal_icon_size_multiplier="0.7" voice_group="Zenith"
+           special_entity_type="DroneGeneral"
+           visuals="assets/_finalgamemeshes/golems/yellowjacket/queenbee.prefab" visuals_bundle="exp2_zenith_onslaught"
+           icon_name="Ships1/YellowJacket"
+		   icon_overlay="Overlays1/Drone"
+           category="Ship"
+           size_scale="0.60"
+		   visuals_scale_multiplier="3"
+           description="由蜂后魔像发射。非常强大。"
+           starting_mark_level="Mark1" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" 
+		   self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="2"
+           cost_for_ai_to_purchase="50"
+           hull_points="4000" shield_points="2000" speed="AboveAverage5"
+           metal_cost="3000" energy_consumption="350"
+			armor_mm="30" albedo="0.3" engine_gx="7" mass_tx="0.21"
+           ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+           ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+		   priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+		   
+		   multiplier_to_all_costs="1.2" multiplier_to_all_healths="1.2" damage_multiplier_to_all_weapons="1.3"
+    >
+    <fleet_membership name="QueenBeeDrones" ship_cap_group="Strike" weight="100" cap="540"/>	
+    <system name="WD" display_name="麻痹刺击"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="500" range="Tiny4" shot_speed="Fast" rate_of_fire="Misery" fires_salvos_sequentially="true"
+				shot_type_data="DoubleShot_Green"
+				health_change_per_damage_dealt="2.5"
+				>
+								
+    </system>
+	<ship_class_data can_be_fleet_supercharged="false" />
+</entity>
+
+	 
+<entity name="DZQueenBeeDrone" display_name="蜂后无人机"
+  thematic_groups="GolemEnemy,Zenith,Drone"
+		display_name_for_sidebar="蜂后无人机" copy_from="QueenBeeDrone"
+		hull_points="8000" shield_points="4000" starting_mark_level="Markless"
+		multiplier_to_all_costs="1.2" multiplier_to_all_healths="1.2" damage_multiplier_to_all_weapons="1.3"
+>
+    <fleet_membership name="DZQueenBeeDrones" ship_cap_group="Strike" weight="100" cap="540"/>	
+    <system name="WD" damage_per_shot="1500" health_change_per_damage_dealt="2.5"
+	/>
+	
+</entity>
+		 
+		
+		 
+
+</root>

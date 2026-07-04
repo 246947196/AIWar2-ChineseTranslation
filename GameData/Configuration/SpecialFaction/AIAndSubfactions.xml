@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  
+    <!--This faction is the central AI.  All the factions lower down are sub-factions of individual AIs, 
+        and have a "one of each per central AI" relationship going on. 
+        ***************************************************************************************************************
+        ***************************************************************************************************************-->
+  <faction name="AI"
+            custom_NameForLobby="Additional &lt;color=#CC5500>AI&lt;/color> Faction"
+             display_name="AI哨兵" short_name="AI" processing_group="AISentinels"
+             custom_NameForSorting="_2"
+             base_info_source="AISentinelsFactionBaseInfo"
+             deep_info_source="AISentinelsFactionDeepInfo"
+             team_center_color="cCC5500" team_border_color="cFFEFD5"
+             team_center_colors_beyond_the_first="c882D17"
+             icon_name_for_lobby="Ships1/AIInstigatorBase" 
+             icon_overlay_name_for_lobby=""
+             type="AI"
+             description="AI阵营。
+		   
+增加更多AI会对游戏产生重大影响。更多AI意味着同时要应对更多波次攻击和其他威胁。当然，也需要击败更多AI霸主。
+
+每个AI都有独立收入，但我们会随AI数量增加而略微降低：
+x1 AI = 100%
+x2 AI = 90% 
+x3 AI = 80%
+4+ AI = 70%
+
+但如果AI彼此不友好则不计入。例如击败两个AI中的第一个后，剩下的会从90%提升到100%。同样如果开启AI内战则全部按100%计算。"
+             is_allowed_to_buy_from_zenith_trader="true"
+             sort_group="200"
+             allied_to_ai_by_default="true"
+             can_use_spire_debris="true"
+             must_be_at_most_x="10"
+             is_considered_visible_part_of_the_ai_faction_for_filter_purposes="true"
+              is_allowed_to_auto_seed_in_tutorial="true"
+			 defeat_condition="AllKingsDead_IncludingSubfactions"
+			 creases_hack_responses_if_all_ais_are_defeated="true"
+  >
+    <custom_field name="AIType" display_name="AI类型" related_table="AIType" default_option="FullEnsemble"
+          sort_group="200" setting_type="CustomDropdownSurrogateTable" />
+    <custom_field name="AIDifficulty" display_name="AI主难度" related_table="AIDifficulty" default_option="Normal"
+          requires_mark_as_changed="true"
+          sort_group="250" setting_type="CustomDropdownSurrogateTable" />
+
+    <custom_field name="UniversalDifficulty" display_name="统一难度" description="大多数情况下，我们希望AI主阵营、猎手舰队、守卫舰队和禁卫军的难度等级保持一致。
+                  
+启用此设置后，子阵营的难度将自动与主阵营匹配。重要提示：如果您想单独调整子阵营难度，需要先禁用此设置，否则主阵营设置会覆盖子阵营设置！"
+              sort_group="260" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="启用,禁用" default_option="启用" />
+
+    <custom_field name="AIWarden_TrimColor" display_name="守卫舰队边框颜色" related_table="TeamColorDefinition"
+        sort_group="400" setting_type="TeamColorPopup_TrimOnly" default_option="cF4C431" description="守卫舰队负责保卫AI星球免受你的攻击。" />
+    <custom_field name="WardenType" is_advanced_setting="true" display_name="守卫舰队类型" related_table="AIWardenType" default_option="BaseOriented"
+          sort_group="410" setting_type="CustomDropdownSurrogateTable" description="守卫舰队负责保卫AI星球免受你的攻击。" />
+    <custom_field name="AIDifficulty_WardenFleet" is_advanced_setting="true" display_name="守卫舰队难度" related_table="AIDifficulty_WardenFleet" default_option="Normal"
+          sort_group="420" setting_type="CustomDropdownSurrogateTable" description="守卫舰队负责保卫AI星球免受你的攻击。" />
+
+    <custom_field name="HunterFleet_TrimColor" display_name="猎手舰队边框颜色" related_table="TeamColorDefinition"
+        sort_group="500" setting_type="TeamColorPopup_TrimOnly" default_option="cFF3365" description="猎手舰队会寻找你防御体系的弱点并发起攻击。" />
+    <custom_field name="HunterFleetType" is_advanced_setting="true" display_name="猎手舰队类型" related_table="HunterFleetType" default_option="Normal"
+          sort_group="510" setting_type="CustomDropdownSurrogateTable" description="猎手舰队会寻找你防御体系的弱点并发起攻击。" />
+    <custom_field name="AIDifficulty_HunterFleet" is_advanced_setting="true" display_name="猎手舰队难度" related_table="AIDifficulty_HunterFleet" default_option="Normal"
+                  sort_group="520" setting_type="CustomDropdownSurrogateTable" description="猎手舰队会寻找你防御体系的弱点并发起攻击。" />
+    <custom_field name="PraetorianGuard_TrimColor" display_name="禁卫军边框颜色" related_table="TeamColorDefinition"
+                  sort_group="600" setting_type="TeamColorPopup_TrimOnly" default_option="c009E60" description="禁卫军是保卫AI母星的精英部队。" />
+    <custom_field name="AIDifficulty_PraetorianGuard" is_advanced_setting="true" display_name="禁卫军难度" related_table="AIDifficulty_PraetorianGuard" default_option="Normal"
+                  sort_group="620" setting_type="CustomDropdownSurrogateTable" description="禁卫军是保卫AI母星的精英部队。" />
+    <vassal_order order_type="MoveToPlanet" sort_group="100"/>
+    <vassal_order order_type="AttackPlanet" sort_group="200"/>
+    <vassal_order order_type="AttackUnit" sort_group="250"/>
+    <vassal_order order_type="WaveBudgetAgainstPlanet" sort_group="400"/>
+  </faction>
+
+  <!--Below are the subfactions of the AI. Those ones that have a "one of each per central AI" relationship going on. 
+      ***************************************************************************************************************
+      ***************************************************************************************************************
+  -->
+  
+  <faction name="AIWarden"
+           display_name="守卫舰队" short_name="Warden" processing_group="AIWarden"
+         base_info_source="AIWardenFactionBaseInfo"
+         deep_info_source="AIWardenFactionDeepInfo"
+         team_center_color="c882D17" team_border_color="cF4C431"
+         type="SpecialFaction" is_considered_warden="true" is_a_subfaction_of="AI"
+         should_not_be_shown="true" should_not_be_shown_even_as_separate_line_items_in_game_factions_menu="true" 
+         description="守卫舰队负责保卫AI星球免受你的攻击。"
+         takes_on_current_general_mark_level_of_parent_faction="true"
+         upgrades_ships_to_general_mark_level_if_they_are_lower="true"
+         takes_on_center_color_of_the_parent_faction="true"
+         is_considered_visible_part_of_the_ai_faction_for_filter_purposes="true"
+         allied_to_ai_by_default="true"
+         sort_group="210"
+		 creases_hack_responses_if_all_ais_are_defeated="true"
+  >
+  </faction>
+  
+  <!--Don't show because they take on the color of the preceding AI, and are configured as part of the AI entry itself.-->
+  <faction name="HunterFleet"
+           display_name="猎手舰队" short_name="Hunter" processing_group="AIHunter"
+           base_info_source="AIHunterFactionBaseInfo"
+           deep_info_source="AIHunterFactionDeepInfo"
+           team_center_color="Red" team_border_color="cF5F5DC"
+           type="SpecialFaction" is_considered_hunter="true" is_a_subfaction_of="AI"
+           should_not_be_shown="true" should_not_be_shown_even_as_separate_line_items_in_game_factions_menu="true" 
+           description="猎手舰队会寻找你防御体系的弱点并发起攻击。"
+           takes_on_current_general_mark_level_of_parent_faction="true"
+           takes_on_center_color_of_the_parent_faction="true"
+           is_considered_visible_part_of_the_ai_faction_for_filter_purposes="true"
+           allied_to_ai_by_default="true"
+           fireteam_percent_best_target="60"
+           sort_group="220"
+		   creases_hack_responses_if_all_ais_are_defeated="true"
+  >
+  </faction>
+  
+  <!--Don't show because they take on the color of the preceding AI, and are configured as part of the AI entry itself.-->
+  <faction name="PraetorianGuard"
+         display_name="禁卫军" short_name="Praetorian" processing_group="AIPraetorian"
+         base_info_source="AIPraetorianGuardFactionBaseInfo"
+         deep_info_source="AIPraetorianGuardFactionDeepInfo"
+         team_center_color="Red" team_border_color="c009E60"
+         type="SpecialFaction" is_considered_praetorian="true" is_a_subfaction_of="AI"
+         should_not_be_shown="true" should_not_be_shown_even_as_separate_line_items_in_game_factions_menu="true" 
+         description="禁卫军是保卫AI母星的精英部队。"
+         takes_on_current_general_mark_level_of_parent_faction="true"
+         upgrades_ships_to_general_mark_level_if_they_are_lower="true"
+         gets_praetorian_bonus_to_mark_level_from_ai_faction_difficulty="true"
+         takes_on_center_color_of_the_parent_faction="true"
+         is_considered_visible_part_of_the_ai_faction_for_filter_purposes="true"
+         allied_to_ai_by_default="true"
+         sort_group="220"
+		 creases_hack_responses_if_all_ais_are_defeated="true"
+  >
+  </faction>
+
+  <faction name="AICrossPlanetAttacker"
+           display_name="跨星球攻击" short_name="CPA" processing_group="AIOtherSub"
+           base_info_source="AICrossPlanetAttackerBaseInfo"
+           deep_info_source="AICrossPlanetAttackerDeepInfo"
+           team_center_color="cE32636" team_border_color="cA52A2A"
+           type="SpecialFaction" is_always_a_direct_attack_against_players="true" is_a_subfaction_of="AI"
+           description="该AI阵营负责管理跨星球攻击的逻辑"
+           should_not_be_shown="true" should_not_be_shown_even_as_separate_line_items_in_game_factions_menu="true"
+           takes_on_current_general_mark_level_of_parent_faction="true"
+           takes_on_center_color_of_the_parent_faction="true"
+           allied_to_ai_by_default="true"
+		   creases_hack_responses_if_all_ais_are_defeated="true"
+  >
+  </faction>
+
+  <faction name="AIRelentlessWave"
+           display_name="无尽AI波次" short_name="Relent" processing_group="AIOtherSub"
+           base_info_source="AIRelentlessWaveFactionBaseInfo"
+           deep_info_source="AIRelentlessWaveFactionDeepInfo"
+           team_center_color="cE32636" team_border_color="cA52A2A"
+           type="SpecialFaction" is_always_a_direct_attack_against_players="true" is_a_subfaction_of="AI"
+           description="该AI阵营管理无尽波次的攻击逻辑，这些部队不会撤退或转为猎手。"
+           should_not_be_shown="true" should_not_be_shown_even_as_separate_line_items_in_game_factions_menu="true"
+           takes_on_current_general_mark_level_of_parent_faction="true"
+           takes_on_center_color_of_the_parent_faction="true"
+           allied_to_ai_by_default="true"
+		   creases_hack_responses_if_all_ais_are_defeated="true"
+  >
+  </faction>
+
+  <faction name="AIBorderAggression"
+           display_name="边境侵略" short_name="B Aggro" processing_group="AIOtherSub"
+           base_info_source="AIBorderAggressionFactionBaseInfo"
+           deep_info_source="AIBorderAggressionFactionDeepInfo"
+           team_center_color="cE32636" team_border_color="cA52A2A"
+           type="SpecialFaction" is_always_a_direct_attack_against_players="true" is_a_subfaction_of="AI"
+           description="该AI阵营管理边境侵略的攻击逻辑，这些部队不会撤退或转为猎手。"
+           should_not_be_shown="true" should_not_be_shown_even_as_separate_line_items_in_game_factions_menu="true"
+           takes_on_current_general_mark_level_of_parent_faction="true"
+           takes_on_center_color_of_the_parent_faction="true"
+           allied_to_ai_by_default="true"
+           is_considered_border_aggression="true"
+		   creases_hack_responses_if_all_ais_are_defeated="true"
+  >
+  </faction>
+</root>

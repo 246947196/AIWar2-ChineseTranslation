@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <!--
+
+          <custom_field name="RandomFactionType" display_name="随机类型" related_table="RandomFactionTypeTable" default_option="FullRandom"
+                        sort_group="250" setting_type="CustomDropdownSurrogateTable" />
+-->
+  <faction name="RandomFaction"
+  custom_NameForLobby="Additional &lt;color=#9EB9D4>Random&lt;/color> Faction"
+     display_name="随机派系" short_name="Random" processing_group="Random"
+     custom_NameForSorting="_3"
+     base_info_source="RandomFactionBaseInfo"
+     deep_info_source="RandomFactionDeepInfo"
+     team_center_color="c9EB9D4" team_border_color="cFFFFFF"
+     icon_name_for_lobby="Ships4/SomethingHuh"
+     icon_overlay_name_for_lobby=""
+     type="SpecialFaction"
+     description="这是一个随机派系。您可以通过多种方式指定它：派系立场选项和'派系影响'选项。随机选择的派系旨在提供真正的随机性。
+
+要获得完整的'探索'体验，请使用隐藏银河设置，在设置菜单中隐藏随机派系，然后在游戏大厅的'银河设计'下启用派系额外随机性。"
+     IsRandomFaction="true"
+           >
+    <custom_field name="RandomFactionType" display_name="随机类型" related_table="RandomFactionType" default_option="PureRandom"
+                     sort_group="250" setting_type="CustomDropdownSurrogateTable" />
+    <custom_field name="Allegiance" display_name="派系立场" description="这个派系的立场是什么？请注意，'敌对玩家'通常只是意味着'使游戏更具挑战性'；该派系可能与AI结盟，与所有人为敌，或者只是增加自己的复杂性。
+
+'小派系结盟'意味着'属于一个小派系团队'。"
+                  sort_group="200" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Friendly To Players,Hostile to Player,Minor Faction Allied,Random" default_option="Minor Faction Allied" />
+    <custom_field name="Impact" display_name="影响程度" description="这个派系有多强大？它会对游戏产生多大影响？
+
+请注意，中等派系在高强度下可能是弱派系，在低强度下可能是强派系。期待真正的随机性。使用残酷派系风险自负！"
+                  sort_group="200" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Easier,Moderate,Hard,Brutal,Any" default_option="Moderate" />
+  </faction>
+</root>

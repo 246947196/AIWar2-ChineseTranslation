@@ -1,0 +1,2399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!-- V-Wing main entity -->
+	<entity name="VWing"
+			thematic_groups="Strikecraft" 
+			visuals="assets/_finalgamemeshes/fleetships/fighter/fighterold.prefab"
+			icon_name="Ships1/Fighter"
+			voice_group="Fighter"
+			category="Ship" is_strikecraft="true"
+			size_scale="0.9"
+			visuals_scale_multiplier="6"
+			collision_priority="100"
+			display_name="V翼战机"
+			description="低成本的短程战机，擅长掩护盟友和追击逃离的敌人。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Generalist,Light" tags="ArkEmpireOptionGroup1,ArkSidekickOptionGroup1" custom_arkempire_fleetcap="32"
+			cost_for_ai_to_purchase="28"
+			hull_points="4000" shield_points="0" speed="AboveAverage1"
+			metal_cost="1800" energy_consumption="400"
+			armor_mm="50" albedo="0.3" engine_gx="8" mass_tx="0.21"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+		>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="BasicOffensiveMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="ClassicTrioMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="EngineStunMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="MeleeWithSupportMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Strike" weight="100" cap="32"/>
+		<ai_ship_group_membership name="ClassicTrioStrikecraft" weight="100"/>
+		<ai_ship_group_membership name="AntiEngineStrikecraftAndFrigates" weight="100"/>
+		<ai_ship_group_membership name="LightStrikecraft" weight="100"/>
+		<ai_ship_group_membership name="AgravicVWing" weight="100"/>
+		<ai_ship_group_membership name="AblativeVWing" weight="100"/>
+		
+		<system name="WG" display_name="引力加农炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="60" range="Small1" shot_speed="Normal" rate_of_fire="Misery"
+				shot_type_data="ElegantCurl"
+				base_engine_stun_per_shot="5" 
+				engine_stun_to_engine_gx_less_than="22"
+				max_engine_stun_seconds="5" added_target_evaluator="EngineDamageAsMinorPart"
+				>
+			<outgoing_damage_modifier based_on="engine_gx" comparison_type="AtMost" compared_to="7" multiplier="3" />		
+		</system>
+	</entity>
+	
+	<!-- V-Wing copy for Marauder drones -->
+	<entity copy_from="VWing" name="MarauderVWing" 
+			display_name="V翼掠夺者" display_name_for_sidebar="V翼 MR"
+			special_entity_type="DroneGeneral" thematic_groups="Marauder,Drone"	
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="15"
+			description="廉价且短程，善于为盟友提供护盾并追击逃跑的敌人。这些增强型 V翼无人机由掠夺者生成."
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			multiplier_to_all_costs="4" multiplier_to_all_healths="4" damage_multiplier_to_all_weapons="4" >
+			
+		<fleet_membership name="MarauderDrones" ship_cap_group="Strike" weight="100" cap="5"/>
+		<fleet_membership name="CarrierStarshipDrones" ship_cap_group="Strike" weight="100" cap="2"/>
+	</entity>
+	
+	<!-- V-Wing copy for Combat support factory -->
+	<entity copy_from="VWing" name="Drone VWing" special_entity_type="DroneGeneral" thematic_groups="Hidden"     
+			icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="35"
+			cannot_target_or_alert_ai_reinforcement_spots="true"
+			armor_mm="30" display_name="V翼无人机"
+			display_name_for_sidebar="V翼 DRN"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			multiplier_to_all_costs="3" multiplier_to_all_healths="3" damage_multiplier_to_all_weapons="3" >
+			
+			<fleet_membership name="CombatFactoryDrones" ship_cap_group="Strike" weight="100" cap="8"/>
+	</entity>
+	
+	<!-- V-Wing copy for drone gun version -->
+	<entity copy_from="VWing" name="CombatFactoryVWing" thematic_groups="Strikecraft,Drone"  
+			icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="3"
+			always_self_attritions="true"
+			armor_mm="30" display_name="V翼无人机"
+			display_name_for_sidebar="V翼无人"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			immune_to_swapping_between_fleets="true" >
+	</entity>  
+	  
+	<!-- Fusion Bomber main entity -->
+	<entity name="FusionBomber"
+			thematic_groups="Strikecraft" 
+			visuals="assets/_finalgamemeshes/fleetships/bomber/bomber.prefab"
+			icon_name="Ships1/Bomber"
+			voice_group="Bomber"
+			category="Ship" is_strikecraft="true"
+			size_scale="1.1"
+			visuals_scale_multiplier="4.5"
+			collision_priority="100"
+			display_name="聚变轰炸机"
+			display_name_for_sidebar="轰炸机"
+			description="出色的建筑杀手,能够完全无视建筑物的护盾。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Fusion,Medium" tags="ArkEmpireOptionGroup2" custom_arkempire_fleetcap="32"
+			cost_for_ai_to_purchase="41" strength_multiplier="1.5"
+			hull_points="3600" shield_points="0" speed="Normal2"
+			metal_cost="3600" energy_consumption="400"
+			armor_mm="60" albedo="0.7" engine_gx="7" mass_tx="0.21"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+		>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="BasicOffensiveMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="ClassicTrioMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="AntiStructureMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="AntiLargeMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="AbductorBomberMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="CooperativeFusionMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Strike" weight="100" cap="32"/>
+		<ai_ship_group_membership name="SupporterStrikecraft" weight="50"/>
+		<ai_ship_group_membership name="AntiStructureStrikecraft" weight="100"/>
+		<ai_ship_group_membership name="ClassicTrioStrikecraft" weight="100"/>
+		<ai_ship_group_membership name="AssaultFrigateFusionBomber" weight="100"/>
+		<ai_ship_group_membership name="IonDisruptorFusionBomber" weight="100"/>	
+		<ai_ship_group_membership name="FusionBomberStingray" weight="100"/>
+		
+		<system name="WL" display_name="聚变炸弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="160" range="Small5" shot_speed="Slow" rate_of_fire="Low" fires_salvos_sequentially="true"
+				shot_type_data="FusionBomb"
+				base_percent_damage_bypasses_personal_shields="1" 
+				>
+			<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="HullOnly" comparison_type="AtLeast" compared_to="50" multiplier="1.1" />
+		</system>
+	</entity>
+
+	<!-- Fusion Bomber copy for Marauder drones -->
+	<entity copy_from="FusionBomber" name="MarauderFusionBomber" special_entity_type="DroneGeneral" thematic_groups="Marauder,Drone"	
+			display_name="掠夺者聚变轰炸机" display_name_for_sidebar="掠夺轰炸机"
+	        self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="15"
+            description="出色的建筑杀手。这些增强型轰炸机无人机由掠夺者生成。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			multiplier_to_all_costs="4" multiplier_to_all_healths="4" damage_multiplier_to_all_weapons="4" >
+			
+			<fleet_membership name="MarauderDrones" ship_cap_group="Strike" weight="100" cap="5"/>
+			<fleet_membership name="CarrierStarshipDrones" ship_cap_group="Strike" weight="100" cap="2"/>
+	</entity>
+
+	<!-- Fusion Bomber copy for Combat support factory -->
+	<entity copy_from="FusionBomber" name="DroneFusionBomber" special_entity_type="DroneGeneral" thematic_groups="Hidden"   
+            icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+	        self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="35"
+			cannot_target_or_alert_ai_reinforcement_spots="true"
+	        armor_mm="30" display_name="聚变轰炸机无人机"
+			display_name_for_sidebar="轰炸机无人"
+	        starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			multiplier_to_all_costs="3" multiplier_to_all_healths="3" damage_multiplier_to_all_weapons="3" >
+			
+			<fleet_membership name="CombatFactoryDrones" ship_cap_group="Strike" weight="100" cap="8"/>
+	</entity>
+	
+	<!-- Fusion Bomber copy for drone gun version -->
+	<entity copy_from="FusionBomber" name="CombatFactoryFusionBomber" thematic_groups="Strikecraft,Drone"     
+			icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="3"
+			always_self_attritions="true"
+			armor_mm="30" display_name="聚变轰炸机无人机"
+			display_name_for_sidebar="轰炸机无人"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused" 
+			immune_to_swapping_between_fleets="true" >
+	</entity>  
+
+	<entity copy_from="FusionBomber" name="ParasiticFusionBomber"
+			thematic_groups="Strikecraft" 
+			display_name="寄生聚变轰炸机"
+			display_name_for_sidebar="寄生轰炸机"
+			description="出色的建筑杀手,能够完全无视建筑物的护盾,而且会使舰船(通常不包括建筑物)在死亡时变成僵尸。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Fusion,Technologist">
+			
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="10" cap="25"/>
+		<fleet_membership name="AntiStructureMix" ship_cap_group="Strike" weight="50" cap="25"/>
+		<fleet_membership name="ZombificationMix" ship_cap_group="Strike" weight="100" cap="25"/>
+		<fleet_membership name="AbductorBomberMix" ship_cap_group="Strike" weight="20" cap="25"/>
+		<fleet_membership name="CooperativeFusionMix" ship_cap_group="Strike" weight="20" cap="25"/>	
+		<ai_ship_group_membership name="MuggerParasiticFusionBomber" weight="100"/>
+		<ai_ship_group_membership name="ZombifyingStrikecraftWithVariants" weight="100"/>
+		
+		<system name="WL" >
+			<death_effect_damage type="Zombification" tier_name="ParasiteFusionBomber"/>
+		</system>
+	</entity>
+
+	<entity	copy_from="FusionBomber" name="HeavyFusionBomber" display_name="重型聚变轰炸机"
+			thematic_groups="Strikecraft" 
+			display_name_for_sidebar="重型轰炸机" tech_upgrades_that_benefit_me="Fusion,Heavy" 
+			description="出色的建筑杀手,能够完全无视建筑物的护盾,耐久性是普通聚变轰炸机的两倍。"
+			armor_mm="90" hull_points="7200" metal_cost="7200" energy_consumption="600" speed="BelowAverage1">
+		<fleet_membership name="AntiStructureMix" ship_cap_group="Strike" weight="100" cap="35"/>
+		<fleet_membership name="SlowHeavyMix" ship_cap_group="Strike" weight="100" cap="35"/>
+		<fleet_membership name="AbductorBomberMix" ship_cap_group="Strike" weight="20" cap="35"/>
+		<fleet_membership name="CooperativeFusionMix" ship_cap_group="Strike" weight="20" cap="35"/>
+	</entity>
+
+	<entity copy_from="HeavyFusionBomber" name="OutguardHeavyFusionBomber" display_name="前哨重型聚变轰炸机" thematic_groups="Strikecraft,Outguard" 
+			display_name_for_sidebar="重型轰炸机"
+			starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Expatriate" tags="LobarStrikecraft"
+			>
+	</entity>
+
+	<!-- Fusion Bomber heavy variant for FRS -->
+	<entity name="UltimaFusionBomber"  copy_from="HeavyFusionBomber" thematic_groups="Strikecraft"          
+			display_name="终极聚变轰炸机"
+			display_name_for_sidebar="终极轰炸机" aip_when_granted_by_hack="12"
+			tags="IncludeInFRS" supercharges_hull_of_rest_of_player_fleet="1.5" supercharges_attack_power_of_rest_of_player_fleet="1.5"
+			starting_mark_level="Mark3" supercharges_only_apply_when_fleet_line_count_is_x_or_less="5"
+			description="出色的建筑杀手,能够完全无视建筑物的护盾。在小型舰队中与少量其他舰船类型一起使用效果最佳,能够让所有舰船变得更强大和耐用。">
+			
+		<fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="10" cap="35"/>
+	</entity>
+	
+	<!-- Fusion Bomber variant for Expatriate FRS -->
+	<entity name="FRSSprintBomber" copy_from="FusionBomber" starting_mark_level="Mark2" thematic_groups="Strikecraft"
+			tags="IncludeInFRS" tech_upgrades_that_benefit_me="Expatriate"
+			display_name="冲刺轰炸机"
+			display_name_for_sidebar="冲刺轰炸机"
+			description="擅长对付带护盾的单位的出色杀手,这种通常由HRF使用的变体用增加的速度换取了部分护甲。"
+			hull_points="2800" metal_cost="3400"
+			speed="AboveAverage2" armor_mm="40" engine_gx="10"
+			speed_multiplier_first_5_seconds_on_planet="1.3"
+			aip_when_granted_by_hack="3" >
+			
+		<fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="10" cap="32"/>
+	</entity>
+	
+	<!-- Concussion Corvette main entity -->
+	<entity name="ConcussionCorvette"
+			thematic_groups="Strikecraft" 
+			visuals="assets/_finalgamemeshes/fleetships/missilecorvette/missilecorvette.prefab"
+			icon_name="Ships1/Corvette" icon_overlay="Overlays1/Corvette_Concussion"
+			voice_group="Corvette"
+			category="Ship" is_strikecraft="true"
+			size_scale="3"
+			visuals_scale_multiplier="16"
+			collision_priority="100"
+			display_name="冲击巡逻艇"
+			display_name_for_sidebar="冲击巡逻艇"
+			description="发射导弹,对装甲薄的目标造成巨大伤害。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Concussion,Light" tags="ArkEmpireOptionGroup3,ArkSidekickOptionGroup3" custom_arkempire_fleetcap="32"
+			cost_for_ai_to_purchase="30" strength_multiplier="2"
+			hull_points="2400" shield_points="0" speed="Normal2"
+			metal_cost="1800" energy_consumption="300"
+			armor_mm="40" albedo="0.3" engine_gx="14" mass_tx="0.21"
+			ship_or_structure_explosion_sfx="ShipMidsize_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+		>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="BasicOffensiveMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="AntiSmallMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="ClassicTrioMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="CorvetteMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="MissileMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Strike" weight="100" cap="32"/>
+		<ai_ship_group_membership name="ClassicTrioStrikecraft" weight="100"/>
+		<ai_ship_group_membership name="AntiLowArmourStrikecraft" weight="100"/>
+		<ai_ship_group_membership name="DevastatorFrigateMLRSConcussionCorvette" weight="100"/>
+		
+		<system name="Q5" display_name="震荡导弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="130" range="AboveAverage3" shot_speed="Normal" rate_of_fire="VeryLow" fires_salvos_sequentially="true"
+				shot_type_data="GuidedMissile"
+				>
+			<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="50" multiplier="6" />
+		</system>
+	</entity>
+	
+	<entity name="GhostConcussionCorvette" copy_from="ConcussionCorvette" thematic_groups="Strikecraft" 
+			albedo="0.7" display_name="幽灵冲击巡逻艇"  strength_multiplier="2.2" cost_for_ai_to_purchase="40"
+			display_name_for_sidebar="幽灵冲击巡逻艇" >
+			
+		<fleet_membership name="CloakedMix" ship_cap_group="Strike" weight="100" cap="32"/>		
+		<ai_ship_group_membership name="GhostStrikecraft" weight="100"/>
+		
+		<system name="C" display_name="隐形装置" category="Passive" cloaking_points="2000" cloaking_points_added_per_mark="1000" > </system>
+	</entity>
+	
+	<entity name="Kite" copy_from="ConcussionCorvette" display_name="风筝" display_name_for_sidebar="风筝" thematic_groups="Strikecraft"
+			description="脆弱但机动性好的打击舰,发射的导弹对装甲薄的目标造成额外伤害,同时能抵抗远程火力。"
+			hull_points="1950" speed="AboveAverage1"
+			cost_for_ai_to_purchase="21"
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="10" cap="32"/>
+		<fleet_membership name="BasicOffensiveMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="AntiSmallMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="KiteMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="MissileMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<ai_ship_group_membership name="KiteMix" weight="100"/>
+		<ai_ship_group_membership name="StrangeAntiLowArmourStrikecraft" weight="100"/>	
+		
+		<incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="5000" multiplier="0.75" />
+	</entity>
+	
+	<!-- Concussion Corvette variant for Expatriate FRS -->
+	<entity name="FRSPincushionCorvette" copy_from="ConcussionCorvette" starting_mark_level="Mark2" thematic_groups="Strikecraft"
+			tags="IncludeInFRS" size_scale="5"
+			visuals_scale_multiplier="20"
+			tech_upgrades_that_benefit_me="Expatriate"
+			display_name="大头针巡逻艇"
+			display_name_for_sidebar="大头针 K"
+			description="掠夺者使用的变体舰船,体型较大,发射成排导弹摧毁装甲薄的目标。"
+			cost_for_ai_to_purchase="50" strength_multiplier="2"
+			hull_points="4100" metal_cost="3050" energy_consumption="400" armor_mm="50"
+			aip_when_granted_by_hack="4" >
+			
+		<fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="10" cap="22"/>
+		
+		<system name="Q5" display_name="震荡导弹"
+				damage_per_shot="150" shots_per_salvo="5" >
+		</system>
+	</entity>
+	
+	<!-- Pike Corvette main entity -->
+	<entity name="PikeCorvette"	
+			thematic_groups="Strikecraft"   
+			visuals="assets/_finalgamemeshes/fleetships/multi_needler_corvette/multi_needler corvette single.prefab"
+			icon_name="Ships1/Corvette" icon_overlay="Overlays1/Corvette_Pike"
+			voice_group="Corvette"
+			size_scale="2.4"
+			visuals_scale_multiplier="12"
+			category="Ship" is_strikecraft="true"
+			collision_priority="100"
+			display_name="长矛巡逻艇"
+			display_name_for_sidebar="长矛巡逻艇"
+			description="特别擅长对付高装甲舰船,尤其是剩余船体较多的目标。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Disruptive,Medium" tags="ArkEmpireOptionGroup3" custom_arkempire_fleetcap="32"
+			cost_for_ai_to_purchase="31" strength_multiplier="1.4"
+			hull_points="2900" shield_points="0" speed="Normal1"
+			metal_cost="1900" energy_consumption="400"
+			armor_mm="70" albedo="0.3" engine_gx="7" mass_tx="0.21"
+			ship_or_structure_explosion_sfx="ShipMidsize_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="BasicOffensiveMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="AntiLargeMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="AntiSmallMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="CorvetteMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="ZombificationAntiCounterMix" ship_cap_group="Strike" weight="100" cap="32"/>	
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Strike" weight="100" cap="32"/>
+		<ai_ship_group_membership name="MediumStrikecraft" weight="100"/>
+		<ai_ship_group_membership name="DisruptiveStrikecraft" weight="100"/>
+		<ai_ship_group_membership name="AntiHighArmourMix" weight="100"/>	
+		
+		<system name="V1" display_name="炸药包"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="30" range="Normal4" shot_speed="Normal" rate_of_fire="Low"
+				shots_per_salvo="5" fires_salvos_sequentially="false"
+				shot_type_data="PikeShot_Gold"				
+				>
+			<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtLeast" compared_to="90" multiplier="3" />
+			<outgoing_damage_modifier based_on="CurrentHullPercentage" applies_to="HullOnly" comparison_type="AtLeast" compared_to="75" multiplier="2" />
+		</system>
+	</entity>
+	
+	<entity name="Porcupine" copy_from="PikeCorvette" display_name="豪猪" thematic_groups="Strikecraft"
+		display_name_for_sidebar="豪猪"
+                tags="ArkSidekickOptionGroup3"
+		description="脆弱但伤害极高的打击舰，擅长摧毁高装甲舰船，尤其是剩余船体较多的目标"
+		hull_points="2200" cost_for_ai_to_purchase="21"
+		>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="20" cap="32"/>
+		<fleet_membership name="FragileOffensiveMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="AntiLargeMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="AntiSmallMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="CorvetteMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<ai_ship_group_membership name="FragileFreakyStrikecraft" weight="100"/>
+		<ai_ship_group_membership name="HugelyVariedStrikecraft" weight="100"/>
+		<ai_ship_group_membership name="FragileAntiHighArmourMix" weight="100"/>
+		
+		<system name="V1" damage_per_shot="80" />
+	</entity>
+	
+	<entity name="OutguardPorcupine" copy_from="Porcupine" display_name="前哨豪猪" thematic_groups="Strikecraft,Outguard,IsolatedHumanResistance"            
+			display_name_for_sidebar="豪猪" tags="XenophonStrikecraft"	
+			description="脆弱但伤害极高的打击舰，擅长摧毁高装甲舰船，尤其是剩余船体较多的目标"
+			starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Expatriate"
+			>
+	</entity>
+	
+	<entity name="ParasiticPikeCorvette" copy_from="PikeCorvette" display_name="寄生长矛巡逻艇" thematic_groups="Strikecraft"
+			display_name_for_sidebar="长矛 K 寄生"
+			description="特别擅长对付高装甲舰船，尤其是剩余船体较多的目标。还能使目标在死亡时变成友方僵尸"
+			tech_upgrades_that_benefit_me="Disruptive,Technologist">
+			
+		<fleet_membership name="AntiLargeMix" ship_cap_group="Strike" weight="20" cap="20"/>
+		<fleet_membership name="AntiSmallMix" ship_cap_group="Strike" weight="20" cap="20"/>
+		<fleet_membership name="ZombificationMix" ship_cap_group="Strike" weight="100" cap="20"/>
+		<fleet_membership name="ZombificationAntiCounterMix" ship_cap_group="Strike" weight="100" cap="20"/>	
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="10" cap="20"/>
+		<ai_ship_group_membership name="ZombifyingStrikecraftWithVariants" weight="100"/>
+		
+		<system name="V1" >
+			<death_effect_damage type="Zombification" tier_name="ParasitePikeCorvette"/>
+		</system>
+	</entity>
+	
+	<!-- Pike Corvette variant for Expatriate FRS -->
+	<entity name="FRSHalberdCorvette" copy_from="PikeCorvette" starting_mark_level="Mark2" thematic_groups="Strikecraft"
+			tags="IncludeInFRS" tech_upgrades_that_benefit_me="Expatriate"
+			display_name="长戟巡逻艇"
+			display_name_for_sidebar="长戟 K"
+			description="掠夺者通常使用的变体舰船，对高装甲舰船特别有效，但由于使用更重的弹药，每次齐射发射次数较少"
+			hull_points="3500" metal_cost="2200"
+			aip_when_granted_by_hack="2" >
+			
+		<fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="10" cap="32"/>
+		
+		<system name="V1" display_name="重型炸药包"
+				damage_per_shot="110" shots_per_salvo="2">
+			<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtLeast" compared_to="90" multiplier="5" />
+		</system>
+	</entity>
+	
+	<!-- Eyebot main entity -->
+	<entity name="Eyebot"	
+			thematic_groups="Strikecraft"   
+			visuals="assets/_finalgamemeshes/fleetships/eyebot/eyebot.prefab"
+			icon_name="Ships1/Eyebot"
+			voice_group="Saboteur"
+			size_scale="1.4"
+			visuals_scale_multiplier="9.5"
+			category="Ship" is_strikecraft="true"
+			collision_priority="100"
+			display_name="眼魔"
+			description="隐形舰船，目标的能量消耗越高，造成的伤害越大"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Subterfuge,Medium"
+			cost_for_ai_to_purchase="26" strength_multiplier="1.6"
+			hull_points="2100" shield_points="0" speed="Normal1"
+			metal_cost="1800" energy_consumption="400"
+			armor_mm="60" albedo="0.7" engine_gx="7" mass_tx="0.21"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="100" cap="32"/>		
+		<fleet_membership name="BasicOffensiveMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="CloakedMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="AntiLargeMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="BullyMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Strike" weight="100" cap="32"/>
+		<ai_ship_group_membership name="SmallSwarmerStrikecraft" weight="50"/>
+		<ai_ship_group_membership name="SneakyStrikecraft" weight="100"/>
+		<ai_ship_group_membership name="ViciousSneakyStrikecraft" weight="100"/>
+		<ai_ship_group_membership name="BullyStrikecraft" weight="500"/>
+		<ai_ship_group_membership name="EnsnarerBullyStrikecraft" weight="500"/>
+		
+		<system name="R5" display_name="电子脉冲"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="140" range="Small4" shot_speed="Fast" rate_of_fire="FairlyLow" fires_salvos_sequentially="true"
+				shot_type_data="LaserPulse_RedLevel2"
+				>
+			<outgoing_damage_modifier based_on="EnergyUsage" comparison_type="MultiplesOf" compared_to="2500" multiplier="1" max_multiplier="15" />
+		</system>
+		<system name="C" display_name="隐形装置"
+				category="Passive" cloaking_points="2000" cloaking_points_added_per_mark="1000"
+				>
+		</system>
+	</entity>
+
+	<entity name="Stalker" copy_from="Eyebot" display_name="潜行者" tech_upgrades_that_benefit_me="Disruptive,Subterfuge" strength_multiplier="1.4" thematic_groups="Strikecraft"           
+			tags="ArkEmpireOptionGroup1,ArkSidekickOptionGroup1" custom_arkempire_fleetcap="32"
+			description="速度慢但耐久度高，目标的能量消耗越高，造成的伤害越大"
+			hull_points="4500" speed="BelowAverage1"
+			metal_cost="2500" albedo="0.3" armor_mm="90"  cost_for_ai_to_purchase="48"
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="20" cap="32"/>
+		<fleet_membership name="SturdyOffensiveMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="AntiLargeMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="SlowHeavyMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="BullyMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="UnusualMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<ai_ship_group_membership name="DurableFreakyStrikecraft" weight="100"/>
+		<ai_ship_group_membership name="HugelyVariedStrikecraft" weight="100"/>
+		<ai_ship_group_membership name="StrangeSmallSwarmerStrikecraft" weight="100"/>	
+		
+		<system name="C" max_mark_level_to_function="0" />		
+	</entity>
+	
+	<!-- Vanguard main entity -->
+	<entity name="Vanguard" 	
+			thematic_groups="Strikecraft"   
+			visuals="assets/_finalgamemeshes/fleetships/armorship/armorship.prefab"
+			icon_name="Ships1/Armor_Ship"
+			voice_group="Bomber"
+			category="Ship" is_strikecraft="true"
+			size_scale="1.5"
+			visuals_scale_multiplier="10"
+			collision_priority="100"
+			display_name="先锋舰"
+			description="速度慢但装甲厚重的舰船，能使敌人受到更多伤害，使用虫洞后会暂时获得伤害抗性"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Technologist,Heavy" tags="ArkEmpireOptionGroup2" custom_arkempire_fleetcap="15"
+			cost_for_ai_to_purchase="80"
+			hull_points="12000" shield_points="0" speed="Normal1"
+			metal_cost="4500" energy_consumption="800"
+			armor_mm="180" albedo="0.3" engine_gx="7" mass_tx="0.3"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+		>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="100" cap="15"/>
+		<fleet_membership name="BasicOffensiveMix" ship_cap_group="Strike" weight="100" cap="15"/>
+		<fleet_membership name="SlowHeavyMix" ship_cap_group="Strike" weight="100" cap="15"/>
+		<fleet_membership name="AttritionerMix" ship_cap_group="Strike" weight="100" cap="15"/>
+		<fleet_membership name="BreacherMix" ship_cap_group="Strike" weight="100" cap="15"/>
+		<fleet_membership name="CrowdControlMix" ship_cap_group="Strike" weight="100" cap="15"/>
+		<fleet_membership name="DebufferMix" ship_cap_group="Strike" weight="20" cap="15"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Strike" weight="100" cap="15"/>
+		<ai_ship_group_membership name="AmbushStrikecraft" weight="100"/>
+		<ai_ship_group_membership name="HeavyStrikecraft" weight="100"/>
+		<ai_ship_group_membership name="VanguardMLRSCorvette" weight="100"/>
+		
+		<system name="WW" display_name="霰弹酸液炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="40" range="Small5" shot_speed="Normal" rate_of_fire="RatherLow"
+				shots_per_salvo="8" fires_salvos_sequentially="false"
+				shot_type_data="DoubleShot_Green"	
+				damage_amplification="true" damage_amplification_duration="10" damage_amplification_flat="20" damage_amplification_flat_added_per_mark="5"
+				>
+		</system>	
+		<incoming_damage_modifier based_on="MyTimeAtPlanet" comparison_type="LessThan" compared_to="5" multiplier="0.25" />
+	</entity>
+
+	<entity name="OutguardVanguard" copy_from="Vanguard" display_name="前哨先锋舰" thematic_groups="Strikecraft,Outguard,IsolatedHumanResistance"
+			display_name_for_sidebar="先锋舰" tags="LobarStrikecraft"	
+			description="脆弱但伤害极高的打击舰，擅长摧毁高装甲舰船，尤其是剩余船体较多的目标"
+			tech_upgrades_that_benefit_me="Expatriate"
+			>
+	</entity>
+
+	<entity name="AstroTrainDepotVanguard"  copy_from="Vanguard" tags="AstroTrainDepotWardenFleet" starting_mark_level="Mark2" thematic_groups="Strikecraft"  >
+	</entity>
+
+	<entity copy_from="Vanguard" name="Drone Vanguard" special_entity_type="DroneGeneral" thematic_groups="Drone" 
+			icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+	        self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="35"
+			cannot_target_or_alert_ai_reinforcement_spots="true"
+	        armor_mm="40" display_name="先锋无人机"
+			display_name_for_sidebar="先锋无人"
+	        starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			multiplier_to_all_costs="3" multiplier_to_all_healths="3" damage_multiplier_to_all_weapons="3" >
+			
+		<fleet_membership name="CarrierGuardianDrones" ship_cap_group="Strike" weight="100" cap="3"/>
+		<fleet_membership name="AstroTrainDrones" ship_cap_group="Strike" weight="100" cap="7"/>
+	</entity>
+
+	<entity name="VanguardHydra" copy_from="Vanguard" thematic_groups="Strikecraft" 
+			display_name="先锋九头蛇"	tech_upgrades_that_benefit_me="Technologist,Medium"
+			description="具有一定耐久性和装甲的舰船，能使敌人受到更多伤害，使用虫洞后会暂时获得伤害抗性，并在死亡时生成小型复制体"
+			hull_points="6000" speed="Normal3"
+			armor_mm="70"
+			cost_for_ai_to_purchase="100" >
+		<entity_type_drawing_bag_used_on_death data_list="VanguardHydraHead" min_spawn_value_list="3" />
+		
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="20" cap="15"/>
+		<fleet_membership name="FragileOffensiveMix" ship_cap_group="Strike" weight="100" cap="15"/>
+		<fleet_membership name="ReplicatingOffensiveMix" ship_cap_group="Strike" weight="100" cap="15"/>
+		<fleet_membership name="HydraOffensiveMix" ship_cap_group="Strike" weight="100" cap="15"/>
+		<fleet_membership name="BreacherMix" ship_cap_group="Strike" weight="50" cap="15"/>
+		<fleet_membership name="DebufferMix" ship_cap_group="Strike" weight="10" cap="15"/>
+		<ai_ship_group_membership name="FragileFreakyStrikecraft" weight="20"/>
+		<ai_ship_group_membership name="HugelyVariedStrikecraft" weight="50"/>
+		<ai_ship_group_membership name="ReplicatingStrikecraft" weight="100"/>
+		<ai_ship_group_membership name="MassVanguardHydra" weight="100"/>
+		
+		<system name="WW" damage_per_shot="30" damage_amplification_flat="20" damage_amplification_flat_added_per_mark="5"/>
+	</entity>		
+
+	<entity name="VanguardHydraHead" copy_from="Vanguard" thematic_groups="Strikecraft,Drone"       
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="2"
+			always_self_attritions="true"
+			display_name="先锋九头蛇头"
+			display_name_for_sidebar="先锋九头蛇头" tech_upgrades_that_benefit_me="Technologist,Medium"	
+			description="由先锋九头蛇生成的头"
+			hull_points="2100" speed="Normal1"
+			metal_cost_multiplier_for_scrapping="0.1"
+			armor_mm="30"
+			energy_consumption="0"
+			immune_to_all_damage_for_seconds_after_creation="8"
+			immune_to_swapping_between_fleets="true"
+			>
+		<system name="WW" damage_per_shot="50" rate_of_fire="Misery" shots_per_salvo="1" damage_amplification_flat="0" damage_amplification_flat_added_per_mark="0" />
+	</entity>
+
+	<!-- Autocannon Minipod main entity -->
+	<entity name="AutocannonMinipod" 
+			thematic_groups="Strikecraft" 			
+			visuals="assets/_finalgamemeshes/fleetships/autocannon_minipod/autocannon_minipod.prefab"
+			icon_name="Ships1/AutocannonMinipod"
+			voice_group="Fighter"
+			size_scale="0.9"
+			visuals_scale_multiplier="8"
+			category="Ship" is_strikecraft="true"
+			collision_priority="100"
+			display_name="自动炮小型舱"
+			display_name_for_sidebar="自动炮"
+			description="快速、隐形且脆弱的蜂群舰，擅长围攻装甲较厚的舰船"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Generalist,Light" tags="ArkEmpireOptionGroup1,ArkSidekickOptionGroup1" custom_arkempire_fleetcap="70"
+			cost_for_ai_to_purchase="14" strength_multiplier="1.4"
+			hull_points="1200" shield_points="0" speed="AboveAverage6"
+			metal_cost="900" energy_consumption="135"
+			armor_mm="30" albedo="0.7" engine_gx="10" mass_tx="0.21"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+		>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="100" cap="70"/>
+		<fleet_membership name="BasicOffensiveMix" ship_cap_group="Strike" weight="100" cap="70"/>
+		<fleet_membership name="SwarmerMix" ship_cap_group="Strike" weight="100" cap="70"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Strike" weight="100" cap="70"/>
+		<ai_ship_group_membership name="SmallSwarmerStrikecraft" weight="100"/>
+		<ai_ship_group_membership name="SneakyStrikecraft" weight="100"/>
+		<ai_ship_group_membership name="ViciousSneakyStrikecraft" weight="100"/>
+		<ai_ship_group_membership name="AntiHighArmourMix" weight="100"/>
+		<ai_ship_group_membership name="AutocannonMinipodBombard" weight="100"/>
+		
+		<system name="WD" display_name="弹道双发炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="100" range="Small2" shot_speed="Normal" rate_of_fire="SlightlyLow" fires_salvos_sequentially="true"
+				shot_type_data="DoubleShot_Blue"				
+				>
+			<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtLeast" compared_to="100" multiplier="2" />
+		</system>
+		<system name="C" display_name="隐形装置"
+				category="Passive"
+				cloaking_points="2000" cloaking_points_added_per_mark="1000"
+				>
+		</system>
+	</entity>
+  
+	<entity name="Gunbot" copy_from="AutocannonMinipod" display_name="炮艇" thematic_groups="Strikecraft" 
+			display_name_for_sidebar="炮艇"	
+			description="快速且隐形的蜂群舰，耐久度极低但对厚装甲目标造成极高伤害"
+			hull_points="900" metal_cost="1000"  cost_for_ai_to_purchase="12"
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="20" cap="70"/>
+		<fleet_membership name="FragileOffensiveMix" ship_cap_group="Strike" weight="100" cap="70"/>
+		<fleet_membership name="AntiLargeMix" ship_cap_group="Strike" weight="100" cap="70"/>
+		<fleet_membership name="SwarmerMix" ship_cap_group="Strike" weight="50" cap="70"/>
+		<ai_ship_group_membership name="FragileFreakyStrikecraft" weight="25"/>
+		<ai_ship_group_membership name="HugelyVariedStrikecraft" weight="20"/>
+		<ai_ship_group_membership name="StrangeSmallSwarmerStrikecraft" weight="100"/>
+		<ai_ship_group_membership name="FragileAntiHighArmourMix" weight="100"/>
+		
+		<system name="WD" damage_per_shot="150" >
+			<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtLeast" compared_to="100" multiplier="3" />
+		</system>
+	</entity>
+
+	<entity copy_from="AutocannonMinipod" name="DroneAutocannonMinipod" special_entity_type="DroneGeneral" thematic_groups="Strikecraft,Drone" 
+            icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+	        self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="35"
+			cannot_target_or_alert_ai_reinforcement_spots="true"
+	        armor_mm="30" display_name="自动炮小型舱无人机"
+			display_name_for_sidebar="自动炮无人"
+	        starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			multiplier_to_all_costs="3" multiplier_to_all_healths="3" damage_multiplier_to_all_weapons="3" >
+			
+		<fleet_membership name="SwarmerDrones" ship_cap_group="Strike" weight="100" cap="10"/>
+	</entity>
+
+	<!-- Inhibiting Tesla Corvette main entity -->
+	<entity name="InhibitingTeslaCorvette" 
+			thematic_groups="Strikecraft" 			
+			visuals="assets/_finalgamemeshes/fleetships/LightningCorvette/LightningCorvette.prefab"
+			icon_name="Ships1/Corvette" icon_overlay="Overlays1/Corvette_Tesla"
+			voice_group="AreaOfEffect"
+			size_scale="3.5"
+			visuals_scale_multiplier="8"
+			category="Ship" is_strikecraft="true"
+			collision_priority="100"
+			display_name="抑制特斯拉巡逻艇"
+			display_name_for_sidebar="特斯拉 K"
+			description="群体控制与火力压制的结合"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Splash,Heavy" tags="ArkEmpireOptionGroup3,ArkSidekickOptionGroup3" custom_arkempire_fleetcap="13"
+			cost_for_ai_to_purchase="120" strength_multiplier="1.5"
+			hull_points="12000" shield_points="0" speed="BelowAverage2"
+			metal_cost="5400" energy_consumption="800"
+			armor_mm="110" albedo="0.3" engine_gx="7" mass_tx="0.3"
+			ship_or_structure_explosion_sfx="ShipMidsize_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+		>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="100" cap="13"/>
+		<fleet_membership name="BasicOffensiveMix" ship_cap_group="Strike" weight="100" cap="13"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Strike" weight="100" cap="13"/>
+		<fleet_membership name="DebufferMix" ship_cap_group="Strike" weight="100" cap="13"/>
+		<fleet_membership name="CrowdControlMix" ship_cap_group="Strike" weight="100" cap="13"/>
+		<fleet_membership name="CorvetteMix" ship_cap_group="Strike" weight="100" cap="13"/>
+		<fleet_membership name="AttritionerMix" ship_cap_group="Strike" weight="100" cap="13"/>
+		<ai_ship_group_membership name="HeavyStrikecraft" weight="10"/>
+		<ai_ship_group_membership name="SupporterStrikecraft" weight="100"/>
+		<ai_ship_group_membership name="AttritionerStrikecraft" weight="100"/>
+		<ai_ship_group_membership name="AmbushStrikecraft" weight="2"/>
+		<ai_ship_group_membership name="AbsorberParasiteTeslaCorvette" weight="100"/>
+		
+		<system name="Q1" display_name="特斯拉线圈"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="280" range="Tiny3" shot_speed="Normal" rate_of_fire="VeryLow" fires_salvos_sequentially="false"
+				shot_type_data="LightningExplosionAOEShot" added_target_evaluator="WeaponJamAsPrimary"
+				area_of_effect_size="3200"				
+				shots_detonate_immediately="true"
+				maximum_number_of_targets_hit_per_shot="10"
+				base_enemy_weapon_reload_slowing_seconds_per_shot="4" added_enemy_weapon_reload_slowing_seconds_per_shot_per_mark="1"
+				max_enemy_weapon_reload_slowing_seconds="20"
+				enemy_weapon_reload_slowing_to_armor_mm_less_than="60"
+				>
+		</system>
+	</entity>
+
+	<entity name="Zapper" copy_from="InhibitingTeslaCorvette" thematic_groups="Strikecraft" 
+			display_name="电击者"
+			display_name_for_sidebar="电击者"
+			description="造成惊人的范围伤害，同时对敌人装弹时间施加少量减益"
+			hull_points="7200" speed="BelowAverage1"
+			metal_cost="7000"  cost_for_ai_to_purchase="100"
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="20" cap="11"/>
+		<fleet_membership name="FragileOffensiveMix" ship_cap_group="Strike" weight="100" cap="10"/>
+		<fleet_membership name="CrowdControlMix" ship_cap_group="Strike" weight="100" cap="13"/>
+		<ai_ship_group_membership name="FragileFreakyStrikecraft" weight="20"/>
+		<ai_ship_group_membership name="HugelyVariedStrikecraft" weight="50"/>
+		
+		<system name="Q1" damage_per_shot="560" base_enemy_weapon_reload_slowing_seconds_per_shot="3" added_enemy_weapon_reload_slowing_seconds_per_shot_per_mark="0" />
+	</entity>
+
+	<!-- Grenade Launcher Corvette main entity -->
+	<entity name="GrenadeLauncherCorvette" 
+			thematic_groups="Strikecraft" 			
+			visuals="assets/_finalgamemeshes/fleetships/grenadelauncher2/grenadelauncher2.prefab"
+			icon_name="Ships1/Corvette" icon_overlay="Overlays1/Corvette_Grenade"
+			voice_group="AreaOfEffect"
+			category="Ship" is_strikecraft="true"
+			size_scale="2.2"
+			visuals_scale_multiplier="15"
+			collision_priority="100"
+			display_name="榴弹发射巡逻艇"
+			display_name_for_sidebar="榴弹 K"
+			description="发射造成范围伤害的榴弹，对蜂群类型特别有效"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Medium,Splash"
+			cost_for_ai_to_purchase="45" strength_multiplier="1.6"
+			hull_points="3900" shield_points="0" speed="Normal3"
+			metal_cost="2250" energy_consumption="400"
+			armor_mm="70" albedo="0.3" engine_gx="7" mass_tx="0.3"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+		>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="BasicOffensiveMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="CrowdControlMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="CorvetteMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Strike" weight="100" cap="32"/>
+		<ai_ship_group_membership name="HeavyStrikecraft" weight="10"/>
+		<ai_ship_group_membership name="AttritionerStrikecraft" weight="100"/>
+		<ai_ship_group_membership name="AntiLowArmourStrikecraft" weight="100"/>
+		
+		<system name="WJ" display_name="手雷"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="72" range="Normal5" shot_speed="Normal" rate_of_fire="VeryLow" fires_salvos_sequentially="true"
+				shot_type_data="FlakShotAOEBurstAtEnd"
+				area_of_effect_size="600"
+				maximum_number_of_targets_hit_per_shot="9"
+				>
+			<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="30" multiplier="3" />		
+		</system>
+	</entity>
+  
+	<entity name="OutguardGrenadeLauncherCorvette" copy_from="GrenadeLauncherCorvette"  display_name="前哨榴弹发射巡逻艇" thematic_groups="Strikecraft,Outguard,IsolatedHumanResistance"
+			starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Expatriate" 
+			>
+	</entity>
+
+	<entity name="Molotov" copy_from="GrenadeLauncherCorvette" display_name="燃烧瓶" thematic_groups="Strikecraft" 
+			display_name_for_sidebar="燃烧瓶" tech_upgrades_that_benefit_me="Light,Splash" tags="ArkEmpireOptionGroup3,ArkSidekickOptionGroup3" custom_arkempire_fleetcap="32"
+			description="速度快但较脆弱的榴弹发射舰，对蜂群类型造成巨大伤害，同时施加移动和武器速度减益"
+			hull_points="2340" speed="AboveAverage4"
+			armor_mm="50"  cost_for_ai_to_purchase="24"
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="20" cap="32"/>		
+		<fleet_membership name="FragileOffensiveMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="CrowdControlMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="DebufferMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="KiteMix" ship_cap_group="Strike" weight="100" cap="32"/>		
+		<ai_ship_group_membership name="FragileFreakyStrikecraft" weight="100"/>
+		<ai_ship_group_membership name="HugelyVariedStrikecraft" weight="100"/>
+		<ai_ship_group_membership name="StrangeAntiLowArmourStrikecraft" weight="100"/>
+		
+		<system name="WJ" display_name="莫洛托夫燃烧弹" base_engine_stun_per_shot="6" added_engine_stun_per_shot_per_mark="3" engine_stun_to_engine_gx_less_than="14" max_engine_stun_seconds="24" added_target_evaluator="WeaponJamAsPrimary"
+				base_enemy_weapon_reload_slowing_seconds_per_shot="6" added_enemy_weapon_reload_slowing_seconds_per_shot_per_mark="3" enemy_weapon_reload_slowing_to_armor_mm_less_than="70" max_enemy_weapon_reload_slowing_seconds="24" />
+	</entity>
+
+	<entity name="GhostGrenadeLauncherCorvette" copy_from="GrenadeLauncherCorvette" albedo="0.7" display_name="幽灵榴弹发射巡逻艇" thematic_groups="Strikecraft"
+			display_name_for_sidebar="幽灵榴弹舰"  strength_multiplier="1.6" cost_for_ai_to_purchase="45">
+			
+		<fleet_membership name="CloakedMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<ai_ship_group_membership name="GhostStrikecraft" weight="100"/>
+		
+		<system name="C" display_name="隐形装置" category="Passive" cloaking_points="2000" cloaking_points_added_per_mark="1000" > </system>
+	</entity>
+	
+	<!-- Agravic Pod main entity -->
+	<entity name="AgravicPod"	
+			thematic_groups="Strikecraft" 		
+			visuals="assets/_finalgamemeshes/fleetships/infiltrator/infiltrator.prefab"
+			icon_name="Ships1/AgravicPod"
+			voice_group="Saboteur"
+			category="Ship" is_strikecraft="true"
+			size_scale="1.3"
+			visuals_scale_multiplier="14"
+			collision_priority="100"
+			display_name="重力舱"
+			description="对高引擎功率舰船极其危险，可用于加固重力场和牵引场薄弱的位置"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Medium,Disruptive"
+			cost_for_ai_to_purchase="31" strength_multiplier="1.6"
+			hull_points="2400" shield_points="0" speed="Normal3"
+			metal_cost="1800" energy_consumption="400"
+			armor_mm="70" albedo="0.7" engine_gx="7" mass_tx="0.21"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="100" cap="32"/>		
+		<fleet_membership name="BasicOffensiveMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="CloakedMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="AntiLargeMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="TractorMix" ship_cap_group="Strike" weight="50" cap="32"/>
+		<fleet_membership name="EngineStunMix" ship_cap_group="Strike" weight="50" cap="32"/>
+		<fleet_membership name="ZombificationAntiCounterMix" ship_cap_group="Strike" weight="100" cap="32"/>	
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Strike" weight="100" cap="32"/>
+		<ai_ship_group_membership name="DisruptiveStrikecraft" weight="100"/>
+		<ai_ship_group_membership name="SneakyStrikecraft" weight="25"/>
+		<ai_ship_group_membership name="ViciousSneakyStrikecraft" weight="25"/>
+		<ai_ship_group_membership name="AgravicVWing" weight="100"/>
+		<ai_ship_group_membership name="TripperAgravicPod" weight="100"/>		
+    
+		<system name="WY" display_name="反重力炸弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="188" range="Small3" shot_speed="Slow" rate_of_fire="FairlyLow" fires_salvos_sequentially="true"
+				shot_type_data="FusionBomb_Agravic"
+				>
+			<outgoing_damage_modifier based_on="Engine_gx" comparison_type="AtLeast" compared_to="14" multiplier="5" />
+		</system>
+		<system name="C" display_name="隐形装置" category="Passive" cloaking_points="2000" cloaking_points_added_per_mark="1000" >
+		</system>
+	</entity>
+
+	<entity name="Aggressor" copy_from="AgravicPod" display_name="侵略者" tech_upgrades_that_benefit_me="Disruptive,Ambush"  tags="ArkEmpireOptionGroup4,ArkSidekickOptionGroup4" custom_arkempire_fleetcap="32" thematic_groups="Strikecraft"
+			description="极快、隐形且射程远的虫洞伏击专家"
+			speed="Normal1"
+			albedo="0.5" 
+			cost_for_ai_to_purchase="33" strength_multiplier="1.7"
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="20" cap="32"/>		
+		<fleet_membership name="UnusualMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="AntiLargeMix" ship_cap_group="Strike" weight="50" cap="32"/>
+		<fleet_membership name="BullyMix" ship_cap_group="Strike" weight="50" cap="32"/>
+		<ai_ship_group_membership name="AmbushStrikecraft" weight="50"/>
+		<ai_ship_group_membership name="HugelyVariedStrikecraft" weight="10"/>
+		<ai_ship_group_membership name="RaptorAggressor" weight="100"/>
+		<ai_ship_group_membership name="RaptorAggressorParasite" weight="100"/>	
+		
+		<system name="WY">
+			<outgoing_damage_modifier based_on="TargetTimeAtPlanet" comparison_type="LessThan" compared_to="9" multiplier="3" />
+		</system>
+		<system name="C" cloaking_points="1000" cloaking_points_added_per_mark="500" />	
+	</entity>
+  
+	<entity name="OutguardAggressor" copy_from="Aggressor" display_name="前哨侵略者" tags="ArnaudStrikecraft"	thematic_groups="Strikecraft,Outguard,IsolatedHumanResistance"
+			starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Expatriate" >
+	</entity>
+  
+	<!-- Ablative Gatling main entity -->
+	<entity name="AblativeGatling" 
+			thematic_groups="Strikecraft" 			
+			visuals="assets/_finalgamemeshes/fleetships/lasergatling/laser_gatlingold.prefab"
+			icon_name="Ships1/AblativeGatling"
+			voice_group="Fighter"
+			size_scale="1"
+			visuals_scale_multiplier="6"
+			category="Ship" is_strikecraft="true"
+			collision_priority="100"
+			display_name="烧蚀加特林"
+			description="对高反射率舰船极其危险，能利用敌方自身的防御系统反制它们"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Light,Generalist" tags="ArkEmpireOptionGroup1,ArkSidekickOptionGroup1" custom_arkempire_fleetcap="70"
+			cost_for_ai_to_purchase="18" strength_multiplier="1.4"
+			hull_points="1500" shield_points="0" speed="Normal3"
+			metal_cost="900" energy_consumption="135"
+			armor_mm="30" albedo="0.3" engine_gx="8" mass_tx="0.21"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="100" cap="70"/>		
+		<fleet_membership name="BasicOffensiveMix" ship_cap_group="Strike" weight="100" cap="70"/>
+		<fleet_membership name="AntiLargeMix" ship_cap_group="Strike" weight="100" cap="70"/>
+		<fleet_membership name="TractorMix" ship_cap_group="Strike" weight="50" cap="70"/>
+		<fleet_membership name="SwarmerMix" ship_cap_group="Strike" weight="100" cap="70"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Strike" weight="100" cap="70"/>
+		<ai_ship_group_membership name="SmallSwarmerStrikecraft" weight="10"/>
+		<ai_ship_group_membership name="AntiAlbedoStrikecraft" weight="100"/>
+		<ai_ship_group_membership name="AblativeVWing" weight="100"/>
+		<ai_ship_group_membership name="AblativeAbductorMix" weight="100"/>
+		<ai_ship_group_membership name="EnsnarerAblativeAbductorMix" weight="100"/>
+		<ai_ship_group_membership name="AblativeRanger" weight="100"/>
+		
+		<system name="Q8" display_name="烧蚀加农炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="52" range="Normal4" shot_speed="Fast" rate_of_fire="High" fires_salvos_sequentially="true"
+				shot_type_data="LaserPulse_Pink"				
+				>
+			<outgoing_damage_modifier based_on="Albedo" comparison_type="AtLeast" compared_to="0.7" multiplier="5" />
+		</system>
+	</entity>
+
+	<entity copy_from="AblativeGatling" name="DroneAblativeGatling"  special_entity_type="DroneGeneral" thematic_groups="Strikecraft,Drone" 
+            icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+	        self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="35"
+			cannot_target_or_alert_ai_reinforcement_spots="true"
+	        armor_mm="30" display_name="烧蚀加特林无人机"
+			display_name_for_sidebar="烧蚀加特林无人"
+	        starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			multiplier_to_all_costs="3" multiplier_to_all_healths="3" damage_multiplier_to_all_weapons="3" >
+			
+		<fleet_membership name="SwarmerDrones" ship_cap_group="Strike" weight="100" cap="10"/>
+	</entity>
+
+	<entity name="AblativeTroll" copy_from="AblativeGatling" display_name="烧蚀巨魔" tech_upgrades_that_benefit_me="Medium,Generalist" thematic_groups="Strikecraft"
+			tags="ArkEmpireOptionGroup1,ArkSidekickOptionGroup1" custom_arkempire_fleetcap="70"
+			description="缓慢但坚固的蜂群舰，对高反射率目标造成巨大伤害"
+			hull_points="3000" speed="Normal1"
+			metal_cost="1900"
+			armor_mm="50" engine_gx="7"
+            cost_for_ai_to_purchase="32"
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="20" cap="70"/>		
+		<fleet_membership name="SturdyOffensiveMix" ship_cap_group="Strike" weight="100" cap="70"/>
+		<fleet_membership name="SwarmerMix" ship_cap_group="Strike" weight="50" cap="70"/>
+		<ai_ship_group_membership name="DurableFreakyStrikecraft" weight="100"/>
+		<ai_ship_group_membership name="HugelyVariedStrikecraft" weight="30"/>
+		<ai_ship_group_membership name="StrangeSmallSwarmerStrikecraft" weight="100"/>		
+		
+		<system name="Q8" damage_per_shot="40" />
+	</entity>
+	
+	<!-- MLRS Corvette main entity -->
+	<entity name="MLRSCorvette"
+			thematic_groups="Strikecraft" 
+			visuals="assets/_finalgamemeshes/fleetships/mlrscorvette/mlrscorvette.prefab"
+			icon_name="Ships1/Corvette" icon_overlay="Overlays1/Corvette_MLRS"
+			voice_group="MLRS"
+			size_scale="2.5"
+			visuals_scale_multiplier="10"
+			category="Ship" is_strikecraft="true"
+			collision_priority="100"
+			display_name="多管火箭巡逻艇"
+			display_name_for_sidebar="多管火箭 K"
+			description="专为群体控制和消灭落单目标而设计"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Medium,Splash" tags="ArkEmpireOptionGroup3,ArkSidekickOptionGroup3" custom_arkempire_fleetcap="32"
+			cost_for_ai_to_purchase="30" strength_multiplier="1.2"
+			hull_points="3600" shield_points="0" speed="Normal3"
+			metal_cost="3150" energy_consumption="300"
+			armor_mm="70" albedo="0.3" engine_gx="7" mass_tx="0.21"
+			ship_or_structure_explosion_sfx="ShipMidsize_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="100" cap="32"/>			
+		<fleet_membership name="BasicOffensiveMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="AntiSmallMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="CrowdControlMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="CorvetteMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="MissileMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Strike" weight="100" cap="32"/>
+		<ai_ship_group_membership name="AttritionerStrikecraft" weight="33"/>
+		<ai_ship_group_membership name="MediumStrikecraft" weight="33"/>
+		<ai_ship_group_membership name="VanguardMLRSCorvette" weight="100"/>
+		<ai_ship_group_membership name="DevastatorFrigateMLRSConcussionCorvette" weight="100"/>	
+		
+		<system name="R1" display_name="微型火箭"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="30" range="Normal4" shot_speed="Normal" rate_of_fire="Normal"
+				shots_per_salvo="8" fires_salvos_sequentially="false"
+				shot_type_data="FusionRocket"				
+				>
+			<outgoing_damage_modifier based_on="CurrentHullPercentage" comparison_type="LessThan" compared_to="50" multiplier="2" />
+			<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" comparison_type="Equals" compared_to="0" multiplier="1.5" />
+		</system>
+	</entity>
+  
+	<entity name="OutguardMLRSCorvette" copy_from="MLRSCorvette" display_name="前哨多管火箭巡逻艇" tags="XenophonStrikecraft" thematic_groups="Strikecraft,Outguard,IsolatedHumanResistance"
+			description="脆弱但伤害极高的打击舰，擅长摧毁高装甲舰船"
+			starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Expatriate"
+			>
+	</entity>
+
+	<entity copy_from="MLRSCorvette" name="Drone MLRS" thematic_groups="Strikecraft,Drone" 
+			icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6" special_entity_type="DroneGeneral"
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="35"
+			cannot_target_or_alert_ai_reinforcement_spots="true"
+			armor_mm="30" display_name="多管火箭无人机"
+			display_name_for_sidebar="多管火箭无人"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			multiplier_to_all_costs="3" multiplier_to_all_healths="3" damage_multiplier_to_all_weapons="3" >
+			
+		<fleet_membership name="CarrierGuardianDrones" ship_cap_group="Strike" weight="100" cap="5"/>
+		<fleet_membership name="CombatFactoryDrones" ship_cap_group="Strike" weight="100" cap="7"/>
+		<fleet_membership name="AstroTrainDrones" ship_cap_group="Strike" weight="100" cap="14"/>
+	</entity>
+  
+	<entity name="Harasser" copy_from="MLRSCorvette" display_name="骚扰者巡逻艇" thematic_groups="Strikecraft"
+			display_name_for_sidebar="骚扰舰" tech_upgrades_that_benefit_me="Light,Splash" tags="ArkEmpireOptionGroup4,ArkSidekickOptionGroup4" custom_arkempire_fleetcap="32"
+			description="快速且坚固，擅长生存并逐步消耗敌人，同时消灭落单目标"
+			hull_points="5250" speed="AboveAverage4" engine_gx="8" 
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="20" cap="32"/>		
+		<fleet_membership name="SturdyOffensiveMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="CrowdControlMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="KiteMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="AttritionerMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="MissileMix" ship_cap_group="Strike" weight="100" cap="32"/>	
+		<ai_ship_group_membership name="DurableFreakyStrikecraft" weight="33"/>
+		<ai_ship_group_membership name="HugelyVariedStrikecraft" weight="5"/>
+		
+		<system name="R1" damage_per_shot="20" />
+	</entity>
+
+	<!-- MLRS Corvette copy for FRS -->
+	<entity name="IrefulMLRSCorvette"  copy_from="MLRSCorvette" thematic_groups="Strikecraft" 
+			display_name="愤怒多管火箭巡逻艇"
+			display_name_for_sidebar="愤怒多管火箭 K" aip_when_granted_by_hack="12"
+			tags="IncludeInFRS" supercharges_hull_of_rest_of_player_fleet="1.5" supercharges_shields_of_rest_of_player_fleet="1.50"
+			starting_mark_level="Mark3" supercharges_only_apply_when_fleet_line_count_is_x_or_less="7"
+			description="专为群体控制和消灭落单目标设计，在小型舰队中效果最佳">
+		
+		<fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="10" cap="32"/>
+	</entity>
+	
+	<!-- Raider main entity -->
+	<entity name="Raider" 
+			thematic_groups="Strikecraft" 			 
+			visuals="assets/_finalgamemeshes/fleetships/raider/raider.prefab"
+			icon_name="Ships1/Raider"
+			voice_group="Raider"
+			size_scale="1.2"
+			visuals_scale_multiplier="5.2"
+			category="Ship" is_strikecraft="true"
+			collision_priority="100"
+			display_name="突袭者"
+			description="快速且灵活的舰船，免疫大多数减速效果，包括黑洞机器的减速效果"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Light,Raid" tags="ArkEmpireOptionGroup5,ArkSidekickOptionGroup5" custom_arkempire_fleetcap="32"
+			cost_for_ai_to_purchase="30"
+			hull_points="5000" shield_points="0" speed="AboveAverage4"
+			metal_cost="3000" energy_consumption="400"
+			armor_mm="30" albedo="0.3" engine_gx="20" mass_tx="0.21"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			speed_multiplier_first_5_seconds_on_planet="1.5"
+			priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="100" cap="32"/>			
+		<fleet_membership name="BasicOffensiveMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="RaidOffensiveMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="TractorMix" ship_cap_group="Strike" weight="25" cap="32"/>
+		<fleet_membership name="BreacherMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="SelfSacrificingOffensiveMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="KiteMix" ship_cap_group="Strike" weight="25" cap="32"/>	
+		<ai_ship_group_membership name="RaidStrikecraftAndFrigates" weight="100"/>
+		<ai_ship_group_membership name="LightStrikecraft" weight="100"/>
+		
+		<system name="V1" display_name="等离子螺栓"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="186" range="Normal6" shot_speed="Fast" rate_of_fire="Normal" fires_salvos_sequentially="true"
+				shot_type_data="PlasmaBolt"				
+				>
+		</system>
+	</entity>
+
+	<entity name="AstroTrainRaider"  copy_from="Raider" tags="AstroTrainDepotHunterFleet" starting_mark_level="Mark2" thematic_groups="Strikecraft"  >
+	</entity>
+
+	<entity copy_from="Raider" name="Drone Raider" special_entity_type="DroneGeneral" thematic_groups="Strikecraft,Drone" 
+			icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+	        self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="35"
+			cannot_target_or_alert_ai_reinforcement_spots="true"
+	        armor_mm="10" display_name="突袭者无人机"
+			display_name_for_sidebar="突袭者无人"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			multiplier_to_all_costs="3" multiplier_to_all_healths="3" damage_multiplier_to_all_weapons="3" >
+			
+		<fleet_membership name="CarrierGuardianDrones" ship_cap_group="Strike" weight="100" cap="4"/>
+		<fleet_membership name="AstroTrainDrones" ship_cap_group="Strike" weight="100" cap="14"/>
+	</entity>
+  
+	<entity name="ViciousRaider" copy_from="Raider" thematic_groups="Strikecraft" 
+			display_name="凶残突袭者"
+			display_name_for_sidebar="凶残突袭者"
+	        hull_points="6250" metal_cost="4000" speed="AboveAverage6"
+			cost_for_ai_to_purchase="38"
+		>
+		<fleet_membership name="VeteranViciousMix" ship_cap_group="Strike" weight="100" cap="32"/> 
+		<fleet_membership name="UnusualMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<ai_ship_group_membership name="ViciousRaidStrikecraftAndFrigates" weight="100"/>
+		<ai_ship_group_membership name="ViciousLightStrikecraft" weight="100"/>
+		
+		<system name="V1" damage_per_shot="233" />
+	</entity>  
+  
+	<entity name="Dagger" copy_from="Raider" display_name="匕首" thematic_groups="Strikecraft"
+			display_name_for_sidebar="匕首"
+			description="极快、灵活且伤害高的舰船，几乎没有任何耐久性，但免疫大多数减速效果"
+			hull_points="2500" speed="High"  cost_for_ai_to_purchase="20"
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="20" cap="32"/>			
+		<fleet_membership name="FragileOffensiveMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="RaidOffensiveMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="SelfSacrificingOffensiveMix" ship_cap_group="Strike" weight="25" cap="32"/>
+		<fleet_membership name="KiteMix" ship_cap_group="Strike" weight="5" cap="32"/>
+		<ai_ship_group_membership name="FragileFreakyStrikecraft" weight="100"/>
+		<ai_ship_group_membership name="HugelyVariedStrikecraft" weight="20"/>
+		<ai_ship_group_membership name="ParalyserDaggerWarbird" weight="100"/>	
+		
+		<system name="V1" damage_per_shot="372" />
+	</entity>
+
+	<!-- Raider copy for FRS -->
+	<entity name="TurboRaider"  copy_from="Raider" thematic_groups="Strikecraft" 
+			display_name="涡轮突袭者"
+			display_name_for_sidebar="涡轮突袭者" aip_when_granted_by_hack="14"
+			tags="IncludeInFRS" supercharges_min_speed_of_rest_of_player_fleet="true"
+			starting_mark_level="Mark3" supercharges_only_apply_when_fleet_line_count_is_x_or_less="6"
+			description="快速且灵活的舰船，免疫大多数减速效果。在小型舰队中与少量极慢速舰船类型一起使用效果最佳，能让所有舰船都变得更快">
+		
+		<fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="10" cap="32"/>
+	</entity>
+
+	<!-- Raptor main entity -->
+	<entity name="Raptor"	
+			thematic_groups="Strikecraft"   
+			visuals="assets/_finalgamemeshes/fleetships/raptor/raptor.prefab"
+			icon_name="Ships1/Raptor"
+			voice_group="MasterCombatant"
+			category="Ship" is_strikecraft="true"
+			size_scale="1"
+			visuals_scale_multiplier="6"
+			collision_priority="100"
+			display_name="猛禽"
+			description="极快、隐形且射程远的虫洞伏击专家，对高引擎功率舰船特别有效，尤其是刚使用虫洞的舰船"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Light,Ambush"
+			cost_for_ai_to_purchase="28" strength_multiplier="1.6"
+			hull_points="1200" shield_points="0" speed="High"
+			metal_cost="2800" energy_consumption="400"
+			armor_mm="50" albedo="0.7" engine_gx="10" mass_tx="0.21"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="100" cap="32"/>		
+		<fleet_membership name="BasicOffensiveMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="CloakedMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="BullyMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Strike" weight="100" cap="32"/>
+		<ai_ship_group_membership name="SneakyStrikecraft" weight="100"/>
+		<ai_ship_group_membership name="ViciousSneakyStrikecraft" weight="100"/>
+		<ai_ship_group_membership name="LightStrikecraft" weight="100"/>
+		<ai_ship_group_membership name="ViciousLightStrikecraft" weight="100"/>
+		<ai_ship_group_membership name="RaptorAggressor" weight="100"/>
+		<ai_ship_group_membership name="RaptorAggressorParasite" weight="100"/>	
+		
+		<system name="R5" display_name="激光脉冲"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="245" range="AboveAverage4" shot_speed="Normal" rate_of_fire="SlightlyLow" fires_salvos_sequentially="true"
+				shot_type_data="LaserPulse_DeepBlue"				
+				>
+			<outgoing_damage_modifier based_on="TargetTimeAtPlanet" comparison_type="LessThan" compared_to="9" multiplier="6" />
+		</system>
+		<system name="C" display_name="隐形装置" category="Passive" cloaking_points="2000" cloaking_points_added_per_mark="1000"  ></system>
+	</entity>
+  
+	<!-- The version to be used with the player owned Ambush Carrier w/ drone guns -->
+	<entity copy_from="Raptor" name="RaptorDrone" special_entity_type="SmallShipNotStackable"	thematic_groups="Strikecraft,Drone" 
+			icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+			voice_group="Silent"
+			size_scale="0.8"
+			display_name="猛禽无人机"
+			display_name_for_sidebar="猛禽无人"
+			description="航母发射的伏击专家"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Light,Ambush"
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="4"
+			always_self_attritions="true"
+			metal_cost_multiplier_for_scrapping="0"
+			cost_for_ai_to_purchase="10" strength_multiplier="1.6"
+			cannot_target_or_alert_ai_reinforcement_spots="true"
+			energy_consumption="0" armor_mm="30"
+			immune_to_swapping_between_fleets="true"
+			shot_fired_sfx="BasicLaunchWhine_Firing"
+			>
+			<system name="R5" damage_per_shot="200">
+			</system>
+		<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>  
+  
+	<entity name="Velociraptor" copy_from="Raptor" display_name="迅猛龙" thematic_groups="Strikecraft" 
+			display_name_for_sidebar="迅猛龙"	strength_multiplier="1.4"
+			description="极快、耐用且射程远的虫洞伏击专家" tags="ArkEmpireOptionGroup5,ArkSidekickOptionGroup5" custom_arkempire_fleetcap="32"
+			hull_points="4200"
+			speed="High2"
+			albedo="0.3" engine_gx="16"  cost_for_ai_to_purchase="35"			
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="20" cap="32"/>		
+		<fleet_membership name="SturdyOffensiveMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="KiteMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="RaidOffensiveMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="BullyMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<ai_ship_group_membership name="DurableFreakyStrikecraft" weight="100"/>
+		<ai_ship_group_membership name="HugelyVariedStrikecraft" weight="10"/>
+		<ai_ship_group_membership name="KiteMix" weight="100"/>	
+    
+		<system name="C" max_mark_level_to_function="0" />
+	</entity>
+  
+	<entity name="OutguardVelociraptor" copy_from="Velociraptor" display_name="前哨迅猛龙舰" tags="HerewardStrikecraft" thematic_groups="Strikecraft,Outguard,IsolatedHumanResistance"
+			starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Expatriate" >
+	</entity>
+  
+	<!-- Sentinel Gunboat main entity -->
+	<entity name="SentinelGunboat" 
+			thematic_groups="Strikecraft" 			
+			visuals="assets/_finalgamemeshes/fleetships/sentinelfrigate/sentinelfrigate.prefab"
+			icon_name="Ships1/SentinelFrigate"
+			voice_group="Sniper"
+			category="Ship" is_strikecraft="true"
+			size_scale="4.2"
+			visuals_scale_multiplier="8"
+			collision_priority="100"
+			display_name="哨兵炮艇"
+			display_name_for_sidebar="哨兵炮艇"
+			description="大型、先进且昂贵的打击舰，射程极远并能揭露隐形单位"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Heavy,Generalist"
+			cost_for_ai_to_purchase="83" strength_multiplier="1.5"
+			hull_points="6900" shield_points="0" speed="Normal1"
+			metal_cost="10800" energy_consumption="800"
+			armor_mm="40" albedo="0.7" engine_gx="7" mass_tx="0.21"
+			ship_or_structure_explosion_sfx="ShipLarge_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			cannot_target_or_alert_ai_reinforcement_spots="true"
+			priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="100" cap="14"/>  
+		<fleet_membership name="BasicOffensiveMix" ship_cap_group="Strike" weight="100" cap="14"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Strike" weight="100" cap="14"/>
+		<fleet_membership name="SniperMix" ship_cap_group="Strike" weight="100" cap="14"/>
+		<ai_ship_group_membership name="DefensiveStrikecraft" weight="66"/>
+		<ai_ship_group_membership name="ArtilleristStrikecraft" weight="33"/>
+		<ai_ship_group_membership name="AbductorMixWithGunboatSupport" weight="100"/>
+		<ai_ship_group_membership name="EnsnarerAbductorMixWithGunboatSupport" weight="100"/>	
+		
+		<system name="R2" display_name="狙击能量波"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="320" range="EssentiallyInfinite" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+				shot_type_data="EnergyWave"				
+				>
+		</system>
+		<system name="T" display_name="超光速粒子阵列"
+				category="Passive"
+				tachyon_points="50" tachyon_points_added_per_mark="25" tachyon_range="Small1" tachyon_hits_albedo_less_than="0.75"
+				>
+		</system>
+	</entity>
+
+	<entity name="AutomatedSentinelGunboat"  copy_from="SentinelGunboat" tags="AutomatedSentinelGunboat" thematic_groups="Strikecraft,Outguard,IsolatedHumanResistance" 
+            icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+            display_name="自动哨兵炮艇无人机" starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Expatriate"
+			display_name_for_sidebar="哨兵无人"
+			cannot_target_or_alert_ai_reinforcement_spots="true" >
+	</entity>
+			 
+	<entity name="VeteranSentinelGunboat" copy_from="SentinelGunboat" display_name="老兵哨兵炮艇" thematic_groups="Strikecraft" 
+			display_name_for_sidebar="老兵哨兵" >
+		
+		<fleet_membership name="VeteranViciousMix" ship_cap_group="Strike" weight="100" cap="14"/>
+		<ai_ship_group_membership name="SniperAIDefensiveStrikecraft" weight="66"/>
+		<ai_ship_group_membership name="SniperAIArtilleristStrikecraft" weight="33"/> 
+		
+		<system name="R2" damage_per_shot="400" />
+	</entity>			 
+
+	<entity name="Ranger" copy_from="SentinelGunboat" display_name="游骑兵" thematic_groups="Strikecraft" 
+			display_name_for_sidebar="游骑兵"
+			description="机动性强的高级狙击支援单位，具有反隐能力且自身隐形"
+			tech_upgrades_that_benefit_me="Heavy,Subterfuge" tags="ArkEmpireOptionGroup3,ArkSidekickOptionGroup3" custom_arkempire_fleetcap="14"
+			hull_points="5100" speed="AboveAverage1"
+			albedo="0.7"
+			metal_cost="8100"
+			cost_for_ai_to_purchase="61"
+			cannot_target_or_alert_ai_reinforcement_spots="true"
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="20" cap="14"/>		
+		<fleet_membership name="FragileOffensiveMix" ship_cap_group="Strike" weight="100" cap="14"/>
+		<fleet_membership name="SniperMix" ship_cap_group="Strike" weight="20" cap="14"/>
+		<fleet_membership name="KiteMix" ship_cap_group="Strike" weight="100" cap="14"/>
+		<fleet_membership name="CloakedMix" ship_cap_group="Strike" weight="100" cap="14"/>	
+		<ai_ship_group_membership name="FragileFreakyStrikecraft" weight="5"/>
+		<ai_ship_group_membership name="SniperStrikecraft" weight="3"/>
+		<ai_ship_group_membership name="AIDecloakers" weight="100"/>
+		<ai_ship_group_membership name="AblativeRanger" weight="100"/>
+		<ai_ship_group_membership name="KiteMix" weight="100"/>	
+		
+		<system name="R2" damage_per_shot="480" rate_of_fire="RatherLow" range="AboveAverage3" />
+		<system name="T" tachyon_range="Normal1" />
+		<system name="C" display_name="隐形装置" category="Passive" cloaking_points="2000" cloaking_points_added_per_mark="1000" > </system> 
+	</entity>
+
+	<entity name="MedicGunboat" copy_from="SentinelGunboat" display_name="医疗炮艇" thematic_groups="Strikecraft" 
+			display_name_for_sidebar="医疗炮艇"
+			description="机动性强的高级支援单位，具有修复光束和吸血能力"
+			hull_points="5100" speed="Normal3"
+			assist_range="Normal1"  cost_for_ai_to_purchase="60"
+			tech_upgrades_that_benefit_me="Heavy,Technologist"
+			cannot_target_or_alert_ai_reinforcement_spots="true"
+			>
+		<metal_flow purpose="RepairingHullsOfFriendlies" throughput="150" increase_per_mark_level="75"/>
+		<metal_flow purpose="RepairingShieldsOfFriendlies" throughput="150" increase_per_mark_level="75"/>
+		<metal_flow purpose="RepairingEnginesOfFriendlies" throughput="150" increase_per_mark_level="75"/>
+		
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="20" cap="14"/>		
+		<fleet_membership name="UnusualMix" ship_cap_group="Strike" weight="25" cap="14"/>
+		<fleet_membership name="AttritionerMix" ship_cap_group="Strike" weight="100" cap="14"/>
+		<fleet_membership name="SlowHeavyMix" ship_cap_group="Strike" weight="20" cap="14"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Strike" weight="100" cap="14"/>	
+	
+		<system name="R2" display_name="能量波" damage_per_shot="350" range="Normal4" health_change_per_damage_dealt="0.5" />
+		<system name="T" max_mark_level_to_function="0" />
+	</entity>		  
+
+	<!-- Sniper main entity, statblock -->
+	<entity name="SniperBase"	
+			thematic_groups="Strikecraft"   
+			visuals="assets/_finalgamemeshes/fleetships/sniper/sniper.prefab"
+			icon_name="Ships1/Sniper"
+			voice_group="Sniper"
+			category="Ship" is_strikecraft="true"
+			size_scale="1.1"
+			visuals_scale_multiplier="5"
+			collision_priority="100"
+			display_name="狙击手基础型"
+			description="擅长消灭无戒备目标的专家"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Light,Ambush"
+			cost_for_ai_to_purchase="20" strength_multiplier="2.2"
+			hull_points="900" shield_points="0" speed="Normal2"
+			metal_cost="1100" energy_consumption="300"
+			armor_mm="40" albedo="0.3" engine_gx="7" mass_tx="0.21"
+			ship_or_structure_explosion_sfx="ShipMidsize_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			cannot_target_or_alert_ai_reinforcement_spots="true"
+			priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			>
+		<system name="WZ" display_name="轨道炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="80" range="EssentiallyInfinite" shot_speed="VeryFast" rate_of_fire="Normal" fires_salvos_sequentially="true"
+				shot_type_data="ExtremeLongRangeRailgun"				
+				>
+			<outgoing_damage_modifier based_on="TargetTimeAtPlanet" comparison_type="LessThan" compared_to="15" multiplier="2" />
+		</system>
+	</entity>
+
+	<!-- Sniper seeded entity -->
+	<entity name="Sniper" copy_from="SniperBase" thematic_groups="Strikecraft" 
+			description="擅长消灭无戒备和被牵制目标的专家"
+			cannot_target_or_alert_ai_reinforcement_spots="true">
+			
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="100" cap="32"/>		
+		<fleet_membership name="BasicOffensiveMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="SniperMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="EngineStunMix" ship_cap_group="Strike" weight="100" cap="32"/>	
+		<ai_ship_group_membership name="SniperStrikecraft" weight="100"/>
+		<ai_ship_group_membership name="DefensiveStrikecraft" weight="1"/>
+		<ai_ship_group_membership name="ArtilleristStrikecraft" weight="5"/>
+		<ai_ship_group_membership name="FootballMix" weight="100"/>
+		
+		<system name="WZ"
+				multiplier_damage_to_tractored_unit="3">
+		</system>
+	</entity>
+
+	<entity name="AutomatedSniper"  copy_from="Sniper" tags="AutomatedSniper" thematic_groups="Strikecraft,Outguard,IsolatedHumanResistance" 
+            icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+            display_name="自动狙击无人机" 
+			starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Expatriate"
+			display_name_for_sidebar="狙击无人"
+			cannot_target_or_alert_ai_reinforcement_spots="true" >
+	</entity>
+  
+	<entity name="GhostSniper" copy_from="Sniper" albedo="0.7" display_name="幽灵狙击手" strength_multiplier="2.4" thematic_groups="Strikecraft" 
+			display_name_for_sidebar="幽灵狙击手" description="擅长消灭无戒备目标的隐形专家"
+			tags="ArkEmpireOptionGroup5" custom_arkempire_fleetcap="32"
+			cannot_target_or_alert_ai_reinforcement_spots="true">
+		
+		<ai_ship_group_membership name="GhostStrikecraft" weight="1"/>
+		
+		<system name="C" display_name="隐形装置" category="Passive" cloaking_points="2000" cloaking_points_added_per_mark="1000" > </system>    
+	</entity>
+  
+	<entity name="VeteranSniper" copy_from="Sniper" display_name="资深狙击手" thematic_groups="Strikecraft" 
+			display_name_for_sidebar="资深狙击手"
+			cannot_target_or_alert_ai_reinforcement_spots="true"  >
+    
+		<fleet_membership name="VeteranViciousMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<ai_ship_group_membership name="SniperAISniperStrikecraft" weight="100"/>
+		<ai_ship_group_membership name="SniperAIDefensiveStrikecraft" weight="1"/>
+		<ai_ship_group_membership name="SniperAIArtilleristStrikecraft" weight="5"/>
+		<ai_ship_group_membership name="SniperAIFootballMix" weight="100"/>
+    
+		<system name="WZ" damage_per_shot="160" />
+	</entity>
+  
+	<entity name="Tripper" copy_from="SniperBase" display_name="绊雷舰" thematic_groups="Strikecraft" 
+		display_name_for_sidebar="绊雷舰" custom_arkempire_fleetcap="70"
+                tags="ArkSidekickOptionGroup5"
+		cannot_target_or_alert_ai_reinforcement_spots="true"
+		description="擅长偷袭毫无防备的目标，尤其是引擎强大的目标。"
+		>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="20" cap="32"/>		
+		<fleet_membership name="UnusualMix" ship_cap_group="Strike" weight="10" cap="32"/>
+		<fleet_membership name="SniperMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="EngineStunMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<ai_ship_group_membership name="TripperAgravicPod" weight="100"/>		
+		<ai_ship_group_membership name="JustStrangeStrikecraft" weight="1"/>
+		<ai_ship_group_membership name="BullyStrikecraft" weight="1"/>
+		<ai_ship_group_membership name="EnsnarerBullyStrikecraft" weight="1"/>
+		
+		<system name="WZ">
+			<outgoing_damage_modifier based_on="Engine_gx" comparison_type="AtLeast" compared_to="14" multiplier="3" /> 	
+		</system>  
+	</entity>
+
+	<entity name="Railpod" copy_from="SniperBase" display_name="轨道荚舱" thematic_groups="Strikecraft" 
+			display_name_for_sidebar="轨道荚舱" cost_for_ai_to_purchase="8"
+			tech_upgrades_that_benefit_me="Light,Concussion" tags="ArkEmpireOptionGroup1" custom_arkempire_fleetcap="70"
+			description="非常脆弱，发射两发后就会自爆。它可以大量且廉价地补充，尤其在刚生产出来时，能给毫无防备的目标造成巨大伤害。"
+			hull_points="400" metal_cost="200" energy_consumption="150"
+			armor_mm="30"
+			cannot_target_or_alert_ai_reinforcement_spots="true"
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="20" cap="70"/>		
+		<fleet_membership name="SelfSacrificingOffensiveMix" ship_cap_group="Strike" weight="100" cap="70"/>
+		<fleet_membership name="GluttonyMix" ship_cap_group="Strike" weight="150" cap="70"/>
+		<ai_ship_group_membership name="SelfSacrificingStrikecraft" weight="1"/>
+		
+		<system name="WZ" damage_per_shot="40" rate_of_fire="Misery" health_change_by_max_health_divided_by_this_per_attack="-2" >
+			<outgoing_damage_modifier based_on="MyTimeAtPlanet" comparison_type="LessThan" compared_to="15" multiplier="4" />
+		</system>
+	</entity>
+
+	<!-- Space Plane main entity -->
+	<entity name="SpacePlane"	
+			thematic_groups="Strikecraft"   
+			visuals="assets/_finalgamemeshes/fleetships/spaceplane/spaceplane.prefab"
+			icon_name="Ships1/SpacePlane"
+			voice_group="Raider"
+			category="Ship" is_strikecraft="true"
+			size_scale="1"
+			visuals_scale_multiplier="6"
+			collision_priority="100"
+			display_name="太空飞机"
+			description="隐形战斗机，几乎免疫远程敌对火力。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Raid,Light"
+			cost_for_ai_to_purchase="18" strength_multiplier="1.6"
+			hull_points="2400" shield_points="0" speed="AboveAverage1"
+			metal_cost="1200" energy_consumption="200"
+			armor_mm="30" albedo="0.7" engine_gx="7" mass_tx="0.21"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="100" cap="48"/>		
+		<fleet_membership name="BasicOffensiveMix" ship_cap_group="Strike" weight="100" cap="48"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Strike" weight="100" cap="28"/>
+		<fleet_membership name="CloakedMix" ship_cap_group="Strike" weight="100" cap="48"/>
+		<fleet_membership name="RaidOffensiveMix" ship_cap_group="Strike" weight="100" cap="48"/>
+		<fleet_membership name="KiteMix" ship_cap_group="Strike" weight="100" cap="48"/>
+		<fleet_membership name="MissileMix" ship_cap_group="Strike" weight="100" cap="48"/>
+		<ai_ship_group_membership name="SneakyStrikecraft" weight="10"/>
+		<ai_ship_group_membership name="ViciousSneakyStrikecraft" weight="10"/>
+		<ai_ship_group_membership name="AmbushStrikecraft" weight="10"/>
+		
+		<system name="R1" display_name="单发微型火箭"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="176" range="Normal3" shot_speed="Normal" rate_of_fire="SlightlyLow" fires_salvos_sequentially="true"
+				shot_type_data="FusionRocket"				
+				>
+		</system>
+		<system name="C" display_name="隐形装置"
+				category="Passive"
+				cloaking_points="2000" cloaking_points_added_per_mark="1000"
+				>
+		</system>
+		<incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="3400" multiplier="0.1" />
+	</entity>
+
+	<entity name="Mirage" copy_from="SpacePlane"  display_name="幻影战机"
+			thematic_groups="Strikecraft" 
+			display_name_for_sidebar="幻影" tags="ArkEmpireOptionGroup4,ArkSidekickOptionGroup4" custom_arkempire_fleetcap="48"
+			description="隐形战斗机，几乎免疫远程敌对火力。伤害较低，但擅长绕过护盾并为其他单位削弱目标。"
+			strength_multiplier="2"
+			cost_for_ai_to_purchase="18"
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="20" cap="48"/>		
+		<fleet_membership name="RaidOffensiveMix" ship_cap_group="Strike" weight="5" cap="48"/>
+		<fleet_membership name="UnusualMix" ship_cap_group="Strike" weight="10" cap="48"/>
+		<fleet_membership name="AntiStructureMix" ship_cap_group="Strike" weight="100" cap="48"/>
+		<fleet_membership name="MissileMix" ship_cap_group="Strike" weight="100" cap="48"/>
+		<fleet_membership name="CooperativeFusionMix" ship_cap_group="Strike" weight="100" cap="48"/>
+		<ai_ship_group_membership name="RaidStrikecraftAndFrigates" weight="10"/>
+		<ai_ship_group_membership name="HugelyVariedStrikecraft" weight="10"/>
+		<ai_ship_group_membership name="MirageApparitionFrigate" weight="100"/>	
+		
+		<system name="R1" damage_per_shot="66" base_percent_damage_bypasses_personal_shields="1">
+		<outgoing_damage_modifier based_on="CurrentHullPercentage" applies_to="HullOnly" comparison_type="AtLeast" compared_to="50" multiplier="4" /> 	</system>
+	</entity>
+
+	<!-- Pulsar Tank main entity -->
+	<entity name="PulsarTank"	
+			thematic_groups="Strikecraft"   
+			visuals="assets/_finalgamemeshes/fleetships/spacetank2/spacetank2.prefab"
+			icon_name="Ships1/SpaceTank"
+			voice_group="MasterCombatant"
+			category="Ship" is_strikecraft="true"
+			size_scale="2"
+			visuals_scale_multiplier="4.3"
+			collision_priority="100"
+			display_name="脉冲星坦克"
+			description="使用虫洞后，能在一段时间内发射超充炮弹的慢速舰船。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Ambush,Heavy"
+			cost_for_ai_to_purchase="66" strength_multiplier="1.1"
+			hull_points="9300" shield_points="0" speed="BelowAverage2"
+			metal_cost="5400" energy_consumption="1000"
+			armor_mm="120" albedo="0.3" engine_gx="7" mass_tx="0.3"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="100" cap="15"/>		
+		<fleet_membership name="BasicOffensiveMix" ship_cap_group="Strike" weight="100" cap="15"/>
+		<fleet_membership name="SlowHeavyMix" ship_cap_group="Strike" weight="100" cap="15"/>
+		<fleet_membership name="BreacherMix" ship_cap_group="Strike" weight="100" cap="15"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Strike" weight="100" cap="15"/>
+		<ai_ship_group_membership name="HeavyStrikecraft" weight="50"/>
+		<ai_ship_group_membership name="AmbushStrikecraft" weight="100"/>
+		
+		<system name="R5" display_name="脉冲炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="300" range="Normal3" shot_speed="Normal" rate_of_fire="Low" fires_salvos_sequentially="true"
+				shot_type_data="LaserPulse_DeepBlue"				
+				>
+			<outgoing_damage_modifier based_on="MyTimeAtPlanet" comparison_type="LessThan" compared_to="12" multiplier="3" />		
+		</system>
+		<system name="V2" display_name="增强脉冲炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="750" range="AboveAverage3" shot_speed="Normal" rate_of_fire="PeriodicActivation" fires_salvos_sequentially="true"
+				shot_type_data="LaserPulse_RedLevel3"
+				>
+			<outgoing_damage_modifier based_on="MyTimeAtPlanet" comparison_type="LessThan" compared_to="12" multiplier="3" />
+		</system>
+	</entity>
+
+	<entity name="AntiShieldPulsarTank" copy_from="PulsarTank" display_name="反护盾脉冲坦克" thematic_groups="Strikecraft" 
+			display_name_for_sidebar="反护盾坦克" tech_upgrades_that_benefit_me="Fusion,Ambush" tags="ArkEmpireOptionGroup2,ArkSidekickOptionGroup2" custom_arkempire_fleetcap="15">
+    
+		<fleet_membership name="UnusualMix" ship_cap_group="Strike" weight="10" cap="15"/>
+		<fleet_membership name="AntiStructureMix" ship_cap_group="Strike" weight="100" cap="15"/>
+		<ai_ship_group_membership name="AntiShieldStrikecraftAndFrigates" weight="100"/>		
+    
+		<system name="R5">
+			<outgoing_damage_modifier applies_to="AllShields" based_on="MaxBubbleForcefield" comparison_type="GreaterThan" compared_to="10000" multiplier="4" />
+		</system>	
+		<system name="V2">
+			<outgoing_damage_modifier applies_to="AllShields" based_on="MaxBubbleForcefield" comparison_type="GreaterThan" compared_to="10000" multiplier="4" />
+		</system>
+	</entity>
+
+	<entity name="SabreCompanyPulsarTank"  copy_from="PulsarTank" tags="SabreCompanyPulsarTank" thematic_groups="Strikecraft,Outguard,IsolatedHumanResistance" 
+			display_name="军刀公司脉冲坦克"
+			display_name_for_sidebar="军刀坦克" starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Expatriate"  >    
+	</entity>
+
+	<entity name="PulsarPunk" copy_from="PulsarTank" thematic_groups="Strikecraft" 
+			display_name="脉冲朋克舰"
+			display_name_for_sidebar="脉冲朋克舰"	
+			description="速度适中、耐久性强的舰船，使用虫洞后能造成更多伤害，还能抓取并拖拽敌方舰船。"
+			tech_upgrades_that_benefit_me="Ambush,Medium"
+			hull_points="7500" speed="Normal3"
+			armor_mm="70"
+			cost_for_ai_to_purchase="72"
+			speed_multiplier_first_5_seconds_on_planet="2"
+			can_be_stacked_even_if_would_not_normally="true"
+			is_disallowed_from_spawning_in_waves="true"
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="20" cap="15"/>		
+		<fleet_membership name="SturdyOffensiveMix" ship_cap_group="Strike" weight="100" cap="15"/>
+		<fleet_membership name="TractorMix" ship_cap_group="Strike" weight="100" cap="15"/>
+		<fleet_membership name="AbductorBomberMix" ship_cap_group="Strike" weight="100" cap="15"/>
+		<ai_ship_group_membership name="DurableFreakyStrikecraft" weight="50"/>
+		<ai_ship_group_membership name="HugelyVariedStrikecraft" weight="5"/>
+		<ai_ship_group_membership name="EnsnarerStrikecraft" weight="60"/>
+		<ai_ship_group_membership name="AbductorMix" weight="100"/>
+		<ai_ship_group_membership name="EnsnarerAbductorMix" weight="100"/>
+		<ai_ship_group_membership name="AblativeAbductorMix" weight="100"/>
+		<ai_ship_group_membership name="EnsnarerAblativeAbductorMix" weight="100"/>
+		<ai_ship_group_membership name="AbductorMixWithGunboatSupport" weight="100"/>
+		<ai_ship_group_membership name="EnsnarerAbductorMixWithGunboatSupport" weight="100"/>	
+		
+		<system name="R5" damage_per_shot="220" />
+		<system name="V2" damage_per_shot="525" />
+		<system name="T" display_name="牵引光束"
+				  category="Passive"
+				  tractor_range="Small1" tractor_count="2" tractor_count_added_per_mark="2" tractor_hits_albedo_less_than="0.5" tractor_hits_engine_gx_less_than="14"
+				  >
+		</system>	
+	</entity>
+
+	<!-- Pulsar Tank copy for FRS -->
+	<entity name="TutelarPulsarTank"  copy_from="PulsarTank" thematic_groups="Strikecraft" 
+			display_name="守护脉冲坦克"
+			display_name_for_sidebar="守护坦克" aip_when_granted_by_hack="12"
+			tags="IncludeInFRS" supercharges_hull_of_rest_of_player_fleet="2.0"
+			starting_mark_level="Mark3" supercharges_only_apply_when_fleet_line_count_is_x_or_less="4"
+			description="慢速舰船，使用虫洞后一段时间内会发射超充炮弹。适合与少量其他强大舰船组成军官舰队，大幅提高小舰队的耐久性。">
+	
+		<fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="10" cap="15"/>
+	</entity>
+	
+	<!-- Pulsar Tank variant for Expatriate FRS -->
+	<entity name="FRSElectropulseTank"  copy_from="PulsarTank" starting_mark_level="Mark2" thematic_groups="Strikecraft"
+			tags="IncludeInFRS" tech_upgrades_that_benefit_me="Expatriate"
+			display_name="电脉冲坦克"
+			display_name_for_sidebar="电脉冲坦克"
+			description="脉冲坦克的变种，通常由人类抵抗力量使用，对护盾有优势，还能使较轻的敌方单位武器瘫痪。"
+			aip_when_granted_by_hack="3" >
+		<fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="10" cap="15"/>
+		<system name="R5" display_name="脉冲干扰加农炮"
+				damage_per_shot="150" rate_of_fire="High"
+				base_enemy_weapon_reload_slowing_seconds_per_shot="4"
+				max_enemy_weapon_reload_slowing_seconds="12"
+				enemy_weapon_reload_slowing_to_armor_mm_less_than="50"
+				added_target_evaluator="WeaponJamAsPrimary"
+				>
+			<outgoing_damage_modifier based_on="MyTimeAtPlanet" comparison_type="LessThan" compared_to="12" multiplier="3" />		
+		</system>
+		<system name="V2" display_name="充能脉冲炮"
+				damage_per_shot="500" rate_of_fire="VeryLow"
+				>
+			<outgoing_damage_modifier applies_to="PersonalShieldOnly" based_on="CurrentPersonalShieldPercentage" comparison_type="AtLeast" compared_to="10" multiplier="3" />
+        </system>
+	</entity>
+
+	<!-- Spider main entity -->
+	<entity name="Spider"	
+			thematic_groups="Strikecraft"   
+			visuals="assets/_finalgamemeshes/fleetships/spider/spider.prefab"
+			icon_name="Ships1/Spider"
+			voice_group="Saboteur"
+			size_scale="1.3"
+			visuals_scale_multiplier="5.2"
+			category="Ship" is_strikecraft="true"
+			collision_priority="100"
+			display_name="蜘蛛"
+			description="对中距离的敌舰施加减速效果。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Subterfuge,Medium"
+			cost_for_ai_to_purchase="35" strength_multiplier="1.5"
+			hull_points="3000" shield_points="0" speed="Normal2"
+			metal_cost="2700" energy_consumption="300"
+			armor_mm="60" albedo="0.3" engine_gx="8" mass_tx="0.21"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="BasicOffensiveMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="DebufferMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="EngineStunMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="MeleeWithSupportMix" ship_cap_group="Strike" weight="100" cap="32"/>	
+		<ai_ship_group_membership name="SupporterStrikecraft" weight="75"/>
+		<ai_ship_group_membership name="AntiEngineStrikecraftAndFrigates" weight="100"/>
+		
+		<system name="Q4" display_name="蜘蛛加农炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="30" range="AboveAverage3" shot_speed="Normal" rate_of_fire="High" 
+				shots_per_salvo="3" fires_salvos_sequentially="true"
+				base_engine_stun_per_shot="6" added_engine_stun_per_shot_per_mark="3" engine_stun_to_engine_gx_less_than="14"
+				max_engine_stun_seconds="24"
+				shot_type_data="EngineDisruptingShell" added_target_evaluator="EngineDamageAsMajorPrimary"
+				>
+		</system>
+	</entity>
+
+	<entity name="AnvilSecuritiesSpider"  copy_from="Spider" tags="AnvilSecuritiesSpider" thematic_groups="Strikecraft,Outguard,IsolatedHumanResistance" 
+            display_name="铁砧安保蜘蛛"
+			display_name_for_sidebar="铁砧蜘蛛" tech_upgrades_that_benefit_me="Expatriate" >
+	</entity>
+
+	<entity name="Terrier" copy_from="Spider" display_name="追猎犬" thematic_groups="Strikecraft" 
+			display_name_for_sidebar="追猎犬"	
+			description="低伤害和耐久度，但速度较快且擅长减速敌舰。"
+			hull_points="1800" speed="AboveAverage3"
+			cost_for_ai_to_purchase="20"
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="20" cap="32"/>		
+		<fleet_membership name="FragileOffensiveMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="DebufferMix" ship_cap_group="Strike" weight="50" cap="32"/>
+		<fleet_membership name="KiteMix" ship_cap_group="Strike" weight="50" cap="32"/>
+		<fleet_membership name="EngineStunMix" ship_cap_group="Strike" weight="50" cap="32"/>		
+		<ai_ship_group_membership name="FragileFreakyStrikecraft" weight="50"/>
+		<ai_ship_group_membership name="HarassmentStrikecraft" weight="100"/>
+		<ai_ship_group_membership name="EnsnarerHarassmentStrikecraft" weight="100"/>
+		<ai_ship_group_membership name="EnsnarerStrikecraft" weight="25"/>
+		<ai_ship_group_membership name="KiteMix" weight="100"/>
+		
+		<system name="Q4" damage_per_shot="20" base_engine_stun_per_shot="8" added_engine_stun_per_shot_per_mark="4" max_engine_stun_seconds="32" />
+	</entity>
+
+	<entity name="Tarantula" copy_from="Spider" display_name="狼蛛" thematic_groups="Strikecraft" 
+			display_name_for_sidebar="狼蛛" tech_upgrades_that_benefit_me="Subterfuge,Heavy"
+			description="耐久性高且射程适中，对敌舰施加减速效果。"
+			hull_points="6000"
+			metal_cost="6600" energy_consumption="800" speed="AboveAverage3"
+			armor_mm="110" engine_gx="7"
+			cost_for_ai_to_purchase="68"
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="20" cap="20"/>		
+		<fleet_membership name="SlowHeavyMix" ship_cap_group="Strike" weight="100" cap="20"/>
+		<ai_ship_group_membership name="BrawlerFrigateTarantula" weight="100"/>
+	</entity>
+
+	<!-- Spider copy for FRS -->
+	<entity name="EncirclingSpider"  copy_from="Spider" thematic_groups="Strikecraft" 
+			display_name="包围蛛"
+			display_name_for_sidebar="包围蛛" aip_when_granted_by_hack="12"
+			tags="IncludeInFRS" supercharges_shields_of_rest_of_player_fleet="2.0"
+			starting_mark_level="Mark3" supercharges_only_apply_when_fleet_line_count_is_x_or_less="5"
+			description="对中距离的敌舰施加减速效果。适合与少量护卫舰组成小型舰队时使用，可以增强所有同伴舰船的护盾。">
+		
+		<fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="10" cap="32"/>
+	</entity>
+
+	<!-- Vampire Claw main entity -->
+	<entity name="VampireClaw"	
+			thematic_groups="Strikecraft"   
+			visuals="assets/_finalgamemeshes/fleetships/vampireclaw/vampireclaw.prefab"
+			icon_name="Ships1/Vampire_Claw"
+			voice_group="Melee"
+			category="Ship" is_strikecraft="true"
+			size_scale="1"
+			visuals_scale_multiplier="4.2"
+			collision_priority="100"
+			display_name="吸血爪"
+			display_name_for_sidebar="吸血爪"
+			description="潜行近战舰船，在造成伤害时自我修复。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Melee,Medium"
+			cost_for_ai_to_purchase="42" strength_multiplier="1.6"
+			hull_points="4000" shield_points="0" speed="AboveAverage1"
+			metal_cost="1500" energy_consumption="400"
+			armor_mm="70" albedo="0.7" engine_gx="7" mass_tx="0.21"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="100" cap="32"/>		
+		<fleet_membership name="BasicOffensiveMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="AttritionerMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="MeleeWithSupportMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Strike" weight="100" cap="32"/>
+		<ai_ship_group_membership name="SneakyStrikecraft" weight="2"/>
+		<ai_ship_group_membership name="RaidStrikecraftAndFrigates" weight="5"/>
+		<ai_ship_group_membership name="OffensiveMeleeStrikecraft" weight="100"/>
+		
+		<system name="WM" display_name="近战针束武器"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="335" range="AlmostNone" seek_range="Normal1" shot_speed="Fast" rate_of_fire="SlightlyLow" fires_salvos_sequentially="false"
+				shot_type_data="MeleeInvisible" added_target_evaluator="Melee"
+				health_change_per_damage_dealt="1"
+				>
+		</system>
+		<system name="C" display_name="隐形装置"
+				category="Passive"
+				cloaking_points="2000" cloaking_points_added_per_mark="1000"
+				>
+		</system>
+	</entity>
+
+	<entity name="AutomatedVampireClaw"  copy_from="VampireClaw" tags="AutomatedVampireClaw" thematic_groups="Strikecraft,Outguard,IsolatedHumanResistance" 
+			display_name="自动化吸血爪"
+			display_name_for_sidebar="自动化吸血爪" 
+			starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Expatriate"
+            icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6" >
+	</entity>
+			
+	<entity name="ViciousVampireClaw" copy_from="VampireClaw" display_name="凶恶吸血爪" thematic_groups="Strikecraft" 
+			display_name_for_sidebar="凶恶吸血爪"
+			hull_points="5000" metal_cost="2100" speed="AboveAverage3"
+			>
+		<fleet_membership name="VeteranViciousMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="UnusualMix" ship_cap_group="Strike" weight="10" cap="32"/>
+		<ai_ship_group_membership name="ViciousRaidStrikecraftAndFrigates" weight="40"/>
+		<ai_ship_group_membership name="ViciousSneakyStrikecraft" weight="10"/>
+    
+		<system name="WM" damage_per_shot="415" />
+	</entity>
+
+	<entity name="Absorber" copy_from="VampireClaw" display_name="吸收者" thematic_groups="Strikecraft" 
+			display_name_for_sidebar="吸收者"
+			description="潜行近战舰船，伤害较低，但攻击时能极大地自我修复。"
+			cost_for_ai_to_purchase="36"
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="20" cap="32"/>		
+		<fleet_membership name="SturdyOffensiveMix" ship_cap_group="Strike" weight="10" cap="32"/>
+		<fleet_membership name="AttritionerMix" ship_cap_group="Strike" weight="50" cap="32"/>
+		<fleet_membership name="MeleeWithSupportMix" ship_cap_group="Strike" weight="25" cap="32"/>
+		<fleet_membership name="GluttonyMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<ai_ship_group_membership name="HarassmentStrikecraft" weight="20"/>
+		<ai_ship_group_membership name="EnsnarerHarassmentStrikecraft" weight="20"/>
+		<ai_ship_group_membership name="AbsorberParasiteTeslaCorvette" weight="100"/>
+		<ai_ship_group_membership name="AbsorberSuppressor" weight="100"/>	
+	
+		<system name="WM" damage_per_shot="165" health_change_per_damage_dealt="3.5" />
+	</entity>
+  
+	<!-- Metabolizing Gangsaw main entity -->
+	<entity name="MetabolizingGangsaw"
+			thematic_groups="Strikecraft"   
+			visuals="assets/_finalgamemeshes/fleetships/vorticularcutlass/vorticularcutlass.prefab"
+			icon_name="Ships1/VorticularCutlass"
+			voice_group="Melee"
+			category="Ship" is_strikecraft="true"
+			size_scale="1"
+			visuals_scale_multiplier="2.4"
+			collision_priority="100"
+			display_name="代谢锯"
+			display_name_for_sidebar="代谢锯"
+			description="近战舰船，攻击时会对自己造成伤害，但也会从目标中提取金属增加你的收入。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Melee,Heavy"
+			cost_for_ai_to_purchase="42" strength_multiplier="0.9"
+			hull_points="4200" shield_points="0" speed="AboveAverage5"
+			metal_cost="1250" energy_consumption="175"
+			armor_mm="90" albedo="0.3" engine_gx="13" mass_tx="0.21"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="BasicOffensiveMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="RaidOffensiveMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="MeleeWithSupportMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="GluttonyMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Strike" weight="100" cap="32"/>
+		<ai_ship_group_membership name="OffensiveMeleeStrikecraft" weight="100"/>
+		<ai_ship_group_membership name="LightStrikecraft" weight="10"/>
+		<ai_ship_group_membership name="RaidStrikecraftAndFrigates" weight="40"/>	
+		
+		<system name="WM" display_name="近战锯"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="400" range="AlmostNone" seek_range="Normal1" shot_speed="Fast" rate_of_fire="High" fires_salvos_sequentially="false"
+				shot_type_data="MeleeInvisible" added_target_evaluator="Melee"
+				health_change_per_damage_dealt="-0.5"
+				>
+			<death_effect_damage type="Metabolization" tier_name="Gangsaw"/>
+		</system>
+	</entity>
+
+	<entity name="AutomatedMetabolizingGangsaw"  copy_from="MetabolizingGangsaw" tags="AutomatedMetabolizingGangsaw" thematic_groups="Strikecraft,Outguard,IsolatedHumanResistance" 
+            icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+			display_name="自动化代谢锯"
+			display_name_for_sidebar="代谢锯 DRN" 
+			starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Expatriate" >
+	</entity>
+			
+	<entity name="ViciousMetabolizingGangsaw" copy_from="MetabolizingGangsaw" thematic_groups="Strikecraft" 
+			display_name="凶恶代谢锯" 
+			display_name_for_sidebar="凶恶锯"
+			hull_points="5250" metal_cost="1800" speed="AboveAverage6"
+			>
+		<fleet_membership name="VeteranViciousMix" ship_cap_group="Strike" weight="100" cap="32"/>	  
+		<fleet_membership name="UnusualMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<ai_ship_group_membership name="ViciousRaidStrikecraftAndFrigates" weight="40"/>
+		<ai_ship_group_membership name="ViciousLightStrikecraft" weight="10"/>
+		
+		<system name="WM" damage_per_shot="500" />
+	</entity>
+  
+	<entity name="Barnacle" copy_from="MetabolizingGangsaw" display_name="藤壶" thematic_groups="Strikecraft" 
+			display_name_for_sidebar="藤壶"
+			description="近战舰船，在造成伤害时会对自己造成伤害，但会对目标施加移动和武器减速效果，同时从目标中提取金属增加你的收入。" 
+			tech_upgrades_that_benefit_me="Melee,Subterfuge"       
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="20" cap="32"/> 
+		<fleet_membership name="DebufferMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="MeleeWithSupportMix" ship_cap_group="Strike" weight="25" cap="32"/>
+		
+		<system name="WM" damage_per_shot="180" base_engine_stun_per_shot="5" added_engine_stun_per_shot_per_mark="2" engine_stun_to_engine_gx_less_than="14" max_engine_stun_seconds="30" added_target_evaluator="WeaponJamAsPrimary"
+				base_enemy_weapon_reload_slowing_seconds_per_shot="3" added_enemy_weapon_reload_slowing_seconds_per_shot_per_mark="2" max_enemy_weapon_reload_slowing_seconds="20"
+				enemy_weapon_reload_slowing_to_armor_mm_less_than="60"
+				health_change_per_damage_dealt="-0.5" />
+	</entity>  
+  
+	<entity name="FusionSaw" copy_from="MetabolizingGangsaw" display_name="聚变锯" thematic_groups="Strikecraft" 
+			display_name_for_sidebar="聚变锯"
+			description="近战舰船，攻击时会对自己造成伤害，但能极大地绕过目标的个人护盾。"   
+			speed="AboveAverage2"
+			tech_upgrades_that_benefit_me="Melee,Fusion"
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="20" cap="32"/>
+		<fleet_membership name="UnusualMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="AntiStructureMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="RaidOffensiveMix" ship_cap_group="Strike" weight="50" cap="32"/>
+		<ai_ship_group_membership name="AntiStructureStrikecraft" weight="75"/>
+		
+		<system name="WM" damage_per_shot="300" base_percent_damage_bypasses_personal_shields="0.7" display_name="近战聚变锯" health_change_per_damage_dealt="-0.6" >
+			<death_effect_damage type="Metabolization" tier_name="None"/>
+		</system>
+	</entity>
+  
+	<!-- Stingray main entity -->
+	<entity name="Stingray"
+			thematic_groups="Strikecraft"   
+			visuals="Assets/_FinalGameMeshes/FleetShips/Stingray/Stringray.prefab"
+			icon_name="Ships1/Stingray" 
+			voice_group="Raider"
+			size_scale="0.8"
+			visuals_scale_multiplier="3.5"
+			category="Ship" is_strikecraft="true"
+			collision_priority="100"
+			display_name="黄貂鱼"
+			description="高级且昂贵的蜂群类型，对泡泡力场造成极大伤害。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Fusion,Light"
+			cost_for_ai_to_purchase="20" strength_multiplier="1.4"
+			hull_points="1680" shield_points="0" speed="AboveAverage3"
+			metal_cost="1440" energy_consumption="135"
+			armor_mm="30" albedo="0.3" engine_gx="14" mass_tx="0.21"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="100" cap="70"/>		
+		<fleet_membership name="BasicOffensiveMix" ship_cap_group="Strike" weight="100" cap="70"/>
+		<fleet_membership name="AntiStructureMix" ship_cap_group="Strike" weight="100" cap="70"/>
+		<fleet_membership name="SwarmerMix" ship_cap_group="Strike" weight="100" cap="70"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Strike" weight="100" cap="70"/>
+		<ai_ship_group_membership name="LightStrikecraft" weight="100"/>
+		<ai_ship_group_membership name="ViciousLightStrikecraft" weight="100"/>
+		<ai_ship_group_membership name="AntiShieldStrikecraftAndFrigates" weight="100"/>
+		<ai_ship_group_membership name="SmallSwarmerStrikecraft" weight="30"/>
+		<ai_ship_group_membership name="FusionBomberStingray" weight="100"/>
+		
+		<system name="V3" display_name="毒刺螺栓"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="126" range="Small2" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+				shot_type_data="StingerBolt"
+				>
+			<outgoing_damage_modifier applies_to="AllShields" based_on="MaxBubbleForcefield" comparison_type="GreaterThan" compared_to="10000" multiplier="4" />
+		</system>
+	</entity>
+	
+	<entity copy_from="Stingray" name="DroneStingray"  special_entity_type="DroneGeneral" thematic_groups="Strikecraft,Drone" 
+			icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="35"
+			cannot_target_or_alert_ai_reinforcement_spots="true"
+			armor_mm="30" display_name="黄貂鱼无人机"
+			display_name_for_sidebar="黄貂鱼 DRN"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			multiplier_to_all_costs="3" multiplier_to_all_healths="3" damage_multiplier_to_all_weapons="3" >
+		
+		<fleet_membership name="SwarmerDrones" ship_cap_group="Strike" weight="100" cap="10"/>
+	</entity>
+			
+	<entity name="HeavyStingray" copy_from="Stingray" display_name="重型黄貂鱼" thematic_groups="Strikecraft" 
+			display_name_for_sidebar="重型黄貂鱼" tech_upgrades_that_benefit_me="Fusion,Heavy"	tags="ArkEmpireOptionGroup2,ArkSidekickOptionGroup2" custom_arkempire_fleetcap="32"
+			description="高级且昂贵的蜂群类型，对泡泡力场造成极大伤害，比普通黄貂鱼更耐用且更昂贵。"
+			hull_points="4200"
+			metal_cost="3150" energy_consumption="350" speed="Normal3"
+			armor_mm="90" engine_gx="10"
+			>
+		<fleet_membership name="SlowHeavyMix" ship_cap_group="Strike" weight="50" cap="32"/>
+		<fleet_membership name="AntiStructureMix" ship_cap_group="Strike" weight="50" cap="32"/>
+		
+		<system name="V3" damage_per_shot="260" />
+	</entity>
+
+	<entity name="Paralyser" copy_from="Stingray" display_name="瘫痪者" tech_upgrades_that_benefit_me="Subterfuge,Fusion" thematic_groups="Strikecraft" 
+			description="高级且昂贵的蜂群类型，对泡泡力场造成极大伤害，同时还能造成瘫痪效果。"
+			metal_cost="1400"  cost_for_ai_to_purchase="26" strength_multiplier="2"
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="20" cap="70"/>		
+		<fleet_membership name="UnusualMix" ship_cap_group="Strike" weight="10" cap="70"/>
+		<fleet_membership name="AntiStructureMix" ship_cap_group="Strike" weight="10" cap="70"/>
+		<fleet_membership name="DebufferMix" ship_cap_group="Strike" weight="10" cap="70"/>
+		<fleet_membership name="SwarmerMix" ship_cap_group="Strike" weight="50" cap="70"/>
+		<ai_ship_group_membership name="DisruptiveStrikecraft" weight="20"/>
+		<ai_ship_group_membership name="ParalyserWarbird" weight="100"/>
+		<ai_ship_group_membership name="ParalyserDaggerWarbird" weight="100"/>	
+		<ai_ship_group_membership name="StrangeSmallSwarmerStrikecraft" weight="50"/>		
+    
+		<system name="V3" shots_per_salvo="2" damage_per_shot="45" base_paralysis_seconds_per_shot="2" paralysis_to_ships_mass_tx_less_than="2" added_target_evaluator="ParalyzerAsPrimary" />
+	</entity>
+  
+	<entity name="OutguardParalyser" copy_from="Paralyser" display_name="前哨瘫痪者" thematic_groups="Strikecraft,Outguard,IsolatedHumanResistance" 
+			display_name_for_sidebar="瘫痪者"  tags="ArnaudStrikecraft"
+			starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Expatriate"
+			>
+	</entity>
+
+	<entity name="StingrayHydra" copy_from="Stingray" display_name="黄貂鱼九头蛇" thematic_groups="Strikecraft" 
+			display_name_for_sidebar="黄貂鱼九头蛇"
+			description="快速的蜂群类型，对泡泡力场造成极大伤害，并在死亡时生成自身的复制体。"
+			>
+		<entity_type_drawing_bag_used_on_death data_list="StingrayHydraHead" min_spawn_value_list="2" />
+		
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="20" cap="50"/>		
+		<fleet_membership name="ReplicatingOffensiveMix" ship_cap_group="Strike" weight="100" cap="50"/>
+		<fleet_membership name="HydraOffensiveMix" ship_cap_group="Strike" weight="100" cap="50"/>
+		<fleet_membership name="SwarmerMix" ship_cap_group="Strike" weight="10" cap="50"/>
+		<ai_ship_group_membership name="ReplicatingStrikecraft" weight="100"/>
+	</entity>
+
+	<entity name="StingrayHydraHead" copy_from="Stingray" thematic_groups="Strikecraft,Drone" 
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="2"
+			always_self_attritions="true"
+			display_name="黄貂鱼九头蛇头"
+			display_name_for_sidebar="黄貂鱼 H 头"
+			description="由黄貂鱼九头蛇生成的头部。"
+			energy_consumption="0"
+			metal_cost_multiplier_for_scrapping="0.1"
+			immune_to_swapping_between_fleets="true"
+			>
+	</entity>
+  
+	<entity name="TurboStingray"  copy_from="Stingray" thematic_groups="Strikecraft" 
+			display_name="涡轮黄貂鱼"
+			display_name_for_sidebar="涡轮黄貂鱼"
+			description="极其快速的蜂群类型，对泡泡力场造成极大伤害。"
+            speed="High" 
+            >
+	</entity>
+  
+	<!-- Etherjet main entity -->	  
+	<entity name="Etherjet" 
+			thematic_groups="Strikecraft"      
+			visuals="assets/_finalgamemeshes/fleetships/etherjettractor/etherjettractor.prefab"
+			icon_name="Ships1/EtherJet"
+			voice_group="Fighter"
+			category="Ship" is_strikecraft="true"
+			size_scale="0.8"
+			visuals_scale_multiplier="3.8"
+			collision_priority="100"
+			display_name="以太喷射机"
+			description="快速的蜂群类型，具有令人惊讶的耐久性和强大的能力（制造成本也非常昂贵），能够抓住舰船并拖动，同时保持完全隐形。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Technologist,Light"
+			cost_for_ai_to_purchase="92" strength_multiplier="1.4"
+			hull_points="8400" shield_points="0" speed="AboveAverage4"
+			metal_cost="4800" energy_consumption="175"
+			armor_mm="40" albedo="0.7" engine_gx="14" mass_tx="0.21"
+			is_disallowed_from_spawning_in_waves="true"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			can_be_stacked_even_if_would_not_normally="true"
+			priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			>
+		<ai_ship_group_membership name="BullyStrikecraft" weight="20"/>
+		<ai_ship_group_membership name="HarassmentStrikecraft" weight="5"/>
+		<ai_ship_group_membership name="AbductorMix" weight="100"/>
+		<ai_ship_group_membership name="AblativeAbductorMix" weight="100"/>
+		<ai_ship_group_membership name="AbductorMixWithGunboatSupport" weight="100"/>	
+		
+		<system name="WW" display_name="弹道加农炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="320" range="Small3" shot_speed="Normal" rate_of_fire="Normal"
+				shot_type_data="ArmorPiercingShell"
+				>
+		</system>
+		<system name="T" display_name="牵引光束"
+				category="Passive"
+				tractor_range="Small1" tractor_count="1" tractor_count_added_per_mark="1" tractor_hits_albedo_less_than="0.5" tractor_hits_engine_gx_less_than="10"
+				>
+		</system>
+		<system name="C" display_name="隐形装置"
+				category="Passive"
+				cloaking_points="2000" cloaking_points_added_per_mark="1000"
+				>
+		</system>
+	</entity>
+	
+	<entity name="EnsnarerEtherjet" copy_from="Etherjet" display_name="诱捕以太喷射机" thematic_groups="Strikecraft"  
+			is_disallowed_from_spawning_in_waves="true"
+			display_name_for_sidebar="诱捕以太喷射机"
+			hull_points="10500" metal_cost="6800" 
+			can_be_stacked_even_if_would_not_normally="true"
+			>
+		<ai_ship_group_membership name="EnsnarerBullyStrikecraft" weight="20"/>
+		<ai_ship_group_membership name="EnsnarerHarassmentStrikecraft" weight="5"/>	  
+		<ai_ship_group_membership name="EnsnarerStrikecraft" weight="100"/>
+		<ai_ship_group_membership name="EnsnarerAbductorMix" weight="100"/>
+		<ai_ship_group_membership name="EnsnarerAblativeAbductorMix" weight="100"/>
+		<ai_ship_group_membership name="EnsnarerAbductorMixWithGunboatSupport" weight="100"/>	 
+		
+		<system name="WW" damage_per_shot="400" />
+		<system name="T" tractor_range="Small1" tractor_count="2" tractor_count_added_per_mark="2" />
+	</entity>
+  
+	<entity name="Thief" copy_from="Etherjet" display_name="窃贼" thematic_groups="Strikecraft"
+			is_disallowed_from_spawning_in_waves="true"
+			display_name_for_sidebar="窃贼"
+			description="非常快速的蜂群类型，具有令人惊讶的耐久性和强大的能力（制造成本也非常昂贵），伤害较低但非常擅长使用牵引光束偷取舰船，同时保持完全隐形。"
+			speed="AboveAverage6"
+			metal_cost="6800"
+			engine_gx="17"
+			can_be_stacked_even_if_would_not_normally="true"			
+			cost_for_ai_to_purchase="92"
+			>
+		<ai_ship_group_membership name="ThiefStrikecraftAndFrigates" weight="100"/>
+		
+		<system name="WW" damage_per_shot="192" />
+		<system name="T" tractor_count="3" tractor_count_added_per_mark="3" />
+	</entity>
+	
+	<!-- Autobomb main entity -->
+	<entity name="AutoBomb"	
+            thematic_groups="Strikecraft"     
+			visuals="Assets/_FinalGameMeshes/FleetShips/AutoBomb/AutoBomb.prefab" 
+			icon_name="Ships1/AutoBomb"
+			voice_group="Silent"
+			category="Ship" is_strikecraft="true"
+			size_scale="1.1"
+			visuals_scale_multiplier="5"
+			collision_priority="100"
+			display_name="自动炸弹"
+			description="无人自动炸弹，撞击时引爆，自毁并对区域内的多个敌人造成伤害。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Heavy,Melee"
+			cost_for_ai_to_purchase="20" strength_multiplier="0.3"
+			hull_points="3000" shield_points="0" speed="High"
+			metal_cost="800" energy_consumption="175"
+			armor_mm="110" albedo="0.3" engine_gx="7" mass_tx="0.21"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="100" cap="19"/>
+		<fleet_membership name="SelfSacrificingOffensiveMix" ship_cap_group="Strike" weight="100" cap="19"/>
+		<fleet_membership name="CrowdControlMix" ship_cap_group="Strike" weight="100" cap="19"/>
+		<fleet_membership name="BreacherMix" ship_cap_group="Strike" weight="25" cap="19"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Strike" weight="100" cap="19"/>
+		<ai_ship_group_membership name="SelfSacrificingStrikecraft" weight="100"/>
+		<ai_ship_group_membership name="OffensiveMeleeStrikecraft" weight="5"/>
+		<ai_ship_group_membership name="AttritionerStrikecraft" weight="10"/>
+		
+		<system name="WM" display_name="引爆"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="420" range="AlmostNone" seek_range="Normal1" shot_speed="Instant" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+				shot_type_data="ExplosiveFlakBurst"
+				area_of_effect_size="600"
+				maximum_number_of_targets_hit_per_shot="9"				
+				health_change_by_max_health_divided_by_this_per_attack="-1"
+				>
+			<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="40" multiplier="2" />
+		</system>
+	</entity>
+  
+	<entity name="ClusterBomb" copy_from="AutoBomb" display_name="集束炸弹" thematic_groups="Strikecraft" 
+			display_name_for_sidebar="集束炸弹"
+			description="无人自动炸弹，撞击时引爆，自毁并对区域内的多个敌人造成伤害，同时生成迷你版本的自身。"
+			speed="AboveAverage6"
+			metal_cost="1200"
+			>
+		<entity_type_drawing_bag_used_on_death data_list="MiniClusterBomb" min_spawn_value_list="3" />
+		
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="20" cap="19"/>		
+		<fleet_membership name="ReplicatingOffensiveMix" ship_cap_group="Strike" weight="30" cap="19"/>
+		<fleet_membership name="SelfSacrificingOffensiveMix" ship_cap_group="Strike" weight="75" cap="19"/>
+		<fleet_membership name="CrowdControlMix" ship_cap_group="Strike" weight="10" cap="19"/>
+		<fleet_membership name="GluttonyMix" ship_cap_group="Strike" weight="100" cap="19"/>
+		<ai_ship_group_membership name="ReplicatingStrikecraft" weight="100"/>
+		<ai_ship_group_membership name="DurableFreakyStrikecraft" weight="5"/>
+		<ai_ship_group_membership name="ClusterBombPersuader" weight="75"/>		
+	</entity> 
+
+	<entity name="MiniClusterBomb" copy_from="AutoBomb" size_scale="0.55" visuals_scale_multiplier="2.5" thematic_groups="Strikecraft,Drone"           
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="20"
+			always_self_attritions="true"
+			display_name="迷你集束炸弹"
+			display_name_for_sidebar="集束炸弹迷你"
+			description="集束炸弹的迷你版本。"
+			hull_points="450" speed="AboveAverage1"
+			energy_consumption="0"
+			metal_cost_multiplier_for_scrapping="0.1"
+			immune_to_swapping_between_fleets="true"
+			>
+		<system name="WM" damage_per_shot="135" />
+	</entity>  
+  
+	<entity name="Nanoswarm" copy_from="AutoBomb" display_name="纳米蜂群" thematic_groups="Strikecraft" 
+			display_name_for_sidebar="纳米蜂群"
+			description="无人自动炸弹，撞击时引爆，自毁并对区域内的多个敌人造成少量伤害，同时使目标瘫痪并将其转化为僵尸。"
+			tech_upgrades_that_benefit_me="Technologist,Melee"
+			metal_cost="1000" 
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="20" cap="19"/>		
+		<fleet_membership name="SelfSacrificingOffensiveMix" ship_cap_group="Strike" weight="75" cap="19"/>
+		<fleet_membership name="ZombificationMix" ship_cap_group="Strike" weight="100" cap="20"/>
+		<fleet_membership name="CrowdControlMix" ship_cap_group="Strike" weight="10" cap="19"/>
+		<ai_ship_group_membership name="ZombifyingStrikecraftAndFrigates" weight="80"/>
+		<ai_ship_group_membership name="NanoswarmPersuader" weight="100"/>	
+	
+		<system name="WM" damage_per_shot="40" base_paralysis_seconds_per_shot="4" paralysis_to_ships_mass_tx_less_than="2" added_target_evaluator="ZombifyAsPrimary">
+			<death_effect_damage type="Zombification" tier_name="Parasite"/>
+		</system>
+	</entity>
+  
+	<entity name="Ram" copy_from="AutoBomb" display_name="冲撞" thematic_groups="Strikecraft" 
+			display_name_for_sidebar="冲撞" size_scale="2.2" visuals_scale_multiplier="10"                 	
+			description="大型无人自动炸弹，撞击时引爆，自毁并对高质量目标造成高伤害。"
+			speed="AboveAverage1"
+			cost_for_ai_to_purchase="35" 
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="20" cap="19"/>			
+		<fleet_membership name="SelfSacrificingOffensiveMix" ship_cap_group="Strike" weight="75" cap="19"/>
+		<fleet_membership name="AntiLargeMix" ship_cap_group="Strike" weight="100" cap="19"/>
+		<fleet_membership name="ZombificationAntiCounterMix" ship_cap_group="Strike" weight="100" cap="19"/>
+		<ai_ship_group_membership name="BullyStrikecraft" weight="30"/>
+		<ai_ship_group_membership name="RamRamifierFrigate" weight="100"/>	 
+	
+		<system name="WM" damage_per_shot="1000"
+				maximum_number_of_targets_hit_per_shot="1" area_of_effect_size="0">
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="7" /> 	
+			<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtLeast" compared_to="90" multiplier="2" />
+		</system>			
+	</entity>  
+
+	<!-- Parasite main entity -->
+	<entity name="Parasite" 
+			thematic_groups="Strikecraft"   
+			visuals="Assets/_FinalGameMeshes/FleetShips/Parasite/Parasite.prefab"
+			icon_name="Ships1/Parasite"
+			voice_group="Saboteur"
+			category="Ship" is_strikecraft="true"
+			size_scale="1.3"
+			visuals_scale_multiplier="4"
+			collision_priority="100"
+			display_name="寄生者"
+			description="不擅长摧毁目标，但可以使目标在死亡时变成盟军僵尸。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Technologist,Medium"
+			cost_for_ai_to_purchase="30" strength_multiplier="1.4"
+			hull_points="3000" shield_points="0" speed="Normal3"
+			metal_cost="1800" energy_consumption="300"
+			armor_mm="50" albedo="0.3" engine_gx="8" mass_tx="0.21"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="BasicOffensiveMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="ZombificationMix" ship_cap_group="Strike" weight="150" cap="32"/>
+		<fleet_membership name="ZombificationAntiCounterMix" ship_cap_group="Strike" weight="150" cap="32"/>
+		<ai_ship_group_membership name="HarassmentStrikecraft" weight="5"/>
+		<ai_ship_group_membership name="EnsnarerHarassmentStrikecraft" weight="5"/>
+		<ai_ship_group_membership name="SupporterStrikecraft" weight="20"/>
+		<ai_ship_group_membership name="ZombifyingStrikecraftAndFrigates" weight="100"/>
+		<ai_ship_group_membership name="ZombifyingStrikecraftWithVariants" weight="100"/>
+		<ai_ship_group_membership name="AbsorberParasiteTeslaCorvette" weight="100"/>
+		<ai_ship_group_membership name="RaptorAggressorParasite" weight="100"/>
+		
+		<system name="WR" display_name="寄生螺栓"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="70" range="Normal4" shot_speed="Normal" rate_of_fire="Normal"
+				shot_type_data="ParasiteCurvedPinkShot" added_target_evaluator="ZombifyAsPrimary"
+				>
+				<death_effect_damage type="Zombification" tier_name="Parasite"/>
+		</system>
+	</entity>
+
+	<entity name="Persuader" copy_from="Parasite" display_name="说服者" thematic_groups="Strikecraft" 
+			display_name_for_sidebar="说服者"
+			is_disallowed_from_spawning_in_waves="true"
+			description="速度快且耐久性高，能牵引目标并在其死亡时将其转化为友方僵尸"
+			hull_points="8400" speed="AboveAverage2"
+			metal_cost="7200" energy_consumption="1200"
+			engine_gx="14"  cost_for_ai_to_purchase="92"
+			can_be_stacked_even_if_would_not_normally="true"
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="20" cap="8"/>		
+		<fleet_membership name="FragileOffensiveMix" ship_cap_group="Strike" weight="100" cap="8"/>
+		<fleet_membership name="ZombificationMix" ship_cap_group="Strike" weight="50" cap="8"/>
+		<fleet_membership name="TractorMix" ship_cap_group="Strike" weight="100" cap="8"/>
+		<fleet_membership name="ZombificationAntiCounterMix" ship_cap_group="Strike" weight="50" cap="8"/>
+		<fleet_membership name="AbductorBomberMix" ship_cap_group="Strike" weight="100" cap="8"/>
+		<ai_ship_group_membership name="FragileFreakyStrikecraft" weight="20"/>
+		<ai_ship_group_membership name="HugelyVariedStrikecraft" weight="1"/>
+		<ai_ship_group_membership name="EnsnarerStrikecraft" weight="20"/>
+		<ai_ship_group_membership name="NanoswarmPersuader" weight="100"/>
+		<ai_ship_group_membership name="ClusterBombPersuader" weight="100"/>
+		<ai_ship_group_membership name="AbductorMix" weight="100"/>
+		<ai_ship_group_membership name="EnsnarerAbductorMix" weight="100"/>
+		<ai_ship_group_membership name="AblativeAbductorMix" weight="100"/>
+		<ai_ship_group_membership name="EnsnarerAblativeAbductorMix" weight="100"/>
+		<ai_ship_group_membership name="AbductorMixWithGunboatSupport" weight="100"/>
+		<ai_ship_group_membership name="EnsnarerAbductorMixWithGunboatSupport" weight="100"/>
+		
+		<system name="WR" damage_per_shot="280" />
+		<system name="T" display_name="牵引光束"
+				category="Passive"
+				tractor_range="Normal1" tractor_count="1" tractor_count_added_per_mark="1" tractor_hits_albedo_less_than="0.5" tractor_hits_engine_gx_less_than="14"
+				>
+		</system>	
+	</entity>
+
+	<entity name="ParasiteHydra" copy_from="Parasite" display_name="寄生九头蛇" thematic_groups="Strikecraft" 
+			display_name_for_sidebar="寄生九头蛇"
+			description="在摧毁目标方面效果不佳，但能使目标在死亡时变成盟军僵尸，并且在自身死亡时会生成自身的复制体。"
+			>
+		<entity_type_drawing_bag_used_on_death data_list="ParasiteHydraHead" min_spawn_value_list="2" />
+		
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="20" cap="20"/>		
+		<fleet_membership name="ReplicatingOffensiveMix" ship_cap_group="Strike" weight="100" cap="20"/>
+		<fleet_membership name="HydraOffensiveMix" ship_cap_group="Strike" weight="100" cap="20"/>
+		<fleet_membership name="ZombificationMix" ship_cap_group="Strike" weight="20" cap="32"/>
+		<ai_ship_group_membership name="ReplicatingStrikecraft" weight="10"/>
+	</entity>
+
+	<entity name="ParasiteHydraHead" copy_from="Parasite" thematic_groups="Strikecraft,Drone" 
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="2"
+			always_self_attritions="true"
+			display_name="寄生九头蛇头"
+			display_name_for_sidebar="寄生 H 头"
+			description="由寄生九头蛇生成的头部。"
+			energy_consumption="0"  immune_to_swapping_between_fleets="true"
+			metal_cost_multiplier_for_scrapping="0.1"
+			>
+	</entity>
+
+	<!-- Parasite copy for FRS -->
+	<entity name="IncitingParasite"  copy_from="Parasite" thematic_groups="Strikecraft" 
+			display_name="煽动寄生者" 
+			display_name_for_sidebar="煽动寄生者" aip_when_granted_by_hack="12"
+			tags="IncludeInFRS" supercharges_attack_power_of_rest_of_player_fleet="1.5"
+			starting_mark_level="Mark3" supercharges_only_apply_when_fleet_line_count_is_x_or_less="6"
+			description="在摧毁目标方面效果不佳，但能使目标在死亡时变成盟军僵尸。适合与少量高伤害输出舰船组成小舰队，使它们的攻击力更强。">
+		
+		<fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="10" cap="32"/>
+	</entity>
+	
+	<!-- Parasite variant for Expatriate FRS -->
+	<entity name="FRSArmoredParasite" copy_from="Parasite" thematic_groups="Strikecraft"
+			tags="IncludeInFRS" display_name="装甲寄生者"
+			description="拥有更好装甲的寄生者，对常见的反制手段更有抵抗力。仍然造成不了太多伤害，但其价值更多体现在能帮助创造盟军僵尸。"
+			starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Expatriate"
+			metal_cost="2100" armor_mm="70" albedo="0.4"
+			aip_when_granted_by_hack="2" >
+		<fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="10" cap="32"/>
+	</entity>
+	
+	<!-- This thing is for the tutorials and should never appear anywhere else! !-->
+  
+	<entity name="TargetDrone"
+            thematic_groups="Hidden"  is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+			visuals="assets/_finalgamemeshes/fleetships/armorship/armorship.prefab"
+			icon_name="Ships1/Armor_Ship"
+			voice_group="Bomber"
+			category="Ship" is_strikecraft="true"
+			size_scale="1.5"
+			visuals_scale_multiplier="10"
+			collision_priority="100"
+			display_name="目标无人机"
+			display_name_for_sidebar="目标 DRN"
+			description="用于训练的固定目标无人机。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="80" strength_multiplier="0.1"
+			hull_points="4000" shield_points="8000" speed="Immobile"
+			metal_cost="4500" energy_consumption="800"
+			armor_mm="180" albedo="0.3" mass_tx="0.3"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			>
+		<system name="WW" display_name="弹道加农炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1" range="Small5" shot_speed="Normal" rate_of_fire="OneShot" fires_salvos_sequentially="true"
+				shot_type_data="ArmorPiercingShell"
+                max_mark_level_to_function="0"				
+				>
+		</system>	
+	</entity>  
+  
+</root>

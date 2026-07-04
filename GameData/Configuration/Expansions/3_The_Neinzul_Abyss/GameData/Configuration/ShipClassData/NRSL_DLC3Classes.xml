@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<ship_class_data name="BrutalGuardianBase" display_name="残暴守护者" short_name="残暴守护者"
+		can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.25" can_be_devoured="false"
+	>
+		<debuff_modifier debuff_type="WeaponPhase" multiplier="0" />
+	</ship_class_data>
+	
+	<ship_class_data name="BrutalGuardian_AmalgamBeta_Complete" copy_from="BrutalGuardianBase" display_name="残暴混合体β守护者" short_name="残暴混合体β守护者"
+	>
+		<debuff_modifier debuff_type="WeaponSlow" multiplier="0" />
+		<debuff_modifier debuff_type="Paralysis" multiplier="0" />
+		<debuff_modifier debuff_type="Knockback" multiplier="0" />
+	</ship_class_data>
+	
+	<ship_class_data name="BrutalGuardian_AmalgamBeta_Head" copy_from="BrutalGuardianBase" display_name="残暴混合体β守护者头部" short_name="残暴混合体β守护者头部"
+	>
+		<debuff_modifier debuff_type="WeaponSlow" multiplier="0" />
+	</ship_class_data>
+	
+	<ship_class_data name="BrutalGuardian_AmalgamBeta_Tail" copy_from="BrutalGuardianBase" display_name="残暴混合体β守护者尾部" short_name="残暴混合体β守护者尾部"
+	>
+		<debuff_modifier debuff_type="Paralysis" multiplier="0" />
+		<debuff_modifier debuff_type="Knockback" multiplier="0" />
+	</ship_class_data>
+</root>

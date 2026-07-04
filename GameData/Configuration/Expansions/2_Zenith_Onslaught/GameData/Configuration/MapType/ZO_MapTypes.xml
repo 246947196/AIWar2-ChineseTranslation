@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <map_type name="FatSnake"
+            display_name="立方体"
+            description="该地图外观类似一个三维立方体。地形上与螺旋蛇形地图相似，但可以有多个星球的厚度。这使得游戏更容易，因为有更多方法可以绕过特别强大的星球。
+            
+后勤专家模式及以上不可用。"
+            dll_name="AIWarExternalDeepProcessingCode"
+            author_line="BadgerBadger"
+            type_name="Arcen.AIW2.External.Mapgen_FatSnake"
+            min_planets="40"
+            max_planets="300"
+              hidden_from_lists_above_harshness="1200"
+            >
+      <map_option name="SnakeThickness" display_name="立方体厚度" description="立方体每一块的星球宽度是多少。">
+        <choice_value id="0" display_name="两层" description="两层跃迁距离的厚度。"  related_int_value="0"/>
+        <choice_value id="1" display_name="三层" description="三层跃迁距离的厚度。" related_int_value="1" />
+        <choice_value id="2" display_name="四层" description="四层跃迁距离的厚度。" related_int_value="2" />
+        <choice_value id="3" display_name="五层" description="五层跃迁距离的厚度。" related_int_value="3" />
+        <choice_value id="4" display_name="六层" description="六层跃迁距离的厚度。" related_int_value="4" />
+        <choice_value id="5" display_name="可变" description="厚度可变。" related_int_value="5" />
+      </map_option>
+      <map_option name="SnakeConnectivity" display_name="立方体连通性" description="立方体的连通程度如何。" >
+        <choice_value id="0" display_name="正常" description="正常数量的连接。" related_int_value="0" />
+        <choice_value id="1" display_name="较少" description="使用比通常更少的连接。" related_int_value="1" />
+        <choice_value id="2" display_name="较多" description="添加一些额外的连接。" related_int_value="2" />
+        <choice_value id="3" display_name="混合" description="添加一些额外连接，同时减少一些连接。" related_int_value="3" />
+      </map_option>
+      <map_option name="DaliStyle" display_name="达利风格" description="星球是否不应排成直线。">
+        <choice_value id="0" display_name="否" description="星球排成直线。" related_int_value="0" />
+        <choice_value id="1" display_name="是" description="星球不排成直线。" related_int_value="1" />
+      </map_option> 
+  </map_type>
+
+  <map_type name="Compass"
+            display_name="罗盘"
+            description="一个中心星团，周围环绕着一系列星环。
+              
+死愿模式及以上不可用。"
+            dll_name="AIWarExternalDeepProcessingCode"
+            author_line="BadgerBadger"
+            type_name="Arcen.AIW2.External.Mapgen_Compass"
+            min_planets="40"
+            max_planets="300"
+            hidden_from_lists_above_harshness="2200"
+            >
+    <map_option name="CompassCenterSize" display_name="中心星团大小" description="中心星团的大小。" default_id="2">
+      <choice_value id="0" display_name="小" description="中心较小。" related_int_value="0" />
+      <choice_value id="1" display_name="中" description="中心中等。" related_int_value="1" />
+      <choice_value id="2" display_name="大" description="中心较大。" related_int_value="2" />
+    </map_option>
+    <map_option name="CompassNumRings" display_name="星环数量" description="中心星团周围的星环数量。">
+      <choice_value id="0" display_name="两个" description="两个星环。" related_int_value="0" />
+      <choice_value id="1" display_name="三个" description="三个星环。" related_int_value="1" />
+      <choice_value id="2" display_name="四个" description="四个星环。" related_int_value="2" />
+    </map_option>
+    <map_option name="CompassConnectionsToRing" display_name="到每个星环的连接数" description="从中心星团到每个星环的连接数。" default_id="1">
+      <choice_value id="0" display_name="一个" description="一个连接。" related_int_value="0" />
+      <choice_value id="1" display_name="两个" description="两个连接。" related_int_value="1" />
+      <choice_value id="2" display_name="三个" description="三个连接。" related_int_value="2" />
+      <choice_value id="3" display_name="四个" description="四个连接。 " related_int_value="3" />
+    </map_option>
+    <map_option name="CompassConnectTheRings" display_name="额外连接" description="是否进行额外的星环连接。">
+      <choice_value id="0" display_name="无" description="星环之间没有连接。" related_int_value="0" />
+      <choice_value id="1" display_name="蛛网式" description="创建额外的连接。" related_int_value="1" />
+    </map_option>
+  </map_type>
+
+</root>

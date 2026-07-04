@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!-- THIS IS EXPERIMENTAL AND SHOULD NEVER BE USED OTHER THAN FOR TESTING AND EXPERIMENTING!
+
+	Example Command: cmd:livegraftship,TestShip_10PulseLasers,LiveGraftShipBase,LiveGraftShipModules,s,P,10
+	Syntax: cmd:livegraftship,[ship name],[base ship type],[ship with the module to be grafted onto],["s" - don't fully remember what that was],[name of the system],[count of the system]
+
+    <entity name="LiveGraftShipBase"
+        special_entity_type="MobileOfficerCombatFleetFlagship" is_spire_lone_wolf="true" tech_upgrade_that_is_used_for_my_direct_science="Direct_LostSpire"
+        tags="ShowsOnNormalDisplayMode,Capturable,LoneSpire" capturable_seed_weight="65" capturable_max_per_galaxy="1" capturable_can_seed_at_all="false"
+        voice_group="Spire" gimbal_icon_size_multiplier="1.5"
+        draw_in_galaxy_view="true"
+        visuals="Assets/_FinalGameMeshes/Spire/SpireLostFrigate/SpireLostFrigate.prefab"
+        icon_name="ShipsSpire/Spire_Frigate"
+        uses_large_health_bar="true"
+        category="Ship"
+        size_scale="8.8"
+        visuals_scale_multiplier="3.8"
+        y_offset_of_icon="30"
+        display_name="活体嫁接船"
+        display_name_for_sidebar="活体嫁接船"
+        description="一艘拥有自定义配置的船。"
+        collision_priority="810"
+        metal_to_claim="2000000"
+        aip_to_claim="11"
+        starting_mark_level="Mark1" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" 
+        cost_for_ai_to_purchase="10000" strength_multiplier="2"
+        hull_points="1000000" shield_points="1000000" speed="AboveAverage1"
+        armor_mm="100" albedo="0.5" engine_gx="20" mass_tx="7"
+        metal_cost="2000000" energy_consumption="1000000"
+        assist_range="Normal1"
+        ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+        ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+        ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+        shows_on_galaxy_map_for_explored_planets="true" always_visible_to_players="true"
+        priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+    >
+        <metal_flow purpose="RebuildingRemains" throughput="100" increase_per_mark_level="100"/>
+    </entity> 
+    
+    
+    <entity name="LiveGraftShipModules" copy_from="LiveGraftShipBase"
+    >
+        <metal_flow purpose="RebuildingRemains" throughput="100" increase_per_mark_level="100"/>
+        <system name="B" display_name="尖塔光子长枪"
+            category="Weapon" firing_timing="OnlyInRange"
+            damage_per_shot="2650" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Devourer"
+            shot_type_data="HeavyBeamInvisible" beam_weapon_visual_style="Laser_BlueBright"
+            beam_length_multiplier="1.3"
+            hits_all_intersecting_targets="true"
+            shots_detonate_immediately="true"
+            maximum_number_of_targets_hit_per_shot="15"
+        >
+        </system>
+        <system name="P" display_name="尖塔激光脉冲"
+            category="Weapon" firing_timing="OnlyInRange"
+            damage_per_shot="3500" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Misery"
+            shot_type_data="LaserPulse_DeepBlue"
+        >
+        </system>
+        <system name="R" display_name="尖塔轨道炮"
+            category="Weapon" firing_timing="OnlyInRange"
+            damage_per_shot="5000" range="EssentiallyInfinite" shot_speed="VeryFast" rate_of_fire="Normal"
+            shot_type_data="ExtremeLongRangeRailgun"
+        >
+        </system>
+    </entity>
+
+	-->
+</root>
+
+
+
+

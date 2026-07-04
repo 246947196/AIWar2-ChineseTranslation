@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  
+  <fleet_leader_type name="Transport" display_name="运输舰" required_special_entity_type="MobileStrikeCombatFleetFlagship"/>
+  <fleet_leader_type name="Officer" display_name="军官舰" required_special_entity_type="MobileOfficerCombatFleetFlagship"/>
+  <fleet_leader_type name="Battlestation" display_name="战斗空间站" required_special_entity_type="BattlestationBasic"/>
+  <fleet_leader_type name="Citadel" display_name="堡垒" required_special_entity_type="BattlestationCitadel"/>
+  <fleet_leader_type name="MobileSupport" display_name="支援工厂" required_special_entity_type="MobileSupportFleetFlagship"/>
+  <fleet_leader_type name="SpireLostFrigate" display_name="尖塔失落护卫舰" required_special_entity_type="MobileOfficerCombatFleetFlagship"/>
+  <fleet_leader_type name="HomeArk" display_name="方舟" required_special_entity_type="HumanHomeArk"/>
+  
+  <!--Fleets leader type for DLC2 golems-->
+  
+  <fleet_leader_type name="ArmoredGolem" display_name="装甲魔像" required_special_entity_type="MobileOfficerCombatFleetFlagship"/> 
+  
+  <fleet_leader_type name="ArtilleryGolem" display_name="火炮魔像" required_special_entity_type="MobileOfficerCombatFleetFlagship"/> 
+  
+  <fleet_leader_type name="RegeneratorGolem" display_name="再生魔像" required_special_entity_type="MobileOfficerCombatFleetFlagship"/> 
+   
+  <fleet_leader_type name="CursedGolem" display_name="诅咒魔像" required_special_entity_type="MobileOfficerCombatFleetFlagship"/> 
+  
+  <fleet_leader_type name="BotnetGolem" display_name="僵尸网络魔像" required_special_entity_type="MobileOfficerCombatFleetFlagship"/> 
+  
+  <fleet_leader_type name="BlackWidowGolem" display_name="黑寡妇魔像" required_special_entity_type="MobileOfficerCombatFleetFlagship"/> 
+  
+  <fleet_leader_type name="HiveGolem" display_name="蜂群魔像" required_special_entity_type="MobileOfficerCombatFleetFlagship" /> 
+  
+  
+  
+  
+</root>

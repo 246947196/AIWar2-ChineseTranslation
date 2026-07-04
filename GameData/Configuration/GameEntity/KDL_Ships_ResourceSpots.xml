@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <entity name="MetalGenerator"
+            thematic_groups="Human"
+			tags="MetalGenerator,MetalHarvester" is_asteroid_mine="true"
+			visuals="assets/_finalgamemeshes/resources/MetalHarvester/MetalHarvester.prefab"
+			visuals_if_natural_object="assets/_finalgamemeshes/resources/MetalHarvesterEmpty/MetalHarvesterEmpty.prefab"
+			icon_name="Ships1/Metal"
+			category="Ship"
+			size_scale="1.65"
+			visuals_scale_multiplier="3"
+			display_name="金属采集器"
+			description="富含金属的小行星，附带矿场和精炼厂。防御风险较低，因为它们可以快速且低成本地重建，并且在您的经济体系中占比较小。"
+			behavior="Stationary"
+			reverts_to_neutral_on_death_if_permadeath_setting_is_false="MetalHarvesterPermadeath"
+      claim_disallowed_for_players_who_do_not_use_metal="true"
+			is_scrapping_by_player_disallowed="true" is_scrapping_by_player_to_turn_unclaimed="true"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="MetalGeneration"
+			cost_for_ai_to_purchase="200"
+			skip_drawing_ship_cap="true"
+			hull_points="75000" shield_points="0" speed="Immobile"
+			metal_cost="0" energy_consumption="0"
+			armor_mm="10" albedo="0.2" mass_tx="0.6"
+			metal_to_claim="40000" fleet_membership="Planetary"
+			ship_or_structure_explosion_sfx="StructureMidsize_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="StructureLostOnOtherPlanet_Explosion"
+			voice_group="Silent" collision_priority="99000" construction_priority="150" is_ignored_by_factories="true"
+      
+      priority_as_ai_target="MinorResourceGeneration" priority_as_frd_target="IgnoreMe" priority_to_protect="SlightlyLessExpendable"
+			>
+    <resource_production type="Metal" amount="75" increase_per_mark_level="50"/>
+  </entity>
+
+  <entity name="MineAndPowerplanet"
+            thematic_groups="Human"
+			tags="MetalGenerator,MineAndPowerplanet" is_asteroid_mine="true"
+			visuals="assets/_finalgamemeshes/resources/MetalHarvester/MetalHarvester.prefab"
+			visuals_if_natural_object="assets/_finalgamemeshes/resources/MetalHarvesterEmpty/MetalHarvesterEmpty.prefab"
+			icon_name="Ships1/Metal"
+			category="Ship"
+			size_scale="1.65"
+			visuals_scale_multiplier="3"
+			display_name="小行星采矿发电厂"
+			display_name_for_sidebar="采矿发电厂"
+			description="富含金属的小行星，附带矿场、精炼厂以及一个机载能源发电厂。防御风险较高，因为它们重建成本高昂且耗时，同时也是您在一个星球上经济产出的主要部分。您在星球上放置的指挥站类型对这些小行星为您带来的收益有巨大影响。"
+			behavior="Stationary"
+			reverts_to_neutral_on_death_if_permadeath_setting_is_false="MetalHarvesterPermadeath"
+      claim_disallowed_for_players_who_do_not_use_metal="true"
+			is_scrapping_by_player_disallowed="true" is_scrapping_by_player_to_turn_unclaimed="true"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="MetalGeneration"
+			cost_for_ai_to_purchase="200"
+			skip_drawing_ship_cap="true"
+			hull_points="9000" shield_points="6000" speed="Immobile"
+			metal_cost="50000" energy_consumption="0"
+			armor_mm="10" albedo="0.2" mass_tx="0.6"
+			metal_to_claim="50000" fleet_membership="Planetary"
+			ship_or_structure_explosion_sfx="StructureMidsize_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="StructureLostOnOtherPlanet_Explosion"
+			voice_group="Silent" collision_priority="99000" construction_priority="150" is_ignored_by_factories="true"
+      
+      priority_as_ai_target="MajorPlanetLevelObjective" priority_as_frd_target="IgnoreMe" priority_to_protect="MajorPlanetLevelObjective"
+			>
+    <resource_production type="Metal" amount="50" increase_per_mark_level="20"/>
+    <resource_production type="Energy" amount="14000" increase_per_mark_level="6000"/>
+  </entity>
+  
+</root>

@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <entity name="AssaultFrigate"
+            thematic_groups="Frigate" 
+			special_entity_type="Frigate" gimbal_icon_size_multiplier="1.35"
+			visuals="assets/_finalgamemeshes/starships/prototypeflagship/prototypeflagship.prefab"
+			icon_name="Ships1/Starship_Heavy" icon_overlay="Overlays1/Starship_Assault"
+			size_scale="5"
+			visuals_scale_multiplier="3"
+			category="Ship"
+			y_offset_of_icon="15"
+			collision_priority="500"
+			display_name="突击护卫舰"
+			display_name_for_sidebar="突击护卫舰"
+			description="重型打击护卫舰，能重创装甲更厚的目标，同时还能绕过一些个人护盾。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Heavy,Fusion"
+			cost_for_ai_to_purchase="982"			
+			hull_points="198000" shield_points="82500" speed="Normal2"
+			metal_cost="100000" energy_consumption="9000"
+			armor_mm="140" engine_gx="16" albedo="0.4" mass_tx="5"
+			voice_group="Starship"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+      
+      priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+      >
+    <fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="100" cap="6"/>
+    <fleet_membership name="BasicOffensiveMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+    <fleet_membership name="ClassicTrioMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+    <fleet_membership name="FrigatesWithSupport" ship_cap_group="Frigate" weight="100" cap="7"/>
+    <fleet_membership name="SelfSacrificingOffensiveMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+	<fleet_membership name="AbductorBomberMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+	<fleet_membership name="CooperativeFusionMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+    <system name="WL" display_name="反应式聚变炸弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="2100" range="Normal2" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="true"
+				shot_type_data="FusionBomb"	
+				base_percent_damage_bypasses_personal_shields="0.6"
+				>
+        <outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtLeast" compared_to="90" multiplier="3" />
+    </system>
+	 <system name="WW" display_name="点防御系统"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="400" range="Normal5" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="false"
+				shots_per_salvo="8" added_shots_per_salvo_per_mark="2"
+				shot_type_data="ArmorPiercingShell"	
+				>
+    </system>
+  </entity>
+
+  <entity name="Brawler" copy_from="AssaultFrigate" tech_upgrades_that_benefit_me="Heavy,Concussion" thematic_groups="Frigate" 
+      display_name="肉搏护卫舰"
+			display_name_for_sidebar="肉搏护卫舰"
+			description="耐用且速度较慢的护卫舰，发射大量导弹将敌人击退、减速，并对移动缓慢的目标造成重创。"
+			hull_points="315000" shield_points="127500" metal_cost="200000" energy_consumption="10000"
+			speed="Normal1"
+       cost_for_ai_to_purchase="1532"
+      >
+    <fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="10" cap="6"/>
+    <fleet_membership name="UnusualMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+    <fleet_membership name="SturdyOffensiveMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+	<fleet_membership name="DebufferMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+	<fleet_membership name="EngineStunMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+	<fleet_membership name="MissileMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+    <system name="WL" range="Normal3" max_mark_level_to_function="0" />
+    <system name="WW" damage_per_shot="200" rate_of_fire="Misery" shots_per_salvo="25" range="Normal3" shot_type_data="GuidedMissile" display_name="排斥导弹"
+            base_knockback_per_shot="1500" added_knockback_per_shot_per_mark="250" knockback_to_ships_mass_tx_less_than="2" added_shots_per_salvo_per_mark="3"
+			base_engine_stun_per_shot="8" added_engine_stun_per_shot_per_mark="2" engine_stun_to_engine_gx_less_than="14" max_engine_stun_seconds="30" added_target_evaluator="EngineDamageAsMinorPart">
+	<outgoing_damage_modifier based_on="CurrentSpeedIfMoving" comparison_type="AtMost" compared_to="400" multiplier="2" /> 	</system>			
+  </entity>
+  
+  <entity name="DefensiveAssaultFrigate"  copy_from="AssaultFrigate" thematic_groups="Frigate,StationKeeper" 
+          build_sidebar_categories_i_am_part_of="StationKeepers" tech_upgrades_that_benefit_me="Sentries" fleet_membership="Planetary" destroys_self_until_not_over_ship_cap_if_planetary_command="true"
+          tags="DefensiveAssaultFrigate" energy_consumption="6000"
+      display_name="驻留突击护卫舰"
+			display_name_for_sidebar="驻留突击护卫舰"
+			description="重型打击驻留护卫舰，能重创装甲更厚的目标，同时还能绕过一些个人护盾。"
+            behavior="Attacker_Full"
+      >
+    <fleet_membership name="PlayerHomeCommand" ship_cap_group="OtherDefense" weight="100" cap="10"/>
+    <fleet_membership name="PlayerMilitaryCommand" ship_cap_group="OtherDefense" weight="100" cap="8"/>
+    <fleet_membership name="PlayerLogisticalCommand" ship_cap_group="OtherDefense" weight="100" cap="4"/>
+	<fleet_membership name="PlayerEconomicCommand" ship_cap_group="OtherDefense" weight="100" cap="2"/> 
+    <metal_flow purpose="SelfConstruction" throughput="500"/>
+  </entity>
+
+  <entity name="Mugger" copy_from="AssaultFrigate" thematic_groups="Frigate" 
+      display_name="抢劫者护卫舰"
+			display_name_for_sidebar="抢劫者护卫舰"
+			description="耐用且速度较慢的护卫舰，配备能使敌人僵尸化的聚变炸弹武器。"
+			hull_points="315000" shield_points="127500" metal_cost="200000" energy_consumption="10000"
+			speed="Normal1" tech_upgrades_that_benefit_me="Fusion,Technologist"
+			cost_for_ai_to_purchase="1500"
+			>
+    <fleet_membership name="UnusualMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+    <fleet_membership name="SturdyOffensiveMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+	<fleet_membership name="ZombificationMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+	<fleet_membership name="ZombificationAntiCounterMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+    <fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="10" cap="6"/>
+    <system name="WL" damage_per_shot="1700" added_target_evaluator="ZombifyAsPrimary" >
+      <death_effect_damage type="Zombification" tier_name="Mugger"/>
+    </system>
+  </entity>
+
+  <entity name="CloakedMugger" copy_from="AssaultFrigate" thematic_groups="Frigate" 
+      display_name="隐形抢劫者护卫舰"
+			display_name_for_sidebar="隐形抢劫者护卫舰"
+			description="耐用且速度较慢的护卫舰，配备能使敌人僵尸化的聚变炸弹武器和隐形能力。"
+			hull_points="315000" shield_points="127500" metal_cost="200000" energy_consumption="10000"
+			speed="Normal1" albedo="0.7" tech_upgrades_that_benefit_me="Fusion,Technologist"
+			cost_for_ai_to_purchase="1500"
+			>
+    <fleet_membership name="CloakedMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+	<fleet_membership name="ZombificationMix" ship_cap_group="Frigate" weight="20" cap="6"/>
+	<fleet_membership name="ZombificationAntiCounterMix" ship_cap_group="Frigate" weight="20" cap="6"/>	
+    <fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="10" cap="6"/>
+    <system name="C" display_name="隐形装置"
+				category="Passive"
+				cloaking_points="2000"
+				cloaking_points_added_per_mark="1000" cloaking_percent_loss_from_firing="0.5"
+				>
+    </system>
+    <system name="WL" damage_per_shot="1700" added_target_evaluator="ZombifyAsPrimary" >
+      <death_effect_damage type="Zombification" tier_name="Mugger"/>
+    </system>
+  </entity>
+
+
+  
+  
+  <entity name="RaidFrigate" 
+          thematic_groups="Frigate" 
+			special_entity_type="Frigate" gimbal_icon_size_multiplier="1.25"			 
+			visuals="assets/_finalgamemeshes/starships/raidstarship/raidstarship.prefab"
+			icon_name="Ships1/Starship_Light" icon_overlay="Overlays1/Starship_Raid"
+			size_scale="2.8"
+			visuals_scale_multiplier="6"
+			category="Ship"
+			y_offset_of_icon="15"
+			collision_priority="500"
+			display_name="突袭护卫舰"
+			display_name_for_sidebar="突袭护卫舰"
+			description="快速隐形护卫舰，能绕过大多数个人护盾，但较为脆弱，是人工智能的高优先目标。适合打了就跑的突袭行动。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Raid,Light"
+			cost_for_ai_to_purchase="500"
+			hull_points="21000" shield_points="39000" speed="VeryHigh1"
+			metal_cost="67200" energy_consumption="6500"
+			armor_mm="50" engine_gx="20" albedo="0.7" mass_tx="5"
+			voice_group="Starship"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+      
+      priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			>
+	<fleet_membership name="FrigatesWithSupport" ship_cap_group="Frigate" weight="10" cap="10"/>		
+    <fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="100" cap="9"/>			
+    <fleet_membership name="RaidOffensiveMix" ship_cap_group="Frigate" weight="100" cap="10"/>
+    <fleet_membership name="FragileOffensiveMix" ship_cap_group="Frigate" weight="50" cap="9"/>
+    <fleet_membership name="CloakedMix" ship_cap_group="Frigate" weight="100" cap="9"/>
+	<fleet_membership name="AntiStructureMix" ship_cap_group="Frigate" weight="100" cap="9"/>
+    <system name="V6" display_name="聚变光束"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="3500" range="Normal3" shot_speed="Fast" rate_of_fire="Low" fires_salvos_sequentially="true"
+				shot_type_data="FusionBolt"
+				base_percent_damage_bypasses_personal_shields="0.9"
+				>
+				<outgoing_damage_modifier based_on="MyTimeAtPlanet" comparison_type="LessThan" compared_to="12" multiplier="3" />
+    </system>
+	<system name="W2" display_name="速射火箭"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="250" shots_per_salvo="4" range="Normal3" shot_speed="Normal" fires_salvos_sequentially="false"
+				shot_type_data="GuidedMissile" rate_of_fire="High"
+				base_enemy_weapon_reload_slowing_seconds_per_shot="3"
+				max_enemy_weapon_reload_slowing_seconds="10"
+				enemy_weapon_reload_slowing_to_armor_mm_less_than="95"
+				added_target_evaluator="WeaponJamAsPrimary"
+				/>
+    <system name="C" display_name="隐形装置"
+				category="Passive"
+				cloaking_points="2000"
+				cloaking_points_added_per_mark="1000"
+				>
+    </system>
+	<incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="4400" multiplier="0.25" />
+  </entity>
+ 
+  <entity name="BountyHunter" copy_from="RaidFrigate" display_name="赏金猎人护卫舰" thematic_groups="Frigate" 
+			display_name_for_sidebar="赏金猎人护卫舰"
+			description="快速隐形护卫舰，能使被击中的敌人死亡时掉落金属，并对新抵达星球的目标造成巨大伤害。"
+			tech_upgrades_that_benefit_me="Raid,Ambush"
+			>
+    <fleet_membership name="RaidOffensiveMix" ship_cap_group="Frigate" weight="100" cap="9"/>
+    <fleet_membership name="FragileOffensiveMix" ship_cap_group="Frigate" weight="25" cap="9"/>
+    <fleet_membership name="CloakedMix" ship_cap_group="Frigate" weight="100" cap="9"/>
+	<fleet_membership name="SelfSacrificingOffensiveMix" ship_cap_group="Frigate" weight="100" cap="9"/>
+	<fleet_membership name="BullyMix" ship_cap_group="Frigate" weight="100" cap="9"/>
+	<fleet_membership name="GluttonyMix" ship_cap_group="Frigate" weight="100" cap="9"/>
+	<fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="10" cap="9"/>
+    <system name="V6" damage_per_shot="3500" base_percent_damage_bypasses_personal_shields="0" shot_type_data="Ambush" display_name="代谢期限注射器" >
+	<outgoing_damage_modifier based_on="TargetTimeAtPlanet" comparison_type="LessThan" compared_to="15" multiplier="6" />
+    <death_effect_damage type="GreaterMetabolization" tier_name="BountyHunter"/> </system>	
+  </entity> 
+ 
+  <entity name="Apparition" copy_from="RaidFrigate" display_name="幻影护卫舰" thematic_groups="Frigate" 
+			display_name_for_sidebar="幻影护卫舰"
+			description="快速隐形护卫舰，能绕过大多数个人护盾，造成的总体伤害较低，但对健康目标的伤害更高。还能抵抗远距离的敌对目标。"
+			>
+    <fleet_membership name="RaidOffensiveMix" ship_cap_group="Frigate" weight="100" cap="10"/>
+    <fleet_membership name="FragileOffensiveMix" ship_cap_group="Frigate" weight="25" cap="9"/>
+    <fleet_membership name="CloakedMix" ship_cap_group="Frigate" weight="100" cap="9"/>
+	<fleet_membership name="CooperativeFusionMix" ship_cap_group="Frigate" weight="100" cap="9"/>
+	<fleet_membership name="AntiStructureMix" ship_cap_group="Frigate" weight="100" cap="9"/>
+	<fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="10" cap="9"/>
+    <system name="V6" damage_per_shot="2000" >
+	<outgoing_damage_modifier based_on="CurrentHullPercentage" applies_to="HullOnly" comparison_type="AtLeast" compared_to="50" multiplier="4" /> 	</system>
+	<incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="4400" multiplier="0.01" />
+  </entity>  
+  
+   <entity name="ViciousRaidFrigate" copy_from="RaidFrigate" display_name="残暴突袭护卫舰" thematic_groups="Frigate" 
+			display_name_for_sidebar="残暴突袭护卫舰"  
+	  description="快速隐形护卫舰，几乎无视目标的所有个人护盾，并能摧毁泡泡力场。"
+	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Raid,Light"
+	  strength_multiplier="4"
+      
+	  >
+     <fleet_membership name="UnusualMix" ship_cap_group="Frigate" weight="100" cap="9"/>
+	 <fleet_membership name="VeteranViciousMix" ship_cap_group="Frigate" weight="100" cap="9"/>
+    <system name="V6">
+      <outgoing_damage_modifier applies_to="AllShields" based_on="MaxBubbleForcefield" comparison_type="GreaterThan" compared_to="10000" multiplier="5" />
+    </system>
+
+  </entity>
+
+	<entity name="WatchmanFrigate"
+	        thematic_groups="Frigate,StationKeeper"
+			build_sidebar_categories_i_am_part_of="StationKeepers" fleet_membership="Planetary" destroys_self_until_not_over_ship_cap_if_planetary_command="true"
+			tags="WatchmanFrigate"
+			special_entity_type="Frigate" gimbal_icon_size_multiplier="1.25"			 
+			visuals="assets/_finalgamemeshes/starships/raidstarship/raidstarship.prefab"
+			icon_name="Ships1/Starship_Light" icon_overlay="Overlays1/Starship_Raid"
+			size_scale="2.8"
+			visuals_scale_multiplier="6"
+			category="Ship"
+			y_offset_of_icon="15"
+			collision_priority="500"
+			display_name="驻留守望者护卫舰"
+    display_name_for_sidebar="驻留守望者护卫舰"
+    description="小型快速驻留护卫舰，有助于清理可能盘踞在你的星球上或躲在你的炮塔射程外的零散敌人。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Sentries"
+            behavior="Attacker_Full"
+			cost_for_ai_to_purchase="800"
+			hull_points="72000" shield_points="30000" speed="VeryHigh1"
+			metal_cost="58800" energy_consumption="1000"
+			armor_mm="50" engine_gx="18" albedo="0.4" mass_tx="4"
+			voice_group="Starship"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+			priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable">
+			
+			<fleet_membership name="PlayerHomeCommand" ship_cap_group="OtherDefense" weight="100" cap="16"/>
+			<fleet_membership name="PlayerMilitaryCommand" ship_cap_group="OtherDefense" weight="100" cap="12"/>
+			<fleet_membership name="PlayerLogisticalCommand" ship_cap_group="OtherDefense" weight="100" cap="6"/>
+			<fleet_membership name="PlayerEconomicCommand" ship_cap_group="OtherDefense" weight="100" cap="3"/>    
+			<metal_flow purpose="SelfConstruction" throughput="500"/>
+			
+			<system name="WW" display_name="弹道炮"
+					category="Weapon" firing_timing="OnlyInRange"
+					damage_per_shot="1000" range="Normal4" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+					shot_type_data="ArmorPiercingShell"
+					/>
+			<system name="W2" display_name="点防御系统"
+					category="Weapon" firing_timing="OnlyInRange"
+					damage_per_shot="300" range="Normal3" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="false"
+					shots_per_salvo="6" added_shots_per_salvo_per_mark="1"
+					shot_type_data="ArmorPiercingShell"	
+					/>
+			<incoming_damage_modifier based_on="TargetTimeAtPlanet" comparison_type="LessThan" compared_to="12" multiplier="0.67" />
+			<incoming_damage_modifier based_on="Albedo" comparison_type="AtLeast" compared_to="0.7" multiplier="0.5" />
+	</entity>
+
+  <entity name="ForcefieldFrigate"
+          thematic_groups="Frigate" 
+			special_entity_type="Frigate" gimbal_icon_size_multiplier="1.35"
+			visuals="assets/_finalgamemeshes/starships/shieldstarship/shieldstarship.prefab"
+			icon_name="Ships1/Starship_Heavy" icon_overlay="Overlays1/Starship_Shield"
+			category="Ship"
+			size_scale="4.5"
+			visuals_scale_multiplier="4"
+			y_offset_of_icon="15"
+			collision_priority="600"
+			display_name="力场护卫舰"
+			display_name_for_sidebar="力场护卫舰"
+			description="为自身和附近舰船提供护盾防护。"
+			shield_size_scale="5" my_forcefield_does_not_shrink="true" my_forcefield_has_no_penalty_for_enemies_firing_out_of_it="true"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Heavy,Forcefields"
+			cost_for_ai_to_purchase="1200"
+			max_count_per_npc_faction_before_stack="3"
+			hull_points="32000" shield_points="300000" speed="Normal2"
+			metal_cost="100000" energy_consumption="9000"
+			armor_mm="85" engine_gx="16" albedo="0.4" mass_tx="5"
+			voice_group="Starship"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+      
+      priority_as_ai_target="ShieldGenerator" priority_as_frd_target="ShieldGenerator" priority_to_protect="SlightlyLessExpendable"
+			>
+    <fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="50" cap="3"/>			
+    <fleet_membership name="SelfSacrificingOffensiveMix" ship_cap_group="Frigate" weight="5" cap="3"/>
+    <fleet_membership name="SturdyOffensiveMix" ship_cap_group="Frigate" weight="25" cap="3"/>
+    <system name="WW" display_name="弹道炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1000" range="Normal6" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+				shot_type_data="ArmorPiercingShell"				
+				>
+    </system>
+  </entity>
+
+  <entity name="AnvilSecuritiesForcefieldFrigate"  copy_from="ForcefieldFrigate" tags="AnvilSecuritiesForcefieldFrigate" thematic_groups="Frigate,Outguard,IsolatedHumanResistance" 
+          display_name="铁砧安保力场护卫舰"
+    display_name_for_sidebar="力场护卫舰" max_count_per_npc_faction_before_stack="3" starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Expatriate"
+			 >  
+  </entity>
+			 
+  <entity name="Siphoner" copy_from="ForcefieldFrigate" thematic_groups="Frigate" 
+            display_name="虹吸护卫舰"	
+    display_name_for_sidebar="虹吸护卫舰"
+			description="保护自身和附近的舰船免受攻击，同时通过伤害敌人来自我修复。"
+            shield_points="192000"
+      
+			>
+    <fleet_membership name="UnusualMix" ship_cap_group="Frigate" weight="5" cap="4"/>
+    <fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="10" cap="4"/>
+	<fleet_membership name="AttritionerMix" ship_cap_group="Frigate" weight="25" cap="4"/>
+    <system name="WW" damage_per_shot="250" rate_of_fire="Devourer" health_change_per_damage_dealt="7" >
+	<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="Everything" comparison_type="AtLeast" compared_to="50" multiplier="5" /> 	</system>	
+  </entity>
+
+  <entity name="Suppressor" copy_from="ForcefieldFrigate" tech_upgrades_that_benefit_me="Medium,Disruptive" thematic_groups="Frigate" 
+          icon_name="Ships1/Starship" icon_overlay="Overlays1/Starship_Shield"  gimbal_icon_size_multiplier="1.30"
+            display_name="压制护卫舰"
+    display_name_for_sidebar="压制护卫舰"
+            hull_points="42000" shield_points="70000" metal_cost="31500" energy_consumption="3750"
+            shield_size_scale="0" my_forcefield_does_not_shrink="false" my_forcefield_has_no_penalty_for_enemies_firing_out_of_it="true" mass_tx="4"
+			cost_for_ai_to_purchase="740"
+			description="支援护卫舰，配备了使敌人保持被动并远离友军的装备。"
+      
+			>
+	<fleet_membership name="DebufferMix" ship_cap_group="Frigate" weight="50" cap="6"/>
+    <fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="10" cap="6"/>
+	<fleet_membership name="FrigatesWithSupport" ship_cap_group="Frigate" weight="10" cap="7"/>
+	<fleet_membership name="TractorMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+	<fleet_membership name="CrowdControlMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+	<fleet_membership name="AttritionerMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+	<fleet_membership name="MeleeWithSupportMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+	<fleet_membership name="AbductorBomberMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+	<fleet_membership name="BullyMix" ship_cap_group="Frigate" weight="50" cap="6"/>
+    <system name="WW" damage_per_shot="40" rate_of_fire="Devourer" shots_per_salvo="16" range="AboveAverage3" fires_salvos_sequentially="true" display_name="压制加特林机枪"
+            base_enemy_weapon_reload_slowing_seconds_per_shot="2" added_enemy_weapon_reload_slowing_seconds_per_shot_per_mark="1" enemy_weapon_reload_slowing_to_armor_mm_less_than="80" max_enemy_weapon_reload_slowing_seconds="10" added_target_evaluator="WeaponJamAsPrimary"/>	
+	<system name="T" display_name="牵引光束"
+			category="Passive"
+			tractor_range="AboveAverage1" tractor_count="50" tractor_count_added_per_mark="10" tractor_hits_albedo_less_than="0.5" tractor_hits_engine_gx_less_than="14"/>
+  </entity>  
+
+  
+  
+  
+  <entity name="SiegeFrigateBase"
+			thematic_groups="Hidden" 
+			special_entity_type="Frigate" gimbal_icon_size_multiplier="1.30"		
+			visuals="assets/_finalgamemeshes/starships/siegestarship/siege_starship.prefab"
+			icon_name="Ships1/Starship" icon_overlay="Overlays1/Starship_Siege"
+			category="Ship"
+			size_scale="4.5"
+			visuals_scale_multiplier="6"
+			y_offset_of_icon="15"
+			collision_priority="500"
+			display_name="攻城护卫舰"
+			display_name_for_sidebar="攻城护卫舰"
+			description="脆弱的护卫舰，发射远程炮弹，能对单个目标或群体造成重创。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Medium,Concussion"
+			cost_for_ai_to_purchase="1336" strength_multiplier="1"
+			hull_points="126000" shield_points="52500" speed="BelowAverage2"
+			metal_cost="100000" energy_consumption="9000"
+			armor_mm="70" engine_gx="16" albedo="0.4" mass_tx="5"
+			voice_group="Starship"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+      
+      priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+      >
+    
+    <system name="WT" display_name="等离子鱼雷"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="24000" range="AboveAverage4" shot_speed="Slow" rate_of_fire="ExtremelyLow" fires_salvos_sequentially="true"
+				shot_type_data="PlasmaTorpedoAOEBurstAtEnd"
+				area_of_effect_size="600" maximum_number_of_targets_hit_per_shot="10"
+				aoe_spreads_damage_among_available_targets="true"
+				>
+    </system>
+  </entity>
+
+	<entity name="SiegeFrigate" copy_from="SiegeFrigateBase"
+			thematic_groups="Frigate" 
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<fleet_membership name="BasicOffensiveMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<fleet_membership name="ReplicatingOffensiveMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<fleet_membership name="SelfSacrificingOffensiveMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<fleet_membership name="ClassicTrioMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<fleet_membership name="SniperMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<system name="WT"
+			damage_per_shot="36000"
+			max_damage_to_deal_per_target_hit_by_mark="125000,125000,125000,125000,125000,125000,125000,125000"
+			>
+		</system>
+	</entity>
+
+	<entity name="Devestator" copy_from="SiegeFrigateBase" display_name="毁灭者护卫舰" thematic_groups="Frigate"    
+			display_name_for_sidebar="毁灭者护卫舰"
+			description="脆弱的护卫舰，发射导弹齐射，对装甲薄弱和虚弱的敌人造成致命伤害。"
+            strength_multiplier="1.5"
+			>
+	<fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="10" cap="6"/>		
+    <fleet_membership name="ClassicTrioMix" ship_cap_group="Frigate" weight="10" cap="6"/>
+    <fleet_membership name="UnusualMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+    <fleet_membership name="FragileOffensiveMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+	<fleet_membership name="CrowdControlMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+	<fleet_membership name="MissileMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+    <system name="WT" damage_per_shot="500" shots_per_salvo="20" rate_of_fire="Low" shot_type_data="GuidedMissile" display_name="地狱火导弹"
+	        aoe_spreads_damage_among_available_targets="false" area_of_effect_size="0" maximum_number_of_targets_hit_per_shot="1" >
+	<outgoing_damage_modifier based_on="CurrentHullPercentage" comparison_type="AtMost" compared_to="30" multiplier="2" />
+	<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="50" multiplier="4" /> 	</system>			
+  </entity>
+
+	<entity name="IonDisruptor" copy_from="SiegeFrigateBase" display_name="离子干扰护卫舰" thematic_groups="Frigate" 
+			display_name_for_sidebar="离子干扰护卫舰"
+			description="脆弱的护卫舰，发射大面积爆炸，将敌人聚集在一起并使其瘫痪。"
+            cost_for_ai_to_purchase="1262"
+			strength_multiplier="1.5"
+			>
+	<fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="10" cap="6"/>
+    <fleet_membership name="UnusualMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+    <fleet_membership name="FragileOffensiveMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+    <fleet_membership name="DebufferMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+	<fleet_membership name="CrowdControlMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+    <fleet_membership name="FrigatesWithSupport" ship_cap_group="Frigate" weight="10" cap="6"/>
+    <system name="WT" display_name="离子干扰爆炸"
+	        damage_per_shot="800"
+	        area_of_effect_size="1500"
+			maximum_number_of_targets_hit_per_shot="20"
+			base_knockback_per_shot="-1500" knockback_to_ships_mass_tx_less_than="2" knockback_at_target_location="true" added_target_evaluator="CanKnockback"
+            base_paralysis_seconds_per_shot="6" added_paralysis_seconds_per_shot_per_mark="2" paralysis_to_ships_mass_tx_less_than="5"
+            />			
+  </entity>  
+  
+  
+  <entity name="TritiumSniperFrigate" 
+          thematic_groups="Frigate" 
+			special_entity_type="Frigate" gimbal_icon_size_multiplier="1.25"			
+			visuals="assets/_finalgamemeshes/starships/sniperstarship/sniper_starship.prefab"
+			icon_name="Ships1/Starship_Light" icon_overlay="Overlays1/Starship_Sniper"
+			size_scale="6.2"
+			visuals_scale_multiplier="6"
+			category="Ship"
+			y_offset_of_icon="15"
+			collision_priority="500"
+			display_name="氚狙击护卫舰"
+    display_name_for_sidebar="氚狙击护卫舰"
+			description="旨在从任何距离摧毁辐射防护较低的舰船。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Generalist,Light"
+			cost_for_ai_to_purchase="1000" strength_multiplier="2"
+			hull_points="108000" shield_points="45000" speed="AboveAverage2"
+			metal_cost="100000" energy_consumption="9000"
+			armor_mm="40" engine_gx="16" albedo="0.4" mass_tx="5"
+			voice_group="Starship"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+      cannot_target_or_alert_ai_reinforcement_spots="true"
+      
+      priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+      >
+    <fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="100" cap="6"/>
+    <fleet_membership name="UnusualMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+    <fleet_membership name="FrigatesWithSupport" ship_cap_group="Frigate" weight="100" cap="6"/>
+    <fleet_membership name="ReplicatingOffensiveMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+    <fleet_membership name="SelfSacrificingOffensiveMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+	<fleet_membership name="SniperMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+    <system name="Q9" display_name="氚轨道炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="600" range="EssentiallyInfinite" shot_speed="VeryFast" rate_of_fire="Misery" fires_salvos_sequentially="true"
+				shot_type_data="ExtremeLongRangeRailgun"
+				added_shots_per_salvo_per_mark="0.4"
+				>
+        <outgoing_damage_modifier based_on="Albedo" comparison_type="AtMost" compared_to="0.3" multiplier="8" />
+    </system>
+    <system name="WW" display_name="弹道炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="444" range="Small5" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+				shot_type_data="ArmorPiercingShell"		
+                priority_for_kiting="0"		
+				>
+    </system>
+  </entity>
+  
+  <entity name="Ramifier" copy_from="TritiumSniperFrigate" display_name="分支护卫舰" thematic_groups="Frigate" 
+    display_name_for_sidebar="分支护卫舰"
+			description="发射大型放射性炮弹，对反照率低和质量高的目标有额外加成，可从任何距离攻击。"
+      cannot_target_or_alert_ai_reinforcement_spots="true"
+			>
+	<fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="10" cap="6"/>		
+    <fleet_membership name="UnusualMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+    <fleet_membership name="FragileOffensiveMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+	<fleet_membership name="SniperMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+	<fleet_membership name="AntiLargeMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+	<fleet_membership name="ZombificationAntiCounterMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+    <system name="Q9" damage_per_shot="600" rate_of_fire="Normal" shot_type_data="MassDriver" display_name="分支轨道炮"
+			shot_speed="Slow" added_shots_per_salvo_per_mark="0">
+	<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="5" /> </system>			
+  </entity>   
+  
+	<entity name="WarbirdFrigate"
+			thematic_groups="Frigate" 
+			special_entity_type="Frigate" gimbal_icon_size_multiplier="1.25"			 
+			visuals="assets/_finalgamemeshes/starships/assaultstarship/assaultstarship.prefab"
+			icon_name="Ships1/Starship_Light" icon_overlay="Overlays1/Starship_Warbird"
+			size_scale="4.8"
+			visuals_scale_multiplier="4.5"
+			category="Ship"
+			y_offset_of_icon="15"
+			collision_priority="500"
+			display_name="战鸟护卫舰"
+			display_name_for_sidebar="战鸟护卫舰"
+			description="快速隐形护卫舰，配备多发瘫痪火箭武器。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Subterfuge,Light"
+			cost_for_ai_to_purchase="1200" strength_multiplier="1.2"
+			hull_points="168000" shield_points="70250" speed="High"
+			metal_cost="100000" energy_consumption="9000"
+			armor_mm="40" engine_gx="16" albedo="0.7" mass_tx="5"
+			voice_group="Starship"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<fleet_membership name="RaidOffensiveMix" ship_cap_group="Frigate" weight="100" cap="7"/>
+		<fleet_membership name="FragileOffensiveMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<fleet_membership name="CloakedMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<fleet_membership name="DebufferMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<fleet_membership name="ZombificationMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<fleet_membership name="EngineStunMix" ship_cap_group="Frigate" weight="50" cap="6"/>
+		<fleet_membership name="MeleeWithSupportMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Frigate" weight="50" cap="7"/>
+		<system name="Q2" display_name="多重瘫痪喷射器"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="560" range="Normal4" shot_speed="Normal" rate_of_fire="Normal"
+				shots_per_salvo="16" fires_salvos_sequentially="false"
+				shot_type_data="ParalysisProngedShot_Blue" added_target_evaluator="ParalyzerAsPrimary"
+				base_paralysis_seconds_per_shot="4" paralysis_to_ships_mass_tx_less_than="2" cloaking_percent_loss_from_firing="1"
+				>
+		</system>
+		<system name="C" display_name="隐形装置" category="Passive" cloaking_points="2000" cloaking_points_added_per_mark="1000"  >
+		</system>
+	</entity>
+
+	<entity name="Ripper" copy_from="WarbirdFrigate" display_name="撕裂者护卫舰" thematic_groups="Frigate" 
+			display_name_for_sidebar="撕裂者护卫舰"
+			description="快速隐形护卫舰，能造成可观的伤害并使单个目标瘫痪。"
+    		>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="10" cap="6"/>
+		<fleet_membership name="SelfSacrificingOffensiveMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<fleet_membership name="UnusualMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<fleet_membership name="CloakedMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<fleet_membership name="DebufferMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Frigate" weight="10" cap="6"/>
+		<fleet_membership name="AntiLargeMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<fleet_membership name="RaidOffensiveMix" ship_cap_group="Frigate" weight="100" cap="7"/>
+		<system name="Q2"  display_name="瘫痪喷射器" damage_per_shot="8000" shots_per_salvo="1" base_paralysis_seconds_per_shot="4" paralysis_to_ships_mass_tx_less_than="6" rate_of_fire="Normal" />
+	</entity>
+
+	<entity name="WarbirdFrigateHydra" copy_from="WarbirdFrigate" display_name="战鸟九头蛇护卫舰" thematic_groups="Frigate" 
+			display_name_for_sidebar="战鸟九头蛇护卫舰"
+			description="快速隐形护卫舰，配备多发瘫痪火箭武器，死亡时会生成自身的复制体。"
+			>
+		<entity_type_drawing_bag_used_on_death data_list="WarbirdFrigateHydraHead" min_spawn_value_list="2" />
+		<fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="10" cap="5"/>
+		<fleet_membership name="HydraOffensiveMix" ship_cap_group="Frigate" weight="100" cap="5"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Frigate" weight="25" cap="6"/>
+	</entity>
+
+	<entity name="WarbirdFrigateHydraHead" copy_from="WarbirdFrigate" thematic_groups="Frigate,Drone" 
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="2"
+			always_self_attritions="true"
+			display_name="战鸟九头蛇护卫舰头部"
+			display_name_for_sidebar="战鸟九头蛇头部"
+			description="由战鸟九头蛇护卫舰生成的头部。"
+			hull_points="84000" shield_points="35125"
+			metal_cost_multiplier_for_scrapping="0.1"
+			energy_consumption="0"  immune_to_swapping_between_fleets="true"
+			>
+		<system name="Q2" shots_per_salvo="8">
+		</system>
+	</entity>
+  
+	<entity name="AmbushCarrier"
+	        thematic_groups="Frigate" 
+			tags="AmbushCarrier"
+			special_entity_type="Frigate" gimbal_icon_size_multiplier="1.25"			 
+			visuals="assets/_finalgamemeshes/guardians/empguardian/empguardian.prefab"
+			icon_name="Ships1/Starship_Light" icon_overlay="Overlays2/Guardian_Carrier"
+			size_scale="5.4"
+			visuals_scale_multiplier="6"
+			category="Ship"
+			y_offset_of_icon="16"
+			collision_priority="400"
+			display_name="伏击航母护卫舰"
+			display_name_for_sidebar="伏击航母护卫舰"
+			description="隐形航母，专门通过发射短寿命的猛禽无人机来支持特种作战舰队部署。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Ambush,Light"
+			cost_for_ai_to_purchase="450"
+			hull_points="70000" shield_points="35000" speed="AboveAverage5"
+			metal_cost="65000" energy_consumption="4500"
+			armor_mm="50" engine_gx="18" albedo="0.6" mass_tx="4"
+			explicit_kite_distance="15000"
+			voice_group="Starship"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+      		priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable">
+		<system name="W1" display_name="驱动干扰器"
+				category="Weapon" firing_timing="OnlyInRange" cloaking_percent_loss_from_firing="1"
+				damage_per_shot="50" range="AboveAverage4" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="false"
+				base_engine_stun_per_shot="6" added_engine_stun_per_shot_per_mark="2" engine_stun_to_engine_gx_less_than="14"
+				max_engine_stun_seconds="30" added_target_evaluator="EngineDamageAsMajorPrimary"
+				shots_per_salvo="10"
+				shot_type_data="EngineDisruptingShell">
+		</system>
+		<system name="W2" display_name="猛禽无人机"
+				category="Weapon" firing_timing="OnlyInRange" cloaking_percent_loss_from_firing="1"
+				damage_per_shot="5" range="ExtremelyHigh" shot_speed="Normal" rate_of_fire="Normal" shots_per_salvo="2" fires_salvos_sequentially="true" 				
+				shot_type_data="RaptorDrone"
+				added_shots_per_salvo_per_mark="0.3"
+				system_is_hidden_for_ui="true">
+		</system>
+		<system name="C" display_name="隐形装置" category="Passive" cloaking_points="2000" cloaking_points_added_per_mark="1000"  ></system>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="100" cap="9"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Frigate" weight="100" cap="10"/>
+		<fleet_membership name="BasicOffensiveMix" ship_cap_group="Frigate" weight="100" cap="9"/>
+		<fleet_membership name="CloakedMix" ship_cap_group="Frigate" weight="100" cap="9"/>
+	</entity>  
+  
+  
+</root>

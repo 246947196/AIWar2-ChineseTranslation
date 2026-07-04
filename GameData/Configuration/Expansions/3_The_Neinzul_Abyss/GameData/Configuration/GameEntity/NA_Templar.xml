@@ -1,0 +1,1510 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <!-- Templar ships can be owned by any AI faction, or by the Templar faction itself 
+
+       Templar ships should be particularly effective against the Necromancer (especially its summoned units).
+
+       TODO: also define AI variants for the Heroic AI Type
+  --> 
+  <!-- Templar Fortifications 
+		  Encampment (bottom tier)
+		  Fastness (mid tier)
+		  Castle (high tier)
+		  Constructor -->
+		  
+  <!-- Other templar structures 
+			Rifts
+
+	  (Strikecraft)
+		  Squire
+		  Apprentice
+		  Page
+
+	  (Guardians)
+		  Inquisitor (Fomrely called Sergeant)
+		  Exorcist
+		  Paladin
+		  Knight
+
+
+	  (Dire Guardians)
+		  Seneschal
+		  Hospitaller
+		  Grand Master
+	  
+	  (Wave Leaders)
+		  Herald
+		  Prophet
+		  Harbinger
+  
+
+  Some of these have variants that don't grant science/hacking
+  -->
+
+  <!-- Templar Defensive Structures
+       These are one-to-a-planet and powerful defensive structures. They spawn as the Low Tier and mark up over time to Med and High Tier.
+       Every so often a HighTier can send out a constructor to build a new LowTier on a new planet (Random planet without a defensive structure within a few hops with reasonably strong allied forces).
+	   
+	   Elite versions of the Fastness/Castle are intended to replace base variants as the game progresses; they have Elite tags. These are both stronger and grant less science/hacking than their base version.
+			int percentElite = aip.IntValue - this.BaseInfo.Difficulty.AIPToStartUsingElite;
+            if ( Context.RandomToUse.Next(0, 100) < percentElite )
+                tag = "TemplarEliteLowTierStructure";
+														-->
+
+
+<!--Templar Fortifications -->
+    <entity name="TemplarEncampment" display_name="圣殿骑士营地" display_name_for_sidebar="圣营"
+	        thematic_groups="Templar" npc_ship_cap_type="Turrets"
+			tags="TemplarLowTierStructure,TemplarPrimaryDefensiveStructure,TemplarEncampment"
+			draw_in_galaxy_view="true"
+			visuals="Assets/_DLC3/Templar/TemplarEncampment/TemplarEncampment.prefab" visuals_bundle="exp3_neinzul_abyss" gimbal_name="AstroTrainDepot"
+			icon_name="Ships4/TemplarEncampment" gimbal_icon_size_multiplier="1.5"
+			y_offset_of_icon="30"
+			voice_group="Silent"
+			category="Ship"
+			size_scale="9"
+			visuals_scale_multiplier="10"
+			y_offset_of_ship_in_visual_space="-1"
+			collision_priority="810"
+			description="这是圣殿骑士最简单的防御建筑。它是一些防御舰船的基地，这些舰船会保卫附近的星球。"
+			behavior="Stationary"
+			starting_mark_level="Mark1"
+			cost_for_ai_to_purchase="500" mark_level_scale_style="Templar"
+			hull_points="200000" shield_points="600000" speed="Immobile"
+            metal_cost="500000" energy_consumption="15000"
+            armor_mm="90" albedo="0.6" mass_tx="7"
+            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            eligible_for_hacks="CorruptCastle"
+            do_not_target_if_being_hacked="true"
+			priority_as_ai_target="IrreplaceableMisc" priority_as_frd_target="MajorPlanetLevelObjective" priority_to_protect="Irreplaceable"
+				description_appender_dll="AIWarExternalCode"
+				description_appender_type="Arcen.AIW2.External.TemplarAppender"
+            >
+        <data_extension name="DLC3"
+            necromancer_science_to_grant_on_death="500"
+            necromancer_hacking_to_grant_on_death="7"/>
+        <system name="R1" display_name="堡垒聚变火箭"
+            category="Weapon" firing_timing="OnlyInRange"
+            damage_per_shot="750" range="High1" shot_speed="Normal" rate_of_fire="Normal"
+            shots_per_salvo="40" fires_salvos_sequentially="false"
+            shot_type_data="FusionRocket"
+			>
+		<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="50" multiplier="2" />
+        </system>
+    </entity>
+
+<!-- the initial encampment is intended to be weak and to just give the necromancer some easy resources -->
+  <entity  name="TemplarInitialEncampment" copy_from="TemplarEncampment" display_name="圣殿骑士薄弱营地" display_name_for_sidebar="圣薄营"
+           tags="TemplarInitialEncampment,TemplarPrimaryDefensiveStructure,TemplarEncampment"
+           icon_overlay="Overlays1/Turret_Pike"
+           description="这是圣殿骑士最薄弱的防御建筑，会比平常提供更多的科研点数和黑客点数。它是一些防御舰船的基地，这些舰船会保卫附近的星球。"
+		   starting_mark_level="Markless"
+           hull_points="60000" shield_points="25000" speed="Immobile"
+		   eligible_for_hacks="None"
+				description_appender_dll="AIWarExternalCode"
+				description_appender_type="Arcen.AIW2.External.TemplarAppender"
+           >
+      <data_extension name="DLC3"
+           necromancer_science_to_grant_on_death="500"
+           necromancer_hacking_to_grant_on_death="50"/>
+      <system name="R1" display_name="营地震荡火箭"
+                category="Weapon" firing_timing="OnlyInRange"
+                damage_per_shot="350" range="High1" shot_speed="Normal" rate_of_fire="Normal"
+                shots_per_salvo="5" fires_salvos_sequentially="false"
+                shot_type_data="FusionRocket"
+				>
+      <outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="50" multiplier="2" />
+      </system>
+	</entity>
+  
+  
+   <entity  name="TemplarEliteEncampment" copy_from="TemplarEncampment" display_name="圣殿骑士精英营地" display_name_for_sidebar="圣精营"   
+			tags="TemplarEliteLowTierStructure,TemplarPrimaryDefensiveStructure,TemplarEncampment"
+			visuals="Assets/_DLC3/Templar/TemplarEncampment/TemplarEliteEncampment.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_overlay="Overlays2/TemplarElite"
+			starting_mark_level="Mark1"
+			description="这是圣殿骑士最简单的防御建筑。它是一些防御舰船的基地，这些舰船会保卫附近的星球。此建筑已针对对抗死灵法师进行了特殊改装。"
+			multiplier_to_all_healths="3" damage_multiplier_to_all_weapons="3"
+			>
+		<data_extension name="DLC3"
+           necromancer_science_to_grant_on_death="150"
+           necromancer_hacking_to_grant_on_death="1"/>
+	</entity>
+
+    <entity name="TemplarFastness" display_name="圣殿骑士要塞"  display_name_for_sidebar="圣要塞"
+	        thematic_groups="Templar" npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+            tags="TemplarMidTierStructure,TemplarPrimaryDefensiveStructure,TemplarFastness"
+			draw_in_galaxy_view="true"
+			visuals="Assets/_DLC3/Templar/TemplarFastness/TemplarFastness.prefab" visuals_bundle="exp3_neinzul_abyss" gimbal_name="AstroTrainDepot"
+			icon_name="Ships4/TemplarFastness"  gimbal_icon_size_multiplier="1.5"
+			y_offset_of_icon="30"
+			voice_group="Silent"
+			category="Ship"
+			size_scale="20"
+			visuals_scale_multiplier="32"
+			y_offset_of_ship_in_visual_space="30"
+			collision_priority="810"
+			description="这是一个强大的圣殿骑士防御建筑。它是一些防御舰船的基地，这些舰船会保卫附近的星球。"
+			behavior="Stationary"
+			starting_mark_level="Mark1"
+			cost_for_ai_to_purchase="500" mark_level_scale_style="Templar"
+            hull_points="250000" shield_points="750000" speed="Immobile"
+            metal_cost="2000000" energy_consumption="25000"
+            armor_mm="180" albedo="0.6" mass_tx="8"
+            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            eligible_for_hacks="CorruptCastle"
+            do_not_target_if_being_hacked="true"
+			priority_as_ai_target="IrreplaceableMisc" priority_as_frd_target="MajorPlanetLevelObjective" priority_to_protect="Irreplaceable"
+				description_appender_dll="AIWarExternalCode"
+				description_appender_type="Arcen.AIW2.External.TemplarAppender"
+            >
+		<data_extension name="DLC3"
+            necromancer_science_to_grant_on_death="500"
+            necromancer_hacking_to_grant_on_death="7"/>
+		<system name="R1" display_name="要塞震荡火箭"
+                category="Weapon" firing_timing="OnlyInRange"
+                damage_per_shot="1250" range="High1" shot_speed="Normal" rate_of_fire="Normal"
+                shots_per_salvo="40" fires_salvos_sequentially="false"
+                shot_type_data="FusionRocket"    
+				>
+        <outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="50" multiplier="2" />
+		</system>
+		<system name="R2" display_name="要塞尾翼稳定脱壳穿甲弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="9000" range="High1" shot_speed="Normal" rate_of_fire="SlightlyLow" fires_salvos_sequentially="true"
+				shot_type_data="Sabot"
+				>
+		<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="5" />
+		</system>
+		
+    </entity>
+	
+	
+    <entity name="TemplarEliteFastness" copy_from="TemplarFastness" display_name="圣殿骑士精英要塞" display_name_for_sidebar="圣精要塞"       
+            tags="TemplarEliteMidTierStructure,TemplarPrimaryDefensiveStructure,TemplarFastness"
+            visuals="Assets/_DLC3/Templar/TemplarFastness/TemplarEliteFastness.prefab" visuals_bundle="exp3_neinzul_abyss"
+            icon_overlay="Overlays2/TemplarElite"
+            description="这是一个强大的圣殿骑士防御建筑。它是一些防御舰船的基地，这些舰船会保卫附近的星球。此建筑已针对对抗死灵法师进行了特殊改装。"
+            multiplier_to_all_healths="3" damage_multiplier_to_all_weapons="3"
+            >
+            <data_extension name="DLC3"
+				necromancer_science_to_grant_on_death="200"
+				necromancer_hacking_to_grant_on_death="1"/>
+            <system name="R1" damage_per_shot="1000"> </system>
+			<system name="R2" damage_per_shot="10000"> </system>
+    </entity>
+
+    <entity name="TemplarCastle" display_name="圣殿骑士城堡" display_name_for_sidebar="圣城堡"
+			thematic_groups="Templar" npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+            tags="TemplarHighTierStructure,TemplarPrimaryDefensiveStructure,TemplarCastle"
+			draw_in_galaxy_view="true"
+			visuals="Assets/_DLC3/Templar/TemplarCastle/TemplarCastle.prefab" visuals_bundle="exp3_neinzul_abyss" gimbal_name="AstroTrainDepot"
+			icon_name="Ships4/TemplarCastle" gimbal_icon_size_multiplier="1.5"
+			y_offset_of_icon="120"
+			voice_group="Silent"
+			category="Ship"
+			size_scale="22"
+			visuals_scale_multiplier="16"
+			y_offset_of_ship_in_visual_space="140"
+			collision_priority="810"
+			description="这是一个非常强大的圣殿骑士防御建筑。它会派出一些舰船来保卫附近的星球。"
+			behavior="Stationary"
+			starting_mark_level="Mark1"
+			cost_for_ai_to_purchase="500" mark_level_scale_style="Templar"
+            hull_points="600000" shield_points="1800000" speed="Immobile"
+            metal_cost="5000000" energy_consumption="35000"
+            armor_mm="350" albedo="0.6" mass_tx="10"
+			shield_size_scale="6" my_forcefield_does_not_shrink="true" my_forcefield_has_no_penalty_for_enemies_firing_out_of_it="true"
+            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            eligible_for_hacks="CorruptCastle"
+            do_not_target_if_being_hacked="true"
+			priority_as_ai_target="IrreplaceableMisc" priority_as_frd_target="MajorPlanetLevelObjective" priority_to_protect="Irreplaceable"
+				description_appender_dll="AIWarExternalCode"
+				description_appender_type="Arcen.AIW2.External.TemplarAppender"
+            >
+        <data_extension name="DLC3"
+            necromancer_science_to_grant_on_death="500"
+            necromancer_hacking_to_grant_on_death="7"
+            />
+        <system name="R1" display_name="城堡震荡火箭"
+                category="Weapon" firing_timing="OnlyInRange"
+                damage_per_shot="4000" range="High1" shot_speed="Normal" rate_of_fire="Normal"
+                shots_per_salvo="40" fires_salvos_sequentially="false"
+                shot_type_data="FusionRocket" 
+				>
+              <outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="50" multiplier="2" />
+            </system>
+		<system name="R2" display_name="城堡尾翼稳定脱壳穿甲弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="15000" range="High1" shot_speed="Normal" rate_of_fire="SlightlyLow" fires_salvos_sequentially="true"
+				shot_type_data="Sabot"
+				>
+		<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="5" />
+		</system>	
+		<system name="R9" display_name="城堡线圈光束"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="5000" range="High1" shot_speed="Normal" rate_of_fire="Misery"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="1.3"
+				hits_all_intersecting_targets="true"				
+				shots_detonate_immediately="true"
+                is_coilbeam="true"	 beam_weapon_visual_style="Lightning_Gold"			
+				>
+		</system>
+
+  </entity>
+  
+  <entity name="TemplarEliteCastle" copy_from="TemplarCastle" display_name="圣殿骑士精英城堡" display_name_for_sidebar="圣精城堡"
+          tags="TemplarEliteHighTierStructure,TemplarPrimaryDefensiveStructure,TemplarCastle"
+          icon_overlay="Overlays2/TemplarElite"
+          visuals="Assets/_DLC3/Templar/TemplarCastle/TemplarEliteCastle.prefab" visuals_bundle="exp3_neinzul_abyss"
+          description="这是一个非常强大的圣殿骑士防御建筑。它是一些防御舰船的基地，这些舰船会保卫附近的星球。此建筑已针对对抗死灵法师进行了特殊改装。"
+          multiplier_to_all_healths="3" damage_multiplier_to_all_weapons="3"
+          >
+    <data_extension name="DLC3"
+        necromancer_science_to_grant_on_death="250"
+        necromancer_hacking_to_grant_on_death="1"
+        />         
+    </entity>
+	
+	<!--Soverign: The Templar King strucuture. Only spawns on AI HWs. Basically, an Ulitmate Fortress that always spawns in the center of the galaxy well. It has four stationary Castles at the edge of the planet well assuming the smallest planet size -->
+		<!-- BADGER, this just needs the appropiate tags and then should work after you remove the comment enclosing it. -->
+	
+	<entity name="TemplarSovereign" display_name="圣殿骑士至尊堡垒" display_name_for_sidebar="圣至尊"
+			thematic_groups="Templar" npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+            tags="TemplarSovereign"
+			draw_in_galaxy_view="true"
+			visuals="Assets/_DLC3/Templar/TemplarSoveriegn/TemplarSovereign.prefab" visuals_bundle="exp3_neinzul_abyss" gimbal_name="AstroTrainDepot"
+			icon_name="Ships4/TemplarSovereign" gimbal_icon_size_multiplier="2"
+			y_offset_of_icon="30"
+			voice_group="Silent"
+			category="Ship"
+			size_scale="22"
+			visuals_scale_multiplier="12" is_always_forced_to_planet_center="true" displaces_other_immobile_objects_as_if_were_planet_tier="true" added_displacement_buffer="1000"
+			y_offset_of_ship_in_visual_space="70"
+			collision_priority="810"
+			description="这是圣殿骑士的首都防御建筑。摧毁至尊堡垒对于确保胜利至关重要，但它不会轻易被击败。它由四座城堡保卫，必须先摧毁这些城堡才能使至尊堡垒变得脆弱。"
+			behavior="Stationary"
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="50000" mark_level_scale_style="Templar" does_not_use_multipliers_from_mark_level="true"
+            hull_points="10000000" shield_points="20000000" speed="Immobile"
+            metal_cost="50000000" energy_consumption="70000"
+            armor_mm="350" albedo="0.6" mass_tx="12"
+			build_points_per_second="10" build_point_cost_for_per_second_construction="27000" force_gravity_well_size_of_planet_to_be_at_least="26000" force_gravity_well_size_of_planet_to_be_at_most="28000"
+			personal_ship_cap_for_per_second_build_point_construction="4"
+			tag_to_spawn_from_for_build_point_for_per_second_construction="SovereignCastle"
+			external_invulnerability_unit_tag="SovereignCastle"
+			external_invulnerability_unit_required_count="1"
+			external_invulnerability_region="ThisPlanet"
+            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			priority_as_ai_target="IrreplaceableMisc" priority_as_frd_target="MajorPlanetLevelObjective" priority_to_protect="Irreplaceable"
+				description_appender_dll="AIWarExternalCode"
+				description_appender_type="Arcen.AIW2.External.TemplarAppender"
+            >
+        <data_extension name="DLC3"
+            necromancer_science_to_grant_on_death="2500"
+            necromancer_hacking_to_grant_on_death="50"
+            />
+        <system name="R1" display_name="城堡震荡火箭"
+                category="Weapon" firing_timing="OnlyInRange"
+                damage_per_shot="25000" range="High1" shot_speed="Normal" rate_of_fire="Normal"
+                shots_per_salvo="40" fires_salvos_sequentially="false"
+                shot_type_data="FusionRocket" 
+				>
+              <outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="50" multiplier="2" />
+            </system>
+		<system name="R2" display_name="城堡尾翼稳定脱壳穿甲弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="65000" range="High1" shot_speed="Normal" rate_of_fire="SlightlyLow" fires_salvos_sequentially="true"
+				shot_type_data="Sabot"
+				>
+		<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="5" />
+		</system>	
+		<system name="R9" display_name="城堡线圈光束"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="30000" range="High1" shot_speed="Normal" rate_of_fire="Misery"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="1.3"
+				hits_all_intersecting_targets="true"				
+				shots_detonate_immediately="true"
+                is_coilbeam="true"	 beam_weapon_visual_style="Lightning_Gold"			
+				>
+		</system>
+	</entity>
+  
+	<entity name="WeakSovereign" copy_from="TemplarSovereign" display_name="圣殿骑士薄弱至尊堡垒" display_name_for_sidebar="圣薄至尊"
+			tags="TemplarWeakSovereign"
+			description="这是圣殿骑士的首都防御建筑。摧毁至尊堡垒对于确保胜利至关重要，但它不会轻易被击败。它由四座要塞保卫，必须先摧毁这些要塞才能使至尊堡垒变得脆弱。"
+			build_points_per_second="10" build_point_cost_for_per_second_construction="27000" force_gravity_well_size_of_planet_to_be_at_least="26000" force_gravity_well_size_of_planet_to_be_at_most="28000"
+			personal_ship_cap_for_per_second_build_point_construction="4"
+			tag_to_spawn_from_for_build_point_for_per_second_construction="SovereignFastness"
+			external_invulnerability_unit_tag="SovereignFastness"
+			external_invulnerability_unit_required_count="1"
+			external_invulnerability_region="ThisPlanet"
+		  multiplier_to_all_healths="0.15" damage_multiplier_to_all_weapons="0.1"
+          >
+		<data_extension name="DLC3"
+			necromancer_science_to_grant_on_death="2500"
+			necromancer_hacking_to_grant_on_death="50"
+			/>         
+    </entity>
+	
+	
+	
+	<entity name="RunedCastle" copy_from="TemplarCastle"  npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+			icon_overlay="Overlays2/Guardian_Shield"
+			display_name="符文城堡" display_name_for_sidebar="符文城堡"
+			tags="SovereignCastle,InvulnerabilityGranter,TemplarCastle"
+			description="这座城堡为至尊堡垒提供无敌状态。摧毁所有符文城堡才能使至尊堡垒变得脆弱。"
+			draw_in_galaxy_view="false"
+			starting_mark_level="Markless" mark_level_scale_style="Templar" does_not_use_multipliers_from_mark_level="true"
+			orbits_parent_at_range="25000" degrees_to_orbit_per_second="0" attempts_to_reach_orbital_point_at_speed="8000"
+			multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="4.5"
+			> 
+	</entity>
+
+	<entity name="WeakTemplarSovereign" copy_from="TemplarFastness" display_name="符文要塞" display_name_for_sidebar="符要塞"
+			tags="InvulnerabilityGranter,SovereignFastness"
+			starting_mark_level="Markless" mark_level_scale_style="Templar" does_not_use_multipliers_from_mark_level="true"
+			description="这座要塞为至尊堡垒提供无敌状态。摧毁所有符文要塞才能使至尊堡垒变得脆弱。"
+			draw_in_galaxy_view="false"
+			orbits_parent_at_range="25000" degrees_to_orbit_per_second="0" attempts_to_reach_orbital_point_at_speed="8000"
+			multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="4.5"
+			>
+		<data_extension name="DLC3"
+			necromancer_science_to_grant_on_death="2500"
+			necromancer_hacking_to_grant_on_death="50"
+			/>         
+    </entity>
+
+ 
+ 
+<!--Constructor is a mobile builder. Weapon no longer functions, just there to keep saves from breaking -->
+<entity name="TemplarConstructor" display_name="圣殿骑士建造者"  display_name_for_sidebar="圣建造者"
+	thematic_groups="Templar" npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+        tags="TemplarConstructor"
+        visuals="Assets/_DLC3/Templar/TemplarConstructor/TemplarConstructor.prefab" visuals_bundle="exp3_neinzul_abyss"
+        icon_name="Ships4/TemplarConstructor" gimbal_icon_size_multiplier="1.4" icon_overlay="Overlays2/Guardian_Spider"
+	y_offset_of_icon="30"
+	voice_group="Silent"
+	category="Ship"
+	size_scale="6.5"
+	visuals_scale_multiplier="11"
+        draw_in_galaxy_view="true"
+        shows_on_galaxy_map_for_explored_planets="true" 
+	collision_priority="100"
+	description="圣殿骑士将使用这个巨大的建筑平台建造新的防御建筑。它们行动缓慢，依靠引擎伤害来摆脱攻击者，但杀死这些建造者将获得大量的科研点数和黑客点数。它们还会造成范围伤害以抵御成群的攻击者。
+
+这些是关键目标；摧毁建造者将限制圣殿骑士的扩张能力。"
+	starting_mark_level="Mark1"
+	cost_for_ai_to_purchase="5000" mark_level_scale_style="Templar"
+	hull_points="500000" shield_points="1500000" speed="VeryVeryLittle1"
+	metal_cost="300000" energy_consumption="12500"
+	armor_mm="120" albedo="0.4" engine_gx="12" mass_tx="7"
+	ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+	ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+        priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="Expendable"
+	description_appender_dll="AIWarExternalCode"
+	description_appender_type="Arcen.AIW2.External.TemplarAppender"
+	>
+    <system name="WG" display_name="引力加农炮"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="2500" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Misery"
+	    shot_type_data="ElegantCurl"
+            shots_per_salvo="30"
+            base_engine_stun_per_shot="8" 
+            engine_stun_to_engine_gx_less_than="22"
+	    max_engine_stun_seconds="10" added_target_evaluator="EngineDamageAsMinorPart"
+		>
+      <outgoing_damage_modifier based_on="engine_gx" comparison_type="AtMost" compared_to="7" multiplier="3" />		
+    </system>
+    <system name="W1" display_name="防御爆炸"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="500" range="AboveAverage3" shot_speed="Normal" rate_of_fire="High"
+	    shots_per_salvo="20" fires_salvos_sequentially="false"
+	    shot_type_data="DevourerShot_Nemesis"
+	    area_of_effect_size="400"
+	    maximum_number_of_targets_hit_per_shot="10"
+	    >
+    </system>
+
+    <ship_class_data can_be_zombified_and_similar="false" />
+    <data_extension name="DLC3"
+                    necromancer_science_to_grant_on_death="1000"
+                    necromancer_hacking_to_grant_on_death="25"/>
+
+  </entity>
+
+  <!-- Templar Rift; the Necromancer hacks these to upgrade itself -->
+	<entity name="TemplarRift" display_name="圣殿骑士裂隙" display_name_for_sidebar="裂隙"
+			thematic_groups="Templar"
+			tags="TemplarRift,TemplarNormalRift,HackAsIfCapturable"
+            draw_in_galaxy_view="true"
+            shows_on_galaxy_map_for_explored_planets="true"
+			visuals="assets/_finalgamemeshes/blankshipsootheraddonscandrawalone.prefab" ship_skips_traditional_rendering="true"
+			addon_object_or_particle_field="TemplarRift" addon_object_or_particle_field_scale="26"
+            icon_name="Ships4/TemplarRift" gimbal_icon_size_multiplier="1.25"
+			y_offset_of_icon="30"
+			category="Ship"
+			size_scale="9"
+			visuals_scale_multiplier="10"
+			collision_priority="900"
+			target_type_for_player="NeverTarget"
+			description="这些通往高能维度的裂隙由圣殿骑士守护。死灵法师可以汲取其能量为己所用。"
+			behavior="Stationary"
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="200"
+			hull_points="90000" shield_points="210000" speed="Immobile"
+			metal_cost="6500000" energy_consumption="0"
+			armor_mm="80" albedo="0.9" mass_tx="2"
+			ship_or_structure_explosion_sfx="StructureMidsize_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="StructureLostOnOtherPlanet_Explosion"
+			voice_group="Silent"
+			fleet_membership="Planetary"
+			eligible_for_hacks="RiftHack"
+			priority_as_ai_target="IgnoreMe" priority_as_frd_target="IgnoreMe" priority_to_protect="IgnoreMe"
+				description_appender_dll="AIWarExternalCode"
+				description_appender_type="Arcen.AIW2.External.TemplarRiftAppender"
+          >
+		<ship_class_data can_be_damaged="false" />
+  </entity>
+  <entity  name="TemplarInitialRift" copy_from="TemplarRift"
+           tags="TemplarRift,TemplarInitialRift,HackAsIfCapturable"
+           >
+  </entity>
+
+  <!-- These are Strikecraft tier. We have two forms; regular and Elite.
+	  Elite units are stronger and don't grant necromancer science. Elite units start spawning in the mid game instead of regular units because
+	  necromancers were winding up with way too many resources later in the game. -->
+	<entity name="TemplarSquire" display_name="侍从骑士" display_name_for_sidebar="侍从"
+          thematic_groups="Templar"
+          tags="TemplarStrikecraft"
+		  visuals="Assets/_DLC3/Templar/TemplarSquire/TemplarSquire.prefab" visuals_bundle="exp3_neinzul_abyss"
+		  icon_name="Ships4/TemplarSquire"
+		  voice_group="Silent"
+		  category="Ship" is_strikecraft="true"
+		  size_scale="3"
+		  visuals_scale_multiplier="3"
+		  collision_priority="100"
+		  description="侍从骑士是一种基础的圣殿骑士突击飞船，擅长从远处向小股敌人投掷手榴弹，这对骷髅等小型飞船尤其致命。"
+		  starting_mark_level="Mark1"
+		  cost_for_ai_to_purchase="50" mark_level_scale_style="Templar"
+		  hull_points="3500" shield_points="0" speed="AboveAverage1"
+		  metal_cost="1800" energy_consumption="400"
+		  armor_mm="50" albedo="0.3" engine_gx="8" mass_tx="0.21"
+		  ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+		  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+          priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			description_appender_dll="AIWarExternalCode"
+			description_appender_type="Arcen.AIW2.External.TemplarAppender"
+			>
+		<data_extension name="DLC3"
+			necromancer_science_to_grant_on_death="3"
+			necromancer_hacking_to_grant_on_death="0"
+			immune_to_necromancy="true"/>
+		<system name="WG" display_name="圣手手雷"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="800" range="AboveAverage3" shot_speed="Slow" rate_of_fire="VeryLow" fires_salvos_sequentially="true"
+				area_of_effect_size="400" shot_type_data="LightningExplosionAOEShot"
+				maximum_number_of_targets_hit_per_shot="9"
+				>
+		<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtMost" compared_to="1" multiplier="3" />
+		</system>
+	</entity>
+  
+	<entity  name="TemplarEliteSquire" copy_from="TemplarSquire" display_name="精英侍从骑士" display_name_for_sidebar="精侍" 
+           tags="TemplarEliteStrikecraft"
+           icon_overlay="Overlays2/TemplarElite"
+		   cost_for_ai_to_purchase="100"
+           hull_points="10500" 
+           description="侍从骑士是一种基础的圣殿骑士突击飞船，擅长从远处向小股敌人投掷手榴弹，这对骷髅等小型飞船尤其致命。这些精英版本经过特别改装，专门用于对抗死灵法师。"
+           >
+    <data_extension name="DLC3"
+          necromancer_science_to_grant_on_death="0"
+          necromancer_hacking_to_grant_on_death="0"
+          immune_to_necromancy="true"/>
+    <system name="WG" damage_per_shot="2400">	
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+
+	<entity name="TemplarSquireAttendant" copy_from="TemplarEliteSquire" display_name="侍从骑士护卫"  display_name_for_sidebar="侍护"
+            tags="TemplarRetinue"
+            icon_overlay="Overlays1/Turret_Bastille"
+			cost_for_ai_to_purchase="240"
+			description="侍从骑士是一种基础的圣殿骑士突击飞船，擅长从远处向小股敌人投掷手榴弹，这对骷髅等小型飞船尤其致命。这位侍从骑士是传令官的护卫。"
+			orbits_parent_at_range="1500" degrees_to_orbit_per_second="6" attempts_to_reach_orbital_point_at_speed="8000"
+			dies_if_parent_dies="true" is_blocked_from_transporting="true"
+			>
+		<data_extension name="DLC3"
+            necromancer_science_to_grant_on_death="0"
+            necromancer_hacking_to_grant_on_death="0"
+            />
+    </entity>
+
+	<entity name="TemplarPage" display_name="见习骑士" display_name_for_sidebar="见习"
+			thematic_groups="Templar"
+			tags="TemplarStrikecraft"
+			visuals="Assets/_DLC3/Templar/TemplarPage/TemplarPage.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships4/TemplarPage"
+			voice_group="Silent"
+			size_scale="4"
+			visuals_scale_multiplier="4"
+			category="Ship" is_strikecraft="true"
+			collision_priority="100"
+			description="见习骑士是一种拥有坚固船体的圣殿骑士蜂群突击飞船，尤其擅长对抗重装甲且体积庞大的飞船。"
+			starting_mark_level="Mark1" 
+			cost_for_ai_to_purchase="20" mark_level_scale_style="Templar" strength_multiplier="1.4"
+			hull_points="1700" shield_points="0" speed="AboveAverage2"
+			metal_cost="1500" energy_consumption="150"
+			armor_mm="30" albedo="0.3" engine_gx="14" mass_tx="0.21"
+			damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.5"
+			ship_or_structure_explosion_sfx="ShipMidsize_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+            priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+				description_appender_dll="AIWarExternalCode"
+				description_appender_type="Arcen.AIW2.External.TemplarAppender"
+            >
+		<data_extension name="DLC3"
+			  necromancer_science_to_grant_on_death="3"
+			  necromancer_hacking_to_grant_on_death="0"
+			  immune_to_necromancy="true"/>
+		<system name="V1" display_name="见习骑士炸药"
+			  category="Weapon" firing_timing="OnlyInRange"
+			  damage_per_shot="30" range="Normal4" shot_speed="Normal" rate_of_fire="Misery"
+			  fires_salvos_sequentially="false"
+			  shot_type_data="PikeShot_Gold"				
+			  >
+        <outgoing_damage_modifier based_on="Armor_mm" comparison_type="GreaterThan" compared_to="120" multiplier="3" />
+        <outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="3" />
+		</system>
+    </entity>
+  
+	<entity name="TemplarElitePage" copy_from="TemplarPage" display_name="精英见习骑士" display_name_for_sidebar="精见"
+			tags="TemplarEliteStrikecraft"
+			icon_overlay="Overlays2/TemplarElite"
+			cost_for_ai_to_purchase="40"
+		    hull_points="5100" 
+		    description="见习骑士是一种拥有坚固船体的圣殿骑士蜂群突击飞船，尤其擅长对抗重装甲且体积庞大的飞船。这些精英版本经过特别改装，专门用于对抗死灵法师。"
+            >
+    <data_extension name="DLC3"
+          necromancer_science_to_grant_on_death="0"
+          necromancer_hacking_to_grant_on_death="0"
+          immune_to_necromancy="true"/>
+		<system name="V1" damage_per_shot="90">
+		</system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+	
+	<entity name="TemplarPenitentPage" copy_from="TemplarPage" display_name="忏悔见习骑士" display_name_for_sidebar="忏见"
+			tags="TemplarEliteStrikecraft"
+			icon_overlay="Overlays1/Corvette_Pike"
+			starting_mark_level="Mark1"
+		    hull_points="5000" 
+		    description="见习骑士是一种拥有坚固船体的圣殿骑士蜂群突击飞船，尤其擅长对抗重装甲且体积庞大的飞船。这位忏悔见习骑士已发誓放弃过去，现在正为崇高的目标服务。"
+            >
+    <data_extension name="DLC3"
+          necromancer_science_to_grant_on_death="0"
+          necromancer_hacking_to_grant_on_death="0"
+          immune_to_necromancy="true"/>
+		<system name="V1" damage_per_shot="120">
+		</system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+	
+	<entity name="TemplarPageAttendant" copy_from="TemplarElitePage" display_name="见习骑士护卫"  display_name_for_sidebar="见护"
+            tags="TemplarRetinue"
+            icon_overlay="Overlays1/Turret_Bastille"
+			cost_for_ai_to_purchase="240"
+			description="见习骑士是一种拥有坚固船体的圣殿骑士蜂群突击飞船，尤其擅长对抗重装甲且体积庞大的飞船。这位见习骑士是传令官的护卫。"
+			orbits_parent_at_range="1500" degrees_to_orbit_per_second="6" attempts_to_reach_orbital_point_at_speed="8000"
+			dies_if_parent_dies="true" is_blocked_from_transporting="true"
+			>
+		<data_extension name="DLC3"
+            necromancer_science_to_grant_on_death="0"
+            necromancer_hacking_to_grant_on_death="0"
+            />
+    </entity>
+
+    <entity name="TemplarApprentice" display_name="学徒骑士" display_name_for_sidebar="学徒"
+	        thematic_groups="Templar"
+            tags="TemplarStrikecraft"
+			visuals="Assets/_DLC3/Templar/TemplarApprentice/TemplarApprentice.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships4/TemplarApprentice"
+			voice_group="Silent"
+			category="Ship" is_strikecraft="true"
+			size_scale="5.5"
+			visuals_scale_multiplier="4"
+			collision_priority="100"
+			description="学徒骑士是一种基础的圣殿骑士突击飞船，它是一名隐形近战战斗机，配备了聚变锯，可以部分绕过护盾。"
+			starting_mark_level="Mark1" 
+			cost_for_ai_to_purchase="120" mark_level_scale_style="Templar" strength_multiplier="1.8"
+			hull_points="8000" shield_points="0" speed="AboveAverage3"
+			metal_cost="5400" energy_consumption="800"
+			armor_mm="70" albedo="0.7" engine_gx="7" mass_tx="0.3"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+            priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+				description_appender_dll="AIWarExternalCode"
+				description_appender_type="Arcen.AIW2.External.TemplarAppender"
+              >
+		<data_extension name="DLC3"
+            necromancer_science_to_grant_on_death="3"
+            necromancer_hacking_to_grant_on_death="0"
+            immune_to_necromancy="true"/>
+		 <system name="WJ" display_name="近战聚变锯"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="100" range="AlmostNone" seek_range="Normal1" shot_speed="Fast" rate_of_fire="High" fires_salvos_sequentially="false"
+				shot_type_data="MeleeInvisible" added_target_evaluator="Melee"
+				base_percent_damage_bypasses_personal_shields="0.5" cloaking_percent_loss_from_firing="0.2"
+				>
+		</system>
+		<system name="C" display_name="隐形装置"
+				category="Passive"
+				cloaking_points="1000" cloaking_points_added_per_mark="500"
+				>
+		</system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+
+    <entity name="TemplarEliteApprentice" copy_from="TemplarApprentice" display_name="精英学徒骑士"  display_name_for_sidebar="精徒"
+            tags="TemplarEliteStrikecraft"
+            icon_overlay="Overlays2/TemplarElite"
+			cost_for_ai_to_purchase="240"
+			hull_points="24000" 
+			description="学徒骑士是一种基础的圣殿骑士突击飞船，它是一名隐形近战战斗机，配备了聚变锯，可以部分绕过护盾。这些精英版本经过特别改装，专门用于对抗死灵法师。"
+			>
+		<data_extension name="DLC3"
+            necromancer_science_to_grant_on_death="0"
+            necromancer_hacking_to_grant_on_death="0"
+            />
+		<system name="WJ" damage_per_shot="300"
+			>
+		<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="30" multiplier="3" />
+        </system>
+    </entity>
+	
+	 
+	
+	
+<!-- Templar Guardian Tier -->
+
+  <!-- Templar units can belong to the AI (or hunter, etc) or to the Templar faction -->
+  <!-- Sergeant renamed to Inquisitor -->
+	<entity name="TemplarSergeant" display_name="审判官" display_name_for_sidebar="审判官" 
+			thematic_groups="Templar"
+			tags="TemplarGuardian"
+			visuals="Assets/_DLC3/Templar/TemplarSergeant/TemplarSergeant.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships4/TemplarSergeant"
+			voice_group="Silent"
+			category="Ship" special_entity_type="AIGuardian"
+			size_scale="6.8"
+			visuals_scale_multiplier="2.8"
+			y_offset_of_icon="16"
+			collision_priority="400"
+			description="审判官是一艘脆弱但致命的圣殿骑士护卫舰，它是一名隐形轰炸舰，会进行齐射，在发射下一轮齐射前隐形。它的武器专门用于对付拥有强大引擎的飞船。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="450" mark_level_scale_style="Templar" strength_multiplier="2"		
+			hull_points="26000" shield_points="13000" speed="BelowAverage1"
+			metal_cost="80000" energy_consumption="7500"
+			armor_mm="40" albedo="0.7" engine_gx="7" mass_tx="5"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+            priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			  description_appender_dll="AIWarExternalCode"
+			  description_appender_type="Arcen.AIW2.External.TemplarAppender"
+			>
+		<data_extension name="DLC3"
+          necromancer_science_to_grant_on_death="9"
+          necromancer_hacking_to_grant_on_death="0"
+          immune_to_necromancy="true"/>
+		<ai_ship_group_membership name="AntiNecromancerGuardians" weight="100"/>
+		<system name="W1" display_name="反重力鱼雷"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1500" range="High1" shot_speed="Slow" rate_of_fire="Devourer" fires_salvos_sequentially="true"
+				shot_type_data="PlasmaTorpedo" cloaking_percent_loss_from_firing="0.2"
+				use_alternate_rate_of_fire_after_x_shots="6" alternate_rate_of_fire="PeriodicActivation" use_alternate_rate_of_fire_for_x_shots_before_reverting="1"	
+				>
+				<outgoing_damage_modifier based_on="engine_gx" comparison_type="AtLeast" compared_to="14" multiplier="3" />
+		</system>
+		<system name="C" display_name="隐形装置" category="Passive" cloaking_points="2000" cloaking_points_added_per_mark="1000"  >
+		</system>
+		<ship_class_data can_be_zombified_and_similar="false"/>
+	</entity>
+  
+	<entity name="TemplarEliteSergeant" copy_from="TemplarSergeant" display_name="精英审判官" display_name_for_sidebar="精审"
+			tags="TemplarEliteGuardian"
+			icon_overlay="Overlays2/TemplarElite"
+			cost_for_ai_to_purchase="900"
+		    hull_points="78000" shield_points="39000" 
+		    description="审判官是一艘脆弱但致命的圣殿骑士护卫舰，它是一名隐形轰炸舰，会进行齐射，在发射下一轮齐射前隐形。它的武器专门用于对付拥有强大引擎的飞船。这些精英版本经过特别改装，专门用于对抗死灵法师。"
+            > 
+		<data_extension name="DLC3"
+          necromancer_science_to_grant_on_death="0"
+          necromancer_hacking_to_grant_on_death="0"
+          immune_to_necromancy="true"/>
+		<system name="W1" damage_per_shot="3000">
+		</system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+  
+	<entity name="TemplarExorcist" display_name="驱魔师" display_name_for_sidebar="驱魔师"
+			thematic_groups="Templar"
+			tags="TemplarGuardian"
+			visuals="Assets/_DLC3/Templar/TemplarExorcist/TemplarExorcist.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships4/TemplarExorcist"
+			voice_group="Silent"
+			category="Ship" special_entity_type="AIGuardian"
+			size_scale="9.2"
+			visuals_scale_multiplier="2.6"
+			collision_priority="400"
+			description="驱魔师是一艘强大的圣殿骑士护卫舰，它会在自身周围爆发范围伤害，擅长消灭高反照率的飞船，如隐形飞船。在死亡时，会释放最后一次爆炸。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="700" mark_level_scale_style="Templar" strength_multiplier="1.7"
+			hull_points="56000" shield_points="28000" speed="Normal1"
+			metal_cost="80000" energy_consumption="7500"
+			armor_mm="120" albedo="0.4" engine_gx="7" mass_tx="5"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+            priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			  description_appender_dll="AIWarExternalCode"
+			  description_appender_type="Arcen.AIW2.External.TemplarAppender"
+			  >
+		<data_extension name="DLC3"
+			necromancer_science_to_grant_on_death="9"
+			necromancer_hacking_to_grant_on_death="0"
+			  immune_to_necromancy="true"/>
+		<ai_ship_group_membership name="AntiNecromancerGuardians" weight="100"/>
+		<system name="Q1" display_name="严厉爆发"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="300" range="Small1" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+				shot_type_data="LightningGuardianExplosionAOEShot"
+				area_of_effect_size="3500"				
+				shots_detonate_immediately="true"
+				maximum_number_of_targets_hit_per_shot="40"
+				use_alternate_rate_of_fire_after_x_shots="3" alternate_rate_of_fire="PeriodicActivation"  use_alternate_rate_of_fire_for_x_shots_before_reverting="1"
+				>
+				<outgoing_damage_modifier based_on="Albedo" comparison_type="AtLeast" compared_to="0.7" multiplier="6" />	
+		</system>
+		<system name="Q2" display_name="严厉终曲"
+				category="Weapon" firing_timing="OnlyInRange"
+				only_fires_on_death="true"
+				damage_per_shot="3000" range="Small1" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+				shot_type_data="LightningExplosionAOEShot" 
+				area_of_effect_size="3500"				
+				shots_detonate_immediately="true"
+				maximum_number_of_targets_hit_per_shot="40"
+				health_change_by_max_health_divided_by_this_per_attack="-1"
+				>
+			<outgoing_damage_modifier based_on="Albedo" comparison_type="AtLeast" compared_to="0.7" multiplier="6" />
+		</system>
+		<system name="T" display_name="超光速粒子阵列"
+				category="Passive" tachyon_points="50" tachyon_points_added_per_mark="25" tachyon_range="Normal1" tachyon_hits_albedo_less_than="0.75">
+		</system>
+		<ship_class_data can_be_zombified_and_similar="false" />
+  </entity>
+  
+	<entity name="TemplarEliteExorcist" copy_from="TemplarExorcist" display_name="精英驱魔人" display_name_for_sidebar="精驱魔人"
+			tags="TemplarEliteGuardian"
+			icon_overlay="Overlays2/TemplarElite"
+			cost_for_ai_to_purchase="1400"
+		    hull_points="224000" shield_points="112000" 
+		    description="驱魔人是一艘强大的圣殿骑士护卫舰，能在自身周围造成范围伤害，尤其擅长击杀反照率高的舰船，如隐形舰船。在被摧毁时，会释放最后一次爆炸。这些精英版本是专门为对抗死灵法师而改装的。"
+            >
+		<data_extension name="DLC3"
+          necromancer_science_to_grant_on_death="0"
+          necromancer_hacking_to_grant_on_death="0"
+          immune_to_necromancy="true"/>
+		<system name="Q1" damage_per_shot="600">
+		</system>
+		<system name="Q2" damage_per_shot="6000">
+		</system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+  
+	<entity name="TemplarPaladin" display_name="圣殿骑士团骑士" display_name_for_sidebar="圣骑"
+			thematic_groups="Templar"
+			tags="TemplarGuardian"
+			visuals="Assets/_DLC3/Templar/TemplarPaladin/TemplarPaladin.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships4/TemplarPaladin"
+			voice_group="Silent"
+			category="Ship" special_entity_type="AIGuardian"
+			size_scale="10.2"
+			visuals_scale_multiplier="1.7"
+			collision_priority="400"
+			description="圣殿骑士团骑士是一艘强大的圣殿骑士护卫舰，它可以净化敌人，给予他们第二次机会，以忏悔侍从的身份服务于崇高的目标。对于那些不可救药的敌人，它会用光芒进行严厉的惩戒。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="700" mark_level_scale_style="Templar" strength_multiplier="2.5"
+			hull_points="60000" shield_points="30000" speed="Normal1"
+			metal_cost="80000" energy_consumption="7500"
+			armor_mm="180" albedo="0.7" engine_gx="7" mass_tx="5"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+            priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			  description_appender_dll="AIWarExternalCode"
+			  description_appender_type="Arcen.AIW2.External.TemplarAppender"
+			>
+		<data_extension name="DLC3"
+			necromancer_science_to_grant_on_death="9"
+			necromancer_hacking_to_grant_on_death="0"
+			immune_to_necromancy="true"/>
+		<ai_ship_group_membership name="AntiNecromancerGuardians" weight="100"/>
+		<system name="WJ" display_name="赦免"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1000" range="Normal2" shot_speed="Normal" rate_of_fire="FairlyLow" fires_salvos_sequentially="true"
+				shot_type_data="MeleeInvisible"
+				only_targets_mobile_units="true"
+				can_devour="true" devour_function_name="Purify" devour_mass_lower_than="1"
+				unit_to_spawn_on_infestation="TemplarPenitentPage" infestation_function_name="Conversion"
+				>    
+		</system>
+		<system name="R9" display_name="净化之光"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="500" range="Normal2" shot_speed="Normal" rate_of_fire="Low"
+				shot_type_data="HeavyBeamInvisible"
+				hits_all_intersecting_targets="true"				
+				shots_detonate_immediately="true"
+				maximum_number_of_targets_hit_per_shot="10"
+				number_beams_to_fire="10" beam_weapon_visual_style="Laser_Yellow"
+				degrees_offset_per_beam="1"				
+				>
+		</system>
+		<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+	
+	<entity name="TemplarElitePaladin" copy_from="TemplarPaladin" display_name="精英圣骑士" display_name_for_sidebar="精圣骑"
+			tags="TemplarEliteGuardian"
+			icon_overlay="Overlays2/TemplarElite"
+			cost_for_ai_to_purchase="2100"
+		    hull_points="240000" shield_points="120000" 
+		    description="圣骑士是强大的圣殿骑士护卫舰，它能净化敌人，给予他们作为忏悔侍从为崇高目标效力的第二次机会。对于不可救药者，它会用光芒进行严厉惩戒。这些精英版本经过特殊改装，专门用于对抗死灵法师。"
+            >
+    <data_extension name="DLC3"
+          necromancer_science_to_grant_on_death="0"
+          necromancer_hacking_to_grant_on_death="0"
+          immune_to_necromancy="true"/>
+		<system name="WJ" damage_per_shot="2000">
+		</system>
+		<system name="R9" damage_per_shot="1000">
+		</system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+	
+	<entity name="HarbingerElitePaladin" copy_from="TemplarElitePaladin" display_name="预言圣骑士" display_name_for_sidebar="F 圣骑士"
+			tags=""
+			starting_mark_level="Mark1"
+		    icon_overlay="Overlays2/TemplarElite"
+			description="强大的圣殿骑士护卫舰——圣骑士，可以净化敌人，给予他们第二次机会，以悔悟侍从的身份投身崇高的使命。对于那些不可饶恕之人，圣骑士会用光芒进行严厉的惩戒。先驱者曾预言过惩戒的降临，而这些圣骑士便是证明。"
+            >
+    <data_extension name="DLC3"
+          necromancer_science_to_grant_on_death="0"
+          necromancer_hacking_to_grant_on_death="0"
+          immune_to_necromancy="true"/>
+		<system name="WJ" damage_per_shot="2000">
+		</system>
+		<system name="R9" damage_per_shot="1000">
+		</system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+	
+	
+	<entity name="TemplarKnight" display_name="圣骑士" display_name_for_sidebar="圣骑士"
+			thematic_groups="Templar"
+			tags="TemplarGuardian"
+			visuals="Assets/_DLC3/Templar/TemplarKnight/TemplarKnight.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships4/TemplarKnight"
+			voice_group="Silent"
+			category="Ship" special_entity_type="AIGuardian"
+			size_scale="12.6"
+			visuals_scale_multiplier="2.2"
+			collision_priority="400"
+			description="强大的圣殿骑士护卫舰，圣骑士会冲向敌人并进行近战攻击。在造成伤害时恢复生命值，特别是对抗有护甲的敌人时。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="750" mark_level_scale_style="Templar" strength_multiplier="2"
+			hull_points="50000" shield_points="25000" speed="AboveAverage4"
+			metal_cost="80000" energy_consumption="7500"
+			armor_mm="120" albedo="0.3" engine_gx="22" mass_tx="5"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+            priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			  description_appender_dll="AIWarExternalCode"
+			  description_appender_type="Arcen.AIW2.External.TemplarAppender"
+			>
+		<data_extension name="DLC3"
+			necromancer_science_to_grant_on_death="9"
+			necromancer_hacking_to_grant_on_death="0"
+			immune_to_necromancy="true"/>
+		<ai_ship_group_membership name="AntiNecromancerGuardians" weight="100"/>
+		<system name="Q5" display_name="骑枪"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1000" range="AlmostNone" seek_range="Normal1" shot_speed="Fast" rate_of_fire="SlightlyLow" fires_salvos_sequentially="false"
+				shot_type_data="MeleeInvisible" added_target_evaluator="Melee"
+				health_change_per_damage_dealt="0.15"
+				>
+		<outgoing_damage_modifier based_on="Armor_mm" comparison_type="MultiplesOf" compared_to="35" multiplier="1" max_multiplier="10" />		
+		</system>
+		<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+	
+	<entity name="TemplarEliteKnight" copy_from="TemplarKnight" display_name="精英圣骑士" display_name_for_sidebar="精圣"
+			tags="TemplarEliteGuardian"
+			icon_overlay="Overlays2/TemplarElite"
+			cost_for_ai_to_purchase="1500"
+		    hull_points="200000" shield_points="100000" 
+		    description="强大的圣殿骑士护卫舰，圣骑士会冲向敌人并进行近战攻击。在造成伤害时恢复生命值，特别是对抗有护甲的敌人时。这些精英版本经过特殊改装，专门用于对抗死灵法师。"
+            >
+    <data_extension name="DLC3"
+          necromancer_science_to_grant_on_death="0"
+          necromancer_hacking_to_grant_on_death="0"
+          immune_to_necromancy="true"/>
+		<system name="Q5" damage_per_shot="2000">
+		</system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+	<entity name="TemplarKnightErrant" copy_from="TemplarEliteKnight" display_name="浪游圣骑士" display_name_for_sidebar="浪圣"
+			tags=""
+			icon_overlay="Overlays1/Corvette_Pike"
+			hull_points="25000" shield_points="12500" 
+		    starting_mark_level="Mark1"
+		    description="强大的圣殿骑士护卫舰，圣骑士会冲向敌人并进行近战攻击。在造成伤害时恢复生命值，特别是对抗有护甲的敌人时。这些圣骑士抛弃了他们的前主人，响应圣殿骑士先知的荣耀号召。"
+            >
+    <data_extension name="DLC3"
+          necromancer_science_to_grant_on_death="0"
+          necromancer_hacking_to_grant_on_death="0"
+          immune_to_necromancy="true"/>
+		<system name="Q5" damage_per_shot="2000">
+		</system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+
+
+<!--Dire Guardian Tier Templar -->
+	<entity name="TemplarSeneschal" display_name="圣殿骑士管家" display_name_for_sidebar="圣管家"   
+			thematic_groups="Templar"
+			tags="TemplarDire"
+			visuals="Assets/_DLC3/Templar/TemplarSeneschal/TemplarSeneschal.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships4/TemplarSeneschal" gimbal_icon_size_multiplier="1.5"
+			uses_large_health_bar="true"
+            category="Ship" special_entity_type="AIDireGuardian"
+            size_scale="17.8"
+			visuals_scale_multiplier="3.5"
+			voice_group="Silent"
+			collision_priority="400"
+			description="圣殿骑士的狡猾驱逐舰，管家号处于隐形状态，配备两种麻痹武器，分别专门针对大型单体舰船和小型舰船群。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="6500" mark_level_scale_style="Templar" strength_multiplier="2"			
+			hull_points="140000" shield_points="280000" speed="AboveAverage1"
+			metal_cost="800000" energy_consumption="25000"
+			armor_mm="120" albedo="0.7" engine_gx="14" mass_tx="7"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+            priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			  description_appender_dll="AIWarExternalCode"
+			  description_appender_type="Arcen.AIW2.External.TemplarAppender"
+          >
+    <data_extension name="DLC3"
+        necromancer_science_to_grant_on_death="20"
+        necromancer_hacking_to_grant_on_death="0"
+          immune_to_necromancy="true"/>
+    <ai_ship_group_membership name="AntiNecromancerDires" weight="100"/>
+	<ship_class_data can_be_zombified_and_similar="false" />
+	<system name="R5" display_name="眩晕打击"
+				category="Weapon" firing_timing="OnlyInRange" damage_per_shot="2500" range="Small5" shot_speed="Fast" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+				shot_type_data="ExtremelyLongRangeIon" base_paralysis_seconds_per_shot="2" paralysis_to_ships_mass_tx_less_than="7" 
+				use_alternate_rate_of_fire_after_x_shots="6" alternate_rate_of_fire="PeriodicActivation"  use_alternate_rate_of_fire_for_x_shots_before_reverting="1" 
+				cloaking_percent_loss_from_firing="0.2"
+				>
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="MultiplesOf" compared_to="1" multiplier="1" max_multiplier="10" />
+	</system>
+	<system name="R6" display_name="下达指令"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="3500" range="Small5" shot_speed="Instant" rate_of_fire="PeriodicActivation" fires_salvos_sequentially="false"
+				shot_type_data="LightningExplosionAOEShot" 
+				base_paralysis_seconds_per_shot="8" paralysis_to_ships_mass_tx_less_than="5.5"
+				area_of_effect_size="3000"
+				maximum_number_of_targets_hit_per_shot="30"				
+				cloaking_percent_loss_from_firing="0.2"
+				>	
+    </system>
+	<system name="C" display_name="隐形装置" category="Passive" cloaking_points="2500" cloaking_points_added_per_mark="1000">
+    </system>
+  </entity>
+  
+  
+    <entity name="TemplarHospitaller" display_name="圣殿骑士医护骑士" display_name_for_sidebar="圣医护"
+			thematic_groups="Templar"
+			tags="TemplarDire"
+			visuals="Assets/_DLC3/Templar/TemplarHospitaller/TemplarHospitaller.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships4/TemplarHospitaller" gimbal_icon_size_multiplier="1.5"
+			uses_large_health_bar="true"
+            category="Ship" special_entity_type="AIDireGuardian"
+            size_scale="17.8"
+			visuals_scale_multiplier="6.5"
+			voice_group="Silent"
+			collision_priority="400"
+			description="圣殿骑士的支援型驱逐舰，医护骑士号会以自身生命值为代价为倒下的盟友恢复生命值，并且可以在非战斗状态下自我恢复。它配备一种行星级射程的攻击武器，旨在摧毁刚抵达的舰船。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="6500" mark_level_scale_style="Templar" strength_multiplier="2"			
+			hull_points="420000" shield_points="0" speed="Normal1"
+			metal_cost="800000" energy_consumption="25000"
+			armor_mm="50" albedo="0.5" engine_gx="14" mass_tx="7"
+			regenerates_dying_ships_at_this_health_cost_ratio="1"
+			will_not_regenerate_dying_ships_if_health_below_this_percentage="0.25"
+			seconds_to_fully_regenerate_hull="120"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+            priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			  description_appender_dll="AIWarExternalCode"
+			  description_appender_type="Arcen.AIW2.External.TemplarAppender"
+			>
+		<data_extension name="DLC3"
+			necromancer_science_to_grant_on_death="20"
+			necromancer_hacking_to_grant_on_death="0"
+			immune_to_necromancy="true"/>
+		<ai_ship_group_membership name="AntiNecromancerDires" weight="100"/>
+		<ship_class_data can_be_zombified_and_similar="false" />
+		<system name="WT" display_name="脉冲轨道炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="250" range="Planetary" shot_speed="Normal" rate_of_fire="Low" fires_salvos_sequentially="false"
+				shots_per_salvo="20"  
+				shot_type_data="LaserPulse_DeepBlue"				
+				>
+			<outgoing_damage_modifier based_on="TargetTimeAtPlanet" comparison_type="LessThan" compared_to="20" multiplier="5" />		
+		</system>
+  </entity>
+	<entity name="TemplarGrandMaster" display_name="圣殿骑士大团长" display_name_for_sidebar="圣大团长"
+			thematic_groups="Templar"
+			tags="TemplarDire"
+			visuals="Assets/_DLC3/Templar/TemplarGrandMaster/TemplarGrandMaster.prefab" visuals_bundle="exp3_neinzul_abyss"
+			size_scale="20"
+			visuals_scale_multiplier="3.5"
+			icon_name="Ships4/TemplarGrandMaster" gimbal_icon_size_multiplier="1.5"
+			voice_group="Silent"
+			category="Ship" special_entity_type="AIDireGuardian"
+			collision_priority="400"
+			description="圣殿骑士的强大驱逐舰，大团长号利用反向牵引光束控制大型舰船，以优化其聚焦战斗炮，造成巨大伤害。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="6500" mark_level_scale_style="Templar" strength_multiplier="2"			
+			hull_points="280000" shield_points="140000" speed="Normal3"
+			metal_cost="800000" energy_consumption="25000"
+			armor_mm="175" albedo="0.5" engine_gx="18" mass_tx="7"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+            priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			  description_appender_dll="AIWarExternalCode"
+			  description_appender_type="Arcen.AIW2.External.TemplarAppender"
+			>
+		<data_extension name="DLC3"
+			necromancer_science_to_grant_on_death="20"
+			necromancer_hacking_to_grant_on_death="0"
+			immune_to_necromancy="true"/>
+		<ai_ship_group_membership name="AntiNecromancerDires" weight="100"/>
+		<system name="Q5" display_name="聚焦战斗炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="700" range="Normal2" shot_speed="Normal" rate_of_fire="Misery"
+				shots_per_salvo="10" shots_per_target="10" fires_salvos_sequentially="false"
+				shot_type_data="DoubleShot_Red" 
+				multiplier_damage_to_tractored_unit="5"
+				>	
+		<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="6" multiplier="5" />
+		</system>
+		<system name="T" display_name="牵引光束"
+				category="Passive" is_reverse_tractor_beam="true"
+				tractor_range="Normal2" tractor_count="1"  tractor_hits_albedo_less_than="1" tractor_hits_engine_gx_less_than="99" tractor_hits_mass_greater_than="5"
+				>
+		</system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+  </entity>
+
+  <!-- These are the units that lead the Templar attack waves -->
+
+  <!-- Templar attack waves have the following rules. Every so often the Templar will launch waves. These waves will start with 
+		   Wave Leaders spawning on some Templar Castles, then travelling to player planets. Each planet with a templar defensive sturcture
+		   that the leader goes through will strengthen the incoming force.
+		   There are three tiers of templar leader, the Herald (weakest), prophet (med) and harbinger (high).
+		   Wave strength scales primarily off of AIP but with some necromancer-specific input (like number of necropoleis/mark level/total rifts hacked) -->
+
+	<entity name="TemplarHerald" display_name="圣殿骑士传令官" display_name_for_sidebar="圣传令" 
+			thematic_groups="Templar"
+			tags="LowTierTemplarWaveLeader,TemplarWaveLeader"
+			visuals="Assets/_DLC3/Templar/TemplarHerald/TemplarHerald.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships4/TemplarHerald" gimbal_icon_size_multiplier="1.5"
+			voice_group="Silent"
+			category="Ship" special_entity_type="LoneGolem"
+			size_scale="5.4"
+			visuals_scale_multiplier="3"
+            collision_priority="850"
+            starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused" 
+			description="这是一名较弱的圣殿骑士突击波领袖。当它经过有圣殿骑士建筑的星球时，会集结更多部队到它身边。"
+			cost_for_ai_to_purchase="11500" mark_level_scale_style="Templar" strength_multiplier="1"
+			hull_points="50000" shield_points="150000" speed="AboveAverage1"
+			metal_cost="800000" energy_consumption="25000"
+			armor_mm="85" albedo="0.4" engine_gx="20" mass_tx="7"
+			shield_size_scale="3.5" my_forcefield_does_not_shrink="true" max_count_per_npc_faction_before_stack="3" my_forcefield_has_no_penalty_for_enemies_firing_out_of_it="true"
+			build_points_per_second="100" build_point_cost_for_per_second_construction="2000"
+			tag_to_spawn_from_for_build_point_for_per_second_construction="TemplarRetinue"
+			personal_ship_cap_for_per_second_build_point_construction="6"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+            priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			  description_appender_dll="AIWarExternalCode"
+			  description_appender_type="Arcen.AIW2.External.TemplarAppender"
+			>
+		<data_extension name="DLC3"
+			necromancer_science_to_grant_on_death="300"
+			necromancer_hacking_to_grant_on_death="4"
+			  immune_to_necromancy="true"/>
+		<system name="W1" display_name="传令官的审判"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="2000" range="Normal6" shot_speed="Normal" rate_of_fire="Misery"
+				shots_per_salvo="20" fires_salvos_sequentially="false"
+				shot_type_data="PikeShot_Gold"				
+				>
+			<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="120" multiplier="6"  />
+			<outgoing_damage_modifier based_on="CurrentHullPercentage" applies_to="HullOnly" comparison_type="AtMost" compared_to="25" multiplier="2"  />
+		</system>
+		<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+
+    <entity name="BlessedTemplarHerald" copy_from="TemplarHerald" display_name="受祝福的传令官" display_name_for_sidebar="受祝传令"  
+				tags="LowTierTemplarEliteWaveLeader,TemplarWaveLeader"
+				icon_overlay="Overlays2/Turret_Stativa"
+				cost_for_ai_to_purchase="13800"
+				starting_mark_level="Mark3"
+				multiplier_to_all_healths="3" damage_multiplier_to_all_weapons="2"
+				>
+    <data_extension name="DLC3"
+		    necromancer_science_to_grant_on_death="50"
+		    necromancer_hacking_to_grant_on_death="1"
+		    immune_to_necromancy="true"/>
+    
+	</entity>
+	
+	<entity name="AnointedTemplarHerald" copy_from="TemplarHerald" display_name="受膏传令官" display_name_for_sidebar="受膏传令"  
+				tags="LowTierTemplarHackingWaveLeader,TemplarWaveLeader"
+				icon_overlay="Overlays2/SkeletonLuck"
+				multiplier_to_all_healths="0.8" damage_multiplier_to_all_weapons="0.8"
+				>
+    <data_extension name="DLC3"
+		    necromancer_science_to_grant_on_death="3"
+		    necromancer_hacking_to_grant_on_death="0"
+		    immune_to_necromancy="true"/>
+    
+	</entity>
+	
+
+	<entity name="TemplarProphet" display_name="圣殿骑士先知" display_name_for_sidebar="圣先知"
+			thematic_groups="Templar"
+			tags="MidTierTemplarWaveLeader,TemplarWaveLeader"
+			visuals="Assets/_DLC3/Templar/TemplarProphet/TemplarProphet.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships4/TemplarProphet" gimbal_icon_size_multiplier="1.5"
+			voice_group="Silent"
+			category="Ship" special_entity_type="LoneGolem"
+			size_scale="17"
+			visuals_scale_multiplier="2"
+			collision_priority="400"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused" 
+			description="这是一名中等强度的圣殿骑士突击波领袖。当它经过有圣殿骑士建筑的星球时，会集结更多部队到它身边。它会用荣耀和永生的承诺将敌人转化为游侠骑士。"
+			cost_for_ai_to_purchase="28750" mark_level_scale_style="Templar" strength_multiplier="2.5"
+			hull_points="600000" shield_points="300000" speed="AboveAverage3"
+			metal_cost="500000" energy_consumption="45000"
+			armor_mm="280" engine_gx="22" albedo="0.85" mass_tx="8"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+            priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			  description_appender_dll="AIWarExternalCode"
+			  description_appender_type="Arcen.AIW2.External.TemplarAppender"
+			>
+		<data_extension name="DLC3"
+			necromancer_science_to_grant_on_death="400"
+			necromancer_hacking_to_grant_on_death="6"
+			immune_to_necromancy="true"/>
+		<system name="W1" display_name="净化"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="1000" shots_per_salvo="7" range="Normal5" shot_speed="Normal" rate_of_fire="Minute" fires_salvos_sequentially="true"
+			shot_type_data="MeleeInvisible" 
+			only_targets_mobile_units="true"
+			can_devour="true" devour_function_name="Purify" devour_mass_lower_than="5.5"
+			unit_to_spawn_on_infestation="TemplarKnightErrant" infestation_function_name="Conversion"
+			>    
+		</system>
+		<system name="W2" display_name="内爆鱼雷" category="Weapon" firing_timing="OnlyInRange" shot_type_data="PlasmaTorpedo" 
+				damage_per_shot="50000" range="Normal5" shot_speed="Normal" rate_of_fire="SlightlyLow" fires_salvos_sequentially="false"			
+				>
+				<outgoing_damage_modifier based_on="CurrentHullPercentage" applies_to="HullOnly" comparison_type="MultiplesOf" compared_to="10" multiplier="1" />
+		</system>
+		<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+
+	<entity name="HolyTemplarProphet" copy_from="TemplarProphet" display_name="神圣先知" display_name_for_sidebar="圣先知"
+			tags="MidTierTemplarEliteWaveLeader,TemplarWaveLeader"
+			icon_overlay="Overlays2/Turret_Stativa"
+			cost_for_ai_to_purchase="34500"
+			multiplier_to_all_healths="3" damage_multiplier_to_all_weapons="2"
+            >
+		<data_extension name="DLC3"
+		    necromancer_science_to_grant_on_death="100"
+		    necromancer_hacking_to_grant_on_death="1"
+		    immune_to_necromancy="true"/>
+    
+	</entity>
+	
+	<entity name="AnointedTemplarProphet" copy_from="TemplarProphet" display_name="受膏先知" display_name_for_sidebar="受膏先知"  
+				tags="MidTierTemplarHackingWaveLeader,TemplarWaveLeader"
+				icon_overlay="Overlays2/SkeletonLuck"
+				multiplier_to_all_healths="0.8" damage_multiplier_to_all_weapons="0.8"
+				>
+    <data_extension name="DLC3"
+		    necromancer_science_to_grant_on_death="5"
+		    necromancer_hacking_to_grant_on_death="0"
+		    immune_to_necromancy="true"/>
+    
+	</entity>
+
+  
+	<entity name="TemplarHarbinger" display_name="先驱者" display_name_for_sidebar="先驱者"
+			thematic_groups="Templar"
+			tags="HighTierTemplarWaveLeader,TemplarWaveLeader"
+			visuals="Assets/_DLC3/Templar/TemplarHarbinger/TemplarHarbinger.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships4/TemplarHarbinger" gimbal_icon_size_multiplier="1.5"
+			voice_group="Silent"
+			category="Ship" special_entity_type="AIGuardian"
+			size_scale="28"
+			visuals_scale_multiplier="2"
+			collision_priority="400"
+			description="这是一个强大的圣殿骑士进攻波领导者。它在通过拥有圣殿骑士结构的行星时会吸引更多部队加入其阵营。死亡时召唤一群精英圣骑士继续十字军东征"
+			cost_for_ai_to_purchase="55000" mark_level_scale_style="Templar" strength_multiplier="1"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused" 
+			hull_points="1200000" shield_points="600000" speed="AboveAverage3"			
+			metal_cost="2000000" energy_consumption="75000"	
+			armor_mm="350" albedo="0.85" engine_gx="22" mass_tx="9"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+            priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			  description_appender_dll="AIWarExternalCode"
+			  description_appender_type="Arcen.AIW2.External.TemplarAppender"
+			>
+		<entity_type_drawing_bag_used_on_death data_list="HarbingerElitePaladin" min_spawn_value_list="5" />	
+		<system name="W1" display_name="先驱者火力齐射"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="15000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="SlightlyLow"
+				shots_per_salvo="10" fires_salvos_sequentially="false"
+				shot_type_data="DevourerShot_Nemesis"
+				area_of_effect_size="400"
+				maximum_number_of_targets_hit_per_shot="10"
+				>
+		</system>
+		<data_extension name="DLC3"
+			necromancer_science_to_grant_on_death="600"
+			necromancer_hacking_to_grant_on_death="6"
+			immune_to_necromancy="true"/>
+		<ship_class_data can_be_zombified_and_similar="false" />
+  </entity>
+	<entity name="DivineTemplarHarbinger" copy_from="TemplarHarbinger" display_name="神圣先驱者" display_name_for_sidebar="神先"
+			tags="HighTierTemplarEliteWaveLeader,TemplarWaveLeader"
+			icon_overlay="Overlays2/Turret_Stativa"
+			cost_for_ai_to_purchase="63250"
+			multiplier_to_all_healths="3" damage_multiplier_to_all_weapons="2"
+			>
+    <entity_type_drawing_bag_used_on_death data_list="HarbingerElitePaladin" min_spawn_value_list="5" />
+    <data_extension name="DLC3"
+		    necromancer_science_to_grant_on_death="150"
+		    necromancer_hacking_to_grant_on_death="2"
+		    immune_to_necromancy="true"/>
+  </entity>
+  
+  <entity name="AnointedTemplarHarbinger" copy_from="TemplarHarbinger" display_name="受膏先驱者" display_name_for_sidebar="受膏先驱"
+				tags="HighTierTemplarHackingWaveLeader,TemplarWaveLeader"
+				icon_overlay="Overlays2/SkeletonLuck"
+				multiplier_to_all_healths="0.8" damage_multiplier_to_all_weapons="0.8"
+				>
+    <entity_type_drawing_bag_used_on_death data_list="HarbingerElitePaladin" min_spawn_value_list="5" />
+    <data_extension name="DLC3"
+		    necromancer_science_to_grant_on_death="7"
+		    necromancer_hacking_to_grant_on_death="0"
+		    immune_to_necromancy="true"/>
+    
+	</entity>
+
+  <!-- AI copies of ship units (for the Heroic and Jabberwock AI Types) -->
+    
+	<!--Strikecraft -->
+	<entity name="AISquire" copy_from="TemplarSquire" display_name="AI 侍从战机" display_name_for_sidebar="AI 侍从"
+			thematic_groups="Hidden" 
+			tags="AISquire" is_strikecraft="true"
+			description="侍从战机是一种基础的圣殿骑士突击战机，擅长从远处向小股敌人投掷手榴弹，这对小型舰船尤其致命。它经过调整，可用于通用 AI 作战。"
+			multiplier_to_all_healths="1" damage_multiplier_to_all_weapons="0.75"
+			>
+		<data_extension name="DLC3"
+          necromancer_science_to_grant_on_death="0"
+          necromancer_hacking_to_grant_on_death="0"
+          immune_to_necromancy="false"/>
+		<ai_ship_group_membership name="TemplarFleetships" weight="100"/>
+		<ship_class_data can_be_zombified_and_similar="true" />
+    </entity>
+	
+    <entity name="AIPage" copy_from="TemplarPage" display_name="AI 侍从战机" display_name_for_sidebar="AI 侍从"
+			thematic_groups="Hidden" 
+			tags="AIPage" is_strikecraft="true"
+			description="这是一种圣殿骑士蜂群式突击战机，拥有强化外壳，尤其擅长对抗重装甲且体积庞大的舰船。为通用 AI 用途进行了适配。"
+			multiplier_to_all_healths="1" damage_multiplier_to_all_weapons="0.75"
+			>
+		<data_extension name="DLC3"
+          necromancer_science_to_grant_on_death="0"
+          necromancer_hacking_to_grant_on_death="0"
+          immune_to_necromancy="false"/>
+		<ai_ship_group_membership name="TemplarFleetships" weight="100"/>
+		<ship_class_data can_be_zombified_and_similar="true" />
+    </entity>
+
+    <entity name="AIApprentice"  copy_from="TemplarApprentice" display_name="AI 学徒战机" display_name_for_sidebar="AI 学徒" 
+			thematic_groups="Hidden" 
+			tags="AIApprentice" is_strikecraft="true"
+			description="这是一种基础的圣殿骑士突击战机，“学徒”是一种隐形近战战斗机，配备融合锯以部分绕过护盾。为通用 AI 用途进行了适配。"
+			multiplier_to_all_healths="1" damage_multiplier_to_all_weapons="0.75"
+			>
+		<data_extension name="DLC3"
+          necromancer_science_to_grant_on_death="0"
+          necromancer_hacking_to_grant_on_death="0"
+          immune_to_necromancy="false"/>
+		<ai_ship_group_membership name="TemplarFleetships" weight="100"/>
+		<ship_class_data can_be_zombified_and_similar="true" />
+    </entity>
+
+	<!-- Guardian -->
+    <entity name="AISergeant" copy_from="TemplarSergeant" display_name="AI 审判官" display_name_for_sidebar="AI 审判官"
+			thematic_groups="Hidden" 
+			tags="AISergeant" special_entity_type="AIGuardian"
+			description="这是一种脆弱但致命的圣殿骑士护卫舰，“审判官”是一种隐形轰炸舰，会进行齐射，并在再次齐射前隐形。其武器专门用于摧毁拥有强大引擎的舰船。"
+			multiplier_to_all_healths="0.8" damage_multiplier_to_all_weapons="0.65"
+			>
+		<data_extension name="DLC3"
+            necromancer_science_to_grant_on_death="0"
+            necromancer_hacking_to_grant_on_death="0"
+            immune_to_necromancy="false"/>
+		<ai_ship_group_membership name="TemplarGuardians" weight="100"/>
+	</entity>
+  
+	<entity name="AITemplarExorcist" copy_from="TemplarExorcist" display_name="AI 驱魔师" display_name_for_sidebar="AI 驱魔师"
+			thematic_groups="Hidden" 
+			tags="AISergeant" special_entity_type="AIGuardian"
+			description="这是一种强大的圣殿骑士护卫舰，“驱魔师”会在自身周围造成爆发性范围伤害，尤其擅长击杀反照率高的舰船，如隐形舰船。在被摧毁时，会释放最后一次爆炸。为通用 AI 用途进行了适配。"
+			multiplier_to_all_healths="0.8" damage_multiplier_to_all_weapons="0.65"
+           >
+		<data_extension name="DLC3"
+            necromancer_science_to_grant_on_death="0"
+            necromancer_hacking_to_grant_on_death="0"
+            immune_to_necromancy="false"/>
+		<ai_ship_group_membership name="TemplarGuardians" weight="100"/>
+	</entity>
+  
+  
+	<entity name="AIPaladin" copy_from="TemplarPaladin" display_name="AI 圣骑士" display_name_for_sidebar="AI 圣骑士"
+			thematic_groups="Hidden" 
+			tags="AIPaladin" special_entity_type="AIGuardian"
+			description="这是一种强大的圣殿骑士护卫舰，“圣骑士”可以净化敌人，给予他们第二次机会，以“忏悔侍从”的身份服务于崇高目标。对于无可救药的敌人，会用光芒进行严厉惩戒。为通用 AI 用途进行了适配。"
+			multiplier_to_all_healths="0.8" damage_multiplier_to_all_weapons="0.65"
+           >
+      <data_extension name="DLC3"
+            necromancer_science_to_grant_on_death="0"
+            necromancer_hacking_to_grant_on_death="0"
+            immune_to_necromancy="false"/>
+	<ai_ship_group_membership name="TemplarGuardians" weight="100"/>
+  </entity>
+
+	<entity name="AIKnight" copy_from="TemplarKnight" display_name="AI 骑士" display_name_for_sidebar="AI 骑士"
+			thematic_groups="Hidden" 
+			tags="AIKnight" special_entity_type="AIGuardian"
+			description="这是一种强大的圣殿骑士护卫舰，“骑士”会冲向敌人进行近战攻击。在造成伤害时恢复生命值，尤其在对抗装甲敌人时效果更佳。为通用 AI 用途进行了适配。"
+			multiplier_to_all_healths="0.8" damage_multiplier_to_all_weapons="0.65"
+			>
+		<data_extension name="DLC3"
+            necromancer_science_to_grant_on_death="0"
+            necromancer_hacking_to_grant_on_death="0"
+            immune_to_necromancy="false"/>
+		<ai_ship_group_membership name="TemplarGuardians" weight="100"/>
+	</entity>
+
+  <!--Dire Guardians -->	
+	<entity name="AISeneshal" copy_from="TemplarSeneschal" display_name="AI 执事舰"
+			thematic_groups="AI" 
+			tags="AISeneschal" special_entity_type="AIDireGuardian"
+			description="执事舰是一艘狡猾的圣殿骑士驱逐舰，它具备隐形能力，并且拥有两种麻痹武器，分别专门针对单个大型舰船和小型舰船群。"
+			starting_mark_level="Mark7" does_not_use_multipliers_from_mark_level="true"
+		    cost_for_ai_to_purchase="8000" strength_multiplier="4"			
+		 	hull_points="700000" shield_points="1400000"
+			>
+      <data_extension name="DLC3"
+            necromancer_science_to_grant_on_death="0"
+            necromancer_hacking_to_grant_on_death="0"
+            immune_to_necromancy="false"/>
+	<ai_ship_group_membership name="TemplarDireGuardians" weight="100"/>
+	<system name="R5" damage_per_shot="12500">	
+		</system>
+		<system name="R6" damage_per_shot="15000">	
+		</system>
+  </entity>
+
+	<entity name="AIHospitaller" copy_from="TemplarHospitaller" display_name="AI 医护舰" display_name_for_sidebar="AI 医护"
+			thematic_groups="AI" 
+			tags="AIHospitaller" special_entity_type="AIDireGuardian"
+			description="医护舰是一艘辅助型的圣殿骑士驱逐舰，它可以牺牲自身生命值来复活倒下的盟友，并且能够在非战斗状态下自我恢复。它还拥有一种行星范围的攻击能力，旨在摧毁刚抵达的舰船。已针对通用 AI 使用进行了适配。"
+			starting_mark_level="Mark7" does_not_use_multipliers_from_mark_level="true"
+		    cost_for_ai_to_purchase="9000" strength_multiplier="4"			
+		 	hull_points="4200000" shield_points="0"
+           >
+      <data_extension name="DLC3"
+            necromancer_science_to_grant_on_death="0"
+            necromancer_hacking_to_grant_on_death="0"
+            immune_to_necromancy="false"/>
+	<ai_ship_group_membership name="TemplarDireGuardians" weight="100"/>
+	<system name="WT" damage_per_shot="1250">	
+		</system>
+  </entity>
+
+	<entity name="AIGrandMaster" copy_from="TemplarGrandMaster"  display_name="AI 大导师舰" display_name_for_sidebar="AI 大导" 
+			thematic_groups="AI" 
+            tags="AIGrandMaster" 
+			special_entity_type="AIDireGuardian"
+			description="大导师舰是一艘强大的圣殿骑士驱逐舰，它使用反向牵引光束控制大型舰船，从而让其聚焦的战列炮发挥出惊人的伤害。已针对通用 AI 使用进行了适配。"
+			starting_mark_level="Mark7" does_not_use_multipliers_from_mark_level="true"
+		    cost_for_ai_to_purchase="7000" strength_multiplier="4"			
+		 	hull_points="1400000" shield_points="700000"
+            >
+		<data_extension name="DLC3"
+            necromancer_science_to_grant_on_death="0"
+            necromancer_hacking_to_grant_on_death="0"
+            immune_to_necromancy="false"/>
+		<ai_ship_group_membership name="TemplarDireGuardians" weight="100"/>
+		<system name="Q5" damage_per_shot="5000">	
+		</system>
+  </entity>
+
+<!--Exo Leaders -->
+  <entity  copy_from="TemplarHarbinger" thematic_groups="Hidden" 
+           tags="AIHarbinger"
+           name="AIHarbinger,BecomesNecromancyMummy" special_entity_type="LoneGolem"
+           display_name="AI 先驱者"
+		   cost_for_ai_to_purchase="37500"
+		   description="这是一个强大的圣殿骑士领导者。死亡时召唤一群精英圣骑士继续十字军东征。适应一般用途AI使用"
+           multiplier_to_all_healths="0.75" damage_multiplier_to_all_weapons="0.5"
+           >
+      <data_extension name="DLC3"
+            necromancer_science_to_grant_on_death="0"
+            necromancer_hacking_to_grant_on_death="0"
+            immune_to_necromancy="false"/>
+	<ai_ship_group_membership name="TemplarExoLeaders" weight="100"/>
+  </entity>
+
+  
+
+</root>

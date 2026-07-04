@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <entity name="Engineer" tags="Engineer"     visuals="assets/_finalgamemeshes/specials/engineer/engineer.prefab"
+        thematic_groups="Human,Support" 
+        cannot_be_stacked="true"
+		icon_name="Ships1/Engineer" category="Ship"
+		size_scale="0.8"
+		visuals_scale_multiplier="4" is_engineer="true"
+		collision_priority="200" construction_priority="600"
+		display_name="工程师"
+        display_name_for_sidebar="工程师"
+		description="修理附近的友军单位并协助附近的建造项目。仅限指挥站使用。"
+		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Engineering"
+		build_sidebar_categories_i_am_part_of="Infrastructure" destroys_self_until_not_over_ship_cap_if_planetary_command="true"
+		cost_for_ai_to_purchase="5"
+		hull_points="4000" shield_points="0" speed="VeryHigh2"
+		metal_cost="2500" energy_consumption="0"
+		assist_range="Normal1"
+		armor_mm="20" albedo="0.2" engine_gx="20" mass_tx="0.01"
+		ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+		voice_group="Silent"
+		never_leaves_remains="true" 
+		fleet_membership="Planetary"
+		is_blocked_from_dss_grant_to_Battlestations_and_citadels="true"
+			
+      priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="Expendable"
+			>
+
+    <fleet_membership name="PlayerHomeCommand" ship_cap_group="OtherDefense" weight="100" cap="12"/>
+    <fleet_membership name="PlayerEconomicCommand" ship_cap_group="OtherDefense" weight="100" cap="9"/>
+    <fleet_membership name="PlayerMilitaryCommand" ship_cap_group="OtherDefense" weight="100" cap="5"/>
+    <fleet_membership name="PlayerLogisticalCommand" ship_cap_group="OtherDefense" weight="100" cap="21"/>
+    <metal_flow purpose="SelfConstruction" throughput="500" increase_per_mark_level="100"/>
+    <metal_flow purpose="ClaimingNeutrals" throughput="500" increase_per_mark_level="200"/>
+    <metal_flow purpose="RepairingHullsOfFriendlies" throughput="250" increase_per_mark_level="250"/>
+    <metal_flow purpose="RepairingShieldsOfFriendlies" throughput="250" increase_per_mark_level="250"/>
+    <metal_flow purpose="RepairingEnginesOfFriendlies" throughput="250" increase_per_mark_level="250"/>
+    <metal_flow purpose="AssistSelfConstruction" throughput="200" increase_per_mark_level="200"/>
+    <metal_flow purpose="AssistFactoryConstruction" throughput="200" increase_per_mark_level="200"/>
+    <system name="C" display_name="隐形装置"
+				category="Passive" min_mark_level_to_function="3"
+				cloaking_points="200" cloaking_points_added_per_mark="100"
+				>
+    </system>
+  </entity>
+  
+  <!--Note that build_sidebar_categories_i_am_part_of won't be actually relevant on the combat engineers, since they're part of the fleets a different way.
+    They are being used in the "Strike" ship cap category, too, since in the fleets that they are in that is basically the role they play (small strikecraft)
+    even though they have no guns.  The only purpose of noting "strike" is to specify which "type cap" groups they are in, anyway.-->
+  <entity name="CombatEngineer" copy_from="Engineer"
+      display_name="战斗工程师"
+	  description="修理附近的友军单位并协助附近的建造项目。"
+      display_name_for_sidebar="战斗工程师" fleet_membership="CrossPlanetary"
+	  hull_points="8000" shield_points="0" immune_to_swapping_between_fleets="true"
+	  is_blocked_from_dss_grant_to_Battlestations_and_citadels="false">
+    <fleet_membership name="CombatEngineers" ship_cap_group="Strike" weight="100" cap="16"/>
+    <fleet_membership name="CombatEngineers_Fewer" ship_cap_group="Strike" weight="100" cap="12"/>
+    <fleet_membership name="CombatEngineers_More" ship_cap_group="Strike" weight="100" cap="20"/>
+    <metal_flow purpose="SelfConstruction" throughput="0" increase_per_mark_level="0"/><!--Make these build by not being able to construct.-->
+  </entity>
+
+  <!--These are the same as regular engineers, but are for battlestations and citadels and are able to move between planets.
+       They also have the extra health and shields of a combat engineer.-->
+  <entity name="InterplanetaryEngineer" copy_from="Engineer"
+      display_name="星际工程师"
+      display_name_for_sidebar="星际工程师" fleet_membership="CrossPlanetary"
+      build_sidebar_categories_i_am_part_of="Infrastructure" destroys_self_until_not_over_ship_cap_if_planetary_command="true"
+	  hull_points="8000" shield_points="0" immune_to_swapping_between_fleets="true"
+	  is_blocked_from_dss_grant_to_Battlestations_and_citadels="false"
+	  is_blocked_from_dss_grant_to_commandstations="true"
+	  description="修理附近的友军单位并协助附近的建造项目。仅限战斗站和堡垒使用。"
+	  >
+    <fleet_membership name="GeneralTurrets" ship_cap_group="Civilian" weight="100" cap="9"/>
+    <fleet_membership name="MonochromeTurrets" ship_cap_group="Civilian" weight="100" cap="12"/>
+    <fleet_membership name="OtherDefenseFocus" ship_cap_group="Civilian" weight="100" cap="16"/>
+    <fleet_membership name="Minelayer" ship_cap_group="Civilian" weight="100" cap="14"/>
+    <fleet_membership name="EnsnarerTurrets" ship_cap_group="Civilian" weight="100" cap="7"/>
+	<fleet_membership name="AddedToCommandStation" ship_cap_group="OtherDefense" weight="125" cap="4"/>
+    <fleet_membership name="EmptyTurrets" ship_cap_group="Civilian" weight="100" cap="8"/>    
+    <metal_flow purpose="SelfConstruction" throughput="0" increase_per_mark_level="0"/>
+  </entity>
+
+  <entity name="Spy" tags="Spy"     visuals="assets/_finalgamemeshes/specials/engineer/engineer.prefab"
+          thematic_groups="Human,Support" npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+      cannot_be_stacked="true"
+			icon_name="Ships2/SomethingCamera" category="Ship"
+			size_scale="0.8"
+			visuals_scale_multiplier="4"
+			collision_priority="200"
+			display_name="间谍"
+			description="在敌方星球上提供视野，极低的被发现概率。与指挥舰队的其他单位不同，能够穿越虫洞。"
+			starting_mark_level="Mark1"
+			build_sidebar_categories_i_am_part_of="Infrastructure" destroys_self_until_not_over_ship_cap_if_planetary_command="true"
+      cost_for_ai_to_purchase="5"
+			hull_points="16000" shield_points="0" speed="VeryHigh2"
+			metal_cost="12000" energy_consumption="6000"
+			armor_mm="20" albedo="0.9" engine_gx="20" mass_tx="0.01"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			voice_group="Silent"
+			never_leaves_remains="true"
+			fleet_membership="CrossPlanetary"
+			
+      priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="Expendable"
+			>
+    <fleet_membership name="PlayerMilitaryCommand" ship_cap_group="OtherDefense" weight="100" cap="1"/>
+    <fleet_membership name="PlayerLogisticalCommand" ship_cap_group="OtherDefense" weight="100" cap="2"/>
+    <metal_flow purpose="SelfConstruction" throughput="500" increase_per_mark_level="100"/>
+    <system name="C" display_name="隐形装置" category="Passive"
+        cloaking_points="4000" cloaking_points_added_per_mark="500"
+				>
+    </system>
+  </entity>
+  
+</root>

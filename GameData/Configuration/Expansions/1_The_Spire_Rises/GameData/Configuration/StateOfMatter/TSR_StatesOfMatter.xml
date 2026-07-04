@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <state_of_matter name="SphereShielded" display_name="球形护盾保护"
+      ships_draw_as_multi_phase_material_in_this_state="true" icon_ship_status_to_draw_when_not_in_alt_mode="Lantern"
+      description_short="被球体赋能的物体，无法通过自然手段被锁定。"
+      description_full="被球体赋能的物体，无法通过自然手段被锁定。"
+  >
+  </state_of_matter>
+</root>

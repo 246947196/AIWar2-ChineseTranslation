@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <praetorian_type name="Normal" is_default="true"
+          display_name="护卫" abbreviation="Bodyguard"
+          description="这是AI霸主的护卫部队。"
+          AllowEntryIntoHostileTerritory="true"
+          ShouldCountAsThreat="false"
+          HostileRatio_TooDangerousToStay="2.0"
+          HostileRatio_TooDangerousToTarget="2.0"
+          HostileRatio_TooDangerousToGoThrough="1.0"
+          ShouldHuntEnemyKingUnits="false"
+          AutoKite="false"
+          DistanceFromKingRestricted="true"
+  >
+  </praetorian_type>
+</root>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <setting_category name="Necromancer" display_name="死灵法师"
+      description="Settings related to Necromancer factions."/>
+</root>

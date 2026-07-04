@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>    
+
+	<!-- NA Corrosive Guardian -->
+	<entity name="CorrosiveGuardian"
+	        thematic_groups="AI,Guardian"
+			special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+			visuals="assets/_finalgamemeshes/guardians/laserguardian/laserguardian.prefab"
+			icon_name="Ships1/Guardian" icon_overlay="Overlays1/Warhead_Storm"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="3.6"
+			visuals_scale_multiplier="3"
+			y_offset_of_icon="16"
+			collision_priority="400"
+			display_name="腐蚀守护者"
+			display_name_for_sidebar="腐蚀守"
+			description="一名护甲薄弱的守护者，用致命的腐蚀冲击弥补其伤害不足，这种冲击能溶解敌人的船体。死亡时，会向附近的船只喷射最后的腐蚀冲击。"
+			blocks_enemy_claim_flows="true"
+			voice_group="Silent"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="950" strength_multiplier="1.5"		
+			hull_points="48000" shield_points="18000" speed="Normal3"
+			metal_cost="100000" energy_consumption="7500"
+			armor_mm="50" albedo="0.3" engine_gx="12" mass_tx="5"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			>
+		<ai_ship_group_membership name="AOEGuardiansWithMovementSupport" weight="100"/>	
+		<ai_ship_group_membership name="AntiMeleeGuardians" weight="100"/>
+		<ai_ship_group_membership name="AntiArmorGuardians" weight="100"/>
+        <ai_ship_group_membership name="PoliceGuardians" weight="100"/>
+		
+		<system name="W1" display_name="腐蚀冲击"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="50" range="Small1" shot_speed="Normal" rate_of_fire="Normal"
+				shots_per_salvo="10" fires_salvos_sequentially="true" shot_type_data="CorrosiveBlast"
+                base_percent_damage_bypasses_personal_shields="1"
+				corrosion_damage="100"
+				corrosion_damage_added_per_mark="125"
+				>
+			<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="90" multiplier="4"  />
+		</system>
+		<system name="W2" display_name="腐蚀终曲"
+				category="Weapon" firing_timing="OnlyInRange"
+				only_fires_on_death="true"
+				damage_per_shot="1000" range="VeryTiny3" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+				shot_type_data="LightningExplosionAOEShot" 
+				area_of_effect_size="1500"				
+				shots_detonate_immediately="true"
+				maximum_number_of_targets_hit_per_shot="10"
+				health_change_by_max_health_divided_by_this_per_attack="-1"
+				all_damage_is_corrosive="true"
+				>
+			<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="90" multiplier="4"  />
+		</system>
+	</entity>
+	
+	<entity name="RoyalCorrosiveGuardian" display_name="皇家腐蚀守护者"
+			display_name_for_sidebar="皇家腐守"
+			copy_from="CorrosiveGuardian" 
+			hull_points="96000" shield_points="36000" 
+			cost_for_ai_to_purchase="1350"
+			starting_mark_level="Mark1"
+			>
+		<ai_ship_group_membership name="RoyalAOEGuardiansWithMovementSupport" weight="100"/>
+		<ai_ship_group_membership name="RoyalAntiMeleeGuardians" weight="100"/>
+		<ai_ship_group_membership name="RoyalAntiArmorGuardians" weight="100"/>
+		<ai_ship_group_membership name="RoyalPoliceGuardians" weight="100"/>
+		
+		<system name="W1" damage_per_shot="100"
+				corrosion_damage="200"
+				corrosion_damage_added_per_mark="250" />
+		<system name="W2" damage_per_shot="2000" maximum_number_of_targets_hit_per_shot="15" />
+	</entity>
+
+</root>

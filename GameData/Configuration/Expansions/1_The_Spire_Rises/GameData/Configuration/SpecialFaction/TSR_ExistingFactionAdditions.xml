@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<faction name="ZenithDysonSphere" is_partial_record="true"  >
+		<custom_field name="PartOfTheAntiDarkSpireCoalition" is_advanced_setting="true" display_name="反黑暗尖塔联盟成员" 
+		description="当启用分裂尖塔时，允许此派系加入反黑暗尖塔联盟。"
+		sort_group="500" setting_type="BoolToggle" default="true" />
+	</faction>
+	
+	<faction name="DarkSpire" is_partial_record="true" auto_add_singleton_of_faction_when_any_count_of_other_factions_present="SplinteringSpire"  >
+	</faction>
+
+</root>

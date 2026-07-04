@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<defense name="Structure" display_name="建筑" />
+	<defense name="Armor" display_name="装甲" />
+	<defense name="Evasion" display_name="干扰器" />
+	<defense name="Shields" display_name="护盾" />
+	<defense name="Deflectors" display_name="偏转器" />
+	<defense name="Artillery" display_name="火炮" />
+	<defense name="CloseCombat" display_name="近战" />
+	<defense name="CommandGrade" display_name="指挥级" />
+	<defense name="Composite" display_name="复合" />
+	<defense name="Heavy" display_name="重型" />
+	<defense name="Light" display_name="轻型" />
+	<defense name="Medium" display_name="中型" />
+	<defense name="Neutron" display_name="中子" />
+	<defense name="Polycrystal" display_name="多晶" />
+	<defense name="Refractive" display_name="折射" />
+	<defense name="Scout" display_name="侦察" />
+	<defense name="Structural" display_name="结构" />
+	<defense name="Swarmer" display_name="蜂群" />
+	<defense name="Turret" display_name="炮塔" />
+	<defense name="UltraHeavy" display_name="超重型" />
+	<defense name="UltraLight" display_name="超轻型" />
+</root>

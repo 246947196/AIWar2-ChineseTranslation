@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+<!-- Totems
+		These are utility/defensive structures that make use of the orbiting mechanic with their respecitve Orbs-->
+
+
+	<entity name="ProtectiveTotem" display_name="防护图腾" display_name_for_sidebar="防护图腾"
+			tags="NecromancerBuildMenu,NecromancerDefensiveBuildMenu" 
+            thematic_groups="Neinzul,Necromancer"	
+            visuals="Assets/_DLC3/Necromancer/ProtectiveTotem/ProtectiveTotem.prefab"  visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships4/NecromancerTotem" icon_overlay="Overlays2/NecromancerTotemOfProtection"
+            voice_group="Spire"
+            uses_large_health_bar="true"
+            category="Ship"
+			size_scale="7.4"
+			visuals_scale_multiplier="12"
+            y_offset_of_icon="30"
+            collision_priority="810"
+			mark_level_scale_style="NecromancerDefenses"
+			description="死灵法师保护其资产的主要手段。吸收之球环绕图腾，在其保护范围内吸引火力。每30秒生成一个吸收之球，最多生成三个。如果图腾被摧毁，所有吸收之球都会消失。"
+            starting_mark_level="Mark1" tech_upgrades_that_benefit_me="NecromancerTotems"
+            cost_for_ai_to_purchase="10000" strength_multiplier="1"   
+            hull_points="100000" shield_points="500000" speed="Immobile"
+            armor_mm="180" albedo="0.7" mass_tx="6"
+            metal_cost="100000" energy_consumption="5000"
+			build_points_per_second="100" build_point_cost_for_per_second_construction="3000"
+			tag_to_spawn_from_for_build_point_for_per_second_construction="OrbofAbsorption"
+			personal_ship_cap_for_per_second_build_point_construction="3"
+           
+            build_sidebar_categories_i_am_part_of="NecromancerDefenses"	
+			minimum_required_city_level_for_construction="1"			
+			name_for_city_sockets="Necropolis Hex" 
+            name_for_city_sockets_short="Hex"
+			city_socket_cost="1"
+			base_ship_cap_in_custom_city="2"
+			added_ship_cap_in_custom_city_per_city_level="0"
+			added_ship_cap_in_custom_city_per_city_level_above_level="1"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            is_nonfunctional_when_on_planet_not_owned_by_player="false"	
+			priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="MidFavoriteToy"
+                        visual_only_forcefield_range_circle_radius="6140"
+	        >
+    <metal_flow purpose="SelfConstruction" throughput="2000"/>
+    </entity>
+
+		<entity name="OrbofAbsorption"	 display_name="吸收之球" display_name_for_sidebar="吸收之球"
+				thematic_groups="Neinzul,Necromancer,Orbital"		
+				visuals="Assets/_DLC3/Necromancer/OrbOfEntropy/OrbOfAbsorption.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships4/NecromancerOrb" icon_overlay="Overlays2/NecromancerOrbOfAbsorption"
+				category="Ship" is_strikecraft="true"
+				size_scale="2.5"
+				visuals_scale_multiplier="3"
+				collision_priority="1"
+				description="一种防御性球体，可吸引在其保护区域内射击目标的火力。"
+				behavior="Stationary"
+				starting_mark_level="Mark1" tech_upgrades_that_benefit_me="NecromancerTotems" 
+				cost_for_ai_to_purchase="1000" strength_multiplier="3"
+				hull_points="25000" shield_points="50000" speed="Immobile"
+				metal_cost="25000" energy_consumption="7500"
+				armor_mm="120" albedo="0.6" mass_tx="2"
+				can_pass_through_enemy_forcefields="true"
+				damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.1" 
+				tags="OrbofAbsorption"
+				orbits_parent_at_range="3100" degrees_to_orbit_per_second="10"  attempts_to_reach_orbital_point_at_speed="8000" dies_if_parent_is_dead_or_remains="true"
+				dies_if_parent_dies="true"
+				immune_to_swapping_between_fleets="true"
+				is_blocked_from_transporting="true"
+				
+				voice_group="Silent"
+				ship_or_structure_explosion_sfx="Turret_Explosion"
+				ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+				priority_as_ai_target="ShieldGenerator" priority_as_frd_target="NotDangerous" priority_to_protect="MidFavoriteToy"
+				>
+			<system name="A" display_name="吸引场"
+				category="Passive"
+				attract_range_for_shots_against_allies="Small3"
+				>
+			</system>
+			<system name="L" display_name="吸引场"
+					category="Weapon" firing_timing="OnlyInRange" damage_per_shot="5" range="Small3" shot_speed="Slow" rate_of_fire="Sloth" fires_salvos_sequentially="true" 				
+					shot_type_data="MeleeInvisible" cloaking_percent_loss_from_firing="0.1"  system_is_hidden_for_ui="true"
+				>
+			</system>		
+		<ship_class_data can_be_zombified_and_similar="false" />
+		</entity>
+
+
+<entity name="TachyonTotem" display_name="超光速图腾" display_name_for_sidebar="超光速图腾"
+			tags="NecromancerBuildMenu,NecromancerDefensiveBuildMenu" 
+            thematic_groups="Neinzul,Necromancer"	
+            visuals="Assets/_DLC3/Necromancer/ProtectiveTotem/TachyonTotem.prefab" visuals_bundle="exp3_neinzul_abyss"
+            icon_name="Ships4/NecromancerTotem" icon_overlay="Overlays2/NecromancerTotemOfTachyon"
+            voice_group="Spire"
+            uses_large_health_bar="true"
+            category="Ship"
+			size_scale="7.4"
+			visuals_scale_multiplier="12"
+            y_offset_of_icon="30"
+            collision_priority="810"
+			mark_level_scale_style="NecromancerDefenses"
+			description="死灵法师揭露隐形敌人的主要手段。洞察之球环绕图腾，对高反照率的舰船（如带有隐形场的舰船）造成毁灭性伤害。"
+            starting_mark_level="Mark1" tech_upgrades_that_benefit_me="NecromancerTotems"
+            cost_for_ai_to_purchase="10000" strength_multiplier="1"   
+            hull_points="100000" shield_points="500000" speed="Immobile"
+            armor_mm="180" albedo="0.7" mass_tx="6"
+            metal_cost="100000" energy_consumption="5000"
+			build_points_per_second="500" build_point_cost_for_per_second_construction="3000"
+			tag_to_spawn_from_for_build_point_for_per_second_construction="OrbofSight"
+			personal_ship_cap_for_per_second_build_point_construction="20"
+           
+            build_sidebar_categories_i_am_part_of="NecromancerDefenses"	
+			minimum_required_city_level_for_construction="1"			
+			name_for_city_sockets="Necropolis Hex" 
+            name_for_city_sockets_short="Hex"
+			city_socket_cost="1"
+			base_ship_cap_in_custom_city="2"
+			added_ship_cap_in_custom_city_per_city_level="0"
+			added_ship_cap_in_custom_city_per_city_level_above_level="1"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            is_nonfunctional_when_on_planet_not_owned_by_player="false"	
+			priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="MidFavoriteToy"
+	        >
+    <metal_flow purpose="SelfConstruction" throughput="2000"/>
+	<system name="Q4" display_name="死灵法师超光速爆发光束"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="500"  shots_per_salvo="4"  added_shots_per_salvo_per_mark="4"
+				range="High2" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="false"
+				shot_type_data="EngineDisruptingShell"
+				>
+			<outgoing_damage_modifier based_on="Albedo" comparison_type="AtLeast" compared_to="0.7" multiplier="8" />		
+			<death_effect_damage type="Necromancy" tier_name="Minor"/>	
+		</system>
+	<system name="T" display_name="超光速阵列"
+				category="Passive" tachyon_points="100" tachyon_range="High2" tachyon_points_added_per_mark="50" tachyon_hits_albedo_less_than="0.75"></system>
+    </entity>	
+
+
+	<entity name="OrbofSight"	 display_name="洞察之球" display_name_for_sidebar="洞察之球"
+				thematic_groups="Neinzul,Necromancer,Orbital"
+			visuals="Assets/_DLC3/Necromancer/OrbOfEntropy/OrbOfSight.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships4/NecromancerOrb" icon_overlay="Overlays2/NecromancerOrbOfSight"
+				category="Ship" is_strikecraft="true"
+				size_scale="2.5"
+				visuals_scale_multiplier="3"
+				collision_priority="1"
+				description="由超光速图腾创造的球体，专门用于摧毁隐形舰船和其他高反照率的舰船。"
+				behavior="Stationary"
+				starting_mark_level="Mark1" tech_upgrades_that_benefit_me="NecromancerTotems" 
+				cost_for_ai_to_purchase="1000" strength_multiplier="1"
+				hull_points="10000" shield_points="20000" speed="Immobile"
+				metal_cost="5000" energy_consumption="500"
+				armor_mm="120" albedo="0.7" mass_tx="2"
+				can_pass_through_enemy_forcefields="true"
+				
+				tags="OrbofSight"
+				orbits_parent_at_range="8080" degrees_to_orbit_per_second="3"  attempts_to_reach_orbital_point_at_speed="8000" dies_if_parent_is_dead_or_remains="true"
+				dies_if_parent_dies="true"
+				immune_to_swapping_between_fleets="true"
+				is_blocked_from_transporting="true"
+				
+				voice_group="Silent"
+				ship_or_structure_explosion_sfx="Turret_Explosion"
+				ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+				priority_as_ai_target="ShieldGenerator" priority_as_frd_target="NotDangerous" priority_to_protect="MidFavoriteToy"
+				>
+		
+		<ship_class_data can_be_zombified_and_similar="false" />
+		<system name="Q4" display_name="死灵法师超光速爆发光束"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="75"  range="AboveAverage3" shot_speed="Normal" rate_of_fire="Misery" fires_salvos_sequentially="false"
+				shot_type_data="EngineDisruptingShell"
+				>
+			<outgoing_damage_modifier based_on="Albedo" comparison_type="AtLeast" compared_to="0.7" multiplier="8" />		
+			<death_effect_damage type="Necromancy" tier_name="Minor"/>	
+		</system>
+		</entity>
+
+
+
+<entity name="LifeForceTotem" display_name="生命之力图腾" display_name_for_sidebar="生命图腾"
+			tags="NecromancerBuildMenu,NecromancerDefensiveBuildMenu" 
+            thematic_groups="Neinzul,Necromancer"	
+            visuals="Assets/_DLC3/Necromancer/ProtectiveTotem/LifeForceTotem.prefab" visuals_bundle="exp3_neinzul_abyss"
+            icon_name="Ships4/NecromancerTotem" icon_overlay="Overlays2/NecromancerTotemOfLifeForce"
+            voice_group="Spire"
+            uses_large_health_bar="true"
+            category="Ship"
+			size_scale="7.4"
+			visuals_scale_multiplier="12"
+            y_offset_of_icon="30"
+            collision_priority="810"
+			mark_level_scale_style="NecromancerDefenses"
+			description="这个图腾会吸取敌人的生命之力，在此过程中自我修复。每次标记升级都会获得额外的光束攻击。召唤治愈之球来治疗受损的盟友。"
+            starting_mark_level="Mark1" tech_upgrades_that_benefit_me="NecromancerTotems"
+            cost_for_ai_to_purchase="10000" strength_multiplier="1"   
+            hull_points="200000" shield_points="0" speed="Immobile"
+            armor_mm="180" albedo="0.3" mass_tx="6"
+            metal_cost="100000" energy_consumption="15000"
+			build_points_per_second="500" build_point_cost_for_per_second_construction="3000"
+			tag_to_spawn_from_for_build_point_for_per_second_construction="OrbofMending"
+			personal_ship_cap_for_per_second_build_point_construction="10"
+           
+            build_sidebar_categories_i_am_part_of="NecromancerDefenses"	
+			minimum_required_city_level_for_construction="1"			
+			name_for_city_sockets="Necropolis Hex" 
+            name_for_city_sockets_short="Hex"
+			city_socket_cost="2"
+			base_ship_cap_in_custom_city="2"
+			added_ship_cap_in_custom_city_per_city_level="0"
+			added_ship_cap_in_custom_city_per_city_level_above_level="1"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            is_nonfunctional_when_on_planet_not_owned_by_player="false"	
+			priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="MidFavoriteToy"
+	        >
+    <metal_flow purpose="SelfConstruction" throughput="2000"/>
+		   <system name="R9" display_name="吸取光束"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="3000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="SlightlyLow"
+                shots_per_salvo="4" added_shots_per_salvo_per_mark="1" fires_salvos_sequentially="true"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_Purple"
+				hits_all_intersecting_targets="false"				
+				shots_detonate_immediately="false"
+				health_change_per_damage_dealt="0.7"
+				>
+				<outgoing_damage_modifier based_on="EnergyUsage" comparison_type="AtLeast" compared_to="7000" multiplier="4" added_multiplier_per_mark="0.6" />
+    <death_effect_damage type="Necromancy" tier_name="Major"/>
+	</system>
+    </entity>
+
+
+	<entity name="OrbofMending"	 display_name="治愈之球" display_name_for_sidebar="治愈之球"
+				thematic_groups="Neinzul,Necromancer,Orbital"				
+			visuals="Assets/_DLC3/Necromancer/OrbOfEntropy/OrbOfMending.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships4/NecromancerOrb" icon_overlay="Overlays2/NecromancerOrbOfMending"
+				category="Ship" is_strikecraft="true"
+				size_scale="2.5"
+				visuals_scale_multiplier="3"
+				collision_priority="1"
+				description="由生命之力图腾创造的球体，专门用于治疗盟友。"
+				behavior="Stationary"
+				starting_mark_level="Mark1" tech_upgrades_that_benefit_me="NecromancerTotems" 
+				cost_for_ai_to_purchase="1000" strength_multiplier="1"
+				hull_points="4000" shield_points="0" speed="VeryHigh2"
+				metal_cost="2500" energy_consumption="0"
+				assist_range="AboveAverage3"
+				armor_mm="20" albedo="0.2" engine_gx="20" mass_tx="0.01"
+				
+				orbits_parent_at_range="5000" degrees_to_orbit_per_second="3"  attempts_to_reach_orbital_point_at_speed="8000" dies_if_parent_is_dead_or_remains="true"
+				is_combatant_despite_no_weapons="true"
+				tags="OrbofMending"
+				dies_if_parent_dies="true"
+				immune_to_swapping_between_fleets="true"
+				is_blocked_from_transporting="true"
+				never_leaves_remains="true" 
+				fleet_membership="Planetary"
+				voice_group="Silent"
+				ship_or_structure_explosion_sfx="Turret_Explosion"
+				ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+				priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="Expendable"
+				>
+		
+		<ship_class_data can_be_zombified_and_similar="false" />
+		<metal_flow purpose="RepairingHullsOfFriendlies" throughput="125" increase_per_mark_level="125"/>
+		<metal_flow purpose="RepairingShieldsOfFriendlies" throughput="125" increase_per_mark_level="125"/>
+		<metal_flow purpose="RepairingEnginesOfFriendlies" throughput="125" increase_per_mark_level="125"/>
+		</entity>	
+
+
+	<entity name="Treacherous Totem" display_name="诡诈图腾" display_name_for_sidebar="诡诈图腾"
+			tags="NecromancerBuildMenu,NecromancerDefensiveBuildMenu,NecromancerDefensiveBuildMenuOnly" 
+            thematic_groups="Neinzul,Necromancer"	
+            visuals="Assets/_DLC3/Necromancer/ProtectiveTotem/TreacherousTotem.prefab" visuals_bundle="exp3_neinzul_abyss"
+		icon_name="Ships4/NecromancerTotem" icon_overlay="Overlays2/NecromancerTotemOfTreachery"
+            voice_group="Spire"
+            uses_large_health_bar="true"
+            category="Ship"
+			size_scale="7.4"
+			visuals_scale_multiplier="12"
+            y_offset_of_icon="30"
+            collision_priority="810"
+			mark_level_scale_style="NecromancerDefenses"
+			description="死灵法师最强大的图腾，仅防御型亡者都市可用。它具有黑洞发生器效果，阻止大多数舰船通过虫洞逃离，并在广阔区域内减缓舰船速度。其主要武器对被困在牵引光束中的舰船造成额外伤害。它会创造熵之球环绕图腾，将舰船困在牵引光束中。这些球体还会制造自己的雷区，对被困在牵引光束中的舰船造成严重破坏。"
+            starting_mark_level="Mark1" tech_upgrades_that_benefit_me="NecromancerTotems"
+            cost_for_ai_to_purchase="10000" strength_multiplier="1"   
+            hull_points="100000" shield_points="500000" speed="Immobile"
+            armor_mm="180" albedo="0.5" mass_tx="6"
+            metal_cost="100000" energy_consumption="25000"
+			adds_black_hole_effect_for_entities_with_engine_gx_less_than="14"
+			
+			build_points_per_second="100" build_point_cost_for_per_second_construction="2000"
+			tag_to_spawn_from_for_build_point_for_per_second_construction="OrbofEntropy"
+			personal_ship_cap_for_per_second_build_point_construction="5"
+			immune_to_swapping_between_fleets="true"
+            build_sidebar_categories_i_am_part_of="NecromancerDefenses"	
+			minimum_required_city_level_for_construction="1"			
+			name_for_city_sockets="Necropolis Hex" 
+            name_for_city_sockets_short="Hex"
+			city_socket_cost="3"
+			base_ship_cap_in_custom_city="1"
+			added_ship_cap_in_custom_city_per_city_level="0"
+			added_ship_cap_in_custom_city_per_city_level_above_level="0"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            is_nonfunctional_when_on_planet_not_owned_by_player="false"	
+			priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+	        >
+    <metal_flow purpose="SelfConstruction" throughput="2000"/>
+		<system name="WD" display_name="死灵法师轨道加农炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="300" range="High2" shot_speed="Normal" rate_of_fire="Normal"
+				shots_per_salvo="10" shots_per_target="10" fires_salvos_sequentially="false"
+				shot_type_data="ExtremeLongRangeRailgun" cloaking_percent_loss_from_firing="1"
+				multiplier_damage_to_tractored_unit="5"
+				>	
+		 <death_effect_damage type="Necromancy" tier_name="Major"/>		
+		</system>
+		<system name="G" display_name="引力核心"
+				category="Passive"
+				base_gravity_speed_multiplier="0.8" subtracted_gravity_speed_multiplier_per_mark="0.05" gravity_hits_engine_gx_less_than="14" gravity_range="InsanelyHigh"
+				>
+		</system>
+	</entity>	
+
+  
+
+		<entity name="OrbofEntropy"	 display_name="熵之球"
+				thematic_groups="Neinzul,Necromancer,Orbital"
+			visuals="Assets/_DLC3/Necromancer/OrbOfEntropy/OrbOfEntropy.prefab" visuals_bundle="exp3_neinzul_abyss"
+				icon_name="Ships4/NecromancerOrb" icon_overlay="Overlays2/NecromancerOrbOfEntropy"
+				category="Ship" is_strikecraft="true"
+				size_scale="2.5"
+				visuals_scale_multiplier="3"
+				collision_priority="1"
+				description="这个球体用牵引光束困住舰船，并释放熵雷在范围内环绕，对被困在光束中的舰船造成严重破坏。"
+				behavior="Stationary"
+				starting_mark_level="Mark1" tech_upgrades_that_benefit_me="NecromancerTotems" 
+				cost_for_ai_to_purchase="1000" strength_multiplier="1"
+				hull_points="30000" shield_points="60000" speed="Immobile"
+				metal_cost="25000" energy_consumption="7500"
+				armor_mm="120" albedo="0.6" mass_tx="2"
+				build_points_per_second="500" build_point_cost_for_per_second_construction="3000"
+				tag_to_spawn_from_for_build_point_for_per_second_construction="Necrobomb"
+				personal_ship_cap_for_per_second_build_point_construction="6"
+				can_pass_through_enemy_forcefields="true"
+				tags="OrbofEntropy"
+				orbits_parent_at_range="12000" degrees_to_orbit_per_second="4"  attempts_to_reach_orbital_point_at_speed="5000" dies_if_parent_is_dead_or_remains="true"
+				dies_if_parent_dies="true"
+				immune_to_swapping_between_fleets="true"
+				is_blocked_from_transporting="true"
+				voice_group="Silent"
+				ship_or_structure_explosion_sfx="Turret_Explosion"
+				ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+				priority_as_ai_target="ShieldGenerator" priority_as_frd_target="NotDangerous" priority_to_protect="MidFavoriteToy"
+				>
+		<ship_class_data can_be_zombified_and_similar="false" />
+		<system name="T" display_name="牵引光束"
+				category="Passive"
+				tractor_range="Small5" tractor_count="42" tractor_count_added_per_mark="21" tractor_hits_albedo_less_than="0.4" tractor_hits_engine_gx_less_than="18"
+				>
+		</system>
+		</entity>
+
+
+	<entity name="Necrobomb"	 display_name="死灵炸弹"
+				thematic_groups="Neinzul,Necromancer,Orbital"		
+				visuals="Assets/_DLC3/Necromancer/NecromancerDoombomb/NecromancerDoombomb.prefab" visuals_bundle="exp3_neinzul_abyss"
+				icon_name="Ships4/Necrobomb"
+				category="Ship" is_strikecraft="true"
+				size_scale="2.5"
+				visuals_scale_multiplier="9"
+				collision_priority="1"
+				description="一个可补充的雷区，环绕熵之球，摧毁被困在球体牵引光束中的舰船。"
+				behavior="Stationary"
+				starting_mark_level="Mark1" tech_upgrades_that_benefit_me="NecromancerTotems" 
+				cost_for_ai_to_purchase="1000" strength_multiplier="0.25"
+				hull_points="1000" shield_points="0" speed="Immobile"
+				metal_cost="25000" energy_consumption="7500"
+				armor_mm="120" albedo="0.6" mass_tx="2"
+				tags="Necrobomb"
+				can_pass_through_enemy_forcefields="true"
+				orbits_parent_at_range="3360" degrees_to_orbit_per_second="12"  attempts_to_reach_orbital_point_at_speed="8000"
+				dies_if_parent_dies="true"
+				immune_to_swapping_between_fleets="true"
+				is_blocked_from_transporting="true"
+				voice_group="Silent"
+				ship_or_structure_explosion_sfx="Turret_Explosion"
+				ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+				priority_as_ai_target="ShieldGenerator" priority_as_frd_target="NotDangerous" priority_to_protect="MidFavoriteToy"
+				>
+			
+		<ship_class_data can_be_zombified_and_similar="false" />
+			<system name="W1" display_name="区域地雷"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="5000" range="VeryTiny1" shot_speed="Instant" rate_of_fire="Devourer" fires_salvos_sequentially="true"
+				shot_type_data="ExplosiveFlakBurst"
+				area_of_effect_size="1200"	
+				maximum_number_of_targets_hit_per_shot="20" cloaking_percent_loss_from_firing="1"
+				health_change_by_max_health_divided_by_this_per_attack="-1"
+				>
+				<death_effect_damage type="Necromancy" tier_name="Minor"/>		
+			</system>
+			<system name="C" display_name="隐形装置"
+				category="Passive"
+				cloaking_points="2000" cloaking_points_added_per_mark="1000"
+				>
+			</system>
+		</entity>
+
+</root>

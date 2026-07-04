@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <journal name="CP_AIDef_More" sidebar_text="{FactionName} 已被击败" can_record_another_copy_if_already_recorded_in_this_campaign="true"
+        text_replacement_related_faction="true"
+        chat_text="{FactionName} has been defeated!  Well done.  It has lost its coordination with the other AI factions and is now rogue."
+        full_text="{FactionName} 已被击败！干得好。它已与其他 AI 派系失去协调，现在处于失控状态。" />
+
+  <journal name="CP_AIDef_Final" sidebar_text="{FactionName} 已被击败" can_record_another_copy_if_already_recorded_in_this_campaign="true"
+        text_replacement_related_faction="true"
+        chat_text="{FactionName} has been defeated!  That was the last of the AIs, which means you have won!"
+        full_text="{FactionName} 已被击败！那是最后一个 AI，这意味着你赢了！" />
+
+  <journal name="CP_AIDef_MoreOthers" sidebar_text="{FactionName} 已被击败" can_record_another_copy_if_already_recorded_in_this_campaign="true"
+        text_replacement_related_faction="true"
+        chat_text="{FactionName} has been defeated!  That was the last of the AIs, but we have not yet won!"
+        full_text="{FactionName} 已被击败！那是最后一个 AI，但我们还没有获胜！" />
+
+  <journal name="Badg_AI_Civ" sidebar_text="AI 内战" can_record_another_copy_if_already_recorded_in_this_campaign="true"
+        chat_text="The AI Civil War has begun."
+        full_text="好吧，现在所有的 AI 似乎都互相仇视。你能利用这一点并成功存活下来吗？" />
+
+  <journal name="OutguardFirstDetected" sidebar_text="{FactionColor}前哨守卫&lt;/color&gt;: 潜在的下属势力！"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+		   text_replacement_related_player_name="true"
+           chat_text="{FactionColor}Outguard&lt;/color&gt; beacon sighted -- potential underlings!"
+           full_text="致：指挥官 {PlayerName}
+发自：首席通信官德米特里·罗森鲍姆
+
+指挥官，
+
+我们检测到一个异常 AI 数据中心发出的微弱背景活动信号。经过进一步检查，我们发现了一条加密程度很高的消息，据我们判断，它似乎来自超空间网格之外的某个地方。令人难以置信的是，有人想出了一种方法来破坏数据中心的收发器，阻止 AI 访问其外部内存库并劫持其发射器。
+
+ 我们差点错过第二条未加密的消息。这是一条循环录音，声称存在一个针对 AI 的去中心化抵抗运动。如果我们能够解密主消息，我们将得知这些我们内部称之为“前哨守卫”的组织的通讯频率。
+
+这个“前哨守卫信标”只能访问几个前哨守卫的通讯频率，但我们相信还有更多这样的信标就隐藏在显眼的地方。如果我们能够成功打开通讯频道，这些前哨守卫将成为我们在绝境中可以求助的强大盟友。AI 肯定会试图阻止这一点，因此在没有足够兵力的情况下，不应尝试这样做。
+
+我们将能够与这些前哨守卫分享我们的一些技术，如果我们有兼容的飞船，他们将能够召唤更强大的力量。然而，他们缺乏像我们的工厂那样高效生产高级战舰的制造能力，因此随着战舰等级的提高，我们预计看到的战舰数量会减少。他们在召唤之间需要时间重新集结力量，因此我们在求助时应谨慎行事。
+
+作为个人感言，看到有其他人在对抗机器威胁的迹象让我充满希望。我相信他们和我们一样需要彼此。" />
+
+  <journal name="BeaconEncounter" sidebar_text="信标概述" can_record_another_copy_if_already_recorded_in_this_campaign="false"
+        full_text="信标是一种将游戏大厅的游戏灵活性带入游戏本身的方式。你可以破解信标，为你的游戏添加额外的派系。 
+
+目标是让玩家能够根据自己的喜好动态更新游戏；觉得自己要输了？添加一个盟友。想要更多挑战？添加一个可怕的新对手。
+
+信标的使用是可选的，并且可以在游戏大厅中禁用。" />
+
+</root>

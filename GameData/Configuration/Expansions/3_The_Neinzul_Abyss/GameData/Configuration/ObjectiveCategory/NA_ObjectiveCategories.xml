@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <objective_category name="NecromancerRifts" display_name="裂隙" sort_priority="30"
+        description="这些裂隙将在你作为死灵法师的旅途中提供帮助。" />
+
+  <objective_category name="NecromancerAmplifiers" display_name="增幅器" sort_priority="35"
+        description="占领这些增幅器将增强你的死灵之力。" />
+
+</root>

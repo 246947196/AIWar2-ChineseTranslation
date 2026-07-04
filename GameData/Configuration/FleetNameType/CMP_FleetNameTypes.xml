@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <fleet_name_type name="Random" display_name="随机" subdir="Random"
+          description="随机生成的名称。" />
+  <fleet_name_type name="Ancient Gods" display_name="远古诸神" subdir="AncientGods"
+          description="各种希腊和罗马神灵。（由 StarKelp 创建）" />
+  <fleet_name_type name="British Ships" display_name="英国舰船" subdir="BritishShips"
+          description="基于英国海军的舰船。（由 StarKelp 创建）" />
+  <fleet_name_type name="US Ships" display_name="美国舰船" subdir="US_Ships"
+          description="基于美国海军的舰船。（由 StarKelp 创建）" />
+  <fleet_name_type name="US States" display_name="美国各州" subdir="US_States"
+          description="美国的各个州。（由 StarKelp 创建）" />
+   <fleet_name_type name="Mathematicians" display_name="数学家" subdir="Mathematicians"
+          description="著名的数学家。（由 Peter Ebbesen 创建）" />
+   <fleet_name_type name="Elements" display_name="元素" subdir="Elements"
+          description="从元素周期表中选取的元素。（由 StarKelp 创建）" />
+   <fleet_name_type name="Coward" display_name="胆小鬼" subdir="Coward"
+          description="一些不太勇敢的舰队名称。（由 StarKelp 创建）" />
+   <fleet_name_type name="Various Weapons" display_name="各种武器" subdir="VariousWeapons"
+          description="来自其他游戏的武器。你能认出这些出处吗？（由 DEMOCRACY_DEMOCRACY 创建）" />
+      <fleet_name_type name="Romans" display_name="罗马人名" subdir="Romans"
+          description="著名罗马人和其他罗马名字的混合" />
+
+</root>

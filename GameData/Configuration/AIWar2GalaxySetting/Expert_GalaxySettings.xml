@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 已弃用的燃料设置 -->
+
+    <galaxy_setting category="Extended" subcategory="Resources_Fuel" is_advanced_setting="true" deprecated="true"
+        name="Fuel_MajorArgonPlanetDivisor" display_name="氩气燃料站除数"
+        type="IntTextbox" changeable_during_gameplay="false"
+        default="11" min="0" max="100"
+        description="确定种子氩气燃料站数量时用于除以行星数量的数字。（如果设置为0，则只会生成额外的燃料站）"
+        default_should_override_user_value_if_older_than_version="5538_Dismiss"
+        >
+        <harshness_override is_sandbox="true" min="0" max="100" />
+    </galaxy_setting>
+    <galaxy_setting category="Extended" subcategory="Resources_Fuel" is_advanced_setting="true" deprecated="true"
+        name="Fuel_MajorArgonPlanetMultiplier" display_name="氩气燃料站乘数"
+        type="IntTextbox" changeable_during_gameplay="false"
+        default="1" min="0" max="10"
+        description="确定种子氩气燃料站数量时用于乘以行星数量的数字。（如果设置为0，则只会生成额外的燃料站）"
+        default_should_override_user_value_if_older_than_version="5538_Dismiss"
+        >
+        <harshness_override is_sandbox="true" min="0" max="10" />
+    </galaxy_setting>
+    <galaxy_setting category="Extended" subcategory="Resources_Fuel" is_advanced_setting="true" deprecated="true"
+        name="Fuel_MajorArgonExtra" display_name="额外的氩气燃料站"
+        type="IntTextbox" changeable_during_gameplay="false"
+        default="0" min="0" max="20"
+        description="需要额外种植的氩气燃料站，除了每个行星上的和每个人类母星世界上的一个。"
+        default_should_override_user_value_if_older_than_version="5538_Dismiss"
+        >
+        <harshness_override is_sandbox="true" min="0" max="100" />
+    </galaxy_setting>
+    <galaxy_setting category="Extended" subcategory="Resources_Fuel" is_advanced_setting="true" deprecated="true"
+        name="Fuel_MajorArgonRandomMinHop" display_name="随机氩气燃料的最小距离"
+        type="IntTextbox" changeable_during_gameplay="false"
+        default="3" min="1" max="20"
+        description="从人类母星世界种植随机氩气燃料站的最小跳跃数。
+
+这是针对那些除了每个人类母星世界附近的之外额外种植的燃料站。"
+        default_should_override_user_value_if_older_than_version="5538_Dismiss"
+        >
+        <harshness_override is_sandbox="true" min="0" max="100" />
+    </galaxy_setting>
+    <galaxy_setting category="Extended" subcategory="Resources_Fuel" is_advanced_setting="true" deprecated="true"
+        name="Fuel_MajorRadonPlanetDivisor" display_name="氡气燃料站除数"
+        type="IntTextbox" changeable_during_gameplay="false"
+        default="8" min="0" max="100"
+        description="确定种子氡气燃料站数量时用于除以行星数量的数字。（如果设置为0，则只会生成额外的燃料站）"
+        default_should_override_user_value_if_older_than_version="5538_Dismiss"
+        >
+        <harshness_override is_sandbox="true" min="0" max="100" />
+    </galaxy_setting>
+    <galaxy_setting category="Extended" subcategory="Resources_Fuel" is_advanced_setting="true" deprecated="true"
+        name="Fuel_MajorRadonPlanetMultiplier" display_name="氡气燃料站乘数"
+        type="IntTextbox" changeable_during_gameplay="false"
+        default="1" min="0" max="100"
+        description="确定种子氡气燃料站数量时用于乘以行星数量的数字。（如果设置为0，则只会生成额外的燃料站）"
+        default_should_override_user_value_if_older_than_version="5538_Dismiss"
+        >
+        <harshness_override is_sandbox="true" min="0" max="100" />
+    </galaxy_setting>
+    <galaxy_setting category="Extended" subcategory="Resources_Fuel" is_advanced_setting="true" deprecated="true"
+        name="Fuel_MajorRadonExtra" display_name="额外的氡气燃料站"
+        type="IntTextbox" changeable_during_gameplay="false"
+        default="0" min="0" max="20"
+        description="需要额外种植的氡气燃料站，除了每个行星上的和每个人类母星世界上的两个。"
+        default_should_override_user_value_if_older_than_version="5538_Dismiss"
+        >
+        <harshness_override is_sandbox="true" min="0" max="100" />
+    </galaxy_setting>
+    <galaxy_setting category="Extended" subcategory="Resources_Fuel" is_advanced_setting="true" deprecated="true"
+        name="Fuel_MajorRadonRandomMinHop" display_name="随机氡气燃料的最小距离"
+        type="IntTextbox" changeable_during_gameplay="false"
+        default="3" min="1" max="20"
+        description="从人类母星世界种植随机氡气燃料站的最小跳跃数。
+
+这是针对那些除了每个人类母星世界附近的之外额外种植的燃料站。"
+        default_should_override_user_value_if_older_than_version="5538_Dismiss"
+        >
+        <harshness_override is_sandbox="true" min="0" max="100" />
+    </galaxy_setting>
+    <galaxy_setting category="Extended" subcategory="Resources_Fuel" is_advanced_setting="true" deprecated="true"
+        name="Fuel_MajorXenonPlanetDivisor" display_name="氙气燃料站除数"
+        type="IntTextbox" changeable_during_gameplay="false"
+        default="12" min="0" max="100"
+        description="确定种子氙气燃料站数量时用于除以行星数量的数字。（如果设置为0，则只会生成额外的燃料站）"
+        default_should_override_user_value_if_older_than_version="5538_Dismiss"
+        >
+        <harshness_override is_sandbox="true" min="0" max="100" />
+    </galaxy_setting>
+    <galaxy_setting category="Extended" subcategory="Resources_Fuel" is_advanced_setting="true" deprecated="true"
+        name="Fuel_MajorXenonPlanetMultiplier" display_name="氙气燃料站乘数"
+        type="IntTextbox" changeable_during_gameplay="false"
+        default="1" min="0" max="10"
+        description="确定种子氙气燃料站数量时用于乘以行星数量的数字。（如果设置为0，则只会生成额外的燃料站）"
+        default_should_override_user_value_if_older_than_version="5538_Dismiss"
+        >
+        <harshness_override is_sandbox="true" min="0" max="10" />
+    </galaxy_setting>
+    <galaxy_setting category="Extended" subcategory="Resources_Fuel" is_advanced_setting="true" deprecated="true"
+        name="Fuel_MajorXenonExtra" display_name="额外的氙气燃料站"
+        type="IntTextbox" changeable_during_gameplay="false"
+        default="0" min="0" max="20"
+        description="需要额外种植的氙气燃料站，除了每个行星上的和每个人类母星世界上的一个。"
+        default_should_override_user_value_if_older_than_version="5538_Dismiss"
+        >
+        <harshness_override is_sandbox="true" min="0" max="100" />
+    </galaxy_setting>
+    <galaxy_setting category="Extended" subcategory="Resources_Fuel" is_advanced_setting="true" deprecated="true"
+        name="Fuel_MajorXenonRandomMinHop" display_name="随机氙气燃料的最小距离"
+        type="IntTextbox" changeable_during_gameplay="false"
+        default="3" min="1" max="20"
+        description="从人类母星世界种植随机氙气燃料站的最小跳跃数。
+
+这是针对那些除了每个人类母星世界附近的之外额外种植的燃料站。"
+        default_should_override_user_value_if_older_than_version="5538_Dismiss"
+        >
+        <harshness_override is_sandbox="true" min="0" max="100" />
+    </galaxy_setting>
+    <galaxy_setting category="Extended" subcategory="Resources_Fuel" is_advanced_setting="true" deprecated="true"
+        name="Fuel_MajorBalancedPlanetDivisor" display_name="平衡燃料站除数"
+        type="IntTextbox" changeable_during_gameplay="false"
+        default="27" max="100"
+        description="确定种子平衡燃料站数量时用于除以行星数量的数字。（如果设置为0，则只会生成额外的燃料站）"
+        default_should_override_user_value_if_older_than_version="5538_Dismiss"
+        >
+        <harshness_override is_sandbox="true" min="0" max="100" />
+    </galaxy_setting>
+    <galaxy_setting category="Extended" subcategory="Resources_Fuel" is_advanced_setting="true" deprecated="true"
+        name="Fuel_MajorBalancedPlanetMultiplier" display_name="平衡燃料站乘数"
+        type="IntTextbox" changeable_during_gameplay="false"
+        default="1" min="0" max="100"
+        description="确定种子平衡燃料站数量时用于乘以行星数量的数字。（如果设置为0，则只会生成额外的燃料站）"
+        default_should_override_user_value_if_older_than_version="5538_Dismiss"
+        >
+        <harshness_override is_sandbox="true" min="0" max="100" />
+    </galaxy_setting>
+    <galaxy_setting category="Extended" subcategory="Resources_Fuel" is_advanced_setting="true" deprecated="true"
+        name="Fuel_MajorBalancedExtra" display_name="额外的平衡燃料站"
+        type="IntTextbox" changeable_during_gameplay="false"
+        default="0" min="0" max="20"
+        description="需要额外种植的平衡燃料站，除了每个行星上的。"
+        default_should_override_user_value_if_older_than_version="5538_Dismiss"
+        >
+        <harshness_override is_sandbox="true" min="0" max="100" />
+    </galaxy_setting>
+    <galaxy_setting category="Extended" subcategory="Resources_Fuel" is_advanced_setting="true" deprecated="true"
+        name="Fuel_MajorBalancedRandomMinHop" display_name="随机平衡燃料的最小距离"
+        type="IntTextbox" changeable_during_gameplay="false"
+        default="5" min="1" max="20"
+        description="从人类母星世界种植随机平衡燃料站的最小跳跃数。
+
+这是针对那些除了每个人类母星世界附近的之外额外种植的燃料站。"
+        default_should_override_user_value_if_older_than_version="5538_Dismiss"
+        >
+        <harshness_override is_sandbox="true" min="0" max="100" />
+    </galaxy_setting>
+    <galaxy_setting category="Extended" subcategory="Resources_Fuel" is_advanced_setting="true" deprecated="true"
+        name="Fuel_PercentageTwoFuelStations" display_name="一个行星上有两个燃料站的几率(%)"
+        type="IntTextbox" changeable_during_gameplay="false"
+        default="10" min="0" max="100"
+        description="一个行星上有两个燃料站的几率。"
+        default_should_override_user_value_if_older_than_version="5538_Dismiss"
+        >
+        <harshness_override is_sandbox="true" min="0" max="100" />
+    </galaxy_setting>
+</root>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--  Okay, these are for versions where you get ships of those types from hacking a ODSS.
+        Based around HackODSS.
+        ***********************************************************************-->
+  
+  <objective_details_hook name="ODSSCapturablesThatGiveMore_Sniper" category="CapturablesThatGiveMore_Sniper"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.CaptureDSS"
+          display_name_color="cfd988" default_display_name="骇入ODSS" finish_display_name_with_related_entity1_planet_only="true"
+          use_default_display_name_instead_of_display_name_base="true"
+          click_behavior="CenterOnRelatedEntity1" focus_type="FocusOnRelatedEntity1"
+          serialization_type="RelatedEntity1Only" importance_calculation="RelatedEntity1Importance"
+          difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedEntity1_DivideBy1000"/>
+
+  <objective_details_hook name="ODSSCapturablesThatGiveMore_Melee" category="CapturablesThatGiveMore_Melee"
+          copy_from="ODSSCapturablesThatGiveMore_Sniper"/>
+
+  <objective_details_hook name="ODSSCapturablesThatGiveMore_EngineDamage" category="CapturablesThatGiveMore_EngineDamage"
+          copy_from="ODSSCapturablesThatGiveMore_Sniper"/>
+
+  <objective_details_hook name="ODSSCapturablesThatGiveMore_Gravity" category="CapturablesThatGiveMore_Gravity"
+          copy_from="ODSSCapturablesThatGiveMore_Sniper"/>
+
+  <objective_details_hook name="ODSSCapturablesThatGiveMore_Tractors" category="CapturablesThatGiveMore_Tractors"
+          copy_from="ODSSCapturablesThatGiveMore_Sniper"/>
+
+  <objective_details_hook name="ODSSCapturablesThatGiveMore_ParalysisDamage" category="CapturablesThatGiveMore_ParalysisDamage"
+          copy_from="ODSSCapturablesThatGiveMore_Sniper"/>
+
+  <objective_details_hook name="ODSSCapturablesThatGiveMore_Cloaking" category="CapturablesThatGiveMore_Cloaking"
+          copy_from="ODSSCapturablesThatGiveMore_Sniper"/>
+
+  <objective_details_hook name="ODSSCapturablesThatGiveMore_Tachyon" category="CapturablesThatGiveMore_Tachyon"
+          copy_from="ODSSCapturablesThatGiveMore_Sniper"/>
+
+  <objective_details_hook name="ODSSCapturablesThatGiveMore_Frigates" category="CapturablesThatGiveMore_Frigates"
+          copy_from="ODSSCapturablesThatGiveMore_Sniper"/>
+
+  <objective_details_hook name="ODSSCapturablesThatGiveMore_BubbleShields" category="CapturablesThatGiveMore_BubbleShields"
+          copy_from="ODSSCapturablesThatGiveMore_Sniper"/>
+
+  <objective_details_hook name="ODSSCapturablesThatGiveMore_AreaOfEffect" category="CapturablesThatGiveMore_AreaOfEffect"
+          copy_from="ODSSCapturablesThatGiveMore_Sniper"/>
+
+  <objective_details_hook name="ODSSCapturablesThatGiveMore_DroneLauncher" category="CapturablesThatGiveMore_DroneLauncher"
+          copy_from="ODSSCapturablesThatGiveMore_Sniper"/>
+
+  <objective_details_hook name="ODSSCapturablesThatGiveMore_AntiHighArmor" category="CapturablesThatGiveMore_AntiHighArmor"
+          copy_from="ODSSCapturablesThatGiveMore_Sniper"/>
+
+  <objective_details_hook name="ODSSCapturablesThatGiveMore_AntiLowArmor" category="CapturablesThatGiveMore_AntiLowArmor"
+          copy_from="ODSSCapturablesThatGiveMore_Sniper"/>
+
+  <objective_details_hook name="ODSSCapturablesThatGiveMore_AntiHighEnergyUsage" category="CapturablesThatGiveMore_AntiHighEnergyUsage"
+          copy_from="ODSSCapturablesThatGiveMore_Sniper"/>
+
+  <objective_details_hook name="ODSSCapturablesThatGiveMore_AntiLowEnergyUsage" category="CapturablesThatGiveMore_AntiLowEnergyUsage"
+          copy_from="ODSSCapturablesThatGiveMore_Sniper"/>
+
+  <objective_details_hook name="ODSSCapturablesThatGiveMore_AntiHighAlbedo" category="CapturablesThatGiveMore_AntiHighAlbedo"
+          copy_from="ODSSCapturablesThatGiveMore_Sniper"/>
+
+  <objective_details_hook name="ODSSCapturablesThatGiveMore_AntiLowAlbedo" category="CapturablesThatGiveMore_AntiLowAlbedo"
+          copy_from="ODSSCapturablesThatGiveMore_Sniper"/>
+
+  <objective_details_hook name="ODSSCapturablesThatGiveMore_AntiHighMass_tX" category="CapturablesThatGiveMore_AntiHighMass_tX"
+          copy_from="ODSSCapturablesThatGiveMore_Sniper"/>
+
+  <objective_details_hook name="ODSSCapturablesThatGiveMore_AntiLowMass_tX" category="CapturablesThatGiveMore_AntiLowMass_tX"
+          copy_from="ODSSCapturablesThatGiveMore_Sniper"/>
+
+  <objective_details_hook name="ODSSCapturablesThatGiveMore_AntiHighEngine_gx" category="CapturablesThatGiveMore_AntiHighEngine_gx"
+          copy_from="ODSSCapturablesThatGiveMore_Sniper"/>
+
+  <objective_details_hook name="ODSSCapturablesThatGiveMore_AntiLowEngine_gx" category="CapturablesThatGiveMore_AntiLowEngine_gx"
+          copy_from="ODSSCapturablesThatGiveMore_Sniper"/>
+
+  <objective_details_hook name="ODSSCapturablesThatGiveMore_AntiShield" category="CapturablesThatGiveMore_AntiShield"
+          copy_from="ODSSCapturablesThatGiveMore_Sniper"/>
+
+  <objective_details_hook name="ODSSCapturablesThatGiveMore_Fast" category="CapturablesThatGiveMore_Fast"
+          copy_from="ODSSCapturablesThatGiveMore_Sniper"/>
+
+</root>

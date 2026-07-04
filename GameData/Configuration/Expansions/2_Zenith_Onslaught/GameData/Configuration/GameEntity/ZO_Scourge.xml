@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <!-- No shields, only Hull for the Hydra regeneration to occur. Little damage by itself, including the Acid effect.
+       Most damage occurs from the Heads it spawns, who are also really weak, but gain a LOT through the Acid (low reload time, many shots).
+       Idea is these guys are a supporter, who suffer if shot at from a distance as their main damage source (Heads) attrition before they get into range.
+	   Balance is done as if the Warrior is 1/3rd of the total damage output (including the Acid from itself), and a Head is the remaining 2/3rd, for now.
+       For the Hybrids, the Heads take their benefits as well.	   !-->
+  
+    <entity name="ZenithWarrior" tags="ScourgeWarrior,BecomesNecromancyWight,ScourgeZenith" 
+            thematic_groups="Scourge,Zenith" npc_ship_cap_type="FrigatesAndGuardians"
+			visuals="Assets/_DLC2/Scourge/ScourgeZenithWarrior/ScourgeZenithWarrior.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships2/SomethingAlien" icon_overlay="Overlays2/Race_Zenith"
+			y_offset_of_icon="30"
+			voice_group="Silent"
+			category="Ship"
+	        size_scale="4.2"
+	        visuals_scale_multiplier="45"
+			collision_priority="100"
+			display_name="天顶战士"
+      display_name_for_sidebar="天顶战"
+			description="扭曲的天顶族巨舰，天顶族是一个古老、分散且富有诗意的种族。在未受到攻击时能快速自我修复，使敌人承受更多伤害，并在受到伤害时生成“头部”单位。"
+			starting_mark_level="Mark1"
+			cost_for_ai_to_purchase="180"
+			hull_points="40000" shield_points="0" speed="AboveAverage1"
+			metal_cost="40000" energy_consumption="5000"
+			armor_mm="50" albedo="0.3" engine_gx="16" mass_tx="5"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"	
+			seconds_to_fully_regenerate_hull="20"
+			build_points_per_damage_taken="1"
+			unit_to_make_with_build_points_from_damage_taken="ZenithWarriorHead"				
+            priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="Expendable"
+            description_appender_dll="AIWarExternalCode"
+			description_appender_type="Arcen.AIW2.External.ScourgeGenericUnitDescriptionAppender"
+            >
+    <system name="WD" display_name="天顶酸液喷射"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="10" range="Small4" shot_speed="Normal" rate_of_fire="Misery" 
+			shots_per_salvo="10" fires_salvos_sequentially="false"
+			shot_type_data="DoubleShot_Green"
+			damage_amplification="true" damage_amplification_duration="10" damage_amplification_flat="90"
+			>
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+	  
+    <entity name="AIZenithWarrior"  copy_from="ZenithWarrior" tags="AIScourge" thematic_groups="Hidden"             
+            hull_points="20000"
+			unit_to_make_with_build_points_from_damage_taken="AIZenithWarriorHead"
+            >
+    <system name="WD"
+			shots_per_salvo="5"
+			>
+    </system>
+    <ai_ship_group_membership name="ScourgeRacialWarriors" weight="100"/>
+	<ship_class_data can_be_zombified_and_similar="true" />
+    </entity>	  
+	  
+    <entity name="ZenithWarriorHead"
+	        thematic_groups="Scourge,Zenith,Drone"
+			visuals="Assets/_DLC2/Scourge/ScourgeZenithWarrior/ScourgeZenithWarriorHead.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships2/SomethingAlien" icon_overlay="Overlays2/Race_Zenith"
+			y_offset_of_icon="30"
+			voice_group="Silent"
+			category="Ship"
+	        size_scale="2.1"
+	        visuals_scale_multiplier="25"
+			collision_priority="100"
+			display_name="天顶战士头部"
+      display_name_for_sidebar="天顶战头"
+			description="从扭曲的天顶族巨舰上生成的头部单位，天顶族是一个古老、分散且富有诗意的种族。"
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="120"
+			hull_points="20000" shield_points="0" speed="AboveAverage1"
+			metal_cost="40000" energy_consumption="5000"
+			armor_mm="50" albedo="0.3" engine_gx="16" mass_tx="2"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"	
+		    self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="3"
+		    always_self_attritions="true"			
+            priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="Expendable"
+            description_appender_dll="AIWarExternalCode"
+			description_appender_type="Arcen.AIW2.External.ScourgeGenericUnitDescriptionAppender"
+            >
+    <system name="WD" display_name="天顶弹道双发"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="10" range="Small2" shot_speed="Normal" rate_of_fire="Devourer" 
+			shots_per_salvo="10" fires_salvos_sequentially="false"
+			shot_type_data="DoubleShot_Red"
+			>
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+	
+    <entity name="AIZenithWarriorHead"  copy_from="ZenithWarriorHead" tags="AIScourge" thematic_groups="Hidden"             
+            hull_points="10000"
+            >
+    <system name="WD"
+			shots_per_salvo="5"
+			>
+    </system>
+	<ship_class_data can_be_zombified_and_similar="true" />
+    </entity>	
+
+    <entity name="ZenithBurlustWarrior" tags="ScourgeWarrior,BecomesNecromancyWight,ScourgeZenithBurlust" 
+            thematic_groups="Scourge,Zenith,VeryMinorAliens" npc_ship_cap_type="FrigatesAndGuardians"
+			visuals="Assets/_DLC2/Scourge/ScourgeBurlustZenithWarrior/ScourgeBurlustZenithWarrior.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships2/SomethingFloatingCity" icon_overlay="Overlays2/Race_Zenith"
+			y_offset_of_icon="30"
+			voice_group="Silent"
+			category="Ship"
+	        size_scale="9"
+	        visuals_scale_multiplier="20"
+			collision_priority="100"
+			display_name="混合天顶-布尔卢斯特战士"
+      display_name_for_sidebar="天-布战"
+			description="扭曲的天顶族与布尔卢斯特族的混合体。结合了天顶族的支援、治疗和分裂能力，以及布尔卢斯特族的速度和狂暴特性。"
+			starting_mark_level="Mark1"
+			cost_for_ai_to_purchase="1800"
+			hull_points="400000" shield_points="0" speed="AboveAverage6"
+			metal_cost="800000" energy_consumption="25000"
+			armor_mm="50" albedo="0.3" engine_gx="18" mass_tx="7"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"		
+			seconds_to_fully_regenerate_hull="20"
+			build_points_per_damage_taken="1"
+			unit_to_make_with_build_points_from_damage_taken="ZenithBurlustWarriorHead"				
+            priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="Expendable"
+            description_appender_dll="AIWarExternalCode"
+			description_appender_type="Arcen.AIW2.External.ScourgeGenericUnitDescriptionAppender"
+            >
+    <system name="WD" display_name="天顶酸液喷射"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="120" range="Small4" shot_speed="Normal" rate_of_fire="Misery" 
+			shots_per_salvo="43" fires_salvos_sequentially="false"
+			shot_type_data="DoubleShot_Green"
+			damage_amplification="true" damage_amplification_duration="10" damage_amplification_flat="180"
+			>
+			<outgoing_damage_modifier based_on="MyHullPercentageMissing" comparison_type="MultiplesOf" compared_to="20" multiplier="1" />	
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+	
+    <entity name="AIZenithBurlustWarrior"  copy_from="ZenithBurlustWarrior" tags="AIScourge" thematic_groups="Hidden"             
+            hull_points="200000"
+			unit_to_make_with_build_points_from_damage_taken="AIZenithBurlustWarriorHead"
+            >
+    <system name="WD"
+			shots_per_salvo="21"
+			>
+    </system>
+    <ai_ship_group_membership name="ScourgeHybrids" weight="25"/>
+	<ship_class_data can_be_zombified_and_similar="true" />
+    </entity>	
+
+    <entity name="ZenithBurlustWarriorHead"
+	        thematic_groups="Scourge,Zenith,VeryMinorAliens,Drone"
+			visuals="Assets/_DLC2/Scourge/ScourgeBurlustZenithWarrior/ScourgeBurlustZenithWarriorHead.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships2/SomethingAlien" icon_overlay="Overlays2/Race_Zenith"
+			y_offset_of_icon="30"
+			voice_group="Silent"
+			category="Ship"
+	        size_scale="2.1"
+	        visuals_scale_multiplier="10"
+			collision_priority="100"
+			display_name="混合天顶-布尔卢斯特战士头部"
+      display_name_for_sidebar="天-布战头"
+			description="从扭曲的天顶族与布尔卢斯特族混合体上生成的头部单位。"
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="120"
+			hull_points="200000" shield_points="0" speed="AboveAverage6"
+			metal_cost="400000" energy_consumption="12500"
+			armor_mm="50" albedo="0.3" engine_gx="18" mass_tx="3"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"			
+		    self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="3"
+		    always_self_attritions="true"			
+            priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="Expendable"
+            description_appender_dll="AIWarExternalCode"
+			description_appender_type="Arcen.AIW2.External.ScourgeGenericUnitDescriptionAppender"
+            >
+    <system name="WD" display_name="天顶弹道双发"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="120" range="Small2" shot_speed="Normal" rate_of_fire="Devourer" 
+			shots_per_salvo="43" fires_salvos_sequentially="false"
+			shot_type_data="DoubleShot_Red"
+			>
+			<outgoing_damage_modifier based_on="MyHullPercentageMissing" comparison_type="MultiplesOf" compared_to="20" multiplier="1" />	
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+
+    <entity name="AIZenithBurlustWarriorHead"  copy_from="ZenithBurlustWarriorHead" tags="AIScourge" thematic_groups="Hidden"             
+            hull_points="100000"
+            >
+    <system name="WD"
+			shots_per_salvo="21"
+			>
+    </system>
+	<ship_class_data can_be_zombified_and_similar="true" />
+    </entity>
+
+    <entity name="ZenithNeinzulWarrior" tags="ScourgeWarrior,BecomesNecromancyWight,ScourgeZenithNeinzul"
+	        thematic_groups="Scourge,Zenith,VeryMinorAliens" npc_ship_cap_type="FrigatesAndGuardians"
+			visuals="Assets/_DLC2/Scourge/ScourgeNeinzulZenithWarrior/ScourgeNeinzulZenithWarrior.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships2/SomethingFloatingCity" icon_overlay="Overlays2/Race_Zenith"
+			y_offset_of_icon="30"
+			voice_group="Silent"
+			category="Ship"
+	        size_scale="9"
+	        visuals_scale_multiplier="34"
+			collision_priority="100"
+			display_name="混合天顶-奈因祖尔战士"
+      display_name_for_sidebar="天-奈战"
+			description="扭曲的天顶族与奈因祖尔族的混合体。结合了天顶族的支援、治疗和分裂能力，以及奈因祖尔族的混乱感染和吸取能力。"
+			starting_mark_level="Mark1"
+			cost_for_ai_to_purchase="1800"
+			hull_points="400000" shield_points="0" speed="AboveAverage1"
+			metal_cost="800000" energy_consumption="25000"
+			armor_mm="50" albedo="0.3" engine_gx="18" mass_tx="7"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"			
+			seconds_to_fully_regenerate_hull="20"
+			build_points_per_damage_taken="1"
+			unit_to_make_with_build_points_from_damage_taken="ZenithNeinzulWarriorHead"				
+            priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="Expendable"
+            description_appender_dll="AIWarExternalCode"
+			description_appender_type="Arcen.AIW2.External.ScourgeGenericUnitDescriptionAppender"
+            >
+    <system name="WD" display_name="天顶颠覆酸液喷射"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="120" range="Small4" shot_speed="Normal" rate_of_fire="Misery" 
+			shots_per_salvo="40" fires_salvos_sequentially="false"
+			shot_type_data="DoubleShot_Green"
+			damage_amplification="true" damage_amplification_duration="10" damage_amplification_flat="180"
+			health_change_per_damage_dealt="1"
+			>
+			<outgoing_damage_modifier based_on="TargetHullPercentageMissing" comparison_type="MultiplesOf" compared_to="20" multiplier="1" />
+			<death_effect_damage type="Zombification_HostileToAll" tier_name="Parasite"/>		
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+	
+    <entity name="AIZenithNeinzulWarrior"  copy_from="ZenithNeinzulWarrior" tags="AIScourge" thematic_groups="Hidden"             
+            hull_points="200000"
+			unit_to_make_with_build_points_from_damage_taken="AIZenithNeinzulWarriorHead"
+            >
+    <system name="WD"
+			shots_per_salvo="20"
+			>
+    </system>
+    <ai_ship_group_membership name="ScourgeHybrids" weight="25"/>
+	<ship_class_data can_be_zombified_and_similar="true" />
+    </entity>
+
+    <entity name="ZenithNeinzulWarriorHead"
+	        thematic_groups="Scourge,Zenith,VeryMinorAliens,Drone"
+			visuals="Assets/_DLC2/Scourge/ScourgeNeinzulZenithWarrior/ScourgeNeinzulZenithWarriorHead.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships2/SomethingAlien" icon_overlay="Overlays2/Race_Zenith"
+			y_offset_of_icon="30"
+			voice_group="Silent"
+			category="Ship"
+	        size_scale="2.1"
+	        visuals_scale_multiplier="22"
+			collision_priority="100"
+			display_name="混合天顶-奈因祖尔战士头部"
+      display_name_for_sidebar="天-奈战头"
+			description="从扭曲的天顶族与奈因祖尔族混合体上生成的头部单位。"
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="120"
+			hull_points="200000" shield_points="0" speed="AboveAverage1"
+			metal_cost="400000" energy_consumption="12500"
+			armor_mm="50" albedo="0.3" engine_gx="18" mass_tx="3"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"		
+		    self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="3"
+		    always_self_attritions="true"
+            priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="Expendable"
+            description_appender_dll="AIWarExternalCode"
+			description_appender_type="Arcen.AIW2.External.ScourgeGenericUnitDescriptionAppender"
+            >
+    <system name="WD" display_name="天顶颠覆酸液喷射"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="120" range="Small4" shot_speed="Normal" rate_of_fire="Devourer" 
+			shots_per_salvo="40" fires_salvos_sequentially="false"
+			shot_type_data="DoubleShot_Green"
+			damage_amplification="true" damage_amplification_duration="10" damage_amplification_flat="180"
+			health_change_per_damage_dealt="1"
+			>
+			<outgoing_damage_modifier based_on="TargetHullPercentageMissing" comparison_type="MultiplesOf" compared_to="20" multiplier="1" />
+			<death_effect_damage type="Zombification_HostileToAll" tier_name="Parasite"/>		
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+
+    <entity name="AIZenithNeinzulWarriorHead"  copy_from="ZenithNeinzulWarriorHead" tags="AIScourge" thematic_groups="Hidden"            
+            hull_points="100000"
+            >
+    <system name="WD"
+			shots_per_salvo="20"
+			>
+    </system>
+	<ship_class_data can_be_zombified_and_similar="true" />
+    </entity>
+
+</root>

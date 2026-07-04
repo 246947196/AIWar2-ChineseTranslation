@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <entity name="ZenithSphere" 
+            thematic_groups="DysonSphere,Zenith"
+			tags="ZenithSphere,DysonSphere,SplinteringSpireCoalitionSpawner,Capturable,ShowsOnNormalDisplayMode,HackForShipType" voice_group="Zenith" 
+			gimbal_icon_size_multiplier="1.5"
+			draw_in_galaxy_view="true"
+			visuals="Assets/_FinalGameMeshes/Zenith/ZenithDysonSphere/ZenithDysonSphere.prefab" visual_model_draw_cutoff="3000"
+			target_type_for_player="NeverTarget"
+			icon_name="Ships1/Dyson_Sphere" icon_overlay="Overlays2/DysonSphereZenith"
+			category="Ship"
+			size_scale="10"
+			visuals_scale_multiplier="100" y_offset_of_ship_in_visual_space="-1100" is_always_forced_to_planet_center="true" displaces_other_immobile_objects_as_if_were_planet_tier="true" added_displacement_buffer="1000"
+			y_offset_of_icon="50"
+			collision_priority="810"
+			display_name="顶点戴森球巨像"
+			display_name_for_sidebar="戴森之门"
+			description="这个庞大的远古实体已经捕获了本地恒星。如果你从AI手中解放这颗恒星，戴森球会认可你的善意并在附近行星上帮助你。如果你为自己夺取这颗恒星，戴森球将会攻击你直到你放弃这颗恒星。"
+			fleet_design_template_i_use_for_drones="DysonSphereDrones"
+			drone_starting_behavior_type="Attacker_Full"
+			behavior="Stationary"
+			starting_mark_level="Markless"
+			eligible_for_hacks="HackToGrantShipLine_Sphere,IncreaseSphereProduction,IncreaseSphereMaxStrength,IncreaseSphereHopRange"
+			cost_for_ai_to_purchase="100000"
+			hull_points="600000" shield_points="400000" speed="Immobile"
+			metal_cost="605000" energy_consumption="1000000"
+			armor_mm="340" albedo="1" mass_tx="17"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			description_appender_dll="AIWarExternalCode"
+			description_appender_type="Arcen.AIW2.External.SphereDescriptionAppender"
+			priority_as_ai_target="IgnoreMe" priority_as_frd_target="IgnoreMe" priority_to_protect="IgnoreMe"
+			grants_stuff_to_be_added_to_player_fleets="true"
+			grants_stuff_to_be_added_to_player_fleets_strikecraft_options="2"
+			grants_stuff_to_be_added_to_player_fleets_frigate_options="1"
+			force_background_planet_to_disappear="true"
+			grants_minor_faction_planet_control="true"
+			custom_ConsideredPlayerFriendly="true"
+			>
+	<metal_flow purpose="BuildingDronesInternally" throughput="100" />
+    <system name="T" display_name="惊人快子阵列"
+				category="Passive" tachyon_points="50" tachyon_range="VeryTiny2" tachyon_hits_albedo_less_than="0.85"
+				></system>
+		<ship_class_data can_be_damaged="false" />
+  </entity>
+
+  <entity name="AntagonizedDysonSphereGolem"
+            thematic_groups="DysonSphere,Zenith"
+			tags="AntagonizedDysonSphere,Capturable,ShowsOnNormalDisplayMode" voice_group="Zenith" gimbal_icon_size_multiplier="1.5"
+			draw_in_galaxy_view="true"
+			visuals="Assets/_FinalGameMeshes/Zenith/ZenithDysonSphere/ZenithDysonSphere.prefab" visual_model_draw_cutoff="3000"
+			target_type_for_player="NeverTarget"
+			icon_name="Ships1/Dyson_Sphere"
+			category="Ship"
+			size_scale="11"
+			visuals_scale_multiplier="100" y_offset_of_ship_in_visual_space="-1100" is_always_forced_to_planet_center="true" displaces_other_immobile_objects_as_if_were_planet_tier="true" added_displacement_buffer="1000"
+			y_offset_of_icon="50"
+			collision_priority="810"
+			display_name="敌对的顶点戴森球巨像"
+      display_name_for_sidebar="敌对戴森门"
+			description="这个庞大的远古实体已经捕获了本地恒星。如果你从AI手中解放这颗恒星，戴森球会认可你的善意并在附近行星上帮助你。如果你为自己夺取这颗恒星，戴森球将会攻击你直到你放弃这颗恒星。这个戴森球目前处于敌对状态，会不惜一切代价杀死你。"
+			behavior="Stationary"
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="100000"
+			hull_points="600000" shield_points="400000" speed="Immobile"
+			armor_mm="340" albedo="1" mass_tx="17"
+			metal_cost="605000" energy_consumption="1000000"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+      		attrition_damage="20"
+			priority_as_ai_target="IgnoreMe" priority_as_frd_target="IgnoreMe" priority_to_protect="IgnoreMe"
+			force_background_planet_to_disappear="true"
+			grants_minor_faction_planet_control="true"
+			>
+    <system name="T" display_name="惊人快子阵列"
+				category="Passive" tachyon_points="50" tachyon_range="VeryTiny2" tachyon_hits_albedo_less_than="0.85"
+				></system>
+		<ship_class_data can_be_damaged="false" />
+  </entity>
+
+
+  <entity name="DysonAntagonizer"
+            thematic_groups="DysonSphere,Zenith,AI"
+			tags="DysonAntagonizer,ShowsOnNormalDisplayMode" voice_group="Zenith" gimbal_icon_size_multiplier="1.5"
+			draw_in_galaxy_view="true"
+                        shows_on_galaxy_map_for_explored_planets="true"
+                        always_visible_to_players="true"
+			visuals="Assets/_FinalGameMeshes/AIBuildings/DysonAntagonizer/DysonAntagonizer2022.prefab"
+			target_type_for_player="NeverAutotargetButAllowManualTarget"
+			icon_name="Ships1/DysonAntagonizer"
+			category="Ship"
+			size_scale="7"
+			visuals_scale_multiplier="8.5"
+			y_offset_of_icon="50"
+			collision_priority="810"
+			display_name="戴森敌对装置"
+      display_name_for_sidebar="戴森敌对器"
+			description="AI建造了一个能发射与戴森球共振能量的装置。从该装置发出的子空间波似乎是导致戴森球近期异常信号的原因。这个结构的Mark等级越高，敌对戴森球生成的飞船就越多。"
+			behavior="Stationary"
+			starting_mark_level="Mark1"
+			cost_for_ai_to_purchase="100000"
+			hull_points="70000" shield_points="30000" speed="Immobile"
+			armor_mm="200" albedo="1" mass_tx="10"
+			metal_cost="605000" energy_consumption="50000"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+      
+      priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="NotDangerous" priority_to_protect="BigFavoriteToy"
+			>
+  </entity>
+  <entity name="WarpingInDysonAntagonizer"
+            thematic_groups="DysonSphere,Zenith,AI"
+			tags="WarpingInDysonAntagonizer,ShowsOnNormalDisplayMode" voice_group="Zenith" gimbal_icon_size_multiplier="1.5"
+			draw_in_galaxy_view="true"
+                        always_visible_to_players="true"
+			visuals="Assets/_FinalGameMeshes/AIBuildings/DysonAntagonizer/DysonAntagonizer2022.prefab" is_drawn_as_warping_in="true"
+			target_type_for_player="NeverAutotargetButAllowManualTarget"
+			icon_name="Ships1/DysonAntagonizer"
+			category="Ship"
+			size_scale="7"
+			visuals_scale_multiplier="8.5"
+			y_offset_of_icon="50"
+			collision_priority="810"
+			display_name="正在跃迁的戴森敌对装置"
+      display_name_for_sidebar="戴森敌对器跃迁"
+			description="AI正在建造一个会导致银河系中所有戴森球攻击你的结构。在它完成跃迁前摧毁它！"
+			behavior="Stationary"
+			starting_mark_level="Mark1"
+			cost_for_ai_to_purchase="100000"
+			hull_points="7000" shield_points="3000" speed="Immobile"
+			armor_mm="200" albedo="1" mass_tx="10"
+			metal_cost="605000" energy_consumption="50000"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+                        
+                        priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="NotDangerous" priority_to_protect="BigFavoriteToy"
+			>
+  </entity>
+    
+
+
+  <entity name="DysonSentinel"
+          thematic_groups="DysonSphere,Zenith"
+          tags="DysonTierZero,DysonSpawn"
+	  visuals="Assets/_FinalGameMeshes/Zenith/Dyson1Sentinel/DysonSentinel.prefab"
+	  icon_name="Ships1/DysonSentinel"
+	  voice_group="Zenith"
+	  size_scale="1"
+	  visuals_scale_multiplier="3"
+	  category="Ship" is_strikecraft="true"
+	  collision_priority="100"
+	  display_name="戴森哨兵"
+    display_name_for_sidebar="戴森哨兵"
+	  strength_multiplier="0.50"
+	  description="这些小型活体飞船是戴森球的第一道防线，擅长对抗防御工事和大型敌人。它们看似微不足道以至于被AI低估，其实际战斗力是标称值的两倍。"
+	  starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Unused"
+	  cost_for_ai_to_purchase="180"
+	  hull_points="3600" shield_points="0" speed="AboveAverage3"
+	  metal_cost="2500" energy_consumption="400"
+	  armor_mm="60" albedo="0.8" engine_gx="7" mass_tx="0.21"
+	  ship_or_structure_explosion_sfx="ShipMidsize_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+    priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+	  > 
+        <system name="WD" display_name="弹道穿甲炮"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="750" range="AboveAverage3" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="true"
+	    shot_type_data="DoubleShot_Gold"
+		base_percent_damage_bypasses_personal_shields="0.8" 		
+	    >
+		<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="2" multiplier="3" /> 
+        </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+  </entity>
+  
+  <entity  copy_from="DysonSentinel" name="GuardDysonSentinel" special_entity_type="DroneGeneral"
+          display_name="守卫戴森哨兵"
+					display_name_for_sidebar="戴森哨兵守卫"
+          starting_mark_level="Markless"
+	  >
+    <fleet_membership name="DysonSphereDrones" ship_cap_group="Strike" weight="100" cap="40"/> 
+  </entity>  
+      
+  <entity name="DysonDefender"
+          thematic_groups="DysonSphere,Zenith"
+    tags="DysonTierZero,DysonSpawn"
+	  visuals="Assets/_FinalGameMeshes/Zenith/Dyson2Defender/DysonDefender.prefab"
+	  icon_name="Ships1/DysonSentinel" icon_overlay="Overlays2/DysonSentinel_Defender"
+	  voice_group="Zenith"
+	  size_scale="1"
+	  visuals_scale_multiplier="1.2"
+	  category="Ship" is_strikecraft="true"
+	  collision_priority="100"
+	  display_name="戴森防御者"
+    display_name_for_sidebar="戴森防御者"
+	  strength_multiplier="0.50"
+	  description="这些小型活体飞船是戴森球的第一道防线，擅长消灭受伤的入侵者。它们看似微不足道以至于被AI低估，其实际战斗力是标称值的两倍。"
+	  starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Fusion,Medium"
+	  cost_for_ai_to_purchase="120"
+	  hull_points="6000" shield_points="0" speed="Normal1"
+	  metal_cost="2500" energy_consumption="500"
+	  armor_mm="60" albedo="0.8" engine_gx="7" mass_tx="0.21"
+	  ship_or_structure_explosion_sfx="ShipMidsize_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+    priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+	  >  
+    <system name="WL" display_name="恒星聚变炸弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="3000" range="Small4" shot_speed="Slow" rate_of_fire="ExtremelyLow" fires_salvos_sequentially="true"
+				shot_type_data="FusionBomb"
+				base_percent_damage_bypasses_personal_shields="1" 
+				>
+		 <outgoing_damage_modifier based_on="CurrentHullPercentage" comparison_type="AtMost" compared_to="50" multiplier="2" />
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+  </entity>
+  
+  <entity  copy_from="DysonDefender" name="GuardDysonDefender" special_entity_type="DroneGeneral"
+          display_name="守卫戴森防御者"
+					display_name_for_sidebar="戴森防御者守卫"
+          starting_mark_level="Markless"
+	  >
+    <fleet_membership name="DysonSphereDrones" ship_cap_group="Strike" weight="100" cap="40"/> 
+  </entity>  
+
+  <entity name="DysonBulwark"
+          thematic_groups="DysonSphere,Zenith"
+    tags="DysonTierOne,BecomesNecromancyWight,DysonSpawn"
+	  special_entity_type="LargeShipYesStacks" gimbal_icon_size_multiplier="1.5"
+	  visuals="Assets/_FinalGameMeshes/Zenith/Dyson3Bulwark/DysonBulwark.prefab"
+	  icon_name="Ships1/DysonSentinel" icon_overlay="Overlays2/DysonSentinel_Bulwark"
+	  uses_large_health_bar="true"
+	  category="Ship"
+	  size_scale="4.2"
+	  visuals_scale_multiplier="3"
+	  y_offset_of_icon="10"
+	  collision_priority="100"
+	  display_name="戴森堡垒"
+    display_name_for_sidebar="戴森堡垒"
+	  strength_multiplier="0.50"
+	  description="这些较大的戴森飞船是戴森球的主要控制单位，配备强力武器。它们看似微不足道以至于被AI低估，其实际战斗力是标称值的两倍。"
+	  blocks_enemy_claim_flows="true"
+	  voice_group="Zenith"
+	  starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Unused"
+	  cost_for_ai_to_purchase="1200"
+	  hull_points="200000" shield_points="100000" speed="BelowAverage2"
+	  metal_cost="80000" energy_consumption="2500"
+	  armor_mm="90" albedo="0.8" engine_gx="18" mass_tx="6"
+	  ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+    priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+	  >
+	 <system name="WJ" display_name="干扰榴弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1200" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+				shot_type_data="FlakShotAOEBurstAtEnd" added_target_evaluator="WeaponJamAsPrimary"
+				area_of_effect_size="500"
+				maximum_number_of_targets_hit_per_shot="16"
+        base_enemy_weapon_reload_slowing_seconds_per_shot="4" added_enemy_weapon_reload_slowing_seconds_per_shot_per_mark="1"
+		max_enemy_weapon_reload_slowing_seconds="20"
+        enemy_weapon_reload_slowing_to_armor_mm_less_than="60"
+				>
+    </system> 
+	  
+    <system name="R5" display_name="脉冲消除器"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="36000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="VeryLow" fires_salvos_sequentially="true"
+	    shot_type_data="LaserPulse_RedLevel2"
+base_percent_damage_bypasses_personal_shields="0.6" 		
+	    >
+		<outgoing_damage_modifier based_on="CurrentHullPercentage" comparison_type="AtLeast" compared_to="90" multiplier="2" />
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+  </entity>
+
+  <entity name="DysonBastion"
+          thematic_groups="DysonSphere,Zenith"
+          tags="DysonTierTwo,BecomesNecromancyMummy,DysonSpawn"
+	  special_entity_type="LargeShipYesStacks" gimbal_icon_size_multiplier="1.7"
+	  visuals="Assets/_FinalGameMeshes/Zenith/Dyson4Bastion/DysonBastion.prefab"
+	  icon_name="Ships1/DysonSentinel" icon_overlay="Overlays2/DysonSentinel_Bastion"
+	  uses_large_health_bar="true"
+	  category="Ship"
+	  size_scale="7.75"
+	  visuals_scale_multiplier="5"
+	  y_offset_of_icon="24"
+	  collision_priority="100"
+	  display_name="戴森要塞"
+    display_name_for_sidebar="戴森要塞"
+	  description="这些巨型戴森飞船专门用来对付最顽固的入侵者。"
+	  blocks_enemy_claim_flows="true"
+	  voice_group="Zenith"
+	  starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Unused"
+	  cost_for_ai_to_purchase="2800"
+	  hull_points="2000000" shield_points="1000000" speed="BelowAverage2"
+	  metal_cost="800000" energy_consumption="50000"
+	  armor_mm="90" albedo="0.8" engine_gx="18" mass_tx="7"
+	  ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+    priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+	  >
+    <system name="WD" display_name="弹道双发炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="50000" range="High2" shot_speed="Normal" rate_of_fire="Low" fires_salvos_sequentially="true"
+				shot_type_data="DoubleShot_Gold"				
+				>
+    </system>
+    <system name="R5" display_name="激光脉冲"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="10150" range="AboveAverage1" shot_speed="Normal" rate_of_fire="High"
+		shots_per_salvo="3" fires_salvos_sequentially="false"
+	    shot_type_data="LaserPulse_RedLevel3"				
+	    >
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+  </entity>
+
+	<!-- player version of Dyson ships, that can be hacked for -->
+	<entity copy_from="DysonSentinel" name="HumanDysonSentinel"
+			tech_upgrades_that_benefit_me="Alien"
+			starting_mark_level="Mark2" max_mark_level="7"
+			mark_level_scale_style="Original"
+			aip_when_granted_by_hack="3" is_strikecraft="true"
+			>
+		<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="100" cap="26" faction="ZenithDysonSphere"/>
+	</entity>
+
+	<entity copy_from="DysonDefender" name="HumanDysonDefender"
+			tech_upgrades_that_benefit_me="Alien"
+			starting_mark_level="Mark2" max_mark_level="7"
+			mark_level_scale_style="Original"
+			aip_when_granted_by_hack="3" is_strikecraft="true"
+			>
+		<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="100" cap="26" faction="ZenithDysonSphere"/>
+	</entity>
+
+	<entity copy_from="DysonBulwark" name="HumanDysonBulwark"
+			tech_upgrades_that_benefit_me="Alien"
+			starting_mark_level="Mark2" max_mark_level="7"
+			mark_level_scale_style="OriginalWithoutCapRise"
+			aip_when_granted_by_hack="3" special_entity_type="Frigate"
+			>
+		<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Frigate" weight="100" cap="6" faction="ZenithDysonSphere"/>
+	</entity>
+
+</root>

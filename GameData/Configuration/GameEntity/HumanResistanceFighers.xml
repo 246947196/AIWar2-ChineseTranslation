@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <entity name="HRFMedNucleophilicShip" copy_from="NucleophilicGuardian" special_entity_type="Frigate" thematic_groups="Guardian,IsolatedHumanResistance" 
+          tags="MedHRFSpawn,HRFSpawn" starting_mark_level="Mark2"
+          tech_upgrades_that_benefit_me="Expatriate"
+          display_name="亲核防御者"
+		  display_name_for_sidebar="亲核防御FFH" >
+  </entity>
+  <entity name="HRFNucleophilicGuardian" copy_from="NucleophilicGuardian" special_entity_type="Frigate" thematic_groups="Guardian,IsolatedHumanResistance" 
+          tech_upgrades_that_benefit_me="Expatriate"
+          display_name="亲核防御者"
+		  display_name_for_sidebar="亲核防御FFH" >
+  </entity>
+
+  <entity name="HRFHighNucleophilicGuardian"  copy_from="NucleophilicGuardian" starting_mark_level="Mark2"  tags="HighHRFSpawn,HRFSpawn" special_entity_type="Frigate" thematic_groups="Guardian,IsolatedHumanResistance" 
+          tech_upgrades_that_benefit_me="Expatriate"
+          display_name="亲核保护者"
+		  display_name_for_sidebar="亲核防御FFH" >
+        <system name="R5" display_name="电子脉冲"
+		category="Weapon" firing_timing="OnlyInRange"
+		damage_per_shot="4600" range="AboveAverage1" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="true"
+		shot_type_data="LaserPulse_RedLevel2"
+		>
+	  <outgoing_damage_modifier based_on="EnergyUsage" comparison_type="AtLeast" compared_to="7000" multiplier="6" />
+    </system>
+    <fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Frigate" weight="1" cap="4" faction="HumanResistanceFighters"/>
+  </entity>
+
+  <entity name="HRFMedConcussionShip" copy_from="ConcussionGuardian" special_entity_type="Frigate" starting_mark_level="Mark2" thematic_groups="Guardian,IsolatedHumanResistance" 
+          tags="MedHRFSpawn,HRFSpawn"
+		  metal_cost="40000" speed="Normal1"
+          tech_upgrades_that_benefit_me="Expatriate"
+          display_name="震荡防御者"
+		  display_name_for_sidebar="震荡防御FFL" >
+    <fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Frigate" weight="1" cap="8" faction="HumanResistanceFighters"/>
+	<system name="Q5" damage_per_shot="550" />
+  </entity>
+
+    <entity name="HRFMedTeslaShip" copy_from="FortifiedTeslaGuardian" special_entity_type="Frigate" starting_mark_level="Mark2" thematic_groups="Guardian,IsolatedHumanResistance" 
+            tags="MedHRFSpawn,HRFSpawn"
+			speed="Normal1"
+            tech_upgrades_that_benefit_me="Expatriate"
+            display_name="特斯拉防御护卫舰"
+			display_name_for_sidebar="特斯拉防御FFH" >
+      <fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Frigate" weight="1" cap="6" faction="HumanResistanceFighters"/>
+  </entity>
+
+  <entity name="HRFGrenadeLauncherGuardian"  copy_from="GrenadeLauncherGuardian" starting_mark_level="Mark2"  tags="HighHRFSpawn,HRFSpawn" special_entity_type="Frigate" thematic_groups="Guardian,IsolatedHumanResistance" 
+          tech_upgrades_that_benefit_me="Expatriate"
+          display_name="榴弹发射保护护卫舰"
+		  display_name_for_sidebar="榴弹保护FFL">
+    <fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Frigate" weight="1" cap="6" faction="HumanResistanceFighters"/>
+  </entity>
+
+  <entity name="HRFPikeCorvette"  copy_from="PikeCorvette" tags="LowHRFSpawn,HRFSpawn" starting_mark_level="Mark2" thematic_groups="Strikecraft,IsolatedHumanResistance" 
+    tech_upgrades_that_benefit_me="Expatriate"
+    display_name="长矛防御者"
+		  display_name_for_sidebar="长矛防御者" >
+    <fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="100" cap="30" faction="HumanResistanceFighters"/>
+  </entity>
+  
+	<entity name="HRFHalberdCorvette" copy_from="PikeCorvette" tags="LowHRFSpawn,HRFSpawn" starting_mark_level="Mark2" thematic_groups="Strikecraft,IsolatedHumanResistance" 
+			tech_upgrades_that_benefit_me="Expatriate"
+			display_name="戟防御者"
+			display_name_for_sidebar="戟防御者"
+			description="这种变体对高装甲舰船特别有效，但由于使用更重的弹药，每次齐射发射的炮弹较少。"
+			hull_points="3500" metal_cost="2200" >
+		<system name="V1" display_name="重型佩塔德"
+				damage_per_shot="110" shots_per_salvo="2">
+			<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtLeast" compared_to="90" multiplier="5" />
+		</system>
+	</entity>
+  
+	<entity name="HRFSprintBomber" copy_from="FusionBomber" tags="LowHRFSpawn,HRFSpawn" starting_mark_level="Mark2" thematic_groups="Strikecraft,IsolatedHumanResistance"
+			tech_upgrades_that_benefit_me="Expatriate"
+			display_name="疾速轰炸防御者"
+			display_name_for_sidebar="疾速轰炸防御"
+			description="这种变体是护盾单位的优秀杀手，牺牲了大量装甲来换取更高的速度。"
+			hull_points="2800" metal_cost="3400"
+			speed="AboveAverage2" armor_mm="40" engine_gx="10"
+			speed_multiplier_first_5_seconds_on_planet="1.3" >
+	</entity>
+	
+	<entity name="HRFPincushionCorvette" copy_from="ConcussionCorvette" tags="LowHRFSpawn,HRFSpawn" starting_mark_level="Mark2" thematic_groups="Strikecraft,IsolatedHumanResistance"
+			size_scale="5"
+			visuals_scale_multiplier="20"
+			tech_upgrades_that_benefit_me="Expatriate"
+			display_name="针垫防御者"
+			display_name_for_sidebar="针垫防御"
+			description="这种变体舰船比普通舰船更大，发射的导弹齐射对轻装甲目标具有毁灭性效果。"
+			cost_for_ai_to_purchase="50" strength_multiplier="2"
+			hull_points="4100" metal_cost="3050" energy_consumption="400" armor_mm="50" >
+		<system name="Q5" display_name="震荡导弹"
+				damage_per_shot="150" shots_per_salvo="5" >
+		</system>
+	</entity>
+  
+  <entity name="HRFVanguard"  copy_from="Vanguard" tags="LowHRFSpawn,HRFSpawn" starting_mark_level="Mark2" thematic_groups="Strikecraft,IsolatedHumanResistance" 
+    tech_upgrades_that_benefit_me="Expatriate"
+    display_name="先锋防御者" >
+    <fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="100" cap="15" faction="HumanResistanceFighters"/>
+  </entity>
+
+  <entity name="HRFRaider"  copy_from="Raider" tags="LowHRFSpawn,HRFSpawn" starting_mark_level="Mark2" thematic_groups="Strikecraft,IsolatedHumanResistance" 
+    tech_upgrades_that_benefit_me="Expatriate"
+    display_name="突袭防御者" >
+    <fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="100" cap="30" faction="HumanResistanceFighters"/>
+  </entity>
+
+  <entity name="HRFPulsarTank"  copy_from="PulsarTank" starting_mark_level="Mark2" thematic_groups="Strikecraft,IsolatedHumanResistance" 
+          tech_upgrades_that_benefit_me="Expatriate"
+          display_name="脉冲坦克防御者"
+		  display_name_for_sidebar="脉冲坦克防御"
+	  tags="LowHRFSpawn,HRFSpawn">
+    <fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="100" cap="15" faction="HumanResistanceFighters"/>
+  </entity>
+  
+	<entity name="HRFElectropulseTank"  copy_from="PulsarTank" starting_mark_level="Mark2" thematic_groups="Strikecraft,IsolatedHumanResistance" 
+			tech_upgrades_that_benefit_me="Expatriate"
+			display_name="电脉冲坦克防御者"
+			display_name_for_sidebar="电脉冲防御"
+			description="脉冲坦克的变体，对护盾有优势，其武器能干扰轻型敌人。"
+			tags="LowHRFSpawn,HRFSpawn">
+		<system name="R5" display_name="脉冲干扰炮"
+				damage_per_shot="150" rate_of_fire="High"
+				base_enemy_weapon_reload_slowing_seconds_per_shot="4"
+				max_enemy_weapon_reload_slowing_seconds="12"
+				enemy_weapon_reload_slowing_to_armor_mm_less_than="50"
+				added_target_evaluator="WeaponJamAsPrimary"
+				>
+			<outgoing_damage_modifier based_on="MyTimeAtPlanet" comparison_type="LessThan" compared_to="12" multiplier="3" />		
+		</system>
+		<system name="V2" display_name="能量脉冲炮"
+				damage_per_shot="500" rate_of_fire="VeryLow"
+				>
+			<outgoing_damage_modifier applies_to="PersonalShieldOnly" based_on="CurrentPersonalShieldPercentage" comparison_type="AtLeast" compared_to="10" multiplier="3" />
+        </system>
+	</entity>
+
+  <entity name="HRFAssaultFrigate"  copy_from="AssaultFrigate"  starting_mark_level="Mark2" tags="HighHRFSpawn,HRFSpawn" thematic_groups="Frigate,IsolatedHumanResistance" 
+          tech_upgrades_that_benefit_me="Expatriate"
+          display_name="突击护卫舰防御者"
+		  display_name_for_sidebar="突击防御FFH" ></entity>
+
+  <entity name="HRFResearchCenter" voice_group="Silent" thematic_groups="IsolatedHumanResistance" 
+     tags="HRFShipGranter,HackForShipType,ShowsOnNormalDisplayMode" is_auto_scrapping_skipped_when_command_station_type_changes="true"
+     draw_in_galaxy_view="true"
+     visuals="assets/_finalgamemeshes/aibuildings/advancedresearchstation/advancedresearchstation.prefab"
+     icon_name="Ships1/AdvancedResearchStation" icon_overlay="Overlays2/Guardian_Plasma" gimbal_icon_size_multiplier="1.25" 
+     y_offset_of_icon="20"
+     uses_large_health_bar="true"
+     category="Ship"
+     size_scale="5"
+     visuals_scale_multiplier="10"
+     collision_priority="1000"
+     display_name="研究中心"
+     description="人类抵抗战士赠送的礼物，用于协助战斗。"
+     behavior="Stationary"
+     starting_mark_level="Markless"
+     cost_for_ai_to_purchase="200"
+     aip_on_death="0"
+     hull_points="60000" shield_points="120000" speed="Immobile"
+     metal_cost="0" energy_consumption="1000"
+     armor_mm="80" albedo="0.9" mass_tx="5"
+     eligible_for_hacks="HackToGrantShipLine_HRF"
+     ship_or_structure_explosion_sfx="StructureMidsize_Explosion"
+     ship_or_structure_explosion_if_on_other_planet_sfx="StructureLostOnOtherPlanet_Explosion"
+     ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+     grants_stuff_to_be_added_to_player_fleets="true"
+     grants_stuff_to_be_added_to_player_fleets_strikecraft_options="2"
+     grants_stuff_to_be_added_to_player_fleets_frigate_options="2"
+     target_type_for_player="NeverTarget"
+     priority_as_ai_target="IrreplaceableBigAsTheyCome" priority_as_frd_target="IgnoreMe" priority_to_protect="Irreplaceable"
+>
+  </entity>
+
+  
+</root>

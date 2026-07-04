@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>    
+
+
+
+  <entity name="ChainLightningFrigate"
+            thematic_groups="Frigate"	
+			special_entity_type="Frigate" gimbal_icon_size_multiplier="1.35"
+			visuals="Assets/_DLC3/Frigates/ChainLightningFFM/ChainLightningFFM.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships1/Starship" icon_overlay="Overlays1/Starship_Corrosive"
+			category="Ship"
+			size_scale="4.5"
+			visuals_scale_multiplier="16"
+			y_offset_of_icon="15"
+			collision_priority="600"
+			display_name="腐蚀护卫舰"
+			display_name_for_sidebar="腐蚀FFM"
+			description="一次发射多枚腐蚀手雷，对目标造成持续伤害。死亡时，会向附近敌人释放腐蚀伤害。比大多数护卫舰更快、更便宜，但也更脆弱。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Medium,Splash"
+			cost_for_ai_to_purchase="1200" strength_multiplier="1.5"
+			hull_points="108000" shield_points="35250" speed="AboveAverage3"
+			metal_cost="75000" energy_consumption="3750"
+			armor_mm="85" engine_gx="16" albedo="0.4" mass_tx="5"
+			voice_group="Starship"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="50" cap="6"/>			
+		<fleet_membership name="SelfSacrificingOffensiveMix" ship_cap_group="Frigate" weight="5" cap="6"/>
+		<fleet_membership name="SturdyOffensiveMix" ship_cap_group="Frigate" weight="50" cap="6"/>
+		<fleet_membership name="BasicOffensiveMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Frigate" weight="100" cap="7"/>
+		<system name="CE" display_name="腐蚀手雷"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="60" range="Small5" shot_speed="Normal" rate_of_fire="SlightlyLow"
+				shots_per_salvo="4" fires_salvos_sequentially="false"
+				shot_type_data="CorrosiveBlast"
+				area_of_effect_size="400"
+				maximum_number_of_targets_hit_per_shot="10"
+				base_percent_damage_bypasses_personal_shields="1"
+				corrosion_damage="300"
+				corrosion_damage_added_per_mark="300"
+				>
+		</system>
+	<system name="W2" display_name="腐蚀终结"
+				category="Weapon" firing_timing="OnlyInRange"
+				only_fires_on_death="true"
+				damage_per_shot="9000" range="VeryTiny3" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+				shot_type_data="LightningExplosionAOEShot" 
+				area_of_effect_size="1500"				
+				shots_detonate_immediately="true"
+				maximum_number_of_targets_hit_per_shot="15"
+				health_change_by_max_health_divided_by_this_per_attack="-1"
+				all_damage_is_corrosive="true"
+				>
+		</system>
+	
+  </entity>
+
+
+	<entity name="SamuraiFrigate"
+	        thematic_groups="Frigate"	
+			special_entity_type="Frigate" gimbal_icon_size_multiplier="1.35"
+			visuals="Assets/_DLC3/Frigates/SamuraiFFM/SamuraiFFM.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships1/Starship" icon_overlay="Overlays1/Starship_Samurai"
+			category="Ship"
+			size_scale="4.5"
+			visuals_scale_multiplier="9"
+			y_offset_of_icon="15"
+			collision_priority="600"
+			display_name="武士护卫舰"
+			display_name_for_sidebar="武士FFM"
+			description="坚定的近战护卫舰，其吸血之刃可以轻易穿透缺乏护盾或护甲的舰船。战斗时，它会召唤武士刀协助作战。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Medium,Melee"
+			cost_for_ai_to_purchase="1200"
+			hull_points="198000" shield_points="82500" speed="AboveAverage2"
+			metal_cost="65000" energy_consumption="3750"
+			armor_mm="85" engine_gx="16" albedo="0.4" mass_tx="5"
+			unit_to_make_with_build_points="Katana"
+            base_ship_line_for_build_points="SamuraiFrigate"
+            build_points_per_damage_dealt="0.1"
+			voice_group="Starship"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="50" cap="6"/>			
+		<fleet_membership name="ReplicatingOffensiveMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<fleet_membership name="MeleeWithSupportMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<fleet_membership name="SturdyOffensiveMix" ship_cap_group="Frigate" weight="50" cap="6"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Frigate" weight="100" cap="7"/>
+		<system name="WM" display_name="武士刀"
+					category="Weapon" firing_timing="OnlyInRange"
+					damage_per_shot="1200" range="AlmostNone" seek_range="Normal1" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="true"
+					shot_type_data="PlasmaBolt"			
+					health_change_per_damage_dealt="0.2"
+					>
+		<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="60" multiplier="3" />
+		<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="HullOnly" comparison_type="LessThan" compared_to="1" multiplier="1.5" />
+		</system>	
+	<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+  
+  <!--Katanas spawn from the Samurai Frigate via the viral mechanic -->
+    <entity name="Katana"  copy_from="SamuraiFrigate" display_name="动画武士刀" display_name_for_sidebar="武士刀" thematic_groups="Frigate,Drone"	
+			visuals="Assets/_DLC3/Strikecraft/Katana/Katana.prefab" visuals_bundle="exp3_neinzul_abyss"
+			size_scale="2.2"
+			visuals_scale_multiplier="15"
+			icon_name="Ships4/Katana" 
+			description="武士丢弃的武器，现在变得有生命且具有攻击性。"
+			hull_points="50000" shield_points="0"
+			metal_cost="31500"
+			metal_cost_multiplier_for_scrapping="0"
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="2"
+			always_self_attritions="true"	
+            cannot_actually_be_built_builds_self_indirectly="true"
+            unit_to_make_with_build_points="Katana"
+            base_ship_line_for_build_points="SamuraiFrigate"
+            build_points_per_damage_dealt="0.55"
+			immune_to_swapping_between_fleets="true"
+	        >
+			<system name="WM" 
+					damage_per_shot="500"
+					>
+			</system>	
+	</entity>
+	
+
+	<entity name="PugilistFrigate"
+	        thematic_groups="Frigate"	
+			special_entity_type="Frigate" gimbal_icon_size_multiplier="1.35"
+			visuals="Assets/_DLC3/Frigates/PugilistFFH/PugilistFFH.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships1/Starship" icon_overlay="Overlays1/Starship_Pugilist"
+			category="Ship"
+			size_scale="4.5"
+			visuals_scale_multiplier="4"
+			y_offset_of_icon="15"
+			collision_priority="600"
+			display_name="拳击手护卫舰"
+			display_name_for_sidebar="拳击手FFH"
+			description="速度缓慢但极其耐用的强大舰船。擅长攻击单个强大目标，对大量小型舰船较为脆弱。受到伤害时会排出散热片，吸引敌方火力，保护其半径内的盟友。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Heavy,Disruptive"
+			cost_for_ai_to_purchase="1200"
+			hull_points="315000" shield_points="127500" speed="BelowAverage2"
+			metal_cost="200000" energy_consumption="10000"
+			armor_mm="180" engine_gx="16" albedo="0.4" mass_tx="5"
+			build_points_per_damage_taken="1.5"
+			unit_to_make_with_build_points_from_damage_taken="HeatSink"
+			drone_starting_behavior_type="Attacker_Full"
+			voice_group="Starship"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="50" cap="4"/>			
+		<fleet_membership name="ReplicatingOffensiveMix" ship_cap_group="Frigate" weight="100" cap="4"/>
+		<fleet_membership name="MeleeWithSupportMix" ship_cap_group="Frigate" weight="100" cap="4"/>
+		<fleet_membership name="SturdyOffensiveMix" ship_cap_group="Frigate" weight="50" cap="4"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Frigate" weight="100" cap="5"/>
+		<system name="WK" display_name="护甲极化器" category="Weapon" firing_timing="OnlyInRange" shot_type_data="LaserPulse_DeepBlue"
+				damage_per_shot="5000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="SlightlyLow" fires_salvos_sequentially="false"				
+				>
+		<outgoing_damage_modifier based_on="Armor_mm" comparison_type="MultiplesOf" compared_to="35" multiplier="1" max_multiplier="10" />
+		</system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+
+ <!--Heat Sinks spawn from the Pugilist Frigate via the classic hydra mechanic. Weapon is superficial, only added to show range of the attraction field -->
+	<entity name="HeatSink"	
+            thematic_groups="Frigate,Drone"
+			visuals="Assets/_DLC3/Strikecraft/HeatSink/HeatSink.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships4/HeatSink" gimbal_icon_size_multiplier="0.75" 
+			voice_group="Silent"
+			category="Ship" is_strikecraft="true" behavior="Stationary"
+			size_scale="0.8"
+			visuals_scale_multiplier="1.5"
+			collision_priority="100"
+			display_name="散热片"
+			description="从拳击手护卫舰排出的散热片，现在会主动吸引敌方火力。其坚固的船体使其能够承受极大的伤害。"			
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Heavy,Disruptive"
+			cost_for_ai_to_purchase="10"
+			hull_points="40000" shield_points="0" speed="Immobile"
+			metal_cost="0" energy_consumption="100"
+			armor_mm="50" albedo="0.45" mass_tx="0.3"
+			damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.05"
+			immune_to_swapping_between_fleets="true"
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="2"
+			always_self_attritions="true"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"			
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+            fleet_membership="Planetary"
+			priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			>
+		<system name="A" display_name="散热片"
+			category="Passive"
+			attract_range_for_shots_against_allies="Normal3" >
+		</system>
+		<system name="W1" display_name="散热片"
+				category="Weapon" firing_timing="WhenParentEntityHit" range="Normal3"
+				shot_speed="Normal" fires_salvos_sequentially="false"
+				damage_per_shot="10" rate_of_fire="Sloth" system_is_hidden_for_ui="true"
+				shot_type_data="MeleeInvisible">
+		</system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+	
+	<entity name="BladeSpawnerFrigate"
+	        thematic_groups="Frigate"	
+			special_entity_type="Frigate" gimbal_icon_size_multiplier="1.35"
+			visuals="Assets/_DLC3/Frigates/BladeSpawnerFFH/BladeSpawnerFFH.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships1/Starship" icon_overlay="Overlays1/Starship_BladeSpawner"
+			category="Ship"
+			size_scale="4.5"
+			visuals_scale_multiplier="4.2"
+			y_offset_of_icon="15"
+			collision_priority="600"
+			display_name="刀刃生成护卫舰"
+			display_name_for_sidebar="刀刃FFH"
+			description="发射快速致命的刀刃无人机，这些无人机可进行近战并忽略大多数群体控制效果。刀刃生成护卫舰本身速度缓慢，武器威力一般。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Heavy,Melee"
+			cost_for_ai_to_purchase="1200" strength_multiplier="1.5"
+			hull_points="126000" shield_points="52500" speed="BelowAverage1"
+			metal_cost="100000" energy_consumption="9000"
+			armor_mm="180" engine_gx="16" albedo="0.4" mass_tx="5"
+			voice_group="Starship"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="50" cap="6"/>			
+		<fleet_membership name="ReplicatingOffensiveMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<fleet_membership name="MeleeWithSupportMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<fleet_membership name="SturdyOffensiveMix" ship_cap_group="Frigate" weight="50" cap="6"/>
+		<fleet_membership name="BreacherMix" ship_cap_group="Frigate" weight="50" cap="6"/>
+		<system name="W1" display_name="等离子螺栓"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1200" range="Normal4" shot_speed="Normal" rate_of_fire="Normal" 
+				shots_per_salvo="3" fires_salvos_sequentially="true"
+				shot_type_data="PlasmaBolt"			
+				>
+		</system>
+			<system name="W2" display_name="刀刃无人机发射器"
+			category="Weapon" firing_timing="OnlyInRange" cloaking_percent_loss_from_firing="1"
+			damage_per_shot="5" range="ExtremelyHigh" shot_speed="Normal" rate_of_fire="Normal" shots_per_salvo="1" fires_salvos_sequentially="true" 				
+			shot_type_data="BladeDrone"
+			added_shots_per_salvo_per_mark="0.3"
+			>
+		</system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+
+<!--Blade Drone created by the bladespawner Frigate -->	
+	<entity name="BladeDrone"	display_name="刀刃无人机" display_name_for_sidebar="刀刃DRN"
+	        thematic_groups="Frigate,Drone"	
+			special_entity_type="SmallShipNotStackable"
+			visuals="Assets/_DLC3/Strikecraft/BladeDrone/BladeDrone.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships4/BladeDrone"  icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="1"
+			voice_group="Silent"
+			category="Ship" is_strikecraft="true"
+			size_scale="2"
+			visuals_scale_multiplier="4.5"
+			collision_priority="100"
+			description="由刀刃生成护卫舰发射的致命近战无人机。忽略大多数群体控制效果，并且从远距离来源受到的伤害会减少。"
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="3"
+			always_self_attritions="true"			
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Heavy,Melee"
+			cost_for_ai_to_purchase="10"
+			hull_points="6500" shield_points="0" speed="AboveAverage6"
+			metal_cost="50" energy_consumption="50"
+			metal_cost_multiplier_for_scrapping="0"
+			armor_mm="90" albedo="0.4" engine_gx="18" mass_tx="0.21"
+			can_pass_through_enemy_forcefields="true"
+			immune_to_swapping_between_fleets="true"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+            priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			
+			>
+    <system name="WM" display_name="刀刃"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="150" range="AlmostNone" seek_range="Normal1" shot_speed="Fast" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+				shot_type_data="MeleeInvisible" added_target_evaluator="Melee"
+				>
+    </system>
+	<incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="3500" multiplier="0.10" />
+	<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+
+</root>

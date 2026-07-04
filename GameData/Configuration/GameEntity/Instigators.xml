@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <entity name="InstigatorBase"
+          thematic_groups="AI" 
+	    tags="InstigatorBase,ShowsOnNormalDisplayMode"
+	    draw_in_galaxy_view="true"
+	    visuals="Assets/_FinalGameMeshes/AIBuildings/DistributionAndInstigator/InstigatorBase.prefab" gimbal_name="AstroTrainDepot"
+	    icon_name="Ships1/AIInstigatorBase" gimbal_icon_size_multiplier="1.5"
+	    category="Ship"
+	    visuals_scale_multiplier="2"
+		size_scale="8"
+	    y_offset_of_icon="30"
+	    collision_priority="810"
+	    display_name="挑衅者基地"
+	    description="这个基地正在挑衅主AI，将更多资源转移到对抗这个星系中的威胁上。摧毁这个基地将终止这种效果。"
+	    behavior="Stationary"
+	    starting_mark_level="Markless"
+	    cost_for_ai_to_purchase="5600"
+            shows_on_galaxy_map_for_explored_planets="true"
+      hull_points="250000" shield_points="500000" speed="Immobile"
+      metal_cost="1085000" energy_consumption="15000"
+      armor_mm="90" albedo="0.6" mass_tx="6"
+      ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+      ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+      ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+      voice_group="Silent"
+      description_appender_dll="AIWarExternalCode"
+      description_appender_type="Arcen.AIW2.External.InstigatorBaseDescriptionAppender"
+       is_reinforcement_location="true" always_is_ai_turret_spawn_point="true"
+      priority_as_ai_target="IrreplaceableMisc" priority_as_frd_target="NotDangerous" priority_to_protect="Irreplaceable"
+    >
+    <system name="R5" display_name="激光脉冲"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Misery"
+				shots_per_salvo="20" fires_salvos_sequentially="false"
+				shot_type_data="LaserPulse_DeepBlue"				
+				>
+    </system>
+    <system name="WS" display_name="破甲弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="400" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+				shot_type_data="Sabot"				
+				>
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="100" />
+    </system>				
+    </entity>
+</root>
+

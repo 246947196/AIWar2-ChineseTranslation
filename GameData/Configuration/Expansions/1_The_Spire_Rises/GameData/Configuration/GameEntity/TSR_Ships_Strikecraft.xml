@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <entity name="Bombard"
+	        thematic_groups="Strikecraft" 
+		visuals="Assets/_DLC1/Strikecraft/Bombard/Bombard.prefab" visuals_bundle="exp1_the_spire_rises"
+                tags="ArkSidekickOptionGroup5" custom_arkempire_fleetcap="14"
+			icon_name="Ships1/Bombard"
+			voice_group="Sniper"
+			category="Ship" is_strikecraft="true"
+			size_scale="2.4"
+			visuals_scale_multiplier="8"
+			collision_priority="100"
+			display_name="轰击者"
+			description="发射威力强大、射程极远的等离子鱼雷，但造价昂贵且装填时间非常缓慢。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Concussion,Heavy"
+			cost_for_ai_to_purchase="120" strength_multiplier="2"
+			hull_points="6000" shield_points="0" speed="BelowAverage1"
+			metal_cost="16000" energy_consumption="1000"
+			armor_mm="110" albedo="0.4" engine_gx="7" mass_tx="0.3"
+			ship_or_structure_explosion_sfx="ShipLarge_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+      counter_attack_budget_override_multiplier="0.25"
+			
+      priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			>
+	<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="100" cap="14"/>
+	<fleet_membership name="BasicOffensiveMix" ship_cap_group="Strike" weight="100" cap="14"/>
+	<fleet_membership name="AntiLargeMix" ship_cap_group="Strike" weight="100" cap="14"/>
+	<fleet_membership name="AntiStructureMix" ship_cap_group="Strike" weight="100" cap="14"/>
+	<fleet_membership name="FrigatesWithSupport" ship_cap_group="Strike" weight="100" cap="14"/>
+    <ai_ship_group_membership name="ArtilleristStrikecraft" weight="33"/>
+    <ai_ship_group_membership name="DefensiveStrikecraft" weight="33"/>	
+		<ai_ship_group_membership name="MassBombard" weight="100"/>
+    <ai_ship_group_membership name="AutocannonMinipodBombard" weight="50"/>		
+    <system name="W1" display_name="等离子鱼雷"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="4000" range="High1" shot_speed="Slow" rate_of_fire="Sloth" fires_salvos_sequentially="true"
+				shot_type_data="PlasmaTorpedo"			
+				>
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="1.2" />
+    </system>
+    </entity>
+  	
+    <entity name="ViralShredder"
+            thematic_groups="Strikecraft" 	
+			visuals="Assets/_DLC1/Strikecraft/ViralShredder/ViralShredder.prefab" visuals_bundle="exp1_the_spire_rises"
+			icon_name="Ships1/ViralShredder"
+                        tags="ArkSidekickOptionGroup4" custom_arkempire_fleetcap="32"
+			voice_group="Melee"
+			category="Ship"  is_strikecraft="true"
+			size_scale="0.9"
+			visuals_scale_multiplier="6"
+			collision_priority="100"
+			display_name="病毒粉碎者"
+			description="近战舰船，在造成伤害时会自我复制。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Melee,Heavy"
+			cost_for_ai_to_purchase="200" strength_multiplier="2"
+			hull_points="4000" shield_points="0" speed="AboveAverage1"
+			metal_cost="4000" energy_consumption="400"
+			armor_mm="110" albedo="0.3" engine_gx="12" mass_tx="0.21"
+			ship_or_structure_explosion_sfx="ShipLarge_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"           
+			
+			unit_to_make_with_build_points="ViralShredderCopy"
+            base_ship_line_for_build_points="ViralShredder"
+            build_points_per_damage_dealt="1.2"
+		    priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			>
+	<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="100" cap="32"/>
+	<fleet_membership name="BasicOffensiveMix" ship_cap_group="Strike" weight="100" cap="32"/>
+	<fleet_membership name="ReplicatingOffensiveMix" ship_cap_group="Strike" weight="100" cap="32"/>
+	<fleet_membership name="MeleeWithSupportMix" ship_cap_group="Strike" weight="100" cap="32"/>
+    <fleet_membership name="FrigatesWithSupport" ship_cap_group="Strike" weight="100" cap="32"/>	
+    <system name="W1" display_name="近战"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="60" range="AlmostNone" seek_range="Normal1" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="true"
+				shot_type_data="PlasmaBolt"			
+				>
+    </system>	
+	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+	
+    <entity name="ViralShredderCopy"  copy_from="ViralShredder" thematic_groups="Strikecraft" 
+            display_name="病毒粉碎者复制体"
+            display_name_for_sidebar="病毒粉碎者复制体"
+            metal_cost_multiplier_for_scrapping="0"
+            cannot_actually_be_built_builds_self_indirectly="true"
+            unit_to_make_with_build_points="ViralShredderCopy"
+            base_ship_line_for_build_points="ViralShredder"
+            build_points_per_damage_dealt="0.55"
+			immune_to_swapping_between_fleets="true"
+	        >
+	</entity>
+</root>

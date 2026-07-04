@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <input_action name="MasterMenuBack"
+      category="Hidden" display_name="待翻译名称"
+      description="待翻译描述"
+      dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Input_MasterMenuHandler"
+      default_should_override_saved_if_older_than_version="KeyRebindings_744"
+      key="Backspace" />
+</root>

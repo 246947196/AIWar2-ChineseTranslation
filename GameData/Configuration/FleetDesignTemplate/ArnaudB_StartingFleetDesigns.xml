@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- Ships : Sniper, Sentinel, Ramifier, TackleDrone. (Ambush, Core, Tech twice).
+  
+ -->
+
+  <fleet_design name="AssaultFleet"
+        display_name="突击舰队"
+        description="这是一支强悍的舰船组合，其中一艘护卫舰能够瘫痪敌方炮塔。其箭猪级舰船能造成巨大伤害，但十分脆弱。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Agile" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="AssaultFrigate" ship_cap_group="Frigate" weight="100" cap="9"/>
+	<ship_membership name="Vanguard" ship_cap_group="Strike"  weight="100" cap="20"/>
+	<ship_membership name="Porcupine" ship_cap_group="Strike"  weight="100" cap="40"/>
+	<ship_membership name="IonDisruptor" ship_cap_group="Frigate" weight="100" cap="6"/>
+  </fleet_design>
+  <!-- Ships : VanguardHydra, SingrayHydra, TeslaTorpedo, Warbird Hydra. Ambush, Splash, Subt, Tech.
+  
+ -->
+ 
+ <fleet_design name="OmniscientStartingFleet"
+        display_name="全知舰队"
+        description="这是一支专门针对隐形单位组建的舰队，旨在发现并摧毁它们。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Starter" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+    <ship_membership name="AblativeGatling" ship_cap_group="Strike" weight="100" cap="80"/>
+	<ship_membership name="Ranger" ship_cap_group="Strike" weight="100" cap="20"/>
+	<ship_membership name="Spider" ship_cap_group="Strike" weight="100" cap="40"/>
+	<ship_membership name="Apparition" ship_cap_group="Frigate" weight="100" cap="9"/>
+  </fleet_design>
+  
+  <!-- Ships : Bombard, Pulsar Tank, Siege Frigate, Tesla. Cloak. Concussion twice, Fusion, Splash.
+  
+ -->
+ 
+ 
+  <fleet_design name="DenialStartingFleet"
+        display_name="拒止舰队"
+        description="这支舰队专注于压制敌人，同时其余舰船负责消灭关键目标并清理残余敌军。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Starter" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+    <ship_membership name="Spider" ship_cap_group="Strike" weight="100" cap="40"/>
+    <ship_membership name="MLRSCorvette" ship_cap_group="Strike" weight="100" cap="40"/>
+    <ship_membership name="Barnacle" ship_cap_group="Strike" weight="100" cap="40"/>
+    <ship_membership name="Suppressor" ship_cap_group="Frigate" weight="100" cap="6"/>
+  </fleet_design>
+   <!-- Ships : SuppressionFrigate, Fusion Bomber, MLRSCorv, Spider. Disruptive, Piercing-Fusion, Splash, Subterfuge. All medium.
+  
+ -->
+ 
+  <!-- BELOW ARE FLEETS BEING DESIGNED (but not considered ready for playing) -->
+  
+ 
+</root>

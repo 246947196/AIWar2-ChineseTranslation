@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!--	
+		Dark Zenith + Svikari
+		*********************************************************
+	-->
+	<beacon_faction_option name="DarkZenith"
+		blocked_from_seeding_if_any_of_these_factions_included="DarkZenith,DarkZenithSvikari" 
+		tag_from_which_to_seed_one_beacon="DarkZenithBeacon"
+		beacon_tier_for_seeding="Major">
+		<!-- DZ + Svikari -->
+		<!-- Intensity 1 -->
+		<hack_choice name="Intensity1DarkZenithAndSvikari" factions_included="DarkZenith,DarkZenithSvikari" display_name="强度 1，黑暗天顶与结盟的斯维卡里"
+					 description="黑暗天顶将在星系中出现，对所有势力怀有敌意，并且一个结盟的黑暗天顶斯维卡里将出现在你的母星上。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="1" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Dark Alliance" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+			<custom_field_value included_faction_index="1" field_name="Intensity" field_value="1" />
+			<custom_field_value included_faction_index="1" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+
+		<!-- Intensity 2 -->
+		<hack_choice name="Intensity2DarkZenithAndSvikari" factions_included="DarkZenith,DarkZenithSvikari" display_name="强度 2，黑暗天顶与结盟的斯维卡里"
+					description="黑暗天顶将在星系中出现，对所有势力怀有敌意，并且一个结盟的黑暗天顶斯维卡里将出现在你的母星上。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="2" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Dark Alliance" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+			<custom_field_value included_faction_index="1" field_name="Intensity" field_value="2" />
+			<custom_field_value included_faction_index="1" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+
+		<!-- Intensity 3 -->
+		<hack_choice name="Intensity3DarkZenithAndSvikari" factions_included="DarkZenith,DarkZenithSvikari" display_name="强度 3，黑暗天顶与结盟的斯维卡里"
+					description="黑暗天顶将在星系中出现，对所有势力怀有敌意，并且一个结盟的黑暗天顶斯维卡里将出现在你的母星上。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="3" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Dark Alliance" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+			<custom_field_value included_faction_index="1" field_name="Intensity" field_value="3" />
+			<custom_field_value included_faction_index="1" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+
+		<!-- Intensity 4 -->
+		<hack_choice name="Intensity4DarkZenithAndSvikari" factions_included="DarkZenith,DarkZenithSvikari" display_name="强度 4，黑暗天顶与结盟的斯维卡里"
+					description="黑暗天顶将在星系中出现，对所有势力怀有敌意，并且一个结盟的黑暗天顶斯维卡里将出现在你的母星上。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="4" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Dark Alliance" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+			<custom_field_value included_faction_index="1" field_name="Intensity" field_value="4" />
+			<custom_field_value included_faction_index="1" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+
+		<!-- Intensity 5 -->
+		<hack_choice name="Intensity5DarkZenithAndSvikari" factions_included="DarkZenith,DarkZenithSvikari" display_name="强度 5，黑暗天顶与结盟的斯维卡里"
+					description="黑暗天顶将在星系中出现，对所有势力怀有敌意，并且一个结盟的黑暗天顶斯维卡里将出现在你的母星上。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="5" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Dark Alliance" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+			<custom_field_value included_faction_index="1" field_name="Intensity" field_value="5" />
+			<custom_field_value included_faction_index="1" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+
+		<!-- Intensity 6 -->
+		<hack_choice name="Intensity6DarkZenithAndSvikari" factions_included="DarkZenith,DarkZenithSvikari" display_name="强度 6，黑暗天顶与结盟的斯维卡里"
+					 description="黑暗天顶将在星系中出现，对所有势力怀有敌意，并且一个结盟的黑暗天顶斯维卡里将出现在你的母星上。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="6" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Dark Alliance" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+			<custom_field_value included_faction_index="1" field_name="Intensity" field_value="6" />
+			<custom_field_value included_faction_index="1" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+
+		<!-- Intensity 7 -->
+		<hack_choice name="Intensity7DarkZenithAndSvikari" factions_included="DarkZenith,DarkZenithSvikari" display_name="强度 7，黑暗天顶与结盟的斯维卡里"
+					 description="黑暗天顶将在星系中出现，对所有势力怀有敌意，并且一个结盟的黑暗天顶斯维卡里将出现在你的母星上。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="7" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Dark Alliance" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+			<custom_field_value included_faction_index="1" field_name="Intensity" field_value="7" />
+			<custom_field_value included_faction_index="1" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+
+		<!-- Intensity 8 -->
+		<hack_choice name="Intensity8DarkZenithAndSvikari" factions_included="DarkZenith,DarkZenithSvikari" display_name="强度 8，黑暗天顶与结盟的斯维卡里"
+					 description="黑暗天顶将在星系中出现，对所有势力怀有敌意，并且一个结盟的黑暗天顶斯维卡里将出现在你的母星上。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="8" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Dark Alliance" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+			<custom_field_value included_faction_index="1" field_name="Intensity" field_value="8" />
+			<custom_field_value included_faction_index="1" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+
+		<!-- Intensity 9 -->
+		<hack_choice name="Intensity9DarkZenithAndSvikari" factions_included="DarkZenith,DarkZenithSvikari" display_name="强度 9，黑暗天顶与结盟的斯维卡里"
+					 description="黑暗天顶将在星系中出现，对所有势力怀有敌意，并且一个结盟的黑暗天顶斯维卡里将出现在你的母星上。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="9" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Dark Alliance" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+			<custom_field_value included_faction_index="1" field_name="Intensity" field_value="9" />
+			<custom_field_value included_faction_index="1" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+
+		<!-- Intensity 10 -->
+		<hack_choice name="Intensity10DarkZenithAndSvikari" factions_included="DarkZenith,DarkZenithSvikari" display_name="强度 10，黑暗天顶与结盟的斯维卡里"
+					 description="黑暗天顶将在星系中出现，对所有势力怀有敌意，并且一个结盟的黑暗天顶斯维卡里将出现在你的母星上。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="10" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Dark Alliance" />
+			<custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+			<custom_field_value included_faction_index="1" field_name="Intensity" field_value="10" />
+			<custom_field_value included_faction_index="1" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+		
+		<!-- DZ only -->
+		<!-- Intensity 1 -->
+		<hack_choice name="Intensity1DarkZenith" factions_included="DarkZenith" display_name="强度 1，仅黑暗天顶" description="弱小且对所有势力怀有敌意。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="1" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Dark Alliance" />
+                        <custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 2 -->
+		<hack_choice name="Intensity2DarkZenith" factions_included="DarkZenith" display_name="强度 2，仅黑暗天顶" description="更弱小且对所有势力怀有敌意。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="2" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Dark Alliance" />
+                        <custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 3 -->
+		<hack_choice name="Intensity3DarkZenith" factions_included="DarkZenith" display_name="强度 3，仅黑暗天顶" description="有一定能力且对所有势力怀有敌意。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="3" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Dark Alliance" />
+                        <custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 4 -->
+		<hack_choice name="Intensity4DarkZenith" factions_included="DarkZenith" display_name="强度 4，仅黑暗天顶" description="能够造成伤害且对所有势力怀有敌意。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="4" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Dark Alliance" />
+                        <custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 5 -->
+		<hack_choice name="Intensity5DarkZenith" factions_included="DarkZenith" display_name="强度 5，仅黑暗天顶" description="中等强度且对所有势力怀有敌意。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="5" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Dark Alliance" />
+                        <custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 6 -->
+		<hack_choice name="Intensity6DarkZenith" factions_included="DarkZenith" display_name="强度 6，仅黑暗天顶" description="强大且对所有势力怀有敌意。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="6" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Dark Alliance" />
+                        <custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 7 -->
+		<hack_choice name="Intensity7DarkZenith" factions_included="DarkZenith" display_name="强度 7，仅黑暗天顶" description="非常强大且对所有势力怀有敌意。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="7" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Dark Alliance" />
+                        <custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 8 -->
+		<hack_choice name="Intensity8DarkZenith" factions_included="DarkZenith" display_name="强度 8，仅黑暗天顶" description="有冲击力且对所有势力怀有敌意。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="8" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Dark Alliance" />
+                        <custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 9 -->
+		<hack_choice name="Intensity9DarkZenith" factions_included="DarkZenith" display_name="强度 9，仅黑暗天顶" description="非常有冲击力且对所有势力怀有敌意。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="9" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Dark Alliance" />
+                        <custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Intensity 10 -->
+		<hack_choice name="Intensity10DarkZenith" factions_included="DarkZenith" display_name="强度 10，仅黑暗天顶" description="极其有冲击力且对所有势力怀有敌意。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="10" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Dark Alliance" />
+                        <custom_field_value included_faction_index="0" field_name="InvasionTime" field_value="Immediate" />
+		</hack_choice>
+
+		<!-- Svikari only -->
+		<!-- Intensity 1 -->
+		<hack_choice name="Intensity1DarkZenithSvikari" factions_included="DarkZenithSvikari" display_name="强度 1，仅黑暗天顶斯维卡里" description="弱小且与你结盟。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="1" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+
+		<!-- Intensity 2 -->
+		<hack_choice name="Intensity2DarkZenithSvikari" factions_included="DarkZenithSvikari" display_name="强度 2，仅黑暗天顶斯维卡里" description="更弱小且与你结盟。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="2" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+
+		<!-- Intensity 3 -->
+		<hack_choice name="Intensity3DarkZenithSvikari" factions_included="DarkZenithSvikari" display_name="强度 3，仅黑暗天顶斯维卡里" description="有一定能力且与你结盟。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="3" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+
+		<!-- Intensity 4 -->
+		<hack_choice name="Intensity4DarkZenithSvikari" factions_included="DarkZenithSvikari" display_name="强度 4，仅黑暗天顶斯维卡里" description="能够造成伤害且与你结盟。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="4" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+
+		<!-- Intensity 5 -->
+		<hack_choice name="Intensity5DarkZenithSvikari" factions_included="DarkZenithSvikari" display_name="强度 5，仅黑暗天顶斯维卡里" description="中等强度且与你结盟。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="5" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+
+		<!-- Intensity 6 -->
+		<hack_choice name="Intensity6DarkZenithSvikari" factions_included="DarkZenithSvikari" display_name="强度 6，仅黑暗天顶斯维卡里" description="强大且与你结盟。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="6" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+
+		<!-- Intensity 7 -->
+		<hack_choice name="Intensity7DarkZenithSvikari" factions_included="DarkZenithSvikari" display_name="强度 7，仅黑暗天顶斯维卡里" description="非常强大且与你结盟。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="7" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+
+		<!-- Intensity 8 -->
+		<hack_choice name="Intensity8DarkZenithSvikari" factions_included="DarkZenithSvikari" display_name="强度 8，仅黑暗天顶斯维卡里" description="有冲击力且与你结盟。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="8" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+
+		<!-- Intensity 9 -->
+		<hack_choice name="Intensity9DarkZenithSvikari" factions_included="DarkZenithSvikari" display_name="强度 9，仅黑暗天顶斯维卡里" description="非常有冲击力且与你结盟。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="9" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+
+		<!-- Intensity 10 -->
+		<hack_choice name="Intensity10DarkZenithSvikari" factions_included="DarkZenithSvikari" display_name="强度 10，仅黑暗天顶斯维卡里" description="极其有冲击力且与你结盟。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="10" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+	</beacon_faction_option>
+</root>

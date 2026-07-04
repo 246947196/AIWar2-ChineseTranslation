@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <state_of_matter name="Normal" display_name="正常状态"
+      is_default="true"  should_show_description_in_tooltips="false"
+      description_short="存在于现实空间中的物体，具有三个空间维度，并沿着第四维度（时间）轴移动。也就是说，这是可观测宇宙的大部分。"
+      description_full="存在于现实空间中的物体，具有三个空间维度，并沿着第四维度（时间）轴移动。也就是说，这是可观测宇宙的大部分。"
+  >
+  </state_of_matter>
+
+  <state_of_matter name="5thDimension" display_name="第五维度"
+      has_separate_view_mode="true"  can_see_units_in_this_state_without_being_in_the_separate_view="false"
+      description_short="处于这种存在状态的单位无法看到或与现实空间中的单位互动，反之亦然。"
+      description_full="处于这种存在状态的单位无法看到或与现实空间中的单位互动，反之亦然。很少有单位能够在第三和第五维度的空间平面之间穿梭。这个更高维度平面与我们正常空间的关系极难理解，我们才刚刚开始探索。"
+  >
+  </state_of_matter>
+
+  <state_of_matter name="DarkEnergy" display_name="暗能量"
+      ships_render_in_this_state="false" icon_ship_status_to_draw_when_not_in_alt_mode="Darkness"
+      description_short="由暗能量组成的单位仍然存在于现实空间中，但其本质还知之甚少。"
+      description_full="由暗能量组成的单位仍然存在于现实空间中，但其本质还知之甚少。我们可以互相探测到对方，但跨越维度很困难。暗能量占可观测宇宙的 68%，暗物质占 27%，而普通物质仅占 5%。大多数太空旅行都得益于暗物质反应堆。"
+  >
+  </state_of_matter>
+  
+  <state_of_matter name="SoloPhase" display_name="单相位"
+      can_target_other_units_in_this_state="false" ships_draw_as_solo_phase_material_in_this_state="true" icon_ship_status_to_draw_when_not_in_alt_mode="Healing2"
+      description_short="物体暂时处于所有敌对和友好单位都无法触及的状态。"
+      description_full="物体暂时处于所有敌对和友好单位都无法触及的状态。我们的仪器可以探测到它们，甚至可以给它们下达命令，但在大多数情况下，它们所能做的就是等待和恢复。不过，它们也可以在回到正常现实时发动突袭。"
+  >
+  </state_of_matter>
+
+  <state_of_matter name="MultiPhase" display_name="多相位"
+      ships_draw_as_multi_phase_material_in_this_state="true" icon_ship_status_to_draw_when_not_in_alt_mode="Lantern"
+      description_short="处于另一种物质状态的物体，只能与其他多相位物体互动。"
+      description_full="处于另一种物质状态的物体，只能与其他多相位物体互动。处于这种状态的单位可能是暂时的 -- 甚至是不情愿的 -- 也可能是有意永久地被设置为守护现实空间的这个边缘区域。"
+  >
+  </state_of_matter>
+</root>

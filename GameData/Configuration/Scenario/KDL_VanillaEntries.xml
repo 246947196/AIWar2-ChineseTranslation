@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <scenario name="AftermathOfLosingTheAIWar"
+           is_default="true"
+           display_name="AI战争失败后的余波"
+           dll_name="AIWarExternalCode"
+           type_name="Arcen.AIW2.External.Scenario_AftermathOfLosingTheAIWar"
+  >
+  </scenario>
+  <scenario name="TestChamber"
+           display_name="测试舱"
+           dll_name="AIWarExternalCode"
+           type_name="Arcen.AIW2.External.Scenario_TestChamber"
+           do_not_serialize_setup_to_or_from_settings="true"
+           force_map_type="TestChamber"
+           force_map_seed="123456"
+  >
+  </scenario>
+</root>

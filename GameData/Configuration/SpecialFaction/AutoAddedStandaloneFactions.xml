@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!--These factions are in every game, and one of them gets auto-added each time.
+        
+        All of these are added ONCE ONLY, never one-per-AI.
+        ***************************************************************************************************************
+        ***************************************************************************************************************-->
+
+
+    <!--Don't show because we want the clarity of white being blank to be consistent.-->
+    <faction name="NaturalObject"
+             is_default="true"
+             display_name="自然物体" short_name="Natural Objects" processing_group="NaturalObject"
+             base_info_source="NaturalObjectFactionBaseInfo"
+             deep_info_source="NaturalObjectFactionDeepInfo"
+             team_center_color="Gray" team_border_color="cF8F8FF"
+             type="NaturalObject"
+             must_be_at_most_one="true" should_always_have_exactly_one_of_these_in_every_game="true"
+             should_not_be_shown="true" should_not_be_shown_even_as_separate_line_items_in_game_factions_menu="true"
+             description="银河系的通用特征(如虫洞)"
+             is_immune_to_zombification="true"
+             ai_threat_against_this_faction_goes_back_to_guarding="true"
+             ai_should_not_have_hunter_against_this="true"
+             is_allowed_to_auto_seed_in_tutorial="true"
+    >
+    </faction>
+
+    <!--Don't show because they take on the color of the preceding AI.-->
+    <faction name="AIReserves"
+           display_name="AI预备队" short_name="AI Reserves" processing_group="AIReserves"
+           base_info_source="AIReservesFactionBaseInfo"
+           deep_info_source="AIReservesFactionDeepInfo"
+           team_center_color="c00563B" team_border_color="cBFFF00"
+           type="SpecialFaction" is_always_a_direct_attack_against_players="true"
+           must_be_at_most_one="true" should_always_have_exactly_one_of_these_in_every_game="true"
+           should_not_be_shown="true" should_not_be_shown_even_as_separate_line_items_in_game_factions_menu="true"
+           takes_on_highest_current_general_mark_level_of_any_ai_faction="true"
+           upgrades_ships_to_general_mark_level_if_they_are_lower="true"
+           takes_on_color_of_the_first_ai_faction="true"
+           allied_to_ai_by_default="true"
+           description="以压倒性武力回应人类的深入打击。"
+		   creases_hack_responses_if_all_ais_are_defeated="true"
+		   is_immune_to_zombification="true"
+             >
+    </faction>
+
+    <!--Don't show because they take on the color of the first AI.-->
+    <faction name="Instigators"
+         display_name="AI煽动者" short_name="AI Instig" processing_group="AIInstigators"
+         base_info_source="InstigatorFactionBaseInfo"
+         deep_info_source="InstigatorFactionDeepInfo"
+         team_center_color="cE32636" team_border_color="cA52A2A"
+         type="SpecialFaction" is_always_a_direct_attack_against_players="true"
+         must_be_at_most_one="true" should_always_have_exactly_one_of_these_in_every_game="true"
+         description="该AI派系为AI生成额外力量和能量。"
+         should_not_be_shown="true" should_not_be_shown_even_as_separate_line_items_in_game_factions_menu="true"
+         takes_on_highest_current_general_mark_level_of_any_ai_faction="true"
+         upgrades_ships_to_general_mark_level_if_they_are_lower="true"
+         takes_on_color_of_the_first_ai_faction="true"
+         allied_to_ai_by_default="true"
+	     defeat_condition="HasNoMobileCombattantStrength"
+		 creases_hack_responses_if_all_ais_are_defeated="true"
+    >
+    </faction>
+
+    <!--Do show in-game so players can adjust colors of them if they want.-->
+    <faction name="AntiAIZombie"
+             display_name="反AI僵尸" short_name="Zombie A-AI" processing_group="Zombies"
+             base_info_source="ZombieAntiAIFactionBaseInfo"
+             deep_info_source="ZombieAntiAIFactionDeepInfo"
+             team_center_color="c1B1B1B" team_border_color="Yellow2"
+             type="SpecialFaction"
+             should_not_be_shown="true"
+             must_be_at_most_one="true" should_always_have_exactly_one_of_these_in_every_game="true"
+             description="来自任何来源的僵尸化飞船，仇恨AI。"
+             ai_can_send_waves_against_this="false"
+             ai_threat_against_this_faction_goes_back_to_guarding="true"
+             counts_as_part_of_player_strength_at_planet_for_counterattack_blocking="true"
+    >
+    </faction>
+    <!--Do show in-game so players can adjust colors of them if they want.-->
+    <faction name="AntiPlayerZombie"
+             display_name="反玩家僵尸" short_name="Zombie A-P" processing_group="Zombies"
+             base_info_source="ZombieAntiPlayerFactionBaseInfo"
+             deep_info_source="ZombieAntiPlayerFactionDeepInfo"
+             team_center_color="c1B1B1B" team_border_color="cE52B50"
+             type="SpecialFaction" is_always_a_direct_attack_against_players="true"
+             should_not_be_shown="true"
+             must_be_at_most_one="true" should_always_have_exactly_one_of_these_in_every_game="true"
+             allied_to_ai_by_default="true"
+             description="来自任何来源的僵尸化飞船，仇恨人类。"
+			 defeat_condition="HasNoMobileCombattantStrength"
+    >
+    </faction>
+    <!--Do show in-game so players can adjust colors of them if they want.-->
+    <faction name="AntiEveryoneZombie"
+             display_name="反一切僵尸" short_name="Zombie A-E" processing_group="Zombies"
+             base_info_source="ZombieAntiEveryoneFactionBaseInfo"
+             deep_info_source="ZombieAntiEveryoneFactionDeepInfo"
+             team_center_color="c1B1B1B" team_border_color="cFE28A2"
+             type="SpecialFaction" is_always_a_direct_attack_against_players="true"
+             must_be_at_most_one="true" should_always_have_exactly_one_of_these_in_every_game="true"
+             should_not_be_shown="true"
+             ai_threat_against_this_faction_goes_back_to_guarding="true"
+             description="来自任何来源的僵尸化飞船，仇恨...所有人。"
+             ai_can_send_waves_against_this="false"
+			 defeat_condition="HasNoMobileCombattantStrength"
+    >
+    </faction>
+
+  <!--Do show in-game so players can adjust colors of them if they want.-->
+  <faction name="Outguard"
+           display_name="外围守卫" short_name="Outguard" processing_group="Outguard"
+           base_info_source="OutguardFactionBaseInfo"
+           deep_info_source="OutguardFactionDeepInfo"
+           team_center_color="Gunmetal2" team_border_color="cE52B50"
+           type="SpecialFaction" does_player_style_ship_upgrades="true"
+           must_be_at_most_one="true" should_always_have_exactly_one_of_these_in_every_game="true"
+           should_not_be_shown="true"
+           counts_as_part_of_player_strength_at_planet_for_counterattack_blocking="true"
+           is_considered_player_allied_for_filter_purposes="true"
+           is_considered_outguard="true"
+           always_friendly_to_players="true"
+           description="外围守卫是玩家召唤的独立单位。在地图上占领外围守卫信标可获得这些强大部队，只需按一个按钮即可部署到地图任何位置，且不会引发反击惩罚。"
+		   ai_can_send_waves_against_this="false"
+           start_ready_to_shoot="true"
+  >
+  </faction>
+      <!--Don't show because they take on the color of the first AI.-->
+    <faction name="WormholeInvasion"
+         display_name="虫洞入侵" short_name="Worm Inv" processing_group="WormholeInvasion"
+         base_info_source="WormholeInvasionFactionBaseInfo"
+         deep_info_source="WormholeInvasionFactionDeepInfo"
+         team_center_color="cE32636" team_border_color="cA52A2A"
+         type="SpecialFaction" is_always_a_direct_attack_against_players="true"
+         must_be_at_most_one="true" should_always_have_exactly_one_of_these_in_every_game="true"
+         description="该AI派系负责处理虫洞入侵。"
+         should_not_be_shown="true" should_not_be_shown_even_as_separate_line_items_in_game_factions_menu="true"
+         upgrades_ships_to_general_mark_level_if_they_are_lower="true"
+         takes_on_color_of_the_first_ai_faction="true"
+         allied_to_ai_by_default="true"
+    >
+    </faction>
+
+</root>

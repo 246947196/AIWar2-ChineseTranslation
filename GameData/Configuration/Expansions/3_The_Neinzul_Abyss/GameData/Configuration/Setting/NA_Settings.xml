@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <setting name="HideRandomFactionType" category="Game" subcategory="Intel" is_advanced_setting="true" display_name="隐藏随机阵营类型" type="BoolToggle" default="true"
+            description="对于随机阵营，在你遇到它们之前，它们在退出菜单中将显示为“随机”。" />
+
+  <setting name="HideRandomFactions" category="Game" subcategory="Intel" is_advanced_setting="true" display_name="隐藏未发现的随机阵营" type="BoolToggle" default="false"
+           description="如果你选择了随机阵营，这将在你遇到它们之前将它们从退出菜单中隐藏。旨在实现类肉鸽风格。
+
+如果你打开编辑阵营菜单，仍然可以看到所有阵营。这是“隐藏未发现阵营”选项的子集。" />
+
+  <setting name="TakeQuitSave" category="Game" display_name="退出时保存" is_advanced_setting="true" type="BoolToggle" default="false"
+           description="每当退出游戏时，总是额外保存一次游戏。"/>
+
+  <setting name="NecromancerTipReminders" serialization_name="Beg-Jo" is_network_and_game_synced_setting="false"
+          category="Game" subcategory="Tips" is_advanced_setting="true" display_name="死灵法师提示提醒" type="BoolToggle" default="true"
+          description="对于新的死灵法师玩家，游戏将提醒你查看提示侧边栏。" />
+
+</root>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- A combination of starting options for fleets. These do not override existing fleets but are additions.
+You can copy the fleets below as templates to create your own starting fleets.
+ -->
+  <fleet_design name="GiantSlayerFleet"
+        display_name="巨型战舰攻击舰队"
+        description="专注于击杀大型目标的混合舰队。速度缓慢，且容易受到战机的攻击。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Cloaked" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+    <ship_membership name="PikeCorvette" ship_cap_group="Strike"  weight="100" cap="40"/>
+    <ship_membership name="Stalker" ship_cap_group="Strike" weight="100" cap="40"/>
+    <ship_membership name="Ram"	 ship_cap_group="Strike" weight="100" cap="25"/>
+    <ship_membership name="Bombard" ship_cap_group="Strike" weight="100" cap="20"/>
+  </fleet_design>
+
+
+  <!-- Ships : Pike Corvette, Stalker, Ram, Bombard. (Disrupt, Concu, Melee, Subterfuge).
+  
+ -->
+  <fleet_design name="SniperFleet"
+        display_name="狙击舰队"
+        description="一支专门的狙击舰队，可以从其进入点打击任何目标。非常适合摧毁战略目标。造价昂贵，在正面战斗中表现不佳。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        hidden_from_lists_above_harshness="200"
+        >
+    <ship_membership name="TransportFlagship_Starter" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+    <ship_membership name="Sniper" ship_cap_group="Strike"  weight="100" cap="40"/>
+    <ship_membership name="SentinelGunboat"	 ship_cap_group="Strike" weight="100" cap="20"/>
+    <ship_membership name="Ramifier" ship_cap_group="Frigate" weight="100" cap="6"/>
+    <ship_membership name="TackleDroneLauncherFrigate" ship_cap_group="Frigate" weight="100" cap="6"/>
+  </fleet_design>
+
+
+  <!-- Ships : Assault and Ion so Fusion and Concu. Swarmer to fend off fleets and finish off enemies. All top four tech (Ambush, Disrupt, Concu, Fusion).
+  
+ -->
+
+  <fleet_design name="DemolitionFleet"
+        display_name="火力舰队"
+        description="一支由专注于爆炸的舰船组成的舰队。火力强大，但速度较慢且缺乏针对性。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Agile" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+    <ship_membership name="ClusterBomb" ship_cap_group="Strike"  weight="100" cap="25"/>
+    <ship_membership name="FusionBomber" ship_cap_group="Strike" weight="100" cap="40"/>
+    <ship_membership name="Molotov"	 ship_cap_group="Strike" weight="100" cap="40"/>
+    <ship_membership name="TeslaTorpedoFrigate" ship_cap_group="Frigate" weight="100" cap="6"/>
+  </fleet_design>
+  <!-- Ships : Cluster Bomb, Fusion Bomber, Tesla Torpedo, Molotov. Fusion, Melee, Splash twice.
+  
+ -->
+  <fleet_design name="UndyingStartingFleet"
+         display_name="防御舰队"
+         description="一支特专精防御的舰队，擅长在不引发反击的情况下抵挡大量敌军。"
+         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+         append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Starter" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+    <ship_membership name="VanguardHydra" ship_cap_group="Strike" weight="100" cap="20"/>
+    <ship_membership name="StingrayHydra" ship_cap_group="Strike" weight="100" cap="80"/>
+    <ship_membership name="TeslaTorpedoFrigate" ship_cap_group="Frigate" weight="100" cap="6"/>
+    <ship_membership name="WarbirdFrigateHydra" ship_cap_group="Frigate" weight="100" cap="5"/>
+  </fleet_design>
+
+  <!-- Ships : AblativeGatling, Ranger, Spider, Apparition. Core, Raid, Subterfuge, Tech.
+  
+ -->
+
+  <fleet_design name="BroadsideFleet"
+        display_name="舷侧火力舰队"
+        description="一支由高伤害、远程且昂贵的舰船组成的舰队，可进行压倒性的首轮打击。普遍装填时间长，速度慢，因此装填时需迅速重新定位。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Agile" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+    <ship_membership name="Bombard" ship_cap_group="Strike" weight="100" cap="20"/>
+    <ship_membership name="PulsarTank" ship_cap_group="Strike" weight="100" cap="20"/>
+    <ship_membership name="InhibitingTeslaCorvette" ship_cap_group="Strike" weight="100" cap="15"/>
+    <ship_membership name="SiegeFrigate" ship_cap_group="Frigate" weight="100" cap="6"/>
+  </fleet_design>
+</root>

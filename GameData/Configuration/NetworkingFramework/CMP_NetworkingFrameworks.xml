@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <networking_framework name="LiteNet"
+              display_name="&lt;color=#ffd965&gt;S级:&lt;/color&gt; 直接IP：LiteNetLib" abbreviation="Direct IP: LiteNet"
+              description="这会在客户端和主机之间建立直接连接，可能是最快的解决方案。如果您在局域网中，这绝对是最快的方式。
+              
+根据主机路由器的配置，NAT穿透可能会生效，否则主机可能需要设置端口转发（这对大多数人来说很麻烦）。您可以尝试一下，如果无需端口转发（这是主机端的设置）就能正常工作，那就太好了。由于是直接连接，这将是您能获得的最快网络连接。
+
+如果此方法不能立即生效，您可以学习如何为主机路由器设置端口转发，或者和朋友一起使用VPN，也可以选择其他网络框架。
+              
+如果您和朋友已经设置了像Hamachi或Tunngle这样的VPN，那么就可以像在局域网中一样进行游戏，但与直接连接相比，会引入明显的延迟（部分原因是加密，部分原因是可能使用中继服务器）。
+
+所有数据都会通过您请求的单个UDP端口发送（它使用多个通道以确保数据不会堵塞），因此您只需在防火墙中开放该端口即可。"
+              dll_name="ArcenNetworkLib"
+              type_name="Arcen.Universal.LiteNetSocket"
+                        
+              client_connect_tooltip="通过IP地址连接到主机。他们必须已经通过LiteNet框架启动了多人游戏会话。
+              
+如果你们在同一个局域网中，这是最佳选择，但此框架会尝试在主机上进行NAT穿透。作为客户端，您无需进行任何特殊配置。这可能比其他网络选项更快，但设置起来也更麻烦。"
+              
+              client_connect_window_text="如果您在互联网上玩游戏，主机需要给您他们的公共IP地址，他们可以在游戏中（在大厅或退出菜单中）找到该地址。
+
+如果您在局域网或VPN中玩游戏，他们需要给您他们的本地IP地址之一，他们也可以在相同的位置找到该地址。
+
+您和主机都需要确保任何软件防火墙都已允许《AI战争2》通过它们进行连接。"
+              client_connect_window_text_size="12"
+  />
+
+  
+  <networking_framework name="SteamMultiSocketsDirect"
+              display_name="&lt;color=#59bafe&gt;B级:&lt;/color&gt; Steam多端口（直接）" abbreviation="Steam M-Port Direct"
+              description="这是最现代、最可靠的Steam网络框架，它能在主机和客户端之间建立直接连接，但需要主机将其IP地址分享给客户端，这有点麻烦。
+              
+如果您发现无法通过此方法连接，可能需要使用Valve的中继服务器（Steam Sockets Relay）。如果延迟过高，最快的选择是使用LiteNetLib进行直接IP连接，必要时在主机上配置端口转发。
+
+如果此网络方法无响应（连接在几分钟后超时），或者存在性能问题，如主机或客户端偶尔冻结几分钟，那么最好切换到LiteNet。这可能是Steam中某种罕见的权限验证问题。
+
+请注意！它不仅使用选定的端口（例如32300），还会使用该端口及另外五个端口（即32300至32305）。这是因为Steam不支持在单个端口上传输多通道数据。"
+              special_type="SteamMultiSocketsDirect"
+                        
+              client_connect_tooltip="通过IP地址连接到主机。他们必须已经通过Steam Sockets（直接）框架启动了多人游戏会话。
+              
+通常情况下，这比中继网络快得多，除非您和您的朋友都恰好住在离Valve数据中心很近的地方。作为客户端或主机，您无需进行任何特殊配置，但如果Steam无法建立直接连接，您需要切换到中继版本。这应该是Steam网络中最快、最可靠的形式。"
+              
+              client_connect_window_text="主机需要给您他们的公共IP地址，他们可以在游戏中（在大厅或退出菜单中）找到该地址。
+
+如果您在局域网或VPN中玩游戏，他们需要给您他们的本地IP地址之一，他们也可以在相同的位置找到该地址。
+
+一些客户端通过本地IP连接，而其他客户端通过公共IP连接是可以的。"
+              client_connect_window_text_size="12"
+  />
+
+  <networking_framework name="SteamMultiSocketsRelay"
+              display_name="&lt;color=#ab78ba&gt;C级:&lt;/color&gt; Steam多端口（中继）" abbreviation="Steam M-Port Relay"
+              description="这是最现代、最可靠的Steam网络框架，但此版本会将所有数据通过Valve的网络进行路由。
+              
+如果您遇到严重的延迟问题，您可能希望切换到Steam Sockets Direct方法，或者更好的选择是LiteNetLib。这种中继游戏方式有时会导致游戏在等待Steam客户端响应时冻结，以及其他类似的不愉快情况。
+
+其他方法需要通过IP地址进行连接，但不经过Valve的服务器，因此根据您和朋友相对于Valve数据中心以及彼此的地理位置，可能会快得多。
+
+如果此网络方法无响应（连接在几分钟后超时、冻结等），请使用更好的框架。我们希望它能更好地工作，但现实就是如此。"
+              special_type="SteamMultiSocketsRelay"
+                        
+              client_connect_tooltip="通过从您的好友列表中选择来连接到主机。他们必须已经通过Steam网络启动了多人游戏会话。"
+  />
+
+
+  <!--
+        You can turn back on Steam Tubes support if you want, but it's generally inferior to multi-socket relay, and seems to die a lot in general.
+        **************************************
+    -->
+<!--
+  <networking_framework name="SteamTubesDirect"
+              display_name="&lt;color=#59bafe&gt;B级:&lt;/color&gt; Steam管道（直接）" abbreviation="Steam Tubes Direct"
+              description="只有在Steam多端口无法工作时才使用Steam管道。
+              
+此方法不会将所有内容拆分为四个独立的通道，而是将所有内容打包到一个管道中。这会导致许多网络拥塞和明显的延迟，但有时在其他所有选项都无效时它却能工作。
+
+此直接版本避开了Valve的中继网络，因此在大多数情况下比中继版本更快。
+
+如果此网络方法无响应（连接在几分钟后超时），那么尝试进行P2P连接，然后再切换回此方法可以解决问题。这可能是Steam中某种罕见的权限验证问题。"
+              special_type="SteamTubesDirect"
+                        
+              client_connect_tooltip="通过IP地址连接到主机。他们必须已经通过Steam Sockets（直接）框架启动了多人游戏会话。
+              
+通常情况下，这比中继网络快得多，除非您和您的朋友都恰好住在离Valve数据中心很近的地方。作为客户端或主机，您无需进行任何特殊配置，但如果Steam无法建立直接连接，您需要切换到中继版本。这应该是Steam网络中最快、最可靠的形式。
+
+如果此网络方法无响应（连接在几分钟后超时），那么尝试进行P2P连接，然后再切换回此方法可以解决问题。这可能是Steam中某种罕见的权限验证问题。"
+              
+              client_connect_window_text="主机需要给您他们的公共IP地址，他们可以在游戏中（在大厅或退出菜单中）找到该地址。
+
+如果您在局域网或VPN中玩游戏，他们需要给您他们的本地IP地址之一，他们也可以在相同的位置找到该地址。
+
+一些客户端通过本地IP连接，而其他客户端通过公共IP连接是可以的。"
+              client_connect_window_text_size="12"
+  />
+
+  <networking_framework name="SteamTubesRelay"
+              display_name="&lt;color=#ab78ba&gt;C级:&lt;/color&gt; Steam管道（中继）" abbreviation="Steam Tubes Relay"
+              description="只有在Steam多端口无法工作时才使用Steam管道。
+              
+此方法不会将所有内容拆分为四个独立的通道，而是将所有内容打包到一个管道中。这会导致许多网络拥塞和明显的延迟，但有时在其他所有选项都无效时它却能工作。
+
+此直接版本通过Valve的网络进行中继以获得最大的可靠性，但可能会牺牲性能，除非您和您所有一起玩游戏的朋友都住在离Valve数据中心很近的地方。"
+              special_type="SteamTubesRelay"
+                        
+              client_connect_tooltip="通过从您的好友列表中选择来连接到主机。他们必须已经通过Steam网络启动了多人游戏会话。"
+  />-->
+
+  
+  <!--
+        You can turn back on Steam P2P support if you want, but it seems to actually garble data.  Not good!
+        **************************************
+    -->
+  
+  
+  <!--
+  <networking_framework name="SteamP2P_Direct"
+              display_name="&lt;color=#fe6c59&gt;A级:&lt;/color&gt; Steam P2P（直接）" abbreviation="Steam P2P Direct"
+              description="Steam的P2P网络服务可能非常快，但也可能不可靠。此版本会在您和其他玩家之间建立直接连接。如果主机的路由器未以特定方式设置，可能会失败。在这种情况下，请使用Steam P2P的中继版本。  
+              
+该版本较慢，因为它会将所有通信通过Valve的服务器进行路由，但它可以实现原本无法实现的连接。
+
+有些人在使用Steam P2P时会收到数据损坏的消息。如果发生这种情况，请使用Steam多端口或Steam管道。这些方法在网络上没有数据损坏的问题。"
+              special_type="SteamP2PNoRelay"
+                        
+              client_connect_tooltip="通过从您的好友列表中选择来连接到主机。他们必须已经通过Steam网络启动了多人游戏会话。"
+  />
+
+  <networking_framework name="SteamP2P_Relay"
+              display_name="&lt;color=#59bafe&gt;B级:&lt;/color&gt; Steam P2P（中继）" abbreviation="Steam P2P Relay"
+              description="Steam的P2P网络服务可能非常快，但也可能不可靠。此版本使用Valve的中继服务器来处理您和其他玩家之间的连接。这更有可能成功，但运行速度较慢，因为所有流量都通过Valve的服务器发送。 
+              
+实际上，使用此框架时，由于Valve网络的拥塞，网络连接可能会断开或中断，因此建议使用其他方法来启动Steam网络。
+
+有些人在使用Steam P2P时会收到数据损坏的消息。如果发生这种情况，请使用Steam多端口或Steam管道。这些方法在网络上没有数据损坏的问题。"
+              special_type="SteamP2PRelay"
+                        
+              client_connect_tooltip="通过从您的好友列表中选择来连接到主机。他们必须已经通过Steam网络启动了多人游戏会话。"
+  />-->
+
+  <networking_framework name="GOG"
+              display_name="&lt;color=#ffd965&gt;S级:&lt;/color&gt; GOG网络" abbreviation="GOG"
+              description="如果您通过GOG进行游戏，并且是在互联网上进行游戏，那么这几乎肯定是您的首选方式。GOG会为您处理NAT穿透，如果失败，它会提供中继服务器。
+    
+缺点主要是您只能与其他GOG和Steam用户一起玩，并且需要连接互联网 —— 如果您在没有互联网接入的私人局域网（如林间小屋）中，那么使用局域网解决方案当然是您的首选。"
+              special_type="GOG"
+                        
+              client_connect_tooltip="通过从您的好友列表中选择来连接到主机。他们必须已经通过GOG Galaxy网络启动了多人游戏会话。"
+  />
+
+  <networking_framework name="NullHandler"
+              display_name="无网络连接" abbreviation="Null"
+              description="如果您想确保游戏不会打开任何端口，例如您正在进行单人游戏或不想建立任何连接，那么选择此选项即可。"
+              special_type="NullHandler"
+                        
+              client_connect_tooltip="“空套接字”将阻止您连接到其他玩家。"
+  />
+</root>

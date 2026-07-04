@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <game_speed_type name="Epic" display_name="史诗" attack_multiplier="0.6" move_multiplier="0.6" sort_index="400"/>
+  <game_speed_type name="Stately Ships" display_name="缓慢 - 2" attack_multiplier="1" move_multiplier="0.6" sort_index="450"/>
+  <game_speed_type name="Slower Battles" display_name="缓慢 - 1" attack_multiplier="0.6" move_multiplier="1" sort_index="500"/>
+  
+	<game_speed_type name="Default" display_name="默认" attack_multiplier="1" move_multiplier="1" sort_index="1000" is_the_default="true"/>
+
+  <game_speed_type name="Faster Ships" display_name="快速 - 1" attack_multiplier="1" move_multiplier="1.4" sort_index="1500"/>
+  <game_speed_type name="Faster Battles" display_name="快速 - 2" attack_multiplier="1.5" move_multiplier="1.4" sort_index="1550"/>
+  <game_speed_type name="Cheetah" display_name="猎豹" attack_multiplier="2" move_multiplier="1.4" sort_index="1600"/>
+  <game_speed_type name="Insane" display_name="疯狂" attack_multiplier="3" move_multiplier="1.4" sort_index="1700"/>
+  <game_speed_type name="Plaid" display_name="格子呢" attack_multiplier="4" move_multiplier="1.4" sort_index="1700"/>
+  
+</root>

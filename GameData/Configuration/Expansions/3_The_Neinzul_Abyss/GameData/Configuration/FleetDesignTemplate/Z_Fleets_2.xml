@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- A combination of starting options for fleets. These do not override existing fleets but are additions.
+You can copy the fleets below as templates to create your own starting fleets.
+ -->
+  <fleet_design name="AbyssalFleet"
+        display_name="深渊舰队"
+        description="一支旨在利用内因祖尔深渊带来的新技术的舰队。重装甲、速度慢，但奇特且强大。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Starter" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="Bouncer" ship_cap_group="Strike" weight="100" cap="14"/>
+	<ship_membership name="BladeSpawnerFrigate" ship_cap_group="Frigate" weight="100" cap="6"/>
+	<ship_membership name="PugilistFrigate" ship_cap_group="Frigate" weight="100" cap="4"/>
+	<ship_membership name="AreaBombard" ship_cap_group="Strike" weight="100" cap="14"/>
+  </fleet_design>
+  <fleet_design name="WardedFleet"
+        display_name="守护舰队"
+        description="一支配备轨道守护装置以击退敌人的舰队。使用形形色色的舰船来应对各种情况。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Starter" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="RepulsorWard" ship_cap_group="Strike" weight="100" cap="15"/>
+	<ship_membership name="SamuraiFrigate" ship_cap_group="Frigate" weight="100" cap="6"/>
+	<ship_membership name="ChainLightningFrigate" ship_cap_group="Frigate" weight="100" cap="6"/>
+	<ship_membership name="MosquitoCorvette" ship_cap_group="Strike" weight="100" cap="14"/>
+  </fleet_design>
+</root>

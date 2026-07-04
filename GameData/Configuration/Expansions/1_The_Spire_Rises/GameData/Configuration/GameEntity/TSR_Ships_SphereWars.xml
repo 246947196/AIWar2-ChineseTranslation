@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!-- 	Shared Units -->
+	<!--	Dark Spire Derelicts
+			What Spheres fight over, remnants of Dark Spire vengence generators -->
+	<entity name="DarkSpireDerelict" display_name="黑暗尖塔残骸" draw_in_galaxy_view="true"
+            description="黑暗尖塔复仇发生器的断裂部分。" thematic_groups="Spire" 
+            tags="SplinteringSpireDerelict,ShowsOnNormalDisplayMode"
+            visuals="Assets/_DLC1/DarkSpire/DarkSpireDerelict/DarkSpireDerelictD.prefab" visuals_bundle="exp1_the_spire_rises"
+			icon_name="Ships2/DarkSpireDerelict" gimbal_icon_size_multiplier="1.5"
+            category="Ship"
+            visuals_scale_multiplier="16" size_scale="12" 
+			y_offset_of_icon="30"
+            collision_priority="810"
+            behavior="Stationary"
+            starting_mark_level="Mark1"
+            cost_for_ai_to_purchase="90000"
+            hull_points="150000" shield_points="25000" speed="Immobile"
+            armor_mm="250" albedo="0.8" mass_tx="4"
+            metal_cost="10000" energy_consumption="5000"
+            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            voice_group="Silent"
+            priority_as_frd_target="MajorPlanetLevelObjective"
+            priority_as_ai_target="MajorPlanetLevelObjective"
+            priority_to_protect="IgnoreMe"
+            
+            tech_upgrades_that_benefit_me="Unused"
+    >
+    </entity>
+	
+	<entity name="DarkSpireDerelict2" copy_from="DarkSpireDerelict" tags="SplinteringSpireDerelict,ShowsOnNormalDisplayMode"
+	visuals="Assets/_DLC1/DarkSpire/DarkSpireDerelict/DarkSpireDerelictA.prefab" visuals_bundle="exp1_the_spire_rises"
+	visuals_scale_multiplier="7.5" size_scale="9"
+	>
+	</entity>
+	
+	<entity name="DarkSpireDerelict3" copy_from="DarkSpireDerelict" tags="SplinteringSpireDerelict,ShowsOnNormalDisplayMode"
+	visuals="Assets/_DLC1/DarkSpire/DarkSpireDerelict/DarkSpireDerelictB.prefab" visuals_bundle="exp1_the_spire_rises"
+	visuals_scale_multiplier="7.5" size_scale="11" 
+	>
+	</entity>
+	
+	<entity name="DarkSpireDerelict4" copy_from="DarkSpireDerelict" tags="SplinteringSpireDerelict,ShowsOnNormalDisplayMode"
+	visuals="Assets/_DLC1/DarkSpire/DarkSpireDerelict/DarkSpireDerelictC.prefab" visuals_bundle="exp1_the_spire_rises"
+	visuals_scale_multiplier="26" size_scale="10" 
+	>
+	</entity>
+
+	<!--	Collectors
+			Spawnt by Sphere factions to both establish superiority on, and collect resource from, Debris planets.
+			Only capable of shooting at each other, with the sole exception of the Sphere Infused Bastion -->
+
+	<entity name="ZenithCollector" cannot_be_stacked="true" can_pass_through_enemy_forcefields="true" forced_to_always_be_this_state_of_matter="SphereShielded" 
+			thematic_groups="DysonSphere,Zenith"
+			tags="SplinteringSpireCollector,ZenithCollector" gimbal_icon_size_multiplier="1.5"
+			visuals="Assets/_DLC1/SpireSplintering/ZenithCollector/ZenithCollector.prefab" visuals_bundle="exp1_the_spire_rises"
+			icon_name="Ships2/DysonSphereCollector"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="12"
+			visuals_scale_multiplier="3"
+			y_offset_of_icon="10"
+			collision_priority="100"
+			display_name="顶点收集者"
+			display_name_for_sidebar="Z收集者"
+			description="这种大型舰船用于被动收集银河系中黑暗尖塔残骸的资源。由于其宿主球体提供的护盾，普通单位通常无法将其作为目标。"
+			voice_group="Zenith"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="600"
+			hull_points="200000" shield_points="100000" speed="BelowAverage2"
+			metal_cost="80000" energy_consumption="2500"
+			armor_mm="90" albedo="0.8" engine_gx="23" mass_tx="6"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+	  >
+    <system name="W1" display_name="顶点热射线"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="12500" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Devourer"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_Purple"
+				hits_all_intersecting_targets="true"
+				shots_detonate_immediately="true"
+				>
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+  </entity>
+	
+	<entity name="GreySpireCollector" cannot_be_stacked="true" can_pass_through_enemy_forcefields="true" forced_to_always_be_this_state_of_matter="SphereShielded" 
+			thematic_groups="DysonSphere,Spire"
+			tags="SplinteringSpireCollector,GraySpireCollector" gimbal_icon_size_multiplier="1.5"
+			visuals="Assets/_DLC1/GraySpire/GraySpireCollector/GraySpireCollector.prefab" visuals_bundle="exp1_the_spire_rises"
+			size_scale="7"
+			visuals_scale_multiplier="1.8"
+			icon_name="Ships2/DysonSphereCollector"
+			uses_large_health_bar="true"
+			category="Ship"
+			y_offset_of_icon="10"
+			collision_priority="100"
+			display_name="灰尖塔收集者"
+			display_name_for_sidebar="GS收集者"
+			description="这种大型舰船用于被动收集银河系中黑暗尖塔残骸的资源。由于其宿主球体提供的护盾，普通单位通常无法将其作为目标。"
+			voice_group="Spire"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="600"
+			hull_points="200000" shield_points="100000" speed="BelowAverage2"
+			metal_cost="80000" energy_consumption="2505"
+			armor_mm="90" albedo="0.8" engine_gx="23" mass_tx="6"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+	  >
+    <system name="W1" display_name="尖塔线圈射线"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="10000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Devourer"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_Cyan"
+				hits_all_intersecting_targets="true"
+				shots_detonate_immediately="true"
+                is_coilbeam="true"
+				>
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+  </entity>
+  
+  <entity name="ChromaticSpireCollector" cannot_be_stacked="true" can_pass_through_enemy_forcefields="true" forced_to_always_be_this_state_of_matter="SphereShielded" 
+			thematic_groups="DysonSphere,Spire"
+			tags="SplinteringSpireCollector,ChromaticSpireCollector" gimbal_icon_size_multiplier="1.5"
+			visuals="Assets/_DLC1/ChromaticSpire/ChromaticSpireCollector/ChromaticSpireCollector.prefab" visuals_bundle="exp1_the_spire_rises"
+			icon_name="Ships2/DysonSphereCollector"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="12"
+			visuals_scale_multiplier="9"
+			y_offset_of_icon="10"
+			collision_priority="100"
+			display_name="彩色尖塔收集者"
+			display_name_for_sidebar="CS收集者"
+			description="这种大型舰船用于被动收集银河系中黑暗尖塔残骸的资源。由于其宿主球体提供的护盾，普通单位通常无法将其作为目标。"
+			voice_group="Spire"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="600"
+			hull_points="200000" shield_points="100000" speed="BelowAverage2"
+			metal_cost="80000" energy_consumption="2500"
+			armor_mm="90" albedo="0.8" engine_gx="23" mass_tx="6"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+	  >
+    <system name="W1" display_name="尖塔线圈射线"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="30000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Misery"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_Cyan"
+				hits_all_intersecting_targets="true"
+				shots_detonate_immediately="true"
+                is_coilbeam="true"
+				>
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+  </entity>
+
+	<!--	Sphere Bastion	
+			Buildable by the Player on Sphere Debris planets
+			Capable of shooting at Collectors -->
+			
+	<entity name="SplinteringSpireBastion" copy_from="MiniFortress" tech_upgrades_that_benefit_me="Unused" thematic_groups="Turret,Spire"
+			display_name="球体融合堡垒" tags="SplinteringSpireSphereBastion"
+			display_name_for_sidebar="球体堡垒" starting_mark_level="Markless"
+			visuals="Assets/_DLC1/SpireSplintering/SphereFusedMiniFort/SphereInfusedMiniFort.prefab" visuals_bundle="exp1_the_spire_rises"
+			size_scale="2.55" visuals_scale_multiplier="15.5"
+			icon_name="Ships2/SphereFusedMinifort" icon_overlay="None"
+			description="这种结构模仿了我们在银河系各处看到的球体，其安全外壳内装有人类武器，并注入了我们的科学家已转化的过量黑暗尖塔能量，使其能够向球体收集者开火。
+
+当建造在没有黑暗尖塔残骸的行星上时，它作为常规防御结构运作。"
+			multiplier_to_all_costs="5" multiplier_to_all_healths="50" damage_multiplier_to_all_weapons="25" multiplier_to_all_scales="2.5"
+      >		
+  </entity>
+  
+  <!--		Coalition Units, copies of Gray/Crhomatic/Dyson units. -->
+  <!-- 		Anti Dark Spire -->
+	<entity name="CoalitionIllumin" copy_from="Illumin" tags="SplinteringSpireCoalitionUnit,SSCUGraySpireTierZero" override_faction_name="反黑暗尖塔联盟" ></entity>
+	<entity name="CoalitionLightseeker" copy_from="Lightseeker" tags="SplinteringSpireCoalitionUnit,SSCUGraySpireTierOne" override_faction_name="反黑暗尖塔联盟" ></entity>
+	<entity name="CoalitionDawn" copy_from="Dawn" tags="SplinteringSpireCoalitionUnit,SSCUGraySpireTierTwo" override_faction_name="反黑暗尖塔联盟" ></entity>
+	
+	<entity name="CoalitionOvertone" copy_from="Overtone" tags="SplinteringSpireCoalitionUnit,SSCUChromaticSpireTierZero" override_faction_name="反黑暗尖塔联盟" ></entity>
+	<entity name="CoalitionBloom" copy_from="Bloom" tags="SplinteringSpireCoalitionUnit,SSCUChromaticSpireTierOne" override_faction_name="反黑暗尖塔联盟" ></entity>
+	<entity name="CoalitionOpalescence" copy_from="Opalescence" tags="SplinteringSpireCoalitionUnit,SSCUChromaticSpireTierTwo" override_faction_name="反黑暗尖塔联盟" ></entity>
+	
+	<entity name="CoalitionDysonSentinel" copy_from="DysonSentinel" tags="SplinteringSpireCoalitionUnit,SSCUDysonTierZero" override_faction_name="反黑暗尖塔联盟" ></entity>
+	<entity name="CoalitionDysonDefender" copy_from="DysonDefender" tags="SplinteringSpireCoalitionUnit,SSCUDysonTierZero" override_faction_name="反黑暗尖塔联盟" ></entity>
+	<entity name="CoalitionDysonBulwark" copy_from="DysonBulwark" tags="SplinteringSpireCoalitionUnit,SSCUDysonTierOne" override_faction_name="反黑暗尖塔联盟" ></entity>
+	<entity name="CoalitionDysonBastion" copy_from="DysonBastion" tags="SplinteringSpireCoalitionUnit,SSCUDysonTierTwo" override_faction_name="反黑暗尖塔联盟" ></entity>
+	
+	<!-- Anti Dark Alliance -->
+	<entity name="DACoalitionIllumin" copy_from="Illumin" tags="SplinteringSpireCoalitionUnit,DASSCUGraySpireTierZero" override_faction_name="纳迪尔联盟" ></entity>
+	<entity name="DACoalitionLightseeker" copy_from="Lightseeker" tags="SplinteringSpireCoalitionUnit,DASSCUGraySpireTierOne" override_faction_name="纳迪尔联盟" ></entity>
+	<entity name="DACoalitionDawn" copy_from="Dawn" tags="SplinteringSpireCoalitionUnit,DASSCUGraySpireTierTwo" override_faction_name="纳迪尔联盟" ></entity>
+	
+	<entity name="DACoalitionOvertone" copy_from="Overtone" tags="SplinteringSpireCoalitionUnit,DASSCUChromaticSpireTierZero" override_faction_name="纳迪尔联盟" ></entity>
+	<entity name="DACoalitionBloom" copy_from="Bloom" tags="SplinteringSpireCoalitionUnit,DASSCUChromaticSpireTierOne" override_faction_name="纳迪尔联盟" ></entity>
+	<entity name="DACoalitionOpalescence" copy_from="Opalescence" tags="SplinteringSpireCoalitionUnit,DASSCUChromaticSpireTierTwo" override_faction_name="N纳迪尔联盟" ></entity>
+	
+	<entity name="DACoalitionDysonSentinel" copy_from="DysonSentinel" tags="SplinteringSpireCoalitionUnit,DASSCUDysonTierZero" override_faction_name="纳迪尔联盟" ></entity>
+	<entity name="DACoalitionDysonDefender" copy_from="DysonDefender" tags="SplinteringSpireCoalitionUnit,DASSCUDysonTierZero" override_faction_name="纳迪尔联盟" ></entity>
+	<entity name="DACoalitionDysonBulwark" copy_from="DysonBulwark" tags="SplinteringSpireCoalitionUnit,DASSCUDysonTierOne" override_faction_name="纳迪尔联盟" ></entity>
+	<entity name="DACoalitionDysonBastion" copy_from="DysonBastion" tags="SplinteringSpireCoalitionUnit,DASSCUDysonTierTwo" override_faction_name="纳迪尔联盟" ></entity>
+</root>

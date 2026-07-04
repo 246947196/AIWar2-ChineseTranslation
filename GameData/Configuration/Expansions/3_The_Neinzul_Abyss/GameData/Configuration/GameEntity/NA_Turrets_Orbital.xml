@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+<!--Orbital Turrets and Mines for the Orbital Guardposts -->
+
+<!--Vanillia Turrets -->
+	<entity name="OrbitalPikeTurret"  copy_from="AIPikeTurret" display_name="轨道长枪炮塔" thematic_groups="AITurret,Orbital"
+			display_name_for_sidebar="轨道长枪炮塔"	
+			tags="OrbitalTurret_Any,OrbitalTurret_Basic,OrbitalTurret_DLC1"
+			orbits_parent_at_range="2000" degrees_to_orbit_per_second="9" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>
+
+
+	<entity name="OrbitalAmbushTurret"  copy_from="AIAmbushTurret" display_name="轨道伏击炮塔" thematic_groups="AITurret,Orbital"
+			display_name_for_sidebar="轨道伏击炮塔"	
+			tags="OrbitalTurret_Any,OrbitalTurret_Cloak,OrbitalTurret_DLC1_EMP"
+			orbits_parent_at_range="3500" degrees_to_orbit_per_second="12" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>
+
+	<entity name="OrbitalGrenadeLauncherTurret"  copy_from="AIGrenadeLauncherTurret" display_name="轨道榴弹发射器炮塔" thematic_groups="AITurret,Orbital"
+			display_name_for_sidebar="轨道榴弹炮塔"	
+			tags="OrbitalTurret_Any,OrbitalTurret_Strike,OrbitalTurret_DLC1,OrbitalTurret_DLC1_Strike"
+			orbits_parent_at_range="3500" degrees_to_orbit_per_second="12" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>
+
+	<entity name="OrbitalNucleophilicTurret"  copy_from="AINucleophilicTurret" display_name="轨道亲核炮塔" thematic_groups="AITurret,Orbital"
+			display_name_for_sidebar="轨道亲核炮塔"	
+			tags="OrbitalTurret_Any,OrbitalTurret_Basic,OrbitalTurret_DLC1,OrbitalTurret_DLC1_DPS"
+			orbits_parent_at_range="2000" degrees_to_orbit_per_second="9" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>
+
+	<entity name="OrbitalFortifiedTeslaTurret"  copy_from="AIFortifiedTeslaTurret" display_name="轨道强化特斯拉炮塔" thematic_groups="AITurret,Orbital"
+			display_name_for_sidebar="轨道特斯拉炮塔"	
+			tags="OrbitalTurret_Any,OrbitalTurret_Strike,OrbitalTurret_DLC1,OrbitalTurret_DLC1_Strike"
+			orbits_parent_at_range="3500" degrees_to_orbit_per_second="12" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>
+	
+	<entity name="OrbitalConcussionTurret"  copy_from="AIConcussionTurret" display_name="轨道震荡炮塔" thematic_groups="AITurret,Orbital"
+			display_name_for_sidebar="轨道震荡炮塔"	
+			tags="OrbitalTurret_Any,OrbitalTurret_Basic,OrbitalTurret_Strike,OrbitalTurret_DLC1"
+			orbits_parent_at_range="2000" degrees_to_orbit_per_second="9" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>	
+
+	<entity name="OrbitalMLRSTurret"  copy_from="AIMLRSTurret" display_name="轨道多管火箭系统炮塔"
+			display_name_for_sidebar="轨道多管火箭炮塔"	
+			tags="OrbitalTurret_Any,OrbitalTurret_Basic,OrbitalTurret_Strike,OrbitalTurret_DLC1,OrbitalTurret_DLC1_Strike" thematic_groups="AITurret,Orbital"
+			orbits_parent_at_range="2000" degrees_to_orbit_per_second="9" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>	
+
+
+	<entity name="OrbitalPlasmaTurret"  copy_from="AIPlasmaTurret" display_name="轨道等离子炮塔" thematic_groups="AITurret,Orbital"
+			display_name_for_sidebar="轨道等离子炮塔"	
+			tags="OrbitalTurret_Any,OrbitalTurret_Heavy,OrbitalTurret_DLC1"
+			orbits_parent_at_range="2000" degrees_to_orbit_per_second="9" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>	
+
+	<entity name="OrbitalTritiumSniperTurret"  copy_from="AITritiumSniperTurret" display_name="轨道氚狙击炮塔" thematic_groups="AITurret,Orbital"
+			display_name_for_sidebar="轨道狙击炮塔"	
+			tags="OrbitalTurret_Any,OrbitalTurret_Sniper,OrbitalTurret_DLC1,OrbitalTurret_DLC1_Longrange"
+			orbits_parent_at_range="2000" degrees_to_orbit_per_second="9" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>	
+
+	<entity name="OrbitalSpiderTurret"  copy_from="AISpiderTurret" display_name="轨道蜘蛛炮塔" thematic_groups="AITurret,Orbital"
+			display_name_for_sidebar="轨道蜘蛛炮塔"	
+			tags="OrbitalTurret_Any,OrbitalTurret_Sniper,OrbitalTurret_DLC1,OrbitalTurret_DLC1_Longrange"
+			orbits_parent_at_range="2000" degrees_to_orbit_per_second="9" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>	
+
+	<entity name="OrbitalBeamTurret"  copy_from="AIBeamCannon" display_name="轨道光束炮塔" thematic_groups="AITurret,Orbital"
+			display_name_for_sidebar="轨道光束炮塔"	
+			tags="OrbitalTurret_Any,OrbitalTurret_Heavy,OrbitalTurret_DLC1,OrbitalTurret_DLC1_Strike"
+			orbits_parent_at_range="2000" degrees_to_orbit_per_second="9" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>	
+
+
+
+
+<!--DLC 1 Turrets. These just are to keep separated from the base game ones. These don't have the OribtalTurret_Any tag -->
+
+	<entity name="OrbitalSubverterTurret"  copy_from="AISubverterTurret" display_name="轨道颠覆者炮塔" required_expansion_list="1_The_Spire_Rises" thematic_groups="AITurret,Orbital"
+			display_name_for_sidebar="轨道颠覆者炮塔"	
+			tags="OrbitalTurret_DLC1,OrbitalTurret_DLC1_Debuff"
+			orbits_parent_at_range="2000" degrees_to_orbit_per_second="9" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>	
+
+	<entity name="OrbitalMakeshiftTurret"  copy_from="AIMakeshiftTurret" display_name="轨道临时炮塔" required_expansion_list="1_The_Spire_Rises" thematic_groups="AITurret,Orbital"
+			display_name_for_sidebar="轨道临时炮塔"	
+			tags="OrbitalTurret_DLC1,OrbitalTurret_DLC1_Decoy"
+			orbits_parent_at_range="2000" degrees_to_orbit_per_second="9" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>	
+
+
+	<entity name="OrbitalInterceptorTurret"  copy_from="AIInterceptorTurret" display_name="轨道拦截炮塔" required_expansion_list="1_The_Spire_Rises" thematic_groups="AITurret,Orbital"
+			display_name_for_sidebar="轨道拦截炮塔"	
+			tags="OrbitalTurret_DLC1,OrbitalTurret_DLC1_Longrange"
+			orbits_parent_at_range="2000" degrees_to_orbit_per_second="9" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>
+
+	<entity name="OrbitalSeekerTurret"  copy_from="AISeekerTurret" display_name="轨道追踪炮塔" required_expansion_list="1_The_Spire_Rises" thematic_groups="AITurret,Orbital"
+			display_name_for_sidebar="轨道追踪炮塔"	
+			tags="OrbitalTurret_DLC1,OrbitalTurret_DLC1_Longrange"
+			orbits_parent_at_range="2000" degrees_to_orbit_per_second="9" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>
+			
+	<entity name="OrbitalMicroConcussiveMissileTurret"  copy_from="AIMicroConcussiveMissileTurret" display_name="轨道微型震荡导弹炮塔" required_expansion_list="1_The_Spire_Rises" thematic_groups="AITurret,Orbital"
+			display_name_for_sidebar="轨道微型炮塔"	
+			tags="OrbitalTurret_DLC1,OrbitalTurret_DLC1_Longrange"
+			orbits_parent_at_range="2000" degrees_to_orbit_per_second="9" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>	
+
+	<entity name="OrbitalHoloceneMissileTurret"  copy_from="AIHoloceneMissileTurret" display_name="轨道全新世导弹炮塔" required_expansion_list="1_The_Spire_Rises" thematic_groups="AITurret,Orbital"
+			display_name_for_sidebar="轨道全新世炮塔"	
+			tags="OrbitalTurret_DLC1,OrbitalTurret_DLC1_Longrange"
+			orbits_parent_at_range="2000" degrees_to_orbit_per_second="9" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>			
+			
+	<entity name="OrbitalTranslocatorTurret"  copy_from="AITranslocatorTurret" display_name="轨道传送炮塔" required_expansion_list="1_The_Spire_Rises" thematic_groups="AITurret,Orbital"
+			display_name_for_sidebar="轨道传送炮塔"	
+			tags="OrbitalTurret_DLC1,OrbitalTurret_DLC1_Debuff"
+			orbits_parent_at_range="2000" degrees_to_orbit_per_second="9" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>			
+			
+	<entity name="OrbitalJammerTurret"  copy_from="AIJammerTurret" display_name="轨道干扰炮塔" required_expansion_list="1_The_Spire_Rises" thematic_groups="AITurret,Orbital"
+			display_name_for_sidebar="轨道干扰炮塔"	
+			tags="OrbitalTurret_DLC1,OrbitalTurret_DLC1_Debuff"
+			orbits_parent_at_range="2000" degrees_to_orbit_per_second="9" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>		
+			
+	<entity name="OrbitalFuseballTurret"  copy_from="AIFuseballTurret" display_name="轨道熔球炮塔" required_expansion_list="1_The_Spire_Rises" thematic_groups="AITurret,Orbital"
+			display_name_for_sidebar="轨道熔球炮塔"	
+			tags="OrbitalTurret_DLC1,OrbitalTurret_DLC1_Fusion"
+			orbits_parent_at_range="2000" degrees_to_orbit_per_second="9" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>			
+			
+	<entity name="OrbitalImploderTurret"  copy_from="AIImploderTurret" display_name="轨道内爆炮塔" required_expansion_list="1_The_Spire_Rises" thematic_groups="AITurret,Orbital"
+			display_name_for_sidebar="轨道内爆炮塔"	
+			tags="OrbitalTurret_DLC1,OrbitalTurret_DLC1_Fusion"
+			orbits_parent_at_range="2000" degrees_to_orbit_per_second="9" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>			
+			
+	<entity name="OrbitalFusionTurret"  copy_from="AIFusionTurret" display_name="轨道聚变炮塔" required_expansion_list="1_The_Spire_Rises" thematic_groups="AITurret,Orbital"
+			display_name_for_sidebar="轨道聚变炮塔"	
+			tags="OrbitalTurret_DLC1,OrbitalTurret_DLC1_Fusion"
+			orbits_parent_at_range="2000" degrees_to_orbit_per_second="9" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>		
+			
+	<entity name="OrbitalBlasterTurret"  copy_from="AIBlasterTurret" display_name="轨道爆破炮塔" required_expansion_list="1_The_Spire_Rises" thematic_groups="AITurret,Orbital"
+			display_name_for_sidebar="轨道爆破炮塔"	
+			tags="OrbitalTurret_DLC1,OrbitalTurret_DLC1_DPS"
+			orbits_parent_at_range="2000" degrees_to_orbit_per_second="9" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>
+
+	<entity name="OrbitalMiniFortress"  copy_from="AIMiniFortress" display_name="轨道迷你堡垒" required_expansion_list="1_The_Spire_Rises" thematic_groups="AITurret,Orbital"
+			display_name_for_sidebar="轨道迷你堡垒"	
+			tags="OrbitalTurret_DLC1,OrbitalTurret_DLC1_DPS"
+			orbits_parent_at_range="2000" degrees_to_orbit_per_second="9" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>				
+		
+	<entity name="OrbitalBlitzkriegTurret"  copy_from="AIBlitzkriegTurret" display_name="轨道闪电战炮塔" required_expansion_list="1_The_Spire_Rises" thematic_groups="AITurret,Orbital"
+			display_name_for_sidebar="轨道闪电战炮塔"	
+			tags="OrbitalTurret_DLC1,OrbitalTurret_DLC1_Decoy"
+			orbits_parent_at_range="2000" degrees_to_orbit_per_second="9" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>
+
+	<entity name="OrbitalCounterSniperTurret"  copy_from="AICounterSniperTurret" display_name="轨道反狙击炮塔" required_expansion_list="1_The_Spire_Rises" thematic_groups="AITurret,Orbital"
+			display_name_for_sidebar="轨道反狙击炮塔"	
+			tags="OrbitalTurret_DLC1,OrbitalTurret_DLC1_Longrange"
+			orbits_parent_at_range="2000" degrees_to_orbit_per_second="9" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>
+
+	<entity name="OrbitalAblativeTurret"  copy_from="AIAblativeTurret" display_name="轨道烧蚀炮塔" required_expansion_list="1_The_Spire_Rises" thematic_groups="AITurret,Orbital"
+			display_name_for_sidebar="轨道烧蚀炮塔"	
+			tags="OrbitalTurret_DLC1,OrbitalTurret_DLC1_Strike"
+			orbits_parent_at_range="2000" degrees_to_orbit_per_second="9" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>
+
+	<entity name="OrbitalHailstormTurret"  copy_from="AIHailstormTurret" display_name="轨道风暴炮塔" required_expansion_list="1_The_Spire_Rises" thematic_groups="AITurret,Orbital"
+			display_name_for_sidebar="轨道风暴炮塔"	
+			tags="OrbitalTurret_DLC1,OrbitalTurret_DLC1_Strike"
+			orbits_parent_at_range="3500" degrees_to_orbit_per_second="12" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>
+
+	<entity name="OrbitalVampireTurret"  copy_from="AIVampireTurret" display_name="轨道吸血炮塔" required_expansion_list="1_The_Spire_Rises" thematic_groups="AITurret,Orbital"
+			display_name_for_sidebar="轨道吸血炮塔"	
+			tags="OrbitalTurret_DLC1,OrbitalTurret_DLC1_Strike"
+			orbits_parent_at_range="2000" degrees_to_orbit_per_second="9" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>
+	
+	<entity name="OrbitalSolarFlareTurret"  copy_from="AISolarFlareTurret" display_name="轨道太阳耀斑炮塔" required_expansion_list="1_The_Spire_Rises" thematic_groups="AITurret,Orbital"
+			display_name_for_sidebar="轨道太阳耀斑炮塔"	
+			tags="OrbitalTurret_DLC1,OrbitalTurret_DLC1_Debuff"
+			orbits_parent_at_range="2000" degrees_to_orbit_per_second="9" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>		
+
+	<entity name="OrbitalScrapTurret"  copy_from="AIScrapTurret" display_name="轨道碎片炮塔" required_expansion_list="1_The_Spire_Rises" thematic_groups="AITurret,Orbital"
+			display_name_for_sidebar="轨道碎片炮塔"	
+			tags="OrbitalTurret_DLC1,OrbitalTurret_DLC1_DPS"
+			orbits_parent_at_range="2000" degrees_to_orbit_per_second="9" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			 >
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>	
+
+	<entity name="OrbitalGeminiTurret"  copy_from="AIGeminiTurret" display_name="轨道双子炮塔" required_expansion_list="1_The_Spire_Rises" thematic_groups="AITurret,Orbital"
+			display_name_for_sidebar="轨道双子炮塔"	
+			tags="OrbitalTurret_DLC1,OrbitalTurret_DLC1_DPS"
+			orbits_parent_at_range="2000" degrees_to_orbit_per_second="9" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			 >
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>
+
+	<entity name="OrbitalAcidTurret"  copy_from="AIAcidTurret" display_name="轨道酸液炮塔" required_expansion_list="1_The_Spire_Rises" thematic_groups="AITurret,Orbital"
+			display_name_for_sidebar="轨道酸液炮塔"	
+			tags="OrbitalTurret_DLC1,OrbitalTurret_DLC1_Debuff,OrbitalTurret_DLC1_DPS"
+			orbits_parent_at_range="2000" degrees_to_orbit_per_second="9" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			 >
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>
+
+	<entity name="OrbitalDeathgripTurret"  copy_from="AIDeathgripTurret" display_name="轨道死亡之握炮塔" required_expansion_list="1_The_Spire_Rises" thematic_groups="AITurret,Orbital"
+			display_name_for_sidebar="轨道死亡之握炮塔"	
+			tags="OrbitalTurret_DLC1,OrbitalTurret_DLC1_Debuff,OrbitalTurret_DLC1_Strike"
+			orbits_parent_at_range="3500" degrees_to_orbit_per_second="12" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			 >
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>
+			
+	<entity name="OrbitalShredderTurret"  copy_from="AIShredderTurret" display_name="轨道撕裂者炮塔" required_expansion_list="1_The_Spire_Rises" thematic_groups="AITurret,Orbital"
+			display_name_for_sidebar="轨道撕裂者炮塔"	
+			tags="OrbitalTurret_DLC1,OrbitalTurret_DLC1_DPS,OrbitalTurret_DLC1_Strike"
+			orbits_parent_at_range="3500" degrees_to_orbit_per_second="12" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			 >
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>		
+
+	<entity name="OrbitalRuffianTurret"  copy_from="AIRuffianTurret" display_name="轨道无赖炮塔" required_expansion_list="1_The_Spire_Rises" thematic_groups="AITurret,Orbital"
+			display_name_for_sidebar="轨道无赖炮塔"	
+			tags="OrbitalTurret_DLC1,OrbitalTurret_DLC1_Decoy"
+			orbits_parent_at_range="2000" degrees_to_orbit_per_second="9" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			 >
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>
+
+
+	<entity name="OrbitalBastilleTurret"  copy_from="BastilleTurret"  display_name="轨道巴士底狱炮塔" required_expansion_list="1_The_Spire_Rises" thematic_groups="AITurret,Orbital"
+            display_name_for_sidebar="轨道巴士底狱炮塔"
+			never_leaves_remains="true" range_multiplier_to_all_weapons="0.75" 
+			tags="OrbitalTurret_DLC1_Bastille"
+			multiplier_to_all_costs="5" second_multiplier_to_all_healths="1" second_damage_multiplier_to_all_weapons="1" multiplier_to_all_scales="1"
+			orbits_parent_at_range="1000" degrees_to_orbit_per_second="9" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+				>
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>
+
+
+		<entity name="OrbitalEMPTurret"  copy_from="EMPTurret"  display_name="轨道EMP炮塔" required_expansion_list="1_The_Spire_Rises" thematic_groups="AITurret,Orbital"
+            display_name_for_sidebar="轨道EMP炮塔"
+			never_leaves_remains="true" range_multiplier_to_all_weapons="0.75" 
+			tags="OrbitalTurret_DLC1_EMP"
+			multiplier_to_all_costs="5" second_multiplier_to_all_healths="1" second_damage_multiplier_to_all_weapons="1" multiplier_to_all_scales="1"
+			orbits_parent_at_range="3500" degrees_to_orbit_per_second="12" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			 >
+			<system name="W1" cloaking_percent_loss_from_firing="1" ></system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+			</entity>
+
+<!--Vanillia Mines -->
+<entity name="OrbitalMinefield"  copy_from="Minefield" display_name="轨道雷区" thematic_groups="Mine,Orbital"
+			display_name_for_sidebar="轨道雷区"	
+			tags="OrbitalMine"
+			never_leaves_remains="true"
+			orbits_parent_at_range="2000" degrees_to_orbit_per_second="9" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>
+<entity name="OrbitalMinefield2"  copy_from="Minefield" display_name="轨道雷区" thematic_groups="Hidden"
+			display_name_for_sidebar="轨道雷区"	
+			tags="OrbitalMine"
+			never_leaves_remains="true"
+			orbits_parent_at_range="5000" degrees_to_orbit_per_second="9" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>	
+<entity name="OrbitalAreaMinefield"  copy_from="AreaMinefield" display_name="轨道区域雷区" thematic_groups="Mine,Orbital"
+			display_name_for_sidebar="轨道区域雷区"	
+			tags="OrbitalMine"
+			never_leaves_remains="true"
+			orbits_parent_at_range="2000" degrees_to_orbit_per_second="9" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>
+<entity name="OrbitalAreaMinefield2"  copy_from="AreaMinefield" display_name="轨道区域雷区" thematic_groups="Hidden"
+			display_name_for_sidebar="轨道区域雷区"	
+			tags="OrbitalMine"
+			never_leaves_remains="true"
+			orbits_parent_at_range="5000" degrees_to_orbit_per_second="9" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>		
+<entity name="OrbitalParalysisMinefield"  copy_from="ParalysisMinefield" display_name="轨道瘫痪雷区" thematic_groups="Mine,Orbital"
+			display_name_for_sidebar="轨道瘫痪雷区"	
+			tags="OrbitalMine"
+			never_leaves_remains="true"
+			orbits_parent_at_range="2000" degrees_to_orbit_per_second="9" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>
+<entity name="OrbitalParalysisMinefield2"  copy_from="ParalysisMinefield" display_name="轨道瘫痪雷区" thematic_groups="Hidden"
+			display_name_for_sidebar="轨道瘫痪雷区"	
+			tags="OrbitalMine"
+			never_leaves_remains="true"
+			orbits_parent_at_range="5000" degrees_to_orbit_per_second="9" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>		
+	
+<!--DLC 2 Mines -->
+<entity name="OrbitalKineticMinefield"  copy_from="KineticMinefield" display_name="轨道动能缓冲雷区" thematic_groups="Mine,Orbital" required_expansion_list="2_Zenith_Onslaught"
+			display_name_for_sidebar="轨道动能雷区"	
+			tags="OrbitalMine_DLC2"
+			never_leaves_remains="true"
+			orbits_parent_at_range="2000" degrees_to_orbit_per_second="9" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>
+<entity name="OrbitalKineticMinefield2"  copy_from="KineticMinefield" display_name="轨道动能缓冲雷区" thematic_groups="Hidden" required_expansion_list="2_Zenith_Onslaught"
+			display_name_for_sidebar="轨道动能雷区"	
+			tags="OrbitalMine_DLC2_Far"
+			never_leaves_remains="true"
+			orbits_parent_at_range="5000" degrees_to_orbit_per_second="9" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>	
+
+<entity name="OrbitalImplosionMinefield"  copy_from="ImplosionMinefield" display_name="轨道内爆雷区" thematic_groups="Mine,Orbital" required_expansion_list="2_Zenith_Onslaught"
+			display_name_for_sidebar="轨道内爆雷区"	
+			tags="OrbitalMine_DLC2"
+			never_leaves_remains="true"
+			orbits_parent_at_range="2000" degrees_to_orbit_per_second="9" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>
+<entity name="OrbitalImplosionMinefield2"  copy_from="ImplosionMinefield" display_name="轨道内爆雷区" thematic_groups="Hidden" required_expansion_list="2_Zenith_Onslaught"
+			display_name_for_sidebar="轨道内爆雷区"	
+			tags="OrbitalMine_DLC2"
+			never_leaves_remains="true"
+			orbits_parent_at_range="5000" degrees_to_orbit_per_second="9" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>	
+
+<entity name="OrbitalJammerMinefield"  copy_from="JammerMinefield" display_name="轨道干扰雷区" thematic_groups="Mine,Orbital" required_expansion_list="2_Zenith_Onslaught"
+			display_name_for_sidebar="轨道干扰雷区"	
+			tags="OrbitalMine_DLC2"
+			never_leaves_remains="true"
+			orbits_parent_at_range="2000" degrees_to_orbit_per_second="9" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>
+<entity name="OrbitalJammerMinefield2"  copy_from="JammerMinefield" display_name="轨道干扰雷区" thematic_groups="Hidden" required_expansion_list="2_Zenith_Onslaught"
+			display_name_for_sidebar="轨道干扰雷区"	
+			tags="OrbitalMine_DLC2"
+			never_leaves_remains="true"
+			orbits_parent_at_range="5000" degrees_to_orbit_per_second="9" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>	
+<entity name="OrbitalCorruptionMinefield"  copy_from="WarpMinefield" display_name="轨道腐蚀雷区" thematic_groups="Mine,Orbital" required_expansion_list="2_Zenith_Onslaught"
+			display_name_for_sidebar="轨道腐蚀雷区"	
+			tags="OrbitalMine_DLC2"
+			never_leaves_remains="true"
+			orbits_parent_at_range="2000" degrees_to_orbit_per_second="9" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>
+	<entity name="OrbitalCorruptionMinefield2"  copy_from="WarpMinefield" display_name="轨道腐蚀雷区" thematic_groups="Hidden" required_expansion_list="2_Zenith_Onslaught"
+			display_name_for_sidebar="轨道腐蚀雷区"	
+			tags="OrbitalMine_DLC2"
+			never_leaves_remains="true"
+			orbits_parent_at_range="5000" degrees_to_orbit_per_second="9" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>
+
+<entity name="OrbitalFragmentingMinefield"  copy_from="FragmentingMinefield" display_name="轨道分裂雷区" thematic_groups="Mine,Orbital" required_expansion_list="2_Zenith_Onslaught"
+			display_name_for_sidebar="轨道分裂雷区"	
+			tags="OrbitalMine_DLC2"
+			never_leaves_remains="true"
+			orbits_parent_at_range="2000" degrees_to_orbit_per_second="9" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>
+<entity name="OrbitalFragmentingMinefield2"  copy_from="FragmentingMinefield" display_name="轨道分裂雷区" thematic_groups="Hidden" required_expansion_list="2_Zenith_Onslaught"
+			display_name_for_sidebar="轨道分裂雷区"	
+			tags="OrbitalMine_DLC2"
+			never_leaves_remains="true"
+			orbits_parent_at_range="5000" degrees_to_orbit_per_second="9" attempts_to_reach_orbital_point_at_speed="8000"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" /></entity>
+
+
+
+</root>

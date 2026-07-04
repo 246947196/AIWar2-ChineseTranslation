@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>    
+
+	<!-- ZO Mirror Golem (Retribution) [LONEWOLF]
+		 A high health golem that reflects 60% of all damage taken no matter what the source. Due to its unusual composition it is impossible to repair by standard
+		 means and instead utilizes an advanced self-repair function that regrows damaged portions using available resources. This means it takes a bit longer to recover
+		 from combat damage than most things but also can recover from a crippling disability on its own given enough time uninterrupted. -->
+	<entity name="RetributionGolem"
+			thematic_groups="GolemCapturable,Zenith"
+			special_entity_type="MobileOfficerCombatFleetFlagship"
+			tags="ShowsOnNormalDisplayMode,Capturable,AnyOfficer,NonArkOfficer" capturable_seed_weight="100" capturable_max_per_galaxy="1"
+			voice_group="Silent" gimbal_icon_size_multiplier="1.5"
+			draw_in_galaxy_view="true" is_golem="true"
+			visuals="Assets/_DLC2/Golems/RetributionGolem/RetributionGolem.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships3/RetributionGolem"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="11.5"
+			visuals_scale_multiplier="11"
+			y_offset_of_icon="70"
+			display_name="复仇巨像"
+			display_name_for_sidebar="复仇GOL"
+			description="极其耐用的巨像，能够反弹所受到的部分伤害并具有自我再生能力。"
+			collision_priority="810"
+			metal_to_claim="5000000"
+			aip_to_claim="20"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" tech_upgrade_that_is_used_for_my_direct_science="Direct_GolemGeneral"
+			cost_for_ai_to_purchase="10000"			
+			hull_points="3500000" shield_points="1500000" speed="AboveAverage1"
+			metal_cost="5000000" energy_consumption="250000"
+			assist_range="Normal1"			
+			armor_mm="400" albedo="0.5" engine_gx="18" mass_tx="11"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			shows_on_galaxy_map_for_explored_planets="true" always_visible_to_players="true"
+			firing_delay_for_transported_ships="6"
+			priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			eligible_for_hacks="IncreaseHullDurability"
+			returns_this_percentage_of_damage_if_damaged_by_enemy_attack="0.6"
+			seconds_to_fully_regenerate_hull="180"
+			immune_to_repairs="true" forced_to_bail_out_on_cripple_deepstrike_only="true"
+			custom_repair_impossible_for_seconds_after_damaged_by_enemy_max_15="15"
+			counter_attack_budget_override_multiplier="5"
+			>
+		<hack_data hack_type="IncreaseHullDurability"
+			override_cost_in_hacking_points="35"
+			cost_in_hacking_points_multiplier_per_times_same_unit_hacked="2.6"
+			max_times_single_unit_can_be_hacked="2">
+		<custom_hack_data key="AddedMultiplierPerHack" value="1.5" />
+		</hack_data>
+		<metal_flow purpose="RebuildingRemains" throughput="100" increase_per_mark_level="100"/>
+		<system name="W1" display_name="天顶重型装甲极化器"
+					category="Weapon" firing_timing="OnlyInRange"
+					damage_per_shot="1500" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Normal"
+					shots_per_salvo="20" fires_salvos_sequentially="true" shot_type_data="LaserPulse_DeepBlue"
+					>
+				<outgoing_damage_modifier based_on="Armor_mm" comparison_type="MultiplesOf" compared_to="35" multiplier="1" max_multiplier="5" />
+			</system>
+		<system name="W2" display_name="天顶破坏弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="8000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Misery" fires_salvos_sequentially="true"
+				shot_type_data="Sabot"				
+				>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="5" />
+		</system>
+	<ship_class_data can_be_zombified_and_similar="false" can_be_fleet_supercharged="false" />
+	</entity>
+	
+	<!-- AI version of Retribution Golem -->
+	<entity name="AIRetributionGolem"
+			thematic_groups="GolemEnemy,Zenith"
+			special_entity_type="LoneGolem" tags="AIGolem,BecomesNecromancyMummy" voice_group="Zenith" gimbal_icon_size_multiplier="1.5"
+			draw_in_galaxy_view="true" is_golem="true"
+			visuals="Assets/_DLC2/Golems/RetributionGolem/RetributionGolem.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships3/RetributionGolem"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="11.5"
+			visuals_scale_multiplier="11"
+			y_offset_of_icon="70"
+			display_name="AI复仇巨像"
+			display_name_for_sidebar="AI复仇GOL"
+			description="极其耐用的巨像复制品，能够反弹所受到的部分伤害并具有自我再生能力。"
+			collision_priority="810"
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="35000"
+			hull_points="21000000" shield_points="9000000" speed="BelowAverage1"
+			metal_cost="5000000" energy_consumption="150000"
+			armor_mm="400" albedo="0.5" engine_gx="18" mass_tx="11"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			returns_this_percentage_of_damage_if_damaged_by_enemy_attack="0.6"
+			seconds_to_fully_regenerate_hull="1200"
+			>
+			<ai_ship_group_membership name="Golemite_SingularFreakySurprises" weight="100"/>
+			<ai_ship_group_membership name="AnySingularFreakySurprises_Golems" weight="100"/>
+			<ai_ship_group_membership name="GolemExoLeaders" weight="100"/>
+			<system name="W1" display_name="天顶重型装甲极化器"
+					category="Weapon" firing_timing="OnlyInRange"
+					damage_per_shot="9000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Normal"
+					shots_per_salvo="20" fires_salvos_sequentially="true" shot_type_data="LaserPulse_DeepBlue"
+					>
+				<outgoing_damage_modifier based_on="Armor_mm" comparison_type="MultiplesOf" compared_to="35" multiplier="1" max_multiplier="5" />
+			</system>
+			<system name="W2" display_name="天顶破坏弹"
+					category="Weapon" firing_timing="OnlyInRange"
+					damage_per_shot="48000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Misery" fires_salvos_sequentially="true"
+					shot_type_data="Sabot"				
+					>
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="5" />
+			</system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+	
+	<!-- Expert version of Retribution Golem -->
+	<entity name="ExpertRetributionGolem"
+			thematic_groups="GolemCapturable,Zenith"
+			special_entity_type="MobileOfficerCombatFleetFlagship"
+			mark_level_scale_style="ExpertGolemTank"
+			tags="ShowsOnNormalDisplayMode,Capturable,ExpertGolem,AnyOfficer_Expert,NonArkOfficer_Expert" capturable_seed_weight="100" capturable_max_per_galaxy="1"
+			voice_group="Silent" gimbal_icon_size_multiplier="1.5"
+			draw_in_galaxy_view="true" is_golem="true"
+			visuals="Assets/_DLC2/Golems/RetributionGolem/RetributionGolem.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships3/RetributionGolem"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="11.5"
+			visuals_scale_multiplier="11"
+			y_offset_of_icon="70"
+			display_name="复仇巨像EX"
+			display_name_for_sidebar="复仇GOL"
+			description="极其耐用的巨像，能够反弹所受到的部分伤害并具有自我再生能力。"
+			collision_priority="810"
+			metal_to_claim="5000000"
+			aip_to_claim="20"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" tech_upgrade_that_is_used_for_my_direct_science="Direct_GolemGeneral"
+			cost_for_ai_to_purchase="10000"			
+			hull_points="3500000" shield_points="1500000" speed="Normal3"
+			metal_cost="5000000" energy_consumption="250000"
+			assist_range="Normal1"			
+			armor_mm="400" albedo="0.5" engine_gx="18" mass_tx="11"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			shows_on_galaxy_map_for_explored_planets="true" always_visible_to_players="true"
+			firing_delay_for_transported_ships="6"
+			priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			eligible_for_hacks="IncreaseHullDurability"
+			returns_this_percentage_of_damage_if_damaged_by_enemy_attack="0.6"
+			seconds_to_fully_regenerate_hull="180"
+			immune_to_repairs="true" forced_to_bail_out_on_cripple_deepstrike_only="true"
+			custom_repair_impossible_for_seconds_after_damaged_by_enemy_max_15="15"
+			counter_attack_budget_override_multiplier="5"
+			>
+		<hack_data hack_type="IncreaseHullDurability"
+			override_cost_in_hacking_points="75"
+			cost_in_hacking_points_multiplier_per_times_same_unit_hacked="3"
+			max_times_single_unit_can_be_hacked="1">
+		<custom_hack_data key="AddedMultiplierPerHack" value="2" />
+		</hack_data>
+		<metal_flow purpose="RebuildingRemains" throughput="100" increase_per_mark_level="100"/>
+		<system name="W1" display_name="天顶重型装甲极化器"
+					category="Weapon" firing_timing="OnlyInRange"
+					damage_per_shot="2000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Normal"
+					shots_per_salvo="20" fires_salvos_sequentially="true" shot_type_data="LaserPulse_DeepBlue"
+					>
+				<outgoing_damage_modifier based_on="Armor_mm" comparison_type="MultiplesOf" compared_to="35" multiplier="1" max_multiplier="5" />
+			</system>
+		<system name="W2" display_name="天顶破坏弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="8000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Misery" fires_salvos_sequentially="true"
+				shot_type_data="Sabot"				
+				>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="5" />
+		</system>
+	<ship_class_data can_be_zombified_and_similar="false" can_be_fleet_supercharged="false" />
+	</entity>
+		
+	<!-- Revised Lonewolf version of Frenzy Golem -->
+	<entity name="SoloFrenzyGolem"
+			thematic_groups="GolemCapturable,Zenith"
+			special_entity_type="MobileOfficerCombatFleetFlagship"
+			tags="ShowsOnNormalDisplayMode,Capturable,AnyOfficer,NonArkOfficer" capturable_seed_weight="65" capturable_max_per_galaxy="1"
+			voice_group="Ark_CherylHarris" gimbal_icon_size_multiplier="1.5"
+			draw_in_galaxy_view="true" is_golem="true"
+			visuals="Assets/_DLC2/Golems/FrenzyGolem/FrenzyGolem.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships3/FrenzyGolem"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="14"
+			visuals_scale_multiplier="4.6"
+			y_offset_of_icon="70"
+			display_name="愤怒巨像"
+			display_name_for_sidebar="愤怒GOL"
+			description="随着受到的伤害增加，逐渐变得更强大的巨像。在受到重创时会释放最强大的武器。"
+			collision_priority="810"
+			metal_to_claim="5000000"
+			aip_to_claim="30"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" tech_upgrade_that_is_used_for_my_direct_science="Direct_GolemGeneral"
+			cost_for_ai_to_purchase="10000"
+			hull_points="3000000" shield_points="0" speed="AboveAverage3"
+			metal_cost="5000000" energy_consumption="200000"
+			assist_range="Normal1" explicit_kite_distance="5600"
+			armor_mm="300" albedo="0.5" engine_gx="18" mass_tx="11"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			speed_multiplier_first_5_seconds_on_planet="1.5"
+			shows_on_galaxy_map_for_explored_planets="true" always_visible_to_players="true"
+			firing_delay_for_transported_ships="6"
+			priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			eligible_for_hacks="IncreaseHullDurability"
+			>
+		<hack_data 	hack_type="IncreaseHullDurability"
+					override_cost_in_hacking_points="35"
+					cost_in_hacking_points_multiplier_per_times_same_unit_hacked="2.6"
+					max_times_single_unit_can_be_hacked="2">
+			<custom_hack_data key="AddedMultiplierPerHack" value="1.5" />
+		</hack_data>
+		<metal_flow purpose="RebuildingRemains" throughput="100" increase_per_mark_level="100"/>		
+			<system name="W1" display_name="天顶狂暴霰弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="2500" range="AboveAverage3" shot_speed="Slow" rate_of_fire="Misery"
+				shots_per_salvo="20" fires_salvos_sequentially="false"
+				shot_type_data="ElegantCurl"
+				health_change_per_damage_dealt="0.1"
+				>
+				<outgoing_damage_modifier based_on="MyHullPercentageMissing" comparison_type="MultiplesOf" compared_to="20" multiplier="1" />
+		</system>
+		<system name="W2" display_name="歼灭者长枪"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="72000" range="High1" shot_speed="Normal" rate_of_fire="High"
+				shot_type_data="HeavyBeamInvisible" beam_length_multiplier="1.3"
+				hits_all_intersecting_targets="true"
+				shots_detonate_immediately="true"
+				maximum_number_of_targets_hit_per_shot="3"
+				beam_weapon_visual_style="Lightning_Red"
+				health_change_per_damage_dealt="0.5"
+				>
+				<outgoing_damage_modifier based_on="MyCurrentHullPercentage" comparison_type="AtLeast" compared_to="60" multiplier="0" />
+				<outgoing_damage_modifier based_on="AttackDistance" comparison_type="LessThan" compared_to="6000" multiplier="3" />
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="1.1" />
+		</system>
+	<ship_class_data can_be_zombified_and_similar="false" can_be_fleet_supercharged="false" />
+	</entity>
+	
+	<!-- Expert version of Frenzy Golem -->
+	<entity name="ExpertFrenzyGolem"
+			thematic_groups="GolemCapturable,Zenith"
+			special_entity_type="MobileOfficerCombatFleetFlagship"
+			mark_level_scale_style="ExpertGolemDamage"
+			tags="ShowsOnNormalDisplayMode,Capturable,ExpertGolem,AnyOfficer_Expert,NonArkOfficer_Expert" capturable_seed_weight="65" capturable_max_per_galaxy="1"
+			voice_group="Ark_CherylHarris" gimbal_icon_size_multiplier="1.5"
+			draw_in_galaxy_view="true" is_golem="true"
+			visuals="Assets/_DLC2/Golems/FrenzyGolem/FrenzyGolem.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships3/FrenzyGolem"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="14"
+			visuals_scale_multiplier="4.6"
+			y_offset_of_icon="70"
+			display_name="愤怒巨像EX"
+			display_name_for_sidebar="愤怒GOL EX"
+			description="随着受到的伤害增加，逐渐变得更强大的巨像。在受到重创时会释放最强大的武器。"
+			collision_priority="810"
+			metal_to_claim="5000000"
+			aip_to_claim="30"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" tech_upgrade_that_is_used_for_my_direct_science="Direct_GolemGeneral"
+			cost_for_ai_to_purchase="10000"
+			hull_points="4000000" shield_points="0" speed="AboveAverage1"
+			metal_cost="5000000" energy_consumption="200000"
+			assist_range="Normal1" explicit_kite_distance="5600"
+			armor_mm="300" albedo="0.5" engine_gx="18" mass_tx="11"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			speed_multiplier_first_5_seconds_on_planet="1.5"
+			shows_on_galaxy_map_for_explored_planets="true" always_visible_to_players="true"
+			firing_delay_for_transported_ships="6"
+			priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			eligible_for_hacks="IncreaseHullDurability"
+			>
+		<hack_data 	hack_type="IncreaseHullDurability"
+					override_cost_in_hacking_points="75"
+					cost_in_hacking_points_multiplier_per_times_same_unit_hacked="3"
+					max_times_single_unit_can_be_hacked="1">
+			<custom_hack_data key="AddedMultiplierPerHack" value="2.5" />
+		</hack_data>
+		<metal_flow purpose="RebuildingRemains" throughput="100" increase_per_mark_level="100"/>		
+			<system name="W1" display_name="天顶狂暴霰弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="2500" range="AboveAverage3" shot_speed="Slow" rate_of_fire="Misery"
+				shots_per_salvo="20" fires_salvos_sequentially="false"
+				shot_type_data="ElegantCurl"
+				health_change_per_damage_dealt="0.1"
+				>
+				<outgoing_damage_modifier based_on="MyHullPercentageMissing" comparison_type="MultiplesOf" compared_to="20" multiplier="1" />
+		</system>
+		<system name="W2" display_name="歼灭者长枪"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="72000" range="High1" shot_speed="Normal" rate_of_fire="High"
+				shot_type_data="HeavyBeamInvisible" beam_length_multiplier="1.3"
+				hits_all_intersecting_targets="true"
+				shots_detonate_immediately="true"
+				maximum_number_of_targets_hit_per_shot="3"
+				beam_weapon_visual_style="Lightning_Red"
+				health_change_per_damage_dealt="0.5"
+				>
+				<outgoing_damage_modifier based_on="MyCurrentHullPercentage" comparison_type="AtLeast" compared_to="60" multiplier="0" />
+				<outgoing_damage_modifier based_on="AttackDistance" comparison_type="LessThan" compared_to="6000" multiplier="3" />
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="1.1" />
+		</system>
+	<ship_class_data can_be_zombified_and_similar="false" can_be_fleet_supercharged="false" />
+	</entity>
+	
+	<!-- ZO Lightning Golem (Raijin)
+		 A strong offensive golem with defenses closer to that of the Curse or Artillery golems. Fires a moderately ranged but very strong 2 hop Chain Lightning weapon -->
+	<entity name="RaijinGolem"
+			thematic_groups="GolemCapturable,Zenith"
+			special_entity_type="MobileOfficerCombatFleetFlagship"
+			tags="ShowsOnNormalDisplayMode,Capturable,AnyOfficer,NonArkOfficer" capturable_seed_weight="60" capturable_max_per_galaxy="1"
+			voice_group="Silent" gimbal_icon_size_multiplier="1.5"
+			draw_in_galaxy_view="true" is_golem="true"
+			visuals="assets/_dlc2/golems/raijingolem/raijingolem.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships3/RaijinGolem" lod_distance_overrides="150,400,15000"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="15"
+			visuals_scale_multiplier="13"
+			y_offset_of_icon="70"
+			collision_priority="100"
+			display_name="雷神巨像"
+			display_name_for_sidebar="雷神GOL"
+			description="相当脆弱但拥有极其强大闪电武器的舰队领袖。"
+			metal_to_claim="5000000"
+			aip_to_claim="15"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" tech_upgrade_that_is_used_for_my_direct_science="Direct_GolemGeneral"
+			cost_for_ai_to_purchase="10000" strength_multiplier="1.2"			
+			hull_points="1600000" shield_points="500000" speed="AboveAverage1"
+			metal_cost="5000000" energy_consumption="150000"
+			assist_range="Normal1"			
+			armor_mm="180" albedo="0.5" engine_gx="18" mass_tx="11"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			speed_multiplier_first_5_seconds_on_planet="1.5"
+			shows_on_galaxy_map_for_explored_planets="true" always_visible_to_players="true"
+			firing_delay_for_transported_ships="6"
+			priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			eligible_for_hacks="IncreaseHullDurability"
+			>
+		<hack_data hack_type="IncreaseHullDurability"
+			override_cost_in_hacking_points="35"
+			cost_in_hacking_points_multiplier_per_times_same_unit_hacked="2.6"
+			max_times_single_unit_can_be_hacked="2">
+			<custom_hack_data key="AddedMultiplierPerHack" value="1.5" />
+		</hack_data>
+		<metal_flow purpose="RebuildingRemains" throughput="100" increase_per_mark_level="100"/>		
+		<system name="W1" display_name="链式闪电爆发"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="40000" range="High1" shot_speed="Normal" rate_of_fire="Low"
+				shots_per_salvo="3"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="1.1" beam_weapon_visual_style="Lightning_Blue"
+				aoe_and_beam_damage_multiplier_to_non_primary_target="50"				
+				beam_chains_out_to_targets_x_times="2"
+				beam_chains_out_to_target_min_range="200"
+				beam_chains_out_to_targets_x_range="2500"
+				beam_chains_out_to_max_targets_from_each_source="4"
+				only_targets_mobile_units="true"
+				shots_detonate_immediately="true"
+				maximum_number_of_targets_hit_per_shot="12"
+				added_target_evaluator="LowestHealthAsMajorPrimary"
+				>
+				<outgoing_damage_modifier applies_to="AllShields" based_on="MaxBubbleForcefield" comparison_type="GreaterThan" compared_to="10000" multiplier="5" />
+		</system>
+		<system name="W2" display_name="眩晕雷击"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1250" range="Normal4" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="false"
+				shot_type_data="LightningExplosionAOEShot" added_target_evaluator="WeaponJamAsPrimary"
+				area_of_effect_size="6500"				
+				shots_detonate_immediately="true"
+				maximum_number_of_targets_hit_per_shot="20"
+				base_enemy_weapon_reload_slowing_seconds_per_shot="4" added_enemy_weapon_reload_slowing_seconds_per_shot_per_mark="2"
+				max_enemy_weapon_reload_slowing_seconds="20"
+				enemy_weapon_reload_slowing_to_armor_mm_less_than="80"
+				>
+		</system>
+		<ship_class_data can_be_zombified_and_similar="false" can_be_fleet_supercharged="false" />
+	</entity>
+	
+	<!-- AI version of the Raijin Golem -->
+    <entity name="AIRaijinGolem"
+			thematic_groups="GolemEnemy,Zenith"
+			special_entity_type="LoneGolem" tags="AIGolem,BecomesNecromancyMummy" voice_group="Zenith" gimbal_icon_size_multiplier="1.5"
+			draw_in_galaxy_view="true" is_golem="true"
+			visuals="assets/_dlc2/golems/raijingolem/raijingolem.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships3/RaijinGolem" lod_distance_overrides="150,400,15000"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="15"
+			visuals_scale_multiplier="13"
+			y_offset_of_icon="70"
+			collision_priority="100"
+			display_name="AI雷神巨像"
+			display_name_for_sidebar="AI雷神GOL"
+			description="脆弱的巨像复制品，能用极其强大的闪电武器消灭目标。这是对可怕武器的AI复制品。"
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="25000" strength_multiplier="1.2"
+			hull_points="6000000" shield_points="3000000" speed="VeryVeryLittle4"
+			metal_cost="5000000" energy_consumption="150000"
+			armor_mm="180" albedo="0.5" engine_gx="18" mass_tx="11"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			>
+			<ai_ship_group_membership name="Golemite_SingularFreakySurprises" weight="100"/>
+			<ai_ship_group_membership name="AnySingularFreakySurprises_Golems" weight="100"/>
+			<ai_ship_group_membership name="GolemExoLeaders" weight="100"/>
+		<system name="W1" display_name="链式闪电爆发"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="180000" range="High1" shot_speed="Normal" rate_of_fire="Low"
+				shots_per_salvo="3"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="1.1" beam_weapon_visual_style="Lightning_Blue"
+				aoe_and_beam_damage_multiplier_to_non_primary_target="50"				
+				beam_chains_out_to_targets_x_times="2"
+				beam_chains_out_to_target_min_range="200"
+				beam_chains_out_to_targets_x_range="2500"
+				beam_chains_out_to_max_targets_from_each_source="4"
+				only_targets_mobile_units="true"
+				shots_detonate_immediately="true"
+				maximum_number_of_targets_hit_per_shot="12"
+				added_target_evaluator="LowestHealthAsMajorPrimary"
+				>
+				<outgoing_damage_modifier applies_to="AllShields" based_on="MaxBubbleForcefield" comparison_type="GreaterThan" compared_to="10000" multiplier="5" />
+		</system>
+		<system name="W2" display_name="眩晕雷击"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="7500" range="Normal4" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="false"
+				shot_type_data="LightningExplosionAOEShot" added_target_evaluator="WeaponJamAsPrimary"
+				area_of_effect_size="6500"				
+				shots_detonate_immediately="true"
+				maximum_number_of_targets_hit_per_shot="20"
+				base_enemy_weapon_reload_slowing_seconds_per_shot="10"
+				max_enemy_weapon_reload_slowing_seconds="20"
+				enemy_weapon_reload_slowing_to_armor_mm_less_than="80"
+				>
+		</system>
+		<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+
+	<!-- Expert version of Raijin Golem -->
+	<entity name="ExpertRaijinGolem"
+			thematic_groups="GolemCapturable,Zenith"
+			special_entity_type="MobileOfficerCombatFleetFlagship"
+			mark_level_scale_style="ExpertGolemDamage"
+			tags="ShowsOnNormalDisplayMode,Capturable,ExpertGolem,AnyOfficer_Expert,NonArkOfficer_Expert" capturable_seed_weight="60" capturable_max_per_galaxy="1"
+			voice_group="Silent" gimbal_icon_size_multiplier="1.5"
+			draw_in_galaxy_view="true" is_golem="true"
+			visuals="assets/_dlc2/golems/raijingolem/raijingolem.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships3/RaijinGolem" lod_distance_overrides="150,400,15000"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="15"
+			visuals_scale_multiplier="13"
+			y_offset_of_icon="70"
+			collision_priority="100"
+			display_name="雷神巨像EX"
+			display_name_for_sidebar="雷神GOL"
+			description="相当脆弱但拥有极其强大闪电武器的舰队领袖。"
+			metal_to_claim="5000000"
+			aip_to_claim="15"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" tech_upgrade_that_is_used_for_my_direct_science="Direct_GolemGeneral"
+			cost_for_ai_to_purchase="10000" strength_multiplier="1.2"			
+			hull_points="1800000" shield_points="1000000" speed="Normal2"
+			metal_cost="5000000" energy_consumption="150000"
+			assist_range="Normal1"			
+			armor_mm="180" albedo="0.5" engine_gx="18" mass_tx="11"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			speed_multiplier_first_5_seconds_on_planet="1.5"
+			shows_on_galaxy_map_for_explored_planets="true" always_visible_to_players="true"
+			firing_delay_for_transported_ships="6"
+			priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			eligible_for_hacks="IncreaseHullDurability"
+			>
+		<hack_data hack_type="IncreaseHullDurability"
+			override_cost_in_hacking_points="75"
+			cost_in_hacking_points_multiplier_per_times_same_unit_hacked="3"
+			max_times_single_unit_can_be_hacked="2">
+			<custom_hack_data key="AddedMultiplierPerHack" value="2" />
+		</hack_data>
+		<metal_flow purpose="RebuildingRemains" throughput="100" increase_per_mark_level="100"/>		
+		<system name="W1" display_name="链式闪电爆发"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="40000" range="High1" shot_speed="Normal" rate_of_fire="Low"
+				shots_per_salvo="3"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="1.1" beam_weapon_visual_style="Lightning_Blue"
+				aoe_and_beam_damage_multiplier_to_non_primary_target="50"				
+				beam_chains_out_to_targets_x_times="2"
+				beam_chains_out_to_target_min_range="200"
+				beam_chains_out_to_targets_x_range="2500"
+				beam_chains_out_to_max_targets_from_each_source="4"
+				only_targets_mobile_units="true"
+				shots_detonate_immediately="true"
+				maximum_number_of_targets_hit_per_shot="12"
+				added_target_evaluator="LowestHealthAsMajorPrimary"
+				>
+				<outgoing_damage_modifier applies_to="AllShields" based_on="MaxBubbleForcefield" comparison_type="GreaterThan" compared_to="10000" multiplier="5" />
+		</system>
+		<system name="W2" display_name="眩晕雷击"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1500" range="Normal4" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="false"
+				shot_type_data="LightningExplosionAOEShot" added_target_evaluator="WeaponJamAsPrimary"
+				area_of_effect_size="6500"				
+				shots_detonate_immediately="true"
+				maximum_number_of_targets_hit_per_shot="20"
+				base_enemy_weapon_reload_slowing_seconds_per_shot="4" added_enemy_weapon_reload_slowing_seconds_per_shot_per_mark="2"
+				max_enemy_weapon_reload_slowing_seconds="20"
+				enemy_weapon_reload_slowing_to_armor_mm_less_than="80"
+				>
+		</system>
+	<ship_class_data can_be_zombified_and_similar="false" can_be_fleet_supercharged="false" />
+	</entity>
+</root>

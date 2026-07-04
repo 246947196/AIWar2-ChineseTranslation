@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <thematic_group_type name="All" display_name="全部"
+        sort_order="0.5"
+        description="游戏中的所有单位，减去一些本质上只是非常次要的变体。"/>
+  
+  <thematic_group_type name="Race" display_name="种族"
+        sort_order="1"
+        description="主要种族有人类、天顶星人、尖塔族和奈因祖尔族……但还有其他外星种族存在！"/>
+
+  <thematic_group_type name="Coalition" display_name="联盟"
+        sort_order="2"
+        description="联盟是可能存在于一个较大阵营内部、跨越多个阵营或独立于任何阵营之外的团体。其中一些只能作为前哨守卫遇到。"/>
+
+  <thematic_group_type name="UnitClass" display_name="单位类别"
+        sort_order="3"
+        description="单位的类别只是一种表述方式，比如“让我们看看所有方舟”，或者所有外太空战争单位，或者某个模组子类别中的所有特定单位。"/>
+
+  <thematic_group_type name="NPCUnitClass" display_name="NPC单位类别"
+        sort_order="4"
+        description="这些单位通常只掌握在非玩家阵营手中，并且通常在其阵营设计中专门用于某些特定角色。"/>
+
+  <thematic_group_type name="AIUnitClass" display_name="AI单位类别"
+        sort_order="5"
+        description="这些单位通常只由AI控制。"/>
+  
+  <thematic_group_type name="GiantUnitClass" display_name="巨型单位类别"
+        sort_order="6"
+        description="这些单位可能由玩家或NPC控制，但它们特别巨大或有其他令人印象深刻的特点。不过，外太空战争中的巨型单位和各种守护者属于AI类别。"/>
+  
+</root>

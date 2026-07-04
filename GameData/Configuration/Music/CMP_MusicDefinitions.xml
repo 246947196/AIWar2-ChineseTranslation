@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <!-- Music is either tagged with "Exciting" or not. Exciting means in-game there's some sort of reasonably large battle happening with at least a few strength on your side and an enemy's side.
+       If people have other tags that make sense (Maybe there's a number of tracks perfect for a spire exo or something?) then they can be supported without too much effort.
+       Untagged music will be played as if it had the "Peaceful" tag. It is possible for some tracks to be tagged both ways
+        -->
+
+  <!--Title Screen Music-->
+  <music name="AI War 2 Theme" displayname="Main Theme" type="TitleScreen" bundle_name="aiwar2music" filename="assets/music/title/ai war 2 theme_vm-16bit.mp3" />
+
+  <!--Game Win Stage1 Music-->
+  <music name="For The Fallen" displayname="For The Fallen" type="GameWin_Stage1" bundle_name="aiwar2music" filename="assets/music/victory/for the fallen.mp3" />
+  <!--Game Win Stage2 Music-->
+  <music name="Fleet Command - AI War (Victory)-VM" displayname="Classic Victory-VM" type="GameWin_Stage2" bundle_name="aiwar2music" filename="assets/music/victory2/fleet command - ai war (victory)-vm.mp3" />
+
+  <!--Game Lose Music-->
+  <music name="Defeat" displayname="Defeat" type="GameLoss_Stage2" bundle_name="aiwar2music" filename="assets/music/defeat/fleet command - ai war (defeat)-vm.mp3" />
+  
+  <!--In-Game Music-->
+  <music name="Anti-Gravity" displayname="反重力" type="InGame"  bundle_name="aiwar2music" filename="assets/music/ingame/anti-gravity.mp3" description="此曲目来自基础游戏；专为《AI战争2》制作"/>
+  <music name="Into The Eye Of The Black Hole" displayname="进入黑洞之眼" type="InGame" bundle_name="aiwar2music" filename="assets/music/ingame/into the eye of the black hole.mp3" description="此曲目来自基础游戏；专为《AI战争2》制作" tags="Peaceful"/>
+  <music name="StarsSuite" displayname="星之组曲" type="InGame" bundle_name="aiwar2music" filename="assets/music/ingame/starssuite.mp3" description="此曲目来自基础游戏；专为《AI战争2》制作" tags="Exciting"/>
+  <music name="Abandoned Ship-VM" displayname="废弃舰船-VM" type="InGame" bundle_name="aiwar2music" filename="assets/music/ingame/abandoned ship-vm.mp3" description="此曲目来自基础游戏；专为《AI战争2》制作" tags="Peaceful"/>
+  <music name="Absolute Zero-VM" displayname="绝对零度-VM" type="InGame" bundle_name="aiwar2music" filename="assets/music/ingame/absolute zero-vm.mp3" description="此曲目来自基础游戏；专为《AI战争2》制作" tags="Peaceful"/>
+  <music name="Bouncing Lights-VM" displayname="跳动之光-VM" type="InGame" bundle_name="aiwar2music" filename="assets/music/ingame/bouncing lights-vm.mp3" description="此曲目来自基础游戏；专为《AI战争2》制作" tags="Exciting"/>
+  <music name="Event Horizon-VM" displayname="事件视界-VM" type="InGame" bundle_name="aiwar2music" filename="assets/music/ingame/event horizon-vm.mp3" description="此曲目来自基础游戏；专为《AI战争2》制作" tags="Exciting"/>
+  <music name="Light Year-B-VM" displayname="光年-B-VM" type="InGame" bundle_name="aiwar2music" filename="assets/music/ingame/light year-b-vm.mp3" description="此曲目来自基础游戏；专为《AI战争2》制作" tags="Peaceful"/>
+  <music name="Supercluster-VM" displayname="超星系团-VM" type="InGame" bundle_name="aiwar2music" filename="assets/music/ingame/supercluster-vm.mp3" description="此曲目来自基础游戏；专为《AI战争2》制作" tags="Exciting"/>
+
+  <!--In-Game Music (Classic Remixes) -->
+  <music name="Destroyer Of Worlds - Nomad Sunrise-VM" displayname="游牧黎明-VM" type="InGame" bundle_name="aiwar2music" filename="assets/music/ingame/Destroyer Of Worlds - Nomad Sunrise-VM.mp3" description="此曲目来自基础游戏；由《AI战争经典版》混音而来" tags="Peaceful"/>
+  <music name="Fleet Command - Intro-VM" displayname="序曲-VM" type="InGame" bundle_name="aiwar2music" filename="assets/music/ingame/fleet command - intro-vm.mp3" description="此曲目来自基础游戏；由《AI战争经典版》混音而来" tags="Exciting"/>
+  <music name="Fleet Command - Midnight-VM" displayname="午夜-VM" type="InGame" bundle_name="aiwar2music" filename="assets/music/ingame/fleet command - midnight-vm.mp3" description="此曲目来自基础游戏；由《AI战争经典版》混音而来" tags="Peaceful"/>
+  <music name="Light Of The Spire - Night Light-VM" displayname="夜灯-VM" type="InGame" bundle_name="aiwar2music" filename="assets/music/ingame/light of the spire - night light-vm.mp3" description="此曲目来自基础游戏；由《AI战争经典版》混音而来" tags="Peaceful"/>
+  <music name="Vengeance Of The Machine - Rising Up-VM" displayname="崛起-VM" type="InGame" bundle_name="aiwar2music" filename="assets/music/ingame/vengeance of the machine - rising up-vm.mp3" description="此曲目来自基础游戏；由《AI战争经典版》混音而来" tags="Peaceful"/>
+  <music name="Zenith Remnant - Voyage To Zenith-VM" displayname="驶向天顶星-VM" type="InGame" bundle_name="aiwar2music" filename="assets/music/ingame/zenith remnant - voyage to zenith-vm.mp3" description="此曲目来自基础游戏；由《AI战争经典版》混音而来" tags="Exciting"/>
+  
+revel  <!--CLASSIC In-Game Music-->
+  <music name="AIRevolution" displayname="AI进化" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/AIRevolution.mp3" description="此曲目来自基础游戏；最初来自《AI战争经典版》的“远古阴影”扩展包" tags="Exciting"/>
+  <music name="AmbitiousDesign" displayname="宏伟设计" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/AmbitiousDesign.mp3" tags="Exciting"/>
+  <music name="AncientShadows" displayname="远古阴影" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/AncientShadows.mp3" description="此曲目来自基础游戏；最初来自《AI战争经典版》的“远古阴影”扩展包" tags="Exciting"/>
+  <music name="ANewDawn" displayname="新的黎明" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/ANewDawn.mp3" description="此曲目来自基础游戏；最初来自《AI战争经典版》的“机械复仇”扩展包" tags="Peaceful"/>
+  <music name="AnUnfamiliarWorld" displayname="陌生世界" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/AnUnfamiliarWorld.mp3" description="此曲目来自基础游戏；最初来自《AI战争经典版》的“远古阴影”扩展包" tags="Peaceful"/>
+  <music name="AriseSleepingWarriors" displayname="沉睡勇士觉醒" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/AriseSleepingWarriors.mp3" description="此曲目来自基础游戏；最初来自《AI战争经典版》的“远古阴影”扩展包" tags="Exciting"/>
+  <music name="AshesToAshes" displayname="尘归尘" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/AshesToAshes.mp3" description="此曲目来自基础游戏；最初来自《AI战争经典版》的“机械复仇”扩展包" tags="Peaceful"/>
+  <music name="AWarWorthFighting" displayname="值得一战" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/AWarWorthFighting.mp3" description="此曲目来自基础游戏；最初来自《AI战争经典版》的“远古阴影”扩展包"/>
+  <music name="BeforeTheStorm" displayname="暴风雨前" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/BeforeTheStorm.mp3" description="此曲目来自基础游戏；最初来自《AI战争经典版》的“机械复仇”扩展包" tags="Peaceful"/>
+  <music name="Chase" displayname="追逐" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/Chase.mp3" tags="Exciting"/>
+  <music name="Cries of Zenith" displayname="天顶星的呐喊" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/Cries of Zenith.mp3" description="此曲目来自基础游戏；最初来自《AI战争经典版》的“天顶星残迹”扩展包" tags="Peaceful"/>
+  <music name="Darkness" displayname="黑暗" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/Darkness.mp3" description="此曲目来自基础游戏；最初来自《AI战争经典版》的“尖塔之光”扩展包" tags="Peaceful"/>
+  <music name="Deception" displayname="欺骗" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/Deception.mp3" description="此曲目来自基础游戏；最初来自《AI战争经典版》的“奈因祖尔之子”扩展包" tags="Peaceful"/>
+  <music name="Devastator" displayname="毁灭者" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/Devastator.mp3" description="此曲目来自基础游戏；最初来自《AI战争经典版》的“世界毁灭者”扩展包" tags="Exciting"/>
+  <music name="DustToDust" displayname="灰飞烟灭" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/DustToDust.mp3" description="此曲目来自基础游戏；最初来自《AI战争经典版》的“机械复仇”扩展包" tags="Peaceful"/>
+  <music name="EnergyStorm" displayname="能量风暴" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/EnergyStorm.mp3" tags="Peaceful"/>
+  <music name="EveryManForHimself" displayname="各自为战" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/EveryManForHimself.mp3" description="此曲目来自基础游戏；最初来自《AI战争经典版》的“机械复仇”扩展包" tags="Exciting"/>
+  <music name="FallingDown" displayname="坠落" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/FallingDown.mp3" description="此曲目来自基础游戏；最初来自《AI战争经典版》的“机械复仇”扩展包" tags="Peaceful"/>
+  <music name="Fire And Iron" displayname="火与铁" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/Fire And Iron.mp3" description="此曲目来自基础游戏；最初来自《AI战争经典版》的“天顶星残迹”扩展包" tags="Exciting,Peaceful"/>
+  <music name="ImminentAnnihilation" displayname="迫在眉睫的毁灭" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/ImminentAnnihilation.mp3" tags="Exciting"/>
+  <music name="Immortal" displayname="不朽" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/Immortal.mp3" description="此曲目来自基础游戏；最初来自《AI战争经典版》的“远古阴影”扩展包" tags="Peaceful,Exciting"/>
+  <music name="IncarnateRace" displayname="化身种族" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/IncarnateRace.mp3" description="此曲目来自基础游戏；最初来自《AI战争经典版》的“远古阴影”扩展包" tags="Peaceful"/>
+  <music name="InquisitionOfTheStars" displayname="星际审判" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/InquisitionOfTheStars.mp3" description="此曲目来自基础游戏；最初来自《AI战争经典版》的“远古阴影”扩展包" tags="Peaceful"/>
+  <music name="Ironclad" displayname="坚不可摧" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/Ironclad.mp3" description="此曲目来自基础游戏；最初来自《AI战争经典版》的“远古阴影”扩展包" tags="Exciting"/>
+  <music name="KiteFlier" displayname="放风筝者" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/KiteFlier.mp3" description="此曲目来自基础游戏；最初来自《AI战争经典版》的“世界毁灭者”扩展包" tags="Exciting"/>
+  <music name="Marisa" displayname="玛丽莎" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/Marisa.mp3" />
+  <music name="Meteor Shower" displayname="流星雨" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/Meteor Shower.mp3" description="此曲目来自基础游戏；最初来自《AI战争经典版》的“尖塔之光”扩展包" />
+  <music name="Midnight" displayname="午夜" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/Midnight.mp3" tags="Peaceful"/>
+  <music name="Neinzul Lullaby" displayname="奈因祖尔摇篮曲" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/Neinzul Lullaby.mp3" description="此曲目来自基础游戏；最初来自《AI战争经典版》的“奈因祖尔之子”扩展包"/>
+  <music name="NeinzulReborn" displayname="奈因祖尔重生" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/NeinzulReborn.mp3" description="此曲目来自基础游戏；最初来自《AI战争经典版》的“世界毁灭者”扩展包" tags="Exciting"/>
+  <music name="Night Carousel" displayname="夜之旋转木马" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/Night Carousel.mp3" description="此曲目来自基础游戏；最初来自《AI战争经典版》的“尖塔之光”扩展包" />
+  <music name="NomadBeacon" displayname="游牧者信标" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/NomadBeacon.mp3" description="此曲目来自基础游戏；最初来自《AI战争经典版》的“世界毁灭者”扩展包" tags="Exciting"/>
+  <music name="NomadSunrise" displayname="游牧者黎明" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/NomadSunrise.mp3" description="此曲目来自基础游戏；最初来自《AI战争经典版》的“世界毁灭者”扩展包"/>
+  <music name="On The Move" displayname="行动中" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/On The Move.mp3" description="此曲目来自基础游戏；最初来自《AI战争经典版》的“尖塔之光”扩展包" tags="Exciting"/>
+  <music name="Revelations 9-6" displayname="启示录9-6" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/Revelations 9-6.mp3" description="此曲目来自基础游戏；最初来自《AI战争经典版》的“天顶星残迹”扩展包" tags="Peaceful"/>
+  <music name="RoundAndRound" displayname="循环往复" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/RoundAndRound.mp3" description="此曲目来自基础游戏；最初来自《AI战争经典版》的“机械复仇”扩展包"/>
+  <music name="Sleepless Children" displayname="无眠的孩子们" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/Sleepless Children.mp3" description="此曲目来自基础游戏；最初来自《AI战争经典版》的“奈因祖尔之子”扩展包"/>
+  <music name="Stars" displayname="星辰" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/Stars.mp3"  description="此曲目来自基础游戏；最初来自《AI战争经典版》的“天顶星残迹”扩展包" />
+  <music name="The Blinding Star" displayname="耀眼之星" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/The Blinding Star.mp3" description="此曲目来自基础游戏；最初来自《AI战争经典版》的“尖塔之光”扩展包"/>
+  <music name="The Next Chapter" displayname="新篇章" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/The Next Chapter.mp3" />
+  <music name="The Night Light" displayname="夜灯" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/The Night Light.mp3" description="此曲目来自基础游戏；最初来自《AI战争经典版》的“尖塔之光”扩展包"/>
+  <music name="TheExodianBlade" displayname="流亡者之刃" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/TheExodianBlade.mp3" description="此曲目来自基础游戏；最初来自《AI战争经典版》的“世界毁灭者”扩展包" tags="Exciting"/>
+  <music name="TheHurricane" displayname="飓风" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/TheHurricane.mp3" description="此曲目来自基础游戏；最初来自《AI战争经典版》的“机械复仇”扩展包" tags="Exciting"/>
+  <music name="TheWormHole" displayname="虫洞" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/TheWormHole.mp3" description="此曲目来自基础游戏；最初来自《AI战争经典版》的“世界毁灭者”扩展包" tags="Exciting"/>
+  <music name="TitleAncientShadows" displayname="尖塔之光" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/TitleAncientShadows.mp3" />
+  <music name="TitleZenithRemnant" displayname="天顶星残迹" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/TitleZenithRemnant.mp3" tags="Exciting"/>
+  <music name="Translocator" displayname="传送器" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/Translocator.mp3" description="此曲目来自基础游戏；最初来自《AI战争经典版》的“世界毁灭者”扩展包"/>
+  <music name="VengeanceOfTheMachine" displayname="机械复仇" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/VengeanceOfTheMachine.mp3" description="此曲目来自基础游戏；最初来自《AI战争经典版》的“机械复仇”扩展包" tags="Exciting"/>
+  <music name="WakingToDarkness" displayname="在黑暗中苏醒" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/WakingToDarkness.mp3" description="此曲目来自基础游戏；最初来自《AI战争经典版》的“远古阴影”扩展包"/>
+  <music name="WatchingTheNightSky" displayname="仰望夜空" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/WatchingTheNightSky.mp3" description="此曲目来自基础游戏；最初来自《AI战争经典版》的“远古阴影”扩展包"/>
+  <music name="WelcomeToTheEnd" displayname="欢迎来到终点" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/WelcomeToTheEnd.mp3" description="此曲目来自基础游戏；最初来自《AI战争经典版》的“远古阴影”扩展包"/>
+  <music name="WhispersOfHope" displayname="希望的低语" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/WhispersOfHope.mp3" description="此曲目来自基础游戏；最初来自《AI战争经典版》的“远古阴影”扩展包"/>
+  <music name="WorshippedWasteland" displayname="受膜拜的荒地" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/WorshippedWasteland.mp3" description="此曲目来自基础游戏；最初来自《AI战争经典版》的“远古阴影”扩展包"/>
+  <music name="WrathOfTheSpire" displayname="尖塔之怒" type="InGame" sub_tag="aiwc" bundle_name="aiwar_classic_music" filename="assets/music/ingamefromclassic/WrathOfTheSpire.mp3" description="此曲目来自基础游戏；最初来自《AI战争经典版》的“远古阴影”扩展包" tags="Exciting"/>
+</root>

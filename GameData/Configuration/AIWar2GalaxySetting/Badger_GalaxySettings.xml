@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  
+  <!-- AI Behavior: Sandbox -->  
+    <galaxy_setting category="AI Behavior" subcategory="Sandbox" name="AllyAI" is_advanced_setting="true" display_name="实验性：与 AI 结盟" type="BoolToggle" default="false"
+        description="启用此选项会使 AI 和玩家友好，用于沙盒风格的玩家。通常这与内战或大量小派系一起启用。这使得玩'正常'游戏变得不可能。
+
+注意，与玩家结盟的派系彼此都是友好的，所以与玩家结盟的掠夺者和与玩家结盟的 AI 也是朋友。"
+        optional_dll_name="AIWarExternalCode" optional_type_name="Arcen.AIW2.External.GalaxySetting_AllyWithAI"  >
+      <harshness_override min_campaign_harshness_to_apply="10" fixed_value="false" />
+  </galaxy_setting>
+
+
+  <!-- UnitBehavior: YourUnitIntelligence -->
+    <galaxy_setting deprecated="true"
+                category="UnitBehavior" subcategory="YourUnitIntelligence" name="ConcentratedFRD" is_advanced_setting="true" display_name="集中单位火力" type="BoolToggle" default="true" changeable_during_gameplay="true"
+                description="追击模式默认让你的单位集中火力攻击少数目标，并更加紧密地编组。禁用此设置会导致处于追击模式的单位分散并攻击更多目标，但可能导致位于两个目标之间的单位无法选择而只是呆在那里。"/>
+    <galaxy_setting deprecated="true"
+                    category="UnitBehavior" subcategory="YourUnitIntelligence" name="MethodicalFRD" is_advanced_setting="true" display_name="舰船有条不紊地攻击" type="BoolToggle" default="true" changeable_during_gameplay="true"
+                    default_should_override_user_value_if_older_than_version="1018_MarauderFireteamTweaks"
+                    description="这是默认的追击模式风格。禁用此选项会使你的单位更加分散；因此，如果你在攻击一个星球时明显占优势，禁用此选项可以让你更快地赢得战斗。"/>
+    <galaxy_setting category="UnitBehavior" subcategory="YourUnitIntelligence" name="FRD_Considers_Overkill" is_advanced_setting="true" display_name="FRD考虑过度杀伤" type="BoolToggle" default="false" changeable_during_gameplay="true"
+                    description="目前不完全清楚这具体做什么。但它与为追击模式中的舰船选择目标有关。"/>
+
+  <!-- UnitBehavior: AlliedUnitIntelligence -->
+    <galaxy_setting category="UnitBehavior" subcategory="AlliedUnitIntelligence" name="DefensiveZombies" display_name="仅防御性僵尸" type="BoolToggle" default="false" changeable_during_gameplay="true"
+                    description="默认情况下，反AI僵尸可以飞出去攻击AI。启用此选项后，反AI僵尸只会移动到友好或中立的星球，但僵尸的消耗率会更快。"/>
+
+  <!-- UnitBehavior: ExperimentalBehavior -->
+    <setting name="IntelligentPursuit" category="UnitBehavior" subcategory="ExperimentalBehavior" display_name="实验性：智能追击" type="BoolToggle" default="false"
+      changeable_during_gameplay="true" is_advanced_setting="true"
+      description="在追击逃跑的敌人时，舰船会尝试采取更有效的路线到达目标。"/>
+
+  <!-- Allies: Economics -->
+    <galaxy_setting category="Allies" subcategory="Economics" name="RepairOtherPlayers" display_name="修理其他玩家单位" type="BoolToggle" default="true" changeable_during_gameplay="true"
+                    description="启用此选项后，你的工程师将修理其他玩家的单位。默认为开启。"/>
+  <galaxy_setting category="Allies" subcategory="Economics" name="RepairNPCAllies" display_name="修理NPC盟友单位" type="BoolToggle" default="false" changeable_during_gameplay="true"
+                  description="启用此选项后，你的工程师将修理盟友NPC派系的单位。默认为关闭。"/>
+  <galaxy_setting category="Allies" subcategory="Economics" name="AssistAlliedConstruction" display_name="协助盟友建造" type="BoolToggle" default="true" changeable_during_gameplay="true"
+                  description="启用此选项后，你的工程师将协助盟友派系的建筑构建。"/>
+  <galaxy_setting category="Allies" subcategory="Economics" name="AssistAlliedFactories" display_name="协助盟友工厂" type="BoolToggle" default="true" changeable_during_gameplay="true"
+                  description="启用此选项后，你的工程师将协助盟友派系的工厂。"/>
+  <galaxy_setting category="Allies" subcategory="Economics" name="FactoriesBuildForAllies" display_name="工厂为盟友建造" type="BoolToggle" default="true" changeable_during_gameplay="true"
+                  description="启用此选项后，你的工厂将为盟友派系的舰队建造舰船。请注意，无论此设置如何，专业工厂（如螺旋塔工厂）将始终为其类型的盟友舰队建造。"/>
+
+  <!-- Allies: NPCScouting -->
+    <galaxy_setting category="Allies" subcategory="NPCScouting" name="ShareAlliedNPCVision" display_name="共享盟友NPC视野" type="BoolToggle" default="false" changeable_during_gameplay="true"
+        description="启用此选项后，盟友NPC派系将与人类共享视野。" >
+        <harshness_override min_campaign_harshness_to_apply="1700" fixed_value="false" />
+    </galaxy_setting>
+
+  <!-- Allies: NPCBalance -->
+    <galaxy_setting category="Allies" subcategory="NPCBalance" name="AlliedFactionsGenerateAIP" is_advanced_setting="true" display_name="盟友派系产生AIP" type="BoolToggle" default="true" changeable_during_gameplay="true"
+        description="默认情况下，像掠夺者和纳米瘟疫这样的盟友派系在摧毁会增加AIP的结构时会产生AIP。禁用此选项将使游戏更容易。该选项可以与'盟友派系摧毁指挥站'配合使用，产生良好效果。" >
+        <harshness_override min_campaign_harshness_to_apply="200" fixed_value="true" />
+    </galaxy_setting>
+
+    <galaxy_setting category="Allies" subcategory="NPCBalance" name="MaraudersKillCommandStations" is_advanced_setting="true" display_name="盟友派系摧毁指挥站" type="BoolToggle" default="false" changeable_during_gameplay="true"
+                    description="盟友派系通常不会摧毁跃迁门或指挥站。为了增加挑战性，这些派系也会摧毁指挥站。这可能导致非常高的AIP游戏（除非你禁用盟友派系产生AIP）。"/>
+
+  <!-- Balance: GlobalModifiers -->
+   <galaxy_setting category="Balance" subcategory="GlobalModifiers" name="ZombifyEverything" is_advanced_setting="true" display_name="允许一切僵尸化" type="BoolToggle" default="false" changeable_during_gameplay="true"
+        description="默认情况下，只有攻击舰、守护者和护卫舰可以被僵尸化。像戴森飞船或骇人守护者这样的单位对僵尸化免疫。启用此设置允许骇人守护者和其他强大单位被僵尸化。如果你有大量僵尸化能力，这会使游戏变得更加容易。" >
+        <harshness_override min_campaign_harshness_to_apply="200" fixed_value="false" />
+    </galaxy_setting>
+
+  <!-- AI Behavior: CommonFeatures -->
+    <galaxy_setting category="AI Behavior" subcategory="CommonFeatures" name="EnableInstigators" is_advanced_setting="true" display_name="煽动者基地生成" type="BoolToggle" default="true" changeable_during_gameplay="true"
+        description="AI将定期生成煽动者基地，帮助AI击败你。如果不允许AI生成煽动者基地，那么游戏会变得容易得多。" >
+        <harshness_override min_campaign_harshness_to_apply="200" fixed_value="true" />
+    </galaxy_setting>
+
+  <!-- AI Behavior: AdvancedDangers -->
+    <galaxy_setting category="AI Behavior" subcategory="AdvancedDangers" name="ExtragalacticWarIgnoreMinorFactions" is_advanced_setting="true" display_name="银河外战争：忽略小派系" type="BoolToggle" default="false" changeable_during_gameplay="true"
+                    description="基本上是作弊码。如果玩家或小派系变得太强大，AI将对你释放其银河外战争舰船。此设置意味着AI在决定释放其舰船时将忽略所有小派系。" >
+        <harshness_override min_campaign_harshness_to_apply="200" fixed_value="false" />
+    </galaxy_setting>
+    <galaxy_setting category="AI Behavior" subcategory="AdvancedDangers" name="ExtragalacticWarIgnorePlayerAlliedMinorFactions" is_advanced_setting="true" display_name="银河外战争：忽略与玩家结盟的小派系" type="BoolToggle" default="false" changeable_during_gameplay="true"
+                    description="基本上是作弊码。如果玩家或小派系变得太强大，AI将对你释放其银河外战争舰船。此设置意味着AI在决定释放其舰船时将忽略与玩家结盟的小派系。" >
+        <harshness_override min_campaign_harshness_to_apply="200" fixed_value="false" />
+    </galaxy_setting>
+    <galaxy_setting category="AI Behavior" subcategory="AdvancedDangers" name="ExtragalacticWarIgnorePlayers" is_advanced_setting="true" display_name="银河外战争：忽略玩家" type="BoolToggle" default="false" changeable_during_gameplay="true"
+                    description="基本上是作弊码。如果玩家或小派系变得太强大，AI将对你释放其银河外战争舰船。此设置意味着AI在决定释放其舰船时将忽略玩家实力。" >
+        <harshness_override min_campaign_harshness_to_apply="200" fixed_value="false" />
+    </galaxy_setting>
+
+    <galaxy_setting category="AI Behavior" subcategory="AdvancedDangers" name="PowerLevelMultiplier" display_name="银河外战争：玩家乘数" type="IntSlider"
+        is_advanced_setting="true"
+        default="1" min="1" max="5"
+        description="这只影响人类玩家（人类帝国、方舟帝国、螺旋塔注入帝国）作为AI分配给他们的最终实力等级的乘数。该值影响AI解锁其外星战争舰船预算和随后的层级的速度。默认和最低值为1（专家+级别为2），但可以提高。"
+        >
+        <harshness_override is_sandbox="true" min="0" max="10" />
+        <harshness_override min_campaign_harshness_to_apply="700" min="2" />
+        <harshness_override min_campaign_harshness_to_apply="2500" min="4" />
+    </galaxy_setting>
+
+  <galaxy_setting category="AI Behavior" subcategory="AdvancedDangers" name="AICivilWar" display_name="混乱：AI内战" type="BoolToggle" default="false"
+        description="如果有多个AI派系，它们都相互憎恨并会互相战斗。它们仍然也恨你，但所有这些混乱和内讧可能对你有利。不过，你可能会发现自己陷入因互相激怒而更快变得强大的AI的交火中...所以你能坚持多久还是个未知数。这比普通游戏难得多，更适合那些想看AI与其他强大的小派系战斗的人。"
+        optional_dll_name="AIWarExternalCode" optional_type_name="Arcen.AIW2.External.GalaxySetting_AICivilWar" >
+        <harshness_override min_campaign_harshness_to_apply="200" fixed_value="false" />
+    </galaxy_setting>
+
+  <galaxy_setting category="AI Behavior" subcategory="AdvancedDangers" name="DireCPA" display_name="骇人CPA" type="BoolToggle" default="false"
+      description="启用此选项会使AI定期生成CPA碉堡；这些碉堡将为每次CPA释放额外的舰船。摧毁它们应该是优先事项。" >
+    <harshness_override min_campaign_harshness_to_apply="1700" fixed_value="true" />
+  </galaxy_setting>
+  <galaxy_setting category="AI Behavior" subcategory="AdvancedDangers" name="DireCPAMultiplier" display_name="骇人CPA碉堡强度" type="IntSlider"
+      default="1" min="1" max="10"
+      description="此设置控制每个CPA碉堡将释放的强度。" >
+      <harshness_override min_campaign_harshness_to_apply="200" min="2" />
+      <harshness_override min_campaign_harshness_to_apply="700" min="3" />
+      <harshness_override min_campaign_harshness_to_apply="1700" min="5" />
+  </galaxy_setting>
+
+  <!-- Performance -->
+  <galaxy_setting name="FireteamTargetsToScan" category="Performance" is_advanced_setting="true" display_name="战斗小组每次迭代可扫描的最大目标数" type="IntSlider" default="2500" min="100" max="5000" changeable_during_gameplay="true"
+           description="战斗小组每个线程每次迭代只能扫描这么多潜在目标。如果你看到长距离规划线程变慢，降低这个值可能会有所帮助。" />
+
+  <!-- AI Behavior:CommonFeatures -->
+  <galaxy_setting category="AI Behavior" subcategory="CommonFeatures" is_advanced_setting="true" name="TsunamiCostModifier" display_name="海啸CPA强度除数"
+      type="IntSlider" default="40" min="5" max="80" changeable_during_gameplay="true"
+      description="这是一个实验性设置，允许玩家更改CPA的强度；较低的数字允许CPA使用更多舰船，使它们更加强大。默认值为40，大幅低于20可能会导致即死。" >
+      <harshness_override min_campaign_harshness_to_apply="200" max="30" />
+  </galaxy_setting>
+
+
+      <galaxy_setting category="General" subcategory="Spoilers" name="HiddenGalaxyForPlay" display_name="在游戏大厅外隐藏未探索的星球" type="BoolToggle" default="false"
+                    is_advanced_setting="true"
+                  description="启用此选项后，不靠近任何已探索星球的星球将被隐藏。你将在探索过程中发现地图的布局。
+
+启用此选项后，星系地图将在游戏大厅中可见，但一旦游戏开始就不可见。这是为了让玩家在游戏大厅中选择起始星球，但一旦开始游玩后仍能享受探索的感觉。
+
+这会被常规的隐藏星系设置覆盖。" />
+
+</root>

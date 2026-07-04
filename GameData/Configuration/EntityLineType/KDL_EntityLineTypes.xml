@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>  
+  <line_type name="Claim" display_name="声明" hardcoded_type="Claim" 
+             visuals_bundle="aiwar2goodiebox" visuals="assets/shotparts/lines/claimline.prefab"
+             z_length_of_original_object="1.18" x_scale_multiplier="1" y_scale_multiplier="1"/>
+  
+  <line_type name="Hacking" display_name="黑客攻击" hardcoded_type="Hacking" 
+             visuals_bundle="aiwar2goodiebox" visuals="assets/shotparts/lines/hackline.prefab"
+             z_length_of_original_object="1.18" x_scale_multiplier="1" y_scale_multiplier="1" />
+  
+  <line_type name="Repair" display_name="修复" hardcoded_type="Repair" 
+             visuals_bundle="aiwar2goodiebox" visuals="assets/shotparts/lines/repairline.prefab"
+             z_length_of_original_object="1.18" x_scale_multiplier="1" y_scale_multiplier="1" />
+  
+  <line_type name="RepairStarved" display_name="修复（耗尽）" hardcoded_type="RepairStarved" 
+             visuals_bundle="aiwar2goodiebox" visuals="assets/shotparts/lines/repairlinestarved.prefab"
+             z_length_of_original_object="1.18" x_scale_multiplier="1" y_scale_multiplier="1" />
+  
+  <line_type name="AssistFactory" display_name="增强工厂" hardcoded_type="AssistFactory" 
+             visuals_bundle="aiwar2goodiebox" visuals="assets/shotparts/lines/assistfactoryline.prefab"
+             z_length_of_original_object="1.18" x_scale_multiplier="1" y_scale_multiplier="1" />
+  
+  <line_type name="AssistFactoryStarved" display_name="增强工厂（耗尽）" hardcoded_type="AssistFactoryStarved" 
+             visuals_bundle="aiwar2goodiebox" visuals="assets/shotparts/lines/assistfactorylinestarved.prefab"
+             z_length_of_original_object="1.18" x_scale_multiplier="1" y_scale_multiplier="1" />
+  
+  <line_type name="AssistSelfConstruct" display_name="协助建造" hardcoded_type="AssistSelfConstruct" 
+             visuals_bundle="aiwar2goodiebox" visuals="assets/shotparts/lines/assistselfconstructline.prefab"
+             z_length_of_original_object="1.18" x_scale_multiplier="1" y_scale_multiplier="1" />
+  
+  <line_type name="AssistSelfConstructStarved" display_name="协助建造（耗尽）" hardcoded_type="AssistSelfConstructStarved" 
+             visuals_bundle="aiwar2goodiebox" visuals="assets/shotparts/lines/assistselfconstructlinestarved.prefab"
+             z_length_of_original_object="1.18" x_scale_multiplier="1" y_scale_multiplier="1" />
+  
+  <line_type name="Tachyon" display_name="超光速粒子" hardcoded_type="Tachyon" 
+             visuals_bundle="aiwar2goodiebox" visuals="assets/shotparts/lines/tachyonline.prefab"
+             z_length_of_original_object="1.18" x_scale_multiplier="1" y_scale_multiplier="1" />
+  
+  <line_type name="Tractor" display_name="牵引" hardcoded_type="Tractor" 
+             visuals_bundle="aiwar2goodiebox" visuals="assets/shotparts/lines/tractorline.prefab"
+             z_length_of_original_object="1.18" x_scale_multiplier="1" y_scale_multiplier="1" />
+  
+	<!-- Fricking lasers!  But no sharks, sadly.-->
+		
+    <line_type name="Laser_BlueBright" display_name="激光" hardcoded_type="Laser_BlueBright" 
+             visuals_bundle="aiwar2goodiebox" visuals="assets/shotparts/lines/_Laser_BlueBright.prefab"
+             z_length_of_original_object="1.18" x_scale_multiplier="1" y_scale_multiplier="1" />
+
+	<line_type name="Laser_Cyan" display_name="激光" hardcoded_type="Laser_Cyan"
+			   visuals_bundle="aiwar2goodiebox" visuals="assets/shotparts/lines/_Laser_Cyan.prefab"
+			   z_length_of_original_object="1.18" x_scale_multiplier="1" y_scale_multiplier="1" />
+
+	<line_type name="Laser_Green" display_name="激光" hardcoded_type="Laser_Green"
+			   visuals_bundle="aiwar2goodiebox" visuals="assets/shotparts/lines/_Laser_Green.prefab"
+			   z_length_of_original_object="1.18" x_scale_multiplier="1" y_scale_multiplier="1" />
+
+	<line_type name="Laser_GreenBright" display_name="激光" hardcoded_type="Laser_GreenBright"
+			   visuals_bundle="aiwar2goodiebox" visuals="assets/shotparts/lines/_Laser_GreenBright.prefab"
+			   z_length_of_original_object="1.18" x_scale_multiplier="1" y_scale_multiplier="1" />
+
+	<line_type name="Laser_Purple" display_name="激光" hardcoded_type="Laser_Purple"
+			   visuals_bundle="aiwar2goodiebox" visuals="assets/shotparts/lines/_Laser_Purple.prefab"
+			   z_length_of_original_object="1.18" x_scale_multiplier="1" y_scale_multiplier="1" />
+
+	<line_type name="Laser_PurpleBright" display_name="激光" hardcoded_type="Laser_PurpleBright"
+			   visuals_bundle="aiwar2goodiebox" visuals="assets/shotparts/lines/_Laser_PurpleBright.prefab"
+			   z_length_of_original_object="1.18" x_scale_multiplier="1" y_scale_multiplier="1" />
+
+	<line_type name="Laser_Red" display_name="激光" hardcoded_type="Laser_Red"
+			   visuals_bundle="aiwar2goodiebox" visuals="assets/shotparts/lines/_Laser_Red.prefab"
+			   z_length_of_original_object="1.18" x_scale_multiplier="1" y_scale_multiplier="1" />
+
+	<line_type name="Laser_RedBlack" display_name="激光" hardcoded_type="Laser_RedBlack"
+			   visuals_bundle="aiwar2goodiebox" visuals="assets/shotparts/lines/_Laser_RedBlack.prefab"
+			   z_length_of_original_object="1.18" x_scale_multiplier="1" y_scale_multiplier="1" />
+
+	<line_type name="Laser_Yellow" display_name="激光" hardcoded_type="Laser_Yellow"
+			   visuals_bundle="aiwar2goodiebox" visuals="assets/shotparts/lines/_Laser_Yellow.prefab"
+			   z_length_of_original_object="1.18" x_scale_multiplier="1" y_scale_multiplier="1" />
+
+	<line_type name="Laser_YellowBright" display_name="激光" hardcoded_type="Laser_YellowBright"
+			   visuals_bundle="aiwar2goodiebox" visuals="assets/shotparts/lines/_Laser_YellowBright.prefab"
+			   z_length_of_original_object="1.18" x_scale_multiplier="1" y_scale_multiplier="1" />
+	
+	<!-- Lightning, my dude.-->
+
+	<line_type name="Lightning_Blue" display_name="连锁闪电" hardcoded_type="Lightning_Blue"
+			   visuals_bundle="aiwar2goodiebox" visuals="assets/shotparts/lines/_Lightning_Blue.prefab"
+			   z_length_of_original_object="1.5" x_scale_multiplier="0.1" y_scale_multiplier="0.5" />
+
+	<line_type name="Lightning_Gold" display_name="连锁闪电" hardcoded_type="Lightning_Gold"
+			   visuals_bundle="aiwar2goodiebox" visuals="assets/shotparts/lines/_Lightning_Gold.prefab"
+			   z_length_of_original_object="1.5" x_scale_multiplier="0.1" y_scale_multiplier="0.5" />
+
+	<line_type name="Lightning_Green" display_name="连锁闪电" hardcoded_type="Lightning_Green"
+			   visuals_bundle="aiwar2goodiebox" visuals="assets/shotparts/lines/_Lightning_Green.prefab"
+			   z_length_of_original_object="1.5" x_scale_multiplier="0.1" y_scale_multiplier="0.5" />
+
+	<line_type name="Lightning_Purple" display_name="连锁闪电" hardcoded_type="Lightning_Purple"
+			   visuals_bundle="aiwar2goodiebox" visuals="assets/shotparts/lines/_Lightning_Purple.prefab"
+			   z_length_of_original_object="1.5" x_scale_multiplier="0.1" y_scale_multiplier="0.5" />
+
+	<line_type name="Lightning_Red" display_name="连锁闪电" hardcoded_type="Lightning_Red"
+			   visuals_bundle="aiwar2goodiebox" visuals="assets/shotparts/lines/_Lightning_Red.prefab"
+			   z_length_of_original_object="1.5" x_scale_multiplier="0.1" y_scale_multiplier="0.5" />
+</root>

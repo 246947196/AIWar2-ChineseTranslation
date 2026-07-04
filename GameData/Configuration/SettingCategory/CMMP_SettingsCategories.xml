@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <setting_category name="Game" display_name="游戏"  
+      description="游戏基础设置。"/>
+  
+  <setting_category name="Expansions" display_name="扩展包" show_even_when_empty="true" show_expansions_list="true"
+      description="启用或禁用你拥有的官方扩展包。适用于与没有相同内容的朋友进行多人游戏。"/>
+  <setting_category name="Mods" display_name="模组" show_even_when_empty="true" show_main_mods_list="true"
+      description="启用或禁用已安装的非官方玩家模组。适用于多人游戏或尝试不同内容。"/>
+  <setting_category name="Performance" display_name="性能"  
+      description="多种提升游戏性能的方式，甚至可以让游戏在低配电脑上运行。"/>
+  <setting_category name="Automation" display_name="自动化"  
+      description="让你的单位自动执行一些操作，无需手动设置。"/>
+  <setting_category name="Display" display_name="显示"  
+      description="调整游戏显示效果的多种选项。"/>
+  <setting_category name="Audio" display_name="音频"  
+      description="控制游戏音效的设置。"/>
+  <setting_category name="Camera" display_name="镜头"  
+      description="调整镜头工作方式和显示效果的设置。"/>
+  <setting_category name="Networking" display_name="网络"  
+      description="进行多人游戏时的相关设置。"/>
+  <setting_category name="TooltipCustomization" display_name="工具提示定制"
+      description="自定义游戏中显示的工具提示选项。"/>
+  <setting_category name="Custom" display_name="自定义"  
+      description="来自模组或其他来源的自定义设置。"/>
+  <setting_category name="Debug" display_name="调试"  
+      description="用于记录日志和调试游戏信息的多种选项。"/>
+  
+  <setting_category name="Invisible" display_name="隐藏" is_hidden="true" 
+      description="不向玩家显示的隐藏设置，通常从其他地方保存。"/>
+  
+</root>

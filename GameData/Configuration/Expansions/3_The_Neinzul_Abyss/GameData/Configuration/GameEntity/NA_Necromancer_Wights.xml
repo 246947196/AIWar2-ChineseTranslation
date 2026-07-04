@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+<!-- Wight-related ships and structures -->
+
+
+<!-- Basic Wight. No particular job, just act as a block of stats. !-->
+
+    <entity name="BaseWight" tags="NecromancerWight,NecromancerShip,NecromancerMidTier,BaseWight"
+	        thematic_groups="Neinzul,Necromancer" npc_ship_cap_type="FrigatesAndGuardians"
+	        special_entity_type="Frigate"
+			visuals="Assets/_DLC3/_Wights/BasicWight/BasicWight.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships4/NecromancerWight"
+			y_offset_of_icon="15"
+			voice_group="Silent"
+			category="Ship"
+			size_scale="5"
+			visuals_scale_multiplier="20"
+			collision_priority="100"
+            display_name="食尸鬼"
+            display_name_for_sidebar="食尸鬼"
+            description="一名强大的死灵法师爪牙，通过死灵法术召唤而来。能强力使用激光。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="WightWeapon"
+			mark_level_scale_style="Frigate"
+			cost_for_ai_to_purchase="500" strength_multiplier="1.1"
+			hull_points="30000" shield_points="15000" speed="Normal1"
+			metal_cost="5000" energy_consumption="0"
+			armor_mm="140" engine_gx="16" albedo="0.4" mass_tx="5"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+            immune_to_repairs="true"
+            transformation_countdown_only_during_combat="true"			
+            priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+	    multiplier_to_all_costs="1" multiplier_to_all_healths="1" damage_multiplier_to_all_weapons="1"
+            no_explicit_cap="true"
+            >		
+    <system name="R5" display_name="瘟疫激光"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="650" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="true"
+			shot_type_data="LaserPulse_SicklyGreen"
+			>
+      <death_effect_damage type="Necromancy" tier_name="Minor"/>
+    </system>	
+    </entity>
+	
+    <entity name="WightAttritioner" copy_from="BaseWight" tags="NecromancerOverLimitMidSummon,WightAttritioner,NecromancerFastAttrition"         
+            icon_overlay="Overlays2/SpireSpyCradle_Lesser" gimbal_icon_size_multiplier="0.6"
+            display_name="虚弱食尸鬼"
+	        description="食尸鬼的一种非常虚弱的变体，会迅速损耗。当你召唤的单位数量超过控制能力时，这些单位会格外虚弱。"
+            transformation_countdown_only_during_combat="true"
+			multiplier_to_all_healths="0.3" damage_multiplier_to_all_weapons="1"
+            >
+    </entity>
+
+<!-- Much higher damage than the basic Wight. Would be hard to take out a group of, unless alpha striked...which is where basic Skeletons can help, if you have enough.
+     These guys would sit in the Damage role, potentially "offclassing" as a Protector. !-->	
+
+    <entity name="RavenousWight" tags="Ravenous Wight,WightVariant,NecromancerShip,NecromancerMidTier"
+            thematic_groups="Neinzul,Necromancer"	 npc_ship_cap_type="FrigatesAndGuardians"
+			visuals="Assets/_DLC3/_Wights/RavenousWight/RavenousWight.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships4/NecromancerWight" icon_overlay="Overlays2/WightRavenous"
+			y_offset_of_icon="15"
+			voice_group="Silent"
+			category="Ship"
+			size_scale="6"
+			visuals_scale_multiplier="20"
+			collision_priority="100"
+            display_name="贪婪食尸鬼"
+            display_name_for_sidebar="贪婪食尸鬼"
+            description="一名强大的死灵法师爪牙，通过死灵法术召唤而来。在战斗一段时间后会衰变为普通食尸鬼。为了换取生命窃取能力和高额伤害输出，其耐久性较低。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="RavenousWightWeapon"
+			mark_level_scale_style="Frigate"
+			cost_for_ai_to_purchase="500" strength_multiplier="1.1"
+			hull_points="20000" shield_points="10000" speed="AboveAverage6"
+			metal_cost="7500" energy_consumption="0"
+			armor_mm="140" engine_gx="16" albedo="0.4" mass_tx="5"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+            immune_to_repairs="true"
+            transformation_countdown_only_during_combat="true"			
+            priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+	    multiplier_to_all_costs="1" multiplier_to_all_healths="1" damage_multiplier_to_all_weapons="1"
+            no_explicit_cap="true"
+            >		
+    <system name="R5" display_name="贪婪激光"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="500" range="Normal6" shot_speed="Normal" rate_of_fire="Devourer" 
+			shots_per_salvo="5" fires_salvos_sequentially="true"
+			shot_type_data="LaserPulse_SicklyGreen"
+			health_change_per_damage_dealt="1"
+			>
+      <death_effect_damage type="Necromancy" tier_name="Minor"/>
+    </system>	
+    </entity>
+	
+    <entity name="RavenousWightBodyguard" copy_from="RavenousWight" tags="NecromancerShip,NecromancerBodyguard"         
+            icon_overlay="Overlays2/WightRavenousBodyguard"
+            display_name="贪婪食尸鬼护卫"
+            display_name_for_sidebar="贪食护卫"
+            no_explicit_cap="false"
+	        description="贪婪食尸鬼的升级版，由大墓地直接赋予活力。为了换取生命窃取能力和高额伤害输出，其耐久性较低。"
+			immune_to_repairs="false"
+			multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"
+            >
+    </entity>
+
+<!-- Almost like a Detonator equivalent for Wights, but far more into over time damage against single targets. You do still get a normal Wight at the end once it dies, as well.
+     Full Damage role. The fact it gives you a normal Wight helps with some form of Protector, just in being a meatshield. !-->	
+
+    <entity name="PossessedWight" tags="Possessed Wight,WightVariant,NecromancerShip,NecromancerMidTier"
+            thematic_groups="Neinzul,Necromancer"	 npc_ship_cap_type="FrigatesAndGuardians"
+			visuals="Assets/_DLC3/_Wights/PossessedWight/PossesedWight.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships4/NecromancerWight" icon_overlay="Overlays2/WightPossessed"
+			y_offset_of_icon="15"
+			voice_group="Silent"
+			category="Ship"
+			size_scale="6.5"
+			visuals_scale_multiplier="20"
+			collision_priority="100"
+            display_name="被附身的食尸鬼"
+            display_name_for_sidebar="附身食尸鬼"
+            description="一名强大的死灵法师爪牙，通过死灵法术召唤而来。在战斗一段时间后会衰变为普通食尸鬼。能进行周期性的高额单体伤害攻击，尤其是对非常巨大的目标，但开火时会伤害自身。被摧毁后，会产生一个摆脱折磨的食尸鬼。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="PossessedWightWeapon"
+			mark_level_scale_style="Frigate"
+			cost_for_ai_to_purchase="500" strength_multiplier="1.1"
+			hull_points="30000" shield_points="15000" speed="Normal1"
+			metal_cost="7500" energy_consumption="0"
+			armor_mm="140" engine_gx="16" albedo="0.4" mass_tx="5"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+            immune_to_repairs="true"
+            transformation_countdown_only_during_combat="true"			
+            priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+	    multiplier_to_all_costs="1" multiplier_to_all_healths="1" damage_multiplier_to_all_weapons="1"
+            no_explicit_cap="true"
+            >	
+	<entity_type_drawing_bag_used_on_death data_list="BaseWight" min_spawn_value_list="1" />		
+    <system name="R5" display_name="折磨冲击"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="20000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="PeriodicActivation" fires_salvos_sequentially="true"
+			shot_type_data="TorturousBlast"
+			health_change_by_max_health_divided_by_this_per_attack="-10"
+			>
+      <outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="7" multiplier="3" />
+	  <death_effect_damage type="Necromancy" tier_name="Minor"/>
+    </system>	
+    </entity>	
+	
+
+    <entity name="PossessedWightBodyguard" copy_from="PossessedWight" tags="NecromancerShip,NecromancerBodyguard"         
+            icon_overlay="Overlays2/WightPossessedBodyguard"
+            display_name="被附身食尸鬼护卫"
+            display_name_for_sidebar="附食护卫"
+	    description="被附身食尸鬼的升级版，由大墓地直接赋予活力。能进行周期性的高额单体伤害攻击，但开火时会伤害自身。"
+	    immune_to_repairs="false"
+	    multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"
+            no_explicit_cap="false"
+            >
+    </entity>	
+
+<!-- Main job of these guys: Spread Necromancy. High damage against super weak targets meant to cause more converted ships from those just about there.
+     Full on Infector role. !-->
+	
+
+    <entity name="InfectiousWight" tags="Infectious Wight,WightVariant,NecromancerShip,NecromancerMidTier"
+	        thematic_groups="Neinzul,Necromancer" npc_ship_cap_type="FrigatesAndGuardians"
+			visuals="Assets/_DLC3/_Wights/InfectiousWight/InfectiousWight.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships4/NecromancerWight" icon_overlay="Overlays2/WightInfectious"
+			y_offset_of_icon="15"
+			voice_group="Silent"
+			category="Ship"
+			size_scale="7"
+			visuals_scale_multiplier="20"
+			collision_priority="100"
+            display_name="感染性食尸鬼"
+            display_name_for_sidebar="感染食尸鬼"
+            description="一名强大的死灵法师爪牙，通过死灵法术召唤而来。在战斗一段时间后会衰变为普通食尸鬼。一次能投掷三枚感染性手雷，将伤害分散到爆炸半径内的目标上。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="InfectiousWightWeapon"
+			mark_level_scale_style="Frigate"
+			cost_for_ai_to_purchase="500" strength_multiplier="1.1"
+			hull_points="40000" shield_points="20000" speed="Normal1"
+			metal_cost="7500" energy_consumption="0"
+			armor_mm="140" engine_gx="16" albedo="0.4" mass_tx="5"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+            immune_to_repairs="true"
+            transformation_countdown_only_during_combat="true"			
+            priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+	    multiplier_to_all_costs="1" multiplier_to_all_healths="1" damage_multiplier_to_all_weapons="1"
+            no_explicit_cap="true"
+            >		
+    <system name="R1" display_name="感染性手雷"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="3000" range="Normal4" shot_speed="Normal" rate_of_fire="SlightlyLow"
+			shots_per_salvo="3" fires_salvos_sequentially="false"
+			shot_type_data="NanocaustCurvedSicklyGreenShot"
+			area_of_effect_size="400" aoe_spreads_damage_among_available_targets="true"
+			maximum_number_of_targets_hit_per_shot="9"
+			>
+			<outgoing_damage_modifier based_on="CurrentHullPercentage" comparison_type="AtMost" compared_to="10" multiplier="10" />
+			<death_effect_damage type="Necromancy" tier_name="Major"/>
+    </system>
+    </entity>
+
+    <entity name="InfectiousWightBodyguard" copy_from="InfectiousWight" tags="NecromancerShip,NecromancerBodyguard"         
+            icon_overlay="Overlays2/WightInfectiousBodyguard"
+            display_name="感染性食尸鬼护卫"
+            display_name_for_sidebar="感食护卫"
+	    description="感染性食尸鬼的升级版，由大墓地直接赋予活力。比其他食尸鬼拥有更强的死灵法术，并且有更多的攻击手段来传播它。"
+	    immune_to_repairs="false"
+	    multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"
+            no_explicit_cap="false"
+            >
+    </entity>
+
+	
+<!-- Cloaked Wight with Tesla like weapon that charges up its fire-on-death secondary weapon. Has cloaking too !-->	
+
+	
+    <entity name="SpectralWight" tags="Spectral Wight,WightVariant,NecromancerShip,NecromancerMidTier"
+            thematic_groups="Neinzul,Necromancer"	 npc_ship_cap_type="FrigatesAndGuardians"
+			visuals="Assets/_DLC3/_Wights/SpectralWight/SpectralWight.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships4/NecromancerWight" icon_overlay="Overlays2/WightSpectral"
+			y_offset_of_icon="15"
+			voice_group="Silent"
+			category="Ship"
+			size_scale="7.2"
+			visuals_scale_multiplier="20"
+			collision_priority="100"
+            display_name="幽灵食尸鬼"
+            display_name_for_sidebar="幽灵食尸鬼"
+            description="一名强大的死灵法师爪牙，通过死灵法术召唤而来。在战斗一段时间后会衰变为普通食尸鬼。会向被牵引光束捕获的受害者发射不洁闪电。当它死亡时，会剧烈爆炸，对最多20个附近的敌方单位造成伤害。
+			
+爆炸对每个受害者造成的伤害起始于幽灵食尸鬼普通攻击伤害的一半，但会随着舰船积累的能量而增加，最多可达其主武器伤害的10倍。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="SpectralWightWeapon"
+			mark_level_scale_style="Frigate"
+			cost_for_ai_to_purchase="500" strength_multiplier="1.1"
+			hull_points="30000" shield_points="15000" speed="AboveAverage4"
+			metal_cost="10000" energy_consumption="0"
+			armor_mm="140" engine_gx="16" albedo="0.4" mass_tx="5"
+			max_number_of_weapon_points="10"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+            immune_to_repairs="true"
+            transformation_countdown_only_during_combat="true"
+            priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+			multiplier_to_all_costs="1" multiplier_to_all_healths="1" damage_multiplier_to_all_weapons="1"
+            no_explicit_cap="true"
+            >		
+    <system name="Q1" display_name="不洁闪电"
+		    category="Weapon" firing_timing="OnlyInRange"
+		    damage_per_shot="2000" range="Small1" shot_speed="Normal" rate_of_fire="VeryLow" fires_salvos_sequentially="false"
+		    shot_type_data="LightningExplosionAOEShot" 
+		    area_of_effect_size="3200"				
+		    shots_detonate_immediately="true"
+		    maximum_number_of_targets_hit_per_shot="20"
+			number_of_weapon_points_to_gain_on_firing="1" 
+		    >
+      <death_effect_damage type="Necromancy" tier_name="Minor"/>
+    </system>
+	 <system name="W2" display_name="不死终曲"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="1000" range="Small1" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="true"
+			shot_type_data="LightningExplosionAOEShot"
+			area_of_effect_size="3200"				
+			shots_detonate_immediately="true"
+			maximum_number_of_targets_hit_per_shot="20"
+			additional_damage_modifier_per_weapon_point="1"
+			only_fires_on_death="true"
+			>
+    </system>
+    <system name="T" display_name="牵引光束"
+			category="Passive"
+			tractor_range="Small1" tractor_count="20" tractor_hits_albedo_less_than="0.5" tractor_hits_engine_gx_less_than="15"
+			>
+    </system>
+    <system name="C" display_name="隐形装置"
+			category="Passive"
+			cloaking_points="2000" cloaking_points_added_per_mark="1000"
+			>
+    </system>		
+    </entity>
+
+    <entity name="SpectralWightBodyguard" copy_from="SpectralWight" tags="NecromancerShip,NecromancerBodyguard"         
+            icon_overlay="Overlays2/WightSpectralBodyguard"
+            display_name="幽灵食尸鬼护卫"
+            display_name_for_sidebar="幽食护卫"
+	    immune_to_repairs="false"
+	    multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"
+            no_explicit_cap="false"
+            >
+    </entity>
+	
+	
+<!-- Kind of an odd sacrifical tank, better suited for those alpha strike scenarios than a Ravenous. You at least get it again once it inevitably dies.
+     Full Protector role.  !-->	
+
+
+    <entity name="VengefulWight" tags="Vengeful Wight,WightVariant,NecromancerShip,NecromancerMidTier"
+            thematic_groups="Neinzul,Necromancer"	 npc_ship_cap_type="FrigatesAndGuardians"
+			visuals="Assets/_DLC3/_Wights/VengefulWight/VengefulWight.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships4/NecromancerWight" icon_overlay="Overlays2/WightVengefulBodyguard"
+			y_offset_of_icon="15"
+			voice_group="Silent"
+			category="Ship"
+			size_scale="9"
+			visuals_scale_multiplier="20"
+			collision_priority="100"
+            display_name="复仇食尸鬼"
+            display_name_for_sidebar="复仇食尸鬼"
+            description="一名强大的死灵法师爪牙，通过死灵法术召唤而来。在战斗一段时间后会衰变为普通食尸鬼。会对敢于向它开火的敌人造成伤害，部分无视护盾。能复活一次。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="VengefulWightWeapon"
+			mark_level_scale_style="Frigate"
+			cost_for_ai_to_purchase="500" strength_multiplier="1.1"
+			hull_points="40000" shield_points="20000" speed="Normal1"
+			metal_cost="10000" energy_consumption="0"
+			armor_mm="140" engine_gx="16" albedo="0.4" mass_tx="5"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+            immune_to_repairs="true"
+            transformation_countdown_only_during_combat="true"
+			returns_this_percentage_of_damage_if_damaged_by_enemy_attack="0.25"
+            priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+	    multiplier_to_all_costs="1" multiplier_to_all_healths="1" damage_multiplier_to_all_weapons="1"
+            no_explicit_cap="true"
+            >
+	<entity_type_drawing_bag_used_on_death data_list="RevivedVengefulWight" min_spawn_value_list="1" />		
+    <system name="R5" display_name="瘟疫激光"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="3000" range="Normal6" shot_speed="Normal" rate_of_fire="Misery" fires_salvos_sequentially="true"
+			base_percent_damage_bypasses_personal_shields="0.5"	
+			shot_type_data="LaserPulse_SicklyGreen"
+			>
+      <death_effect_damage type="Necromancy" tier_name="Minor"/>
+    </system>
+    <system name="A" display_name="火力吸引"
+			category="Passive"
+			attract_range_for_shots_against_allies="Normal6"
+			>
+	</system>	
+    </entity>	
+
+    <entity name="VengefulWightBodyguard" copy_from="VengefulWight" tags="NecromancerShip,NecromancerBodyguard"         
+            icon_overlay="Overlays2/WightVengefulBodyguard"
+            display_name="复仇食尸鬼护卫"
+            display_name_for_sidebar="复食护卫"
+	        description="复仇食尸鬼的升级版，由大墓地直接赋予活力。会对敢于向它开火的敌人造成伤害。"
+			immune_to_repairs="false"
+			multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"
+            no_explicit_cap="false"
+            >
+    </entity>
+
+    <entity name="RevivedVengefulWight" copy_from="VengefulWight" tags="NecromancerShip,NecromancerBodyguard,NecromancerSlowAttrition"
+            icon_overlay="Overlays2/WightVengefulRevived"
+            display_name="复活的复仇食尸鬼"
+            display_name_for_sidebar="复复仇食"
+	    description="一名强大的死灵法师爪牙，通过死灵法术召唤而来。会对敢于向它开火的敌人造成伤害。会随着时间缓慢损耗（在大墓地损耗更慢）。"
+	    immune_to_repairs="false"
+            no_explicit_cap="true"
+            >
+    </entity>	
+	
+	
+
+
+
+
+  <!-- Wight related structures -->
+  
+  
+    <entity name="RavenousWightHome" tags="NecromancerBuildMenu,NecromancerFeedsFleet"
+	        thematic_groups="Neinzul,Necromancer" 
+	        visuals="Assets/_DLC3/Necromancer/NecroWightHome/NecroWightHome.prefab" visuals_bundle="exp3_neinzul_abyss"
+	        icon_name="Ships4/NecromancerWightHome" icon_overlay="Overlays2/WightRavenous"  gimbal_icon_size_multiplier="1.5"           
+            voice_group="Spire"
+            uses_large_health_bar="true"
+            category="Ship"
+			size_scale="7"
+      visuals_scale_multiplier="12" 
+			y_offset_of_icon="20"
+			collision_priority="1000"
+            display_name="贪婪食尸鬼巢穴"
+            display_name_for_sidebar="贪婪食巢"
+            description_short="该设施有时会为玩家提供贪婪食尸鬼而非普通食尸鬼。"
+            description="该设施允许将被击杀的舰船转化为贪婪食尸鬼而非普通食尸鬼。这些单位拥有大量生命窃取能力和伤害，但耐久性较低。"
+            starting_mark_level="Markless" build_sidebar_categories_i_am_part_of="NecropolisWights"
+            cost_for_ai_to_purchase="10000" strength_multiplier="0"           
+            hull_points="100000" shield_points="200000" speed="Immobile"
+            armor_mm="180" albedo="0.7" mass_tx="6"
+            metal_cost="8000" energy_consumption="1000"
+            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			city_socket_cost="1" name_for_city_sockets="Necropolis Hex" minimum_required_city_level_for_construction="1" base_ship_cap_in_custom_city="0"            
+            name_for_city_sockets_short="Hex"
+            ship_type_name_to_grant_more_of_in_custom_fleet="RavenousWightBodyguard" ship_type_count_to_grant_more_of_in_custom_fleet="5"		
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+	        >
+						<data_extension name="DLC3"
+								wight_tag="Ravenous Wight"
+								wight_type_percent="10"
+								wight_cap_increase="10"/>
+            <metal_flow purpose="SelfConstruction" throughput="2500"/>
+    </entity>
+        
+    <entity name="PossessedWightHome" copy_from="RavenousWightHome" tags="NecromancerBuildMenu,NecromancerFeedsFleet"
+	        icon_name="Ships4/NecromancerWightHome" icon_overlay="Overlays2/WightPossessed" gimbal_icon_size_multiplier="1.0"                        
+            display_name="被附身食尸鬼巢穴"
+            display_name_for_sidebar="附食巢穴"
+            description_short="该设施有时会为玩家提供被附身的食尸鬼而非普通食尸鬼。"
+            description="该设施允许将被击杀的舰船转化为被附身的食尸鬼而非普通食尸鬼。这些单位是玻璃大炮，每次开火都会伤害自身，但死亡时会生成一个普通食尸鬼。"
+			build_sidebar_categories_i_am_part_of="NecropolisWights"
+            metal_cost="8000" energy_consumption="1000"
+			city_socket_cost="1" name_for_city_sockets="Necropolis Hex" minimum_required_city_level_for_construction="1" base_ship_cap_in_custom_city="0"
+            name_for_city_sockets_short="Hex"
+            ship_type_name_to_grant_more_of_in_custom_fleet="PossessedWightBodyguard" ship_type_count_to_grant_more_of_in_custom_fleet="5"
+            >
+      <data_extension name="DLC3"
+          wight_tag="Possessed Wight"
+          wight_type_percent="10"
+          wight_cap_increase="10"/>
+    </entity>
+	
+    <entity name="InfectiousWightHome" copy_from="RavenousWightHome" tags="NecromancerBuildMenu,NecromancerFeedsFleet"
+	        icon_name="Ships4/NecromancerWightHome" icon_overlay="Overlays2/WightInfectious" gimbal_icon_size_multiplier="1.0"                        
+            display_name="感染性食尸鬼巢穴"
+            display_name_for_sidebar="感食巢穴"
+            description_short="该设施有时会为玩家提供感染性食尸鬼而非普通食尸鬼。"
+            description="该设施允许将被击杀的舰船转化为感染性食尸鬼而非普通食尸鬼。它们比其他食尸鬼拥有更强的死灵法术，并且更擅长传播这种效果。"
+	    build_sidebar_categories_i_am_part_of="NecropolisWights"
+            metal_cost="8000" energy_consumption="1000"
+	    city_socket_cost="1" name_for_city_sockets="Necropolis Hex" minimum_required_city_level_for_construction="1" base_ship_cap_in_custom_city="0"
+            name_for_city_sockets_short="Hex"
+            ship_type_name_to_grant_more_of_in_custom_fleet="InfectiousWightBodyguard" ship_type_count_to_grant_more_of_in_custom_fleet="5"
+            >
+      <data_extension name="DLC3"
+          wight_tag="Infectious Wight"
+          wight_type_percent="10"
+          wight_cap_increase="10"/>
+    </entity>
+
+    <entity name="SpectralWightHome" copy_from="RavenousWightHome" tags="NecromancerBuildMenu,NecromancerFeedsFleet"
+	        icon_name="Ships4/NecromancerWightHome" icon_overlay="Overlays2/WightSpectral" gimbal_icon_size_multiplier="1.0"                        
+            display_name="幽灵食尸鬼巢穴"
+            display_name_for_sidebar="幽食巢穴"
+            description_short="该设施有时会为玩家提供幽灵食尸鬼而非普通食尸鬼。"
+            description="该设施允许将被击杀的舰船转化为幽灵食尸鬼而非普通食尸鬼。这些单位会发射高伤害的不洁闪电。"
+			build_sidebar_categories_i_am_part_of="NecropolisWights"
+            metal_cost="8000" energy_consumption="1000"
+			city_socket_cost="1" name_for_city_sockets="Necropolis Hex" minimum_required_city_level_for_construction="2" base_ship_cap_in_custom_city="0"
+            name_for_city_sockets_short="Hex"
+            ship_type_name_to_grant_more_of_in_custom_fleet="SpectralWightBodyguard" ship_type_count_to_grant_more_of_in_custom_fleet="5"
+            >
+      <data_extension name="DLC3"
+          wight_tag="Spectral Wight"
+          wight_type_percent="10"
+          wight_cap_increase="4"/>
+    </entity>
+
+    <entity name="VengefulWightHome" copy_from="RavenousWightHome" tags="NecromancerBuildMenu,NecromancerFeedsFleet"
+	        icon_name="Ships4/NecromancerWightHome" icon_overlay="Overlays2/WightVengeful" gimbal_icon_size_multiplier="1.0"                        
+            display_name="复仇食尸鬼巢穴"
+            display_name_for_sidebar="复食巢穴"
+            description_short="该设施有时会为玩家提供复仇食尸鬼而非普通食尸鬼。"
+            description="该设施允许将被击杀的舰船转化为复仇食尸鬼而非普通食尸鬼。这些单位拥有电毒效果，并且死亡后会复活一次。"
+			build_sidebar_categories_i_am_part_of="NecropolisWights"
+            metal_cost="8000" energy_consumption="1000"
+			city_socket_cost="1" name_for_city_sockets="Necropolis Hex" minimum_required_city_level_for_construction="2" base_ship_cap_in_custom_city="0"
+            name_for_city_sockets_short="Hex"
+            ship_type_name_to_grant_more_of_in_custom_fleet="VengefulWightBodyguard" ship_type_count_to_grant_more_of_in_custom_fleet="5"
+            >
+      <data_extension name="DLC3"
+          wight_tag="Vengeful Wight"
+          wight_type_percent="10"
+          wight_cap_increase="4"/>
+    </entity>
+
+</root>
+  

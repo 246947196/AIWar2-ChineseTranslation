@@ -1,0 +1,405 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <entity name="RorqualHegira"
+      thematic_groups="ArkCapturable,Human"
+			special_entity_type="MobileOfficerCombatFleetFlagship"
+			voice_group="Ark_JackBishop" gimbal_icon_size_multiplier="1.5" is_ark="true"
+			visuals="assets/_finalgamemeshes/arks/arkrorqualhegira/rorqualhegira.prefab"
+			icon_name="Ships1/Ark" icon_overlay="Overlays2/Ark_RorqualHegira"
+			draw_in_galaxy_view="true"
+			tags="ShowsOnNormalDisplayMode,Capturable,AnyEarlyOfficer,AnyEarlyOfficer_Expert" capturable_seed_weight="50" capturable_max_per_galaxy="1"
+			size_scale="9"
+			visuals_scale_multiplier="3"
+			y_offset_of_icon="40"
+			uses_large_health_bar="true"
+			category="Ship"
+			collision_priority="11000"
+			display_name="逃亡者方舟"
+			description="这艘方舟旗舰拥有非常强大的力场生成器,可以通过对敌人造成伤害来恢复力场。在使用虫洞后也能减少受到的伤害。"
+			aip_to_claim="7"
+			metal_to_claim="500000"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" tech_upgrade_that_is_used_for_my_direct_science="Direct_ArkGeneral"
+			cost_for_ai_to_purchase="200"			
+      shield_size_scale="5" my_forcefield_does_not_shrink="true" my_forcefield_has_no_penalty_for_enemies_firing_out_of_it="true"
+			hull_points="250000" shield_points="1000000" speed="AboveAverage4"
+			metal_cost="500000" energy_consumption="100000"
+      assist_range="Normal1"			
+			armor_mm="85" albedo="0.8" engine_gx="18" mass_tx="7"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"                        
+            pushes_enemy_shields="true"
+	        speed_multiplier_first_5_seconds_on_planet="1.5"
+		
+                firing_delay_for_transported_ships="6"
+				shows_on_galaxy_map_for_explored_planets="true" always_visible_to_players="true"
+      priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="MajorPlanetLevelObjective"
+      eligible_for_hacks="IncreaseShieldDurability"
+			>
+    <hack_data hack_type="IncreaseShieldDurability"
+        override_cost_in_hacking_points="20"
+        cost_in_hacking_points_multiplier_per_times_same_unit_hacked="4.5"
+        max_times_single_unit_can_be_hacked="2">
+      <custom_hack_data key="AddedMultiplierPerHack" value="1.5" />
+    </hack_data>
+	<metal_flow purpose="RebuildingRemains" throughput="100" increase_per_mark_level="100"/>		
+    <system name="WD" display_name="双重弹道武器"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="15000" range="Normal6" shot_speed="Normal" rate_of_fire="Misery" fires_salvos_sequentially="true"
+				shot_type_data="DoubleShot_Blue"		
+				health_change_per_damage_dealt="2"
+				>
+				<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="Everything" comparison_type="AtLeast" compared_to="50" multiplier="2" added_multiplier_per_mark="0.4" />
+    </system>
+	<incoming_damage_modifier based_on="MyTimeAtPlanet" comparison_type="LessThan" compared_to="5" multiplier="0.5" />
+  </entity>
+
+  <entity name="RorqualHegiraHomeArk" copy_from="RorqualHegira"
+      thematic_groups="ArkHomeCommand,Human"
+			special_entity_type="HumanHomeArk" icon_name="Ships1/King"
+			uses_large_health_bar="true"  gimbal_icon_size_multiplier="2" is_critical_infrastructure="true"
+			tags="ShowsOnNormalDisplayMode,HumanArkEmpireArks"
+	  		energy_consumption="0"
+			player_loses_if_any_die="true"
+          capturable_can_seed_at_all="false"
+      metal_storage="2500000" added_metal_storage_per_mark_level="500000"
+      >
+				<resource_production type="Metal" amount="2200" increase_per_mark_level="400"/>
+				<resource_production type="Energy" amount="350000" increase_per_mark_level="25000"/>
+				<resource_production type="FuelArgon" amount="500000" />
+				<resource_production type="FuelRadon" amount="500000" />
+				<metal_flow purpose="FactoryConstructionForPlayerMobileFleets" throughput="3000" increase_per_mark_level="2000"/>
+      </entity>
+
+  <entity name="Thanatos"
+      thematic_groups="ArkCapturable,Human"
+			special_entity_type="MobileOfficerCombatFleetFlagship" 	
+			voice_group="Ark_LeeSen" gimbal_icon_size_multiplier="1.5" is_ark="true"
+			visuals="assets/_finalgamemeshes/arks/arkthanatos/arkthanatos.prefab"
+			icon_name="Ships1/Ark" icon_overlay="Overlays2/Ark_Thanatos"
+			draw_in_galaxy_view="true"
+			tags="ShowsOnNormalDisplayMode,Capturable,AnyOfficer,AnyOfficer_Expert" capturable_seed_weight="100" capturable_max_per_galaxy="1"
+			size_scale="12"
+			visuals_scale_multiplier="3"
+			y_offset_of_icon="40"
+			uses_large_health_bar="true"
+			category="Ship"
+			collision_priority="10000"
+			display_name="死神"
+			description="这艘方舟旗舰拥有相当高的伤害,可以将敌人转化为为你而战的僵尸。"
+			aip_to_claim="9"
+			metal_to_claim="500000"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" tech_upgrade_that_is_used_for_my_direct_science="Direct_ArkGeneral"
+			cost_for_ai_to_purchase="200"		
+			hull_points="650000" shield_points="350000" speed="AboveAverage4"
+			metal_cost="500000" energy_consumption="100000"
+      assist_range="Normal1"			
+			armor_mm="120" albedo="0.8" engine_gx="18" mass_tx="7"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			speed_multiplier_first_5_seconds_on_planet="1.5"
+			
+                        priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="MajorPlanetLevelObjective"
+                        firing_delay_for_transported_ships="6"
+						shows_on_galaxy_map_for_explored_planets="true" always_visible_to_players="true"
+      eligible_for_hacks="IncreaseWeaponPower"
+			>
+    <hack_data hack_type="IncreaseWeaponPower"
+        override_cost_in_hacking_points="24"
+        cost_in_hacking_points_multiplier_per_times_same_unit_hacked="4.5"
+        max_times_single_unit_can_be_hacked="2">
+      <custom_hack_data key="AddedMultiplierPerHack" value="2" />
+    </hack_data>
+	<metal_flow purpose="RebuildingRemains" throughput="100" increase_per_mark_level="100"/>		
+    <system name="WX" display_name="漩涡弹道武器"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="8000" range="AboveAverage2" shot_speed="Normal" rate_of_fire="Misery" fires_salvos_sequentially="true"
+				shot_type_data="ElegantCurl"				
+				>
+      <outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="2" />
+    </system>
+    <system name="WR" display_name="寄生弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="2000" range="AboveAverage2" shot_speed="Normal" rate_of_fire="Misery"
+				shots_per_salvo="16" fires_salvos_sequentially="false"
+				shot_type_data="ParasiteCurvedPinkShot" added_target_evaluator="ZombifyAsPrimary"
+				>
+      <death_effect_damage type="Zombification" tier_name="Thanatos"/>
+    </system>
+  </entity>
+
+  <entity name="ThanatosHomeArk" copy_from="Thanatos"
+      thematic_groups="ArkHomeCommand,Human"
+			special_entity_type="HumanHomeArk" icon_name="Ships1/King"
+			uses_large_health_bar="true"  gimbal_icon_size_multiplier="2" is_critical_infrastructure="true"
+			tags="ShowsOnNormalDisplayMode,HumanArkEmpireArks"
+	  		energy_consumption="0"
+			player_loses_if_any_die="true"
+          capturable_can_seed_at_all="false"
+      metal_storage="2500000" added_metal_storage_per_mark_level="500000"
+      >
+				<resource_production type="Metal" amount="2200" increase_per_mark_level="400"/>
+				<resource_production type="Energy" amount="350000" increase_per_mark_level="25000"/>
+				<resource_production type="FuelArgon" amount="500000" />
+				<resource_production type="FuelRadon" amount="500000" />
+				<metal_flow purpose="FactoryConstructionForPlayerMobileFleets" throughput="3000" increase_per_mark_level="2000"/>
+      </entity>
+
+
+  <entity name="Gyrn"
+      thematic_groups="ArkCapturable,Human,Factory"
+			special_entity_type="MobileOfficerCombatFleetFlagship" 			
+			voice_group="Ark_LucieLeroux" gimbal_icon_size_multiplier="1.5" is_ark="true"
+			visuals="assets/_finalgamemeshes/arks/arkgyrnthevoidhome/arkgyrnthevoidhome.prefab"
+			icon_name="Ships1/Ark" icon_overlay="Overlays2/Ark_Gyrn"
+			draw_in_galaxy_view="true"
+			tags="ShowsOnNormalDisplayMode,Capturable,AnyOfficer,AnyOfficer_Expert" capturable_seed_weight="40" capturable_max_per_galaxy="1"
+			size_scale="8"
+			visuals_scale_multiplier="3"
+			y_offset_of_icon="40"
+			uses_large_health_bar="true"
+			category="Ship"
+			collision_priority="10000"
+			display_name="吉恩,虚空之家"
+			description="非常强大的移动设施方舟旗舰。如果某支舰队的旗舰在同一行星或相邻行星上,且该舰队缺少战舰,则会自动生产替代舰船并直接传送到该旗舰处。同时也能生产无人机,并产生一些能量。"
+			fleet_design_template_i_use_for_drones="GrynDrones"
+			drone_starting_behavior_type="Attacker_Full"
+			aip_to_claim="9"
+			metal_to_claim="500000"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" tech_upgrade_that_is_used_for_my_direct_science="Direct_ArkGeneral"
+      pushes_enemy_shields="true"
+			cost_for_ai_to_purchase="200"		
+			hull_points="650000" shield_points="350000" speed="AboveAverage4"
+			metal_cost="500000" energy_consumption="0"
+      assist_range="Normal1"			
+			armor_mm="120" albedo="0.8" engine_gx="18" mass_tx="7"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			speed_multiplier_first_5_seconds_on_planet="1.5"
+			
+                        priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="MajorPlanetLevelObjective"                        
+                        firing_delay_for_transported_ships="6"
+						shows_on_galaxy_map_for_explored_planets="true" always_visible_to_players="true"
+      eligible_for_hacks="IncreaseShieldDurability"
+			>
+    <hack_data hack_type="IncreaseShieldDurability"
+        override_cost_in_hacking_points="20"
+        cost_in_hacking_points_multiplier_per_times_same_unit_hacked="4.5"
+        max_times_single_unit_can_be_hacked="2">
+      <custom_hack_data key="AddedMultiplierPerHack" value="2" />
+    </hack_data>
+	<metal_flow purpose="BuildingDronesInternally" throughput="7000"/>
+	<metal_flow purpose="RebuildingRemains" throughput="100" increase_per_mark_level="100"/>
+    <resource_production type="Energy" amount="500000"/>	
+    <system name="WX" display_name="漩涡弹道武器"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="10000" range="Normal3" shot_speed="Normal" rate_of_fire="Misery" fires_salvos_sequentially="true"
+				shot_type_data="ElegantCurl"				
+				>
+      <outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="2" />
+    </system>
+    <system name="L" display_name="发射器"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="5" range="Normal3" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="true" 				
+				shot_type_data="SaboteurDrone"
+				system_is_hidden_for_ui="true"
+				max_mark_level_to_function="0"
+				>
+    </system>	
+    <system name="L2" display_name="发射器"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="5" range="Normal3" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="true" 				
+				shot_type_data="DecoyDrone"
+				system_is_hidden_for_ui="true"
+				max_mark_level_to_function="0"
+				>
+    </system>
+    <system name="L3" display_name="发射器"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="5" range="Normal3" shot_speed="Normal" rate_of_fire="Devourer" 
+				shots_per_salvo="2" fires_salvos_sequentially="false"				
+				shot_type_data="TackleDrone"
+				system_is_hidden_for_ui="true"
+				max_mark_level_to_function="0"
+				>
+    </system>	
+    <system name="L4" display_name="发射器"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="5" range="Normal3" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="true" 				
+				shot_type_data="ScrapDrone"
+				system_is_hidden_for_ui="true"
+				max_mark_level_to_function="0"
+				>
+    </system>	
+    <metal_flow purpose="FactoryConstructionForPlayerMobileFleets" throughput="7500" increase_per_mark_level="7500" ignore_when_zero_or_negative="true"/>
+  </entity>
+
+  <entity name="GyrnHomeArk" copy_from="Gyrn"
+      thematic_groups="ArkHomeCommand,Human,Factory"
+			special_entity_type="HumanHomeArk" icon_name="Ships1/King"
+			uses_large_health_bar="true"  gimbal_icon_size_multiplier="2" is_critical_infrastructure="true"
+			tags="ShowsOnNormalDisplayMode,HumanArkEmpireArks"
+	  		energy_consumption="0"
+			player_loses_if_any_die="true"
+          capturable_can_seed_at_all="false"
+      metal_storage="2500000" added_metal_storage_per_mark_level="500000"
+				>
+				<resource_production type="Metal" amount="2200" increase_per_mark_level="400"/>
+				<resource_production type="Energy" amount="750000" increase_per_mark_level="25000"/>
+				<resource_production type="FuelArgon" amount="500000" />
+				<resource_production type="FuelRadon" amount="500000" />
+      </entity>
+
+
+
+  <entity name="Orchid"
+      thematic_groups="ArkCapturable,Human"
+			special_entity_type="MobileOfficerCombatFleetFlagship"
+			voice_group="Ark_ThomasWalker" gimbal_icon_size_multiplier="1.5" is_ark="true"
+			visuals="assets/_finalgamemeshes/arks/arktheorchid/arktheorchid.prefab"
+			icon_name="Ships1/Ark" icon_overlay="Overlays2/Ark_Orchid"
+			draw_in_galaxy_view="true"
+			tags="ShowsOnNormalDisplayMode,Capturable,AnyEarlyOfficer,AnyEarlyOfficer_Expert" capturable_seed_weight="30" capturable_max_per_galaxy="1"
+			size_scale="10"
+			visuals_scale_multiplier="3"
+			y_offset_of_icon="40"
+			uses_large_health_bar="true"
+			category="Ship"
+			collision_priority="10000"
+			display_name="兰花"
+			description="这艘方舟旗舰专注于超快速治疗。它还能生成救援孢子,这些孢子会牺牲自己来修复你的其他舰船。"
+			aip_to_claim="7"
+			metal_to_claim="500000"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" tech_upgrade_that_is_used_for_my_direct_science="Direct_ArkGeneral"
+			cost_for_ai_to_purchase="200"
+			assist_range="AboveAverage4"
+			hull_points="650000" shield_points="350000" speed="AboveAverage6"
+			metal_cost="500000" energy_consumption="100000"
+			armor_mm="120" albedo="0.8" engine_gx="18" mass_tx="7"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			speed_multiplier_first_5_seconds_on_planet="1.5"
+			
+                        firing_delay_for_transported_ships="6"
+						shows_on_galaxy_map_for_explored_planets="true" always_visible_to_players="true"
+                        priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="MajorPlanetLevelObjective"
+      eligible_for_hacks="IncreaseShieldDurability"
+			>
+    <hack_data hack_type="IncreaseShieldDurability"
+        override_cost_in_hacking_points="20"
+        cost_in_hacking_points_multiplier_per_times_same_unit_hacked="4.5"
+        max_times_single_unit_can_be_hacked="2">
+      <custom_hack_data key="AddedMultiplierPerHack" value="2" />
+    </hack_data>
+		<metal_flow purpose="RebuildingRemains" throughput="100" increase_per_mark_level="100"/>		
+    <metal_flow purpose="RepairingHullsOfFriendlies" throughput="60000" increase_per_mark_level="30000"/>
+    <metal_flow purpose="RepairingShieldsOfFriendlies" throughput="60000" increase_per_mark_level="30000"/>
+    <metal_flow purpose="RepairingEnginesOfFriendlies" throughput="60000" increase_per_mark_level="30000"/>
+    <system name="WL" display_name="聚变孢子炸弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="14000" range="Normal3" shot_speed="Normal" rate_of_fire="Misery" fires_salvos_sequentially="true"
+				shot_type_data="FusionBomb"
+				base_percent_damage_bypasses_personal_shields="1"	
+				health_change_per_damage_dealt="1"			
+				>
+    </system>
+    <system name="L" display_name="发射器"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1" range="Normal3" shot_speed="Normal" rate_of_fire="Low" fires_salvos_sequentially="true"
+				shot_type_data="RescueSporeDrone"
+				>
+    </system>
+  </entity>
+
+  <entity name="OrchidHomeArk" copy_from="Orchid"
+      thematic_groups="ArkHomeCommand,Human"
+			special_entity_type="HumanHomeArk" icon_name="Ships1/King"
+			uses_large_health_bar="true"  gimbal_icon_size_multiplier="2" is_critical_infrastructure="true"
+			tags="ShowsOnNormalDisplayMode,HumanArkEmpireArks"
+	  		energy_consumption="0"
+			player_loses_if_any_die="true"
+          capturable_can_seed_at_all="false"
+      metal_storage="2500000" added_metal_storage_per_mark_level="500000"
+      >
+				<resource_production type="Metal" amount="2200" increase_per_mark_level="400"/>
+				<resource_production type="Energy" amount="350000" increase_per_mark_level="25000"/>
+				<resource_production type="FuelArgon" amount="500000" />
+				<resource_production type="FuelRadon" amount="500000" />
+				<metal_flow purpose="FactoryConstructionForPlayerMobileFleets" throughput="3000" increase_per_mark_level="2000"/>
+      </entity>
+
+
+  <entity name="ArkOne"
+      thematic_groups="ArkCapturable,Human"
+			special_entity_type="MobileOfficerCombatFleetFlagship"
+			voice_group="Ark_AlanEdwards" gimbal_icon_size_multiplier="1.5" is_ark="true"
+			visuals="assets/_finalgamemeshes/arks/arkone/arkone.prefab"
+			icon_name="Ships1/Ark" icon_overlay="Overlays2/Ark_One"
+			draw_in_galaxy_view="true"
+			tags="ShowsOnNormalDisplayMode,Capturable,AnyEarlyOfficer,AnyEarlyOfficer_Expert" capturable_seed_weight="50" capturable_max_per_galaxy="1"
+			size_scale="6"
+			visuals_scale_multiplier="3"
+			y_offset_of_icon="40"
+			uses_large_health_bar="true"
+			category="Ship"
+			collision_priority="10000"
+			display_name="方舟一号"
+			description="这艘方舟旗舰专注于从远处减缓并击退敌人群体。"
+			aip_to_claim="7"
+			metal_to_claim="500000"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" tech_upgrade_that_is_used_for_my_direct_science="Direct_ArkGeneral"
+			cost_for_ai_to_purchase="200"			
+			hull_points="500000" shield_points="500000" speed="AboveAverage4"
+			metal_cost="500000" energy_consumption="100000"
+      assist_range="Normal1"			
+			armor_mm="120" albedo="0.8" engine_gx="18" mass_tx="7"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			speed_multiplier_first_5_seconds_on_planet="1.5"
+			
+                        priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="MajorPlanetLevelObjective"
+                        firing_delay_for_transported_ships="6"
+						shows_on_galaxy_map_for_explored_planets="true" always_visible_to_players="true"
+      eligible_for_hacks="IncreaseShieldDurability"                        
+			>
+    <hack_data hack_type="IncreaseShieldDurability"
+        override_cost_in_hacking_points="20"
+        cost_in_hacking_points_multiplier_per_times_same_unit_hacked="4.5"
+        max_times_single_unit_can_be_hacked="2">
+      <custom_hack_data key="AddedMultiplierPerHack" value="2" />
+    </hack_data>
+		<metal_flow purpose="RebuildingRemains" throughput="100" increase_per_mark_level="100"/>		
+   <system name="Q4" display_name="蜘蛛炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1050" range="High1" shot_speed="Normal" rate_of_fire="Misery" 
+				shots_per_salvo="30" fires_salvos_sequentially="false"
+				base_engine_stun_per_shot="16" added_engine_stun_per_shot_per_mark="4" engine_stun_to_engine_gx_less_than="16"
+				max_engine_stun_seconds="40" added_target_evaluator="EngineDamageAsMajorPrimary"
+				base_knockback_per_shot="2000" added_knockback_per_shot_per_mark="500" knockback_to_ships_mass_tx_less_than="2"
+				shot_type_data="EngineDisruptingShell"
+				>	
+    </system>
+  </entity>
+
+  <entity name="ArkOneHomeArk" copy_from="ArkOne"
+      thematic_groups="ArkHomeCommand,Human"
+			special_entity_type="HumanHomeArk" icon_name="Ships1/King"
+			uses_large_health_bar="true"  gimbal_icon_size_multiplier="2" is_critical_infrastructure="true"
+			tags="ShowsOnNormalDisplayMode,HumanArkEmpireArks"
+	  		energy_consumption="0"
+			player_loses_if_any_die="true"
+          capturable_can_seed_at_all="false"
+			metal_storage="2500000" added_metal_storage_per_mark_level="500000"
+      >
+				<resource_production type="Metal" amount="2200" increase_per_mark_level="400"/>
+				<resource_production type="Energy" amount="350000" increase_per_mark_level="25000"/>
+				<resource_production type="FuelArgon" amount="500000" />
+				<resource_production type="FuelRadon" amount="500000" />
+				<metal_flow purpose="FactoryConstructionForPlayerMobileFleets" throughput="3000" increase_per_mark_level="2000"/>
+      </entity>
+  
+</root>

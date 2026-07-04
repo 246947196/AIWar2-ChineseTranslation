@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <entity name="DarkSpireVengeanceGenerator"
+            thematic_groups="DarkSpire,Spire" npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+			tags="DarkSpire,HackForShipType,VengeanceGeneratorNormalSpawn,VengeanceGenerator,ShowsOnNormalDisplayMode,SapperImportantPoint"
+			draw_in_galaxy_view="true"
+			visuals="Assets/_FinalGameMeshes/Spire/DarkSpireVG/DarkSpireVG.prefab" gimbal_name="Vengeance Generator"
+			icon_name="Ships1/VengeanceGenerator" gimbal_icon_size_multiplier="1.4" 
+			category="Ship"
+			size_scale="10.8"
+			visuals_scale_multiplier="9"
+			y_offset_of_icon="30"
+			collision_priority="810"
+			display_name="复仇发生器"
+			display_name_for_sidebar="复仇发生器"
+			description="神秘古老的结构，形似叛变尖塔派系的建筑。无法被摧毁，但也没有武器。尽管如此，它正在产生大量能量，且每当有飞船在同一星球死亡时能量都会增加。当发生器达到临界质量时，它(以及银河系中任何其他发生器)都能生成一些非常危险的飞船。"
+			target_type_for_player="NeverTarget"
+			behavior="Stationary"
+			does_not_use_multipliers_from_mark_level="true"
+			starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="1400"
+			hull_points="20000" shield_points="70000" speed="Immobile"
+			metal_cost="1085000" energy_consumption="100000"
+			armor_mm="180" albedo="1" mass_tx="5"
+			eligible_for_hacks="ProvokeVengeanceStrike,HackToGrantShipLine_DarkSpire,RenderVengeanceGeneratorVulnerable"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			voice_group="Spire"
+			description_appender_dll="AIWarExternalCode"
+			description_appender_type="Arcen.AIW2.External.VengeanceGeneratorDescriptionAppender"
+                        priority_as_ai_target="IgnoreMe" priority_as_frd_target="IgnoreMe" priority_to_protect="IgnoreMe"
+                        grants_stuff_to_be_added_to_player_fleets="true"
+                        grants_stuff_to_be_added_to_player_fleets_strikecraft_options="2"
+                        grants_stuff_to_be_added_to_player_fleets_frigate_options="1"
+
+			>
+		<ship_class_data can_be_damaged="false" />
+  </entity>
+  <entity name="DarkSpireVengeanceGeneratorVulnerable"  copy_from="DarkSpireVengeanceGenerator"
+	  tags="DarkSpire,VengeanceGenerator,ShowsOnNormalDisplayMode,VengeanceGeneratorVulnerable,SapperImportantPoint"
+          icon_overlay="Overlays2/Guardian_Spider"
+          description="神秘古老的结构，形似叛变尖塔派系的建筑。由于被黑客入侵，这个复仇发生器现在可以被摧毁。它正在产生大量能量，且每当有飞船在同一星球死亡时能量都会增加。当发生器达到临界质量时，它(以及银河系中任何其他发生器)都能生成一些非常危险的飞船。玩家已通过黑客攻击使其变得脆弱。"
+          hull_points="200000" shield_points="700000" speed="Immobile"
+          eligible_for_hacks=""
+          priority_as_ai_target="NormalStarship" priority_as_frd_target="BiggerStarship" priority_to_protect="Expendable"
+          >
+		<ship_class_data can_be_damaged="true" />
+  </entity>
+
+  <entity name="DarkSpireVengeanceGeneratorConquestSpawn"  copy_from="DarkSpireVengeanceGenerator"
+          icon_overlay="Overlays2/Guardian_Spider"
+	  tags="DarkSpire,VengeanceGenerator,ShowsOnNormalDisplayMode,VengeanceGeneratorConquestSpawn,SapperImportantPoint"
+          display_name="征服模式复仇发生器"
+					display_name_for_sidebar="征服复仇发生器"
+	  description="神秘古老的结构，形似叛变尖塔派系的建筑。它没有武器，但正在产生大量能量，且每当有飞船在同一星球死亡时能量都会增加。当发生器达到临界质量时，它(以及银河系中任何其他发生器)都能生成一些非常危险的飞船。
+
+黑暗尖塔当前处于征服模式，这使得它们能快速折跃新的复仇发生器。这意味着这些复仇发生器可以被摧毁。
+
+花费能量黑入这个结构会将其转变为完整的复仇发生器。"
+          hull_points="2000000" shield_points="700000" speed="Immobile"
+          grants_minor_faction_planet_control="true"
+          eligible_for_hacks="ProvokeVengeanceStrike,HackToGrantShipLine_DarkSpire"
+          priority_as_ai_target="NormalStarship" priority_as_frd_target="BiggerStarship" priority_to_protect="Expendable"
+          >
+		<ship_class_data can_be_damaged="true" />
+  </entity>
+
+
+  <!-- This version of the vengeance generator can be destroyed since it's in production -->
+  <entity name="DarkSpireVengeanceGeneratorLocus"
+            thematic_groups="DarkSpire,Spire" npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+			tags="DarkSpire,VengeanceGeneratorLocus,ShowsOnNormalDisplayMode"
+			draw_in_galaxy_view="true"
+			visuals="Assets/_FinalGameMeshes/Spire/DarkSpireVG/DarkSpireVG.prefab" gimbal_name="Vengeance Generator Locus"
+			icon_name="Ships1/VengeanceGenerator" gimbal_icon_size_multiplier="1.4"
+                        icon_overlay="Overlays1/MegaTurret_Ion"
+			category="Ship"
+			size_scale="10.8"
+			visuals_scale_multiplier="9"
+			y_offset_of_icon="30"
+			collision_priority="810"
+			display_name="复仇发生器能量焦点"
+			display_name_for_sidebar="复仇焦点"
+			description="这是一个能量焦点，能像黑暗尖塔复仇发生器一样产生共鸣，但在折跃过程中可以被摧毁。"
+			target_type_for_player="NeverAutotargetButAllowManualTarget"
+			behavior="Stationary"
+			does_not_use_multipliers_from_mark_level="true"
+			starting_mark_level="Mark5" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="1000"
+			hull_points="20000" shield_points="70000" speed="Immobile"
+			metal_cost="605000" energy_consumption="100000"
+			armor_mm="180" albedo="1" mass_tx="5"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			voice_group="Spire"
+			description_appender_dll="AIWarExternalCode"
+			description_appender_type="Arcen.AIW2.External.VGLocusDescriptionAppender"
+      
+      priority_as_ai_target="IrreplaceableBigAsTheyCome" priority_as_frd_target="NotDangerous" priority_to_protect="Irreplaceable"
+			>
+  </entity>
+
+
+  <!-- Dark Spire Wards are seeded on AI Overlord planets and repel Dark Spire ships -->
+  <entity name="DarkSpireWard"
+            thematic_groups="DarkSpire,Spire,AI" npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+			tags="DarkSpireWard"
+			draw_in_galaxy_view="true"
+			visuals="Assets/_FinalGameMeshes/Spire/DarkSpireWard/DarkSpireWard.prefab" gimbal_name="Dark Spire Ward"
+			icon_name="ShipsSpire/DarkSpireWard" gimbal_icon_size_multiplier="1.4"
+			category="Ship"
+			size_scale="6.5"
+			visuals_scale_multiplier="3"
+			y_offset_of_icon="30"
+			collision_priority="810"
+			display_name="黑暗尖塔守卫"
+			display_name_for_sidebar="尖塔守卫"
+			description="AI已找到使用这些装置干扰黑暗尖塔能量的方法。只要这个守卫留在星球上，黑暗尖塔的飞船进入该星球时就会爆炸。"
+			target_type_for_player="NeverAutotargetButAllowManualTarget"
+			behavior="Stationary"
+			does_not_use_multipliers_from_mark_level="true"
+			starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="400"
+			hull_points="20000" shield_points="70000" speed="Immobile"
+			metal_cost="170000" energy_consumption="15000"
+			armor_mm="180" albedo="1" mass_tx="2"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			voice_group="Spire"
+      
+      priority_as_frd_target="MajorPlanetLevelObjective" priority_as_ai_target="MajorPlanetLevelObjective" priority_to_protect="MajorPlanetLevelObjective"
+			>
+  </entity>
+
+
+  <entity name="DarkSpireWraith"
+            thematic_groups="DarkSpire,Spire"    
+			tags="WeakDarkSpireSpawn,DarkSpireHackable,DarkSpireSpawn"
+			special_entity_type="LargeShipYesStacks"
+			visuals="Assets/_FinalGameMeshes/Spire/DarkSpireWraith/DarkSpireWraith.prefab"
+			icon_name="ShipsSpire/DarkSpireWraith"
+			size_scale="3.5"
+			visuals_scale_multiplier="0.8"
+			category="Ship" is_strikecraft="true"
+			y_offset_of_icon="10"
+			collision_priority="100"
+			display_name="黑暗尖塔幽灵"
+			display_name_for_sidebar="尖塔幽灵"
+			description="黑暗尖塔对所有生命的愤怒的微弱体现。"
+			tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="225" strength_multiplier="1.2"
+			hull_points="9000" shield_points="18000" speed="Normal1"
+			metal_cost="16000" energy_consumption="2000"
+			starting_mark_level="Mark3"
+			armor_mm="90" albedo="0.7" engine_gx="18" mass_tx="1"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			voice_group="Spire"
+            priority_as_ai_target="NormalStarship" priority_as_frd_target="BiggerStarship" priority_to_protect="Expendable"
+			>
+    <system name="WD" display_name="弹道双发"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1200" range="Small2" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+				shot_type_data="DoubleShot_Red"				
+				>
+				<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="80" multiplier="2" />
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+  </entity>
+
+  <entity name="DarkSpirePhantom"
+            thematic_groups="DarkSpire,Spire"
+			tags="WeakDarkSpireSpawn,DarkSpireHackable,DarkSpireSpawn"
+			special_entity_type="LargeShipYesStacks"
+			visuals="Assets/_FinalGameMeshes/Spire/DarkSpirePhantom/DarkSpirePhantom.prefab"
+			icon_name="ShipsSpire/DarkSpirePhantom"
+                        icon_overlay="Overlays1/Warhead_Storm"
+			size_scale="3.5"
+			visuals_scale_multiplier="0.8"
+			category="Ship" is_strikecraft="true"
+			y_offset_of_icon="10"
+			collision_priority="100"
+			display_name="黑暗尖塔幻影"
+			display_name_for_sidebar="尖塔幻影"
+			description="黑暗尖塔对所有生命的愤怒的微弱体现。"
+			tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="250" strength_multiplier="1.8"
+			hull_points="4000" shield_points="8000" speed="BelowAverage2"
+			metal_cost="16000" energy_consumption="2250"
+			starting_mark_level="Mark3"
+			armor_mm="30" albedo="0.4" engine_gx="18" mass_tx="1"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			voice_group="Spire"
+            priority_as_ai_target="NormalStarship" priority_as_frd_target="BiggerStarship" priority_to_protect="Expendable"
+			>
+    <system name="WT" display_name="等离子鱼雷"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="4000" range="AboveAverage4" shot_speed="Slow" rate_of_fire="VeryLow" fires_salvos_sequentially="true"
+				shot_type_data="PlasmaTorpedoAOEBurstAtEnd"
+				area_of_effect_size="500"				
+				aoe_spreads_damage_among_available_targets="true"
+				>
+		<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="1.5" />
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+  </entity>
+
+
+  <entity name="DarkSpireSpecter"
+            thematic_groups="DarkSpire,Spire"
+			tags="MediumDarkSpireSpawn,DarkSpireSpawn"
+			special_entity_type="LargeShipYesStacks"
+			gimbal_icon_size_multiplier="1.2"
+			visuals="Assets/_FinalGameMeshes/Spire/DarkSpireSpecter/DarkSpireSpecter.prefab"
+			icon_name="ShipsSpire/DarkSpireSpecter"
+			size_scale="7.5"
+			visuals_scale_multiplier="0.8"
+			category="Ship"
+			y_offset_of_icon="10"
+			collision_priority="100"
+			display_name="黑暗尖塔幽魂"
+			display_name_for_sidebar="尖塔幽魂"
+			description="黑暗尖塔对所有生命的愤怒的强大体现。"
+			blocks_enemy_claim_flows="true"
+			does_not_use_multipliers_from_mark_level="true"
+			starting_mark_level="Mark4" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="1600" strength_multiplier="1.2"
+			hull_points="100000" shield_points="200000" speed="BelowAverage2"
+			metal_cost="270000" energy_consumption="10000"
+			armor_mm="120" albedo="0.4" engine_gx="18" mass_tx="5"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			voice_group="Spire"
+            priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			>
+    <system name="Q3" display_name="毒刺射线"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="2250" range="Normal3" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="false"
+				shots_per_salvo="8"
+				shot_type_data="StingerBolt"				
+				>
+        <outgoing_damage_modifier applies_to="AllShields" based_on="MaxBubbleForcefield" comparison_type="GreaterThan" compared_to="10000" multiplier="4" />
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+  </entity>
+
+
+  <entity name="DarkSpireEidolon"
+            thematic_groups="DarkSpire,Spire"
+			tags="StrongDarkSpireSpawn,DarkSpireSpawn"
+			special_entity_type="LargeShipYesStacks"
+			gimbal_icon_size_multiplier="1.4"
+			visuals="Assets/_FinalGameMeshes/Spire/DarkSpireEidolon/DarkSpireEidolon.prefab"
+			icon_name="ShipsSpire/DarkSpireEidolon"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="12"
+			visuals_scale_multiplier="0.8"
+			y_offset_of_icon="10"
+			collision_priority="100"
+			display_name="黑暗尖塔幻象"
+      display_name_for_sidebar="尖塔幻象"
+			description="黑暗尖塔对所有生命的愤怒的恐怖体现。"
+			blocks_enemy_claim_flows="true"
+			does_not_use_multipliers_from_mark_level="true"
+			starting_mark_level="Mark5" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="5400" strength_multiplier="2"
+			hull_points="700000" shield_points="1400000" speed="BelowAverage2"
+			metal_cost="805000" energy_consumption="25000"
+			armor_mm="120" albedo="0.3" engine_gx="18" mass_tx="7"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			voice_group="Spire"
+      priority_as_ai_target="NormalStarship" priority_as_frd_target="BiggerStarship" priority_to_protect="SlightlyLessExpendable"
+			>
+
+    <system name="Q1" display_name="特斯拉线圈"
+				category="Weapon" firing_timing="OnlyInRange" range="Tiny3" shot_speed="Normal" rate_of_fire="VeryLow" fires_salvos_sequentially="false"
+				damage_per_shot="2400" shot_type_data="LightningGuardianExplosionAOEShot" added_target_evaluator="WeaponJamAsPrimary"
+				area_of_effect_size="3200"				
+				shots_detonate_immediately="true"
+				maximum_number_of_targets_hit_per_shot="20"
+        base_enemy_weapon_reload_slowing_seconds_per_shot="8"
+		max_enemy_weapon_reload_slowing_seconds="20"
+        enemy_weapon_reload_slowing_to_armor_mm_less_than="101"
+				>
+    </system>
+    <system name="T" display_name="快子阵列"
+				category="Passive"
+				tachyon_points="50" tachyon_range="VeryTiny2"
+				>
+    </system>
+    <system name="R2" display_name="能量波"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="2400" range="Normal3" shot_speed="VeryFast" rate_of_fire="Normal" fires_salvos_sequentially="true"
+				shots_per_salvo="8"
+				shot_type_data="EnergyWave"				
+				>
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+  </entity>
+  
+  <entity name="DarkSpireEidolonZenithTrader"  copy_from="DarkSpireEidolon" is_auto_scrapping_skipped_when_command_station_type_changes="true"
+        metal_cost="805000" build_sidebar_categories_i_am_part_of="StationKeepers"
+        behavior="Attacker_Full"
+        fleet_membership="Planetary" display_name="束缚的黑暗尖塔幻象" display_name_for_sidebar="束缚幻象"
+		starting_mark_level="Markless"
+        description="黑暗尖塔对所有生命的愤怒的恐怖体现...现在由顶点商人出售。如果你在银河系中已经拥有两个，商人将不会再卖给你。"
+				base_galaxy_wide_cap_for_players_constructing="2" galaxy_wide_cap_match_string="DSEiZT"
+      >
+    <fleet_membership name="ZenithPurchases" ship_cap_group="OtherDefense" weight="100" cap="2"/>
+    <metal_flow purpose="SelfConstruction" throughput="1000"/>
+  </entity>
+
+	<!-- player version of DarkSpire ships, that can be hacked for -->
+  
+	<!--Wraith-->
+	<entity copy_from="DarkSpireWraith" name="HumanWraith"
+			starting_mark_level="Mark2" max_mark_level="7" does_not_use_multipliers_from_mark_level="false"
+			mark_level_scale_style="Original"
+			display_name="已破解黑暗幽灵" display_name_for_sidebar="已破解幽灵" metal_cost="16000" tech_upgrades_that_benefit_me="Alien"
+			aip_when_granted_by_hack="3" is_strikecraft="true"
+			>
+		<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="100" cap="14" faction="DarkSpire"/>
+	</entity>
+  
+	<!--Phantom-->
+	<entity copy_from="DarkSpirePhantom" name="HumanPhantom"
+			starting_mark_level="Mark2" max_mark_level="7" does_not_use_multipliers_from_mark_level="false"
+			mark_level_scale_style="Original"
+			display_name="已破解黑暗幻影" display_name_for_sidebar="已破解幻影" metal_cost="16000" tech_upgrades_that_benefit_me="Alien"
+			aip_when_granted_by_hack="3" is_strikecraft="true"
+			>
+		<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="100" cap="10" faction="DarkSpire"/>
+	</entity>
+  
+	<!--Specter-->
+	<entity copy_from="DarkSpireSpecter" name="HumanSpector"
+			starting_mark_level="Mark2" max_mark_level="7" does_not_use_multipliers_from_mark_level="false"
+			mark_level_scale_style="OriginalWithoutCapRise"
+			display_name="已破解黑暗幽魂" display_name_for_sidebar="已破解幽魂" metal_cost="135000" tech_upgrades_that_benefit_me="Alien"
+			aip_when_granted_by_hack="3" special_entity_type="Frigate"
+			>
+		<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Frigate" weight="100" cap="6" faction="DarkSpire"/>
+	</entity>
+  
+	<!-- Special copies used by the Spire Hammer AI type, a few units are also used by the Ragnarok AI type for Dark Alliance purposes.
+	************************************************************************************************************************************************************ -->
+  
+	<entity name="AIDarkSpireWraith"
+	        thematic_groups="DarkSpire,Spire"
+			special_entity_type="LargeShipYesStacks"
+			visuals="Assets/_FinalGameMeshes/Spire/DarkSpireWraith/DarkSpireWraith.prefab"
+			icon_name="ShipsSpire/DarkSpireWraith"
+			size_scale="3.5"
+			visuals_scale_multiplier="0.8"
+			category="Ship" is_strikecraft="true"
+			y_offset_of_icon="10"
+			collision_priority="100"
+			display_name="AI黑暗尖塔幽灵"
+			display_name_for_sidebar="AI幽灵"
+			description="黑暗尖塔对所有生命的愤怒的微弱体现的AI改进版本。"
+			starting_mark_level="Mark3" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="400" strength_multiplier="1.2"
+			hull_points="10500" shield_points="21000" speed="BelowAverage1"
+			metal_cost="16000" energy_consumption="2000"
+			armor_mm="90" albedo="0.7" engine_gx="18" mass_tx="1"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			voice_group="Spire"
+			priority_as_ai_target="NormalStarship" priority_as_frd_target="BiggerStarship" priority_to_protect="Expendable"
+			>
+		<ai_ship_group_membership name="DarkSpireGuardians" weight="100"/>
+		<system name="WD" display_name="弹道双重射击"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1200" range="Small2" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+				shot_type_data="DoubleShot_Red"				
+				>
+				<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="80" multiplier="2" />
+		</system>
+	</entity>
+	
+	<entity name="AIDarkSpirePhantom"
+	        thematic_groups="DarkSpire,Spire"
+			special_entity_type="LargeShipYesStacks"
+			visuals="Assets/_FinalGameMeshes/Spire/DarkSpirePhantom/DarkSpirePhantom.prefab"
+			icon_name="ShipsSpire/DarkSpirePhantom"
+			size_scale="3.5"
+			visuals_scale_multiplier="0.8"
+			category="Ship" is_strikecraft="true"
+			y_offset_of_icon="10"
+			collision_priority="100"
+			display_name="AI黑暗尖塔幻影"
+			display_name_for_sidebar="AI幻影"
+			description="黑暗尖塔对所有生命的愤怒的微弱体现的AI升级版本。"
+			starting_mark_level="Mark3" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="425" strength_multiplier="1.8"
+			hull_points="5500" shield_points="11000" speed="BelowAverage2"
+			metal_cost="16000" energy_consumption="2250"
+			armor_mm="50" albedo="0.4" engine_gx="18" mass_tx="1"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			voice_group="Spire"
+			priority_as_ai_target="NormalStarship" priority_as_frd_target="BiggerStarship" priority_to_protect="Expendable"
+			>
+		<ai_ship_group_membership name="DarkSpireGuardians" weight="100"/>
+		<ai_ship_group_membership name="DarkAllianceFleetships" weight="33"/>
+		<system name="WT" display_name="等离子鱼雷"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="4000" range="AboveAverage4" shot_speed="Slow" rate_of_fire="VeryLow" fires_salvos_sequentially="true"
+				shot_type_data="PlasmaTorpedoAOEBurstAtEnd"
+				area_of_effect_size="500"				
+				aoe_spreads_damage_among_available_targets="true"
+				>
+		</system>
+	</entity>
+	
+	<entity name="AIDarkSpireSpecter"
+	        thematic_groups="DarkSpire,Spire" 
+			special_entity_type="LargeShipYesStacks"
+			gimbal_icon_size_multiplier="1.2"
+			visuals="Assets/_FinalGameMeshes/Spire/DarkSpireSpecter/DarkSpireSpecter.prefab"
+			icon_name="ShipsSpire/DarkSpireSpecter"
+			size_scale="7.5"
+			visuals_scale_multiplier="0.8"
+			category="Ship"
+			y_offset_of_icon="10"
+			collision_priority="100"
+			display_name="AI黑暗尖塔幽魂"
+			display_name_for_sidebar="AI幽魂"
+			description="黑暗尖塔对所有生命的愤怒的强大体现的AI复制版本，现已解除之前的限制。"
+			blocks_enemy_claim_flows="true"
+			starting_mark_level="Mark4" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="1500" strength_multiplier="1.2"
+			hull_points="100000" shield_points="200000" speed="BelowAverage1"
+			metal_cost="270000" energy_consumption="10000"
+			armor_mm="120" albedo="0.4" engine_gx="18" mass_tx="5"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			voice_group="Spire"
+            priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			>
+		<ai_ship_group_membership name="DarkSpireGuardians" weight="85"/>
+		<ai_ship_group_membership name="DarkAllianceGuardians" weight="33"/>
+		<system name="Q3" display_name="毒刺射线"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="2250" range="Normal3" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="false"
+				shots_per_salvo="8"
+				shot_type_data="StingerBolt"				
+				>
+			<outgoing_damage_modifier applies_to="AllShields" based_on="MaxBubbleForcefield" comparison_type="GreaterThan" compared_to="10000" multiplier="4" />
+		</system>
+	</entity>
+	
+	<entity name="AIDarkSpireEidolon"
+	        thematic_groups="DarkSpire,Spire"
+			special_entity_type="LargeShipYesStacks"
+			gimbal_icon_size_multiplier="1.4"
+			visuals="Assets/_FinalGameMeshes/Spire/DarkSpireEidolon/DarkSpireEidolon.prefab"
+			icon_name="ShipsSpire/DarkSpireEidolon"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="12"
+			visuals_scale_multiplier="0.8"
+			y_offset_of_icon="10"
+			collision_priority="100"
+			display_name="AI黑暗尖塔幻象"
+			display_name_for_sidebar="AI幻象"
+			description="黑暗尖塔对所有生命的愤怒的恐怖体现的AI高度升级版本。"
+			blocks_enemy_claim_flows="true"
+			starting_mark_level="Mark5" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="1800" strength_multiplier="2"
+			hull_points="200000" shield_points="400000" speed="BelowAverage1"
+			metal_cost="805000" energy_consumption="25000"
+			armor_mm="120" albedo="0.3" engine_gx="18" mass_tx="7"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			voice_group="Spire"
+			priority_as_ai_target="NormalStarship" priority_as_frd_target="BiggerStarship" priority_to_protect="SlightlyLessExpendable"
+			>
+		<ai_ship_group_membership name="DarkSpireDireGuardians" weight="100"/>
+		<system name="Q1" display_name="特斯拉线圈"
+				category="Weapon" firing_timing="OnlyInRange" range="Tiny3" shot_speed="Normal" rate_of_fire="VeryLow" fires_salvos_sequentially="false"
+				damage_per_shot="2400" shot_type_data="LightningGuardianExplosionAOEShot" added_target_evaluator="WeaponJamAsPrimary"
+				area_of_effect_size="3200"				
+				shots_detonate_immediately="true"
+				maximum_number_of_targets_hit_per_shot="20"
+				base_enemy_weapon_reload_slowing_seconds_per_shot="8"
+				max_enemy_weapon_reload_slowing_seconds="20"
+				enemy_weapon_reload_slowing_to_armor_mm_less_than="101"
+				>
+		</system>
+		<system name="T" display_name="快子阵列"
+				category="Passive"
+				tachyon_points="50" tachyon_range="VeryTiny2"
+				>
+		</system>
+		<system name="R2" display_name="能量波"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="2400" range="Normal3" shot_speed="VeryFast" rate_of_fire="Normal" fires_salvos_sequentially="true"
+				shots_per_salvo="8"
+				shot_type_data="EnergyWave"				
+				>
+		</system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+  
+</root>

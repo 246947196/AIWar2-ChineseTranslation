@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <map_populator_type name="Standard" description="这是游戏自带的常规算法。"
+        dll_name="AIWarExternalDeepProcessingCode" type_name="Arcen.AIW2.External.StandardMapPopulator"/>
+
+  <map_populator_type name="Tutorial" description="此选项不应在用户界面中显示，仅用于教程辅助。"
+        dll_name="AIWarExternalDeepProcessingCode" type_name="Arcen.AIW2.External.TutorialMapPopulator"
+        is_hidden="true"/>
+  
+  <map_populator_type name="TestChamber" description="此选项不应在用户界面中显示，仅用于填充测试室。"
+        dll_name="AIWarExternalDeepProcessingCode" type_name="Arcen.AIW2.External.TestChamberMapPopulator"
+        is_hidden="true"/>
+</root>

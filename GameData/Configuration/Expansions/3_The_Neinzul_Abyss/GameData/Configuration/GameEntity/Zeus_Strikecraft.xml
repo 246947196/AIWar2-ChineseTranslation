@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+
+
+<!--Mosquito Corvette. Specializes in swarming large units with its reverse tractor beams, draining health and taking reduced damage to units in range of its tractor beam-->
+	<entity name="MosquitoCorvette"	display_name="蚊式护卫舰"
+            thematic_groups="Strikecraft"
+		visuals="Assets/_DLC3/Strikecraft/MosquitoCorvette/MosquitoCorvette.prefab" visuals_bundle="exp3_neinzul_abyss"
+            icon_name="Ships1/Corvette"  icon_overlay="Overlays1/Corvette_Mosquito" gimbal_icon_size_multiplier="1"
+			voice_group="Silent"
+			category="Ship" is_strikecraft="true"
+			size_scale="2.5"
+			visuals_scale_multiplier="9"
+			collision_priority="100"
+			description="这艘护卫舰擅长用反向牵引光束群攻大型敌人，吸取敌人生命值，并强化自身以抵御原本可能致命的伤害。"			
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Medium,Disruptive"
+			cost_for_ai_to_purchase="10"
+			hull_points="8200" shield_points="0" speed="AboveAverage6"
+			metal_cost="5400" energy_consumption="800"
+			armor_mm="85" albedo="0.3" engine_gx="14" mass_tx="0.21"
+			damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.25"
+			cannot_be_stacked="true"
+			ship_or_structure_explosion_sfx="ShipLarge_Explosion"			
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="100" cap="14"/>
+		<fleet_membership name="AntiLargeMix" ship_cap_group="Strike" weight="100" cap="14"/>
+		<fleet_membership name="TractorMix" ship_cap_group="Strike" weight="50" cap="14"/>
+		<fleet_membership name="CorvetteMix" ship_cap_group="Strike" weight="100" cap="14"/>
+		<system name="B7" display_name="长鼻虹吸器"
+					category="Weapon" firing_timing="OnlyInRange"
+					damage_per_shot="70" range="VeryTiny3" shot_speed="Normal" rate_of_fire="Misery"
+					shot_type_data="HeavyBeamInvisible" beam_length_multiplier="1" hits_all_intersecting_targets="false" beam_weapon_visual_style="Laser_Red"				
+					shots_detonate_immediately="false" 
+					multiplier_damage_to_tractored_unit="7"
+					health_change_per_damage_dealt="1"
+					>
+		</system>
+		<system name="T" display_name="牵引光束"
+					category="Passive" is_reverse_tractor_beam="true"
+					tractor_range="VeryTiny3" tractor_count="1"  tractor_hits_albedo_less_than="1" tractor_hits_engine_gx_less_than="99" tractor_hits_mass_greater_than="5"
+					>
+		</system>
+    </entity>	
+	
+	
+	<entity name="Pillager" display_name="掠夺者"	
+            thematic_groups="Strikecraft"		
+			icon_name="Ships4/Pillager"
+		visuals="Assets/_DLC3/Strikecraft/Pillager/Pillager.prefab" visuals_bundle="exp3_neinzul_abyss"
+			voice_group="Raider"
+			size_scale="1.2"
+			visuals_scale_multiplier="4.8"
+			category="Ship" is_strikecraft="true"
+			collision_priority="100"
+			description="一艘速度缓慢、带有隐形装置的舰船，能够不受阻碍地穿过力场。它能吞噬敌人，将敌人的废金属转化为可回收资源。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Disruptive,Raid"
+			cost_for_ai_to_purchase="10"
+			hull_points="8200" shield_points="0" speed="Normal3"
+			metal_cost="5400" energy_consumption="800"
+			armor_mm="85" albedo="0.7" engine_gx="7" mass_tx="0.21"
+			can_pass_through_enemy_forcefields="true"
+			damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.2"
+			cannot_be_stacked="true"
+			ship_or_structure_explosion_sfx="ShipLarge_Explosion"			
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="100" cap="14"/>
+		<fleet_membership name="AntiLargeMix" ship_cap_group="Strike" weight="100" cap="14"/>
+		<fleet_membership name="RaidOffensiveMix" ship_cap_group="Strike" weight="100" cap="14"/>
+		<fleet_membership name="TractorMix" ship_cap_group="Strike" weight="50" cap="14"/>
+		<fleet_membership name="GluttonyMix" ship_cap_group="Strike" weight="100" cap="14"/>
+		<system name="B7" display_name="代谢爆发"
+					category="Weapon" firing_timing="OnlyInRange"
+					damage_per_shot="140" range="VeryTiny3" shot_speed="Normal" rate_of_fire="Devourer"
+					shot_type_data="Ambush"			
+					multiplier_damage_to_tractored_unit="7"
+					use_alternate_rate_of_fire_after_x_shots="6" alternate_rate_of_fire="ExtremelyLow"  use_alternate_rate_of_fire_for_x_shots_before_reverting="1"
+					>
+		<death_effect_damage type="GreaterMetabolization" tier_name="BountyHunter"/>			
+		</system>
+		<system name="T" display_name="牵引光束"
+					category="Passive" is_reverse_tractor_beam="true"
+					tractor_range="VeryTiny3" tractor_count="1"  tractor_hits_albedo_less_than="1" tractor_hits_engine_gx_less_than="99" tractor_hits_mass_greater_than="5"
+					>
+		</system>
+		<system name="C" display_name="隐形装置"
+					category="Passive"
+					cloaking_points="2000" cloaking_points_added_per_mark="1000"
+					>
+		</system>
+	</entity>
+		
+	<entity name="AreaBombard"
+	        thematic_groups="Strikecraft"
+		visuals="Assets/_DLC3/Strikecraft/AreaBombard/AreaBombard.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships4/AreaBombard"
+			voice_group="Sniper"
+			category="Ship" is_strikecraft="true"
+			size_scale="3"
+			visuals_scale_multiplier="5"
+			collision_priority="100"
+			display_name="区域轰炸舰"
+			description="发射威力强大、射程极远的等离子鱼雷，鱼雷会在目标周围区域爆炸，但造价昂贵且装填时间极长。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Concussion,Splash"
+			cost_for_ai_to_purchase="120" strength_multiplier="2"
+			hull_points="6000" shield_points="0" speed="BelowAverage1"
+			metal_cost="16000" energy_consumption="1000"
+			armor_mm="110" albedo="0.4" engine_gx="7" mass_tx="0.3"
+			ship_or_structure_explosion_sfx="ShipLarge_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			counter_attack_budget_override_multiplier="0.25"	
+			priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="100" cap="14"/>
+		<fleet_membership name="BasicOffensiveMix" ship_cap_group="Strike" weight="100" cap="14"/>
+		<fleet_membership name="AntiSmallMix" ship_cap_group="Strike" weight="100" cap="14"/>
+		<fleet_membership name="CrowdControlMix" ship_cap_group="Strike" weight="10" cap="19"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Strike" weight="100" cap="14"/>
+		<ai_ship_group_membership name="ArtilleristStrikecraft" weight="33"/>
+		<ai_ship_group_membership name="DefensiveStrikecraft" weight="33"/>	
+		<ai_ship_group_membership name="MassBombard" weight="100" required_expansion_list="1_The_Spire_Rises"/>
+		<ai_ship_group_membership name="AutocannonMinipodBombard" weight="50"/>		
+		<system name="WT" display_name="等离子鱼雷"
+					category="Weapon" firing_timing="OnlyInRange"
+					damage_per_shot="800" range="High1" shot_speed="Slow" rate_of_fire="Sloth" fires_salvos_sequentially="true"
+					shot_type_data="LightningExplosionAOEShot"	
+					area_of_effect_size="800" maximum_number_of_targets_hit_per_shot="15"		
+					>
+					<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtMost" compared_to="2" multiplier="1.2" />
+		</system>
+	</entity>
+	
+	 <entity name="StealthBombard"
+	         thematic_groups="Strikecraft"
+		visuals="Assets/_DLC3/Strikecraft/StealthBombard/StealthBombard.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships1/Bombard" icon_overlay="Overlays1/Starship_Raid"
+			voice_group="Sniper"
+			category="Ship" is_strikecraft="true"
+			size_scale="2.8"
+			visuals_scale_multiplier="6"
+			collision_priority="100"
+			display_name="隐形轰炸舰"
+			description="能连续发射威力强大、射程极远的等离子鱼雷，但造价昂贵且装填时间极长。它带有隐形装置，速度比同类舰船更快，但也更加脆弱。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Concussion,Raid"
+			cost_for_ai_to_purchase="120" strength_multiplier="2"
+			hull_points="4000" shield_points="0" speed="Normal3"
+			metal_cost="16000" energy_consumption="1000"
+			armor_mm="110" albedo="0.7" engine_gx="7" mass_tx="0.3"
+			ship_or_structure_explosion_sfx="ShipLarge_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			counter_attack_budget_override_multiplier="0.25"
+			priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			>
+	<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="100" cap="14"/>
+	<fleet_membership name="BasicOffensiveMix" ship_cap_group="Strike" weight="100" cap="14"/>
+	<fleet_membership name="AntiLargeMix" ship_cap_group="Strike" weight="100" cap="14"/>
+	<fleet_membership name="AntiStructureMix" ship_cap_group="Strike" weight="100" cap="14"/>
+	<fleet_membership name="FrigatesWithSupport" ship_cap_group="Strike" weight="100" cap="14"/>
+    <ai_ship_group_membership name="ArtilleristStrikecraft" weight="33"/>
+    <ai_ship_group_membership name="DefensiveStrikecraft" weight="33"/>	
+	<ai_ship_group_membership name="MassBombard" weight="100" required_expansion_list="1_The_Spire_Rises"/>
+    <ai_ship_group_membership name="AutocannonMinipodBombard" weight="50"/>		
+    <system name="WT" display_name="等离子鱼雷"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1250" range="High1" shot_speed="Slow" rate_of_fire="Sloth" fires_salvos_sequentially="true"
+				shot_type_data="PlasmaTorpedo"
+				use_alternate_rate_of_fire_after_x_shots="1" alternate_rate_of_fire="Devourer"  use_alternate_rate_of_fire_for_x_shots_before_reverting="4"	
+				>
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="1.2" />
+    </system>
+	<system name="C" display_name="隐形装置" category="Passive" cloaking_points="2000" cloaking_points_added_per_mark="1000"  >
+    </system>
+    </entity>
+	
+	<entity name="Bouncer"
+            thematic_groups="Strikecraft"
+		visuals="Assets/_DLC3/Strikecraft/Bouncer/Bouncer.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships4/Bouncer"
+			voice_group="MasterCombatant"
+			category="Ship" is_strikecraft="true"
+			size_scale="2"
+			visuals_scale_multiplier="7"
+			collision_priority="100"
+			display_name="拦截舰"
+			description="通过惯性火箭击退小型舰船进行掩护。抵抗其击退效果的舰船将受到更多伤害。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Concussion,Medium"
+			cost_for_ai_to_purchase="66" strength_multiplier="1.1"
+			hull_points="9300" shield_points="0" speed="Normal2"
+			metal_cost="5400" energy_consumption="1000"
+			armor_mm="85" albedo="0.3" engine_gx="7" mass_tx="0.3"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="100" cap="14"/>		
+		<fleet_membership name="MissileMix" ship_cap_group="Strike" weight="100" cap="14"/>
+		<fleet_membership name="CrowdControlMix" ship_cap_group="Strike" weight="10" cap="19"/>
+		<fleet_membership name="BreacherMix" ship_cap_group="Strike" weight="50" cap="14"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Strike" weight="100" cap="14"/>
+		<ai_ship_group_membership name="AntiEngineStrikecraftAndFrigates" weight="100"/>
+		<ai_ship_group_membership name="VanguardMLRSCorvette" weight="100"/>
+		<ai_ship_group_membership name="DevastatorFrigateMLRSConcussionCorvette" weight="100"/>	
+		<system name="R3" display_name="惯性火箭"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="100" shots_per_salvo="3" range="Normal3" shot_speed="Normal" rate_of_fire="SlightlyLow" fires_salvos_sequentially="true"
+				shot_type_data="Repulsor"	
+				base_knockback_per_shot="1000" added_knockback_per_shot_per_mark="250" knockback_to_ships_mass_tx_less_than="2" 
+				base_engine_stun_per_shot="4" added_engine_stun_per_shot_per_mark="1" engine_stun_to_engine_gx_less_than="14" max_engine_stun_seconds="15" added_target_evaluator="EngineDamageAsMinorPart"	
+				>
+		<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="2" multiplier="5" />	
+		</system>
+	
+         
+  </entity>
+	
+	
+	
+	
+	
+
+</root>

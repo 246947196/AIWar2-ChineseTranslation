@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+    <entity name="Marauder_Spire_Raider"
+	        thematic_groups="IsolatedHumanSepratists,Marauder,FallenSpire"
+	        special_entity_type="Frigate"
+		    tags="MarauderRaider"
+		    visuals="Assets/_DLC1/FactionIntegration/MarauderSpireRaider/MarauderSpireRaider.prefab" visuals_bundle="exp1_the_spire_rises"
+			icon_name="Ships1/MarauderRaider" icon_overlay="Overlays2/Guardian_Beam"
+			voice_group="Silent"
+			category="Ship"
+			size_scale="5.8"
+			visuals_scale_multiplier="5"
+			collision_priority="100"
+			display_name="尖塔掠夺者护卫舰"
+			display_name_for_sidebar="尖塔掠夺FFH"
+			description="一种融合了尖塔和AI技术的奇特掠夺者舰船。"
+			starting_mark_level="Mark3" does_not_use_multipliers_from_mark_level="true"
+			cost_for_ai_to_purchase="3000"
+			hull_points="350000" shield_points="125000" speed="BelowAverage1"
+			metal_cost="160000" energy_consumption="25000"
+			armor_mm="120" albedo="0.8" engine_gx="18" mass_tx="4"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+            priority_as_ai_target="NormalStarship" priority_as_frd_target="BiggerStarship" priority_to_protect="SlightlyLessExpendable"
+			>
+    <system name="W1" display_name="线圈光束"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="18000" range="AboveAverage4" shot_speed="Normal" rate_of_fire="High"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_RedBlack"
+				hits_all_intersecting_targets="true"				
+				shots_detonate_immediately="true"
+				is_coilbeam="true"
+				>			
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+
+</root>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--These "InitialPlayerBattlestation" are completely hand-designed battlestation-stlye fleets that are very inflexible by design.
+      They are intended to be basic starting points that you can choose at the start of the game,
+      which you can then use to further supplement yourself later on.  Each one is a major archetype,
+      focused on a different style of defensive play, and they use both their display name and description in the lobby.
+      
+      Creating too many of these would be a Bad Thing, because it creates paralysis for players.
+      
+      Note that ONLY the description and the name are shown, so the description had better be 
+      clear enough to let players choose things.  THAT said, the description for each turret or mine type will automatically
+      be appended if you use append_each_ship_description_to_main_description="true", so that will help.-->
+
+
+  <fleet_design name="ClassicStartingDefenses"
+        display_name="默认防御站"
+        description="这种默认组合擅长在敌方舰船通过虫洞时进行拦截或减速，并且对中型目标具有强大火力。\n如果两次选择相同的起始防御站，第二个将随机生成。"
+        design_logic="InitialPlayerBattlestation" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="GraviticBattlestation" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="InterplanetaryEngineer" ship_cap_group="Civilian" weight="100" cap="4"/>
+    <ship_membership name="AmbushTurret" ship_cap_group="Turret" weight="100" cap="50"/>
+    <ship_membership name="GrenadeLauncherTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+    <ship_membership name="ConcussionTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+    <ship_membership name="TractorArray" ship_cap_group="OtherDefense" weight="100" cap="20"/>
+	<ship_membership name="TachyonArray" ship_cap_group="OtherDefense" weight="100" cap="10"/>
+  </fleet_design>
+  
+  
+  
+  <fleet_design name="ShieldStartingDefenses" 
+        display_name="护盾防御站"
+        description="在你的母星上额外部署一个力场护盾，同时配备少量威力强大的炮塔和狙击炮塔。\n如果两次选择相同的起始防御站，第二个将随机生成。"
+        design_logic="InitialPlayerBattlestation" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="ShieldwallBattlestation" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="InterplanetaryEngineer" ship_cap_group="Civilian" weight="100" cap="4"/>
+    <ship_membership name="PlasmaTurret" ship_cap_group="Turret" weight="100" cap="5"/>
+    <ship_membership name="BeamCannon" ship_cap_group="Turret" weight="100" cap="5"/>
+    <ship_membership name="TritiumSniperTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+	<ship_membership name="ParalysisMinefield" ship_cap_group="OtherDefense" weight="100" cap="60"/>
+    <ship_membership name="TractorArray" ship_cap_group="OtherDefense" weight="100"  cap="20"/>
+	<ship_membership name="TachyonArray" ship_cap_group="OtherDefense" weight="100" cap="10"/>
+  </fleet_design>
+
+  
+  
+  <fleet_design name="EclecticStartingDefenses"
+        display_name="多样防御站"
+        description="哇，这个组合非常多样化。有工程强化设施、一些常规炮塔、雷区、额外的牵引光束，还有一些移动哨兵护卫舰。做好应对任何情况的准备！\n如果两次选择相同的起始防御站，第二个将随机生成。"
+        design_logic="InitialPlayerBattlestation" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="EngineeringBattlestation" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="InterplanetaryEngineer" ship_cap_group="Civilian" weight="100" cap="4"/>
+    <ship_membership name="ConcussionTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+    <ship_membership name="PlasmaTurret" ship_cap_group="Turret" weight="100" cap="5"/>
+    <ship_membership name="AreaMinefield" ship_cap_group="OtherDefense" weight="100" cap="60"/>
+    <ship_membership name="TractorArray" ship_cap_group="OtherDefense" weight="100" cap="30"/>
+    <ship_membership name="SentryFrigate" ship_cap_group="OtherDefense" weight="100" cap="6"/>
+	<ship_membership name="TachyonArray" ship_cap_group="OtherDefense" weight="100" cap="10"/>
+  </fleet_design>
+
+
+
+  <fleet_design name="MinelayerStartingDefenses"
+        display_name="布雷防御站"
+        description="大量各种类型的雷区，加上范围杀伤型炮塔，当你真的想把母星布置成陷阱时，这个组合再合适不过了。\n如果两次选择相同的起始防御站，第二个将随机生成。"
+        design_logic="InitialPlayerBattlestation" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="EnsnarerBattlestation" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="InterplanetaryEngineer" ship_cap_group="Civilian" weight="100" cap="4"/>
+    <ship_membership name="GrenadeLauncherTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+    <ship_membership name="FortifiedTeslaTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+    <ship_membership name="Minefield" ship_cap_group="OtherDefense" weight="100" cap="45"/>
+    <ship_membership name="AreaMinefield" ship_cap_group="OtherDefense" weight="100" cap="60"/>
+    <ship_membership name="ParalysisMinefield" ship_cap_group="OtherDefense" weight="100" cap="60"/>
+	<ship_membership name="TachyonArray" ship_cap_group="OtherDefense" weight="100" cap="10"/>
+  </fleet_design>
+  
+
+  <fleet_design name="WebbedStartingDefenses"
+        display_name="蛛网防御站"
+        description="这个组合非常适合对抗隐形舰船、引擎较弱的舰船、小型舰船群以及能源运营成本高的舰船。\n如果两次选择相同的起始防御站，第二个将随机生成。"
+        design_logic="InitialPlayerBattlestation" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="RevealerBattlestation" ship_cap_group="Centerpiece" weight="100" min="1" cap="1"/>
+	<ship_membership name="InterplanetaryEngineer" ship_cap_group="Civilian" weight="100" cap="4"/>
+    <ship_membership name="SpiderTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+    <ship_membership name="MLRSTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+    <ship_membership name="NucleophilicTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+    <ship_membership name="TractorArray" ship_cap_group="OtherDefense" weight="100" cap="20"/>
+	<ship_membership name="TachyonArray" ship_cap_group="OtherDefense" weight="100" cap="10"/>
+  </fleet_design>
+</root>

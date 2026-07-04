@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <setting name="AutoBuildCoreHangar" serialization_name="AB-CH" is_network_and_game_synced_setting="true" tags="IsAutoBuildingSetting,CoreHangar"
+          category="Automation" subcategory="AutoBuildAtPlanets" display_name="自动建造V翼无人机机库" type="IntSlider" default="0" min="0" max="30"
+         description="随指挥站自动建造V翼无人机机库。"/>
+		 
+  <setting name="AutoBuildExoticHangar" serialization_name="AB-EH" is_network_and_game_synced_setting="true" tags="IsAutoBuildingSetting,ExoticHangar"
+          category="Automation" subcategory="AutoBuildAtPlanets" display_name="自动建造伯劳拦截无人机机库" type="IntSlider" default="0" min="0" max="30"
+         description="随指挥站自动建造伯劳拦截无人机机库。"/>
+		 
+  <setting name="AutoBuildPiercingHangar" serialization_name="AB-PH" is_network_and_game_synced_setting="true" tags="IsAutoBuildingSetting,PiercingHangar"
+          category="Automation" subcategory="AutoBuildAtPlanets" display_name="自动建造轰炸机无人机机库" type="IntSlider" default="0" min="0" max="30"
+         description="随指挥站自动建造轰炸机无人机机库。"/>
+		 
+  <setting name="AutoBuildMeleeHangar" serialization_name="AB-MH" is_network_and_game_synced_setting="true" tags="IsAutoBuildingSetting,MeleeHangar"
+          category="Automation" subcategory="AutoBuildAtPlanets" display_name="自动建造代谢链锯无人机机库" type="IntSlider" default="0" min="0" max="30"
+         description="随指挥站自动建造代谢链锯无人机机库。"/>
+</root>

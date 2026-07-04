@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<entity name="VWing" is_partial_record="true">
+		<ai_ship_group_membership name="SpeedsterFastStrikecraft" weight="100"/>
+	</entity>
+	
+	<entity name="AutocannonMinipod" is_partial_record="true">
+		<ai_ship_group_membership name="SpeedsterFastStrikecraft" weight="100"/>
+	</entity>
+
+	<entity name="Molotov" is_partial_record="true">
+		<ai_ship_group_membership name="SpeedsterFastStrikecraft" weight="100"/>
+	</entity>
+
+	<entity name="Harasser" is_partial_record="true">
+		<ai_ship_group_membership name="SpeedsterFastStrikecraft" weight="100"/>
+	</entity>
+	
+	<entity name="Raider" is_partial_record="true">
+		<ai_ship_group_membership name="SpeedsterFastStrikecraft" weight="100"/>
+	</entity>
+
+	<entity name="Dagger" is_partial_record="true">
+		<ai_ship_group_membership name="SpeedsterFastStrikecraft" weight="200"/>
+	</entity>
+
+	<entity name="Raptor" is_partial_record="true">
+		<ai_ship_group_membership name="SpeedsterFastStrikecraft" weight="100"/>
+	</entity>
+
+	<entity name="Velociraptor" is_partial_record="true">
+		<ai_ship_group_membership name="SpeedsterFastStrikecraft" weight="50"/>
+	</entity>
+	
+	<entity name="Terrier" is_partial_record="true">
+		<ai_ship_group_membership name="SpeedsterFastStrikecraft" weight="100"/>
+	</entity>
+
+	<entity name="MetabolizingGangsaw" is_partial_record="true">
+		<ai_ship_group_membership name="SpeedsterFastStrikecraft" weight="100"/>
+	</entity>
+
+	<entity name="Stingray" is_partial_record="true">
+		<ai_ship_group_membership name="SpeedsterFastStrikecraft" weight="100"/>
+	</entity>
+
+	<entity name="Paralyser" is_partial_record="true">
+		<ai_ship_group_membership name="SpeedsterFastStrikecraft" weight="50"/>
+	</entity>
+
+	<entity name="Etherjet" is_partial_record="true">
+		<ai_ship_group_membership name="SpeedsterFastStrikecraft" weight="100"/>
+	</entity>
+
+	<entity name="Persuader" is_partial_record="true">
+		<ai_ship_group_membership name="SpeedsterFastStrikecraft" weight="50"/>
+	</entity>
+
+	<!-- Offensive Guardians -->
+
+	<entity name="NucleophilicGuardian" is_partial_record="true">
+		<ai_ship_group_membership name="SpeedsterFastGuardians" weight="100"/>
+	</entity>
+
+	<entity name="StealthGuardian" is_partial_record="true">
+		<ai_ship_group_membership name="SpeedsterFastGuardians" weight="50"/>
+	</entity>
+
+	<entity name="SpiderGuardian" is_partial_record="true">
+		<ai_ship_group_membership name="SpeedsterFastGuardians" weight="50"/>
+	</entity>
+
+	<entity name="ParalysisGuardian" is_partial_record="true">
+		<ai_ship_group_membership name="SpeedsterFastGuardians" weight="50"/>
+	</entity>
+
+	<entity name="SpeedyConcussionGuardian" display_name="快速震荡守卫者" copy_from="ConcussionGuardian"
+		speed="AboveAverage3"
+		display_name_for_sidebar="快震守"
+		>
+		<ai_ship_group_membership name="SpeedsterFastGuardians" weight="50"/>
+	</entity>
+
+	<entity name="SpeedyPlasmaGuardian" display_name="快速等离子守卫者" copy_from="PlasmaGuardian"
+		speed="AboveAverage3"
+	    display_name_for_sidebar="快等守"
+		>
+		<ai_ship_group_membership name="SpeedsterFastGuardians" weight="50"/>
+	</entity>
+
+	<entity name="SpeedyPikeGuardian" display_name="快速长矛守卫者" copy_from="PikeGuardian"
+		speed="AboveAverage4"
+	    display_name_for_sidebar="快矛守"
+		>
+		<ai_ship_group_membership name="SpeedsterFastGuardians" weight="50"/>
+	</entity>
+
+	<entity name="SpeedyGravityGuardian" display_name="快速重力守卫者" copy_from="GravityGuardian"
+		speed="AboveAverage4"
+	    display_name_for_sidebar="快重守"
+		>
+		<ai_ship_group_membership name="SpeedsterFastGuardians" weight="50"/>
+	</entity>
+
+
+	<!-- Warden Guardians -->
+
+	<!-- TODO: different visual / overlay -->
+	<entity name="SpeedBoostGuardian"
+	        thematic_groups="AI,Guardian"	
+			special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+			visuals="Assets/_DLC3/AI/SpeedBoostGuardian/SpeedBoostGuardian.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships1/Guardian" icon_overlay="Overlays1/Guardian_SpeedBoost"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="10"
+			visuals_scale_multiplier="19"
+			y_offset_of_icon="16"
+			collision_priority="400"
+			display_name="速度提升守卫者"
+	    	display_name_for_sidebar="速提守"
+			description="设计用于通过使用小型化的时空操纵引擎加速友方舰船，以支持典狱官的反应能力。"
+			blocks_enemy_claim_flows="true"
+			voice_group="Silent"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="520" strength_multiplier="1.5"			
+			hull_points="54000" shield_points="26000" speed="BelowAverage1"
+			metal_cost="80000" energy_consumption="7500"
+			armor_mm="40" albedo="0.4" engine_gx="14" mass_tx="5"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			allied_speed_multiplier="1.05" 
+			>
+	    <ai_ship_group_membership name="SpeedsterWardenBoosterGuardians" weight="100"/>		
+	    <system name="WW" display_name="弹道加农炮"
+					category="Weapon" firing_timing="OnlyInRange"
+					damage_per_shot="800" range="Normal1" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+					shot_type_data="ArmorPiercingShell"				
+					>
+	    </system>
+ 	</entity>
+
+ 	<!-- TODO: better visual, icon, and/or overlay -->
+ 	<entity name="SpeedMagnifier"
+	        thematic_groups="AI"	
+	        tags="SpeedMagnifier"
+	        gimbal_icon_size_multiplier="1.75" 
+	        visuals="Assets/_DLC3/AI/SpacetimeManipulator/SpacetimeManipulator.prefab" visuals_bundle="exp3_neinzul_abyss"
+	        icon_name="Ships4/SpeedBooster" icon_overlay="Overlays2/MummyRoyal"
+      		is_major_ai_structure="true"
+	        category="Ship"
+	        size_scale="9" visuals_scale_multiplier="18"
+          	draw_in_galaxy_view="true"   y_offset_of_icon="30"
+	      	display_name="时空操纵器"
+			display_name_for_sidebar="时空操"
+			description="通过使用逆向工程的古代天顶星技术扭曲时空结构，大幅提高本星球友方舰船的速度。"
+			behavior="Stationary"
+			automatically_dies_with_command_station="true"
+			never_leaves_remains="true"
+			allied_speed_multiplier="2.5" 
+			aip_on_death="5"
+      		triggers_general_readiness_on_ai_sentinels="true"
+			target_type_for_player="NeverAutotargetButAllowManualTarget"
+			voice_group="Silent"
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="200" 			
+			hull_points="150000" shield_points="150000" speed="Immobile"
+			metal_cost="3000000" energy_consumption="10000"
+			armor_mm="70" albedo="0.45" mass_tx="0.3"
+			ship_or_structure_explosion_sfx="StructureMidsize_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="StructureLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+		 	is_reinforcement_location="true" always_is_ai_turret_spawn_point="true"
+			eligible_for_hacks="Reprogram,Sabotage"
+      		priority_as_ai_target="IrreplaceableMisc" priority_as_frd_target="NotDangerous" priority_to_protect="BigFavoriteToy"
+      		external_invulnerability_unit_tag=""
+    		external_invulnerability_unit_type="GuardPost" external_invulnerability_unit_required_count="3"
+        	external_invulnerability_region="ThisPlanet"
+			>
+		<ai_ship_group_membership name="SpeedsterSingularFreakySurprisesSpeedMagnifiers" weight="100"/>
+    	<hack_data hack_type="Sabotage" override_cost_in_hacking_points="12" />
+    	<hack_data hack_type="Reprogram" override_cost_in_hacking_points="24" />
+  	</entity>  
+
+	<entity name="DireSpeedMagnifier" copy_from="SpeedMagnifier"
+		tags="DireSpeedMagnifier"
+		icon_name="Ships4/SpeedBooster" 
+		display_name="恐怖时空操纵器"
+		display_name_for_sidebar="恐时操"
+		description="通过使用逆向工程的古代天顶星技术扭曲时空结构，大幅提高本星球友方舰船的速度。这种恐怖变体提供更大的速度提升，并且对黑客攻击有抵抗力。"
+		allied_speed_multiplier="4" 
+		eligible_for_hacks="SabotageDire,ReprogramDire"
+		>
+		<ai_ship_group_membership name="SpeedsterDireSingularFreakySurprisesSpeedMagnifiers" weight="100" />
+    	<hack_data hack_type="SabotageDire" override_cost_in_hacking_points="12" />
+    	<hack_data hack_type="ReprogramDire" override_cost_in_hacking_points="24" />
+	</entity>
+</root>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <sub_type name="Normal" is_default="true"
+            display_name="智能猎手" abbreviation="Intelligent Predator"
+            description="标准行为模式，猎手舰队会根据其难度等级使用智能来决定最佳的进攻时机，以彻底压倒你。更高的猎手难度会更加智能。整个猎手舰队作为一个整体行动。"
+            AllowEntryIntoHostileTerritory="true"
+            ShouldCountAsThreat="true"
+            HostileRatio_TooDangerousToStay="2.0"
+            HostileRatio_TooDangerousToTarget="0.75"
+            HostileRatio_TooDangerousToGoThrough="0.6"
+            MyStrengthMultiplier="1.0"
+            EnemyStrengthMultiplier="1.5"
+            ShouldHuntEnemyKingUnits="true"
+            AutoKite="false"
+            UseFireteams="true"
+            NeverCampCloserThanXHopsToHostileTerritory="0"
+  >
+  </sub_type>
+  
+    <sub_type name="Defense" copy_from="Normal"
+            display_name="纯防御" abbreviation="Defense"
+            description="不会主动进攻并给你造成毁灭性损失，而是几乎像第二支守卫舰队一样行动 —— 当你进攻AI时，情况会变得非常棘手。"
+            AllowEntryIntoHostileTerritory="false"
+            HostileRatio_TooDangerousToStay="2.5"
+            HostileRatio_TooDangerousToTarget="1.0"
+            HostileRatio_TooDangerousToGoThrough="0.65"
+            UseFireteams="false"
+  >
+  </sub_type>
+  
+  <sub_type name="Reckless" copy_from="Normal"
+            display_name="鲁莽" abbreviation="Reckless"
+            description="在决定是否进攻时会更加激进。通常它会等到与你的力量达到一定比例才会行动，但鲁莽模式下这个要求会低得多。"
+            HostileRatio_TooDangerousToStay="2.5"
+            HostileRatio_TooDangerousToTarget="1.25"
+            HostileRatio_TooDangerousToGoThrough="0.65"
+            MyStrengthMultiplier="1.0"
+            EnemyStrengthMultiplier="1.1"
+  >
+  </sub_type>
+  
+  <sub_type name="KiteMaster" copy_from="Normal"
+            display_name="风筝大师" abbreviation="Kite Master"
+            description="在大多数方面与智能猎手舰队相似，但其舰船会开始使用你的舰船也能使用的风筝战术。这使得它们更难被追击！"
+            AutoKite="true"
+            MyStrengthMultiplier="1.0"
+            EnemyStrengthMultiplier="1.4"
+  >
+  </sub_type>
+
+</root>

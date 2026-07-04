@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  
+    <display_mode name="SearchByEverything"
+           is_default="true"
+           display_name="搜索所有内容"
+           tooltip="仅显示工具提示文本中任意位置包含输入文本的结果。"
+           dll_name="AIWarExternalVisualizationCode"
+           type_name="Arcen.AIW2.ExternalVisualization.UnitEncyclopediaTextboxFunction_SearchByEverything"
+           placeholder_text="搜索..."
+  />
+
+  <display_mode name="SearchByName"
+           is_default="true"
+           display_name="按名称搜索"
+           tooltip="将上述列表（无论您选择了哪个子集）进一步限制为名称与右侧文本框中的文本匹配的单位（如果有输入文本）。此搜索会同时检查简称和全称。"
+           dll_name="AIWarExternalVisualizationCode"
+           type_name="Arcen.AIW2.ExternalVisualization.UnitEncyclopediaTextboxFunction_SearchByName"
+           placeholder_text="搜索..."
+  />
+  
+  <display_mode name="SearchByDescription"
+           display_name="按描述搜索"
+           tooltip="将上述列表（无论您选择了哪个子集）进一步限制为描述中包含右侧文本框中文本的单位（如果有输入文本）。此搜索会同时检查简短描述和完整描述。
+           
+请注意，这里指的是颜色稍深的自由文本行，而非整个工具提示。"
+           dll_name="AIWarExternalVisualizationCode"
+           type_name="Arcen.AIW2.ExternalVisualization.UnitEncyclopediaTextboxFunction_SearchByDescription"
+           placeholder_text="搜索..."
+  />
+
+  <display_mode name="SearchByLore"
+           display_name="按背景故事搜索"
+           tooltip="将上述列表（无论您选择了哪个子集）进一步限制为背景故事文本中包含右侧文本框中文本的单位（如果有输入文本）。由于背景故事文本可能很长，此搜索可能会较慢。
+           
+提示：切换到这种搜索模式会将条目限制为仅包含背景故事的条目，这本身就很有用！"
+           dll_name="AIWarExternalVisualizationCode"
+           type_name="Arcen.AIW2.ExternalVisualization.UnitEncyclopediaTextboxFunction_SearchByLore"
+           placeholder_text="搜索..."
+  />
+
+  <display_mode name="SearchByTech"
+           display_name="按科技搜索"
+           tooltip="将上述列表（无论您选择了哪个子集）进一步限制为受益于输入科技的单位。"
+           dll_name="AIWarExternalVisualizationCode"
+           type_name="Arcen.AIW2.ExternalVisualization.UnitEncyclopediaTextboxFunction_SearchByTech"
+           placeholder_text="搜索..."
+  />
+  
+</root>

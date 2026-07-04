@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <input_action name="Debug_StartTestChamber"
+      category="Debug" display_name="启动测试房间"
+      description="如果您想测试舰船平衡性，可以使用'测试房间'来进行。填写[安装位置]/GameData/Configuration/TestChamber/中的XML文件，然后在主菜单界面按下此键进入。"
+      dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Input_DebugHandler"
+      default_should_override_saved_if_older_than_version="KeyRebindings_744"
+      key="None" />
+  <input_action name="Debug_InstantStopSim"
+      category="未使用" display_name="立即停止模拟"
+      description="~*~"
+      dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Input_DebugHandler"
+      default_should_override_saved_if_older_than_version="KeyRebindings_744"
+      key="None" />
+  <input_action name="Debug_InstantStopSimAndVisualUpdates"
+      category="未使用" display_name="立即停止模拟和视觉更新"
+      description="~*~"
+      dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Input_DebugHandler"
+      default_should_override_saved_if_older_than_version="KeyRebindings_744"
+      key="None" />
+  <input_action name="Debug_ResumeFromInstantStop"
+      category="未使用" display_name="从立即停止状态恢复"
+      description="~*~"
+      dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Input_DebugHandler"
+      default_should_override_saved_if_older_than_version="KeyRebindings_744"
+      key="None" />
+  <input_action name="Debug_RunExactlyNMoreSimSteps"
+      category="未使用" display_name="精确运行N个模拟步骤"
+      description="~*~"
+      dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Input_DebugHandler"
+      default_should_override_saved_if_older_than_version="KeyRebindings_744"
+      key="None" />
+  <input_action name="Debug_RunNMoreVisualUpdateSeconds"
+      category="未使用" display_name="运行N秒视觉更新"
+      description="~*~"
+      dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Input_DebugHandler"
+      default_should_override_saved_if_older_than_version="KeyRebindings_744"
+      key="None" />
+  <input_action name="Debug_DumpSquadData"
+      category="调试" display_name="导出编队数据"
+      description="将当前所选所有编队的大量数据输出到[安装位置]/GameData/SquadDataExports/DateTime.txt的新日志中。"
+      dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Input_DebugHandler"
+      default_should_override_saved_if_older_than_version="KeyRebindings_744"
+      key="None" />
+  <input_action name="Debug_DoCoreDump"
+      category="调试" display_name="执行核心转储"
+      description="如果您怀疑存在内存泄漏问题，请使用此功能并将结果发送给我们。按下此键后，会将游戏当前状态的大量数据输出到[安装位置]/GameData/CoreDumps/[日期][时间][状态].txt中。"
+      dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Input_DebugHandler"
+      default_should_override_saved_if_older_than_version="3803_Testing"
+      key="None" 
+      handling_type="NotPreventedByUI"/>
+  <input_action name="Debug_ReloadSelectXmlData"
+      category="调试" display_name="重新加载选定的XML数据"
+      description="主要对开发人员有用。从我们可能经常需要更改的特定字段中读取一些XML数据。"
+      dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Input_DebugHandler"
+      default_should_override_saved_if_older_than_version="KeyRebindings_744"
+      key="F8"
+      handling_type="NotPreventedByUI"/>
+  <input_action name="Debug_RebootAIW2"
+      category="调试" display_name="重启AIW2"
+      description="主要对开发人员有用。将您带回启动界面并重新加载所有内容，而无需关闭并重新启动应用程序。"
+      dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Input_DebugHandler"
+      key="None"
+      handling_type="NotPreventedByUI"/>
+  <input_action name="Debug_ToggleHideGUI"
+      category="实用工具" display_name="切换隐藏GUI"
+      description="隐藏用户界面，适用于截图。再次按下以显示GUI。"
+      dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Input_DebugHandler"
+      default_should_override_saved_if_older_than_version="3803_Testing"
+      key="F7" />
+  <input_action name="Debug_ToggleHideGimbals"
+      category="实用工具" display_name="切换隐藏舰船万向节"
+      description="隐藏舰船万向节，适用于截图。再次按下以显示万向节。"
+      dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Input_DebugHandler"
+      default_should_override_saved_if_older_than_version="3803_Testing"
+      key="None" />
+  <input_action name="Debug_DumpInfoFromUI"
+      category="调试" display_name="从UI导出信息"
+      description="将当前显示的UI窗口的所有信息以及文本框可能被阻止的相关信息同时输出到日志和弹出窗口中。"
+      dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Input_DebugHandler"
+      default_should_override_saved_if_older_than_version="3803_Testing"
+      key="None" 
+      handling_type="NotPreventedByUI"/>
+  <input_action name="LogAllThreads"
+      category="调试" display_name="记录所有线程"
+      description="游戏是否莫名卡顿？此功能将导出当前正在运行的所有线程列表以及它们的运行时长。如果有线程运行时间过长，可通过此方法查看。结果将保存到ArcenDebugLog.txt文件中。按下一次按钮，稍等片刻后再次按下可能会有所帮助。"
+      dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Input_DebugHandler"
+      key="None" 
+      handling_type="NotPreventedByUI"/>
+  <input_action name="AbortAllThreads"
+      category="调试" display_name="终止所有线程"
+      description="游戏是否莫名卡顿？此功能将终止游戏启动的所有线程，这可能会导致游戏数据损坏或崩溃。不过，它会提供游戏卡顿的确切代码位置（堆栈跟踪信息），对我们非常有用，您可以在ArcenDebuggingLog.txt文件中找到结果。操作后游戏可能会崩溃，也可能继续正常运行，但无论哪种情况，我们都希望获取日志。如果游戏恢复正常运行，保存游戏、退出并从操作系统重新启动游戏可能是个好主意。"
+      dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Input_DebugHandler"
+      key="None" 
+      handling_type="NotPreventedByUI"/>
+  
+    <input_action name="IncreaseAIDifficulty"
+      category="调试" display_name="增加AI难度"
+      description="~*~"
+      dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Input_DebugHandler"
+      default_should_override_saved_if_older_than_version="KeyRebindings_744"
+      key="None" />
+  <input_action name="DecreaseAIDifficulty"
+      category="调试" display_name="降低AI难度"
+      description="~*~"
+      dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Input_DebugHandler"
+      default_should_override_saved_if_older_than_version="KeyRebindings_744"
+      key="None" />
+
+    <input_action
+            name="IncreaseSpeed10x"
+            category="调试"
+            display_name="[涡轮模式] 速度提升10倍"
+            description="将速度提升10倍。如果您从'控制 > 实用工具 > 更激烈的游戏速度风格'中释放该功能，建议使用'Ctrl+加号'。请注意，要超过5倍速度，您还需要启用'调试 > 测试 > 涡轮模式'设置。"
+            dll_name="AIWarExternalCode"
+            type_name="Arcen.AIW2.External.Input_DebugHandler"
+            key="None"
+            />
+    <input_action
+            name="DecreaseSpeed10x"
+            category="调试"
+            display_name="[涡轮模式] 速度降低10倍"
+            description="将速度降低10倍。如果您从'控制 > 实用工具 > 更稳健的游戏速度风格'中释放该功能，建议使用'Ctrl+减号'。请注意，要超过5倍速度，您还需要启用'调试 > 测试 > 涡轮模式'设置。"
+            dll_name="AIWarExternalCode"
+            type_name="Arcen.AIW2.External.Input_DebugHandler"
+            key="None"
+            />
+    <input_action
+            name="Turbo50xSpeedWhileHeld"
+            category="调试"
+            display_name="[涡轮模式] 按住时50倍速度"
+            description="按住此按钮时，速度将提升至50倍，松开后恢复到之前的速度。建议使用'小键盘乘号'。请注意，要超过5倍速度，您还需要启用'调试 > 测试 > 涡轮模式'设置。"
+            dll_name="AIWarExternalCode"
+            type_name="Arcen.AIW2.External.Input_DebugHandler"
+            key=""
+            check_type="ButtonPressAndRelease"
+            />
+    <input_action
+            name="Turbo100xSpeedWhileHeld"
+            category="调试"
+            display_name="[涡轮模式] 按住时100倍速度"
+            description="按住此按钮时，速度将提升至100倍，松开后恢复到之前的速度。建议使用'小键盘除号'。请注意，要超过5倍速度，您还需要启用'调试 > 测试 > 涡轮模式'设置。"
+            dll_name="AIWarExternalCode"
+            type_name="Arcen.AIW2.External.Input_DebugHandler"
+            key=""
+            check_type="ButtonPressAndRelease"
+            />
+
+    <input_action
+            name="DebugAction1"
+            category="调试"
+            display_name="[通用] 调试动作1"
+            description="此功能本身无作用，供需要通过可配置按键实现特定功能的开发人员使用。"
+            dll_name="AIWarExternalCode"
+            type_name="Arcen.AIW2.External.Input_DebugHandler"
+            key=""
+            handling_type="NotPreventedByUI"
+            />
+
+    <input_action
+            name="DebugAction2"
+            category="调试"
+            display_name="[通用] 调试动作2"
+            description="此功能本身无作用，供需要通过可配置按键实现特定功能的开发人员使用。"
+            dll_name="AIWarExternalCode"
+            type_name="Arcen.AIW2.External.Input_DebugHandler"
+            key=""
+            handling_type="NotPreventedByUI"
+            />
+
+    <input_action
+            name="DebugAction3"
+            category="调试"
+            display_name="[通用] 调试动作3"
+            description="此功能本身无作用，供需要通过可配置按键实现特定功能的开发人员使用。"
+            dll_name="AIWarExternalCode"
+            type_name="Arcen.AIW2.External.Input_DebugHandler"
+            key=""
+            handling_type="NotPreventedByUI"
+            />
+
+    <input_action
+            name="DebugAction4"
+            category="调试"
+            display_name="[通用] 调试动作4"
+            description="此功能本身无作用，供需要通过可配置按键实现特定功能的开发人员使用。"
+            dll_name="AIWarExternalCode"
+            type_name="Arcen.AIW2.External.Input_DebugHandler"
+            key=""
+            handling_type="NotPreventedByUI"
+            />
+
+
+    <input_action
+            name="ToggleExperimentalTooltips"
+            category="提示信息/详情"
+            display_name="切换实验性提示信息"
+            description="在正常提示信息和实验性提示信息之间切换。"
+            dll_name="AIWarExternalCode"
+            type_name="Arcen.AIW2.External.Input_DebugHandler"
+            key="None"
+            handling_type="NotPreventedByUI"
+            />
+
+    <input_action
+            name="DumpNextTooltip"
+            category="调试"
+            display_name="记录下一个提示信息"
+            description="将下一个实体提示信息的原始文本记录到日志中。"
+            dll_name="AIWarExternalCode"
+            type_name="Arcen.AIW2.External.Input_DebugHandler"
+            key="None"
+            handling_type="NotPreventedByUI"
+            />
+
+    <input_action
+            name="ToggleDebugTooltips"
+            category="调试"
+            display_name="切换调试提示信息"
+            description="用于调试提示信息的格式和布局。"
+            dll_name="AIWarExternalCode"
+            type_name="Arcen.AIW2.External.Input_DebugHandler"
+            key="None"
+            handling_type="NotPreventedByUI"
+            />
+
+    <input_action
+            name="IncreaseTooltipScale"
+            category="调试"
+            display_name="增大提示信息缩放比例"
+            description="用于调试提示信息的格式和布局。"
+            dll_name="AIWarExternalCode"
+            type_name="Arcen.AIW2.External.Input_DebugHandler"
+            key="None"
+            handling_type="NotPreventedByUI"
+            />
+
+    <input_action
+            name="DecreaseTooltipScale"
+            category="调试"
+            display_name="减小提示信息缩放比例"
+            description="用于调试提示信息的格式和布局。"
+            dll_name="AIWarExternalCode"
+            type_name="Arcen.AIW2.External.Input_DebugHandler"
+            key="None"
+            handling_type="NotPreventedByUI"
+            />
+
+</root>

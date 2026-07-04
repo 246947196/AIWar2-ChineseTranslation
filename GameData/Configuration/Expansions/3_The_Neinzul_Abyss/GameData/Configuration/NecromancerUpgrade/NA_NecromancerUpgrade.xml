@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <record name="GrantNecromancerEssence"
+          display_name="从裂隙获取生命精华。"
+          Index="1000"
+          Type="GrantEssence"
+          Target="Faction"
+          RelatedResource_Normal="30"
+          RelatedResource_Scarce="15"
+          AlwaysAvailable="true"
+          >
+  </record>
+
+<!-- Unlock skeleton types -->
+  <record name="UnlockSkeletonWarrior"
+          display_name="解锁骷髅战士"
+          Index="1"
+          Type="UnlockSkeletonType"
+          ShipTypeNameForCapIncrease="SkeletonWarriorHome"
+          RelatedShipTypeName="SkeletonWarrior"
+          CapIncrease="1"
+          Target="Faction"
+          CanBeBonusStartingSkeleton="true"
+          tags="SkeletonStartingOption,EligibleForFirstRift"
+          >
+  </record>
+  <record name="UnlockSkeletonArcher"
+          display_name="解锁骷髅弓箭手"
+          Index="3"
+          Type="UnlockSkeletonType"
+          ShipTypeNameForCapIncrease="SkeletonArcherHome"
+          RelatedShipTypeName="SkeletonArcher"
+          CapIncrease="1"
+          Target="Faction"
+          CanBeBonusStartingSkeleton="true"
+          tags="SkeletonStartingOption,EligibleForFirstRift"
+          >
+  </record>
+  <!-- Now Skeleton Rogues, these are an acceptable starter option -->
+  <record name="UnlockSkeletonDetonator"
+          display_name="解锁骷髅游荡者"
+          Index="4"
+          Type="UnlockSkeletonType"
+          ShipTypeNameForCapIncrease="SkeletonDetonatorHome"
+          RelatedShipTypeName="SkeletonDetonator"
+          CapIncrease="1"
+          Target="Faction"
+		  CanBeBonusStartingSkeleton="true"
+          tags="SkeletonStartingOption,EligibleForFirstRift"
+          >
+  </record>
+  <record name="UnlockSkeletonMage"
+          display_name="解锁骷髅法师"
+          Index="5"
+          Type="UnlockSkeletonType"
+          ShipTypeNameForCapIncrease="SkeletonMageHome"
+          RelatedShipTypeName="SkeletonMage"
+          CapIncrease="2"
+          MustHaveAnyNecropolisAtThisLevel="2"
+          Target="Faction"
+          AdditionalAIPCost="1"
+          >
+  </record>
+  <record name="UnlockSkeletonLord"
+          display_name="解锁骷髅领主"
+          Index="6"
+          Type="UnlockSkeletonType"
+          ShipTypeNameForCapIncrease="SkeletonLordHome"
+          RelatedShipTypeName="SkeletonLord"
+          CapIncrease="3"
+          MustHaveAnyNecropolisAtThisLevel="3"
+          Target="Faction"
+          AdditionalAIPCost="2"
+          >
+  </record>
+
+  <!-- Unlock wight types -->
+  <record name="UnlockRavenousWight"
+          display_name="解锁贪婪幽灵"
+          Index="10"
+          Type="UnlockWightType"
+          ShipTypeNameForCapIncrease="RavenousWightHome"
+          RelatedShipTypeName="RavenousWight"
+          CapIncrease="1"
+          Target="Faction"
+          CanBeBonusStartingWight="true"
+          tags="WightStartingOption,EligibleForFirstRift"
+          >
+  </record>
+  <record name="UnlockPossessedWight"
+          display_name="解锁被附身幽灵"
+          Index="11"
+          Type="UnlockWightType"
+          ShipTypeNameForCapIncrease="PossessedWightHome"
+          RelatedShipTypeName="PossessedWight"
+          CapIncrease="1"
+          Target="Faction"
+          CanBeBonusStartingWight="true"
+          tags="WightStartingOption,EligibleForFirstRift"
+          >
+  </record>
+  <record name="UnlockInfectiousWight"
+          display_name="解锁传染性幽灵"
+          Index="12"
+          Type="UnlockWightType"
+          ShipTypeNameForCapIncrease="InfectiousWightHome"
+          RelatedShipTypeName="InfectiousWight"
+          CapIncrease="1"
+          Target="Faction"
+          CanBeBonusStartingWight="true"
+          tags="WightStartingOption,EligibleForFirstRift"
+          >
+  </record>
+  <record name="UnlockSpectralWight"
+          display_name="解锁幽灵般的幽灵"
+          Index="13"
+          Type="UnlockWightType"
+          ShipTypeNameForCapIncrease="SpectralWightHome"
+          RelatedShipTypeName="SpectralWight"
+          CapIncrease="1"
+          MustHaveAnyNecropolisAtThisLevel="2"
+          Target="Faction"
+          AdditionalAIPCost="1"
+          >
+  </record>
+  <record name="UnlockVengefulWight"
+          display_name="解锁复仇幽灵"
+          Index="14"
+          Type="UnlockWightType"
+          ShipTypeNameForCapIncrease="VengefulWightHome"
+          RelatedShipTypeName="VengefulWight"
+          CapIncrease="1"
+          MustHaveAnyNecropolisAtThisLevel="3"
+          Target="Faction"
+          AdditionalAIPCost="2"
+          >
+  </record>
+
+  <!-- Unlock Mummy Types -->
+  <record name="UnlockRoyalMummy"
+          display_name="解锁皇家木乃伊"
+          Index="15"
+          Type="UnlockMummyType"
+          ShipTypeNameForCapIncrease="RoyalMummyHome"
+          RelatedShipTypeName="RoyalMummy"
+          CapIncrease="1"
+          MustHaveAnyNecropolisAtThisLevel="4"
+          Target="Faction"
+          AdditionalAIPCost="4"
+          >
+  </record>
+  <record name="UnlockDecayingMummy"
+          display_name="解锁腐朽木乃伊"
+          Index="16"
+          Type="UnlockMummyType"
+          ShipTypeNameForCapIncrease="DecayingMummyHome"
+          RelatedShipTypeName="DecayingMummy"
+          CapIncrease="1"
+          MustHaveAnyNecropolisAtThisLevel="4"
+          Target="Faction"
+          AdditionalAIPCost="4"
+          >
+  </record>
+
+  <record name="UnlockWitheredMummy"
+          display_name="解锁枯萎木乃伊"
+          Index="17"
+          Type="UnlockMummyType"
+          ShipTypeNameForCapIncrease="WitheredMummyHome"
+          RelatedShipTypeName="WitheredMummy"
+          CapIncrease="1"
+          MustHaveAnyNecropolisAtThisLevel="4"
+          Target="Faction"
+          AdditionalAIPCost="4"
+          >
+  </record>
+
+  <!-- Generic unit unlocks -->
+  <record name="UnlockSpectre"
+          display_name="解锁幽灵"
+          Index="20"
+          Type="UnlockNewShip"
+          ShipTypeNameForCapIncrease="NecromancerTomb"
+          RelatedShipTypeName="NecromancerSpectre"
+          CapIncrease="2"
+          ForInitialRift="true"
+          Target="Faction"
+          >
+  </record>
+  <record name="UnlockGhast"
+          display_name="解锁食尸鬼"
+          Index="21"
+          Type="UnlockNewShip"
+          ShipTypeNameForCapIncrease="NecromancerCatacomb"
+          RelatedShipTypeName="NecromancerGhast"
+          CapIncrease="2"
+          ForInitialRift="true"
+          Target="Faction"
+          >
+  </record>
+
+  <record name="UnlockMansion"
+          display_name="解锁死亡英灵"
+          Index="23"
+          Type="UnlockNewShip"
+          ShipTypeNameForCapIncrease="NecromancerMansion"
+          RelatedShipTypeName="NecromancerDraugr"
+          CapIncrease="2"
+          ForInitialRift="true"
+          Target="Faction"
+          >
+  </record>
+
+  <record name="UnlockMausoleum"
+          display_name="解锁亡魂"
+          Index="24"
+          Type="UnlockNewShip"
+          ShipTypeNameForCapIncrease="NecromancerMausoleum"
+          RelatedShipTypeName="NecromancerRevenant"
+          CapIncrease="1"
+          MustHaveAnyNecropolisAtThisLevel="3"
+          Target="Faction"
+          AdditionalAIPCost="4"
+          >
+  </record> 
+  <record name="UnlockLaboratory"
+          display_name="解锁骨龙"
+          Index="25"
+          Type="UnlockNewShip"
+          ShipTypeNameForCapIncrease="NecromancerLaboratory"
+          RelatedShipTypeName="NecromancerBoneDragon"
+          CapIncrease="1"
+          MustHaveAnyNecropolisAtThisLevel="4"
+          Target="Faction"
+          AdditionalAIPCost="5"
+          >
+  </record>
+
+  <record name="UnlockGraveyard"
+          display_name="解锁女妖"
+          Index="26"
+          Type="UnlockNewShip"
+          ShipTypeNameForCapIncrease="NecromancerGraveyard"
+          RelatedShipTypeName="NecromancerBanshee"
+          CapIncrease="1"
+          ForSecondRift="true"
+          Target="Faction"
+          UtilityUpgrade="true"
+          tags="UtilityStartingOption"
+          >
+  </record>
+
+  <record name="UnlockMorgue"
+          display_name="解锁伊戈尔"
+          Index="22"
+          Type="UnlockNewShip"
+          ShipTypeNameForCapIncrease="NecromancerMorgue"
+          RelatedShipTypeName="NecromancerIgor"
+          ForSecondRift="true"
+          CapIncrease="1"
+          Target="Faction"
+          UtilityUpgrade="true"
+          tags="UtilityStartingOption"
+          >
+  </record>
+
+  <record name="UnlockEffigy"
+          display_name="解锁式神"
+          Index="27"
+          Type="UnlockNewShip"
+          ShipTypeNameForCapIncrease="NecromancerEffigy"
+          RelatedShipTypeName="NecromancerIkiryo"
+          CapIncrease="1"
+          Target="Faction"
+          UtilityUpgrade="true"
+          tags="UtilityStartingOption"
+          >
+  </record>
+
+
+  <!-- Cap increasing hacks -->
+  <record name="IncreaseBaseSkeletonCapForFleet"
+          display_name="增加该舰队的骷髅软上限"
+          Index="100"
+          Type="IncreaseSkeletonSoftCap"
+          CapIncrease="40"
+          Target="Fleet"
+          >
+  </record>
+  <record name="IncreaseBaseWightCapForFleet"
+          display_name="增加该舰队的幽灵软上限"
+          Index="101"
+          Type="IncreaseWightSoftCap"
+          CapIncrease="15"
+          Target="Fleet"
+          >
+  </record>
+
+  <record name="IncreaseSkeletonWarriorCap"
+          display_name="增加该舰队的骷髅战士护卫上限"
+          Index="110"
+          Type="IncreaseSkeletonCap"
+          ShipTypeNameForCapIncrease="SkeletonWarriorBodyguard"
+          CapIncrease="5"
+          PrereqUpgradeIndex1="1"
+          Target="Fleet"
+          >
+  </record>
+
+  <record name="IncreaseSkeletonArcherCap"
+          display_name="增加该舰队的骷髅弓箭手护卫上限"
+          Index="120"
+          Type="IncreaseSkeletonCap"
+          ShipTypeNameForCapIncrease="SkeletonArcherBodyguard"
+          CapIncrease="5"
+          PrereqUpgradeIndex1="3"
+          Target="Fleet"
+          >
+  </record>
+
+  <record name="IncreaseSkeletonDetonatorBodyguardCap"
+          display_name="增加该舰队的骷髅游荡者护卫上限"
+          Index="130"
+          Type="IncreaseSkeletonCap"
+          ShipTypeNameForCapIncrease="SkeletonDetonatorBodyguard"
+          CapIncrease="5"
+          PrereqUpgradeIndex1="4"
+          Target="Fleet"
+          >
+  </record>
+
+  <record name="IncreaseSkeletonMageBodyguardCap"
+          display_name="增加该舰队的骷髅法师护卫上限"
+          Index="140"
+          Type="IncreaseSkeletonCap"
+          ShipTypeNameForCapIncrease="SkeletonMageBodyguard"
+          CapIncrease="2"
+          PrereqUpgradeIndex1="5"
+          Target="Fleet"
+          >
+  </record>
+
+  <record name="IncreaseSkeletonLordBodyguardCap"
+          display_name="增加该舰队的骷髅领主护卫上限"
+          Index="150"
+          Type="IncreaseSkeletonCap"
+          ShipTypeNameForCapIncrease="SkeletonLordBodyguard"
+          CapIncrease="1"
+          PrereqUpgradeIndex1="6"
+          Target="Fleet"
+          >
+  </record>
+
+  <record name="IncreaseRavenousWightBodyguardCap"
+          display_name="增加该舰队的贪婪幽灵护卫上限"
+          Index="200"
+          Type="IncreaseWightCap"
+          ShipTypeNameForCapIncrease="RavenousWightBodyguard"
+          CapIncrease="2"
+          PrereqUpgradeIndex1="10"
+          Target="Fleet"
+          >
+  </record>
+
+  <record name="IncreasePossessedWightBodyguardCap"
+          display_name="增加该舰队的被附身幽灵护卫上限"
+          Index="201"
+          Type="IncreaseWightCap"
+          ShipTypeNameForCapIncrease="PossessedWightBodyguard"
+          CapIncrease="2"
+          PrereqUpgradeIndex1="11"
+          Target="Fleet"
+          >
+  </record>
+  <record name="IncreaseInfectiousWightBodyguardCap"
+          display_name="增加该舰队的传染性幽灵护卫上限"
+          Index="202"
+          Type="IncreaseWightCap"
+          ShipTypeNameForCapIncrease="InfectiousWightBodyguard"
+          CapIncrease="2"
+          PrereqUpgradeIndex1="12"
+          Target="Fleet"
+          >
+  </record>
+
+  <record name="IncreaseSpectralWightBodyguardCap"
+          display_name="增加该舰队的幽灵般的幽灵护卫上限"
+          Index="203"
+          Type="IncreaseWightCap"
+          ShipTypeNameForCapIncrease="SpectralWightBodyguard"
+          CapIncrease="2"
+          PrereqUpgradeIndex1="13"
+          Target="Fleet"
+          >
+  </record>
+  <record name="IncreaseVengefulWightBodyguardCap"
+          display_name="增加该舰队的复仇幽灵护卫上限"
+          Index="204"
+          Type="IncreaseWightCap"
+          ShipTypeNameForCapIncrease="VengefulWightBodyguard"
+          CapIncrease="2"
+          PrereqUpgradeIndex1="14"
+          Target="Fleet"
+          >
+  </record>
+
+  <!-- Transformation options -->
+  <record name="ClaimBlaster"
+          display_name="获取恐怖旗舰蓝图。"
+          Index="300"
+          Type="ClaimBlueprints"
+          Target="Faction"
+          MinFlagshipLevel="2"
+          RelatedShipTypeName="NecromancerBlasterFlagship"
+          ReplaceIfAlreadyUpgraded="true"
+          >
+  </record>
+  <record name="ClaimTank"
+          display_name="获取不屈旗舰蓝图。"
+          Index="310"
+          Type="ClaimBlueprints"
+          Target="Faction"
+          MinFlagshipLevel="2"
+          RelatedShipTypeName="NecromancerTankFlagship"
+          ReplaceIfAlreadyUpgraded="true"
+          >
+  </record>
+  
+   <record name="ClaimHarrowingFlagship"
+          display_name="获取令人痛苦的旗舰蓝图。"
+          Index="320"
+          Type="ClaimBlueprints"
+          Target="Faction"
+          MinFlagshipLevel="2"
+          RelatedShipTypeName="NecromancerStarburstFlagship"
+          ReplaceIfAlreadyUpgraded="true"
+          >
+  </record>
+
+  <record name="ClaimSlothfulFlagship"
+          display_name="获取懒惰旗舰蓝图。"
+          Index="330"
+          Type="ClaimBlueprints"
+          Target="Faction"
+          MinFlagshipLevel="3"
+          RelatedShipTypeName="NecromancerSlothfulFlagship"
+          ShouldNotAppearInRift="true"
+		  ReplaceIfAlreadyUpgraded="true"
+          >
+  </record>
+
+  <record name="ClaimWrathfulFlagship"
+          display_name="获取愤怒旗舰蓝图。"
+          Index="340"
+          Type="ClaimBlueprints"
+          Target="Faction"
+          MinFlagshipLevel="3"
+          RelatedShipTypeName="NecromancerWrathfulFlagship"
+          ShouldNotAppearInRift="true"
+		  ReplaceIfAlreadyUpgraded="true"
+          >
+  </record>
+  
+   <record name="ClaimCyclopeanFlagship"
+          display_name="获取独眼巨人旗舰蓝图。"
+          Index="350"
+          Type="ClaimBlueprints"
+          Target="Faction"
+          MinFlagshipLevel="3"
+          RelatedShipTypeName="NecromancerCyclopeanFlagship"
+          ShouldNotAppearInRift="true"
+		  ReplaceIfAlreadyUpgraded="true"
+          >
+  </record>
+  
+  <record name="ClaimDecadentFlagship"
+          display_name="获取堕落旗舰蓝图。"
+          Index="360"
+          Type="ClaimBlueprints"
+          Target="Faction"
+          MinFlagshipLevel="4"
+          RelatedShipTypeName="NecromancerDecadentFlagship"
+          ShouldNotAppearInRift="true"
+		  ReplaceIfAlreadyUpgraded="true"
+          >
+  </record>
+  
+   <record name="ClaimAccursedFlagship"
+          display_name="获取被诅咒旗舰蓝图。"
+          Index="370"
+          Type="ClaimBlueprints"
+          Target="Faction"
+          MinFlagshipLevel="4"
+          RelatedShipTypeName="NecromancerAccursedFlagship"
+          ShouldNotAppearInRift="true"
+		  ReplaceIfAlreadyUpgraded="true"
+          >
+  </record>
+ 
+  <record name="ClaimEnviousFlagship"
+          display_name="获取嫉妒旗舰蓝图。"
+          Index="380"
+          Type="ClaimBlueprints"
+          Target="Faction"
+          MinFlagshipLevel="4"
+          RelatedShipTypeName="NecromancerEnviousFlagship"
+          ShouldNotAppearInRift="true"
+		  ReplaceIfAlreadyUpgraded="true"
+          >
+  </record>
+  
+   <record name="ClaimBlasphemousFlagship"
+          display_name="获取亵渎旗舰蓝图。"
+          Index="390"
+          Type="ClaimBlueprints"
+          Target="Faction"
+          MinFlagshipLevel="5"
+          RelatedShipTypeName="NecromancerBlasphemousFlagship"
+          ShouldNotAppearInRift="true"
+		  ReplaceIfAlreadyUpgraded="true"
+          >
+  </record>
+  
+  <record name="ClaimPlagueswarmFlagship"
+          display_name="获取瘟疫蜂群旗舰蓝图。"
+          Index="400"
+          Type="ClaimBlueprints"
+          Target="Faction"
+		  MinFlagshipLevel="5"
+          RelatedShipTypeName="NecromancerPlagueswarmFlagship"
+          ShouldNotAppearInRift="true"
+		  ReplaceIfAlreadyUpgraded="true"
+          >
+  </record>
+
+  <record name="ClaimDrakeFlagship"
+          display_name="获取龙旗舰蓝图。"
+          Index="410"
+          Type="ClaimBlueprints"
+          Target="Faction"
+		  MinFlagshipLevel="5"
+          RelatedShipTypeName="NecromancerDrakeFlagship"
+          ShouldNotAppearInRift="true"
+		  ReplaceIfAlreadyUpgraded="true"
+          >
+  </record>
+  <record name="ClaimTranscendentFlagship"
+          display_name="获取超凡旗舰蓝图。"
+          Index="420"
+          Type="ClaimBlueprints"
+          Target="Faction"
+		  MinFlagshipLevel="6"
+          RelatedShipTypeName="NecromancerTranscendantFlagship"
+          ShouldNotAppearInRift="true"
+		  ReplaceIfAlreadyUpgraded="true"
+          >
+  </record>    
+
+  <!-- Necropolis changing options -->
+</root>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <journal name="Extragalactic_War_Start" sidebar_text="&lt;color=#ff6a30&gt;ENEMY:&lt;/color&gt; 河外战争单位" is_for_the_tips_tab="true"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+        chat_text="Extragalactic War Units Unleashed"
+        full_text="指挥官，看来我们已经足够强大，AI可能会调遣用于河外战争的单位来对付我们。
+
+这些舰船极其庞大且威力强大，虽然出现频率不高，但一旦出现就会造成巨大威胁。" />
+
+  <journal name="AI_Overlord_Transforms" sidebar_text="&lt;color=#ff6a30&gt;ENEMY:&lt;/color&gt; 霸主阶段2" is_for_the_tips_tab="true"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+        chat_text="The AI Overlord has phased out and is escaping!"
+        full_text="指挥官，AI霸主正在逃离！它似乎暂时改变了相位，我们的武器无法命中它，而且它正朝着我们的主指挥站前进！在它与我们的舰船重新处于同一相位之前，我们无法攻击它。
+
+我们认为这种相位变化只有在它位于堡垒世界时才能维持。这个新的霸主装备极其精良；我们可能需要一些新策略来应对它。它似乎特别擅长摧毁突击舰。" />
+
+
+  
+</root>

@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+ <entity name="ShredderDrone"
+         thematic_groups="Drone"  
+            special_entity_type="DroneGeneral"
+			visuals="assets/_finalgamemeshes/guardians/shredderguardiandrone/shredderguardiandrone.prefab"
+            icon_name="Ships1/VorticularCutlass" icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+			voice_group="Melee"
+			category="Ship"
+			size_scale="1.8"
+			visuals_scale_multiplier="3"
+			collision_priority="100"
+			display_name="撕裂者无人机"
+			display_name_for_sidebar="撕裂者无人机"
+			description="近战攻击无人机。"
+			starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="5"
+			cost_for_ai_to_purchase="10"
+			hull_points="20000" shield_points="10000" speed="AboveAverage5"
+			metal_cost="1250" energy_consumption="200"
+			armor_mm="30" albedo="0.3" engine_gx="7" mass_tx="0.21"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			
+      priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			>
+    <fleet_membership name="DireShredderGuardianDrones" ship_cap_group="Strike" weight="100" cap="40"/>
+	<fleet_membership name="RoyalDireShredderGuardianDrones" ship_cap_group="Strike" weight="100" cap="80"/>
+    <system name="WM" display_name="剪切"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="8000" range="AlmostNone" seek_range="Normal1" shot_speed="Fast" rate_of_fire="Misery" fires_salvos_sequentially="false"
+				shot_type_data="MeleeInvisible"	added_target_evaluator="Melee"			
+				>
+    </system>
+  </entity>
+  
+  <entity name="TethuidaDrone"
+          thematic_groups="Drone"  
+      special_entity_type="DroneFrigate"
+			visuals="assets/_finalgamemeshes/guardians/teuthidaguardiandrone/teuthidaguardiandrone.prefab"
+      icon_name="Ships1/Teuthida" icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+			voice_group="Melee"
+			category="Ship"
+			size_scale="1.2"
+			visuals_scale_multiplier="3"
+			collision_priority="100"
+			display_name="乌贼无人机"
+			display_name_for_sidebar="乌贼无人机"
+			description="自杀式无人机，能使受害者僵尸化。"
+			starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="5"
+			cost_for_ai_to_purchase="10" strength_multiplier="0.2"
+			hull_points="20000" shield_points="10000" speed="AboveAverage5"
+			metal_cost="1250" energy_consumption="200"
+			armor_mm="30" albedo="0.3" engine_gx="7" mass_tx="0.21"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			
+      priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			>
+    <fleet_membership name="DireTeuthidaGuardianDrones" ship_cap_group="Strike" weight="100" cap="40"/>
+	<fleet_membership name="RoyalDireTeuthidaGuardianDrones" ship_cap_group="Strike" weight="100" cap="80"/>
+    <system name="WM" display_name="僵尸化冲击"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="10000" range="AlmostNone" seek_range="Normal1" shot_speed="Fast" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+				shot_type_data="MeleeInvisible"	added_target_evaluator="Melee"
+                area_of_effect_size="1000"				
+				aoe_spreads_damage_among_available_targets="true"				
+				health_change_by_max_health_divided_by_this_per_attack="-1"
+				>
+				<death_effect_damage type="Zombification" tier_name="Major"/>
+    </system>
+	
+  </entity>
+  
+  <!-- Below are the Drones used for Combat Factories - just to organise it a little.
+  ************************************************************************************************
+  ************************************************************************************************
+  ************************************************************************************************-->  
+
+ <entity name="SaboteurDrone"
+         thematic_groups="Drone"  
+            special_entity_type="DroneGeneral"
+			visuals="assets/_finalgamemeshes/specials/engineer/engineer.prefab"
+            icon_name="Ships2/SomethingMilitary" icon_overlay="Overlays2/Guardian_Paralysis" gimbal_icon_size_multiplier="1"
+			voice_group="Melee"
+			category="Ship"
+			size_scale="1"
+			visuals_scale_multiplier="4"
+			collision_priority="100"
+			display_name="破坏者无人机"
+			display_name_for_sidebar="破坏者无人机"
+			description="支援工程无人机，只能攻击建筑物，但能使其瘫痪。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" 
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="20"
+			cost_for_ai_to_purchase="10"
+			hull_points="4000" shield_points="4000" speed="AboveAverage5"
+			metal_cost="1250" energy_consumption="200"
+			armor_mm="30" albedo="0.3" engine_gx="7" mass_tx="0.21"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			cannot_target_or_alert_ai_reinforcement_spots="true"
+      priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			>
+    <fleet_membership name="SaboteurDrones" ship_cap_group="Strike" weight="100" cap="5"/>
+	<fleet_membership name="GrynDrones" ship_cap_group="Strike" weight="100" cap="5"/>
+    <system name="Q6" display_name="离子瘫痪器"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="100" range="Tiny1" shot_speed="Fast" rate_of_fire="High" fires_salvos_sequentially="false"
+				shot_type_data="ExtremelyLongRangeIon"
+				base_paralysis_seconds_per_shot="1" paralysis_to_ships_mass_tx_less_than="6"
+                only_targets_static_units="true"				
+				>
+    </system>
+  </entity>
+
+ <entity name="DecoyDrone"
+         thematic_groups="Drone"  
+            special_entity_type="DroneGeneral"
+			visuals="assets/_finalgamemeshes/specials/engineer/engineer.prefab"
+            icon_name="Ships2/SomethingMilitary" icon_overlay="Overlays2/Guardian_Vampire" gimbal_icon_size_multiplier="1"
+			voice_group="Civilian"
+			category="Ship"
+			size_scale="1"
+			visuals_scale_multiplier="4"
+			collision_priority="100"
+			display_name="诱饵无人机"
+			display_name_for_sidebar="诱饵无人机"
+			description="支援工程无人机，火力很弱，但对敌人来说是高优先级目标。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" 
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="20"
+			cost_for_ai_to_purchase="10"
+			hull_points="7500" shield_points="7500" speed="AboveAverage5"
+			metal_cost="3750" energy_consumption="200"
+			armor_mm="30" albedo="0.3" engine_gx="7" mass_tx="0.21"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			cannot_target_or_alert_ai_reinforcement_spots="true"
+      priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="Expendable"
+			>
+    <fleet_membership name="DecoyDrones" ship_cap_group="Strike" weight="100" cap="20"/>
+	<fleet_membership name="GrynDrones" ship_cap_group="Strike" weight="100" cap="20"/>
+      <system name="WD" display_name="吸血双重射击"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="50" range="Small2" shot_speed="Normal" rate_of_fire="Misery" fires_salvos_sequentially="true"
+				shot_type_data="DoubleShot_Red"				
+				health_change_per_damage_dealt="2"
+				>
+    </system>
+  </entity>
+
+  
+ <entity name="TackleDrone"
+         thematic_groups="Drone"  
+            special_entity_type="DroneGeneral"
+			visuals="assets/_finalgamemeshes/specials/engineer/engineer.prefab"
+            icon_name="Ships2/SomethingMilitary" icon_overlay="Overlays2/Guardian_Tractor" gimbal_icon_size_multiplier="1"
+			voice_group="Melee"
+			category="Ship"
+			size_scale="1"
+			visuals_scale_multiplier="4"
+			collision_priority="100"
+			display_name="捕获无人机"
+			display_name_for_sidebar="捕获无人机"
+			description="支援工程无人机，试图冲向敌人并用牵引光束困住它们。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" 
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="20"
+			cost_for_ai_to_purchase="10"
+			hull_points="5000" shield_points="5000" speed="AboveAverage5"
+			metal_cost="1250" energy_consumption="200"
+			armor_mm="30" albedo="0.3" engine_gx="7" mass_tx="0.21"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			speed_multiplier_first_5_seconds_on_planet="2"			
+			cannot_target_or_alert_ai_reinforcement_spots="true"
+      priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+      custom_KiteEvenTractored="true"
+			>
+    <fleet_membership name="TackleDrones" ship_cap_group="Strike" weight="100" cap="10"/>
+    <system name="WD" display_name="推进"
+                system_is_hidden_for_ui="true"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1" range="AlmostNone" shot_speed="Normal" rate_of_fire="Glacial"
+				shot_type_data="MeleeInvisible"
+				only_targets_mobile_units="true" 
+				>
+        <outgoing_damage_modifier based_on="Engine_gx" comparison_type="AtLeast" compared_to="15" multiplier="0" />
+        <outgoing_damage_modifier based_on="albedo" comparison_type="AtLeast" compared_to="0.5" multiplier="0" />		
+    </system>
+    <system name="T" display_name="牵引光束"
+				category="Passive"
+				tractor_range="Small3" tractor_count="15" tractor_count_added_per_mark="3" tractor_hits_albedo_less_than="0.4" tractor_hits_engine_gx_less_than="15"
+				>
+    </system>	
+  </entity> 
+
+ <entity name="ScrapDrone"
+         thematic_groups="Drone"  
+            special_entity_type="DroneGeneral"
+			visuals="assets/_finalgamemeshes/specials/engineer/engineer.prefab"
+            icon_name="Ships2/SomethingMilitary" icon_overlay="Overlays2/Guardian_Tesla" gimbal_icon_size_multiplier="1"
+			voice_group="Melee"
+			category="Ship"
+			size_scale="1"
+			visuals_scale_multiplier="4"
+			collision_priority="100"
+			display_name="报废无人机"
+			display_name_for_sidebar="报废无人机"
+			description="不稳定的支援工程无人机，通过过载其内部反应堆来自毁并对周围造成区域伤害。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" 
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="2"
+		    always_self_attritions="true"
+			cost_for_ai_to_purchase="10"
+			hull_points="5000" shield_points="5000" speed="AboveAverage5"
+			metal_cost="1250" energy_consumption="200"
+			armor_mm="30" albedo="0.3" engine_gx="7" mass_tx="0.21"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			cannot_target_or_alert_ai_reinforcement_spots="true"
+      priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			>
+    <fleet_membership name="ScrapDrones" ship_cap_group="Strike" weight="100" cap="6"/>
+	<fleet_membership name="GrynDrones" ship_cap_group="Strike" weight="100" cap="6"/>
+    <system name="Q1" display_name="过载爆炸"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="300" range="AlmostNone" seek_range="Normal1" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+				shot_type_data="LightningExplosionAOEShot"
+				area_of_effect_size="1600"
+				shots_detonate_immediately="true"
+                maximum_number_of_targets_hit_per_shot="20"
+				health_change_by_max_health_divided_by_this_per_attack="-1"
+				>
+    </system>
+  </entity>  
+
+   <!-- Below are the Drones used for Astro Train Prototypes - just to organise it a little.
+  ************************************************************************************************
+  ************************************************************************************************
+  ************************************************************************************************--> 
+
+  <entity name="ReanimatorDrone"
+          thematic_groups="Drone,AI,AstroTrain"  
+      special_entity_type="DroneFrigate"
+			visuals="Assets/_FinalGameMeshes/AIExtragalactic/Tier2_ExtragalacticReanimator/Tier2_ExtragalacticReanimatorDrone.prefab"
+      icon_name="Ships2/SomethingAperture" icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+			voice_group="Melee"
+			category="Ship"
+			size_scale="3.2"
+			visuals_scale_multiplier="32"
+			collision_priority="100"
+			display_name="复生者无人机"
+			display_name_for_sidebar="复生者无人机"
+			description="弱小的作战无人机，牺牲自己来复活倒下的盟军。"
+			regenerates_dying_ships_at_this_health_cost_ratio="1"
+			starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="20"
+			cost_for_ai_to_purchase="10" strength_multiplier="0.2"
+			hull_points="20000" shield_points="0" speed="AboveAverage5"
+			metal_cost="1500" energy_consumption="200"
+			armor_mm="30" albedo="0.3" engine_gx="7" mass_tx="0.21"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			
+      priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			>
+    <fleet_membership name="ReanimatorDrones" ship_cap_group="Strike" weight="100" cap="20"/>
+    <system name="WR" display_name="复活光束"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="4500" range="Small3" shot_speed="Normal" rate_of_fire="High"
+                shots_per_salvo="1" fires_salvos_sequentially="false"
+				shot_type_data="ParasiteCurvedPinkShot"	added_target_evaluator="ZombifyAsPrimary"				
+				>
+          <death_effect_damage type="Nanocaustation" tier_name="Major"/>
+    </system> 
+  </entity>
+  
+    <entity name="FenrirDrone"
+	        thematic_groups="Drone,AI,AstroTrain"    
+            special_entity_type="DroneFrigate"
+			visuals="Assets/_FinalGameMeshes/AIExtragalactic/Tier1_MaugrimDrone/Tier1_MaugrimDrone.prefab"
+            icon_name="Ships2/SomethingAperture" icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+			voice_group="Silent"
+			category="Ship"
+			size_scale="2.8"
+			visuals_scale_multiplier="12"
+			collision_priority="100"
+			display_name="芬里尔战斗无人机"
+			display_name_for_sidebar="芬里尔无人机"
+			description="高级无人机，使用快速射击导弹发射器。"
+			starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="20"
+			cost_for_ai_to_purchase="10" strength_multiplier="0.2"
+			hull_points="20000" shield_points="0" speed="AboveAverage5"
+			metal_cost="1500" energy_consumption="200"
+			armor_mm="30" albedo="0.3" engine_gx="7" mass_tx="0.21"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"			
+            priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			>
+    <fleet_membership name="FenrirDrones" ship_cap_group="Strike" weight="100" cap="40"/>
+    <system name="Q5" display_name="獠牙导弹"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="2000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Misery"
+			shots_per_salvo="2" fires_salvos_sequentially="false"
+			shot_type_data="GuidedMissile"
+			>
+    </system> 
+    </entity>
+  
+  
+
+  <entity name="PenumbraDrone"
+          thematic_groups="Drone,AI,AstroTrain"  
+      special_entity_type="DroneFrigate"
+			visuals="assets/_finalgamemeshes/guardians/stealthguardian/stealthguardian.prefab"
+      icon_name="Ships2/SomethingAperture" icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+			voice_group="Melee"
+			category="Ship"
+			size_scale="1.1"
+			visuals_scale_multiplier="1.3"
+			collision_priority="100"
+			display_name="暗影回声无人机"
+			display_name_for_sidebar="暗影回声无人机"
+			description="高级无人机，很难被侦破，发射能绕过护盾的聚变弹。"
+			starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="20"
+			cost_for_ai_to_purchase="10" strength_multiplier="0.2"
+			hull_points="20000" shield_points="0" speed="AboveAverage5"
+			metal_cost="1500" energy_consumption="200"
+			armor_mm="30" albedo="0.7" engine_gx="7" mass_tx="0.21"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			
+      priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			>
+    <fleet_membership name="UmbraDrones" ship_cap_group="Strike" weight="100" cap="40"/>
+    <system name="WL" display_name="回声聚变弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="8000" range="Small4" shot_speed="Slow" rate_of_fire="VeryLow" 
+				shots_per_salvo="1" fires_salvos_sequentially="false"
+				shot_type_data="FusionBomb"
+				base_percent_damage_bypasses_personal_shields="1" cloaking_percent_loss_from_firing="0.1"
+				>
+    </system>
+    <system name="C" display_name="隐形装置"
+				category="Passive"
+				cloaking_points="8000"
+				>
+    </system>
+  </entity>
+
+
+  <entity name="RescueSporeDrone"
+          thematic_groups="Drone,ArkCapturable"  
+		icon_name="Ships2/SomethingInsignia1" gimbal_icon_size_multiplier="1.2"
+		icon_overlay="Overlays1/Drone"
+		visuals="assets/_finalgamemeshes/turrets/tractorturret/tractor_turret.prefab"
+		size_scale="1.95"
+		visuals_scale_multiplier="3"
+		voice_group="Silent"
+		category="Ship"
+		collision_priority="100"
+		display_name="救援孢子"
+		display_name_for_sidebar="救援孢子"
+		description="由兰花方舟释放的搜救纳米机器工厂。可以消耗自身来传送并修复盟军舰船。"
+		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly"
+		self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="1"
+		always_self_attritions="true"
+		metal_cost_multiplier_for_scrapping="0"
+		cost_for_ai_to_purchase="10"
+		hull_points="100000" shield_points="0" speed="Immobile"
+		metal_cost="500" energy_consumption="0"
+		armor_mm="10" albedo="0.2" mass_tx="2"
+		regenerates_dying_ships_at_this_health_cost_ratio="0.5"
+		ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+
+		priority_as_ai_target="NotDangerous" priority_as_frd_target="NotDangerous" priority_to_protect="Expendable"
+		special_entity_type="DroneGeneral"
+        drone_not_from_design_template="true"
+        immune_to_swapping_between_fleets="true"
+		is_blocked_from_transporting="true"
+		has_custom_move_order_and_no_other_direct_commands_can_be_given_from_player="true"
+	>
+	<ship_class_data can_be_fleet_supercharged="false" />
+  </entity>
+</root>

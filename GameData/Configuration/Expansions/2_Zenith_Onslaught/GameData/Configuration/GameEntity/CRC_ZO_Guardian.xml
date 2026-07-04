@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>    
+
+	<!-- ZO Polarizer Guardian -->
+	<!-- Pretty tanky bruiser that sports a x10 array of Polarizer weapons that specializes in taking down other armored threats. Moderate speed, below average range -->
+	<entity name="PolarizerGuardian"
+	        thematic_groups="AI,Guardian"
+			special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+			visuals="Assets/_DLC2/AI/PolarizerGuardian/PolarizerGuardian.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships1/Guardian" icon_overlay="Overlays1/Guardian_Polarizer"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="3.6"
+			visuals_scale_multiplier="3"
+			y_offset_of_icon="16"
+			collision_priority="400"
+			display_name="偏振器守卫"
+			display_name_for_sidebar="偏振器守卫"
+			description="一名皮糙肉厚的守卫，配备一组偏振器武器，专门用于摧毁装甲目标。"
+			blocks_enemy_claim_flows="true"
+			voice_group="Silent"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="750" strength_multiplier="1.5"		
+			hull_points="78000" shield_points="38000" speed="Normal3"
+			metal_cost="100000" energy_consumption="7500"
+			armor_mm="120" albedo="0.3" engine_gx="12" mass_tx="5"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			>		
+		<ai_ship_group_membership name="EyeGuardiansWithAntiLargeSupport" weight="100"/>
+		<ai_ship_group_membership name="AntiLargeGuardians" weight="100"/>
+		<ai_ship_group_membership name="AntiArmorGuardians" weight="100"/>
+		<system name="W1" display_name="装甲偏振器阵列"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="150" range="Normal2" shot_speed="Normal" rate_of_fire="Normal"
+				shots_per_salvo="10" fires_salvos_sequentially="true" shot_type_data="LaserPulse_DeepBlue"
+				>
+			<outgoing_damage_modifier based_on="Armor_mm" comparison_type="MultiplesOf" compared_to="35" multiplier="1" max_multiplier="10" />
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="3" />
+		</system>
+	</entity>
+	
+	<entity name="RoyalPolarizerGuardian" display_name="皇家偏振器守卫"
+			display_name_for_sidebar="皇家偏振器守卫" copy_from="PolarizerGuardian" 
+            hull_points="156000" shield_points="76000"
+			cost_for_ai_to_purchase="1150"
+			starting_mark_level="Mark1"
+			>
+		<ai_ship_group_membership name="RoyalEyeGuardiansWithAntiLargeSupport" weight="100"/>
+		<ai_ship_group_membership name="RoyalAntiLargeGuardians" weight="100"/>
+		<ai_ship_group_membership name="RoyalAntiArmorGuardians" weight="100"/>	
+		<system name="W1" damage_per_shot="300" />
+	</entity>
+	
+	<!-- ZO Retribution Guardian -->
+	<!-- Uses a statline similar to the Plasma Guardian and other high danger guardians to provoke Tritium Snipers and other long range units too shoot them.
+		 At which point they deal some pretty nasty return damage back to what is hitting them. Somewhat more durable than regular guardians, but its regular
+		 weapons outside the revenge shots are not very strong. -->
+	<entity name="RetributionGuardian"
+	        thematic_groups="AI,Guardian"
+			special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+			visuals="Assets/_DLC2/AI/RetributionGuardian/RetributionGuardian.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships1/Guardian"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="4.2"
+			visuals_scale_multiplier="6"
+			y_offset_of_icon="16"
+			collision_priority="400"
+			display_name="复仇守卫"
+			display_name_for_sidebar="复仇守卫"
+			description="一个耐用的守卫，会根据自身所受伤害进行反击射击。"
+			blocks_enemy_claim_flows="true"
+			voice_group="Silent"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="600" strength_multiplier="1.5"
+			hull_points="81000" shield_points="99000" speed="BelowAverage2"
+			metal_cost="100000" energy_consumption="7500"
+			armor_mm="40" albedo="0.3" engine_gx="14" mass_tx="5"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			>
+		<ai_ship_group_membership name="AntiStructureGuardians" weight="100"/>
+		<ai_ship_group_membership name="EnergeticGuardians" weight="100"/>
+		<ai_ship_group_membership name="PoliceGuardians" weight="100"/>
+		<system name="W1" display_name="脉冲激光阵列"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="400" range="Normal3" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+				shots_per_salvo="8"
+				shot_type_data="LaserPulse_DeepBlue">
+		</system>
+		<system name="W2" display_name="复仇反击射击"
+				category="Weapon" firing_timing="WhenParentEntityHit" range="Normal3"
+				returns_this_percentage_of_damage_when_firing_retalitatory_shot="1" shot_speed="Normal" fires_salvos_sequentially="false"
+				damage_per_shot="100" rate_of_fire="Normal"
+				shot_type_data="LaserPulse_RedLevel2">
+		</system>
+	</entity>
+	
+	<entity name="RoyalRetributionGuardian"  copy_from="RetributionGuardian"
+			display_name="皇家复仇守卫"
+			display_name_for_sidebar="皇家复仇守卫"
+            hull_points="162000" shield_points="198000"
+			cost_for_ai_to_purchase="950"
+			starting_mark_level="Mark1"
+			>
+		<ai_ship_group_membership name="RoyalPoliceGuardians" weight="100"/>
+		<ai_ship_group_membership name="RoyalAntiStructureGuardians" weight="100"/>
+		<ai_ship_group_membership name="RoyalEnergeticGuardians" weight="100"/>
+		<system name="W1" damage_per_shot="800" />
+		<system name="W2" returns_this_percentage_of_damage_when_firing_retalitatory_shot="1.5" />
+	</entity>
+	
+	<!-- ZO Dire Lightning Guardian -->
+	<!-- Uses a highly damaging single hop count Chain Lightning emitter, bonus damage versus stacks, consider stats equivalent to Dire MLRS for baseline -->
+	<entity name="DireLightningGuardian"
+	        thematic_groups="AI,DireGuardian"
+	        tags="DireGuardian"
+            special_entity_type="AIDireGuardian" gimbal_icon_size_multiplier="1.5"
+            visuals="Assets/_DLC2/AI/DireLightningGuardian/DireLightningGuardian.prefab"  visuals_bundle="exp2_zenith_onslaught"
+            icon_name="Ships1/GuardianDire" icon_overlay="Overlays1/Turret_ChainLightning"
+            uses_large_health_bar="true"
+            category="Ship"
+            size_scale="10.8"
+			visuals_scale_multiplier="9"
+            y_offset_of_icon="35"
+            collision_priority="800"
+            display_name="恐怖闪电守卫"
+			display_name_for_sidebar="闪电DGU"
+            description="发射极具破坏力的闪电冲击，可跳跃至相邻目标。
+此外，还能在射程内吸取敌人的气泡护盾来维持自身。"
+            blocks_enemy_claim_flows="true"
+            voice_group="Silent"
+			starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+			cost_for_ai_to_purchase="10500" strength_multiplier="2"			
+			hull_points="1400000" shield_points="700000" speed="Normal1"
+			metal_cost="800000" energy_consumption="25000"
+			armor_mm="50" albedo="0.3" engine_gx="20" mass_tx="7"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+			priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			>
+			<ai_ship_group_membership name="AnyDireGuardians" weight="100"/>
+			<ai_ship_group_membership name="DefensiveDireGuardians" weight="100"/>
+			<ai_ship_group_membership name="DireExoLeaders" weight="100"/>
+			
+		<system name="W1" display_name="闪电冲击"
+				category="Weapon" firing_timing="OnlyInRange" fires_salvos_sequentially="true"
+				damage_per_shot="16000" range="AboveAverage4" shot_speed="Normal" rate_of_fire="High"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="1.1" beam_weapon_visual_style="Lightning_Red"		
+				beam_chains_out_to_targets_x_times="3"
+				beam_chains_out_to_target_min_range="200"
+				beam_chains_out_to_targets_x_range="2500"
+				beam_chains_out_to_max_targets_from_each_source="4"
+				only_targets_strikecraft_and_frigates="true"
+				shots_detonate_immediately="true"
+				maximum_number_of_targets_hit_per_shot="15"
+				added_target_evaluator="LowestHealthAsMajorPrimary"
+				>
+		</system>
+		<system name="W2" display_name="汲取螺栓"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="10000" range="AboveAverage4" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="true"
+				shot_type_data="StingerBolt" health_change_per_damage_dealt="2"
+				>
+			<outgoing_damage_modifier applies_to="AllShields" based_on="MaxBubbleForcefield" comparison_type="GreaterThan" compared_to="10000" multiplier="10" />
+		</system>
+	</entity>
+	
+	<entity name="RoyalDireLightningGuardian" display_name="皇家恐怖闪电守卫" copy_from="DireLightningGuardian"
+			display_name_for_sidebar="闪电RDGU" 
+			tags="RoyalDireGuardian" hull_points="2800000" shield_points="1400000"
+			cost_for_ai_to_purchase="15750" >
+			<ai_ship_group_membership name="RoyalDireGuardians" weight="100"/>
+			<ai_ship_group_membership name="RoyalDefensiveDireGuardians" weight="100"/>
+			<system name="W1" damage_per_shot="24000" />
+			<system name="W2" damage_per_shot="15000" />
+	</entity>
+</root>

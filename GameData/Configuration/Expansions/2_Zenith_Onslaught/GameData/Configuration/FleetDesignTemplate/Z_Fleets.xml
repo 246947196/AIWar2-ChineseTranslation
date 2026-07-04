@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- A combination of starting options for fleets. These do not override existing fleets but are additions.
+You can copy the fleets below as templates to create your own starting fleets.
+ -->
+  <fleet_design name="OnslaughtFleet"
+        display_name="攻击舰队"
+        description="一支专为适应天顶星猛攻而设计的舰队，采用了所有新技术。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Starter" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="ElectricBomber" ship_cap_group="Strike" weight="100" cap="15"/>
+	<ship_membership name="DarkerMirrorFrigate" ship_cap_group="Frigate" weight="100" cap="6"/>
+	<ship_membership name="PhantasmalHostFrigate" ship_cap_group="Frigate" weight="100" cap="6"/>
+	<ship_membership name="ShrikeInterceptor" ship_cap_group="Strike" weight="100" cap="40"/>
+  </fleet_design>
+</root>

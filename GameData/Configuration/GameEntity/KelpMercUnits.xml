@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <!--	The Hydran Flagship breaks apart into many different layers. A beautifully terrifying ship... that couldn't hurt a fly. -->
+  <entity name="HydraOutguardFlagship"
+            thematic_groups="Frigate,Outguard,IsolatedHumanResistance" npc_ship_cap_type="LargeShips"
+			tags="HydraOutguardFlagship,Hydral Hobbyist" gimbal_icon_size_multiplier="1.25"
+			visuals="assets/_finalgamemeshes/humanoddities/hacker/hacker.prefab"
+			icon_name="Ships1/Starship" icon_overlay="Overlays1/Starship_MercFlagship"
+			size_scale="4.2"
+			visuals_scale_multiplier="16"
+			category="Ship"
+			y_offset_of_icon="10"
+			collision_priority="100"
+			display_name="海德拉前哨旗舰"
+		  display_name_for_sidebar="海德拉旗帜舰"
+			description="这是海德拉业余前哨队唯一的旗舰，似乎在设计时考虑了冗余性。"
+			starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Expatriate"
+			cost_for_ai_to_purchase="600"
+			hull_points="100000" shield_points="100000" speed="Normal1"
+			metal_cost="80000" energy_consumption="30000"
+			armor_mm="90" albedo="0.4" engine_gx="15" mass_tx="4"
+			voice_group="Starship"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			description_appender_dll="AIWarExternalCode"
+			description_appender_type="Arcen.AIW2.External.OutguardShipDescriptionAppender"
+			priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+			>
+	<entity_type_drawing_bag_used_on_death data_list="HydraOutguardFlagshipMajorHead" min_spawn_value_list="3" />
+    <system name="Q2" display_name="多重麻痹喷雾器"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="128" range="Normal4" shot_speed="Normal" rate_of_fire="Misery"
+				shots_per_salvo="16" fires_salvos_sequentially="false"
+				shot_type_data="ParalysisProngedShot_Blue" added_target_evaluator="ParalyzerAsPrimary"
+				base_paralysis_seconds_per_shot="3" paralysis_to_ships_mass_tx_less_than="6"
+				>
+    </system>
+    <incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="3000" multiplier="0.1" />
+  </entity>
+
+  <entity name="HydraOutguardFlagshipMajorHead" copy_from="HydraOutguardFlagship" tags="Hydral Hobbyist" thematic_groups="Frigate,Outguard,IsolatedHumanResistance,Drone"
+		  self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="2"
+		  always_self_attritions="true"
+			display_name="海德拉前哨旗舰主头"
+		  display_name_for_sidebar="海德拉重甲头领舰"
+			description="从海德拉前哨旗舰产生的主头，似乎仍有分裂能力。"
+			energy_consumption="10000"
+			 immune_to_swapping_between_fleets="true"
+			>
+	<entity_type_drawing_bag_used_on_death data_list="HydraOutguardFlagshipHead" min_spawn_value_list="3" />
+  </entity>
+
+  <entity name="HydraOutguardFlagshipHead" copy_from="HydraOutguardFlagship" tags="Hydral Hobbyist" thematic_groups="Frigate,Outguard,IsolatedHumanResistance,Drone"
+		  self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="2"
+		  always_self_attritions="true"
+			display_name="海德拉前哨旗舰头"
+		  display_name_for_sidebar="海德拉头领舰"
+			description="从海德拉前哨旗舰产生的头，似乎仍有分裂能力。"
+			energy_consumption="3000"
+			 immune_to_swapping_between_fleets="true"
+			>
+	<entity_type_drawing_bag_used_on_death data_list="HydraOutguardFlagshipMinorHead" min_spawn_value_list="3" />
+  </entity>
+
+  <entity name="HydraOutguardFlagshipMinorHead" copy_from="HydraOutguardFlagship" tags="Hydral Hobbyist" thematic_groups="Frigate,Outguard,IsolatedHumanResistance,Drone"
+		  self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="2"
+		  always_self_attritions="true"
+			display_name="海德拉前哨旗舰次头"
+		  display_name_for_sidebar="海德拉轻甲头领舰"
+			description="从海德拉前哨旗舰产生的次头。"
+			energy_consumption="1000"
+			 immune_to_swapping_between_fleets="true"
+			>
+  </entity>
+
+  <!--		Special carrier that spawns decoy drones. -->
+  <entity 	name="OutguardDistractorCarrier" 
+            thematic_groups="Frigate,Outguard,IsolatedHumanResistance" npc_ship_cap_type="LargeShips"
+			tags="OutguardDistractorCarrier" gimbal_icon_size_multiplier="1.25"
+			visuals="assets/_finalgamemeshes/guardians/carrierguardian/carrierguardian.prefab"
+			icon_name="Ships1/Guardian" icon_overlay="Overlays2/Guardian_Carrier"
+			size_scale="4.5"
+			visuals_scale_multiplier="4"
+			category="Ship"
+			y_offset_of_icon="10"
+			collision_priority="100"
+			display_name="诱饵无人机母舰"
+      display_name_for_sidebar="诱饵无人机母舰"
+			description="一艘满载旨在吸引敌人火力的无人机的母舰。"
+			fleet_design_template_i_use_for_drones="DecoyDrones"
+			drone_starting_behavior_type="Attacker_Full"
+			starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Expatriate"
+			cost_for_ai_to_purchase="300"
+			hull_points="100000" shield_points="100000" speed="BelowAverage1"
+			metal_cost="16000" energy_consumption="4500"
+			armor_mm="120" albedo="0.4" engine_gx="18" mass_tx="5"
+			voice_group="Starship"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+			priority_as_ai_target="NormalStarship" priority_as_frd_target="BiggerStarship" priority_to_protect="SlightlyLessExpendable"
+	>
+    <system name="WW" display_name="弹道炮"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="1000" range="Normal4" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+			shot_type_data="ArmorPiercingShell"
+		/>
+    <incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="2000" multiplier="0.01" />
+    <metal_flow purpose="BuildingDronesInternally" throughput="500"  increase_per_mark_level="250"/>
+  </entity>
+
+</root>

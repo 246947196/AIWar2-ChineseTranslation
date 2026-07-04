@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!-- Somewhat unique Military Leader designs; ideally get looked over by a proper unit designer later. -->
+    <entity copy_from="RoamingEnclave" name="BraveryEnclave" display_name="漫游飞地：勇敢级" display_name_for_sidebar="飞地：勇敢" thematic_groups="Neinzul,Custodian"
+			visuals="Assets/_DLC3/RoamingEnclaves/RoamingEnclaveBraver/RoamingEnclaveBraver.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships4/NeinzulRoamingEnclave" icon_overlay="Overlays2/NeinzulBraver"
+			size_scale="8" visuals_scale_multiplier="18"
+            tags="ShowsOnNormalDisplayMode,CustodianEnclave"
+            description="一艘拥有非凡力量的奈因祖尔战舰。勇敢级在陷入绝境时最为危险，它会利用自身破损的船体来增强武器的威力。"
+            >
+            <system name="W2" display_name="残骸驱动器"
+                    category="Weapon" firing_timing="OnlyInRange"
+                    damage_per_shot="100" range="High2" shot_speed="Normal" rate_of_fire="Devourer"
+                    shots_per_salvo="10" fires_salvos_sequentially="false"
+                    shot_type_data="DoubleShot_Red"
+            >
+            <outgoing_damage_modifier based_on="MyHullPercentageMissing" comparison_type="MultiplesOf" compared_to="10" multiplier="2" />
+            </system>
+    </entity>
+    
+    <entity copy_from="RoamingEnclave" name="PatienceClass" display_name="漫游飞地：耐心级" display_name_for_sidebar="飞地：耐心" thematic_groups="Neinzul,Custodian"
+			visuals="Assets/_DLC3/RoamingEnclaves/RoamingEnclavePatience/RoamingEnclavePatience.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships4/NeinzulRoamingEnclave" icon_overlay="Overlays2/NeinzulPatience"
+			size_scale="7.5" visuals_scale_multiplier="18"
+            tags="ShowsOnNormalDisplayMode,CustodianEnclave"
+            description="一艘拥有非凡力量的奈因祖尔战舰。耐心级拥有独特的信息素，发射速度较慢，但能锁定受影响船只的系统。"
+            >
+            <system name="W1" rate_of_fire="Misery"
+                base_enemy_weapon_reload_slowing_seconds_per_shot="2"
+                enemy_weapon_reload_slowing_to_armor_mm_less_than="120"
+                base_paralysis_seconds_per_shot="1"
+                paralysis_to_ships_mass_tx_less_than="6"
+            >
+            </system>
+    </entity>
+    
+     <entity copy_from="RoamingEnclave" name="KindnessClass" display_name="漫游飞地：仁慈级" display_name_for_sidebar="飞地：仁慈" thematic_groups="Neinzul,Custodian"
+			visuals="Assets/_DLC3/RoamingEnclaves/RoamingEnclaveKindness/RoamingEnclaveKindness.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships4/NeinzulRoamingEnclave" icon_overlay="Overlays2/NeinzulKindness"
+			size_scale="7.5" visuals_scale_multiplier="18"
+            tags="ShowsOnNormalDisplayMode,CustodianEnclave"
+            description="一艘拥有非凡力量的奈因祖尔战舰。仁慈级能进一步提升其所在星球上所有盟友的战斗力。"
+            allied_speed_flat_bonus="50"
+			allied_speed_flat_bonus_added_per_mark="15"
+            allied_attack_multiplier="1.04"
+            allied_attack_multiplier_added_per_mark="0.01"
+            >
+    </entity>
+    
+    <entity copy_from="RoamingEnclave" name="PerseveranceClass" display_name="漫游飞地：坚毅级" display_name_for_sidebar="飞地：坚毅" thematic_groups="Neinzul,Custodian"
+			visuals="Assets/_DLC3/RoamingEnclaves/RoamingEnclavePerseverance/RoamingEnclavePerseverance.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships4/NeinzulRoamingEnclave" icon_overlay="Overlays2/NeinzulPerseverance"
+			size_scale="9" visuals_scale_multiplier="18"
+            tags="ShowsOnNormalDisplayMode,CustodianEnclave"
+            description="一艘拥有非凡力量的奈因祖尔战舰。坚毅级擅长终结严重受损的强大船只。"
+            >
+            <system name="W1" display_name="坚毅信息素"
+            >
+            <outgoing_damage_modifier based_on="TargetHullPercentageMissing" comparison_type="AtLeast" compared_to="90" multiplier="1000000" />
+            </system>
+    </entity>
+	
+	<entity copy_from="RoamingEnclave" name="JusticeClass" display_name="漫游飞地：正义级" display_name_for_sidebar="飞地：正义" thematic_groups="Neinzul,Custodian"
+			visuals="Assets/_DLC3/RoamingEnclaves/RoamingEnclaveJustice/RoamingEnclaveJustice.prefab" visuals_bundle="exp3_neinzul_abyss"
+		    icon_name="Ships4/NeinzulRoamingEnclave" icon_overlay="Overlays2/NeinzulJustice"
+		    size_scale="8" visuals_scale_multiplier="18"
+            tags="ShowsOnNormalDisplayMode,CustodianEnclave"
+            description="一艘拥有非凡力量的奈因祖尔战舰。正义级擅长在敌人还未被击中前就将其摧毁。"
+            >
+			<system name="W2" display_name="正义驱动器"
+                    category="Weapon" firing_timing="OnlyInRange"
+                    damage_per_shot="100" range="High2" shot_speed="Normal" rate_of_fire="Devourer"
+                    shots_per_salvo="10" fires_salvos_sequentially="false"
+                    shot_type_data="DoubleShot_Red"
+            >
+            <outgoing_damage_modifier based_on="MyHullPercentageMissing" comparison_type="AtMost" compared_to="25" multiplier="10" />
+            </system>
+    </entity>
+	
+	<entity copy_from="RoamingEnclave" name="IntegrityClass" display_name="漫游飞地：正直级" display_name_for_sidebar="飞地：正直" thematic_groups="Neinzul,Custodian"
+			visuals="Assets/_DLC3/RoamingEnclaves/RoamingEnclaveIntegrity/RoamingEnclaveIntegrity.prefab" visuals_bundle="exp3_neinzul_abyss"
+		    icon_name="Ships4/NeinzulRoamingEnclave" icon_overlay="Overlays2/NeinzulIntegrity"
+		    size_scale="8" visuals_scale_multiplier="18"
+            tags="ShowsOnNormalDisplayMode,CustodianEnclave"
+            description="一艘拥有非凡力量的奈因祖尔战舰。正直级拥有更加坚固的船体。"
+			multiplier_to_all_healths="3" 
+            >
+    </entity>
+	
+	<entity name="NeinzulCustodianHive" 
+	        thematic_groups="Neinzul,Custodian" npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+			tags="CustodianHive"
+		    visuals="Assets/_DLC3/NeinzulHomes/LargeNeinzulHive/LargeNeinzulHive.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships4/NeinzulHiveLarge"
+			category="Ship"
+			size_scale="3.3"
+			visuals_scale_multiplier="6"
+			display_name="大型奈因祖尔蜂巢"
+			description="一个容纳着繁荣奈因祖尔文明的蜂巢，其生存与一艘漫游飞地息息相关。它会缓慢生产氏族成员来协助其绑定的漫游飞地。如果其绑定的漫游飞地被摧毁，它也会随之毁灭，反之亦然。"
+			behavior="Stationary"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="200"
+			hull_points="250000" shield_points="0" speed="Immobile"
+			metal_cost="0" energy_consumption="0"
+			armor_mm="10" albedo="0.2" mass_tx="0.6"
+			ship_or_structure_explosion_sfx="StructureMidsize_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="StructureLostOnOtherPlanet_Explosion"
+			voice_group="Silent" collision_priority="99000" construction_priority="150" is_ignored_by_factories="true"
+			priority_as_frd_target="MajorPlanetLevelObjective" priority_as_ai_target="MajorPlanetLevelObjective" priority_to_protect="MajorPlanetLevelObjective"			
+			base_info_source="NeinzulCustodiansPerUnitBaseInfo"
+			multiplier_to_all_scales="2"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+
+	<!--<entity copy_from="MinorFactionBeacon" name="NeinzulCustodiansBeacon" tags="Beacon,NeinzulCustodiansBeacon" 
+			is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+            thematic_groups="Beacon" icon_overlay="Overlays2/Turret_Lazurite"
+		    display_name="Neinzul Custodians Beacon" display_name_for_sidebar="N Cust BEAC"
+		    description="A relatively large collection of Neinzul that have found their way to our galaxy have fractured due to disagreements, each new small force reaching out to potential allies.
+
+While no longer collectively strong, they will show undying loyalty to any that accept them.
+
+&lt;color=#f25e1c&gt;MEDIUM IMPACT:&lt;/color&gt; Enabling this faction causes a number of Neinzul to join in as allies to you, allies to the AI, and allies to minor faction teams.
+
+These Neinzul act as a very potent mobile addition to any team they manage to join, and may potentially cover what would normally be a weakness."
+            target_type_for_player="NeverTarget"
+            >
+	</entity>-->
+</root>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>  
+  
+  <!--The purpose of these build categories is to organize things for the player on the sidebar.
+      And by "things," I mean "stuff that you build via direct placement."
+      
+      Those sorts of things include anything that a Battlestation or a Command Station
+      or the Zenith Trader makes available to you at a planet.
+      
+      Other than how things are organized on the sidebar, this has no effect on anything.
+      Repeat: this is purely a visual organization thing on the sidebar 
+      for player ships/structures that are directly built.
+      
+      It has no gameplay, seeding, or other structural significance and doesn't
+      affect how the game plays.-->
+  
+  <build_category name="SpireCity" sort_index="5" display_name="尖塔之城"
+      description="用于建设堕落尖塔之城的建筑 - 随着城市等级提升至7级，会解锁更多建筑。"
+  />
+  <build_category name="SpireCityHub" sort_index="5" display_name="尖塔之城"
+                  granted_by_any_command_station="true"
+                  for_player_type_tags="SpireInfusedEmpire"
+                  description="建造一座新的尖塔之城"
+                  custom_sidebar_category_info_dll="AIWarExternalCode"
+                  custom_sidebar_category_info_type="Arcen.AIW2.External.DirectBuild_SpireCity"
+  />
+</root>

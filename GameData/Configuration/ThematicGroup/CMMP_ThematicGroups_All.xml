@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  
+  <thematic_group_type name="All" display_name="全部"
+       sort_order="1" group_type="All"
+       description="游戏中的所有单位，不包括一些几乎只是超级次要变体的单位。"/>
+
+  <thematic_group_type name="AllStrikecraftAndSmall" display_name="战机和小型单位"
+       sort_order="2" group_type="All"
+       description="所有小型和战机类型的单位，但不包括无人机。"/>
+
+  <thematic_group_type name="AllLarge" display_name="大型单位"
+       sort_order="3" group_type="All"
+       description="游戏中的所有大型单位。"/>
+
+  <thematic_group_type name="AllNoncombatants" display_name="非战斗单位"
+       sort_order="4" group_type="All"
+       description="所有非战斗单位。这些单位没有装备武器。"/>
+
+  <thematic_group_type name="AllBuildings" display_name="建筑/结构"
+       sort_order="5" group_type="All"
+       description="游戏中的所有建筑/结构。"/>
+
+  <thematic_group_type name="AllFleetLeaders" display_name="舰队领袖"
+       sort_order="5" group_type="All"
+       description="任何阵营中率领舰队的所有单位。"/>
+
+
+  <thematic_group_type name="Cheats" display_name="作弊单位"
+          sort_order="88" group_type="All"
+          description="这些单位只能通过作弊码获得。"/>
+
+  <thematic_group_type name="Unsorted" display_name="未分类单位"
+          sort_order="99" group_type="All"
+          description="这些单位尚未被分类到主题组中。它们是主游戏的一部分吗？还是模组？如果作者能将它们分类到实际的组中就好了！"/>
+
+	<thematic_group_type name="Beacon" display_name="信标" is_hidden="true"
+          sort_order="100" group_type="All"
+          description="这些单位是隐藏的，但它们是信标。这有助于我们搜索它们。"/>
+	
+  <thematic_group_type name="Hidden" display_name="隐藏单位"
+          sort_order="100" group_type="All"
+          description="这些单位被隐藏，可能是因为与其他单位几乎完全重复、已弃用或其他原因。"/>
+</root>

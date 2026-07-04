@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+
+
+	<entity name="OrbitalInertiaMissileBattery" voice_group="Silent" is_auto_scrapping_skipped_when_command_station_type_changes="true" ship_class_name="Superweapon"
+	        thematic_groups="AI"
+			visuals="Assets/_DLC3/AI/OrbitalInertiaMissileBattery/OrbitalInertiaMissileBattery.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships2/SomethingLaser" icon_overlay="Overlays2/Race_Peltian"
+			tags="NormalPlanetNastyPick,BigGunNastyPick,WildCardNastyPick" gimbal_icon_size_multiplier="1.75"
+			draw_in_galaxy_view="true"
+			category="Ship"
+			size_scale="5.7"
+			visuals_scale_multiplier="9"
+			y_offset_of_icon="20"
+			display_name="轨道惯性导弹炮台"
+			display_name_for_sidebar="轨道IMB"
+			description="一种轨道防御结构，利用长距离对敌人造成巨大伤害。使用惯性导弹击退过于靠近的小型舰船，将其击退并使其引擎瘫痪。惯性导弹对免疫击退效果的舰船造成更高伤害。"
+			behavior="Stationary"
+			never_leaves_remains="false"
+			starting_mark_level="Mark2"
+			cost_for_ai_to_purchase="200" strength_multiplier="2"
+			hull_points="200000" shield_points="600000" speed="Immobile"
+		    metal_cost="800000" energy_consumption="25000"
+		    armor_mm="300" albedo="0.7" mass_tx="7"
+			orbits_gravity_well_center_at_its_current_radius="true"   
+			degrees_to_orbit_per_second="-4"	
+			ship_or_structure_explosion_sfx="StructureMidsize_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="StructureLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+			eligible_for_hacks="Reprogram,Sabotage"
+			priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			>
+			<data_extension name="DLC3" required_expansion_list="3_The_Neinzul_Abyss"
+        necromancer_hacking_to_grant_on_death="3"/>
+			<hack_data hack_type="Sabotage" override_cost_in_hacking_points="11" />
+			<hack_data hack_type="Reprogram" override_cost_in_hacking_points="5" />
+			<metal_flow purpose="SelfConstruction" throughput="500"/>
+			
+			<system name="R3" display_name="惯性导弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1000" shots_per_salvo="25" range="Normal3" shot_speed="Normal" rate_of_fire="SlightlyLow" fires_salvos_sequentially="false"
+				shot_type_data="FusionRocket"	
+				base_knockback_per_shot="500" added_knockback_per_shot_per_mark="250" knockback_to_ships_mass_tx_less_than="2" 
+				base_engine_stun_per_shot="4" added_engine_stun_per_shot_per_mark="1" engine_stun_to_engine_gx_less_than="14" max_engine_stun_seconds="15" added_target_evaluator="EngineDamageAsMinorPart"	
+				>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="2" multiplier="5" />	
+			</system>
+			<system name="R2" display_name="佩尔蒂安能量波"
+                category="Weapon" firing_timing="OnlyInRange" 
+                damage_per_shot="2500" range="EssentiallyInfinite" shot_speed="Normal" rate_of_fire="SlightlyLow"
+				shots_per_salvo="4" fires_salvos_sequentially="false"
+                shot_type_data="EnergyWave"
+
+				>
+			    <outgoing_damage_modifier based_on="AttackDistance" comparison_type="MultiplesOf" compared_to="2000" multiplier="1" max_multiplier="12" />		
+			    <outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="3" />			
+			</system>
+	</entity>
+
+
+
+
+
+
+<!--Orbital versions of base game and DLC2 nasty picks, except eyes -->
+<entity name="OrbitalMassDriver_NA"  copy_from="OrbitalMassDriver" display_name="轨道质量驱动器" thematic_groups="AI,Orbital"
+			display_name_for_sidebar="轨道质量驱动器"	
+			tags="OrbitalMassDriver,NormalPlanetNastyPick,BigGunNastyPick,WildCardNastyPick"
+			orbits_gravity_well_center_at_its_current_radius="true"   
+			degrees_to_orbit_per_second="2"	
+			></entity>
+
+<entity name="OrbitalIonCannon"  copy_from="IonCannon" display_name="轨道离子炮" thematic_groups="AI,Orbital"
+			display_name_for_sidebar="轨道离子炮"	
+			tags="IonCannon,NormalPlanetNastyPick,BigGunNastyPick,WildCardNastyPick"
+			orbits_gravity_well_center_at_its_current_radius="true"   
+			degrees_to_orbit_per_second="2"	
+			></entity>
+
+<entity   copy_from="AIFortress" name="OrbitalAIFortress" display_name="轨道AI堡垒" thematic_groups="AI,Orbital"
+						display_name_for_sidebar="轨道AI堡垒"
+            tags="Fortress,AIFortress,NormalPlanetNastyPick,WildCardNastyPick"
+						is_major_ai_structure="true"
+			orbits_gravity_well_center_at_its_current_radius="true"   
+			degrees_to_orbit_per_second="2"	
+			>
+</entity>
+
+
+<entity   copy_from="VengefulSniperArray" name="OrbitalVengefulSniperArray" display_name="轨道复仇狙击阵列" required_expansion_list="2_Zenith_Onslaught" thematic_groups="AI,Orbital"
+						display_name_for_sidebar="轨道狙击阵列"
+            tags="NormalPlanetNastyPick,BigGunNastyPick,WildCardNastyPick"
+			orbits_gravity_well_center_at_its_current_radius="true"   
+			degrees_to_orbit_per_second="2"	
+			>
+</entity>
+
+<entity   copy_from="AIMatrixFortress" name="OrbitalAIMatrixFortress" display_name="轨道AI矩阵堡垒" required_expansion_list="2_Zenith_Onslaught" thematic_groups="AI,Orbital"
+ 
+						display_name_for_sidebar="轨道矩阵堡垒"
+            tags="Fortress,AIFortress,NormalPlanetNastyPick,WildCardNastyPick"
+			orbits_gravity_well_center_at_its_current_radius="true"   
+			degrees_to_orbit_per_second="2"	
+			>
+</entity>
+
+
+
+
+
+
+
+
+
+
+
+
+</root>

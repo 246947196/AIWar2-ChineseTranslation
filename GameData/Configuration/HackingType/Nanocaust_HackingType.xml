@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <item name="DecodingNanobots" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Nanocaust_Hive_Hacking" display_name="解码纳米机器人" description="破解核心纳米机器人蜂巢，使其成为您的盟友。从那时起，蜂巢将全力以赴摧毁 AI。这并不容易。"
+        hack_duration="600"
+        primary_hacking_response_interval="30"
+        primary_response_strength_per_interval="10.5"
+	secondary_hacking_response_interval="10"
+	secondary_response_strength_per_interval="0.1"
+        cost_in_hacking_points="20"
+        response_strength_on_completion="1"
+        local_hacker_required="true"
+/>
+</root>

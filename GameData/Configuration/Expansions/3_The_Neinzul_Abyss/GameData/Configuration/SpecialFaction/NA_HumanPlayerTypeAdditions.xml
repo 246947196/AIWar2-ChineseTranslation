@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <faction name="Human" is_partial_record="true">
+    <!-- Necromancer Empire/Sidekick custom fields. -->
+    <custom_field requires_player_types="NecromancerSidekick,NecromancerEmpire"
+                  name="NecromancerSkeletonGroup" display_name="骷髅" related_table="NTag_SkeletonStartingOption" description="你想要哪种骷髅类型？"
+                  sort_group="100" setting_type="CustomDropdownCoreTableSubset" default_option="RandomShipLine"
+                  random_option_name="RandomShipLine" random_option_display_name="&lt;color=#ffd965&gt;随机&lt;/color&gt;" random_option_description="选择一个随机升级。"/>
+
+    <custom_field requires_player_types="NecromancerSidekick,NecromancerEmpire"
+                  name="NecromancerWightGroup" display_name="幽灵" related_table="NTag_WightStartingOption" description="你想要哪种幽灵类型？"
+                  sort_group="110" setting_type="CustomDropdownCoreTableSubset" default_option="RandomShipLine"
+                  random_option_name="RandomShipLine" random_option_display_name="&lt;color=#ffd965&gt;随机&lt;/color&gt;" random_option_description="选择一个随机升级。"/>
+
+    <custom_field requires_player_types="NecromancerSidekick,NecromancerEmpire"
+                  name="NecromancerUtilityGroup" display_name="辅助舰" related_table="NTag_UtilityStartingOption" description="你想要哪种辅助舰类型？"
+                  sort_group="120" setting_type="CustomDropdownCoreTableSubset" default_option="UnlockMorgue"
+                  random_option_name="RandomShipLine" random_option_display_name="&lt;color=#ffd965&gt;随机&lt;/color&gt;" random_option_description="选择一个随机升级。"/>
+
+    <!-- Templar options -->
+    <custom_field requires_player_types="NecromancerSidekick,NecromancerEmpire"
+                  name="Templar_Color" display_name="圣殿骑士颜色" related_table="TeamColorDefinition"
+                  sort_group="200" setting_type="TeamColorPopup_SubsidiaryFactionColor" description="圣殿骑士会针对死灵法师建造防御设施。"
+                  related_faction_name="Templar" />
+
+    <custom_field name="Templar_Difficulty"  display_name="圣殿骑士难度" requires_player_types="NecromancerSidekick,NecromancerEmpire"
+                  sort_group="220" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Matches Strongest AI,1,2,3,4,5,6,7,8,9,10" default_option="Matches Strongest AI"
+                  related_faction_name="Templar" />
+<!-- Elderling options -->
+    <custom_field requires_player_types="NecromancerSidekick,NecromancerEmpire"
+                  name="Elderling_Color" display_name="古灵族颜色" related_table="TeamColorDefinition"
+                  sort_group="300" setting_type="TeamColorPopup_SubsidiaryFactionColor" description="古灵族会在星系中巡逻以对抗死灵法师。"
+                  related_faction_name="ElderlingsAgainstNecromancer" />
+
+    <custom_field name="Elderling_Difficulty" display_name="古灵族难度" requires_player_types="NecromancerSidekick,NecromancerEmpire"
+                  sort_group="320" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Matches Strongest AI,1,2,3,4,5,6,7,8,9,10" default_option="Matches Strongest AI"
+                  related_faction_name="ElderlingsAgainstNecromancer" />
+
+    <!-- Advanced Options -->
+
+        <custom_field requires_player_types="NecromancerSidekick,NecromancerEmpire"
+          name="BonusStartingResources" is_advanced_setting="true" display_name="额外起始资源" description="启用此设置将使死灵法师开局拥有额外资源。"
+		      sort_group="800" setting_type="IntSlider" default="0" min="0" max="10"/>
+        <custom_field requires_player_types="NecromancerSidekick,NecromancerEmpire"
+          name="BonusSkeletonCap" is_advanced_setting="true" display_name="额外骷髅上限" description="增加此数值将允许你每支舰队比平时多召唤更多骷髅。"
+		      sort_group="810" setting_type="IntSlider" default="0" min="0" max="500"/>
+        <custom_field requires_player_types="NecromancerSidekick,NecromancerEmpire"
+          name="BonusWightCap" is_advanced_setting="true" display_name="额外幽灵上限" description="增加此数值将允许你比正常情况召唤更多幽灵。"
+		      sort_group="820" setting_type="IntSlider" default="0" min="0" max="200"/>
+        <custom_field requires_player_types="NecromancerSidekick,NecromancerEmpire"
+          name="BonusStartingWight" is_advanced_setting="true" display_name="额外起始幽灵" description="启用此设置将使死灵法师开局拥有一条额外的幽灵舰船生产线；这旨在让游戏稍微简单一些。"
+          sort_group="930" setting_type="BoolToggle" default="false"
+          />
+          <custom_field requires_player_types="NecromancerSidekick,NecromancerEmpire"
+          name="StartWithAllUpgrades" is_advanced_setting="true" display_name="沙盒模式" description="启用此设置将使死灵法师开局就能建造任何建筑。请注意，有些建筑只有在墓地升级到更高等级后才能使用。"
+          sort_group="840" setting_type="BoolToggle" default="false"  />
+
+
+  </faction>
+  
+</root>

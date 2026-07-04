@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <entity name="WarHarvester" tags="WarHarvester,HighHRFSpawn" 
+            thematic_groups="Frigate,Outguard,IsolatedHumanResistance"	 		
+			special_entity_type="Frigate" gimbal_icon_size_multiplier="1.25"
+			visuals="assets/_finalgamemeshes/starships/armorstarship/armorstarship.prefab"
+			icon_name="Ships1/WarHarvester"
+			size_scale="3.6"
+			visuals_scale_multiplier="6"
+			category="Ship"
+			y_offset_of_icon="10"
+			collision_priority="100"
+			display_name="战争采集者"
+			description="一种战争采集者机器人。目标死亡时会将金属给予其所有者。"
+			starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Expatriate"
+			cost_for_ai_to_purchase="800"
+			hull_points="165000" shield_points="0" speed="Normal1"
+			metal_cost="80000" energy_consumption="2000"
+			armor_mm="140" engine_gx="16" albedo="0.4" mass_tx="5"
+			behavior="Attacker_Full"
+			voice_group="Silent"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+      
+			priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+			>
+    <system name="WJ" display_name="榴弹炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="6000" range="Normal1" shot_speed="Normal" rate_of_fire="VeryLow" fires_salvos_sequentially="false"
+				shot_type_data="FlakShotAOEBurstAtEnd"
+				area_of_effect_size="600"
+				maximum_number_of_targets_hit_per_shot="9"
+				>
+      <death_effect_damage type="Metabolization" tier_name="Major"/>
+    </system>
+	    <incoming_damage_modifier based_on="MyTimeAtPlanet" comparison_type="LessThan" compared_to="5" multiplier="0.5" />
+  </entity>
+
+
+  <entity name="WarSieger" tags="WarSieger,HighHRFSpawn" 
+			thematic_groups="Frigate,Outguard,IsolatedHumanResistance"
+			special_entity_type="Frigate" gimbal_icon_size_multiplier="1.25"
+			visuals="assets/_finalgamemeshes/humanoddities/tyrianiteleadermerc/tyrianiteleadermerc.prefab"
+			icon_name="Ships1/WarSieger"
+			category="Ship"
+			size_scale="4.5"
+			visuals_scale_multiplier="11"
+			y_offset_of_icon="10"
+			collision_priority="100"
+			display_name="战争攻城者"
+			description="一种战争攻城者机器人。使用速射等离子鱼雷对护盾力场造成大幅伤害。"
+			starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Expatriate"
+			behavior="Attacker_Full"
+			cost_for_ai_to_purchase="800"
+			hull_points="40000" shield_points="60000" speed="BelowAverage1"
+			metal_cost="80000" energy_consumption="2000"
+			armor_mm="140" engine_gx="16" albedo="0.4" mass_tx="5"
+			voice_group="Silent"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+      
+			priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+			>
+    <system name="WT" display_name="等离子鱼雷"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="10000" range="AboveAverage4" shot_speed="Slow" rate_of_fire="High" fires_salvos_sequentially="true"
+				shot_type_data="PlasmaTorpedo"
+				>
+				<outgoing_damage_modifier applies_to="AllShields" based_on="MaxBubbleForcefield" comparison_type="GreaterThan" compared_to="10000" multiplier="3"  />
+    </system>
+  </entity>
+
+  <entity name="AutomatedConstructionBot" tags="AutomatedConstructionBot"
+            thematic_groups="Strikecraft,IsolatedHumanResistance,Outguard"  
+			visuals="assets/_finalgamemeshes/fleetships/tachyonmicrofighter/tachyonmicrofighter.prefab"
+			icon_name="Ships1/AutomatedConstructionBot"
+			voice_group="Fighter"
+			category="Ship" is_strikecraft="true"
+			size_scale="0.8"
+			visuals_scale_multiplier="6"
+			collision_priority="100"
+			display_name="自动建造机器人"
+      display_name_for_sidebar="自动建造机器人"
+			description="短程格斗型机器人，死亡时会生成较小的副本。"
+			starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Expatriate"
+			cost_for_ai_to_purchase="13"
+			hull_points="2240" shield_points="0" speed="AboveAverage1"
+			metal_cost="2500" energy_consumption="300"
+			armor_mm="60" albedo="0.3" engine_gx="7" mass_tx="0.21"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+      
+			priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			>
+	<entity_type_drawing_bag_used_on_death data_list="MiniAutomatedConstructionBot" min_spawn_value_list="3" />
+    <system name="R5" display_name="激光切割器"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="300" range="Small1" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="true"
+				shot_type_data="LaserPulse_DeepBlue"
+				>
+    </system>
+
+  </entity>
+  
+ <!--Note from Chris: the game will find the proper faction for these by using the tag, which 
+   matches "Automated Construction Swarm" as the InternalName of the Outguard faction we want to add them to.-->
+  <entity name="MiniAutomatedConstructionBot" tags="Automated Construction Swarm"
+			thematic_groups="Strikecraft,Outguard,IsolatedHumanResistance,Drone" 
+			visuals="assets/_finalgamemeshes/fleetships/tachyonmicrofighter/tachyonmicrofighter.prefab"
+			icon_name="Ships1/AutomatedConstructionBot"
+			voice_group="Fighter"
+			category="Ship" is_strikecraft="true"
+			size_scale="0.5"
+			visuals_scale_multiplier="3"
+			collision_priority="100"
+			display_name="小型自动建造机器人"
+			display_name_for_sidebar="小型自动建造机器人"
+			description="短程格斗型机器人，由较大的母体生成。"
+			starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Expatriate"
+			cost_for_ai_to_purchase="10"
+			hull_points="750" shield_points="0" speed="AboveAverage1"
+			metal_cost="250" energy_consumption="30"
+			armor_mm="60" albedo="0.3" engine_gx="7" mass_tx="0.21"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+      
+			priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			>
+    <system name="R5" display_name="迷你激光切割器"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="93" range="Small1" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="true"
+				shot_type_data="LaserPulse_DeepBlue"
+				>
+    </system>
+  </entity>
+  
+</root>

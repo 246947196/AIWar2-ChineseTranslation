@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--These "InitialPlayerFleet" are completely hand-designed fleets that are very inflexible by design.
+      They are intended to be basic starting points that you can choose at the start of the game,
+      which you can then use to further supplement yourself later on.  Each one is a major archetype,
+      focused on a different style of play, and they use both their display name and description in the lobby.
+      
+      Creating too many of these would be a Bad Thing, because it creates paralysis for players.
+      
+      Note that ONLY the description and the name are shown, so the description had better be 
+      clear enough to let players choose things.  THAT said, the description for each ship will automatically
+      be appended if you use append_each_ship_description_to_main_description="true", so that will help.-->
+
+
+  <fleet_design name="ClassicStartingFleet"
+        display_name="默认舰队"
+        description="这种默认组合在任何特定方面都不算突出，但对任何敌人都能全面应对。护盾更是锦上添花。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Starter" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+    <ship_membership name="VWing" ship_cap_group="Strike" weight="100" cap="40"/>
+    <ship_membership name="ConcussionCorvette" ship_cap_group="Strike" weight="100" cap="40"/>
+	<ship_membership name="HeavyFusionBomber" ship_cap_group="Strike" weight="100" cap="30"/>
+    <ship_membership name="ForcefieldFrigate" ship_cap_group="Frigate" weight="100" cap="3"/>
+  </fleet_design>
+  
+  
+  
+  <fleet_design name="CloakedStartingFleet" 
+        display_name="隐形舰队"
+        description="悄无声息地潜入，然后用这股强大且可隐形的力量随心所欲地破坏目标。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Cloaked" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+    <ship_membership name="Raptor" ship_cap_group="Strike" weight="100" cap="40"/>
+    <ship_membership name="AgravicPod" ship_cap_group="Strike" weight="100" cap="40"/>
+    <ship_membership name="Gunbot" ship_cap_group="Strike" weight="100" cap="80"/>
+    <ship_membership name="WarbirdFrigate" ship_cap_group="Frigate" weight="100" cap="6"/>
+  </fleet_design>
+
+  
+  
+  <fleet_design name="ParasiticStartingFleet"
+        display_name="寄生舰队"
+        description="从敌人那里夺取资源，以彼之道还施彼身，尽管这支舰队本身实力并非顶尖。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Starter" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+    <ship_membership name="VWing" ship_cap_group="Strike" weight="100" cap="40"/>
+    <ship_membership name="ParasiteHydra" ship_cap_group="Strike" weight="100" cap="25"/>
+	<ship_membership name="Stalker" ship_cap_group="Strike" weight="100" cap="40"/>
+    <ship_membership name="Mugger" ship_cap_group="Frigate" weight="100" cap="6"/>
+  </fleet_design>
+
+
+
+  <fleet_design name="RaidStartingFleet"
+        display_name="突袭舰队"
+        description="快速移动，猛烈打击。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Agile" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+    <ship_membership name="Velociraptor" ship_cap_group="Strike" weight="100" cap="40"/>
+    <ship_membership name="Dagger" ship_cap_group="Strike" weight="100" cap="40"/>
+    <ship_membership name="TurboStingray" ship_cap_group="Strike" weight="100" cap="80"/>
+    <ship_membership name="RaidFrigate" ship_cap_group="Frigate" weight="100" cap="9"/>
+  </fleet_design>
+
+
+
+  <fleet_design name="DoorkickerStartingFleet"
+        display_name="破门者舰队"
+        description="稍微侧重于突破单位，兼具一定的群体控制能力，必要时还有攻城护卫舰来给大型目标开大洞。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Starter" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+    <ship_membership name="PulsarTank" ship_cap_group="Strike" weight="100" cap="20"/>
+    <ship_membership name="VanguardHydra" ship_cap_group="Strike" weight="100" cap="25"/>
+    <ship_membership name="InhibitingTeslaCorvette" ship_cap_group="Strike" weight="100" cap="15"/>
+    <ship_membership name="SiegeFrigate" ship_cap_group="Frigate" weight="100" cap="6"/>
+  </fleet_design>
+
+
+
+  <fleet_design name="ConsumerStartingFleet"
+        display_name="吞噬者舰队"
+        description="主要专注于吞噬敌方舰船和建筑，同时也配备了足够的轰炸机用于破坏目标，还有大型狙击星际飞船从远处提供火力支援。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Starter" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+    <ship_membership name="MetabolizingGangsaw" ship_cap_group="Strike" weight="100" cap="40"/>
+    <ship_membership name="Absorber" ship_cap_group="Strike" weight="100" cap="40"/>
+    <ship_membership name="FusionBomber" ship_cap_group="Strike" weight="100" cap="40"/>
+    <ship_membership name="TritiumSniperFrigate" ship_cap_group="Frigate" weight="100" cap="6"/>
+  </fleet_design>
+</root>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+<!-- These actually defined how a specific gravity well might look, in terms of its apparent size.-->
+
+  <grav_well_size name="Colossal" display_name="巨型 (40万)"
+      description="引力井直径为40万sU。它大到狙击火力可能在到达目标前就已消散。行军时间极长，战斗很可能会旷日持久。"
+  	  distance_scale_gravwell_radius="200000" color_hex="55ffb1" abbreviation="400"
+  >
+    <planet_grav_well_schema_membership name="Colossal" weight="100"/>
+    <planet_grav_well_schema_membership name="ChaoticRandom" weight="100"/>
+    <planet_grav_well_schema_membership name="RandomWithExtremes" weight="1"/>
+  </grav_well_size>
+
+  <grav_well_size name="Vast" display_name="广袤 (25.4万)"
+      description="引力井直径为25.4万sU。它如此之大，你可能需要开启加速模式进行游戏。没有一场战斗能覆盖整个战场，狙击手几乎无敌。行军时间非常非常长。"
+  	  distance_scale_gravwell_radius="127000" color_hex="3cffd8" abbreviation="254"
+  >
+    <planet_grav_well_schema_membership name="Vast" weight="100"/>
+    <planet_grav_well_schema_membership name="ChaoticRandom" weight="100"/>
+    <planet_grav_well_schema_membership name="RandomWithExtremes" weight="10"/>
+  </grav_well_size>
+  
+  <grav_well_size name="Grand" display_name="宏大 (14.8万)"
+      description="引力井直径为14.8万sU。它非常非常大。战斗有大量的机动空间，狙击手会变得过于强大。行军时间延长，别指望炮塔能完全覆盖虫洞。"
+  	  distance_scale_gravwell_radius="74000" color_hex="e1ff3c" abbreviation="148"
+  >
+    <planet_grav_well_schema_membership name="Grand" weight="100"/>
+    <planet_grav_well_schema_membership name="ChaoticRandom" weight="100"/>
+    <planet_grav_well_schema_membership name="RandomWithExtremes" weight="200"/>
+    <planet_grav_well_schema_membership name="ReasonableRandom" weight="20"/>
+  </grav_well_size>
+
+  <grav_well_size name="Extensive" display_name="广阔 (10.4万)"
+      description="引力井直径为10.4万sU。它相当大。战斗有很大的机动空间，狙击手会变得过于强大。行军时间较长，炮塔对虫洞的覆盖有时会成问题。"
+  	  distance_scale_gravwell_radius="52000" color_hex="eac563" abbreviation="104"
+  >
+    <planet_grav_well_schema_membership name="Extensive" weight="100"/>
+    <planet_grav_well_schema_membership name="ChaoticRandom" weight="100"/>
+    <planet_grav_well_schema_membership name="RandomWithExtremes" weight="400"/>
+    <planet_grav_well_schema_membership name="ReasonableRandom" weight="100"/>
+  </grav_well_size>
+  
+  <grav_well_size name="Spacious" display_name="宽敞 (7.6万)"
+      description="引力井直径为7.6万sU。它大到足以使行军时间略有增加，并且更难覆盖大量虫洞。战斗有更多的机动空间，但行军时间还不算太长。"
+  	  distance_scale_gravwell_radius="38000" color_hex="66a7ff" abbreviation="76"
+  >
+    <planet_grav_well_schema_membership name="Spacious" weight="100"/>
+    <planet_grav_well_schema_membership name="ChaoticRandom" weight="100"/>
+    <planet_grav_well_schema_membership name="RandomWithExtremes" weight="600"/>
+    <planet_grav_well_schema_membership name="ReasonableRandom" weight="100"/>
+  </grav_well_size>
+
+  <grav_well_size name="Modest" display_name="适中 (6.4万)"
+      description="引力井直径为6.4万sU。它仍然小到一组炮塔通常可以覆盖几个虫洞。星系内的行军时间稍长，但仍然相当快。"
+  	  distance_scale_gravwell_radius="32000" color_hex="5d8bff" abbreviation="64"
+  >
+    <planet_grav_well_schema_membership name="Modest" weight="100"/>
+    <planet_grav_well_schema_membership name="ChaoticRandom" weight="100"/>
+    <planet_grav_well_schema_membership name="RandomWithExtremes" weight="600"/>
+    <planet_grav_well_schema_membership name="ReasonableRandom" weight="100"/>
+  </grav_well_size>
+  
+  <grav_well_size name="Compact" display_name="紧凑 (5.2万)"
+      description="引力井直径为5.2万sU。它小到一组炮塔通常可以覆盖2 - 3个虫洞。星系内的行军时间极短，无论好坏。"
+  	  distance_scale_gravwell_radius="26000" color_hex="f190ff" abbreviation="52"
+      is_default="true" is_old_default="true"
+  >
+    <planet_grav_well_schema_membership name="Compact" weight="100"/>
+    <planet_grav_well_schema_membership name="ChaoticRandom" weight="100"/>
+    <planet_grav_well_schema_membership name="RandomWithExtremes" weight="600"/>
+    <planet_grav_well_schema_membership name="ReasonableRandom" weight="100"/>
+  </grav_well_size>
+
+  <grav_well_size name="Cramped" display_name="狭窄 (3.6万)"
+      y_offset_of_background_planet="-350"
+      description="引力井直径为3.6万sU。它小到一组炮塔可能可以覆盖整个引力井。星系内的行军时间非常短，很难孤立行星。"
+	    distance_scale_gravwell_radius="18000" color_hex="ff5cee" abbreviation="36"
+  >
+    <planet_grav_well_schema_membership name="Cramped" weight="100"/>
+    <planet_grav_well_schema_membership name="ChaoticRandom" weight="100"/>
+    <planet_grav_well_schema_membership name="RandomWithExtremes" weight="100"/>
+    <planet_grav_well_schema_membership name="ReasonableRandom" weight="10"/>
+  </grav_well_size>
+
+  <grav_well_size name="Miniscule" display_name="微小 (2万)"
+      y_offset_of_background_planet="-450"
+      description="引力井直径为2万sU。它如此之小，任何抵达行星的敌人几乎一到就会进入彼此的射程。"
+	    distance_scale_gravwell_radius="10000" color_hex="ff3e9d" abbreviation="20"
+  >
+    <planet_grav_well_schema_membership name="Miniscule" weight="100"/>
+    <planet_grav_well_schema_membership name="ChaoticRandom" weight="100"/>
+    <planet_grav_well_schema_membership name="RandomWithExtremes" weight="2"/>
+  </grav_well_size>
+  
+</root>

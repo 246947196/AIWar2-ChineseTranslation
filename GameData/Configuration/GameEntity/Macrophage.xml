@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <entity name="Spore"
+            thematic_groups="Macrophage,VeryMinorAliens" npc_ship_cap_type="SpecialLowCapGroup"
+			visuals="Assets/_FinalGameMeshes/Macrophage/Spore/MacrophageSpore.prefab"
+			tags="MacrophageSpore"
+			icon_name="Ships1/Spore"
+			size_scale="3"
+			visuals_scale_multiplier="3"
+			category="Ship"
+			collision_priority="100"
+			display_name="孢子"
+			description="这些隐形孢子在星系中传播。当它们与其他 Telia 的孢子相遇时，就可以产生一个新的 Telium。"
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="30"
+			hull_points="4000" shield_points="2000" speed="VeryVeryLittle1"
+			metal_cost="7000" energy_consumption="25"
+			armor_mm="20" albedo="0.1" engine_gx="20" mass_tx="2"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			voice_group="Silent"
+			description_appender_dll="AIWarExternalCode"
+			description_appender_type="Arcen.AIW2.External.SporeDescriptionAppender"
+      
+      priority_as_ai_target="NormalFleetship" priority_as_frd_target="BiggerFleetship" priority_to_protect="Expendable"
+			>
+    <system name="C" display_name="隐形装置"
+				category="Passive"
+				cloaking_points="8000"
+				>
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+  </entity>
+
+
+  <entity name="TeliumUnderConstruction"
+            thematic_groups="Macrophage,VeryMinorAliens"
+			tags="MacrophageTeliumUnderConstruction,ShowsOnNormalDisplayMode"
+			draw_in_galaxy_view="true"
+			visuals="Assets/_FinalGameMeshes/Macrophage/Telium/MacrophageTelium.prefab" gimbal_name="Telium"
+			icon_name="Ships1/Telium" gimbal_icon_size_multiplier="1.4"
+			category="Ship"
+			size_scale="8"
+			visuals_scale_multiplier="3"
+			y_offset_of_icon="30"
+			collision_priority="810"
+			display_name="特利姆"
+			description="这是一个仍在生长的 Telium。建成后，它将开始产生巨噬细胞和孢子。"
+			target_type_for_player="NeverAutotargetButAllowManualTarget"
+			behavior="Stationary"
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="3200"
+			
+			hull_points="30000" shield_points="40000" speed="Immobile"
+			metal_cost="405000" energy_consumption="5000"
+			armor_mm="30" albedo="0.1" mass_tx="4"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			voice_group="Silent"
+      
+      priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="NotDangerous" priority_to_protect="BigFavoriteToy"
+			>
+    <system name="C" display_name="隐形装置"
+				category="Passive"
+				cloaking_points="1000"
+				>
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+  </entity>
+
+
+  <entity name="Telium"
+            thematic_groups="Macrophage,VeryMinorAliens"
+			tags="MacrophageTelium,ShowsOnNormalDisplayMode"
+			eligible_for_hacks="TameTelium"
+			draw_in_galaxy_view="true"
+			visuals="Assets/_FinalGameMeshes/Macrophage/Telium/MacrophageTelium.prefab" gimbal_name="Telium"
+			icon_name="Ships1/Telium" gimbal_icon_size_multiplier="1.4"
+			category="Ship"
+			size_scale="8"
+			visuals_scale_multiplier="3"
+			y_offset_of_icon="30"
+			collision_priority="810"
+			display_name="特利姆"
+			target_type_for_player="NeverAutotargetButAllowManualTarget"
+			description="这个建筑是巨噬细胞感染的枢纽。巨噬细胞会采集金属并带回这里。摧毁这个建筑会激怒它所产生的巨噬细胞，所以不要轻易这么做。"
+			behavior="Stationary"
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="3200"			
+			hull_points="30000" shield_points="40000" speed="Immobile"
+			metal_cost="405000" energy_consumption="5000"
+			armor_mm="30" albedo="0.1" mass_tx="4"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			voice_group="Silent"
+      assist_range="Normal6"
+			description_appender_dll="AIWarExternalCode"
+			description_appender_type="Arcen.AIW2.External.TeliumDescriptionAppender"
+      
+      priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="NotDangerous" priority_to_protect="BigFavoriteToy"
+			>
+    <metal_flow purpose="RepairingHullsOfFriendlies" throughput="1000"/>
+    <metal_flow purpose="RepairingEnginesOfFriendlies" throughput="1000"/>
+	<ship_class_data can_be_zombified_and_similar="false" />
+  </entity>
+
+
+  <entity name="MacrophageHarvester"
+            thematic_groups="Macrophage,VeryMinorAliens"
+			tags="MacrophageHarvester,RegularMacrophageHarvester,NanocaustsToLich,BecomesNecromancyWight"
+			special_entity_type="LargeShipNotStackable"
+			gimbal_icon_size_multiplier="1.25"
+			visuals="Assets/_FinalGameMeshes/Macrophage/Harvester/MacrophageHarvester.prefab"
+      icon_name="Ships1/MacrophageHarvester"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="7"
+			visuals_scale_multiplier="3"
+			y_offset_of_icon="10"
+			collision_priority="100"
+			display_name="巨噬体"
+			description="巨噬细胞从其他舰船和建筑中采集金属，并供给与其关联的 Telium。"
+			starting_mark_level="Mark1"
+			cost_for_ai_to_purchase="18000"			
+			hull_points="1800000" shield_points="1200000" speed="BelowAverage1"
+			metal_cost="2000000" energy_consumption="25000"
+			armor_mm="90" albedo="0.7" engine_gx="20" mass_tx="7"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			voice_group="Silent"
+			speed_multiplier_first_5_seconds_on_planet="2"
+			description_appender_dll="AIWarExternalCode"
+			description_appender_type="Arcen.AIW2.External.HarvesterDescriptionAppender"
+      
+      priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			>
+    <system name="W1" display_name="破骨细胞碎片"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="700" range="Normal3" shot_speed="Slow" rate_of_fire="Misery"
+				shots_per_salvo="16" fires_salvos_sequentially="false"
+				shot_type_data="PlasmaTorpedoAOEBurstAtEnd"
+				area_of_effect_size="99"				
+				aoe_spreads_damage_among_available_targets="true"
+				health_change_per_damage_dealt="0.5"
+				>
+    </system>
+    <system name="R2" display_name="破骨细胞能量波"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="700" range="Normal3" shot_speed="VeryFast" rate_of_fire="Misery"
+				shots_per_salvo="10" fires_salvos_sequentially="false"
+				shot_type_data="EnergyWave"		
+				health_change_per_damage_dealt="0.5"		
+				>
+    </system>
+	<incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="4480" multiplier="0.25" />	
+	<ship_class_data can_be_zombified_and_similar="false" />
+  </entity>
+
+
+  <entity name="MacrophageEnragedHarvester"
+            thematic_groups="Macrophage,VeryMinorAliens"
+			tags="MacrophageEnragedHarvester,RegularMacrophageEnragedHarvester,NanocaustsToLich,BecomesNecromancyWight"
+			special_entity_type="LargeShipNotStackable"
+			gimbal_icon_size_multiplier="1.25"
+			visuals="Assets/_FinalGameMeshes/Macrophage/Harvester/MacrophageHarvester.prefab"
+			icon_name="Ships1/MacrophageEnragedHarvester"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="7"
+			visuals_scale_multiplier="3"
+			y_offset_of_icon="16"
+			collision_priority="100"
+			display_name="愤怒的巨噬体"
+			description="这个巨噬细胞被激怒了，只想进行杀戮。"
+			starting_mark_level="Mark1"
+			cost_for_ai_to_purchase="24000"			
+			hull_points="1800000" shield_points="1200000" speed="BelowAverage1"
+			metal_cost="2000000" energy_consumption="25000"
+			armor_mm="90" albedo="0.7" engine_gx="20" mass_tx="7"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			voice_group="Silent"
+			speed_multiplier_first_5_seconds_on_planet="2"
+      
+      priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			>
+    <system name="W1" display_name="破骨细胞碎片"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1050" range="Normal3" shot_speed="Slow" rate_of_fire="Misery"
+				shots_per_salvo="16" fires_salvos_sequentially="false"
+				shot_type_data="PlasmaTorpedoAOEBurstAtEnd"
+				area_of_effect_size="99"				
+				aoe_spreads_damage_among_available_targets="true"
+				health_change_per_damage_dealt="0.2"
+				>
+    </system>
+    <system name="WZ" display_name="破骨细胞轨道炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1050" range="Normal3" shot_speed="VeryFast" rate_of_fire="Misery"
+				shots_per_salvo="10" fires_salvos_sequentially="false"
+				shot_type_data="ExtremeLongRangeRailgun"	
+				health_change_per_damage_dealt="0.2"			
+				>
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+  </entity>
+  <entity name="MacrophageEnragedHarvesterZenithTrader"  copy_from="MacrophageEnragedHarvester" is_auto_scrapping_skipped_when_command_station_type_changes="true"
+        metal_cost="2000000" energy_consumption="25000" build_sidebar_categories_i_am_part_of="StationKeepers" 
+        fleet_membership="Planetary" display_name="驯化的巨噬体"
+		starting_mark_level="Markless"
+        behavior="Attacker_Full"
+        description="这个巨噬细胞已被天顶商人驯服。如果你在星系中已经拥有两个这样的巨噬细胞，商人将不会再向你出售。"
+		base_galaxy_wide_cap_for_players_constructing="2" galaxy_wide_cap_match_string="MEHZT"
+		speed_multiplier_first_5_seconds_on_planet="1"
+      >
+    <fleet_membership name="ZenithPurchases" ship_cap_group="OtherDefense" weight="100" cap="2"/>
+    <metal_flow purpose="SelfConstruction" throughput="1000"/>
+  </entity>
+
+</root>

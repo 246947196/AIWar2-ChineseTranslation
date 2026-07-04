@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <entity name="MobileWormholeBorer"
+          thematic_groups="AI"
+	  tags="MobileWormholeBorer"
+          gimbal_icon_size_multiplier="1.25"
+	  visuals="Assets/_DLC2/AI/WormholeBorer/WormholeBorerClosed.prefab" visuals_bundle="exp2_zenith_onslaught"
+	  icon_name="Ships3/WormholeBorer"
+	  uses_large_health_bar="true"
+	  category="Ship"
+	  size_scale="9"
+	  visuals_scale_multiplier="30"
+	  y_offset_of_icon="16"
+	  collision_priority="400"
+	  display_name="移动式虫洞钻孔机"
+		display_name_for_sidebar="移动式WH钻孔机"
+	  description="一种快速飞船，会寻找位置尝试创建新的虫洞，然后转变为完整的虫洞钻孔机。"
+	  voice_group="Silent"
+	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+	  cost_for_ai_to_purchase="1000" strength_multiplier="2.2"		
+	  hull_points="33000" shield_points="17000" speed="AboveAverage6"
+	  metal_cost="80000" energy_consumption="7500"
+	  armor_mm="50" albedo="0.7" engine_gx="9" mass_tx="5"
+	  ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+          priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+          description_appender_dll="AIWarExternalCode"
+	  description_appender_type="Arcen.AIW2.External.WormholeBorerAppender"
+			>
+    <system name="WL" display_name="聚变炸弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="500" range="Small4" shot_speed="Slow" rate_of_fire="Normal" fires_salvos_sequentially="false"
+				shots_per_salvo="5"
+				shot_type_data="FusionBomb"
+				base_percent_damage_bypasses_personal_shields="0.9" cloaking_percent_loss_from_firing="0.2"
+				>
+				<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="HullOnly" comparison_type="AtLeast" compared_to="50" multiplier="1.5" />
+    </system>
+    <!--
+    <system name="C" display_name="隐形装置"
+				category="Passive"
+				cloaking_points="2000" cloaking_points_added_per_mark="1000"
+				>
+    </system>
+-->
+  </entity>
+
+
+  <entity  name="WormholeBorer"
+           thematic_groups="AI"
+           tags="WormholeBorer" npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+	   visuals="assets/_finalgamemeshes/blankshipsootheraddonscandrawalone.prefab" ship_skips_traditional_rendering="true"
+ 
+    addon_object_or_particle_field="WormholeBorerOpenWithParticles" addon_object_or_particle_field_scale="9" addon_object_or_particle_field_y_offset="0"
+           
+	   icon_name="Ships3/WormholeBorer" icon_overlay="Overlays2/WormholeBorer_Mining" gimbal_icon_size_multiplier="1.5"
+	   y_offset_of_icon="35"
+	   category="Ship"
+	   size_scale="9"
+	   visuals_scale_multiplier="30"
+           collision_priority="800"
+	   display_name="虫洞钻孔机"
+	    description="这座威力惊人的建筑正在开辟一条新的虫洞通道。"
+	    behavior="Stationary"
+	    starting_mark_level="Mark1" max_mark_level="5" tech_upgrades_that_benefit_me="Unused"		
+	    cost_for_ai_to_purchase="3000"		
+	    hull_points="250000" shield_points="750000" speed="Immobile"
+	    metal_cost="1500000" energy_consumption="50000"
+	    armor_mm="300" albedo="0.7" mass_tx="7"
+	    ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+	    voice_group="Turret"
+	    is_reinforcement_location="true" always_is_ai_turret_spawn_point="true"
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+            description_appender_dll="AIWarExternalCode"
+	    description_appender_type="Arcen.AIW2.External.WormholeBorerAppender"
+	    >
+    <system name="R1" display_name="堡垒级聚变导弹"
+            category="Weapon" firing_timing="OnlyInRange"
+            damage_per_shot="1500" range="High1" shot_speed="Normal" rate_of_fire="Normal"
+            shots_per_salvo="30" fires_salvos_sequentially="false"
+            shot_type_data="FusionRocket"    
+	    >
+      <outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="50" multiplier="2" />
+    </system>
+    <system name="R2" display_name="堡垒级能量波炮"
+            category="Weapon" firing_timing="OnlyInRange" shots_per_salvo="4"
+            damage_per_shot="3750" range="High1" shot_speed="Normal" rate_of_fire="Low" fires_salvos_sequentially="true"
+            shot_type_data="EnergyWave"
+	    >
+      <outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="6" />
+    </system>
+  </entity>
+
+ 
+		  
+	
+  <entity name="AIDZDragon" tags="AIDZDragon"
+            thematic_groups="AI"  
+			draw_in_galaxy_view="true"
+			visuals="Assets/_DLC2/AI/AntiZenithDragon/AntiZenithDragon.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships4/Dragon" icon_overlay="Overlays1/AIEye_ChainLightningUnalerted" gimbal_icon_size_multiplier="2"
+			voice_group="Silent"			
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="9"
+			visuals_scale_multiplier="15"
+			y_offset_of_icon="30"
+			collision_priority="810"
+			display_name="AI顶点龙"
+			description="极其先进的舰船，部署用于抵御新出现的顶点威胁。"
+			starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+			cost_for_ai_to_purchase="37500"
+			hull_points="20000000" shield_points="10000000" speed="AboveAverage4"			
+			metal_cost="2000000" energy_consumption="150000"	
+			returns_this_percentage_of_damage_if_damaged_by_enemy_attack="0.05"
+			armor_mm="350" albedo="0.4" engine_gx="25" mass_tx="11"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			>		
+    <system name="Q8" display_name="能量爆发"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="2500" range="AboveAverage4" shot_speed="Slow" rate_of_fire="Devourer" 
+				shots_per_salvo="40" fires_salvos_sequentially="false"				
+				shot_type_data="LaserPulse_Pink"
+				>
+    </system>
+  
+	<system name="B9" display_name="连锁闪电炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="15000" range="AboveAverage4" shot_speed="Normal" rate_of_fire="Devourer"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="1.1" beam_weapon_visual_style="Lightning_Red"
+				beam_chains_out_to_targets_x_times="3"
+				beam_chains_out_to_target_min_range="200"
+				beam_chains_out_to_targets_x_range="2500"
+				beam_chains_out_to_max_targets_from_each_source="5"
+				shots_detonate_immediately="true"
+				maximum_number_of_targets_hit_per_shot="30"
+				added_target_evaluator="LowestHealthAsMajorPrimary"			
+				>
+				<outgoing_damage_modifier applies_to="AllShields" based_on="MaxBubbleForcefield" comparison_type="GreaterThan" compared_to="10000" multiplier="5" />
+	</system>
+	<ship_class_data can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.5" can_be_devoured="false"
+	>
+		<debuff_modifier debuff_type="WeaponPhase" multiplier="0" />
+	</ship_class_data>
+  </entity>	
+  
+</root>

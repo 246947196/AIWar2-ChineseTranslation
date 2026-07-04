@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!--
+		Fallen Spire Faction
+		*********************************************************
+	-->
+	<beacon_faction_option name="JustTheFallenSpire"
+		blocked_from_seeding_if_any_of_these_factions_included="FallenSpire"
+		blocked_from_seeding_if_any_of_these_player_types_included="SpireInfusedEmpire,NecromancerEmpire"
+	    requires_at_least_one_metal_using_player="true"
+		tag_from_which_to_seed_one_beacon="SpireBeacon"
+		beacon_tier_for_seeding="AlwaysSeed">
+
+		<!-- Intensity 1 -->
+		<hack_choice name="Intensity1" factions_included="FallenSpire" display_name="强度 1" description="一个有趣且简单的挑战。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="1" />
+		</hack_choice>
+
+		<!-- Intensity 2 -->
+		<hack_choice name="Intensity2" factions_included="FallenSpire" display_name="强度 2" description="一个有趣且非常轻松的挑战。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="2" />
+		</hack_choice>
+
+		<!-- Intensity 3 -->
+		<hack_choice name="Intensity3" factions_included="FallenSpire" display_name="强度 3" description="一个有趣且轻松的挑战。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="3" />
+		</hack_choice>
+
+		<!-- Intensity 4 -->
+		<hack_choice name="Intensity4" factions_included="FallenSpire" display_name="强度 4" description="一个有趣且合理的挑战。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="4" />
+		</hack_choice>
+
+		<!-- Intensity 5 -->
+		<hack_choice name="Intensity5" factions_included="FallenSpire" display_name="强度 5" description="一个有趣且中等的挑战。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="5" />
+		</hack_choice>
+
+		<!-- Intensity 6 -->
+		<hack_choice name="Intensity6" factions_included="FallenSpire" display_name="强度 6" description="一个有趣且更大的挑战。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="6" />
+		</hack_choice>
+
+		<!-- Intensity 7 -->
+		<hack_choice name="Intensity7" factions_included="FallenSpire" display_name="强度 7" description="一个有趣且更大的挑战。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="7" />
+		</hack_choice>
+
+		<!-- Intensity 8 -->
+		<hack_choice name="Intensity8" factions_included="FallenSpire" display_name="强度 8" description="一个有趣且非常大的挑战。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="8" />
+		</hack_choice>
+
+		<!-- Intensity 9 -->
+		<hack_choice name="Intensity9" factions_included="FallenSpire" display_name="强度 9" description="一个有趣且极其大的挑战。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="9" />
+		</hack_choice>
+
+		<!-- Intensity 10 -->
+		<hack_choice name="Intensity10" factions_included="FallenSpire" display_name="强度 10" description="一个有趣且极其大的挑战。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="10" />
+		</hack_choice>
+
+		<!-- Intensity 1 Expert Mode -->
+		<hack_choice name="Intensity1ExpertMode" factions_included="FallenSpire" display_name="强度 1 专家模式" description="一个有趣且简单的挑战，你的尖塔舰船速度比正常情况慢。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="1" />
+			<custom_field_value included_faction_index="0" field_name="ExpertMode" field_value="true" />
+		</hack_choice>
+		
+		<!-- Intensity 2 Expert Mode -->
+		<hack_choice name="Intensity2ExpertMode" factions_included="FallenSpire" display_name="强度 2 专家模式" description="一个有趣且非常轻松的挑战，你的尖塔舰船速度比正常情况慢。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="2" />
+			<custom_field_value included_faction_index="0" field_name="ExpertMode" field_value="true" />
+		</hack_choice>
+		
+		<!-- Intensity 3 Expert Mode -->
+		<hack_choice name="Intensity3ExpertMode" factions_included="FallenSpire" display_name="强度 3 专家模式" description="一个有趣且轻松的挑战，你的尖塔舰船速度比正常情况慢。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="3" />
+			<custom_field_value included_faction_index="0" field_name="ExpertMode" field_value="true" />
+		</hack_choice>
+		
+		<!-- Intensity 4 Expert Mode -->
+		<hack_choice name="Intensity4ExpertMode" factions_included="FallenSpire" display_name="强度 4 专家模式" description="一个有趣且合理的挑战，你的尖塔舰船速度比正常情况慢。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="4" />
+			<custom_field_value included_faction_index="0" field_name="ExpertMode" field_value="true" />
+		</hack_choice>
+		
+		<!-- Intensity 5 Expert Mode -->
+		<hack_choice name="Intensity5ExpertMode" factions_included="FallenSpire" display_name="强度 5 专家模式" description="一个有趣且中等的挑战，你的尖塔舰船速度比正常情况慢。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="5" />
+			<custom_field_value included_faction_index="0" field_name="ExpertMode" field_value="true" />
+		</hack_choice>
+		
+		<!-- Intensity 6 Expert Mode -->
+		<hack_choice name="Intensity6ExpertMode" factions_included="FallenSpire" display_name="强度 6 专家模式" description="一个有趣且更大的挑战，你的尖塔舰船速度比正常情况慢。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="6" />
+			<custom_field_value included_faction_index="0" field_name="ExpertMode" field_value="true" />
+		</hack_choice>
+
+		<!-- Intensity 7 Expert Mode -->
+		<hack_choice name="Intensity7ExpertMode" factions_included="FallenSpire" display_name="强度 7 专家模式" description="一个有趣且更大的挑战，你的尖塔舰船速度比正常情况慢。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="7" />
+			<custom_field_value included_faction_index="0" field_name="ExpertMode" field_value="true" />
+		</hack_choice>
+		
+		<!-- Intensity 8 Expert Mode -->
+		<hack_choice name="Intensity8ExpertMode" factions_included="FallenSpire" display_name="强度 8 专家模式" description="一个有趣且极其大的挑战，你的尖塔舰船速度比正常情况慢。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="8" />
+			<custom_field_value included_faction_index="0" field_name="ExpertMode" field_value="true" />
+		</hack_choice>
+
+		<!-- Intensity 9 Expert Mode -->
+		<hack_choice name="Intensity9ExpertMode" factions_included="FallenSpire" display_name="强度 9 专家模式" description="一个有趣且极其大的挑战，你的尖塔舰船速度比正常情况慢。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="9" />
+			<custom_field_value included_faction_index="0" field_name="ExpertMode" field_value="true" />
+		</hack_choice>
+
+		<!-- Intensity 10 Expert Mode -->
+		<hack_choice name="Intensity10ExpertMode" factions_included="FallenSpire" display_name="强度 10 专家模式" description="一个有趣且极其大的挑战，你的尖塔舰船速度比正常情况慢。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="10" />
+			<custom_field_value included_faction_index="0" field_name="ExpertMode" field_value="true" />
+		</hack_choice>
+	</beacon_faction_option>
+
+	<!--
+	Scourge Faction
+	*********************************************************
+	-->
+    <beacon_faction_option name="Scourge"
+		blocked_from_seeding_if_any_of_these_factions_included="Scourge"
+		tag_from_which_to_seed_one_beacon="ScourgeBeacon"
+		beacon_tier_for_seeding="Major">
+
+		<!-- 1 enemy + 1 friendly -->
+		<!-- Intensity 1 -->
+		<hack_choice name="Intensity1Scourge" factions_included="Scourge,Scourge" display_name="强度 1 结盟与敌对天灾" description="生成 2 个非常弱小的天灾。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="1" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+			<custom_field_value included_faction_index="1" field_name="Intensity" field_value="1" />
+			<custom_field_value included_faction_index="1" field_name="Allegiance" field_value="Allied To AI" />
+		</hack_choice>
+
+		<!-- Intensity 2 -->
+		<hack_choice name="Intensity2Scourge" factions_included="Scourge,Scourge" display_name="强度 2 结盟与敌对天灾" description="获得弱小的盟友。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="2" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+			<custom_field_value included_faction_index="1" field_name="Intensity" field_value="2" />
+			<custom_field_value included_faction_index="1" field_name="Allegiance" field_value="Allied To AI" />
+		</hack_choice>
+
+		<!-- Intensity 3 -->
+		<hack_choice name="Intensity3Scourge" factions_included="Scourge,Scourge" display_name="强度 3 结盟与敌对天灾" description="获得弱小的盟友。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="3" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+			<custom_field_value included_faction_index="1" field_name="Intensity" field_value="3" />
+			<custom_field_value included_faction_index="1" field_name="Allegiance" field_value="Allied To AI" />
+		</hack_choice>
+
+		<!-- Intensity 4 -->
+		<hack_choice name="Intensity4Scourge" factions_included="Scourge,Scourge" display_name="强度 4 结盟与敌对天灾" description="获得弱小的盟友。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="4" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+			<custom_field_value included_faction_index="1" field_name="Intensity" field_value="4" />
+			<custom_field_value included_faction_index="1" field_name="Allegiance" field_value="Allied To AI" />
+		</hack_choice>
+
+		<!-- Intensity 5 -->
+		<hack_choice name="Intensity5Scourge" factions_included="Scourge,Scourge" display_name="强度 5 结盟与敌对天灾" description="获得中等实力的盟友。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="5" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+			<custom_field_value included_faction_index="1" field_name="Intensity" field_value="5" />
+			<custom_field_value included_faction_index="1" field_name="Allegiance" field_value="Allied To AI" />
+		</hack_choice>
+
+		<!-- Intensity 6 -->
+		<hack_choice name="Intensity6Scourge" factions_included="Scourge,Scourge" display_name="强度 6 结盟与敌对天灾" description="获得中等实力的盟友。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="6" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+			<custom_field_value included_faction_index="1" field_name="Intensity" field_value="6" />
+			<custom_field_value included_faction_index="1" field_name="Allegiance" field_value="Allied To AI" />
+		</hack_choice>
+
+		<!-- Intensity 7 -->
+		<hack_choice name="Intensity7Scourge" factions_included="Scourge,Scourge" display_name="强度 7 结盟与敌对天灾" description="获得强大的盟友。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="7" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+			<custom_field_value included_faction_index="1" field_name="Intensity" field_value="7" />
+			<custom_field_value included_faction_index="1" field_name="Allegiance" field_value="Allied To AI" />
+		</hack_choice>
+
+		<!-- Intensity 8 -->
+		<hack_choice name="Intensity8Scourge" factions_included="Scourge,Scourge" display_name="强度 8 结盟与敌对天灾" description="获得强大的盟友。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="8" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+			<custom_field_value included_faction_index="1" field_name="Intensity" field_value="8" />
+			<custom_field_value included_faction_index="1" field_name="Allegiance" field_value="Allied To AI" />
+		</hack_choice>
+
+		<!-- Intensity 9 -->
+		<hack_choice name="Intensity9Scourge" factions_included="Scourge,Scourge" display_name="强度 9 结盟与敌对天灾" description="获得非常强大的盟友。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="9" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+			<custom_field_value included_faction_index="1" field_name="Intensity" field_value="9" />
+			<custom_field_value included_faction_index="1" field_name="Allegiance" field_value="Allied To AI" />
+		</hack_choice>
+
+		<!-- Intensity 10 -->
+		<hack_choice name="Intensity10Scourge" factions_included="Scourge,Scourge" display_name="强度 10 结盟与敌对天灾" description="获得极其强大的盟友。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="10" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+			<custom_field_value included_faction_index="1" field_name="Intensity" field_value="10" />
+			<custom_field_value included_faction_index="1" field_name="Allegiance" field_value="Allied To AI" />
+		</hack_choice>
+		
+		<!-- Friendly To Players -->
+		<!-- Intensity 1 -->
+		<hack_choice name="Intensity1Allies" factions_included="Scourge" display_name="强度 1 盟友" description="获得非常弱小的盟友。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="1" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+
+		<!-- Intensity 2 -->
+		<hack_choice name="Intensity2Allies" factions_included="Scourge" display_name="强度 2 盟友" description="获得弱小的盟友。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="2" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+
+		<!-- Intensity 3 -->
+		<hack_choice name="Intensity3Allies" factions_included="Scourge" display_name="强度 3 盟友" description="获得弱小的盟友。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="3" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+   		
+		<!-- Intensity 4 -->
+		<hack_choice name="Intensity4Allies" factions_included="Scourge" display_name="强度 4 盟友" description="获得弱小的盟友。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="4" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+		
+		<!-- Intensity 5 -->
+		<hack_choice name="Intensity5Allies" factions_included="Scourge" display_name="强度 5 盟友" description="获得中等实力的盟友。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="5" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+		
+		<!-- Intensity 6 -->
+		<hack_choice name="Intensity6Allies" factions_included="Scourge" display_name="强度 6 盟友" description="获得中等实力的盟友。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="6" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+
+		<!-- Intensity 7 -->
+		<hack_choice name="Intensity7Allies" factions_included="Scourge" display_name="强度 7 盟友" description="获得强大的盟友。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="7" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+
+		<!-- Intensity 8 -->
+		<hack_choice name="Intensity8Allies" factions_included="Scourge" display_name="强度 8 盟友" description="获得强大的盟友。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="8" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+
+		<!-- Intensity 9 -->
+		<hack_choice name="Intensity9Allies" factions_included="Scourge" display_name="强度 9 盟友" description="获得非常强大的盟友。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="9" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+
+		<!-- Intensity 10 -->
+		<hack_choice name="Intensity10Allies" factions_included="Scourge" display_name="强度 10 盟友" description="获得极其强大的盟友。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="10" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+
+		<!-- Allied To AI -->
+		<!-- Intensity 1 -->
+		<hack_choice name="Intensity1Enemies" factions_included="Scourge" display_name="强度 1 敌人" description="获得非常弱小的敌人。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="1" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Allied To AI" />
+		</hack_choice>
+
+		<!-- Intensity 2 -->
+		<hack_choice name="Intensity2Enemies" factions_included="Scourge" display_name="强度 2 敌人" description="获得弱小的敌人。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="2" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Allied To AI" />
+		</hack_choice>
+
+		<!-- Intensity 3 -->
+		<hack_choice name="Intensity3Enemies" factions_included="Scourge" display_name="强度 3 敌人" description="获得弱小的敌人。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="3" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Allied To AI" />
+		</hack_choice>
+
+		<!-- Intensity 4 -->
+		<hack_choice name="Intensity4Enemies" factions_included="Scourge" display_name="强度 4 敌人" description="获得弱小的敌人。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="4" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Allied To AI" />
+		</hack_choice>
+
+		<!-- Intensity 5 -->
+		<hack_choice name="Intensity5Enemies" factions_included="Scourge" display_name="强度 5 敌人" description="获得中等实力的敌人。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="5" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Allied To AI" />
+		</hack_choice>
+
+		<!-- Intensity 6 -->
+		<hack_choice name="Intensity6Enemies" factions_included="Scourge" display_name="强度 6 敌人" description="获得中等实力的敌人。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="6" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Allied To AI" />
+		</hack_choice>
+
+		<!-- Intensity 7 -->
+		<hack_choice name="Intensity7Enemies" factions_included="Scourge" display_name="强度 7 敌人" description="获得强大的敌人。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="7" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Allied To AI" />
+		</hack_choice>
+		
+		<!-- Intensity 8 -->
+		<hack_choice name="Intensity8Enemies" factions_included="Scourge" display_name="强度 8 敌人" description="获得强大的敌人。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="8" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Allied To AI" />
+		</hack_choice>
+		
+		<!-- Intensity 9 -->
+		<hack_choice name="Intensity9Enemies" factions_included="Scourge" display_name="强度 9 敌人" description="获得非常强大的敌人。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="9" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Allied To AI" />
+		</hack_choice>
+		
+		<!-- Intensity 10 -->
+		<hack_choice name="Intensity10Enemies" factions_included="Scourge" display_name="强度 10 敌人" description="获得极其强大的敌人。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="10" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Allied To AI" />
+		</hack_choice>
+	</beacon_faction_option>
+	<!--	
+		Chromatic Horror
+		*********************************************************
+	-->
+	<beacon_faction_option name="ChromaticHorror"
+		blocked_from_seeding_if_any_of_these_factions_included="ChromaticHorror"
+		tag_from_which_to_seed_one_beacon="ChromaticHorrorBeacon"
+		beacon_tier_for_seeding="Minor">
+		<hack_choice name="ChromaticHorrorHostile" factions_included="ChromaticHorror" display_name="彩色恐惧" description="星系中一个有趣的新增元素...">
+		</hack_choice>
+	</beacon_faction_option>
+</root>

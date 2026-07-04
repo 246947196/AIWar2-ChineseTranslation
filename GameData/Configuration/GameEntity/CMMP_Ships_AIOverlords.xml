@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+		<!--The base AI OVerlord Phase 1.  This is where all the different versions will come from.
+				Pretty well everything except for the tags should be copied over.-->
+  <entity name="AIOverlordPhase1"
+      thematic_groups="Hidden"
+      is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+			tags="AIOverlord_AnyTypeOrPhase,AIOverlordPhase1_AnyType,ShowsOnNormalDisplayMode"
+			special_entity_type="AIKingCommandStation"
+			draw_in_galaxy_view="true" is_critical_infrastructure="true"
+			visuals="assets/_finalgamemeshes/aibuildings/overlord/aioverlordphase1.prefab"
+			icon_name="Ships1/King" gimbal_icon_size_multiplier="2"
+			uses_large_health_bar="true"
+			category="Ship"
+			y_offset_of_icon="40" tech_upgrade_that_is_used_for_my_direct_science="Direct_ActuallyUnused"
+			size_scale="12"
+			visuals_scale_multiplier="2"
+			collision_priority="8000"
+			display_name="AI霸主"
+			display_name_for_sidebar="霸主"
+			description="整个AI派系的中央处理器。摧毁它的两个阶段即可击败这个派系，但请确保你已经做好了准备。"
+      description_short="摧毁它的两个阶段即可击败这个派系。"
+			behavior="Stationary"
+			player_wins_if_all_are_destroyed="true"
+			provides_ai_warp_entry_point="true"
+			aip_on_death="37"
+      triggers_general_readiness_on_ai_sentinels="true"
+			voice_group="Silent"
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="2000"
+			skip_drawing_ship_cap="true"
+			hull_points="5000000" shield_points="5000000" speed="Immobile"
+			metal_cost="5000000" energy_consumption="250000"
+			armor_mm="350" albedo="0.45" mass_tx="13"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+      always_is_ai_turret_spawn_point="true"
+      always_is_ai_non_turret_defense_spawn_point="true"
+			external_invulnerability_unit_type="DireGuardPost"
+      external_invulnerability_region="Galaxy"
+			science_to_grant_on_death="0"
+			hacking_to_grant_on_death="0"
+      should_not_be_given_normal_orders_by_ai_logic="true"
+      priority_as_ai_target="IrreplaceableBigAsTheyCome" priority_as_frd_target="NotDangerous" priority_to_protect="MajorFullGameObjective"
+			>
+	<entity_type_drawing_bag_used_on_death data_list="AIOverlordPhase2" />
+    <system name="T" display_name="超光速粒子阵列"
+    category="Passive" tachyon_points="50" tachyon_range="AboveAverage1" tachyon_hits_albedo_less_than="0.75"></system>
+  </entity>
+
+  <!--The base AI OVerlord Phase 2.  This is where all the different versions will come from.
+				Pretty well everything except for the tags should be copied over.-->
+  <entity name="AIOverlordPhase2"
+      thematic_groups="Hidden"
+      is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+			tags="AIOverlord_AnyTypeOrPhase,AIOverlordPhase2_AnyType,ShowsOnNormalDisplayMode"
+			special_entity_type="AIKingMobile"
+			draw_in_galaxy_view="true" is_critical_infrastructure="true"
+			visuals="assets/_finalgamemeshes/aibuildings/overlord/aioverlordphase2.prefab"
+			icon_name="Ships1/King" gimbal_icon_size_multiplier="2"
+			uses_large_health_bar="true"
+			category="Ship"
+			y_offset_of_icon="40"
+			size_scale="12"
+			visuals_scale_multiplier="2"
+			collision_priority="8000"
+			display_name="AI霸主 - 阶段2"
+			display_name_for_sidebar="霸主 阶段2"
+			description="整个AI派系的中央处理器，现已激活并愤怒地朝你的主指挥站移动。摧毁这最后阶段即可击败这个派系。"
+      description_short="在它到达你的指挥站前摧毁这最后阶段。"
+			behavior="Attacker_Full"
+			player_wins_if_all_are_destroyed="true"
+			provides_ai_warp_entry_point="true"
+			aip_on_death="37"
+      triggers_general_readiness_on_ai_sentinels="true"
+			voice_group="Silent"
+			starting_mark_level="Markless"
+			pushes_enemy_shields="true"
+			cost_for_ai_to_purchase="2000"
+			skip_drawing_ship_cap="true"
+			hull_points="64000000" shield_points="12500000" speed="VeryVeryLittle4"
+			metal_cost="5000000" energy_consumption="250000"
+			armor_mm="350" albedo="0.8" engine_gx="25" mass_tx="13"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+      forced_to_be_this_state_of_matter_when_on_former_or_current_ai_homeworld_or_bastion_worlds_unless_enemy_king_present="SoloPhase"
+      should_not_be_given_normal_orders_by_ai_logic="true" should_always_be_given_orders_to_attack_player_king="true"
+      can_pass_through_enemy_forcefields="true"
+			
+			science_to_grant_on_death="10000"
+			hacking_to_grant_on_death="60"
+                        priority_as_ai_target="MajorFullGameObjective_SlightlyLower" priority_as_frd_target="MidNasty" priority_to_protect="MajorFullGameObjective"
+                        not_eligible_to_join_hunter_fleet="true"
+			>
+    <system name="W1" display_name="执政官寄生闪电"
+                category="Weapon" firing_timing="OnlyInRange"
+                damage_per_shot="12000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Misery" fires_salvos_sequentially="false"
+	            shots_per_salvo="80"
+                shot_type_data="ParasiteCurvedPinkShot"
+				>
+      <death_effect_damage type="Zombification" tier_name="Overlord"/>
+    </system>
+    <system name="W2" display_name="执政官聚变炸弹"
+                  category="Weapon" firing_timing="OnlyInRange"
+                  damage_per_shot="75000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="true"
+                  shot_type_data="FusionBomb"
+                  base_percent_damage_bypasses_personal_shields="1"
+				>
+      <outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="2" />
+    </system>
+    <system name="W3" display_name="执政官等离子过载器"
+          category="Weapon" firing_timing="OnlyInRange"
+          damage_per_shot="50000" range="AboveAverage3" shot_speed="Slow" rate_of_fire="Low" fires_salvos_sequentially="true"
+          shot_type_data="PlasmaTorpedoAOEBurstAtEnd"
+          overdrives_shields="true"
+          area_of_effect_size="1500"
+          aoe_spreads_damage_among_available_targets="true"
+				>
+    </system>
+    <system name="T" display_name="超光速粒子阵列"
+        category="Passive" tachyon_points="50" tachyon_range="AboveAverage1" tachyon_hits_albedo_less_than="0.75"></system>
+	<ship_class_data can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.1" can_be_devoured="false" can_be_tractored="false"
+	>
+		<debuff_modifier debuff_type="WeaponPhase" multiplier="0" />
+	</ship_class_data>
+  </entity>
+  <!--Difficulty 1-->
+  <entity name="AIOverlordPhase1_Diff1" copy_from="AIOverlordPhase1"
+      thematic_groups="AI"
+			tags="AIOverlord_AnyTypeOrPhase,AIOverlordPhase1_AnyType,AIOverlordSeed_Difficulty1,ShowsOnNormalDisplayMode"
+      multiplier_to_all_costs="0.05" multiplier_to_all_healths="0.05" damage_multiplier_to_all_weapons="0.1"
+      display_name="AI霸主 (v0.001proto)"
+      description="整个AI派系的中央处理器。摧毁它的两个阶段即可击败这个派系，但请确保你已经做好了准备。
+      
+你非常幸运地面对的是极其弱小的v0.001proto变体。"
+          >
+	<entity_type_drawing_bag_used_on_death data_list="AIOverlordPhase2_Diff1" />
+	</entity>
+
+  <entity name="AIOverlordPhase2_Diff1" copy_from="AIOverlordPhase2"
+      thematic_groups="AI"
+      multiplier_to_all_costs="0.05" multiplier_to_all_healths="0.05" damage_multiplier_to_all_weapons="0.1"
+			tags="AIOverlord_AnyTypeOrPhase,AIOverlordPhase2_AnyType,AIOverlordPhase2_Difficulty1,ShowsOnNormalDisplayMode"
+      speed="VeryVeryLittle1"
+      display_name="AI霸主 阶段2 (v0.001proto)"
+      description="整个AI派系的中央处理器，现已激活并愤怒地朝你的主指挥站移动。摧毁这最后阶段即可击败这个派系。
+      
+你非常幸运地面对的是极其弱小的v0.001proto变体，它既非常弱小又特别缓慢。"
+          />
+
+  <!--Difficulty 2-->
+  <entity name="AIOverlordPhase1_Diff2" copy_from="AIOverlordPhase1"
+      thematic_groups="AI"
+			tags="AIOverlord_AnyTypeOrPhase,AIOverlordPhase1_AnyType,AIOverlordSeed_Difficulty2,ShowsOnNormalDisplayMode"
+      multiplier_to_all_costs="0.1" multiplier_to_all_healths="0.1" damage_multiplier_to_all_weapons="0.1"
+      display_name="AI霸主 (v0.002proto)"
+      description="整个AI派系的中央处理器。摧毁它的两个阶段即可击败这个派系，但请确保你已经做好了准备。
+      
+你非常幸运地面对的是极其弱小的v0.002proto变体。"
+          >
+	<entity_type_drawing_bag_used_on_death data_list="AIOverlordPhase2_Diff2" />
+	</entity>
+
+  <entity name="AIOverlordPhase2_Diff2" copy_from="AIOverlordPhase2"
+      thematic_groups="AI"
+      multiplier_to_all_costs="0.1" multiplier_to_all_healths="0.1" damage_multiplier_to_all_weapons="0.1"
+			tags="AIOverlord_AnyTypeOrPhase,AIOverlordPhase2_AnyType,AIOverlordPhase2_Difficulty2,ShowsOnNormalDisplayMode"
+      speed="VeryVeryLittle1"
+      display_name="AI霸主 阶段2 (v0.002proto)"
+      description="整个AI派系的中央处理器，现已激活并愤怒地朝你的主指挥站移动。摧毁这最后阶段即可击败这个派系。
+      
+你非常幸运地面对的是极其弱小的v0.002proto变体，它既非常弱小又特别缓慢。"
+          />
+
+  <!--Difficulty 3-->
+  <entity name="AIOverlordPhase1_Diff3" copy_from="AIOverlordPhase1"
+      thematic_groups="AI"
+			tags="AIOverlord_AnyTypeOrPhase,AIOverlordPhase1_AnyType,AIOverlordSeed_Difficulty3,ShowsOnNormalDisplayMode"
+      multiplier_to_all_costs="0.15" multiplier_to_all_healths="0.15" damage_multiplier_to_all_weapons="0.15"
+      display_name="AI霸主 (v0.003proto)"
+      description="整个AI派系的中央处理器。摧毁它的两个阶段即可击败这个派系，但请确保你已经做好了准备。
+      
+你很幸运地面对的是相当弱小的v0.003proto变体。"
+          >
+	<entity_type_drawing_bag_used_on_death data_list="AIOverlordPhase2_Diff3" />
+	</entity>
+
+  <entity name="AIOverlordPhase2_Diff3" copy_from="AIOverlordPhase2"
+      thematic_groups="AI"
+      multiplier_to_all_costs="0.15" multiplier_to_all_healths="0.15" damage_multiplier_to_all_weapons="0.15"
+			tags="AIOverlord_AnyTypeOrPhase,AIOverlordPhase2_AnyType,AIOverlordPhase2_Difficulty3,ShowsOnNormalDisplayMode"
+      speed="VeryVeryLittle1"
+      display_name="AI霸主 阶段2 (v0.003proto)"
+      description="整个AI派系的中央处理器，现已激活并愤怒地朝你的主指挥站移动。摧毁这最后阶段即可击败这个派系。
+      
+你很幸运地面对的是相当弱小的v0.003proto变体，它既非常弱小又特别缓慢。"
+          />
+
+  <!--Difficulty 4-->
+  <entity name="AIOverlordPhase1_Diff4" copy_from="AIOverlordPhase1"
+      thematic_groups="AI"
+			tags="AIOverlord_AnyTypeOrPhase,AIOverlordPhase1_AnyType,AIOverlordSeed_Difficulty4,ShowsOnNormalDisplayMode"
+      multiplier_to_all_costs="0.2" multiplier_to_all_healths="0.2" damage_multiplier_to_all_weapons="0.2"
+      display_name="AI霸主 (v0.44rc)"
+      description="整个AI派系的中央处理器。摧毁它的两个阶段即可击败这个派系，但请确保你已经做好了准备。
+      
+你面对的是相对弱小的v0.44rc变体。"
+          >
+	<entity_type_drawing_bag_used_on_death data_list="AIOverlordPhase2_Diff4" />
+	</entity>
+
+  <entity name="AIOverlordPhase2_Diff4" copy_from="AIOverlordPhase2"
+      thematic_groups="AI"
+      multiplier_to_all_costs="0.2" multiplier_to_all_healths="0.2" damage_multiplier_to_all_weapons="0.2"
+			tags="AIOverlord_AnyTypeOrPhase,AIOverlordPhase2_AnyType,AIOverlordPhase2_Difficulty4,ShowsOnNormalDisplayMode"
+      speed="VeryVeryLittle2"
+      display_name="AI霸主 阶段2 (v0.44rc)"
+      description="整个AI派系的中央处理器，现已激活并愤怒地朝你的主指挥站移动。摧毁这最后阶段即可击败这个派系。
+      
+你面对的是相对弱小的v0.44rc变体，它既较为弱小又移动缓慢。"
+          />
+
+  <!--Difficulty 5-->
+  <entity name="AIOverlordPhase1_Diff5" copy_from="AIOverlordPhase1"
+      thematic_groups="AI"
+			tags="AIOverlord_AnyTypeOrPhase,AIOverlordPhase1_AnyType,AIOverlordSeed_Difficulty5,ShowsOnNormalDisplayMode"
+      multiplier_to_all_costs="0.25" multiplier_to_all_healths="0.25" damage_multiplier_to_all_weapons="0.25"
+      display_name="AI霸主 (v5xrc)"
+      description="整个AI派系的中央处理器。摧毁它的两个阶段即可击败这个派系，但请确保你已经做好了准备。
+      
+你面对的是v5xrc变体，它比情报报告中预计的要弱一些。"
+          >
+	<entity_type_drawing_bag_used_on_death data_list="AIOverlordPhase2_Diff5" />
+	</entity>
+
+  <entity name="AIOverlordPhase2_Diff5" copy_from="AIOverlordPhase2"
+      thematic_groups="AI"
+      multiplier_to_all_costs="0.25" multiplier_to_all_healths="0.25" damage_multiplier_to_all_weapons="0.25"
+			tags="AIOverlord_AnyTypeOrPhase,AIOverlordPhase2_AnyType,AIOverlordPhase2_Difficulty5,ShowsOnNormalDisplayMode"
+      speed="VeryVeryLittle2"
+      display_name="AI霸主 阶段2 (v5xrc)"
+      description="整个AI派系的中央处理器，现已激活并愤怒地朝你的主指挥站移动。摧毁这最后阶段即可击败这个派系。
+      
+你面对的是v5xrc变体，它比情报报告中预计的要弱一些，移动速度也比预期的慢。"
+          />
+
+  <!--Difficulty 6-->
+  <entity name="AIOverlordPhase1_Diff6" copy_from="AIOverlordPhase1"
+      thematic_groups="AI"
+			tags="AIOverlord_AnyTypeOrPhase,AIOverlordPhase1_AnyType,AIOverlordSeed_Difficulty6,ShowsOnNormalDisplayMode"
+      multiplier_to_all_costs="0.5" multiplier_to_all_healths="0.5" damage_multiplier_to_all_weapons="0.5"
+      display_name="AI霸主 (x6kx)"
+      description="整个AI派系的中央处理器。摧毁它的两个阶段即可击败这个派系，但请确保你已经做好了准备。
+      
+你面对的是x6kx变体，虽然它比情报报告中预计的要弱，但仍然相当强大。"
+          >
+	<entity_type_drawing_bag_used_on_death data_list="AIOverlordPhase2_Diff6" />
+	</entity>
+
+  <entity name="AIOverlordPhase2_Diff6" copy_from="AIOverlordPhase2"
+      thematic_groups="AI"
+      multiplier_to_all_costs="0.5" multiplier_to_all_healths="0.5" damage_multiplier_to_all_weapons="0.5"
+			tags="AIOverlord_AnyTypeOrPhase,AIOverlordPhase2_AnyType,AIOverlordPhase2_Difficulty6,ShowsOnNormalDisplayMode"
+      speed="VeryVeryLittle2"
+      display_name="AI霸主 阶段2 (x6kx)"
+      description="整个AI派系的中央处理器，现已激活并愤怒地朝你的主指挥站移动。摧毁这最后阶段即可击败这个派系。
+      
+你面对的是x6kx变体，虽然它比情报报告中预计的要弱，但仍然相当强大。"
+          />
+
+  <!--Difficulty 7-->
+  <entity name="AIOverlordPhase1_Diff7" copy_from="AIOverlordPhase1"
+      thematic_groups="AI"
+			tags="AIOverlord_AnyTypeOrPhase,AIOverlordPhase1_AnyType,AIOverlordSeed_Difficulty7,ShowsOnNormalDisplayMode"
+      multiplier_to_all_costs="0.75" multiplier_to_all_healths="0.75" damage_multiplier_to_all_weapons="0.75"
+      display_name="AI霸主 (t7000)"
+      description="整个AI派系的中央处理器。摧毁它的两个阶段即可击败这个派系，但请确保你已经做好了准备。
+      
+你面对的是t7000变体，不容小觑。阶段2将会移动且非常危险。"
+          >
+	<entity_type_drawing_bag_used_on_death data_list="AIOverlordPhase2_Diff7" />
+	</entity>
+
+  <entity name="AIOverlordPhase2_Diff7" copy_from="AIOverlordPhase2"
+      thematic_groups="AI"
+      multiplier_to_all_costs="0.75" multiplier_to_all_healths="0.75" damage_multiplier_to_all_weapons="0.75"
+			tags="AIOverlord_AnyTypeOrPhase,AIOverlordPhase2_AnyType,AIOverlordPhase2_Difficulty7,ShowsOnNormalDisplayMode"
+      speed="VeryVeryLittle3"
+      display_name="AI霸主 阶段2 (t7000)"
+      description="整个AI派系的中央处理器，现已激活并愤怒地朝你的主指挥站移动。摧毁这最后阶段即可击败这个派系。
+      
+你面对的是t7000变体，不容小觑。"
+          />
+
+  <!--Difficulty 8-->
+  <entity name="AIOverlordPhase1_Diff8" copy_from="AIOverlordPhase1"
+      thematic_groups="AI"
+			tags="AIOverlord_AnyTypeOrPhase,AIOverlordPhase1_AnyType,AIOverlordSeed_Difficulty8,ShowsOnNormalDisplayMode"
+      multiplier_to_all_costs="1" multiplier_to_all_healths="1" damage_multiplier_to_all_weapons="1"
+      display_name="AI霸主 (t80)"
+      description="整个AI派系的中央处理器。摧毁它的两个阶段即可击败这个派系，但请确保你已经做好了准备。
+      
+你面对的是致命的t80变体，它强大且快速。阶段2将会移动且非常危险。"
+          >
+	<entity_type_drawing_bag_used_on_death data_list="AIOverlordPhase2_Diff8" />
+	</entity>
+
+  <entity name="AIOverlordPhase2_Diff8" copy_from="AIOverlordPhase2"
+      thematic_groups="AI"
+      multiplier_to_all_costs="1" multiplier_to_all_healths="1" damage_multiplier_to_all_weapons="1"
+			tags="AIOverlord_AnyTypeOrPhase,AIOverlordPhase2_AnyType,AIOverlordPhase2_Difficulty8,ShowsOnNormalDisplayMode"
+      speed="VeryVeryLittle4"
+      display_name="AI霸主 阶段2 (t80)"
+      description="整个AI派系的中央处理器，现已激活并愤怒地朝你的主指挥站移动。摧毁这最后阶段即可击败这个派系。
+      
+你面对的是致命的t80变体，它强大且快速。"
+          />
+  <!--Difficulty 9-->
+  <entity name="AIOverlordPhase1_Diff9" copy_from="AIOverlordPhase1"
+      thematic_groups="AI"
+			tags="AIOverlord_AnyTypeOrPhase,AIOverlordPhase1_AnyType,AIOverlordSeed_Difficulty9,ShowsOnNormalDisplayMode"
+      multiplier_to_all_costs="1.2" multiplier_to_all_healths="1.2" damage_multiplier_to_all_weapons="1.2"
+      display_name="AI霸主 (z90)"
+      description="整个AI派系的中央处理器。摧毁它的两个阶段即可击败这个派系，但请确保你已经做好了准备。
+      
+你面对的是致命的z90变体，它非常强大且非常快速。阶段2将会移动且极其危险。"
+          >
+	<entity_type_drawing_bag_used_on_death data_list="AIOverlordPhase2_Diff9" />
+	</entity>
+
+  <entity name="AIOverlordPhase2_Diff9" copy_from="AIOverlordPhase2"
+      thematic_groups="AI"
+      multiplier_to_all_costs="1.2" multiplier_to_all_healths="1.2" damage_multiplier_to_all_weapons="1.2"
+			tags="AIOverlord_AnyTypeOrPhase,AIOverlordPhase2_AnyType,AIOverlordPhase2_Difficulty9,ShowsOnNormalDisplayMode"
+      speed="BelowAverage1"
+      display_name="AI霸主 阶段2 (z90)"
+      description="整个AI派系的中央处理器，现已激活并愤怒地朝你的主指挥站移动。摧毁这最后阶段即可击败这个派系。
+      
+你面对的是致命的z90变体，它非常强大且非常快速。"
+          />
+
+  <!--Difficulty 10 - Variant 1-->
+  <entity name="AIOverlordPhase1_Diff10" copy_from="AIOverlordPhase1"
+      thematic_groups="AI"
+			tags="AIOverlord_AnyTypeOrPhase,AIOverlordPhase1_AnyType,AIOverlordSeed_Difficulty10,ShowsOnNormalDisplayMode"
+      multiplier_to_all_costs="1.8" multiplier_to_all_healths="1.8" damage_multiplier_to_all_weapons="2"
+      display_name="AI霸主 (x4000 Super)"
+      description="整个AI派系的中央处理器。摧毁它的两个阶段即可击败这个派系，但请确保你已经做好了准备。
+      
+你面对的是世界末日级的x4000 Super变体，它强大得令人恐惧且速度快得惊人。阶段2将会移动且极端危险。"
+          >
+	<entity_type_drawing_bag_used_on_death data_list="AIOverlordPhase2_Diff10" />
+	</entity>
+
+  <entity name="AIOverlordPhase2_Diff10" copy_from="AIOverlordPhase2"
+      thematic_groups="AI"
+      multiplier_to_all_costs="1.8" multiplier_to_all_healths="1.8" damage_multiplier_to_all_weapons="2"
+			tags="AIOverlord_AnyTypeOrPhase,AIOverlordPhase2_AnyType,AIOverlordPhase2_Difficulty10,ShowsOnNormalDisplayMode"
+      speed="BelowAverage2"
+      display_name="AI霸主 阶段2 (x4000 Super)"
+      description="整个AI派系的中央处理器，现已激活并愤怒地朝你的主指挥站移动。摧毁这最后阶段即可击败这个派系。
+      
+你面对的是世界末日级的x4000 Super变体，它强大得令人恐惧且速度快得惊人。"
+          />
+
+  <!--Difficulty 10 - Variant 2-->
+  <entity name="AIOverlordPhase1_Diff10_Puffin" copy_from="AIOverlordPhase1"
+      thematic_groups="AI"
+			tags="AIOverlord_AnyTypeOrPhase,AIOverlordPhase1_AnyType,AIOverlordSeed_Difficulty10,ShowsOnNormalDisplayMode"
+      multiplier_to_all_costs="1.8" multiplier_to_all_healths="1.8" damage_multiplier_to_all_weapons="1.5"
+      range_multiplier_to_all_weapons="1.5"
+      display_name="AI霸主 (PFFN)"
+      description="整个AI派系的中央处理器。摧毁它的两个阶段即可击败这个派系，但请确保你已经做好了准备。
+      
+你面对的是世界末日级的PFFN变体，它强大得令人恐惧、射程极远且速度快得惊人。阶段2将会移动且极端危险。"
+          >
+	<entity_type_drawing_bag_used_on_death data_list="AIOverlordPhase2_Diff10_Puffin" />
+	</entity>
+
+  <entity name="AIOverlordPhase2_Diff10_Puffin" copy_from="AIOverlordPhase2"
+      thematic_groups="AI"
+      multiplier_to_all_costs="1.8" multiplier_to_all_healths="1.8" damage_multiplier_to_all_weapons="1.5"
+      range_multiplier_to_all_weapons="1.5"
+			tags="AIOverlord_AnyTypeOrPhase,AIOverlordPhase2_AnyType,AIOverlordPhase2_Difficulty10,ShowsOnNormalDisplayMode"
+      speed="BelowAverage2"
+      display_name="AI霸主 阶段2 (PFFN)"
+      description="整个AI派系的中央处理器，现已激活并愤怒地朝你的主指挥站移动。摧毁这最后阶段即可击败这个派系。
+      
+你面对的是世界末日级的PFFN变体，它强大得令人恐惧、射程极远且速度快得惊人。"
+          />
+</root>

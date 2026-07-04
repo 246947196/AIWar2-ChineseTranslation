@@ -1,0 +1,672 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- The Hive is the first Nanobot Center created -->
+  <entity name="NanobotCenter_Hive"
+            thematic_groups="Nanocaust"
+			tags="NanobotCenter,NanobotHive,ShowsOnNormalDisplayMode,GeneratesBonusHunterShips,SapperImportantPoint"
+			draw_in_galaxy_view="true"
+			visuals="Assets/_FinalGameMeshes/Nanocaust/HiveAndCenterBase/NanobotHive.prefab" gimbal_name="Nanobot Hive"
+			icon_name="Ships2/Nanobot_Hive" gimbal_icon_size_multiplier="1.5"
+			category="Ship"
+			size_scale="9"
+			visuals_scale_multiplier="4"
+			y_offset_of_icon="30"
+			collision_priority="810"
+			display_name="纳米机器人蜂巢"
+			display_name_for_sidebar="纳米蜂巢"
+			description="纳米机器人感染的母星。"
+			target_type_for_player="NeverAutotargetButAllowManualTarget"
+			behavior="Stationary"
+			voice_group="Silent"
+			allied_speed_multiplier="3"
+			starting_mark_level="Markless"
+			eligible_for_hacks="DecodingNanobots"
+			cost_for_ai_to_purchase="12000"
+                        grants_minor_faction_planet_control="true"
+			hull_points="700000" shield_points="700000" speed="Immobile"
+			metal_cost="270000" energy_consumption="150000"
+			armor_mm="220" albedo="0.95" mass_tx="8"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+      assist_range="High1"
+			description_appender_dll="AIWarExternalCode"
+			description_appender_type="Arcen.AIW2.External.NanobotCenterDescriptionAppender"
+      
+      priority_as_ai_target="IrreplaceableBigAsTheyCome" priority_as_frd_target="IgnoreMe" priority_to_protect="Irreplaceable"
+			>
+    <!-- All nanocaust buildings repair engines. Unmoving nanocaust ships can cause confusion since some of the
+         code in the faction will wait till all ships in a Fleet arrive -->
+    <metal_flow purpose="RepairingEnginesOfFriendlies" throughput="1000"/>
+    <system name="WD" display_name="蠕虫双发炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="5600" range="Normal5" shot_speed="Fast" rate_of_fire="Normal" fires_salvos_sequentially="true"
+				shot_type_data="DoubleShot_Green"				
+				>
+      <death_effect_damage type="Nanocaustation" tier_name="LargeNanocaustShip"/>
+    </system>
+          <system name="T" display_name="超光速粒子阵列"
+	      category="Passive"
+	      tachyon_points="500" tachyon_points_added_per_mark="25" tachyon_range="EssentiallyInfinite" tachyon_hits_albedo_less_than="99"
+	      >
+      </system>
+
+  </entity>
+
+  <entity name="NanobotCenter_Hacked_Hive"  copy_from="NanobotCenter_Hive" tags="NanobotCenter,NanobotHackedHive,ShowsOnNormalDisplayMode"
+          display_name="被破解的纳米机器人蜂巢"
+			display_name_for_sidebar="被破解的纳米蜂巢" description="纳米机器人感染的母星。现在已被新势力接管。"
+       />
+  <!-- The NanobotCenter will upgrade itself in the C# code after time elapses -->
+
+  <entity name="WarpingInNanobotCenter"
+            thematic_groups="Nanocaust" npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+			tags="WarpingInNanobotCenter,SapperImportantPoint"
+			draw_in_galaxy_view="true"
+			visuals="Assets/_FinalGameMeshes/Nanocaust/HiveAndCenterBase/NanobotCenter.prefab" gimbal_name="Nanobot Center" is_drawn_as_warping_in="true"
+			icon_name="Ships2/Nanobot_Center" gimbal_icon_size_multiplier="1.5"
+			category="Ship"
+			size_scale="6"
+			visuals_scale_multiplier="4"
+			y_offset_of_icon="30"
+			collision_priority="810"
+			display_name="正在跃迁的纳米机器人中心"
+			display_name_for_sidebar="纳米中心跃迁"
+			description="纳米浩劫势力正在建造一个用于建造舰船的中心。"
+			behavior="Stationary"
+			voice_group="Silent"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="2000"			
+			hull_points="70000" shield_points="70000" speed="Immobile"
+			metal_cost="120000" energy_consumption="25000"
+			armor_mm="210" albedo="0.95" mass_tx="7"
+                        grants_minor_faction_planet_control="true"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+                        assist_range="High1"
+                        
+                        priority_as_frd_target="MajorPlanetLevelObjective" priority_as_ai_target="MajorPlanetLevelObjective" priority_to_protect="MajorPlanetLevelObjective"
+			>
+  </entity>
+
+  <entity name="NanobotCenter"
+            thematic_groups="Nanocaust" npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+			tags="NanobotCenter,GeneratesBonusHunterShips,SapperImportantPoint"
+			draw_in_galaxy_view="true"
+			visuals="Assets/_FinalGameMeshes/Nanocaust/HiveAndCenterBase/NanobotCenter.prefab" gimbal_name="Nanobot Center"
+			icon_name="Ships2/Nanobot_Center" gimbal_icon_size_multiplier="1.5"
+			category="Ship"
+			size_scale="6"
+			visuals_scale_multiplier="4"
+			y_offset_of_icon="30"
+			collision_priority="810"
+			display_name="纳米机器人中心"
+			display_name_for_sidebar="纳米中心"
+			description="建造纳米机器人舰船以征服银河系。"
+			behavior="Stationary"
+			voice_group="Silent"
+			allied_speed_multiplier="3"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="2000"			
+			hull_points="70000" shield_points="70000" speed="Immobile"
+			metal_cost="120000" energy_consumption="25000"
+			armor_mm="210" albedo="0.95" mass_tx="7"
+                        grants_minor_faction_planet_control="true"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+      assist_range="High1"
+			description_appender_dll="AIWarExternalCode"
+			description_appender_type="Arcen.AIW2.External.NanobotCenterDescriptionAppender"
+      
+      priority_as_frd_target="MajorPlanetLevelObjective" priority_as_ai_target="MajorPlanetLevelObjective" priority_to_protect="MajorPlanetLevelObjective"
+			>
+    <metal_flow purpose="RepairingEnginesOfFriendlies" throughput="1000"/>
+    <system name="WD" display_name="蠕虫双发炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="5600" range="Normal5" shot_speed="Fast" rate_of_fire="Normal" fires_salvos_sequentially="true"
+				shot_type_data="DoubleShot_Green"				
+				>
+      <death_effect_damage type="Nanocaustation" tier_name="LargeNanocaustShip"/>      
+    </system>
+          <system name="T" display_name="超光速粒子阵列"
+	      category="Passive"
+	      tachyon_points="500" tachyon_points_added_per_mark="25" tachyon_range="EssentiallyInfinite" tachyon_hits_albedo_less_than="99"
+	      >
+      </system>
+  </entity>
+
+
+  <!-- There are 3 "base level" nanobot ships, stolen directly from Fighter (Mutation)/Bomber (Anomaly)/Missile Frigate (Deviant)
+     There are 2 more powerful ships, the Aberration and the Abomination (this is the strongest). These 2 can only
+     be produced from the highest tier Nanobot Constructor. Finally there are some bonus ships the nanocaust can get from
+     nanocausting normally ineligivle sihps. -->
+
+  <entity name="Mutation"
+            thematic_groups="Nanocaust"
+			tags="MarkBasedNanocaustShip"
+			special_entity_type="SmallShipYesStacks"
+			visuals="Assets/_FinalGameMeshes/Nanocaust/FighterMutation/FighterMutation.prefab"
+			icon_name="Ships2/Nanobot_Mutation"
+			category="Ship"
+			size_scale="0.9"
+			visuals_scale_multiplier="6"
+			collision_priority="100"
+			display_name="变异体"
+			description="被纳米机器人感染的战斗机，配备小型超光速粒子发射器。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="20"			
+			hull_points="15000" shield_points="0" speed="BelowAverage1"
+			metal_cost="5000" energy_consumption="100"
+			armor_mm="50" albedo="0.4" engine_gx="13" mass_tx="0.24"
+			voice_group="Silent"
+      assist_range="High1"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+      
+      priority_as_ai_target="NormalFleetship" priority_as_frd_target="BiggerFleetship" priority_to_protect="Expendable"
+			>
+    <system name="WD" display_name="蠕虫双发炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="600" range="Small3" shot_speed="Fast" rate_of_fire="Normal" fires_salvos_sequentially="true"
+				shot_type_data="DoubleShot_Green"				
+				>
+      <death_effect_damage type="Nanocaustation" tier_name="Major"/>
+    </system>
+    <!-- One of them needed a tachyon emitter to deal with cloaking -->
+    <system name="T" display_name="超光速粒子阵列"
+				category="Passive" tachyon_points="50" tachyon_points_added_per_mark="25" tachyon_range="EssentiallyInfinite" tachyon_hits_albedo_less_than="0.65"></system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+  </entity>
+
+
+  <entity name="Anomaly"
+            thematic_groups="Nanocaust"
+			tags="MarkBasedNanocaustShip"
+			special_entity_type="SmallShipYesStacks"
+			visuals="Assets/_FinalGameMeshes/Nanocaust/BomberAnomaly/BomberAnomaly.prefab"
+			icon_name="Ships2/Nanobot_Anomaly"
+			category="Ship"
+			size_scale="1.1"
+			visuals_scale_multiplier="4.5"
+			collision_priority="100"
+			display_name="异常体"
+			description="被纳米机器人感染的轰炸机。"
+			starting_mark_level="Mark1" max_mark_level="3" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="10"			
+			hull_points="17000" shield_points="0" speed="BelowAverage1"
+			metal_cost="5000" energy_consumption="100"
+			armor_mm="60" albedo="0.3" engine_gx="13" mass_tx="0.24"
+			voice_group="Silent"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+      priority_as_ai_target="NormalFleetship" priority_as_frd_target="BiggerFleetship" priority_to_protect="Expendable"
+			>
+    <system name="W1" display_name="病毒炸弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1040" range="Small3" shot_speed="Slow" rate_of_fire="ExtremelyLow" fires_salvos_sequentially="true"
+				shot_type_data="FusionBomb_Viral"
+				base_percent_damage_bypasses_personal_shields="0.9" added_percent_damage_bypasses_personal_shields_per_mark="0.05"
+				>
+      <death_effect_damage type="Nanocaustation" tier_name="Major"/>
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+  </entity>
+
+
+  <entity name="Deviant"
+            thematic_groups="Nanocaust"
+			tags="MarkBasedNanocaustShip"
+			special_entity_type="SmallShipYesStacks"
+			visuals="Assets/_FinalGameMeshes/Nanocaust/MissileCorvetteDeviant/MissileCorvetteDeviant.prefab"
+			icon_name="Ships2/Nanobot_Deviant"
+			category="Ship"
+			size_scale="3"
+			visuals_scale_multiplier="16"
+			collision_priority="100"
+			display_name="畸变体"
+			description="被纳米机器人感染的导弹巡逻艇。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="10"			
+			hull_points="7000" shield_points="0" speed="BelowAverage1"
+			metal_cost="5000" energy_consumption="100"
+			armor_mm="50" albedo="0.7" engine_gx="14" mass_tx="0.24"
+			voice_group="Silent"
+			ship_or_structure_explosion_sfx="ShipMidsize_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+      priority_as_ai_target="NormalFleetship" priority_as_frd_target="BiggerFleetship" priority_to_protect="Expendable"
+			>
+    <system name="B5" display_name="线虫镰刀炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="630" range="Normal4" shot_speed="Normal" rate_of_fire="VeryLow" fires_salvos_sequentially="true"
+				shot_type_data="NanocaustCurvedSicklyGreenShot"				
+				>
+      <death_effect_damage type="Nanocaustation" tier_name="Major"/>
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+  </entity>
+
+
+  <entity name="Aberration"
+            thematic_groups="Nanocaust"
+			tags="ScaryNanobot,ScaryNanobotBasic"
+			special_entity_type="LargeShipYesStacks"
+			visuals="Assets/_FinalGameMeshes/Nanocaust/Aberration/Aberration.prefab"
+			icon_name="Ships2/Nanobot_Aberration"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="3.3"
+			visuals_scale_multiplier="1.6"
+			y_offset_of_icon="10"
+			collision_priority="100"
+			display_name="畸变战舰"
+			description="强大的被纳米机器人感染的战舰。"
+			blocks_enemy_claim_flows="true"
+			voice_group="Silent"
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="1800"			
+			hull_points="150000" shield_points="20000" speed="BelowAverage1"
+			metal_cost="160000" energy_consumption="5000"
+			armor_mm="120" albedo="0.8" engine_gx="18" mass_tx="4"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+      priority_as_ai_target="NormalStarship" priority_as_frd_target="BiggerStarship" priority_to_protect="SlightlyLessExpendable"
+			>
+    
+    <system name="R5" display_name="病毒发射器"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1200" range="AboveAverage3" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="true"
+				shot_type_data="LaserPulse_SicklyGreen"				
+				>
+				<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtLeast" compared_to="90" multiplier="4"/>
+        <death_effect_damage type="Nanocaustation" tier_name="LargeNanocaustShip"/>
+    </system>
+    <system name="R9" display_name="朊病毒光束"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1200" range="Small3" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="1.3" hits_all_intersecting_targets="true" shots_detonate_immediately="true" beam_weapon_visual_style="Laser_Green"
+				maximum_number_of_targets_hit_per_shot="10"
+				>
+      <death_effect_damage type="Nanocaustation" tier_name="LargeNanocaustShip"/>
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+  </entity>
+  <entity name="AberrationV2"  copy_from="Aberration"
+        thematic_groups="Hidden"
+      />
+  <!--Simply so that we can have multiple variants from the RNG in one game-->
+  <entity name="AberrationV3"  copy_from="Aberration"
+        thematic_groups="Hidden"
+      />
+  <!--Simply so that we can have multiple variants from the RNG in one game-->
+  <entity name="AberrationZenithTrader"  copy_from="Aberration" is_auto_scrapping_skipped_when_command_station_type_changes="true"
+        metal_cost="160000" build_sidebar_categories_i_am_part_of="StationKeepers" 
+        behavior="Attacker_Full"
+        fleet_membership="Planetary" display_name="净化畸变战舰" display_name_for_sidebar="净化畸变"
+        description="强大的战舰，其纳米机器人已被天顶商人净化，传染性不如从前，但仍能使物体僵尸化。如果星系中已有两艘此类战舰，商人将不会出售给你。"
+				base_galaxy_wide_cap_for_players_constructing="2" galaxy_wide_cap_match_string="NaAbZT"
+      >
+    <fleet_membership name="ZenithPurchases" ship_cap_group="OtherDefense" weight="100" cap="2"/>
+    <metal_flow purpose="SelfConstruction" throughput="1000"/>
+    <system name="R5" >
+      <death_effect_damage type="Nanocaustation" tier_name="None"/>
+	  <death_effect_damage type="Zombification" tier_name="Parasite"/>
+    </system>
+    <system name="R9" >
+      <death_effect_damage type="Nanocaustation" tier_name="None"/>
+	  <death_effect_damage type="Zombification" tier_name="Parasite"/>
+    </system>	
+  </entity>
+
+
+  <entity name="Abomination"
+            thematic_groups="Nanocaust"
+			tags="ScaryNanobot,ScaryNanobotBasic"
+			special_entity_type="LargeShipYesStacks"	
+			visuals="Assets/_FinalGameMeshes/Nanocaust/Abomination/Abomination.prefab"
+			icon_name="Ships2/Nanobot_Abominatino"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="5"
+			visuals_scale_multiplier="1.6"
+			y_offset_of_icon="10"
+			collision_priority="100"
+			display_name="憎恶战舰"
+			description="非常强大的被纳米机器人感染的战舰。"
+			blocks_enemy_claim_flows="true"
+			voice_group="Silent"
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="4800"			
+			hull_points="200000" shield_points="70000" speed="BelowAverage1"
+			metal_cost="350000" energy_consumption="7000"
+			armor_mm="120" albedo="0.8" engine_gx="18" mass_tx="4"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+      priority_as_ai_target="NormalStarship" priority_as_frd_target="BiggerStarship" priority_to_protect="SlightlyLessExpendable"
+			>
+    <system name="B5" display_name="线虫镰刀炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="2800" range="Small3" shot_speed="Normal" rate_of_fire="Misery"
+				shots_per_salvo="16" fires_salvos_sequentially="false"
+				shot_type_data="NanocaustCurvedSicklyGreenShot"
+				>
+      <death_effect_damage type="Nanocaustation" tier_name="LargeNanocaustShip"/>
+    </system>
+    <system name="R9" display_name="朊病毒光束"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1800" range="Small3" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="1.3" hits_all_intersecting_targets="true" shots_detonate_immediately="true" beam_weapon_visual_style="Laser_Green"
+				maximum_number_of_targets_hit_per_shot="10"
+				>
+      <death_effect_damage type="Nanocaustation" tier_name="LargeNanocaustShip"/>
+    </system>
+	    <system name="T" display_name="超光速粒子阵列"
+				category="Passive" tachyon_points="50" tachyon_range="VeryTiny2" tachyon_hits_albedo_less_than="0.65"></system>
+    <system name="R5" display_name="病毒发射器"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1800" range="AboveAverage3" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="true"
+				shot_type_data="LaserPulse_SicklyGreen"				
+				>
+				<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtLeast" compared_to="90" multiplier="4"/>
+        <death_effect_damage type="Nanocaustation" tier_name="LargeNanocaustShip"/>
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+  </entity>
+  <entity name="AbominationV2"  copy_from="Abomination"
+        thematic_groups="Hidden"
+      />
+  <!--Simply so that we can have multiple variants from the RNG in one game-->
+  <entity name="AbominationV3"  copy_from="Abomination"
+        thematic_groups="Hidden"
+      />
+  <!--Simply so that we can have multiple variants from the RNG in one game-->
+  <entity name="AbominationZenithTrader"  copy_from="Abomination" is_auto_scrapping_skipped_when_command_station_type_changes="true"
+        metal_cost="350000" build_sidebar_categories_i_am_part_of="StationKeepers" 
+        behavior="Attacker_Full"
+        fleet_membership="Planetary" display_name="净化憎恶战舰" display_name_for_sidebar="净化憎恶"
+        description="非常强大的战舰，其纳米机器人已被天顶商人净化，传染性不如从前，但仍极具使物体僵尸化的能力。如果星系中已有两艘此类战舰，商人将不会出售给你。"
+				base_galaxy_wide_cap_for_players_constructing="2" galaxy_wide_cap_match_string="NaAboZT"
+      >
+    <fleet_membership name="ZenithPurchases" ship_cap_group="OtherDefense" weight="100" cap="2"/>
+    <metal_flow purpose="SelfConstruction" throughput="1000"/>
+    <system name="B5" >
+      <death_effect_damage type="Nanocaustation" tier_name="None"/>
+	  <death_effect_damage type="Zombification" tier_name="Parasite"/>
+    </system>	
+    <system name="R5" >
+      <death_effect_damage type="Nanocaustation" tier_name="None"/>
+	  <death_effect_damage type="Zombification" tier_name="Parasite"/>
+    </system>
+    <system name="R9" >
+      <death_effect_damage type="Nanocaustation" tier_name="None"/>
+	  <death_effect_damage type="Zombification" tier_name="Parasite"/>
+    </system>		
+  </entity>
+
+  <!-- bonus ships generated from Nanocausting normally ineligible ships -->
+  <entity name="Husk"
+            thematic_groups="Nanocaust"
+			tags="NanocaustBonusWeak"
+			special_entity_type="SmallShipYesStacks"
+			visuals="Assets/_FinalGameMeshes/Nanocaust/FighterMutation/FighterMutation.prefab"
+                        icon_overlay="Overlays2/DevourerGolem_RavenousShadow"
+			icon_name="Ships2/Nanobot_Mutation"
+			category="Ship"
+			size_scale="0.9"
+			visuals_scale_multiplier="6"
+			collision_priority="100"
+			display_name="残骸战机"
+			description="被纳米机器人感染的近战战斗机，配备引擎眩晕器。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="20"			
+			hull_points="10000" shield_points="5000" speed="BelowAverage1"
+			metal_cost="5000" energy_consumption="25"
+			armor_mm="50" albedo="0.4" engine_gx="13" mass_tx="0.24"
+			voice_group="Silent"
+                        assist_range="High1"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+                        priority_as_ai_target="NormalFleetship" priority_as_frd_target="BiggerFleetship" priority_to_protect="Expendable"
+			>
+    <system name="WM" display_name="壶菌穿刺器"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="835" range="AlmostNone" seek_range="Normal1" shot_speed="Fast" rate_of_fire="SlightlyLow" fires_salvos_sequentially="false"
+				base_engine_stun_per_shot="3" added_engine_stun_per_shot_per_mark="3" engine_stun_to_engine_gx_less_than="16"
+				shot_type_data="MeleeInvisible" added_target_evaluator="Melee"
+				>
+      <death_effect_damage type="Nanocaustation" tier_name="Major"/>
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+  </entity>
+
+    <entity name="Ghoul"
+	        thematic_groups="Nanocaust"
+			tags="NanocaustBonusMedium"
+			special_entity_type="LargeShipYesStacks"
+			visuals="Assets/_FinalGameMeshes/Nanocaust/Aberration/Aberration.prefab"
+			icon_name="Ships2/Nanobot_Aberration"
+                        icon_overlay="Overlays2/DevourerGolem_RavenousShadow"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="3.3"
+			visuals_scale_multiplier="1.6"
+			y_offset_of_icon="10"
+			collision_priority="100"
+			display_name="食尸鬼战舰"
+			description="强大的被纳米机器人感染的战舰，配备造成酸伤害的火炮。"
+			blocks_enemy_claim_flows="true"
+			voice_group="Silent"
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="1800"			
+			hull_points="150000" shield_points="20000" speed="BelowAverage1"
+			metal_cost="160000" energy_consumption="5000"
+			armor_mm="120" albedo="0.8" engine_gx="18" mass_tx="4"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+      priority_as_ai_target="NormalStarship" priority_as_frd_target="BiggerStarship" priority_to_protect="SlightlyLessExpendable"
+	  >
+    
+    <system name="R5" display_name="腐蚀性喷雾"
+	    category="Weapon" firing_timing="OnlyInRange"
+                                damage_per_shot="800" range="AboveAverage3" shot_speed="Normal" rate_of_fire="High"
+            			shots_per_salvo="3" fires_salvos_sequentially="false"
+				shot_type_data="LaserPulse_SicklyGreen"
+                                area_of_effect_size="350"
+				maximum_number_of_targets_hit_per_shot="8"
+				damage_amplification="true" damage_amplification_duration="10" damage_amplification_flat="200"
+				>
+      <death_effect_damage type="Nanocaustation" tier_name="LargeNanocaustShip"/>
+    </system>
+    <system name="R9" display_name="朊病毒冲击"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1200" range="Small3" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="1.3" hits_all_intersecting_targets="true" shots_detonate_immediately="true" beam_weapon_visual_style="Laser_Green"
+				maximum_number_of_targets_hit_per_shot="10"
+				>
+      <death_effect_damage type="Nanocaustation" tier_name="LargeNanocaustShip"/>
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+  </entity>
+  <entity name="Lich"
+            thematic_groups="Nanocaust"
+			tags="NanocaustBonusScary"
+			special_entity_type="LargeShipYesStacks"	
+			visuals="Assets/_FinalGameMeshes/Nanocaust/Abomination/Abomination.prefab"
+                        icon_overlay="Overlays2/DevourerGolem_RavenousShadow"
+			icon_name="Ships2/Nanobot_Abominatino"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="5"
+			visuals_scale_multiplier="1.6"
+			y_offset_of_icon="10"
+			collision_priority="100"
+			display_name="巫妖战舰"
+			description="非常强大的被纳米机器人感染的战舰，对其牵引光束中的单位造成更多伤害。"
+			blocks_enemy_claim_flows="true"
+			voice_group="Silent"
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="4800"
+	                hull_points="1400000" shield_points="700000" speed="BelowAverage1"
+			metal_cost="350000" energy_consumption="7000"
+			armor_mm="120" albedo="0.8" engine_gx="18" mass_tx="4"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+      priority_as_ai_target="NormalStarship" priority_as_frd_target="BiggerStarship" priority_to_protect="SlightlyLessExpendable"
+			>
+    <system name="B5" display_name="线虫镰刀炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="2800" range="Small5" shot_speed="Normal" rate_of_fire="Misery"
+				shots_per_salvo="16" fires_salvos_sequentially="false"
+				shot_type_data="NanocaustCurvedSicklyGreenShot"
+                                multiplier_damage_to_tractored_unit="6"
+				>
+      <death_effect_damage type="Nanocaustation" tier_name="LargeNanocaustShip"/>
+    </system>
+  	<system name="T" display_name="牵引光束"
+				category="Passive"
+				tractor_range="Small5" tractor_count="20" tractor_count_added_per_mark="5" tractor_hits_albedo_less_than="0.4" tractor_hits_engine_gx_less_than="18"
+				>
+    </system>	
+
+        <system name="WD" display_name="价电子火炬"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="800" range="AboveAverage3" shot_speed="Normal" rate_of_fire="High"
+				shots_per_salvo="8" fires_salvos_sequentially="false"
+				shot_type_data="DoubleShot_Red" cloaking_percent_loss_from_firing="0.1"
+                                multiplier_damage_to_tractored_unit="6"
+				>
+                <outgoing_damage_modifier based_on="TargetHullPercentageMissing" comparison_type="MultiplesOf" compared_to="25" multiplier="1" />
+
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+
+    <!-- The nanocaust can take over AI turrets -->
+    <entity name="BlightedTurret"
+	        thematic_groups="Nanocaust" 
+            tags="NanocaustTurret"
+	    visuals="assets/_finalgamemeshes/turrets/spiderturret/spiderturret.prefab"
+		icon_name="Ships1/Turret" icon_overlay="Overlays2/DevourerGolem_RavenousShadow"
+		voice_group="Turret"
+		category="Ship" is_turret="true"
+		size_scale="1.02"
+		visuals_scale_multiplier="7.22"
+		collision_priority="1000"
+		display_name="受污染炮塔"
+			display_name_for_sidebar="枯萎炮塔"
+			description="被纳米灾难颠覆的炮塔，发射快速低功率炮弹，但在行星上每多一个此类炮塔，伤害就会增加，直至达到上限。"
+			amount_added_to_damage_per_ship_of_this_type_on_planet="100" max_amount_added_to_damage_per_ship_of_this_type_on_planet="5000"			
+			behavior="Stationary"	
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Technologist,Turret"
+			build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true"
+			cost_for_ai_to_purchase="81" strength_multiplier="1.4"			
+			hull_points="1400" shield_points="1350" speed="Immobile"
+			metal_cost="7500" energy_consumption="600"
+			armor_mm="80" albedo="0.45" mass_tx="2"
+			fleet_membership="Planetary"
+			ship_or_structure_explosion_sfx="Turret_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+            
+            priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable"
+            multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5"
+			>
+    <system name="WT" display_name="线虫冲击炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="100" range="AboveAverage4" shot_speed="Normal" rate_of_fire="Misery" fires_salvos_sequentially="false"
+				shot_type_data="PlasmaTorpedo" cloaking_percent_loss_from_firing="0.1"
+				>
+      <death_effect_damage type="Nanocaustation" tier_name="Major"/>
+    </system>
+    </entity>
+
+    <!-- The AI-variants of these ships -->
+        <entity   copy_from="Mutation" name="AIMutation" thematic_groups="Hidden" 
+                 tags="AINanocaust"
+                 cost_for_ai_to_purchase="40"			
+             >
+      <ai_ship_group_membership name="NanocaustFleetships" weight="100"/>
+    </entity>
+    <entity   copy_from="Anomaly" name="AIAnomaly" thematic_groups="Hidden" 
+             tags="AINanocaust"
+             cost_for_ai_to_purchase="40"			
+             >
+      <ai_ship_group_membership name="NanocaustFleetships" weight="100"/>
+    </entity>
+
+    <entity   copy_from="Deviant" name="AIDeviant" thematic_groups="Hidden" 
+             tags="AINanocaust"
+             cost_for_ai_to_purchase="40"			
+             >
+      <ai_ship_group_membership name="NanocaustFleetships" weight="100"/>
+    </entity>
+
+    <entity   copy_from="Aberration" name="AIAberration" thematic_groups="Hidden" 
+             tags="AINanocaust,AINanocaustGuardian,BecomesNecromancyWight"
+             cost_for_ai_to_purchase="2000"			
+             >
+      <ai_ship_group_membership name="NanocaustGuardians" weight="100"/>
+    </entity>
+        
+    <entity   copy_from="Abomination" name="AIAbomination" thematic_groups="Hidden" 
+             tags="AINanocaust,AINanocaustDire,BecomesNecromancyMummy"
+             cost_for_ai_to_purchase="5500"			
+             >
+      <ai_ship_group_membership name="NanocaustDireGuardians" weight="100"/>
+    </entity>
+
+
+    <entity   copy_from="Husk" name="AIHusk" thematic_groups="Hidden" 
+             tags="AINanocaust,AINanocaustGuardian,BecomesNecromancyWight"
+             cost_for_ai_to_purchase="120"
+             >
+      <ai_ship_group_membership name="NanocaustFleetships" weight="100"/>
+    </entity>        
+    <entity   copy_from="Ghoul" name="AIGhoul" thematic_groups="Hidden" 
+             tags="AINanocaust,AINanocaustGuardian,BecomesNecromancyWight"
+             cost_for_ai_to_purchase="2200"			
+             >
+      <ai_ship_group_membership name="NanocaustGuardians" weight="100"/>
+    </entity>        
+
+    <!-- this one is buffed as an Exo Leader -->
+    <entity   copy_from="Lich" name="AILuch" thematic_groups="Hidden" 
+	
+             tags="AINanocaust,AINanocaustDire,BecomesNecromancyMummy"
+             hull_points="2000000" shield_points="700000" speed="Normal3"
+             cost_for_ai_to_purchase="5500"
+             >
+      <ai_ship_group_membership name="NanocaustExoLeaders" weight="100"/>
+    </entity>
+
+    <entity   copy_from="PikeGuardPost" name="BlightedGuardPost"
+	          thematic_groups="Nanocaust,AI,GuardPost"
+             tags="AINanocaust"
+             display_name="受污染岗哨"
+			display_name_for_sidebar="枯萎岗哨"
+             visuals="Assets/_FinalGameMeshes/AIBuildings/GuardPosts/Pike/GuardPostPike.prefab" 
+	     icon_name="Ships1/GuardPost" icon_overlay="Overlays2/DevourerGolem_RavenousShadow"  gimbal_icon_size_multiplier="1.4"
+		mass_tx="5"
+	  description="该行星人工智能防御者的存储结构，配备纳米灾难加农炮。摧毁它会降低此处的最大增援能力。使用纳米灾难技术。发射快速低功率炮弹，但在行星上每多一个此类岗哨，伤害就会增加，直至达到上限。"
+	  hull_points="25000" shield_points="125000" 
+
+>
+          <system name="WT" display_name="线虫冲击炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1000" range="AboveAverage4" shot_speed="Fast" rate_of_fire="Misery" fires_salvos_sequentially="false"
+				shot_type_data="PlasmaTorpedo" cloaking_percent_loss_from_firing="0.1"
+				>
+      <death_effect_damage type="Nanocaustation" tier_name="Major"/>
+    </system>
+
+      <ai_ship_group_membership name="NanocaustGuardPosts" weight="100"/>
+    </entity>
+    
+</root>

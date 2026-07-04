@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+   <entity name="AIDragon" tags="AIDragon"	
+            thematic_groups="FallenSpire"   
+			draw_in_galaxy_view="true"
+			visuals="Assets/_DLC1/Arks/GrandSalvage/GrandSalvageDragon.prefab" visuals_bundle="exp1_the_spire_rises"
+			icon_name="Ships4/Dragon" gimbal_icon_size_multiplier="2"
+			voice_group="Silent"			
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="9"
+			visuals_scale_multiplier="15"
+			y_offset_of_icon="30"
+			collision_priority="810"
+			display_name="AI尖塔巨龙"
+			description="极为先进的舰船，部署用于防御新出现的尖塔威胁。"
+			starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+			cost_for_ai_to_purchase="37500"
+			hull_points="20000000" shield_points="10000000" speed="AboveAverage4"			
+			metal_cost="2000000" energy_consumption="150000"	
+			armor_mm="350" albedo="0.4" engine_gx="25" mass_tx="11"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			>		
+    <system name="W1" display_name="能量爆发"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="2500" range="AboveAverage4" shot_speed="Slow" rate_of_fire="Devourer" 
+				shots_per_salvo="40" fires_salvos_sequentially="false"				
+				shot_type_data="LaserPulse_Pink"
+				>
+    </system>
+    <system name="W2" display_name="尖塔线圈光束"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="120000" range="AboveAverage4" shot_speed="Normal" rate_of_fire="Devourer"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_Red"
+				hits_all_intersecting_targets="true"				
+				shots_detonate_immediately="true"
+                is_coilbeam="true"				
+				>
+    </system>	
+	<ship_class_data can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.5" can_be_devoured="false"
+	>
+		<debuff_modifier debuff_type="WeaponPhase" multiplier="0" />
+	</ship_class_data>
+    </entity>	
+  
+</root>

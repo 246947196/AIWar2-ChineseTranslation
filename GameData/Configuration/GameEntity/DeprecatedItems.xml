@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+      <entity name="PlayerDysonAntagonizer"
+	      thematic_groups="DysonSphere,Zenith"
+              is_deprecated="true"
+			tags="PlayerDysonAntagonizer,ShowsOnNormalDisplayMode" voice_group="Zenith" gimbal_icon_size_multiplier="1.5"
+			draw_in_galaxy_view="true"
+			visuals="Assets/_FinalGameMeshes/AIBuildings/DysonAntagonizer/DysonAntagonizer2022.prefab"
+			target_type_for_player="NeverAutotargetButAllowManualTarget"
+			icon_name="Ships1/DysonAntagonizer"
+			category="Ship"
+			size_scale="7"
+			visuals_scale_multiplier="4.5"
+			y_offset_of_icon="50"
+			collision_priority="810"
+			display_name="人类戴森对抗器"
+      display_name_for_sidebar="人类戴森对抗器"
+			description="这个建筑会吸引所有激进戴森派系的注意。无论属于哪方，他们都会试图摧毁它及其路径上的一切。"
+			behavior="Stationary"
+			starting_mark_level="Mark1"
+			cost_for_ai_to_purchase="100000"
+			hull_points="70000" shield_points="30000" speed="Immobile"
+			armor_mm="200" albedo="1" mass_tx="10"
+			metal_cost="605000" energy_consumption="1000000"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+      
+      priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="NotDangerous" priority_to_protect="BigFavoriteToy"
+			>
+  </entity>
+
+    <entity name="MinorArgonFuelStation"
+	      thematic_groups="Hidden" is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+          tags="Capturable" is_auto_scrapping_skipped_when_command_station_type_changes="true"
+          draw_in_galaxy_view="false"
+          visuals="Assets/_FinalGameMeshes/AIBuildings/PlanetaryCloaker/PlanetaryCloaker.prefab"
+          icon_name="Ships4/FuelArgon" gimbal_icon_size_multiplier="0.9"
+          y_offset_of_icon="30"
+          category="Ship" is_critical_infrastructure="true"
+          size_scale="4.5"
+          visuals_scale_multiplier="0.6"
+          collision_priority="900"
+          display_name="小型氩燃料站"
+          display_name_for_sidebar="氩燃料站"
+          description="人类内战遗留的小型燃料站，可为小型和中型舰船提供动力，并具备有限机动性以便于防御。"
+          behavior="Stationary"
+          build_sidebar_categories_i_am_part_of="Infrastructure"
+          never_leaves_remains="true"
+          metal_to_claim="90000"
+          starting_mark_level="Markless"
+          cost_for_ai_to_purchase="200"
+          hull_points="70000" shield_points="92000" speed="AlmostNone" engine_gx="3"
+          metal_cost="90000" energy_consumption="0"
+          armor_mm="80" albedo="0.9" mass_tx="2"
+          aip_on_death="1"
+          ship_or_structure_explosion_sfx="StructureMidsize_Explosion"
+          ship_or_structure_explosion_if_on_other_planet_sfx="StructureLostOnOtherPlanet_Explosion"
+          voice_group="Silent"
+          fleet_membership="Planetary"
+          skip_drawing_ship_cap="true"
+          priority_as_ai_target="IrreplaceableBigAsTheyCome" priority_as_frd_target="IgnoreMe" priority_to_protect="Irreplaceable"
+			  >
+      <resource_production type="FuelArgon" amount="40000" />
+      <metal_flow purpose="SelfConstruction" throughput="500"/>
+    </entity>
+  <entity name="MinorRadonFuelStation"
+        thematic_groups="Hidden" is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+        tags="Capturable" is_auto_scrapping_skipped_when_command_station_type_changes="true"
+        draw_in_galaxy_view="false"
+        visuals="Assets/_FinalGameMeshes/AIBuildings/PlanetaryCloaker/PlanetaryCloaker.prefab"
+        icon_name="Ships4/FuelRadon" gimbal_icon_size_multiplier="0.9"
+        y_offset_of_icon="30"
+        category="Ship" is_critical_infrastructure="true"
+        size_scale="4.5"
+        visuals_scale_multiplier="0.6"
+        collision_priority="900"
+        display_name="小型氡燃料站"
+        display_name_for_sidebar="氡燃料站"
+        description="人类内战遗留的小型燃料站，可为炮塔和力场提供动力，并具备有限机动性以便于防御。"
+        behavior="Stationary"
+        build_sidebar_categories_i_am_part_of="Infrastructure"
+        never_leaves_remains="true"
+        metal_to_claim="90000"
+        starting_mark_level="Markless"
+        cost_for_ai_to_purchase="200"
+        hull_points="70000" shield_points="92000" speed="AlmostNone" engine_gx="3"
+        metal_cost="90000" energy_consumption="0"
+        armor_mm="80" albedo="0.9" mass_tx="2"
+        aip_on_death="1"
+        ship_or_structure_explosion_sfx="StructureMidsize_Explosion"
+        ship_or_structure_explosion_if_on_other_planet_sfx="StructureLostOnOtherPlanet_Explosion"
+        voice_group="Silent"
+        fleet_membership="Planetary"
+        skip_drawing_ship_cap="true"
+        priority_as_ai_target="IrreplaceableBigAsTheyCome" priority_as_frd_target="IgnoreMe" priority_to_protect="Irreplaceable"
+			  >
+    <resource_production type="FuelRadon" amount="30000" />
+    <metal_flow purpose="SelfConstruction" throughput="500"/>
+  </entity>
+  <entity name="MinorXenonFuelStation"
+        thematic_groups="Hidden"  is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+        tags="Capturable" is_auto_scrapping_skipped_when_command_station_type_changes="true"
+        draw_in_galaxy_view="false"
+        visuals="Assets/_FinalGameMeshes/AIBuildings/PlanetaryCloaker/PlanetaryCloaker.prefab"
+        icon_name="Ships4/FuelXenon" gimbal_icon_size_multiplier="0.9"
+        y_offset_of_icon="30"
+        category="Ship" is_critical_infrastructure="true"
+        size_scale="4.5"
+        visuals_scale_multiplier="0.6"
+        collision_priority="900"
+        display_name="小型氙燃料站"
+        display_name_for_sidebar="氙燃料站"
+        description="人类内战遗留的小型燃料站，可为大型强力舰船提供动力，并具备有限机动性以便于防御。"
+        behavior="Stationary"
+        build_sidebar_categories_i_am_part_of="Infrastructure"
+        never_leaves_remains="true"
+        metal_to_claim="90000"
+        starting_mark_level="Markless"
+        cost_for_ai_to_purchase="200"
+        hull_points="70000" shield_points="92000" speed="AlmostNone" engine_gx="3"
+        metal_cost="90000" energy_consumption="0"
+        armor_mm="80" albedo="0.9" mass_tx="2"
+        aip_on_death="1"
+        ship_or_structure_explosion_sfx="StructureMidsize_Explosion"
+        ship_or_structure_explosion_if_on_other_planet_sfx="StructureLostOnOtherPlanet_Explosion"
+        voice_group="Silent"
+        fleet_membership="Planetary"
+        skip_drawing_ship_cap="true"
+        priority_as_ai_target="IrreplaceableBigAsTheyCome" priority_as_frd_target="IgnoreMe" priority_to_protect="Irreplaceable"
+			  >
+    <resource_production type="FuelXenon" amount="60000" />
+    <metal_flow purpose="SelfConstruction" throughput="500"/>
+  </entity>
+  <entity name="MajorBalancedArgonFuelStation"
+        thematic_groups="Hidden" is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+        tags="Capturable" is_auto_scrapping_skipped_when_command_station_type_changes="true"
+        draw_in_galaxy_view="true"
+        visuals="Assets/_FinalGameMeshes/AIBuildings/PlanetaryCloaker/PlanetaryCloaker.prefab"
+        icon_name="Ships4/NecromancerPhylactery" gimbal_icon_size_multiplier="1.2"
+        y_offset_of_icon="30"
+        category="Ship" is_critical_infrastructure="true"
+        size_scale="4.5"
+        visuals_scale_multiplier="0.6"
+        collision_priority="900"
+        display_name="大型平衡氩燃料站"
+        display_name_for_sidebar="平衡燃料站"
+        description="人类内战遗留的大型燃料站，可为多种设备提供动力，燃料储备充足。"
+        behavior="Stationary"
+        build_sidebar_categories_i_am_part_of="Infrastructure"
+        never_leaves_remains="true"
+        metal_to_claim="350000"
+        starting_mark_level="Markless"
+        cost_for_ai_to_purchase="200"
+        hull_points="330000" shield_points="410000" speed="Immobile"
+        metal_cost="350000" energy_consumption="0"
+        armor_mm="80" albedo="0.9" mass_tx="2"
+        aip_on_death="3"
+        ship_or_structure_explosion_sfx="StructureMidsize_Explosion"
+        ship_or_structure_explosion_if_on_other_planet_sfx="StructureLostOnOtherPlanet_Explosion"
+        voice_group="Silent"
+        fleet_membership="Planetary"
+        skip_drawing_ship_cap="true"
+        priority_as_ai_target="IrreplaceableBigAsTheyCome" priority_as_frd_target="IgnoreMe" priority_to_protect="Irreplaceable"
+      >
+    <resource_production type="FuelArgon" amount="300000" />
+    <resource_production type="FuelRadon" amount="150000" />
+    <resource_production type="FuelXenon" amount="150000" />
+    <metal_flow purpose="SelfConstruction" throughput="500"/>
+  </entity>
+  <entity name="MajorBalancedXenonFuelStation"
+        thematic_groups="Hidden" is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+        tags="Capturable" is_auto_scrapping_skipped_when_command_station_type_changes="true"
+        draw_in_galaxy_view="true"
+        visuals="Assets/_FinalGameMeshes/AIBuildings/PlanetaryCloaker/PlanetaryCloaker.prefab"
+        icon_name="Ships4/NecromancerNecropolis" gimbal_icon_size_multiplier="1.2"
+        y_offset_of_icon="30"
+        category="Ship" is_critical_infrastructure="true"
+        size_scale="4.5"
+        visuals_scale_multiplier="0.6"
+        collision_priority="900"
+        display_name="大型平衡氙燃料站"
+        display_name_for_sidebar="平衡燃料站"
+        description="人类内战遗留的大型燃料站，可为多种设备提供动力，燃料储备充足。"
+        behavior="Stationary"
+        build_sidebar_categories_i_am_part_of="Infrastructure"
+        never_leaves_remains="true"
+        metal_to_claim="350000"
+        starting_mark_level="Markless"
+        cost_for_ai_to_purchase="200"
+        hull_points="330000" shield_points="410000" speed="Immobile"
+        metal_cost="350000" energy_consumption="0"
+        armor_mm="80" albedo="0.9" mass_tx="2"
+        aip_on_death="3"
+        ship_or_structure_explosion_sfx="StructureMidsize_Explosion"
+        ship_or_structure_explosion_if_on_other_planet_sfx="StructureLostOnOtherPlanet_Explosion"
+        voice_group="Silent"
+        fleet_membership="Planetary"
+        skip_drawing_ship_cap="true"
+        priority_as_ai_target="IrreplaceableBigAsTheyCome" priority_as_frd_target="IgnoreMe" priority_to_protect="Irreplaceable"
+      >
+    <resource_production type="FuelArgon" amount="150000" />
+    <resource_production type="FuelRadon" amount="150000" />
+    <resource_production type="FuelXenon" amount="300000" />
+    <metal_flow purpose="SelfConstruction" throughput="500"/>
+  </entity>
+
+  <entity name="FortifiedDataCenter"
+            thematic_groups="Hidden"  is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+			tags="FortifiedDataCenter,ProgressReducer,DestroyToReduceProgress"
+			draw_in_galaxy_view="true" is_critical_infrastructure="true"
+			visuals="assets/_finalgamemeshes/aibuildings/datacenter/fortifieddatacenter.prefab"
+			icon_name="Ships1/DataCenter" gimbal_icon_size_multiplier="1.5"
+			size_scale="12.00"
+			visuals_scale_multiplier="6.6"
+			y_offset_of_icon="20"
+			uses_large_health_bar="true"
+			category="Ship"
+			display_name="强化数据中心"
+			display_name_for_sidebar="数据堡垒"
+			description="一个配备重型武器的AI服务器集群，足以击退任何试图破坏的敌人。"
+			behavior="Stationary"
+			aip_on_death="-20"
+			target_type_for_player="NeverAutotargetButAllowManualTarget"
+			voice_group="Silent"
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="200"
+			skip_drawing_ship_cap="true"
+			hull_points="250000" shield_points="750000" speed="Immobile"
+			metal_cost="0" energy_consumption="15000"
+			armor_mm="120" albedo="0.45" mass_tx="5"
+			ship_or_structure_explosion_sfx="StructureMidsize_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="StructureLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			 is_reinforcement_location="true" always_is_ai_turret_spawn_point="true"
+      priority_as_ai_target="IrreplaceableResourceGeneration" priority_as_frd_target="IgnoreMe" priority_to_protect="Irreplaceable"
+			>
+    <system name="R5" display_name="脉冲激光炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="4000" range="AboveAverage4" shot_speed="Normal" rate_of_fire="Misery"
+				shots_per_salvo="20" fires_salvos_sequentially="false"
+				shot_type_data="LaserPulse_DeepBlue"
+				>
+    </system>
+    <system name="WS" display_name="脱壳穿甲弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1600" range="AboveAverage4" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+				shot_type_data="Sabot"
+				>
+      <outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="100" />
+    </system>
+    <system name="T" display_name="快子光束系统"
+	    category="Passive" tachyon_points="50" tachyon_points_added_per_mark="25" tachyon_range="AboveAverage4" tachyon_hits_albedo_less_than="0.75"></system>
+  </entity>
+
+<entity name="MarauderDreadnought"
+            is_deprecated="true"
+            thematic_groups="Hidden"  is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+	        tags="MarauderUltraRaider"
+            special_entity_type="Frigate" gimbal_icon_size_multiplier="1.5"
+            visuals="assets/_finalgamemeshes/guardians/carrierguardian/carrierguardian.prefab"
+            icon_name="Ships2/SomethingAperture" icon_overlay="Overlays1/MegaTurret_MiniFortress"
+            uses_large_health_bar="true"
+            category="Ship"
+            size_scale="10.8"
+			visuals_scale_multiplier="13"
+            y_offset_of_icon="35"
+            collision_priority="800"
+            display_name="掠夺者无畏舰"
+						display_name_for_sidebar="掠夺者DN"
+            description="被称为'单人舰队'，这艘巨型掠夺者战舰能够从远处发动毁灭性齐射。但在近距离面对大量小型舰船时较为脆弱。"
+            blocks_enemy_claim_flows="true"
+            voice_group="Silent"
+			starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+			cost_for_ai_to_purchase="3000"
+			hull_points="4000000" shield_points="2000000" speed="BelowAverage1"
+			metal_cost="1000000" energy_consumption="50000"
+			armor_mm="180" albedo="0.4" engine_gx="20" mass_tx="8"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+
+      priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			>
+		<system name="W1" display_name="舷侧火炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="100000" range="ExtremelyHigh" shot_speed="Normal" rate_of_fire="Sloth" fires_salvos_sequentially="true"
+				shots_per_salvo="50"
+				shot_type_data="EngineDisruptingShell"
+				>
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="1.2"/>
+				<outgoing_damage_modifier based_on="AttackDistance" comparison_type="LessThan" compared_to="8000" multiplier="0"/>
+		</system>
+		<system name="R9" display_name="舰首分解射线"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="75000" range="AboveAverage2" shot_speed="Normal" rate_of_fire="Devourer"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_YellowBright"
+				hits_all_intersecting_targets="false"
+				shots_detonate_immediately="false"
+				>
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="LessThan" compared_to="2" multiplier="0"/>
+		</system>
+		<system name="W2" display_name="尾部等离子炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="850000" range="AboveAverage2" shot_speed="Slow" rate_of_fire="PeriodicActivation" fires_salvos_sequentially="true"
+				shot_type_data="PlasmaTorpedoAOEBurstAtEnd"
+				area_of_effect_size="800"
+				aoe_spreads_damage_among_available_targets="true"
+				>
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+  </entity>
+  <entity name="MarauderCorsair"
+            is_deprecated="true"
+            thematic_groups="Hidden"  is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+            special_entity_type="Frigate" gimbal_icon_size_multiplier="1.5"
+            visuals="assets/_finalgamemeshes/guardians/stealthguardian/stealthguardian.prefab"
+            icon_name="Ships2/SomethingAperture" icon_overlay="Overlays1/Starship_Raid"
+            uses_large_health_bar="true"
+            category="Ship"
+            size_scale="10.8"
+			visuals_scale_multiplier="13"
+            y_offset_of_icon="35"
+            collision_priority="800"
+            display_name="掠夺者海盗船"
+            description="被称为'虚空之惧'，这艘快速隐形战舰配备了先进的牵引光束，使掠夺者登舰小队能够劫持其他船只。"
+            blocks_enemy_claim_flows="true"
+            voice_group="Silent"
+			starting_mark_level="Mark6" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+			cost_for_ai_to_purchase="3000"
+			hull_points="1000000" shield_points="500000" speed="AboveAverage6"
+			metal_cost="500000" energy_consumption="25000"
+			armor_mm="50" albedo="0.7" engine_gx="21" mass_tx="7"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+
+      priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			>
+
+		<system name="WT"  shot_type_data="GuidedMissile" display_name="地狱火导弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="6000" shots_per_salvo="50" range="Normal2" shot_speed="Slow" rate_of_fire="Low" fires_salvos_sequentially="false"
+
+				aoe_spreads_damage_among_available_targets="false" area_of_effect_size="0"
+				cloaking_percent_loss_from_firing="0.05"
+				 >
+			<outgoing_damage_modifier based_on="CurrentHullPercentage" comparison_type="AtMost" compared_to="30" multiplier="2" />
+			<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="50" multiplier="4" />
+		</system>
+
+		<system name="WD" display_name="登舰小队"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1500" range="Normal2" shot_speed="Normal" rate_of_fire="Misery"
+				shots_per_salvo="1" fires_salvos_sequentially="false"
+				shot_type_data="MeleeInvisible" cloaking_percent_loss_from_firing="0.05"
+				multiplier_damage_to_tractored_unit="100"
+				>
+			<death_effect_damage type="Nanocaustation" tier_name="LargeNanocaustShip"/>
+		</system>
+
+		<system name="T" display_name="高级登舰光束"
+				category="Passive"
+				tractor_range="Normal2" tractor_count="1"  tractor_hits_albedo_less_than="0.7" tractor_hits_engine_gx_less_than="19"
+				>
+		</system>
+		<system name="C" display_name="隐形装置" category="Passive" cloaking_points="5000"> </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+
+</root>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+<!--
+           Vassal Section
+           Each faction that can be made a vassal has it defined here.
+           Vassals are no longer in the release.  -->
+<!--
+  <faction name="Scourge"  is_partial_record="true" required_expansion_list="1_The_Spire_Rises"
+           CanBeAVassal="true"
+           >
+    <custom_field name="Vassal" display_name="附庸" description="该阵营将听从玩家的命令"
+          sort_group="300" setting_type="BoolToggle" default="false" is_advanced_setting="true" />
+  </faction>
+
+  <faction name="Nanocaust"  is_partial_record="true"
+           CanBeAVassal="true"
+           >
+    <custom_field name="Vassal" display_name="附庸" description="该阵营将听从玩家的命令"
+          sort_group="300" setting_type="BoolToggle" default="false" is_advanced_setting="true" />
+  </faction>
+
+  <faction name="DarkZenith"  is_partial_record="true" required_expansion_list="2_Zenith_Onslaught"
+           CanBeAVassal="true"
+           >
+    <custom_field name="Vassal" display_name="附庸" description="该阵营将听从玩家的命令"
+          sort_group="300" setting_type="BoolToggle" default="false" is_advanced_setting="true" />
+  </faction>
+
+    <faction name="Sappers"  is_partial_record="true" 
+           CanBeAVassal="true"
+           >
+    <custom_field name="Vassal" display_name="附庸" description="该阵营将听从玩家的命令"
+          sort_group="300" setting_type="BoolToggle" default="false" is_advanced_setting="true" />
+  </faction>
+-->
+  <!-- by report, marauders don't make great vassals at the moment
+  <faction name="HumanMarauders"  is_partial_record="true"
+           CanBeAVassal="true"
+           >
+    <custom_field name="Vassal" display_name="附庸" description="该阵营将听从玩家的命令"
+          sort_group="300" setting_type="BoolToggle" default="false" is_advanced_setting="true" />
+  </faction>
+  -->
+  <!--
+  <faction name="DarkZenithSvikari"  is_partial_record="true" required_expansion_list="2_Zenith_Onslaught"
+           CanBeAVassal="true"
+           >
+    <custom_field name="Vassal" display_name="附庸" description="该阵营将听从玩家的命令"
+                  sort_group="300" setting_type="BoolToggle" default="false" is_advanced_setting="true" />
+    <custom_field name="Allegiance" display_name="效忠对象" description="这些天顶星人是黑暗联盟的叛徒。"
+                  sort_group="300" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Friendly To Players,Minor Faction Team Red,Minor Faction Team Blue,Minor Faction Team Green,Allied To AI" default_option="Friendly To Players" />
+
+  </faction>
+-->
+  
+</root>

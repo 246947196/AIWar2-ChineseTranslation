@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <entity name="MinorFactionBeacon"
+          thematic_groups="Hidden" is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+	  tags="MinorFactionBeacon" is_auto_scrapping_skipped_when_command_station_type_changes="true"
+          visuals="assets/_finalgamemeshes/aibuildings/ruinednetworknode/ruinednetworknode.prefab"
+	  icon_name="Ships1/MinorFactionBeacon" gimbal_icon_size_multiplier="1.25"
+	  y_offset_of_icon="30"
+          draw_in_galaxy_view="true"
+	  category="Ship"
+	  size_scale="4.5"
+	  visuals_scale_multiplier="10"
+	  collision_priority="900"
+          target_type_for_player="NeverTarget"
+	  display_name="小派系信标" display_name_for_sidebar="信标"
+	  description="该描述应当被每个想要信标的小派系覆盖"
+	  behavior="Stationary"
+	  starting_mark_level="Markless"
+	  cost_for_ai_to_purchase="200"
+	  hull_points="90000" shield_points="210000" speed="Immobile"
+	  metal_cost="6500000" energy_consumption="0"
+	  armor_mm="80" albedo="0.9" mass_tx="2"
+	  ship_or_structure_explosion_sfx="StructureMidsize_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="StructureLostOnOtherPlanet_Explosion"
+	  voice_group="Silent"
+	  fleet_membership="Planetary"
+      priority_as_ai_target="IgnoreMe" priority_as_frd_target="IgnoreMe" priority_to_protect="IgnoreMe"
+      eligible_for_hacks="HackSomeFactionsBeacon">
+  </entity>
+	
+  <entity  copy_from="MinorFactionBeacon" name="NanocaustBeacon"
+          tags="Beacon,NanocaustBeacon" is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+	      thematic_groups="Beacon" icon_overlay="Overlays2/DevourerGolem_RavenousShadow"
+          display_name="纳米灾变抑制场发射器" display_name_for_sidebar="纳米灾变信标"
+          description="这个外星神器似乎在发出一种超强力的抑制场，就像在阻止某种非常危险的东西苏醒一样。摧毁它可能会带来意想不到的后果，但研究它一定很有意思。
+
+你的首席科学官指出，打开它可能会导致人类灭绝。而你的一位军事顾问认为，人类有机会在这个新威胁摧毁AI的同时幸存下来。无论如何，事情都会变得...很刺激。
+
+&lt;color=#f25e1c&gt;极高影响力：&lt;/color&gt;这个派系会不断扩张，并可能造成不可挽回的损害。由于能够捕获敌方舰船，它也是最强大的派系之一。它很可能会主导整个游戏进程，需要特殊的策略来应对。"
+	      target_type_for_player="NeverAutotargetButAllowManualTarget"
+          >
+   </entity>
+   <entity  copy_from="MinorFactionBeacon" name="DevourerBeacon" 
+           tags="Beacon,DevourerBeacon" is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+	      thematic_groups="Beacon" icon_overlay="Overlays2/DevourerGolem_Nemesis"
+          display_name="天顶吞噬者信标" display_name_for_sidebar="吞噬者信标"
+          description="这个失效的信标看起来可以被黑入。不知道它会吸引什么？可能是某种饥饿的东西...
+
+你的首席科学官表示，入侵这个信标会召唤出一个巨大的天顶巨像，它会在银河系中游荡，攻击所遇到的一切。
+
+&lt;color=#f25e1c&gt;低影响力：&lt;/color&gt;这个派系不会扩张，也不会造成不可挽回的损害。但有时可能会在战斗中产生巨大的影响。"
+	  target_type_for_player="NeverTarget"
+          >
+   </entity>
+   <entity  copy_from="MinorFactionBeacon" name="MarauderBeacon"
+           tags="Beacon,MarauderBeacon" is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+	      thematic_groups="Beacon" icon_overlay="Overlays1/MegaTurret_MiniFortress"
+          display_name="反掠夺者虚构元素发射器" display_name_for_sidebar="掠夺者信标"
+          description="这个外星神器似乎在发出极其强大的虚构元素辐射，就像在干扰某种未知的推进系统。摧毁它可能会带来意想不到的后果，但研究它一定很有意思。
+
+你的军事顾问担心，摧毁它可能会让一群强大的敌人得以进攻银河系。
+
+&lt;color=#f25e1c&gt;可变影响力：&lt;/color&gt;这个派系会扩张，并可能造成不可挽回的损害。如果让它扩张得足够大，它们会成为巨大的威胁，但在初期可能会难以发展。他们的首次攻击方式也可能迫使玩家采取不同的策略。"
+	  target_type_for_player="NeverTarget"
+          >
+   </entity>
+   <entity  copy_from="MinorFactionBeacon" name="HRFBeacon"
+           tags="Beacon,HRFBeacon" is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+	      thematic_groups="Beacon" icon_overlay="Overlays2/WarpingIn"
+          display_name="失效的抵抗战士信标" display_name_for_sidebar="HRF信标"
+          description="如果你能破解这个损坏的信标，也许能联系到意想不到的盟友。
+
+你的军事顾问推测，破解它将允许其他反AI力量加入你的战斗。
+
+&lt;color=#f25e1c&gt;低影响力：&lt;/color&gt;这个派系不会扩张，也不会造成不可挽回的损害。他们会给你带来不错的助力，但不会替你赢得游戏。"
+	  target_type_for_player="NeverTarget"
+          >
+   </entity>
+
+  <entity name="DevourerGolem"
+            thematic_groups="Zenith,GolemEnemy" 
+			tags="Devourer,ShowsOnNormalDisplayMode" voice_group="Zenith" gimbal_icon_size_multiplier="2"
+			draw_in_galaxy_view="true"
+			visuals="assets/_finalgamemeshes/golems/devourergolem/devourergolem.prefab"
+			icon_name="Ships1/DevourerGolem"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="19.2"
+			visuals_scale_multiplier="1.2"
+			y_offset_of_icon="150"
+			collision_priority="810"
+			display_name="吞噬者巨像"
+      display_name_for_sidebar="吞噬者巨像"
+			description="这个几乎无敌的巨像在银河系中游荡，吞噬它遇到的移动舰船来为自己提供能量和修复。单位不会自动瞄准它，最好的选择就是逃跑。同时它还会打破所到之处的任何停火协议。"
+			behavior="Stationary"
+      blocks_ceasefire_on_planet="true"
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="140000"
+			hull_points="60000000" shield_points="19000000" speed="VeryVeryLittle1"
+			armor_mm="400" albedo="1" engine_gx="25" mass_tx="19"
+			metal_cost="1085000" energy_consumption="0"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			pushes_enemy_shields="true"
+      can_pass_through_enemy_forcefields="true"
+			
+                        shows_on_galaxy_map_for_explored_planets="true"
+      priority_as_ai_target="IgnoreMe" priority_as_frd_target="IgnoreMe" priority_to_protect="IgnoreMe"
+			>
+    <system name="Q7" display_name="反物质巨颚"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="8000" range="AboveAverage5" shot_speed="Normal" rate_of_fire="Devourer"
+				shot_type_data="HeavyBeamInvisible"
+				hits_all_intersecting_targets="true"
+				shots_detonate_immediately="true"
+				maximum_number_of_targets_hit_per_shot="30"
+				number_beams_to_fire="12" beam_weapon_visual_style="Laser_GreenBright"
+        distance_from_center_for_beam_emission="70"
+                only_targets_mobile_units="true"
+				health_change_per_damage_dealt="0.4"
+            >
+      <!--
+    <system name="Q7" display_name="反物质巨颚"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="30000" range="Normal6" shot_speed="Normal" rate_of_fire="Devourer"
+				shots_per_salvo="30" fires_salvos_sequentially="false"
+				shot_type_data="DevourerShot"				
+                only_targets_mobile_units="true"
+				>-->
+
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.1" can_be_devoured="false"
+	>
+		<debuff_modifier debuff_type="WeaponPhase" multiplier="0" />
+	</ship_class_data>
+  </entity>
+  <entity name="ZenithTrader"
+            thematic_groups="Zenith" 
+			special_entity_type="ThirdPartySellerToPlayers" tags="ZenithTrader,ShowsOnNormalDisplayMode" voice_group="Zenith" gimbal_icon_size_multiplier="1.7"
+			draw_in_galaxy_view="true"
+			visuals="assets/_finalgamemeshes/golems/zenithtrader/zenithtrader.prefab"
+			icon_name="Ships1/Zenith_Trader"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="13.5"
+			visuals_scale_multiplier="2"
+			y_offset_of_icon="25"
+			collision_priority="810"
+			display_name="天顶商人"
+			description="只要有足够的金属，就会向任何人出售先进的外星科技，并在其所在地实施停火。当它在你的行星上时，你可以在建造菜单底部附近的区域看到它的商品。"
+			creates_ceasefire_on_planet="true"
+			behavior="Stationary"
+			starting_mark_level="Markless"
+      fleet_design_templates_i_always_grant="ZenithPurchases"
+			cost_for_ai_to_purchase="1000000"
+			hull_points="600000" shield_points="300000" speed="VeryVeryLittle3"
+			armor_mm="220" albedo="0.9" engine_gx="25" mass_tx="12"
+			metal_cost="605000" energy_consumption="0"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+      can_pass_through_enemy_forcefields="true"
+			
+                        shows_on_galaxy_map_for_explored_planets="true"
+                        priority_as_ai_target="NotDangerous" priority_as_frd_target="NotDangerous" priority_to_protect="IgnoreMe"
+			>
+  </entity>
+  
+  
+   <entity name="RavenousShadow"
+            thematic_groups="Zenith,GolemEnemy,AI" 
+			tags="RavenousShadow,ShowsOnNormalDisplayMode" voice_group="Zenith" gimbal_icon_size_multiplier="2"
+			draw_in_galaxy_view="true"
+			visuals="assets/_finalgamemeshes/golems/devourergolem/devourergolem.prefab"
+			icon_name="Ships1/DevourerGolem" icon_overlay="Overlays2/DevourerGolem_RavenousShadow"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="18"
+			y_offset_of_icon="150"
+			collision_priority="810"
+			display_name="贪婪暗影"
+			description="一个较弱的AI仿制吞噬者巨像。和原版一样贪婪...而且盯上了你。同时它还会打破所到之处的任何停火协议。"
+			behavior="Attacker_Full"
+      blocks_ceasefire_on_planet="true"
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="140000"
+			hull_points="40000000" shield_points="20000000" speed="VeryVeryLittle2"
+			armor_mm="400" albedo="1" engine_gx="25" mass_tx="19"
+			metal_cost="1085000" energy_consumption="0"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+      can_pass_through_enemy_forcefields="true"
+			
+      priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			>
+    <system name="Q7" display_name="反物质巨颚"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="30000" range="Normal1" shot_speed="Normal" rate_of_fire="Devourer"
+			shots_per_salvo="30" fires_salvos_sequentially="false"
+			shot_type_data="DevourerShot"
+			area_of_effect_size="200"				
+			aoe_spreads_damage_among_available_targets="true"
+			health_change_per_damage_dealt="0.1"
+			>                
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.1" can_be_devoured="false"
+	>
+		<debuff_modifier debuff_type="WeaponPhase" multiplier="0" />
+	</ship_class_data>
+  </entity>
+</root>

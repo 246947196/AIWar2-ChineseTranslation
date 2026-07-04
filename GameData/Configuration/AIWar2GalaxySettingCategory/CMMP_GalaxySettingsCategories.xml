@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <setting_category name="General" display_name="常规"
+      description="最基本的游戏设置"/>
+  
+  <setting_category name="MapGen" display_name="地图生成"
+      description="与新建战役时地图生成相关的设置"/>
+  
+  <setting_category name="AI Waves" display_name="AI进攻波次"
+      description="与游戏中AI周期性向你发送进攻波次相关的设置"/>
+
+  <setting_category name="AI Behavior" display_name="AI行为"
+      description="与游戏中AI行为模式相关的设置"/>
+
+  <setting_category name="UnitBehavior" display_name="单位行为"
+      description="与游戏中各单位(任何阵营)行为相关的设置"/>
+
+  <setting_category name="Allies" display_name="盟友"
+      description="与人类阵营间盟友关系相关的设置"/>
+
+  <setting_category name="Balance" display_name="平衡性"
+      description="与战斗模拟和其他游戏平衡性相关的设置"/>
+  
+  <setting_category name="Performance" display_name="性能"
+      description="与游戏模拟处理方式及CPU负载相关的设置"/>
+
+  <setting_category name="Hidden" display_name="隐藏" is_hidden="true" 
+      description="正常情况下不可见的设置，供模组制作者等使用"/>
+
+  <setting_category name="Spire" display_name="尖塔"
+      description="与堕落尖塔或尖塔帝国相关的设置"/>
+
+	  
+</root>

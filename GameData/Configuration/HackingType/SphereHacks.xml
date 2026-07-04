@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+<!--	All hacking_response_strength_per_interval values are based on 1 minute of budget for the Sphere
+		Aka, primary_response_strength_per_interval="2" would spawn 2 minutes worth of budget at once
+		increase_per_interval values are not implemented -->
+<!-- 	Taking Units -->
+
+<item name="HackToGrantShipLine_Sphere" copy_from="HackToGrantShipLine" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_GrantShipLine_Sphere" 
+          display_name="窃取戴森舰船生产线" description="这将使玩家能够为破解旗舰（离目标最近的那艘）获取一条新的舰船生产线。
+
+This hack will Antagonize the Dyson Sphere against you for a while."
+		number_of_times_individual_unit_can_be_hacked="3"
+		do_not_destroy_structure_after_hacking_multiple_times="true"
+		cost_in_hacking_points_multiplier_per_times_same_unit_hacked="1"
+		response_strength_multiplier_per_time_hacked_same_target="1.2"
+		cost_in_hacking_points="20"
+		multiplier_to_hacking_point_cost_when_on_hostile_world="1.5"
+		multiplier_to_hacking_time_when_on_neutral_or_friendly_world="0.5"
+		hacking_points_against_this_faction_percentage_recorded_modifer="1"
+
+		hack_duration="20"
+		primary_hacking_response_interval="25"
+		primary_response_strength_per_interval="2"
+		secondary_hacking_response_interval="10"
+		secondary_response_strength_per_interval="1"
+		tertiary_hacking_response_interval="5"
+		tertiary_response_strength_per_interval="0.25"
+		response_strength_on_completion="1.0"
+		local_hacker_required="true"
+		hack_is_against_planet="false"
+		use_closest_hacker_for_check="true"
+		choose_a_specific_ship_line_to_grant="true"
+		choice_text="Which ship line would you like to add to the fleet of this hacker?"
+		choice_text_height="60"
+		destroy_hack_target_on_completion="false"
+		relatedstring_is_a_ship_type="true"
+/>
+<!--For the above hack, the cost_in_hacking_points_multiplier_per_times_same_unit_hacked is bugged due to the sphere changing back and forth into antagonized state. Reduced from 1.5 to 1 because it doesn't apply correctly. Ship hack increased to 20 from 12 to compensate. -->
+
+
+<!--	Making the sphere stronger -->
+
+<item name="IncreaseSphereProduction" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_IncreaseSphereProduction" display_name="增加球体产量" 
+        description="This Hack will increase this Sphere's per second budget by +200% per hack. Stacks additively.
+Note that when the Sphere ship capacity is below 10%, its budget is tripled.
+
+Expect the Sphere to react angrily to messing with its systems. It'll eventually calm down and can become a useful ally. Hopefully the AI doesn't have a way to make it hostile against us."
+        hack_duration="20"
+        primary_hacking_response_interval="30"
+        primary_response_strength_per_interval="0.75"
+		secondary_hacking_response_interval="10"
+		secondary_response_strength_per_interval="0.05"
+        cost_in_hacking_points="20"
+        response_strength_on_completion="1"
+        local_hacker_required="true"
+/>
+
+<item name="IncreaseSphereMaxStrength" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_IncreaseSphereStrength" display_name="增加球体最大强度" 
+        description="This Hack will increase this Sphere's Max Strength by +200% per hack. Stacks additively.
+
+Expect the Sphere to react angrily to messing with its systems. It'll eventually calm down and can become a useful ally. Hopefully the AI doesn't have a way to make it hostile against us."
+        hack_duration="20"
+        primary_hacking_response_interval="30"
+        primary_response_strength_per_interval="0.75"
+		secondary_hacking_response_interval="10"
+		secondary_response_strength_per_interval="0.05"
+        cost_in_hacking_points="20"
+        response_strength_on_completion="1"
+        local_hacker_required="true"
+/>
+
+<item name="IncreaseSphereHopRange" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_IncreaseSphereHops" display_name="增加球体跳跃范围" 
+        description="This Hack will increase the number of hops that ships built by this sphere will wander by 1.
+
+Expect the Sphere to react angrily to messing with its systems. It'll eventually calm down and can become a useful ally. Hopefully the AI doesn't have a way to make it hostile against us."
+        hack_duration="60"
+        primary_hacking_response_interval="30"
+        primary_response_strength_per_interval="0.75"
+		secondary_hacking_response_interval="10"
+		secondary_response_strength_per_interval="0.05"
+        cost_in_hacking_points="20"
+        response_strength_on_completion="1"
+        local_hacker_required="true"
+/>
+
+</root>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  
+  <thematic_group_type name="ArkCapturable" display_name="可捕获方舟"
+          sort_order="50" group_type="GiantUnitClass"
+          description="可捕获方舟是人类各团体在对抗机械的战争失败前正在进行的项目。这些方舟现在被遗弃在银河系中，如果你愿意，可以将它们收入囊中。"/>
+
+  <thematic_group_type name="ArkHomeCommand" display_name="家园指挥方舟"
+          sort_order="50" group_type="GiantUnitClass"
+          description="家园指挥方舟是太空人类成功完成的一项秘密军事项目。它现在是你的基地和私人住所，也是所有参与战争的军官和飞行员的驻地。"/>
+
+  <thematic_group_type name="GolemCapturable" display_name="可捕获魔像"
+       sort_order="50" group_type="GiantUnitClass"
+       description="可捕获魔像是远古天顶文明遗留下来的自动机器。发现时它们处于休眠状态，但可以使用人类技术重新激活，将它们变成强大的远程操控武器。"/>
+
+  <thematic_group_type name="GolemEvolved" display_name="进化魔像"
+     sort_order="50" group_type="GiantUnitClass"
+     description="进化魔像是远古天顶文明废弃魔像的升级版，经过进一步改进，发掘出了新的力量和能力。"/>
+
+  <thematic_group_type name="GolemEnemy" display_name="敌方魔像"
+       sort_order="50" group_type="GiantUnitClass"
+       description="敌方魔像是远古天顶文明遗留下来的自动机器，已被敌方阵营（通常是人工智能）使用第三方技术重新激活并控制。"/>
+
+
+</root>

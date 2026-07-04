@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!--	
+		Elderlings
+		*********************************************************
+	-->
+	<beacon_faction_option name="Elderlings"
+		blocked_from_seeding_if_any_of_these_factions_included="Elderlings"
+		blocked_from_seeding_if_any_of_these_player_types_included="NecromancerEmpire,NecromancerSidekick"
+		tag_from_which_to_seed_one_beacon="ElderlingsBeacon"
+		beacon_tier_for_seeding="Minor">
+		<!-- Allied To AI -->
+		<!-- Intensity 1 -->
+		<hack_choice name="Intensity1EnemyElderlings" factions_included="Elderlings" display_name="强度 1，敌对古神族" description="极其弱小且与你敌对。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="1" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Allied To AI" />
+		</hack_choice>
+
+		<!-- Intensity 2 -->
+		<hack_choice name="Intensity2EnemyElderlings" factions_included="Elderlings" display_name="强度 2，敌对古神族" description="非常弱小且与你敌对。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="2" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Allied To AI" />
+		</hack_choice>
+
+		<!-- Intensity 3 -->
+		<hack_choice name="Intensity3EnemyElderlings" factions_included="Elderlings" display_name="强度 3，敌对古神族" description="弱小且与你敌对。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="3" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Allied To AI" />
+		</hack_choice>
+
+		<!-- Intensity 4 -->
+		<hack_choice name="Intensity4EnemyElderlings" factions_included="Elderlings" display_name="强度 4，敌对古神族" description="稍有能力且与你敌对。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="4" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Allied To AI" />
+		</hack_choice>
+
+		<!-- Intensity 5 -->
+		<hack_choice name="Intensity5EnemyElderlings" factions_included="Elderlings" display_name="强度 5，敌对古神族" description="有能力且与你敌对。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="5" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Allied To AI" />
+		</hack_choice>
+
+		<!-- Intensity 6 -->
+		<hack_choice name="Intensity6EnemyElderlings" factions_included="Elderlings" display_name="强度 6，敌对古神族" description="有能力且与你敌对。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="6" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Allied To AI" />
+		</hack_choice>
+
+		<!-- Intensity 7 -->
+		<hack_choice name="Intensity7EnemyElderlings" factions_included="Elderlings" display_name="强度 7，敌对古神族" description="非常有能力且与你敌对。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="7" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Allied To AI" />
+		</hack_choice>
+
+		<!-- Intensity 8 -->
+		<hack_choice name="Intensity8EnemyElderlings" factions_included="Elderlings" display_name="强度 8，敌对古神族" description="非常有能力且与你敌对。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="8" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Allied To AI" />
+		</hack_choice>
+
+		<!-- Intensity 9 -->
+		<hack_choice name="Intensity9EnemyElderlings" factions_included="Elderlings" display_name="强度 9，敌对古神族" description="能力很强且与你敌对。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="9" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Allied To AI" />
+		</hack_choice>
+
+		<!-- Intensity 10 -->
+		<hack_choice name="Intensity10EnemyElderlings" factions_included="Elderlings" display_name="强度 10，敌对古神族" description="能力极强且与你敌对。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="10" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Allied To AI" />
+		</hack_choice>
+
+		<!-- Friendly To Players -->
+		<!-- Intensity 1 -->
+		<hack_choice name="Intensity1Elderlings" factions_included="Elderlings" display_name="强度 1，友方古神族" description="极其弱小且与你结盟。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="1" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+
+		<!-- Intensity 2 -->
+		<hack_choice name="Intensity2Elderlings" factions_included="Elderlings" display_name="强度 2，友方古神族" description="非常弱小且与你结盟。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="2" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+
+		<!-- Intensity 3 -->
+		<hack_choice name="Intensity3Elderlings" factions_included="Elderlings" display_name="强度 3，友方古神族" description="弱小且与你结盟。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="3" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+
+		<!-- Intensity 4 -->
+		<hack_choice name="Intensity4Elderlings" factions_included="Elderlings" display_name="强度 4，友方古神族" description="稍有能力且与你结盟。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="4" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+
+		<!-- Intensity 5 -->
+		<hack_choice name="Intensity5Elderlings" factions_included="Elderlings" display_name="强度 5，友方古神族" description="有能力且与你结盟。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="5" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+
+		<!-- Intensity 6 -->
+		<hack_choice name="Intensity6Elderlings" factions_included="Elderlings" display_name="强度 6，友方古神族" description="相当有帮助且与你结盟。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="6" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+
+		<!-- Intensity 7 -->
+		<hack_choice name="Intensity7Elderlings" factions_included="Elderlings" display_name="强度 7，友方古神族" description="有帮助且与你结盟。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="7" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+
+		<!-- Intensity 8 -->
+		<hack_choice name="Intensity8Elderlings" factions_included="Elderlings" display_name="强度 8，友方古神族" description="非常有帮助且与你结盟。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="8" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+
+		<!-- Intensity 9 -->
+		<hack_choice name="Intensity9Elderlings" factions_included="Elderlings" display_name="强度 9，友方古神族" description="极其有帮助且与你结盟。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="9" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+
+		<!-- Intensity 10 -->
+		<hack_choice name="Intensity10Elderlings" factions_included="Elderlings" display_name="强度 10，友方古神族" description="极其有帮助且与你结盟。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="10" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+	</beacon_faction_option>
+
+	<!--	
+		Neinzul Custodians - Not working
+		*********************************************************
+	-->
+	<!--<beacon_faction_option name="Custodians"
+		blocked_from_seeding_if_any_of_these_factions_included="NeinzulCustodiansParent"
+		tag_from_which_to_seed_one_beacon="NeinzulCustodiansBeacon"
+		beacon_tier_for_seeding="Medium">
+
+		<!- Intensity 1 -->
+	<!--<hack_choice name="Intensity1" 
+					 factions_included="NeinzulCustodiansParent,NeinzulCustodiansPearl,NeinzulCustodiansDiamond,NeinzulCustodiansRuby,NeinzulCustodiansSaphire,NeinzulCustodiansEmerald,NeinzulCustodiansOnyx"
+					 display_name="强度 1" description="一个有趣且简单的挑战。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="1" />
+		</hack_choice>
+
+		<!- Intensity 2 -->
+	<!--<hack_choice name="Intensity2" 
+					 factions_included="NeinzulCustodiansParent,NeinzulCustodiansPearl,NeinzulCustodiansDiamond,NeinzulCustodiansRuby,NeinzulCustodiansSaphire,NeinzulCustodiansEmerald,NeinzulCustodiansOnyx" 
+					 display_name="强度 2" description="一个有趣且非常轻松的挑战。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="2" />
+		</hack_choice>
+
+		<!- Intensity 3 -->
+	<!--<hack_choice name="Intensity3" 
+					 factions_included="NeinzulCustodiansParent,NeinzulCustodiansPearl,NeinzulCustodiansDiamond,NeinzulCustodiansRuby,NeinzulCustodiansSaphire,NeinzulCustodiansEmerald,NeinzulCustodiansOnyx" 
+					 display_name="强度 3" description="一个有趣且轻松的挑战。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="3" />
+		</hack_choice>
+
+		<!- Intensity 4 -->
+	<!--<hack_choice name="Intensity4" 
+					 factions_included="NeinzulCustodiansParent,NeinzulCustodiansPearl,NeinzulCustodiansDiamond,NeinzulCustodiansRuby,NeinzulCustodiansSaphire,NeinzulCustodiansEmerald,NeinzulCustodiansOnyx" 
+					 display_name="强度 4" description="一个有趣且合理的挑战。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="4" />
+		</hack_choice>
+
+		<!- Intensity 5 -->
+	<!--<hack_choice name="Intensity5" 
+					 factions_included="NeinzulCustodiansParent,NeinzulCustodiansPearl,NeinzulCustodiansDiamond,NeinzulCustodiansRuby,NeinzulCustodiansSaphire,NeinzulCustodiansEmerald,NeinzulCustodiansOnyx" 
+					 display_name="强度 5" description="一个有趣且中等难度的挑战。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="5" />
+		</hack_choice>
+
+		<!- Intensity 6 -->
+	<!--<hack_choice name="Intensity6" 
+					 factions_included="NeinzulCustodiansParent,NeinzulCustodiansPearl,NeinzulCustodiansDiamond,NeinzulCustodiansRuby,NeinzulCustodiansSaphire,NeinzulCustodiansEmerald,NeinzulCustodiansOnyx" 
+					 display_name="强度 6" description="一个有趣且更大的挑战。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="6" />
+		</hack_choice>
+
+		<!- Intensity 7 -->
+	<!--<hack_choice name="Intensity7" 
+					 factions_included="NeinzulCustodiansParent,NeinzulCustodiansPearl,NeinzulCustodiansDiamond,NeinzulCustodiansRuby,NeinzulCustodiansSaphire,NeinzulCustodiansEmerald,NeinzulCustodiansOnyx" 
+					 display_name="强度 7" description="一个有趣且更大的挑战。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="7" />
+		</hack_choice>
+
+		<!- Intensity 8 -->
+	<!--<hack_choice name="Intensity8" 
+					 factions_included="NeinzulCustodiansParent,NeinzulCustodiansPearl,NeinzulCustodiansDiamond,NeinzulCustodiansRuby,NeinzulCustodiansSaphire,NeinzulCustodiansEmerald,NeinzulCustodiansOnyx" 
+					 display_name="强度 8" description="一个有趣且非常大的挑战。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="8" />
+		</hack_choice>
+
+		<!- Intensity 9 -->
+	<!--<hack_choice name="Intensity9" 
+					 factions_included="NeinzulCustodiansParent,NeinzulCustodiansPearl,NeinzulCustodiansDiamond,NeinzulCustodiansRuby,NeinzulCustodiansSaphire,NeinzulCustodiansEmerald,NeinzulCustodiansOnyx" 
+					 display_name="强度 9" description="一个有趣且极其巨大的挑战。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="9" />
+		</hack_choice>
+
+		<!- Intensity 10 -->
+	<!--<hack_choice name="Intensity10" 
+					 factions_included="NeinzulCustodiansParent,NeinzulCustodiansPearl,NeinzulCustodiansDiamond,NeinzulCustodiansRuby,NeinzulCustodiansSaphire,NeinzulCustodiansEmerald,NeinzulCustodiansOnyx" 
+					 display_name="强度 10" description="一个有趣且极其巨大的挑战。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="10" />
+		</hack_choice>		
+	</beacon_faction_option>-->
+	<!--	
+		Neinzul Migrant Fleets Reported broken by The Grand Mugwump. It seems like no C# exists to support it, so this has been commented out
+		*********************************************************
+	-->
+        <!--
+	<beacon_faction_option name="MigrantFleets"
+		blocked_from_seeding_if_any_of_these_factions_included="MigrantFleets"
+		tag_from_which_to_seed_one_beacon="MigrantFleetsBeacon"
+		beacon_tier_for_seeding="Medium">
+
+		<!- Intensity 1 
+		<hack_choice name="Intensity1MigrantFleets" factions_included="MigrantFleets" display_name="强度 1" description="一个有趣且简单的挑战。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="1" />
+		</hack_choice>
+
+		<!- Intensity 2 
+		<hack_choice name="Intensity2MigrantFleets" factions_included="MigrantFleets" display_name="强度 2" description="一个有趣且非常轻松的挑战。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="2" />
+		</hack_choice>
+
+		<!- Intensity 3 
+		<hack_choice name="Intensity3MigrantFleets" factions_included="MigrantFleets" display_name="强度 3" description="一个有趣且轻松的挑战。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="3" />
+		</hack_choice>
+
+		<!- Intensity 4 
+		<hack_choice name="Intensity4MigrantFleets" factions_included="MigrantFleets" display_name="强度 4" description="一个有趣且合理的挑战。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="4" />
+		</hack_choice>
+
+		<!- Intensity 5 
+		<hack_choice name="Intensity5MigrantFleets" factions_included="MigrantFleets" display_name="强度 5" description="一个有趣且中等难度的挑战。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="5" />
+		</hack_choice>
+
+		<!- Intensity 6 
+		<hack_choice name="Intensity6MigrantFleets" factions_included="MigrantFleets" display_name="强度 6" description="一个有趣且更大的挑战。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="6" />
+		</hack_choice>
+
+		<!- Intensity 7 
+		<hack_choice name="Intensity7MigrantFleets" factions_included="MigrantFleets" display_name="强度 7" description="一个有趣且更大的挑战。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="7" />
+		</hack_choice>
+
+		<!- Intensity 8 
+		<hack_choice name="Intensity8MigrantFleets" factions_included="MigrantFleets" display_name="强度 8" description="一个有趣且非常大的挑战。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="8" />
+		</hack_choice>
+
+		<!- Intensity 9 
+		<hack_choice name="Intensity9MigrantFleets" factions_included="MigrantFleets" display_name="强度 9" description="一个有趣且极其巨大的挑战。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="9" />
+		</hack_choice>
+
+		<!- Intensity 10
+		<hack_choice name="Intensity10MigrantFleets" factions_included="MigrantFleets" display_name="强度 10" description="一个有趣且极其巨大的挑战。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="10" />
+		</hack_choice>
+
+</beacon_faction_option>
+-->
+	<!--	
+		Neinzul Sappers
+		*********************************************************
+	-->
+	<beacon_faction_option name="Sappers"
+		blocked_from_seeding_if_any_of_these_factions_included="Sappers"
+		tag_from_which_to_seed_one_beacon="SapperBeacon"
+		beacon_tier_for_seeding="AlwaysSeed">
+		<!-- Intensity 1 -->
+		<hack_choice name="Intensity1Sappers" factions_included="Sappers" display_name="强度 1，友方工兵" description="极其弱小且与你结盟。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="1" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+
+		<!-- Intensity 2 -->
+		<hack_choice name="Intensity2Sappers" factions_included="Sappers" display_name="强度 2，友方工兵" description="非常弱小且与你结盟。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="2" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+
+		<!-- Intensity 3 -->
+		<hack_choice name="Intensity3Sappers" factions_included="Sappers" display_name="强度 3，友方工兵" description="弱小且与你结盟。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="3" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+
+		<!-- Intensity 4 -->
+		<hack_choice name="Intensity4Sappers" factions_included="Sappers" display_name="强度 4，友方工兵" description="稍有能力且与你结盟。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="4" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+
+		<!-- Intensity 5 -->
+		<hack_choice name="Intensity5Sappers" factions_included="Sappers" display_name="强度 5，友方工兵" description="有能力且与你结盟。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="5" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+
+		<!-- Intensity 6 -->
+		<hack_choice name="Intensity6Sappers" factions_included="Sappers" display_name="强度 6，友方工兵" description="相当有帮助且与你结盟。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="6" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+
+		<!-- Intensity 7 -->
+		<hack_choice name="Intensity7Sappers" factions_included="Sappers" display_name="强度 7，友方工兵" description="有帮助且与你结盟。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="7" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+
+		<!-- Intensity 8 -->
+		<hack_choice name="Intensity8Sappers" factions_included="Sappers" display_name="强度 8，友方工兵" description="非常有帮助且与你结盟。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="8" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+
+		<!-- Intensity 9 -->
+		<hack_choice name="Intensity9Sappers" factions_included="Sappers" display_name="强度 9，友方工兵" description="极其有帮助且与你结盟。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="9" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+
+		<!-- Intensity 10 -->
+		<hack_choice name="Intensity10Sappers" factions_included="Sappers" display_name="强度 10，友方工兵" description="极其有帮助且与你结盟。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="10" />
+			<custom_field_value included_faction_index="0" field_name="Allegiance" field_value="Friendly To Players" />
+		</hack_choice>
+	</beacon_faction_option>
+	
+	<!--	
+		Neinzul Wild Hives
+		*********************************************************
+	-->
+	<beacon_faction_option name="NeinzulWildHives"
+		blocked_from_seeding_if_any_of_these_factions_included="NeinzulWildHives"
+		tag_from_which_to_seed_one_beacon="NeinzulWildHivesBeacon"
+		beacon_tier_for_seeding="Medium">
+
+		<!-- Intensity 1 -->
+		<hack_choice name="Intensity1Hives" factions_included="NeinzulWildHives,FriendlyNeinzulWildHives" display_name="强度 1" description="一个简单的挑战。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="1" />
+		</hack_choice>
+
+		<!-- Intensity 2 -->
+		<hack_choice name="Intensity2Hives" factions_included="NeinzulWildHives,FriendlyNeinzulWildHives" display_name="强度 2" description="一个非常轻松的挑战。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="2" />
+		</hack_choice>
+
+		<!-- Intensity 3 -->
+		<hack_choice name="Intensity3Hives" factions_included="NeinzulWildHives,FriendlyNeinzulWildHives" display_name="强度 3" description="一个轻松的挑战。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="3" />
+		</hack_choice>
+
+		<!-- Intensity 4 -->
+		<hack_choice name="Intensity4Hives" factions_included="NeinzulWildHives,FriendlyNeinzulWildHives" display_name="强度 4" description="一个合理的挑战。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="4" />
+		</hack_choice>
+
+		<!-- Intensity 5 -->
+		<hack_choice name="Intensity5Hives" factions_included="NeinzulWildHives,FriendlyNeinzulWildHives" display_name="强度 5" description="一个中等难度的挑战。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="5" />
+		</hack_choice>
+
+		<!-- Intensity 6 -->
+		<hack_choice name="Intensity6Hives" factions_included="NeinzulWildHives,FriendlyNeinzulWildHives" display_name="强度 6" description="一个更大的挑战。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="6" />
+		</hack_choice>
+
+		<!-- Intensity 7 -->
+		<hack_choice name="Intensity7Hives" factions_included="NeinzulWildHives,FriendlyNeinzulWildHives" display_name="强度 7" description="一个更大的挑战。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="7" />
+		</hack_choice>
+
+		<!-- Intensity 8 -->
+		<hack_choice name="Intensity8Hives" factions_included="NeinzulWildHives,FriendlyNeinzulWildHives" display_name="强度 8" description="一个非常大的挑战。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="8" />
+		</hack_choice>
+
+		<!-- Intensity 9 -->
+		<hack_choice name="Intensity9Hives" factions_included="NeinzulWildHives,FriendlyNeinzulWildHives" display_name="强度 9" description="一个极其巨大的挑战。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="9" />
+		</hack_choice>
+
+		<!-- Intensity 10 -->
+		<hack_choice name="Intensity10Hives" factions_included="NeinzulWildHives,FriendlyNeinzulWildHives" display_name="强度 10" description="一个极其巨大的挑战。">
+			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="10" />
+		</hack_choice>
+	</beacon_faction_option>
+</root>

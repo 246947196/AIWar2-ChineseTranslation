@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <record name="PureRandom"
+          display_name="纯随机"
+          description="这里可以选择任何可随机选择的派系"
+          includes_all_possible_options="true"
+          >
+  </record>
+  <record name="EmpireBuilders"
+          display_name="帝国建造者"
+          description="这些派系可以征服银河系"
+          >
+          <IncludedFactions
+              faction_name="Nanocaust"
+              />
+	  <IncludedFactions
+              faction_name="HumanMarauders"
+              />
+          <IncludedFactions
+              faction_name="Dark Zenith"
+              />
+          <IncludedFactions
+              faction_name="Dark Zenith Svikari"
+              />
+          <IncludedFactions
+              faction_name="Zenith Architrave"
+              />
+          <IncludedFactions
+              faction_name="Scourge"
+              />
+  </record>
+
+  <record name="AIEmpowerer"
+          display_name="AI增强者"
+          description="这些派系会使AI变得更强大"
+          >
+          <IncludedFactions
+              faction_name="AstroTrains"
+              />
+          <IncludedFactions
+              faction_name="AI Risk Analyzers"
+              />
+          <IncludedFactions
+              faction_name="Scourge"
+              />
+          <IncludedFactions
+              faction_name="Sappers"
+              />
+          <IncludedFactions
+              faction_name="Elderlings"
+              />
+
+  </record>
+
+  <record name="Chaotician"
+          display_name="混沌制造者"
+          description="这些派系会在星图上制造大量混乱，但无法征服银河系"
+          >
+    <IncludedFactions
+        faction_name="DevourerGolem"
+        />
+    <IncludedFactions
+        faction_name="ZenithTrader"
+        />
+    <IncludedFactions
+	faction_name="ChromaticHorror"
+        />
+    <IncludedFactions
+        faction_name="DarkSpire"
+        />
+    <IncludedFactions
+        faction_name="MacrophageInfestation"
+        />
+    <IncludedFactions
+        faction_name="Zenith Miners"
+        />
+    <IncludedFactions
+        faction_name="NeinzulCustodiansParent"
+        />
+    <IncludedFactions
+        faction_name="Elderlings"
+        />
+
+  </record>
+
+  <record name="MapAlterer"
+          display_name="地图改造者"
+          description="这些派系会改变银河星图"
+          always_hostile_to_all="true"
+          >
+    <IncludedFactions
+        faction_name="Zenith Miners"
+        />
+    <IncludedFactions
+        faction_name="Nomad Planets"
+        />
+  </record>
+
+  <record name="SpireRelated"
+          display_name="螺旋干扰"
+          description="这些派系与银河系中Spire的存在有关"
+          >
+          <IncludedFactions
+              faction_name="DarkSpire"
+              />
+          <IncludedFactions
+              faction_name="FallenSpire"
+              />
+          <IncludedFactions
+	      faction_name="ChromaticHorror"
+              />
+
+          <IncludedFactions
+	      faction_name="SplinteringSpire"
+              />
+
+          <IncludedFactions
+	      faction_name="SpireSphere_Gray"
+              />
+			  
+          <IncludedFactions
+	      faction_name="SpireSphere_Chromatic"
+              />			  
+
+  </record>
+
+  <record name="ZenithGalaxy"
+          display_name="顶点星系"
+          description="这些派系与顶点种族有关"
+          >
+          <IncludedFactions
+              faction_name="ZenithDysonSphere"
+              />
+          <IncludedFactions
+              faction_name="Dark Zenith Svikari"
+              />
+          <IncludedFactions
+              faction_name="Zenith Architrave"
+              />
+	  <IncludedFactions
+              faction_name="Dark Zenith"
+              />
+	  <IncludedFactions
+              faction_name="Zenith Miners"
+              />
+	<IncludedFactions
+              faction_name="ZenithTrader"
+              />
+	<IncludedFactions
+              faction_name="DevourerGolem"
+              />
+  </record>
+
+    <record name="NeinzulAbyss"
+          display_name="尼恩祖深渊"
+          description="这些派系与尼恩祖种族有关"
+          >
+          <IncludedFactions
+              faction_name="Sappers"
+              />
+          <IncludedFactions
+              faction_name="Elderlings"
+              />
+	  <IncludedFactions
+              faction_name="NeinzulCustodiansParent"
+              />
+	  <IncludedFactions
+              faction_name="MigrantFleets"
+              />
+	  <IncludedFactions
+              faction_name="NeinzulWildHives"
+              />
+  </record>
+
+</root>

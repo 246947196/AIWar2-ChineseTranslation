@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+<!--
+
+    <entity name="InterplanetaryWeapon1"
+	        tags="InterplanetaryWeapon"		
+			visuals="Assets/_DLC1/InterplanetaryWeapons/Weapon1/Weapon1.prefab" visuals_bundle="exp1_the_spire_rises"
+			icon_name="Ships2/SomethingApocalypse"
+			voice_group="Silent"
+			category="Ship"
+			size_scale="22"
+			visuals_scale_multiplier="1.2"
+			collision_priority="100"
+			display_name="星际武器1"
+			description="临时描述，因为不知道这个东西的具体用途。"
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="120"
+			hull_points="4000000" shield_points="2000000" speed="Immobile"
+			metal_cost="2000000" energy_consumption="100000"	
+			armor_mm="180" albedo="0.4" mass_tx="10"			
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			exp_to_grant_on_death="20"
+            priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			>
+    </entity>	
+ 
+-->
+
+</root>

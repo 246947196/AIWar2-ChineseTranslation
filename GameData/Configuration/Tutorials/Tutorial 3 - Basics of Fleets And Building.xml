@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <tutorial category="Basics" name="BasicFleetsAndBuilding" display_name="教程 3 - 舰队和建筑基础" sort_priority="3"
+        description="舰队系统和建造结构的基础知识。" scenario="AftermathOfLosingTheAIWar"
+        do_not_serialize_setup_to_or_from_settings="true"
+        skip_determine_ai_ownership="true" skip_determine_ai_homeworlds="true" skip_assign_player_homeworlds="true"
+        force_map_type="Tutorial_01" force_map_seed="123456" skip_seed_special_entities="true"
+        skip_all_galaxy_wide_capturables_and_obstacles="true" skip_warden_bases="true" skip_all_waves="true"
+        debug_all_step_text_on_load="false"
+   >
+    <!--Setup for factions
+        *************************************-->
+    <!--You name any that you add beyond the built-in ones, or the following ones are built in:
+        NaturalObject - owned by nobody
+        AI - main AI
+        FirstPlayer - presumably the only player, given this is a tutorial.
+        PlayerBeyondTheFirst - any and all other players.
+        AIWardenFleet - warden fleet of the main AI.
+        AIHunterFleet - hunter fleet of the main AI.
+        AntiAIZombie, AntiPlayerZombie, AntagonizedDysonSphere - all just kind of plumbing stuff.
+        Instigators - the AI instigators.
+        Outguard - the outguard, if there are any that seed, etc. -->
+    <faction_initial_setup name="FirstPlayer" starting_planet_index="0"/>
+    <faction_initial_setup name="PlayerBeyondTheFirst" do_not_add_faction="true"/>
+    <faction_initial_setup name="Instigators" do_not_add_faction="true"/>
+    <faction_initial_setup name="Outguard" do_not_add_faction="true"/>
+    <faction_initial_setup name="AI">
+        <custom_field key="AIType" val="Tutorial_01"/>
+    </faction_initial_setup>
+	<faction_initial_setup name="WardenFleet" do_not_add_faction="true"/>
+	<faction_initial_setup name="HunterFleet" do_not_add_faction="true"/>
+	
+
+    <!--Setup for planet topography
+        *************************************-->
+    <!--Note that these tutorial planets allow you to define planets manually.  This ONLY works with the Tutorial_01 map type.
+        If you want to have a tutorial in a regular other map type of some other sort, you can do so, but these won't be read in in terms of placement and names.-->
+    <tutorial_planet name="Murdoch" x="0" y="0" is_blocked_to_npc_travel_via_wormholes="true"/>
+    <tutorial_planet name="Midlander" x="100" y="-20" is_blocked_to_npc_travel_via_wormholes="true">
+      <link name="Murdoch"/>
+      <link name="Farland"/>
+    </tutorial_planet>
+    <tutorial_planet name="Farland" x="200" y="20" is_blocked_to_npc_travel_via_wormholes="true" is_blocked_to_player_travel_via_wormholes="true"/>
+	<tutorial_planet name="Sidelander" x="-150" y="200" is_blocked_to_npc_travel_via_wormholes="true" destroy_all_metal_harvesters="true">
+	  <link name="Murdoch"/>
+	</tutorial_planet>
+
+
+
+    <!--Setup for planet ownership, etc
+        *************************************-->
+    <!--Note that these work for even non-manually-created maps.  Ownerships are either whatever you named the factions above, 
+        or are the built-in ones noted above.  You can match planets based on their added-index or their name.-->
+    <planet_ownership_and_spawning match_index="0" linked_faction_name="FirstPlayer" is_homeworld="true"
+          command_station_point="200,1000" skip_player_home_forcefield="true" skip_player_home_engineers="false"
+          skip_player_home_factory="true" skip_player_home_human_settlement="false" skip_player_home_human_cryogenic_pods="false"
+          skip_player_home_initial_combat_fleet="false" skip_player_home_initial_battlestation="false" skip_player_home_initial_support_fleet="true"
+          initial_combat_fleet="ClassicStartingFleet" initial_battlestation_fleet="ClassicStartingDefenses" initial_support_fleet=""
+          number_of_metal_spots="4" >
+    </planet_ownership_and_spawning>
+    <planet_ownership_and_spawning match_name="Midlander" linked_faction_name="AI" mark_level_index="1"
+            skip_ai_wormhole_sentinels="true" skip_ai_guardians="true" skip_ai_initial_turrets="true" skip_ai_guard_posts="true" skip_ai_initial_non_turret_defenses="true" skip_ai_initial_strikecraft="true"/>
+			
+    <planet_ownership_and_spawning match_name="Farland" linked_faction_name="AI" mark_level_index="5" is_homeworld="true" number_of_metal_spots="8"
+            skip_ai_guard_posts="true" skip_ai_initial_non_turret_defenses="true" skip_ai_initial_strikecraft="true"/>
+
+    <planet_ownership_and_spawning match_name="Sidelander" mark_level_index="1"  number_of_metal_spots="8" 
+            skip_ai_wormhole_sentinels="true" skip_ai_guardians="true" skip_ai_initial_turrets="true" skip_ai_guard_posts="true" skip_ai_initial_non_turret_defenses="true" skip_ai_initial_strikecraft="true">
+      <ship_placement faction="NaturalObject" type="TransportFlagship_Base" placement_point="1000,1000"/>
+    </planet_ownership_and_spawning>	  
+
+    <!--Actual steps of the tutorial itself!
+    
+      For informaton about the conditions that you can use, and how to use them, 
+      please see this wiki page: https://wiki.arcengames.com/index.php?title=AI_War_2:_Tutorial_Step_Conditions
+      *************************************-->
+    <tutorial_step text_to_show="欢迎来到《AI战争2》的第三个教程。本教程将介绍舰队系统的基础知识，包括我们所有单位所在的舰队，以及如何建造这些单位、舰船和结构。
+	
+你会在这个星球上看到两个新单位：一艘运输旗舰和一个引力战斗站。
+
+选择运输旗舰。">
+      <condition type="PlayerHasSelectedCountOfSpecificShip" entity_type="TransportFlagship_Starter" count="1"/>
+    </tutorial_step>
+	
+    <tutorial_step text_to_show="运输旗舰是机动作战舰队的领导者，该舰队由我们之前见过的护卫舰等单位组成。为了简单起见，这些特定的护卫舰被保留在此系统之外。
+	
+将鼠标悬停在旗舰上，你会在描述中看到关于V型战机、融合轰炸机和震荡护卫舰等内容。这些是舰队中的单位类型，以及当前数量和最大数量。目前，我们还没有建造任何单位。
+	
+现在选择引力战斗站。">
+      <condition type="PlayerHasSelectedCountOfSpecificShip" entity_type="GraviticBattlestation" count="1"/>
+    </tutorial_step>	
+	
+	    <tutorial_step text_to_show="引力战斗站是防御舰队的领导者，该舰队由炮塔和地雷区等组成，这些是我们可以用来防御领土的固定结构。
+		
+将鼠标悬停在战斗站上，你会看到几种炮塔类型及其当前和最大数量。我们目前也没有建造任何这些单位。
+		
+之前的教程中已经存在最后一个单位，但直到现在才变得相关，那就是母星指挥站。
+
+现在选择它。">
+      <condition type="PlayerHasSelectedCountOfSpecificShip" entity_type="HumanHomeCommandStation" count="1"/>
+    </tutorial_step>
+
+	<tutorial_step text_to_show="指挥站是我们控制星球并利用那里资源的方式。从某种意义上说，它们基本上是星球的舰队领导者。
+
+这个特殊的站点是我们的母星，如果它被摧毁，我们就会输掉游戏。它很像国际象棋中的王。
+		
+将鼠标悬停在这上面，你会看到很多其他东西，比如工程师、工厂和一些它自己的炮塔。
+
+我们来建造一些这些舰队包含的单位吧？看看屏幕左侧的侧边栏。这里有许多选项卡。
+
+随意浏览，但准备好后，保持建造选项卡打开 - 我们要建立一个工厂。
+
+&lt;color=#999999&gt;额外提示：每个侧边栏选项卡都有一个快捷键，通常是其名称的第一个字母，例如B代表建造(Build)。&lt;/color&gt;">
+      <condition type="PlayerHasSidebarMenuOpen_Build"/>
+    </tutorial_step>
+
+    <tutorial_step text_to_show="你会看到这里有一系列可能的选项，分组在基础设施、炮塔、其他防御设施和站点守卫等下面。每个项目都会告诉你它的名称，它所属的舰队，并在左侧显示图标。
+	
+我们想建造一个工厂，它位于顶部附近，在基础设施下。点击它，然后点击星球上的任何位置放置它。
+	
+它不会花太长时间完成。但是你可以随意按几次加号键将速度提高到5倍，使其更快完成。
+
+&lt;color=#999999&gt;额外说明：一些玩家喜欢以较高速度玩游戏，并定期暂停（按空格键切换）作为他们的一般游戏风格。这在多人游戏中效果不佳，但在单人游戏中很棒。&lt;/color&gt;">
+      <condition type="PlayerHasCountOfSpecificShipOnPlanet" planet_by_name="Murdoch" entity_type="Factory" count="1"/>
+    </tutorial_step>
+	
+    <tutorial_step text_to_show="当工厂完成后，你现在应该看到单位从运输旗舰中出来。工厂是我们为当前未达到最大容量的机动作战舰队补充兵力的方式。这是完全自动的，当这样的舰队位于同一星球上，或与工厂相邻的星球上时就会发生。工厂建造的单位直接出现在旗舰处。
+	
+我们刚刚建造的工厂是指挥站舰队的一部分。如果你将鼠标悬停在我们刚建的工厂上，它会在工具提示的顶部告诉你它属于哪个舰队（即'为星球默多克服务'）。如果你将鼠标悬停在从旗舰出来的单位上，如V型战机，你会看到类似的内容（'舰队打击哈瑞德'）。
+
+让我们尝试从我们的战斗站建造一些炮塔，这是一个不同的舰队。查看建造选项卡中的炮塔部分，找到{c1.EntityName}。
+
+注意名称下面说明它属于哪个舰队（即'经典防御'）。将鼠标悬停在战斗站上告诉我们它是经典防御的领导者，同样在工具提示的顶部（'战斗站经典防御'）。
+
+建造一些{c1.EntityName}。
+
+&lt;color=#999999&gt;额外提示1：建造时可以按住CTRL一次放置5个单位而不是1个。按住ALT将放置10个，同时按住两个键将放置50个！&lt;/color&gt;
+
+&lt;color=#999999&gt;额外提示2：如果你想退出建造模式，可以在空白处右键点击。&lt;/color&gt;
+
+&lt;color=#999999&gt;额外提示3：建造炮塔时鼠标周围的大圆圈是它可以攻击敌人的范围。&lt;/color&gt;">
+      <condition type="PlayerHasCountOfSpecificShipOnPlanet" planet_by_name="Murdoch" entity_type="AmbushTurret" count="1"/>
+    </tutorial_step>	
+
+    <tutorial_step text_to_show="虽然工厂和炮塔等结构不能移动，但战斗站（以及后来的堡垒，一种与战斗站非常相似的东西）可以移动。这很重要，因为我们只能在舰队领导者在场的情况下从舰队建造结构。之后，领导者可以离开并前往任何地方。自然，指挥站不能移动，因此只能在其自己的星球上拥有结构。
+	
+让我们尝试在不同的星球上建造一些炮塔。将战斗站送到{c1.PlanetName}，位于左上角，并建造一些{c1.EntityName}。
+
+&lt;color=#999999&gt;额外提示：你可以在星系地图上选择舰队领导者。只需点击它们在所在星球附近的图标，或拖动选择，就像在星球视图中选择单位一样。重要事物的图标，如舰队领导者和可捕获物，通常在星系地图上可见。&lt;/color&gt;">
+      <condition type="PlayerHasCountOfSpecificShipOnPlanet" planet_by_name="Sidelander" entity_type="ConcussionTurret" count="1"/>
+    </tutorial_step>
+
+    <tutorial_step text_to_show="嗯，现在我们看这里，可以看到另一艘运输旗舰，但它目前是中立的。我们要捕获它来加强我们的机动力量如何？
+	
+只有当我们实际控制星球时，才能捕获这样的东西。幸运的是，这个星球已经是中立的，我们可以不战而建立我们的站点。如果AI拥有这个星球，我们必须先摧毁他们的站点。
+
+然而，只有机动作战舰队的旗舰才能建造指挥站，所以我们需要把我们的运输旗舰带到这里。
+
+当你完成后，建造选项卡现在会显示指挥站部分。选择一个后勤站，并建造它。完成后，它将捕获或声明新的旗舰。
+
+&lt;color=#999999&gt;额外提示：由于目前我们这里没有工程师帮忙，这可能需要一段时间，所以记住你可以通过使用加号和减号键，或屏幕左下角的按钮轻松改变时间速度。&lt;/color&gt;">
+      <condition type="PlayerHasCountOfSpecificShipOnPlanet" planet_by_name="Sidelander" entity_type="TransportFlagship_Base" count="1"/>
+    </tutorial_step>
+	
+    <tutorial_step text_to_show="现在我们有了第二支舰队！这是我们机动力量强度的显著提升。
+	
+银河系中还有其他类型的可捕获物品，它们的获取方式完全相同。例如金属收割机，这里有几个，它们为我们提供了我们资源之一——金属的大部分。
+	
+当旗舰修复后，舰队中的单位应该开始出现，因为我们之前建造的工厂正在工作。
+
+然而，我们的舰队不需要在这里，所以现在是查看舰队选项卡的好时机。
+
+&lt;color=#999999&gt;额外提示：就像B代表建造一样，你可以在键盘上按F打开舰队(Fleets)选项卡。&lt;/color&gt;">
+      <condition type="PlayerHasSidebarMenuOpen_Fleets"/>
+    </tutorial_step>
+
+    <tutorial_step text_to_show="此选项卡显示你当前拥有的所有舰队，分组在当前星球、机动打击、战斗站和指挥站等类别下。
+	
+我们的两艘运输旗舰都显示在机动打击下，第一艘称为打击哈瑞德，新的一艘称为打击霍伦特。将鼠标悬停在它们上会给你一些详细信息，如当前和最大单位数量，是否有工厂在范围内，以及其他一些小细节。
+
+如果你右键点击其中一个，它将为我们选择整个舰队。这让我们可以一起指挥它。左键点击将打开该特定舰队的管理屏幕。
+
+如果你左键点击其中一个机动打击舰队，将提供诸如停止工厂为该舰队生产单位、报废或删除当前在不同于旗舰的星球上的单位，或切换运输模式等选项。我们对运输模式感兴趣。
+
+通过右键点击在此菜单中选择新舰队（打击霍伦特）。
+
+&lt;color=#999999&gt;额外提示1：你也可以用热键选择舰队。每个机动舰队领导者在图标上显示其当前热键。你可以在管理屏幕中更改此设置。&lt;/color&gt;
+
+&lt;color=#999999&gt;额外提示2：你可以通过按住C然后点击领导者，非常快速地进入特定舰队的管理屏幕。&lt;/color&gt;">
+      <condition type="PlayerHasSelectedCountOfSpecificShip" entity_type="TransportFlagship_Base" count="1"/>
+    </tutorial_step>
+
+    <tutorial_step text_to_show="现在启用运输模式。所有当前建造的单位将进入旗舰，而在此模式启用时建造的任何新单位都会自动为我们存储在其中。
+	
+将舰队带回{c1.PlanetName}。你可以尝试禁用运输模式，看看单位出来。
+
+&lt;color=#999999&gt;额外提示1：如果你选择了舰队或旗舰，可以按L按钮装载。同样，你可以按U按钮卸载，无需使用舰队选项卡。不过，它对选择舰队仍然很有用！&lt;/color&gt;
+
+&lt;color=#999999&gt;额外提示2：运输的好处是什么？这意味着你可以更快地移动舰队，取决于旗舰。它还能保护单位免受敌人火力攻击，如果你计划冲过AI星球去攻击某个目标，这很方便。&lt;/color&gt;">
+      <condition type="PlayerHasCountOfSpecificShipOnPlanet" planet_by_name="Murdoch" entity_type="TransportFlagship_Base" count="1"/>
+    </tutorial_step>	
+	
+  </tutorial>	
+	
+
+</root>

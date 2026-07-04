@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+
+    <entity name="Obscenity"
+	        thematic_groups="Nanocaust,FallenSpire"
+		    tags="ScaryNanobot"
+			special_entity_type="LargeShipYesStacks"	
+			visuals="Assets/_DLC1/FactionIntegration/NanocaustSpireObscenity/NanocaustSpireObscenity.prefab" visuals_bundle="exp1_the_spire_rises"
+			icon_name="Ships2/Nanobot_Abominatino" icon_overlay="Overlays2/Guardian_Beam"
+			voice_group="Silent"
+			category="Ship"
+			size_scale="6"
+			visuals_scale_multiplier="1.6"
+			collision_priority="100"
+			display_name="亵渎者"
+			description="融合了尖塔技术的强大纳米感染舰船，拥有极其恐怖的战斗力。"
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="4800" strength_multiplier="4"
+			hull_points="500000" shield_points="250000" speed="BelowAverage1"
+			metal_cost="350000" energy_consumption="25000"
+			armor_mm="120" albedo="0.8" engine_gx="18" mass_tx="4"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+            priority_as_ai_target="NormalStarship" priority_as_frd_target="BiggerStarship" priority_to_protect="SlightlyLessExpendable"
+			>
+    <system name="W1" display_name="蛔虫线圈光束"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="60000" range="AboveAverage4" shot_speed="Normal" rate_of_fire="High"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_Green"
+				hits_all_intersecting_targets="true"				
+				shots_detonate_immediately="true"
+				is_coilbeam="true"
+				>
+			    <death_effect_damage type="Nanocaustation" tier_name="LargeNanocaustShip"/>				
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+
+
+</root>

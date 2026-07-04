@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <entity name="OutguardBeacon"
+            thematic_groups="Outguard,IsolatedHumanResistance" 
+			tags="OutguardBeacon,ShowsOnNormalDisplayMode"
+			draw_in_galaxy_view="true"
+			visuals="assets/_finalgamemeshes/resources/reactor/reactor.prefab"  gimbal_name="Outguard Beacon"
+			icon_name="Ships1/MercenaryBeacon"
+			category="Ship"
+			size_scale="1.30"
+			visuals_scale_multiplier="3.8"
+			y_offset_of_icon="15"
+			collision_priority="810"
+			display_name="前哨信标"
+			display_name_for_sidebar="外层警戒信标"
+			description="破解此信标，与非常有帮助的盟友团体取得联系，之后你可以向他们求助。他们常常能攻击你无法触及的地方，非常适合紧急情况。查看破解详情了解更多信息。"
+			target_type_for_player="NeverTarget"
+          eligible_for_hacks="AccessOutguardBeacon"
+			behavior="Stationary"
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="1400"
+			hull_points="70000" shield_points="70000" speed="Immobile"
+			metal_cost="1085000" energy_consumption="0"
+			armor_mm="10" albedo="0.9" mass_tx="0.8"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			voice_group="Spire"
+			description_appender_dll="AIWarExternalCode"
+			description_appender_type="Arcen.AIW2.External.OutguardBeaconDescriptionAppender"
+			does_not_give_allies_vision="true"
+      
+      priority_as_ai_target="IgnoreMe" priority_as_frd_target="IgnoreMe" priority_to_protect="IgnoreMe"
+			>
+  </entity>
+  
+  <entity name="HackedOutguardBeacon"  copy_from="OutguardBeacon" tags="HackedOutguardBeacon" draw_in_galaxy_view="false" npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+			description="此信标已被破解，你已与它的前哨团体取得联系。"
+            thematic_groups="Hidden" encyclopedia_counting_redirects_to="OutguardBeacon"
+  >
+  </entity>
+
+
+  <entity name="OutguardFlagship"
+            thematic_groups="Outguard,IsolatedHumanResistance,Frigate" npc_ship_cap_type="LargeShips"
+			tags="OutguardFlagship" gimbal_icon_size_multiplier="1.25"
+			visuals="assets/_finalgamemeshes/humanoddities/hacker/hacker.prefab"
+			icon_name="Ships1/Starship" icon_overlay="Overlays1/Starship_MercFlagship"
+			size_scale="4.2"
+			visuals_scale_multiplier="16"
+			category="Ship"
+			y_offset_of_icon="10"
+			collision_priority="100"
+			display_name="前哨旗舰"
+			display_name_for_sidebar="外层警戒旗帜"
+			description="这是一个前哨团体的旗舰。"
+			starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Expatriate"
+			cost_for_ai_to_purchase="600"
+			hull_points="500000" shield_points="500000" speed="Normal1"
+			metal_cost="80000" energy_consumption="20000"
+			armor_mm="90" albedo="0.4" engine_gx="15" mass_tx="5"
+			voice_group="Starship"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			description_appender_dll="AIWarExternalCode"
+			description_appender_type="Arcen.AIW2.External.OutguardShipDescriptionAppender"
+      
+      priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+			>
+    <system name="WL" display_name="聚变炸弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="2120" range="Normal6" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+				shot_type_data="FusionBomb"
+				base_percent_damage_bypasses_personal_shields="0.6" added_percent_damage_bypasses_personal_shields_per_mark="0.05"
+				>
+    </system>
+	<system name="WW" display_name="点防御"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="500" range="Normal6" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="false"
+				shots_per_salvo="10"
+				shot_type_data="ArmorPiercingShell"	
+				>
+    </system>
+	<incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="7100" multiplier="0.01" />
+  </entity>
+
+
+
+
+
+
+
+
+  <entity name="OutguardFlagship_Distractor"
+            thematic_groups="Outguard,IsolatedHumanResistance,Frigate" npc_ship_cap_type="LargeShips" 
+			tags="WardenDistractor" gimbal_icon_size_multiplier="1.25"
+			visuals="assets/_finalgamemeshes/starships/stealthstarship/stealth_starship.prefab"
+			icon_name="Ships1/Starship" icon_overlay="Overlays1/Starship_MercFlagship_Distractor"
+			size_scale="3.6"
+			visuals_scale_multiplier="4.5"
+			category="Ship"
+			y_offset_of_icon="10"
+			collision_priority="100"
+			display_name="前哨'干扰'旗舰"
+			display_name_for_sidebar="干扰旗帜"
+			description="这是一个前哨团体派出的隐形旗舰，用于分散典狱长舰队的注意力。"
+			behavior="Stationary"
+			starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Expatriate"
+			fleet_design_template_i_use_for_drones="DecoyDrones"
+			drone_starting_behavior_type="Attacker_Full"
+			cost_for_ai_to_purchase="600"
+			hull_points="400000" shield_points="400000" speed="Normal1"
+			metal_cost="80000" energy_consumption="20000"
+			armor_mm="100" albedo="0.4" engine_gx="13" mass_tx="5"
+			voice_group="Flagship"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			description_appender_dll="AIWarExternalCode"
+			description_appender_type="Arcen.AIW2.External.OutguardShipDescriptionAppender"
+			
+			priority_as_ai_target="NormalStarship" priority_as_frd_target="BiggerStarship" priority_to_protect="SlightlyLessExpendable"
+			>
+    <system name="WL" display_name="聚变炸弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="2120" range="Tiny2" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+				shot_type_data="FusionBomb"
+				base_percent_damage_bypasses_personal_shields="0.6" added_percent_damage_bypasses_personal_shields_per_mark="0.05"
+				>
+    </system>
+	<system name="C" display_name="隐形装置"
+				category="Passive"
+				cloaking_points="1000"
+				>
+    </system>
+	<incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="2000" multiplier="0.01" />
+	<metal_flow purpose="BuildingDronesInternally" throughput="2500"  increase_per_mark_level="1250"/>
+  </entity>
+
+
+
+
+</root>

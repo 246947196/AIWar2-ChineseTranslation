@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- Nota Bene: if adding a new BonusAntiTaggedUnitIncome you must add the GeneratesBonusHunterShips tag to the units in question
+       for performance reasons -->
+  <record name="Difficulty_1"
+       display_name="难度 1"
+       hunter_fleet_starting_budget="100"
+       hunter_bonus_income_per_minute="20"
+       overconfidence_ratio="4.0"
+       difficulty="1"
+       can_use_dire_guardians="false"
+       can_wait_for_reinforcements="false"
+       >
+       <BonusAntiTaggedUnitIncome
+           tag="MajorDataCenter"
+           income_per_interval="0.5"
+           interval_in_seconds="5"
+           linear_income_increase_per_10_aip="0.01"
+           only_player_owned="true"
+           income_increased_with_multiple_targets="true"
+           />
+      <BonusAntiTaggedUnitIncome
+           tag="NanobotCenter"
+           income_per_interval="2"
+           interval_in_seconds="10"
+           linear_income_increase_per_10_aip="0.01"
+           only_player_or_ally_owned="true"
+           income_increased_with_multiple_targets="true"
+           />
+
+  </record>
+  <record name="Difficulty_2"
+       display_name="难度 2"
+       hunter_fleet_starting_budget="200"
+       hunter_bonus_income_per_minute="40"
+       overconfidence_ratio="2.5"
+       difficulty="2"
+       can_use_dire_guardians="false"
+       can_wait_for_reinforcements="false"
+       >
+       <BonusAntiTaggedUnitIncome
+           tag="MajorDataCenter"
+           income_per_interval="0.5"
+           interval_in_seconds="5"
+           linear_income_increase_per_10_aip="0.01"
+           only_player_owned="true"
+           income_increased_with_multiple_targets="true"
+           />
+      <BonusAntiTaggedUnitIncome
+           tag="NanobotCenter"
+           income_per_interval="2"
+           interval_in_seconds="10"
+           linear_income_increase_per_10_aip="0.01"
+           only_player_or_ally_owned="true"
+           income_increased_with_multiple_targets="true"
+           />
+
+  </record>
+  <record name="Difficulty_3"
+       display_name="难度 3"
+       hunter_fleet_starting_budget="300"
+       hunter_bonus_income_per_minute="60"
+       overconfidence_ratio="2.0"
+       difficulty="3"
+       can_use_dire_guardians="false"
+       can_wait_for_reinforcements="false"
+       >
+       <BonusAntiTaggedUnitIncome
+           tag="MajorDataCenter"
+           income_per_interval="0.5"
+           interval_in_seconds="5"
+           linear_income_increase_per_10_aip="0.01"
+           only_player_owned="true"
+           income_increased_with_multiple_targets="true"
+           />
+      <BonusAntiTaggedUnitIncome
+           tag="NanobotCenter"
+           income_per_interval="2"
+           interval_in_seconds="10"
+           linear_income_increase_per_10_aip="0.01"
+           only_player_or_ally_owned="true"
+           income_increased_with_multiple_targets="true"
+           />
+
+  </record>
+  <record name="Difficulty_4"
+       display_name="难度 4"
+       hunter_fleet_starting_budget="400"
+       hunter_bonus_income_per_minute="80"
+       overconfidence_ratio="1.5"
+       difficulty="4"
+       can_use_dire_guardians="false"
+       can_wait_for_reinforcements="false"
+       >
+    <BonusAntiTaggedUnitIncome
+        tag="MajorDataCenter"
+        income_per_interval="0.5"
+        interval_in_seconds="5"
+        linear_income_increase_per_10_aip="0.01"
+        only_player_owned="true"
+        income_increased_with_multiple_targets="true"
+        />
+      <BonusAntiTaggedUnitIncome
+           tag="NanobotCenter"
+           income_per_interval="2"
+           interval_in_seconds="10"
+           linear_income_increase_per_10_aip="0.01"
+           only_player_or_ally_owned="true"
+           income_increased_with_multiple_targets="true"
+           />
+
+  </record>
+  <record name="Normal"
+       display_name="难度 5"
+       is_default="true"
+       hunter_fleet_starting_budget="2000"
+       hunter_bonus_income_per_minute="100"
+       overconfidence_ratio="1.4"
+       difficulty="5"
+       can_use_dire_guardians="false"
+       can_wait_for_reinforcements="false"
+       >
+       <BonusAntiTaggedUnitIncome
+           tag="MajorDataCenter"
+           income_per_interval="0.5"
+           interval_in_seconds="5"
+           linear_income_increase_per_10_aip="0.01"
+           only_player_owned="true"
+           income_increased_with_multiple_targets="true"
+           />
+      <BonusAntiTaggedUnitIncome
+           tag="NanobotCenter"
+           income_per_interval="2"
+           interval_in_seconds="10"
+           linear_income_increase_per_10_aip="0.01"
+           only_player_or_ally_owned="true"
+           income_increased_with_multiple_targets="true"
+           />
+
+  </record>
+  <record name="Difficulty_6"
+       display_name="难度 6"
+       hunter_fleet_starting_budget="3000"
+       hunter_bonus_income_per_minute="200"
+       overconfidence_ratio="1.1"
+       difficulty="6"
+       can_use_dire_guardians="false"
+       can_wait_for_reinforcements="true"
+       >
+    <BonusAntiTaggedUnitIncome
+        tag="MajorDataCenter"
+        income_per_interval="0.6"
+        interval_in_seconds="5"
+        linear_income_increase_per_10_aip="0.01"
+        only_player_owned="true"
+        income_increased_with_multiple_targets="true"
+        />
+           <BonusAntiTaggedUnitIncome
+           tag="MarauderOutpost"
+           income_per_interval="1"
+           interval_in_seconds="30"
+           linear_income_increase_per_10_aip="0.01"
+           only_player_or_ally_owned="true"
+           income_increased_with_multiple_targets="true"
+           />
+      <BonusAntiTaggedUnitIncome
+           tag="NanobotCenter"
+           income_per_interval="2"
+           interval_in_seconds="10"
+           linear_income_increase_per_10_aip="0.01"
+           only_player_or_ally_owned="true"
+           income_increased_with_multiple_targets="true"
+           />
+
+  </record>
+  <record name="Difficulty_7"
+       display_name="难度 7"
+       hunter_fleet_starting_budget="4000"
+       hunter_bonus_income_per_minute="300"
+       overconfidence_ratio="1.0"
+       difficulty="7"
+       can_use_dire_guardians="true"
+       aip_for_dire_unlock="250"
+       can_wait_for_reinforcements="true"
+       >
+    <BonusAntiTaggedUnitIncome
+        tag="MajorDataCenter"
+        income_per_interval="0.7"
+        interval_in_seconds="5"
+        linear_income_increase_per_10_aip="0.01"
+        only_player_owned="true"
+        income_increased_with_multiple_targets="true"
+        />
+           <BonusAntiTaggedUnitIncome
+           tag="MarauderOutpost"
+           income_per_interval="1"
+           interval_in_seconds="30"
+           linear_income_increase_per_10_aip="0.01"
+           only_player_or_ally_owned="true"
+           income_increased_with_multiple_targets="true"
+           />
+      <BonusAntiTaggedUnitIncome
+           tag="NanobotCenter"
+           income_per_interval="2"
+           interval_in_seconds="10"
+           linear_income_increase_per_10_aip="0.01"
+           only_player_or_ally_owned="true"
+           income_increased_with_multiple_targets="true"
+           />
+
+  </record>
+  <record name="Difficulty_8"
+       display_name="难度 8"
+       hunter_fleet_starting_budget="6000"
+       hunter_bonus_income_per_minute="500"
+       overconfidence_ratio="1.0"
+       difficulty="8"
+       can_use_dire_guardians="true"
+       aip_for_dire_unlock="200"
+       can_wait_for_reinforcements="true"
+       >
+    <BonusAntiTaggedUnitIncome
+        tag="MajorDataCenter"
+        income_per_interval="1.2"
+        interval_in_seconds="5"
+        linear_income_increase_per_10_aip="0.01"
+        only_player_owned="true"
+        income_increased_with_multiple_targets="true"
+        />
+           <BonusAntiTaggedUnitIncome
+           tag="MarauderOutpost"
+           income_per_interval="1"
+           interval_in_seconds="30"
+           linear_income_increase_per_10_aip="0.01"
+           only_player_or_ally_owned="true"
+           income_increased_with_multiple_targets="true"
+           />
+      <BonusAntiTaggedUnitIncome
+           tag="NanobotCenter"
+           income_per_interval="2"
+           interval_in_seconds="10"
+           linear_income_increase_per_10_aip="0.01"
+           only_player_or_ally_owned="true"
+           income_increased_with_multiple_targets="true"
+           />
+
+  </record>
+  <record name="Difficulty_9"
+       display_name="难度 9"
+       hunter_fleet_starting_budget="8000"
+       hunter_bonus_income_per_minute="750"
+       overconfidence_ratio="1.0"
+       difficulty="9"
+       can_use_dire_guardians="true"
+       aip_for_dire_unlock="150"
+       can_wait_for_reinforcements="true"
+       >
+    <BonusAntiTaggedUnitIncome
+        tag="MajorDataCenter"
+        income_per_interval="1.4"
+        interval_in_seconds="4"
+        linear_income_increase_per_10_aip="0.01"
+        only_player_owned="true"
+        income_increased_with_multiple_targets="true"
+        />
+    <BonusAntiTaggedUnitIncome
+           tag="MarauderOutpost"
+           income_per_interval="1"
+           interval_in_seconds="30"
+           linear_income_increase_per_10_aip="0.01"
+           only_player_or_ally_owned="true"
+           income_increased_with_multiple_targets="true"
+           />
+      <BonusAntiTaggedUnitIncome
+           tag="NanobotCenter"
+           income_per_interval="2"
+           interval_in_seconds="10"
+           linear_income_increase_per_10_aip="0.02"
+           only_player_or_ally_owned="true"
+           income_increased_with_multiple_targets="true"
+           />
+
+  </record>
+  <record name="SuperCat"
+       display_name="难度 10"
+       hunter_fleet_starting_budget="10000"
+       hunter_bonus_income_per_minute="1350"
+       overconfidence_ratio="1.0"
+       difficulty="10"
+       can_use_dire_guardians="true"
+       aip_for_dire_unlock="80"
+       can_wait_for_reinforcements="true"
+       >
+    <BonusAntiTaggedUnitIncome
+        tag="MajorDataCenter"
+        income_per_interval="1.8"
+        interval_in_seconds="4"
+        linear_income_increase_per_10_aip="0.03"
+        only_player_owned="true"
+        income_increased_with_multiple_targets="true"
+        />
+    <BonusAntiTaggedUnitIncome
+        tag="MarauderOutpost"
+        income_per_interval="1"
+        interval_in_seconds="30"
+        linear_income_increase_per_10_aip="0.01"
+        only_player_or_ally_owned="true"
+        income_increased_with_multiple_targets="true"
+        />
+    <BonusAntiTaggedUnitIncome
+        tag="NanobotCenter"
+        income_per_interval="2"
+        interval_in_seconds="10"
+        linear_income_increase_per_10_aip="0.01"
+        only_player_or_ally_owned="true"
+        income_increased_with_multiple_targets="true"
+        />
+  </record>
+</root>

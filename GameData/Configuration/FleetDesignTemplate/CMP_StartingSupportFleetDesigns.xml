@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--These "InitialPlayerSupportFleet" are completely hand-designed support-stlye fleets that are very inflexible by design.
+      They are intended to be basic starting points that you can choose at the start of the game,
+      which you can then use to further supplement yourself later on.  Each one is a major archetype,
+      focused on a different style of defensive play, and they use both their display name and description in the lobby.
+      
+      Creating too many of these would be a Bad Thing, because it creates paralysis for players.
+      
+      Note that ONLY the description and the name are shown, so the description had better be 
+      clear enough to let players choose things.  THAT said, the description for each ship type will automatically
+      be appended if you use append_each_ship_description_to_main_description="true", so that will help.-->
+
+
+  <fleet_design name="StartingCombatEngineerAndFactoryCombo"
+        display_name="战斗支援舰队"
+        description="大量战斗工程师可以前往任何你想去的地方，包括敌方星球。此外，还有一个配备基础战斗无人机的移动工厂，即使深入敌方领土也能随行！"
+        design_logic="InitialPlayerSupportFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="CombatFactory" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+    <ship_membership name="CombatEngineer" ship_cap_group="Strike" weight="100" cap="16"/>
+	<ship_membership name="CombatSentryFrigate" ship_cap_group="Frigate" weight="100" cap="2"/>
+  </fleet_design>
+  
+
+  <fleet_design name="StartingCombatEngineerAndRejuvenatorFactoryCombo"
+        display_name="再生支援舰队"
+        description="大量工程师可以前往任何你想去的地方，包括敌方星球。此外，还有一个配备诱饵无人机的移动工厂，这些无人机可以吸引敌方火力，即使深入敌方领土也能随行！"
+        design_logic="InitialPlayerSupportFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="RejuvenatorCombatFactory" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+    <ship_membership name="CombatEngineer" ship_cap_group="Strike" weight="100" cap="20"/>
+	<ship_membership name="CombatSentryFrigate" ship_cap_group="Frigate" weight="100" cap="2"/>
+  </fleet_design>
+
+
+  <fleet_design name="StartingCombatEngineerAndOverloaderFactoryCombo"
+        display_name="超载支援舰队"
+        description="少量战斗工程师可以前往任何你想去的地方，包括敌方星球。此外，还有一个配备结构瘫痪无人机的移动工厂，即使深入敌方领土也能随行。当它在场时，还能加速友方舰船！"
+        design_logic="InitialPlayerSupportFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="OverloaderCombatFactory" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+    <ship_membership name="CombatEngineer" ship_cap_group="Strike" weight="100" cap="14"/>
+	<ship_membership name="CombatSentryFrigate" ship_cap_group="Frigate" weight="100" cap="2"/>
+  </fleet_design>
+  
+</root>

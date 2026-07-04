@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<item name="Nanocaustation" scale="10000" 
+        dll_name="AIWarExternalDeepProcessingCode" type_name="Arcen.AIW2.External.DeathEffect_Nanocaustation"
+        description_prefix="纳米焚烧"
+        description_damage_name="纳米焚烧"
+        description_conditions="如果目标是移动战斗单位"
+        description_of_effects="纳米焚烧阵营获得一个目标的腐化副本"
+        description_added_note_for_player=""
+		is_some_kind_of_normal_zombification="true"
+        >
+		<offense_tier name="None" ability_multiplier="0" />
+		<offense_tier name="Minor" ability_multiplier="0.1" />
+		<offense_tier name="Major" ability_multiplier="1" />
+		<offense_tier name="Reanimator" ability_multiplier="1.25" />
+		<offense_tier name="LargeNanocaustShip" ability_multiplier="10" />
+	</item>
+</root>
