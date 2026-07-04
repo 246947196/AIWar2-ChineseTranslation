@@ -13,6 +13,8 @@ Copy-Item "$translationDir\winhttp.dll" "$gameDir\" -Force
 Copy-Item "$translationDir\doorstop_config.ini" "$gameDir\" -Force
 Copy-Item "$translationDir\BepInEx\core\*" "$gameDir\BepInEx\core\" -Force
 Copy-Item "$translationDir\BepInEx\patchers\AssemblyRedirector.dll" "$gameDir\BepInEx\patchers\" -Force
+New-Item -ItemType Directory -Path "$gameDir\BepInEx\config" -Force | Out-Null
+Copy-Item "$translationDir\BepInEx\config\xiaoye97.I18NFont4UnityGame.cfg" "$gameDir\BepInEx\config\" -Force
 Write-Host "BepInEx framework deployed" -ForegroundColor Green
 
 # Deploy I18NFont4UnityGame plugin
@@ -20,6 +22,7 @@ Write-Host ""
 Write-Host "Deploying I18NFont4UnityGame plugin..." -ForegroundColor Yellow
 New-Item -ItemType Directory -Path "$gameDir\BepInEx\plugins\I18NFont4UnityGame" -Force | Out-Null
 Copy-Item "$translationDir\BepInEx\plugins\I18NFont4UnityGame\I18NFont4UnityGame.dll" "$gameDir\BepInEx\plugins\I18NFont4UnityGame\" -Force
+Copy-Item "$translationDir\BepInEx\plugins\I18NFont4UnityGame\sarasa_gothic" "$gameDir\BepInEx\plugins\I18NFont4UnityGame\" -Force
 Write-Host "I18NFont4UnityGame plugin deployed" -ForegroundColor Green
 
 # Deploy translation XML files
