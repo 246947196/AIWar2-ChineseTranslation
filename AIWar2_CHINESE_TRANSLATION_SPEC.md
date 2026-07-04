@@ -155,7 +155,7 @@ BepInEx Preloader 在游戏程序集加载前调用 Patcher，通过 Mono.Cecil 
 
 ### 8.1 概述
 
-三个外部 DLL 项目有完整源码（位于 `CodeExternal/`），已编译并汉化硬编码的 UI 文本。
+三个外部 DLL 项目有完整源码（位于 `CodeExternal/`），已全部汉化并编译。包括 UI 文本、游戏逻辑文本、通知器文本等所有用户可见字符串。
 
 ### 8.2 已汉化的 DLL 项目
 
@@ -254,11 +254,12 @@ Get-ChildItem $baseDir -Recurse -Filter "*.cs" | ForEach-Object {
 
 ### 8.9 汉化统计
 
-| 项目 | 已翻译文件数 | 未翻译文件数 |
-|------|------------|------------|
-| AIWarExternalCode | 48+ | ~550 |
-| AIWarExternalDeepProcessingCode | 1 | 132 |
-| AIWarExternalVisualizationCode | 3 | 42 |
+| 项目 | 已翻译文件数 | 状态 |
+|------|------------|------|
+| AIWarExternalCode | 600 | ✅ 完成 |
+| AIWarExternalDeepProcessingCode | 133 | ✅ 完成 |
+| AIWarExternalVisualizationCode | 45 | ✅ 完成 |
+| **合计** | **778** | **✅ 全部完成** |
 
 ### 8.10 翻译注意事项
 
