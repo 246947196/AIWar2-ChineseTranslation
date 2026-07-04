@@ -1258,11 +1258,11 @@ namespace Arcen.AIW2.External
                     buffer.Pos( "460" ).Add("(").Add( countCurrentlyHere ).Add(")");
 
                     if ( canHack )
-                        buffer.StartSize("60%").Add( " (hackable)" ).EndSize();
+                        buffer.StartSize("60%").Add( " (可黑客入侵)" ).EndSize();
                     if ( canBuild )
-                        buffer.StartSize("60%").Add( " (buildable)" ).EndSize();
+                        buffer.StartSize("60%").Add( " (可建造)" ).EndSize();
                     if ( canClaim )
-                        buffer.StartSize("60%").Add( " (claimable)" ).EndSize();
+                        buffer.StartSize("60%").Add( " (可占领)" ).EndSize();
                 }
             }
 

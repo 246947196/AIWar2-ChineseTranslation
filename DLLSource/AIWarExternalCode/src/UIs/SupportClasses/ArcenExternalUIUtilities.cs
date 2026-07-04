@@ -571,19 +571,19 @@ namespace Arcen.AIW2.External
             buffer.Add( faction.Faction.GetDisplayName() );
             buffer.Add( ":</color> " );
 
-            buffer.Add( smallShips ).Add( " small ships" );
+            buffer.Add( smallShips ).Add( " 艘小型舰船" );
             if ( CareAboutCloaking && smallShips_Cloaked > 0 )
-                buffer.Add( " (" ).Add( smallShips_Cloaked ).Add( " cloaked)" );
+                buffer.Add( " (" ).Add( smallShips_Cloaked ).Add( " 隐形)" );
             buffer.Add( ", " );
 
-            buffer.Add( largeShips ).Add( " large ships" );
+            buffer.Add( largeShips ).Add( " 艘大型舰船" );
             if ( CareAboutCloaking && largeShips_Cloaked > 0 )
-                buffer.Add( " (" ).Add( largeShips_Cloaked ).Add( " cloaked)" );
+                buffer.Add( " (" ).Add( largeShips_Cloaked ).Add( " 隐形)" );
             buffer.Add( ", " );
 
-            buffer.Add( nonCombatants ).Add( " non-combatants" );
+            buffer.Add( nonCombatants ).Add( " 艘非战斗舰船" );
             if ( CareAboutCloaking && nonCombatants_Cloaked > 0 )
-                buffer.Add( " (" ).Add( nonCombatants_Cloaked ).Add( " cloaked)" );
+                buffer.Add( " (" ).Add( nonCombatants_Cloaked ).Add( " 隐形)" );
             buffer.Add( ",   " );
 
             buffer.Add( ArcenExternalUIUtilities.Strength );
@@ -593,7 +593,7 @@ namespace Arcen.AIW2.External
                 buffer.Add( " (" );
                 buffer.Add( ArcenExternalUIUtilities.Strength );
                 WriteRoundedNumberWithSuffix( buffer, strength.IntValue, true, true );
-                buffer.Add( " cloaked)" );
+                buffer.Add( " 隐形)" );
             }
 
             buffer.Add( "</color>\n" );

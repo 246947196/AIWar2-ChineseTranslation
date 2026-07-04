@@ -187,13 +187,13 @@ namespace Arcen.AIW2.External
                 Faction localFaction = World_AIW2.Instance.GetLocalPlayerFactionOrNull();
                 if ( localFaction == null )
                 {
-                    Buffer.Add( "<color=#ddff3d>Spectator Mode" );
+                    Buffer.Add( "<color=#ddff3d>旁观者模式" );
                     return;
                 }
                 PlayerTypeData playerType = localFaction.PlayerTypeDataOrNull_ModeratelyExpensive;
                 if ( playerType == null || playerType.InternalName == "Spectator" )
                 {
-                    Buffer.Add( "<color=#ddff3d>Spectator Mode" );
+                    Buffer.Add( "<color=#ddff3d>旁观者模式" );
                     return;
                 }
 
@@ -209,7 +209,7 @@ namespace Arcen.AIW2.External
                 {
                     Buffer.Add( "<color=#ff0000>" );
                     {
-                        Buffer.Add( "Drain" );
+                        Buffer.Add( "消耗" );
 
                         if ( localFaction.LastFrame_MetalFlowRequestPortionMet < FInt.One && localFaction.LastFrame_MetalProduced > FInt.Zero )
                         {
@@ -233,7 +233,7 @@ namespace Arcen.AIW2.External
                 if ( localFaction.MetalStorage == localFaction.StoredMetal.IntValue &&
                      localFaction.LastFrame_MetalSpent < localFaction.LastFrame_MetalProduced )
                 {
-                    Buffer.Add( "<color=#ffda47><size=80%>" ).Add( "Aiding Civil Authorities" ).Add( "</size></color>" );
+                    Buffer.Add( "<color=#ffda47><size=80%>" ).Add( "援助民政当局" ).Add( "</size></color>" );
                 }
                 else if ( localFaction.LastFrame_MetalFlowRequestPortionMet < FInt.One &&
                      localFaction.LastFrame_MetalProduced > FInt.Zero &&
@@ -560,7 +560,7 @@ namespace Arcen.AIW2.External
                     {
                         KeyValuePair<Planet, int> pair = workingPlanets[i];
                         Buffer.Add( "\t" ).Add( pair.Key.Name, "7fe0f2" );
-                        Buffer.Add( " consumes " ).Add( ((pair.Value) / 1000).ToString( "#,##0" ) + "K", "e59400" ).Add( " (x" ).Add( pair.Key.EnergyCount_numUnits_Final ).Add( ")\n" );
+                        Buffer.Add( " 消耗 " ).Add( ((pair.Value) / 1000).ToString( "#,##0" ) + "K", "e59400" ).Add( " (x" ).Add( pair.Key.EnergyCount_numUnits_Final ).Add( ")\n" );
                     }
                     Buffer.Add( "\n\n" );
                 }
@@ -572,7 +572,7 @@ namespace Arcen.AIW2.External
                     {
                         KeyValuePair<Fleet, int> pair = workingFleets[i];
                         Buffer.Add( "\t" ).Add( pair.Key.GetName(), "7ff27f" );
-                        Buffer.Add( " consumes " ).Add( ((pair.Value) / 1000).ToString( "#,##0" ) + "K", "e59400" ).Add( " (x").Add( pair.Key.EnergyCount_numUnits_Final ).Add( ")\n" );
+                        Buffer.Add( " 消耗 " ).Add( ((pair.Value) / 1000).ToString( "#,##0" ) + "K", "e59400" ).Add( " (x").Add( pair.Key.EnergyCount_numUnits_Final ).Add( ")\n" );
                     }
                     Buffer.Add( "\n\n" );
                 }
@@ -851,24 +851,24 @@ namespace Arcen.AIW2.External
 
                 if ( workingPlanets.Count > 0 )
                 {
-                    Buffer.Add( fuelName ).Add( " consumed per planet:\n" );
+                    Buffer.Add( fuelName ).Add( " 每星球消耗：\n" );
                     for ( int i = 0; i < workingPlanets.Count; i++ )
                     {
                         KeyValuePair<Planet, int> pair = workingPlanets[i];
                         Buffer.Add( "\t" ).Add( pair.Key.Name, "7fe0f2" );
-                        Buffer.Add( " consumes " ).Add( ((pair.Value) / 1000).ToString( "#,##0" ), colorGood ).Add( "\n" );
+                        Buffer.Add( " 消耗 " ).Add( ((pair.Value) / 1000).ToString( "#,##0" ), colorGood ).Add( "\n" );
                     }
                     Buffer.Add( "\n\n" );
                 }
 
                 if ( workingFleets.Count > 0 )
                 {
-                    Buffer.Add( fuelName ).Add( " consumed per fleet:\n" );
+                    Buffer.Add( fuelName ).Add( " 每舰队消耗：\n" );
                     for ( int i = 0; i < workingFleets.Count; i++ )
                     {
                         KeyValuePair<Fleet, int> pair = workingFleets[i];
                         Buffer.Add( "\t" ).Add( pair.Key.GetName(), "7ff27f" );
-                        Buffer.Add( " consumes " ).Add( ((pair.Value) / 1000).ToString( "#,##0" ), colorGood ).Add( "\n" );
+                        Buffer.Add( " 消耗 " ).Add( ((pair.Value) / 1000).ToString( "#,##0" ), colorGood ).Add( "\n" );
                     }
                     Buffer.Add( "\n\n" );
                 }
@@ -910,7 +910,7 @@ namespace Arcen.AIW2.External
                     {
                         KeyValuePair<Planet, int> pair = workingPlanets[i];
                         Buffer.Add( "\t" ).Add( pair.Key.Name, "faf866" );
-                        Buffer.Add( " produces " ).AddNumberMoreReadable( ((pair.Value) / 1000), "e59400" ).Add( "\n" );
+                        Buffer.Add( " 生产 " ).AddNumberMoreReadable( ((pair.Value) / 1000), "e59400" ).Add( "\n" );
                     }
                     Buffer.Add( "\n\n" );
                 }
@@ -1874,7 +1874,7 @@ namespace Arcen.AIW2.External
 
                 if ( info.BreachHistory.Count == 0 )
                 {
-                    Buffer.Add( "No breaches completed yet.", "888888" );
+                    Buffer.Add( "尚无已完成的突破。", "888888" );
                     return true;
                 }
 
@@ -2572,9 +2572,9 @@ namespace Arcen.AIW2.External
                         {
                             int strengthToDraw = pair.Value;
                             tooltipBuffer.Add( pair.Key );
-                            tooltipBuffer.Add( " is under attack by " );
+                            tooltipBuffer.Add( " 正受到攻击，攻击力量为 " );
                             ArcenExternalUIUtilities.WriteRoundedNumberWithSuffix( tooltipBuffer, strengthToDraw, true, true );
-                            tooltipBuffer.Add( " strength.\n" );
+                            tooltipBuffer.Add( " 力量。\n" );
                         }
                     }
                 }
@@ -3120,34 +3120,34 @@ namespace Arcen.AIW2.External
             if ( factionBaseInfo.MetalGenerators.Count > 0 )
             {
                 //FInt additionalIncome = factionBaseInfo.Income.MetalIncomePerGeneratorPerSecond * factionBaseInfo.MetalGenerators.Count; //no longer accurate, since we now allow per-mark-level increases
-                Buffer.Add("\n\tFrom ").Add( factionBaseInfo.MetalGenerators.Count, "ffa1a1" ).Add(" metal generators, each generating ").Add( factionBaseInfo.Income.MetalIncomePerGeneratorPerSecond, "a1a1ff" ).Add(" plus ").Add( factionBaseInfo.Income.MetalIncomePerGeneratorPerSecondIncreasePerMarkLevel, "a1ffa1" ).Add(" per mark level.");
+                Buffer.Add("\n\t来自 ").Add( factionBaseInfo.MetalGenerators.Count, "ffa1a1" ).Add(" 个金属发电机，每个产生 ").Add( factionBaseInfo.Income.MetalIncomePerGeneratorPerSecond, "a1a1ff" ).Add(" 加上 ").Add( factionBaseInfo.Income.MetalIncomePerGeneratorPerSecondIncreasePerMarkLevel, "a1ffa1" ).Add(" 每标记等级。");
             }
             else
             {
-                Buffer.Add("\n\tIf you need additional metal, you can build ").Add("Metal Generators", "ccccee" ).Add(" at a ").Add("Neinzul Stronghold", "7bb3ff").Add(".");
+                Buffer.Add("\n\t如果需要更多金属，你可以在 ").Add("尼恩祖要塞", "7bb3ff").Add(" 建造 ").Add("金属发电机", "ccccee" ).Add("。");
             }
             if ( forFaction.TotalMetalMetabolized > 0 )
             {
-                Buffer.Add( "\nTotal Metal Metabolized by all ships: <color=#ccccee>" ).AddNumberMoreReadable( forFaction.TotalMetalMetabolized ).EndColor();
+                Buffer.Add( "\n所有舰船消耗的金属总计：<color=#ccccee>" ).AddNumberMoreReadable( forFaction.TotalMetalMetabolized ).EndColor();
             }
 
             //Science
             income = factionBaseInfo.ScienceIncomeLastSecond;
-            Buffer.Add("\nScience Income: " ).Add( income, "7CE9FF" ).Add("\n\tBase Science Income: ").Add( factionBaseInfo.Income.BaseScienceIncomePerSecond, "a1ffa1" );
+            Buffer.Add("\n科技收入：" ).Add( income, "7CE9FF" ).Add("\n\t基础科技收入：").Add( factionBaseInfo.Income.BaseScienceIncomePerSecond, "a1ffa1" );
             if ( factionBaseInfo.ScienceGenerators.Count > 0 )
             {
                 //FInt additionalIncome = factionBaseInfo.Income.ScienceIncomePerGeneratorPerSecond * factionBaseInfo.ScienceGenerators.Count;
-                Buffer.Add("\n\tFrom ").Add( factionBaseInfo.ScienceGenerators.Count, "ffa1a1" ).Add(" science generators, each generating ").Add( factionBaseInfo.Income.ScienceIncomePerGeneratorPerSecond, "a1a1ff" ).Add(" plus ").Add( factionBaseInfo.Income.ScienceIncomePerGeneratorPerSecondIncreasePerMarkLevel, "a1ffa1" ).Add(" per mark level.");
+                Buffer.Add("\n\t来自 ").Add( factionBaseInfo.ScienceGenerators.Count, "ffa1a1" ).Add(" 个科技发电机，每个产生 ").Add( factionBaseInfo.Income.ScienceIncomePerGeneratorPerSecond, "a1a1ff" ).Add(" 加上 ").Add( factionBaseInfo.Income.ScienceIncomePerGeneratorPerSecondIncreasePerMarkLevel, "a1ffa1" ).Add(" 每标记等级。");
             }
             else
-                Buffer.Add("\n\tIf you need additional science, you can build ").Add("Science Generators", "7CE9FF").Add(" at a ").Add("Spire Stronghold", "ffb37b").Add(".");
+                Buffer.Add("\n\t如果需要更多科技，你可以在 ").Add("尖塔要塞", "ffb37b").Add(" 建造 ").Add("科技发电机", "7CE9FF").Add("。");
             //Hacking
             income = factionBaseInfo.HackingIncomeLastSecond;
-            Buffer.Add("\nHacking Income: " ).Add( income.ToString(), ArcenExternalUIUtilities.HackingTextColor ).Add("\n\tBase Hacking Income: ").Add( factionBaseInfo.Income.BaseHackingIncomePerSecond, "a1ffa1" );
+            Buffer.Add("\n黑客收入：" ).Add( income.ToString(), ArcenExternalUIUtilities.HackingTextColor ).Add("\n\t基础黑客收入：").Add( factionBaseInfo.Income.BaseHackingIncomePerSecond, "a1ffa1" );
             if ( factionBaseInfo.HackingGenerators.Count > 0 )
             {
                 //FInt additionalIncome = factionBaseInfo.Income.HackingIncomePerGeneratorPerSecond * factionBaseInfo.HackingGenerators.Count;
-                Buffer.Add("\n\tFrom ").Add( factionBaseInfo.HackingGenerators.Count, "ffa1a1" ).Add(" hacking generators, each generating ").Add( factionBaseInfo.Income.HackingIncomePerGeneratorPerSecond, "a1a1ff" ).Add(" plus ").Add( factionBaseInfo.Income.HackingIncomePerGeneratorPerSecondIncreasePerMarkLevel, "a1ffa1" ).Add(" per mark level.");
+                Buffer.Add("\n\t来自 ").Add( factionBaseInfo.HackingGenerators.Count, "ffa1a1" ).Add(" 个黑客发电机，每个产生 ").Add( factionBaseInfo.Income.HackingIncomePerGeneratorPerSecond, "a1a1ff" ).Add(" 加上 ").Add( factionBaseInfo.Income.HackingIncomePerGeneratorPerSecondIncreasePerMarkLevel, "a1ffa1" ).Add(" 每标记等级。");
             }
             /*
             //ResourceOneT
@@ -3159,13 +3159,13 @@ namespace Arcen.AIW2.External
                 Buffer.Add("\n\tFrom ").Add( factionBaseInfo.ResourceOneGenerators.Count, "ffa1a1" ).Add(" resourceOne generators, each generating ").Add( factionBaseInfo.Income.ResourceOneIncomePerGeneratorPerSecond, "a1a1ff" ).Add(" plus ").Add( factionBaseInfo.Income.ResourceOneIncomePerGeneratorPerSecondIncreasePerMarkLevel, "a1ffa1" ).Add(" per mark level.");
             }
             */
-            Buffer.Add("\n\n").Add("Spire: You have access to ").Add( "district " + factionBaseInfo.SpireDistrictTier, "a3ba22" ).Add(" ships\n");
+            Buffer.Add("\n\n").Add("尖塔：你可以使用 ").Add( "区域 " + factionBaseInfo.SpireDistrictTier, "a3ba22" ).Add(" 级飞船\n");
             Buffer.Add("天顶：你可以使用 ").Add( "区域 " + factionBaseInfo.ZenithDistrictTier, "a3ba22" ).Add(" 级飞船\n");
             Buffer.Add("尼恩祖：你可以使用 ").Add( "区域 " + factionBaseInfo.NeinzulDistrictTier, "a3ba22" ).Add(" 级飞船\n");
             Buffer.Add("圣殿骑士：你可以使用 " ).Add( "区域 " + factionBaseInfo.TemplarDistrictTier, "a3ba22" ).Add(" 级飞船\n\n");
             if (spireTwo && zenithTwo && neinzulTwo && templarTwo)
             {
-                Buffer.Add("<b>You have unlocked the Dyson Sphere</b>\n");
+                Buffer.Add("<b>你已解锁戴森球</b>\n");
             }
             if ( factionBaseInfo.PlanetsDrilled > 0 )
                 Buffer.Add("你已摧毁了 ").Add( factionBaseInfo.PlanetsDrilled, "22baa3" ).Add(" 个星球。\n");
@@ -3376,13 +3376,13 @@ namespace Arcen.AIW2.External
                         Buffer.Add( "\n" );
                     }
 
-                    Buffer.Add("\nConvergence:\n");
+                    Buffer.Add("\n汇聚：\n");
                     if ( mBaseInfo.ConvergenceCountdownEndTime != -1 )
                     {
                         int countdownRemaining = mBaseInfo.ConvergenceCountdownEndTime - World_AIW2.Instance.GameSecond;
-                        Buffer.Add("\tCountdown: ").Add( countdownRemaining, "ff4444" ).Add("s remaining\n");
+                        Buffer.Add("\t倒计时：").Add( countdownRemaining, "ff4444" ).Add(" 秒剩余\n");
                         int generatorCount = mBaseInfo.ConvergenceGenerators.GetDisplayList().Count;
-                        Buffer.Add("\tGenerators remaining: ").Add( generatorCount, "ffcc88" ).Add("\n");
+                        Buffer.Add("\t剩余发电机：").Add( generatorCount, "ffcc88" ).Add("\n");
                     }
                     else
                     {
@@ -3390,17 +3390,17 @@ namespace Arcen.AIW2.External
                             ? -1
                             : mBaseInfo.NextConvergenceTime - World_AIW2.Instance.GameSecond;
                         if ( nextIn <= 0 )
-                            Buffer.Add("\tEligible to trigger\n");
+                            Buffer.Add("\t可触发\n");
                         else
-                            Buffer.Add("\tNext eligible in: ").Add( nextIn ).Add("s\n");
+                            Buffer.Add("\t下次可触发时间：").Add( nextIn ).Add(" 秒\n");
                     }
                     if ( mBaseInfo.ConvergenceMainStrikeTime != -1 )
                     {
                         int strikeIn = mBaseInfo.ConvergenceMainStrikeTime - World_AIW2.Instance.GameSecond;
-                        Buffer.Add("\tMain strike in: ").Add( strikeIn, "ff4444" ).Add("s (")
-                              .Add( mBaseInfo.ConvergenceMainStrikeCarrierCount ).Add(" carriers)\n");
+                        Buffer.Add("\t主攻击在：").Add( strikeIn, "ff4444" ).Add(" 秒（")
+                              .Add( mBaseInfo.ConvergenceMainStrikeCarrierCount ).Add(" 艘母舰）\n");
                     }
-                    Buffer.Add("\tOccurrences so far: ").Add( mBaseInfo.ConvergenceOccurrenceCount ).Add("\n");
+                    Buffer.Add("\t已发生次数：").Add( mBaseInfo.ConvergenceOccurrenceCount ).Add("\n");
 
                 }
 
