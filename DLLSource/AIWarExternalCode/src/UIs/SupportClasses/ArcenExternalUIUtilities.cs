@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -244,15 +244,15 @@ namespace Arcen.AIW2.External
                 return string.Empty;
             ArcenCharacterBuffer tooltipBuffer = ArcenCharacterBuffer.GetFromPoolOrCreate( "ArcenExternalUIUtilities-GetPlanetNameTooltipForLocalPlanet-tooltipBuffer", 5f );
             if ( Engine_AIW2.Instance.CurrentGameViewMode == GameViewMode.GalaxyMapView )
-                tooltipBuffer.Add( "You Have Selected: " ).Add( planet.Name );
+                tooltipBuffer.Add( "您已选择：" ).Add( planet.Name );
             else
-                tooltipBuffer.Add( "You Are Viewing: " ).Add( planet.Name );
+                tooltipBuffer.Add( "您正在查看：" ).Add( planet.Name );
 
             tooltipBuffer.Add( "\n" );
             if ( Engine_AIW2.Instance.CurrentGameViewMode != GameViewMode.GalaxyMapView )
-                tooltipBuffer.Add( "Click here to switch to the galaxy map." );
+                tooltipBuffer.Add( "点击此处切换到银河地图。" );
             else
-                tooltipBuffer.Add( "Click here to switch to the planet view for " ).Add( planet.Name ).Add( "." );
+                tooltipBuffer.Add( "点击此处切换到" ).Add( planet.Name ).Add( "的星球视图。" );
             tooltipBuffer.Add( "\n" );
             tooltipBuffer.Add("(Shortcut key: " + InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "ToggleGalaxyMap" ) ).Add(")");
 
@@ -268,13 +268,13 @@ namespace Arcen.AIW2.External
                 return string.Empty;
 
             ArcenCharacterBuffer tooltipBuffer = ArcenCharacterBuffer.GetFromPoolOrCreate( "ArcenExternalUIUtilities-GetEnergyTooltip-tooltipBuffer", 5f );
-            tooltipBuffer.Add( "Available Energy. Energy is a global resource required to power your fleet and structures.\n\nUsed: <color=#FFDE00>" )
+            tooltipBuffer.Add( "可用能源。能源是为您的舰队和建筑提供动力所需的全局资源。\n\n已使用：<color=#FFDE00>" )
                 .AddNumberMoreReadable( localFaction.EnergyConsumption ).Add("</color>")
-                .Add( "\nTotal: <color=#e59400>" )
+                .Add( "\n总量：<color=#e59400>" )
                 .AddNumberMoreReadable( localFaction.EnergyProduction ).Add("</color>");
             if ( localFaction.ExtraFreeEnergyProduction_FromOlderSave > 0 )
             {
-                tooltipBuffer.Add( "\nFree Energy As Friendly Handicap From Loading Old Save: <color=#e59400>" )
+                tooltipBuffer.Add( "\n加载旧存档获得的友好让步免费能源：<color=#e59400>" )
                     .AddNumberMoreReadable( localFaction.ExtraFreeEnergyProduction_FromOlderSave ).Add( "</color>" );
             }
 
@@ -332,19 +332,19 @@ namespace Arcen.AIW2.External
             }
 
             ArcenCharacterBuffer tooltipBuffer = ArcenCharacterBuffer.GetFromPoolOrCreate( "ArcenExternalUIUtilities-GetFuelTooltip-tooltipBuffer", 5f );
-            tooltipBuffer.Add( "Available " ).Add( fuelName ).Add( ".  " ).Add( fuelUse ).Add( "\n\nUsed: <color=#" ).Add( colorGood ).Add( ">" )
+            tooltipBuffer.Add( "可用 " ).Add( fuelName ).Add( "。  " ).Add( fuelUse ).Add( "\n\n已使用：<color=#" ).Add( colorGood ).Add( ">" )
                 .AddNumberMoreReadable( consumed ).Add( "</color>" )
-                .Add( "\nTotal: <color=#" ).Add( colorTotal ).Add( ">" )
+                .Add( "\n总量：<color=#" ).Add( colorTotal ).Add( ">" )
                 .AddNumberMoreReadable( produced ).Add( "</color>" );
             if ( extraConsumed > 0 )
             {
-                tooltipBuffer.Add( "\nExtra " ).Add( fuelName ).Add( " Perma-Consumed From Past Actions: <color=#" ).Add( colorGood ).Add( ">" )
-                    .AddNumberMoreReadable( extraConsumed ).Add( "</color>\n<size=80%>Usually perma-consumption is from things like hacking to contact Outguard.</size>" );
+                tooltipBuffer.Add( "\n因过去操作永久消耗的额外 " ).Add( fuelName ).Add( "：<color=#" ).Add( colorGood ).Add( ">" )
+                    .AddNumberMoreReadable( extraConsumed ).Add( "</color>\n<size=80%>通常永久消耗来自诸如入侵联系外卫等操作。</size>" );
             }
             if ( overuseRatio < FInt.One && consumed > 0 )
             {
-                tooltipBuffer.Add( "\n<color=#ff6935>Warning!  Currently health, shields, and weapon damage on units that rely on this fuel are reduced by your " ).Add( fuelName ).Add( " ratio, which is " )
-                    .AddFixedDecimal( overuseRatio.ToFloatNonSim(), 2 ).Add( "x normal.</color>  " );
+                tooltipBuffer.Add( "\n<color=#ff6935>警告！目前依赖此燃料的单位的生命值、护盾和武器伤害因您的 " ).Add( fuelName ).Add( " 比率而降低，该比率为 " )
+                    .AddFixedDecimal( overuseRatio.ToFloatNonSim(), 2 ).Add( " 倍正常值。</color>  " );
             }
 
             return tooltipBuffer.ToStringAndReturnToPool();

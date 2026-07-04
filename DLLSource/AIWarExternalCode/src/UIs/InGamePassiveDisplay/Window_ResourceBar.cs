@@ -513,7 +513,7 @@ namespace Arcen.AIW2.External
                     return false;
 
                 if ( forFaction.UI_EnergyGiftedFromMe > 0 )
-                    Buffer.Add( "Energy sent from me to other empires: <color=#FFDE00>" ).AddNumberMoreReadable( forFaction.UI_EnergyGiftedFromMe ).Add( "</color>\n\n" );
+                    Buffer.Add( "我发送给其他帝国的能源：<color=#FFDE00>" ).AddNumberMoreReadable( forFaction.UI_EnergyGiftedFromMe ).Add( "</color>\n\n" );
 
                 workingPlanets.Clear();
                 foreach ( Planet planet in World_AIW2.Instance.Planets( false ) )
@@ -555,7 +555,7 @@ namespace Arcen.AIW2.External
 
                 if ( workingPlanets.Count > 0 )
                 {
-                    Buffer.Add( "Energy consumed per planet:\n" );
+                    Buffer.Add( "每个星球消耗的能源：\n" );
                     for ( int i = 0; i < workingPlanets.Count; i++ )
                     {
                         KeyValuePair<Planet, int> pair = workingPlanets[i];
@@ -567,7 +567,7 @@ namespace Arcen.AIW2.External
 
                 if ( workingFleets.Count > 0 )
                 {
-                    Buffer.Add( "Energy consumed per fleet:\n" );
+                    Buffer.Add( "每个舰队消耗的能源：\n" );
                     for ( int i = 0; i < workingFleets.Count; i++ )
                     {
                         KeyValuePair<Fleet, int> pair = workingFleets[i];
@@ -589,7 +589,7 @@ namespace Arcen.AIW2.External
 
                 if ( workingPlanets.Count > 0 )
                 {
-                    Buffer.Add( "Energy produced per planet:\n" );
+                    Buffer.Add( "每个星球生产的能源：\n" );
                     workingPlanets.Sort( static delegate ( KeyValuePair<Planet, int> L, KeyValuePair<Planet, int> R )
                     {
                         int val = R.Value.CompareTo( L.Value ); //desc
@@ -601,14 +601,14 @@ namespace Arcen.AIW2.External
                     {
                         KeyValuePair<Planet, int> pair = workingPlanets[i];
                         Buffer.Add( "\t" ).Add( pair.Key.Name, "faf866" );
-                        Buffer.Add( " produces " ).Add( ((pair.Value) / 1000).ToString( "#,##0" ) + "K", "e59400" ).Add( "\n" );
+                        Buffer.Add( " 生产 " ).Add( ((pair.Value) / 1000).ToString( "#,##0" ) + "K", "e59400" ).Add( "\n" );
                     }
                     Buffer.Add( "\n\n" );
                 }
 
                 if ( forFaction.UI_EnergyGiftedToMe > 0 )
                 {
-                    Buffer.Add( "Energy sent to me from other empires: <color=#e59400>" ).AddNumberMoreReadable( forFaction.UI_EnergyGiftedToMe ).Add( "</color>\n" );
+                    Buffer.Add( "其他帝国发送给我的能源：<color=#e59400>" ).AddNumberMoreReadable( forFaction.UI_EnergyGiftedToMe ).Add( "</color>\n" );
                     Buffer.Add( "\n\n" );
                 }
 
@@ -1079,39 +1079,39 @@ namespace Arcen.AIW2.External
                     }
                 }
 
-                tooltipBuffer.Add( "AI Progress (AIP)\n\nHow much the AI cares about you (higher is worse news for you).\n<color=#ffbca1>The AI is distracted by other threats outside the galaxy, and your only hope is to not raise AIP so high that it views you as the larger threat." );
+                tooltipBuffer.Add( "AI 进度 (AIP)\n\nAI 对您的关注程度（越高对您越不利）。\n<color=#ffbca1>AI 被银河系外的其他威胁分散了注意力，您唯一的希望是不要将 AIP 提升到让它认为您是更大威胁的程度。" );
                 tooltipBuffer.Add( "</color>\n" );
 
                 if ( lowestDifficulty == null )
                     lowestDifficulty = highestDifficulty;
                 if ( lowestDifficulty == null )
-                    tooltipBuffer.Add( "\nDifficulty data could not be found for current AI(s)." );
+                    tooltipBuffer.Add( "\n无法找到当前 AI 的难度数据。" );
                 else
                 {
                     if ( lowestDifficulty.Difficulty != highestDifficulty.Difficulty )
                     {
-                        tooltipBuffer.Add( "\nAI Difficulties Range From: " );
+                        tooltipBuffer.Add( "\nAI 难度范围：" );
                         tooltipBuffer.Add( lowestDifficulty.DisplayName );
-                        tooltipBuffer.Add( " to " );
+                        tooltipBuffer.Add( " 到 " );
                         tooltipBuffer.Add( highestDifficulty.DisplayName );
                         if ( highestAIP.IntValue >= lowestDifficulty.AIPUnlockCounterattacks )
-                            tooltipBuffer.Add( "\nCounterattacks Unlocked for all AIs", "F5bc10" );
+                            tooltipBuffer.Add( "\n所有 AI 已解锁反击", "F5bc10" );
                         else
                         {
-                            tooltipBuffer.Add( "\nCounterattacks Unlock At AIP: " );
+                            tooltipBuffer.Add( "\n反击在 AIP 时解锁：" );
                             tooltipBuffer.Add( highestDifficulty.AIPUnlockCounterattacks );
-                            tooltipBuffer.Add( " to " );
+                            tooltipBuffer.Add( " 到 " );
                             tooltipBuffer.Add( lowestDifficulty.AIPUnlockCounterattacks );
                         }
                         if(areReconquestWavesEnabled)
                         {
                             if ( highestAIP.IntValue >= lowestDifficulty.AIPUnlockReconquestWave )
-                                tooltipBuffer.Add( "\nReconquest Waves Unlocked for all AIs", "F5bc10" );
+                                tooltipBuffer.Add( "\n所有 AI 已解锁夺回浪潮", "F5bc10" );
                             else
                             {
-                                tooltipBuffer.Add( "\nReconquest Waves Unlock At AIP: " );
+                                tooltipBuffer.Add( "\n夺回浪潮在 AIP 时解锁：" );
                                 tooltipBuffer.Add( highestDifficulty.AIPUnlockReconquestWave );
-                                tooltipBuffer.Add( " to " );
+                                tooltipBuffer.Add( " 到 " );
                                 tooltipBuffer.Add( lowestDifficulty.AIPUnlockReconquestWave );
                             }
                         }
@@ -1119,19 +1119,19 @@ namespace Arcen.AIW2.External
                         {
                             if ( (minAIPForWormholeBorer == -1 && highestAIP.IntValue >= maxAIPForWormholeBorer ) ||
                                   highestAIP.IntValue >= minAIPForWormholeBorer)
-                                tooltipBuffer.Add( "\nWormhole Borers Unlocked for all AIs", "F5bc10" );
+                                tooltipBuffer.Add( "\n所有 AI 已解锁虫洞钻机", "F5bc10" );
                             else
                             {
                                 if(minAIPForWormholeBorer == maxAIPForWormholeBorer || minAIPForWormholeBorer == -1)
                                 {
-                                    tooltipBuffer.Add( "\nWormhole Borer Unlock At AIP: " );
+                                    tooltipBuffer.Add( "\n虫洞钻机在 AIP 时解锁：" );
                                     tooltipBuffer.Add( maxAIPForWormholeBorer );
                                 }
                                 else
                                 {
-                                    tooltipBuffer.Add( "\nWormhole Borer Unlock At AIP: " );
+                                    tooltipBuffer.Add( "\n虫洞钻机在 AIP 时解锁：" );
                                     tooltipBuffer.Add( minAIPForWormholeBorer);
-                                    tooltipBuffer.Add( " to " );
+                                    tooltipBuffer.Add( " 到 " );
                                     tooltipBuffer.Add( maxAIPForWormholeBorer);
                                 }
                             }
@@ -1141,19 +1141,19 @@ namespace Arcen.AIW2.External
                         {
                             if ( (minAIPForWormholeInvasion == -1 && highestAIP.IntValue >= maxAIPForWormholeInvasion ) ||
                                   highestAIP.IntValue >= minAIPForWormholeInvasion)
-                                tooltipBuffer.Add( "\nWormhole Invasions Unlocked for all AIs", "F5bc10" );
+                                tooltipBuffer.Add( "\n所有 AI 已解锁虫洞入侵", "F5bc10" );
                             else
                             {
                                 if(minAIPForWormholeInvasion == maxAIPForWormholeInvasion || minAIPForWormholeInvasion == -1)
                                 {
-                                    tooltipBuffer.Add( "\nWormhole Invasion Unlock At AIP: " );
+                                    tooltipBuffer.Add( "\n虫洞入侵在 AIP 时解锁：" );
                                     tooltipBuffer.Add( maxAIPForWormholeInvasion );
                                 }
                                 else
                                 {
-                                    tooltipBuffer.Add( "\nWormhole Invasion Unlock At AIP: " );
+                                    tooltipBuffer.Add( "\n虫洞入侵在 AIP 时解锁：" );
                                     tooltipBuffer.Add( minAIPForWormholeInvasion);
-                                    tooltipBuffer.Add( " to " );
+                                    tooltipBuffer.Add( " 到 " );
                                     tooltipBuffer.Add( maxAIPForWormholeInvasion);
                                 }
                             }
@@ -1162,12 +1162,12 @@ namespace Arcen.AIW2.External
                     }
                     else
                     {
-                        tooltipBuffer.Add( "\nAI Difficulty: " ).Add( lowestDifficulty.DisplayName ).Add("\n");
+                        tooltipBuffer.Add( "\nAI 难度：" ).Add( lowestDifficulty.DisplayName ).Add("\n");
                         if ( highestAIP.IntValue >= lowestDifficulty.AIPUnlockCounterattacks )
-                            tooltipBuffer.Add( "Counterattacks Unlocked ", "F5bc10" );
+                            tooltipBuffer.Add( "反击已解锁 ", "F5bc10" );
                         else
                         {
-                            tooltipBuffer.Add( "Counterattacks Unlock At AIP: " );
+                            tooltipBuffer.Add( "反击在 AIP 时解锁：" );
                             tooltipBuffer.Add( "<color=#ff0000>" + lowestDifficulty.AIPUnlockCounterattacks + "</color>" );
                         }
                         
@@ -1175,10 +1175,10 @@ namespace Arcen.AIW2.External
                         {
                             tooltipBuffer.Add("\n");
                             if ( highestAIP.IntValue >= lowestDifficulty.AIPUnlockReconquestWave )
-                                tooltipBuffer.Add( "Reconquest Waves Unlocked ", "F5bc10" );
+                                tooltipBuffer.Add( "夺回浪潮已解锁 ", "F5bc10" );
                             else
                             {
-                                tooltipBuffer.Add( "Reconquest Waves Unlock At AIP: " );
+                                tooltipBuffer.Add( "夺回浪潮在 AIP 时解锁：" );
                                 tooltipBuffer.Add( "<color=#ff0000>" + lowestDifficulty.AIPUnlockReconquestWave + "</color>" );
                             }
                         }
@@ -1187,10 +1187,10 @@ namespace Arcen.AIW2.External
                         {
                             tooltipBuffer.Add("\n");
                             if ( highestAIP.IntValue >= minAIPForWormholeBorer )
-                                tooltipBuffer.Add( "Wormhole Borers Unlocked ", "F5bc10" );
+                                tooltipBuffer.Add( "虫洞钻机已解锁 ", "F5bc10" );
                             else
                             {
-                                tooltipBuffer.Add( "Wormhole Borers Unlock At AIP: " );
+                                tooltipBuffer.Add( "虫洞钻机在 AIP 时解锁：" );
                                 tooltipBuffer.Add( "<color=#ff0000>" + minAIPForWormholeBorer + "</color>" );
                             }
                         }
@@ -1199,10 +1199,10 @@ namespace Arcen.AIW2.External
                         {
                             tooltipBuffer.Add("\n");
                             if ( highestAIP.IntValue >= minAIPForWormholeInvasion )
-                                tooltipBuffer.Add( "Wormhole Invasions Unlocked ", "F5bc10" );
+                                tooltipBuffer.Add( "虫洞入侵已解锁 ", "F5bc10" );
                             else
                             {
-                                tooltipBuffer.Add( "Wormhole Invasions Unlock At AIP: " );
+                                tooltipBuffer.Add( "虫洞入侵在 AIP 时解锁：" );
                                 tooltipBuffer.Add( "<color=#ff0000>" + minAIPForWormholeInvasion + "</color>" );
                             }
                         }
@@ -1219,32 +1219,32 @@ namespace Arcen.AIW2.External
                 if ( aipFloor > aipTotal )
                     aipFloor = aipTotal;
 
-                tooltipBuffer.Add( "\n\nTotal AIP earned: <color=#ff0000>" + aipTotal + "</color> AIP Reduction: <color=#ffbca1>" + aipReduction +"</color>" );
+                tooltipBuffer.Add( "\n\n已获得总 AIP：<color=#ff0000>" + aipTotal + "</color> AIP 减少：<color=#ffbca1>" + aipReduction +"</color>" );
 
-                tooltipBuffer.Add( " AIP Floor: <color=#ff422e>" + aipFloor + "</color>");
-                tooltipBuffer.Add( " AIP Never Reduces Below: <color=#f97331>" + aipNeverReducesBelow + "</color>" );
+                tooltipBuffer.Add( " AIP 下限：<color=#ff422e>" + aipFloor + "</color>");
+                tooltipBuffer.Add( " AIP 永不低于：<color=#f97331>" + aipNeverReducesBelow + "</color>" );
 
                 int excessAipReduction = aipReduction - aipTotal + aipFloor;
                 if (excessAipReduction > 0) {
-                    tooltipBuffer.Add( "\nUnused AIP Reduction: ").StartColor( "f97331" ).Add( excessAipReduction).EndColor();
+                    tooltipBuffer.Add( "\n未使用的 AIP 减少：").StartColor( "f97331" ).Add( excessAipReduction).EndColor();
                 } else if (excessAipReduction < 0) {
-                    tooltipBuffer.Add( "\nAIP above the Floor: ").StartColor( "ff422e" ).Add( -excessAipReduction ).EndColor();;
+                    tooltipBuffer.Add( "\n超出下限的 AIP：").StartColor( "ff422e" ).Add( -excessAipReduction ).EndColor();;
                 }
 
-                tooltipBuffer.Add( "\n\n<color=#ff422e>AIP Floor</color> is the minimum value that AIP can be currently reduced to, and is increased by " ).Add( 
-                    (highestDifficulty.AIPFloorMultiplierPercent.ToString() + "%"), "a1ffa1").Add(" of any AIP increase. If reduction would lower AIP below the current floor, it is not wasted - it will instead absorb later increases, so there is no need to delay a reduction.  " );
-                tooltipBuffer.Add( "At this difficulty level, the absolute minimum that the AIP can ever go to is also set to be " ).Add( highestDifficulty.AIPAbsoluteFloor ).Add( ".  " );
+                tooltipBuffer.Add( "\n\n<color=#ff422e>AIP 下限</color>是 AIP 当前可降低到的最小值，并且每次 AIP 增加时会提高 " ).Add( 
+                    (highestDifficulty.AIPFloorMultiplierPercent.ToString() + "%"), "a1ffa1").Add("。如果减少会将 AIP 降低到当前下限以下，它不会被浪费——而是会吸收以后的增加，因此无需延迟减少。  " );
+                tooltipBuffer.Add( "在此难度级别下，AIP 永远可以达到的绝对最低值也设置为 " ).Add( highestDifficulty.AIPAbsoluteFloor ).Add( "。  " );
 
                 int startingAIP = World_AIW2.Instance.Setup.GetIntBySetting( "AIP_Starting" ) * World_AIW2.Instance.EmpireStylePlayerFactions.Count;
 
                 if ( highestDifficulty.AIPAbsoluteFloor > startingAIP && aipTotal < highestDifficulty.AIPAbsoluteFloor )
                 {
-                    tooltipBuffer.Add( "It is worth noting that your starting AIP is only " ).Add( startingAIP ).Add( ", so the first " ).Add(
-                        highestDifficulty.AIPAbsoluteFloor - startingAIP ).Add( " of AIP that you incur are effectively 'free.'" );
+                    tooltipBuffer.Add( "值得注意的是，您的起始 AIP 仅为 " ).Add( startingAIP ).Add( "，因此您获得的前 " ).Add(
+                        highestDifficulty.AIPAbsoluteFloor - startingAIP ).Add( " AIP 实际上是'免费的。'" );
                 }
 
-                tooltipBuffer.Add( "\n<color=#f97331>AIP Never Reduces Below: " + aipNeverReducesBelow + "</color>" );
-                tooltipBuffer.Add( "\nNo matter the AIP Floor, no reduction will happen that would cause the AIP to shrink below this amount, or shrink while it is below this amount." );
+                tooltipBuffer.Add( "\n<color=#f97331>AIP 永不低于：" + aipNeverReducesBelow + "</color>" );
+                tooltipBuffer.Add( "\n无论 AIP 下限如何，都不会发生会导致 AIP 缩减到此金额以下的减少，或在低于此金额时缩减。" );
                 //
 
                 tooltipBuffer.Add("\n");
@@ -1268,24 +1268,24 @@ namespace Arcen.AIW2.External
                         Balance_MarkLevel nextMark = Balance_MarkLevelTable.Instance.Rows[currentMarkLevelForAI + 1];
                         int aipForNextMark = localFactionExternal.AIDifficulty.AIPForMarkLevel[currentMarkLevelForAI + 1];
                         int aipUntilNextMark = GlobalAIWorldBaseInfo.Instance.CalculateAIPRemainingUntil(aipForNextMark);
-                        tooltipBuffer.Add("\nAIP for next mark level increase: ").StartColor(nextMark.ColorHex).Add(aipForNextMark).EndColor();
-                        tooltipBuffer.Add(" (").StartColor(nextMark.ColorHex).Add(aipUntilNextMark).EndColor().Add(" remaining).");
+                        tooltipBuffer.Add("\n下一等级提升所需 AIP：").StartColor(nextMark.ColorHex).Add(aipForNextMark).EndColor();
+                        tooltipBuffer.Add(" (").StartColor(nextMark.ColorHex).Add(aipUntilNextMark).EndColor().Add(" 剩余)。");
                         if ( localFactionExternal.AIDifficulty.Difficulty >= 10 )
                         {
                             if ( currentMarkLevelForAI < 2 )
-                                tooltipBuffer.Add( "Mark 2 will automatically be reached if you have at least 10 strength outside of transports on one of their Mark 7 worlds.  " );
+                                tooltipBuffer.Add( "如果您在他们的某个 7 级世界中拥有至少 10 点运输以外的战斗力，将达到 2 级。  " );
                             if ( currentMarkLevelForAI < 3 )
-                                tooltipBuffer.Add( "Mark 3 will automatically be reached if you have at least 10 strength outside of transports on their homeworld.  " );
+                                tooltipBuffer.Add( "如果您在他们的母星中拥有至少 10 点运输以外的战斗力，将达到 3 级。  " );
                         }
                     }
                 }
-                tooltipBuffer.Add("\n\nThe game will become significantly harder when the AI mark level increases. Note that the AI Mark Level will never go down, regardless of AIP reduction.");
-                tooltipBuffer.Add("\n\nClicking on the AIP icon will show you the history of AIP changes.");
+                tooltipBuffer.Add("\n\n当 AI 等级提升时，游戏将变得显著更加困难。请注意，无论 AIP 如何减少，AI 等级永远不会降低。");
+                tooltipBuffer.Add("\n\n点击 AIP 图标将显示 AIP 变化历史。");
                 Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, tooltipBuffer.GetStringAndResetForNextUpdate() );
             }
             public override MouseHandlingResult HandleClick_Subclass( MouseHandlingInput input )
             {
-                Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "AIP Change History", "Close",
+                Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "AIP 变化历史", "关闭",
                     delegate( ArcenDoubleCharacterBuffer Buffer ) { return GetAIPHistory( Buffer ); } );
                 return MouseHandlingResult.None;
             }
@@ -1675,7 +1675,7 @@ namespace Arcen.AIW2.External
                     return false;
                 NecromancerEmpireFactionBaseInfo factionBaseInfo = forFaction.GetExternalBaseInfoAs<NecromancerEmpireFactionBaseInfo>();
                 if ( factionBaseInfo.HackingEarnedPerUnitType.Count > 0 )
-                    Buffer.Add( "Here is how you got your hacking: \n" );
+                    Buffer.Add( "以下是您获得入侵的方式：\n" );
                 int total = 0;
                 foreach ( KeyValuePair<GameEntityTypeData, int> pair in factionBaseInfo.HackingEarnedPerUnitType )
                 {
@@ -2557,7 +2557,7 @@ namespace Arcen.AIW2.External
                     if ( newAttack > 0 )
                         anyAttack = true;
                 }
-                tooltipBuffer.Add( "Total strength of attacking enemy ships on your team's planets\n" );
+                tooltipBuffer.Add( "您团队星球上攻击敌舰的总战斗力\n" );
                 if(anyAttack)
                 {
                     List<KeyValuePair<string, int>> sortedPlanets = planetsUnderAttack.SortIntoList( delegate ( KeyValuePair <string, int> L, KeyValuePair <string, int> R)
@@ -3113,10 +3113,10 @@ namespace Arcen.AIW2.External
                 Buffer.Add("</b>");
             }
 
-            Buffer.Add( "Here is how you are getting your income (all numbers per-second): \n" );
+            Buffer.Add( "以下是您获得收入的方式（所有数字为每秒）：\n" );
             //Metal:
             FInt income = factionBaseInfo.MetalIncomeLastSecond;
-            Buffer.Add("\nMetal Income: " ).Add( income, "ccccee" ).Add("\n\tBase Metal Income: ").Add( factionBaseInfo.Income.BaseMetalIncomePerSecond, "a1ffa1" );
+            Buffer.Add("\n金属收入：" ).Add( income, "ccccee" ).Add("\n\t基础金属收入：").Add( factionBaseInfo.Income.BaseMetalIncomePerSecond, "a1ffa1" );
             if ( factionBaseInfo.MetalGenerators.Count > 0 )
             {
                 //FInt additionalIncome = factionBaseInfo.Income.MetalIncomePerGeneratorPerSecond * factionBaseInfo.MetalGenerators.Count; //no longer accurate, since we now allow per-mark-level increases
@@ -3236,18 +3236,18 @@ namespace Arcen.AIW2.External
                 Buffer.Add( "\t" ).Add( pair.Key.Name, "a1a1ff" ).Add( " — " );
                 if ( currentTier < 4 )
                 {
-                    string mineWord = minesUntilNextTier == 1 ? "mine" : "mines";
-                    Buffer.Add( "you can mine this planet " ).Add( minesUntilNextTier, "ffa1a1" ).Add( " more " ).Add( mineWord );
+                    string mineWord = minesUntilNextTier == 1 ? "座矿" : "座矿";
+                    Buffer.Add( "您可以在此星球上再开采 " ).Add( minesUntilNextTier, "ffa1a1" ).Add( " " ).Add( mineWord );
                     if ( currentTier == 3 )
-                        Buffer.Add( " until you need a Tier IV mine. The shafts have gone deeper than thought possible; only the most extreme drills can reach what remains.\n" );
+                        Buffer.Add( " 直到需要 4 级矿。矿井已深入超出想象；只有最极端的钻头才能到达剩余部分。\n" );
                     else if ( currentTier == 2 )
-                        Buffer.Add( " until you need a Tier III mine. The shafts are growing perilously deep; each lode harder to reach than the last.\n" );
+                        Buffer.Add( " 直到需要 3 级矿。矿井正变得危险地深；每个矿脉都比上一个更难到达。\n" );
                     else
-                        Buffer.Add( " until you need a larger mine. Each mine must go down further into the planet to find new lodes.\n" );
+                        Buffer.Add( " 直到需要更大的矿。每个矿都必须更深地进入星球以寻找新的矿脉。\n" );
                 }
                 else
                 {
-                    Buffer.Add( "Tier IV mines only — the deepest lodes have been breached on this planet.\n" );
+                    Buffer.Add( "仅 4 级矿 — 此星球上最深的矿脉已被突破。\n" );
                 }
             }
 
@@ -3330,20 +3330,20 @@ namespace Arcen.AIW2.External
                     Buffer.Add("Planet qualification failures: " + mBaseInfo.DebugPlanetQualificationFailures).Add("\n");
                     if ( !mBaseInfo.HasLinkedPlanets )
                     {
-                        Buffer.Add("Planets not linked\n");
+                        Buffer.Add("星球未链接\n");
                     }
                     if ( mBaseInfo.TimeToLinkPlanets > World_AIW2.Instance.GameSecond )
                     {
                         int secondsTillLink = mBaseInfo.TimeToLinkPlanets - World_AIW2.Instance.GameSecond;
 
-                        Buffer.Add( "Link time: " + secondsTillLink ).Add( "\n" );
+                        Buffer.Add( "链接时间：" + secondsTillLink ).Add( "\n" );
                     }
                     foreach ( GameEntity_Squad splice in mBaseInfo.Splices.DisplaySquads() )
                     {
                         MalwarePerUnitBaseInfo sData = splice.TryGetExternalBaseInfoAs<MalwarePerUnitBaseInfo>();
                         int lastHad = sData?.TimeLastHadAdversary ?? -1;
-                        string lastHadStr = lastHad < 0 ? "never" : ( World_AIW2.Instance.GameSecond - lastHad ) + "s ago";
-                        Buffer.Add( "Splice on " ).Add( splice.Planet.Name, "a1ff1a" ).Add( ": last adversary " ).Add( lastHadStr ).Add( "\n" );
+                        string lastHadStr = lastHad < 0 ? "从未" : ( World_AIW2.Instance.GameSecond - lastHad ) + "秒前";
+                        Buffer.Add( "在 " ).Add( splice.Planet.Name, "a1ff1a" ).Add( " 上的接合：最后对手 " ).Add( lastHadStr ).Add( "\n" );
                     }
 
                     foreach ( GameEntity_Squad nexus in mBaseInfo.Nexuses.DisplaySquads() )
@@ -3353,9 +3353,9 @@ namespace Arcen.AIW2.External
                             continue;
                         if ( mData.Protocol == null )
                             continue;
-                        Buffer.Add("Nexus on ").Add(nexus.Planet.Name, "a1ff1a").Add(" has protocol ").Add(mData.Protocol.ToDisplayString()).Add("\n");
+                        Buffer.Add("在 ").Add(nexus.Planet.Name, "a1ff1a").Add(" 上的连接点具有协议 ").Add(mData.Protocol.ToDisplayString()).Add("\n");
                     }
-                    Buffer.Add("Next fissure: " + (mBaseInfo.NextFissureTime - World_AIW2.Instance.GameSecond)).Add("\n");
+                    Buffer.Add("下一个裂缝：" + (mBaseInfo.NextFissureTime - World_AIW2.Instance.GameSecond)).Add("\n");
                     foreach ( GameEntity_Squad fissure in mBaseInfo.Fissures.DisplaySquads() )
                     {
                         MalwarePerUnitBaseInfo mData = fissure.TryGetExternalBaseInfoAs<MalwarePerUnitBaseInfo>();
@@ -3363,7 +3363,7 @@ namespace Arcen.AIW2.External
                             continue;
                         if ( mData.Protocol == null )
                             continue;
-                        Buffer.Add("Fissure on ").Add(fissure.Planet.Name, "a1ff1a").Add("\n");
+                        Buffer.Add("在 ").Add(fissure.Planet.Name, "a1ff1a").Add(" 上的裂缝\n");
                     }
 
                     Buffer.Add( "\nCorrupted Ziggurats:\n" );

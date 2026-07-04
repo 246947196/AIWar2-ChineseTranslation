@@ -318,7 +318,7 @@ namespace Arcen.AIW2.External
             {
                 string mouseoverText = "地图类型决定了银河系的形状，但不决定其填充方式。";
                 WorldSetup setupToViewOnly = World_AIW2.Instance.Setup;
-                tooltipBuffer.Add( "The map type determines the shape of the galaxy, but not how it is populated." );
+                tooltipBuffer.Add( "地图类型决定了银河系的形状，但不决定其填充方式。" );
                 if ( setupToViewOnly != null && setupToViewOnly.MapConfig.MapType != null )
                 {
                     //the specific option under mouse
@@ -332,7 +332,7 @@ namespace Arcen.AIW2.External
             {
                 MapTypeData ItemAsType = (MapTypeData)Item.GetItem();
 
-                tooltipBuffer.Add( "The map type determines the shape of the galaxy, but not how it is populated." );
+                tooltipBuffer.Add( "地图类型决定了银河系的形状，但不决定其填充方式。" );
                 if ( ItemAsType == null )
                 {
                     tooltipBuffer.Add( "\n\n<b><color=#ffc87a>随机银河系类型</color></b>\n选择此选项时随机选择银河系类型。" );

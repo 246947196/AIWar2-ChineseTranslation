@@ -1669,7 +1669,7 @@ namespace Arcen.AIW2.External
 
             public override void GetTextToShowFromVolatile( ArcenDoubleCharacterBuffer Buffer )
             {
-                Buffer.Add( "Add Faction" );
+                Buffer.Add( "添加阵营" );
             }
 
             private ProtectedList<CustomPopupData> factionOptions = ProtectedList<CustomPopupData>.Create_WillNeverBeGCed( 200, "Window_SetupFactionsTab-btnLeftColumn1-factionOptions" );
@@ -1790,7 +1790,7 @@ namespace Arcen.AIW2.External
 
             public override void GetTextToShowFromVolatile( ArcenDoubleCharacterBuffer Buffer )
             {
-                Buffer.Add( "Remove Faction" );
+                Buffer.Add( "移除阵营" );
             }
 
             public override MouseHandlingResult HandleClick_Subclass( MouseHandlingInput input )

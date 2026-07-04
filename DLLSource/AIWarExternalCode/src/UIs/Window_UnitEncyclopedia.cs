@@ -1310,11 +1310,11 @@ namespace Arcen.AIW2.External
                 
                 if ( countCurrentlyHere > 0 || canHack || canBuild )
                 {
-                    tooltipBuffer.Add( "Count: " ).Add( countCurrentlyHere );
+                    tooltipBuffer.Add( "数量：" ).Add( countCurrentlyHere );
                     if ( canHack )
-                        tooltipBuffer.Add( "  (Can Hack To Acquire)" );
+                        tooltipBuffer.Add( "  （可入侵获取）" );
                     if ( canBuild )
-                        tooltipBuffer.Add( "  (Can Build Now)" );
+                        tooltipBuffer.Add( "  （可立即建造）" );
 
                     tooltipBuffer.Add( "\n" );
                 }
@@ -1352,9 +1352,9 @@ namespace Arcen.AIW2.External
                 if ( typeData == null ) return;
 
                 if ( typeData.FullLore != null && typeData.FullLore.Length > 0 )
-                    buffer.Add( "Read Lore" );
+                    buffer.Add( "阅读传说" );
                 else
-                    buffer.StartColor( "696466" ).Add( "No Lore" );
+                    buffer.StartColor( "696466" ).Add( "无传说" );
             }
 
             public override MouseHandlingResult HandleClick_Subclass( MouseHandlingInput input )
@@ -1873,11 +1873,11 @@ namespace Arcen.AIW2.External
             public override void GetTextToShowFromVolatile( ArcenDoubleCharacterBuffer Buffer )
             {
                 if ( FactionIndex != -1  )
-                    Buffer.StartColor( "9f987f" ).Add( "Show Only Unit Types That Are In-Game" );
+                    Buffer.StartColor( "9f987f" ).Add( "仅显示游戏中的单位类型" );
                 else if ( FactionIndex != -1 || _ShowOnlyExistingInGame )
-                    Buffer.Add( "Show Only Unit Types That Are In-Game" );
+                    Buffer.Add( "仅显示游戏中的单位类型" );
                 else
-                    Buffer.Add( "Show All Unit Types" );
+                    Buffer.Add( "显示所有单位类型" );
             }
         }
 
