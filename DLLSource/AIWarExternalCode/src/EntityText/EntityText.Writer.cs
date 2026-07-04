@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Arcen.Universal;
 using Arcen.AIW2.Core;
 using UnityEngine;
@@ -1843,11 +1843,11 @@ namespace Arcen.AIW2.External
 
                     if ( Config.OptShipCount > 1 )
                     {
-                        buffer.AddColor( Config.OptShipCount, "dbef21" ).Add( "× " );
+                        buffer.AddColor( Config.OptShipCount, "dbef21" ).Add( "脳 " );
                     } 
                     else if ( Squad.ShipCount > 1 )
                     {
-                        buffer.AddColor( Squad.ShipCount, "dbef21" ).Add( "× " );
+                        buffer.AddColor( Squad.ShipCount, "dbef21" ).Add( "脳 " );
                     }
                     
                     if ( Squad.SecondsSpentAsRemains >= 0 )
@@ -2093,7 +2093,7 @@ namespace Arcen.AIW2.External
                     {
                         buffer
                             .Open( TextTerm.Speed, TermUse.Icon ).Add(" ")
-                            .AddNumber( Squad.TypeData.DegreesToOrbitPerSecond, "°/s", TextStyle.Empty )
+                            .AddNumber( Squad.TypeData.DegreesToOrbitPerSecond, "掳/s", TextStyle.Empty )
                             .Close( TextTerm.Speed );
                     }
                     else if (max == 0)
@@ -2254,7 +2254,7 @@ namespace Arcen.AIW2.External
                         {
                             strengthTotal = strengthCurr;
                             strengthCurr *= Config.OptShipCount;
-                            strengthMode = "×1";
+                            strengthMode = "脳1";
                             strengthModeColorHex = "ffffff";
                         }
                         else
@@ -2262,7 +2262,7 @@ namespace Arcen.AIW2.External
                         {
                             strengthTotal = strengthCurr;
                             strengthCurr *= Squad.ShipCount;
-                            strengthMode = "×1";
+                            strengthMode = "脳1";
                             strengthModeColorHex = "ffffff";
                         }
                         else
@@ -2780,7 +2780,7 @@ namespace Arcen.AIW2.External
                     switch(type)
                     {
                         case EntityTypeDrawingBag_SpawnMode.RawCount:
-                            buffer.Add( "× " );
+                            buffer.Add( "脳 " );
                             break;
                         case EntityTypeDrawingBag_SpawnMode.AIBudget:
                             buffer.Add( " AI budget worth of " );
@@ -3067,7 +3067,7 @@ namespace Arcen.AIW2.External
                 if ( !modifier.IsForOutgoingDamage )
                     buffer.Add(multiplier * 100).Add("%");
                 else
-                    buffer.Add("×").Add( multiplier );
+                    buffer.Add("脳").Add( multiplier );
                 buffer.Close(TextTerm.Damage);
                 
                 debugstage = 106;
@@ -3076,7 +3076,7 @@ namespace Arcen.AIW2.External
                     modifier.MaxMultiplier > 0)
                 {
                     // (x10 max)
-                    buffer.Add(" (").Add("×").Add(modifier.MaxMultiplier).Add(" max)");
+                    buffer.Add(" (").Add("脳").Add(modifier.MaxMultiplier).Add(" max)");
                 }
                 
                 debugstage = 107;
@@ -3100,7 +3100,7 @@ namespace Arcen.AIW2.External
                     buffer.Add(" to ").Add(TextTerm.Hull, TermUse.Icon_Name).Add("");
                 }
 
-                //buffer.AddNumber( multiplier, "×", TextTerm.Damage, TermUse.Name );
+                //buffer.AddNumber( multiplier, "脳", TextTerm.Damage, TermUse.Name );
 
                 if ( modifier.BasedOn == DamageModifierBasedOn.Always )
                 {
@@ -3238,20 +3238,20 @@ namespace Arcen.AIW2.External
                         prefix = "><space=0.1em>";
                         break;
                     case DamageModifierComparisonType.AtMost:
-                        prefix = "≤<space=0.1em>";
+                        prefix = "鈮?space=0.1em>";
                         break;
                     case DamageModifierComparisonType.AtLeast:
-                        //prefix = "";// " ≥ ";
+                        //prefix = "";// " 鈮?";
                         suffix = "+";
                         break;
                     case DamageModifierComparisonType.MultiplesOf:
-                        prefix = "";//"×<space=0.1em>";
+                        prefix = "";//"脳<space=0.1em>";
                         break;
                     case DamageModifierComparisonType.Equals:
                         prefix = "=<space=0.1em>";
                         break;
                     case DamageModifierComparisonType.NotEquals:
-                        prefix = "≠<space=0.1em>";
+                        prefix = "鈮?space=0.1em>";
                         break;
                 }
                 
@@ -3371,7 +3371,7 @@ namespace Arcen.AIW2.External
                         buffer.Space("0.05em");
                         if (max)
                             buffer.Add("max", TextStyle.Sub);
-                            //buffer.Add("↑");
+                            //buffer.Add("鈫?);
                         if (prefix != null)
                             buffer.Add(prefix);
                         
@@ -3808,7 +3808,7 @@ namespace Arcen.AIW2.External
 
             if ( Data.Multiplier != FInt.One )
             {
-                Buffer.Add( Data.Multiplier ).Add( "×" );
+                Buffer.Add( Data.Multiplier ).Add( "脳" );
                 if ( Data.AddedCount != 0 )
                     Buffer.Add( ", " );
             }
@@ -4699,7 +4699,7 @@ namespace Arcen.AIW2.External
                             switch ( spawnMode )
                             {
                                 case EntityTypeDrawingBag_SpawnMode.RawCount:
-                                    buffer.Add( "Between " ).AddNumberMoreReadable( unitBag.SpawnValue_Min[i] ).Add( " and " ).AddNumberMoreReadable( unitBag.SpawnValue_Max[i] ).Add( "×" );
+                                    buffer.Add( "Between " ).AddNumberMoreReadable( unitBag.SpawnValue_Min[i] ).Add( " and " ).AddNumberMoreReadable( unitBag.SpawnValue_Max[i] ).Add( "脳" );
                                     break;
                                 case EntityTypeDrawingBag_SpawnMode.AIBudget:
                                     buffer.Add( "Between " ).AddNumberTruncated( unitBag.SpawnValue_Min[i] ).Add( " and " ).AddNumberTruncated( unitBag.SpawnValue_Max[i] )
@@ -4728,7 +4728,7 @@ namespace Arcen.AIW2.External
                             switch ( spawnMode )
                             {
                                 case EntityTypeDrawingBag_SpawnMode.RawCount:
-                                    buffer.AddNumberMoreReadable( unitBag.SpawnValue_Min[i] ).Add( "×" );
+                                    buffer.AddNumberMoreReadable( unitBag.SpawnValue_Min[i] ).Add( "脳" );
                                     break;
                                 case EntityTypeDrawingBag_SpawnMode.AIBudget:
                                     buffer.AddNumberTruncated( unitBag.SpawnValue_Min[i] ).Add( " AI budget worth" );
@@ -5270,7 +5270,7 @@ namespace Arcen.AIW2.External
             {
                 WriteAmplifierOrInhibitorCategoryStartIfNeeded( Buffer, IsAmplifier, ref WroteCategoryStart, ref NeedsSeparator );
                 WriteAmplifierOrInhibitorSubCategoryStartIfNeeded( Buffer, IsForAllies, ref wroteSubCategoryStart );
-                Buffer.StartDamageWrapper( UseIcons ).Add( attack ).Add( "×" ).EndDamageWrapper( UseText );
+                Buffer.StartDamageWrapper( UseIcons ).Add( attack ).Add( "脳" ).EndDamageWrapper( UseText );
             }
             if ( writeSpeed_Mult || writeSpeed_Flat )
             {
@@ -5278,7 +5278,7 @@ namespace Arcen.AIW2.External
                 WriteAmplifierOrInhibitorSubCategoryStartIfNeeded( Buffer, IsForAllies, ref wroteSubCategoryStart );
                 Buffer.StartSpeedWrapper( UseIcons );
                 if ( writeSpeed_Mult )
-                    Buffer.Add( speed_Mult ).Add( "×" );
+                    Buffer.Add( speed_Mult ).Add( "脳" );
                 if ( writeSpeed_Flat )
                 {
                     if ( writeSpeed_Mult )

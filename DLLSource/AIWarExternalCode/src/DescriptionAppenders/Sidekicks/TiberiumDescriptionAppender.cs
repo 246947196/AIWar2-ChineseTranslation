@@ -26,7 +26,7 @@ namespace Arcen.AIW2.External
                 TiberiumPerUnitBaseInfo data = RelatedEntityOrNull.TryGetExternalBaseInfoAs<TiberiumPerUnitBaseInfo>();
                 if ( data == null )
                 {
-                    Buffer.Add("no data");
+                    Buffer.Add("无数据");
                     return;
                 }
                 Faction faction = RelatedEntityOrNull.PlanetFaction.Faction;
@@ -35,24 +35,24 @@ namespace Arcen.AIW2.External
                     return;
                 if ( RelatedEntityTypeData.GetHasTag("TiberiumVein") )
                 {
-                    Buffer.Add("This vein has ").Add( data.Points, "ffaaff" ).Add(" points that it will spend on ").Add( data.NextUpgrade.ToFriendlyString(), "cc2277" ).Add(". ");
+                    Buffer.Add("此矿脉有 ").Add( data.Points, "ffaaff" ).Add(" 点数将用于 ").Add( data.NextUpgrade.ToFriendlyString(), "cc2277" ).Add("。" );
                     if ( data.AutoDefenseBuildPoints > 0 )
                     {
-                        Buffer.Add("The vein is also constructing ships to defend the territory around it; it has ").Add( data.AutoDefenseBuildPoints, "a1ffa1" ).Add( " defense build points." );
+                        Buffer.Add("矿脉还在建造舰船以保卫其周围领地；它有 ").Add( data.AutoDefenseBuildPoints, "a1ffa1" ).Add( " 防御建造点数。" );
                     }
                     return;
                 }
                 if ( RelatedEntityTypeData.GetHasTag("TiberiumSummoner") )
                 {
                     int seconds = data.TimeForNextSpawn - World_AIW2.Instance.GameSecond;
-                    Buffer.Add("This summoner will produce a Tyderian ship in ").Add( seconds, "a1ffa1" ).Add(" seconds." );
+                    Buffer.Add("此召唤者将在 ").Add( seconds, "a1ffa1" ).Add(" 秒后生产一艘泰德里安舰船。" );
                     return;
                 }
                 if ( RelatedEntityTypeData.GetHasTag("TiberiumDropship") )
                 {
                     Planet dest = RelatedEntityOrNull.GetDestinationPlanet();
                     if ( dest != RelatedEntityOrNull.Planet )
-                        Buffer.Add("This dropship is on route to  ").Add( dest.ToString(), "a1ffa1" ).Add("." );
+                        Buffer.Add("此运输船正在前往 ").Add( dest.ToString(), "a1ffa1" ).Add( "。" );
                     return;
                 }
 

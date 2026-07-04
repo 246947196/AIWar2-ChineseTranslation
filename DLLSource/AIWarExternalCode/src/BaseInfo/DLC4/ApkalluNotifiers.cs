@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 using UnityEngine;
@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Arcen.AIW2.External
 {
     /// <summary>
-    /// Shown when one or more Lamassus have out-of-sync modules — new ApkalluZigguratSummoner
+    /// Shown when one or more Lamassus have out-of-sync modules 鈥?new ApkalluZigguratSummoner
     /// structures were built on the Ziggurat's planet after the Lamassu was last synced.
     /// Data.EntityList contains the out-of-sync Lamassu squads.
     /// </summary>

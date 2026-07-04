@@ -28,7 +28,7 @@ namespace Arcen.AIW2.External
                 ArmadaPerUnitBaseInfo data = RelatedEntityOrNull.TryGetExternalBaseInfoAs<ArmadaPerUnitBaseInfo>();
                 if ( data == null )
                 {
-                    Buffer.Add("no data");
+                    Buffer.Add("无数据");
                     return;
                 }
                 
@@ -40,10 +40,10 @@ namespace Arcen.AIW2.External
                 if (RelatedEntityTypeData.GetHasTag("ArmadaProducer") )
                 {
                     int interval = data.ProducerNextTransportTime - World_AIW2.Instance.GameSecond;
-                    Buffer.Add("This producer will spawn a new transport in ").Add( interval, "a1ffa1" ).Add(" seconds. ");
+                    Buffer.Add("此生产者将在 ").Add( interval, "a1ffa1" ).Add(" 秒后生成新的运输船。");
                     if ( faction.StoredMetal < 5000 )
                     {
-                        Buffer.Add("Metal-Only Mode", "ff3366");
+                        Buffer.Add("仅金属模式", "ff3366");
                     }
                     return;
                 }
@@ -63,7 +63,7 @@ namespace Arcen.AIW2.External
                         if ( !printedIntro)
                         {
                             printedIntro = true;
-                            Buffer.Add("An accounting of all your empire's rangers:\n");
+                            Buffer.Add("您帝国所有游骑兵的统计：\n");
                         }
                         Buffer.Add("\t").Add(kv.Key.Name, "a1a1ff").Add(": ").Add( kv.Value, "a1ffa1" ).Add("\n");
                         continue;
@@ -75,7 +75,7 @@ namespace Arcen.AIW2.External
                 {
                     debugCode = 500;
                     int timeLeft = data.TimeForNextSwarmSummon - World_AIW2.Instance.GameSecond;
-                    Buffer.Add("This Lure will attract a new swarm of locusts in ").Add( timeLeft, "ffa1a1" ).Add(" seconds.\n");
+                    Buffer.Add("此诱饵将在 ").Add( timeLeft, "ffa1a1" ).Add(" 秒后吸引新的一群蝗虫。\n");
                     int totalLocusts = 0;
                     int totalHops = 0;
                     Dictionary<Planet, int> totalLocustsDict = globaldata.LocustsPerLure.GetDisplayDict();
@@ -95,71 +95,71 @@ namespace Arcen.AIW2.External
                     }
                     if ( totalLocusts <= 0 )
                     {
-                        Buffer.Add("No locusts are currently en route to this lure.\n");
+                        Buffer.Add("目前没有蝗虫正在前往此诱饵。\n");
                     }
                     else
                     {
                         int averageDist = totalHops / totalLocusts;
                         string proximityLabel, proximityColor;
-                        if ( averageDist <= 1 )      { proximityLabel = "arriving soon"; proximityColor = "a1ffa1"; }
-                        else if ( averageDist <= 3 ) { proximityLabel = "nearby";        proximityColor = "ccff66"; }
-                        else if ( averageDist <= 6 ) { proximityLabel = "en route";      proximityColor = "ffdd66"; }
-                        else                         { proximityLabel = "distant";        proximityColor = "ff9944"; }
-                        Buffer.Add( totalLocusts, "a1ffa1" ).Add(" locusts en route 鈥?avg. ")
-                            .Add( averageDist.ToString(), proximityColor ).Add(" planets away (")
-                            .Add( proximityLabel, proximityColor ).Add(")\n");
+                        if ( averageDist <= 1 )      { proximityLabel = "即将到达"; proximityColor = "a1ffa1"; }
+                        else if ( averageDist <= 3 ) { proximityLabel = "附近";        proximityColor = "ccff66"; }
+                        else if ( averageDist <= 6 ) { proximityLabel = "途中";      proximityColor = "ffdd66"; }
+                        else                         { proximityLabel = "遥远";        proximityColor = "ff9944"; }
+                        Buffer.Add( totalLocusts, "a1ffa1" ).Add(" 只蝗虫正在途中 — 平均 ")
+                            .Add( averageDist.ToString(), proximityColor ).Add(" 颗星球距离（")
+                            .Add( proximityLabel, proximityColor ).Add("）\n");
                     }
                 }
                 debugCode = 600;
                 if ( RelatedEntityTypeData.GetHasTag("ArmadaLocust") )
                 {
                     if ( data.LocustDestination != null )
-                        Buffer.Add("This locust is swarming to ").Add( data.LocustDestination.Name).Add(".\n");
+                        Buffer.Add("此蝗虫正 swarm 向 ").Add( data.LocustDestination.Name).Add("。\n");
                     else
-                        Buffer.Add("This locust has gone wild.\n");
+                        Buffer.Add("此蝗虫已失控。\n");
                 }
                 debugCode = 700;
                 if ( RelatedEntityTypeData.GetHasTag("ArmadaMine") )
                 {
                     int timeLeft = data.MineFinishTime - World_AIW2.Instance.GameSecond;
-                    Buffer.Add("This mine will be finished in  ").Add( timeLeft ).Add(" seconds.\n");
+                    Buffer.Add("此矿井将在 ").Add( timeLeft ).Add(" 秒后完成。\n");
                 }
                 debugCode = 800;
                 if ( RelatedEntityTypeData.GetHasTag("ArmadaTransport") )
                 {
-                    Buffer.Add("Transporting resources from a mine. ");
+                    Buffer.Add("正在从矿井运输资源。");
                     if ( data.MetalTransported > 0 )
-                        Buffer.Add("This transport has " ).Add( data.MetalTransported, "ccccee" ).Add(" Metal. ");
+                        Buffer.Add("此运输船携带 " ).Add( data.MetalTransported, "ccccee" ).Add(" 金属。" );
                     if ( data.ScienceTransported > 0 )
-                        Buffer.Add("This transport has " ).Add( data.ScienceTransported, "7CE9FF" ).Add(" Science. ");
+                        Buffer.Add("此运输船携带 " ).Add( data.ScienceTransported, "7CE9FF" ).Add(" 科技。" );
                     if ( data.HackingTransported > 0 )
-                        Buffer.Add("This transport has " ).Add( data.HackingTransported, "dd3377" ).Add(" Hacking. ");
+                        Buffer.Add("此运输船携带 " ).Add( data.HackingTransported, "dd3377" ).Add(" 黑客。" );
                     if ( data.TiberiumTransported > 0 )
-                        Buffer.Add("This transport has " ).Add(data.TiberiumTransported.ToString(), RelatedEntityOrNull.PlanetFaction.Faction.Resource1Color).Add(" Tiberium. ");
+                        Buffer.Add("此运输船携带 " ).Add(data.TiberiumTransported.ToString(), RelatedEntityOrNull.PlanetFaction.Faction.Resource1Color).Add(" 钛矿。" );
 
                 }
                 debugCode = 900;
                 if ( RelatedEntityTypeData.KillsToTriggerTransformation > 0 )
                 {
-                    Buffer.Add(" This fleet has killed ").Add( data.UnitsKilled, "a1ffa1" ).Add(" units; after it kills ").Add( RelatedEntityTypeData.KillsToTriggerTransformation, "ffa1a1" ).Add(" then we will transform into ").Add(RelatedEntityTypeData.TransformAfterKills.GetDisplayName()).Add(". ");
+                    Buffer.Add(" 此舰队已击杀 ").Add( data.UnitsKilled, "a1ffa1" ).Add(" 个单位；在击杀 ").Add( RelatedEntityTypeData.KillsToTriggerTransformation, "ffa1a1" ).Add(" 个后将变形为 ").Add(RelatedEntityTypeData.TransformAfterKills.GetDisplayName()).Add("。");
                 }
                 debugCode = 1000;
                 if ( RelatedEntityTypeData.GetHasTag("ArmadaStarbase") && data != null )//&& detailLevel >= TooltipDetail.Full)
                 {
                     if ( data.RangerMetal > 0 && data.DireRangerMetal > 0 )
                     {
-                        Buffer.Add("<size=80%>We have ").Add( data.RangerMetal, "999999" ).Add(" ranger metal and ").Add( data.DireRangerMetal, "999999" ).Add(" dire ranger metal.</size> ");  
+                        Buffer.Add("<size=80%>我们拥有 ").Add( data.RangerMetal, "999999" ).Add(" 游骑兵金属和 ").Add( data.DireRangerMetal, "999999" ).Add(" 精英游骑兵金属。</size> ");  
                     }
                     else if ( data.RangerMetal > 0 )
-                        Buffer.Add("<size=80%>We have ").Add( data.RangerMetal, "999999" ).Add(" metal to spend on a Ranger.</size> ");
+                        Buffer.Add("<size=80%>我们拥有 ").Add( data.RangerMetal, "999999" ).Add(" 金属用于建造游骑兵。</size> ");
                     else if ( data.DireRangerMetal > 0 )
-                        Buffer.Add("<size=80%>We have ").Add( data.DireRangerMetal, "999999" ).Add(" metal to spend on a Dire Ranger.</size> ");
+                        Buffer.Add("<size=80%>我们拥有 ").Add( data.DireRangerMetal, "999999" ).Add(" 金属用于建造精英游骑兵。</size> ");
                     if ( data.DireRangerMetal > 0 || data.RangerMetal > 0)
                         Buffer.Add("\n");
                     if ( globaldata.RangersPerStarbase.GetDisplayDict()[RelatedEntityWrapper] > 0 )
-                        Buffer.Add("<size=80%>Currently supporting ").Add( globaldata.RangersPerStarbase.GetDisplayDict()[RelatedEntityWrapper], "999999" ).Add(" of " ).Add( data.RangerCap, "a1ffa1" ).Add(" rangers defending this starbase.</size> ");
+                        Buffer.Add("<size=80%>当前支持 ").Add( globaldata.RangersPerStarbase.GetDisplayDict()[RelatedEntityWrapper], "999999" ).Add(" / " ).Add( data.RangerCap, "a1ffa1" ).Add(" 游骑兵防御此星堡。</size> ");
                     if ( globaldata.DireRangersPerStarbase.GetDisplayDict()[RelatedEntityWrapper] > 0 )
-                        Buffer.Add("<size=80%>Currently supporting ").Add( globaldata.DireRangersPerStarbase.GetDisplayDict()[RelatedEntityWrapper], "999999" ).Add(" of " ).Add( data.DireRangerCap, "a1ffa1" ).Add(" dire rangers defending this starbase.</size> ");
+                        Buffer.Add("<size=80%>当前支持 ").Add( globaldata.DireRangersPerStarbase.GetDisplayDict()[RelatedEntityWrapper], "999999" ).Add(" / " ).Add( data.DireRangerCap, "a1ffa1" ).Add(" 精英游骑兵防御此星堡。</size> ");
                     if ( globaldata.RangersPerStarbase.GetDisplayDict()[RelatedEntityWrapper] > 0 ||  globaldata.DireRangersPerStarbase.GetDisplayDict()[RelatedEntityWrapper] > 0 )
                         Buffer.Add("\n");
                 }

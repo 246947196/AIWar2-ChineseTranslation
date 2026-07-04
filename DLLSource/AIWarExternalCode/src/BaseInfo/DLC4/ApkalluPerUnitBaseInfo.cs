@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -16,7 +16,7 @@ namespace Arcen.AIW2.External
         public int ResourcePoints;    // for Pilgrims
         public readonly List<Int16> PlanetsVisitedIdx = List<Int16>.Create_WillNeverBeGCed( 16, "ApkalluPerUnit-PlanetsVisitedIdx" );
 
-        // Not Serialized — rebuilt from PlanetsVisitedIdx on deserialize
+        // Not Serialized 鈥?rebuilt from PlanetsVisitedIdx on deserialize
         public readonly List<Planet> PlanetsVisited = List<Planet>.Create_WillNeverBeGCed( 16, "ApkalluPerUnit-PlanetsVisited" );
         public Planet HomePlanet;
         public Planet LocustDestination;

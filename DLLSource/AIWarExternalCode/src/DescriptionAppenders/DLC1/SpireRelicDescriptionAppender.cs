@@ -16,9 +16,9 @@ namespace Arcen.AIW2.External
             FallenSpirePerUnitBaseInfo data = RelatedEntityOrNull.TryGetExternalBaseInfoAs<FallenSpirePerUnitBaseInfo>();
             if ( data.DestinationPlanet != null &&
                  data.DestinationPlanet != RelatedEntityOrNull.Planet )
-                Buffer.Add( "This relic is en route to " ).Add( data.DestinationPlanet.Name ).Add( "." );
+                Buffer.Add( "此遗物正在前往 " ).Add( data.DestinationPlanet.Name ).Add( " 的途中。" );
             if ( data.MustBuildOnStartPlanet )
-                Buffer.Add( "This relics power supply was crippled by the AI, and must build a Spire City on this planet." );
+                Buffer.Add( "此遗物的能源供应已被AI破坏，必须在此星球上建造一座尖塔城市。" );
         }
     }
 }

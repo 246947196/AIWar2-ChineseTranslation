@@ -1,4 +1,4 @@
-
+﻿
 using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
@@ -1020,7 +1020,7 @@ namespace Arcen.AIW2.External
                     buffer
                         .Add( " at " )
                         .Open(TextTerm.Speed, TermUse.Color)
-                        .AddNumber( Squad.TypeData.DegreesToOrbitPerSecond, "°/s", TextStyle.Empty )
+                        .AddNumber( Squad.TypeData.DegreesToOrbitPerSecond, "掳/s", TextStyle.Empty )
                         .Close(TextTerm.Speed);
                     
                     int range = 0;

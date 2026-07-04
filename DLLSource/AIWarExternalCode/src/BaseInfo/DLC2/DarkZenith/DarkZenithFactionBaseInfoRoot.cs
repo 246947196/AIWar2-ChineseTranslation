@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -1397,7 +1397,7 @@ namespace Arcen.AIW2.External
                         }
                     }
                 }
-                buffer.Add( "── Economy Summary ──────────────────\n" );
+                buffer.Add( "鈹€鈹€ Economy Summary 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€\n" );
                 buffer.Add( "Epistyles: " ).Add( epistyles.Count ).Add( " total" );
                 if ( nOffense > 0 ) buffer.Add( "  " ).Add( nOffense ).Add( " Offense", "ffa1a1" );
                 if ( nUtility > 0 ) buffer.Add( "  " ).Add( nUtility ).Add( " Utility", "22a188" );
@@ -1407,7 +1407,7 @@ namespace Arcen.AIW2.External
                 buffer.Add( "\n" );
                 if ( nStarved > 0 )
                 {
-                    buffer.Add( "Starved: " ).Add( nStarved, "ffaa44" ).Add( " Epistyle(s) waiting — " );
+                    buffer.Add( "Starved: " ).Add( nStarved, "ffaa44" ).Add( " Epistyle(s) waiting 鈥?" );
                     bool firstRes = true;
                     for ( int r = 1; r < (int)DZResource.End; r++ )
                     {
@@ -1423,7 +1423,7 @@ namespace Arcen.AIW2.External
                 {
                     buffer.Add( "All Epistyles have resources to proceed\n", "a1ffa1" );
                 }
-                buffer.Add( "─────────────────────────────────────\n" );
+                buffer.Add( "鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€\n" );
 
                 debugCode = 100;
                 int nLoaded = 0, nTransEmpty = 0;

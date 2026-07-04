@@ -24,15 +24,15 @@ namespace Arcen.AIW2.External
                  train.GetIsHostileTowards_Safe( RelatedEntityOrNull.PlanetFaction.Faction ) )
             {
                 debugCode = 300;
-                Buffer.Add( "姝ゆ姢鍗墍淇濇姢鐨勭伀杞﹀凡鎽ф瘉锛屽洜姝よ鎶ゅ崼姝ｅ湪鎹熻€椼€? );
+                Buffer.Add( "此护卫所保护的火车已摧毁，因此该护卫正在损耗。" );
                 return;
             }
             else
             {
                 debugCode = 400;
-                Buffer.Add( "姝ｅ湪 " + train.GetPlanetName_Safe() + " 涓婃姢鍗?" + train.TypeData.GetDisplayName() + "銆? );
+                Buffer.Add( "正在 " + train.GetPlanetName_Safe() + " 上护卫" + train.TypeData.GetDisplayName() + "。" );
                 if ( train.Planet != RelatedEntityOrNull.Planet )
-                    Buffer.Add( "姝ゅ崟浣嶆鍦ㄦ崯鑰楋紝鍥犱负瀹冧笌鍏舵墍鎶ゅ崼鐨勭伀杞︿笉鍦ㄥ悓涓€鏄熺悆涓娿€? );
+                    Buffer.Add( "此单位正在损耗，因为它与其所护卫的火车不在同一星球上。" );
             }
             } catch ( Exception e )
             {

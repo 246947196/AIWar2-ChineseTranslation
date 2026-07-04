@@ -37,7 +37,7 @@ namespace Arcen.AIW2.External
                         // On a friendly planet, waiting to warp out.
                         int timeLeft = migrantImp.MigrantSafeTimeLeftUntilWarpingOutOfGalaxy( RelatedEntityOrNull, migrantImp.GetButDoNotStartMigrantSafetyTimer( RelatedEntityOrNull ) );
 
-                        Buffer.Add( "This Migrant has returned to your galaxy yet again, and is safe in your territory after its journey from " ).AddPlanetNameFormated( originPlanet, false ).EndColor().Add( ". It will assist in repelling attacks on this planet before warping out in " ).AddSecondsRemaining( timeLeft ).Add( ". Any damage it takes will interrupt its warp process, and it will need to fully repair before beginning anew." );
+                        Buffer.Add( "此移民再次返回您的星系，在从 " ).AddPlanetNameFormated( originPlanet, false ).EndColor().Add( " 旅程后，它在您的领地内安全。它将在此星球上协助击退攻击，然后在 " ).AddSecondsRemaining( timeLeft ).Add( " 后传送离开。任何伤害都会中断其传送过程，它需要完全修复后才能重新开始。" );
                     }
                     else
                     {
@@ -46,14 +46,14 @@ namespace Arcen.AIW2.External
 
                         Planet nextPlanet = migrantImp.GetNextPlanetToMoveToToReachFriendlies( RelatedEntityOrNull, friendlyTerritory );
 
-                        Buffer.Add( "This Migrant has returned to your galaxy yet again, and needs no guidance to reach your territory. It spawned in on " ).AddPlanetNameFormated( originPlanet, false ).EndColor();
+                        Buffer.Add( "此移民再次返回您的星系，无需引导即可到达您的领地。它在 " ).AddPlanetNameFormated( originPlanet, false ).EndColor( " 生成。" );
                         if ( timeLeft > 0 )
                         {
-                            Buffer.StartColor( "66ffef" ).Add( " and will be moving to " ).AddPlanetNameFormated( nextPlanet, false ).EndColor().StartColor( "66ffef" ).Add( " in " ).AddSecondsRemaining( timeLeft ).EndColor();
+                                    Buffer.StartColor( "66ffef" ).Add( " 并将移动到 " ).AddPlanetNameFormated( nextPlanet, false ).EndColor().StartColor( "66ffef" ).Add( "，耗时 " ).AddSecondsRemaining( timeLeft ).EndColor();
                         }
                         else
                         {
-                            Buffer.StartColor( "66ffef" ).Add( " and is moving to " ).AddPlanetNameFormated( nextPlanet, false ).EndColor();
+                                    Buffer.StartColor( "66ffef" ).Add( " 并正在移动到 " ).AddPlanetNameFormated( nextPlanet, false ).EndColor();
                         }
                     }
                 }
@@ -65,7 +65,7 @@ namespace Arcen.AIW2.External
                         // On a friendly planet, waiting to warp out.
                         int timeLeft = migrantImp.MigrantSafeTimeLeftUntilWarpingOutOfGalaxy( RelatedEntityOrNull, migrantImp.GetButDoNotStartMigrantSafetyTimer( RelatedEntityOrNull ) );
 
-                        Buffer.Add( "This Migrant has managed to safely reach your territory, and is now safe since starting its journey from " ).AddPlanetNameFormated( originPlanet, false ).EndColor().Add( ". It will assist in repelling attacks on this planet before warping out in " ).AddSecondsRemaining( timeLeft ).Add( ". Any damage it takes will interrupt its warp process, and it will need to fully repair before beginning anew." );
+                        Buffer.Add( "此移民已安全到达您的领地，自从从 " ).AddPlanetNameFormated( originPlanet, false ).EndColor().Add( " 开始旅程以来一直安全。它将在此星球上协助击退攻击，然后在 " ).AddSecondsRemaining( timeLeft ).Add( " 后传送离开。任何伤害都会中断其传送过程，它需要完全修复后才能重新开始。" );
                     }
                     else
                     {
@@ -78,27 +78,27 @@ namespace Arcen.AIW2.External
                             if ( currentMovingToOrNull == null || currentMovingToOrNull == nextPlanet )
                             {
                                 // On a neutral or hostile planet, guided by allies.
-                                Buffer.StartColor( "66ffef" ).Add( "Due to your military advantage on this planet, you are guiding this Migrant on its journey, slowly herding it towards friendly space. It spawned in on " ).AddPlanetNameFormated( originPlanet, false ).EndColor();
+                                Buffer.StartColor( "66ffef" ).Add( "由于您在此星球上的军事优势，您正在引导此移民的旅程，缓慢将其驱向友好空间。它在 " ).AddPlanetNameFormated( originPlanet, false ).EndColor( " 生成。" );
                                 if ( timeLeft > 0 )
                                 {
-                                    Buffer.StartColor( "66ffef" ).Add( " and will be moving to " ).AddPlanetNameFormated( nextPlanet, false ).EndColor().StartColor( "66ffef" ).Add( " in " ).AddSecondsRemaining( timeLeft ).EndColor();
+                            Buffer.StartColor( "66ffef" ).Add( " 并将移动到 " ).AddPlanetNameFormated( nextPlanet, false ).EndColor().StartColor( "66ffef" ).Add( "，耗时 " ).AddSecondsRemaining( timeLeft ).EndColor();
                                 }
                                 else
                                 {
-                                    Buffer.StartColor( "66ffef" ).Add( " and is moving to " ).AddPlanetNameFormated( nextPlanet, false ).EndColor();
+                            Buffer.StartColor( "66ffef" ).Add( " 并正在移动到 " ).AddPlanetNameFormated( nextPlanet, false ).EndColor();
                                 }
                             }
                             else
                             {
                                 // On a neutral or hostile planet, with recent ally control
                                 // The Migrant is currently running and will not respond.
-                                Buffer.StartColor( "e79553" ).Add( "This Migrant is new to this galaxy. Due to being recently threatened by hostiles, it is currently attempting to flee to " ).AddPlanetNameFormated( currentMovingToOrNull, false ).EndColor().Add( ". If you gain a military advantage on that planet before it flees again, you will be able to slowly guide it back to your territory for safe keeping. It originally warped in on " ).AddPlanetNameFormated( originPlanet, false ).EndColor().Add( "." ).EndColor();
+                                Buffer.StartColor( "e79553" ).Add( "此移民是星系新成员。由于最近受到敌对势力威胁，它正试图逃往 " ).AddPlanetNameFormated( currentMovingToOrNull, false ).EndColor().Add( "。如果您在它再次逃跑前获得该星球的军事优势，您将能够慢慢将其引导回您的领地进行安全保管。它最初在 " ).AddPlanetNameFormated( originPlanet, false ).EndColor().Add( " 生成。" ).EndColor();
                             }
                         }
                         else
                         {
                             // On a neutral or hostile planet, no idea where to go.
-                            Buffer.StartColor( "e79553" ).Add( "This Migrant is new to this galaxy and is randomly wandering around. If you gain a military advantage on this planet, you will be able to slowly guide it back to your territory for safe keeping. It originally warped in on " ).AddPlanetNameFormated( originPlanet, false ).EndColor().Add( " ." ).EndColor();
+                            Buffer.StartColor( "e79553" ).Add( "此移民是星系新成员，正在随机游荡。如果您获得此星球的军事优势，您将能够慢慢将其引导回您的领地进行安全保管。它最初在 " ).AddPlanetNameFormated( originPlanet, false ).EndColor().Add( " 生成。" ).EndColor();
                         }
                     }
                 }

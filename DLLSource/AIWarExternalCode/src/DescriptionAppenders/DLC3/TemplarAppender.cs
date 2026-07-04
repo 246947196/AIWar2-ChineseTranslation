@@ -37,20 +37,20 @@ namespace Arcen.AIW2.External
                     if ( data.TimeTillmarkUp > 0 )
                     {
                         string color = ArcenExternalUIUtilities.GetColorForNomadMoveTime( data.TimeTillmarkUp );
-                        Buffer.Add( "This structure will mark up in " ).Add( data.TimeTillmarkUp.ToString(), color ).Add( ". " );
+                        Buffer.Add( "此结构将在 " ).Add( data.TimeTillmarkUp.ToString(), color ).Add( " 秒后升级。" );
                     }
                     if ( data.TimeTillSpawnNextConstructor > 0 )
                     {
                         string color = ArcenExternalUIUtilities.GetColorForNomadMoveTime( data.TimeTillSpawnNextConstructor );
-                        Buffer.Add( "This structure is able to build new fortifications in " ).Add( data.TimeTillSpawnNextConstructor.ToString(), color ).Add( ". " );
+                        Buffer.Add( "此结构能够在 " ).Add( data.TimeTillSpawnNextConstructor.ToString(), color ).Add( " 秒后建造新的防御工事。" );
                     }
                     if ( debug )
-                        Buffer.Add( "This structure's available metal is " ).Add( data.MetalStored, "a1a1ff" ).Add( ". " );
-                    Buffer.Add( "This " ).Add( RelatedEntityTypeData.GetDisplayName() ).Add( " has the following inside: " );
+                        Buffer.Add( "此结构可用金属为 " ).Add( data.MetalStored, "a1a1ff" ).Add( "。" );
+                    Buffer.Add( "此 " ).Add( RelatedEntityTypeData.GetDisplayName() ).Add( " 内部有：" );
                     Buffer.Add( data.ShipsInside_ForUI );
 
                     if ( data.PlanetCastleWantsToHelp != null )
-                        Buffer.Add( "This unit would like to help defend " ).Add( data.PlanetCastleWantsToHelp.Name, "a1ffa1" ).Add( ". " );
+                        Buffer.Add( "此单位希望协助防御 " ).Add( data.PlanetCastleWantsToHelp.Name, "a1ffa1" ).Add( "。" );
                 }
                 
                 if ( data.DefenseMode && RelatedEntityTypeData.IsMobileCombatant )
@@ -58,13 +58,13 @@ namespace Arcen.AIW2.External
                     GameEntity_Squad castle = data.HomeCastle.GetSquad();
                     if ( castle != null )
                     {
-                        Buffer.Add( "This ship is dispatched from the " ).Add( castle.TypeData.GetDisplayName(), "a1ffa1" ).Add( " on " ).Add( castle.Planet.Name, "ffa1a1" );
+                        Buffer.Add( "此舰船从 " ).Add( castle.TypeData.GetDisplayName(), "a1ffa1" ).Add( " 调度，在 " ).Add( castle.Planet.Name, "ffa1a1" );
                         TemplarPerUnitBaseInfo castleData = castle.TryGetExternalBaseInfoAs<TemplarPerUnitBaseInfo>();
                         Planet defensePlanet = null;
                         if ( castleData != null )
                             defensePlanet = castleData.PlanetCastleWantsToHelp;
                         if ( defensePlanet != null )
-                            Buffer.Add( " to defend " ).Add( defensePlanet.Name, "ffa1a1" ).Add( ". " );
+                            Buffer.Add( " 防御 " ).Add( defensePlanet.Name, "ffa1a1" ).Add( "。" );
                         else
                             Buffer.Add( ". " );
 
@@ -75,19 +75,19 @@ namespace Arcen.AIW2.External
                     Planet destPlanet = World_AIW2.Instance.GetPlanetByIndex( (short)data.PlanetIdx );
                     if ( destPlanet != null && data.UnitToBuild != null )
                     {
-                        Buffer.Add( "This constructor will build a " ).Add( data.UnitToBuild.GetDisplayName(), "a1ffa1" ).Add( " on " ).Add( destPlanet.Name, "a1a1ff" ).Add( "\n" );
+                        Buffer.Add( "此建造者将在 " ).Add( destPlanet.Name, "a1a1ff" ).Add( " 建造 " ).Add( data.UnitToBuild.GetDisplayName(), "a1ffa1" ).Add( "\n" );
                     }
                     else
                     {
-                        Buffer.Add( "This constructor has no build target?!\n" );
+                        Buffer.Add( "此建造者没有建造目标？！\n" );
                     }
                 }
                 else if ( RelatedEntityTypeData.IsCombatant && RelatedEntityTypeData.IsMobileCombatant )
-                    Buffer.Add( "This ship is dispatched to attack the players. " );
+                    Buffer.Add( "此舰船被调度攻击玩家。" );
 
                 if ( data.StrengthRalliedToWave > 0 && debug )
                 {
-                    Buffer.Add( "This ship has rallied " ).Add( data.StrengthRalliedToWave, "a1ffa1" ).Add(" strength.");
+                    Buffer.Add( "此舰船已集结 " ).Add( data.StrengthRalliedToWave, "a1ffa1" ).Add( " 战力。" );
                 }
             }
             catch ( Exception ) { }

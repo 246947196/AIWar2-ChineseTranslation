@@ -1,4 +1,4 @@
-
+﻿
 using System;
 using Arcen.Universal;
 using Arcen.AIW2.Core;
@@ -814,7 +814,7 @@ namespace Arcen.AIW2.External
                                                 {
                                                     buffer
                                                         .AddNumber(type.BeamChainsOutToTargetMinRange, null, TextStyle.Empty)
-                                                        .Add(" » ")
+                                                        .Add(" 禄 ")
                                                         .AddNumber(type.BeamChainsOutToTargetsXRange, null, TextStyle.Empty);
                                                 }, 
                                             null, TextTerm.Range, TermUse.Name, null );
@@ -1859,7 +1859,7 @@ namespace Arcen.AIW2.External
 
                     buffer
                         .Add(" Slow enemies ")
-                        .AddNumber( Type.GravityHitsEngine_gxLessThan, " ≤", TextTerm.Engine_gX, TermUse.Icon )
+                        .AddNumber( Type.GravityHitsEngine_gxLessThan, " 鈮?, TextTerm.Engine_gX, TermUse.Icon )
                         .Add(" by ")
                         .AddNumber(
                             ()=> buffer.AddMultiplier(system.DataForMark.GravitySpeedMultiplier, TextStyle.Empty),
@@ -2050,7 +2050,7 @@ namespace Arcen.AIW2.External
                     
                     //if ( Type.CanDevour )
                     //{
-                    //    buffer.WrapDamage( Type.DevourFunctionName, false, false ).Add(" if ").Open(TextTerm.Mass_tX, TermUse.Icon).Add("≤").Close(TextTerm.Mass_tX);
+                    //    buffer.WrapDamage( Type.DevourFunctionName, false, false ).Add(" if ").Open(TextTerm.Mass_tX, TermUse.Icon).Add("鈮?).Close(TextTerm.Mass_tX);
                     //}
                     //else 
                     if ( Type.IonDamageToAlbedoLessThan > FInt.Zero )
@@ -2086,7 +2086,7 @@ namespace Arcen.AIW2.External
                         
                         buffer.Add(" ").Open(TextStyle.Color_Count).Add(Text.Multiply).Add(count_min);
                         if (dps_min != dps_max)
-                            buffer.Add(" » ").Add(count_max);
+                            buffer.Add(" 禄 ").Add(count_max);
                         buffer.Close(TextStyle.Color_Count);
                         
                         buffer.Add(" ").Open(TextStyle.Number_Units).Open(TextTerm.Reload, TermUse.Color);
@@ -2102,7 +2102,7 @@ namespace Arcen.AIW2.External
                         buffer.Open( TextTerm.Damage, TermUse.Icon, TextStyle.Empty );
                         buffer.AddNumber( dps_min, null, TextStyle.Empty );
                         if (dps_min != dps_max)
-                            buffer.Add(" » ").AddNumber( dps_max, null, TextStyle.Empty );
+                            buffer.Add(" 禄 ").AddNumber( dps_max, null, TextStyle.Empty );
                         buffer.Close( TextTerm.Damage );
                         
                         buffer.Add( " on " ).WrapReload( "Death", false, false );
@@ -2113,7 +2113,7 @@ namespace Arcen.AIW2.External
                         buffer.Open( TextTerm.Damage, TermUse.Icon, TextStyle.Empty );
                         buffer.AddNumber( dps_min, null, TextStyle.Empty );
                         if (dps_min != dps_max)
-                            buffer.Add(" » ").AddNumber( dps_max, null, TextStyle.Empty );
+                            buffer.Add(" 禄 ").AddNumber( dps_max, null, TextStyle.Empty );
                         buffer.Close( TextTerm.Damage );
                         
                         buffer.Add( " on " ).WrapReload( "Hit", false, false );
@@ -2124,7 +2124,7 @@ namespace Arcen.AIW2.External
                         if (dps_min == dps_max)
                             buffer.AddNumber( dps_min, null, TextStyle.Empty ).Add(" /sec", TextStyle.Fraction_Gray);
                         else
-                            buffer.AddNumber( dps_min, null, TextStyle.Empty ).Add(" » ").AddNumber( dps_max, null, TextStyle.Empty ).Add(" /sec", TextStyle.Fraction_Gray);
+                            buffer.AddNumber( dps_min, null, TextStyle.Empty ).Add(" 禄 ").AddNumber( dps_max, null, TextStyle.Empty ).Add(" /sec", TextStyle.Fraction_Gray);
                         buffer.Close( TextTerm.DPS );
                     }
                     

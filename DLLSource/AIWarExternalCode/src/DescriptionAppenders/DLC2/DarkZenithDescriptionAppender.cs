@@ -24,12 +24,12 @@ namespace Arcen.AIW2.External
                     if ( transportData.Destination != RelatedEntityOrNull )
                         continue;
                     if ( inboundCount == 0 )
-                        Buffer.Add( "\n鍏ョ珯杩愯緭鑸癸細\n" );
+                        Buffer.Add( "\n入站运输船：\n" );
                     inboundCount++;
                     if ( ship.Planet == RelatedEntityOrNull.Planet )
-                        Buffer.Add( "\t- 鏈槦鐞冧笂鐨勮繍杈撹埞\n" );
+                        Buffer.Add( "\t- 本星球上的运输船\n" );
                     else
-                        Buffer.Add( "\t- 浣嶄簬 " ).Add( ship.GetPlanetName_Safe(), "066006" ).Add( " 鐨勮繍杈撹埞\n" );
+                        Buffer.Add( "\t- 位于 " ).Add( ship.GetPlanetName_Safe(), "066006" ).Add( " 的运输船\n" );
                 }
             }
             catch { }
@@ -49,17 +49,17 @@ namespace Arcen.AIW2.External
             if ( RelatedEntityTypeData.KillsToTriggerTransformation > 0 )
             {
                 //Only for the sidekick
-                Buffer.Add(" 姝よ埌闃熷凡鍑绘潃 ").Add( data.UnitsKilled, "a1ffa1" ).Add(" 涓崟浣嶏紱鍦ㄥ嚮鏉€ ").Add( RelatedEntityTypeData.KillsToTriggerTransformation, "ffa1a1" ).Add(" 涓悗灏嗗彉褰负 ").Add(RelatedEntityTypeData.TransformAfterKills.GetDisplayName(), "ff22ff").Add("銆?);
+                Buffer.Add(" 此舰队已击杀 ").Add( data.UnitsKilled, "a1ffa1" ).Add(" 个单位；在击杀 ").Add( RelatedEntityTypeData.KillsToTriggerTransformation, "ffa1a1" ).Add(" 个后将变形为 ").Add(RelatedEntityTypeData.TransformAfterKills.GetDisplayName(), "ff22ff").Add("。");
                 if ( data.Inventory != null && DarkZenithFactionBaseInfo.ResourceColour != null)
                 {
-                    FactionUtilityMethods.Instance.PrintDZDictionary( data.Inventory, ref Buffer, "Flagship Resources" );
+                    FactionUtilityMethods.Instance.PrintDZDictionary( data.Inventory, ref Buffer, "旗舰资源" );
                 }
                 return;
             }
 
             if ( data.Inventory == null || DarkZenithFactionBaseInfo.ResourceColour == null )
             {
-                Buffer.Add( "璇锋殏鍋滄父鎴忎互鏌ョ湅鍏充簬姝ゅ崟浣嶇殑鏇村淇℃伅銆? );
+                Buffer.Add( "请暂停游戏以查看关于此单位的更多信息。" );
                 return;
             }
             int debugCode = 0;
@@ -82,7 +82,7 @@ namespace Arcen.AIW2.External
                 {
                     int timeTillConversion = diff.TimeToConvertPlanet - RelatedEntityOrNull.GetSecondsSinceEnteringThisPlanet();
                     string timerColor = ArcenExternalUIUtilities.GetColorForNomadMoveTime( timeTillConversion ); //timerColor gets more red the closer the planet is to succumbing
-                    Buffer.Add( "姝ゆ槦鐞冨皢鍦?" ).AddHoursAndMinutes( timeTillConversion, timerColor ).Add( " 鍚庤鍐板皝銆傞樆姝㈠彉褰㈢殑鍞竴鏂规硶鏄懅姣侀偅閲岀殑甯屽皵绾炽€? ).Add( "\n" );
+                    Buffer.Add( "此星球将�" ).AddHoursAndMinutes( timeTillConversion, timerColor ).Add( " 后被冰封。阻止变形的唯一方法是摧毁那里的希尔纳。" ).Add( "\n" );
                     return;
                 }
                 if ( data.IsJormugandr &&
@@ -90,15 +90,15 @@ namespace Arcen.AIW2.External
                 {
                     if ( data.IsDormant )
                     {
-                        Buffer.Add( "杩欎釜榄斿儚浼间箮姝ｅ湪浼戠湢銆傚笇鏈涙病鏈変粈涔堣兘鍞ら啋瀹?.." );
+                        Buffer.Add( "这个魔像似乎正在休眠。希望没有什么能唤醒它..." );
                         if ( debug )
-                            Buffer.Add( " 榄斿儚灏嗗湪 " ).AddHoursAndMinutes( data.SecondsUntilDormancyMove ).Add( " 鍚庡啀娆＄Щ鍔ㄣ€? );
+                            Buffer.Add( " 魔像将在 " ).AddHoursAndMinutes( data.SecondsUntilDormancyMove ).Add( " 后再次移动。" );
                     }
                     else
                     {
-                        Buffer.Add( "姝ら瓟鍍忓凡鏆存€掑苟姝ｅ湪鐜囬瀵规槦绯荤殑杩涙敾銆? );
+                        Buffer.Add( "此魔像已暴怒并正在率领对星系的进攻。" );
                         if ( debug )
-                            Buffer.Add( " 榄斿儚灏嗕繚鎸佹椿璺?" ).AddHoursAndMinutes( data.SecondsRemaingActive ).Add( "銆? );
+                            Buffer.Add( " 魔像将保持活跃 " ).AddHoursAndMinutes( data.SecondsRemaingActive ).Add( "。" );
                     }
 
                     return;
@@ -115,14 +115,14 @@ namespace Arcen.AIW2.External
                         if ( data.Unit != null )
                         {
                             if ( data.Unit.GetHasTag( "DZHarvester" ) )
-                                Buffer.Add( "缁堢偣绔欐鍦ㄥ缓閫犲叾鍒濆閲囬泦鍣ㄣ€?, "ffa100" );
+                                Buffer.Add( "终点站正在建造其初始采集器。", "ffa100" );
                             else
-                                Buffer.Add( "缁堢偣绔欐鍦ㄩ€氳繃寤洪€?", "ffa100" ).Add( data.NextConversion.Unit.GetDisplayName(), "a1a1ff" );
+                                Buffer.Add( "终点站正在通过建�", "ffa100" ).Add( data.NextConversion.Unit.GetDisplayName(), "a1a1ff" );
                         }
                     }
                     else
                     {
-                        Buffer.Add( "涓嬩竴涓皢瑕佸垱寤虹殑锛? );
+                        Buffer.Add( "下一个将要创建的�" );
                         data.NextConversion.ToBuffer( Buffer );
                     }
                 }
@@ -134,12 +134,12 @@ namespace Arcen.AIW2.External
                 }
                 else
                 {
-                    FactionUtilityMethods.Instance.PrintDZDictionary( data.Inventory, ref Buffer, "搴撳瓨" );
+                    FactionUtilityMethods.Instance.PrintDZDictionary( data.Inventory, ref Buffer, "库存" );
                     AddInboundTransportsToBuffer( RelatedEntityOrNull, globaldata, Buffer );
                 }
                 debugCode = 210;
                 if ( data.HasAnyPermanentBonusIncome() )
-                    FactionUtilityMethods.Instance.PrintDZDictionary( data.PermanentBonusIncome, ref Buffer, "姘镐箙棰濆鏀跺叆" );
+                    FactionUtilityMethods.Instance.PrintDZDictionary( data.PermanentBonusIncome, ref Buffer, "永久额外收入" );
                 debugCode = 220;
                 if ( debug )
                 {
@@ -205,9 +205,9 @@ namespace Arcen.AIW2.External
                 if (data.IsPirateEpistyle)
                 {
                     if ( data.TimeForNextPrivateer < World_AIW2.Instance.GameSecond)
-                        Buffer.Add("鍟婂搱锛岃繖鏄竴鑹樻捣鐩楁棗鑸般€傚畠灏嗘淳鍑虹鎺犺埞鍔寔杩囧線杩愯緭鑸圭殑璧勬簮銆傚畠寰堝揩灏变細娲惧嚭绉佹帬鑸广€俓n");
+                        Buffer.Add("啊哈，这是一艘海盗旗舰。它将派出私掠船劫持过往运输船的资源。它很快就会派出私掠船。\n");
                     else
-                        Buffer.Add("鍟婂搱锛岃繖鏄竴鑹樻捣鐩楁棗鑸般€傚畠灏嗘淳鍑虹鎺犺埞鍔寔杩囧線杩愯緭鑸圭殑璧勬簮銆傝窛绂讳笅娆＄鎺犺埞锛?).Add( (data.TimeForNextPrivateer - World_AIW2.Instance.GameSecond), "a1ffa1" ).Add(" 绉掋€俓n");
+                        Buffer.Add("啊哈，这是一艘海盗旗舰。它将派出私掠船劫持过往运输船的资源。距离下次私掠船�").Add( (data.TimeForNextPrivateer - World_AIW2.Instance.GameSecond), "a1ffa1" ).Add(" 秒。\n");
                 }
                 if ( debug && data.IsJormugandr )
                 {
@@ -216,15 +216,15 @@ namespace Arcen.AIW2.External
                 }
                 if ( data.CanBuildInfrastructure || data.CanBuildOffensiveUnits || data.CanBuildUpgrades || data.CanBuildUtility )
                 {
-                    Buffer.Add( " 姝ゅ崟浣嶅彲浠ュ缓閫?" );
+                    Buffer.Add( " 此单位可以建�" );
                     if ( data.CanBuildUpgrades )
-                        Buffer.Add( "鍗囩骇 ", "a1ffa1" );
+                        Buffer.Add( "升级 ", "a1ffa1" );
                     if ( data.CanBuildInfrastructure )
-                        Buffer.Add( "鍩虹璁炬柦 ", "a1a1ff" );
+                        Buffer.Add( "基础设施 ", "a1a1ff" );
                     if ( data.CanBuildOffensiveUnits )
-                        Buffer.Add( "杩涙敾 ", "ffa1a1" );
+                        Buffer.Add( "进攻 ", "ffa1a1" );
                     if ( data.CanBuildUtility )
-                        Buffer.Add( "杈呭姪 ", "22a188" );
+                        Buffer.Add( "辅助 ", "22a188" );
                 }
             }
             catch ( Exception e )

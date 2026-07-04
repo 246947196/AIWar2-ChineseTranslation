@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 namespace Arcen.AIW2.External
@@ -18,7 +18,7 @@ namespace Arcen.AIW2.External
         // DEFILER: metal budget for building guard posts while roaming;
         //          decremented by each structure's CostForAIToPurchase; defiler despawns when this hits 0
         public int DefensiveMetalToSpend;
-        // DEFILER: navigation — two movement modes: fly to a relic, or fly to a planet location to build defenses
+        // DEFILER: navigation 鈥?two movement modes: fly to a relic, or fly to a planet location to build defenses
         public int DestinationId; //if we are going to a Relic, the Relic's ID is here
         public Int16 BuildPlanetIndex; //if we are going to a planet to build a structure
         public ArcenPoint DestinationPoint; //where on the planet to build a structure

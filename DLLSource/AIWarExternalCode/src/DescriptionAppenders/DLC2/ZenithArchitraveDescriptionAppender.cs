@@ -20,12 +20,12 @@ namespace Arcen.AIW2.External
             if ( RelatedEntityOrNull.TypeData.IsMobile && RelatedEntityOrNull.TypeData.IsCombatant &&
                  !globaldata.IsInWarFooting )
             {
-                Buffer.Add( "When the ZA is at peace, all units outside of a Spawner will attrition." );
+                Buffer.Add( "当拱顶石处于和平时，所有在生成器外的单位将遭受损耗。" );
                 return;
             }
             if ( globaldata.IsInWarFooting )
             {
-                Buffer.Add( "This ZA is in " ).Add( "War Footing", "ff0000" ).Add( ". The ZA will get more powerful the longer it is in War Footing.\n" );
+                Buffer.Add( "此拱顶石处于 " ).Add( "战争状态", "ff0000" ).Add( "。拱顶石处于战争状态的时间越长，它将变得越强大。\n" );
             }
             if ( RelatedEntityOrNull.TypeData.GetHasTag( "WarpingInZenithArchitraveSpawner" ) )
                 return;
@@ -39,24 +39,24 @@ namespace Arcen.AIW2.External
             Balance_MarkLevel markByOrdinal = Balance_MarkLevelTable.Instance.RowsByOrdinal[markLevel];
             if ( data.ShipsInside.Count > 0 )
             {
-                Buffer.Add( "This " ).Add( RelatedEntityTypeData.GetDisplayName() ).Add( " has inside it " );
+                Buffer.Add( "此 " ).Add( RelatedEntityTypeData.GetDisplayName() ).Add( " 内部有 " );
                 Buffer.Add( data.ShipsInside_ForUI );
             }
             if ( RelatedEntityTypeData.GetHasTag( "ZenithArchitraveSpawner" ) &&
                  RelatedEntityOrNull.CurrentMarkLevel < 7 && globaldata.GetSpawnerUpgradeTime( RelatedEntityOrNull ) != -1 ) //the upgrade time is -1 if we are quiesced
-                Buffer.Add( "Will upgrade in " ).AddHoursAndMinutes( globaldata.GetSpawnerUpgradeTime( RelatedEntityOrNull ) - World_AIW2.Instance.GameSecond, "a1ffa1" ).Add( ".\n" );
+                Buffer.Add( "将在 " ).AddHoursAndMinutes( globaldata.GetSpawnerUpgradeTime( RelatedEntityOrNull ) - World_AIW2.Instance.GameSecond, "a1ffa1" ).Add( " 后升级。\n" );
             if ( globaldata.IsQuiesced )
-                Buffer.Add( "This Architrave is quiesced for " + (globaldata.QuiesceEndTime - World_AIW2.Instance.GameSecond) + " more seconds.\n" );
+                Buffer.Add( "此拱顶石将静默 " + (globaldata.QuiesceEndTime - World_AIW2.Instance.GameSecond) + " 秒。\n" );
             if ( debug )
             {
                 if ( faction.HasObtainedSpireDebris )
-                    Buffer.Add( "Tag for ships: " ).Add( data.TagForShipsIncludingSpire, "a1ffa1" );
+                    Buffer.Add( "舰船标签：" ).Add( data.TagForShipsIncludingSpire, "a1ffa1" );
                 else
-                    Buffer.Add( "Tag for ships: " ).Add( data.TagForShips, "a1ffa1" );
+                    Buffer.Add( "舰船标签：" ).Add( data.TagForShips, "a1ffa1" );
                 int strength = globaldata.GetAllowedPeaceStrengthForSpawner( RelatedEntityOrNull, diff ) / 1000;
-                Buffer.Add( " Supports " ).Add( strength, "a1ffa1" ).Add( " strength in peace. " );
-                Buffer.Add( "Current metal: " + globaldata.MetalReserves ).Add( ". " );
-                Buffer.Add( "Pioneer Spawn time: " + globaldata.PioneerSpawnTime ).Add( ". " );
+                Buffer.Add( " 和平时支持 " ).Add( strength, "a1ffa1" ).Add( " 战力。" );
+                Buffer.Add( "当前金属：" + globaldata.MetalReserves ).Add( "。" );
+                Buffer.Add( "先驱生成时间：" + globaldata.PioneerSpawnTime ).Add( "。" );
             }
         }
     }

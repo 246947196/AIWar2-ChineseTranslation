@@ -21,7 +21,7 @@ namespace Arcen.AIW2.External
             Faction facOrNull = RelatedEntityOrNull.GetFactionOrNull_Safe();
             if ( facOrNull == null )
             {
-                Buffer.Add( "璇锋殏鍋滄父鎴忎互鏌ョ湅鍏充簬姝ょ殑闄勫姞淇℃伅" );
+                Buffer.Add( "请暂停游戏以查看关于此的附加信息" );
                 return;
             }
 
@@ -37,7 +37,7 @@ namespace Arcen.AIW2.External
             //     Buffer.Add(" The Cumulative Effect of this base so far is " + localPerUnitData.CumulativeEffectSoFar).Add(".");
             // }
             if ( localPerUnitData.NumTimesEffectHappened > 0 )
-                Buffer.Add( " 姝ゅ熀鍦板凡瑙﹀彂 <color=#cfd988>" + localPerUnitData.NumTimesEffectHappened + "</color> 娆°€? );
+                Buffer.Add( " 此基地已触发 <color=#cfd988>" + localPerUnitData.NumTimesEffectHappened + "</color> 次。" );
         }
     }
 }

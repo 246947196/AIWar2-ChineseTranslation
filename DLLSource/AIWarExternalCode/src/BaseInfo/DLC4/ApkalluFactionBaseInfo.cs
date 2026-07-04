@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -59,13 +59,13 @@ namespace Arcen.AIW2.External
 
 
 
-        // Not serialized — repopulated from completed breach list on load.
+        // Not serialized 鈥?repopulated from completed breach list on load.
         public readonly List<ApkalluFactionResource> UnlockedResources = List<ApkalluFactionResource>.Create_WillNeverBeGCed( 3, "Apkallu-UnlockedResources" );
         public readonly List<GameEntityTypeData> UnlockedDuruStructures = List<GameEntityTypeData>.Create_WillNeverBeGCed( 10, "Apkallu-UnlockedDuruStructures" );
         public readonly List<GameEntityTypeData> UnlockedZigguratStructures = List<GameEntityTypeData>.Create_WillNeverBeGCed( 10, "Apkallu-UnlockedZigguratStructures" );
         public readonly List<GameEntityTypeData> UnlockedTemenStructures = List<GameEntityTypeData>.Create_WillNeverBeGCed( 10, "Apkallu-UnlockedTemenStructures" );
 
-        // Rebuilt each second by HandleOutguardGranters — the set of outguard group names currently active
+        // Rebuilt each second by HandleOutguardGranters 鈥?the set of outguard group names currently active
         // (i.e. a live HandleOutguardGranters structure is present in a Ziggurat socket).
         public readonly List<string> ActiveOutguardGroups = List<string>.Create_WillNeverBeGCed( 8, "Apkallu-ActiveOutguardGroups" );
 
@@ -724,7 +724,7 @@ namespace Arcen.AIW2.External
             if ( malwarePFaction == null )
                 return;
 
-            // TransferEntityToFaction is not safe here — the entity is already dead when this fires.
+            // TransferEntityToFaction is not safe here 鈥?the entity is already dead when this fires.
             // Spawn a new entity of the same type owned by Malware, matching the nanocaust pattern.
             GameEntity_Squad convertedPost = GameEntity_Squad.CreateNew_ReturnNullIfMPClient( malwarePFaction, guardPost.TypeData, markLevel,
                 malwarePFaction.Faction.LooseFleet, 0, location, Context, "MalwareBetrayalConvert" );

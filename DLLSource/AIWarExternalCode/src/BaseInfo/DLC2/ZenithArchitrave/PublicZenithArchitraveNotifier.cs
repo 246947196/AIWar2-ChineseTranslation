@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -39,27 +39,27 @@ namespace Arcen.AIW2.External
             bool debug = GameSettings.Current.GetBoolBySetting( "Debug_Tooltip" );
             string debugOutput = "";
             string nameToUse = "this one";
-            string architravePlurality = "Architraves have";
-            tooltipBuffer.Add( "Once a Zenith Architrave takes too many planets, the other Architraves will all unite against it.\n" ).Add( "At the moment " );
+            string architravePlurality = "拱顶石阵营拥有";
+            tooltipBuffer.Add( "一旦某个天顶拱顶石占据过多星球，其他拱顶石将联合对抗它。\n" ).Add( "目前" );
             List<Faction> tooLargeFactions = Data.FactionList;
             List<Faction> smallerFactions = Data.FactionList2;
             if ( tooLargeFactions.Count == 1 )
             {
                 ZenithArchitraveFactionBaseInfo globaldata = tooLargeFactions[0].TryGetExternalBaseInfoAs<ZenithArchitraveFactionBaseInfo>();
-                tooltipBuffer.Add( "there is one " ).Add( tooLargeFactions[0].StartFactionColourForLog() + "Zenith Architrave" ).Add( "</color> that the " );
-                architravePlurality = "Architrave has";
+                tooltipBuffer.Add( "有" ).Add( tooLargeFactions[0].StartFactionColourForLog() + "天顶拱顶石" ).Add( "</color>，" );
+                architravePlurality = "拱顶石阵营拥有";
                 if ( smallerFactions.Count == 1 )
                 {
-                    tooltipBuffer.Add( "other " );
-                    tooltipBuffer.Add( smallerFactions[0].StartFactionColourForLog() + "Zenith Architrave</color> " );
+                    tooltipBuffer.Add( "另一个" );
+                    tooltipBuffer.Add( smallerFactions[0].StartFactionColourForLog() + "天顶拱顶石</color> " );
                     if ( globaldata.TimeUntilOtherArchitravesShouldAttackMe > 0 )
-                        tooltipBuffer.Add( " will attack in " ).AddHoursAndMinutes( globaldata.TimeUntilOtherArchitravesShouldAttackMe, "ff0000" ).Add( "." );
+                        tooltipBuffer.Add( "将在" ).AddHoursAndMinutes( globaldata.TimeUntilOtherArchitravesShouldAttackMe, "ff0000" ).Add( "后进攻。" );
                     else
-                        tooltipBuffer.Add( " is attacking." );
+                        tooltipBuffer.Add( "正在进攻。" );
                 }
                 else
                 {
-                    tooltipBuffer.Add( "remaining " ).Add( smallerFactions.Count, "a1ffa1" ).Add( " (" );
+                    tooltipBuffer.Add( "剩余" ).Add( smallerFactions.Count, "a1ffa1" ).Add( " (" );
                     for ( int i = 0; i < smallerFactions.Count; i++ )
                     {
                         if ( debug ) debugOutput = " " + smallerFactions[i].FactionIndex;
@@ -71,13 +71,13 @@ namespace Arcen.AIW2.External
                         if ( i != smallerFactions.Count - 1 )
                             tooltipBuffer.Add( ", " );
                         if ( i == smallerFactions.Count - 2 )
-                            tooltipBuffer.Add( "and " );
+                            tooltipBuffer.Add( "和" );
                     }
-                    tooltipBuffer.Add( ") Architraves" );
+                    tooltipBuffer.Add( ") 个拱顶石阵营" );
                     if ( globaldata.TimeUntilOtherArchitravesShouldAttackMe > 0 )
-                        tooltipBuffer.Add( " will ally against in " ).AddHoursAndMinutes( globaldata.TimeUntilOtherArchitravesShouldAttackMe, "ff0000" ).Add( "." );
+                        tooltipBuffer.Add( "将在" ).AddHoursAndMinutes( globaldata.TimeUntilOtherArchitravesShouldAttackMe, "ff0000" ).Add( "后联合对抗。" );
                     else
-                        tooltipBuffer.Add( " are allied against." );
+                        tooltipBuffer.Add( "正在联合对抗。" );
 
                 }
             }
@@ -85,7 +85,7 @@ namespace Arcen.AIW2.External
             {
                 if ( Data.WarStarted )
                 {
-                    tooltipBuffer.Add( "the Architraves over the limit are:\n" );
+                    tooltipBuffer.Add( "超过限制的拱顶石阵营有：\n" );
                     for ( int i = 0; i < tooLargeFactions.Count; i++ )
                     {
                         ZenithArchitraveFactionBaseInfo globaldata = tooLargeFactions[i].TryGetExternalBaseInfoAs<ZenithArchitraveFactionBaseInfo>();
@@ -97,15 +97,15 @@ namespace Arcen.AIW2.External
                         if ( globaldata.TimeUntilOtherArchitravesShouldAttackMe > 0 )
                         {
                             string timerColor = ArcenExternalUIUtilities.GetColorForNomadMoveTime( globaldata.TimeUntilOtherArchitravesShouldAttackMe ); //timerColor gets more red the sooner the pioneers will appear
-                            tooltipBuffer.Add( "(in " ).Add( globaldata.TimeUntilOtherArchitravesShouldAttackMe.ToString(), timerColor ).Add( ")" );
+                            tooltipBuffer.Add( "(" ).Add( globaldata.TimeUntilOtherArchitravesShouldAttackMe.ToString(), timerColor ).Add( ")" );
                         }
                         tooltipBuffer.Add( "\n" );
                     }
                     if ( smallerFactions.Count <= 1 )
-                        tooltipBuffer.Add( "All Architraves are in a free for all." );
+                        tooltipBuffer.Add( "所有拱顶石阵营处于混战状态。" );
                     else
                     {
-                        tooltipBuffer.Add( "The remaining " ).Add( smallerFactions.Count, "a1ffa1" ).Add( " (" );
+                        tooltipBuffer.Add( "剩余" ).Add( smallerFactions.Count, "a1ffa1" ).Add( " (" );
                         for ( int i = 0; i < smallerFactions.Count; i++ )
                         {
                             if ( debug ) debugOutput = " " + smallerFactions[i].FactionIndex;
@@ -117,31 +117,31 @@ namespace Arcen.AIW2.External
                             if ( i != smallerFactions.Count - 1 )
                                 tooltipBuffer.Add( ", " );
                             if ( i == smallerFactions.Count - 2 )
-                                tooltipBuffer.Add( "and " );
+                                tooltipBuffer.Add( "和" );
                         }
-                        tooltipBuffer.Add( ") architraves are allied against them." );
+                        tooltipBuffer.Add( ") 个拱顶石阵营正在联合对抗它们。" );
                     }
                 }
                 else
                 {
-                    tooltipBuffer.Add( "the Architraves that will be over the limit are:\n" );
+                    tooltipBuffer.Add( "即将超过限制的拱顶石阵营有：\n" );
                     for ( int i = 0; i < tooLargeFactions.Count; i++ )
                     {
                         ZenithArchitraveFactionBaseInfo globaldata = tooLargeFactions[i].TryGetExternalBaseInfoAs<ZenithArchitraveFactionBaseInfo>();
                         if ( debug ) debugOutput = " " + tooLargeFactions[i].FactionIndex;
-                        tooltipBuffer.Add( tooLargeFactions[i].StartFactionColourForLog() + "\tthis one" + debugOutput ).Add( "</color> " );
+                        tooltipBuffer.Add( tooLargeFactions[i].StartFactionColourForLog() + "\t这个" + debugOutput ).Add( "</color> " );
                         if ( globaldata.TimeUntilOtherArchitravesShouldAttackMe > 0 )
                         {
                             string timerColor = ArcenExternalUIUtilities.GetColorForNomadMoveTime( globaldata.TimeUntilOtherArchitravesShouldAttackMe ); //timerColor gets more red the sooner the pioneers will appear
-                            tooltipBuffer.Add( "in " ).Add( globaldata.TimeUntilOtherArchitravesShouldAttackMe.ToString(), timerColor ).Add( "" );
+                            tooltipBuffer.Add( "(" ).Add( globaldata.TimeUntilOtherArchitravesShouldAttackMe.ToString(), timerColor ).Add( "" );
                         }
                         tooltipBuffer.Add( "\n" );
                     }
                     if ( smallerFactions.Count <= 1 )
-                        tooltipBuffer.Add( "All Architraves will be in a free for all." );
+                        tooltipBuffer.Add( "所有拱顶石阵营将进入混战状态。" );
                     else
                     {
-                        tooltipBuffer.Add( "The remaining " ).Add( smallerFactions.Count, "a1ffa1" ).Add( " (" );
+                        tooltipBuffer.Add( "剩余" ).Add( smallerFactions.Count, "a1ffa1" ).Add( " (" );
                         for ( int i = 0; i < smallerFactions.Count; i++ )
                         {
                             if ( debug ) debugOutput = " " + smallerFactions[i].FactionIndex;
@@ -149,17 +149,17 @@ namespace Arcen.AIW2.External
                             if ( i != smallerFactions.Count - 1 )
                                 tooltipBuffer.Add( ", " );
                             if ( i == smallerFactions.Count - 2 )
-                                tooltipBuffer.Add( "and " );
+                                tooltipBuffer.Add( "和" );
                         }
-                        tooltipBuffer.Add( ") architraves will be allied against them." );
+                        tooltipBuffer.Add( ") 个拱顶石阵营将联合对抗它们。" );
                     }
                 }
             }
 
-            tooltipBuffer.Add( "\nArchitraves in Civil War are exceptionally powerful, and will produce many Golems to fight eachother; once the offending " ).Add( architravePlurality ).Add( " been weakened, the war will end and the other Architraves will retreat back to their territory.\nYour ships and planets could get caught in the crossfire." );
+            tooltipBuffer.Add( "\n内战中的拱顶石阵营异常强大，会生产大量魔像互相战斗。一旦挑起战争的" ).Add( architravePlurality ).Add( "被削弱，战争将结束，其他拱顶石阵营将撤回各自的领地。\n您的舰船和星球可能会被卷入战火。" );
 
             if ( Data.anyTruce )
-                tooltipBuffer.Add( "\nThe Architraves are currently ignoring any truces with you until the end of the civil war." );
+                tooltipBuffer.Add( "\n在内战结束之前，拱顶石阵营将无视与您的任何休战协议。" );
             Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( null, tooltipBuffer.GetStringAndResetForNextUpdate() );
             return true;
         }
@@ -180,7 +180,7 @@ namespace Arcen.AIW2.External
                 debugStage = 10;
                 Image.UpdateWith( sprite_ZenithArchitrave, true, "ZA" );
                 ArcenDoubleCharacterBuffer buffer = SubTexts[0].Text.StartWritingToBuffer();
-                buffer.Add( "Civil War" );
+                buffer.Add( "内战" );
                 SubTexts[0].Text.FinishWritingToBuffer();
 
                 buffer = SubTexts[1].Text.StartWritingToBuffer();

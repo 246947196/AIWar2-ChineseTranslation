@@ -18,40 +18,40 @@ namespace Arcen.AIW2.External
             MarauderOutpostRaiderPerUnitBaseInfo unitData = RelatedEntityOrNull.TryGetExternalBaseInfoAs<MarauderOutpostRaiderPerUnitBaseInfo>();
             if ( unitData == null )
             {
-                Buffer.Add( "绌烘暟鎹紒" );
+                Buffer.Add( "空数据！" );
                 return;
             }
             Faction facOrNull = RelatedEntityOrNull.GetFactionOrNull_Safe();
             if ( facOrNull == null )
             {
-                Buffer.Add( "绌洪樀钀ワ紒" );
+                Buffer.Add( "空阵营！" );
                 return;
             }
             MarauderFactionBaseInfo factionData = facOrNull.TryGetExternalBaseInfoAs<MarauderFactionBaseInfo>();
             if ( factionData == null || factionData.RaidersPerOutpost == null )
             {
-                Buffer.Add( "绌?MarauderFactionBaseInfo锛? );
+                Buffer.Add( "空MarauderFactionBaseInfo！" );
                 return;
             }
 
             if ( factionData.NoMark3Outposts )
                 return;
             if ( (factionData.PlayerAllied || factionData.aiAllied) && factionData.NoMark3OutpostsOnAlliedPlanets )
-                Buffer.Add( "鐩熷弸锛堝嵆浜虹被鍙嬪ソ鎴朅I鍙嬪ソ锛夌殑鎺犲ず鑰呭墠鍝ㄧ珯涓嶈兘鍦ㄦ嫢鏈夌洘鍐涙寚鎸ョ珯鐨勬槦鐞冧笂杈惧埌3绾с€? );
+                Buffer.Add( "盟友（即人类友好或AI友好）的掠夺者前哨站不能在拥有盟军指挥站的星球上达到3级。" );
 
             if ( RelatedEntityOrNull.CurrentMarkLevel == 3 )
             {
-                Buffer.Add( "姝ゅ墠鍝ㄧ珯姝ｅ湪鏀寔鍏跺厑璁哥殑 " + factionData.MaxRaidersPerMark3Outpost + " 鍚嶆帬澶鸿€呬腑鐨?" + factionData.RaidersPerOutpost.Display[RelatedEntityOrNull.PrimaryKeyID] + " 鍚嶃€? );
+                Buffer.Add( "此前哨站正在支持其允许的 " + factionData.MaxRaidersPerMark3Outpost + " 名掠夺者中的 " + factionData.RaidersPerOutpost.Display[RelatedEntityOrNull.PrimaryKeyID] + " 名。" );
             }
             else
             {
                 if ( RelatedEntityOrNull.Planet.GetControllingFactionType() == FactionType.Player && (factionData.PlayerAllied && factionData.NoMark3OutpostsOnAlliedPlanets) )
                 {
-                    Buffer.Add( "鍦ㄤ綘鎷ユ湁鐨勬槦鐞冧笂鐨勭洘鍙嬫帬澶鸿€呭墠鍝ㄧ珯鏃犳硶鍏呭垎鍙戞尌鍏跺缓閫犺繘鏀昏埌闃熺殑娼滃姏锛涘畠浠湪璇ユ槦鐞冧笂涔熶細寤洪€犳洿灏戠殑鍓嶅摠绔欍€傚畠浠渶瑕佽嚜宸辩殑鏄熺悆鎵嶈兘瀹屽叏鍗囩骇銆? );
+                    Buffer.Add( "在你拥有的星球上的盟友掠夺者前哨站无法充分发挥其建造进攻舰队的潜力；它们在该星球上也会建造更少的前哨站。它们需要自己的星球才能完全升级。" );
                 }
                 else
                 {
-                    Buffer.Add( "姝ゅ墠鍝ㄧ珯灏嗗湪杈惧埌3绾у悗寮€濮嬬敓浜ф帬澶鸿€呫€傛帬澶鸿€呮槸鎺犲ず鑰呯敤鏉ュ緛鏈嶆柊鏄熺悆鐨勫己澶ф姢鍗埌銆? );
+                    Buffer.Add( "此前哨站将在达到3级后开始生产掠夺者。掠夺者是掠夺者用来征服新星球的强大护卫舰。" );
                 }
             }
         }

@@ -22,14 +22,14 @@ namespace Arcen.AIW2.External
                 TemplarPerUnitBaseInfo data = RelatedEntityOrNull.TryGetExternalBaseInfoAs<TemplarPerUnitBaseInfo>();
                 if ( data == null )
                 {
-                    Buffer.Add( "No per unit data?" );
+                    Buffer.Add( "没有单位数据？" );
                     return;
                 }
                 Faction faction = RelatedEntityOrNull.GetFactionOrNull_Safe();
                 TemplarFactionBaseInfo globaldata = faction.TryGetExternalBaseInfoAs<TemplarFactionBaseInfo>();
                 if ( data.AvailableUpgrades.Count > 0 )
                 {
-                    Buffer.Add( "The Necromancer can get the following upgrades from hacking this:\n" );
+                    Buffer.Add( "死灵法师可以通过入侵此结构获得以下升级：\n" );
                     for ( int i = 0; i < data.AvailableUpgrades.Count; i++ )
                     {
                         data.AvailableUpgrades[i].ToDisplayBuffer( Buffer );

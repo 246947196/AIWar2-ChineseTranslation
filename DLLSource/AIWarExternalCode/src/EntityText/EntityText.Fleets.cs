@@ -1,4 +1,4 @@
-
+﻿
 using System;
 using Arcen.Universal;
 using Arcen.AIW2.Core;
@@ -530,7 +530,7 @@ namespace Arcen.AIW2.External
                     int num = this.Cap - this.Count;
                     if ( num > 0 )
                     {
-                        buffer.Add("×").Add( num );
+                        buffer.Add("脳").Add( num );
                     }
 
                     return;
@@ -567,7 +567,7 @@ namespace Arcen.AIW2.External
                     if (this.Unclaimed)
                     {
                         debugstage = 172;
-                        buffer.Add("×").Add( max );
+                        buffer.Add("脳").Add( max );
                     }
                     /*
                     else 
@@ -577,7 +577,7 @@ namespace Arcen.AIW2.External
                         max = count;
                         count = this.Counts[ShipIconStatus.Alive];
                         
-                        buffer.Add("<size=60%>×</size>");
+                        buffer.Add("<size=60%>脳</size>");
                         buffer.Add( count );
                         
                         if (max > 0)
@@ -597,13 +597,13 @@ namespace Arcen.AIW2.External
                         if (count > 1)
                         {
                             debugstage = 176;
-                            buffer.Add("×").Add( count );
+                            buffer.Add("脳").Add( count );
                         }
                     }
                     else
                     {
                         debugstage = 177;
-                        buffer.Add("×");
+                        buffer.Add("脳");
                         buffer.Add( count );
                         
                         if (max > 0)
@@ -1484,11 +1484,11 @@ namespace Arcen.AIW2.External
                                         
                                         if (squad.IsFakeEntity)
                                         {
-                                            buffer.Add("<size=60%>×</size>").Add( cap );
+                                            buffer.Add("<size=60%>脳</size>").Add( cap );
                                         }
                                         else
                                         {
-                                            buffer.Add("<size=60%>×</size>");
+                                            buffer.Add("<size=60%>脳</size>");
                                             buffer.Add( count );
                                             
                                             if (count != cap)

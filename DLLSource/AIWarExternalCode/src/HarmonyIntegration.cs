@@ -1,4 +1,4 @@
-using Arcen.Universal;
+﻿using Arcen.Universal;
 using HarmonyLib;
 using System;
 using System.Reflection;
@@ -14,7 +14,7 @@ namespace Arcen.AIW2.External
     /// [HarmonyPatch(...)] and call <see cref="ApplyPatchesFromAssembly"/> from
     /// their startup code.
     ///
-    /// IMPORTANT — Unity Mono runtime quirk: HarmonyLib types must NEVER appear
+    /// IMPORTANT 鈥?Unity Mono runtime quirk: HarmonyLib types must NEVER appear
     /// in this class's metadata-level surface (field types, property types,
     /// method parameter/return types). They are only safe to reference inside
     /// method bodies. Mono eagerly resolves field types when the class is
@@ -25,7 +25,7 @@ namespace Arcen.AIW2.External
     /// class therefore produces a TypeLoadException the first time anything
     /// touches HarmonyIntegration, even with the resolver registered and
     /// 0Harmony.dll already eager-loaded. Method bodies, in contrast, are
-    /// JIT'd lazily — by the time they execute, HarmonyDLLLoader has already
+    /// JIT'd lazily 鈥?by the time they execute, HarmonyDLLLoader has already
     /// loaded 0Harmony, so HarmonyLib types resolve cleanly inside them.
     /// </summary>
     public static class HarmonyIntegration
@@ -45,7 +45,7 @@ namespace Arcen.AIW2.External
         /// as object for the metadata-level reasons described in the class comment;
         /// cast to <c>HarmonyLib.Harmony</c> at the call site if you need direct
         /// access. Modders who want their own Harmony instance should just
-        /// construct one with their own ID — that keeps unpatching scoped to
+        /// construct one with their own ID 鈥?that keeps unpatching scoped to
         /// their own mod and avoids stepping on patches another mod registered.
         /// </summary>
         public static object GetSharedHarmonyInstance() => sharedInstanceObj;
@@ -82,9 +82,8 @@ namespace Arcen.AIW2.External
         /// patch body's IL references a host-game member (method, field,
         /// property) that has been renamed or removed since the mod was last
         /// rebuilt. Without the pre-JIT, those references resolve only when
-        /// Harmony's dynamic wrapper first calls into the patch — i.e. far
-        /// later, in-game, in a code path the player happens to exercise —
-        /// and the resulting MissingMethodException doesn't name the mod or
+        /// Harmony's dynamic wrapper first calls into the patch 鈥?i.e. far
+        /// later, in-game, in a code path the player happens to exercise 鈥?        /// and the resulting MissingMethodException doesn't name the mod or
         /// the patch class. With it, the same failure surfaces here at
         /// startup, with the mod ID, the patch class, and the offending
         /// member all in the log line.
@@ -95,7 +94,7 @@ namespace Arcen.AIW2.External
         /// naming the mod and the broken patch class, then SKIPS that one
         /// class and continues with the rest. An aggregate "MOD X is broken:
         /// N of M classes failed" summary is logged at the end if anything
-        /// failed. Mods do not need to do anything beyond calling this — the
+        /// failed. Mods do not need to do anything beyond calling this 鈥?the
         /// failure surface is fully owned here.
         /// </summary>
         public static int ApplyPatchesFromAssembly( Assembly modAssembly, string modIdForLogging )
@@ -142,7 +141,7 @@ namespace Arcen.AIW2.External
                 ArcenDebugging.LogSingleLine(
                     "HarmonyIntegration: MOD '" + modIdForLogging + "' (assembly '" + modAssemblyName + "'): " +
                     "ReflectionTypeLoadException while scanning the assembly for [HarmonyPatch] classes. " +
-                    "Some types could not be loaded — usually this means the mod was built against an older " +
+                    "Some types could not be loaded 鈥?usually this means the mod was built against an older " +
                     "version of the host game and references types that have since been renamed or removed. " +
                     "The mod will be partially or fully non-functional; please report to the mod author. " +
                     "Details: " + DescribeReflectionTypeLoadException( rtle ),
@@ -161,7 +160,7 @@ namespace Arcen.AIW2.External
             int patchClassesAttempted = 0;
             int patchClassesApplied = 0;
             int methodsPatchedTotal = 0;
-            //A plain BCL list — this collection is small, transient, and only exists
+            //A plain BCL list 鈥?this collection is small, transient, and only exists
             //for the duration of this method, so the GC concern that drives the Arcen
             //collections elsewhere doesn't apply.
             System.Collections.Generic.List<string> failureSummaries = new System.Collections.Generic.List<string>();
@@ -184,7 +183,7 @@ namespace Arcen.AIW2.External
                 catch ( Exception )
                 {
                     //IsDefined can itself throw if the type's attributes reference a
-                    //missing assembly. Treat that as "not a patch class" — we can't
+                    //missing assembly. Treat that as "not a patch class" 鈥?we can't
                     //tell what attribute it has, and the underlying loader error has
                     //already been surfaced via ReflectionTypeLoadException above.
                     continue;
@@ -235,7 +234,7 @@ namespace Arcen.AIW2.External
                 if ( preJitFailureException != null )
                 {
                     ArcenDebugging.LogSingleLine(
-                        "HarmonyIntegration: MOD '" + modIdForLogging + "' has a broken patch — class " +
+                        "HarmonyIntegration: MOD '" + modIdForLogging + "' has a broken patch 鈥?class " +
                         type.FullName + ", method " + preJitFailedMethod.Name + ". The body of this patch " +
                         "method cannot be JIT-compiled because its IL references a member (method, field, or " +
                         "property) that no longer exists in the host game. Most often the mod was built " +
@@ -248,7 +247,7 @@ namespace Arcen.AIW2.External
                 }
 
                 //Apply the single patch class. CreateClassProcessor lets us scope failure
-                //handling to one class at a time — Harmony's bulk PatchAll throws on the
+                //handling to one class at a time 鈥?Harmony's bulk PatchAll throws on the
                 //first bad class and leaves any later classes in the assembly unpatched
                 //with no clear log line tying the failure to a specific patch.
                 try
@@ -261,14 +260,14 @@ namespace Arcen.AIW2.External
                 catch ( Exception e )
                 {
                     ArcenDebugging.LogSingleLine(
-                        "HarmonyIntegration: MOD '" + modIdForLogging + "' has a broken patch — class " +
+                        "HarmonyIntegration: MOD '" + modIdForLogging + "' has a broken patch 鈥?class " +
                         type.FullName + " could not be applied. Most often this means the [HarmonyPatch(...)] " +
                         "attribute on the class points at a method that no longer exists, has been renamed, " +
                         "moved to a nested type, or has different parameters than the patch declares. " +
                         "This patch will be SKIPPED (the rest of the mod's patches, if any, will still be " +
                         "applied). Please report this to the mod author. Details: " + e,
                         Verbosity.ShowAsError );
-                    failureSummaries.Add( "    " + type.FullName + " (Harmony Patch() threw — likely a missing or moved target method)" );
+                    failureSummaries.Add( "    " + type.FullName + " (Harmony Patch() threw 鈥?likely a missing or moved target method)" );
                 }
             }
 
@@ -294,8 +293,8 @@ namespace Arcen.AIW2.External
             }
 
             //Returns the method-level patch count. The number isn't used by the
-            //bundled mods — they trust the framework's own per-class log lines
-            //rather than asserting a count themselves — but it's part of the
+            //bundled mods 鈥?they trust the framework's own per-class log lines
+            //rather than asserting a count themselves 鈥?but it's part of the
             //long-standing public API, so callers that do want to inspect it
             //get the more useful method-level total (vs. the class count) for
             //free.

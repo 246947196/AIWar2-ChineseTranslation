@@ -16,34 +16,34 @@ namespace Arcen.AIW2.External
                 return;
 
             int perc = ((baseInfo.Strength.Display * 100) / baseInfo.GetMaxStrength).GetNearestIntPreferringHigher() ;
-            Buffer.Add( $"姝ゆ槦鐜綋鍓嶆鍦ㄦ敮鎸佸叾鍦ㄦ槦绯讳腑鎬绘垬鍔涚殑 {perc}%銆? );
+            Buffer.Add( $"此星环当前正在支持其在星系中总战力的 {perc}%。" );
             if ( !baseInfo.IsCurrentlyAngryDueToHack && !baseInfo.IsAntagonized ) {
-                Buffer.Add( "鏉ヨ嚜姝ゆ槦鐜殑鑸拌埞鏈€澶氬彲鑸鍒拌窛绂绘槦鐜?<color=#a1ffa1>").Add( baseInfo.NormalHopLimit ).Add("</color> 璺崇殑浣嶇疆銆? );
+                Buffer.Add( "来自此星环的舰船最多可航行到距离星环<color=#a1ffa1>").Add( baseInfo.NormalHopLimit ).Add("</color> 跳的位置。" );
             } else {
-                Buffer.Add( "鏉ヨ嚜姝ゆ槦鐜殑鑸拌埞閫氬父鏈€澶氬彲鑸鍒拌窛绂绘槦鐜?<color=#a1ffa1>" ).Add( baseInfo.NormalHopLimit)
-                    .Add("</color> 璺崇殑浣嶇疆锛屼絾鐩墠姝ｅ湪鎵╁ぇ鑼冨洿" );
+                Buffer.Add( "来自此星环的舰船通常最多可航行到距离星环<color=#a1ffa1>" ).Add( baseInfo.NormalHopLimit)
+                    .Add("</color> 跳的位置，但目前正在扩大范围" );
                 if (baseInfo.IsAntagonized) {
-                    Buffer.Add(" 浠ュ洖搴斾綅浜?").Add( baseInfo.DysonAntagonizer.Display.GetPlanetName_Safe() ).Add(" 涓婄殑 ")
+                    Buffer.Add(" 以回应位�")
                         .Add( baseInfo.DysonAntagonizer.Display.TypeData.DisplayName, baseInfo.DysonAntagonizer.Display.GetFactionCenterColorHexBrighter_Safe() )
-                        .Add("銆? );
+                        .Add(" 上的 ").Add( baseInfo.DysonAntagonizer.Display.GetPlanetName_Safe() ).Add("。");
                 } else if (baseInfo.IsCurrentlyAngryDueToHack) {
-                    Buffer.Add(" 浠ュ洖搴斾竴娆＄牬瑙ｃ€? );
+                    Buffer.Add(" 以回应一次破解。");
                 }
             }
             if ( baseInfo.BudgetMultiplierFromHacks > FInt.One || baseInfo.MaxStrengthMultiplierFromHacks > FInt.One ) {
-                Buffer.Add( "姝ゆ槦鐜殑 " );
+                Buffer.Add( "此星环的 " );
                 bool wroteAboutProduction = false;
                 if ( baseInfo.BudgetMultiplierFromHacks > FInt.One ) {
-                    Buffer.Add("浜ч噺涓烘甯哥殑 <color=#a1ffa1>").Add( baseInfo.BudgetMultiplierFromHacks ).Add("x</color>");
+                    Buffer.Add("产量为正常的 <color=#a1ffa1>").Add( baseInfo.BudgetMultiplierFromHacks ).Add("x</color>");
                     wroteAboutProduction = true;
                 }
                 if ( baseInfo.MaxStrengthMultiplierFromHacks > FInt.One ) {
                     if (wroteAboutProduction) {
-                        Buffer.Add( " 涓?");
+                        Buffer.Add( " " );
                     }
-                    Buffer.Add( "鏈€澶ф垬鍔涗负姝ｅ父鐨?<color=#a1ffa1>").Add( baseInfo.MaxStrengthMultiplierFromHacks ).Add("x</color>");
+                    Buffer.Add( "最大战力为正常<color=#a1ffa1>").Add( baseInfo.MaxStrengthMultiplierFromHacks ).Add("x</color>");
                 }
-                Buffer.Add(". ");
+                Buffer.Add("。");
             }
         }
     }

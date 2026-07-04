@@ -16,18 +16,18 @@ namespace Arcen.AIW2.External
             if ( entityData == null )
                 return; // Skip if not valid. We'll catch this error elsewhere in a less prone to spam zone.
 
-            Buffer.Add( $"This Hive has been built around a {entityData.DisplayName}, and will convert back to it as a neutral entity if killed." );
+            Buffer.Add( $"此蜂巢已围绕 {entityData.DisplayName} 建造，如果被摧毁将转换为中立实体。" );
 
             if ( WildHivesFactionBaseInfo.HasStoredSoldiers( RelatedEntityOrNull, RelatedEntityOrNull.GetFactionBaseInfoOrNullAs_Safe<WildHivesFactionBaseInfo>(), hiveInfo, out int storedSoldiers ) )
             {
-                Buffer.Add( $" There are {storedSoldiers} clanlings stored within, ready to attack any that agitate hives or workers on this planet." );
+                Buffer.Add( $" 内部储存了 {storedSoldiers} 个氏族成员，准备攻击任何在此星球上骚扰蜂巢或工蜂的目标。" );
             }
             if ( WildHivesFriendlyFactionBaseInfo.Instance.hivesOnFriendlyPlanets.DisplayContains( RelatedEntityOrNull ) )
             {
                 int timeLeft = WildHivesFactionBaseInfo.GetHighestDifficulty().secondsBetweenFriendlySoldierSpawns - WildHivesFriendlyFactionBaseInfo.Instance.SecondsUntilNextSoldier( RelatedEntityOrNull );
                 string minutes = (timeLeft / 60).ToString( "0" );
                 string seconds = (timeLeft % 60).ToString( "0" );
-                Buffer.Add( $" This hive considers you part of its ecosystem, and is producing friendly clanlings to defend you. Next spawn in: {minutes}:{seconds}" );
+                Buffer.Add( $" 此蜂巢认为您是其生态系统的一部分，正在生产友好的氏族成员来保护您。下次生成：{minutes}:{seconds}" );
             }
         }
     }

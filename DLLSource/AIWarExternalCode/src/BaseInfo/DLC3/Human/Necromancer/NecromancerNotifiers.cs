@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -50,7 +50,7 @@ namespace Arcen.AIW2.External
             try
             {
                 debugCode = 100;
-                tooltipBuffer.Add("The Templar have ").Add( Data.EntityList.Count, "a1ffa1" ).Add(" wave leaders in command of attacks against the necromancer.\n");
+                tooltipBuffer.Add("圣殿骑士拥有 ").Add( Data.EntityList.Count, "a1ffa1" ).Add(" 个波次领袖指挥着对死灵法师的进攻。\n");
                 bool anyPrinted = false;
                 for (int i = 0; i < Data.EntityList.Count; i++ )
                 {
@@ -61,14 +61,14 @@ namespace Arcen.AIW2.External
                     if ( entity.GetShouldBeVisibleBasedOnPlanetIntel() )
                     {
                         if ( !anyPrinted )
-                            tooltipBuffer.Add("Ships visible to you:\n");
+                            tooltipBuffer.Add("您可见的舰船：\n");
                         anyPrinted = true;
                         tooltipBuffer.Add("\t").AddShipIconInline(entity.TypeData,World_AIW2.Instance.GetLocalPlayerFactionOrNaturalObjectsNeverNull()).Add(" ");
                         tooltipBuffer.Add(entity.TypeData.GetDisplayName()).Add(" on ").Add(entity.Planet.Name, faction.FactionCenterColor.ColorHexBrighter).Add("\n");
                     }
                 }
                 if (!anyPrinted )
-                    tooltipBuffer.Add("\n").Add("No visible ships").Add("\n");
+                    tooltipBuffer.Add("\n").Add("没有可见的舰船").Add("\n");
 
             }
             catch ( Exception e )
@@ -95,7 +95,7 @@ namespace Arcen.AIW2.External
                 debugStage = 10;
                 Image.UpdateWith( sprite_Wave, true, "TemplarWave" );
                 ArcenDoubleCharacterBuffer buffer = SubTexts[0].Text.StartWritingToBuffer();
-                buffer.Add( "Templar\n" );
+                buffer.Add( "圣殿骑士\n" );
                 SubTexts[0].Text.FinishWritingToBuffer();
                 debugStage = 20;
                 if ( Data.EntityList.Count == 0 )
@@ -157,7 +157,7 @@ namespace Arcen.AIW2.External
             try
             {
                 debugCode = 100;
-                tooltipBuffer.Add("The Templar have ").Add( Data.EntityList.Count, "a1ffa1" ).Add(" constructors to build new defenses. Killing these can be very valuable, both to weaken the Templar and to get resources. Currently visible to you:\n");
+                tooltipBuffer.Add("圣殿骑士拥有 ").Add( Data.EntityList.Count, "a1ffa1" ).Add(" 个建造者用于建造新防御。击杀它们非常有价值，既能削弱圣殿骑士又能获取资源。您目前可见的有：\n");
                 for (int i = 0; i < Data.EntityList.Count; i++ )
                 {
                     GameEntity_Squad entity = Data.EntityList[i].GetSquad();
@@ -195,7 +195,7 @@ namespace Arcen.AIW2.External
                 debugStage = 10;
                 Image.UpdateWith( sprite_Constructor, true, "TemplarConstructor" );
                 ArcenDoubleCharacterBuffer buffer = SubTexts[0].Text.StartWritingToBuffer();
-                buffer.Add( "Templar\n" );
+                buffer.Add( "圣殿骑士\n" );
                 SubTexts[0].Text.FinishWritingToBuffer();
                 debugStage = 20;
                 if ( Data.EntityList.Count == 0 )

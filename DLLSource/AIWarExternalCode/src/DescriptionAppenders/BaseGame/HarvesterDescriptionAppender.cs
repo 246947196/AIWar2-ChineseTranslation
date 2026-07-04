@@ -18,20 +18,20 @@ namespace Arcen.AIW2.External
                 infestation = facOrNull.TryGetExternalBaseInfoAs<MacrophageFactionBaseInfoCore>();
             if ( infestation == null )
             {
-                Buffer.Add( "鏃犳硶鍦ㄦ澶勬壘鍒?MacrophageFactionBaseInfo銆傝繖鏄竴涓?BUG" );
+                Buffer.Add( "无法在此处找到MacrophageFactionBaseInfo。这是一个BUG" );
                 return;
             }
             MacrophagePerHarvesterBaseInfo hData = RelatedEntityOrNull.TryGetExternalBaseInfoAs<MacrophagePerHarvesterBaseInfo>();
             if ( hData == null )
             {
-                Buffer.Add( "姝ら噰闆嗗櫒鐨?hData 涓虹┖銆傚鏋滀綘鍒氬垰鍔犺浇浜嗘父鎴忥紝璇峰彇娑堟殏鍋滐紝鏁版嵁搴旇浼氬～鍏? );
+                Buffer.Add( "此采集器的 hData 为空。如果你刚刚加载了游戏，请取消暂停，数据应该会填满。" );
                 return;
             }
-            Buffer.Add( "姝ら噰闆嗗櫒宸叉敹闆?" + hData.CurrentMetal + " 閲戝睘 " );
+            Buffer.Add( "此采集器已收集 " + hData.CurrentMetal + " 金属 " );
             if ( hData.ReturningToTelium )
-                Buffer.Add( "鐩墠姝ｅ湪杩斿洖鍏舵嘲鍒╁浠ュ瓨鏀鹃噾灞炪€? );
+                Buffer.Add( "目前正在返回其泰利姆以存放金属。" );
             else
-                Buffer.Add( "褰撴敹闆嗗埌鑷冲皯 " + infestation.MetalHarvesterCanHold + " 鍚庡皢杩斿洖鍏舵嘲鍒╁銆? );
+                Buffer.Add( "当收集到至少 " + infestation.MetalHarvesterCanHold + " 后将返回其泰利姆。" );
         }
     }
 }

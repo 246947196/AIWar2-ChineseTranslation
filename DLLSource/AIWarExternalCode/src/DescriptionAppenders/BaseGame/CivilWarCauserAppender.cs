@@ -25,9 +25,9 @@ namespace Arcen.AIW2.External
                 numFound++;
             }
             if ( numFound > 1 )
-                Buffer.Add( "鐩墠鏄熺郴涓湁 " + numFound + " 涓绫诲缓绛戙€? );
+                Buffer.Add( "目前星系中有 " + numFound + " 个此类建筑。" );
             else
-                Buffer.Add( " 杩欐槸鏈€鍚庝竴涓€傝闈炲父灏忓績鍦版懅姣佸畠锛? );
+                Buffer.Add( " 这是最后一个。请非常小心地摧毁它！" );
         }
     }
 }

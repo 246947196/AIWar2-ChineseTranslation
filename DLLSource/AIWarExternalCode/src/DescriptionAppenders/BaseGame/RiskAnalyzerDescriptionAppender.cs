@@ -24,12 +24,12 @@ namespace Arcen.AIW2.External
             double timeInHours = time.TotalHours;
 
             if ( timeInHours == 1 )
-                hour = " hour";
+                hour = " 小时";
             else
-                hour = " hours";
+                hour = " 小时";
 
-            Buffer.Add( "褰撴槦鐞冭AI鎺у埗鏃讹紝AIP姣?" + timeInHours );
-            Buffer.Add( hour + " 澧炲姞 " + AIPIncrease + "銆傚綋琚帺瀹舵帶鍒舵椂锛孉IP姣?" + timeInHours + hour + " 鍑忓皯 " + AIPDecrease + "銆傛浜℃椂锛孉IP澧炲姞 " + AIPIncreaseOnDeath + "銆? );
+            Buffer.Add( "当星球被AI控制时，AIP增加 " + AIPIncrease + " 每 " + timeInHours );
+            Buffer.Add( hour + "。当被玩家控制时，AIP减少 " + AIPDecrease + " 每 " + timeInHours + hour + "。死亡时，AIP增加 " + AIPIncreaseOnDeath + "。" );
         }
     }
 }

@@ -20,11 +20,11 @@ namespace Arcen.AIW2.External
                 return;
             if ( dsdata.ConquestMode )
             {
-                Buffer.Add( "鏆楁槦澶勪簬寰佹湇妯″紡锛屽洜姝ゆ柊鐨勫浠囩敓鎴愬櫒鍦ㄥ畬鍏ㄦ姌璺冭繘鍏ュ悗浠嶇劧浼氬緢鑴嗗急銆? );
+                Buffer.Add( "暗星处于征服模式，因此新的复仇生成器在完全折跃进入后仍然会很脆弱。" );
             }
             else
-                Buffer.Add( "濡傛灉浣犲厑璁稿浠囩敓鎴愬櫒鐨勫叾浣欓儴鍒嗘姌璺冭繘鍏ワ紝瀹冨皢鍙樺緱鏃犳晫銆? );
-            Buffer.Add( "浣嶇疆鐐规鍦ㄦ姌璺冭繘鍏ヤ腑锛屽凡瀹屾垚 " + percent + "%" );
+                Buffer.Add( "如果你允许复仇生成器的其余部分折跃进入，它将变得无敌。" );
+            Buffer.Add( "位置点正在折跃进入中，已完成 " + percent + "%" );
         }
     }
 }

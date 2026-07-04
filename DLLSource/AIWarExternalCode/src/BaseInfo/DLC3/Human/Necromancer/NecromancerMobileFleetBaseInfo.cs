@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -196,7 +196,7 @@ namespace Arcen.AIW2.External
 
         /// <summary>
         /// Bodyguard ship types (tag NecromancerBodyguard) are merged with their base type for
-        /// display purposes. E.g. PossessedWightBodyguard → PossessedWight.
+        /// display purposes. E.g. PossessedWightBodyguard 鈫?PossessedWight.
         /// Returns the base GameEntityTypeData if found, otherwise the original.
         /// </summary>
         protected override GameEntityTypeData GetCanonicalType( GameEntityTypeData type )

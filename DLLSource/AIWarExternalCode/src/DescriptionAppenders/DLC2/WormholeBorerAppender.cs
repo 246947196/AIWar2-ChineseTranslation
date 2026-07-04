@@ -16,11 +16,11 @@ namespace Arcen.AIW2.External
             Planet dest = World_AIW2.Instance.GetPlanetByIndex( RelatedEntityOrNull.WBDestinationPlanet );
             if ( start == null || dest == null )
             {
-                Buffer.Add( "This unit is trying to decide where to bore a wormhole" );
+                Buffer.Add( "此单位正在尝试决定在哪里钻孔虫洞" );
                 return;
             }
             if ( RelatedEntityOrNull.TypeData.GetHasTag( "MobileWormholeBorer" ) )
-                Buffer.Add( "I am a going to create a new wormhole from " ).Add( start.Name, "a1ffa1" ).Add( " to " ).Add( dest.Name, "a1a1ff" ).Add( ". " );
+                Buffer.Add( "我将从 " ).Add( start.Name, "a1ffa1" ).Add( " 到 " ).Add( dest.Name, "a1a1ff" ).Add( " 创建一个新的虫洞。" );
             else
             {
                 Faction facOrNull = RelatedEntityOrNull.GetFactionOrNull_Safe();
@@ -30,7 +30,7 @@ namespace Arcen.AIW2.External
                 AIDifficulty difficulty = factionExternal.AIDifficulty;
                 int timeSinceCreated = World_AIW2.Instance.GameSecond - RelatedEntityOrNull.GameSecondCreated;
                 int timeLeft = (difficulty.WormholeBorerCompletionTime - timeSinceCreated).IntValue;
-                Buffer.Add( "This structure will create a new wormhole from " ).Add( start.Name, "a1ffa1" ).Add( " to " ).Add( dest.Name, "a1a1ff" ).Add( " in " ).AddHoursAndMinutes( timeLeft, "ffa1a1" ).Add( ". " );
+                Buffer.Add( "此结构将从 " ).Add( start.Name, "a1ffa1" ).Add( " 到 " ).Add( dest.Name, "a1a1ff" ).Add( " 创建一个新的虫洞，耗时 " ).AddHoursAndMinutes( timeLeft, "ffa1a1" ).Add( "。" );
             }
         }
     }

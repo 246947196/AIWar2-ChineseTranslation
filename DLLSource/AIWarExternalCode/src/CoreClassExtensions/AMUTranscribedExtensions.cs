@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Arcen.AIW2.Core;
 using Arcen.Universal;
 
@@ -182,8 +182,8 @@ namespace Arcen.AIW2.External
         // AddNumberMoreReadable(int/long/double/FInt) and the (value, hexcolor) variants
         // were promoted to instance methods on Arcen.Universal.ArcenCharacterBufferBase so
         // they are reachable from ArcenAIW2Core (which can't reference AIWarExternalCode).
-        // The TextStyle("Infinity") styling for the MaxValue sentinel is dropped — base
-        // class can't see TextStyle; output is plain "∞".
+        // The TextStyle("Infinity") styling for the MaxValue sentinel is dropped 鈥?base
+        // class can't see TextStyle; output is plain "鈭?.
 
         public static ArcenCharacterBufferBase AddPercent( this ArcenCharacterBufferBase Buffer, FInt Amount )
         {

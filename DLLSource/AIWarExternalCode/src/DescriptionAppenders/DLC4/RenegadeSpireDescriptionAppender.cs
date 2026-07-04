@@ -20,20 +20,20 @@ namespace Arcen.AIW2.External
                     RenegadeSpirePerUnitBaseInfo data = RelatedEntityOrNull.TryGetExternalBaseInfoAs<RenegadeSpirePerUnitBaseInfo>();
                     if ( data == null )
                         return;
-                    Buffer.Add( "\nDefensive Metal: " ).Add( data.DefensiveMetalToSpend, "a1ffa1" ).Add( "." );
+                    Buffer.Add( "\n防御金属：" ).Add( data.DefensiveMetalToSpend, "a1ffa1" ).Add( "。" );
                     if ( data.Destination != null )
                     {
-                        Buffer.Add( "En route to " + data.Destination.ToString() );
+                        Buffer.Add( "正在前往 " + data.Destination.ToString() );
                         return;
                     }
                     if ( data.BuildPlanetIndex != -1 )
                     {
                         Planet buildPlanet = World_AIW2.Instance.GetPlanetByIndex( data.BuildPlanetIndex );
-                        Buffer.Add( "En route to " + buildPlanet.Name );
+                        Buffer.Add( "正在前往 " + buildPlanet.Name );
                     }
                     if ( data.NextShipToCreate != null )
                     {
-                        Buffer.Add( "We will build a " ).Add( data.NextShipToCreate.DisplayName, "a1ffa1" ).Add( "." );
+                        Buffer.Add( "我们将建造 " ).Add( data.NextShipToCreate.DisplayName, "a1ffa1" ).Add( "。" );
                     }
                     return;
                 }
@@ -44,11 +44,11 @@ namespace Arcen.AIW2.External
                     if ( data == null )
                         return;
 
-                    Buffer.Add( "\nMetal Stored: " ).Add( data.MetalStored, "a1ffa1" ).Add( "." );
+                    Buffer.Add( "\n储存金属：" ).Add( data.MetalStored, "a1ffa1" ).Add( "。" );
 
                     if ( RelatedEntityOrNull.CurrentMarkLevel >= 7 )
                     {
-                        Buffer.Add( "\nMark: MAX" );
+                        Buffer.Add( "\n标记：最大" );
                     }
                     else
                     {
@@ -58,11 +58,11 @@ namespace Arcen.AIW2.External
                             markupInterval = factionInfo.Difficulty.MarkupInterval;
 
                         if ( data.LastMarkupSecond == -1 )
-                            Buffer.Add( "\nMark up in: soon" );
+                            Buffer.Add( "\n升级：即将" );
                         else
                         {
                             int remaining = Math.Max( 0, markupInterval - ( World_AIW2.Instance.GameSecond - data.LastMarkupSecond ) );
-                            Buffer.Add( "\nMark up in: " ).Add( remaining, "ffffa1" ).Add( "s" );
+                            Buffer.Add( "\n升级： " ).Add( remaining, "ffffa1" ).Add( "秒" );
                         }
                     }
                     return;

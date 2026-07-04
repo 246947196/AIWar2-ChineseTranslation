@@ -26,14 +26,14 @@ namespace Arcen.AIW2.External
                 Faction faction = RelatedEntityOrNull.GetFactionOrNull_Safe();
                 if ( faction == null )
                 {
-                    Buffer.Add( "No per faction data?" );
+                    Buffer.Add( "没有阵营数据？" );
                     return;
                 }
 
                 debugStage = 500;
                 if ( faction.SpecialFactionData.InternalName == "MaddenedElderlings" )
                 {
-                    Buffer.Add( "This elderling has been driven mad by its fellows.\n" );
+                    Buffer.Add( "此长者已被其同伴逼疯。\n" );
                     return;
                 }
 
@@ -50,7 +50,7 @@ namespace Arcen.AIW2.External
                 ElderlingsPerUnitBaseInfo data = RelatedEntityOrNull.TryGetExternalBaseInfoAs<ElderlingsPerUnitBaseInfo>();
                 if ( data == null )
                 {
-                    Buffer.Add( "No per unit data?" );
+                    Buffer.Add( "没有单位数据？" );
                     return;
                 }
 
@@ -70,7 +70,7 @@ namespace Arcen.AIW2.External
                 if ( data.SuicideMode )
                 {
                     debugStage = 1300;
-                    Buffer.Add( "<color=#ffa1a1>This elderling has been driven mad by its fellows and is rampaging</color>.\n" );
+                    Buffer.Add( "<color=#ffa1a1>此长者已被其同伴逼疯并正在暴走</color>。\n" );
                 }
                 else
                 {
@@ -78,7 +78,7 @@ namespace Arcen.AIW2.External
                     if ( data.SanityRemaining > 0 && verbose && faction.SpecialFactionData.InternalName != "MaddenedElderlings" )
                     {
                         debugStage = 1500;
-                        Buffer.Add( "This elderling has " ).Add( data.SanityRemaining, "a1ffa1" ).Add( " sanity remaining. When it runs out of sanity it will rampage!\n" );
+                        Buffer.Add( "此长者剩余 " ).Add( data.SanityRemaining, "a1ffa1" ).Add( " 点理智。当理智耗尽时，它将暴走！\n" );
                     }
                     debugStage = 1600;
                     if ( data.HatchTime > 0 )
@@ -87,14 +87,14 @@ namespace Arcen.AIW2.External
                         int time = data.HatchTime - World_AIW2.Instance.GameSecond;
                         debugStage = 1800;
                         string timerColor = ArcenExternalUIUtilities.GetColorForNomadMoveTime( time ); //timerColor gets more red the closer the planet is to succumbing
-                        Buffer.Add( "This egg will hatch in " ).Add( time.ToString(), timerColor ).Add( " seconds." );
+                        Buffer.Add( "此蛋将在 " ).Add( time.ToString(), timerColor ).Add( " 秒后孵化。" );
                     }
                     debugStage = 2100;
                     Planet lurePlanet = data.LurePlanet;
                     if ( lurePlanet != null )
                     {
                         debugStage = 2200;
-                        Buffer.Add( "This Elderling is being lured to " ).Add( lurePlanet.Name, "ffa1a1" ).Add( ".\n" );
+                        Buffer.Add( "此长者正被引诱至 " ).Add( lurePlanet.Name, "ffa1a1" ).Add( "。\n" );
                     }
                     debugStage = 2300;
                     bool showData = (data.TrackedByPlayer || debug || globaldata.PlayerAllied);
@@ -107,7 +107,7 @@ namespace Arcen.AIW2.External
                         string timerColor = ArcenExternalUIUtilities.GetColorForNomadMoveTime( time ); //timerColor gets more red the closer the planet is to succumbing
                         debugStage = 3400;
                         if ( time > 0 )
-                            Buffer.Add( "This elderling will be able to lay an egg in " ).Add( time.ToString(), timerColor ).Add( " seconds." );
+                            Buffer.Add( "此长者将在 " ).Add( time.ToString(), timerColor ).Add( " 秒后能够产卵。" );
                         else
                         {
                             debugStage = 3500;
@@ -116,15 +116,15 @@ namespace Arcen.AIW2.External
                             if ( planetForEgg != null && lurePlanet == null )
                             {
                                 debugStage = 3700;
-                                Buffer.Add( "This elderling is off to lay an egg on " ).Add( planetForEgg.Name, "a1ffa1" ).Add(".");
+                                Buffer.Add( "此长者正前往 " ).Add( planetForEgg.Name, "a1ffa1" ).Add( " 产卵。" );
                             }
                             else
-                                Buffer.Add( "This elderling can lay an egg when it chooses to do so." );
+                                Buffer.Add( "此长者可以在其选择时产卵。" );
                         }
                     }
                     debugStage = 4050;
                     if ( data.NumberOfTimesLeveledUp > 0 ) {
-                        Buffer.Add( " This elderling has leveled up " ).Add( data.NumberOfTimesLeveledUp, "a1ffa1" ).Add(" times.");
+                        Buffer.Add( " 此长者已升级 " ).Add( data.NumberOfTimesLeveledUp, "a1ffa1" ).Add( " 次。" );
                     }
                     debugStage = 4100;
                     if ( data.ExperienceRequired > 0 && showData )
@@ -132,28 +132,28 @@ namespace Arcen.AIW2.External
                         debugStage = 4200;
                         string timerColor = ArcenExternalUIUtilities.GetColorForNomadMoveTime( data.ExperienceRequired ); //timerColor gets more red the closer the planet is to succumbing
                         debugStage = 4300;
-                        Buffer.Add( " This elderling needs " ).Add( data.ExperienceRequired.ToString(), timerColor ).Add( " experience to level up. " );
+                        Buffer.Add( " 此长者需要 " ).Add( data.ExperienceRequired.ToString(), timerColor ).Add( " 经验值才能升级。" );
                         if ( verbose )
-                            Buffer.Add( " Elderlings get experience from a variety of sources, including time passing and invasions of its territory. When this elderling would go above mark level 7, it may transform into a more powerful form." );
+                            Buffer.Add( " 长者从多种来源获取经验，包括时间流逝和其领地被入侵。当此长者超过标记等级7时，它可能会变形为更强大的形态。" );
                         Buffer.Add( "\n" );
                     }
                     debugStage = 5100;
                     if ( !data.FullyUpgraded && data.ExperienceRequired <= 0 && showData && !RelatedEntityTypeData.GetHasTag( "HighElderling" ) )
                     {
                         debugStage = 5200;
-                        Buffer.Add( " This elderling will change form as soon as it is out of combat. " );
+                        Buffer.Add( " 此长者将在脱离战斗后立即改变形态。" );
                     }
                     debugStage = 5300;
                     if ( data.GetsAFreeTerritoryIfPossible && showData )
                     {
                         debugStage = 5500;
-                        Buffer.Add( " This elderling is trying to expand its territory." );
+                        Buffer.Add( " 此长者正试图扩张其领地。" );
                     }
                     debugStage = 5600;
                     if ( data.Territory.Count > 0 && showData )
                     {
                         debugStage = 5700;
-                        Buffer.Add( "\nElderling's Territory:\n" );
+                        Buffer.Add( "\n长者的领地：\n" );
                         for ( int i = 0; i < data.Territory.Count; i++ )
                         {
                             debugStage = 5800;

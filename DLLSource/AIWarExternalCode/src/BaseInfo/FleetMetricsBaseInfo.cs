@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -497,7 +497,7 @@ namespace Arcen.AIW2.External
             foreach ( KeyValuePair<GameEntityTypeData, long> kv in ShipLinesDamageAbsorbed ) totalAbsorbedCheck += kv.Value;
             if ( totalDealt == 0 && totalAbsorbedCheck == 0 )
             {
-                buffer.Add( "No fleet effectiveness data yet — engage some enemies first.\n" );
+                buffer.Add( "No fleet effectiveness data yet 鈥?engage some enemies first.\n" );
                 buffer.Add( "</size>" );
                 return;
             }

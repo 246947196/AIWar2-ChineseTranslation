@@ -15,13 +15,13 @@ namespace Arcen.AIW2.External
                 return;
             if ( FallenSpireFactionBaseInfo.Instance == null )
             {
-                Buffer.Add( "FallenSpireFactionBaseInfo.Instance is null for some reason!" );
+                Buffer.Add( "FallenSpireFactionBaseInfo.Instance 由于某种原因为空！" );
                 return;
             }
             // Make sure we have our city list before continuing.
             if ( FallenSpireFactionBaseInfo.Instance.SpireCities.Count <= 0 )
             {
-                Buffer.Add( "Fallen Spire not yet initialized, perhaps?  It says no cities. Please unpause the game, but also report this bug. " );
+                Buffer.Add( "尖塔可能尚未初始化？显示没有城市。请取消暂停游戏，同时请报告此错误。" );
                 return;
             }
 

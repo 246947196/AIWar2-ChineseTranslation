@@ -30,11 +30,11 @@ namespace Arcen.AIW2.External
             {
                 percent = 100 * perPlanet.NetEnergy / perPlanet.EnergyThresholdForAttack;
             }
-            Buffer.Add( "杩欐槸 " ).Add( percent.IntValue, "a1a1ff" ).Add( "% 鍏呰兘鐨?" ).Add( "鏆楄兘閲?, "2F7063" ).Add( "銆傚綋杈惧埌 100% 鏃讹紝瀹冨皢涓庡叾浠栧浠囩敓鎴愬櫒鍏变韩鑳介噺鎴栧鏄熺郴杩涜澶嶄粐銆傛澶嶄粐鐢熸垚鍣ㄧ殑姝讳骸鍒拌兘閲忚浆鎹㈡瘮涓?" ).Add( perPlanet.ConversionRatio, "a1ffa1" ).Add( "%銆? );
+            Buffer.Add( "这是 " ).Add( percent.IntValue, "a1a1ff" ).Add( "% 充能" ).Add( "暗能", "2F7063" ).Add( "。当达到 100% 时，它将与其他复仇生成器共享能量或对星系进行复仇。此复仇生成器的死亡到能量转换比为 " ).Add( perPlanet.ConversionRatio, "a1ffa1" ).Add( "%。" );
             if ( darkSpireCachedData.ConversionRatioCap > 0 )
-                Buffer.Add( " 杞崲姣斾笂闄愪负 " ).Add( darkSpireCachedData.ConversionRatioCap, "ffa1a1" ).Add( "%銆? );
+                Buffer.Add( " 转换比上限为 " ).Add( darkSpireCachedData.ConversionRatioCap, "ffa1a1" ).Add( "%。" );
             if ( perPlanet.VGGeneratesEnergy )
-                Buffer.Add( " 姝ゅ浠囩敓鎴愬櫒灏嗗缁堢紦鎱骇鐢熻兘閲忋€? );
+                Buffer.Add( " 此复仇生成器将始终缓慢产生能量。" );
         }
     }
 }

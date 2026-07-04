@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using System;
 
 using System.Text;
@@ -281,7 +281,7 @@ namespace Arcen.AIW2.External
 
             foreach ( GameEntity_Squad lamassu in info.Lamassus.DisplaySquads() )
             {
-                // Sockets belong to the Ziggurat fleet, not the Lamassu — find the owner Ziggurat.
+                // Sockets belong to the Ziggurat fleet, not the Lamassu 鈥?find the owner Ziggurat.
                 GameEntity_Squad ownerZiggurat = null;
                 foreach ( GameEntity_Squad ziggurat in info.Ziggurats.DisplaySquads() )
                 {
@@ -359,11 +359,11 @@ namespace Arcen.AIW2.External
                     if ( breach.Difficulty != MalwareBreachDifficulty.None )
                         buffer.Add( "  [" ).Add( breach.Difficulty.ToString(), "ffaaaa" ).Add( "]" );
                     if ( breach.UnlockFactionResource != ApkalluFactionResource.None )
-                        buffer.Add( "  →  ", ObjectiveColors.Muted ).Add( breach.UnlockFactionResource.ToString(), ObjectiveColors.Reward );
+                        buffer.Add( "  鈫? ", ObjectiveColors.Muted ).Add( breach.UnlockFactionResource.ToString(), ObjectiveColors.Reward );
                     else if ( breach.UnlockZigguratStructure != null )
-                        buffer.Add( "  →  ", ObjectiveColors.Muted ).Add( breach.UnlockZigguratStructure.DisplayName, ObjectiveColors.Reward );
+                        buffer.Add( "  鈫? ", ObjectiveColors.Muted ).Add( breach.UnlockZigguratStructure.DisplayName, ObjectiveColors.Reward );
                     else if ( breach.UnlockDuruStructures.Count > 0 )
-                        buffer.Add( "  →  ", ObjectiveColors.Muted ).Add( breach.UnlockDuruStructures[0].DisplayName, ObjectiveColors.Reward );
+                        buffer.Add( "  鈫? ", ObjectiveColors.Muted ).Add( breach.UnlockDuruStructures[0].DisplayName, ObjectiveColors.Reward );
                     buffer.Add( "\n" );
                 }
             }
@@ -409,11 +409,11 @@ namespace Arcen.AIW2.External
                     if ( breach.Difficulty != MalwareBreachDifficulty.None )
                         buffer.Add( "  [" ).Add( breach.Difficulty.ToString(), "ffaaaa" ).Add( "]" );
                     if ( breach.UnlockFactionResource != ApkalluFactionResource.None )
-                        buffer.Add( "  →  ", ObjectiveColors.Muted ).Add( breach.UnlockFactionResource.ToString(), ObjectiveColors.Reward );
+                        buffer.Add( "  鈫? ", ObjectiveColors.Muted ).Add( breach.UnlockFactionResource.ToString(), ObjectiveColors.Reward );
                     else if ( breach.UnlockZigguratStructure != null )
-                        buffer.Add( "  →  ", ObjectiveColors.Muted ).Add( breach.UnlockZigguratStructure.DisplayName, ObjectiveColors.Reward );
+                        buffer.Add( "  鈫? ", ObjectiveColors.Muted ).Add( breach.UnlockZigguratStructure.DisplayName, ObjectiveColors.Reward );
                     else if ( breach.UnlockDuruStructures.Count > 0 )
-                        buffer.Add( "  →  ", ObjectiveColors.Muted ).Add( breach.UnlockDuruStructures[0].DisplayName, ObjectiveColors.Reward );
+                        buffer.Add( "  鈫? ", ObjectiveColors.Muted ).Add( breach.UnlockDuruStructures[0].DisplayName, ObjectiveColors.Reward );
                     buffer.Add( "\n" );
                 }
             }

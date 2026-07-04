@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -46,13 +46,13 @@ namespace Arcen.AIW2.External
         public int LurkingStrength;
         public byte HighestMarkUnit;
         //Counter-awareness: strength-weighted outgoing damage multiplier this team brings against a target in each
-        //mass/armor bin. TeamAntiMass[bin] == Σ shipStrength × that ship's OutgoingDamageProfile.AntiMass[bin], so with
+        //mass/armor bin. TeamAntiMass[bin] == 危 shipStrength 脳 that ship's OutgoingDamageProfile.AntiMass[bin], so with
         //no relevant counters these equal TeamStrength (all 1.0x) and above that means real bonus coverage of that bin.
         public readonly int[] TeamAntiMass = new int[CompositionBins.MassBinCount];
         public readonly int[] TeamAntiArmor = new int[CompositionBins.ArmorBinCount];
         public readonly int[] TeamAntiAlbedo = new int[CompositionBins.AlbedoBinCount];
         public readonly int[] TeamAntiEnergy = new int[CompositionBins.EnergyBinCount];
-        //Shield-bypass: Σ shipStrength × ShieldBypassFraction. Unlike the bin arrays (baseline 1.0×), baseline here is 0
+        //Shield-bypass: 危 shipStrength 脳 ShieldBypassFraction. Unlike the bin arrays (baseline 1.0脳), baseline here is 0
         //(no bypass). Used to give a bonus against turret-heavy planets where personal shields provide real protection.
         public int TeamAntiShield;
         //Zombify: total strength of ships that have a zombification/nanocaustation death effect. Baseline 0.

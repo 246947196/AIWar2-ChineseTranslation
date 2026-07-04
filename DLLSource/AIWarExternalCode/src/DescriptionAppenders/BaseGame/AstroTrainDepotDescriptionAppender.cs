@@ -21,12 +21,12 @@ namespace Arcen.AIW2.External
             Buffer.Add( depotData.data.ToString() );
             if ( depotData.data.TrainsNeededBeforeFiring != -1 || depotData.data.FiresOnEveryTrain == false )
             {
-                Buffer.Add( " 鐩墠宸叉湁 " + depotData.TrainsThatArrivedSafely );
+                Buffer.Add( " 目前已有 " + depotData.TrainsThatArrivedSafely );
                 if ( depotData.TrainsThatArrivedSafely == 1 )
-                    Buffer.Add( " 鍒楃伀杞?" );
+                    Buffer.Add( " 列火车" );
                 else
-                    Buffer.Add( " 鍒楃伀杞?" );
-                Buffer.Add( "瀹夊叏鎶佃揪銆? );
+                    Buffer.Add( " 列火车" );
+                Buffer.Add( "安全抵达。" );
             }
         }
     }

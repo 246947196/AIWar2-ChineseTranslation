@@ -16,9 +16,9 @@ namespace Arcen.AIW2.External
             SpireSidekickPerUnitBaseInfo data = RelatedEntityOrNull.TryGetExternalBaseInfoAs<SpireSidekickPerUnitBaseInfo>();
             if ( data.DestinationPlanet != null &&
                  data.DestinationPlanet != RelatedEntityOrNull.Planet )
-                Buffer.Add( "This relic is en route to " ).Add( data.DestinationPlanet.Name ).Add( "." );
+                Buffer.Add( "此遗物正在前往 " ).Add( data.DestinationPlanet.Name ).Add( " 的途中。" );
             if ( data.MustBuildOnStartPlanet )
-                Buffer.Add( "This relics power supply was crippled by the AI, and must build a Spire City on this planet." );
+                Buffer.Add( "此遗物的能源供应已被AI破坏，必须在此星球上建造一座尖塔城市。" );
         }
     }
     public class SpireSidekickOutpostDescriptionAppender : GameEntityDescriptionAppenderBase
@@ -40,7 +40,7 @@ namespace Arcen.AIW2.External
             SpireSidekickPerUnitBaseInfo data = RelatedEntityOrNull.TryGetExternalBaseInfoAs<SpireSidekickPerUnitBaseInfo>();
             if ( data == null )
             {
-                Buffer.Add("no data");
+                Buffer.Add("无数据");
                 return;
             }
                 
@@ -55,7 +55,7 @@ namespace Arcen.AIW2.External
             {
                 if ( data.RangerMetal > 0 ||  data.DireRangerMetal > 0 )
                 {
-                    Buffer.Add("<size=80%>We have ").Add( data.RangerMetal, "999999" ).Add(" resource for Crystalline Wardens and ").Add( data.DireRangerMetal, "999999" ).Add(" resource for Shivers.</size> ");  
+                    Buffer.Add("<size=80%>我们有 ").Add( data.RangerMetal, "999999" ).Add(" 资源用于水晶守卫者，").Add( data.DireRangerMetal, "999999" ).Add(" 资源用于寒颤者。</size> ");  
                 }
                 Dictionary<Planet, int> rangerDict = globaldata.RangersPerPlanet.GetDisplayDict();
                 bool printedIntro = false;
@@ -64,7 +64,7 @@ namespace Arcen.AIW2.External
                     if ( !printedIntro)
                     {
                         printedIntro = true;
-                        Buffer.Add("An accounting of all your defensive ships:\n");
+                        Buffer.Add("您所有防御舰船的统计：\n");
                     }
                     Buffer.Add("\t").Add(kv.Key.Name, "a1a1ff").Add(": ").Add( kv.Value, "a1ffa1" ).Add("\n");
                     continue;
@@ -84,27 +84,27 @@ namespace Arcen.AIW2.External
                 return;
             if ( SpireSidekickFactionBaseInfo.Instance == null )
             {
-                Buffer.Add( "SpireSidekickFactionBaseInfo.Instance is null for some reason!" );
+                Buffer.Add( "SpireSidekickFactionBaseInfo.Instance 由于某种原因为空！" );
                 return;
             }
             // Make sure we have our city list before continuing.
             if ( SpireSidekickFactionBaseInfo.Instance.SpireCities.Count <= 0 )
             {
-                Buffer.Add( "Fallen Spire not yet initialized, perhaps?  It says no cities. Please unpause the game, but also report this bug. " );
+                Buffer.Add( "尖塔可能尚未初始化？显示没有城市。请取消暂停游戏，同时请报告此错误。" );
                 return;
             }
 
             SpireSidekickPerUnitBaseInfo data = RelatedEntityOrNull.TryGetExternalBaseInfoAs<SpireSidekickPerUnitBaseInfo>();
             if ( data == null )
             {
-                Buffer.Add("no data");
+                Buffer.Add("无数据");
                 return;
             }
             Faction faction = RelatedEntityOrNull.PlanetFaction.Faction;
             SpireSidekickFactionBaseInfo globaldata = faction.TryGetExternalBaseInfoAs<SpireSidekickFactionBaseInfo>();
             if ( data.RangerMetal > 0 ||  data.DireRangerMetal > 0 )
             {
-                Buffer.Add("<size=80%>We have ").Add( data.RangerMetal, "999999" ).Add(" ranger metal and ").Add( data.DireRangerMetal, "999999" ).Add(" dire ranger metal.\n</size> ");  
+                Buffer.Add("<size=80%>我们有 ").Add( data.RangerMetal, "999999" ).Add(" 游骑兵金属和 ").Add( data.DireRangerMetal, "999999" ).Add(" 精英游骑兵金属。\n</size> ");  
             }
             Dictionary<Planet, int> rangerDict = globaldata.RangersPerPlanet.GetDisplayDict();
             bool printedIntro = false;
@@ -113,7 +113,7 @@ namespace Arcen.AIW2.External
                 if ( !printedIntro)
                 {
                     printedIntro = true;
-                    Buffer.Add("An accounting of all your rangers:\n");
+                    Buffer.Add("您所有游骑兵的统计：\n");
                 }
                 Buffer.Add("\t").Add(kv.Key.Name, "a1a1ff").Add(": ").Add( kv.Value, "a1ffa1" ).Add("\n");
                 continue;

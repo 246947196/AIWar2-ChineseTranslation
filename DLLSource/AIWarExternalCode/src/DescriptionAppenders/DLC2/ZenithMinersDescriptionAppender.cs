@@ -26,27 +26,27 @@ namespace Arcen.AIW2.External
                  RelatedEntityTypeData.GetHasTag( "ZenithMinerStationary" ) )
             {
                 if ( data.Effect == ZenithMinerEffect.DestroyPlanet || data.Effect == ZenithMinerEffect.DestroyDysonSphere || data.Effect == ZenithMinerEffect.DiminishZenithArchitrave )
-                    Buffer.Add( "Eating Planet! This will utterly destroy the planet and remove it from the galaxy. " );
+                    Buffer.Add( "吞噬星球！这将彻底摧毁该星球并将其从星系中移除。" );
                 else if ( data.Effect == ZenithMinerEffect.RavagePlanet )
-                    Buffer.Add( "Ravaging Planet! This will devastate the planet and remove many of its resources, but it will still be part of the galaxy. " );
+                    Buffer.Add( "蹂躏星球！这将破坏该星球并移除其大部分资源，但它仍将是星系的一部分。" );
                 else if ( data.Effect == ZenithMinerEffect.SlowShipsOnPlanet )
-                    Buffer.Add( "Increasing planetary gravity to permanently " ).Add( "slow", "a1ffa1" ).Add( " all ships on this planet. " );
+                    Buffer.Add( "增加行星引力以永久 " ).Add( "减慢", "a1ffa1" ).Add( " 该星球上所有舰船的速度。" );
                 else if ( data.Effect == ZenithMinerEffect.SpeedupShipsOnPlanet )
-                    Buffer.Add( "Decreasing planetary gravity to permanently " ).Add( "speedup", "a1ffa1" ).Add( " all ships on this planet. " );
+                    Buffer.Add( "降低行星引力以永久 " ).Add( "加速", "a1ffa1" ).Add( " 该星球上所有舰船的速度。" );
                 else if ( data.Effect == ZenithMinerEffect.MakePlanetNomadic )
-                    Buffer.Add( "Makes the planet move around the galaxy like a nomad planet. " );
+                    Buffer.Add( "使该星球像游牧星球一样在星系中移动。" );
                 else
-                    Buffer.Add( "TODO: define appender data for effect " + data.Effect );
+                    Buffer.Add( "TODO: 为此效果定义附加数据 " + data.Effect );
                 if ( RelatedEntityTypeData.GetHasTag( "ZenithMinerStationary" ) )
                 {
-                    Buffer.Add( "The Miner will be done in " ).AddHoursAndMinutes( data.RemainingDuration, "aaffaa" ).Add( ". " );
+                    Buffer.Add( "矿工将在 " ).AddHoursAndMinutes( data.RemainingDuration, "aaffaa" ).Add( " 后完成。" );
                 }
                 else
-                    Buffer.Add( "The Miner will deploy its drill and begin mining the planet once it kills all of its nearby enemies. Once the drill is deployed it will take " ).AddHoursAndMinutes( data.RemainingDuration, "aaffaa" ).Add( " seconds. " );
+                    Buffer.Add( "矿工将部署其钻头并开始开采星球，一旦消灭所有附近敌人。钻头部署后将需要 " ).AddHoursAndMinutes( data.RemainingDuration, "aaffaa" ).Add( " 秒。" );
             }
             else if ( RelatedEntityTypeData.GetHasTag( "ZenithMinerProbe" ) )
             {
-                Buffer.Add( "The Zenith Miner will arrive in " ).AddHoursAndMinutes( data.RemainingDuration, "aaffaa" ).Add( ". " );
+                Buffer.Add( "天顶矿工将在 " ).AddHoursAndMinutes( data.RemainingDuration, "aaffaa" ).Add( " 后到达。" );
             }
             return;
         }

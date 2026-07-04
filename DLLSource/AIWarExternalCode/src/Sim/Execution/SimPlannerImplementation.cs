@@ -1,4 +1,4 @@
-using Arcen.Universal;
+﻿using Arcen.Universal;
 using System;
 using Arcen.AIW2.Core;
 
@@ -206,7 +206,7 @@ namespace Arcen.AIW2.External
         public static long AllowedToRunSimStep2 = 0;
         public static long AllowedToRunSimStep3 = 0;
 
-        //Phase 2 adaptive frame-budget controller state (host/SP-only; per-peer & non-deterministic — it only DECIDES when to
+        //Phase 2 adaptive frame-budget controller state (host/SP-only; per-peer & non-deterministic 鈥?it only DECIDES when to
         //emit the synced, frame-bound GameCommand_ChangeFrameSize, so the actual sim scaling stays in lockstep across peers).
         private static float _autoBudget_lastDecisionRealtime = -1f;
         private static int _autoBudget_overBudgetTicks = 0;
@@ -258,7 +258,7 @@ namespace Arcen.AIW2.External
             }
 
             //load = the worst peer's ACTUAL sim-step compute time as a fraction of its per-step budget (1.0 == exactly on budget),
-            //from the real measured sim-step ms — so we can de-escalate on genuine headroom, no probing needed. Budget for the
+            //from the real measured sim-step ms 鈥?so we can de-escalate on genuine headroom, no probing needed. Budget for the
             //slowest peer.
             double load = w.GetWorstPeerLoadRatio_ServerOnly();
 

@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -18,7 +18,7 @@ namespace Arcen.AIW2.External
         public readonly Dictionary<GameEntityTypeData, int> RenegadeInvasionForce = Dictionary<GameEntityTypeData, int>.Create_WillNeverBeGCed( 500, "RenegadeSpireFactionBaseInfo-RenegadeInvasionForce" );
         public int RenegadeInvasionForceStrength = 0;
 
-        // Fractures in spawn order — oldest first (front = chief fracture candidate)
+        // Fractures in spawn order 鈥?oldest first (front = chief fracture candidate)
         public readonly List<int> FractureSpawnOrder = List<int>.Create_WillNeverBeGCed( 30, "RenegadeSpireFactionBaseInfo-FractureSpawnOrder" );
 
         // Populated each Stage2 tick
@@ -30,7 +30,7 @@ namespace Arcen.AIW2.External
         // Settings
         public int Intensity;
 
-        // Difficulty row — loaded from table by Intensity in DoRefreshFromFactionSettings
+        // Difficulty row 鈥?loaded from table by Intensity in DoRefreshFromFactionSettings
         public RenegadeSpireDifficulty Difficulty;
 
         

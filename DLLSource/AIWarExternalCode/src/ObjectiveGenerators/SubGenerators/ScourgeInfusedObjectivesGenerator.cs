@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using System;
 
 using Arcen.Universal;
@@ -142,8 +142,8 @@ namespace Arcen.AIW2.External
             int total = Objective.RelatedInt2;
             buffer.Add( unlocked.ToString(), ObjectiveColors.Reward ).Add( " of " ).Add( total.ToString(), "ffaa44" ).Add( " alien races unlocked.\n\n" );
             buffer.Add( "Unlocking a race via the tech tree enables:\n" );
-            buffer.Add( "  • A race-specific ", ObjectiveColors.Hint ).Add( "Armory", "ff8877" ).Add( " lets Warriors evolve into that race's variant.\n" );
-            buffer.Add( "  • A race-specific ", ObjectiveColors.Hint ).Add( "Fortress", "ff8877" ).Add( " produces defensive ships of that race.\n\n" );
+            buffer.Add( "  鈥?A race-specific ", ObjectiveColors.Hint ).Add( "Armory", "ff8877" ).Add( " lets Warriors evolve into that race's variant.\n" );
+            buffer.Add( "  鈥?A race-specific ", ObjectiveColors.Hint ).Add( "Fortress", "ff8877" ).Add( " produces defensive ships of that race.\n\n" );
             buffer.Add( "Unlocking a second level of a race enables the Hybrid forms.\n\n" );
             buffer.Add( "Races available: Burlust, Evuck, Thoraxian, Peltian, Neinzul, Spire, Zenith.", ObjectiveColors.Hint );
         }

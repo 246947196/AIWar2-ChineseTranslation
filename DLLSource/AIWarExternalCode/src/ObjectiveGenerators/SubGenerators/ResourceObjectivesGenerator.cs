@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using System;
 
 using System.Text;
@@ -527,7 +527,7 @@ namespace Arcen.AIW2.External
                 buffer.Add( "\n  " );
                 if ( viewing != null )
                     buffer.AddShipIconInline( type, viewing, TextStyle.Ship_Sprite_Ency ).Add( "  " );
-                buffer.Add( "×" + c, ObjectiveColors.Muted ).Add( " " ).Add( type.GetDisplayName(), ObjectiveColors.Keyword ).Add( ": " );
+                buffer.Add( "脳" + c, ObjectiveColors.Muted ).Add( " " ).Add( type.GetDisplayName(), ObjectiveColors.Keyword ).Add( ": " );
                 AppendKillAmount( buffer, type, c, kind );
             }
             if ( killTypes.Count > shown )

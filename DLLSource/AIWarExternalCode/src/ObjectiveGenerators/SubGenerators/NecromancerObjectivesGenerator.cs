@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using System;
 
 using System.Text;
@@ -298,7 +298,7 @@ namespace Arcen.AIW2.External
                             }
                         }
                         if ( shipsToGet > 1 )
-                            buffer.Add( " ×" + shipsToGet, "77a1aa" );
+                            buffer.Add( " 脳" + shipsToGet, "77a1aa" );
                         buffer.Add( "  " ); //a bit more whitespace
                         byte markLevel = localFaction.GetGlobalMarkLevelForShipLine( typeData );
                         GameEntityTypeData.MarkLevelStats markStatsForDisplay = typeData.MarkStatsFor( markLevel );

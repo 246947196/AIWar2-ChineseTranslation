@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -36,17 +36,17 @@ namespace Arcen.AIW2.External
         public int OutpostForDireRangerCap = 5;
         public int PilgrimIncome = 10;
 
-        // Lesser Pilgrim resource conversion rates (ResourcePoints × rate = amount granted)
+        // Lesser Pilgrim resource conversion rates (ResourcePoints 脳 rate = amount granted)
         public FInt LesserPilgrimMetalConversion   = FInt.FromParts( 200, 000 );
         public FInt LesserPilgrimHackingConversion = FInt.FromParts( 0,  100 );
         public FInt LesserPilgrimScienceConversion = FInt.FromParts( 2,  000 );
 
-        // Controls how quickly t (journey quality, 0→1) rises with hop count.
+        // Controls how quickly t (journey quality, 0鈫?) rises with hop count.
         // t = min(1, totalHops / (galaxySize * scale)). Lower = reaches max quality sooner.
         public FInt PilgrimJourneyQualityScale = FInt.FromParts( 0, 100 );
 
         // Fraction of a regular pilgrim's RP that always goes to the highest special resource
-        // the pilgrim's tier can grant (T1→R1, T2→R2, T3→R3). Remainder goes through the Bernstein roll.
+        // the pilgrim's tier can grant (T1鈫扲1, T2鈫扲2, T3鈫扲3). Remainder goes through the Bernstein roll.
         public FInt PilgrimGuaranteedSpecialFraction = FInt.FromParts( 0, 250 );
 
         // Regular Pilgrim resource conversion rates

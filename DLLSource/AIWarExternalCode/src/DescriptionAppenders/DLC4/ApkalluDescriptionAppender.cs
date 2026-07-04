@@ -32,10 +32,10 @@ namespace Arcen.AIW2.External
                     int deployedCount = deployed == null ? 0 : deployed.Count;
                     if ( stored.Count > 0 || deployedCount > 0 )
                     {
-                        Buffer.Add( "\nEscorts: " );
+                        Buffer.Add( "\n护航舰：" );
                         if ( stored.Count > 0 )
                         {
-                            Buffer.Add( "stored inside (" );
+                            Buffer.Add( "内部储存 (" );
                             bool isFirst = true;
                             foreach ( KeyValuePair<GameEntityTypeData, int> kv in stored )
                             {
@@ -48,12 +48,12 @@ namespace Arcen.AIW2.External
                         if ( deployedCount > 0 )
                         {
                             if ( stored.Count > 0 ) Buffer.Add( "; " );
-                            Buffer.Add( deployedCount, "ffa1a1" ).Add( " deployed" );
+                            Buffer.Add( deployedCount, "ffa1a1" ).Add( " 已部署" );
                         }
                         Buffer.Add( ". " );
                     }
                     else
-                        Buffer.Add( "\nNo escorts remaining. " );
+                        Buffer.Add( "\n无剩余护航舰。" );
                     return;
                 }
                 if ( RelatedEntityTypeData.GetHasTag( "ApkalluFlagship" ) )
@@ -110,7 +110,7 @@ namespace Arcen.AIW2.External
                         }
 
                         if ( differs )
-                            Buffer.Add( "\nNew weapons are available when the Lamassu returns to its Ziggurat. ", "a1ffa1" );
+                            Buffer.Add( "\n拉玛苏返回其金字形神塔后将有新武器可用。", "a1ffa1" );
                     }
                     return;
                 }
@@ -127,7 +127,7 @@ namespace Arcen.AIW2.External
                     ApkalluPerUnitBaseInfo localData = RelatedEntityOrNull.TryGetExternalBaseInfoAs<ApkalluPerUnitBaseInfo>();
                     if ( localData != null )
                     {
-                        Buffer.Add( "\nThis pilgrim has ").Add( localData.ResourcePoints, "a1ffa1" ).Add(" resource points.");
+                        Buffer.Add( "\n此朝圣者有 " ).Add( localData.ResourcePoints, "a1ffa1" ).Add( " 资源点。" );
                     return;
                     }
                 }
