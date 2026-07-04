@@ -15,10 +15,17 @@
 
 ## 工作流程
 
-1. 在 `AIWar2_ChineseTranslation/GameData/Configuration/` 中编辑 XML 文件
-2. 运行 `deploy.ps1` 部署到游戏目录
-3. 启动游戏验证翻译效果
-4. 提交翻译到 Git 仓库
+1. 从游戏目录复制原版 XML 文件到翻译文件夹
+2. 在 `AIWar2_ChineseTranslation/GameData/Configuration/` 中编辑 XML 文件
+3. 运行 `deploy.ps1` 部署到游戏目录
+4. 启动游戏验证翻译效果
+5. 提交翻译到 Git 仓库
+
+## 翻译规则
+
+- 只修改 `default_display_name` 属性
+- 不添加新条目
+- 保持原有 XML 结构不变
 
 ## 关键约定
 
