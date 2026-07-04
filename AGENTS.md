@@ -4,11 +4,12 @@
 
 ## 核心架构
 
-**唯一方案：Preloader Patcher + DLL 替换**
+**两种手段：DLL 替换 + XML 文件整体替换**
 
 - ❌ XMLMod — DLL 覆盖机制有问题，已排除
 - ❌ Harmony 运行时 Patch — 实测巨量 BUG，已排除
 - ❌ AutoTranslator — 不能全部翻译，已排除
+- ✅ **XML 文件整体替换** — 直接替换 `GameData/Configuration/` 下的 XML 文件
 - ✅ **DLL 替换** — 修改 DLL 后放入 `PatchedAssemblies/`，Preloader Patcher 在启动时替换加载
 - ✅ **I18NFont4UnityGame** — 中文字体渲染，核心组件
 
