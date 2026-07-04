@@ -1,0 +1,5 @@
+D:\Steam\steamapps\common\AI War 2\GameData\ModdableLogicDLLs\AIWarExternalVisualizationCode.dll
+D:\Steam\steamapps\common\AI War 2\GameData\ModdableLogicDLLs\AIWarExternalVisualizationCode.pdb
+D:\Steam\steamapps\common\AI War 2\AIWar2_ChineseTranslation\DLLSource\AIWarExternalVisualizationCode\obj\Release\AIWarExternalVisualizationCode.csprojResolveAssemblyReference.cache
+D:\Steam\steamapps\common\AI War 2\AIWar2_ChineseTranslation\DLLSource\AIWarExternalVisualizationCode\obj\Release\AIWarExternalVisualizationCode.dll
+D:\Steam\steamapps\common\AI War 2\AIWar2_ChineseTranslation\DLLSource\AIWarExternalVisualizationCode\obj\Release\AIWarExternalVisualizationCode.pdb

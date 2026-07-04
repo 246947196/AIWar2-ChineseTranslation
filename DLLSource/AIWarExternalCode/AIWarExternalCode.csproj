@@ -1,0 +1,982 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CF5C1EDE-E953-46AF-B818-CC6B49226779}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AIWarExternalCode</RootNamespace>
+    <AssemblyName>AIWarExternalCode</AssemblyName>
+    <!-- v4.7.2 (vs the v4.7.1 used elsewhere in the solution) is required by the
+         Harmony 2.x runtime referenced below. AIWarExternalCode is the only project
+         that needs this bump - HarmonyLib types are deliberately confined to this
+         externally-loaded DLL so Unity-visible assemblies (and the rest of the
+         solution) can stay on v4.7.1. See src\HarmonyIntegration.cs for the full
+         rationale, including the Mono type-loader quirk that drives the split. -->
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <LangVersion>13.0</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\GameData\ModdableLogicDLLs\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\GameData\ModdableLogicDLLs\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <Choose>
+    <When Condition=" '$(ArcenUseProjectReferences)' == 'true' ">
+      <ItemGroup>
+        <ProjectReference Include="..\..\CodeCrossProject\ArcenUniversal\ArcenUniversal.csproj">
+          <Private>False</Private>
+          <Project>{36F31569-49BD-4E80-9434-81F284089B62}</Project>
+          <Name>ArcenUniversal</Name>
+        </ProjectReference>
+        <ProjectReference Include="..\..\CodeMain\ArcenAIW2Core\ArcenAIW2Core.csproj">
+          <Private>False</Private>
+          <Project>{4A4321C5-087D-4A51-9328-8D4478034DA3}</Project>
+          <Name>ArcenAIW2Core</Name>
+        </ProjectReference>
+        <ProjectReference Include="..\..\CodeMain\ArcenAIW2ThirdParty\ArcenAIW2ThirdParty.csproj">
+          <Private>False</Private>
+          <Project>{AE38D28E-CAC8-4B10-801F-60AC29485063}</Project>
+          <Name>ArcenAIW2ThirdParty</Name>
+        </ProjectReference>
+        <ProjectReference Include="..\..\CodeMain\ArcenAIW2Visualization\ArcenAIW2Visualization.csproj">
+          <Private>False</Private>
+          <Project>{78D35AB1-0412-43FA-8A3A-283A771792BB}</Project>
+          <Name>ArcenAIW2Visualization</Name>
+        </ProjectReference>
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="ArcenUniversal">
+          <HintPath>..\..\..\ReliableDLLStorage\ArcenDLLs\ArcenUniversal.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="ArcenAIW2Core">
+          <HintPath>..\..\..\ReliableDLLStorage\ArcenDLLs\ArcenAIW2Core.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="ArcenAIW2ThirdParty">
+          <HintPath>..\..\..\ReliableDLLStorage\ArcenDLLs\ArcenAIW2ThirdParty.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="ArcenAIW2Visualization">
+          <HintPath>..\..\..\ReliableDLLStorage\ArcenDLLs\ArcenAIW2Visualization.dll</HintPath>
+        </Reference>
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Reference Include="mscorlib">
+      <HintPath>..\..\..\ReliableDLLStorage\mscorlib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>..\..\..\ReliableDLLStorage\System.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>..\..\..\ReliableDLLStorage\System.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.XML">
+      <HintPath>..\..\..\ReliableDLLStorage\System.Xml.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <!-- Compile-time reference only. 0Harmony.dll ships in GameData/HarmonyDLLs/
+         and is loaded at runtime via the AssemblyResolve handler registered by
+         ArcenAIW2Core's HarmonyDLLLoader. Private=False keeps it out of bin output.
+         This reference lives here, in an externally-loaded DLL Unity never sees,
+         rather than in ArcenAIW2Core - so no Unity-visible plugin carries a
+         0Harmony AssemblyRef, keeping BuildPipeline and Burst blind to it. -->
+    <Reference Include="0Harmony">
+      <HintPath>..\..\..\GameData\HarmonyDLLs\0Harmony.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>..\..\..\ReliableDLLStorage\Unity.TextMeshPro.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AccessibilityModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.AccessibilityModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AIModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.AIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.AnimationModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ARModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.ARModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.AssetBundleModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.AudioModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ClothModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.ClothModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterInputModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.ClusterInputModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterRendererModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.ClusterRendererModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CrashReportingModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.CrashReportingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.DirectorModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.DirectorModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.FileSystemHttpModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.FileSystemHttpModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.GameCenterModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.GameCenterModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.GridModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.GridModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.HotReloadModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.HotReloadModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.ImageConversionModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.InputLegacyModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.InputModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.JSONSerializeModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.LocalizationModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.LocalizationModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.ParticleSystemModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.PerformanceReportingModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.PerformanceReportingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.Physics2DModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.Physics2DModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.PhysicsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ProfilerModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.ProfilerModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ScreenCaptureModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.ScreenCaptureModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.SharedInternalsModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.SharedInternalsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteMaskModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.SpriteMaskModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteShapeModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.SpriteShapeModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.StreamingModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.StreamingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.StyleSheetsModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.StyleSheetsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.SubstanceModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.SubstanceModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.TerrainModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainPhysicsModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.TerrainPhysicsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextCoreModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.TextCoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.TextRenderingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TilemapModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.TilemapModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TLSModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.TLSModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.UIElementsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.UIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UmbraModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.UmbraModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UNETModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.UNETModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityAnalyticsModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.UnityAnalyticsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityConnectModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.UnityConnectModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityTestProtocolModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.UnityTestProtocolModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAudioModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.UnityWebRequestModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestTextureModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestWWWModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.VehiclesModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.VehiclesModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.VFXModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.VFXModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.VideoModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.VideoModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.VRModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.VRModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.WindModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.WindModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.XRModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.XRModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="src\AlternativeMoveOrderHandlers\SpireRelicMoveHandler.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\Waves\AbstractWaveBase.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\Waves\WaveDisplay.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\Human\SpectatorFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\Human\HumanEmpireFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\Human\HumanMobileFleetBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AIBorderAggressionFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AIRelentlessAndBorderAggressionFactionBaseInfoRoot.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AISentinelsCoreData.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AISentinelsFactionBaseInfo_WavePlanning.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AISentinelsFactionBaseInfo_BudgetLogic.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AICoreDataRoot.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AISubFactionCoreDataRoot.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AISubFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AIRelentlessWaveFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AIType\BaseAITypeImplementation.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AIType\Types\BaseGame\AITypeController_WormholeMaster.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AIType\Types\BaseGame\AITypeController_WardenMaster.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AIType\Types\BaseGame\AITypeController_Reservist.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AIType\Types\DoNothingExtras.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AIType\Types\BaseGame\AITypeController_Tutorial_01.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AIType\Types\BaseGame\AITypeController_FortressBaron.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AIType\Types\DLC2\AITypeController_Geneticist.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AIType\Types\DLC2\AITypeController_Jabberwock.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AIType\Types\DLC2\AITypeController_Gladiator.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AIType\Types\DLC2\AITypeController_Ragnarok.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AIType\Types\DLC2\AITypeController_SpireHammer.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AIType\Types\BaseGame\AITypeController_OneWayDoormaster.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AIType\Types\DLC3\AITypeController_Aggressor.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AIType\Types\DLC3\AITypeController_Huntrex.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AIType\Types\DLC3\AITypeController_Heroic.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AIType\Types\DLC3\AITypeController_Miskatonic.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AIType\Types\DLC3\AITypeController_Tiberian.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AIType\Types\DLC3\AITypeController_Hateful.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AIType\Types\DLC3\AITypeController_Flenserite.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AIType\Types\DLC3\AITypeController_Kzinti.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AIType\Types\DLC4\AITypeController_Cthonic.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AIType\Types\DLC4\AITypeController_Tiamat.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AIType\Types\DLC3\AITypeController_Wraith.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AIType\Types\DLC3\AITypeController_Wanderer.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AIType\Types\DLC3\AITypeController_TurretMaster.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AIType\Types\DLC3\AITypeController_Ametor.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AIType\Types\DLC3\AITypeController_Lernean.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AIType\Types\DLC3\AITypeController_Shadowen.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AIType\Types\DLC3\AITypeController_Bandersnatch.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AIType\Types\DLC3\AITypeController_Chivalric.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AIType\Types\DLC4\AITypeController_Cruel.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AIType\Types\DLC2\AITypeController_Praetor.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AIType\Types\BaseGame\AITypeController_PeaceMaker.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AIType\Types\BaseGame\AITypeController_Royal.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AIType\Types\BaseGame\AITypeController_Tsunami.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AIType\Types\BaseGame\AITypeController_Turtle.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AIType\Types\BaseGame\AITypeController_Reconquista.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\PublicAIReservesNotifier.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\Hunter\AIHunterFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\PraetorianGuard\AIPraetorianGuardFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\Warden\AIWardenFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\DarkSpire\PublicDarkSpireNotifier.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\DarkSpire\PublicDarkSpireLocusNotifier.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\Nanocaust\NanocaustNotifier.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\Nanocaust\NanocaustPersonalNotificationGenerator.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\SphereFactions\Deprecated\DysonSphereAntagonizedFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\Macrophage\MacrophageEnragedFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\Macrophage\MacrophageTamedFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\Macrophage\MacrophageFactionBaseInfoCore.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\ExternalFactionBaseInfoRoot.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\MissingFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\RandomFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\NaturalObjectFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\ZenithTraderFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\LoneWandererFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\DevourerFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\FactionCustomFieldExtensions.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\ExtragalacticBudget.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AIReservesPerUnitBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\WormholeInvasionPerUnitBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\WormholeInvasionData.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AISentinelsFactionBaseInfoExtensions.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AISentinelsFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\Hunter\AIHunterCoreData.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\PraetorianGuard\AIPraetorianGuardCoreData.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\Warden\AIWardenCoreData.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\Waves\PlannedWaveOptions.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\Waves\PlannedWave.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\RiskAnalyzerFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\InstigatorFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\InstigatorPerUnitBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AIBudget.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AIDifficultyTable.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\Zombies\ZombieAntiEveryoneFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\Zombies\ZombieAntiPlayerFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\Zombies\ZombieAntiAIFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\Zombies\ZombieFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC1\FallenSpire\PublicImperialSpireNotifier.cs" />
+    <Compile Include="src\BaseInfo\DLC1\FallenSpire\PublicRelicTrainNotifier.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\SphereFactions\SphereFactionNotifier.cs" />
+    <Compile Include="src\BaseInfo\DLC1\FallenSpire\PublicSpireRelicNotifier.cs" />
+    <Compile Include="src\BaseInfo\DLC1\FallenSpire\PublicSpireCityUpgradeNotifier.cs" />
+    <Compile Include="src\BaseInfo\DLC1\FallenSpire\PublicSpireDebrisNotifier.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\SphereFactions\SphereFactionDifficultyTable.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\SphereFactions\SphereFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\Sidekicks\ScourgeInfusedHumanEmpireFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\Sidekicks\SpireSidekickFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\Sidekicks\SpireSidekickUpgradeNotifier.cs" />
+    <Compile Include="src\BaseInfo\Sidekicks\SpireSidekickCityFleetBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\Sidekicks\SpireSidekickDifficultyTable.cs" />
+    <Compile Include="src\BaseInfo\Sidekicks\Armada\ArmadaCityFleetBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\Sidekicks\Armada\ArmadaDifficultyTable.cs" />
+    <Compile Include="src\BaseInfo\Sidekicks\Armada\ArmadaFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\Sidekicks\Armada\ArmadaIncomeTable.cs" />
+    <Compile Include="src\BaseInfo\Sidekicks\Armada\ArmadaPerUnitBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\Sidekicks\Armada\ArmadaMobileFleetBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\Sidekicks\Armada\ArmadaNotifiers.cs" />
+    <Compile Include="src\BaseInfo\Sidekicks\Armada\ArmadaUpgrade.cs" />
+    <Compile Include="src\BaseInfo\Sidekicks\TiberiumFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\Sidekicks\TiberiumDifficultyTable.cs" />
+    <Compile Include="src\BaseInfo\Sidekicks\TiberiumPerUnitBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC4\MalwareFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC4\RenegadeSpireFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC4\RenegadeSpirePerUnitBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC4\RenegadeSpireDifficultyTable.cs" />
+    <Compile Include="src\BaseInfo\DLC4\MalwareProtocolTable.cs" />
+    <Compile Include="src\BaseInfo\DLC4\MalwareBreachTable.cs" />
+    <Compile Include="src\BaseInfo\DLC4\MalwareDifficultyTable.cs" />
+    <Compile Include="src\BaseInfo\DLC4\MalwarePerUnitBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC4\MalwareNotifiers.cs" />
+    <Compile Include="src\BaseInfo\DLC4\ApkalluFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC4\ApkalluInfusedHumanEmpireFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC4\ApkalluMobileFleetBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC4\ApkalluCityFleetBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC4\ApkalluPerUnitBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC4\ApkalluDifficultyTable.cs" />
+    <Compile Include="src\BaseInfo\DLC4\ApkalluNotifiers.cs" />
+
+    <Compile Include="src\BaseInfo\Sidekicks\SpireSidekickPerUnitBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\Sidekicks\ScourgeInfusedHumanEmpireNotifiers.cs" />
+    <Compile Include="src\BaseInfo\Sidekicks\ScourgeVassalFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC1\ChromaticHorrorFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC1\Human\SpireInfusedHumanEmpireFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC1\SplinteringSpire\SplinteringSpireDismantleNotifier.cs" />
+    <Compile Include="src\BaseInfo\DLC1\SplinteringSpire\SplinteringSpireCollectorNotifier.cs" />
+    <Compile Include="src\BaseInfo\DLC1\SplinteringSpire\SplinteringSpireDifficultyTable.cs" />
+    <Compile Include="src\BaseInfo\DLC1\SplinteringSpire\SplinteringSpireFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC3\MigrantFleets\MigrantFleetsNotifier.cs" />
+    <Compile Include="src\BaseInfo\DLC1\FallenSpire\FallenSpireCityFleetBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC1\Human\HumanArkEmpireFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC2\Human\DarkZenithSidekickSpecificCodeBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC2\Human\DarkZenithSidekickFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC2\Human\DarkZenithMobileFleetBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC2\DarkZenith\DarkZenithFactionBaseInfoRoot.cs" />
+    <Compile Include="src\BaseInfo\DLC2\DarkZenith\DarkZenithSvikariFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC2\DarkZenith\PublicDZInvasionNotifier.cs" />
+    <Compile Include="src\BaseInfo\DLC2\DarkZenith\PublicDZHjarnNotifier.cs" />
+    <Compile Include="src\BaseInfo\DLC2\PublicCrashingNomadPlanetNotifier.cs" />
+    <Compile Include="src\BaseInfo\DLC2\ZenithArchitrave\PublicArchitraveExpansionNotifier.cs" />
+    <Compile Include="src\BaseInfo\DLC2\ZenithArchitrave\PublicZenithArchitraveNotifier.cs" />
+    <Compile Include="src\BaseInfo\DLC2\ZenithMiners\PublicZenithMinerNotifier.cs" />
+    <Compile Include="src\BaseInfo\DLC3\DLC3GameEntityTypeDataExtension.cs" />
+    <Compile Include="src\BaseInfo\DLC3\Human\Necromancer\NecromancerSidekickFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC3\Human\Necromancer\NecromancerUpgrade.cs" />
+    <Compile Include="src\BaseInfo\DLC3\Human\Necromancer\NecromancerNotifiers.cs" />
+    <Compile Include="src\BaseInfo\DLC3\Human\Necromancer\NecromancerCityFleetBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC3\Human\Necromancer\NecromancerMobileFleetBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC3\Human\Dyson\DysonCityFleetBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC3\Human\Dyson\DysonMobileFleetBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC3\Human\Dyson\DysonSidekickDifficultyTable.cs" />
+    <Compile Include="src\BaseInfo\DLC3\Human\Dyson\DysonNotifiers.cs" />
+    <Compile Include="src\BaseInfo\DLC3\Human\Dyson\DysonSidekickPerUnitBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC3\Human\Dyson\DysonSidekickIncomeTable.cs" />
+    <Compile Include="src\BaseInfo\DLC3\Human\Dyson\DysonSidekickFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC3\Human\Dyson\DysonSidekickSpecificCodeBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC3\Human\Dyson\DysonUpgrade.cs" />
+    <Compile Include="src\BaseInfo\DLC3\NeinzulCustodians\NeinzulCustodiansDifficultyTable.cs" />
+    <Compile Include="src\BaseInfo\DLC3\NeinzulCustodians\NeinzulCustodiansFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC3\ReapersFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC3\ScourgeCivilWarFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC3\ReapersPerUnitBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC3\WildHives\WildHivesNotifier.cs" />
+    <Compile Include="src\BaseInfo\DLC3\WildHives\WildHivesDifficultyTable.cs" />
+    <Compile Include="src\BaseInfo\DLC3\NeinzulCustodians\NeinzulCustodiansParentFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC3\WildHives\WildHivesFriendlyFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC3\WildHives\WildHivesFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC3\NeinzulCustodians\NeinzulCustodiansPerUnitBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC3\WildHives\WildHivesPerUnitBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\IBolsteringFleet.cs" />
+    <Compile Include="src\BaseInfo\IFleetTransforms.cs" />
+    
+    <Compile Include="src\BaseInfo\FleetMetricsBaseInfo.cs" />
+    <Compile Include="src\BaseInfo_World\AIPChange.cs" />
+    <Compile Include="src\BaseInfo_World\DoomsdayModeBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AIReservesFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\WormholeInvasionFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AIType\AITypeDataTable.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\AICrossPlanetAttackerBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\Hunter\AIDifficulty_HunterFleetTable.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\Hunter\HunterFleetBudgetType.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\Hunter\HunterFleetType.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\InstigatorEffectDataTable.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\PraetorianGuard\AIDifficulty_PraetorianGuardTable.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\PraetorianGuard\PraetorianGuardBudgetType.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\PraetorianGuard\PraetorianGuardTypeDataTable.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\Warden\AIDifficulty_WardenFleetTable.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\Warden\AIWardenBudgetType.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\Warden\AIWardenTypeDataTable.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\Waves\AntiMinorFactionWaveData.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\Waves\ExoData.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\Waves\ExoOptions.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\Waves\WormholeInvasionOptions.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AI\Waves\PlanetWaveComposition.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AstroTrains\AstroTrainBehaviorTypeTable.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AstroTrains\AstroTrainsFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AstroTrains\AstroTrainsPerTrainGuardUnitBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AstroTrains\AstroTrainsPerDepotBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\AstroTrains\AstroTrainsPerTrainBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\DarkSpire\DarkSpireFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\DarkSpire\DarkSpireHarvestDataTable.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\DarkSpire\DarkSpirePerPlanet.cs" />
+    <Compile Include="src\BaseInfo\DLC4\DarkSpire\DarkSpireSvikariFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\HumanResistanceFighterFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\Macrophage\MacrophageFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\Macrophage\MacrophagePerHarvesterBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\Macrophage\MacrophagePerSporeBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\Macrophage\MacrophagePerTeliumBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\MarauderFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\MarauderOutpostRaiderPerUnitBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\Nanocaust\NanocaustFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\Outguard\OutguardFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\Outguard\OutguardSpawnRequest.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\Outguard\OutguardPerUnitBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\BaseGame\RandomFactionTypeTable.cs" />
+    <Compile Include="src\BaseInfo\DLC1\FallenSpire\FallenSpireDifficultyTable.cs" />
+    <Compile Include="src\BaseInfo\DLC1\FallenSpire\FallenSpireFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC1\FallenSpire\FallenSpirePerUnitBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC1\FallenSpire\SpireCityBlockingReason.cs" />
+    <Compile Include="src\BaseInfo\DLC1\Scourge\ScourgeDifficultyTable.cs" />
+    <Compile Include="src\BaseInfo\DLC1\Scourge\ScourgeFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC1\Scourge\ScourgePerUnitBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC1\Scourge\ScourgeTypeDataTable.cs" />
+    <Compile Include="src\BaseInfo\DLC2\DarkZenith\DarkZenithDifficultyTable.cs" />
+    <Compile Include="src\BaseInfo\DLC2\DarkZenith\DarkZenithFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC2\DarkZenith\DarkZenithPerUnitBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC2\DarkZenith\DarkZenithResourceConversionTable.cs" />
+    <Compile Include="src\BaseInfo\DLC2\DarkZenith\DarkZenithUpgradeTable.cs" />
+    <Compile Include="src\BaseInfo\DLC3\Elderlings\ElderlingsDifficultyTable.cs" />
+    <Compile Include="src\BaseInfo\DLC3\Elderlings\ElderlingsFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC3\Elderlings\ElderlingsPerUnitBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC3\Elderlings\ElderlingsResourceGranter.cs" />
+    <Compile Include="src\BaseInfo\DLC3\MaddenedElderlingsFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC2\NomadPlanetsFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC2\ZenithArchitrave\ArchitraveIncomeModifier.cs" />
+    <Compile Include="src\BaseInfo\DLC2\ZenithArchitrave\ZenithArchitraveDifficultyTable.cs" />
+    <Compile Include="src\BaseInfo\DLC2\ZenithArchitrave\ZenithArchitraveFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC2\ZenithArchitrave\ZenithArchitravePerUnitBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC2\ZenithMiners\ZenithMinersDifficultyTable.cs" />
+    <Compile Include="src\BaseInfo\DLC2\ZenithMiners\ZenithMinersFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC2\ZenithMiners\ZenithMinersPerUnitBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC3\MigrantFleets\MigrantFleetsFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC3\MigrantFleets\MigrantFleetsDifficulty.cs" />
+    <Compile Include="src\BaseInfo\DLC3\Human\Necromancer\NecromancerEmpireFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC3\Sappers\SappersDifficultyTable.cs" />
+    <Compile Include="src\BaseInfo\DLC3\Sappers\SappersFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC3\Sappers\SappersPerUnitBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC3\Templar\TemplarFactionBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC3\Templar\TemplarPerUnitBaseInfo.cs" />
+    <Compile Include="src\BaseInfo\DLC3\Templar\TemplarDifficultyTable.cs" />
+    <Compile Include="src\BaseInfo\Fireteams\Fireteam.cs" />
+    <Compile Include="src\BaseInfo\Fireteams\FireteamBaseUtility.cs" />
+    <Compile Include="src\BaseInfo\Fireteams\FireteamHonoraryDeepInfo.cs" />
+    <Compile Include="src\BaseInfo_World\GlobalAIWorldBaseInfo.cs" />
+    <Compile Include="src\BaseInfo_World\LocalPlayerWorldBaseInfo.cs" />
+    <Compile Include="src\BaseInfo_World\Notifiers\AstroTrainNotifier.cs" />
+    <Compile Include="src\BaseInfo_World\Notifiers\SpecialShipActionNotifier.cs" />
+    <Compile Include="src\BaseInfo_World\Notifiers\UnspentModulePointsNotifier.cs" />
+    <Compile Include="src\BaseInfo_World\Notifiers\BrownoutNotifier.cs" />
+    <Compile Include="src\BaseInfo_World\Notifiers\CounterattackNotifier.cs" />
+    <Compile Include="src\BaseInfo_World\Notifiers\ChromaticHorrorNotifier.cs" />
+    <Compile Include="src\BaseInfo_World\Notifiers\DysonAntagonizerNotifier.cs" />
+    <Compile Include="src\BaseInfo_World\Notifiers\NomadPlanetMoveNotifier.cs" />
+    <Compile Include="src\BaseInfo_World\Notifiers\PlanetCeasefireNotifier.cs" />
+    <Compile Include="src\BaseInfo_World\Notifiers\DevourerNotifier.cs" />
+    <Compile Include="src\BaseInfo_World\Notifiers\MacrophageNotifier.cs" />
+    <Compile Include="src\BaseInfo_World\Notifiers\EyeNotifier.cs" />
+    <Compile Include="src\BaseInfo_World\Notifiers\RaidEngineNotifier.cs" />
+    <Compile Include="src\BaseInfo_World\Notifiers\ZenithTraderNotifier.cs" />
+    <Compile Include="src\BaseInfo_World\Notifiers\MyPlanetAttackNotifier.cs" />
+    <Compile Include="src\BaseInfo_World\Notifiers\IAttackAPlanetNotifier.cs" />
+    <Compile Include="src\BaseInfo_World\Notifiers\HackingNotifier.cs" />
+    <Compile Include="src\BaseInfo_World\Notifiers\InstigatorNotifier.cs" />
+    <Compile Include="src\BaseInfo_World\Notifiers\RiskAnalyzerNotifier.cs" />
+    <Compile Include="src\BaseInfo_World\Notifiers\NemesisNotifier.cs" />
+    <Compile Include="src\BaseInfo_World\Notifiers\PlanetPingNotifier.cs" />
+    <Compile Include="src\BaseInfo_World\Notifiers\ShowdownDevicesNotifier.cs" />
+    <Compile Include="src\BaseInfo_World\Notifiers\WarpingInOutguardNotifier.cs" />
+    <Compile Include="src\BaseInfo_World\Notifiers\WormholeBorerNotifier.cs" />
+    <Compile Include="src\BaseInfo_World\Notifiers\WormholeInvasionNotifier.cs" />
+    <Compile Include="src\BaseInfo_World\Notifiers\ExoNotifier.cs" />
+    <Compile Include="src\ChatHandlers\BaseGame\AIPHistoryChatHandler.cs" />
+    <Compile Include="src\ChatHandlers\BaseGame\JournalOrTipChatHandler.cs" />
+    <Compile Include="src\ChatHandlers\BaseGame\PlanetGeneralFocusChatHandler.cs" />
+    <Compile Include="src\ChatHandlers\BaseGame\ShipGeneralFocusChatHandler.cs" />
+    <Compile Include="src\ChatHandlers\BaseGame\ShipCrippledChatHandler.cs" />
+    <Compile Include="src\ChatHandlers\BaseGame\HackingHistoryChatHandler.cs" />
+    <Compile Include="src\ChatHandlers\BaseGame\ScienceExhaustedChatHandler.cs" />
+    <Compile Include="src\ChatHandlers\BaseGame\EnergyUsageChatHandler.cs" />
+    <Compile Include="src\ChatHandlers\BaseGame\TechUpgradeChatHandler.cs" />
+    <Compile Include="src\CoreClassExtensions\AMUTranscribedExtensions.cs" />
+    <Compile Include="src\CoreClassExtensions\ArcenUI.cs" />
+    <Compile Include="src\CoreClassExtensions\EntityTypeDrawingBag_DrawLinkImplementation.cs" />
+    <Compile Include="src\CoreClassExtensions\Extensions.cs" />
+    <Compile Include="src\CoreClassExtensions\XmlModTableCodehooks.cs" />
+    <Compile Include="src\CoreInterfaces\Effect.cs" />
+    <Compile Include="src\CoreInterfaces\CustomSystem.cs" />
+    <Compile Include="src\CoreInterfaces\DefendClickedTarget.cs" />
+    <Compile Include="src\CoreInterfaces\Order_CustomSystem_Target.cs" />
+    <Compile Include="src\CoreInterfaces\System_Weapon.cs" />
+    <Compile Include="src\CoreInterfaces\Target_ChooseCustom.cs" />
+    <Compile Include="src\CoreInterfaces\Curves.cs" />
+    <Compile Include="src\EntityText\EntityText.BuildStat.cs" />
+    <Compile Include="src\EntityText\FixedTextFormatingStats.cs" />
+    <Compile Include="src\EntityText\TextStyles.cs" />
+    <Compile Include="src\CoreInterfaces\System_Transformation.cs" />
+    <Compile Include="src\CoreInterfaces\System_StatAdjust.cs" />
+    <Compile Include="src\CoreInterfaces\Order_DefendTarget.cs" />
+    <Compile Include="src\EntityText\TextVarMap.cs" />
+    <Compile Include="src\DescriptionAppenders\BaseGame\AstroTrainDepotDescriptionAppender.cs" />
+    <Compile Include="src\DescriptionAppenders\BaseGame\AstroTrainGuardDescriptionAppender.cs" />
+    <Compile Include="src\DescriptionAppenders\BaseGame\CivilWarCauserAppender.cs" />
+    <Compile Include="src\DescriptionAppenders\BaseGame\AlertedEyeAppender.cs" />
+    <Compile Include="src\DescriptionAppenders\BaseGame\CPABunkerAppender.cs" />
+    <Compile Include="src\DescriptionAppenders\BaseGame\NanobotCenterDescriptionAppender.cs" />
+    <Compile Include="src\DescriptionAppenders\BaseGame\MarauderOutpostDescriptionAppender.cs" />
+    <Compile Include="src\DescriptionAppenders\BaseGame\InstigatorBaseDescriptionAppender.cs" />
+    <Compile Include="src\DescriptionAppenders\BaseGame\TeliumDescriptionAppender.cs" />
+    <Compile Include="src\DescriptionAppenders\BaseGame\HarvesterDescriptionAppender.cs" />
+    <Compile Include="src\DescriptionAppenders\BaseGame\SporeDescriptionAppender.cs" />
+    <Compile Include="src\DescriptionAppenders\BaseGame\OutguardShipDescriptionAppender.cs" />
+    <Compile Include="src\DescriptionAppenders\BaseGame\OutguardBeaconDescriptionAppender.cs" />
+    <Compile Include="src\DescriptionAppenders\BaseGame\VGLocusDescriptionAppender.cs" />
+    <Compile Include="src\DescriptionAppenders\BaseGame\VengeanceGeneratorDescriptionAppender.cs" />
+    <Compile Include="src\DescriptionAppenders\BaseGame\QuiescentEyeAppender.cs" />
+    <Compile Include="src\DescriptionAppenders\BaseGame\RiskAnalyzerDescriptionAppender.cs" />
+    <Compile Include="src\DescriptionAppenders\BaseGame\WormholeProjectorAppender.cs" />
+    <Compile Include="src\DescriptionAppenders\BaseGame\SphereDescriptionAppender.cs" />
+    <Compile Include="src\DescriptionAppenders\DLC1\SpireRelicDescriptionAppender.cs" />
+    <Compile Include="src\DescriptionAppenders\DLC1\SpireHubDescriptionAppender.cs" />
+    <Compile Include="src\DescriptionAppenders\DLC2\ZenithArchitraveDescriptionAppender.cs" />
+    <Compile Include="src\DescriptionAppenders\DLC2\WormholeBorerAppender.cs" />
+    <Compile Include="src\DescriptionAppenders\DLC1\ScourgeGenericUnitDescriptionAppender.cs" />
+    <Compile Include="src\DescriptionAppenders\DLC2\DarkZenithDescriptionAppender.cs" />
+    <Compile Include="src\DescriptionAppenders\DLC2\ZenithMinersDescriptionAppender.cs" />
+    <Compile Include="src\DescriptionAppenders\DLC3\WildHiveDescriptionAppender.cs" />
+    <Compile Include="src\DescriptionAppenders\DLC3\TemplarRiftAppender.cs" />
+    <Compile Include="src\DescriptionAppenders\DLC3\TemplarAppender.cs" />
+    <Compile Include="src\DescriptionAppenders\Sidekicks\DysonSidekickDescriptionAppender.cs" />
+    <Compile Include="src\DescriptionAppenders\Sidekicks\ArmadaDescriptionAppender.cs" />
+    <Compile Include="src\DescriptionAppenders\Sidekicks\TiberiumDescriptionAppender.cs" />
+    <Compile Include="src\DescriptionAppenders\DLC4\MalwareDescriptionAppender.cs" />
+    <Compile Include="src\DescriptionAppenders\DLC4\ApkalluDescriptionAppender.cs" />
+    <Compile Include="src\DescriptionAppenders\DLC4\RenegadeSpireDescriptionAppender.cs" />
+    <Compile Include="src\DescriptionAppenders\Sidekicks\SpireSidekickRelicDescriptionAppender.cs" />
+    <Compile Include="src\DescriptionAppenders\DLC3\SappersDescriptionAppender.cs" />
+    <Compile Include="src\DescriptionAppenders\DLC3\ElderlingsDescriptionAppender.cs" />
+    <Compile Include="src\DescriptionAppenders\DLC3\NecromancerDescriptionAppender.cs" />
+    <Compile Include="src\DescriptionAppenders\DLC3\MigrantDescriptionAppender.cs" />
+    <Compile Include="src\DescriptionAppenders\GameEntityDescriptionAppenderBase.cs" />
+    <Compile Include="src\DropdownFillers.cs" />
+    <Compile Include="src\CentralVars.cs" />
+    <Compile Include="src\CoreClassExtensions\PlanetExtensions.cs" />
+    <Compile Include="src\DescriptionAppenders\BaseGame\AstroTrainDescriptionAppender.cs" />
+    <Compile Include="src\EntityText\EntityText.Cpi.cs" />
+    <Compile Include="src\EntityText\EntityText.Desc.cs" />
+    <Compile Include="src\EntityText\EntityText.Fleets.cs" />
+    <Compile Include="src\EntityText\EntityText.Attr.cs" />
+    <Compile Include="src\EntityText\EntityText.ShipClass.cs" />
+    <Compile Include="src\EntityText\EntityText.Stats.cs" />
+    <Compile Include="src\EntityText\EntityText.Systems.cs" />
+    <Compile Include="src\EntityText\EntityText.Writer.cs" />
+    <Compile Include="src\GameCommand\DismissGameCommands.cs" />
+    <Compile Include="src\GameCommand\AutoPlaceBuildableGameCommands.cs" />
+    <Compile Include="src\Helpers\DebugCommand.cs" />
+    <Compile Include="src\ExternalDeepLinkDefinitions\AISentinalDeepLinkRoot.cs" />
+    <Compile Include="src\ExternalDeepLinkDefinitions\DLC3\NecromancerDeepLinkRoot.cs" />
+    <Compile Include="src\ExternalDeepLinkDefinitions\FactionUtilityMethodsDeepLinkRoot.cs" />
+    <Compile Include="src\ExternalDeepLinkDefinitions\MapgenDeepLinkRoot.cs" />
+    <Compile Include="src\ExternalDeepLinkDefinitions\MacrophageDeepLinkRoot.cs" />
+    <Compile Include="src\ExternalDeepLinkDefinitions\ExoGalacticDeepLinkRoot.cs" />
+    <Compile Include="src\GalaxySettingImplementations\Badger_GalaxySettingImplementations.cs" />
+    <Compile Include="src\GalaxySettingImplementations\GalaxySettingImplementations.cs" />
+    <Compile Include="src\GameCommand\CentralSettingsGameCommands.cs" />
+    <Compile Include="src\GameCommand\BaseGameCommand.cs" />
+    <Compile Include="src\GameCommand\GameFlowGameCommands.cs" />
+    <Compile Include="src\GameCommand\DebugGameCommands.cs" />
+    <Compile Include="src\GameCommand\ChatAndJournalGameCommands.cs" />
+    <Compile Include="src\GameCommand\MultiplayerFocusedGameCommands.cs" />
+    <Compile Include="src\GameCommand\FireteamGameCommands.cs" />
+    <Compile Include="src\GameCommand\Outguard_GameCommands.cs" />
+    <Compile Include="src\GameCommand\PlayerDrivenLessCommonGameCommands.cs" />
+    <Compile Include="src\GameCommand\TargetingLogicGameCommands.cs" />
+    <Compile Include="src\GameCommand\StackingGameCommands.cs" />
+    <Compile Include="src\GameCommand\SaveAndQuickstartGameCommands.cs" />
+    <Compile Include="src\GameCommand\NA_GameCommands.cs" />
+    <Compile Include="src\GameCommand\SuperCommonGameCommands.cs" />
+    <Compile Include="src\GameCommand\TSR_GameCommands.cs" />
+    <Compile Include="src\GameCommand\GameCommand_EditFleetData.cs" />
+    <Compile Include="src\GameCommand\MovementGameCommands.cs" />
+    <Compile Include="src\GameCommand\VariantShipTypeGameCommands.cs" />
+    <Compile Include="src\Hacking\BaseHacking.cs" />
+    <Compile Include="src\Hacking\Sphere_Hacking.cs" />
+    <Compile Include="src\Hacking\HackCustomButtonListInfo.cs" />
+    <Compile Include="src\Hacking\Hacking.cs" />
+    <Compile Include="src\Hacking\HackingMenu.cs" />
+    <Compile Include="src\Hacking\HackingUtils.cs" />
+    <Compile Include="src\Hacking\Nanocaust_Hacking.cs" />
+    <Compile Include="src\Hacking\DysonSidekick_Hacking.cs" />
+    <Compile Include="src\Hacking\NeinzulAbyss_Hacking.cs" />
+    <Compile Include="src\Hacking\ForgeOfEmpires_Hacking.cs" />
+    <Compile Include="src\Hacking\SelfHacking.cs" />
+    <Compile Include="src\Hacking\SelfHacking_Base.cs" />
+    <Compile Include="src\Hacking\SpireRising_Hacking.cs" />
+    <Compile Include="src\Hacking\TargetHackAtPlanet.cs" />
+    <Compile Include="src\Hacking\ZenithOnslaught_Hacking.cs" />
+    <Compile Include="src\Helpers\AIUtilityMethods.cs" />
+    <Compile Include="src\Helpers\AllegianceHelper.cs" />
+    <Compile Include="src\Helpers\CityManager.cs" />
+    <Compile Include="src\Helpers\CostBasedShipSpawner.cs" />
+    <Compile Include="src\Helpers\DirectBuild.cs" />
+    <Compile Include="src\Helpers\ShipSpawning.cs" />
+    <Compile Include="src\Helpers\TempCollectionHelper.cs" />
+    <Compile Include="src\Helpers\WavesHelper.cs" />
+    <Compile Include="src\Helpers\WorldQueries.cs" />
+    <Compile Include="src\InSceneText.cs" />
+    <Compile Include="src\ObjectiveGenerators\SubGenerators\AdditionalWinConditionObjectivesGenerator.cs" />
+    <Compile Include="src\Pathfinding\PerFactionPathCache.cs" />
+    <Compile Include="src\Pathfinding\PathingHelper.cs" />
+    <Compile Include="src\Helpers\InterfaceHelper.cs" />
+    <Compile Include="src\Helpers\FactionUtilityMethods.cs" />
+    <Compile Include="src\HarmonyIntegration.cs" />
+    <Compile Include="src\InitialSetupForDLL.cs" />
+    <Compile Include="src\Input\CheatsAndCommands.cs" />
+    <Compile Include="src\Input\EndpointFunctions.cs" />
+    <Compile Include="src\Input\InputCaching.cs" />
+    <Compile Include="src\Input\Input_DebugHandler.cs" />
+    <Compile Include="src\Input\Input_FleetHandler.cs" />
+    <Compile Include="src\Input\Input_MainHandler.cs" />
+    <Compile Include="src\Input\Input_MasterMenuHandler.cs" />
+    <Compile Include="src\ObjectiveGenerators\CoreObjectiveGenerator.cs" />
+    <Compile Include="src\ObjectiveGenerators\ObjectiveColors.cs" />
+    <Compile Include="src\ObjectiveGenerators\ObjectiveText.cs" />
+    <Compile Include="src\ObjectiveGenerators\SubGenerators\AIObjectivesGenerator.cs" />
+    <Compile Include="src\ObjectiveGenerators\SubGenerators\BeginnerObjectivesGenerator.cs" />
+    <Compile Include="src\ObjectiveGenerators\SubGenerators\FlagshipObjectiveGenerator.cs" />
+    <Compile Include="src\ObjectiveGenerators\SubGenerators\NecromancerObjectivesGenerator.cs" />
+    <Compile Include="src\ObjectiveGenerators\SubGenerators\ArmadaObjectivesGenerator.cs" />
+    <Compile Include="src\ObjectiveGenerators\SubGenerators\ApkalluObjectivesGenerator.cs" />
+    <Compile Include="src\ObjectiveGenerators\SubGenerators\ScourgeInfusedObjectivesGenerator.cs" />
+    <Compile Include="src\ObjectiveGenerators\SubGenerators\DarkZenithObjectivesGenerator.cs" />
+    <Compile Include="src\ObjectiveGenerators\SubGenerators\DysonSidekickObjectivesGenerator.cs" />
+    <Compile Include="src\ObjectiveGenerators\SubGenerators\KingObjectivesGenerator.cs" />
+    <Compile Include="src\ObjectiveGenerators\SubGenerators\MalwareObjectivesGenerator.cs" />
+    <Compile Include="src\ObjectiveGenerators\SubGenerators\MinorFactionObjectivesGenerator.cs" />
+    <Compile Include="src\ObjectiveGenerators\SubGenerators\ResourceObjectivesGenerator.cs" />
+    <Compile Include="src\ObjectiveGenerators\SubGenerators\ScoutingObjectivesGenerator.cs" />
+    <Compile Include="src\Pathfinding\PathBetweenPlanetsForFaction.cs" />
+    <Compile Include="src\Pathfinding\ProjectedLocalPlayerMultiPathData.cs" />
+    <Compile Include="src\Pathfinding\PathCache.cs" />
+    <Compile Include="src\Pathfinding\SpecificPathfinders.cs" />
+    <Compile Include="src\Pathfinding\Pathfinding.cs" />
+    <Compile Include="src\Pathfinding\PathfindingBase.cs" />
+    <Compile Include="src\Scenarios\Scenario_AftermathOfLosingTheAIWar.cs" />
+    <Compile Include="src\Scenarios\Scenario_BaseScenario.cs" />
+    <Compile Include="src\Scenarios\Scenario_TestChamber.cs" />
+    <Compile Include="src\Scenarios\Scenario_Tutorial_Basic.cs" />
+    <Compile Include="src\Sim\Managers\ArcenVariousLongTermContextManager.cs" />
+    <Compile Include="src\Sim\Managers\ArcenExecutionManager.cs" />
+    <Compile Include="src\Sim\ArcenLongTermContinuousPlanningClientOrHostContext.cs" />
+    <Compile Include="src\Sim\ArcenLongTermIntermittentPlanningContextBase.cs" />
+    <Compile Include="src\Sim\Managers\ArcenShortTermPlanningManager.cs" />
+    <Compile Include="src\Sim\ArcenShortTermPlanningContext.cs" />
+    <Compile Include="src\Sim\ArcenHostOnlySimPlanningContext.cs" />
+    <Compile Include="src\Sim\ArcenClientOrHostSimPlanningContext.cs" />
+    <Compile Include="src\Sim\Entity\ShipAssistanceData.cs" />
+    <Compile Include="src\Sim\Entity\EntitySimLogicImplementation_BaseInfo.cs" />
+    <Compile Include="src\Sim\Execution\SimExecution.cs" />
+    <Compile Include="src\Sim\Execution\SimPlannerImplementation.cs" />
+    <Compile Include="src\Sim\Fleet\FleetMembershipSimLogicImplementation.cs" />
+    <Compile Include="src\Sim\Fleet\FleetSimLogicImplementation.cs" />
+    <Compile Include="src\BaseInfo_World\Notifiers\NotificationGenerators\AudioAndSimilarHandler.cs" />
+    <Compile Include="src\BaseInfo_World\Notifiers\NotificationGenerators\CorePersonalNotificationGenerator.cs" />
+    <Compile Include="src\Sim\Planning\LongTerm\PerSecondSimRepair.cs" />
+    <Compile Include="src\Sim\Planning\LongTerm\PerSecondNonSimPlanning.cs" />
+    <Compile Include="src\Sim\Planning\ShortTerm\GravityPlanning.cs" />
+    <Compile Include="src\Sim\Planning\ShortTerm\ListExtensions.cs" />
+    <Compile Include="src\Sim\Planning\ShortTerm\MetalFlowPlanning.cs" />
+    <Compile Include="src\Sim\Planning\ShortTerm\MovementPlanning.cs" />
+    <Compile Include="src\Sim\Planning\ShortTerm\AreaBoostPlanning.cs" />
+    <Compile Include="src\Sim\Planning\ShortTerm\MovementPlanning.Steering.cs" />
+    <Compile Include="src\Sim\Planning\ShortTerm\Pooler.cs" />
+    <Compile Include="src\Sim\Planning\ShortTerm\ProtectionPlanning.cs" />
+    <Compile Include="src\Sim\Planning\LongTerm\StrengthCounting.cs" />
+    <Compile Include="src\Sim\Planning\ShortTerm\TachyonPlanning.cs" />
+    <Compile Include="src\Sim\Planning\ShortTerm\TractorPlanning.cs" />
+    <Compile Include="src\Tutorials\TutorialStepCondition.cs" />
+    <Compile Include="src\UIs\DebugStuff\Window_DebugInfo.cs" />
+    <Compile Include="src\UIs\DebugStuff\Window_ErrorReportMenuThatClearsAfter.cs" />
+    <Compile Include="src\UIs\DebugStuff\Window_ErrorReportMenu.cs" />
+    <Compile Include="src\UIs\InGamePassiveDisplay\DynamicallyFilled\Window_DynamicallyFilledAbstractBase.cs" />
+    <Compile Include="src\UIs\InGamePassiveDisplay\DynamicallyFilled\Window_FleetManagementSidebarPopout.cs" />
+    <Compile Include="src\UIs\InGamePassiveDisplay\DynamicallyFilled\Window_ModalFleetMemberModularEditing.cs" />
+    <Compile Include="src\UIs\InGamePassiveDisplay\DynamicallyFilled\Window_TechRefunds.cs" />
+    <Compile Include="src\UIs\InGamePassiveDisplay\DynamicallyFilled\Window_HackChoicesSidebarPopout.cs" />
+    <Compile Include="src\UIs\InGamePassiveDisplay\DynamicallyFilled\Window_DZEconomySidebarPopout.cs" />
+    <Compile Include="src\UIs\InGamePassiveDisplay\DynamicallyFilled\Window_DZLogisticsSidebarPopout.cs" />
+    <Compile Include="src\UIs\InGamePassiveDisplay\DynamicallyFilled\Window_DZTechTreePopout.cs" />
+    <Compile Include="src\UIs\InGamePassiveDisplay\DynamicallyFilled\Window_GiftFleetToPlayer.cs" />
+    <Compile Include="src\UIs\InGamePassiveDisplay\DynamicallyFilled\Window_ModalSwapFleetMembers.cs" />
+    <Compile Include="src\EntityText\_EntityText.cs" />
+    <Compile Include="src\EntityText\EntityText.Extensions.cs" />
+    <Compile Include="src\EntityText\EntityText.TooltipColors.cs" />
+    <Compile Include="src\UIs\InGamePassiveDisplay\GalaxyMapLinkUtils.cs" />
+    <Compile Include="src\UIs\InGamePassiveDisplay\ShipListerUtils.cs" />
+    <Compile Include="src\UIs\InGamePassiveDisplay\WaveUtils.cs" />
+    <Compile Include="src\UIs\InGamePassiveDisplay\Window_AtMouseTooltipPanelBesideSidebar.cs" />
+    <Compile Include="src\UIs\InGamePassiveDisplay\Window_AtMouseTooltipPanelNarrow.cs" />
+    <Compile Include="src\UIs\InGamePassiveDisplay\Window_AtMouseTooltipPanelSnapToLeft.cs" />
+    <Compile Include="src\UIs\InGamePassiveDisplay\Window_AtMouseTooltipPanelWide.cs" />
+    <Compile Include="src\UIs\InGamePassiveDisplay\Window_InGameBottomLeftMenu.cs" />
+    <Compile Include="src\UIs\InGamePassiveDisplay\Window_InGameHoverEntityInfo.cs" />
+    <Compile Include="src\UIs\InGamePassiveDisplay\Window_InGameHoverPlanetInfo.cs" />
+    <Compile Include="src\UIs\InGamePassiveDisplay\Window_BottomLeftGalaxyMap.cs" />
+    <Compile Include="src\UIs\InGamePassiveDisplay\Window_InGameSelectionInfo.cs" />
+    <Compile Include="src\UIs\InGamePassiveDisplay\Window_InGameSidebarBase.cs" />
+    <Compile Include="src\UIs\InGamePassiveDisplay\Window_InGameSidebarClosed.cs" />
+    <Compile Include="src\UIs\InGamePassiveDisplay\Window_InGameSidebarDirectBuild.cs" />
+    <Compile Include="src\UIs\InGamePassiveDisplay\Window_InGameSidebarFleets.cs" />
+    <Compile Include="src\UIs\InGamePassiveDisplay\Window_InGameSidebarTips.cs" />
+    <Compile Include="src\UIs\InGamePassiveDisplay\Window_InGameSidebarJournal.cs" />
+    <Compile Include="src\UIs\InGamePassiveDisplay\Window_InGameSidebarHacking.cs" />
+    <Compile Include="src\UIs\InGamePassiveDisplay\Window_InGameSidebarOutguard.cs" />
+    <Compile Include="src\UIs\InGamePassiveDisplay\Window_InGameSidebarObjectives.cs" />
+    <Compile Include="src\UIs\InGamePassiveDisplay\Window_InGameSidebarScience.cs" />
+    <Compile Include="src\UIs\InGamePassiveDisplay\Window_InGameSidebarShips.cs" />
+    <Compile Include="src\UIs\InGamePassiveDisplay\Window_InGameStandingPlanetOrders.cs" />
+    <Compile Include="src\UIs\InGamePassiveDisplay\Window_NotificationsDisplay.cs" />
+    <Compile Include="src\UIs\InGamePassiveDisplay\Window_OngoingMessageDisplay.cs" />
+    <Compile Include="src\UIs\InGamePassiveDisplay\Window_PrototypeInGameHoverEntityInfo.cs" />
+    <Compile Include="src\UIs\InGamePassiveDisplay\Window_ResourceBar.cs" />
+    <Compile Include="src\UIs\LobbyGameSetup\Window_SetupChatStandaloneRight.cs" />
+    <Compile Include="src\UIs\LobbyGameSetup\Window_SetupFactionsTab.cs" />
+    <Compile Include="src\UIs\LobbyGameSetup\Window_SetupFooterControls.cs" />
+    <Compile Include="src\UIs\LobbyGameSetup\Window_SetupMapTabLeft.cs" />
+    <Compile Include="src\UIs\LobbyGameSetup\Window_SetupOptionsTab.cs" />
+    <Compile Include="src\UIs\LobbyGameSetup\Window_SetupTabWindowBase.cs" />
+    <Compile Include="src\UIs\LobbyGameSetup\Window_SetupTabWithChatWindowBase.cs" />
+    <Compile Include="src\UIs\LobbyGameSetup\Window_SetupTopTabs.cs" />
+    <Compile Include="src\UIs\MainMenu\Window_AddEditProfileWindow.cs" />
+    <Compile Include="src\UIs\MainMenu\Window_BackgroundStory.cs" />
+    <Compile Include="src\UIs\MainMenu\Window_CreditsKickstarter.cs" />
+    <Compile Include="src\UIs\MainMenu\Window_Credits.cs" />
+    <Compile Include="src\UIs\MainMenu\Window_MainMenu.cs" />
+    <Compile Include="src\UIs\MainMenu\Window_PopupScrollingTwoColumnButtonList.cs" />
+    <Compile Include="src\UIs\MainMenu\Window_ProfileList.cs" />
+    <Compile Include="src\UIs\MainMenu\Window_PopupScrollingColumnButtonList.cs" />
+    <Compile Include="src\UIs\MainMenu\Window_TeamColorPicker.cs" />
+    <Compile Include="src\UIs\MainMenu\Window_TeamColorPickerTrimOnly.cs" />
+    <Compile Include="src\UIs\MasterMenu\SaveSupport\GameSaver.cs" />
+    <Compile Include="src\UIs\MasterMenu\SaveSupport\SaveGameData.cs" />
+    <Compile Include="src\UIs\MasterMenu\SaveSupport\SaveLoadMethods.cs" />
+    <Compile Include="src\UIs\MasterMenu\SaveSupport\CampaignOrQuickstartFolder.cs" />
+    <Compile Include="src\UIs\MasterMenu\SaveSupport\CampaignOrQuickstart_SubFolder.cs" />
+    <Compile Include="src\UIs\MasterMenu\Window_InGameDeveloperToolsMenu.cs" />
+    <Compile Include="src\UIs\MasterMenu\Window_InGameEscapeMenu.cs" />
+    <Compile Include="src\UIs\MasterMenu\Window_InGamePlanetActionMenu.cs" />
+    <Compile Include="src\UIs\MasterMenu\Window_InGameTracingMenu.cs" />
+    <Compile Include="src\UIs\MasterMenu\Window_SaveGameMenu.cs" />
+    <Compile Include="src\UIs\SupportClasses\ArcenExternalUIUtilities.cs" />
+    <Compile Include="src\UIs\SupportClasses\FontSizes.cs" />
+    <Compile Include="src\UIs\SupportClasses\QuickColors.cs" />
+    <Compile Include="src\UIs\SupportClasses\WindowAbstractBase.cs" />
+    <Compile Include="src\UIs\Window_EditPlanetWindow.cs" />
+    <Compile Include="src\UIs\Window_ClientMultiplayerConnectionStatus.cs" />
+    <Compile Include="src\UIs\Window_ControlBindingsMenu.cs" />
+    <Compile Include="src\UIs\Window_InGameGalaxyOptions.cs" />
+    <Compile Include="src\UIs\Window_JoinMultiplayerGameByListMenu.cs" />
+    <Compile Include="src\UIs\Window_JoinMultiplayerGameByIPMenu.cs" />
+    <Compile Include="src\UIs\Window_LoadGameMenu.cs" />
+    <Compile Include="src\UIs\Window_LoadQuickStartMenu.cs" />
+    <Compile Include="src\UIs\Window_LoadTutorialsMenu.cs" />
+    <Compile Include="src\UIs\Window_ModalChatboxWindow.cs" />
+    <Compile Include="src\UIs\Window_ModalDualTextboxWindow.cs" />
+    <Compile Include="src\UIs\Window_CenterScreenPopups.cs" />
+    <Compile Include="src\UIs\Window_ModalOK.cs" />
+    <Compile Include="src\UIs\Window_ModalOKTall.cs" />
+    <Compile Include="src\UIs\Window_BottomLeftSelfUpdatingTextWindow.cs" />
+    <Compile Include="src\UIs\Window_ModalSelfUpdatingTextWindow.cs" />
+    <Compile Include="src\UIs\Window_ModalTextboxWindow.cs" />
+    <Compile Include="src\UIs\Window_ModalYesNo.cs" />
+    <Compile Include="src\UIs\Window_FactionsWindow.cs" />
+    <Compile Include="src\UIs\Window_SettingsMenu.cs" />
+    <Compile Include="src\UIs\Window_UnitEncyclopedia.cs" />
+    <Compile Include="src\UIs\Window_Tips.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup Condition="'$(OS)' == 'Windows_NT'">
+    <PostBuildEvent></PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(OS)' == 'Unix'">
+    <PostBuildEvent></PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
+
+
+
