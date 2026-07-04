@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using System;
 
 using System.Text;
@@ -314,7 +314,7 @@ namespace Arcen.AIW2.External
             GameEntity_Squad chrysalis = GameEntity_Squad.CreateNew_ReturnNullIfMPClient( pFaction, chrysalisTypeData, 1,
                                                                                      pFaction.Faction.LooseFleet, 0, spawnLocation, Context, "Reaper-SpawnChrysalises" );
             spawningBuffer.Clear();
-            spawningBuffer.Add("Reapers", AttachedFaction.FactionCenterColor.ColorHexBrighter).Add(" are spawning a Chrysalis on  ").Add( planetToSpawn.Name, planetToSpawn.GetControllingFaction().FactionCenterColor.ColorHexBrighter ).Add( "." );
+            spawningBuffer.Add("收割者", AttachedFaction.FactionCenterColor.ColorHexBrighter).Add("正在").Add( planetToSpawn.Name, planetToSpawn.GetControllingFaction().FactionCenterColor.ColorHexBrighter ).Add( "上生成虫蛹。" );
             World_AIW2.Instance.QueueChatMessageOrCommand( spawningBuffer.GetStringAndResetForNextUpdate(),
                         ChatType.LogToCentralChat, "", null );
             BaseInfo.TimeForNextChrysalis = World_AIW2.Instance.GameSecond + BaseInfo.Difficulty.ChrysalisSpawnInterval + Context.RandomToUse.Next(0, 300);
@@ -349,7 +349,7 @@ namespace Arcen.AIW2.External
                 pFaction.Faction.LooseFleet, 0, spawnLocation, Context, "Reaper-SpawnMoon" );
             Moon.HullPointsLost = 0;
             spawningBuffer.Clear();
-            spawningBuffer.Add("Reapers", AttachedFaction.FactionCenterColor.ColorHexBrighter).Add(" are spawning a Moon on  ").Add( planetToSpawn.Name, planetToSpawn.GetControllingFaction().FactionCenterColor.ColorHexBrighter ).Add( "." );
+            spawningBuffer.Add("收割者", AttachedFaction.FactionCenterColor.ColorHexBrighter).Add("正在").Add( planetToSpawn.Name, planetToSpawn.GetControllingFaction().FactionCenterColor.ColorHexBrighter ).Add( "上生成卫星。" );
             World_AIW2.Instance.QueueChatMessageOrCommand( spawningBuffer.GetStringAndResetForNextUpdate(),
                 ChatType.LogToCentralChat, "", null );
             ArcenDebugging.LogSingleLine("Spawned " + Moon.ToStringWithPlanetAndOwner() + ". The moon's current health is " + Moon.GetCurrentHullPoints(), Verbosity.DoNotShow );

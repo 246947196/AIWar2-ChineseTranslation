@@ -881,9 +881,9 @@ namespace Arcen.AIW2.External
             foreach (Planet spawnPlanet in potentialPlanets) {
                 string voiceLine = "";
                 if ( spawnPlanet.GetControllingFactionType() == FactionType.Player && this.BaseInfo.PlayerAllied )
-                    spawningBuffer.Add( "Friendly Marauders", AttachedFaction.FactionCenterColor.ColorHexBrighter ).Add( " are fortifying an outpost on  " ).Add( spawnPlanet.Name, spawnPlanet.GetControllingFaction().FactionCenterColor.ColorHexBrighter ).Add( " to aid in its defense" );
+                    spawningBuffer.Add( "友方掠夺者", AttachedFaction.FactionCenterColor.ColorHexBrighter ).Add( "正在" ).Add( spawnPlanet.Name, spawnPlanet.GetControllingFaction().FactionCenterColor.ColorHexBrighter ).Add( "上建立前哨站以协助防御" );
                 else if ( spawnPlanet.IntelLevel >= PlanetIntelLevel.CurrentlyWatched )
-                    spawningBuffer.Add( "Marauders", AttachedFaction.FactionCenterColor.ColorHexBrighter ).Add( " are fortifying an outpost on  " ).Add( spawnPlanet.Name, spawnPlanet.GetControllingFaction().FactionCenterColor.ColorHexBrighter ).Add( " after devastating its defenses" );
+                    spawningBuffer.Add( "掠夺者", AttachedFaction.FactionCenterColor.ColorHexBrighter ).Add( "在摧毁" ).Add( spawnPlanet.Name, spawnPlanet.GetControllingFaction().FactionCenterColor.ColorHexBrighter ).Add( "的防御后正在建立前哨站" );
 
                 PlanetViewChatHandlerBase chatHandlerOrNull = ChatClickHandler.CreateNewAs<PlanetViewChatHandlerBase>( "PlanetGeneralFocus" );
                 if ( chatHandlerOrNull != null )
@@ -918,12 +918,12 @@ namespace Arcen.AIW2.External
 
                 if ( this.BaseInfo.PlayerAllied )
                 {
-                    buffer.Add( "Friendly Marauders", faction.FactionCenterColor.ColorHexBrighter ).Add( " are reinforcing player planet " ).Add( targetPlanet.Name, controllingFaction.FactionCenterColor.ColorHexBrighter );
+                    buffer.Add( "友方掠夺者", faction.FactionCenterColor.ColorHexBrighter ).Add( "正在增援玩家星球 " ).Add( targetPlanet.Name, controllingFaction.FactionCenterColor.ColorHexBrighter );
                     World_AIW2.Instance.QueueChatMessageOrCommand( buffer.GetStringAndResetForNextUpdate(), ChatType.LogToCentralChat, "ArkChiefOfStaff_FriendlyMaraudersReinforcingPlayer", chatHandlerOrNull );
                 }
                 else
                 {
-                    buffer.Add( "Hostile Marauders", faction.FactionCenterColor.ColorHexBrighter ).Add( " are attacking player planet " ).Add( targetPlanet.Name, controllingFaction.FactionCenterColor.ColorHexBrighter );
+                    buffer.Add( "敌对掠夺者", faction.FactionCenterColor.ColorHexBrighter ).Add( "正在攻击玩家星球 " ).Add( targetPlanet.Name, controllingFaction.FactionCenterColor.ColorHexBrighter );
                     World_AIW2.Instance.QueueChatMessageOrCommand( buffer.GetStringAndResetForNextUpdate(), ChatType.LogToCentralChat, "ArkChiefOfStaff_MaraudersAttackingPlayerPlanet", chatHandlerOrNull );
                 }
             }

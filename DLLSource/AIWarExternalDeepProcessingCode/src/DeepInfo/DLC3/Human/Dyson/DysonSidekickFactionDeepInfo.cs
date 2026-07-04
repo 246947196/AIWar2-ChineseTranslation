@@ -1097,13 +1097,13 @@ namespace Arcen.AIW2.External
             {
                 if ( World_AIW2.Instance.CampaignType.HarshnessRating > 100 )
                 {
-                    ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.Normal, null, "Dyson Overview",
-                        "STOP! The Dyson is an entirely different playstyle than the Human Empire. You must relearn your skills and change your expectations.\n\nREAD! There's a lot of how-to-play and advice in the Tips tab in the left hand menu.\n\nENJOY! As this is a whole new game experience, think of yourself as not being in AI War 2 anymore.\n\nWARNING! Dyson is not really supported on any game mode above Humanity Ascendant. It shouldn't break, but there may be unexpect problems. Play at your own risk. ", "Ok" );
+                    ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.Normal, null, "戴森概览",
+                        "停止！戴森是一种与人类帝国完全不同的游戏风格。你必须重新学习技能并改变你的期望。\n\n阅读！左侧菜单的'提示'标签中有大量玩法和建议。\n\n享受！由于这是一个全新的游戏体验，请将自己视为不再是AI War 2中的玩家。\n\n警告！戴森在任何高于'人类至上'的游戏模式中都不被真正支持。它不应该崩溃，但可能会出现意外问题。风险自负。", "确定" );
                 }
                 else
                 {
-                    ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.Normal, null, "Dyson Overview",
-                        "STOP! The Dyson is an entirely different playstyle than the Human Empire. You must relearn your skills and change your expectations.\n\nREAD! There's a lot of how-to-play and advice in the Tips tab in the left hand menu.\n\nENJOY! As this is a whole new game experience, think of yourself as not being in AI War 2 anymore.", "Ok" );
+                    ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.Normal, null, "戴森概览",
+                        "停止！戴森是一种与人类帝国完全不同的游戏风格。你必须重新学习技能并改变你的期望。\n\n阅读！左侧菜单的'提示'标签中有大量玩法和建议。\n\n享受！由于这是一个全新的游戏体验，请将自己视为不再是AI War 2中的玩家。", "确定" );
                 }
             }
 

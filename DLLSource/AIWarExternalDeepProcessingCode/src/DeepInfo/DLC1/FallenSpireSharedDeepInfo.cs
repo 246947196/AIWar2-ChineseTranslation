@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using System;
 
 using System.Text;
@@ -247,16 +247,16 @@ namespace Arcen.AIW2.External
                             if ( faction.RandomImpact != TypeDifficulty.Unset &&
                                  !faction.HasBeenSeenByPlayer &&
                                  !GameSettings.Current.GetBoolBySetting( "ShowRandomAIType" ) )
-                                workingBuffer.Add( "A " ).Add( "Random Faction", factionToUse.FactionCenterColor.ColorHexBrighter ).Add( " has retrieved the Spire Debris on " + debris.GetPlanetName_Safe() + ". They will use this to build new ship types with Spire technology" );
+                                workingBuffer.Add( "一个" ).Add( "随机阵营", factionToUse.FactionCenterColor.ColorHexBrighter ).Add( "已获取" + debris.GetPlanetName_Safe() + "上的尖塔残骸。他们将利用此残骸建造使用尖塔技术的新舰船类型" );
                             else
-                                workingBuffer.Add( factionToUse.GetDisplayName(), factionToUse.FactionCenterColor.ColorHexBrighter ).Add( " has retrieved the Spire Debris on " + debris.GetPlanetName_Safe() + ". They will use this to build new ship types with Spire technology" );
+                                workingBuffer.Add( factionToUse.GetDisplayName(), factionToUse.FactionCenterColor.ColorHexBrighter ).Add( "已获取" + debris.GetPlanetName_Safe() + "上的尖塔残骸。他们将利用此残骸建造使用尖塔技术的新舰船类型" );
                         }
                         else
                         {
                             debugCode = 4400;
                             factionToUse.HasObtainedSpireDebris = true;
 
-                            workingBuffer.Add( "The " ).Add( factionToUse.GetDisplayName(), factionToUse.FactionCenterColor.ColorHexBrighter ).Add( " has retrieved the Spire Debris on " + debris.GetPlanetName_Safe() + ". They will repair it to build a single powerful ship to use against their enemies." );
+                            workingBuffer.Add( "" ).Add( factionToUse.GetDisplayName(), factionToUse.FactionCenterColor.ColorHexBrighter ).Add( "已获取" + debris.GetPlanetName_Safe() + "上的尖塔残骸。他们将修复此残骸以建造一艘强大的舰船来对抗敌人。" );
                             //TODO: Do we want an AI-specific spire unit type? If so, we should use that here
                             debugCode = 4410;
                             GameEntityTypeData entityData = GameEntityTypeDataTable.Instance.GetRandomRowWithTag( Context, "AIShipFromDebris" );

@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using System;
 
 using System.Text;
@@ -1606,12 +1606,11 @@ namespace Arcen.AIW2.External
             if (NecromancerEmpireFactionBaseInfo.GetNecromancerFactionCount() > 0)
             {
                 Faction necromancerFaction = NecromancerEmpireFactionBaseInfo.GetFirstNecromancerFactionOrNull();
-                World_AIW2.Instance.QueueChatMessageOrCommand("The " + AttachedFaction.StartFactionColourForLog() + "Templar</color> are launching an assault wave against the " +
-                                                               necromancerFaction.StartFactionColourForLog() + "Necromancer</color> with <color=#ff0000>" + BaseInfo.WaveLeadersToSpawn + "</color> wave leaders.", ChatType.LogToCentralChat, null);
+                World_AIW2.Instance.QueueChatMessageOrCommand(AttachedFaction.StartFactionColourForLog() + "圣殿骑士</color>阵营正在向" + necromancerFaction.StartFactionColourForLog() + "亡灵法师</color>阵营发起攻击波，拥有<color=#ff0000>" + BaseInfo.WaveLeadersToSpawn + "</color>个波次领袖。", ChatType.LogToCentralChat, null);
             }
             else
             {
-                World_AIW2.Instance.QueueChatMessageOrCommand("The " + AttachedFaction.StartFactionColourForLog() + "Templar</color> are launching an assault wave against their enemies with <color=#ff0000>" + BaseInfo.WaveLeadersToSpawn + "</color> wave leaders.", ChatType.LogToCentralChat, null);
+                World_AIW2.Instance.QueueChatMessageOrCommand(AttachedFaction.StartFactionColourForLog() + "圣殿骑士</color>阵营正在向敌人发起攻击波，拥有<color=#ff0000>" + BaseInfo.WaveLeadersToSpawn + "</color>个波次领袖。", ChatType.LogToCentralChat, null);
             }
         }
         private void SpawnShips( string TagToSpawn, int StrengthToSpawn, GameEntity_Squad castle, ArcenHostOnlySimContext Context )
