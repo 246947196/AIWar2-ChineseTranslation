@@ -20,7 +20,8 @@ AIWar2_ChineseTranslation/
 ├── doorstop_config.ini                ← BepInEx 配置
 ├── BepInEx/
 │   ├── config/
-│   │   └── xiaoye97.I18NFont4UnityGame.cfg
+│   │   ├── xiaoye97.I18NFont4UnityGame.cfg
+│   │   └── BepInEx.cfg
 │   ├── core/                          ← BepInEx 核心库
 │   ├── patchers/
 │   │   └── AssemblyRedirector.dll     ← Preloader Patcher
@@ -40,10 +41,11 @@ AIWar2_ChineseTranslation/
 
 ### 3.1 翻译流程
 
-1. 在 `AIWar2_ChineseTranslation/GameData/Configuration/` 中编辑 XML 文件
-2. 运行 `deploy.ps1` 部署到游戏目录
-3. 启动游戏验证翻译效果
-4. 提交翻译到 Git 仓库
+1. 从游戏目录复制原版 XML 文件到翻译文件夹
+2. 在 `AIWar2_ChineseTranslation/GameData/Configuration/` 中编辑 XML 文件
+3. 运行 `deploy.ps1` 部署到游戏目录
+4. 启动游戏验证翻译效果
+5. 提交翻译到 Git 仓库
 
 ### 3.2 首次部署
 
@@ -83,6 +85,7 @@ BepInEx Preloader 在游戏程序集加载前调用 Patcher，通过 Mono.Cecil 
 - 禁止修改 `AIWar2_Data/Managed/` 下任何原始 DLL
 - 禁止使用 Harmony 运行时方法 patch
 - 禁止使用 XMLMod 的 DLL 覆盖机制
+- 翻译时只修改 `default_display_name` 属性，不添加新条目
 
 ## 七、卸载方法
 
