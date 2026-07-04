@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -793,7 +793,7 @@ namespace Arcen.AIW2.External
                     World_AIW2.Instance.QueueGameCommand( ForFaction, command, true );
                 }, 
                 null, 
-                "Scrap Selected Units?", "Sure you want to scrap the units you have selected at the moment?", "Yes, Kill Them", "No, Wait!" );
+                "拆解选中的单位？", "你确定要拆解当前选中的单位吗？", "是的，销毁它们", "不，等等！" );
         }
 
         public static void TogglePlanetFactionBooleanFlagAtCurrentPlanet( Faction ForFaction, GameCommandSource Source, PlanetFactionBooleanFlag Flag)
@@ -924,7 +924,7 @@ namespace Arcen.AIW2.External
         {
             if ( ArcenThreading.IsCurrentlyBlockedForShutdown.IsBusy() )
             {
-                Window_AtMouseTooltipPanelSnapToLeft.bPanel.Instance.SetText( MustBeAboveOrBelow, "<color=#ff6935>Please wait a moment, the game is still refreshing from the last exit.</color>" );
+                Window_AtMouseTooltipPanelSnapToLeft.bPanel.Instance.SetText( MustBeAboveOrBelow, "<color=#ff6935>请稍等，游戏仍在从上次退出中刷新。</color>" );
                 return true;
             }
             return false;
@@ -974,16 +974,16 @@ namespace Arcen.AIW2.External
                 calculatedLoad += (unknownFactionCount * 100);
                 if ( OptionalExplainCalculation != null )
                 {
-                    OptionalExplainCalculation.Add( "\n" ).AddNumberMoreReadable( (unknownFactionCount * 100) ).Add( " Load Added From Unknown Factions" );
+                    OptionalExplainCalculation.Add( "\n" ).AddNumberMoreReadable( (unknownFactionCount * 100) ).Add( " 负载来自未知阵营" );
                 }
             }
 
             if ( OptionalExplainCalculation != null )
             {
                 if ( unknownFactionCount > 0 )
-                    OptionalExplainCalculation.Add( "\n" ).AddNumberMoreReadable( loadFromFactions ).Add( " Direct Load Added From " ).Add( knownFactionCount ).Add( " Known Factions" );
+                    OptionalExplainCalculation.Add( "\n" ).AddNumberMoreReadable( loadFromFactions ).Add( " 直接负载来自 " ).Add( knownFactionCount ).Add( " 个已知阵营" );
                 else
-                    OptionalExplainCalculation.Add( "\n" ).AddNumberMoreReadable( loadFromFactions ).Add( " Direct Load Added From " ).Add( knownFactionCount ).Add( " Factions" );
+                    OptionalExplainCalculation.Add( "\n" ).AddNumberMoreReadable( loadFromFactions ).Add( " 直接负载来自 " ).Add( knownFactionCount ).Add( " 个阵营" );
             }
 
             int totalFactionCount = knownFactionCount + unknownFactionCount;
@@ -999,35 +999,35 @@ namespace Arcen.AIW2.External
                 float amountToMultiplyBy = 1 + ( 0.05f * (totalFactionCount - 5) );
                 calculatedLoad *= amountToMultiplyBy;
                 if ( OptionalExplainCalculation != null )
-                    OptionalExplainCalculation.Add( "\n" ).Add( UnityEngine.Mathf.RoundToInt( amountToMultiplyBy * 100 ) ).Add( "% Of Normal Load From Interactions Between " ).Add( totalFactionCount ).Add( " Factions" );
+                    OptionalExplainCalculation.Add( "\n" ).Add( UnityEngine.Mathf.RoundToInt( amountToMultiplyBy * 100 ) ).Add( "% 正常负载来自 " ).Add( totalFactionCount ).Add( " 个阵营之间的交互" );
             }
             else if ( totalFactionCount <= 15 )
             {
                 float amountToMultiplyBy = 1 + (0.02f * (9 - 5)) + (0.04f * (totalFactionCount - 9));
                 calculatedLoad *= amountToMultiplyBy;
                 if ( OptionalExplainCalculation != null )
-                    OptionalExplainCalculation.Add( "\n" ).Add( UnityEngine.Mathf.RoundToInt( amountToMultiplyBy * 100 ) ).Add( "% Of Normal Load From Interactions Between " ).Add( totalFactionCount ).Add( " Factions" );
+                    OptionalExplainCalculation.Add( "\n" ).Add( UnityEngine.Mathf.RoundToInt( amountToMultiplyBy * 100 ) ).Add( "% 正常负载来自 " ).Add( totalFactionCount ).Add( " 个阵营之间的交互" );
             }
             else if ( totalFactionCount <= 20 )
             {
                 float amountToMultiplyBy = 1 + (0.02f * (9 - 5)) + (0.04f * (15 - 9)) + (0.08f * (totalFactionCount - 15));
                 calculatedLoad *= amountToMultiplyBy;
                 if ( OptionalExplainCalculation != null )
-                    OptionalExplainCalculation.Add( "\n" ).Add( UnityEngine.Mathf.RoundToInt( amountToMultiplyBy * 100 ) ).Add( "% Of Normal Load From Interactions Between " ).Add( totalFactionCount ).Add( " Factions" );
+                    OptionalExplainCalculation.Add( "\n" ).Add( UnityEngine.Mathf.RoundToInt( amountToMultiplyBy * 100 ) ).Add( "% 正常负载来自 " ).Add( totalFactionCount ).Add( " 个阵营之间的交互" );
             }
             else if ( totalFactionCount <= 25 )
             {
                 float amountToMultiplyBy = 1 + (0.02f * (9 - 5)) + (0.04f * (15 - 9)) + (0.08f * (20 - 15)) + (0.12f * (totalFactionCount - 20));
                 calculatedLoad *= amountToMultiplyBy;
                 if ( OptionalExplainCalculation != null )
-                    OptionalExplainCalculation.Add( "\n" ).Add( UnityEngine.Mathf.RoundToInt( amountToMultiplyBy * 100 ) ).Add( "% Of Normal Load From Interactions Between " ).Add( totalFactionCount ).Add( " Factions" );
+                    OptionalExplainCalculation.Add( "\n" ).Add( UnityEngine.Mathf.RoundToInt( amountToMultiplyBy * 100 ) ).Add( "% 正常负载来自 " ).Add( totalFactionCount ).Add( " 个阵营之间的交互" );
             }
             else
             {
                 float amountToMultiplyBy = 1 + (0.02f * (9 - 5)) + (0.04f * (15 - 9)) + (0.08f * (20 - 15)) + (0.12f * (25 - 20)) + (0.16f * (totalFactionCount - 25));
                 calculatedLoad *= amountToMultiplyBy;
                 if ( OptionalExplainCalculation != null )
-                    OptionalExplainCalculation.Add( "\n" ).Add( UnityEngine.Mathf.RoundToInt( amountToMultiplyBy * 100 ) ).Add( "% Of Normal Load From Interactions Between " ).Add( totalFactionCount ).Add( " Factions" );
+                    OptionalExplainCalculation.Add( "\n" ).Add( UnityEngine.Mathf.RoundToInt( amountToMultiplyBy * 100 ) ).Add( "% 正常负载来自 " ).Add( totalFactionCount ).Add( " 个阵营之间的交互" );
             }
             #endregion
 
@@ -1040,96 +1040,96 @@ namespace Arcen.AIW2.External
             {
                 calculatedLoad *= 0.7f;
                 if ( OptionalExplainCalculation != null )
-                    OptionalExplainCalculation.Add( "\n70% Of Normal Load From " ).Add( planetCount ).Add( " Planets" );
+                    OptionalExplainCalculation.Add( "\n70% 正常负载来自 " ).Add( planetCount ).Add( " 个星球" );
             }
             else if ( planetCount <= 70 )
             {
                 calculatedLoad *= 0.8f;
                 if ( OptionalExplainCalculation != null )
-                    OptionalExplainCalculation.Add( "\n80% Of Normal Load From " ).Add( planetCount ).Add( " Planets" );
+                    OptionalExplainCalculation.Add( "\n80% 正常负载来自 " ).Add( planetCount ).Add( " 个星球" );
             }
             else if ( planetCount < 80 )
             {
                 calculatedLoad *= 0.9f;
                 if ( OptionalExplainCalculation != null )
-                    OptionalExplainCalculation.Add( "\n90% Of Normal Load From " ).Add( planetCount ).Add( " Planets" );
+                    OptionalExplainCalculation.Add( "\n90% 正常负载来自 " ).Add( planetCount ).Add( " 个星球" );
             }
             else if ( planetCount < 90 )
             {
                 if ( OptionalExplainCalculation != null )
-                    OptionalExplainCalculation.Add( "\nNormal Load From " ).Add( planetCount ).Add( " Planets" );
+                    OptionalExplainCalculation.Add( "\n正常负载来自 " ).Add( planetCount ).Add( " 个星球" );
             }
             else if ( planetCount < 100 )
             {
                 calculatedLoad *= 1.2f;
                 if ( OptionalExplainCalculation != null )
-                    OptionalExplainCalculation.Add( "\n120% Of Normal Load From " ).Add( planetCount ).Add( " Planets" );
+                    OptionalExplainCalculation.Add( "\n120% 正常负载来自 " ).Add( planetCount ).Add( " 个星球" );
             }
             else if ( planetCount < 110 )
             {
                 calculatedLoad *= 1.4f;
                 if ( OptionalExplainCalculation != null )
-                    OptionalExplainCalculation.Add( "\n140% Of Normal Load From " ).Add( planetCount ).Add( " Planets" );
+                    OptionalExplainCalculation.Add( "\n140% 正常负载来自 " ).Add( planetCount ).Add( " 个星球" );
             }
             else if ( planetCount < 120 )
             {
                 calculatedLoad *= 1.6f;
                 if ( OptionalExplainCalculation != null )
-                    OptionalExplainCalculation.Add( "\n160% Of Normal Load From " ).Add( planetCount ).Add( " Planets" );
+                    OptionalExplainCalculation.Add( "\n160% 正常负载来自 " ).Add( planetCount ).Add( " 个星球" );
             }
             else if ( planetCount < 130 )
             {
                 calculatedLoad *= 1.9f;
                 if ( OptionalExplainCalculation != null )
-                    OptionalExplainCalculation.Add( "\n190% Of Normal Load From " ).Add( planetCount ).Add( " Planets" );
+                    OptionalExplainCalculation.Add( "\n190% 正常负载来自 " ).Add( planetCount ).Add( " 个星球" );
             }
             else if ( planetCount < 140 )
             {
                 calculatedLoad *= 2.5f;
                 if ( OptionalExplainCalculation != null )
-                    OptionalExplainCalculation.Add( "\n280% Of Normal Load From " ).Add( planetCount ).Add( " Planets" );
+                    OptionalExplainCalculation.Add( "\n280% 正常负载来自 " ).Add( planetCount ).Add( " 个星球" );
             }
             else if ( planetCount < 160 )
             {
                 calculatedLoad *= 3.2f;
                 if ( OptionalExplainCalculation != null )
-                    OptionalExplainCalculation.Add( "\n320% Of Normal Load From " ).Add( planetCount ).Add( " Planets" );
+                    OptionalExplainCalculation.Add( "\n320% 正常负载来自 " ).Add( planetCount ).Add( " 个星球" );
             }
             else if ( planetCount < 170 )
             {
                 calculatedLoad *= 3.4f;
                 if ( OptionalExplainCalculation != null )
-                    OptionalExplainCalculation.Add( "\n340% Of Normal Load From " ).Add( planetCount ).Add( " Planets" );
+                    OptionalExplainCalculation.Add( "\n340% 正常负载来自 " ).Add( planetCount ).Add( " 个星球" );
             }
             else if ( planetCount < 180 )
             {
                 calculatedLoad *= 3.8f;
                 if ( OptionalExplainCalculation != null )
-                    OptionalExplainCalculation.Add( "\n380% Of Normal Load From " ).Add( planetCount ).Add( " Planets" );
+                    OptionalExplainCalculation.Add( "\n380% 正常负载来自 " ).Add( planetCount ).Add( " 个星球" );
             }
             else if ( planetCount < 190 )
             {
                 calculatedLoad *= 4.0f;
                 if ( OptionalExplainCalculation != null )
-                    OptionalExplainCalculation.Add( "\n400% Of Normal Load From " ).Add( planetCount ).Add( " Planets" );
+                    OptionalExplainCalculation.Add( "\n400% 正常负载来自 " ).Add( planetCount ).Add( " 个星球" );
             }
             else if ( planetCount < 200 )
             {
                 calculatedLoad *= 4.3f;
                 if ( OptionalExplainCalculation != null )
-                    OptionalExplainCalculation.Add( "\n430% Of Normal Load From " ).Add( planetCount ).Add( " Planets" );
+                    OptionalExplainCalculation.Add( "\n430% 正常负载来自 " ).Add( planetCount ).Add( " 个星球" );
             }
             else if ( planetCount < 210 )
             {
                 calculatedLoad *= 4.6f;
                 if ( OptionalExplainCalculation != null )
-                    OptionalExplainCalculation.Add( "\n460% Of Normal Load From " ).Add( planetCount ).Add( " Planets" );
+                    OptionalExplainCalculation.Add( "\n460% 正常负载来自 " ).Add( planetCount ).Add( " 个星球" );
             }
             else
             {
                 calculatedLoad *= 5f;
                 if ( OptionalExplainCalculation != null )
-                    OptionalExplainCalculation.Add( "\n500%+ Of Normal Load From " ).Add( planetCount ).Add( " Planets" );
+                    OptionalExplainCalculation.Add( "\n500%+ 正常负载来自 " ).Add( planetCount ).Add( " 个星球" );
             }
             #endregion
 
@@ -1140,50 +1140,50 @@ namespace Arcen.AIW2.External
         {
             if ( totalLoad > 5000 )
             {
-                CategoryName = "Apocalyptic";
-                Description = "At 5000+ load, everyone's machine will struggle, period.  You really aren't likely to get a good experience with this level of load, but maybe you have a supercomputer we didn't expect.";
+                CategoryName = "灾难级";
+                Description = "在5000+负载下，所有人的机器都会很卡。你不太可能在这种负载水平下获得良好的体验，但也许你有一台我们没想到的超级计算机。";
                 return "ff34f8";
             }
             else if ( totalLoad > 4000 )
             {
-                CategoryName = "Super Extreme";
-                Description = "At 3000-4000 load, a very nice modern CPU in 2022 can probably run it at a choppy 30fps, but older computers will buckle.  Saves will be large and slow, and some things may be too slow to work entirely correctly.";
+                CategoryName = "超级极端";
+                Description = "在3000-4000负载下，2022年一款非常好的现代CPU大概能以卡顿的30fps运行，但老计算机会吃不消。存档会很大很慢，有些东西可能会太慢而无法完全正常工作。";
                 return "ff34cd";
             }
             else if ( totalLoad > 2700 )
             {
-                CategoryName = "Extreme";
-                Description = "At 2700-4000 load, a very nice modern CPU in 2022 can probably run it, maybe even at 60-80fps, but older computers will buckle.  Saves will be large and slightly on the slow side, but probably all calculations will happen correctly.";
+                CategoryName = "极端";
+                Description = "在2700-4000负载下，2022年一款非常好的现代CPU大概能运行，甚至可能达到60-80fps，但老计算机会吃不消。存档会很大且稍慢，但所有计算应该都能正确完成。";
                 return "ff34cd";
             }
             else if ( totalLoad > 1600 )
             {
-                CategoryName = "Very High";
-                Description = "At 1600-2700 load, this is quite a large game that may suffer from some performance problems.  Older or weaker CPUs are not likely to handle this well.";
+                CategoryName = "非常高";
+                Description = "在1600-2700负载下，这是一个相当大的游戏，可能会出现一些性能问题。较旧或较弱的CPU不太可能很好地处理这个。";
                 return "ff348f";
             }
             else if ( totalLoad > 800 )
             {
-                CategoryName = "High";
-                Description = "At 800-1600 load, this is a very busy game that will need all of your cores.  Hopefully you will not have performance problems, but it depends on your CPU age and quality.";
+                CategoryName = "高";
+                Description = "在800-1600负载下，这是一个非常繁忙的游戏，将需要你所有的核心。希望你不会有性能问题，但这取决于你的CPU年龄和质量。";
                 return "ff5f34";
             }
             else if ( totalLoad > 500 )
             {
-                CategoryName = "Moderate";
-                Description = "At 500-800 load, this is probably just fine for most CPUs from 2015 and onward, but older CPUs may struggle.  Four cores or more is still ideal.  Upper-middle-end computers from 2018 on are likely to get 90-120fps and perfect sim speed.";
+                CategoryName = "中等";
+                Description = "在500-800负载下，这对2015年及以后的大多数CPU来说应该没问题，但较旧的CPU可能会吃力。四个或更多核心仍然是理想的。2018年及以后的中高端电脑可能会达到90-120fps和完美的模拟速度。";
                 return "ffab34";
             }
             else if ( totalLoad > 300 )
             {
-                CategoryName = "Low";
-                Description = "At 300-500 load, any CPU from 2011 and onward can probably run this.  The further back you go, the more it matters if you have four cores.  Newer dual-core machines should be fine.  Upper-middle-end computers from 2017 on are likely to get 90-120fps and perfect sim speed.";
+                CategoryName = "低";
+                Description = "在300-500负载下，2011年及以后的任何CPU大概都能运行这个。越往后走，是否有四个核心就越重要。较新的双核机器应该没问题。2017年及以后的中高端电脑可能会达到90-120fps和完美的模拟速度。";
                 return "34baff";
             }
             else
             {
-                CategoryName = "Very Low";
-                Description = "At 1-300 load, any CPU from 2011 and onward can probably run this.  Two cores will probably suffice, but more is always handy.  Upper-middle-end computers from 2016 on are likely to get 90-120fps and perfect sim speed.";
+                CategoryName = "非常低";
+                Description = "在1-300负载下，2011年及以后的任何CPU大概都能运行这个。两个核心可能就够了，但更多总是好的。2016年及以后的中高端电脑可能会达到90-120fps和完美的模拟速度。";
                 return "7fb2ff";
             }
         }

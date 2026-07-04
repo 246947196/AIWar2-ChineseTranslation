@@ -24,7 +24,7 @@ namespace Arcen.AIW2.External
                 _lastLogDeleteTime = T;
                 File.WriteAllText(Engine_Universal.CurrentPlayerDataDirectory + "ArcenDebugLog.txt", "\n");
                 
-                LOG.Chat("Clearing Log!");
+                LOG.Chat("清除日志！");
             }
         }
         
@@ -36,7 +36,7 @@ namespace Arcen.AIW2.External
                 resave_meta = !resave_meta;
                 GameSettings.Current.SetBoolBySetting("ResaveAllSaveMeta", resave_meta);
                 
-                LOG.Chat("ResaveAllSaveMeta is {0}",resave_meta ? "ON" : "OFF");
+                LOG.Chat("重新保存所有存档元数据状态：{0}",resave_meta ? "开启" : "关闭");
             }
         }
         

@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using System;
 
 using System.Text;
@@ -21,7 +21,7 @@ namespace Arcen.AIW2.External
             try
             {
                 debugCode = 100;
-                string saveGameName = "Most Recent Quit Save"; //This overwrites every time
+                string saveGameName = "最近的退出存档"; //This overwrites every time
                 GameCommand command = GameCommand.Create( BaseGameCommand.CommandsByCode[BaseGameCommand.Code.SaveGame], GameCommandSource.AnythingElse );
                 debugCode = 200;
                 command.RelatedString = saveGameName;
@@ -45,17 +45,17 @@ namespace Arcen.AIW2.External
             //    continue;
             //DO draw those
             if ( !faction.HasBeenSeenByPlayer && !AIWar2GalaxySettingTable.GetIsBoolSettingEnabledByName_DuringGame( "AlwaysShowFactions" ) )
-                Buffer.StartColor( faction.FactionCenterColor.ColorHexBrighter ).Add( "Undiscovered" ).EndColor();
+                Buffer.StartColor( faction.FactionCenterColor.ColorHexBrighter ).Add( "未发现" ).EndColor();
             else
             {
                 if ( faction.RandomImpact != TypeDifficulty.Unset && //this is a random faction
                     !faction.HasBeenSeenByPlayer ) //that hasn't been seen by a player
                 {
                     if ( GameSettings.Current.GetBoolBySetting( "HideRandomFactions" ) )
-                        Buffer.StartColor( faction.FactionCenterColor.ColorHexBrighter ).Add( "Undiscovered Rand" ).EndColor(); //don't show the player these factions at all
+                        Buffer.StartColor( faction.FactionCenterColor.ColorHexBrighter ).Add( "未发现随机" ).EndColor(); //don't show the player these factions at all
                     if ( GameSettings.Current.GetBoolBySetting( "HideRandomFactionType" ) )
                     {
-                        Buffer.StartColor( faction.FactionCenterColor.ColorHexBrighter ).Add( "Random " ).Add( EnumNameCache.GetName( faction.RandomImpact ) ).EndColor();
+                        Buffer.StartColor( faction.FactionCenterColor.ColorHexBrighter ).Add( "随机 " ).Add( EnumNameCache.GetName( faction.RandomImpact ) ).EndColor();
                     }
                     else
                         Buffer.StartColor( faction.FactionCenterColor.ColorHexBrighter ).Add( faction.GetDisplayName() ).EndColor();
@@ -108,7 +108,7 @@ namespace Arcen.AIW2.External
                     
                     if ( hideRandomFactionType )
                     {
-                        Buffer.StartColor( faction.FactionCenterColor.ColorHexBrighter ).Add( "Random " ).Add( EnumNameCache.GetName( faction.RandomImpact ) ).EndColor();
+                        Buffer.StartColor( faction.FactionCenterColor.ColorHexBrighter ).Add( "随机 " ).Add( EnumNameCache.GetName( faction.RandomImpact ) ).EndColor();
                         factionDisplaysRandom = false;
                     }
                     else
@@ -119,7 +119,7 @@ namespace Arcen.AIW2.External
                 
                 if ( faction.GetHasHadSomeException() )
                 {
-                    Buffer.StartColor( ColorMath.GetTimeLerpedColor( ColorMath.Red, ColorMath.Orange, 500 ) ).Add( " FATAL ERROR IN FACTION" ).EndColor();
+                    Buffer.StartColor( ColorMath.GetTimeLerpedColor( ColorMath.Red, ColorMath.Orange, 500 ) ).Add( " 阵营严重错误" ).EndColor();
                     Buffer.Add( "\n" );
                     continue;
                 }

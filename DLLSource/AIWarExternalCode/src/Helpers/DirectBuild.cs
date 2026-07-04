@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Arcen.AIW2.Core;
 using UnityEngine;
 using Arcen.Universal;
@@ -116,7 +116,7 @@ namespace Arcen.AIW2.External
             switch ( fleetMembership.Fleet.Category )
             {
                 case FleetCategory.PlayerPlanetaryCommand:
-                    buffer.StartColor( "9DFBA7" ).Add( "Planet " ).Add( fleetMembership.Fleet.Planet.Name );
+                    buffer.StartColor( "9DFBA7" ).Add( "星球 " ).Add( fleetMembership.Fleet.Planet.Name );
                     break;
                 case FleetCategory.PlayerBattlestation:
                     buffer.StartColor( "FADE9D" ).Add( fleetMembership.Fleet.GetName() );
@@ -136,7 +136,7 @@ namespace Arcen.AIW2.External
         public bool AddOverridingCapText(ref DirectBuildable buildable, ArcenCharacterBufferBase buffer)
         {
             if ( IsPreventedFromBuildingByDires(ref buildable) ) {
-                buffer.Add( "<size=85%>" ).Add("Blocked by Dire Posts", Color.red).Add("</size>");
+                buffer.Add( "<size=85%>" ).Add("被远程哨站阻挡", Color.red).Add("</size>");
                 return true;
             }
             return false;
@@ -145,7 +145,7 @@ namespace Arcen.AIW2.External
         {
             if ( IsPreventedFromBuildingByDires(ref buildable) ) {
                 buffer.StartColor(Color.red);
-                buffer.Add( "Deathwish Mode: The power of the dire guard posts at this planet prevent any turret construction." );
+                buffer.Add( "末日模式：此星球上的远程守卫哨站阻止了所有炮台建造。" );
                 buffer.EndColor().NewLine();
             }
             EntityText.GetTooltip( buffer, null, buildable.fleetMembership_ForImplementation, null, -1, null, 0, FromSidebarType.Sidebar_SingleUnit, ShipExtraDetailFlags.BuildInfo, 1f, false );
@@ -173,7 +173,7 @@ namespace Arcen.AIW2.External
         public MouseHandlingResult HandleButtonClick(ref DirectBuildable buildable, MouseHandlingInput input) 
         {
             if ( IsPreventedFromBuildingByDires(ref buildable) ) {
-                World_AIW2.Instance.QueueChatMessageOrCommand( "Deathwish Mode: The power of the dire guard posts at this planet prevent any turret construction.", ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
+                World_AIW2.Instance.QueueChatMessageOrCommand( "末日模式：此星球上的远程守卫哨站阻止了所有炮台建造。", ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
                 return MouseHandlingResult.PlayClickDeniedSound;
             }
 
@@ -275,13 +275,13 @@ namespace Arcen.AIW2.External
 
         public void AddFleetDescriptor(ref DirectBuildable buildable, ArcenCharacterBufferBase buffer)
         {
-            buffer.StartColor( "9DFBA7" ).Add( "Planet " ).Add( buildable.fleetToBuild_ForImplementation.Planet.Name );
+            buffer.StartColor( "9DFBA7" ).Add( "星球 " ).Add( buildable.fleetToBuild_ForImplementation.Planet.Name );
         }
         public bool AddOverridingCapText(ref DirectBuildable buildable, ArcenCharacterBufferBase buffer)
         {
             Planet planet = buildable.fleetToBuild_ForImplementation.Planet;
             if ( planet != null && planet.GetIsPlayerCommandStationPinned() && planet.MostRecentPlayerNonHomCommandStationType != buildable.TypeData ) {
-                buffer.Add("Pinned", Color.red);
+                buffer.Add("被压制", Color.red);
                 return true;
             }
             return false;
@@ -291,8 +291,8 @@ namespace Arcen.AIW2.External
             Planet planet = buildable.fleetToBuild_ForImplementation.Planet;
             if ( planet != null && planet.GetIsPlayerCommandStationPinned() && planet.MostRecentPlayerNonHomCommandStationType != buildable.TypeData ) {
                 buffer.StartColor(Color.red);
-                buffer.Add("For now, you can only build a ").Add(planet.MostRecentPlayerNonHomCommandStationType.DisplayName);
-                buffer.Add(" here.  This planet is currently pinned by either an incoming wave, or 1+ enemy strength on the planet.");
+                buffer.Add("目前，你只能建造一个 ").Add(planet.MostRecentPlayerNonHomCommandStationType.DisplayName);
+                buffer.Add("。此星球当前被来袭的波次或星球上1+的敌方力量压制。");
                 buffer.EndColor().NewLine();
             }
             EntityText.GetTooltip( buffer, null, null, buildable.TypeData, -1, null, buildable.EffectiveMark, FromSidebarType.Sidebar_SingleUnit, ShipExtraDetailFlags.BuildInfo, 1f, false );
@@ -302,8 +302,8 @@ namespace Arcen.AIW2.External
             Planet planet = buildable.fleetToBuild_ForImplementation.Planet;
             if ( planet != null && planet.GetIsPlayerCommandStationPinned() && planet.MostRecentPlayerNonHomCommandStationType != buildable.TypeData )
             {
-                World_AIW2.Instance.QueueChatMessageOrCommand( "For now, you can only build a " + planet.MostRecentPlayerNonHomCommandStationType.DisplayName +
-                        " here.  This planet is currently pinned by either an incoming wave, or 1+ enemy strength on the planet.", ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
+                World_AIW2.Instance.QueueChatMessageOrCommand( "目前，你只能建造一个 " + planet.MostRecentPlayerNonHomCommandStationType.DisplayName +
+                        "。此星球当前被来袭的波次或星球上1+的敌方力量压制。", ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
                 return MouseHandlingResult.PlayClickDeniedSound;
             }
             Engine_AIW2.Instance.PlacingDirectBuildable = buildable;
@@ -366,20 +366,20 @@ namespace Arcen.AIW2.External
 
         public void AddFleetDescriptor(ref DirectBuildable buildable, ArcenCharacterBufferBase buffer)
         {
-            buffer.StartColor( "9DFBA7" ).Add( "Planet " ).Add( buildable.fleetToBuild_ForImplementation.Planet.Name );
+            buffer.StartColor( "9DFBA7" ).Add( "星球 " ).Add( buildable.fleetToBuild_ForImplementation.Planet.Name );
         }
         public bool AddOverridingCapText(ref DirectBuildable buildable, ArcenCharacterBufferBase buffer)
         {
             Planet planet = buildable.fleetToBuild_ForImplementation.Planet;
             if ( planet != null && planet.GetIsPlayerCommandStationPinned() && planet.MostRecentPlayerNonHomCommandStationType != buildable.TypeData ) {
-                buffer.Add("Pinned", Color.red);
+                buffer.Add("被压制", Color.red);
                 return true;
             }
             return false;
         }
 
         public const string PinnedCommandStationText =
-            "Cannot build a replacement command station here.  The existing one is currently pinned by either an incoming wave, or 1+ enemy strength on the planet.";
+            "无法在此处建造替代指挥站。现有的指挥站当前被来袭的波次或星球上1+的敌方力量压制。";
 
         public void GetHoverText(ref DirectBuildable buildable, ArcenDoubleCharacterBuffer buffer)
         {
@@ -399,7 +399,7 @@ namespace Arcen.AIW2.External
             }
 
             if ( currentCommandStation.TypeData.SpecialType == SpecialEntityType.HumanHomeCommand ) {
-                World_AIW2.Instance.QueueChatMessageOrCommand( "Can't build a new command station where your home command station is!", ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
+                World_AIW2.Instance.QueueChatMessageOrCommand( "无法在你的主指挥站位置建造新的指挥站！", ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
                 return MouseHandlingResult.PlayClickDeniedSound;
             }
             if ( planet.GetIsPlayerCommandStationPinned() ) {
@@ -410,9 +410,9 @@ namespace Arcen.AIW2.External
             //transform in place into another unit type
             Fleet fleetUsedAtPlanet = buildable.fleetToBuild_ForImplementation;
             GameEntityTypeData typeData = buildable.TypeData;
-            ModalPopupData.CreateAndLogYesNoStyle(delegate { DoTransform(fleetUsedAtPlanet, typeData); }, null, "Are you sure",
-                    "Are you sure you want to transform your current " + currentCommandStation.TypeData.DisplayName + " into a " + buildable.TypeData.DisplayName
-                    + "? It will start with next to no health and cannot be repaired for " + ExternalConstants.Instance.Balance_RepairImpossibleForSecondsAfterTransformingCommandStation + " seconds.", "Yes, Transform It", "No");
+            ModalPopupData.CreateAndLogYesNoStyle(delegate { DoTransform(fleetUsedAtPlanet, typeData); }, null, "你确定吗",
+                    "你确定要将你当前的 " + currentCommandStation.TypeData.DisplayName + " 变形为 " + buildable.TypeData.DisplayName
+                    + "？它将以几乎为零的生命值开始，并且在 " + ExternalConstants.Instance.Balance_RepairImpossibleForSecondsAfterTransformingCommandStation + " 秒内无法修复。", "是的，变形", "否");
             return MouseHandlingResult.None;
         }
 
@@ -553,7 +553,7 @@ namespace Arcen.AIW2.External
 
         public void AddFleetDescriptor(ref DirectBuildable buildable, ArcenCharacterBufferBase buffer)
         {
-            buffer.StartColor( "9DFBA7" ).Add( "Planet " ).Add( buildable.fleetToBuild_ForImplementation.Planet.Name );
+            buffer.StartColor( "9DFBA7" ).Add( "星球 " ).Add( buildable.fleetToBuild_ForImplementation.Planet.Name );
         }
         public bool AddOverridingCapText(ref DirectBuildable buildable, ArcenCharacterBufferBase buffer)
         {
@@ -633,7 +633,7 @@ namespace Arcen.AIW2.External
 
         public void AddFleetDescriptor(ref DirectBuildable buildable, ArcenCharacterBufferBase buffer)
         {
-            buffer.StartColor( "9DFBA7" ).Add( "Planet " ).Add( buildable.fleetToBuild_ForImplementation.Planet.Name );
+            buffer.StartColor( "9DFBA7" ).Add( "星球 " ).Add( buildable.fleetToBuild_ForImplementation.Planet.Name );
         }
         public bool AddOverridingCapText(ref DirectBuildable buildable, ArcenCharacterBufferBase buffer)
         {
@@ -667,7 +667,7 @@ namespace Arcen.AIW2.External
             SpireCityBlockingReason reason = baseInfo.IsPlanetAllowedToBuildCity( planet, null );
             if ( reason != SpireCityBlockingReason.None ) {
                 World_AIW2.Instance.QueueChatMessageOrCommand(
-                    "Can't build a spire city here: " + FallenSpireFactionBaseInfo.SpireCityBlockingReason_ToStringForUI( reason ),
+                    "无法在此处建造尖塔城市：" + FallenSpireFactionBaseInfo.SpireCityBlockingReason_ToStringForUI( reason ),
                     ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
                 return MouseHandlingResult.PlayClickDeniedSound;
             }
@@ -743,7 +743,7 @@ namespace Arcen.AIW2.External
 
         public void AddFleetDescriptor(ref DirectBuildable buildable, ArcenCharacterBufferBase buffer)
         {
-            buffer.StartColor( "9DFBA7" ).Add( "Planet " ).Add( buildable.fleetToBuild_ForImplementation.Planet.Name );
+            buffer.StartColor( "9DFBA7" ).Add( "星球 " ).Add( buildable.fleetToBuild_ForImplementation.Planet.Name );
         }
         public bool AddOverridingCapText(ref DirectBuildable buildable, ArcenCharacterBufferBase buffer)
         {
@@ -812,7 +812,7 @@ namespace Arcen.AIW2.External
 
         public void AddFleetDescriptor(ref DirectBuildable buildable, ArcenCharacterBufferBase buffer)
         {
-            buffer.StartColor( "9DFBA7" ).Add( "Planet " ).Add( buildable.fleetToBuild_ForImplementation.Planet.Name );
+            buffer.StartColor( "9DFBA7" ).Add( "星球 " ).Add( buildable.fleetToBuild_ForImplementation.Planet.Name );
         }
         public bool AddOverridingCapText(ref DirectBuildable buildable, ArcenCharacterBufferBase buffer)
         {
@@ -825,9 +825,9 @@ namespace Arcen.AIW2.External
             if ( baseInfo != null )
             {
                 if ( buildable.TypeData.GetHasTag( "DysonPlanetaryDrill" ) )
-                    buffer.Add( "\nBuilding this will generate " ).Add( baseInfo.Difficulty.AIPForPlanetDrilling.ToString(), "ff0000" ).Add( " AIP as the planet is drilled." );
+                    buffer.Add( "\n建造此建筑将产生 " ).Add( baseInfo.Difficulty.AIPForPlanetDrilling.ToString(), "ff0000" ).Add( " AIP，因为星球正在被钻探。" );
                 else if ( buildable.TypeData.GetHasTag( "DysonOverloader" ) )
-                    buffer.Add( "\nBuilding this will generate " ).Add( baseInfo.Difficulty.AIPForPlanetOverloading.ToString(), "ff0000" ).Add( " AIP and destroy the planet when overloading completes." );
+                    buffer.Add( "\n建造此建筑将产生 " ).Add( baseInfo.Difficulty.AIPForPlanetOverloading.ToString(), "ff0000" ).Add( " AIP，并在过载完成时摧毁星球。" );
             }
         }
 
@@ -905,7 +905,7 @@ namespace Arcen.AIW2.External
 
         public void AddFleetDescriptor(ref DirectBuildable buildable, ArcenCharacterBufferBase buffer)
         {
-            buffer.StartColor( "9DFBA7" ).Add( "Planet " ).Add( buildable.fleetToBuild_ForImplementation.Planet.Name );
+            buffer.StartColor( "9DFBA7" ).Add( "星球 " ).Add( buildable.fleetToBuild_ForImplementation.Planet.Name );
         }
         public bool AddOverridingCapText(ref DirectBuildable buildable, ArcenCharacterBufferBase buffer)
         {
@@ -980,7 +980,7 @@ namespace Arcen.AIW2.External
 
         public void AddFleetDescriptor(ref DirectBuildable buildable, ArcenCharacterBufferBase buffer)
         {
-            buffer.StartColor( "9DFBA7" ).Add( "Planet " ).Add( buildable.fleetToBuild_ForImplementation.Planet.Name );
+            buffer.StartColor( "9DFBA7" ).Add( "星球 " ).Add( buildable.fleetToBuild_ForImplementation.Planet.Name );
         }
         public bool AddOverridingCapText(ref DirectBuildable buildable, ArcenCharacterBufferBase buffer)
         {
@@ -1056,7 +1056,7 @@ namespace Arcen.AIW2.External
 
         public void AddFleetDescriptor(ref DirectBuildable buildable, ArcenCharacterBufferBase buffer)
         {
-            buffer.StartColor( "9DFBA7" ).Add( "Planet " ).Add( buildable.fleetToBuild_ForImplementation.Planet.Name );
+            buffer.StartColor( "9DFBA7" ).Add( "星球 " ).Add( buildable.fleetToBuild_ForImplementation.Planet.Name );
         }
         public bool AddOverridingCapText(ref DirectBuildable buildable, ArcenCharacterBufferBase buffer)
         {
@@ -1129,7 +1129,7 @@ namespace Arcen.AIW2.External
 
         public void AddFleetDescriptor( ref DirectBuildable buildable, ArcenCharacterBufferBase buffer )
         {
-            buffer.StartColor( "9DFBA7" ).Add( "Planet " ).Add( buildable.fleetToBuild_ForImplementation.Planet.Name );
+            buffer.StartColor( "9DFBA7" ).Add( "星球 " ).Add( buildable.fleetToBuild_ForImplementation.Planet.Name );
         }
         private int GetCooldownSecondsRemaining( ref DirectBuildable buildable )
         {
@@ -1145,7 +1145,7 @@ namespace Arcen.AIW2.External
             int secondsLeft = GetCooldownSecondsRemaining( ref buildable );
             if ( secondsLeft <= 0 )
                 return false;
-            buffer.StartColor( Color.red ).Add( secondsLeft ).Add( "s cooldown" ).EndColor();
+            buffer.StartColor( Color.red ).Add( secondsLeft ).Add( "秒冷却" ).EndColor();
             return true;
         }
         public void GetHoverText( ref DirectBuildable buildable, ArcenDoubleCharacterBuffer buffer )
@@ -1153,7 +1153,7 @@ namespace Arcen.AIW2.External
             EntityText.GetTooltip( buffer, null, null, buildable.TypeData, -1, null, buildable.EffectiveMark, FromSidebarType.Sidebar_SingleUnit, ShipExtraDetailFlags.BuildInfo, 1f, false );
             int secondsLeft = GetCooldownSecondsRemaining( ref buildable );
             if ( secondsLeft > 0 )
-                buffer.Add( "\n\n" ).StartColor( Color.red ).Add( "This planet was too recently mined. Available in " ).Add( secondsLeft ).Add( "s." ).EndColor();
+                buffer.Add( "\n\n" ).StartColor( Color.red ).Add( "此星球最近被开采过。可用时间：" ).Add( secondsLeft ).Add( "秒。" ).EndColor();
         }
 
         public MouseHandlingResult HandleButtonClick( ref DirectBuildable buildable, MouseHandlingInput input )
@@ -1162,7 +1162,7 @@ namespace Arcen.AIW2.External
             if ( secondsLeft > 0 )
             {
                 World_AIW2.Instance.QueueChatMessageOrCommand(
-                    buildable.fleetToBuild_ForImplementation.Planet.Name + " was too recently mined; you must wait " + secondsLeft + " more seconds.",
+                    buildable.fleetToBuild_ForImplementation.Planet.Name + " 最近被开采过；你必须等待 " + secondsLeft + " 更多秒。",
                     ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
                 return MouseHandlingResult.PlayClickDeniedSound;
             }
@@ -1226,7 +1226,7 @@ namespace Arcen.AIW2.External
 
         public void AddFleetDescriptor(ref DirectBuildable buildable, ArcenCharacterBufferBase buffer)
         {
-            buffer.StartColor( "9DFBA7" ).Add( "Planet " ).Add( buildable.fleetToBuild_ForImplementation.Planet.Name );
+            buffer.StartColor( "9DFBA7" ).Add( "星球 " ).Add( buildable.fleetToBuild_ForImplementation.Planet.Name );
         }
         public bool AddOverridingCapText(ref DirectBuildable buildable, ArcenCharacterBufferBase buffer)
         {
@@ -1301,7 +1301,7 @@ namespace Arcen.AIW2.External
 
         public void AddFleetDescriptor(ref DirectBuildable buildable, ArcenCharacterBufferBase buffer)
         {
-            buffer.StartColor( "9DFBA7" ).Add( "Planet " ).Add( buildable.fleetToBuild_ForImplementation.Planet.Name );
+            buffer.StartColor( "9DFBA7" ).Add( "星球 " ).Add( buildable.fleetToBuild_ForImplementation.Planet.Name );
         }
         public bool AddOverridingCapText(ref DirectBuildable buildable, ArcenCharacterBufferBase buffer)
         {
@@ -1365,7 +1365,7 @@ namespace Arcen.AIW2.External
         public int GetMetalCost(ref DirectBuildable buildable) { return buildable.typeData_ForImplementation.MarkStatsFor( buildable.EffectiveMark ).MetalCost; }
         public void AddFleetDescriptor(ref DirectBuildable buildable, ArcenCharacterBufferBase buffer)
         {
-            buffer.StartColor( "9DFBA7" ).Add( "Planet " ).Add( buildable.fleetToBuild_ForImplementation.Planet.Name );
+            buffer.StartColor( "9DFBA7" ).Add( "星球 " ).Add( buildable.fleetToBuild_ForImplementation.Planet.Name );
         }
         public bool AddOverridingCapText(ref DirectBuildable buildable, ArcenCharacterBufferBase buffer)
         {

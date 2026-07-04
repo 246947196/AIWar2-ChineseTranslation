@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using System;
 
 using System.Text;
@@ -30,7 +30,7 @@ namespace Arcen.AIW2.External
                 hasAdded = true;
 
             if ( AttachedFaction.GetBoolValueForCustomFieldOrDefaultValue( "Vassal", false ) )
-                buffer.Add( "Vassal" );
+                buffer.Add( "附庸" );
             else
             {
                 string value = AttachedFaction.GetStringValueForCustomFieldOrDefaultValue( "Allegiance", false );

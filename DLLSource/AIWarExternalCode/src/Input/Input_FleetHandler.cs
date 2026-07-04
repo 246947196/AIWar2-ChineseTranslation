@@ -117,13 +117,13 @@ namespace Arcen.AIW2.External
                             }
 
                             if ( fleetsToAssign.Count <= 0 )
-                                World_AIW2.Instance.QueueChatMessageOrCommand( "No fleets selected to assign to this hotkey!", ChatType.ShowLocallyOnly,
+                                World_AIW2.Instance.QueueChatMessageOrCommand( "未选择舰队来分配到此快捷键！", ChatType.ShowLocallyOnly,
                                     "CannotDoThatThing", null );
                             else
                             {
                                 World_AIW2.Instance.QueueChatMessageOrCommand( fleetsToAssign.Count +
-                                    " fleet(s) assigned to this hotkey" +
-                                    (fleetsToRemove.Count > 0 ? ", and " + fleetsToRemove.Count + " fleet(s) removed from this hotkey." : "."),
+                                    " 个舰队已分配到此快捷键" +
+                                    (fleetsToRemove.Count > 0 ? "，并从该快捷键移除了 " + fleetsToRemove.Count + " 个舰队。" : "。"),
                                     ChatType.ShowLocallyOnly, string.Empty, null );
 
                                 foreach ( KeyValuePair<Fleet, int> kv in fleetsToAssign )

@@ -28,21 +28,21 @@ namespace Arcen.AIW2.External
                     break;
                 case "Debug_ReloadSelectXmlData":
                     Engine_AIW2.Instance.ReloadSelectDataFromXml();
-                    World_AIW2.Instance.QueueChatMessageOrCommand( "Debug: Reload Select Xml Data.", ChatType.ShowLocallyOnly, null );
+                    World_AIW2.Instance.QueueChatMessageOrCommand( "调试：重新加载选择的XML数据。", ChatType.ShowLocallyOnly, null );
                     break;
                 case "Debug_RebootAIW2":
                     {
                         ModalClickHandler Reboot = 
                             ()=>
                                 {
-                                    World_AIW2.Instance.QueueChatMessageOrCommand( "Debug: Reboot AIW2.", ChatType.ShowLocallyOnly, null );
+                                    World_AIW2.Instance.QueueChatMessageOrCommand( "调试：重启 AIW2。", ChatType.ShowLocallyOnly, null );
                                     Engine_AIW2.Instance.QuitGameAndGoBackToMainMenu();
                                     Engine_Universal.ReloadXmlDataAsMuchAsIsAllowed();
                                 };
                         ModalPopupData.CreateAndLogYesNoStyle( Reboot, null, 
-                            "Reboot AIW2?", 
-                            "\nThis will close everything, returning to the main menu, and then reload everything that supports it. It is the same process that happens when a mod is toggled on/off.\n\nDo you want to continue?\n", 
-                            "Yes", "No" );
+                            "重启 AIW2？", 
+                            "\n这将关闭所有内容，返回主菜单，然后重新加载所有支持的内容。这与切换模组开关时发生的过程相同。\n\n你想要继续吗？\n", 
+                            "是", "否" );
                         break;
                     }
                 case "Debug_ToggleHideGimbals":
@@ -114,14 +114,14 @@ namespace Arcen.AIW2.External
                             if ( selected.InstancedRenderer != null )
                                 selected.InstancedRenderer.WriteDebugDataTo( buffer );
                         }
-                        string dataToShow = "Squad Data Dump from " + count + " entities:" + buffer.ToStringAndReturnToPool();
+                        string dataToShow = "小队数据转储，共 " + count + " 个实体：" + buffer.ToStringAndReturnToPool();
                         string folderName = Engine_Universal.CurrentPlayerDataDirectory + "SquadDataExports/";
                         if ( !System.IO.Directory.Exists( folderName ) )
                             System.IO.Directory.CreateDirectory( folderName );
                         string fileName = folderName + DateTime.Now.Year + "-" + DateTime.Now.Month + "-" + DateTime.Now.Day + "_" + DateTime.Now.Hour + "-" + DateTime.Now.Minute + "-" + DateTime.Now.Second + ".txt";
                         System.IO.File.AppendAllText( fileName, dataToShow );
 
-                        ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.TallWide, null, "Squad Data", dataToShow, "OK" );
+                        ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.TallWide, null, "小队数据", dataToShow, "确定" );
                     }
                     break;
                 case "Debug_DoCoreDump":
@@ -148,9 +148,9 @@ namespace Arcen.AIW2.External
                             using ( System.IO.StreamWriter diskWriter = new System.IO.StreamWriter( diskStream ) )
                             {
                                 if ( Engine_AIW2.Instance.CurrentGameViewMode != GameViewMode.ModalMenu )
-                                    diskWriter.WriteLine( "Currently In-Game" );
+                                    diskWriter.WriteLine( "当前在游戏中" );
                                 else
-                                    diskWriter.WriteLine( "Currently On The Main Menu" );
+                                    diskWriter.WriteLine( "当前在主菜单" );
 
                                 diskWriter.Write( "World Loads: " );
                                 diskWriter.WriteLine( World.NumberCreatedOrPoolRequested.ToString( "#,##0" ) );
@@ -163,7 +163,7 @@ namespace Arcen.AIW2.External
                             }
                         }
 
-                        ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.TallWide, null, "External Heirarchy Data Dumped!", "This data was dumped to the following file:\n" + fileName, "OK" );
+                        ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.TallWide, null, "外部层级数据已转储！", "以下数据已转储到文件：\n" + fileName, "确定" );
                     }
                     break;
                 case "Debug_DumpInfoFromUI":
@@ -183,11 +183,11 @@ namespace Arcen.AIW2.External
                         }
                         string dataToShow = buffer.ToStringAndReturnToPool();
                         ArcenDebugging.ArcenDebugLogSingleLine( dataToShow, Verbosity.DoNotShow );
-                        ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.TallWide, null, "UI Data", dataToShow, "OK" );
+                        ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.TallWide, null, "UI 数据", dataToShow, "确定" );
                     }
                     break;
                 case "LogAllThreads":
-                    ArcenDebugging.ArcenDebugLogSingleLine( "Logging all current threads...", Verbosity.Chat );
+                    ArcenDebugging.ArcenDebugLogSingleLine( "正在记录所有当前线程...", Verbosity.Chat );
                     try
                     {
                         ArcenThreading.ReportStacksOfAllThreads();
@@ -198,7 +198,7 @@ namespace Arcen.AIW2.External
                     }
                     break;
                 case "AbortAllThreads":
-                    ArcenDebugging.ArcenDebugLogSingleLine( "Aborting all current threads...", Verbosity.Chat );
+                    ArcenDebugging.ArcenDebugLogSingleLine( "正在中止所有当前线程...", Verbosity.Chat );
                     try
                     {
                         ArcenThreading.AbortAllThreads();
