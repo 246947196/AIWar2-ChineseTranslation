@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -25,9 +25,9 @@ namespace Arcen.AIW2.External
                 numFound++;
             }
             if ( numFound > 1 )
-                Buffer.Add( "There are currently " + numFound + " of these structures in the galaxy." );
+                Buffer.Add( "鐩墠鏄熺郴涓湁 " + numFound + " 涓绫诲缓绛戙€? );
             else
-                Buffer.Add( " This is the last one. Be very wary about destroying it!" );
+                Buffer.Add( " 杩欐槸鏈€鍚庝竴涓€傝闈炲父灏忓績鍦版懅姣佸畠锛? );
         }
     }
 }

@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -28,10 +28,10 @@ namespace Arcen.AIW2.External
             if ( plan != null )
             {
                 if ( Engine_AIW2.Instance.CurrentGameViewMode == GameViewMode.GalaxyMapView )
-                    Buffer.Add( "Click to center the galaxy view on " ).Add( plan.Name ).Add( ". " );
+                    Buffer.Add( "鐐瑰嚮灏嗘槦绯昏鍥惧眳涓埌 " ).Add( plan.Name ).Add( "銆? );
                 else
                 {
-                    Buffer.Add( "Click to move your view to the planet " ).Add( plan.Name ).Add( ". " );
+                    Buffer.Add( "鐐瑰嚮灏嗚鍥剧Щ鑷虫槦鐞?" ).Add( plan.Name ).Add( "銆? );
                 }
             }
         }

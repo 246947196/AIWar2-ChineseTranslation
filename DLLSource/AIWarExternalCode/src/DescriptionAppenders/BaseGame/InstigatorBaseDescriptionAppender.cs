@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -21,7 +21,7 @@ namespace Arcen.AIW2.External
             Faction facOrNull = RelatedEntityOrNull.GetFactionOrNull_Safe();
             if ( facOrNull == null )
             {
-                Buffer.Add( "Please unpause the game to view additional information about this" );
+                Buffer.Add( "璇锋殏鍋滄父鎴忎互鏌ョ湅鍏充簬姝ょ殑闄勫姞淇℃伅" );
                 return;
             }
 
@@ -37,7 +37,7 @@ namespace Arcen.AIW2.External
             //     Buffer.Add(" The Cumulative Effect of this base so far is " + localPerUnitData.CumulativeEffectSoFar).Add(".");
             // }
             if ( localPerUnitData.NumTimesEffectHappened > 0 )
-                Buffer.Add( " This base has triggered <color=#cfd988>" + localPerUnitData.NumTimesEffectHappened + "</color> times." );
+                Buffer.Add( " 姝ゅ熀鍦板凡瑙﹀彂 <color=#cfd988>" + localPerUnitData.NumTimesEffectHappened + "</color> 娆°€? );
         }
     }
 }

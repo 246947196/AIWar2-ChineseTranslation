@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -13,14 +13,14 @@ namespace Arcen.AIW2.External
             Faction fac = this.Faction.GetFaction();
             if ( fac == null )
                 return;
-            Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "History of Tech Unlocks For " + fac.GetDisplayName(), "Close",
+            Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, fac.GetDisplayName() + " 鐨勭鎶€瑙ｉ攣鍘嗗彶", "鍏抽棴",
                 delegate ( ArcenDoubleCharacterBuffer Buffer ) { return Window_ResourceBar.tScience.GetTechHistory( Buffer ); } );
         }
 
         public override void DoOnTooltip( ArcenDoubleCharacterBuffer Buffer )
         {
             Faction fac = this.Faction.GetFaction();
-            Buffer.Add( "Click here to view the tech unlock history for " ).Add( fac?.GetDisplayName() );
+            Buffer.Add( "鐐瑰嚮鏌ョ湅 " ).Add( fac?.GetDisplayName() ).Add( " 鐨勭鎶€瑙ｉ攣鍘嗗彶" );
         }
 
         public override void SerializeTo( SerMetaData MetaData, ArcenSerializationBuffer Buffer, SerializationCommandType SerializationCmdType )

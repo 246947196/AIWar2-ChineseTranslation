@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -13,14 +13,14 @@ namespace Arcen.AIW2.External
             Faction fac = this.Faction.GetFaction();
             if ( fac == null )
                 return;
-            Window_ModalSelfUpdatingTextWindow_Wide.Instance.Open( 0.5f, 2f, "Energy Production and Consumption For " + fac.GetDisplayName(), "Close",
+            Window_ModalSelfUpdatingTextWindow_Wide.Instance.Open( 0.5f, 2f, fac.GetDisplayName() + " 鐨勮兘婧愮敓浜т笌娑堣€?, "鍏抽棴",
                     delegate ( ArcenDoubleCharacterBuffer Buffer ) { return Window_ResourceBar.tEnergy.GetEnergyData( Buffer ); } );
         }
 
         public override void DoOnTooltip( ArcenDoubleCharacterBuffer Buffer )
         {
             Faction fac = this.Faction.GetFaction();
-            Buffer.Add( "Click here to view the energy production and consumption for " ).Add( fac?.GetDisplayName() );
+            Buffer.Add( "鐐瑰嚮鏌ョ湅 " ).Add( fac?.GetDisplayName() ).Add( " 鐨勮兘婧愮敓浜т笌娑堣€? );
         }
 
         public override void SerializeTo( SerMetaData MetaData, ArcenSerializationBuffer Buffer, SerializationCommandType SerializationCmdType )

@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -15,17 +15,17 @@ namespace Arcen.AIW2.External
             Faction facOrNull = RelatedEntityOrNull.GetFactionOrNull_Safe();
             if ( facOrNull == null )
             {
-                Buffer.Add( "Please unpause the game to view additional information" );
+                Buffer.Add( "璇锋殏鍋滄父鎴忎互鏌ョ湅闄勫姞淇℃伅" );
                 return;
             }
             NanocaustFactionBaseInfo mgr = facOrNull.TryGetExternalBaseInfoAs<NanocaustFactionBaseInfo>();
 
             if ( mgr == null )
             {
-                Buffer.Add( "No NanocaustFactionBaseInfo found!" );
+                Buffer.Add( "鏈壘鍒?NanocaustFactionBaseInfo锛? );
                 return;
             }
-            Buffer.Add( "This Nanobot Center is supporting " ).Add( (mgr.StrengthPerNanobotCenter.Display[RelatedEntityOrNull.PrimaryKeyID] / 1000).ToString(), "a1ffa1" ).Add( " strength. " );
+            Buffer.Add( "姝ょ撼绫虫満鍣ㄤ汉涓績姝ｅ湪鎻愪緵 " ).Add( (mgr.StrengthPerNanobotCenter.Display[RelatedEntityOrNull.PrimaryKeyID] / 1000).ToString(), "a1ffa1" ).Add( " 鎴樺姏銆? );
             //            Buffer.Add("State " + mgr.state);
         }
     }

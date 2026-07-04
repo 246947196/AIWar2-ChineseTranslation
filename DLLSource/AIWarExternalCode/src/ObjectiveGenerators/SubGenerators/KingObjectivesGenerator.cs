@@ -84,10 +84,10 @@ namespace Arcen.AIW2.External
         // null-entity case of the destroy objective.
         internal static void AppendFindOverlordText( ArcenDoubleCharacterBuffer buffer )
         {
-            buffer.Add( "Destroying every " ).Add( "AI Overlord", ObjectiveColors.AIP ).Add( " ends the war, and at least one is still hidden from you." );
-            buffer.Add( "\n\nYou know it is out there, but not where; or even how many remain. " ).Add( "Scout further", ObjectiveColors.Hint ).Add( " to find it." );
-            buffer.Add( "\n\nWhen you do: clear the " ).Add( "Dire Guard Posts", ObjectiveColors.Keyword ).Add( " on the adjacent " ).Add( "Bastion worlds", BastionWorldColor )
-                .Add( " to make the Overlord " ).Add( "vulnerable", ObjectiveColors.Reward ).Add( ". You will also be opposed by the AI's powerful defensive " ).Add( "Praetorian Guard", PraetorianGuardColor ).Add( "." );
+            buffer.Add( "摧毁每一个 " ).Add( "AI 霸主", ObjectiveColors.AIP ).Add( " 即可结束战争，而至少有一个仍然隐藏着。" );
+            buffer.Add( "\n\n你知道它在那里，但不知道在哪里；甚至不知道还剩多少。" ).Add( "进一步侦察", ObjectiveColors.Hint ).Add( " 以找到它。" );
+            buffer.Add( "\n\n当你找到时：清除相邻 " ).Add( "堡垒星球", BastionWorldColor )
+                .Add( " 上的 " ).Add( "严厉守卫哨站", ObjectiveColors.Keyword ).Add( " 以使霸主 " ).Add( "脆弱", ObjectiveColors.Reward ).Add( "。你还将面对 AI 强大的防御 " ).Add( "禁卫军", PraetorianGuardColor ).Add( "。" );
         }
     }
 
@@ -113,23 +113,23 @@ namespace Arcen.AIW2.External
 
             string aiColor = king.GetFactionCenterColorHexBrighter_Safe();
             buffer.AddObjectiveEntityHeader( king, aiColor );
-            buffer.Add( "Destroying every " ).Add( "AI Overlord", aiColor ).Add( " ends the war. This one holds " )
-                .Add( king.GetPlanetName_Safe(), king.Planet.GetControllingFaction().FactionCenterColor.ColorHexBrighter ).Add( "." );
+            buffer.Add( "摧毁每一个 " ).Add( "AI 霸主", aiColor ).Add( " 即可结束战争。此霸主掌控着 " )
+                .Add( king.GetPlanetName_Safe(), king.Planet.GetControllingFaction().FactionCenterColor.ColorHexBrighter ).Add( "。" );
 
-            buffer.Add( "\n\nIt is " ).Add( "invulnerable", ObjectiveColors.AIP ).Add( " until you tear down its outer defenses:" );
+            buffer.Add( "\n\n它是 " ).Add( "无敌的", ObjectiveColors.AIP ).Add( "，直到你拆除其外部防御：" );
 
             buffer.Add( "\n\n" );
             GameEntityTypeData dgp = KingObjectivesGenerator.GetDireGuardPostRepresentative();
             if ( dgp != null )
                 buffer.AddShipIconInline( dgp, king.PlanetFaction.Faction, TextStyle.Ship_Sprite_Ency ).Add( " " );
-            buffer.Add( "Dire Guard Posts", ObjectiveColors.Keyword ).Add( "\n\n" );
-            buffer.Add( "Destroy these on the " ).Add( "Bastion worlds", KingObjectivesGenerator.BastionWorldColor )
-                .Add( " bordering its planet to make the Overlord " ).Add( "vulnerable", ObjectiveColors.Reward ).Add( "." );
+            buffer.Add( "严厉守卫哨站", ObjectiveColors.Keyword ).Add( "\n\n" );
+            buffer.Add( "摧毁其星球边界上的 " ).Add( "堡垒星球", KingObjectivesGenerator.BastionWorldColor )
+                .Add( " 上的这些以使霸主 " ).Add( "脆弱", ObjectiveColors.Reward ).Add( "。" );
 
-            buffer.Add( "\n\nYou must also face the " ).Add( "Praetorian Guard", KingObjectivesGenerator.PraetorianGuardColor )
-                .Add( " that will defend the Overlord to the death." );
+            buffer.Add( "\n\n你还必须面对 " ).Add( "禁卫军", KingObjectivesGenerator.PraetorianGuardColor )
+                .Add( "，他们会誓死保卫霸主。" );
 
-            buffer.Add( "\n\n" ).Add( "Click here to go there now.", ObjectiveColors.Hint );
+            buffer.Add( "\n\n" ).Add( "点击此处前往。", ObjectiveColors.Hint );
         }
     }
 

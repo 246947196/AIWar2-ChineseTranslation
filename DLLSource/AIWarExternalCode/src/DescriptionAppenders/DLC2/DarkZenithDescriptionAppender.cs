@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -24,12 +24,12 @@ namespace Arcen.AIW2.External
                     if ( transportData.Destination != RelatedEntityOrNull )
                         continue;
                     if ( inboundCount == 0 )
-                        Buffer.Add( "\nTransports inbound:\n" );
+                        Buffer.Add( "\n鍏ョ珯杩愯緭鑸癸細\n" );
                     inboundCount++;
                     if ( ship.Planet == RelatedEntityOrNull.Planet )
-                        Buffer.Add( "\t- A transport on this planet\n" );
+                        Buffer.Add( "\t- 鏈槦鐞冧笂鐨勮繍杈撹埞\n" );
                     else
-                        Buffer.Add( "\t- A transport on " ).Add( ship.GetPlanetName_Safe(), "066006" ).Add( "\n" );
+                        Buffer.Add( "\t- 浣嶄簬 " ).Add( ship.GetPlanetName_Safe(), "066006" ).Add( " 鐨勮繍杈撹埞\n" );
                 }
             }
             catch { }
@@ -49,7 +49,7 @@ namespace Arcen.AIW2.External
             if ( RelatedEntityTypeData.KillsToTriggerTransformation > 0 )
             {
                 //Only for the sidekick
-                Buffer.Add(" This fleet has killed ").Add( data.UnitsKilled, "a1ffa1" ).Add(" units; after it kills ").Add( RelatedEntityTypeData.KillsToTriggerTransformation, "ffa1a1" ).Add(" then we will transform into ").Add(RelatedEntityTypeData.TransformAfterKills.GetDisplayName(), "ff22ff").Add(". ");
+                Buffer.Add(" 姝よ埌闃熷凡鍑绘潃 ").Add( data.UnitsKilled, "a1ffa1" ).Add(" 涓崟浣嶏紱鍦ㄥ嚮鏉€ ").Add( RelatedEntityTypeData.KillsToTriggerTransformation, "ffa1a1" ).Add(" 涓悗灏嗗彉褰负 ").Add(RelatedEntityTypeData.TransformAfterKills.GetDisplayName(), "ff22ff").Add("銆?);
                 if ( data.Inventory != null && DarkZenithFactionBaseInfo.ResourceColour != null)
                 {
                     FactionUtilityMethods.Instance.PrintDZDictionary( data.Inventory, ref Buffer, "Flagship Resources" );
@@ -59,7 +59,7 @@ namespace Arcen.AIW2.External
 
             if ( data.Inventory == null || DarkZenithFactionBaseInfo.ResourceColour == null )
             {
-                Buffer.Add( "Please unpause the game to see further information about this unit." );
+                Buffer.Add( "璇锋殏鍋滄父鎴忎互鏌ョ湅鍏充簬姝ゅ崟浣嶇殑鏇村淇℃伅銆? );
                 return;
             }
             int debugCode = 0;
@@ -82,7 +82,7 @@ namespace Arcen.AIW2.External
                 {
                     int timeTillConversion = diff.TimeToConvertPlanet - RelatedEntityOrNull.GetSecondsSinceEnteringThisPlanet();
                     string timerColor = ArcenExternalUIUtilities.GetColorForNomadMoveTime( timeTillConversion ); //timerColor gets more red the closer the planet is to succumbing
-                    Buffer.Add( "This planet will succumb to the Fimbulwinter in " ).AddHoursAndMinutes( timeTillConversion, timerColor ).Add( ". The only way to stop the transformation is to destroy the Hjarn there." ).Add( "\n" );
+                    Buffer.Add( "姝ゆ槦鐞冨皢鍦?" ).AddHoursAndMinutes( timeTillConversion, timerColor ).Add( " 鍚庤鍐板皝銆傞樆姝㈠彉褰㈢殑鍞竴鏂规硶鏄懅姣侀偅閲岀殑甯屽皵绾炽€? ).Add( "\n" );
                     return;
                 }
                 if ( data.IsJormugandr &&
@@ -90,15 +90,15 @@ namespace Arcen.AIW2.External
                 {
                     if ( data.IsDormant )
                     {
-                        Buffer.Add( "This golem seems to be dormant. Hopefully nothing wakes it up..." );
+                        Buffer.Add( "杩欎釜榄斿儚浼间箮姝ｅ湪浼戠湢銆傚笇鏈涙病鏈変粈涔堣兘鍞ら啋瀹?.." );
                         if ( debug )
-                            Buffer.Add( " The golem will move again in " ).AddHoursAndMinutes( data.SecondsUntilDormancyMove ).Add( "." );
+                            Buffer.Add( " 榄斿儚灏嗗湪 " ).AddHoursAndMinutes( data.SecondsUntilDormancyMove ).Add( " 鍚庡啀娆＄Щ鍔ㄣ€? );
                     }
                     else
                     {
-                        Buffer.Add( "This golem is enraged and is leading the charge against the galaxy." );
+                        Buffer.Add( "姝ら瓟鍍忓凡鏆存€掑苟姝ｅ湪鐜囬瀵规槦绯荤殑杩涙敾銆? );
                         if ( debug )
-                            Buffer.Add( " The golem will remain active for " ).AddHoursAndMinutes( data.SecondsRemaingActive ).Add( "." );
+                            Buffer.Add( " 榄斿儚灏嗕繚鎸佹椿璺?" ).AddHoursAndMinutes( data.SecondsRemaingActive ).Add( "銆? );
                     }
 
                     return;
@@ -115,14 +115,14 @@ namespace Arcen.AIW2.External
                         if ( data.Unit != null )
                         {
                             if ( data.Unit.GetHasTag( "DZHarvester" ) )
-                                Buffer.Add( "The Terminus is building its initial Harvesters.", "ffa100" );
+                                Buffer.Add( "缁堢偣绔欐鍦ㄥ缓閫犲叾鍒濆閲囬泦鍣ㄣ€?, "ffa100" );
                             else
-                                Buffer.Add( "The Terminus is bootrapping the DZ economy by building a ", "ffa100" ).Add( data.NextConversion.Unit.GetDisplayName(), "a1a1ff" );
+                                Buffer.Add( "缁堢偣绔欐鍦ㄩ€氳繃寤洪€?", "ffa100" ).Add( data.NextConversion.Unit.GetDisplayName(), "a1a1ff" );
                         }
                     }
                     else
                     {
-                        Buffer.Add( "Next thing to be created: " );
+                        Buffer.Add( "涓嬩竴涓皢瑕佸垱寤虹殑锛? );
                         data.NextConversion.ToBuffer( Buffer );
                     }
                 }
@@ -134,12 +134,12 @@ namespace Arcen.AIW2.External
                 }
                 else
                 {
-                    FactionUtilityMethods.Instance.PrintDZDictionary( data.Inventory, ref Buffer, "Inventory" );
+                    FactionUtilityMethods.Instance.PrintDZDictionary( data.Inventory, ref Buffer, "搴撳瓨" );
                     AddInboundTransportsToBuffer( RelatedEntityOrNull, globaldata, Buffer );
                 }
                 debugCode = 210;
                 if ( data.HasAnyPermanentBonusIncome() )
-                    FactionUtilityMethods.Instance.PrintDZDictionary( data.PermanentBonusIncome, ref Buffer, "PermanentBonusIncome" );
+                    FactionUtilityMethods.Instance.PrintDZDictionary( data.PermanentBonusIncome, ref Buffer, "姘镐箙棰濆鏀跺叆" );
                 debugCode = 220;
                 if ( debug )
                 {
@@ -205,9 +205,9 @@ namespace Arcen.AIW2.External
                 if (data.IsPirateEpistyle)
                 {
                     if ( data.TimeForNextPrivateer < World_AIW2.Instance.GameSecond)
-                        Buffer.Add("Avast, this is a Pirate Epistyle. It will send out Privateers to hijack resources from passing Transports. It will launch a privateer soon.\n");
+                        Buffer.Add("鍟婂搱锛岃繖鏄竴鑹樻捣鐩楁棗鑸般€傚畠灏嗘淳鍑虹鎺犺埞鍔寔杩囧線杩愯緭鑸圭殑璧勬簮銆傚畠寰堝揩灏变細娲惧嚭绉佹帬鑸广€俓n");
                     else
-                        Buffer.Add("Avast, this is a Pirate Epistyle. It will send out Privateers to hijack resources from passing Transports. Time till next privateer: ").Add( (data.TimeForNextPrivateer - World_AIW2.Instance.GameSecond), "a1ffa1" ).Add(" seconds.\n");
+                        Buffer.Add("鍟婂搱锛岃繖鏄竴鑹樻捣鐩楁棗鑸般€傚畠灏嗘淳鍑虹鎺犺埞鍔寔杩囧線杩愯緭鑸圭殑璧勬簮銆傝窛绂讳笅娆＄鎺犺埞锛?).Add( (data.TimeForNextPrivateer - World_AIW2.Instance.GameSecond), "a1ffa1" ).Add(" 绉掋€俓n");
                 }
                 if ( debug && data.IsJormugandr )
                 {
@@ -216,15 +216,15 @@ namespace Arcen.AIW2.External
                 }
                 if ( data.CanBuildInfrastructure || data.CanBuildOffensiveUnits || data.CanBuildUpgrades || data.CanBuildUtility )
                 {
-                    Buffer.Add( "This unit can build " );
+                    Buffer.Add( " 姝ゅ崟浣嶅彲浠ュ缓閫?" );
                     if ( data.CanBuildUpgrades )
-                        Buffer.Add( "Upgrades ", "a1ffa1" );
+                        Buffer.Add( "鍗囩骇 ", "a1ffa1" );
                     if ( data.CanBuildInfrastructure )
-                        Buffer.Add( "Infrastructure ", "a1a1ff" );
+                        Buffer.Add( "鍩虹璁炬柦 ", "a1a1ff" );
                     if ( data.CanBuildOffensiveUnits )
-                        Buffer.Add( "Offense ", "ffa1a1" );
+                        Buffer.Add( "杩涙敾 ", "ffa1a1" );
                     if ( data.CanBuildUtility )
-                        Buffer.Add( "Utility ", "22a188" );
+                        Buffer.Add( "杈呭姪 ", "22a188" );
                 }
             }
             catch ( Exception e )

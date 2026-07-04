@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -17,7 +17,7 @@ namespace Arcen.AIW2.External
             AIDifficulty difficulty = baseInfo.SentinelInfo.AIDifficulty;
             int strengthPerBunker = baseInfo.GetCPABunkerStrength();
             strengthPerBunker = strengthPerBunker / 1000; //for UI
-            Buffer.Add("When a CPA triggers, this bunker will release approximately ").Add( strengthPerBunker, "a1ffa1" ).Add( ArcenExternalUIUtilities.GUI_StrengthTextColorAndIcon ).Add(" of ships." );
+            Buffer.Add("褰?CPA 瑙﹀彂鏃讹紝姝ょ鍫″皢閲婃斁绾?").Add( strengthPerBunker, "a1ffa1" ).Add( ArcenExternalUIUtilities.GUI_StrengthTextColorAndIcon ).Add(" 鐨勮埌鑸广€? );
         }
     }
 }

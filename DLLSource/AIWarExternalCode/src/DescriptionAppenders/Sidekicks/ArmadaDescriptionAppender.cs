@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -105,7 +105,7 @@ namespace Arcen.AIW2.External
                         else if ( averageDist <= 3 ) { proximityLabel = "nearby";        proximityColor = "ccff66"; }
                         else if ( averageDist <= 6 ) { proximityLabel = "en route";      proximityColor = "ffdd66"; }
                         else                         { proximityLabel = "distant";        proximityColor = "ff9944"; }
-                        Buffer.Add( totalLocusts, "a1ffa1" ).Add(" locusts en route — avg. ")
+                        Buffer.Add( totalLocusts, "a1ffa1" ).Add(" locusts en route 鈥?avg. ")
                             .Add( averageDist.ToString(), proximityColor ).Add(" planets away (")
                             .Add( proximityLabel, proximityColor ).Add(")\n");
                     }

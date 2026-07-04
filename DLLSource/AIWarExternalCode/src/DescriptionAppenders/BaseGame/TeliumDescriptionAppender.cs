@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -18,13 +18,13 @@ namespace Arcen.AIW2.External
                 infestation = facOrNull.TryGetExternalBaseInfoAs<MacrophageFactionBaseInfoCore>();
             if ( infestation == null )
             {
-                Buffer.Add( "MacrophageFactionBaseInfo could not be found here. This is a BUG" );
+                Buffer.Add( "鏃犳硶鍦ㄦ澶勬壘鍒?MacrophageFactionBaseInfo銆傝繖鏄竴涓?BUG" );
                 return;
             }
             MacrophagePerTeliumBaseInfo tData = RelatedEntityOrNull.TryGetExternalBaseInfoAs< MacrophagePerTeliumBaseInfo>();
             if ( tData == null )
             {
-                Buffer.Add( "tData for this Telium is null. This is a bug." );
+                Buffer.Add( "姝ゆ嘲鍒╁鐨?tData 涓虹┖銆傝繖鏄竴涓?BUG銆? );
                 return;
             }
             int cost = tData.MetalForNextBuild;
@@ -41,21 +41,21 @@ namespace Arcen.AIW2.External
                 harvesterLimit = infestation.HarvesterLimitBeforeEnraging;
                 sporesToRelease = infestation.SporesPerRelease;
             }
-            Buffer.Add( tData.CurrentMetal.ToString( "0.##" ) + "/" + cost.ToString( "0.##" ) + " metal until next build event. " );
+            Buffer.Add( tData.CurrentMetal.ToString( "0.##" ) + "/" + cost.ToString( "0.##" ) + " 閲戝睘锛岃窛绂讳笅娆″缓閫犱簨浠躲€? );
             if ( infestation.isLoner )
-                Buffer.Add( "This Telium is only capable of building Harvesters. " );
+                Buffer.Add( "姝ゆ嘲鍒╁鍙兘寤洪€犻噰闆嗗櫒銆? );
             else if ( tData.CurrentHarvesters == 0 )
-                Buffer.Add( "This Telium will build a Harvester for its next event as it currently has none. " );
+                Buffer.Add( "姝ゆ嘲鍒╁灏嗗湪涓嬫浜嬩欢涓缓閫犱竴涓噰闆嗗櫒锛屽洜涓哄畠鐩墠娌℃湁閲囬泦鍣ㄣ€? );
             else
-                Buffer.Add( "This Telium has a " + infestation.GetSporeChance( tData.CurrentHarvesters ) + "% chance to spawn " + sporesToRelease + " Spores for its next event instead of a Harvester. " );
+                Buffer.Add( "姝ゆ嘲鍒╁鏈?" + infestation.GetSporeChance( tData.CurrentHarvesters ) + "% 鐨勫嚑鐜囧湪涓嬫浜嬩欢涓噴鏀?" + sporesToRelease + " 涓瀛愶紝鑰屼笉鏄缓閫犱竴涓噰闆嗗櫒銆? );
 
             if ( infestation.isLoner )
-                Buffer.Add( "This Telium currently supports " + tData.CurrentHarvesters + " Harvesters, and its Harvesters will only enrage when this Telium is destroyed. " );
+                Buffer.Add( "姝ゆ嘲鍒╁鐩墠鏀寔 " + tData.CurrentHarvesters + " 涓噰闆嗗櫒锛屽叾閲囬泦鍣ㄤ粎鍦ㄦ娉板埄濮嗚鎽ф瘉鏃舵墠浼氭毚鎬掋€? );
             else
-                Buffer.Add( "This Telium currently supports " + tData.CurrentHarvesters + "/" + (harvesterLimit - 1) + " Harvesters. When it's over capacity, it will enrage " + harvestersToEnrage + " Harvesters. " );
+                Buffer.Add( "姝ゆ嘲鍒╁鐩墠鏀寔 " + tData.CurrentHarvesters + "/" + (harvesterLimit - 1) + " 涓噰闆嗗櫒銆傚綋瓒呰繃瀹归噺鏃讹紝瀹冨皢鏆存€?" + harvestersToEnrage + " 涓噰闆嗗櫒銆? );
 
             if ( infestation.isBerserk )
-                Buffer.Add( "It is currently " ).StartColor( UnityEngine.Color.red ).Add( "berserk" ).EndColor().Add( ", reducing its metal costs by " + (100 - (100 / infestation.BerserkCostDivisor)) + "%! " );
+                Buffer.Add( "瀹冨綋鍓嶅浜?" ).StartColor( UnityEngine.Color.red ).Add( "鐙傛毚" ).EndColor().Add( " 鐘舵€侊紝閲戝睘娑堣€楅檷浣?" + (100 - (100 / infestation.BerserkCostDivisor)) + "%锛? );
         }
     }
 }

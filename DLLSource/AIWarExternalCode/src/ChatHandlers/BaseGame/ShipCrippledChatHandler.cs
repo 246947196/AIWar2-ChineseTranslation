@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -31,10 +31,10 @@ namespace Arcen.AIW2.External
             if ( plan != null )
             {
                 if ( Engine_AIW2.Instance.CurrentGameViewMode == GameViewMode.GalaxyMapView )
-                    Buffer.Add( "Click to center the galaxy view on " ).Add( plan.Name ).Add( ", the planet where " ).Add( squad.TypeData.DisplayName ).Add( " is located. " );
+                    Buffer.Add( "鐐瑰嚮灏嗘槦绯昏鍥惧眳涓埌 " ).Add( plan.Name ).Add( "锛? ).Add( squad.TypeData.DisplayName ).Add( " 鎵€鍦ㄧ殑鏄熺悆銆? );
                 else
                 {
-                    Buffer.Add( "Click to center the planet view on " ).Add( squad.TypeData.DisplayName ).Add( ", on the planet " ).Add( plan.Name ).Add( ". " );
+                    Buffer.Add( "鐐瑰嚮灏嗘槦鐞冭鍥惧眳涓埌 " ).Add( squad.TypeData.DisplayName ).Add( "锛屼綅浜庢槦鐞?" ).Add( plan.Name ).Add( "銆? );
                 }
             }
         }

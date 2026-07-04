@@ -26,7 +26,7 @@ namespace Arcen.AIW2.External
                         #region Tell Me To Explore The Rest
                         ActualObjective objective = ActualObjective.GetFromPoolOrCreate();
                         objective.SetHook( "ScoutUnexplored" );
-                        objective.DisplayNameBase = "Scout " + unexploredPlanetCount + " More Planets";
+                        objective.DisplayNameBase = "侦察 " + unexploredPlanetCount + " 个更多星球";
                         objective.RelatedInt1 = unexploredPlanetCount;
                         ObjectiveCategory.AddActualObjective( objective );
                         #endregion
@@ -53,20 +53,20 @@ namespace Arcen.AIW2.External
 
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "Winning any war requires intel, and right now yours is incomplete. " );
+            buffer.Add( "赢得任何战争都需要情报，而你的情报目前还不完整。" );
             if ( Objective.RelatedInt1 > 1 )
-                buffer.Add( "There are still " ).Add( Objective.RelatedInt1.ToString(), ObjectiveColors.Keyword ).Add( " completely unexplored planets out there.\n\n" );
+                buffer.Add( "还有 " ).Add( Objective.RelatedInt1.ToString(), ObjectiveColors.Keyword ).Add( " 个完全未探索的星球。\n\n" );
             else
-                buffer.Add( "There is still " ).Add( "one", ObjectiveColors.Keyword ).Add( " completely unexplored planet out there.\n\n" );
+                buffer.Add( "还有 " ).Add( "一个", ObjectiveColors.Keyword ).Add( " 完全未探索的星球。\n\n" );
 
-            buffer.Add( "An unexplored planet could contain:\n" );
-            buffer.Add( "  An enemy superweapon", "ff8888" ).Add( " you need to neutralize or route around.\n" );
-            buffer.Add( "  A valuable capturable", ObjectiveColors.Keyword ).Add( " worth planning a detour to claim.\n" );
-            buffer.Add( "  An alternative victory path", ObjectiveColors.Keyword ).Add( " that changes your whole strategy.\n\n" );
+            buffer.Add( "一个未探索的星球可能包含：\n" );
+            buffer.Add( "  一个需要中和或绕过的敌方超级武器", "ff8888" ).Add( "\n" );
+            buffer.Add( "  一个值得绕路去占领的有价值目标", ObjectiveColors.Keyword ).Add( "\n" );
+            buffer.Add( "  一条改变你整个策略的替代胜利路径", ObjectiveColors.Keyword ).Add( "\n\n" );
 
-            buffer.Add( "How to scout:\n" );
-            buffer.Add( "  Destroying an AI Command Station", ObjectiveColors.Keyword ).Add( " automatically scouts nearby planets.\n" );
-            buffer.Add( "  Use ", "ffeecc" ).Add( "hacking", "3de799" ).Add( " to scout from a distance without sending ships.", "ffeecc" );
+            buffer.Add( "如何侦察：\n" );
+            buffer.Add( "  摧毁 AI 指挥站", ObjectiveColors.Keyword ).Add( " 会自动侦察附近星球。\n" );
+            buffer.Add( "  使用 ", "ffeecc" ).Add( "破解", "3de799" ).Add( " 从远处侦察，无需派遣舰船。", "ffeecc" );
         }
     }
 }

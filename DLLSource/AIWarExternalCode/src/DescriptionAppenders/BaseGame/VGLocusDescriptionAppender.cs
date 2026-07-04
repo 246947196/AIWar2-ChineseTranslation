@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -20,11 +20,11 @@ namespace Arcen.AIW2.External
                 return;
             if ( dsdata.ConquestMode )
             {
-                Buffer.Add( "The Dark Spire is in Conquest Mode, so new Vengeance Generators will still be vulnerable after fully warping in." );
+                Buffer.Add( "鏆楁槦澶勪簬寰佹湇妯″紡锛屽洜姝ゆ柊鐨勫浠囩敓鎴愬櫒鍦ㄥ畬鍏ㄦ姌璺冭繘鍏ュ悗浠嶇劧浼氬緢鑴嗗急銆? );
             }
             else
-                Buffer.Add( "If you allow the rest of the Vengeance Generator to warp in then it will become invulnerable." );
-            Buffer.Add( " Locus is " + percent + " percent of the way to fully warping in" );
+                Buffer.Add( "濡傛灉浣犲厑璁稿浠囩敓鎴愬櫒鐨勫叾浣欓儴鍒嗘姌璺冭繘鍏ワ紝瀹冨皢鍙樺緱鏃犳晫銆? );
+            Buffer.Add( "浣嶇疆鐐规鍦ㄦ姌璺冭繘鍏ヤ腑锛屽凡瀹屾垚 " + percent + "%" );
         }
     }
 }

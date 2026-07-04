@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Arcen.AIW2.Core;
 using Arcen.Universal;
 
@@ -28,8 +28,8 @@ namespace Arcen.AIW2.External
             else
                 hour = " hours";
 
-            Buffer.Add( "When the planet is controlled by the AI, AIP goes up by " + AIPIncrease + " every " + timeInHours );
-            Buffer.Add( hour + ". When it is controlled by the player, AIP goes down by " + AIPDecrease + " every " + timeInHours + hour + ". On death, it goes up by " + AIPIncreaseOnDeath + "." );
+            Buffer.Add( "褰撴槦鐞冭AI鎺у埗鏃讹紝AIP姣?" + timeInHours );
+            Buffer.Add( hour + " 澧炲姞 " + AIPIncrease + "銆傚綋琚帺瀹舵帶鍒舵椂锛孉IP姣?" + timeInHours + hour + " 鍑忓皯 " + AIPDecrease + "銆傛浜℃椂锛孉IP澧炲姞 " + AIPIncreaseOnDeath + "銆? );
         }
     }
 }

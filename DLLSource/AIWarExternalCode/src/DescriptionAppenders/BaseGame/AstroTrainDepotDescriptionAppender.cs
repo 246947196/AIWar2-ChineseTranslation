@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -21,12 +21,12 @@ namespace Arcen.AIW2.External
             Buffer.Add( depotData.data.ToString() );
             if ( depotData.data.TrainsNeededBeforeFiring != -1 || depotData.data.FiresOnEveryTrain == false )
             {
-                Buffer.Add( " So far " + depotData.TrainsThatArrivedSafely );
+                Buffer.Add( " 鐩墠宸叉湁 " + depotData.TrainsThatArrivedSafely );
                 if ( depotData.TrainsThatArrivedSafely == 1 )
-                    Buffer.Add( " has " );
+                    Buffer.Add( " 鍒楃伀杞?" );
                 else
-                    Buffer.Add( " have " );
-                Buffer.Add( "made it." );
+                    Buffer.Add( " 鍒楃伀杞?" );
+                Buffer.Add( "瀹夊叏鎶佃揪銆? );
             }
         }
     }

@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -21,17 +21,17 @@ namespace Arcen.AIW2.External
             
             if ( !HasBeenHacked )
             {
-                Buffer.Add( "You must hack this beacon to activate it and communicate with any Outguard Groups." );
+                Buffer.Add( "浣犲繀椤荤牬瑙ｆ淇℃爣浠ユ縺娲诲畠骞朵笌浠讳綍澶栧崼缁勯€氫俊銆? );
             }
             
             if ( availableGroups.Count == 0 )
             {
-                Buffer.Add( " There are no Outguard Groups available via this beacon." );
+                Buffer.Add( " 閫氳繃姝や俊鏍囨病鏈夊彲鐢ㄧ殑澶栧崼缁勩€? );
                 
                 return;
             }
             
-            Buffer.Add( " The following Outguard Groups can be contacted at this beacon: " );
+            Buffer.Add( " 浠ヤ笅澶栧崼缁勫彲閫氳繃姝や俊鏍囪仈绯伙細" );
             int i = 0;
             for ( ; i < availableGroups.Count; i++ )
             {
