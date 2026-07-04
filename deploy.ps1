@@ -17,6 +17,7 @@ New-Item -ItemType Directory -Path "$gameDir\BepInEx\config" -Force | Out-Null
 Copy-Item "$translationDir\BepInEx\core\*" "$gameDir\BepInEx\core\" -Force
 Copy-Item "$translationDir\BepInEx\patchers\AssemblyRedirector.dll" "$gameDir\BepInEx\patchers\" -Force
 Copy-Item "$translationDir\BepInEx\config\xiaoye97.I18NFont4UnityGame.cfg" "$gameDir\BepInEx\config\" -Force
+Copy-Item "$translationDir\BepInEx\config\BepInEx.cfg" "$gameDir\BepInEx\config\" -Force
 Write-Host "BepInEx framework deployed" -ForegroundColor Green
 
 # Deploy I18NFont4UnityGame plugin
