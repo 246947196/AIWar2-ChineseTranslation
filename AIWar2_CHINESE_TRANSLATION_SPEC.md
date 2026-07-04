@@ -204,7 +204,6 @@ AIWar2_ChineseTranslation/
 **重要规则：**
 
 1. **编译器版本必须与原版一致**（Roslyn 4.12.0 / C# 13.0），低版本编译器生成的 IL 代码会导致运行时错误（如对象池异常）。
-2. **所有含中文的 .cs 源文件必须保存为 UTF-8 with BOM 编码**，否则游戏中文会显示为方框。Unity/Mono 不识别无 BOM 的 UTF-8 中文字符。
 
 ### 8.5 csproj 修改
 
@@ -229,16 +228,6 @@ $msbuild = "C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe"
 & $msbuild DLLSource\AIWarExternalCode\AIWarExternalCode.csproj /t:Build /p:Configuration=Release "/p:CscToolPath=$roslynDir"
 & $msbuild DLLSource\AIWarExternalDeepProcessingCode\AIWarExternalDeepProcessingCode.csproj /t:Build /p:Configuration=Release "/p:CscToolPath=$roslynDir"
 & $msbuild DLLSource\AIWarExternalVisualizationCode\AIWarExternalVisualizationCode.csproj /t:Build /p:Configuration=Release "/p:CscToolPath=$roslynDir"
-
-# 编译后确保所有含中文的 .cs 文件为 UTF-8 with BOM
-$baseDir = "DLLSource"
-Get-ChildItem $baseDir -Recurse -Filter "*.cs" | ForEach-Object {
-    $content = [System.IO.File]::ReadAllText($_.FullName, [System.Text.Encoding]::UTF8)
-    if ($content -match '[\u4e00-\u9fff]') {
-        $utf8BOM = New-Object System.Text.UTF8Encoding($true)
-        [System.IO.File]::WriteAllText($_.FullName, $content, $utf8BOM)
-    }
-}
 ```
 
 ### 8.7 部署
@@ -275,7 +264,6 @@ AIWarExternalDeepProcessingCode
 - 部分大型文件（如 `Window_InGameHoverEntityInfo.cs` 8390 行、`Window_PrototypeInGameHoverEntityInfo.cs` 9824 行）的长篇描述文本未翻译，保留英文
 - 翻译时只能替换字符串字面量，不能修改代码逻辑
 - 编译器版本必须与原版一致（Roslyn 4.12.0），否则会产生运行时错误
-- **文件编码**：所有含中文的 .cs 文件必须为 UTF-8 with BOM 编码，否则游戏中文显示为方框
 
 ### 8.11 汉化统计
 
@@ -292,8 +280,7 @@ AIWarExternalDeepProcessingCode
 2. **只改引号内内容**：只能替换 `"..."` 内的文本，不能修改引号外的任何代码
 3. **保留插值和标签**：`$"{variable}"` 中的变量部分保持不变，`<color>` 等标签保持不变
 4. **编译验证**：每翻译完一个文件后编译验证，0 错误再继续下一个
-5. **BOM 编码**：翻译完成后对所有含中文的 .cs 文件执行 UTF-8 BOM 转换
-6. **翻译优先级**：UI 文件（src/UIs/）优先，游戏逻辑文件（BaseInfo/、Sim/ 等）通常不需要翻译
+5. **翻译优先级**：UI 文件（src/UIs/）优先，游戏逻辑文件（BaseInfo/、Sim/ 等）通常不需要翻译
 7. **禁止中文引号**：C# 字符串中不能使用 `""`（中文左右双引号），会被编译器误认为字符串分隔符。必须用 `''`（单引号）替代。例如：`"点击'是'确认"` 而非 `"点击"是"确认"`
 8. **引号嵌套**：如果翻译文本中需要引用按钮名称或其他 UI 元素，使用 `'单引号'` 包裹，不要使用 `"双引号"`
 

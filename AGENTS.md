@@ -76,42 +76,12 @@ XML 文件整体替换 + DLL 源码编译替换
 2. **只改引号内内容**：只能替换 `"..."` 内的文本
 3. **保留插值和标签**：`$"{variable}"` 和 `<color>` 标签保持不变
 4. **编译验证**：每翻译完一个文件编译验证，0 错误再继续
-5. **UTF-8 BOM 编码**：所有含中文的 .cs 文件必须为 UTF-8 with BOM，否则游戏中文显示为方框
-6. **禁止中文引号**：C# 字符串中不能使用 `""`（中文双引号），会被编译器误判。引用按钮名称等必须用 `''`（单引号）
+5. **禁止中文引号**：C# 字符串中不能使用 `""`（中文双引号），会被编译器误判。引用按钮名称等必须用 `''`（单引号）
 
 ### 关键警告
 
 - **编译器版本**：必须使用 Roslyn 4.12.0 / C# 13.0，低版本会导致运行时错误
-- **文件编码**：翻译后必须转换为 UTF-8 with BOM，否则中文显示为方框
 - **中文引号**：`""` 会破坏 C# 语法，必须用 `''` 替代
-
-## XML 文件编码规范
-
-所有 `.xml` 文件必须为 **UTF-8 无 BOM** 编码。游戏 XML 解析器不支持 BOM，添加 BOM 会导致 NullReferenceException 和设置丢失。
-
-### 验证方法
-
-```powershell
-$bytes = [System.IO.File]::ReadAllBytes($file)
-$hasBom = ($bytes.Length -ge 3 -and $bytes[0] -eq 0xEF -and $bytes[1] -eq 0xBB -and $bytes[2] -eq 0xBF)
-Write-Output "BOM: $hasBom"  # 应为 False
-```
-
-### 去除 BOM 方法
-
-```powershell
-$bytes = [System.IO.File]::ReadAllBytes($file)
-if ($bytes.Length -ge 3 -and $bytes[0] -eq 0xEF -and $bytes[1] -eq 0xBB -and $bytes[2] -eq 0xBF) {
-    $noBomBytes = [byte[]]::new($bytes.Length - 3)
-    [Array]::Copy($bytes, 3, $noBomBytes, 0, $bytes.Length - 3)
-    [System.IO.File]::WriteAllBytes($file, $noBomBytes)
-}
-```
-
-### 注意
-
-- **C# 源码 (.cs)** 必须使用 UTF-8 with BOM（编译器要求）
-- **XML 文件 (.xml)** 必须使用 UTF-8 无 BOM（游戏解析器要求）
 
 ## 中文字体支持
 
