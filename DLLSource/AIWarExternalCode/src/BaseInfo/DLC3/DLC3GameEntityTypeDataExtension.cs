@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -185,8 +185,8 @@ namespace Arcen.AIW2.External
         {
             int markLevel = relatedSquadOrNull?.CurrentMarkLevel ?? relatedMembershipOrNull?.EffectiveMark ?? 1;
             //these are things for the necromancer only
-            string fleetPlaceholderOne = "the fleet bolstered by this necropolis";
-            string fleetPlaceholderTwo = "The fleet bolstered by this necropolis"; //a capital first letter
+            string fleetPlaceholderOne = "被这座死灵城支持的舰队";
+            string fleetPlaceholderTwo = "被这座死灵城支持的舰队"; //a capital first letter
             int debugCode = 0;
             try{
             debugCode = 100;
@@ -201,9 +201,9 @@ namespace Arcen.AIW2.External
                     if ( bolsteredFleet != null )
                     {
                         debugCode = 400;
-                        buffer.Add("This fleet is bolstering ").Add( bolsteredFleet.GetName(), "a1ffa1").Add(".\n");
-                        fleetPlaceholderOne = "that fleet";
-                        fleetPlaceholderTwo = "That fleet";
+                        buffer.Add("这支舰队正在支持 ").Add( bolsteredFleet.GetName(), "a1ffa1").Add(".\n");
+                        fleetPlaceholderOne = "那支舰队";
+                        fleetPlaceholderTwo = "那支舰队";
                     }
 
                 }
@@ -211,47 +211,47 @@ namespace Arcen.AIW2.External
             debugCode = 500;
             if ( !String.IsNullOrEmpty( this.SkeletonTag ) )
             {
-                buffer.Add( "If a skeleton would be created for " + fleetPlaceholderOne +", it will be a " ).Add( this.SkeletonTag, "a1a1ff" ).Add( " an additional " ).Add( this.SkeletonTypePercent, "ffa1a1" ).Add( "% of the time.\n" );
+                buffer.Add( "如果会为" + fleetPlaceholderOne +"创建一个骷髅，它将有" ).Add( this.SkeletonTypePercent, "ffa1a1" ).Add( "%的额外几率成为" ).Add( this.SkeletonTag, "a1a1ff" ).Add( "。\n" );
             }
             debugCode = 600;
             if ( this.BonusSkeletonPercent > 0 )
             {
-                buffer.Add( "If a skeleton would be created for " + fleetPlaceholderOne + ", it will create two skeletons an additional " ).Add( this.BonusSkeletonPercent, "a1ffa1" ).Add( "% of the time.\n" );
+                buffer.Add( "如果会为" + fleetPlaceholderOne + "创建一个骷髅，它将有" ).Add( this.BonusSkeletonPercent, "a1ffa1" ).Add( "%的额外几率同时创建两个骷髅。\n" );
             }
             debugCode = 700;
             if ( this.SkeletonCapIncrease > 0 || this.SkeletonCapIncreasePerMark > 0 ) {
-                 buffer.Add( fleetPlaceholderTwo + " can create an additional ").Add(this.SkeletonCapIncrease + (markLevel - 1) * this.SkeletonCapIncreasePerMark).Add(" skeletons.\n");
+                 buffer.Add( fleetPlaceholderTwo + "可以额外创建 ").Add(this.SkeletonCapIncrease + (markLevel - 1) * this.SkeletonCapIncreasePerMark).Add(" 个骷髅。\n");
             }
             if ( !String.IsNullOrEmpty( this.WightTag ) )
             {
-                buffer.Add( "If a wight would be created for " + fleetPlaceholderOne +", it will be a " ).Add( this.WightTag, "a1a1ff" ).Add( " an additional " ).Add( this.WightTypePercent, "ffa1a1" ).Add( "% of the time.\n" );
+                buffer.Add( "如果会为" + fleetPlaceholderOne +"创建一个亡魂，它将有" ).Add( this.WightTypePercent, "ffa1a1" ).Add( "%的额外几率成为" ).Add( this.WightTag, "a1a1ff" ).Add( "。\n" );
             }
             debugCode = 800;
             if ( this.BonusWightPercent > 0 )
             {
-                buffer.Add( "If a wight would be created for " + fleetPlaceholderOne + ", it will create two wights an additional " ).Add( this.BonusWightPercent, "a1ffa1" ).Add( "% of the time.\n" );
+                buffer.Add( "如果会为" + fleetPlaceholderOne + "创建一个亡魂，它将有" ).Add( this.BonusWightPercent, "a1ffa1" ).Add( "%的额外几率同时创建两个亡魂。\n" );
             }
             if ( this.WightCapIncrease > 0 || this.WightCapIncreasePerMark > 0 ) {
-                 buffer.Add(fleetPlaceholderTwo + " can create an additional ").Add(this.WightCapIncrease + (markLevel - 1) * this.WightCapIncreasePerMark).Add(" wights.\n");
+                 buffer.Add(fleetPlaceholderTwo + "可以额外创建 ").Add(this.WightCapIncrease + (markLevel - 1) * this.WightCapIncreasePerMark).Add(" 个亡魂。\n");
             }
             debugCode = 900;
             if ( !String.IsNullOrEmpty( this.MummyTag ) )
             {
-                buffer.Add( "If a mummy would be created for " + fleetPlaceholderOne + ", it will be a " ).Add( this.MummyTag, "a1a1ff" ).Add( " an additional " ).Add( this.MummyTypePercent, "ffa1a1" ).Add( "% of the time.\n" );
+                buffer.Add( "如果会为" + fleetPlaceholderOne + "创建一个木乃伊，它将有" ).Add( this.MummyTypePercent, "ffa1a1" ).Add( "%的额外几率成为" ).Add( this.MummyTag, "a1a1ff" ).Add( "。\n" );
             }
             debugCode = 1000;
             if ( this.BonusMummyPercent > 0 )
             {
-                buffer.Add( "If a mummy would be created for " + fleetPlaceholderOne + ", it will create two mummies an additional " ).Add( this.BonusMummyPercent, "a1ffa1" ).Add( "% of the time.\n" );
+                buffer.Add( "如果会为" + fleetPlaceholderOne + "创建一个木乃伊，它将有" ).Add( this.BonusMummyPercent, "a1ffa1" ).Add( "%的额外几率同时创建两个木乃伊。\n" );
             }
             debugCode = 1100;
             if ( this.MummyCapIncrease > 0 || this.MummyCapIncreasePerMark > 0 ) {
-                 buffer.Add( fleetPlaceholderTwo + " can create an additional ").Add(this.MummyCapIncrease + (markLevel - 1) * this.MummyCapIncreasePerMark).Add(" mummys.\n");
+                 buffer.Add( fleetPlaceholderTwo + "可以额外创建 ").Add(this.MummyCapIncrease + (markLevel - 1) * this.MummyCapIncreasePerMark).Add(" 个木乃伊。\n");
             }
             debugCode = 1200;
             if ( this.NecromancerUpgradeToGrantOnDeath != null )
             {
-                buffer.Add( "If the necromancer helps kill this unit, it will get a new upgrade.\n" );
+                buffer.Add( "如果死灵法师协助击杀此单位，它将获得一项新升级。\n" );
             }
             } catch ( Exception e )
             {
@@ -456,7 +456,7 @@ namespace Arcen.AIW2.External
                 {
                     buffer.Open(TextStyle.Attr_Line);
                         
-                    buffer.Add("If a ").Add("Necromancer", TextStyle.PlayerType_Name).Add(" helps destroy this, they get ");
+                    buffer.Add("如果").Add("死灵法师", TextStyle.PlayerType_Name).Add("协助摧毁此单位，他们将获得 ");
 
                     int count = 0;
                     if ( scienceToGrantOnDeath > 0 )
@@ -498,7 +498,7 @@ namespace Arcen.AIW2.External
                 {
                     buffer.Open(TextStyle.Newline_NoLabel);
                         
-                    buffer.Add("If a ").Add("DZ ", TextStyle.PlayerType_Name).Add(" helps destroy this, they get ");
+                    buffer.Add("如果").Add("黑暗泽尼斯", TextStyle.PlayerType_Name).Add("协助摧毁此单位，他们将获得 ");
 
                     int count = 0;
                     if ( scienceToGrantOnDeath > 0 )
@@ -534,7 +534,7 @@ namespace Arcen.AIW2.External
                 {
                     buffer.Open(TextStyle.Newline_NoLabel);
                         
-                    buffer.Add("If a ").Add("scourge infused empire ", TextStyle.PlayerType_Name).Add(" helps destroy this, they get ");
+                    buffer.Add("如果").Add("天灾帝国", TextStyle.PlayerType_Name).Add("协助摧毁此单位，他们将获得 ");
 
                     int count = 0;
                     if ( corbomiteToGrantOnDeath > 0 )
@@ -559,7 +559,7 @@ namespace Arcen.AIW2.External
                 {
                     buffer.Open(TextStyle.Newline_NoLabel);
                         
-                    buffer.Add("If a ").Add("Spire Sidekick ", TextStyle.PlayerType_Name).Add(" helps destroy this, they get ");
+                    buffer.Add("如果").Add("尖塔副官", TextStyle.PlayerType_Name).Add("协助摧毁此单位，他们将获得 ");
 
                     int count = 0;
                     if ( scienceToGrantOnDeath > 0 )
@@ -593,7 +593,7 @@ namespace Arcen.AIW2.External
                     resourceOneToGrantOnDeath > FInt.Zero )
                 {
                     buffer.Open(TextStyle.Newline_NoLabel);
-                    buffer.Add("If an ").Add(" Armada ", TextStyle.PlayerType_Name).Add(" helps destroy this, they get ");
+                    buffer.Add("如果").Add(" 舰队 ", TextStyle.PlayerType_Name).Add("协助摧毁此单位，他们将获得 ");
 
                     int count = 0;
                     if ( scienceToGrantOnDeath > 0 )
@@ -642,7 +642,7 @@ namespace Arcen.AIW2.External
                     resourceOneToGrantOnDeath > FInt.Zero )
                 {
                     buffer.Open(TextStyle.Newline_NoLabel);
-                    buffer.Add("If a ").Add(" Dyson ", TextStyle.PlayerType_Name).Add(" helps destroy this, they get ");
+                    buffer.Add("如果").Add(" 戴森 ", TextStyle.PlayerType_Name).Add("协助摧毁此单位，他们将获得 ");
 
                     int count = 0;
                     if ( scienceToGrantOnDeath > 0 )
@@ -693,7 +693,7 @@ namespace Arcen.AIW2.External
                     resourceThreeToGrantOnDeath > FInt.Zero )
                 {
                     buffer.Open(TextStyle.Newline_NoLabel);
-                    buffer.Add("If an ").Add(" Apkallu ", TextStyle.PlayerType_Name).Add(" helps destroy this, they get ");
+                    buffer.Add("如果").Add(" 阿普卡鲁 ", TextStyle.PlayerType_Name).Add("协助摧毁此单位，他们将获得 ");
 
                     int count = 0;
                     if ( scienceToGrantOnDeath > 0 )
