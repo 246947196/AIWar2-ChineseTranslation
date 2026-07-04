@@ -84,7 +84,6 @@ BepInEx Preloader 在游戏程序集加载前调用 Patcher，通过 Mono.Cecil 
 - 禁止修改 `AIWar2_Data/Managed/` 下任何原始 DLL
 - 禁止使用 Harmony 运行时方法 patch
 - 禁止使用 XMLMod 的 DLL 覆盖机制
-- 翻译时保持原有 XML 结构，不添加新条目
 
 ## 七、卸载方法
 
