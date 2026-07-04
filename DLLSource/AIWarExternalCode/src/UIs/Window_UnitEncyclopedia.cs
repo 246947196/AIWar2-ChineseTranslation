@@ -1226,7 +1226,7 @@ namespace Arcen.AIW2.External
                 {
                     if ( typeData.StartingMarkLevel.Ordinal == 1 && typeData.MaxMarkLevel >= 7 )
                     {
-                        buffer.StartColor( "696466" ).Add( "All Marks" ).EndColor();
+                        buffer.StartColor( "696466" ).Add( "全部标记" ).EndColor();
                     }
                     else 
                     if ( typeData.StartingMarkLevel.Ordinal == typeData.MaxMarkLevel )
@@ -1242,7 +1242,7 @@ namespace Arcen.AIW2.External
                 }
                 else
                 {
-                    buffer.StartColor( "413a3d" ).Add( "Markless" ).EndColor();
+                    buffer.StartColor( "413a3d" ).Add( "无标记" ).EndColor();
                 }
 
                 int countCurrentlyHere = typeData.EncyclopediaOnly_CountByFactionFilter.Display;
@@ -2199,7 +2199,7 @@ namespace Arcen.AIW2.External
         {
             displayNameBuffer.Add( "<size=85%>" );
             if ( this.Row == null )
-                displayNameBuffer.Add( "None" );
+                displayNameBuffer.Add( "无" );
             else
             {
                 displayNameBuffer.Add( this.Row.GetDisplayName() );

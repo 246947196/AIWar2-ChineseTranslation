@@ -254,7 +254,7 @@ namespace Arcen.AIW2.External
             else
                 tooltipBuffer.Add( "点击此处切换到" ).Add( planet.Name ).Add( "的星球视图。" );
             tooltipBuffer.Add( "\n" );
-            tooltipBuffer.Add("(Shortcut key: " + InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "ToggleGalaxyMap" ) ).Add(")");
+            tooltipBuffer.Add("(快捷键：" + InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "ToggleGalaxyMap" ) ).Add(")");
 
             return tooltipBuffer.ToStringAndReturnToPool();
         }

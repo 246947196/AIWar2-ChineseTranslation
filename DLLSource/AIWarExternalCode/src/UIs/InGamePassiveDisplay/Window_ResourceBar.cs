@@ -3366,14 +3366,13 @@ namespace Arcen.AIW2.External
                         Buffer.Add("在 ").Add(fissure.Planet.Name, "a1ff1a").Add(" 上的裂缝\n");
                     }
 
-                    Buffer.Add( "\nCorrupted Ziggurats:\n" );
+                    Buffer.Add( "\n被腐化的通灵塔：\n" );
                     foreach ( GameEntity_Squad ziggurat in mBaseInfo.CorruptedZiggurats.DisplaySquads() )
                     {
-                        Buffer.Add( "  " ).Add( ziggurat.TypeData.DisplayName, "ff6633" );
-                        Buffer.Add( " on " ).Add( ziggurat.Planet?.Name ?? "unknown", "a1ffa1" );
+                        Buffer.Add( "  " ).Add( ziggurat.Planet?.Name ?? "unknown", "a1ffa1" ).Add( "的被腐化通灵塔 " ).Add( ziggurat.TypeData.DisplayName, "ff6633" );
                         Planet destination = ziggurat.Orders?.GetFinalDestinationOrNull();
                         if ( destination != null && destination != ziggurat.Planet )
-                            Buffer.Add( " → heading to " ).Add( destination.Name, "ffaa44" );
+                            Buffer.Add( " → 前往 " ).Add( destination.Name, "ffaa44" );
                         Buffer.Add( "\n" );
                     }
 
