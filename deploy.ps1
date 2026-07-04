@@ -19,6 +19,10 @@ Copy-Item "$translationDir\BepInEx\core\*" "$gameDir\BepInEx\core\" -Force
 Copy-Item "$translationDir\BepInEx\patchers\AssemblyRedirector.dll" "$gameDir\BepInEx\patchers\" -Force
 Copy-Item "$translationDir\BepInEx\config\xiaoye97.I18NFont4UnityGame.cfg" "$gameDir\BepInEx\config\" -Force
 Copy-Item "$translationDir\BepInEx\config\BepInEx.cfg" "$gameDir\BepInEx\config\" -Force
+# Copy Arcen DLLs to PatchedAssemblies for AssemblyRedirector
+Copy-Item "$gameDir\AIWar2_Data\Managed\ArcenAIW2Core.dll" "$gameDir\PatchedAssemblies\" -Force
+Copy-Item "$gameDir\AIWar2_Data\Managed\ArcenAIW2Visualization.dll" "$gameDir\PatchedAssemblies\" -Force
+Copy-Item "$gameDir\AIWar2_Data\Managed\ArcenUniversal.dll" "$gameDir\PatchedAssemblies\" -Force
 Write-Host "BepInEx framework deployed" -ForegroundColor Green
 
 # Deploy I18NFont4UnityGame plugin
