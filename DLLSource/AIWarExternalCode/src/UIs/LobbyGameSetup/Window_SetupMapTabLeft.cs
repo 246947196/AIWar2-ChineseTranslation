@@ -683,7 +683,7 @@ namespace Arcen.AIW2.External
                 WorldSetup setupToViewOnly = World_AIW2.Instance.Setup;
                 if ( setupToViewOnly != null && setupToViewOnly.MapConfig.PlanetNameType != null )
                 {
-                    mouseoverText += "\n\nCurrently: <color=#7ab9ff>" + setupToViewOnly.MapConfig.PlanetNameType.DisplayName + "</color>\n" + setupToViewOnly.MapConfig.PlanetNameType.Description;
+                    mouseoverText += "\n\n当前：<color=#7ab9ff>" + setupToViewOnly.MapConfig.PlanetNameType.DisplayName + "</color>\n" + setupToViewOnly.MapConfig.PlanetNameType.Description;
                 }
                 Window_AtMouseTooltipPanelSnapToLeft.bPanel.Instance.SetText( this.Element, mouseoverText );
             }

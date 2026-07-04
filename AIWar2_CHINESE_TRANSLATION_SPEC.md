@@ -101,7 +101,7 @@ AIWar2_ChineseTranslation/
 | `PlanetDefinition/` | 星球定义 | 数值配置 |
 | `TextEmbededSprites/` | 文本嵌入精灵 | 图标配置 |
 | `TextStyles/` | 文本样式 | 样式配置 |
-| `TextVarMaps/` | 文本变量映射 | 变量配置 |
+| `TextVarMaps/` | 文本变量映射 | 变量配置。注意：`TextVarMaps_Vanilla.xml` 包含快速开始、始祖格式等玩家可见文本，属于例外需翻译 |
 | `SurrogateTable/` | 代理表 | 编号配置 |
 | `SpecialFactionProcessingGroup/` | 特殊阵营处理组 | 编号配置 |
 
@@ -115,12 +115,12 @@ AIWar2_ChineseTranslation/
 
 | 类别 | 文件数 | 已翻译 | 需要翻译 | 状态 |
 |------|--------|--------|----------|------|
-| 基础游戏 XML | 397 | 296 | 0 | ✅ 完成 |
+| 基础游戏 XML | 398 | 297 | 0 | ✅ 完成 |
 | DLC1 XML | 64 | 30 | 0 | ✅ 完成 |
 | DLC2 XML | 69 | 35 | 0 | ✅ 完成 |
 | DLC3 XML | 90 | 60 | 0 | ✅ 完成 |
 | XMLMods | 5 | 5 | 0 | ✅ 完成 |
-| **合计** | **625** | **426** | **0** | **✅ 完成** |
+| **合计** | **626** | **427** | **0** | **✅ 完成** |
 
 ### 4.2 DLL 替换 (Preloader Patcher)
 
@@ -382,6 +382,7 @@ AIWar2_ChineseTranslation/
 | 基础游戏 Achievement | 1 | 成就 |
 | 基础游戏 Tips | 12 | 所有游戏提示 |
 | 基础游戏 Tutorials | 6 | 所有教程 |
+| 基础游戏 TextVarMaps | 1 | 快速开始菜单文本、状态消息、格式标签 |
 | 基础游戏 SpecialFaction | 6 | 阵营名称和描述 |
 | 基础游戏 HackingType | 5 | 黑客类型 |
 | DLC1 JournalEntries | 3 | 尖塔族剧情 |
@@ -398,4 +399,4 @@ AIWar2_ChineseTranslation/
 | DLC3 GameEntity | 22 | DLC3 舰船和实体 |
 | DLC3 其他 | 28 | 设置、阵营等 |
 | XMLMods | 5 | ExoticShips 模组舰船 |
-| **总计** | **209** | - |
+| **总计** | **210** | - |

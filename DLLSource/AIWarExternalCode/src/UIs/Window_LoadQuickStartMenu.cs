@@ -1097,7 +1097,7 @@ namespace Arcen.AIW2.External
                 CampaignTypeData typeDataToSelect = Engine_AIW2.LastQuickStartCampaignType;
                 if ( typeDataToSelect != null )
                 {
-                    mouseoverText += "\n\nCurrently: <color=#7ab9ff>" + typeDataToSelect.DisplayName + "</color>\n" + typeDataToSelect.Description;
+                    mouseoverText += "\n\n当前：<color=#7ab9ff>" + typeDataToSelect.DisplayName + "</color>\n" + typeDataToSelect.Description;
                 }
                 Window_AtMouseTooltipPanelSnapToLeft.bPanel.Instance.SetText( this.Element, mouseoverText );
             }

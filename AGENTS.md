@@ -45,7 +45,7 @@ XML 文件整体替换 + DLL 源码编译替换
 - `PlanetDefinition/` - 星球定义（数值）
 - `TextEmbededSprites/` - 图标配置
 - `TextStyles/` - 文本样式
-- `TextVarMaps/` - 文本变量映射
+- `TextVarMaps/` - 文本变量映射（注意：`TextVarMaps_Vanilla.xml` 包含快速开始等玩家可见文本属例外需翻译）
 - `SurrogateTable/` - 代理表（编号）
 - `SpecialFactionProcessingGroup/` - 处理组（编号）
 

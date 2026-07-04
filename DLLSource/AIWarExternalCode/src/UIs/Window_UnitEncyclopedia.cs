@@ -516,7 +516,7 @@ namespace Arcen.AIW2.External
                 ThematicGroupType typeDataToSelect = CurrentlyViewedThematicGroup;
                 if ( typeDataToSelect != null )
                 {
-                    mouseoverText += "\n\nCurrently: <color=#7ab9ff>" + typeDataToSelect.DisplayName + "</color>\n" + typeDataToSelect.Description;
+                    mouseoverText += "\n\n当前：<color=#7ab9ff>" + typeDataToSelect.DisplayName + "</color>\n" + typeDataToSelect.Description;
                 }
                 Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, mouseoverText );
             }
@@ -1465,7 +1465,7 @@ namespace Arcen.AIW2.External
                 UnitEncyclopediaTextboxFunction typeDataToSelect = CurrentTextboxFunction;
                 if ( typeDataToSelect != null )
                 {
-                    mouseoverText += "\n\nCurrently: <color=#7ab9ff>" + typeDataToSelect.DisplayName + "</color>\n" + typeDataToSelect.Tooltip;
+                    mouseoverText += "\n\n当前：<color=#7ab9ff>" + typeDataToSelect.DisplayName + "</color>\n" + typeDataToSelect.Tooltip;
                 }
                 Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, mouseoverText );
             }
@@ -1610,7 +1610,7 @@ namespace Arcen.AIW2.External
                 UnitEncyclopediaListFilterStyle typeDataToSelect = CurrentListFilterStyle;
                 if ( typeDataToSelect != null )
                 {
-                    mouseoverText += "\n\nCurrently: <color=#7ab9ff>" + typeDataToSelect.DisplayName + "</color>\n" + typeDataToSelect.Tooltip;
+                    mouseoverText += "\n\n当前：<color=#7ab9ff>" + typeDataToSelect.DisplayName + "</color>\n" + typeDataToSelect.Tooltip;
                 }
                 Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, mouseoverText );
             }
@@ -1710,7 +1710,7 @@ namespace Arcen.AIW2.External
                 UnitEncyclopediaSortStyle typeDataToSelect = CurrentSortStyle;
                 if ( typeDataToSelect != null )
                 {
-                    mouseoverText += "\n\nCurrently: <color=#7ab9ff>" + typeDataToSelect.DisplayName + "</color>\n" + typeDataToSelect.Tooltip;
+                    mouseoverText += "\n\n当前：<color=#7ab9ff>" + typeDataToSelect.DisplayName + "</color>\n" + typeDataToSelect.Tooltip;
                 }
                 Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, mouseoverText );
             }
@@ -1807,7 +1807,7 @@ namespace Arcen.AIW2.External
                 FactionFilter currentFilter = FactionFilter.GetFactionFilterByIndex( FactionIndex );
                 if ( currentFilter.GetIsValid() )
                 {
-                    mouseoverText += "\n\nCurrently: <color=#" + currentFilter.GetTextColor() + ">" + currentFilter.GetDisplayName() + "</color>\n" + currentFilter.GetTooltip();
+                    mouseoverText += "\n\n当前：<color=#" + currentFilter.GetTextColor() + ">" + currentFilter.GetDisplayName() + "</color>\n" + currentFilter.GetTooltip();
                 }
                 Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, mouseoverText );
             }

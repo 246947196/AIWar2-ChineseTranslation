@@ -500,7 +500,7 @@ namespace Arcen.AIW2.External
                 FactionFilter currentFilter = FactionFilter.GetFactionFilterByIndex( PlayerAccount_AIW2.GetCurrentGalaxyMapDisplayMode_FactionIndexSafe() );
                 if ( currentFilter.GetIsValid() )
                 {
-                    mouseoverText += "\n\nCurrently: <color=#" + currentFilter.GetTextColor() + ">" + currentFilter.GetDisplayName() + "</color>\n" + currentFilter.GetTooltip();
+                    mouseoverText += "\n\n当前：<color=#" + currentFilter.GetTextColor() + ">" + currentFilter.GetDisplayName() + "</color>\n" + currentFilter.GetTooltip();
                 }
                 Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, mouseoverText );
             }
@@ -614,7 +614,7 @@ namespace Arcen.AIW2.External
                 GalaxyMapDisplayMode typeDataToSelect = PlayerAccount_AIW2.GetCurrentGalaxyMapDisplayModeSafe();
                 if ( typeDataToSelect != null )
                 {
-                    mouseoverText += "\n\nCurrently: <color=#7ab9ff>" + typeDataToSelect.DisplayName + "</color>\n" + typeDataToSelect.Tooltip;
+                    mouseoverText += "\n\n当前：<color=#7ab9ff>" + typeDataToSelect.DisplayName + "</color>\n" + typeDataToSelect.Tooltip;
                 }
                 Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, mouseoverText );
             }
@@ -709,7 +709,7 @@ namespace Arcen.AIW2.External
                 GalaxyMapTextboxFunction typeDataToSelect = PlayerAccount_AIW2.GetCurrentGalaxyMapTextboxFunctionSafe();
                 if ( typeDataToSelect != null )
                 {
-                    mouseoverText += "\n\nCurrently: <color=#7ab9ff>" + typeDataToSelect.DisplayName + "</color>\n" + typeDataToSelect.Tooltip;
+                    mouseoverText += "\n\n当前：<color=#7ab9ff>" + typeDataToSelect.DisplayName + "</color>\n" + typeDataToSelect.Tooltip;
                 }
                 Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, mouseoverText );
             }

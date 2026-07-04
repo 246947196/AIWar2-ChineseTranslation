@@ -1,0 +1,1035 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+    <map name="InputAction">
+
+        <line id="1"
+              text="{wrap:}[{:wrap}{value}{wrap:}]{:wrap}"
+              />
+
+        <var_map var="wrap">
+            <style voffset="0.05em"
+                   color="#cccccc"
+                   />
+        </var_map>
+
+        <var_map var="value"
+                 style="UserAction"
+                 >
+        </var_map>
+
+    </map>
+
+    <map name="Base_Wrap">
+
+        <line id="1"
+              text="{wrap:}{open}{:wrap}{value}{wrap:}{close}{:wrap}"
+              />
+
+        <var_map var="wrap">
+            <style voffset="0.05em"
+                   color="#cccccc"
+                   />
+        </var_map>
+
+    </map>
+
+    <map name="Build_Req_Status">
+
+        <line id="1"
+              text="{this:}{wrap:}[{:wrap}{value}{wrap:}]{:wrap}"
+              />
+
+        <var_map var="this">
+            <style space="0.1em" />
+        </var_map>
+
+        <var_map var="wrap">
+            <style voffset="0.05em"
+                   color="#cccccc"
+                   />
+        </var_map>
+    </map>
+
+    <map name="InParenthesis"
+         copy_from="Base_Wrap"
+         >
+
+        <var_map var="open"
+                 value="("
+                 >
+        </var_map>
+        <var_map var="close"
+                 value=")"
+                 >
+        </var_map>
+    </map>
+
+    <map name="InBrackets"
+         copy_from="Base_Wrap"
+         >
+
+        <var_map var="open"
+                 value="["
+                 >
+        </var_map>
+        <var_map var="close"
+                 value="]"
+                 >
+        </var_map>
+    </map>
+
+    <map name="Tooltip_Hotkeys_Footer_Line">
+
+        <line id="1"
+              text="{this:}{Detail}  {ToSeeContents}{ToIncreaseDetail}{ToHide}{DlcMod}{:this}"
+              />
+
+        <var_map var="this"
+                 style="Tooltip_Hotkeys_Footer"
+                 >
+        </var_map>
+
+        <var_map var="Detail">
+            <style />
+        </var_map>
+
+        <var_map var="ToSeeContents">
+            <style />
+        </var_map>
+
+        <var_map var="ToIncreaseDetail">
+            <style />
+        </var_map>
+
+        <var_map var="ToHide">
+            <style />
+        </var_map>
+
+        <var_map var="DlcMod"
+                 style="DlcMod_RightAligned"
+                 >
+        </var_map>
+
+    </map>
+
+    <!-- these dont exist ⟨⟮⟨❲❬❪❨﹙⸢﹝( ⇩-->
+    <!-- these do ‹› ꜜ↓ -->
+    <map name="Parenthetical">
+
+        <line id="1"
+              text="{Nudge:}({:Nudge}{value}{Nudge:}){:Nudge}"
+              />
+
+    </map>
+
+    <map name="Stat_Conjunction">
+        <line id="1"
+              text="{this:}和 {:this}"
+              />
+
+        <var_map var="this">
+            <style color="#dadada"
+                   size="70%"
+                   />
+        </var_map>
+    </map>
+
+    <map name="Build_Stat_Row">
+
+        <line id="1"
+              text="{style:}{Newline:}{count}{tab1:}{str}{tab2:}{ehp}{tab3:}{dps}{tab4:}{energy}{:style}"
+              />
+
+        <var_map var="style">
+            <style color="#cccccc"
+                   size="80%"
+                   line_height="80%"
+                   newline="1"
+                   />
+        </var_map>
+
+        <var_map var="tab1">
+            <style pos="5em" />
+        </var_map>
+        <var_map var="tab2">
+            <style pos="10em" />
+        </var_map>
+        <var_map var="tab3">
+            <style pos="15em" />
+        </var_map>
+        <var_map var="tab4">
+            <style pos="24em" />
+        </var_map>
+    </map>
+
+    <map name="Inline_Ship_Format">
+
+        <line id="1"
+              text="{nobr:}{icon}{displayname}{marklevel}{techs}{count}{countpercent}{aip}{:nobr}"
+              />
+
+        <var_map var="icon"
+                 style="Ship_Sprite"
+                 >
+        </var_map>
+
+        <var_map var="nobr">
+            <style size="80%"
+                   nobr="true"
+                   />
+        </var_map>
+
+        <var_map var="marklevel">
+            <style subscript="true" />
+        </var_map>
+
+        <var_map var="displayname">
+            <style color="#fdfdfd" />
+        </var_map>
+
+        <var_map var="count">
+            <style color="#ffdf72" />
+        </var_map>
+
+        <var_map var="countpercent">
+            <style />
+        </var_map>
+
+        <var_map var="techs">
+            <style size="60%"
+                   color="#808080"
+                   />
+        </var_map>
+
+        <var_map var="aip">
+        </var_map>
+
+    </map>
+
+    <map name="Inline_Ship_Format_Building">
+        <line id="1"
+              text="{this:}{icon}{displayname}{countunbuilt}{buildprogress}{:this}"
+              />
+
+        <var_map var="this">
+        </var_map>
+
+        <var_map var="icon"
+                 style="Ship_Sprite_Smaller"
+                 >
+        </var_map>
+
+        <var_map var="displayname">
+            <style />
+        </var_map>
+
+        <var_map var="countunbuilt">
+            <style color="#ffdf72"
+                   size="60%"
+                   />
+        </var_map>
+
+        <var_map var="buildprogress">
+            <style size="70%" />
+        </var_map>
+
+    </map>
+
+    <map name="Inline_Ship_Format_Target" 
+         copy_from="Inline_Ship_Format">
+
+        <line id="1"
+              text="{this:}{icon}{displayname}{marklevel}{count}{:this}"
+              />
+
+          <var_map var="this"
+          >
+          <style
+          />
+        </var_map>
+
+        <var_map var="icon"
+                 style="Ship_Sprite_Smaller"
+                 >
+        </var_map>
+
+        <var_map var="displayname">
+            <style />
+        </var_map>
+
+        <var_map var="count">
+            <style 
+            size="50%" />
+        </var_map>
+
+    </map>
+
+    <map name="System_Targeting_Format">
+
+        <line id="1"
+              text="{this:}{prefix}{entity}{id}{oor}{:this}  "
+              />
+
+        <var_map var="this"
+        >
+        <style 
+        nobr="true"
+        />
+        </var_map>
+
+        <var_map var="icon"
+                 style="Ship_Sprite_Smaller"
+                 >
+        </var_map>
+
+        <var_map var="id"
+            >
+            <style space="0.1em"
+                   color="#888888"/>
+        </var_map>
+
+        <var_map var="displayname">
+            <style />
+        </var_map>
+
+        <var_map var="entity"
+                 cond="NotNull"
+                 >
+        </var_map>
+
+        <!-- <var_map var="prefix"
+        value="{prefix}"
+        >
+        </var_map>
+
+        <map name="prefix"
+        >
+        <line id="1" text="[{if_frd}"/>
+        </map> -->
+
+    </map>
+
+    <map name="Tooltip_Header_Ship_Format">
+
+        <line id="0"
+              text="{this:}{icon}{big:}{tab1:}{backspace:}{count}{displayname}{marklevel}{owner}{:big}{endline:}"
+              />
+
+        <line id="1"
+              text="{tab1:}{strength}{tab2:}{shields}{tab3:}{energy}{tab4:}{mass}{tab5:}{armor}{endline:}"
+              />
+
+        <line id="2"
+              text="{tab1:}{speed}{tab2:}{hull}{tab3:}{metal}{tab4:}{engine}{tab5:}{albedo}{:this}"
+              />
+
+        <var_map var="backspace">
+            <style space="-0.2em" />
+        </var_map>
+
+        <var_map var="this">
+            <style line_height="90%"
+                   size="100%"
+                   />
+        </var_map>
+
+        <var_map var="endline">
+            <style newline="1" />
+        </var_map>
+
+        <var_map var="big">
+            <style size="110%"
+                   bold="true"
+                   cspace="-0.05em"
+                   />
+        </var_map>
+
+        <var_map var="tab1">
+            <style pos="3.8em" />
+        </var_map>
+
+        <var_map var="tab2">
+            <style pos="12em" />
+        </var_map>
+
+        <var_map var="tab3">
+            <style pos="23em" />
+        </var_map>
+
+        <!-- 1em ~= 12px -->
+        <!-- +100px      -->
+        <var_map var="tab4">
+            <style pos="30em" />
+        </var_map>
+
+        <!-- +80px -->
+        <var_map var="tab5">
+            <style pos="35em" />
+        </var_map>
+
+        <var_map var="icon">
+            <style size="100%"
+                   voffset="0em"
+                   />
+        </var_map>
+
+        <var_map var="displayname">
+            <style color="#fdfdfd" />
+        </var_map>
+
+        <var_map var="marklevel">
+            <style size="100%" />
+        </var_map>
+
+        <var_map var="count">
+            <style size="100%" />
+        </var_map>
+
+        <var_map var="hull">
+            <style space="0.1em" />
+        </var_map>
+
+    </map>
+
+    <map name="Progenitor_Format">
+        <line id="1"
+              text="{progenitor}：随时间从 [{types}] 产生后代 {count}{strength}{progress}"
+              />
+
+        <line id="2"
+              text="{endline:}{builds} 每 {rate} 建造一个，上限 ≤ {cap}"
+              />
+
+        <line id="3"
+              text="{endline:}{children}"
+              />
+
+        <var_map var="endline">
+            <style newline="1" />
+        </var_map>
+
+        <var_map var="progenitor"
+                 value="始祖"
+                 style="Attr_Label"
+                 >
+        </var_map>
+
+        <var_map var="builds"
+                 value="建造"
+                 style="Attr_Label2"
+                 >
+        </var_map>
+
+        <var_map var="count">
+            <style color="#ffdf72"
+                   leading="  "
+                   />
+
+        </var_map>
+
+        <var_map var="strength">
+            <style leading="  ">
+            </style>
+        </var_map>
+
+        <var_map var="cap">
+            <style leading="">
+            </style>
+        </var_map>
+
+        <var_map var="progress">
+            <style leading="  下一个："
+                   size="80%"
+                   >
+            </style>
+        </var_map>
+
+    </map>
+
+    <!-- <line
+                id="0"
+                text="{this:}{Name}:  {DpsRange}  {Range}{zero:}{align:}{newline:}{Damage}  {Shots}  {Reload}
+    {:zero}{:this}"
+                /> -->
+
+    <map name="Tooltip_Weapon_Line_Format">
+
+        <line id="0"
+              text="{this:}{module}{name}: {output}{range}{:this}"
+              />
+
+        <var_map var="this">
+        </var_map>
+
+        <var_map var="name"
+                 style="System_Label"
+                 >
+        </var_map>
+
+        <var_map var="module"
+                 cond="IsModule"
+                 style="ModuleTag"
+                 >
+        </var_map>
+
+        <var_map var="output">
+        </var_map>
+
+        <var_map var="range">
+        </var_map>
+
+        <!--
+        <var_map var="newline">
+            <style newline="1"
+                   />
+        </var_map>
+
+        <var_map var="zero">
+            <style line_height="0px"
+                   />
+        </var_map>
+
+        <var_map var="align">
+            <style align="right" />
+        </var_map>
+        
+        <var_map var="Damage">
+        </var_map>
+
+        <var_map var="Shots">
+        </var_map>
+
+        <var_map var="Reload">
+        </var_map>
+    -->
+
+    </map>
+
+    <map name="Salvo_Format">
+
+        <line id="0"
+              text="{Shots}{Reload}"
+              />
+    </map>
+
+    <map name="Weapon_Activity_Format">
+        <!--
+        <line
+                id="0"
+                text="{zero:}{align:}{newline:}{Status}{Recent} {:zero}"
+                />
+    -->
+        <line id="1"
+              text="{tab1:}{status}{tab2:}{lastdamage}"
+              />
+
+
+        <var_map var="tab1">
+            <style pos="30em" />
+        </var_map>
+
+        <var_map var="tab2">
+            <style pos="37em" />
+        </var_map>
+
+        <var_map var="tab3">
+            <style pos="42em" />
+        </var_map>
+
+        <var_map var="status">
+        </var_map>
+
+        <var_map var="recent">
+        </var_map>
+
+        <var_map var="lastdamage">
+        </var_map>
+    </map>
+
+    <map name="Tooltip_DroneGun_Weapon_Line_Format">
+
+        <line id="0"
+              text="{this:}{Name}: {Salvo}{AltSalvo} {Range}{:this}"
+              />
+
+        <var_map var="Salvo"
+                 value="{Salvo_Format}"
+                 >
+        </var_map>
+
+        <var_map var="AltSalvo"
+                 value="{Salvo_Format}"
+                 >
+        </var_map>
+
+        <var_map var="this">
+
+            <style copy_from="RegularText"
+                   size="80%"
+                   line_height="80%"
+                   newline="1"
+                   />
+
+        </var_map>
+
+        <var_map var="Name"
+                 style="System_Label"
+                 >
+        </var_map>
+
+        <var_map var="Drone">
+        </var_map>
+
+        <var_map var="Rate">
+        </var_map>
+
+        <var_map var="Range">
+        </var_map>
+
+    </map>
+
+    <map name="Tooltip_Weapon_Line2_Format">
+
+        <line id="0"
+              text="{this:}{name}: {outputs}{rate}  {range}{:this}"
+              />
+
+        <var_map var="this">
+
+            <style copy_from="RegularText"
+                   size="80%"
+                   line_height="80%"
+                   newline="1"
+                   />
+
+        </var_map>
+
+        <var_map var="name"
+                 style="System_Label"
+                 >
+        </var_map>
+
+        <var_map var="outputs">
+        </var_map>
+
+        <var_map var="range">
+        </var_map>
+
+        <!--
+        <var_map var="newline">
+            <style newline="1"
+                   />
+        </var_map>
+
+        <var_map var="zero">
+            <style line_height="0px"
+                   />
+        </var_map>
+
+        <var_map var="align">
+            <style align="right" />
+        </var_map>
+        
+        <var_map var="Damage">
+        </var_map>
+
+        <var_map var="Shots">
+        </var_map>
+
+        <var_map var="Reload">
+        </var_map>
+    -->
+
+    </map>
+
+    <map name="StatusMessage_ChooseCustomTarget">
+
+        <line id="0"
+              text="{line1:}正在锁定目标 {Name}。{:line1}"
+              />
+        <line id="1"
+              text="{line2:}点击一个 {Target}。{:line2}"
+              />
+
+        <var_map var="line1">
+            <style color="ffc178"
+                   newline="2"
+                   />
+        </var_map>
+
+        <var_map var="line2">
+            <style color="999999"
+                   newline="1"
+                   />
+        </var_map>
+
+        <var_map var="Name">
+            <style color="eeeeee" />
+        </var_map>
+
+        <var_map var="Target">
+            <style color="eeeeee" />
+        </var_map>
+
+    </map>
+
+    <!-- #region Quickstart, SaveGame -->
+    <map name="Quickstart_Category_Format">
+        <line id="0"
+              text="{line1:}{IfCleared:}{Name}{From}{OptCleared}{:IfCleared}{:line1}"
+              />
+
+        <var_map var="line1">
+            <style line_height="90%"
+                   size="90%"
+                   margin="0.25em"
+                   align="left"
+                   />
+        </var_map>
+
+        <var_map var="IfCleared"
+        cond="IsCleared">
+            <style size="80%"
+                   />
+        </var_map>
+
+        <var_map var="Name"
+                 style="Empty"
+                 >
+        </var_map>
+
+        <var_map var="OptCleared"
+                 value="{OptCleared}"
+                 >
+            <style 
+                   smallcaps="true"
+                   />
+        </var_map>
+
+        <map name="OptCleared"
+             cond="IsCleared"
+             >
+            <line id="0"
+                  text="{Cleared}"
+                  />
+
+            <var_map var="Cleared"
+                     value=" （已完成）"
+                     style="Empty"
+                     />
+
+        </map>
+    </map>
+
+    <map name="Quickstart_Format">
+        <line id="0"
+              text="{line1:} {IfCleared:}{Name}{OptCleared}{:IfCleared}{line1a:}{IfOffset}{tab0:}{OptCommunity}{tab1:}{OptDlc}{tab1:}{OptMods}{line1a:}{IfOffset:}{tab2:}{OptDifficulty}{tab3:}{OptPlayerType}{tab4:}{OtherRemarks}{right:}{:line1a}{:line1}"
+              />
+        <line id="1"
+              text=" {Caption}"
+              />
+
+        <var_map var="line1">
+            <style line_height="70%"
+                   size="70%"
+                   />
+        </var_map>
+
+        <var_map var="line1a">
+            <style size="60%" />
+        </var_map>
+
+        <var_map var="IfOffset"
+                 value="{IfOffset}"
+                 />
+
+        <map name="IfOffset"
+             >
+            <line id="0"
+                  text="{base:}{ifauthor:}"
+                  />
+
+                  <var_map var="base">
+                <style voffset="0.1em" />                   
+                    </var_map>
+        
+                <var_map var="ifauthor"
+                    cond="HasAuthor">
+                <style voffset="-0.1em" />
+                </var_map>
+
+        </map>
+
+        <var_map var="OptPlayerType"
+                 value="{OptPlayerType}"
+                 />
+
+        <var_map var="OptDifficulty"
+                 value="{OptDifficulty}"
+                 />
+
+        <var_map var="OptCleared"
+                 value="{OptCleared}"
+                 >
+            <!-- <style align="right"
+                   margin="0.5em"
+                   size="80%"
+                   smallcaps="true"
+                   voffset="0em"
+                   line_height="0em"
+                   leading="\n"
+                   /> -->
+        </var_map>
+
+        <var_map var="OptAuthor"
+                 value="{OptAuthor}"
+                 />
+
+        <var_map var="OptRequires"
+                 value="{OptRequires}"
+                 />
+
+        <var_map var="Name"
+                style="Empty"
+            >
+        </var_map>
+
+        <var_map var="IfCleared"
+                cond="IsCleared"
+            >
+            <style size="60%" />
+        </var_map>
+
+        <var_map var="Author">
+        </var_map>
+
+        <var_map var="Difficulty">
+        </var_map>
+
+        <var_map var="DlcInUse">
+        </var_map>
+
+        <var_map var="ModsInUse">
+        </var_map>
+
+        <var_map var="tab0">
+            <style pos="26%" />
+        </var_map>
+
+        <var_map var="tab1">
+            <style pos="30%" />
+        </var_map>
+
+        <var_map var="tab2">
+            <style pos="43%" />
+        </var_map>
+
+        <var_map var="tab3">
+            <style pos="57%" />
+        </var_map>
+
+        <var_map var="tab4">
+            <style pos="75%" />
+        </var_map>
+
+        <var_map var="right">
+            <style pos="42em" />
+        </var_map>
+
+        <var_map var="OptDlc"
+                 value="{OptDlc}"
+                 />
+
+        <var_map var="OptMods"
+                 value="{OptMods}"
+                 />
+
+        <map name="OptDlc"
+             cond="HasDlc"
+             >
+            <line id="0"
+                  text="{this:}{DlcInUse}{:this}"
+                  />
+
+                  <var_map var="DlcInUse">
+                <style size="40%" />
+                </var_map>
+        
+                <var_map var="this"
+                    cond="HasMod">
+                <style voffset="0.35em" />
+                </var_map>
+
+        </map>
+
+        <map name="OptMods"
+             cond="HasMod"
+             >
+            <line id="0"
+                  text="{this:}{ModsInUse}{:this}"
+                  />
+
+                  <var_map var="ModsInUse">
+                <style size="40%" />
+                </var_map>
+        
+                <var_map var="this"
+                    cond="HasDlc">
+                <style voffset="-0.35em" />
+                </var_map>
+
+        </map>
+
+        <var_map var="Caption"
+                 value="{Caption}"/>
+
+        <map name="Caption">
+
+            <line id="0"
+                  text="{this:}{OptScenario}{OptAuthor}{:this}"
+                  />
+
+            <var_map var="this"
+            >
+            <style newline="1"
+                           line_height="80%"
+                           size="40%"
+                           voffset="0"
+                           />
+            </var_map>
+
+            <var_map var="OptScenario"
+                     value="{OptScenario}"
+                     />
+
+            <var_map var="OptAuthor"
+                     value="{OptAuthor}"
+                     />
+
+            <map name="OptScenario"
+                 cond="IsScenario"
+                 >
+                <line id="0"
+                      text="  {Scenario}"
+                      />
+
+                <var_map var="Scenario"
+                        value="场景">
+                    <style color="#ff3050" smallcaps="true" size="36%" voffset="0"/>
+                </var_map>
+            </map>
+
+            <map name="OptAuthor"
+                 cond="HasAuthor"
+                 >
+                <line id="0"
+                      text="  {by} {Author}  "
+                      />
+
+                <var_map var="by"
+                         value="作者"
+                         >
+                    <style smallcaps="true" />
+                </var_map>
+            </map>
+        </map>
+
+        <map name="OptDifficulty"
+             cond="HasDifficulty"
+             >
+            <line id="0"
+                  text="{Difficulty}"
+                  />
+        </map>
+
+        <map name="OptPlayerType"
+             cond="HasPlayerType"
+             >
+            <line id="0"
+                  text="{PlayerType}"
+                  />
+        </map>
+
+        <var_map var="OptCommunity"
+                 value="{OptCommunity}"
+                 cond="IsCommunity"
+                 />
+
+        <map name="OptCommunity"
+             
+             >
+            <line id="0"
+                  text="{com}"
+                  />
+
+            <var_map var="com"
+                     value="社区"
+                     >
+                <style size="50%"
+                       smallcaps="true"
+                       />
+            </var_map>
+        </map>
+
+        <map name="OptCleared"
+             cond="IsCleared"
+             >
+            <line id="0"
+                  text=" {Sub:}{cleared}{:Sub}"
+                  />
+
+            <var_map var="cleared"
+                     style="Empty"
+                     value="（已完成）"
+                     />
+
+        </map>
+
+    </map>
+
+    <map name="Scenario_Tooltip_Header"
+        >
+        <line id="0" text="{this:}场景快速开始不是随机生成的。\n{:this}"/>
+
+        <var_map var="this"
+                 >
+                 <style color="#cccccc"
+                        size="90%"
+                        line_height="50%"
+                 />
+         </var_map>
+
+        <var_map var="Scenario"
+                 style="Term_Scenario"
+                 >
+        </var_map>
+    </map>
+
+    <map name="Quickstart_Tooltip_Footer"
+        >
+        <!-- <line id="0" text="\n{this:}Set cleared using [{RightMouse}]{:this}"/> -->
+        <line id="0" text="{this:}\n[{RightMouse}] 标记为已完成{:this}"/>
+
+        <var_map var="this"
+                 >
+                 <style color="#aaaaaa"
+                        size="80%"
+                        smallcaps="true"
+                 />
+         </var_map>
+
+        <var_map var="cleared"
+                 >
+                 <style underline="true"/>
+        </var_map>
+
+        <var_map var="RightMouse"
+        value="右键"
+                 >
+                 <style color="#e8f3fc"/>
+        </var_map>
+    </map>
+    <!-- #endregion -->
+   
+</root>
