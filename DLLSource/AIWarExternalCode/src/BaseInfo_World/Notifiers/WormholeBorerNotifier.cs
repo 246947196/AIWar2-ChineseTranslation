@@ -79,14 +79,14 @@ namespace Arcen.AIW2.External
                     {
                         debugCode = 400;
                         if ( borer.GetShouldBeVisibleBasedOnPlanetIntel() )
-                            tooltipBuffer.Add( "A Mobile Wormhole Borer is on " ).Add( borer.GetPlanetName_Safe(), "a1ffa1" ).Add( " and is en route to " ).Add( startPlanet.Name, "a1ffa1" ).Add( "; it will then bore a wormhole to " ).Add( destPlanet.Name, "a1ffa1" ).Add( ".\n" );
+                            tooltipBuffer.Add( "一个移动虫洞钻机位于 " ).Add( borer.GetPlanetName_Safe(), "a1ffa1" ).Add( "，正在前往 " ).Add( startPlanet.Name, "a1ffa1" ).Add( "；它将在那里钻一个通往 " ).Add( destPlanet.Name, "a1ffa1" ).Add( " 的虫洞。\n" );
                         else
-                            tooltipBuffer.Add( "A Mobile Wormhole Borer is somewhere in the galaxy and is en route to " ).Add( startPlanet.Name, "a1ffa1" ).Add( "; it will then bore a wormhole to " ).Add( destPlanet.Name, "a1ffa1" ).Add( ".\n" );
+                            tooltipBuffer.Add( "一个移动虫洞钻机位于银河系某处，正在前往 " ).Add( startPlanet.Name, "a1ffa1" ).Add( "；它将在那里钻一个通往 " ).Add( destPlanet.Name, "a1ffa1" ).Add( " 的虫洞。\n" );
                     }
                     else
                     {
                         debugCode = 500;
-                        tooltipBuffer.Add( "A Wormhole Borer is on " ).Add( borer.GetPlanetName_Safe(), "a1ffa1" ).Add( " and is actively boring a new wormhole to " ).Add( destPlanet.Name, "a1ffa1" ).Add( ". It will complete in " ).AddHoursAndMinutes( this.GetRemainingBorerTime( Data, borer ), "ffa1a1" ).Add( ".\n" );
+                        tooltipBuffer.Add( "一个虫洞钻机位于 " ).Add( borer.GetPlanetName_Safe(), "a1ffa1" ).Add( "，正在向 " ).Add( destPlanet.Name, "a1ffa1" ).Add( " 钻掘新虫洞。它将在 " ).AddHoursAndMinutes( this.GetRemainingBorerTime( Data, borer ), "ffa1a1" ).Add( " 后完成。\n" );
                     }
                 }
             }
@@ -127,9 +127,9 @@ namespace Arcen.AIW2.External
                     Image.UpdateWith( sprite_Mobile, true, "Human_Fin" );
                 ArcenDoubleCharacterBuffer buffer = SubTexts[0].Text.StartWritingToBuffer();
                 if ( activeBorers )
-                    buffer.Add( "Boring" );
+                    buffer.Add( "钻掘中" );
                 else
-                    buffer.Add( "Mobile" );
+                    buffer.Add( "移动中" );
                 SubTexts[0].Text.FinishWritingToBuffer();
                 debugStage = 20;
                 buffer = SubTexts[1].Text.StartWritingToBuffer();

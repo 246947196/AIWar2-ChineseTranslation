@@ -55,7 +55,7 @@ namespace Arcen.AIW2.External
             {
                 debugCode = 100;
                 string timerColor = ArcenExternalUIUtilities.GetColorForNomadMoveTime( Data.eventTimeRemaining );
-                tooltipBuffer.Add( "The AI's connection to the warp network will break in " ).Add( Data.eventTimeRemaining.ToString(), timerColor ).Add(" as long as you or your allies control ").Add( (GlobalAIWorldBaseInfo.Instance.DevicesToSpawn - 1), "a1a1ff" ).Add(" Showdown Devices").Add("\n");
+                tooltipBuffer.Add( "AI与折跃网络的连接将在 " ).Add( Data.eventTimeRemaining.ToString(), timerColor ).Add(" 后断开，只要你或你的盟友控制 ").Add( (GlobalAIWorldBaseInfo.Instance.DevicesToSpawn - 1), "a1a1ff").Add(" 个决战装置").Add("\n");
                 if ( Data.Int64List.Count == 4 )
                 {
                     int exoTimer = (int)Data.Int64List[0];
@@ -66,13 +66,13 @@ namespace Arcen.AIW2.External
                     int timeTillWormhole = wormholeInvasionTimer - World_AIW2.Instance.GameSecond;
 
                     if ( timeTillExo < 0 )
-                        tooltipBuffer.Add("\tThe next exo will strike soon\n");
+                        tooltipBuffer.Add("\t下一次远征打击即将开始\n");
                     else
-                        tooltipBuffer.Add("\tThe next exo will strike in ").Add( timeTillExo, "a1ffa1" ).Add("\n");
+                        tooltipBuffer.Add("\t下一次远征打击将在 ").Add( timeTillExo, "a1ffa1" ).Add(" 后开始\n");
                     if ( timeTillWormhole < 0 )
-                        tooltipBuffer.Add("\tThe next wormhole invasion will strike soon\n");
+                        tooltipBuffer.Add("\t下一次虫洞入侵即将开始\n");
                     else
-                        tooltipBuffer.Add("\tThe next wormhole invasion will strike in ").Add( timeTillWormhole, "ffa1a1" ).Add("\n");
+                        tooltipBuffer.Add("\t下一次虫洞入侵将在 ").Add( timeTillWormhole, "ffa1a1" ).Add(" 后开始\n");
                 }
                 Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( null, tooltipBuffer.GetStringAndResetForNextUpdate() );
             }
@@ -101,7 +101,7 @@ namespace Arcen.AIW2.External
 
                 debugStage = 3;
                 ArcenDoubleCharacterBuffer buffer = SubTexts[0].Text.StartWritingToBuffer();
-                buffer.Add( "Showdown\n" );
+                buffer.Add( "决战\n" );
                 SubTexts[0].Text.FinishWritingToBuffer();
 
                 debugStage = 6;

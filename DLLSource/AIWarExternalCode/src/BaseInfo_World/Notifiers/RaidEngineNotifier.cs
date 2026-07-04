@@ -56,16 +56,16 @@ namespace Arcen.AIW2.External
 
             var isPermanentlyAlerted = entity.HasStartedDoingPeriodicSpawns && entity.TypeData.PeriodicSpawn_NeverStopOnceTriggered;
             if (isPermanentlyAlerted)
-                tooltipBuffer.Add( "A permanently alerted " );
+                tooltipBuffer.Add( "一个永久警戒的 " );
             else
-                tooltipBuffer.Add( "An alerted " );
+                tooltipBuffer.Add( "一个警戒的 " );
 
-            tooltipBuffer.Add( entity.TypeData.DisplayName, Data.Faction.FactionCenterColor.ColorHexBrighter ).Add( " is on " );
+            tooltipBuffer.Add( entity.TypeData.DisplayName, Data.Faction.FactionCenterColor.ColorHexBrighter ).Add( " 位于 " );
 
             if ( entity.Planet.IntelLevel > PlanetIntelLevel.Unexplored )
                 tooltipBuffer.AddPlanetNameFormated( planet, true );
             else
-                tooltipBuffer.Add( "an unknown planet" );
+                tooltipBuffer.Add( "一个未知星球" );
 
             if (isPermanentlyAlerted)
             {
@@ -73,18 +73,18 @@ namespace Arcen.AIW2.External
             }
             else
             {
-                tooltipBuffer.Add( " responding to " );
+                tooltipBuffer.Add( " 正在响应 " );
 
                 if ( entity.TypeData.PeriodicSpawn_OnlyTriggerOnOccupation )
-                    tooltipBuffer.Add( "enemy occupation. " );
+                    tooltipBuffer.Add( "敌方占领。 " );
                 else
                 {
                     var presenceOnPlanet = World_AIW2.Instance.GetPlanetByIndex( Data.planetIdx );
                     if (presenceOnPlanet == planet)
-                        tooltipBuffer.Add( "enemy presence there. " );
+                        tooltipBuffer.Add( "该处的敌方存在。 " );
                     else
                     {
-                        tooltipBuffer.Add( "enemy presence on " ).AddPlanetNameFormated( presenceOnPlanet, true ).Add( ". " );
+                        tooltipBuffer.Add( "位于 " ).AddPlanetNameFormated( presenceOnPlanet, true ).Add( " 的敌方存在。 " );
                     }
                 }
             }
@@ -92,25 +92,25 @@ namespace Arcen.AIW2.External
             if ( entity.TypeData.PeriodicallySpawnsUnits )
             {
                 entity.TypeData.PeriodicSpawn_EntityTypeDrawingBag.Value.WriteToBuffer( tooltipBuffer, entity.TypeData, false );
-                tooltipBuffer.Add( "</color> belonging to its " ).Add( Extensions.ToString(entity.TypeData.Periodic_SpawnFactionForUnit) ).Add( " faction against " );
+                tooltipBuffer.Add( "</color> 属于其 " ).Add( Extensions.ToString(entity.TypeData.Periodic_SpawnFactionForUnit) ).Add( " 阵营，对抗 " );
             }
             else
             {
-                tooltipBuffer.Add( "It will launch a" );
+                tooltipBuffer.Add( "它将发动一次" );
                 if ( entity.TypeData.PeriodicSpawn_CreatesExoStrike )
                 {
-                    tooltipBuffer.Add( "n exo strike " );
+                    tooltipBuffer.Add( "远征打击 " );
                     if ( entity.TypeData.PeriodicSpawn_CreatesWave )
-                        tooltipBuffer.Add( "and" );
+                        tooltipBuffer.Add( "和" );
                 }
                 if ( entity.TypeData.PeriodicSpawn_CreatesWave )
-                    tooltipBuffer.Add( " wave " );
-                tooltipBuffer.Add( " of <color=#ffdf72>" ).Add( entity.TypeData.PeriodicSpawn_WaveOrExoSizeMultiplier.ReadableString ).Add( "x</color> normal strength at " );
+                    tooltipBuffer.Add( " 波次 " );
+                tooltipBuffer.Add( " 的 <color=#ffdf72>" ).Add( entity.TypeData.PeriodicSpawn_WaveOrExoSizeMultiplier.ReadableString ).Add( "x</color> 正常力量，攻击 " );
             }
             tooltipBuffer.StartColor( Data.targetFaction.FactionCenterColor.TeamColor );
             tooltipBuffer.Add( Data.targetFaction.GetDisplayName() );
             tooltipBuffer.EndColor();
-            tooltipBuffer.Add( " in " ).Add( entity.PeriodicSpawn_TimeUntilNextSpawn, "fdfdfd" ).Add( " seconds." );
+            tooltipBuffer.Add( " 阵营中的 " ).Add( entity.PeriodicSpawn_TimeUntilNextSpawn, "fdfdfd" ).Add( " 秒。" );
             Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( null, tooltipBuffer.GetStringAndResetForNextUpdate() );
             return true;
         }
@@ -141,11 +141,11 @@ namespace Arcen.AIW2.External
                 ArcenDoubleCharacterBuffer buffer = SubTexts[0].Text.StartWritingToBuffer();
                 if ( entity.TypeData.PeriodicallySpawnsEvent )
                 {
-                    buffer.Add( "Engine" );
+                    buffer.Add( "引擎" );
                 }
                 else
                 {
-                    buffer.Add( "Lair" );
+                    buffer.Add( "巢穴" );
                 }
 
                 SubTexts[0].Text.FinishWritingToBuffer();
@@ -157,7 +157,7 @@ namespace Arcen.AIW2.External
                 if ( entity.Planet.IntelLevel > PlanetIntelLevel.Unexplored )
                     buffer.Add( planet.Name );
                 else
-                    buffer.Add( "Unknown" );
+                    buffer.Add( "未知" );
                 debugStage = 12;
                 buffer.Add( "\n" );
                 buffer.Add( entity.PeriodicSpawn_TimeUntilNextSpawn );

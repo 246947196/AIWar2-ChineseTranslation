@@ -107,15 +107,15 @@ namespace Arcen.AIW2.External
                 var status = cust.Status;
                 if (status == CustomSystemStatus.On || status == CustomSystemStatus.OnTill)
                 {
-                    buffer.Add("On", TooltipColors.CustomSystem_Status_On);
+                    buffer.Add("开启", TooltipColors.CustomSystem_Status_On);
                 }
                 else if (status == CustomSystemStatus.Ready)
                 {
-                    buffer.Add("Ready", TooltipColors.CustomSystem_Status_Ready);
+                    buffer.Add("就绪", TooltipColors.CustomSystem_Status_Ready);
                 }
                 else // Cooldown
                 {
-                    buffer.Add("Charging", TooltipColors.CustomSystem_Status_Cooldown);
+                    buffer.Add("充能中", TooltipColors.CustomSystem_Status_Cooldown);
                 }
                 
                 buffer.NewLine();

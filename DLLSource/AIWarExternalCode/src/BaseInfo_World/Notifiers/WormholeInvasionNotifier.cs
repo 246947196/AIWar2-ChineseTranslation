@@ -83,21 +83,21 @@ namespace Arcen.AIW2.External
                 if ( timeTillProjectorAppears > 0  )
                 {
                     debugCode = 500;
-                    tooltipBuffer.Add( "A ").Add("Wormhole Projector", colorString ).Add( " will appear on " ).Add(  planet.Name, colorString).Add(" in " ).AddHoursAndMinutes( timeTillProjectorAppears, "a1a1ff").Add(".\n");
-                    tooltipBuffer.Add( "In ").AddHoursAndMinutes(timeTillProjectorLinks, "ffa1a1").Add(", a wormhole will link ").Add(planet.Name, colorString).Add(" to ").Add(destPlanet.Name, destColorString).Add(".\n");
-                    tooltipBuffer.Add( "In ").AddHoursAndMinutes(timeTillNextWave, "ffa1ff").Add(", an attack wave will spawn at the projector.\n");
+                    tooltipBuffer.Add( "一个 ").Add("虫洞投射器", colorString ).Add( " 将在 " ).Add(  planet.Name, colorString).Add(" 上出现，倒计时 " ).AddHoursAndMinutes( timeTillProjectorAppears, "a1a1ff").Add("。\n");
+                    tooltipBuffer.Add( "在 ").AddHoursAndMinutes(timeTillProjectorLinks, "ffa1a1").Add(" 后，一个虫洞将连接 ").Add(planet.Name, colorString).Add(" 和 ").Add(destPlanet.Name, destColorString).Add("。\n");
+                    tooltipBuffer.Add( "在 ").AddHoursAndMinutes(timeTillNextWave, "ffa1ff").Add(" 后，一波攻击将在投射器处生成。\n");
                 }
                 else if (timeTillProjectorLinks > 0 )
                 {
                     debugCode = 600;
-                    tooltipBuffer.Add( "In ").AddHoursAndMinutes(timeTillProjectorLinks, "ffa1a1").Add(", a wormhole will link ").Add( planet.Name, colorString).Add(" to ").Add(destPlanet.Name, destColorString).Add(", and then some attacks will be launched. \n");
-                    tooltipBuffer.Add( "In ").AddHoursAndMinutes(timeTillNextWave, "ffa1ff").Add(", an attack wave will spawn at the projector.\n");
+                    tooltipBuffer.Add( "在 ").AddHoursAndMinutes(timeTillProjectorLinks, "ffa1a1").Add(" 后，一个虫洞将连接 ").Add( planet.Name, colorString).Add(" 和 ").Add(destPlanet.Name, destColorString).Add("，然后发动一些攻击。\n");
+                    tooltipBuffer.Add( "在 ").AddHoursAndMinutes(timeTillNextWave, "ffa1ff").Add(" 后，一波攻击将在投射器处生成。\n");
                 }
                 else if ( timeTillNextWave > 0 )
                 {
                     debugCode = 700;
-                    tooltipBuffer.Add( "In ").AddHoursAndMinutes(timeTillNextWave, "ffa1a1").Add(", an attack wave will spawn at the projector.\n");
-                    tooltipBuffer.Add("Attack Strength:\n");
+                    tooltipBuffer.Add( "在 ").AddHoursAndMinutes(timeTillNextWave, "ffa1a1").Add(" 后，一波攻击将在投射器处生成。\n");
+                    tooltipBuffer.Add("攻击力量：\n");
                     int strength = 0;
                     foreach ( KeyValuePair<GameEntityTypeData, int> kv in Data.ShipDictionary )
                     {
@@ -107,7 +107,7 @@ namespace Arcen.AIW2.External
                     }
                     if ( strength < 1000 )
                         strength = 1000;
-                    tooltipBuffer.Add("Total Strength: ").Add( (strength/1000).ToString(), "ff0000");
+                    tooltipBuffer.Add("总力量：").Add( (strength/1000).ToString(), "ff0000");
                 }
                 debugCode = 800;
                 Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( null, tooltipBuffer.GetStringAndResetForNextUpdate() );
@@ -135,7 +135,7 @@ namespace Arcen.AIW2.External
 
                 debugStage = 3;
                 ArcenDoubleCharacterBuffer buffer = SubTexts[0].Text.StartWritingToBuffer();
-                buffer.Add( "Wormhole\n" );
+                buffer.Add( "虫洞\n" );
                 SubTexts[0].Text.FinishWritingToBuffer();
 
                 debugStage = 6;

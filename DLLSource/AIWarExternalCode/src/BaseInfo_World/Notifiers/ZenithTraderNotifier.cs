@@ -50,7 +50,7 @@ namespace Arcen.AIW2.External
             colorString = Data.Faction.FactionCenterColor.ColorHexBrighter;
 
             tooltipBuffer.Clear();
-            tooltipBuffer.Add( "The Zenith Trader", colorString ).Add( " is ready to trade on " + planet.Name );
+            tooltipBuffer.Add( "天顶交易者", colorString ).Add( " 已准备好在 " + planet.Name + " 上进行交易" );
             Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( null, tooltipBuffer.GetStringAndResetForNextUpdate() );
             return true;
         }
@@ -77,8 +77,8 @@ namespace Arcen.AIW2.External
 
                 debugStage = 3;
                 ArcenDoubleCharacterBuffer buffer = SubTexts[0].Text.StartWritingToBuffer();
-                buffer.Add( "Zenith\n" );
-                buffer.Add( "Trader\n" );
+                buffer.Add( "天顶\n" );
+                buffer.Add( "交易者\n" );
                 SubTexts[0].Text.FinishWritingToBuffer();
 
                 debugStage = 6;

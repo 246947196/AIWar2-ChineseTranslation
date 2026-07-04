@@ -42,10 +42,10 @@ namespace Arcen.AIW2.External
 
             if ( Data.eventTimeRemaining > 0 )
             {
-                tooltipBuffer.Add( "Risk Analyzers", colorString ).Add( " will fire in  " ).AddHoursAndMinutes( Data.eventTimeRemaining ).Add( ". The Net AIP change will be " + Data.NetAIPChange );
+                tooltipBuffer.Add( "风险分析器", colorString ).Add( " 将在 " ).AddHoursAndMinutes( Data.eventTimeRemaining ).Add( " 后触发。净AIP变化将为 " + Data.NetAIPChange );
             }
             else
-                tooltipBuffer.Add( "Risk Analyzers", colorString ).Add( " have an invalid time until firing. The Net AIP change may also be wrong, but says it will be" + Data.NetAIPChange );
+                tooltipBuffer.Add( "风险分析器", colorString ).Add( " 的触发时间无效。净AIP变化可能也不正确，但显示为 " + Data.NetAIPChange );
             Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( null, tooltipBuffer.GetStringAndResetForNextUpdate() );
             return true;
         }
@@ -67,7 +67,7 @@ namespace Arcen.AIW2.External
 
                 debugStage = 3;
                 ArcenDoubleCharacterBuffer buffer = SubTexts[0].Text.StartWritingToBuffer();
-                buffer.Add( "Risk Analyzers\n\n" );
+                buffer.Add( "风险分析器\n\n" );
                 SubTexts[0].Text.FinishWritingToBuffer();
                 debugStage = 6;
                 buffer = SubTexts[1].Text.StartWritingToBuffer();

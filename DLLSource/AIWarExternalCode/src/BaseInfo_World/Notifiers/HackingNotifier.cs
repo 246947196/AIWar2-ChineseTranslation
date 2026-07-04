@@ -57,7 +57,7 @@ namespace Arcen.AIW2.External
                 if ( !hackType.CannotBeCanceled )
                 {
                     LazyLoadSquadWrapper hacker = LazyLoadSquadWrapper.Create( entity );
-                    ModalPopupData.CreateAndLogYesNoStyle( delegate { onCancel( hacker ); }, null, "Cancel Hack", "Are you sure you want to cancel the current hack? Cancelling hacks still costs the full Hacking Points.", "Cancel Hack", "No, Continue Hack" );
+                    ModalPopupData.CreateAndLogYesNoStyle( delegate { onCancel( hacker ); }, null, "取消入侵", "你确定要取消当前的入侵吗？取消入侵仍需消耗全部入侵点数。", "取消入侵", "不，继续入侵" );
 
                     World.Instance.IsPaused = true;
                 }
@@ -105,7 +105,7 @@ namespace Arcen.AIW2.External
                     World_AIW2.Instance.FocusedPlanetForMapDarkening = planet;
 
                     debugStage = 500;
-                    tooltipBuffer.Add( "Ongoing " + hackType.DisplayName, colorString );
+                    tooltipBuffer.Add( "正在进行 " + hackType.DisplayName, colorString );
                     if ( hackType.RelatedStringIsAShipType && hackEvent.RelatedStringOrNull != null && hackEvent.RelatedStringOrNull.Length > 0 )
                     {
                         debugStage = 600;
@@ -114,11 +114,11 @@ namespace Arcen.AIW2.External
                         tooltipBuffer.Add( " (" ).Add( relatedTypeData == null ? "null" : relatedTypeData.DisplayName ).Add( ")" );
                     }
                     debugStage = 800;
-                    tooltipBuffer.Add( " hack on " ).Add( entity.GetPlanetName_Safe() ).Add( ". This hack has been active for " ).AddHoursAndMinutes( entity.ActiveHack_DurationThusFar ).Add( ".\n\nThe hacking flagship is not allowed to leave this planet while the hack is in progress.\nClicking on this notification allows you to cancel this hack.\n\n" );
+                    tooltipBuffer.Add( " 对 " ).Add( entity.GetPlanetName_Safe() ).Add( " 的入侵。此入侵已持续 " ).AddHoursAndMinutes( entity.ActiveHack_DurationThusFar ).Add( "。\n\n入侵期间，入侵旗舰不得离开此星球。\n点击此通知可以取消入侵。\n\n" );
 
                     debugStage = 900;
                     PlanetFaction faction;
-                    tooltipBuffer.Add( "<b>Hostile forces</b>\n" );
+                    tooltipBuffer.Add( "<b>敌方部队</b>\n" );
                     for ( int i = 0; i < planet.Factions.Count; i++ )
                     {
                         debugStage = 1000;
@@ -130,7 +130,7 @@ namespace Arcen.AIW2.External
                         ArcenExternalUIUtilities.WriteSideContents( faction, tooltipBuffer, true );
                     }
                     debugStage = 2000;
-                    tooltipBuffer.Add( "\n<b>Friendly forces</b>\n" );
+                    tooltipBuffer.Add( "\n<b>友方部队</b>\n" );
                     for ( int i = 0; i < planet.Factions.Count; i++ )
                     {
                         debugStage = 2100;
@@ -184,7 +184,7 @@ namespace Arcen.AIW2.External
 
                 debugStage = 3;
                 ArcenDoubleCharacterBuffer buffer = SubTexts[0].Text.StartWritingToBuffer();
-                buffer.Add( "Hack" );
+                buffer.Add( "入侵" );
                 SubTexts[0].Text.FinishWritingToBuffer();
                 debugStage = 4;
 

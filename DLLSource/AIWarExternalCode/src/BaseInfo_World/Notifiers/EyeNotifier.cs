@@ -51,7 +51,7 @@ namespace Arcen.AIW2.External
             colorString = Data.Faction.FactionCenterColor.ColorHexBrighter;
 
             tooltipBuffer.Clear();
-            tooltipBuffer.Add( "An Alerted Eye", colorString ).Add( " is on " + planet.Name + ". This is an extremely powerful weapon that only activates when the AI's enemies have more strength than the AI's forces on the planet. " );
+            tooltipBuffer.Add( "一个警戒之眼", colorString ).Add( " 位于 " + planet.Name + "。这是一个极其强大的武器，只有当AI敌人的力量超过AI在此星球上的部队时才会激活。" );
             Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( null, tooltipBuffer.GetStringAndResetForNextUpdate() );
             return true;
         }
@@ -81,8 +81,8 @@ namespace Arcen.AIW2.External
                 SubTexts[0].Text.FinishWritingToBuffer();
 
                 buffer = SubTexts[1].Text.StartWritingToBuffer();
-                buffer.Add( "Active\n" );
-                buffer.Add( "Eye\n\n" );
+                buffer.Add( "激活\n" );
+                buffer.Add( "之眼\n\n" );
 
                 debugStage = 6;
 

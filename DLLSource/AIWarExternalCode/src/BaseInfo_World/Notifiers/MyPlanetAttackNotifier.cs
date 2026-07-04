@@ -71,14 +71,14 @@ namespace Arcen.AIW2.External
 
             tooltipBuffer.Clear();
             if ( Data.doHumansHaveADeadCommandStationHere )
-                tooltipBuffer.Add( planet.Name ).Add( " has been lost!  Either rebuild the command station there, or scrap it." );
+                tooltipBuffer.Add( planet.Name ).Add( " 已经失守！请在那里重建指挥站，或者废弃它。" );
             else if ( Data.doHumansHaveACrippledCityHere )
-                tooltipBuffer.Add( planet.Name ).Add( " has been lost!  Repair the city there." );
+                tooltipBuffer.Add( planet.Name ).Add( " 已经失守！请修复那里的城市。" );
             else
-                tooltipBuffer.Add( planet.Name ).Add( " is under attack!" );
+                tooltipBuffer.Add( planet.Name ).Add( " 正在遭受攻击！" );
 
             #region Attackers
-            tooltipBuffer.Add( "\n\n<b>Attackers</b>\n" );
+            tooltipBuffer.Add( "\n\n<b>攻击者</b>\n" );
             PlanetFaction pFac;
             for ( int i = 0; i < planet.Factions.Count; i++ )
             {
@@ -95,7 +95,7 @@ namespace Arcen.AIW2.External
             #endregion
 
             #region Defenders
-            tooltipBuffer.Add( "\n<b>Defenders</b>\n" );
+            tooltipBuffer.Add( "\n<b>防御者</b>\n" );
             for ( int i = 0; i < planet.Factions.Count; i++ )
             {
                 pFac = planet.Factions[i];
@@ -109,7 +109,7 @@ namespace Arcen.AIW2.External
             #endregion
 
             #region Critical Infrastructure
-            tooltipBuffer.Add( "\n<b>Critical Infrastructure</b>\n" );
+            tooltipBuffer.Add( "\n<b>关键基础设施</b>\n" );
 
             Dictionary<GameEntityTypeData, int> infrastructure = GameEntityTypeData.GetTemporaryGameEntityTypeDataIntDict( "PrivateMyPlanetAttackNotifier-MouseoverHandler-infrastructure", 10f );
             if ( infrastructure == null ) //blocked for teardown/shutdown; bail
@@ -134,7 +134,7 @@ namespace Arcen.AIW2.External
                 }
             }
             if ( infrastructure.Count == 0 )
-                tooltipBuffer.Add( "\tNone\n" );
+                tooltipBuffer.Add( "\t无\n" );
             bool isFirst = true;
             foreach ( KeyValuePair<GameEntityTypeData, int> kv in infrastructure )
             {
@@ -160,7 +160,7 @@ namespace Arcen.AIW2.External
                     Dictionary<GameEntityTypeData, int> harvest = localBase.BattleHarvest[planet];
                     if ( harvest != null && harvest.Count > 0 )
                     {
-                        tooltipBuffer.Add( "\n\n<b>" ).Add( "Necromancer Ships Raised During This Battle:", "ffa1a1" ).Add( "</b>\n" );
+                        tooltipBuffer.Add( "\n\n<b>" ).Add( "死灵法师在本场战斗中召唤的舰船：", "ffa1a1" ).Add( "</b>\n" );
                         int size = 100;
                         if ( harvest.Count > 20 )
                             size = 50;
@@ -176,21 +176,21 @@ namespace Arcen.AIW2.External
                     }
                     if ( planet.NecromancerScienceEarned > 1 )
                     {
-                        tooltipBuffer.Add( "Necromancer Science earned this battle: " );
+                        tooltipBuffer.Add( "本场战斗获得的死灵法师科技：" );
                         tooltipBuffer.Add( planet.NecromancerScienceEarned ).Add(" ");
                         tooltipBuffer.Add( ArcenExternalUIUtilities.ScienceTextColorAndIcon );
                         tooltipBuffer.Add( "\n" );
                     }
                     if ( planet.NecromancerHackingEarned > 1 )
                     {
-                        tooltipBuffer.Add( "Necromancer Hacking earned this battle: " );
+                        tooltipBuffer.Add( "本场战斗获得的死灵法师入侵点数：" );
                         tooltipBuffer.Add( planet.NecromancerHackingEarned ).Add(" ");
                         tooltipBuffer.Add( ArcenExternalUIUtilities.HackingTextColorAndIcon );
                         tooltipBuffer.Add( "\n" );
                     }
                     if ( planet.NecromancerEssenceEarned > 1 )
                     {
-                        tooltipBuffer.Add( "Necromancer Essence earned this battle: " );
+                        tooltipBuffer.Add( "本场战斗获得的死灵法师精华：" );
                         tooltipBuffer.Add( planet.NecromancerEssenceEarned ).Add(" ");
                         Faction _localFac = World_AIW2.Instance.GetLocalPlayerFactionOrNull();
                         tooltipBuffer.Add( _localFac != null && _localFac.Resource1TextColorAndIcon.Length > 0 ? _localFac.Resource1TextColorAndIcon : World_AIW2.Instance.Resource1TextColorAndIcon );
@@ -203,11 +203,11 @@ namespace Arcen.AIW2.External
             if ( planet.FriendlyMetalLost > 1000 && planet.HostileMetalLost > 1000 )
             {
                 tooltipBuffer.Add( "\n\n" );
-                tooltipBuffer.Add( "Friendly metal lost this battle: " );
+                tooltipBuffer.Add( "本场战斗损失的友方金属：" );
                 ArcenExternalUIUtilities.WriteRoundedNumberWithSuffix( tooltipBuffer, (int)planet.FriendlyMetalLost, true, false );
                 tooltipBuffer.Add( ArcenExternalUIUtilities.MetalTextColorAndIcon );
                 tooltipBuffer.Add( "\n" );
-                tooltipBuffer.Add( "Hostile metal lost this battle: " );
+                tooltipBuffer.Add( "本场战斗损失的敌方金属：" );
                 ArcenExternalUIUtilities.WriteRoundedNumberWithSuffix( tooltipBuffer, (int)planet.HostileMetalLost, true, false );
                 tooltipBuffer.Add( ArcenExternalUIUtilities.MetalTextColorAndIcon );
                 tooltipBuffer.Add( "\n" );

@@ -51,9 +51,9 @@ namespace Arcen.AIW2.External
             string colorString = string.Empty;
             colorString = Data.Faction.FactionCenterColor.ColorHexBrighter;
             tooltipBuffer.Add( "<color=#" ).Add( colorString ).Add( ">" );
-            tooltipBuffer.Add( "Devourer Golem" );
+            tooltipBuffer.Add( "吞噬者魔像" );
             tooltipBuffer.Add( "</color>" );
-            tooltipBuffer.Add( " is on " );
+            tooltipBuffer.Add( " 位于 " );
             tooltipBuffer.Add( planet.Name );
             //Perhaps we should show the next planet here as a little QoL
             Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( null, tooltipBuffer.GetStringAndResetForNextUpdate() );
@@ -87,8 +87,8 @@ namespace Arcen.AIW2.External
 
                 debugStage = 6;
                 buffer = SubTexts[1].Text.StartWritingToBuffer();
-                buffer.Add( "DEVOURER\n" );
-                buffer.Add( "GOLEM\n" );
+                buffer.Add( "吞噬者\n" );
+                buffer.Add( "魔像\n" );
 
                 debugStage = 9;
 

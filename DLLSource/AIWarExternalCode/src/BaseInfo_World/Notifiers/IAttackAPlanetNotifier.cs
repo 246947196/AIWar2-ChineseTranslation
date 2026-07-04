@@ -73,18 +73,18 @@ namespace Arcen.AIW2.External
                 debugStage = 4000;
                 tooltipBuffer.Clear();
                 if ( Data.isNeutralWorld )
-                    tooltipBuffer.Add( "We are fighting over the neutral world " ).Add( planet.Name );
+                    tooltipBuffer.Add( "我们正在争夺中立星球 " ).Add( planet.Name );
                 else
-                    tooltipBuffer.Add( "We are attacking the world " ).Add( planet.Name );
+                    tooltipBuffer.Add( "我们正在攻击星球 " ).Add( planet.Name );
                 debugStage = 5000;
                 if ( controllingFactionOrNull != null )
-                    tooltipBuffer.Add( ", which is controlled by " ).Add( controllingFactionOrNull.GetDisplayName() );
+                    tooltipBuffer.Add( "，由 " ).Add( controllingFactionOrNull.GetDisplayName() ).Add( " 控制" );
 
                 PlanetFaction faction;
 
                 debugStage = 6000;
                 #region Allied Attackers
-                tooltipBuffer.Add( "\n<b>Allied Attackers</b>\n" );
+                tooltipBuffer.Add( "\n<b>盟军攻击者</b>\n" );
                 for ( int i = 0; i < planet.Factions.Count; i++ )
                 {
                     debugStage = 6100;
@@ -99,7 +99,7 @@ namespace Arcen.AIW2.External
 
                 debugStage = 7000;
                 #region Enemy Defenders
-                tooltipBuffer.Add( "\n\n<b>Enemy Defenders</b>\n" );
+                tooltipBuffer.Add( "\n\n<b>敌方防御者</b>\n" );
                 for ( int i = 0; i < planet.Factions.Count; i++ )
                 {
                     debugStage = 7100;
@@ -114,7 +114,7 @@ namespace Arcen.AIW2.External
 
                 debugStage = 8000;
                 #region Capturables
-                tooltipBuffer.Add( "\n<b>Capturables</b>\n" );
+                tooltipBuffer.Add( "\n<b>可占领目标</b>\n" );
 
                 Dictionary<GameEntityTypeData, int> capturables = GameEntityTypeData.GetTemporaryGameEntityTypeDataIntDict( "IAttackAPlanetNotifier-MouseoverHandler-capturables", 10f );
                 if ( capturables == null ) //blocked for teardown/shutdown; bail
@@ -149,7 +149,7 @@ namespace Arcen.AIW2.External
                 }
                 debugStage = 9100;
                 if ( capturables.Count == 0 )
-                    tooltipBuffer.Add( "\tNone\n" );
+                    tooltipBuffer.Add( "\t无\n" );
                 debugStage = 9200;
                 bool isFirst = true;
                 foreach ( KeyValuePair<GameEntityTypeData, int> kv in capturables )
@@ -188,7 +188,7 @@ namespace Arcen.AIW2.External
                         if ( harvest.Count > 0 )
                         {
                             debugStage = 11800;
-                            tooltipBuffer.Add( "\n\n<b>" ).Add( "Necromancer Ships Raised During This Battle:", "ffa1a1" ).Add( "</b>\n" );
+                            tooltipBuffer.Add( "\n\n<b>" ).Add( "死灵法师在本场战斗中召唤的舰船：", "ffa1a1" ).Add( "</b>\n" );
                             int size = 100;
                             if ( harvest.Count > 20 )
                                 size = 50;
@@ -206,21 +206,21 @@ namespace Arcen.AIW2.External
                         }
                         if ( planet.NecromancerScienceEarned > 1 )
                         {
-                            tooltipBuffer.Add( "Necromancer Science earned this battle: " );
+                            tooltipBuffer.Add( "本场战斗获得的死灵法师科技：" );
                             tooltipBuffer.Add( planet.NecromancerScienceEarned ).Add(" ");
                             tooltipBuffer.Add( ArcenExternalUIUtilities.ScienceTextColorAndIcon );
                             tooltipBuffer.Add( "\n" );
                         }
                         if ( planet.NecromancerHackingEarned > 1 )
                         {
-                            tooltipBuffer.Add( "Necromancer Hacking earned this battle: " );
+                            tooltipBuffer.Add( "本场战斗获得的死灵法师入侵点数：" );
                             tooltipBuffer.Add( planet.NecromancerHackingEarned ).Add(" ");
                             tooltipBuffer.Add( ArcenExternalUIUtilities.HackingTextColorAndIcon );
                             tooltipBuffer.Add( "\n" );
                         }
                         if ( planet.NecromancerEssenceEarned > 1 )
                         {
-                            tooltipBuffer.Add( "Necromancer Essence earned this battle: " );
+                            tooltipBuffer.Add( "本场战斗获得的死灵法师精华：" );
                             tooltipBuffer.Add( planet.NecromancerEssenceEarned ).Add(" ");
                             Faction _localFac = World_AIW2.Instance.GetLocalPlayerFactionOrNull();
                             tooltipBuffer.Add( _localFac != null && _localFac.Resource1TextColorAndIcon.Length > 0 ? _localFac.Resource1TextColorAndIcon : World_AIW2.Instance.Resource1TextColorAndIcon );
@@ -235,12 +235,12 @@ namespace Arcen.AIW2.External
                 {
                     debugStage = 13200;
                     tooltipBuffer.Add( "\n\n" );
-                    tooltipBuffer.Add( "Friendly metal lost this battle: " );
+                    tooltipBuffer.Add( "本场战斗损失的友方金属：" );
                     ArcenExternalUIUtilities.WriteRoundedNumberWithSuffix( tooltipBuffer, (int)planet.FriendlyMetalLost, true, false );
                     debugStage = 13300;
                     tooltipBuffer.Add( ArcenExternalUIUtilities.MetalTextColorAndIcon );
                     tooltipBuffer.Add( "\n" );
-                    tooltipBuffer.Add( "Hostile metal lost this battle: " );
+                    tooltipBuffer.Add( "本场战斗损失的敌方金属：" );
                     ArcenExternalUIUtilities.WriteRoundedNumberWithSuffix( tooltipBuffer, (int)planet.HostileMetalLost, true, false );
                     tooltipBuffer.Add( ArcenExternalUIUtilities.MetalTextColorAndIcon );
                     tooltipBuffer.Add( "\n" );

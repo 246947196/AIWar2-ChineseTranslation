@@ -43,16 +43,16 @@ namespace Arcen.AIW2.External
 
                 if ( Data.Faction.GetIsFriendlyToLocalFaction() )
                 {
-                    tooltipBuffer.Add( "Your allied Scourge are converting a Subjugator into a Nemesis in the galaxy!\n" );
+                    tooltipBuffer.Add( "你盟友的天灾正在将一个征服者转化为复仇者！\n" );
                 }
                 else
-                    tooltipBuffer.Add( "The Scourge are spawning a converting a Subjugator into a Nemesis in the galaxy! You should find it and kill it.\n\nYou can prevent a Nemesis from spawning in the future by killing enough Mark 7 Scourge Spawners.\n" );
-                tooltipBuffer.Add( "The summoning will be finished in ").AddHoursAndMinutes(Countdown).Add( "." );
+                    tooltipBuffer.Add( "天灾正在将一个征服者转化为复仇者！你应该找到并摧毁它。\n\n通过消灭足够的7级天灾生成器，你可以防止复仇者在未来生成。\n" );
+                tooltipBuffer.Add( "召唤将在 ").AddHoursAndMinutes(Countdown).Add( " 后完成。" );
             }
             else
             {
                 //fallback case where we don't have the data so we don't know if it's allied or hostile
-                tooltipBuffer.Add( "The Scourge are spawning a Nemesis in the galaxy!\n" );
+                tooltipBuffer.Add( "天灾正在银河系中生成一个复仇者！\n" );
             }
 
             Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( null, tooltipBuffer.GetStringAndResetForNextUpdate() );
@@ -78,7 +78,7 @@ namespace Arcen.AIW2.External
                 debugStage = 10;
                 Image.UpdateWith( sprite_Nemesis, true, "Nemesis" );
                 ArcenDoubleCharacterBuffer buffer = SubTexts[0].Text.StartWritingToBuffer();
-                buffer.Add( "Nemesis" );
+                buffer.Add( "复仇者" );
                 SubTexts[0].Text.FinishWritingToBuffer();
 
                 buffer = SubTexts[1].Text.StartWritingToBuffer();

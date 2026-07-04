@@ -41,7 +41,7 @@ namespace Arcen.AIW2.External
         //so I'm going to call this ok.
         public override bool MouseoverHandler( NotifierFillData Data )
         {
-            tooltipBuffer.Add( Data.ObjectList.Count ).Add( " of your units are modular and have unspent module points, making them weaker than you probably intend.  Click here to see the first in the list, and then after resolving that one, click again to see the next, etc." );
+            tooltipBuffer.Add( Data.ObjectList.Count ).Add( " 个你的单位是模块化的且有未使用的模块点数，这使它们比你预期的要弱。点击此处查看列表中的第一个，解决后再点击查看下一个，依此类推。" );
             ArcenExternalUIUtilities.ShowTooltipWide( tooltipBuffer.GetStringAndResetForNextUpdate() );
             return true;
         }
@@ -65,8 +65,8 @@ namespace Arcen.AIW2.External
                 debugStage = 10;
                 Image.UpdateWith( sprite_UnspentModulePoints, true, "UnspentModulePoints" );
                 ArcenDoubleCharacterBuffer buffer = SubTexts[0].Text.StartWritingToBuffer();
-                buffer.Add( "UNSPENT\n" );
-                buffer.Add( "MODULE" );
+                buffer.Add( "未使用\n" );
+                buffer.Add( "模块" );
                 SubTexts[0].Text.FinishWritingToBuffer();
 
                 Faction fac = Data.Faction;

@@ -57,7 +57,7 @@ namespace Arcen.AIW2.External
                 colorString = Data.Faction.FactionCenterColor.ColorHexBrighter;
 
             tooltipBuffer.Clear();
-            tooltipBuffer.Add( "There are " ).Add( Data.numEntitiesAttacking ).Add( " enraged Macrophages", colorString ).Add( " near your home planet." );
+            tooltipBuffer.Add( "有 " ).Add( Data.numEntitiesAttacking ).Add( " 只愤怒的巨噬细胞", colorString ).Add( " 在你的母星附近。" );
             Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( null, tooltipBuffer.GetStringAndResetForNextUpdate() );
             return true;
         }
@@ -79,7 +79,7 @@ namespace Arcen.AIW2.External
 
                 debugStage = 3;
                 ArcenDoubleCharacterBuffer buffer = SubTexts[0].Text.StartWritingToBuffer();
-                buffer.Add( "Macrophage\n\n" );
+                buffer.Add( "巨噬细胞\n\n" );
                 SubTexts[0].Text.FinishWritingToBuffer();
                 debugStage = 6;
                 buffer = SubTexts[1].Text.StartWritingToBuffer();

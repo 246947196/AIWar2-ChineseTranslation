@@ -51,14 +51,14 @@ namespace Arcen.AIW2.External
             tooltipBuffer.Clear();
             if ( Data == null || Data.PlanetList.Count == 0 )
                 return true;
-            tooltipBuffer.Add( "There have been " ).Add( Data.PlanetList.Count, "a1a1ff" ).Add( " planets pinged in the last few minutes:\n" );
+            tooltipBuffer.Add( "在过去几分钟内有 " ).Add( Data.PlanetList.Count, "a1a1ff" ).Add( " 个星球被标记：\n" );
             for ( int i = 0; i < Data.PlanetList.Count; i++ )
             {
                 Planet planet = Data.PlanetList[i];
                 if ( planet == null )
                     continue;
                 int timeSincePing = World_AIW2.Instance.GameSecond - planet.GameSecondLastPinged;
-                tooltipBuffer.Add("\t").Add( Data.PlanetList[i].Name, "a1ffa1" ).Add(" was last pinged ").Add( timeSincePing, "ffa1a1" ).Add(" seconds ago.\n");
+                tooltipBuffer.Add("\t").Add( Data.PlanetList[i].Name, "a1ffa1" ).Add(" 上次被标记于 ").Add( timeSincePing, "ffa1a1" ).Add(" 秒前。\n");
             }
 
             Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( null, tooltipBuffer.GetStringAndResetForNextUpdate() );
@@ -84,7 +84,7 @@ namespace Arcen.AIW2.External
                 debugStage = 10;
                 Image.UpdateWith( sprite_Ping, true, "Ping" );
                 ArcenDoubleCharacterBuffer buffer = SubTexts[0].Text.StartWritingToBuffer();
-                buffer.Add( "Pings" );
+                buffer.Add( "标记" );
                 SubTexts[0].Text.FinishWritingToBuffer();
 
                 buffer = SubTexts[1].Text.StartWritingToBuffer();

@@ -46,7 +46,7 @@ namespace Arcen.AIW2.External
         public override bool MouseoverHandler( NotifierFillData Data )
         {
             tooltipBuffer.Clear();
-            tooltipBuffer.Add( "There are Nomad Planets that will move soon:\n\n" );
+            tooltipBuffer.Add( "有游牧星球即将移动：\n\n" );
             bool isFirst = true;
             for ( int i = 0; i < Data.PlanetList.Count; i++ )
             {
@@ -61,12 +61,12 @@ namespace Arcen.AIW2.External
                 int timeTillNextMove = planet.TimeForNextMove - World_AIW2.Instance.GameSecond;
                 string moveTimerColor = ArcenExternalUIUtilities.GetColorForNomadMoveTime( timeTillNextMove ); //moveTimerColor gets more red the closer the planet is to moving
                 Faction controller = planet.GetControllingOrInfluencingFaction();
-                tooltipBuffer.Add( "\tPlanet " ).Add( planet.Name, controller.FactionCenterColor.ColorHexBrighter ).Add( " will move in " ).AddHoursAndMinutes( timeTillNextMove, moveTimerColor ).Add( ". " );
+                tooltipBuffer.Add( "\t星球 " ).Add( planet.Name, controller.FactionCenterColor.ColorHexBrighter ).Add( " 将在 " ).AddHoursAndMinutes( timeTillNextMove, moveTimerColor ).Add( " 后移动。" );
                 tooltipBuffer.Add( "\n" );
                 int maxPlanets = 18;
                 if ( i > maxPlanets && Data.PlanetList.Count > maxPlanets + 2 )
                 {
-                    tooltipBuffer.Add( "There are " + (Data.PlanetList.Count - i) + " additional planets that will move soon.\n" );
+                    tooltipBuffer.Add( "还有 " + (Data.PlanetList.Count - i) + " 个星球即将移动。\n" );
                     break;
                 }
             }
@@ -102,7 +102,7 @@ namespace Arcen.AIW2.External
                 debugStage = 30;
                 if ( firstPlanet == null )
                 {
-                    buffer.Add("Nomads");
+                    buffer.Add("游牧者");
                     SubTexts[0].Text.FinishWritingToBuffer();
                     return true;
                 }
@@ -110,7 +110,7 @@ namespace Arcen.AIW2.External
                 if ( Data.PlanetList.Count == 1 )
                     buffer.Add( firstPlanet.Name );
                 else 
-                    buffer.Add( Data.PlanetList.Count ).Add( " Nomads" );
+                    buffer.Add( Data.PlanetList.Count ).Add( " 个游牧者" );
                 debugStage = 50;
                 SubTexts[0].Text.FinishWritingToBuffer();
 

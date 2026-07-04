@@ -56,7 +56,7 @@ namespace Arcen.AIW2.External
             {
                 InstigatorPerUnitBaseInfo localPerUnitData = entity.TryGetExternalBaseInfoAs<InstigatorPerUnitBaseInfo>();
                 World_AIW2.Instance.FocusedPlanetForMapDarkening = planet;
-                tooltipBuffer.Add( "There is an " ).Add( "Instigator base", colorString ).Add( " on " + entity.GetPlanetName_Safe() + ". You want to kill it quickly.\n" );
+                tooltipBuffer.Add( "在 " ).Add( "煽动者基地", colorString ).Add( " 位于 " + entity.GetPlanetName_Safe() + "。你需要尽快摧毁它。\n" );
                 if ( localPerUnitData != null )
                 {
                     if ( localPerUnitData.InstigatorEffectIndex != -1 )
@@ -74,7 +74,7 @@ namespace Arcen.AIW2.External
                     }
 
                     if ( localPerUnitData.NumTimesEffectHappened > 0 )
-                        tooltipBuffer.Add( "\nThis base has had its ability trigger <color=#cfd988>" + localPerUnitData.NumTimesEffectHappened + "</color> times." );
+                        tooltipBuffer.Add( "\n此基地的能力已触发 <color=#cfd988>" + localPerUnitData.NumTimesEffectHappened + "</color> 次。" );
                     if ( GameSettings.Current.GetBoolBySetting("Debug_Tooltip") )
                         tooltipBuffer.Add("Time for next effect: " + localPerUnitData.TimeForNextEffect ).Add("\n");
                 }
@@ -84,7 +84,7 @@ namespace Arcen.AIW2.External
                 //hover all the unexplored ones
                 Planet.SetCurrentlyAllUnexploredPlanetsHoveredOver();
 
-                tooltipBuffer.Add( "There is an " ).Add( "Instigator base", colorString ).Add( " somewhere in the galaxy. You will want to scout for its location so you can kill it" );
+                tooltipBuffer.Add( "在银河系某处有一个 " ).Add( "煽动者基地", colorString ).Add( "。你需要侦察它的位置以便摧毁它" );
             }
             Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( null, tooltipBuffer.GetStringAndResetForNextUpdate() );
             return true;
@@ -116,7 +116,7 @@ namespace Arcen.AIW2.External
 
                 debugStage = 3;
                 ArcenDoubleCharacterBuffer buffer = SubTexts[0].Text.StartWritingToBuffer();
-                buffer.Add( "Instigator\n\n" );
+                buffer.Add( "煽动者\n\n" );
                 SubTexts[0].Text.FinishWritingToBuffer();
 
                 debugStage = 6;

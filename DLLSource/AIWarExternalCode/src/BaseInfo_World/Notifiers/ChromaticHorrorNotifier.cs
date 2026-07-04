@@ -51,11 +51,11 @@ namespace Arcen.AIW2.External
             string colorString = string.Empty;
             colorString = Data.Faction.FactionCenterColor.ColorHexBrighter;
             tooltipBuffer.Add( "<color=#" ).Add( colorString ).Add( ">" );
-            tooltipBuffer.Add( "Chromatic Horror" );
+            tooltipBuffer.Add( "色域恐怖" );
             tooltipBuffer.Add( "</color>" );
-            tooltipBuffer.Add( " is on " );
+            tooltipBuffer.Add( " 位于 " );
             tooltipBuffer.Add( planet.Name );
-            tooltipBuffer.Add( ".  Things are likely to be scattered all over in its wake." );
+            tooltipBuffer.Add( "。它所过之处，东西很可能散落一地。" );
             Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( null, tooltipBuffer.GetStringAndResetForNextUpdate() );
             return true;
         }
@@ -87,8 +87,8 @@ namespace Arcen.AIW2.External
 
                 debugStage = 6;
                 buffer = SubTexts[1].Text.StartWritingToBuffer();
-                buffer.Add( "CHROMA\n" );
-                buffer.Add( "HORROR\n" );
+                buffer.Add( "色域\n" );
+                buffer.Add( "恐怖\n" );
 
                 debugStage = 9;
 

@@ -56,18 +56,18 @@ namespace Arcen.AIW2.External
             if ( entity.TypeData.GetHasTag( "WarpingInDysonAntagonizer" ) )
             {
                 if ( entity.GetShouldBeVisibleBasedOnPlanetIntel() )
-                    tooltipBuffer.Add( "A Dyson Antagonizer", colorString ).Add( " is warping in on " + planet.Name + ". " + entity.SecondsTillTransformation + " seconds until the Dyson Antagonizer becomes active.\n" );
+                    tooltipBuffer.Add( "一个戴森球挑衅者", colorString ).Add( " 正在 " + planet.Name + " 折跃进入。" + entity.SecondsTillTransformation + " 秒后戴森球挑衅者将被激活。\n" );
                 else
-                    tooltipBuffer.Add( "A Dyson Antagonizer", colorString ).Add( " is warping in somewhere in the galaxy. " + entity.SecondsTillTransformation + " seconds until the Dyson Antagonizer becomes active.\n" );
+                    tooltipBuffer.Add( "一个戴森球挑衅者", colorString ).Add( " 正在银河系某处折跃进入。" + entity.SecondsTillTransformation + " 秒后戴森球挑衅者将被激活。\n" );
             }
             else
             {
                 if ( entity.GetShouldBeVisibleBasedOnPlanetIntel() )
-                    tooltipBuffer.Add( "A Dyson Antagonizer", colorString ).Add( " is on " + planet.Name + ". " );
+                    tooltipBuffer.Add( "一个戴森球挑衅者", colorString ).Add( " 位于 " + planet.Name + "。" );
                 else
-                    tooltipBuffer.Add( "A Dyson Antagonizer", colorString ).Add( " is somewhere in the galaxy. " );
+                    tooltipBuffer.Add( "一个戴森球挑衅者", colorString ).Add( " 位于银河系某处。" );
             }
-            tooltipBuffer.Add( "As long as any active Dyson Antagonizer exists, all Dyson Spheres will focus their efforts on killing you" );
+            tooltipBuffer.Add( "只要存在任何活跃的戴森球挑衅者，所有戴森球都将集中力量攻击你" );
             Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( null, tooltipBuffer.GetStringAndResetForNextUpdate() );
             return true;
         }
@@ -97,7 +97,7 @@ namespace Arcen.AIW2.External
 
                 debugStage = 3;
                 ArcenDoubleCharacterBuffer buffer = SubTexts[0].Text.StartWritingToBuffer();
-                buffer.Add( "Dyson\n" );
+                buffer.Add( "戴森\n" );
                 SubTexts[0].Text.FinishWritingToBuffer();
 
                 buffer = SubTexts[1].Text.StartWritingToBuffer();
@@ -108,7 +108,7 @@ namespace Arcen.AIW2.External
                 if ( entity.GetShouldBeVisibleBasedOnPlanetIntel() )
                     buffer.Add( "\n" ).Add( planet.Name );
                 else
-                    buffer.Add( "\n" ).Add( "Unknown" );
+                    buffer.Add( "\n" ).Add( "未知" );
                 debugStage = 12;
                 buffer.Add( "\n" );
                 debugStage = 13;

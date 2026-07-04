@@ -43,10 +43,10 @@ namespace Arcen.AIW2.External
             int timeTillAttack = data.OverrideLaunchTime - World_AIW2.Instance.GameSecond;
             if ( data.IsSyncingWithCPA && timeTillAttack <= 600 )
             {
-                tooltipBuffer.Add( "WARNING", "ffa1a1" ).Add( ": Incoming AI  Exogalactic Strikeforce Synchronizing With CPA\n\n" );
+                tooltipBuffer.Add( "警告", "ffa1a1" ).Add( "：来袭的AI远征打击力量正在与CPA同步\n\n" );
             }
             else if ( data.IsSyncingWithWormholeInvasion && timeTillAttack < ExternalConstants.Instance.WormholeInvasionWarningTime )
-                tooltipBuffer.Add( "WARNING", "ffa1a1" ).Add( ": Incoming AI  Exogalactic Strikeforce Synchronizing With Wormhole Invasion\n\n" );
+                tooltipBuffer.Add( "警告", "ffa1a1" ).Add( "：来袭的AI远征打击力量正在与虫洞入侵同步\n\n" );
 
             if ( (data.IsSyncingWithCPA || data.IsSyncingWithWormholeInvasion) && bonusDebug )
             {
@@ -70,7 +70,7 @@ namespace Arcen.AIW2.External
 
             if ( !string.IsNullOrEmpty( data.ExoReasonOverride ) )
                 attackReason = data.ExoReasonOverride;
-            tooltipBuffer.Add( "Exogalactic Strikeforce", colorString ).Add( " detected due to " + attackReason + ". It is " + percent.IntValue + " percent charged." );
+            tooltipBuffer.Add( "远征打击力量", colorString ).Add( " 因 " + attackReason + " 被检测到。它已充能 " + percent.IntValue + " percent。" );
             Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( null, tooltipBuffer.GetStringAndResetForNextUpdate() );
             return true;
         }
@@ -93,7 +93,7 @@ namespace Arcen.AIW2.External
 
                 debugStage = 3;
                 ArcenDoubleCharacterBuffer buffer = SubTexts[0].Text.StartWritingToBuffer();
-                buffer.Add( "Exostrike\n" );
+                buffer.Add( "远征打击\n" );
                 SubTexts[0].Text.FinishWritingToBuffer();
 
                 debugStage = 6;

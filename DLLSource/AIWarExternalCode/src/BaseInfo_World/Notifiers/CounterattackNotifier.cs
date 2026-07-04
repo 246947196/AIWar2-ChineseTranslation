@@ -57,18 +57,18 @@ namespace Arcen.AIW2.External
                      numEnablers++; //you can have player-allied guard posts from the necromancer
             }
             tooltipBuffer.Clear();
-            tooltipBuffer.Add( "A counterattack from planet " ).Add( planet.Name, planet.GetControllingFaction().FactionCenterColor.ColorHexBrighter ).Add( " is building, currently with strength " )
-                .Add( (planet.PrecalculatedAICounterattackForcesStrength / 1000f).ToString( "0.##" ), planet.GetControllingFaction().FactionCenterColor.ColorHexBrighter ).Add( ".\n\n" )
-                .Add( "The more losses you take on this planet, the stronger the counterattack will become.  If you can destroy all the guard posts before the counterattack launches, it will be canceled and you walk away free.\n\n" );
+                tooltipBuffer.Add( "来自星球 " ).Add( planet.Name, planet.GetControllingFaction().FactionCenterColor.ColorHexBrighter ).Add( " 的反击正在酝酿中，当前力量为 " )
+                    .Add( (planet.PrecalculatedAICounterattackForcesStrength / 1000f).ToString( "0.##" ), planet.GetControllingFaction().FactionCenterColor.ColorHexBrighter ).Add( "。\n\n" )
+                    .Add( "你在这个星球上损失的越多，反击就越强大。如果你能在反击发起前摧毁所有哨站，反击将被取消，你可以安全离开。\n\n" );
             if ( planet.AICounterAttacksCurrentlyStalled )
-                tooltipBuffer.Add( "The counterattack is currently prevented from launching, because your forces of " )
-                    .Add( (planet.PlayerStrengthHereForBlockingAICounterAttacks / 1000f).ToString( "0.##" ), localFaction.FactionCenterColor.ColorHexBrighter ).Add( " strength are more than the current requirement of " )
-                    .Add( (planet.AICounterattackToBeStalledByPlayerStrengthOf / 1000f).ToString( "0.##" ), localFaction.FactionCenterColor.ColorHexBrighter ).Add( ".  However, as the counterattack builds strength, that requirement will rise, and if it gets high enough then you'll only have two minutes to react before the counterattack launches.  Consider whether you can keep this up or not and go from there." );
+                tooltipBuffer.Add( "反击目前被阻止发动，因为你在此处的力量为 " )
+                    .Add( (planet.PlayerStrengthHereForBlockingAICounterAttacks / 1000f).ToString( "0.##" ), localFaction.FactionCenterColor.ColorHexBrighter ).Add( "，超过了当前要求的 " )
+                    .Add( (planet.AICounterattackToBeStalledByPlayerStrengthOf / 1000f).ToString( "0.##" ), localFaction.FactionCenterColor.ColorHexBrighter ).Add( "。然而，随着反击力量的增长，这个要求也会上升，如果变得足够高，你将只有两分钟的反应时间。请考虑你是否能维持这种情况。" );
             else
-                tooltipBuffer.Add( "The counterattack is going to arrive in " ).Add( planet.AICountdownTimerForCounterattack, "a1ffa1" ).Add( " seconds.  Currently your forces here total " )
-                    .Add( (planet.PlayerStrengthHereForBlockingAICounterAttacks / 1000f).ToString( "0.##" ), localFaction.FactionCenterColor.ColorHexBrighter ).Add( " strength -- if you can muster at least " )
-                    .Add( (planet.AICounterattackToBeStalledByPlayerStrengthOf / 1000f).ToString( "0.##" ), localFaction.FactionCenterColor.ColorHexBrighter ).Add( " strength on this planet, then you can stall the counterattack indefinitely.  In the meantime you might be better advised to prepare for impact..." );
-            tooltipBuffer.Add( "\n\n" ).Add( "You must kill " ).Add( numEnablers, "a1ffa1" ).Add( " guard posts left on the planet to cancel the counterattack." );
+                tooltipBuffer.Add( "反击将在 " ).Add( planet.AICountdownTimerForCounterattack, "a1ffa1" ).Add( " 秒后到达。目前你在此处的部队总力量为 " )
+                    .Add( (planet.PlayerStrengthHereForBlockingAICounterAttacks / 1000f).ToString( "0.##" ), localFaction.FactionCenterColor.ColorHexBrighter ).Add( " ——如果你能在此星球集结至少 " )
+                    .Add( (planet.AICounterattackToBeStalledByPlayerStrengthOf / 1000f).ToString( "0.##" ), localFaction.FactionCenterColor.ColorHexBrighter ).Add( " 的力量，你就可以无限期地拖延反击。与此同时，你最好做好迎击准备……" );
+            tooltipBuffer.Add( "\n\n" ).Add( "你必须消灭星球上剩余的 " ).Add( numEnablers, "a1ffa1" ).Add( " 个哨站来取消反击。" );
             Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( null, tooltipBuffer.GetStringAndResetForNextUpdate() );
             return true;
         }
@@ -136,7 +136,7 @@ namespace Arcen.AIW2.External
                 debugStage = 1050;
                 if ( planet.AICounterAttacksCurrentlyStalled )
                 {
-                    buffer.Add( "STALLED" );
+                    buffer.Add( "已停滞" );
                 }
                 else
                 {

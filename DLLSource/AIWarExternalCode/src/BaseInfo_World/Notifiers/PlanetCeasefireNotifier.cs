@@ -47,7 +47,7 @@ namespace Arcen.AIW2.External
             World_AIW2.Instance.FocusedPlanetForMapDarkening = planet;
 
             tooltipBuffer.Clear();
-            tooltipBuffer.Add( "A temporary ceasefire is being enforced by a unit on " ).Add( planet.Name );
+            tooltipBuffer.Add( "一个单位正在 " ).Add( planet.Name ).Add( " 上执行临时停火。" );
             Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( null, tooltipBuffer.GetStringAndResetForNextUpdate() );
             return true;
         }
@@ -74,8 +74,8 @@ namespace Arcen.AIW2.External
 
                 debugStage = 3;
                 ArcenDoubleCharacterBuffer buffer = SubTexts[0].Text.StartWritingToBuffer();
-                buffer.Add( "Cease\n" );
-                buffer.Add( "Fire\n" );
+                buffer.Add( "停火\n" );
+                buffer.Add( "\n" );
                 SubTexts[0].Text.FinishWritingToBuffer();
 
                 debugStage = 6;

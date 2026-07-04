@@ -60,18 +60,18 @@ namespace Arcen.AIW2.External
                 AstroTrainsPerTrainBaseInfo data = entity.GetExternalBaseInfoAs<AstroTrainsPerTrainBaseInfo>();
                 Planet finalDestinationPlanet = data == null ? null : World_AIW2.Instance.GetPlanetByIndex( data.TargetDepotPlanetID );
                 debugCode = 110;
-                string destString = "has a final destination on an unexplored planet";
+                string destString = "最终目的地在一个未探索的星球上";
                 if ( finalDestinationPlanet != null && finalDestinationPlanet.IntelLevel > PlanetIntelLevel.Unexplored )
                 {
-                    destString = "has as a final destination the Depot on " + finalDestinationPlanet.Name;
+                    destString = "最终目的地是 " + finalDestinationPlanet.Name + " 上的仓库";
                     World_AIW2.Instance.FocusedPlanetForMapDarkening = finalDestinationPlanet;
                 }
                 debugCode = 120;
-                string locationString = "on unknown planet";
+                string locationString = "在未知星球上";
                 if ( entity.GetShouldBeVisibleBasedOnPlanetIntel() )
                 {
                     debugCode = 130;
-                    locationString = "on " + entity.GetPlanetName_Safe();
+                    locationString = "在 " + entity.GetPlanetName_Safe();
 
                     //galaxy map hover
                     World_AIW2.Instance.AlsoFocusedPlanetsForMapDarkening[entity.Planet] = ArcenTime.TimeSinceStartF; //multi hover
@@ -85,9 +85,9 @@ namespace Arcen.AIW2.External
                 debugCode = 160;
                 Planet nextDest = entity.GetDestinationPlanet();
 
-                tooltipBuffer.Add( "An Astro Train on ").Add( locationString, entity.GetFactionCenterColorHexBrighter_Safe()).Add(" ").Add( destString ).Add(".");
+                tooltipBuffer.Add( "一列星空列车 " ).Add( locationString, entity.GetFactionCenterColorHexBrighter_Safe()).Add(" ").Add( destString ).Add("。");
                 if ( nextDest != null && nextDest.IntelLevel > PlanetIntelLevel.Unexplored && nextDest != entity.Planet )
-                    tooltipBuffer.Add("\nThis train's stop is the Station on ").Add(nextDest.Name, "ffa1a1").Add(".");
+                    tooltipBuffer.Add("\n这列火车的下一站是 ").Add(nextDest.Name, "ffa1a1").Add(" 上的车站。");
 
                 Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( null, tooltipBuffer.GetStringAndResetForNextUpdate() );
             }
@@ -125,7 +125,7 @@ namespace Arcen.AIW2.External
 
                 debugStage = 3;
                 ArcenDoubleCharacterBuffer buffer = SubTexts[0].Text.StartWritingToBuffer();
-                buffer.Add( "Astro\n" );
+                buffer.Add( "星空\n" );
                 SubTexts[0].Text.FinishWritingToBuffer();
 
                 debugStage = 6;
@@ -133,11 +133,11 @@ namespace Arcen.AIW2.External
 
                 debugStage = 9;
 
-                buffer.Add( "Train\n" );
+                buffer.Add( "列车\n" );
                 if ( entity.GetShouldBeVisibleBasedOnPlanetIntel() )
                     buffer.Add( entity.GetPlanetName_Safe() );
                 else
-                    buffer.Add( "En Route" );
+                    buffer.Add( "行驶中" );
 
                 buffer.Add( "\n" );
                 debugStage = 12;

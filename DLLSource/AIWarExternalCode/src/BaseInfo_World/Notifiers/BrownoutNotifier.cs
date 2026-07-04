@@ -40,16 +40,16 @@ namespace Arcen.AIW2.External
             if ( Data.IsLocalFaction )
             {
                 if ( Data.Faction.NetEnergy < 0 )
-                    tooltipBuffer.Add( "Brownout", "ffa1a1" ).Add( ": You have a negative Energy balance! While in brownout your factories will work at half speed. Also, your bubble forcefields won't be able to project their protective fields for another " ).Add( Data.eventTimeRemaining, "00ff00" ).Add( " seconds after the energy is restored." );
+                    tooltipBuffer.Add( "Brownout", "ffa1a1" ).Add( "：你的能量余额为负值！在电力不足期间，你的工厂将以一半速度运转。此外，你的泡泡力场将在能量恢复后再经过 " ).Add( Data.eventTimeRemaining, "00ff00" ).Add( " 秒才能重新投射防护力场。" );
                 else
-                    tooltipBuffer.Add( "Brownout Recovery", "a1ffa1" ).Add( ": Your bubble forcefields won't be able to project their protective fields for another " ).Add( Data.eventTimeRemaining, "00ff00" ).Add( " seconds." );
+                    tooltipBuffer.Add( "Brownout Recovery", "a1ffa1" ).Add( "：你的泡泡力场将在再经过 " ).Add( Data.eventTimeRemaining, "00ff00" ).Add( " 秒后才能重新投射防护力场。" );
             }
             else if ( Data.Faction != null )
             {
                 if ( Data.Faction.NetEnergy < 0 )
-                    tooltipBuffer.Add( "Brownout", "ffa1a1" ).Add( ": Your ally " ).Add( Data.Faction.GetDisplayName() ).Add( " has a negative Energy balance! Their factories will work at half speed and Their bubble forcefields won't be able to project their protective fields for another " ).Add( Data.eventTimeRemaining, "00ff00" ).Add( " seconds after the energy is restored." );
+                    tooltipBuffer.Add( "Brownout", "ffa1a1" ).Add( "：你的盟友 " ).Add( Data.Faction.GetDisplayName() ).Add( " 的能量余额为负值！他们的工厂将以一半速度运转，且他们的泡泡力场将在能量恢复后再经过 " ).Add( Data.eventTimeRemaining, "00ff00" ).Add( " 秒才能重新投射防护力场。" );
                 else
-                    tooltipBuffer.Add( "Brownout Recovery", "a1ffa1" ).Add( ": Your ally " ).Add( Data.Faction.GetDisplayName() ).Add( " is has bubble forcefields that won't be able to project their protective fields for another " ).Add( Data.eventTimeRemaining, "00ff00" ).Add( " seconds." );
+                    tooltipBuffer.Add( "Brownout Recovery", "a1ffa1" ).Add( "：你的盟友 " ).Add( Data.Faction.GetDisplayName() ).Add( " 的泡泡力场将在再经过 " ).Add( Data.eventTimeRemaining, "00ff00" ).Add( " 秒后才能重新投射防护力场。" );
             }
             //tooltipBuffer.Add("Brownout: You have a negative energy balance!  Your bubble forcefields won't be able to project their protective field for another ").Add( timer ).Add(" seconds after the energy is restored");
             ArcenExternalUIUtilities.ShowTooltipWide( tooltipBuffer.GetStringAndResetForNextUpdate() );
@@ -75,7 +75,7 @@ namespace Arcen.AIW2.External
                 debugStage = 10;
                 Image.UpdateWith( sprite_Brownout, true, "Brownout" );
                 ArcenDoubleCharacterBuffer buffer = SubTexts[0].Text.StartWritingToBuffer();
-                buffer.Add( "Brownout" );
+                buffer.Add( "电力不足" );
                 SubTexts[0].Text.FinishWritingToBuffer();
 
                 Faction fac = Data.Faction;
@@ -84,13 +84,13 @@ namespace Arcen.AIW2.External
                 if ( Data.IsLocalFaction )
                 {
                     if ( fac == null || fac.NetEnergy < 0 )
-                        buffer.Add( "Ongoing" );
+                        buffer.Add( "持续中" );
                     else
                         buffer.Add( Data.eventTimeRemaining );
                 }
                 else
                 {
-                    buffer.Add( "Ally\n<size=60%>" );
+                    buffer.Add( "盟友\n<size=60%>" );
                     if ( fac == null )
                         buffer.Add( "???" );
                     else
