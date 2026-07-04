@@ -20,13 +20,13 @@ namespace Arcen.AIW2.ExternalVisualization
             Faction ownerFaction = planet.GetControllingOrInfluencingFaction();
             if ( ownerFaction == null || ownerFaction.Type == FactionType.NaturalObject )
             {
-                Buffer.StartColor( "5d9aff" ).Add( "\nDeepstrike Safe Zone" ).EndColor().Add( "\n" );
-                Buffer.Add( "<size=80%>This planet is not owned by anyone, so it is a natural safe haven from the AI Reserves.  " );
+                Buffer.StartColor( "5d9aff" ).Add( "\n深袭安全区" ).EndColor().Add( "\n" );
+                Buffer.Add( "<size=80%>这个星球不属于任何人，因此是AI预备队的安全避风港。  " );
             }
             else if ( ownerFaction.GetIsFriendlyToLocalFaction() )
             {
-                Buffer.StartColor( "5d9aff" ).Add( "\nAllied Territory" ).EndColor().Add( "\n" );
-                Buffer.Add( "<size=80%>This planet is controlled by you or one of your allies, so is a natural safe haven from the AI Reserves.  " );
+                Buffer.StartColor( "5d9aff" ).Add( "\n盟军领地" ).EndColor().Add( "\n" );
+                Buffer.Add( "<size=80%>这个星球由你或你的盟友控制，因此是AI预备队的安全避风港。  " );
             }
             else
             {
@@ -34,23 +34,23 @@ namespace Arcen.AIW2.ExternalVisualization
                 {
                     bool isOnExtraAlert = planet.WillBeOnExtraDeepstrikeAlertUntilGameSecond >= World_AIW2.Instance.GameSecond;
 
-                    Buffer.StartColor( "ff3939" ).Add( "\nDeepstrike Danger Zone" ).EndColor().Add( "\n" );
-                    Buffer.Add( "<size=80%>This planet is far enough into AI territory (away from your own planets) that <color=#ff3939>the AI will become very alarmed by any forces you bring that are not inside transports</color>.  " );
-                    Buffer.Add( "The AI Reserves subfaction of the AI <color=#ff3939>will start deploying emergency units</color> if you hang around here long enough.  They don't have infinite resources and have to build up over time, but the danger of their response should not be underestimated.  " );
-                    Buffer.Add( "\n\nIt would be good if you <color=#ff3939>come in fast</color>, deal damage as needed, capture or hack any important targets, and <color=#ff3939>then get back out</color>.  Alternatively, destroy the AI Command Station and Guard Posts as fast as possible to cancel any blowback.</size>" );
+                    Buffer.StartColor( "ff3939" ).Add( "\n深袭危险区" ).EndColor().Add( "\n" );
+                    Buffer.Add( "<size=80%>这个星球深入AI领地（远离你的星球），因此<color=#ff3939>AI会对任何不在运输舰内的部队感到非常警觉</color>。  " );
+                    Buffer.Add( "AI预备队子派系<color=#ff3939>将开始部署紧急部队</color>，如果你在这里停留足够长的时间。他们没有无限的资源，需要时间积累，但不要低估他们反应的危险。  " );
+                    Buffer.Add( "\n\n最好<color=#ff3939>快速进入</color>，根据需要造成伤害，占领或入侵任何重要目标，然后<color=#ff3939>迅速撤退</color>。或者，尽快摧毁AI指挥所和防御岗哨以取消任何反击。</size>" );
 
                     if ( isOnExtraAlert )
                     {
-                        Buffer.StartColor( "ff2a7f" ).Add( "\n\n<size=90%>Deepstrike Full Alert!</size>" ).EndColor().Add( "\n" );
-                        Buffer.Add( "<size=70%>This planet has noticed that humans brought unloaded transports to it, and consequently it will be on extra high alert for deepstriking for another " )
-                            .AddHoursAndMinutes( planet.WillBeOnExtraDeepstrikeAlertUntilGameSecond - World_AIW2.Instance.GameSecond ).Add( ".  " );
-                        Buffer.Add( "During this period of extra alert, this planet will monitor human ships in and out of transports, on itself and on adjacent planets.  You must defeat this planet, or retreat at least two hops away from it to avoid deployment of the AI Reserves.</size>" );
+                        Buffer.StartColor( "ff2a7f" ).Add( "\n\n<size=90%>深袭全面警报！</size>" ).EndColor().Add( "\n" );
+                        Buffer.Add( "<size=70%>这个星球注意到人类带来了未卸载的运输舰，因此将在接下来的 " )
+                            .AddHoursAndMinutes( planet.WillBeOnExtraDeepstrikeAlertUntilGameSecond - World_AIW2.Instance.GameSecond ).Add( " 内对深袭保持高度警戒。  " );
+                        Buffer.Add( "在此高度警戒期间，这个星球将监控自身及相邻星球上人类运输舰的进出。你必须击败这个星球，或撤退到至少两个跳跃距离之外，以避免AI预备队的部署。</size>" );
                     }
                 }
                 else
                 {
-                    Buffer.StartColor( "5d9aff" ).Add( "\nDeepstrike Safe Zone" ).EndColor().Add( "\n" );
-                    Buffer.Add( "<size=80%>This planet is either not controlled by the AI, or is close enough to your territory that <color=#5d9aff>there is no risk of the AI Reserves coming after you</color> if you unload a transport here.  " );
+                    Buffer.StartColor( "5d9aff" ).Add( "\n深袭安全区" ).EndColor().Add( "\n" );
+                    Buffer.Add( "<size=80%>这个星球要么不受AI控制，要么离你的领地足够近，因此<color=#5d9aff>如果在这里卸载运输舰，AI预备队不会追击你</color>。  " );
                 }
             }
         }
@@ -77,19 +77,19 @@ namespace Arcen.AIW2.ExternalVisualization
                 }
 
                 //LEFT ONLY
-                LeftBuffer.StartColor( colorToUse ).Add( "DEEP" ).EndColor().Add( "\n" );
+                LeftBuffer.StartColor( colorToUse ).Add( "深袭" ).EndColor().Add( "\n" );
                 if ( isOnExtraAlert )
                 {
                     if ( aiReservesInfo.AbsorbShipsMode )
-                        LeftBuffer.StartColor( colorToUse ).Add( "RESIDUAL" ).EndColor().Add( "\n" );
+                        LeftBuffer.StartColor( colorToUse ).Add( "残留" ).EndColor().Add( "\n" );
                     else
-                        LeftBuffer.StartColor( colorToUse ).Add( "FULL" ).EndColor().Add( "\n" );
+                        LeftBuffer.StartColor( colorToUse ).Add( "全面" ).EndColor().Add( "\n" );
                 }
 
                 //RIGHT ONLY
-                RightBuffer.StartColor( colorToUse ).Add( "STRIKE" ).EndColor().Add( "\n" );
+                RightBuffer.StartColor( colorToUse ).Add( "突袭" ).EndColor().Add( "\n" );
                 if ( isOnExtraAlert )
-                    RightBuffer.StartColor( colorToUse ).Add( "ALERT" ).EndColor().Add( "\n" );
+                    RightBuffer.StartColor( colorToUse ).Add( "警报" ).EndColor().Add( "\n" );
             }
         }
     }

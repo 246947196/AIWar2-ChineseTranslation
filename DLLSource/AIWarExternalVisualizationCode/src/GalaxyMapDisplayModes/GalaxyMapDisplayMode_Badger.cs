@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using System;
 
 using System.Text;
@@ -213,7 +213,7 @@ namespace Arcen.AIW2.ExternalVisualization
             if ( planet.IsEligibleForDeepStrike )
             {
                 RightBuffer.Add("\n");
-                RightBuffer.StartColor( "ff3939" ).Add("<size=70%>Deepstrike</size>").EndColor();
+                RightBuffer.StartColor( "ff3939" ).Add("<size=70%>深袭</size>").EndColor();
                     
             }
         }
@@ -236,7 +236,7 @@ namespace Arcen.AIW2.ExternalVisualization
             if ( planet.IntelLevel <= PlanetIntelLevel.Unexplored )
                 return;
 
-            Buffer.Add( "\nRemaining Cuendillar: " ).Add( planet.ResourceOneRemainingForAnyPlayer, "a1ffa1" );
+            Buffer.Add( "\n剩余昆达拉：" ).Add( planet.ResourceOneRemainingForAnyPlayer, "a1ffa1" );
         }
 
         public override void PickOtherThingsToShow( Planet planet, GameEntity_Squad EntityToSkip, GameEntity_Squad[] ArrayToFill, bool OnlyShowThingsThatShouldBeInFarZoom )
@@ -249,7 +249,7 @@ namespace Arcen.AIW2.ExternalVisualization
             if ( planet.IntelLevel <= PlanetIntelLevel.Unexplored )
                 return;
             if ( planet.IsRavaged )
-                LeftBuffer.Add("Ravaged");
+                LeftBuffer.Add("被蹂躏");
             RightBuffer.Add( "<size=120%>" );
 
             RightBuffer.StartColor( "af9380" );
@@ -285,8 +285,8 @@ namespace Arcen.AIW2.ExternalVisualization
                 return;
             if ( planet.GetControllingOrInfluencingFaction() != localFaction)
                 return;
-            Buffer.Add( "\nMetal Income: " ).Add( planet.LocalPlayer_MetalIncomePerPlanet_ForUI_Final, "a1ffa1" );
-            Buffer.Add( "\nMetal Outflow: " ).Add( planet.LocalPlayer_MetalOutflowPerPlanet_ForUI_Final, "ffa1ff" );
+            Buffer.Add( "\n金属收入：" ).Add( planet.LocalPlayer_MetalIncomePerPlanet_ForUI_Final, "a1ffa1" );
+            Buffer.Add( "\n金属支出：" ).Add( planet.LocalPlayer_MetalOutflowPerPlanet_ForUI_Final, "ffa1ff" );
         }
 
         public override void PickOtherThingsToShow( Planet planet, GameEntity_Squad EntityToSkip, GameEntity_Squad[] ArrayToFill, bool OnlyShowThingsThatShouldBeInFarZoom )

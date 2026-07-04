@@ -40,15 +40,15 @@ namespace Arcen.AIW2.ExternalVisualization
                 }
             }
 
-            Buffer.Add( "\nAsteroid Mining Powerplants: " ).Add( asteroidCountClaimed ).Add( "/" ).Add( asteroidCountTotal );
+            Buffer.Add( "\n小行星采矿发电厂：" ).Add( asteroidCountClaimed ).Add( "/" ).Add( asteroidCountTotal );
             if ( asteroidCountTotal < 4 )
-                Buffer.StartColor( "af9380" ).Add( "\nThis is a VERY poor location to try to bolster your economy." );
+                Buffer.StartColor( "af9380" ).Add( "\n这是一个非常不适合发展经济的位置。" );
             else if ( asteroidCountTotal < 7 )
-                Buffer.StartColor( "ffd674" ).Add( "\nThis is an average quality location to bolster your economy." );
+                Buffer.StartColor( "ffd674" ).Add( "\n这是一个发展经济的中等位置。" );
             else if ( asteroidCountTotal < 10 )
-                Buffer.StartColor( "cfff4f" ).Add( "\nThis is an excellent location to bolster your economy." );
+                Buffer.StartColor( "cfff4f" ).Add( "\n这是一个发展经济的优秀位置。" );
             else
-                Buffer.StartColor( "ea5dff" ).Add( "\nThis is a crazy good location to bolster your economy." );
+                Buffer.StartColor( "ea5dff" ).Add( "\n这是一个发展经济的超棒位置。" );
         }
 
         public override void PickOtherThingsToShow( Planet planet, GameEntity_Squad EntityToSkip, GameEntity_Squad[] ArrayToFill, bool OnlyShowThingsThatShouldBeInFarZoom )

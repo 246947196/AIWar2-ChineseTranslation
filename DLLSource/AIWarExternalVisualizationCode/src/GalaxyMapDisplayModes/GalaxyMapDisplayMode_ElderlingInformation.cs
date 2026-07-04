@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Arcen.AIW2.Core;
 using Arcen.AIW2.External;
 using Arcen.Universal;
@@ -147,19 +147,19 @@ namespace Arcen.AIW2.ExternalVisualization
                 debugStage = 200;
                 // Left Buffer
                 if ( lowestSanity > 0 )
-                    LeftBuffer.StartColor( Color.magenta ).Add( "Sanity " ).EndColor().Add( lowestSanity );
+                    LeftBuffer.StartColor( Color.magenta ).Add( "理智 " ).EndColor().Add( lowestSanity );
 
                 LeftBuffer.Add( "\n" );
 
                 debugStage = 300;
                 if ( lowestExpRequired > 0 )
-                    LeftBuffer.StartColor( Color.blue ).Add( "Exp " ).EndColor().Add( lowestExpRequired );
+                    LeftBuffer.StartColor( Color.blue ).Add( "经验 " ).EndColor().Add( lowestExpRequired );
 
                 debugStage = 400;
                 // Right Buffer
                 if ( soonestHatch > 0 )
                 {
-                    RightBuffer.StartColor( Color.yellow ).Add( "Hatch " ).EndColor();
+                    RightBuffer.StartColor( Color.yellow ).Add( "孵化 " ).EndColor();
 
                     debugStage = 410;
                     int timeLeft = soonestHatch - World_AIW2.Instance.GameSecond;
@@ -178,7 +178,7 @@ namespace Arcen.AIW2.ExternalVisualization
                 {
                     if ( soonesLay > 0 )
                     {
-                        RightBuffer.StartColor( Color.cyan ).Add( "Lay " ).EndColor();
+                        RightBuffer.StartColor( Color.cyan ).Add( "产卵 " ).EndColor();
 
                         debugStage = 510;
                         int timeLeft = soonesLay - World_AIW2.Instance.GameSecond;

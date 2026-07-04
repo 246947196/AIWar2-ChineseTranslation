@@ -40,15 +40,15 @@ namespace Arcen.AIW2.ExternalVisualization
                 }
             }
 
-            Buffer.Add( "\nMetal Harvester Spots: " ).Add( asteroidCountClaimed ).Add( "/" ).Add( asteroidCountTotal );
+            Buffer.Add( "\n金属采集点：" ).Add( asteroidCountClaimed ).Add( "/" ).Add( asteroidCountTotal );
             if ( asteroidCountTotal < 4 )
-                Buffer.StartColor( "af9380" ).Add( "\nAny command station you put here won't get much help in the way of metal." );
+                Buffer.StartColor( "af9380" ).Add( "\n在此放置指挥所将无法获得太多金属支持。" );
             else if ( asteroidCountTotal < 7 )
-                Buffer.StartColor( "ffd674" ).Add( "\nAny command station you put here an average boost in the way of metal from these mines." );
+                Buffer.StartColor( "ffd674" ).Add( "\n在此放置指挥所将获得来自这些矿场的中等金属支持。" );
             else if ( asteroidCountTotal < 10 )
-                Buffer.StartColor( "cfff4f" ).Add( "\nAny command station you put here an excellent boost in the way of metal from these mines." );
+                Buffer.StartColor( "cfff4f" ).Add( "\n在此放置指挥所将获得来自这些矿场的优秀金属支持。" );
             else
-                Buffer.StartColor( "ea5dff" ).Add( "\nAny command station you put here a crazy good boost in the way of metal from these mines." );
+                Buffer.StartColor( "ea5dff" ).Add( "\n在此放置指挥所将获得来自这些矿场的超棒金属支持。" );
         }
 
         public override void PickOtherThingsToShow( Planet planet, GameEntity_Squad EntityToSkip, GameEntity_Squad[] ArrayToFill, bool OnlyShowThingsThatShouldBeInFarZoom )
