@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<entity name="AnvilHeavyFrigate" copy_from="AMU_HeavyFrigateBase" required_expansion_list="2_Zenith_Onslaught"
+		visuals="Assets/_FinalGameMeshes/Guardians/FragmentingGuardianAlt/FragmentingGuardian.prefab"
+		icon_overlay="Overlays2/Guardian_Fragmenting"
+		size_scale="5.5"
+		visuals_scale_multiplier="2.75"
+		display_name="铁砧重型护卫舰"
+		display_name_for_sidebar="铁砧 FFH"
+		description_short="对敌人护盾有效的远程爆炸，并在受损时释放反舰体锤头弹。可以自我再生。"
+		description="另一种形式的二元武器系统是将反护盾和反舰体伤害分开，并调整瞄准系统以根据对手当前的防御层改变目标。在这艘护卫舰中，它与舰船武器本身合并，消耗护盾，并具有额外的'脱落'装甲板的能力，这些装甲板同时充当舰体毁灭弹头，同时在非战斗时'重新生长'它们。"
+		tech_upgrades_that_benefit_me="Generalist,Heavy"
+		cost_for_ai_to_purchase="2299" strength_multiplier="2.5"
+		hull_points="300000" shield_points="0" speed="Normal1"
+		metal_cost="250000" energy_consumption="5000"
+		armor_mm="90" albedo="0.45" engine_gx="16" mass_tx="5.5"
+		unit_to_make_with_build_points_from_damage_taken="HammerHead"
+		build_points_per_damage_taken="15"
+		seconds_to_fully_regenerate_hull="300"
+	>
+		<system name="SB" display_name="护盾猛击"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="500" range="High1" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false" shots_per_salvo="4"
+			shot_type_data="PlasmaTorpedo"
+		>
+			<outgoing_damage_modifier based_on="TargetShieldPercentageMissing" comparison_type="LessThan" compared_to="100" multiplier="5" applies_to="AllShields" />
+		</system>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="5" cap="4"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Frigate" weight="25" cap="4"/>
+		<fleet_membership name="HydraOffensiveMix" ship_cap_group="Frigate" weight="25" cap="4"/>
+		<fleet_membership name="ReplicatingOffensiveMix" ship_cap_group="Frigate" weight="25" cap="4"/>
+		<fleet_membership name="SelfSacrificingOffensiveMix" ship_cap_group="Frigate" weight="25" cap="4"/>
+		<fleet_membership name="SturdyOffensiveMix" ship_cap_group="Frigate" weight="25" cap="4"/>
+	</entity>
+	
+	<entity name="HammerHead" copy_from="AMU_HeavyFrigateBase" required_expansion_list="2_Zenith_Onslaught"
+		special_entity_type="LargeShipNotStackable"	is_strikecraft="false"
+		visuals="Assets/_FinalGameMeshes/FleetShips/AutoBomb/AutoBomb.prefab"
+		icon_name="Ships1/AutoBomb" icon_overlay="Overlays2/Guardian_FragmentingShard" gimbal_icon_size_multiplier="0.9"
+		size_scale="0.7"
+		visuals_scale_multiplier="3"
+		display_name="锤头弹"
+		display_name_for_sidebar="锤头弹 PDRN"
+		description="快速且快速自损耗的炸弹，对敌人舰体有额外伤害。"
+		tech_upgrades_that_benefit_me="Generalist,Medium"
+		self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="15"
+		always_self_attritions="true"
+		cost_for_ai_to_purchase="52" strength_multiplier="0.4"
+		hull_points="3000" shield_points="0" speed="VeryHigh1"
+		metal_cost="1000" energy_consumption="0"
+		armor_mm="50" albedo="0.3" engine_gx="3" mass_tx="0.21"
+		immune_to_swapping_between_fleets="true"
+	>
+		<system name="I" display_name="撞击"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="1000" range="AlmostNone" shot_speed="Instant" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+			shot_type_data="MeleeInvisible"
+			health_change_by_max_health_divided_by_this_per_attack="-1"
+		>
+			<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" comparison_type="LessThan" compared_to="1" multiplier="5" applies_to="HullOnly" />
+		</system>
+	</entity>
+	
+	<entity name="AssaultCruiser" copy_from="AMU_CruiserBase" required_expansion_list="2_Zenith_Onslaught"
+		visuals="assets/_finalgamemeshes/starships/prototypeflagship/prototypeflagship.prefab"
+		icon_overlay="Overlays1/Starship_Assault"
+		size_scale="6.5"
+		visuals_scale_multiplier="3.75"
+		display_name="突击巡洋舰"
+		display_name_for_sidebar="突击 CC"
+		description_short="缓慢但非常强大的巡洋舰，配备远程连锁聚变武器和点防御导弹。硬化后永远不会被摧毁到舰体20次以下，舰体和护盾30次以下。"
+		description="硬化舰体技术仍然年轻，并首次被纳入已知的舰船设计中，例如旧的突击护卫舰。随着将军们开始充分利用近乎免疫破坏武器的能力，突击护卫舰II被取消，取而代之的是更大、更坚固的版本，采用更先进的技术，进入了攻击舰队的先锋尖端。"
+		tech_upgrades_that_benefit_me="Fusion,Heavy"
+		cost_for_ai_to_purchase="9999" strength_multiplier="3.75"
+		hull_points="700000" shield_points="350000" speed="BelowAverage1"
+		metal_cost="1300000" energy_consumption="30000"
+		armor_mm="180" albedo="0.5" engine_gx="18" mass_tx="6.5"
+		damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.05"
+	>
+		<system name="CF" display_name="连锁供弹聚变炸弹"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="15000" range="High1" shot_speed="Normal" rate_of_fire="Sloth" use_alternate_rate_of_fire_after_x_shots="1" alternate_rate_of_fire="Devourer" use_alternate_rate_of_fire_for_x_shots_before_reverting="9"
+			shot_type_data="FusionBomb"
+			base_percent_damage_bypasses_personal_shields="0.9"
+			>
+			<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="HullOnly" comparison_type="AtLeast" compared_to="50" multiplier="1.1" />
+		</system>
+		 <system name="PD" display_name="点防御导弹"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="500" range="AboveAverage5" shot_speed="Slow" rate_of_fire="Normal" fires_salvos_sequentially="false"
+			shots_per_salvo="20"
+			shot_type_data="FusionRocket"
+			>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtMost" compared_to="0.5" multiplier="3" />
+		</system>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="5" cap="1"/>
+		<fleet_membership name="AntiLargeMix" ship_cap_group="Frigate" weight="25" cap="1"/>
+		<fleet_membership name="AntiStructureMix" ship_cap_group="Frigate" weight="25" cap="1"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Frigate" weight="25" cap="1"/>
+		<fleet_membership name="SturdyOffensiveMix" ship_cap_group="Frigate" weight="25" cap="1"/>
+		<fleet_membership name="VeteranViciousMix" ship_cap_group="Frigate" weight="25" cap="1"/>
+	</entity>
+	
+	<entity name="ImmortalCruiser" copy_from="AMU_CruiserBase" required_expansion_list="2_Zenith_Onslaught"
+		visuals="assets/_finalgamemeshes/guardians/vampireguardian/vampireguardian.prefab"
+		icon_overlay="Overlays1/Turret_Vampire"
+		size_scale="6.5"
+		visuals_scale_multiplier="8"
+		display_name="不朽巡洋舰"
+		display_name_for_sidebar="不朽 CC"
+		description_short="巨型舰船，具有生命吸取能力，特别是从辐射护盾较弱的单位吸取，配备复仇发射的吸血物质传输光束武器。"
+		description="一艘足够大的巡洋舰，其船体上装有一系列能量收集器，接收武器的冲击能量，然后将其引导到舰船的功率转换器中，返回一部分火力，同时从攻击者身上吸取生命，几乎是不朽的。为了简洁起见，'几乎'经常被省略，但它很快成为入侵部队的最爱，因为它倾向于承受攻击的主要冲击并仍然存活。"
+		tech_upgrades_that_benefit_me="Subterfuge,Heavy"
+		cost_for_ai_to_purchase="11235" strength_multiplier="2.5"
+		hull_points="1500000" shield_points="500000" speed="BelowAverage2"
+		metal_cost="1500000" energy_consumption="20000"
+		armor_mm="180" albedo="0.5" engine_gx="19" mass_tx="6.5"
+	>
+		<system name="DG" display_name="吸取枪"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="500" range="Normal1" shot_speed="Slow" rate_of_fire="High" shots_per_salvo="5"
+			shot_type_data="DoubleShot_Green"
+			health_change_per_damage_dealt="1"
+		>
+		</system>
+		<system name="MR" display_name="物质回收"
+			category="Weapon" firing_timing="WhenParentEntityHit"
+			damage_per_shot="1" returns_this_percentage_of_damage_when_firing_retalitatory_shot="0.25" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Normal"
+			shot_type_data="HeavyBeamInvisible" beam_weapon_visual_style="Laser_Green"
+			beam_length_multiplier="1"
+			hits_all_intersecting_targets="false"
+			shots_detonate_immediately="true"
+			health_change_per_damage_dealt="1"
+		>
+			<outgoing_damage_modifier based_on="Albedo" comparison_type="LessThan" compared_to="0.4" multiplier="3" />
+		</system>
+		<system name="T" display_name="牵引光束" category="Passive" tractor_range="Normal3" tractor_count="40" tractor_count_added_per_mark="20" tractor_hits_albedo_less_than="0.35" tractor_hits_engine_gx_less_than="12" />
+		<fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="5" cap="1"/>
+		<fleet_membership name="AttritionerMix" ship_cap_group="Frigate" weight="30" cap="1"/>
+		<fleet_membership name="BullyMix" ship_cap_group="Frigate" weight="30" cap="1"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Frigate" weight="30" cap="1"/>
+		<fleet_membership name="SturdyOffensiveMix" ship_cap_group="Frigate" weight="30" cap="1"/>
+	</entity>
+	
+	<entity name="LightningArtilleryFrigate" copy_from="AMU_MediumFrigateBase" required_expansion_list="2_Zenith_Onslaught"
+		visuals="assets/_finalgamemeshes/starships/sniperstarship/sniper_starship.prefab"
+		icon_overlay="Overlays1/Turret_ChainLightning"
+		size_scale="5"
+		visuals_scale_multiplier="7"
+		display_name="闪电炮兵护卫舰"
+		display_name_for_sidebar="闪电炮兵 FFM"
+		description_short="远程护卫舰，向敌人发射连锁闪电，主要目标承受主要伤害。对高能量目标更加致命。"
+		description="定向μ子投影器，或者舰船控制器称之为'闪电炮兵'，在处理远距离目标方面极其有效。μ子压倒目标的动力核心，一旦达到临界质量就会造成额外伤害。在实践中，大多数护卫舰及以上级别的舰船无法承受多次齐射，它们的护航舰很快被连锁闪电摧毁。"
+		tech_upgrades_that_benefit_me="Splash,Medium"
+		cost_for_ai_to_purchase="1476" strength_multiplier="3"
+		hull_points="100000" shield_points="50000" speed="Normal2"
+		metal_cost="130000" energy_consumption="11000"
+		armor_mm="120" albedo="0.4" engine_gx="16" mass_tx="5"
+	>
+		<system name="LA" display_name="闪电炮兵"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="25000" range="EssentiallyInfinite" shot_speed="Normal" rate_of_fire="Sloth"
+            shot_type_data="HeavyBeamInvisible" beam_weapon_visual_style="Lightning_Green" shots_detonate_immediately="true" beam_length_multiplier="1.3"
+            beam_chains_out_to_targets_x_times="4" beam_chains_out_to_target_min_range="200" beam_chains_out_to_targets_x_range="5000" aoe_and_beam_damage_multiplier_to_non_primary_target="15"
+            beam_chains_out_to_max_targets_from_each_source="2"
+			>
+			<outgoing_damage_modifier based_on="EnergyUsage" comparison_type="AtLeast" compared_to="5000" multiplier="2" />
+		</system>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="5" cap="6"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Frigate" weight="30" cap="6"/>
+		<fleet_membership name="SniperMix" ship_cap_group="Frigate" weight="30" cap="6"/>
+		<fleet_membership name="UnusualMix" ship_cap_group="Frigate" weight="30" cap="6"/>
+		<fleet_membership name="VeteranViciousMix" ship_cap_group="Frigate" weight="30" cap="6"/>
+	</entity>
+	
+	<entity name="ScavengerHeavyFrigate" copy_from="AMU_HeavyFrigateBase" required_expansion_list="2_Zenith_Onslaught"
+		visuals="assets/_finalgamemeshes/starships/shieldstarship/shieldstarship.prefab"
+		icon_overlay="Overlays2/DysonSentinel_Bulwark"
+		size_scale="5.5"
+		visuals_scale_multiplier="5"
+		display_name="拾荒者重型护卫舰"
+		display_name_for_sidebar="拾荒者 FFH"
+		description_short="配备牵引光束和更高瞄准优先级的护卫舰。被攻击时返回爆炸性代谢齐射。"
+		description="为了填补一些帝国的空白金属矿藏，需要一艘能够轻松对大量攻击机和护卫舰应用代谢的舰船。拾荒者使用装满纳米机器人的手榴弹自动反应来拆解敌人。虽然对大多数大型敌人较弱，但很少有舰船擅长将一大群攻击机转化为金属进行反击。"
+		tech_upgrades_that_benefit_me="Splash,Heavy"
+		cost_for_ai_to_purchase="1684" strength_multiplier="2"
+		hull_points="250000" shield_points="125000" speed="BelowAverage2"
+		metal_cost="180000" energy_consumption="8000"
+		armor_mm="180" albedo="0.4" engine_gx="16" mass_tx="5.5"
+		priority_as_ai_target="NormalGuardPost" priority_as_frd_target="NormalGuardPost" priority_to_protect="NormalGuardPost"
+	>
+		<system name="E" display_name="清除者"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="200" range="AboveAverage2" shot_speed="Instant" rate_of_fire="Devourer"
+			shot_type_data="HeavyBeamInvisible" beam_weapon_visual_style="Laser_YellowBright" shots_detonate_immediately="true" beam_length_multiplier="1.3"
+		>
+			<death_effect_damage type="GreaterMetabolization" tier_name="BountyHunter"/>
+			<outgoing_damage_modifier based_on="TargetHullPercentageMissing" comparison_type="AtLeast" compared_to="90" multiplier="25" />
+		</system>
+		<system name="MM" display_name="多重代谢器"
+			category="Weapon" firing_timing="WhenParentEntityHit"
+			damage_per_shot="100" range="AboveAverage2" shot_speed="Normal" rate_of_fire="Normal"
+			shot_type_data="FlakShotAOEBurstAtEnd"
+			area_of_effect_size="600"
+			maximum_number_of_targets_hit_per_shot="5"
+		>
+			<death_effect_damage type="Metabolization" tier_name="Gangsaw" />
+		</system>
+		<system name="TB" display_name="牵引光束" category="Passive" tractor_range="AboveAverage1" tractor_count="20" tractor_count_added_per_mark="10" tractor_hits_albedo_less_than="0.35" tractor_hits_engine_gx_less_than="15" />
+		<fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="5" cap="4"/>
+		<fleet_membership name="AttritionerMix" ship_cap_group="Frigate" weight="25" cap="4"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Frigate" weight="25" cap="4"/>
+		<fleet_membership name="GluttonyMix" ship_cap_group="Frigate" weight="25" cap="4"/>
+		<fleet_membership name="SturdyOffensiveMix" ship_cap_group="Frigate" weight="25" cap="4"/>
+		<fleet_membership name="TractorMix" ship_cap_group="Frigate" weight="25" cap="4"/>
+		<fleet_membership name="UnusualMix" ship_cap_group="Frigate" weight="25" cap="4"/>
+	</entity>
+	
+	
+	<entity name="PhaseCruiser" copy_from="AMU_CruiserBase" aip_when_granted_by_hack="40" tags="IncludeInFRS" required_expansion_list="2_Zenith_Onslaught"
+		visuals="assets/_finalgamemeshes/guardians/laserguardian/laserguardian.prefab"
+		icon_overlay="Overlays2/GuardPost_MultiPhase"
+		size_scale="6.5"
+		visuals_scale_multiplier="8.5"
+		display_name="相位巡洋舰"
+		display_name_for_sidebar="相位 CC"
+		description_short="巡洋舰，在现实空间中将没有护盾的敌人拉入多重相位，并定期转换到多重相位以释放毁灭性武器。"
+		description="凭借将自己和敌人转换到多重相位的能力，这艘巡洋舰已经是一个改变游戏规则的存在，但科学家们设法找到了一种吸收多重相位中舰船周围维度能量的方法。因此，它能够为物质湮灭器提供动力，这是一种具有可怕力量和规模的武器。它只能在另一个维度中短暂维持，但这足以每次消灭一支小型舰队。"
+		tech_upgrades_that_benefit_me="Technologist,Medium"
+		cost_for_ai_to_purchase="18418" strength_multiplier="0.35"
+		hull_points="800000" shield_points="400000" speed="Normal1"
+		metal_cost="2400000" energy_consumption="27000"
+		armor_mm="90" engine_gx="23" mass_tx="6.5" albedo="0.9"
+		alternative_state_of_matter="MultiPhase" phases_to_other_alternative_state_of_matter_after_seconds="15" phases_back_to_default_state_of_matter_after_seconds="5"
+	>
+		<system name="PD" display_name="相位干扰区" must_be_this_state_of_matter_to_be_enabled="Normal" care_about_state_of_matter_to_be_enabled="true"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="200" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Normal"
+			shot_type_data="PlasmaTorpedoAOEBurstAtEnd"
+			area_of_effect_size="3000"
+			maximum_number_of_targets_hit_per_shot="20"
+			state_of_matter_for_target_to_become="MultiPhase" inflicts_state_of_matter_on_target_for_seconds="20" cannot_inflict_state_of_matter_if_target_has_any_shields_up="true" cannot_inflict_state_of_matter_if_target_has_energy_usage_of_at_least="6000"
+		>
+			<outgoing_damage_modifier based_on="TargetShieldPercentageMissing" comparison_type="LessThan" compared_to="100" multiplier="0" />
+		</system>
+		<system name="MA" display_name="物质湮灭器" must_be_this_state_of_matter_to_be_enabled="MultiPhase" care_about_state_of_matter_to_be_enabled="true"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="10000" range="High1" shot_speed="Instant" rate_of_fire="Devourer" shots_per_salvo="40" fires_salvos_sequentially="false"
+            shot_type_data="HeavyBeamInvisible" beam_weapon_visual_style="Laser_PurpleBright" shots_detonate_immediately="true" beam_length_multiplier="1.3"
+		>
+			<outgoing_damage_modifier based_on="MaxHull" comparison_type="AtLeast" compared_to="100000" multiplier="10" />
+		</system>
+		<fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="10" cap="1"/>
+	</entity>
+</root>

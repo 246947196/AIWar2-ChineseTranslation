@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<journal name="NA_Custodians_Introduction" sidebar_text="{FactionColor}奈因祖尔守护者&lt;/color&gt;:  联盟"
+			can_record_another_copy_if_already_recorded_in_this_campaign="false"
+			text_replacement_related_faction_color="true"
+			text_replacement_related_planet="true"
+			chat_text="指挥官，一些自称珍珠守护者的奈因祖尔已经跃迁到了我们的母星。"
+			full_text="指挥官，一些自称珍珠守护者的奈因祖尔已经跃迁到了我们的母星。他们 broadcast 了一个联盟请求，我们已经接受了，并简要解释了他们为什么在这里。
+
+他们是现在已不存在的奈因祖尔帝国的几个分裂团体之一，由于内斗而分裂。为了夺回失去的安全，他们一直在宇宙中搜寻外星人进行融合，因为他们的人数大大减少。他们相信他们的一些守护者同伴也可能很快到达银河系，如果他们还没有到达的话，并且每个都会尝试与另一个团体结盟。当被问及是否认为有人胆敢与人工智能结盟时，他们集体回答了一个词：钻石。
+
+虽然我们不会让你厌烦我们协议的更多细节，指挥官，但有四件重要的事情你应该知道。首先，守护者是一支非常强大且有组织的部队。他们准备好向我们的敌人证明自己以巩固联盟，但不会为此故意自杀。预期漫游飞地，无论是我们的盟友还是其他人，都会更愿意从战斗中撤退。
+
+其次，所有漫游飞地，你可能已经在我们的母星上看到过，与它们通过跃迁空间带来的蜂巢有着天生的联系。随着时间的推移，蜂巢将被动地生产战舰来协助其结盟的漫游飞地。如果其中一个死亡，另一个也将很快死亡。同样的逻辑适用于我们遇到的任何其他守护者；如果一个守护者团体变得太强大，就瞄准蜂巢。
+
+第三，这只是他们全部部队的一小部分。他们在搜寻宇宙时分裂成数千个方向，与各个团体的通信将需要时间。所以虽然他们能够生产额外的氏族成员和幼体来增强他们的力量，但额外的漫游飞地将依赖于这些外部力量的到来。
+
+最后，我们遇到的每个守护者团体都共享相同的幼体和氏族成员风格，但拥有独特的漫游飞地战舰。在与他们战斗之前，了解每个守护者的能力是明智的。" />
+
+	<journal name="NA_Custodians_Diamond" sidebar_text="{FactionColor}奈因祖尔守护者&lt;/color&gt;:  钻石"
+			can_record_another_copy_if_already_recorded_in_this_campaign="false"
+			text_replacement_related_faction_color="true"
+			text_replacement_related_planet="true"
+			chat_text="指挥官，我们发现了{FactionColor}钻石守护者。&lt;/color&gt;"
+			full_text="指挥官，我们在银河系中发现了另一个奈因祖尔亚派系，钻石守护者。
+
+他们似乎是珍珠守护者的长期对手，我们目前结盟的守护者。他们对绝对控制的渴望导致他们寻求他们认为是宇宙中最强大、最无情的实体，试图将自己融入他们认为是下一个银河帝国的法律的强力右臂。不用说，人工智能最符合我们在当前银河系中的情况，他们已经将支持投入到人工智能已经巨大的力量中。" />
+
+	<journal name="NA_Custodians_Sapphire" sidebar_text="{FactionColor}奈因祖尔守护者&lt;/color&gt;:  蓝宝石"
+			can_record_another_copy_if_already_recorded_in_this_campaign="false"
+			text_replacement_related_faction_color="true"
+			text_replacement_related_planet="true"
+			chat_text="指挥官，我们发现了{FactionColor}蓝宝石守护者。&lt;/color&gt;"
+			full_text="指挥官，我们在银河系中发现了另一个奈因祖尔亚派系，蓝宝石守护者。
+
+虽然珍珠守护者对这个派系本身没有 outright 蔑视，但他们指出蓝宝石最好被描述为...分歧。很难缩小他们的长期目标，我们可能会发现他们随机协助几乎任何接受他们的派系。（任何设置了小型派系蓝队的派系。）" />
+
+	<journal name="NA_Custodians_Ruby" sidebar_text="{FactionColor}奈因祖尔守护者&lt;/color&gt;:  红宝石"
+			can_record_another_copy_if_already_recorded_in_this_campaign="false"
+			text_replacement_related_faction_color="true"
+			text_replacement_related_planet="true"
+			chat_text="指挥官，我们发现了{FactionColor}红宝石守护者。&lt;/color&gt;"
+			full_text="指挥官，我们在银河系中发现了另一个奈因祖尔亚派系，红宝石守护者。
+
+虽然珍珠守护者对这个派系本身没有 outright 蔑视，但他们指出红宝石最好被描述为...分歧。很难缩小他们的长期目标，我们可能会发现他们随机协助几乎任何接受他们的派系。（任何设置了小型派系红队的派系。）" />
+
+	<journal name="NA_Custodians_Emerald" sidebar_text="{FactionColor}奈因祖尔守护者&lt;/color&gt;:  翡翠"
+			can_record_another_copy_if_already_recorded_in_this_campaign="false"
+			text_replacement_related_faction_color="true"
+			text_replacement_related_planet="true"
+			chat_text="指挥官，我们发现了{FactionColor}翡翠守护者。&lt;/color&gt;"
+			full_text="指挥官，我们在银河系中发现了另一个奈因祖尔亚派系，翡翠守护者。
+
+虽然珍珠守护者对这个派系本身没有 outright 蔑视，但他们指出翡翠最好被描述为...分歧。很难缩小他们的长期目标，我们可能会发现他们随机协助几乎任何接受他们的派系。（任何设置了小型派系绿队的派系。）" />
+
+	<journal name="NA_Custodians_Onyx" sidebar_text="{FactionColor}奈因祖尔守护者&lt;/color&gt;:  玛瑙"
+			can_record_another_copy_if_already_recorded_in_this_campaign="false"
+			text_replacement_related_faction_color="true"
+			text_replacement_related_planet="true"
+			chat_text="指挥官，我们发现了{FactionColor}玛瑙守护者。&lt;/color&gt;"
+			full_text="指挥官，我们在银河系中发现了另一个奈因祖尔亚派系，玛瑙守护者。
+
+珍珠守护者找不到词语来描述玛瑙带来的恐怖。虽然他们至少能够解释钻石对控制的渴望作为一种和平的方式，但玛瑙没有这样的迹象。他们没有长期目标，除了摧毁任何不屈服于他们的人，并且会乐于加入任何推动这一议程的团体。他们真的不尊重任何东西，只尊重力量，并且已经加入了新命名的'黑暗联盟'来压制我们的银河系。" />
+
+</root>

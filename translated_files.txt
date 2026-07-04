@@ -272,3 +272,25 @@ UnitEncyclopediaSortStyle\CMMP_UnitEncyclopediaSortStyles.xml
 UnitEncyclopediaTextboxFunction\CMMP_UnitEncyclopediaTextboxFunctions.xml
 VassalOrderType\CMMP_VassalOrderTypes_Vanilla.xml
 WardenFleetType\KDL_VanillaEntries.xml
+275: Expansions\1_The_Spire_Rises\GameData\Configuration\JournalEntries\TSR_Journal_SpireCampaign.xml
+276: Expansions\1_The_Spire_Rises\GameData\Configuration\JournalEntries\TSR_Journal_SphereWars.xml
+277: Expansions\1_The_Spire_Rises\GameData\Configuration\JournalEntries\TSR_Journal_DirectCodeEntries.xml
+278: Expansions\2_Zenith_Onslaught\GameData\Configuration\JournalEntries\ZO_Journal_DarkZenith.xml
+279: Expansions\2_Zenith_Onslaught\GameData\Configuration\JournalEntries\ZO_Journal_NomadPlanets.xml
+280: Expansions\2_Zenith_Onslaught\GameData\Configuration\JournalEntries\ZO_Journal_ZenithArchitrave.xml
+281: Expansions\2_Zenith_Onslaught\GameData\Configuration\JournalEntries\ZO_Journal_ZenithMiners.xml
+282: Expansions\3_The_Neinzul_Abyss\GameData\Configuration\JournalEntries\NA_Journal_WildHives.xml
+283: Expansions\3_The_Neinzul_Abyss\GameData\Configuration\JournalEntries\NA_Journal_ShowdownDevices.xml
+284: Expansions\3_The_Neinzul_Abyss\GameData\Configuration\JournalEntries\NA_Journal_Sappers.xml
+285: Expansions\3_The_Neinzul_Abyss\GameData\Configuration\JournalEntries\NA_Journal_Necromancer.xml
+286: Expansions\3_The_Neinzul_Abyss\GameData\Configuration\JournalEntries\NA_Journal_Migrant.xml
+287: Expansions\3_The_Neinzul_Abyss\GameData\Configuration\JournalEntries\NA_Journal_Elderlings.xml
+288: Expansions\3_The_Neinzul_Abyss\GameData\Configuration\JournalEntries\NA_Journal_Custodians.xml
+289: Expansions\1_The_Spire_Rises\GameData\Configuration\Achievement\TSR_Achievements.xml
+290: Expansions\2_Zenith_Onslaught\GameData\Configuration\Achievement\ZO_Achievements.xml
+291: Expansions\3_The_Neinzul_Abyss\GameData\Configuration\Achievement\NA_Achievements.xml
+292: XMLMods\ExoticShips\GameEntity\ExS_DLC1_Ships_Frigates.xml
+293: XMLMods\ExoticShips\GameEntity\ExS_DLC1_Ships_FleetShips.xml
+294: XMLMods\ExoticShips\GameEntity\ExS_DLC2_Ships_Frigates.xml
+295: XMLMods\ExoticShips\GameEntity\ExS_DLC2_Ships_FleetShips.xml
+296: XMLMods\ExoticShips\GameEntity\ExS_DLC3_Ships_Frigates.xml

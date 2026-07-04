@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+<!-- 天灾军团-->
+
+<achievement name="Viva La Resistance!" api_key="VIVA_RESISTANCE"
+    description="摧毁天灾军团征服者。"
+    condition_type="KillUnit"
+    condition_related_strings="Subjugator"
+    level="gold"
+  />
+  
+<achievement name="Feel My Vengence" api_key="FEEL_VENGENCE"
+    description="摧毁天灾军团复仇者。"
+    condition_type="KillUnit"
+    condition_related_strings="Nemesis"
+    level="platinum"
+  />
+
+ <achievement name="Should Have Joined Our Federation" api_key="JOINED_FEDERATION"
+               single_faction_based_victory_achievement="true"
+  	       description="在启用强度>=4的对所有玩家敌对的天灾军团的情况下赢得游戏。"
+               minor_faction_name="Scourge"
+               intensity_for_achievement="4"
+	       minor_faction_allegiance="Allied To AI"
+               level="bronze"
+               >
+  </achievement>
+  <achievement name="Divide And Conquer" api_key="DIVIDE_CONQUER"
+               single_faction_based_victory_achievement="true"
+  	       description="在启用强度>=7的对玩家敌对的天灾军团的情况下赢得游戏。"
+               minor_faction_name="Scourge"
+               intensity_for_achievement="7"
+               minor_faction_allegiance="Allied To AI"
+               level="silver"
+               >
+  </achievement>  
+  <achievement name="Race Against Time" api_key="RACE_TIME"
+               single_faction_based_victory_achievement="true"
+  	       description="在启用强度=10的对所有敌对的天灾军团的情况下赢得游戏。"
+               minor_faction_name="Scourge"
+               intensity_for_achievement="9"
+               minor_faction_allegiance="Allied To AI"
+               level="gold"
+               >
+  </achievement>  
+
+
+<!-- 堕落尖塔族-->
+
+     <achievement name="Scanning For Intelligent Life" api_key="SCANNING_LIFE"
+    description="扫描尖塔族遗迹。"
+    condition_type="PerformHack"
+    condition_related_strings="SearchForRelic"
+    level="bronze"
+  />
+
+ <achievement name="Treasure Hunter" api_key="TREASURE_HUNTING"
+    description="分析尖塔族残骸。"
+    condition_type="PerformHack"
+    condition_related_strings="AnalyzeSpireDebris"
+    level="bronze"
+  />
+
+  <achievement name="I Prefer A Real Spire Ship" api_key="PREFER_REAL_SPIRE"
+    description="认领一艘尖塔族巡洋舰旗舰。"
+    condition_type="ClaimUnit"
+    condition_related_strings="SpireCruiserFlagship"
+    level="bronze"
+  />
+  <achievement name="I Said A Real Spire Ship" api_key="SAID_REAL_SPIRE"
+    description="认领一艘尖塔族战列舰旗舰。"
+    condition_type="ClaimUnit"
+    condition_related_strings="SpireBattleshipFlagship"
+    level="silver"
+  />
+  <achievement name="Perfection" api_key="PERFECTION_SPIRE"
+    description="认领一艘尖塔族无畏舰旗舰。"
+    condition_type="ClaimUnit"
+    condition_related_strings="SpireDreadnoughtFlagship"
+    level="gold"
+  />
+
+  <achievement name="Think The AI Won't Notice?" api_key="THINK_AI"
+    description="将一座尖塔族城市升级到等级VII。"
+    condition_type="UpgradeFleetLineToMark"
+    condition_related_strings="SpireCity"
+	condition_string_mode="Tag"
+	condition_magnitude="7"
+    level="gold"
+  />
+  
+  <achievement name="I Would Like To Make A Collect Call" api_key="COLLECT_CALL"
+    description="建造尖塔族收发器。"
+    condition_type="ClaimUnit"
+    condition_related_strings="SpireTransceiver"
+    level="platinum"
+  />
+
+ <achievement name="Didn't Mean To Make You Cry" api_key="MAKE_CRY"
+    description="摧毁一艘母舰。"
+    condition_type="KillUnit"
+    condition_related_strings="MothershipAchievement"
+    condition_string_mode="Tag"
+    level="gold"
+  />
+<achievement name="You Did This Without Cheating?" api_key="WITHOUT_CHEATING"
+    description="摧毁剥皮者。"
+    condition_type="KillUnit"
+    condition_related_strings="FlenserAchievement"
+    condition_string_mode="Tag"
+    level="platinum"
+  />
+
+<!--尖塔族球体/分裂尖塔族 -->
+ <achievement name="Push The Red Button" api_key="PUSH_BUTTON"
+    description="偷取一枚灰色尖塔族弹头。"
+    condition_type="PerformHack"
+    condition_related_strings="HackToStealWarhead_SpireSphere"
+    level="silver"
+  />
+
+ <achievement name="And I Thought Snipers Had Long Range" api_key="SNIPER_RANGE"
+    description="偷取一把彩色尖塔族星际武器。"
+    condition_type="PerformHack"
+    condition_related_strings="HackToStealInterplanetaryWeapon_SpireSphere"
+    level="silver"
+  />
+  
+  <achievement name="Howdy Neighbor!" api_key="HOWDY_NEIGHBOR"
+               single_faction_based_victory_achievement="true"
+  	       description="在启用尖塔族球体的情况下赢得游戏。"
+               minor_faction_name="SpireSphere,SpireSphere_Gray,SpireSphere_Chromatic"
+               intensity_for_achievement="0"
+               level="bronze"
+               >
+  </achievement>  
+
+ <achievement name="Let Bygones Be Bygones" api_key="BYGONES_BYGONES"
+               single_faction_based_victory_achievement="true"
+  	       description="在启用分裂尖塔族的情况下赢得游戏。"
+               minor_faction_name="SplinteringSpire"
+               intensity_for_achievement="0"
+               level="gold"
+               >
+  </achievement>  
+
+ <achievement name="Leave My Stuff Alone!" api_key="LEAVE_ALONE"
+               single_faction_based_victory_achievement="true"
+  	       description="在启用彩色恐怖的情况下赢得游戏。"
+               minor_faction_name="ChromaticHorror"
+               intensity_for_achievement="-1"
+               level="silver"
+               >
+  </achievement>  
+
+
+</root>

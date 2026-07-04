@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+   <achievement name="Creative Destruction" api_key="CREATIVE_DESTRUCTION"
+    description="通过入侵驱逐舰建造设施认领一艘驱逐舰。"
+    condition_type="PerformHack"
+    condition_related_strings="HackToGrantShipLine_Destroyer"
+    level="silver"
+  />
+  
+  
+ <!--死灵法师相关成就
+
+	注意：我们真的应该有一个作为死灵法师获胜的成就，但没有XML先例--> 
+    <achievement name="Necromancer Win" api_key="NecroWIN"
+                 description="在启用死灵法师的情况下获胜。"
+                 other_victory_type="true"
+                 requires_necromancer_faction="true"
+                 level="gold"
+                 />
+    <achievement name="Showdown Win" api_key="ShowdownWIN"
+                 description="在启用决战装置的情况下获胜。"
+                 other_victory_type="true"
+                 requires_showdown_completion="true"
+                 level="gold"
+                 />
+
+	<!--圣殿骑士-->
+   <achievement name="Long Live The King" api_key="LIVE_KING"
+    description="摧毁圣殿骑士君主。"
+    condition_type="KillUnit"
+    condition_related_strings="TemplarWeakSovereign,TemplarSovereign"
+	condition_string_mode="Tag"
+    level="platinum"
+  />
+  
+     <achievement name="Power, Unlimited Power!" api_key="UNLIMITED_POWER"
+    description="入侵一个圣殿骑士裂隙。"
+    condition_type="PerformHack"
+    condition_related_strings="RiftHack"
+    level="bronze"
+  />
+  
+    <achievement name="All Your Base Are Belong To Us" api_key="BASE_BELONG"
+    description="腐化一座圣殿骑士城堡。"
+    condition_type="PerformHack"
+    condition_related_strings="CorruptCastle"
+    level="silver"
+  />
+  
+  <!--长老-->
+   <achievement name="Cosmic Omelette" api_key="COSMIC_OMELETTE"
+    description="摧毁一枚长老卵。"
+    condition_type="KillUnit"
+    condition_related_strings="ElderlingEgg"
+    level="bronze"
+  />
+  
+  <achievement name="The Essence Must Flow" api_key="ESSENCE_FLOW"
+    description="杀死一个虚弱的长老。"
+    condition_type="KillUnit"
+    condition_related_strings="FeebleElderling"
+    level="bronze"
+  />
+  
+   <achievement name="Blood For The Blood God, Skulls For The Skull Throne" api_key="BLOOD_SKULLS"
+    description="献祭一个长老。"
+    condition_type="KillUnit"
+    condition_related_strings="HackedElderling"
+	condition_string_mode="Tag"
+    level="silver"
+  />
+  
+   <achievement name="The Hubris Before the Fall" api_key="HUBRIS_FALL"
+    description="召唤一个超然长老。"
+    condition_type="PerformHack"
+    condition_related_strings="SummonTranscendantElderling"
+    level="gold"
+  />
+ 
+<!--决战 --> 
+
+<!--银河控制舰与普通霸主共享相同的标签。需要一个新的标签，这样这个成就只在银河控制舰被杀死时触发。有10个不同的版本，每个实体一个，否则我不会在这里使用标签条件"
+<achievement name="Alright, We'll Call It A Draw" api_key="CALL_DRAW"
+    description="摧毁银河控制舰。"
+    condition_type="KillUnit"
+    condition_related_strings="
+	condition_string_mode="Tag"
+    level="platinum"
+  />
+
+-->
+
+<!--小型派系 --> 
+  <achievement name="Defense Contractor" api_key="DEFENSE_CONTRACTOR"
+               single_faction_based_victory_achievement="true"
+  	       description="在启用工兵的情况下赢得游戏。"
+               minor_faction_name="Sappers"
+               intensity_for_achievement="0"
+               level="bronze"
+               >
+  </achievement>  
+  
+    <achievement name="Sibling Rivalry" api_key="SIBLING_RIVALRY"
+               single_faction_based_victory_achievement="true"
+  	       description="在启用奈因祖尔守护者的情况下赢得游戏。"
+               minor_faction_name="NeinzulCustodiansParent"
+               intensity_for_achievement="0"
+               level="bronze"
+               >
+  </achievement>  
+  
+  <achievement name="Wherever We May Roam" api_key="WE_ROAM"
+               single_faction_based_victory_achievement="true"
+  	       description="在启用移民舰队的情况下赢得游戏。"
+               minor_faction_name="MigrantFleets"
+               intensity_for_achievement="0"
+               level="bronze"
+               >
+  </achievement> 
+  
+  <achievement name="Born To Be Wild" api_key="BORN_WILD"
+               single_faction_based_victory_achievement="true"
+  	       description="在启用奈因祖尔野生蜂巢的情况下赢得游戏。"
+               minor_faction_name="NeinzulWildHives"
+               intensity_for_achievement="0"
+               level="bronze"
+               >
+  </achievement>  
+	
+  
+<!-- 人工智能类型-->
+  <achievement name="More Like Passive Aggressive" api_key="PASSIVE_AGGRESSIVE"
+               single_faction_based_victory_achievement="true"
+  	       description="在任意难度下击败侵略者人工智能。"
+               ai_type_name="Aggressor"
+               intensity_for_achievement="1"
+               level="silver"
+               >
+  </achievement>
+  <achievement name="Why Don't You Pick On Someone Your Own Size?" api_key="PICK_SOMEONE"
+               single_faction_based_victory_achievement="true"
+  	       description="在难度>=7下击败侵略者人工智能。"
+               ai_type_name="Aggressor"
+               intensity_for_achievement="7"
+               level="gold"
+               >
+  </achievement>
+  <achievement name="All Bark And No Bite" api_key="BARK_BITE"
+               single_faction_based_victory_achievement="true"
+  	       description="在难度>=9下击败侵略者人工智能。"
+               ai_type_name="Aggressor"
+               intensity_for_achievement="9"
+               level="platinum"
+               >
+  </achievement>
+  
+    <achievement name="Best Two Out Of Three?" api_key="BEST_THREE"
+               single_faction_based_victory_achievement="true"
+  	       description="在任意难度下击败游击兵人工智能。"
+               ai_type_name="Skirmisher"
+               intensity_for_achievement="1"
+               level="silver"
+               >
+  </achievement>
+  <achievement name="No Time For Losers" api_key="TIME_LOSERS"
+               single_faction_based_victory_achievement="true"
+  	       description="在难度>=7下击败游击兵人工智能。"
+               ai_type_name="Skirmisher"
+               intensity_for_achievement="7"
+               level="gold"
+               >
+  </achievement>
+  <achievement name="We Are The Champions" api_key="WE_CHAMPIONS"
+               single_faction_based_victory_achievement="true"
+  	       description="在难度>=9下击败游击兵人工智能。"
+               ai_type_name="Skirmisher"
+               intensity_for_achievement="9"
+               level="platinum"
+               >
+  </achievement>
+  
+      <achievement name="Running In Circles" api_key="RUNNING_CIRCLES"
+               single_faction_based_victory_achievement="true"
+  	       description="在任意难度下击败轨道人工智能。"
+               ai_type_name="Orbital"
+               intensity_for_achievement="1"
+               level="silver"
+               >
+  </achievement>
+  <achievement name="What Goes Around Comes Around" api_key="GOES_AROUND"
+               single_faction_based_victory_achievement="true"
+  	       description="在难度>=7下击败轨道人工智能。"
+               ai_type_name="Orbital"
+               intensity_for_achievement="7"
+               level="gold"
+               >
+  </achievement>
+  <achievement name="Independence Day" api_key="INDEPENDENCE_DAY"
+               single_faction_based_victory_achievement="true"
+  	       description="在难度>=9下击败轨道人工智能。"
+               ai_type_name="Orbital"
+               intensity_for_achievement="9"
+               level="platinum"
+               >
+  </achievement>
+  
+  
+        <achievement name="Should Have Diversified" api_key="SHOULD_DIVERSIFY"
+               single_faction_based_victory_achievement="true"
+  	       description="在任意难度下击败先锋人工智能。"
+               ai_type_name="Vanguard"
+               intensity_for_achievement="1"
+               level="silver"
+               >
+  </achievement>
+  <achievement name="Not Quite The Guardians Of The Galaxy" api_key="GUARDIANS_GALAXY"
+               single_faction_based_victory_achievement="true"
+  	       description="在难度>=7下击败先锋人工智能。"
+               ai_type_name="Vanguard"
+               intensity_for_achievement="7"
+               level="gold"
+               >
+  </achievement>
+  <achievement name="Left The Flanks Wide Open" api_key="FLANKS_OPEN"
+               single_faction_based_victory_achievement="true"
+  	       description="在难度>=9下击败先锋人工智能。"
+               ai_type_name="Vanguard"
+               intensity_for_achievement="9"
+               level="platinum"
+               >
+  </achievement>
+  
+  
+          <achievement name="Tragic Hero" api_key="TRAGIC_HERO"
+               single_faction_based_victory_achievement="true"
+  	       description="在任意难度下击败英雄人工智能。"
+               ai_type_name="Heroic"
+               intensity_for_achievement="1"
+               level="silver"
+               >
+  </achievement>
+  <achievement name="Hero's Journey To A Dead End" api_key="JOURNEY_DEAD"
+               single_faction_based_victory_achievement="true"
+  	       description="在难度>=7下击败英雄人工智能。"
+               ai_type_name="Heroic"
+               intensity_for_achievement="7"
+               level="gold"
+               >
+  </achievement>
+  <achievement name="I Thought I Was The Protagonist" api_key="THOUGHT_PROTAGONIST"
+               single_faction_based_victory_achievement="true"
+  	       description="在难度>=9下击败英雄人工智能。"
+               ai_type_name="Heroic"
+               intensity_for_achievement="9"
+               level="platinum"
+               >
+  </achievement>
+  
+  
+            <achievement name="Found A Blind Spot" api_key="BLIND_SPOT"
+               single_faction_based_victory_achievement="true"
+  	       description="在任意难度下击败全景人工智能。"
+               ai_type_name="Panopticon"
+               intensity_for_achievement="1"
+               level="silver"
+               >
+  </achievement>
+  <achievement name="Right Between The Eyes" api_key="BETWEEN_EYES"
+               single_faction_based_victory_achievement="true"
+  	       description="在难度>=7下击败全景人工智能。"
+               ai_type_name="Panopticon"
+               intensity_for_achievement="7"
+               level="gold"
+               >
+  </achievement>
+  <achievement name="You Can't See Me" api_key="CANT_SEE"
+               single_faction_based_victory_achievement="true"
+  	       description="在难度>=9下击败全景人工智能。"
+               ai_type_name="Panopticon"
+               intensity_for_achievement="9"
+               level="platinum"
+               >
+  </achievement>
+  
+            <achievement name="Tortoise Beats Hare" api_key="TORTOISE_HARE"
+               single_faction_based_victory_achievement="true"
+  	       description="在任意难度下击败速度狂人工智能。"
+               ai_type_name="Speedster"
+               intensity_for_achievement="1"
+               level="silver"
+               >
+  </achievement>
+  <achievement name="Run Into the Ground" api_key="RUN_GROUND"
+               single_faction_based_victory_achievement="true"
+  	       description="在难度>=7下击败速度狂人工智能。"
+               ai_type_name="Speedster"
+               intensity_for_achievement="7"
+               level="gold"
+               >
+  </achievement>
+  <achievement name="It's A Marathon Not A Sprint" api_key="MARATHON_SPRINT"
+               single_faction_based_victory_achievement="true"
+  	       description="在难度>=9下击败速度狂人工智能。"
+               ai_type_name="Speedster"
+               intensity_for_achievement="9"
+               level="platinum"
+               >
+  </achievement>
+  
+              <achievement name="Pass the Bug Spray" api_key="BUG_SPRAY"
+               single_faction_based_victory_achievement="true"
+  	       description="在任意难度下击败奈因祖尔狂热者人工智能。"
+               ai_type_name="NeinzulEnthusiast"
+               intensity_for_achievement="1"
+               level="silver"
+               >
+  </achievement>
+  <achievement name="They Call Me The Exterminator" api_key="CALL_EXTERMINATOR"
+               single_faction_based_victory_achievement="true"
+  	       description="在难度>=7下击败奈因祖尔狂热者人工智能。"
+               ai_type_name="NeinzulEnthusiast"
+               intensity_for_achievement="7"
+               level="gold"
+               >
+  </achievement>
+  <achievement name="Curb Your Enthusiasm" api_key="CURB_ENTHUSIASM"
+               single_faction_based_victory_achievement="true"
+  	       description="在难度>=9下击败奈因祖尔狂热者人工智能。"
+               ai_type_name="NeinzulEnthusiast"
+               intensity_for_achievement="9"
+               level="platinum"
+               >
+  </achievement>
+  
+
+
+</root> 

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<journal name="NA_WildHives_WildHiveDiscovered" sidebar_text="{FactionColor}野生奈因祖尔&lt;/color&gt;:  蜂巢侵扰"
+			can_record_another_copy_if_already_recorded_in_this_campaign="false"
+			text_replacement_related_faction_color="true"
+			text_replacement_related_planet="true"
+			chat_text="指挥官，我们发现我们一个潜在的资源节点被其他生物占据了！"
+			full_text="指挥官，我们在{PlanetName}上的扫描仪发现了一个惊人的发现。到目前为止，我们发现的每一个敌对势力都避免使用散布在整个银河系中的各种金属发电机。然而，这些外星人似乎已经开始像我们一样利用它们。这些'野生蜂巢'，由你的科学顾问命名，对战役构成了潜在的障碍。
+
+这种侵扰似乎已经深深嵌入金属发电机中，我们可以检测到大量有感知的生命在整个发电机中流动，随着时间的推移变得越来越强大。它似乎并非天生敌对，但它似乎正在对其星球上的引擎和武器造成问题。
+
+你的军事顾问强烈建议在允许它们传播并削弱你已经紧张的战时经济之前展示武力。
+
+然而，你的科学顾问建议采用更温和的方法。他们声称我们不需要银河系中的每一个资源，这是深入了解外星生命的绝佳机会。他们确实勉强同意，如果它们占据我们太多领土，可能需要使用武力。" />
+
+	<journal name="NA_WildHives_WildHiveAttacked" sidebar_text="{FactionColor}野生奈因祖尔&lt;/color&gt;:  自卫"
+			can_record_another_copy_if_already_recorded_in_this_campaign="false"
+			text_replacement_related_faction_color="true"
+			text_replacement_related_planet="true"
+			chat_text="指挥官，银河系中一个野生蜂巢受到了攻击。"
+			full_text="指挥官，银河系中一个野生蜂巢受到了攻击，并以武力回应。一些被称为'士兵'的氏族成员从蜂巢中出现，一直在与攻击者交战。
+
+有趣的是，我们的科学家注意到，在这种激怒状态下，它们正常的瞄准干扰器（阻止大多数舰船攻击它们）失灵了，即使是最小的攻击机现在也能攻击它们。虽然这并不影响我们指挥部队手动瞄准它们的能力，但这可能会为其他派系在星球上打破它们的力量创造机会。
+
+最后，看起来成群的小型维修舰船，太小以至于我们的扫描仪无法准确检测，正在等待修复对蜂巢造成的 damage。根据蜂巢附近它们的数量，我们的科学家相信它们在有机会时能够进行快速修复。" />
+
+	<journal name="NA_WildHives_WildHiveFriendly" sidebar_text="{FactionColor}野生奈因祖尔&lt;/color&gt;:  友好"
+			can_record_another_copy_if_already_recorded_in_this_campaign="false"
+			text_replacement_related_faction_color="true"
+			text_replacement_related_planet="true"
+			chat_text="指挥官，我们现在可以访问{PlanetName}上的一个野生蜂巢。"
+			full_text="指挥官，出于某种原因，我们现在可以访问{PlanetName}上的一个野生蜂巢。
+
+虽然我们当地的舰船和建筑仍然报告其能力下降，但我们的指挥站似乎至少在目前部分抵消了这种影响。然而， station指挥官确实表达了他对如果更多金属发电机被感染，它们将能够表现多好的担忧。
+
+我们的科学家，终于能够更深入地研究它们，处于各种兴奋状态。他们的初步发现证实了我们已经知道的大部分内容，但更有趣的是，似乎有一种他们以前从未见过的奇怪变异。一些小奈因祖尔似乎正在使用它们自己的强大传感器来扫描我们的科学家，他们对此充满希望。" />
+
+	<journal name="NA_WildHives_WildHiveFriendlyMultiHive" sidebar_text="{FactionColor}野生奈因祖尔&lt;/color&gt;:  友好"
+			can_record_another_copy_if_already_recorded_in_this_campaign="false"
+			text_replacement_related_faction_color="true"
+			text_replacement_related_planet="true"
+			chat_text="指挥官，我们现在可以访问{PlanetName}上的一个野生蜂巢。"
+			full_text="指挥官，出于某种原因，我们现在可以访问{PlanetName}上的一个野生蜂巢。
+
+虽然我们当地的舰船和建筑仍然报告其能力下降，但我们的指挥站似乎至少在目前部分抵消了这种影响。然而， station指挥官确实表达了他对如果更多金属发电机被感染，它们将能够表现多好的担忧。
+
+我们的科学家，终于能够更深入地研究它们，处于各种兴奋状态。他们的初步发现证实了我们已经知道的大部分内容，但更有趣的是，似乎有一种他们以前从未见过的奇怪变异。一些小奈因祖尔似乎正在使用它们自己的强大传感器来扫描我们的科学家，他们对此充满希望。
+
+奇怪的是，我们的一位科学家注意到它们不再广播它们认为用于检测敌对蜂巢的波长。他们推测野生蜂巢并非天生互相敌对，这是人工智能为防止它们失控传播而采取的对策。" />
+
+	<journal name="NA_WildHives_WildHiveFriendlyDefense" sidebar_text="{FactionColor}野生奈因祖尔&lt;/color&gt;:  友好防御者"
+			can_record_another_copy_if_already_recorded_in_this_campaign="false"
+			text_replacement_related_faction_color="true"
+			text_replacement_related_planet="true"
+			chat_text="指挥官，{PlanetName}上的野生蜂巢已经来帮助我们了。"
+			full_text="指挥官，敌对势力一出现在{PlanetName}上，一些氏族士兵就出现了！我们当地的指挥官起初很担心，但很快意识到这些新的舰船只针对敌对势力。
+
+我们当地的科学家推测这是由于它们天生不喜欢人工智能控制的空间。由于缺乏适当的解释，他们说当地奈因祖尔在占据我们的星球后似乎总体上...更平静了。" />
+
+	<journal name="NA_WildHives_WildHiveNonMetalGenerator" sidebar_text="{FactionColor}野生奈因祖尔&lt;/color&gt;:  更大侵扰"
+			can_record_another_copy_if_already_recorded_in_this_campaign="false"
+			text_replacement_related_faction_color="true"
+			text_replacement_related_planet="true"
+			chat_text="指挥官，野生蜂巢已经占用了一个可捕获目标！"
+			full_text="指挥官，你的科学顾问带来了令人不安的消息...似乎金属发电机并不是这些'野生蜂巢'侵扰的唯一合适宿主。我们检测到{PlanetName}上的一个可捕获目标经历了与金属发电机类似的侵扰，然而，更大的内部空间加上'野生蜂巢'生物不断向被侵扰的可捕获目标运送补给，使其变成了一个'更大'的蜂巢，可以这么说。其内部活动被注意到比金属发电机更大。我们可以预期从被侵扰的可捕获目标中出现更大数量的部队。
+
+虽然我们可以预期这个被侵扰的可捕获目标会对敌对势力进行更大的抵抗，但我们自己无法捕获它。然而，在你的科学顾问团队对侵扰进行了彻底分析，并在你的军事顾问指导下进行了一些武器调整和校准后，已经确定了可捕获目标结构完整性中的弱点，并且可以利用这些弱点来 damage 和 sterilize 侵扰，而不会导致可捕获目标被摧毁。针对被侵扰的可捕获目标应该可以将其从'野生蜂巢'的控制中解放出来，如果我们希望将其据为己有的话。
+
+这一发展的影响相当令人担忧。虽然我们目前没有理由相信'野生蜂巢'将这个可捕获目标用作繁殖蜂巢以外的任何用途，但这可能意味着其他可捕获目标容易受到野生蜂巢侵扰。我们将继续监控其他可捕获目标，并相应地校准武器以最小化对它们的损害。" />
+
+	<journal name="NA_WildHives_WildHiveContested" sidebar_text="{FactionColor}野生奈因祖尔&lt;/color&gt;:  争议领土"
+			can_record_another_copy_if_already_recorded_in_this_campaign="false"
+			text_replacement_related_faction_color="true"
+			text_replacement_related_planet="true"
+			chat_text="指挥官，我们发现野生蜂巢群体中出现了局部攻击性！"
+			full_text="指挥官，我们了解到了一个最奇怪的发展。似乎'野生蜂巢'并不像它们看起来那样团结。虽然它们似乎愿意与自己的同类和平共处，甚至与其他形式的外星生命和平共处，但它们对它们认为在其领土上的敌对行为并不友好。无论是任何外来蜂巢的出现，还是人工智能在缺乏指挥站的星球上的大量军事集结，它们都会试图争夺该领土。
+
+我们通知你的原因是，这个争议领土正在导致野生蜂巢派系发动攻击。虽然它们以前是'别打扰我们，我们也不会打扰你'的类型，但现在它们正在积极攻击它们认为有争议的星球上的任何东西。这可能是一个相当大的变数。它们最终可能会为我们摧毁人工智能部队，或者我们自己也可能陷入交叉火力中。然而，你的科学顾问指出，这种反应似乎高度局部化，如果我们避开任何活跃的争议战区，我们应该能够避开它们几乎所有的防御部队。然而，他们确实警告你要留意任何受伤的工人逃离星球，因为它们在逃跑时可能会触发'连锁反应'，导致它们星球上任何通常休眠的蜂巢在愤怒的恐慌中醒来。
+
+你的军事顾问指出这是'消灭那些虫子的绝佳机会'，他们没有错。在这种更高攻击性状态下，它们的单位生产似乎受到了打击，并且基本上'全押'在防御部队上。我们可以现在发动攻击，对付多个被削弱的敌对舰队，我们可以在一方即将取得优势时冲进去消灭它们所有并 sterilize 任何侵扰，或者最后你可以简单地让事情发展以避免不必要的损失。选择权在你，指挥官。" />
+
+	<journal name="NA_WildHives_WildHiveFriendlyBond" sidebar_text="{FactionColor}野生奈因祖尔&lt;/color&gt;:  氏族成员"
+			can_record_another_copy_if_already_recorded_in_this_campaign="false"
+			text_replacement_related_faction_color="true"
+			chat_text="指挥官，一艘中等大小的奈因祖尔舰船开始模仿我们的动作。"
+			full_text="指挥官，其中一艘较长寿命的奈因祖尔舰船已经离开其母巢空间，开始向我们的部队移动。它似乎正直奔一艘舰船而来，我们能够翻译的传输似乎暗示它不愿意与之分离，并且正在施展我们认为是保护的欲望。更有趣的是，这个'氏族成员'，正如我们一些人所称呼的那样，似乎能够创造自己的幼体来协助战斗。" />
+			
+	<journal name="NA_WildHives_WildHiveWitheringWorker" sidebar_text="{FactionColor}野生奈因祖尔&lt;/color&gt;:  枯萎"
+			can_record_another_copy_if_already_recorded_in_this_campaign="false"
+			text_replacement_related_faction_color="true"
+			text_replacement_related_planet="true"
+			chat_text="指挥官，一艘奈因祖尔工人舰船已经开始 decay。"
+			full_text="指挥官，{PlanetName}上的一艘奈因祖尔工人舰船已经开始 decay。我们的科学家认为这是由于它因某种原因无法离开星球。如果它长时间无法逃脱，很快就会触发星球上所有野生蜂巢的防御反应。" />
+
+</root>

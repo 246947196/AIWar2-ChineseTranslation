@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<journal name="NA_MigrantFleet_UnknownWormhole" sidebar_text="{FactionColor}神秘异常&lt;/color&gt;: 未知"
+			can_record_another_copy_if_already_recorded_in_this_campaign="false"
+			text_replacement_related_faction_color="true"
+			text_replacement_related_planet="true"
+			chat_text="指挥官，我们在{PlanetName}上发现了一些奇怪的异常现象，并将我们的发现记录在你的日志中。"
+			full_text="指挥官，我们在{PlanetName}上的扫描仪报告了奇怪的异常现象。据我们所知，星系边缘出现了虫洞。然而，与我们已知的传统虫洞不同，这些虫洞似乎并非起源于我们的银河系，并且更奇怪的是，它们正在围绕该区域轨道运行。
+
+我们注意到许多较小的攻击机从虫洞中涌出，但它们在到达我们的空间后迅速 decompose。我们的军事领导人报告说它们正在广播一个我们能够远程复制的开放信号，我们相信这些较小的舰船是友好的。
+
+更值得注意的是，有一个更大的信号从虫洞中传出，我们的科学家认为这来自一艘比这些群体大得多的舰船。可能值得亲自调查。当我们了解更多信息时，我们将继续监控情况并向你汇报。" />
+
+	<journal name="NA_MigrantFleet_UnknownMigrantArrives" sidebar_text="{FactionColor}移民者&lt;/color&gt;: 移民者"
+			can_record_another_copy_if_already_recorded_in_this_campaign="false"
+			text_replacement_related_faction_color="true"
+			text_replacement_related_planet="true"
+			chat_text="指挥官，我们之前在{PlanetName}上定位的虫洞已经关闭，但在此之前，一个漫游飞地从中出来了。"
+			full_text="指挥官，我们在{PlanetName}上的扫描仪报告说，一艘更大的舰船从虫洞中到达，然后虫洞立即在它后面关闭了。
+
+据我们所见，这艘被命名为漫游飞地的舰船，虽然本身很弱，但拥有一些我们见过的最强大的酸性武器。
+
+有趣的是，虫洞停止的那一刻，幼体舰船的生产也停止了。看来漫游飞地缺乏自己创造幼体的能力。
+
+这艘舰船正在广播一个相对混乱的信号，我们正在努力解密，但我们在本条目的底部大致翻译了它。无论这个信号的意图是什么，幼体之前 broadcast 的友好信号也被这个'飞地' broadcast，所以亲自调查可能符合我们的利益。
+
+翻译：困惑...又是金属...对我们来说它失败了...我们必须找到一个新的 h...幼体不能白白牺牲。安全 mu...氏族成员。" />
+
+	<journal name="NA_MigrantFleet_UnknownMigrantEscorted" sidebar_text="{FactionColor}移民者&lt;/color&gt;: 到达"
+				can_record_another_copy_if_already_recorded_in_this_campaign="false"
+				text_replacement_related_faction_color="true"
+				text_replacement_related_planet="true"
+				chat_text="指挥官，一个漫游飞地已经安全到达我们的领土。"
+				full_text="指挥官，一个漫游飞地已经设法安全到达我们的领土。
+
+一旦它到达并似乎意识到它不再被攻击，它开始缓慢地在星球周围移动，就好像它在寻找什么...
+
+我们的科学家为这一刻准备了很久，他们没有失望。漫游飞地一到达，扫描仪就在内部检测到巨大的能量读数。
+
+据我们所知，漫游飞地内有两个大型电源，一个位于舰船中心附近，另一个位于引擎附近。
+
+我们已经设法翻译了更多它的语言，但它仍然相当粗糙。
+
+翻译：好奇，m...被 cr... erhaps 击中。是的，ye...确实是一个好巢。" />
+
+	<journal name="NA_MigrantFleet_UnknownMigrantLeaves" sidebar_text="{FactionColor}移民者&lt;/color&gt;: 腔室"
+			can_record_another_copy_if_already_recorded_in_this_campaign="false"
+			text_replacement_related_faction_color="true"
+			text_replacement_related_planet="true"
+			chat_text="指挥官，其中一个在{PlanetName}上安家的奈因祖尔给我们留下了一条信息...以及一份临别礼物。"
+			full_text="指挥官，一段时间以来，一个移民奈因祖尔在我们的星球上安家，甚至协助了一些小规模战斗。然而，它似乎打开了另一个虫洞离开这个银河系，并且已经通过了。
+
+然而，在它离开之前，发生了两件值得注意的事情。我们注意到的最实际的事情是它留下了一个结构，我们的科学家称之为'奈因祖尔腔室'。据我们所知，一种全新类型的奈因祖尔目前正在其中被创造，他们敦促我们尽最大努力保护它。
+
+另一件值得注意的事情是它留下的信息。由于它在我们星球上停留的时间相对较短，我们无法完美理解它的语言，但意图被接收到了。
+
+信息：我们感谢你们这些骨质生物。虽然我们...你们对我的利用...是必要的。我们将 re...并带更多我们的同类来。请 ke...安全。" />
+
+	<journal name="NA_MigrantFleet_KnownWormhole" sidebar_text="{FactionColor}移民者&lt;/color&gt;: 熟悉者"
+			can_record_another_copy_if_already_recorded_in_this_campaign="false"
+			text_replacement_related_faction_color="true"
+			text_replacement_related_planet="true"
+			chat_text="指挥官，我们在{PlanetName}上的扫描仪检测到了熟悉的信号。"
+			full_text="指挥官，我们有好消息！我们的科学家认为，之前与我们接触过的移民者之一正在返回。从虫洞发出的信号在音调上与我们之前的录音之一匹配。更令人兴奋的是，看起来它这次带来的不仅仅是幼体。
+
+它正在我们之前解密的频道中 broadcast 其目的地的描述，并且该目的地似乎在我们的一个星球上！可以安全地假设它知道如何找到我们，并将在到达后前往，但派遣护航可能仍然值得。" />
+
+	<journal name="NA_MigrantFleet_KnownMigrantArrives" sidebar_text="{FactionColor}移民者&lt;/color&gt;: 回归"
+			can_record_another_copy_if_already_recorded_in_this_campaign="false"
+			text_replacement_related_faction_color="true"
+			text_replacement_related_planet="true"
+			chat_text="指挥官，一个移民者进入了{PlanetName}，带有与我们过去帮助过的移民者惊人相似的标记。"
+			full_text="指挥官，我们已经确认了信号的来源，它确实是我们以前见过的移民者。他们信守了诺言，似乎正在火速前往我们的领土。更令人兴奋的是，它似乎带来了一些中等大小的舰船。
+
+我们最近成立的奈因祖尔文化部门指出，这些可能是更多的他们所称的'氏族成员'，并且它的信息中有更令人振奋的语气。他们期待与不是在我们银河系中出生的氏族成员互动。
+
+信息：我们回来了，骨质生物！我们非常高兴检测到你们在这些巨大冲突和...迁移到你们虚无之地时期的...坚韧。
+
+考虑到它较小的护卫，我们的文化主管强烈建议我们派遣援助以保证它们的到达。" />
+
+	<journal name="NA_MigrantFleet_KnownMigrantEscorted" sidebar_text="{FactionColor}移民者&lt;/color&gt;: 骨巢"
+					can_record_another_copy_if_already_recorded_in_this_campaign="false"
+					text_replacement_related_faction_color="true"
+					text_replacement_related_planet="true"
+					chat_text="指挥官，熟悉的漫游飞地已经安全到达我们的领土。"
+					full_text="指挥官，熟悉的漫游飞地已经安全到达我们的领土。
+
+看起来，据我们的科学家所知，它很高兴回来。虽然它的年轻氏族护卫仍然紧贴着它，但我们在星球上的许多舰船和建筑都检测到来自较小舰船的传入扫描。
+
+看起来飞地准备再次离开，因为检测到的电源再次上升，但它似乎正在...为它的离开准备它的年轻护卫，几乎将它们推向我们的舰船以使它们依附。
+
+			 
+翻译：这些是骨质生物，骨...骨巢。靠近...援助它们，因为它们在...大崩溃后繁荣。" />
+
+<journal name="NA_MigrantFleet_KnownMigrantLeaves" sidebar_text="{FactionColor}移民者&lt;/color&gt;: 循环"
+			can_record_another_copy_if_already_recorded_in_this_campaign="false"
+			text_replacement_related_faction_color="true"
+			text_replacement_related_planet="true"
+			chat_text="指挥官，在{PlanetName}附近出现的熟悉移民者再次跃迁出了我们的银河系。"
+			full_text="指挥官，我们遗憾地报告，我们认识的移民者再次离开了我们的银河系。我们许多人已经习惯了在和平空间中看到它们表演的许多技巧。
+
+然而，这并非没有充分的理由。虽然它这次确实带来了一些它的氏族成员，但它报告说它还有更多需要协助穿越跃迁空间。它真的相信我们是宇宙的安全港之一，并认为往返值得。我们必须继续提高我们自己的地位，以证明我们值得它的信任。
+
+特别是如果关于人工智能对它们不断增加压力的传言可信的话。" />
+
+<journal name="NA_MigrantFleet_ClanlingBond" sidebar_text="{FactionColor}移民者&lt;/color&gt;: 氏族成员"
+			can_record_another_copy_if_already_recorded_in_this_campaign="false"
+			text_replacement_related_faction_color="true"
+			chat_text="指挥官，一艘中等大小的奈因祖尔舰船开始模仿我们的动作。"
+			full_text="指挥官，其中一艘较长寿命的奈因祖尔舰船开始跟随我们的一支舰队领袖。它似乎不愿意与之分离，并且正在施展我们认为是保护的欲望。更有趣的是，这个'氏族成员'，正如我们一些人所称呼的那样，似乎能够创造自己的幼体来协助战斗。" />
+
+</root>

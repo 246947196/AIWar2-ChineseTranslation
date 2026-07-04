@@ -38,7 +38,35 @@ $whitelist = @(
     "GameVersion\KDL_GameVersions.xml",
     "HackingType\DeprecatedHacks.xml",
     "ObjectiveDetailsHooks\CMMP_ObjectiveDetailsHooksForCapturablesOfSpecificSorts.xml",
-    "TextStyles\TextStyles_Vanilla.xml"
+    "TextStyles\TextStyles_Vanilla.xml",
+    # DLC1 External files
+    "Expansions\1_The_Spire_Rises\GameData\Configuration\ExternalFactionBaseInfo\TSR_ExternalFactionBaseInfo.xml",
+    "Expansions\1_The_Spire_Rises\GameData\Configuration\ExternalFactionDeepInfo\TSR_ExternalFactionDeepInfo.xml",
+    "Expansions\1_The_Spire_Rises\GameData\Configuration\ExternalFleetBaseInfo\TSR_ExternalFleetBaseInfo.xml",
+    "Expansions\1_The_Spire_Rises\GameData\Configuration\ExternalGameEntityTypeDataExtension\TSR_ExternalGameEntityTypeDataExtension.xml",
+    "Expansions\1_The_Spire_Rises\GameData\Configuration\ExternalSquadBaseInfo\TSR_ExternalSquadBaseInfo.xml",
+    "Expansions\1_The_Spire_Rises\GameData\Configuration\ExternalSquadDeepInfo\TSR_ExternalSquadDeepInfo.xml",
+    "Expansions\1_The_Spire_Rises\GameData\Configuration\ExternalWorldBaseInfo\TSR_ExternalWorldBaseInfo.xml",
+    "Expansions\1_The_Spire_Rises\GameData\Configuration\ExternalWorldDeepInfo\TSR_ExternalWorldDeepInfo.xml",
+    # DLC2 External files
+    "Expansions\2_Zenith_Onslaught\GameData\Configuration\ExternalConstants\ZO_ExternalConstants.xml",
+    "Expansions\2_Zenith_Onslaught\GameData\Configuration\ExternalFactionBaseInfo\ZO_ExternalFactionBaseInfo.xml",
+    "Expansions\2_Zenith_Onslaught\GameData\Configuration\ExternalFactionDeepInfo\ZO_ExternalFactionDeepInfo.xml",
+    "Expansions\2_Zenith_Onslaught\GameData\Configuration\ExternalFleetBaseInfo\ZO_ExternalFleetBaseInfo.xml",
+    "Expansions\2_Zenith_Onslaught\GameData\Configuration\ExternalGameEntityTypeDataExtension\ZO_ExternalGameEntityTypeDataExtension.xml",
+    "Expansions\2_Zenith_Onslaught\GameData\Configuration\ExternalSquadBaseInfo\ZO_ExternalSquadBaseInfo.xml",
+    "Expansions\2_Zenith_Onslaught\GameData\Configuration\ExternalSquadDeepInfo\ZO_ExternalSquadDeepInfo.xml",
+    "Expansions\2_Zenith_Onslaught\GameData\Configuration\ExternalWorldBaseInfo\ZO_ExternalWorldBaseInfo.xml",
+    "Expansions\2_Zenith_Onslaught\GameData\Configuration\ExternalWorldDeepInfo\ZO_ExternalWorldDeepInfo.xml",
+    # DLC3 External files
+    "Expansions\3_The_Neinzul_Abyss\GameData\Configuration\ExternalFactionBaseInfo\NA_ExternalFactionBaseInfo.xml",
+    "Expansions\3_The_Neinzul_Abyss\GameData\Configuration\ExternalFactionDeepInfo\NA_ExternalFactionDeepInfo.xml",
+    "Expansions\3_The_Neinzul_Abyss\GameData\Configuration\ExternalFleetBaseInfo\NA_ExternalFleetBaseInfo.xml",
+    "Expansions\3_The_Neinzul_Abyss\GameData\Configuration\ExternalGameEntityTypeDataExtension\NA_ExternalGameEntityTypeDataExtension.xml",
+    "Expansions\3_The_Neinzul_Abyss\GameData\Configuration\ExternalSquadBaseInfo\NA_ExternalSquadBaseInfo.xml",
+    "Expansions\3_The_Neinzul_Abyss\GameData\Configuration\ExternalSquadDeepInfo\NA_ExternalSquadDeepInfo.xml",
+    "Expansions\3_The_Neinzul_Abyss\GameData\Configuration\ExternalWorldBaseInfo\NA_ExternalWorldBaseInfo.xml",
+    "Expansions\3_The_Neinzul_Abyss\GameData\Configuration\ExternalWorldDeepInfo\NA_ExternalWorldDeepInfo.xml"
 )
 
 # Scan translated files in game directory

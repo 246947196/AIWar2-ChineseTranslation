@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<entity name="AntiGravityDestroyer" copy_from="AMU_DestroyerBase" required_expansion_list="3_The_Neinzul_Abyss"
+		visuals="assets/_finalgamemeshes/guardians/implosionguardian/implosionguardian.prefab"
+		icon_overlay="Overlays1/MegaTurret_Gravity"
+		size_scale="6"
+		visuals_scale_multiplier="10"
+		display_name="反重力驱逐舰"
+		display_name_for_sidebar="反重力 DD"
+		description_short="拥有强大但非常缓慢的炸弹攻击，但可以减慢试图逃离它的敌人。"
+		description="在太空战争中，每一种不以光速的适度两位数百分比运行的武器都被誉为'如此缓慢，你只能击中一只沉睡的树懒'。另一个角度看它的角度：每个太快的敌人都必须变成一只沉睡的树懒，然后他们将无法逃脱这种缓慢弹丸所能提供的疯狂力量。这艘驱逐舰立即将大多数敌人减慢到爬行速度。"
+		tech_upgrades_that_benefit_me="Sentries,Heavy"
+		cost_for_ai_to_purchase="4937" strength_multiplier="3"
+		hull_points="350000" shield_points="175000" speed="Normal1"
+		metal_cost="400000" energy_consumption="13000"
+		armor_mm="130" albedo="0.5" engine_gx="16" mass_tx="6"
+	>
+		<system name="AG" display_name="反重力炸弹"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="4000" range="Normal4" shot_speed="Slowest" rate_of_fire="Devourer"
+			shot_type_data="PlasmaTorpedo"
+			base_engine_stun_per_shot="4" added_engine_stun_per_shot_per_mark="1" engine_stun_to_engine_gx_less_than="18" max_engine_stun_seconds="10" added_target_evaluator="EngineDamageAsMinorPart"
+		>
+			<outgoing_damage_modifier based_on="Engine_gx" comparison_type="AtMost" compared_to="14" multiplier="3" />
+		</system>
+		<system name="GC" display_name="重力核心" category="Passive" base_gravity_speed_multiplier="0.4" gravity_hits_engine_gx_less_than="18" gravity_range="Normal5" />
+		<fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="5" cap="2"/>
+		<fleet_membership name="BullyMix" ship_cap_group="Frigate" weight="20" cap="2"/>
+		<fleet_membership name="CrowdControlMix" ship_cap_group="Frigate" weight="20" cap="2"/>
+		<fleet_membership name="DebufferMix" ship_cap_group="Frigate" weight="20" cap="2"/>
+		<fleet_membership name="EngineStunMix" ship_cap_group="Frigate" weight="20" cap="2"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Frigate" weight="20" cap="2"/>
+		<fleet_membership name="MeleeWithSupportMix" ship_cap_group="Frigate" weight="20" cap="2"/>
+	</entity>
+	
+	<entity name="GreatSabotDestroyer" copy_from="AMU_DestroyerBase" required_expansion_list="1_The_Spire_Rises,3_The_Neinzul_Abyss"
+		visuals="Assets/_FinalGameMeshes/Guardians/FragmentingGuardian/TemperamentalGuardian.prefab"
+		icon_overlay="Overlays2/GuardPostDire_Sabot"
+		size_scale="6"
+		visuals_scale_multiplier="4.5"
+		display_name="巨型穿甲弹驱逐舰"
+		display_name_for_sidebar="巨型穿甲弹 DD"
+		description_short="大型舰船，设计用于对付驱逐舰级别和更重的敌人，随着舰船数量增加而增加射程。"
+		description="在每增加舰船尺寸的竞赛中，随着泽尼斯魔像的复兴，穿甲弹丸技术的现代应用变得越来越重要。新设计的巨型穿甲弹如此之大，以至于即使'针状'弹丸在近距离观看时也更像一座飞驰的塔楼。最近的升级还包括在舰船之间链接传感器数据以提高精度从而增加攻击范围的能力。"
+		tech_upgrades_that_benefit_me="Generalist,Heavy"
+		cost_for_ai_to_purchase="5430" strength_multiplier="8"
+		amount_added_to_range_per_ship_of_this_type_on_planet="5000"
+		hull_points="200000" shield_points="100000" speed="VeryVeryLittle4"
+		metal_cost="350000" energy_consumption="17000"
+		armor_mm="80" albedo="0.5" engine_gx="16" mass_tx="6"
+	>
+		<system name="GS" display_name="巨型穿甲弹"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="650" range="Normal2" shot_speed="Slow" rate_of_fire="Low"
+			shot_type_data="Sabot"
+		>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="6" multiplier="200" />
+		</system>
+		<system name="F" display_name="防空炮"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="100" range="VeryTiny3" shot_speed="Normal" rate_of_fire="Low" fires_salvos_sequentially="true" shots_per_salvo="5"
+			shot_type_data="FlakShotAOEBurstAtEnd"
+			area_of_effect_size="500"
+			maximum_number_of_targets_hit_per_shot="5"
+		>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtMost" compared_to="1" multiplier="3" />
+		</system>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="5" cap="2"/>
+		<fleet_membership name="AntiLargeMix" ship_cap_group="Frigate" weight="100" cap="2"/>
+		<fleet_membership name="BullyMix" ship_cap_group="Frigate" weight="40" cap="2"/>
+		<fleet_membership name="FragileOffensiveMix" ship_cap_group="Frigate" weight="40" cap="2"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Frigate" weight="40" cap="2"/>
+	</entity>
+	
+	<entity name="SiegeEngineDestroyer" copy_from="AMU_DestroyerBase" aip_when_granted_by_hack="30" tags="IncludeInFRS" required_expansion_list="1_The_Spire_Rises,3_The_Neinzul_Abyss"
+		special_entity_type="Frigate" is_elite="true"
+		visuals="assets/_finalgamemeshes/starships/siegestarship/siege_starship.prefab"
+		icon_overlay="Overlays1/Starship_Siege"
+		size_scale="6"
+		visuals_scale_multiplier="8.5"
+		display_name="攻城引擎驱逐舰"
+		display_name_for_sidebar="攻城引擎 DD"
+		description_short="远程'盒中攻城'：用破碎者炸弹攻击，在造成伤害时创建攻城导弹电池。生成慢速炸弹来拦截攻击者。不能被僵尸化。"
+		description="攻城引擎是一种旧设计，可以追溯到接管城堡和有城墙的城市的概念。虽然太空中不再有城墙，但我们的敌人仍然可以建造防御结构，将舰队化为灰烬。虽然不是一对多的解决方案，但能够召唤自己的防御阵地并阻止敌人接近的驱逐舰是对抗任何设防星球的良好开始。"
+		tech_upgrades_that_benefit_me="Generalist,Heavy"
+		cost_for_ai_to_purchase="6870" strength_multiplier="4"
+		hull_points="300000" shield_points="150000" speed="Normal1"
+		metal_cost="650000" energy_consumption="17000"
+		armor_mm="90" albedo="0.45" engine_gx="17" mass_tx="6"
+		unit_to_make_with_build_points="SiegeEngineDestroyerMissileBattery"
+		base_ship_line_for_build_points="SiegeEngineDestroyer"
+		build_points_per_damage_dealt="0.3"
+	>
+		<system name="BB" display_name="破碎者炸弹"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="100000" range="High1" shot_speed="UltraSlow" rate_of_fire="PeriodicActivation"
+			shot_type_data="FlakShotAOEBurstAtEnd"
+			area_of_effect_size="1500" maximum_number_of_targets_hit_per_shot="25"
+			aoe_spreads_damage_among_available_targets="true"
+			>
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="2" />
+				<outgoing_damage_modifier based_on="CurrentSpeedIfMoving" comparison_type="AtMost" compared_to="100" multiplier="1.2" />
+		</system>
+		<system name="L1" display_name="部署慢速炸弹"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="1" range="Planetary" shot_speed="Normal" rate_of_fire="RatherLow" shots_per_salvo="4"
+			shot_type_data="SiegeEngineDestroyerSlowBomb"
+			system_is_hidden_for_ui="true"
+			only_targets_mobile_units="true"
+		>
+		</system>
+		<fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="10" cap="4"/>
+		<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+	
+	<entity name="SiegeEngineDestroyerMissileBattery" copy_from="AMU_MedTurretBase" required_expansion_list="1_The_Spire_Rises,3_The_Neinzul_Abyss"
+		visuals="assets/_finalgamemeshes/turrets/missileturret/missile_turret.prefab"
+		icon_name="Ships1/Turret" icon_overlay="Overlays1/Starship_Siege"
+		special_entity_type="Frigate"
+		size_scale="1"
+		visuals_scale_multiplier="3.4"
+		display_name="攻城导弹电池"
+		display_name_for_sidebar="攻城导弹电池"
+		description_short="向移动敌人发射多达100枚导弹，随着等级提高发射速度越来越快。不能被僵尸化。"
+		description="向移动敌人发射多达100枚导弹，随着等级提高发射速度越来越快。不能被僵尸化。"
+		tech_upgrades_that_benefit_me="Generalist,Heavy"
+		cost_for_ai_to_purchase="155" strength_multiplier="0.8"
+		hull_points="5000" shield_points="25000" speed="AlmostNone"
+		metal_cost="50000" energy_consumption="0"
+		armor_mm="50" albedo="0.45" mass_tx="2" engine_gx="1"
+		collision_priority="1"
+		shot_fired_sfx="BasicLaunchWhine_Firing"
+		cannot_actually_be_built_builds_self_indirectly="true"
+		immune_to_swapping_between_fleets="true"
+		self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="0.1"
+		always_self_attritions="true"
+		fleet_membership="Planetary"
+	>
+		<system name="SM" display_name="攻城导弹"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="100" shots_per_salvo="5" added_shots_per_salvo_per_mark="2" range="High2" shot_speed="Slow" rate_of_fire="Devourer"
+			shot_type_data="FusionRocket"
+			only_targets_mobile_units="true"
+			health_change_by_max_health_divided_by_this_per_attack="-100"
+			>
+		</system>
+		<metal_flow purpose="SelfConstruction" throughput="0"/>
+		<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+	
+	<entity name="SiegeEngineDestroyerSlowBomb" copy_from="AMU_DroneProjectileBase" required_expansion_list="1_The_Spire_Rises,3_The_Neinzul_Abyss"
+		visuals="Assets/_FinalGameMeshes/FleetShips/AutoBomb/AutoBomb.prefab" 
+		icon_name="Ships1/AutoBomb" icon_overlay="Overlays1/Starship_Siege"
+		special_entity_type="Frigate"
+		size_scale="1"
+		visuals_scale_multiplier="5"
+		display_name="攻城引擎慢速炸弹"
+		display_name_for_sidebar="攻城引擎慢速炸弹"
+		description_short="瞄准移动敌人并在短距离内爆炸，造成强大的引擎眩晕。不能被僵尸化。"
+		description="瞄准移动敌人并在短距离内爆炸，造成强大的引擎眩晕。不能被僵尸化。"
+		tech_upgrades_that_benefit_me="Generalist,Heavy"
+		cost_for_ai_to_purchase="13" strength_multiplier="0.5"
+		hull_points="2000" shield_points="0" speed="AboveAverage1"
+		metal_cost="3000" energy_consumption="0"
+		armor_mm="20" albedo="0.45" engine_gx="6" mass_tx="0.11"
+		fleet_membership="Planetary"
+	>
+		<system name="D" display_name="引爆"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="100" range="AlmostNone" shot_speed="Instant" rate_of_fire="Devourer"
+			shot_type_data="FlakShotAOEBurstAtEnd" shots_detonate_immediately="true"
+			area_of_effect_size="1000" maximum_number_of_targets_hit_per_shot="10"
+			base_engine_stun_per_shot="4" added_engine_stun_per_shot_per_mark="1" engine_stun_to_engine_gx_less_than="10" max_engine_stun_seconds="10" added_target_evaluator="EngineDamageAsMinorPart"
+			only_targets_mobile_units="true"
+			health_change_by_max_health_divided_by_this_per_attack="-1"
+			>
+		</system>
+		<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+</root>

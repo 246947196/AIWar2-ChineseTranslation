@@ -51,6 +51,48 @@ $filesToDeploy | ForEach-Object {
 }
 Write-Host "Deployed $deployed XML files" -ForegroundColor Green
 
+# Deploy XMLMods translation files
+Write-Host ""
+Write-Host "Deploying XMLMods translation files..." -ForegroundColor Yellow
+$transModsDir = Join-Path $translationDir "XMLMods"
+$gameModsDir = Join-Path $gameDir "XMLMods"
+
+if (Test-Path $transModsDir) {
+    $modsFilesToDeploy = Get-ChildItem -Path $transModsDir -Recurse -Filter "*.xml"
+    $modsDeployed = 0
+    $modsFilesToDeploy | ForEach-Object {
+        $relPath = $_.FullName.Substring($transModsDir.Length + 1)
+        $destFile = Join-Path $gameModsDir $relPath
+        $destDir = Split-Path $destFile -Parent
+        
+        if (-not (Test-Path $destDir)) {
+            New-Item -ItemType Directory -Path $destDir -Force | Out-Null
+        }
+        
+        Copy-Item $_.FullName $destFile -Force
+        $modsDeployed++
+    }
+    Write-Host "Deployed $modsDeployed XMLMods files" -ForegroundColor Green
+} else {
+    Write-Host "  XMLMods directory not found, skipping" -ForegroundColor DarkYellow
+}
+
+# Deploy translated DLLs
+Write-Host ""
+Write-Host "Deploying translated DLLs..." -ForegroundColor Yellow
+$dllBinDir = Join-Path $translationDir "DLLBin"
+if (Test-Path $dllBinDir) {
+    $dllFiles = Get-ChildItem $dllBinDir -Filter "*.dll"
+    $dllDest = Join-Path $gameDir "GameData\ModdableLogicDLLs"
+    foreach ($dll in $dllFiles) {
+        Copy-Item $dll.FullName "$dllDest\" -Force
+        Write-Host "  Deployed: $($dll.Name) ($([math]::Round($dll.Length/1KB)) KB)" -ForegroundColor Gray
+    }
+    Write-Host "Deployed $($dllFiles.Count) DLLs" -ForegroundColor Green
+} else {
+    Write-Host "  DLLBin directory not found, skipping DLL deployment" -ForegroundColor DarkYellow
+}
+
 Write-Host ""
 Write-Host "=== Deployment Complete ===" -ForegroundColor Cyan
 Write-Host ""

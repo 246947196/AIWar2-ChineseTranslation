@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <journal name="NA_Elderlings_Overview" sidebar_text="{FactionColor}长老&lt;/color&gt;:  概述"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+        chat_text="指挥官，我们观察到了一次长老入侵"
+        full_text="指挥官，我们观察到了一次长老入侵。长老是强大的奈因祖尔。它们将定期产卵，卵将孵化成新的长老。
+
+当卵孵化时，长老将决定一个附近的小区域进行巡逻。进入其区域的敌人将被攻击。
+
+如果星球上有太多长老，它们可能会攻击我们，或者可能会发疯并攻击其他长老。" />
+
+    <journal name="NA_Elderlings_Overview_PlayerAllied" sidebar_text="{FactionColor}长老&lt;/color&gt;:  概述"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+        chat_text="指挥官，我们发现了一些友好的长老"
+        full_text="指挥官，我们发现了一些友好的长老。长老是强大的奈因祖尔舰船。它们将定期产卵，卵将孵化成新的舰船。
+
+当卵孵化时，长老将决定一个附近的小区域进行巡逻。进入其区域的敌人将被攻击。
+
+如果星球上有太多长老，它们可能会冲出去攻击我们的敌人。" />
+
+  <journal name="NA_Elderlings_Overview_Necromancer" sidebar_text="{FactionColor}长老&lt;/color&gt;:  概述"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+        chat_text="我的陛下，我们观察到了一次长老入侵"
+        full_text="我的陛下，我们观察到了一次长老入侵。长老是强大的奈因祖尔舰船。它们将定期产卵，卵将孵化成新的舰船。
+
+当卵孵化时，长老将决定一个附近的小区域进行巡逻。进入其区域的敌人将被攻击。
+
+杀死长老将为死灵法师授予&lt;color=#E16CFF&gt;精华&lt;/color&gt;。更高等级的长老将授予更多&lt;color=#E16CFF&gt;精华&lt;/color&gt;。
+
+你还可以通过入侵将长老转换为一种可以牺牲其力量的形式，授予新的旗舰蓝图。请注意，我们将无法为这些收割&lt;color=#E16CFF&gt;精华&lt;/color&gt;，并且一旦完成，我们再次转换同类型的长老将一无所获。
+
+长老似乎非常有领地意识；它们发射一种辐射，似乎会激怒靠得太近的其他长老。当长老在彼此周围花费太多时间时，这将使它们发疯。当这种情况发生时，长老要么会对范围内的所有东西变得敌对，要么会寻找其他星球上的敌人并战斗到死。" />
+
+  <journal name="NA_Elderlings_Overview_Necromancer_Tracking" sidebar_text="{FactionColor}长老&lt;/color&gt;:  追踪"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+
+           full_text="我的陛下，我们已经发现了如何追踪长老。这让我们可以确定哪些星球在它们的区域内，以及关于长老的其他一些细节。
+
+这对于理解何时何地可以猎杀长老非常有用。参考银河系菜单并选择&lt;color=#6718c7&gt;长老信息&lt;/color&gt;过滤器以获取有关长老的重要情报。
+
+一旦被追踪，我们可以将长老引诱到其区域内的一个星球上，按照我们的条件与之战斗。当我们需要&lt;color=#E16CFF&gt;精华&lt;/color&gt;而不是&lt;color=#3DE799&gt;黑客&lt;/color&gt;点数时，这种技术最有效。为旗舰添加隐形模块可以让你潜入敌方领土找到要追踪的长老，然后引诱它们走向毁灭。" />
+
+    <journal name="NA_Elderlings_Overview_Tracking" sidebar_text="{FactionColor}长老&lt;/color&gt;:  追踪"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+
+           full_text="指挥官，我们已经发现了如何追踪长老。这让我们可以确定哪些星球在它们的区域内，以及关于长老的其他一些细节。
+
+这对于理解何时何地可以猎杀长老非常有用。" />
+
+  <journal name="NA_Elderlings_Maddened" sidebar_text="{FactionColor}发疯的长老&lt;/color&gt;:  概述"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+        chat_text="指挥官，我们观察到一个长老发疯了！有关更多详细信息，请查看日志。"
+        full_text="指挥官，似乎我们观察到一些长老发疯了。长老似乎非常有领地意识；它们发射一种辐射，似乎会激怒靠得太近的其他长老。
+
+当这种情况发生时，长老要么会对范围内的所有东西变得敌对，要么会寻找其他星球上的敌人并战斗到死。
+
+我们可以监控这些长老的理智并预测它们何时会发疯。我们可以利用这些信息来准备我们的防御或在混乱中发动攻击。" />
+
+</root>
