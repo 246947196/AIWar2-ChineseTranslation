@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <tip category="Modding" name="Modding_Basic" display_name="访问 &lt;color=#ffd929&gt;wiki.arcengames.com" sort_priority="1"
+        full_text="Wiki 上有 AI War 2 专区，不仅有各种 Modding 主题，还有视频教程教你如何制作各种 Mod。
+        
+我们也会随时间在这里添加更多提示。" />
+
+  <tip category="Modding" name="MakingQuickStarts" display_name="制作你自己的快速开局" sort_priority="10"
+        full_text="进入自定义房间，按你的想法设置好一切。开始游戏，然后立即保存（在 0 秒时）。
+
+现在退出游戏，找到你的存档文件。它会在 ~/AIWar2/PlayerData/Save/你的战役名 假设你把游戏安装在 ~/AIWar2；否则找到游戏安装位置。将文件从 Save_Game_File.save（或你保存时用的名字）重命名为 你的快速开局名.save
+
+将文件复制到 ~/AIWar2/GameData/QuickStarts2/Community
+
+现在你需要创建一个工具提示文件，这样别人就知道这是什么样的游戏。工具提示文件命名为 你的快速开局名.tooltip。
+
+完成这些后，你就有 你的快速开局名.save 和 你的快速开局名.tooltip 两个文件在 ~/AIWar2/GameData/QuickStarts2/Community 里了。现在你可以在快速开局菜单的「社区」部分找到这个快速开局
+
+如果你有一个特别喜欢的，可以把存档和工具提示上传到论坛，它们可能会被添加到基础游戏中！
+
+注意，你也可以制作已经进行了一段时间战役的「快速开局」。例如，你可能想看看是否有人能在糟糕的情况下生存下来，所以你可以制作一个叫「最后抵抗」的快速开局，工具提示告诉玩家「我坚持了 10 分钟；你能坚持更久吗？」
+
+更多详情请参阅 &lt;color=#ffd929&gt;https://wiki.arcengames.com/index.php?title=AI_War_2:_Making_Quick_Starts" />
+
+<tip category="Modding" name="NewPlanetNames" display_name="创建你自己的星球名称文件" sort_priority="10"
+     full_text="参阅 &lt;color=#ffd929&gt;https://wiki.arcengames.com/index.php?title=AI_War_2:_Defining_your_own_planet_names" />
+/>
+</root>

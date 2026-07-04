@@ -1,0 +1,42 @@
+# =========================
+# AI War 2 汉化项目 .gitignore
+# =========================
+
+# ---------- 默认排除一切 ----------
+*
+
+# ---------- 根级文件 ----------
+!.gitignore
+!AGENTS.md
+!AIWar2_CHINESE_TRANSLATION_SPEC.md
+
+# ---------- 编译后的 DLL ----------
+!PatchedAssemblies/
+!PatchedAssemblies/**
+
+# ---------- 翻译后的 XML ----------
+!GameData/
+!GameData/Configuration/
+!GameData/Configuration/**
+
+# ---------- 排除非翻译文件 ----------
+GameData/Configuration/**/*.metadata
+GameData/Configuration/**/*.bmp
+GameData/Configuration/**/*.json
+GameData/Configuration/**/*.csproj
+GameData/Configuration/**/*.user
+
+# ---------- 敏感文件 ----------
+*.key
+*.pem
+*.p12
+*.pfx
+*.jks
+*.env
+*.credentials
+*.secret
+
+# ---------- 操作系统文件 ----------
+Thumbs.db
+Desktop.ini
+.DS_Store
