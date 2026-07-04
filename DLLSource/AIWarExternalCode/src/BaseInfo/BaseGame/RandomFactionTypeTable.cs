@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -23,7 +23,7 @@ namespace Arcen.AIW2.External
                 debugCode = 100;
                 Buffer.Add(this.Description).NewLine();
                 debugCode = 200;
-                Buffer.Add("This type includes the following factions:\n");
+                Buffer.Add("此类型包含以下阵营：\n");
                 for ( int i = 0; i < this.IncludedFactions.Count; i++ )
                 {
                     debugCode = 300;

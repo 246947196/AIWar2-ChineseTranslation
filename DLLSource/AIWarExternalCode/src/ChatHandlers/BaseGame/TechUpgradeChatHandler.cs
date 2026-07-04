@@ -13,14 +13,14 @@ namespace Arcen.AIW2.External
             Faction fac = this.Faction.GetFaction();
             if ( fac == null )
                 return;
-            Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, fac.GetDisplayName() + " 鐨勭鎶€瑙ｉ攣鍘嗗彶", "鍏抽棴",
+            Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, fac.GetDisplayName() + " 的科技解锁历史", "关闭",
                 delegate ( ArcenDoubleCharacterBuffer Buffer ) { return Window_ResourceBar.tScience.GetTechHistory( Buffer ); } );
         }
 
         public override void DoOnTooltip( ArcenDoubleCharacterBuffer Buffer )
         {
             Faction fac = this.Faction.GetFaction();
-            Buffer.Add( "鐐瑰嚮鏌ョ湅 " ).Add( fac?.GetDisplayName() ).Add( " 鐨勭鎶€瑙ｉ攣鍘嗗彶" );
+            Buffer.Add( "点击查看 " ).Add( fac?.GetDisplayName() ).Add( " 的科技解锁历史" );
         }
 
         public override void SerializeTo( SerMetaData MetaData, ArcenSerializationBuffer Buffer, SerializationCommandType SerializationCmdType )

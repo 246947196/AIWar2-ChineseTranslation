@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -53,10 +53,10 @@ namespace Arcen.AIW2.External
             Planet relicPlanet = World_AIW2.Instance.GetPlanetByIndex( Data.planetIdx );
             if ( Data.inSearchMode )
             {
-                tooltipBuffer.Add( "There is a Spire Relic somewhere in the galaxy. You must search for it by hacking planets with the Relic Search hack. When you search you learn how far from the Relic that planet is; you can use this information to deduce the actual planet. Be warned, the more you search the stronger the AI response to getting that relic will be!\n" );
+                tooltipBuffer.Add( "星系中某个地方有一个尖塔遗物。您必须通过黑客入侵星球来搜索它。搜索时您会了解到该星球距离遗物有多远；您可以利用这些信息推断出实际的星球。请注意，搜索次数越多，AI对获取该遗物的反应就越强！\n" );
                 if ( Data.Int16List.Count > 0 ) //searchedPlanetList
                 {
-                    tooltipBuffer.Add( "Searched planets:" );
+                    tooltipBuffer.Add( "已搜索星球：" );
                     for ( int i = 0; i < Data.Int16List.Count; i++ )
                     {
                         Planet searchedPlanet = World_AIW2.Instance.GetPlanetByIndex( Data.Int16List[i] );
@@ -68,7 +68,7 @@ namespace Arcen.AIW2.External
             {
                 World_AIW2.Instance.FocusedPlanetForMapDarkening = relicPlanet;
                 Faction controller = relicPlanet.GetControllingFaction();
-                tooltipBuffer.Add( "There is a Spire Relic on " ).Add( relicPlanet.Name, controller.FactionCenterColor.ColorHexBrighter ).Add( ". Hack that planet to try to bring the relic home." );
+                tooltipBuffer.Add( "尖塔遗物位于 " ).Add( relicPlanet.Name, controller.FactionCenterColor.ColorHexBrighter ).Add( "。入侵该星球以尝试将遗物带回家。" );
             }
             Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( null, tooltipBuffer.GetStringAndResetForNextUpdate() );
             return true;
@@ -90,14 +90,14 @@ namespace Arcen.AIW2.External
                 debugStage = 10;
                 Image.UpdateWith( sprite_Relic, true, "SpireRelic" );
                 ArcenDoubleCharacterBuffer buffer = SubTexts[0].Text.StartWritingToBuffer();
-                buffer.Add( "Relic\n" );
+                buffer.Add( "遗物\n" );
                 SubTexts[0].Text.FinishWritingToBuffer();
 
                 buffer = SubTexts[1].Text.StartWritingToBuffer();
                 Planet relicPlanet = World_AIW2.Instance.GetPlanetByIndex( Data.planetIdx );
                 if ( relicPlanet == null )
                 {
-                    buffer.Add( "Bug. NULL" );
+                    buffer.Add( "错误。NULL" );
                     return true;
                 }
                 debugStage = 20;
@@ -107,7 +107,7 @@ namespace Arcen.AIW2.External
                 else if ( Data.Int16List.Count > 0 ) //searchedPlanetList
                 {
                     buffer.Add( Data.Int16List.Count ).Add( "\n" );
-                    buffer.Add( "Searched " );
+                    buffer.Add( "已搜索 " );
                 }
                 debugStage = 30;
                 SubTexts[1].Text.FinishWritingToBuffer();

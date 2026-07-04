@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -60,24 +60,24 @@ namespace Arcen.AIW2.External
             tooltipBuffer.Clear();
             if ( Data.EntityList.Count == 1 )
             {
-                tooltipBuffer.Add( "There is a Dark Spire Locus in the galaxy. It will create a new Vengeance Generator if you don't destroy it.\n\n" );
+                tooltipBuffer.Add( "星系中存在一个黑暗尖塔据点。如果您不摧毁它，它将产生一个新的复仇发生器。\n\n" );
             }
             else
-                tooltipBuffer.Add( "There are " ).Add( Data.EntityList.Count ).Add( " Dark Spire Loci in the galaxy. They will create new Vengeance Generators if you don't destroy them.\n\n" );
+                tooltipBuffer.Add( "星系中存在 " ).Add( Data.EntityList.Count ).Add( " 个黑暗尖塔据点。如果您不摧毁它们，它们将产生新的复仇发生器。\n\n" );
             for ( int i = 0; i < Data.EntityList.Count; i++ )
             {
                 GameEntity_Squad locus = Data.EntityList[i].GetSquad();
                 if ( locus == null )
                     continue;
-                tooltipBuffer.Add( "\tA Locus" );
+                tooltipBuffer.Add( "\t一个据点" );
                 if ( locus.GetShouldBeVisibleBasedOnPlanetIntel() )
                 {
-                    tooltipBuffer.Add( " on " ).Add( locus.GetPlanetName_Safe(), colorString );
+                    tooltipBuffer.Add( "在 " ).Add( locus.GetPlanetName_Safe(), colorString );
                 }
                 else
-                    tooltipBuffer.Add( " somewhere in the galaxy " );
+                    tooltipBuffer.Add( "位于星系某处 " );
                 int secondsUntilWarpIn = this.secondsTillWarpIn( locus );
-                tooltipBuffer.Add( " will transform into a Vengeance Generator in " ).AddHoursAndMinutes( secondsUntilWarpIn, "ffa1a1" ).Add( ".\n" );
+                tooltipBuffer.Add( " 将在 " ).AddHoursAndMinutes( secondsUntilWarpIn, "ffa1a1" ).Add( "后变形为复仇发生器。\n" );
 
             }
             Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( null, tooltipBuffer.GetStringAndResetForNextUpdate() );
@@ -108,13 +108,13 @@ namespace Arcen.AIW2.External
                     if ( Data.EntityList[0].GetShouldBeVisibleBasedOnPlanetIntel() )
                         buffer.Add( Data.EntityList[0].GetPlanetName_Safe() );
                     else
-                        buffer.Add( "Unknown" );
+                        buffer.Add( "未知" );
                     buffer.Add( "\n" );
                 }
                 else
                 {
                     debugStage = 5;
-                    buffer.Add( Data.EntityList.Count ).Add( " Loci" );
+                    buffer.Add( Data.EntityList.Count ).Add( " 个据点" );
                     buffer.Add( "\n" );
                 }
                 SubTexts[0].Text.FinishWritingToBuffer();

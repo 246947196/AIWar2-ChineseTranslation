@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -100,13 +100,13 @@ namespace Arcen.AIW2.External
                 debugStage = 10;
                 Image.UpdateWith( sprite_CityUpgrade, true, "SpireCityUpgrade" );
                 ArcenDoubleCharacterBuffer buffer = SubTexts[0].Text.StartWritingToBuffer();
-                buffer.Add( "Upgrade\n" );
+                buffer.Add( "升级\n" );
                 SubTexts[0].Text.FinishWritingToBuffer();
 
                 buffer = SubTexts[1].Text.StartWritingToBuffer();
                 if ( entity == null )
                 {
-                    buffer.Add( "Bug. NULL" );
+                    buffer.Add( "错误。NULL" );
                     return true;
                 }
                 debugStage = 20;
@@ -194,13 +194,13 @@ namespace Arcen.AIW2.External
             string destString = "";
             EntityOrderCollection orders = entity.Orders;
 
-            tooltipBuffer.Add( "This AI Relic Transport ", colorString );
+            tooltipBuffer.Add( "这辆 AI 遗物运输车 ", colorString );
 
 
-            string locationString = "is on an unknown planet";
+            string locationString = "位于未知星球";
             if ( entity.GetShouldBeVisibleBasedOnPlanetIntel() )
             {
-                locationString = "is on " + entity.GetPlanetName_Safe();
+                locationString = "位于 " + entity.GetPlanetName_Safe();
 
                 //galaxy map hover
                 World_AIW2.Instance.FocusedPlanetForMapDarkening = planet;
@@ -215,28 +215,28 @@ namespace Arcen.AIW2.External
                 if ( destinationPlanet != null )
                 {
                     if ( destinationPlanet.IntelLevel > PlanetIntelLevel.Unexplored )
-                        destString = "It is heading to <color=#ffa1a1>" + destinationPlanet.Name + "</color>.";
+                        destString = "它正前往 <color=#ffa1a1>" + destinationPlanet.Name + "</color>。";
                     else
-                        destString = "It is heading to <color=#ffa1a1>an unexplored planet</color>.";
+                        destString = "它正前往 <color=#ffa1a1>一颗未探索的星球</color>。";
                 }
             }
             if ( orders == null || destinationPlanet == null )
-                destString = "It is heading to a metal generator on its current planet to refuel.";
+                destString = "它正前往当前星球的金属发电机进行补给。";
             tooltipBuffer.Add( destString ).Add( "\n" );
             string hopsLeft = "";
             //string nextDest = "";
             if ( data != null )
             {
                 if ( data.HopsLeftForTrain == 0 )
-                    hopsLeft = "\tIt is en route to its final destination";
+                    hopsLeft = "\t它正前往最终目的地";
                 else if ( data.HopsLeftForTrain > 0 )
                 {
-                    hopsLeft = "\tIt has <color=#a1ffa1>" + data.HopsLeftForTrain + "</color>";
+                    hopsLeft = "\t它还有 <color=#a1ffa1>" + data.HopsLeftForTrain + "</color>";
                     if ( data.HopsLeftForTrain == 1 )
-                        hopsLeft += " planet ";
+                        hopsLeft += " 颗星球 ";
                     else
-                        hopsLeft += " planets ";
-                    hopsLeft += "left to visit.";
+                        hopsLeft += " 颗星球 ";
+                    hopsLeft += "需要访问。";
                 }
             }
             tooltipBuffer.Add( hopsLeft );
@@ -270,7 +270,7 @@ namespace Arcen.AIW2.External
 
                 debugStage = 3;
                 ArcenDoubleCharacterBuffer buffer = SubTexts[0].Text.StartWritingToBuffer();
-                buffer.Add( "Relic\n" );
+                buffer.Add( "遗物\n" );
                 SubTexts[0].Text.FinishWritingToBuffer();
 
                 debugStage = 6;
@@ -281,11 +281,11 @@ namespace Arcen.AIW2.External
                 //Nanocaust frenzy strength (if we want? remove the ???s above first)
                 // FInt percent = (data.CurrentExoStrength * 100) / data.StrengthRequiredForNextExo ;
 
-                buffer.Add( "Train\n" );
+                buffer.Add( "列车\n" );
                 if ( entity.GetShouldBeVisibleBasedOnPlanetIntel() )
                     buffer.Add( entity.GetPlanetName_Safe() );
                 else
-                    buffer.Add( "En Route" );
+                    buffer.Add( "运输中" );
 
                 buffer.Add( "\n" );
                 debugStage = 12;

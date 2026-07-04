@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -19,7 +19,7 @@ namespace Arcen.AIW2.External
             var str = fac.GetStringValueForCustomFieldOrDefaultValue( "StartingFleet", false );
             if ( str == "RandomCombatFleet" )
             {
-                buffer.Add( "Random" ).Add( " Fleet" );
+                buffer.Add( "随机" ).Add( " 舰队" );
                 goto done;
             }
 

@@ -1,0 +1,22 @@
+# Build artifacts
+obj/
+bin/
+
+# Visual Studio files
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# NuGet packages
+packages/
+*.nupkg
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store

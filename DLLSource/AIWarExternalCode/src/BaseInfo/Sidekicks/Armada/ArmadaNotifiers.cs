@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -38,7 +38,7 @@ namespace Arcen.AIW2.External
             try
             {
                 if ( Data.Int64List.Count > 0 )
-                    tooltipBuffer.Add("The AI will spawn a CPA against you in ").Add(Data.Int64List[0]).Add(" seconds.");
+                    tooltipBuffer.Add("AI 将在 ").Add(Data.Int64List[0]).Add(" 秒后对您发动 CPA。");
             }
             catch ( Exception e )
             {
@@ -64,7 +64,7 @@ namespace Arcen.AIW2.External
                 debugStage = 10;
                 Image.UpdateWith( sprite_CPA, true, "ArmadaCPA" );
                 ArcenDoubleCharacterBuffer buffer = SubTexts[0].Text.StartWritingToBuffer();
-                buffer.Add( "Armada\n" );
+                buffer.Add( "舰队\n" );
                 SubTexts[0].Text.FinishWritingToBuffer();
                 debugStage = 20;
                 if ( Data.Int64List.Count == 0 )

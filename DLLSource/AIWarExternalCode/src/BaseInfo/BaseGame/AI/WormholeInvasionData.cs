@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 using System.Text;
@@ -32,11 +32,11 @@ namespace Arcen.AIW2.External
 
         public override void AppendStateForInterfaceDisplay( ArcenCharacterBufferBase buffer )
         {
-            buffer.Add( "This invasion links " ).Add( InvasionStartPlanet.Name ).Add( " and " ).Add( InvasionDestinationPlanet.Name ).Add( ". HasSpawnedProjector " ).Add( HasSpawnedProjector );
+            buffer.Add( "此次入侵连接 " ).Add( InvasionStartPlanet.Name ).Add( " 和 " ).Add( InvasionDestinationPlanet.Name ).Add( "。已生成投射器 " ).Add( HasSpawnedProjector );
             if ( this.ProjectorAppearanceTime > World_AIW2.Instance.GameSecond )
-                buffer.Add( ". It will appear in " ).Add( (this.ProjectorAppearanceTime - World_AIW2.Instance.GameSecond ) ).Add( " seconds." );
+                buffer.Add( "。它将在 " ).Add( (this.ProjectorAppearanceTime - World_AIW2.Instance.GameSecond ) ).Add( " 秒后出现。" );
             else if ( this.PlanetLinkTime > World_AIW2.Instance.GameSecond )
-                buffer.Add( ". It will link the planets in " ).Add( (this.PlanetLinkTime - World_AIW2.Instance.GameSecond ) ).Add( " seconds." );
+                buffer.Add( "。它将在 " ).Add( (this.PlanetLinkTime - World_AIW2.Instance.GameSecond ) ).Add( " 秒后连接星球。" );
             else if ( this.WaveData.Count > 0 )
             {
                 buffer.Add( ". It will launch a wave in " ).Add( (this.WaveData[0].TimeForWave - World_AIW2.Instance.GameSecond ) ).Add( " seconds." );

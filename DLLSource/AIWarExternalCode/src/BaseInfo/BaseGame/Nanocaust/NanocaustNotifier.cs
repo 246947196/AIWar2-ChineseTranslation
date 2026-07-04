@@ -1,4 +1,4 @@
-
+﻿
 using Arcen.AIW2.Core;
 using Arcen.AIW2.External;
 using Arcen.Universal;
@@ -81,7 +81,7 @@ namespace Arcen.AIW2.External
                 
                 buffer.AddFactionNameInItsColor( faction );
                 buffer.Add("\n");
-                buffer.Add( "Invasion" );
+                buffer.Add( "入侵" );
 
                 SubTexts[0].Text.FinishWritingToBuffer();
 

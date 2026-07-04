@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -147,7 +147,7 @@ namespace Arcen.AIW2.External
 
 
             if ( OptionalExplainCalculation != null )
-                OptionalExplainCalculation.Add( "AI Faction Load:" );
+                OptionalExplainCalculation.Add( "AI 阵营负载：" );
 
             int load = 80;
 

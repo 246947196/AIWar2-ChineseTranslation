@@ -2262,7 +2262,7 @@ namespace Arcen.AIW2.External
                         {
                             strengthTotal = strengthCurr;
                             strengthCurr *= Squad.ShipCount;
-                            strengthMode = "脳1";
+                            strengthMode = "×1";
                             strengthModeColorHex = "ffffff";
                         }
                         else
@@ -2780,7 +2780,7 @@ namespace Arcen.AIW2.External
                     switch(type)
                     {
                         case EntityTypeDrawingBag_SpawnMode.RawCount:
-                            buffer.Add( "脳 " );
+                            buffer.Add( "× " );
                             break;
                         case EntityTypeDrawingBag_SpawnMode.AIBudget:
                             buffer.Add( " AI budget worth of " );
@@ -3067,7 +3067,7 @@ namespace Arcen.AIW2.External
                 if ( !modifier.IsForOutgoingDamage )
                     buffer.Add(multiplier * 100).Add("%");
                 else
-                    buffer.Add("脳").Add( multiplier );
+                    buffer.Add("×").Add( multiplier );
                 buffer.Close(TextTerm.Damage);
                 
                 debugstage = 106;
@@ -3076,7 +3076,7 @@ namespace Arcen.AIW2.External
                     modifier.MaxMultiplier > 0)
                 {
                     // (x10 max)
-                    buffer.Add(" (").Add("脳").Add(modifier.MaxMultiplier).Add(" max)");
+                    buffer.Add(" (").Add("×").Add(modifier.MaxMultiplier).Add(" max)");
                 }
                 
                 debugstage = 107;

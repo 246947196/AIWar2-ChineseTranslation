@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -162,11 +162,11 @@ namespace Arcen.AIW2.External
 
         void IFleetTransforms.GetTooltip(ArcenCharacterBufferBase buffer)
         {
-            buffer.Add("You can spend essence points to change the form of this flagship.");
+            buffer.Add("您可以花费精华点数来改变这艘旗舰的形态。");
             ArmadaFactionBaseInfo baseInfo = this.AttachedFleet.Faction.TryGetExternalBaseInfoAs<ArmadaFactionBaseInfo>();
             if (baseInfo.AvailableBlueprints.GetDisplayList().Count == 0) {
                 buffer.NewLine();
-                buffer.Add("You can find blueprints from rifts or by using the transform elderling hack.");
+                buffer.Add("您可以通过裂隙或使用变形长老黑客技术找到蓝图。");
             }
         }
         #endregion

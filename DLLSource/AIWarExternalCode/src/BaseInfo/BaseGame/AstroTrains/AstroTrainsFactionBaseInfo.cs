@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -222,8 +222,8 @@ namespace Arcen.AIW2.External
             if ( depots == null ) //blocked for teardown/shutdown; bail
                 return;
             this.GetAstroTrainDepots_Threadsafe( depots );
-            buffer.Add( "Trains Spawned: " ).Add( this.TotalTrainsSpawned ).Add( ", trains killed " ).Add( this.TotalTrainsKilled )
-                .Add( ", trains killed by player " ).Add( this.TotalTrainsKilledByPlayer ).Add( "\n" );
+            buffer.Add( "已生成列车：" ).Add( this.TotalTrainsSpawned ).Add( "，被摧毁列车 " ).Add( this.TotalTrainsKilled )
+                .Add( "，被玩家摧毁列车 " ).Add( this.TotalTrainsKilledByPlayer ).Add( "\n" );
             for ( int i = 0; i < depots.Count; i++ )
             {
                 GameEntity_Squad depot = depots[i].GetSquad();

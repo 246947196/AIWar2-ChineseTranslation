@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -21,8 +21,8 @@ namespace Arcen.AIW2.External
 
         public void AppendStateForInterfaceDisplay( ArcenCharacterBufferBase buffer )
         {
-            buffer.Add( "Requesting group " ).Add( this.Group.GetDisplayName() ).Add( " on planet " ).Add( Planet?.Name )
-                .Add( " at " ).Add( this.SpawnPoint.X ).Add( "," ).Add( this.SpawnPoint.Y ).Add( " at time " ).Add( this.SpawnSecond );
+            buffer.Add( "请求在星球 " ).Add( Planet?.Name ).Add( " 上部署 " ).Add( this.Group.GetDisplayName() )
+                .Add( "，坐标 " ).Add( this.SpawnPoint.X ).Add( "," ).Add( this.SpawnPoint.Y ).Add( "，时间 " ).Add( this.SpawnSecond );
         }
 
         public string ToString_DebugOnly()

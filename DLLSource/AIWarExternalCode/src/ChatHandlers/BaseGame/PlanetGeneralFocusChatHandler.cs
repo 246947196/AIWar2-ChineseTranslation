@@ -28,10 +28,10 @@ namespace Arcen.AIW2.External
             if ( plan != null )
             {
                 if ( Engine_AIW2.Instance.CurrentGameViewMode == GameViewMode.GalaxyMapView )
-                    Buffer.Add( "鐐瑰嚮灏嗘槦绯昏鍥惧眳涓埌 " ).Add( plan.Name ).Add( "銆? );
+                    Buffer.Add( "点击将星系视图居中到 " ).Add( plan.Name ).Add( "。" );
                 else
                 {
-                    Buffer.Add( "鐐瑰嚮灏嗚鍥剧Щ鑷虫槦鐞?" ).Add( plan.Name ).Add( "銆? );
+                    Buffer.Add( "点击将视图移至星球 " ).Add( plan.Name ).Add( "。" );
                 }
             }
         }

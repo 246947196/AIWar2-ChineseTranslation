@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -399,19 +399,19 @@ namespace Arcen.AIW2.External
             //For debug, this goes in the Threat menu
             buffer.Add( "\n" );
             if ( World_AIW2.Instance.GameSecond - this.TimeLastHadSappers > 2 )
-                buffer.Add( "We last had sappers " ).Add( (World_AIW2.Instance.GameSecond - this.TimeLastHadSappers), "a1a1ff" ).Add( " seconds ago." );
+                buffer.Add( "我们上次拥有工兵是 " ).Add( (World_AIW2.Instance.GameSecond - this.TimeLastHadSappers), "a1a1ff" ).Add( " 秒前。" );
 
             List<SafeSquadWrapper> habitats = this.SapperHabitats.GetDisplayList();
             for ( int i = 0; i < habitats.Count; i++ )
-                buffer.Add( "We have habitat: " + habitats[i].ToStringWithPlanet() ).Add( "\n" );
+                buffer.Add( "我们有栖息地：" + habitats[i].ToStringWithPlanet() ).Add( "\n" );
             foreach ( GameEntity_Squad sapper in this.Sappers.DisplaySquads() )
             {
-                buffer.Add( "We have habitat: " + sapper.ToStringWithPlanet() ).Add( "\n" );
+                buffer.Add( "我们有栖息地：" + sapper.ToStringWithPlanet() ).Add( "\n" );
             }
-            buffer.Add( "Max Basics per planet: " ).Add( this.MaxBasicStructuresPerPlanet, "a1ffa1" ).Add( "\n" );
-            buffer.Add( "Max Advanced per planet: " ).Add( this.MaxAdvancedStructuresPerPlanet, "a1ffa1" ).Add( "\n" );
-            buffer.Add( "Max Beachheader per planet: " ).Add( this.MaxBeachheaderStructuresPerPlanet, "a1ffa1" ).Add( "\n" );
-            buffer.Add( "Max Watchtower strength: " ).Add( this.MaxWatchtowerStrength, "a1ffa1" ).Add( "\n" );
+            buffer.Add( "每星球最大基础建筑：" ).Add( this.MaxBasicStructuresPerPlanet, "a1ffa1" ).Add( "\n" );
+            buffer.Add( "每星球最大高级建筑：" ).Add( this.MaxAdvancedStructuresPerPlanet, "a1ffa1" ).Add( "\n" );
+            buffer.Add( "每星球最大滩头建筑：" ).Add( this.MaxBeachheaderStructuresPerPlanet, "a1ffa1" ).Add( "\n" );
+            buffer.Add( "最大瞭望塔强度：" ).Add( this.MaxWatchtowerStrength, "a1ffa1" ).Add( "\n" );
         }
         #endregion
 

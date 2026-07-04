@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -555,22 +555,22 @@ namespace Arcen.AIW2.External
         {
             if ( this.AttachedFaction.InvasionTime > 0 && this.AttachedFaction.InvasionTime > World_AIW2.Instance.GameSecond )
             {
-                output.Add( "The marauders will invade in " + (this.AttachedFaction.InvasionTime - World_AIW2.Instance.GameSecond) + " seconds.\n" );
+                output.Add( "掠夺者将在 " + (this.AttachedFaction.InvasionTime - World_AIW2.Instance.GameSecond) + " 秒后入侵。\n" );
                 return;
             }
 
             if ( !this.IsInFireteamMode )
             {
-                output.Add( "Not in fireteam mode\n" );
+                output.Add( "未处于火队模式\n" );
                 return;
             }
-            output.Add( "\nState of " + this.Teams.GetItemCount() + " Marauder Fireteams for  <" + this.Allegiance + ">:\n" );
-            output.Add( "Marauder AIP: <color=#ffaaaa>" + this.MarauderSpecificAIP + "</color>, and current anti-me wave strength is " + this.WaveData.currentWaveBudget + " \n" );
-            output.Add( "Budget for invasions: " + this.Budget + "\n" );
-            output.Add( "There are " + this.Outposts.Count + " outposts.\n" );
+            output.Add( "\n<" + this.Allegiance + "> 的 " + this.Teams.GetItemCount() + " 个掠夺者火队状态：\n" );
+            output.Add( "掠夺者 AIP：<color=#ffaaaa>" + this.MarauderSpecificAIP + "</color>，当前反我波次强度为 " + this.WaveData.currentWaveBudget + " \n" );
+            output.Add( "入侵预算：" + this.Budget + "\n" );
+            output.Add( "存在 " + this.Outposts.Count + " 个前哨站。\n" );
             if ( this.Teams.GetItemCount() == 0 )
             {
-                output.Add( "No fireteams\n" );
+                output.Add( "没有火队\n" );
                 return;
             }
 
@@ -584,7 +584,7 @@ namespace Arcen.AIW2.External
                     output.Add( "\n" );
                 }
             }
-            output.Add( "Total Raider Strength: <color=#ff0000>" + (totalStrength / 1000) + "</color>.\n" );
+            output.Add( "掠夺者总强度：<color=#ff0000>" + (totalStrength / 1000) + "</color>。\n" );
         }
         #endregion
 

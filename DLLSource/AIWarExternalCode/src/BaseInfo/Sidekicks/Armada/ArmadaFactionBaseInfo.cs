@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -369,12 +369,12 @@ namespace Arcen.AIW2.External
         {
             //For debug, this goes in the Threat menu
             buffer.Add( "\n" );
-            buffer.Add( "We currently have " ).Add( this.ArmadaCompletedUpgrades.Count ).Add( " faction upgrades:\n" );
+            buffer.Add( "我们当前拥有 " ).Add( this.ArmadaCompletedUpgrades.Count ).Add( " 个阵营升级：\n" );
             for ( int i = 0; i < this.ArmadaCompletedUpgrades.Count; i++ )
             {
                 buffer.Add( "\t" ).Add( this.ArmadaCompletedUpgrades[i].ToString() ).Add( "\n" );
             }
-            buffer.Add( "We have " ).Add( this.AttachedFaction.StoredFactionResourceOne, "a1ffa1" ).Add( " Essence.\n" );
+            buffer.Add( "我们拥有 " ).Add( this.AttachedFaction.StoredFactionResourceOne, "a1ffa1" ).Add( " 精华。\n" );
         }
         #endregion
 

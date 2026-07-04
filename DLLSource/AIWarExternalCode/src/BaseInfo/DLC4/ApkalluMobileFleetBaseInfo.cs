@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 
 namespace Arcen.AIW2.External
@@ -96,7 +96,7 @@ namespace Arcen.AIW2.External
 
         void IFleetTransforms.GetTooltip( ArcenCharacterBufferBase buffer )
         {
-            buffer.Add( "Spend ResourceOne to change the form of this flagship. Unlock forms by completing Malware Nexus Breaches." );
+            buffer.Add( "花费资源一来改变这艘旗舰的形态。通过完成恶意软件节点突破来解锁形态。" );
         }
         #endregion
 

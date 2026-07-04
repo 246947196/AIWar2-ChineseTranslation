@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -53,7 +53,7 @@ namespace Arcen.AIW2.External
             if ( Data.EntityList.Count == 1 )
                 tooltipBuffer.Add( "There is " ).Add( Data.EntityList.Count, "a1ffa1" ).Add( " piece of spire debris in the galaxy.\n" );
             else
-                tooltipBuffer.Add( "There are " ).Add( Data.EntityList.Count, "a1ffa1" ).Add( " pieces of spire debris in the galaxy.\n" );
+                tooltipBuffer.Add( "星系中有 " ).Add( Data.EntityList.Count, "a1ffa1" ).Add( " 块尖塔残骸。\n" );
             int debugCode = 0;
             try
             {
@@ -80,20 +80,20 @@ namespace Arcen.AIW2.External
                         World_AIW2.Instance.AlsoFocusedPlanetsForMapDarkening[planet] = ArcenTime.TimeSinceStartF; //multi hover
                     debugCode = 220;
                     if ( debris.AmIBeingHacked() )
-                        tooltipBuffer.Add( "\tThe Debris on " ).Add( planet.Name, planet.GetControllingFaction().FactionCenterColor.ColorHexBrighter ).Add( " is currently being hacked." );
+                        tooltipBuffer.Add( "\t位于 " ).Add( planet.Name, planet.GetControllingFaction().FactionCenterColor.ColorHexBrighter ).Add( " 的残骸正在被入侵。" );
                     else
-                        tooltipBuffer.Add( "\tThe Debris on " ).Add( planet.Name, planet.GetControllingFaction().FactionCenterColor.ColorHexBrighter ).Add( " will be lost to you in " ).AddHoursAndMinutes( remainingTime, "a1ffa1" ).Add( "." );
+                        tooltipBuffer.Add( "\t位于 " ).Add( planet.Name, planet.GetControllingFaction().FactionCenterColor.ColorHexBrighter ).Add( " 的残骸将在 " ).AddHoursAndMinutes( remainingTime, "a1ffa1" ).Add( "后丢失。" );
                     debugCode = 230;
                     Faction destFaction = World_AIW2.Instance.GetFactionByIndex( debrisData.FactionIndexForDebris );
                     debugCode = 240;
                     if ( destFaction != null && !debris.AmIBeingHacked() )
                     {
-                        tooltipBuffer.Add( " The debris will be captured by the " ).Add( destFaction.GetDisplayName(), destFaction.FactionCenterColor.ColorHexBrighter );
+                        tooltipBuffer.Add( " 残骸将被 " ).Add( destFaction.GetDisplayName(), destFaction.FactionCenterColor.ColorHexBrighter );
                         debugCode = 250;
                         if ( destFaction.Type == FactionType.AI )
-                            tooltipBuffer.Add( " who will transform it into a powerful spire ship to use." );
+                            tooltipBuffer.Add( " 将其转化为强大的尖塔舰船使用。" );
                         else
-                            tooltipBuffer.Add( " who will use its technology to be able to build new ships." );
+                            tooltipBuffer.Add( " 将利用其技术建造新舰船。" );
                     }
                     tooltipBuffer.Add( "\n" );
                 }
@@ -122,7 +122,7 @@ namespace Arcen.AIW2.External
                 debugStage = 10;
                 Image.UpdateWith( sprite_Debris, true, "SpireDebris" );
                 ArcenDoubleCharacterBuffer buffer = SubTexts[0].Text.StartWritingToBuffer();
-                buffer.Add( "Debris\n" );
+                buffer.Add( "残骸\n" );
                 SubTexts[0].Text.FinishWritingToBuffer();
                 debugStage = 20;
                 buffer = SubTexts[1].Text.StartWritingToBuffer();

@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -356,12 +356,12 @@ namespace Arcen.AIW2.External
         {
             //For debug, this goes in the Threat menu
             buffer.Add( "\n" );
-            buffer.Add( "We currently have " ).Add( this.DysonCompletedUpgrades.Count ).Add( " faction upgrades:\n" );
+            buffer.Add( "我们当前拥有 " ).Add( this.DysonCompletedUpgrades.Count ).Add( " 个阵营升级：\n" );
             for ( int i = 0; i < this.DysonCompletedUpgrades.Count; i++ )
             {
                 buffer.Add( "\t" ).Add( this.DysonCompletedUpgrades[i].ToString() ).Add( "\n" );
             }
-            buffer.Add( "And for fleets:\n" );
+            buffer.Add( "舰队升级：\n" );
             foreach ( Fleet fleet in World_AIW2.Instance.Fleets( this.AttachedFaction, FleetStatus.CenterpieceMustLiveOrLooseFleet ) )
             {
                 if ( fleet == null || fleet.Centerpiece.GetSquad() == null )
@@ -379,7 +379,7 @@ namespace Arcen.AIW2.External
                     }
                 }
             }
-            buffer.Add( "We have " ).Add( this.AttachedFaction.StoredFactionResourceOne, "a1ffa1" ).Add( " Essence.\n" );
+            buffer.Add( "我们拥有 " ).Add( this.AttachedFaction.StoredFactionResourceOne, "a1ffa1" ).Add( " 精华。\n" );
         }
         #endregion
 

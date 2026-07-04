@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -553,12 +553,12 @@ namespace Arcen.AIW2.External
         {
             if ( this.AttachedFaction.InvasionTime > 0 && this.AttachedFaction.InvasionTime > World_AIW2.Instance.GameSecond )
             {
-                output.Add( "The nanocaust will invade in " + (this.AttachedFaction.InvasionTime - World_AIW2.Instance.GameSecond) + " seconds.\n" );
+                output.Add( "纳米灾疫将在 " + (this.AttachedFaction.InvasionTime - World_AIW2.Instance.GameSecond) + " 秒后入侵。\n" );
             }
             if ( !this.IsInFireteamMode || this.Teams.GetItemCount() == 0 )
                 return;
-            output.Add( "Nanocaust in state " + this.state + "\n" );
-            output.Add( "\nState of Nanocaust Fireteams for  <" + this.Allegiance + ">:\n" );
+            output.Add( "纳米灾疫状态：" + this.state + "\n" );
+            output.Add( "\n<" + this.Allegiance + "> 的纳米灾疫火队状态：\n" );
             int totalStrength = 0;
             foreach ( Fireteam team in Fireteam.LiveTeamsIn( this.Teams ) )
             {
@@ -569,7 +569,7 @@ namespace Arcen.AIW2.External
                     output.Add( "\n" );
                 }
             }
-            output.Add( "Total Nanocaust Strength: <color=#ff0000>" + (totalStrength / 1000) + "</color>.\n" );
+            output.Add( "纳米灾疫总强度：<color=#ff0000>" + (totalStrength / 1000) + "</color>。\n" );
         }
         #endregion
 

@@ -226,12 +226,12 @@ namespace Arcen.AIW2.External
             }
             float skeletonRatio = (float)this.NumSkeletonsInFleet.Display / this.SkeletonSoftCap.Display;
             UnityEngine.Color skeletonColor = EntityText.GetProportionalStrengthColor( skeletonRatio );
-            buffer.Add( "This fleet has " ).Add( this.NumSkeletonsInFleet.Display.ToString(), skeletonColor ).Add( "/" ).Add( this.SkeletonSoftCap.Display.ToString(), skeletonColor ).Add( " skeletons");
+            buffer.Add( "这支舰队拥有 " ).Add( this.NumSkeletonsInFleet.Display.ToString(), skeletonColor ).Add( "/" ).Add( this.SkeletonSoftCap.Display.ToString(), skeletonColor ).Add( " 骷髅");
             if ( fullDetail ) {
                 buffer.Add( ".\n");
                 Dictionary<string, int> PercentSkeletonType = this.PercentSkeletonType.GetDisplayDict();
                 if ( PercentSkeletonType.Count != 0 ) {
-                    buffer.Add("Skeleton Ratios:");
+                    buffer.Add("骷髅比例：");
                     if (PercentSkeletonTypeExcess > 0) {
                         buffer.Add(" (excess ").Add(PercentSkeletonTypeExcess).Add("%)");
                     }
@@ -239,11 +239,11 @@ namespace Arcen.AIW2.External
                     DisplayTypePercentages(buffer, PercentSkeletonType);
                 }
                 if ( this.BonusSkeletonPercent.Display > 0 ) {
-                    buffer.Add( "You have a " ).Add( this.BonusSkeletonPercent.Display, "ffa1a1" ).Add( "% chance of getting additional skeletons whenever you get a skeleton.\n" );
+                    buffer.Add( "您有 " ).Add( this.BonusSkeletonPercent.Display, "ffa1a1" ).Add( "% 的几率在获得骷髅时额外获得骷髅。\n" );
                 }
                 if ( this.BonusSkeletonsEarned > 0 )
-                    buffer.Add( "You have earned " ).Add( this.BonusSkeletonsEarned, "a1a1ff" ).Add( " bonus skeletons.\n" );
-                buffer.Add( "This fleet has " );
+                    buffer.Add( "您已获得 " ).Add( this.BonusSkeletonsEarned, "a1a1ff" ).Add( 个额外骷髅。\n" );
+                buffer.Add( "这支舰队拥有 " );
             }
 
             float wightRatio = (float)this.NumWightsInFleet.Display / this.WightSoftCap.Display;
@@ -251,12 +251,12 @@ namespace Arcen.AIW2.External
             if ( !fullDetail ) {
                 buffer.Add(" and ");
             }
-            buffer.Add( this.NumWightsInFleet.Display.ToString(), wightColor ).Add( "/" ).Add( this.WightSoftCap.Display.ToString(), wightColor ).Add( " wights. " );
+            buffer.Add( this.NumWightsInFleet.Display.ToString(), wightColor ).Add( "/" ).Add( this.WightSoftCap.Display.ToString(), wightColor ).Add( " 亡灵。 " );
 
             if ( fullDetail ) {
                 Dictionary<string, int> PercentWightType = this.PercentWightType.GetDisplayDict();
                 if ( PercentWightType.Count != 0 ) {
-                    buffer.Add("\nWight Ratios:");
+                    buffer.Add("\n亡灵比例：");
                     if (PercentWightTypeExcess > 0) {
                         buffer.Add(" (excess ").Add(PercentWightTypeExcess).Add("%)");
                     }
@@ -264,14 +264,14 @@ namespace Arcen.AIW2.External
                     DisplayTypePercentages(buffer, PercentWightType);
                 }
                 if ( this.BonusWightPercent.Display > 0 )
-                    buffer.Add( "You have a " ).Add( this.BonusWightPercent.Display, "ffa1a1" ).Add( "% chance of getting additional wights whenever you get a wight.\n" );
+                    buffer.Add( "您有 " ).Add( this.BonusWightPercent.Display, "ffa1a1" ).Add( "% 的几率在获得亡灵时额外获得亡灵。\n" );
                 if ( this.BonusWightsEarned > 0 )
-                    buffer.Add( "You have earned " ).Add( this.BonusWightsEarned, "a1a1ff" ).Add( " bonus wights.\n" );
+                    buffer.Add( "您已获得 " ).Add( this.BonusWightsEarned, "a1a1ff" ).Add( 个额外亡灵。\n" );
             }
             if ( fullDetail ) {
                 Dictionary<string, int> PercentMummyType = this.PercentMummyType.GetDisplayDict();
                 if ( PercentMummyType.Count != 0 ) {
-                    buffer.Add("Mummy Ratios:");
+                    buffer.Add("木乃伊比例：");
                     if (PercentMummyTypeExcess > 0) {
                         buffer.Add(" (excess ").Add(PercentMummyTypeExcess).Add("%)");
                     }
@@ -279,19 +279,19 @@ namespace Arcen.AIW2.External
                     DisplayTypePercentages(buffer, PercentMummyType);
                 }
                 if ( this.BonusMummyPercent.Display > 0 )
-                    buffer.Add( "You have a " ).Add( this.BonusMummyPercent.Display, "ffa1a1" ).Add( "% chance of getting additional mummies whenever you get a mummy.\n" );
+                    buffer.Add( "您有 " ).Add( this.BonusMummyPercent.Display, "ffa1a1" ).Add( "% 的几率在获得木乃伊时额外获得木乃伊。\n" );
                 if ( this.BonusMummiesEarned > 0 )
-                    buffer.Add( "You have earned " ).Add( this.BonusMummiesEarned, "a1a1ff" ).Add( " bonus mummies.\n" );
+                    buffer.Add( "您已获得 " ).Add( this.BonusMummiesEarned, "a1a1ff" ).Add( 个额外木乃伊。\n" );
 
             }
 
             if ( fullDetail ) {
                 if ( ShipLinesRaised.Count > 0 )
                 {
-                    buffer.Add( "\nFleet Kill Count (since last game load):\n" );
+                    buffer.Add( "\n舰队击杀数（自上次游戏加载以来）：\n" );
                     foreach ( KeyValuePair<GameEntityTypeData, int> kv in ShipLinesRaised )
                     {
-                        buffer.Add( "This fleet's " ).Add( kv.Key.DisplayName + "s", "a1ffa1" ).Add( " have slain " ).Add( kv.Value, "ffa1a1" ).Add( " foes.\n" );
+                        buffer.Add( "这支舰队的 " ).Add( kv.Key.DisplayName + "s", "a1ffa1" ).Add( " 已击杀 " ).Add( kv.Value, "ffa1a1" ).Add( " 个敌人。\n" );
                     }
                 }
             }
@@ -391,11 +391,11 @@ namespace Arcen.AIW2.External
 
         void IFleetTransforms.GetTooltip(ArcenCharacterBufferBase buffer)
         {
-            buffer.Add("You can spend essence points to change the form of this flagship.");
+            buffer.Add("您可以花费精华点数来改变这艘旗舰的形态。");
             NecromancerEmpireFactionBaseInfo baseInfo = this.AttachedFleet.Faction.TryGetExternalBaseInfoAs<NecromancerEmpireFactionBaseInfo>();
             if (baseInfo.AvailableBlueprints.GetDisplayList().Count == 0) {
                 buffer.NewLine();
-                buffer.Add("You can find blueprints from rifts or by using the transform elderling hack.");
+                buffer.Add("您可以通过裂隙或使用变形长老黑客技术找到蓝图。");
             }
         }
         #endregion

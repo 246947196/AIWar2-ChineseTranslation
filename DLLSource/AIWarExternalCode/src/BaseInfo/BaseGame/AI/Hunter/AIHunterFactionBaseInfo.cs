@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -134,13 +134,13 @@ namespace Arcen.AIW2.External
 
                 Planet currentTargetPlanet = World_AIW2.Instance.GetPlanetByIndex( (Int16)hunterInfo.CurrentTargetPlanetIndex );
                 if ( currentTargetPlanet == null )
-                    output.Add( "Null Target Planet\n\n" );
+                    output.Add( "空目标星球\n\n" );
                 else
-                    output.Add( "Total: " ).AddNumberMoreReadable( total, "ff0000" ).Add( " Target Planet " ).Add( currentTargetPlanet.Name, "a1ffa1" ).Add( "\n\n" );
+                    output.Add( "总计：" ).AddNumberMoreReadable( total, "ff0000" ).Add( " 目标星球 " ).Add( currentTargetPlanet.Name, "a1ffa1" ).Add( "\n\n" );
             }
             else
             {
-                output.Add( "\nState of Hunter Fireteams for  <" ).Add( this.AttachedFaction.FactionIndex ).Add( ">:\n" );
+                output.Add( "\n<" ).Add( this.AttachedFaction.FactionIndex ).Add( "> 猎手火队状态：\n" );
                 int totalStrength = 0;
                 foreach ( Fireteam team in Fireteam.LiveTeamsIn( hunterInfo.Teams ) )
                 {
@@ -151,7 +151,7 @@ namespace Arcen.AIW2.External
                         output.Add( "\n" );
                     }
                 }
-                output.Add( "Total Hunter Strength: " ).Add( (totalStrength / 1000).ToString(), "ff0000" ).Add( ".\n" );
+                output.Add( "猎手总强度：" ).Add( (totalStrength / 1000).ToString(), "ff0000" ).Add( "。\n" );
             }
             Planet.ReleaseTemporaryPlanetDictOfInts( strengthPerPlanet );
         }

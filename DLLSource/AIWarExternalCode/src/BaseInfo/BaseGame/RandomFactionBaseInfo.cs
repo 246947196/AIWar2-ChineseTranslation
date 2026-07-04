@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -38,7 +38,7 @@ namespace Arcen.AIW2.External
         public override float CalculateYourPortionOfPredictedGameLoad_Where100IsANormalAI( ArcenCharacterBufferBase OptionalExplainCalculation )
         {
             if ( OptionalExplainCalculation != null )
-                OptionalExplainCalculation.Add( "Random factions may be lower than or higher than normal load, but we have to assume the worst.  150%" );
+                OptionalExplainCalculation.Add( "随机阵营可能低于或高于正常负载，但我们必须假设最坏情况。150%" );
             return 150;
         }
 

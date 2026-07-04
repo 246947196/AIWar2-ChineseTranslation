@@ -57,13 +57,13 @@ namespace Arcen.AIW2.External
                 {
                     GameEntity_Squad lamassu = Data.EntityList[0].GetSquad();
                     if ( lamassu != null )
-                        tooltipBuffer.Add( "The Lamassu on " ).Add( lamassu.Planet.Name, "a1ffa1" )
-                            .Add( " has new weapons available.\n\nReturn it to its Ziggurat and use the Resync Modules hack to update its loadout." );
+                    tooltipBuffer.Add( "位于 " ).Add( lamassu.Planet.Name, "a1ffa1" )
+                        .Add( " 的拉玛苏有新武器可用。\n\n将其带回齐古拉特并使用重新同步模块黑客技术更新其装备。" );
                 }
                 else
                 {
                     debugCode = 200;
-                    tooltipBuffer.Add( Data.EntityList.Count, "ffcc22" ).Add( " Lamassus have new weapons available:\n" );
+                    tooltipBuffer.Add( Data.EntityList.Count, "ffcc22" ).Add( " 个拉玛苏有新武器可用：\n" );
                     for ( int i = 0; i < Data.EntityList.Count; i++ )
                     {
                         GameEntity_Squad lamassu = Data.EntityList[i].GetSquad();
@@ -71,7 +71,7 @@ namespace Arcen.AIW2.External
                             continue;
                         tooltipBuffer.Add( "\t" ).Add( lamassu.Planet.Name, "a1ffa1" ).Add( "\n" );
                     }
-                    tooltipBuffer.Add( "\nReturn each Lamassu to its Ziggurat and use the Resync Modules hack to update its loadout." );
+                    tooltipBuffer.Add( "\n将每个拉玛苏带回其齐古拉特并使用重新同步模块黑客技术更新其装备。" );
                 }
             }
             catch ( Exception e )
@@ -99,7 +99,7 @@ namespace Arcen.AIW2.External
                 Image.UpdateWith( sprite_Desync, true, "LamassuDesync" );
 
                 ArcenDoubleCharacterBuffer buffer = SubTexts[0].Text.StartWritingToBuffer();
-                buffer.Add( "Resync\n", "a1ffa1" );
+                buffer.Add( "重新同步\n", "a1ffa1" );
                 SubTexts[0].Text.FinishWritingToBuffer();
 
                 debugStage = 20;

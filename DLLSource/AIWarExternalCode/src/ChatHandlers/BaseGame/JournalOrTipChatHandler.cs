@@ -44,11 +44,11 @@ namespace Arcen.AIW2.External
             JournalEntry entry = JournalEntryTable.Instance.GetRowByNameOrNullIfNotFound( this.String );
 
             if ( campaignEntry == null || entry == null )
-                Buffer.Add( "鏃犳硶鎵惧埌涓庢鐩稿叧鐨勬棩蹇楁潯鐩?鎻愮ず锛屽洜姝ゆ棤娉曠偣鍑汇€? );
+                Buffer.Add( "无法找到与此相关的日志条目或提示，因此无法点击。" );
             else if ( entry.IsForTheTipsTab )
-                Buffer.Add( "鐐瑰嚮鏌ョ湅鎻愮ず锛? ).Add( entry.DoLocalTextReplacements( campaignEntry, entry.SidebarText ) );
+                Buffer.Add( "点击查看提示：" ).Add( entry.DoLocalTextReplacements( campaignEntry, entry.SidebarText ) );
             else
-                Buffer.Add( "鐐瑰嚮鏌ョ湅鏃ュ織鏉＄洰锛? ).Add( entry.DoLocalTextReplacements( campaignEntry, entry.SidebarText ) );
+                Buffer.Add( "点击查看日志条目：" ).Add( entry.DoLocalTextReplacements( campaignEntry, entry.SidebarText ) );
         }
 
         public override void SerializeTo( SerMetaData MetaData, ArcenSerializationBuffer Buffer, SerializationCommandType SerializationCmdType )

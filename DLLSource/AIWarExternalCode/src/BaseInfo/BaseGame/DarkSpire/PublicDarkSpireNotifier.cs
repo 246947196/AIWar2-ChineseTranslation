@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -42,8 +42,8 @@ namespace Arcen.AIW2.External
             tooltipBuffer.Clear();
 
             tooltipBuffer.Add( "<color=#" ).Add( colorString ).Add( ">" );
-            tooltipBuffer.Add( "Dark Spire</color> Vengeance Strike in ").AddHoursAndMinutes(Data.eventTimeRemaining - World_AIW2.Instance.GameSecond).Add("." );
-            tooltipBuffer.Add( "\n\n" ).Add( "\tThe Vengeance Strike will cause all the Vengeance Generators in the galaxy to produce a large number of ships simultaneously." );
+            tooltipBuffer.Add( "黑暗尖塔</color> 复仇打击将在 ").AddHoursAndMinutes(Data.eventTimeRemaining - World_AIW2.Instance.GameSecond).Add("后启动。" );
+            tooltipBuffer.Add( "\n\n" ).Add( "\t复仇打击将使星系中所有复仇发生器同时产生大量舰船。" );
             Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( null, tooltipBuffer.GetStringAndResetForNextUpdate() );
             return true;
         }
@@ -65,7 +65,7 @@ namespace Arcen.AIW2.External
 
                 debugStage = 3;
                 ArcenDoubleCharacterBuffer buffer = SubTexts[0].Text.StartWritingToBuffer();
-                buffer.Add( "Dark Spire\n\n" );
+                buffer.Add( "黑暗尖塔\n\n" );
                 SubTexts[0].Text.FinishWritingToBuffer();
                 int secondsRemaining = Data.eventTimeRemaining - World_AIW2.Instance.GameSecond;
                 debugStage = 6;

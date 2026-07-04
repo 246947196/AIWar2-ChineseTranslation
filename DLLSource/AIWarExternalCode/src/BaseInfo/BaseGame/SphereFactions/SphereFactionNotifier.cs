@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Arcen.AIW2.Core;
 using Arcen.Universal;
 
@@ -121,24 +121,24 @@ namespace Arcen.AIW2.External
 
                 if ( AntagonizerExists( Data ) && !IsAntagonized( Data ) )
                 {
-                    buffer.Add( "Antagoniz\n" );
+                    buffer.Add( "挑衅\n" );
                     buffer.Add( $"{(TimeLeft( Data ) / 60).ToString( "0" )}:{(TimeLeft( Data ) % 60).ToString( "00" )}" );
                 }
                 else
                 {
                     if ( IsAntagonized( Data ) )
                     {
-                        buffer.Add( "Antagoniz\n" );
+                        buffer.Add( "挑衅\n" );
                         buffer.Add( AntagonizerPlanet( Data ).Name );
                     }
                     else if ( IsAngryAtHack( Data ) || IsAngry( Data ) )
                     {
-                        buffer.Add( "Angry\n" );
+                        buffer.Add( "愤怒\n" );
                         buffer.Add( (TimeLeft( Data ) / 60) ).Add( ":" ).AddPaddedInt( (TimeLeft( Data ) % 60), 2 );
                     }
                     else if ( IsAnnoyed( Data ) )
                     {
-                        buffer.Add( "Annoyed\n" );
+                        buffer.Add( "恼怒\n" );
                         buffer.Add( (TimeLeft( Data ) / 60) ).Add( ":" ).AddPaddedInt( (TimeLeft( Data ) % 60), 2 );
                     }
                 }

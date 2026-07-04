@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -185,7 +185,7 @@ namespace Arcen.AIW2.External
         {
             string value = this.AttachedFaction.Config.GetStringValueForCustomFieldOrDefaultValue( "NumberToSeed", true );
             if ( value != null )
-                buffer.Add( "Count in Galaxy: " ).Add( value );
+                buffer.Add( "星系中数量：" ).Add( value );
         }
 
         public override void SetStartingFactionRelationships()

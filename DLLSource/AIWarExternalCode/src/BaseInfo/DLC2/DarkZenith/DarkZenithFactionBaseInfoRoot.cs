@@ -1397,7 +1397,7 @@ namespace Arcen.AIW2.External
                         }
                     }
                 }
-                buffer.Add( "鈹€鈹€ Economy Summary 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€\n" );
+                buffer.Add( "── Economy Summary ──────────────────\n" );
                 buffer.Add( "Epistyles: " ).Add( epistyles.Count ).Add( " total" );
                 if ( nOffense > 0 ) buffer.Add( "  " ).Add( nOffense ).Add( " Offense", "ffa1a1" );
                 if ( nUtility > 0 ) buffer.Add( "  " ).Add( nUtility ).Add( " Utility", "22a188" );

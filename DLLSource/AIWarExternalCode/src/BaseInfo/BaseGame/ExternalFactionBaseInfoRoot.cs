@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 using System.Text;
@@ -325,24 +325,24 @@ namespace Arcen.AIW2.External
         
 	        string value = AttachedFaction.GetStringValueForCustomFieldOrDefaultValue( "Intensity", false );
 	        if ( !string.IsNullOrWhiteSpace(value) )
-	            buffer.Add( "Intensity " ).Add( value ).Add( "    " );
+	            buffer.Add( "强度 " ).Add( value ).Add( "    " );
 
             if ( !string.IsNullOrWhiteSpace(this.Allegiance) )
             {
 	            if ( this.Allegiance == "Friendly To Players" )
-	                buffer.Add( "Friendly", "a1ffa1" );
+	                buffer.Add( "友善", "a1ffa1" );
 	            else if ( this.Allegiance == "Allied To AI" )
-	                buffer.Add( "AI Allied", "ffa1a1" );
+	                buffer.Add( "AI联盟", "ffa1a1" );
 	            else if ( this.Allegiance == "Minor Faction Team Red" )
-	                buffer.Add( "Red Team", "ff3800" );
+	                buffer.Add( "红队", "ff3800" );
 	            else if ( this.Allegiance == "Minor Faction Team Blue" )
-	                buffer.Add( "Blue Team", "1A2DFF" );
+	                buffer.Add( "蓝队", "1A2DFF" );
 	            else if ( this.Allegiance == "Minor Faction Team Green" )
-	                buffer.Add( "Green Team", "3fff00" );
+	                buffer.Add( "绿队", "3fff00" );
 	            else if ( this.Allegiance == "Dark Alliance" )
-	                buffer.Add( "Dark Alliance", "666666" );
+	                buffer.Add( "黑暗联盟", "666666" );
                 else if ( this.Allegiance == "Hostile To All")
-                    buffer.Add( "Hostile", "ff4a32" );
+                    buffer.Add( "敌对", "ff4a32" );
 	            else
 	                buffer.Add( this.Allegiance, "dddddd" );
             }

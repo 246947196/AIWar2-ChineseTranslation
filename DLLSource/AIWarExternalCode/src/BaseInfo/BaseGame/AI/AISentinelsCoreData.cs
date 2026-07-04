@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -58,7 +58,7 @@ namespace Arcen.AIW2.External
                 } 
                 else
                 {
-                    buffer.Add( "Random" );
+                    buffer.Add( "随机" );
                 }
             } 
             else 
@@ -70,7 +70,7 @@ namespace Arcen.AIW2.External
                 } 
                 else
                 {
-                    buffer.Add( "Adaptive" );
+                    buffer.Add( "自适应" );
                 }
             } 
             else
