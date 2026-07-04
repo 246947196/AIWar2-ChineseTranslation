@@ -1146,8 +1146,8 @@ namespace Arcen.AIW2.ExternalVisualization
                             {
                                 if ( AIWar2GalaxySettingQuickAccess.HiddenGalaxy && targetPlanet.IntelLevel <= PlanetIntelLevel.Unexplored )
                                 {
-                                    World_AIW2.Instance.QueueChatMessageOrCommand( "Cannot move camera to " + targetPlanet.Name + ", because it has not been explored via scouting and" +
-                                        " the \"Hide Unexplored Planets\" setting was enabled.", ChatType.ShowLocallyOnly, null );
+                                    World_AIW2.Instance.QueueChatMessageOrCommand( "无法将镜头移动至" + targetPlanet.Name + "，因为该星球尚未通过侦察探索且" +
+                                        "已启用'隐藏未探索星球'设置。", ChatType.ShowLocallyOnly, null );
                                     return;
                                 }
                                 //if ( targetPlanet.IntelLevel == PlanetIntelLevel.Unexplored )

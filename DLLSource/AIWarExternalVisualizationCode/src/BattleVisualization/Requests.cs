@@ -267,24 +267,24 @@ namespace Arcen.AIW2.ExternalVisualization
         {
             //ROW 1
             Buffer.Add( "\n" ).Add( "<pos=20>" );
-            Buffer.StartColor( QuickColors.HeaderMid ).AddNumberMoreReadable( BurningDyingShips.Count ).EndColor().Add( " Dying Ships<pos=200>" );
-            Buffer.StartColor( QuickColors.HeaderMid ).AddNumberMoreReadable( ActiveSpecialEffects.Count ).EndColor().Add( " Active VFX" );
+            Buffer.StartColor( QuickColors.HeaderMid ).AddNumberMoreReadable( BurningDyingShips.Count ).EndColor().Add( " 濒死舰船<pos=200>" );
+            Buffer.StartColor( QuickColors.HeaderMid ).AddNumberMoreReadable( ActiveSpecialEffects.Count ).EndColor().Add( " 活跃特效" );
             //ROW 2
             Buffer.Add( "\n" ).Add( "<pos=20>" );
-            Buffer.StartColor( QuickColors.HeaderMid ).AddNumberMoreReadable( ActiveShots.GetActiveListLength() ).EndColor().Add( " Active Shots<pos=200>" );
-            Buffer.StartColor( QuickColors.HeaderMid ).AddNumberMoreReadable( ActiveSquads.Count ).EndColor().Add( " Active Ships" );
+            Buffer.StartColor( QuickColors.HeaderMid ).AddNumberMoreReadable( ActiveShots.GetActiveListLength() ).EndColor().Add( " 活跃射击<pos=200>" );
+            Buffer.StartColor( QuickColors.HeaderMid ).AddNumberMoreReadable( ActiveSquads.Count ).EndColor().Add( " 活跃舰船" );
             //ROW 3
             Buffer.Add( "\n" ).Add( "<pos=20>" );
-            Buffer.StartColor( QuickColors.HeaderMid ).AddNumberMoreReadable( LooseOtherObjects.Count ).EndColor().Add( " Active Other<pos=200>" );
-            Buffer.StartColor( QuickColors.HeaderMid ).AddNumberMoreReadable( SpecialEffectRequests.Count ).EndColor().Add( " VFX Requests" );
+            Buffer.StartColor( QuickColors.HeaderMid ).AddNumberMoreReadable( LooseOtherObjects.Count ).EndColor().Add( " 活跃其他<pos=200>" );
+            Buffer.StartColor( QuickColors.HeaderMid ).AddNumberMoreReadable( SpecialEffectRequests.Count ).EndColor().Add( " 特效请求" );
             //ROW 4
             Buffer.Add( "\n" ).Add( "<pos=20>" );
-            Buffer.StartColor( QuickColors.HeaderMid ).AddNumberMoreReadable( VisualObjectRemovalRequests.Count ).EndColor().Add( " O Removals<pos=200>" );
-            Buffer.StartColor( QuickColors.HeaderMid ).AddNumberMoreReadable( IInstancedRendererRemovalRequests.Count ).EndColor().Add( " Ship Removals" );
+            Buffer.StartColor( QuickColors.HeaderMid ).AddNumberMoreReadable( VisualObjectRemovalRequests.Count ).EndColor().Add( " 对象移除<pos=200>" );
+            Buffer.StartColor( QuickColors.HeaderMid ).AddNumberMoreReadable( IInstancedRendererRemovalRequests.Count ).EndColor().Add( " 舰船移除" );
             //ROW 4
             Buffer.Add( "\n" ).Add( "<pos=20>" );
-            Buffer.StartColor( QuickColors.HeaderMid ).AddNumberMoreReadable( SoundPlaybackRequestsImmediate.Count ).EndColor().Add( " SFX Requests<pos=200>" );
-            Buffer.StartColor( QuickColors.HeaderMid ).AddNumberMoreReadable( SoundPlaybackRequestsDelayed.Count ).EndColor().Add( " SFX Delayed Requests" );
+            Buffer.StartColor( QuickColors.HeaderMid ).AddNumberMoreReadable( SoundPlaybackRequestsImmediate.Count ).EndColor().Add( " 音效请求<pos=200>" );
+            Buffer.StartColor( QuickColors.HeaderMid ).AddNumberMoreReadable( SoundPlaybackRequestsDelayed.Count ).EndColor().Add( " 音效延迟请求" );
         }
 
         public void ShowTooltipNarrow( string Tooltip )
