@@ -1,6 +1,6 @@
-# AI War 2 汉化项目规范
+# AI War 2 汉化项目上下文
 
-本文件是 AI 助手的项目上下文。详细规范见 `AIWar2_CHINESE_TRANSLATION_SPEC.md`。
+详细规范见 `AIWar2_CHINESE_TRANSLATION_SPEC.md`。
 
 ## 核心架构
 
@@ -8,117 +8,39 @@ XML 文件整体替换 + DLL 源码编译替换
 
 ## 工作流程
 
-1. 编辑翻译文件夹里的 XML 或 DLLSource/ 中的 C# 源码
-2. 运行 `deploy.ps1` 部署（含 XML + DLL）
+1. 编辑 `GameData/Configuration/` 中 XML 或 `DLLSource/` 中 C# 源码
+2. 运行 `deploy.ps1` 部署
 3. 启动游戏验证
-4. 提交到 Git
+4. 提交 Git
 
-## 关键约定
+## DLL 项目一览
 
-- Git 分支统一使用 `main`
-- 翻译和使用分开，文件结构一致
+| 项目 | 源码 | 编译 | 翻译 |
+|------|------|------|------|
+| AIWarExternalCode | DLLSource/AIWarExternalCode/src/ | ✅ | ✅ 完成 |
+| AIWarExternalDeepProcessingCode | DLLSource/AIWarExternalDeepProcessingCode/src/ | ✅ | ✅ 完成 |
+| AIWarExternalVisualizationCode | DLLSource/AIWarExternalVisualizationCode/src/ | ✅ | ✅ 完成 |
+| ArcenUniversal（反编译） | DLLSource/ArcenUniversal/ | ✅ 0 错误 | ⏳ |
+| ArcenAIW2Core（反编译） | DLLSource/ArcenAIW2Core/ | ❌ | ⏳ |
+| ArcenAIW2Visualization（反编译） | DLLSource/ArcenAIW2Visualization/ | ❌ | ⏳ |
 
-## XML 翻译范围
-
-**重要：并非所有 XML 文件都需要翻译。**
-
-### 需要翻译的文件类型
-- `GameEntity/` - 实体名称和描述
-- `JournalEntries/` - 剧情日志
-- `Achievement/` - 成就
-- `Tips/` - 游戏提示
-- `Tutorials/` - 教程
-- `SpecialFaction/` - 阵营描述
-- `HackingType/` - 黑客类型描述
-- `ScourgeTypeData/` - 天灾战士描述
-
-### 不需要翻译的文件类型（纯配置文件）
-- `External*` - 外部接口配置（技术标识符）
-- `Balance_*` - 数值平衡配置
-- `UIPrefab/` - UI 预制体路径
-- `UIWindow/` - 窗口配置（类名）
-- `AIShipGroup*` - AI 舰队分组（编号）
-- `CameraType/` - 相机类型
-- `FramerateType/` - 帧率类型
-- `ParticlePattern/` - 粒子效果路径
-- `SpaceboxDefinition/` - 天空盒路径
-- `PlanetDefinition/` - 星球定义（数值）
-- `TextEmbededSprites/` - 图标配置
-- `TextStyles/` - 文本样式
-- `TextVarMaps/` - 文本变量映射（注意：`TextVarMaps_Vanilla.xml` 包含快速开始等玩家可见文本属例外需翻译）
-- `SurrogateTable/` - 代理表（编号）
-- `SpecialFactionProcessingGroup/` - 处理组（编号）
-
-### 判断方法
-检查文件是否包含 `Description="..."` 且内容为英文句子。如果是，则需要翻译；如果是技术标识符或数值，则不需要翻译。
-
-## DLL 汉化（已完成）
-
-三个外部 DLL 项目已汉化并编译：
-
-| 项目 | 源码位置 | 编译产物 |
-|------|---------|---------|
-| AIWarExternalCode | DLLSource/AIWarExternalCode/src/ | DLLBin/AIWarExternalCode.dll |
-| AIWarExternalDeepProcessingCode | DLLSource/AIWarExternalDeepProcessingCode/src/ | DLLBin/AIWarExternalDeepProcessingCode.dll |
-| AIWarExternalVisualizationCode | DLLSource/AIWarExternalVisualizationCode/src/ | DLLBin/AIWarExternalVisualizationCode.dll |
-
-### 编译命令
+## 编译
 
 ```powershell
 .\build.ps1
 ```
 
 编译器：Roslyn 4.12.0（`C:\Users\Administrator\AppData\Local\Temp\roslyn412\tasks\net472\csc.exe`）
+MSBuild：`C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe`
+目标框架：.NET Framework 4.7.1
+引用：`..\..\..\ReliableDLLStorage\`
 
-### 翻译规则
+## 翻译规则
 
-1. **使用 Edit 工具**：逐字符串替换，禁止用 Write 覆写整个文件
-2. **只改引号内内容**：只能替换 `"..."` 内的文本
-3. **保留插值和标签**：`$"{variable}"` 和 `<color>` 标签保持不变
-4. **编译验证**：每翻译完一个文件编译验证，0 错误再继续
-5. **禁止中文引号**：C# 字符串中不能使用 `""`（中文双引号），会被编译器误判。引用按钮名称等必须用 `''`（单引号）
-
-### 关键警告
-
-- **编译器版本**：必须使用 Roslyn 4.12.0 / C# 13.0，低版本会导致运行时错误
-- **中文引号**：`""` 会破坏 C# 语法，必须用 `''` 替代
-
-## 中文字体支持
-
-使用 I18NFont4UnityGame 插件为游戏添加中文字符显示支持。
-
-### 组件
-
-| 组件 | 路径 | 说明 |
-|------|------|------|
-| 插件 DLL | `BepInEx\plugins\I18NFont4UnityGame\I18NFont4UnityGame.dll` | 插件主程序 |
-| 字库文件 | `BepInEx\plugins\I18NFont4UnityGame\mi_sans` | 小米字体（默认） |
-| 字库文件 | `BepInEx\plugins\I18NFont4UnityGame\sarasa_gothic` | 更纱黑体 |
-| 字库文件 | `BepInEx\plugins\I18NFont4UnityGame\unifont` | Unicode 字体 |
-| 配置文件 | `BepInEx\config\xiaoye97.I18NFont4UnityGame.cfg` | 插件配置 |
-
-### 配置文件内容
-
-```ini
-## Settings file was created by plugin I18NFont4UnityGame v1.0
-## Plugin GUID: xiaoye97.I18NFont4UnityGame
-
-[config]
-
-## put font package to <GameName>/BepInEx/plugins/I18NFont4UnityGame
-# Setting type: String
-# Default value: unifont
-FontName = mi_sans
-```
-
-### 字库文件说明
-
-| 字体 | 文件大小 | 说明 |
-|------|---------|------|
-| mi_sans | 约 4.6 MB | 小米字体，当前默认使用 |
-| sarasa_gothic | 约 9.9 MB | 更纱黑体 |
-| unifont | 约 2.2 MB | Unicode 字体 |
-
-- **用途**：为不支持中文的游戏提供中文字符显示
-- **文件格式**：Unity AssetBundle（文件头为 "UnityFS"）
-- **说明**：这些是 Unity 资源包文件，包含中文字体，由 I18NFont4UnityGame 插件加载使用
+1. **Edit 工具**逐字符串替换，禁止 Write 覆写整个文件
+2. 只改 `"..."` 内文本，不碰引号外代码
+3. 保留 `{变量}` 和 `<color>` 标签
+4. 每翻译完一个 DLL 编译验证，0 错误继续
+5. 禁止中文引号 `""`，用 `''` 替代
+6. Debug 日志、内部标识符不翻译
+7. **反编译项目**：只改 `"..."` 内字符串，不改 csproj 配置、GlobalUsings.cs、编译修复代码
