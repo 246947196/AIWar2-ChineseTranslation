@@ -97,6 +97,20 @@ if (Test-Path $dllBinDir) {
     Write-Host "  DLLBin directory not found, skipping DLL deployment" -ForegroundColor DarkYellow
 }
 
+# Deploy ArcenUIAssetRedirect BepInEx plugin
+Write-Host ""
+Write-Host "Deploying ArcenUIAssetRedirect plugin..." -ForegroundColor Yellow
+$pluginDir = "$gameDir\BepInEx\plugins\ChineseTranslation"
+New-Item -ItemType Directory -Path $pluginDir -Force | Out-Null
+$redirectDll = Join-Path $translationDir "DLLBin\ArcenUIAssetRedirect.dll"
+if (Test-Path $redirectDll) {
+    Copy-Item $redirectDll "$pluginDir\" -Force
+    Write-Host "  Deployed: ArcenUIAssetRedirect.dll ($([math]::Round((Get-Item $redirectDll).Length/1KB)) KB)" -ForegroundColor Gray
+} else {
+    Write-Host "  ArcenUIAssetRedirect.dll not found in DLLBin, skipping" -ForegroundColor DarkYellow
+}
+Write-Host "ArcenUIAssetRedirect plugin deployed" -ForegroundColor Green
+
 Write-Host ""
 Write-Host "=== Deployment Complete ===" -ForegroundColor Cyan
 Write-Host ""

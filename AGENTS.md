@@ -4,14 +4,15 @@
 
 ## 核心架构
 
-XML 文件整体替换 + DLL 源码编译替换
+XML 文件整体替换 + DLL 源码编译替换 + AssetBundle 拦截重定向
 
 ## 工作流程
 
-1. 编辑 `GameData/Configuration/` 中 XML 或 `DLLSource/` 中 C# 源码
-2. 运行 `deploy.ps1` 部署
-3. 启动游戏验证
-4. 提交 Git
+1. 编辑 `GameData/Configuration/` 中 XML、`DLLSource/` 中 C# 源码、或替换 `AssetBundles_Win/arcenui`
+2. 运行 `build.ps1` 编译（修改 DLL 后需要）
+3. 运行 `deploy.ps1` 部署
+4. 启动游戏验证
+5. 提交 Git
 
 ## DLL 项目一览
 
@@ -20,6 +21,7 @@ XML 文件整体替换 + DLL 源码编译替换
 | AIWarExternalCode | DLLSource/AIWarExternalCode/src/ | ✅ | ✅ 完成 |
 | AIWarExternalDeepProcessingCode | DLLSource/AIWarExternalDeepProcessingCode/src/ | ✅ | ✅ 完成 |
 | AIWarExternalVisualizationCode | DLLSource/AIWarExternalVisualizationCode/src/ | ✅ | ✅ 完成 |
+| ArcenUIAssetRedirect（BepInEx 插件） | DLLSource/ArcenUIAssetRedirect/src/ | ✅ | ✅ 完成 |
 | ArcenUniversal（反编译） | DLLSource/ArcenUniversal/ | ✅ 0 错误 | ⏳ |
 | ArcenAIW2Core（反编译） | DLLSource/ArcenAIW2Core/ | ❌ | ⏳ |
 | ArcenAIW2Visualization（反编译） | DLLSource/ArcenAIW2Visualization/ | ❌ | ⏳ |
@@ -32,8 +34,10 @@ XML 文件整体替换 + DLL 源码编译替换
 
 编译器：Roslyn 4.12.0（`C:\Users\Administrator\AppData\Local\Temp\roslyn412\tasks\net472\csc.exe`）
 MSBuild：`C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe`
-目标框架：.NET Framework 4.7.1
-引用：`..\..\..\ReliableDLLStorage\`
+目标框架：
+- 外部代码/反编译项目：.NET Framework 4.7.1
+- BepInEx 插件 (ArcenUIAssetRedirect)：.NET Framework 4.7.2
+引用：`..\..\..\ReliableDLLStorage\`（插件额外引用 `..\..\..\BepInEx\core\`）
 
 ## 翻译规则
 

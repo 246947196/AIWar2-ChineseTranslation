@@ -12,13 +12,20 @@ $projects = @(
     "DLLSource\AIWarExternalVisualizationCode\AIWarExternalVisualizationCode.csproj"
 )
 
+$bepInExProjects = @(
+    "DLLSource\ArcenUIAssetRedirect\ArcenUIAssetRedirect.csproj"
+)
+
+function Build-MSBuildProject {
+    param($projPath)
+    Write-Host "Building $([System.IO.Path]::GetFileName($projPath))..." -ForegroundColor Cyan
+    return & $msbuild $projPath /t:Build /p:Configuration=Release "/p:CscToolPath=$roslynDir" /nologo 2>&1
+}
+
 foreach ($proj in $projects) {
     $projPath = Join-Path $baseDir $proj
-    Write-Host "Building $proj..." -ForegroundColor Cyan
+    $output = Build-MSBuildProject $projPath
     
-    $output = & $msbuild $projPath /t:Build /p:Configuration=Release "/p:CscToolPath=$roslynDir" /nologo 2>&1
-    
-    # Copy DLLs from obj to DLLBin
     $projDir = Split-Path $projPath
     $dllName = [System.IO.Path]::GetFileNameWithoutExtension($proj) + ".dll"
     $objDll = Join-Path $projDir "obj\Release\$dllName"
@@ -30,6 +37,26 @@ foreach ($proj in $projects) {
         Write-Host "  OK: $dllName ($size KB)" -ForegroundColor Green
     } else {
         Write-Host "  FAILED: $dllName not found" -ForegroundColor Red
+        $output | Select-Object -Last 10
+        exit 1
+    }
+}
+
+foreach ($proj in $bepInExProjects) {
+    $projPath = Join-Path $baseDir $proj
+    $output = Build-MSBuildProject $projPath
+    
+    $projDir = Split-Path $projPath
+    $dllName = [System.IO.Path]::GetFileNameWithoutExtension($proj) + ".dll"
+    $binDll = Join-Path $projDir "bin\Release\$dllName"
+    $outputDll = Join-Path $baseDir "DLLBin\$dllName"
+    
+    if (Test-Path $binDll) {
+        Copy-Item $binDll $outputDll -Force
+        $size = [math]::Round((Get-Item $outputDll).Length / 1KB)
+        Write-Host "  OK: $dllName ($size KB)" -ForegroundColor Green
+    } else {
+        Write-Host "  FAILED: $dllName not found at $binDll" -ForegroundColor Red
         $output | Select-Object -Last 10
         exit 1
     }

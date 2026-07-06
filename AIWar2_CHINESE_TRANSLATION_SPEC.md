@@ -4,12 +4,12 @@
 
 ## 一、技术方案
 
-**XML 文件整体替换 + DLL 替换 (Preloader Patcher)**
+**XML 文件整体替换 + DLL 替换 (Preloader Patcher) + AssetBundle 拦截重定向**
 
 | ❌ 已排除的方案 | 原因 |
 |----------------|------|
 | XMLMod (游戏原生覆盖机制) | DLL 覆盖机制有问题 |
-| Harmony 运行时 Patch | 实测出现大量 BUG |
+| Harmony 运行时 Patch（DLL 替换场景） | 实测出现大量 BUG |
 | AutoTranslator | 不能全部翻译 |
 
 ## 二、项目结构
@@ -25,12 +25,16 @@ AIWar2_ChineseTranslation/
 │   ├── core/                          ← BepInEx 核心库
 │   ├── patchers/
 │   │   └── AssemblyRedirector.dll     ← Preloader Patcher
-│   └── plugins/
-│       └── I18NFont4UnityGame/
-│           ├── I18NFont4UnityGame.dll ← 中文字体插件
-│           ├── mi_sans               ← 小米字体（默认）
-│           ├── sarasa_gothic          ← 更纱黑体
-│           └── unifont                ← Unicode 字体
+│   ├── plugins/
+│   │   ├── I18NFont4UnityGame/
+│   │   │   ├── I18NFont4UnityGame.dll ← 中文字体插件
+│   │   │   ├── mi_sans               ← 小米字体（默认）
+│   │   │   ├── sarasa_gothic          ← 更纱黑体
+│   │   │   └── unifont                ← Unicode 字体
+│   │   └── ChineseTranslation/
+│   │       ├── ArcenUIAssetRedirect.dll ← AssetBundle 重定向插件
+│   │       └── AssetBundles_Win/
+│   │           └── arcenui            ← 汉化版 arcenui AssetBundle
 ├── GameData/Configuration/            ← 翻译后的 XML 文件
 ├── deploy.ps1                         ← 一键部署脚本
 ├── check_translation.ps1              ← 检查脚本
@@ -126,6 +130,26 @@ AIWar2_ChineseTranslation/
 
 BepInEx Preloader 在游戏程序集加载前调用 Patcher，通过 Mono.Cecil 读取并替换 `PatchedAssemblies/` 中的 DLL 文件。
 
+### 4.3 AssetBundle 拦截重定向
+
+**arcenui AssetBundle**（`AssetBundles_Win/arcenui`）是 Unity 资源包，包含大量 UI 预制体中的英文文本（`m_text:` 字段）。这类资源无法通过 XML 或 DLL 替换修改。
+
+解决方案：使用 BepInEx Harmony 插件在运行时拦截 `ArcenAssetBundleManager.LoadOrRetrieveBundle()` 方法。当请求 `arcenui` 时，改为加载 `BepInEx/plugins/ChineseTranslation/AssetBundles_Win/arcenui`，实现 UI 文本替换。
+
+**为什么这个 Harmony Patch 可行，而之前 Harmony 方案被排除？**
+
+| | 之前失败的尝试 | 本次方案 |
+|--|--------------|---------|
+| 范围 | Patch 游戏逻辑 DLL 中的众多方法 | Patch 单个私有方法，只拦截文件名 |
+| 风险 | 大量竞争条件和逻辑冲突 | 无状态，要么加载自定义文件，要么回退 |
+| 影响 | 多处覆盖导致 BUG | 极有限，只影响 AssetBundle 加载路径 |
+
+**流程：**
+1. 使用 Unity 工具（如 AssetStudio）从原始 `arcenui` 提取预制体
+2. 替换预制体中的英文 `m_text:` 为中文字符串
+3. 重新打包为 AssetBundle，放到 `BepInEx/plugins/ChineseTranslation/AssetBundles_Win/arcenui`
+4. 游戏加载时，ArcenUIAssetRedirect 插件自动拦截并加载汉化版
+
 ## 五、游戏 DLL 加载链路
 
 | 加载顺序 | DLL 文件 | 说明 |
@@ -139,7 +163,8 @@ BepInEx Preloader 在游戏程序集加载前调用 Patcher，通过 Mono.Cecil 
 ## 六、禁止事项
 
 - 禁止修改 `AIWar2_Data/Managed/` 下任何原始 DLL
-- 禁止使用 Harmony 运行时方法 patch
+- 禁止使用 Harmony 运行时 patch 游戏逻辑 DLL（ArcenAIW2Core 等）中的方法（曾出现大量 BUG）
+- Harmony 仅限用于 AssetBundle 拦截重定向（`ArcenUIAssetRedirect` 项目），不涉及游戏逻辑
 - 禁止使用 XMLMod 的 DLL 覆盖机制
 
 ## 七、卸载方法
@@ -155,13 +180,16 @@ BepInEx Preloader 在游戏程序集加载前调用 Patcher，通过 Mono.Cecil 
 
 ### 8.1 概述
 
-六个 DLL 项目分为两组：
+七个 DLL 项目分为三组：
 
 **第一组：有源码的外部代码项目（已完成汉化）**
 三个外部 DLL 项目有完整源码（位于 `CodeExternal/`），已全部汉化并编译。
 
 **第二组：反编译的核心 DLL 项目（汉化中）**
 三个核心 DLL（ArcenUniversal、ArcenAIW2Core、ArcenAIW2Visualization）无源码，通过 ilspycmd 8.2 反编译为 C# 项目，再编译替换。
+
+**第三组：BepInEx 插件项目（新增）**
+一个 Harmony 插件（ArcenUIAssetRedirect），用于拦截 AssetBundle 加载，实现 UI 文本替换。
 
 ### 8.2 已汉化的 DLL 项目
 
@@ -170,6 +198,7 @@ BepInEx Preloader 在游戏程序集加载前调用 Patcher，通过 Mono.Cecil 
 | AIWarExternalCode | DLLSource/AIWarExternalCode/src/UIs/ | 主菜单、设置、存档、侧边栏等 UI 文本 | ✅ 0 错误 | ✅ 已完成 |
 | AIWarExternalDeepProcessingCode | DLLSource/AIWarExternalDeepProcessingCode/src/ | 聊天消息、少量 UI 文本 | ✅ 0 错误 | ✅ 已完成 |
 | AIWarExternalVisualizationCode | DLLSource/AIWarExternalVisualizationCode/src/ | 银河地图显示模式文本 | ✅ 0 错误 | ✅ 已完成 |
+| ArcenUIAssetRedirect | DLLSource/ArcenUIAssetRedirect/src/ | arcenui AssetBundle 拦截重定向 | ✅ 0 错误 | ✅ 已完成 |
 | ArcenUniversal (反编译) | DLLSource/ArcenUniversal/ | UI 组件、通用工具、输入、网络等 | ✅ 0 错误 | ⏳ 未开始 |
 | ArcenAIW2Core (反编译) | DLLSource/ArcenAIW2Core/ | 游戏主逻辑、实体、阵营、舰队、科技等 | ❌ 待编译 | ⏳ 未开始 |
 | ArcenAIW2Visualization (反编译) | DLLSource/ArcenAIW2Visualization/ | 渲染、特效、模型、Shader 等 | ❌ 待编译 | ⏳ 未开始 |
@@ -188,6 +217,10 @@ AIWar2_ChineseTranslation/
 │   ├── AIWarExternalVisualizationCode/
 │   │   ├── src/
 │   │   └── AIWarExternalVisualizationCode.csproj
+│   ├── ArcenUIAssetRedirect/                     ← BepInEx 插件
+│   │   ├── src/
+│   │   │   └── ArcenUIRedirectPlugin.cs           ← Harmony 拦截逻辑
+│   │   └── ArcenUIAssetRedirect.csproj
 │   ├── ArcenUniversal/                           ← 反编译的核心项目
 │   │   ├── ArcenUniversal.csproj
 │   │   ├── GlobalUsings.cs
@@ -199,7 +232,8 @@ AIWar2_ChineseTranslation/
 ├── DLLBin/                                       ← 编译产物
 │   ├── AIWarExternalCode.dll                     (3778 KB)
 │   ├── AIWarExternalDeepProcessingCode.dll        (1762 KB)
-│   └── AIWarExternalVisualizationCode.dll         (228 KB)
+│   ├── AIWarExternalVisualizationCode.dll         (228 KB)
+│   └── ArcenUIAssetRedirect.dll                  (6 KB)
 ├── BepInEx/
 ├── GameData/
 ├── build.ps1                                     ← DLL 编译脚本
@@ -305,7 +339,13 @@ $msbuild = "C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe"
 
 ### 8.8 部署
 
-`deploy.ps1` 已集成 DLL 部署，运行 `.\deploy.ps1` 即可部署所有翻译文件（XML + DLL）。
+`deploy.ps1` 已集成所有部署步骤：
+- XML 翻译文件 → `GameData/Configuration/`
+- DLL 编译产物 → `GameData/ModdableLogicDLLs/`
+- BepInEx 插件 (ArcenUIAssetRedirect) → `BepInEx/plugins/ChineseTranslation/`
+- 汉化 AssetBundle → `BepInEx/plugins/ChineseTranslation/AssetBundles_Win/arcenui`
+
+运行 `.\deploy.ps1` 即可部署所有翻译文件。
 
 核心 DLL 的编译产物需手动复制到 `PatchedAssemblies/` 测试，或在 `deploy.ps1` 中添加对应步骤。
 
@@ -337,7 +377,10 @@ AIWarExternalDeepProcessingCode
   └─ 依赖: AIWarExternalCode (编译产物)
 ```
 
-**编译顺序：** AIWarExternalCode → AIWarExternalDeepProcessingCode + AIWarExternalVisualizationCode
+ArcenUIAssetRedirect (BepInEx 插件)
+  └─ 依赖: ArcenUniversal, BepInEx, 0Harmony, UnityEngine
+
+**编译顺序：** AIWarExternalCode → AIWarExternalDeepProcessingCode + AIWarExternalVisualizationCode → ArcenUIAssetRedirect（可独立编译）
 
 ### 8.11 翻译优先级
 
@@ -360,10 +403,11 @@ AIWarExternalDeepProcessingCode
 | AIWarExternalCode | 有源码 | 600 | ✅ 0 错误 | ✅ 完成 |
 | AIWarExternalDeepProcessingCode | 有源码 | 133 | ✅ 0 错误 | ✅ 完成 |
 | AIWarExternalVisualizationCode | 有源码 | 45 | ✅ 0 错误 | ✅ 完成 |
+| ArcenUIAssetRedirect | BepInEx 插件 | 1 | ✅ 0 错误 | ✅ 完成 |
 | ArcenUniversal | 反编译 | 613 | ✅ 0 错误 | ⏳ 未开始 |
 | ArcenAIW2Core | 反编译 | ~350 | ❌ 待编译 | ⏳ 未开始 |
 | ArcenAIW2Visualization | 反编译 | ~100 | ❌ 待编译 | ⏳ 未开始 |
-| **合计** | | **~1840** | | |
+| **合计** | | **~1841** | | |
 
 ### 8.14 翻译注意事项
 
