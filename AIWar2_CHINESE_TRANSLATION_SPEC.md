@@ -38,11 +38,11 @@ AIWar2_ChineseTranslation/
 ├── GameData/Configuration/            ← 翻译后的 XML 文件
 ├── deploy.ps1                         ← 一键部署脚本（含版本检查）
 ├── check_update.ps1                   ← 更新检测脚本（替代 check_translation.ps1）
-├── check_translation.ps1              ← 旧版检查脚本（将退役）
+├── check_translation.ps1              ← 旧版检查脚本（已退役）
 ├── translation_snapshot.json          ← 基线快照（游戏英文原文快照）
 ├── AIWar2_CHINESE_TRANSLATION_SPEC.md ← 规范文档
 ├── AGENTS.md                          ← AI 助手上下文
-└── translated_files.txt               ← 翻译记录
+└── translated_files.txt               ← 翻译记录（弃用，被快照取代）
 ```
 
 ## 三、工作流程
@@ -58,7 +58,7 @@ AIWar2_ChineseTranslation/
 
 1. 克隆仓库到本地
 2. Steam → 验证游戏文件完整性（确保游戏为英文原版）
-3. **运行 `check_update.ps1 -snapshot` 建立基线快照**（详见 `docs/superpowers/specs/2026-07-07-game-update-detection-design.md`）
+3. **运行 `check_update.ps1 -snapshot` 建立基线快照**（基于 SHA256 哈希 + 字符串提取的结构化快照，覆盖 XML/DLL 源码/核心 DLL/arcenui 四层）
 4. 运行 `deploy.ps1` 将翻译文件部署到游戏目录
 
 ### 3.3 游戏更新后
@@ -206,7 +206,7 @@ BepInEx Preloader 在游戏程序集加载前调用 Patcher，通过 Mono.Cecil 
 | AIWarExternalDeepProcessingCode | DLLSource/AIWarExternalDeepProcessingCode/src/ | 聊天消息、少量 UI 文本 | ✅ 0 错误 | ✅ 已完成 |
 | AIWarExternalVisualizationCode | DLLSource/AIWarExternalVisualizationCode/src/ | 银河地图显示模式文本 | ✅ 0 错误 | ✅ 已完成 |
 | ArcenUIAssetRedirect | DLLSource/ArcenUIAssetRedirect/src/ | arcenui AssetBundle 拦截重定向 | ✅ 0 错误 | ✅ 已完成 |
-| ArcenUniversal (反编译) | DLLSource/ArcenUniversal/ | UI 组件、通用工具、输入、网络等 | ✅ 0 错误 | ⏳ 未开始 |
+| ArcenUniversal (反编译) | DLLSource/ArcenUniversal/ | UI 组件、通用工具、输入、网络等 | ✅ 0 错误 | ⏳ 待翻译 |
 | ArcenAIW2Core (反编译) | DLLSource/ArcenAIW2Core/ | 游戏主逻辑、实体、阵营、舰队、科技等 | ❌ 待编译 | ⏳ 未开始 |
 | ArcenAIW2Visualization (反编译) | DLLSource/ArcenAIW2Visualization/ | 渲染、特效、模型、Shader 等 | ❌ 待编译 | ⏳ 未开始 |
 
@@ -411,7 +411,7 @@ ArcenUIAssetRedirect (BepInEx 插件)
 | AIWarExternalDeepProcessingCode | 有源码 | 133 | ✅ 0 错误 | ✅ 完成 |
 | AIWarExternalVisualizationCode | 有源码 | 45 | ✅ 0 错误 | ✅ 完成 |
 | ArcenUIAssetRedirect | BepInEx 插件 | 1 | ✅ 0 错误 | ✅ 完成 |
-| ArcenUniversal | 反编译 | 613 | ✅ 0 错误 | ⏳ 未开始 |
+| ArcenUniversal | 反编译 | 613 | ✅ 0 错误 | ⏳ 待翻译 |
 | ArcenAIW2Core | 反编译 | ~350 | ❌ 待编译 | ⏳ 未开始 |
 | ArcenAIW2Visualization | 反编译 | ~100 | ❌ 待编译 | ⏳ 未开始 |
 | **合计** | | **~1841** | | |
@@ -488,7 +488,7 @@ AIWar2_ChineseTranslation/
 
 ### 9.5 白名单更新
 
-`check_translation.ps1` 白名单已更新，包含以下不需要翻译的文件类型：
+`check_update.ps1` 白名单已更新（继承自 `check_translation.ps1`），包含以下不需要翻译的文件类型：
 - External* 系列文件（纯数值配置）
 - 其他弃用/调试文件
 
