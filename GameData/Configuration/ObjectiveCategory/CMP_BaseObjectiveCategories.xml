@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <objective_category name="PrimeObjectives" display_name="主要目标" sort_priority="1"
         description="这些是你赢得战争所需达成的终极目标。你不需要完成所有目标，只需达成其中之一即可。" />

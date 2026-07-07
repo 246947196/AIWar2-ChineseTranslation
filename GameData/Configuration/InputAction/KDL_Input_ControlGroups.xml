@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <input_action name="SelectFleetGroup_1"
       category="Fleet Groups" display_name="选择舰队组1"

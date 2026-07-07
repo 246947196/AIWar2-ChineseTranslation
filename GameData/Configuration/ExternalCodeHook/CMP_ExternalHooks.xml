@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <hook name="OnJournalFirstQueued"
         description="当特定的最终日志条目首次排队时执行。即使该日志可以多次出现，也只会执行一次。"

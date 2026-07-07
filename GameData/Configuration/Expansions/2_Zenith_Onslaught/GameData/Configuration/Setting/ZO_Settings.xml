@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <setting name="AutoBuildCoreHangar" serialization_name="AB-CH" is_network_and_game_synced_setting="true" tags="IsAutoBuildingSetting,CoreHangar"
           category="Automation" subcategory="AutoBuildAtPlanets" display_name="自动建造V翼无人机机库" type="IntSlider" default="0" min="0" max="30"

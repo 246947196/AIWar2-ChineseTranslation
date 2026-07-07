@@ -1,22 +1,13 @@
+# Compiled DLLs
+DLLBin/*.dll
+
 # Build artifacts
-obj/
-bin/
+DLLSource/**/obj/
+DLLSource/**/bin/
 
-# Visual Studio files
-.vs/
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
+# BepInEx framework files (not source)
+BepInEx/core/*.xml
 
-# NuGet packages
-packages/
-*.nupkg
-
-# Windows
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-
-# macOS
-.DS_Store
+# Python cache
+__pycache__/
+*.pyc

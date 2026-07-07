@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 <!-- AI Behaviour: Enbanced Overlord -->
   <galaxy_setting category="AI Behavior" subcategory="CommonFeatures"  name="EnhancedOverlord" display_name="强化霸主" type="BoolToggle" 

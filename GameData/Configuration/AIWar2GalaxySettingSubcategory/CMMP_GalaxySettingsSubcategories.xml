@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <setting_subcategory parent="General" name="ScoutingCoreMechanics" display_name="核心侦察机制" color="46f0ff"
       description="地图内容最初是如何被揭示的？"/>

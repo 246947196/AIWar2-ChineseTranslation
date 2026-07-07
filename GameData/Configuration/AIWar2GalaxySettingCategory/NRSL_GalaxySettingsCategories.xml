@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <setting_category name="Extended" display_name="扩展"
       description="影响游戏大部分内容的特殊设置。这些设置大多会对游戏平衡产生重大影响，因此在更高难度的战役类型中会被锁定。"/>

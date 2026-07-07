@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <ai_type name="Geneticist" required_expansion_list="1_The_Spire_Rises"
   	   is_default="true"

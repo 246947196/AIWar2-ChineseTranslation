@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- General -->
   <galaxy_setting category="General" name="ShowAdvancedGalaxyAndFactionOptions" display_name="显示高级星系和派系选项" type="BoolToggle" default="false" changeable_during_gameplay="true"

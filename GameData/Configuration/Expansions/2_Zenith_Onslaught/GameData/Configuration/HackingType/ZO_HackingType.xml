@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 <!-- Nomad Planet Hacks -->
   <item name="ActivateNomadStructure" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_ActivateNomadStructure" display_name="激活游牧控制结构"

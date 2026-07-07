@@ -1859,7 +1859,7 @@ namespace Arcen.AIW2.External
 
                     buffer
                         .Add(" Slow enemies ")
-                        .AddNumber( Type.GravityHitsEngine_gxLessThan, " 鈮?, TextTerm.Engine_gX, TermUse.Icon )
+                        .AddNumber( Type.GravityHitsEngine_gxLessThan, " ≤", TextTerm.Engine_gX, TermUse.Icon )
                         .Add(" by ")
                         .AddNumber(
                             ()=> buffer.AddMultiplier(system.DataForMark.GravitySpeedMultiplier, TextStyle.Empty),

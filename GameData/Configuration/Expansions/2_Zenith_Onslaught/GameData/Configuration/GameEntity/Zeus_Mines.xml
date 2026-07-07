@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
 <!-- New mines to give each weapon tech a unique version. Existing mines will be moved to this system once I figure out how to override game entities. -->

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 	<ship_class_data name="BrutalGuardianBase" display_name="残暴守护者" short_name="残暴守护者"
 		can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.25" can_be_devoured="false"

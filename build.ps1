@@ -62,6 +62,21 @@ foreach ($proj in $bepInExProjects) {
     }
 }
 
+# Build arcenui AssetBundle (patch with Chinese translations)
+Write-Host "`nPatching arcenui AssetBundle..." -ForegroundColor Cyan
+$patchScript = Join-Path $baseDir "patch_arcenui.py"
+if (Test-Path $patchScript) {
+    python $patchScript patch 2>&1
+    if ($LASTEXITCODE -eq 0) {
+        Write-Host "  arcenui patched successfully" -ForegroundColor Green
+    } else {
+        Write-Host "  arcenui patch FAILED" -ForegroundColor Red
+        exit 1
+    }
+} else {
+    Write-Host "  patch_arcenui.py not found, skipping" -ForegroundColor DarkYellow
+}
+
 Write-Host "`nAll DLLs built successfully!" -ForegroundColor Green
 Get-ChildItem (Join-Path $baseDir "DLLBin") -Filter "*.dll" | ForEach-Object {
     Write-Host "  $($_.Name) ($([math]::Round($_.Length / 1KB)) KB)"

@@ -373,14 +373,14 @@ namespace Arcen.AIW2.External
         public class bSettings : WindowTogglingButtonController
         {
             public static bSettings Instance;
-            public bSettings() : base( "Settings", ">" ) { Instance = this; }
+            public bSettings() : base( "设置", ">" ) { Instance = this; }
             public override ToggleableWindowController GetRelatedController() { return Window_SettingsMenu.Instance; }
         }
 
         public class bControls : WindowTogglingButtonController
         {
             public static bControls Instance;
-            public bControls() : base( "Settings", ">" ) { Instance = this; }
+            public bControls() : base( "控制", ">" ) { Instance = this; }
             public override ToggleableWindowController GetRelatedController() { return Window_ControlBindingsMenu.Instance; }
         }
 
@@ -691,21 +691,21 @@ namespace Arcen.AIW2.External
         public class bViewCredits : WindowTogglingButtonController
         {
             public static bViewCredits Instance;
-            public bViewCredits() : base( "Staff Credits", ">" ) { Instance = this; }
+            public bViewCredits() : base( "开发人员致谢", ">" ) { Instance = this; }
             public override ToggleableWindowController GetRelatedController() { return Window_Credits.Instance; }
         }
 
         public class bViewCreditsKickstarter : WindowTogglingButtonController
         {
             public static bViewCreditsKickstarter Instance;
-            public bViewCreditsKickstarter() : base( "Kickstarter Credits", ">" ) { Instance = this; }
+            public bViewCreditsKickstarter() : base( "众筹致谢", ">" ) { Instance = this; }
             public override ToggleableWindowController GetRelatedController() { return Window_CreditsKickstarter.Instance; }
         }
 
         public class bViewBackgroundStory : WindowTogglingButtonController
         {
             public static bViewBackgroundStory Instance;
-            public bViewBackgroundStory() : base("Background Story", ">") { Instance = this; }
+            public bViewBackgroundStory() : base("背景故事", ">") { Instance = this; }
             public override ToggleableWindowController GetRelatedController() { return Window_BackgroundStory.Instance; }
         }
         

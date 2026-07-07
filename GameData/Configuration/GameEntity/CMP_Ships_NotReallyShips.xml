@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>  
   <entity name="BaseInvisibleEntity"
       thematic_groups="Hidden"  is_expecting_to_not_be_encyclopedia_counted_at_all="true"

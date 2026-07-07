@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   <journal name="CP_AIDef_More" sidebar_text="{FactionName} 已被击败" can_record_another_copy_if_already_recorded_in_this_campaign="true"

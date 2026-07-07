@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 <!-- These are giant structures that control their planets. Possibly you also want some new planetary backgrounds for nomads? Some way of combining Structure and Planet? -->
   <entity name="DisabledNomadPlanetNexus"

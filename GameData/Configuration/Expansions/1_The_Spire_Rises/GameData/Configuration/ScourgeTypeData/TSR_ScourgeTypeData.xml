@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- Nota Bene: You need to add a handler in the DescriptionAppender in the AstroTrains C# -->
   <!-- If both NumUnitsToSpawn and strengthToSpawn are > 0 then we first create NumUnitsToSpawn of the tagged units, then also create StrengthToSpawn of them -->

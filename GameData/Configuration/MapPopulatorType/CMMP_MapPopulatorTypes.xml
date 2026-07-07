@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <map_populator_type name="Standard" description="这是游戏自带的常规算法。"
         dll_name="AIWarExternalDeepProcessingCode" type_name="Arcen.AIW2.External.StandardMapPopulator"/>

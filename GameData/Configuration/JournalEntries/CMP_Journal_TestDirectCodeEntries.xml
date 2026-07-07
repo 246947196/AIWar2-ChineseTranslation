@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   <journal name="CP_FullTest" sidebar_text="{FactionName} {UnitTypeName} 测试 {FactionColor}{PlanetName}&lt;/color&gt;" can_record_another_copy_if_already_recorded_in_this_campaign="true"

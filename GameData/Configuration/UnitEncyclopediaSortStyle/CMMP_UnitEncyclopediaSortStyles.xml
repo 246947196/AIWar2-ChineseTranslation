@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   
   <display_mode name="ByName" is_default="true" sort_order="1"  display_name="按名称" tooltip="按名称排序。"

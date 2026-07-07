@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <item name="Unused" display_name="无法升级。" is_visible_on_menus="false" sort_group="1" sort_index="1" is_considered_blank="true"/>
   <item name="UpgradeMeFromFleetOnly" short_name="Fleet" display_name="仅当上级舰队升级时才会升级。" sort_group="2" sort_index="2" is_visible_on_menus="false" is_considered_blank="true"/>

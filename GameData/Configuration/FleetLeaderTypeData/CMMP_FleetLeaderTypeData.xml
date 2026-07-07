@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   
   <fleet_leader_type name="Transport" display_name="运输舰" required_special_entity_type="MobileStrikeCombatFleetFlagship"/>

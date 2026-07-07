@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   <tip category="AIFleets" name="SubFleets" display_name="AI 分舰队" sort_priority="100"

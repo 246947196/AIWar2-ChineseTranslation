@@ -8,11 +8,37 @@ XML 文件整体替换 + DLL 源码编译替换 + AssetBundle 拦截重定向
 
 ## 工作流程
 
-1. 编辑 `GameData/Configuration/` 中 XML、`DLLSource/` 中 C# 源码、或替换 `AssetBundles_Win/arcenui`
-2. 运行 `build.ps1` 编译（修改 DLL 后需要）
-3. 运行 `deploy.ps1` 部署
-4. 启动游戏验证
-5. 提交 Git
+1. 编辑 `GameData/Configuration/` 中 XML、`DLLSource/` 中 C# 源码、或 `arcenui_translations.json`
+2. 运行 `python patch_arcenui.py extract` 更新翻译模板
+3. 编辑 `arcenui_translations.json` 填入翻译
+4. 运行 `build.ps1` 编译 DLL + 自动 patch arcenui bundle
+5. 运行 `deploy.ps1` 部署
+6. 启动游戏验证
+7. 提交 Git
+
+## arcenui AssetBundle 汉化
+
+arcenui bundle 中的 UI 文本存储在 Unity 预制体的 `m_text` 字段中。
+
+- `patch_arcenui.py` — 主工具（info / extract / patch）
+- `arcenui_translations.json` — 翻译对照表（英→中）
+- 原理：用 UnityPy 加载 bundle → 替换所有 MonoBehaviours 的 `m_text` → 输出到 `BepInEx/plugins/ChineseTranslation/AssetBundles_Win/arcenui`
+- `ArcenUIAssetRedirect.dll` (BepInEx 插件) 拦截游戏加载，重定向到汉化版 bundle
+- 翻译范围：目前 150 个 UI 字符串已翻译（按钮标签、窗口标题、背景故事等），120 个占位/数字/人名已标记不翻译
+
+## 主菜单按钮文本来源
+
+主菜单按钮文本来自两个来源：
+
+1. **AssetBundle（prefab m_text）**：`patch_arcenui.py` 提取并替换，适用于无 `GetTextToShowFromVolatile` 覆盖的按钮
+2. **C# 代码**：`WindowTogglingButtonController` 构造函数参数（`TextWhenClosed`）和 `GetTextToShowFromVolatile` 覆盖方法
+
+2026-07-07 修复了以下 C# 按钮标签（在 `Window_MainMenu.cs` 中）：
+- `bSettings`："Settings" → "设置"
+- `bControls`："Settings" → "控制"
+- `bViewCredits`："Staff Credits" → "开发人员致谢"
+- `bViewCreditsKickstarter`："Kickstarter Credits" → "众筹致谢"
+- `bViewBackgroundStory`："Background Story" → "背景故事"
 
 ## DLL 项目一览
 

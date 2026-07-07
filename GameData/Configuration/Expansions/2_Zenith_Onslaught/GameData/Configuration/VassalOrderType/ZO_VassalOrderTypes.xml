@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!--Many different factions can use each one!  Define these in the mods or DLC that use them.  Don't worry about making them use DLC3.
       The central code will handle that.-->

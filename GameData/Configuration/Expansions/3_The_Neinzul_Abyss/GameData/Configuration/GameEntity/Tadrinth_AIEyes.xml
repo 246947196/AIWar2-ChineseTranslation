@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 	<entity name="PlasmaEye" is_partial_record="true">
 				<ai_ship_group_membership name="PanopticonSingularFreakySurprisesEyes" weight="100"/>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <fleet_name_type name="Random" display_name="随机" subdir="Random"
           description="随机生成的名称。" />

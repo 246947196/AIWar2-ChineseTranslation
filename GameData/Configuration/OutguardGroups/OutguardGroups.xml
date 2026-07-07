@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 	<item name="Arnaud de Cervole" display_name="阿尔诺·德·塞尔沃勒"
 		on_spawn_behaviour="PatrolAdjacentFriendlyPlanets"

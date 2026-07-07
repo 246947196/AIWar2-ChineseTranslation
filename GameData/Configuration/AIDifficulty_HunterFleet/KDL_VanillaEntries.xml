@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- Nota Bene: if adding a new BonusAntiTaggedUnitIncome you must add the GeneratesBonusHunterShips tag to the units in question
        for performance reasons -->

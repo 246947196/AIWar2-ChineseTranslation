@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
 	<entity name="ShowdownDevice" voice_group="Silent" is_auto_scrapping_skipped_when_command_station_type_changes="false"

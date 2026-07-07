@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <state_of_matter name="Normal" display_name="正常状态"
       is_default="true"  should_show_description_in_tooltips="false"

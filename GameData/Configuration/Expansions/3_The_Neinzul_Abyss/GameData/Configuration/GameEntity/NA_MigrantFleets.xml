@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 	<entity copy_from="RoamingEnclave" name="RoamingEnclaveMigrantFleets" display_name="漫游飞地移民" display_name_for_sidebar="漫游飞地移民" thematic_groups="Neinzul,Migrant"
 			tags="ShowsOnNormalDisplayMode,MigrantEnclave"

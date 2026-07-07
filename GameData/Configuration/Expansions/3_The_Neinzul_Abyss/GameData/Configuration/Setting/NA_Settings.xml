@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   <setting name="HideRandomFactionType" category="Game" subcategory="Intel" is_advanced_setting="true" display_name="隐藏随机阵营类型" type="BoolToggle" default="true"

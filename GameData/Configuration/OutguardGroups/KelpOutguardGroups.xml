@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 	<!--	All groups in this file only use new values. Other files retain various values for prior save support. -->
 	<!-- 	Either a tag or an internal name can be specified for a unit_tag. It will attempt to find a tag by that name first. -->

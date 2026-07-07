@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <objective_category name="CapturablesThatGiveMore_Sniper" display_name="狙击炮" sort_priority="910" default_collapsed="true" rollups="SniperRangeIsPossibleEver"
         description="可以为你提供更多具有无限射程武器的单位。亲近你的朋友，让敌人待在星球的另一边。" />

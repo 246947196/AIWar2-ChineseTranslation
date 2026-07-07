@@ -111,6 +111,17 @@ if (Test-Path $redirectDll) {
 }
 Write-Host "ArcenUIAssetRedirect plugin deployed" -ForegroundColor Green
 
+# Deploy arcenui AssetBundle
+Write-Host ""
+Write-Host "Deploying arcenui AssetBundle..." -ForegroundColor Yellow
+$arcenuiBundle = "$pluginDir\AssetBundles_Win\arcenui"
+if (Test-Path $arcenuiBundle) {
+    Write-Host "  arcenui bundle exists ($([math]::Round((Get-Item $arcenuiBundle).Length/1MB)) MB)" -ForegroundColor Gray
+} else {
+    Write-Host "  arcenui bundle not found, run patch_arcenui.py first" -ForegroundColor DarkYellow
+}
+Write-Host "arcenui AssetBundle deployment checked" -ForegroundColor Green
+
 Write-Host ""
 Write-Host "=== Deployment Complete ===" -ForegroundColor Cyan
 Write-Host ""

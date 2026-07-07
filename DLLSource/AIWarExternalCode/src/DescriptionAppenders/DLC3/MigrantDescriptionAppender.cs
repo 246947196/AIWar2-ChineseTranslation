@@ -46,7 +46,7 @@ namespace Arcen.AIW2.External
 
                         Planet nextPlanet = migrantImp.GetNextPlanetToMoveToToReachFriendlies( RelatedEntityOrNull, friendlyTerritory );
 
-                        Buffer.Add( "此移民再次返回您的星系，无需引导即可到达您的领地。它在 " ).AddPlanetNameFormated( originPlanet, false ).EndColor( " 生成。" );
+                        Buffer.Add( "此移民再次返回您的星系，无需引导即可到达您的领地。它在 " ).AddPlanetNameFormated( originPlanet, false ).Add( " 生成。" ).EndColor();
                         if ( timeLeft > 0 )
                         {
                                     Buffer.StartColor( "66ffef" ).Add( " 并将移动到 " ).AddPlanetNameFormated( nextPlanet, false ).EndColor().StartColor( "66ffef" ).Add( "，耗时 " ).AddSecondsRemaining( timeLeft ).EndColor();
@@ -78,7 +78,7 @@ namespace Arcen.AIW2.External
                             if ( currentMovingToOrNull == null || currentMovingToOrNull == nextPlanet )
                             {
                                 // On a neutral or hostile planet, guided by allies.
-                                Buffer.StartColor( "66ffef" ).Add( "由于您在此星球上的军事优势，您正在引导此移民的旅程，缓慢将其驱向友好空间。它在 " ).AddPlanetNameFormated( originPlanet, false ).EndColor( " 生成。" );
+                                Buffer.StartColor( "66ffef" ).Add( "由于您在此星球上的军事优势，您正在引导此移民的旅程，缓慢将其驱向友好空间。它在 " ).AddPlanetNameFormated( originPlanet, false ).Add( " 生成。" ).EndColor();
                                 if ( timeLeft > 0 )
                                 {
                             Buffer.StartColor( "66ffef" ).Add( " 并将移动到 " ).AddPlanetNameFormated( nextPlanet, false ).EndColor().StartColor( "66ffef" ).Add( "，耗时 " ).AddSecondsRemaining( timeLeft ).EndColor();

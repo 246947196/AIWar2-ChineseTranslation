@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <networking_framework name="LiteNet"
               display_name="&lt;color=#ffd965&gt;S级:&lt;/color&gt; 直接IP：LiteNetLib" abbreviation="Direct IP: LiteNet"

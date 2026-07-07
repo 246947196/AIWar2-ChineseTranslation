@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   <journal name="TSR_Spire_CampaignStartMessage" sidebar_text="{FactionColor}尖塔族:&lt;/color&gt; 异常读数" can_record_another_copy_if_already_recorded_in_this_campaign="false"

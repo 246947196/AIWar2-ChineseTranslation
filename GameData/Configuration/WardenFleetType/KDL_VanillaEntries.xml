@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <warden_type name="BaseOriented" is_default="true"
             display_name="基地导向型" abbreviation="基地导向型"

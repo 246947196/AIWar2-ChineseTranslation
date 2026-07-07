@@ -1,2 +1,2 @@
-<?xml version='1.0' encoding='utf-8'?>
+﻿<?xml version='1.0' encoding='utf-8'?>
 <root><journal name="Base_Lore_Hunter" sidebar_text="&lt;color=#a1ffa1&gt;传说&lt;/color&gt;: {FactionColor}威胁舰队&lt;/color&gt;" can_record_another_copy_if_already_recorded_in_this_campaign="false" text_replacement_related_faction_color="true" text_replacement_related_player_name="true" chat_text="{FactionColor}威胁舰队&lt;/color&gt; 被发现" full_text="发件人：蒂莫西·科波菲尔德博士 人工智能研发部 - 指挥总部  致：指挥官 {PlayerName}  指挥官，  我们发现了一个AI子程序，目前暂时命名为「威胁舰队」，因为它展现出类似捕食者的攻击性行为。  我们目前的推测是，当前未执行守卫任务且已闲置一段时间的AI单位都被此子程序控制，它们的行为比独立行动时要主动和智能得多。  对我们来说，在它们可能逃脱、加入这支「威胁舰队」并在日后成为更大问题之前，尽可能多地摧毁舰船似乎是明智之举。" /></root>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <player_type name="HumanEmpire" 
         display_name="人类帝国" short_name="Human Empire" uncontrolled_name="Human Empire" lobby_prefix="Human Empire"

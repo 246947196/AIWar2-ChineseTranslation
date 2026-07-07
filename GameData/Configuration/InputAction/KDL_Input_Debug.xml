@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <input_action name="Debug_StartTestChamber"
       category="Debug" display_name="启动测试房间"

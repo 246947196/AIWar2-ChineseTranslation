@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <setting_subcategory parent="Extended" name="VictoryConditions" display_name="胜利条件" color="46f0ff"
       description="与触发游戏胜利画面相关的设置。"/>

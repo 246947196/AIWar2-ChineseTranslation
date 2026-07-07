@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <setting_subcategory parent="Game" name="UX" display_name="用户体验" color="46f0ff"
       description="关于易用性和用户体验的相关设置。"/>

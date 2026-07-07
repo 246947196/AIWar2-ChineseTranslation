@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>	
 	<!-- Neinzul Hive are considered Metal Generators to not disrupt pathfinding logic that relies on them for random movement. -->
 	<entity name="NeinzulWildHiveBase"

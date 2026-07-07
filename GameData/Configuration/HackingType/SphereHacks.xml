@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 <!--	All hacking_response_strength_per_interval values are based on 1 minute of budget for the Sphere
 		Aka, primary_response_strength_per_interval="2" would spawn 2 minutes worth of budget at once

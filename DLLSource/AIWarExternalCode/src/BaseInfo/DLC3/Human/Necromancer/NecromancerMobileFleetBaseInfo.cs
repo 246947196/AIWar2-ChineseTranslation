@@ -242,7 +242,7 @@ namespace Arcen.AIW2.External
                     buffer.Add( "您有 " ).Add( this.BonusSkeletonPercent.Display, "ffa1a1" ).Add( "% 的几率在获得骷髅时额外获得骷髅。\n" );
                 }
                 if ( this.BonusSkeletonsEarned > 0 )
-                    buffer.Add( "您已获得 " ).Add( this.BonusSkeletonsEarned, "a1a1ff" ).Add( 个额外骷髅。\n" );
+                    buffer.Add( "您已获得 " ).Add( this.BonusSkeletonsEarned, "a1a1ff" ).Add( "个额外骷髅。\n" );
                 buffer.Add( "这支舰队拥有 " );
             }
 
@@ -266,7 +266,7 @@ namespace Arcen.AIW2.External
                 if ( this.BonusWightPercent.Display > 0 )
                     buffer.Add( "您有 " ).Add( this.BonusWightPercent.Display, "ffa1a1" ).Add( "% 的几率在获得亡灵时额外获得亡灵。\n" );
                 if ( this.BonusWightsEarned > 0 )
-                    buffer.Add( "您已获得 " ).Add( this.BonusWightsEarned, "a1a1ff" ).Add( 个额外亡灵。\n" );
+                    buffer.Add( "您已获得 " ).Add( this.BonusWightsEarned, "a1a1ff" ).Add( "个额外亡灵。\n" );
             }
             if ( fullDetail ) {
                 Dictionary<string, int> PercentMummyType = this.PercentMummyType.GetDisplayDict();
@@ -281,7 +281,7 @@ namespace Arcen.AIW2.External
                 if ( this.BonusMummyPercent.Display > 0 )
                     buffer.Add( "您有 " ).Add( this.BonusMummyPercent.Display, "ffa1a1" ).Add( "% 的几率在获得木乃伊时额外获得木乃伊。\n" );
                 if ( this.BonusMummiesEarned > 0 )
-                    buffer.Add( "您已获得 " ).Add( this.BonusMummiesEarned, "a1a1ff" ).Add( 个额外木乃伊。\n" );
+                    buffer.Add( "您已获得 " ).Add( this.BonusMummiesEarned, "a1a1ff" ).Add( "个额外木乃伊。\n" );
 
             }
 

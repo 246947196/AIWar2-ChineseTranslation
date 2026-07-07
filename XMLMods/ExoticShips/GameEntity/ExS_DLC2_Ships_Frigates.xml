@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 	<entity name="AnvilHeavyFrigate" copy_from="AMU_HeavyFrigateBase" required_expansion_list="2_Zenith_Onslaught"
 		visuals="Assets/_FinalGameMeshes/Guardians/FragmentingGuardianAlt/FragmentingGuardian.prefab"
