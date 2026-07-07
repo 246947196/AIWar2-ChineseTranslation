@@ -6,15 +6,35 @@
 
 XML 文件整体替换 + DLL 源码编译替换 + AssetBundle 拦截重定向
 
-## 工作流程
+## 工作流程 (日常翻译)
 
 1. 编辑 `GameData/Configuration/` 中 XML、`DLLSource/` 中 C# 源码、或 `arcenui_translations.json`
 2. 运行 `python patch_arcenui.py extract` 更新翻译模板
 3. 编辑 `arcenui_translations.json` 填入翻译
 4. 运行 `build.ps1` 编译 DLL + 自动 patch arcenui bundle
-5. 运行 `deploy.ps1` 部署
+5. 运行 `deploy.ps1` 部署（含版本检查：基线版本必须匹配游戏版本）
 6. 启动游戏验证
 7. 提交 Git
+
+## 游戏更新检测
+
+详见 `docs/superpowers/specs/2026-07-07-game-update-detection-design.md`。
+
+工具：`check_update.ps1` — 替代旧的 `check_translation.ps1`
+
+| 命令 | 用途 |
+|------|------|
+| `check_update.ps1 -snapshot` | 建立基线快照（必须在英文状态下运行） |
+| `check_update.ps1 -snapshot -force` | 强制覆盖已有快照 |
+| `check_update.ps1` | 检测游戏更新，生成报告到 `translation_update_report_*.txt` |
+
+**游戏更新后流程：**
+1. Steam 更新游戏（文件恢复为英文）
+2. `check_update.ps1` → 生成变更报告
+3. `check_update.ps1 -snapshot -force` → 更新基线
+4. 按报告逐条翻译修改
+5. `build.ps1` + `deploy.ps1`
+6. 提交 git
 
 ## arcenui AssetBundle 汉化
 
