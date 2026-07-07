@@ -11,3 +11,5 @@ BepInEx/core/*.xml
 # Python cache
 __pycache__/
 *.pyc
+
+translation_update_report_*.txt
