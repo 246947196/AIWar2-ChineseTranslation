@@ -7,6 +7,58 @@ $gameDir = "D:\Steam\steamapps\common\AI War 2"
 Write-Host "=== AI War 2 Deployment ===" -ForegroundColor Cyan
 Write-Host ""
 
+# ---- Version check ----
+$snapshotFile = Join-Path $translationDir "translation_snapshot.json"
+if (-not (Test-Path $snapshotFile)) {
+    Write-Host "ERROR: No baseline snapshot found. Run check_update.ps1 -snapshot first." -ForegroundColor Red
+    Write-Host ""
+    Write-Host "Press Enter to exit..."
+    Read-Host
+    exit 1
+}
+
+$snapshot = Get-Content $snapshotFile -Raw -Encoding UTF8 | ConvertFrom-Json
+$snapshotVersion = $snapshot.game_version
+
+$versionFile = Join-Path $gameDir "GameData\Configuration\GameVersion\KDL_GameVersions.xml"
+if (-not (Test-Path $versionFile)) {
+    Write-Host "ERROR: Game version file KDL_GameVersions.xml not found." -ForegroundColor Red
+    Write-Host ""
+    Write-Host "Press Enter to exit..."
+    Read-Host
+    exit 1
+}
+
+$versionContent = Get-Content $versionFile -Raw -ErrorAction SilentlyContinue
+$versions = [regex]::Matches($versionContent, 'major_version="(\d+)".*?minor_version="(\d+)"')
+$latest = $versions | ForEach-Object {
+    $major = [int]$_.Groups[1].Value
+    $minor = [int]$_.Groups[2].Value
+    [PSCustomObject]@{ Major=$major; Minor=$minor; Version="$major.$minor" }
+} | Sort-Object Major,Minor -Descending | Select-Object -First 1
+
+if (-not $latest) {
+    Write-Host "ERROR: Cannot parse game version number." -ForegroundColor Red
+    Write-Host ""
+    Write-Host "Press Enter to exit..."
+    Read-Host
+    exit 1
+}
+
+$gameVersion = $latest.Version
+
+if ($snapshotVersion -ne $gameVersion) {
+    Write-Host "ERROR: Baseline version ($snapshotVersion) does not match game version ($gameVersion)." -ForegroundColor Red
+    Write-Host "Game may have been updated. Run check_update.ps1 first." -ForegroundColor Yellow
+    Write-Host ""
+    Write-Host "Press Enter to exit..."
+    Read-Host
+    exit 1
+}
+
+Write-Host "Version OK: baseline $snapshotVersion = game $gameVersion" -ForegroundColor Green
+Write-Host ""
+
 # Deploy BepInEx framework
 Write-Host "Deploying BepInEx framework..." -ForegroundColor Yellow
 Copy-Item "$translationDir\winhttp.dll" "$gameDir\" -Force

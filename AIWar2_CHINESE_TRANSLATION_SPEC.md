@@ -36,8 +36,10 @@ AIWar2_ChineseTranslation/
 │   │       └── AssetBundles_Win/
 │   │           └── arcenui            ← 汉化版 arcenui AssetBundle
 ├── GameData/Configuration/            ← 翻译后的 XML 文件
-├── deploy.ps1                         ← 一键部署脚本
-├── check_translation.ps1              ← 检查脚本
+├── deploy.ps1                         ← 一键部署脚本（含版本检查）
+├── check_update.ps1                   ← 更新检测脚本（替代 check_translation.ps1）
+├── check_translation.ps1              ← 旧版检查脚本（将退役）
+├── translation_snapshot.json          ← 基线快照（游戏英文原文快照）
 ├── AIWar2_CHINESE_TRANSLATION_SPEC.md ← 规范文档
 ├── AGENTS.md                          ← AI 助手上下文
 └── translated_files.txt               ← 翻译记录
@@ -55,15 +57,20 @@ AIWar2_ChineseTranslation/
 ### 3.2 首次部署
 
 1. 克隆仓库到本地
-2. 运行 `deploy.ps1` 将翻译文件部署到游戏目录
+2. Steam → 验证游戏文件完整性（确保游戏为英文原版）
+3. **运行 `check_update.ps1 -snapshot` 建立基线快照**（详见 `docs/superpowers/specs/2026-07-07-game-update-detection-design.md`）
+4. 运行 `deploy.ps1` 将翻译文件部署到游戏目录
 
 ### 3.3 游戏更新后
 
+`deploy.ps1` 现在包含部署前版本检查：**基线版本必须与游戏版本一致**才能部署。
+
 1. Steam 更新游戏
-2. 运行 `check_translation.ps1` 检查哪些文件被覆盖
-3. 重新翻译被覆盖的文件
-4. 运行 `deploy.ps1` 重新部署
-5. 更新规范中的版本号 → 提交并打 tag
+2. **运行 `check_update.ps1`**（替代 `check_translation.ps1`）检测变更并生成报告
+3. **运行 `check_update.ps1 -snapshot -force`** 从英文状态更新基线快照
+4. 按报告重新翻译变更的文件
+5. 运行 `deploy.ps1` 重新部署
+6. 更新规范中的版本号 → 提交并打 tag
 
 ## 四、技术原理
 
