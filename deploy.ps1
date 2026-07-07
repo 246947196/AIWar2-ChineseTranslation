@@ -4,6 +4,8 @@
 $translationDir = "D:\Steam\steamapps\common\AI War 2\AIWar2_ChineseTranslation"
 $gameDir = "D:\Steam\steamapps\common\AI War 2"
 
+$ErrorActionPreference = "Stop"
+
 Write-Host "=== AI War 2 Deployment ===" -ForegroundColor Cyan
 Write-Host ""
 
@@ -30,10 +32,12 @@ if (-not (Test-Path $versionFile)) {
 }
 
 $versionContent = Get-Content $versionFile -Raw -ErrorAction SilentlyContinue
-$versions = [regex]::Matches($versionContent, 'major_version="(\d+)".*?minor_version="(\d+)"')
-$latest = $versions | ForEach-Object {
-    $major = [int]$_.Groups[1].Value
-    $minor = [int]$_.Groups[2].Value
+$entries = [regex]::Matches($versionContent, '(?s)<game_version\s[^>]*?minor_version="(\d+)"[^>]*?>')
+$latest = $entries | ForEach-Object {
+    $text = $_.Value
+    $minor = [int]$_.Groups[1].Value
+    $mMajor = [regex]::Match($text, 'major_version="(\d+)"')
+    $major = if ($mMajor.Success) { [int]$mMajor.Groups[1].Value } else { 0 }
     [PSCustomObject]@{ Major=$major; Minor=$minor; Version="$major.$minor" }
 } | Sort-Object Major,Minor -Descending | Select-Object -First 1
 
@@ -67,7 +71,11 @@ New-Item -ItemType Directory -Path "$gameDir\BepInEx\core" -Force | Out-Null
 New-Item -ItemType Directory -Path "$gameDir\BepInEx\patchers" -Force | Out-Null
 New-Item -ItemType Directory -Path "$gameDir\BepInEx\config" -Force | Out-Null
 New-Item -ItemType Directory -Path "$gameDir\PatchedAssemblies" -Force | Out-Null
-Copy-Item "$translationDir\BepInEx\core\*" "$gameDir\BepInEx\core\" -Force
+if (Test-Path "$translationDir\BepInEx\core") {
+    Copy-Item "$translationDir\BepInEx\core\*" "$gameDir\BepInEx\core\" -Force
+} else {
+    Write-Host "  ERROR: BepInEx\core not found in translation directory" -ForegroundColor Red; exit 1
+}
 Copy-Item "$translationDir\BepInEx\patchers\AssemblyRedirector.dll" "$gameDir\BepInEx\patchers\" -Force
 Copy-Item "$translationDir\BepInEx\config\xiaoye97.I18NFont4UnityGame.cfg" "$gameDir\BepInEx\config\" -Force
 Copy-Item "$translationDir\BepInEx\config\BepInEx.cfg" "$gameDir\BepInEx\config\" -Force
@@ -82,7 +90,7 @@ Write-Host ""
 Write-Host "Deploying I18NFont4UnityGame plugin..." -ForegroundColor Yellow
 New-Item -ItemType Directory -Path "$gameDir\BepInEx\plugins\I18NFont4UnityGame" -Force | Out-Null
 Copy-Item "$translationDir\BepInEx\plugins\I18NFont4UnityGame\I18NFont4UnityGame.dll" "$gameDir\BepInEx\plugins\I18NFont4UnityGame\" -Force
-Copy-Item "$translationDir\BepInEx\plugins\I18NFont4UnityGame\sarasa_gothic" "$gameDir\BepInEx\plugins\I18NFont4UnityGame\" -Force
+Copy-Item "$translationDir\BepInEx\plugins\I18NFont4UnityGame\sarasa_gothic" "$gameDir\BepInEx\plugins\I18NFont4UnityGame\" -Force -Recurse
 Write-Host "I18NFont4UnityGame plugin deployed" -ForegroundColor Green
 
 # Deploy translation XML files
@@ -140,6 +148,7 @@ $dllBinDir = Join-Path $translationDir "DLLBin"
 if (Test-Path $dllBinDir) {
     $dllFiles = Get-ChildItem $dllBinDir -Filter "*.dll"
     $dllDest = Join-Path $gameDir "GameData\ModdableLogicDLLs"
+    New-Item -ItemType Directory -Path $dllDest -Force | Out-Null
     foreach ($dll in $dllFiles) {
         Copy-Item $dll.FullName "$dllDest\" -Force
         Write-Host "  Deployed: $($dll.Name) ($([math]::Round($dll.Length/1KB)) KB)" -ForegroundColor Gray

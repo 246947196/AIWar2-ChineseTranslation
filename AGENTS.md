@@ -95,6 +95,13 @@ Control Bindings 菜单左侧分类按钮显示的是 `InputAction` XML 文件�
 | ArcenAIW2Core（反编译） | DLLSource/ArcenAIW2Core/ | ❌ | ⏳ |
 | ArcenAIW2Visualization（反编译） | DLLSource/ArcenAIW2Visualization/ | ❌ | ⏳ |
 
+## deploy.ps1 行为说明
+
+- **版本检查**：用正则 `(?s)<game_version\s[^>]*?minor_version="(\d+)"[^>]*?>` 从 `KDL_GameVersions.xml` 提取最新版本号（支持跨行属性、兼容无 `major_version` 的旧条目）
+- **`$ErrorActionPreference = "Stop"`**：任何源文件缺失时立即终止，不静默继续
+- **字体部署**：`sarasa_gothic` 目录使用 `-Recurse` 递归复制，确保字体文件完整
+- **DLL 部署**：自动 `New-Item` 创建 `GameData/ModdableLogicDLLs/` 目标目录
+
 ## 编译
 
 ```powershell
