@@ -40,6 +40,29 @@ arcenui bundle 中的 UI 文本存储在 Unity 预制体的 `m_text` 字段中�
 - `bViewCreditsKickstarter`："Kickstarter Credits" → "众筹致谢"
 - `bViewBackgroundStory`："Background Story" → "背景故事"
 
+## 控制菜单分类翻译
+
+Control Bindings 菜单左侧分类按钮显示的是 `InputAction` XML 文件中 `category` 属性值。
+
+2026-07-07 翻译了 `GameData/Configuration/InputAction/` 下所有 XML 文件的 category 值：
+
+| 英文 | 中文 | 涉及文件 |
+|------|------|----------|
+| Critical | 关键 | Central.xml, UIAliases.xml |
+| Common | 通用 | Central.xml, UIAliases.xml, UtilityActions.xml |
+| Selection | 选择 | Central.xml, UIAliases.xml |
+| Tooltips/Details | 提示信息/详情 | Central.xml |
+| Camera | 视角 | Camera.xml |
+| Sidebar | 侧边栏 | UIAliases.xml |
+| Ship Controls | 舰船控制 | UIAliases.xml |
+| Other UI | 其他界面 | UIAliases.xml |
+| Fleet Groups | 舰队组 | ControlGroups.xml |
+| Overlays | 覆盖层 | UtilityActions.xml |
+| Multiplayer | 多人 | UIAliases.xml |
+| Utility | 实用工具 | UtilityActions.xml |
+
+注意：`Hidden` 和 `Unused` 保留英文，因为 `Window_ControlBindingsMenu.cs` 的 C# 代码按精确字符串 `"Unused"`/`"Hidden"` 过滤隐藏条目。
+
 ## DLL 项目一览
 
 | 项目 | 源码 | 编译 | 翻译 |

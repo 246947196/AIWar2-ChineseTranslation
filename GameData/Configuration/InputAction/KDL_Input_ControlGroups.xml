@@ -1,77 +1,77 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <input_action name="SelectFleetGroup_1"
-      category="Fleet Groups" display_name="选择舰队组1"
+      category="舰队组" display_name="选择舰队组1"
       description="可以将一个或多个舰队分配给此热键，按下该热键将选中所有分配的舰队。在舰队详情窗口中，您可以指定哪些舰队分配给此热键。"
       check_type="ButtonPressAndDoublePress" related_int_1="1"
       dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Input_FleetHandler"
       default_should_override_saved_if_older_than_version="KeyRebindings_744"
       key="Alpha1" />
   <input_action name="SelectFleetGroup_2"
-      category="Fleet Groups" display_name="选择舰队组2"
+      category="舰队组" display_name="选择舰队组2"
       description="可以将一个或多个舰队分配给此热键，按下该热键将选中所有分配的舰队。在舰队详情窗口中，您可以指定哪些舰队分配给此热键。"
       check_type="ButtonPressAndDoublePress" related_int_1="2"
       dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Input_FleetHandler"
       default_should_override_saved_if_older_than_version="KeyRebindings_744"
       key="Alpha2" />
   <input_action name="SelectFleetGroup_3"
-      category="Fleet Groups" display_name="选择舰队组3"
+      category="舰队组" display_name="选择舰队组3"
       description="可以将一个或多个舰队分配给此热键，按下该热键将选中所有分配的舰队。在舰队详情窗口中，您可以指定哪些舰队分配给此热键。"
       check_type="ButtonPressAndDoublePress" related_int_1="3"
       dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Input_FleetHandler"
       default_should_override_saved_if_older_than_version="KeyRebindings_744"
       key="Alpha3" />
   <input_action name="SelectFleetGroup_4"
-      category="Fleet Groups" display_name="选择舰队组4"
+      category="舰队组" display_name="选择舰队组4"
       description="可以将一个或多个舰队分配给此热键，按下该热键将选中所有分配的舰队。在舰队详情窗口中，您可以指定哪些舰队分配给此热键。"
       check_type="ButtonPressAndDoublePress" related_int_1="4"
       dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Input_FleetHandler"
       default_should_override_saved_if_older_than_version="KeyRebindings_744"
       key="Alpha4" />
   <input_action name="SelectFleetGroup_5"
-      category="Fleet Groups" display_name="选择舰队组5"
+      category="舰队组" display_name="选择舰队组5"
       description="可以将一个或多个舰队分配给此热键，按下该热键将选中所有分配的舰队。在舰队详情窗口中，您可以指定哪些舰队分配给此热键。"
       check_type="ButtonPressAndDoublePress" related_int_1="5"
       dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Input_FleetHandler"
       default_should_override_saved_if_older_than_version="KeyRebindings_744"
       key="Alpha5" />
   <input_action name="SelectFleetGroup_6"
-      category="Fleet Groups" display_name="选择舰队组6"
+      category="舰队组" display_name="选择舰队组6"
       description="可以将一个或多个舰队分配给此热键，按下该热键将选中所有分配的舰队。在舰队详情窗口中，您可以指定哪些舰队分配给此热键。"
       check_type="ButtonPressAndDoublePress" related_int_1="6"
       dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Input_FleetHandler"
       default_should_override_saved_if_older_than_version="KeyRebindings_744"
       key="Alpha6" />
   <input_action name="SelectFleetGroup_7"
-      category="Fleet Groups" display_name="选择舰队组7"
+      category="舰队组" display_name="选择舰队组7"
       description="可以将一个或多个舰队分配给此热键，按下该热键将选中所有分配的舰队。在舰队详情窗口中，您可以指定哪些舰队分配给此热键。"
       check_type="ButtonPressAndDoublePress" related_int_1="7"
       dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Input_FleetHandler"
       default_should_override_saved_if_older_than_version="KeyRebindings_744"
       key="Alpha7" />
   <input_action name="SelectFleetGroup_8"
-      category="Fleet Groups" display_name="选择舰队组8"
+      category="舰队组" display_name="选择舰队组8"
       description="可以将一个或多个舰队分配给此热键，按下该热键将选中所有分配的舰队。在舰队详情窗口中，您可以指定哪些舰队分配给此热键。"
       check_type="ButtonPressAndDoublePress" related_int_1="8"
       dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Input_FleetHandler"
       default_should_override_saved_if_older_than_version="KeyRebindings_744"
       key="Alpha8" />
   <input_action name="SelectFleetGroup_9"
-      category="Fleet Groups" display_name="选择舰队组9"
+      category="舰队组" display_name="选择舰队组9"
       description="可以将一个或多个舰队分配给此热键，按下该热键将选中所有分配的舰队。在舰队详情窗口中，您可以指定哪些舰队分配给此热键。"
       check_type="ButtonPressAndDoublePress" related_int_1="9"
       dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Input_FleetHandler"
       default_should_override_saved_if_older_than_version="KeyRebindings_744"
       key="Alpha9" />
   <input_action name="SelectFleetGroup_10"
-      category="Fleet Groups" display_name="选择舰队组10"
+      category="舰队组" display_name="选择舰队组10"
       description="可以将一个或多个舰队分配给此热键，按下该热键将选中所有分配的舰队。在舰队详情窗口中，您可以指定哪些舰队分配给此热键。"
       check_type="ButtonPressAndDoublePress" related_int_1="10"
       dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Input_FleetHandler"
       default_should_override_saved_if_older_than_version="KeyRebindings_744"
       key="Alpha0" />
   <input_action name="AssignFleetGroup"
-      category="Fleet Groups" display_name="分配舰队组"
+      category="舰队组" display_name="分配舰队组"
       description="按住此修饰键，然后按下上面的舰队选择键之一。您所选的任何舰队都将立即分配到该舰队编号（整个舰队；您不能将部分舰队分配到一个编号）。
       
 任何未被选中且具有相同舰队编号的现有舰队将不再分配任何舰队编号。"
@@ -79,7 +79,7 @@
       key="LeftControl" />
     <input_action
             name="RemoveFleetGroup"
-            category="Fleet Groups"
+            category="舰队组"
             display_name="从舰队组移除选择"
             description="从任何舰队组中移除所选内容。"
             check_type="ButtonPress"
@@ -88,7 +88,7 @@
             />
     <input_action
             name="AddFleetGroup"
-            category="Fleet Groups"
+            category="舰队组"
             display_name="添加到舰队组"
             description="按住此修饰键，然后按下上面的舰队选择键之一，将所选内容添加到该舰队组中。"
             check_type="Custom"

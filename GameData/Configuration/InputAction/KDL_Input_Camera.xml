@@ -1,81 +1,81 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <input_action name="CameraSpeedUp"
-      category="Camera" display_name="相机加速"
+      category="视角" display_name="相机加速"
       description="让所有相机移动更快。"
       check_type="Custom" key="LeftShift" />
   <input_action name="CameraSlowDown"
-      category="Camera" display_name="相机减速"
+      category="视角" display_name="相机减速"
       description="让所有相机移动更慢。"
       check_type="Custom" key="LeftControl" />
   
   <input_action name="CameraLeft"
-      category="Camera" display_name="相机左移"
+      category="视角" display_name="相机左移"
       description="将相机向左平移。"
       check_type="Custom" key="LeftArrow" />
   <input_action name="CameraLeftAlt"
-      category="Camera" display_name="相机左移 (备用)"
+      category="视角" display_name="相机左移 (备用)"
       description="将相机向左平移。"
       check_type="Custom" key="A" default_should_override_saved_if_older_than_version="Cameras_745"/>
   <input_action name="CameraRight"
-      category="Camera" display_name="相机右移"
+      category="视角" display_name="相机右移"
       description="将相机向右平移。"
       check_type="Custom" key="RightArrow" />
   <input_action name="CameraRightAlt"
-      category="Camera" display_name="相机右移 (备用)"
+      category="视角" display_name="相机右移 (备用)"
       description="将相机向右平移。"
       check_type="Custom" key="D" default_should_override_saved_if_older_than_version="Cameras_745"/>
   <input_action name="CameraForward"
-      category="Camera" display_name="相机前移"
+      category="视角" display_name="相机前移"
       description="将相机向前平移。"
       check_type="Custom" key="UpArrow" />
   <input_action name="CameraForwardAlt"
-      category="Camera" display_name="相机前移 (备用)"
+      category="视角" display_name="相机前移 (备用)"
       description="将相机向前平移。"
       check_type="Custom" key="W" default_should_override_saved_if_older_than_version="Cameras_745"/>
   <input_action name="CameraBackward"
-      category="Camera" display_name="相机后移"
+      category="视角" display_name="相机后移"
       description="将相机向后平移。"
       check_type="Custom" key="DownArrow" />
   <input_action name="CameraBackwardAlt"
-      category="Camera" display_name="相机后移 (备用)"
+      category="视角" display_name="相机后移 (备用)"
       description="将相机向后平移。"
       check_type="Custom" key="S" default_should_override_saved_if_older_than_version="Cameras_745"/>
   
   <input_action name="CameraGrabPanMode"
-      category="Camera" display_name="相机“抓取平移”模式"
+      category="视角" display_name="相机“抓取平移”模式"
       description="按住此按钮时，鼠标移动可像抓取战场一样平移相机。"
       check_type="Custom" key="MiddleMouse" />
   <input_action name="CameraGrabPanModeAlt"
-      category="Camera" display_name="相机“抓取平移”模式 (备用)"
+      category="视角" display_name="相机“抓取平移”模式 (备用)"
       description="按住此按钮时，鼠标移动可像抓取战场一样平移相机。"
       check_type="Custom" key="None" />
   
   <input_action name="CameraRotateTiltMode"
-      category="Camera" display_name="相机“旋转倾斜”模式"
+      category="视角" display_name="相机“旋转倾斜”模式"
       description="按住此按钮时，鼠标移动可旋转和倾斜相机视角（不在星系地图上）。"
       check_type="Custom" key="Mouse4" />
   <input_action name="CameraRotateTiltModeAlt"
-      category="Camera" display_name="相机“旋转倾斜”模式 (备用)"
+      category="视角" display_name="相机“旋转倾斜”模式 (备用)"
       description="按住此按钮时，鼠标移动可旋转和倾斜相机视角（不在星系地图上）。"
       check_type="Custom" key="Q" />
 
   <input_action name="ResetCameraRotationAndTilt"
-      category="Camera" display_name="重置相机旋转和倾斜"
+      category="视角" display_name="重置相机旋转和倾斜"
       description="按下此组合键可将相机的旋转和倾斜重置为默认值。"
       dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Input_MainHandler" key="R" modifier_1="LeftControl" />
 
   <input_action name="CameraZoomInKeyboard"
-      category="Camera" display_name="相机放大 (键盘)"
+      category="视角" display_name="相机放大 (键盘)"
       description="放大相机视角。"
       check_type="Custom" key="PageUp" />
   <input_action name="CameraZoomOutKeyboard"
-      category="Camera" display_name="相机缩小 (键盘)"
+      category="视角" display_name="相机缩小 (键盘)"
       description="缩小相机视角。"
       check_type="Custom" key="PageDown" />
 
   <input_action name="CameraZoomInOutMouse"
-      category="Camera" display_name="相机放大/缩小 (鼠标)"
+      category="视角" display_name="相机放大/缩小 (鼠标)"
       description="使用鼠标滚轮放大和缩小相机视角。"
       check_type="Custom" key="MouseWheel" />
 
@@ -100,11 +100,11 @@
 
 <!--
     <input_action name="CameraNavigateBack"
-      category="Camera" display_name="返回上一相机视角"
+      category="视角" display_name="返回上一相机视角"
       description="返回上一个相机视角。在点击警报查看行星后，可用于返回工作视角。"
       check_type="ButtonPress" key="None" />
   <input_action name="CameraNavigateForward"
-      category="Camera" display_name="前往下一相机视角"
+      category="视角" display_name="前往下一相机视角"
       description="通常此操作无效果，但如果您使用过“返回上一相机视角”，则此操作可撤销该动作。"
       check_type="ButtonPress" key="None" />
 -->
