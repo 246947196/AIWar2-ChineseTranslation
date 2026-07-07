@@ -36,7 +36,7 @@ namespace Arcen.AIW2.External
                 else if ( data.Effect == ZenithMinerEffect.MakePlanetNomadic )
                     Buffer.Add( "使该星球像游牧星球一样在星系中移动。" );
                 else
-                    Buffer.Add( "TODO: 为此效果定义附加数据 " + data.Effect );
+                    Buffer.Add( "待办：为此效果定义附加数据 " + data.Effect );
                 if ( RelatedEntityTypeData.GetHasTag( "ZenithMinerStationary" ) )
                 {
                     Buffer.Add( "矿工将在 " ).AddHoursAndMinutes( data.RemainingDuration, "aaffaa" ).Add( " 后完成。" );

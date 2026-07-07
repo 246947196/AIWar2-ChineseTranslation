@@ -202,7 +202,7 @@ BepInEx Preloader 在游戏程序集加载前调用 Patcher，通过 Mono.Cecil 
 
 | 项目 | 源码位置 | 汉化内容 | 编译状态 | 翻译状态 |
 |------|---------|---------|---------|---------|
-| AIWarExternalCode | DLLSource/AIWarExternalCode/src/UIs/ | 主菜单、设置、存档、侧边栏等 UI 文本 | ✅ 0 错误 | ✅ 已完成 |
+| AIWarExternalCode | DLLSource/AIWarExternalCode/src/ | 主菜单、设置、存档、侧边栏等 UI 文本 + 悬停提示全量汉化 (2 个文件 ~520 字符串) | ✅ 0 错误 | ✅ 已完成 |
 | AIWarExternalDeepProcessingCode | DLLSource/AIWarExternalDeepProcessingCode/src/ | 聊天消息、少量 UI 文本 | ✅ 0 错误 | ✅ 已完成 |
 | AIWarExternalVisualizationCode | DLLSource/AIWarExternalVisualizationCode/src/ | 银河地图显示模式文本 | ✅ 0 错误 | ✅ 已完成 |
 | ArcenUIAssetRedirect | DLLSource/ArcenUIAssetRedirect/src/ | arcenui AssetBundle 拦截重定向 | ✅ 0 错误 | ✅ 已完成 |
@@ -399,15 +399,15 @@ ArcenUIAssetRedirect (BepInEx 插件)
 
 ### 8.12 已知限制
 
-- 部分大型文件（如 `Window_InGameHoverEntityInfo.cs` 8390 行、`Window_PrototypeInGameHoverEntityInfo.cs` 9824 行）的长篇描述文本未翻译，保留英文
 - 翻译时只能替换字符串字面量，不能修改代码逻辑
 - 编译器版本必须与原版一致（Roslyn 4.12.0），否则会产生运行时错误
+- Debug 日志、内部标识符、错误码（如 `Immune to All Damage`、`CODE `、`PrimaryKeyID `）保持英文，不翻译
 
 ### 8.13 汉化统计
 
 | 项目 | 类型 | 文件数 | 编译状态 | 翻译状态 |
 |------|------|--------|---------|---------|
-| AIWarExternalCode | 有源码 | 600 | ✅ 0 错误 | ✅ 完成 |
+| AIWarExternalCode | 有源码 | 600 | ✅ 0 错误 | ✅ 完成（含悬停提示全量汉化） |
 | AIWarExternalDeepProcessingCode | 有源码 | 133 | ✅ 0 错误 | ✅ 完成 |
 | AIWarExternalVisualizationCode | 有源码 | 45 | ✅ 0 错误 | ✅ 完成 |
 | ArcenUIAssetRedirect | BepInEx 插件 | 1 | ✅ 0 错误 | ✅ 完成 |

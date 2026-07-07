@@ -19,8 +19,8 @@ if (-not (Test-Path $snapshotFile)) {
     exit 1
 }
 
-$snapshot = Get-Content $snapshotFile -Raw -Encoding UTF8 | ConvertFrom-Json
-$snapshotVersion = $snapshot.game_version
+$snapshotRaw = Get-Content $snapshotFile -Raw -Encoding UTF8
+$snapshotVersion = if ($snapshotRaw -match '"game_version"\s*:\s*"([^"]+)"') { $Matches[1] } else { "unknown" }
 
 $versionFile = Join-Path $gameDir "GameData\Configuration\GameVersion\KDL_GameVersions.xml"
 if (-not (Test-Path $versionFile)) {

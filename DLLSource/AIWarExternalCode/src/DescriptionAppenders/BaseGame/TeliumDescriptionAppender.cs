@@ -18,13 +18,13 @@ namespace Arcen.AIW2.External
                 infestation = facOrNull.TryGetExternalBaseInfoAs<MacrophageFactionBaseInfoCore>();
             if ( infestation == null )
             {
-                Buffer.Add( "无法在此处找到MacrophageFactionBaseInfo。这是一个BUG" );
+                Buffer.Add( "无法在此处找到MacrophageFactionBaseInfo。这是一个错误" );
                 return;
             }
             MacrophagePerTeliumBaseInfo tData = RelatedEntityOrNull.TryGetExternalBaseInfoAs< MacrophagePerTeliumBaseInfo>();
             if ( tData == null )
             {
-                Buffer.Add( "此泰利姆的 tData 为空。这是一个BUG。" );
+                Buffer.Add( "此泰利姆的 tData 为空。这是一个错误。" );
                 return;
             }
             int cost = tData.MetalForNextBuild;
