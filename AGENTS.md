@@ -18,8 +18,6 @@ XML 文件整体替换 + DLL 源码编译替换 + AssetBundle 拦截重定向
 
 ## 游戏更新检测
 
-详见 `docs/superpowers/specs/2026-07-07-game-update-detection-design.md`。
-
 工具：`check_update.ps1` — 替代旧的 `check_translation.ps1`
 
 | 命令 | 用途 |
