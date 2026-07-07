@@ -22,13 +22,17 @@ AI War 2 汉化项目目前仅有针对 XML 文件的覆盖检测（`check_trans
 
 ### 工具：`check_update.ps1`
 
-替换现有的 `check_translation.ps1`。三个模式：
+替换现有的 `check_translation.ps1`。路径使用 `$PSScriptRoot` 动态推导，不依赖硬编码路径。三个模式：
 
 | 命令 | 行为 |
 |------|------|
 | `check_update.ps1` | 默认模式：检测更新并生成报告 |
 | `check_update.ps1 -snapshot` | 基线模式：建立/更新快照 |
 | `check_update.ps1 -snapshot -force` | 强制覆盖已有快照 |
+
+### JSON 处理
+
+快照 JSON 的读写使用 `Read-JsonFile` 函数（基于 `System.Web.Extensions.JavaScriptSerializer`），保证键名大小写敏感（区分 `OK` 和 `Ok`）。反序列化后通过 `Convert-PSObjectToHashtable` 递归转换为 `[hashtable]` 以统一后续对比逻辑。
 
 ### 覆盖四个层面
 
@@ -51,32 +55,30 @@ AI War 2 汉化项目目前仅有针对 XML 文件的覆盖检测（`check_trans
   "layers": {
     "xml": {
       "GameData/Configuration/GameEntity/KDL_Ships_FleetShips.xml": {
-        "hash": "sha256:e3b0c44298fc1c14...",
+        "hash": "e3b0c44298fc1c14...",
         "strings": {
-          "entity.VWing.display_name": "V-Wing",
-          "entity.VWing.description": "A low-cost short-range fighter..."
+          "display_name": "V-Wing",
+          "description": "A low-cost short-range fighter..."
         }
       }
     },
     "dll_source": {
       "AIWarExternalCode/src/UIs/Window_MainMenu.cs": {
-        "hash": "sha256:abc123...",
+        "hash": "abc123...",
         "strings": {
-          "L42:Window_MainMenu.bSettings": "Settings",
-          "L48:Window_MainMenu.bControls": "Controls"
+          "L42:Window_MainMenu": "Settings",
+          "L48:Window_MainMenu": "Controls"
         }
       }
     },
     "dll_core": {
       "ArcenUniversal.dll": {
-        "hash": "sha256:def456...",
-        "strings": {
-          "SomeClass.SomeMethod": "some string"
-        }
+        "hash": "def456...",
+        "strings": {}
       }
     },
     "arcenui": {
-      "hash": "sha256:789abc...",
+      "hash": "789abc...",
       "strings": {
         "Settings": "Settings",
         "Background Story": "Background Story"
@@ -86,13 +88,18 @@ AI War 2 汉化项目目前仅有针对 XML 文件的覆盖检测（`check_trans
 }
 ```
 
+**注意**：
+- JSON 解析使用 `System.Web.Extensions.JavaScriptSerializer`（大小写敏感），替代 PowerShell 内置的 `ConvertFrom-Json`（大小写不敏感）。
+- 哈希值不含 `sha256:` 前缀（纯 hex 小写）。
+- 反序列化后的 `Dictionary<string,object>` 通过 `Convert-PSObjectToHashtable` 递归转换为 `[hashtable]`，以统一数据格式。
+
 ### 字符串 Key 生成规则
 
 | 层面 | Key 格式 |
 |------|---------|
-| XML | `{实体/成就名}.{属性名}`（如 `entity.VWing.display_name`） |
-| DLL 源码 | `L{行号}:{类名}.{上下文}` |
-| 核心 DLL | `{类名}.{方法名}` |
+| XML | 直接使用属性名（`display_name` / `description` / `full_text` / `category`） |
+| DLL 源码 | `L{行号}:{文件名无后缀}`（如 `L42:Window_MainMenu`） |
+| 核心 DLL | 哈希追踪 + 备注 `requires ilspycmd`，提取需反编译后人工介入 |
 | arcenui | 直接用英文字符串原文做 key |
 
 ### 白名单（不纳入快照的文件）
@@ -133,42 +140,54 @@ AI War 2 汉化项目目前仅有针对 XML 文件的覆盖检测（`check_trans
 输出文件: `translation_update_report_YYYY-MM-DD.txt`
 
 ```
-=== AI War 2 汉化更新检测报告 ===
-日期: 2026-07-07
-游戏版本: 5.825 → 5.831
+=== AI War 2 Hanhua Update Detection Report ===
+Date: 2026-07-07
+Game version: 5.825 -> 5.831
 
-[层面: XML]
-  ✅ 未变化: 247 文件
-  ⚠️ 英文原文已修改 (需重新翻译): 5 文件
-     - GameData/Configuration/GameEntity/KDL_Ships_FleetShips.xml
-       修改: entity.VWing.description (原文已变)
-     - GameData/Configuration/Tips/CMP_Tips_GettingStarted.xml
-       新增: tip.42: "New tip about the Spire" (需新翻译)
-       删除: tip.17 (已移除)
-  🆕 新增文件: 2 文件
-     - GameData/Configuration/JournalEntries/Lore_NewContent.xml (需翻译)
+[Layer: XML]
+  OK (no change): 247
+  Modified (needs retranslation): 5
+    - GameData/Configuration/GameEntity/KDL_Ships_FleetShips.xml
+       MODIFIED: display_name: "V-Wing" -> "New V-Wing"
+    - GameData/Configuration/Tips/CMP_Tips_GettingStarted.xml
+       NEW: full_text: "New tip about the Spire"
+       DELETED: description
+  Hash changed (verify manually): SomeFile.xml
+  New files (needs translation): 2
+    - GameData/Configuration/JournalEntries/Lore_NewContent.xml
+       NEW: display_name: "New Lore Entry"
+       NEW: description: "A new lore entry description"
+  Deleted files: 1
+    - OldRemovedFile.xml
 
-[层面: DLL 源码]
-  ✅ 未变化: AIWarExternalCode
-  ⚠️ 已修改: AIWarExternalDeepProcessingCode
-     - src/Chat/ChatCommands.cs
-       新增: L203: "New chat command description" (需翻译)
+[Layer: DLL Source]
+  OK (no change): 42
+  Modified (needs retranslation): 2
+    - src/Chat/ChatCommands.cs
+       NEW: L203:ChatCommands: "New chat command description"
+  New files: 1
+    - src/UIs/NewUI.cs
+       NEW: L15:NewUI: "Hello World"
 
-[层面: 核心 DLL]
-  ⚠️ ArcenAIW2Core.dll — 哈希变更 (需重新反编译)
+[Layer: Core DLL]
+  OK (no change): 2
+  Hash changed (needs re-decompilation): 1
+    - ArcenAIW2Core.dll (re-decompile with ilspycmd)
 
-[层面: arcenui AssetBundle]
-  ⚠️ 5 个字符串变更, 3 个新增
-     修改: "Old Button" → "New Button Label" (需更新)
-     新增: "New Feature" (需翻译)
+[Layer: arcenui AssetBundle]
+  OK (no change): 120
+  New strings: 3
+    - "New Feature"
+  Removed strings: 2
+  Bundle binary hash changed (content updated)
 
-[概览]
-  总文件: 312
-  ✅ 无需处理: 300
-  ⚠️ 需更新翻译: 10
-  🆕 需新翻译: 5
-  🔴 阻塞项: 1 (ArcenAIW2Core.dll 需反编译)
+[Summary]
+  OK (no action needed): 291
+  Needs retranslation: 11
+  New files to translate: 3
 ```
+
+注意：报告为纯文本格式，不含 Emoji，使用英文标签。游戏版本字符串直接取自 `KDL_GameVersions.xml` 中的 `major_version.minor_version`。
 
 ## 六、日常使用流程
 
@@ -200,17 +219,21 @@ Steam 更新后，游戏文件被恢复为英文原版。此时（部署翻译�
 
 ### 7.1 XML 层
 
-与现有 `check_translation.ps1` 机制兼容。解析 XML 提取以下属性的文本值：
-- `display_name`、`description`、`full_text`、`category`
+正则提取以下属性的文本值：`display_name`、`description`、`full_text`、`category`。
+- 使用 `(?s)` 单行模式处理跨行属性（部分 XML 属性值可能换行）
+- 属性值提取正则：`(display_name|description|full_text|category)="((?:[^"]|""|\\")*?)"`
+- 兼容 XML 转义（`""` 双引号转义、`\"` 转义引号）
+- 键直接用属性名（如 `display_name`），不含实体路径前缀
 - 白名单文件跳过
 
 ### 7.2 DLL 源码层
 
-对 `CodeExternal/` 下的 `.cs` 文件：
-1. 跳过注释行和 `//` 行
-2. 正则匹配 `"[^"]*"` 提取字符串字面量
-3. 跳过明显非文本字符串（GUID、路径、纯数字、单字符）
-4. 按行号记录位置
+对 `CodeExternal/` 下的 `.cs` 文件（跳过 `obj/` 和 `bin/` 目录）：
+1. 跳过注释行（`//`）和空行
+2. 正则 `"((?:[^"\\]|\\.)*)"` 提取字符串字面量，兼容转义字符
+3. 排除纯数字/符号/运算符等非文本内容（正则过滤：`^[\d\s\-\.\,...]+$`）
+4. 按 `L{行号}:{文件名无后缀}` 记录位置
+5. 仅记录长度 ≥ 2 的有效字符串
 
 ### 7.3 核心 DLL 层
 
@@ -278,4 +301,3 @@ Steam 更新后，游戏文件被恢复为英文原版。此时（部署翻译�
 | `deploy.ps1` | 增加部署前检查：必须有基线快照且版本匹配游戏版本 |
 | `build.ps1` | 不变 |
 | `patch_arcenui.py` | 扩展 extract 命令以支持快照导出 |
-| `translated_files.txt` | 弃用，被快照取代 |

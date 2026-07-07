@@ -9,8 +9,8 @@ param(
     [switch]$force
 )
 
-$translationDir = "D:\Steam\steamapps\common\AI War 2\AIWar2_ChineseTranslation"
-$gameDir = "D:\Steam\steamapps\common\AI War 2"
+$translationDir = $PSScriptRoot
+$gameDir = Split-Path $PSScriptRoot -Parent
 $snapshotFile = Join-Path $translationDir "translation_snapshot.json"
 $configDir = Join-Path $gameDir "GameData\Configuration"
 $codeExtDir = Join-Path $gameDir "CodeExternal"
@@ -24,13 +24,25 @@ function Get-GameVersionFunc {
     if (-not (Test-Path $versionFile)) { return $null }
     $content = Get-Content $versionFile -Raw -ErrorAction SilentlyContinue
     if (-not $content) { return $null }
-    $versions = [regex]::Matches($content, 'major_version="(\d+)".*?minor_version="(\d+)"')
-    $latest = $versions | ForEach-Object {
-        $major = [int]$_.Groups[1].Value
-        $minor = [int]$_.Groups[2].Value
+    $entries = [regex]::Matches($content, '(?s)<game_version\s[^>]*?minor_version="(\d+)"[^>]*?>')
+    $latest = $entries | ForEach-Object {
+        $text = $_.Value
+        $minor = [int]$_.Groups[1].Value
+        $mMajor = [regex]::Match($text, 'major_version="(\d+)"')
+        $major = if ($mMajor.Success) { [int]$mMajor.Groups[1].Value } else { 0 }
         [PSCustomObject]@{ Major=$major; Minor=$minor; Version="$major.$minor" }
     } | Sort-Object Major,Minor -Descending | Select-Object -First 1
     return $latest.Version
+}
+
+# ---- Helper: Read JSON file (case-sensitive, handles OK/Ok correctly) ----
+function Read-JsonFile {
+    param($path)
+    $raw = Get-Content $path -Raw -Encoding UTF8
+    Add-Type -AssemblyName System.Web.Extensions -ErrorAction SilentlyContinue
+    $ser = New-Object System.Web.Script.Serialization.JavaScriptSerializer
+    $ser.MaxJsonLength = [int]::MaxValue
+    return $ser.DeserializeObject($raw)
 }
 
 # ---- Helper: SHA256 hash of a file ----
@@ -52,8 +64,8 @@ function Test-GameIsEnglish {
         $f = Join-Path $configDir $rel
         if (-not (Test-Path $f)) { continue }
         $bytes = [System.IO.File]::ReadAllBytes($f)
-        for ($i = 0; $i -lt $bytes.Length - 1; $i++) {
-            if (($bytes[$i] -ge 0xE4) -and ($bytes[$i] -le 0xE9) -and ($bytes[$i+1] -ge 0x80) -and ($bytes[$i+1] -le 0xBF)) {
+        for ($i = 0; $i -lt $bytes.Length - 2; $i++) {
+            if (($bytes[$i] -ge 0xE4) -and ($bytes[$i] -le 0xE9) -and ($bytes[$i+1] -ge 0x80) -and ($bytes[$i+1] -le 0xBF) -and ($bytes[$i+2] -ge 0x80) -and ($bytes[$i+2] -le 0xBF)) {
                 return $false
             }
         }
@@ -211,9 +223,21 @@ function Extract-ArcenUIStrings {
     # Import known English strings from existing translation file if present
     $transJson = Join-Path $translationDir "arcenui_translations.json"
     if (Test-Path $transJson) {
-        $data = Get-Content $transJson -Raw -Encoding UTF8 | ConvertFrom-Json
-        foreach ($k in $data.translations.PSObject.Properties.Name) {
-            $strings[$k] = $k
+        Add-Type -AssemblyName System.Web.Extensions -ErrorAction SilentlyContinue
+        $raw = Get-Content $transJson -Raw -Encoding UTF8
+        $ser = New-Object System.Web.Script.Serialization.JavaScriptSerializer
+        $data = $ser.DeserializeObject($raw)
+        $trans = $data["translations"]
+        if ($trans) {
+            foreach ($k in $trans.Keys) {
+                $strings[$k] = $k
+            }
+        }
+        $noTrans = $data["no_translate"]
+        if ($noTrans) {
+            foreach ($item in $noTrans) {
+                $strings[$item] = $item
+            }
         }
         Write-Host "    $($strings.Count) strings from arcenui_translations.json" -ForegroundColor Gray
     } else {
@@ -271,20 +295,15 @@ function Convert-PSObjectToHashtable {
         foreach ($item in $obj) { $result += Convert-PSObjectToHashtable $item }
         return $result
     }
-    $ht = @{}
-    foreach ($prop in $obj.PSObject.Properties.Name) {
-        $val = $obj.$prop
-        if ($val -is [PSCustomObject]) {
-            $ht[$prop] = Convert-PSObjectToHashtable $val
-        } elseif ($val -is [array] -and $val.Count -gt 0 -and $val[0] -is [PSCustomObject]) {
-            $arr = @()
-            foreach ($item in $val) { $arr += Convert-PSObjectToHashtable $item }
-            $ht[$prop] = $arr
-        } else {
-            $ht[$prop] = $val
+    if ($obj -is [hashtable]) { return $obj }
+    if ($obj -is [System.Collections.IDictionary]) {
+        $ht = @{}
+        foreach ($key in $obj.Keys) {
+            $ht[$key] = Convert-PSObjectToHashtable $obj[$key]
         }
+        return $ht
     }
-    return $ht
+    return $obj
 }
 
 function Compare-Layers {
@@ -382,7 +401,13 @@ function Write-Report {
     }
     if ($xmlNew -gt 0) {
         $lines += "  New files (needs translation): $xmlNew"
-        foreach ($c in $xmlChanges) { if ($c.Type -eq "new_file") { $lines += "    - $($c.File)" } }
+        foreach ($c in $xmlChanges) {
+            if ($c.Type -ne "new_file") { continue }
+            $lines += "    - $($c.File)"
+            foreach ($d in $c.Details) {
+                $lines += "       NEW: $($d.Key): `"$($d.New)`""
+            }
+        }
     }
     if ($xmlDeleted -gt 0) {
         $lines += "  Deleted files: $xmlDeleted"
@@ -414,7 +439,13 @@ function Write-Report {
     }
     if ($dllNew -gt 0) {
         $lines += "  New files: $dllNew"
-        foreach ($c in $dllSrcChanges) { if ($c.Type -eq "new_file") { $lines += "    - $($c.File)" } }
+        foreach ($c in $dllSrcChanges) {
+            if ($c.Type -ne "new_file") { continue }
+            $lines += "    - $($c.File)"
+            foreach ($d in $c.Details) {
+                $lines += "       NEW: $($d.Key): `"$($d.New)`""
+            }
+        }
     }
     $lines += ""
 
@@ -438,6 +469,8 @@ function Write-Report {
     if ($arcenuiOld -and $arcenuiNew) {
         $oldS = $arcenuiOld.strings
         $newS = $arcenuiNew.strings
+        if (-not $oldS) { $oldS = @{} }
+        if (-not $newS) { $newS = @{} }
         $added = @(); $removed = @()
         foreach ($k in $newS.Keys) { if (-not $oldS.ContainsKey($k)) { $added += $k } }
         foreach ($k in $oldS.Keys) { if (-not $newS.ContainsKey($k)) { $removed += $k } }
@@ -483,7 +516,7 @@ if ($snapshot) {
         exit 1
     }
     if (Test-Path $snapshotFile) {
-        $existingSnap = Get-Content $snapshotFile -Raw -Encoding UTF8 | ConvertFrom-Json
+        $existingSnap = Read-JsonFile $snapshotFile
         Write-Host "WARNING: Overwriting existing snapshot (version $($existingSnap.game_version))" -ForegroundColor Yellow
     }
     if (-not (Test-GameIsEnglish)) {
@@ -499,7 +532,7 @@ if ($snapshot) {
         exit 1
     }
 
-    $snapData = Get-Content $snapshotFile -Raw -Encoding UTF8 | ConvertFrom-Json
+    $snapData = Read-JsonFile $snapshotFile
     $snapVersion = $snapData.game_version
 
     if ($snapVersion -eq $gameVersion) {
