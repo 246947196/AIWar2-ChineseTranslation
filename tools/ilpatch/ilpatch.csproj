@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <AssemblyName>ilpatch</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- dnlib 来自 dnSpy 安装目录（无 NuGet 包）。如路径不同，请改为本机 dnSpy 下的 net48\dnlib.dll。
+         也可将 dnlib.dll 放到本目录旁并改为 <HintPath>dnlib.dll</HintPath>。 -->
+    <Reference Include="dnlib">
+      <HintPath>C:\Users\Administrator\AppData\Local\dnSpy\dnSpy\Extensions\Examples\AgentSmithers dnSpy MCPServer.Extension\bin\Debug\net48\dnlib.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
