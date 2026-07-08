@@ -357,7 +357,7 @@ $msbuild = "C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe"
 
 运行 `.\deploy.ps1` 即可部署所有翻译文件。
 
-核心 DLL 的编译产物需手动复制到 `PatchedAssemblies/` 测试，或在 `deploy.ps1` 中添加对应步骤。
+核心 DLL（ArcenAIW2Core / ArcenAIW2Visualization）的 IL 汉化产物**不纳入本仓库**（仓库只跟踪 `DLLSource` 源码、XML 翻译、`BepInEx` 插件与 arcenui bundle）。经 `ilpatch` 修改后的核心 DLL 直接置于游戏安装目录的 `PatchedAssemblies/`（BepInEx `AssemblyRedirector` 在加载前读取此目录，即游戏实际加载版本），由译者本地手动管理、备份（`.bak`）。若需团队共享，应单独分发 `PatchedAssemblies/` 下的汉化 DLL，而非通过本仓库的 git 跟踪。
 
 ### 8.9 反编译项目的已知编译修复
 
