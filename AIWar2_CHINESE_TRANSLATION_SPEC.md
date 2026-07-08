@@ -195,8 +195,8 @@ BepInEx Preloader 在游戏程序集加载前调用 Patcher，通过 Mono.Cecil 
 **第一组：有源码的外部代码项目（已完成汉化）**
 三个外部 DLL 项目有完整源码（位于 `CodeExternal/`），已全部汉化并编译。
 
-**第二组：反编译的核心 DLL 项目（汉化中）**
-三个核心 DLL（ArcenUniversal、ArcenAIW2Core、ArcenAIW2Visualization）无源码，通过 ilspycmd 8.2 反编译为 C# 项目，再编译替换。
+**第二组：核心 DLL 的 IL 汉化（进行中）**
+三个核心 DLL（ArcenUniversal、ArcenAIW2Core、ArcenAIW2Visualization）无源码，不采用反编译路线，而是用 `ilpatch` 工具（dnlib）直接替换 `ldstr` 字符串字面量（见 8.15）。
 
 **第三组：BepInEx 插件项目（新增）**
 一个 Harmony 插件（ArcenUIAssetRedirect），用于拦截 AssetBundle 加载，实现 UI 文本替换。
@@ -209,9 +209,9 @@ BepInEx Preloader 在游戏程序集加载前调用 Patcher，通过 Mono.Cecil 
 | AIWarExternalDeepProcessingCode | DLLSource/AIWarExternalDeepProcessingCode/src/ | 聊天消息、少量 UI 文本 | ✅ 0 错误 | ✅ 已完成 |
 | AIWarExternalVisualizationCode | DLLSource/AIWarExternalVisualizationCode/src/ | 银河地图显示模式文本 | ✅ 0 错误 | ✅ 已完成 |
 | ArcenUIAssetRedirect | DLLSource/ArcenUIAssetRedirect/src/ | arcenui AssetBundle 拦截重定向 | ✅ 0 错误 | ✅ 已完成 |
-| ArcenUniversal (反编译) | DLLSource/ArcenUniversal/ | UI 组件、通用工具、输入、网络等 | ✅ 0 错误 | ⏳ 待翻译 |
-| ArcenAIW2Core (反编译) | DLLSource/ArcenAIW2Core/ | 游戏主逻辑、实体、阵营、舰队、科技等 | ❌ 待编译 | ⏳ 未开始 |
-| ArcenAIW2Visualization (反编译) | DLLSource/ArcenAIW2Visualization/ | 渲染、特效、模型、Shader 等 | ❌ 待编译 | ⏳ 未开始 |
+| ArcenUniversal (IL 汉化) | —（无源码，见 8.15） | UI 组件、通用工具、输入、网络等 | — | ⏳ 待翻译 |
+| ArcenAIW2Core (IL 汉化) | —（无源码，见 8.15） | 游戏主逻辑、实体、阵营、舰队、科技等 | — | 🔶 进行中 |
+| ArcenAIW2Visualization (IL 汉化) | —（无源码，见 8.15） | 渲染、特效、模型、Shader 等 | — | 🔶 进行中（玩家可见短语首批已部署） |
 
 ### 8.3 目录结构
 
@@ -231,15 +231,8 @@ AIWar2_ChineseTranslation/
 │   │   ├── src/
 │   │   │   └── ArcenUIRedirectPlugin.cs           ← Harmony 拦截逻辑
 │   │   └── ArcenUIAssetRedirect.csproj
-│   ├── ArcenUniversal/                           ← 反编译的核心项目
-│   │   ├── ArcenUniversal.csproj
-│   │   ├── GlobalUsings.cs
-│   │   └── *.cs
-│   ├── ArcenAIW2Core/
-│   │   └── ...
-│   └── ArcenAIW2Visualization/
-│       └── ...
-├── DLLBin/                                       ← 编译产物
+│   └── （核心 DLL 无源码，不经 DLLSource；其 IL 汉化见 8.15，产物在 PatchedAssemblies/）
+├── DLLBin/                                       ← 编译产物（外部代码项目）
 │   ├── AIWarExternalCode.dll                     (3778 KB)
 │   ├── AIWarExternalDeepProcessingCode.dll        (1762 KB)
 │   ├── AIWarExternalVisualizationCode.dll         (228 KB)
@@ -278,6 +271,8 @@ AIWar2_ChineseTranslation/
 | 官方外部代码 (CodeExternal) | 14.0 | `CodeExternal/AIWarExternalCode.csproj` |
 | MOD 项目 | 15.0 | `XMLMods/Xushido/XushidoProject.csproj` |
 | 本翻译项目 | 14.0 | `DLLSource/AIWarExternalCode.csproj` |
+
+> **本节（8.5–8.7）历史说明**：原为“将核心 DLL 反编译为 C# 项目”准备的 csproj 格式规范，该路线现已废弃（见 8.9）。外部代码项目仍沿用 `CodeExternal` 既有 csproj（14.0 格式），无需此转换。核心 DLL 改走 8.15 的 IL 字面量替换，不再编译。
 
 **ILSpy 默认导出 SDK 风格**（`<Project Sdk="Microsoft.NET.Sdk">`），这只是反编译工具的个人偏好，不代表原始编译方式。反编译后必须转换为旧格式。旧 MSBuild 4.8 不支持 SDK 风格。
 
@@ -341,10 +336,8 @@ $msbuild = "C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe"
 & $msbuild DLLSource\AIWarExternalDeepProcessingCode\AIWarExternalDeepProcessingCode.csproj /t:Build /p:Configuration=Release "/p:CscToolPath=$roslynDir"
 & $msbuild DLLSource\AIWarExternalVisualizationCode\AIWarExternalVisualizationCode.csproj /t:Build /p:Configuration=Release "/p:CscToolPath=$roslynDir"
 
-# 第二阶段：核心 DLL（按依赖顺序）
-& $msbuild DLLSource\ArcenUniversal\ArcenUniversal.csproj /t:Build /p:Configuration=Release "/p:CscToolPath=$roslynDir"
-& $msbuild DLLSource\ArcenAIW2Core\ArcenAIW2Core.csproj /t:Build /p:Configuration=Release "/p:CscToolPath=$roslynDir"
-& $msbuild DLLSource\ArcenAIW2Visualization\ArcenAIW2Visualization.csproj /t:Build /p:Configuration=Release "/p:CscToolPath=$roslynDir"
+# 注：核心 DLL（ArcenUniversal / ArcenAIW2Core / ArcenAIW2Visualization）不再反编译编译，
+#      其汉化走 8.15 的 ilpatch IL 字面量替换，无此 msbuild 步骤。
 ```
 
 ### 8.8 部署
@@ -370,18 +363,9 @@ $msbuild = "C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe"
 
 译者本地经 `ilpatch` 修改后，应把更新后的核心 DLL 提交进仓库 `PatchedAssemblies/`（而非仅留本地游戏目录），以保证一键部署包含最新汉化。
 
-### 8.9 反编译项目的已知编译修复
+### 8.9 （保留节号，原“反编译项目编译修复”已废弃）
 
-ILSpy 8.2 反编译的核心 DLL 项目需以下修复才能通过 Roslyn 4.12 / C# 13 编译：
-
-| 问题 | 原因 | 修复方式 |
-|------|------|---------|
-| `op_Implicit` 调用 | ILSpy 反编译隐式运算符为 `Type.op_Implicit(x)`，C# 13 禁止直接调用 | 替换为 `(bool)(Object)x` 或 `(TargetType)x` |
-| `_002Ector` | IL 构造函数 `.ctor` 被转义为 `_002Ector`，C# 不能直接调用 | `default(T) + ._002Ector(args)` → `new T(args)` |
-| `(Type)(ref var)` | ILSpy 对 ref 变量输出冗余类型转换 | `((Type)(ref var))` → `var` |
-| `System.Numerics` 冲突 | Mat.cs 同时使用 `System.Numerics` 和 `UnityEngine` 的类型 | 移除 `using System.Numerics;`，显式限定 |
-| `Object` 歧义 | `System.Object` 和 `UnityEngine.Object` 冲突 | `global using Object = UnityEngine.Object;` |
-| 缺失 Unity 类型 | Unity 枚举（InputButton、Axis 等）未被引用 | 添加缺失的 Unity 模块引用或显式限定 |
+> 历史上曾尝试将核心 DLL 反编译为 C# 项目再编译替换，但反编译-重编译会改变 IL 结构导致运行时 BUG，该路线已废弃。核心 DLL 现统一采用 8.15 的 `ilpatch` IL 字面量替换方案，不再涉及反编译与重编译。
 
 ### 8.10 依赖关系与编译顺序
 
@@ -428,9 +412,9 @@ ArcenUIAssetRedirect (BepInEx 插件)
 | AIWarExternalDeepProcessingCode | 有源码 | 133 | ✅ 0 错误 | ✅ 完成 |
 | AIWarExternalVisualizationCode | 有源码 | 45 | ✅ 0 错误 | ✅ 完成 |
 | ArcenUIAssetRedirect | BepInEx 插件 | 1 | ✅ 0 错误 | ✅ 完成 |
-| ArcenUniversal | 反编译 | 613 | ✅ 0 错误 | ⏳ 待翻译（IL 方案） |
-| ArcenAIW2Core | 反编译 | ~350 | ❌ 待编译 | 🔶 IL 方案进行中（首批示例已部署） |
-| ArcenAIW2Visualization | 反编译 | ~100 | ❌ 待编译 | 🔶 IL 方案进行中（玩家可见短语首批已部署，见 8.15） |
+| ArcenUniversal | IL 汉化 | 613 | — | ⏳ 待翻译（IL 方案） |
+| ArcenAIW2Core | IL 汉化 | ~350 | — | 🔶 IL 方案进行中（首批示例已部署） |
+| ArcenAIW2Visualization | IL 汉化 | ~100 | — | 🔶 IL 方案进行中（玩家可见短语首批已部署，见 8.15） |
 | **合计** | | **~1841** | | |
 
 ### 8.14 翻译注意事项
@@ -438,7 +422,7 @@ ArcenUIAssetRedirect (BepInEx 插件)
 1. **使用 Edit 工具**：翻译时必须使用 Edit 工具逐字符串替换，禁止使用 Write 覆写整个文件
 2. **只改引号内内容**：只能替换 `"..."` 内的文本，不能修改引号外的任何代码
 3. **保留插值和标签**：`$"{variable}"` 中的变量部分保持不变，`<color>` 等标签保持不变
-4. **编译验证**：每翻译完一个文件后编译验证，0 错误再继续下一个
+4. **（外部代码项目）编译验证**：翻译有源码的外部代码项目时，每翻译完一个文件后编译验证，0 错误再继续下一个。核心 DLL 走 IL 汉化（8.15），不编译，用 `ilpatch inspect` 回读验证即可。
 5. **翻译优先级**：UI 文件（src/UIs/）优先，游戏逻辑文件（BaseInfo/、Sim/ 等）通常不需要翻译
 7. **禁止中文引号**：C# 字符串中不能使用 `""`（中文左右双引号），会被编译器误认为字符串分隔符。必须用 `''`（单引号）替代。例如：`"点击'是'确认"` 而非 `"点击"是"确认"`
 8. **引号嵌套**：如果翻译文本中需要引用按钮名称或其他 UI 元素，使用 `'单引号'` 包裹，不要使用 `"双引号"`
