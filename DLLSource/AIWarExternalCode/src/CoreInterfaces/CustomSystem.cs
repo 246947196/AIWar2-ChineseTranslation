@@ -427,12 +427,12 @@ namespace Arcen.AIW2.External
                     debugstage = 160;
                     var status = this.Status;
                     if (status == CustomSystemStatus.On || status == CustomSystemStatus.OnTill)
-                        buffer.Add("On", TooltipColors.CustomSystem_Status_On);
+                        buffer.Add("开启", TooltipColors.CustomSystem_Status_On);
                     else 
                     if (status == CustomSystemStatus.Ready)
-                        buffer.Add("Ready", TooltipColors.CustomSystem_Status_Ready);
+                        buffer.Add("就绪", TooltipColors.CustomSystem_Status_Ready);
                     else // Cooldown
-                        buffer.Add("Charging", TooltipColors.CustomSystem_Status_Cooldown);
+                        buffer.Add("充能中", TooltipColors.CustomSystem_Status_Cooldown);
 
                     return;
                 }
@@ -446,7 +446,7 @@ namespace Arcen.AIW2.External
                         debugstage = 180;
                         buffer
                             .Close(style)
-                            .Add("for ")
+                            .Add("持续 ")
                             .Open(style)
                             .AddSecondsRemaining( TimeLeft, TimeIntensity.OneMinute );
                     }
@@ -466,17 +466,17 @@ namespace Arcen.AIW2.External
                     debugstage = 200;
                     if (Type.Input == CustomSystemType.UseStyle.Activate)
                     {
-                        buffer.Add("MANUAL-ACTIVATION");
+                        buffer.Add("手动激活");
                     }
                     else
                     if (Type.Input == CustomSystemType.UseStyle.Toggle)
                     {
-                        buffer.Add("MANUAL-TOGGLE");
+                        buffer.Add("手动开关");
                     }
                     else
                     if (Type.Input == CustomSystemType.UseStyle.Targeted)
                     {
-                        buffer.Add("MANUAL-TARGET");
+                        buffer.Add("手动目标");
                     }
                     
                     return;
@@ -509,7 +509,7 @@ namespace Arcen.AIW2.External
                 
                 if (key.Equals("Click"))
                 {
-                    buffer.Add("[Click]");
+                    buffer.Add("[点击]");
                     return;
                 }
                 

@@ -65,12 +65,15 @@ AIWar2_ChineseTranslation/
 
 `deploy.ps1` 现在包含部署前版本检查：**基线版本必须与游戏版本一致**才能部署。
 
+**检测覆盖范围：** 快照系统监控四层来源——XML 配置 (`GameData/Configuration/`)、C# 源码 (`CodeExternal/`)、核心 DLL (`AIWar2_Data/Managed/`) 和 arcenui AssetBundle。其中 `CodeExternal/` 对应翻译项目的 `DLLSource/` — 游戏原版源码变更时，快照会报告哪些字符串新增/修改，翻译者据此同步到 `DLLSource/` 下的翻译版本。
+
 1. Steam 更新游戏
 2. **运行 `check_update.ps1`**（替代 `check_translation.ps1`）检测变更并生成报告
 3. **运行 `check_update.ps1 -snapshot -force`** 从英文状态更新基线快照
-4. 按报告重新翻译变更的文件
-5. 运行 `deploy.ps1` 重新部署
-6. 更新规范中的版本号 → 提交并打 tag
+4. 按报告重新翻译变更的 XML 和 DLL 源码文件
+5. 运行 `build.ps1` 重新编译 DLL
+6. 运行 `deploy.ps1` 重新部署
+7. 更新规范中的版本号 → 提交并打 tag
 
 ## 四、技术原理
 
@@ -202,7 +205,7 @@ BepInEx Preloader 在游戏程序集加载前调用 Patcher，通过 Mono.Cecil 
 
 | 项目 | 源码位置 | 汉化内容 | 编译状态 | 翻译状态 |
 |------|---------|---------|---------|---------|
-| AIWarExternalCode | DLLSource/AIWarExternalCode/src/ | 主菜单、设置、存档、侧边栏等 UI 文本 + 悬停提示全量汉化 (2 个文件 ~520 字符串) | ✅ 0 错误 | ✅ 已完成 |
+| AIWarExternalCode | DLLSource/AIWarExternalCode/src/ | 全量汉化 (~625 条字符串，涵盖 EntityText/、UIs/、Scenarios/、Hacking/、BaseInfo/、Helpers/ 等 ~30 个文件) | ✅ 0 错误 | ✅ 已完成 |
 | AIWarExternalDeepProcessingCode | DLLSource/AIWarExternalDeepProcessingCode/src/ | 聊天消息、少量 UI 文本 | ✅ 0 错误 | ✅ 已完成 |
 | AIWarExternalVisualizationCode | DLLSource/AIWarExternalVisualizationCode/src/ | 银河地图显示模式文本 | ✅ 0 错误 | ✅ 已完成 |
 | ArcenUIAssetRedirect | DLLSource/ArcenUIAssetRedirect/src/ | arcenui AssetBundle 拦截重定向 | ✅ 0 错误 | ✅ 已完成 |
@@ -391,11 +394,14 @@ ArcenUIAssetRedirect (BepInEx 插件)
 
 ### 8.11 翻译优先级
 
-| 优先级 | 目录 | 内容 |
-|--------|------|------|
-| 高 | `src/UIs/` | 主菜单、设置、存档、侧边栏等 UI 文本 |
-| 中 | `src/EntityText/` | 实体文本格式化（属性、描述、统计） |
-| 低 | `src/BaseInfo/`, `src/Sim/` | 游戏逻辑文件（通常不需要翻译） |
+| 优先级 | 目录 | 内容 | 状态 |
+|--------|------|------|:----:|
+| 高 | `src/UIs/` | 主菜单、设置、存档、侧边栏等 UI 文本 | ✅ 完成 |
+| 中 | `src/EntityText/` | 实体文本格式化（属性、描述、统计） | ✅ 完成 |
+| 中 | `src/Scenarios/` | 教程文本 | ✅ 完成 |
+| 中 | `src/Hacking/` | 黑客描述（15 个文件） | ✅ 完成 |
+| 低 | `src/BaseInfo/`, `src/Helpers/`, `src/CoreInterfaces/` | 舰队统计、界面辅助、自定义系统 | ✅ 完成 |
+| 低 | `src/Orders/`, `src/Input/` | 命令、快捷键相关 | ✅ 完成 |
 
 ### 8.12 已知限制
 
@@ -407,7 +413,7 @@ ArcenUIAssetRedirect (BepInEx 插件)
 
 | 项目 | 类型 | 文件数 | 编译状态 | 翻译状态 |
 |------|------|--------|---------|---------|
-| AIWarExternalCode | 有源码 | 600 | ✅ 0 错误 | ✅ 完成（含悬停提示全量汉化） |
+| AIWarExternalCode | 有源码 | 600 | ✅ 0 错误 | ✅ 完成（全量 ~625 条字符串） |
 | AIWarExternalDeepProcessingCode | 有源码 | 133 | ✅ 0 错误 | ✅ 完成 |
 | AIWarExternalVisualizationCode | 有源码 | 45 | ✅ 0 错误 | ✅ 完成 |
 | ArcenUIAssetRedirect | BepInEx 插件 | 1 | ✅ 0 错误 | ✅ 完成 |

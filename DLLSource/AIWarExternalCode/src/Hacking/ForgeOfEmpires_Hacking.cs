@@ -26,7 +26,7 @@ namespace Arcen.AIW2.External
             ApkalluFactionBaseInfo apkalluBase = HackerFaction.TryGetExternalBaseInfoAs<ApkalluFactionBaseInfo>();
             if ( apkalluBase == null )
             {
-                RejectionReasonDescription = "Only the Apkallu can breach a Nexus.";
+                RejectionReasonDescription = "只有 Apkallu 才能入侵 Nexus。";
                 return Hackable.NeverCanBeHacked_Hide;
             }
 
@@ -42,7 +42,7 @@ namespace Arcen.AIW2.External
 
             if ( !flagshipOnPlanet )
             {
-                RejectionReasonDescription = "An Apkallu Flagship must be on this planet to breach the Nexus.";
+                RejectionReasonDescription = "Apkallu 旗舰必须在此星球上才能入侵 Nexus。";
                 return Hackable.NeverBeHacked_ButStillShow;
             }
 
@@ -71,7 +71,7 @@ namespace Arcen.AIW2.External
             MalwareFactionBaseInfo malwareBase = Target?.PlanetFaction?.Faction?.TryGetExternalBaseInfoAs<MalwareFactionBaseInfo>();
             if ( malwareBase != null && malwareBase.HasActiveBreach( planet ) )
             {
-                rejectionReason = "This planet already has an active breach.";
+                rejectionReason = "此星球已有一个活跃的入侵。";
                 return Hackable.NeverBeHacked_ButStillShow;
             }
 
@@ -91,13 +91,13 @@ namespace Arcen.AIW2.External
                     {
                         PlayerTypeData pData = localFaction.PlayerTypeDataOrNull_ModeratelyExpensive;
 
-                        string res1Name = pData?.Resource1DisplayName ?? "Resource";
-                        string res2Name = pData?.Resource2DisplayName ?? "Resource";
-                        string res3Name = pData?.Resource3DisplayName ?? "Resource";
+                        string res1Name = pData?.Resource1DisplayName ?? "资源";
+                        string res2Name = pData?.Resource2DisplayName ?? "资源";
+                        string res3Name = pData?.Resource3DisplayName ?? "资源";
                         var buffer = this.Buffer;
-                        buffer.Add( "Not enough " );
+                        buffer.Add( "不足 " );
                         bool first = true;
-                        if ( hapShort )  { if ( !first ) buffer.Add( ", " ); buffer.StartHacking( false ).Add( "Hacking" ).EndColor();   first = false; }
+                        if ( hapShort )  { if ( !first ) buffer.Add( ", " ); buffer.StartHacking( false ).Add( "黑客点" ).EndColor();   first = false; }
                         if ( res1Short ) { if ( !first ) buffer.Add( ", " ); buffer.StartResourceOne( false ).Add( res1Name ).EndColor(); first = false; }
                         if ( res2Short ) { if ( !first ) buffer.Add( ", " ); buffer.AddResourceTwo( res2Name, true );                        first = false; }
                         if ( res3Short ) { if ( !first ) buffer.Add( ", " ); buffer.AddResourceThree( res3Name, true );                     first = false; }
@@ -170,7 +170,7 @@ namespace Arcen.AIW2.External
                  breach.AdditionalResourceOneCost > 0 || breach.AdditionalResourceTwoCost > 0 ||
                  breach.AdditionalResourceThreeCost > 0 )
             {
-                buffer.Pad().NewLineIfNeeded().Add( "This hack costs " );
+                buffer.Pad().NewLineIfNeeded().Add( "此黑客花费 " );
                 int counter = 0;
                 if ( breach.AdditionalAIPCost > 0 )
                 {
@@ -206,14 +206,14 @@ namespace Arcen.AIW2.External
             }
 
             if ( breach.UnlockRequirements.Count > 0 )
-                buffer.Add("\nUnlock requirements:\n");
+                buffer.Add("\n解锁要求：\n");
             for ( int i = 0; i < breach.UnlockRequirements.Count; i++ )
             {
                 buffer.Add("\t" + breach.UnlockRequirements[i]);
             }
 
             if ( breach.ExcludedIfCompleted.Count > 0 )
-                buffer.Add("\nIf you have done these breaches, this breach can't appear:\n");
+                buffer.Add("\n如果你已完成这些入侵，此入侵将不会出现：\n");
             for ( int i = 0; i < breach.ExcludedIfCompleted.Count; i++ )
             {
                 buffer.Add("\t" + breach.ExcludedIfCompleted[i]);
@@ -276,8 +276,8 @@ namespace Arcen.AIW2.External
         {
             if ( Hacker.ActiveHack_DurationThusFar == 1 )
             {
-                ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.Normal, null, "Apkallu Contact",
-                    "We... perceive you. Please, keep your hacking beacon active so we can escape.\n\n\n<size=80%>See the Journal for more details.</size>", "Ok" );
+                ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.Normal, null, "Apkallu 联络",
+                    "我们……感知到你了。请保持你的黑客信标激活，以便我们逃脱。\n\n\n<size=80%>详情请见日志。</size>", "确定" );
                 Faction apkallu = FactionUtilityMethods.Instance.GetApkalluFaction();
                 World_AIW2.Instance.QueueLogJournalEntryToSidebar( "Apkallu_FirstContact", string.Empty, apkallu, null, null, OnClient.DoThisOnHostOnly_WillBeSentToClients );
             }
@@ -301,13 +301,13 @@ namespace Arcen.AIW2.External
         {
             if ( Target.CurrentStateOfMatter == StateOfMatterTypeDataTable.Instance.DefaultRow )
             {
-                RejectionReasonDescription = "This Ziggurat has already been hacked";
+                RejectionReasonDescription = "此 Ziggurat 已被黑客入侵";
                 return Hackable.NeverCanBeHacked_Hide;
             }
             ApkalluFactionBaseInfo apkalluBase = HackerFaction.TryGetExternalBaseInfoAs<ApkalluFactionBaseInfo>();
             if ( apkalluBase != null && apkalluBase.Durus.GetDisplayList().Count == 0 )
             {
-                RejectionReasonDescription = "You don't know how to interact with this strange alien structure.";
+                RejectionReasonDescription = "你不知道如何与这个奇怪的外星建筑互动。";
                 return Hackable.NeverBeHacked_ButStillShow;
             }
             return base.GetCanBeHacked( Target, HackerOrNull, planet, HackerFaction, Type, RelatedStringOrNull, RelatedIntOrNull, out RejectionReasonDescription );
@@ -343,7 +343,7 @@ namespace Arcen.AIW2.External
             ApkalluFactionBaseInfo apkalluBase = HackerFaction.TryGetExternalBaseInfoAs<ApkalluFactionBaseInfo>();
             if ( apkalluBase == null || !apkalluBase.DoesPlanetHaveZiggurat( planet ) )
             {
-                RejectionReasonDescription = "A Ziggurat must be present on this planet to resync the Lamassu's modules.";
+                RejectionReasonDescription = "此星球上必须有一座 Ziggurat 才能重新同步 Lamassu 的模块。";
                 return Hackable.NeverBeHacked_ButStillShow;
             }
             if ( !apkalluBase.LamassuPrimaryKeyIDsOutOfSync.Contains( Target.PrimaryKeyID ) )
@@ -377,7 +377,7 @@ namespace Arcen.AIW2.External
         {
             if ( !ApkalluFactionBaseInfo.GetIsThisAnApkalluFaction( HackerFaction ) )
             {
-                RejectionReasonDescription = "Only the Apkallu can transform their flagship.";
+                RejectionReasonDescription = "只有 Apkallu 才能转换他们的旗舰。";
                 return Hackable.NeverCanBeHacked_Hide;
             }
             ApkalluFactionBaseInfo apkalluInfo = HackerFaction.TryGetExternalBaseInfoAs<ApkalluFactionBaseInfo>();
@@ -395,12 +395,12 @@ namespace Arcen.AIW2.External
             }
             if ( !anyUnlocked )
             {
-                RejectionReasonDescription = "No flagship forms unlocked yet. Complete Malware Nexus Breaches to unlock forms.";
+                RejectionReasonDescription = "尚未解锁旗舰形态。完成 Malware Nexus 入侵以解锁形态。";
                 return Hackable.NeverCanBeHacked_Hide;
             }
             if ( Target.PlanetFaction.DataByStance[FactionStance.Hostile].TotalStrength > 500 )
             {
-                RejectionReasonDescription = "Cannot transform on a planet with significant enemy strength.";
+                RejectionReasonDescription = "无法在有大量敌人力量的行星上进行转换。";
                 return Hackable.NeverBeHacked_ButStillShow;
             }
             return base.GetCanBeHacked( Target, HackerOrNull, planet, HackerFaction, Type, RelatedStringOrNull, RelatedIntOrNull, out RejectionReasonDescription );
@@ -427,13 +427,13 @@ namespace Arcen.AIW2.External
         {
             if ( Target != null && breach.FlagshipFormTransformMinMarkLevel > 1 && Target.CurrentMarkLevel < breach.FlagshipFormTransformMinMarkLevel )
             {
-                rejectionReason = "Requires flagship mark level " + breach.FlagshipFormTransformMinMarkLevel + ".";
+                rejectionReason = "需要旗舰标记等级 " + breach.FlagshipFormTransformMinMarkLevel + "。";
                 return Hackable.NeverBeHacked_ButStillShow;
             }
             Faction faction = Target?.PlanetFaction?.Faction;
             if ( faction != null && faction.StoredFactionResourceOne < breach.FlagshipFormTransformCostResourceOne )
             {
-                rejectionReason = "Insufficient ResourceOne (need " + breach.FlagshipFormTransformCostResourceOne + ").";
+                rejectionReason = "资源一不足（需要 " + breach.FlagshipFormTransformCostResourceOne + "）。";
                 return Hackable.NeverBeHacked_ButStillShow;
             }
             rejectionReason = "";
@@ -462,11 +462,11 @@ namespace Arcen.AIW2.External
                 buffer.Add( breach.UnlockFlagshipForm.Description );
             if ( breach.FlagshipFormTransformCostResourceOne > 0 )
             {
-                buffer.Add( "\n\nTransform cost: " );
+                buffer.Add( "\n\n转换成本： " );
                 buffer.AddResourceOne( breach.FlagshipFormTransformCostResourceOne, true );
             }
             if ( breach.FlagshipFormTransformMinMarkLevel > 1 )
-                buffer.Add( "\nRequires flagship mark level " ).Add( breach.FlagshipFormTransformMinMarkLevel ).Add( "." );
+                buffer.Add( "\n需要旗舰标记等级 " ).Add( breach.FlagshipFormTransformMinMarkLevel ).Add( "。" );
         }
 
         public override void DoHack( MalwareBreach breach, GameEntity_Squad TargetIfShip, Planet TargetIfPlanet, HackingType HackType )
@@ -494,18 +494,18 @@ namespace Arcen.AIW2.External
         {
             if ( Target.PlanetFaction.Faction == HackerFaction )
             {
-                RejectionReasonDescription = "You have already claimed this structure";
+                RejectionReasonDescription = "你已占领此建筑";
                 return Hackable.NeverCanBeHacked_Hide;
             }
             if ( planet.GetControllingFaction().GetIsHostileTowards( HackerFaction ) )
             {
-                RejectionReasonDescription = "Planet is controlled by an enemy";
+                RejectionReasonDescription = "星球被敌人控制";
                 return Hackable.NeverBeHacked_ButStillShow;
             }
             ApkalluFactionBaseInfo apkalluBase = HackerFaction.TryGetExternalBaseInfoAs<ApkalluFactionBaseInfo>();
             if ( apkalluBase == null || apkalluBase.Ziggurats.Count == 0 )
             {
-                RejectionReasonDescription = "Temen require a Ziggurat to function";
+                RejectionReasonDescription = "Temen 需要 Ziggurat 才能运作";
                 return Hackable.NeverBeHacked_ButStillShow;
             }
 

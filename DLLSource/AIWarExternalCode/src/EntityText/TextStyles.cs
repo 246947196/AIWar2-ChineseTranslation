@@ -1317,14 +1317,14 @@ namespace Arcen.AIW2.External
                 if (!buffer.Builder.IsNewLine())
                     buffer.NewLine();
                 
-                buffer.Add( "Exp: " ).StartColor( source.FromExpansion.ColorForDisplay ).Add( source.FromExpansion.Abbreviation ).EndColor();
+                buffer.Add( "说明： " ).StartColor( source.FromExpansion.ColorForDisplay ).Add( source.FromExpansion.Abbreviation ).EndColor();
             }
             if ( source.FromMod != null )
             {
                 if (!buffer.Builder.IsNewLine())
                     buffer.NewLine();
                 
-                buffer.Add( "Mod: " ).StartColor( source.FromMod.ColorForDisplay ).Add( source.FromMod.Abbreviation ).EndColor();
+                buffer.Add( "模组： " ).StartColor( source.FromMod.ColorForDisplay ).Add( source.FromMod.Abbreviation ).EndColor();
             }
              
             //style?.Close(buffer);
@@ -1346,14 +1346,14 @@ namespace Arcen.AIW2.External
                 buffer.NewLine();
             
             //if (!string.IsNullOrEmpty(statement))
-            buffer.Add("Added by:  ");
+            buffer.Add("添加者：  ");
             
             if ( source.FromExpansion != null )
             {
                 if (!buffer.Builder.IsNewLine())
                     buffer.NewLine();
                 
-                buffer.Add( "DLC Expansion: " );
+                buffer.Add( "DLC 扩展： " );
                 buffer.StartColor( source.FromExpansion.ColorForDisplay ).Add( source.FromExpansion.DisplayName )
                     .Add( " (" ).Add( source.FromExpansion.Abbreviation ).Add( ")" ).EndColor();
             }
@@ -1362,7 +1362,7 @@ namespace Arcen.AIW2.External
                 if (!buffer.Builder.IsNewLine())
                     buffer.NewLine();
                 
-                buffer.Add( "Mod: " );
+                buffer.Add( "模组： " );
                 buffer.StartColor( source.FromMod.ColorForDisplay ).Add( source.FromMod.DisplayName )
                     .Add( " (" ).Add( source.FromMod.Abbreviation ).Add( ")" ).EndColor();
             }

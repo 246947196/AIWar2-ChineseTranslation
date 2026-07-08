@@ -243,7 +243,7 @@ namespace Arcen.AIW2.External
                         Faction primaryfaction = World_AIW2.Instance.GetFactionByIndex( this.PrimaryFactionIndex );
                         Faction secondaryfaction = World_AIW2.Instance.GetFactionByIndex( this.SecondaryFactionIndex );
                         string factionName = primaryfaction.GetDisplayName();
-                        buffer.Add( " from <color=#").Add(primaryfaction.FactionCenterColor.ColorHexBrighter).Add("> ").Add(factionName).Add("</color> killing " );
+                        buffer.Add( " 来自 <color=#").Add(primaryfaction.FactionCenterColor.ColorHexBrighter).Add("> ").Add(factionName).Add("</color>击杀 " );
                         if ( secondaryfaction != null )
                             buffer.Add( "<color=#").Add(secondaryfaction.FactionCenterColor.ColorHexBrighter).Add(">").Add(this.RelatedEntityTypeData.GetDisplayName()).Add("</color>" );
                         else
@@ -251,7 +251,7 @@ namespace Arcen.AIW2.External
                         drawFaction = false;
                     }
                     else
-                        buffer.Add( " due to the death of ").Add(this.RelatedEntityTypeData.GetDisplayName() );
+                        buffer.Add( " 因 ").Add(this.RelatedEntityTypeData.GetDisplayName() ).Add( " 死亡" );
                     drawBasicReason = false;
                     debugCode = 43;
                     drawEntity = false;
@@ -262,12 +262,12 @@ namespace Arcen.AIW2.External
                     debugCode = 51;
                     if ( this.RelatedEntityTypeData != null )
                     {
-                        buffer.Add( " from hacking ").Add(this.RelatedEntityTypeData.GetDisplayName() );
+                        buffer.Add( " 来自骇入 ").Add(this.RelatedEntityTypeData.GetDisplayName() );
                         if ( this.SecondaryRelatedEntityTypeData != null )
-                            buffer.Add(" for " ).Add( this.SecondaryRelatedEntityTypeData.GetDisplayName() );
+                            buffer.Add(" 以解锁 " ).Add( this.SecondaryRelatedEntityTypeData.GetDisplayName() );
                     }
                     else
-                        buffer.Add( " from science hacking " ); //science hacking is the only path that allows for hacking AIP but doesn't have a GameEntity associated. If that changes, this logic will need to be improved
+                        buffer.Add( " 来自科学骇入 " ); //science hacking is the only path that allows for hacking AIP but doesn't have a GameEntity associated. If that changes, this logic will need to be improved
                     drawBasicReason = false;
                     drawEntity = false;
                 }
@@ -276,12 +276,12 @@ namespace Arcen.AIW2.External
                     Planet planet = World_AIW2.Instance.GetPlanetByIndex( this.PlanetIndex );
                     if ( planet == null )
                     {
-                        buffer.Add( " due to planet capture " );
+                        buffer.Add( " 因占领星球 " );
                         drawBasicReason = false;
                     }
                     else
                     {
-                        buffer.Add( " due to capturing " );
+                        buffer.Add( " 因占领 " );
                         Faction secondaryfaction = World_AIW2.Instance.GetFactionByIndex( this.SecondaryFactionIndex );
                         if ( secondaryfaction == null )
                             secondaryfaction = World_AIW2.Instance.GetNeutralFaction();
@@ -300,7 +300,7 @@ namespace Arcen.AIW2.External
                         ArcenDebugging.ArcenDebugLogSingleLine( "BUG: faction is not set in aip change for risk analyzers", Verbosity.ShowAsError );
                     else
                     {
-                        buffer.Add( " from <color=#").Add(faction.FactionCenterColor.ColorHexBrighter).Add("> Risk Analyzers</color> firing." );
+                        buffer.Add( " 来自 <color=#").Add(faction.FactionCenterColor.ColorHexBrighter).Add(">风险分析器</color>发射。" );
                         drawBasicReason = false;
                     }
                     debugCode = 62;
@@ -314,24 +314,24 @@ namespace Arcen.AIW2.External
                     if ( faction == null )
                         faction = World_AIW2.Instance.GetPlayerFactionForUIOrNull();
                     string color = faction.FactionCenterColor.ColorHexBrighter;
-                    buffer.Add( " from <color=#").Add(color).Add(">Claiming</color> the ").Add(this.RelatedEntityTypeData.GetDisplayName() );
+                    buffer.Add( " 来自 <color=#").Add(color).Add(">占领</color> ").Add(this.RelatedEntityTypeData.GetDisplayName() );
                     drawBasicReason = false;
                 }
                 if ( this.Reason == AIPChangeReason.InitialValue )
                 {
-                    buffer.Add( ". The resistance against the AI begins!" );
+                    buffer.Add( "。反抗AI的战斗开始了！" );
                     drawBasicReason = false;
                 }
                 if(this.Reason == AIPChangeReason.AutoIncrease)
                 {
-                    buffer.Add( " from auto-increase." );
+                    buffer.Add( " 来自自动增长。" );
                     drawBasicReason = false;
                 }
                 if ( this.Reason == AIPChangeReason.PlanetDrilling )
                 {
                     Planet planet = World_AIW2.Instance.GetPlanetByIndex( this.PlanetIndex );
                     if ( planet != null )
-                        buffer.Add( " from drilling" );
+                        buffer.Add( " 来自钻探" );
                     drawBasicReason = false;
                     drawEntity = false;
                 }
@@ -339,9 +339,9 @@ namespace Arcen.AIW2.External
                 {
                     Faction faction = World_AIW2.Instance.GetFactionByIndex( this.PrimaryFactionIndex );
                     if ( faction != null )
-                        buffer.Add( " from <color=#" ).Add( faction.FactionCenterColor.ColorHexBrighter ).Add( ">" ).Add( faction.GetDisplayName() ).Add( "</color> escalation." );
+                        buffer.Add( " 来自 <color=#" ).Add( faction.FactionCenterColor.ColorHexBrighter ).Add( ">" ).Add( faction.GetDisplayName() ).Add( "</color>升级。" );
                     else
-                        buffer.Add( " from faction escalation." );
+                        buffer.Add( " 来自派系升级。" );
                     drawBasicReason = false;
                     drawFaction = false;
                 }
@@ -349,7 +349,7 @@ namespace Arcen.AIW2.External
                 if ( drawBasicReason )
                 {
                     debugCode = 40;
-                    buffer.Add( " due to ").Add( Extensions.ToString(this.Reason) ); //this is a default
+                    buffer.Add( " 因 ").Add( Extensions.ToString(this.Reason) ); //this is a default
                 }
 
                 debugCode = 30;
@@ -357,7 +357,7 @@ namespace Arcen.AIW2.External
                 {
                     //this is a default; it may be overwritten by the this.Reason processing
                     debugCode = 31;
-                    buffer.Add( " related to ").Add(this.RelatedEntityTypeData.GetDisplayName() );
+                    buffer.Add( " 相关于 ").Add(this.RelatedEntityTypeData.GetDisplayName() );
                 }
 
                 debugCode = 20;
@@ -366,7 +366,7 @@ namespace Arcen.AIW2.External
                     //this is a default; it may be overwritten by the this.Reason processing
                     debugCode = 21;
                     Planet planet = World_AIW2.Instance.GetPlanetByIndex( this.PlanetIndex );
-                    buffer.Add( " on <color=#a1ffa1>").Add(planet.Name).Add("</color>" );
+                    buffer.Add( " 在 <color=#a1ffa1>").Add(planet.Name).Add("</color>" );
                 }
 
                 debugCode = 10;
@@ -376,7 +376,7 @@ namespace Arcen.AIW2.External
                     debugCode = 11;
                     Faction faction = World_AIW2.Instance.GetFactionByIndex( this.PrimaryFactionIndex );
                     string factionName = faction.GetDisplayName();
-                    buffer.Add( ". Caused by <color=#").Add(faction.FactionCenterColor.ColorHexBrighter).Add("> ").Add(factionName).Add("</color>." );
+                    buffer.Add( "。由 <color=#").Add(faction.FactionCenterColor.ColorHexBrighter).Add("> ").Add(factionName).Add("</color>造成。" );
                 }
             }
             catch ( Exception e )

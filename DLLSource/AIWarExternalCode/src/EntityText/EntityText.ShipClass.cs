@@ -92,9 +92,9 @@ namespace Arcen.AIW2.External
                 WriteShipClass_GreaterCategoryStartIfNeeded( Buffer, ref AlreadyWroteGeneralStart, DetailLevel, GreaterCategory );
                 WriteShipClass_LesserCategoryStartIfNeeded( Buffer, ref AlreadyWroteLesserStart, DetailLevel, GreaterCategory, ShipClassData_LesserCategoryType.DeathEffect, false );
                 if ( DetailLevel == TooltipDetail.Full )
-                    Buffer.Add( "All Zombifying Types" );
+                    Buffer.Add( "所有亡灵化类型" );
                 else
-                    Buffer.Add( "Zombifying Types" );
+                    Buffer.Add( "亡灵化类型" );
             }*/
             
             /*
@@ -184,9 +184,9 @@ namespace Arcen.AIW2.External
                     WriteShipClass_GreaterCategoryStartIfNeeded( Buffer, ShipClass, ref AlreadyWroteGeneralStart, ref AlreadyWroteAbsoluteStart, DetailLevel, GreaterCategory );
                     WriteShipClass_LesserCategoryStartIfNeeded( Buffer, ref AlreadyWroteLesserStart, DetailLevel, GreaterCategory, ShipClassData_LesserCategoryType.SpecialMechanic, true );
                     if ( DetailLevel == TooltipDetail.Full )
-                        Buffer.Add( "Tractor Beams  Black Hole Machines  Getting Devoured  Getting Infested" );
+                        Buffer.Add( "牵引光束  黑洞机器  被吞噬  被寄生" );
                     else
-                        Buffer.Add( "All Special Mechanics" );
+                        Buffer.Add( "所有特殊机制" );
                 } else
                 {
                     if ( !(ShipClass.CanBeTractored && ShipClass.CanBeBlackHoleMachineBlocked && ShipClass.CanBeDevoured && ShipClass.CanBeInfested) )
@@ -197,31 +197,31 @@ namespace Arcen.AIW2.External
                         if ( !ShipClass.CanBeTractored )
                         {
                             if(DetailLevel == TooltipDetail.Full)
-                                Buffer.Add( "Tractor Beams " );
+                                Buffer.Add( "牵引光束 " );
                             else
-                                Buffer.Add( "Tractors " );
+                                Buffer.Add( "牵引 " );
                             if ( !ShipClass.CanBeBlackHoleMachineBlocked )
                                 Buffer.Add( " " );
                         }
                         if ( !ShipClass.CanBeBlackHoleMachineBlocked )
                         {
                             if ( DetailLevel == TooltipDetail.Full )
-                                Buffer.Add( "Black Hole Machines " );
+                                Buffer.Add( "黑洞机器 " );
                             else
-                                Buffer.Add( "Black Holes " );
+                                Buffer.Add( "黑洞 " );
                             if ( !ShipClass.CanBeDevoured )
                                 Buffer.Add( " " );
                         }
                         if ( !ShipClass.CanBeDevoured )
                             if ( DetailLevel == TooltipDetail.Full )
-                                Buffer.Add( "Getting Devoured " );
+                                Buffer.Add( "被吞噬 " );
                             else
-                                Buffer.Add( "Devouring " );
+                                Buffer.Add( "吞噬 " );
                         if ( !ShipClass.CanBeInfested )
                             if ( DetailLevel == TooltipDetail.Full )
-                                Buffer.Add( "Getting Infested " );
+                                Buffer.Add( "被寄生 " );
                             else
-                                Buffer.Add( "Infestation " );
+                                Buffer.Add( "寄生 " );
                     }
                 }
             }

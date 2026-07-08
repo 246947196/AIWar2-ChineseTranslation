@@ -54,7 +54,7 @@ namespace Arcen.AIW2.External
                             Buffer.StartColor( ColorMath.LightYellow );
                         else
                             Buffer.StartColor( ColorMath.LighterGreen );
-                        Buffer.Add( "STEP COMPLETE: CLICK HERE TO CONTINUE" );
+                        Buffer.Add( "步骤完成：点击此处继续" );
                         Buffer.EndColor();
                     }
                 }
@@ -64,9 +64,9 @@ namespace Arcen.AIW2.External
                         Buffer.StartColor( ColorMath.IceBlue );
                     else
                         Buffer.StartColor( ColorMath.LightBlue );
-                    Buffer.Add( " COMPLETE!" );
+                    Buffer.Add( " 完成！" );
                     Buffer.Add( "\n</color>" );
-                    Buffer.Add( "This tutorial has been completed.  Click here to return to the tutorial selection screen!" );
+                    Buffer.Add( "此教程已完成。点击此处返回教程选择界面！" );
                 }
                 return true;
             }
@@ -88,7 +88,7 @@ namespace Arcen.AIW2.External
                 int metalCost = buildable.TypeData.MarkStatsFor( buildable.EffectiveMark ).MetalCost;
                 if ( metalCost == 0 )
                     metalCost++;
-                Buffer.Add( "<color=#ffc178><b>Placing " ).Add( buildable.TypeData.DisplayName ).Add( "</b></color>. ");
+                Buffer.Add( "<color=#ffc178><b>放置 " ).Add( buildable.TypeData.DisplayName ).Add( "</b></color>。 ");
                 bool printMetalCosts = true;
                 Faction localPlayerFaction = World_AIW2.Instance.GetLocalPlayerFactionOrNull();
                 if ( NecromancerEmpireFactionBaseInfo.GetIsThisANecromancerFaction( localPlayerFaction ) )
@@ -106,9 +106,9 @@ namespace Arcen.AIW2.External
                     Buffer.Add("\n");
 
 
-                Buffer.Add( "<color=#999999>Click to place.\n");
+                Buffer.Add( "<color=#999999>点击放置。\n");
 
-                Buffer.Add("Hold " ).Add( InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "Build5xUnits" ) ).Add( " to build 5 at a time. " );
+                Buffer.Add("按住 " ).Add( InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "Build5xUnits" ) ).Add( " 一次建造 5 个。 " );
 
                 if ( printMetalCosts )
                 {
@@ -122,7 +122,7 @@ namespace Arcen.AIW2.External
                 else
                     Buffer.Add("\n");
 
-                Buffer.Add("Hold ").Add( InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "Build10xUnits" ) ).Add( " to build 10  at a time. ");
+                Buffer.Add("按住 ").Add( InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "Build10xUnits" ) ).Add( " 一次建造 10 个。 ");
                 if ( printMetalCosts )
                 {
                     Buffer.Add("<color=#ccccee>").Add( ArcenExternalUIUtilities.MetalTextColorAndIcon );
@@ -136,7 +136,7 @@ namespace Arcen.AIW2.External
                 else
                     Buffer.Add("\n");
 
-                Buffer.Add("Hold both to build 50 at a time.</color>");
+                Buffer.Add("同时按住可一次建造 50 个。</color>");
 
                 if ( printMetalCosts )
                 {
@@ -194,19 +194,19 @@ namespace Arcen.AIW2.External
                 //we're in ping mode!
                 if ( Engine_AIW2.Instance.CurrentGameViewMode == GameViewMode.MainGameView )
                 {
-                    Buffer.Add( "<color=#" ).Add( headerColor ).Add( "><b>Ping Mode</b></color>: " );
-                    Buffer.Add( "<color=#" ).Add( bodyColor ).Add( ">Left-click to leave " ).Add( colorName ).Add( " ping markers at as many spots as you want (they last six seconds each and get smaller over time).  Right-click to exit this mode.</color>" );
+                    Buffer.Add( "<color=#" ).Add( headerColor ).Add( "><b>标记模式</b></color>：" );
+                    Buffer.Add( "<color=#" ).Add( bodyColor ).Add( ">左键点击留下 " ).Add( colorName ).Add( " 标记点，想放多少放多少（每个持续六秒，随时间缩小）。右键退出此模式。</color>" );
                 }
                 else
                 {
-                    Buffer.Add( "<color=#" ).Add( headerColor ).Add( "><b>Ping Mode</b></color>: " );
-                    Buffer.Add( "<color=#" ).Add( bodyColor ).Add( ">Left-click to leave " ).Add( colorName ).Add( " ping markers at as many planets as you want.  They are visible for 6 seconds.  Right-click to exit this mode.</color>" );
+                    Buffer.Add( "<color=#" ).Add( headerColor ).Add( "><b>标记模式</b></color>：" );
+                    Buffer.Add( "<color=#" ).Add( bodyColor ).Add( ">左键点击留下 " ).Add( colorName ).Add( " 标记点在任意星球上。它们可见 6 秒。右键退出此模式。</color>" );
                 }
-                Buffer.Add( "\nHold while clicking: " );
-                Buffer.Add( "<color=#ffb142>" ).Add( InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "HoldForOrangePings" ) ).Add( "</color>, " );
-                Buffer.Add( "<color=#4292ff>" ).Add( InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "HoldForBluePings" ) ).Add( "</color>, " );
-                Buffer.Add( "<color=#f46acb>" ).Add( InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "HoldForPinkPings" ) ).Add( "</color>, or" );
-                Buffer.Add( "<color=#fff661>" ).Add( InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "HoldForYellowPings" ) ).Add( "</color>. " );
+                Buffer.Add( "\n点击时按住：" );
+                Buffer.Add( "<color=#ffb142>" ).Add( InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "HoldForOrangePings" ) ).Add( "</color>、" );
+                Buffer.Add( "<color=#4292ff>" ).Add( InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "HoldForBluePings" ) ).Add( "</color>、" );
+                Buffer.Add( "<color=#f46acb>" ).Add( InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "HoldForPinkPings" ) ).Add( "</color>、或" );
+                Buffer.Add( "<color=#fff661>" ).Add( InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "HoldForYellowPings" ) ).Add( "</color>。" );
             }
             
             if ( Engine_AIW2.Instance.PlacingOutguardDeployable != null && 
@@ -216,13 +216,13 @@ namespace Arcen.AIW2.External
                 if ( wroteTutorialStuff )
                     Buffer.Add( "\n\n" );
 
-                Buffer.Add( "<color=#ffc178><b>Deploying " ).Add( outguard.DisplayName ).Add( "</b></color>. ");
+                Buffer.Add( "<color=#ffc178><b>部署 " ).Add( outguard.DisplayName ).Add( "</b></color>。 ");
                 Buffer.Add("\n");
-                Buffer.Add( "<color=#999999>Click to deploy.\n");
+                Buffer.Add( "<color=#999999>点击部署。\n");
             }
 
             if ( World_AIW2.Instance.TutorialOrNull != null && World.Instance.IsPaused )
-                Buffer.Add( "<color=#ffd75e>Game Is Paused!</color>\n" );
+                Buffer.Add( "<color=#ffd75e>游戏已暂停！</color>\n" );
 
             return false;
         }
@@ -235,9 +235,9 @@ namespace Arcen.AIW2.External
             Buffer.Add( "<b><color=#78beff>T</color><color=#6db9ff>u</color><color=#5eb1ff>t</color><color=#5ec4ff>o</color><color=#52c0ff>r</color><color=#52d8ff>i</color><color=#42d5ff>a</color><color=#24deff>l</color><color=#78beff>" );
             if ( Index < MaxIndex )
             {
-                Buffer.Add( " Step " ).Add( Index + 1 ).Add( "/" ).Add( MaxIndex );
+                Buffer.Add( " 步骤 " ).Add( Index + 1 ).Add( "/" ).Add( MaxIndex );
                 if ( IncludeCompleteNotice )
-                    Buffer.Add( " (COMPLETE)" );
+                    Buffer.Add( "（完成）" );
                 Buffer.Add( "</b>:</color>" );
             }
             else

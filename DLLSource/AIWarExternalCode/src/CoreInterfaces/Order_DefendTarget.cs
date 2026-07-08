@@ -131,11 +131,11 @@ namespace Arcen.AIW2.External
             var target = this.TargetToDefend.GetSquad();
             if (target != null)
             {
-                buffer.Add("Defend ").Add(target.TypeData.GetShortDisplayName());
+                buffer.Add("防御 ").Add(target.TypeData.GetShortDisplayName());
             }
             else
             {
-                buffer.Add("Defend around ").Add(this.PointToDefend);
+                buffer.Add("防御目标 ").Add(this.PointToDefend);
             }
             
         }

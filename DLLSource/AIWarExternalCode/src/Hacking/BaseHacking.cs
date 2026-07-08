@@ -414,8 +414,8 @@ namespace Arcen.AIW2.External
                             if ( chatHandlerOrNull != null )
                                 chatHandlerOrNull.Faction = LazyLoadFactionWrapper.Create( Hacker.GetFactionOrNull_Safe() );
                             if ( !type.GetIsPerSecondStyleCost() )
-                                World_AIW2.Instance.QueueChatMessageOrCommand( "Hack <color=#a1ff22>" + type.GetDisplayName( Event.HackedEntityTypeData, false ) +
-                                      "</color> succeeded.", ChatType.LogToCentralChat, chatHandlerOrNull );
+                                World_AIW2.Instance.QueueChatMessageOrCommand( "黑客 <color=#a1ff22>" + type.GetDisplayName( Event.HackedEntityTypeData, false ) +
+                                      "</color> 成功。", ChatType.LogToCentralChat, chatHandlerOrNull );
                         }
                     }
 
@@ -671,7 +671,7 @@ namespace Arcen.AIW2.External
                             chatHandlerOrNull.PlanetToView = planet;
 
                         World_AIW2.Instance.QueueChatMessageOrCommand(
-                            "The AI is launching a counterattack in response to your hack on " + planet.Name + ".", ChatType.LogToCentralChat, string.Empty,
+                            "AI 正在对你对 " + planet.Name + " 的黑客行为发动反击。", ChatType.LogToCentralChat, string.Empty,
                             chatHandlerOrNull );
                     }
 

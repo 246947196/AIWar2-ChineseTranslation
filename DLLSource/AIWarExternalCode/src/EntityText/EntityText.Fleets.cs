@@ -945,9 +945,9 @@ namespace Arcen.AIW2.External
                 {
                     debugstage = 340;
                     if ( Config.Detail < TooltipDetail.Full )
-                        buffer.Add( "Auto-builds drones of types: <color=#ffdf72>" );
+                        buffer.Add( "自动建造以下类型无人机：<color=#ffdf72>" );
                     else
-                        buffer.Add( "Auto-builds drones of the following sorts, and releases them when threatened: <color=#ffdf72>" );
+                        buffer.Add( "自动建造以下种类无人机，并在受到威胁时释放：<color=#ffdf72>" );
                     bool isFirst = true;
 
                     debugstage = 350;
@@ -1003,7 +1003,7 @@ namespace Arcen.AIW2.External
                          Squad.TypeData.FleetDesignTemplatesIAlwaysGrant.Count > 0 )
                     {
                         debugstage = 6461;
-                        buffer.Add( "I am the centerpiece of what would become a fleet with the following items:  " );
+                        buffer.Add( "我是将成为以下物品组成的舰队的核心：  " );
 
                         debugstage = 6462;
                         for ( int j = 0; j < Squad.TypeData.FleetDesignTemplatesIAlwaysGrant.Count; j++ )
@@ -1063,13 +1063,13 @@ namespace Arcen.AIW2.External
                         buffer.BeginStatement(TextStyle.Attr_Line);
                         
                         if ( Squad.GetIsCrippled() )
-                            buffer.Add( "Crippled factories are unable to spend metal until they are repaired." );
+                            buffer.Add( "受损工厂无法消耗金属，需先修复。" );
                         else 
                         if ( Squad.GetIsNonFunctional() )
-                            buffer.Add( "Non-functional factories are unable to spend metal until their functionality is restored." );
+                            buffer.Add( "失效工厂无法消耗金属，需先恢复功能。" );
                         else 
                         if ( Squad.ComputeDisabledReason( ArcenRejectionReason.Unknown ) != ArcenRejectionReason.Unknown )
-                            buffer.Add( "Disabled factories are unable to spend metal until they are re-enabled." );
+                            buffer.Add( "禁用工厂无法消耗金属，需先重新启用。" );
                         else
                         {
                             debugstage = 5901;
@@ -1160,22 +1160,22 @@ namespace Arcen.AIW2.External
                                         
                                         if ( areAllAtShipCap )
                                         {
-                                            buffer.Add( "Finished all construction for fleet " )
+                                            buffer.Add( "完成舰队所有建造 " )
                                                 .AddFactionColoredString(fleet.GetName(), fleet.Faction).Add(".");
                                         }
                                         else 
                                         if ( faction != null && 
                                              faction.NetEnergy <= 0 )
                                         {
-                                            buffer.Add( "Unable to build for fleet " )
+                                            buffer.Add( "无法为舰队建造 " )
                                                 .AddFactionColoredString(fleet.GetName(), fleet.Faction)
-                                                .Add( " because of insufficient Energy." );
+                                                .Add( " 因为能量不足。" );
                                         }
                                         else
                                         {
-                                            buffer.Add( "Unable to build for fleet " )
+                                            buffer.Add( "无法为舰队建造 " )
                                                 .AddFactionColoredString(fleet.GetName(), fleet.Faction)
-                                                .Add( " because some ship lines blocked." );
+                                                .Add( " 因为某些舰船线路被阻塞。" );
                                         }
                                         
                                         buffer.Close(TextStyle.Attr_Line);
@@ -1184,7 +1184,7 @@ namespace Arcen.AIW2.External
                                     {
                                         buffer.Open(TextStyle.Attr_Line);
                                         
-                                        buffer.Add( "Building for " ).AddFactionColoredString( fleet.GetName(), faction ).Add(": ");
+                                        buffer.Add( "正在为...建造 " ).AddFactionColoredString( fleet.GetName(), faction ).Add(": ");
                                                 
                                         ships.Delimiter = " ";
                                         ships.Varmap = TextVarMap.Inline_Ship_Format_Building;
@@ -1216,11 +1216,11 @@ namespace Arcen.AIW2.External
                         if ( relatedMemFleetOrNull != null && 
                              relatedMemFleetOrNull.Category == FleetCategory.PlayerPlanetaryCommand )
                         {
-                            buffer.Add( "<color=#ff5842>Cannot be constructed without fully-built command station here!</color>", TextStyle.Newline_NoLabel );
+                            buffer.Add( "<color=#ff5842>此处未完全建成的指挥站无法建造！</color>", TextStyle.Newline_NoLabel );
                         }
                         else
                         {
-                            buffer.Add( "<color=#ff5842>Cannot be constructed without its flagship being here and non-crippled.</color>", TextStyle.Newline_NoLabel );
+                            buffer.Add( "<color=#ff5842>旗舰不在场或受损时无法建造。</color>", TextStyle.Newline_NoLabel );
                         }
 
                         if ( GameSettings.Current.GetBoolBySetting( "Debug_ShowConstructionBlockedReason" ) )
@@ -1239,7 +1239,7 @@ namespace Arcen.AIW2.External
                         {
                             buffer
                                 .Open(extra_text_style)
-                                .Add( "Ships unloading have a " ).Add( Squad.TypeData.FiringDelayForTransportedShips, "a1ffa1" ).Add( " second delay before firing." )
+                                .Add( "卸载舰船有 " ).Add( Squad.TypeData.FiringDelayForTransportedShips, "a1ffa1" ).Add( " 秒开火延迟。" )
                                 .Close(extra_text_style);
                         }
                     }
@@ -1280,8 +1280,8 @@ namespace Arcen.AIW2.External
                         buffer.Open(TextStyle.Attr_Line);
                         
                         buffer
-                            .Add("Fleet Leader", TextStyle.Attr_Label).Add(": ")
-                            .Add(" This is the centerpiece of ").AddFactionColoredString(relatedMemFleetOrNull.GetName(), Squad.GetFactionOrNull_Safe());
+                            .Add("舰队领袖", TextStyle.Attr_Label).Add(": ")
+                            .Add(" 这是 ").AddFactionColoredString(relatedMemFleetOrNull.GetName(), Squad.GetFactionOrNull_Safe());
 
                         debugstage = 546300;
 
@@ -1318,7 +1318,7 @@ namespace Arcen.AIW2.External
                              relatedMemFleetOrNull.IsFleetInTransportLoadMode && 
                              !isCity )
                         {
-                            buffer.Add( "  " ).AddVarReplace(TextVarMap.InParenthesis, null, (a,b,c,d)=>c.Add("loading"), null );
+                            buffer.Add( "  " ).AddVarReplace(TextVarMap.InParenthesis, null, (a,b,c,d)=>c.Add("加载中"), null );
                         }
                         #endregion
                         
@@ -1336,7 +1336,7 @@ namespace Arcen.AIW2.External
                                     .Open( TextStyle.Attr_Line2 )
                                     .Open( TextStyle.Attr_Label2 )
                                     .NewLineIfNeeded()
-                                    .Add( Squad.TypeData.NameForCitySockets_Plural ).Add( " Used").Close(TextStyle.Attr_Label2)
+                                    .Add( Squad.TypeData.NameForCitySockets_Plural ).Add( " 已用").Close(TextStyle.Attr_Label2)
                                     .Add(": ")
                                     .Add( spentCityPoints )
                                     .Open(TextStyle.Fraction).Add( "/" ).Add( totalCityPoints ).Close(TextStyle.Fraction)
@@ -1351,7 +1351,7 @@ namespace Arcen.AIW2.External
                              relatedMemFleetOrNull.FleetOnFriendlyPlanet && 
                              !isCity )
                         {
-                            buffer.Add( "This fleet is on friendly planets, and can rebuild its ships quicker" ).EndStatement(EndStatementStyle.Normal);
+                            buffer.Add( "该舰队位于友方星球，可更快重建舰船" ).EndStatement(EndStatementStyle.Normal);
                         }
                         */
 
@@ -1383,8 +1383,8 @@ namespace Arcen.AIW2.External
                         buffer.BeginStatement(TextStyle.Attr_Line);
                         
                         buffer
-                            .Add("AI-Garrison", TextStyle.Attr_Label).Add(": ")
-                            .Add(" This is a reinforcement point");
+                            .Add("AI 驻军", TextStyle.Attr_Label).Add(": ")
+                            .Add(" 这是一个增援点");
 
                         int countOfItemTypes = 0;
                         float strengthOfItems = 0;
@@ -1409,7 +1409,7 @@ namespace Arcen.AIW2.External
                         else
                         {
                             buffer
-                                .Add(" containing ")
+                                .Add(" 包含 ")
                                 .Open(TextTerm.Strength, TermUse.Icon)
                                 .AddNumber(strengthOfItems, null, TextStyle.Empty)
                                 .Close(TextTerm.Strength);

@@ -244,7 +244,7 @@ namespace Arcen.AIW2.External
                      panelMode == Window_InGameHoverEntityInfo.Mode.Build*/ )
                         {
                             if ( Config.UseText )
-                                buffer.Add( "Claim AIP: " );
+                                buffer.Add( "占领 AIP： " );
 
                             if ( Squad.TypeData.AIPToClaim > FInt.Zero )
                                 buffer.WrapAIPMoreReadable( Squad.TypeData.AIPToClaim, Config.UseIcons, false );
@@ -259,7 +259,7 @@ namespace Arcen.AIW2.External
                      panelMode == Window_InGameHoverEntityInfo.Mode.Build*/ )
                         {
                             if ( Config.UseText )
-                                buffer.Add( "Hack AIP: " );
+                                buffer.Add( "黑客 AIP： " );
 
                             if ( Squad.TypeData.AIPWhenGrantedByHack > FInt.Zero )
                                 buffer.WrapAIPMoreReadable( Squad.TypeData.AIPWhenGrantedByHack, Config.UseIcons, false );
@@ -304,7 +304,7 @@ namespace Arcen.AIW2.External
 
                             debugstage = 11000;
                             if ( Config.UseText )
-                                buffer.Add( "Strength: " );
+                                buffer.Add( "强度： " );
 
                             buffer
                                 .Open( TextTerm.Strength, TermUse.Icon )
@@ -373,7 +373,7 @@ namespace Arcen.AIW2.External
                                 buffer
                                     .Open( TextTerm.Speed, TermUse.Icon )
                                     .AddFIntTruncated( Squad.TypeData.DegreesToOrbitPerSecond )
-                                    .Add( " °/s" )
+                                    .Add( "°/秒" )
                                     .Close( TextTerm.Speed );
                             }
                         }
@@ -396,7 +396,7 @@ namespace Arcen.AIW2.External
                             }
                             if ( Config.UseText )
                             {
-                                buffer.Add( "Engine: " );
+                                buffer.Add( "引擎： " );
                             }
                             buffer.StartEngineWrapper( Config.UseIcons );
                             if ( Squad.TypeData.Engine_gx > 0 )
@@ -418,7 +418,7 @@ namespace Arcen.AIW2.External
                             #region Mass
                             if ( Config.UseText )
                             {
-                                buffer.Add( "Mass: " );
+                                buffer.Add( "质量： " );
                             }
                             buffer.StartMassWrapper( Config.UseIcons ).Add( Squad.TypeData.Mass_tX ).Add( " tX" ).EndMassWrapper( false );
                             #endregion
@@ -431,7 +431,7 @@ namespace Arcen.AIW2.External
                             #region Albedo
                             if ( Config.UseText )
                             {
-                                buffer.Add( "Albedo: " );
+                                buffer.Add( "反照率： " );
                             }
                             buffer.WrapAlbedo( Squad.DataForMark.Albedo, Config.UseIcons, false );
                             #endregion
@@ -444,7 +444,7 @@ namespace Arcen.AIW2.External
                             #region Armor
                             if ( Config.UseText )
                             {
-                                buffer.Add( "Armor: " );
+                                buffer.Add( "装甲： " );
                             }
                             buffer.StartArmorWrapper( Config.UseIcons ).Add( Squad.TypeData.Armor_mm ).Add( " mm" ).EndArmorWrapper( false );
                             #endregion

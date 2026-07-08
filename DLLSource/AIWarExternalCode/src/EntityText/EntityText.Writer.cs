@@ -446,7 +446,7 @@ namespace Arcen.AIW2.External
                         {
                             #region Claiming
                             
-                            buffer.Add( "Claim", TextStyle.Behavior_Label ).Add(": ");
+                            buffer.Add( "占领", TextStyle.Behavior_Label ).Add(": ");
                             
                             if ( relatedSquadOrNull.IsInHoldFireMode )
                             {
@@ -538,7 +538,7 @@ namespace Arcen.AIW2.External
                             
                             var metalCost = relatedSquadOrNull.GetMetalCost();
                             
-                            buffer.Add( "Constructing", TextStyle.Behavior_Label ).Add(": ");
+                            buffer.Add( "建造中", TextStyle.Behavior_Label ).Add(": ");
                             
                             if ( relatedSquadOrNull.IsInHoldFireMode )
                             {
@@ -575,7 +575,7 @@ namespace Arcen.AIW2.External
 
                             //     though thats already conveyed in several other ways (the button state, the selection circle color...)
                             
-                            buffer.Add( "Behavior", TextStyle.Behavior_Label).Add(": ");
+                            buffer.Add( "行为", TextStyle.Behavior_Label).Add(": ");
                             
                             var beh = relatedSquadOrNull.Orders.Behavior;
                             if ( relatedSquadOrNull.IsInHoldFireMode )
@@ -656,7 +656,7 @@ namespace Arcen.AIW2.External
                                 EntityOrder order = relatedSquadOrNull.Orders.GetQueuedOrderAtIndex_OrNull( 0 );
                                 if ( order.TypeData != null )
                                 {
-                                    buffer.Add( "Orders", TextStyle.Orders_Label ).Add(": ");
+                                    buffer.Add( "命令", TextStyle.Orders_Label ).Add(": ");
                                     
                                     int queuedOrderCount = relatedSquadOrNull.Orders.GetQueuedOrderCount();
                                     this.WriteEntityOrder( relatedSquadOrNull, order, buffer );
@@ -1244,7 +1244,7 @@ namespace Arcen.AIW2.External
                          thisPlanetOrNull?.GetControllingFactionType() != FactionType.Player )
                     {
                         this.WriteDebuffsStartIfNeeded( buffer, ref wroteDebuffStart );
-                        buffer.WrapSpeed("Range: ", false, false).Add("limited on hostile planet");
+                        buffer.WrapSpeed("Range: ", false, false).Add("在敌对星球上受限");
                     }
                     #endregion
                     
@@ -1413,7 +1413,7 @@ namespace Arcen.AIW2.External
                                         buffer.AddFactionNameInItsColor(againstFaction, true);
                                     else
                                         buffer.Add( "Players", TextStyle.Brighter);
-                                    buffer.Add(" for ").AddMinutesAndSeconds(secondsIHaveBeenThreat).Add( "." );
+                                    buffer.Add(" 持续 ").AddMinutesAndSeconds(secondsIHaveBeenThreat).Add( "." );
                                     buffer.Close(TextStyle.Newline_NoLabel);
                                 }
                                 
@@ -1422,7 +1422,7 @@ namespace Arcen.AIW2.External
                                     buffer.Open(TextStyle.Newline_NoLabel)
                                           .Add( "This ship has been waiting to attack " )
                                           .AddPlanetNameFormated(againstPlanet,true)
-                                          .Add(" for ").AddMinutesAndSeconds(secondsIHaveBeenWaiting)
+                                          .Add(" 持续 ").AddMinutesAndSeconds(secondsIHaveBeenWaiting)
                                           .Close(TextStyle.Newline_NoLabel);
                                 }
                                 
@@ -1456,9 +1456,9 @@ namespace Arcen.AIW2.External
                                             remSecTillMaxAlive = hunterFleetExistsThreshold - secondsIHaveBeenThreat;
                                         
                                         if (remSecTillMaxWait > -1)
-                                            buffer.Open(TextStyle.Newline_NoLabel).Add( "This ship will join Hunter if still waiting to attack, in ").AddMinutesAndSeconds(remSecTillMaxWait).Add(".").Close(TextStyle.Newline_NoLabel);
+                                            buffer.Open(TextStyle.Newline_NoLabel).Add( "该舰将在仍等待攻击，").AddMinutesAndSeconds(remSecTillMaxWait).Add("后加入猎手。").Close(TextStyle.Newline_NoLabel);
                                         if (remSecTillMaxAlive > -1)
-                                            buffer.Open(TextStyle.Newline_NoLabel).Add( "This ship will join Hunter if alive and threat, in ").AddMinutesAndSeconds(remSecTillMaxAlive).Add(".").Close(TextStyle.Newline_NoLabel);
+                                            buffer.Open(TextStyle.Newline_NoLabel).Add( "该舰将在仍存活且为威胁，").AddMinutesAndSeconds(remSecTillMaxAlive).Add("后加入猎手。").Close(TextStyle.Newline_NoLabel);
                                     }
                                 }
                             }
@@ -1479,7 +1479,7 @@ namespace Arcen.AIW2.External
                                 
                                     if (exoTargetSquad.Planet != null)
                                     {
-                                        buffer.Add(" on ");
+                                        buffer.Add(" 在 ");
                                         buffer.AddPlanetNameFormated(exoTargetSquad.Planet, true);
                                     }
                                 }
@@ -1644,7 +1644,7 @@ namespace Arcen.AIW2.External
                     buffer.BeginStatement(TextStyle.System_Line);
                     
                     buffer.AddModuleTag(true).Add( "Stat-Boost", TextStyle.Attr_Label );
-                    buffer.Add(": bonus ");
+                    buffer.Add("：加成 ");
                             
                     int counter = 0;
                     foreach ( var sys in stat_mods )
@@ -2434,7 +2434,7 @@ namespace Arcen.AIW2.External
                     buffer.Add( "Decollide" );
                     break;
                 case EntityOrderType.Move_Normal:
-                    buffer.Add( "Move to " ).Add(order.RelatedPoint.X - 400000).Add(" / ").Add(order.RelatedPoint.Y - 400000);
+                    buffer.Add( "移动至 " ).Add(order.RelatedPoint.X - 400000).Add(" / ").Add(order.RelatedPoint.Y - 400000);
                     break;
                 case EntityOrderType.Custom:
                     order.CustomOrder.GetText(buffer);
@@ -3022,7 +3022,7 @@ namespace Arcen.AIW2.External
                 debugstage = 103;
                 if (modifier.ComparisonType == DamageModifierComparisonType.MultiplesOf)
                 {
-                    buffer.Add("Scaling-");
+                    buffer.Add("缩放-");
                 }
                 debugstage = 104;
                 if ( modifier.IsForOutgoingDamage )
@@ -3076,14 +3076,14 @@ namespace Arcen.AIW2.External
                     modifier.MaxMultiplier > 0)
                 {
                     // (x10 max)
-                    buffer.Add(" (").Add("×").Add(modifier.MaxMultiplier).Add(" max)");
+                    buffer.Add(" (").Add("×").Add(modifier.MaxMultiplier).Add(" 最大)");
                 }
                 
                 debugstage = 107;
                 if ( modifier.BasedOn == DamageModifierBasedOn.MaxBubbleForcefield )
                 {
                     debugstage = 108;
-                    buffer.Add(" to ").Open(TextTerm.Shields, TermUse.Color).Add("Bubble-Shields").Close(TextTerm.Shields).Add(".");
+                    buffer.Add(" 对 ").Open(TextTerm.Shields, TermUse.Color).Add("球状护盾").Close(TextTerm.Shields).Add(".");
                     buffer.Close(TextStyle.System_Line2);
                     debugstage = 109;
                     return;
@@ -3092,12 +3092,12 @@ namespace Arcen.AIW2.External
                 if ( modifier.AppliesTo == DamageModifierAppliesTo.AllShields ||
                      modifier.AppliesTo == DamageModifierAppliesTo.PersonalShieldOnly)
                 {
-                    buffer.Add(" to ").Add(TextTerm.Shields, TermUse.Icon_Name).Add("");
+                    buffer.Add(" 对 ").Add(TextTerm.Shields, TermUse.Icon_Name).Add("");
                 }
                 else
                 if ( modifier.AppliesTo == DamageModifierAppliesTo.HullOnly)
                 {
-                    buffer.Add(" to ").Add(TextTerm.Hull, TermUse.Icon_Name).Add("");
+                    buffer.Add(" 对 ").Add(TextTerm.Hull, TermUse.Icon_Name).Add("");
                 }
 
                 //buffer.AddNumber( multiplier, "脳", TextTerm.Damage, TermUse.Name );
@@ -3268,10 +3268,10 @@ namespace Arcen.AIW2.External
                         
                         buffer.AddMinutesAndSeconds(comp_val);
                         if (modifier.ComparisonRefersToMyself)
-                            buffer.Add(" of our ");
+                            buffer.Add(" 的己方 ");
                         else
-                            buffer.Add(" of target ");
-                        buffer.Add("time on planet", TextStyle.Brighter);
+                            buffer.Add(" 的目标 ");
+                        buffer.Add("在星球上时间", TextStyle.Brighter);
                         buffer.Add(".");
                         buffer.Close(TextStyle.System_Line2);
 
@@ -3285,9 +3285,9 @@ namespace Arcen.AIW2.External
                         debugstage = 118;
                         
                         buffer.Open(TextTerm.Range, TermUse.Color);
-                        buffer.Add(comp_val).Add(" Range");
+                        buffer.Add(comp_val).Add(" 范围");
                         buffer.Close(TextTerm.Range);
-                        buffer.Add(" away.");
+                        buffer.Add(" 距离。");
                         buffer.Close(TextStyle.System_Line2);
 
                         return;
@@ -3311,7 +3311,7 @@ namespace Arcen.AIW2.External
                 {
                     debugstage = 120;
                     
-                    buffer.Add("is ").Add( modifier.ComparedToInt > 0 ? "'Mobile'" : "'Stationary'", TextStyle.Brighter).Add(".");
+                    buffer.Add("是 ").Add( modifier.ComparedToInt > 0 ? "'Mobile'" : "'Stationary'", TextStyle.Brighter).Add(".");
                     buffer.Close(TextStyle.System_Line2);
                     
                     debugstage = 121;
@@ -3323,7 +3323,7 @@ namespace Arcen.AIW2.External
                 {
                     debugstage = 122;
                     
-                    buffer.Add("is ").Add( modifier.ComparedToInt > 0 ? "'Drone'" : "'Not Drone'", TextStyle.Brighter).Add(".");
+                    buffer.Add("是 ").Add( modifier.ComparedToInt > 0 ? "'Drone'" : "'Not Drone'", TextStyle.Brighter).Add(".");
                     buffer.Close(TextStyle.System_Line2);
                     
                     debugstage = 123;
@@ -3336,7 +3336,7 @@ namespace Arcen.AIW2.External
                 {
                     debugstage = 124;
                     
-                    buffer.Add("time on planet ", TextStyle.Brighter);
+                    buffer.Add("在星球上时间 ", TextStyle.Brighter);
                     
                     buffer.Open(TextStyle.MinutesAndSeconds);
                     
@@ -3370,7 +3370,7 @@ namespace Arcen.AIW2.External
                         
                         buffer.Space("0.05em");
                         if (max)
-                            buffer.Add("max", TextStyle.Sub);
+                            buffer.Add("最大", TextStyle.Sub);
                             //buffer.Add("鈫?);
                         if (prefix != null)
                             buffer.Add(prefix);
@@ -3390,10 +3390,10 @@ namespace Arcen.AIW2.External
                 
                 debugstage = 130;
                 
-                if (missing)
-                    buffer.Add(" missing");
-                if (remaining)
-                    buffer.Add(" remaining");
+                    if (missing)
+                        buffer.Add(" 缺失");
+                    if (remaining)
+                        buffer.Add(" 剩余");
 
                 //if (missing)
                     //buffer.Add(" missing on ");
@@ -3443,7 +3443,7 @@ namespace Arcen.AIW2.External
             } 
             else
             {
-                buffer.Add( "Buffs", TextStyle.Buffs_Label ).Add(": ");
+                buffer.Add( "增益", TextStyle.Buffs_Label ).Add(": ");
                 alreadyWroteBuffsStart = true;
             }
         }
@@ -3535,7 +3535,7 @@ namespace Arcen.AIW2.External
             } 
             else
             {
-                buffer.Add( "Debuffs", TextStyle.Debuffs_Label ).Add(": ");
+                buffer.Add( "减益", TextStyle.Debuffs_Label ).Add(": ");
                 alreadyWroteDebuffsStart = true;
             }
         }
@@ -4111,7 +4111,7 @@ namespace Arcen.AIW2.External
                     Buffer.Add( " Damage: " );
                 else
                     Buffer.Add( " Dmg " );
-                Buffer.AddFIntTruncated( BuffLimit_Current ).Add("x ");
+                Buffer.AddFIntTruncated( BuffLimit_Current ).Add("倍 ");
             } else if( BuffType == ShipClassData_BuffType.Hull )
             {
                 if ( DetailLevel == TooltipDetail.Full )
@@ -5035,8 +5035,8 @@ namespace Arcen.AIW2.External
                 
                 buffer.BeginStatement(TextStyle.Attr_Line);
                 
-                buffer.Add("Engineer", TextStyle.Attr_Label).Add(": ");
-                buffer.Add(" assist in ").AddNumber(Squad.DataForMark.AssistRange, TextTerm.Range, TermUse.Name);
+                buffer.Add("工程师", TextStyle.Attr_Label).Add(": ");
+                buffer.Add(" 协助范围 ").AddNumber(Squad.DataForMark.AssistRange, TextTerm.Range, TermUse.Name);
 
                 buffer.Open(TextStyle.Attr_Sub_Lines);
                 
@@ -5046,7 +5046,7 @@ namespace Arcen.AIW2.External
                     {
                         buffer.Open(TextStyle.Assist_Item);
                         buffer.Add( "Construct Fleet", TextStyle.Assist_Label );
-                        buffer.Add( " " ).AddNumber( item.Data.EffectiveThroughput, null, TextTerm.Metal, TermUse.Icon, null ).Add(" /sec", TextStyle.Fraction_Gray);
+                        buffer.Add( " " ).AddNumber( item.Data.EffectiveThroughput, null, TextTerm.Metal, TermUse.Icon, null ).Add(" /秒", TextStyle.Fraction_Gray);
                         
                         PlannedMetalFlow flow = GetMetalFlowForPurposeOrDefault( Squad, item.For );
                         if ( flow.FromEntity != null )
@@ -5061,7 +5061,7 @@ namespace Arcen.AIW2.External
                     {
                         buffer.Open(TextStyle.Assist_Item);
                         buffer.Add( "Construction", TextStyle.Assist_Label );
-                        buffer.Add( " " ).AddNumber( item.Data.EffectiveThroughput, null, TextTerm.Metal, TermUse.Icon, null ).Add(" /sec", TextStyle.Fraction_Gray);
+                        buffer.Add( " " ).AddNumber( item.Data.EffectiveThroughput, null, TextTerm.Metal, TermUse.Icon, null ).Add(" /秒", TextStyle.Fraction_Gray);
                         
                         PlannedMetalFlow flow = GetMetalFlowForPurposeOrDefault( Squad, item.For );
                         if ( flow.FromEntity != null )
@@ -5077,7 +5077,7 @@ namespace Arcen.AIW2.External
                     {
                         buffer.Open(TextStyle.Assist_Item);
                         buffer.Add( "Factory Construction", TextStyle.Assist_Label );
-                        buffer.Add( " " ).AddNumber( item.Data.EffectiveThroughput, null, TextTerm.Metal, TermUse.Icon, null ).Add(" /sec", TextStyle.Fraction_Gray);
+                        buffer.Add( " " ).AddNumber( item.Data.EffectiveThroughput, null, TextTerm.Metal, TermUse.Icon, null ).Add(" /秒", TextStyle.Fraction_Gray);
 
                         PlannedMetalFlow flow = GetMetalFlowForPurposeOrDefault( Squad, item.For );
                         if ( flow.FromEntity != null )
@@ -5094,7 +5094,7 @@ namespace Arcen.AIW2.External
                         buffer.Open(TextStyle.Assist_Item);
 
                         buffer.Add( "Claim Neutrals", TextStyle.Assist_Label );
-                        buffer.Add( " " ).AddNumber( item.Data.EffectiveThroughput, null, TextTerm.Metal, TermUse.Icon, null ).Add(" /sec", TextStyle.Fraction_Gray);
+                        buffer.Add( " " ).AddNumber( item.Data.EffectiveThroughput, null, TextTerm.Metal, TermUse.Icon, null ).Add(" /秒", TextStyle.Fraction_Gray);
                         
                         PlannedMetalFlow flow = GetMetalFlowForPurposeOrDefault( Squad, item.For );
                         if ( flow.FromEntity != null )
@@ -5111,7 +5111,7 @@ namespace Arcen.AIW2.External
                         buffer.Open(TextStyle.Assist_Item);
 
                         buffer.Add( "Rebuild Remains", TextStyle.Assist_Label );
-                        buffer.Add( " " ).AddNumber( item.Data.EffectiveThroughput, null, TextTerm.Metal, TermUse.Icon, null ).Add(" /sec", TextStyle.Fraction_Gray);
+                        buffer.Add( " " ).AddNumber( item.Data.EffectiveThroughput, null, TextTerm.Metal, TermUse.Icon, null ).Add(" /秒", TextStyle.Fraction_Gray);
                         
                         PlannedMetalFlow flow = GetMetalFlowForPurposeOrDefault( Squad, item.For );
                         if ( flow.FromEntity != null )
@@ -5127,8 +5127,8 @@ namespace Arcen.AIW2.External
                     {
                         buffer.Open(TextStyle.Assist_Item);
 
-                        buffer.Add("Repair Hull", TextStyle.Assist_Label);
-                        buffer.Add( " " ).AddNumber( item.Data.EffectiveThroughput, null, TextTerm.Metal, TermUse.Icon, null ).Add(" /sec", TextStyle.Fraction_Gray);
+                        buffer.Add("修复船体", TextStyle.Assist_Label);
+                        buffer.Add( " " ).AddNumber( item.Data.EffectiveThroughput, null, TextTerm.Metal, TermUse.Icon, null ).Add(" /秒", TextStyle.Fraction_Gray);
                         
                         PlannedMetalFlow flow = GetMetalFlowForPurposeOrDefault( Squad, item.For );
                         if ( flow.FromEntity != null )
@@ -5144,8 +5144,8 @@ namespace Arcen.AIW2.External
                     {
                         buffer.Open(TextStyle.Assist_Item);
 
-                        buffer.Add("Repair Shields", TextStyle.Assist_Label);
-                        buffer.Add( " " ).AddNumber( item.Data.EffectiveThroughput, null, TextTerm.Metal, TermUse.Icon, null ).Add(" /sec", TextStyle.Fraction_Gray);
+                        buffer.Add("修复护盾", TextStyle.Assist_Label);
+                        buffer.Add( " " ).AddNumber( item.Data.EffectiveThroughput, null, TextTerm.Metal, TermUse.Icon, null ).Add(" /秒", TextStyle.Fraction_Gray);
                         
                         PlannedMetalFlow flow = GetMetalFlowForPurposeOrDefault( Squad, item.For );
                         if ( flow.FromEntity != null )
@@ -5161,8 +5161,8 @@ namespace Arcen.AIW2.External
                     {
                         buffer.Open(TextStyle.Assist_Item);
 
-                        buffer.Add("Repair Engines", TextStyle.Assist_Label);
-                        buffer.Add( " " ).AddNumber( item.Data.EffectiveThroughput, null, TextTerm.Metal, TermUse.Icon, null ).Add(" /sec", TextStyle.Fraction_Gray);
+                        buffer.Add("修复引擎", TextStyle.Assist_Label);
+                        buffer.Add( " " ).AddNumber( item.Data.EffectiveThroughput, null, TextTerm.Metal, TermUse.Icon, null ).Add(" /秒", TextStyle.Fraction_Gray);
                         
                         PlannedMetalFlow flow = GetMetalFlowForPurposeOrDefault( Squad, item.For );
                         if ( flow.FromEntity != null )

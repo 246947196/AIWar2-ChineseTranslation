@@ -47,7 +47,7 @@ namespace Arcen.AIW2.External
                 this.PopulateItemsToShow(listOfItemsForCanBeHacked, Target, planet, Type);
             } catch (Exception e ) {
                 ArcenDebugging.ArcenDebugLogSingleLine( "HackingMenu-GetCanBeHacked error from PopulateItemsToShow: " + e, Verbosity.ShowAsError );
-                rejectionReason = "Error finding list of options to hack.";
+                rejectionReason = "查找可黑客选项列表时出错。";
                 return Hackable.NotSureIfHasBeenHackedHacked_Hide;
             }
 
@@ -71,7 +71,7 @@ namespace Arcen.AIW2.External
                             if (rejectionReason == "") {
                                 rejectionReason = itemRejectionReason;
                             } else if (rejectionReason != itemRejectionReason && itemRejectionReason != "") {
-                                rejectionReason = "Varies";
+                                rejectionReason = "各不相同";
                             }
                             break;
                     }
@@ -85,7 +85,7 @@ namespace Arcen.AIW2.External
             } else if (shouldShow) {
                 return Hackable.NeverBeHacked_ButStillShow;
             } else {
-                rejectionReason = "HackingImplementation_WithMenu can never be hacked";
+                rejectionReason = "HackingImplementation_WithMenu 永远无法被黑客";
                 return Hackable.NeverCanBeHacked_Hide;
             }
         }
@@ -214,12 +214,12 @@ namespace Arcen.AIW2.External
                     if ( Engine_Universal.CurrentPopups.Count > 0 ) //we got some sort of warning telling us we can't do this
                         return MouseHandlingResult.PlayClickDeniedSound;
                     ArcenCharacterBuffer buffer = ArcenCharacterBuffer.GetFromPoolOrCreate("HackingMenu-Prompt-buffer");
-                    buffer.Add("Are you sure you would like to do the hack ").Add(Info.HackingType.DisplayName).Add(" for ");
+                    buffer.Add("确定要进行黑客：").Add(Info.HackingType.DisplayName).Add(" 以 ");
                     Implementation.GetDisplayNameForItem(buffer, item);
-                    buffer.Add("?\n \n" + "<color=#888888>To disable this prompt, go into Game Settings, under the Game tab, and toggle this to OFF.  Or just hold down ");
+                    buffer.Add("？\n \n" + "<color=#888888>要禁用此提示，请进入游戏设置，在游戏选项卡下将其关闭。或者按住 ");
                     buffer.Add(InputActionTypeDataTable.GetActionByName_FairlySlow( "SuppressTechUpgradePrompt" ).GetHumanReadableKeyCombo());
-                    buffer.Add(" when clicking the upgrade button to skip it once.</color>");
-                    ModalPopupData.CreateAndLogYesNoStyle( DoHack, null, "Are you sure", buffer.ToStringAndReturnToPool(), "Yes, Hack", "No, Do Not" );
+                    buffer.Add(" 同时点击升级按钮以跳过一次。</color>");
+                    ModalPopupData.CreateAndLogYesNoStyle( DoHack, null, "确定吗", buffer.ToStringAndReturnToPool(), "是，黑客", "不，不要" );
                 } else {
                     DoHack();
                 }
@@ -244,7 +244,7 @@ namespace Arcen.AIW2.External
                 T item = GetItemFromElement(this.Element, out bool found);
                 if (!found)
                 {
-                    Window_AtMouseTooltipPanelNarrow.bPanel.Instance.SetText( this.Element, "Null Target, this is a bug." );
+                    Window_AtMouseTooltipPanelNarrow.bPanel.Instance.SetText( this.Element, "空目标，这是一个错误。" );
                     return;
                 }
                 
@@ -292,7 +292,7 @@ namespace Arcen.AIW2.External
                 buffer.StartColor( "9cbad3" );
                 if ( eligibleTargets.Count > 0 )
                 {
-                    buffer.Add( eligibleTargets.Count > 1 ? "Will target one of: " : "Will target: " );
+                    buffer.Add( eligibleTargets.Count > 1 ? "将目标锁定其中之一： " : "将目标锁定： " );
                     int index = 0;
                     foreach ( SafeSquadWrapper wrap in eligibleTargets )
                     {

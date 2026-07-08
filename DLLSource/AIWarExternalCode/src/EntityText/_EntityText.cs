@@ -1115,13 +1115,13 @@ namespace Arcen.AIW2.External
                     {
                         var key = InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "HoldAndClickToViewDetailsOfContents" );
                         _buffer
-                            .Add("To view ")
+                            .Add("查看 ")
                             .Add( ShowClickForMoreInfoText, TextStyle.Brighter )
-                            .Add(" hold ")
+                            .Add("按住 ")
                             .AddVarReplace(TextVarMap.InputAction, key)
                             .Add("+")
                             .AddVarReplace(TextVarMap.InputAction, "Click")
-                            .Add(".");
+                            .Add("。");
                     }
                             
                     return;
@@ -1134,12 +1134,12 @@ namespace Arcen.AIW2.External
                         var key1 = InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "IncreaseShipAndPlanetTooltipDetailBy1_Key1" );
                         var key2 = InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "IncreaseShipAndPlanetTooltipDetailBy1_Key2" );
                         buffer
-                            .Add(" For ").Add("more detail", TextStyle.Brighter)//.Add(".");
-                            .Add(" hold one/both ")
+                            .Add("关于").Add("更多详情", TextStyle.Brighter)//.Add(".");
+                            .Add("按住一个/两个 ")
                             .AddVarReplace(TextVarMap.InputAction, key1)
-                            .Add("")
+                            .Add(" 或 ")
                             .AddVarReplace(TextVarMap.InputAction, key2)
-                            .Add(".");
+                            .Add("。");
                     }
 
                     return;

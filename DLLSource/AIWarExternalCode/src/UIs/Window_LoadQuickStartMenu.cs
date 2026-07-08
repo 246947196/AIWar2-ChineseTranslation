@@ -325,7 +325,7 @@ namespace Arcen.AIW2.External
 
                 if (this.Campaign.FromExpansion != null || this.Campaign.FromMod != null)
                 {
-                   buffer.Add("<pos=4><size=60%>from ");
+                   buffer.Add("<pos=4><size=60%>来自 ");
 
                     if (this.Campaign.FromExpansion != null)
                     {
@@ -459,13 +459,13 @@ namespace Arcen.AIW2.External
                     debugstage = 300;
                     
                     if (!string.IsNullOrEmpty(this.save.author))
-                        buffer.Add("<pos=4><size=80%>by " ).Add( this.save.author ).Add( "\n</size>" );
+                        buffer.Add("<pos=4><size=80%>作者： " ).Add( this.save.author ).Add( "\n</size>" );
 
                     debugstage = 400;
                     
                     if (this.save.DlcInUse.Count > 0 || this.save.ModInUse.Count > 0)
                     {
-                        buffer.Add("<pos=4><size=60%>uses ");
+                        buffer.Add("<pos=4><size=60%>使用 ");
 
                        debugstage = 500;
                         if ( this.save.DlcInUse.Count > 0)
@@ -501,7 +501,7 @@ namespace Arcen.AIW2.External
                                 debugstage = 820;
                                 buffer.Add( "<size=50%>");
                                 if (other == null)
-                                    buffer.Add("NULL");
+                                    buffer.Add("空");
                                 else
                                     buffer.Add( other.Abbreviation, other.ColorForDisplay );
 
@@ -824,7 +824,7 @@ namespace Arcen.AIW2.External
                     {
                         if (counter > 0)
                             buffer.Add(" | ", TextStyle.Color_Gray);
-                        buffer.Add("ironman", TextStyle.Get("OptIronman"));
+                        buffer.Add("铁人", TextStyle.Get("OptIronman"));
                         counter++;
                     }
                     

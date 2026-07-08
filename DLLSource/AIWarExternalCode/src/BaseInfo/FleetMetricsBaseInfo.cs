@@ -396,15 +396,15 @@ namespace Arcen.AIW2.External
             if ( ShipLinesDamageDealt.Count == 0 && ShipLinesDamageAbsorbed.Count == 0 && ShipLinesCCSecondsApplied.Count == 0
                  && ShipLinesKills.Count == 0 && ShipLinesLosses.Count == 0 )
             {
-                buffer.Add( "\nThis fleet has no Fleet Effectiveness data\n" );
+                buffer.Add( "\n此舰队无舰队效能数据\n" );
                 return;
             }
 
             Planet battlePlanet = lastMetricsPlanetIndex >= 0 ? World_AIW2.Instance.GetPlanetByIndex( (short)lastMetricsPlanetIndex ) : null;
-            buffer.Add( "<size=80%>Fleet Effectiveness for the battle" );
+            buffer.Add( "<size=80%>此战舰队效能" );
             if ( battlePlanet != null )
-                buffer.Add( " on " ).Add( battlePlanet.Name );
-            buffer.Add( ":</size>\n<size=70%><color=#999999><i>(ranked by combined damage output, durability, crowd control, and utility)</i></color></size>\n" );
+                buffer.Add( " 在 " ).Add( battlePlanet.Name );
+            buffer.Add( "：</size>\n<size=70%><color=#999999><i>（按综合伤害输出、耐久度、群体控制和实用性排名）</i></color></size>\n" );
 
             long totalDealt = 0, totalAbsorbed = 0, totalCC = 0, totalKills = 0, totalBonusDamage = 0, totalShieldBypass = 0;
             foreach ( KeyValuePair<GameEntityTypeData, long> kv in ShipLinesDamageDealt ) totalDealt += kv.Value;
@@ -497,14 +497,14 @@ namespace Arcen.AIW2.External
             foreach ( KeyValuePair<GameEntityTypeData, long> kv in ShipLinesDamageAbsorbed ) totalAbsorbedCheck += kv.Value;
             if ( totalDealt == 0 && totalAbsorbedCheck == 0 )
             {
-                buffer.Add( "No fleet effectiveness data yet 鈥?engage some enemies first.\n" );
+                buffer.Add( "尚无舰队效能数据...\n" );
                 buffer.Add( "</size>" );
                 return;
             }
 
             if ( totalDealt > 0 )
             {
-                buffer.Add( "Percent of damage done by ship lines:\n" );
+                buffer.Add( "各舰种造成伤害百分比：\n" );
                 List<GameEntityTypeData> dealtTypes = sortedMetricsTypes;
                 dealtTypes.Clear();
                 foreach ( KeyValuePair<GameEntityTypeData, long> kv in ShipLinesDamageDealt ) dealtTypes.Add( kv.Key );
@@ -535,7 +535,7 @@ namespace Arcen.AIW2.External
             long totalAbsorbed = totalAbsorbedCheck;
             if ( totalAbsorbed > 0 )
             {
-                buffer.Add( "\nPercent of damage absorbed by ship lines:\n" );
+                buffer.Add( "\n各舰种承受伤害百分比：\n" );
                 List<GameEntityTypeData> absorbedTypes = sortedMetricsTypes;
                 absorbedTypes.Clear();
                 foreach ( KeyValuePair<GameEntityTypeData, long> kv in ShipLinesDamageAbsorbed ) absorbedTypes.Add( kv.Key );
@@ -563,11 +563,11 @@ namespace Arcen.AIW2.External
                 }
             }
 
-            buffer.Add( "\n<color=#d18444>Hold <color=#996f4c>" )
+            buffer.Add( "\n<color=#d18444>按住 <color=#996f4c>" )
                   .Add( InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "IncreaseShipAndPlanetTooltipDetailBy1_Key1" ) )
                   .Add( "</color> + <color=#996f4c>" )
                   .Add( InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "IncreaseShipAndPlanetTooltipDetailBy1_Key2" ) )
-                  .Add( "</color> to see more data.</color>" );
+                  .Add( "</color> 查看更多数据。</color>" );
             buffer.Add( "</size>" );
         }
 
@@ -582,7 +582,7 @@ namespace Arcen.AIW2.External
             foreach ( KeyValuePair<GameEntityTypeData, long> kv in EnemyTypesDamageReceivedFrom ) totalReceivedFrom += kv.Value;
             if ( totalReceivedFrom > 0 )
             {
-                buffer.Add( "Damage dealt to us by enemy type:\n" );
+                buffer.Add( "敌方类型对我们造成的伤害：\n" );
                 List<GameEntityTypeData> receivedTypes = sortedMetricsTypes;
                 receivedTypes.Clear();
                 foreach ( KeyValuePair<GameEntityTypeData, long> kv in EnemyTypesDamageReceivedFrom ) receivedTypes.Add( kv.Key );
@@ -604,7 +604,7 @@ namespace Arcen.AIW2.External
                         continue;
                     if ( receivedShown >= 15 )
                     {
-                        buffer.Add( "  ...and " + (receivedTypes.Count - i) + " more\n" );
+                        buffer.Add( "  ...以及 " + (receivedTypes.Count - i) + " 个更多\n" );
                         break;
                     }
                     int pct = (int)(received * 100 / totalReceivedFrom);
@@ -621,7 +621,7 @@ namespace Arcen.AIW2.External
             foreach ( KeyValuePair<GameEntityTypeData, long> kv in EnemyTypesDamageDealtTo ) totalDealtTo += kv.Value;
             if ( totalDealtTo > 0 )
             {
-                buffer.Add( "\nDamage absorbed by enemy types:\n" );
+                buffer.Add( "\n敌方类型承受的伤害：\n" );
                 List<GameEntityTypeData> dealtToTypes = sortedMetricsTypes;
                 dealtToTypes.Clear();
                 foreach ( KeyValuePair<GameEntityTypeData, long> kv in EnemyTypesDamageDealtTo ) dealtToTypes.Add( kv.Key );
@@ -643,7 +643,7 @@ namespace Arcen.AIW2.External
                         continue;
                     if ( dealtShown >= 15 )
                     {
-                        buffer.Add( "  ...and " + (dealtToTypes.Count - i) + " more\n" );
+                        buffer.Add( "  ...以及 " + (dealtToTypes.Count - i) + " 个更多\n" );
                         break;
                     }
                     int pct = (int)(dealtTo * 100 / totalDealtTo);
@@ -657,7 +657,7 @@ namespace Arcen.AIW2.External
             }
 
             if ( totalReceivedFrom == 0 && totalDealtTo == 0 )
-                buffer.Add( "No enemy engagement data for this battle yet.\n" );
+                buffer.Add( "此战尚无交战数据。\n" );
 
             buffer.Add( "</size>" );
         }
@@ -747,7 +747,7 @@ namespace Arcen.AIW2.External
             {
                 int pct = totalDealt > 0 ? (int)(dealt * 100 / totalDealt) : 0;
                 UnityEngine.Color pctColor = EntityText.GetProportionalStrengthColor( pct / 100f );
-                buffer.Add( "\t\t" ).Add( "Dmg dealt:".PadRight( MetricsLabelWidth ), "ff6666" ).Add( (pct.ToString() + "%").PadLeft( MetricsPctWidth ) + " ", pctColor );
+                buffer.Add( "\t\t" ).Add( "造成伤害：".PadRight( MetricsLabelWidth ), "ff6666" ).Add( (pct.ToString() + "%").PadLeft( MetricsPctWidth ) + " ", pctColor );
                 //ArcenExternalUIUtilities.AppendBar( buffer, pct, pctColor ); // disabled in verbose mode
                 if ( composition != null )
                 {
@@ -755,15 +755,15 @@ namespace Arcen.AIW2.External
                     if ( strength > 0 )
                     {
                         long dmgPerStr = dealt / strength;
-                        buffer.Add( "  (" + AbbreviateNumber( dmgPerStr ) + "/str)", GetDamagePerStrengthColor( dmgPerStr ) );
+                        buffer.Add( "  (" + AbbreviateNumber( dmgPerStr ) + "/强度)", GetDamagePerStrengthColor( dmgPerStr ) );
                     }
                 }
                 if ( dealtVsMobile > 0 || dealtVsImmobile > 0 )
                 {
                     int mobilePct    = dealt > 0 ? (int)(dealtVsMobile    * 100 / dealt) : 0;
                     int immobilePct  = dealt > 0 ? (int)(dealtVsImmobile  * 100 / dealt) : 0;
-                    buffer.Add( "  " ).Add( mobilePct.ToString() + "%ship", "88ddff" )
-                          .Add( " / " ).Add( immobilePct.ToString() + "%bldg", "ffcc88" );
+                    buffer.Add( "  " ).Add( mobilePct.ToString() + "%舰", "88ddff" )
+                          .Add( " / " ).Add( immobilePct.ToString() + "%建", "ffcc88" );
                 }
                 buffer.Add( "\n" );
             }
@@ -771,12 +771,12 @@ namespace Arcen.AIW2.External
             {
                 int pct = totalAbsorbed > 0 ? (int)(absorbed * 100 / totalAbsorbed) : 0;
                 UnityEngine.Color pctColor = EntityText.GetProportionalStrengthColor( pct / 100f );
-                buffer.Add( "\t\t" ).Add( "Dmg absorbed:".PadRight( MetricsLabelWidthWide ), "6699ff" ).Add( (pct.ToString() + "%").PadLeft( MetricsPctWidth ) + " ", pctColor );
+                buffer.Add( "\t\t" ).Add( "承受伤害：".PadRight( MetricsLabelWidthWide ), "6699ff" ).Add( (pct.ToString() + "%").PadLeft( MetricsPctWidth ) + " ", pctColor );
                 if ( shieldAbsorbed > 0 )
                 {
                     int shieldPct = (int)(shieldAbsorbed * 100 / absorbed);
                     int hullPct   = 100 - shieldPct;
-                    buffer.Add( "  (" + shieldPct + "%shld / " + hullPct + "%hull)", "aaccff" );
+                    buffer.Add( "  (" + shieldPct + "%盾 / " + hullPct + "%体)", "aaccff" );
                 }
                 buffer.Add( "\n" );
             }
@@ -784,15 +784,15 @@ namespace Arcen.AIW2.External
             {
                 int pct = totalCC > 0 ? (int)(cc * 100 / totalCC) : 0;
                 UnityEngine.Color pctColor = EntityText.GetProportionalStrengthColor( pct / 100f );
-                buffer.Add( "\t\t" ).Add( "CC seconds:".PadRight( MetricsLabelWidth ), "cc99ff" ).Add( (pct.ToString() + "%").PadLeft( MetricsPctWidth ) + " ", pctColor );
+                buffer.Add( "\t\t" ).Add( "控制秒数：".PadRight( MetricsLabelWidth ), "cc99ff" ).Add( (pct.ToString() + "%").PadLeft( MetricsPctWidth ) + " ", pctColor );
                 buffer.Add( "  " ).Add( AbbreviateNumber( cc ), pctColor ).Add( "\n" );
             }
             if ( modTriggered > 0 )
-                buffer.Add( "\t\t" ).Add( "Bonus Damage: ", "ffcc66" ).Add( AbbreviateNumber( modTriggered ) + "x", "ffcc66" ).Add( "\n" );
+                buffer.Add( "\t\t" ).Add( "增益伤害： ", "ffcc66" ).Add( AbbreviateNumber( modTriggered ) + "x", "ffcc66" ).Add( "\n" );
             if ( negModTriggered > 0 )
-                buffer.Add( "\t\t" ).Add( "Reduced Damage: ", "cc8833" ).Add( AbbreviateNumber( negModTriggered ) + "x", "cc8833" ).Add( "\n" );
+                buffer.Add( "\t\t" ).Add( "减免伤害： ", "cc8833" ).Add( AbbreviateNumber( negModTriggered ) + "x", "cc8833" ).Add( "\n" );
             if ( shieldBypass > 0 )
-                buffer.Add( "\t\t" ).Add( "Shield Bypass: ", "88eeff" ).Add( AbbreviateNumber( shieldBypass ), "88eeff" ).Add( "\n" );
+                buffer.Add( "\t\t" ).Add( "护盾穿透： ", "88eeff" ).Add( AbbreviateNumber( shieldBypass ), "88eeff" ).Add( "\n" );
 
             int linesCount = 1; // header line (ship name)
             if ( dealt > 0 ) linesCount++;
@@ -808,15 +808,15 @@ namespace Arcen.AIW2.External
                 buffer.Add( "\t\t" );
                 if ( kills > 0 )
                 {
-                    buffer.Add( "Kills: ", "a1ffa1" ).Add( AbbreviateNumber( kills ), "a1ffa1" );
+                    buffer.Add( "击杀： ", "a1ffa1" ).Add( AbbreviateNumber( kills ), "a1ffa1" );
                     if ( overkill > 0 )
-                        buffer.Add( "  Overkill: ", "88cc88" ).Add( AbbreviateNumber( overkill ), "88cc88" );
+                        buffer.Add( "  过量击杀： ", "88cc88" ).Add( AbbreviateNumber( overkill ), "88cc88" );
                 }
                 if ( kills > 0 && losses > 0 )
                     buffer.Add( "  " );
                 if ( losses > 0 )
                 {
-                    buffer.Add( "Losses: ", "ffa1a1" ).Add( AbbreviateNumber( losses ), "ffa1a1" );
+                    buffer.Add( "损失： ", "ffa1a1" ).Add( AbbreviateNumber( losses ), "ffa1a1" );
                     if ( lossesMetal > 0 )
                         buffer.Add( " (" ).Add( AbbreviateNumber( lossesMetal ), ArcenExternalUIUtilities.MetalTextColor )
                             .Add( ArcenExternalUIUtilities.MetalTextColorAndIcon ).Add( ")" );
@@ -825,7 +825,7 @@ namespace Arcen.AIW2.External
                 {
                     if ( kills > 0 || losses > 0 )
                         buffer.Add( "  " );
-                    buffer.Add( "Metabolized: ", ArcenExternalUIUtilities.MetalTextColor )
+                    buffer.Add( "代谢： ", ArcenExternalUIUtilities.MetalTextColor )
                           .Add( AbbreviateNumber( metalMetabolized ), ArcenExternalUIUtilities.MetalTextColor )
                           .Add( ArcenExternalUIUtilities.MetalTextColorAndIcon );
                 }

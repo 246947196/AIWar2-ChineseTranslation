@@ -1,4 +1,4 @@
-using Arcen.AIW2.Core;
+﻿using Arcen.AIW2.Core;
 using System;
 
 using System.Text;
@@ -83,7 +83,7 @@ namespace Arcen.AIW2.External
             int numberOfTimesHacked = this.GetNumberOfTimesHacked( target, hackingType );
             int maxTimesHacked = this.GetNumberOfTimesCanBeHacked( target, hackingType );
 
-            buffer.Add( "\n<color=#96afe0>Hacked " ).Add( numberOfTimesHacked ).Add( " out of " ).Add( maxTimesHacked ).Add( " possible times.</color>" );
+            buffer.Add( "\n<color=#96afe0>已黑客 " ).Add( numberOfTimesHacked ).Add( " / " ).Add( maxTimesHacked ).Add( " 次。</color>" );
 
             return buffer.GetStringAndResetForNextUpdate();
         }
@@ -162,7 +162,7 @@ namespace Arcen.AIW2.External
             buffer.StartColor( "9cbad3" );
             if ( eligibleTargets.Count > 0 )
             {
-                buffer.Add( eligibleTargets.Count > 1 ? "Will target one of: " : "Will target: " );
+                buffer.Add( eligibleTargets.Count > 1 ? "将目标锁定其中之一： " : "将目标锁定： " );
                 int index = 0;
                 foreach ( SafeSquadWrapper wrap in eligibleTargets )
                 {
@@ -179,14 +179,14 @@ namespace Arcen.AIW2.External
                 buffer.Add( "." );
                 if ( eligibleTargets.Count > 1 )
                 {
-                    buffer.Add( "  You will be able to choose your target after initiating the hack." );
+                    buffer.Add( "  你可以在发起黑客后选择目标。" );
                     if ( minCost.IntValue != maxCost.IntValue )
-                        buffer.Add( "  The costs in hacking points vary from " ).Add( minCost.IntValue ).Add( " to " ).Add( maxCost.IntValue ).Add( " depending on your choice." );
+                        buffer.Add( "  黑客点成本从 " ).Add( minCost.IntValue ).Add( " 到 " ).Add( maxCost.IntValue ).Add( "，取决于你的选择。" );
                 }
             }
             else
             {
-                buffer.Add( "Huh!  No eligible targets on " ).Add( (plan == null ? "null" : plan.Name) ).Add( "?  This is almost certainly a bug.  " );
+                buffer.Add( "嗯！在 " ).Add( (plan == null ? "null" : plan.Name) ).Add( " 上没有符合条件的目标？这几乎肯定是一个错误。  " );
             }
             buffer.EndColor();
 
@@ -306,9 +306,9 @@ namespace Arcen.AIW2.External
                     GameEntity_Squad hacker = HackingUtils.GetPreferredHacker( Info.TargetShip, Info.HackingType, Info.TargetPlanet, true );
                     if ( Engine_Universal.CurrentPopups.Count > 0 ) //we got some sort of warning telling us we can't do this
                         return MouseHandlingResult.PlayClickDeniedSound;
-                    ModalPopupData.CreateAndLogYesNoStyle( DoHack, null, "Are you sure", "Are you sure you would like to do the hack " + Info.HackingType.DisplayName +
-                        " for " + target.GetTypeDisplayNameSafe() + "?\n \n" + "<color=#888888>To disable this prompt, go into Game Settings, under the Game tab, and toggle this to OFF.  Or just hold down " +
-                        InputActionTypeDataTable.GetActionByName_FairlySlow( "SuppressTechUpgradePrompt" ).GetHumanReadableKeyCombo() + " when clicking the upgrade button to skip it once.</color>", "Yes, Hack", "No, Do Not" );
+                    ModalPopupData.CreateAndLogYesNoStyle( DoHack, null, "确定吗", "你确定要对 " + target.GetTypeDisplayNameSafe() + " 执行黑客 " + Info.HackingType.DisplayName +
+                        " 吗？\n \n" + "<color=#888888>要禁用此提示，请进入游戏设置，在游戏选项卡下将其关闭。或者按住 " +
+                        InputActionTypeDataTable.GetActionByName_FairlySlow( "SuppressTechUpgradePrompt" ).GetHumanReadableKeyCombo() + " 同时点击升级按钮以跳过一次。</color>", "是，黑客", "不，不要" );
                 }
                 else
                     DoHack();
@@ -349,12 +349,12 @@ namespace Arcen.AIW2.External
             {
                 GameEntity_Squad target = GetTargetFromElement( this.Element );
                 if ( target == null )
-                    Window_AtMouseTooltipPanelNarrow.bPanel.Instance.SetText( this.Element, "Null Target, this is a bug." );
+                    Window_AtMouseTooltipPanelNarrow.bPanel.Instance.SetText( this.Element, "空目标，这是一个错误。" );
                 else
                 {
                     Faction localFaction = World_AIW2.Instance.GetPlayerFactionForUIOrNull();
 
-                    tooltipBuffer.Add( "<b><u>Hack: " ).Add( Info.HackingType.DisplayName ).Add( "</u></b>\n" );
+                    tooltipBuffer.Add( "<b><u>黑客： " ).Add( Info.HackingType.DisplayName ).Add( "</u></b>\n" );
 
                     if ( LastSubItemDropdownWriter != null )
                         LastSubItemDropdownWriter( tooltipBuffer, target, Info.HackFaction, Info.HackingType );
@@ -363,13 +363,13 @@ namespace Arcen.AIW2.External
                         target.GetFactionOrNull_Safe(), target.CurrentMarkLevel, FromSidebarType.NonSidebar_SingleUnit, ShipExtraDetailFlags.None, 1f, false );
 
                     if ( !this.GetCanHackForThisItem( target ) )
-                        tooltipBuffer.Add( "\n\n<color=#c74639>Cannot choose this option: " + this.lastRejectionReason + ".\n</color>" );
+                        tooltipBuffer.Add( "\n\n<color=#c74639>无法选择该选项： " + this.lastRejectionReason + "。\n</color>" );
                     else
                     {
                         if ( GameSettings.Current.GetBoolBySetting( "UpgradeShipPrompt" ) )
                         {
-                            tooltipBuffer.Add( "\n\n<color=#3f6c9e>Hold </color><color=#4486d1>" ).Add( InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "SuppressTechUpgradePrompt" ) )
-                                .Add( "</color> <color=#3f6c9e>to suppress the 'Are you sure' prompt for a given hack.</color>  " );
+                            tooltipBuffer.Add( "\n\n<color=#3f6c9e>按住 </color><color=#4486d1>" ).Add( InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "SuppressTechUpgradePrompt" ) )
+                                .Add( "</color> <color=#3f6c9e>以跳过确认提示。</color>  " );
                         }
                     }
 

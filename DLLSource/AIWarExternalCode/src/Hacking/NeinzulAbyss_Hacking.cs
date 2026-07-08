@@ -435,7 +435,7 @@ namespace Arcen.AIW2.External
 
                 if ( !this.GetCanHackForThisItem( upgrade ) )
                 {
-                    Buffer.Add( "<color=#c74639>Not Possible:</color> " );
+Buffer.Add( "<color=#c74639>不可行：</color> " );
                 }
                 
                 GameEntityTypeData typeData = upgrade.RelatedShip;
@@ -486,9 +486,9 @@ namespace Arcen.AIW2.External
                     GameEntity_Squad hacker = HackingUtils.GetPreferredHacker( Info.TargetShip, Info.HackingType, Info.TargetPlanet, true );
                     if ( Engine_Universal.CurrentPopups.Count > 0 ) //we got some sort of warning telling us we can't do this
                         return MouseHandlingResult.PlayClickDeniedSound;
-                    ModalPopupData.CreateAndLogYesNoStyle( DoHack, null, "Are you sure", "Are you sure you would like to do the hack " + Info.HackingType.DisplayName +
-                         " for " + upgrade.DisplayName + "?\n \n" + "<color=#888888>To disable this prompt, go into Game Settings, under the Game tab, and toggle this to OFF.  Or just hold down " +
-                         InputActionTypeDataTable.GetActionByName_FairlySlow( "SuppressTechUpgradePrompt" ).GetHumanReadableKeyCombo() + " when clicking the upgrade button to skip it once.</color>", "Yes, Hack", "No, Do Not" );
+                    ModalPopupData.CreateAndLogYesNoStyle( DoHack, null, "确定吗", "你确定要对 " + upgrade.DisplayName + " 执行黑客 " + Info.HackingType.DisplayName +
+                         " 吗？\n \n" + "<color=#888888>要禁用此提示，请进入游戏设置，在游戏选项卡下将其关闭。或者按住 " +
+                         InputActionTypeDataTable.GetActionByName_FairlySlow( "SuppressTechUpgradePrompt" ).GetHumanReadableKeyCombo() + " 同时点击升级按钮以跳过一次。</color>", "是，黑客", "不，不要" );
                  }
                  else
                      DoHack();
@@ -615,12 +615,12 @@ namespace Arcen.AIW2.External
                         debugCode = 200;
                         Faction localFaction = World_AIW2.Instance.GetPlayerFactionForUIOrNull();
                         debugCode = 300;
-                        tooltipBuffer.Add( "<b><u>Hack: " ).Add( Info.HackingType.DisplayName ).Add( "</u></b>\n" );
-                        tooltipBuffer.Add("This upgrade will allow you to transform any flagship of a suitable mark level into a  ").Add(upgrade.RelatedShip.GetDisplayName(), "a1ffa1").Add(" by spending Essence.\n");
+                        tooltipBuffer.Add( "<b><u>黑客： " ).Add( Info.HackingType.DisplayName ).Add( "</u></b>\n" );
+                        tooltipBuffer.Add("此升级允许你将任何合适标记等级的旗舰转变为 ").Add(upgrade.RelatedShip.GetDisplayName(), "a1ffa1").Add("，消耗精华。\n");
 
                         if ( upgrade.MinFlagshipLevel  > 1 )
                         {
-                            tooltipBuffer.Add("\n\n").Add("This upgrade is only available to a flagship at mark ").Add( upgrade.MinFlagshipLevel, "ffa1a1" ).Add(" or above.\n");
+                            tooltipBuffer.Add("\n\n").Add("此升级仅适用于标记等级为 ").Add( upgrade.MinFlagshipLevel, "ffa1a1" ).Add(" 或以上的旗舰。\n");
                         }
                         debugCode = 400;
                         if ( !this.GetCanHackForThisItem( upgrade ) )
@@ -648,13 +648,13 @@ namespace Arcen.AIW2.External
                         }
                         debugCode = 800;
                         if ( !this.GetCanHackForThisItem( upgrade ) )
-                            tooltipBuffer.Add( "\n\n<color=#c74639>Cannot choose this option: " + this.lastRejectionReason + ".</color>" );
+                            tooltipBuffer.Add( "\n\n<color=#c74639>无法选择该选项： " + this.lastRejectionReason + "。</color>" );
                         else
                         {
                             if ( GameSettings.Current.GetBoolBySetting( "UpgradeShipPrompt" ) )
                             {
-                                tooltipBuffer.Add( "\n\n<color=#3f6c9e>Hold </color><color=#4486d1>" ).Add( InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "SuppressTechUpgradePrompt" ) )
-                                    .Add( "</color> <color=#3f6c9e>to suppress the 'Are you sure' prompt for a given hack.</color>  " );
+                                tooltipBuffer.Add( "\n\n<color=#3f6c9e>按住 </color><color=#4486d1>" ).Add( InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "SuppressTechUpgradePrompt" ) )
+                                    .Add( "</color> <color=#3f6c9e>以跳过确认提示。</color>  " );
                             }
                         }
 
@@ -730,7 +730,7 @@ namespace Arcen.AIW2.External
         }
         public override void GetTooltipForTarget(ArcenCharacterBufferBase buffer, GameEntity_Squad target, Planet planet, HackingType Type)
         {
-            buffer.Add("\nIn particular, this hack will transform <color=#a1ffa1>" + target.TypeData.GetDisplayName() + "</color>.");
+            buffer.Add("\n此黑客将转变 <color=#a1ffa1>" + target.TypeData.GetDisplayName() + "</color>。");
             Faction localFaction = World_AIW2.Instance.GetLocalPlayerFactionOrNull();
             DLC3GameEntityTypeDataExtension Target_DLC3TypeData = target.TypeData.TryGetDataExtensionAs<DLC3GameEntityTypeDataExtension>( "DLC3" );
             GameEntityTypeData transformedUnit = GameEntityTypeDataTable.Instance.GetRowByNameOrNullIfNotFound( Target_DLC3TypeData?.NameForElderlingTransformation );
@@ -738,12 +738,12 @@ namespace Arcen.AIW2.External
             NecromancerUpgrade upgrade = transformedUnit_DLC3TypeData?.NecromancerUpgradeToGrantOnDeath;
             if (upgrade != null && upgrade.Type == NecromancerUpgradeType.ClaimBlueprints) {
                 buffer.Add("\n");
-                buffer.Add("When the transformed elderling is killed, ");
+                buffer.Add("当转变后的长老被击杀时，");
                 if (transformedUnit.AIPOnDeath > 0) {
-                    buffer.Add( "AI Progress (AIP) will <color=#ffdf72>rise by " ).Add( transformedUnit.AIPOnDeath ).Add( "</color> and " );
+                    buffer.Add( "AI 进度 (AIP) 将<color=#ffdf72>增加 " ).Add( transformedUnit.AIPOnDeath ).Add( "</color>，且" );
                 }
-                buffer.Add("you will be able to transform any flagship of mark level ").Add(upgrade.MinFlagshipLevel);
-                buffer.Add(" into a ").Add(upgrade.RelatedShip.GetDisplayName(), "a1ffa1").Add(" by spending hacking and Essence.");
+                buffer.Add("你将能够转变任何标记等级为 ").Add(upgrade.MinFlagshipLevel);
+                buffer.Add(" 的旗舰为 ").Add(upgrade.RelatedShip.GetDisplayName(), "a1ffa1").Add("，消耗黑客点和精华。");
                 buffer.Add("\n\n");
                 EntityText.GetTooltip( buffer, null, null, upgrade.RelatedShip, 1,
                         localFaction, (byte)upgrade.MinFlagshipLevel, FromSidebarType.Sidebar_MultipleUnits,
@@ -917,7 +917,7 @@ namespace Arcen.AIW2.External
         }
         public override void GetTooltipForTarget(ArcenCharacterBufferBase buffer, GameEntity_Squad target, Planet planet, HackingType Type)
         {
-            buffer.Add("\nIn particular, this hack will track <color=#a1ffa1>" + target.TypeData.GetDisplayName() + "</color>.");
+            buffer.Add("\n此黑客将追踪 <color=#a1ffa1>" + target.TypeData.GetDisplayName() + "</color>。");
         }
         public override void DoOneSecondOfHackingLogic_HackSpecificLogic( GameEntity_Squad Target, Planet planet, GameEntity_Squad Hacker, ArcenHostOnlySimContext Context, HackingType type, HackingEvent Event )
         {
@@ -1023,17 +1023,17 @@ namespace Arcen.AIW2.External
                     if (hapShort || essShort)
                     {
                         var buffer = this.Buffer;
-                        buffer.Add("Not enough ");
-                            
-                        if (hapShort)
-                            buffer.StartHacking(false).Add("Hacking").EndColor();
-                                
-                        if (essShort)
-                        {
-                            if (hapShort)
-                                buffer.Add(" or ");
-                            buffer.StartResourceOne(false).Add("Essence").EndColor();
-                        }
+buffer.Add("不足 ");
+                             
+                         if (hapShort)
+                             buffer.StartHacking(false).Add("黑客点").EndColor();
+                                 
+                         if (essShort)
+                         {
+                             if (hapShort)
+                                 buffer.Add(" 或 ");
+                             buffer.StartResourceOne(false).Add("精华").EndColor();
+                         }
                         
                         rejectionReason =  buffer.ToString();
                         
@@ -1065,7 +1065,7 @@ namespace Arcen.AIW2.External
             if ( upgrade.Type == NecromancerUpgradeType.IncreaseSkeletonCap ||
                  upgrade.Type == NecromancerUpgradeType.IncreaseWightCap )
             {
-                Buffer.Add( " for Fleet" );
+                Buffer.Add( " 为舰队" );
             }
         }
         public override void GetExtraLabelInfoForItem(ArcenCharacterBufferBase Buffer, NecromancerUpgrade upgrade, GameEntity_Squad Target, Planet planet, HackingType HackType)
@@ -1105,30 +1105,30 @@ namespace Arcen.AIW2.External
                 }
                 if ( upgrade.Type == NecromancerUpgradeType.GrantEssence )
                 {
-                    buffer.Add("This upgrade will harvest ").Add( localFaction != null && localFaction.Resource1TextColorAndIcon.Length > 0 ? localFaction.Resource1TextColorAndIcon : World_AIW2.Instance.Resource1TextColorAndIcon ).Add(" ").Add( upgrade.RelatedResource ).Add(" Essence from the Rift; it will allow you to build or upgrade a Necropolis, or upgrade a flagship.\n");
+                    buffer.Add("此升级将从裂隙中收集 ").Add( localFaction != null && localFaction.Resource1TextColorAndIcon.Length > 0 ? localFaction.Resource1TextColorAndIcon : World_AIW2.Instance.Resource1TextColorAndIcon ).Add(" ").Add( upgrade.RelatedResource ).Add(" 精华；它将允许你建造或升级亡者之城，或升级旗舰。\n");
                 }
                 else if ( upgrade.Type == NecromancerUpgradeType.UnlockSkeletonType ||
                         upgrade.Type == NecromancerUpgradeType.UnlockWightType ||
                         upgrade.Type == NecromancerUpgradeType.UnlockMummyType )
                 {
                     debugCode = 310;
-                    buffer.Add("This upgrade will grant the ability to build ").Add( upgrade.CapIncrease, "ffa1a1" ).Add(" additional ").Add(upgrade.ShipForCapIncrease.GetDisplayName() ).Add( " at any necropolis. This will allow the flagship for that necropolis to acquire ").Add(upgrade.RelatedShip.GetDisplayName(), "a1ffa1").Add(" when you kill suitable enemies");
+                    buffer.Add("此升级将允许在任何亡者之城额外建造 ").Add( upgrade.CapIncrease, "ffa1a1" ).Add(" 艘 ").Add(upgrade.ShipForCapIncrease.GetDisplayName() ).Add( "。这将使该亡者之城的旗舰能够在击杀合适敌人时获取 ").Add(upgrade.RelatedShip.GetDisplayName(), "a1ffa1");
                     if ( upgrade.GalaxyCapIncrease != 0 )
-                        buffer.Add( " and increases the galaxy-wide cap by " ).Add( upgrade.GalaxyCapIncrease, "ffa1a1" );
-                    buffer.Add(".\n");
+                        buffer.Add( "，并增加全银河上限 ").Add( upgrade.GalaxyCapIncrease, "ffa1a1" );
+                    buffer.Add("。\n");
                     if ( upgradeCount > 0 )
                     {
                         string attempts = "time";
                         if ( upgradeCount > 1 )
                             attempts = "times";
-                        buffer.Add("\n<size=90%>\nYou have already unlocked this upgrade ").Add( upgradeCount, "a1a1ff" ).Add(" " + attempts + ". Unlocking something multiple times means you can build more ").Add( upgrade.ShipForCapIncrease.GetDisplayName() ).Add("s per Necropolis, which can be handy.\n</size>");
+                        buffer.Add("\n<size=90%>\n你已经解锁此升级 ").Add( upgradeCount, "a1a1ff" ).Add(" 次。多次解锁意味着你可以在每个亡者之城建造更多 ").Add( upgrade.ShipForCapIncrease.GetDisplayName() ).Add("，这很有用。\n</size>");
                     }
                     // TODO: Mention bodyguards
                 }
                 else if ( upgrade.Type == NecromancerUpgradeType.UnlockNewShip )
                 {
                     debugCode = 320;
-                    buffer.Add("This upgrade will grant the ability to build ").Add( upgrade.CapIncrease, "ffa1a1" ).Add(" additional ").Add(upgrade.ShipForCapIncrease.GetDisplayName() ).Add(" at any necropolis. The flagship of that necropolis will then be able to build ").Add(upgrade.RelatedShip.GetDisplayName(), "a1ffa1").Add(" at any necromancer shipyard");
+                    buffer.Add("此升级将允许在任何亡者之城额外建造 ").Add( upgrade.CapIncrease, "ffa1a1" ).Add(" 艘 ").Add(upgrade.ShipForCapIncrease.GetDisplayName() ).Add("。该亡者之城的旗舰随后将能在任何死灵法师船坞建造 ").Add(upgrade.RelatedShip.GetDisplayName(), "a1ffa1");
                     if ( upgrade.GalaxyCapIncrease != 0 )
                         buffer.Add( " and increases the galaxy-wide cap by " ).Add( upgrade.GalaxyCapIncrease, "ffa1a1" );
                     buffer.Add(".\n");
@@ -1138,33 +1138,33 @@ namespace Arcen.AIW2.External
                         if ( upgradeCount > 1 )
                             attempts = "times";
 
-                        buffer.Add("<size=90%>\nYou have already unlocked this upgrade ").Add( upgradeCount, "a1a1ff" ).Add(" " + attempts + ". Unlocking something multiple times means you can build more ").Add( upgrade.ShipForCapIncrease.GetDisplayName() ).Add("s per Necropolis, which can be handy.\n</size>");
+                        buffer.Add("<size=90%>\n你已经解锁此升级 ").Add( upgradeCount, "a1a1ff" ).Add(" 次。多次解锁意味着你可以在每个亡者之城建造更多 ").Add( upgrade.ShipForCapIncrease.GetDisplayName() ).Add("，这很有用。\n</size>");
                     }
 
                 }
                 else if ( upgrade.Type == NecromancerUpgradeType.IncreaseSkeletonCap || upgrade.Type == NecromancerUpgradeType.IncreaseWightCap )
                 {
                     debugCode = 330;
-                    buffer.Add("This upgrade will increase the ship cap for every line of ").Add(upgrade.ShipForCapIncrease.GetDisplayName(), "a1ffa1").Add(" by " ).Add( upgrade.CapIncrease, "a1ffa1" ).Add(" for ONLY this flagship.\n");
+                    buffer.Add("此升级将增加每类 ").Add(upgrade.ShipForCapIncrease.GetDisplayName(), "a1ffa1").Add(" 的舰船上限 " ).Add( upgrade.CapIncrease, "a1ffa1" ).Add("，仅限此旗舰。\n");
                 }
                 else if ( upgrade.Type == NecromancerUpgradeType.IncreaseSkeletonSoftCap )
                 {
                     debugCode = 330;
-                    buffer.Add("This upgrade will increase the soft cap for skeletons by ").Add( upgrade.CapIncrease, "a1ffa1" ).Add(" for this flagship.\n");
+                    buffer.Add("此升级将增加此旗舰的骷髅软上限 ").Add( upgrade.CapIncrease, "a1ffa1" ).Add("。\n");
                 }
                 else if ( upgrade.Type == NecromancerUpgradeType.IncreaseWightSoftCap )
                 {
                     debugCode = 340;
-                    buffer.Add("This upgrade will increase the soft cap for wights by ").Add( upgrade.CapIncrease, "a1ffa1" ).Add(" for this flagship.\n");
+                    buffer.Add("此升级将增加此旗舰的怨灵软上限 ").Add( upgrade.CapIncrease, "a1ffa1" ).Add("。\n");
                 }
                 else if ( upgrade.Type == NecromancerUpgradeType.ClaimBlueprints )
                 {
                     debugCode = 340;
-                    buffer.Add("This upgrade will allow you to transform any flagship of a suitable mark level into a  ").AddShipIconNameShort(upgrade.RelatedShip).Add(" by spending Essence harvested from a Rift.\n");
+                    buffer.Add("此升级允许你转变任何合适标记等级的旗舰为 ").AddShipIconNameShort(upgrade.RelatedShip).Add("，消耗从裂隙中收集的精华。\n");
                 }
                 else
                 {
-                    buffer.Add("Unknown upgrade\n");
+                    buffer.Add("未知升级\n");
                 }
                 
                 int count = 0;
@@ -1172,18 +1172,18 @@ namespace Arcen.AIW2.External
                 {
                     if (count == 0) buffer.Pad();
                     count++;
-                    Buffer.Add("This upgrade is only available to a flagship at mark ").Add( upgrade.MinFlagshipLevel, "ffa1a1" ).Add(" or above.\n");
+                    Buffer.Add("此升级仅适用于标记等级为 ").Add( upgrade.MinFlagshipLevel, "ffa1a1" ).Add(" 或以上的旗舰。\n");
                 }
                 if ( upgrade.MustHaveAnyNecropolisAtThisLevel > 1 )
                 {
                     if (count == 0) buffer.Pad();
                     count++;
-                    buffer.Add("This upgrade is only available to a necropolis at mark ").Add( upgrade.MustHaveAnyNecropolisAtThisLevel, "ffa1a1" ).Add(" or above.\n");
+                    buffer.Add("此升级仅适用于标记等级为 ").Add( upgrade.MustHaveAnyNecropolisAtThisLevel, "ffa1a1" ).Add(" 或以上的亡者之城。\n");
                 }
 
                 if ( upgrade.AdditionalAIPCost > 0 || upgrade.AdditionalEssenceCost > 0 || upgrade.AdditionalHapCost > 0)
                 {
-                    buffer.Pad().NewLineIfNeeded().Add("This hack costs ");
+                    buffer.Pad().NewLineIfNeeded().Add("此黑客花费 ");
                     
                     int counter = 0;
                     if ( upgrade.AdditionalAIPCost > 0 )

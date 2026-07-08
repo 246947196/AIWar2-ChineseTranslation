@@ -19,34 +19,34 @@ namespace Arcen.AIW2.External
             Faction fallenSpireFaction = FactionUtilityMethods.Instance.GetFallenSpireFaction();
             if ( fallenSpireFaction == null )
             {
-                RejectionReasonDescription = "Fallen Spire isn't on path A";
+                RejectionReasonDescription = "堕落尖塔不在路径 A 上";
                 return Hackable.NeverCanBeHacked_Hide;
             }
             FallenSpireFactionBaseInfo spireData = fallenSpireFaction.TryGetExternalBaseInfoAs<FallenSpireFactionBaseInfo>();
             if ( spireData == null )
             {
-                RejectionReasonDescription = "Fallen Spire isn't on path B";
+                RejectionReasonDescription = "堕落尖塔不在路径 B 上";
                 return Hackable.NeverCanBeHacked_Hide;
             }
             if ( spireData.CurrentRelicSpawnPlanetIdx == -1 )
             {
-                RejectionReasonDescription = "There is no Relic right now";
+                RejectionReasonDescription = "目前没有遗物";
                 return Hackable.NeverCanBeHacked_Hide;
             }
             if ( spireData.CurrentRelicInSearchMode == false &&
                  spireData.CurrentRelicSpawnPlanetIdx != planet.Index )
             {
-                RejectionReasonDescription = "This is not where the Relic is (and we aren't in search mode)";
+                RejectionReasonDescription = "遗物不在此处（且我们不在搜索模式）";
                 return Hackable.NeverCanBeHacked_Hide;
             }
             if ( spireData.RelicOnMap )
             {
-                RejectionReasonDescription = "The Relic is in the galaxy";
+                RejectionReasonDescription = "遗物已在银河中";
                 return Hackable.NeverCanBeHacked_Hide;
             }
             if ( spireData.PlanetsSearchedForCurrentRelic.Contains( planet.Index ) )
             {
-                RejectionReasonDescription = "You have already searched here for the Relic";
+                RejectionReasonDescription = "你已在此处搜索过遗物";
                 return Hackable.AlreadyHasBeenHacked_ButStillShow;
             }
             RejectionReasonDescription = string.Empty;
@@ -84,8 +84,8 @@ namespace Arcen.AIW2.External
                     chatHandlerOrNull.PlanetToView = planet;
 
                 Planet relicPlanetOrNull = World_AIW2.Instance.GetPlanetByIndex( spireData.CurrentRelicSpawnPlanetIdx );
-                World_AIW2.Instance.QueueChatMessageOrCommand( "You did not find the Relic on " + planet.Name + ". The Relic is " +
-                    (relicPlanetOrNull == null ? "unknown" : relicPlanetOrNull.GetHopsTo( planet ).ToString()) + " hops away. Every planet searched this way increases the AI response when you find the Relic.",
+                World_AIW2.Instance.QueueChatMessageOrCommand( "你未在 " + planet.Name + " 上找到遗物。遗物距离 " +
+                    (relicPlanetOrNull == null ? "未知" : relicPlanetOrNull.GetHopsTo( planet ).ToString()) + " 跳。以此方式搜索的每个星球都会增加你找到遗物时的 AI 反应。",
                     ChatType.LogToCentralChat, string.Empty, chatHandlerOrNull );
                 spireData.PlanetsSearchedForCurrentRelic.Add( planet.Index );
             }
@@ -167,12 +167,12 @@ namespace Arcen.AIW2.External
             SphereFactionBaseInfo baseInfo = Target.PlanetFaction.Faction.TryGetExternalBaseInfoAs<SphereFactionBaseInfo>();
             if ( baseInfo == null )
             {
-                RejectionReasonDescription = "Target is not of a Spire Sphere faction of type Grey or Dark.";
+                RejectionReasonDescription = "目标不是 Grey 或 Dark 类型的尖塔 Sphere 派系。";
                 return Hackable.NeverCanBeHacked_Hide;
             }
             if ( baseInfo.IsCurrentlyAngryDueToHack )
             {
-                RejectionReasonDescription = $"This {baseInfo.SphereType} Sphere is still angry at you from a previous hack. It will calm down and become hackable again in {baseInfo.HackedAngerDurationInSeconds - baseInfo.SecondsSinceLastHack} seconds.";
+                RejectionReasonDescription = $"{baseInfo.SphereType} Sphere 仍因之前的黑客行为对你感到愤怒。它将在 {baseInfo.HackedAngerDurationInSeconds - baseInfo.SecondsSinceLastHack} 秒后冷静下来并重新可被黑客。";
                 return Hackable.AlreadyHasBeenHacked_ButStillShow;
             }
             short timesWon = 0;
@@ -181,7 +181,7 @@ namespace Arcen.AIW2.External
             int requiredPoints = 2 + (baseInfo.TimesHackedForUnits * 2);
             if ( timesWon + baseInfo.TotalTimesHacked - baseInfo.TimesHackedForUnits < requiredPoints )
             {
-                RejectionReasonDescription = $"{Target.TypeData.DisplayName} is not strong enough to steal from. It has {timesWon + baseInfo.TotalTimesHacked - baseInfo.TimesHackedForUnits} points out of a required {requiredPoints} points. It gains points by claiming the most resources during Splintering Spire events, or by you hacking them to increase their budget, strength, or range.";
+                RejectionReasonDescription = $"{Target.TypeData.DisplayName} 不够强大，无法从中窃取。它有 {timesWon + baseInfo.TotalTimesHacked - baseInfo.TimesHackedForUnits} 分，需要 {requiredPoints} 分。它通过在分裂尖塔事件中占领最多资源来获得积分，或者通过你对其黑客以增加其预算、强度或范围来获得积分。";
                 return Hackable.NeverBeHacked_ButStillShow;
             }
 
@@ -258,12 +258,12 @@ namespace Arcen.AIW2.External
             SphereFactionBaseInfo baseInfo = Target.PlanetFaction.Faction.TryGetExternalBaseInfoAs<SphereFactionBaseInfo>();
             if ( baseInfo == null )
             {
-                RejectionReasonDescription = "Target is not of a Spire Sphere faction of type Chromatic or Imperial.";
+                RejectionReasonDescription = "目标不是 Chromatic 或 Imperial 类型的尖塔 Sphere 派系。";
                 return Hackable.NeverCanBeHacked_Hide;
             }
             if ( baseInfo.IsCurrentlyAngryDueToHack )
             {
-                RejectionReasonDescription = $"This {baseInfo.SphereType} Sphere is still angry at you from a previous hack. It will calm down and become hackable again in {baseInfo.HackedAngerDurationInSeconds - baseInfo.SecondsSinceLastHack} seconds.";
+                RejectionReasonDescription = $"{baseInfo.SphereType} Sphere 仍因之前的黑客行为对你感到愤怒。它将在 {baseInfo.HackedAngerDurationInSeconds - baseInfo.SecondsSinceLastHack} 秒后冷静下来并重新可被黑客。";
                 return Hackable.AlreadyHasBeenHacked_ButStillShow;
             }
             short timesWon = 0;
@@ -272,7 +272,7 @@ namespace Arcen.AIW2.External
             int requiredPoints = 5;
             if ( timesWon + baseInfo.TotalTimesHacked - baseInfo.TimesHackedForUnits < requiredPoints )
             {
-                RejectionReasonDescription = $"{Target.TypeData.DisplayName} is not strong enough to steal from. It has {timesWon + baseInfo.TotalTimesHacked - baseInfo.TimesHackedForUnits} points out of a required {requiredPoints} points. It gains points by claiming the most resources during Splintering Spire events, or by you hacking them to increase their budget, strength, or range.";
+                RejectionReasonDescription = $"{Target.TypeData.DisplayName} 不够强大，无法从中窃取。它有 {timesWon + baseInfo.TotalTimesHacked - baseInfo.TimesHackedForUnits} 分，需要 {requiredPoints} 分。它通过在分裂尖塔事件中占领最多资源来获得积分，或者通过你对其黑客以增加其预算、强度或范围来获得积分。";
                 return Hackable.NeverBeHacked_ButStillShow;
             }
 

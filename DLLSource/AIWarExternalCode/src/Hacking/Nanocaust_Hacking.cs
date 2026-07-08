@@ -12,18 +12,18 @@ namespace Arcen.AIW2.External
         {
             if ( Target.TypeData.GetHasTag( "NanobotHackedHive" ) )
             {
-                RejectionReasonDescription = "The nanocaust has already been hacked.";
+                RejectionReasonDescription = "纳米虫群已被黑客入侵。";
                 return Hackable.NeverCanBeHacked_Hide;
             }
             if ( HackerOrNull != null &&
                  HackerOrNull.PlanetFaction.Faction.GetIsFriendlyTowards( Target.PlanetFaction.Faction ) )
             {
-                RejectionReasonDescription = "This nanocaust is already your friend.";
+                RejectionReasonDescription = "此纳米虫群已是你的盟友。";
                 return Hackable.NeverCanBeHacked_Hide;
             }
             if ( !Target.TypeData.GetHasTag( "NanobotHive" ) )
             {
-                RejectionReasonDescription = "The target is not a Nanobot Hive.";
+                RejectionReasonDescription = "目标不是纳米机器人蜂巢。";
                 return Hackable.NeverCanBeHacked_Hide;
             }
             return base.GetCanBeHacked( Target, HackerOrNull, planet, HackerFaction, Type, RelatedStringOrNull, RelatedIntOrNull, out RejectionReasonDescription );
@@ -96,8 +96,8 @@ namespace Arcen.AIW2.External
                 if ( chatHandlerOrNull != null )
                     chatHandlerOrNull.SquadToView = LazyLoadSquadWrapper.Create( hackedHive );
 
-                World_AIW2.Instance.QueueChatMessageOrCommand( Target.StartFactionColourForLog_Safe() + "Nanocaust Hive</color> has been hacked on " +
-                    Target.GetPlanetName_Safe(), ChatType.LogToCentralChat, "ArkChiefOfStaff_NanocaustHacked", chatHandlerOrNull );
+                World_AIW2.Instance.QueueChatMessageOrCommand( Target.StartFactionColourForLog_Safe() + "纳米虫群蜂巢</color> 已在 " +
+                    Target.GetPlanetName_Safe() + " 上被黑客入侵", ChatType.LogToCentralChat, "ArkChiefOfStaff_NanocaustHacked", chatHandlerOrNull );
             }
             return true;
         }

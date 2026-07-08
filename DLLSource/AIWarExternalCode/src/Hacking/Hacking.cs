@@ -45,7 +45,7 @@ namespace Arcen.AIW2.External
             buffer.StartColor( "9cbad3" );
             if ( eligibleTargets.Count > 0 )
             {
-                buffer.Add( eligibleTargets.Count > 1 ? "Will contact one of: " : "Will contact: " );
+                buffer.Add( eligibleTargets.Count > 1 ? "将联系其中之一： " : "将联系： " );
                 int index = 0;
                 foreach ( OutguardGroupData eligibleTarget in eligibleTargets )
                 {
@@ -67,27 +67,27 @@ namespace Arcen.AIW2.External
                 buffer.Add( "." );
                 if ( eligibleTargets.Count > 1 )
                 {
-                    buffer.Add( "  You will be able to choose who to contact after initiating the hack." );
+                    buffer.Add( "  你可以在发起黑客后选择要联系的对象。" );
                     if ( minCost != maxCost )
-                        buffer.Add( "  The cost in AI Progress to contact them ranges from " ).Add( minCost ).Add( " to " ).Add( maxCost )
-                              .Add( " depending on your choice." );
+                        buffer.Add( "  联系他们的 AI 进度成本从 " ).Add( minCost ).Add( " 到 " ).Add( maxCost )
+                              .Add( "，取决于你的选择。" );
                     else
-                        buffer.Add( "  The cost in AI Progress to contact them is " ).Add( minCost ).Add( "." );
+                        buffer.Add( "  联系他们的 AI 进度成本为 " ).Add( minCost ).Add( "。" );
                 }
 
                 if ( AIWar2GalaxySettingQuickAccess.OutguardAlsoCostXenon && AIWar2GalaxySettingQuickAccess.EnableFuel )
                 {
                     if ( minCost != maxCost )
-                        buffer.Add( "  The cost in permanently-lost Xenon to contact them ranges from " ).AddNumberMoreReadable( (minCost * 5000) )
-                              .Add( " to " ).AddNumberMoreReadable( (maxCost * 5000) ).Add( " depending on your choice." );
+                        buffer.Add( "  联系他们的永久损失 Xenon 成本从 " ).AddNumberMoreReadable( (minCost * 5000) )
+                              .Add( " 到 " ).AddNumberMoreReadable( (maxCost * 5000) ).Add( "，取决于你的选择。" );
                     else
-                        buffer.Add( "  The cost in permanently-lost Xenon to contact them is " ).AddNumberMoreReadable( (minCost * 5000) ).Add( "." );
+                        buffer.Add( "  联系他们的永久损失 Xenon 成本为 " ).AddNumberMoreReadable( (minCost * 5000) ).Add( "。" );
                 }
             }
             else
             {
-                buffer.Add( "Huh!  No eligible outguard groups to contact on " ).Add( (plan == null ? "null" : plan.Name) )
-                      .Add( "?  This is almost certainly a bug.  " );
+                buffer.Add( "嗯！在 " ).Add( (plan == null ? "null" : plan.Name) )
+                      .Add( " 上没有可联系的前哨小队？这几乎肯定是一个错误。  " );
             }
 
             buffer.EndColor();
@@ -290,7 +290,7 @@ namespace Arcen.AIW2.External
 
             if ( target != null )
             {
-                buffer.Add( "\n\n<b><u>About This Beacon: " ).Add( target.TypeData.DisplayName ).Add( "</u></b>\n" );
+                buffer.Add( "\n\n<b><u>关于此信标： " ).Add( target.TypeData.DisplayName ).Add( "</u></b>\n" );
                 buffer.Add( target.TypeData.Description );
             }
         }
@@ -414,7 +414,7 @@ namespace Arcen.AIW2.External
                     chatHandlerOrNull.SquadToView = LazyLoadSquadWrapper.Create( vulnerableVG );
 
                 World_AIW2.Instance.QueueChatMessageOrCommand(
-                    "This Vengeance Generator is now vulnerable. The Dark Spire has awakened, and will now generate Energy for its attacks at random intervals even without combat on the planet. Also a Vengeance Strike is triggered",
+                    "此复仇发生器现已脆弱。黑暗螺旋已苏醒，即使星球上没有战斗，它也会随机间隔生成攻击能量。同时触发了一次复仇打击",
                     ChatType.LogToCentralChat, string.Empty, chatHandlerOrNull );
             }
 
@@ -1405,7 +1405,7 @@ namespace Arcen.AIW2.External
         public override string GetDynamicDescription(
             GameEntity_Squad target, GameEntity_Squad hackerOrNull, Planet planet, Faction hackerFaction, HackingType hackingType )
         {
-            string output = "This hack will let you choose from an upgrade to the following techs: ";
+            string output = "此黑客将让你从以下科技的升级中选择一项： ";
 
             List<TechUpgrade> techs = TechUpgrade.GetTemporaryTechUpgradeList( "Hacking_GrantTech-GetDynamicDescription-techs", 10f );
             if ( techs == null ) //blocked for teardown/shutdown; bail
@@ -1499,7 +1499,7 @@ namespace Arcen.AIW2.External
                 return true;
             }
 
-            Buffer.Add( "Choose From: " );
+            Buffer.Add( "从以下选择： " );
 
             for ( int i = 0; i < upgrades.Count; i++ )
             {
@@ -1529,8 +1529,8 @@ namespace Arcen.AIW2.External
         {
             if ( Target.IsFakeEntity )
             {
-                Buffer.Add( " <color=#cdcdcd><size=70%>choose from:</size></color> " );
-                Buffer.Add( "1 of 3 Tech choices to mark up." );
+                Buffer.Add( " <color=#cdcdcd><size=70%>从以下选择：</size></color> " );
+                Buffer.Add( "3 个科技选项中的 1 个以供标记。" );
                 return true;
             }
 

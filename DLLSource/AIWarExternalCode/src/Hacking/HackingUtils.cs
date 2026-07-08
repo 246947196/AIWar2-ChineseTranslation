@@ -380,8 +380,8 @@ namespace Arcen.AIW2.External
             }
             if ( countOfValidHackers > 1 && ShowErrorIfMultipleOptions )
             {
-                ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.Normal, null, MustBeSelected ? "Multiple Hackers Selected" : "Multiple Hackers Present",
-                    "You have multiple " + ErrorGroupName + (MustBeSelected ? " selected at this planet" : " on this planet") + " at the moment, so we can't tell which you want to hack with.  Please select a single hacker and try again.", "Ok" );
+                ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.Normal, null, MustBeSelected ? "选择了多个黑客" : "存在多个黑客",
+                    "你当前有多个 " + ErrorGroupName + (MustBeSelected ? " 在此星球上被选中" : " 在此星球上") + "，我们无法确定你要使用哪个进行黑客。请选择一个黑客后重试。", "确定" );
                 result = null;
                 return false;
             }
@@ -559,7 +559,7 @@ namespace Arcen.AIW2.External
             Faction localFaction = World_AIW2.Instance.GetLocalPlayerFactionOrNull();
             if ( localFaction == null )
             {
-                lastNoHackReason = "You are not controlling a faction, and thus cannot hack.";
+                lastNoHackReason = "你没有控制任何派系，因此无法进行黑客行为。";
                 return false;
             }
 
@@ -581,50 +581,50 @@ namespace Arcen.AIW2.External
             FInt costForActiveHacks = CalculateActiveHackingCosts(localFaction);
             if ( localFaction.StoredHacking < cost )
             {
-                lastNoHackReason = "You don't have enough hacking points.";
+                lastNoHackReason = "你没有足够的黑客点。";
                 return false;
             }
             if ( localFaction.StoredFactionResourceOne < HackTypeToChooseFor.GetResourceOneCostForTarget( TargetToChooseFor ) )
             {
                 if ( NecromancerEmpireFactionBaseInfo.GetIsThisANecromancerFaction( localFaction ) )
-                    lastNoHackReason = "You don't have enough Essence. You will need to hack Rifts or fight Elderlings for more Essence.";
+                    lastNoHackReason = "你没有足够的精华。你需要黑客裂隙或与长老战斗以获得更多精华。";
                 else if ( ScourgeInfusedHumanEmpireFactionBaseInfo.GetIsThisAScourgeEmpireFaction( localFaction ))
-                    lastNoHackReason = "You don't have enough Corbomite.";
+                    lastNoHackReason = "你没有足够的 Corbomite。";
                 else
-                    lastNoHackReason = "You don't have enough resource one.";
+                    lastNoHackReason = "你没有足够的资源一。";
                 return false;
             }
             if ( localFaction.StoredFactionResourceTwo < HackTypeToChooseFor.BaseCostInResourceTwo )
             {
-                lastNoHackReason = "You don't have enough resource two.";
+                lastNoHackReason = "你没有足够的资源二。";
                 return false;
             }
             if ( localFaction.StoredFactionResourceThree < HackTypeToChooseFor.BaseCostInResourceTwo )
             {
-                lastNoHackReason = "You don't have enough resource three.";
+                lastNoHackReason = "你没有足够的资源三。";
                 return false;
             }
             if ( localFaction.StoredMetal < HackTypeToChooseFor.BaseCostInMetal )
             {
-                lastNoHackReason = "You don't have enough metal.";
+                lastNoHackReason = "你没有足够的金属。";
                 return false;
             }
 
             if ( localFaction.StoredHacking < cost + costForActiveHacks )
             {
-                lastNoHackReason = "You don't have enough hacking points due to your active hacks.";
+                lastNoHackReason = "由于你正在进行的黑客行为，你没有足够的黑客点。";
                 return false;
             }
 
             if ( localPlanetFaction == null )
             {
-                lastNoHackReason = "You don't have a local planet faction here, somehow, and thus cannot hack.";
+                lastNoHackReason = "你在此星球没有本地派系，因此无法进行黑客行为。";
                 return false;
             }
 
             if ( hacker == null )
             {
-                lastNoHackReason = "No valid hackers here.";
+                lastNoHackReason = "此处没有有效的黑客。";
                 return false;
             }
 
@@ -632,7 +632,7 @@ namespace Arcen.AIW2.External
             {
                 if ( hacker.ActiveHack != null )
                 {
-                    lastNoHackReason = "Only one exploration hack can be going at a time.";
+                    lastNoHackReason = "一次只能进行一个探索黑客行为。";
                     return false;
                 }
             }
@@ -654,12 +654,12 @@ namespace Arcen.AIW2.External
                 }
                 if ( foundActiveHackByMe )
                 {
-                    lastNoHackReason = "You have an ongoing hack on this planet.";
+                    lastNoHackReason = "你在此星球上有一个正在进行的黑客行为。";
                     return false;
                 }
                 if ( foundActiveHackByAnotherFaction )
                 {
-                    lastNoHackReason = "An ally has an ongoing hack on this planet.";
+                    lastNoHackReason = "一个盟友在此星球上有一个正在进行的黑客行为。";
                     return false;
                 }
             }
@@ -668,7 +668,7 @@ namespace Arcen.AIW2.External
             {
                 if ( !HackTypeToChooseFor.GetIsHackValidAgainst( TargetToChooseFor, false ) )
                 {
-                    lastNoHackReason = "All valid targets on this planet do not match the filter" + HackTypeToChooseFor.OnlyForTargetType + "!";
+                    lastNoHackReason = "此星球上的所有有效目标均不匹配筛选器 " + HackTypeToChooseFor.OnlyForTargetType + "！";
                     return false;
                 }
             }

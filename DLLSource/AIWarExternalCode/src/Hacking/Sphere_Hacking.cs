@@ -14,19 +14,19 @@ namespace Arcen.AIW2.External
             FInt oldValue = baseInfo.GetPerSecondBudget;
             FInt increase = baseInfo.PerSecondBudgetBeforeMultiplier * baseInfo.Difficulty.BudgetPerSecond_MultiplierPerHack;
             int perc = (100 * increase / oldValue).IntValue;
-            return $"\nThis will increase the budget of this sphere by <color=#cc0000>{perc}%</color>.";
+            return $"\n这将增加此 Sphere 的预算 <color=#cc0000>{perc}%</color>。";
         }
         public override Hackable GetCanBeHacked( GameEntity_Squad Target, GameEntity_Squad HackerOrNull, Planet planet, Faction HackerFaction, HackingType Type, string RelatedStringOrNull, int RelatedIntOrNull, out string RejectionReasonDescription )
         {
             SphereFactionBaseInfo baseInfo = Target.PlanetFaction.Faction.TryGetExternalBaseInfoAs<SphereFactionBaseInfo>();
             if ( baseInfo == null )
             {
-                RejectionReasonDescription = "Failed to load Target's Faction Base Info, was this spawned for a non Sphere faction?";
+                RejectionReasonDescription = "无法加载目标的派系基础信息，这是为非 Sphere 派系生成的？";
                 return Hackable.NeverCanBeHacked_Hide;
             }
             if ( baseInfo.IsCurrentlyAngryDueToHack )
             {
-                RejectionReasonDescription = $"This {baseInfo.SphereType} Sphere is still angry at you from a previous hack. It will calm down and become hackable again in {baseInfo.HackedAngerDurationInSeconds - baseInfo.SecondsSinceLastHack} seconds.";
+                RejectionReasonDescription = $"{baseInfo.SphereType} Sphere 仍因之前的黑客行为对你感到愤怒。它将在 {baseInfo.HackedAngerDurationInSeconds - baseInfo.SecondsSinceLastHack} 秒后冷静下来并重新可被黑客。";
                 return Hackable.AlreadyHasBeenHacked_ButStillShow;
             }
 
@@ -97,19 +97,19 @@ namespace Arcen.AIW2.External
             FInt oldValue = baseInfo.GetMaxStrength;
             FInt increase = baseInfo.MaxStrengthBeforeMultiplier * baseInfo.Difficulty.MaxStrength_MultiplierPerHack;
             int perc = (100 * increase / oldValue).IntValue;
-            return $"\nThis will increase the max strength of this sphere by <color=#cc0000>{perc}%</color>.";
+            return $"\n这将增加此 Sphere 的最大强度 <color=#cc0000>{perc}%</color>。";
         }
         public override Hackable GetCanBeHacked( GameEntity_Squad Target, GameEntity_Squad HackerOrNull, Planet planet, Faction HackerFaction, HackingType Type, string RelatedStringOrNull, int RelatedIntOrNull, out string RejectionReasonDescription )
         {
             SphereFactionBaseInfo baseInfo = Target.PlanetFaction.Faction.TryGetExternalBaseInfoAs<SphereFactionBaseInfo>();
             if ( baseInfo == null )
             {
-                RejectionReasonDescription = "Failed to load Target's Faction Base Info, was this spawned for a non Sphere faction?";
+                RejectionReasonDescription = "无法加载目标的派系基础信息，这是为非 Sphere 派系生成的？";
                 return Hackable.NeverCanBeHacked_Hide;
             }
             if ( baseInfo.IsCurrentlyAngryDueToHack )
             {
-                RejectionReasonDescription = $"This {baseInfo.SphereType} Sphere is still angry at you from a previous hack. It will calm down and become hackable again in {baseInfo.HackedAngerDurationInSeconds - baseInfo.SecondsSinceLastHack} seconds.";
+                RejectionReasonDescription = $"{baseInfo.SphereType} Sphere 仍因之前的黑客行为对你感到愤怒。它将在 {baseInfo.HackedAngerDurationInSeconds - baseInfo.SecondsSinceLastHack} 秒后冷静下来并重新可被黑客。";
                 return Hackable.AlreadyHasBeenHacked_ButStillShow;
             }
 
@@ -177,19 +177,19 @@ namespace Arcen.AIW2.External
             SphereFactionBaseInfo baseInfo = Target.PlanetFaction.Faction.TryGetExternalBaseInfoAs<SphereFactionBaseInfo>();
             if ( baseInfo == null )
             {
-                RejectionReasonDescription = "Failed to load Target's Faction Base Info, was this spawned for a non Sphere faction?";
+                RejectionReasonDescription = "无法加载目标的派系基础信息，这是为非 Sphere 派系生成的？";
                 return Hackable.NeverCanBeHacked_Hide;
             }
 
             if ( baseInfo.TimesHackedForHops > baseInfo.GetBaseHopLimit() * 3 )
             {
-                RejectionReasonDescription = "This sphere has already reached its maximum hop limit.";
+                RejectionReasonDescription = "此 Sphere 已达到其最大跳跃限制。";
                 return Hackable.NeverCanBeHacked_Hide;
             }
 
             if ( baseInfo.IsCurrentlyAngryDueToHack )
             {
-                RejectionReasonDescription = $"This {baseInfo.SphereType} Sphere is still angry at you from a previous hack. It will calm down and become hackable again in {baseInfo.HackedAngerDurationInSeconds - baseInfo.SecondsSinceLastHack} seconds.";
+                RejectionReasonDescription = $"{baseInfo.SphereType} Sphere 仍因之前的黑客行为对你感到愤怒。它将在 {baseInfo.HackedAngerDurationInSeconds - baseInfo.SecondsSinceLastHack} 秒后冷静下来并重新可被黑客。";
                 return Hackable.AlreadyHasBeenHacked_ButStillShow;
             }
 
@@ -257,19 +257,19 @@ namespace Arcen.AIW2.External
             SphereFactionBaseInfo baseInfo = Target.PlanetFaction.Faction.TryGetExternalBaseInfoAs<SphereFactionBaseInfo>();
             if ( baseInfo == null )
             {
-                RejectionReasonDescription = "Failed to load Target's Faction Base Info, was this spawned for a non Sphere faction?";
+                RejectionReasonDescription = "无法加载目标的派系基础信息，这是为非 Sphere 派系生成的？";
                 return Hackable.NeverCanBeHacked_Hide;
             }
 
             if ( baseInfo.TimesHackedForUnits >= Type.NumberOfTimesIndividualUnitCanBeHacked )
             {
-                RejectionReasonDescription = $"You only can hack a Dyson for ship lines {Type.NumberOfTimesIndividualUnitCanBeHacked} time(s).";
+                RejectionReasonDescription = $"你只能为舰船线路黑客 Dyson {Type.NumberOfTimesIndividualUnitCanBeHacked} 次。";
                 return Hackable.AlreadyHasBeenHacked_Hide;
             }
 
             if ( baseInfo.IsCurrentlyAngryDueToHack )
             {
-                RejectionReasonDescription = $"This {baseInfo.SphereType} Sphere is still angry at you from a previous hack. It will calm down and become hackable again in {baseInfo.HackedAngerDurationInSeconds - baseInfo.SecondsSinceLastHack} seconds.";
+                RejectionReasonDescription = $"{baseInfo.SphereType} Sphere 仍因之前的黑客行为对你感到愤怒。它将在 {baseInfo.HackedAngerDurationInSeconds - baseInfo.SecondsSinceLastHack} 秒后冷静下来并重新可被黑客。";
                 return Hackable.AlreadyHasBeenHacked_ButStillShow;
             }
             return base.GetCanBeHacked( Target, HackerOrNull, planet, HackerFaction, Type, RelatedStringOrNull, RelatedIntOrNull, out RejectionReasonDescription );

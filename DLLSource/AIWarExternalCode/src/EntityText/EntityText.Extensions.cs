@@ -12,33 +12,33 @@ namespace Arcen.AIW2.External
         
         private static System.Collections.Generic.Dictionary<ArcenRejectionReason,string> ReasonDisplayNames = new System.Collections.Generic.Dictionary<ArcenRejectionReason, string>()
         {
-            { ArcenRejectionReason.Unknown, "Active" },
-            { ArcenRejectionReason.ThisShipIsMalformedData, "Malformed" },
+            { ArcenRejectionReason.Unknown, "启用中" },
+            { ArcenRejectionReason.ThisShipIsMalformedData, "损坏" },
             { ArcenRejectionReason.ShipPassedInWasNull, "NullShip" },
             { ArcenRejectionReason.ForMarkOfGameEntityTypeDataIsNull, "NullMark" },
             { ArcenRejectionReason.FleetIsNull, "NullFleet" },
             { ArcenRejectionReason.SystemTypeIsNull, "NullSystem" },
 
-            { ArcenRejectionReason.CloakingNotFunctionalForGuardPostsOnNonAIPlanets, "Planet Not Owned" },
-            { ArcenRejectionReason.InUnexploredSpace, "Unknown Planet" },
-            { ArcenRejectionReason.CeasefireAtPlanet, "Planet Ceasefire" },
-            { ArcenRejectionReason.NonFunctionalWhenNotOnPlanetOwnedByMyFaction, "Planet Not Owned" },
+            { ArcenRejectionReason.CloakingNotFunctionalForGuardPostsOnNonAIPlanets, "星球未占领" },
+            { ArcenRejectionReason.InUnexploredSpace, "未知星球" },
+            { ArcenRejectionReason.CeasefireAtPlanet, "星球停火" },
+            { ArcenRejectionReason.NonFunctionalWhenNotOnPlanetOwnedByMyFaction, "星球未占领" },
 
-            { ArcenRejectionReason.EntityHasNotYetBeenFullyClaimed, "Not Owned" },
-            { ArcenRejectionReason.CloakingNotFunctionalForUnOwnedShips, "Not Owned" },
+            { ArcenRejectionReason.EntityHasNotYetBeenFullyClaimed, "未占领" },
+            { ArcenRejectionReason.CloakingNotFunctionalForUnOwnedShips, "未占领" },
 
-            { ArcenRejectionReason.EntityIsInHoldFireMode, "Stand Down" },
-            { ArcenRejectionReason.EntityIsParalyzed, "Paralyzed" },
-            { ArcenRejectionReason.SystemIsStillOnCooldown, "Cooldown" },
+            { ArcenRejectionReason.EntityIsInHoldFireMode, "待命" },
+            { ArcenRejectionReason.EntityIsParalyzed, "瘫痪" },
+            { ArcenRejectionReason.SystemIsStillOnCooldown, "冷却中" },
  
-            { ArcenRejectionReason.ThisShipIsWrongStateOfMatter, "State of Matter" },
-            { ArcenRejectionReason.SystemIsToggledOff, "Toggled" },
-            { ArcenRejectionReason.SystemNotFunctionalAtThisMarkLevel, "Not at Mark" },
-            { ArcenRejectionReason.SystemModuleIsNotEnabled, "Module Off" },
-            { ArcenRejectionReason.SystemChargeInsufficient, "Not-Charged" },
-            { ArcenRejectionReason.SystemChargeNotEqual, "Not-Charged" },
-            { ArcenRejectionReason.SystemChargeNotGreater, "Under-Charged" },
-            { ArcenRejectionReason.SystemChargeNotLess, "Over-Charged" },
+            { ArcenRejectionReason.ThisShipIsWrongStateOfMatter, "物态" },
+            { ArcenRejectionReason.SystemIsToggledOff, "已关闭" },
+            { ArcenRejectionReason.SystemNotFunctionalAtThisMarkLevel, "未达到等级" },
+            { ArcenRejectionReason.SystemModuleIsNotEnabled, "模组关闭" },
+            { ArcenRejectionReason.SystemChargeInsufficient, "未充能" },
+            { ArcenRejectionReason.SystemChargeNotEqual, "未充能" },
+            { ArcenRejectionReason.SystemChargeNotGreater, "充能不足" },
+            { ArcenRejectionReason.SystemChargeNotLess, "充能过剩" },
         };
         
         private static System.Collections.Generic.Dictionary<CannotTransportReason,string> CannotTransportNames = new System.Collections.Generic.Dictionary<CannotTransportReason, string>()
@@ -84,8 +84,8 @@ namespace Arcen.AIW2.External
         
         private static System.Collections.Generic.Dictionary<SpecialEntityType,string> SpecialTypeDisplayNames = new System.Collections.Generic.Dictionary<SpecialEntityType, string>()
         {
-            { SpecialEntityType.GuardPost, "Guard Post(s)" },
-            { SpecialEntityType.DireGuardPost, "Dire Guard Post(s)" },
+            { SpecialEntityType.GuardPost, "守卫哨站" },
+            { SpecialEntityType.DireGuardPost, "凶残守卫哨站" },
         };
 
         #endregion
@@ -779,7 +779,7 @@ namespace Arcen.AIW2.External
                 {
                     debugstage = 124;
                     
-                    buffer.Add("time on planet ", TextStyle.Brighter);
+                    buffer.Add("在星球上时间 ", TextStyle.Brighter);
                     
                     buffer.Open(TextStyle.MinutesAndSeconds);
                     
@@ -819,7 +819,7 @@ namespace Arcen.AIW2.External
                     debugstage = 128;
                     
                     buffer.StartColor(level.ColorHex)
-                          .Add("Mk", TextStyle.Sub2)
+                          .Add("级", TextStyle.Sub2)
                           .Add(level.MapDisplay)
                           .EndColor();
                     
@@ -840,7 +840,7 @@ namespace Arcen.AIW2.External
                         
                         buffer.Space("0.05em");
                         if (max)
-                            buffer.Add("max", TextStyle.Sub);
+                            buffer.Add("最大", TextStyle.Sub);
                             //buffer.Add("↑");
                         if (prefix != null)
                         {

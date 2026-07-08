@@ -137,7 +137,7 @@ namespace Arcen.AIW2.External
 
         public override void GetText( ArcenCharacterBufferBase buffer )
         {
-            buffer.Add( "Fire " ).Add(System.Parent.TypeData.GetDisplayName()).Add(" at ");
+            buffer.Add( "发射 " ).Add(System.Parent.TypeData.GetDisplayName()).Add(" 目标：");
                 
             if ( TargetIsEntity )
             {

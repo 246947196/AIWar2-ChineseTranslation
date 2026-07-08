@@ -28,7 +28,7 @@ namespace Arcen.AIW2.External
                         chatHandlerOrNull.PlanetToView = Target.Planet;
 
                     World_AIW2.Instance.QueueChatMessageOrCommand(
-                        "Human hack has just destroyed a " + Target.TypeData.GetDisplayName() + " on " + Target.GetPlanetName_Safe(), ChatType.LogToCentralChat,
+                        "人类黑客刚刚在 " + Target.GetPlanetName_Safe() + " 摧毁了一个 " + Target.TypeData.GetDisplayName(), ChatType.LogToCentralChat,
                         chatHandlerOrNull );
                 }
 
@@ -53,7 +53,7 @@ namespace Arcen.AIW2.External
                         chatHandlerOrNull.PlanetToView = Target.Planet;
 
                     World_AIW2.Instance.QueueChatMessageOrCommand(
-                        "Human hack failed to destroy anything on " + Target.GetPlanetName_Safe(), ChatType.LogToCentralChat, chatHandlerOrNull );
+                        "人类黑客未能在 " + Target.GetPlanetName_Safe() + " 摧毁任何东西", ChatType.LogToCentralChat, chatHandlerOrNull );
                 }
             }
 
@@ -65,9 +65,9 @@ namespace Arcen.AIW2.External
         {
             ArcenCharacterBuffer buffer = ArcenCharacterBuffer.GetFromPoolOrCreate( "Hacking_Sabotage.description" );
             if ( AIWar2GalaxySettingQuickAccess.SabotageHacksCauseAIP )
-                buffer.Add( "This does not circumvent aip caused by the targets destruction.\n" );
+                buffer.Add( "这并不能规避由目标被摧毁引起的 AIP 增加。\n" );
             else
-                buffer.Add( "If the structure would normally increase AI Progress on death, destroying it this way does not cause that increase.\n" );
+                buffer.Add( "如果该建筑在正常情况下死亡时会增加 AI 进度，通过这种方式摧毁它不会造成此增加。\n" );
 
             buffer.Add( base.GetDynamicDescription( target, hackerOrNull, planet, hackerFaction, hackingType ) );
 
@@ -89,11 +89,11 @@ namespace Arcen.AIW2.External
                         chatHandlerOrNull.SquadToView = LazyLoadSquadWrapper.Create( Target );
 
                     World_AIW2.Instance.QueueChatMessageOrCommand(
-                        "Human hack has just reprogrammed a " + Target.TypeData.GetDisplayName() + " on " + Target.GetPlanetName_Safe(),
+                        "人类黑客刚刚在 " + Target.GetPlanetName_Safe() + " 重新编程了一个 " + Target.TypeData.GetDisplayName(),
                         ChatType.LogToCentralChat, chatHandlerOrNull );
                 }
 
-                EndpointFunctions.TransferEntityToFaction( Target, Hacker.PlanetFaction.Faction, "Reprogram Hack!" );
+                EndpointFunctions.TransferEntityToFaction( Target, Hacker.PlanetFaction.Faction, "重新编程黑客！" );
             }
             else
             {
@@ -104,7 +104,7 @@ namespace Arcen.AIW2.External
                         chatHandlerOrNull.PlanetToView = Target.Planet;
 
                     World_AIW2.Instance.QueueChatMessageOrCommand(
-                        "Human hack failed to reprogram anything on " + Target.GetPlanetName_Safe(), ChatType.LogToCentralChat, chatHandlerOrNull );
+                        "人类黑客未能在 " + Target.GetPlanetName_Safe() + " 重新编程任何东西", ChatType.LogToCentralChat, chatHandlerOrNull );
                 }
             }
 

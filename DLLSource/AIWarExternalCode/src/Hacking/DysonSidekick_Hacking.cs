@@ -145,7 +145,7 @@ namespace Arcen.AIW2.External
                     debugCode = 200;
                     if ( !this.GetCanHackForThisItem( conversion ) )
                     {
-                        Buffer.Add( "<color=#c74639>Not Possible:</color> " );
+                        Buffer.Add( "<color=#c74639>不可行：</color> " );
                     }
                     debugCode = 300;
                     Buffer.Add("<size=80%>");
@@ -282,7 +282,7 @@ namespace Arcen.AIW2.External
                     {
                         if (!this.GetCanHackForThisItem(conversion))
                         { 
-                            tooltipBuffer.Add( "\n\n<color=#c74639>Cannot choose this option: " + this.lastRejectionReason + ".</color>\n" );
+                            tooltipBuffer.Add( "\n\n<color=#c74639>无法选择该选项： " + this.lastRejectionReason + "。</color>\n" );
                             conversion.ToBuffer( tooltipBuffer );
                         }
                         else
@@ -290,8 +290,8 @@ namespace Arcen.AIW2.External
                             debugCode = 200;
                             Faction localFaction = World_AIW2.Instance.GetPlayerFactionForUIOrNull();
                             debugCode = 300;
-                            tooltipBuffer.Add( "<b><u>Hack: " ).Add( Info.HackingType.DisplayName ).Add( "</u></b>\n" );
-                            tooltipBuffer.Add("Update this epistyle to build the following: ");
+                            tooltipBuffer.Add( "<b><u>黑客： " ).Add( Info.HackingType.DisplayName ).Add( "</u></b>\n" );
+                            tooltipBuffer.Add("更新此门楣以建造以下内容： ");
                             conversion.ToBuffer( tooltipBuffer );
                             //tooltipBuffer.Add("internal: " + conversion.InternalName);
                             if ( conversion.Description != null )
@@ -303,7 +303,7 @@ namespace Arcen.AIW2.External
                             if (Info.TargetShip != null)
                             {
                                 DarkZenithPerUnitBaseInfo data = Info.TargetShip.CreateExternalBaseInfo<DarkZenithPerUnitBaseInfo>("DarkZenithPerUnitBaseInfo");
-                                tooltipBuffer.Add("Current Resources: ");
+                                tooltipBuffer.Add("当前资源： ");
                                 foreach ( KeyValuePair<DZResource, int> kv in data.Inventory )
                                 {
                                     debugCode = 10;
@@ -316,14 +316,14 @@ namespace Arcen.AIW2.External
                                 tooltipBuffer.Add("\n");
                                 if (data.NextConversion != null)
                                 { 
-                                    tooltipBuffer.Add("Currently Building: ");
+                                    tooltipBuffer.Add("当前建造中： ");
                                     data.NextConversion.ToBuffer( tooltipBuffer );
                                 }
                             }
                             tooltipBuffer.Add("\n\n");
-                            tooltipBuffer.Add("Left click", "996f4c").Add(" will cause the epistyle to build this and then the faction will continue to make automatic choices.\n");
-                            tooltipBuffer.Add("Right click", "996f4c").Add(" will cause the epistyle to build this choice until the player gives new input.\n");
-                            tooltipBuffer.Add( "Hold <color=#996f4c>" ).Add( InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "IncreaseShipAndPlanetTooltipDetailBy1_Key1" ) ).Add( "</color> to set this as a high priority.\n" );
+                            tooltipBuffer.Add("左键点击", "996f4c").Add(" 将使门楣建造此内容，之后该阵营将继续自动选择。\n");
+                            tooltipBuffer.Add("右键点击", "996f4c").Add(" 将使门楣持续建造此选项，直到玩家给出新指令。\n");
+                            tooltipBuffer.Add( "按住 <color=#996f4c>" ).Add( InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "IncreaseShipAndPlanetTooltipDetailBy1_Key1" ) ).Add( "</color> 设为高优先级。\n" );
                         }
                         Window_AtMouseTooltipPanelBesideSidebar.bPanel.Instance.SetText( tooltipBuffer.GetStringAndResetForNextUpdate(), "ShipTooltipScale" );
                     }
@@ -426,7 +426,7 @@ namespace Arcen.AIW2.External
                     debugCode = 200;
                     if ( !this.GetCanHackForThisItem( flagship ) )
                     {
-                        Buffer.Add( "<color=#c74639>Not Possible:</color> " );
+                        Buffer.Add( "<color=#c74639>不可行：</color> " );
                     }
                     debugCode = 300;
                     Buffer.Add("<size=80%>");
@@ -553,13 +553,13 @@ namespace Arcen.AIW2.External
                             debugCode = 200;
                             Faction localFaction = World_AIW2.Instance.GetPlayerFactionForUIOrNull();
                             debugCode = 300;
-                            tooltipBuffer.Add( "<b><u>Hack: " ).Add( Info.HackingType.DisplayName ).Add( "</u></b>\n" );
-                            tooltipBuffer.Add("Update this epistyle to rally its ships to: ");
+                            tooltipBuffer.Add( "<b><u>黑客： " ).Add( Info.HackingType.DisplayName ).Add( "</u></b>\n" );
+                            tooltipBuffer.Add("更新此门楣以集结舰船至： ");
                             tooltipBuffer.Add(flagship.TypeData.GetDisplayName() , "a1ffa1").Add( " on ").Add( flagship.Planet.Name, "ffa1a1");
                             Fleet fleet = flagship.FleetMembership.Fleet;
-                            tooltipBuffer.Add("\n").Add("Hotkey ").Add( fleet.TiedToKeybindIndexOneIndexed, "ff23ff" );
+                            tooltipBuffer.Add("\n").Add("快捷键 ").Add( fleet.TiedToKeybindIndexOneIndexed, "ff23ff" );
                         }
-                        tooltipBuffer.Add( "\nHold <color=#996f4c>" ).Add( InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "IncreaseShipAndPlanetTooltipDetailBy1_Key1" ) ).Add( "</color> to return this epistyle to the default behaviour; rallying to the nearest flagship.\n" );
+                        tooltipBuffer.Add( "\n按住 <color=#996f4c>" ).Add( InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "IncreaseShipAndPlanetTooltipDetailBy1_Key1" ) ).Add( "</color> 使此门楣恢复默认行为，集结至最近的旗舰。\n" );
                         Window_AtMouseTooltipPanelBesideSidebar.bPanel.Instance.SetText( tooltipBuffer.GetStringAndResetForNextUpdate(), "ShipTooltipScale" );
                     }
                 } catch( Exception e )
@@ -1014,20 +1014,20 @@ namespace Arcen.AIW2.External
                     {
                         if (!this.GetCanHackForThisItem(moonData))
                         { 
-                            tooltipBuffer.Add( "\n\n<color=#c74639>Cannot choose this option: " + this.lastRejectionReason + ".</color>\n" );
+                            tooltipBuffer.Add( "\n\n<color=#c74639>无法选择该选项： " + this.lastRejectionReason + "。</color>\n" );
                         }
                         else
                         { 
                             debugCode = 200;
                             Faction localFaction = World_AIW2.Instance.GetPlayerFactionForUIOrNull();
                             debugCode = 300;
-                            tooltipBuffer.Add( "<b><u>Hack: " ).Add( Info.HackingType.DisplayName ).Add( "</u></b>\n" );
-                            tooltipBuffer.Add("This will claim this Moon and transform it into a a  ").Add(moonData.GetDisplayName(), "a1ffa1").Add(".\n");
+                            tooltipBuffer.Add( "<b><u>黑客： " ).Add( Info.HackingType.DisplayName ).Add( "</u></b>\n" );
+                            tooltipBuffer.Add("这将占领此卫星并将其转变为 ").Add(moonData.GetDisplayName(), "a1ffa1").Add("。\n");
 
                             debugCode = 400;
                             if ( !this.GetCanHackForThisItem( moonData ) )
                             {
-                                tooltipBuffer.Add( "<color=#c74639>Not Possible:</color> " );
+                                tooltipBuffer.Add( "<color=#c74639>不可行：</color> " );
                             }
                             debugCode = 500;
                             debugCode = 600;
@@ -1398,8 +1398,8 @@ namespace Arcen.AIW2.External
                             debugCode = 200;
                             Faction localFaction = World_AIW2.Instance.GetPlayerFactionForUIOrNull();
                             debugCode = 300;
-                            tooltipBuffer.Add( "<b><u>Hack: " ).Add( Info.HackingType.DisplayName ).Add( "</u></b>\n" );
-                            tooltipBuffer.Add("Transform this Armory to be for the " + typeData.InternalName + " Race.");
+                            tooltipBuffer.Add( "<b><u>黑客： " ).Add( Info.HackingType.DisplayName ).Add( "</u></b>\n" );
+                            tooltipBuffer.Add("将此军械库转变为 " + typeData.InternalName + " 种族。");
                             tooltipBuffer.Add("\n\n").Add( typeData.description);
                         }
                     }

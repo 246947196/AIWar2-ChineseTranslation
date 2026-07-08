@@ -250,190 +250,190 @@ namespace Arcen.AIW2.External
                         if ( !Condition.UserHasOpenedDirectAIShipGroup.GetMetNow() )
                         {
                             WriteHeader( Buffer, 1, maxHeader );
-                            Buffer.Add( "Welcome to AI War 2!" ).Add( "\n" );
-                            Buffer.Add( "This is a very basic tutorial to help players get up to speed." ).Add( "\n\n" );
+                            Buffer.Add( "欢迎来到 AI War 2！" ).Add( "\n" );
+                            Buffer.Add( "这是一个帮助玩家快速上手的基础教程。" ).Add( "\n\n" );
 
-                            Buffer.Add( "First let's learn how to control the camera:" ).Add( "\n\n" );
+                            Buffer.Add( "首先让我们学习如何控制视角：" ).Add( "\n\n" );
 
-                            Buffer.Add( "--Arrow keys or WASD to move the camera up/down/left/right, or by moving the mouse to the edge of the screen" ).Add( "\n" );
-                            Buffer.Add( "--Holding Q and moving the mouse to rotate the camera" ).Add( "\n" );
-                            Buffer.Add( "--Mousewheel or page-up/page-down to zoom in and out" ).Add( "\n" );
-                            Buffer.Add( "Camera move speed can be changed in the Settings menu, available by pressing Escape.\n" );
+                            Buffer.Add( "--方向键或 WASD 移动视角上下左右，或将鼠标移至屏幕边缘" ).Add( "\n" );
+                            Buffer.Add( "--按住 Q 并移动鼠标旋转视角" ).Add( "\n" );
+                            Buffer.Add( "--滚轮或 PageUp/PageDown 缩放" ).Add( "\n" );
+                            Buffer.Add( "视角移动速度可在设置菜单中调整，按 Escape 打开设置。\n" );
                             Buffer.Add( "\n" );
-                            Buffer.Add( "Once you're ready to get started, select the Build Menu in the sidebar by clicking the Build tab or pressing ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("OpenBuildTab")).Add(" until it opens.")
-                                  .Add("Hitting ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("OpenBuildTab"))
-                                  .Add("will toggle you between the Build and Docks menus. The Build menu allows you to place structures and other critical units. The Docks menu is used to build your primary combat units." ).Add( "\n" );
+                            Buffer.Add( "准备好后，在侧边栏中选择建造菜单，点击 Build 标签或按下 ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("OpenBuildTab")).Add(" 直到打开。")
+                                  .Add("按下 ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("OpenBuildTab"))
+                                  .Add(" 将在建造与船坞菜单间切换。建造菜单用于放置建筑等重要单位，船坞菜单用于建造主要作战单位。" ).Add( "\n" );
                         }
                         //TODO: tell the player "Home Command Stations are important"
                         else if ( !Condition.UserHasBuiltEnoughEngineers.GetMetNow() )
                         {
                             WriteHeader( Buffer, 2, maxHeader );
-                            Buffer.Add( "To assist in building things, let's start by building more Engineers. You start with two, but we want more.  Engineers are extremely useful units that can assist in building structures or ships, and they can also heal your units after a battle.\n\n")
-                                .Add( "To build Engineers, find them in the Build menu (they look a bit like a gear) and click on the Engineer icon. Once you have selected the Engineer icon, you are in Building Placement mode and your mouse cursor will take the shape of the unit you are building.\n\n")
-                                .Add("Left click 10 times on the map to start building 10 engineers, or hold ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("Build5xUnits"))
-                                .Add( ", which builds five units at a time, and click twice.")
-                                .Add(" Once you are done building them, right click to exit Building Placement mode. You should have at least 10 engineers in all.");
+                            Buffer.Add( "为了协助建造，让我们先建造更多工程师。你初始有两个，但我们需要更多。工程师是非常有用的单位，可以协助建造建筑或舰船，还能在战后修理你的单位。\n\n")
+                                .Add( "要建造工程师，在建造菜单中找到它们（图标看起来像齿轮），点击工程师图标。选择工程师图标后，你将进入建筑放置模式，鼠标光标将变为正在建造的单位形状。\n\n")
+                                .Add("在地图上左键点击 10 次开始建造 10 个工程师，或按住 ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("Build5xUnits"))
+                                .Add( "（每次建造五个单位），点击两次。")
+                                .Add(" 建造完成后，右键点击退出建筑放置模式。你总共应该有至少 10 个工程师。");
                         }
                         else if(!Condition.UserHasBuiltSpaceDock.GetMetNow() )
                         {
                             WriteHeader( Buffer, 3, maxHeader );
-                            Buffer.Add( "Now under the Infrastructure section of the Build menu, you'll find the Space Dock toward the end of the list (mouse over the icons to find it). Click on it, then click on the planet map to start it building. " ).Add( "\n" );
+                            Buffer.Add( "现在在建造菜单的基础设施部分，你会在列表末尾附近找到太空船坞（悬停图标查找）。点击它，再点击星球地图开始建造。" ).Add( "\n" );
                         }
                         break;
                     case ConditionGroup.QueueInitialFleet:
                         if ( !Condition.UserHasOpenedDocksMenu.GetMetNow() )
                         {
                             WriteHeader( Buffer, 4, maxHeader );
-                            Buffer.Add( "To build some ships, open the Docks tab, either by clicking it or pressing ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("OpenBuildTab")).Add(" once." );
+                            Buffer.Add( "要建造舰船，打开船坞标签，点击或按 ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("OpenBuildTab")).Add(" 一次。" );
                         }
                         else if(Condition.UserHasOpenedDocksMenu.GetMetNow() )
                         {
                             WriteHeader( Buffer, 5, maxHeader );
-                            Buffer.Add( "Now we need to build some small \"fleet ships\" to prepare for combat.\n\nIn the Docks Menu, you see the ships you can build. The number under the icon is the maximum number of ships of that type that you can have at one time.").Add("\n").
-                                Add("Build queues are automatically looping; it will build the selected units until you tell it to stop. \nYou can pause construction via the 'Pause' button just above the build queue but don't pause them right now; first we need to build a fleet!\n\nQueue all the available ships by clicking on the icon for each of the ship types.").Add("\n\n").
-                                Add("There are 5 types of ships available to you right now. The Scout is used for exploration only, and we will use them later. The others are your initial starting combat ships.");
+                            Buffer.Add( "现在我们需要建造一些小型的\"舰队舰船\"来准备战斗。\n\n在船坞菜单中，你可以看到可建造的舰船。图标下方的数字是你能同时拥有的该类型舰船的最大数量。").Add("\n").
+                                Add("建造队列会自动循环，会持续建造所选单位直到你让它停止。\n你可以通过建造队列上方的'暂停'按钮暂停建造，但现在先不要暂停；首先我们需要建造一支舰队！\n\n点击每种舰船类型的图标来加入队列。").Add("\n\n").
+                                Add("当前有 5 种舰船可供建造。侦查舰仅用于探索，我们稍后会用到它们。其他是初始战斗舰船。");
                         }
                         else if ( !Condition.UserHasQueuedAllFleetShips.GetMetNow() )
                         {
                             WriteHeader( Buffer, 6, maxHeader );
-                            Buffer.Add( "Under \"Space Dock,\" click once on all of the ship types you can currently build. Once you've clicked a ship model then it becomes highlighted to let you know it's building." ).Add( "\n" );
+                            Buffer.Add( "在\"太空船坞\"下点击所有当前可建造的舰船类型。点击后舰船模型会高亮，表示正在建造。" ).Add( "\n" );
                         }
                         break;
                     case ConditionGroup.BuildInitialFleet:
                         if (! Condition.UserHasEnoughEnergy.GetMetNow() )
                         {
                             WriteHeader( Buffer, 7, maxHeader );
-                            Buffer.Add( "It looks like you've run out of energy before building all of your fleetships. You will need to scrap some extra units or structures in order to proceed with the tutorial. To scrap a unit or group of units, select them and hit ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "ScrapUnits" )).Add("\n\n");
+                            Buffer.Add( "看起来在建造完所有舰队舰船之前能量用完了。你需要废弃一些多余的单位或建筑才能继续教程。要废弃一个或一组单位，选中它们并按 ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "ScrapUnits" )).Add("\n\n");
                         }
                         else if(! Condition.UserHasUnpausedAIShipGroup.GetMetNow() )
                         {
                             WriteHeader( Buffer, 8, maxHeader );
-                            Buffer.Add( "You will need to unpause the Space Dock so it can build your fleet." ).Add( "\n" );
+                            Buffer.Add( "你需要取消暂停太空船坞，以便它能建造你的舰队。" ).Add( "\n" );
                         }
                         else if ( !Condition.UserHasBuiltAllFleetShips.GetMetNow() )
                         {
                             WriteHeader( Buffer, 9, maxHeader );
-                            Buffer.Add( "Your fleet is now building! This may take a while though. You can see how many ships are left by looking at the 'Docks' menu.\n\n");
-                            Buffer.Add( "You can speed up or slow down time by pressing " ).Add( InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "IncreaseFrameSize" ) )
-                                .Add( " or " ).Add( InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "DecreaseFrameSize" ) ).Add(".\n\n")
-                            .Add( "Now we'll wait until the maximum number of each type is built." ).Add( "\n\n" );
+                            Buffer.Add( "你的舰队正在建造！不过可能需要一些时间。你可以查看'船坞'菜单了解剩余舰船数量。\n\n");
+                            Buffer.Add( "你可以通过按 " ).Add( InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "IncreaseFrameSize" ) )
+                                .Add( " 或 " ).Add( InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "DecreaseFrameSize" ) ).Add(" 加速或减速时间。\n\n")
+                            .Add( "现在我们将等待每种类型的最大数量建造完成。" ).Add( "\n\n" );
                         }
                         break;
                     case ConditionGroup.CheckObjectivesMenu:
                         if(!Condition.UserHasOpenedObjectiveMenu.GetMetNow() )
                         {
                             WriteHeader( Buffer, 10, maxHeader );
-                            Buffer.Add("Sometimes it can be hard to know what your next goal should be. To get a sense of your in-game goals, let's open the Objectives menu in the sidebar or click")
+                            Buffer.Add("有时难以知道下一个目标是什么。要了解游戏中的目标，让我们打开侧边栏中的目标菜单或点击")
                                 .Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("OpenObjectivesTab"))
-                                .Add(" and mouseover the items there. That menu provides a useful guide for what you should be trying to accomplish in game.\n");
+                                .Add(" 并悬停查看项目。该菜单提供了有关你在游戏中应完成目标的有用指南。\n");
                         }
                         break;
                     case ConditionGroup.StartAttackOnMiddlePlanet:
                         if ( !Condition.MovingToMiddlePlanet_UserHasSelectedAllMilitaryShips.GetMetNow() )
                         {
                             WriteHeader( Buffer, 11, maxHeader );
-                            Buffer.Add( "Once you have examined the Objectives, let's marshal your fleet and blow things up." ).Add( "\n" );
-                            Buffer.Add( "Select all your military units (band-box select them all, or press ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("SelectAllMobileMilitary")).Add( "\n" );
+                            Buffer.Add( "查看目标后，让我们集结舰队去大干一场。" ).Add( "\n" );
+                            Buffer.Add( "选择所有军事单位（框选全部，或按 ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("SelectAllMobileMilitary")).Add( "\n" );
                         }
                         else if ( !Condition.MovingToMiddlePlanet_UserHasSetAllMilitaryShipsToControlGroup1.GetMetNow() )
                         {
                             WriteHeader( Buffer, 12, maxHeader );
-                            Buffer.Add( "Next, add all your selected units to your first control group pressing ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "ModifyControlGroup" )).Add(" + X, where X is a number. So you might use " ).Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("ModifyControlGroup")).Add(" + 1 for control group 1. You can define up to 10 control groups in game, but for now let's use one control group with all of your units.").Add( "\n\n" );
-                            Buffer.Add( "Once you've done that, let's re-open the Docks menu so you can have newly built ships rally directly to your fleet." ).Add( "\n" );
+                            Buffer.Add( "接下来，将所有已选单位加入第一个控制组，按 ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "ModifyControlGroup" )).Add(" + X，X 是一个数字。例如你可以使用 " ).Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("ModifyControlGroup")).Add(" + 1 作为控制组 1。游戏中最多可以定义 10 个控制组，但现在我们用一个控制组包含所有单位。").Add( "\n\n" );
+                            Buffer.Add( "完成后，让我们重新打开船坞菜单，这样新建舰船可以直接集结到你的舰队。" ).Add( "\n" );
                         }
                         else if( !Condition.UserHasOpenedDocksMenu.GetMetNow() )
                         {
                             WriteHeader( Buffer, 13, maxHeader );
-                            Buffer.Add( "We'd like to not keep having to assign newly produced units to the control group manually, so let's set them to rally to that group. Make sure you are still at the start planet and select the Docks Menu (or press B once)." ).Add( "\n" );
+                            Buffer.Add( "我们不希望每次都手动将新建单位分配到控制组，所以让我们设置它们集结到该组。确保你仍在起始星球，选择船坞菜单（或按 B 一次）。" ).Add( "\n" );
                         }
                         else if ( !Condition.UserHasSetSpaceDockToRallyToControlGroup1.GetMetNow() )
                         {
                             WriteHeader( Buffer, 14, maxHeader );
-                            Buffer.Add("You can rally newly-built ships to a fixed location with the 'Rally' button, or to a group with the 'Group' button.  ")
-                                .Add("We want to use the group button, so press that. The icon will turn green when rallying is active.").Add("\n\n")
-                                .Add("This will also automatically send all newly built ships to the location of the Control Group, as well as adding them to the control group." ).Add( "\n\n" )
-                                .Add( "Note that EACH dock can rally a different way.  So if you want your Frigates and fleetships to all rally together (for now, you do), then click the button on both." );
+                            Buffer.Add("你可以通过'集结'按钮将新建舰船集结到固定位置，或通过'编组'按钮集结到编组。")
+                                .Add("我们想使用编组按钮，所以按下它。集结激活时图标将变为绿色。").Add("\n\n")
+                                .Add("这也会自动将所有新建舰船发送到控制组的位置，并将它们加入控制组。" ).Add( "\n\n" )
+                                .Add( "注意每个船坞可以设置不同的集结方式。所以如果你希望护卫舰和舰队舰船一起集结（目前你确实希望如此），那么点击两者的按钮。" );
                         }
                         else if ( !Condition.MovingToMiddlePlanet_UserHasGivenAllMilitaryShipsMoveOrder.GetMetNow() )
                         {
                             WriteHeader( Buffer, 15, maxHeader );
-                            Buffer.Add("Finally, send your fleet to the next planet. There is a wormhole on the right side of the planet; you may need to pan to the right to see it. With your units selected, hold ")
+                            Buffer.Add("最后，派遣你的舰队前往下一个星球。星球右侧有一个虫洞；你可能需要向右平移才能看到。选中你的单位后，按住 ")
                                 .Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("SendThroughWormhole"))
-                                .Add(" - ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("GiveOrdersToUnit")).Add(" the wormhole or the name floating above it to tell your ships to fly through that wormhole the next planet." ).Add( "\n\n" )
-                                .Add("Note!  Later on, if you are traveling far, just tab out to the galaxy map and hover over any planet.  It will show you the route your ships will take.  Then hit ")
-                                .Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("GiveOrdersToUnit")).Add(" and your ships will go straight there.").Add( "\n" );
+                                .Add(" - ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("GiveOrdersToUnit")).Add(" 虫洞或虫洞上方名称，让舰船穿过虫洞前往下一个星球。" ).Add( "\n\n" )
+                                .Add("注意！之后如果你远距离旅行，只需切换到银河地图并悬停在任何星球上。它将显示你的舰船将要经过的路线。然后按 ")
+                                .Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("GiveOrdersToUnit")).Add(" 你的舰船将直接前往目的地。").Add( "\n" );
                         }
                         break;
                     case ConditionGroup.SwitchToMiddlePlanet:
                         if ( !Condition.MovingToMiddlePlanet_UserHasPausedTheGame.GetMetNow() )
                         {
                             WriteHeader( Buffer, 16, maxHeader );
-                            Buffer.Add( "But you don't want your units to get there without your being able to see them." ).Add( "\n" );
-                            Buffer.Add( "Pause the game by pressing ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("TogglePause"))
-                                .Add(" or ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("TogglePauseAlt")).Add( "\n" );
+                            Buffer.Add( "但你不想你的单位在你看不到它们的情况下到达那里。" ).Add( "\n" );
+                            Buffer.Add( "按 ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("TogglePause"))
+                                .Add(" 或 ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("TogglePauseAlt")).Add( "\n" );
                         }
                         else if ( !Condition.MovingToMiddlePlanet_UserHasSwitchedViewToGalaxyMap.GetMetNow() )
                         {
                             WriteHeader( Buffer, 17, maxHeader );
-                            Buffer.Add( "Now press ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("ToggleGalaxyMap")).Add(" to switch from Planet View to Galaxy View." ).Add( "\n" );
+                            Buffer.Add( "现在按 ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("ToggleGalaxyMap")).Add(" 从行星视图切换到银河视图。" ).Add( "\n" );
                         }
                         else if ( !Condition.MovingToMiddlePlanet_UserHasSwitchedViewToTargetPlanet.GetMetNow() )
                         {
                             WriteHeader( Buffer, 18, maxHeader );
-                            Buffer.Add( "This is the Galaxy View, where much of your strategizing takes place in a real game." ).Add( "\n" );
+                            Buffer.Add( "这是银河视图，在实际游戏中你的大部分策略都在这里制定。" ).Add( "\n" );
                             Buffer.Add( InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("MakePlanetClickSelectAndSwitchView"))
-                                .Add(" - ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("SelectUnit")).Add(" on the planet in between the other two, which is where you just told your ships to go.").Add( "\n" );
+                                .Add(" - ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("SelectUnit")).Add(" 中间那颗星球，也就是你刚命令舰船前往的地方。").Add( "\n" );
                         }
                         else if ( !Condition.MovingToMiddlePlanet_UserHasUnpausedTheGame.GetMetNow() )
                         {
                             WriteHeader( Buffer, 19, maxHeader );
-                            Buffer.Add("Great! Now press ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("TogglePause")).Add(" (or ")
-                                .Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("TogglePauseAlt")).Add(") again to unpause the game.").Add( "\n" );
+                            Buffer.Add("很好！现在按 ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("TogglePause")).Add("（或 "
+                                .Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("TogglePauseAlt")).Add("）再次取消暂停游戏。").Add( "\n" );
                         }
                         break;
                     case ConditionGroup.FightOnMiddlePlanet:
                         if ( !Condition.UserHasOpenedShipsMenu.GetMetNow() )
                         {
                             WriteHeader( Buffer, 20, maxHeader );
-                            Buffer.Add("As we wait for the fleet to arrive, let's open the Ships sidebar menu by clicking on it or hitting ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("OpenShipsTab")).Add(". This will show all of the ships at a planet, and is the usual way to help manage a battle. You can see your units, and also select them by clicking on their icons in the Ships sidebar.").Add("\n\n")
-                                .Add("In the sidebar it will also tell you the number of squads from each side and the Strength of that side; Strength is an indication of how powerful your forces are, and it is indicated by a number next to a stylized S." ).Add( "\n" );
+                            Buffer.Add("在等待舰队到达时，让我们打开舰船侧边栏菜单，点击或按 ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("OpenShipsTab")).Add("。这将显示星球上的所有舰船，是管理战斗的常用方式。你可以看到你的单位，也可以通过点击舰船侧边栏中的图标来选择它们。").Add("\n\n")
+                                .Add("侧边栏还会显示双方的小队数量和战力值；战力是你部队强大程度的指标，显示在 stylized S 旁边的数字。" ).Add( "\n" );
                         }
                         if ( !Condition.MovingToMiddlePlanet_EnoughMilitaryShipsHaveArrived.GetMetNow() )
                         {
                             WriteHeader( Buffer, 21, maxHeader );
-                            Buffer.Add("If your game is still paused, then hit ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("TogglePause")).Add("(or ")
-                                .Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("TogglePauseAlt")).Add(" to unpause it.  We'll just wait a moment for our ships to get here and start the party." ).Add( "\n" );
+                            Buffer.Add("如果你的游戏仍处于暂停状态，按 ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("TogglePause")).Add("（或 "
+                                .Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("TogglePauseAlt")).Add(" 取消暂停。我们稍等片刻，让舰船到达并开始行动。" ).Add( "\n" );
                         }
                         break;
                     case ConditionGroup.TakeMiddlePlanet:
                         if ( !Condition.UserHasRidMiddlePlanetOfDefenses.GetMetNow() )
                         {
                             WriteHeader( Buffer, 22, maxHeader );
-                            Buffer.Add( "You can move your selected units by right clicking on a location or target. This planet is defended by Guard Posts, which will spawn AI fleetships when you get too close. Let's move our forces toward the Guard posts and destroy them first. You will want to keep your fleet together to maximize firepower." )
-                                .Add(" That said, you can also put your troops in Pursuit Mode by clicking ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("ToggleFRD")).Add(", which will have them pick their own targets.").Add( "\n\n" );
-                            Buffer.Add( "It may take multiple assaults, so you may need to build a new fleet if you lose the first few. You may observe reinforcements rallying to your fleet; this is from the group-style rally you set." ).Add( "\n\n" );
+                            Buffer.Add( "你可以通过右键点击位置或目标来移动所选单位。这个星球由守卫哨站防御，靠近时会生成 AI 舰队舰船。让我们先把部队移向守卫哨站并将其摧毁。你需要保持舰队集中以最大化火力。" )
+                                .Add(" 也就是说，你也可以将部队设为追击模式，点击 ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("ToggleFRD")).Add("，让它们自行选择目标。").Add( "\n\n" );
+                            Buffer.Add( "可能需要多次进攻，如果最初几次失利，你可能需要建造新舰队。你可能会看到增援部队集结到你的舰队；这是你之前设置的编组集结。" ).Add( "\n\n" );
 
-                            Buffer.Add( "It is generally a good idea to destroy all the AI defensive structures and units before capturing a planet." ).Add( "\n" );
-                            Buffer.Add( "This tutorial will proceed when all the AI defenses are destroyed." ).Add( "\n" );
+                            Buffer.Add( "通常建议在占领星球前摧毁所有 AI 防御建筑和单位。" ).Add( "\n" );
+                            Buffer.Add( "当所有 AI 防御被摧毁后教程将继续。" ).Add( "\n" );
                         }
                         else if ( !Condition.UserHasFreedMiddlePlanetController.GetMetNow() )
                         {
                             WriteHeader( Buffer, 23, maxHeader );
-                            Buffer.Add( "Great work! Now give an attack order against the enemy warp gate and \"Command Station\", if you haven't already, so that your ships destroy them." ).Add( "\n\n" );
+                            Buffer.Add( "做得好！现在对敌人虫洞和\"指挥站\"下达攻击命令（如果尚未下达），让舰船摧毁它们。" ).Add( "\n\n" );
 
-                            Buffer.Add( "Your units will not normally attack these targets without orders, as destroying them triggers an increase in \"AI Progress\", i.e. the AI's aggressiveness in attacking you." ).Add( "\n" );
+                            Buffer.Add( "你的单位通常不会在没有命令的情况下攻击这些目标，因为摧毁它们会触发\"AI 进度\"增加，即 AI 攻击你的积极性提高。" ).Add( "\n" );
                         }
                         else if ( !Condition.UserHasClaimedMiddlePlanet.GetMetNow() )
                         {
                             WriteHeader( Buffer, 24, maxHeader );
-                            Buffer.Add("To capture the planet, go back to your home planet (use ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("ToggleGalaxyMap")).Add(" to go to the Galaxy menu, then transfer your view to your original planet by control-clicking on that planet) and find the \"Colony Ship\" in the build menu. Click on the Colony Ship icon, then click on the planet to choose where it builds. Once built, bring it to the middle planet. Then open the Build menu on the middle planet to build a new Command Station. There are three types of command stations; for the tutorial just pick one." ).Add( "\n\n" );
+                            Buffer.Add("要占领星球，返回你的母星（使用 ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("ToggleGalaxyMap")).Add(" 打开银河菜单，然后按住 Ctrl 点击该星球切换到原始星球），在建造菜单中找到\"殖民船\"。点击殖民船图标，然后点击星球选择建造位置。建造完成后，将其带到中间星球。然后在中间星球打开建造菜单建造一个新的指挥站。指挥站有三种类型；教程中随便选一个。" ).Add( "\n\n" );
 
-                            Buffer.Add( "This tutorial will proceed when the planet is yours." ).Add( "\n\n" ).Add("Command Stations can build slowly, so you might want to send a few Engineers over to help it build more quickly. This is one of the many values of Engineers!");
+                            Buffer.Add( "当星球属于你后教程将继续。" ).Add( "\n\n" ).Add("指挥站建造速度较慢，所以你可以派几个工程师过去帮助加快建造。这是工程师的众多价值之一！");
                         }
                         else if(! Condition.UserHasBuiltEnergyCollectorOnMiddlePlanet.GetMetNow())
                         {
-                            Buffer.Add( "One of the key resources in the game is Energy; energy is a global resource that allows you to build ships, turrets and other critical structures. The chief means of obtaining energy is by building an Energy Collector on each of your planets. Lets build one on your new planet. You can find it in the Build menu, under Infrastructure" ).Add( "\n\n" )
-                                .Add("Note that you can have Energy Collectors auto-build on your planets via the Settings menu, under Automation.") ;
+                            Buffer.Add( "游戏中的关键资源之一是能量；能量是一种全局资源，允许你建造舰船、炮塔和其他关键建筑。获取能量的主要方式是在每个星球上建造能量收集器。让我们在你的新星球上建造一个。你可以在建造菜单的基础设施部分找到它" ).Add( "\n\n" )
+                                .Add("注意你可以通过设置菜单中的自动化选项让能量收集器在你的星球上自动建造。") ;
                         }
                         break;
                       case ConditionGroup.PrepareToTakeThirdPlanet:
@@ -441,63 +441,63 @@ namespace Arcen.AIW2.External
                           if(!Condition.UserIsOnStartPlanet.GetMetNow() && !Condition.UserHasScoutedFinalPlanet.GetMetNow() )
                           {
                             WriteHeader( Buffer, 25, maxHeader );
-                            Buffer.Add( "To finish the tutorial, we will defeat the AI on the third planet. Before attacking, let's first send some Scouts to the final planet to see what their defenses look like. Let's go back to the first planet to find some scouts.\n\n");
+                            Buffer.Add( "为了完成教程，我们将击败第三颗星球上的 AI。在攻击之前，先派一些侦查舰到最后的星球看看他们的防御情况。让我们先回到第一颗星球找一些侦查舰。\n\n");
                           }
                           else if(!Condition.UserHasScoutedFinalPlanet.GetMetNow() )
                           {
                             WriteHeader( Buffer, 26, maxHeader );
-                            Buffer.Add("Scouts are cloaked, fast but weaponless ships that are used to learn information about planets before you attack, or to monitor the enemy's activities. Scouts are fleetships and built from the Space Dock. You should have some on this planet already, so select them and then Tab to the galaxy map." ).Add( "\n\n" )
-                                .Add("You can give units orders from the Galaxy map. Since you have selected some scouts, ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("MakePlanetClickSelectAndSwitchView"))
-                                .Add(" - ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("GiveOrdersToUnit")).Add(" on the final planet to send scouts. Having advanced knowledge of enemy defenses will help you choose which planets to attack, and how to attack them.\n");
+                            Buffer.Add("侦查舰是隐形、快速但无武装的舰船，用于在攻击前获取星球情报，或监视敌人的活动。侦查舰属于舰队舰船，在太空船坞建造。这个星球上应该已经有一些了，选中它们然后切换到银河地图。" ).Add( "\n\n" )
+                                .Add("你可以从银河地图给单位下达命令。由于你已经选中了一些侦查舰，").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("MakePlanetClickSelectAndSwitchView"))
+                                .Add(" - ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("GiveOrdersToUnit")).Add(" 最后星球以派遣侦查舰。提前了解敌人防御将帮助你选择攻击哪些星球以及如何攻击。\n");
                           }
                           else if(!Condition.UserHasBuiltFrigateConstructor.GetMetNow() )
                           {
                               WriteHeader( Buffer, 27, maxHeader );
-                              Buffer.Add( "The enemy planet is a Mark 2 planet, which is significantly stronger than the Mark 1 planet you just took. You will need to strengthen your fleet to defeat it. First, we will build Frigates. Let's go back to your start planet and build a Frigate Dock; it is available in the Build menu near the Space Dock." ).Add( "\n\n" );
+                              Buffer.Add( "敌方星球是 Mark 2 星球，比你刚占领的 Mark 1 星球强大得多。你需要加强你的舰队才能击败它。首先，我们要建造护卫舰。让我们回到起始星球建造一个护卫舰船坞；它在建造菜单中太空船坞附近。" ).Add( "\n\n" );
                           }
                           else if(!Condition.UserHasBuiltFrigate.GetMetNow() )
                           {
                             WriteHeader( Buffer, 28, maxHeader );
-                            Buffer.Add( "Frigates are significantly stronger than fleetships, which makes them valuable tools. First, open the Docks menu and click the 'Group' button for the Frigate Dock to make any units built rally to your fleet. Then click on the Assault Frigate to begin to build it." ).Add( "\n\n" );
+                            Buffer.Add( "护卫舰明显比舰队舰船更强，这使它们成为宝贵的工具。首先，打开船坞菜单，点击护卫舰船坞的'编组'按钮，让建造的单位集结到你的舰队。然后点击突击护卫舰开始建造。" ).Add( "\n\n" );
                           }
                           else if(!Condition.UserHasOpenedScienceMenu.GetMetNow() && !Condition.UserHasUpgradedThings.GetMetNow() )
                           {
                             WriteHeader( Buffer, 29, maxHeader );
-                            Buffer.Add( "You will also need to Upgrade some fleetships. Upgrading units makes them significantly more powerful, and allows you to build more of them. Let's open the Tech Menu now and take a look." ).Add( "\n\n" );
+                            Buffer.Add( "你还需要升级一些舰队舰船。升级单位会让它们变得更强大，并允许你建造更多。让我们打开科技菜单看看。" ).Add( "\n\n" );
                           }
                           else if(!Condition.UserHasUpgradedThings.GetMetNow() )
                           {
                             WriteHeader( Buffer, 30, maxHeader );
-                            Buffer.Add( "When you hover over a unit it will tell you how much stronger it gets when you upgrade it. Upgrade a few fleetships (the topmost category), then we'll attack. Note that you probably don't want to upgrade the Scout here, since it's not a combat unit." ).Add( "\n\n" );
+                            Buffer.Add( "悬停在单位上时会告诉你升级后能变强多少。升级一些舰队舰船（最上面的类别），然后我们进攻。注意你可能不想升级侦查舰，因为它不是战斗单位。" ).Add( "\n\n" );
                         }
                         break;
                     case ConditionGroup.ActuallyTakeThirdPlanet:
                         if ( !Condition.UserHasEnoughEnergy.GetMetNow() )
                         {
                             WriteHeader( Buffer, 31, maxHeader );
-                            Buffer.Add( "You need more energy to build more ships. Your primary way of getting energy is to build an Energy Collector on each planet -- make sure you have a collector on each one!  If you don't have enough territory to support your energy needs, you can also scrap units by selecting them and clicking " )
-                                .Add( InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "ScrapUnits" ) ).Add( ".\n\n" );
+                            Buffer.Add( "你需要更多能量来建造更多舰船。获取能量的主要方式是在每个星球上建造能量收集器——确保每个星球都有一个！如果你的领土不足以支持能量需求，你也可以选中单位并点击 " )
+                                .Add( InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "ScrapUnits" ) ).Add( " 来废弃单位。\n\n" );
                         }
                         else if ( !Condition.UserHasFreedLastPlanet.GetMetNow() )
                         {
                             WriteHeader( Buffer, 33, maxHeader );
-                            Buffer.Add( "Destroy the last planet to win the tutorial. You may need to attack multiple times, or upgrade more ships to do it" ).Add( "\n\n" );
+                            Buffer.Add( "摧毁最后一颗星球以完成教程。你可能需要多次攻击，或升级更多舰船才能做到" ).Add( "\n\n" );
                         }
                         else if ( !Condition.TutorialIsOver.GetMetNow() )
                         {
                             WriteHeader( Buffer, 34, maxHeader );
-                            Buffer.Add( "Congratulations, you have won the tutorial!  This was a quick and easy taste just to get you used to the controls.  Now give one of the Quick Start options a try.\n\nRemember to pay attention to your Objectives tab!  And remember that it's okay to lose -- some of the most epic stories come out of well-fought losses.  Don't stress, and see what the galaxy throws at you." ).Add( "\n\n" );
+                            Buffer.Add( "恭喜你完成了教程！这只是让你熟悉操作的快速简单体验。现在试试快速开始选项之一吧。\n\n记得关注你的目标标签！记住失败也没关系——一些最史诗的故事来自于奋力拼搏后的失败。别紧张，看看银河系会给你带来什么。" ).Add( "\n\n" );
                         }
                         break;
                    // case ConditionGroup.KillAI:
                    //     if( !Condition.UserHasKilledAI.GetMetNow())
                    //     {
-                   //         Buffer.Add( "If you look at the final planet, you'll see the the AI's homeworld. Normally it's much further away, and very heavily defended." ).Add( "\n" )
-                   //             .Add("But since this is a tutorial, the AI forgot to build defenses. Go and kill the AI Overlord and you win!").Add("\n");
+                   //         Buffer.Add( "如果你看最后的星球，你会看到 AI 的母星。通常它要远得多，而且防御非常严密。" ).Add( "\n" )
+                   //             .Add("但这是教程，AI 忘了建造防御。去击败 AI Overlord 你就赢了！").Add("\n");
                    //     }
                    //     else
                    //     {
-                   //         Buffer.Add( "You Win! Now try your hand at a normal game using Quick Start from the main menu").Add("\n");
+                   //         Buffer.Add( "你赢了！现在试试从主菜单使用快速开始进行正常游戏").Add("\n");
                    //     }
                    //     break;
                     // case ConditionGroup.NukeLastPlanet:
@@ -544,11 +544,11 @@ namespace Arcen.AIW2.External
 
         public void WriteHeader( ArcenDoubleCharacterBuffer Buffer, int Index, int MaxIndex )
         {
-            Buffer.Add( "<b><color=#78beff>T</color><color=#6db9ff>u</color><color=#5eb1ff>t</color><color=#5ec4ff>o</color><color=#52c0ff>r</color><color=#52d8ff>i</color><color=#42d5ff>a</color><color=#24deff>l</color><color=#78beff> Step " )
+            Buffer.Add( "<b><color=#78beff>T</color><color=#6db9ff>u</color><color=#5eb1ff>t</color><color=#5ec4ff>o</color><color=#52c0ff>r</color><color=#52d8ff>i</color><color=#42d5ff>a</color><color=#24deff>l</color><color=#78beff> 步骤 " )
                     .Add( Index ).Add( "/" ).Add( MaxIndex ).Add( "</b>:</color>\n" );
 
             if ( World.Instance.IsPaused )
-                Buffer.Add( "<color=#ffd75e>Game Is Paused!</color>\n" ).Add(FontSizes.BASE_SIZE_STRING);
+                Buffer.Add( "<color=#ffd75e>游戏已暂停！</color>\n" ).Add(FontSizes.BASE_SIZE_STRING);
         }
         public bool GetIsConditionMet(Condition Condition)
         {

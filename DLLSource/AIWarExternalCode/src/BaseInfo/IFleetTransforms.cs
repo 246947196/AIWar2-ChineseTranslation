@@ -65,9 +65,9 @@ namespace Arcen.AIW2.External
         private readonly List<FleetLeaderTransformTarget> TypesToConvertTo = List<FleetLeaderTransformTarget>.Create_WillNeverBeGCed( 10, "FleetLeaderTypeTransformer-TypesToConvertTo" );
 
         public string DisplayName { get { return this.Type.DisplayName; } }
-        public string NoTransformsText { get { return "No types to switch to!  Cannot Switch Types Right Now</color>"; } }
+        public string NoTransformsText { get { return "无可转换形态！当前无法切换形态</color>"; } }
         public void GetTooltip(ArcenCharacterBufferBase buffer) {
-            buffer.Add("You can spend hacking points to change the form of this fleet leader.");
+            buffer.Add("你可以消耗骇客点数来改变此舰队领袖的形态。");
         }
 
         public bool HasAnyTransforms { get { return this.TypesToConvertTo.Count > 0; } }

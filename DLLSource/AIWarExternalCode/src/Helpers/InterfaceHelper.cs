@@ -141,14 +141,14 @@ namespace Arcen.AIW2.External
                         {
                             if ( sentinelsExt.WasRandomAIType && !showRandomAiType )
                             {
-                                Buffer.Add( " Random: " );
+                                Buffer.Add( " 随机： " );
                             }
                             else if ( sentinelsExt.AdaptiveAIDifficulty != TypeDifficulty.Unset )
                             {
                                 if ( showRandomAiType )
-                                    Buffer.Add( " Adaptive (" + sentinelsExt.AIType.DisplayName + "): " );
+                                    Buffer.Add( " 自适应（" + sentinelsExt.AIType.DisplayName + "）： " );
                                 else
-                                    Buffer.Add( " Adaptive " ).Add( EnumNameCache.GetName( sentinelsExt.AdaptiveAIDifficulty ) ).Add( ": " );
+                                    Buffer.Add( " 自适应 " ).Add( EnumNameCache.GetName( sentinelsExt.AdaptiveAIDifficulty ) ).Add( "： " );
                             }
                             else
                                 Buffer.Add( " " + sentinelsExt.AIType.DisplayName + ": " );
@@ -157,19 +157,19 @@ namespace Arcen.AIW2.External
                         }
                     }
                     else
-                        Buffer.Add( " ??? Type " );
+                        Buffer.Add( " ??? 类型 " );
 
                     if ( faction.FactionIsDefeated )
                     {
-                        Buffer.Add( ". This faction has been defeated\n" );
+                        Buffer.Add( "。此阵营已被击败\n" );
                         continue;
                     }
                     if ( faction.InCivilWarMode )
-                        Buffer.Add( " In Civil War." );
+                        Buffer.Add( " 内战中。" );
                     if ( showVerboseDetails )
                     {
                         bool hasAddedAny = false;
-                        Buffer.StartColor( QuickColors.HeaderDull ).Add( "\n\tWave Types: " ).EndColor();
+                        Buffer.StartColor( QuickColors.HeaderDull ).Add( "\n\t攻击波类型： " ).EndColor();
                         {
                             bool threatWavesOn = World_AIW2.Instance.Setup.GetBoolBySetting( "ThreatWave" );
                             bool directWavesOn = World_AIW2.Instance.Setup.GetBoolBySetting( "DirectWave" );
@@ -179,26 +179,26 @@ namespace Arcen.AIW2.External
                             if ( threatWavesOn )
                             {
                                 AddCommaIfNeeded( ref hasAddedAny, Buffer );
-                                Buffer.Add( "Threat" );
+                                Buffer.Add( "威胁" );
                             }
                             if ( directWavesOn )
                             {
                                 AddCommaIfNeeded( ref hasAddedAny, Buffer );
-                                Buffer.Add( "Direct" );
+                                Buffer.Add( "直接" );
                             }
                             if ( crossPlanetWavesOn )
                             {
                                 AddCommaIfNeeded( ref hasAddedAny, Buffer );
-                                Buffer.Add( "Cross Planet" );
+                                Buffer.Add( "跨星球" );
                             }
                             if ( reconquestWaveOn )
                             {
                                 AddCommaIfNeeded( ref hasAddedAny, Buffer );
-                                Buffer.Add( "Reconquest" );
+                                Buffer.Add( "再征服" );
                             }
 
                             if ( !hasAddedAny )
-                                Buffer.Add( "None." );
+                                Buffer.Add( "无。" );
                             else
                                 Buffer.Add( "." );
                         }
@@ -208,9 +208,9 @@ namespace Arcen.AIW2.External
                     bool sharkB = World_AIW2.Instance.Setup.GetBoolBySetting( "SharkB" );
 
                     if ( sharkA )
-                        Buffer.Add( " Shark Plot A enabled." );
+                        Buffer.Add( " 鲨鱼阴谋 A 已启用。" );
                     if ( sharkB )
-                        Buffer.Add( " Shark Plot B enabled." );
+                        Buffer.Add( " 鲨鱼阴谋 B 已启用。" );
 
                     if ( showDebugInfoInTooltip && sentinelsExt != null )
                     {
@@ -240,7 +240,7 @@ namespace Arcen.AIW2.External
                     AIHunterCoreData hunterExt = faction.GetAISentinelsCoreData().HunterInfo;
                     Buffer.Add( " " + (hunterExt == null ? "???" : hunterExt.SubType.DisplayName) + ". " + (hunterExt == null ? "???" : hunterExt.AIDifficulty.DisplayName) + ". " );
                     if ( faction.InCivilWarMode )
-                        Buffer.Add( " In Civil War." );
+                        Buffer.Add( " 内战中。" );
 
                 }
                 debugCode = 700;
@@ -249,7 +249,7 @@ namespace Arcen.AIW2.External
                     AIWardenCoreData wardenExt = faction.GetAISentinelsCoreData().WardenInfo;
                     Buffer.Add( " " + (wardenExt == null ? "???" : wardenExt.SubType.DisplayName) + ". " + (wardenExt == null ? "???" : wardenExt.AIDifficulty.DisplayName) + ". " );
                     if ( faction.InCivilWarMode )
-                        Buffer.Add( " In Civil War." );
+                        Buffer.Add( " 内战中。" );
 
                 }
                 debugCode = 800;
@@ -261,16 +261,16 @@ namespace Arcen.AIW2.External
                      intensity > 0 && 
                      faction.Type != FactionType.AI )
                 {
-                    Buffer.Add( " (Strength " ).Add( intensity ).Add( ")" );
+                    Buffer.Add( "（强度 " ).Add( intensity ).Add( "）" );
                 }
                 if ( faction.IsVassal )
                 {
-                    Buffer.Add( " (Vassal) ", "a1a1ff" );
+                    Buffer.Add( "（附庸） ", "a1a1ff" );
                 }
                 if ( showDebugInfoInTooltip &&
                      showVerboseDetails &&
                      faction.BenefitsFromFimbulwinter )
-                    Buffer.Add( " Fimbul ", "235589" );
+                    Buffer.Add( " 芬布尔 ", "235589" );
                 if ( !secretFactionDetails && numberToSeed > 0 )
                 {
                     debugCode = 900;
@@ -283,7 +283,7 @@ namespace Arcen.AIW2.External
                             printNothing = true; //don't display this for random factions, since it makes it obvious its a ZA
                         if ( faction.GetBoolValueForCustomFieldOrDefaultValue( "CivilWarEnabled", true ) )
                         {
-                            Buffer.Add( " Civil War Enabled " );
+                            Buffer.Add( " 内战已启用 " );
                         }
 
                     }
@@ -368,7 +368,7 @@ namespace Arcen.AIW2.External
                 debugCode = 1200;
                 Buffer.Add( "\n" );
             }
-            Buffer.Add( "\n" ).Add( "<size=85%><color=#d18444>Hold <color=#996f4c>" ).Add( InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "IncreaseShipAndPlanetTooltipDetailBy1_Key1" ) ).Add( "</color> to see additional data about the factions.</color></size>\n" );
+            Buffer.Add( "\n" ).Add( "<size=85%><color=#d18444>按住 <color=#996f4c>" ).Add( InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "IncreaseShipAndPlanetTooltipDetailBy1_Key1" ) ).Add( "</color> 查看更多阵营数据。</color></size>\n" );
             } catch ( Exception e )
             {
                 ArcenDebugging.LogSingleLine("Hit exceptions in WriteFactionsToBuffer debugCode " + debugCode + " " + e.ToString(), Verbosity.DoNotShow );
