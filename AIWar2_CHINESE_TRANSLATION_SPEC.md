@@ -417,9 +417,9 @@ ArcenUIAssetRedirect (BepInEx 插件)
 | AIWarExternalDeepProcessingCode | 有源码 | 133 | ✅ 0 错误 | ✅ 完成 |
 | AIWarExternalVisualizationCode | 有源码 | 45 | ✅ 0 错误 | ✅ 完成 |
 | ArcenUIAssetRedirect | BepInEx 插件 | 1 | ✅ 0 错误 | ✅ 完成 |
-| ArcenUniversal | 反编译 | 613 | ✅ 0 错误 | ⏳ 待翻译 |
-| ArcenAIW2Core | 反编译 | ~350 | ❌ 待编译 | ⏳ 未开始 |
-| ArcenAIW2Visualization | 反编译 | ~100 | ❌ 待编译 | ⏳ 未开始 |
+| ArcenUniversal | 反编译 | 613 | ✅ 0 错误 | ⏳ 待翻译（IL 方案） |
+| ArcenAIW2Core | 反编译 | ~350 | ❌ 待编译 | 🔶 IL 方案进行中（首批示例已部署） |
+| ArcenAIW2Visualization | 反编译 | ~100 | ❌ 待编译 | 🔶 IL 方案进行中（玩家可见短语首批已部署，见 8.15） |
 | **合计** | | **~1841** | | |
 
 ### 8.14 翻译注意事项
@@ -431,6 +431,130 @@ ArcenUIAssetRedirect (BepInEx 插件)
 5. **翻译优先级**：UI 文件（src/UIs/）优先，游戏逻辑文件（BaseInfo/、Sim/ 等）通常不需要翻译
 7. **禁止中文引号**：C# 字符串中不能使用 `""`（中文左右双引号），会被编译器误认为字符串分隔符。必须用 `''`（单引号）替代。例如：`"点击'是'确认"` 而非 `"点击"是"确认"`
 8. **引号嵌套**：如果翻译文本中需要引用按钮名称或其他 UI 元素，使用 `'单引号'` 包裹，不要使用 `"双引号"`
+
+### 8.15 核心 DLL 的 IL 级汉化（dnlib 工具方案）
+
+> **方案变更记录（2026-07-08）：** 原 8.15 节基于 dnSpy MCP 在 IL 层面逐个方法改 `ldstr`，且受 MCP 传输层 UTF-8 中文编码丢失限制（只能替换 ASCII）。现**推翻该经验**，改为用 **dnlib 控制台工具 `ilpatch` 直接读写 DLL 文件**：批量提取 `ldstr`、按 JSON 字典查表替换、原位写回。中文以 UTF-16LE 存入 `#US` 堆（CLR 原生格式），**无转义、无编码丢失**，并已实机验证生效（主菜单/实体名经 XML+arcenui 已中文，核心 DLL 的行星提示、成就解锁提示等经本方案写入后游戏内可见）。
+
+**背景：** 三个核心 DLL（ArcenUniversal、ArcenAIW2Core、ArcenAIW2Visualization）无法像外部代码项目那样直接修改 C# 源码后重新编译。过去尝试反编译为 C# 项目再编译替换的方式出现了大量运行时 BUG（因反编译-重编译过程改变了 IL 结构，导致对象池异常、类型初始化错误等）。本方案在 IL 层面只替换 `ldstr` 指令的操作数（字符串字面量），不改变方法结构，从根本上避免 BUG。
+
+**关键约束（历史坑）：** 不可用手写/脚本方式构造外部类型引用 —— 一旦 `ldstr` 之外的指令需要引用外部类型，必须用 `module.Import()` 从磁盘真实 DLL 导入（dnlib 曾把 `System.Text.Encodings.Web` 的 `PublicKeyToken` 误写为 `c5cd5de6caeeedcf`，正确值应为 `cc7b13ffcd2ddd51`，错误会导致 CLR 解析程序集失败）。本方案只改 `ldstr` 字面量，不引入外部类型，故不触发该风险。
+
+#### 8.15.1 环境要求
+
+- .NET 8 SDK（`dotnet build` 编译 `ilpatch`）
+- `dnlib`（引用 `dnSpy\...\net48\dnlib.dll`）
+- 目标 DLL：`PatchedAssemblies\ArcenAIW2Core.dll` / `ArcenAIW2Visualization.dll`（BepInEx `AssemblyRedirector` 在加载前读取此目录，故此处即游戏实际加载版本）
+- **重要：** 修改前确认目标 DLL 未被占用（dnSpy 加载中 / 游戏运行中 / 文件监视器）。否则工具会降级输出 `.new.dll`，需手动 `Copy-Item -Force` 覆盖。
+
+#### 8.15.2 工具 `ilpatch` 三种模式
+
+| 命令 | 用途 |
+|------|------|
+| `ilpatch inspect <dll> [contains]` | 列出 DLL 中全部唯一 `ldstr`（可按子串过滤），用于探查 |
+| `ilpatch extract <dll> <out.json>` | 提取全部"疑似可翻译"的 `ldstr` 为 `{"原文":""}` 骨架字典 |
+| `ilpatch patch <dll> <dict.json> [--dry]` | 按字典逐条替换 `ldstr` 操作数，原位写回（写前自动备份 `.bak`） |
+
+`patch` 行为细节：
+- 命中字典且值非空 → `instr.Operand = zh`（赋值 .NET `string`，dnlib 自动处理 `#US` 堆，**必须赋 `string` 而非 `new UTF8String(...)`，否则 writer 报 `Invalid instruction operand`**）。
+- 未命中或值为空 → 跳过（保留英文）。
+- 写回用 `File.Copy` 覆盖（非 `File.Move`，避开文件监视器对替换删除的独占锁）；若目标仍被锁，降级写 `<name>.new.dll` 并提示手动复制。
+- 写后做回读（`ModuleDefMD.Load`）校验 DLL 可重新加载。
+
+#### 8.15.3 翻译字典格式
+
+JSON，`{ "English text": "中文", ... }`：
+- key 为 DLL 中**完整** `ldstr` 原文（含前导/尾随空格、`\n`、`<size>` 等标签，必须与 DLL 内逐字节一致才能匹配）。
+- value 为中文；保留原文中的 `{0}`、`{1}`、`<color>`、`<size=70%>`、`\n` 等格式符与标签。
+- 译文字符串中**禁止中文引号 `""`**，需引用时用 `'单引号'`（规范 8.14）。
+
+#### 8.15.4 汉化工作流
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│ 1. ilpatch extract <dll> <skeleton.json>                     │
+│    → 导出疑似可翻译字符串骨架                                  │
+├─────────────────────────────────────────────────────────────┤
+│ 2. 人工/LLM 筛选真正"玩家可见"文本（剔除事件标识符、         │
+│    调试日志、资源校验报错、同步错误描述），填入中文 value     │
+├─────────────────────────────────────────────────────────────┤
+│ 3. ilpatch patch <dll> <dict.json> --dry                     │
+│    → 确认 will replace 条数无误                               │
+├─────────────────────────────────────────────────────────────┤
+│ 4. ilpatch patch <dll> <dict.json>                           │
+│    → 自动 .bak 备份，原位写回中文                             │
+├─────────────────────────────────────────────────────────────┤
+│ 5. 启动游戏验证；若 DLL 被锁导致降级 .new.dll，             │
+│    关闭占用进程后 Copy-Item -Force 覆盖                       │
+└─────────────────────────────────────────────────────────────┘
+```
+
+#### 8.15.5 操作示例
+
+以 `ArcenAIW2Visualization.dll` 为例，把行星选择提示汉化：
+
+**Step 1 - 提取骨架：**
+```
+ilpatch extract "PatchedAssemblies\ArcenAIW2Visualization.dll" viz_skeleton.json
+```
+
+**Step 2 - 筛选并填中文（dict.json 节选）：**
+```json
+{
+  "\nStarting Planet For: ": "\n起始行星归属：",
+  "(extremely hard to defend)": "（极难防守）",
+  "(a bit harder to defend)": "（稍难防守）",
+  "\nClicking on this planet will make it the starting planet for ": "\n点击此行星将把它设为以下阵营的起始行星：",
+  "Nomad planet '{0}' has moved.": "游牧行星 '{0}' 已移动。"
+}
+```
+
+**Step 3 - 试运行确认匹配数：**
+```
+ilpatch patch "PatchedAssemblies\ArcenAIW2Visualization.dll" dict.json --dry
+# [dry] ... would replace 33, skip 449
+```
+
+**Step 4 - 正式写入（自动 .bak）：**
+```
+ilpatch patch "PatchedAssemblies\ArcenAIW2Visualization.dll" dict.json
+```
+
+**Step 5 - 验证（字节级确认 UTF-16LE 中文、无转义）：**
+```
+ilpatch inspect "PatchedAssemblies\ArcenAIW2Visualization.dll" "起始行星归属"
+# 起始行星归属：
+```
+
+#### 8.15.6 修改规则
+
+1. **只改 `ldstr` 指令**的字符串操作数，不改其他任何指令、不引入外部类型
+2. 保留方法原有 IL 结构（条件分支、方法调用、局部变量等）
+3. 保留格式标签（`<color>`、`<size=70%>`、`<b>` 等）与插值变量（`{0}`、`{1}`、`{Count}`）
+4. Debug 日志、内部标识符、同步错误描述（如 `Client thinks squad with pkid ...`）、资源加载校验报错**不翻译**
+5. 事件/警报标识符（如 `ArkChiefOfStaff_HomeCommandStationUnderAttack`、`WormholeTransit`）是代码查找 key，**严禁翻译**（会破坏查找逻辑）
+6. 译文字符串禁止中文引号 `""`，用 `'单引号'`
+7. 字典 key 必须与 DLL 内原文逐字节一致（含空格/换行/标签），否则不匹配
+
+#### 8.15.7 与 C# 源码汉化的区别
+
+| 对比项 | 外部代码 (AIWarExternalCode 等) | 核心 DLL (ArcenUniversal 等) |
+|--------|-------------------------------|------------------------------|
+| 修改方式 | 直接在 C# 源码中翻译字符串 | 用 `ilpatch` 改 IL 中的 `ldstr` 操作数 |
+| 编译 | 需要 Roslyn 重新编译整个项目 | 不需要编译，直接写回 DLL |
+| 风险 | 低（修改源码后编译，结构不变） | 低（仅改字符串常量，结构不变） |
+| 工具 | VS Code / Edit 工具 | `ilpatch`（dnlib 控制台） |
+| 中文编码 | 源码 UTF-8，正常 | `#US` 堆 UTF-16LE，无转义（已验证） |
+| 修改后 | `build.ps1` → `deploy.ps1` | 直接覆盖 `PatchedAssemblies/` 对应 DLL |
+
+#### 8.15.8 常见问题
+
+- **writer 报 `Invalid instruction operand`**：`ldstr` 操作数必须赋 `.NET string`（`instr.Operand = zh`），不能赋 `new UTF8String(zh)`。
+- **patch 报 `target locked`，生成 `.new.dll`**：目标 DLL 被 dnSpy/游戏/文件监视器占用。关闭占用进程后 `Copy-Item -Force` 覆盖原 DLL 即可（不要用 `Move`，替换删除会被锁）。
+- **中文显示乱码**：确认未误用 `new UTF8String(...)`；正确方式下中文以 UTF-16LE 存于 `#US` 堆，CLR 原生支持。
+- **部分字符串没翻到**：字典 key 与 DLL 内原文不一致（多/少空格、`\n`、标签差异）。用 `ilpatch inspect <dll> <子串>` 比对真实原文。
+- **游戏崩溃**：检查是否误翻了事件标识符或改动了非 `ldstr` 指令。
+- **部署位置**：核心 DLL 改完后放在 `PatchedAssemblies/`，由 `AssemblyRedirector` 在加载前读取，无需经 `deploy.ps1`（deploy.ps1 不含 PatchedAssemblies 部署步骤）。
 
 ## 九、DLC 翻译（第二波）
 
