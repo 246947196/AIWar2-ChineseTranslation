@@ -169,18 +169,6 @@ class Program
         {
             if (File.Exists(outPath)) File.Delete(outPath);
         }
-        {
-            // target locked (e.g. loaded in dnSpy / game running). Fall back to a side-by-side file.
-            var side = Path.ChangeExtension(dll, "new.dll");
-            File.Move(outPath, side, true);
-            Console.Error.WriteLine($"[patch] target locked; wrote side-by-side: {side}");
-            Console.Error.WriteLine($"[patch] close the program holding it, then replace {Path.GetFileName(dll)} with {Path.GetFileName(side)}");
-        }
-
-        finally
-        {
-            if (File.Exists(outPath)) File.Delete(outPath);
-        }
 
         if (overwrote)
             Console.Error.WriteLine($"[patch] {Path.GetFileName(dll)}: replaced {replaced}, skipped {skipped}");
