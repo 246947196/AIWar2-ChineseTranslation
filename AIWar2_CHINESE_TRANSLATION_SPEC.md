@@ -354,10 +354,21 @@ $msbuild = "C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe"
 - DLL 编译产物 → `GameData/ModdableLogicDLLs/`
 - BepInEx 插件 (ArcenUIAssetRedirect) → `BepInEx/plugins/ChineseTranslation/`
 - 汉化 AssetBundle → `BepInEx/plugins/ChineseTranslation/AssetBundles_Win/arcenui`
+- **核心 DLL IL 汉化版**（见 8.15）→ 游戏 `PatchedAssemblies/`
 
-运行 `.\deploy.ps1` 即可部署所有翻译文件。
+运行 `.\deploy.ps1` 即可部署所有翻译文件（含核心 DLL 的 IL 汉化），**低级用户一键部署即可获得完整中文**。
 
-核心 DLL（ArcenAIW2Core / ArcenAIW2Visualization）的 IL 汉化产物**不纳入本仓库**（仓库只跟踪 `DLLSource` 源码、XML 翻译、`BepInEx` 插件与 arcenui bundle）。经 `ilpatch` 修改后的核心 DLL 直接置于游戏安装目录的 `PatchedAssemblies/`（BepInEx `AssemblyRedirector` 在加载前读取此目录，即游戏实际加载版本），由译者本地手动管理、备份（`.bak`）。若需团队共享，应单独分发 `PatchedAssemblies/` 下的汉化 DLL，而非通过本仓库的 git 跟踪。
+#### 核心 DLL 的仓库管理与部署
+
+核心 DLL（ArcenAIW2Core / ArcenAIW2Visualization）的 IL 汉化产物**已纳入本仓库**（`PatchedAssemblies/` 目录，与游戏目录同名；`.bak` 备份由 `.gitignore` 排除）。这样高级用户可查看/复用汉化成果，低级用户经 `deploy.ps1` 直接获得。
+
+`deploy.ps1` 的部署逻辑（2026-07-08 修正）：
+- **Core / Visualization**：优先使用仓库内 `PatchedAssemblies/ArcenAIW2Core.dll` / `ArcenAIW2Visualization.dll`（IL 汉化版）；若仓库尚无对应汉化版，则回退拷贝游戏原版。
+- **Universal**：目前无 IL 汉化，始终从游戏 `AIWar2_Data\Managed\` 拷贝原版。
+
+**重要**：原脚本曾无条件从 `AIWar2_Data\Managed\` 拷贝原版覆盖 `PatchedAssemblies/`，会冲掉 ilpatch 写入的中文，已修复。切勿改回该逻辑。
+
+译者本地经 `ilpatch` 修改后，应把更新后的核心 DLL 提交进仓库 `PatchedAssemblies/`（而非仅留本地游戏目录），以保证一键部署包含最新汉化。
 
 ### 8.9 反编译项目的已知编译修复
 
@@ -545,7 +556,7 @@ ilpatch inspect "PatchedAssemblies\ArcenAIW2Visualization.dll" "起始行星归�
 | 风险 | 低（修改源码后编译，结构不变） | 低（仅改字符串常量，结构不变） |
 | 工具 | VS Code / Edit 工具 | `ilpatch`（dnlib 控制台） |
 | 中文编码 | 源码 UTF-8，正常 | `#US` 堆 UTF-16LE，无转义（已验证） |
-| 修改后 | `build.ps1` → `deploy.ps1` | 直接覆盖 `PatchedAssemblies/` 对应 DLL |
+| 修改后 | 提交汉化 DLL 进仓库 `PatchedAssemblies/` → `deploy.ps1` 一键部署 | 提交进仓库 `PatchedAssemblies/` 对应 DLL，`deploy.ps1` 自动部署到游戏目录 |
 
 #### 8.15.8 常见问题
 
@@ -554,7 +565,7 @@ ilpatch inspect "PatchedAssemblies\ArcenAIW2Visualization.dll" "起始行星归�
 - **中文显示乱码**：确认未误用 `new UTF8String(...)`；正确方式下中文以 UTF-16LE 存于 `#US` 堆，CLR 原生支持。
 - **部分字符串没翻到**：字典 key 与 DLL 内原文不一致（多/少空格、`\n`、标签差异）。用 `ilpatch inspect <dll> <子串>` 比对真实原文。
 - **游戏崩溃**：检查是否误翻了事件标识符或改动了非 `ldstr` 指令。
-- **部署位置**：核心 DLL 改完后放在 `PatchedAssemblies/`，由 `AssemblyRedirector` 在加载前读取，无需经 `deploy.ps1`（deploy.ps1 不含 PatchedAssemblies 部署步骤）。
+- **部署位置**：核心 DLL 经 `ilpatch` 改完后，提交进仓库 `PatchedAssemblies/`（`.bak` 不入库），由 `deploy.ps1` 在部署时优先拷贝到游戏 `PatchedAssemblies/`，`AssemblyRedirector` 在加载前读取。无需手动放置（见 8.8）。
 
 ## 九、DLC 翻译（第二波）
 
