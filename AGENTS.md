@@ -89,9 +89,9 @@ Control Bindings 菜单左侧分类按钮显示的是 `InputAction` XML 文件�
 | AIWarExternalDeepProcessingCode | DLLSource/AIWarExternalDeepProcessingCode/src/ | ✅ | ✅ 完成 |
 | AIWarExternalVisualizationCode | DLLSource/AIWarExternalVisualizationCode/src/ | ✅ | ✅ 完成 |
 | ArcenUIAssetRedirect（BepInEx 插件） | DLLSource/ArcenUIAssetRedirect/src/ | ✅ | ✅ 完成 |
-| ArcenUniversal（反编译） | DLLSource/ArcenUniversal/ | ✅ 0 错误 | ⏳ |
-| ArcenAIW2Core（反编译） | DLLSource/ArcenAIW2Core/ | ❌ | ⏳ |
-| ArcenAIW2Visualization（反编译） | DLLSource/ArcenAIW2Visualization/ | ❌ | ⏳ |
+| ArcenUniversal（IL 汉化） | —（无源码，见 SPEC 8.15） | — | ⏳ |
+| ArcenAIW2Core（IL 汉化） | —（无源码，见 SPEC 8.15） | — | 🔶 进行中 |
+| ArcenAIW2Visualization（IL 汉化） | —（无源码，见 SPEC 8.15） | — | 🔶 进行中（玩家可见短语首批已部署） |
 
 ## deploy.ps1 行为说明
 
@@ -109,16 +109,18 @@ Control Bindings 菜单左侧分类按钮显示的是 `InputAction` XML 文件�
 编译器：Roslyn 4.12.0（`C:\Users\Administrator\AppData\Local\Temp\roslyn412\tasks\net472\csc.exe`）
 MSBuild：`C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe`
 目标框架：
-- 外部代码/反编译项目：.NET Framework 4.7.1
+- 外部代码项目：.NET Framework 4.7.1
 - BepInEx 插件 (ArcenUIAssetRedirect)：.NET Framework 4.7.2
 引用：`..\..\..\ReliableDLLStorage\`（插件额外引用 `..\..\..\BepInEx\core\`）
+
+> 核心 DLL（ArcenUniversal / ArcenAIW2Core / ArcenAIW2Visualization）不走编译路线，改用 `ilpatch`（dnlib）做 IL 字面量替换，详见 SPEC 8.15。
 
 ## 翻译规则
 
 1. **Edit 工具**逐字符串替换，禁止 Write 覆写整个文件
 2. 只改 `"..."` 内文本，不碰引号外代码
 3. 保留 `{变量}` 和 `<color>` 标签
-4. 每翻译完一个 DLL 编译验证，0 错误继续
+4. 每翻译完一个**外部代码** DLL 编译验证，0 错误继续（核心 DLL 走 IL 汉化，不编译，用 `ilpatch inspect` 回读验证）
 5. 禁止中文引号 `""`，用 `''` 替代
 6. Debug 日志、内部标识符不翻译
-7. **反编译项目**：只改 `"..."` 内字符串，不改 csproj 配置、GlobalUsings.cs、编译修复代码
+7. 核心 DLL（IL 汉化）：用 `tools/ilpatch` 按 JSON 字典替换 `ldstr` 字面量，不碰任何代码结构（详见 SPEC 8.15）
