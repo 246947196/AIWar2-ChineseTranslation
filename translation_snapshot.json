@@ -2,17 +2,17 @@
   "layers": {
     "dll_core": {
       "ArcenAIW2Core.dll": {
-        "note": "requires ilspycmd for string extraction",
+        "note": "strings extracted via ilpatch extract (see SPEC 8.15)",
         "hash": "be37f664edd2f396350a07e0c8218e796b2b25aaf1a3901bc57a4312684eaeb1",
         "strings": {}
       },
       "ArcenUniversal.dll": {
-        "note": "requires ilspycmd for string extraction",
+        "note": "strings extracted via ilpatch extract (see SPEC 8.15)",
         "hash": "6b74d23ba7a1074bc6d887760f8279f1e9f506887b155552f406abe7772f2296",
         "strings": {}
       },
       "ArcenAIW2Visualization.dll": {
-        "note": "requires ilspycmd for string extraction",
+        "note": "strings extracted via ilpatch extract (see SPEC 8.15)",
         "hash": "b748f1871b57f4ac30f5bc47b5e1abeb5bee82e1e24bca2d74f1c79b3bae67ae",
         "strings": {}
       }

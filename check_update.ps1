@@ -190,7 +190,7 @@ function Extract-DLLSourceStrings {
     return $result
 }
 
-# ---- Core DLL extraction (hash only, strings via ilspycmd later) ----
+# ---- Core DLL scan (hash only; strings extracted via ilpatch extract) ----
 function Extract-CoreDLLs {
     param($baseDir)
     Write-Host "  Scanning core DLLs..." -ForegroundColor Gray
@@ -204,7 +204,7 @@ function Extract-CoreDLLs {
             continue
         }
         $hash = Get-SHA256Hash $path
-        $result[$dll] = @{ hash = $hash; strings = @{}; note = "requires ilspycmd for string extraction" }
+        $result[$dll] = @{ hash = $hash; strings = @{}; note = "strings extracted via ilpatch extract (see SPEC 8.15)" }
     }
     Write-Host "    $($result.Count) DLLs hashed" -ForegroundColor Green
     return $result
@@ -455,10 +455,10 @@ function Write-Report {
     $coreOk = $coreDLLChanges.Count - $coreChanged
     $lines += "  OK (no change): $coreOk"
     if ($coreChanged -gt 0) {
-        $lines += "  Hash changed (needs re-decompilation): $coreChanged"
+        $lines += "  Hash changed (needs re-translation): $coreChanged"
         foreach ($c in $coreDLLChanges) {
             if ($c.Type -eq "hash_changed_only") {
-                $lines += "    - $($c.File) (re-decompile with ilspycmd)"
+                $lines += "    - $($c.File) (re-translate strings with ilpatch)"
             }
         }
     }
