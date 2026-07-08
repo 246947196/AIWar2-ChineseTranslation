@@ -16,3 +16,8 @@ translation_update_report_*.txt
 
 # PatchedAssemblies: 汉化后的核心 DLL（IL 汉化产物，见规范 8.15）。备份不入库
 PatchedAssemblies/*.bak
+
+# ilpatch build artifacts
+tools/ilpatch/bin/
+tools/ilpatch/obj/
+tools/ilpatch/*.extract.json

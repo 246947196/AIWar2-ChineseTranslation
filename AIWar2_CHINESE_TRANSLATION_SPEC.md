@@ -353,10 +353,10 @@ $msbuild = "C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe"
 - XML 翻译文件 → `GameData/Configuration/`
 - DLL 编译产物 → `GameData/ModdableLogicDLLs/`
 - BepInEx 插件 (ArcenUIAssetRedirect) → `BepInEx/plugins/ChineseTranslation/`
-- 汉化 AssetBundle → `BepInEx/plugins/ChineseTranslation/AssetBundles_Win/arcenui`
+- 汉化 AssetBundle → `BepInEx/plugins/ChineseTranslation/AssetBundles_Win/arcenui`（**不纳入仓库**：约 220MB，超 GitHub 单文件 100MB 限制。改由 `patch_arcenui.py` 据仓库内 `arcenui_translations.json` + 游戏原文 bundle 本地生成；deploy.ps1 在缺失时提示运行该脚本）
 - **核心 DLL IL 汉化版**（见 8.15）→ 游戏 `PatchedAssemblies/`
 
-运行 `.\deploy.ps1` 即可部署所有翻译文件（含核心 DLL 的 IL 汉化），**低级用户一键部署即可获得完整中文**。
+运行 `.\deploy.ps1` 即可部署所有翻译文件（含 arcenui UI 文本与核心 DLL 的 IL 汉化），**低级用户一键部署即可获得完整中文**。
 
 #### 核心 DLL 的仓库管理与部署
 

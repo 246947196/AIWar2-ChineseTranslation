@@ -185,13 +185,18 @@ if (Test-Path $redirectDll) {
 Write-Host "ArcenUIAssetRedirect plugin deployed" -ForegroundColor Green
 
 # Deploy arcenui AssetBundle
+# NOTE: 汉化版 arcenui bundle (约 220MB) 因 GitHub 单文件 100MB 限制无法入库，
+#       故不纳入仓库。改为本地生成：仓库内含 patch_arcenui.py + arcenui_translations.json，
+#       结合游戏原文 bundle (游戏目录 AssetBundles_Win/arcenui) 重新生成汉化版。
+#       若游戏目录已存在汉化 bundle 则跳过；否则提示用户运行 patch_arcenui.py patch。
 Write-Host ""
 Write-Host "Deploying arcenui AssetBundle..." -ForegroundColor Yellow
 $arcenuiBundle = "$pluginDir\AssetBundles_Win\arcenui"
 if (Test-Path $arcenuiBundle) {
-    Write-Host "  arcenui bundle exists ($([math]::Round((Get-Item $arcenuiBundle).Length/1MB)) MB)" -ForegroundColor Gray
+    Write-Host "  arcenui bundle already present ($([math]::Round((Get-Item $arcenuiBundle).Length/1MB)) MB)" -ForegroundColor Gray
 } else {
-    Write-Host "  arcenui bundle not found, run patch_arcenui.py first" -ForegroundColor DarkYellow
+    Write-Host "  arcenui bundle not found. 请先运行: python patch_arcenui.py patch" -ForegroundColor DarkYellow
+    Write-Host "  （需本地游戏原文 bundle；生成的汉化版将写入游戏目录对应位置）" -ForegroundColor DarkYellow
 }
 Write-Host "arcenui AssetBundle deployment checked" -ForegroundColor Green
 
