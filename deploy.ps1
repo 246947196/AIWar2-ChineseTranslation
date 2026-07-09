@@ -80,11 +80,10 @@ Copy-Item "$translationDir\BepInEx\patchers\AssemblyRedirector.dll" "$gameDir\Be
 Copy-Item "$translationDir\BepInEx\config\xiaoye97.I18NFont4UnityGame.cfg" "$gameDir\BepInEx\config\" -Force
 Copy-Item "$translationDir\BepInEx\config\BepInEx.cfg" "$gameDir\BepInEx\config\" -Force
 # Copy Arcen DLLs to PatchedAssemblies for AssemblyRedirector
-# Core / Visualization: 优先使用仓库内的 IL 汉化版（PatchedAssemblies/），否则回退游戏原版。
+# Core / Visualization / Universal: 优先使用仓库内的 IL 汉化版（PatchedAssemblies/），否则回退游戏原版。
 # 注意：不可无条件从 AIWar2_Data\Managed 拷贝，否则会覆盖掉 ilpatch 写入的中文（见规范 8.15）。
-# Universal: 目前无 IL 汉化，始终从游戏原版拷贝。
 $transPatched = Join-Path $translationDir "PatchedAssemblies"
-foreach ($asm in @("ArcenAIW2Core", "ArcenAIW2Visualization")) {
+foreach ($asm in @("ArcenAIW2Core", "ArcenAIW2Visualization", "ArcenUniversal")) {
     $translated = Join-Path $transPatched "$asm.dll"
     if (Test-Path $translated) {
         Copy-Item $translated "$gameDir\PatchedAssemblies\" -Force
@@ -94,7 +93,6 @@ foreach ($asm in @("ArcenAIW2Core", "ArcenAIW2Visualization")) {
         Write-Host "  Deployed original (no IL patch yet): $asm.dll" -ForegroundColor DarkYellow
     }
 }
-Copy-Item "$gameDir\AIWar2_Data\Managed\ArcenUniversal.dll" "$gameDir\PatchedAssemblies\" -Force
 Write-Host "BepInEx framework deployed" -ForegroundColor Green
 
 # Deploy I18NFont4UnityGame plugin

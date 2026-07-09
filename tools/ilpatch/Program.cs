@@ -44,10 +44,23 @@ class Program
         }
     }
 
+    static IEnumerable<TypeDef> AllTypes(ModuleDefMD module)
+    {
+        var list = new List<TypeDef>();
+        foreach (var t in module.Types) AddTypeRecursive(t, list);
+        return list;
+    }
+
+    static void AddTypeRecursive(TypeDef t, List<TypeDef> list)
+    {
+        list.Add(t);
+        foreach (var nt in t.NestedTypes) AddTypeRecursive(nt, list);
+    }
+
     static IEnumerable<string> UniqueLdstrs(ModuleDefMD module)
     {
         var seen = new HashSet<string>();
-        foreach (var type in module.Types)
+        foreach (var type in AllTypes(module))
             foreach (var method in type.Methods)
             {
                 if (method.Body == null) continue;
@@ -107,7 +120,7 @@ class Program
 
         int replaced = 0, skipped = 0;
         var skippedList = new List<string>();
-        foreach (var type in module.Types)
+        foreach (var type in AllTypes(module))
             foreach (var method in type.Methods)
             {
                 if (method.Body == null) continue;
