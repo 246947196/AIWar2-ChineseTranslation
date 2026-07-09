@@ -632,3 +632,25 @@ AIWar2_ChineseTranslation/
 | DLC3 其他 | 28 | 设置、阵营等 |
 | XMLMods | 5 | ExoticShips 模组舰船 |
 | **总计** | **210** | - |
+
+### 9.8 合并脚本 bug 修复（2026-07-10）
+
+`merge_expansion_translations.py` 曾有两个 bug，导致 DLC 部署后游戏报错：
+
+**Bug 1：多 system 覆盖错位**
+
+合并脚本在处理同实体下多个 `<system>` 子元素时，总是将翻译覆盖到第一个匹配标签的元素 (`candidates[0]`)，而非按 `name` 属性精确匹配。导致武器系统（如 `name="W1"`）的属性被隐形装置（`name="C"`）的翻译覆盖，产生重复 `name="C"` 的 system 条目（305处，涉及全部3个DLC）。
+
+修复：改为按 `tag` + `name` 属性精确匹配子元素；且只覆盖可翻译属性（`display_name`、`description` 等），不碰 `name`、`category`、游戏数值等非翻译字段。
+
+**Bug 2：ObjectiveCategory 缺失**
+
+`NA_ObjectiveCategories.xml` 汉化覆盖文件遗漏了 `NecromancerStrategy` 类别定义，但 `NA_ObjectiveDetailsHooks.xml` 中有6个 hook 引用了该类别，导致游戏运行时查表失败（`Table ObjectiveCategoryTable was asked for record with name='NecromancerStrategy' but it's not there`）。
+
+修复：在汉化覆盖文件中补回 `NecromancerStrategy` 类别（display_name="死灵策略"）。
+
+**Bug 3：Journal XML 截断**
+
+`ZO_Journal_DarkZenith.xml` 的 GameData\Configuration\Expansions 参考副本缺少结尾 `</root>` 标签，导致 XML 解析失败。修复：从 ChineseTranslation 目录的完整中文版恢复。
+
+**教训**：合并覆盖文件必须包含源文件中所有被引用的条目，不能遗漏。合并脚本不应修改非翻译属性。

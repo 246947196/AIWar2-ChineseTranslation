@@ -1,6 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
+  <objective_category name="NecromancerStrategy" display_name="死灵策略" sort_priority="12"
+        description="此类别将标记一些低垂果实。" />
+
   <objective_category name="NecromancerRifts" display_name="裂隙" sort_priority="30"
         description="这些裂隙将在你作为死灵法师的旅途中提供帮助。" />
 

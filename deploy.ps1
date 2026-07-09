@@ -109,7 +109,13 @@ Write-Host "Deploying translation XML files..." -ForegroundColor Yellow
 $transConfigDir = Join-Path $translationDir "GameData\Configuration"
 $gameConfigDir = Join-Path $gameDir "GameData\Configuration"
 
-$filesToDeploy = Get-ChildItem -Path $transConfigDir -Recurse -Filter "*.xml"
+# NOTE: Expansion (DLC) overrides live under GameData\Configuration\Expansions\ but must be
+# merged into the REAL expansion config dirs (Expansions\<exp>\GameData\Configuration), not
+# deployed as a nested mirror. Exclude them here; they are handled by the merge step below.
+$filesToDeploy = Get-ChildItem -Path $transConfigDir -Recurse -Filter "*.xml" | Where-Object {
+    $rel = $_.FullName.Substring($transConfigDir.Length + 1)
+    -not $rel.StartsWith("Expansions\")
+}
 $deployed = 0
 $filesToDeploy | ForEach-Object {
     $relPath = $_.FullName.Substring($transConfigDir.Length + 1)
@@ -124,6 +130,19 @@ $filesToDeploy | ForEach-Object {
     $deployed++
 }
 Write-Host "Deployed $deployed XML files" -ForegroundColor Green
+
+# Merge expansion (DLC) translation overrides into the real expansion config dirs.
+# Each override is overlaid onto the game's English source file (by name) so the result is
+# a COMPLETE Chinese file written into Expansions\<exp>\GameData\Configuration, guaranteeing
+# translated text wins without losing any game content.
+Write-Host ""
+Write-Host "Merging expansion (DLC) translation overrides into game expansions..." -ForegroundColor Yellow
+$mergeScript = Join-Path $translationDir "merge_expansion_translations.py"
+if (Test-Path $mergeScript) {
+    python $mergeScript
+} else {
+    Write-Host "  ERROR: merge_expansion_translations.py not found; DLC translations NOT deployed" -ForegroundColor Red
+}
 
 # Deploy XMLMods translation files
 Write-Host ""
