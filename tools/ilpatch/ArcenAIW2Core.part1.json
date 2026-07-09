@@ -1,4 +1,4 @@
-﻿{
+{
   "*********** Client Notices Syncs Are Wrong! *********": "",
   "Missing PKID on client: Client has no idea about any ship with pkid ": "",
   "TypeData-Mismatch: Client thinks squad with pkid ": "",
@@ -213,14 +213,14 @@
   "Failed to load save in {0}ms": "",
   "Finish load save in {0}ms": "",
   "Location 2: Go back to main menu since save load failed.": "",
-  "\nMemory Profile Debug Data On Game Exit:\n": "",
+  "\\nMemory Profile Debug Data On Game Exit:\\n": "",
   "Game Version: ": "",
-  "\nMultiplayer Status: ": "",
+  "\\nMultiplayer Status: ": "",
   "Network Data Totals:": "",
-  "\nFramework: ": "",
-  "\nReceived Overall: ": "",
-  "\nSent Overall: ": "",
-  "\nNetwork Active For: ": "",
+  "\\nFramework: ": "",
+  "\\nReceived Overall: ": "",
+  "\\nSent Overall: ": "",
+  "\\nNetwork Active For: ": "",
   " hours, ": "",
   " minutes, ": "",
   " seconds.": "",
@@ -291,3 +291,6 @@
   "  Div Ships Wr Planet": "",
   " Div Ships Catastrophic": "",
   "  Div Ships Missing": "",
+  " Cl Ships To Del": "",
+  " Ghost Time-Based Deleted": ""
+}

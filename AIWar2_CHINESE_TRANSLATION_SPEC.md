@@ -525,9 +525,9 @@ ilpatch inspect "PatchedAssemblies\ArcenAIW2Visualization.dll" "起始行星归�
 |-----|---------|---------------|---------|------|
 | ArcenAIW2Visualization | 113 | 20 | 20 | ✅ 已完成 |
 | ArcenUniversal | 1495 | 151 | 120 | ✅ 已部署 |
-| ArcenAIW2Core | 2347 | 637 | 549 | ✅ 已部署 |
+| ArcenAIW2Core | 2347 | 889 | 748 | ✅ 已部署 |
 
-> 2026-07-09 本次新增 ArcenAIW2Core 翻译 +89 条目（103 处 ldstr 替换），涵盖 Steam/GOG 网络连接错误、舰队/武器系统验证警告、AI 预算标签、地图生成错误等类别。合并脚本 `merge_parts.py` 已编写至 `tools/ilpatch/`，后续可直接复用。
+> 2026-07-09 本次新增 ArcenAIW2Core 翻译 +199 条目（252 处 ldstr 替换），涵盖星域调查、坐标验证、出哨站（Outguard）描述、小队行为调试信息、AI 预算分配等类别。合并脚本 `merge_parts.py` 已编写至 `tools/ilpatch/`，后续可直接复用。
 
 ## 九、DLC 翻译（第二波）
 

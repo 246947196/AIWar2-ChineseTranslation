@@ -1,4 +1,4 @@
-# AI War 2 Deployment Script
+﻿# AI War 2 Deployment Script
 # Deploy all translation components to game directory
 
 $translationDir = "D:\Steam\steamapps\common\AI War 2\AIWar2_ChineseTranslation"

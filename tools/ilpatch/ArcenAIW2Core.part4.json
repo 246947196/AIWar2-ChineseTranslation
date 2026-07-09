@@ -1,11 +1,8 @@
-  ", destroying most of the available resources.": "，摧毁了大部分可用资源。"
-  "</color> has detonated on ": "</color> 引爆于 "
-  ", destroying pretty much everything there.": "，几乎摧毁了那里的一切。"
-  ", destroying pretty much everything there... and the same for the ": "，几乎摧毁了那里的一切……而相邻的"
-  " adjacent planets.": " 相邻行星。"
-  " adjacent planet.": " 相邻行星。"
-  ", paralyzing all units at that planet for 30 seconds.": "，使该行星上所有单位瘫痪 30 秒。"
-  ", paralyzing all units at that planet for 60 seconds... and the same for the ": "，使该行星上所有单位瘫痪 60 秒……而相邻的"
+{
+  " adjacent planets.": " 相邻行星。",
+  " adjacent planet.": " 相邻行星。",
+  ", paralyzing all units at that planet for 30 seconds.": "，使该行星上所有单位瘫痪 30 秒。",
+  ", paralyzing all units at that planet for 60 seconds... and the same for the ": "，使该行星上所有单位瘫痪 60 秒……而相邻的",
   "Undefined Death Effect Implementation": "未定义的死亡效果实现",
   "Failed to spawn new squad of type ": "无法生成新中队，类型为 ",
   " from stack of size ": "，来源堆栈大小为 ",
@@ -16,20 +13,20 @@
   " tries to spawn ": " 尝试生成 ",
   " but it tries to create 0 of them. Please update the XML to specify how many to spawn": " 但尝试创建了 0 个单位。请在 XML 中指定生成数量",
   "Could not find OnEndOfSeeding": "找不到 OnEndOfSeeding",
-  "The alarm post on ": "警报哨站位于"
-  " is alerting nearby ships": " 正在向附近舰船发出警报"
+  "The alarm post on ": "警报哨站位于",
+  " is alerting nearby ships": " 正在向附近舰船发出警报",
   "DoEntitySecondLogic for ": "",
   " debug code ": "",
   "Error in DoOnFail_CalledFromMainSimOnly for hack ": "",
-  "Hack <color=#a1ff22>": "黑客程序 <color=#a1ff22>"
-  "</color> just failed.": "</color> 已失败。"
-  "Hacking exhausted during hack at ": "在以下位置进行黑客入侵时能量耗尽："
+  "Hack <color=#a1ff22>": "黑客程序 <color=#a1ff22>",
+  "</color> just failed.": "</color> 已失败。",
+  "Hacking exhausted during hack at ": "在以下位置进行黑客入侵时能量耗尽：",
   "Error in DoOneSecondOfHackHandlingData for ": "",
   "MainGame.WarpToPlanet": "",
   " for external invulnerability on this planet": "",
   " for external invulnerability in the galaxy": "",
   "Found x{0} invulnerability granters ({1}) for {2} on {3}.": "",
-  "ImmediatelyRemoveFromSim entity {0} because {1} and reason is {2} from\n{3}": "",
+  "ImmediatelyRemoveFromSim entity {0} because {1} and reason is {2} from\\n{3}": "",
   ", Error: ": "",
   "Tried to put ": "",
   "Blank FleetMembership for ship of type ": "",
@@ -55,7 +52,7 @@
   "Invalid trigger detected; for an atribute check, the related string must be Low or High": "检测到无效触发器；对于属性检查，关联字符串必须为 Low 或 High",
   "Invalid trigger detected; for an atribute check, the related int must specify the number of MarkLevelShipLines": "检测到无效触发器；对于属性检查，关联整数必须指定 MarkLevelShipLines 数量",
   "reactive_trigger: ": "",
-  "exception reading {0} include line '{1}'\n{2}": "",
+  "exception reading {0} include line '{1}'\\n{2}": "",
   "AI Ship Group '{0}' had some items in it, but was marked as being intentionally empty!  This is probably not intended.": "",
   "AI Ship Group '{0}' never has any items added to it and was asking to copy from '{1}' in such a case, but the latter could not be found.": "",
   "AI Ship Group '{0}' never has any items added to it, and '{1}' is trying to copy items out of it!": "",
@@ -81,7 +78,7 @@
   "' has no centerpiece": "' 没有核心单位",
   "' centerpiece '": "' 核心单位 '",
   "' failed allocation": "' 分配失败",
-  "exception allocating a FleetDesignTemplate {0} at debugstage {1}\n{2}\n": "",
+  "exception allocating a FleetDesignTemplate {0} at debugstage {1}\\n{2}\\n": "",
   "potential_ships: ": "",
   "ship_membership: ": "",
   "Found null GameEntityTypeData for ": "",
@@ -114,14 +111,14 @@
   "Warning Only:  Skipped creating duplicate fleet of ": "仅警告：跳过创建重复舰队 ",
   " and faction ": " 和阵营 ",
   "Initial Fleet Creation": "",
-  "Combat Fleet ": "战斗舰队 "
-  "Defensive Fleet ": "防御舰队 "
-  "City Center ": "城市中心 "
-  "Officer Fleet ": "军官舰队 "
-  "Strike Fleet ": "打击舰队 "
-  "Custom Strike Fleet ": "自定义打击舰队 "
-  "Custom Fleet ": "自定义舰队 "
-  "Custom Strike ": "自定义打击 "
+  "Combat Fleet ": "战斗舰队 ",
+  "Defensive Fleet ": "防御舰队 ",
+  "City Center ": "城市中心 ",
+  "Officer Fleet ": "军官舰队 ",
+  "Strike Fleet ": "打击舰队 ",
+  "Custom Strike Fleet ": "自定义打击舰队 ",
+  "Custom Fleet ": "自定义舰队 ",
+  "Custom Strike ": "自定义打击 ",
   " has a null faction on it! Category: ": "",
   "Category: ": "",
   "Centerpiece.PrimaryKeyID": "",
@@ -140,20 +137,20 @@
   "' when the fleet already had a BaseInfoSource of type '": "",
   "Error!  Could not find ExternalFleetBaseInfo entry with name: ": "",
   ">() when BaseInfo was null on ": "",
-  " is melee and is mark ": " 为近战单位，等级为 "
-  " is sniper and is mark ": " 为狙击单位，等级为 "
-  " has zombification and is mark ": " 具有僵尸化特性，等级为 "
-  " has cloaking and is mark ": " 具有隐形能力，等级为 "
-  " has low armor and is mark ": " 装甲较低，等级为 "
-  " has high armor and is mark ": " 装甲较高，等级为 "
-  " has low engine and is mark ": " 引擎较弱，等级为 "
-  " has high engine and is mark ": " 引擎较强，等级为 "
-  " has low energy and is mark ": " 能量较低，等级为 "
-  " has high energy and is mark ": " 能量较高，等级为 "
-  " has low mass and is mark ": " 质量较小，等级为 "
-  " has high mass and is mark ": " 质量较大，等级为 "
-  " has low albedo and is mark ": " 反照率较低，等级为 "
-  " has high albedo and is mark ": " 反照率较高，等级为 "
+  " is melee and is mark ": " 为近战单位，等级为 ",
+  " is sniper and is mark ": " 为狙击单位，等级为 ",
+  " has zombification and is mark ": " 具有僵尸化特性，等级为 ",
+  " has cloaking and is mark ": " 具有隐形能力，等级为 ",
+  " has low armor and is mark ": " 装甲较低，等级为 ",
+  " has high armor and is mark ": " 装甲较高，等级为 ",
+  " has low engine and is mark ": " 引擎较弱，等级为 ",
+  " has high engine and is mark ": " 引擎较强，等级为 ",
+  " has low energy and is mark ": " 能量较低，等级为 ",
+  " has high energy and is mark ": " 能量较高，等级为 ",
+  " has low mass and is mark ": " 质量较小，等级为 ",
+  " has high mass and is mark ": " 质量较大，等级为 ",
+  " has low albedo and is mark ": " 反照率较低，等级为 ",
+  " has high albedo and is mark ": " 反照率较高，等级为 ",
   "Unknown attributeOrShipTypeToCheck ": "",
   " in reactive ship group code": "",
   "null SquadToAdd passed to AddSquadToMembership() for fleet: ": "",
@@ -176,14 +173,14 @@
   "AddEntity (Squad): Tried to create rollupList for ": "",
   ", but got back null!": "",
   "AddEntity (Squad): Tried to create byTypeList for ": "",
-  "{0}.Orders.Behavior is now {1} (was {2})\ncalled from:\n{3}": "",
+  "{0}.Orders.Behavior is now {1} (was {2})\\ncalled from:\\n{3}": "",
   " there are no queued orders.": "",
   " the queued orders are": "",
   " is null": "",
   "QueuedOrders.Count": "",
-  "{0}.QueueOrder: {1}\nFrom:\n{2}": "",
-  "{0}.InsertOrderAtStart: {1}\nFrom:\n{2}": "",
-  "{0}.ClearOrders called for {1}. {2} {3} {4}\nFrom:\n{5}": "",
+  "{0}.QueueOrder: {1}\\nFrom:\\n{2}": "",
+  "{0}.InsertOrderAtStart: {1}\\nFrom:\\n{2}": "",
+  "{0}.ClearOrders called for {1}. {2} {3} {4}\\nFrom:\\n{5}": "",
   " Error!  Beam weapon without beam_weapon_visual_style set!  They won't know how to visually draw.  Please set Laser_BlueBright, Lightning_Green, or whatever.": "",
   "Bug: Could not find ShotTypeData for ": "",
   "Bug: Could not find AmmoTypeData for ": "",
@@ -208,23 +205,23 @@
   "' set on non-modular system.  It should be -1 for anything non-modular": "",
   " error: ModuleStatAdjuster set to '": "",
   "' on non-modular system.  It should be 'None' for anything non-modular": "",
-  "null InternalName_Original on EntitySystemTypeData for element with xml:\n": "",
-  "null InternalName_Longer on EntitySystemTypeData for element with xml:\n": "",
-  "null OriginalXmlData on EntitySystemTypeData for element with xml:\n": "",
+  "null InternalName_Original on EntitySystemTypeData for element with xml:\\n": "",
+  "null InternalName_Longer on EntitySystemTypeData for element with xml:\\n": "",
+  "null OriginalXmlData on EntitySystemTypeData for element with xml:\\n": "",
   "EntitySystemTypeData.ChargeOps": "",
-  "Error parsing entity {0} weapon system {1} 's charge= value '{2}'.\nDoes not contain one of: lvar, operator, or rval. operators are: '=><+-'.": "",
+  "Error parsing entity {0} weapon system {1} 's charge= value '{2}'.\\nDoes not contain one of: lvar, operator, or rval. operators are: '=><+-'.": "",
   "error parsing entity {0} weapon system {1} 's charge= value '{2}'. could not find the operator '=><+-'": "",
   "error parsing entity {0} weapon system {1} 's charge= value '{2}'. could not find a charge type named '{3}'": "",
   "error parsing entity {0} weapon system {1} 's  charge= value '{2}'. could not parse rval '{3}'": "",
   "Tried to have damage_amplification_duration longer than 15 seconds.  This is not allowed! {0}": "尝试将 damage_amplification_duration 设置为超过 15 秒。这是不允许的！{0}",
   "Warning: {0} has unallowed DamageAmplificationMult={1}.": "警告：{0} 包含不允许的 DamageAmplificationMult={1}。",
   "Warning: {0} has unallowed seconds_for_beam_to_rotate_fully={1}; the minimum is {2}.": "警告：{0} 包含不允许的 seconds_for_beam_to_rotate_fully={1}；最小值为 {2}。",
-  "This combination of attributes does not make sense: cannot be a coilbeam AND beam_length_multiplier=\"[<=0]\"": "属性组合不合理：不能同时为线圈光束且 beam_length_multiplier=\"[<=0]\"",
-  "This combination of attributes does not make sense: cannot be a coilbeam AND hits_all_intersecting_targets=\"false\"": "属性组合不合理：不能同时为线圈光束且 hits_all_intersecting_targets=\"false\"",
-  "This combination of attributes does not make sense: cannot be a coilbeam AND aoe_spreads_damage_among_available_targets=\"true\"": "属性组合不合理：不能同时为线圈光束且 aoe_spreads_damage_among_available_targets=\"true\"",
-  "This combination of attributes does not make sense: cannot be a chain AND hits_all_intersecting_targets=\"true\"": "属性组合不合理：不能同时为链式且 hits_all_intersecting_targets=\"true\"",
-  "This combination of attributes does not make sense: beam_chains_out_to_targets_x_times=\"{0}\", beam_chains_out_to_targets_x_range=\"{1}\"": "属性组合不合理：beam_chains_out_to_targets_x_times=\"{0}\", beam_chains_out_to_targets_x_range=\"{1}\"",
-  "This combination of attributes does not make sense: beam_chains_out_to_target_min_range=\"{0}\", beam_chains_out_to_targets_x_range=\"{1}\"": "属性组合不合理：beam_chains_out_to_target_min_range=\"{0}\", beam_chains_out_to_targets_x_range=\"{1}\"",
+  "This combination of attributes does not make sense: cannot be a coilbeam AND beam_length_multiplier=\"[<=0]\"": "",
+  "This combination of attributes does not make sense: cannot be a coilbeam AND hits_all_intersecting_targets=\"false\"": "",
+  "This combination of attributes does not make sense: cannot be a coilbeam AND aoe_spreads_damage_among_available_targets=\"true\"": "",
+  "This combination of attributes does not make sense: cannot be a chain AND hits_all_intersecting_targets=\"true\"": "",
+  "This combination of attributes does not make sense: beam_chains_out_to_targets_x_times=\"{0}\", beam_chains_out_to_targets_x_range=\"{1}\"": "",
+  "This combination of attributes does not make sense: beam_chains_out_to_target_min_range=\"{0}\", beam_chains_out_to_targets_x_range=\"{1}\"": "",
   "Notice: {0} weapon system {1} maximum_number_of_targets_hit_per_shot of {2} reduced to {3} since that is the most we can ever actually chain to.": "提示：{0} 武器系统 {1} 的 maximum_number_of_targets_hit_per_shot 从 {2} 减少至 {3}，因为这是实际可链式传播的最大值。",
   "  beam_chains_out_to_targets_x_times = {0}": "",
   "  beam_chains_out_to_max_targets_from_each_source = {0}": "",
@@ -276,8 +273,8 @@
   "Overwrote old entry for ": "",
   "Error when trying to load InstancedRenderer for '": "",
   "No Visuals for game entity type '": "",
-  "Expansion: ": "扩展包："
-  "Mod: ": "模组："
+  "Expansion: ": "扩展包：",
+  "Mod: ": "模组：",
   " characters long, and needs a display_name_for_sidebar variant that is 18 characters are less.": " 个字符长，需要一个不超过 18 个字符的 display_name_for_sidebar 变体。",
   "Null SpriteIcon (icon_name) on ": "",
   "Null SpriteIconBorder (icon_name) on ": "",
@@ -291,3 +288,9 @@
   "System AttributeListAsString: ": "",
   "End System: ": "",
   " must have both a unit type to make with build points and a base ship line, but the following were specified and one of them cold not be found: '": " 必须同时指定用建造点数制造的单位类型和基础舰船生产线，但以下指定项中有一项未找到：'",
+  "' (UnitToMakeWithBuildPoints), and '": "",
+  "' (BaseShipLineForBuildPoints)": "",
+  " is registering as both an AI and a Human turret.  It should not be both!": "",
+  " has no NPCShipCap set!": "",
+  ": has a city_socket_cost='number' without a name_for_city_sockets='name'!": ""
+}

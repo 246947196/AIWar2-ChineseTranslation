@@ -90,7 +90,7 @@ Control Bindings 菜单左侧分类按钮显示的是 `InputAction` XML 文件�
 | AIWarExternalVisualizationCode | DLLSource/AIWarExternalVisualizationCode/src/ | ✅ | ✅ 完成 |
 | ArcenUIAssetRedirect（BepInEx 插件） | DLLSource/ArcenUIAssetRedirect/src/ | ✅ | ✅ 完成 |
 | ArcenUniversal（IL 汉化） | —（无源码，见 SPEC 8.15） | — | ✅ 已部署（151 条 ldstr） |
-| ArcenAIW2Core（IL 汉化） | —（无源码，见 SPEC 8.15） | — | ✅ 已部署（534 条 ldstr） |
+| ArcenAIW2Core（IL 汉化） | —（无源码，见 SPEC 8.15） | — | ✅ 已部署（889 条 ldstr） |
 | ArcenAIW2Visualization（IL 汉化） | —（无源码，见 SPEC 8.15） | — | ✅ 已完成 |
 
 ## deploy.ps1 行为说明
