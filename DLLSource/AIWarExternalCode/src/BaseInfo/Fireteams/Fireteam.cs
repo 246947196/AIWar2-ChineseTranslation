@@ -273,17 +273,17 @@ namespace Arcen.AIW2.External
             try
             {
                 debugStage = 1000;
-                Buffer.AddIntUltraEfficient( MetaData, UltraEfficientStyle.Q_1_To_1,048,575, this.FireTeamID, "FireTeamID" );
+                Buffer.AddIntUltraEfficient( MetaData, UltraEfficientStyle.Q_ˉ1_To_1ˌ048ˌ575, this.FireTeamID, "FireTeamID" );
                 Buffer.WriteHeaderStringToLogIfLoggingActive( "Fireteam Data" );
                 Buffer.AddInt32( MetaData, ReadStyle.PosExceptNeg1, this.Target == null ? -1 : this.Target.PrimaryKeyID, "TargetId" );
-                Buffer.AddIntUltraEfficient( MetaData, UltraEfficientStyle.G_1_To_511, this.TargetPlanet == null ? -1 : this.TargetPlanet.Index, "TargetPlanet" );
+                Buffer.AddIntUltraEfficient( MetaData, UltraEfficientStyle.G_0_To_511, this.TargetPlanet == null ? -1 : this.TargetPlanet.Index, "TargetPlanet" );
                 Buffer.AddBool( MetaData, this.DefenseMode, "DefenseMode" );
                 if (!SerializationCmdType.GetIsNetworkType())
                 {
                     Buffer.AddBool( MetaData, this.CloakedOnly, "CloakedOnly" );
                     Buffer.AddBool(MetaData, this.UpgradedOnly, "UpgradedOnly");
                 }
-                Buffer.AddIntUltraEfficient( MetaData, UltraEfficientStyle.G_1_To_511, this.LurkPlanet == null ? -1 : this.LurkPlanet.Index, "LurkPlanet" );
+                Buffer.AddIntUltraEfficient( MetaData, UltraEfficientStyle.G_0_To_511, this.LurkPlanet == null ? -1 : this.LurkPlanet.Index, "LurkPlanet" );
                 Buffer.AddByte( MetaData, ReadStyleByte.Normal, (byte)this.status, "FireTeamStatus" );
                 if (!SerializationCmdType.GetIsNetworkType())
                 {
@@ -343,7 +343,7 @@ namespace Arcen.AIW2.External
             //Chris says: we are going to do this outside of here so that we can find existing ones to match if need be
             //this.FireTeamID = Buffer.ReadInt32( MetaData, ReadStyle.PosExceptNeg1, "FireTeamID" );
             this.Target = World_AIW2.Instance.GetEntityByID_Squad( Buffer.ReadInt32( MetaData, ReadStyle.PosExceptNeg1, "TargetId" ) );
-            this.TargetPlanet = World_AIW2.Instance.GetPlanetByIndex( (Int16)Buffer.ReadIntUltraEfficient( MetaData, UltraEfficientStyle.G_1_To_511, "TargetPlanet" ) );
+            this.TargetPlanet = World_AIW2.Instance.GetPlanetByIndex( (Int16)Buffer.ReadIntUltraEfficient( MetaData, UltraEfficientStyle.G_0_To_511, "TargetPlanet" ) );
             this.DefenseMode = Buffer.ReadBool( MetaData, "DefenseMode" );
 
             if (!SerializationCmdType.GetIsNetworkType())
@@ -351,7 +351,7 @@ namespace Arcen.AIW2.External
                 this.CloakedOnly = Buffer.ReadBool( MetaData, "CloakedOnly" );
                 this.UpgradedOnly = Buffer.ReadBool(MetaData, "UpgradedOnly");
             }
-            this.LurkPlanet = World_AIW2.Instance.GetPlanetByIndex( (Int16)Buffer.ReadIntUltraEfficient( MetaData, UltraEfficientStyle.G_1_To_511, "LurkPlanet" ) );
+            this.LurkPlanet = World_AIW2.Instance.GetPlanetByIndex( (Int16)Buffer.ReadIntUltraEfficient( MetaData, UltraEfficientStyle.G_0_To_511, "LurkPlanet" ) );
             this.status = (FireteamStatus)Buffer.ReadByte( MetaData, ReadStyleByte.Normal, "FireTeamStatus" );
             if (!SerializationCmdType.GetIsNetworkType())
             {
@@ -513,7 +513,7 @@ namespace Arcen.AIW2.External
                     case HistoryItemType.LurkWithWardenFleetBase:
                     case HistoryItemType.DefensiveFleetWaitingInGeneral:
                     case HistoryItemType.SuicideAttack:
-                        Buffer.AddIntUltraEfficient( MetaData, UltraEfficientStyle.G_1_To_511, this.PlanetIndex1, "HistoryItem-PlanetIndex1" );
+                        Buffer.AddIntUltraEfficient( MetaData, UltraEfficientStyle.G_0_To_511, this.PlanetIndex1, "HistoryItem-PlanetIndex1" );
                         break;
                     case HistoryItemType.RetreatFromLurkLocation:
                     case HistoryItemType.RetreatFromTravelToLurkLocation:
@@ -522,13 +522,13 @@ namespace Arcen.AIW2.External
                     case HistoryItemType.DefensiveFleetAttackFromPlanetToPlanet:
                     case HistoryItemType.DefensiveFleetWaitingWithInfrastructure:
                     case HistoryItemType.LeaveToHelpAllies:
-                        Buffer.AddIntUltraEfficient( MetaData, UltraEfficientStyle.G_1_To_511, this.PlanetIndex1, "HistoryItem-PlanetIndex1" );
-                        Buffer.AddIntUltraEfficient( MetaData, UltraEfficientStyle.G_1_To_511, this.PlanetIndex2, "HistoryItem-PlanetIndex2" );
+                        Buffer.AddIntUltraEfficient( MetaData, UltraEfficientStyle.G_0_To_511, this.PlanetIndex1, "HistoryItem-PlanetIndex1" );
+                        Buffer.AddIntUltraEfficient( MetaData, UltraEfficientStyle.G_0_To_511, this.PlanetIndex2, "HistoryItem-PlanetIndex2" );
                         break;
                     case HistoryItemType.StagingToLurkPlanet:
-                        Buffer.AddIntUltraEfficient( MetaData, UltraEfficientStyle.G_1_To_511, this.PlanetIndex1, "HistoryItem-PlanetIndex1" );
-                        Buffer.AddIntUltraEfficient( MetaData, UltraEfficientStyle.G_1_To_511, this.PlanetIndex2, "HistoryItem-PlanetIndex2" );
-                        Buffer.AddIntUltraEfficient( MetaData, UltraEfficientStyle.G_1_To_511, this.PlanetIndex3, "HistoryItem-PlanetIndex3" );
+                        Buffer.AddIntUltraEfficient( MetaData, UltraEfficientStyle.G_0_To_511, this.PlanetIndex1, "HistoryItem-PlanetIndex1" );
+                        Buffer.AddIntUltraEfficient( MetaData, UltraEfficientStyle.G_0_To_511, this.PlanetIndex2, "HistoryItem-PlanetIndex2" );
+                        Buffer.AddIntUltraEfficient( MetaData, UltraEfficientStyle.G_0_To_511, this.PlanetIndex3, "HistoryItem-PlanetIndex3" );
                         break;
                     case HistoryItemType.EscortShip:
                         Buffer.AddString_Condensed( MetaData, this.RelatedString, "EscortedShip" );
@@ -559,7 +559,7 @@ namespace Arcen.AIW2.External
                     case HistoryItemType.LurkWithWardenFleetBase:
                     case HistoryItemType.DefensiveFleetWaitingInGeneral:
                     case HistoryItemType.SuicideAttack:
-                        result.PlanetIndex1 = (Int16)Buffer.ReadIntUltraEfficient( MetaData, UltraEfficientStyle.G_1_To_511, "HistoryItem-PlanetIndex1" );
+                        result.PlanetIndex1 = (Int16)Buffer.ReadIntUltraEfficient( MetaData, UltraEfficientStyle.G_0_To_511, "HistoryItem-PlanetIndex1" );
                         break;
                     case HistoryItemType.RetreatFromLurkLocation:
                     case HistoryItemType.RetreatFromTravelToLurkLocation:
@@ -568,13 +568,13 @@ namespace Arcen.AIW2.External
                     case HistoryItemType.DefensiveFleetAttackFromPlanetToPlanet:
                     case HistoryItemType.DefensiveFleetWaitingWithInfrastructure:
                     case HistoryItemType.LeaveToHelpAllies:
-                        result.PlanetIndex1 = (Int16)Buffer.ReadIntUltraEfficient( MetaData, UltraEfficientStyle.G_1_To_511, "HistoryItem-PlanetIndex1" );
-                        result.PlanetIndex2 = (Int16)Buffer.ReadIntUltraEfficient( MetaData, UltraEfficientStyle.G_1_To_511, "HistoryItem-PlanetIndex2" );
+                        result.PlanetIndex1 = (Int16)Buffer.ReadIntUltraEfficient( MetaData, UltraEfficientStyle.G_0_To_511, "HistoryItem-PlanetIndex1" );
+                        result.PlanetIndex2 = (Int16)Buffer.ReadIntUltraEfficient( MetaData, UltraEfficientStyle.G_0_To_511, "HistoryItem-PlanetIndex2" );
                         break;
                     case HistoryItemType.StagingToLurkPlanet:
-                        result.PlanetIndex1 = (Int16)Buffer.ReadIntUltraEfficient( MetaData, UltraEfficientStyle.G_1_To_511, "HistoryItem-PlanetIndex1" );
-                        result.PlanetIndex2 = (Int16)Buffer.ReadIntUltraEfficient( MetaData, UltraEfficientStyle.G_1_To_511, "HistoryItem-PlanetIndex2" );
-                        result.PlanetIndex3 = (Int16)Buffer.ReadIntUltraEfficient( MetaData, UltraEfficientStyle.G_1_To_511, "HistoryItem-PlanetIndex3" );
+                        result.PlanetIndex1 = (Int16)Buffer.ReadIntUltraEfficient( MetaData, UltraEfficientStyle.G_0_To_511, "HistoryItem-PlanetIndex1" );
+                        result.PlanetIndex2 = (Int16)Buffer.ReadIntUltraEfficient( MetaData, UltraEfficientStyle.G_0_To_511, "HistoryItem-PlanetIndex2" );
+                        result.PlanetIndex3 = (Int16)Buffer.ReadIntUltraEfficient( MetaData, UltraEfficientStyle.G_0_To_511, "HistoryItem-PlanetIndex3" );
                         break;
                     case HistoryItemType.EscortShip:
                         result.RelatedString = Buffer.ReadString_Condensed( MetaData, "EscortedShip" );

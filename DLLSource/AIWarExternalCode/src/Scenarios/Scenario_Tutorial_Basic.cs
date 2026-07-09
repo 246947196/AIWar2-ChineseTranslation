@@ -387,7 +387,7 @@ namespace Arcen.AIW2.External
                         else if ( !Condition.MovingToMiddlePlanet_UserHasUnpausedTheGame.GetMetNow() )
                         {
                             WriteHeader( Buffer, 19, maxHeader );
-                            Buffer.Add("很好！现在按 ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("TogglePause")).Add("（或 "
+                            Buffer.Add("很好！现在按 ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("TogglePause")).Add("（或 ")
                                 .Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("TogglePauseAlt")).Add("）再次取消暂停游戏。").Add( "\n" );
                         }
                         break;
@@ -401,7 +401,7 @@ namespace Arcen.AIW2.External
                         if ( !Condition.MovingToMiddlePlanet_EnoughMilitaryShipsHaveArrived.GetMetNow() )
                         {
                             WriteHeader( Buffer, 21, maxHeader );
-                            Buffer.Add("如果你的游戏仍处于暂停状态，按 ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("TogglePause")).Add("（或 "
+                            Buffer.Add("如果你的游戏仍处于暂停状态，按 ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("TogglePause")).Add("（或 ")
                                 .Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("TogglePauseAlt")).Add(" 取消暂停。我们稍等片刻，让舰船到达并开始行动。" ).Add( "\n" );
                         }
                         break;

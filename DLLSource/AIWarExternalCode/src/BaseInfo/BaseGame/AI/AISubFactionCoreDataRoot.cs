@@ -26,7 +26,7 @@ namespace Arcen.AIW2.External
 
         public void SerializeTo( SerMetaData MetaData, ArcenSerializationBuffer Buffer, SerializationCommandType SerializationCmdType )
         {
-            Buffer.AddIntUltraEfficient( MetaData, UltraEfficientStyle.G_1_To_511, this.CurrentTargetPlanetIndex, "CurrentTargetPlanetIndex" );
+            Buffer.AddIntUltraEfficient( MetaData, UltraEfficientStyle.G_0_To_511, this.CurrentTargetPlanetIndex, "CurrentTargetPlanetIndex" );
             Buffer.AddBool( MetaData, DisableLongRangePlanning, "DisableLongRangePlanning");
 
             this.SubSerializeTo( MetaData, Buffer, SerializationCmdType );
@@ -39,7 +39,7 @@ namespace Arcen.AIW2.External
             //Right, this seems like overkill, but this is absolutely not in this case.  The main control thread, which handles networking and the UI,
             //could be reading data from the network, in this method, on a client at any time.  On a host, this only happens when you load a game, and no BG threads are running.
             //How is this a thing? (see below)
-            Interlocked.Exchange( ref this.CurrentTargetPlanetIndex, Buffer.ReadIntUltraEfficient( MetaData, UltraEfficientStyle.G_1_To_511, "CurrentTargetPlanetIndex" ) );
+            Interlocked.Exchange( ref this.CurrentTargetPlanetIndex, Buffer.ReadIntUltraEfficient( MetaData, UltraEfficientStyle.G_0_To_511, "CurrentTargetPlanetIndex" ) );
 
             if (Buffer.FromGameVersion.GetGreaterThanOrEqualTo(5,522))
                 DisableLongRangePlanning = Buffer.ReadBool( MetaData, "DisableLongRangePlanning");

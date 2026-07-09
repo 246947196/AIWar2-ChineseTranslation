@@ -430,7 +430,7 @@ namespace Arcen.AIW2.External
             public override void GetTextToShowFromVolatile( ArcenDoubleCharacterBuffer buffer )
             {
                 int numberHidden = this.Element.CreatedByCodeDirective.Identifier.CodeDirectiveTag1;
-                buffer.StartColor( "ff7e64" ).Add( "<i>" ).Add( numberHidden ).Add( " Advanced Fields Are Hidden</i>" );
+                buffer.StartColor( "ff7e64" ).Add( "<i>" ).Add( numberHidden ).Add( " 个高级字段已隐藏</i>" );
             }
 
             public override MouseHandlingResult HandleClick_Subclass( MouseHandlingInput input )
@@ -442,8 +442,8 @@ namespace Arcen.AIW2.External
             public override void HandleMouseover()
             {
                 int numberHidden = this.Element.CreatedByCodeDirective.Identifier.CodeDirectiveTag1;
-                Window_AtMouseTooltipPanelSnapToLeft.bPanel.Instance.SetText( this.Element, "To view the " + numberHidden +
-                    " advanced fields that are presently hidden, click here to temporarily see them.\n\nFor longer term viewing, choose the General tab at the top, and click the 'Show Advanced Galaxy And Faction Options' button." );
+                Window_AtMouseTooltipPanelSnapToLeft.bPanel.Instance.SetText( this.Element, "要查看当前隐藏的 " + numberHidden +
+                    " 个高级字段，请点击此处临时显示它们。\n\n如需长期查看，请在顶部选择'常规'分类，点击'显示高级星系和派系选项'按钮。" );
             }
         }
 
@@ -452,7 +452,7 @@ namespace Arcen.AIW2.External
             public override void GetTextToShowFromVolatile( ArcenDoubleCharacterBuffer buffer )
             {
                 int numberHidden = this.Element.CreatedByCodeDirective.Identifier.CodeDirectiveTag1;
-                buffer.StartColor( "ff7e64" ).Add( "<voffset=0.2em><i>" ).Add( numberHidden ).Add( " Hidden Fields In This Subcategory</i>" );
+                buffer.StartColor( "ff7e64" ).Add( "<voffset=0.2em><i>" ).Add( numberHidden ).Add( " 个子分类中的字段已隐藏</i>" );
             }
 
             public override MouseHandlingResult HandleClick_Subclass( MouseHandlingInput input )
@@ -464,8 +464,8 @@ namespace Arcen.AIW2.External
             public override void HandleMouseover()
             {
                 int numberHidden = this.Element.CreatedByCodeDirective.Identifier.CodeDirectiveTag1;
-                Window_AtMouseTooltipPanelSnapToLeft.bPanel.Instance.SetText( this.Element, "To view the " + numberHidden +
-                    " advanced fields that are presently hidden in this subcategory, click here to temporarily see them (and all the others on this tab).\n\nFor longer term viewing, choose the General tab at the top, and click the 'Show Advanced Galaxy And Faction Options' button." );
+                Window_AtMouseTooltipPanelSnapToLeft.bPanel.Instance.SetText( this.Element, "要查看当前在此子分类中隐藏的 " + numberHidden +
+                    " 个高级字段，请点击此处临时显示它们（以及此选项卡上的所有其他字段）。\n\n如需长期查看，请在顶部选择'常规'分类，点击'显示高级星系和派系选项'按钮。" );
             }
         }
 
@@ -560,7 +560,7 @@ namespace Arcen.AIW2.External
                             buffer.AddNumberMoreReadable( tempValue );
                             buffer.Add( "   " ).Add( FontSizes.SLIGHTLY_SMALLER_SIZE_V2_STRING ).Add( "<color=#999999>(" ).Add( setting.GetMinValue_Int().ToString() );
                             if ( setting.GetMaxValue_Int() > 0 && setting.GetMaxValue_Int() > setting.GetMinValue_Int() )
-                                buffer.Add( " to " ).AddNumberMoreReadable( setting.GetMaxValue_Int() );
+                                buffer.Add( " 到 " ).AddNumberMoreReadable( setting.GetMaxValue_Int() );
                             buffer.Add( ")" );
                         }
                         break;
@@ -798,7 +798,7 @@ namespace Arcen.AIW2.External
                 if ( setting == null ) return;
 
                 buffer.Add(World_AIW2.Instance.Setup.GetIntBySetting( setting ));
-                buffer.Add( "    <color=#999999>(" ).Add( setting.GetMinValue_Int() ).Add( " to " ).Add( setting.GetMaxValue_Int() ).Add( ")" );
+                buffer.Add( "    <color=#999999>(" ).Add( setting.GetMinValue_Int() ).Add( " 到 " ).Add( setting.GetMaxValue_Int() ).Add( ")" );
             }
 
             public override void HandleMouseover()

@@ -926,7 +926,7 @@ namespace Arcen.AIW2.External
             public override void GetTextToShowFromVolatile( ArcenDoubleCharacterBuffer buffer )
             {
                 int numberHidden = this.Element.CreatedByCodeDirective.Identifier.CodeDirectiveTag1;
-                buffer.StartColor( "ff7e64" ).Add( "<i>" ).Add( numberHidden ).Add( " Advanced Fields Are Hidden</i>" );
+                buffer.StartColor( "ff7e64" ).Add( "<i>" ).Add( numberHidden ).Add( " 个高级字段已隐藏</i>" );
             }
 
             public override MouseHandlingResult HandleClick_Subclass( MouseHandlingInput input )
@@ -938,8 +938,8 @@ namespace Arcen.AIW2.External
             public override void HandleMouseover()
             {
                 int numberHidden = this.Element.CreatedByCodeDirective.Identifier.CodeDirectiveTag1;
-                Window_AtMouseTooltipPanelSnapToLeft.bPanel.Instance.SetText( this.Element, "To view the " + numberHidden +
-                    " advanced fields that are presently hidden, click here to temporarily see them.\n\nFor longer term viewing, switch to the Options tab and click the 'Show Advanced Galaxy And Faction Options' button." );
+                Window_AtMouseTooltipPanelSnapToLeft.bPanel.Instance.SetText( this.Element, "要查看当前隐藏的 " + numberHidden +
+                    " 个高级字段，请点击此处临时显示它们。\n\n如需长期查看，请切换到'选项'标签页，点击'显示高级星系和派系选项'按钮。" );
             }
         }
 
@@ -957,7 +957,7 @@ namespace Arcen.AIW2.External
                         return;
                 }
 
-                buffer.Add( GetCurrentIntForCustomField( field ) > 0 ? "On" : "<color=#666666>Off" );
+                buffer.Add( GetCurrentIntForCustomField( field ) > 0 ? "开启" : "<color=#666666>关闭" );
             }
 
             public override MouseHandlingResult HandleClick_Subclass( MouseHandlingInput input )
@@ -1006,7 +1006,7 @@ namespace Arcen.AIW2.External
                         return;
                 }
 
-                buffer.Add( GetCurrentIntForCustomField( field ) > 0 ? "On" : "<color=#666666>Off" );
+                buffer.Add( GetCurrentIntForCustomField( field ) > 0 ? "开启" : "<color=#666666>关闭" );
             }
 
             public override void HandleMouseover()
@@ -1069,7 +1069,7 @@ namespace Arcen.AIW2.External
 
             public override void HandleMouseover()
             {
-                Window_AtMouseTooltipPanelSnapToLeft.bPanel.Instance.SetText( this.Element, "Click to edit the center and border colors of this faction." );
+                Window_AtMouseTooltipPanelSnapToLeft.bPanel.Instance.SetText( this.Element, "点击编辑此阵营的中心和边界颜色。" );
             }
         }
         public class bTeamColor_ForSubsidiaryFaction : ButtonAbstractBase
@@ -1145,7 +1145,7 @@ namespace Arcen.AIW2.External
 
             public override void HandleMouseover()
             {
-                Window_AtMouseTooltipPanelSnapToLeft.bPanel.Instance.SetText( this.Element, "Click to edit the center and border colors of this faction." );
+                Window_AtMouseTooltipPanelSnapToLeft.bPanel.Instance.SetText( this.Element, "点击编辑此阵营的中心和边界颜色。" );
             }
         }
 
@@ -1195,7 +1195,7 @@ namespace Arcen.AIW2.External
 
             public override void HandleMouseover()
             {
-                Window_AtMouseTooltipPanelSnapToLeft.bPanel.Instance.SetText( this.Element, "Click to edit the border color of this sub-faction.  It will continue to have the same main color as the main part of the faction." );
+                Window_AtMouseTooltipPanelSnapToLeft.bPanel.Instance.SetText( this.Element, "点击编辑此子阵营的边界颜色。它将保持与主阵营相同的主色。" );
             }
         }
 
@@ -1253,7 +1253,7 @@ namespace Arcen.AIW2.External
 
             public override void HandleMouseover()
             {
-                Window_AtMouseTooltipPanelSnapToLeft.bPanel.Instance.SetText( this.Element, "If left blank, will be the name of the first player controlling this faction.  If you want your empire to have a different name than your personal name, you can do that here.  If multiple players are sharing a faction, then they can give it a name that represents their shared interest in it." );
+                Window_AtMouseTooltipPanelSnapToLeft.bPanel.Instance.SetText( this.Element, "如果留空，将使用控制此阵营的第一位玩家的名称。如果你希望你的帝国拥有与你个人名称不同的名字，可以在此设置。如果多个玩家共享一个阵营，他们可以给它取一个代表共同利益的名字。" );
             }
         }
 
@@ -1470,7 +1470,7 @@ namespace Arcen.AIW2.External
                 }
 
                 buffer.Add( GetCurrentIntForCustomField( field ).ToString() );
-                buffer.Add( "    <color=#999999>(" ).Add( field.GetMinValue_Int() ).Add( " to " ).Add( field.GetMaxValue_Int() ).Add( ")" );
+                buffer.Add( "    <color=#999999>(" ).Add( field.GetMinValue_Int() ).Add( " 到 " ).Add( field.GetMaxValue_Int() ).Add( ")" );
             }
 
             public override void HandleMouseover()
@@ -1723,9 +1723,9 @@ namespace Arcen.AIW2.External
 
                     option.DisplayName = row.GetDisplayName();
                     if ( row.Type == FactionType.Player )
-                        option.DisplayName = "Additional Human Player Slot";
+                        option.DisplayName = "额外人类玩家槽位";
                     else if ( row.Type == FactionType.AI )
-                        option.DisplayName = "Additional AI Faction";
+                        option.DisplayName = "额外AI阵营";
 
                     var lobbyName = row.OriginalXmlData.GetString( "custom_NameForLobby", string.Empty, false );
                     var sortName = row.OriginalXmlData.GetString( "custom_NameForSorting", string.Empty, false );
@@ -1740,7 +1740,7 @@ namespace Arcen.AIW2.External
                     {
                         if ( row.CanBeAVassal )
                         {
-                            option.DisplayName += " <size=80%><color=#ff5aee>Can Be Vassal</color></size>";
+                            option.DisplayName += " <size=80%><color=#ff5aee>可成为附庸</color></size>";
                         }
                     }
 
@@ -1758,7 +1758,7 @@ namespace Arcen.AIW2.External
                     return Left.SortingName.CompareTo( Right.SortingName );
                 } );
 
-                Window_PopupScrollingColumnButtonList.Instance.Open( "Choose A Faction To Add", null, factionOptions,
+                Window_PopupScrollingColumnButtonList.Instance.Open( "选择要添加的阵营", null, factionOptions,
                     delegate ( CustomPopupData Option )
                     {
                         if ( Option == null || !Option.CanBeSelected )

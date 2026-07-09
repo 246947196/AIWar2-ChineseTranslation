@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--  PrimeObjectives
+        ***********************************************************************-->
+  
+  <objective_details_hook name="HackRift" category="NecromancerRifts"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.HackRift"
+          use_related_entity1_color_for_display_name="true" finish_display_name_with_related_entity1_name_and_planet="true"
+          display_name_color="afff77"
+          click_behavior="CenterOnRelatedEntity1" focus_type="FocusOnRelatedEntity1"
+          serialization_type="RelatedEntity1AndDisplayName" importance_calculation="RelatedEntity1Importance"
+          difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedEntity1"/>
+
+  <objective_details_hook name="DestroyConstructor" category="CriticalDestructionTargets"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.DestroyConstructor"
+          use_related_entity1_color_for_display_name="true" finish_display_name_with_related_entity1_name_and_planet="true"
+          display_name_color="afff77"
+          click_behavior="CenterOnRelatedEntity1" focus_type="FocusOnRelatedEntity1"
+          serialization_type="RelatedEntity1AndDisplayName" importance_calculation="RelatedEntity1Importance"
+          difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedEntity1"/>
+
+  <objective_details_hook name="CaptureAmplifier" category="NecromancerAmplifiers"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.CaptureAmplifier"
+          use_related_entity1_color_for_display_name="true" finish_display_name_with_related_entity1_name_and_planet="true"
+          display_name_color="57e1ff"
+          click_behavior="CenterOnRelatedEntity1" focus_type="FocusOnRelatedEntity1"
+          serialization_type="RelatedEntity1AndDisplayName" importance_calculation="RelatedEntity1Importance"
+          difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedEntity1"/>
+
+  <objective_details_hook name="AcquireEssenceByDestruction" category="ResourceGathering"
+            dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.AcquireEssenceByDestruction"
+            display_name_color="cfd988" default_display_name="通过摧毁获取精华 " finish_display_name_with_related_entity1_name_and_planet="true"
+            use_default_display_name_instead_of_display_name_base="true"
+            click_behavior="CenterOnRelatedEntity1" focus_type="FocusOnRelatedEntity1"
+            serialization_type="RelatedEntity1Only" importance_calculation="RelatedEntity1Importance"
+            difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedEntity1"/>
+
+  <objective_details_hook name="AcquireEssenceByDestructionOnPlanet" category="ResourceGathering"
+            dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.AcquireEssenceByDestructionOnPlanet"
+            display_name_color="cfd988" default_display_name="通过摧毁获取精华 " finish_display_name_with_related_planet1="true"
+            use_default_display_name_instead_of_display_name_base="false"
+            click_behavior="CenterOnRelatedPlanet1" focus_type="FocusOnRelatedPlanet1"
+            serialization_type="RelatedPlanet1AndRelatedInt1" importance_calculation="RelatedPlanet1Importance"
+            difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedPlanet1"/>
+
+  <objective_details_hook name="UnusedHexes" category="NecromancerStrategy"
+          default_display_name="亡者都市中未使用的六边形格子"
+          use_default_display_name_instead_of_display_name_base="true"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.UnusedHexes"
+          display_name_color="ffcf6b"
+          click_behavior="CenterOnRelatedPlanet1" focus_type="FocusOnRelatedPlanet1"
+          serialization_type="RelatedPlanet1Only" importance_calculation="NotSettable"
+          difficulty_method="Nothing"/>
+
+  <objective_details_hook name="ClearElderlingHuntingGrounds" category="NecromancerStrategy"
+          default_display_name="肃清长老族狩猎场"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.ClearElderlingHuntingGrounds"
+          display_name_color="ffcf6b"
+          click_behavior="DoNothing" focus_type="DarkenAllPlanet"
+          serialization_type="Nothing" importance_calculation="NotSettable"
+          difficulty_method="Nothing"/>
+
+  <objective_details_hook name="EarlyUpgrades" category="NecromancerStrategy"
+          default_display_name="亡灵巫师早期升级"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.EarlyUpgrades"
+          display_name_color="ffcf6b"
+          click_behavior="DoNothing" focus_type="DarkenAllPlanet"
+          serialization_type="Nothing" importance_calculation="NotSettable"
+          difficulty_method="Nothing"/>
+
+  <objective_details_hook name="HackRifts" category="NecromancerStrategy"
+          default_display_name="黑客入侵圣堂裂隙"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.HackRifts"
+          display_name_color="ffcf6b"
+          click_behavior="DoNothing" focus_type="DarkenAllPlanet"
+          serialization_type="Nothing" importance_calculation="NotSettable"
+          difficulty_method="Nothing"/>
+
+  <objective_details_hook name="HuntElderlings" category="NecromancerStrategy"
+          default_display_name="猎杀长老族"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.HuntElderlings"
+          display_name_color="ffcf6b"
+          click_behavior="DoNothing" focus_type="DarkenAllPlanet"
+          serialization_type="Nothing" importance_calculation="NotSettable"
+          difficulty_method="Nothing"/>
+
+  <objective_details_hook name="FightTemplar" category="NecromancerStrategy"
+          default_display_name="对抗圣堂"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.FightTemplar"
+          display_name_color="ffcf6b"
+          click_behavior="DoNothing" focus_type="DarkenAllPlanet"
+          serialization_type="Nothing" importance_calculation="NotSettable"
+          difficulty_method="Nothing"/>
+
+</root>
