@@ -89,9 +89,9 @@ Control Bindings 菜单左侧分类按钮显示的是 `InputAction` XML 文件�
 | AIWarExternalDeepProcessingCode | DLLSource/AIWarExternalDeepProcessingCode/src/ | ✅ | ✅ 完成 |
 | AIWarExternalVisualizationCode | DLLSource/AIWarExternalVisualizationCode/src/ | ✅ | ✅ 完成 |
 | ArcenUIAssetRedirect（BepInEx 插件） | DLLSource/ArcenUIAssetRedirect/src/ | ✅ | ✅ 完成 |
-| ArcenUniversal（IL 汉化） | —（无源码，见 SPEC 8.15） | — | ⏳ |
-| ArcenAIW2Core（IL 汉化） | —（无源码，见 SPEC 8.15） | — | 🔶 进行中 |
-| ArcenAIW2Visualization（IL 汉化） | —（无源码，见 SPEC 8.15） | — | 🔶 进行中（玩家可见短语首批已部署） |
+| ArcenUniversal（IL 汉化） | —（无源码，见 SPEC 8.15） | — | ✅ 已部署（151 条 ldstr） |
+| ArcenAIW2Core（IL 汉化） | —（无源码，见 SPEC 8.15） | — | ✅ 已部署（534 条 ldstr） |
+| ArcenAIW2Visualization（IL 汉化） | —（无源码，见 SPEC 8.15） | — | ✅ 已完成 |
 
 ## deploy.ps1 行为说明
 
@@ -124,3 +124,5 @@ MSBuild：`C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe`
 5. 禁止中文引号 `""`，用 `''` 替代
 6. Debug 日志、内部标识符不翻译
 7. 核心 DLL（IL 汉化）：用 `tools/ilpatch` 按 JSON 字典替换 `ldstr` 字面量，不碰任何代码结构（详见 SPEC 8.15）
+8. **JSON 字典编码**：合并/重写 ilpatch 字典必须用**无 BOM 的 UTF-8**（PowerShell `Set-Content -Encoding UTF8` 会加 BOM，导致 ilpatch/Python 解析失败）。优先用 Python `open(path,'w',encoding='utf-8')` 或 .NET `UTF8Encoding(false)`
+9. **大 DLL 并行翻译**：候选 >1000 条时按行切分为 `*.partN.json` 分片交多代理并行；合并时切忌直接拼接分片文件（子代理易破坏 JSON 结构），应重新 `extract` 干净骨架后用正则提取各分片 value 注入（详见 SPEC 8.15.9）

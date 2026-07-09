@@ -196,7 +196,7 @@ BepInEx Preloader 在游戏程序集加载前调用 Patcher，通过 Mono.Cecil 
 三个外部 DLL 项目有完整源码（位于 `CodeExternal/`），已全部汉化并编译。
 
 **第二组：核心 DLL 的 IL 汉化（进行中）**
-三个核心 DLL（ArcenUniversal、ArcenAIW2Core、ArcenAIW2Visualization）无源码，不采用反编译路线，而是用 `ilpatch` 工具（dnlib）直接替换 `ldstr` 字符串字面量（见 8.15）。
+三个核心 DLL（ArcenUniversal、ArcenAIW2Core、ArcenAIW2Visualization）用 `ilpatch` 工具（dnlib）直接替换 `ldstr` 字符串字面量（见 8.15）。
 
 **第三组：BepInEx 插件项目（新增）**
 一个 Harmony 插件（ArcenUIAssetRedirect），用于拦截 AssetBundle 加载，实现 UI 文本替换。
@@ -211,7 +211,7 @@ BepInEx Preloader 在游戏程序集加载前调用 Patcher，通过 Mono.Cecil 
 | ArcenUIAssetRedirect | DLLSource/ArcenUIAssetRedirect/src/ | arcenui AssetBundle 拦截重定向 | ✅ 0 错误 | ✅ 已完成 |
 | ArcenUniversal (IL 汉化) | —（无源码，见 8.15） | UI 组件、通用工具、输入、网络等 | — | ⏳ 待翻译 |
 | ArcenAIW2Core (IL 汉化) | —（无源码，见 8.15） | 游戏主逻辑、实体、阵营、舰队、科技等 | — | 🔶 进行中 |
-| ArcenAIW2Visualization (IL 汉化) | —（无源码，见 8.15） | 渲染、特效、模型、Shader 等 | — | 🔶 进行中（玩家可见短语首批已部署） |
+| ArcenAIW2Visualization (IL 汉化) | —（无源码，见 8.15） | 渲染、特效、模型、Shader 等 | — | ✅ 已完成 |
 
 ### 8.3 目录结构
 
@@ -261,65 +261,9 @@ AIWar2_ChineseTranslation/
 
 ### 8.5 csproj 格式规范
 
-**所有项目使用旧格式**（非 SDK 风格）。
+所有有源码的 DLL 项目使用旧格式（非 SDK 风格），`ToolsVersion="14.0"`，与官方 `CodeExternal` 一致。
 
-经检查游戏自带源码和所有 MOD 项目，全部使用 `ToolsVersion` 旧格式：
-
-| 来源 | ToolsVersion | 示例 |
-|------|-------------|------|
-| 官方源码 (AIW2ModdingAndGUI) | 4.0 | `AIW2ModdingAndGUI.csproj` |
-| 官方外部代码 (CodeExternal) | 14.0 | `CodeExternal/AIWarExternalCode.csproj` |
-| MOD 项目 | 15.0 | `XMLMods/Xushido/XushidoProject.csproj` |
-| 本翻译项目 | 14.0 | `DLLSource/AIWarExternalCode.csproj` |
-
-> **本节（8.5–8.7）历史说明**：原为“将核心 DLL 反编译为 C# 项目”准备的 csproj 格式规范，该路线现已废弃（见 8.9）。外部代码项目仍沿用 `CodeExternal` 既有 csproj（14.0 格式），无需此转换。核心 DLL 改走 8.15 的 IL 字面量替换，不再编译。
-
-**ILSpy 默认导出 SDK 风格**（`<Project Sdk="Microsoft.NET.Sdk">`），这只是反编译工具的个人偏好，不代表原始编译方式。反编译后必须转换为旧格式。旧 MSBuild 4.8 不支持 SDK 风格。
-
-旧格式 csproj 结构示例：
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    ...
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <LangVersion>13.0</LangVersion>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <OutputPath>..\..\DLLBin\</OutputPath>
-    ...
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="...">
-      <HintPath>..\..\..\ReliableDLLStorage\...dll</HintPath>
-    </Reference>
-    ...
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="src\File1.cs" />
-    <Compile Include="src\File2.cs" />
-    ...
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-</Project>
-```
-
-反编译项目与普通 MOD/外部代码的区别：
-- **引用路径**：指向 `..\..\..\ReliableDLLStorage\`（而非 MOD 项目的 `..\..\ReliableDLLStorage\`）
-- **输出路径**：指向 `..\..\DLLBin\`
-- **System.Numerics**：不用 HintPath（走 .NET Framework GAC 版本，不含 Vector2/Matrix4x4 等类型扩展）
-
-### 8.6 csproj 修改
-
-从 `CodeExternal/` 复制到 `DLLSource/` 后需修改：
-
-1. **引用路径** — `..\..\ReliableDLLStorage\` → `..\..\..\ReliableDLLStorage\`
-2. **引用路径** — `..\..\GameData\` → `..\..\..\GameData\`
-3. **输出路径** — `..\..\GameData\ModdableLogicDLLs\` → `..\..\DLLBin\`
-4. **禁用 PostBuildEvent** — 原版有批处理脚本拷贝，汉化版不需要
+### 8.6 （无内容，节号保留）
 
 ### 8.7 编译流程
 
@@ -336,8 +280,7 @@ $msbuild = "C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe"
 & $msbuild DLLSource\AIWarExternalDeepProcessingCode\AIWarExternalDeepProcessingCode.csproj /t:Build /p:Configuration=Release "/p:CscToolPath=$roslynDir"
 & $msbuild DLLSource\AIWarExternalVisualizationCode\AIWarExternalVisualizationCode.csproj /t:Build /p:Configuration=Release "/p:CscToolPath=$roslynDir"
 
-# 注：核心 DLL（ArcenUniversal / ArcenAIW2Core / ArcenAIW2Visualization）不再反编译编译，
-#      其汉化走 8.15 的 ilpatch IL 字面量替换，无此 msbuild 步骤。
+# 注：核心 DLL 走 ilpatch IL 字面量替换（8.15），无此 msbuild 步骤。
 ```
 
 ### 8.8 部署
@@ -363,9 +306,7 @@ $msbuild = "C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe"
 
 译者本地经 `ilpatch` 修改后，应把更新后的核心 DLL 提交进仓库 `PatchedAssemblies/`（而非仅留本地游戏目录），以保证一键部署包含最新汉化。
 
-### 8.9 （保留节号，原“反编译项目编译修复”已废弃）
-
-> 历史上曾尝试将核心 DLL 反编译为 C# 项目再编译替换，但反编译-重编译会改变 IL 结构导致运行时 BUG，该路线已废弃。核心 DLL 现统一采用 8.15 的 `ilpatch` IL 字面量替换方案，不再涉及反编译与重编译。
+### 8.9 （无内容，节号保留）
 
 ### 8.10 依赖关系与编译顺序
 
@@ -412,9 +353,9 @@ ArcenUIAssetRedirect (BepInEx 插件)
 | AIWarExternalDeepProcessingCode | 有源码 | 133 | ✅ 0 错误 | ✅ 完成 |
 | AIWarExternalVisualizationCode | 有源码 | 45 | ✅ 0 错误 | ✅ 完成 |
 | ArcenUIAssetRedirect | BepInEx 插件 | 1 | ✅ 0 错误 | ✅ 完成 |
-| ArcenUniversal | IL 汉化 | 613 | — | ⏳ 待翻译（IL 方案） |
-| ArcenAIW2Core | IL 汉化 | ~350 | — | 🔶 IL 方案进行中（首批示例已部署） |
-| ArcenAIW2Visualization | IL 汉化 | ~100 | — | 🔶 IL 方案进行中（玩家可见短语首批已部署，见 8.15） |
+| ArcenUniversal | IL 汉化 | 613 | — | ✅ 已部署（151 条 ldstr） |
+| ArcenAIW2Core | IL 汉化 | ~350 | — | ✅ 已部署（637 条 ldstr） |
+| ArcenAIW2Visualization | IL 汉化 | ~100 | — | ✅ 已完成（20 条 ldstr） |
 | **合计** | | **~1841** | | |
 
 ### 8.14 翻译注意事项
@@ -429,9 +370,7 @@ ArcenUIAssetRedirect (BepInEx 插件)
 
 ### 8.15 核心 DLL 的 IL 级汉化（dnlib 工具方案）
 
-> **方案变更记录（2026-07-08）：** 原 8.15 节基于 dnSpy MCP 在 IL 层面逐个方法改 `ldstr`，且受 MCP 传输层 UTF-8 中文编码丢失限制（只能替换 ASCII）。现**推翻该经验**，改为用 **dnlib 控制台工具 `ilpatch` 直接读写 DLL 文件**：批量提取 `ldstr`、按 JSON 字典查表替换、原位写回。中文以 UTF-16LE 存入 `#US` 堆（CLR 原生格式），**无转义、无编码丢失**，并已实机验证生效（主菜单/实体名经 XML+arcenui 已中文，核心 DLL 的行星提示、成就解锁提示等经本方案写入后游戏内可见）。
-
-**背景：** 三个核心 DLL（ArcenUniversal、ArcenAIW2Core、ArcenAIW2Visualization）无法像外部代码项目那样直接修改 C# 源码后重新编译。过去尝试反编译为 C# 项目再编译替换的方式出现了大量运行时 BUG（因反编译-重编译过程改变了 IL 结构，导致对象池异常、类型初始化错误等）。本方案在 IL 层面只替换 `ldstr` 指令的操作数（字符串字面量），不改变方法结构，从根本上避免 BUG。
+**背景：** 过去尝试反编译为 C# 项目再编译替换的方式出现了大量运行时 BUG（因反编译-重编译过程改变了 IL 结构，导致对象池异常、类型初始化错误等），故改用 IL 字面量替换。
 
 **关键约束（历史坑）：** 不可用手写/脚本方式构造外部类型引用 —— 一旦 `ldstr` 之外的指令需要引用外部类型，必须用 `module.Import()` 从磁盘真实 DLL 导入（dnlib 曾把 `System.Text.Encodings.Web` 的 `PublicKeyToken` 误写为 `c5cd5de6caeeedcf`，正确值应为 `cc7b13ffcd2ddd51`，错误会导致 CLR 解析程序集失败）。本方案只改 `ldstr` 字面量，不引入外部类型，故不触发该风险。
 
@@ -483,6 +422,8 @@ JSON，`{ "English text": "中文", ... }`：
 │    关闭占用进程后 Copy-Item -Force 覆盖                       │
 └─────────────────────────────────────────────────────────────┘
 ```
+
+> **大型 DLL 并行翻译**：候选条目 >1000 时，按 8.15.9 的分片+合并流程用多代理并行，避免在单个长上下文里逐条处理。
 
 #### 8.15.5 操作示例
 
@@ -550,6 +491,43 @@ ilpatch inspect "PatchedAssemblies\ArcenAIW2Visualization.dll" "起始行星归�
 - **部分字符串没翻到**：字典 key 与 DLL 内原文不一致（多/少空格、`\n`、标签差异）。用 `ilpatch inspect <dll> <子串>` 比对真实原文。
 - **游戏崩溃**：检查是否误翻了事件标识符或改动了非 `ldstr` 指令。
 - **部署位置**：核心 DLL 经 `ilpatch` 改完后，提交进仓库 `PatchedAssemblies/`（`.bak` 不入库），由 `deploy.ps1` 在部署时优先拷贝到游戏 `PatchedAssemblies/`，`AssemblyRedirector` 在加载前读取。无需手动放置（见 8.8）。
+
+#### 8.15.9 并行翻译（多代理分片）经验
+
+大型核心 DLL（如 `ArcenAIW2Core` 有 2347 条候选）用多个 LLM 子代理并行翻译能显著提速，但分片与合并有固定坑，已实测踩过：
+
+**分片方式（推荐按行切，不要按语义切）：**
+- 用 `ilpatch extract` 导出完整骨架后，按行数均分为 N 个分片文件（`ArcenAIW2Core.part1.json` … `partN.json`）。
+- **分片文件本身不含首尾 `{}`**（只是条目行），不能直接 `json.load`，只能作为"待翻译片段"交给子代理用 Edit 逐条填 value。
+- 每个子代理只改 `"key": ""` 里的 value，禁止增删条目、禁止改 key。
+
+**合并与校验（关键，曾因此翻车）：**
+1. **禁止用 PowerShell `Set-Content -Encoding UTF8` 写 JSON**：它会加 UTF-8 **BOM**（EF BB BF），`ilpatch`（System.Text.Json）和 Python `json` 都无法解析，报 `'"' is invalid after a value` 等诡异错误。合并/重写 JSON 时必须用 **无 BOM 的 UTF-8**（如 Python `open(path,'w',encoding='utf-8')`，或 .NET `UTF8Encoding(false)`）。
+2. **子代理编辑易破坏 JSON 结构**（缺逗号、行粘连成"Extra data: line 1"、value 结束引号丢失导致后续整段错位）。合并后务必先用 Python 严格 `json.loads` 校验；若报错，错误信息（行号/列）往往滞后于真实破损点。
+3. **稳健的合并/修复脚本**（已验证可行）：不要直接拼接分片文件。而是——
+   - 重新从 DLL `extract` 一份**干净的完整骨架**（保证 key 集合与顺序合法）；
+   - 用正则逐行从各分片提取 `"key": "value"`（value 非空）对，按 key 注入干净骨架；
+   - 用 `json.dump(..., ensure_ascii=False)`（无 BOM）回写。
+   - 这样即使分片文件结构损坏，只要 value 字段还在，翻译就能无损恢复。
+4. 合并后用 `ilpatch patch <dll> <dict> --dry` 验证 `would replace` 条数是否合理（应≈翻译条目数 × 重复 key 复现次数）。
+
+**配套工具：**
+- `merge_parts.py` — 位于 `tools/ilpatch/merge_parts.py`，用于从各 `partN.json` 分片中提取非空翻译值、注入干净的 `extract.json` 骨架。用法：直接运行，输出 `ArcenAIW2Core.merged.json`。
+- 合并后用 `ilpatch patch <dll> <merged.json> --dry` 验证 `would replace` 条数。
+
+**其他实测要点：**
+- `extract` 导出的字典 key 可能含**重复原文**（dnlib 提取的 ldstr 有重复），`ilpatch` 的 `JsonSerializer.Deserialize<Dictionary>` 会按 .NET 行为处理重复 key；填充时各子代理可能各自填一份，合并脚本取"后者覆盖"即可，不影响最终 `patch` 匹配（patch 按原文精确匹配 ldstr，与字典 key 唯一性无关）。
+- 实际可翻译比例远低于候选数：ArcenAIW2Core 候选 2347 条，最终约 549 个独立 key（ldstr 替换 637 次）为玩家可见文本，其余多为 Debug/Error/标识符，按 8.15.6 规则跳过。
+- 部署目标不是 `ReliableDLLStorage/`（那是原版源，规范禁止改动），而是仓库 `PatchedAssemblies/`；`deploy.ps1` 优先用它覆盖游戏目录。
+
+**进度记录（2026-07-09 实测完成）：**
+| DLL | 候选条数 | 实际替换 ldstr | 翻译条目 | 状态 |
+|-----|---------|---------------|---------|------|
+| ArcenAIW2Visualization | 113 | 20 | 20 | ✅ 已完成 |
+| ArcenUniversal | 1495 | 151 | 120 | ✅ 已部署 |
+| ArcenAIW2Core | 2347 | 637 | 549 | ✅ 已部署 |
+
+> 2026-07-09 本次新增 ArcenAIW2Core 翻译 +89 条目（103 处 ldstr 替换），涵盖 Steam/GOG 网络连接错误、舰队/武器系统验证警告、AI 预算标签、地图生成错误等类别。合并脚本 `merge_parts.py` 已编写至 `tools/ilpatch/`，后续可直接复用。
 
 ## 九、DLC 翻译（第二波）
 
