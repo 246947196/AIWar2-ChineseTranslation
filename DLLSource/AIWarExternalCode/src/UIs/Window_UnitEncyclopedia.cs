@@ -1133,8 +1133,8 @@ namespace Arcen.AIW2.External
                 
                 EntityText.ShowDetails(
                     0.25f, 2f, 
-                    "Details for " + typeData.DisplayName, 
-                    "Close",
+                    typeData.DisplayName + " 的详细信息", 
+                    "关闭",
                     (b)=>Window_UnitEncyclopedia.Instance.WriteDetailsOfAllShipMarks( b, typeData, centerPopupScale ));
 
                 return MouseHandlingResult.None;
@@ -1275,8 +1275,8 @@ namespace Arcen.AIW2.External
                 
                 EntityText.ShowDetails(
                     0.25f, 2f, 
-                    "Details for " + typeData.DisplayName, 
-                    "Close",
+                    typeData.DisplayName + " 的详细信息", 
+                    "关闭",
                     (b)=>Window_UnitEncyclopedia.Instance.WriteDetailsOfAllShipMarks( b, typeData, centerPopupScale ));
                 
                 return MouseHandlingResult.None;
@@ -1461,7 +1461,7 @@ namespace Arcen.AIW2.External
             }
             public override void HandleMouseover()
             {
-                string mouseoverText = "Choose how the textbox searches into the above unit list.";
+                string mouseoverText = "选择文本框如何对上方单位列表进行搜索。";
                 UnitEncyclopediaTextboxFunction typeDataToSelect = CurrentTextboxFunction;
                 if ( typeDataToSelect != null )
                 {
@@ -1472,7 +1472,7 @@ namespace Arcen.AIW2.External
             public override void HandleItemMouseover( IArcenUIElementForSizing ItemElement, IArcenUI_Dropdown_Option Item )
             {
                 UnitEncyclopediaTextboxFunction ItemAsType = (UnitEncyclopediaTextboxFunction)Item.GetItem();
-                Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( ItemElement, "Choose how the textbox searches into the above unit list.\n\n<color=#ffc87a>" +
+                Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( ItemElement, "选择文本框如何对上方单位列表进行搜索。\n\n<color=#ffc87a>" +
                     ItemAsType.DisplayName + "</color>:\n" + ItemAsType.Tooltip );
             }
         }
@@ -1606,7 +1606,7 @@ namespace Arcen.AIW2.External
             }
             public override void HandleMouseover()
             {
-                string mouseoverText = "Choose a category-style filter for the list above, to narrow down results by some quality of the units you're looking for.";
+                string mouseoverText = "选择一种分类筛选方式来过滤上方的列表，通过单位的某些特性来缩小查找范围。";
                 UnitEncyclopediaListFilterStyle typeDataToSelect = CurrentListFilterStyle;
                 if ( typeDataToSelect != null )
                 {
@@ -1617,7 +1617,7 @@ namespace Arcen.AIW2.External
             public override void HandleItemMouseover( IArcenUIElementForSizing ItemElement, IArcenUI_Dropdown_Option Item )
             {
                 UnitEncyclopediaListFilterStyle ItemAsType = (UnitEncyclopediaListFilterStyle)Item.GetItem();
-                Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( ItemElement, "Choose a category-style filter for the list above, to narrow down results by some quality of the units you're looking for.\n\n<color=#ffc87a>" +
+                Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( ItemElement, "选择一种分类筛选方式来过滤上方的列表，通过单位的某些特性来缩小查找范围。\n\n<color=#ffc87a>" +
                     ItemAsType.DisplayName + "</color>:\n" + ItemAsType.Tooltip );
             }
         }
@@ -1706,7 +1706,7 @@ namespace Arcen.AIW2.External
             }
             public override void HandleMouseover()
             {
-                string mouseoverText = "Choose how the list of units is sorted.";
+                string mouseoverText = "选择单位的排序方式。";
                 UnitEncyclopediaSortStyle typeDataToSelect = CurrentSortStyle;
                 if ( typeDataToSelect != null )
                 {
@@ -1717,7 +1717,7 @@ namespace Arcen.AIW2.External
             public override void HandleItemMouseover( IArcenUIElementForSizing ItemElement, IArcenUI_Dropdown_Option Item )
             {
                 UnitEncyclopediaSortStyle ItemAsType = (UnitEncyclopediaSortStyle)Item.GetItem();
-                Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( ItemElement, "Choose how the list of units is sorted.\n\n<color=#ffc87a>" +
+                Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( ItemElement, "选择单位的排序方式。\n\n<color=#ffc87a>" +
                     ItemAsType.DisplayName + "</color>:\n" + ItemAsType.Tooltip );
             }
         }
@@ -1803,7 +1803,7 @@ namespace Arcen.AIW2.External
             }
             public override void HandleMouseover()
             {
-                string mouseoverText = "Choose the faction or type of faction to use as a filter in the galaxy map display mode to the right.";
+                string mouseoverText = "选择要用于右侧星系图显示模式中作为筛选条件的阵营或阵营类型。";
                 FactionFilter currentFilter = FactionFilter.GetFactionFilterByIndex( FactionIndex );
                 if ( currentFilter.GetIsValid() )
                 {
@@ -1814,7 +1814,7 @@ namespace Arcen.AIW2.External
             public override void HandleItemMouseover( IArcenUIElementForSizing ItemElement, IArcenUI_Dropdown_Option Item )
             {
                 FactionFilter ItemAsType = (FactionFilter)Item.GetItem();
-                Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( ItemElement, "Choose the faction or type of faction to use as a filter in the galaxy map display mode to the right.\n\n<color=#" +
+                Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( ItemElement, "选择要用于右侧星系图显示模式中作为筛选条件的阵营或阵营类型。\n\n<color=#" +
                     ItemAsType.GetTextColor() + ">" +
                     ItemAsType.GetDisplayName() + "</color>:\n" + ItemAsType.GetTooltip() );
             }

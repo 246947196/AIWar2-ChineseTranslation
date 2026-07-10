@@ -671,6 +671,8 @@ AIWar2_ChineseTranslation/
 
 修复 AIWarExternalCode 9 个文件中遗漏的 ~30 条英文字符串（编译通过，0 错误）：
 
+修复 AIWarExternalCode 9 个文件中遗漏的 ~30 条英文字符串（编译通过，0 错误）：
+
 | 文件 | 遗漏内容 | 补译条数 |
 |------|---------|:--------:|
 | Window_InGameHoverEntityInfo.cs | "Resource Multipliers After Time Here And Not Crippled" 区块（含 CLARIFICATION x3、Cannot be claimed x1） | 12 |
@@ -686,3 +688,18 @@ AIWar2_ChineseTranslation/
 **根因**：`Window_InGameHoverEntityInfo.cs`（8390 行）中 "Resource Multipliers" 区块在大规模翻译时未被覆盖。
 
 **教训**：翻译大型 UI 文件（>5000 行）时，必须逐区块检查确保无遗漏。BaseInfo/ 下的 Notifier 类包含玩家可见通报文本，必须翻译。
+
+### 9.10 C# UI 文本补译（2026-07-10 第3批）
+
+修复 `Window_UnitEncyclopedia.cs` 中遗漏的 10 条英文字符串（编译通过，0 错误）：
+
+| 行号 | 英文 | 中文 |
+|------|------|------|
+| 1136, 1278 | `"Details for " + name` | `name + " 的详细信息"` |
+| 1137, 1279 | `"Close"` | `"关闭"` |
+| 1464, 1475 | 文本框搜索提示 | `"选择文本框如何对上方单位列表进行搜索。"` |
+| 1609, 1620 | 分类筛选提示 | `"选择一种分类筛选方式来过滤上方的列表，通过单位的某些特性来缩小查找范围。"` |
+| 1709, 1720 | 排序提示 | `"选择单位的排序方式。"` |
+| 1806, 1817 | 阵营筛选提示 | `"选择要用于右侧星系图显示模式中作为筛选条件的阵营或阵营类型。"` |
+
+**根因**：4 组下拉框的 `HandleMouseover()` / `HandleItemMouseover()` tooltip 字符串在初次翻译时被遗漏。`"Details for "` 和 `"Close"` 亦为 UnitEncyclopedia 弹窗反复出现的漏译。
