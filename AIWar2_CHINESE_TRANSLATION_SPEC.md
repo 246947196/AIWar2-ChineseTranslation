@@ -65,7 +65,18 @@ AIWar2_ChineseTranslation/
 
 `deploy.ps1` 现在包含部署前版本检查：**基线版本必须与游戏版本一致**才能部署。
 
-**检测覆盖范围：** 快照系统监控四层来源——XML 配置 (`GameData/Configuration/`)、C# 源码 (`CodeExternal/`)、核心 DLL (`AIWar2_Data/Managed/`) 和 arcenui AssetBundle。其中 `CodeExternal/` 对应翻译项目的 `DLLSource/` — 游戏原版源码变更时，快照会报告哪些字符串新增/修改，翻译者据此同步到 `DLLSource/` 下的翻译版本。
+**检测覆盖范围：** 快照系统监控四层来源——XML 配置 (`GameData/Configuration/`)、C# 源码 (`CodeExternal/`)、核心 DLL (`AIWar2_Data/Managed/`) 和 arcenui AssetBundle。
+
+**分层对比策略：**
+
+| 层 | 对比方式 | 说明 |
+|---|---------|------|
+| XML | 文件哈希 + 字符串级对比 | 用 `display_name`/`description` 等稳定属性名作 ID，精确定位改动 |
+| C# 源码 (`CodeExternal/`) | **仅文件哈希** | 开源代码有翻译副本 `DLLSource/`，文件变了直接用 diff 工具看 |
+| 核心 DLL | 文件哈希 | 无源码，IL 汉化需重新用 `ilpatch` 提取翻译 |
+| arcenui | 文件哈希 + 字符串级对比 | 用英文原文作 key，精确定位改动 |
+
+其中 `CodeExternal/` 对应翻译项目的 `DLLSource/`。`CodeExternal/` 变更时，快照只报告哪些 `.cs` 文件哈希变了，翻译者用 `git diff` 或其他 diff 工具对比 `CodeExternal/` 与 `DLLSource/` 即可看到精确差异。
 
 1. Steam 更新游戏
 2. **运行 `check_update.ps1`**（替代 `check_translation.ps1`）检测变更并生成报告

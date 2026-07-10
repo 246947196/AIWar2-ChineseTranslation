@@ -150,7 +150,7 @@ function Extract-XMLStrings {
     return $result
 }
 
-# ---- DLL source extraction ----
+# ---- DLL source extraction (hash only) ----
 function Extract-DLLSourceStrings {
     param($baseDir)
     Write-Host "  Scanning DLL source files..." -ForegroundColor Gray
@@ -166,27 +166,10 @@ function Extract-DLLSourceStrings {
     foreach ($f in $files) {
         $rel = $f.FullName.Substring($baseDir.Length + 1)
         $hash = Get-SHA256Hash $f.FullName
-        $strings = @{}
-        $lines = Get-Content $f.FullName -Encoding UTF8
-        for ($i = 0; $i -lt $lines.Count; $i++) {
-            $line = $lines[$i]
-            $trimmed = $line.Trim()
-            if ($trimmed -match '^//' -or $trimmed -eq '' -or $trimmed -match '^#') { continue }
-            $strMatches = [regex]::Matches($line, '"((?:[^"\\]|\\.)*)"')
-            foreach ($m in $strMatches) {
-                $val = $m.Groups[1].Value
-                if ($val.Length -ge 2 -and $val -notmatch '^[\d\s\-\.\,\:\;\+\=\/\*\(\)\[\]\{\}\\\&\|\!\?\<\>\%\$\#\@\^\~'']+$') {
-                    $key = "L$($i+1):$([System.IO.Path]::GetFileNameWithoutExtension($f.Name))"
-                    $strings[$key] = $val
-                }
-            }
-        }
-        if ($strings.Count -gt 0) {
-            $result[$rel] = @{ hash = $hash; strings = $strings }
-        }
+        $result[$rel] = @{ hash = $hash }
         $count++
     }
-    Write-Host "    $count .cs files scanned" -ForegroundColor Green
+    Write-Host "    $count .cs files hashed" -ForegroundColor Green
     return $result
 }
 
@@ -276,11 +259,9 @@ function Build-Snapshot {
     Write-Host "Snapshot written: $snapshotFile" -ForegroundColor Green
 
     $totalStrings = 0
-    foreach ($v in $xmlData.Values) { $totalStrings += $v.strings.Count }
-    $dllSrcStrings = 0
-    foreach ($v in $dllSourceData.Values) { $dllSrcStrings += $v.strings.Count }
+    foreach ($v in $xmlData.Values) { if ($v.strings) { $totalStrings += $v.strings.Count } }
     Write-Host "  XML files: $($xmlData.Count), strings: $totalStrings"
-    Write-Host "  DLL source files: $($dllSourceData.Count), strings: $dllSrcStrings"
+    Write-Host "  DLL source files: $($dllSourceData.Count), hash only"
     Write-Host "  Core DLLs: $($coreDLLData.Count)"
     if ($arcenuiData) { Write-Host "  arcenui: $($arcenuiData.strings.Count) strings" }
 }
@@ -333,19 +314,19 @@ function Compare-Layers {
             if ($oldHash -ne $newHash) {
                 $oldStrings = $snapshot[$file].strings
                 $newStrings = $current[$file].strings
-                if (-not $oldStrings) { $oldStrings = @{} }
-                if (-not $newStrings) { $newStrings = @{} }
                 $details = @()
-                foreach ($k in $oldStrings.Keys) {
-                    if (-not $newStrings.ContainsKey($k)) {
-                        $details += [PSCustomObject]@{ Key = $k; Old = $oldStrings[$k]; New = $null; Change = "deleted" }
-                    } elseif ($oldStrings[$k] -ne $newStrings[$k]) {
-                        $details += [PSCustomObject]@{ Key = $k; Old = $oldStrings[$k]; New = $newStrings[$k]; Change = "modified" }
+                if ($oldStrings -and $newStrings) {
+                    foreach ($k in $oldStrings.Keys) {
+                        if (-not $newStrings.ContainsKey($k)) {
+                            $details += [PSCustomObject]@{ Key = $k; Old = $oldStrings[$k]; New = $null; Change = "deleted" }
+                        } elseif ($oldStrings[$k] -ne $newStrings[$k]) {
+                            $details += [PSCustomObject]@{ Key = $k; Old = $oldStrings[$k]; New = $newStrings[$k]; Change = "modified" }
+                        }
                     }
-                }
-                foreach ($k in $newStrings.Keys) {
-                    if (-not $oldStrings.ContainsKey($k)) {
-                        $details += [PSCustomObject]@{ Key = $k; Old = $null; New = $newStrings[$k]; Change = "added" }
+                    foreach ($k in $newStrings.Keys) {
+                        if (-not $oldStrings.ContainsKey($k)) {
+                            $details += [PSCustomObject]@{ Key = $k; Old = $null; New = $newStrings[$k]; Change = "added" }
+                        }
                     }
                 }
                 if ($details.Count -gt 0) {
@@ -415,37 +396,30 @@ function Write-Report {
     }
     $lines += ""
 
-    # ---- DLL Source ----
+    # ---- DLL Source (hash only) ----
     $lines += "[Layer: DLL Source]"
-    $dllOk = 0; $dllMod = 0; $dllNew = 0
+    $dllOk = 0; $dllChanged = 0; $dllNew = 0; $dllDeleted = 0
     foreach ($c in $dllSrcChanges) {
         if ($c.Type -eq "new_file") { $dllNew++ }
-        elseif ($c.Type -eq "modified") { $dllMod++ }
+        elseif ($c.Type -eq "deleted") { $dllDeleted++ }
+        elseif ($c.Type -eq "modified" -or $c.Type -eq "hash_changed_only") { $dllChanged++ }
         else { $dllOk++ }
     }
     $lines += "  OK (no change): $dllOk"
-    if ($dllMod -gt 0) {
-        $lines += "  Modified (needs retranslation): $dllMod"
+    if ($dllChanged -gt 0) {
+        $lines += "  Hash changed (needs re-translation): $dllChanged"
         foreach ($c in $dllSrcChanges) {
-            if ($c.Type -ne "modified") { continue }
+            if ($c.Type -ne "hash_changed_only" -and $c.Type -ne "modified") { continue }
             $lines += "    - $($c.File)"
-            $added = $c.Details | Where-Object { $_.Change -eq "added" }
-            $mod = $c.Details | Where-Object { $_.Change -eq "modified" }
-            $del = $c.Details | Where-Object { $_.Change -eq "deleted" }
-            if ($added) { foreach ($d in $added) { $lines += "       NEW: $($d.Key): `"$($d.New)`"" } }
-            if ($mod) { foreach ($d in $mod) { $lines += "       MODIFIED: $($d.Key): `"$($d.Old)`" -> `"$($d.New)`"" } }
-            if ($del) { foreach ($d in $del) { $lines += "       DELETED: $($d.Key)" } }
         }
     }
     if ($dllNew -gt 0) {
         $lines += "  New files: $dllNew"
-        foreach ($c in $dllSrcChanges) {
-            if ($c.Type -ne "new_file") { continue }
-            $lines += "    - $($c.File)"
-            foreach ($d in $c.Details) {
-                $lines += "       NEW: $($d.Key): `"$($d.New)`""
-            }
-        }
+        foreach ($c in $dllSrcChanges) { if ($c.Type -eq "new_file") { $lines += "    - $($c.File)" } }
+    }
+    if ($dllDeleted -gt 0) {
+        $lines += "  Deleted files: $dllDeleted"
+        foreach ($c in $dllSrcChanges) { if ($c.Type -eq "deleted") { $lines += "    - $($c.File)" } }
     }
     $lines += ""
 
@@ -487,7 +461,7 @@ function Write-Report {
 
     # ---- Summary ----
     $totalOk = $xmlOk + $dllOk + $coreOk
-    $totalWarn = $xmlMod + $dllMod + $coreChanged
+    $totalWarn = $xmlMod + $dllChanged + $coreChanged
     $totalNew = $xmlNew + $dllNew
     $lines += "[Summary]"
     $lines += "  OK (no action needed): $totalOk"

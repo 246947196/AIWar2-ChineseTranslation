@@ -26,11 +26,20 @@ XML 文件整体替换 + DLL 源码编译替换 + AssetBundle 拦截重定向
 | `check_update.ps1 -snapshot -force` | 强制覆盖已有快照 |
 | `check_update.ps1` | 检测游戏更新，生成报告到 `translation_update_report_*.txt` |
 
+**分层对比策略：**
+
+| 层 | 对比方式 | 说明 |
+|---|---------|------|
+| XML | 文件哈希 + 字符串级 | `display_name`/`description` 等稳定属性名作 ID |
+| C# 源码 (`CodeExternal/`) | **仅文件哈希** | 有 `DLLSource/` 翻译副本，文件变后用 diff 工具对比 |
+| 核心 DLL | 文件哈希 | IL 汉化需重新 `ilpatch` |
+| arcenui | 文件哈希 + 字符串级 | 英文原文作 key |
+
 **游戏更新后流程：**
 1. Steam 更新游戏（文件恢复为英文）
 2. `check_update.ps1` → 生成变更报告
 3. `check_update.ps1 -snapshot -force` → 更新基线
-4. 按报告逐条翻译修改
+4. 按报告翻译修改（C# 源码用 diff 工具对比 `CodeExternal/` 与 `DLLSource/`）
 5. `build.ps1` + `deploy.ps1`
 6. 提交 git
 
