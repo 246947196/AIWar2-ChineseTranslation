@@ -541,6 +541,14 @@ ilpatch inspect "PatchedAssemblies\ArcenAIW2Visualization.dll" "起始行星归�
 
 > 2026-07-09 本次新增 ArcenAIW2Core 翻译 +199 条目（252 处 ldstr 替换），涵盖星域调查、坐标验证、出哨站（Outguard）描述、小队行为调试信息、AI 预算分配等类别。合并脚本 `merge_parts.py` 已编写至 `tools/ilpatch/`，后续可直接复用。
 
+**2026-07-10 补翻：** 发现 `merged.json` 中有 2 条 wormhole 相关格式字符串翻译为空：
+- `" wormholes linking to their own planet in this map.  Harmless now."` — 用于生成地图界面动态数字拼接（`{0} wormholes linking...`），空翻译导致英文原文直接显示。
+- `"\n<color=#888888>Arrives somewhere between your station and enemy wormholes.</color>  "` — 空翻译。
+
+修复方式：直接在 `merged.json` 中填入中文翻译，重新运行 `ilpatch patch` 生成 DLL，提交 `PatchedAssemblies/` 后部署。
+
+**教训**：`extract` 导出的候选条目中，部分调试/日志字符串被保留为空（`""`）。ilpatch 遇到空值会跳过替换，导致原文保留。应定期用 `ilpatch inspect` 或 Python 脚本检查空翻译条目，区分"不应翻译的调试信息"和"遗漏的玩家可见文本"。
+
 ## 九、DLC 翻译（第二波）
 
 ### 9.1 概述
