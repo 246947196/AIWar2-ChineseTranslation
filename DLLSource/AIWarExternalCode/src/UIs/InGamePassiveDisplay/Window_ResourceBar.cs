@@ -341,14 +341,14 @@ namespace Arcen.AIW2.External
                     return MouseHandlingResult.PlayClickDeniedSound;
                 if ( IsDysonSidekick )
                 {
-                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Dyson Sidekick Income", "关闭",
+                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "戴森随从收入", "关闭",
                             delegate ( ArcenDoubleCharacterBuffer Buffer ) { return GetDysonSidekickIncome( Buffer ); } );
                     return MouseHandlingResult.None;
                 }
 
                 if ( input.LeftButtonClicked )
                 {
-                    Window_ModalSelfUpdatingTextWindow_UltraWide.Instance.Open( 0.5f, 2f, "Current Metal Flows", "关闭",
+                    Window_ModalSelfUpdatingTextWindow_UltraWide.Instance.Open( 0.5f, 2f, "当前金属流动", "关闭",
                     delegate ( ArcenDoubleCharacterBuffer Buffer )
                     {
                         Buffer.Add( Faction.LastSeenMetalFlows );
@@ -489,7 +489,7 @@ namespace Arcen.AIW2.External
             }
             public override MouseHandlingResult HandleClick_Subclass( MouseHandlingInput input )
             {
-                Window_ModalSelfUpdatingTextWindow_Wide.Instance.Open( 0.5f, 2f, "Current Energy Production and Consumption", "关闭",
+                Window_ModalSelfUpdatingTextWindow_Wide.Instance.Open( 0.5f, 2f, "当前能源生产和消耗", "关闭",
                       delegate( ArcenDoubleCharacterBuffer Buffer ) { return GetEnergyData( Buffer ); } );
                 return MouseHandlingResult.None;
             }
@@ -716,7 +716,7 @@ namespace Arcen.AIW2.External
                         break;
                 }
 
-                Window_ModalSelfUpdatingTextWindow_Wide.Instance.Open( 0.5f, 2f, "Current " + fuelName + " Production and Consumption", "关闭",
+                Window_ModalSelfUpdatingTextWindow_Wide.Instance.Open( 0.5f, 2f, "当前 " + fuelName + " 生产和消耗", "关闭",
                       delegate ( ArcenDoubleCharacterBuffer Buffer ) { return GetFuelData( Buffer, FuelType ); } );
                 return MouseHandlingResult.None;
             }
@@ -750,8 +750,8 @@ namespace Arcen.AIW2.External
                 switch ( FuelType )
                 {
                     case ResourceType.FuelArgon:
-                        fuelName = "Argon Fuel";
-                        fuelUse = "Argon is a global resource required to run your main combat ships.";
+                        fuelName = "氩燃料";
+                        fuelUse = "氩是一种全球资源，用于运行你的主力战斗舰船。";
                         colorGood = "ff8e32";
                         colorTotal = "eb481d";
                         consumedTotal = forFaction.FuelArgonConsumption;
@@ -760,8 +760,8 @@ namespace Arcen.AIW2.External
                         overuseRatio = forFaction.FuelArgonOveruseRatio;
                         break;
                     case ResourceType.FuelRadon:
-                        fuelName = "Radon Fuel";
-                        fuelUse = "Radon is a global resource required to run your turrets and forcefields.";
+                        fuelName = "氡燃料";
+                        fuelUse = "氡是一种全球资源，用于运行你的炮塔和力场护盾。";
                         colorGood = "be69ff";
                         colorTotal = "9622d8";
                         consumedTotal = forFaction.FuelRadonConsumption;
@@ -770,8 +770,8 @@ namespace Arcen.AIW2.External
                         overuseRatio = forFaction.FuelRadonOveruseRatio;
                         break;
                     case ResourceType.FuelXenon:
-                        fuelName = "Xenon Fuel";
-                        fuelUse = "Xenon is a global resource required to run your officers, elites, and outguard.";
+                        fuelName = "氙燃料";
+                        fuelUse = "氙是一种全球资源，用于运行你的军官、精英和外卫部队。";
                         colorGood = "5bcbff";
                         colorTotal = "28a8e3";
                         consumedTotal = forFaction.FuelXenonConsumption;
@@ -783,8 +783,8 @@ namespace Arcen.AIW2.External
 
                 if ( extraConsumed > 0 )
                 {
-                    Buffer.Add( "\nExtra " ).Add( fuelName ).Add( " Perma-Consumed From Past Actions: <color=#" ).Add( colorGood ).Add( ">" )
-                        .AddNumberMoreReadable( extraConsumed ).Add( "</color>\n<size=80%>Usually perma-consumption is from things like hacking to contact Outguard.\n</size>" );
+                    Buffer.Add( "\n额外 " ).Add( fuelName ).Add( " 因过去行为永久消耗：<color=#" ).Add( colorGood ).Add( ">" )
+                        .AddNumberMoreReadable( extraConsumed ).Add( "</color>\n<size=80%>通常永久消耗来自诸如入侵以联系外衛部队等行为。\n</size>" );
                 }
 
                 workingPlanets.Clear();
@@ -898,7 +898,7 @@ namespace Arcen.AIW2.External
 
                 if ( workingPlanets.Count > 0 )
                 {
-                    Buffer.Add( fuelName ).Add( "  produced per planet:\n" );
+                    Buffer.Add( fuelName ).Add( " 每个星球生产：\n" );
                     workingPlanets.Sort( static delegate ( KeyValuePair<Planet, int> L, KeyValuePair<Planet, int> R )
                     {
                         int val = R.Value.CompareTo( L.Value ); //desc
@@ -979,7 +979,7 @@ namespace Arcen.AIW2.External
             }
             public override MouseHandlingResult HandleClick_Subclass( MouseHandlingInput input )
             {
-                Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "History of Tech Unlocks", "关闭",
+                Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "科技解锁历史", "关闭",
                     delegate( ArcenDoubleCharacterBuffer Buffer ) { return GetTechHistory( Buffer ); } );
                 return MouseHandlingResult.None;
             }
@@ -1259,9 +1259,9 @@ namespace Arcen.AIW2.External
                         continue;
                     }
 
-                    tooltipBuffer.Add("\nCurrent Mark Level For ").Add( "AI:", faction.FactionCenterColor.ColorHexBrighter).Add(" <color=#" + thisMark.ColorHex + ">" + currentMarkLevelForAI + "</color>.");
+                    tooltipBuffer.Add("\n当前等级 ").Add( "AI：", faction.FactionCenterColor.ColorHexBrighter).Add(" <color=#" + thisMark.ColorHex + ">" + currentMarkLevelForAI + "</color>。");
                     if ( currentMarkLevelForAI == Balance_MarkLevelTable.Instance.Rows.Count - 1 )
-                        tooltipBuffer.Add("\nThis is the Maximum mark level.");
+                        tooltipBuffer.Add("\n这是最高等级。");
                     else
                     {
                         //this is the normal case
@@ -1387,14 +1387,14 @@ namespace Arcen.AIW2.External
                 if ( IsDarkZenithSidekick )
                 {
                     string dzFleetsTip = ArcenExternalUIUtilities.IsDlc4InstalledAndEnabled()
-                        ? "\nUse the <color=#a1d4ff>DZ Economy</color> entry in the Fleets sidebar to view and control Epistyle production directly."
-                        : "\nYou can use the Hacking menu to modify Epistyle production.";
+                        ? "\n使用舰队侧边栏中的<color=#a1d4ff>暗天顶经济</color>条目直接查看和控制柱楣生产。"
+                        : "\n你可以使用入侵菜单修改柱楣生产。";
                     Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element,
-                        "The Dark Zenith have a different economy, and the player does not have much control over it. " +
-                        "Their Terminii will produce resources, which are brought to the Epistyles with Transports.\n" +
-                        "They get science by spreading the Fimbulwinter." +
+                        "暗天顶拥有不同的经济体系，玩家对其没有太多控制权。" +
+                        "它们的终端门将生产资源，通过运输船运送到柱楣。\n" +
+                        "它们通过传播永冬来获取科技。" +
                         dzFleetsTip +
-                        "\n\nLeft clicking will show more detailed economic status, right clicking will show Upgrades." );
+                        "\n\n左键点击将显示更详细的经济状态，右键点击将显示升级。" );
                     return;
                 }
 
@@ -1426,28 +1426,28 @@ namespace Arcen.AIW2.External
 
                     string colorString = faction.FactionCenterColor.ColorHexBrighter;
                     output += "\n<color=#" + colorString + ">" ;
-                    output += "AI response level " +  multiplier.ToFloatNonSim().ToString("#,##0.0") + " (";
+                    output += "AI 响应等级 " +  multiplier.ToFloatNonSim().ToString("#,##0.0") + "（";
                     if(hackingLevel == 0)
-                        output += "Very Easy";
+                        output += "非常简单";
                     else if(hackingLevel == 1)
-                        output += "Easy";
+                        output += "简单";
                     else if(hackingLevel == 2)
-                        output += "Slothful";
+                        output += "懒散";
                     else if(hackingLevel == 3)
-                        output += "Indifferent";
+                        output += "冷漠";
                     else if(hackingLevel == 4)
-                        output += "Moderate";
+                        output += "中等";
                     else if(hackingLevel == 5)
-                        output += "High";
+                        output += "高";
                     else if(hackingLevel == 6)
-                        output += "Extreme";
+                        output += "极端";
                     else if(hackingLevel == 7)
-                        output += "Terrifying";
-                    output += ").</color>";
-                    output += "  Note that the hack itself may have a response that is far more aggressive than the generalized AI response component.\n";
-                    output += "\tHacking points spent against this faction: <color=#3DE799>" + hackingSoFar.IntValue+ "</color>.\n";
+                        output += "恐怖";
+                    output += "）。</color>";
+                    output += "  注意，入侵本身可能拥有比泛化 AI 响应组件更为激进的响应。\n";
+                    output += "\t对该派系使用的入侵点：<color=#3DE799>" + hackingSoFar.IntValue+ "</color>。\n";
                     if ( hackingPointsForNextLevel > 0 )
-                        output += "\tSpending <color=#3DE799>" + (hackingPointsForNextLevel - hackingSoFar.IntValue) + "</color> additional hacking points will increase the response level.";
+                        output += "\t再花费 <color=#3DE799>" + (hackingPointsForNextLevel - hackingSoFar.IntValue) + "</color> 额外入侵点将提升响应等级。";
                 }
                 return output;
             }
@@ -1470,9 +1470,9 @@ namespace Arcen.AIW2.External
                         World_AIW2.Instance.CurrentGalaxy.GetPlanetByIndex( hacker.ActiveHack_Planet ) );
                     int secondsLeft = totalDuration - secondsSoFar;
                     if ( totalDuration > 0 ) //any hack that has an explicit time duration
-                        output += "  <color=#f5a1ff>Time Left For Hacker on " + hacker.GetPlanetName_Safe() +" To Complete Work: " + Engine_Universal.ToHoursAndMinutesString( secondsLeft ) + "</color>\n";
+                        output += "  <color=#f5a1ff>黑客在 " + hacker.GetPlanetName_Safe() +" 完成工作剩余时间：" + Engine_Universal.ToHoursAndMinutesString( secondsLeft ) + "</color>\n";
                     else //this is for things with a variable time, like the superterminal hack
-                        output += "  <color=#f5a1ff>Time Elapsed For Hacker on " + hacker.GetPlanetName_Safe() +"'s Work: " + Engine_Universal.ToHoursAndMinutesString( secondsSoFar ) + "</color>\n";
+                        output += "  <color=#f5a1ff>黑客在 " + hacker.GetPlanetName_Safe() +" 的工作已用时间：" + Engine_Universal.ToHoursAndMinutesString( secondsSoFar ) + "</color>\n";
                 }
                 return output;
             }
@@ -1481,12 +1481,12 @@ namespace Arcen.AIW2.External
                 Faction localFaction = World_AIW2.Instance.GetLocalPlayerFactionOrNull();
                 if ( IsDarkZenithSidekick )
                 {
-                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Dark Zenith Sidekick Income", "关闭",
+                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "暗天顶随从收入", "关闭",
                         delegate ( ArcenDoubleCharacterBuffer Buffer ) { return GetDarkZenithSidekickIncome( Buffer, input ); } );
                     return MouseHandlingResult.None;
                 }
 
-                Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "History of Hacks", "关闭",
+                Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "入侵历史", "关闭",
                     delegate( ArcenDoubleCharacterBuffer Buffer ) { return GetHackingHistory( Buffer ); } );
                 return MouseHandlingResult.None;
             }
@@ -1642,21 +1642,21 @@ namespace Arcen.AIW2.External
                 {
                     if ( IsScourgeEmpire )
                     {
-                        Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Scourge State", "关闭",
+                        Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Scourge 状态", "关闭",
                             delegate ( ArcenDoubleCharacterBuffer Buffer ) { return GetScourgeState( Buffer ); } );
                     }
                     else if ( IsDysonSidekick )
-                        Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Dyson Sidekick Income", "关闭",
+                        Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "戴森随从收入", "关闭",
                             delegate ( ArcenDoubleCharacterBuffer Buffer ) { return GetDysonSidekickIncome( Buffer ); } );
                     else if ( IsArmadaEmpire )
-                        Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Armada Mining Overview", "关闭",
+                        Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Armada 采矿概览", "关闭",
                             delegate ( ArcenDoubleCharacterBuffer Buffer ) { return GetArmadaOverview( Buffer ); } );
                     else if ( IsApkallu )
-                        Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Apkallu Overview", "关闭",
+                        Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Apkallu 概览", "关闭",
                             delegate ( ArcenDoubleCharacterBuffer Buffer ) { return GetApkalluOverview( Buffer ); } );
 
                     else
-                        Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Necromancer Resource Acquisition", "关闭",
+                        Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "死灵法师资源获取", "关闭",
                             delegate ( ArcenDoubleCharacterBuffer Buffer ) { return GetNecromancerAcquisitionHistory( Buffer ); } );
 
                 }
@@ -1704,10 +1704,10 @@ namespace Arcen.AIW2.External
                     total += pair.Value;
                 }
                 if ( total > 0 )
-                    Buffer.Add( "\nTotal " ).Add( ArcenExternalUIUtilities.HackingTextColorAndIcon ).Add( ": " + total ).Add( "\n" );
+                    Buffer.Add( "\n总计 " ).Add( ArcenExternalUIUtilities.HackingTextColorAndIcon ).Add( ": " + total ).Add( "\n" );
                 total = 0;
                 if ( factionBaseInfo.EssenceEarnedPerUnitType.Count > 0 )
-                    Buffer.Add( "\nHere is how you got your Essence: \n" );
+                    Buffer.Add( "\n以下是你获取 Essence 的方式：\n" );
                 string essenceColor = forFaction.Resource1Color.Length > 0 ? forFaction.Resource1Color : World_AIW2.Instance.Resource1Color;
                 foreach ( KeyValuePair<GameEntityTypeData, int> pair in factionBaseInfo.EssenceEarnedPerUnitType )
                 {
@@ -1739,7 +1739,7 @@ namespace Arcen.AIW2.External
                     Buffer.Add( "\nTotal " ).Add( forFaction.Resource1TextColorAndIcon.Length > 0 ? forFaction.Resource1TextColorAndIcon : World_AIW2.Instance.Resource1TextColorAndIcon ).Add( ": " + total ).Add( "\n" );
                 total = 0;
                 if ( factionBaseInfo.ScienceEarnedPerUnitType.Count > 0 )
-                    Buffer.Add( "\nHere is how you got your Science: \n" );
+                    Buffer.Add( "\n以下是你获取科技的方式：\n" );
                 foreach ( KeyValuePair<GameEntityTypeData, int> pair in factionBaseInfo.ScienceEarnedPerUnitType )
                 {
                     if ( pair.Key != null && pair.Key.TexEmbedSprite_Icon != null )
@@ -1869,8 +1869,8 @@ namespace Arcen.AIW2.External
                 if ( info == null )
                     return false;
 
-                Buffer.Add( "History of the Apkallu counterstrikes in the Apsu.\n", "ffcc88" );
-                Buffer.Add( "Here is how the Malware have been harmed:\n\n", "ffcc88" );
+                Buffer.Add( "Apkallu 在 Apsu 的反击历史。\n", "ffcc88" );
+                Buffer.Add( "Malware 受到的伤害如下：\n\n", "ffcc88" );
 
                 if ( info.BreachHistory.Count == 0 )
                 {
@@ -1985,7 +1985,7 @@ namespace Arcen.AIW2.External
 
             // public override MouseHandlingResult HandleClick_Subclass( MouseHandlingInput input )
             // {
-            //     Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Apkallu Overview", "关闭",
+            //     Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Apkallu 概览", "关闭",
             //         delegate ( ArcenDoubleCharacterBuffer Buffer ) { return tNecromancerEsssence.GetApkalluOverview( Buffer ); } );
             //     return MouseHandlingResult.None;
             // }
@@ -2578,7 +2578,7 @@ namespace Arcen.AIW2.External
                         }
                     }
                 }
-                tooltipBuffer.Add("\n<size=60%>Left-click for performance stats.  Middle-click for allegiance debug info.  Right-click for NPC ship cap info.</size>");
+                tooltipBuffer.Add("\n<size=60%>左键点击查看性能统计。中键查看阵营调试信息。右键查看 NPC 舰船容量信息。</size>");
                 Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( Element, tooltipBuffer.GetStringAndResetForNextUpdate() );
             }
 
@@ -2589,13 +2589,13 @@ namespace Arcen.AIW2.External
             public override MouseHandlingResult HandleClick_Subclass( MouseHandlingInput input )
             {
                 if ( input.MiddleButtonClicked )
-                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Faction Alliance Details", "关闭",
+                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "派系联盟详情", "关闭",
                         delegate ( ArcenDoubleCharacterBuffer Buffer ) { return tAttackSafe.GetFactionAllianceDetails( Buffer ); } );
                 else if ( input.RightButtonClicked )
-                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "NPC Ship Cap Details", "关闭",
+                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "NPC 舰船容量详情", "关闭",
                         delegate ( ArcenDoubleCharacterBuffer Buffer ) { return tAttackSafe.GetNPCShipCapDetails( Buffer ); } );
                 else
-                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Performance Stats", "关闭",
+                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "性能统计", "关闭",
                         delegate ( ArcenDoubleCharacterBuffer Buffer ) { return tAttackSafe.GetPerformanceStats( Buffer ); } );
                 return MouseHandlingResult.None;
             }
@@ -2629,7 +2629,7 @@ namespace Arcen.AIW2.External
                     } );
                     if ( factionsByGameCommands.Count > 0 )
                     {
-                        Buffer.StartColor( QuickColors.HeaderBright ).Add( "<b>Commands Queued By Faction:</b>\n" ).EndColor();
+                        Buffer.StartColor( QuickColors.HeaderBright ).Add( "<b>按派系列队的命令：</b>\n" ).EndColor();
                         foreach ( Faction fac in factionsByGameCommands )
                         {
                             Buffer.Add( "Id" ).Add( fac.FactionIndex ).Add( "  " );
@@ -2642,7 +2642,7 @@ namespace Arcen.AIW2.External
 
                     List<GameCommandType> sortedCommands = GameCommandTypeTable.SortAndReturnByNumberQueuedForExecution();
 
-                    Buffer.StartColor( QuickColors.HeaderBright ).Add( "<b>Commands Queued By Type:</b>\n" ).EndColor();
+                    Buffer.StartColor( QuickColors.HeaderBright ).Add( "<b>按类型排队的命令：</b>\n" ).EndColor();
 
                     if ( GameCommandType.NumberNullCommandsQueuedSinceGameStarted > 0 )
                     {
@@ -2718,7 +2718,7 @@ namespace Arcen.AIW2.External
                     } );
                     if ( squadCreation_Reasons.Count > 0 )
                     {
-                        Buffer.StartColor( QuickColors.HeaderBright ).Add( "<b>Ship Creation By Reason:</b>\n" ).EndColor();
+                        Buffer.StartColor( QuickColors.HeaderBright ).Add( "<b>按原因的飞船创建：</b>\n" ).EndColor();
                         foreach ( KeyValuePair<string, int> kv in squadCreation_Reasons )
                         {
                             Buffer.Add( kv.Key ).Add( " x" ).Add( kv.Value );
@@ -2747,7 +2747,7 @@ namespace Arcen.AIW2.External
                     } );
                     if ( squadCreation_Types.Count > 0 )
                     {
-                        Buffer.StartColor( QuickColors.HeaderBright ).Add( "<b>Ship Creation By Type:</b>\n" ).EndColor();
+                        Buffer.StartColor( QuickColors.HeaderBright ).Add( "<b>按类型的飞船创建：</b>\n" ).EndColor();
                         foreach ( GameEntityTypeData kv in squadCreation_Types )
                         {
                             Buffer.Add( kv.DisplayName ).Add( " x" ).Add( kv.HostOnly_NonSim_SquadsCreated );
@@ -2776,7 +2776,7 @@ namespace Arcen.AIW2.External
                     } );
                     if ( squadCreation_Planets.Count > 0 )
                     {
-                        Buffer.StartColor( QuickColors.HeaderBright ).Add( "<b>Ship Creation By Planet:</b>\n" ).EndColor();
+                        Buffer.StartColor( QuickColors.HeaderBright ).Add( "<b>按星球的飞船创建：</b>\n" ).EndColor();
                         foreach ( Planet kv in squadCreation_Planets )
                         {
                             Buffer.Add( kv.Name ).Add( " x" ).Add( kv.HostOnly_NonSim_SquadsCreated );
@@ -2805,7 +2805,7 @@ namespace Arcen.AIW2.External
                     } );
                     if ( squadCreation_Factions.Count > 0 )
                     {
-                        Buffer.StartColor( QuickColors.HeaderBright ).Add( "<b>Ship Creation By Faction:</b>\n" ).EndColor();
+                        Buffer.StartColor( QuickColors.HeaderBright ).Add( "<b>按派系的飞船创建：</b>\n" ).EndColor();
                         foreach ( Faction kv in squadCreation_Factions )
                         {
                             Buffer.Add( "Id" ).Add( kv.FactionIndex ).Add( "  " );
@@ -2825,24 +2825,24 @@ namespace Arcen.AIW2.External
             {
                 foreach ( Faction fac in World_AIW2.Instance.Factions )
                 {
-                    Buffer.StartColor( ColorMath.Yellow ).Add( "\nFaction: " ).Add( fac.GetDisplayName() ).EndColor();
+                    Buffer.StartColor( ColorMath.Yellow ).Add( "\n派系：" ).Add( fac.GetDisplayName() ).EndColor();
                     for ( int i = 0; i < fac.AlliedWith_Array.Length; i++ )
                     {
                         if ( fac.AlliedWith_Array[i] )
-                            Buffer.Add( "\nAlliedWith_Array: " ).Add( World_AIW2.Instance.Factions[i].GetDisplayName() );
+                            Buffer.Add( "\n结盟数组：" ).Add( World_AIW2.Instance.Factions[i].GetDisplayName() );
                     }
                     for ( int i = 0; i < fac.FactionIndicesIAmAlliedWith.Count; i++ )
                     {
-                        Buffer.Add( "\nAllyIndex: " ).Add( World_AIW2.Instance.Factions[fac.FactionIndicesIAmAlliedWith[i]].GetDisplayName() );
+                        Buffer.Add( "\n盟友索引：" ).Add( World_AIW2.Instance.Factions[fac.FactionIndicesIAmAlliedWith[i]].GetDisplayName() );
                     }
                     for ( int i = 0; i < fac.HostileTo_Array.Length; i++ )
                     {
                         if ( fac.HostileTo_Array[i] )
-                            Buffer.Add( "\nHostileTo_Array: " ).Add( World_AIW2.Instance.Factions[i].GetDisplayName() );
+                            Buffer.Add( "\n敌对数组：" ).Add( World_AIW2.Instance.Factions[i].GetDisplayName() );
                     }
                     for ( int i = 0; i < fac.FactionIndicesIAmHostileTo.Count; i++ )
                     {
-                        Buffer.Add( "\nHostileIndex: " ).Add( World_AIW2.Instance.Factions[fac.FactionIndicesIAmHostileTo[i]].GetDisplayName() );
+                        Buffer.Add( "\n敌对索引：" ).Add( World_AIW2.Instance.Factions[fac.FactionIndicesIAmHostileTo[i]].GetDisplayName() );
                     }
                 }
 
@@ -2859,7 +2859,7 @@ namespace Arcen.AIW2.External
                         case FactionType.NaturalObject:
                             continue; //skip these two
                     }
-                    Buffer.StartColor( fac.FactionCenterColor.ColorHexBrighter ).Add( "\nFaction: " ).Add( fac.GetDisplayName() ).EndColor();
+                    Buffer.StartColor( fac.FactionCenterColor.ColorHexBrighter ).Add( "\n派系：" ).Add( fac.GetDisplayName() ).EndColor();
                     foreach ( NPCShipCapType row in NPCShipCapTypeTable.Instance.Rows )
                     {
                         Buffer.Add( "\n" );
@@ -2906,13 +2906,13 @@ namespace Arcen.AIW2.External
             public override MouseHandlingResult HandleClick_Subclass( MouseHandlingInput input )
             {
                 if ( input.MiddleButtonClicked )
-                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Faction Alliance Details", "关闭",
+                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "派系联盟详情", "关闭",
                         delegate ( ArcenDoubleCharacterBuffer Buffer ) { return tAttackSafe.GetFactionAllianceDetails( Buffer ); } );
                 else if ( input.RightButtonClicked )
-                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "NPC Ship Cap Details", "关闭",
+                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "NPC 舰船容量详情", "关闭",
                         delegate ( ArcenDoubleCharacterBuffer Buffer ) { return tAttackSafe.GetNPCShipCapDetails( Buffer ); } );
                 else
-                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Performance Stats", "关闭",
+                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "性能统计", "关闭",
                         delegate ( ArcenDoubleCharacterBuffer Buffer ) { return tAttackSafe.GetPerformanceStats( Buffer ); } );
                 return MouseHandlingResult.None;
             }
@@ -2945,13 +2945,13 @@ namespace Arcen.AIW2.External
             public override MouseHandlingResult HandleClick_Subclass( MouseHandlingInput input )
             {
                 if ( input.MiddleButtonClicked )
-                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Faction Alliance Details", "关闭",
+                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "派系联盟详情", "关闭",
                         delegate ( ArcenDoubleCharacterBuffer Buffer ) { return tAttackSafe.GetFactionAllianceDetails( Buffer ); } );
                 else if ( input.RightButtonClicked )
-                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "NPC Ship Cap Details", "关闭",
+                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "NPC 舰船容量详情", "关闭",
                         delegate ( ArcenDoubleCharacterBuffer Buffer ) { return tAttackSafe.GetNPCShipCapDetails( Buffer ); } );
                 else
-                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Performance Stats", "关闭",
+                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "性能统计", "关闭",
                         delegate ( ArcenDoubleCharacterBuffer Buffer ) { return tAttackSafe.GetPerformanceStats( Buffer ); } );
                 return MouseHandlingResult.None;
             }
@@ -2993,20 +2993,20 @@ namespace Arcen.AIW2.External
                 {
                     if ( !buffer.GetIsEmpty() )
                         buffer.Add( "   " );
-                    buffer.Add( "<size=120%><color=#ffb21c>Paused</color></size>" );
+                    buffer.Add( "<size=120%><color=#ffb21c>暂停</color></size>" );
                 }
 
                 if ( World.Instance.IsPaused && World.Instance.ConclusionType == CampaignConclusionType.Won )
                 {
                     if ( !buffer.GetIsEmpty() )
                         buffer.Add( "   " );
-                    buffer.Add( "<color=#1cff57><b>Victory!</b></color>" );
+                    buffer.Add( "<color=#1cff57><b>胜利！</b></color>" );
                 }
                 else if ( World.Instance.IsPaused && World.Instance.ConclusionType == CampaignConclusionType.Lost )
                 {
                     if ( !buffer.GetIsEmpty() )
                         buffer.Add( "   " );
-                    buffer.Add( "<color=#ff1cf7><b>You Have Lost...</b></color>" );
+                    buffer.Add( "<color=#ff1cf7><b>你已失败...</b></color>" );
                 }
             }
 
@@ -3101,7 +3101,7 @@ namespace Arcen.AIW2.External
 
             if ( !spireTwo || !zenithTwo || !neinzulTwo || !templarTwo )
             {
-                Buffer.Add("<b>You will be able to build a Dyson Sphere once you have unlocked District Two for all factions. You need to upgrade\n");
+                Buffer.Add("<b>一旦你为所有派系解锁了区域二，你将能够建造戴森球。你需要升级：\n");
                 if ( !spireTwo )
                     Buffer.Add("\tSpire", "ffb37b").Add("\n");
                 if ( !neinzulTwo )
@@ -3204,7 +3204,7 @@ namespace Arcen.AIW2.External
             if ( forFaction == null )
                 return false;
             ArmadaFactionBaseInfo factionBaseInfo = forFaction.TryGetExternalBaseInfoAs<ArmadaFactionBaseInfo>();
-            Buffer.Add("<b>Active Mines:</b>\n");
+            Buffer.Add("<b>活跃矿井：</b>\n");
             foreach ( GameEntity_Squad mine in factionBaseInfo.Mines.DisplaySquads() )
             {
                 ArmadaPerUnitBaseInfo data = mine.TryGetExternalBaseInfoAs<ArmadaPerUnitBaseInfo>();
@@ -3216,17 +3216,17 @@ namespace Arcen.AIW2.External
                     color = ArcenExternalUIUtilities.HackingTextColor;
                 if ( mine.TypeData.GetHasTag("ArmadaScienceMine"))
                     color = ArcenExternalUIUtilities.ScienceTextColor;
-                Buffer.Add("\t").Add(mine.TypeData.GetDisplayName(), color).Add(" on ").Add( mine.Planet.Name).Add(". Done in ").Add( finishTime, "a1ffa1" ).Add(" seconds\n");
+                Buffer.Add("\t").Add(mine.TypeData.GetDisplayName(), color).Add(" 于 ").Add( mine.Planet.Name).Add("。完成于 ").Add( finishTime, "a1ffa1" ).Add(" 秒\n");
             }
-            Buffer.Add("\n<b>Planets on Mining Cooldown:</b>\n");
+            Buffer.Add("\n<b>采矿冷却中的星球：</b>\n");
             foreach ( KeyValuePair<Planet, int> pair in factionBaseInfo.MiningIneligiblePlanets )
             {
                 int time = pair.Value - World_AIW2.Instance.GameSecond;
                 if ( time >= factionBaseInfo.Income.IneligibleMiningInterval )
                     continue;
-                Buffer.Add("\t").Add(pair.Key.Name, "a1a1ff").Add(" eligible in ").Add( time, "ffa1a1" ).Add(" seconds.\n");
+                Buffer.Add("\t").Add(pair.Key.Name, "a1a1ff").Add(" 可在 ").Add( time, "ffa1a1" ).Add(" 秒后采矿。\n");
             }
-            Buffer.Add("\n<b>Planet Mine Depth:</b>\n");
+            Buffer.Add("\n<b>星球矿井深度：</b>\n");
             foreach ( KeyValuePair<Planet, int> pair in factionBaseInfo.PlanetMineCount )
             {
                 int mineCount = pair.Value;
@@ -3290,22 +3290,22 @@ namespace Arcen.AIW2.External
             {
                 Buffer.Add("\t" + factionBaseInfo.ActiveOutguardGroups[i]).Add("\n");
             }
-            Buffer.Add( "Pilgrims:\n" );
+            Buffer.Add( "朝圣者：\n" );
             foreach ( GameEntity_Squad pilgrim in factionBaseInfo.Pilgrims.DisplaySquads() )
             {
                 bool isLesser = pilgrim.TypeData.GetHasTag( "ApkalluLesserPilgrim" );
-                string typeLabel = isLesser ? "Lesser" : "Regular";
+                string typeLabel = isLesser ? "次级" : "普通";
                 ApkalluPerUnitBaseInfo data = pilgrim.TryGetExternalBaseInfoAs<ApkalluPerUnitBaseInfo>();
-                Buffer.Add( "\t[" ).Add( typeLabel ).Add( "] on " ).Add( pilgrim.Planet.Name, "a1ff1a" );
+                Buffer.Add( "\t[" ).Add( typeLabel ).Add( "] 在 " ).Add( pilgrim.Planet.Name, "a1ff1a" );
                 if ( data != null )
                 {
                     if ( isLesser )
-                        Buffer.Add( " — " ).Add( data.MetalAccumulated ).Add( " metal" );
+                        Buffer.Add( " — " ).Add( data.MetalAccumulated ).Add( " 金属" );
                     else
                         Buffer.Add( " — " ).Add( data.ResourcePoints ).Add( " RP" );
                     if ( data.PlanetsVisited.Count > 0 )
                     {
-                        Buffer.Add( ", visited: " );
+                        Buffer.Add( "，已访问：" );
                         for ( int v = 0; v < data.PlanetsVisited.Count; v++ )
                         {
                             if ( v > 0 ) Buffer.Add( ", " );
@@ -3322,12 +3322,12 @@ namespace Arcen.AIW2.External
                 MalwareFactionBaseInfo mBaseInfo = malware.TryGetExternalBaseInfoAs<MalwareFactionBaseInfo>();
                 if ( mBaseInfo != null )
                 {
-                    Buffer.Add("\n\nMalware state:\n");
-                    Buffer.Add("Current protocol: " + mBaseInfo.CurrentProtocol).Add("\n");
-                    Buffer.Add("Adversary tier: " + mBaseInfo.CurrentAdversaryTierTag).Add("\n");
-                    Buffer.Add("Next protocol choice: " + (mBaseInfo.TimeForNextProtocolChoice - World_AIW2.Instance.GameSecond)).Add("\n");
-                    Buffer.Add("Protocol skipped (no adversary): " + mBaseInfo.DebugProtocolPicksSkippedNoAdversary).Add("\n");
-                    Buffer.Add("Planet qualification failures: " + mBaseInfo.DebugPlanetQualificationFailures).Add("\n");
+                    Buffer.Add("\n\nMalware 状态：\n");
+                    Buffer.Add("当前协议：" + mBaseInfo.CurrentProtocol).Add("\n");
+                    Buffer.Add("对手等级：" + mBaseInfo.CurrentAdversaryTierTag).Add("\n");
+                    Buffer.Add("下次协议选择：" + (mBaseInfo.TimeForNextProtocolChoice - World_AIW2.Instance.GameSecond)).Add("\n");
+                    Buffer.Add("协议跳过（无对手）：" + mBaseInfo.DebugProtocolPicksSkippedNoAdversary).Add("\n");
+                    Buffer.Add("星球资格失败：" + mBaseInfo.DebugPlanetQualificationFailures).Add("\n");
                     if ( !mBaseInfo.HasLinkedPlanets )
                     {
                         Buffer.Add("星球未链接\n");
@@ -3355,7 +3355,7 @@ namespace Arcen.AIW2.External
                             continue;
                         Buffer.Add("在 ").Add(nexus.Planet.Name, "a1ff1a").Add(" 上的连接点具有协议 ").Add(mData.Protocol.ToDisplayString()).Add("\n");
                     }
-                    Buffer.Add("下一个裂缝：" + (mBaseInfo.NextFissureTime - World_AIW2.Instance.GameSecond)).Add("\n");
+                    Buffer.Add("下一个裂缝：" + (mBaseInfo.NextFissureTime - World_AIW2.Instance.GameSecond)).Add(" 秒\n");
                     foreach ( GameEntity_Squad fissure in mBaseInfo.Fissures.DisplaySquads() )
                     {
                         MalwarePerUnitBaseInfo mData = fissure.TryGetExternalBaseInfoAs<MalwarePerUnitBaseInfo>();

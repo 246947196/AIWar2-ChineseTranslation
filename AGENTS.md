@@ -148,7 +148,30 @@ MSBuild：`C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe`
 | PublicImperialSpireNotifier.cs | 帝国尖塔到达提示 x1 |
 | PublicArchitraveExpansionNotifier.cs | 天顶拱门扩张模式描述 x6 |
 
-【教训】翻译大型 UI 文件（如 Window_InGameHoverEntityInfo.cs 8390 行）时，必须遍历所有区块确保无遗漏。
+## 最近补译记录 (2026-07-10 第3批)
+
+2026-07-10 补译了 Window_ResourceBar.cs 中残留的 ~60 条英文字符串（含 build + deploy）：
+
+| 区块 | 遗漏内容 |
+|------|---------|
+| tPlanetName | 右键途径说明 2 处 |
+| tEncyclopedia | 百科工具提示全文 |
+| tEnergy | 电压不足(Brownout)说明、消耗/生产/流入流出详情标签 8 处 |
+| tFuelBase | 燃料名称 3 种、窗口标题、永久消耗说明、生产标签 8 处 |
+| tHacking | AI 响应等级名称 x8、响应说明、入侵点统计、黑客计时 2 处 |
+| tHacking (DZ) | 暗天顶经济提示全文 |
+| tAIP | 当前等级/最高等级标签 |
+| tNecromancerEsssence | 总计/Essence/科技来源标题 3 处 |
+| tAttackSafe | 攻击按钮操作说明、性能统计/阵营/舰船容量窗口标题 |
+| tGeneralTextMessage | 暂停/胜利/失败标签 |
+| GetApkalluBreachHistory | 反击历史/伤害标题 |
+| GetArmadaOverview | 活跃矿井/冷却/深度标题及标签 |
+| GetApkalluOverview | 朝圣者/金属/访问标签及 Malware 状态 |
+| GetFactionAllianceDetails / GetNPCShipCapDetails | 派系/结盟/敌对标签 |
+| GetDysonSidekickIncome | 戴森球解锁条件提示 |
+| 窗口标题 | Current Metal Flows、Dark Zenith Sidekick Income、Scourge State、Apkallu Overview、Armada Mining Overview、Necromancer Resource Acquisition、History of Hacks、History of Tech Unlocks、Current Energy Production and Consumption 共 9 处 |
+
+【教训】翻译大型 UI 文件（如 Window_InGameHoverEntityInfo.cs 8390 行、Window_ResourceBar.cs 3413 行）时，必须遍历所有区块确保无遗漏。
 
 ## 翻译规则
 
