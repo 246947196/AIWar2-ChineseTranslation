@@ -408,9 +408,9 @@ namespace Arcen.AIW2.External
                     PlanetFaction pFaction = planet.GetPlanetFactionForFaction( localFaction );
                     if ( pFaction != null )
                     {
-                        text += "\nRight Clicking on this will toggle whether your ships will pass through this planet.";
+                        text += "\n右键点击将切换你的舰船是否会途经此星球。";
                         if ( pFaction != null && pFaction.GetPlanetFactionBooleanFlag( PlanetFactionBooleanFlag.DoNotPathThrough ) )
-                            text += "\nYour ships will NOT pass through this planet.";
+                            text += "\n你的舰船将不会途经此星球。";
                     }
                 }
 
@@ -433,7 +433,7 @@ namespace Arcen.AIW2.External
 
             public override void HandleMouseover()
             {
-                string text = "The unit encyclopedia is very helpful -- it allows you to sort, filter, and categorize units, and find what you need.  When opened during the game, you can also see specifically what various factions have (fog of war notwithstanding).";
+                string text = "单位百科非常有用——它允许你排序、过滤和分类单位，并找到你需要的内容。在游戏过程中打开它，你还可以查看各个派系具体拥有什么（尽管有战争迷雾）。";
 
                 Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, text );
             }
@@ -480,11 +480,11 @@ namespace Arcen.AIW2.External
                 string text = ArcenExternalUIUtilities.GetEnergyTooltip();
                 if( ArcenStrings.IsEmpty( text ) )
                     return;
-                text += "\n\nGoing below " + ExternalConstants.Instance.AmountEnergyHasToGoBelowToBrownout + " energy (likely by having a Command Station destroyed) for " + 
+                text += "\n\n能量低于 " + ExternalConstants.Instance.AmountEnergyHasToGoBelowToBrownout + "（可能因指挥站被摧毁）持续 " + 
                     (ExternalConstants.Instance.FramesToWaitBeforeBrownoutStarts / 10 ) +
-                    " seconds will cause a <color=#cc8400>Brownout</color>. During a <color=#cc8400>Brownout</color>, all of your Forcefields are disabled. When power is restored, they take " +
+                    " 秒将导致<color=#cc8400>电压不足</color>。在<color=#cc8400>电压不足</color>期间，你所有的力场护盾将被禁用。当电力恢复时，它们需要 " +
                     ExternalConstants.Instance.SecondsToWaitBeforeBrownoutEnds +
-                    " seconds to come back online. \n\nClicking on this icon will give you a detailed breakdown of energy usage and production.";
+                    " 秒才能重新上线。\n\n点击此图标将显示能源使用和生产的详细分类。";
                 Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, text );
             }
             public override MouseHandlingResult HandleClick_Subclass( MouseHandlingInput input )
