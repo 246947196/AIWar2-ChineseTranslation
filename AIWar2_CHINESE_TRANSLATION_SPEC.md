@@ -731,7 +731,19 @@ GameData/QuickStarts2/
 
 **生成工具**：`GameData/QuickStarts2/generate_translated_tooltips.py` 用于批量生成翻译后的 tooltip 文件。
 
-### 9.12 C# UI 文本补译大扫除（2026-07-10 第4批）
+### 9.12 QuickStarts2 工具提示描述翻译 + C# 修复（2026-07-10）
+
+在上一步战役名称翻译基础上，进一步翻译了全部战役 `.tooltip` 文件中的长篇英文描述文本（85 个战役 + 10 个分类文件夹），覆盖难度说明、阵营介绍、玩法策略等玩家可见内容。
+
+**C# 兼容修复**：`Window_LoadQuickStartMenu.cs` 的 `HasDifficulty` 条件判断原本硬编码英文组名（`"Basic"`、`"Moderate"` 等），由于 `#showas:` 已改为中文，这些条件全部失效。修复为同时匹配中英文：
+```
+// 原：if (Instance?.CurrentGroup.DisplayName == "Basic")
+// 改：string dn = Instance?.CurrentGroup.DisplayName;
+//     if ( dn == "Basic" || dn == "基础" )
+```
+需重新编译 DLL 后部署。
+
+### 9.13 C# UI 文本补译大扫除（2026-07-10 第4批）
 
 多子代理并行修复 20 个文件中遗漏的 ~60 条英文字符串（编译通过，0 错误）：
 
