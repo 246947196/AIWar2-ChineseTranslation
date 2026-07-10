@@ -6,7 +6,7 @@
         ***************************************************************************************************************
         ***************************************************************************************************************-->
   <faction name="AI"
-            custom_NameForLobby="Additional &lt;color=#CC5500>AI&lt;/color> Faction"
+            custom_NameForLobby="额外&lt;color=#CC5500>AI&lt;/color>阵营"
              display_name="AI哨兵" short_name="AI" processing_group="AISentinels"
              custom_NameForSorting="_2"
              base_info_source="AISentinelsFactionBaseInfo"

@@ -751,9 +751,9 @@ GameData/QuickStarts2/
 ```
 需重新编译 DLL 后部署。
 
-**注意**：`4-Necromancer Intro` 文件夹的 tooltip 文件在基本游戏中为空（0 字节），实际内容位于 DLC3 `Expansions/3_The_Neinzul_Abyss/QuickStarts2/`。翻译仓库中两者的结构均需维护：
-- `GameData/QuickStarts2/4-Necromancer Intro/` — 基本游戏镜像（文件为空，仅含 `#showas:`）
-- `Expansions/3_The_Neinzul_Abyss/QuickStarts2/4-Necromancer Intro/` — DLC3 真实内容
+**注意**：`4-Necromancer Intro` 文件夹的 tooltip 原始在基本游戏中为空（0 字节），实际内容位于 DLC3 `Expansions/3_The_Neinzul_Abyss/QuickStarts2/`。2026-07-10 之前翻译镜像也仅含 `#showas:` 无描述正文，导致游戏加载此目录下 `.save` 时回退到 `WriteTooltip()` 显示元数据。
+
+**2026-07-10 修复**：将 DLC3 版本中的描述正文同步到 `GameData/QuickStarts2/4-Necromancer Intro/` 下的 4 个 `.tooltip` 文件（含 `_folder.tooltip`），确保无论游戏从哪个目录加载 quickstart，都能显示正确的中文描述。详见 9.14。
 
 `deploy.ps1` 同时部署两处。
 
@@ -788,3 +788,45 @@ GameData/QuickStarts2/
 **根因**：大规模初翻后遗漏了大量玩家可见字符串，`Window_ResourceBar.cs` 尤为严重（16 条大段 tooltip 均为空）。尖塔城市建造和舰队编组交换对话框完全未翻译。
 
 **教训**：UIs/ 目录下的大型文件（Window_ResourceBar.cs 约 3000+ 行）和 AlternativeMoveOrderHandlers/ 下的交互对话框容易整体漏翻，需逐类检查。
+
+### 9.14 Tooltip 描述缺失修复（2026-07-10）
+
+**问题**：死灵法师入门（4-Necromancer Intro）分类下的 4 个 `.tooltip` 文件在 `GameData/QuickStarts2/` 镜像目录中缺少描述正文，仅含 `#showas:` 行。而 DLC3 `Expansions/` 下的对应文件有完整描述文本。
+
+游戏同时扫描 `GameData/` 和 `Expansions/` 目录，当从 `GameData/` 加载 `.save` 时，`SaveLoadMethods.LoadTooltipFromDisk()` 读到的 `.tooltip` 文件无体文本，`TooltipData` 为空，导致 `HandleMouseover()` 回退到 `WriteTooltip()` 自动生成元数据。显示内容为：
+- `Map Type: HO`（mapTypeShort 缩写而非全名）
+- `AI Type: nullAI`（AI 类型未设置时的占位符）
+
+**修复文件**（`AIWar2_ChineseTranslation\GameData\QuickStarts2\4-Necromancer Intro\`）：
+
+| 文件 | 修复内容 |
+|------|---------|
+| `_folder.tooltip` | 添加 AI 难度说明和死灵法师派系介绍 |
+| `Neinzul Galaxy.tooltip` | 添加 Neinzul 守护者/迁徙舰队等战役描述 |
+| `Necromancer Introduction (Less Easy).tooltip` | 添加完整战役介绍 |
+| `Necromancer Introduction (Easy).tooltip` | 添加完整战役介绍 |
+
+描述内容从 `Expansions\3_The_Neinzul_Abyss\QuickStarts2\4-Necromancer Intro\` 下的对应文件同步。
+
+**根因**：初次翻译时，`GameData/` 镜像目录被认为"仅含 `#showas:`"无需描述，未意识到缺少体文本会导致回退到元数据自动生成。
+
+**教训**：具有 `metaExists=true`（有 `.savemet`）的 quickstart 如果 `.tooltip` 文件无体文本，会自动回退到 `WriteTooltip()` 生成格式化元数据。必须确保 `GameData/QuickStarts2/` 下所有 `.tooltip` 文件包含描述正文，否则悬浮窗会显示缩写/占位符而非可读描述。
+
+### 9.15 `custom_NameForLobby` 派系大厅名称翻译（2026-07-10）
+
+**问题**：游戏大厅中「添加派系」下拉菜单和派系标签页中，各个派系的 `custom_NameForLobby` 属性值未翻译，显示为英文。
+
+**修改文件（4 个 XML，6 处修改，仅改 `custom_NameForLobby` 属性值，颜色标签保留）：**
+
+| 文件 | 英文 | 中文 |
+|------|------|------|
+| `SpecialFaction/KDL_VanillaEntries.xml`（Human） | `Additional <color=#318CE7>Player</color> Faction` | `额外<color=#318CE7>玩家</color>派系` |
+| `SpecialFaction/AIAndSubfactions.xml`（AI） | `Additional <color=#CC5500>AI</color> Faction` | `额外<color=#CC5500>AI</color>阵营` |
+| `SpecialFaction/Badger_RandomSpecialFactions.xml`（Random） | `Additional <color=#9EB9D4>Random</color> Faction` | `额外<color=#9EB9D4>随机</color>派系` |
+| `SpecialFaction/KDL_VanillaEntries.xml`（ZenithDysonSphere） | `Dyson Sphere: <color=#324AB2>Zenith</color>` | `戴森球: <color=#324AB2>天顶</color>` |
+| `Expansions/.../TSR_SpecialFactions.xml`（SpireSphere_Gray） | `Dyson Sphere: <color=#A1A1A1>Gray</color>` | `戴森球: <color=#A1A1A1>灰色</color>` |
+| `Expansions/.../TSR_SpecialFactions.xml`（SpireSphere_Chromatic） | `Dyson Sphere: <color=#FF00FF>Chromatic</color>` | `戴森球: <color=#FF00FF>多彩</color>` |
+
+**背景**：`display_name` 在 XML 中已有中文翻译（如 `display_name="天顶戴森球"`），但 `custom_NameForLobby` 是独立属性，专门用于大厅 UI 的派系选择下拉列表和标签页，需单独翻译。`AI风险分析器` 的 `custom_NameForLobby` 不存在（使用 `display_name` 回退），所以无需翻译。
+
+**注意**：TSR_SpecialFactions.xml 中 `SphereType` 自定义字段的 description 属性（第 118-120 行，关于 Gray Spire/Chromatic Spire 的英文介绍）仍有待翻译，因 XML 解析需要保留内部属性格式且原文较长，留待后续处理。

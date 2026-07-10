@@ -127,7 +127,7 @@ The Chromatic Spire are quite aggressive, and far outclass all but the Imperial 
 
   <faction name="SpireSphere_Gray"
            display_name="灰色尖塔戴森球" short_name="灰色球" processing_group="SplinteringSpire"
-           custom_NameForLobby="Dyson Sphere: &lt;color=#A1A1A1&gt;Gray&lt;/color&gt;"
+            custom_NameForLobby="戴森球: &lt;color=#A1A1A1&gt;灰色&lt;/color&gt;"
            base_info_source="SphereFactionBaseInfo"
            deep_info_source="SphereFactionDeepInfo"
            team_center_color="Gray" team_border_color="cF8F8FF"
@@ -149,7 +149,7 @@ The Chromatic Spire are quite aggressive, and far outclass all but the Imperial 
 
   <faction name="SpireSphere_Chromatic"
            display_name="多彩尖塔球" short_name="多彩球" processing_group="SplinteringSpire"
-           custom_NameForLobby="Dyson Sphere: &lt;color=#FF00FF&gt;Chromatic&lt;/color&gt;"
+            custom_NameForLobby="戴森球: &lt;color=#FF00FF&gt;多彩&lt;/color&gt;"
            base_info_source="SphereFactionBaseInfo"
            deep_info_source="SphereFactionDeepInfo"
            team_center_color="cFF00FF" team_border_color="cF8F8FF"

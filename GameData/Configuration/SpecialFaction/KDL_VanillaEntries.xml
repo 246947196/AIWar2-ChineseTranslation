@@ -3,7 +3,7 @@
 <root>
   <faction name="Human" display_name="玩家派系" short_name="Human" processing_group="Human"
            custom_NameForSorting="_1"
-           custom_NameForLobby="Additional &lt;color=#318CE7>Player&lt;/color> Faction"
+           custom_NameForLobby="额外&lt;color=#318CE7>玩家&lt;/color>派系"
            team_center_color="c318CE7" team_border_color="cF2F3F4"
            team_center_colors_beyond_the_first="c007FFF,cFFC40C,cCF3476"
            team_border_colors_beyond_the_first="Turquoise,cFFFDD0,cFFA6C9" 
@@ -102,7 +102,7 @@
   </faction>
   
   <faction name="ZenithDysonSphere"
-            custom_NameForLobby="Dyson Sphere: &lt;color=#324AB2&gt;Zenith&lt;/color&gt;"
+            custom_NameForLobby="戴森球: &lt;color=#324AB2&gt;天顶&lt;/color&gt;"
            display_name="天顶戴森球" short_name="Zenith Sphere" processing_group="ZenithDysonSphere"
            base_info_source="SphereFactionBaseInfo"
            deep_info_source="SphereFactionDeepInfo"

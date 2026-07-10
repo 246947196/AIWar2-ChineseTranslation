@@ -7,7 +7,7 @@
                         sort_group="250" setting_type="CustomDropdownSurrogateTable" />
 -->
   <faction name="RandomFaction"
-  custom_NameForLobby="Additional &lt;color=#9EB9D4>Random&lt;/color> Faction"
+  custom_NameForLobby="额外&lt;color=#9EB9D4>随机&lt;/color>派系"
      display_name="随机派系" short_name="Random" processing_group="Random"
      custom_NameForSorting="_3"
      base_info_source="RandomFactionBaseInfo"
