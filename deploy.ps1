@@ -138,10 +138,10 @@ $transQuickStartsDir = Join-Path $translationDir "GameData\QuickStarts2"
 $gameQuickStartsDir = Join-Path $gameDir "GameData\QuickStarts2"
 
 if (Test-Path $transQuickStartsDir) {
-    $tooltipFiles = Get-ChildItem -Path $transQuickStartsDir -Recurse -Filter "*.tooltip"
+    $tooltipFiles = @(Get-ChildItem -Path $transQuickStartsDir -Recurse -Filter "*.tooltip")
     $deployedTooltips = 0
-    $tooltipFiles | ForEach-Object {
-        $relPath = $_.FullName.Substring($transQuickStartsDir.Length + 1)
+    foreach ($f in $tooltipFiles) {
+        $relPath = $f.FullName.Substring($transQuickStartsDir.Length + 1)
         $destFile = Join-Path $gameQuickStartsDir $relPath
         $destDir = Split-Path $destFile -Parent
         
@@ -149,7 +149,7 @@ if (Test-Path $transQuickStartsDir) {
             New-Item -ItemType Directory -Path $destDir -Force | Out-Null
         }
         
-        Copy-Item $_.FullName $destFile -Force
+        Copy-Item $f.FullName $destFile -Force
         $deployedTooltips++
     }
     Write-Host "Deployed $deployedTooltips QuickStarts2 tooltip files" -ForegroundColor Green
@@ -162,18 +162,18 @@ Write-Host ""
 Write-Host "Deploying Expansion QuickStarts2 translated tooltip files..." -ForegroundColor Yellow
 $transExpQuickStartsDir = Join-Path $translationDir "Expansions"
 if (Test-Path $transExpQuickStartsDir) {
-    $expTooltipFiles = Get-ChildItem -Path $transExpQuickStartsDir -Recurse -Filter "*.tooltip"
+    $expTooltipFiles = @(Get-ChildItem -Path $transExpQuickStartsDir -Recurse -Filter "*.tooltip")
     $deployedExpTooltips = 0
-    $expTooltipFiles | ForEach-Object {
-        $relPath = $_.FullName.Substring($transExpQuickStartsDir.Length + 1)
-        $destFile = Join-Path $gameDir "Expansions" $relPath
+    foreach ($f in $expTooltipFiles) {
+        $relPath = $f.FullName.Substring($transExpQuickStartsDir.Length + 1)
+        $destFile = "$gameDir\Expansions\$relPath"
         $destDir = Split-Path $destFile -Parent
         
         if (-not (Test-Path $destDir)) {
             New-Item -ItemType Directory -Path $destDir -Force | Out-Null
         }
         
-        Copy-Item $_.FullName $destFile -Force
+        Copy-Item $f.FullName $destFile -Force
         $deployedExpTooltips++
     }
     Write-Host "Deployed $deployedExpTooltips Expansion QuickStarts2 tooltip files" -ForegroundColor Green
@@ -201,10 +201,10 @@ $transModsDir = Join-Path $translationDir "XMLMods"
 $gameModsDir = Join-Path $gameDir "XMLMods"
 
 if (Test-Path $transModsDir) {
-    $modsFilesToDeploy = Get-ChildItem -Path $transModsDir -Recurse -Filter "*.xml"
+    $modsFilesToDeploy = @(Get-ChildItem -Path $transModsDir -Recurse -Filter "*.xml")
     $modsDeployed = 0
-    $modsFilesToDeploy | ForEach-Object {
-        $relPath = $_.FullName.Substring($transModsDir.Length + 1)
+    foreach ($f in $modsFilesToDeploy) {
+        $relPath = $f.FullName.Substring($transModsDir.Length + 1)
         $destFile = Join-Path $gameModsDir $relPath
         $destDir = Split-Path $destFile -Parent
         
@@ -212,7 +212,7 @@ if (Test-Path $transModsDir) {
             New-Item -ItemType Directory -Path $destDir -Force | Out-Null
         }
         
-        Copy-Item $_.FullName $destFile -Force
+        Copy-Item $f.FullName $destFile -Force
         $modsDeployed++
     }
     Write-Host "Deployed $modsDeployed XMLMods files" -ForegroundColor Green
