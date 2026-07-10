@@ -1684,8 +1684,8 @@ namespace Arcen.AIW2.External
 
             if ( Mapgen.IsMapCurrentlyGenerating )
             {
-                ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.Normal, null, "Prior Map Generation Still In Progress", 
-                    "Last call to generate map is still running.  Please wait a moment for it to finish, then click again.  (Probably by the time you can click OK it will be done.)", "OK" );
+                ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.Normal, null, '先前地图生成仍在进行中', 
+                    '上一次地图生成仍在运行中。请稍等片刻，然后再次点击。（可能当你点击确定时已经完成了。）', '确定' );
                 return;
             }
             Engine_Universal.ClearAllTraceOfExistingGame();

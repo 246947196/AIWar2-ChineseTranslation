@@ -730,3 +730,35 @@ GameData/QuickStarts2/
 **不纳入基线**：`.tooltip` 文件不是游戏代码/配置，不会随游戏更新而变，无需用 `check_update.ps1 -snapshot` 追踪。
 
 **生成工具**：`GameData/QuickStarts2/generate_translated_tooltips.py` 用于批量生成翻译后的 tooltip 文件。
+
+### 9.12 C# UI 文本补译大扫除（2026-07-10 第4批）
+
+多子代理并行修复 20 个文件中遗漏的 ~60 条英文字符串（编译通过，0 错误）：
+
+| 文件 | 遗漏内容 | 条数 |
+|------|---------|:----:|
+| Window_ResourceBar.cs | 金属/黑客/特殊资源/威胁/胜负 tooltip 大段说明 | 16 |
+| SpireRelicMoveHandler.cs | 尖塔城市建造确认对话框 + 错误提示（两个同名内部类） | 14 |
+| Window_ModalSwapFleetMembers.cs | 舰队编组交换确认/错误消息 | 15 |
+| GameFlowGameCommands.cs | 转化失败弹窗 4 组（标题 + 消息 + 按钮） | 8 |
+| SuperCommonGameCommands.cs | 指挥站/数量上限/能量不足等聊天消息 | 8 |
+| PlayerDrivenLessCommonGameCommands.cs | 黑客点数不足弹窗 | 2 |
+| EndpointFunctions.cs | 地图生成进行中弹窗 | 2 |
+| GameCommand_EditFleetData.cs | 资源不足升级消息 | 3 |
+| Window_ErrorReportMenu.cs | 错误报告按钮 tooltip | 3 |
+| PublicSpireCityUpgradeNotifier.cs | 城市升级对话框 | 3 |
+| SpireSidekickUpgradeNotifier.cs | 城市升级对话框（同前） | 3 |
+| Window_SettingsMenu.cs | OK 按钮 + 未安装/未启用文本 | 4 |
+| Window_ModalFleetMemberModularEditing.cs | Ok 按钮标签 | 3 |
+| Window_UnitEncyclopedia.cs | 图鉴 lore 弹窗 OK 按钮 | 1 |
+| JournalOrTipChatHandler.cs | 日志弹窗 OK 按钮 | 1 |
+| MalwareFactionBaseInfo.cs | 突破弹窗 OK 按钮 | 1 |
+| MalwareFactionDeepInfo.cs | 突破完成弹窗 OK 按钮 | 1 |
+| MalwareNotifiers.cs | Conduit 调查提示 tooltip | 1 |
+| Window_InGameSidebarHacking.cs | 空类型回退字符串 | 1 |
+| Window_InGameGalaxyOptions.cs + 2 个 Setup 文件 | 空子类别回退字符串 | 3 |
+| **合计** | **20 个文件** | **~60 条** |
+
+**根因**：大规模初翻后遗漏了大量玩家可见字符串，`Window_ResourceBar.cs` 尤为严重（16 条大段 tooltip 均为空）。尖塔城市建造和舰队编组交换对话框完全未翻译。
+
+**教训**：UIs/ 目录下的大型文件（Window_ResourceBar.cs 约 3000+ 行）和 AlternativeMoveOrderHandlers/ 下的交互对话框容易整体漏翻，需逐类检查。

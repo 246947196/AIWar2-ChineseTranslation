@@ -604,7 +604,7 @@ namespace Arcen.AIW2.External
 
                 if ( this._type == null || (this._target == null && this._planet == null) )
                 {
-                    Window_AtMouseTooltipPanelBesideSidebar.bPanel.Instance.SetText( "Null type or target!", "GeneralTooltipScale" );
+                    Window_AtMouseTooltipPanelBesideSidebar.bPanel.Instance.SetText( "空类型或目标！", "GeneralTooltipScale" );
                     return;
                 }
                 

@@ -298,7 +298,7 @@ namespace Arcen.AIW2.External
                 if ( IsDysonSidekick )
                 {
                     DysonSidekickFactionBaseInfo info = localFaction.GetExternalBaseInfoAs<DysonSidekickFactionBaseInfo>();
-                    Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, "Metal: Required to build things.  The Dyson Sidekick gets metal income differently from the player. To get metal you need to build Metal Generators; these are primarily available at the Neinzul Stronghold, but the Spire or Zenith can build some as well.\n\nYour metal income is <color=#ccccee>" + info.MetalIncomeLastSecond.ToString() + "</color> per second.\nYour science income is <color=#7CE9FF>" + info.ScienceIncomeLastSecond.ToString() +"</color> per second.\nYour hacking income is <color=#dd3377>" + info.HackingIncomeLastSecond.ToString() +"</color> per second.\n\n Left clicking will show more detailed economic status (and other critical information).");
+                    Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, "金属：建造单位需要消耗的资源。Dyson 随从获得金属收入的方式与玩家不同。你需要建造金属发电机来获取金属；这些主要在尼恩祖要塞建造，但尖塔或 Zenith 也能建造一些。\n\n你的金属收入为 <color=#ccccee>" + info.MetalIncomeLastSecond.ToString() + "</color> 每秒。\n你的科技收入为 <color=#7CE9FF>" + info.ScienceIncomeLastSecond.ToString() +"</color> 每秒。\n你的入侵收入为 <color=#dd3377>" + info.HackingIncomeLastSecond.ToString() +"</color> 每秒。\n\n左键点击将显示更详细的经济状况（以及其他关键信息）。");
                     return;
                 }
                 int totalIncome = Mathf.CeilToInt( localFaction.LastFrame_MetalProduced.ToFloatNonSim() / World_AIW2.Instance.SimulationProfile.SecondsPerFrameNonSim );
@@ -311,27 +311,27 @@ namespace Arcen.AIW2.External
                 {
 
                     if ( !isSecondLineShowingStarvedTimer )
-                        Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, "Metal: Required to build things. Your max metal is <color=#ccccee>" + localFaction.MetalStorage.ToString( "#,##0" ) + 
-                            "</color>.  The number on the right shows the rate at which you are gaining or losing it.\n\nTotal Stored: <color=#ccccee>" + localFaction.StoredMetal.IntValue.ToString( "#,##0" ) + "</color>" + 
-                            "\nTotal Inflow: <color=#ccccee>" + totalIncome.ToString( "#,##0" ) + "</color>" + "\nTotal Outflow: <color=#ffa1a1>" + totalAmountSpend.ToString( "#,##0" ) +
-                            "</color>\nBalance With Civilian Authorities: <color=#ffd940>" + balanceWithCivilianAuthorities.ToString( "#,##0" ) +
-                            "</color>  (Repayment Rate: <color=#ffe479>" + amountToReturn.ToString( "#,##0" ) + "/sec</color> in times of need)" +
-                            "\n\nLeft clicking on this icon will show active metal flows." );
+                        Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, "金属：建造单位需要消耗的资源。你的最大金属存储为 <color=#ccccee>" + localFaction.MetalStorage.ToString( "#,##0" ) + 
+                            "</color>。右侧数字显示你获取或消耗的速率。\n\n已存储总量：<color=#ccccee>" + localFaction.StoredMetal.IntValue.ToString( "#,##0" ) + "</color>" + 
+                            "\n总流入：<color=#ccccee>" + totalIncome.ToString( "#,##0" ) + "</color>" + "\n总流出：<color=#ffa1a1>" + totalAmountSpend.ToString( "#,##0" ) +
+                            "</color>\n民用机构余额：<color=#ffd940>" + balanceWithCivilianAuthorities.ToString( "#,##0" ) +
+                            "</color>（偿还速率：<color=#ffe479>" + amountToReturn.ToString( "#,##0" ) + "/秒</color>，在需要时）" +
+                            "\n\n左键点击此图标将显示活跃金属流动。" );
                     else
-                        Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, "Metal: Required to build things. Your max metal is <color=#ccccee>" + localFaction.MetalStorage.ToString( "#,##0" ) + 
-                            "</color>.  <color=#ffa1a1>At the moment, you have run out of metal and do not have enough income to keep all your build projects running.\n\nThe number on the right is currently showing the estimated time left until your build projects will complete.</color>\n\nTotal Stored: <color=#ccccee>" + 
-                            localFaction.StoredMetal.IntValue.ToString( "#,##0" ) + "</color>" + "\nTotal Inflow: <color=#ccccee>" + totalIncome.ToString( "#,##0" ) + "</color>" + "\nTotal Outflow: <color=#ffa1a1>" + 
+                        Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, "金属：建造单位需要消耗的资源。你的最大金属存储为 <color=#ccccee>" + localFaction.MetalStorage.ToString( "#,##0" ) + 
+                            "</color>。<color=#ffa1a1>目前，你的金属已耗尽，且没有足够收入来维持所有建造项目运行。\n\n右侧数字当前显示你的建造项目预计完成所需时间。</color>\n\n已存储总量：<color=#ccccee>" + 
+                            localFaction.StoredMetal.IntValue.ToString( "#,##0" ) + "</color>" + "\n总流入：<color=#ccccee>" + totalIncome.ToString( "#,##0" ) + "</color>" + "\n总流出：<color=#ffa1a1>" + 
                             totalAmountSpend.ToString( "#,##0" ) +
-                            "</color>\nBalance With Civilian Authorities: <color=#ffd940>" + balanceWithCivilianAuthorities.ToString( "#,##0" ) +
-                            "</color>  (Repayment Rate: <color=#ffe479>" + amountToReturn.ToString( "#,##0" ) + "/sec</color> in times of need)" +
-                            "\n\nLeft clicking on this icon will show active metal flows." );
+                            "</color>\n民用机构余额：<color=#ffd940>" + balanceWithCivilianAuthorities.ToString( "#,##0" ) +
+                            "</color>（偿还速率：<color=#ffe479>" + amountToReturn.ToString( "#,##0" ) + "/秒</color>，在需要时）" +
+                            "\n\n左键点击此图标将显示活跃金属流动。" );
                 }
                 else
-                    Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, "Metal: Required to build things.  After you un-pause the game, the number on the right will show the rate at which you are gaining or losing it.\n\nTotal Stored: <color=#ccccee>" + 
-                        localFaction.StoredMetal.IntValue.ToString( "#,##0" ) + "</color>" + "\nTotal Inflow: <color=#ccccee>" + totalIncome.ToString( "#,##0" ) +
-                        "</color>\nBalance With Civilian Authorities: <color=#ffd940>" + balanceWithCivilianAuthorities.ToString( "#,##0" ) +
-                        "</color>  (Repayment Rate: <color=#ffe479>" + amountToReturn.ToString( "#,##0" ) + "/sec</color> in times of need)" +
-                        "\n\nLeft clicking on this icon will show active metal flows." );
+                    Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, "金属：建造单位需要消耗的资源。取消暂停后，右侧数字将显示你获取或消耗的速率。\n\n已存储总量：<color=#ccccee>" + 
+                        localFaction.StoredMetal.IntValue.ToString( "#,##0" ) + "</color>" + "\n总流入：<color=#ccccee>" + totalIncome.ToString( "#,##0" ) +
+                        "</color>\n民用机构余额：<color=#ffd940>" + balanceWithCivilianAuthorities.ToString( "#,##0" ) +
+                        "</color>（偿还速率：<color=#ffe479>" + amountToReturn.ToString( "#,##0" ) + "/秒</color>，在需要时）" +
+                        "\n\n左键点击此图标将显示活跃金属流动。" );
             }
 
             public override MouseHandlingResult HandleClick_Subclass( MouseHandlingInput input )
@@ -341,14 +341,14 @@ namespace Arcen.AIW2.External
                     return MouseHandlingResult.PlayClickDeniedSound;
                 if ( IsDysonSidekick )
                 {
-                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Dyson Sidekick Income", "Close",
+                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Dyson Sidekick Income", "关闭",
                             delegate ( ArcenDoubleCharacterBuffer Buffer ) { return GetDysonSidekickIncome( Buffer ); } );
                     return MouseHandlingResult.None;
                 }
 
                 if ( input.LeftButtonClicked )
                 {
-                    Window_ModalSelfUpdatingTextWindow_UltraWide.Instance.Open( 0.5f, 2f, "Current Metal Flows", "Close",
+                    Window_ModalSelfUpdatingTextWindow_UltraWide.Instance.Open( 0.5f, 2f, "Current Metal Flows", "关闭",
                     delegate ( ArcenDoubleCharacterBuffer Buffer )
                     {
                         Buffer.Add( Faction.LastSeenMetalFlows );
@@ -489,7 +489,7 @@ namespace Arcen.AIW2.External
             }
             public override MouseHandlingResult HandleClick_Subclass( MouseHandlingInput input )
             {
-                Window_ModalSelfUpdatingTextWindow_Wide.Instance.Open( 0.5f, 2f, "Current Energy Production and Consumption", "Close",
+                Window_ModalSelfUpdatingTextWindow_Wide.Instance.Open( 0.5f, 2f, "Current Energy Production and Consumption", "关闭",
                       delegate( ArcenDoubleCharacterBuffer Buffer ) { return GetEnergyData( Buffer ); } );
                 return MouseHandlingResult.None;
             }
@@ -716,7 +716,7 @@ namespace Arcen.AIW2.External
                         break;
                 }
 
-                Window_ModalSelfUpdatingTextWindow_Wide.Instance.Open( 0.5f, 2f, "Current " + fuelName + " Production and Consumption", "Close",
+                Window_ModalSelfUpdatingTextWindow_Wide.Instance.Open( 0.5f, 2f, "Current " + fuelName + " Production and Consumption", "关闭",
                       delegate ( ArcenDoubleCharacterBuffer Buffer ) { return GetFuelData( Buffer, FuelType ); } );
                 return MouseHandlingResult.None;
             }
@@ -979,7 +979,7 @@ namespace Arcen.AIW2.External
             }
             public override MouseHandlingResult HandleClick_Subclass( MouseHandlingInput input )
             {
-                Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "History of Tech Unlocks", "Close",
+                Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "History of Tech Unlocks", "关闭",
                     delegate( ArcenDoubleCharacterBuffer Buffer ) { return GetTechHistory( Buffer ); } );
                 return MouseHandlingResult.None;
             }
@@ -1398,7 +1398,7 @@ namespace Arcen.AIW2.External
                     return;
                 }
 
-                Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, "Hacking: general-purpose nanomachines used to improve your own units, sabotage enemies, or steal from enemies.  Note that you are in a target-rich environment, and likely cannot afford even a third of the hacks available to you.  Choose your hacks wisely, and capture more planets or destroy distribution nodes to get more hacking points.  Also note: the more hacking points you use against an AI, the stronger that AI's response to your hacks will be.  Only points spent against an AI-owned structure count. \n" + GetHackerAddendum() + GetHackingLevelText() + "\n\nClicking on this icon will show a detailed history of all the hacks you have done." );
+                Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, "黑客：通用纳米机器，用于强化己方单位、破坏敌方单位或从敌方窃取资源。注意，你处于目标丰富的环境中，可能连可用入侵的三分之一都负担不起。明智地选择入侵，占领更多星球或摧毁分发节点以获取更多入侵点。另外注意：你对 AI 使用的入侵点越多，AI 对你入侵的回应就越强烈。只有花费在 AI 拥有的结构上的点才会计入。\n" + GetHackerAddendum() + GetHackingLevelText() + "\n\n点击此图标将显示你所有入侵操作的详细历史。" );
             }
             private string GetHackingLevelText()
             {
@@ -1481,12 +1481,12 @@ namespace Arcen.AIW2.External
                 Faction localFaction = World_AIW2.Instance.GetLocalPlayerFactionOrNull();
                 if ( IsDarkZenithSidekick )
                 {
-                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Dark Zenith Sidekick Income", "Close",
+                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Dark Zenith Sidekick Income", "关闭",
                         delegate ( ArcenDoubleCharacterBuffer Buffer ) { return GetDarkZenithSidekickIncome( Buffer, input ); } );
                     return MouseHandlingResult.None;
                 }
 
-                Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "History of Hacks", "Close",
+                Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "History of Hacks", "关闭",
                     delegate( ArcenDoubleCharacterBuffer Buffer ) { return GetHackingHistory( Buffer ); } );
                 return MouseHandlingResult.None;
             }
@@ -1611,26 +1611,26 @@ namespace Arcen.AIW2.External
                 Faction localFaction = World_AIW2.Instance.GetLocalPlayerFactionOrNull();
                 if ( IsDysonSidekick )
                 {
-                    Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, "Dyson Cuendillar: used for flagship and stronghold related upgrades. Click here to see information about your current income." );
+                    Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, "Dyson Cuendillar：用于旗舰和要塞相关升级。点击此处查看你当前收入信息。" );
                     return;
                 }
                 if ( IsScourgeEmpire )
                 {
-                    Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, "Shows how much Corbomite you have; used for upgrades.\n\nClick on this icon to see the state of your Scourge Vassals." );
+                    Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, "显示你拥有的 Corbomite 数量；用于升级。\n\n点击此图标查看你的 Scourge 附庸状态。" );
                     return;
                 }
                 if ( IsArmadaEmpire )
                 {
-                    Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, "Shows how much Tyderian you have; used for upgrades. Click here to see information about your Mines." );
+                    Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, "显示你拥有的 Tyderian 数量；用于升级。点击此处查看你的矿井信息。" );
                     return;
                 }
                 if ( IsApkallu )
                 {
-                    Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, "Shows how much Lapis you have.\n\nClick here to see information about your faction." );
+                    Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, "显示你拥有的 Lapis 数量。\n\n点击此处查看你的派系信息。" );
                     return;
                 }
 
-                Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, "Necromancer Essence: used for flagship and necropolis related upgrades.  Essence is obtained from Rift Hacks and fighting Elderlings; many Elderlings will grant us Essence on their death." );
+                Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, "Necromancer Essence：用于旗舰和死灵城相关升级。Essence 通过裂隙入侵和与 Elderling 战斗获得；许多 Elderling 在死亡时会给予我们 Essence。" );
 
             }
 
@@ -1642,21 +1642,21 @@ namespace Arcen.AIW2.External
                 {
                     if ( IsScourgeEmpire )
                     {
-                        Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Scourge State", "Close",
+                        Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Scourge State", "关闭",
                             delegate ( ArcenDoubleCharacterBuffer Buffer ) { return GetScourgeState( Buffer ); } );
                     }
                     else if ( IsDysonSidekick )
-                        Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Dyson Sidekick Income", "Close",
+                        Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Dyson Sidekick Income", "关闭",
                             delegate ( ArcenDoubleCharacterBuffer Buffer ) { return GetDysonSidekickIncome( Buffer ); } );
                     else if ( IsArmadaEmpire )
-                        Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Armada Mining Overview", "Close",
+                        Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Armada Mining Overview", "关闭",
                             delegate ( ArcenDoubleCharacterBuffer Buffer ) { return GetArmadaOverview( Buffer ); } );
                     else if ( IsApkallu )
-                        Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Apkallu Overview", "Close",
+                        Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Apkallu Overview", "关闭",
                             delegate ( ArcenDoubleCharacterBuffer Buffer ) { return GetApkalluOverview( Buffer ); } );
 
                     else
-                        Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Necromancer Resource Acquisition", "Close",
+                        Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Necromancer Resource Acquisition", "关闭",
                             delegate ( ArcenDoubleCharacterBuffer Buffer ) { return GetNecromancerAcquisitionHistory( Buffer ); } );
 
                 }
@@ -1850,12 +1850,12 @@ namespace Arcen.AIW2.External
 
             public override void HandleMouseover()
             {
-                Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, "Shows how much Naphtha you have.\n\nClick here to see your breach history." );
+                Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, "显示你拥有的 Naphtha 数量。\n\n点击此处查看你的突破历史。" );
             }
 
             public override MouseHandlingResult HandleClick_Subclass( MouseHandlingInput input )
             {
-                Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Apkallu Breach History", "Close",
+                Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Apkallu 突破历史", "关闭",
                     delegate ( ArcenDoubleCharacterBuffer Buffer ) { return GetApkalluBreachHistory( Buffer ); } );
                 return MouseHandlingResult.None;
             }
@@ -1922,7 +1922,7 @@ namespace Arcen.AIW2.External
 
             public override void HandleMouseover()
             {
-                Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, "Shows how much Ichor you have.\n\nClick here to see your breach history." );
+                Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, "显示你拥有的 Ichor 数量。\n\n点击此处查看你的突破历史。" );
             }
 
             public override void GetTextToShowFromVolatile( ArcenDoubleCharacterBuffer Buffer )
@@ -1985,7 +1985,7 @@ namespace Arcen.AIW2.External
 
             // public override MouseHandlingResult HandleClick_Subclass( MouseHandlingInput input )
             // {
-            //     Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Apkallu Overview", "Close",
+            //     Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Apkallu Overview", "关闭",
             //         delegate ( ArcenDoubleCharacterBuffer Buffer ) { return tNecromancerEsssence.GetApkalluOverview( Buffer ); } );
             //     return MouseHandlingResult.None;
             // }
@@ -2040,11 +2040,11 @@ namespace Arcen.AIW2.External
                 ArcenExternalUIUtilities.WriteRoundedNumberWithSuffix( Buffer, strengthToDraw, true, true );
             }
 
-            public override void HandleMouseover() { Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, "Threat: AI forces actively waiting to strike.  Most AI forces will not bother you until you bother them. These units, however... <color=#ffa1a1>they're ready to come at any time they sense a weakness</color>.\n\nThreat is caused when an AI unit is angered or aggroed by your forces, and survives. If a threat unit lives long enough without doing anything, it will join the Hunter Fleet, a far smarter grouping of threat, with...<color=#ffa1a1>concerning intelligence</color>.\n\nClicking on the Threat icon will show a planet by planet breakdown of where the visible threat is." ); }
+            public override void HandleMouseover() { Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, "威胁：AI 部队正在积极等待进攻时机。大多数 AI 部队在你招惹它们之前不会打扰你。然而，这些单位...<color=#ffa1a1>它们随时准备在你露出破绽时出击</color>。\n\n当 AI 单位被你的部队激怒或引到仇恨且存活下来时，就会产生威胁。如果威胁单位长时间无所作为，它将加入猎杀舰队，这是一个更智能的威胁集群，拥有...<color=#ffa1a1>令人担忧的智能</color>。\n\n点击威胁图标将逐星球显示可见威胁的分布。" ); }
 
             public override MouseHandlingResult HandleClick_Subclass( MouseHandlingInput input )
             {
-                Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Visible Threat", "Close",
+                Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "可见威胁", "关闭",
                     delegate( ArcenDoubleCharacterBuffer Buffer ) { return this.ThreatWindow_FillText( Buffer ); } );
                 return MouseHandlingResult.None;
             }
@@ -2589,13 +2589,13 @@ namespace Arcen.AIW2.External
             public override MouseHandlingResult HandleClick_Subclass( MouseHandlingInput input )
             {
                 if ( input.MiddleButtonClicked )
-                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Faction Alliance Details", "Close",
+                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Faction Alliance Details", "关闭",
                         delegate ( ArcenDoubleCharacterBuffer Buffer ) { return tAttackSafe.GetFactionAllianceDetails( Buffer ); } );
                 else if ( input.RightButtonClicked )
-                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "NPC Ship Cap Details", "Close",
+                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "NPC Ship Cap Details", "关闭",
                         delegate ( ArcenDoubleCharacterBuffer Buffer ) { return tAttackSafe.GetNPCShipCapDetails( Buffer ); } );
                 else
-                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Performance Stats", "Close",
+                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Performance Stats", "关闭",
                         delegate ( ArcenDoubleCharacterBuffer Buffer ) { return tAttackSafe.GetPerformanceStats( Buffer ); } );
                 return MouseHandlingResult.None;
             }
@@ -2906,13 +2906,13 @@ namespace Arcen.AIW2.External
             public override MouseHandlingResult HandleClick_Subclass( MouseHandlingInput input )
             {
                 if ( input.MiddleButtonClicked )
-                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Faction Alliance Details", "Close",
+                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Faction Alliance Details", "关闭",
                         delegate ( ArcenDoubleCharacterBuffer Buffer ) { return tAttackSafe.GetFactionAllianceDetails( Buffer ); } );
                 else if ( input.RightButtonClicked )
-                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "NPC Ship Cap Details", "Close",
+                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "NPC Ship Cap Details", "关闭",
                         delegate ( ArcenDoubleCharacterBuffer Buffer ) { return tAttackSafe.GetNPCShipCapDetails( Buffer ); } );
                 else
-                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Performance Stats", "Close",
+                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Performance Stats", "关闭",
                         delegate ( ArcenDoubleCharacterBuffer Buffer ) { return tAttackSafe.GetPerformanceStats( Buffer ); } );
                 return MouseHandlingResult.None;
             }
@@ -2945,13 +2945,13 @@ namespace Arcen.AIW2.External
             public override MouseHandlingResult HandleClick_Subclass( MouseHandlingInput input )
             {
                 if ( input.MiddleButtonClicked )
-                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Faction Alliance Details", "Close",
+                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Faction Alliance Details", "关闭",
                         delegate ( ArcenDoubleCharacterBuffer Buffer ) { return tAttackSafe.GetFactionAllianceDetails( Buffer ); } );
                 else if ( input.RightButtonClicked )
-                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "NPC Ship Cap Details", "Close",
+                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "NPC Ship Cap Details", "关闭",
                         delegate ( ArcenDoubleCharacterBuffer Buffer ) { return tAttackSafe.GetNPCShipCapDetails( Buffer ); } );
                 else
-                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Performance Stats", "Close",
+                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "Performance Stats", "关闭",
                         delegate ( ArcenDoubleCharacterBuffer Buffer ) { return tAttackSafe.GetPerformanceStats( Buffer ); } );
                 return MouseHandlingResult.None;
             }
@@ -3014,11 +3014,11 @@ namespace Arcen.AIW2.External
             {
                 if ( World.Instance.IsPaused && World.Instance.ConclusionType == CampaignConclusionType.Won )
                 {
-                    Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, "You have won the game!  Congratulations.  You can still continue playing, if you have unfinished business." );
+                    Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, "你已赢得游戏！恭喜。你仍可继续游玩，如果有未完成的事情。" );
                 }
                 else if ( World.Instance.IsPaused && World.Instance.ConclusionType == CampaignConclusionType.Lost )
                 {
-                    Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, "Everyone is dead, humanity has failed -- but that's okay!  Losing is fun, and way more instructive than winning.  You can start another game, or if you'd like to keep playing on this one from your current position, you can.  You can't turn this defeat into a victory at this point, but you can try to avenge yourself in other ways." );
+                    Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, "所有人都死了，人类已经失败——但这没关系！失败也很有趣，而且比胜利更有教育意义。你可以开始新游戏，或者如果想继续在当前进度下游玩，也可以。你无法将这次失败转变为胜利，但你可以尝试以其他方式为自己复仇。" );
                 }
             }
         }

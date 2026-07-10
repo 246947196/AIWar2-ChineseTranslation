@@ -33,8 +33,8 @@ namespace Arcen.AIW2.External
                     if ( CareAboutSpecificPoint )
                         command.RelatedPoints.Add( Point );
                     World_AIW2.Instance.QueueGameCommand( World_AIW2.Instance.GetLocalPlayerFactionOrNaturalObjectsNeverNull(), command, true );
-                }, null, "Build Spire City On " + TargetPlanet.Name + "?", "Are you sure you want to send this spire relic to the planet " + TargetPlanet.Name +
-                    " to build a spire city there?  Once it gets to the selected location on that planet (or the center of the planet if you did not click a specific point), it will turn into a city that you cannot undo or later move.", "Yes, Go Now", "No, Wait!" );
+                }, null, "在" + TargetPlanet.Name + "上建造尖塔城市？", "确定要把这座尖塔圣物送往星球" + TargetPlanet.Name +
+                    "并在那里建造尖塔城市吗？一旦圣物到达该星球上的指定位置（如果没有点击特定位置则为星球中心），它将变成一座城市，此操作无法撤销或移动。", "是，立即前往", "不，等等！" );
             }
             else
             {
@@ -46,9 +46,9 @@ namespace Arcen.AIW2.External
                             if ( chatHandlerOrNull != null )
                                 chatHandlerOrNull.PlanetToView = TargetPlanet;
 
-                            World_AIW2.Instance.QueueChatMessageOrCommand( "Cannot send relic to " + TargetPlanet.Name +
-                                " to build a city: there is another spire city within " + FallenSpireFactionBaseInfo.MinHopsBetweenCities +
-                                " hops of that planet, which is too close.",
+                            World_AIW2.Instance.QueueChatMessageOrCommand( "无法将圣物送往" + TargetPlanet.Name +
+                                "建造城市：该星球周围" + FallenSpireFactionBaseInfo.MinHopsBetweenCities +
+                                "跳内有另一座尖塔城市，距离过近。",
                                 ChatType.LogToCentralChat, "CannotDoThatThing", chatHandlerOrNull );
                         }
                         break;
@@ -58,8 +58,8 @@ namespace Arcen.AIW2.External
                             if ( chatHandlerOrNull != null )
                                 chatHandlerOrNull.PlanetToView = TargetPlanet;
 
-                            World_AIW2.Instance.QueueChatMessageOrCommand( "Cannot send relic to " + TargetPlanet.Name +
-                                " to build a city: that city is (or was) an AI Homeworld, which is not a valid place to construct spire cities.",
+                            World_AIW2.Instance.QueueChatMessageOrCommand( "无法将圣物送往" + TargetPlanet.Name +
+                                "建造城市：该星球是（或曾经是）AI 母星，不能建造尖塔城市。",
                                 ChatType.LogToCentralChat, "CannotDoThatThing", chatHandlerOrNull );
                         }
                         break;
@@ -69,8 +69,8 @@ namespace Arcen.AIW2.External
                             if ( chatHandlerOrNull != null )
                                 chatHandlerOrNull.PlanetToView = TargetPlanet;
 
-                            World_AIW2.Instance.QueueChatMessageOrCommand( "Cannot send relic to " + TargetPlanet.Name +
-                                " to build a city: that city is (or was) an AI Bastion World, which is not a valid place to construct spire cities.",
+                            World_AIW2.Instance.QueueChatMessageOrCommand( "无法将圣物送往" + TargetPlanet.Name +
+                                "建造城市：该星球是（或曾经是）AI 堡垒世界，不能建造尖塔城市。",
                                 ChatType.LogToCentralChat, "CannotDoThatThing", chatHandlerOrNull );
                         }
                         break;
@@ -80,7 +80,7 @@ namespace Arcen.AIW2.External
                             if ( chatHandlerOrNull != null )
                                 chatHandlerOrNull.SquadToView = LazyLoadSquadWrapper.Create( RelatedEntity );
 
-                            World_AIW2.Instance.QueueChatMessageOrCommand( "Cannot send this relic to any planet other than the one it started on.",
+                            World_AIW2.Instance.QueueChatMessageOrCommand( "此圣物只能送往起始星球。",
                                 ChatType.LogToCentralChat, "CannotDoThatThing", chatHandlerOrNull );
                         }
                         break;
@@ -90,7 +90,7 @@ namespace Arcen.AIW2.External
                             if ( chatHandlerOrNull != null )
                                 chatHandlerOrNull.SquadToView = LazyLoadSquadWrapper.Create( RelatedEntity );
 
-                            World_AIW2.Instance.QueueChatMessageOrCommand( "Cannot send this relic to any planet other than the one it started on, BUT this planet already has a spire city on it, so this relic can't be used at all.  Better scrap it.",
+                            World_AIW2.Instance.QueueChatMessageOrCommand( "此圣物只能送往起始星球，但该星球已有尖塔城市，此圣物已无法使用。建议拆解。",
                                 ChatType.LogToCentralChat, "CannotDoThatThing", chatHandlerOrNull );
                         }
                         break;
@@ -100,8 +100,8 @@ namespace Arcen.AIW2.External
                             if ( chatHandlerOrNull != null )
                                 chatHandlerOrNull.SquadToView = LazyLoadSquadWrapper.Create( RelatedEntity );
 
-                            World_AIW2.Instance.QueueChatMessageOrCommand( "Cannot send relic to " + TargetPlanet.Name +
-                                " to build a city: " + reasonCode,
+                            World_AIW2.Instance.QueueChatMessageOrCommand( "无法将圣物送往" + TargetPlanet.Name +
+                                "建造城市：" + reasonCode,
                                 ChatType.LogToCentralChat, "CannotDoThatThing", chatHandlerOrNull );
                         }
                         break;
@@ -136,8 +136,8 @@ namespace Arcen.AIW2.External
                     if ( CareAboutSpecificPoint )
                         command.RelatedPoints.Add( Point );
                     World_AIW2.Instance.QueueGameCommand( World_AIW2.Instance.GetLocalPlayerFactionOrNaturalObjectsNeverNull(), command, true );
-                }, null, "Build Spire City On " + TargetPlanet.Name + "?", "Are you sure you want to send this spire relic to the planet " + TargetPlanet.Name +
-                    " to build a spire city there?  Once it gets to the selected location on that planet (or the center of the planet if you did not click a specific point), it will turn into a city that you cannot undo or later move.", "Yes, Go Now", "No, Wait!" );
+                }, null, "在" + TargetPlanet.Name + "上建造尖塔城市？", "确定要把这座尖塔圣物送往星球" + TargetPlanet.Name +
+                    "并在那里建造尖塔城市吗？一旦圣物到达该星球上的指定位置（如果没有点击特定位置则为星球中心），它将变成一座城市，此操作无法撤销或移动。", "是，立即前往", "不，等等！" );
             }
             else
             {
@@ -149,9 +149,9 @@ namespace Arcen.AIW2.External
                             if ( chatHandlerOrNull != null )
                                 chatHandlerOrNull.PlanetToView = TargetPlanet;
 
-                            World_AIW2.Instance.QueueChatMessageOrCommand( "Cannot send relic to " + TargetPlanet.Name +
-                                " to build a city: there is another spire city within " + SpireSidekickFactionBaseInfo.MinHopsBetweenCities +
-                                " hops of that planet, which is too close.",
+                            World_AIW2.Instance.QueueChatMessageOrCommand( "无法将圣物送往" + TargetPlanet.Name +
+                                "建造城市：该星球周围" + SpireSidekickFactionBaseInfo.MinHopsBetweenCities +
+                                "跳内有另一座尖塔城市，距离过近。",
                                 ChatType.LogToCentralChat, "CannotDoThatThing", chatHandlerOrNull );
                         }
                         break;
@@ -161,8 +161,8 @@ namespace Arcen.AIW2.External
                             if ( chatHandlerOrNull != null )
                                 chatHandlerOrNull.PlanetToView = TargetPlanet;
 
-                            World_AIW2.Instance.QueueChatMessageOrCommand( "Cannot send relic to " + TargetPlanet.Name +
-                                " to build a city: that city is (or was) an AI Homeworld, which is not a valid place to construct spire cities.",
+                            World_AIW2.Instance.QueueChatMessageOrCommand( "无法将圣物送往" + TargetPlanet.Name +
+                                "建造城市：该星球是（或曾经是）AI 母星，不能建造尖塔城市。",
                                 ChatType.LogToCentralChat, "CannotDoThatThing", chatHandlerOrNull );
                         }
                         break;
@@ -172,8 +172,8 @@ namespace Arcen.AIW2.External
                             if ( chatHandlerOrNull != null )
                                 chatHandlerOrNull.PlanetToView = TargetPlanet;
 
-                            World_AIW2.Instance.QueueChatMessageOrCommand( "Cannot send relic to " + TargetPlanet.Name +
-                                " to build a city: that city is (or was) an AI Bastion World, which is not a valid place to construct spire cities.",
+                            World_AIW2.Instance.QueueChatMessageOrCommand( "无法将圣物送往" + TargetPlanet.Name +
+                                "建造城市：该星球是（或曾经是）AI 堡垒世界，不能建造尖塔城市。",
                                 ChatType.LogToCentralChat, "CannotDoThatThing", chatHandlerOrNull );
                         }
                         break;
@@ -183,7 +183,7 @@ namespace Arcen.AIW2.External
                             if ( chatHandlerOrNull != null )
                                 chatHandlerOrNull.SquadToView = LazyLoadSquadWrapper.Create( RelatedEntity );
 
-                            World_AIW2.Instance.QueueChatMessageOrCommand( "Cannot send this relic to any planet other than the one it started on.",
+                            World_AIW2.Instance.QueueChatMessageOrCommand( "此圣物只能送往起始星球。",
                                 ChatType.LogToCentralChat, "CannotDoThatThing", chatHandlerOrNull );
                         }
                         break;
@@ -193,7 +193,7 @@ namespace Arcen.AIW2.External
                             if ( chatHandlerOrNull != null )
                                 chatHandlerOrNull.SquadToView = LazyLoadSquadWrapper.Create( RelatedEntity );
 
-                            World_AIW2.Instance.QueueChatMessageOrCommand( "Cannot send this relic to any planet other than the one it started on, BUT this planet already has a spire city on it, so this relic can't be used at all.  Better scrap it.",
+                            World_AIW2.Instance.QueueChatMessageOrCommand( "此圣物只能送往起始星球，但该星球已有尖塔城市，此圣物已无法使用。建议拆解。",
                                 ChatType.LogToCentralChat, "CannotDoThatThing", chatHandlerOrNull );
                         }
                         break;
@@ -203,8 +203,8 @@ namespace Arcen.AIW2.External
                             if ( chatHandlerOrNull != null )
                                 chatHandlerOrNull.SquadToView = LazyLoadSquadWrapper.Create( RelatedEntity );
 
-                            World_AIW2.Instance.QueueChatMessageOrCommand( "Cannot send relic to " + TargetPlanet.Name +
-                                " to build a city: " + reasonCode,
+                            World_AIW2.Instance.QueueChatMessageOrCommand( "无法将圣物送往" + TargetPlanet.Name +
+                                "建造城市：" + reasonCode,
                                 ChatType.LogToCentralChat, "CannotDoThatThing", chatHandlerOrNull );
                         }
                         break;

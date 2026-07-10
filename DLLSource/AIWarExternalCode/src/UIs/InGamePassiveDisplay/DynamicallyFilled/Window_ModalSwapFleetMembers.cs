@@ -683,15 +683,15 @@ namespace Arcen.AIW2.External
                         string questionText;
                         if ( isFleetLeaderSwap )
                         {
-                            questionText = "Sure you want to swap away all of the non-leader fleet lines between from fleet <color=#7dffc3>" + fleetToSwapOut.GetName() +
-                                "</color> and fleet <color=#7dffc3>" + memPairToSwapIn.Fleet.GetName() + "</color>?";
-                            questionText += "  This will automatically scrap any existing ships that are swapped in either direction if they are not on the same planet as their new flagship, or if the ship lines are loaded.";
+                            questionText = "确定要交换从舰队 <color=#7dffc3>" + fleetToSwapOut.GetName() +
+                                "</color> 与舰队 <color=#7dffc3>" + memPairToSwapIn.Fleet.GetName() + "</color> 之间的所有非旗舰舰线吗？";
+                            questionText += "  如果舰船不在新旗舰所在星球上或舰线已加载，这将自动报废双向交换的任何现有舰船。";
                         }
                         else
                         {
-                            questionText = "Sure you want to swap away " + (memToSwapOutOrNull == null ? "an empty slot" : memToSwapOutOrNull.TypeData.GetDisplayName()) + " from fleet <color=#7dffc3>" + fleetToSwapOut.GetName() +
-                                "</color> for " + memPairToSwapIn.TypeData.GetDisplayName() + " from fleet <color=#7dffc3>" + memPairToSwapIn.Fleet.GetName() + "</color>?";
-                            questionText += "  This will automatically scrap any existing ships of both types if they are not on the same planet as their new flagship, or if the ship lines are loaded.";
+                            questionText = "确定要交换 " + (memToSwapOutOrNull == null ? "空白槽位" : memToSwapOutOrNull.TypeData.GetDisplayName()) + " 从舰队 <color=#7dffc3>" + fleetToSwapOut.GetName() +
+                                "</color> 换取 " + memPairToSwapIn.TypeData.GetDisplayName() + " 从舰队 <color=#7dffc3>" + memPairToSwapIn.Fleet.GetName() + "</color>？";
+                            questionText += "  如果舰船不在新旗舰所在星球上或舰线已加载，这将自动报废两种类型的现有舰船。";
                         }
 
                         ModalPopupData.CreateAndLogYesNoStyle( delegate
@@ -745,7 +745,7 @@ namespace Arcen.AIW2.External
                     }
                     if ( memToSwapOut == null )
                     {
-                        ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.Normal, null, "错误", "Not a valid type to swap out!", "确定" );
+                        ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.Normal, null, "错误", "不是有效的换出类型！", "确定" );
                         return MouseHandlingResult.PlayClickDeniedSound;
                     }
                     if ( fleetPairToSwapIn == memToSwapOut.Fleet )
@@ -754,8 +754,8 @@ namespace Arcen.AIW2.External
                         return MouseHandlingResult.PlayClickDeniedSound;
                     }
 
-                    string question = "Sure you want to swap away " + memToSwapOut.TypeData.GetDisplayName() + " from fleet <color=#7dffc3>" + memToSwapOut.Fleet.GetName() +
-                            "</color> for an empty slot from fleet <color=#7dffc3>" + fleetPairToSwapIn.GetName() + "</color>?  This will automatically scrap any existing ships in the type being swapped.";
+                    string question = "确定要交换 " + memToSwapOut.TypeData.GetDisplayName() + " 从舰队 <color=#7dffc3>" + memToSwapOut.Fleet.GetName() +
+                            "</color> 换取来自舰队 <color=#7dffc3>" + fleetPairToSwapIn.GetName() + "</color> 的空槽位吗？这将自动报废被交换类型的现有舰船。";
 
                     ModalPopupData.CreateAndLogYesNoStyle( delegate
                     {
@@ -828,12 +828,12 @@ namespace Arcen.AIW2.External
             {
                 if ( Instance._member != null )
                 {
-                    ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.Normal, null, "错误", "Cannot swap in multiple types when you are also swapping out a type", "确定" );
+                    ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.Normal, null, "错误", "不能同时换入多种类型和换出一种类型", "确定" );
                     return MouseHandlingResult.PlayClickDeniedSound;
                 }
                 if ( Instance._fleet == null )
                 {
-                    ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.Normal, null, "错误", "No fleet selected to swap these in to.", "确定" );
+                    ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.Normal, null, "错误", "未选择要换入这些内容的舰队。", "确定" );
                     return MouseHandlingResult.PlayClickDeniedSound;
                 }
 
@@ -858,7 +858,7 @@ namespace Arcen.AIW2.External
                         {
                             if ( existingFleetLeader == null )
                             {
-                                ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.Normal, null, "错误", "You are trying to swap a fleet leader, but we could not find an existing one.", "确定" );
+                                ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.Normal, null, "错误", "你试图交换舰队旗舰，但找不到现有旗舰。", "确定" );
                                 return MouseHandlingResult.PlayClickDeniedSound;
                             }
                             //if ( existingFleetLeader.SpecialType != pair.Key.TypeData.SpecialType )
@@ -889,36 +889,36 @@ namespace Arcen.AIW2.External
                 if ( numberElitesAdded > 1 )
                 {
                     ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.Normal, null, "错误", "你试图添加 " + numberElitesAdded +
-                        " elite ship lines, but there can only be one per fleet.", "确定" );
+                        " 条精英舰线，但每支舰队只能有一个。", "确定" );
                     return MouseHandlingResult.PlayClickDeniedSound;
                 }
                 if ( numberFleetLeadersAdded > 0 )
                 {
                     ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.Normal, null, "错误", "你试图交换 " + numberFleetLeadersAdded +
-                        " fleet leader ship lines, but that's not allowed  in the multi-swap interface.", "确定" );
+                        " 条旗舰舰线，但在多交换界面中不允许这样做。", "确定" );
                     return MouseHandlingResult.PlayClickDeniedSound;
                 }
                 if ( !hasEliteSlotOpen && numberElitesAdded > 0 )
                 {
-                    ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.Normal, null, "错误", "You are trying to add an elite ship line, but there can only be one per fleet (and this fleet already has one).  You'll need to swap the existing one out for this one if you want to.", "确定" );
+                    ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.Normal, null, "错误", "你试图添加精英舰线，但每支舰队只能有一个（此舰队已有一个）。如果愿意，你需要将现有舰线换出。", "确定" );
                     return MouseHandlingResult.PlayClickDeniedSound;
                 }
 
-                string questionText = "Sure you want to swap in these " + memList.Count + " lines to the fleet <color=#7dffc3>" + Instance._fleet.GetName() +
-                        "</color>?";
+                string questionText = "确定要将这 " + memList.Count + " 条舰线交换到舰队 <color=#7dffc3>" + Instance._fleet.GetName() +
+"</color> 吗？";
                 if ( numberElitesAdded > 0 )
                 {
                     if ( hasEliteSlotOpen )
-                        questionText += "  This will fill the empty elite slot.";
+                        questionText += "  这将填充空白精英槽位。";
                     else
-                        questionText += "  This will swap the filled elite slot.";
+                        questionText += "  这将替换已填充的精英槽位。";
                 }
                 if ( numberFleetLeadersAdded > 0 )
                 {
-                    questionText += "  This will swap the fleet leader.";
+                    questionText += "  这将交换舰队旗舰。";
                 }
 
-                questionText += "  This will automatically scrap any existing ships of both types if they are not on the same planet as their new flagship, or if the ship lines are loaded.";
+                questionText += "  如果舰船不在新旗舰所在星球上或舰线已加载，这将自动报废两种类型的现有舰船。";
 
                 ModalPopupData.CreateAndLogYesNoStyle( delegate
                 {

@@ -655,7 +655,7 @@ namespace Arcen.AIW2.External
                     if ( scienceOrOtherResourceRequired > fleetToManage.Faction.StoredFactionResourceOne )
                     {
                         //if ( ArcenNetworkAuthority.DesiredStatus != DesiredMultiplayerStatus.Client )
-                            World_AIW2.Instance.QueueChatMessageOrCommand( "Not enough " + World_AIW2.Instance.Resource1DisplayName + " to upgrade fleet!", ChatType.ShowLocallyOnly, null );
+                            World_AIW2.Instance.QueueChatMessageOrCommand( '没有足够的 ' + World_AIW2.Instance.Resource1DisplayName + ' 来升级舰队！', ChatType.ShowLocallyOnly, null );
                         return;
                     }
                     fleetToManage.Faction.StoredFactionResourceOne -= scienceOrOtherResourceRequired;
@@ -664,7 +664,7 @@ namespace Arcen.AIW2.External
                     if ( scienceOrOtherResourceRequired > fleetToManage.Faction.StoredFactionResourceTwo )
                     {
                         //if ( ArcenNetworkAuthority.DesiredStatus != DesiredMultiplayerStatus.Client )
-                            World_AIW2.Instance.QueueChatMessageOrCommand( "Not enough " + World_AIW2.Instance.Resource2DisplayName + " to upgrade fleet!", ChatType.ShowLocallyOnly, null );
+                            World_AIW2.Instance.QueueChatMessageOrCommand( '没有足够的 ' + World_AIW2.Instance.Resource2DisplayName + ' 来升级舰队！', ChatType.ShowLocallyOnly, null );
                         return;
                     }
                     fleetToManage.Faction.StoredFactionResourceTwo -= scienceOrOtherResourceRequired;
@@ -674,7 +674,7 @@ namespace Arcen.AIW2.External
                     if ( scienceOrOtherResourceRequired > fleetToManage.Faction.StoredScience )
                     {
                         //if ( ArcenNetworkAuthority.DesiredStatus != DesiredMultiplayerStatus.Client )
-                            World_AIW2.Instance.QueueChatMessageOrCommand( "Not enough Science to upgrade fleet!", ChatType.ShowLocallyOnly, null );
+                            World_AIW2.Instance.QueueChatMessageOrCommand( '没有足够的科学点数来升级舰队！', ChatType.ShowLocallyOnly, null );
                         return;
                     }
                     fleetToManage.Faction.StoredScience -= scienceOrOtherResourceRequired;

@@ -418,7 +418,7 @@ namespace Arcen.AIW2.External
                         {
                             if ( Instance._member.EffectiveMark < systemData.MinMarkLevelToFunction )
                             {
-                                ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.Normal, null, "等级过低！", "你的舰线需要更高等级才能使用此模块。", "Ok" );
+                                ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.Normal, null, "等级过低！", "你的舰线需要更高等级才能使用此模块。", "确定" );
                                 return MouseHandlingResult.PlayClickDeniedSound;
                             }
                         }
@@ -427,7 +427,7 @@ namespace Arcen.AIW2.External
                         {
                             if ( Instance._member.EffectiveMark > systemData.MaxMarkLevelToFunction )
                             {
-                                ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.Normal, null, "等级过高！", "此模块无法用于如此高等级的单位，因此无法启用。", "Ok" );
+                                ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.Normal, null, "等级过高！", "此模块无法用于如此高等级的单位，因此无法启用。", "确定" );
                                 return MouseHandlingResult.PlayClickDeniedSound;
                             }
                         }
@@ -436,7 +436,7 @@ namespace Arcen.AIW2.External
                         int moduleCost = sysDat.ModulePointCost;
                         if ( moduleCost > Instance._member.FreeModulePoints() )
                         {
-                            ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.Normal, null, "模块点数不足！", "你此舰线的模块点数不能低于零。请禁用一些模块或提升此舰线等级以获得更多点数。", "Ok" );
+                            ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.Normal, null, "模块点数不足！", "你此舰线的模块点数不能低于零。请禁用一些模块或提升此舰线等级以获得更多点数。", "确定" );
                             return MouseHandlingResult.PlayClickDeniedSound;
                         }
                     }

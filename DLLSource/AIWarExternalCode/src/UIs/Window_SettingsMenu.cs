@@ -754,7 +754,7 @@ namespace Arcen.AIW2.External
                     if (mod != null &&
                         mod.ShortDescription != mod.Description)
                     {
-                        ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.Tall, null, mod.GetDisplayName(), mod.GetDescription(), "OK" );
+                        ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.Tall, null, mod.GetDisplayName(), mod.GetDescription(), "确定" );
                     }
                 }
 
@@ -818,7 +818,7 @@ namespace Arcen.AIW2.External
                 { 
                     if ( mod.ShortDescription != mod.Description )
                     {
-                        ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.Tall, null, mod.GetDisplayName(), mod.GetDescription(), "OK" );
+                        ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.Tall, null, mod.GetDisplayName(), mod.GetDescription(), "确定" );
                     }
 
                     return MouseHandlingResult.None;
@@ -848,12 +848,12 @@ namespace Arcen.AIW2.External
                                         expansionList += exp2.DisplayName;
 
                                         if ( !exp2.IsInstalledAtAll )
-                                            expansionList += " (Not Installed)";
+                                            expansionList += " (未安装)";
                                         else
                                         {
                                             ArcenSetting set2 = exp2.GetRelatedSetting();
                                             if ( set2.TempValue_Bool )
-                                                expansionList += " (Not Enabled)";
+                                                expansionList += " (未启用)";
                                         }
                                     }
                                     ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.Normal, null, "无法启用Mod", "此Mod使用的所有扩展包，包括 " +

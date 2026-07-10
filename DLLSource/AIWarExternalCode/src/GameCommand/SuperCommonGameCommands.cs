@@ -996,7 +996,7 @@ namespace Arcen.AIW2.External
 
             if ( typeToPlace.IsCommandStation && entityDoingThePlacing.Planet.GetCommandStationOrNull() != null )
             {
-                World_AIW2.Instance.QueueChatMessageOrCommand( "There's already a command station here -- you can't place another one!", ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
+                World_AIW2.Instance.QueueChatMessageOrCommand( '这里已经有一个指挥站了——你不能放置另一个！', ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
                 return;
             }
 
@@ -1020,26 +1020,26 @@ namespace Arcen.AIW2.External
                     switch ( rejectionReason )
                     {
                         case ArcenRejectionReason.FactionDoesNotHaveEnoughCap:
-                            World_AIW2.Instance.QueueChatMessageOrCommand( "Cap hit for " + typeToPlace.DisplayName + "!", ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
+                            World_AIW2.Instance.QueueChatMessageOrCommand( '已达到数量上限：' + typeToPlace.DisplayName + '！', ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
                             break;
                         case ArcenRejectionReason.GalaxyWideCapForPlayersHasBeenHit:
-                            World_AIW2.Instance.QueueChatMessageOrCommand( "Galaxy-wide cap hit for " + typeToPlace.DisplayName + "!", ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
+                            World_AIW2.Instance.QueueChatMessageOrCommand( '已达到全银河数量上限：' + typeToPlace.DisplayName + '！', ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
                             break;
                         case ArcenRejectionReason.FactionDoesNotHaveCapForThisFleet:
-                            World_AIW2.Instance.QueueChatMessageOrCommand( "No cap set for the current fleet for " + typeToPlace.DisplayName, ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
+                            World_AIW2.Instance.QueueChatMessageOrCommand( '当前舰队未设置数量上限：' + typeToPlace.DisplayName, ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
                             break;
                         case ArcenRejectionReason.FactionDoesNotHaveEnoughEnergy:
-                            World_AIW2.Instance.QueueChatMessageOrCommand( "Not enough energy to place " + typeToPlace.DisplayName, ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
+                            World_AIW2.Instance.QueueChatMessageOrCommand( '能量不足，无法放置 ' + typeToPlace.DisplayName, ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
                             break;
                         case ArcenRejectionReason.NotEnoughCitySockets:
-                            World_AIW2.Instance.QueueChatMessageOrCommand( "Not enough " + typeToPlace.NameForCitySockets_Short_Plural + " in the " + typeToPlace.NameForCityCenter + " of " + fleetMembershipForTypeUnlessFleetChanges.Fleet.GetName() + " to place " + typeToPlace.DisplayName +
-                                " (" + fleetMembershipForTypeUnlessFleetChanges.Fleet.CalculateRemainingCitySockets() + " available, " + typeToPlace.CitySocketCost + " needed).  Typically upgrade your city to get more.", ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
+                            World_AIW2.Instance.QueueChatMessageOrCommand( '没有足够的 ' + typeToPlace.NameForCitySockets_Short_Plural + ' 在 ' + typeToPlace.NameForCityCenter + ' 的 ' + fleetMembershipForTypeUnlessFleetChanges.Fleet.GetName() + ' 中来放置 ' + typeToPlace.DisplayName +
+                                '（' + fleetMembershipForTypeUnlessFleetChanges.Fleet.CalculateRemainingCitySockets() + ' 可用，需要 ' + typeToPlace.CitySocketCost + '）。通常升级你的城市以增加数量。', ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
                             break;
                         case ArcenRejectionReason.FleetCenterpieceIsMissing:
-                            World_AIW2.Instance.QueueChatMessageOrCommand( "No fleet centerpiece for fleet for " + typeToPlace.DisplayName, ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
+                            World_AIW2.Instance.QueueChatMessageOrCommand( '舰队没有核心舰船：' + typeToPlace.DisplayName, ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
                             break;
                         case ArcenRejectionReason.FleetDoesNotContainThisType:
-                            World_AIW2.Instance.QueueChatMessageOrCommand( "Fleet design does not contain " + typeToPlace.DisplayName, ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
+                            World_AIW2.Instance.QueueChatMessageOrCommand( '舰队设计不包含 ' + typeToPlace.DisplayName, ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
                             break;
                         default:
                             World_AIW2.Instance.QueueChatMessageOrCommand( "During placement: rejectionReason " + rejectionReason, ChatType.ShowLocallyOnly, null );

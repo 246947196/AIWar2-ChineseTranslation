@@ -1364,7 +1364,7 @@ namespace Arcen.AIW2.External
 
                 if ( typeData.FullLore != null && typeData.FullLore.Length > 0 )
                 {
-                    ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.TallWide, null, typeData.DisplayName, typeData.FullLore + "\n\n\n\n\n", "OK" );
+                    ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.TallWide, null, typeData.DisplayName, typeData.FullLore + "\n\n\n\n\n", '确定' );
                     
                     return MouseHandlingResult.None;
                 }

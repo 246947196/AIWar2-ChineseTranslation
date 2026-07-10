@@ -211,7 +211,7 @@ namespace Arcen.AIW2.External
             {
                 AIWar2GalaxySettingSubcategory subCat = this.GetSubcategory();
                 if ( subCat == null )
-                    Window_AtMouseTooltipPanelSnapToLeft.bPanel.Instance.SetText( Element, "Null subcategory!" );
+                    Window_AtMouseTooltipPanelSnapToLeft.bPanel.Instance.SetText( Element, "空子类别！" );
                 else
                     Window_AtMouseTooltipPanelSnapToLeft.bPanel.Instance.SetText( Element, subCat.DisplayName + "\n" + subCat.Description );
             }
