@@ -125,7 +125,7 @@ namespace Arcen.AIW2.External
 
                     debugCode = 800;
                     if ( sentinelsExternalOrNull == null )
-                        buffer.AddFactionColoredString( "AI ( Unknown )", sendingFaction );
+                        buffer.AddFactionColoredString( "AI（未知）", sendingFaction );
                     else
                     {
                         bool secretFactionDetails = AIWar2GalaxySettingTable.GetIsBoolSettingEnabledByName_DuringGame( "FactionDetailsAreSecret" ) && World.Instance.ConclusionType == CampaignConclusionType.NotConcluded;
@@ -137,19 +137,19 @@ namespace Arcen.AIW2.External
                         {
                             debugCode = 900;
                             if ( sentinelsExternalOrNull.WasRandomAIType && !GameSettings.Current.GetBoolBySetting( "ShowRandomAIType" ) )
-                                buffer.AddFactionColoredString( "AI ( Random )", sendingFaction );
+                                buffer.AddFactionColoredString( "AI（随机）", sendingFaction );
                             else if ( sentinelsExternalOrNull.AdaptiveAIDifficulty != TypeDifficulty.Unset && !GameSettings.Current.GetBoolBySetting( "ShowRandomAIType" ) )
-                                buffer.AddFactionColoredString( "AI ( Adaptive )", sendingFaction );
+                                buffer.AddFactionColoredString( "AI（自适应）", sendingFaction );
                             else
-                                buffer.StartColor( sendingFaction.FactionCenterColor.TeamColorBrighter ).Add( "AI (" ).Add( sentinelsExternalOrNull.AIType.DisplayName ).Add( ")" ).EndColor();
+                                buffer.StartColor( sendingFaction.FactionCenterColor.TeamColorBrighter ).Add( "AI（" ).Add( sentinelsExternalOrNull.AIType.DisplayName ).Add( "）" ).EndColor();
                         }
                     }
 
-                    buffer.Add( " sending " );
+                    buffer.Add( " 发送 " );
 
                     debugCode = 1100;
                     buffer.WriteWaveStrength( this );
-                    buffer.Add( " with" );
+                    buffer.Add( "，包含" );
 
                     debugCode = 1500;
                     //A CPA doesn't have a composition like a normal wave, so don't try to display it
@@ -164,7 +164,7 @@ namespace Arcen.AIW2.External
                         debugCode = 1600;
                         int numSquads = kv.Value;
                         debugCode = 1700;
-                        buffer.Add( " " ).Add( numSquads, "7699ff" ).Add( " " ).Add( kv.Key.GetDisplayName(), "cfd988" ).Add( " ships" );
+                        buffer.Add( " " ).Add( numSquads, "7699ff" ).Add( " " ).Add( kv.Key.GetDisplayName(), "cfd988" ).Add( " 艘" );
                     }
                 }
 
@@ -179,14 +179,14 @@ namespace Arcen.AIW2.External
                 {
                     buffer.Clear();
                     debugCode = 3400;
-                    buffer.Add( "Massive cross planet attack spawning throughout galaxy in " )
-                        .Add( Engine_Universal.ToHoursAndMinutesString( this.gameTimeInSecondsForLaunchWave - World_AIW2.Instance.GameSecond ), "a1ffa1" ).Add( "." );
+                    buffer.Add( "大规模跨星球攻击将在全星系范围内生成，" )
+                        .Add( Engine_Universal.ToHoursAndMinutesString( this.gameTimeInSecondsForLaunchWave - World_AIW2.Instance.GameSecond ), "a1ffa1" ).Add( " 后开始。" );
                 }
                 else if ( this.overrideEntityToSpawnAt == null && this.spawnWaveDirectlyOnTarget )
                 {
                     debugCode = 4100;
                     //Wave is spawning on target
-                    buffer.Add( " spawning on " );
+                    buffer.Add( " 生成于 " );
                     if ( targetPlanet != null )
                     {
                         debugCode = 4200;
@@ -202,9 +202,9 @@ namespace Arcen.AIW2.External
                     }
                     debugCode = 4400;
                     if ( this.isExogalacticWormholeWave )
-                        buffer.Add( " from Exogalactic Wormhole on " );
+                        buffer.Add( "，来自河外虫洞在 " );
                     else
-                        buffer.Add( " from warp gate on " );
+                        buffer.Add( "，来自虫洞门在 " );
                     debugCode = 4500;
                     buffer.StartColor( sendingFaction.FactionCenterColor.TeamColor );
                     debugCode = 4600;
@@ -216,15 +216,15 @@ namespace Arcen.AIW2.External
                     buffer.EndColor();
                     int secondsRemaining = this.gameTimeInSecondsForLaunchWave - World_AIW2.Instance.GameSecond;
                     if ( secondsRemaining > 0 )
-                        buffer.Add( " in " ).Add( Engine_Universal.ToHoursAndMinutesString( secondsRemaining ), "a1ffa1" ).Add( "." );
+                        buffer.Add( "，在 " ).Add( Engine_Universal.ToHoursAndMinutesString( secondsRemaining ), "a1ffa1" ).Add( " 后。" );
                     else
-                        buffer.Add( " " ).Add( "any second now", "a1ffa1" ).Add( "... but the exact timing may be a surpise." );
+                        buffer.Add( " " ).Add( "随时可能", "a1ffa1" ).Add( "...但具体时间可能是个惊喜。" );
                 }
                 else if ( this.overrideEntityToSpawnAt == null )
                 {
                     debugCode = 6100;
                     //Planet targetPlanet = World_AIW2.Instance.GetPlanetByIndex( this.targetPlanetIdx );
-                    buffer.Add( " spawning at an AI warp gate on " );
+                    buffer.Add( " 在 AI 虫洞门生成于 " );
                     debugCode = 6200;
                     buffer.StartColor( sendingFaction.FactionCenterColor.TeamColor );
                     debugCode = 6300;
@@ -233,21 +233,21 @@ namespace Arcen.AIW2.External
                     else
                         buffer.Add( warpGatePlanetOrNull.Name );
                     buffer.EndColor();
-                    buffer.Add( ", and will then travel through normal space to attack" );
+                    buffer.Add( "，然后将穿越正常空间进行攻击" );
                     debugCode = 6400;
                     int secondsRemaining = this.gameTimeInSecondsForLaunchWave - World_AIW2.Instance.GameSecond;
                     if ( secondsRemaining > 0 )
-                        buffer.Add( " in " ).Add( Engine_Universal.ToHoursAndMinutesString( secondsRemaining ), "a1ffa1" ).Add( "." );
+                        buffer.Add( "，在 " ).Add( Engine_Universal.ToHoursAndMinutesString( secondsRemaining ), "a1ffa1" ).Add( " 后。" );
                     else
-                        buffer.Add( " " ).Add( "any second now", "a1ffa1" ).Add( "... but the exact timing may be a surpise." );
+                        buffer.Add( " " ).Add( "随时可能", "a1ffa1" ).Add( "...但具体时间可能是个惊喜。" );
                 }
                 else
-                    buffer.Add( " to specific location right now (hacking wave)" ); // currently ToString is not called for hacking waves, but just in case
+                    buffer.Add( " 立即前往特定位置（破解波）" ); // currently ToString is not called for hacking waves, but just in case
                 debugCode = 8100;
                 if ( this.isReconquestWave )
                 {
                     debugCode = 8200;
-                    buffer.Add( ".  This wave will allow the AI to recapture a planet." );
+                    buffer.Add( "。此波将允许 AI 重新夺回一个星球。" );
                 }
 
                 debugCode = 9100;
@@ -268,7 +268,7 @@ namespace Arcen.AIW2.External
                 if ( targetFaction != null && targetFaction.Type != FactionType.Player && targetFaction.Type != FactionType.NaturalObject )
                 {
                     debugCode = 9500;
-                    buffer.Add( " This wave is against " );
+                    buffer.Add( " 此波攻击目标是 " );
                     buffer.StartColor( targetFaction.FactionCenterColor.TeamColor );
                     debugCode = 9600;
                     buffer.Add( targetFaction.GetDisplayName() );
@@ -280,7 +280,7 @@ namespace Arcen.AIW2.External
                 if ( this.IsAstroTrainWave )
                 {
                     debugCode = 11300;
-                    buffer.Add( " The Astro Trains send their regards." );
+                    buffer.Add( " 星运列车致以问候。" );
                 }
                 debugCode = 12100;
                 if ( this.isActuallyACrossPlanetAttack )
@@ -289,17 +289,17 @@ namespace Arcen.AIW2.External
                     bool useTsunami = World_AIW2.Instance.Setup.GetBoolBySetting( "TsunamiCPA" );
                     debugCode = 12300;
                     if ( !useTsunami )
-                        buffer.Add( "\n" ).Add( "Cross Planet Attacks free a massive amount of AI guard ships all at once across a large area of the galaxy.  It does not generate new ships, but it turns ships that were guarding various planets into active Threat against you.  You don't know what will be in the CPA, or even exactly how strong it will be, until you see it.  The higher the AIP, the stronger the CPA, though, as a general rule.  The most likely result of these ships turning to Threat will be that they join the Hunter Fleet and strike at you at a much later time, but you never know.  If you want far more exciting and interesting CPAs, consider enabling the 'Tsunami CPA' option in the Galaxy Options." );
+                        buffer.Add( "\n" ).Add( "跨星球攻击一次性在大范围星系内解放大量 AI 守卫舰船。它不会生成新舰船，而是将原本守卫各星球的舰船转变为对您的活跃威胁。在亲眼看到之前，您不会知道 CPA 中有什么，甚至不知道它有多强。一般来说，AIP 越高，CPA 越强。这些舰船转变为威胁后，最可能的结果是加入猎手舰队并在更晚的时候袭击您，但您永远无法确定。如果您想要更刺激和有趣的 CPA，请考虑在星系选项中启用'海啸 CPA'选项。" );
                     else
-                        buffer.Add( "\n" ).Add( "Cross Planet Attacks free a massive amount of AI guard ships all at once across a large area of the galaxy. It does not generate new ships, but it turns ships that were guarding various planets into a staggering barrage of attackers who will arrive from all directions and over a varied span of time.  You don't know what will be in the CPA, or even exactly how strong it will be, until you see it.  The higher the AIP, the stronger the CPA, though, as a general rule.  Since you are using the exciting Tsunami CPA option, you'll have the chance to mow down lots of AI ships in your own defenses... but at the same time they may create dangerous openings for the Hunter to exploit, or may burst down your defenses by sheer volume over time." );
+                        buffer.Add( "\n" ).Add( "跨星球攻击一次性在大范围星系内解放大量 AI 守卫舰船。它不会生成新舰船，而是将原本守卫各星球的舰船转变为一波汹涌的攻击者，它们将从四面八方在不同时间到达。在亲眼看到之前，您不会知道 CPA 中有什么，甚至不知道它有多强。一般来说，AIP 越高，CPA 越强。由于您正在使用激动人心的海啸 CPA 选项，您将有机会在自己的防御中击落大量 AI 舰船...但同时它们可能会制造危险的缺口供猎手利用，或者凭借纯粹的数量优势碾压您的防御。" );
                 }
                 else
                 {
                     debugCode = 13100;
                     buffer.Add( "\n" ).Add( FontSizes.MUCH_SMALLER_SIZE_PLUS_A_TAD_STRING );
                     debugCode = 13200;
-                    buffer.Add( "<color=#3f6c9e>Hold </color><color=#4486d1>" ).Add( InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "HoldAndClickToViewDetailsOfContents" ) )
-                            .Add( "</color> <color=#3f6c9e>and click here to view details on all the ship types in the wave.</color>  " );
+                    buffer.Add( "<color=#3f6c9e>按住 </color><color=#4486d1>" ).Add( InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "HoldAndClickToViewDetailsOfContents" ) )
+                            .Add( "</color> <color=#3f6c9e>并点击此处查看波次中所有舰船类型的详细信息。</color>  " );
                     buffer.Add( "</size>" );
                 }
                 debugCode = 13300;

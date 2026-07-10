@@ -417,11 +417,11 @@ namespace Arcen.AIW2.External
 
                         fillData.PlanetList.Add( derelictPlanet );
 
-                        fillData.StringList.Add( $"A Dark Spire Derelict exists on {derelictPlanet.Name} and will finish deteriorating in " +
+                        fillData.StringList.Add( $"黑暗尖塔残骸存在于 {derelictPlanet.Name}，将在 " +
                             $"{(timeRemaining / 60).ToString( "0" )}:" +
-                            $"{(timeRemaining % 60).ToString( "00" )}\n" );
+                            $"{(timeRemaining % 60).ToString( "00" )} 后完全腐烂\n" );
 
-                        string collectedString = "Total Collected: ";
+                        string collectedString = "已收集总数：";
                         bool started = false;
 
                         foreach ( Faction workingFaction in ActiveCoalitionFactions.GetDisplayList() )
@@ -463,12 +463,12 @@ namespace Arcen.AIW2.External
                 try
                 {
                     short lowestTimer = 9999;
-                    string message = $"The Anti-Dark Spire Coalition is currently dismantling a Dark Spire VG on ";
+                    string message = $"反黑暗尖塔联盟目前正在拆除一个黑暗尖塔 VG，位于 ";
                     if ( GameSecondControlWasEstablishedOnPlanet.Count == 1 )
-                        message += "a planet. ";
+                        message += "一个星球。";
                     else
-                        message += "a number of planets. ";
-                    message += $"They will require retaining a military advantage for a period of time before doing so.\n\n";
+                        message += "多个星球。";
+                    message += $"在此之前需要维持一段时间的军事优势。\n\n";
 
                     fillData.StringList.Add( message );
 

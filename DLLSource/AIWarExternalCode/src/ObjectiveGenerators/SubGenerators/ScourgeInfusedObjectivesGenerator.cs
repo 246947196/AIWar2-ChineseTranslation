@@ -85,10 +85,10 @@ namespace Arcen.AIW2.External
         public MouseHandlingResult ClickHandler( ActualObjective Objective ) { return MouseHandlingResult.None; }
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "Spawners", "ff8877" ).Add( " are the foundation of your Scourge forces.\n\n" );
-            buffer.Add( "Each Spawner generates a steady stream of Scourge Warriors. The more Spawners you build and the higher their mark level, the larger and more powerful your Scourge army becomes.\n\n" );
-            buffer.Add( "Spawners are built using Corbomite. Place them across the galaxy to project Scourge strength into new regions. Keep in mind that Spawners need time to mark up again if destroyed.\n\n" );
-            buffer.Add( "You can upgrade Spawners via the hacking menu once they have accumulated enough experience.", ObjectiveColors.Hint );
+            buffer.Add( "生成器", "ff8877" ).Add( "是你天灾部队的基础。\n\n" );
+            buffer.Add( "每个生成器都会稳定产出天灾战士。你建造的生成器越多、等级越高，天灾军队就越庞大、越强大。\n\n" );
+            buffer.Add( "生成器使用科博麦特建造。将它们部署到银河各处，将天灾的力量投射到新的区域。请注意，生成器被摧毁后需要时间重新升级。\n\n" );
+            buffer.Add( "一旦生成器积累足够的经验，你可以通过入侵菜单升级它们。", ObjectiveColors.Hint );
         }
     }
 
@@ -98,11 +98,11 @@ namespace Arcen.AIW2.External
         public MouseHandlingResult ClickHandler( ActualObjective Objective ) { return MouseHandlingResult.None; }
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "Armories", "ff8877" ).Add( " allow your Scourge Warriors to evolve.\n\n" );
-            buffer.Add( "When a Warrior reaches an Armory, it can evolve into that Armory's race-specific variant; a stronger Evolved Warrior, or further into a powerful Hybrid. Higher mark Armories allow Warriors to reach higher mark levels.\n\n" );
-            buffer.Add( "Each race you unlock via the tech tree enables a new type of Armory and Fortress. Build at least one Armory per unlocked race to let your Warriors specialize.\n\n" );
-            buffer.Add( "Bestiaries", "ff8877" ).Add( " are a related structure: each produces a single exceptionally powerful ship to defend nearby planets. " );
-            buffer.Add( "Fortresses", "ff8877" ).Add( " produce defensive fleets for their surrounding planets.", ObjectiveColors.Hint );
+            buffer.Add( "军械库", "ff8877" ).Add( "让你的天灾战士得以进化。\n\n" );
+            buffer.Add( "当战士到达军械库时，它可以进化成该军械库的种族特定变体：更强大的进化战士，或进一步成为强大的混合体。更高等级的军械库允许战士达到更高等级。\n\n" );
+            buffer.Add( "通过科技树解锁的每个种族都会启用一种新型军械库和要塞。每个已解锁种族至少建造一个军械库，让你的战士可以专精。\n\n" );
+            buffer.Add( "怪物图鉴", "ff8877" ).Add( "是一种相关建筑：每个图鉴生产一艘极其强大的舰船来防御附近星球。" );
+            buffer.Add( "要塞", "ff8877" ).Add( "为其周边星球生产防御舰队。", ObjectiveColors.Hint );
         }
     }
 
@@ -112,10 +112,10 @@ namespace Arcen.AIW2.External
         public MouseHandlingResult ClickHandler( ActualObjective Objective ) { return MouseHandlingResult.None; }
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "Corbomite", "ff8877" ).Add( " is the resource used to build all Scourge structures.\n\n" );
-            buffer.Add( "It is grown from ", ObjectiveColors.Hint ).Add( "Seeds", "ff8877" ).Add( " into ", ObjectiveColors.Hint ).Add( "Flowers", "ff8877" ).Add( ", which then produce Corbomite Crystals that can be harvested.\n\n" );
-            buffer.Add( "The AI will actively try to destroy your Flowers; protecting them is important. Plant additional Seeds and Flowers to maintain a steady Corbomite income.\n\n" );
-            buffer.Add( "You can also use the hacking menu on Scourge structures to perform various Corbomite-related actions.", ObjectiveColors.Hint );
+            buffer.Add( "科博麦特", "ff8877" ).Add( "是用于建造所有天灾建筑的资源。\n\n" );
+            buffer.Add( "它从", ObjectiveColors.Hint ).Add( "种子", "ff8877" ).Add( "生长成", ObjectiveColors.Hint ).Add( "花", "ff8877" ).Add( "，然后产生可收获的科博麦特水晶。\n\n" );
+            buffer.Add( "AI会积极试图摧毁你的花；保护它们很重要。种植更多的种子和花以维持稳定的科博麦特收入。\n\n" );
+            buffer.Add( "你也可以使用天灾建筑上的入侵菜单执行各种科博麦特相关操作。", ObjectiveColors.Hint );
         }
     }
 
@@ -126,9 +126,9 @@ namespace Arcen.AIW2.External
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
             int count = Objective.RelatedInt1;
-            buffer.Add( count.ToString(), "ffaa44" ).Add( count == 1 ? " Scourge structure has" : " Scourge structures have", ObjectiveColors.Hint ).Add( " accumulated enough experience to be upgraded.\n\n" );
-            buffer.Add( "Open the hacking menu on the structure to upgrade them. Higher mark Spawners generate more warriors, higher mark Armories allow warriors to reach higher marks, and higher mark Bestiaries produce more powerful ships.\n\n" );
-            buffer.Add( "Check the notification panel for the specific structures ready to upgrade.", ObjectiveColors.Hint );
+            buffer.Add( count.ToString(), "ffaa44" ).Add( count == 1 ? " 个天灾建筑已" : " 个天灾建筑已", ObjectiveColors.Hint ).Add( "积累足够的经验可供升级。\n\n" );
+            buffer.Add( "打开建筑上的入侵菜单进行升级。更高等级的生成器产生更多战士，更高等级的军械库允许战士达到更高等级，更高等级的怪物图鉴生产更强大的舰船。\n\n" );
+            buffer.Add( "检查通知面板以查看准备升级的具体建筑。", ObjectiveColors.Hint );
         }
     }
 
@@ -140,12 +140,12 @@ namespace Arcen.AIW2.External
         {
             int unlocked = Objective.RelatedInt1;
             int total = Objective.RelatedInt2;
-            buffer.Add( unlocked.ToString(), ObjectiveColors.Reward ).Add( " of " ).Add( total.ToString(), "ffaa44" ).Add( " alien races unlocked.\n\n" );
-            buffer.Add( "Unlocking a race via the tech tree enables:\n" );
-            buffer.Add( "  鈥?A race-specific ", ObjectiveColors.Hint ).Add( "Armory", "ff8877" ).Add( " lets Warriors evolve into that race's variant.\n" );
-            buffer.Add( "  鈥?A race-specific ", ObjectiveColors.Hint ).Add( "Fortress", "ff8877" ).Add( " produces defensive ships of that race.\n\n" );
-            buffer.Add( "Unlocking a second level of a race enables the Hybrid forms.\n\n" );
-            buffer.Add( "Races available: Burlust, Evuck, Thoraxian, Peltian, Neinzul, Spire, Zenith.", ObjectiveColors.Hint );
+            buffer.Add( unlocked.ToString(), ObjectiveColors.Reward ).Add( " / " ).Add( total.ToString(), "ffaa44" ).Add( " 外星种族已解锁。\n\n" );
+            buffer.Add( "通过科技树解锁种族可启用：\n" );
+            buffer.Add( "  鈥?特定种族的", ObjectiveColors.Hint ).Add( "军械库", "ff8877" ).Add( "让战士进化为该种族的变体。\n" );
+            buffer.Add( "  鈥?特定种族的", ObjectiveColors.Hint ).Add( "要塞", "ff8877" ).Add( "生产该种族的防御舰船。\n\n" );
+            buffer.Add( "解锁种族的第二级可启用混合体形态。\n\n" );
+            buffer.Add( "可用种族：Burlust、Evuck、Thoraxian、Peltian、Neinzul、Spire、Zenith。", ObjectiveColors.Hint );
         }
     }
 }

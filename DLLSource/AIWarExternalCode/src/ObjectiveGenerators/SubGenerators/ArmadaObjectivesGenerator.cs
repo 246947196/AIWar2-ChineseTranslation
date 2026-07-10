@@ -108,7 +108,7 @@ namespace Arcen.AIW2.External
                 buffer.Add( "Bug in UnusedSockets: null planet" );
                 return;
             }
-            buffer.Add( "Your Starbase on " ).Add( Objective.RelatedPlanet1.Name, ObjectiveColors.Reward ).Add( " has unused building sockets.\n\nFilling sockets strengthens your defenses and unlocks capabilities. Open the fleet menu for that Starbase to see what you can build." );
+            buffer.Add( "你的星站" ).Add( Objective.RelatedPlanet1.Name, ObjectiveColors.Reward ).Add( "上有未使用的建筑插槽。\n\n填充插槽可增强防御并解锁新能力。打开该星站的舰队菜单查看可建造内容。" );
         }
     }
 
@@ -132,8 +132,8 @@ namespace Arcen.AIW2.External
             string starbaseDescription = Objective.RelatedEntity1.TypeData.Description;
             if ( !string.IsNullOrEmpty( starbaseDescription ) )
                 buffer.Add( starbaseDescription ).Add( "\n\n" );
-            buffer.Add( "An unclaimed Armada Starbase on " ).Add( Objective.RelatedEntity1.GetPlanetName_Safe(), ObjectiveColors.Reward ).Add( ".\n\n" );
-            buffer.Add( "Capturing it grants access to new " ).Add( "ship types", ObjectiveColors.Keyword ).Add( "." );
+            buffer.Add( "一个未认领的舰队星站位于" ).Add( Objective.RelatedEntity1.GetPlanetName_Safe(), ObjectiveColors.Reward ).Add( "。\n\n" );
+            buffer.Add( "占领后可获得新的" ).Add( "舰船类型", ObjectiveColors.Keyword ).Add( "。" );
         }
     }
 
@@ -143,9 +143,9 @@ namespace Arcen.AIW2.External
         public MouseHandlingResult ClickHandler( ActualObjective Objective ) { return MouseHandlingResult.None; }
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "The Armada Empire can expand by claiming ", ObjectiveColors.Hint ).Add( "Starbases", "ffaa44" ).Add( " seeded across the galaxy.\n\n" );
-            buffer.Add( "Each Starbase is a base of operations: it houses your fleet, produces Rangers, and anchors your mining supply lines. Starbases seeded on the map give you access to powerful new ship types, and are also cheaper to upgrade.\n\n" );
-            buffer.Add( "Unclaimed Starbases are listed in the intel menu under Critical Capturables.", ObjectiveColors.Hint );
+            buffer.Add( "舰队帝国可以通过认领散布在银河各处的", ObjectiveColors.Hint ).Add( "星站", "ffaa44" ).Add( "来扩张。\n\n" );
+            buffer.Add( "每个星站都是一个行动基地：它容纳你的舰队、生产游侠，并锚定你的采矿补给线。地图上的星站可让你获得强大的新型舰船类型，并且升级也更便宜。\n\n" );
+            buffer.Add( "未认领的星站在情报菜单的关键可占领物下列出。", ObjectiveColors.Hint );
         }
     }
 
@@ -155,11 +155,11 @@ namespace Arcen.AIW2.External
         public MouseHandlingResult ClickHandler( ActualObjective Objective ) { return MouseHandlingResult.None; }
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "The Armada's signature offense is the ", ObjectiveColors.Hint ).Add( "Locust Swarm", "ffaa44" ).Add( ".\n\n" );
-            buffer.Add( "Swarm Launchers", ObjectiveColors.Keyword ).Add( " generate Locusts; expendable swarm units that overwhelm enemies through numbers. More swarm launchers will generate more locusts.\n\n" );
-            buffer.Add( "Swarm Lures", ObjectiveColors.Keyword ).Add( " attract locusts from all the launchers. When they arrive, the locusts soak damage that would otherwise hit your Starbases or flagships, as well as dishing out significant damage. Lures attrition once you are winning the battle.\n\n" );
+            buffer.Add( "舰队的标志性攻势是", ObjectiveColors.Hint ).Add( "蝗虫群", "ffaa44" ).Add( "。\n\n" );
+            buffer.Add( "蝗虫发射器", ObjectiveColors.Keyword ).Add( "生成蝗虫；这是一种可消耗的蜂群单位，以数量压制敌人。更多的蝗虫发射器将生成更多蝗虫。\n\n" );
+            buffer.Add( "蝗虫诱饵", ObjectiveColors.Keyword ).Add( "吸引来自所有发射器的蝗虫。到达后，蝗虫会吸收原本会击中你星站或旗舰的伤害，同时造成大量伤害。一旦你在战斗中占据优势，诱饵会逐渐损耗。\n\n" );
 
-            buffer.Add( "Once the lure dies, the locusts will fan out across the galaxy attacking foes.", ObjectiveColors.Hint );
+            buffer.Add( "一旦诱饵被摧毁，蝗虫将扩散到银河各处攻击敌人。", ObjectiveColors.Hint );
         }
     }
 
@@ -169,10 +169,10 @@ namespace Arcen.AIW2.External
         public MouseHandlingResult ClickHandler( ActualObjective Objective ) { return MouseHandlingResult.None; }
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "The Armada's primary income source is ", ObjectiveColors.Hint ).Add( "Mining", "ffaa44" ).Add( ".\n\n" );
-            buffer.Add( "Build ", ObjectiveColors.Keyword ).Add( "Mines", ObjectiveColors.Keyword ).Add( " on hostile planets to extract resources. Each Mine automatically converts into a Transport when full and flies its cargo back to the nearest Starbase.\n\n" );
-            buffer.Add( "The more planets you mine, the more income you generate. Be careful though, each Mine is vulnerable while it travels. Defending the route back to your Starbases is critical.\n\n" );
-            buffer.Add( "Check the Tyderian section of the resource bar for a breakdown of your current mining income.", ObjectiveColors.Hint );
+            buffer.Add( "舰队的主要收入来源是", ObjectiveColors.Hint ).Add( "采矿", "ffaa44" ).Add( "。\n\n" );
+            buffer.Add( "在敌对星球上建造", ObjectiveColors.Keyword ).Add( "矿场", ObjectiveColors.Keyword ).Add( "来提取资源。每个矿场满仓后会自动转化为运输船，将货物运回最近的星站。\n\n" );
+            buffer.Add( "你开采的星球越多，产生的收入就越多。但要注意，每个矿场在运输途中很脆弱。保护返回星站的路线至关重要。\n\n" );
+            buffer.Add( "查看资源栏的Tyderian部分以了解当前采矿收入的细分。", ObjectiveColors.Hint );
         }
     }
 
@@ -182,11 +182,11 @@ namespace Arcen.AIW2.External
         public MouseHandlingResult ClickHandler( ActualObjective Objective ) { return MouseHandlingResult.None; }
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "Rangers", "ffaa44" ).Add( " are the Armada's auto-defense units, each tethered to a home Starbase.\n\n" );
-            buffer.Add( "They automatically engage threats on their Starbase's planet without player direction. When a Starbase is lost, its Rangers are lost with it.\n\n" );
-            buffer.Add( "Ranger Outposts", ObjectiveColors.Keyword ).Add( " increase your Ranger cap, letting you field more defenders per Starbase.\n" );
-            buffer.Add( "Dire Ranger Outposts", ObjectiveColors.Keyword ).Add( " unlock Dire Rangers; heavier, more powerful variants suited for serious threats.\n\n" );
-            buffer.Add( "Build Outposts in your Starbases' sockets to keep your defensive cap high.", ObjectiveColors.Hint );
+            buffer.Add( "游侠", "ffaa44" ).Add( "是舰队的自动防御单位，每个游侠绑定到母星站。\n\n" );
+            buffer.Add( "它们会自动攻击星站所在星球上的威胁，无需玩家指挥。当星站失守时，其游侠也会随之失去。\n\n" );
+            buffer.Add( "游侠前哨站", ObjectiveColors.Keyword ).Add( "增加你的游侠上限，让你每个星站可以部署更多防御者。\n" );
+            buffer.Add( "凶暴游侠前哨站", ObjectiveColors.Keyword ).Add( "解锁凶暴游侠；更重型、更强大的变体，适用于严重威胁。\n\n" );
+            buffer.Add( "在星站插槽中建造前哨站以保持高防御上限。", ObjectiveColors.Hint );
         }
     }
 
@@ -196,12 +196,12 @@ namespace Arcen.AIW2.External
         public MouseHandlingResult ClickHandler( ActualObjective Objective ) { return MouseHandlingResult.None; }
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "Tyderian Veins", "ffaa44" ).Add( " are both a threat and an opportunity.\n\n" );
-            buffer.Add( "Left alone, Veins strengthen the AI and spawn hostile units. But destroying them yields ", ObjectiveColors.Hint ).Add( "Tyderian", "ffaa44" ).Add( ", a resource used for critical Armada upgrades and building new Starbases.\n\n" );
-            buffer.Add( "You can also Hack Veins for larger payouts:\n" );
-            buffer.Add( "  Summon Tyderian Abomination", ObjectiveColors.Keyword ).Add( ": defeat it for a large Tyderian reward.\n" );
-            buffer.Add( "  Summon Tyderian Eschaton", ObjectiveColors.Keyword ).Add( ": defeat it for Science.\n" );
-            buffer.Add( "  Empower Vein", ObjectiveColors.Keyword ).Add( ": boost the Vein's yield at increased risk.\n\n" );
+            buffer.Add( "Tyderian矿脉", "ffaa44" ).Add( "既是威胁也是机遇。\n\n" );
+            buffer.Add( "放任不管，矿脉会增强AI并生成敌对单位。但摧毁它们可获得", ObjectiveColors.Hint ).Add( "Tyderian", "ffaa44" ).Add( "，一种用于关键舰队升级和建造新星站的资源。\n\n" );
+            buffer.Add( "你也可以入侵矿脉以获得更大收益：\n" );
+            buffer.Add( "  召唤Tyderian憎恶", ObjectiveColors.Keyword ).Add( "：击败它以获得大量Tyderian奖励。\n" );
+            buffer.Add( "  召唤Tyderian终末", ObjectiveColors.Keyword ).Add( "：击败它以获得科技。\n" );
+            buffer.Add( "  增强矿脉", ObjectiveColors.Keyword ).Add( "：提升矿脉产量，但风险增加。\n\n" );
         }
     }
 

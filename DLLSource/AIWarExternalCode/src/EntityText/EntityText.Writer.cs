@@ -231,9 +231,9 @@ namespace Arcen.AIW2.External
                 if ( hackBeingDoneAgainstUs != null && hackBeingDoneAgainstUs.IsAGrantShipStyleHack )
                 {
                     if ( relatedEntityTypeData.IsBlockedFromDSSGrantToCommandStations )
-                        buffer.Add( "Will not be granted to command stations; only battlestations and citadels.\n" );
+                        buffer.Add( "不会授予指挥站，仅授予战斗空间站和要塞。\n" );
                     if ( relatedEntityTypeData.IsBlockedFromDSSGrantToBattlestationsAndCitadels )
-                        buffer.Add( "Will not be granted to battlestations or citadels; only command stations.\n" );
+                        buffer.Add( "不会授予战斗空间站或要塞，仅授予指挥站。\n" );
                 }
 
                 debugstage = 17;
@@ -450,7 +450,7 @@ namespace Arcen.AIW2.External
                             
                             if ( relatedSquadOrNull.IsInHoldFireMode )
                             {
-                                buffer.Add( "Paused", "cccccc" );
+                                buffer.Add( "已暂停", "cccccc" );
                             } 
                             else
                             {
@@ -469,48 +469,48 @@ namespace Arcen.AIW2.External
                                     FactionType planetController = relatedSquadOrNull.Planet == null ? FactionType.NaturalObject : relatedSquadOrNull.Planet.GetControllingFactionType();
                                     if ( planetController == FactionType.NaturalObject )
                                     {
-                                        buffer.Add( "Requires Planet Control", "bbbbbb" );
+                                        buffer.Add( "需要星球控制权", "bbbbbb" );
                                     } 
                                     else 
                                     if ( planetController != FactionType.Player )
                                     {
-                                        buffer.Add( "Blocked by enemy", "aa3333" );
+                                        buffer.Add( "被敌人阻挡", "aa3333" );
                                     } 
                                     else 
                                     if ( forFaction.SecondsSinceBrownout > 0 )
                                     {
-                                        buffer.Add( "Stopped (Brownout)", "ff2222" );
+                                        buffer.Add( "已停止（能量不足）", "ff2222" );
                                     } 
                                     else 
                                     if ( forFaction.NetEnergy < entityType.EnergyUsage )
                                     {
-                                        buffer.Add( "Stopped (Power Lacking)", "cc2222" );
+                                        buffer.Add( "已停止（缺电）", "cc2222" );
                                     } 
                                     else 
                                     if ( World_AIW2.Instance.IsFuelEnabled && 
                                          relatedEntityTypeData.FuelUseType == ResourceType.FuelArgon && 
                                          forFaction.NetFuelArgon < entityType.FuelUse )
                                     {
-                                        buffer.Add( "Stopped (Argon Lacking)", "cc2222" );
+                                        buffer.Add( "已停止（缺氩）", "cc2222" );
                                     } 
                                     else 
                                     if ( World_AIW2.Instance.IsFuelEnabled && 
                                          relatedEntityTypeData.FuelUseType == ResourceType.FuelRadon && 
                                          forFaction.FuelRadonConsumption < entityType.FuelUse )
                                     {
-                                        buffer.Add( "Stopped (Radon Lacking)", "cc2222" );
+                                        buffer.Add( "已停止（缺氡）", "cc2222" );
                                     } 
                                     else 
                                     if ( World_AIW2.Instance.IsFuelEnabled && 
                                          relatedEntityTypeData.FuelUseType == ResourceType.FuelXenon && 
                                          forFaction.FuelXenonConsumption < entityType.FuelUse )
                                     {
-                                        buffer.Add( "Stopped (Xenon Lacking)", "cc2222" );
+                                        buffer.Add( "已停止（缺氙）", "cc2222" );
                                     } 
                                     else 
                                     if ( relatedSquadOrNull.GetCurrentHullPoints() == 1 )
                                     {
-                                        buffer.Add( "Ready", "55dd55" );
+                                        buffer.Add( "就绪", "55dd55" );
                                     }
                                     else
                                     {
@@ -519,10 +519,10 @@ namespace Arcen.AIW2.External
                                         if ( detailLevel == TooltipDetail.Full )
                                         {
                                             buffer.Add( " (" );
-                                            if ( useText )
-                                                buffer.Add( "Metal: " );
-                                            
-                                            var metalToClaimRem = relatedSquadOrNull.GetMetalToClaimRemaining();
+                                        if ( useText )
+                                            buffer.Add( "金属：" );
+                                        
+                                        var metalToClaimRem = relatedSquadOrNull.GetMetalToClaimRemaining();
                                             buffer.WrapMetalTruncated( metalToClaimRem * hullPerc / 100, useIcons, false ).Add( " / " ).WrapMetalTruncated( relatedSquadOrNull.DataForMark.MetalCostToClaim, false, false ).Add( ")" );
                                         }
                                     }
@@ -542,7 +542,7 @@ namespace Arcen.AIW2.External
                             
                             if ( relatedSquadOrNull.IsInHoldFireMode )
                             {
-                                buffer.Add( "Paused", "cccccc" );
+                                buffer.Add( "已暂停", "cccccc" );
                             } 
                             else
                             {
@@ -553,11 +553,11 @@ namespace Arcen.AIW2.External
                             {
                                 buffer.Add( " (" );
                                 
-                                if ( useText )
-                                    buffer.Add( "Metal: " );
-                                
-                                buffer
-                                    .WrapMetalTruncated( metalCost - relatedSquadOrNull.SelfBuildingMetalRemaining, useIcons, false )
+                                    if ( useText )
+                                        buffer.Add( "金属：" );
+                                    
+                                    buffer
+                                        .WrapMetalTruncated( metalCost - relatedSquadOrNull.SelfBuildingMetalRemaining, useIcons, false )
                                     .Add( " / " )
                                     .WrapMetalTruncated( metalCost, false, false )
                                     .Add( ")" );
@@ -580,7 +580,7 @@ namespace Arcen.AIW2.External
                             var beh = relatedSquadOrNull.Orders.Behavior;
                             if ( relatedSquadOrNull.IsInHoldFireMode )
                             {
-                                buffer.Add( "Stand Down", "444499" );
+                                buffer.Add( "停火待命", "444499" );
                             } 
                             else 
                             if (beh == EntityBehaviorType.Attacker_Full)
@@ -590,11 +590,11 @@ namespace Arcen.AIW2.External
                                     if ( entityFaction != null && 
                                          entityFaction.Type == FactionType.Player )
                                     {
-                                        buffer.Add( "Pursuit Mode", Window_InGameSelectionInfo.color_Pursuit );
+                                        buffer.Add( "追击模式", Window_InGameSelectionInfo.color_Pursuit );
                                     }
                                     else
                                     {
-                                        buffer.Add( "Roaming", "eeee88" );
+                                        buffer.Add( "游荡", "eeee88" );
                                     }
                                 }
                                 else
@@ -602,34 +602,34 @@ namespace Arcen.AIW2.External
                                     if ( entityFaction != null && 
                                          entityFaction.Type == FactionType.Player )
                                     {
-                                        buffer.Add( "Pursuit Mode", Window_InGameSelectionInfo.color_Pursuit );
+                                        buffer.Add( "追击模式", Window_InGameSelectionInfo.color_Pursuit );
                                     }
                                     else
                                     {
-                                        buffer.Add( "Attacking All", "ee8888" );
+                                        buffer.Add( "攻击所有", "ee8888" );
                                     }
                                 }
                             }
                             else
                             if (beh == EntityBehaviorType.Attacker_PursueOnlyInRange)
                             {
-                                buffer.Add( "Attack Move", Window_InGameSelectionInfo.color_AttackMove );
+                                buffer.Add( "攻击移动", Window_InGameSelectionInfo.color_AttackMove );
                                         
                             }
                             else
                             if (beh == EntityBehaviorType.Guard_FleetShip)
                             {
-                                buffer.Add( "Protect Ally", "88ee88" );
+                                buffer.Add( "保护盟友", "88ee88" );
                             }
                             else
                             if (beh == EntityBehaviorType.Guard_Guardian_Patrolling)
                             {
-                                buffer.Add( "Patrol Sector", "88ee88" );
+                                buffer.Add( "巡逻扇区", "88ee88" );
                             }
                             else
                             if (beh == EntityBehaviorType.Guard_Guardian_Anchored)
                             {
-                                buffer.Add( "Defend Position", "88ee88" );
+                                buffer.Add( "防守位置", "88ee88" );
                             }
                             else
                             if (beh == EntityBehaviorType.Stationary ||
@@ -637,11 +637,11 @@ namespace Arcen.AIW2.External
                             {
                                if ( relatedSquadOrNull.TypeData.IsMobile == false )
                                 {
-                                    buffer.Add( "Stationary", "777777" );
+                                    buffer.Add( "静止", "777777" );
                                 }
                                 else
                                 {
-                                    buffer.Add( "Defending", "88ee88" );
+                                    buffer.Add( "防守中", "88ee88" );
                                 }
                             }
 
@@ -751,7 +751,7 @@ namespace Arcen.AIW2.External
                              !relatedEntityTypeData.CannotBeSuperchargedWhenInSuperchargedFleet )
                         {
                             this.WriteHullBuffsStartIfNeeded( buffer, useIcons, ref wroteBuffStart, ref wroteHullBuffStart );
-                            buffer.Add( "Fleet Amp: +" ).AddPercentRoundedDynamically( (fleetMembershipOrNull.Fleet.HullMultiplier - 1) * 100 );
+                            buffer.Add( "舰队增幅：+" ).AddPercentRoundedDynamically( (fleetMembershipOrNull.Fleet.HullMultiplier - 1) * 100 );
                         }
                     }
                     #endregion
@@ -767,7 +767,7 @@ namespace Arcen.AIW2.External
                         if ( fleetMembershipOrNull != null && fleetMembershipOrNull.Fleet.ShieldsMultiplier > FInt.One && !relatedEntityTypeData.CannotBeSuperchargedWhenInSuperchargedFleet )
                         {
                             this.WriteShieldBuffsStartIfNeeded( buffer, useIcons, ref wroteBuffStart, ref wroteShieldBuffStart );
-                            buffer.Add( "Fleet Amp: +" ).AddPercentRoundedDynamically( (fleetMembershipOrNull.Fleet.ShieldsMultiplier - 1) * 100 );
+                            buffer.Add( "舰队增幅：+" ).AddPercentRoundedDynamically( (fleetMembershipOrNull.Fleet.ShieldsMultiplier - 1) * 100 );
                         }
                     }
                     #endregion
@@ -783,25 +783,25 @@ namespace Arcen.AIW2.External
                         if ( fleetMembershipOrNull != null && fleetMembershipOrNull.Fleet.AttackPowerMultiplier > FInt.One && !relatedEntityTypeData.CannotBeSuperchargedWhenInSuperchargedFleet )
                         {
                             this.WriteDamageBuffsStartIfNeeded( buffer, useIcons, ref wroteBuffStart, ref wroteDamageBuffStart );
-                            buffer.Add( "Fleet Amp: +" ).AddPercentRoundedDynamically( (fleetMembershipOrNull.Fleet.AttackPowerMultiplier - 1) * 100 );
+                            buffer.Add( "舰队增幅：+" ).AddPercentRoundedDynamically( (fleetMembershipOrNull.Fleet.AttackPowerMultiplier - 1) * 100 );
                         }
 
                         if ( forMark.Computed_BaseLongestWeaponRange > 0 && relatedSquadOrNull.PlanetFaction != null && relatedSquadOrNull.PlanetFaction.CurrentAttackMultiplier > FInt.One )
                         {
                             this.WriteDamageBuffsStartIfNeeded( buffer, useIcons, ref wroteBuffStart, ref wroteDamageBuffStart );
-                            buffer.Add( "Faction Planet Amp: +" ).AddPercentRoundedDynamically( (relatedSquadOrNull.PlanetFaction.CurrentAttackMultiplier - 1) * 100 );
+                            buffer.Add( "阵营星球增幅：+" ).AddPercentRoundedDynamically( (relatedSquadOrNull.PlanetFaction.CurrentAttackMultiplier - 1) * 100 );
                         }
 
                         if ( relatedSquadOrNull.TypeData.AmountAddedToDamagePerShipOfThisTypeOnPlanet > 0 && relatedSquadOrNull.CalculatedAddedDamage > 0 )
                         {
                             this.WriteDamageBuffsStartIfNeeded( buffer, useIcons, ref wroteBuffStart, ref wroteDamageBuffStart );
-                            buffer.Add( "Network: +" ).AddNumberTruncated( relatedSquadOrNull.CalculatedAddedDamage );
+                            buffer.Add( "网络：+" ).AddNumberTruncated( relatedSquadOrNull.CalculatedAddedDamage );
                         }
 
                         if ( relatedSquadOrNull.NumberOfWeaponPoints > 0 )
                         {
                             this.WriteDamageBuffsStartIfNeeded( buffer, false, ref wroteBuffStart, ref wroteDamageBuffStart );
-                            buffer.Add( "Weapon Points: " ).AddNumberMoreReadable( relatedSquadOrNull.NumberOfWeaponPoints );
+                            buffer.Add( "武器点数：" ).AddNumberMoreReadable( relatedSquadOrNull.NumberOfWeaponPoints );
                         }
                     }
                     #endregion
@@ -821,10 +821,10 @@ namespace Arcen.AIW2.External
                                 this.WriteSpeedBuffsStartIfNeeded( buffer, useIcons, ref wroteBuffStart, ref wroteSpeedBuffStart );
                                 if ( owningFactionOrNull != null && owningFactionOrNull.Type == FactionType.Player )
                                 {
-                                    buffer.Add( "Group Move: +" );
+                                    buffer.Add( "编队移动：+" );
                                 } else
                                 {
-                                    buffer.Add( "Speed Group: +" );
+                                    buffer.Add( "速度组：+" );
                                 }
                                 buffer.AddNumberMoreReadable( relatedSquadOrNull.SpeedLimitFromGroupMove - forMark.Speed );
                             }
@@ -832,13 +832,13 @@ namespace Arcen.AIW2.External
                             !relatedEntityTypeData.CannotBeSuperchargedWhenInSuperchargedFleet && !isCenterpiece )
                         {
                             this.WriteSpeedBuffsStartIfNeeded( buffer, useIcons, ref wroteBuffStart, ref wroteSpeedBuffStart );
-                            buffer.Add( "Fleet Amp: +" ).AddNumberMoreReadable( fleetMembershipOrNull.Fleet.OverridingMinSpeed - forMark.Speed );
+                            buffer.Add( "舰队增幅：+" ).AddNumberMoreReadable( fleetMembershipOrNull.Fleet.OverridingMinSpeed - forMark.Speed );
                         }
 
                         if ( relatedSquadOrNull.PlanetFaction != null && (relatedSquadOrNull.PlanetFaction.CurrentSpeedMultiplier > FInt.One || relatedSquadOrNull.PlanetFaction.CurrentSpeedFlatBonus > 0) )
                         {
                             this.WriteSpeedBuffsStartIfNeeded( buffer, useIcons, ref wroteBuffStart, ref wroteSpeedBuffStart );
-                            buffer.Add( "Faction Planet Amp: " );
+                            buffer.Add( "阵营星球增幅：" );
                             if ( relatedSquadOrNull.PlanetFaction.CurrentSpeedMultiplier > FInt.One )
                             {
                                 buffer.Add( "+ " ).AddPercentRoundedDynamically( (relatedSquadOrNull.PlanetFaction.CurrentSpeedMultiplier - 1) * 100 );
@@ -852,13 +852,13 @@ namespace Arcen.AIW2.External
                         if ( relatedSquadOrNull.Planet != null && relatedSquadOrNull.Planet.UnitSpeedupPercentage > 0 )
                         {
                             this.WriteSpeedBuffsStartIfNeeded( buffer, useIcons, ref wroteBuffStart, ref wroteSpeedBuffStart );
-                            buffer.Add( "Planet Amp: " ).AddPercentRoundedDynamically( relatedSquadOrNull.Planet.UnitSpeedupPercentage, 100 );
+                            buffer.Add( "星球增幅：" ).AddPercentRoundedDynamically( relatedSquadOrNull.Planet.UnitSpeedupPercentage, 100 );
                         }
 
                         if ( entityType.SpeedMultiplierFirst5SecondsOnPlanet > FInt.One && entityTimeOnPlanet <= 5 )
                         {
                             this.WriteSpeedBuffsStartIfNeeded( buffer, useIcons, ref wroteBuffStart, ref wroteSpeedBuffStart );
-                            buffer.Add( "Rapid Deployment: +" ).AddPercentRoundedDynamically( (entityType.SpeedMultiplierFirst5SecondsOnPlanet - 1) * 100 );
+                            buffer.Add( "快速部署：+" ).AddPercentRoundedDynamically( (entityType.SpeedMultiplierFirst5SecondsOnPlanet - 1) * 100 );
                             if ( detailLevel == TooltipDetail.Full )
                             {
                                 buffer.Add( " (" ).Add( 6 - entityTimeOnPlanet ).Add( "s)" );
@@ -871,20 +871,20 @@ namespace Arcen.AIW2.External
                             if ( order.TypeData != null && order.TypeData.Type == EntityOrderType.GetIntoTransport )
                             {
                                 this.WriteSpeedBuffsStartIfNeeded( buffer, useIcons, ref wroteBuffStart, ref wroteSpeedBuffStart );
-                                buffer.Add( "Loading: +" ).AddPercentRoundedDynamically( 2, 1 );
+                                buffer.Add( "装载：+" ).AddPercentRoundedDynamically( 2, 1 );
                             }
                         }
 
                         if ( isCenterpiece && relatedSquadOrNull.ActiveHack != null && speedMultiplierWhileHacking > FInt.One )
                         {
                             this.WriteSpeedBuffsStartIfNeeded( buffer, useIcons, ref wroteBuffStart, ref wroteSpeedBuffStart );
-                            buffer.Add( "Hacking: " ).AddPercentRoundedDynamically( (speedMultiplierWhileHacking - 1) * 100 );
+                                buffer.Add( "黑客入侵：" ).AddPercentRoundedDynamically( (speedMultiplierWhileHacking - 1) * 100 );
                         }
 
                         if ( owningFactionOrNull != null && relatedSquadOrNull.Planet != null && relatedSquadOrNull.Planet.IsFimbulwintered && owningFactionOrNull.BenefitsFromFimbulwinter )
                         {
                             this.WriteSpeedBuffsStartIfNeeded( buffer, useIcons, ref wroteBuffStart, ref wroteSpeedBuffStart );
-                            buffer.Add( "Fimbulwinter: +" ).AddPercentRoundedDynamically( ExternalConstants.Instance.FimbulwinterSpeedupPercent, 100 );
+                            buffer.Add( "芬布尔之冬：+" ).AddPercentRoundedDynamically( ExternalConstants.Instance.FimbulwinterSpeedupPercent, 100 );
                         }
                     }
 
@@ -900,7 +900,7 @@ namespace Arcen.AIW2.External
                         if ( fleetMembershipOrNull != null && relatedSquadOrNull.CalculatedAddedRange > 0 )
                         {
                             this.WriteRangeBuffsStartIfNeeded( buffer, useIcons, ref wroteBuffStart, ref wroteRangeBuffStart );
-                            buffer.Add( "Network: +" ).AddNumberTruncated( relatedSquadOrNull.CalculatedAddedRange );
+                            buffer.Add( "网络：+" ).AddNumberTruncated( relatedSquadOrNull.CalculatedAddedRange );
                         }
                     }
                     #endregion
@@ -939,7 +939,7 @@ namespace Arcen.AIW2.External
                     if ( relatedSquadOrNull.IncomingDamageAmplifiedDuration_Max15 > 0 && (relatedSquadOrNull.IncomingDamageAmplifiedByFlat > 0 || relatedSquadOrNull.IncomingDamageAmplifiedByMult > FInt.One) )
                     {
                         this.WriteDebuffsStartIfNeeded( buffer, ref wroteDebuffStart );
-                        buffer.Add( "Acid: (" ).Add( relatedSquadOrNull.IncomingDamageAmplifiedDuration_Max15 ).Add( "s, +" );
+                        buffer.Add( "酸蚀：（" ).Add( relatedSquadOrNull.IncomingDamageAmplifiedDuration_Max15 ).Add( "秒, +" );
                         if ( relatedSquadOrNull.IncomingDamageAmplifiedByFlat > 0 )
                         {
                             buffer.AddNumberMoreReadable( relatedSquadOrNull.IncomingDamageAmplifiedByFlat );
@@ -960,7 +960,7 @@ namespace Arcen.AIW2.External
                     if ( relatedSquadOrNull.CorrosionDamageToBeAppliedToMe > 0 )
                     {
                         this.WriteDebuffsStartIfNeeded( buffer, ref wroteDebuffStart );
-                        buffer.Add( "Corrosion: " ).Add( relatedSquadOrNull.CorrosionDamageToBeAppliedToMe );
+                        buffer.Add( "腐蚀：" ).Add( relatedSquadOrNull.CorrosionDamageToBeAppliedToMe );
                     }
                     #endregion
 
@@ -968,7 +968,7 @@ namespace Arcen.AIW2.External
                     if ( relatedSquadOrNull.CurrentParalysisSeconds > 0 )
                     {
                         this.WriteDebuffsStartIfNeeded( buffer, ref wroteDebuffStart );
-                        buffer.Add( "Paralysis: (" ).Add( relatedSquadOrNull.CurrentParalysisSeconds ).Add( "s)" );
+                        buffer.Add( "瘫痪：（" ).Add( relatedSquadOrNull.CurrentParalysisSeconds ).Add( "秒）" );
                     }
                     #endregion
 
@@ -976,7 +976,7 @@ namespace Arcen.AIW2.External
                     if ( relatedSquadOrNull.CurrentWeaponAddedReloadSeconds > 0 )
                     {
                         this.WriteDebuffsStartIfNeeded( buffer, ref wroteDebuffStart );
-                        buffer.Add( "Reload Slow: (" ).Add( relatedSquadOrNull.CurrentWeaponAddedReloadSeconds ).Add( "s)" );
+                        buffer.Add( "装弹减速：（" ).Add( relatedSquadOrNull.CurrentWeaponAddedReloadSeconds ).Add( "秒）" );
                     }
                     #endregion
                     
@@ -988,7 +988,7 @@ namespace Arcen.AIW2.External
                             !relatedEntityTypeData.CannotBeSuperchargedWhenInSuperchargedFleet )
                         {
                             this.WriteHullDebuffsStartIfNeeded( buffer, useIcons, ref wroteDebuffStart, ref wroteHullDebuffStart );
-                            buffer.Add( "Fleet Damp: " ).AddPercentRoundedDynamically( (fleetMembershipOrNull.Fleet.HullMultiplier * 100) - 100 );
+                            buffer.Add( "舰队衰减：" ).AddPercentRoundedDynamically( (fleetMembershipOrNull.Fleet.HullMultiplier * 100) - 100 );
                         }
                     }
                     #endregion
@@ -1001,7 +1001,7 @@ namespace Arcen.AIW2.External
                             !relatedEntityTypeData.CannotBeSuperchargedWhenInSuperchargedFleet )
                         {
                             this.WriteShieldDebuffsStartIfNeeded( buffer, useIcons, ref wroteDebuffStart, ref wroteShieldDebuffStart );
-                            buffer.Add( "Fleet Damp: " ).AddPercentRoundedDynamically( (fleetMembershipOrNull.Fleet.ShieldsMultiplier * 100) - 100 );
+                            buffer.Add( "舰队衰减：" ).AddPercentRoundedDynamically( (fleetMembershipOrNull.Fleet.ShieldsMultiplier * 100) - 100 );
                         }
                     }
                     #endregion
@@ -1014,14 +1014,14 @@ namespace Arcen.AIW2.External
                             !relatedEntityTypeData.CannotBeSuperchargedWhenInSuperchargedFleet )
                         {
                             this.WriteDamageDebuffsStartIfNeeded( buffer, useIcons, ref wroteDebuffStart, ref wroteDamageDebuffStart );
-                            buffer.Add( "Fleet Damp: " ).AddPercentRoundedDynamically( (fleetMembershipOrNull.Fleet.AttackPowerMultiplier * 100) - 100 );
+                            buffer.Add( "舰队衰减：" ).AddPercentRoundedDynamically( (fleetMembershipOrNull.Fleet.AttackPowerMultiplier * 100) - 100 );
                         }
 
                         if ( forMark.Computed_BaseLongestWeaponRange > 0 && relatedSquadOrNull.PlanetFaction != null && relatedSquadOrNull.PlanetFaction.CurrentAttackMultiplier < FInt.One && relatedSquadOrNull.PlanetFaction.CurrentAttackMultiplier != FInt.Zero &&
                             !relatedEntityTypeData.CannotBeSuperchargedWhenInSuperchargedFleet )
                         {
                             this.WriteDamageDebuffsStartIfNeeded( buffer, useIcons, ref wroteDebuffStart, ref wroteDamageDebuffStart );
-                            buffer.Add( "Faction Planet Damp: " ).AddPercentRoundedDynamically( (relatedSquadOrNull.PlanetFaction.CurrentAttackMultiplier * 100) - 100 );
+                            buffer.Add( "阵营星球衰减：" ).AddPercentRoundedDynamically( (relatedSquadOrNull.PlanetFaction.CurrentAttackMultiplier * 100) - 100 );
                         }
 
                         if ( !relatedSquadOrNull.IsFakeEntity && 
@@ -1082,7 +1082,7 @@ namespace Arcen.AIW2.External
                             if ( foundAny )
                             {
                                 this.WriteDamageDebuffsStartIfNeeded( buffer, useIcons, ref wroteDebuffStart, ref wroteDamageDebuffStart );
-                                buffer.Add( "Under Forcefield: -50%" );
+                                buffer.Add( "力场下：-50%" );
                                 if ( !toEveryWeapon )
                                 {
                                     buffer.Add( " to " );
@@ -1128,10 +1128,10 @@ namespace Arcen.AIW2.External
                             FInt slowFactor = ExternalConstants.Instance.EngineStunMultipliersByStunSeconds[index];
                             if ( slowFactor <= FInt.Zero )
                             {
-                                buffer.Add( "Engine Stun: (" ).Add( relatedSquadOrNull.CurrentEngineStunSeconds ).Add( "s, -100%)" );
+                                buffer.Add( "引擎眩晕：（" ).Add( relatedSquadOrNull.CurrentEngineStunSeconds ).Add( "秒, -100%）" );
                             } else
                             {
-                                buffer.Add( "Engine Slow: (" ).Add( relatedSquadOrNull.CurrentEngineStunSeconds ).Add( "s, " ).AddPercentRoundedDynamically( (slowFactor * 100) - 100 ).Add( ")" );
+                                buffer.Add( "引擎减速：（" ).Add( relatedSquadOrNull.CurrentEngineStunSeconds ).Add( "秒, " ).AddPercentRoundedDynamically( (slowFactor * 100) - 100 ).Add( "）" );
                             }
                         }
                         #endregion
@@ -1139,7 +1139,7 @@ namespace Arcen.AIW2.External
                         if ( relatedSquadOrNull.CurrentCountOfTractorsPullingOnThis > 0 )
                         {
                             this.WriteSpeedDebuffsStartIfNeeded( buffer, useIcons, ref wroteDebuffStart, ref wroteSpeedDebuffStart );
-                            buffer.Add( "Caught in Tractor Beam: -100%" );
+                            buffer.Add( "被牵引光束捕获：-100%" );
                         } else
                         {
                             if ( relatedSquadOrNull.SpeedLimitFromGroupMove > 0 && relatedSquadOrNull.SpeedLimitFromGroupMove < forMark.Speed )
@@ -1147,10 +1147,10 @@ namespace Arcen.AIW2.External
                                 this.WriteSpeedDebuffsStartIfNeeded( buffer, useIcons, ref wroteDebuffStart, ref wroteSpeedDebuffStart );
                                 if ( owningFactionOrNull != null && owningFactionOrNull.Type == FactionType.Player )
                                 {
-                                    buffer.Add( "Group Move: " );
+                                    buffer.Add( "编队移动：" );
                                 } else
                                 {
-                                    buffer.Add( "Speed Group: " );
+                                    buffer.Add( "速度组：" );
                                 }
                                 buffer.AddNumberMoreReadable( relatedSquadOrNull.SpeedLimitFromGroupMove - forMark.Speed );
                             }
@@ -1158,7 +1158,7 @@ namespace Arcen.AIW2.External
                             if ( relatedSquadOrNull.PlanetFaction != null && (relatedSquadOrNull.PlanetFaction.CurrentSpeedMultiplier < FInt.One || relatedSquadOrNull.PlanetFaction.CurrentSpeedFlatBonus < 0) )
                             {
                                 this.WriteSpeedDebuffsStartIfNeeded( buffer, useIcons, ref wroteDebuffStart, ref wroteSpeedDebuffStart );
-                                buffer.Add( "Faction Planet Damp: " );
+                                buffer.Add( "阵营星球衰减：" );
                                 if ( relatedSquadOrNull.PlanetFaction.CurrentSpeedMultiplier < FInt.One )
                                 {
                                     buffer.Add( " " ).AddPercentRoundedDynamically( (relatedSquadOrNull.PlanetFaction.CurrentSpeedMultiplier * 100) - 100 );
@@ -1172,13 +1172,13 @@ namespace Arcen.AIW2.External
                             if ( relatedSquadOrNull.Planet != null && relatedSquadOrNull.Planet.UnitSlowPercentage > 0 )
                             {
                                 this.WriteSpeedDebuffsStartIfNeeded( buffer, useIcons, ref wroteDebuffStart, ref wroteSpeedDebuffStart );
-                                buffer.Add( "Planet Damp: " ).AddPercentRoundedDynamically( -relatedSquadOrNull.Planet.UnitSlowPercentage, 100 );
+                                buffer.Add( "星球衰减：" ).AddPercentRoundedDynamically( -relatedSquadOrNull.Planet.UnitSlowPercentage, 100 );
                             }
 
                             if ( entityType.SpeedMultiplierFirst5SecondsOnPlanet < FInt.One && entityType.SpeedMultiplierFirst5SecondsOnPlanet != FInt.Zero && entityTimeOnPlanet <= 5 )
                             {
                                 this.WriteSpeedDebuffsStartIfNeeded( buffer, useIcons, ref wroteDebuffStart, ref wroteSpeedDebuffStart );
-                                buffer.Add( "Arrival: " ).AddPercentRoundedDynamically( (entityType.SpeedMultiplierFirst5SecondsOnPlanet * 100) - 100 );
+                                buffer.Add( "抵达：" ).AddPercentRoundedDynamically( (entityType.SpeedMultiplierFirst5SecondsOnPlanet * 100) - 100 );
                                 if ( detailLevel == TooltipDetail.Full )
                                 {
                                     buffer.Add( " (for " ).Add( 6 - entityTimeOnPlanet ).Add( "s)" );
@@ -1188,20 +1188,20 @@ namespace Arcen.AIW2.External
                             if ( isCenterpiece && relatedSquadOrNull.ActiveHack != null && speedMultiplierWhileHacking < FInt.One )
                             {
                                 this.WriteSpeedDebuffsStartIfNeeded( buffer, useIcons, ref wroteDebuffStart, ref wroteSpeedDebuffStart );
-                                buffer.Add( "Hacking: " ).AddPercentRoundedDynamically( (speedMultiplierWhileHacking - 1) * 100 );
+                            buffer.Add( "黑客入侵：" ).AddPercentRoundedDynamically( (speedMultiplierWhileHacking - 1) * 100 );
                             }
 
                             if ( owningFactionOrNull != null && relatedSquadOrNull.Planet != null && relatedSquadOrNull.Planet.IsFimbulwintered && !owningFactionOrNull.BenefitsFromFimbulwinter )
                             {
                                 this.WriteSpeedDebuffsStartIfNeeded( buffer, useIcons, ref wroteDebuffStart, ref wroteSpeedDebuffStart );
-                                buffer.Add( "Fimbulwinter: " ).AddPercentRoundedDynamically( -ExternalConstants.Instance.FimbulwinterSlowdownPercent, 100 );
+                                buffer.Add( "芬布尔之冬：" ).AddPercentRoundedDynamically( -ExternalConstants.Instance.FimbulwinterSlowdownPercent, 100 );
                             }
 
                             FInt grav = relatedSquadOrNull.CurrentGravitySpeedMultiplier.Display;
                             if ( grav < FInt.One && grav != FInt.Zero )
                             {
                                 this.WriteSpeedDebuffsStartIfNeeded( buffer, useIcons, ref wroteDebuffStart, ref wroteSpeedDebuffStart );
-                                buffer.Add( "Gravity: " ).AddPercentRoundedDynamically( grav * 100 );
+                                buffer.Add( "重力：" ).AddPercentRoundedDynamically( grav * 100 );
                             }
                         }
                     }
@@ -1643,7 +1643,7 @@ namespace Arcen.AIW2.External
                 {
                     buffer.BeginStatement(TextStyle.System_Line);
                     
-                    buffer.AddModuleTag(true).Add( "Stat-Boost", TextStyle.Attr_Label );
+                    buffer.AddModuleTag(true).Add( "属性提升", TextStyle.Attr_Label );
                     buffer.Add("：加成 ");
                             
                     int counter = 0;
@@ -1835,11 +1835,11 @@ namespace Arcen.AIW2.External
                 if (key.Equals("count"))
                 {
                     if ( Config.ExtraFlags.HasFlag( ShipExtraDetailFlags.InGuardPost ) )
-                        buffer.Add( "Loaded ", "ff622b" );
+                        buffer.Add( "已装载 ", "ff622b" );
                     else if ( Config.ExtraFlags.HasFlag( ShipExtraDetailFlags.BeingTransported ) )
-                        buffer.Add( "Loaded ", "59d2ff" );
+                        buffer.Add( "已装载 ", "59d2ff" );
                     else if ( Config.ExtraFlags.HasFlag( ShipExtraDetailFlags.LoadedDrone ) )
-                        buffer.Add( "Loaded ", "59d2ff" );
+                        buffer.Add( "已装载 ", "59d2ff" );
 
                     if ( Config.OptShipCount > 1 )
                     {
@@ -1900,7 +1900,7 @@ namespace Arcen.AIW2.External
                                             } 
                                             else
                                             {
-                                                buff.Add( "Random " );
+                                                buff.Add( "随机 " );
                                             }
                                         } 
                                         else 
@@ -1912,7 +1912,7 @@ namespace Arcen.AIW2.External
                                             } 
                                             else
                                             {
-                                                buff.Add( "Adaptive " );
+                                                buff.Add( "自适应 " );
                                             }
                                         } 
                                         else
@@ -2366,41 +2366,41 @@ namespace Arcen.AIW2.External
             switch(order.TypeData.Type)
             {
                 case EntityOrderType.Assist:
-                    buffer.Add( "Assist " );
+                    buffer.Add( "协助 " );
                     WriteEntityForOrder( order.RelatedSquad.GetSquad(), buffer );
                     break;
                 case EntityOrderType.Attack:
-                    buffer.Add( "Attack " );
+                    buffer.Add( "攻击 " );
                     WriteEntityForOrder( order.RelatedSquad.GetSquad(), buffer );
                     break;
                 case EntityOrderType.GetIntoTransport:
-                    buffer.Add( "Load into " );
+                    buffer.Add( "装载入 " );
                     WriteEntityForOrder( order.RelatedSquad.GetSquad(), buffer );
                     break;
                 case EntityOrderType.Unload_Transport:
-                    buffer.Add( "Unload" );
+                    buffer.Add( "卸载" );
                     break;
                 case EntityOrderType.SetBehavior_Attacker_Full:
-                    buffer.Add( "Go Attack All" );
+                    buffer.Add( "攻击所有" );
                     break;
                 case EntityOrderType.SetBehavior_Attacker_PursueOnlyInRange:
-                    buffer.Add( "Go Attack Move" );
+                    buffer.Add( "攻击移动" );
                     break;
                 case EntityOrderType.SetBehavior_Stationary:
-                    buffer.Add( "Stop Moving" );
+                    buffer.Add( "停止移动" );
                     break;
                 case EntityOrderType.SetBehavior_StopToShootAnySeenTargets_Off:
-                    buffer.Add( "Move On" );
+                    buffer.Add( "继续移动" );
                     break;
                 case EntityOrderType.SetBehavior_StopToShootAnySeenTargets_On:
-                    buffer.Add( "Attack Targets" );
+                    buffer.Add( "攻击目标" );
                     break;
                 case EntityOrderType.Wormhole:
                     Int16 finalDestinationPlanetIndex = entity.CalculateFinalDestinationPlanetIndex_Safe();
                     if ( finalDestinationPlanetIndex == entity.CalculateNextHopPlanetIndex_Safe() )
                     {
                         Planet planet = World_AIW2.Instance.GetPlanetByIndex( order.RelatedPlanetIndex );
-                        buffer.Add( "Go to " );
+                        buffer.Add( "前往 " );
                         if ( planet == null )
                         {
                             buffer.Add( "unknown planet" );
@@ -2412,7 +2412,7 @@ namespace Arcen.AIW2.External
                     {
                         Planet planet1 = World_AIW2.Instance.GetPlanetByIndex( order.RelatedPlanetIndex );
                         Planet planet2 = World_AIW2.Instance.GetPlanetByIndex( finalDestinationPlanetIndex );
-                        buffer.Add( "Go via " );
+                        buffer.Add( "途经 " );
                         if ( planet1 == null )
                         {
                             buffer.Add( "unknown planet" );
@@ -2431,7 +2431,7 @@ namespace Arcen.AIW2.External
                     }
                     break;
                 case EntityOrderType.Move_Decollision:
-                    buffer.Add( "Decollide" );
+                    buffer.Add( "解碰撞" );
                     break;
                 case EntityOrderType.Move_Normal:
                     buffer.Add( "移动至 " ).Add(order.RelatedPoint.X - 400000).Add(" / ").Add(order.RelatedPoint.Y - 400000);
@@ -2744,7 +2744,7 @@ namespace Arcen.AIW2.External
                 /*
                 if(ForDebug)
                 {
-                    buffer.Add( "Spawns nothing (any more) because it is disabled" );
+                    buffer.Add( "因其已禁用，不再生成任何东西" );
                 }
                 */
                 return;
@@ -2854,7 +2854,7 @@ namespace Arcen.AIW2.External
                             switch(bag.AIBudgetSubCategoryList[i])
                             {
                                 case EntityTypeDrawingBag_AIBudgetSubCategory.NormalAIShipGroup:
-                                    buffer.Add( "Normal" );
+                                    buffer.Add( "普通" );
                                     break;
                                 case EntityTypeDrawingBag_AIBudgetSubCategory.GuardPostAIShipGroup:
                                     buffer.Add( "Guard Post" );

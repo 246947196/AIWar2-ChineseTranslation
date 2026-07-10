@@ -47,7 +47,7 @@ namespace Arcen.AIW2.External
         public override bool MouseoverHandler( NotifierFillData Data )
         {
             tooltipBuffer.Clear();
-            tooltipBuffer.Add( "These are Nomad Planets en route to crashing:\n\n" );
+            tooltipBuffer.Add( "以下是正在撞击途中的游牧星球：\n\n" );
             bool isFirst = true;
             for ( int i = 0; i < Data.PlanetList.Count; i++ )
             {
@@ -72,7 +72,7 @@ namespace Arcen.AIW2.External
                     tooltipBuffer.AddHoursAndMinutes( timeTillNextMove, moveTimerColor ).Add( ".\n" );
                     int timeEstimate = planet.SecondsTillNomadCrashes;
                     if ( timeEstimate <= 0 || timeEstimate >= 9000 )
-                        tooltipBuffer.Add( "\t\t" ).Add( "The planet should crash soon" ).Add( ".\n" );
+                        tooltipBuffer.Add( "\t\t" ).Add( "该星球应该即将撞击" ).Add( "。\n" );
                     else
                     {
                         moveTimerColor = ArcenExternalUIUtilities.GetColorForNomadMoveTime( timeEstimate );
@@ -85,13 +85,13 @@ namespace Arcen.AIW2.External
                 if ( planet.NomadTargetPlanetIdx != -1 )
                 {
                     Planet targetPlanet = World_AIW2.Instance.GetPlanetByIndex( planet.NomadTargetPlanetIdx );
-                    tooltipBuffer.Add( "This planet is going to crash into  " ).Add( targetPlanet.Name, "ffa1a1" ).Add( "." );
+                    tooltipBuffer.Add( "该星球将撞击 " ).Add( targetPlanet.Name, "ffa1a1" ).Add( "。" );
                 }
                 tooltipBuffer.Add( "\n" );
                 int maxPlanets = 18;
                 if ( i > maxPlanets && Data.PlanetList.Count > maxPlanets + 2 )
                 {
-                    tooltipBuffer.Add( "There are " + (Data.PlanetList.Count - i) + " additional planets that will move soon.\n" );
+                    tooltipBuffer.Add( "还有 " + (Data.PlanetList.Count - i) + " 个额外的行星即将移动。\n" );
                     break;
                 }
             }
@@ -131,7 +131,7 @@ namespace Arcen.AIW2.External
                         buffer.Add( planet.Name );
                     }
                     else
-                        buffer.Add( Data.PlanetList.Count ).Add( " Nomads" );
+                        buffer.Add( Data.PlanetList.Count ).Add( " 游牧者" );
                     SubTexts[0].Text.FinishWritingToBuffer();
 
                     debugStage = 22;

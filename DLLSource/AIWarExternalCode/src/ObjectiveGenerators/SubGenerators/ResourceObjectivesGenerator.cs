@@ -470,29 +470,29 @@ namespace Arcen.AIW2.External
                 }
             }
 
-            buffer.Add( "Destroying the " ).Add( count, ObjectiveColors.Reward ).Add( DescribeTargets( kind, count ) )
+            buffer.Add( "摧毁" ).Add( count, ObjectiveColors.Reward ).Add( DescribeTargets( kind, count ) )
                 .Add( planet.Name, planet.GetControllingFaction().FactionCenterColor.ColorHexBrighter )
-                .Add( " will grant a total of " );
+                .Add( "总共将获得" );
             switch ( kind )
             {
                 case DestructionResourceKind.Hacking:
-                    buffer.Add( hacking, ObjectiveColors.Reward ).Add( " hacking points (HaP)." );
+                    buffer.Add( hacking, ObjectiveColors.Reward ).Add( "入侵点数（HaP）。" );
                     break;
                 case DestructionResourceKind.ScienceAndHacking:
-                    buffer.Add( science, ObjectiveColors.Reward ).Add( " science and " ).Add( hacking, ObjectiveColors.Reward ).Add( " hacking points (HaP)." );
+                    buffer.Add( science, ObjectiveColors.Reward ).Add( "科技和" ).Add( hacking, ObjectiveColors.Reward ).Add( "入侵点数（HaP）。" );
                     break;
                 case DestructionResourceKind.Essence:
                     buffer.AddResourceOne_MoreReadable( essence, true );
                     break;
                 default:
-                    buffer.Add( science, ObjectiveColors.Reward ).Add( " science." );
+                    buffer.Add( science, ObjectiveColors.Reward ).Add( "科技。" );
                     break;
             }
 
             AppendKillBreakdown( buffer, kind );
 
             if ( aip > 0 )
-                buffer.Add( "\n\nDestroying them all would also raise the AI Progress by " ).Add( aip, ObjectiveColors.AIP ).Add( "." );
+                buffer.Add( "\n\n摧毁全部也会使AI进程增加" ).Add( aip, ObjectiveColors.AIP ).Add( "。" );
         }
 
         private static void AccumulateKill( GameEntityTypeData type, long weight )
@@ -519,7 +519,7 @@ namespace Arcen.AIW2.External
                 viewing = World_AIW2.Instance.GetFirstPlayerFactionOrNull();
 
             int shown = Math.Min( 4, killTypes.Count );
-            buffer.Add( "\n\n" ).Add( "Best targets:", ObjectiveColors.Header );
+            buffer.Add( "\n\n" ).Add( "最佳目标：", ObjectiveColors.Header );
             for ( int i = 0; i < shown; i++ )
             {
                 GameEntityTypeData type = killTypes[i];
@@ -531,7 +531,7 @@ namespace Arcen.AIW2.External
                 AppendKillAmount( buffer, type, c, kind );
             }
             if ( killTypes.Count > shown )
-                buffer.Add( "\n  " ).Add( "...and " + ( killTypes.Count - shown ) + " more type" + ( killTypes.Count - shown == 1 ? "" : "s" ), ObjectiveColors.Muted );
+                buffer.Add( "\n  " ).Add( "……以及另外" + ( killTypes.Count - shown ) + "种类型", ObjectiveColors.Muted );
         }
 
         private static void AppendKillAmount( ArcenDoubleCharacterBuffer buffer, GameEntityTypeData type, int count, DestructionResourceKind kind )
@@ -562,13 +562,13 @@ namespace Arcen.AIW2.External
             switch ( kind )
             {
                 case DestructionResourceKind.Hacking:
-                    return one ? " HaP-granting target on " : " HaP-granting targets on ";
+                    return one ? "个提供HaP的目标位于" : "个提供HaP的目标位于";
                 case DestructionResourceKind.ScienceAndHacking:
-                    return one ? " target on " : " targets on ";
+                    return one ? "个目标位于" : "个目标位于";
                 case DestructionResourceKind.Essence:
-                    return one ? " essence-granting target on " : " essence-granting targets on ";
+                    return one ? "个提供精华的目标位于" : "个提供精华的目标位于";
                 default:
-                    return one ? " science-granting target on " : " science-granting targets on ";
+                    return one ? "个提供科技的目标位于" : "个提供科技的目标位于";
             }
         }
 
@@ -579,9 +579,9 @@ namespace Arcen.AIW2.External
         private const string EconomicStationColor = "78c8ff";
         internal static void AppendDefensiveCapMultiplierNote( ArcenDoubleCharacterBuffer buffer )
         {
-            buffer.Add( "\n\n" ).Add( "Military", MilitaryStationColor ).Add( " stations get the most, " )
-                .Add( "economic", EconomicStationColor ).Add( " ones the fewest." );
-            buffer.Add( "\n<size=85%>" ).Add( "(scaled by each station's Defensive Structure Cap Multiplier)", ObjectiveColors.Muted ).Add( "</size>" );
+            buffer.Add( "\n\n" ).Add( "军事", MilitaryStationColor ).Add( "指挥站获得最多，" )
+                .Add( "经济", EconomicStationColor ).Add( "指挥站获得最少。" );
+            buffer.Add( "\n<size=85%>" ).Add( "（按每个指挥站的防御建筑容量倍数缩放）", ObjectiveColors.Muted ).Add( "</size>" );
         }
     }
 
@@ -598,7 +598,7 @@ namespace Arcen.AIW2.External
 
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "A " ).Add( "Zenith Power Generator", ObjectiveColors.Keyword ).Add( " (ZPG) provides a large amount of " ).Add( "Energy", ObjectiveColors.Reward ).Add( " when captured. Take and hold it." );
+            buffer.Add( "天顶能量发电机", ObjectiveColors.Keyword ).Add( "（ZPG）在占领后提供大量" ).Add( "能量", ObjectiveColors.Reward ).Add( "。占领并守住它。" );
         }
     }
 
@@ -615,7 +615,7 @@ namespace Arcen.AIW2.External
 
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "A " ).Add( "Zenith Matter Converter", ObjectiveColors.Keyword ).Add( " (ZMC) provides a large amount of " ).Add( "Metal", ObjectiveColors.Reward ).Add( " when captured. Take and hold it." );
+            buffer.Add( "天顶物质转换器", ObjectiveColors.Keyword ).Add( "（ZMC）在占领后提供大量" ).Add( "金属", ObjectiveColors.Reward ).Add( "。占领并守住它。" );
         }
     }
 
@@ -635,13 +635,13 @@ namespace Arcen.AIW2.External
             GameEntity_Squad entity = Objective.RelatedEntity1;
             if ( entity != null )
                 buffer.AddObjectiveEntityHeader( entity, entity.GetFactionCenterColorHexBrighter_Safe() );
-            buffer.Add( "Capturing it lets ALL of your command stations build " ).Add( "more defensive structures", ObjectiveColors.Keyword ).Add( ", listed below." );
+            buffer.Add( "占领它让你所有的指挥站都能建造" ).Add( "更多防御建筑", ObjectiveColors.Keyword ).Add( "，如下所列。" );
             ResourceObjectivesGenerator.AppendDefensiveCapMultiplierNote( buffer );
             if ( Objective.RelatedEntity1 == null || Objective.RelatedEntity1.ShipGrantsList.Count <= 0 )
-                buffer.Add( "\n\nNo turrets or other structures are granted from this one for some reason!  (This is a bug, please report it with a savegame.)" );
+                buffer.Add( "\n\n这个没有提供任何炮塔或其他建筑！原因不明。（这是一个 bug，请用存档报告。）" );
             else
             {
-                buffer.Add( "\n\n" ).Add( "<color=#8092ff>" ).Add( Objective.RelatedEntity1.ShipGrantsList.Count ).Add( "</color>" ).Add( " Structures Granted" );
+                buffer.Add( "\n\n" ).Add( "<color=#8092ff>" ).Add( Objective.RelatedEntity1.ShipGrantsList.Count ).Add( "</color>" ).Add( " 已获得的结构" );
                 if ( Objective.Hook.Category != null && Objective.Hook.Category.IsFilteredUnitAquisitionObjective )
                     buffer.Add( ", including" );
                 buffer.Add( ":\n" );
@@ -701,15 +701,15 @@ namespace Arcen.AIW2.External
         {
             if ( Objective.RelatedEntity1 != null )
                 buffer.AddObjectiveEntityHeader( Objective.RelatedEntity1, Objective.RelatedEntity1.GetFactionCenterColorHexBrighter_Safe() );
-            buffer.Add( "Hacking it unlocks a new " )
-                .Add( Objective.RelatedEntity1.TypeData.HackableForCommandStationsAndBattleStations_TurretCount > 0 ? "turret line" : "defensive line", ObjectiveColors.Keyword )
-                .Add( " that ALL of your command stations, battlestations, and citadels can build." );
+            buffer.Add( "入侵它解锁一种新的" )
+                .Add( Objective.RelatedEntity1.TypeData.HackableForCommandStationsAndBattleStations_TurretCount > 0 ? "炮塔线" : "防御线", ObjectiveColors.Keyword )
+                .Add( "，你所有的指挥站、战斗空间站和堡垒都可以建造。" );
             ResourceObjectivesGenerator.AppendDefensiveCapMultiplierNote( buffer );
             if ( Objective.RelatedEntity1 == null || Objective.RelatedEntity1.ShipGrantsList.Count <= 0 )
-                buffer.Add( "\n\nNo turrets or other defensive items are granted from this one for some reason!  (This is a bug, please report it with a savegame.)" );
+                buffer.Add( "\n\n这个没有提供任何炮塔或其他防御物品！原因不明。（这是一个 bug，请用存档报告。）" );
             else
             {
-                buffer.Add( "\n\n" ).Add( "<color=#8092ff>" ).Add( Objective.RelatedEntity1.ShipGrantsList.Count ).Add( "</color>" ).Add( " Defensive Line Options For Theft" );
+                buffer.Add( "\n\n" ).Add( "<color=#8092ff>" ).Add( Objective.RelatedEntity1.ShipGrantsList.Count ).Add( "</color>" ).Add( " 防御线可供获取" );
                 if ( Objective.Hook.Category != null && Objective.Hook.Category.IsFilteredUnitAquisitionObjective )
                     buffer.Add( ", including" );
                 buffer.Add( ":\n" );
@@ -766,7 +766,7 @@ namespace Arcen.AIW2.External
 
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "Hacking the Spire Archive will grant a lot of science, but if your hack fails it will generate a lot of AIP." );
+            buffer.Add( "入侵尖塔档案将获得大量科技，但如果入侵失败，将产生大量AIP。" );
         }
     }
 
@@ -784,9 +784,9 @@ namespace Arcen.AIW2.External
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
             string color = Objective.RelatedEntity1.GetFactionCenterColorHexBrighter_Safe();
-            buffer.Add( "Destroying this " ).Add( Objective.RelatedEntity1.TypeData.GetDisplayName(), color ).Add( " will grant " ).Add( Objective.RelatedEntity1.TypeData.ScienceToGrantOnDeath, ObjectiveColors.Reward ).Add( " science.  " );
+            buffer.Add( "摧毁此" ).Add( Objective.RelatedEntity1.TypeData.GetDisplayName(), color ).Add( "将获得" ).Add( Objective.RelatedEntity1.TypeData.ScienceToGrantOnDeath, ObjectiveColors.Reward ).Add( "科技。" );
             if ( Objective.RelatedEntity1.TypeData.AIPOnDeath > 0 )
-                buffer.Add( "However, destroying it will also increase the AI Progress by " ).Add( Objective.RelatedEntity1.TypeData.AIPOnDeath, ObjectiveColors.AIP ).Add( ".  " );
+                buffer.Add( "但摧毁它也会使AI进程增加" ).Add( Objective.RelatedEntity1.TypeData.AIPOnDeath, ObjectiveColors.AIP ).Add( "。" );
         }
     }
     public class AcquireEssenceByDestruction : IObjectiveHookManager
@@ -808,9 +808,9 @@ namespace Arcen.AIW2.External
             entity_DLC3TypeData.GetNecromancerResourcesToGrantOnDeath(Objective.RelatedEntity1,
                     out _, out _, out FInt essence);
 
-            buffer.Add( "Destroying this " ).Add( Objective.RelatedEntity1.TypeData.GetDisplayName(), color ).Add( " will grant " ).AddResourceOne_MoreReadable( essence, true );
+            buffer.Add( "摧毁此" ).Add( Objective.RelatedEntity1.TypeData.GetDisplayName(), color ).Add( "将获得" ).AddResourceOne_MoreReadable( essence, true );
             if ( Objective.RelatedEntity1.TypeData.AIPOnDeath > 0 )
-                buffer.Add( "However, destroying it will also increase the AI Progress by " ).Add( Objective.RelatedEntity1.TypeData.AIPOnDeath, ObjectiveColors.AIP ).Add( ".  " );
+                buffer.Add( "但摧毁它也会使AI进程增加" ).Add( Objective.RelatedEntity1.TypeData.AIPOnDeath, ObjectiveColors.AIP ).Add( "。" );
         }
     }
     public class AcquireHackingByDestruction : IObjectiveHookManager
@@ -826,9 +826,9 @@ namespace Arcen.AIW2.External
 
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "Destroying this " ).Add( Objective.RelatedEntity1.TypeData.GetDisplayName(), Objective.RelatedEntity1.GetFactionCenterColorHexBrighter_Safe() ).Add( " will grant " ).Add( Objective.RelatedEntity1.TypeData.HackingToGrantOnDeath, ObjectiveColors.Reward ).Add( " hacking points (HaP).  " );
+            buffer.Add( "摧毁此" ).Add( Objective.RelatedEntity1.TypeData.GetDisplayName(), Objective.RelatedEntity1.GetFactionCenterColorHexBrighter_Safe() ).Add( "将获得" ).Add( Objective.RelatedEntity1.TypeData.HackingToGrantOnDeath, ObjectiveColors.Reward ).Add( "入侵点数（HaP）。" );
             if ( Objective.RelatedEntity1.TypeData.AIPOnDeath > 0 )
-                buffer.Add( "However, destroying it will also increase the AI Progress by " ).Add( Objective.RelatedEntity1.TypeData.AIPOnDeath, ObjectiveColors.AIP ).Add( ".  " );
+                buffer.Add( "但摧毁它也会使AI进程增加" ).Add( Objective.RelatedEntity1.TypeData.AIPOnDeath, ObjectiveColors.AIP ).Add( "。" );
         }
     }
 
@@ -846,9 +846,9 @@ namespace Arcen.AIW2.External
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
             string color = Objective.RelatedEntity1.GetFactionCenterColorHexBrighter_Safe();
-            buffer.Add( "Destroying this " ).Add( Objective.RelatedEntity1.TypeData.GetDisplayName(), color ).Add( " will grant " ).Add( Objective.RelatedEntity1.TypeData.ScienceToGrantOnDeath, ObjectiveColors.Reward ).Add( " science and " ).Add( Objective.RelatedEntity1.TypeData.HackingToGrantOnDeath, ObjectiveColors.Reward ).Add( " hacking points (HaP).  " );
+            buffer.Add( "摧毁此" ).Add( Objective.RelatedEntity1.TypeData.GetDisplayName(), color ).Add( "将获得" ).Add( Objective.RelatedEntity1.TypeData.ScienceToGrantOnDeath, ObjectiveColors.Reward ).Add( "科技和" ).Add( Objective.RelatedEntity1.TypeData.HackingToGrantOnDeath, ObjectiveColors.Reward ).Add( "入侵点数（HaP）。" );
             if ( Objective.RelatedEntity1.TypeData.AIPOnDeath > 0 )
-                buffer.Add( "However, destroying it will also increase the AI Progress by " ).Add( Objective.RelatedEntity1.TypeData.AIPOnDeath, ObjectiveColors.AIP ).Add( ".  " );
+                buffer.Add( "但摧毁它也会使AI进程增加" ).Add( Objective.RelatedEntity1.TypeData.AIPOnDeath, ObjectiveColors.AIP ).Add( "。" );
         }
     }
 
@@ -911,9 +911,9 @@ namespace Arcen.AIW2.External
 
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "There is " ).Add( Objective.RelatedInt1, ObjectiveColors.Reward )
-                .Add( " remaining Science to collect on " ).Add( Objective.RelatedPlanet1.Name, Objective.RelatedPlanet1.GetControllingFaction().FactionCenterColor.ColorHexBrighter )
-                .Add( ".  Build and hold a command station here until it has been fully gathered.  You can also collect science by hacking neutral planets." );
+            buffer.Add( "有" ).Add( Objective.RelatedInt1, ObjectiveColors.Reward )
+                .Add( "剩余科技可在" ).Add( Objective.RelatedPlanet1.Name, Objective.RelatedPlanet1.GetControllingFaction().FactionCenterColor.ColorHexBrighter )
+                .Add( "上收集。在此建造并守住指挥站直到全部收集完毕。你也可以通过入侵中立星球来收集科技。" );
         }
     }
 
@@ -930,9 +930,9 @@ namespace Arcen.AIW2.External
 
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "There are " ).Add( Objective.RelatedInt1, ObjectiveColors.Reward ).Add( " remaining Hacking Points (HaP) to collect on " )
+            buffer.Add( "有" ).Add( Objective.RelatedInt1, ObjectiveColors.Reward ).Add( "剩余入侵点数（HaP）可在" )
                 .Add( Objective.RelatedPlanet1.Name, Objective.RelatedPlanet1.GetControllingFaction().FactionCenterColor.ColorHexBrighter )
-                .Add( ".  Build and hold a command station here until it has been fully gathered.  You unfortunately can't hack planets to get more hacking points..." );
+                .Add( "上收集。在此建造并守住指挥站直到全部收集完毕。不幸的是，你不能通过入侵星球来获得更多入侵点数……" );
 
         }
     }
@@ -975,7 +975,7 @@ namespace Arcen.AIW2.External
             if ( upgrades == null ) //blocked for teardown/shutdown; bail
                 return;
             HackingUtils.CalculateListOfTechs_TechVault( upgrades, Objective.RelatedEntity1, playerFaction );
-            buffer.Add( "Hacking this " + Objective.RelatedEntity1.TypeData.GetDisplayName() + " will grant one of the following upgrades:\n");
+            buffer.Add( "入侵此" + Objective.RelatedEntity1.TypeData.GetDisplayName() + "将获得以下升级之一：\n");
             for ( int i = 0; i < upgrades.Count; i++ )
             {
                 
@@ -1005,11 +1005,11 @@ namespace Arcen.AIW2.External
                     }
                 }
                 buffer.Add( "+1 ", "ffa1a1").Add(" <color=#a1ffa1>" + upgrades[i].DisplayName + "</color>\n");
-                buffer.Add("<size=80%>\tYou currently have <color=#a1ffa1>" + shipLinesForThisTech + "</color> ship lines that would benefit from this." );
+                buffer.Add("<size=80%>\t你当前有 <color=#a1ffa1>" + shipLinesForThisTech + "</color> 条舰船线将从中受益。" );
                 if ( shipLinesForThisTech > 1 )
-                    buffer.Add( "\n\t\tThose ships are " + shipListStr );
+                    buffer.Add( "\n\t\t这些舰船是 " + shipListStr );
                 else if ( shipLinesForThisTech == 1 )
-                    buffer.Add( "\n\t\tThat ship is " + shipListStr );
+                    buffer.Add( "\n\t\t该舰船是 " + shipListStr );
                 buffer.Add("</size>\n");
             }
             output = buffer.GetStringAndResetForNextUpdate();
@@ -1040,12 +1040,12 @@ namespace Arcen.AIW2.External
             }
             bool isMajor = Objective.RelatedEntity1.TypeData.GetHasTag( "MajorSocketIncreaser" );
             buffer.AddShipIconInline( Objective.RelatedEntity1, TextStyle.Ship_Sprite_Ency ).Add( " " )
-                .Add( isMajor ? "Major Forge" : "Minor Forge", ObjectiveColors.Keyword ).Add( "\n\n" );
-            buffer.Add( "On " ).Add( Objective.RelatedEntity1.GetPlanetName_Safe(), ObjectiveColors.Reward ).Add( ".\n\n" );
-            buffer.Add( "Hack it to gain additional " ).Add( "building sockets", ObjectiveColors.Reward )
-                .Add( " on that planet, letting you construct more " ).Add( "structures", ObjectiveColors.Keyword ).Add( " there." );
+                .Add( isMajor ? "主要熔炉" : "次要熔炉", ObjectiveColors.Keyword ).Add( "\n\n" );
+            buffer.Add( "位于" ).Add( Objective.RelatedEntity1.GetPlanetName_Safe(), ObjectiveColors.Reward ).Add( "。\n\n" );
+            buffer.Add( "入侵它以在该星球上获得额外的" ).Add( "建筑插槽", ObjectiveColors.Reward )
+                .Add( "，让你在那里建造更多" ).Add( "建筑", ObjectiveColors.Keyword ).Add( "。" );
             if ( isMajor )
-                buffer.Add( "  A " ).Add( "Major Forge", ObjectiveColors.Keyword ).Add( " grants more sockets than a Minor one." );
+                buffer.Add( "  " ).Add( "主要熔炉", ObjectiveColors.Keyword ).Add( "比次要熔炉提供更多插槽。" );
         }
     }
 

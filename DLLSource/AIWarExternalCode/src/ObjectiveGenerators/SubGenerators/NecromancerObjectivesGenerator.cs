@@ -265,7 +265,7 @@ namespace Arcen.AIW2.External
                 GameEntity_Squad entity = Objective.RelatedEntity1;
                 TemplarPerUnitBaseInfo data = entity.TryGetExternalBaseInfoAs<TemplarPerUnitBaseInfo>();
 
-                buffer.Add( "Available Upgrades:\n\n", ObjectiveColors.Header );
+                buffer.Add( "可用升级：\n\n", ObjectiveColors.Header );
                 for ( int i = 0; i < data.AvailableUpgrades.Count; i++ )
                 {
                     buffer.Add("\t");
@@ -310,7 +310,7 @@ namespace Arcen.AIW2.External
                     }
                     buffer.Add("\n");
                 }
-                buffer.Add( "\nTip: ", ObjectiveColors.Header ).Add( "kill the AI Command Station on this planet first to reduce the hacking cost." );
+                buffer.Add( "\n提示：", ObjectiveColors.Header ).Add( "先摧毁该星球上的AI指挥站以降低入侵成本。" );
             }
             catch ( Exception e )
             {
@@ -344,8 +344,8 @@ namespace Arcen.AIW2.External
                 if ( entity == null )
                     return;
                 buffer.AddObjectiveEntityHeader( entity, entity.GetFactionCenterColorHexBrighter_Safe() );
-                buffer.Add( "On " ).Add( entity.GetPlanetName_Safe(), ObjectiveColors.Reward ).Add( ".\n\n" );
-                buffer.Add( "Destroying it prevents the Templar from expanding and grants you resources. Taking out " ).Add( "Constructors", ObjectiveColors.Keyword ).Add( " is a good way to weaken the Templar." );
+                buffer.Add( "位于" ).Add( entity.GetPlanetName_Safe(), ObjectiveColors.Reward ).Add( "。\n\n" );
+                buffer.Add( "摧毁它可以阻止圣殿骑士扩张并为你提供资源。干掉" ).Add( "建造者", ObjectiveColors.Keyword ).Add( "是削弱圣殿骑士的好方法。" );
             }
             catch ( Exception e )
             {
@@ -382,24 +382,24 @@ namespace Arcen.AIW2.External
                 if ( entity_DLC3TypeData == null )
                     buffer.Add("This should not happen");
                 debugStage = 200;
-                buffer.Add("This structure enhances your necromancy for the Flagship bolstered by the Necropolis on the planet:\n\n");
+                buffer.Add("此建筑增强你的亡灵法术，用于加强该星球上死灵城所支持的旗舰：\n\n");
                 GameEntityTypeData skeletonType = GameEntityTypeDataTable.Instance.GetRowByNameOrNullIfNotFound( "SkeletonAmplifier" );
                 GameEntityTypeData wightType = GameEntityTypeDataTable.Instance.GetRowByNameOrNullIfNotFound( "WightAmplifier" );
                 GameEntityTypeData mummyType = GameEntityTypeDataTable.Instance.GetRowByNameOrNullIfNotFound( "MummyAmplifier" );
                 if ( entity_DLC3TypeData.BonusSkeletonPercent > 0 )
                 {
                     if ( skeletonType != null ) buffer.AddShipIconInline( skeletonType, localFaction, TextStyle.Ship_Sprite_Ency ).Add( " " );
-                    buffer.Add( "Skeletons", ObjectiveColors.Reward ).Add( ": +" ).Add( entity_DLC3TypeData.BonusSkeletonPercent, ObjectiveColors.Reward ).Add( "% chance to raise multiples\n\n" );
+                    buffer.Add( "骷髅", ObjectiveColors.Reward ).Add( ": +" ).Add( entity_DLC3TypeData.BonusSkeletonPercent, ObjectiveColors.Reward ).Add( "% 几率召唤多个\n\n" );
                 }
                 if ( entity_DLC3TypeData.BonusWightPercent > 0 )
                 {
                     if ( wightType != null ) buffer.AddShipIconInline( wightType, localFaction, TextStyle.Ship_Sprite_Ency ).Add( " " );
-                    buffer.Add( "Wights", ObjectiveColors.Reward ).Add( ": +" ).Add( entity_DLC3TypeData.BonusWightPercent, ObjectiveColors.Reward ).Add( "% chance to raise multiples\n\n" );
+                    buffer.Add( "尸妖", ObjectiveColors.Reward ).Add( ": +" ).Add( entity_DLC3TypeData.BonusWightPercent, ObjectiveColors.Reward ).Add( "% 几率召唤多个\n\n" );
                 }
                 if ( entity_DLC3TypeData.BonusMummyPercent > 0 )
                 {
                     if ( mummyType != null ) buffer.AddShipIconInline( mummyType, localFaction, TextStyle.Ship_Sprite_Ency ).Add( " " );
-                    buffer.Add( "Mummies", ObjectiveColors.Reward ).Add( ": +" ).Add( entity_DLC3TypeData.BonusMummyPercent, ObjectiveColors.Reward ).Add( "% chance to raise multiples\n\n" );
+                    buffer.Add( "木乃伊", ObjectiveColors.Reward ).Add( ": +" ).Add( entity_DLC3TypeData.BonusMummyPercent, ObjectiveColors.Reward ).Add( "% 几率召唤多个\n\n" );
                 }
             }
             catch ( Exception e )
@@ -421,13 +421,13 @@ namespace Arcen.AIW2.External
 
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "What Rifts Give You\n", ObjectiveColors.Header );
-            buffer.Add( "Ships and Upgrades", ObjectiveColors.Reward ).Add( ": rifts provide ships and upgrades that directly strengthen your army.\n" );
-            buffer.Add( "Flagship Blueprints", ObjectiveColors.Reward ).Add( ": some rifts unlock powerful flagship variants.\n\n" );
+            buffer.Add( "裂隙给你什么\n", ObjectiveColors.Header );
+            buffer.Add( "舰船和升级", ObjectiveColors.Reward ).Add( "：裂隙提供直接增强你军队的舰船和升级。\n" );
+            buffer.Add( "旗舰蓝图", ObjectiveColors.Reward ).Add( "：某些裂隙解锁强大的旗舰变体。\n\n" );
 
-            buffer.Add( "Key Tips\n", ObjectiveColors.Header );
-            buffer.Add( "Kill the Command Station first", ObjectiveColors.Reward ).Add( ": destroying the Command Station on a rift's planet makes hacking it cheaper.\n" );
-            buffer.Add( "See the Tips sidebar for more details about Rifts." );
+            buffer.Add( "关键提示\n", ObjectiveColors.Header );
+            buffer.Add( "先摧毁指挥站", ObjectiveColors.Reward ).Add( "：摧毁裂隙星球上的指挥站可以降低入侵成本。\n" );
+            buffer.Add( "查看提示侧边栏以获取关于裂隙的更多详情。" );
         }
     }
 
@@ -444,23 +444,23 @@ namespace Arcen.AIW2.External
 
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "What You Gain\n", ObjectiveColors.Header );
-            buffer.Add( "Fighting the Templar is your primary source of Hacking Points and Science.\n\n" );
+            buffer.Add( "你的收获\n", ObjectiveColors.Header );
+            buffer.Add( "与圣殿骑士战斗是你的入侵点数和科技的主要来源。\n\n" );
 
-            buffer.Add( "Key Targets\n\n", ObjectiveColors.Header );
+            buffer.Add( "关键目标\n\n", ObjectiveColors.Header );
             Faction templarFaction = FactionUtilityMethods.Instance.GetTemplarFaction();
             GameEntityTypeData constructorType = GameEntityTypeDataTable.Instance.GetRowByNameOrNullIfNotFound( "TemplarConstructor" );
             GameEntityTypeData riftType = GameEntityTypeDataTable.Instance.GetRowByNameOrNullIfNotFound( "TemplarRift" );
             if ( constructorType != null )
                 buffer.AddShipIconInline( constructorType, templarFaction, TextStyle.Ship_Sprite_Ency ).Add( " " );
-            buffer.Add( "Templar Constructors", ObjectiveColors.Reward ).Add( "\n\n" );
-            buffer.Add( "Highest priority. Destroying them prevents Templar expansion and grants bonus resources.\n\n" );
+            buffer.Add( "圣殿骑士建造者", ObjectiveColors.Reward ).Add( "\n\n" );
+            buffer.Add( "最高优先级。摧毁它们可以阻止圣殿骑士扩张并提供额外资源。\n\n" );
             if ( riftType != null )
                 buffer.AddShipIconInline( riftType, templarFaction, TextStyle.Ship_Sprite_Ency ).Add( " " );
-            buffer.Add( "Templar Rifts", ObjectiveColors.Reward ).Add( "\n\n" );
-            buffer.Add( "Hack them for ships, upgrades, and flagship blueprints.\n\n" );
+            buffer.Add( "圣殿骑士裂隙", ObjectiveColors.Reward ).Add( "\n\n" );
+            buffer.Add( "入侵它们以获得舰船、升级和旗舰蓝图。\n\n" );
 
-            buffer.Add( "See the Tips and Journal sidebars for more details." );
+            buffer.Add( "查看提示和日志侧边栏以获取更多详情。" );
         }
     }
     public class UpgradeNecroFlagships : IObjectiveHookManager
@@ -476,7 +476,7 @@ namespace Arcen.AIW2.External
 
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "It is important to upgrade your flagships. You can do this via the Tech Menu or the Fleet menu; upgrading costs Essence, and is an important way to increase your fleet's combat power. Also, higher tier Flagships are eligible to be transformed into more powerful variants. You can get these variants by hacking Elderlings or through Rifts. The most powerful variants are from fighting Elderlings.\n\nDeciding how to allocate your Essence (into flagship upgrades, necropolis upgrades or building necropolises) is an important decision." );
+            buffer.Add( "升级旗舰很重要。你可以通过科技菜单或舰队菜单进行升级；升级消耗精华，是提升舰队战斗力的重要途径。此外，更高级的旗舰有资格转化为更强大的变体。你可以通过入侵远古生物或通过裂隙获得这些变体。最强大的变体来自与远古生物的战斗。\n\n决定如何分配你的精华（用于旗舰升级、死灵城升级或建造死灵城）是一个重要的决策。" );
         }
     }
     public class UpgradeNecroFlagshipVariants : IObjectiveHookManager
@@ -492,7 +492,7 @@ namespace Arcen.AIW2.External
 
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "Alongside upgrading a flagship's mark levels, there's a lot of power in using new flagship variants. To do this you must claim Blueprints. Some Blueprints are available from Rifts, but the most powerful Blueprints are obtained by using the Transform Elderling hack on an Elderling and then winning the resulting battle.\n\nTo use a Blueprint on a flagship, look in the Hacking Menu for 'Transform Flagship'." );
+            buffer.Add( "除了升级旗舰的等级之外，使用新的旗舰变体也能获得巨大力量。为此你必须获取蓝图。某些蓝图可以从裂隙获得，但最强大的蓝图是通过对远古生物使用转化远古生物入侵然后赢得战斗获得的。\n\n要在旗舰上使用蓝图，请在入侵菜单中查找'转化旗舰'。" );
         }
     }
     public class UnusedHexes : IObjectiveHookManager
@@ -508,7 +508,7 @@ namespace Arcen.AIW2.External
 
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "In general you want to use the hexes in your Necropolises. When looking on the galaxy map, a Necropolis will show its count of unused hexes just under the icon.\n\nNecropolises with unused hexes:" );
+            buffer.Add( "一般来说，你应该使用死灵城中的六边形格位。在银河地图上查看时，死灵城会在图标下方显示其未使用的六边形格位数量。\n\n具有未使用六边形格位的死灵城：" );
 
             Faction playerFaction = World_AIW2.Instance.GetLocalPlayerFactionOrNull();
             if ( playerFaction == null )
@@ -539,7 +539,7 @@ namespace Arcen.AIW2.External
 
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "It is important to upgrade your Necropolises. You can do this via the Tech Menu or the Fleet menu; upgrading costs Essence. Upgrading a Necropolis gives more Hexes, allowing you to build more structures to defend or strengthen your fleet.\n\nDeciding how to allocate your Essence (into flagship upgrades, necropolis upgrades or building necropolises) is an important decision." );
+            buffer.Add( "升级你的死灵城很重要。你可以通过科技菜单或舰队菜单进行升级；升级消耗精华。升级死灵城可获得更多六边形格位，让你建造更多建筑来防御或加强你的舰队。\n\n决定如何分配你的精华（用于旗舰升级、死灵城升级或建造死灵城）是一个重要的决策。" );
         }
     }
     public class BuildNecropolises : IObjectiveHookManager
@@ -555,7 +555,7 @@ namespace Arcen.AIW2.External
 
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "It is important to build new Necropolises to strengthen your forces. A Major Necropolis is the most expensive but the most powerful, granting you a new Flagship. A Minor Necropolis will bolster an existing Flagship, adding to its strength. Defensive Necropolises are exceptional for defense or holding a planet, but do not strengthen a flagship.\n\nDeciding how to allocate your Essence (into flagship upgrades, necropolis upgrades or building necropolises) is an important decision." );
+            buffer.Add( "建造新的死灵城来加强你的部队很重要。主要死灵城最昂贵但也最强大，为你提供一艘新旗舰。次级死灵城将增强现有旗舰，增加其力量。防御性死灵城在防御或守住星球方面非常出色，但不会加强旗舰。\n\n决定如何分配你的精华（用于旗舰升级、死灵城升级或建造死灵城）是一个重要的决策。" );
         }
     }
     public class HuntElderlings : IObjectiveHookManager
@@ -573,18 +573,18 @@ namespace Arcen.AIW2.External
         {
             Faction localFaction = World_AIW2.Instance.GetLocalPlayerFactionOrNull();
 
-            buffer.Add( "What Elderlings Give You\n", ObjectiveColors.Header );
-            buffer.Add( "Essence", ObjectiveColors.Reward ).Add( ": your primary resource for upgrading Necropolises and Flagships.\n" );
-            buffer.Add( "Flagship Blueprints", ObjectiveColors.Reward ).Add( ": hack stronger Elderlings to unlock the most powerful flagship variants.\n\n" );
+            buffer.Add( "远古生物给你什么\n", ObjectiveColors.Header );
+            buffer.Add( "精华", ObjectiveColors.Reward ).Add( "：用于升级死灵城和旗舰的主要资源。\n" );
+            buffer.Add( "旗舰蓝图", ObjectiveColors.Reward ).Add( "：入侵更强的远古生物以解锁最强大的旗舰变体。\n\n" );
 
-            buffer.Add( "How to Hunt Them\n", ObjectiveColors.Header );
-            buffer.Add( "Hack an Elderling to track its location, or to attract Elderlings you have already tracked.\n\n" );
+            buffer.Add( "如何猎杀它们\n", ObjectiveColors.Header );
+            buffer.Add( "入侵远古生物以追踪其位置，或吸引你已经追踪到的远古生物。\n\n" );
 
-            buffer.Add( "Best Early Targets\n", ObjectiveColors.Header );
+            buffer.Add( "最佳早期目标\n", ObjectiveColors.Header );
             GameEntityTypeData feebleData = GameEntityTypeDataTable.Instance.GetRowByName( "FeebleElderling" );
             if ( feebleData != null )
                 buffer.AddShipIconInline( feebleData, localFaction );
-            buffer.Add( "Feeble Elderlings", ObjectiveColors.Reward ).Add( " grant a lot of Essence." );
+            buffer.Add( "虚弱远古生物", ObjectiveColors.Reward ).Add( "提供大量精华。" );
         }
     }
     public class EarlyUpgrades : IObjectiveHookManager
@@ -600,7 +600,7 @@ namespace Arcen.AIW2.External
 
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "Investing science into a few key upgrades early on goes a long way for the Necromancer. Aim to get at least 2 upgrades into each of the following:\n" );
+            buffer.Add( "早期将科技投入几个关键升级对死灵法师大有裨益。目标是将以下各项至少升级2级：\n" );
 
             Faction playerFaction = World_AIW2.Instance.GetLocalPlayerFactionOrNull();
             if ( playerFaction == null )
@@ -617,14 +617,14 @@ namespace Arcen.AIW2.External
             int towerUpgrades = playerFaction.TechUnlocks[towerTech.RowIndexNonSim] + playerFaction.FreeTechUnlocks[towerTech.RowIndexNonSim];
 
             if ( skeletonUpgrades < 2 )
-                buffer.Add( "\nSkeleton (Ship tech)", ObjectiveColors.Reward );
+                buffer.Add( "\n骷髅（舰船科技）", ObjectiveColors.Reward );
             if ( wightUpgrades < 2 )
-                buffer.Add( "\nWight (Ship tech)", ObjectiveColors.Reward );
+                buffer.Add( "\n尸妖（舰船科技）", ObjectiveColors.Reward );
             if ( towerUpgrades < 2 )
-                buffer.Add( "\nTower Defense (Defense tech)", ObjectiveColors.Reward );
+                buffer.Add( "\n塔防（防御科技）", ObjectiveColors.Reward );
 
-            buffer.Add( "\n\nEarly on your army is mostly basic units, and you have a lot of them. Strengthening them (especially early on) is a really science-efficient way to strengthen your fleet.\n\n" );
-            buffer.Add( "Basic skeletons and wights are excellent frontline tanks, and are often raised directly in the middle of enemy forces. The increased durability will pay off immediately. Advanced wights will revert to basic wights, so upgrading the base form benefits your entire wight pool. Tower defenses are particularly valuable for holding against the Templar's powerful scaling attacks." );
+            buffer.Add( "\n\n早期你的军队主要由基础单位组成，而且数量很多。加强它们（尤其是在早期）是一种非常高效的利用科技加强舰队的方式。\n\n" );
+            buffer.Add( "基础骷髅和尸妖是优秀的前线坦克，通常直接在敌人部队中间被召唤。增加的耐久度将立即见效。高级尸妖会退化为基础尸妖，所以升级基础形态会使你整个尸妖池受益。塔防对于抵挡圣殿骑士强大的渐进攻击尤其有价值。" );
         }
     }
     public class ClearElderlingHuntingGrounds : IObjectiveHookManager
@@ -640,7 +640,7 @@ namespace Arcen.AIW2.External
 
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "Elderlings tend to wander into territory that is not heavily defended by hostile forces. To have good hunting grounds for Elderlings, you need a number of planets near your own with relatively low hostile strength.\n\nConsider clearing out nearby hostile forces (such as AI guard posts and patrols) so that Elderlings have safe planets to wander onto, where you can then hunt them down for Essence." );
+            buffer.Add( "远古生物倾向于游荡到没有强大敌对防御的领土。要为远古生物建立良好的猎场，你需要在自己附近有一些敌对力量相对较低的星球。\n\n考虑清理附近的敌对力量（如AI守卫哨站和巡逻队），这样远古生物就有安全的星球可以游荡，然后你可以在那里猎杀它们以获取精华。" );
         }
     }
 }

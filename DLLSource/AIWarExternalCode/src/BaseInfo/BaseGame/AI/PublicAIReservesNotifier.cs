@@ -71,17 +71,17 @@ namespace Arcen.AIW2.External
 
             tooltipBuffer.Clear();
             if ( data.AbsorbShipsMode )
-                tooltipBuffer.Add( "The reserves are pulling out. Once all their ships are evacuated, the wormholes will start to destabilize and vanish.\n" );
+                tooltipBuffer.Add( "预备队正在撤离。一旦所有舰船撤离，虫洞将开始不稳定并消失。\n" );
             else if ( data.TimeForNextWormhole <= -1 )
-                tooltipBuffer.Add( "The AI Reserves are responding to your deepstrike\n" );
+                tooltipBuffer.Add( "AI 预备队正在响应您的深袭\n" );
             else
             {
                 tooltipBuffer.Add( "AI 预备队将在 " ).AddHoursAndMinutes( data.TimeForNextWormhole - World_AIW2.Instance.GameSecond, "a1ffa1" ).Add( " 后打开新虫洞以带来更多增援。\n" );
             }
-            tooltipBuffer.Add( "\tThere are currently " ).Add( data.Wormholes.Count, "ffa1a1" ).Add( " wormholes that can spawn AI reserves." );
+            tooltipBuffer.Add( "\t当前有 " ).Add( data.Wormholes.Count, "ffa1a1" ).Add( " 个虫洞可生成 AI 预备队。" );
             if ( BaseInfo.PlanetList.Count > 0 )
             {
-                tooltipBuffer.Add( "\nThe AI is responding to player forces on " );
+                tooltipBuffer.Add( "\nAI 正在响应玩家部队在 " );
                 for ( int j = 0; j < BaseInfo.PlanetList.Count; j++ )
                 {
                     tooltipBuffer.Add("\t").Add(BaseInfo.PlanetList[j].Name, "a1a1a1");
@@ -110,7 +110,7 @@ namespace Arcen.AIW2.External
                 debugStage = 20;
                 ArcenDoubleCharacterBuffer buffer = SubTexts[0].Text.StartWritingToBuffer();
                 debugStage = 30;
-                buffer.Add( "Deepstrike" );
+                buffer.Add( "深袭" );
                 debugStage = 40;
                 SubTexts[0].Text.FinishWritingToBuffer();
                 debugStage = 50;
@@ -119,7 +119,7 @@ namespace Arcen.AIW2.External
 
                 if ( data.AbsorbShipsMode )
                 {
-                    buffer.Add( "ABSORB\n", "dfffa1" );
+                    buffer.Add( "吸收中\n", "dfffa1" );
                     //line 2 is the number of wormholes
                     buffer.Add( data.Wormholes.Count.ToString(), "dfffa1" );
                 }

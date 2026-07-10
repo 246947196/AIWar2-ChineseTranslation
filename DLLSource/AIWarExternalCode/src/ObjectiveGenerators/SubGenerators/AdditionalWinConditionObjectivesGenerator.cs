@@ -252,13 +252,13 @@ namespace Arcen.AIW2.External
         {
             GameEntity_Squad kingIfFound = Objective.RelatedEntity1;
             Faction faction = World_AIW2.Instance.Factions[Objective.RelatedInt1];
-            buffer.Add( "Stopping the machine menace has to be our primary objective at all times - there can never be a secure future for Humanity with it in our galaxy - but at the same time we are at war with the " )
+            buffer.Add( "阻止机器威胁必须始终是我们的首要目标 - 只要它存在于我们的银河中，人类就不可能有安全的未来 - 但同时我们也在与" )
                 .AddFactionNameInItsColor( faction )
-                .Add( " as well.\nTo fully conclude the current war we need to destroy their " );
+                .Add( "交战。\n要彻底结束当前战争，我们需要摧毁他们的" );
             if ( kingIfFound == null )
-                buffer.Add( "central command capabilities. Right now it's location is unknown, we need to further explore the galaxy to find it." );
+                buffer.Add( "中央指挥能力。目前其位置未知，我们需要进一步探索银河以找到它。" );
             else
-                buffer.AddFactionColoredString( kingIfFound.TypeData.DisplayName, faction ).Add( " on " ).AddPlanetNameFormated( kingIfFound.Planet, false ).Add( "." );
+                buffer.AddFactionColoredString( kingIfFound.TypeData.DisplayName, faction ).Add( "位于" ).AddPlanetNameFormated( kingIfFound.Planet, false ).Add( "。" );
         }
     }
 
@@ -281,15 +281,15 @@ namespace Arcen.AIW2.External
             int planetsFound = Objective.RelatedInt2;
             Planet planet = Objective.RelatedPlanet1;
             Faction faction = World_AIW2.Instance.Factions[Objective.RelatedInt1];
-            buffer.Add( "Stopping the machine menace has to be our primary objective at all times - there can never be a secure future for Humanity with it in our galaxy - but at the same time we are at war with the " )
+            buffer.Add( "阻止机器威胁必须始终是我们的首要目标 - 只要它存在于我们的银河中，人类就不可能有安全的未来 - 但同时我们也在与" )
                 .AddFactionNameInItsColor( faction )
-                .Add( " as well.\nTo fully conclude the current war we need to destroy all their planetary controllers." );
+                .Add( "交战。\n要彻底结束当前战争，我们需要摧毁他们所有的行星控制器。" );
             if ( planetsFound > 1 )
-                buffer.Add( "\nThey control " ).Add( planetsFound ).Add( " planets which we know of, all of them must be our targets" );
+                buffer.Add( "\n他们控制着我们所知的" ).Add( planetsFound ).Add( "个星球，所有这些都必须成为我们的目标" );
             else if ( planet != null )
-                buffer.Add( "\nCurrently they only control " ).AddPlanetNameFormated( planet, false ).Add( ", which means we will need our fleets to conquer or at the very least liberate it." );
+                buffer.Add( "\n目前他们只控制着" ).AddPlanetNameFormated( planet, false ).Add( "，这意味着我们需要舰队征服或至少解放它。" );
             else
-                buffer.Add( "\nRight now we have readings that suggest they own at least one planet, but no fixed location on where to strike. We need to further explore the galaxy." );
+                buffer.Add( "\n目前我们有读数表明他们拥有至少一个星球，但没有确定的打击位置。我们需要进一步探索银河。" );
         }
     }
 
@@ -312,15 +312,15 @@ namespace Arcen.AIW2.External
             Planet planet = Objective.RelatedPlanet1;
             int planetsFound = Objective.RelatedInt2;
             Faction faction = World_AIW2.Instance.Factions[Objective.RelatedInt1];
-            buffer.Add( "Stopping the machine menace has to be our primary objective at all times - there can never be a secure future for Humanity with it in our galaxy - but at the same time we are at war with the " )
+            buffer.Add( "阻止机器威胁必须始终是我们的首要目标 - 只要它存在于我们的银河中，人类就不可能有安全的未来 - 但同时我们也在与" )
                 .AddFactionNameInItsColor( faction )
-                .Add( " as well.\nTo fully conclude the current war we need to at the very least limit their influence in our galaxy to the core worlds they claim (and defend with unrelenting vigour)." );
+                .Add( "交战。\n要彻底结束当前战争，我们至少需要将其在我们银河中的影响力限制在他们声称的核心世界（并以不懈的 Vigour 防御）。" );
             if ( planetsFound > 1 )
-                buffer.Add( "\nThey control " ).Add( planetsFound ).Add( " non-core territory planets which we know of, all of them must be our targets" );
+                buffer.Add( "\n他们控制着我们所知的" ).Add( planetsFound ).Add( "个非核心领土星球，所有这些都必须成为我们的目标" );
             else if ( planet != null )
-                buffer.Add( "\nCurrently " ).AddPlanetNameFormated( planet, false ).Add( " is the only viable target, which means we will need our fleets to conquer or at the very least liberate it." );
+                buffer.Add( "\n目前" ).AddPlanetNameFormated( planet, false ).Add( "是唯一可行的目标，这意味着我们需要舰队征服或至少解放它。" );
             else
-                buffer.Add( "\nRight now we have readings that suggest they own at least one planet beyond their core territory, but no fixed location on where to strike. We need to further explore the galaxy." );
+                buffer.Add( "\n目前我们有读数表明他们在核心领土之外拥有至少一个星球，但没有确定的打击位置。我们需要进一步探索银河。" );
         }
     }
 
@@ -344,24 +344,24 @@ namespace Arcen.AIW2.External
             int totalVisibleApplicableStrength = Objective.RelatedInt2;
             int primaryPlanetStrength = Objective.RelatedInt3;
             Faction faction = World_AIW2.Instance.Factions[Objective.RelatedInt1];
-            buffer.Add( "Stopping the machine menace has to be our primary objective at all times - there can never be a secure future for Humanity with it in our galaxy - but at the same time we are at war with the " )
+            buffer.Add( "阻止机器威胁必须始终是我们的首要目标 - 只要它存在于我们的银河中，人类就不可能有安全的未来 - 但同时我们也在与" )
                 .AddFactionNameInItsColor( faction )
-                .Add( " as well.\nTo fully conclude the current war we need to destroy all their mobile combattants so they can no longer threaten our worlds." );
+                .Add( "交战。\n要彻底结束当前战争，我们需要摧毁他们所有的移动战斗单位，使他们不再威胁我们的世界。" );
             if ( planet != null )
             {
-                buffer.Add( "\nTheir " );
+                buffer.Add( "\n他们" );
                 if ( totalVisibleApplicableStrength == primaryPlanetStrength )
-                    buffer.Add( "only " );
+                    buffer.Add( "唯一的" );
                 else
-                    buffer.Add( "primary " );
-                buffer.Add( "visible force of " ).WrapStrengthTruncated( primaryPlanetStrength, true, false ).Add( " is located on " ).AddPlanetNameFormated( planet, false ).Add( "." );
+                    buffer.Add( "主要的" );
+                buffer.Add( "可见兵力为" ).WrapStrengthTruncated( primaryPlanetStrength, true, false ).Add( "，位于" ).AddPlanetNameFormated( planet, false ).Add( "。" );
             }
             if ( totalVisibleApplicableStrength != primaryPlanetStrength || totalVisibleApplicableStrength == 0 )
             {
                 if ( totalVisibleApplicableStrength > 0 )
-                    buffer.Add( "\nWe have vision on a combined total of " ).WrapStrengthTruncated( totalVisibleApplicableStrength, true, false ).Add( " in the galaxy." );
+                    buffer.Add( "\n我们观测到合计" ).WrapStrengthTruncated( totalVisibleApplicableStrength, true, false ).Add( "的兵力在银河中。" );
                 else
-                    buffer.Add( "\nOur readings suggest that they are present, but so far we have no visual on their ships. We need to further explore the galaxy." );
+                    buffer.Add( "\n我们的读数显示他们存在，但迄今为止我们看不到他们的舰船。我们需要进一步探索银河。" );
             }
         }
     }
@@ -386,24 +386,24 @@ namespace Arcen.AIW2.External
             int totalVisibleApplicableStrength = Objective.RelatedInt2;
             int primaryPlanetStrength = Objective.RelatedInt3;
             Faction faction = World_AIW2.Instance.Factions[Objective.RelatedInt1];
-            buffer.Add( "Stopping the machine menace has to be our primary objective at all times - there can never be a secure future for Humanity with it in our galaxy - but at the same time we are at war with the " )
+            buffer.Add( "阻止机器威胁必须始终是我们的首要目标 - 只要它存在于我们的银河中，人类就不可能有安全的未来 - 但同时我们也在与" )
                 .AddFactionNameInItsColor( faction )
-                .Add( " as well.\nTo fully conclude the current war we need to destroy all their military, both their attack ships and planetary defenses." );
+                .Add( "交战。\n要彻底结束当前战争，我们需要摧毁他们所有的军事力量，包括攻击舰船和行星防御。" );
             if ( planet != null )
             {
-                buffer.Add( "\nTheir " );
+                buffer.Add( "\n他们" );
                 if ( totalVisibleApplicableStrength == primaryPlanetStrength )
-                    buffer.Add( "only " );
+                    buffer.Add( "唯一的" );
                 else
-                    buffer.Add( "primary " );
-                buffer.Add( "visible force of " ).WrapStrengthTruncated( primaryPlanetStrength, true, false ).Add( " is located on " ).AddPlanetNameFormated( planet, false ).Add( "." );
+                    buffer.Add( "主要的" );
+                buffer.Add( "可见兵力为" ).WrapStrengthTruncated( primaryPlanetStrength, true, false ).Add( "，位于" ).AddPlanetNameFormated( planet, false ).Add( "。" );
             }
             if ( totalVisibleApplicableStrength != primaryPlanetStrength || totalVisibleApplicableStrength == 0 )
             {
                 if ( totalVisibleApplicableStrength > 0 )
-                    buffer.Add( "\nWe have vision on a combined total of " ).WrapStrengthTruncated( totalVisibleApplicableStrength, true, false ).Add( " in the galaxy." );
+                    buffer.Add( "\n我们观测到合计" ).WrapStrengthTruncated( totalVisibleApplicableStrength, true, false ).Add( "的兵力在银河中。" );
                 else
-                    buffer.Add( "\nOur readings suggest that they are present, but so far we have no visual on their ships. We need to further explore the galaxy." );
+                    buffer.Add( "\n我们的读数显示他们存在，但迄今为止我们看不到他们的舰船。我们需要进一步探索银河。" );
             }
         }
     }
@@ -428,24 +428,24 @@ namespace Arcen.AIW2.External
             int totalVisibleApplicableStrength = Objective.RelatedInt2;
             int primaryPlanetStrength = Objective.RelatedInt3;
             Faction faction = World_AIW2.Instance.Factions[Objective.RelatedInt1];
-            buffer.Add( "Stopping the machine menace has to be our primary objective at all times - there can never be a secure future for Humanity with it in our galaxy - but at the same time we are at war with the " )
+            buffer.Add( "阻止机器威胁必须始终是我们的首要目标 - 只要它存在于我们的银河中，人类就不可能有安全的未来 - 但同时我们也在与" )
                 .AddFactionNameInItsColor( faction )
-                .Add( " as well.\nTo fully conclude the current war we need to destroy absolutely all of them. Military and not." );
+                .Add( "交战。\n要彻底结束当前战争，我们需要摧毁他们的一切，无论是军事还是非军事。" );
             if ( planet != null )
             {
-                buffer.Add( "\nTheir " );
+                buffer.Add( "\n他们" );
                 if ( totalVisibleApplicableStrength == primaryPlanetStrength )
-                    buffer.Add( "only " );
+                    buffer.Add( "唯一的" );
                 else
-                    buffer.Add( "primary " );
-                buffer.Add( "visible force of " ).WrapStrengthTruncated( primaryPlanetStrength, true, false ).Add( " is located on " ).AddPlanetNameFormated( planet, false ).Add( "." );
+                    buffer.Add( "主要的" );
+                buffer.Add( "可见兵力为" ).WrapStrengthTruncated( primaryPlanetStrength, true, false ).Add( "，位于" ).AddPlanetNameFormated( planet, false ).Add( "。" );
             }
             if ( totalVisibleApplicableStrength != primaryPlanetStrength || totalVisibleApplicableStrength == 0 )
             {
                 if ( totalVisibleApplicableStrength > 0 )
-                    buffer.Add( "\nWe have vision on a combined total of " ).WrapStrengthTruncated( totalVisibleApplicableStrength, true, false ).Add( " in the galaxy." );
+                    buffer.Add( "\n我们观测到合计" ).WrapStrengthTruncated( totalVisibleApplicableStrength, true, false ).Add( "的兵力在银河中。" );
                 else
-                    buffer.Add( "\nOur readings suggest that they are present, but so far we have no visual on their ships. We need to further explore the galaxy." );
+                    buffer.Add( "\n我们的读数显示他们存在，但迄今为止我们看不到他们的舰船。我们需要进一步探索银河。" );
             }
         }
     }
@@ -470,12 +470,12 @@ namespace Arcen.AIW2.External
             int enemyStrengthThere = Objective.RelatedInt2;
             Faction faction = World_AIW2.Instance.Factions[Objective.RelatedInt1];
             bool isOurHomeworld = World_AIW2.Instance.GetLocalPlayerFactionOrNull() == faction;
-            buffer.Add( "In order to secure the future of Mankind we must keep " ).AddPlanetNameFormated( planet, false ).Add( ", " );
+            buffer.Add( "为了确保人类的未来，我们必须保护" ).AddPlanetNameFormated( planet, false ).Add( "，" );
             if ( isOurHomeworld )
-                buffer.Add( "our homeworld" );
+                buffer.Add( "我们的母星" );
             else
-                buffer.Add( "the homeworld of " ).AddFactionNameInItsColor( faction );
-            buffer.Add( " safe. Right now " ).WrapStrengthTruncated( enemyStrengthThere, true, false ).Add( " enemies are here." );
+                buffer.AddFactionNameInItsColor( faction ).Add( "的母星" );
+            buffer.Add( "的安全。目前有" ).WrapStrengthTruncated( enemyStrengthThere, true, false ).Add( "敌人在这里。" );
         }
     }
 }

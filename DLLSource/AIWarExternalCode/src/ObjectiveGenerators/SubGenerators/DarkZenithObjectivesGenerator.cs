@@ -72,14 +72,14 @@ namespace Arcen.AIW2.External
         public MouseHandlingResult ClickHandler( ActualObjective Objective ) { return MouseHandlingResult.None; }
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "The ", ObjectiveColors.Hint ).Add( "Fleets Menu", "55aaff" ).Add( " is your primary control panel for the Dark Zenith Empire.\n\n" );
-            buffer.Add( "Open it by clicking the ", ObjectiveColors.Hint ).Add( "hacking region", "55aaff" ).Add( " of the resource bar at the top of the screen.\n\n" );
-            buffer.Add( "From the Fleets Menu you can:\n" );
-            buffer.Add( "  鈥?See your full ", ObjectiveColors.Hint ).Add( "economy overview", "55aaff" ).Add( ": Epistyle assignments, Terminus resource stocks, Transport activity.\n" );
-            buffer.Add( "  鈥?", ObjectiveColors.Hint ).Add( "Assign what each Epistyle builds", "55aaff" ).Add( ": Ships, Terminii, Structures, or Upgrades.\n" );
-            buffer.Add( "  鈥?Browse and understand your ", ObjectiveColors.Hint ).Add( "tech tree upgrades", "55aaff" ).Add( ".\n" );
-            buffer.Add( "  鈥?Track ", ObjectiveColors.Hint ).Add( "Constructor", "55aaff" ).Add( " activity and see where new economic structures are being placed.\n\n" );
-            buffer.Add( "The Dark Zenith manage themselves on autopilot, but the Fleets Menu is how you direct their priorities.", ObjectiveColors.Hint );
+            buffer.Add( "舰队菜单", "55aaff" ).Add( "是黑暗 Zenith帝国的主要控制面板。\n\n" );
+            buffer.Add( "点击屏幕顶部资源栏的", ObjectiveColors.Hint ).Add( "入侵区域", "55aaff" ).Add( "即可打开。\n\n" );
+            buffer.Add( "在舰队菜单中你可以：\n" );
+            buffer.Add( "  鈥?查看完整的", ObjectiveColors.Hint ).Add( "经济概览", "55aaff" ).Add( "：柱楣分配、Terminus资源库存、运输船活动。\n" );
+            buffer.Add( "  鈥?", ObjectiveColors.Hint ).Add( "分配每个柱楣建造什么", "55aaff" ).Add( "：舰船、Terminii、建筑或升级。\n" );
+            buffer.Add( "  鈥?浏览和了解你的", ObjectiveColors.Hint ).Add( "科技树升级", "55aaff" ).Add( "。\n" );
+            buffer.Add( "  鈥?追踪", ObjectiveColors.Hint ).Add( "建造者", "55aaff" ).Add( "的活动，了解新的经济建筑被放置在哪里。\n\n" );
+            buffer.Add( "黑暗 Zenith会自动驾驶，但舰队菜单是你指导它们优先级的方式。", ObjectiveColors.Hint );
         }
     }
 
@@ -89,20 +89,20 @@ namespace Arcen.AIW2.External
         public MouseHandlingResult ClickHandler( ActualObjective Objective ) { return MouseHandlingResult.None; }
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "The Dark Zenith economy runs on six resources and three structure types.\n\n" );
-            buffer.Add( "Terminii", "55aaff" ).Add( " are resource extractors. Each planet can host Terminii for one or more of the six resource types: " );
-            buffer.Add( "Octiron", "d3d3d3" ).Add( " (base metal), " );
-            buffer.Add( "Thaumite", "10ff10" ).Add( ", " );
-            buffer.Add( "Chelonium", "4444ff" ).Add( ", " );
-            buffer.Add( "Alkahest", "D7BE69" ).Add( ", " );
-            buffer.Add( "Izumite", "ff4422" ).Add( ", and " );
-            buffer.Add( "Skrith", "8aaa8a" ).Add( ".\n\n" );
-            buffer.Add( "Epistyles", "55aaff" ).Add( " are your factories. They convert stored resources into ships, new Terminii, and other structures. " );
-            buffer.Add( "Epistyles cannot be built on AI-controlled planets", "ffaa44" ).Add( "; AI command station radiation disrupts them.\n\n" );
-            buffer.Add( "Transports", "55aaff" ).Add( " carry resources between planets to keep Epistyles supplied. They require a " );
-            buffer.Add( "contiguous chain of planets", "ffaa44" ).Add( "; the AI will snipe your transports if they can.\n\n" );
-            buffer.Add( "Harvesters", "55aaff" ).Add( " work alongside Octiron Terminii to extract metal. " );
-            buffer.Add( "Privateers", "55aaff" ).Add( " will steal your other transports for Pirate Epistyles, which produce extra-powerful ships.", ObjectiveColors.Hint );
+            buffer.Add( "黑暗 Zenith的经济运行于六种资源和三种建筑类型之上。\n\n" );
+            buffer.Add( "Terminii", "55aaff" ).Add( "是资源提取器。每个星球可以容纳一种或多种资源类型的Terminii：" );
+            buffer.Add( "Octiron", "d3d3d3" ).Add( "（基础金属），" );
+            buffer.Add( "Thaumite", "10ff10" ).Add( "，" );
+            buffer.Add( "Chelonium", "4444ff" ).Add( "，" );
+            buffer.Add( "Alkahest", "D7BE69" ).Add( "，" );
+            buffer.Add( "Izumite", "ff4422" ).Add( "和" );
+            buffer.Add( "Skrith", "8aaa8a" ).Add( "。\n\n" );
+            buffer.Add( "柱楣", "55aaff" ).Add( "是你的工厂。它们将存储的资源转换为舰船、新的Terminii和其他建筑。" );
+            buffer.Add( "柱楣不能在AI控制的星球上建造", "ffaa44" ).Add( "；AI指挥站的辐射会干扰它们。\n\n" );
+            buffer.Add( "运输船", "55aaff" ).Add( "在星球之间运输资源以保持柱楣的供应。它们需要" );
+            buffer.Add( "连续的星球链", "ffaa44" ).Add( "；AI会尽可能狙击你的运输船。\n\n" );
+            buffer.Add( "收割者", "55aaff" ).Add( "与Octiron Terminii一起工作以提取金属。" );
+            buffer.Add( "私掠者", "55aaff" ).Add( "会偷取你的其他运输船供给海盗柱楣，后者生产超强力的舰船。", ObjectiveColors.Hint );
         }
     }
 
@@ -112,20 +112,20 @@ namespace Arcen.AIW2.External
         public MouseHandlingResult ClickHandler( ActualObjective Objective ) { return MouseHandlingResult.None; }
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "The Dark Zenith tech tree is driven by ", ObjectiveColors.Hint ).Add( "variant upgrades", "55aaff" ).Add( " (unlocking special infused forms of each ship tier).\n\n" );
+            buffer.Add( "黑暗 Zenith科技树由", ObjectiveColors.Hint ).Add( "变体升级", "55aaff" ).Add( "驱动（解锁每个舰船层级的特殊灌注形态）。\n\n" );
 
-            buffer.Add( "Ship Tiers:\n", ObjectiveColors.Hint );
-            buffer.Add( "  鈥?", ObjectiveColors.Hint ).Add( "Strikecraft", "55aaff" ).Add( ": always available.\n" );
-            buffer.Add( "  鈥?", ObjectiveColors.Hint ).Add( "Guardian Tier", "55aaff" ).Add( ": requires 3 variant upgrades.\n" );
-            buffer.Add( "  鈥?", ObjectiveColors.Hint ).Add( "Dire Tier", "55aaff" ).Add( ": requires 6 variants + Guardian Tier + Mark 2.\n" );
-            buffer.Add( "  鈥?", ObjectiveColors.Hint ).Add( "Exo Tier", "55aaff" ).Add( ": requires 10 variants + Dire Tier + Mark 3.\n\n" );
+            buffer.Add( "舰船层级：\n", ObjectiveColors.Hint );
+            buffer.Add( "  鈥?", ObjectiveColors.Hint ).Add( "攻击艇", "55aaff" ).Add( "：始终可用。\n" );
+            buffer.Add( "  鈥?", ObjectiveColors.Hint ).Add( "守护者层级", "55aaff" ).Add( "：需要3个变体升级。\n" );
+            buffer.Add( "  鈥?", ObjectiveColors.Hint ).Add( "凶暴层级", "55aaff" ).Add( "：需要6个变体 + 守护者层级 + Mark 2。\n" );
+            buffer.Add( "  鈥?", ObjectiveColors.Hint ).Add( "Exo层级", "55aaff" ).Add( "：需要10个变体 + 凶暴层级 + Mark 3。\n\n" );
 
-            buffer.Add( "Mark Levels", ObjectiveColors.Hint ).Add( " unlock stronger versions of all ships:\n" );
-            buffer.Add( "  Mark 2: 3 variants  鈥? Mark 3: 5 variants + Guardian  鈥? Mark 4: 7 variants\n" );
-            buffer.Add( "  Mark 5: 9 variants + Dire  鈥? Mark 6: 11 variants  鈥? Mark 7: 13 variants + Exo\n\n" );
+            buffer.Add( "等级", ObjectiveColors.Hint ).Add( "解锁所有舰船的更强版本：\n" );
+            buffer.Add( "  Mark 2: 3个变体  鈥? Mark 3: 5个变体 + 守护者  鈥? Mark 4: 7个变体\n" );
+            buffer.Add( "  Mark 5: 9个变体 + 凶暴  鈥? Mark 6: 11个变体  鈥? Mark 7: 13个变体 + Exo\n\n" );
 
-            buffer.Add( "Unlock upgrades via the ", ObjectiveColors.Hint ).Add( "hacking menu on any Epistyle", "55aaff" ).Add( ". Each new variant type you unlock counts toward the gates above, so diversify your variants rather than repeating the same ones.\n\n" );
-            buffer.Add( "Epistyles can also be upgraded to produce permanent passive resource income and to raise their Terminus and build limits.", ObjectiveColors.Hint );
+            buffer.Add( "通过任何柱楣上的", ObjectiveColors.Hint ).Add( "入侵菜单", "55aaff" ).Add( "解锁升级。每解锁一种新变体类型都会计入上述门槛，所以要多样化你的变体，而不是重复同一种。\n\n" );
+            buffer.Add( "柱楣也可以升级以产生永久的被动资源收入，并提高其Terminus和建造上限。", ObjectiveColors.Hint );
         }
     }
 
@@ -135,15 +135,15 @@ namespace Arcen.AIW2.External
         public MouseHandlingResult ClickHandler( ActualObjective Objective ) { return MouseHandlingResult.None; }
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "Dark Zenith ships can be infused with secondary resources to create ", ObjectiveColors.Hint ).Add( "variant forms", "55aaff" ).Add( " with special abilities. Each tier has five variants:\n\n" );
-            buffer.Add( "  鈥?", ObjectiveColors.Hint ).Add( "Stout", "10ff10" ).Add( "  (Thaumite): more durable; increased hull and resilience.\n" );
-            buffer.Add( "  鈥?", ObjectiveColors.Hint ).Add( "Fortified", "4444ff" ).Add( "  (Chelonium): adds an extra defensive system.\n" );
-            buffer.Add( "  鈥?", ObjectiveColors.Hint ).Add( "Spirited", "D7BE69" ).Add( "  (Alkahest): cloaked and faster; harder to pin down.\n" );
-            buffer.Add( "  鈥?", ObjectiveColors.Hint ).Add( "Enraged", "ff4422" ).Add( "  (Izumite): extra weapon specialized against single powerful targets.\n" );
-            buffer.Add( "  鈥?", ObjectiveColors.Hint ).Add( "Sinister", "8aaa8a" ).Add( "  (Skrith): extra weapon for crowd control against massed enemies.\n\n" );
-            buffer.Add( "Variants must be unlocked separately for each ship tier and chain from the previous tier's variant of the same type. " );
-            buffer.Add( "Each variant you unlock also counts toward tier and mark level prerequisites.\n\n" );
-            buffer.Add( "Unlock variants via the ", ObjectiveColors.Hint ).Add( "hacking menu on any Epistyle", "55aaff" ).Add( ". Unlocking all five variants for a tier is typically the fastest path to the next tier.", ObjectiveColors.Hint );
+            buffer.Add( "黑暗 Zenith舰船可以用次级资源灌注以创造具有特殊能力的", ObjectiveColors.Hint ).Add( "变体形态", "55aaff" ).Add( "。每个层级有五种变体：\n\n" );
+            buffer.Add( "  鈥?", ObjectiveColors.Hint ).Add( "坚韧", "10ff10" ).Add( "（Thaumite）：更耐久；提升船体和韧性。\n" );
+            buffer.Add( "  鈥?", ObjectiveColors.Hint ).Add( "强化", "4444ff" ).Add( "（Chelonium）：增加一个额外防御系统。\n" );
+            buffer.Add( "  鈥?", ObjectiveColors.Hint ).Add( "灵动", "D7BE69" ).Add( "（Alkahest）：隐形且更快；更难被锁定。\n" );
+            buffer.Add( "  鈥?", ObjectiveColors.Hint ).Add( "激怒", "ff4422" ).Add( "（Izumite）：针对单个强大目标的额外武器。\n" );
+            buffer.Add( "  鈥?", ObjectiveColors.Hint ).Add( "诡诈", "8aaa8a" ).Add( "（Skrith）：对抗集群敌人的群体控制额外武器。\n\n" );
+            buffer.Add( "变体必须为每个舰船层级分别解锁，并从上一层级同类型变体链式解锁。" );
+            buffer.Add( "你解锁的每种变体也会计入层级和等级前提条件。\n\n" );
+            buffer.Add( "通过任何柱楣上的", ObjectiveColors.Hint ).Add( "入侵菜单", "55aaff" ).Add( "解锁变体。解锁一个层级的所有五种变体通常是进入下一层级的最快路径。", ObjectiveColors.Hint );
         }
     }
 
@@ -153,13 +153,13 @@ namespace Arcen.AIW2.External
         public MouseHandlingResult ClickHandler( ActualObjective Objective ) { return MouseHandlingResult.None; }
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "The ", ObjectiveColors.Hint ).Add( "Fimbulwinter", "55aaff" ).Add( " is a terraforming process that permanently alters planets to favor the Dark Zenith.\n\n" );
-            buffer.Add( "Hjarnum", "55aaff" ).Add( " units orbit planets and gradually apply the Fimbulwinter transformation. Once complete:\n" );
-            buffer.Add( "  鈥?The planet ", ObjectiveColors.Hint ).Add( "generates Science", ObjectiveColors.Reward ).Add( ".\n" );
-            buffer.Add( "  鈥?", ObjectiveColors.Hint ).Add( "Dark Zenith and allied ships", "55aaff" ).Add( " move faster on the planet.\n" );
-            buffer.Add( "  鈥?", ObjectiveColors.Hint ).Add( "Enemy ships", "ff8877" ).Add( " entering the planet are slowed.\n\n" );
-            buffer.Add( "Every safely Fimbulwintered planet generates Science; this is your primary path to Science income outside of combat kills.\n\n" );
-            buffer.Add( "Hjarnum are ", ObjectiveColors.Hint ).Add( "passive", "55aaff" ).Add( " during transformation and will not fight. Protect them while they work, but the AI will generally ignore them.", ObjectiveColors.Hint );
+            buffer.Add( "芬布尔之冬", "55aaff" ).Add( "是一种永久改变星球以利于黑暗 Zenith的地形改造过程。\n\n" );
+            buffer.Add( "Hjarnum", "55aaff" ).Add( "单位环绕星球并逐渐施加芬布尔之冬改造。完成后：\n" );
+            buffer.Add( "  鈥?星球", ObjectiveColors.Hint ).Add( "产生科技", ObjectiveColors.Reward ).Add( "。\n" );
+            buffer.Add( "  鈥?", ObjectiveColors.Hint ).Add( "黑暗 Zenith及盟友舰船", "55aaff" ).Add( "在星球上移动更快。\n" );
+            buffer.Add( "  鈥?", ObjectiveColors.Hint ).Add( "敌方舰船", "ff8877" ).Add( "进入星球时速度减慢。\n\n" );
+            buffer.Add( "每个安全经历了芬布尔之冬的星球都会产生科技；这是你在战斗击杀之外获取科技的主要途径。\n\n" );
+            buffer.Add( "Hjarnum在改造期间是", ObjectiveColors.Hint ).Add( "被动的", "55aaff" ).Add( "，不会战斗。保护它们工作，但AI通常会忽略它们。", ObjectiveColors.Hint );
         }
     }
 
@@ -171,14 +171,14 @@ namespace Arcen.AIW2.External
         {
             int count = Objective.RelatedInt1;
             if ( count > 0 )
-                buffer.Add( count.ToString(), "ff8877" ).Add( count == 1 ? " Nadir Base is" : " Nadir Bases are", ObjectiveColors.Hint ).Add( " present in the galaxy.\n\n" );
+                buffer.Add( count.ToString(), "ff8877" ).Add( count == 1 ? " 个天底基地存在于" : " 个天底基地存在于", ObjectiveColors.Hint ).Add( "银河中。\n\n" );
 
-            buffer.Add( "Nadir Bases", "ff8877" ).Add( " are AI-deployed structures specifically designed to counter the Dark Zenith. They continuously spawn anti-DZ ships to wear down your forces and economy.\n\n" );
-            buffer.Add( "Destroying a Nadir Base:\n" );
-            buffer.Add( "  鈥?Removes a persistent source of anti-DZ pressure.\n" );
-            buffer.Add( "  鈥?Yields ", ObjectiveColors.Hint ).Add( "Alkahest", "D7BE69" ).Add( " and other DZ resources.\n" );
-            buffer.Add( "  鈥?Grants ", ObjectiveColors.Hint ).Add( "Hacking points", ObjectiveColors.Reward ).Add( " for your Epistyles.\n\n" );
-            buffer.Add( "Nadir Bases ", ObjectiveColors.Hint ).Add( "increase in mark level", "ff8877" ).Add( " as the AI threat escalates, so prioritize them before they become significantly harder to crack.", ObjectiveColors.Hint );
+            buffer.Add( "天底基地", "ff8877" ).Add( "是AI部署的专门用于对抗黑暗 Zenith的建筑。它们不断生成反DZ舰船以消耗你的力量和经济。\n\n" );
+            buffer.Add( "摧毁天底基地：\n" );
+            buffer.Add( "  鈥?消除持续的反DZ压力源。\n" );
+            buffer.Add( "  鈥?获得", ObjectiveColors.Hint ).Add( "Alkahest", "D7BE69" ).Add( "和其他DZ资源。\n" );
+            buffer.Add( "  鈥?为你的柱楣提供", ObjectiveColors.Hint ).Add( "入侵点数", ObjectiveColors.Reward ).Add( "。\n\n" );
+            buffer.Add( "天底基地", ObjectiveColors.Hint ).Add( "的等级会随着AI威胁升级而提高", "ff8877" ).Add( "，所以要优先处理它们，以免它们变得难以攻克。", ObjectiveColors.Hint );
         }
     }
 }

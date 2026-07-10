@@ -46,17 +46,17 @@ namespace Arcen.AIW2.External
 tooltipBuffer.Clear();
             if ( Data.EntityList.Count == 0 )
                 return true;
-            tooltipBuffer.Add("Your scourge vassals have upgradable structures.\n");
-            tooltipBuffer.Add("Here are their locations:\n");
+            tooltipBuffer.Add("您的天灾附庸有可升级的建筑。\n");
+            tooltipBuffer.Add("以下是它们的位置：\n");
             for ( int i = 0; i < Data.EntityList.Count; i++ )
             {
                 GameEntity_Squad structure = Data.EntityList[i].GetSquad();
                 if ( structure == null )
                     continue;
-                tooltipBuffer.Add("\tA mark ").Add( structure.CurrentMarkLevel, "a1ffa1" ).Add( " ").Add(structure.TypeData.GetDisplayName() ).Add(" on ").Add(structure.Planet.Name, "ffbba1").Add(" can be upgraded.\n").Add("\n");
+                tooltipBuffer.Add("\t一个等级 ").Add( structure.CurrentMarkLevel, "a1ffa1" ).Add( " ").Add(structure.TypeData.GetDisplayName() ).Add(" 在 ").Add(structure.Planet.Name, "ffbba1").Add(" 可以升级。\n").Add("\n");
             }
-            tooltipBuffer.Add("\nUse the hacking menu to upgrade your structures.\n");
-            tooltipBuffer.Add("\nYou can give your scourge vassals some instructions by using the Edit Planet part of the galaxy menu; set the Priority Level to a value between Fire_Low and Fire_Override. This will make the scourge want to interact with those planets (Low being less important, Override being most important).\n");
+            tooltipBuffer.Add("\n使用破解菜单升级您的建筑。\n");
+            tooltipBuffer.Add("\n您可以通过使用星系菜单的编辑星球部分给您的天灾附庸一些指示；将优先级级别设置为 Fire_Low 和 Fire_Override 之间的值。这将使天灾更倾向于与这些星球互动（Low 表示不太重要，Override 表示最重要）。\n");
             Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( null, tooltipBuffer.GetStringAndResetForNextUpdate() );
             return true;
         }
@@ -77,7 +77,7 @@ tooltipBuffer.Clear();
                 debugStage = 10;
                 Image.UpdateWith( sprite_Building, true, "Scourge" );
                 ArcenDoubleCharacterBuffer buffer = SubTexts[0].Text.StartWritingToBuffer();
-                buffer.Add( "Scourge\n" );
+                buffer.Add( "天灾\n" );
                 SubTexts[0].Text.FinishWritingToBuffer();
                 debugStage = 20;
                 if ( Data.EntityList.Count == 0 )
@@ -145,16 +145,16 @@ tooltipBuffer.Clear();
 tooltipBuffer.Clear();
             if ( Data.EntityList.Count == 0 )
                 return true;
-            tooltipBuffer.Add("Your scourge vassals have some flowers growing.\n");
-            tooltipBuffer.Add("Here are their locations:\n");
+            tooltipBuffer.Add("您的天灾附庸有一些花正在生长。\n");
+            tooltipBuffer.Add("以下是它们的位置：\n");
             for ( int i = 0; i < Data.EntityList.Count; i++ )
             {
                 GameEntity_Squad flower = Data.EntityList[i].GetSquad();
                 if ( flower == null )
                     continue;
-                tooltipBuffer.Add("\tA ").Add(flower.TypeData.GetDisplayName() ).Add(" on ").Add(flower.Planet.Name, "ffbba1").Add(" is growing and must be protected from the AI.\n").Add("\n");
+                tooltipBuffer.Add("\t一个 ").Add(flower.TypeData.GetDisplayName() ).Add(" 在 ").Add(flower.Planet.Name, "ffbba1").Add(" 正在生长，必须防止被 AI 破坏。\n").Add("\n");
             }
-            tooltipBuffer.Add("\nIf it finishes growing it will become a Corbomite Crystal and can be destroyed to grant Corbomite.\n");
+            tooltipBuffer.Add("\n如果它完成生长，将变成科博迈特水晶，摧毁后可获得科博迈特。\n");
             Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( null, tooltipBuffer.GetStringAndResetForNextUpdate() );
             return true;
         }
@@ -175,7 +175,7 @@ tooltipBuffer.Clear();
                 debugStage = 10;
                 Image.UpdateWith( sprite_Building, true, "Flowers" );
                 ArcenDoubleCharacterBuffer buffer = SubTexts[0].Text.StartWritingToBuffer();
-                buffer.Add( "Flowers\n" );
+                buffer.Add( "花朵\n" );
                 SubTexts[0].Text.FinishWritingToBuffer();
                 debugStage = 20;
                 if ( Data.EntityList.Count == 0 )

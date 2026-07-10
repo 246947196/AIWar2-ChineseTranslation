@@ -188,25 +188,25 @@ namespace Arcen.AIW2.External
                                     debugStage = 680;
                                     string planetStr = "<color=#" + faction.FactionCenterColor.ColorHexBrighter + ">" + entity.GetPlanetName_Safe() + "</color>";
                                     if ( random < 10 )
-                                        options.exoText = "From Hell's dark heart, <color=#" + aicolor + ">" + entity.TypeData.GetDisplayName() + "</color> on " + planetStr + " stabs at thee!";
+                                        options.exoText = "来自地狱黑暗之心，位于 " + planetStr + " 的 <color=#" + aicolor + ">" + entity.TypeData.GetDisplayName() + "</color> 刺向你！";
                                     else if ( random < 20 )
-                                        options.exoText = "The AI wishes to avenge its <color=#" + aicolor + ">" + entity.TypeData.GetDisplayName() + "</color> on " + planetStr + ".";
+                                        options.exoText = "AI 希望为位于 " + planetStr + " 的 <color=#" + aicolor + ">" + entity.TypeData.GetDisplayName() + "</color> 复仇。";
                                     else if ( random < 30 )
-                                        options.exoText = "The echoes of <color=#" + aicolor + ">" + entity.TypeData.GetDisplayName() + "</color> on " + planetStr + " will live on.";
+                                        options.exoText = "位于 " + planetStr + " 的 <color=#" + aicolor + ">" + entity.TypeData.GetDisplayName() + "</color> 的回响将永存。";
                                     else if ( random < 40 )
-                                        options.exoText = "AI Exogalactic Strikforce inbound; looks like killing <color=#" + aicolor + ">" + entity.TypeData.GetDisplayName() + "</color> on " + planetStr + " has repurcussions.";
+                                        options.exoText = "AI 河外打击力量正在逼近；看来摧毁位于 " + planetStr + " 的 <color=#" + aicolor + ">" + entity.TypeData.GetDisplayName() + "</color> 产生了后果。";
                                     else if ( random < 50 )
-                                        options.exoText = "A vengeful strike for <color=#" + aicolor + ">" + entity.TypeData.GetDisplayName() + "</color> on " + planetStr + ".";
+                                        options.exoText = "为位于 " + planetStr + " 的 <color=#" + aicolor + ">" + entity.TypeData.GetDisplayName() + "</color> 复仇一击。";
                                     else if ( random < 60 )
-                                        options.exoText = "<color=#" + aicolor + ">" + entity.TypeData.GetDisplayName() + "</color> on " + planetStr + " will have its revenge from beyond the grave.";
+                                        options.exoText = "位于 " + planetStr + " 的 <color=#" + aicolor + ">" + entity.TypeData.GetDisplayName() + "</color> 将从坟墓中复仇。";
                                     else if ( random < 70 )
-                                        options.exoText = "The destruction of <color=#" + aicolor + ">" + entity.TypeData.GetDisplayName() + "</color> on " + planetStr + " is triggering an AI exo.";
+                                        options.exoText = "摧毁位于 " + planetStr + " 的 <color=#" + aicolor + ">" + entity.TypeData.GetDisplayName() + "</color> 触发了 AI 远征。";
                                     else if ( random < 80 )
-                                        options.exoText = "The <color=#" + aicolor + ">" + entity.TypeData.GetDisplayName() + "</color> on " + planetStr + " sends its regards.";
+                                        options.exoText = "位于 " + planetStr + " 的 <color=#" + aicolor + ">" + entity.TypeData.GetDisplayName() + "</color> 致以问候。";
                                     else if ( random < 90 )
-                                        options.exoText = "The AI is sending an exo for your destruction of <color=#" + aicolor + ">" + entity.TypeData.GetDisplayName() + "</color> on " + planetStr + ".";
+                                        options.exoText = "AI 正在派遣远征，以报复您摧毁了位于 " + planetStr + " 的 <color=#" + aicolor + ">" + entity.TypeData.GetDisplayName() + "</color>。";
                                     else
-                                        options.exoText = "This exo is for <color=#" + aicolor + ">" + entity.TypeData.GetDisplayName() + "</color> on " + planetStr + ".";
+                                        options.exoText = "这次远征是为了位于 " + planetStr + " 的 <color=#" + aicolor + ">" + entity.TypeData.GetDisplayName() + "</color>。";
                                     ExoGalacticAttackManager.SendExoGalacticAttack( options, Context );
                                 }
                             }
@@ -234,7 +234,7 @@ namespace Arcen.AIW2.External
                         if ( chatHandlerOrNull != null )
                             chatHandlerOrNull.PlanetToView = entity.Planet;
 
-                        World_AIW2.Instance.QueueChatMessageOrCommand( entity.GetPlanetName_Safe() + " command station destroyed!", ChatType.LogToCentralChat,
+                        World_AIW2.Instance.QueueChatMessageOrCommand( entity.GetPlanetName_Safe() + " 指挥站被摧毁！", ChatType.LogToCentralChat,
                             "ArkChiefOfStaff_DysonLiberatedFromPlayer", chatHandlerOrNull );
                     }
                     debugStage = 1200;

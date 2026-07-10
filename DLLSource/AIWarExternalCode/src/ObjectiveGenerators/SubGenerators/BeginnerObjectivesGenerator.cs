@@ -295,9 +295,9 @@ namespace Arcen.AIW2.External
 
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "Gate Raiding", ObjectiveColors.Keyword ).Add( " means destroying just the " ).Add( "Warp Gate", ObjectiveColors.Keyword ).Add( " on an AI planet (without capturing the planet itself) so the AI cannot send waves through it.\n\n" );
-            buffer.Add( "The AI only sends waves against planets adjacent to a Warp Gate. If you control too many planets with Warp Gates nearby, you're forced to defend all of them. Raiding those gates lets you choose where attacks will land, then fortify that location.\n\n" );
-            buffer.Add( "Remember, you can also hack to destroy a Warp Gate.", "ffeecc" );
+            buffer.Add( "跃迁门袭击", ObjectiveColors.Keyword ).Add( "意味着只摧毁AI星球上的" ).Add( "跃迁门", ObjectiveColors.Keyword ).Add( "（而不占领星球本身），这样AI就无法通过它发送波次。\n\n" );
+            buffer.Add( "AI只对与跃迁门相邻的星球发送波次。如果你控制的星球附近有太多跃迁门，你就被迫防御所有它们。袭击这些门让你可以选择攻击将在何处着陆，然后加固该位置。\n\n" );
+            buffer.Add( "记住，你也可以通过入侵来摧毁跃迁门。", "ffeecc" );
         }
     }
 
@@ -314,8 +314,8 @@ namespace Arcen.AIW2.External
 
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "AI ", "ff8888" ).Add( "Waves", "ff8888" ).Add( " are launched through " ).Add( "Warp Gates", ObjectiveColors.Keyword ).Add( " against adjacent human planets.\n\n" );
-            buffer.Add( "Planets next to a Warp Gate are at elevated risk and should be heavily fortified. Consider Gate Raiding to reduce the number of planets you need to defend.", "ffeecc" );
+            buffer.Add( "AI", "ff8888" ).Add( "波次", "ff8888" ).Add( "通过" ).Add( "跃迁门", ObjectiveColors.Keyword ).Add( "攻击相邻的人类星球。\n\n" );
+            buffer.Add( "跃迁门旁边的星球风险较高，应重点加固。考虑进行跃迁门袭击以减少需要防御的星球数量。", "ffeecc" );
         }
     }
 
@@ -332,12 +332,12 @@ namespace Arcen.AIW2.External
 
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "Capturing planets early gives you more " ).Add( "science", "7ce9ff" ).Add( ", " ).Add( "metal", "ccccee" ).Add( ", and " ).Add( "hacking", "3de799" ).Add( ". Aim for around 3-4 planets (enough to build a strong economy without raising " ).Add( "AI Progress", "ff8888" ).Add( " too quickly).\n\n" );
-            buffer.Add( "Good early targets:\n" );
-            buffer.Add( "  Flagships", ObjectiveColors.Keyword ).Add( ": grant new ship lines for increased offensive power.\n" );
-            buffer.Add( "  Advanced Research Stations (ARSes)", ObjectiveColors.Keyword ).Add( ": hack them to grant a new ship line to the hacking fleet.\n" );
-            buffer.Add( "  Turret Schematic Servers (TSSes)", ObjectiveColors.Keyword ).Add( ": hack them to give all your planets access to more turrets.\n\n" );
-            buffer.Add( "Check the Intel menu and galaxy map to find these nearby.", "ffeecc" );
+            buffer.Add( "早期占领星球可让你获得更多" ).Add( "科技", "7ce9ff" ).Add( "、" ).Add( "金属", "ccccee" ).Add( "和" ).Add( "入侵点数", "3de799" ).Add( "。目标是大约3-4个星球（足以建立强大经济而不会使" ).Add( "AI进程", "ff8888" ).Add( "增长过快）。\n\n" );
+            buffer.Add( "好的早期目标：\n" );
+            buffer.Add( "  旗舰", ObjectiveColors.Keyword ).Add( "：提供新的舰船线以增强进攻能力。\n" );
+            buffer.Add( "  高级研究站（ARS）", ObjectiveColors.Keyword ).Add( "：入侵它们以为入侵舰队提供新的舰船线。\n" );
+            buffer.Add( "  炮塔蓝图服务器（TSS）", ObjectiveColors.Keyword ).Add( "：入侵它们以使你所有星球都能建造更多炮塔。\n\n" );
+            buffer.Add( "查看情报菜单和银河地图以在附近找到这些目标。", "ffeecc" );
         }
     }
 
@@ -354,12 +354,12 @@ namespace Arcen.AIW2.External
 
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "Spending ", "7ce9ff" ).Add( "science", "7ce9ff" ).Add( " on tech is one of the most impactful things you can do. Focus early on one or two " ).Add( "weapon techs", ObjectiveColors.Keyword ).Add( " that benefit several of your ship lines, then branch into " ).Add( "hull tech", ObjectiveColors.Keyword ).Add( " for offense, " ).Add( "turret tech", ObjectiveColors.Keyword ).Add( " for defense, or other weapon techs as your fleet evolves.\n\n" );
-            buffer.Add( "Strong early picks:\n" );
-            buffer.Add( "  Forcefield 1", ObjectiveColors.Keyword ).Add( ": strengthens all forcefields, buying more time during attacks.\n" );
-            buffer.Add( "  Engineers 1", ObjectiveColors.Keyword ).Add( ": makes all engineers work much faster, saving significant time.\n\n" );
-            buffer.Add( "You can also invest science directly into a planet or fleet to increase its " ).Add( "mark", ObjectiveColors.Keyword ).Add( ". Critical early priority: upgrade your " ).Add( "homeworld to mark 3", ObjectiveColors.Keyword ).Add( " (the boost to its output is significant and this is one of the best early uses of science).\n\n" );
-            buffer.Add( "You gain more science by capturing planets or hacking AI planets. It's fine to hold science in reserve until you've scouted more of the galaxy and know what ships and opportunities are available.", "ffeecc" );
+            buffer.Add( "将", "7ce9ff" ).Add( "科技", "7ce9ff" ).Add( "投入研究是最有影响力的行动之一。早期专注于一两种使多个舰船线受益的" ).Add( "武器科技", ObjectiveColors.Keyword ).Add( "，然后扩展到" ).Add( "船体科技", ObjectiveColors.Keyword ).Add( "用于进攻、" ).Add( "炮塔科技", ObjectiveColors.Keyword ).Add( "用于防御，或随着舰队发展选择其他武器科技。\n\n" );
+            buffer.Add( "强力的早期选择：\n" );
+            buffer.Add( "  力场1级", ObjectiveColors.Keyword ).Add( "：增强所有力场，在攻击期间争取更多时间。\n" );
+            buffer.Add( "  工程师1级", ObjectiveColors.Keyword ).Add( "：使所有工程师工作更快，节省大量时间。\n\n" );
+            buffer.Add( "你也可以将科技直接投入星球或舰队以提升其" ).Add( "等级", ObjectiveColors.Keyword ).Add( "。关键早期优先级：将你的" ).Add( "母星升级到3级", ObjectiveColors.Keyword ).Add( "（对其产出的提升显著，这是科技的最佳早期用途之一）。\n\n" );
+            buffer.Add( "通过占领星球或入侵AI星球获得更多科技。在侦察更多银河并了解可用舰船和机会之前，保留科技储备也是可以的。", "ffeecc" );
         }
     }
 
@@ -376,9 +376,9 @@ namespace Arcen.AIW2.External
 
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "Engineers", ObjectiveColors.Keyword ).Add( " build units faster and repair ships damaged in combat. Having enough engineers on active planets makes a significant difference in how quickly you recover from attacks.\n\n" );
-            buffer.Add( "You can auto-build or auto-FRD engineers across all planets via the " ).Add( "Settings → Automation", ObjectiveColors.Keyword ).Add( " menu.\n\n" );
-            buffer.Add( "At mark 3, engineers gain cloaking, making them much harder to kill during fights.", "ffeecc" );
+            buffer.Add( "工程师", ObjectiveColors.Keyword ).Add( "可以更快地建造单位并修复战斗中受损的舰船。在活跃星球上有足够的工程师能显著影响你从攻击中恢复的速度。\n\n" );
+            buffer.Add( "你可以通过" ).Add( "设置 → 自动化", ObjectiveColors.Keyword ).Add( "菜单在所有星球上自动建造或自动FRD工程师。\n\n" );
+            buffer.Add( "在3级时，工程师获得隐形能力，使其在战斗中更难被击杀。", "ffeecc" );
         }
     }
 
@@ -395,11 +395,11 @@ namespace Arcen.AIW2.External
 
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "The primary way to generate more " ).Add( "energy", "ffde00" ).Add( " is to build " ).Add( "Economic", ObjectiveColors.Keyword ).Add( " and " ).Add( "Logistical Command Stations", ObjectiveColors.Keyword ).Add( ". Capture more planets to place these, or convert existing Military Command Stations.\n\n" );
-            buffer.Add( "If you need more energy beyond what stations provide:\n" );
-            buffer.Add( "  Matter Converters", ObjectiveColors.Keyword ).Add( ": convert metal into energy.\n" );
-            buffer.Add( "  Scrapping unneeded ships", ObjectiveColors.Keyword ).Add( ": provides a temporary energy boost.\n\n" );
-            buffer.Add( "Increasing the mark of a Command Station also increases its energy output.", "ffeecc" );
+            buffer.Add( "产生更多" ).Add( "能量", "ffde00" ).Add( "的主要方式是建造" ).Add( "经济", ObjectiveColors.Keyword ).Add( "和" ).Add( "后勤指挥站", ObjectiveColors.Keyword ).Add( "。占领更多星球以放置这些指挥站，或转换现有的军事指挥站。\n\n" );
+            buffer.Add( "如果指挥站提供的能量仍不够：\n" );
+            buffer.Add( "  物质转换器", ObjectiveColors.Keyword ).Add( "：将金属转化为能量。\n" );
+            buffer.Add( "  废弃不需要的舰船", ObjectiveColors.Keyword ).Add( "：提供临时能量提升。\n\n" );
+            buffer.Add( "提升指挥站的等级也会增加其能量产出。", "ffeecc" );
         }
     }
 
@@ -416,9 +416,9 @@ namespace Arcen.AIW2.External
 
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "Capturing ", ObjectiveColors.Keyword ).Add( "mobile combat flagships", ObjectiveColors.Keyword ).Add( " is one of the primary ways to grow your offensive strength. Each flagship unlocks new ship lines.\n\n" );
-            buffer.Add( "You can mix and match ship lines from flagships to build fleets to your taste. You can think of flagships as mutant chess pieces, each with strengths and weaknesses.\n\n" );
-            buffer.Add( "Use the galaxy map or the Intel menu to find fleets worth capturing nearby.", "ffeecc" );
+            buffer.Add( "占领", ObjectiveColors.Keyword ).Add( "移动战斗旗舰", ObjectiveColors.Keyword ).Add( "是提升你进攻力量的主要方式之一。每艘旗舰解锁新的舰船线。\n\n" );
+            buffer.Add( "你可以从旗舰中混合搭配舰船线，按自己的喜好组建舰队。你可以把旗舰想象成变异的棋子，各有优劣。\n\n" );
+            buffer.Add( "使用银河地图或情报菜单在附近寻找值得占领的舰队。", "ffeecc" );
         }
     }
 
@@ -435,9 +435,9 @@ namespace Arcen.AIW2.External
 
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "Turret Schematic Servers", ObjectiveColors.Keyword ).Add( " (TSSes) and " ).Add( "Other Defensive Schematic Servers", ObjectiveColors.Keyword ).Add( " (ODSSes) are hacked to unlock additional turrets, minefields, and defenses for all your planets, Battlestations, and citadels.\n\n" );
-            buffer.Add( "These are " ).Add( "hacked rather than captured", ObjectiveColors.Keyword ).Add( "; you don't need to hold the planet permanently. Note that destroying the AI Command Station on the planet will reduce the hacking cost.\n\n" );
-            buffer.Add( "Use the galaxy map or the Intel menu to find good nearby targets.", "ffeecc" );
+            buffer.Add( "炮塔蓝图服务器", ObjectiveColors.Keyword ).Add( "（TSS）和其他防御蓝图服务器", ObjectiveColors.Keyword ).Add( "（ODSS）通过入侵来解锁额外的炮塔、雷区和防御，适用于你所有的星球、战斗空间站和堡垒。\n\n" );
+            buffer.Add( "这些是" ).Add( "入侵而非占领", ObjectiveColors.Keyword ).Add( "的；你不需要永久控制该星球。注意，摧毁星球上的AI指挥站会降低入侵成本。\n\n" );
+            buffer.Add( "使用银河地图或情报菜单在附近寻找好的目标。", "ffeecc" );
         }
     }
 
@@ -454,9 +454,9 @@ namespace Arcen.AIW2.External
 
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "Global Command Augmenters", ObjectiveColors.Keyword ).Add( " (GCAs) give all your planets access to additional turret slots.\n\n" );
-            buffer.Add( "You can either " ).Add( "capture", ObjectiveColors.Keyword ).Add( " a GCA planet or " ).Add( "hack", ObjectiveColors.Keyword ).Add( " it for the same benefit. Hacking is cheaper if you've already captured the planet first; you don't need to hold it permanently otherwise.\n\n" );
-            buffer.Add( "Use the galaxy map or the Intel menu to find good nearby targets.", "ffeecc" );
+            buffer.Add( "全局指挥增强器", ObjectiveColors.Keyword ).Add( "（GCA）使你所有的星球获得额外的炮塔插槽。\n\n" );
+            buffer.Add( "你可以" ).Add( "占领", ObjectiveColors.Keyword ).Add( "一个GCA星球或" ).Add( "入侵", ObjectiveColors.Keyword ).Add( "它以获得相同的好处。如果你先占领了星球，入侵会更便宜；否则你不需要永久控制它。\n\n" );
+            buffer.Add( "使用银河地图或情报菜单在附近寻找好的目标。", "ffeecc" );
         }
     }
 
@@ -473,9 +473,9 @@ namespace Arcen.AIW2.External
 
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "Hacking an " ).Add( "Advanced Research Station", ObjectiveColors.Keyword ).Add( " (ARS) grants the hacking fleet a new ship line.\n\n" );
-            buffer.Add( "Hacking ARSes is a critical way to strengthen your fleets. \n\n" );
-            buffer.Add( "Use the galaxy map or the Intel menu to find good nearby targets.", "ffeecc" );
+            buffer.Add( "入侵" ).Add( "高级研究站", ObjectiveColors.Keyword ).Add( "（ARS）可为入侵舰队提供一条新的舰船线。\n\n" );
+            buffer.Add( "入侵ARS是增强你舰队的关键方式。\n\n" );
+            buffer.Add( "使用银河地图或情报菜单在附近寻找好的目标。", "ffeecc" );
         }
     }
 

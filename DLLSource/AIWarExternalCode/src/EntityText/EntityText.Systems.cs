@@ -387,24 +387,24 @@ namespace Arcen.AIW2.External
 
                         buffer.Add( "<size=80%> / </size>" ).StartReloadWrapper( false ).Add( secondsPerSalvoRightNow ).Add( "s</color>" );
                         if ( forAnotherXSalvos > 0 && (detailLevel >= TooltipDetail.Full || Config.ForMultipleShips) )
-                            buffer.Add( " for another " ).WrapReload( forAnotherXSalvos, false, false ).Add( " salvos" );
+                            buffer.Add( " 再持续 " ).WrapReload( forAnotherXSalvos, false, false ).Add( " 次齐射" );
 
                         if ( ForMark.AltSecondsPerSalvo > 0 )
                         {
-                            buffer.Add( "BURST FIRE" );
+                            buffer.Add( "连发射击" );
                             if ( detailLevel >= TooltipDetail.Medium )
                             {
-                                buffer.Add( ": " );
+                                buffer.Add( "：" );
                                 if ( detailLevel >= TooltipDetail.Full )
-                                    buffer.WrapReload( Type.UseAlternateRateOfFireAfterXShots, false, false ).Add( " salvos fired at " )
-                                        .WrapReload( ForMark.SecondsPerSalvo, false, false ).Add( "s per salvo before switching to " )
-                                        .WrapReload( Type.UseAlternateRateOfFireForXShotsBeforeReverting, false, false ).Add( " salvos fired at " )
-                                        .WrapReload( ForMark.AltSecondsPerSalvo, false, false ).Add( "s per salvo (and then switching back)" );
+                                    buffer.WrapReload( Type.UseAlternateRateOfFireAfterXShots, false, false ).Add( " 次齐射每 " )
+                                        .WrapReload( ForMark.SecondsPerSalvo, false, false ).Add( " 秒，切换至 " )
+                                        .WrapReload( Type.UseAlternateRateOfFireForXShotsBeforeReverting, false, false ).Add( " 次齐射每 " )
+                                        .WrapReload( ForMark.AltSecondsPerSalvo, false, false ).Add( " 秒（然后切换回来）" );
                                 else
-                                    buffer.WrapReload( Type.UseAlternateRateOfFireAfterXShots, false, false ).Add( " at " )
-                                        .WrapReload( ForMark.SecondsPerSalvo, false, false ).Add( "s before " )
-                                        .WrapReload( Type.UseAlternateRateOfFireForXShotsBeforeReverting, false, false ).Add( " at " )
-                                        .WrapReload( ForMark.AltSecondsPerSalvo, false, false ).Add( "s" );
+                                    buffer.WrapReload( Type.UseAlternateRateOfFireAfterXShots, false, false ).Add( " 在 " )
+                                        .WrapReload( ForMark.SecondsPerSalvo, false, false ).Add( " 秒前切换至 " )
+                                        .WrapReload( Type.UseAlternateRateOfFireForXShotsBeforeReverting, false, false ).Add( " 在 " )
+                                        .WrapReload( ForMark.AltSecondsPerSalvo, false, false ).Add( " 秒" );
                             }
                         }
                     }
@@ -423,8 +423,11 @@ namespace Arcen.AIW2.External
                             buffer.WrapDamagePerSecondMoreReadable( display_salvodps_min, false, false );
                             if ( display_salvodps_max != display_salvodps_min )
                             {
-                                buffer.Add( " to " ).WrapDamagePerSecondMoreReadable( display_salvodps_max, false, false );
+                                buffer.Add( " 至 " ).WrapDamagePerSecondMoreReadable( display_salvodps_max, false, false );
                             }
+                        }
+                        buffer.Add( " DPS" );
+                    }
                         }
                         buffer.Add( " DPS" );
                     }
@@ -529,13 +532,13 @@ namespace Arcen.AIW2.External
                         {
                             buffer.Open( TextStyle.System_Line2 );
                             
-                            buffer.Add( "Devour", TextStyle.System_Label2 ).Add( ": Instakill targets ");
+                            buffer.Add( "吞噬", TextStyle.System_Label2 ).Add( "：秒杀目标 ");
                             
                             buffer.AddTermRange(TermRange.Alloc(TextTerm.Mark, TermCmp.Less, this.ForMark.MarkLevel.Ordinal));
                             if ( Type.DevourMassRange.IsSet )
                             {
                                 buffer
-                                    .Add(" and ")
+                                    .Add(" 且 ")
                                     .AddTermRange(TermRange.Alloc(TextTerm.Mass_tX, TermCmp.Less, Type.DevourMassLowerThan.ToFloat()));
                             }
                                     
@@ -578,21 +581,21 @@ namespace Arcen.AIW2.External
                                     buffer.AddNumberMoreReadable( ForMark.ShotAreaOfEffect );
                                     buffer.Add( "</color>, " );
                                     if ( Type.AOESpreadsDamageAmongAvailableTargets )
-                                        buffer.Add( "DMG split between targets, " );
+                                        buffer.Add( "伤害在目标间分摊，" );
                                     if ( ForMark.AOEMaximumNumberOfTargetsHitPerShot > 0 )
-                                        buffer.Add( "<= <color=#ffdf72>" ).Add( ForMark.AOEMaximumNumberOfTargetsHitPerShot ).Add( "</color> targets" );
+                                        buffer.Add( "最多 <color=#ffdf72>" ).Add( ForMark.AOEMaximumNumberOfTargetsHitPerShot ).Add( "</color> 个目标" );
                                     else
-                                        buffer.Add( "all targets in range" );
+                                        buffer.Add( "射程内所有目标" );
 
                                     if ( Type.AOEAndBeamDamageMultiplierToNonPrimaryTarget > FInt.Zero )
                                     {
-                                        buffer.Add( " and " );
+                                        buffer.Add( "，且" );
                                         buffer.Add( Type.AOEAndBeamDamageMultiplierToNonPrimaryTarget.GetNearestIntPreferringHigher() );
-                                        buffer.Add( "% damage to non-primary targets" );
+                                        buffer.Add( "% 伤害予非主目标" );
                                     }
 
                                     if ( Type.AOEHitsFriendlyTargets )
-                                        buffer.Add( ", friendly fire" ).EndStatement(EndStatementStyle.Normal);
+                                        buffer.Add( "，友军伤害" ).EndStatement(EndStatementStyle.Normal);
                                     else
                                         buffer.Add( "" ).EndStatement(EndStatementStyle.Normal);
                                 }
@@ -600,38 +603,38 @@ namespace Arcen.AIW2.External
                                 {
                                     buffer.Add("范围",TextStyle.System_Label2).Add("：从本舰直接发出冲击波，半径 <color=#ffdf72>" );
                                     buffer.AddNumberMoreReadable( ForMark.ShotAreaOfEffect );
-                                    buffer.Add( "</color>, " );
+                                    buffer.Add( "</color>，" );
                                     if ( Type.AOESpreadsDamageAmongAvailableTargets )
                                     {
-                                        buffer.Add( "spreading its damage among " );
+                                        buffer.Add( "将其伤害分摊在 " );
                                         if ( ForMark.AOEMaximumNumberOfTargetsHitPerShot > 0 )
-                                            buffer.Add( "at most <color=#ffdf72>" ).Add( ForMark.AOEMaximumNumberOfTargetsHitPerShot ).Add( "</color> targets" );
+                                            buffer.Add( "最多 <color=#ffdf72>" ).Add( ForMark.AOEMaximumNumberOfTargetsHitPerShot ).Add( "</color> 个目标" );
                                         else
-                                            buffer.Add( "all targets in range" );
+                                            buffer.Add( "所有射程内目标" );
                                         if ( Type.AOEAndBeamDamageMultiplierToNonPrimaryTarget > FInt.Zero )
                                         {
-                                            buffer.Add( ", with " );
+                                            buffer.Add( "，其中" );
                                             buffer.Add( Type.AOEAndBeamDamageMultiplierToNonPrimaryTarget.GetNearestIntPreferringHigher() );
-                                            buffer.Add( "% damage to targets other than the primary" );
+                                            buffer.Add( "% 伤害予非主目标" );
                                         }
                                     }
                                     else
                                     {
                                         if ( Type.AOEAndBeamDamageMultiplierToNonPrimaryTarget > FInt.Zero )
                                         {
-                                            buffer.Add( "doing its full damage to the primary target, and " );
+                                            buffer.Add( "对主目标造成全额伤害，且" );
                                             buffer.Add( Type.AOEAndBeamDamageMultiplierToNonPrimaryTarget.GetNearestIntPreferringHigher() );
-                                            buffer.Add( "% damage to " );
+                                            buffer.Add( "% 伤害予 " );
                                         }
                                         else
-                                            buffer.Add( "doing their full damage to " );
+                                            buffer.Add( "对所有目标造成全额伤害予 " );
                                         if ( ForMark.AOEMaximumNumberOfTargetsHitPerShot > 0 )
-                                            buffer.Add( "at most <color=#ffdf72>" ).Add( ForMark.AOEMaximumNumberOfTargetsHitPerShot ).Add( "</color> targets" );
+                                            buffer.Add( "最多 <color=#ffdf72>" ).Add( ForMark.AOEMaximumNumberOfTargetsHitPerShot ).Add( "</color> 个目标" );
                                         else
-                                            buffer.Add( "all targets in range" );
+                                            buffer.Add( "射程内所有目标" );
                                     }
                                     if ( Type.AOEHitsFriendlyTargets )
-                                        buffer.Add( " -- including any friendlies caught in the blast" ).EndStatement(EndStatementStyle.Normal);
+                                        buffer.Add( "——包括爆炸范围内的任何友军" ).EndStatement(EndStatementStyle.Normal);
                                     else
                                         buffer.Add( "" ).EndStatement(EndStatementStyle.Normal);
                                 }
@@ -642,23 +645,23 @@ namespace Arcen.AIW2.External
                                 {
                                     buffer.Add("目标范围",TextStyle.System_Label2).Add("：半径 <color=#ffdf72>" );
                                     buffer.AddNumberMoreReadable( ForMark.ShotAreaOfEffect );
-                                    buffer.Add( "</color>, " );
+                                    buffer.Add( "</color>，" );
                                     if ( Type.AOESpreadsDamageAmongAvailableTargets )
-                                        buffer.Add( "DMG split between targets, " );
+                                        buffer.Add( "伤害在目标间分摊，" );
                                     if ( ForMark.AOEMaximumNumberOfTargetsHitPerShot > 0 )
-                                        buffer.Add( "<= <color=#ffdf72>" ).Add( ForMark.AOEMaximumNumberOfTargetsHitPerShot ).Add( "</color> targets" );
+                                        buffer.Add( "最多 <color=#ffdf72>" ).Add( ForMark.AOEMaximumNumberOfTargetsHitPerShot ).Add( "</color> 个目标" );
                                     else
-                                        buffer.Add( "all targets in range" );
+                                        buffer.Add( "射程内所有目标" );
 
                                     if ( Type.AOEAndBeamDamageMultiplierToNonPrimaryTarget > FInt.Zero )
                                     {
-                                        buffer.Add( " and " );
+                                        buffer.Add( "，且" );
                                         buffer.Add( Type.AOEAndBeamDamageMultiplierToNonPrimaryTarget.GetNearestIntPreferringHigher() );
-                                        buffer.Add( "% damage to non-primary targets" );
+                                        buffer.Add( "% 伤害予非主目标" );
                                     }
 
                                     if ( Type.AOEHitsFriendlyTargets )
-                                        buffer.Add( ", friendly fire" ).EndStatement(EndStatementStyle.Normal);
+                                        buffer.Add( "，友军伤害" ).EndStatement(EndStatementStyle.Normal);
                                     else
                                         buffer.Add( "" ).EndStatement(EndStatementStyle.Normal);
                                 }
@@ -666,38 +669,38 @@ namespace Arcen.AIW2.External
                                 {
                                     buffer.Add("范围",TextStyle.System_Label2).Add("：上述武器的射击会爆炸，半径 <color=#ffdf72>" );
                                     buffer.AddNumberMoreReadable( ForMark.ShotAreaOfEffect );
-                                    buffer.Add( "</color> on impact, " );
+                                    buffer.Add( "</color> 撞击时，" );
                                     if ( Type.AOESpreadsDamageAmongAvailableTargets )
                                     {
-                                        buffer.Add( "spreading their damage among " );
+                                        buffer.Add( "将其伤害分摊在 " );
                                         if ( ForMark.AOEMaximumNumberOfTargetsHitPerShot > 0 )
-                                            buffer.Add( "at most <color=#ffdf72>" ).Add( ForMark.AOEMaximumNumberOfTargetsHitPerShot ).Add( "</color> targets" );
+                                            buffer.Add( "最多 <color=#ffdf72>" ).Add( ForMark.AOEMaximumNumberOfTargetsHitPerShot ).Add( "</color> 个目标" );
                                         else
-                                            buffer.Add( "all targets in range" );
+                                            buffer.Add( "所有射程内目标" );
                                         if ( Type.AOEAndBeamDamageMultiplierToNonPrimaryTarget > FInt.Zero )
                                         {
-                                            buffer.Add( ", with " );
+                                            buffer.Add( "，其中" );
                                             buffer.Add( Type.AOEAndBeamDamageMultiplierToNonPrimaryTarget.GetNearestIntPreferringHigher() );
-                                            buffer.Add( "% damage to targets other than the primary" );
+                                            buffer.Add( "% 伤害予非主目标" );
                                         }
                                     }
                                     else
                                     {
                                         if ( Type.AOEAndBeamDamageMultiplierToNonPrimaryTarget > FInt.Zero )
                                         {
-                                            buffer.Add( "doing its full damage to the primary target, and " );
+                                            buffer.Add( "对主目标造成全额伤害，且" );
                                             buffer.Add( Type.AOEAndBeamDamageMultiplierToNonPrimaryTarget.GetNearestIntPreferringHigher() );
-                                            buffer.Add( "% damage to " );
+                                            buffer.Add( "% 伤害予 " );
                                         }
                                         else
-                                            buffer.Add( "doing their full damage to " );
+                                            buffer.Add( "对所有目标造成全额伤害予 " );
                                         if ( ForMark.AOEMaximumNumberOfTargetsHitPerShot > 0 )
-                                            buffer.Add( "at most <color=#ffdf72>" ).Add( ForMark.AOEMaximumNumberOfTargetsHitPerShot ).Add( "</color> targets" );
+                                            buffer.Add( "最多 <color=#ffdf72>" ).Add( ForMark.AOEMaximumNumberOfTargetsHitPerShot ).Add( "</color> 个目标" );
                                         else
-                                            buffer.Add( "all targets in range" );
+                                            buffer.Add( "射程内所有目标" );
                                     }
                                     if ( Type.AOEHitsFriendlyTargets )
-                                        buffer.Add( " -- including any friendlies caught in the blast" ).EndStatement(EndStatementStyle.Normal);
+                                        buffer.Add( "——包括爆炸范围内的任何友军" ).EndStatement(EndStatementStyle.Normal);
                                     else
                                         buffer.Add( "" ).EndStatement(EndStatementStyle.Normal);
                                 }
@@ -756,9 +759,9 @@ namespace Arcen.AIW2.External
 
                                 
                                 if ( Type.AOEHitsFriendlyTargets )
-                                    buffer.Add( ", including friendlies" );
+                                    buffer.Add("，包括友军");
                                 
-                                buffer.Add(".");
+                                buffer.Add("。");
                             }
                             else 
                             if ( !Type.HitsAllIntersectingTargets )
@@ -801,7 +804,7 @@ namespace Arcen.AIW2.External
                                             null, TextTerm.Damage, TermUse.Icon, null);
                                     
                                     if ( Type.AOEHitsFriendlyTargets )
-                                        buffer.Add( ", including friendlies" );
+                                        buffer.Add("，包括友军");
                                     
                                     buffer.Add("，跳跃 ");
                                     
@@ -877,10 +880,10 @@ namespace Arcen.AIW2.External
                                         .Add(" 对每个目标 ");
                                 }
 
-                                if ( Type.AOEHitsFriendlyTargets )
-                                    buffer.Add( ", including friendlies" );
-
-                                buffer.Add(".");
+                                    if ( Type.AOEHitsFriendlyTargets )
+                                        buffer.Add("，包括友军");
+                                    
+                                    buffer.Add("。");
                             }
                             
                             buffer.Close( TextStyle.System_Line2 );
@@ -1200,7 +1203,7 @@ namespace Arcen.AIW2.External
                                         buffer.Add( row.DescriptionConditions ).Add(". ");
                                     
                                     buffer
-                                        .Add( "If at least " )
+                                        .Add( "如果至少 " )
                                         .Open(TextStyle.Number).AddNumber( row.Scale ).Close(TextStyle.Number)
                                         .Add( " " ).Add( row.DescriptionDamageName )
                                         .Add( " 伤害在目标死亡时已造成，然后 " ).Add( row.DescriptionOfEffects ).Add("。");
@@ -1339,38 +1342,38 @@ namespace Arcen.AIW2.External
                                 {
                                     if ( !Type.KnockbackAtTargetLocation )
                                     {
-                                        buffer.Add( "Targets pushed <color=#ffdf72>" );
+                                        buffer.Add( "目标被击退 <color=#ffdf72>" );
                                         buffer.AddNumberMoreReadable( ForMark.KnockbackPerShot );
-                                        buffer.Add( "</color> away from this ship if mass <= <color=#ffdf72>" );
+                                        buffer.Add( "</color> 远离本舰，若质量 <= <color=#ffdf72>" );
                                         buffer.Add( Type.KnockbackPerShotToShipsMass_tXLessThan );
-                                        buffer.Add( " tX</color>. Knockback decreases with higher mass." );
+                                        buffer.Add( " tX</color>。击退随质量增加而减小。" );
                                     }
                                     else
                                     {
-                                        buffer.Add( "Targets hit by the AoE pushed <color=#ffdf72>" );
+                                        buffer.Add( "被 AoE 命中的目标被击退 <color=#ffdf72>" );
                                         buffer.AddNumberMoreReadable( ForMark.KnockbackPerShot );
-                                        buffer.Add( "</color> away from the AoE center if mass <= <color=#ffdf72>" );
+                                        buffer.Add( "</color> 远离 AoE 中心，若质量 <= <color=#ffdf72>" );
                                         buffer.Add( Type.KnockbackPerShotToShipsMass_tXLessThan );
-                                        buffer.Add( " tX</color>. Knockback decreases with higher mass." );
+                                        buffer.Add( " tX</color>。击退随质量增加而减小。" );
                                     }
                                 }
                                 else
                                 {
                                     if ( !Type.KnockbackAtTargetLocation )
                                     {
-                                        buffer.Add( "Targets pulled <color=#ffdf72>" );
+                                        buffer.Add( "目标被拉近 <color=#ffdf72>" );
                                         buffer.AddNumberMoreReadable( ForMark.KnockbackPerShot );
-                                        buffer.Add( "</color> towards this ship if mass <= <color=#ffdf72>" );
+                                        buffer.Add( "</color> 靠近本舰，若质量 <= <color=#ffdf72>" );
                                         buffer.Add( Type.KnockbackPerShotToShipsMass_tXLessThan );
-                                        buffer.Add( " tX</color>. Knockback decreases with higher mass." );
+                                        buffer.Add( " tX</color>。击退随质量增加而减小。" );
                                     }
                                     else
                                     {
-                                        buffer.Add( "Targets hit by the AoE pulled <color=#ffdf72>" );
+                                        buffer.Add( "被 AoE 命中的目标被拉近 <color=#ffdf72>" );
                                         buffer.AddNumberMoreReadable( ForMark.KnockbackPerShot );
-                                        buffer.Add( "</color> towards the AoE center if mass <= <color=#ffdf72>" );
+                                        buffer.Add( "</color> 靠近 AoE 中心，若质量 <= <color=#ffdf72>" );
                                         buffer.Add( Type.KnockbackPerShotToShipsMass_tXLessThan );
-                                        buffer.Add( " tX</color>. Knockback decreases with higher mass." );
+                                        buffer.Add( " tX</color>。击退随质量增加而减小。" );
                                     }
                                 }
                             }
@@ -1381,21 +1384,21 @@ namespace Arcen.AIW2.External
                             {
                                 buffer.Add("击退",TextStyle.System_Label2).Add("：被此武器击中的敌人 " );
                                 if ( ForMark.KnockbackPerShot > 0 )
-                                    buffer.Add( "pushed away from " );
+                                    buffer.Add( "被推离 " );
                                 else
-                                    buffer.Add( "pulled towards " );
+                                    buffer.Add( "被拉向 " );
                                 if ( !Type.KnockbackAtTargetLocation )
-                                    buffer.Add( "this ship. " );
+                                    buffer.Add( "本舰。" );
                                 else
-                                    buffer.Add( "the center of the AoE of this ship's shots. " );
+                                    buffer.Add( "本舰射击 AoE 中心。" );
                                 if ( ForMark.KnockbackPerShot > 0 )
-                                    buffer.Add( "The maximum distance a ship can be pushed is <color=#ffdf72>" );
+                                    buffer.Add( "舰船可被推离的最大距离为 <color=#ffdf72>" );
                                 else
-                                    buffer.Add( "The maximum distance a ship can be pulled is <color=#ffdf72>" );
+                                    buffer.Add( "舰船可被拉近的最大距离为 <color=#ffdf72>" );
                                 buffer.AddNumberMoreReadable( ForMark.KnockbackPerShot );
-                                buffer.Add( "</color>, decreasing as the target's mass approaches the max mass of <color=#ffdf72>" );
+                                buffer.Add( "</color>，随目标质量接近最大质量 <color=#ffdf72>" );
                                 buffer.Add( Type.KnockbackPerShotToShipsMass_tXLessThan );
-                                buffer.Add( "tX</color>." );
+                                buffer.Add( "tX</color> 而减小。" );
                             }
                             #endregion
                             
@@ -1766,9 +1769,9 @@ namespace Arcen.AIW2.External
                     {
                         buffer.BeginStatement(Line_Style);
                         buffer
-                            .AddModuleTag(System).Add( "Cloaking", TextStyle.System_Label )
-                            .Add( ": Cannot be targeted while points remain (max " )
-                            .WrapCloak(ForMark.CloakingPoints, false, false).Add(").");
+                            .AddModuleTag(System).Add( "隐形", TextStyle.System_Label )
+                            .Add( "：有点数期间无法被瞄准（最多 " )
+                            .WrapCloak(ForMark.CloakingPoints, false, false).Add("）。");
                         
                         if ( Type.CareAboutStateOfMatterToBeEnabled )
                             WriteSystemStateOfMatterSuffix( buffer, Type, Squad );
@@ -2141,13 +2144,13 @@ namespace Arcen.AIW2.External
                     if ( Type.CanDevour )
                     {
                         buffer.Add(" | ", TextStyle.Color_Gray);
-                        buffer.Add( "Devour", TextStyle.Color_Devour );
+                        buffer.Add( "吞噬", TextStyle.Color_Devour );
                     }
                     
                     if ( Type.CanInfest )
                     {
                         buffer.Add(" | ", TextStyle.Color_Gray);
-                        buffer.Add( "Infest", TextStyle.Color_Infest );
+                        buffer.Add( "感染", TextStyle.Color_Infest );
                     }
 
                     return;

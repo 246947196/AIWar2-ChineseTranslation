@@ -47,11 +47,11 @@ namespace Arcen.AIW2.External
                 if (data.TimeTillDysonSphereWin > 0)
                 {
                     string color = ArcenExternalUIUtilities.GetColorForNomadMoveTime(data.TimeTillDysonSphereWin);
-                    tooltipBuffer.Add("The Dyson Sphere will come fully online in ").Add(data.TimeTillDysonSphereWin.ToString(), color).Add(" seconds.");
+                    tooltipBuffer.Add("戴森球将在 ").Add(data.TimeTillDysonSphereWin.ToString(), color).Add(" 秒后完全上线。");
                 }
                 else
                 {
-                    tooltipBuffer.Add("The Dyson Sphere is online and producing Golems.");
+                    tooltipBuffer.Add("戴森球已上线，正在生产魔像。");
                 }
             }
             catch ( Exception e )
@@ -78,7 +78,7 @@ namespace Arcen.AIW2.External
                 debugStage = 10;
                 Image.UpdateWith( sprite_Building, true, "DysonBuilding" );
                 ArcenDoubleCharacterBuffer buffer = SubTexts[0].Text.StartWritingToBuffer();
-                buffer.Add( "Dyson\n" );
+                buffer.Add( "戴森球\n" );
                 SubTexts[0].Text.FinishWritingToBuffer();
                 debugStage = 20;
                 if ( Data.EntityList.Count == 0 )
@@ -97,7 +97,7 @@ namespace Arcen.AIW2.External
                 }
                 else
                 {
-                    buffer.Add( "Complete", "a1ffa1" );
+                    buffer.Add( "完成", "a1ffa1" );
                 }
                 debugStage = 30;
                 SubTexts[1].Text.FinishWritingToBuffer();
@@ -161,7 +161,7 @@ namespace Arcen.AIW2.External
                 if ( data.TimeTillPlanetOverloaded > 0 )
                 {
                     string color = ArcenExternalUIUtilities.GetColorForNomadMoveTime( data.TimeTillPlanetOverloaded );
-                    tooltipBuffer.Add("The planet " ).Add( drill.Planet.Name, "a1ffa1" ).Add(" will be totally destroyed and removed from the galaxy network in " ).Add( data.TimeTillPlanetOverloaded.ToString(), color ).Add(" seconds.");
+                    tooltipBuffer.Add("星球 " ).Add( drill.Planet.Name, "a1ffa1" ).Add(" 将被完全摧毁并从银河网络中移除，剩余 " ).Add( data.TimeTillPlanetOverloaded.ToString(), color ).Add(" 秒。");
                 }
                 else if ( isAsteroidDrill )
                 {
@@ -169,41 +169,41 @@ namespace Arcen.AIW2.External
                     string color = ArcenExternalUIUtilities.GetColorForNomadMoveTime( data.TimeTillPlanetDrilled );
                     if ( target.TypeData.GetHasTag("CuendillarAsteroid") )
                     {
-                        tooltipBuffer.Add("An Asteroid on ");
+                        tooltipBuffer.Add("小行星带 ");
                     }
                     else if ( target.TypeData.GetHasTag("CuendillarPlanetoid"))
-                        tooltipBuffer.Add("A Planetoid on ");
+                        tooltipBuffer.Add("小行星 ");
                     else
-                        tooltipBuffer.Add("A Chrysalis on ");
+                        tooltipBuffer.Add("茧 ");
 
-                    tooltipBuffer.Add(drill.Planet.Name, "a1ffa1").Add(" is being mined ; There is ").Add( cuendillarRemaining, "ff4444" ).Add(" cuendillar left");
+                    tooltipBuffer.Add(drill.Planet.Name, "a1ffa1").Add(" 正在被开采；剩余 ").Add( cuendillarRemaining, "ff4444" ).Add(" 库恩达");
                     if ( !target.TypeData.GetHasTag("ReaperChrysalis") )
-                        tooltipBuffer.Add(", and it will be destroyed in ").Add( data.TimeTillPlanetDrilled.ToString( ), color).Add(" seconds.");
+                        tooltipBuffer.Add("，将在 ").Add( data.TimeTillPlanetDrilled.ToString( ), color).Add(" 秒后被摧毁。");
                     else
-                        tooltipBuffer.Add(". It will be destroyed due to lack of cuendillar in ").Add( data.TimeTillPlanetDrilled.ToString( ), color).Add(" seconds. If it hatches first, you'll have a fight on your hands.");
+                        tooltipBuffer.Add("。它将在 ").Add( data.TimeTillPlanetDrilled.ToString( ), color).Add(" 秒后因缺乏库恩达而崩溃。如果它先孵化，你将面临一场战斗。");
 
-                    tooltipBuffer.Add("\n").Add("A new transport will be dispatched in ").Add( (data.TimeForNextTransport - World_AIW2.Instance.GameSecond), "0044ff" ).Add(" seconds.");
+                    tooltipBuffer.Add("\n").Add("新的运输船将在 ").Add( (data.TimeForNextTransport - World_AIW2.Instance.GameSecond), "0044ff" ).Add(" 秒后派遣。");
                     if (data.TotalCuendillarDrilled > 0)
                     {
-                        tooltipBuffer.Add("\n").Add("So far you have mined ").Add( (data.TotalCuendillarDrilled), "ff4444" ).Add(" cuendillar ").Add(" and dispatched ").Add( data.TransportsSent, "a1ffa1" ).Add(" transports from this ");
+                        tooltipBuffer.Add("\n").Add("到目前为止你已开采 ").Add( (data.TotalCuendillarDrilled), "ff4444" ).Add(" 库恩达 ").Add(" 并派遣了 ").Add( data.TransportsSent, "a1ffa1" ).Add(" 艘运输船从这个 ");
 
                         if ( target.TypeData.GetHasTag("CuendillarPlanetoid"))
-                            tooltipBuffer.Add("Planetoid.");
+                            tooltipBuffer.Add("小行星。");
                         else if ( target.TypeData.GetHasTag("CuendillarAsteroid") )
-                            tooltipBuffer.Add("Asteroid.");
+                            tooltipBuffer.Add("小行星带。");
                         else
-                            tooltipBuffer.Add("Chrysalis.");
+                            tooltipBuffer.Add("茧。");
                     }
                 }
                 else
                 {
                     int cuendillarRemaining = (int)Data.Int64List[0];
                     string color = ArcenExternalUIUtilities.GetColorForNomadMoveTime( data.TimeTillPlanetDrilled );
-                    tooltipBuffer.Add("The planet " ).Add( drill.Planet.Name, "a1ffa1" ).Add(" is being mined; There is ").Add( cuendillarRemaining, "ff4444" ).Add(" cuendillar left, and the planet will ravage in ").Add( data.TimeTillPlanetDrilled.ToString( ), color).Add(" seconds.");
-                    tooltipBuffer.Add("\n").Add("A new transport will be dispatched in ").Add( (data.TimeForNextTransport - World_AIW2.Instance.GameSecond), "0044ff" ).Add(" seconds. ");
+                    tooltipBuffer.Add("星球 " ).Add( drill.Planet.Name, "a1ffa1" ).Add(" 正在被开采；剩余 ").Add( cuendillarRemaining, "ff4444" ).Add(" 库恩达，星球将在 ").Add( data.TimeTillPlanetDrilled.ToString( ), color).Add(" 秒后被蹂躏。");
+                    tooltipBuffer.Add("\n").Add("新的运输船将在 ").Add( (data.TimeForNextTransport - World_AIW2.Instance.GameSecond), "0044ff" ).Add(" 秒后派遣。 ");
                     if ( data.TotalCuendillarDrilled > 0 )
-                        tooltipBuffer.Add("\n").Add("So far you have mined ").Add( (data.TotalCuendillarDrilled), "ff4444" ).Add(" cuendillar ").Add(" and dispatched " ).Add( data.TransportsSent, "a1ffa1" ).Add(" transports from this planet.");
-                    tooltipBuffer.Add("\n\n").Add("Warning!", "ffa1a1").Add(" When the drilling is complete, the planet will be Ravaged; this releases a vast amount of energy which will destroy almost all ships and structures (Including Metal Generators, ARS, etc) on the planet." );
+                        tooltipBuffer.Add("\n").Add("到目前为止你已开采 ").Add( (data.TotalCuendillarDrilled), "ff4444" ).Add(" 库恩达 ").Add(" 并派遣了 " ).Add( data.TransportsSent, "a1ffa1" ).Add(" 艘运输船从这个星球。");
+                    tooltipBuffer.Add("\n\n").Add("警告！", "ffa1a1").Add(" 钻探完成后，星球将被蹂躏；这将释放巨大能量，摧毁星球上几乎所有的舰船和建筑（包括金属发生器、ARS 等）。" );
                 }
             }
             catch ( Exception e )
@@ -239,9 +239,9 @@ namespace Arcen.AIW2.External
                     return true;
                 ArcenDoubleCharacterBuffer buffer = SubTexts[0].Text.StartWritingToBuffer();
                 if ( data.TimeTillPlanetOverloaded > 0 )
-                    buffer.Add( "Overload\n" );
+                    buffer.Add( "过载\n" );
                 else
-                    buffer.Add( "Drill\n" );
+                    buffer.Add( "钻探\n" );
                 SubTexts[0].Text.FinishWritingToBuffer();
                 debugStage = 20;
                 if ( Data.EntityList.Count == 0 )
@@ -319,7 +319,7 @@ namespace Arcen.AIW2.External
             try
             {
                 debugCode = 100;
-                tooltipBuffer.Add("The AI is drilling for Cuendillar on ").Add(drill.Planet.Name, "a1ffa1").Add(". The drill will periodically send Cuendillar Transports home; these can be attacked to steal the cuendillar.");
+                tooltipBuffer.Add("AI 正在 ").Add(drill.Planet.Name, "a1ffa1").Add(" 上钻探库恩达。钻机将定期派遣库恩达运输船返回基地；这些运输船可以被攻击以窃取库恩达。");
             }
             catch ( Exception e )
             {
@@ -396,11 +396,11 @@ namespace Arcen.AIW2.External
             if ( time > 0 )
             {
                 string color = ArcenExternalUIUtilities.GetColorForNomadMoveTime( time );
-                tooltipBuffer.Add("The reapers will launch an assault in ").Add( time.ToString(), color ).Add(" seconds.\n");
-                tooltipBuffer.Add("\tRavagers spawned by this assault will attempt to drill and ravage planets, producing swarms of new enemy ships in the process.");
+                tooltipBuffer.Add("收割者将在 ").Add( time.ToString(), color ).Add(" 秒后发动攻击。\n");
+                tooltipBuffer.Add("\t此攻击产生的蹂躏者将试图钻探和蹂躏星球，在此过程中产生大量新的敌方舰船。");
             }
             else
-                tooltipBuffer.Add("The reapers will launch an assault soon.");
+                tooltipBuffer.Add("收割者即将发动攻击。");
             Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( null, tooltipBuffer.GetStringAndResetForNextUpdate() );
             return true;
         }
@@ -421,7 +421,7 @@ namespace Arcen.AIW2.External
                 debugStage = 10;
                 Image.UpdateWith( sprite_Assault, true, "RavagerAssault" );
                 ArcenDoubleCharacterBuffer buffer = SubTexts[0].Text.StartWritingToBuffer();
-                buffer.Add( "Assault\n" );
+                buffer.Add( "攻击\n" );
                 SubTexts[0].Text.FinishWritingToBuffer();
                 debugStage = 20;
 
@@ -430,7 +430,7 @@ namespace Arcen.AIW2.External
                 if ( Data.Int64List.Count > 0 )
                     time = (int)Data.Int64List[0];
                 if ( time < 0 )
-                    buffer.Add("Soon");
+                    buffer.Add("即将");
                 else
                 {
                     string color = ArcenExternalUIUtilities.GetColorForNomadMoveTime( time );
@@ -480,11 +480,11 @@ namespace Arcen.AIW2.External
             if ( time > 0 )
             {
                 string color = ArcenExternalUIUtilities.GetColorForNomadMoveTime( time );
-                tooltipBuffer.Add("The reapers will launch a Lunar Invasion in ").Add( time.ToString(), color ).Add(" seconds.\n");
-                tooltipBuffer.Add("\tA gateway and a Reaper Moon will spawn. Defeating the Moon will allow you to claim your own moon");
+                tooltipBuffer.Add("收割者将在 ").Add( time.ToString(), color ).Add(" 秒后发动月球入侵。\n");
+                tooltipBuffer.Add("\t一扇传送门和一个收割者月球将生成。击败月球将允许你拥有自己的月球");
             }
             else
-                tooltipBuffer.Add("The reapers will launch a Lunar Invasion soon.");
+                tooltipBuffer.Add("收割者即将发动月球入侵。");
             Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( null, tooltipBuffer.GetStringAndResetForNextUpdate() );
             return true;
         }
@@ -505,7 +505,7 @@ namespace Arcen.AIW2.External
                 debugStage = 10;
                 Image.UpdateWith( sprite_LunarInvasion, true, "LunarInvasion" );
                 ArcenDoubleCharacterBuffer buffer = SubTexts[0].Text.StartWritingToBuffer();
-                buffer.Add( "Lunar\n" );
+                buffer.Add( "月球\n" );
                 SubTexts[0].Text.FinishWritingToBuffer();
                 debugStage = 20;
 
@@ -514,7 +514,7 @@ namespace Arcen.AIW2.External
                 if ( Data.Int64List.Count > 0 )
                     time = (int)Data.Int64List[0];
                 if ( time < 0 )
-                    buffer.Add("Soon");
+                    buffer.Add("即将");
                 else
                 {
                     string color = ArcenExternalUIUtilities.GetColorForNomadMoveTime( time );
@@ -572,24 +572,24 @@ namespace Arcen.AIW2.External
             tooltipBuffer.Clear();
             if ( Data.EntityList.Count == 0 )
                 return true;
-            tooltipBuffer.Add("There are ravagers on the map! They will ravage planets to deny you their cuendillar, and produce swarms of ships in the process.\n");
-            tooltipBuffer.Add("Here are the ravagers:\n");
+            tooltipBuffer.Add("地图上有蹂躏者！它们将蹂躏星球，使你无法获得库恩达，并在此过程中产生大量舰船。\n");
+            tooltipBuffer.Add("以下是蹂躏者：\n");
             for ( int i = 0; i < Data.EntityList.Count; i++ )
             {
                 GameEntity_Squad ravager = Data.EntityList[i].GetSquad();
                 if ( ravager == null )
                     continue;
                 if ( ravager.TypeData.IsMobile )
-                    tooltipBuffer.Add("\tOn ").Add(ravager.Planet.Name, "a1ffa1").Add(" in transit to a planet to ravage.\n");
+                    tooltipBuffer.Add("\t在 ").Add(ravager.Planet.Name, "a1ffa1").Add(" 正在前往一个星球进行蹂躏。\n");
                 else
                 {
                     ReapersPerUnitBaseInfo data = ravager.TryGetExternalBaseInfoAs<ReapersPerUnitBaseInfo>();
                     if ( data == null )
-                        tooltipBuffer.Add("\tOn ").Add(ravager.Planet.Name, "ffbba1").Add(" currently drilling and producing enemy ships.\n");
+                        tooltipBuffer.Add("\t在 ").Add(ravager.Planet.Name, "ffbba1").Add(" 当前正在钻探并生产敌方舰船。\n");
                     else
                     {
                         string color = ArcenExternalUIUtilities.GetColorForNomadMoveTime( data.SecondsTillRavage );
-                        tooltipBuffer.Add("\tPlanet ").Add(ravager.Planet.Name, "ffbba1" ).Add(" will be ravaged in ").Add( data.SecondsTillRavage.ToString(), color ).Add( " seconds, and will next produce ships in ").Add( data.SecondsTillTroopSpawn, "a1a1ff" ).Add(" seconds.\n");
+                        tooltipBuffer.Add("\t星球 ").Add(ravager.Planet.Name, "ffbba1" ).Add(" 将在 ").Add( data.SecondsTillRavage.ToString(), color ).Add( " 秒后被蹂躏，并将在 ").Add( data.SecondsTillTroopSpawn, "a1a1ff" ).Add(" 秒后下次生产舰船。\n");
                     }
                 }
                     
@@ -614,7 +614,7 @@ namespace Arcen.AIW2.External
                 debugStage = 10;
                 Image.UpdateWith( sprite_Ravager, true, "Ravager" );
                 ArcenDoubleCharacterBuffer buffer = SubTexts[0].Text.StartWritingToBuffer();
-                buffer.Add( "Ravager\n" );
+                buffer.Add( "蹂躏者\n" );
                 SubTexts[0].Text.FinishWritingToBuffer();
                 debugStage = 20;
 
@@ -682,8 +682,8 @@ namespace Arcen.AIW2.External
             tooltipBuffer.Clear();
             if ( Data.EntityList.Count == 0 )
                 return true;
-            tooltipBuffer.Add("There are Reaper Larvae on the map! They will turn into Chrysalises if not killed.\n");
-            tooltipBuffer.Add("Here are the Larvae you can see:\n");
+            tooltipBuffer.Add("地图上有收割者幼虫！如果不消灭它们，它们将变成茧。\n");
+            tooltipBuffer.Add("以下是你能看到的幼虫：\n");
             for ( int i = 0; i < Data.EntityList.Count; i++ )
             {
                 GameEntity_Squad larva = Data.EntityList[i].GetSquad();
@@ -692,10 +692,10 @@ namespace Arcen.AIW2.External
                 if ( larva.Planet.IntelLevel == PlanetIntelLevel.Unexplored)
                     continue;
                 if ( larva.TypeData.IsMobile )
-                    tooltipBuffer.Add("\tOn ").Add(larva.Planet.Name, "a1ffa1");
+                    tooltipBuffer.Add("\t在 ").Add(larva.Planet.Name, "a1ffa1");
                 Planet dest = larva.GetDestinationPlanet();
                 if ( larva.Planet != dest )
-                    tooltipBuffer.Add(" and is en route to ").Add(dest.Name, "ffa1a1");
+                    tooltipBuffer.Add(" 并正在前往 ").Add(dest.Name, "ffa1a1");
                 tooltipBuffer.Add("\n");
             }
             Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( null, tooltipBuffer.GetStringAndResetForNextUpdate() );
@@ -718,7 +718,7 @@ namespace Arcen.AIW2.External
                 debugStage = 10;
                 Image.UpdateWith( sprite_Larva, true, "Larva" );
                 ArcenDoubleCharacterBuffer buffer = SubTexts[0].Text.StartWritingToBuffer();
-                buffer.Add( "Larva\n" );
+                buffer.Add( "幼虫\n" );
                 SubTexts[0].Text.FinishWritingToBuffer();
                 debugStage = 20;
 
@@ -788,13 +788,13 @@ namespace Arcen.AIW2.External
                 return true;
             if (Data.EntityList.Count == 1)
             {
-                tooltipBuffer.Add("There is a ").Add( Data.EntityList.Count, "ffcc22" ).Add(" Reaper Chrysalis on the map, preparing to unleash a Gateway!\n");
-                tooltipBuffer.Add("Here is the Chrysalis:\n\n");
+                tooltipBuffer.Add("有 ").Add( Data.EntityList.Count, "ffcc22" ).Add(" 个收割者茧在地图上，正准备释放传送门！\n");
+                tooltipBuffer.Add("以下是该茧：\n\n");
             }
             else
             {
-                tooltipBuffer.Add("There are ").Add( Data.EntityList.Count, "ffcc22" ).Add(" Reaper Chrysalises on the map, preparing to unleash Gateways!\n");
-                tooltipBuffer.Add("Here are the Chrysalis:\n\n");
+                tooltipBuffer.Add("有 ").Add( Data.EntityList.Count, "ffcc22" ).Add(" 个收割者茧在地图上，正准备释放传送门！\n");
+                tooltipBuffer.Add("以下是这些茧：\n\n");
             }
             for ( int i = 0; i < Data.EntityList.Count; i++ )
             {
@@ -806,24 +806,24 @@ namespace Arcen.AIW2.External
                 {
                     int spawnTime = data.ChrysalisHatchTime - World_AIW2.Instance.GameSecond;
 
-                    tooltipBuffer.Add("Chrysalis ").Add(chrysalis.Planet.Name, "ffbba1").Add("\n");
+                    tooltipBuffer.Add("茧 ").Add(chrysalis.Planet.Name, "ffbba1").Add("\n");
                     if (spawnTime >= 0)
                     {
                         string color = ArcenExternalUIUtilities.GetColorForNomadMoveTime( spawnTime );
-                        tooltipBuffer.Add("\tWill hatch in ").Add(spawnTime.ToString(), color).Add(" seconds, spawning a Gateway and many other hostile ships.\n");
+                        tooltipBuffer.Add("\t将在 ").Add(spawnTime.ToString(), color).Add(" 秒后孵化，生成传送门和许多其他敌方舰船。\n");
                     }
                     else
-                        tooltipBuffer.Add("\tIt will hatch soon, spawning a Gateway and many other hostile ships.\n");
-                    tooltipBuffer.Add("\tIt has ").Add( data.CuendillarRemaining, "ff4444" ).Add(" cuendillar remaining\n");
+                        tooltipBuffer.Add("\t它即将孵化，生成传送门和许多其他敌方舰船。\n");
+                    tooltipBuffer.Add("\t剩余 ").Add( data.CuendillarRemaining, "ff4444" ).Add(" 库恩达\n");
                     if ( Data.BoolList.Count > 0 &&
                          Data.BoolList[0] )
                     {
-                        tooltipBuffer.Add("\tThe AI is currently extracting Cuendillar from this Chrysalis\n\t\tThis Cuendillar will be turned into dreadful warships for the AI.");
+                        tooltipBuffer.Add("\tAI 目前正在从这个茧提取库恩达\n\t\t这些库恩达将被转化为 AI 的可怕战舰。");
                     }
                 }
             }
-            tooltipBuffer.Add("\n\nUsing Minor Drills to extract Cuendillar will weaken a Chrysalis, reducing the strength of enemies that will spawn at hatch time.");
-            tooltipBuffer.Add("\nIf you can drill out all the Cuendillar, it will collapse.");
+            tooltipBuffer.Add("\n\n使用小型钻机提取库恩达将削弱茧，降低孵化时生成敌人的强度。");
+            tooltipBuffer.Add("\n如果你能钻取所有库恩达，它将崩溃。");
 
             Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( null, tooltipBuffer.GetStringAndResetForNextUpdate() );
             return true;
@@ -845,10 +845,10 @@ namespace Arcen.AIW2.External
                 debugStage = 10;
                 Image.UpdateWith( sprite_Chrysalis, true, "Chrysalis" );
                 ArcenDoubleCharacterBuffer buffer = SubTexts[0].Text.StartWritingToBuffer();
-                buffer.Add( "Chrysalis\n" );
+                buffer.Add( "茧\n" );
                 if ( Data.BoolList.Count > 0 &&
                      Data.BoolList[0] )
-                    buffer.Add( "AI Drill\n" );
+                    buffer.Add( "AI 钻探\n" );
                 SubTexts[0].Text.FinishWritingToBuffer();
                 debugStage = 20;
 

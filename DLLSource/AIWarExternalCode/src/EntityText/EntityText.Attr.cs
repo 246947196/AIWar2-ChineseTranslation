@@ -87,15 +87,15 @@ namespace Arcen.AIW2.External
                     {
                         //team can be null if we are racing with the long range planning code that clears/rebuilds the team list
                         debugstage = 30533;
-                        buffer.Add( "Fireteam " ).Add( team.FireTeamID, "10ffdd" ).Add( " is " );
+                        buffer.Add( "火力组 " ).Add( team.FireTeamID, "10ffdd" ).Add( " 为 " );
                         team.GetStatusForDisplay( buffer );
-                        buffer.Add( ". " );
+                        buffer.Add( "��" );
                         if ( team.Target != null && Config.ShowDebugInfo )
-                            buffer.Add( "Target is " + team.Target.ToStringWithPlanetAndOwner() ).Add( "\n" );
+                            buffer.Add( "目标是 " + team.Target.ToStringWithPlanetAndOwner() ).Add( "\n" );
                         team.GetSpecificationForDisplay( buffer );
                         if ( team != null && team.History != null && team.History.Count > 0 && team.FireTeamID > 0 )
                         {
-                            buffer.Add( "Unit Fireteam History:\n " );
+                            buffer.Add( "单位火力组历史：\n " );
                             for ( int i = team.History.Count - 1; i >= 0; i-- )
                             {
                                 buffer.Add( "\t" + team.History[i].ToDisplayString( team ) + "\n" );
@@ -789,7 +789,7 @@ namespace Arcen.AIW2.External
                 if ( Squad.TypeData.CannotTargetOrAlertAIReinforcementSpots )
                 {
                     buffer.BeginStatement(Attr_Line);
-                    buffer.Add( "Aggro-Invisible", Attr_Label);
+                    buffer.Add( "隐形仇恨", Attr_Label);
                     if ( Config.Detail < TooltipDetail.Medium )
                         buffer.Add("  ");
                     else
@@ -887,13 +887,13 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                     debugstage = 450;
                     if ( Squad.TypeData.NumberOfHopsOutToFreeGuards > 0 )
                     {
-                        buffer.Add( "Call for Aid", Attr_Label).Add("：所有守卫单位在 <color=#ffdf72>" ).Add(
+                        buffer.Add( "求援", Attr_Label).Add("：所有守卫单位在 <color=#ffdf72>" ).Add(
                             Squad.TypeData.NumberOfHopsOutToFreeGuards ).Add( " 个虫洞跃迁</color>内将变为威胁（可能加入猎杀舰队），如果来袭敌军强度超过 <color=#ffdf72> " ).Add(
                             Squad.TypeData.FreesGuardsWhenLocalForceRatioIsWorseThan.ReadableString ).Add( "x</color> 此星球上的 AI 军力。" );
                     }
                     else
                     {
-                        buffer.Add( "Disperse Guards", Attr_Label).Add("：本星球上所有守卫单位将变为威胁（可能加入猎杀舰队），如果本地 AI 强度低于 <color=#ffdf72> " ).Add(
+                        buffer.Add( "驱散守卫", Attr_Label).Add("：本星球上所有守卫单位将变为威胁（可能加入猎杀舰队），如果本地 AI 强度低于 <color=#ffdf72> " ).Add(
                             Squad.TypeData.FreesGuardsWhenLocalForceRatioIsWorseThan.ReadableString ).Add( "x</color> 此星球的敌方强度。" );
                     }
                     
@@ -910,7 +910,7 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                     buffer.BeginStatement(Attr_Line);
                     
                     int hopCount = Squad.TypeData.WatchPlanetsAtXHops + (relatedMembershipOrNull == null ? 0 : relatedMembershipOrNull.Hacked_ExtraWatchPlanetsAtXHops);
-                    buffer.Add( "Recon", Attr_Label).Add("：监视 " ).Add( hopCount, "ffdf72" );
+                    buffer.Add( "侦察", Attr_Label).Add("：监视 " ).Add( hopCount, "ffdf72" );
                     if ( hopCount > 1 )
                         buffer.Add( " hops." );
                     else
@@ -970,24 +970,24 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                     
                     SpeedGroup groupOnHost = Squad.GroupMoveSpeed_HostOnly;
                     if ( groupOnHost != null )
-                        buffer.Add( "In Speed Group " ).Add( groupOnHost.SpeedGroupID );
+                        buffer.Add( "在速度组 " ).Add( groupOnHost.SpeedGroupID );
                     else
-                        buffer.Add( "In Speed Group" );
+                        buffer.Add( "在速度组" );
                     
                     buffer
-                        .Add( " with " )
+                        .Add( "，组速 " )
                         .WrapSpeedMoreReadable( Squad.SpeedLimitFromGroupMove, false, false )
-                        .Add( " group speed and " )
+                        .Add( "，计算速度 " )
                         .WrapSpeedMoreReadable( Squad.SpeedLimitFromGroupMove, false, false )
-                        .Add( " calculated speed" );
+                        .Add( "" );
                     
                     if ( groupOnHost != null && groupOnHost.OverrideSpeedLimit > 0 )
-                        buffer.Add( " and " ).WrapSpeedMoreReadable( groupOnHost.OverrideSpeedLimit, false, false ).Add( " override speed" );
+                        buffer.Add( "，覆盖速度 " ).WrapSpeedMoreReadable( groupOnHost.OverrideSpeedLimit, false, false ).Add( "" );
                     
                     buffer
-                        .Add( " compared to " )
+                        .Add( "，相对于原速 " )
                         .WrapSpeedMoreReadable( Squad.DataForMark.Speed, false, false )
-                        .Add( " original speed." );
+                        .Add( "。" );
                     
                     buffer.EndStatement(Attr_Line);
                 }
@@ -1061,7 +1061,7 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                     buffer.BeginStatement(Attr_Line);
                     {
                         buffer
-                            .AddModuleTag(Squad.TypeData.IsForcefieldProvidedByAnyModule).Add( "Bubble-Shield", Attr_Label )
+                            .AddModuleTag(Squad.TypeData.IsForcefieldProvidedByAnyModule).Add( "球形护盾", Attr_Label )
                             
                             .StartSize("75%")
                             .Add("：投射其 ")
@@ -1080,33 +1080,33 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                         if (!blocking)
                         {
                             buffer
-                                .Open(Attr_Line2).Add( "Thin", Attr_Label2 )
+                                .Open(Attr_Line2).Add( "薄型", Attr_Label2 )
                                 .Add("：不阻挡移动，仅阻挡武器火力。").Close(Attr_Line2);
                         }
                         
                         if ( Squad.TypeData.MyForcefieldDoesNotShrink )
                         {
                             buffer
-                                .Open(Attr_Line2).Add( "Hardened", Attr_Label2 )
+                                .Open(Attr_Line2).Add( "硬化", Attr_Label2 )
                                 .Add("：护盾 ").Add(TextTerm.Range, TermUse.Name).Add(" 在受伤时不会降低。" ).Close(Attr_Line2);
                         }
                         else if ( Config.Detail >= TooltipDetail.Medium )
                         {
                             buffer
-                                .Open(Attr_Line2).Add( "Soft", Attr_Label2 )
+                                .Open(Attr_Line2).Add( "软性", Attr_Label2 )
                                 .Add("：护盾 ").Add(TextTerm.Range, TermUse.Name).Add( " 在受伤时降低。" ).Close(Attr_Line2);
                         }
                         
                         if ( Squad.TypeData.MyForcefieldHasNoPenaltyForEnemiesFiringOutOfIt )
                         {
                             buffer
-                                .Open(Attr_Line2).Add( "Greater", Attr_Label2 )
+                                .Open(Attr_Line2).Add( "增强", Attr_Label2 )
                                 .Add("：受护盾保护的盟友的输出伤害不会降低。" ).Close(Attr_Line2);
                         }
                         else
                         {
                             buffer
-                                .Open(Attr_Line2).Add( "Lesser", Attr_Label2 )
+                                .Open(Attr_Line2).Add( "减弱", Attr_Label2 )
                                 .Add("：受护盾保护的盟友的输出伤害降低 ").AddNumber( "50%", TextTerm.Damage, TermUse.Icon ).Close(Attr_Line2);
                         }
                         
@@ -1159,7 +1159,7 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                         max = Squad.GetMaxAttritionDamageOrZeroForUnlimited();
 
                     buffer
-                        .Add( "Attritioner", Attr_Label)
+                        .Add( "损耗者", Attr_Label)
                         .Add("：持续造成全行星范围 ")
                         .Add(TextTerm.Damage_Exotic, TermUse.Name)
                         .Add(" ")
@@ -1764,7 +1764,7 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                             Config.ActiveHackAgainstUs = hack;
                              
                             debugstage = 3856;
-                            buffer.Add( " <color=#cdcdcd><size=70%>choose from</size></color> " );
+                            buffer.Add( " <color=#cdcdcd><size=70%>选择自</size></color> " );
                             
                             if (Squad.IsFakeEntity)
                             {
@@ -1820,7 +1820,7 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                         writer.WriteShip(parent, ShipExtraDetailFlags.HighestDetail);
                         
                         if ( Squad.TypeData.DiesIfParentDies )
-                            buffer.Add( " (dies with ancestor)" );
+                            buffer.Add( "（随祖先死亡）" );
                         
                         buffer.EndStatement(Attr_Line);
                     }
@@ -1830,8 +1830,8 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                 {
                     buffer
                         .BeginStatement(Attr_Line)
-                        .Add( "Ancestor", Attr_Label)
-                        .Add( ": Created by an ancestor and dies if it does." )
+                        .Add( "祖先", Attr_Label)
+                        .Add( "：由祖先创建，随祖先死亡。" )
                         .EndStatement(Attr_Line);
                 }
                 #endregion
@@ -1843,25 +1843,25 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                 #region IsElite
                 debugstage = 3010;
                 if ( (Squad.TypeData.IsElite) && Config.Detail >= TooltipDetail.Medium )
-                    buffer.BeginStatement(Attr_Line).Add( "Elite: Only one elite ship line can be added to any fleet" ).EndStatement(Attr_Line);
+                    buffer.BeginStatement(Attr_Line).Add( "精英：每支舰队只能加入一条精英舰船线" ).EndStatement(Attr_Line);
                 #endregion
                 
                 #region ProvidesAIWarpEntryPoint
                 debugstage = 3020;
                 if ( (Squad.TypeData.ProvidesAIWarpEntryPoint || Squad.TypeData.IsWarpBeacon) && Config.Detail >= TooltipDetail.Medium )
-                    buffer.BeginStatement(Attr_Line).Add( "Allows AI ships to warp in here" ).EndStatement(Attr_Line);
+                    buffer.BeginStatement(Attr_Line).Add( "允许 AI 舰船在此跃迁进入" ).EndStatement(Attr_Line);
                 #endregion
                 
                 #region FleetMembershipStyle.Planetary
                 debugstage = 3030;
                 if ( Squad.TypeData.IsMobile && Squad.TypeData.FleetMembershipStyle == FleetMembershipStyle.Planetary && Config.Detail >= TooltipDetail.Medium )
-                    buffer.BeginStatement(Attr_Line).Add( "Cannot traverse wormholes" ).EndStatement(Attr_Line);
+                    buffer.BeginStatement(Attr_Line).Add( "无法穿越虫洞" ).EndStatement(Attr_Line);
                 #endregion
                 
                 #region AutomaticallyDiesWithCommandStation
                 debugstage = 3030;
                 if ( Squad.TypeData.AutomaticallyDiesWithCommandStation )
-                    buffer.BeginStatement(Attr_Line).Add( "Self-destructs if command station is destroyed" ).EndStatement(Attr_Line);
+                    buffer.BeginStatement(Attr_Line).Add( "指挥站被摧毁时自毁" ).EndStatement(Attr_Line);
                 #endregion
                 
                 #region DiesAfterLifetimeSec
@@ -1948,7 +1948,7 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                 debugstage = 3051;
                 if ( Squad.TypeData.ImmuneToRepairs )
                 {
-                    buffer.BeginStatement(TextStyle.Newline_NoLabel).Add( "Cannot be repaired." ).EndStatement(TextStyle.Newline_NoLabel);
+                    buffer.BeginStatement(TextStyle.Newline_NoLabel).Add( "无法被修复。" ).EndStatement(TextStyle.Newline_NoLabel);
                 }
                 #endregion
                 
@@ -1976,16 +1976,16 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                 if ( Squad.TypeData.ImmuneToProtectionByForcefields )
                 {
                     if ( Config.Detail >= TooltipDetail.Full )
-                        buffer.BeginStatement(Attr_Line).Add( "Cannot be protected by forcefields, due to its strange interaction with the fabric of reality" ).EndStatement(Attr_Line);
+                        buffer.BeginStatement(Attr_Line).Add( "因其与现实的奇异交互，无法被力场保护" ).EndStatement(Attr_Line);
                     else
-                        buffer.BeginStatement(Attr_Line).Add( "Cannot be protected by forcefields" ).EndStatement(Attr_Line);
+                        buffer.BeginStatement(Attr_Line).Add( "无法被力场保护" ).EndStatement(Attr_Line);
                 }
                 #endregion
                 
                 #region ImmuneToBonusDamage
                 if ( Squad.TypeData.ImmuneToBonusDamage )
                 {
-                    buffer.BeginStatement(Attr_Line).Add( "Immune to enemy weapon system bonus damage" ).EndStatement(Attr_Line);
+                    buffer.BeginStatement(Attr_Line).Add( "免疫敌方武器系统加成伤害" ).EndStatement(Attr_Line);
                 }
                 #endregion
                 
@@ -2052,23 +2052,23 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                     
                     if ( Config.Detail >= TooltipDetail.Full )
                     {
-                        buffer.Add( "Strange interactions with the very fabric of spacetime cause this to exist in the normal plane of existence only part of the time, making it invincible and invisible " );
+                        buffer.Add( "由于与时空结构的奇异交互，此单位仅部分时间存在于常规位面，在此期间无敌且隐形 " );
                         
                         if ( Squad.TypeData.AlternativeStateOfMatter.CanTargetOtherUnitsInThisState )
-                            buffer.Add( "while it is in the other state." );
+                            buffer.Add( "在另一状态期间。" );
                         else
-                            buffer.Add( "in the other state EXCEPT to other units in the same state." );
+                            buffer.Add( "在另一状态期间——除了同样处于该状态的单位。" );
                         
                         buffer.NewLine();
                     }
 
                     buffer
-                        .Add( "Phases to " ).Add( Squad.TypeData.AlternativeStateOfMatter.DisplayName )
-                        .Add( " every " )
+                        .Add( "相移为 " ).Add( Squad.TypeData.AlternativeStateOfMatter.DisplayName )
+                        .Add( " 每 " )
                         .Add( Squad.TypeData.PhasesToOtherAlternativeStateOfMatterAfterSeconds )
-                        .Add( " seconds, and back " )
+                        .Add( " 秒，再过 " )
                         .Add( returnTime )
-                        .Add( " seconds after that." );
+                        .Add( " 秒后返回。" );
                     
                     buffer.Close(TextStyle.Newline_NoLabel);
                     buffer.EndStatement(Attr_Line);
@@ -2084,12 +2084,12 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                     buffer
                         .InCase(TextCaps.FirstLetter).Add( "Phase-Warp", Attr_Label).EndCase()
                         .Add("：相位移动至 " ).Add( Squad.TypeData.StateOfMatterToBecomeOnWormholeExit.DisplayName )
-                        .Add( " whenever it passes through a wormhole" );
+                        .Add( " 每当穿越虫洞时" );
                     
                     if ( returnTime > 0 )
-                        buffer.Add( ", and then returns to normal " ).Add( returnTime ).Add( " seconds after that." );
+                        buffer.Add( "，并在 " ).Add( returnTime ).Add( " 秒后恢复正常。" );
                     else
-                        buffer.Add( ", and does not schedule a return to normal." );
+                        buffer.Add( "，且未安排返回正常状态。" );
                     buffer.EndStatement(Attr_Line);
                 }
                 #endregion
@@ -2104,11 +2104,11 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                         
                     buffer
                         .InCase(TextCaps.FirstLetter)
-                        .Add( "AI Core-Phase", Attr_Label)
+                        .Add( "AI 核心相位", Attr_Label)
                         .EndCase()
-                        .Add(": Phases to " )
+                        .Add("：相移为 " )
                         .Add( force_state_aihome.DisplayName )
-                        .Add( " whenever it is on a current or former AI Homeworld or AI Bastion World (unless it is in the presence of an enemy king)." );
+                        .Add( " 当位于当前或前 AI 母星或 AI 堡垒世界上时（除非有敌人王者在场）。" );
                     
                     buffer.EndStatement(Attr_Line);
                 }
@@ -2126,16 +2126,16 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                     if ( !Squad.IsFakeEntity )
                     {
                         buffer
-                            .Add( "Immune to all damage for " )
+                            .Add( "免疫所有伤害，持续 " )
                             .AddMinutesAndSeconds( immune_dur - alive_sec )
-                            .Add( " more." );
+                            .Add( " 更久。" );
                     }
                     else
                     {
                         buffer
-                            .Add( "Immune to all damage for " )
+                            .Add( "创建后免疫所有伤害，持续 " )
                             .AddMinutesAndSeconds( immune_dur )
-                            .Add( " after creation." );
+                            .Add( "。" );
                     }
                 }
                 #endregion
@@ -2193,8 +2193,8 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                 {
                     buffer.BeginStatement(Attr_Line);
                     buffer
-                        .Add( "Currently has <color=#ffdf72>" ).Add( Squad.NumberOfWeaponPoints )
-                        .Add( "</color> weapon points." );
+                        .Add( "当前有 <color=#ffdf72>" ).Add( Squad.NumberOfWeaponPoints )
+                        .Add( "</color> 武器点数。" );
                     buffer.EndStatement(Attr_Line);
                 }
                 #endregion
@@ -2216,12 +2216,12 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                     
                     buffer
                         .NewLineIfNeeded()
-                        .Add( "Has ")
+                        .Add( "已受到 ")
                         .Open(TextStyle.Color_Count).AddNumber(amount, null, TextStyle.Empty)/*.Add(Text.Multiply)*/.Close(TextStyle.Color_Count)
                         .Open(TextStyle.Fraction_Gray).Add("/").Add( deffect.Scale ).Close(TextStyle.Fraction_Gray)
                         .Add(" ")
                         .Add( deffect.DescriptionDamageName )
-                        .Add( " damage taken" );
+                        .Add( " 伤害" );
                     var fac = World_AIW2.Instance.GetFactionByIndex(Squad.DeathEffectDamageLastDoneByFactionIndex[deffect]);
                     if (fac != null)
                         buffer.Open(TextStyle.Color_Gray).Add(" (").Add(fac.GetDisplayName()).Add(")").Close(TextStyle.Color_Gray);
@@ -2310,7 +2310,7 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                         */
                         
                         if ( hackingPointsLost > 0 )
-                            buffer.Add( ", and you will lose " ).AddNumber( hackingPointsLost, TextTerm.Hacking, TermUse.Icon );
+                                    buffer.Add( "，将损失 " ).AddNumber( hackingPointsLost, TextTerm.Hacking, TermUse.Icon );
                         
                         buffer.Add( "." );
                         
@@ -2318,7 +2318,7 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                              relatedMemFleetOrNull.TimesCrippled_UIOnly > 0 &&
                              Config.Detail >= TooltipDetail.Full )
                         {
-                            buffer.Add( " Has been crippled " ).AddNumber( relatedMemFleetOrNull.TimesCrippled_UIOnly ).Add( " time(s)." );
+                            buffer.Add( " 已残废 " ).AddNumber( relatedMemFleetOrNull.TimesCrippled_UIOnly ).Add( " 次。" );
                         }
 
                         buffer.EndStatement(Attr_Line);
@@ -2338,7 +2338,7 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                     {
                         buffer
                             .BeginStatement(Attr_Line)
-                            .Add( "Reverts to ").Add("中立", TextStyle.PlayerType_Name).Add(" 在被摧毁时。" )
+                            .Add( "恢复为 ").Add("中立", TextStyle.PlayerType_Name).Add(" 在被摧毁时。" )
                             .EndStatement(Attr_Line);
                     }
                 }
@@ -2353,19 +2353,19 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                 {
                     buffer.BeginStatement(Attr_Line);
                     
-                    buffer.Add( "<color=#ff5bf2>NOT AFTER YOU" );
+                    buffer.Add( "<color=#ff5bf2>不追你" );
                     if ( Config.Detail >= TooltipDetail.Full )
                     {
-                        buffer.Add( ":</color> This ship will fire on you if you fly up to it, but otherwise will ignore you. It is quite occupied hunting " );
+                        buffer.Add( "：</color> 此舰船会在你接近时开火，否则忽略你。它正忙于猎杀 " );
                         buffer.Add( Squad.CalculateFactionIsChasingInsteadOfHumans() );
-                        buffer.Add( "." );
+                        buffer.Add( "。" );
                     } 
                     else 
                     if ( Config.Detail >= TooltipDetail.Medium )
                     {
-                        buffer.Add( ":</color> Hunting " );
+                        buffer.Add( "：</color> 猎杀 " );
                         buffer.Add( Squad.CalculateFactionIsChasingInsteadOfHumans() );
-                        buffer.Add( "." );
+                        buffer.Add( "。" );
                     } 
                     else
                     {
@@ -2384,7 +2384,7 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                     buffer
                         .BeginStatement(TextStyle.Newline_NoLabel)
                         .StartColor("7486d1")
-                        .Add( "This entity will despawn in " ).AddMinutesAndSeconds( Squad.DespawnsInXSeconds ).Add(".")
+                        .Add( "此实体将在 " ).AddMinutesAndSeconds( Squad.DespawnsInXSeconds ).Add(" 后消失。")
                         .EndColor()
                         .EndStatement(TextStyle.Newline_NoLabel);
                 }
@@ -2424,7 +2424,7 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
 
                         buffer
                             .BeginStatement(TextStyle.Newline_NoLabel)
-                            .Add( "Galaxy-Wide Cap: " )
+                            .Add( "银河上限：" )
                             .AddNumber( countOfExisting )
                             .Open(TextStyle.Fraction_Gray)
                             .Add( "/" ).Add( effectiveGalaxyCap )
@@ -2437,13 +2437,13 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                             {
                                 buffer
                                     .Add( "<size=80%>" )
-                                    .Add( " (" ).Add( Squad.TypeData.BaseGalaxyWideCapForPlayersConstructing )
-                                    .Add( " + " ).Add( Squad.TypeData.AddedGalaxyWideCapForPlayersConstructingPerXPlanets )
-                                    .Add( " per " ).Add( Squad.TypeData.GalaxyWideCapForPlayersConstructingXPlanetVariable )
-                                    .Add( " player-owned planets. ")
-                                    .Add( World_AIW2.Instance.PlayerOwnedPlanets, "a1ffa1" )
-                                    .Add(" Player planets Owned)" )
-                                    .Add( "</size>" );
+                .Add( "（" ).Add( Squad.TypeData.BaseGalaxyWideCapForPlayersConstructing )
+                .Add( " + " ).Add( Squad.TypeData.AddedGalaxyWideCapForPlayersConstructingPerXPlanets )
+                .Add( " 每 " ).Add( Squad.TypeData.GalaxyWideCapForPlayersConstructingXPlanetVariable )
+                .Add( " 个玩家拥有的星球）" )
+                .Add( World_AIW2.Instance.PlayerOwnedPlanets, "a1ffa1" )
+                .Add(" 个玩家拥有的星球）" )
+                .Add( "</size>" );
                             }
                         }
                         
@@ -2571,7 +2571,7 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                     AIDifficulty highestDifficulty = FactionUtilityMethods.Instance.GetHighestAIDifficulty_AsDifficulty();
                     if ( highestDifficulty.Difficulty >= Squad.TypeData.ExoGenerationDifficulty )
                     {
-                        buffer.Add( "The AI will generate Exostrikes (Exogalactic Strikeforces) against you if you capture this structure. " );
+                        buffer.Add( "如果您占领此结构，AI 将对您生成远征打击（Exogalactic Strikeforces）。" );
                     }
                 }
                 #endregion
@@ -2588,9 +2588,9 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                         debugstage = 1503;
                         buffer.BeginStatement(Attr_Line);
                         buffer
-                            .Add( "Starts at " )
+                            .Add( "起始等级 " )
                             .AddColor( Squad.TypeData.StartingMarkLevel.Abbreviation, Squad.TypeData.StartingMarkLevel.ColorHex )
-                            .Add(".");
+                            .Add("。");
                         buffer.EndStatement(Attr_Line);
                         
                         debugstage = 1504;
@@ -2761,8 +2761,8 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                     buffer.BeginStatement(TextStyle.Newline_NoLabel);
                     
                     buffer
-                        .Add( "Grants-Bolstered Fleet" )
-                        .Add(": ")
+                        .Add( "授予增援舰队" )
+                        .Add("：")
                         .AddShipIconNameFull(typeData)
                         .Open(TextStyle.Color_Count)
                         .Add(Text.Multiply)
@@ -2795,21 +2795,21 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                         buffer.BeginStatement( TextStyle.DarkText );
                             
                         buffer
-                            .Add( "This is a stack of " )
+                            .Add( "这是 " )
                             .Open( TextStyle.Number )
                             .Add( Squad.ShipCount )
-                            .Add( " ships")
+                            .Add( " 艘舰船的堆叠")
                             .Close(TextStyle.Number)
                             .Add("。当前个体死亡时计数减少，下一个弹出。" );
 
                         if ( Config.Detail >= TooltipDetail.Full )
                         {
                             buffer
-                                .Add( " This stack takes damage like normal, but shoots " )
+                                .Add( "此堆叠正常承受伤害，但射击次数为 " )
                                 .Open( TextStyle.Number )
                                 .Add( Squad.ShipCount ).Add( "x" )
                                 .Close( TextStyle.Number )
-                                .Add(" 正常数量的射击。" );
+                                .Add(" 正常数量。" );
                         }
                         
                         buffer.EndStatement(TextStyle.DarkText);
@@ -2986,9 +2986,9 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                     {
                         buffer
                             .BeginStatement( TextStyle.GreenText )
-                            .Add( "Protecting " )
+                            .Add( "保护 " )
                             .Add( Squad.AreaBoosting_CurrentCount.Display, TextStyle.Number )
-                            .Add( " friendlies." )
+                            .Add( " 个友军。" )
                             .EndStatement(TextStyle.GreenText);
                     }
                    
@@ -2996,7 +2996,7 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                     {
                         buffer
                             .BeginStatement( TextStyle.GreenText )
-                            .Add( "Protected by: " );
+                            .Add( "受保护于：" );
                         
                         writer.WriteShips(Squad.AreaBoosters_ShotEvaluated.GetDisplayList());
                         
@@ -3062,7 +3062,7 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                             {
                                 buffer
                                     .BeginStatement(TextStyle.WarnText)
-                                    .Add( "This ship normally can be transported, but cannot be loaded into any transport right now because " )
+                                    .Add( "此舰船通常可被运输，但当前无法装载入任何运输船，因为 " )
                                 .Add( Extensions.ToString(noTransport) )
                                 .EndStatement(TextStyle.WarnText);
                         }
@@ -3078,7 +3078,7 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                         var reasonCaptureImmune = Squad.GetImmuneToCaptureReason();
                         if (reasonCaptureImmune != GameEntity_Squad.CaptureImmuneReason.None)
                         {
-                            buffer.BeginStatement(TextStyle.Newline_NoLabel).Add( "Cannot be captured by other factions (" ).Add(Extensions.ToString(reasonCaptureImmune)).Add(")").EndStatement(TextStyle.Newline_NoLabel);
+                            buffer.BeginStatement(TextStyle.Newline_NoLabel).Add( "无法被其他阵营捕获（" ).Add(Extensions.ToString(reasonCaptureImmune)).Add(")").EndStatement(TextStyle.Newline_NoLabel);
                         }
                     }
                     #endregion
@@ -3101,7 +3101,7 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                         if ( !skipBecauseWrittenElsewhere )
                         {
                             //HandleNewline( buffer, ref haveDoneNewLine );
-                            buffer.BeginStatement(TextStyle.WarnText).Add( "Ship Disabled: " );
+                            buffer.BeginStatement(TextStyle.WarnText).Add( "舰船已禁用：" );
 
                             switch ( rejectionReason )
                             {
@@ -3111,10 +3111,10 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                                     break;
                                 case ArcenRejectionReason.NonFunctionalWhenNotOnPlanetOwnedByMyFaction:
                                 case ArcenRejectionReason.FactionDoesNotControlThisPlanet:
-                                    buffer.Add( "Faction not in control of this planet." );
+                                    buffer.Add( "阵营未控制此星球。" );
                                     break;
                                 case ArcenRejectionReason.InUnexploredSpace:
-                                    buffer.Add( "Cannot function while in Unexplored Space." );
+                                    buffer.Add( "无法在未探索空间中运作。" );
                                     break;
                                 //case ArcenRejectionReason.EntityConsideredOutOfSupplyOfParentFleetCenterpiece:
                                 //    buffer.Add( "No supply - not on same or adjacent parent to the fleet centerpiece." );
@@ -3128,12 +3128,12 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                                     break;
                                 */
                                 case ArcenRejectionReason.EntityIsInHoldFireMode:
-                                    buffer.Add( "Ordered to Stand Down." );
+                                    buffer.Add( "已下令停火。" );
                                     break;
                                 case ArcenRejectionReason.EntityIsSelfBuilding:
                                     {
                                         float percent = (1f - ((float) Squad.SelfBuildingMetalRemaining / (float) Squad.GetMetalCost())) * 100;
-                                        buffer.Add( "Still under construction." );
+                                        buffer.Add( "仍在建造中。" );
                                         //buffer.AddPercentageInColor( percent, true, false );
                                         //buffer.Add( " " ).AddFixedDecimalThousands( Squad.SelfBuildingMetalRemaining.ToFloatNonSim(), 1 ).Add( " metal left" );
                                         //buffer.Add( "%)" );
@@ -3189,28 +3189,28 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                         rejectionReason = Squad.GetCannotRebuildRemainsReason();
                         if ( rejectionReason != ArcenRejectionReason.Unknown )
                         {
-                            buffer.Add( "Cannot Rebuild Remains: " );
+                            buffer.Add( "无法重建残骸：" );
 
                             switch ( rejectionReason )
                             {
                                 case ArcenRejectionReason.CannotRebuild_IsNotremains:
-                                    buffer.Add( "Is not remains!" );
+                                    buffer.Add( "不是残骸！" );
                                     break;
                                 case ArcenRejectionReason.CannotRebuild_YesEnemiesHereAndNotBeenLongEnough:
-                                    buffer.Add( "Must wait another " )
+                                    buffer.Add( "需等待 " )
                                         .AddMinutesAndSeconds( ExternalConstants.Instance.Balance_SecondsAfterDeathBeforeRebuilding - Squad.SecondsSpentAsRemains )
-                                        .Add( " while enemies are here." );
+                                        .Add( " 当有敌人时。" );
                                     break;
                                 case ArcenRejectionReason.CannotRebuild_NoEnemiesHereAndNotBeenLongEnough:
-                                    buffer.Add( "Must only wait another " )
+                                    buffer.Add( "只需再等 " )
                                         .AddMinutesAndSeconds( ExternalConstants.Instance.Balance_SecondsAfterDeathBeforeRebuildingNoEnemies - Squad.SecondsSpentAsRemains )
-                                        .Add( " since no enemies present." );
+                                        .Add( " 因无敌人存在。" );
                                     break;
                                 case ArcenRejectionReason.CannotRebuild_CommandStationOnAIPlanet:
-                                    buffer.Add( "Command Stations cannot be rebuilt on enemy planets." );
+                                    buffer.Add( "指挥站无法在敌方星球重建。" );
                                     break;
                                 case ArcenRejectionReason.CannotRebuild_WouldPutUsIntoBrownout:
-                                    buffer.Add( "Rebuilding would put you into negative energy." );
+                                    buffer.Add( "重建会导致能量不足。" );
                                     break;
                                 default:
                                     buffer.Add( "ERROR_WRITE_NICE_TEXT: " ).Add( EnumNameCache.GetName( rejectionReason ) );
@@ -3220,9 +3220,9 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                         else
                         {
                             if ( Config.Detail < TooltipDetail.Full )
-                                buffer.Add( "This is only the broken remains of the unit." );
+                                buffer.Add( "这只是该单位的破碎残骸。" );
                             else
-                                buffer.Add( "This is only the broken remains of the unit. Remains do nothing directly but can be rebuilt." );
+                                buffer.Add( "这只是该单位的破碎残骸。残骸本身不执行任何操作，但可以被重建。" );
                         }
                         
                         buffer.EndStatement(TextStyle.WarnText);
@@ -3241,7 +3241,7 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                         
                         buffer.BeginStatement(TextStyle.WarnText);
                         
-                        buffer.Add( "Brownout: Bubble forcefields down for another " ).AddMinutesAndSeconds(sec);
+                        buffer.Add( "能量不足：球形力场还需 " ).AddMinutesAndSeconds(sec).Add(" 才能恢复");
                         
                         buffer.EndStatement(TextStyle.WarnText);
                     }
@@ -3270,7 +3270,7 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                     {
                         buffer
                             .BeginStatement(TextStyle.WarnText)
-                            .Add( "Cannot be claimed because you are short ")
+                            .Add( "无法占领，因为能量短缺 ")
                             .AddNumber(energy_missing, TextTerm.Energy, TermUse.Icon_Name)
                             .EndStatement(TextStyle.WarnText);
                 }
@@ -3282,7 +3282,7 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                     {
                         buffer.BeginStatement(TextStyle.WarnText);
                         debugstage = 87394010;
-                        buffer.Add( "This unit is currently hacking. While doing so it is slowed, decloaked, and cannot leave the planet." );
+                        buffer.Add( "此单位正在黑客入侵。期间速度降低、解除隐形，且无法离开星球。" );
                         buffer.EndStatement(TextStyle.WarnText);
                     }
                     #endregion
@@ -3308,7 +3308,7 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
             
             int cost = (int)(relatedSquadOrNull.TypeData.GetExtraCostWhileCrippled().ToFloat() * relatedSquadOrNull.GetMetalCost());
 
-            buffer.Add( "Crippled: Will not die, but needs to be repaired" );
+            buffer.Add( "残废：不会死亡，但需要被修复" );
             if (!relatedSquadOrNull.TypeData.ImmuneToRepairs)
             {
                 buffer.Add(" ").AddVarReplace(TextVarMap.Parenthetical, 
@@ -3539,7 +3539,7 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
             if ( !string.IsNullOrWhiteSpace(tag) )
             {
                 if ( tag == "AICommandStationOriginal" )
-                    return buffer.Add( "AI Command Station" );
+                    return buffer.Add( "AI 指挥站" );
                 
                 for (int i = 0; i < tag.Length; i++)
                 {

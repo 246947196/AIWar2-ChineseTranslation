@@ -88,15 +88,15 @@ namespace Arcen.AIW2.External
                         if ( data != null )
                             color = ArcenExternalUIUtilities.GetColorForNomadMoveTime( data.RemainingDuration );
 
-                        tooltipBuffer.Add( "A Zenith Miner Probe is on " ).Add( probe.GetPlanetName_Safe(), "a1ffa1" ).Add( " and will summon a miner in " )
-                            .Add( data == null ? "???" : data.RemainingDuration.ToString(), color ).Add( " seconds." ).Add( " The Miner will " )
+                        tooltipBuffer.Add( "天顶矿工探测器在 " ).Add( probe.GetPlanetName_Safe(), "a1ffa1" ).Add( " 上，将在 " )
+                            .Add( data == null ? "???" : data.RemainingDuration.ToString(), color ).Add( " 秒后召唤矿工。" ).Add( "矿工将" )
                             .Add( data == null ? "???" : ZenithMinersFactionBaseInfo.EffectToString( data.Effect ) )
-                            .Add( ", unless you or another faction destroys the Miner first.\n" );
+                            .Add( "，除非您或其他派系先摧毁矿工。\n" );
                     }
                     else
                     {
                         debugCode = 400;
-                        tooltipBuffer.Add( "There are " ).Add( probes.Count ).Add( " Zenith Miner Probes in the galaxy" ).Add( "\n" );
+                        tooltipBuffer.Add( "银河系中有 " ).Add( probes.Count ).Add( " 个天顶矿工探测器" ).Add( "\n" );
                         bool isFirst = true;
                         for ( int i = 0; i < probes.Count; i++ )
                         {
@@ -115,9 +115,9 @@ namespace Arcen.AIW2.External
                             string color = "a1ffa1";
                             if ( data != null )
                                 color = ArcenExternalUIUtilities.GetColorForNomadMoveTime( data.RemainingDuration );
-                            tooltipBuffer.Add( "\t" ).Add( "The Probe on " ).Add( probe.GetPlanetName_Safe(), "a1ffa1" ).Add( " will summon a Zenith Miner in " )
-                                .Add( data == null ? "???" : data.RemainingDuration.ToString(), color ).Add( " seconds." ).Add( " The Miner will " )
-                                .Add( data == null ? "???" : ZenithMinersFactionBaseInfo.EffectToString( data.Effect ) ).Add( ". \n" );
+                            tooltipBuffer.Add( "\t" ).Add( "探测器在 " ).Add( probe.GetPlanetName_Safe(), "a1ffa1" ).Add( " 上，将在 " )
+                                .Add( data == null ? "???" : data.RemainingDuration.ToString(), color ).Add( " 秒后召唤天顶矿工。" ).Add( "矿工将" )
+                                .Add( data == null ? "???" : ZenithMinersFactionBaseInfo.EffectToString( data.Effect ) ).Add( "。\n" );
                         }
                     }
                 }
@@ -141,21 +141,21 @@ namespace Arcen.AIW2.External
                                 debugCode = 900;
                                 if ( data.InMiningMode )
                                 {
-                                    tooltipBuffer.Add( "A Zenith Miner is on " ).Add( miner.GetPlanetName_Safe(), "a1ffa1" ).Add( " and will " )
-                                        .Add( data == null ? "???" : ZenithMinersFactionBaseInfo.EffectToString( data.Effect ) ).Add( " in " );
+                                tooltipBuffer.Add( "天顶矿工在 " ).Add( miner.GetPlanetName_Safe(), "a1ffa1" ).Add( " 上，将" )
+                                    .Add( data == null ? "???" : ZenithMinersFactionBaseInfo.EffectToString( data.Effect ) ).Add( " " );
                                 }
                                 else
-                                    tooltipBuffer.Add( "A Zenith Miner is on " ).Add( miner.GetPlanetName_Safe(), "a1ffa1" ).Add( " and is killing its enemies. Once it has relieved the planet of its most pressing enemies it will deploy its drill and " )
+                                    tooltipBuffer.Add( "天顶矿工在 " ).Add( miner.GetPlanetName_Safe(), "a1ffa1" ).Add( " 上，正在击杀敌人。一旦清除了星球上最紧迫的敌人，它将部署钻头并" )
                                         .Add( data == null ? "???" : ZenithMinersFactionBaseInfo.EffectToString( data.Effect ) ).Add( " " );
                                 string color = ArcenExternalUIUtilities.GetColorForNomadMoveTime( data.RemainingDuration ); //moveTimerColor gets more red the closer the planet is to moving                    
-                                tooltipBuffer.Add( "in " ).Add( data == null ? "???" : data.RemainingDuration.ToString(), color ).Add( " seconds" ).Add( "\n" );
+                                tooltipBuffer.Add( "在 " ).Add( data == null ? "???" : data.RemainingDuration.ToString(), color ).Add( " 秒后" ).Add( "\n" );
                             }
                         }
                     }
                     else
                     {
                         debugCode = 1000;
-                        tooltipBuffer.Add( "There are " ).Add( miners.Count ).Add( " Zenith Miners active in the galaxy" ).Add( "\n" );
+                        tooltipBuffer.Add( "银河系中有 " ).Add( miners.Count ).Add( " 个天顶矿工活跃" ).Add( "\n" );
                         for ( int i = 0; i < miners.Count; i++ )
                         {
                             debugCode = 1100;
@@ -168,14 +168,14 @@ namespace Arcen.AIW2.External
                             if ( data.InMiningMode )
                             {
                                 debugCode = 1200;
-                                tooltipBuffer.Add( "\tThe Miner on " ).Add( miner.GetPlanetName_Safe(), "a1ffa1" ).Add( " will " )
-                                    .Add( data == null ? "???" : ZenithMinersFactionBaseInfo.EffectToString( data.Effect ) ).Add( " in " );
+                                tooltipBuffer.Add( "\t矿工在 " ).Add( miner.GetPlanetName_Safe(), "a1ffa1" ).Add( " 上，将" )
+                                    .Add( data == null ? "???" : ZenithMinersFactionBaseInfo.EffectToString( data.Effect ) ).Add( " " );
                             }
                             else
-                                tooltipBuffer.Add( "\tThe Miner on " ).Add( miner.GetPlanetName_Safe(), "a1ffa1" ).Add( " is killing all of its enemies. Once it has clear the planet it will deploy its drill and " )
+                                tooltipBuffer.Add( "\t矿工在 " ).Add( miner.GetPlanetName_Safe(), "a1ffa1" ).Add( " 上正在击杀所有敌人。一旦清除了星球上的敌人，它将部署钻头并" )
                                     .Add( data == null ? "???" : ZenithMinersFactionBaseInfo.EffectToString( data.Effect ) ).Add( " " );
                             string color = ArcenExternalUIUtilities.GetColorForNomadMoveTime( data.RemainingDuration ); //moveTimerColor gets more red the closer the planet is to moving                    
-                            tooltipBuffer.Add( "in " ).Add( data == null ? "???" : data.RemainingDuration.ToString(), color ).Add( " seconds." ).Add( "\n" );
+                            tooltipBuffer.Add( "在 " ).Add( data == null ? "???" : data.RemainingDuration.ToString(), color ).Add( " 秒后。" ).Add( "\n" );
                         }
                     }
                 }
@@ -215,9 +215,9 @@ namespace Arcen.AIW2.External
                     Image.UpdateWith( sprite_Miner, true, "Human_Fin" );
                 ArcenDoubleCharacterBuffer buffer = SubTexts[0].Text.StartWritingToBuffer();
                 if ( probesOnly )
-                    buffer.Add( "Probe" );
+                    buffer.Add( "探测器" );
                 else
-                    buffer.Add( "Miner" );
+                    buffer.Add( "矿工" );
                 SubTexts[0].Text.FinishWritingToBuffer();
                 debugStage = 20;
 
@@ -255,7 +255,7 @@ namespace Arcen.AIW2.External
                 else
                 {
                     debugStage = 40;
-                    buffer.Add( miners.Count + probes.Count ).Add( " planets" );
+                    buffer.Add( miners.Count + probes.Count ).Add( " 个星球" );
                 }
                 debugStage = 100;
                 SubTexts[1].Text.FinishWritingToBuffer();

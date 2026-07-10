@@ -345,13 +345,13 @@ namespace Arcen.AIW2.External
             try
             {
                 buffer.AddObjectiveEntityHeader( Objective.RelatedEntity1, Objective.RelatedEntity1.GetFactionCenterColorHexBrighter_Safe() );
-                buffer.Add( "On " ).Add( Objective.RelatedEntity1.Planet?.Name ?? "?", ObjectiveColors.Reward ).Add( ", it is bringing in reinforcements from the Apsu. Breaching the Nexus with a Hack will allow the Apkallu to dive briefly back into the Apsu and strike against the Malware.\n\n" );
+                buffer.Add( "在" ).Add( Objective.RelatedEntity1.Planet?.Name ?? "?", ObjectiveColors.Reward ).Add( "上，它正在从阿普苏召入增援。通过入侵突破枢纽将允许阿普卡卢短暂潜入阿普苏并对恶意软件发起打击。\n\n" );
 
                 MalwarePerUnitBaseInfo data = Objective.RelatedEntity1.TryGetExternalBaseInfoAs<MalwarePerUnitBaseInfo>();
                 if ( data == null || data.Breaches.Count == 0 )
                     return;
 
-                buffer.Add( "Available Breaches:\n", ObjectiveColors.Hint );
+                buffer.Add( "可用突破：\n", ObjectiveColors.Hint );
                 for ( int i = 0; i < data.Breaches.Count; i++ )
                 {
                     MalwareBreach breach = data.Breaches[i];
@@ -395,13 +395,13 @@ namespace Arcen.AIW2.External
             try
             {
                 buffer.AddObjectiveEntityHeader( Objective.RelatedEntity1, Objective.RelatedEntity1.GetFactionCenterColorHexBrighter_Safe() );
-                buffer.Add( "On " ).Add( Objective.RelatedEntity1.Planet?.Name ?? "?", ObjectiveColors.Reward ).Add( ", it is letting the Malware bring in reinforcements from the Apsu.\n\nBreaching it with a hack will allow you to dive back into the Apsu to strike against the Malware.\n\n" );
+                buffer.Add( "在" ).Add( Objective.RelatedEntity1.Planet?.Name ?? "?", ObjectiveColors.Reward ).Add( "上，它正在让恶意软件从阿普苏召入增援。\n\n通过入侵突破它将允许你潜入阿普苏并对恶意软件发起打击。\n\n" );
 
                 MalwarePerUnitBaseInfo data = Objective.RelatedEntity1.TryGetExternalBaseInfoAs<MalwarePerUnitBaseInfo>();
                 if ( data == null || data.Breaches.Count == 0 )
                     return;
 
-                buffer.Add( "Available Breaches:\n", ObjectiveColors.Hint );
+                buffer.Add( "可用突破：\n", ObjectiveColors.Hint );
                 for ( int i = 0; i < data.Breaches.Count; i++ )
                 {
                     MalwareBreach breach = data.Breaches[i];
@@ -438,8 +438,8 @@ namespace Arcen.AIW2.External
                     return;
                 int now = World_AIW2.Instance.GameSecond;
 
-                buffer.Add( "The Malware are channeling a " ).Add( "Multi-Phasic Convergence", "ff5555" )
-                    .Add( ": a mass strike funneled through Phasic generators they have raised across the galaxy.\n\n" );
+                buffer.Add( "恶意软件正在引导" ).Add( "多相位汇聚", "ff5555" )
+                    .Add( "：一场通过他们在银河各处升起的相位生成器汇集的大规模打击。\n\n" );
 
                 if ( mBaseInfo.ConvergenceCountdownEndTime != -1 )
                 {
@@ -447,19 +447,19 @@ namespace Arcen.AIW2.External
                     if ( remaining > 0 )
                     {
                         string color = ArcenExternalUIUtilities.GetColorForNomadMoveTime( remaining );
-                        buffer.Add( "The convergence completes in " ).Add( remaining.ToString(), color ).Add( " seconds.\n\n" );
+                        buffer.Add( "汇聚在" ).Add( remaining.ToString(), color ).Add( "秒后完成。\n\n" );
                     }
                     else
-                        buffer.Add( "The convergence is completing now!\n\n" );
+                        buffer.Add( "汇聚现在即将完成！\n\n" );
 
-                    buffer.Add( "Destroy the " ).Add( "Phasic Resonators and Conduits", "ffaaaa" )
-                        .Add( " before then to shrink the incoming wave. Destroy every one and the convergence is cancelled outright. They are listed individually below.", ObjectiveColors.Hint );
+                    buffer.Add( "摧毁" ).Add( "相位谐振器和导管", "ffaaaa" )
+                        .Add( "以缩小来袭波次。摧毁所有则汇聚完全取消。它们单独列在下面。", ObjectiveColors.Hint );
                 }
                 else if ( mBaseInfo.ConvergenceMainStrikeTime != -1 )
                 {
                     int remaining = mBaseInfo.ConvergenceMainStrikeTime - now;
-                    buffer.Add( "The convergence wave has launched. A secondary strike already hit; the main thrust against your most developed Ziggurat lands in " )
-                        .Add( remaining > 0 ? remaining.ToString() : "0", "ff8888" ).Add( " seconds. Brace your defenses.", ObjectiveColors.Hint );
+                    buffer.Add( "汇聚波次已发射。次要打击已命中；针对你发展最完善的金字形神塔的主力冲击将在" )
+                        .Add( remaining > 0 ? remaining.ToString() : "0", "ff8888" ).Add( "秒后到达。准备好你的防御。", ObjectiveColors.Hint );
                 }
             }
             catch ( Exception e )
@@ -483,12 +483,12 @@ namespace Arcen.AIW2.External
             try
             {
                 bool isConduit = Objective.RelatedEntity1.TypeData.GetHasTag( "MalwarePhasicConduit" );
-                buffer.Add( isConduit ? "A Malware Phasic Conduit" : "A Malware Phasic Resonator" )
-                    .Add( " on " ).Add( Objective.RelatedEntity1.Planet?.Name ?? "?", ObjectiveColors.Reward ).Add( ".\n\n" );
+                buffer.Add( isConduit ? "恶意软件相位导管" : "恶意软件相位谐振器" )
+                    .Add( "位于" ).Add( Objective.RelatedEntity1.Planet?.Name ?? "?", ObjectiveColors.Reward ).Add( "。\n\n" );
                 buffer.Add( isConduit
-                        ? "Conduits feed the largest share of the incoming wave. "
-                        : "Each Resonator adds to the incoming wave. " );
-                buffer.Add( "Destroy it before the convergence completes to shrink the Multi-Phasic strike against your Ziggurats.", ObjectiveColors.Hint );
+                        ? "导管提供来袭波次的最大份额。"
+                        : "每个谐振器都会增加来袭波次。" );
+                buffer.Add( "在汇聚完成前摧毁它，以缩小针对你金字形神塔的多相位打击。", ObjectiveColors.Hint );
             }
             catch ( Exception e )
             {
@@ -515,7 +515,7 @@ namespace Arcen.AIW2.External
                 buffer.Add( "Bug in CorruptZiggurat: null planet" );
                 return;
             }
-            buffer.Add( "One of the Apkallu's lost Ziggurats is on " ).Add( Objective.RelatedPlanet1.Name, ObjectiveColors.Reward ).Add(", where it has been taken over by the Malware.\n\nBy restoring it to normal space and defeating the infection, the Apkallu will be greatly strengthened by access to higher tier resources and units.\n\nThe Ziggurat will remain permanently on this planet when brought out of solo-phase.");
+            buffer.Add( "阿普卡卢丢失的金字形神塔之一位于" ).Add( Objective.RelatedPlanet1.Name, ObjectiveColors.Reward ).Add( "，已被恶意软件占领。\n\n通过将其恢复到正常空间并击败感染，阿普卡卢将因获得更高级资源和单位而大大增强。\n\n当从独相状态带出后，金字形神塔将永久留在这个星球上。" );
         }
     }
 
@@ -537,7 +537,7 @@ namespace Arcen.AIW2.External
                 buffer.Add( "Bug in UnusedSockets: null planet" );
                 return;
             }
-            buffer.Add( "Your Duru on " ).Add( Objective.RelatedPlanet1.Name, ObjectiveColors.Reward ).Add( " has unused building sockets.\n\nBuilding structures in your Duru's sockets strengthens your fleet and unlocks new capabilities." );
+            buffer.Add( "你的杜鲁" ).Add( Objective.RelatedPlanet1.Name, ObjectiveColors.Reward ).Add( "上有未使用的建筑插槽。\n\n在杜鲁的插槽中建造建筑可增强你的舰队并解锁新能力。" );
         }
     }
 
@@ -557,8 +557,8 @@ namespace Arcen.AIW2.External
                 buffer.Add( "Bug in ClaimTemen: null entity" );
                 return;
             }
-            buffer.Add( "An unclaimed Temen on " ).Add( Objective.RelatedEntity1.GetPlanetName_Safe(), ObjectiveColors.Reward )
-                .Add( ". Hacking it claims it for the Apkallu, allowing construction of structures there and boosting resources for Pilgrims that visit. Pilgrims will get more resources the longer they travel and the more Temen they visit." );
+            buffer.Add( "一个未认领的特门位于" ).Add( Objective.RelatedEntity1.GetPlanetName_Safe(), ObjectiveColors.Reward )
+                .Add( "。入侵它将为阿普卡卢认领它，允许在那里建造建筑并提升来访朝圣者的资源。朝圣者旅行越久、访问的特门越多，获得的资源就越多。" );
         }
     }
 
@@ -568,9 +568,9 @@ namespace Arcen.AIW2.External
         public MouseHandlingResult ClickHandler( ActualObjective Objective ) { return MouseHandlingResult.None; }
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "The ambush scattered more than the Ziggurats. Parts of the Apkallu fleet were trapped in the Apsu during the strike, fighting desperately against the main Malware armada.\n\n" );
-            buffer.Add( "Dive through a Malware Nexus to aid them. Bringing them into normal space will save them from the Malware, and allow them to aid you in your fight.\n\n" );
-            buffer.Add( "It was a motley flotilla at the best of times. ", "ffbb88" ).Add( "Not everyone will make it.", "aa7755" );
+            buffer.Add( "伏击散布的不仅仅是金字形神塔。阿普卡卢舰队的一部分在打击中被困在阿普苏，与恶意软件主力舰队殊死搏斗。\n\n" );
+            buffer.Add( "通过恶意软件枢纽潜入以援助他们。将他们带回正常空间将拯救他们脱离恶意软件，并让他们协助你的战斗。\n\n" );
+            buffer.Add( "即使在最好的时候，它也是一支杂牌舰队。", "ffbb88" ).Add( "不是每个人都能成功。", "aa7755" );
         }
     }
 
@@ -580,8 +580,8 @@ namespace Arcen.AIW2.External
         public MouseHandlingResult ClickHandler( ActualObjective Objective ) { return MouseHandlingResult.None; }
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "The Apkallu sages were ambushed by the Malware, their fleet scattered and their Ziggurats seized. Help them survive and recover their people.\n\n" );
-            buffer.Add( "Capturing a Ziggurat will greatly strengthen the Apkallu and unlock new capabilities. Look for corrupted Ziggurats on the map.", ObjectiveColors.Hint );
+            buffer.Add( "阿普卡卢的贤者们遭到了恶意软件的伏击，他们的舰队被击散，金字形神塔被夺走。帮助他们生存并恢复族人。\n\n" );
+            buffer.Add( "占领金字形神塔将大大增强阿普卡卢并解锁新能力。在地图上寻找被腐化的金字形神塔。", ObjectiveColors.Hint );
         }
     }
 
@@ -591,8 +591,8 @@ namespace Arcen.AIW2.External
         public MouseHandlingResult ClickHandler( ActualObjective Objective ) { return MouseHandlingResult.None; }
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "The Apkallu are far from home and must sustain their fleet in a hostile galaxy.\n\n" );
-            buffer.Add( "Breaching Malware Fissures is their primary source of resources. Rescuing pilgrims, who will travel between the Temen you have claimed and return to the Ziggurats with resources from our galaxy, is important.", ObjectiveColors.Hint );
+            buffer.Add( "阿普卡卢远离家乡，必须在敌对的银河中维持他们的舰队。\n\n" );
+            buffer.Add( "突破恶意软件裂缝是他们的主要资源来源。营救朝圣者很重要，他们会在你认领的特门之间旅行，并带着我们银河的资源返回金字形神塔。", ObjectiveColors.Hint );
         }
     }
 
@@ -602,8 +602,8 @@ namespace Arcen.AIW2.External
         public MouseHandlingResult ClickHandler( ActualObjective Objective ) { return MouseHandlingResult.None; }
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "A second Ziggurat is still held by the Malware. The Apkallu need it; capturing it may reveal more about what the Malware are truly doing in this galaxy.\n\n" );
-            buffer.Add( "Find and claim the next corrupted Ziggurat.", "ffaa66" );
+            buffer.Add( "第二个金字形神塔仍被恶意软件控制。阿普卡卢需要它；占领它可能揭示恶意软件在这个银河中真正在做什么。\n\n" );
+            buffer.Add( "找到并认领下一个被腐化的金字形神塔。", "ffaa66" );
         }
     }
 
@@ -613,8 +613,8 @@ namespace Arcen.AIW2.External
         public MouseHandlingResult ClickHandler( ActualObjective Objective ) { return MouseHandlingResult.None; }
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "With two Ziggurats recovered, the Apkallu have begun to understand the Malware's pattern. They are not merely raiding, they are enhancing AI infrastructure.\n\n" );
-            buffer.Add( "Claim the third and final Ziggurat to fully understand how the Malware are entering this galaxy, and what can be done to stop them.", "ff9944" );
+            buffer.Add( "随着两个金字形神塔被恢复，阿普卡卢开始理解恶意软件的模式。他们不仅仅是袭击，而是在增强AI基础设施。\n\n" );
+            buffer.Add( "认领第三个也是最后一个金字形神塔，以完全了解恶意软件如何进入这个银河，以及如何阻止他们。", "ff9944" );
         }
     }
 
@@ -624,9 +624,9 @@ namespace Arcen.AIW2.External
         public MouseHandlingResult ClickHandler( ActualObjective Objective ) { return MouseHandlingResult.None; }
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "The Apkallu believe the Destabilizer can overload the Nebular Splice (the Malware's engineered connection to the Apsu), and sever their ability to send forces into this galaxy.\n\n" );
-            buffer.Add( "WARNING: ", "ff4400" ).Add( "Building the Destabilizer will trigger the final battle. The Malware will respond in force. Prepare accordingly.\n\n", "ffaa88" );
-            buffer.Add( "The Apkallu ask for your help. They have not said what this costs them.", ObjectiveColors.Muted );
+            buffer.Add( "阿普卡卢相信去稳定器可以使星云连接（恶意软件工程化的与阿普苏的连接）过载，切断他们将部队送入这个银河的能力。\n\n" );
+            buffer.Add( "警告：", "ff4400" ).Add( "建造去稳定器将触发最终决战。恶意软件将全力反击。做好相应准备。\n\n", "ffaa88" );
+            buffer.Add( "阿普卡卢请求你的帮助。他们没有说这会让他们付出什么代价。", ObjectiveColors.Muted );
         }
     }
 
@@ -636,8 +636,8 @@ namespace Arcen.AIW2.External
         public MouseHandlingResult ClickHandler( ActualObjective Objective ) { return MouseHandlingResult.None; }
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "There are Apkallu Ziggurats elsewhere in the galaxy, held by the Malware. None are currently visible from your explored planets.\n\n" );
-            buffer.Add( "Explore further to locate a corrupted Ziggurat you can reclaim.", "bb77ee" );
+            buffer.Add( "银河其他地方还有阿普卡卢的金字形神塔，被恶意软件控制。目前从你已探索的星球上看不到任何一座。\n\n" );
+            buffer.Add( "进一步探索以找到你可以收复的被腐化金字形神塔。", "bb77ee" );
         }
     }
 
@@ -647,8 +647,8 @@ namespace Arcen.AIW2.External
         public MouseHandlingResult ClickHandler( ActualObjective Objective ) { return MouseHandlingResult.None; }
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "With a Ziggurat recovered, the Apkallu can now unlock a Tier 2 flagship; a significant step up in combat power.\n\n" );
-            buffer.Add( "Use your Nexus Breach rewards to unlock a T2 flagship form.", "44ccff" );
+            buffer.Add( "随着金字形神塔被恢复，阿普卡卢现在可以解锁2级旗舰；战斗力的重大提升。\n\n" );
+            buffer.Add( "使用你的枢纽突破奖励来解锁T2旗舰形态。", "44ccff" );
         }
     }
 
@@ -658,8 +658,8 @@ namespace Arcen.AIW2.External
         public MouseHandlingResult ClickHandler( ActualObjective Objective ) { return MouseHandlingResult.None; }
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "Two Ziggurats have been recovered. The Apkallu's most powerful flagship forms are now within reach.\n\n" );
-            buffer.Add( "Use your Nexus Breach rewards to unlock a T3 flagship form.", "33bbff" );
+            buffer.Add( "两个金字形神塔已被恢复。阿普卡卢最强大的旗舰形态现在触手可及。\n\n" );
+            buffer.Add( "使用你的枢纽突破奖励来解锁T3旗舰形态。", "33bbff" );
         }
     }
 
@@ -669,7 +669,7 @@ namespace Arcen.AIW2.External
         public MouseHandlingResult ClickHandler( ActualObjective Objective ) { return MouseHandlingResult.None; }
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "Your flagship is at Mark 1. Spending Lapis to upgrade its mark level will significantly improve its combat effectiveness.", "66ddff" );
+            buffer.Add( "你的旗舰在Mark 1。消耗天青石升级其等级将显著提升其战斗效能。", "66ddff" );
         }
     }
 
@@ -684,8 +684,8 @@ namespace Arcen.AIW2.External
                 buffer.Add( "Bug in LamassuUnusedSockets: null entity" );
                 return;
             }
-            buffer.Add( "Your Lamassu on " ).Add( Objective.RelatedEntity1.GetPlanetName_Safe(), ObjectiveColors.Reward )
-                .Add( " can be upgraded by building at its Ziggurat. Open the Build Menu on that planet to see what can be constructed." );
+            buffer.Add( "你的拉玛苏" ).Add( Objective.RelatedEntity1.GetPlanetName_Safe(), ObjectiveColors.Reward )
+                .Add( "可以通过在其金字形神塔建造来升级。打开该星球上的建造菜单查看可建造内容。" );
         }
     }
 
@@ -701,19 +701,19 @@ namespace Arcen.AIW2.External
             GameEntityTypeData duruType = GameEntityTypeDataTable.Instance.GetRowByNameOrNullIfNotFound( "MajorDuru" );
             GameEntityTypeData pilgrimType = GameEntityTypeDataTable.Instance.GetRowByNameOrNullIfNotFound( "ApkalluPilgrimTierOne" );
 
-            buffer.Add( "The Apkallu generate resources through several means:\n\n" );
+            buffer.Add( "阿普卡卢通过多种方式产生资源：\n\n" );
 
             if ( fissureType != null ) buffer.AddShipIconInline( fissureType, localFaction, TextStyle.Ship_Sprite_Ency ).Add( " " );
-            buffer.Add( "Fissure Hacks:", ObjectiveColors.Header ).Add( "\n\nBreaching a Malware Fissure with a hack can yield resources on completion. This is the primary income source.\n\n" );
+            buffer.Add( "裂缝入侵：", ObjectiveColors.Header ).Add( "\n\n通过入侵突破恶意软件裂缝可以在完成后获得资源。这是主要的收入来源。\n\n" );
 
             if ( temenType != null ) buffer.AddShipIconInline( temenType, localFaction, TextStyle.Ship_Sprite_Ency ).Add( " " );
-            buffer.Add( "Temens:", ObjectiveColors.Header ).Add( "\n\nClaimed Temens generate passive income and boost Pilgrim rewards.\n\n" );
+            buffer.Add( "特门：", ObjectiveColors.Header ).Add( "\n\n已认领的特门产生被动收入并提升朝圣者奖励。\n\n" );
 
             if ( duruType != null ) buffer.AddShipIconInline( duruType, localFaction, TextStyle.Ship_Sprite_Ency ).Add( " " );
-            buffer.Add( "Duru Structures:", ObjectiveColors.Header ).Add( "\n\nCertain structures built in your Duru's sockets contribute to resource generation.\n\n" );
+            buffer.Add( "杜鲁建筑：", ObjectiveColors.Header ).Add( "\n\n在杜鲁插槽中建造的某些建筑有助于资源生产。\n\n" );
 
             if ( pilgrimType != null ) buffer.AddShipIconInline( pilgrimType, localFaction, TextStyle.Ship_Sprite_Ency ).Add( " " );
-            buffer.Add( "Pilgrims:", ObjectiveColors.Header ).Add( "\n\nLesser and Greater Pilgrims traveling between planets earn resources on arrival to a Ziggurat." );
+            buffer.Add( "朝圣者：", ObjectiveColors.Header ).Add( "\n\n在星球间旅行的次级和高级朝圣者在到达金字形神塔时获得资源。" );
         }
     }
 

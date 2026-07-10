@@ -568,16 +568,12 @@ namespace Arcen.AIW2.External
 
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "There " );
+            buffer.Add( "银河中还有" );
+            buffer.Add( Objective.RelatedInt1 + "个你尚未发现的戴森球。戴森球可以成为强大的盟友，所以探索银河以找到" );
             if ( Objective.RelatedInt1 > 1 )
-                buffer.Add( "are " );
+                buffer.Add( "它们。" );
             else
-                buffer.Add( "is " );
-            buffer.Add( Objective.RelatedInt1 + " Dyson Spheres in the galaxy that you have not found yet. A Dyson Sphere can be a powerful ally, so explore the galaxy to find " );
-            if ( Objective.RelatedInt1 > 1 )
-                buffer.Add( "them." );
-            else
-                buffer.Add( "it." );
+                buffer.Add( "它。" );
         }
     }
 
@@ -594,7 +590,7 @@ namespace Arcen.AIW2.External
 
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "Destroying the powerful AI Spire Citadel will give you a Spire Relic you can use to build a Spire City. The AI will respond to this relic with less vigor than usual." );
+            buffer.Add( "摧毁强大的AI尖塔堡垒将给你一个尖塔遗物，可用于建造尖塔城市。AI对此遗物的反应会比平时弱。" );
         }
     }
 
@@ -611,7 +607,7 @@ namespace Arcen.AIW2.External
 
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "Destroying the Spire Research Lab will give you a Spire Relic you can use to build a Spire City. You will not be allowed to move the Relic, and must build a city on that planet." );
+            buffer.Add( "摧毁尖塔研究实验室将给你一个尖塔遗物，可用于建造尖塔城市。你不能移动该遗物，必须在该星球上建造城市。" );
         }
     }
 
@@ -628,7 +624,7 @@ namespace Arcen.AIW2.External
 
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "Whenever you build a Spire City, some Spire Debris is generated nearby in the  galaxy. Obtaining it can grant you some resources. If you don't get it in time, another faction will claim it and become stronger." );
+            buffer.Add( "每当你建造尖塔城市时，附近的银河中会产生一些尖塔碎片。获取它可以为你提供一些资源。如果你不及时获取，其他派系会认领它并变得更强大。" );
         }
     }
 
@@ -645,7 +641,7 @@ namespace Arcen.AIW2.External
 
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( " All Dyson Spheres in the galaxy will attempt to destroy you until the Dyson Antagonizers are destroyed." );
+            buffer.Add( "银河中的所有戴森球都会试图摧毁你，直到戴森对抗者被摧毁。" );
         }
     }
 
@@ -662,11 +658,11 @@ namespace Arcen.AIW2.External
 
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "The scourge can be a powerful ally. To let them reach their full potential you need to help defend their Armories and Spawners, and to conquer or neuter nearby planets so they can build more. Scourge structures can't be built too close to eachother, so you will need to give them space." ).Add( "\n" );
+            buffer.Add( "天灾可以成为强大的盟友。要让他们发挥全部潜力，你需要帮助防御他们的军械库和生成器，并征服或中立附近的星球，以便他们建造更多。天灾建筑不能建造得太近，所以你需要给他们空间。" ).Add( "\n" );
             if ( Objective.RelatedInt2 >= 1 )
-                buffer.Add( "There are " ).Add( Objective.RelatedInt2 ).Add( " allied scourge spawners visible in the galaxy. " );
+                buffer.Add( "银河中有" ).Add( Objective.RelatedInt2 ).Add( "个友方天灾生成器可见。" );
             if ( Objective.RelatedInt1 >= 1 )
-                buffer.Add( "There are " ).Add( Objective.RelatedInt1 ).Add( " allied scourge armories visible in the galaxy. " );
+                buffer.Add( "银河中有" ).Add( Objective.RelatedInt1 ).Add( "个友方天灾军械库可见。" );
         }
     }
 
@@ -683,21 +679,21 @@ namespace Arcen.AIW2.External
 
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "The Scourge can be a powerful enemy.  Early on, you can reduce their strength by destroying the infrastructure they use to build and upgrade their ships.  Later on, especially if they are on a high intensity or there are high-level AIs around, you may instead need to blockade part of the galaxy from them, and periodically cull their warriors before they evolve... and before it is too late." ).Add( "\n" );
+            buffer.Add( "天灾可以成为强大的敌人。早期你可以通过摧毁他们用于建造和升级舰船的基础设施来削弱他们。后期，特别是如果他们处于高强度或周围有高级AI时，你可能需要封锁银河部分区域，并定期清除他们的战士，以免他们进化……以免为时过晚。" ).Add( "\n" );
             if ( Objective.RelatedInt2 == 1 )
-                buffer.Add( "There is " ).Add( Objective.RelatedInt2 ).Add( " scourge spawner visible in the galaxy.\n" );
+                buffer.Add( "银河中可见" ).Add( Objective.RelatedInt2 ).Add( "个天灾生成器。\n" );
             else if ( Objective.RelatedInt2 > 1 )
-                buffer.Add( "There are " ).Add( Objective.RelatedInt2 ).Add( " scourge spawners visible in the galaxy.\n" );
+                buffer.Add( "银河中可见" ).Add( Objective.RelatedInt2 ).Add( "个天灾生成器。\n" );
 
             if ( Objective.RelatedInt1 == 1 )
-                buffer.Add( "There is " ).Add( Objective.RelatedInt1 ).Add( " scourge armory visible in the galaxy.\n" );
+                buffer.Add( "银河中可见" ).Add( Objective.RelatedInt1 ).Add( "个天灾军械库。\n" );
             else if ( Objective.RelatedInt1 > 1 )
-                buffer.Add( "There are " ).Add( Objective.RelatedInt1 ).Add( " scourge armories visible in the galaxy.\n" );
+                buffer.Add( "银河中可见" ).Add( Objective.RelatedInt1 ).Add( "个天灾军械库。\n" );
 
             if ( Objective.RelatedInt3 == 1 )
-                buffer.Add( "We're detecting energy signatures of " ).Add( Objective.RelatedInt3 ).Add( " scourge armory or spawner that was recently built on an explored planet. You should scout for it, since you can't see it yet." );
+                buffer.Add( "我们检测到一个最近在已探索星球上建造的天灾军械库或生成器的能量信号。你应该侦察它，因为你目前还看不到它。" );
             else if ( Objective.RelatedInt3 > 1 )
-                buffer.Add( "We're detecting energy signatures of " ).Add( Objective.RelatedInt3 ).Add( " scourge armories or spawners that was recently built on an explored planet. You should scout for them, since you can't see them yet." );
+                buffer.Add( "我们检测到" ).Add( Objective.RelatedInt3 ).Add( "个最近在已探索星球上建造的天灾军械库或生成器的能量信号。你应该侦察它们，因为你目前还看不到它们。" );
         }
     }
 
@@ -714,9 +710,9 @@ namespace Arcen.AIW2.External
 
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "There is a " ).Add( Objective.RelatedEntity1.TypeData.DisplayName )
-                .Add( " on the planet " ).Add( Objective.RelatedEntity1.GetPlanetName_Safe() )
-                .Add( " . If you free the Dyson Sphere from AI influence it's ships will assist you against enemies on nearby planets." );
+            buffer.Add( "在星球" ).Add( Objective.RelatedEntity1.GetPlanetName_Safe() )
+                .Add( "上有一个" ).Add( Objective.RelatedEntity1.TypeData.DisplayName )
+                .Add( "。如果你将戴森球从AI的影响中解放出来，它的舰船将协助你对抗附近星球上的敌人。" );
         }
     }
 
@@ -733,13 +729,9 @@ namespace Arcen.AIW2.External
 
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "There " );
-            if ( Objective.RelatedInt1 > 1 )
-                buffer.Add( "are " );
-            else
-                buffer.Add( "is " );
-            buffer.Add( Objective.RelatedInt1 + " Risk Analyzers in the galaxy that you have not found yet. Risk Analyers will increase AIP every hour if the AI controls them, decrease AIP every hour if you control them, and do nothing if they are on a neutral planet.\n" )
-                .Add( "Right now the expected AIP change at the next hour will be " + Objective.RelatedInt2 );
+            buffer.Add( "银河中还有" + Objective.RelatedInt1 + "个你尚未发现的风险分析仪。" )
+                .Add( "如果AI控制它们，风险分析仪每小时会增加AIP；如果你控制它们，每小时会减少AIP；如果在中立星球上则无效果。\n" )
+                .Add( "目前下一小时的预期AIP变化为" + Objective.RelatedInt2 );
         }
     }
 
@@ -756,8 +748,7 @@ namespace Arcen.AIW2.External
 
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "The Risk Analyzer on " ).Add( Objective.RelatedEntity1.GetPlanetName_Safe() )
-                .Add( " needs to be handled. Capturing it will reduce AIP every hour. Or you can prevent the AI from generating AIP with it by destroying the AI command station on the planet or the Risk Analyzer itself" );
+            buffer.Add( Objective.RelatedEntity1.GetPlanetName_Safe() + "上的风险分析仪需要处理。占领它将每小时减少AIP。或者你可以通过摧毁星球上的AI指挥站或风险分析仪本身来阻止AI利用它产生AIP" );
         }
     }
 
@@ -774,12 +765,7 @@ namespace Arcen.AIW2.External
 
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "There " );
-            if ( Objective.RelatedInt1 > 1 )
-                buffer.Add( "are " );
-            else
-                buffer.Add( "is " );
-            buffer.Add( Objective.RelatedInt1 ).Add( " Instigator Bases in the galaxy that you have not found yet. Each insigator base will significantly strengthen the AI in some way" );
+            buffer.Add( "银河中还有" + Objective.RelatedInt1 + "个你尚未发现的煽动者基地。每个煽动者基地都会以某种方式显著增强AI" );
         }
     }
 
@@ -814,12 +800,12 @@ namespace Arcen.AIW2.External
             if ( factionData.AIFactionIndexForNextSpawn != -1 )
                 faction = World_AIW2.Instance.GetFactionByIndex( factionData.AIFactionIndexForNextSpawn );
             if ( faction == null )
-                buffer.Add( entity.TypeData.GetDisplayName() ).Add( " found on " + entity.GetPlanetName_Safe()
-                    ).Add( ". This will trigger in " ).Add( (localData.TimeForNextEffect - World_AIW2.Instance.GameSecond) );
+                buffer.Add( entity.TypeData.GetDisplayName() ).Add( " 发现于" + entity.GetPlanetName_Safe()
+                    ).Add( "。将在" ).Add( (localData.TimeForNextEffect - World_AIW2.Instance.GameSecond) ).Add( "秒后触发" );
             else
-                buffer.Add( entity.TypeData.GetDisplayName() ).Add( " found on " + entity.GetPlanetName_Safe()
-                    ).Add( ". " + data.GetHoverText( faction ) ).Add( ". This will trigger in "
-                    ).Add( (localData.TimeForNextEffect - World_AIW2.Instance.GameSecond) );
+                buffer.Add( entity.TypeData.GetDisplayName() ).Add( " 发现于" + entity.GetPlanetName_Safe()
+                    ).Add( "。" + data.GetHoverText( faction ) ).Add( "将在"
+                    ).Add( (localData.TimeForNextEffect - World_AIW2.Instance.GameSecond) ).Add( "秒后触发" );
         }
     }
 
@@ -836,12 +822,7 @@ namespace Arcen.AIW2.External
 
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "There " );
-            if ( Objective.RelatedInt1 > 1 )
-                buffer.Add( "are " );
-            else
-                buffer.Add( "is " );
-            buffer.Add( Objective.RelatedInt1 ).Add( " Outguard Beacons in the galaxy that you have not found yet. Find them to establish contact with small other pockets of humanity who can be brought out of hiding to help you." );
+            buffer.Add( "银河中还有" + Objective.RelatedInt1 + "个你尚未发现的外围守卫信标。找到它们以与可以走出藏身处帮助你的其他小型人类群体建立联系。" );
         }
     }
 
@@ -860,11 +841,11 @@ namespace Arcen.AIW2.External
         {
             GameEntity_Squad entity = Objective.RelatedEntity1;
             buffer.AddObjectiveEntityHeader( entity, entity.GetFactionCenterColorHexBrighter_Safe() );
-            buffer.Add( "Contact established on " ).Add( entity.GetPlanetName_Safe(), entity.Planet.GetControllingFaction().FactionCenterColor.ColorHexBrighter ).Add( "." );
-            buffer.Add( "\n\nYou can now hire " );
+            buffer.Add( "已在" ).Add( entity.GetPlanetName_Safe(), entity.Planet.GetControllingFaction().FactionCenterColor.ColorHexBrighter ).Add( "建立联系。" );
+            buffer.Add( "\n\n你现在可以雇佣" );
             if ( !MinorFactionObjectivesGenerator.AppendOutguardGroupList( buffer, entity, ObjectiveColors.Reward ) )
-                buffer.Add( "Outguard", ObjectiveColors.Reward );
-            buffer.Add( " here to fight your enemies." );
+                buffer.Add( "外围守卫", ObjectiveColors.Reward );
+            buffer.Add( "在此为你而战。" );
         }
     }
 
@@ -883,11 +864,11 @@ namespace Arcen.AIW2.External
         {
             GameEntity_Squad entity = Objective.RelatedEntity1;
             buffer.AddObjectiveEntityHeader( entity, entity.GetFactionCenterColorHexBrighter_Safe() );
-            buffer.Add( "Found on " ).Add( entity.GetPlanetName_Safe(), entity.Planet.GetControllingFaction().FactionCenterColor.ColorHexBrighter ).Add( "." );
-            buffer.Add( "\n\nHack it to make contact with " );
+            buffer.Add( "发现于" ).Add( entity.GetPlanetName_Safe(), entity.Planet.GetControllingFaction().FactionCenterColor.ColorHexBrighter ).Add( "。" );
+            buffer.Add( "\n\n入侵它以与" );
             if ( !MinorFactionObjectivesGenerator.AppendOutguardGroupList( buffer, entity, ObjectiveColors.Reward ) )
-                buffer.Add( "the Outguard hiding here", ObjectiveColors.Reward );
-            buffer.Add( " (survivors who will then fight alongside you)." );
+                buffer.Add( "藏匿在此的外围守卫", ObjectiveColors.Reward );
+            buffer.Add( "建立联系（幸存者随后将与你并肩作战）。" );
         }
     }
 
@@ -904,13 +885,8 @@ namespace Arcen.AIW2.External
 
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "There " );
-            if ( Objective.RelatedInt1 > 1 )
-                buffer.Add( "are " );
-            else
-                buffer.Add( "is " );
-            buffer.Add( Objective.RelatedInt1 )
-                .Add( " Astro Train Depots in the galaxy that you have not found yet. The AI will be sending trains to those depots which will have powerful benefits to the AI. Find them and destroy them!" );
+            buffer.Add( "银河中还有" + Objective.RelatedInt1 + "个你尚未发现的星舰列车站。" )
+                .Add( "AI将向那些车站发送列车，这会给AI带来强大的好处。找到并摧毁它们！" );
         }
     }
 
@@ -931,9 +907,9 @@ namespace Arcen.AIW2.External
             AstroTrainsPerDepotBaseInfo localData = entity.GetExternalBaseInfoAs<AstroTrainsPerDepotBaseInfo>();
             AstroTrainBehaviorType trainBehavior = AstroTrainBehaviorTypeTable.Instance.GetRowById( localData.DepotTrainBehaviorID );
             if ( entity.Planet.IntelLevel > PlanetIntelLevel.Unexplored )
-                buffer.Add( entity.TypeData.GetDisplayName() ).Add( " found on " ).Add( entity.GetPlanetName_Safe() ).Add( ". " ).Add( trainBehavior.ToString() ).Add( ". You should blow it up" );
+                buffer.Add( entity.TypeData.GetDisplayName() ).Add( " 发现于" ).Add( entity.GetPlanetName_Safe() ).Add( "。" ).Add( trainBehavior.ToString() ).Add( "。你应该炸掉它" );
             else
-                buffer.Add( entity.TypeData.GetDisplayName() ).Add( " is somewhere in the galaxy. You should find it and blow it up" );
+                buffer.Add( entity.TypeData.GetDisplayName() ).Add( " 在银河的某处。你应该找到它并炸掉它" );
         }
     }
 
@@ -950,7 +926,7 @@ namespace Arcen.AIW2.External
 
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "We're detecting some strange nanobot related energy signatures. There seems to be another powerful force out in the galaxy" );
+            buffer.Add( "我们检测到一些与纳米机器人相关的奇怪能量信号。银河中似乎存在另一股强大的力量" );
         }
     }
 
@@ -968,7 +944,7 @@ namespace Arcen.AIW2.External
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
             GameEntity_Squad entity = Objective.RelatedEntity1;
-            buffer.Add( "Nanocaust Hive found on " ).Add( entity.GetPlanetName_Safe(), entity.Planet.GetControllingFaction().FactionCenterColor.ColorHexBrighter ).Add( ". Destroy or hack the Hive to end the invasion!" );
+            buffer.Add( "纳米虫群蜂巢发现于" ).Add( entity.GetPlanetName_Safe(), entity.Planet.GetControllingFaction().FactionCenterColor.ColorHexBrighter ).Add( "。摧毁或入侵蜂巢以结束入侵！" );
         }
     }
 
@@ -985,7 +961,7 @@ namespace Arcen.AIW2.External
 
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "The powerful Nanocause has invaded the galaxy. Their weapons will flood their targets with Nanobots that will take over the targets. Find the hive and destroy them!" );
+            buffer.Add( "强大的纳米虫群已经入侵了银河。他们的武器会用纳米机器人淹没目标，从而控制目标。找到蜂巢并消灭他们！" );
         }
     }
 
@@ -1003,8 +979,8 @@ namespace Arcen.AIW2.External
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
             GameEntity_Squad entity = Objective.RelatedEntity1;
-            buffer.Add( "Investigate " ).Add( entity.TypeData.GetDisplayName(), entity.GetFactionCenterColorHexBrighter_Safe() )
-                .Add( " found on " ).Add( entity.GetPlanetName_Safe(), entity.Planet.GetControllingFaction().FactionCenterColor.ColorHexBrighter ).Add( "." );
+            buffer.Add( "调查" ).Add( entity.TypeData.GetDisplayName(), entity.GetFactionCenterColorHexBrighter_Safe() )
+                .Add( "，发现于" ).Add( entity.GetPlanetName_Safe(), entity.Planet.GetControllingFaction().FactionCenterColor.ColorHexBrighter ).Add( "。" );
 
         }
     }

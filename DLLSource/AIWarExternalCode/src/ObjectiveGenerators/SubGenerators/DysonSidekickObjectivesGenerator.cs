@@ -127,11 +127,11 @@ namespace Arcen.AIW2.External
             }
             try
             {
-                buffer.Add( "A Cuendillar Asteroid on " ).Add( Objective.RelatedEntity1.Planet?.Name ?? "?", ObjectiveColors.Reward ).Add( ".\n\n" );
+                buffer.Add( "一个库恩达小行星位于" ).Add( Objective.RelatedEntity1.Planet?.Name ?? "?", ObjectiveColors.Reward ).Add( "。\n\n" );
                 DysonSidekickPerUnitBaseInfo data = Objective.RelatedEntity1.TryGetExternalBaseInfoAs<DysonSidekickPerUnitBaseInfo>();
                 if ( data != null )
-                    buffer.Add( "Cuendillar remaining: " ).Add( data.CuendillarRemaining.ToString(), "8888ff" ).Add( "\n\n" );
-                buffer.Add( "Build a Cuendillar Asteroid Drill here to extract its Cuendillar and send it to your Dyson Sphere." );
+                    buffer.Add( "剩余库恩达：" ).Add( data.CuendillarRemaining.ToString(), "8888ff" ).Add( "\n\n" );
+                buffer.Add( "在此建造库恩达小行星钻机以提取库恩达并将其发送到你的戴森球。" );
             }
             catch ( Exception e )
             {
@@ -158,11 +158,11 @@ namespace Arcen.AIW2.External
             }
             try
             {
-                buffer.Add( "A Cuendillar Planetoid on " ).Add( Objective.RelatedEntity1.Planet?.Name ?? "?", "88ff88" ).Add( ".\n\n" );
+                buffer.Add( "一个库恩达小行星体位于" ).Add( Objective.RelatedEntity1.Planet?.Name ?? "?", "88ff88" ).Add( "。\n\n" );
                 DysonSidekickPerUnitBaseInfo data = Objective.RelatedEntity1.TryGetExternalBaseInfoAs<DysonSidekickPerUnitBaseInfo>();
                 if ( data != null )
-                    buffer.Add( "Cuendillar remaining: " ).Add( data.CuendillarRemaining.ToString(), "88ff88" ).Add( "\n\n" );
-                buffer.Add( "Build a Dyson Drill on the planet to extract its Cuendillar over time." );
+                    buffer.Add( "剩余库恩达：" ).Add( data.CuendillarRemaining.ToString(), "88ff88" ).Add( "\n\n" );
+                buffer.Add( "在星球上建造戴森钻机以随时间提取其库恩达。" );
             }
             catch ( Exception e )
             {
@@ -190,7 +190,7 @@ namespace Arcen.AIW2.External
             }
             try
             {
-                buffer.Add( "A Reaper Chrysalis on " ).Add( Objective.RelatedEntity1.Planet?.Name ?? "?", "ff8888" ).Add( ".\n\n" );
+                buffer.Add( "一个收割者茧位于" ).Add( Objective.RelatedEntity1.Planet?.Name ?? "?", "ff8888" ).Add( "。\n\n" );
                 ReapersPerUnitBaseInfo rData = Objective.RelatedEntity1.TryGetExternalBaseInfoAs<ReapersPerUnitBaseInfo>();
                 if ( rData != null )
                 {
@@ -198,13 +198,13 @@ namespace Arcen.AIW2.External
                     if ( spawnTime > 0 )
                     {
                         string color = ArcenExternalUIUtilities.GetColorForNomadMoveTime( spawnTime );
-                        buffer.Add( "Hatches in " ).Add( spawnTime.ToString(), color ).Add( " seconds, spawning Reaper forces.\n" );
+                        buffer.Add( "在" ).Add( spawnTime.ToString(), color ).Add( "秒后孵化，生成收割者部队。\n" );
                     }
                     else
-                        buffer.Add( "Hatching imminently (Reaper forces incoming!)\n" );
-                    buffer.Add( "Cuendillar within: " ).Add( rData.CuendillarRemaining.ToString(), "ff4444" ).Add( "\n\n" );
+                        buffer.Add( "即将孵化（收割者部队来袭！）\n" );
+                    buffer.Add( "内含库恩达：" ).Add( rData.CuendillarRemaining.ToString(), "ff4444" ).Add( "\n\n" );
                 }
-                buffer.Add( "Destroy this Chrysalis before it hatches to eliminate the threat and recover its Cuendillar." );
+                buffer.Add( "在此茧孵化前摧毁它以消除威胁并回收其库恩达。" );
             }
             catch ( Exception e )
             {
@@ -219,10 +219,10 @@ namespace Arcen.AIW2.External
         public MouseHandlingResult ClickHandler( ActualObjective Objective ) { return MouseHandlingResult.None; }
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "Cuendillar", "e16cff" ).Add( " is your primary resource, extracted from three sources.\n\n" );
-            buffer.Add( "Cuendillar Asteroids", "8888ff" ).Add( " and " ).Add( "Cuendillar Planetoids", "88ff88" ).Add( " provide a modest but steady income; enough to keep things running. Both are listed as objectives in the intel menu.\n\n" );
-            buffer.Add( "Drilling an entire planet", "e16cff" ).Add( " provides large volumes of Cuendillar; enough for a real power spikes. Completely drilling a planet will Ravage it.\n\n" );
-            buffer.Add( "Ravaging planets allows you to build a Dyson Sphere there; Dyson Spheres provide powerful flagships that automatically defend your planets.", "ffccff" );
+            buffer.Add( "库恩达", "e16cff" ).Add( "是你的主要资源，从三个来源提取。\n\n" );
+            buffer.Add( "库恩达小行星", "8888ff" ).Add( "和" ).Add( "库恩达小行星体", "88ff88" ).Add( "提供适中但稳定的收入；足以维持运转。两者都在情报菜单中列为目标。\n\n" );
+            buffer.Add( "钻探整颗星球", "e16cff" ).Add( "可提供大量库恩达；足以实现真正的实力飙升。完全钻探一颗星球将使其荒废。\n\n" );
+            buffer.Add( "使星球荒废后你可以在此建造戴森球；戴森球提供强大的旗舰，会自动防御你的星球。", "ffccff" );
         }
     }
 
@@ -232,10 +232,10 @@ namespace Arcen.AIW2.External
         public MouseHandlingResult ClickHandler( ActualObjective Objective ) { return MouseHandlingResult.None; }
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "Reapers", "ff8888" ).Add( " are the primary faction-specific threat to the Dyson coalition. They hunt Cuendillar directly.\n\n" );
-            buffer.Add( "Reaper Chrysalises", "ff4444" ).Add( " are the key threat to watch. Destroying a Chrysalis before it hatches eliminates the wave it would have spawned and refunds its stored Cuendillar. If a Chrysalis hatches, it can trigger a full-scale Reaper invasion.\n\n" );
-            buffer.Add( "Do not ignore the Reapers entirely.", "ffcccc" ).Add( " Left unchecked they can grow extremely powerful by harvesting AI ships.\n\n" );
-            buffer.Add( "Chrysalises are listed as objectives in the intel menu.", "ffaaaa" );
+            buffer.Add( "收割者", "ff8888" ).Add( "是戴森联盟面临的主要派系特定威胁。它们直接猎取库恩达。\n\n" );
+            buffer.Add( "收割者茧", "ff4444" ).Add( "是需要关注的关键威胁。在茧孵化前摧毁它可消除其会生成的波次并回收其储存的库恩达。如果茧孵化，可能触发全面收割者入侵。\n\n" );
+            buffer.Add( "不要完全忽视收割者。", "ffcccc" ).Add( "如果不加控制，它们可以通过收割AI舰船变得极其强大。\n\n" );
+            buffer.Add( "茧在情报菜单中列为目标。", "ffaaaa" );
         }
     }
 
@@ -245,9 +245,9 @@ namespace Arcen.AIW2.External
         public MouseHandlingResult ClickHandler( ActualObjective Objective ) { return MouseHandlingResult.None; }
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "Moons", "aaddff" ).Add( " are critical defensive platforms for the Dyson coalition. They provide buildable space for defenses and support structures that cannot be placed elsewhere.\n\n" );
-            buffer.Add( "The Reapers periodically launch ", "ffcccc" ).Add( "Lunar Invasions", "ff8888" ).Add( ": events that spawn new Moons on the map. However, the invading Reaper force must be defeated before you can claim the Moon. These events are both a threat and an opportunity to expand your defensive network.\n\n" );
-            buffer.Add( "Prioritizing Moon defense and claiming new Moons during Lunar Invasions is key to sustaining a strong late-game position.", "aaddff" );
+            buffer.Add( "卫星", "aaddff" ).Add( "是戴森联盟的关键防御平台。它们提供可建造防御和支援建筑的空间，这些建筑无法放置在其他地方。\n\n" );
+            buffer.Add( "收割者定期发动", "ffcccc" ).Add( "月球入侵", "ff8888" ).Add( "：在地图上生成新卫星的事件。然而，你必须击败入侵的收割者部队后才能认领卫星。这些事件既是威胁，也是扩展防御网络的机会。\n\n" );
+            buffer.Add( "优先保护卫星并在月球入侵期间认领新卫星是维持强大后期局势的关键。", "aaddff" );
         }
     }
 
@@ -257,12 +257,12 @@ namespace Arcen.AIW2.External
         public MouseHandlingResult ClickHandler( ActualObjective Objective ) { return MouseHandlingResult.None; }
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "The Dyson coalition is made up of four races, each contributing different ships and resource income when you build their Strongholds.\n\n" );
-            buffer.Add( "Spire", "88aaff" ).Add( " Strongholds can produce large quantities of Science.\n" );
-            buffer.Add( "Zenith", "aaffaa" ).Add( " Strongholds can produce smaller quantities of both Metal and Science.\n" );
-            buffer.Add( "Neinzul", "ffaaaa" ).Add( " Strongholds can produce Metal and Hacking.\n" );
-            buffer.Add( "Templar", ObjectiveColors.Keyword ).Add( " Strongholds provide the best defense; Guardians in particular can defend multiple planets.\n\n" );
-            buffer.Add( "Choosing your Stronghold mix is the main long-term strategic decision. You can dismantle Strongholds via the hacking menu to recover some resources and respec your composition.", "ffeecc" );
+            buffer.Add( "戴森联盟由四个种族组成，每个种族在建造其据点时贡献不同的舰船和资源收入。\n\n" );
+            buffer.Add( "尖塔", "88aaff" ).Add( "据点可生产大量科技。\n" );
+            buffer.Add( "天顶", "aaffaa" ).Add( "据点可生产较少量金属和科技。\n" );
+            buffer.Add( "Neinzul", "ffaaaa" ).Add( "据点可生产金属和入侵点数。\n" );
+            buffer.Add( "圣殿骑士", ObjectiveColors.Keyword ).Add( "据点提供最佳防御；守护者尤其可以防御多个星球。\n\n" );
+            buffer.Add( "选择你的据点组合是主要的长期战略决策。你可以通过入侵菜单拆除据点以回收部分资源并重新调整构成。", "ffeecc" );
         }
     }
 
@@ -272,9 +272,9 @@ namespace Arcen.AIW2.External
         public MouseHandlingResult ClickHandler( ActualObjective Objective ) { return MouseHandlingResult.None; }
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "You can build a ", "ffccff" ).Add( "Dyson Sphere", "e16cff" ).Add( " at a Ravaged planet.\n\n" );
-            buffer.Add( "Dyson Spheres produce powerful flagships that will automatically defend your empire, and they are also destinations for your Transports when drilling.\n\n" );
-            buffer.Add( "Bringing the Dyson Sphere Tech to Mark 7 will cause your spheres to produce more powerful more golems, at the cost of very significant AI response.", "ffccff" );
+            buffer.Add( "你可以在一颗荒废的星球上建造", "ffccff" ).Add( "戴森球", "e16cff" ).Add( "。\n\n" );
+            buffer.Add( "戴森球生产强大的旗舰，会自动防御你的帝国，同时也是你钻探时运输船的目的地。\n\n" );
+            buffer.Add( "将戴森球科技提升到Mark 7将使你的球体生产更强大的傀儡，但代价是引发非常显著的AI反应。", "ffccff" );
         }
     }
 
@@ -294,7 +294,7 @@ namespace Arcen.AIW2.External
                 buffer.Add( "Bug in DysonUnusedSockets: null planet" );
                 return;
             }
-            buffer.Add( "Your Stronghold on " ).Add( Objective.RelatedPlanet1.Name, "8092ff" ).Add( " has unused building sockets.\n\nFilling sockets strengthens your defenses and unlocks additional capabilities. Use the Build menu on that planet to see what you can build." );
+            buffer.Add( "你的据点" ).Add( Objective.RelatedPlanet1.Name, "8092ff" ).Add( "上有未使用的建筑插槽。\n\n填充插槽可增强你的防御并解锁额外能力。使用该星球上的建造菜单查看可建造内容。" );
         }
     }
 }

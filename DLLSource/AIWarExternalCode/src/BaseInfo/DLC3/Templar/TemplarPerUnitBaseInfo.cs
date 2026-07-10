@@ -321,13 +321,13 @@ namespace Arcen.AIW2.External
                     Buffer_ForShipsInside.Add( pair.Key.GetDisplayName(), "909090" ).Add( " x" + this.ShipsInside[pair.Key].ToString(), markByOrdinal.ColorHex );
             }
             if ( shipsFound == 0 )
-                Buffer_ForShipsInside.Add( "no ships.\n" );
+                Buffer_ForShipsInside.Add( "无舰船。\n" );
             else
             {
                 int strengthInside = GetTotalStrengthInside( entity ) / 1000;
                 if ( strengthInside == 0 )
                     strengthInside = 1;
-                Buffer_ForShipsInside.Add( ". Approx " ).Add( ArcenExternalUIUtilities.GUI_StrengthTextColorAndIcon ).Add( strengthInside, "ffa1a1" ).Add( ".\n" );
+                Buffer_ForShipsInside.Add( "。约 " ).Add( ArcenExternalUIUtilities.GUI_StrengthTextColorAndIcon ).Add( strengthInside, "ffa1a1" ).Add( "。\n" );
             }
             this.ShipsInside_ForUI = Buffer_ForShipsInside.GetStringAndResetForNextUpdate();
         }

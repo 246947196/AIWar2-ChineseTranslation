@@ -1886,7 +1886,7 @@ namespace Arcen.AIW2.External
                 if ( relatedSquadOrNull != null && relatedSquadOrNull.SecondsSpentAsRemains >= 0 )
                 {
                     if ( detailLevel < TooltipDetail.Full )
-                        buffer.Add( "<color=#ff4b21>This is only the broken remains of the unit. </color>" );
+                        buffer.Add( "<color=#ff4b21>这仅是单位的破损残骸。</color>" );
                     else
                         buffer.Add( "<color=#ff4b21>这仅仅是该单位的残骸。残骸本身不会产生任何作用，但可以由重建者单位进行修复重建。</color>" );
                 }
@@ -2006,21 +2006,21 @@ namespace Arcen.AIW2.External
                     if ( relatedSquadOrNull.TypeData.SelfAttritionsXPercentPerSecondIfParentShipNotOnPlanet > 0 )
                     {
                         if ( detailLevel >= TooltipDetail.Full )
-                            buffer.StartColor( "aaaaaa" ).Add( "This unit is never eligible for repairs because it self-attritions.  " ).EndColor();
+                            buffer.StartColor( "aaaaaa" ).Add( "此单位因自我损耗而永远无法维修。  " ).EndColor();
                         else
-                            buffer.StartColor( "aaaaaa" ).Add( "This unit is never eligible for repairs.  " );
+                            buffer.StartColor( "aaaaaa" ).Add( "此单位永远无法维修。  " );
                     } else if ( relatedSquadOrNull.RepairImpossibleForSeconds > 0 )
                     {
                         if ( relatedSquadOrNull.TypeData.ImmuneToRepairs )
                         {
                             if ( relatedSquadOrNull.TypeData.SecondsToFullyRegenerateHull > FInt.Zero )
-                                buffer.StartColor( "aaaaaa" ).Add( "This unit will be eligible to regenerate health in " ).Add( relatedSquadOrNull.RepairImpossibleForSeconds, "aa3434" ).Add( "s.  " ).EndColor();
+                                buffer.StartColor( "aaaaaa" ).Add( "此单位将在 " ).Add( relatedSquadOrNull.RepairImpossibleForSeconds, "aa3434" ).Add( "秒后可恢复生命值。  " ).EndColor();
                         } else
                         {
                             if ( relatedSquadOrNull.TypeData.SecondsToFullyRegenerateHull > FInt.Zero )
-                                buffer.StartColor( "aaaaaa" ).Add( "This unit will be eligible to regenerate health or be repaired in " ).Add( relatedSquadOrNull.RepairImpossibleForSeconds, "aa3434" ).Add( "s.  " ).EndColor();
+                                buffer.StartColor( "aaaaaa" ).Add( "此单位将在 " ).Add( relatedSquadOrNull.RepairImpossibleForSeconds, "aa3434" ).Add( "秒后可恢复生命值或被维修。  " ).EndColor();
                             else
-                                buffer.StartColor( "aaaaaa" ).Add( "This unit will be eligible to be repaired in " ).Add( relatedSquadOrNull.RepairImpossibleForSeconds, "aa3434" ).Add( "s.  " ).EndColor();
+                                buffer.StartColor( "aaaaaa" ).Add( "此单位将在 " ).Add( relatedSquadOrNull.RepairImpossibleForSeconds, "aa3434" ).Add( "秒后可被维修。  " ).EndColor();
                         }
                     }
                     //if ( relatedSquadOrNull.RepairExtraCostForSeconds > 0 )
@@ -2620,34 +2620,34 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                 debugStage = 400;
 
                 if ( relatedEntityTypeData.SpeedMultiplierFirst5SecondsOnPlanet > FInt.One )
-                    buffer.Add( "<color=#f25e1c>RAPID DEPLOYMENT</color>: This unit has a speed multiplier of " ).Add( relatedEntityTypeData.SpeedMultiplierFirst5SecondsOnPlanet ).Add( " for the first 5 seconds after going through a wormhole or spawning  " );
+                    buffer.Add( "<color=#f25e1c>快速部署</color>: 此单位在通过虫洞或生成后前5秒内拥有 " ).Add( relatedEntityTypeData.SpeedMultiplierFirst5SecondsOnPlanet ).Add( " 倍速度加成  " );
 
                 if ( relatedEntityTypeData.BuildPointsPerDamageDealt > FInt.Zero && relatedEntityTypeData.UnitToMakeWithBuildPoints_TypeData != null )
                 {
-                    buffer.Add( "<color=#f25e1c>VON NEUMANN</color>: builds additional " );
+                    buffer.Add( "<color=#f25e1c>冯·诺依曼</color>: 建造额外的 " );
                     if ( relatedEntityTypeData.UnitToMakeWithBuildPoints_TypeData.DisplayName.Equals( relatedEntityTypeData.DisplayName ) )
                     {
-                        buffer.Add( "自身的复制体" );
+                        buffer.Add( "自身副本" );
                     } else
                     {
-                        buffer.Add( relatedEntityTypeData.UnitToMakeWithBuildPoints_TypeData.DisplayName ).Add( " units" );
+                        buffer.Add( relatedEntityTypeData.UnitToMakeWithBuildPoints_TypeData.DisplayName ).Add( " 单位" );
                     }
-                    buffer.Add( " once it does enough damage to enemies, equal to its default ship line size.  " );
+                    buffer.Add( "，一旦对敌人造成足够伤害，数量等于其默认舰队编制。  " );
                 }
 
                 debugStage = 410;
 
                 if ( relatedEntityTypeData.AIReinforcementMultiplier > FInt.One )
-                    buffer.Add( "<color=#f25e1c>AI ACCELERATOR</color>: Strengthens AI reinforcements at this planet by <color=#ffdf72>" ).Add(
-                        relatedEntityTypeData.AIReinforcementMultiplier.ReadableString ).Add( "x</color>.  " );
+                    buffer.Add( "<color=#f25e1c>AI加速器</color>: 增强此星球的AI增援，倍率为 <color=#ffdf72>" ).Add(
+                        relatedEntityTypeData.AIReinforcementMultiplier.ReadableString ).Add( "倍</color>。  " );
 
                 debugStage = 420;
 
                 if ( relatedEntityTypeData.AddsBlackHoleEffectForEntitiesWithEngine_gxLessThan > 0 )
-                    buffer.Add( "<color=#f25e1c>BLACK HOLE EFFECT</color>: Enemy ships with less than <color=#ffdf72>" ).Add(
-                        relatedEntityTypeData.AddsBlackHoleEffectForEntitiesWithEngine_gxLessThan ).Add( "gx</color> engine power cannot leave this planet. Crippled units can always leave, regardless of engine power. " );
+                    buffer.Add( "<color=#f25e1c>黑洞效应</color>: 引擎功率低于 <color=#ffdf72>" ).Add(
+                        relatedEntityTypeData.AddsBlackHoleEffectForEntitiesWithEngine_gxLessThan ).Add( "gx</color> 的敌舰无法离开此星球。致残单位无论引擎功率如何均可离开。 " );
                 else if ( relatedEntityTypeData.AddsBlackHoleEffectForAllEntitiesPeriod )
-                    buffer.Add( "<color=#f25e1c>SUPER BLACK HOLE EFFECT</color>: No Ships can leave this planet.  Friendly, enemy, crippled, it doesn't matter. " );
+                    buffer.Add( "<color=#f25e1c>超级黑洞效应</color>: 任何舰船都无法离开此星球。无论友军、敌军、致残单位，均不例外。 " );
 
                 debugStage = 425;
 
@@ -2703,28 +2703,28 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
 
                     buffer.Add( " 当" );
                     if ( relatedEntityTypeData.PeriodicSpawn_MinHostileStrengthToTrigger > 0 )
-                        buffer.Add( " at least " ).WrapStrengthTruncated( relatedEntityTypeData.PeriodicSpawn_MinHostileStrengthToTrigger, useIcons, useText ).Add( " in hostile" );
+                        buffer.Add( " 至少有 " ).WrapStrengthTruncated( relatedEntityTypeData.PeriodicSpawn_MinHostileStrengthToTrigger, useIcons, useText ).Add( " 强度的敌军" );
                     if ( relatedEntityTypeData.PeriodicSpawn_OnlyTriggerAgainstPlayer )
-                        buffer.Add( " player" );
-                    buffer.Add( " presence is detected" );
+                        buffer.Add( " 玩家" );
+                    buffer.Add( " 存在被探测到" );
                     if ( relatedEntityTypeData.PeriodicSpawn_OnlyTriggerOnOccupation )
                     {
-                        buffer.Add( " occupying a planet" );
+                        buffer.Add( " 占领星球" );
                     } else
                     {
-                        buffer.Add( " on this planet" );
+                        buffer.Add( " 在此星球上" );
                         if ( relatedEntityTypeData.PeriodicSpawn_MaxHopsToTrigger > 0 )
                         {
-                            buffer.Add( " and" );
+                            buffer.Add( " 并且" );
                         }
                     }
                     if ( relatedEntityTypeData.PeriodicSpawn_MaxHopsToTrigger > 0 )
                     {
-                        buffer.Add( " within <color=#ffdf72>" ).Add( relatedEntityTypeData.PeriodicSpawn_MaxHopsToTrigger ).Add( "</color> hops" );
+                        buffer.Add( " 在 <color=#ffdf72>" ).Add( relatedEntityTypeData.PeriodicSpawn_MaxHopsToTrigger ).Add( "</color> 次跳跃范围内" );
                     }
                     if ( relatedEntityTypeData.PeriodicSpawn_NeverStopOnceTriggered )
-                        buffer.Add( ". Once it spawned something for the first time it will not stop as long as valid enemies are in the galaxy" );
-                    buffer.Add( ".  " );
+                        buffer.Add( "。一旦首次生成，只要银河系中存在有效敌人，它将不会停止" );
+                    buffer.Add( "。  " );
                 }
 
                 debugStage = 440;
@@ -2733,12 +2733,12 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                 {
                     debugStage = 450;
                     if ( relatedEntityTypeData.NumberOfHopsOutToFreeGuards > 0 )
-                        buffer.Add( "<color=#f25e1c>Call for Aid</color>: All guarding units within <color=#ffdf72>" ).Add(
-                            relatedEntityTypeData.NumberOfHopsOutToFreeGuards ).Add( " wormhole hops</color> from this planet will become threat (and possibly join the hunter fleet) if the attacking enemy strength is greater than <color=#ffdf72> " ).Add(
-                            relatedEntityTypeData.FreesGuardsWhenLocalForceRatioIsWorseThan.ReadableString ).Add( "x</color> the AI forces on this planet.  " );
+                        buffer.Add( "<color=#f25e1c>求援</color>: 此星球 <color=#ffdf72>" ).Add(
+                            relatedEntityTypeData.NumberOfHopsOutToFreeGuards ).Add( " 次虫洞跳跃</color>范围内的所有守卫单位将变成威胁（并可能加入猎杀舰队），如果攻击的敌军强度超过此星球AI部队的 <color=#ffdf72> " ).Add(
+                            relatedEntityTypeData.FreesGuardsWhenLocalForceRatioIsWorseThan.ReadableString ).Add( "倍</color>。  " );
                     else
-                        buffer.Add( "<color=#f25e1c>Disperse Guards</color>: All guarding units on this planet will become threat (and possibly join the hunter fleet) if the local AI strength is less than <color=#ffdf72> " ).Add(
-                            relatedEntityTypeData.FreesGuardsWhenLocalForceRatioIsWorseThan.ReadableString ).Add( "x</color> that enemies on this planet.  " );
+                        buffer.Add( "<color=#f25e1c>分散守卫</color>: 此星球上所有守卫单位将变成威胁（并可能加入猎杀舰队），如果此星球AI强度低于敌军的 <color=#ffdf72> " ).Add(
+                            relatedEntityTypeData.FreesGuardsWhenLocalForceRatioIsWorseThan.ReadableString ).Add( "倍</color>。  " );
                 }
                 debugStage = 451;
                 if ( relatedEntityTypeData.WatchPlanetsAtXHops > 0 && (relatedSquadOrNull == null || relatedSquadOrNull.GetFactionTypeSafe() == FactionType.Player) )
@@ -2746,17 +2746,17 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                     debugStage = 455;
 
                     int hopCount = relatedEntityTypeData.WatchPlanetsAtXHops + (relatedMembershipOrNull == null ? 0 : relatedMembershipOrNull.Hacked_ExtraWatchPlanetsAtXHops);
-                    buffer.Add( "<color=#f25e1c>RECON</color>: Watches all planets within " ).Add( hopCount, "ffdf72" );
+                    buffer.Add( "<color=#f25e1c>侦察</color>: 监视 " ).Add( hopCount, "ffdf72" );
                     if ( hopCount > 1 )
-                        buffer.Add( " hops.  " );
+                        buffer.Add( " 次跳跃范围内的所有星球。  " );
                     else
-                        buffer.Add( " hop.  " );
+                        buffer.Add( " 次跳跃范围内的所有星球。  " );
                 }
 
                 debugStage = 460;
 
                 if ( relatedEntityTypeData.PushesEnemyShields )
-                    buffer.Add( "<color=#f25e1c>NORRIS EFFECT</color>: Displaces enemy bubble-forcefield generators when moving into them.  " );
+                    buffer.Add( "<color=#f25e1c>诺里斯效应</color>: 移入敌方时会位移敌方泡状力场发生器。  " );
 
                 debugStage = 465;
 
@@ -2868,24 +2868,24 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                     if ( relatedEntityTypeData.ReturnsThisPercentageOfDamageIfDamagedByEnemyAttack > FInt.Zero )
                     {
                         buffer.StartDamageWrapper( false ).AddPercentFormated( relatedEntityTypeData.ReturnsThisPercentageOfDamageIfDamagedByEnemyAttack * 100 ).EndDamageWrapper( false );
-                        buffer.Add( " ELECTROTOXIC " );
+                        buffer.Add( " 电毒素 " );
                     }
                     if ( relatedEntityTypeData.MyForcefieldDoesNotShrink )
                         buffer.Add( "强化 " );
                     if ( relatedEntityTypeData.MyForcefieldHasNoPenaltyForEnemiesFiringOutOfIt )
                         buffer.Add( "巨力场" );
-                    buffer.Add( " RADIUS</color> " );
+                    buffer.Add( " 半径</color> " );
                     if ( detailLevel < TooltipDetail.Full )
                     {
                         buffer.WrapRangeMoreReadable( effectiveShieldRadius, false, false );
-                        buffer.Add( ".  " );
+                        buffer.Add( "。  " );
                     } else if ( detailLevel >= TooltipDetail.Medium )
                     {
-                        buffer.Add( " GENERATOR</color>: Projects a bubble forcefield in a radius of " );
+                        buffer.Add( " 发生器</color>: 投射半径为 " );
                         buffer.WrapRangeMoreReadable( effectiveShieldRadius, false, false );
-                        buffer.Add( " with total strength of " );
+                        buffer.Add( " 的泡状力场，总强度为 " );
                         buffer.WrapShieldMoreReadable( (relatedMembershipOrNull != null && relatedMemFleetOrNull != null && relatedMemFleetOrNull.IsPlayerStyleFleet ? relatedMembershipOrNull.GetMaxShieldPoints_PlayerFleetsOnly() : markStats.BaseShieldPoints), useIcons, false );
-                        buffer.Add( ".  Allied ships under the bubble cannot be damaged, and enemy ships cannot pass into the bubble.  " );
+                        buffer.Add( "。力场内的友舰不会受到伤害，敌舰也无法穿透力场。  " );
                         if ( relatedEntityTypeData.MyForcefieldDoesNotShrink )
                             buffer.Add( "强化力场不会随着护盾生命值下降而缩小。  " );
                         if ( relatedEntityTypeData.MyForcefieldHasNoPenaltyForEnemiesFiringOutOfIt )
@@ -2894,9 +2894,9 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                             buffer.Add( "任何从护盾下向外射击的友方单位只造成一半伤害。  " );
                         if ( relatedEntityTypeData.ReturnsThisPercentageOfDamageIfDamagedByEnemyAttack > FInt.Zero )
                         {
-                            buffer.Add( "此电毒力场造成 " ).StartDamageWrapper( false )
+                            buffer.Add( "此电毒力场将 " ).StartDamageWrapper( false )
                                 .AddPercentFormated( relatedEntityTypeData.ReturnsThisPercentageOfDamageIfDamagedByEnemyAttack * 100 ).EndDamageWrapper( false )
-                                .Add( " of any damage it receives back to the unit that shot it. This is considered <color=#dfff72>exotic damage</color>.  " );
+                                .Add( " 接受到的伤害反弹给射击它的单位。这被视为 <color=#dfff72>特殊伤害</color>。  " );
                         }
                     }
                     buffer.Add( ".  " );
@@ -2908,7 +2908,7 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                     {
                         buffer.Add( "<color=#f25e1c>" );
                         buffer.StartDamageWrapper( false ).AddPercentFormated( relatedEntityTypeData.ReturnsThisPercentageOfDamageIfDamagedByEnemyAttack * 100 ).EndDamageWrapper( false );
-                        buffer.Add( " ELECTROTOXIC HULL:</color> " );
+                        buffer.Add( " 电毒素船体：</color> " );
                         if ( detailLevel >= TooltipDetail.Medium )
                         {
                             if ( relatedEntityTypeData.ReturnsThisPercentageOfDamageIfDamagedByEnemyAttack > FInt.Zero )
@@ -2985,12 +2985,12 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                         attritionDamage = relatedSquadOrNull.GetAttritionDamage();
                     debugStage = 55502;
                     if ( detailLevel < TooltipDetail.Full )
-                        buffer.Add( "<color=#f25e1c>ATTRITIONER:</color>: " ).Add( attritionDamage, "a1ffa1" ).Add( "/s " );
+                        buffer.Add( "<color=#f25e1c>消耗器：</color>: 每秒 " ).Add( attritionDamage, "a1ffa1" ).Add( "/s " );
                     else
                     {
                         debugStage = 55503;
-                        buffer.Add( "<color=#f25e1c>ATTRITIONER:</color>: Attritions mobile enemy units by " ).Add( attritionDamage, "a1ffa1" )
-                            .Add( " damage per second. This is considered <color=#dfff72>exotic damage</color>. " );
+                        buffer.Add( "<color=#f25e1c>消耗器：</color>: 对移动中的敌方单位每秒造成 " ).Add( attritionDamage, "a1ffa1" )
+                            .Add( " 伤害。这被视为 <color=#dfff72>特殊伤害</color>。 " );
                         if ( relatedMarkLevelData.MaxAttritionDamagePreFleetModifiers > 0 )
                         {
                             debugStage = 55504;
@@ -2999,10 +2999,10 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                                 maxAttritionDamage = relatedMarkLevelData.MaxAttritionDamagePreFleetModifiers;
                             else
                                 maxAttritionDamage = relatedSquadOrNull.GetMaxAttritionDamageOrZeroForUnlimited();
-                            buffer.Add( " up to " ).AddNumberMoreReadable( maxAttritionDamage ).Add( " per second. " );
+                            buffer.Add( " 最高每秒 " ).AddNumberMoreReadable( maxAttritionDamage ).Add( "。 " );
                         } else
                         {
-                            buffer.Add( ". " );
+                            buffer.Add( "。 " );
                         }
                     }
                 }
@@ -3016,10 +3016,10 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                 {
                     int percentageAsInteger = (relatedEntityTypeData.DamageTakenCannotBeMoreThanThisPercentageOfMaxHealth * 100).GetNearestIntPreferringHigher();
                     if ( detailLevel < TooltipDetail.Full )
-                        buffer.Add( "<color=#f25e1c>HARDENED:</color>: Never takes more than " ).Add( percentageAsInteger ).Add( "% of max hull health in damage at one time. " );
+                        buffer.Add( "<color=#f25e1c>硬化：</color>: 单次承受伤害从不超过最大船体生命值的 " ).Add( percentageAsInteger ).Add( "%。 " );
                     else
-                        buffer.Add( "<color=#f25e1c>HARDENED:</color>: Any damage from a single source (explosion, shot, attrition, etc) will have its value reduced to " )
-                            .Add( percentageAsInteger ).Add( "% of this unit's max hull health if it would be greater than that.  Protects against very large guns, ion cannons, mass drivers, etc. " );
+                        buffer.Add( "<color=#f25e1c>硬化：</color>: 来自单一来源的任何伤害（爆炸、射击、消耗等），如果超过此单位最大船体生命值的 " )
+                            .Add( percentageAsInteger ).Add( "%，将被降低至该值。可抵御大型火炮、离子炮、质量驱动器等。 " );
                 }
                 #endregion
 
@@ -3028,14 +3028,14 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                 #region CreatesCeasefireOnPlanet
                 if ( relatedEntityTypeData.CreatesCeasefireOnPlanet )
                 {
-                    buffer.Add( "<color=#f25e1c>CEASEFIRE:</color> Prevents all units from firing weapons while it is on a planet with them. " );
+                    buffer.Add( "<color=#f25e1c>停火：</color> 阻止所有单位在与其同星球时开火。 " );
                 }
                 #endregion
 
                 #region BlocksCeasefireOnPlanet
                 if ( relatedEntityTypeData.BlocksCeasefireOnPlanet )
                 {
-                    buffer.Add( "<color=#f25e1c>CEASEFIRE BLOCKER:</color> If this is on a planet, then no ceasefires will be possible. " );
+                    buffer.Add( "<color=#f25e1c>停火破坏者：</color> 如果此单位在某个星球上，则不可能停火。 " );
                 }
                 #endregion
 
@@ -3083,10 +3083,10 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                 if ( relatedEntityTypeData.HackingEffectMultiplier != FInt.One )
                 {
                     if ( relatedEntityTypeData.HackingEffectMultiplier < FInt.One )
-                        buffer.Add( "<color=#f25e1c>HACK BONUS:</color>" );
+                        buffer.Add( "<color=#f25e1c>黑客加成：</color>" );
                     else
-                        buffer.Add( "<color=#f25e1c>HACK MALUS:</color>" );
-                    buffer.Add( " All hacks done by this unit have their response multiplied by <color=#ffdf72>" ).AddNumberMoreReadable( relatedEntityTypeData.HackingEffectMultiplier ).Add( "x</color>.  " );
+                        buffer.Add( "<color=#f25e1c>黑客惩罚：</color>" );
+                    buffer.Add( " 此单位进行的所有黑客入侵的AI反应乘以 <color=#ffdf72>" ).AddNumberMoreReadable( relatedEntityTypeData.HackingEffectMultiplier ).Add( "倍</color>。  " );
                 }
 
                 ////////////TODO STOPPED HERE
@@ -3095,56 +3095,56 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                 {
                     int superchargeBonusLimiter = 0;
                     bool isSuperchargeLimited = false;
-                    string fleetBonusPrefix = "<color=#7cf21c>FLEET BONUS:</color> <color=#9ce066>";
+                    string fleetBonusPrefix = "<color=#7cf21c>舰队加成：</color> <color=#9ce066>";
                     if ( relatedEntityTypeData.SuperchargesOnlyApplyWhenFleetLineCountIsXOrLess > 0 && relatedMembershipOrNull != null && relatedMemFleetOrNull != null )
                     {
                         superchargeBonusLimiter = relatedMemFleetOrNull.GetCountOfShipLinesForSuperchargePurposes( null );
                         if ( superchargeBonusLimiter > relatedEntityTypeData.SuperchargesOnlyApplyWhenFleetLineCountIsXOrLess )
                         {
                             isSuperchargeLimited = true;
-                            fleetBonusPrefix = "<color=#f2ae1c>FLEET BONUS OFF:</color> <color=#e0c266>";
+                            fleetBonusPrefix = "<color=#f2ae1c>舰队加成关闭：</color> <color=#e0c266>";
                         } else
                         {
-                            fleetBonusPrefix = "<color=#7cf21c>FLEET BONUS ON:</color> <color=#9ce066>";
+                            fleetBonusPrefix = "<color=#7cf21c>舰队加成开启：</color> <color=#9ce066>";
                         }
                     }
 
                     if ( relatedEntityTypeData.SuperchargesMinSpeedOfRestOfPlayerFleet )
                     {
-                        buffer.Add( fleetBonusPrefix ).Add( "Supercharges all other non-flagship members of the fleet to be at least as fast as itself.</color>  " );
+                        buffer.Add( fleetBonusPrefix ).Add( "使舰队中所有非旗舰成员的速度至少与自身相同。</color>  " );
                     }
                     if ( relatedEntityTypeData.SuperchargesHullOfRestOfPlayerFleet > FInt.One )
                     {
-                        buffer.Add( fleetBonusPrefix ).Add( "Grants a " ).AddFixedDecimal( relatedEntityTypeData.SuperchargesHullOfRestOfPlayerFleet.ToDoubleNonSim(), 2 ).Add( "x bonus to the hull strength of all members of the fleet (including flagships).</color>  " );
+                        buffer.Add( fleetBonusPrefix ).Add( "为舰队中所有成员（包括旗舰）的船体强度提供 " ).AddFixedDecimal( relatedEntityTypeData.SuperchargesHullOfRestOfPlayerFleet.ToDoubleNonSim(), 2 ).Add( " 倍加成。</color>  " );
                     }
                     if ( relatedEntityTypeData.SuperchargesShieldsOfRestOfPlayerFleet > FInt.One )
                     {
-                        buffer.Add( fleetBonusPrefix ).Add( "Grants a " ).AddFixedDecimal( relatedEntityTypeData.SuperchargesShieldsOfRestOfPlayerFleet.ToDoubleNonSim(), 2 ).Add( "x bonus to the shield strength of all members of the fleet (including flagships).</color>  " );
+                        buffer.Add( fleetBonusPrefix ).Add( "为舰队中所有成员（包括旗舰）的护盾强度提供 " ).AddFixedDecimal( relatedEntityTypeData.SuperchargesShieldsOfRestOfPlayerFleet.ToDoubleNonSim(), 2 ).Add( " 倍加成。</color>  " );
                     }
                     if ( relatedEntityTypeData.SuperchargesAttackPowerOfRestOfPlayerFleet > FInt.One )
                     {
-                        buffer.Add( fleetBonusPrefix ).Add( "Grants a " ).AddFixedDecimal( relatedEntityTypeData.SuperchargesAttackPowerOfRestOfPlayerFleet.ToDoubleNonSim(), 2 ).Add( "x bonus to the attack power of all members of the fleet (including flagships).</color>  " );
+                        buffer.Add( fleetBonusPrefix ).Add( "为舰队中所有成员（包括旗舰）的攻击强度提供 " ).AddFixedDecimal( relatedEntityTypeData.SuperchargesAttackPowerOfRestOfPlayerFleet.ToDoubleNonSim(), 2 ).Add( " 倍加成。</color>  " );
                     }
                     if ( relatedEntityTypeData.SuperchargesOnlyApplyWhenFleetLineCountIsXOrLess > 0 )
                     {
                         if ( isSuperchargeLimited )
-                            buffer.Add( "<color=#f2ae1c>FLEET BONUS LIMIT PASSED:</color> <color=#e0c266>Fleet-wide bonus only turns on in fleets with " ).Add(
+                            buffer.Add( "<color=#f2ae1c>舰队加成限制已超：</color> <color=#e0c266>舰队范围加成仅在拥有 " ).Add(
                                 relatedEntityTypeData.SuperchargesOnlyApplyWhenFleetLineCountIsXOrLess )
-                                .Add( " or fewer non-flagship, non-elite ship lines in them, but you have " ).Add( superchargeBonusLimiter ).Add( " in this fleet.</color>  " );
+                                .Add( " 条或更少非旗舰、非精英舰船编制的舰队中生效，但此舰队有 " ).Add( superchargeBonusLimiter ).Add( " 条。</color>  " );
                         else if ( relatedMembershipOrNull == null || detailLevel >= TooltipDetail.Full )
                         {
-                            buffer.Add( "<color=#7cf21c>FLEET BONUS LIMIT:</color> <color=#9ce066>Fleet-wide bonus only turns on in fleets with " ).Add(
+                            buffer.Add( "<color=#7cf21c>舰队加成限制：</color> <color=#9ce066>舰队范围加成仅在拥有 " ).Add(
                                     relatedEntityTypeData.SuperchargesOnlyApplyWhenFleetLineCountIsXOrLess );
 
                             if ( relatedMembershipOrNull != null )
-                                buffer.Add( " or fewer non-flagship, non-elite ship lines in them, and you only have " ).Add( superchargeBonusLimiter ).Add( " in this fleet.</color>  " );
+                                buffer.Add( " 条或更少非旗舰、非精英舰船编制的舰队中生效，此舰队仅有 " ).Add( superchargeBonusLimiter ).Add( " 条。</color>  " );
                             else
-                                buffer.Add( " or fewer non-flagship, non-elite ship lines in them.</color>  " );
+                                buffer.Add( " 条或更少非旗舰、非精英舰船编制的舰队中生效。</color>  " );
                         }
                     }
                     if ( relatedEntityTypeData.CannotBeSuperchargedWhenInSuperchargedFleet && detailLevel >= TooltipDetail.Full )
                     {
-                        buffer.Add( "<color=#f2ae1c>FLEET BONUSES DO NOT APPLY:</color> <color=#e0c266>Fleet-wide bonuses don't help this particular unit no matter what.</color>  " );
+                        buffer.Add( "<color=#f2ae1c>舰队加成不适用：</color> <color=#e0c266>无论何种情况，舰队范围加成对此特定单位无帮助。</color>  " );
                     }
                 } else
                 {
@@ -3193,13 +3193,13 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                             relatedEntityTypeData.ExternalInvulnerabilityUnitTag, relatedEntityTypeData.ExternalInvulnerabilityUnitRequiredCount );
                     if (relatedSquadOrNull == null)
                     {
-                        buffer.Add( "<color=#f25e1c>INVINCIBLE</color>: Requires at least <color=#cfd988>" )
+                        buffer.Add( "<color=#f25e1c>无敌</color>: 需要至少 <color=#cfd988>" )
                             .Add( relatedEntityTypeData.ExternalInvulnerabilityUnitRequiredCount ).Add( "</color> " ).Add( protectorStringMax ).EndColor();
                         if ( relatedEntityTypeData.InvulnerabilityRegion == ExternalInvulnerabilityRegion.ThisPlanet )
-                            buffer.Add( " on this planet" );
+                            buffer.Add( " 在此星球上" );
                         else
-                            buffer.Add( " in the galaxy" );
-                       buffer.Add( " to become immune to all damage.  " );
+                            buffer.Add( " 在银河系中" );
+                       buffer.Add( " 才可免疫所有伤害。  " );
                     } else
                     {
                         if( relatedSquadOrNull.CountOfEntitiesProvidingExternalInvulnerability >= relatedEntityTypeData.ExternalInvulnerabilityUnitRequiredCount )
@@ -3215,26 +3215,25 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                         }
                         buffer.StartColor( "cfd988" ).Add( relatedSquadOrNull.CountOfEntitiesProvidingExternalInvulnerability );
                         if ( detailLevel >= TooltipDetail.Medium )
-                            buffer.Add( " out of " );
+                            buffer.Add( " 分之 " );
                         else
                             buffer.Add( " / " );
                         buffer.Add( relatedEntityTypeData.ExternalInvulnerabilityUnitRequiredCount ).Add( "</color> " ).Add( protectorStringMax );
                         if ( relatedSquadOrNull.CountOfEntitiesProvidingExternalInvulnerability < relatedEntityTypeData.ExternalInvulnerabilityUnitRequiredCount )
-                            buffer.Add( " required" );
+                            buffer.Add( " 所需" );
                         if ( relatedSquadOrNull.CountOfEntitiesProvidingExternalInvulnerability == 1 )
-                            buffer.Add( " is" );
+                            buffer.Add( " 已存在" );
                         else
-                            buffer.Add( " are" );
-                        buffer.Add( " present" );
+                            buffer.Add( " 已存在" );
                         if ( detailLevel >= TooltipDetail.Medium )
                         {
                             if ( relatedEntityTypeData.InvulnerabilityRegion == ExternalInvulnerabilityRegion.ThisPlanet )
-                                buffer.Add( " on this planet.  " );
+                                buffer.Add( " 在此星球上。  " );
                             else
-                                buffer.Add( " in the galaxy.  " );
+                                buffer.Add( " 在银河系中。  " );
                         } else
                         {
-                            buffer.Add( ".  " );
+                            buffer.Add( "。  " );
                         }
                     }
                 }
@@ -3243,7 +3242,7 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
 
                 if ( !EntityTypeDrawingBag.IsNullOrInvalid( relatedEntityTypeData.SpawnOnDeath_EntityTypeDrawingBag.Value ) )
                 {
-                    buffer.Add( "<color=#f25e1c>ON DEATH</color>: " );
+                    buffer.Add( "<color=#f25e1c>死亡时</color>: " );
                     relatedEntityTypeData.SpawnOnDeath_EntityTypeDrawingBag.Value.WriteToBuffer( buffer, relatedEntityTypeData, false );
                     buffer.Add( ".  " );
                 }
@@ -3253,8 +3252,8 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                 {
                     if ( relatedSquadOrNull != null )
                     {
-                        buffer.Add( "<color=#f25e1c>REGENERATION</color>: Regenerates hull over <color=#ffdf72>" ).Add( relatedEntityTypeData.SecondsToFullyRegenerateHull )
-                        .Add( "</color> seconds if not under fire. " );
+                        buffer.Add( "<color=#f25e1c>再生</color>: 在 <color=#ffdf72>" ).Add( relatedEntityTypeData.SecondsToFullyRegenerateHull )
+                        .Add( "</color> 秒内恢复船体，前提是不受攻击。 " );
                     }
                 }
 
@@ -3297,7 +3296,7 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                 relatedEntityTypeData.ForAnyDataExtensions_AddToTooltip_GainsSection_ForEntity( buffer, relatedSquadOrNull, relatedMembershipOrNull, relatedEntityTypeData, detailLevel );
                 string playerClarification = " ";
                 if ( FactionUtilityMethods.Instance.AnyNecromancerFactions() )
-                    playerClarification = " human empire ";
+                    playerClarification = " 人类帝国 ";
                 if ( relatedEntityTypeData.MetalToGrantOnDeath > 0 && showMetalOther )
                 {
                     buffer.Add( "如果" ).Add( playerClarification ).Add( "玩家击杀此单位，将获得 <color=#ffdf72>" ).Add( relatedEntityTypeData.MetalToGrantOnDeath ).Add( " 金属。 </color>" );
@@ -3476,7 +3475,7 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                                 if ( !hasDoneHeader )
                                 {
                                     hasDoneHeader = true;
-                                    buffer.Add( "<color=#f25e1c>You Can Hack:</color> " );
+                                    buffer.Add( "<color=#f25e1c>你可入侵：</color> " );
                                 } else
                                 {
                                     buffer.Add( ", " );
@@ -3495,36 +3494,36 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                     GameEntity_Squad parent = relatedSquadOrNull.ParentGameEntity.GetSquad();
                     if ( parent != null )
                     {
-                        buffer.Add( "<color=#f25e1c>ANCESTOR</color>: " );
+                        buffer.Add( "<color=#f25e1c>祖先</color>: " );
                         buffer.Add( "祖先单位：" ).Add( parent.GetTypeDisplayNameSafe() );
                         if ( relatedEntityTypeData.DiesIfParentDies )
-                            buffer.Add( "  (Dies if the ancestor dies)" );
-                        buffer.Add( ".  " );
+                            buffer.Add( "  （如果祖先死亡则此单位也会死亡）" );
+                        buffer.Add( "。  " );
                     }
                 } else
                 {
                     if ( relatedEntityTypeData.DiesIfParentDies )
                     {
-                        buffer.Add( "<color=#f25e1c>ANCESTOR</color>: " );
-                        buffer.Add( "通常有祖先单位，如果祖先死亡则此单位也会死亡。  " );
+                    buffer.Add( "<color=#f25e1c>祖先</color>: " );
+                    buffer.Add( "通常有祖先单位，如果祖先死亡则此单位也会死亡。  " );
                     }
                 }
 
                 //child stuff
                 if ( relatedEntityTypeData.BuildPointsPerSecond > 0 )
                 {
-                    buffer.Add( "<color=#f25e1c>PROGENITOR</color>: " );
+                    buffer.Add( "<color=#f25e1c>祖代</color>: " );
                     float perSecondRate = relatedEntityTypeData.BuildPointCostForPerSecondConstruction <= 0 ? -1 :
                         ((float) relatedEntityTypeData.BuildPointCostForPerSecondConstruction / (float) relatedEntityTypeData.BuildPointsPerSecond);
                     buffer.Add( "最多建造 " ).Add( relatedEntityTypeData.PersonalShipCapForPerSecondBuildPointConstruction )
-                        .Add( " descendants" );
+                        .Add( " 个后代" );
 
                     if ( relatedSquadOrNull != null )
                     {
-                        buffer.Add( " (Current: " ).Add( relatedSquadOrNull.ChildSquads.Count ).Add( ")" );
+                        buffer.Add( "（当前：" ).Add( relatedSquadOrNull.ChildSquads.Count ).Add( "）" );
                     }
 
-                    buffer.Add( ", at a rate of one every " ).AddFixedDecimal( perSecondRate, 2 ).Add( "s.  " );
+                    buffer.Add( "，每 " ).AddFixedDecimal( perSecondRate, 2 ).Add( "秒建造一个。  " );
 
                     List<GameEntityTypeData> list = GameEntityTypeDataTable.Instance.RowsByTag[relatedEntityTypeData.TagToSpawnFromForBuildPointForPerSecondConstruction];
                     if ( list == null || list.Count == 0 )
@@ -3541,9 +3540,9 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                                 if ( i == list.Count - 1 )
                                 {
                                     if ( i == 1 )
-                                        buffer.Add( " and " );
+                                        buffer.Add( " 和 " );
                                     else
-                                        buffer.Add( ", and " );
+                                        buffer.Add( "，和 " );
                                 } else
                                     buffer.Add( ", " );
                             }
@@ -3561,16 +3560,16 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                                 }
                             }
                             if ( currentCount > 0 )
-                                buffer.Add( " (" ).Add( currentCount ).Add( detailLevel >= TooltipDetail.Full ? " current)" : ")" );
+                                buffer.Add( " (" ).Add( currentCount ).Add( detailLevel >= TooltipDetail.Full ? " 当前)" : ")" );
                         }
                         buffer.Add( ".  " );
                     }
 
                     if ( relatedSquadOrNull != null && detailLevel >= TooltipDetail.Full )
                     {
-                        buffer.Add( "(Progress: " ).AddNumberMoreReadable( relatedSquadOrNull.BuildPoints ).Add( " / " )
-                            .AddNumberMoreReadable( relatedEntityTypeData.BuildPointCostForPerSecondConstruction )
-                            .Add( ")  " ); ;
+                    buffer.Add( "（进度：" ).AddNumberMoreReadable( relatedSquadOrNull.BuildPoints ).Add( " / " )
+                        .AddNumberMoreReadable( relatedEntityTypeData.BuildPointCostForPerSecondConstruction )
+                        .Add( "）  " ); ;
                     }
                 }
 
@@ -3669,16 +3668,16 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                 if ( relatedEntityTypeData.CanPassThroughEnemyForcefields )
                 {
                     if ( detailLevel >= TooltipDetail.Full )
-                        buffer.Add( "<color=#f25e1c>FORCEFIELD HARMONICS</color>: Can match shield harmonics to pass through enemy forcefields, although any weapons fire it does will still impact on the forcefield itself.  " );
+                        buffer.Add( "<color=#f25e1c>力场谐波</color>: 可匹配护盾谐波以穿过敌方力场，但其武器射击仍会击中力场本身。  " );
                     else
-                        buffer.Add( "<color=#f25e1c>FORCEFIELD HARMONICS</color>: Pass through enemy forcefields.  " );
+                        buffer.Add( "<color=#f25e1c>力场谐波</color>: 可穿过敌方力场。  " );
                 }
 
                 debugStage = 30531100;
 
                 if ( relatedSquadOrNull != null && relatedSquadOrNull.CurrentStateOfMatter.ShouldShowDescriptionInTooltips )
                 {
-                    buffer.Add( "<color=#ff5bf2>" ).Add( relatedSquadOrNull.CurrentStateOfMatter.DisplayName ).Add( " State Of Matter" );
+                    buffer.Add( "<color=#ff5bf2>" ).Add( relatedSquadOrNull.CurrentStateOfMatter.DisplayName ).Add( " 物质状态" );
                     if ( detailLevel >= TooltipDetail.Full )
                     {
                         buffer.Add( ": " );
@@ -3705,15 +3704,15 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                     {
                         buffer.Add( "与时空结构的奇怪交互导致此单位仅部分时间存在于正常位面" );
                         if ( relatedEntityTypeData.AlternativeStateOfMatter.CanTargetOtherUnitsInThisState )
-                            buffer.Add( ", making it invincible and invisible while it is in the other state.  " );
+                            buffer.Add( "，使其在另一种状态下无敌且隐形。  " );
                         else
-                            buffer.Add( ", making it invincible and invisible in the other state EXCEPT to other units in the same state.  " );
+                            buffer.Add( "，使其在另一种状态下无敌且隐形，但对于同样处于该状态的其他单位除外。  " );
                     }
 
                     buffer.Add( "相位切换至 " ).Add( relatedEntityTypeData.AlternativeStateOfMatter.DisplayName ).Add( " 每 " )
                         .Add( relatedEntityTypeData.PhasesToOtherAlternativeStateOfMatterAfterSeconds )
-                        .Add( " seconds, and back " )
-                        .Add( returnTime ).Add( " seconds after that.  " );
+                        .Add( " 秒，然后 " )
+                        .Add( returnTime ).Add( " 秒后切回。  " );
                 }
 
                 debugStage = 30531300;
@@ -3721,20 +3720,19 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                 if ( relatedEntityTypeData.StateOfMatterToBecomeOnWormholeExit != null )
                 {
                     int returnTime = relatedEntityTypeData.ReturnsToDefaultStateOfMatterAfterSecondsFromWormholeExit;
-                    buffer.Add( "<color=#f25e1c>PHASE WARP</color>: Phases to " ).Add( relatedEntityTypeData.StateOfMatterToBecomeOnWormholeExit.DisplayName )
-                        .Add( " whenever it passes through a wormhole" );
+                    buffer.Add( "<color=#f25e1c>相位跃迁</color>: 每当通过虫洞时，相位切换至 " ).Add( relatedEntityTypeData.StateOfMatterToBecomeOnWormholeExit.DisplayName );
                     if ( returnTime > 0 )
-                        buffer.Add( ", and then returns to normal " ).Add( returnTime ).Add( " seconds after that.  " );
+                        buffer.Add( "，然后在 " ).Add( returnTime ).Add( " 秒后恢复正常。  " );
                     else
-                        buffer.Add( ", and does not schedule a return to normal.  " );
+                        buffer.Add( "，且不计划恢复正常。  " );
                 }
 
                 debugStage = 30531400;
 
                 if ( relatedEntityTypeData.ForcedToBeThisStateOfMatterWhenOnFormerOrCurrentAIHomeworldOrBastionWorldsUnlessEnemyKingPresent != null && relatedEntityTypeData.ForcedToBeThisStateOfMatterWhenOnFormerOrCurrentAIHomeworldOrBastionWorldsUnlessEnemyKingPresent.ShouldShowDescriptionInTooltips)
                 {
-                    buffer.Add( "<color=#f25e1c>AI CORE PHASE</color>: Phases to " ).Add( relatedEntityTypeData.ForcedToBeThisStateOfMatterWhenOnFormerOrCurrentAIHomeworldOrBastionWorldsUnlessEnemyKingPresent.DisplayName )
-                        .Add( " whenever it is on a current or former AI Homeworld or AI Bastion World (unless it is in the presence of an enemy king).  " );
+                    buffer.Add( "<color=#f25e1c>AI 核心相位</color>: 当处于当前或前 AI 母星或 AI 堡垒世界时，相位切换至 " ).Add( relatedEntityTypeData.ForcedToBeThisStateOfMatterWhenOnFormerOrCurrentAIHomeworldOrBastionWorldsUnlessEnemyKingPresent.DisplayName )
+                        .Add( "（除非有敌方首领在场）。  " );
                 }
 
                 debugStage = 3060;
@@ -3870,10 +3868,10 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
 
                 if ( relatedSquadOrNull != null && relatedSquadOrNull.IsAfterANonHumanTeam_NonSim )
                 {
-                    buffer.Add( "\n<color=#ff5bf2>NOT AFTER YOU" );
+                    buffer.Add( "\n<color=#ff5bf2>不是追你" );
                     if ( detailLevel >= TooltipDetail.Full )
                     {
-                        buffer.Add( ":</color> This ship will fire on you if you fly up to it, but otherwise will ignore you.  It is quite occupied hunting " );
+                        buffer.Add( "：</color>如果你靠近该舰船它会向你开火，但除此之外它会忽略你。它正忙于追捕 " );
                         buffer.Add( relatedSquadOrNull.CalculateFactionIsChasingInsteadOfHumans() );
                         buffer.Add( ".  " );
                     } else if ( detailLevel >= TooltipDetail.Medium )

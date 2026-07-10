@@ -123,10 +123,10 @@ namespace Arcen.AIW2.External
                 case NecromancerUpgradeType.UnlockMummyType:
                 case NecromancerUpgradeType.UnlockNewShip:
                     buffer.Add(this.RelatedShip.Description).SkipLine();
-                    buffer.Add("This upgrade will grant the ability to build ").Add( this.CapIncrease, "ffa1a1" ).Add(" additional ").Add(this.ShipForCapIncrease.GetDisplayName(), "a1ffa1" ).Add(" at any necropolis");
+                    buffer.Add("此升级将允许建造 ").Add( this.CapIncrease, "ffa1a1" ).Add(" 个额外的 ").Add(this.ShipForCapIncrease.GetDisplayName(), "a1ffa1" ).Add(" 在任何死灵城");
                     if ( this.GalaxyCapIncrease != 0 )
-                        buffer.Add( " and increases the galaxy-wide cap by " ).Add( this.GalaxyCapIncrease, "ffa1a1" );
-                    buffer.Add(". The flagship of that necropolis will then be able to build ").Add(this.RelatedShip.GetDisplayName(), "a1ffa1").Add(" at any necromancer shipyard.\n");
+                        buffer.Add( " 并增加银河范围的容量 " ).Add( this.GalaxyCapIncrease, "ffa1a1" );
+                    buffer.Add("。该死灵城的旗舰随后将能在任何死灵法师船坞建造 ").Add(this.RelatedShip.GetDisplayName(), "a1ffa1").Add("。\n");
                     break;
                 default:
                     ArcenDebugging.ArcenDebugLogSingleLine("Can't display summary of NecromancerUpgrade " + this.InternalName + " of " + this.Type + " in options.", Verbosity.ShowAsError );
@@ -178,10 +178,10 @@ namespace Arcen.AIW2.External
                 InvalidReason = "null centerpice!";
                 return false;
             } else if (centerpiece.CurrentMarkLevel < this.MinFlagshipLevel) {
-                InvalidReason = "Flagship is at too low mark level. This item requires a flagship with mark level " + this.MinFlagshipLevel;
+                InvalidReason = "旗舰等级太低。此物品需要等级为 " + this.MinFlagshipLevel + " 的旗舰";
                 return false;
             } else if (centerpiece.PlanetFaction.DataByStance[FactionStance.Hostile].TotalStrength > 500) {
-                InvalidReason = "You cannot transform on a planet with significant enemy strength.";
+                InvalidReason = "你无法在拥有大量敌方兵力的星球上进行变形。";
                 return false;
             } else {
                 InvalidReason = null;

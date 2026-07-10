@@ -109,12 +109,12 @@ namespace Arcen.AIW2.External
                 case DysonUpgradeType.UnlockWightType:
                 case DysonUpgradeType.UnlockMummyType:
                     buffer.Add(this.RelatedShip.Description).SkipLine();
-                    buffer.Add("This upgrade will grant the ability to build ").Add( this.CapIncrease, "ffa1a1" ).Add(" additional ").Add(this.ShipForCapIncrease.GetDisplayName() ).Add( " at any stronghold. This will allow the flagship for that stronghold to acquire ").Add(this.RelatedShip.GetDisplayName(), "a1ffa1").Add(" when you kill suitable enemies.\n");
+                    buffer.Add("此升级将允许建造 ").Add( this.CapIncrease, "ffa1a1" ).Add(" 个额外的 ").Add(this.ShipForCapIncrease.GetDisplayName() ).Add( " 在任何据点。这将允许该据点的旗舰获得 ").Add(this.RelatedShip.GetDisplayName(), "a1ffa1").Add(" 当你击杀合适的敌人时。\n");
                     // TODO: Mention bodyguards
                     break;
                 case DysonUpgradeType.UnlockNewShip:
                     buffer.Add(this.RelatedShip.Description).SkipLine();
-                    buffer.Add("This upgrade will grant the ability to build ").Add( this.CapIncrease, "ffa1a1" ).Add(" additional ").Add(this.ShipForCapIncrease.GetDisplayName() ).Add(" at any stronghold. The flagship of that stronghold will then be able to build ").Add(this.RelatedShip.GetDisplayName(), "a1ffa1").Add(" at any dyson shipyard.\n");
+                    buffer.Add("此升级将允许建造 ").Add( this.CapIncrease, "ffa1a1" ).Add(" 个额外的 ").Add(this.ShipForCapIncrease.GetDisplayName() ).Add(" 在任何据点。该据点的旗舰随后将能在任何戴森船坞建造 ").Add(this.RelatedShip.GetDisplayName(), "a1ffa1").Add("。\n");
                     break;
                 default:
                     ArcenDebugging.ArcenDebugLogSingleLine("Can't display summary of DysonUpgrade " + this.InternalName + " of " + this.Type + " in options.", Verbosity.ShowAsError );
@@ -166,10 +166,10 @@ namespace Arcen.AIW2.External
                 InvalidReason = "null centerpice!";
                 return false;
             } else if (centerpiece.CurrentMarkLevel < this.MinFlagshipLevel) {
-                InvalidReason = "Flagship is at too low mark level. This item requires a flagship with mark level " + this.MinFlagshipLevel;
+                InvalidReason = "旗舰等级太低。此物品需要等级为 " + this.MinFlagshipLevel + " 的旗舰";
                 return false;
             } else if (centerpiece.PlanetFaction.DataByStance[FactionStance.Hostile].TotalStrength > 500) {
-                InvalidReason = "You cannot transform on a planet with significant enemy strength.";
+                InvalidReason = "你无法在拥有大量敌方兵力的星球上进行变形。";
                 return false;
             } else {
                 InvalidReason = null;

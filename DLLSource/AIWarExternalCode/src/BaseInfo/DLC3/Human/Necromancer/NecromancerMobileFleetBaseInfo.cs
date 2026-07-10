@@ -233,7 +233,7 @@ namespace Arcen.AIW2.External
                 if ( PercentSkeletonType.Count != 0 ) {
                     buffer.Add("骷髅比例：");
                     if (PercentSkeletonTypeExcess > 0) {
-                        buffer.Add(" (excess ").Add(PercentSkeletonTypeExcess).Add("%)");
+                        buffer.Add(" (超额 ").Add(PercentSkeletonTypeExcess).Add("%)");
                     }
                     buffer.NewLine();
                     DisplayTypePercentages(buffer, PercentSkeletonType);
@@ -249,7 +249,7 @@ namespace Arcen.AIW2.External
             float wightRatio = (float)this.NumWightsInFleet.Display / this.WightSoftCap.Display;
             UnityEngine.Color wightColor = EntityText.GetProportionalStrengthColor( wightRatio );
             if ( !fullDetail ) {
-                buffer.Add(" and ");
+                buffer.Add(" 和 ");
             }
             buffer.Add( this.NumWightsInFleet.Display.ToString(), wightColor ).Add( "/" ).Add( this.WightSoftCap.Display.ToString(), wightColor ).Add( " 亡灵。 " );
 
@@ -258,7 +258,7 @@ namespace Arcen.AIW2.External
                 if ( PercentWightType.Count != 0 ) {
                     buffer.Add("\n亡灵比例：");
                     if (PercentWightTypeExcess > 0) {
-                        buffer.Add(" (excess ").Add(PercentWightTypeExcess).Add("%)");
+                        buffer.Add(" (超额 ").Add(PercentWightTypeExcess).Add("%)");
                     }
                     buffer.NewLine();
                     DisplayTypePercentages(buffer, PercentWightType);
@@ -273,7 +273,7 @@ namespace Arcen.AIW2.External
                 if ( PercentMummyType.Count != 0 ) {
                     buffer.Add("木乃伊比例：");
                     if (PercentMummyTypeExcess > 0) {
-                        buffer.Add(" (excess ").Add(PercentMummyTypeExcess).Add("%)");
+                        buffer.Add(" (超额 ").Add(PercentMummyTypeExcess).Add("%)");
                     }
                     buffer.NewLine();
                     DisplayTypePercentages(buffer, PercentMummyType);
@@ -291,7 +291,7 @@ namespace Arcen.AIW2.External
                     buffer.Add( "\n舰队击杀数（自上次游戏加载以来）：\n" );
                     foreach ( KeyValuePair<GameEntityTypeData, int> kv in ShipLinesRaised )
                     {
-                        buffer.Add( "这支舰队的 " ).Add( kv.Key.DisplayName + "s", "a1ffa1" ).Add( " 已击杀 " ).Add( kv.Value, "ffa1a1" ).Add( " 个敌人。\n" );
+                        buffer.Add( "这支舰队的 " ).Add( kv.Key.DisplayName, "a1ffa1" ).Add( " 已击杀 " ).Add( kv.Value, "ffa1a1" ).Add( " 个敌人。\n" );
                     }
                 }
             }
@@ -303,7 +303,7 @@ namespace Arcen.AIW2.External
         {
             foreach ( KeyValuePair<string, int> pair in percentageTypes )
             {
-                buffer.Add(" - ").Add( pair.Value, "3344ff" ).Add("% of ").Add(pair.Key);
+                buffer.Add(" - ").Add( pair.Value, "3344ff" ).Add("% 的 ").Add(pair.Key);
                 buffer.NewLine();
             }
         }
@@ -361,8 +361,8 @@ namespace Arcen.AIW2.External
         }
 
         #region IFleetTransforms
-        string IFleetTransforms.DisplayName { get { return "Flagship"; } }
-        public string NoTransformsText { get { return "No flagship blueprints available."; } }
+        string IFleetTransforms.DisplayName { get { return "旗舰"; } }
+        public string NoTransformsText { get { return "没有可用的旗舰蓝图。"; } }
 
         bool IFleetTransforms.HasAnyTransforms {
             get {

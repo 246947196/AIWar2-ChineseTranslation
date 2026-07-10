@@ -175,28 +175,25 @@ namespace Arcen.AIW2.External
                     }
                 }
                 if ( data.Destination != null )
-                    Buffer.Add( "En route to " ).Add( data.Destination.ToStringWithPlanet() ).Add( "\n" );
+                    Buffer.Add( "前往 " ).Add( data.Destination.ToStringWithPlanet() ).Add( "\n" );
                 Planet destPlanet = World_AIW2.Instance.GetPlanetByIndex( data.DZConstructorTargetPlanetIndex );
                 debugCode = 500;
                 if ( data.Destination != null )
-                    Buffer.Add( "Off to " ).Add( data.Destination.TypeData.GetDisplayName(), "cddcdc" ).Add( " on " ).Add( data.Destination.GetPlanetName_Safe(), "066006" ).Add( "\n" );
+                    Buffer.Add( "前往 " ).Add( data.Destination.TypeData.GetDisplayName(), "cddcdc" ).Add( " 在 " ).Add( data.Destination.GetPlanetName_Safe(), "066006" ).Add( "\n" );
                 if ( data.SecondaryDestination != null )
-                    Buffer.Add( "\tSecondary stopoff destination: " ).Add( data.SecondaryDestination.TypeData.GetDisplayName(), "cddcdc" ).Add( " on " ).Add( data.SecondaryDestination.GetPlanetName_Safe(), "066006" ).Add( "\n" );
+                    Buffer.Add( "\t次级中途目的地：" ).Add( data.SecondaryDestination.TypeData.GetDisplayName(), "cddcdc" ).Add( " 在 " ).Add( data.SecondaryDestination.GetPlanetName_Safe(), "066006" ).Add( "\n" );
 
                 else if ( destPlanet != null && data.Unit != null )
                 {
-                    string article = "a ";
-                    if ( ArcenStrings.DoesStringStartWithVowel( data.Unit.GetDisplayName() ) )
-                        article = "an ";
-                    Buffer.Add( "This unit is en route to build " ).Add( article );
+                    Buffer.Add( "该单位正在前往建造 " );
                     if ( data.Resource != DZResource.None )
                         Buffer.Add( data.Unit.GetDisplayName(), DarkZenithFactionBaseInfo.ResourceColour[data.Resource] );
                     else
                         Buffer.Add( data.Unit.GetDisplayName(), "cddcdc" );
                     if ( destPlanet == RelatedEntityOrNull.Planet )
-                        Buffer.Add( " on this planet." );
+                        Buffer.Add( " 在本星球。" );
                     else
-                        Buffer.Add( " on " ).Add( destPlanet.Name, "066006" );
+                        Buffer.Add( " 在 " ).Add( destPlanet.Name, "066006" );
                     Buffer.Add( "\n" );
                 }
                 // else if ( destPlanet != null && RelatedEntityOrNull.Planet != destPlanet && RelatedEntityOrNull.TypeData.IsMobile )

@@ -43,16 +43,16 @@ namespace Arcen.AIW2.External
             try
             {
                 debugCode = 100;
-                tooltipBuffer.Add( $"The Neinzul Wild Hives are slowly taking over all resources in the galaxy.\n\n" );
+                tooltipBuffer.Add( $"奈祖尔野生蜂巢正在缓慢占领银河系中的所有资源。\n\n" );
 
-                tooltipBuffer.Add( $"Player territory is currently {GetPlayerPerc( Data )}% Infected.\n\n" );
+                tooltipBuffer.Add( $"玩家领土目前感染程度为 {GetPlayerPerc( Data )}%。\n\n" );
 
-                tooltipBuffer.Add( $"Galaxy is currently {GetGalaxyPerc( Data )}% Infected.\n\n" );
+                tooltipBuffer.Add( $"银河系目前感染程度为 {GetGalaxyPerc( Data )}%。\n\n" );
 
                 if ( GetClanlings( Data ) > 0 )
                 {
                     debugCode = 150;
-                    tooltipBuffer.Add( $"There are currently {GetClanlings( Data )} Clanlings in our territory." );
+                    tooltipBuffer.Add( $"我们领土内目前有 {GetClanlings( Data )} 个族人。" );
                 }
             }
             catch ( Exception e )
@@ -79,13 +79,13 @@ namespace Arcen.AIW2.External
                 debugStage = 10;
                 Image.UpdateWith( icon, true, "WildHives" );
                 ArcenDoubleCharacterBuffer buffer = SubTexts[0].Text.StartWritingToBuffer();
-                buffer.Add( "Infested" );
+                buffer.Add( "感染" );
                 SubTexts[0].Text.FinishWritingToBuffer();
                 buffer = SubTexts[1].Text.StartWritingToBuffer();
                 debugStage = 20;
-                buffer.Add( $"Playr: {GetPlayerPerc( Data )}%\n" );
+                buffer.Add( $"玩家：{GetPlayerPerc( Data )}%\n" );
                 debugStage = 30;
-                buffer.Add( $"Galxy: {GetGalaxyPerc( Data )}%" );
+                buffer.Add( $"银河系：{GetGalaxyPerc( Data )}%" );
                 debugStage = 40;
                 SubTexts[1].Text.FinishWritingToBuffer();
             }

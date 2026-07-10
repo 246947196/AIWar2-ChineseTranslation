@@ -64,7 +64,7 @@ namespace Arcen.AIW2.External
                             tooltipBuffer.Add("您可见的舰船：\n");
                         anyPrinted = true;
                         tooltipBuffer.Add("\t").AddShipIconInline(entity.TypeData,World_AIW2.Instance.GetLocalPlayerFactionOrNaturalObjectsNeverNull()).Add(" ");
-                        tooltipBuffer.Add(entity.TypeData.GetDisplayName()).Add(" on ").Add(entity.Planet.Name, faction.FactionCenterColor.ColorHexBrighter).Add("\n");
+                        tooltipBuffer.Add(entity.TypeData.GetDisplayName()).Add(" 在 ").Add(entity.Planet.Name, faction.FactionCenterColor.ColorHexBrighter).Add("\n");
                     }
                 }
                 if (!anyPrinted )
@@ -167,7 +167,7 @@ namespace Arcen.AIW2.External
                     if ( entity.GetShouldBeVisibleBasedOnPlanetIntel() )
                     {
                         Faction faction = entity.Planet.GetControllingOrInfluencingFaction();
-                        tooltipBuffer.Add("\t").Add(entity.TypeData.GetDisplayName()).Add(" on ").Add(entity.Planet.Name, faction.FactionCenterColor.ColorHexBrighter).Add("\n");
+                        tooltipBuffer.Add("\t").Add(entity.TypeData.GetDisplayName()).Add(" 在 ").Add(entity.Planet.Name, faction.FactionCenterColor.ColorHexBrighter).Add("\n");
                     }
                 }
             }

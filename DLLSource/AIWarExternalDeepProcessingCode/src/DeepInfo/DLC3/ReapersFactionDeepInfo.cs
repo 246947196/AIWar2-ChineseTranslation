@@ -116,7 +116,7 @@ namespace Arcen.AIW2.External
                  !controllingFaction.FactionIsDefeated)
             {
                 //Also make an AI cuendillar drill
-                spawningBuffer.Add("The AI is now drilling the Cuendillar Planetoid on ").Add(planetToSpawn.Name, planetToSpawn.GetControllingFaction().FactionCenterColor.ColorHexBrighter).Add(".");
+                spawningBuffer.Add("AI 正在 ").Add(planetToSpawn.Name, planetToSpawn.GetControllingFaction().FactionCenterColor.ColorHexBrighter).Add(" 上钻探库恩达小行星。");
                 GameEntityTypeData drillTypeData = GameEntityTypeDataTable.Instance.GetRowByName( "AICuendillarDrill" );
                 ArcenPoint spawnLocation = planetoid.Planet.GetSafePlacementPoint_AroundDesiredPointVicinity( Context, drillTypeData, planetoid.WorldLocation, FInt.FromParts( 0, 100 ), FInt.FromParts( 0, 150 ) );
                 PlanetFaction pFaction = planetToSpawn.GetPlanetFactionForFaction( controllingFaction );
@@ -163,7 +163,7 @@ namespace Arcen.AIW2.External
             GameEntity_Squad planetoid = GameEntity_Squad.CreateNew_ReturnNullIfMPClient( pFaction, planetoidTypeData, 1,
                                                                                      pFaction.Faction.LooseFleet, 0, spawnLocation, Context, "Reaper-SpawnPlanetoides" );
             spawningBuffer.Clear();
-            spawningBuffer.Add("A new Cuendillar Planetoid is appearing on ").Add(planetToSpawn.Name, planetToSpawn.GetControllingFaction().FactionCenterColor.ColorHexBrighter).Add(".");
+            spawningBuffer.Add("一个新的库恩达小行星正在 ").Add(planetToSpawn.Name, planetToSpawn.GetControllingFaction().FactionCenterColor.ColorHexBrighter).Add(" 上出现。");
 
             World_AIW2.Instance.QueueChatMessageOrCommand( spawningBuffer.GetStringAndResetForNextUpdate(),
                         ChatType.LogToCentralChat, "", null );
@@ -209,7 +209,7 @@ namespace Arcen.AIW2.External
                     if ( debug )
                     ArcenDebugging.LogSingleLine("exo strength " + exoStrength, Verbosity.DoNotShow );
                     ExoOptions options = ExoOptions.CreateWithDefaults( ExoTargets, exoStrength, null, AttachedFaction );
-                    options.exoText = "The AI has detected an incoming Lunar Invasion.";
+                    options.exoText = "AI 已探测到即将到来的月球入侵。";
                     ExoGalacticAttackManager.SendExoGalacticAttack( options, Context );
 
                 }
@@ -584,14 +584,14 @@ namespace Arcen.AIW2.External
                 if ( data.CuendillarRemaining == 0 )
                 {
                     //out of cuendillar, just despawn.
-                    World_AIW2.Instance.QueueChatMessageOrCommand( "The Chrysalis on " + squad.Planet.Name + " has destabilized due to lack of cuendillar, and collapses.",
+                    World_AIW2.Instance.QueueChatMessageOrCommand( squad.Planet.Name + " 上的茧因缺乏库恩达而失稳，已崩溃。",
                         ChatType.LogToCentralChat, "", null );
 
                     squad.Despawn(Context, true, InstancedRendererDeactivationReason.AFactionJustWarpedMeOut);
                 }
                 if ( data.ChrysalisHatchTime <= World_AIW2.Instance.GameSecond )
                 {
-                    World_AIW2.Instance.QueueChatMessageOrCommand( "The Chrysalis on " + squad.Planet.Name + " has hatched!",
+                    World_AIW2.Instance.QueueChatMessageOrCommand( squad.Planet.Name + " 上的茧已孵化！",
                         ChatType.LogToCentralChat, "", null );
 
                     HatchChrysalis ( squad, data, BaseInfo.Difficulty, Context );

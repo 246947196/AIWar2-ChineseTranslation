@@ -16,7 +16,7 @@ namespace Arcen.AIW2.External
             //in the lobby
             if ( World_AIW2.Instance.InSetupPhase ) 
             {
-                buffer.Add("The Darkness Rises");
+                buffer.Add("黑暗崛起");
                 return;
             }
 

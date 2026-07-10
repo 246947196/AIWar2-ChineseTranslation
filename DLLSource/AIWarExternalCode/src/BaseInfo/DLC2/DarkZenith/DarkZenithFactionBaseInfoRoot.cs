@@ -816,7 +816,7 @@ namespace Arcen.AIW2.External
                     }
                 }
                 if ( !hasTerminus )
-                    return "No " + ResourceFancyName[kv.Key] + " terminus";
+                    return "没有 " + ResourceFancyName[kv.Key] + " 终端";
             }
             return null;
         }

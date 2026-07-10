@@ -413,19 +413,19 @@ namespace Arcen.AIW2.External
             switch ( reason )
             {
               case SpireCityBlockingReason.OnSamePlanetAsOtherCity:
-                output = "On same planet as other city";
+                output = "与其他尖塔城市在同一星球";
                 break;
               case SpireCityBlockingReason.TooNearOtherCity:
-                output = "Too near other city";
+                output = "离其他尖塔城市太近";
                 break;
               case SpireCityBlockingReason.IsAIHomeworld:
-                output = "Is AI Homeworld";
+                output = "是 AI 母星";
                 break;
               case SpireCityBlockingReason.RelicCannotLeaveInitialPlanet:
-                output = "Relic Cannot Leave Initial Planet";
+                output = "遗物无法离开初始星球";
                 break;
               case SpireCityBlockingReason.IsAIBastionWorld:
-                output = "Is AI Bastion World";
+                output = "是 AI 堡垒世界";
                 break;
               default:
                 output = "Unknown, " + reason;
@@ -640,7 +640,7 @@ namespace Arcen.AIW2.External
                 debugStage = 300;
                 if ( Instance == null )
                 {
-                    tooltipBuffer.Add( "Fall Spire Faction data is null!  Please unpause to see deails." );
+                    tooltipBuffer.Add( "堕落尖塔派系数据为空！请取消暂停查看详情。" );
                     return;
                 }
 
@@ -648,27 +648,27 @@ namespace Arcen.AIW2.External
                 if ( canBeUpgraded )
                 {
                     debugStage = 1100;
-                    tooltipBuffer.Add( "Congratulations!  You can upgrade the spire city " ).Add( cityFleet.GetName() ).Add( " on " ).Add( city.GetPlanetName_Safe() );
-                    tooltipBuffer.Add( " to mark " ).Add( (cityFleet.AddedMarkLevelsForFleet_FromScience + 2) ).Add( "\n" );
-                    tooltipBuffer.Add( "Bear in mind that once you DO upgrade it, if there are other cities that you can currently upgrade, they may cease being eligible.  Choose which city to upgrade wisely.\n" );
-                    tooltipBuffer.Add( "Criteria met because:\n<size=80%>" );
+                    tooltipBuffer.Add( "恭喜！您可以升级尖塔城市 " ).Add( cityFleet.GetName() ).Add( " 在 " ).Add( city.GetPlanetName_Safe() );
+                    tooltipBuffer.Add( " 到等级 " ).Add( (cityFleet.AddedMarkLevelsForFleet_FromScience + 2) ).Add( "\n" );
+                    tooltipBuffer.Add( "请注意，一旦您升级了它，如果还有其他可以升级的城市，它们可能会失去资格。请明智选择升级哪个城市。\n" );
+                    tooltipBuffer.Add( "条件满足因为：\n<size=80%>" );
 
-                    tooltipBuffer.Add( "  PASS: City center is not crippled or otherwise nonfunctional." );
+                    tooltipBuffer.Add( "  通过：城市中心未瘫痪或功能正常。" );
                 }
                 else
                 {
                     debugStage = 2000;
-                    tooltipBuffer.Add( "The spire city " + cityFleet.GetName() ).Add( " cannot yet be upgraded.\n<size=80%>" );
+                    tooltipBuffer.Add( "尖塔城市 " + cityFleet.GetName() ).Add( " 尚无法升级。\n<size=80%>" );
 
                     if ( city.CurrentMarkLevel > 6 )
                     {
-                        tooltipBuffer.Add( "  FAIL: City is already as upgraded as possible!\n" );
+                        tooltipBuffer.Add( "  失败：城市已经升级到最高等级！\n" );
                         tooltipBuffer.Add( "</size>" );
                         return;
                     }
 
                     if ( city.GetIsCrippled() || city.GetIsNonFunctional() )
-                        tooltipBuffer.Add( "  FAIL: City center is crippled or otherwise nonfunctional.\n" );
+                        tooltipBuffer.Add( "  失败：城市中心已瘫痪或功能不正常。\n" );
                 }
 
 
@@ -676,11 +676,11 @@ namespace Arcen.AIW2.External
                 int requiredUnusedPlanetsForUpgrade = GetRequiredNonSpirePlayerPlanets( city );
                 debugStage = 4100;
                 if ( nonSpirePlanetsOwnedByPlayers >= requiredUnusedPlanetsForUpgrade )
-                    tooltipBuffer.Add( "  PASS: " );
+                    tooltipBuffer.Add( "  通过：" );
                 else
-                    tooltipBuffer.Add( "  FAIL: " );
+                    tooltipBuffer.Add( "  失败：" );
                 debugStage = 4200;
-                tooltipBuffer.Add( "There are " ).Add( nonSpirePlanetsOwnedByPlayers ).Add( " non-spire-city human planets out of the required " ).Add( requiredUnusedPlanetsForUpgrade ).Add( ".\n" );
+                tooltipBuffer.Add( "玩家拥有 " ).Add( nonSpirePlanetsOwnedByPlayers ).Add( " 个非尖塔城市的人类星球，需要 " ).Add( requiredUnusedPlanetsForUpgrade ).Add( " 个。\n" );
 
                 int othersOfMyMark = 0;
                 List<SafeSquadWrapper> cities = Instance.SortedSpireCities.GetDisplayList(); //this is ui only, so fine to use this
@@ -701,18 +701,18 @@ namespace Arcen.AIW2.External
 
                 debugStage = 5000;
                 if ( othersOfMyMark >= 2 )
-                    tooltipBuffer.Add( "  PASS: " );
+                    tooltipBuffer.Add( "  通过：" );
                 else
-                    tooltipBuffer.Add( "  FAIL: " );
+                    tooltipBuffer.Add( "  失败：" );
                 debugStage = 5100;
-                tooltipBuffer.Add( "There are " ).Add( othersOfMyMark ).Add( " out of the required 2 other mark " ).Add( city.CurrentMarkLevel ).Add( " spire cities beyond this one.\n" );
+                tooltipBuffer.Add( "除本城市外，还有 " ).Add( othersOfMyMark ).Add( " 个其他等级 " ).Add( city.CurrentMarkLevel ).Add( " 的尖塔城市，需要 2 个。\n" );
 
                 debugStage = 5200;
                 int remainingCitySockets = cityFleet.CalculateRemainingCitySockets();
                 if ( remainingCitySockets <= 0 )
-                    tooltipBuffer.Add( "  PASS: All of the " ).Add( city.TypeData.NameForCitySockets_Plural ).Add( " of this planet are currently in use.\n" );
+                    tooltipBuffer.Add( "  通过：该星球的所有 " ).Add( city.TypeData.NameForCitySockets_Plural ).Add( " 目前都已使用。\n" );
                 else
-                    tooltipBuffer.Add( "  FAIL: There are still " ).Add( remainingCitySockets ).Add( " " ).Add( city.TypeData.NameForCitySockets_Plural ).Add( " on this planet that need to be used before an upgrade is possible.\n" );
+                    tooltipBuffer.Add( "  失败：该星球上还有 " ).Add( remainingCitySockets ).Add( " 个 " ).Add( city.TypeData.NameForCitySockets_Plural ).Add( " 需要先使用才能升级。\n" );
 
                 tooltipBuffer.Add( "</size>\n" );
             }
@@ -955,7 +955,7 @@ namespace Arcen.AIW2.External
             var str = fac.GetStringValueForCustomFieldOrDefaultValue( "StartingFleet", false );
             if ( str == "RandomCombatFleet" )
             {
-                buffer.Add( "Random", "ffd965" ).Add( " Fleet" );
+                buffer.Add( "随机", "ffd965" ).Add( " 舰队" );
                 goto done;
             }
 

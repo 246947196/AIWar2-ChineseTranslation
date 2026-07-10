@@ -400,17 +400,17 @@ namespace Arcen.AIW2.External
                 }
 
                 buffer.AddObjectiveEntityHeader( entity, color );
-                buffer.Add( "Reducing AI Progress is critical to your survival. Destroying all of these structures (including this one on " ).Add( entity.GetPlanetName_Safe(), color ).Add( ") will reduce AI Progress by " ).Add( "" + -entity.TypeData.AIPOnDeathWhenNoneLeft, ObjectiveColors.Reward ).Add( ".  " );
+                buffer.Add( "减少AI进程对你的生存至关重要。摧毁所有此类建筑（包括" ).Add( entity.GetPlanetName_Safe(), color ).Add( "上的这个）将使AI进程减少" ).Add( "" + -entity.TypeData.AIPOnDeathWhenNoneLeft, ObjectiveColors.Reward ).Add( "。" );
                 if ( numEntitiesLeft == 1 )
-                    buffer.Add( "This is the last one; destroying it will trigger the AI progress reduction." );
+                    buffer.Add( "这是最后一个；摧毁它将触发AI进程减少。" );
                 else
-                    buffer.Add( "You must destroy all " ).Add( numEntitiesLeft, ObjectiveColors.Reward ).Add( " remaining of these structures before the AI progress decreases." );
+                    buffer.Add( "你必须摧毁所有剩余" ).Add( numEntitiesLeft, ObjectiveColors.Reward ).Add( "个此类建筑后，AI进程才会减少。" );
             }
             else
             {
                 buffer.AddObjectiveEntityHeader( entity, color );
-                buffer.Add( "Reducing AI Progress is critical to your survival. Destroying it on " + entity.GetPlanetName_Safe() +
-                           " will reduce AI Progress by " ).Add( "" + -entity.TypeData.AIPOnDeath, ObjectiveColors.Reward ).Add( ".  " ); //generic case
+                buffer.Add( "减少AI进程对你的生存至关重要。摧毁" + entity.GetPlanetName_Safe() +
+                           "上的它将使AI进程减少" ).Add( "" + -entity.TypeData.AIPOnDeath, ObjectiveColors.Reward ).Add( "。" );
             }
         }
     }
@@ -431,7 +431,7 @@ namespace Arcen.AIW2.External
             string color = entity.GetFactionCenterColorHexBrighter_Safe();
 
             buffer.AddObjectiveEntityHeader( entity, color );
-            buffer.Add( "Cross Planet Attacks are powerful surges of AI ships attacking your planets. Destroying all of these structures (including this one on " ).Add( entity.GetPlanetName_Safe(), color ).Add( ") will weaken the next CPA.  " );
+            buffer.Add( "跨星球攻击是AI舰船攻击你星球的强大浪潮。摧毁所有此类建筑（包括" ).Add( entity.GetPlanetName_Safe(), color ).Add( "上的这个）将削弱下一次CPA。" );
         }
     }
 
@@ -451,18 +451,18 @@ namespace Arcen.AIW2.External
             if ( Objective.RelatedEntity1.GetFactionTypeSafe() == FactionType.Player && Objective.RelatedEntity1.TypeData.AIPOnDeath > 0 )
             {
                 buffer.AddObjectiveEntityHeader( Objective.RelatedEntity1, Objective.RelatedEntity1.Planet.GetControllingFaction().FactionCenterColor.ColorHexBrighter );
-                buffer.Add( "Reducing AI Progress is critical to your survival. If the AI destroys it on " ).Add( Objective.RelatedEntity1.GetPlanetName_Safe(), Objective.RelatedEntity1.Planet.GetControllingFaction().FactionCenterColor.ColorHexBrighter ).Add( " then AIP will rise by " ).Add( Objective.RelatedEntity1.TypeData.AIPOnDeath, ObjectiveColors.AIP ).Add( ". " );
+                buffer.Add( "减少AI进程对你的生存至关重要。如果AI摧毁了" ).Add( Objective.RelatedEntity1.GetPlanetName_Safe(), Objective.RelatedEntity1.Planet.GetControllingFaction().FactionCenterColor.ColorHexBrighter ).Add( "上的它，则AIP将增加" ).Add( Objective.RelatedEntity1.TypeData.AIPOnDeath, ObjectiveColors.AIP ).Add( "。" );
                 if ( Objective.RelatedEntity1.TypeData.GetHasTag( "GeneratesBonusHunterShips" ) )
-                    buffer.Add( "The AI sees this as a valuable objective and may dedicate significant hunter fleet resources to its destruction.  " );
+                    buffer.Add( "AI视此为有价值的目標，可能会投入大量猎杀舰队资源来摧毁它。" );
             }
             else
             {
                 //you haven't captured this yet
                 buffer.AddObjectiveEntityHeader( Objective.RelatedEntity1, Objective.RelatedEntity1.Planet.GetControllingFaction().FactionCenterColor.ColorHexBrighter );
-                buffer.Add( "Reducing AI Progress is critical to your survival. Capturing and holding it on " ).Add( Objective.RelatedEntity1.GetPlanetName_Safe(), Objective.RelatedEntity1.Planet.GetControllingFaction().FactionCenterColor.ColorHexBrighter ).Add( " will reduce AI Progress by " ).Add( "" + -Objective.RelatedEntity1.TypeData.AIPToClaim, ObjectiveColors.Reward ).Add( ".  " );
+                buffer.Add( "减少AI进程对你的生存至关重要。占领并守住" ).Add( Objective.RelatedEntity1.GetPlanetName_Safe(), Objective.RelatedEntity1.Planet.GetControllingFaction().FactionCenterColor.ColorHexBrighter ).Add( "将使AI进程减少" ).Add( "" + -Objective.RelatedEntity1.TypeData.AIPToClaim, ObjectiveColors.Reward ).Add( "。" );
                 if ( Objective.RelatedEntity1.TypeData.AIPOnDeath > 0 )
                 {
-                    buffer.Add( "However, the AI will start trying to destroy this structure after you have captured it.  If they succeed, then the AI Progress  will rise by " ).Add( Objective.RelatedEntity1.TypeData.AIPOnDeath, ObjectiveColors.AIP ).Add( ".  " );
+                    buffer.Add( "然而，AI会在你占领后开始试图摧毁此建筑。如果成功，AI进程将增加" ).Add( Objective.RelatedEntity1.TypeData.AIPOnDeath, ObjectiveColors.AIP ).Add( "。" );
                 }
             }
         }
@@ -483,8 +483,8 @@ namespace Arcen.AIW2.External
         {
             //GameEntity_Squad entity = Objective.RelatedEntity1;
             buffer.AddObjectiveEntityHeader( Objective.RelatedEntity1, Objective.RelatedEntity1.Planet.GetControllingFaction().FactionCenterColor.ColorHexBrighter );
-            buffer.Add( "Reducing AI Progress is critical to your survival. Hacking it on " ).Add( Objective.RelatedEntity1.GetPlanetName_Safe(), Objective.RelatedEntity1.Planet.GetControllingFaction().FactionCenterColor.ColorHexBrighter )
-                .Add( " will reduce AI Progress" );
+            buffer.Add( "减少AI进程对你的生存至关重要。入侵" ).Add( Objective.RelatedEntity1.GetPlanetName_Safe(), Objective.RelatedEntity1.Planet.GetControllingFaction().FactionCenterColor.ColorHexBrighter )
+                .Add( "上的它将减少AI进程" );
         }
     }
 
@@ -513,27 +513,27 @@ namespace Arcen.AIW2.External
                 if ( Objective.RelatedEntity1.TypeData.GetHasTag( "DysonSphere" ) )
                 {
                     debugStage = 200;
-                    buffer.AddObjectiveEntityHeader( Objective.RelatedEntity1, Objective.RelatedEntity1.GetFactionCenterColorHexBrighter_Safe() ).Add( "Hacking it on " + Objective.RelatedEntity1.GetPlanetName_Safe() + " will grant you a new ship type. Hacking the Dyson Sphere is dangerous and should not be done lightly." );
+                    buffer.AddObjectiveEntityHeader( Objective.RelatedEntity1, Objective.RelatedEntity1.GetFactionCenterColorHexBrighter_Safe() ).Add( "入侵" + Objective.RelatedEntity1.GetPlanetName_Safe() + "上的它将获得一种新舰船类型。入侵戴森球很危险，不应轻率行事。" );
                 }
                 else if ( Objective.RelatedEntity1.TypeData.GetHasTag( "VengeanceGenerator" ) )
                 {
                     debugStage = 300;
-                    buffer.AddObjectiveEntityHeader( Objective.RelatedEntity1, Objective.RelatedEntity1.GetFactionCenterColorHexBrighter_Safe() ).Add( "Hacking it on " + Objective.RelatedEntity1.GetPlanetName_Safe() + " will grant you a new ship type. Hacking the Dark Spire is extremely dangerous and should not be done lightly." );
+                    buffer.AddObjectiveEntityHeader( Objective.RelatedEntity1, Objective.RelatedEntity1.GetFactionCenterColorHexBrighter_Safe() ).Add( "入侵" + Objective.RelatedEntity1.GetPlanetName_Safe() + "上的它将获得一种新舰船类型。入侵黑暗尖塔极其危险，不应轻率行事。" );
                 }
                 else
                 {
                     debugStage = 400;
                     Faction controllingOrInfluencing = Objective.RelatedEntity1.Planet.GetControllingOrInfluencingFaction();
                     debugStage = 410;
-                    buffer.AddObjectiveEntityHeader( Objective.RelatedEntity1, Objective.RelatedEntity1.GetFactionCenterColorHexBrighter_Safe() ).Add( "Hacking it on " )
-                        .Add( Objective.RelatedEntity1.GetPlanetName_Safe(), controllingOrInfluencing == null ? "ffffff" : controllingOrInfluencing.FactionCenterColor.ColorHexBrighter ).Add( " will grant you " );
+                    buffer.AddObjectiveEntityHeader( Objective.RelatedEntity1, Objective.RelatedEntity1.GetFactionCenterColorHexBrighter_Safe() ).Add( "入侵" )
+                        .Add( Objective.RelatedEntity1.GetPlanetName_Safe(), controllingOrInfluencing == null ? "ffffff" : controllingOrInfluencing.FactionCenterColor.ColorHexBrighter ).Add( "上的它将获得" );
 
                     debugStage = 600;
                     if ( Objective.RelatedEntity1.ShipGrantsList.Count > 1 )
                     {
                         debugStage = 700;
                         if ( Objective.RelatedEntity1.TypeData.GrantsStuffToBeAddedToPlayerFleets )
-                            buffer.Add( "one of the following (you choose one):\n " );
+                            buffer.Add( "以下之一（你可选择一种）：\n " );
                     }
                     debugStage = 800;
                     ShipLineEntry entry = null;
@@ -609,8 +609,8 @@ namespace Arcen.AIW2.External
                 buffer.Add( "Bug in ship granter: null entity" );
                 return;
             }
-            buffer.Add( "Hacking the " ).Add( Objective.RelatedEntity1.TypeData.GetDisplayName(), Objective.RelatedEntity1.GetFactionCenterColorHexBrighter_Safe() ).Add( "  on " ).Add( Objective.RelatedEntity1.GetPlanetName_Safe(), Objective.RelatedPlanet1.GetControllingFaction().FactionCenterColor.ColorHexBrighter )
-                .Add( " will double the ship cap on one of the lines of the fleet doing the hack (you choose which line)." );
+            buffer.Add( "入侵" ).Add( Objective.RelatedEntity1.TypeData.GetDisplayName(), Objective.RelatedEntity1.GetFactionCenterColorHexBrighter_Safe() ).Add( "上的" ).Add( Objective.RelatedEntity1.GetPlanetName_Safe(), Objective.RelatedPlanet1.GetControllingFaction().FactionCenterColor.ColorHexBrighter )
+                .Add( "将使执行入侵的舰队中的一条舰船线容量翻倍（你可选择哪条线）。" );
         }
     }
 }
