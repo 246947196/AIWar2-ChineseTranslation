@@ -132,6 +132,18 @@ MSBuild：`C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe`
 
 **部署**：`deploy.ps1` 会自动复制这些文件覆盖游戏目录。
 
+## QuickStarts2 重复战役排查记录 (2026-07-10)
+
+**问题**：死灵法师 QuickStarts 出现重复战役。
+
+**根因**：`PopulateQuickstartGroups()` 从 `GameData/QuickStarts2/` 和 `Expansions/<exp>/QuickStarts2/` 两处加载。死灵法师 QuickStarts 同时存在于：
+- `GameData/QuickStarts2/4-Necromancer Intro/`（基础目录）
+- `Expansions/3_The_Neinzul_Abyss/QuickStarts2/4-Necromancer Intro/`（扩展目录）
+
+两目录有相同的 `_folder.tooltip`（`#showas:死灵法师入门`），被加入同一分组，导致同一组有两份目录、战役翻倍。
+
+**修复**：删除了重复的 `GameData/QuickStarts2/4-Necromancer Intro/`（扩展已提供相同内容）。
+
 ## 最近补译记录 (2026-07-10 第2批)
 
 2026-07-10 补译了 9 个 C# 文件，修复 AIWarExternalCode 遗漏的 ~30 条英文字符串：
