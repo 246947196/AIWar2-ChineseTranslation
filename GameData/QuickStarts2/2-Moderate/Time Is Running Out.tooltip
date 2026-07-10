@@ -1,13 +1,11 @@
 #sortorder:8
 #showas:时不我待
-A more specialist scenario. Still mainly you and the AI, and it's set to difficulty 7.
-This difficulty is good for someone who has spent some time in AI War 2.
+一个更专门的场景。主要仍是你和 AI，难度设为 7，适合已经在 AI War 2 中花了不少时间的玩家。
 
-This is on the "realistic" map type, with 80 planets. Quadratic AI Type, which with every wave it sends, doubles the minimum amount of strength for the next. This eventually leads to very, very large waves, that thankfully take a long time to "charge".
-Your starting fleet is set to "Doorkicker," which is focused a bit on breaching tactics, with some crowd control and long range firepower to finish it off.
+地图类型为「现实」，80 颗星球。AI 类型为二次函数型，每次发送一波攻击后，下一波的最低强度翻倍。最终会导致非常非常庞大的波次，幸好这些波次需要很长时间来「充能」。你的初始舰队为「破门」型，侧重突破战术，辅以群体控制和远程火力。
 
-There are no real factions here, just additions to the AI:
+这里没有真正的派系，只有 AI 的附加内容：
 
-Risk Analyzers, which every hour increase the AI Progress (but can be captured to instead reduce), and over time will cause an "Exo-Galactic Strike" to occur - large AI assault forces that will try to either recapture lost Analyzers, or head to your Homeworld, stopping for nothing. If an Analyzer is on an AI planet, it only adds a little progress to this. If it's on a neutral planet, it adds a fair bit more. If you own the planet, it adds a LOT more progress over time.
+风险分析器每小时增加 AI 进程（但可以捕获来减少），并随时间推移触发「星系外打击」——大型 AI 突击部队会试图夺回丢失的分析器，或直扑你的母星，势不可挡。如果分析器在 AI 星球上，只会增加少量进程；如果在中立星球上，增加更多；如果你拥有该星球，随着时间的推移会增加大量进程。
 
-It is also being assisted by Astro Trains, a supply network with nasty effects that trigger upon a projects completion, such as boosting the size of the next wave.
+此外还有太空列车——一个补给网络，在其项目完成时触发恶劣效果，比如增大下一波攻击的规模。

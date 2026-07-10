@@ -1,11 +1,11 @@
 #sortorder:4
 #showas:运气抽签
-This scenario can vary quite a bit in difficulty, from pretty easy to fairly difficult.  It is intended to demonstrate some of the random/roguelike options in AI War 2.  You begin with a standard Realistic galaxy of 80 planets.  That's where the normality ends though:
+这个场景的难度变化很大，从相当简单到相当困难都有可能。旨在展示 AI War 2 中的一些随机/类 Rogue 选项。你从一个标准的 80 星球现实星系开始——但正常之处仅此而已：
 
-- You'll face two difficulty-7 AIs that can be of any type, and some of them are much more challenging than others.  
-- Hidden Galaxy is on, which means that you will only be able to see the planets immediately around your own at the start and must explore to find the rest.  
-- Three Random factions have been added.  There are a variety of settings you can use to control how challenging these are;  they are all set to Moderate in this case.  They may be allies, enemies, or neutrals.  You'll need to explore to even learn what these factions are.  
-- Typically there are certain capturables close to your homeworld to ensure you get off to a reasonable start, while more powerful ones like Golems are further away.  Here, that's been randomized so anything can be found almost anywhere in the galaxy.  
-- The usual small amount of 'mark level swapping' of AI planets to add a little variance to each galaxy layout has been tripled;  you might find weak planets much further away and/or strong planets much closer.  
+- 你将面对两个难度 7 的 AI，可以是任何类型，其中一些比其他的更具挑战性。
+- 隐藏星系已开启，这意味着你一开始只能看到自己周围的星球，必须探索才能发现其余部分。
+- 添加了三个随机派系。有各种设置可控制其挑战程度；它们在此处均设为中等。它们可能是盟友、敌人或中立者。你需要探索才能了解这些派系是什么。
+- 通常你的母星附近会有某些可捕获物以确保合理的开局，而像傀儡这样更强大的物品则在更远处。在这里这些都被随机化了，几乎任何东西都可能出现在星系的任何位置。
+- 原本少量用于增加星系布局变化的 AI 星球「标记等级交换」被放大了三倍；你可能会在更远处发现弱星球，或在更近处发现强星球。
 
-May the odds be ever in your favor, Commander.  
+祝你好运，指挥官。  

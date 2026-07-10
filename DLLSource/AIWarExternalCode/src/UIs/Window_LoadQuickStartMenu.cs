@@ -857,15 +857,16 @@ namespace Arcen.AIW2.External
                 
                 if (cond == "HasDifficulty")
                 {
-                    if (Instance?.CurrentGroup.DisplayName == "Basic" )
+                    string dn = Instance?.CurrentGroup.DisplayName;
+                    if ( dn == "Basic" || dn == "基础" )
                         return false;
-                    if (Instance?.CurrentGroup.DisplayName == "Moderate" )
+                    if ( dn == "Moderate" || dn == "中等" )
                         return false;
-                    if (Instance?.CurrentGroup.DisplayName == "Harder" )
+                    if ( dn == "Harder" || dn == "困难" )
                         return false;
-                    if (Instance?.CurrentGroup.DisplayName == "Necromancer Intro" )
+                    if ( dn == "Necromancer Intro" || dn == "死灵法师入门" )
                         return false;
-                    if (Instance?.CurrentGroup.DisplayName == "Expansions Intro" )
+                    if ( dn == "Expansions Intro" || dn == "扩展包入门" )
                         return false;
                     return !string.IsNullOrEmpty(this.save.difficulty) && this.save.difficulty != "nullDiff";
                 }

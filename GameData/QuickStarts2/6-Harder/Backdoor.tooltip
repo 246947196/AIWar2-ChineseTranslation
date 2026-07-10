@@ -1,13 +1,13 @@
 #sortorder:3
 #showas:后门
-A very difficult scenario. Still mainly you and the AI, and it's set to difficulty 8.
-This difficulty is good for someone who is skilled at AI War 2.
+一个非常困难的场景。主要是你和 AI 对战，难度设定为 8。
+适合擅长 AI War 2 的玩家。
 
-This is on the "maze" map type, with 100 planets. Wormhole Master AI type, which focuses heavily on launching attacks behind your lines.
-Your starting fleet is set to "Raid," which is focused on aggression and getting far into enemy territory.
+地图类型为"迷宫"，100 颗行星。"虫洞大师"AI 类型，专注于在你的防线后方发动攻击。
+你的起始舰队设置为"突袭"，专注于侵略性作战和深入敌境。
 
-There is only one real faction here, with an extra addition to the AI:
+这里只有一个主要派系，外加一个 AI 增强：
 
-Marauders, human pirates that will occasionally appear and try to attack you, with the goal of capturing the planet to use as a base to strengthen themselves.
+掠夺者——人类海盗，偶尔出现并试图攻击你，目的是占领行星作为基地来强化自身。
 
-Risk Analyzers, which every hour increase the AI Progress (but can be captured to instead reduce), and over time will cause an "Exo-Galactic Strike" to occur - large AI assault forces that will try to either recapture lost Analyzers, or head to your Homeworld, stopping for nothing. If an Analyzer is on an AI planet, it only adds a little progress to this. If it's on a neutral planet, it adds a fair bit more. If you own the planet, it adds a LOT more progress over time.
+风险分析器——每小时增加 AI 进程（但可以被捕获来减少），随时间推移会引发"银河外打击"——大规模的 AI 突击部队，会不惜一切代价试图夺回丢失的分析器，或直奔你的母星。如果分析器在 AI 行星上，只会增加少量进程。如果在中立行星上，增加较多。如果你拥有该行星，则随时间推移增加大量进程。

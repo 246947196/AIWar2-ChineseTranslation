@@ -1,26 +1,26 @@
 #showas:核子公司
-Map: 
-- Realistic Big Circle, 80 planets in sector
+地图：
+- 真实大圆形，80 颗行星
 
-AIs:
-- Turtle Base Oriented/Defensive Only diff 777 (the main AI in this scenario)
-- Swarmer Kite/Kite diff 444 (subsidiary AI #1)
-- Zombifyier Anticipatory/Kamikaze diff 444 (subsidiary AI #2)
+AI：
+- 乌龟（基地导向/仅防御）难度 777（本场景主 AI）
+-  swarm 者（风筝/风筝）难度 444（附属 AI #1）
+- 僵尸化者（预判/神风）难度 444（附属 AI #2）
 
-AI Support:
-- Risk Analyzers (8 in sector)
-- Astro Trains strength 8
+AI 支援：
+- 风险分析器（区域内 8 个）
+- 星际火车 强度 8
 
-Neutral Factions:
-- Devourer Golem (3 in sector)
-- Zenith Trader (1 in sector)
+中立阵营：
+- 吞噬者魔像（区域内 3 个）
+- Zenith 商人（区域内 1 个）
 
-Friendly Factions:
-- Human Resistance Fighters strength 10
+友方阵营：
+- 人类抵抗军 强度 10
 
-Player Setup:
-- Raid fleet, Minelayer Defenses, Rejuvenator Factory
+玩家配置：
+- 突袭舰队、布雷防御、重生工厂
 
 ---
 
-The main AI in this scenario (7s Turtle) is the primary defensive enemy. There are two weaker subsidiary AIs, one with kiting swarms, another with aggressive zombifier units. The AIs are supported by Risk Analyzers and Astro Trains so it is important that you act quickly to take objectives. Human Resistance Fighters will often assist you in battles, you will need them! Utilize your raiding capabilities to strike critical targets and prevent the AI from snowballing.
+本场景中的主 AI（7 级乌龟）是主要的防御型敌人。有两个较弱的附属 AI，一个拥有风筝 swarm，另一个拥有激进的僵尸化单位。AI 受到风险分析器和星际火车的支援，因此快速行动夺取目标至关重要。人类抵抗军将经常在战斗中协助你，你需要他们！利用你的突袭能力打击关键目标，阻止 AI 滚雪球。

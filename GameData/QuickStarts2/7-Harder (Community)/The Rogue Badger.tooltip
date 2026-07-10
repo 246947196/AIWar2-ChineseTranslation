@@ -1,8 +1,8 @@
 #showas: rogue 獾
-This is a roguelike game. The key is that you don't know what factions exist until you encounter them.
+这是一个 rogue 类游戏。关键在于你在遭遇之前不知道存在哪些阵营。
 
-You must explore in order to know what enemies await you.
+你必须探索才能了解等待你的是什么样的敌人。
 
-Please don't load this into the Lobby or it will spoil the surprise.
+请不要在游戏大厅中加载此场景，否则会破坏惊喜。
 
-This has been modified to start with two Difficulty 7 AIs of a random type, and three pure random factions with random allegiances, and brutal, hard, and moderate impact. Your starting fleet, battlestations and support fleet are also all random.
+本场景已修改为以两个难度 7 的随机类型 AI 开局，以及三个完全随机、忠诚度随机、影响为残酷、困难和中等的阵营。你的起始舰队、战斗空间站和支援舰队也是完全随机的。
