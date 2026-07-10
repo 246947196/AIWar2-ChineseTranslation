@@ -38,7 +38,7 @@ namespace Arcen.AIW2.External
             tooltipBuffer.Clear();
             int timeTillLaunch = Data.eventTimeRemaining - World_AIW2.Instance.GameSecond;
             string color = ArcenExternalUIUtilities.GetColorForNomadMoveTime( timeTillLaunch );
-            tooltipBuffer.Add( "The " ).Add( "Dark Zenith", Data.Faction.FactionCenterColor.ColorHexBrighter ).Add( " will start their invasion in " ).AddHoursAndMinutes( timeTillLaunch, color ).Add( "." );
+            tooltipBuffer.Add( "黑暗 zenith" ).Add( "", Data.Faction.FactionCenterColor.ColorHexBrighter ).Add( " 将在 " ).AddHoursAndMinutes( timeTillLaunch, color ).Add( " 后开始入侵。" );
             Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( null, tooltipBuffer.GetStringAndResetForNextUpdate() );
             return true;
         }

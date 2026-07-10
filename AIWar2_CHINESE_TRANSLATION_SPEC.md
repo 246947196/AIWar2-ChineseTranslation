@@ -42,7 +42,7 @@ AIWar2_ChineseTranslation/
 ├── translation_snapshot.json          ← 基线快照（游戏英文原文快照）
 ├── AIWar2_CHINESE_TRANSLATION_SPEC.md ← 规范文档
 ├── AGENTS.md                          ← AI 助手上下文
-└── translated_files.txt               ← 翻译记录（弃用，被快照取代）
+└── translated_files.txt               ← 翻译记录（⚠ 已弃用，被 translation_snapshot.json 取代）
 ```
 
 ## 三、工作流程
@@ -205,7 +205,7 @@ BepInEx Preloader 在游戏程序集加载前调用 Patcher，通过 Mono.Cecil 
 
 | 项目 | 源码位置 | 汉化内容 | 编译状态 | 翻译状态 |
 |------|---------|---------|---------|---------|
-| AIWarExternalCode | DLLSource/AIWarExternalCode/src/ | 全量汉化 (~625 条字符串，涵盖 EntityText/、UIs/、Scenarios/、Hacking/、BaseInfo/、Helpers/ 等 ~30 个文件) | ✅ 0 错误 | ✅ 已完成 |
+| AIWarExternalCode | DLLSource/AIWarExternalCode/src/ | 全量汉化 (~655 条字符串，涵盖 EntityText/、UIs/、Scenarios/、Hacking/、BaseInfo/、Helpers/ 等 ~30 个文件) | ✅ 0 错误 | ✅ 已完成 |
 | AIWarExternalDeepProcessingCode | DLLSource/AIWarExternalDeepProcessingCode/src/ | 聊天消息、少量 UI 文本 | ✅ 0 错误 | ✅ 已完成 |
 | AIWarExternalVisualizationCode | DLLSource/AIWarExternalVisualizationCode/src/ | 银河地图显示模式文本 | ✅ 0 错误 | ✅ 已完成 |
 | ArcenUIAssetRedirect | DLLSource/ArcenUIAssetRedirect/src/ | arcenui AssetBundle 拦截重定向 | ✅ 0 错误 | ✅ 已完成 |
@@ -349,7 +349,7 @@ ArcenUIAssetRedirect (BepInEx 插件)
 
 | 项目 | 类型 | 文件数 | 编译状态 | 翻译状态 |
 |------|------|--------|---------|---------|
-| AIWarExternalCode | 有源码 | 600 | ✅ 0 错误 | ✅ 完成（全量 ~625 条字符串） |
+| AIWarExternalCode | 有源码 | 600 | ✅ 0 错误 | ✅ 完成（全量 ~655 条字符串） |
 | AIWarExternalDeepProcessingCode | 有源码 | 133 | ✅ 0 错误 | ✅ 完成 |
 | AIWarExternalVisualizationCode | 有源码 | 45 | ✅ 0 错误 | ✅ 完成 |
 | ArcenUIAssetRedirect | BepInEx 插件 | 1 | ✅ 0 错误 | ✅ 完成 |
@@ -364,7 +364,8 @@ ArcenUIAssetRedirect (BepInEx 插件)
 2. **只改引号内内容**：只能替换 `"..."` 内的文本，不能修改引号外的任何代码
 3. **保留插值和标签**：`$"{variable}"` 中的变量部分保持不变，`<color>` 等标签保持不变
 4. **（外部代码项目）编译验证**：翻译有源码的外部代码项目时，每翻译完一个文件后编译验证，0 错误再继续下一个。核心 DLL 走 IL 汉化（8.15），不编译，用 `ilpatch inspect` 回读验证即可。
-5. **翻译优先级**：UI 文件（src/UIs/）优先，游戏逻辑文件（BaseInfo/、Sim/ 等）通常不需要翻译
+5. **翻译优先级**：UI 文件（src/UIs/）优先，游戏逻辑文件（BaseInfo/、Sim/ 等）通常不需要翻译。但 BaseInfo/ 下的 Notifier 通报文本（如 AI Reserves、Crashing Nomad、Architrave Expansion 等）是玩家可见提示，必须翻译
+6. **检查遗漏**：翻译大型 UI 文件（如 Window_InGameHoverEntityInfo.cs 8390 行）时，需确保不遗漏任何包含玩家可见文本的区块。2026-07-10 曾发现 "Resource Multipliers After Time Being Here And Not Crippled" 区块 11 处英文字符串被遗漏
 7. **禁止中文引号**：C# 字符串中不能使用 `""`（中文左右双引号），会被编译器误认为字符串分隔符。必须用 `''`（单引号）替代。例如：`"点击'是'确认"` 而非 `"点击"是"确认"`
 8. **引号嵌套**：如果翻译文本中需要引用按钮名称或其他 UI 元素，使用 `'单引号'` 包裹，不要使用 `"双引号"`
 
@@ -654,3 +655,23 @@ AIWar2_ChineseTranslation/
 `ZO_Journal_DarkZenith.xml` 的 GameData\Configuration\Expansions 参考副本缺少结尾 `</root>` 标签，导致 XML 解析失败。修复：从 ChineseTranslation 目录的完整中文版恢复。
 
 **教训**：合并覆盖文件必须包含源文件中所有被引用的条目，不能遗漏。合并脚本不应修改非翻译属性。
+
+### 9.9 C# UI 文本补译（2026-07-10 第2批）
+
+修复 AIWarExternalCode 9 个文件中遗漏的 ~30 条英文字符串（编译通过，0 错误）：
+
+| 文件 | 遗漏内容 | 补译条数 |
+|------|---------|:--------:|
+| Window_InGameHoverEntityInfo.cs | "Resource Multipliers After Time Here And Not Crippled" 区块（含 CLARIFICATION x3、Cannot be claimed x1） | 12 |
+| Window_PrototypeInGameHoverEntityInfo.cs | "Cannot be claimed for another..." | 1 |
+| EntityText.Attr.cs | "Cannot be claimed for another..." | 1 |
+| AIPChange.cs | "At ... AIP changed" | 1 |
+| PublicCrashingNomadPlanetNotifier.cs | 撞击倒计时、星球移动提示 | 2 |
+| PublicAIReservesNotifier.cs | AI 预备队虫洞提示 | 1 |
+| PublicDZInvasionNotifier.cs | Dark Zenith 入侵提示 | 1 |
+| PublicImperialSpireNotifier.cs | 帝国尖塔到达提示 | 1 |
+| PublicArchitraveExpansionNotifier.cs | 天顶拱门扩张模式描述 | 6 |
+
+**根因**：`Window_InGameHoverEntityInfo.cs`（8390 行）中 "Resource Multipliers" 区块在大规模翻译时未被覆盖。
+
+**教训**：翻译大型 UI 文件（>5000 行）时，必须逐区块检查确保无遗漏。BaseInfo/ 下的 Notifier 类包含玩家可见通报文本，必须翻译。

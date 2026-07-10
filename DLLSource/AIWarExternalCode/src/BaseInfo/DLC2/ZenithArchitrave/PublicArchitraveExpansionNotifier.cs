@@ -67,30 +67,30 @@ namespace Arcen.AIW2.External
             {
                 if ( Data.ProvokingWar )
                 {
-                    tooltipBuffer.Add( Data.Faction.StartFactionColourForLog() + "Zenith Architrave</color> is large enough to provoke other Architraves to attack it, and will continue to expand with these " ).Add( Data.NumPioneers, "a1ffa1" ).Add( " pioneers." );
+                    tooltipBuffer.Add( Data.Faction.StartFactionColourForLog() + "天顶拱门</color> 已足够庞大，将激起其他拱门攻击，并继续以这 " ).Add( Data.NumPioneers, "a1ffa1" ).Add( " 个先锋进行扩张。" );
                 }
                 else
                 {
-                    tooltipBuffer.Add( Data.Faction.StartFactionColourForLog() + "Zenith Architrave</color> will remain in Expansion Mode until its remaining " ).Add( Data.NumPioneers, "a1ffa1" ).Add( " pioneers die; they can be killed or they will transform into spawners when they conquer a planet." );
+                    tooltipBuffer.Add( Data.Faction.StartFactionColourForLog() + "天顶拱门</color> 将保持扩张模式，直到剩余的 " ).Add( Data.NumPioneers, "a1ffa1" ).Add( " 个先锋死亡；它们可以被击杀，或在征服星球时转化为生成器。" );
                     if ( Data.anyTruce )
-                        tooltipBuffer.Add( "\nThis Architrave is currently ignoring the truce with you until all its Pioneers are dead." );
+                        tooltipBuffer.Add( "\n此拱门目前无视与您的休战协议，直到所有先锋死亡。" );
                 }
             }
             else if ( Data.eventTimeRemaining > 0 )
             {
                 string timerColor = ArcenExternalUIUtilities.GetColorForNomadMoveTime( Data.eventTimeRemaining ); //timerColor gets more red the sooner the pioneers will appear
-                tooltipBuffer.Add( Data.Faction.StartFactionColourForLog() + "Zenith Architrave</color> will enter expansion mode in " ).AddHoursAndMinutes( Data.eventTimeRemaining, timerColor ).Add( ".\nIn expansion mode the Architrave will build some Pioneers, powerful ships which can transform into new production facilities for the Architrave. They will remain in expansion mode until all of their pioneers are killed or transform." );
+                tooltipBuffer.Add( Data.Faction.StartFactionColourForLog() + "天顶拱门</color> 将在 " ).AddHoursAndMinutes( Data.eventTimeRemaining, timerColor ).Add( " 后进入扩张模式。\n在扩张模式下，拱门将建造一些先锋船——强大的舰船，可转化为拱门的新的生产设施。他们将保持扩张模式，直到所有先锋被击杀或转化。" );
                 ZenithArchitraveFactionBaseInfo gdata = Data.Faction.TryGetExternalBaseInfoAs<ZenithArchitraveFactionBaseInfo>();
                 if ( gdata != null )
                 {
                     if ( gdata.PlayerAllied )
-                        tooltipBuffer.Add( "\n\nThis Architrave will still be your friend." );
+                        tooltipBuffer.Add( "\n\n此拱门仍将与您保持友好。" );
                     else if ( Data.anyTruce )
-                        tooltipBuffer.Add( "\n\nThis Architrave will also become hostile to everyone, even if you had a truce with them before, until the Pioneers all die." );
+                        tooltipBuffer.Add( "\n\n此拱门将对所有人敌对，即使之前与您有休战协议，直到所有先锋死亡。" );
                 }
             }
             if ( Data.TimesPioneersInterrupted > 0 )
-                tooltipBuffer.Add( "\n\nThis Architrave was attacked " ).Add( Data.TimesPioneersInterrupted, "a1ffa1" ).Add( " times as it was preparing to launch Pioneers." );
+                tooltipBuffer.Add( "\n\n此拱门在准备发射先锋时被攻击了 " ).Add( Data.TimesPioneersInterrupted, "a1ffa1" ).Add( " 次。" );
 
             Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( null, tooltipBuffer.GetStringAndResetForNextUpdate() );
             return true;

@@ -227,7 +227,7 @@ namespace Arcen.AIW2.External
             try
             {
                 debugCode = 5;
-                buffer.Add( "At " ).AddHoursAndMinutes( this.GameSecond ).Add( " AIP changed " );
+                buffer.Add( "在 " ).AddHoursAndMinutes( this.GameSecond ).Add( " 时 AIP 变化 " );
                 if ( overrideAIP > FInt.Zero )
                     buffer.Add( "<color=#ff0000>+" ).Add( overrideAIP ).Add( "</color>" );
                 else

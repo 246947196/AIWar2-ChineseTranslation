@@ -35,7 +35,7 @@ namespace Arcen.AIW2.External
             //World_AIW2.Instance.FocusedPlanetForMapDarkening = Data.Planet;
 
             tooltipBuffer.Clear();
-            tooltipBuffer.Add( "The " ).Add( "Imperial Spire Fleet", Data.Faction.FactionCenterColor.ColorHexBrighter ).Add( " will arrive in " ).AddHoursAndMinutes( Data.eventTimeRemaining, "00ff00" ).Add( " and help you crush the AI. In the meantime, you must survive" );
+            tooltipBuffer.Add( "帝国尖塔舰队" ).Add( "", Data.Faction.FactionCenterColor.ColorHexBrighter ).Add( " 将在 " ).AddHoursAndMinutes( Data.eventTimeRemaining, "00ff00" ).Add( " 后到达并帮助你粉碎 AI。在此期间，你必须生存下来" );
             Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( null, tooltipBuffer.GetStringAndResetForNextUpdate() );
             return true;
         }

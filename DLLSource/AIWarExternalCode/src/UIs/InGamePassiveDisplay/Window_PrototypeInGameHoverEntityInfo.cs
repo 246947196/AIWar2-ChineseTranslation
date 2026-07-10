@@ -5016,7 +5016,7 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                     if ( secondsUntilClaim > 0 )
                     {
                         buffer.StartColor( QuickColors.OldValue )
-                            .Add( "Cannot be claimed for another " ).AddHoursAndMinutes( secondsUntilClaim ).Add( ".  This is based on the presence of enemies and how long it has been since this was last destroyed.  " );
+                            .Add( "无法被占领，还需要 " ).AddHoursAndMinutes( secondsUntilClaim ).Add( "。这取决于敌方存在以及上次被摧毁后经过的时间。  " );
                         buffer.EndColor();
                     }
 

@@ -76,7 +76,7 @@ namespace Arcen.AIW2.External
                 tooltipBuffer.Add( "The AI Reserves are responding to your deepstrike\n" );
             else
             {
-                tooltipBuffer.Add( "The AI Reserves will open a new wormhole to bring more reinforcements in " ).AddHoursAndMinutes( data.TimeForNextWormhole - World_AIW2.Instance.GameSecond, "a1ffa1" ).Add( ".\n" );
+                tooltipBuffer.Add( "AI 预备队将在 " ).AddHoursAndMinutes( data.TimeForNextWormhole - World_AIW2.Instance.GameSecond, "a1ffa1" ).Add( " 后打开新虫洞以带来更多增援。\n" );
             }
             tooltipBuffer.Add( "\tThere are currently " ).Add( data.Wormholes.Count, "ffa1a1" ).Add( " wormholes that can spawn AI reserves." );
             if ( BaseInfo.PlanetList.Count > 0 )

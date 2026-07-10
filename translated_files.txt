@@ -1,4 +1,8 @@
-﻿Achievement\KDL_Achievements.xml
+﻿# 此文件已被翻译基线快照 (translation_snapshot.json) 取代
+# 保留仅作历史参考，不再手动更新
+# 见 check_update.ps1 和 translation_snapshot.json
+
+Achievement\KDL_Achievements.xml
 AIDifficulty\KDL_VanillaEntries.xml
 AIDifficulty_HunterFleet\KDL_VanillaEntries.xml
 AIDifficulty_PraetorianGuard\KDL_VanillaEntries.xml

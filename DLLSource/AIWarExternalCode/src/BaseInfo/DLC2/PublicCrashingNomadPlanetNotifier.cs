@@ -76,12 +76,12 @@ namespace Arcen.AIW2.External
                     else
                     {
                         moveTimerColor = ArcenExternalUIUtilities.GetColorForNomadMoveTime( timeEstimate );
-                        tooltipBuffer.Add( "\t\t" ).Add( "Time to crash is " ).AddHoursAndMinutes( timeEstimate, moveTimerColor ).Add( ".\n" );
+                        tooltipBuffer.Add( "\t\t" ).Add( "撞击倒计时 " ).AddHoursAndMinutes( timeEstimate, moveTimerColor ).Add( "。\n" );
                     }
                     continue;
                 }
 
-                tooltipBuffer.Add( "\tPlanet " ).Add( planet.Name, controller.FactionCenterColor.ColorHexBrighter ).Add( " will move in " ).AddHoursAndMinutes( timeTillNextMove, moveTimerColor ).Add( ". " );
+                tooltipBuffer.Add( "\t星球 " ).Add( planet.Name, controller.FactionCenterColor.ColorHexBrighter ).Add( " 将在 " ).AddHoursAndMinutes( timeTillNextMove, moveTimerColor ).Add( " 后移动。 " );
                 if ( planet.NomadTargetPlanetIdx != -1 )
                 {
                     Planet targetPlanet = World_AIW2.Instance.GetPlanetByIndex( planet.NomadTargetPlanetIdx );

@@ -85,7 +85,7 @@ Control Bindings 菜单左侧分类按钮显示的是 `InputAction` XML 文件�
 
 | 项目 | 源码 | 编译 | 翻译 |
 |------|------|------|------|
-| AIWarExternalCode | DLLSource/AIWarExternalCode/src/ | ✅ | ✅ 完成 |
+| AIWarExternalCode | DLLSource/AIWarExternalCode/src/ | ✅ | ✅ 完成（~655 条字符串） |
 | AIWarExternalDeepProcessingCode | DLLSource/AIWarExternalDeepProcessingCode/src/ | ✅ | ✅ 完成 |
 | AIWarExternalVisualizationCode | DLLSource/AIWarExternalVisualizationCode/src/ | ✅ | ✅ 完成 |
 | ArcenUIAssetRedirect（BepInEx 插件） | DLLSource/ArcenUIAssetRedirect/src/ | ✅ | ✅ 完成 |
@@ -114,6 +114,24 @@ MSBuild：`C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe`
 引用：`..\..\..\ReliableDLLStorage\`（插件额外引用 `..\..\..\BepInEx\core\`）
 
 > 核心 DLL（ArcenUniversal / ArcenAIW2Core / ArcenAIW2Visualization）不走编译路线，改用 `ilpatch`（dnlib）做 IL 字面量替换，详见 SPEC 8.15。
+
+## 最近补译记录 (2026-07-10 第2批)
+
+2026-07-10 补译了 9 个 C# 文件，修复 AIWarExternalCode 遗漏的 ~30 条英文字符串：
+
+| 文件 | 遗漏内容 |
+|------|---------|
+| Window_InGameHoverEntityInfo.cs | "Resource Multipliers After Time..." 区块 12 处字符串未翻译（含 CLARIFICATION x3、Cannot be claimed x1） |
+| Window_PrototypeInGameHoverEntityInfo.cs | "Cannot be claimed" x1 |
+| EntityText.Attr.cs | "Cannot be claimed" x1 |
+| AIPChange.cs | "At ... AIP changed" x1 |
+| PublicCrashingNomadPlanetNotifier.cs | 撞击倒计时、星球移动提示 x2 |
+| PublicAIReservesNotifier.cs | AI 预备队虫洞提示 x1 |
+| PublicDZInvasionNotifier.cs | Dark Zenith 入侵提示 x1 |
+| PublicImperialSpireNotifier.cs | 帝国尖塔到达提示 x1 |
+| PublicArchitraveExpansionNotifier.cs | 天顶拱门扩张模式描述 x6 |
+
+【教训】翻译大型 UI 文件（如 Window_InGameHoverEntityInfo.cs 8390 行）时，必须遍历所有区块确保无遗漏。
 
 ## 翻译规则
 

@@ -3007,16 +3007,16 @@ namespace Arcen.AIW2.External
                             if ( relatedEntityTypeData.BoostToPlanetaryEnergyProductionIfHaveBeenHereAndNonCrippledForXTime > FInt.One )
                             {
                                 buffer.Add( "<color=#ffdf72>" ).AddFixedDecimalThousands( relatedEntityTypeData.BoostToPlanetaryMetalProductionIfHaveBeenHereAndNonCrippledForXTime.ToFloatNonSim(), 2 )
-                                    .Add( "x</color> metal/second, and <color=#ffdf72>" )
+                                    .Add( "x</color> 金属/秒，和 <color=#ffdf72>" )
                                     .AddFixedDecimalThousands( relatedEntityTypeData.BoostToPlanetaryEnergyProductionIfHaveBeenHereAndNonCrippledForXTime.ToFloatNonSim(), 2 )
-                                    .Add( "x</color> energy produced at this ship's planet if it has been at that planet and non-crippled for at least " )
-                                    .AddHoursAndMinutes( relatedEntityTypeData.TimeRequiredToBeHereAndNonCrippledToBoostMetalOrEnergyProduction ).Add( ".  If there are multiple such units at one planet, only the largest bonus applies.  " );
+                                    .Add( "x</color> 能量在该飞船所在星球产出（需在同一星球且非残废至少 " )
+                                    .AddHoursAndMinutes( relatedEntityTypeData.TimeRequiredToBeHereAndNonCrippledToBoostMetalOrEnergyProduction ).Add( "）。若同星球有多个此类单位，仅最大加成生效。  " );
                             }
                             else
                             {
                                 buffer.Add( "<color=#ffdf72>" ).AddFixedDecimalThousands( relatedEntityTypeData.BoostToPlanetaryMetalProductionIfHaveBeenHereAndNonCrippledForXTime.ToFloatNonSim(), 2 )
-                                    .Add( "x</color> metal/second at this ship's planet if it has been at that planet and non-crippled for at least " )
-                                    .AddHoursAndMinutes( relatedEntityTypeData.TimeRequiredToBeHereAndNonCrippledToBoostMetalOrEnergyProduction ).Add( ".  If there are multiple such units at one planet, only the largest bonus applies.  " );
+                                    .Add( "x</color> 金属/秒在该飞船所在星球产出（需在同一星球且非残废至少 " )
+                                    .AddHoursAndMinutes( relatedEntityTypeData.TimeRequiredToBeHereAndNonCrippledToBoostMetalOrEnergyProduction ).Add( "）。若同星球有多个此类单位，仅最大加成生效。  " );
                             }
                         }
                         else
@@ -3025,8 +3025,8 @@ namespace Arcen.AIW2.External
                             {
                                 buffer.Add( "<color=#ffdf72>" )
                                     .AddFixedDecimalThousands( relatedEntityTypeData.BoostToPlanetaryEnergyProductionIfHaveBeenHereAndNonCrippledForXTime.ToFloatNonSim(), 2 )
-                                    .Add( "x</color> energy produced at this ship's planet if it has been at that planet and non-crippled for at least " )
-                                    .AddHoursAndMinutes( relatedEntityTypeData.TimeRequiredToBeHereAndNonCrippledToBoostMetalOrEnergyProduction ).Add( ".  If there are multiple such units at one planet, only the largest bonus applies.  " );
+                                    .Add( "x</color> 能量在该飞船所在星球产出（需在同一星球且非残废至少 " )
+                                    .AddHoursAndMinutes( relatedEntityTypeData.TimeRequiredToBeHereAndNonCrippledToBoostMetalOrEnergyProduction ).Add( "）。若同星球有多个此类单位，仅最大加成生效。  " );
                             }
                         }
                         #endregion
@@ -3046,15 +3046,15 @@ namespace Arcen.AIW2.External
                             {
                                 doesABoostBeingAtPlanetForTime = true;
                                 buffer.Add( prefix ).Add( "<color=#ffdf72>" ).AddFixedDecimalThousands( relatedEntityTypeData.BoostToPlanetaryMetalProductionIfHaveBeenHereAndNonCrippledForXTime.ToFloatNonSim(), 2 )
-                                    .Add( "x</color> metal/second, and <color=#ffdf72>" )
+                                    .Add( "x</color> 金属/秒，和 <color=#ffdf72>" )
                                     .AddFixedDecimalThousands( relatedEntityTypeData.BoostToPlanetaryEnergyProductionIfHaveBeenHereAndNonCrippledForXTime.ToFloatNonSim(), 2 )
-                                    .Add( "x</color> energy produced at this planet " );
+                                    .Add( "x</color> 能量在此星球产出 " );
                             }
                             else
                             {
                                 doesABoostBeingAtPlanetForTime = true;
                                 buffer.Add( prefix ).Add( "<color=#ffdf72>" ).AddFixedDecimalThousands( relatedEntityTypeData.BoostToPlanetaryMetalProductionIfHaveBeenHereAndNonCrippledForXTime.ToFloatNonSim(), 2 )
-                                    .Add( "x</color> metal/second at this ship's planet " );
+                                    .Add( "x</color> 金属/秒在此飞船所在星球 " );
                             }
                         }
                         else
@@ -3064,7 +3064,7 @@ namespace Arcen.AIW2.External
                                 doesABoostBeingAtPlanetForTime = true;
                                 buffer.Add( prefix ).Add( "<color=#ffdf72>" )
                                     .AddFixedDecimalThousands( relatedEntityTypeData.BoostToPlanetaryEnergyProductionIfHaveBeenHereAndNonCrippledForXTime.ToFloatNonSim(), 2 )
-                                    .Add( "x</color> energy produced at this ship's planet " );
+                                    .Add( "x</color> 能量在此飞船所在星球 " );
                             }
                         }
 
@@ -3080,16 +3080,16 @@ namespace Arcen.AIW2.External
                             {
                                 if ( relatedSquadOrNull.NonSim_PlanetaryEnergyBoostFailedFromOthersBeingPresent )
                                     buffer.StartColor( "ffae72" )
-                                        .Add( "CLARIFICATION: These metal and energy bonuses are not being applied because there are multiple boosters of this sort on the planet and another booster was higher.  " )
+                                        .Add( "说明：这些金属和能量加成未生效，因为该星球存在多个同类加成单位且另一个加成更高。  " )
                                         .EndColor();
                                 else
                                     buffer.StartColor( "ffae72" )
-                                        .Add( "CLARIFICATION: This metal bonus is not being applied because there are multiple boosters of this sort on the planet and another booster was higher.  " )
+                                        .Add( "说明：此金属加成未生效，因为该星球存在多个同类加成单位且另一个加成更高。  " )
                                         .EndColor();
                             }
                             else if ( relatedSquadOrNull.NonSim_PlanetaryEnergyBoostFailedFromOthersBeingPresent )
                                 buffer.StartColor( "ffae72" )
-                                    .Add( "CLARIFICATION: This energy bonus is not being applied because there are multiple boosters of this sort on the planet and another booster was higher.  " )
+                                    .Add( "说明：此能量加成未生效，因为该星球存在多个同类加成单位且另一个加成更高。  " )
                                     .EndColor();
                         }
                         #endregion
@@ -6093,7 +6093,7 @@ namespace Arcen.AIW2.External
                     if ( secondsUntilClaim > 0 )
                     {
                         buffer.StartColor( QuickColors.OldValue )
-                            .Add( "Cannot be claimed for another " ).AddHoursAndMinutes( secondsUntilClaim ).Add( ".  This is based on the presence of enemies and how long it has been since this was last destroyed.  " );
+                            .Add( "无法被占领，还需要 " ).AddHoursAndMinutes( secondsUntilClaim ).Add( "。这取决于敌方存在以及上次被摧毁后经过的时间。  " );
                         buffer.EndColor();
                     }
 
