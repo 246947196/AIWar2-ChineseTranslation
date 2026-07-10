@@ -1,0 +1,9 @@
+#sortorder:1
+#showas:死灵法师革命
+This scenario features a vanilla Necromancer match against the AI and its Templar and Elderling allies. The galaxy type is called “Dissonance” for its heterogeneous wormhole connections.
+
+The Orbital AI (diff 7) features many orbital defenses. All of its guideposts will orbit along the gravity well and they have a chance of being protected by orbital turrets. These defenses can be converted through Necromancy.
+
+The Templar (diff 6) and Elderlings (diff 6) will attempt to out tempo you. Taking offensive action is crucial to your success.  
+
+Four Showdown Devices have been seeded in the galaxy. Capturing three of these will allow an alternative victory, but this will bring the full wrath of the AI to your doorstep. 

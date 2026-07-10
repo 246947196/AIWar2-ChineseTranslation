@@ -1,0 +1,25 @@
+#showas:基础燃料重平衡
+This is a mission made to ease the players into the concept of the mod "Fuel Rebalance", and to hopefully make the fuel games more enjoyable and approachable for players who don't normally play Logistician type of campaigns.
+
+This is on a "realistic" and "rectangular" map type, with 120 planets. 
+
+You'll have a random starting fleet and a random support fleet.
+
+You are pitted against only one AI on Difficulty 7, of type "Random Any".
+The other factions are; an Intensity 5 Zenith Dyson Sphere, a Zenith Trader.
+There will also be totally random and balanced bonus factions, to keep things a bit more spicy.
+
+Distributed Resource Generation and Fuel modes are enabled. So you'll have to procure Fuel, and your economy will depend more on the number of asteroid miners on planets.
+
+Also the following mods are enabled:
+Points of Interest
+Fuel Rebalance
+Dyson Sphere Leech
+
+The galaxy will also have uncommon Points of Interest included to, well, keep things more "interesting".
+
+Fuel Rebalance mod rebalances the fuel cost of basic turrets by making them cost significantly less fuel, so if you end up losing a Radon Fuel Station, it won't immediately cause a huge blow to your defenses and to your progression through the galaxy. It still doesn't touch the costs of the expensive and awesome turrets. 
+Zenith Trader will also be able to provide Minor Fuel Stations in the form of "Zenith Fuel Stations", a previously deprecated item in the vanilla game. 
+In exchange of all this, all fuel stations have a somewhat expensive energy consumption to maintain. This also makes it so that the energy generation is still important and it's not superceded by the fuel. 
+
+Dyson Sphere Leech mod makes you be able to draw a considerable amount of energy from a Dyson Sphere, if you choose to capture the system it's in.

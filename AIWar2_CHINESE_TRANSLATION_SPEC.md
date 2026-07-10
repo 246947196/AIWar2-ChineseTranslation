@@ -703,3 +703,30 @@ AIWar2_ChineseTranslation/
 | 1806, 1817 | 阵营筛选提示 | `"选择要用于右侧星系图显示模式中作为筛选条件的阵营或阵营类型。"` |
 
 **根因**：4 组下拉框的 `HandleMouseover()` / `HandleItemMouseover()` tooltip 字符串在初次翻译时被遗漏。`"Details for "` 和 `"Close"` 亦为 UnitEncyclopedia 弹窗反复出现的漏译。
+
+### 9.11 QuickStarts2 战役名称翻译（2026-07-10）
+
+快速开始菜单中的战役名称（文件夹分类 + 单个战役）来自 `GameData/QuickStarts2/` 下的 `.tooltip` 文件，**不走翻译系统**——名称直接由 `SaveLoadMethods.LoadTooltipFromDisk()` 读取 `#showas:` 指令或 `.save` 文件名展示。
+
+**方案**：在翻译仓库创建 `GameData/QuickStarts2/` 镜像目录，为每个 `.tooltip` 文件添加/改写 `#showas:中文名`。
+
+**文件结构**：95 个 `.tooltip` 文件（10 个 `_folder.tooltip` + 85 个战役 `.tooltip`），目录结构与游戏完全一致：
+```
+GameData/QuickStarts2/
+├── 1-Basic/_folder.tooltip          # #showas:基础
+├── 2-Moderate/_folder.tooltip       # #showas:中等
+├── 3-Expansions Intro/              # 扩展包入门
+├── 4-Necromancer Intro/             # 死灵法师入门
+├── 5-Moderate (Community)/          # 中等（社区）
+├── 6-Harder/                        # 困难
+├── 7-Harder (Community)/            # 困难（社区）
+├── 8-Extreme/                       # 极限
+├── 9-Extreme (Community)/           # 极限（社区）
+└── Archived/                        # 归档
+```
+
+**部署**：`deploy.ps1` 已新增 QuickStarts2 部署步骤，将翻译仓库中的 `.tooltip` 文件复制到游戏目录同名位置。
+
+**不纳入基线**：`.tooltip` 文件不是游戏代码/配置，不会随游戏更新而变，无需用 `check_update.ps1 -snapshot` 追踪。
+
+**生成工具**：`GameData/QuickStarts2/generate_translated_tooltips.py` 用于批量生成翻译后的 tooltip 文件。

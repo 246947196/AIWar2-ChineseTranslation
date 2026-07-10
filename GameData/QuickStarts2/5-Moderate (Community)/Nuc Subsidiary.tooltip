@@ -1,0 +1,26 @@
+#showas:核子公司
+Map: 
+- Realistic Big Circle, 80 planets in sector
+
+AIs:
+- Turtle Base Oriented/Defensive Only diff 777 (the main AI in this scenario)
+- Swarmer Kite/Kite diff 444 (subsidiary AI #1)
+- Zombifyier Anticipatory/Kamikaze diff 444 (subsidiary AI #2)
+
+AI Support:
+- Risk Analyzers (8 in sector)
+- Astro Trains strength 8
+
+Neutral Factions:
+- Devourer Golem (3 in sector)
+- Zenith Trader (1 in sector)
+
+Friendly Factions:
+- Human Resistance Fighters strength 10
+
+Player Setup:
+- Raid fleet, Minelayer Defenses, Rejuvenator Factory
+
+---
+
+The main AI in this scenario (7s Turtle) is the primary defensive enemy. There are two weaker subsidiary AIs, one with kiting swarms, another with aggressive zombifier units. The AIs are supported by Risk Analyzers and Astro Trains so it is important that you act quickly to take objectives. Human Resistance Fighters will often assist you in battles, you will need them! Utilize your raiding capabilities to strike critical targets and prevent the AI from snowballing.

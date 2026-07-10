@@ -1,0 +1,13 @@
+#sortorder:3
+#showas:后门
+A very difficult scenario. Still mainly you and the AI, and it's set to difficulty 8.
+This difficulty is good for someone who is skilled at AI War 2.
+
+This is on the "maze" map type, with 100 planets. Wormhole Master AI type, which focuses heavily on launching attacks behind your lines.
+Your starting fleet is set to "Raid," which is focused on aggression and getting far into enemy territory.
+
+There is only one real faction here, with an extra addition to the AI:
+
+Marauders, human pirates that will occasionally appear and try to attack you, with the goal of capturing the planet to use as a base to strengthen themselves.
+
+Risk Analyzers, which every hour increase the AI Progress (but can be captured to instead reduce), and over time will cause an "Exo-Galactic Strike" to occur - large AI assault forces that will try to either recapture lost Analyzers, or head to your Homeworld, stopping for nothing. If an Analyzer is on an AI planet, it only adds a little progress to this. If it's on a neutral planet, it adds a fair bit more. If you own the planet, it adds a LOT more progress over time.

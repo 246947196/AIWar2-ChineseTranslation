@@ -1,0 +1,13 @@
+#sortorder:8
+#showas:时不我待
+A more specialist scenario. Still mainly you and the AI, and it's set to difficulty 7.
+This difficulty is good for someone who has spent some time in AI War 2.
+
+This is on the "realistic" map type, with 80 planets. Quadratic AI Type, which with every wave it sends, doubles the minimum amount of strength for the next. This eventually leads to very, very large waves, that thankfully take a long time to "charge".
+Your starting fleet is set to "Doorkicker," which is focused a bit on breaching tactics, with some crowd control and long range firepower to finish it off.
+
+There are no real factions here, just additions to the AI:
+
+Risk Analyzers, which every hour increase the AI Progress (but can be captured to instead reduce), and over time will cause an "Exo-Galactic Strike" to occur - large AI assault forces that will try to either recapture lost Analyzers, or head to your Homeworld, stopping for nothing. If an Analyzer is on an AI planet, it only adds a little progress to this. If it's on a neutral planet, it adds a fair bit more. If you own the planet, it adds a LOT more progress over time.
+
+It is also being assisted by Astro Trains, a supply network with nasty effects that trigger upon a projects completion, such as boosting the size of the next wave.

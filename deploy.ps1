@@ -131,6 +131,32 @@ $filesToDeploy | ForEach-Object {
 }
 Write-Host "Deployed $deployed XML files" -ForegroundColor Green
 
+# Deploy QuickStarts2 translated tooltip files
+Write-Host ""
+Write-Host "Deploying QuickStarts2 translated tooltip files..." -ForegroundColor Yellow
+$transQuickStartsDir = Join-Path $translationDir "GameData\QuickStarts2"
+$gameQuickStartsDir = Join-Path $gameDir "GameData\QuickStarts2"
+
+if (Test-Path $transQuickStartsDir) {
+    $tooltipFiles = Get-ChildItem -Path $transQuickStartsDir -Recurse -Filter "*.tooltip"
+    $deployedTooltips = 0
+    $tooltipFiles | ForEach-Object {
+        $relPath = $_.FullName.Substring($transQuickStartsDir.Length + 1)
+        $destFile = Join-Path $gameQuickStartsDir $relPath
+        $destDir = Split-Path $destFile -Parent
+        
+        if (-not (Test-Path $destDir)) {
+            New-Item -ItemType Directory -Path $destDir -Force | Out-Null
+        }
+        
+        Copy-Item $_.FullName $destFile -Force
+        $deployedTooltips++
+    }
+    Write-Host "Deployed $deployedTooltips QuickStarts2 tooltip files" -ForegroundColor Green
+} else {
+    Write-Host "  QuickStarts2 directory not found, skipping" -ForegroundColor DarkYellow
+}
+
 # Merge expansion (DLC) translation overrides into the real expansion config dirs.
 # Each override is overlaid onto the game's English source file (by name) so the result is
 # a COMPLETE Chinese file written into Expansions\<exp>\GameData\Configuration, guaranteeing

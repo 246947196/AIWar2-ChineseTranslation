@@ -1,0 +1,8 @@
+#showas: rogue 獾
+This is a roguelike game. The key is that you don't know what factions exist until you encounter them.
+
+You must explore in order to know what enemies await you.
+
+Please don't load this into the Lobby or it will spoil the surprise.
+
+This has been modified to start with two Difficulty 7 AIs of a random type, and three pure random factions with random allegiances, and brutal, hard, and moderate impact. Your starting fleet, battlestations and support fleet are also all random.

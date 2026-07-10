@@ -1,0 +1,11 @@
+#sortorder:4
+#showas:运气抽签
+This scenario can vary quite a bit in difficulty, from pretty easy to fairly difficult.  It is intended to demonstrate some of the random/roguelike options in AI War 2.  You begin with a standard Realistic galaxy of 80 planets.  That's where the normality ends though:
+
+- You'll face two difficulty-7 AIs that can be of any type, and some of them are much more challenging than others.  
+- Hidden Galaxy is on, which means that you will only be able to see the planets immediately around your own at the start and must explore to find the rest.  
+- Three Random factions have been added.  There are a variety of settings you can use to control how challenging these are;  they are all set to Moderate in this case.  They may be allies, enemies, or neutrals.  You'll need to explore to even learn what these factions are.  
+- Typically there are certain capturables close to your homeworld to ensure you get off to a reasonable start, while more powerful ones like Golems are further away.  Here, that's been randomized so anything can be found almost anywhere in the galaxy.  
+- The usual small amount of 'mark level swapping' of AI planets to add a little variance to each galaxy layout has been tripled;  you might find weak planets much further away and/or strong planets much closer.  
+
+May the odds be ever in your favor, Commander.  

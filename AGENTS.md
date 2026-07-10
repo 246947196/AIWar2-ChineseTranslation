@@ -124,6 +124,14 @@ MSBuild：`C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe`
 
 > 核心 DLL（ArcenUniversal / ArcenAIW2Core / ArcenAIW2Visualization）不走编译路线，改用 `ilpatch`（dnlib）做 IL 字面量替换，详见 SPEC 8.15。
 
+## QuickStarts2 战役名称翻译
+
+快速开始战役名称存在 `GameData/QuickStarts2/` 的 `.tooltip` 文件中，通过 `#showas:中文名` 指令显示中文名称。
+
+**翻译方式**：编辑 `AIWar2_ChineseTranslation/GameData/QuickStarts2/` 下对应的 `.tooltip` 文件，修改或添加 `#showas:` 行。
+
+**部署**：`deploy.ps1` 会自动复制这些文件覆盖游戏目录。
+
 ## 最近补译记录 (2026-07-10 第2批)
 
 2026-07-10 补译了 9 个 C# 文件，修复 AIWarExternalCode 遗漏的 ~30 条英文字符串：
