@@ -743,6 +743,12 @@ GameData/QuickStarts2/
 ```
 需重新编译 DLL 后部署。
 
+**注意**：`4-Necromancer Intro` 文件夹的 tooltip 文件在基本游戏中为空（0 字节），实际内容位于 DLC3 `Expansions/3_The_Neinzul_Abyss/QuickStarts2/`。翻译仓库中两者的结构均需维护：
+- `GameData/QuickStarts2/4-Necromancer Intro/` — 基本游戏镜像（文件为空，仅含 `#showas:`）
+- `Expansions/3_The_Neinzul_Abyss/QuickStarts2/4-Necromancer Intro/` — DLC3 真实内容
+
+`deploy.ps1` 同时部署两处。
+
 ### 9.13 C# UI 文本补译大扫除（2026-07-10 第4批）
 
 多子代理并行修复 20 个文件中遗漏的 ~60 条英文字符串（编译通过，0 错误）：
