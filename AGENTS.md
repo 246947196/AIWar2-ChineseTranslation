@@ -127,7 +127,7 @@ MSBuild：`C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe`
 
 ## World TMP Font Patch 插件
 
-**新建于 2026-07-11**，独立 BepInEx 插件，用于修复世界空间 `TextMeshPro` 组件的字体替换问题。
+**新建于 2026-07-11**，独立 BepInEx 插件，用于修复世界空间 `TextMeshPro` 组件的字体替换问题，**2026-07-11 追加** `TextMeshProUGUI.InternalUpdate` 后备 patch 修复加载界面方框（首次启动时序问题）。
 
 ### 背景
 
@@ -136,8 +136,9 @@ MSBuild：`C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe`
 ### 原理
 
 - Harmony postfix patch `TMPro.TextMeshPro.OnEnable` + `InternalUpdate`
+- 后备 patch `TMPro.TextMeshProUGUI.InternalUpdate`（补 I18NFont4UnityGame 首次启动时序缺口）
 - 自动读取 `xiaoye97.I18NFont4UnityGame.cfg` 中的 `FontName` 配置，复用同一字体 AssetBundle
-- 从 Bundle 中加载 `TMP_FontAsset`（按 `{FontName} SDF` 名称匹配），注入到世界空间 TMP 组件
+- 从 Bundle 中加载 `TMP_FontAsset`（按 `{FontName} SDF` 名称匹配），懒加载注入（首次调用 `GetFont()` 时加载字体）
 - 部署位置：`BepInEx/plugins/ChineseTranslation/WorldTMPFontPatch.dll`
 
 ### 源码

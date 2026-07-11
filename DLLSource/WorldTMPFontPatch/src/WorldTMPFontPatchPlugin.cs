@@ -109,13 +109,12 @@ public class WorldTMPFontPatchPlugin : BaseUnityPlugin
     [HarmonyPatch(typeof(TextMeshProUGUI), "InternalUpdate")]
     private static void OnTextMeshProUGUIInternalUpdate(TextMeshProUGUI __instance)
     {
-        if (!fontInitialized)
+        TMP_FontAsset font = GetFont();
+        if (font == null)
             return;
-        if (cachedFont == null)
-            return;
-        if (__instance.font == cachedFont)
+        if (__instance.font == font)
             return;
 
-        __instance.font = cachedFont;
+        __instance.font = font;
     }
 }
