@@ -3345,7 +3345,7 @@ namespace Arcen.AIW2.External
                     {
                         buffer.Add( "巢穴:</color> ");
                         relatedEntityTypeData.PeriodicSpawn_EntityTypeDrawingBag.Value.WriteToBuffer( buffer, relatedEntityTypeData, false );
-                        buffer.Add( " for its " ).Add( EnumNameCache.GetName( relatedEntityTypeData.Periodic_SpawnFactionForUnit ) ).Add( " faction" );
+                        buffer.Add( " 所属 " ).Add( EnumNameCache.GetName( relatedEntityTypeData.Periodic_SpawnFactionForUnit ) ).Add( " 阵营" );
                     } else
                     {
                         if ( relatedEntityTypeData.PeriodicSpawn_CreatesWave && relatedEntityTypeData.PeriodicSpawn_CreatesExoStrike )
@@ -3496,7 +3496,7 @@ namespace Arcen.AIW2.External
                     if ( detailLevel < TooltipDetail.Full )
                         buffer.Add( ".  " );
                     else
-                        buffer.Add( " at its current range from the center of the gravity well.  " );
+                        buffer.Add( " 在当前距离重力井中心的位置。  " );
                 }
                 else if ( relatedEntityTypeData.OrbitsParentAtRange > 0 )
                 {
@@ -3504,7 +3504,7 @@ namespace Arcen.AIW2.External
                     if ( detailLevel < TooltipDetail.Full )
                         buffer.Add( ".  " );
                     else
-                        buffer.Add( " at a range of " ).AddNumberMoreReadable( relatedEntityTypeData.OrbitsParentAtRange ).Add( ".  " );
+                        buffer.Add( " 在距离 " ).AddNumberMoreReadable( relatedEntityTypeData.OrbitsParentAtRange ).Add( "。  " );
                 }
                 else if ( relatedEntityTypeData.OrbitsFlagshipAtRange > 0 )
                 {
@@ -3512,7 +3512,7 @@ namespace Arcen.AIW2.External
                     if ( detailLevel < TooltipDetail.Full )
                         buffer.Add( ".  " );
                     else
-                        buffer.Add( " at a range of " ).AddNumberMoreReadable( relatedEntityTypeData.OrbitsFlagshipAtRange ).Add( ".  " );
+                        buffer.Add( " 在距离 " ).AddNumberMoreReadable( relatedEntityTypeData.OrbitsFlagshipAtRange ).Add( "。  " );
                 }
                 
                 debugStage = 490;
@@ -4358,9 +4358,9 @@ namespace Arcen.AIW2.External
 
                     if ( !relatedSquadOrNull.IsFakeEntity && detailLevel >= TooltipDetail.Full )
                     {
-                        buffer.Add( "(Progress: " ).AddNumberMoreReadable( relatedSquadOrNull.BuildPoints ).Add( " / " )
+                        buffer.Add( "（进度：" ).AddNumberMoreReadable( relatedSquadOrNull.BuildPoints ).Add( " / " )
                             .AddNumberMoreReadable( relatedEntityTypeData.BuildPointCostForPerSecondConstruction )
-                            .Add( ")  " ); ;
+                            .Add( "）  " ); ;
                     }
                 }
 
