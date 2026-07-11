@@ -991,7 +991,7 @@ namespace Arcen.AIW2.External
                                 else
                                     buffer.Add("引擎眩晕",TextStyle.System_Label2).Add("：<color=#ffdf72>" );
                                 buffer.AddNumberMoreReadable( ForMark.EngineStunPerShot );
-                                buffer.Add( "s</color> if target engine < <color=#ffdf72>" );
+                                buffer.Add( "s</color> 如果目标引擎 < <color=#ffdf72>" );
                                 buffer.Add( Type.EngineStunToEngine_gxLessThan );
                                 buffer.Add( " gx</color>" );
                                 
@@ -1047,7 +1047,7 @@ namespace Arcen.AIW2.External
                             {
                                 buffer.Add("麻痹",TextStyle.System_Label2).Add("：<color=#ffdf72>" );
                                 buffer.AddNumberMoreReadable( ForMark.ParalysisSecondsPerShot );
-                                buffer.Add( "s</color> if target mass < <color=#ffdf72>" );
+                                buffer.Add( "s</color> 目标质量< <color=#ffdf72>" );
                                 buffer.Add( Type.ParalysisToShipsMass_tXLessThan.ReadableString );
                                 buffer.Add( " tX</color>." );
                             }
@@ -1501,7 +1501,7 @@ namespace Arcen.AIW2.External
                             if ( Type.CannotInflictStateOfMatterIfTargetHasAnyShieldsUp )
                             {
                                 if ( detailLevel < TooltipDetail.Full )
-                                    buffer.Add( " if target " ).WrapHull( "hull struck", false, false );
+                                    buffer.Add( " 如果目标 " ).WrapHull( "hull struck", false, false );
                                 else
                                     buffer.Add( " if the target's " ).WrapHull( "hull is struck", false, false );
                                 if ( Type.CannotInflictStateOfMatterIfTargetHasEnergyUsageOfAtLeast > 0 )
@@ -1518,7 +1518,7 @@ namespace Arcen.AIW2.External
                                 if ( Type.CannotInflictStateOfMatterIfTargetHasEnergyUsageOfAtLeast > 0 )
                                 {
                                     if ( detailLevel < TooltipDetail.Full )
-                                        buffer.Add( " if target consumes < " ).WrapEnergyTruncated( Type.CannotInflictStateOfMatterIfTargetHasEnergyUsageOfAtLeast, useIcons, useText );
+                                        buffer.Add( " 目标消耗 < " ).WrapEnergyTruncated( Type.CannotInflictStateOfMatterIfTargetHasEnergyUsageOfAtLeast, useIcons, useText );
                                     else
                                         buffer.Add( " if the target uses less than " ).WrapEnergyMoreReadable( Type.CannotInflictStateOfMatterIfTargetHasEnergyUsageOfAtLeast, useIcons, useText );
                                 }

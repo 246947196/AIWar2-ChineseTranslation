@@ -3301,7 +3301,7 @@ namespace Arcen.AIW2.External
                     }
                     else
                     {
-                        buffer.Add( " if target " );
+                        buffer.Add( " 如果目标 " );
                     }
                 }
                 
