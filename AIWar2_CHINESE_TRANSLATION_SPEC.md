@@ -144,8 +144,8 @@ AIWar2_ChineseTranslation/
 | DLC1 XML | 64 | 30 | 0 | ✅ 完成 |
 | DLC2 XML | 69 | 35 | 0 | ✅ 完成 |
 | DLC3 XML | 90 | 60 | 0 | ✅ 完成 |
-| XMLMods | 5 | 5 | 0 | ✅ 完成 |
-| **合计** | **626** | **427** | **0** | **✅ 完成** |
+| XMLMods | 9 | 9 | 0 | ✅ 完成 |
+| **合计** | **630** | **431** | **0** | **✅ 完成** |
 
 ### 4.2 DLL 替换 (Preloader Patcher)
 
@@ -602,12 +602,18 @@ AIWar2_ChineseTranslation/
 │   └── 3_The_Neinzul_Abyss/GameData/Configuration/
 │       ├── JournalEntries/          ← 新增 7 个文件
 │       └── Achievement/             ← 新增 1 个文件
-└── XMLMods/ExoticShips/GameEntity/  ← 新增 5 个文件
+└── XMLMods/
+    ├── ExoticShips/GameEntity/        ← 新增 5 个文件
+    └── ChinesePlanetNames/            ← 新增: 中文行星名
+        ├── ModDetails.txt
+        ├── ModDescription.txt
+        ├── PlanetNameType/PlanetNameType.xml
+        └── PlanetNames/ChinesePlanets/Names.txt  ← 1400 个中国风行星名
 ```
 
 ### 9.4 部署说明
 
-`deploy.ps1` 已更新，包含 `XMLMods` 目录的部署。运行 `.\deploy.ps1` 即可部署所有翻译文件。
+`deploy.ps1` 已更新，包含 `XMLMods` 目录的部署（同时复制 `.xml` 和 `.txt` 文件）。运行 `.\deploy.ps1` 即可部署所有翻译文件。
 
 ### 9.5 白名单更新
 
@@ -650,8 +656,8 @@ AIWar2_ChineseTranslation/
 | DLC3 Achievement | 1 | 成就 |
 | DLC3 GameEntity | 22 | DLC3 舰船和实体 |
 | DLC3 其他 | 28 | 设置、阵营等 |
-| XMLMods | 5 | ExoticShips 模组舰船 |
-| **总计** | **210** | - |
+| XMLMods | 9 | ExoticShips 模组舰船 + ChinesePlanetNames 中文行星名 |
+| **总计** | **214** | - |
 
 ### 9.8 合并脚本 bug 修复（2026-07-10）
 

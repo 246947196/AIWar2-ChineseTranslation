@@ -8,7 +8,7 @@ XML 文件整体替换 + DLL 源码编译替换 + AssetBundle 拦截重定向
 
 ## 工作流程 (日常翻译)
 
-1. 编辑 `GameData/Configuration/` 中 XML、`DLLSource/` 中 C# 源码、或 `arcenui_translations.json`
+1. 编辑 `GameData/Configuration/` 中 XML、`DLLSource/` 中 C# 源码、`arcenui_translations.json`、或 `XMLMods/` 下的文件
 2. 运行 `python patch_arcenui.py extract` 更新翻译模板
 3. 编辑 `arcenui_translations.json` 填入翻译
 4. 运行 `build.ps1` 编译 DLL + 自动 patch arcenui bundle
@@ -143,6 +143,37 @@ MSBuild：`C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe`
 两目录有相同的 `_folder.tooltip`（`#showas:死灵法师入门`），被加入同一分组，导致同一组有两份目录、战役翻倍。
 
 **修复**：删除了重复的 `GameData/QuickStarts2/4-Necromancer Intro/`（扩展已提供相同内容）。
+
+## 中文行星名 (ChinesePlanetNames)
+
+项目增加了一套中国风行星名，作为独立 XMLMod 部署。
+
+### 文件结构
+
+```
+XMLMods/ChinesePlanetNames/
+├── ModDetails.txt              ← Mod 元数据（默认启用）
+├── ModDescription.txt          ← Mod 描述文本
+├── PlanetNameType/
+│   └── PlanetNameType.xml      ← 注册「中文行星」命名风格
+└── PlanetNames/
+    └── ChinesePlanets/
+        └── Names.txt           ← 1400 个中国风行星名
+```
+
+### 使用方式
+
+1. 用 `deploy.ps1` 部署到游戏目录
+2. 进游戏 → Mod 菜单确认 "AI War 2 汉化项目: 中文行星名" 已启用
+3. 开新局 → 大厅「地图」选项卡 → 「行星命名风格」下拉选择「中文行星」
+
+### 翻译方式
+
+编辑 `XMLMods/ChinesePlanetNames/PlanetNames/ChinesePlanets/Names.txt`，一条一行。编辑后运行 `deploy.ps1` 部署。
+
+### 不纳入基线快照
+
+行星名 `.txt` 文件不属于游戏源文件（类似 `.tooltip`），`check_update.ps1` 不追踪。游戏更新不会影响这些文件。
 
 ## 最近补译记录 (2026-07-10 第2批)
 

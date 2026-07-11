@@ -1066,7 +1066,7 @@ namespace Arcen.AIW2.External
 
                         string name = c.DisplayName;
                         if (c.RelatedIntValue == setting.DefaultValue)
-                            name = string.Format("<color=#ffcc6a>{0} (Default)</color>", name);
+                            name = string.Format("<color=#ffcc6a>{0} (默认)</color>", name);
 
                         var item = new IntBasedDropdownOption(c.RelatedIntValue, name);
 
