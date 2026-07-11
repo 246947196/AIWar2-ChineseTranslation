@@ -856,3 +856,16 @@ GameData/QuickStarts2/
 **构建注意事项**：
 - `build.ps1` 使用的 MSBuild `Build` 目标（增量编译）有时不会检测源文件变更。修改翻译后**必须**先 `Remove-Item -Recurse -Force "DLLSource/AIWarExternalCode/obj/Release"` 再 `build.ps1`，否则旧 DLL 会被部署
 - 原翻译规则第 7 条「禁止中文引号，用 `''` 替代」有误——C# 单引号只允许单个字符。已更正为：用 `"..."` + 内部 `「」`
+
+### 9.17 IL 补丁 key 格式修复 + 金属流动窗口补译（2026-07-11）
+
+**问题**：游戏内「当前金属流动」窗口（点击金属资源栏图标打开）的 `Total Metal Sent To The Civilian Authorities:` 等 4 行英文未翻译。
+
+**根因**：`ilpatch` 的 part JSON 文件使用 `\\n`/`\\t`（JSON 双重转义，解码后为反斜杠+字母 n/t）表示换行和制表符，但 `ilpatch extract` 导出的骨架 JSON 中这些字符是**实际的控制字符**（`\n` = 0x0A, `\t` = 0x09）。`merge_parts.py` 直接对比字符串 key，永远匹配不上。
+
+**修复**：
+- `merge_parts.py`：在 key 匹配前添加 `.replace('\\\\n', '\n').replace('\\\\t', '\t')` 转换
+- `ArcenAIW2Core.part2.json`：补充 4 条 Civilian 相关翻译（来自/赠予/偿还/净结余）
+- `ilpatch patch` 后 ArcenAIW2Core.dll 替换 943 条 ldstr（+47 条），全部 Civilian 字符串确认中文
+
+**教训**：ilpatch 的 `extract` 与手写 `part*.json` 之间的 key 格式差异是系统性风险。编辑 part JSON 时必须确保 `\t`/`\n` 为实际制表符和换行符（ilpatch 接受这些字符串），而非 `\\t`/`\\n`。`merge_parts.py` 的 key 转换应作为标准步骤保留。
