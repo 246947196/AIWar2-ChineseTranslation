@@ -150,7 +150,7 @@ function Extract-XMLStrings {
     return $result
 }
 
-# ---- DLL source extraction (hash only) ----
+# ---- DLL source extraction (hash + string literals) ----
 function Extract-DLLSourceStrings {
     param($baseDir)
     Write-Host "  Scanning DLL source files..." -ForegroundColor Gray
@@ -166,10 +166,24 @@ function Extract-DLLSourceStrings {
     foreach ($f in $files) {
         $rel = $f.FullName.Substring($baseDir.Length + 1)
         $hash = Get-SHA256Hash $f.FullName
-        $result[$rel] = @{ hash = $hash }
+        $strings = @{}
+        $content = Get-Content $f.FullName -Raw -Encoding UTF8
+        if ($content) {
+            # Extract all string literals from buffer.Add("...") and .Add("...") method calls
+            $m = [regex]::Matches($content, '(?:buffer|Buffer)\.Add\(\s*"((?:[^"\\]|\\.)*?)"\s*[,\)]')
+            $idx = 0
+            foreach ($match in $m) {
+                $val = $match.Groups[1].Value
+                if ($val -and $val.Length -ge 2 -and $val -notmatch '^(#|color|https?://)') {
+                    $strings["L$($match.LineNumber):$(Split-Path $rel -Leaf)"] = $val
+                    $idx++
+                }
+            }
+        }
+        $result[$rel] = @{ hash = $hash; strings = $strings }
         $count++
     }
-    Write-Host "    $count .cs files hashed" -ForegroundColor Green
+    Write-Host "    $count .cs files scanned ($([linq.Enumerable]::Sum([object[]]$result.Values, { param($v) $v.strings.Count })) strings extracted)" -ForegroundColor Green
     return $result
 }
 
