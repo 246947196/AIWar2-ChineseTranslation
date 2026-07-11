@@ -281,6 +281,14 @@ if (Test-Path $worldTmpDll) {
     Write-Host "  WorldTMPFontPatch.dll not found in DLLBin, skipping" -ForegroundColor DarkYellow
 }
 
+# Deploy extracted TTF font for WorldTMPFontPatch
+$ttfSrc = Join-Path $translationDir "tools\mi_sans.ttf"
+$ttfDst = "$pluginDir\mi_sans.ttf"
+if (Test-Path $ttfSrc) {
+    Copy-Item $ttfSrc $ttfDst -Force
+    Write-Host "  Deployed: mi_sans.ttf ($([math]::Round((Get-Item $ttfDst).Length/1KB)) KB)" -ForegroundColor Gray
+}
+
 Write-Host "ChineseTranslation plugins deployed" -ForegroundColor Green
 
 # Deploy arcenui AssetBundle

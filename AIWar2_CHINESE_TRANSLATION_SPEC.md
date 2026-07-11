@@ -216,7 +216,7 @@ BepInEx Preloader 在游戏程序集加载前调用 Patcher，通过 Mono.Cecil 
 
 | 项目 | 源码位置 | 汉化内容 | 编译状态 | 翻译状态 |
 |------|---------|---------|---------|---------|
-| AIWarExternalCode | DLLSource/AIWarExternalCode/src/ | 全量汉化 (~655 条字符串，涵盖 EntityText/、UIs/、Scenarios/、Hacking/、BaseInfo/、Helpers/ 等 ~30 个文件) | ✅ 0 错误 | ✅ 已完成 |
+| AIWarExternalCode | DLLSource/AIWarExternalCode/src/ | 全量汉化 (~2000+ 条字符串，涵盖 EntityText/、UIs/、Scenarios/、Hacking/、BaseInfo/、Helpers/ 等 ~30 个文件，含 Window_PrototypeInGameHoverEntityInfo.cs 10672 行 + Window_InGameHoverEntityInfo.cs 9184 行两超大文件) | ✅ 0 错误 | ✅ 已完成 |
 | AIWarExternalDeepProcessingCode | DLLSource/AIWarExternalDeepProcessingCode/src/ | 聊天消息、少量 UI 文本 | ✅ 0 错误 | ✅ 已完成 |
 | AIWarExternalVisualizationCode | DLLSource/AIWarExternalVisualizationCode/src/ | 银河地图显示模式文本 | ✅ 0 错误 | ✅ 已完成 |
 | ArcenUIAssetRedirect | DLLSource/ArcenUIAssetRedirect/src/ | arcenui AssetBundle 拦截重定向 | ✅ 0 错误 | ✅ 已完成 |
@@ -369,7 +369,7 @@ WorldTMPFontPatch (BepInEx 插件)
 
 | 项目 | 类型 | 文件数 | 编译状态 | 翻译状态 |
 |------|------|--------|---------|---------|
-| AIWarExternalCode | 有源码 | 600 | ✅ 0 错误 | ✅ 完成（全量 ~655 条字符串） |
+| AIWarExternalCode | 有源码 | 600 | ✅ 0 错误 | ✅ 完成（全量 ~2000+ 条字符串） |
 | AIWarExternalDeepProcessingCode | 有源码 | 133 | ✅ 0 错误 | ✅ 完成 |
 | AIWarExternalVisualizationCode | 有源码 | 45 | ✅ 0 错误 | ✅ 完成 |
 | ArcenUIAssetRedirect | BepInEx 插件 | 1 | ✅ 0 错误 | ✅ 完成 |
@@ -387,7 +387,7 @@ WorldTMPFontPatch (BepInEx 插件)
 3. **保留插值和标签**：`$"{variable}"` 中的变量部分保持不变，`<color>` 等标签保持不变
 4. **（外部代码项目）编译验证**：翻译有源码的外部代码项目时，每翻译完一个文件后编译验证，0 错误再继续下一个。核心 DLL 走 IL 汉化（8.15），不编译，用 `ilpatch inspect` 回读验证即可。
 5. **翻译优先级**：UI 文件（src/UIs/）优先，游戏逻辑文件（BaseInfo/、Sim/ 等）通常不需要翻译。但 BaseInfo/ 下的 Notifier 通报文本（如 AI Reserves、Crashing Nomad、Architrave Expansion 等）是玩家可见提示，必须翻译
-6. **检查遗漏**：翻译大型 UI 文件（如 Window_InGameHoverEntityInfo.cs 8390 行）时，需确保不遗漏任何包含玩家可见文本的区块。2026-07-10 曾发现 "Resource Multipliers After Time Being Here And Not Crippled" 区块 11 处英文字符串被遗漏
+6. **检查遗漏**：翻译大型 UI 文件（如 Window_PrototypeInGameHoverEntityInfo.cs 10672 行、Window_InGameHoverEntityInfo.cs 9184 行）时，需确保不遗漏任何包含玩家可见文本的区块。2026-07-11 采用 **子代理并行翻译** 策略，按 500 行/代理切分，40+ 子代理并行翻译 + 事后全量审计扫描，确保零遗漏。2026-07-10 曾发现 "Resource Multipliers After Time Being Here And Not Crippled" 区块 11 处英文字符串被遗漏
 7. **禁止中文引号**：C# 字符串中不能使用 `""`（中文左右双引号），会被编译器误认为字符串分隔符。**不要使用单引号 `''`** —— C# 中 `'...'` 是字符字面量，只允许单个字符。正确做法是保持 C# 双引号 `"..."`，如需在字符串内引用则用 `「」`。例如：`"点击「是」确认"`。
 8. **引号嵌套**：如果翻译文本中需要引用按钮名称或其他 UI 元素，使用 `「」` 包裹，不要使用 `""` 或 `''`
 
@@ -559,6 +559,24 @@ ilpatch inspect "PatchedAssemblies\ArcenAIW2Visualization.dll" "起始行星归�
 修复方式：直接在 `merged.json` 中填入中文翻译，重新运行 `ilpatch patch` 生成 DLL，提交 `PatchedAssemblies/` 后部署。
 
 **教训**：`extract` 导出的候选条目中，部分调试/日志字符串被保留为空（`""`）。ilpatch 遇到空值会跳过替换，导致原文保留。应定期用 `ilpatch inspect` 或 Python 脚本检查空翻译条目，区分"不应翻译的调试信息"和"遗漏的玩家可见文本"。
+
+### 8.15.10 C# 源码并行翻译（有源码项目）经验
+
+大文件 C# 源码翻译（如 `Window_PrototypeInGameHoverEntityInfo.cs` 10672 行、`Window_InGameHoverEntityInfo.cs` 9184 行）也可采用并行策略：
+
+**分片方式：** 按行切分，每子代理 500 行，互不重叠。
+
+**子代理任务要求：**
+- 同时提供汉化版（`DLLSource/`）和英文原版（`CodeExternal/`）路径供对照
+- 提供通用翻译词典（武器标签、状态标签、资源标签等）
+- 子代理用 Edit 工具逐条替换，禁止 Write 覆写
+
+**注意事项：**
+- 两个 hover 文件有几乎完全相同的 weapon/system 描述代码块（tachyon/tractor/gravity/cloak/attractant 等），两个文件都必须翻，否则某些场景仍显示英文
+- 子代理可能偷懒返回空结果或无关内容（如"编译通过"），需人工复查
+- 翻译完成后必须做全量审计扫描（逐行对比汉化版与英文版 buffer.Add 调用），确保零遗漏
+
+**实测（2026-07-11）：** 40+ 子代理并行，处理 19856 行 C# 代码。审计扫描发现 ~30 处遗漏，其中多数因"只改了 File1 没改 File2"导致。两次审计后确认零残留。
 
 ## 九、DLC 翻译（第二波）
 

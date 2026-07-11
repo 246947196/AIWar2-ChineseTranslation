@@ -71,37 +71,33 @@ public class WorldTMPFontPatchPlugin : BaseUnityPlugin
             {
                 Debug.Log($"[WorldTMPFontPatch] Loaded TMP font: {cachedTMPFont.name}");
 
-                // Try to extract raw TTF data from the bundle's Font and inject into TMP font
-                if (cachedLegacyFont != null)
+                // Inject raw TTF data into TMP font for dynamic atlas generation
+                string ttfPath = Path.Combine(Paths.PluginPath, "ChineseTranslation", "mi_sans.ttf");
+                if (File.Exists(ttfPath))
                 {
-                    var fontDataField = typeof(Font).GetField("m_FontData", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-                    if (fontDataField != null)
+                    byte[] fontData = File.ReadAllBytes(ttfPath);
+                    Debug.Log($"[WorldTMPFontPatch] Read TTF: {fontData.Length} bytes");
+
+                    var srcField = typeof(TMP_FontAsset).GetField("m_SourceFontFile", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+                    if (srcField != null)
                     {
-                        byte[] fontData = fontDataField.GetValue(cachedLegacyFont) as byte[];
-                        if (fontData != null && fontData.Length > 0)
-                        {
-                            Debug.Log($"[WorldTMPFontPatch] Extracted font data: {fontData.Length} bytes");
-
-                            // Set source font file on TMP font
-                            var srcField = typeof(TMP_FontAsset).GetField("m_SourceFontFile", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-                            if (srcField != null)
-                            {
-                                srcField.SetValue(cachedTMPFont, fontData);
-                                Debug.Log($"[WorldTMPFontPatch] Set m_SourceFontFile");
-                            }
-
-                            // Set atlas population mode to Dynamic
-                            var modeField = typeof(TMP_FontAsset).GetField("m_AtlasPopulationMode", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-                            if (modeField != null)
-                            {
-                                modeField.SetValue(cachedTMPFont, 1);
-                                Debug.Log($"[WorldTMPFontPatch] Set atlas mode to Dynamic");
-                            }
-
-                            cachedTMPFont.ReadFontAssetDefinition();
-                            Debug.Log($"[WorldTMPFontPatch] ReadFontAssetDefinition() done");
-                        }
+                        srcField.SetValue(cachedTMPFont, fontData);
+                        Debug.Log($"[WorldTMPFontPatch] Set m_SourceFontFile");
                     }
+
+                    var modeField = typeof(TMP_FontAsset).GetField("m_AtlasPopulationMode", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+                    if (modeField != null)
+                    {
+                        modeField.SetValue(cachedTMPFont, 1);
+                        Debug.Log($"[WorldTMPFontPatch] Set atlas mode to Dynamic");
+                    }
+
+                    cachedTMPFont.ReadFontAssetDefinition();
+                    Debug.Log($"[WorldTMPFontPatch] ReadFontAssetDefinition() done");
+                }
+                else
+                {
+                    Debug.Log($"[WorldTMPFontPatch] TTF not found at: {ttfPath}");
                 }
             }
 
