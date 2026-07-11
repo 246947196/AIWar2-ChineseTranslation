@@ -1427,7 +1427,7 @@
   "PlanetFactions And Entities": "行星阵营与实体",
   " self-referential planet links in this map.  Harmless now.": "",
   "There '{0}' unconnected planets (of {1}).": "",
-  " wormholes linking to their own planet in this map.  Harmless now.": "",
+  " wormholes linking to their own planet in this map.  Harmless now.": " 个连接至本星系中自身星球的虫洞。目前无害。",
   "Empty planet list passed in to FindCentroidOfPlanetList!": "",
   "GetRandomPlanet() called with {0} candidate planets.\n": "",
   "Planet '{0}' is t={1} r={2} {3}\n": "",

@@ -41,5 +41,6 @@
   " there are no queued orders.": " 没有排队的指令。",
   " the queued orders are": " 排队指令为",
   "ms Ping ": "毫秒 Ping ",
-  "ms Ping To Host ": "毫秒 Ping 至主机 "
+  "ms Ping To Host ": "毫秒 Ping 至主机 ",
+  " wormholes linking to their own planet in this map.  Harmless now.": " 个连接至本星系中自身星球的虫洞。目前无害。"
 }
