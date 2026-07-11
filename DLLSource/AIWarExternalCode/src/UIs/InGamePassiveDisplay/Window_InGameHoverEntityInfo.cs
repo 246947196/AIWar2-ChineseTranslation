@@ -8046,7 +8046,7 @@ namespace Arcen.AIW2.External
                     }
                     else
                     {
-                        buffer.Add( " less than " );
+                        buffer.Add( " 小于 " );
                     }
                     buffer.Add( "<color=#ffdf72>" );
                     buffer.AddFixedDecimal( lessThanVal.ToFloatNonSim(), 2 );
@@ -8062,7 +8062,7 @@ namespace Arcen.AIW2.External
                 }
                 else
                 {
-                    buffer.Add( " greater than " );
+                    buffer.Add( " 大于 " );
                 }
                 buffer.Add( "<color=#ffdf72>" );
                 buffer.AddFixedDecimal( greaterThanVal.ToFloatNonSim(), 2 );
@@ -8940,7 +8940,7 @@ namespace Arcen.AIW2.External
                     if ( IsBrief )
                         buffer.Add( " > " );
                     else
-                        buffer.Add( " greater than " );
+                        buffer.Add( " 大于 " );
                     buffer.StartColor( Color );
                     buffer.AddFixedDecimal( min.ToFloatNonSim(), 2 );
                     buffer.EndColor();
@@ -8961,7 +8961,7 @@ namespace Arcen.AIW2.External
                     if ( IsBrief )
                         buffer.Add( " < " );
                     else
-                        buffer.Add( " less than " );
+                        buffer.Add( " 小于 " );
                     buffer.StartColor( Color );
                     buffer.AddFixedDecimal( max.ToFloatNonSim(), 2 );
                     buffer.Add( "</color>.  " );

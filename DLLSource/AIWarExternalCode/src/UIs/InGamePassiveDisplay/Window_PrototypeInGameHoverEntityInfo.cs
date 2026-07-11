@@ -6761,7 +6761,7 @@ buffer.Add( "秒</color> 如果目标护甲厚度低于 <color=#ffdf72>" );
                             }
                             buffer.Add( ", slows to <color=#ffdf72>" );
                             buffer.Add( systemStats.GravitySpeedMultiplier.ReadableString );
-                            buffer.Add( "x</color>, only target engines < <color=#ffdf72>" );
+                            buffer.Add( "x</color>，仅目标引擎 < <color=#ffdf72>" );
                             buffer.Add( systemData.GravityHitsEngine_gxLessThan );
                             buffer.Add( " gx</color>.  " );
                         }
@@ -7884,7 +7884,7 @@ buffer.Add( "秒</color> 如果目标护甲厚度低于 <color=#ffdf72>" );
 
                     } else
                     {
-                        buffer.Add( " less than " );
+                        buffer.Add( " 小于 " );
                     }
                     buffer.Add( "<color=#ffdf72>" );
                     buffer.AddFixedDecimal( lessThanVal.ToFloatNonSim(), 2 );
@@ -7898,7 +7898,7 @@ buffer.Add( "秒</color> 如果目标护甲厚度低于 <color=#ffdf72>" );
                     buffer.Add( " > " );
                 } else
                 {
-                    buffer.Add( " greater than " );
+                    buffer.Add( " 大于 " );
                 }
                 buffer.Add( "<color=#ffdf72>" );
                 buffer.AddFixedDecimal( greaterThanVal.ToFloatNonSim(), 2 );
@@ -8764,7 +8764,7 @@ buffer.Add( "秒</color> 如果目标护甲厚度低于 <color=#ffdf72>" );
                     if ( IsBrief )
                         buffer.Add( " > " );
                     else
-                        buffer.Add( " greater than " );
+                        buffer.Add( " 大于 " );
                     buffer.StartColor( Color );
                     buffer.AddFixedDecimal( min.ToFloatNonSim(), 2 );
                     buffer.EndColor();
@@ -8784,7 +8784,7 @@ buffer.Add( "秒</color> 如果目标护甲厚度低于 <color=#ffdf72>" );
                     if ( IsBrief )
                         buffer.Add( " < " );
                     else
-                        buffer.Add( " less than " );
+                        buffer.Add( " 小于 " );
                     buffer.StartColor( Color );
                     buffer.AddFixedDecimal( max.ToFloatNonSim(), 2 );
                     buffer.Add( "</color>.  " );
