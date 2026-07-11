@@ -53,7 +53,7 @@
   />
 
   <display_mode name="MetalHarvesterCounts"
-           display_name="&lt;color=#ffe6a9&gt;Metal Harvester Counts&lt;/color&gt;"
+           display_name="&lt;color=#ffe6a9&gt;金属采集器数量&lt;/color&gt;"
            dll_name="AIWarExternalVisualizationCode"
            type_name="Arcen.AIW2.ExternalVisualization.GalaxyMapDisplayMode_MetalHarvesterCounts"
            tooltip="显示哪些星球在金属采集器点位数量方面更有价值。无论您在那里放置哪种指挥站，更多的金属采集器意味着更多的金属收入。六被认为是一个星球上金属采集器数量的平均基线计数。显示的图标与正常视图相同。"
