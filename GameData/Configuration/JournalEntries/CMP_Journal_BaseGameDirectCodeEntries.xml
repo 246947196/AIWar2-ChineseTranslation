@@ -24,7 +24,7 @@
            can_record_another_copy_if_already_recorded_in_this_campaign="false"
            text_replacement_related_faction_color="true"
 		   text_replacement_related_player_name="true"
-           chat_text="{FactionColor}Outguard&lt;/color&gt; beacon sighted -- potential underlings!"
+           chat_text="{FactionColor}前哨守卫&lt;/color&gt;信标已发现——潜在的下属势力！"
            full_text="致：指挥官 {PlayerName}
 发自：首席通信官德米特里·罗森鲍姆
 

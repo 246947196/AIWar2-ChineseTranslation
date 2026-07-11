@@ -556,7 +556,7 @@
      display_name="其他防御蓝图服务器"
 	   display_name_for_sidebar="其他防御蓝图服务器"
      description="该建筑的两个独立区域正在研究非炮塔防御结构设计。最多可入侵三次以窃取蓝图，这些蓝图将在你所有的指挥站、战斗站和城堡中使用。当前区域包含以下蓝图。不同类型的指挥站根据其“防御结构容量乘数”获得或多或少的蓝图。也就是说，军事指挥站获得更多，经济指挥站获得更少，等等。请记住，有一些选项仅适用于指挥站，不适用于战斗站，但在你进行入侵时会有提示。"
-	   description_short="Non-turret defensive structure designs are under research in two isolated sectors in this structure. Hack up to two times to steal blueprints that are then used at ALL of your command stations, battlestations, and citadels.  The current sector contains the below blueprints.  Further sectors are hidden until this sector is hacked.  Amount varies based on the type of Station."
+	   description_short="非炮塔防御结构设计正在此建筑的两个独立区域中进行研究。可入侵最多两次以窃取蓝图，随后可在您的所有指挥站、战斗空间站和堡垒中使用。当前区域包含以下蓝图。在入侵本区域之前，其他区域将被隐藏。数量根据空间站类型而变化。"
      behavior="Stationary"
      starting_mark_level="Markless"
 	   cost_for_ai_to_purchase="200"

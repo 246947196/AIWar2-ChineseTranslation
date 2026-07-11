@@ -99,9 +99,9 @@ namespace Arcen.AIW2.External
                 if ( hackBeingDoneAgainstUs != null && hackBeingDoneAgainstUs.IsAGrantShipStyleHack )
                 {
                     if ( relatedEntityTypeData.IsBlockedFromDSSGrantToCommandStations )
-                        buffer.Add( "Will not be granted to command stations; only battlestations and citadels.\n" );
+                        buffer.Add( "不会授予指挥站，仅授予战斗空间站和堡垒。\n" );
                     if ( relatedEntityTypeData.IsBlockedFromDSSGrantToBattlestationsAndCitadels )
-                        buffer.Add( "Will not be granted to battlestations or citadels; only command stations.\n" );
+                        buffer.Add( "不会授予战斗空间站或堡垒，仅授予指挥站。\n" );
                 }
 
                 debugStage = 3;
@@ -319,11 +319,11 @@ namespace Arcen.AIW2.External
                 buffer.Add( "<b>" );
 
                 if ( DetailFlags.HasFlag( ShipExtraDetailFlags.InGuardPost ) )
-                    buffer.Add( "Loaded ", "ff622b" );
+                    buffer.Add( "已加载 ", "ff622b" );
                 else if ( DetailFlags.HasFlag( ShipExtraDetailFlags.BeingTransported ) )
-                    buffer.Add( "Loaded ", "59d2ff" );
+                    buffer.Add( "已加载 ", "59d2ff" );
                 else if ( DetailFlags.HasFlag( ShipExtraDetailFlags.LoadedDrone ) )
-                    buffer.Add( "Loaded ", "59d2ff" );
+                    buffer.Add( "已加载 ", "59d2ff" );
 
                 if ( OptionalCountToShow > 1 )
                 {
@@ -339,7 +339,7 @@ namespace Arcen.AIW2.External
 
                 if ( entity.SecondsSpentAsRemains >= 0 )
                 {
-                    buffer.Add( "REMAINS ", "ff4b21" );
+                    buffer.Add( "残骸 ", "ff4b21" );
                 }
                 if ( entityType.IsModular && relatedMembershipOrNull != null )
                 {
@@ -389,7 +389,7 @@ namespace Arcen.AIW2.External
                                         } 
                                         else
                                         {
-                                            buffer.Add( "Random " );
+                                            buffer.Add( "随机 " );
                                         }
                                     } 
                                     else if ( sentinelData.AdaptiveAIDifficulty != TypeDifficulty.Unset )
@@ -400,7 +400,7 @@ namespace Arcen.AIW2.External
                                         } 
                                         else
                                         {
-                                            buffer.Add( "Adaptive " );
+                                            buffer.Add( "自适应 " );
                                         }
                                     } 
                                     else
@@ -571,7 +571,7 @@ namespace Arcen.AIW2.External
                     #region Hull
                     if ( useText )
                     {
-                        buffer.Add( "Hull: " );
+                        buffer.Add( "船体: " );
                     }
                     if (hullMax == 0)
                     {
@@ -598,7 +598,7 @@ namespace Arcen.AIW2.External
                     #region Shield
                     if ( useText )
                     {
-                        buffer.Add( "Shield: " );
+                        buffer.Add( "护盾: " );
                     }
                     if (shieldMax == 0)
                     {
@@ -630,7 +630,7 @@ namespace Arcen.AIW2.External
 
                         if ( useText )
                         {
-                            buffer.Add( "Mass: " );
+                            buffer.Add( "质量: " );
                         }
                         buffer.StartMassWrapper( useIcons ).Add( entityType.Mass_tX ).Add( " tX" ).EndMassWrapper( false );
 
@@ -641,7 +641,7 @@ namespace Arcen.AIW2.External
 
                         if ( useText )
                         {
-                            buffer.Add( "Armor: " );
+                            buffer.Add( "护甲: " );
                         }
                         buffer.StartArmorWrapper( useIcons ).Add( entityType.Armor_mm ).Add( " mm" ).EndArmorWrapper( false );
 
@@ -655,7 +655,7 @@ namespace Arcen.AIW2.External
                         {
                             if ( useText )
                             {
-                                buffer.Add( "Metal: " );
+                                buffer.Add( "金属: " );
                             }
                             if ( metalCurr == 0 )
                             {
@@ -679,7 +679,7 @@ namespace Arcen.AIW2.External
                         {
                             if ( useText )
                             {
-                                buffer.Add( "Energy: " );
+                                buffer.Add( "能量: " );
                             }
                             if ( energyCurr == 0 )
                             {
@@ -705,13 +705,13 @@ namespace Arcen.AIW2.External
                             {
                                 if ( relatedEntityTypeData.FuelUseType == ResourceType.FuelArgon )
                                 {
-                                    buffer.Add( "Argon: " );
+                                    buffer.Add( "氩: " );
                                 } else if ( relatedEntityTypeData.FuelUseType == ResourceType.FuelRadon )
                                 {
-                                    buffer.Add( "Radon: " );
+                                    buffer.Add( "氡: " );
                                 } else if ( relatedEntityTypeData.FuelUseType == ResourceType.FuelXenon )
                                 {
-                                    buffer.Add( "Xenon: " );
+                                    buffer.Add( "氙: " );
                                 }
                             }
                             if ( energyCurr == 0 )
@@ -753,7 +753,7 @@ namespace Arcen.AIW2.External
                             {
                                 if ( useText )
                                 {
-                                    buffer.Add( "Claim AIP: " );
+                                    buffer.Add( "占领 AIP: " );
                                 }
                                 if ( entityType.AIPToClaim > FInt.Zero )
                                 {
@@ -768,7 +768,7 @@ namespace Arcen.AIW2.External
                         {
                             if ( useText )
                             {
-                                buffer.Add( "Hack AIP: " );
+                                buffer.Add( "入侵 AIP: " );
                             }
                             if ( entityType.AIPWhenGrantedByHack > FInt.Zero )
                             {
@@ -786,7 +786,7 @@ namespace Arcen.AIW2.External
                         #region Strength
                         if ( useText )
                         {
-                            buffer.Add( "Strength: " );
+                            buffer.Add( "战力: " );
                         }
                         buffer.WrapStrengthTruncated( strengthCurr, useIcons, false );
                         if ( strengthMode != null )
@@ -818,9 +818,9 @@ namespace Arcen.AIW2.External
                     speedBase = markStats.Speed;
                     if ( speedBase > 0 )
                     {
-                        if ( useText )
-                            buffer.Add( "Speed: " );
-                        buffer.WrapSpeedMoreReadable( speedCurr, useIcons, false );
+                if ( useText )
+                    buffer.Add( "速度: " );
+                buffer.WrapSpeedMoreReadable( speedCurr, useIcons, false );
                         if ( speedCurr != speedBase && detailLevel >= TooltipDetail.Medium && !( IsBeingDrawnInPopupWindowRatherThanTooltip || panelMode == Window_InGameHoverEntityInfo.Mode.Build ) )
                         {
                             speedPercent = FInt.Create( speedCurr, true ).ToPercent( speedBase );
@@ -834,11 +834,11 @@ namespace Arcen.AIW2.External
                         relatedEntityTypeData.OrbitsParentAtRange > 0 || relatedEntityTypeData.OrbitsFlagshipAtRange > 0 )
                     {
                         if ( useText )
-                            buffer.Add( "Orbit: " );
+                            buffer.Add( "轨道: " );
                         buffer.StartSpeedWrapper( false ).AddFIntTruncated( relatedEntityTypeData.DegreesToOrbitPerSecond );
                         if ( useText )
                         {
-                            buffer.Add( " deg/s" );
+                            buffer.Add( "度/秒" );
                         } else
                         {
                             buffer.Add( " °" );
@@ -846,9 +846,9 @@ namespace Arcen.AIW2.External
                         buffer.EndSpeedWrapper( false );
                     } else
                     {
-                        if ( useText )
-                            buffer.Add( "Speed: " );
-                        buffer.WrapSpeed( "-", useIcons, false );
+                    if ( useText )
+                        buffer.Add( "速度: " );
+                    buffer.WrapSpeed( "-", useIcons, false );
                     }
                     #endregion
 
@@ -865,37 +865,37 @@ namespace Arcen.AIW2.External
                     if ( IsBeingDrawnInPopupWindowRatherThanTooltip || entityCanBeClaimed || panelMode == Window_InGameHoverEntityInfo.Mode.Build )
                     {
                         buffer.AddSize_Small();
-                        if ( useText )
-                        {
-                            buffer.Add( "Engine: " );
-                        }
-                        buffer.StartEngineWrapper( useIcons );
-                        if ( entityType.Engine_gx > 0 )
-                        {
-                            buffer.Add( entityType.Engine_gx ).Add( " gX" );
-                        } else
-                        {
-                            buffer.Add( " -" );
-                        }
-                        buffer.EndEngineWrapper( false );
+                    if ( useText )
+                    {
+                        buffer.Add( "引擎: " );
+                    }
+                    buffer.StartEngineWrapper( useIcons );
+                    if ( entityType.Engine_gx > 0 )
+                    {
+                        buffer.Add( entityType.Engine_gx ).Add( " gX" );
+                    } else
+                    {
+                        buffer.Add( " -" );
+                    }
+                    buffer.EndEngineWrapper( false );
 
-                        cpi.AddStep().AddStep_Tenth();
-                        if ( useText )
-                            cpi.AddStep_FourtyPercent();
-                        buffer.ToPos( cpi );
+                    cpi.AddStep().AddStep_Tenth();
+                    if ( useText )
+                        cpi.AddStep_FourtyPercent();
+                    buffer.ToPos( cpi );
 
-                        if ( useText )
-                        {
-                            buffer.Add( "Albedo: " );
-                        }
-                        buffer.WrapAlbedo( markStats.Albedo, useIcons, false );
+                    if ( useText )
+                    {
+                        buffer.Add( "反照率: " );
+                    }
+                    buffer.WrapAlbedo( markStats.Albedo, useIcons, false );
                     
                     } else
                     {
                         buffer.AddSize_Small();
                         if ( useText )
                         {
-                            buffer.Add( "Engine: " );
+                            buffer.Add( "引擎: " );
                         }
                         buffer.StartEngineWrapper( useIcons );
                         if ( entityType.Engine_gx > 0 )
@@ -914,7 +914,7 @@ namespace Arcen.AIW2.External
 
                         if ( useText )
                         {
-                            buffer.Add( "Mass: " );
+                            buffer.Add( "质量: " );
                         }
                         buffer.StartMassWrapper( useIcons ).Add( entityType.Mass_tX ).Add( " tX" ).EndMassWrapper( false );
 
@@ -925,7 +925,7 @@ namespace Arcen.AIW2.External
 
                         if ( useText )
                         {
-                            buffer.Add( "Albedo: " );
+                            buffer.Add( "反照率: " );
                         }
                         buffer.WrapAlbedo( markStats.Albedo, useIcons, false );
 
@@ -936,7 +936,7 @@ namespace Arcen.AIW2.External
 
                         if ( useText )
                         {
-                            buffer.Add( "Armor: " );
+                            buffer.Add( "护甲: " );
                         }
                         buffer.StartArmorWrapper( useIcons ).Add( entityType.Armor_mm ).Add( " mm" ).EndArmorWrapper( false );
                     }
@@ -958,10 +958,10 @@ namespace Arcen.AIW2.External
                         {
                             buffer.EndColor().NewLine();
                             cpi.ResetPos();
-                            buffer.Add( "Claim: " ).AddSize_Small();
+                            buffer.Add( "占领: " ).AddSize_Small();
                             if ( entity.IsInHoldFireMode )
                             {
-                                buffer.Add( "Paused", "cccccc" );
+                                buffer.Add( "暂停", "cccccc" );
                             } else
                             {
                                 Faction forFaction;
@@ -977,36 +977,36 @@ namespace Arcen.AIW2.External
                                     FactionType planetController = entity.Planet == null ? FactionType.NaturalObject : entity.Planet.GetControllingFactionType();
                                     if ( planetController == FactionType.NaturalObject )
                                     {
-                                        buffer.Add( "Requires Planet Control", "bbbbbb" );
+                                        buffer.Add( "需要行星控制", "bbbbbb" );
                                     } else if ( planetController != FactionType.Player )
                                     {
-                                        buffer.Add( "Blocked by enemy", "aa3333" );
+                                        buffer.Add( "被敌人阻挡", "aa3333" );
                                     } else if ( forFaction.SecondsSinceBrownout > 0 )
                                     {
-                                        buffer.Add( "Stopped (Brownout)", "ff2222" );
+                                        buffer.Add( "已停止（电压不足）", "ff2222" );
                                     } else if ( forFaction.NetEnergy < entityType.EnergyUsage )
                                     {
-                                        buffer.Add( "Stopped (Power Lacking)", "cc2222" );
+                                        buffer.Add( "已停止（能量不足）", "cc2222" );
                                     } else if ( World_AIW2.Instance.IsFuelEnabled && relatedEntityTypeData.FuelUseType == ResourceType.FuelArgon && forFaction.NetFuelArgon < entityType.FuelUse )
                                     {
-                                        buffer.Add( "Stopped (Argon Lacking)", "cc2222" );
+                                        buffer.Add( "已停止（氩不足）", "cc2222" );
                                     } else if ( World_AIW2.Instance.IsFuelEnabled && relatedEntityTypeData.FuelUseType == ResourceType.FuelRadon && forFaction.FuelRadonConsumption < entityType.FuelUse )
                                     {
-                                        buffer.Add( "Stopped (Radon Lacking)", "cc2222" );
+                                        buffer.Add( "已停止（氡不足）", "cc2222" );
                                     } else if ( World_AIW2.Instance.IsFuelEnabled && relatedEntityTypeData.FuelUseType == ResourceType.FuelXenon && forFaction.FuelXenonConsumption < entityType.FuelUse )
                                     {
-                                        buffer.Add( "Stopped (Xenon Lacking)", "cc2222" );
+                                        buffer.Add( "已停止（氙不足）", "cc2222" );
                                     } else if ( hullCurr == 1 )
                                     {
-                                        buffer.Add( "Ready", "55dd55" );
+                                        buffer.Add( "就绪", "55dd55" );
                                     } else
                                     {
-                                        buffer.AddPercentageInColor( hullPercent, true, false ).Add( " done" );
+                                        buffer.AddPercentageInColor( hullPercent, true, false ).Add( " 完成" );
                                         if ( detailLevel == TooltipDetail.Full )
                                         {
                                             buffer.Add( " (" );
                                             if ( useText )
-                                                buffer.Add( "Metal: " );
+                                                buffer.Add( "金属: " );
                                             buffer.WrapMetalTruncated( metalCurr * hullPercent / 100, useIcons, false ).Add( " / " ).WrapMetalTruncated( metalCurr, false, false ).Add( ")" );
                                         }
                                     }
@@ -1020,19 +1020,19 @@ namespace Arcen.AIW2.External
                         {
                             buffer.EndColor().NewLine();
                             cpi.ResetPos();
-                            buffer.Add( "Constructing: " ).AddSize_Small();
+                            buffer.Add( "建造中: " ).AddSize_Small();
                             if ( entity.IsInHoldFireMode )
                             {
-                                buffer.Add( "Paused", "cccccc" );
+                                buffer.Add( "已暂停", "cccccc" );
                             } else
                             {
-                                buffer.AddPercentageInColor( (metalCurr - entity.SelfBuildingMetalRemaining).ToPercent( metalCurr ), true, false ).Add( " done" );
+                                buffer.AddPercentageInColor( (metalCurr - entity.SelfBuildingMetalRemaining).ToPercent( metalCurr ), true, false ).Add( " 完成" );
                             }
                             if ( detailLevel == TooltipDetail.Full )
                             {
                                 buffer.Add( " (" );
                                 if ( useText )
-                                    buffer.Add( "Metal: " );
+                                    buffer.Add( "金属: " );
                                 buffer.WrapMetalTruncated( metalCurr - entity.SelfBuildingMetalRemaining, useIcons, false ).Add( " / " ).WrapMetalTruncated( metalCurr, false, false ).Add( ")" );
                             }
                             buffer.EndSize();
@@ -1046,10 +1046,10 @@ namespace Arcen.AIW2.External
                         {
                             buffer.EndColor().NewLine();
                             cpi.ResetPos();
-                            buffer.Add( "Behavior: " ).AddSize_Small();
+                            buffer.Add( "行为: " ).AddSize_Small();
                             if ( entity.IsInHoldFireMode )
                             {
-                                buffer.Add( "Stand Down", "444499" );
+                                buffer.Add( "待命", "444499" );
                             } 
                             else
                             {
@@ -1060,45 +1060,45 @@ namespace Arcen.AIW2.External
                                         {
                                             if ( isCenterpiece )
                                             {
-                                                buffer.Add( "Commanding", "eeee88" );
+                                                buffer.Add( "指挥中", "eeee88" );
                                             } 
                                             else
                                             {
                                                 if ( entityFaction != null && entityFaction.Type == FactionType.Player )
-                                                    buffer.Add( "Pursuit Mode", Window_InGameSelectionInfo.color_Pursuit );
+                                                    buffer.Add( "追击模式", Window_InGameSelectionInfo.color_Pursuit );
                                                 else
-                                                    buffer.Add( "Roaming", "eeee88" );
+                                                    buffer.Add( "巡逻中", "eeee88" );
                                             }
                                         } 
                                         else
                                         {
                                             if ( entityFaction != null && entityFaction.Type == FactionType.Player )
-                                                buffer.Add( "Pursuit Mode", Window_InGameSelectionInfo.color_Pursuit );
+                                                buffer.Add( "追击模式", Window_InGameSelectionInfo.color_Pursuit );
                                             else
-                                                buffer.Add( "Attacking All", "ee8888" );
+                                                buffer.Add( "攻击全部", "ee8888" );
                                         }
                                         break;
                                     case EntityBehaviorType.Attacker_PursueOnlyInRange:
-                                        buffer.Add( "Attack Move", Window_InGameSelectionInfo.color_AttackMove );
+                                        buffer.Add( "攻击移动", Window_InGameSelectionInfo.color_AttackMove );
                                         break;
                                     case EntityBehaviorType.Guard_FleetShip:
-                                        buffer.Add( "Protect Ally", "88ee88" );
+                                        buffer.Add( "保护盟友", "88ee88" );
                                         break;
                                     case EntityBehaviorType.Guard_Guardian_Patrolling:
-                                        buffer.Add( "Patrol Sector", "88ee88" );
+                                        buffer.Add( "巡逻区域", "88ee88" );
                                         break;
                                     case EntityBehaviorType.Guard_Guardian_Anchored:
-                                        buffer.Add( "Defend Position", "88ee88" );
+                                        buffer.Add( "防守位置", "88ee88" );
                                         break;
                                     case EntityBehaviorType.Stationary:
                                     case EntityBehaviorType.None:
                                         if ( entity.TypeData.IsMobile == false )
                                         {
-                                            buffer.Add( "Stationary", "777777" );
+                                            buffer.Add( "静止", "777777" );
                                         }
                                         else
                                         {
-                                            buffer.Add( "Defending", "88ee88" );
+                                            buffer.Add( "防御中", "88ee88" );
                                         }
                                         break;
                                 }
@@ -1115,7 +1115,7 @@ namespace Arcen.AIW2.External
                                 EntityOrder order = entity.Orders.GetQueuedOrderAtIndex_OrNull( 0 );
                                 if ( order.TypeData != null )
                                 {
-                                    buffer.Add( "Orders: " ).AddSize_Small();
+                                    buffer.Add( "命令: " ).AddSize_Small();
                                     int queuedOrderCount = entity.Orders.GetQueuedOrderCount();
                                     Window_PrototypeInGameHoverEntityInfoUtils.WriteEntityOrder( entity, order, buffer );
 
@@ -1134,7 +1134,7 @@ namespace Arcen.AIW2.External
                                         {
                                             if ( consecutivePathing > 1 )
                                             {
-                                                buffer.Add( " (" ).Add( consecutivePathing ).Add( " hops)" );
+                                                buffer.Add( " (" ).Add( consecutivePathing ).Add( " 跳)" );
                                             }
                                             break;
                                         }
@@ -1159,7 +1159,7 @@ namespace Arcen.AIW2.External
                                         {
                                             if ( consecutivePathing > 1 )
                                             {
-                                                buffer.Add( " (" ).Add( consecutivePathing ).Add( " hops)" );
+                                                buffer.Add( " (" ).Add( consecutivePathing ).Add( " 跳)" );
                                             }
                                             consecutivePathing = 0;
                                         }
@@ -1172,7 +1172,7 @@ namespace Arcen.AIW2.External
                                     }
                                     if ( queuedOrderCount - i > 0 )
                                     {
-                                        buffer.Add( " + " ).Add( queuedOrderCount - i ).Add( " more" );
+                                        buffer.Add( " + " ).Add( queuedOrderCount - i ).Add( " 个更多" );
                                     }
                                     buffer.EndSize();
                                 }
@@ -1199,7 +1199,7 @@ namespace Arcen.AIW2.External
                     {
                         debugStage = 15001811;
                         Window_PrototypeInGameHoverEntityInfoUtils.WriteBuffsStartIfNeeded( buffer, ref wroteBuffStart );
-                        buffer.Add( "Lye: (" ).Add( entity.IncomingDamageAmplifiedDuration_Max15 ).Add( "s, " );
+                        buffer.Add( "碱蚀: (" ).Add( entity.IncomingDamageAmplifiedDuration_Max15 ).Add( "秒, " );
                         if ( entity.IncomingDamageAmplifiedByFlat < 0 )
                         {
                             buffer.AddNumberMoreReadable( entity.IncomingDamageAmplifiedByFlat );
@@ -1226,7 +1226,7 @@ namespace Arcen.AIW2.External
                         if ( fleetMembershipOrNull != null && fleetMembershipOrNull.Fleet.HullMultiplier > FInt.One && !relatedEntityTypeData.CannotBeSuperchargedWhenInSuperchargedFleet )
                         {
                             Window_PrototypeInGameHoverEntityInfoUtils.WriteHullBuffsStartIfNeeded( buffer, useIcons, ref wroteBuffStart, ref wroteHullBuffStart );
-                            buffer.Add( "Fleet Amp: +" ).AddPercentRoundedDynamically( (fleetMembershipOrNull.Fleet.HullMultiplier - 1) * 100 );
+                            buffer.Add( "舰队增幅: +" ).AddPercentRoundedDynamically( (fleetMembershipOrNull.Fleet.HullMultiplier - 1) * 100 );
                         }
                     }
                     #endregion
@@ -1242,7 +1242,7 @@ namespace Arcen.AIW2.External
                         if ( fleetMembershipOrNull != null && fleetMembershipOrNull.Fleet.ShieldsMultiplier > FInt.One && !relatedEntityTypeData.CannotBeSuperchargedWhenInSuperchargedFleet )
                         {
                             Window_PrototypeInGameHoverEntityInfoUtils.WriteShieldBuffsStartIfNeeded( buffer, useIcons, ref wroteBuffStart, ref wroteShieldBuffStart );
-                            buffer.Add( "Fleet Amp: +" ).AddPercentRoundedDynamically( (fleetMembershipOrNull.Fleet.ShieldsMultiplier - 1) * 100 );
+                            buffer.Add( "舰队增幅: +" ).AddPercentRoundedDynamically( (fleetMembershipOrNull.Fleet.ShieldsMultiplier - 1) * 100 );
                         }
                     }
                     #endregion
@@ -1258,25 +1258,25 @@ namespace Arcen.AIW2.External
                         if ( fleetMembershipOrNull != null && fleetMembershipOrNull.Fleet.AttackPowerMultiplier > FInt.One && !relatedEntityTypeData.CannotBeSuperchargedWhenInSuperchargedFleet )
                         {
                             Window_PrototypeInGameHoverEntityInfoUtils.WriteDamageBuffsStartIfNeeded( buffer, useIcons, ref wroteBuffStart, ref wroteDamageBuffStart );
-                            buffer.Add( "Fleet Amp: +" ).AddPercentRoundedDynamically( (fleetMembershipOrNull.Fleet.AttackPowerMultiplier - 1) * 100 );
+                            buffer.Add( "舰队增幅: +" ).AddPercentRoundedDynamically( (fleetMembershipOrNull.Fleet.AttackPowerMultiplier - 1) * 100 );
                         }
 
                         if ( markStats.Computed_BaseLongestWeaponRange > 0 && entity.PlanetFaction != null && entity.PlanetFaction.CurrentAttackMultiplier > FInt.One )
                         {
                             Window_PrototypeInGameHoverEntityInfoUtils.WriteDamageBuffsStartIfNeeded( buffer, useIcons, ref wroteBuffStart, ref wroteDamageBuffStart );
-                            buffer.Add( "Faction Planet Amp: +" ).AddPercentRoundedDynamically( (entity.PlanetFaction.CurrentAttackMultiplier - 1) * 100 );
+                            buffer.Add( "阵营行星增幅: +" ).AddPercentRoundedDynamically( (entity.PlanetFaction.CurrentAttackMultiplier - 1) * 100 );
                         }
 
                         if ( entity.TypeData.AmountAddedToDamagePerShipOfThisTypeOnPlanet > 0 && entity.CalculatedAddedDamage > 0 )
                         {
                             Window_PrototypeInGameHoverEntityInfoUtils.WriteDamageBuffsStartIfNeeded( buffer, useIcons, ref wroteBuffStart, ref wroteDamageBuffStart );
-                            buffer.Add( "Network: +" ).AddNumberTruncated( entity.CalculatedAddedDamage );
+                            buffer.Add( "网络: +" ).AddNumberTruncated( entity.CalculatedAddedDamage );
                         }
 
                         if ( entity.NumberOfWeaponPoints > 0 )
                         {
                             Window_PrototypeInGameHoverEntityInfoUtils.WriteDamageBuffsStartIfNeeded( buffer, false, ref wroteBuffStart, ref wroteDamageBuffStart );
-                            buffer.Add( "Weapon Points: " ).AddNumberMoreReadable( entity.NumberOfWeaponPoints );
+                            buffer.Add( "武器点数: " ).AddNumberMoreReadable( entity.NumberOfWeaponPoints );
                         }
                     }
                     #endregion
@@ -1296,10 +1296,10 @@ namespace Arcen.AIW2.External
                                 Window_PrototypeInGameHoverEntityInfoUtils.WriteSpeedBuffsStartIfNeeded( buffer, useIcons, ref wroteBuffStart, ref wroteSpeedBuffStart );
                                 if ( owningFactionOrNull != null && owningFactionOrNull.Type == FactionType.Player )
                                 {
-                                    buffer.Add( "Group Move: +" );
+                                    buffer.Add( "编队移动: +" );
                                 } else
                                 {
-                                    buffer.Add( "Speed Group: +" );
+                                    buffer.Add( "速度编队: +" );
                                 }
                                 buffer.AddNumberMoreReadable( entity.SpeedLimitFromGroupMove - markStats.Speed );
                             }
@@ -1307,13 +1307,13 @@ namespace Arcen.AIW2.External
                             !relatedEntityTypeData.CannotBeSuperchargedWhenInSuperchargedFleet && !isCenterpiece )
                         {
                             Window_PrototypeInGameHoverEntityInfoUtils.WriteSpeedBuffsStartIfNeeded( buffer, useIcons, ref wroteBuffStart, ref wroteSpeedBuffStart );
-                            buffer.Add( "Fleet Amp: +" ).AddNumberMoreReadable( fleetMembershipOrNull.Fleet.OverridingMinSpeed - markStats.Speed );
+                            buffer.Add( "舰队增幅: +" ).AddNumberMoreReadable( fleetMembershipOrNull.Fleet.OverridingMinSpeed - markStats.Speed );
                         }
 
                         if ( entity.PlanetFaction != null && (entity.PlanetFaction.CurrentSpeedMultiplier > FInt.One || entity.PlanetFaction.CurrentSpeedFlatBonus > 0) )
                         {
                             Window_PrototypeInGameHoverEntityInfoUtils.WriteSpeedBuffsStartIfNeeded( buffer, useIcons, ref wroteBuffStart, ref wroteSpeedBuffStart );
-                            buffer.Add( "Faction Planet Amp: " );
+                            buffer.Add( "阵营行星增幅: " );
                             if ( entity.PlanetFaction.CurrentSpeedMultiplier > FInt.One )
                             {
                                 buffer.Add( "+ " ).AddPercentRoundedDynamically( (entity.PlanetFaction.CurrentSpeedMultiplier - 1) * 100 );
@@ -1327,16 +1327,16 @@ namespace Arcen.AIW2.External
                         if ( entity.Planet != null && entity.Planet.UnitSpeedupPercentage > 0 )
                         {
                             Window_PrototypeInGameHoverEntityInfoUtils.WriteSpeedBuffsStartIfNeeded( buffer, useIcons, ref wroteBuffStart, ref wroteSpeedBuffStart );
-                            buffer.Add( "Planet Amp: " ).AddPercentRoundedDynamically( entity.Planet.UnitSpeedupPercentage, 100 );
+                            buffer.Add( "行星增幅: " ).AddPercentRoundedDynamically( entity.Planet.UnitSpeedupPercentage, 100 );
                         }
 
                         if ( entityType.SpeedMultiplierFirst5SecondsOnPlanet > FInt.One && entityTimeOnPlanet <= 5 )
                         {
                             Window_PrototypeInGameHoverEntityInfoUtils.WriteSpeedBuffsStartIfNeeded( buffer, useIcons, ref wroteBuffStart, ref wroteSpeedBuffStart );
-                            buffer.Add( "Rapid Deployment: +" ).AddPercentRoundedDynamically( (entityType.SpeedMultiplierFirst5SecondsOnPlanet - 1) * 100 );
+                            buffer.Add( "快速部署: +" ).AddPercentRoundedDynamically( (entityType.SpeedMultiplierFirst5SecondsOnPlanet - 1) * 100 );
                             if ( detailLevel == TooltipDetail.Full )
                             {
-                                buffer.Add( " (" ).Add( 6 - entityTimeOnPlanet ).Add( "s)" );
+                                buffer.Add( " (" ).Add( 6 - entityTimeOnPlanet ).Add( "秒)" );
                             }
                         }
 
@@ -1346,20 +1346,20 @@ namespace Arcen.AIW2.External
                             if ( order.TypeData != null && order.TypeData.Type == EntityOrderType.GetIntoTransport )
                             {
                                 Window_PrototypeInGameHoverEntityInfoUtils.WriteSpeedBuffsStartIfNeeded( buffer, useIcons, ref wroteBuffStart, ref wroteSpeedBuffStart );
-                                buffer.Add( "Loading: +" ).AddPercentRoundedDynamically( 2, 1 );
+                                buffer.Add( "装载: +" ).AddPercentRoundedDynamically( 2, 1 );
                             }
                         }
 
                         if ( isCenterpiece && entity.ActiveHack != null && speedMultiplierWhileHacking > FInt.One )
                         {
                             Window_PrototypeInGameHoverEntityInfoUtils.WriteSpeedBuffsStartIfNeeded( buffer, useIcons, ref wroteBuffStart, ref wroteSpeedBuffStart );
-                            buffer.Add( "Hacking: " ).AddPercentRoundedDynamically( (speedMultiplierWhileHacking - 1) * 100 );
+                            buffer.Add( "入侵: " ).AddPercentRoundedDynamically( (speedMultiplierWhileHacking - 1) * 100 );
                         }
 
                         if ( owningFactionOrNull != null && entity.Planet != null && entity.Planet.IsFimbulwintered && owningFactionOrNull.BenefitsFromFimbulwinter )
                         {
                             Window_PrototypeInGameHoverEntityInfoUtils.WriteSpeedBuffsStartIfNeeded( buffer, useIcons, ref wroteBuffStart, ref wroteSpeedBuffStart );
-                            buffer.Add( "Fimbulwinter: +" ).AddPercentRoundedDynamically( ExternalConstants.Instance.FimbulwinterSpeedupPercent, 100 );
+                            buffer.Add( "永冬: +" ).AddPercentRoundedDynamically( ExternalConstants.Instance.FimbulwinterSpeedupPercent, 100 );
                         }
                     }
 
@@ -1375,7 +1375,7 @@ namespace Arcen.AIW2.External
                         if ( fleetMembershipOrNull != null && entity.CalculatedAddedRange > 0 )
                         {
                             Window_PrototypeInGameHoverEntityInfoUtils.WriteRangeBuffsStartIfNeeded( buffer, useIcons, ref wroteBuffStart, ref wroteRangeBuffStart );
-                            buffer.Add( "Network: +" ).AddNumberTruncated( entity.CalculatedAddedRange );
+                            buffer.Add( "网络: +" ).AddNumberTruncated( entity.CalculatedAddedRange );
                         }
                     }
                     #endregion
@@ -1413,7 +1413,7 @@ namespace Arcen.AIW2.External
                     if ( entity.IncomingDamageAmplifiedDuration_Max15 > 0 && (entity.IncomingDamageAmplifiedByFlat > 0 || entity.IncomingDamageAmplifiedByMult > FInt.One) )
                     {
                         Window_PrototypeInGameHoverEntityInfoUtils.WriteDebuffsStartIfNeeded( buffer, ref wroteDebuffStart );
-                        buffer.Add( "Acid: (" ).Add( entity.IncomingDamageAmplifiedDuration_Max15 ).Add( "s, +" );
+                        buffer.Add( "腐蚀: (" ).Add( entity.IncomingDamageAmplifiedDuration_Max15 ).Add( "秒, +" );
                         if ( entity.IncomingDamageAmplifiedByFlat > 0 )
                         {
                             buffer.AddNumberMoreReadable( entity.IncomingDamageAmplifiedByFlat );
@@ -1434,7 +1434,7 @@ namespace Arcen.AIW2.External
                     if ( entity.CorrosionDamageToBeAppliedToMe > 0 )
                     {
                         Window_PrototypeInGameHoverEntityInfoUtils.WriteDebuffsStartIfNeeded( buffer, ref wroteDebuffStart );
-                        buffer.Add( "Corrosion: " ).Add( entity.CorrosionDamageToBeAppliedToMe );
+                        buffer.Add( "锈蚀: " ).Add( entity.CorrosionDamageToBeAppliedToMe );
                     }
                     #endregion
 
@@ -1442,7 +1442,7 @@ namespace Arcen.AIW2.External
                     if ( entity.CurrentParalysisSeconds > 0 )
                     {
                         Window_PrototypeInGameHoverEntityInfoUtils.WriteDebuffsStartIfNeeded( buffer, ref wroteDebuffStart );
-                        buffer.Add( "Paralysis: (" ).Add( entity.CurrentParalysisSeconds ).Add( "s)" );
+                        buffer.Add( "麻痹: (" ).Add( entity.CurrentParalysisSeconds ).Add( "秒)" );
                     }
                     #endregion
 
@@ -1450,7 +1450,7 @@ namespace Arcen.AIW2.External
                     if ( entity.CurrentWeaponAddedReloadSeconds > 0 )
                     {
                         Window_PrototypeInGameHoverEntityInfoUtils.WriteDebuffsStartIfNeeded( buffer, ref wroteDebuffStart );
-                        buffer.Add( "Reload Slow: (" ).Add( entity.CurrentWeaponAddedReloadSeconds ).Add( "s)" );
+                        buffer.Add( "装弹减速: (" ).Add( entity.CurrentWeaponAddedReloadSeconds ).Add( "秒)" );
                     }
                     #endregion
 
@@ -1463,7 +1463,7 @@ namespace Arcen.AIW2.External
                             !relatedEntityTypeData.CannotBeSuperchargedWhenInSuperchargedFleet )
                         {
                             Window_PrototypeInGameHoverEntityInfoUtils.WriteHullDebuffsStartIfNeeded( buffer, useIcons, ref wroteDebuffStart, ref wroteHullDebuffStart );
-                            buffer.Add( "Fleet Damp: " ).AddPercentRoundedDynamically( (fleetMembershipOrNull.Fleet.HullMultiplier * 100) - 100 );
+                            buffer.Add( "舰队衰减: " ).AddPercentRoundedDynamically( (fleetMembershipOrNull.Fleet.HullMultiplier * 100) - 100 );
                         }
                     }
                     #endregion
@@ -1476,7 +1476,7 @@ namespace Arcen.AIW2.External
                             !relatedEntityTypeData.CannotBeSuperchargedWhenInSuperchargedFleet )
                         {
                             Window_PrototypeInGameHoverEntityInfoUtils.WriteShieldDebuffsStartIfNeeded( buffer, useIcons, ref wroteDebuffStart, ref wroteShieldDebuffStart );
-                            buffer.Add( "Fleet Damp: " ).AddPercentRoundedDynamically( (fleetMembershipOrNull.Fleet.ShieldsMultiplier * 100) - 100 );
+                            buffer.Add( "舰队衰减: " ).AddPercentRoundedDynamically( (fleetMembershipOrNull.Fleet.ShieldsMultiplier * 100) - 100 );
                         }
                     }
                     #endregion
@@ -1489,14 +1489,14 @@ namespace Arcen.AIW2.External
                             !relatedEntityTypeData.CannotBeSuperchargedWhenInSuperchargedFleet )
                         {
                             Window_PrototypeInGameHoverEntityInfoUtils.WriteDamageDebuffsStartIfNeeded( buffer, useIcons, ref wroteDebuffStart, ref wroteDamageDebuffStart );
-                            buffer.Add( "Fleet Damp: " ).AddPercentRoundedDynamically( (fleetMembershipOrNull.Fleet.AttackPowerMultiplier * 100) - 100 );
+                            buffer.Add( "舰队衰减: " ).AddPercentRoundedDynamically( (fleetMembershipOrNull.Fleet.AttackPowerMultiplier * 100) - 100 );
                         }
 
                         if ( markStats.Computed_BaseLongestWeaponRange > 0 && entity.PlanetFaction != null && entity.PlanetFaction.CurrentAttackMultiplier < FInt.One && entity.PlanetFaction.CurrentAttackMultiplier != FInt.Zero &&
                             !relatedEntityTypeData.CannotBeSuperchargedWhenInSuperchargedFleet )
                         {
                             Window_PrototypeInGameHoverEntityInfoUtils.WriteDamageDebuffsStartIfNeeded( buffer, useIcons, ref wroteDebuffStart, ref wroteDamageDebuffStart );
-                            buffer.Add( "Faction Planet Damp: " ).AddPercentRoundedDynamically( (entity.PlanetFaction.CurrentAttackMultiplier * 100) - 100 );
+                            buffer.Add( "阵营行星衰减: " ).AddPercentRoundedDynamically( (entity.PlanetFaction.CurrentAttackMultiplier * 100) - 100 );
                         }
 
                         if ( !isUsingFakeEntityAsStandin && markStats.Computed_BaseLongestWeaponRange > 0 &&
@@ -1552,10 +1552,10 @@ namespace Arcen.AIW2.External
                             if ( foundAny )
                             {
                                 Window_PrototypeInGameHoverEntityInfoUtils.WriteDamageDebuffsStartIfNeeded( buffer, useIcons, ref wroteDebuffStart, ref wroteDamageDebuffStart );
-                                buffer.Add( "Under Forcefield: -50%" );
+                                buffer.Add( "力场保护下：-50%" );
                                 if ( !toEveryWeapon )
                                 {
-                                    buffer.Add( " to " );
+                                    buffer.Add( " 对 " );
                                     if ( detailLevel == TooltipDetail.Full )
                                     {
                                         bool isFirst = true;
@@ -1570,7 +1570,7 @@ namespace Arcen.AIW2.External
                                         }
                                     } else
                                     {
-                                        buffer.Add( "some weapons" );
+                                        buffer.Add( "某些武器" );
                                     }
                                 }
                             }
@@ -1597,10 +1597,10 @@ namespace Arcen.AIW2.External
                             FInt slowFactor = ExternalConstants.Instance.EngineStunMultipliersByStunSeconds[index];
                             if ( slowFactor <= FInt.Zero )
                             {
-                                buffer.Add( "Engine Stun: (" ).Add( entity.CurrentEngineStunSeconds ).Add( "s, -100%)" );
+                                buffer.Add( "引擎眩晕：（" ).Add( entity.CurrentEngineStunSeconds ).Add( "秒，-100%）" );
                             } else
                             {
-                                buffer.Add( "Engine Slow: (" ).Add( entity.CurrentEngineStunSeconds ).Add( "s, " ).AddPercentRoundedDynamically( (slowFactor * 100) - 100 ).Add( ")" );
+                                buffer.Add( "引擎减速：（" ).Add( entity.CurrentEngineStunSeconds ).Add( "秒，" ).AddPercentRoundedDynamically( (slowFactor * 100) - 100 ).Add( "）" );
                             }
                         }
                         #endregion
@@ -1608,7 +1608,7 @@ namespace Arcen.AIW2.External
                         if ( entity.CurrentCountOfTractorsPullingOnThis > 0 )
                         {
                             Window_PrototypeInGameHoverEntityInfoUtils.WriteSpeedDebuffsStartIfNeeded( buffer, useIcons, ref wroteDebuffStart, ref wroteSpeedDebuffStart );
-                            buffer.Add( "Caught in Tractor Beam: -100%" );
+                            buffer.Add( "被牵引光束捕获：-100%" );
                         } else
                         {
                             if ( entity.SpeedLimitFromGroupMove > 0 && entity.SpeedLimitFromGroupMove < markStats.Speed )
@@ -1616,10 +1616,10 @@ namespace Arcen.AIW2.External
                                 Window_PrototypeInGameHoverEntityInfoUtils.WriteSpeedDebuffsStartIfNeeded( buffer, useIcons, ref wroteDebuffStart, ref wroteSpeedDebuffStart );
                                 if ( owningFactionOrNull != null && owningFactionOrNull.Type == FactionType.Player )
                                 {
-                                    buffer.Add( "Group Move: " );
+                                    buffer.Add( "编队移动：" );
                                 } else
                                 {
-                                    buffer.Add( "Speed Group: " );
+                                    buffer.Add( "速度编队：" );
                                 }
                                 buffer.AddNumberMoreReadable( entity.SpeedLimitFromGroupMove - markStats.Speed );
                             }
@@ -1627,7 +1627,7 @@ namespace Arcen.AIW2.External
                             if ( entity.PlanetFaction != null && (entity.PlanetFaction.CurrentSpeedMultiplier < FInt.One || entity.PlanetFaction.CurrentSpeedFlatBonus < 0) )
                             {
                                 Window_PrototypeInGameHoverEntityInfoUtils.WriteSpeedDebuffsStartIfNeeded( buffer, useIcons, ref wroteDebuffStart, ref wroteSpeedDebuffStart );
-                                buffer.Add( "Faction Planet Damp: " );
+                                buffer.Add( "阵营行星阻尼：" );
                                 if ( entity.PlanetFaction.CurrentSpeedMultiplier < FInt.One )
                                 {
                                     buffer.Add( " " ).AddPercentRoundedDynamically( (entity.PlanetFaction.CurrentSpeedMultiplier * 100) - 100 );
@@ -1641,23 +1641,23 @@ namespace Arcen.AIW2.External
                             if ( entity.Planet != null && entity.Planet.UnitSlowPercentage > 0 )
                             {
                                 Window_PrototypeInGameHoverEntityInfoUtils.WriteSpeedDebuffsStartIfNeeded( buffer, useIcons, ref wroteDebuffStart, ref wroteSpeedDebuffStart );
-                                buffer.Add( "Planet Damp: " ).AddPercentRoundedDynamically( -entity.Planet.UnitSlowPercentage, 100 );
+                                buffer.Add( "行星阻尼：" ).AddPercentRoundedDynamically( -entity.Planet.UnitSlowPercentage, 100 );
                             }
 
                             if ( entityType.SpeedMultiplierFirst5SecondsOnPlanet < FInt.One && entityType.SpeedMultiplierFirst5SecondsOnPlanet != FInt.Zero && entityTimeOnPlanet <= 5 )
                             {
                                 Window_PrototypeInGameHoverEntityInfoUtils.WriteSpeedDebuffsStartIfNeeded( buffer, useIcons, ref wroteDebuffStart, ref wroteSpeedDebuffStart );
-                                buffer.Add( "Arrival: " ).AddPercentRoundedDynamically( (entityType.SpeedMultiplierFirst5SecondsOnPlanet * 100) - 100 );
+                                buffer.Add( "抵达：" ).AddPercentRoundedDynamically( (entityType.SpeedMultiplierFirst5SecondsOnPlanet * 100) - 100 );
                                 if ( detailLevel == TooltipDetail.Full )
                                 {
-                                    buffer.Add( " (for " ).Add( 6 - entityTimeOnPlanet ).Add( "s)" );
+                                    buffer.Add( "（持续" ).Add( 6 - entityTimeOnPlanet ).Add( "秒）" );
                                 }
                             }
 
                             if ( isCenterpiece && entity.ActiveHack != null && speedMultiplierWhileHacking < FInt.One )
                             {
                                 Window_PrototypeInGameHoverEntityInfoUtils.WriteSpeedDebuffsStartIfNeeded( buffer, useIcons, ref wroteDebuffStart, ref wroteSpeedDebuffStart );
-                                buffer.Add( "Hacking: " ).AddPercentRoundedDynamically( (speedMultiplierWhileHacking - 1) * 100 );
+                                buffer.Add( "入侵：" ).AddPercentRoundedDynamically( (speedMultiplierWhileHacking - 1) * 100 );
                             }
 
                             if ( owningFactionOrNull != null && entity.Planet != null && entity.Planet.IsFimbulwintered && !owningFactionOrNull.BenefitsFromFimbulwinter )
@@ -1670,7 +1670,7 @@ namespace Arcen.AIW2.External
                             if ( grav < FInt.One && grav != FInt.Zero )
                             {
                                 Window_PrototypeInGameHoverEntityInfoUtils.WriteSpeedDebuffsStartIfNeeded( buffer, useIcons, ref wroteDebuffStart, ref wroteSpeedDebuffStart );
-                                buffer.Add( "Gravity: " ).AddPercentRoundedDynamically( grav * 100 );
+                                buffer.Add( "引力：" ).AddPercentRoundedDynamically( grav * 100 );
                             }
                         }
                     }
@@ -1689,14 +1689,14 @@ namespace Arcen.AIW2.External
                             Window_PrototypeInGameHoverEntityInfoUtils.WriteDecloakDebuffsStartIfNeeded( buffer, useIcons, true, ref wroteDebuffStart, ref wroteCloakBuffStart );
                             if ( entity.ActiveHack != null )
                             {
-                                buffer.Add( ", Disabled by Hack" );
+                                buffer.Add( "，被入侵禁用" );
                             } else if ( entity.GetIsCrippled() )
                             {
-                                buffer.Add( ", Crippled" );
+                                buffer.Add( "，已瘫痪" );
                             } else if ( detailLevel == TooltipDetail.Full )
                             {
-                                buffer.Add( " (Regen: " ).Add( 1 + ExternalConstants.Instance.SecondsToWaitBeforeRecloaking - (World_AIW2.Instance.GameSecond - entity.GameSecondOfLastCloakingPointLoss) )
-                                    .Add( "s)" );
+                                buffer.Add( "（恢复：" ).Add( 1 + ExternalConstants.Instance.SecondsToWaitBeforeRecloaking - (World_AIW2.Instance.GameSecond - entity.GameSecondOfLastCloakingPointLoss) )
+                                    .Add( "秒）" );
                             }
                         } 
                         else if ( World_AIW2.Instance.GameSecond - entity.GameSecondOfLastCloakingPointLoss < 2 )
@@ -1709,7 +1709,7 @@ namespace Arcen.AIW2.External
                     if (relatedEntityTypeData.IsTurret && AIWar2GalaxySettingQuickAccess.UseHarshTurretRangesOnNonHumanPlanets ) {
                         if ( owningFactionOrNull?.Type == FactionType.Player && thisPlanetOrNull?.GetControllingFactionType() != FactionType.Player  ) {
                             Window_PrototypeInGameHoverEntityInfoUtils.WriteDebuffsStartIfNeeded( buffer, ref wroteDebuffStart );
-                            buffer.WrapSpeed("Range: ", false, false).Add("limited on hostile planet");
+                            buffer.WrapSpeed("射程：", false, false).Add("在敌对行星上受限");
                         }
                     }
 
@@ -1886,9 +1886,9 @@ namespace Arcen.AIW2.External
                 if ( relatedSquadOrNull != null && relatedSquadOrNull.SecondsSpentAsRemains >= 0 )
                 {
                     if ( detailLevel < TooltipDetail.Full )
-                        buffer.Add( "<color=#ff4b21>This is only the broken remains of the unit. </color>" );
+                        buffer.Add( "<color=#ff4b21>这只是该单位的残骸。</color>" );
                     else
-                        buffer.Add( "<color=#ff4b21>This is only the broken remains of the unit.  Remains do nothing directly, but can be rebuilt by a Rebuilder unit. </color>" );
+                        buffer.Add( "<color=#ff4b21>这只是该单位的残骸。残骸本身无法行动，但可通过修复单位重建。</color>" );
                 }
                 debugStage = 305;
                 if ( detailLevel < TooltipDetail.Full && relatedEntityTypeData.DescriptionShort.Length > 0 &&
@@ -1984,12 +1984,12 @@ namespace Arcen.AIW2.External
                     if ( relatedEntityTypeData.IsCrippledInsteadOfDying && (relatedSquadOrNull == null || relatedSquadOrNull.GetFactionTypeSafe() == FactionType.Player) )
                     {
                         FInt extraCost = relatedEntityTypeData.GetExtraCostWhileCrippled();
-                        buffer.StartColor( "999999" ).Add( "If this unit becomes crippled, repairs to it will cost " ).AddFixedDecimal( extraCost.ToFloatNonSim(), 2 ).Add( "x more until it is no longer crippled (when it reaches full health).  " );
+                        buffer.StartColor( "999999" ).Add( "如果该单位进入瘫痪状态，修复费用将增加 " ).AddFixedDecimal( extraCost.ToFloatNonSim(), 2 ).Add( "倍，直至其恢复（生命值回满后解除瘫痪）。  " );
 
                         int hackingPointsLost = relatedEntityTypeData.GetHackingPointsLostWhenCrippled();
                         if ( hackingPointsLost > 0 )
                         {
-                            buffer.Add( "You will also lose " ).WrapHacking( hackingPointsLost, useIcons, useText ).Add( " each time it is crippled.  " );
+                            buffer.Add( "你还会损失 " ).WrapHacking( hackingPointsLost, useIcons, useText ).Add( "，每次瘫痪均会触发。  " );
                         }
                         buffer.EndColor();
                     }
@@ -1997,7 +1997,7 @@ namespace Arcen.AIW2.External
                     if (relatedEntityTypeData.ShipClass.CanBeDamaged && relatedSquadFactionOrNull != null && relatedSquadFactionOrNull.Type == FactionType.Player)
                     {
                         int time = relatedEntityTypeData.CustomRepairImpossibleForSecondsAfterDamagedByEnemy_Max15 > 0 ? relatedEntityTypeData.CustomRepairImpossibleForSecondsAfterDamagedByEnemy_Max15 : ExternalConstants.Instance.Balance_RepairImpossibleForSecondsAfterDamagedByEnemy;
-                        buffer.StartColor( "999999" ).Add( "This unit cannot regen or be be repaired until " ).Add( time, "a45e5e" ).Add( "s pass after it is damaged by an enemy.  " ).EndColor();
+                        buffer.StartColor( "999999" ).Add( "该单位在被敌人攻击后无法恢复或被修理，直至 " ).Add( time, "a45e5e" ).Add( "秒后。  " ).EndColor();
                     }
                 }
 
@@ -2006,21 +2006,21 @@ namespace Arcen.AIW2.External
                     if ( relatedSquadOrNull.TypeData.SelfAttritionsXPercentPerSecondIfParentShipNotOnPlanet > 0 )
                     {
                         if ( detailLevel >= TooltipDetail.Full )
-                            buffer.StartColor( "aaaaaa" ).Add( "This unit is never eligible for repairs because it self-attritions.  " ).EndColor();
+                            buffer.StartColor( "aaaaaa" ).Add( "该单位因自损而永远无法被修理。  " ).EndColor();
                         else
-                            buffer.StartColor( "aaaaaa" ).Add( "This unit is never eligible for repairs.  " );
+                            buffer.StartColor( "aaaaaa" ).Add( "该单位永远无法被修理。  " );
                     } else if ( relatedSquadOrNull.RepairImpossibleForSeconds > 0 )
                     {
                         if ( relatedSquadOrNull.TypeData.ImmuneToRepairs )
                         {
                             if ( relatedSquadOrNull.TypeData.SecondsToFullyRegenerateHull > FInt.Zero )
-                                buffer.StartColor( "aaaaaa" ).Add( "This unit will be eligible to regenerate health in " ).Add( relatedSquadOrNull.RepairImpossibleForSeconds, "aa3434" ).Add( "s.  " ).EndColor();
+                                buffer.StartColor( "aaaaaa" ).Add( "该单位将可恢复生命值，还需 " ).Add( relatedSquadOrNull.RepairImpossibleForSeconds, "aa3434" ).Add( " 秒。  " ).EndColor();
                         } else
                         {
                             if ( relatedSquadOrNull.TypeData.SecondsToFullyRegenerateHull > FInt.Zero )
-                                buffer.StartColor( "aaaaaa" ).Add( "This unit will be eligible to regenerate health or be repaired in " ).Add( relatedSquadOrNull.RepairImpossibleForSeconds, "aa3434" ).Add( "s.  " ).EndColor();
+                                buffer.StartColor( "aaaaaa" ).Add( "该单位将可恢复生命值或被修理，还需 " ).Add( relatedSquadOrNull.RepairImpossibleForSeconds, "aa3434" ).Add( " 秒。  " ).EndColor();
                             else
-                                buffer.StartColor( "aaaaaa" ).Add( "This unit will be eligible to be repaired in " ).Add( relatedSquadOrNull.RepairImpossibleForSeconds, "aa3434" ).Add( "s.  " ).EndColor();
+                                buffer.StartColor( "aaaaaa" ).Add( "该单位将可被修理，还需 " ).Add( relatedSquadOrNull.RepairImpossibleForSeconds, "aa3434" ).Add( " 秒。  " ).EndColor();
                         }
                     }
                     //if ( relatedSquadOrNull.RepairExtraCostForSeconds > 0 )
@@ -2046,9 +2046,9 @@ namespace Arcen.AIW2.External
                     if ( relatedEntityTypeData.SelfAttritionsXPercentPerSecondIfParentShipNotOnPlanet > 0 )
                     {
                         if ( detailLevel >= TooltipDetail.Full )
-                            buffer.StartColor( "aaaaaa" ).Add( "This unit is never eligible for repairs because it self-attritions.  " ).EndColor();
+                            buffer.StartColor( "aaaaaa" ).Add( "该单位因自损而永远无法被修理。  " ).EndColor();
                         else
-                            buffer.StartColor( "aaaaaa" ).Add( "This unit is never eligible for repairs.  " ).EndColor();
+                            buffer.StartColor( "aaaaaa" ).Add( "该单位永远无法被修理。  " ).EndColor();
                     }
                 }
                 float secondsPerSimFrame = World_AIW2.Instance.SimulationProfile.SecondsPerFrameNonSim;
@@ -2072,9 +2072,9 @@ namespace Arcen.AIW2.External
                 {
                     debugStage = 340;
                     if ( detailLevel < TooltipDetail.Full )
-                        buffer.Add( "Auto-builds drones of types: <color=#ffdf72>" );
+                        buffer.Add( "自动建造以下类型无人机：<color=#ffdf72>" );
                     else
-                        buffer.Add( "Auto-builds drones of the following sorts, and releases them when threatened: <color=#ffdf72>" );
+                        buffer.Add( "自动建造以下各类无人机，受到威胁时释放：<color=#ffdf72>" );
                     bool isFirst = true;
 
                     debugStage = 350;
@@ -2118,7 +2118,7 @@ namespace Arcen.AIW2.External
                             buffer.Add( cap );
                         }
                     }
-                    buffer.Add( "</color>.  " );
+                    buffer.Add( "</color>。  " );
                 }
                 #endregion
 
@@ -2178,14 +2178,14 @@ namespace Arcen.AIW2.External
                             case ResourceType.FuelArgon:
                             case ResourceType.FuelRadon:
                             case ResourceType.FuelXenon:
-                                buffer.Add( "Produces " );
+                                buffer.Add( "生产 " );
                                 break;
                             case ResourceType.Energy:
-                                buffer.Add( "Generates " );
+                                buffer.Add( "产生 " );
                                 break;
                             case ResourceType.Hacking:
                             case ResourceType.Science:
-                                buffer.Add( "Gathers " );
+                                buffer.Add( "收集 " );
                                 break;
                             default:
                                 continue;
@@ -2199,31 +2199,31 @@ namespace Arcen.AIW2.External
                         switch ( resource )
                         {
                             case ResourceType.Metal:
-                                buffer.Add( " /s" );
+                                buffer.Add( "/秒" );
                                 if ( markStats.MetalStorage > 0 )
                                 {
                                     handledMetalStorage = true;
-                                    buffer.Add( " and stores " ).WrapMetalTruncated( markStats.MetalStorage, useIcons, useText );
+                                    buffer.Add( "，储存 " ).WrapMetalTruncated( markStats.MetalStorage, useIcons, useText );
                                 }
-                                buffer.Add( ".  " );
+                                buffer.Add( "。  " );
                                 break;
                             case ResourceType.Energy:
-                                buffer.Add( ".  " );
+                                buffer.Add( "。  " );
                                 break;
                             case ResourceType.Hacking:
-                                buffer.Add( " /s when on a planet with remaining hacking points.  " );
+                                buffer.Add( "/秒（位于有剩余入侵点的行星上时）。  " );
                                 break;
                             case ResourceType.Science:
-                                buffer.Add( " /s when on a planet with remaining science.  " );
+                                buffer.Add( "/秒（位于有剩余科技点的行星上时）。  " );
                                 break;
                             case ResourceType.FuelArgon:
-                                buffer.Add( " (for main combat ships).  " );
+                                buffer.Add( "（用于主力战斗舰船）。  " );
                                 break;
                             case ResourceType.FuelRadon:
-                                buffer.Add( " (for turrets and forcefields).  " );
+                                buffer.Add( "（用于炮塔和力场）。  " );
                                 break;
                             case ResourceType.FuelXenon:
-                                buffer.Add( " (for officers and elites).  " );
+                                buffer.Add( "（用于军官和精英单位）。  " );
                                 break;
                             default:
                                 continue;
@@ -2234,7 +2234,7 @@ namespace Arcen.AIW2.External
                         if ( markStats.MetalStorage > 0 )
                         {
                             handledMetalStorage = true;
-                            buffer.Add( "Stores " ).WrapMetalTruncated( markStats.MetalStorage, useIcons, useText ).Add( ".  " );
+                            buffer.Add( "储存 " ).WrapMetalTruncated( markStats.MetalStorage, useIcons, useText ).Add( "。  " );
                         }
                     }
                 }
@@ -2250,8 +2250,8 @@ namespace Arcen.AIW2.External
                                 relatedEntityTypeData.EnergyProductionMultiplierToAsteroids_DistributedModeOnly != FInt.One;
                     if ( showMetal )
                     {
-                        buffer.Add( "Increases asteroid powerplant production: " ).StartMetalWrapper( useIcons ).AddNumberMoreReadable( relatedEntityTypeData.MetalProductionMultiplierToAsteroids_DistributedModeOnly )
-                            .Add( "x" ).EndMetalWrapper( useText ).Add("/s");
+                        buffer.Add( "提升小行星发电站产量：" ).StartMetalWrapper( useIcons ).AddNumberMoreReadable( relatedEntityTypeData.MetalProductionMultiplierToAsteroids_DistributedModeOnly )
+                            .Add( "x" ).EndMetalWrapper( useText ).Add("/秒");
                     }
 
                     if ( showEnergy )
@@ -2259,13 +2259,13 @@ namespace Arcen.AIW2.External
                         if ( showMetal )
                             buffer.Add( ", " );
                         else
-                            buffer.Add( "Increases asteroid powerplant production: " );
+                            buffer.Add( "提升小行星发电站产量：" );
                         buffer.StartEnergyWrapper( useIcons ).AddNumberMoreReadable( relatedEntityTypeData.EnergyProductionMultiplierToAsteroids_DistributedModeOnly )
-                            .Add( "x" ).EndEnergyWrapper( useText ).Add( "/s" );
+                            .Add( "x" ).EndEnergyWrapper( useText ).Add( "/秒" );
                     }
 
                     if ( showMetal || showEnergy )
-                        buffer.Add( ".  " );
+                        buffer.Add( "。  " );
                 }
 
                 #region Resource Multipliers
@@ -2296,35 +2296,35 @@ namespace Arcen.AIW2.External
 
                         debugStage = 372;
 
-                        buffer.Add( "Provides a <color=#ffdf72>" ).AddNumberTruncated( resourceMultiplier ).Add( "x</color> boost to all " ).StartGenericResourceWrapper( resource, false );
+                        buffer.Add( "提供 <color=#ffdf72>" ).AddNumberTruncated( resourceMultiplier ).Add( "x</color> 对所有 " ).StartGenericResourceWrapper( resource, false );
 
                         switch ( resource )
                         {
                             case ResourceType.Metal:
-                                buffer.Add( "Metal/s produced" );
+                                buffer.Add( "金属/秒" );
                                 break;
                             case ResourceType.Energy:
-                                buffer.Add( "Energy generated" );
+                                buffer.Add( "能量产生" );
                                 break;
                             case ResourceType.Hacking:
-                                buffer.Add( "Hacking gathered" );
+                                buffer.Add( "入侵点收集" );
                                 break;
                             case ResourceType.Science:
-                                buffer.Add( "Science gathered" );
+                                buffer.Add( "科技点收集" );
                                 break;
                             case ResourceType.FuelArgon:
-                                buffer.Add( "Argon produced" );
+                                buffer.Add( "氩气生产" );
                                 break;
                             case ResourceType.FuelRadon:
-                                buffer.Add( "Radon produced" );
+                                buffer.Add( "氡气生产" );
                                 break;
                             case ResourceType.FuelXenon:
-                                buffer.Add( "Xenon produced" );
+                                buffer.Add( "氙气生产" );
                                 break;
                             default:
                                 continue;
                         }
-                        buffer.EndGenericResourceWrapper( resource, false ).Add( " on the planet.  " );
+                        buffer.EndGenericResourceWrapper( resource, false ).Add( "在行星上的加成。  " );
                     }
                 }
                 #endregion
@@ -2349,70 +2349,70 @@ namespace Arcen.AIW2.External
                         areBonusesOn = timeHasBeenHereAndNotCrippled >= relatedEntityTypeData.TimeRequiredToBeHereAndNonCrippledToBoostMetalOrEnergyProduction &&
                             (!relatedSquadOrNull.NonSim_PlanetaryMetalBoostFailedFromOthersBeingPresent || relatedSquadOrNull.NonSim_PlanetaryEnergyBoostFailedFromOthersBeingPresent);
                         if ( areBonusesOn )
-                            buffer.Add( "<color=#ffed52>ON: </color>" );
+                            buffer.Add( "<color=#ffed52>开启：</color>" );
                         else
-                            buffer.Add( "<color=#ff8f52>OFF: </color>" );
+                            buffer.Add( "<color=#ff8f52>关闭：</color>" );
                     }
 
                     //Combined numbers:
                     if ( hasEqualBoosts && metalBoostFailed == energyBoostFailed )
                     {
                         if ( metalBoostFailed )
-                            buffer.Add( "Could provide a <color=#ffdf72>" );
+                            buffer.Add( "可提供 <color=#ffdf72>" );
                         else
-                            buffer.Add( "Provides a <color=#ffdf72>" );
-                        buffer.AddNumberTruncated( relatedEntityTypeData.BoostToPlanetaryMetalProductionIfHaveBeenHereAndNonCrippledForXTime ).Add( "x</color> boost to metal/s production and energy generation" );
+                            buffer.Add( "提供 <color=#ffdf72>" );
+                        buffer.AddNumberTruncated( relatedEntityTypeData.BoostToPlanetaryMetalProductionIfHaveBeenHereAndNonCrippledForXTime ).Add( "x</color> 金属/秒产量和能量产生加成" );
                     } else
                     {//Separated numbers
                         if ( canBoostMetal )
                         {
-                            if ( metalBoostFailed )
-                                buffer.Add( "Could provide a " );
-                            else
-                                buffer.Add( "Provides a" );
-                            buffer.AddNumberTruncated( relatedEntityTypeData.BoostToPlanetaryMetalProductionIfHaveBeenHereAndNonCrippledForXTime ).Add( "x</color> boost to metal/s production" );
+                        if ( metalBoostFailed )
+                            buffer.Add( "可提供 " );
+                        else
+                            buffer.Add( "提供" );
+                        buffer.AddNumberTruncated( relatedEntityTypeData.BoostToPlanetaryMetalProductionIfHaveBeenHereAndNonCrippledForXTime ).Add( "x</color> 金属/秒产量加成" );
                             if ( metalBoostFailed && !energyBoostFailed )
-                                buffer.Add( " (but is overriden by a more powerful booster)" );
+                                buffer.Add( "（但被更强大的增强器覆盖）" );
                         }
                         if ( canBoostEnergy )
                         {
                             if ( canBoostMetal )
                             {
-                                buffer.Add( " and " );
+                                buffer.Add( " 和 " );
                                 if ( energyBoostFailed )
-                                    buffer.Add( "could provide a " );
+                                    buffer.Add( "可提供 " );
                                 else
-                                    buffer.Add( "provides a" );
-                            } else
+                                    buffer.Add( "提供" );
+                            }                         else
                             {
                                 if ( energyBoostFailed )
-                                    buffer.Add( "Could provide a " );
+                                    buffer.Add( "可提供 " );
                                 else
-                                    buffer.Add( "Provides a" );
+                                    buffer.Add( "提供" );
                             }
-                            buffer.AddNumberTruncated( relatedEntityTypeData.BoostToPlanetaryEnergyProductionIfHaveBeenHereAndNonCrippledForXTime ).Add( "x</color> boost to energy generation" );
+                            buffer.AddNumberTruncated( relatedEntityTypeData.BoostToPlanetaryEnergyProductionIfHaveBeenHereAndNonCrippledForXTime ).Add( "x</color> 能量产生加成" );
                             if ( energyBoostFailed )
                             {
                                 if ( metalBoostFailed )
-                                    buffer.Add( " (but both are overridden by a more powerful booster)" );
+                                    buffer.Add( "（但两者都被更强大的增强器覆盖）" );
                                 else
-                                    buffer.Add( " (but is overriden by a more powerful booster)" );
+                                    buffer.Add( "（但被更强大的增强器覆盖）" );
                             }
                         }
                     }
-                    buffer.Add( " to its planet " );
+                    buffer.Add( "对其所在行星 " );
                     if ( displayExtraData )
                     {
                         if ( areBonusesOn )
-                            buffer.Add( "since it has been at this planet and non-crippled for more than " )
-                                .AddHoursAndMinutes( relatedEntityTypeData.TimeRequiredToBeHereAndNonCrippledToBoostMetalOrEnergyProduction ).Add( ".  " );
+                            buffer.Add( "因已在该行星且未瘫痪超过 " )
+                                .AddHoursAndMinutes( relatedEntityTypeData.TimeRequiredToBeHereAndNonCrippledToBoostMetalOrEnergyProduction ).Add( "。  " );
                         else
-                            buffer.Add( "once it has been at this planet and non-crippled for at least " )
-                                .AddHoursAndMinutes( relatedEntityTypeData.TimeRequiredToBeHereAndNonCrippledToBoostMetalOrEnergyProduction - timeHasBeenHereAndNotCrippled ).Add( " more.  " );
+                            buffer.Add( "在该行星且未瘫痪至少 " )
+                                .AddHoursAndMinutes( relatedEntityTypeData.TimeRequiredToBeHereAndNonCrippledToBoostMetalOrEnergyProduction - timeHasBeenHereAndNotCrippled ).Add( " 后生效。  " );
                     } else
                     {
-                        buffer.Add( "when it has been at a planet and non-crippled for more than " )
-                            .AddHoursAndMinutes( relatedEntityTypeData.TimeRequiredToBeHereAndNonCrippledToBoostMetalOrEnergyProduction ).Add( ".  " );
+                        buffer.Add( "当已在一行星且未瘫痪超过 " )
+                            .AddHoursAndMinutes( relatedEntityTypeData.TimeRequiredToBeHereAndNonCrippledToBoostMetalOrEnergyProduction ).Add( "。  " );
                     }
                 }
                 #endregion
@@ -2441,19 +2441,19 @@ namespace Arcen.AIW2.External
                         int remaining = grantHack.NumberOfTimesIndividualUnitCanBeHacked - timesHacked;
 
                         debugStage = 3800401;
-                        buffer.Add( "<color=#f25e1c>HACKABLE (" ).Add( remaining ).Add( " OF " ).Add( grantHack.NumberOfTimesIndividualUnitCanBeHacked ).Add( " REMAIN)</color>: " );
+                        buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( "/" ).Add( grantHack.NumberOfTimesIndividualUnitCanBeHacked ).Add( " 剩余）</color>：" );
                     } else
-                        buffer.Add( "<color=#f25e1c>HACKABLE (ONCE)</color>: " );
+                        buffer.Add( "<color=#f25e1c>可入侵（单次）</color>：" );
 
                     debugStage = 3800501;
                     Faction localFaction = World_AIW2.Instance.GetPlayerFactionForUIOrNull();
                     debugStage = 3800501;
                     if ( relatedSquadOrNull.ShipGrantsList.Count <= 0 )
-                        buffer.Add( "No ships are granted from this one for some reason!  (This is a bug, please report it with a savegame.)  " );
+                        buffer.Add( "该单位因故无法授予舰船！  （如有错误，请提交存档报告。）  " );
                     else
                     {
                         debugStage = 3800601;
-                        buffer.Add( "  Ships Lines Available For Grant (Choose One): " );
+                        buffer.Add( "  可供授予的舰船线（选择其一）：" );
                         ShipLineEntry entry = null;
                         for ( int i = 0; i < relatedSquadOrNull.ShipGrantsList.Count; i++ )
                         {
@@ -2491,9 +2491,9 @@ namespace Arcen.AIW2.External
                             }
                             debugStage = 3801401;
                             if ( entry.TypeData.AIPWhenGrantedByHack > 0 )
-                                buffer.Add( " (Costs " ).WrapAIPMoreReadable( entry.TypeData.AIPWhenGrantedByHack, useIcons, useText ).Add( ")" );
+                                buffer.Add( "（消耗 " ).WrapAIPMoreReadable( entry.TypeData.AIPWhenGrantedByHack, useIcons, useText ).Add( "）" );
                         }
-                        buffer.Add( ". " );
+                        buffer.Add( "。 " );
                     }
                 }
                 debugStage = 3850;
@@ -2517,17 +2517,17 @@ namespace Arcen.AIW2.External
                         int timesHacked = relatedSquadOrNull == null ? 0 : relatedSquadOrNull.GetNumberOfTimesHacked( grantHack );
                         int remaining = grantHack.NumberOfTimesIndividualUnitCanBeHacked - timesHacked;
 
-                        buffer.Add( "<color=#f25e1c>HACKABLE (" ).Add( remaining ).Add( " OF " ).Add( grantHack.NumberOfTimesIndividualUnitCanBeHacked ).Add( " REMAIN)</color>: " );
+                        buffer.Add( "<color=#f25e1c>可黑客（" ).Add( remaining ).Add( " / " ).Add( grantHack.NumberOfTimesIndividualUnitCanBeHacked ).Add( " 次剩余）</color>：" );
                     } else
-                        buffer.Add( "<color=#f25e1c>HACKABLE (ONCE)</color>: " );
+                        buffer.Add( "<color=#f25e1c>可黑客（一次）</color>：" );
                     debugStage = 3855;
                     Faction localFaction = World_AIW2.Instance.GetPlayerFactionForUIOrNull();
                     if ( relatedSquadOrNull.ShipGrantsList.Count <= 0 )
-                        buffer.Add( "No ships are granted from this one for some reason!  (This is a bug, please report it with a savegame.)  " );
+                        buffer.Add( "该单位未授予任何舰船！  （这是一个 bug，请附上存档报告。）  " );
                     else
                     {
                         debugStage = 3856;
-                        buffer.Add( "  Ships Lines Available For Grant (Choose One): " );
+                        buffer.Add( "  可选授予舰船线（选择一项）：" );
                         ShipLineEntry entry = null;
                         for ( int i = 0; i < relatedSquadOrNull.ShipGrantsList.Count; i++ )
                         {
@@ -2550,7 +2550,7 @@ namespace Arcen.AIW2.External
 
                             debugStage = 3858;
                             int numShips = entry.GetNumShipsForHackAndHacker( hackerBeingUsedAgainstUs, hackBeingDoneAgainstUs == null ? grantHack : hackBeingDoneAgainstUs );
-                            buffer.Add( entry.TypeData == null ? "null" : entry.TypeData.GetDisplayName() ).Add( "</color>" ).Add( " x" )
+                            buffer.Add( entry.TypeData == null ? "null" : entry.TypeData.GetDisplayName() ).Add( "</color>" ).Add( " ×" )
                                 //Chris says: these are theoretical adds, so this is the base cap and that gets marked up.  This is okay.
                                 .Add( entry.TypeData.MarkScaleStyle.GetResultingCapFromSquadCapMultiplierList_WhenYouKnowBaseCap( entry.TypeData, numShips, numShips, markStatsForDisplay.MarkLevel ), entry.GetColorForShipLineScore() );
                             debugStage = 3859;
@@ -2595,8 +2595,8 @@ namespace Arcen.AIW2.External
                 }
                 debugStage = 390;
                 if ( relatedEntityTypeData.RegeneratesDyingShipsAtThisHealthCostRatio > FInt.Zero )
-                    buffer.Add( "When allied units on this planet would die, this ship instead reduces its own health to regenerate them. The efficiency is one hull point from this unit per <color=#ffdf72>" )
-                        .Add( relatedEntityTypeData.RegeneratesDyingShipsAtThisHealthCostRatio.ReadableString ).Add( " health regenerated</color>.  " );
+                    buffer.Add( "当本行星上的友军单位即将死亡时，该舰船会消耗自身生命值来复活它们。效率为每 <color=#ffdf72>" )
+                        .Add( relatedEntityTypeData.RegeneratesDyingShipsAtThisHealthCostRatio.ReadableString ).Add( " 点生命值</color> 复活 1 点船体值。  " );
 
                 debugStage = 395;
 
@@ -2612,51 +2612,51 @@ namespace Arcen.AIW2.External
                 if ( detailLevel >= TooltipDetail.Full )
                 {
                     if ( entity.GetImmuneToCapture() )
-                        buffer.Add( "Cannot be captured by other factions. ", "999999" );
+                        buffer.Add( "不能被其他阵营捕获。", "999999" );
                 }
 
                 if ( !relatedEntityTypeData.ShipClass.CanBeFleetSupercharged && !AIWar2GalaxySettingQuickAccess.DisableFleetWideBonuses )
-                    buffer.Add( "Cannot be supercharged. ", "999999" );
+                    buffer.Add( "无法被充能。", "999999" );
 
                 debugStage = 400;
 
                 if ( relatedEntityTypeData.SpeedMultiplierFirst5SecondsOnPlanet > FInt.One )
-                    buffer.Add( "<color=#f25e1c>RAPID DEPLOYMENT</color>: This unit has a speed multiplier of " ).Add( relatedEntityTypeData.SpeedMultiplierFirst5SecondsOnPlanet ).Add( " for the first 5 seconds after going through a wormhole or spawning  " );
+                    buffer.Add( "<color=#f25e1c>快速部署</color>：该单位在穿越虫洞或生成后的前 5 秒内拥有 " ).Add( relatedEntityTypeData.SpeedMultiplierFirst5SecondsOnPlanet ).Add( " 倍速度  " );
 
                 if ( relatedEntityTypeData.BuildPointsPerDamageDealt > FInt.Zero && relatedEntityTypeData.UnitToMakeWithBuildPoints_TypeData != null )
                 {
-                    buffer.Add( "<color=#f25e1c>VON NEUMANN</color>: builds additional " );
+                    buffer.Add( "<color=#f25e1c>冯·诺依曼</color>：额外建造 " );
                     if ( relatedEntityTypeData.UnitToMakeWithBuildPoints_TypeData.DisplayName.Equals( relatedEntityTypeData.DisplayName ) )
                     {
-                        buffer.Add( "copies of itself" );
+                        buffer.Add( "自身的复制体" );
                     } else
                     {
-                        buffer.Add( relatedEntityTypeData.UnitToMakeWithBuildPoints_TypeData.DisplayName ).Add( " units" );
+                        buffer.Add( relatedEntityTypeData.UnitToMakeWithBuildPoints_TypeData.DisplayName ).Add( " 单位" );
                     }
-                    buffer.Add( " once it does enough damage to enemies, equal to its default ship line size.  " );
+                    buffer.Add( "，一旦对敌人造成足够伤害，数量等于默认舰船线规模。  " );
                 }
 
                 debugStage = 410;
 
                 if ( relatedEntityTypeData.AIReinforcementMultiplier > FInt.One )
-                    buffer.Add( "<color=#f25e1c>AI ACCELERATOR</color>: Strengthens AI reinforcements at this planet by <color=#ffdf72>" ).Add(
-                        relatedEntityTypeData.AIReinforcementMultiplier.ReadableString ).Add( "x</color>.  " );
+                    buffer.Add( "<color=#f25e1c>AI 加速器</color>：增强本行星 AI 增援 <color=#ffdf72>" ).Add(
+                        relatedEntityTypeData.AIReinforcementMultiplier.ReadableString ).Add( " 倍</color>。  " );
 
                 debugStage = 420;
 
                 if ( relatedEntityTypeData.AddsBlackHoleEffectForEntitiesWithEngine_gxLessThan > 0 )
-                    buffer.Add( "<color=#f25e1c>BLACK HOLE EFFECT</color>: Enemy ships with less than <color=#ffdf72>" ).Add(
-                        relatedEntityTypeData.AddsBlackHoleEffectForEntitiesWithEngine_gxLessThan ).Add( "gx</color> engine power cannot leave this planet. Crippled units can always leave, regardless of engine power. " );
+                    buffer.Add( "<color=#f25e1c>黑洞效应</color>：引擎动力低于 <color=#ffdf72>" ).Add(
+                        relatedEntityTypeData.AddsBlackHoleEffectForEntitiesWithEngine_gxLessThan ).Add( "gx</color> 的敌舰无法离开本行星。瘫痪单位始终可以离开，不受引擎动力限制。 " );
                 else if ( relatedEntityTypeData.AddsBlackHoleEffectForAllEntitiesPeriod )
-                    buffer.Add( "<color=#f25e1c>SUPER BLACK HOLE EFFECT</color>: No Ships can leave this planet.  Friendly, enemy, crippled, it doesn't matter. " );
+                    buffer.Add( "<color=#f25e1c>超级黑洞效应</color>：任何舰船都无法离开本行星。友军、敌军、瘫痪单位概不例外。 " );
 
                 debugStage = 425;
 
                 if ( relatedEntityTypeData.CannotTargetOrAlertAIReinforcementSpots )
                 {
-                    buffer.Add( "<color=#f25e1c>AGGRO-INVISIBLE</color>: Enemy target ships and structures (mainly guard posts) that contain guards cannot detect this ship, and this ship cannot fire upon those targets. " );
+                    buffer.Add( "<color=#f25e1c>仇恨隐形</color>：含守卫的敌方目标舰船和建筑（主要是守卫哨站）无法探测该舰船，该舰船也无法攻击那些目标。 " );
                     if ( detailLevel >= TooltipDetail.Full )
-                        buffer.Add( "Once those targets have been alerted and have released their guards to fight, those targets can then be attacked by this ship.  " );
+                        buffer.Add( "一旦那些目标被警戒并释放守卫作战后，该舰船才能攻击它们。  " );
                 }
 
                 debugStage = 430;
@@ -2666,7 +2666,7 @@ namespace Arcen.AIW2.External
                     buffer.Add( "<color=#f25e1c>" );
                     if ( relatedEntityTypeData.PeriodicallySpawnsUnits )
                     {
-                        buffer.Add( "LAIR:</color> " );
+                        buffer.Add( "巢穴：</color> " );
                         relatedEntityTypeData.PeriodicSpawn_EntityTypeDrawingBag.Value.WriteToBuffer( buffer, relatedEntityTypeData, false );
 
                         var faction = relatedSquadFactionOrNull ?? relatedSquadOrNull?.GetFactionOrNull_Safe();
@@ -2678,53 +2678,53 @@ namespace Arcen.AIW2.External
                             {
                                 var sentinalData = faction.GetAISentinelsCoreData();
                                 if (sentinalData != null)
-                                    buffer.Add( " for " ).AddFactionNameInItsColor( sentinalData.GetAiSubFaction(relatedEntityTypeData.Periodic_SpawnFactionForUnit) );
+                                    buffer.Add( " 属于 " ).AddFactionNameInItsColor( sentinalData.GetAiSubFaction(relatedEntityTypeData.Periodic_SpawnFactionForUnit) );
                             }
                         }
                     } else
                     {
                         if ( relatedEntityTypeData.PeriodicSpawn_CreatesWave && relatedEntityTypeData.PeriodicSpawn_CreatesExoStrike )
                         {
-                            buffer.Add( "EXO / RAID ENGINE:</color> Spawns waves and exo strikes" );
+                            buffer.Add( "EXO / 袭击引擎</color>：生成袭击波和 EXO 攻击" );
                         } else if ( relatedEntityTypeData.PeriodicSpawn_CreatesExoStrike )
                         {
-                            buffer.Add( "EXO ENGINE:</color> Spawns exo strikes" );
+                            buffer.Add( "EXO 引擎</color>：生成 EXO 攻击" );
                         } else
                         {
-                            buffer.Add( "RAID ENGINE:</color> Spawns waves" );
+                            buffer.Add( "袭击引擎</color>：生成袭击波" );
                         }
-                        buffer.Add( " of <color=#ffdf72>" ).Add( relatedEntityTypeData.PeriodicSpawn_WaveOrExoSizeMultiplier.ReadableString ).Add( "x </color> normal strength" );
+                        buffer.Add( "，强度为正常值的 <color=#ffdf72>" ).Add( relatedEntityTypeData.PeriodicSpawn_WaveOrExoSizeMultiplier.ReadableString ).Add( " 倍</color>" );
                     }
 
-                    buffer.Add( " <color=#ffdf72>every " ).Add( relatedEntityTypeData.PeriodicSpawn_DelayBetweenSpawns ).Add( " seconds</color>" );
+                    buffer.Add( " <color=#ffdf72>每 " ).Add( relatedEntityTypeData.PeriodicSpawn_DelayBetweenSpawns ).Add( " 秒</color>" );
                     if ( relatedEntityTypeData.PeriodicSpawn_InitialDelay > 0 )
-                        buffer.Add( " after <color=#ffdf72>" ).Add( relatedEntityTypeData.PeriodicSpawn_InitialDelay ).Add( " seconds</color>" );
+                        buffer.Add( " <color=#ffdf72>" ).Add( relatedEntityTypeData.PeriodicSpawn_InitialDelay ).Add( " 秒后</color>" );
                     else
-                        buffer.Add( " immmediately" );
+                        buffer.Add( " 立即" );
 
-                    buffer.Add( " when" );
+                    buffer.Add( "，当" );
                     if ( relatedEntityTypeData.PeriodicSpawn_MinHostileStrengthToTrigger > 0 )
-                        buffer.Add( " at least " ).WrapStrengthTruncated( relatedEntityTypeData.PeriodicSpawn_MinHostileStrengthToTrigger, useIcons, useText ).Add( " in hostile" );
+                        buffer.Add( " 至少 " ).WrapStrengthTruncated( relatedEntityTypeData.PeriodicSpawn_MinHostileStrengthToTrigger, useIcons, useText ).Add( " 敌对力量" );
                     if ( relatedEntityTypeData.PeriodicSpawn_OnlyTriggerAgainstPlayer )
-                        buffer.Add( " player" );
-                    buffer.Add( " presence is detected" );
+                        buffer.Add( " 玩家" );
+                    buffer.Add( " 存在被检测到" );
                     if ( relatedEntityTypeData.PeriodicSpawn_OnlyTriggerOnOccupation )
                     {
-                        buffer.Add( " occupying a planet" );
+                        buffer.Add( " 占领行星时" );
                     } else
                     {
-                        buffer.Add( " on this planet" );
+                        buffer.Add( " 在本行星上时" );
                         if ( relatedEntityTypeData.PeriodicSpawn_MaxHopsToTrigger > 0 )
                         {
-                            buffer.Add( " and" );
+                            buffer.Add( " 且" );
                         }
                     }
                     if ( relatedEntityTypeData.PeriodicSpawn_MaxHopsToTrigger > 0 )
                     {
-                        buffer.Add( " within <color=#ffdf72>" ).Add( relatedEntityTypeData.PeriodicSpawn_MaxHopsToTrigger ).Add( "</color> hops" );
+                        buffer.Add( " <color=#ffdf72>" ).Add( relatedEntityTypeData.PeriodicSpawn_MaxHopsToTrigger ).Add( " 跳</color>范围内" );
                     }
                     if ( relatedEntityTypeData.PeriodicSpawn_NeverStopOnceTriggered )
-                        buffer.Add( ". Once it spawned something for the first time it will not stop as long as valid enemies are in the galaxy" );
+                        buffer.Add( "。一旦首次生成单位，只要银河系中存在有效敌人就不会停止" );
                     buffer.Add( ".  " );
                 }
 
@@ -2734,12 +2734,12 @@ namespace Arcen.AIW2.External
                 {
                     debugStage = 450;
                     if ( relatedEntityTypeData.NumberOfHopsOutToFreeGuards > 0 )
-                        buffer.Add( "<color=#f25e1c>Call for Aid</color>: All guarding units within <color=#ffdf72>" ).Add(
-                            relatedEntityTypeData.NumberOfHopsOutToFreeGuards ).Add( " wormhole hops</color> from this planet will become threat (and possibly join the hunter fleet) if the attacking enemy strength is greater than <color=#ffdf72> " ).Add(
-                            relatedEntityTypeData.FreesGuardsWhenLocalForceRatioIsWorseThan.ReadableString ).Add( "x</color> the AI forces on this planet.  " );
+                        buffer.Add( "<color=#f25e1c>求援</color>：距离本行星 <color=#ffdf72>" ).Add(
+                            relatedEntityTypeData.NumberOfHopsOutToFreeGuards ).Add( " 跳</color>内所有守卫单位将变为威胁（可能加入猎手舰队），当攻击敌人的强度大于本行星 AI 力量的 <color=#ffdf72> " ).Add(
+                            relatedEntityTypeData.FreesGuardsWhenLocalForceRatioIsWorseThan.ReadableString ).Add( " 倍</color>时。  " );
                     else
-                        buffer.Add( "<color=#f25e1c>Disperse Guards</color>: All guarding units on this planet will become threat (and possibly join the hunter fleet) if the local AI strength is less than <color=#ffdf72> " ).Add(
-                            relatedEntityTypeData.FreesGuardsWhenLocalForceRatioIsWorseThan.ReadableString ).Add( "x</color> that enemies on this planet.  " );
+                        buffer.Add( "<color=#f25e1c>驱散守卫</color>：当本行星 AI 力量小于敌人的 <color=#ffdf72> " ).Add(
+                            relatedEntityTypeData.FreesGuardsWhenLocalForceRatioIsWorseThan.ReadableString ).Add( " 倍</color>时，本行星上所有守卫单位将变为威胁（可能加入猎手舰队）。  " );
                 }
                 debugStage = 451;
                 if ( relatedEntityTypeData.WatchPlanetsAtXHops > 0 && (relatedSquadOrNull == null || relatedSquadOrNull.GetFactionTypeSafe() == FactionType.Player) )
@@ -2747,34 +2747,34 @@ namespace Arcen.AIW2.External
                     debugStage = 455;
 
                     int hopCount = relatedEntityTypeData.WatchPlanetsAtXHops + (relatedMembershipOrNull == null ? 0 : relatedMembershipOrNull.Hacked_ExtraWatchPlanetsAtXHops);
-                    buffer.Add( "<color=#f25e1c>RECON</color>: Watches all planets within " ).Add( hopCount, "ffdf72" );
+                    buffer.Add( "<color=#f25e1c>侦察</color>：监视 " ).Add( hopCount, "ffdf72" );
                     if ( hopCount > 1 )
-                        buffer.Add( " hops.  " );
+                        buffer.Add( " 跳范围内所有行星。  " );
                     else
-                        buffer.Add( " hop.  " );
+                        buffer.Add( " 跳范围内所有行星。  " );
                 }
 
                 debugStage = 460;
 
                 if ( relatedEntityTypeData.PushesEnemyShields )
-                    buffer.Add( "<color=#f25e1c>NORRIS EFFECT</color>: Displaces enemy bubble-forcefield generators when moving into them.  " );
+                    buffer.Add( "<color=#f25e1c>诺里斯效应</color>：当移入敌方气泡力场发生器时会将其推开。  " );
 
                 debugStage = 465;
 
                 if ( relatedEntityTypeData.DisallowKiting && detailLevel >= TooltipDetail.Full )
-                    buffer.Add( "Never allowed to kite.  " );
+                    buffer.Add( "禁止风筝。  " );
 
                 debugStage = 470;
 
                 bool shouldShowDefensiveStructureCapMultiple = relatedEntityTypeData.IsCommandStation && (relatedSquadOrNull == null || relatedSquadOrNull.GetFactionTypeSafe() == FactionType.Player);
                 string addedBy = "TSSes";
-                string postExplanation = " of the stated amount on the TSS itself.  Different command station, battlestation, and citadel types get bonuses or penalties based on their nature.  ";
+                string postExplanation = "，为 TSS 所标注的量。不同的指挥站、战斗站和堡垒类型会根据其性质获得加成或惩罚。  ";
                 if ( World.Instance.GetWasWorldStartedOnGameVersionAtLeastThisVersionOrNewer( 2, 739 ) ) //2739_DSSHacks
                 {
                     if ( relatedEntityTypeData.HackableForCommandStationsAndBattleStations_TurretCount <= 0 )
                     {
                         addedBy = "ODSSes";
-                        postExplanation = " of the stated amount on the ODSS itself.  Different command station, battlestation, and citadel types get bonuses or penalties based on their nature.  ";
+                        postExplanation = "，为 ODSS 所标注的量。不同的指挥站、战斗站和堡垒类型会根据其性质获得加成或惩罚。  ";
                     }
                     if ( !shouldShowDefensiveStructureCapMultiple )
                     {
@@ -2785,7 +2785,7 @@ namespace Arcen.AIW2.External
                 } else //pre-DSS
                 {
                     addedBy = "GCAs";
-                    postExplanation = " of the stated amount on the GCA itself.  Different command stations types get bonuses or penalties based on their nature.  ";
+                    postExplanation = "，为 GCA 所标注的量。不同指挥站类型会根据其性质获得加成或惩罚。  ";
                 }
 
                 if ( shouldShowDefensiveStructureCapMultiple )
@@ -2796,13 +2796,13 @@ namespace Arcen.AIW2.External
 
                     if ( detailLevel < TooltipDetail.Full )
                     {
-                        buffer.StartColor( colorForDefensiveCap ).Add( "Defensive Structure Cap: " );
+                        buffer.StartColor( colorForDefensiveCap ).Add( "防御建筑容量：" );
                         buffer.Add( (relatedEntityTypeData.DefensiveStructureCap_Multiplier * 100).GetNearestIntPreferringHigher() );
                         buffer.Add( "%  " ).EndColor();
                     } else
                     {
-                        buffer.StartColor( colorForDefensiveCap ).Add( "Defensive Structure Cap: " ).EndColor().Add( "The number of turrets and other defensive options added by " )
-                            .Add( addedBy ).Add( " is " ).StartColor( colorForDefensiveCap );
+                        buffer.StartColor( colorForDefensiveCap ).Add( "防御建筑容量：" ).EndColor().Add( "由 " )
+                            .Add( addedBy ).Add( " 添加的炮塔和其他防御选项数量为 " ).StartColor( colorForDefensiveCap );
                         buffer.Add( (relatedEntityTypeData.DefensiveStructureCap_Multiplier * 100).GetNearestIntPreferringHigher() );
                         buffer.Add( "%" ).EndColor().Add( postExplanation );
                     }
@@ -2811,15 +2811,15 @@ namespace Arcen.AIW2.External
                 {
                     SpeedGroup groupOnHost = relatedSquadOrNull.GroupMoveSpeed_HostOnly;
                     if ( groupOnHost != null )
-                        buffer.Add( " In Speed Group " ).Add( groupOnHost.SpeedGroupID );
+                        buffer.Add( " 在速度组 " ).Add( groupOnHost.SpeedGroupID );
                     else
-                        buffer.Add( " In Speed Group" );
-                    buffer.Add( " with " ).WrapSpeedMoreReadable( relatedSquadOrNull.SpeedLimitFromGroupMove, false, false ).Add( " group speed and " )
-                        .WrapSpeedMoreReadable( relatedSquadOrNull.SpeedLimitFromGroupMove, false, false ).Add( " calculated speed" );
+                        buffer.Add( " 在速度组" );
+                    buffer.Add( " 中，" ).WrapSpeedMoreReadable( relatedSquadOrNull.SpeedLimitFromGroupMove, false, false ).Add( " 组速度和 " )
+                        .WrapSpeedMoreReadable( relatedSquadOrNull.SpeedLimitFromGroupMove, false, false ).Add( " 计算速度" );
                     if ( groupOnHost != null && groupOnHost.OverrideSpeedLimit > 0 )
-                        buffer.Add( ". " ).WrapSpeedMoreReadable( groupOnHost.OverrideSpeedLimit, false, false ).Add( " override speed" );
-                    buffer.Add( " compared to " ).WrapSpeedMoreReadable( relatedMarkLevelData.Speed, false, false ).Add( " original speed" );
-                    buffer.Add( ".  " );
+                        buffer.Add( "。" ).WrapSpeedMoreReadable( groupOnHost.OverrideSpeedLimit, false, false ).Add( " 覆盖速度" );
+                    buffer.Add( "，相比 " ).WrapSpeedMoreReadable( relatedMarkLevelData.Speed, false, false ).Add( " 原始速度" );
+                    buffer.Add( "。  " );
                 }
 
                 debugStage = 480;
@@ -2827,26 +2827,26 @@ namespace Arcen.AIW2.External
                 if ( relatedEntityTypeData.OrbitsGravityWellCenterAtItsCurrentRadius ||
                     relatedEntityTypeData.OrbitsParentAtRange > 0 || relatedEntityTypeData.OrbitsFlagshipAtRange > 0 )
                 {
-                    buffer.Add( "Orbits " );
+                    buffer.Add( "环绕 " );
                     if ( relatedEntityTypeData.OrbitsGravityWellCenterAtItsCurrentRadius )
                     {
-                        buffer.Add( "the gravity well" );
+                        buffer.Add( "引力井" );
                     } else if ( relatedEntityTypeData.OrbitsParentAtRange > 0 )
                     {
-                        buffer.Add( "its ancestor" );
+                        buffer.Add( "其先祖" );
                     } else if ( relatedEntityTypeData.OrbitsFlagshipAtRange > 0 )
                     {
-                        buffer.Add( "the flagship" );
+                        buffer.Add( "旗舰" );
                     }
-                    buffer.Add( " at " ).StartSpeedWrapper( false ).AddNumberMoreReadable( relatedEntityTypeData.DegreesToOrbitPerSecond );
+                    buffer.Add( " 以 " ).StartSpeedWrapper( false ).AddNumberMoreReadable( relatedEntityTypeData.DegreesToOrbitPerSecond );
                     if ( useText )
-                        buffer.Add( "deg/s" );
+                        buffer.Add( "度/秒" );
                     else
                         buffer.Add( "°/s" );
                     buffer.EndSpeedWrapper( false );
                     if ( detailLevel >= TooltipDetail.Full )
                     {
-                        buffer.Add( " and a distance of " );
+                        buffer.Add( "，距离为 " );
                         if ( relatedEntityTypeData.OrbitsGravityWellCenterAtItsCurrentRadius )
                         {
                             if ( relatedSquadOrNull != null )
@@ -2869,35 +2869,35 @@ namespace Arcen.AIW2.External
                     if ( relatedEntityTypeData.ReturnsThisPercentageOfDamageIfDamagedByEnemyAttack > FInt.Zero )
                     {
                         buffer.StartDamageWrapper( false ).AddPercentFormated( relatedEntityTypeData.ReturnsThisPercentageOfDamageIfDamagedByEnemyAttack * 100 ).EndDamageWrapper( false );
-                        buffer.Add( " ELECTROTOXIC " );
+                        buffer.Add( " 电毒 " );
                     }
                     if ( relatedEntityTypeData.MyForcefieldDoesNotShrink )
-                        buffer.Add( "HARDENED " );
+                        buffer.Add( "强化 " );
                     if ( relatedEntityTypeData.MyForcefieldHasNoPenaltyForEnemiesFiringOutOfIt )
-                        buffer.Add( "GREAT-FORCEFIELD" );
-                    buffer.Add( " RADIUS</color> " );
+                        buffer.Add( "完美力场" );
+                    buffer.Add( " 半径</color> " );
                     if ( detailLevel < TooltipDetail.Full )
                     {
                         buffer.WrapRangeMoreReadable( effectiveShieldRadius, false, false );
                         buffer.Add( ".  " );
                     } else if ( detailLevel >= TooltipDetail.Medium )
                     {
-                        buffer.Add( " GENERATOR</color>: Projects a bubble forcefield in a radius of " );
+                        buffer.Add( " 发生器</color>：投射半径为 " );
                         buffer.WrapRangeMoreReadable( effectiveShieldRadius, false, false );
-                        buffer.Add( " with total strength of " );
+                        buffer.Add( "，总强度为 " );
                         buffer.WrapShieldMoreReadable( (relatedMembershipOrNull != null && relatedMemFleetOrNull != null && relatedMemFleetOrNull.IsPlayerStyleFleet ? relatedMembershipOrNull.GetMaxShieldPoints_PlayerFleetsOnly() : markStats.BaseShieldPoints), useIcons, false );
-                        buffer.Add( ".  Allied ships under the bubble cannot be damaged, and enemy ships cannot pass into the bubble.  " );
+                        buffer.Add( "。气泡内的友军舰船不会受到伤害，敌舰无法进入气泡。  " );
                         if ( relatedEntityTypeData.MyForcefieldDoesNotShrink )
-                            buffer.Add( "Hardened forcefields do not shrink as their shield health goes down.  " );
+                            buffer.Add( "强化力场不会随护盾值下降而缩小。  " );
                         if ( relatedEntityTypeData.MyForcefieldHasNoPenaltyForEnemiesFiringOutOfIt )
-                            buffer.Add( "Great-forcefields do not cause allies firing out from under the shield to have any damage penalty.  " );
+                            buffer.Add( "完美力场不会使护盾外的友军受到伤害惩罚。  " );
                         else
-                            buffer.Add( "Any allies firing out from under the shield only do half damage.  " );
+                            buffer.Add( "护盾外的友军只造成一半伤害。  " );
                         if ( relatedEntityTypeData.ReturnsThisPercentageOfDamageIfDamagedByEnemyAttack > FInt.Zero )
                         {
-                            buffer.Add( "This electrotoxic forcefield deals " ).StartDamageWrapper( false )
+                            buffer.Add( "该电毒力场造成 " ).StartDamageWrapper( false )
                                 .AddPercentFormated( relatedEntityTypeData.ReturnsThisPercentageOfDamageIfDamagedByEnemyAttack * 100 ).EndDamageWrapper( false )
-                                .Add( " of any damage it receives back to the unit that shot it. This is considered <color=#dfff72>exotic damage</color>.  " );
+                                .Add( " 的所受伤害返还给攻击者。这被视为<color=#dfff72>异种伤害</color>。  " );
                         }
                     }
                     buffer.Add( ".  " );
@@ -2909,17 +2909,17 @@ namespace Arcen.AIW2.External
                     {
                         buffer.Add( "<color=#f25e1c>" );
                         buffer.StartDamageWrapper( false ).AddPercentFormated( relatedEntityTypeData.ReturnsThisPercentageOfDamageIfDamagedByEnemyAttack * 100 ).EndDamageWrapper( false );
-                        buffer.Add( " ELECTROTOXIC HULL:</color> " );
+                        buffer.Add( " 电毒船体</color>：" );
                         if ( detailLevel >= TooltipDetail.Medium )
                         {
                             if ( relatedEntityTypeData.ReturnsThisPercentageOfDamageIfDamagedByEnemyAttack > FInt.Zero )
                             {
-                                buffer.Add( "The electrotoxic hull on this unit deals " ).StartDamageWrapper( false )
+                                buffer.Add( "该单位的电毒船体造成 " ).StartDamageWrapper( false )
                                     .AddPercentFormated( relatedEntityTypeData.ReturnsThisPercentageOfDamageIfDamagedByEnemyAttack * 100 ).EndDamageWrapper( false )
-                                    .Add( " of any damage it receives back to the unit that shot it. This is considered <color=#dfff72>exotic damage</color>. " );
+                                    .Add( " 的所受伤害返还给攻击者。这被视为<color=#dfff72>异种伤害</color>。 " );
                             }
                         } else
-                            buffer.Add( "Returns damage dealt to it.  " );
+                            buffer.Add( "返还所受伤害。  " );
                     }
                     #endregion
                 }
@@ -2966,7 +2966,7 @@ namespace Arcen.AIW2.External
                     int cloakingPoints = relatedSquadOrNull.GetCurrentCloakingPoints();
                     if ( cloakingPoints > 0 || cloakSystem >= 0 )
                     {
-                        buffer.Add( "Current Cloaking Points: " ).StartColor( cloakColor ).AddNumberMoreReadable( cloakingPoints ).EndColor().Add( "  " );
+                        buffer.Add( "当前隐形点: " ).StartColor( cloakColor ).AddNumberMoreReadable( cloakingPoints ).EndColor().Add( "  " );
                     }
                 }*/
 
@@ -2986,12 +2986,12 @@ namespace Arcen.AIW2.External
                         attritionDamage = relatedSquadOrNull.GetAttritionDamage();
                     debugStage = 55502;
                     if ( detailLevel < TooltipDetail.Full )
-                        buffer.Add( "<color=#f25e1c>ATTRITIONER:</color>: " ).Add( attritionDamage, "a1ffa1" ).Add( "/s " );
+                        buffer.Add( "<color=#f25e1c>消耗者：</color>：" ).Add( attritionDamage, "a1ffa1" ).Add( "/秒 " );
                     else
                     {
                         debugStage = 55503;
-                        buffer.Add( "<color=#f25e1c>ATTRITIONER:</color>: Attritions mobile enemy units by " ).Add( attritionDamage, "a1ffa1" )
-                            .Add( " damage per second. This is considered <color=#dfff72>exotic damage</color>. " );
+                        buffer.Add( "<color=#f25e1c>消耗者：</color>：消耗移动敌方单位，" ).Add( attritionDamage, "a1ffa1" )
+                            .Add( " 点每秒。这被视为<color=#dfff72>异种伤害</color>。 " );
                         if ( relatedMarkLevelData.MaxAttritionDamagePreFleetModifiers > 0 )
                         {
                             debugStage = 55504;
@@ -3000,7 +3000,7 @@ namespace Arcen.AIW2.External
                                 maxAttritionDamage = relatedMarkLevelData.MaxAttritionDamagePreFleetModifiers;
                             else
                                 maxAttritionDamage = relatedSquadOrNull.GetMaxAttritionDamageOrZeroForUnlimited();
-                            buffer.Add( " up to " ).AddNumberMoreReadable( maxAttritionDamage ).Add( " per second. " );
+                            buffer.Add( " 最多 " ).AddNumberMoreReadable( maxAttritionDamage ).Add( " 每秒。 " );
                         } else
                         {
                             buffer.Add( ". " );
@@ -3017,10 +3017,10 @@ namespace Arcen.AIW2.External
                 {
                     int percentageAsInteger = (relatedEntityTypeData.DamageTakenCannotBeMoreThanThisPercentageOfMaxHealth * 100).GetNearestIntPreferringHigher();
                     if ( detailLevel < TooltipDetail.Full )
-                        buffer.Add( "<color=#f25e1c>HARDENED:</color>: Never takes more than " ).Add( percentageAsInteger ).Add( "% of max hull health in damage at one time. " );
+                        buffer.Add( "<color=#f25e1c>强化：</color>：每次受到伤害不超过 " ).Add( percentageAsInteger ).Add( "% 最大船体生命。 " );
                     else
-                        buffer.Add( "<color=#f25e1c>HARDENED:</color>: Any damage from a single source (explosion, shot, attrition, etc) will have its value reduced to " )
-                            .Add( percentageAsInteger ).Add( "% of this unit's max hull health if it would be greater than that.  Protects against very large guns, ion cannons, mass drivers, etc. " );
+                        buffer.Add( "<color=#f25e1c>强化：</color>：来自单一来源（爆炸、射击、侵蚀等）的任何伤害，如果超过此值，将被削减至 " )
+                            .Add( percentageAsInteger ).Add( "% 该单位最大船体生命。 可抵御巨型火炮、离子加农炮、质量驱动器等。 " );
                 }
                 #endregion
 
@@ -3029,14 +3029,14 @@ namespace Arcen.AIW2.External
                 #region CreatesCeasefireOnPlanet
                 if ( relatedEntityTypeData.CreatesCeasefireOnPlanet )
                 {
-                    buffer.Add( "<color=#f25e1c>CEASEFIRE:</color> Prevents all units from firing weapons while it is on a planet with them. " );
+                    buffer.Add( "<color=#f25e1c>停火：</color>阻止所在行星上的所有单位开火。 " );
                 }
                 #endregion
 
                 #region BlocksCeasefireOnPlanet
                 if ( relatedEntityTypeData.BlocksCeasefireOnPlanet )
                 {
-                    buffer.Add( "<color=#f25e1c>CEASEFIRE BLOCKER:</color> If this is on a planet, then no ceasefires will be possible. " );
+                    buffer.Add( "<color=#f25e1c>停火阻断器：</color>如果此单位在行星上，则无法实现停火。 " );
                 }
                 #endregion
 
@@ -3045,14 +3045,14 @@ namespace Arcen.AIW2.External
                 #region Harmonic
                 if ( relatedMarkLevelData.AmountAddedToDamagePerShipOfThisTypeOnPlanet > 0 )
                 {
-                    buffer.Add( "<color=#f25e1c>HARMONIC:</color> All weapons gain " )
+                    buffer.Add( "<color=#f25e1c>谐波：</color>所有武器获得 " )
                         .WrapDamageMoreReadable( relatedMarkLevelData.AmountAddedToDamagePerShipOfThisTypeOnPlanet, useIcons, useText )
-                            .Add( " per shot for each unit of this type on the planet" );
+                            .Add( " 每发加成，行星上每有该类型一单位" );
                     if ( detailLevel >= TooltipDetail.Full )
-                        buffer.Add( " (including units in stacks)" );
+                        buffer.Add( "（包括堆叠中的单位）" );
                     if ( relatedEntityTypeData.MaxAmountAddedToDamagePerShipOfThisTypeOnPlanet > 0 )
-                        buffer.Add( ", up to an extra " ).WrapDamageMoreReadable( relatedEntityTypeData.MaxAmountAddedToDamagePerShipOfThisTypeOnPlanet, useIcons, useText );
-                    buffer.Add( ".  " );
+                        buffer.Add( "，额外最多 " ).WrapDamageMoreReadable( relatedEntityTypeData.MaxAmountAddedToDamagePerShipOfThisTypeOnPlanet, useIcons, useText );
+                    buffer.Add( "。  " );
                 }
                 #endregion
 
@@ -3084,10 +3084,10 @@ namespace Arcen.AIW2.External
                 if ( relatedEntityTypeData.HackingEffectMultiplier != FInt.One )
                 {
                     if ( relatedEntityTypeData.HackingEffectMultiplier < FInt.One )
-                        buffer.Add( "<color=#f25e1c>HACK BONUS:</color>" );
+                        buffer.Add( "<color=#f25e1c>入侵加成：</color>" );
                     else
-                        buffer.Add( "<color=#f25e1c>HACK MALUS:</color>" );
-                    buffer.Add( " All hacks done by this unit have their response multiplied by <color=#ffdf72>" ).AddNumberMoreReadable( relatedEntityTypeData.HackingEffectMultiplier ).Add( "x</color>.  " );
+                        buffer.Add( "<color=#f25e1c>入侵惩罚：</color>" );
+                    buffer.Add( " 此单位进行的所有入侵，其响应倍率为 <color=#ffdf72>" ).AddNumberMoreReadable( relatedEntityTypeData.HackingEffectMultiplier ).Add( "x</color>。  " );
                 }
 
                 ////////////TODO STOPPED HERE
@@ -3096,56 +3096,56 @@ namespace Arcen.AIW2.External
                 {
                     int superchargeBonusLimiter = 0;
                     bool isSuperchargeLimited = false;
-                    string fleetBonusPrefix = "<color=#7cf21c>FLEET BONUS:</color> <color=#9ce066>";
+                    string fleetBonusPrefix = "<color=#7cf21c>舰队加成：</color><color=#9ce066>";
                     if ( relatedEntityTypeData.SuperchargesOnlyApplyWhenFleetLineCountIsXOrLess > 0 && relatedMembershipOrNull != null && relatedMemFleetOrNull != null )
                     {
                         superchargeBonusLimiter = relatedMemFleetOrNull.GetCountOfShipLinesForSuperchargePurposes( null );
                         if ( superchargeBonusLimiter > relatedEntityTypeData.SuperchargesOnlyApplyWhenFleetLineCountIsXOrLess )
                         {
                             isSuperchargeLimited = true;
-                            fleetBonusPrefix = "<color=#f2ae1c>FLEET BONUS OFF:</color> <color=#e0c266>";
+                            fleetBonusPrefix = "<color=#f2ae1c>舰队加成关闭：</color><color=#e0c266>";
                         } else
                         {
-                            fleetBonusPrefix = "<color=#7cf21c>FLEET BONUS ON:</color> <color=#9ce066>";
+                            fleetBonusPrefix = "<color=#7cf21c>舰队加成开启：</color><color=#9ce066>";
                         }
                     }
 
                     if ( relatedEntityTypeData.SuperchargesMinSpeedOfRestOfPlayerFleet )
                     {
-                        buffer.Add( fleetBonusPrefix ).Add( "Supercharges all other non-flagship members of the fleet to be at least as fast as itself.</color>  " );
+                        buffer.Add( fleetBonusPrefix ).Add( "超充能舰队中所有其他非旗舰成员，使其速度至少与自身相同。</color>  " );
                     }
                     if ( relatedEntityTypeData.SuperchargesHullOfRestOfPlayerFleet > FInt.One )
                     {
-                        buffer.Add( fleetBonusPrefix ).Add( "Grants a " ).AddFixedDecimal( relatedEntityTypeData.SuperchargesHullOfRestOfPlayerFleet.ToDoubleNonSim(), 2 ).Add( "x bonus to the hull strength of all members of the fleet (including flagships).</color>  " );
+                        buffer.Add( fleetBonusPrefix ).Add( "给予 " ).AddFixedDecimal( relatedEntityTypeData.SuperchargesHullOfRestOfPlayerFleet.ToDoubleNonSim(), 2 ).Add( " 倍船体强度加成（含旗舰）。</color>  " );
                     }
                     if ( relatedEntityTypeData.SuperchargesShieldsOfRestOfPlayerFleet > FInt.One )
                     {
-                        buffer.Add( fleetBonusPrefix ).Add( "Grants a " ).AddFixedDecimal( relatedEntityTypeData.SuperchargesShieldsOfRestOfPlayerFleet.ToDoubleNonSim(), 2 ).Add( "x bonus to the shield strength of all members of the fleet (including flagships).</color>  " );
+                        buffer.Add( fleetBonusPrefix ).Add( "给予 " ).AddFixedDecimal( relatedEntityTypeData.SuperchargesShieldsOfRestOfPlayerFleet.ToDoubleNonSim(), 2 ).Add( " 倍护盾强度加成（含旗舰）。</color>  " );
                     }
                     if ( relatedEntityTypeData.SuperchargesAttackPowerOfRestOfPlayerFleet > FInt.One )
                     {
-                        buffer.Add( fleetBonusPrefix ).Add( "Grants a " ).AddFixedDecimal( relatedEntityTypeData.SuperchargesAttackPowerOfRestOfPlayerFleet.ToDoubleNonSim(), 2 ).Add( "x bonus to the attack power of all members of the fleet (including flagships).</color>  " );
+                        buffer.Add( fleetBonusPrefix ).Add( "给予 " ).AddFixedDecimal( relatedEntityTypeData.SuperchargesAttackPowerOfRestOfPlayerFleet.ToDoubleNonSim(), 2 ).Add( " 倍攻击力加成（含旗舰）。</color>  " );
                     }
                     if ( relatedEntityTypeData.SuperchargesOnlyApplyWhenFleetLineCountIsXOrLess > 0 )
                     {
                         if ( isSuperchargeLimited )
-                            buffer.Add( "<color=#f2ae1c>FLEET BONUS LIMIT PASSED:</color> <color=#e0c266>Fleet-wide bonus only turns on in fleets with " ).Add(
+                            buffer.Add( "<color=#f2ae1c>舰队加成限制已超：</color><color=#e0c266>舰队加成仅在舰队拥有 " ).Add(
                                 relatedEntityTypeData.SuperchargesOnlyApplyWhenFleetLineCountIsXOrLess )
-                                .Add( " or fewer non-flagship, non-elite ship lines in them, but you have " ).Add( superchargeBonusLimiter ).Add( " in this fleet.</color>  " );
+                                .Add( " 或更少非旗舰、非精英舰船线时开启，但当前舰队有 " ).Add( superchargeBonusLimiter ).Add( " 条。</color>  " );
                         else if ( relatedMembershipOrNull == null || detailLevel >= TooltipDetail.Full )
                         {
-                            buffer.Add( "<color=#7cf21c>FLEET BONUS LIMIT:</color> <color=#9ce066>Fleet-wide bonus only turns on in fleets with " ).Add(
+                            buffer.Add( "<color=#7cf21c>舰队加成限制：</color><color=#9ce066>舰队加成仅在舰队拥有 " ).Add(
                                     relatedEntityTypeData.SuperchargesOnlyApplyWhenFleetLineCountIsXOrLess );
 
                             if ( relatedMembershipOrNull != null )
-                                buffer.Add( " or fewer non-flagship, non-elite ship lines in them, and you only have " ).Add( superchargeBonusLimiter ).Add( " in this fleet.</color>  " );
+                                buffer.Add( " 或更少非旗舰、非精英舰船线，当前舰队仅有 " ).Add( superchargeBonusLimiter ).Add( " 条。</color>  " );
                             else
-                                buffer.Add( " or fewer non-flagship, non-elite ship lines in them.</color>  " );
+                                buffer.Add( " 或更少非旗舰、非精英舰船线。</color>  " );
                         }
                     }
                     if ( relatedEntityTypeData.CannotBeSuperchargedWhenInSuperchargedFleet && detailLevel >= TooltipDetail.Full )
                     {
-                        buffer.Add( "<color=#f2ae1c>FLEET BONUSES DO NOT APPLY:</color> <color=#e0c266>Fleet-wide bonuses don't help this particular unit no matter what.</color>  " );
+                        buffer.Add( "<color=#f2ae1c>舰队加成不适用：</color><color=#e0c266>无论何种情况，舰队加成对该单位无效。</color>  " );
                     }
                 } else
                 {
@@ -3164,7 +3164,7 @@ namespace Arcen.AIW2.External
                         shouldDrawFleetWideBonusNote = true;
 
                     if ( shouldDrawFleetWideBonusNote )
-                        buffer.Add( "<color=#f2ae1c>FLEET WIDE BONUS DISABLED:</color> <color=#e0c266>Because of galaxy options, potentially relating to your campaign type, fleet-wide bonues are not allowed.</color>  " );
+                        buffer.Add( "<color=#f2ae1c>舰队加成已禁用：</color><color=#e0c266>由于银河选项（可能与战役类型有关），不允许使用舰队加成。</color>  " );
                 }
                 // && !this.TypeData.CannotBeSuperchargedWhenInSuperchargedFleet
 
@@ -3194,48 +3194,44 @@ namespace Arcen.AIW2.External
                             relatedEntityTypeData.ExternalInvulnerabilityUnitTag, relatedEntityTypeData.ExternalInvulnerabilityUnitRequiredCount );
                     if (relatedSquadOrNull == null)
                     {
-                        buffer.Add( "<color=#f25e1c>INVINCIBLE</color>: Requires at least <color=#cfd988>" )
+                        buffer.Add( "<color=#f25e1c>无敌</color>：需要至少 <color=#cfd988>" )
                             .Add( relatedEntityTypeData.ExternalInvulnerabilityUnitRequiredCount ).Add( "</color> " ).Add( protectorStringMax ).EndColor();
                         if ( relatedEntityTypeData.InvulnerabilityRegion == ExternalInvulnerabilityRegion.ThisPlanet )
-                            buffer.Add( " on this planet" );
+                            buffer.Add( " 位于此行星" );
                         else
-                            buffer.Add( " in the galaxy" );
-                       buffer.Add( " to become immune to all damage.  " );
+                            buffer.Add( " 位于银河系" );
+                       buffer.Add( " 才能免疫所有伤害。  " );
                     } else
                     {
                         if( relatedSquadOrNull.CountOfEntitiesProvidingExternalInvulnerability >= relatedEntityTypeData.ExternalInvulnerabilityUnitRequiredCount )
                         {
-                            buffer.Add( "<color=#f25e1c>INVINCIBLE</color>: " );
+                            buffer.Add( "<color=#f25e1c>无敌</color>：" );
                             if ( detailLevel >= TooltipDetail.Medium )
-                                buffer.Add( "The required " );
+                                buffer.Add( "所需的 " );
                         } else
                         {
-                            buffer.Add( "<color=#07e83c>VULNERABLE</color>: ");
+                            buffer.Add( "<color=#07e83c>脆弱</color>：" );
                             if ( detailLevel >= TooltipDetail.Medium )
-                                buffer.Add( "Only " );
+                                buffer.Add( "仅有 " );
                         }
                         buffer.StartColor( "cfd988" ).Add( relatedSquadOrNull.CountOfEntitiesProvidingExternalInvulnerability );
                         if ( detailLevel >= TooltipDetail.Medium )
-                            buffer.Add( " out of " );
+                            buffer.Add( " / " );
                         else
                             buffer.Add( " / " );
                         buffer.Add( relatedEntityTypeData.ExternalInvulnerabilityUnitRequiredCount ).Add( "</color> " ).Add( protectorStringMax );
                         if ( relatedSquadOrNull.CountOfEntitiesProvidingExternalInvulnerability < relatedEntityTypeData.ExternalInvulnerabilityUnitRequiredCount )
-                            buffer.Add( " required" );
-                        if ( relatedSquadOrNull.CountOfEntitiesProvidingExternalInvulnerability == 1 )
-                            buffer.Add( " is" );
-                        else
-                            buffer.Add( " are" );
-                        buffer.Add( " present" );
+                            buffer.Add( " 所需单位" );
+                        buffer.Add( " 已存在" );
                         if ( detailLevel >= TooltipDetail.Medium )
                         {
                             if ( relatedEntityTypeData.InvulnerabilityRegion == ExternalInvulnerabilityRegion.ThisPlanet )
-                                buffer.Add( " on this planet.  " );
+                                buffer.Add( " 在此行星上。  " );
                             else
-                                buffer.Add( " in the galaxy.  " );
+                                buffer.Add( " 在银河系中。  " );
                         } else
                         {
-                            buffer.Add( ".  " );
+                            buffer.Add( "。  " );
                         }
                     }
                 }
@@ -3244,9 +3240,9 @@ namespace Arcen.AIW2.External
 
                 if ( !EntityTypeDrawingBag.IsNullOrInvalid( relatedEntityTypeData.SpawnOnDeath_EntityTypeDrawingBag.Value ) )
                 {
-                    buffer.Add( "<color=#f25e1c>ON DEATH</color>: " );
+                    buffer.Add( "<color=#f25e1c>死亡时</color>：" );
                     relatedEntityTypeData.SpawnOnDeath_EntityTypeDrawingBag.Value.WriteToBuffer( buffer, relatedEntityTypeData, false );
-                    buffer.Add( ".  " );
+                    buffer.Add( "。  " );
                 }
 
                 // Puffin Note Hydra Regeneration
@@ -3254,8 +3250,8 @@ namespace Arcen.AIW2.External
                 {
                     if ( relatedSquadOrNull != null )
                     {
-                        buffer.Add( "<color=#f25e1c>REGENERATION</color>: Regenerates hull over <color=#ffdf72>" ).Add( relatedEntityTypeData.SecondsToFullyRegenerateHull )
-                        .Add( "</color> seconds if not under fire. " );
+                        buffer.Add( "<color=#f25e1c>再生</color>：如果未处于交火状态，在 <color=#ffdf72>" ).Add( relatedEntityTypeData.SecondsToFullyRegenerateHull )
+                        .Add( "</color> 秒内完全恢复船体。 " );
                     }
                 }
 
@@ -3263,12 +3259,12 @@ namespace Arcen.AIW2.External
 
                 if( relatedEntityTypeData.SpecialType == SpecialEntityType.AIKingCommandStation || relatedEntityTypeData.SpecialType == SpecialEntityType.AIKingMobile )
                 {
-                    buffer.Add( "AI Progress (AIP) will <color=#ffdf72>rise by " ).Add( relatedEntityTypeData.AIPOnDeath ).Add( "</color> if this dies.  " ); //this is the normal case
+                    buffer.Add( "AI 进程（AIP）将<color=#ffdf72>增加 " ).Add( relatedEntityTypeData.AIPOnDeath ).Add( "</color>（如果此单位死亡）。  " ); //this is the normal case
                 } else if ( (relatedEntityTypeData.SpecialType == SpecialEntityType.AICommandStationReconquest && localPlayerPlanetFactionOrNull != null && localPlayerPlanetFactionOrNull.AIPLeftFromCommandStation > 0) )
                 {
                     debugStage = 1011;
                     //special case: reconquest command station that you haven't paid the AIP price for yet (ie some minor faction non-allied to you killed the first command station, so you still get charged)
-                    buffer.Add( "Since you have not already paid the AI Progress (AIP) price for taking this planet, AIP will <color=#ffdf72>rise by " ).Add( localPlayerPlanetFactionOrNull.AIPLeftFromCommandStation ).Add( "</color> if this dies.  " ); //this is the normal case
+                    buffer.Add( "由于你尚未支付占领该行星的 AI 进程（AIP）代价，AIP 将<color=#ffdf72>增加 " ).Add( localPlayerPlanetFactionOrNull.AIPLeftFromCommandStation ).Add( "</color>（如果此单位死亡）。  " ); //this is the normal case
                 } else if ( relatedEntityTypeData.AIPOnDeath > 0 )
                 {
                     debugStage = 1012;
@@ -3290,44 +3286,44 @@ namespace Arcen.AIW2.External
                         }
                     }
                     if ( !wasPriceAlreadyPaid && !noPriceToPay )
-                        buffer.Add( "AI Progress (AIP) will <color=#ffdf72>rise by " ).Add( relatedEntityTypeData.AIPOnDeath ).Add( "</color> if this dies.  " ); //this is the normal case
+buffer.Add( "AI 进程（AIP）将<color=#ffdf72>增加 " ).Add( relatedEntityTypeData.AIPOnDeath ).Add( "</color>（如果此单位死亡）。  " ); //this is the normal case
                 } else if ( relatedEntityTypeData.AIPOnDeath < 0 )
-                    buffer.Add( "AI Progress (AIP) will <color=#ffdf72>be reduced by " ).Add( -relatedEntityTypeData.AIPOnDeath ).Add( "</color> if this dies.  " );
+                    buffer.Add( "AI 进程（AIP）将<color=#ffdf72>减少 " ).Add( -relatedEntityTypeData.AIPOnDeath ).Add( "</color>（如果此单位死亡）。  " );
                 debugStage = 1015;
 
                 relatedEntityTypeData.ForAnyDataExtensions_AddToTooltip_GainsSection_ForEntity( buffer, relatedSquadOrNull, relatedMembershipOrNull, relatedEntityTypeData, detailLevel );
                 string playerClarification = " ";
                 if ( FactionUtilityMethods.Instance.AnyNecromancerFactions() )
-                    playerClarification = " human empire ";
+                    playerClarification = " 人类帝国 ";
                 if ( relatedEntityTypeData.MetalToGrantOnDeath > 0 && showMetalOther )
                 {
-                    buffer.Add( "If a" ).Add( playerClarification ).Add( "player kills this unit, they get <color=#ffdf72>" ).Add( relatedEntityTypeData.MetalToGrantOnDeath ).Add( " metal. </color>" );
+                    buffer.Add( "如果" ).Add( playerClarification ).Add( "玩家击杀此单位，获得 <color=#ffdf72>" ).Add( relatedEntityTypeData.MetalToGrantOnDeath ).Add( " 金属。</color>" );
                 }
                 if ( relatedEntityTypeData.ScienceToGrantOnDeath > 0 && relatedEntityTypeData.HackingToGrantOnDeath > 0 )
                 {
-                    buffer.Add( "If a" ).Add( playerClarification ).Add( "player kills this unit, they get <color=#ffdf72>" ).Add( relatedEntityTypeData.ScienceToGrantOnDeath ).Add( " science </color> and <color=#ffdf72>" ).Add( relatedEntityTypeData.HackingToGrantOnDeath ).Add( " hacking points. </color>" );
+                    buffer.Add( "如果" ).Add( playerClarification ).Add( "玩家击杀此单位，获得 <color=#ffdf72>" ).Add( relatedEntityTypeData.ScienceToGrantOnDeath ).Add( " 科学点数</color> 和 <color=#ffdf72>" ).Add( relatedEntityTypeData.HackingToGrantOnDeath ).Add( " 入侵点。</color>" );
                 } else if ( relatedEntityTypeData.ScienceToGrantOnDeath > 0 )
                 {
-                    buffer.Add( "If a" ).Add( playerClarification ).Add( "player kills this unit, they get <color=#ffdf72>" ).Add( relatedEntityTypeData.ScienceToGrantOnDeath ).Add( " science. </color>" );
+                    buffer.Add( "如果" ).Add( playerClarification ).Add( "玩家击杀此单位，获得 <color=#ffdf72>" ).Add( relatedEntityTypeData.ScienceToGrantOnDeath ).Add( " 科学点数。</color>" );
                 } else if ( relatedEntityTypeData.HackingToGrantOnDeath > 0 )
                 {
-                    buffer.Add( "If a" ).Add( playerClarification ).Add( "player kills this unit, they get <color=#ffdf72>" ).Add( relatedEntityTypeData.HackingToGrantOnDeath ).Add( " hacking points. </color>" );
+                    buffer.Add( "如果" ).Add( playerClarification ).Add( "玩家击杀此单位，获得 <color=#ffdf72>" ).Add( relatedEntityTypeData.HackingToGrantOnDeath ).Add( " 入侵点。</color>" );
                 }
                 debugStage = 1020;
 
                 if ( relatedEntityTypeData.AIPOnDeathWhenNoneLeft > 0 )
-                    buffer.Add( "AI Progress (AIP) will <color=#ffdf72>rise by " ).Add( relatedEntityTypeData.AIPOnDeathWhenNoneLeft ).Add( "</color> if all remaining <color=#ffdf72>" )
-                        .Add( BaseScenario.GetCountOfMatchingAIPOnDeathWhenNoneLeft( relatedEntityTypeData ) ).Add( "</color> of these die.  " );
+                    buffer.Add( "AI 进程（AIP）将<color=#ffdf72>增加 " ).Add( relatedEntityTypeData.AIPOnDeathWhenNoneLeft ).Add( "</color> 如果剩余 <color=#ffdf72>" )
+                        .Add( BaseScenario.GetCountOfMatchingAIPOnDeathWhenNoneLeft( relatedEntityTypeData ) ).Add( "</color> 个全部死亡。  " );
                 else if ( relatedEntityTypeData.AIPOnDeathWhenNoneLeft < 0 )
-                    buffer.Add( "AI Progress (AIP) will <color=#ffdf72>be reduced by " ).Add( -relatedEntityTypeData.AIPOnDeathWhenNoneLeft ).Add( "</color> if all remaining <color=#ffdf72>" )
-                        .Add( BaseScenario.GetCountOfMatchingAIPOnDeathWhenNoneLeft( relatedEntityTypeData ) ).Add( "</color> of these die.  " );
+                    buffer.Add( "AI 进程（AIP）将<color=#ffdf72>减少 " ).Add( -relatedEntityTypeData.AIPOnDeathWhenNoneLeft ).Add( "</color> 如果剩余 <color=#ffdf72>" )
+                        .Add( BaseScenario.GetCountOfMatchingAIPOnDeathWhenNoneLeft( relatedEntityTypeData ) ).Add( "</color> 个全部死亡。  " );
 
                 debugStage = 1030;
 
                 if ( DetailFlags.HasFlag( ShipExtraDetailFlags.AIPCostOnGrant ) || DetailFlags.HasFlag( ShipExtraDetailFlags.AnyGrantHackInfo ) )
                 {
                     if ( relatedEntityTypeData.AIPWhenGrantedByHack > 0 )
-                        buffer.Add( "\n<color=#ff9072>If you claim this by hacking, the AI Progress (AIP) will increase by " ).Add( relatedEntityTypeData.AIPWhenGrantedByHack.ReadableString ).Add( ".</color>\n" );
+                        buffer.Add( "\n<color=#ff9072>如果通过入侵占领此单位，AI 进程（AIP）将增加 " ).Add( relatedEntityTypeData.AIPWhenGrantedByHack.ReadableString ).Add( "。</color>\n" );
                 }
 
                 debugStage = 1500;
@@ -3358,8 +3354,8 @@ namespace Arcen.AIW2.External
                             buffer.NewLineIfNeeded();
                             
                             if ( relatedEntityTypeData.StartingMarkLevel.Ordinal > 1 )
-                                buffer.Add( "Starts at " ).StartColor( relatedEntityTypeData.StartingMarkLevel.ColorHex )
-                                    .Add( "Mark " ).Add( relatedEntityTypeData.StartingMarkLevel.Ordinal ).EndColor().Add( ".  " );
+                                buffer.Add( "起始等级为 " ).StartColor( relatedEntityTypeData.StartingMarkLevel.ColorHex )
+                                    .Add( "等级 " ).Add( relatedEntityTypeData.StartingMarkLevel.Ordinal ).EndColor().Add( "。  " );
 
                             if ( relatedEntityTypeData.TechUpgradesThatBenefitMe == null || relatedEntityTypeData.TechUpgradesThatBenefitMe.Count == 0 )
                             {
@@ -3388,9 +3384,9 @@ namespace Arcen.AIW2.External
                                     {
                                         debugStage = 1540;
                                         if ( detailLevel == TooltipDetail.Full )
-                                            buffer.Add( "Upgraded by Tech: " );
+                                            buffer.Add( "科技升级： " );
                                         else
-                                            buffer.Add( "Techs: " );
+                                            buffer.Add( "科技： " );
                                         
                                         WriteTechThatBenefits( buffer, upgrade, factionToUse, alsoShowShipLineCountWithSameTech, ref debugStage );
                                         buffer.Add( "  " );
@@ -3401,9 +3397,9 @@ namespace Arcen.AIW2.External
                                     debugStage = 1550;
 
                                     if ( detailLevel == TooltipDetail.Full )
-                                        buffer.Add( "Upgraded by Tech: " );
+                                        buffer.Add( "科技升级： " );
                                     else
-                                        buffer.Add( "Techs: " );
+                                        buffer.Add( "科技： " );
                                     
                                     for ( int i = 0; i < relatedEntityTypeData.TechUpgradesThatBenefitMe.Count; i++ )
                                     {
@@ -3434,30 +3430,30 @@ namespace Arcen.AIW2.External
                         if ( relatedEntityTypeData.AIPToClaim > 0 )
                         {
                             if ( detailLevel >= TooltipDetail.Medium )
-                                buffer.Add( "<color=#ff5bf2>Claim Cost:</color> To claim this, you must control the planet and it will cost <color=#ffdf72>" ).AddNumberMoreReadable( relatedEntityTypeData.MarkStatsFor( effectiveMarkLevel ).MetalCostToClaim )
-                                    .Add( " metal</color>, and the AI Progress (AIP) will increase by <color=#ff620c>" ).Add( relatedEntityTypeData.AIPToClaim.ReadableString ).Add( "</color>.  " );
+                                buffer.Add( "<color=#ff5bf2>占领消耗：</color>要占领此单位，你必须控制该行星，并消耗 <color=#ffdf72>" ).AddNumberMoreReadable( relatedEntityTypeData.MarkStatsFor( effectiveMarkLevel ).MetalCostToClaim )
+                                    .Add( " 金属</color>，同时 AI 进程（AIP）将增加 <color=#ff620c>" ).Add( relatedEntityTypeData.AIPToClaim.ReadableString ).Add( "</color>。  " );
                             else
-                                buffer.Add( "<color=#ff5bf2>Claim Cost:</color> <color=#ffdf72>" ).AddNumberMoreReadable( relatedEntityTypeData.MarkStatsFor( effectiveMarkLevel ).MetalCostToClaim )
-                                    .Add( " Metal</color> and <color=#ff620c>" ).Add( relatedEntityTypeData.AIPToClaim.ReadableString ).Add( " AIP</color>.  " );
+                                buffer.Add( "<color=#ff5bf2>占领消耗：</color><color=#ffdf72>" ).AddNumberMoreReadable( relatedEntityTypeData.MarkStatsFor( effectiveMarkLevel ).MetalCostToClaim )
+                                    .Add( " 金属</color> 和 <color=#ff620c>" ).Add( relatedEntityTypeData.AIPToClaim.ReadableString ).Add( " AIP</color>。  " );
                         } else
                         {
                             if ( detailLevel >= TooltipDetail.Medium )
-                                buffer.Add( "<color=#ff5bf2>Claim Cost:</color> To claim this, you must control the planet and it will cost <color=#ffdf72>" ).AddNumberMoreReadable( relatedEntityTypeData.MarkStatsFor( effectiveMarkLevel ).MetalCostToClaim ).Add( " metal</color>.  " );
+                                buffer.Add( "<color=#ff5bf2>占领消耗：</color>要占领此单位，你必须控制该行星，并消耗 <color=#ffdf72>" ).AddNumberMoreReadable( relatedEntityTypeData.MarkStatsFor( effectiveMarkLevel ).MetalCostToClaim ).Add( " 金属</color>。  " );
                             else
-                                buffer.Add( "<color=#ff5bf2>Claim Cost:</color> <color=#ffdf72>" ).AddNumberMoreReadable( relatedEntityTypeData.MarkStatsFor( effectiveMarkLevel ).MetalCostToClaim ).Add( " Metal</color>.  " );
+                                buffer.Add( "<color=#ff5bf2>占领消耗：</color><color=#ffdf72>" ).AddNumberMoreReadable( relatedEntityTypeData.MarkStatsFor( effectiveMarkLevel ).MetalCostToClaim ).Add( " 金属</color>。  " );
                         }
                     } else if ( relatedEntityTypeData.AIPToClaim > 0 )
                     {
                         if ( detailLevel >= TooltipDetail.Medium )
-                            buffer.Add( "<color=#ff5bf2>Claim Cost:</color> To claim this, you must control the planet and the AI Progress (AIP) will increase by <color=#ff620c>" ).Add( relatedEntityTypeData.AIPToClaim.ReadableString ).Add( "</color>.  " );
+                            buffer.Add( "<color=#ff5bf2>占领消耗：</color>要占领此单位，你必须控制该行星，AI 进程（AIP）将增加 <color=#ff620c>" ).Add( relatedEntityTypeData.AIPToClaim.ReadableString ).Add( "</color>。  " );
                         else
-                            buffer.Add( "<color=#ff5bf2>Claim Cost:</color> <color=#ff620c>" ).Add( relatedEntityTypeData.AIPToClaim.ReadableString ).Add( " AIP</color>.  " );
+                            buffer.Add( "<color=#ff5bf2>占领消耗：</color><color=#ff620c>" ).Add( relatedEntityTypeData.AIPToClaim.ReadableString ).Add( " AIP</color>。  " );
                     } else if ( relatedEntityTypeData.AIPToClaim < 0 )
                     {
                         if ( detailLevel >= TooltipDetail.Medium )
-                            buffer.Add( "<color=#5be6ff>Claim Bonus:</color> To claim this, you must control the planet and then AI Progress (AIP) will decrease by <color=#72fff7>" ).Add( relatedEntityTypeData.AIPToClaim.ReadableString ).Add( "</color> (excellent!).  " );
+                            buffer.Add( "<color=#5be6ff>占领奖励：</color>要占领此单位，你必须控制该行星，AI 进程（AIP）将减少 <color=#72fff7>" ).Add( relatedEntityTypeData.AIPToClaim.ReadableString ).Add( "</color>（太好了！）。  " );
                         else
-                            buffer.Add( "<color=#5be6ff>Claim Bonus:</color> <color=#72fff7>-" ).Add( relatedEntityTypeData.AIPToClaim.ReadableString ).Add( " AIP</color>.  " );
+                            buffer.Add( "<color=#5be6ff>占领奖励：</color><color=#72fff7>-" ).Add( relatedEntityTypeData.AIPToClaim.ReadableString ).Add( " AIP</color>。  " );
                     }
                 }
 
@@ -3477,7 +3473,7 @@ namespace Arcen.AIW2.External
                                 if ( !hasDoneHeader )
                                 {
                                     hasDoneHeader = true;
-                                    buffer.Add( "<color=#f25e1c>You Can Hack:</color> " );
+                                    buffer.Add( "<color=#f25e1c>你可入侵：</color> " );
                                 } else
                                 {
                                     buffer.Add( ", " );
@@ -3496,57 +3492,57 @@ namespace Arcen.AIW2.External
                     GameEntity_Squad parent = relatedSquadOrNull.ParentGameEntity.GetSquad();
                     if ( parent != null )
                     {
-                        buffer.Add( "<color=#f25e1c>ANCESTOR</color>: " );
-                        buffer.Add( "Ancestor Unit: " ).Add( parent.GetTypeDisplayNameSafe() );
+                        buffer.Add( "<color=#f25e1c>祖先</color>：" );
+                        buffer.Add( "祖先单位： " ).Add( parent.GetTypeDisplayNameSafe() );
                         if ( relatedEntityTypeData.DiesIfParentDies )
-                            buffer.Add( "  (Dies if the ancestor dies)" );
-                        buffer.Add( ".  " );
+buffer.Add( "  （祖先死亡则自身死亡）" );
+                            buffer.Add( "。  " );
                     }
                 } else
                 {
                     if ( relatedEntityTypeData.DiesIfParentDies )
                     {
-                        buffer.Add( "<color=#f25e1c>ANCESTOR</color>: " );
-                        buffer.Add( "Normally will have an ancestor unit, and dies if that ancestor dies.  " );
+                        buffer.Add( "<color=#f25e1c>祖先</color>: " );
+                        buffer.Add( "通常拥有祖先单位，祖先死亡则自身死亡。  " );
                     }
                 }
 
                 //child stuff
                 if ( relatedEntityTypeData.BuildPointsPerSecond > 0 )
                 {
-                    buffer.Add( "<color=#f25e1c>PROGENITOR</color>: " );
+                    buffer.Add( "<color=#f25e1c>始祖</color>: " );
                     float perSecondRate = relatedEntityTypeData.BuildPointCostForPerSecondConstruction <= 0 ? -1 :
                         ((float) relatedEntityTypeData.BuildPointCostForPerSecondConstruction / (float) relatedEntityTypeData.BuildPointsPerSecond);
-                    buffer.Add( "Builds up to " ).Add( relatedEntityTypeData.PersonalShipCapForPerSecondBuildPointConstruction )
-                        .Add( " descendants" );
+                    buffer.Add( "最多建造 " ).Add( relatedEntityTypeData.PersonalShipCapForPerSecondBuildPointConstruction )
+                        .Add( " 个后代" );
 
                     if ( relatedSquadOrNull != null )
                     {
-                        buffer.Add( " (Current: " ).Add( relatedSquadOrNull.ChildSquads.Count ).Add( ")" );
+                        buffer.Add( "（当前: " ).Add( relatedSquadOrNull.ChildSquads.Count ).Add( "）" );
                     }
 
-                    buffer.Add( ", at a rate of one every " ).AddFixedDecimal( perSecondRate, 2 ).Add( "s.  " );
+                    buffer.Add( "，建造间隔 " ).AddFixedDecimal( perSecondRate, 2 ).Add( " 秒。  " );
 
                     List<GameEntityTypeData> list = GameEntityTypeDataTable.Instance.RowsByTag[relatedEntityTypeData.TagToSpawnFromForBuildPointForPerSecondConstruction];
                     if ( list == null || list.Count == 0 )
-                        buffer.Add( "Error!  No descendants available to build!" );
+                        buffer.Add( "错误！没有可建造的后代！" );
                     else if ( list.Count == 1 )
-                        buffer.Add( "Descendants are: " ).Add( list[0].GetDisplayName() ).Add( "  " );
+                        buffer.Add( "后代为: " ).Add( list[0].GetDisplayName() ).Add( "  " );
                     else
                     {
-                        buffer.Add( "Descendants are a mix of: " );
+                        buffer.Add( "后代混合组成: " );
                         for ( int i = 0; i < list.Count; i++ )
                         {
                             if ( i > 0 )
                             {
                                 if ( i == list.Count - 1 )
                                 {
-                                    if ( i == 1 )
-                                        buffer.Add( " and " );
-                                    else
-                                        buffer.Add( ", and " );
+                                if ( i == 1 )
+                                    buffer.Add( " 和 " );
+                                else
+                                    buffer.Add( "，和 " );
                                 } else
-                                    buffer.Add( ", " );
+                                    buffer.Add( "，" );
                             }
                             GameEntityTypeData childType = list[i];
                             buffer.Add( childType.GetDisplayName() );
@@ -3562,16 +3558,16 @@ namespace Arcen.AIW2.External
                                 }
                             }
                             if ( currentCount > 0 )
-                                buffer.Add( " (" ).Add( currentCount ).Add( detailLevel >= TooltipDetail.Full ? " current)" : ")" );
+                                buffer.Add( "（" ).Add( currentCount ).Add( detailLevel >= TooltipDetail.Full ? " 当前）" : "）" );
                         }
                         buffer.Add( ".  " );
                     }
 
                     if ( relatedSquadOrNull != null && detailLevel >= TooltipDetail.Full )
                     {
-                        buffer.Add( "(Progress: " ).AddNumberMoreReadable( relatedSquadOrNull.BuildPoints ).Add( " / " )
+                        buffer.Add( "（进度: " ).AddNumberMoreReadable( relatedSquadOrNull.BuildPoints ).Add( " / " )
                             .AddNumberMoreReadable( relatedEntityTypeData.BuildPointCostForPerSecondConstruction )
-                            .Add( ")  " ); ;
+                            .Add( "）  " ); ;
                     }
                 }
 
@@ -3584,37 +3580,37 @@ namespace Arcen.AIW2.External
                 debugStage = 3010;
 
                 if ( (relatedEntityTypeData.IsElite) && detailLevel >= TooltipDetail.Medium )
-                    buffer.Add( "Elite: Only one elite ship line can be added to any fleet.  " );
+                    buffer.Add( "精英: 每支舰队只能添加一条精英舰船线。  " );
 
                 debugStage = 3020;
 
                 if ( (relatedEntityTypeData.ProvidesAIWarpEntryPoint || relatedEntityTypeData.IsWarpBeacon) && detailLevel >= TooltipDetail.Medium )
-                    buffer.Add( "Allows AI ships to warp in here.  " );
+                    buffer.Add( "允许 AI 舰船跃迁至此。  " );
 
                 debugStage = 3030;
 
                 if ( relatedEntityTypeData.IsMobile && relatedEntityTypeData.FleetMembershipStyle == FleetMembershipStyle.Planetary && detailLevel >= TooltipDetail.Medium )
-                    buffer.Add( "Cannot traverse wormholes.  " );
+                    buffer.Add( "无法穿越虫洞。  " );
 
                 debugStage = 3030;
 
                 if ( relatedEntityTypeData.AutomaticallyDiesWithCommandStation )
-                    buffer.Add( "Self-destructs if command station is destroyed.  " );
+                    buffer.Add( "指挥站被摧毁时自毁。  " );
 
                 debugStage = 3040;
 
                 if ( relatedEntityTypeData.DiesAfterLifetimeSec > 0 )
-                    buffer.Add("Expires after ").AddMinutesAndSeconds( relatedEntityTypeData.DiesAfterLifetimeSec, "ffa1a1").Add( "." );
+                    buffer.Add("过期时间 ").AddMinutesAndSeconds( relatedEntityTypeData.DiesAfterLifetimeSec, "ffa1a1").Add( "。" );
                 
                 if ( relatedEntityTypeData.SelfAttritionsXPercentPerSecondIfParentShipNotOnPlanet > FInt.Zero && !relatedEntityTypeData.AlwaysSelfAttritions && detailLevel >= TooltipDetail.Full )
-                    buffer.Add( "Loses <color=#ffdf72>" ).Add( relatedEntityTypeData.SelfAttritionsXPercentPerSecondIfParentShipNotOnPlanet.ReadableString )
-                        .Add( "%</color> hull health every second it is not on the same planet as its parent ship.  " );
+                    buffer.Add( "每秒损失 <color=#ffdf72>" ).Add( relatedEntityTypeData.SelfAttritionsXPercentPerSecondIfParentShipNotOnPlanet.ReadableString )
+                        .Add( "%</color> 船体生命（当不在母舰所在行星时）。  " );
 
                 debugStage = 3045;
 
                 if ( relatedEntityTypeData.AlwaysSelfAttritions && detailLevel >= TooltipDetail.Full )
-                    buffer.Add( "Loses <color=#ffdf72>" ).Add( relatedEntityTypeData.SelfAttritionsXPercentPerSecondIfParentShipNotOnPlanet.ReadableString )
-                        .Add( "%</color> hull health every second.  " );
+                    buffer.Add( "每秒损失 <color=#ffdf72>" ).Add( relatedEntityTypeData.SelfAttritionsXPercentPerSecondIfParentShipNotOnPlanet.ReadableString )
+                        .Add( "%</color> 船体生命。  " );
 
                 debugStage = 3050;
 
@@ -3629,9 +3625,9 @@ namespace Arcen.AIW2.External
                 if ( relatedEntityTypeData.ImmuneToRepairs )
                 {
                     if ( detailLevel >= TooltipDetail.Full )
-                        buffer.Add( "Cannot be repaired -- whatever this thing is, we don't know how to fix it.  " );
+                        buffer.Add( "无法修理——无论这是什么，我们都不知道如何修复。  " );
                     else
-                        buffer.Add( "Cannot be repaired.  " );
+                        buffer.Add( "无法修理。  " );
                 }
 
                 debugStage = 3052;
@@ -3657,29 +3653,29 @@ namespace Arcen.AIW2.External
                 if ( relatedEntityTypeData.ImmuneToProtectionByForcefields )
                 {
                     if ( detailLevel >= TooltipDetail.Full )
-                        buffer.Add( "Cannot be protected by forcefields, due to its strange interaction with the fabric of reality.  " );
+                        buffer.Add( "无法被力场保护，因其与现实的交互异常。  " );
                     else
-                        buffer.Add( "Cannot be protected by forcefields.  " );
+                        buffer.Add( "无法被力场保护。  " );
                 }
 
                 if ( relatedEntityTypeData.ImmuneToBonusDamage )
                 {
-                    buffer.Add( "Immune to enemy weapon system bonus damage.  " );
+                    buffer.Add( "免疫敌方武器系统加成伤害。  " );
                 }
 
                 if ( relatedEntityTypeData.CanPassThroughEnemyForcefields )
                 {
                     if ( detailLevel >= TooltipDetail.Full )
-                        buffer.Add( "<color=#f25e1c>FORCEFIELD HARMONICS</color>: Can match shield harmonics to pass through enemy forcefields, although any weapons fire it does will still impact on the forcefield itself.  " );
+                        buffer.Add( "<color=#f25e1c>力场谐波</color>: 可匹配护盾谐波以穿过敌方力场，但其武器射击仍会撞击力场本身。  " );
                     else
-                        buffer.Add( "<color=#f25e1c>FORCEFIELD HARMONICS</color>: Pass through enemy forcefields.  " );
+                        buffer.Add( "<color=#f25e1c>力场谐波</color>: 可穿过敌方力场。  " );
                 }
 
                 debugStage = 30531100;
 
                 if ( relatedSquadOrNull != null && relatedSquadOrNull.CurrentStateOfMatter.ShouldShowDescriptionInTooltips )
                 {
-                    buffer.Add( "<color=#ff5bf2>" ).Add( relatedSquadOrNull.CurrentStateOfMatter.DisplayName ).Add( " State Of Matter" );
+                    buffer.Add( "<color=#ff5bf2>" ).Add( relatedSquadOrNull.CurrentStateOfMatter.DisplayName ).Add( " 物态" );
                     if ( detailLevel >= TooltipDetail.Full )
                     {
                         buffer.Add( ": " );
@@ -3704,17 +3700,17 @@ namespace Arcen.AIW2.External
 
                     if ( detailLevel >= TooltipDetail.Full )
                     {
-                        buffer.Add( "Strange interactions with the very fabric of spacetime cause this to exist in the normal plane of existence only part of the time" );
+                        buffer.Add( "与时空结构的奇异交互导致该单位仅部分时间存在于正常存在层面" );
                         if ( relatedEntityTypeData.AlternativeStateOfMatter.CanTargetOtherUnitsInThisState )
-                            buffer.Add( ", making it invincible and invisible while it is in the other state.  " );
+                            buffer.Add( "，使其在另一状态下无敌且隐形。  " );
                         else
-                            buffer.Add( ", making it invincible and invisible in the other state EXCEPT to other units in the same state.  " );
+                            buffer.Add( "，使其在另一状态下无敌且隐形（同状态单位除外）。  " );
                     }
 
-                    buffer.Add( "Phases to " ).Add( relatedEntityTypeData.AlternativeStateOfMatter.DisplayName ).Add( " every " )
+                    buffer.Add( "切换至 " ).Add( relatedEntityTypeData.AlternativeStateOfMatter.DisplayName ).Add( " 状态，周期 " )
                         .Add( relatedEntityTypeData.PhasesToOtherAlternativeStateOfMatterAfterSeconds )
-                        .Add( " seconds, and back " )
-                        .Add( returnTime ).Add( " seconds after that.  " );
+                        .Add( " 秒，保持 " )
+                        .Add( returnTime ).Add( " 秒后返回。  " );
                 }
 
                 debugStage = 30531300;
@@ -3722,20 +3718,19 @@ namespace Arcen.AIW2.External
                 if ( relatedEntityTypeData.StateOfMatterToBecomeOnWormholeExit != null )
                 {
                     int returnTime = relatedEntityTypeData.ReturnsToDefaultStateOfMatterAfterSecondsFromWormholeExit;
-                    buffer.Add( "<color=#f25e1c>PHASE WARP</color>: Phases to " ).Add( relatedEntityTypeData.StateOfMatterToBecomeOnWormholeExit.DisplayName )
-                        .Add( " whenever it passes through a wormhole" );
+                    buffer.Add( "<color=#f25e1c>相位跃迁</color>: 每次通过虫洞时切换至 " ).Add( relatedEntityTypeData.StateOfMatterToBecomeOnWormholeExit.DisplayName );
                     if ( returnTime > 0 )
-                        buffer.Add( ", and then returns to normal " ).Add( returnTime ).Add( " seconds after that.  " );
+                        buffer.Add( "，然后在 " ).Add( returnTime ).Add( " 秒后恢复正常。  " );
                     else
-                        buffer.Add( ", and does not schedule a return to normal.  " );
+                        buffer.Add( "，且不会安排恢复正常。  " );
                 }
 
                 debugStage = 30531400;
 
                 if ( relatedEntityTypeData.ForcedToBeThisStateOfMatterWhenOnFormerOrCurrentAIHomeworldOrBastionWorldsUnlessEnemyKingPresent != null && relatedEntityTypeData.ForcedToBeThisStateOfMatterWhenOnFormerOrCurrentAIHomeworldOrBastionWorldsUnlessEnemyKingPresent.ShouldShowDescriptionInTooltips)
                 {
-                    buffer.Add( "<color=#f25e1c>AI CORE PHASE</color>: Phases to " ).Add( relatedEntityTypeData.ForcedToBeThisStateOfMatterWhenOnFormerOrCurrentAIHomeworldOrBastionWorldsUnlessEnemyKingPresent.DisplayName )
-                        .Add( " whenever it is on a current or former AI Homeworld or AI Bastion World (unless it is in the presence of an enemy king).  " );
+                    buffer.Add( "<color=#f25e1c>AI 核心相位</color>: 切换至 " ).Add( relatedEntityTypeData.ForcedToBeThisStateOfMatterWhenOnFormerOrCurrentAIHomeworldOrBastionWorldsUnlessEnemyKingPresent.DisplayName )
+                        .Add( "（当位于当前或前 AI 母星或 AI 堡垒世界时，除非附近存在敌方君主）。  " );
                 }
 
                 debugStage = 3060;
@@ -3745,28 +3740,28 @@ namespace Arcen.AIW2.External
                     if ( relatedSquadOrNull != null )
                     {
                         if ( relatedEntityTypeData.ImmuneToAllDamageForSecondsAfterCreation > relatedSquadOrNull.GetSecondsSinceCreation() )
-                            buffer.StartColor( QuickColors.NewValue ).Add( "Immune to all damage for " ).Add( relatedEntityTypeData.ImmuneToAllDamageForSecondsAfterCreation -
-                                relatedSquadOrNull.GetSecondsSinceCreation() ).Add( " more seconds.  " ).EndColor();
+                            buffer.StartColor( QuickColors.NewValue ).Add( "对所有伤害免疫，剩余 " ).Add( relatedEntityTypeData.ImmuneToAllDamageForSecondsAfterCreation -
+                                relatedSquadOrNull.GetSecondsSinceCreation() ).Add( " 秒。  " ).EndColor();
                     } else
-                        buffer.Add( "Immune to all damage for " ).StartColor( QuickColors.NewValue )
-                            .Add( relatedEntityTypeData.ImmuneToAllDamageForSecondsAfterCreation ).Add( "s</color> after creation.  " );
+                        buffer.Add( "创建后对所有伤害免疫 " ).StartColor( QuickColors.NewValue )
+                            .Add( relatedEntityTypeData.ImmuneToAllDamageForSecondsAfterCreation ).Add( " 秒</color>。" );
                 }
                 
                 debugStage = 3061;
 
                 if (relatedEntityTypeData.UnitToMakeWithBuildPointsFromDamageTaken != null)
                 {
-                    buffer.Add("Produces ")
+                    buffer.Add("生产 ")
                         .AddFactionColoredString(relatedEntityTypeData.UnitToMakeWithBuildPointsFromDamageTaken.GetShortDisplayName(), relatedSquadFactionOrNull);
 
                     if (relatedSquadOrNull != null)
                     {
                         // this should be accessed from the entity... or exposed as a tag... or something...
                         var costToSpawn = ((relatedSquadOrNull.GetMaxHullPoints() + relatedSquadOrNull.GetMaxShieldPoints()) / (relatedSquadOrNull.CurrentMarkLevel + 1));
-                        buffer.StartColor(QuickColors.HeaderBright).Add(" (").AddPercentRoundedDynamically(relatedSquadOrNull.BuildPoints, costToSpawn).Add(")").EndColor();
+                        buffer.StartColor(QuickColors.HeaderBright).Add("（").AddPercentRoundedDynamically(relatedSquadOrNull.BuildPoints, costToSpawn).Add("）").EndColor();
                     }
 
-                    buffer.Add(" as it takes damage.");
+                    buffer.Add("（在承受伤害时生产）。");
                 }
 
                 debugStage = 3062;
@@ -3775,8 +3770,8 @@ namespace Arcen.AIW2.External
                 {
                     if ( relatedSquadOrNull != null )
                     {
-                        buffer.Add( "Currently has <color=#ffdf72>" ).Add( relatedSquadOrNull.NumberOfWeaponPoints )
-                        .Add( "</color> weapon points. " );
+                        buffer.Add( "当前拥有 <color=#ffdf72>" ).Add( relatedSquadOrNull.NumberOfWeaponPoints )
+                        .Add( "</color> 武器点。" );
                     }
                 }
 
@@ -3790,8 +3785,8 @@ namespace Arcen.AIW2.External
                         int pairCount = relatedSquadOrNull.DeathEffectCausingDamageReceivedToEntity.Count;
                         foreach ( KeyValuePair<DeathEffectType, int> pair in relatedSquadOrNull.DeathEffectCausingDamageReceivedToEntity )
                         {
-                            buffer.Add( "\nCurrently has <color=#ffdf72>" ).Add( pair.Value ).Add( " " )
-                                .Add( pair.Key.DescriptionDamageName ).Add( "</color> damage out of " ).Add( pair.Key.Scale ).Add( " needed for effect. " );
+                            buffer.Add( "\n当前累积 <color=#ffdf72>" ).Add( pair.Value ).Add( " " )
+                                .Add( pair.Key.DescriptionDamageName ).Add( "</color> 伤害（共需 " ).Add( pair.Key.Scale ).Add( " 触发效果）。" );
                             continue;
                         }
                     }
@@ -3812,8 +3807,8 @@ namespace Arcen.AIW2.External
                                     worstXenonRatio = player.FuelXenonOveruseRatio;
                             }
                             if ( worstXenonRatio < FInt.One )
-                                buffer.Add( "\n<color=#ff6935>Currently health and shields are reduced by the worst player Xenon ratio, which is " )
-                                    .AddFixedDecimal( worstXenonRatio.ToFloatNonSim(), 2 ).Add( "x normal.</color>  " );
+                                buffer.Add( "\n<color=#ff6935>当前生命值与护盾被最差玩家氙气比率降低，当前为 " )
+                                    .AddFixedDecimal( worstXenonRatio.ToFloatNonSim(), 2 ).Add( " 倍正常值。</color>  " );
                         }
                     } else
                     {
@@ -3822,22 +3817,22 @@ namespace Arcen.AIW2.External
                             case ResourceType.FuelArgon:
                                 {
                                     if ( relatedSquadFactionOrNull != null && relatedSquadFactionOrNull.FuelArgonOveruseRatio < FInt.One )
-                                        buffer.Add( "\n<color=#ff6935>Currently health and shields are reduced by your Argon ratio, which is " )
-                                            .AddFixedDecimal( relatedSquadFactionOrNull.FuelArgonOveruseRatio.ToFloatNonSim(), 2 ).Add( "x normal.</color>  " );
+                                        buffer.Add( "\n<color=#ff6935>当前生命值与护盾被你的氩气比率降低，当前为 " )
+                                            .AddFixedDecimal( relatedSquadFactionOrNull.FuelArgonOveruseRatio.ToFloatNonSim(), 2 ).Add( " 倍正常值。</color>  " );
                                 }
                                 break;
                             case ResourceType.FuelRadon:
                                 {
                                     if ( relatedSquadFactionOrNull != null && relatedSquadFactionOrNull.FuelRadonOveruseRatio < FInt.One )
-                                        buffer.Add( "\n<color=#ff6935>Currently health and shields are reduced by your Radon ratio, which is " )
-                                            .AddFixedDecimal( relatedSquadFactionOrNull.FuelRadonOveruseRatio.ToFloatNonSim(), 2 ).Add( "x normal.</color>  " );
+                                        buffer.Add( "\n<color=#ff6935>当前生命值与护盾被你的氡气比率降低，当前为 " )
+                                            .AddFixedDecimal( relatedSquadFactionOrNull.FuelRadonOveruseRatio.ToFloatNonSim(), 2 ).Add( " 倍正常值。</color>  " );
                                 }
                                 break;
                             case ResourceType.FuelXenon:
                                 {
                                     if ( relatedSquadFactionOrNull != null && relatedSquadFactionOrNull.FuelXenonOveruseRatio < FInt.One )
-                                        buffer.Add( "\n<color=#ff6935>Currently health and shields are reduced by your Xenon ratio, which is " )
-                                            .AddFixedDecimal( relatedSquadFactionOrNull.FuelXenonOveruseRatio.ToFloatNonSim(), 2 ).Add( "x normal.</color>  " );
+                                        buffer.Add( "\n<color=#ff6935>当前生命值与护盾被你的氙气比率降低，当前为 " )
+                                            .AddFixedDecimal( relatedSquadFactionOrNull.FuelXenonOveruseRatio.ToFloatNonSim(), 2 ).Add( " 倍正常值。</color>  " );
                                 }
                                 break;
                         }
@@ -3849,17 +3844,17 @@ namespace Arcen.AIW2.External
                     if ( relatedEntityTypeData.IsCrippledInsteadOfDying && (relatedSquadOrNull == null || relatedSquadOrNull.GetFactionTypeSafe() == FactionType.Player ||
                         relatedSquadOrNull.GetFactionTypeSafe() == FactionType.NaturalObject) )
                     {
-                        buffer.Add( "Cannot die, but rather becomes crippled at 1 HP.  " );
+                        buffer.Add( "不会死亡，而是会在 1 HP 时变为残废状态。  " );
                         if ( relatedEntityTypeData.ForcedToBailOutOnCripple_Any )
-                            buffer.Add( "When crippled, will use bail-out function to a friendly planet.  " );
+                            buffer.Add( "残废时将使用弹射撤离功能前往友方行星。  " );
                         else if ( relatedEntityTypeData.ForcedToBailOutOnCripple_DeepstrikeOnly )
-                            buffer.Add( "When crippled in deepstrike territory, will use bail-out function to a friendly planet.  " );
+                            buffer.Add( "在深入打击区域内残废时将使用弹射撤离功能前往友方行星。  " );
                     } else if ( relatedEntityTypeData.DiesToRemains && (relatedSquadOrNull == null || relatedSquadOrNull.GetFactionTypeSafe() == FactionType.Player) )
-                        buffer.Add( "When controlled by a human, dies to remains that can be rebuilt.  " );
+                        buffer.Add( "由人类控制时，死亡后留下可重建的残骸。  " );
                     else if ( relatedEntityTypeData.RevertsToNeutralOnDeathIfPermadeathSettingIsFalse != null && relatedEntityTypeData.RevertsToNeutralOnDeathIfPermadeathSettingIsFalse.Length > 0 )
                     {
                         if ( !World_AIW2.Instance.Setup.GetBoolBySetting( relatedEntityTypeData.RevertsToNeutralOnDeathIfPermadeathSettingIsFalse ) )
-                            buffer.Add( "Reverts to neutral status on death, rather than truly dying.  " );
+                            buffer.Add( "死亡时恢复为中立状态而非真正死亡。  " );
                     }
                 }
                 debugStage = 30710;
@@ -3871,15 +3866,15 @@ namespace Arcen.AIW2.External
 
                 if ( relatedSquadOrNull != null && relatedSquadOrNull.IsAfterANonHumanTeam_NonSim )
                 {
-                    buffer.Add( "\n<color=#ff5bf2>NOT AFTER YOU" );
+                    buffer.Add( "\n<color=#ff5bf2>目标不是你" );
                     if ( detailLevel >= TooltipDetail.Full )
                     {
-                        buffer.Add( ":</color> This ship will fire on you if you fly up to it, but otherwise will ignore you.  It is quite occupied hunting " );
+                        buffer.Add( "</color>: 你靠近时这艘船会开火，但除此之外会忽略你。它正忙于追击 " );
                         buffer.Add( relatedSquadOrNull.CalculateFactionIsChasingInsteadOfHumans() );
                         buffer.Add( ".  " );
                     } else if ( detailLevel >= TooltipDetail.Medium )
                     {
-                        buffer.Add( ":</color> Hunting " );
+                        buffer.Add( "</color>: 正在追击 " );
                         buffer.Add( relatedSquadOrNull.CalculateFactionIsChasingInsteadOfHumans() );
                         buffer.Add( ".  " );
                     } else
@@ -3994,7 +3989,7 @@ namespace Arcen.AIW2.External
                 debugStage = 30712;
                 if ( relatedSquadOrNull != null && relatedSquadOrNull.DespawnsInXSeconds > 0 &&
                      detailLevel >= TooltipDetail.Medium )
-                    buffer.Add( "This entity will despawn in " + relatedSquadOrNull.DespawnsInXSeconds + " seconds. ", "7486d1" );
+                    buffer.Add( "该实体将在 " + relatedSquadOrNull.DespawnsInXSeconds + " 秒后消失。", "7486d1" );
 
                 debugStage = 3080;
 
@@ -4024,7 +4019,7 @@ namespace Arcen.AIW2.External
                                 countOfExisting++;
                         }
 
-                        buffer.Add( "     Galaxy-Wide Cap: " ).Add( countOfExisting );
+                        buffer.Add( "     银河范围上限: " ).Add( countOfExisting );
                         buffer.Add( "/" ).Add( effectiveGalaxyCap );
 
                         if ( detailLevel >= TooltipDetail.Full )
@@ -4035,8 +4030,8 @@ namespace Arcen.AIW2.External
                                 buffer.Add( "<size=80%>" );
                                 buffer.Add( " (" ).Add( relatedEntityTypeData.BaseGalaxyWideCapForPlayersConstructing );
                                 buffer.Add( " + " ).Add( relatedEntityTypeData.AddedGalaxyWideCapForPlayersConstructingPerXPlanets );
-                                buffer.Add( " per " ).Add( relatedEntityTypeData.GalaxyWideCapForPlayersConstructingXPlanetVariable );
-                                buffer.Add( " player-owned planets. ").Add(World_AIW2.Instance.PlayerOwnedPlanets, "a1ffa1" ).Add(" Player planets Owned)" );
+                                buffer.Add( " 每 " ).Add( relatedEntityTypeData.GalaxyWideCapForPlayersConstructingXPlanetVariable );
+                                buffer.Add( " 颗玩家拥有的行星. ").Add(World_AIW2.Instance.PlayerOwnedPlanets, "a1ffa1" ).Add(" 玩家已拥有行星)" );
                                 buffer.Add( "</size>  " );
                             }
                         }
@@ -4053,7 +4048,7 @@ namespace Arcen.AIW2.External
                     {
                         debugStage = 546100;
                         if ( relatedSquadOrNull.HasBeenRemovedFromSim || relatedSquadOrNull.ToBeRemovedAtEndOfThisFrame )
-                            buffer.Add( "<color=#ff5842>This ship has died.</color>  " );
+                            buffer.Add( "<color=#ff5842>该舰船已死亡。</color>  " );
                         else
                             buffer.Add( "<color=#ff5842>ERROR: my FleetMembership is null!</color>  " );
                     } else if ( relatedMemFleetOrNull.Centerpiece.GetSquad() == relatedSquadOrNull )
@@ -4062,13 +4057,13 @@ namespace Arcen.AIW2.External
 
                         debugStage = 546200;
                         if ( detailLevel < TooltipDetail.Full )
-                            buffer.Add( "Is " ).Add( isCity ? relatedSquadOrNull.TypeData.NameForCityCenter : "centerpiece" ).Add( " of fleet " )
+                            buffer.Add( "是 " ).Add( isCity ? relatedSquadOrNull.TypeData.NameForCityCenter : "旗舰" ).Add( "，属于舰队 " )
                                 .Add( relatedMemFleetOrNull.GetName() )
-                                .Add( " with " );
+                                .Add( "，拥有 " );
                         else
-                            buffer.Add( "I am the " ).Add( isCity ? relatedSquadOrNull.TypeData.NameForCityCenter : "centerpiece" ).Add( " of fleet " )
+                            buffer.Add( "我是" ).Add( isCity ? relatedSquadOrNull.TypeData.NameForCityCenter : "旗舰" ).Add( "，属于舰队 " )
                                 .Add( relatedMemFleetOrNull.GetName() )
-                                .Add( " with " );
+                                .Add( "，拥有 " );
 
                         debugStage = 546300;
                         //useLocalUIValues is calculated inside here.
@@ -4081,14 +4076,14 @@ namespace Arcen.AIW2.External
                             FInt estimatedFleetPowerForColor = (FInt.OneHundred * currentStrength * currentUnits) / (maxStrength * maxUnits);
                             buffer.WrapStrengthTruncated( currentStrength, useIcons, false ).Add( " / " ).WrapStrengthTruncated( maxStrength, false, useText ).Add( " (" )
                                 .StartPercentageInColor( estimatedFleetPowerForColor, true, false).AddNumberMoreReadable( currentUnits ).Add( " / " ).AddNumberMoreReadable( maxUnits )
-                                .Add( " units)" ).EndColor();
+                                .Add( " 个单位)" ).EndColor();
                         }
                         buffer.Add( ".  " );
                         if ( relatedMembershipOrNull != null && relatedMemFleetOrNull != null &&
                              relatedMemFleetOrNull.TimesCrippled_UIOnly > 0 &&
                              detailLevel >= TooltipDetail.Full )
                         {
-                            buffer.Add( "This flagship has been crippled " ).Add( relatedMemFleetOrNull.TimesCrippled_UIOnly, "a1ffa1" ).Add( " times.  " );
+                            buffer.Add( "该旗舰已被重创 " ).Add( relatedMemFleetOrNull.TimesCrippled_UIOnly, "a1ffa1" ).Add( " 次。  " );
                         }
 
                         debugStage = 546400;
@@ -4099,7 +4094,7 @@ namespace Arcen.AIW2.External
                             if ( totalCityPoints > 0 )
                             {
                                 int spentCityPoints = relatedMemFleetOrNull.CalculateSpentCitySockets();
-                                buffer.Add( relatedEntityTypeData.NameForCitySockets_Plural ).Add( " used: " ).Add( spentCityPoints ).Add( "/" ).Add( totalCityPoints ).Add( ".  " );
+                                buffer.Add( relatedEntityTypeData.NameForCitySockets_Plural ).Add( " 已使用: " ).Add( spentCityPoints ).Add( "/" ).Add( totalCityPoints ).Add( ".  " );
                             }
                         }
                         if ( relatedSquadOrNull == null || relatedSquadOrNull.GetFactionTypeSafe() == FactionType.Player )
@@ -4107,22 +4102,22 @@ namespace Arcen.AIW2.External
                             if ( relatedEntityTypeData.FiringDelayForTransportedShips > FInt.Zero && !isCity )
                             {
                                 if ( detailLevel < TooltipDetail.Full )
-                                    buffer.Add( "Ships unloaded have " ).Add( relatedEntityTypeData.FiringDelayForTransportedShips, "a1ffa1" ).Add( " seconds delay before firing.  " );
+                                    buffer.Add( "卸载的舰船有 " ).Add( relatedEntityTypeData.FiringDelayForTransportedShips, "a1ffa1" ).Add( " 秒延迟后才能开火。  " );
                                 else if ( detailLevel >= TooltipDetail.Medium )
-                                    buffer.Add( "Ships unloaded from this flagship have a delay of " ).Add( relatedEntityTypeData.FiringDelayForTransportedShips, "a1ffa1" ).Add( " seconds before they can shoot.  " );
+                                    buffer.Add( "从该旗舰卸载的舰船需等待 " ).Add( relatedEntityTypeData.FiringDelayForTransportedShips, "a1ffa1" ).Add( " 秒才能射击。  " );
                             }
                         }
                         if ( detailLevel >= TooltipDetail.Full && relatedMemFleetOrNull != null && relatedMemFleetOrNull.FleetOnFriendlyPlanet && !isCity )
                         {
-                            buffer.Add( "This fleet is on friendly planets, and can rebuild its ships quicker.  " );
+                            buffer.Add( "该舰队位于友方行星，可更快重建舰船。  " );
                         }
 
                         if ( relatedMemFleetOrNull != null && relatedMemFleetOrNull.IsFleetInTransportLoadMode && !isCity )
                         {
                             if ( detailLevel < TooltipDetail.Full )
-                                buffer.Add( "In transport-ready mode.  " );
+                                buffer.Add( "运输就绪模式中。  " );
                             else
-                                buffer.Add( "My fleet is in transport-ready mode, where all ships try to get into my bays.  " );
+                                buffer.Add( "我的舰队处于运输就绪模式，所有舰船正试图进入我的船坞。  " );
                         }
 
                         debugStage = 5465;
@@ -4150,9 +4145,9 @@ namespace Arcen.AIW2.External
                     if ( relatedSquadOrNull.ActiveHack != null )
                     {
                         debugStage = 87394010;
-                        buffer.Add( "This unit is currently hacking; it is diverting engine power to the Hacking Matrix, so it is slowed and cannot leave the planet. " );
+                        buffer.Add( "该单位正在入侵，正在将引擎动力转移至入侵矩阵，因此速度降低且无法离开星球。 " );
                         if ( relatedSquadOrNull.GetMaxCloakingPoints() > 0 )
-                            buffer.Add( "Hacking disables a ships cloaking system. " );
+                            buffer.Add( "入侵会禁用舰船的隐形系统。 " );
                     }
                     #endregion
 
@@ -4197,7 +4192,7 @@ namespace Arcen.AIW2.External
                                         continue;
                                     }
                                     if ( !plannedFlow.IsInRangeAtTheMoment )
-                                        buffer.Add( "(Out of Range) " );
+                                        buffer.Add( "(超出范围) " );
                                     switch ( plannedFlow.Purpose )
                                     {
                                         case MetalFlowPurpose.AssistSelfConstruction:
@@ -4261,7 +4256,7 @@ namespace Arcen.AIW2.External
                         AIDifficulty highestDifficulty = FactionUtilityMethods.Instance.GetHighestAIDifficulty_AsDifficulty();
                         if ( highestDifficulty.Difficulty >= relatedEntityTypeData.ExoGenerationDifficulty )
                         {
-                            buffer.Add( "The AI will generate Exostrikes (Exogalactic Strikeforces) against you if you capture this structure. " );
+                            buffer.Add( "如果你占领该建筑，AI 将生成 Exostrike（河外星系打击力量）对付你。 " );
                         }
                     }
                     #endregion
@@ -4269,7 +4264,7 @@ namespace Arcen.AIW2.External
                     debugStage = 87401000;
 
                     if ( relatedEntityTypeData.OnlyCloakedWhenOwningPlanet && detailLevel > TooltipDetail.Medium )
-                        buffer.Add( "This unit only stays cloaked if its faction owns its planet. " );
+                        buffer.Add( "该单位仅在其阵营拥有其所在星球时才保持隐形。 " );
 
                     debugStage = 87402000;
 
@@ -4293,19 +4288,19 @@ namespace Arcen.AIW2.External
                         if ( countOfItemTypes > 0 )
                         {
                             if ( detailLevel >= TooltipDetail.Medium )
-                                buffer.Add( "This AI Reinforcement Point contains " ).StartColor( QuickColors.NewValue )
-                                     .Add( countOfItems ).Add( " ships</color>, of total strength " );
+                                buffer.Add( "该 AI 增援点包含 " ).StartColor( QuickColors.NewValue )
+                                     .Add( countOfItems ).Add( " 艘舰船</color>，总强度 " );
                             else
 
-                                buffer.Add( "Contains " ).StartColor( QuickColors.NewValue )
-                                     .Add( countOfItems ).Add( " ships</color>, strength " );
+                                buffer.Add( "包含 " ).StartColor( QuickColors.NewValue )
+                                     .Add( countOfItems ).Add( " 艘舰船</color>，强度 " );
                             buffer.Add( ArcenExternalUIUtilities.Strength );
                             ArcenExternalUIUtilities.WriteRoundedNumberWithSuffix( buffer, strengthOfItems, true, true );
                             buffer.Add( "</color>." );
 
                             if ( detailLevel >= TooltipDetail.Medium )
                             {
-                                buffer.Add( "  They are of the types: " );
+                                buffer.Add( "  其类型为: " );
                                 bool isFirst = true;
                                 for ( int i = 0; i < relatedSquadOrNull.AIReinforcementPointContents.Count; i++ )
                                 {
@@ -4319,7 +4314,7 @@ namespace Arcen.AIW2.External
                                         buffer.Add( content.RightItem ).Add( "x " ).StartColor( QuickColors.NewValue ).Add( content.LeftItem.DisplayName ).Add( "</color>" );
                                     }
                                 }
-                                buffer.Add( "  If perturbed, it may choose to let these out.  " );
+                                buffer.Add( "  若受干扰，可能会放出这些舰船。  " );
                             }
                         }
                     }
@@ -4357,11 +4352,11 @@ namespace Arcen.AIW2.External
                     if ( relatedSquadOrNull.TypeData.HasFactoryFlows )
                     {
                         if ( relatedSquadOrNull.GetIsCrippled() )
-                            buffer.Add( "Crippled factories are unable to spend metal until they are repaired. " );
+                            buffer.Add( "受损工厂在修复前无法消耗金属。 " );
                         else if ( relatedSquadOrNull.GetIsNonFunctional() )
-                            buffer.Add( "Non-functional factories are unable to spend metal until their functionality is restored. " );
+                            buffer.Add( "失效工厂在功能恢复前无法消耗金属。 " );
                         else if ( relatedSquadOrNull.ComputeDisabledReason( ArcenRejectionReason.Unknown ) != ArcenRejectionReason.Unknown )
-                            buffer.Add( "Disabled factories are unable to spend metal until they are re-enabled. " );
+                            buffer.Add( "禁用工厂在重新启用前无法消耗金属。 " );
                         else
                         {
                             debugStage = 5901;
@@ -4435,7 +4430,7 @@ namespace Arcen.AIW2.External
                                         int currentUnits = fleet.GetCurrentCountOfFleet_ForUIOnly();
                                         int maxUnits = fleet.GetMaxCountOfFleet_ForUIOnly( isForPlayer );
                                         FInt percent = (FInt.OneHundred * currentStrength * currentUnits) / (maxStrength * maxUnits);
-                                        buffer.Add( "\nBuilding for fleet " ).AddPercentageInColor( fleet.GetName(), percent, true, false ).Add(":  " );
+                                        buffer.Add( "\n正在为舰队 " ).AddPercentageInColor( fleet.GetName(), percent, true, false ).Add(":  " );
                                     } else
                                         buffer.Add( ", " );
                                     buffer.Add( mem.TypeData.DisplayName, "c0c0c0" );
@@ -4446,7 +4441,7 @@ namespace Arcen.AIW2.External
                                     if ( mem.Fleet.Faction.Type == FactionType.Player )
                                     {
                                         if ( mem.TypeData.EnergyUsage > 0 && mem.Fleet.Faction.NetEnergy - mem.GetEnergyUsage() < 0 && mem.GetEnergyUsage() > 0 )
-                                            buffer.StartColor( ColorMath.LightRed ).Add( " ENERGY SHORTAGE" ).EndColor();
+                                            buffer.StartColor( ColorMath.LightRed ).Add( " 能量不足" ).EndColor();
                                     }
                                 }
 
@@ -4454,32 +4449,32 @@ namespace Arcen.AIW2.External
                                 {
                                     wroteAboutAnyFleets = true;
                                     if ( areAllAtShipCap )
-                                        buffer.Add( "\nFinished all construction for fleet " ).StartColor( GetProportionalStrengthColor( 1 ) ).Add( fleet.GetName() ).EndColor().Add( ".  " );
+                                        buffer.Add( "\n已完成舰队 " ).StartColor( GetProportionalStrengthColor( 1 ) ).Add( fleet.GetName() ).EndColor().Add( ".  " );
                                     else
                                     {
                                         Faction fleetFaction = fleet.Faction;
                                         if ( fleetFaction != null && fleetFaction.NetEnergy <= 0 )
-                                            buffer.Add( "\nUnable to build for fleet " ).StartColor( GetProportionalStrengthColor( 1 ) ).Add( fleet.GetName() ).EndColor()
-                                            .Add( " because of insufficient Energy.  " );
+                                            buffer.Add( "\n无法为舰队 " ).StartColor( GetProportionalStrengthColor( 1 ) ).Add( fleet.GetName() ).EndColor()
+                                            .Add( " 建造，能量不足。  " );
                                         else
-                                            buffer.Add( "\nUnable to build for fleet " ).StartColor( GetProportionalStrengthColor( 1 ) ).Add( fleet.GetName() ).EndColor().Add( " because some ship lines blocked.  Check energy availability.  " );
+                                            buffer.Add( "\n无法为舰队 " ).StartColor( GetProportionalStrengthColor( 1 ) ).Add( fleet.GetName() ).EndColor().Add( " 建造，部分舰船线路被阻挡。  请检查能量可用性。  " );
                                     }
                                 }
 
                             }
                             if ( foundAnyFleets && !wroteAboutAnyFleets )
-                                buffer.Add( "One or more fleets of relevance are in range of this factory, but they already have full ship caps and so there's nothing to do.  " );
+                                buffer.Add( "一个或多个相关舰队在该工厂范围内，但它们已有满舰船容量，因此无事可做。  " );
                             else if ( !foundAnyFleets )
                             {
                                 if ( !hasSupportingFactoriesInRangeEverBeenSet )
                                 {
-                                    buffer.Add( "You must unpause the game briefly before you can see what supporting factories are.  " );
+                                    buffer.Add( "你必须短暂取消暂停游戏才能看到支援工厂的信息。  " );
                                 } else
                                 {
                                     if ( relatedEntityTypeData.SpecialFactoryType != null && relatedEntityTypeData.SpecialFactoryType.Length > 0 )
-                                        buffer.Add( "No (non-crippled) " ).Add( relatedEntityTypeData.SpecialFactoryType ).Add( " fleets of my faction are on this or adjacent planets, so I can't build anything for anyone.  " );
+                                        buffer.Add( "无（非重创）" ).Add( relatedEntityTypeData.SpecialFactoryType ).Add( " 我方阵营的舰队在本行星或相邻行星上，因此无法为任何人建造任何东西。  " );
                                     else
-                                        buffer.Add( "No (non-crippled) mobile fleets of my faction are on this or adjacent planets, so I can't build anything for anyone.  " );
+                                        buffer.Add( "无（非重创）我方阵营的机动舰队在本行星或相邻行星上，因此无法为任何人建造任何东西。  " );
                                 }
                             }
                         }
@@ -4492,9 +4487,9 @@ namespace Arcen.AIW2.External
                     {
                         debugStage = 5951;
                         if ( relatedMemFleetOrNull != null && relatedMemFleetOrNull.Category == FleetCategory.PlayerPlanetaryCommand )
-                            buffer.Add( "<color=#ff5842>Cannot be constructed without fully-built command station here!</color>  " );
+                            buffer.Add( "<color=#ff5842>没有完全建成的指挥站就无法在此建造！</color>  " );
                         else
-                            buffer.Add( "<color=#ff5842>Cannot be constructed without its flagship being here and non-crippled.</color>  " );
+                            buffer.Add( "<color=#ff5842>没有旗舰在此且未受重创就无法建造。</color>  " );
 
                         if ( GameSettings.Current.GetBoolBySetting( "Debug_ShowConstructionBlockedReason" ) )
                             buffer.Add( "Debug Construction Blocked: " ).Add( Extensions.ToString(constructionBlockedReason) ).Add( "  " );
@@ -4507,7 +4502,7 @@ namespace Arcen.AIW2.External
                     if ( relatedEntityTypeData.FleetDesignTemplatesIAlwaysGrant != null && relatedEntityTypeData.FleetDesignTemplatesIAlwaysGrant.Count > 0 )
                     {
                         debugStage = 6461;
-                        buffer.Add( "I am the centerpiece of what would become a fleet with the following items:  " );
+                        buffer.Add( "该单位是将成为舰队的核心，包含以下项目：  " );
 
                         debugStage = 6462;
                         for ( int j = 0; j < relatedEntityTypeData.FleetDesignTemplatesIAlwaysGrant.Count; j++ )
@@ -4557,20 +4552,20 @@ namespace Arcen.AIW2.External
                 debugStage = 6470;
                 if ( relatedEntityTypeData.CitySocketCost > 0 && panelMode == Window_InGameHoverEntityInfo.Mode.Build )
                 {
-                    buffer.Add( relatedEntityTypeData.NameForCitySockets_Plural ).Add( " Required: " ).Add( relatedEntityTypeData.CitySocketCost );
+                    buffer.Add( relatedEntityTypeData.NameForCitySockets_Plural ).Add( " 需要：" ).Add( relatedEntityTypeData.CitySocketCost );
                     if (relatedMemFleetOrNull != null) {
-                        buffer.Add( " (out of " ).Add( relatedMemFleetOrNull.CalculateRemainingCitySockets() ).Add( " available)");
+                        buffer.Add( "（共 " ).Add( relatedMemFleetOrNull.CalculateRemainingCitySockets() ).Add( " 可用）");
                     }
                     debugStage = 6471;
-                    buffer.Add(".  " );
+                    buffer.Add("。  " );
                     if ( relatedEntityTypeData.MinimumRequiredCityLevelForConstruction > 1 )
-                        buffer.Add( "Must be at mark level " ).Add( relatedEntityTypeData.MinimumRequiredCityLevelForConstruction, "a1ffa1" ).Add( " to build this structure. " );
+                        buffer.Add( "必须达到等级 " ).Add( relatedEntityTypeData.MinimumRequiredCityLevelForConstruction, "a1ffa1" ).Add( " 才能建造该建筑。" );
 
                 }
                 debugStage = 6472;
                 //only tell about added points if they come from not-the-hub
                 if ( relatedMarkLevelData.CitySockets > 0 )
-                    buffer.Add( relatedEntityTypeData.NameForCitySockets_Plural ).Add( " Provided: " ).Add( relatedMarkLevelData.CitySockets ).Add( ".  " );
+                    buffer.Add( relatedEntityTypeData.NameForCitySockets_Plural ).Add( " 提供：" ).Add( relatedMarkLevelData.CitySockets ).Add( "。  " );
 
                 debugStage = 6473;
                 if ( relatedEntityTypeData != null &&
@@ -4578,7 +4573,7 @@ namespace Arcen.AIW2.External
                 {
                     debugStage = 6474;
                     GameEntityTypeData typeData = GameEntityTypeDataTable.Instance.GetRowByName( relatedEntityTypeData.ShipTypeNameToGrantMoreOfInCustomFleet );
-                    buffer.Add( "</color>This structure will grant you " ).Add( relatedEntityTypeData.ShipTypeCountToGrantMoreOfInCustomFleet, "ffa1a1" ).Add( " " ).Add( typeData.GetDisplayName(), "a1ffa1" );
+                    buffer.Add( "</color>该建筑将授予你 " ).Add( relatedEntityTypeData.ShipTypeCountToGrantMoreOfInCustomFleet, "ffa1a1" ).Add( " " ).Add( typeData.GetDisplayName(), "a1ffa1" );
                     if ( detailLevel >= TooltipDetail.Medium )
                     {
                         debugStage = 6475;
@@ -4599,12 +4594,12 @@ namespace Arcen.AIW2.External
                     debugStage = 5450;
                     if ( relatedSquadOrNull.ExtraStackedSquadsInThis > 0 && detailLevel >= TooltipDetail.Medium )
                     {
-                        buffer.StartColor( QuickColors.HeaderDark ).Add( "This is a stack of " ).StartColor( QuickColors.NewValue )
-                            .Add( relatedSquadOrNull.ExtraStackedSquadsInThis + 1 ).Add( " ships</color>.  When the current one dies, the count will go down and the next one pops out.  " );
+                        buffer.StartColor( QuickColors.HeaderDark ).Add( "这是一个堆叠，共 " ).StartColor( QuickColors.NewValue )
+                            .Add( relatedSquadOrNull.ExtraStackedSquadsInThis + 1 ).Add( " 艘</color>。当前单位阵亡后，计数会减少，下一个单位会弹出。  " );
                         if ( detailLevel >= TooltipDetail.Full )
                         {
                             int extraCount = 1 + relatedSquadOrNull.ExtraStackedSquadsInThis;
-                            buffer.Add( "This stack takes damage like normal, but shoots " ).StartColor( QuickColors.OldValue ).Add( extraCount ).Add( "x</color> the normal amount of shots.  " );
+                            buffer.Add( "该堆叠正常承受伤害，但射击 " ).StartColor( QuickColors.OldValue ).Add( extraCount ).Add( "x</color> 倍正常射击数量。  " );
                         }
                         buffer.EndColor();
 
@@ -4620,15 +4615,15 @@ namespace Arcen.AIW2.External
                         relatedSquadOrNull.CalculateShouldOrderBeIgnoredByFlagshipAsIfWasStationaryMode( false ) && Engine_AIW2.Instance.CurrentGameViewMode != GameViewMode.GalaxyMapView )
                     {
                         debugStage = 5502;
-                        buffer.StartColor( "ee3198" ).Add( "Stationary Flagship Mode!  " );
+                        buffer.StartColor( "ee3198" ).Add( "旗舰静止模式！  " );
                         if ( detailLevel >= TooltipDetail.Medium )
                         {
                             debugStage = 5503;
-                            buffer.Add( "Hold " ).Add( InputActionTypeDataTable.GetActionByName_FairlySlow( "HoldToGiveOrdersToStationaryFlagships" ).GetHumanReadableKeyCombo() )
-                                .Add( " to have this flagship listen to orders.  Otherwise, the rest of the fleet listens, the flagship holds onto the orders, and any new ships emerging from the flagship inherit those orders.  " );
+                            buffer.Add( "按住 " ).Add( InputActionTypeDataTable.GetActionByName_FairlySlow( "HoldToGiveOrdersToStationaryFlagships" ).GetHumanReadableKeyCombo() )
+                                .Add( " 让此旗舰听从指令。否则，舰队其他单位听从指令，旗舰保留指令，任何从旗舰新出厂的舰船继承这些指令。  " );
                             if ( detailLevel >= TooltipDetail.Full )
                             {
-                                buffer.Add( "You can find out more about this, and change its mode, on the Fleets sidebar tab.  Find this flagship's fleet and click it.  " );
+                                buffer.Add( "你可以在舰队侧边栏选项卡中找到更多信息并更改其模式。找到此旗舰所属的舰队并点击它。  " );
                             }
                         }
                         buffer.EndColor();
@@ -4639,11 +4634,11 @@ namespace Arcen.AIW2.External
                 {
                     debugStage = 5505;
                     if ( relatedSquadOrNull.StopToShootAnySeenTargets )
-                        buffer.StartColor( Window_InGameSelectionInfo.color_StopToShoot ).Add( "Stop-To-Shoot Mode!  " ).EndColor();
+                        buffer.StartColor( Window_InGameSelectionInfo.color_StopToShoot ).Add( "停船射击模式！  " ).EndColor();
                     if ( relatedSquadOrNull.SpeedLimitFromGroupMove > 0 )
-                        buffer.StartColor( Window_InGameSelectionInfo.color_GroupMove ).Add( "Group Move Mode!  Speed: " ).Add( relatedSquadOrNull.SpeedLimitFromGroupMove ).Add( "  " ).EndColor();
+                        buffer.StartColor( Window_InGameSelectionInfo.color_GroupMove ).Add( "编队移动模式！速度：" ).Add( relatedSquadOrNull.SpeedLimitFromGroupMove ).Add( "  " ).EndColor();
                     if ( relatedSquadOrNull.PreferredEntityTypeDataForTargeting != null )
-                        buffer.StartColor( Window_InGameSelectionInfo.color_AttackMove ).Add( "Prefers To Target: " ).Add( relatedSquadOrNull.PreferredEntityTypeDataForTargeting.GetDisplayName() ).Add( "  " ).EndColor();
+                        buffer.StartColor( Window_InGameSelectionInfo.color_AttackMove ).Add( "优先目标：" ).Add( relatedSquadOrNull.PreferredEntityTypeDataForTargeting.GetDisplayName() ).Add( "  " ).EndColor();
                 }
                 debugStage = 5510;
                 if ( showDebugInfoInTooltip && relatedSquadOrNull != null && relatedSquadOrNull.DecollisionMoveTarget != ArcenPoint.ZeroZeroPoint && !isForMultipleUnits && detailLevel >= TooltipDetail.Medium )
@@ -4671,14 +4666,14 @@ namespace Arcen.AIW2.External
                     if ( estimatedRemainingDurability < originalDurability )
                     {
                         int damage = (originalDurability - estimatedRemainingDurability);
-                        buffer.StartColor( QuickColors.OldValue ).Add( "\nIncoming Damage Expected: " ).AddNumberMoreReadable( damage ).EndColor().Add( "  " );
+                        buffer.StartColor( QuickColors.OldValue ).Add( "\n预计承受伤害：" ).AddNumberMoreReadable( damage ).EndColor().Add( "  " );
                         if ( estimatedRemainingDurability <= 0 )
-                            buffer.StartColor( QuickColors.OldValue ).Add( "(Death Is Expected)" ).EndColor().Add( "  " );
+                            buffer.StartColor( QuickColors.OldValue ).Add( "（预计阵亡）" ).EndColor().Add( "  " );
                     } else
                     {
                         int incomingShotCount = relatedSquadOrNull.GetIncomingShotCount();
                         if ( incomingShotCount > 0 )
-                            buffer.StartColor( QuickColors.OldValue ).Add( "\nIncoming Shots: " ).AddNumberMoreReadable( incomingShotCount ).Add( " (But Their Calculated Damage Is Zero??)  " ).EndColor();
+                            buffer.StartColor( QuickColors.OldValue ).Add( "\n来袭射击：" ).AddNumberMoreReadable( incomingShotCount ).Add( "（但计算伤害为零？？）  " ).EndColor();
                     }
                 }
 
@@ -4728,9 +4723,9 @@ namespace Arcen.AIW2.External
                     if ( relatedSquadOrNull.IsBlackHoledAtMoment.Display )
                     {
                         if ( detailLevel < TooltipDetail.Full )
-                            buffer.Add( " Cannot leave planet due to Black Hole Machine. " );
+                            buffer.Add( " 因黑洞机器无法离开行星。" );
                         else
-                            buffer.Add( " This ship is affected by a Black Hole Machine and cannot leave the planet. You must destroy the Black Hole Machine to escape. " );
+                            buffer.Add( " 该舰船受到黑洞机器影响，无法离开行星。你必须摧毁黑洞机器才能逃脱。" );
                     }
 
                     debugStage = 6020;
@@ -4751,7 +4746,7 @@ namespace Arcen.AIW2.External
 
                     if ( relatedSquadOrNull.IsBlackHoledAtMoment.Display )
                     {
-                        buffer.StartColor( QuickColors.OldValue ).Add( "Black Holed: Cannot Leave This Planet" ).EndColor();
+                        buffer.StartColor( QuickColors.OldValue ).Add( "黑洞化：无法离开该行星" ).EndColor();
                     }
                     debugStage = 6030;
 
@@ -4800,11 +4795,11 @@ namespace Arcen.AIW2.External
                     }*/
 
                     if ( relatedSquadOrNull.AreaBoosting_CurrentCount.Display > 0 )
-                        buffer.StartColor( QuickColors.NewValue ).Add( "Boosting/protecting " ).Add( relatedSquadOrNull.AreaBoosting_CurrentCount.Display ).Add( " units.  " ).EndColor();
+                        buffer.StartColor( QuickColors.NewValue ).Add( "增强/保护 " ).Add( relatedSquadOrNull.AreaBoosting_CurrentCount.Display ).Add( " 个单位。  " ).EndColor();
 
                     if ( relatedSquadOrNull.AreaBoosters_ShotEvaluated.Count > 0 /*|| relatedSquadOrNull.AreaBoosters_NotShotEvaluated.Count > 0*/ )
                     {
-                        buffer.StartColor( QuickColors.NewValue ).Add( "Boosted/protected by: " );
+                        buffer.StartColor( QuickColors.NewValue ).Add( "受增强/保护来源：" );
                         List<GameEntity_Squad> protectors = relatedSquadOrNull.AreaBoosters_ShotEvaluated.GetDisplayList();
                         bool isFirst = true;
                         foreach ( GameEntity_Squad squad in protectors )
@@ -4855,8 +4850,8 @@ namespace Arcen.AIW2.External
                             {
                                 //HandleNewline( buffer, ref haveDoneNewLine );
 
-                                buffer.StartColor( QuickColors.OldValue ).Add( "This ship normally can be transported, but cannot be loaded into any transport right now because " ).Add(
-                                    EnumNameCache.GetName( noTransport ) ).Add( ".  " ).EndColor();
+                                buffer.StartColor( QuickColors.OldValue ).Add( "该舰船通常可被运输，但当前无法装入任何运输船，原因：" ).Add(
+                                    EnumNameCache.GetName( noTransport ) ).Add( "。  " ).EndColor();
                             }
                         }
                     }
@@ -4878,7 +4873,7 @@ namespace Arcen.AIW2.External
                         if ( !skipBecauseWrittenElsewhere )
                         {
                             //HandleNewline( buffer, ref haveDoneNewLine );
-                            buffer.StartColor( QuickColors.OldValue ).Add( "Ship Disabled: " );
+                            buffer.StartColor( QuickColors.OldValue ).Add( "舰船已禁用：" );
 
                             switch ( rejectionReason )
                             {
@@ -4887,57 +4882,57 @@ namespace Arcen.AIW2.External
                                     alreadyWroteCrippledInfo = true;
                                     break;
                                 case ArcenRejectionReason.NonFunctionalWhenNotOnPlanetOwnedByMyFaction:
-                                    buffer.Add( "Non-functional - its owning faction must control this planet!" );
+                                    buffer.Add( "无法运作——其所属阵营必须控制该行星！" );
                                     break;
                                 case ArcenRejectionReason.InUnexploredSpace:
-                                    buffer.Add( "In Unexplored Space - unable to function without scouts having ever been sent here!" );
+                                    buffer.Add( "处于未探索空间——未派遣侦察机至此，无法运作！" );
                                     break;
                                 //case ArcenRejectionReason.EntityConsideredOutOfSupplyOfParentFleetCenterpiece:
                                 //    buffer.Add( "No supply - not on same or adjacent parent to the fleet centerpiece." );
                                 //    break;
                                 case ArcenRejectionReason.EntityHasNotYetBeenFullyClaimed:
                                     if ( relatedSquadOrNull.IsInHoldFireMode )
-                                        buffer.Add( "Not yet fully claimed, and also paused so that it will NOT be claimed." );
+                                        buffer.Add( "尚未完全占领，且已暂停，因此不会被占领。" );
                                     else
-                                        buffer.Add( "Not yet fully claimed." );
+                                        buffer.Add( "尚未完全占领。" );
                                     break;
                                 case ArcenRejectionReason.EntityIsInHoldFireMode:
                                     if ( relatedEntityTypeData.IsCombatant )
-                                        buffer.Add( "In 'hold fire' mode." );
+                                        buffer.Add( "停火模式中。" );
                                     else
-                                        buffer.Add( "In 'pause function' mode." );
+                                        buffer.Add( "功能暂停中。" );
                                     break;
                                 case ArcenRejectionReason.EntityIsSelfBuilding:
                                     {
                                         float percent = (1f - ((float) relatedSquadOrNull.SelfBuildingMetalRemaining / (float) relatedSquadOrNull.GetMetalCost())) * 100;
-                                        buffer.Add( "Still under construction (" );
+                                        buffer.Add( "仍在建造中（" );
                                         buffer.AddFixedDecimalThousands( percent, 1 );
                                         //buffer.Add( " " ).AddFixedDecimalThousands( relatedSquadOrNull.SelfBuildingMetalRemaining.ToFloatNonSim(), 1 ).Add( " metal left" );
-                                        buffer.Add( "%)" );
+                                        buffer.Add( "%）" );
                                         if ( relatedSquadOrNull.GetFactionTypeSafe() == FactionType.Player )
                                         {
                                             Faction facOrNull = relatedSquadOrNull.GetFactionOrNull_Safe();
                                             if ( relatedSquadOrNull.TypeData.EnergyUsage > 0 && (facOrNull != null && facOrNull.NetEnergy < 0) &&
                                                  relatedSquadOrNull.GetEnergyUsage() > 0 )
-                                                buffer.StartColor( ColorMath.LightRed ).Add( " ENERGY SHORTAGE" ).EndColor();
+                                                buffer.StartColor( ColorMath.LightRed ).Add( " 能源短缺" ).EndColor();
                                         }
-                                        buffer.Add( "." );
+                                        buffer.Add( "。" );
                                     }
                                     break;
                                 //case ArcenRejectionReason.EntityIsUnrebuiltRemains:
                                 //    buffer.Add( "Was destroyed and not yet rebuilt." );
                                 //    break;
                                 case ArcenRejectionReason.FactionDoesNotControlThisPlanet:
-                                    buffer.Add( "Faction does not control this planet." );
+                                    buffer.Add( "阵营未控制该行星。" );
                                     break;
                                 case ArcenRejectionReason.FactionDoesNotHaveEnoughEnergy:
-                                    buffer.Add( "Faction does not have enough energy." );
+                                    buffer.Add( "阵营能量不足。" );
                                     break;
                                 case ArcenRejectionReason.NotEnoughCitySockets:
-                                    buffer.Add( "Not enough " ).Add( relatedSquadOrNull.TypeData.NameForCitySockets_Plural ).Add( " at this planet." );
+                                    buffer.Add( "该行星上 " ).Add( relatedSquadOrNull.TypeData.NameForCitySockets_Plural ).Add( " 不足。" );
                                     break;
                                 case ArcenRejectionReason.MetalIsZero:
-                                    buffer.Add( "Stored metal is zero." );
+                                    buffer.Add( "存储金属为零。" );
                                     break;
                                 default:
                                     buffer.Add( "ERROR_WRITE_NICE_TEXT: " ).Add( EnumNameCache.GetName( rejectionReason ) );
@@ -4961,28 +4956,28 @@ namespace Arcen.AIW2.External
                         rejectionReason = relatedSquadOrNull.GetCannotRebuildRemainsReason();
                         if ( rejectionReason != ArcenRejectionReason.Unknown )
                         {//HandleNewline( buffer, ref haveDoneNewLine );
-                            buffer.StartColor( QuickColors.OldValue ).Add( "Cannot Rebuild Remains: " );
+                            buffer.StartColor( QuickColors.OldValue ).Add( "无法重建残骸：" );
 
                             switch ( rejectionReason )
                             {
                                 case ArcenRejectionReason.CannotRebuild_IsNotremains:
-                                    buffer.Add( "Is not remains!" );
+                                    buffer.Add( "不是残骸！" );
                                     break;
                                 case ArcenRejectionReason.CannotRebuild_YesEnemiesHereAndNotBeenLongEnough:
-                                    buffer.Add( "Must wait another " )
+                                    buffer.Add( "还需等待 " )
                                         .AddHoursAndMinutes( ExternalConstants.Instance.Balance_SecondsAfterDeathBeforeRebuilding - relatedSquadOrNull.SecondsSpentAsRemains )
-                                        .Add( " while enemies are here." );
+                                        .Add( "，且敌人在场。" );
                                     break;
                                 case ArcenRejectionReason.CannotRebuild_NoEnemiesHereAndNotBeenLongEnough:
-                                    buffer.Add( "Must only wait another " )
+                                    buffer.Add( "只需再等待 " )
                                         .AddHoursAndMinutes( ExternalConstants.Instance.Balance_SecondsAfterDeathBeforeRebuildingNoEnemies - relatedSquadOrNull.SecondsSpentAsRemains )
-                                        .Add( " since no enemies present." );
+                                        .Add( "，无敌人在场。" );
                                     break;
                                 case ArcenRejectionReason.CannotRebuild_CommandStationOnAIPlanet:
-                                    buffer.Add( "Command Stations cannot be rebuilt on enemy planets." );
+                                    buffer.Add( "指挥站无法在敌方行星上重建。" );
                                     break;
                                 case ArcenRejectionReason.CannotRebuild_WouldPutUsIntoBrownout:
-                                    buffer.Add( "Rebuilding would put you into negative energy." );
+                                    buffer.Add( "重建会导致能量不足。" );
                                     break;
                                 default:
                                     buffer.Add( "ERROR_WRITE_NICE_TEXT: " ).Add( EnumNameCache.GetName( rejectionReason ) );
@@ -5002,11 +4997,11 @@ namespace Arcen.AIW2.External
                         {
                             buffer.StartColor( QuickColors.OldValue );
                             if ( detailLevel < TooltipDetail.Full )
-                                buffer.Add( "Brownout: Bubble forcefields down for another " ).Add(
-                                            ExternalConstants.Instance.SecondsToWaitBeforeBrownoutEnds - facOrNull.SecondsSinceBrownout ).Add( "s.  " );
+                                buffer.Add( "电压不足：气泡力场还需 " ).Add(
+                                            ExternalConstants.Instance.SecondsToWaitBeforeBrownoutEnds - facOrNull.SecondsSinceBrownout ).Add( " 秒恢复。" );
                             else
-                                buffer.Add( "Brownout: Had negative energy balance!  Your bubble forcefields won't be able to project their protective field for another " ).Add(
-                                        ExternalConstants.Instance.SecondsToWaitBeforeBrownoutEnds - facOrNull.SecondsSinceBrownout ).Add( " seconds.  " );
+                                buffer.Add( "电压不足：能量曾为负数！你的气泡力场还需 " ).Add(
+                                        ExternalConstants.Instance.SecondsToWaitBeforeBrownoutEnds - facOrNull.SecondsSinceBrownout ).Add( " 秒才能恢复其保护力场。" );
                             buffer.EndColor();
                         }
                     }
@@ -5017,7 +5012,7 @@ namespace Arcen.AIW2.External
                     if ( secondsUntilClaim > 0 )
                     {
                         buffer.StartColor( QuickColors.OldValue )
-                            .Add( "Cannot be claimed for another " ).AddHoursAndMinutes( secondsUntilClaim ).Add( ".  This is based on the presence of enemies and how long it has been since this was last destroyed.  " );
+                            .Add( "还需等待方可占领 " ).AddHoursAndMinutes( secondsUntilClaim ).Add( "。这取决于敌人的存在以及上次被摧毁至今的时间。  " );
                         buffer.EndColor();
                     }
 
@@ -5027,7 +5022,7 @@ namespace Arcen.AIW2.External
                          relatedSquadOrNull.TypeData.EnergyUsage > 0 && localPlayerFactionOrNull.NetEnergy - relatedSquadOrNull.TypeData.EnergyUsage < 0 )
                     {
                         buffer.StartColor( QuickColors.OldValue )
-                            .Add( "Cannot be claimed because you need " ).Add( -(localPlayerFactionOrNull.NetEnergy - relatedSquadOrNull.TypeData.EnergyUsage) ).Add( " more energy to operate this entity.  " );
+                            .Add( "无法占领，因为你需要 " ).Add( -(localPlayerFactionOrNull.NetEnergy - relatedSquadOrNull.TypeData.EnergyUsage) ).Add( " 更多能量来运行该单位。  " );
                         buffer.EndColor();
                     }
 
@@ -5039,7 +5034,7 @@ namespace Arcen.AIW2.External
                         if ( relatedSquadOrNull.InstancedRenderer == null )
                         {
                             buffer.StartColor( QuickColors.OldValue )
-                            .Add( "No InstancedRenderer on this ship.  " );
+                            .Add( "该舰船上无 InstancedRenderer。  " );
                             buffer.EndColor();
                         } else if ( planet == null )
                         {
@@ -5142,7 +5137,7 @@ namespace Arcen.AIW2.External
             {
                 if ( !ArcenThreading.IsCurrentlyBlockedForShutdown.IsBusy() ) //only log if not tearing things down
                     ArcenDebugging.ArcenDebugLog( "Exception in prototype entity tooltip text generation at stage " + debugStage + ":" + e.ToString(), Verbosity.ShowAsError );
-                buffer.Add( "Exception during generation of tooltip!" );
+                buffer.Add( "生成提示文本时出现异常！" );
                 return false;
             }
             return true;
@@ -5251,7 +5246,7 @@ namespace Arcen.AIW2.External
                     {
                         buffer.StartExoticDamageWrapper( useIcons ).Add( systemData.IonPercentagePerMarkLevelLower * FInt.OneHundred ).Add( "%" );
                         if ( useText )
-                            buffer.Add( "Ion Exotic Damage" );
+                            buffer.Add( "离子异种伤害" );
                         buffer.EndColor();
                     } 
                     else 
@@ -5259,18 +5254,18 @@ namespace Arcen.AIW2.External
                     {
                         buffer.StartExoticDamageWrapper( useIcons ).Add( systemData.ReturnsThisPercentageOfDamageWhenFiringRetaliatoryShot * FInt.OneHundred ).Add( "%" );
                         if ( useText )
-                            buffer.Add( " Mirrored Exotic Damage" );
+                            buffer.Add( " 镜像异种伤害" );
                         buffer.EndColor();
                     } 
                     else 
                     if ( systemData.OverdrivesShields )
                     {
-                        buffer.WrapDamage( "100%", useIcons, useText ).Add( " Target Shield" );
+                        buffer.WrapDamage( "100%", useIcons, useText ).Add( " 目标护盾" );
                     } 
                     else
                     {
                         if ( isRetaliatory )
-                            buffer.Add( "Retaliatory " );
+                            buffer.Add( "反击 " );
                         bool wrotePotentialIcon = false;
                         if ( display_shotdamage > 0 )
                         {
@@ -5295,7 +5290,7 @@ namespace Arcen.AIW2.External
                                 if ( detailLevel < TooltipDetail.Full )
                                     buffer.Add( " + " );
                                 else
-                                    buffer.Add( " and " );
+                                    buffer.Add( " 和 " );
                             if ( isRetaliatory )
                             {
                                 if ( detailLevel < TooltipDetail.Full )
@@ -5310,7 +5305,7 @@ namespace Arcen.AIW2.External
                                     buffer.WrapCorrosiveDamageMoreReadable( display_shotcorrosiondamage, useIcons && !wrotePotentialIcon, false );
                             }
                             if ( useText )
-                                buffer.Add( " Corrosive Damage" );
+                                buffer.Add( " 腐蚀伤害" );
                         }
                     }
                     debugStage = 200;
@@ -5351,7 +5346,7 @@ namespace Arcen.AIW2.External
                         
                         if ( systemStats.AltSecondsPerSalvo > 0 )
                         {
-                            buffer.Add( "BURST FIRE" );
+                            buffer.Add( "连发射击" );
                             if ( detailLevel >= TooltipDetail.Medium )
                             {
 buffer.Add( "：" );
@@ -5397,7 +5392,7 @@ buffer.Add( "：" );
                         //buffer.Add(" at ").WrapRange( "Detonates From Ship", false, false );
                     }
                     else if ( systemData.IsMelee )
-                        buffer.Add( " at " ).WrapRange( "Melee Range", false, false );
+                        buffer.Add( "以" ).WrapRange( "近战范围", false, false );
                     else
                     {
                         int actualRange;
@@ -5406,11 +5401,11 @@ buffer.Add( "：" );
                         } else {
                             actualRange = systemStats.CalculateActualRange( facOrNull, relatedPlanet, 0 );
                         }
-                        buffer.Add( " at " );
+                        buffer.Add( "以" );
                         if ( actualRange > 99999 ) {
                             //FiresFromAnyRange actually just has to do with targeting logic, and doesn't seem
                             //like something that we should be surfacing to players here.  Just doesn't seem relevant.
-                            buffer.WrapRange( "Infinite Range", false, false );
+                            buffer.WrapRange( "无限范围", false, false );
                         } else if ( detailLevel < TooltipDetail.Full )
                         {
                             buffer.WrapRangeTruncated( actualRange, false, true );
@@ -5427,14 +5422,14 @@ buffer.Add( "：" );
                         {
                             if ( systemData.MustBeThisStateOfMatterToBeEnabled == relatedSquadOrNull.CurrentStateOfMatter )
                             {
-                                buffer.Add( "Enabled", Color.green ).Add( " due to being in " ).Add( systemData.MustBeThisStateOfMatterToBeEnabled.DisplayName, "aaaaaa" ).Add( " state of matter" );
+                                buffer.Add( "已启用", Color.green ).Add( "（处于 " ).Add( systemData.MustBeThisStateOfMatterToBeEnabled.DisplayName, "aaaaaa" ).Add( " 物态）" );
                             } else
                             {
-                                buffer.Add( "Disabled", Color.red ).Add( " due to not being in " ).Add( systemData.MustBeThisStateOfMatterToBeEnabled.DisplayName, "aaaaaa" ).Add( " state of matter" );
+                                buffer.Add( "已禁用", Color.red ).Add( "（不处于 " ).Add( systemData.MustBeThisStateOfMatterToBeEnabled.DisplayName, "aaaaaa" ).Add( " 物态）" );
                             }
                         } else
                         {
-                            buffer.Add( "Must be in " ).Add( systemData.MustBeThisStateOfMatterToBeEnabled.DisplayName, "aaaaaa" ).Add( " state of matter to be enabled" );
+                            buffer.Add( "必须在 " ).Add( systemData.MustBeThisStateOfMatterToBeEnabled.DisplayName, "aaaaaa" ).Add( " 物态才能启用" );
                         }
                     }
                     //WriteSystemStateOfMatterSuffix( buffer, systemData, relatedSquadOrNull );
@@ -5456,9 +5451,9 @@ buffer.Add( "：" );
                             if ( !isRetaliatory && !isOnDeath && ( WeaponActivityDetails == 1 || WeaponActivityDetails == 3 ) )
                             {
                                 if ( actualEntitySystemOrNull.TimeUntilNextShot <= FInt.Zero )
-                                    buffer.Add( "ready to " ).WrapReload( "fire", false, false );
+                                    buffer.Add( "准备" ).WrapReload( "开火", false, false );
                                 else
-                                    buffer.Add( "ready in " ).StartReloadWrapper( false ).AddNumberTruncated( actualEntitySystemOrNull.TimeUntilNextShot.ToRounded( 1 ) ).Add( "s" ).EndColor();
+                                    buffer.Add( "准备就绪于 " ).StartReloadWrapper( false ).AddNumberTruncated( actualEntitySystemOrNull.TimeUntilNextShot.ToRounded( 1 ) ).Add( "秒" ).EndColor();
                                 writeSeparator = true;
                             }
                             if ( actualEntitySystemOrNull.LastGameSecondIFiredShot > 0 && ( WeaponActivityDetails == 2 || WeaponActivityDetails == 3 ) )
@@ -5466,12 +5461,12 @@ buffer.Add( "：" );
                                 if ( writeSeparator )
                                     buffer.Add( " " );
                                 
-                                buffer.Add( "last fired " );
+                                buffer.Add( "上次开火 " );
 
                                 buffer.StartColor( QuickColors.OldValue ).Add( World_AIW2.Instance.GameSecond - actualEntitySystemOrNull.LastGameSecondIFiredShot ).Add( "秒" ).EndColor()
                                     .Add( "前" );
                                 if ( actualEntitySystemOrNull.LastGameSecondMyShotHit > 0 )
-                                    buffer.Add( " dealt " ).WrapDamage( actualEntitySystemOrNull.LastTotalDamageMyShotDidCaused, useIcons, useText );
+                                    buffer.Add( " 造成了 " ).WrapDamage( actualEntitySystemOrNull.LastTotalDamageMyShotDidCaused, useIcons, useText );
                             }
                             buffer.EndSize();
                         }
@@ -5494,15 +5489,15 @@ buffer.Add( "：" );
                             {
                                 if ( detailLevel < TooltipDetail.Full )
                                 {
-                                    buffer.Add( "<color=#f25e1c>DIRECT AOE</color>: radius <color=#ffdf72>" );
+                                    buffer.Add( "<color=#f25e1c>直接范围伤害</color>：半径 <color=#ffdf72>" );
                                     buffer.AddNumberMoreReadable( systemStats.ShotAreaOfEffect );
                                     buffer.Add( "</color>, " );
                                     if ( systemData.AOESpreadsDamageAmongAvailableTargets )
-                                        buffer.Add( "DMG split between targets, " );
+                                        buffer.Add( "伤害在目标间分摊，" );
                                     if ( systemStats.AOEMaximumNumberOfTargetsHitPerShot > 0 )
-                                        buffer.Add( "<= <color=#ffdf72>" ).Add( systemStats.AOEMaximumNumberOfTargetsHitPerShot ).Add( "</color> targets" );
+                                        buffer.Add( "<= <color=#ffdf72>" ).Add( systemStats.AOEMaximumNumberOfTargetsHitPerShot ).Add( "</color> 个目标" );
                                     else
-                                        buffer.Add( "all targets in range" );
+                                        buffer.Add( "范围内所有目标" );
 
                                     if ( systemData.AOEAndBeamDamageMultiplierToNonPrimaryTarget > FInt.Zero )
                                     {
@@ -5560,27 +5555,27 @@ buffer.Add( "。  " );
                             {
                                 if ( detailLevel < TooltipDetail.Full )
                                 {
-                                    buffer.Add( "<color=#f25e1c>AOE AT TARGET</color>: radius <color=#ffdf72>" );
+                                    buffer.Add( "<color=#f25e1c>命中范围伤害</color>：半径 <color=#ffdf72>" );
                                     buffer.AddNumberMoreReadable( systemStats.ShotAreaOfEffect );
-                                    buffer.Add( "</color>, " );
+                                    buffer.Add( "</color>，" );
                                     if ( systemData.AOESpreadsDamageAmongAvailableTargets )
-                                        buffer.Add( "DMG split between targets, " );
+                                        buffer.Add( "伤害在目标间分摊，" );
                                     if ( systemStats.AOEMaximumNumberOfTargetsHitPerShot > 0 )
-                                        buffer.Add( "<= <color=#ffdf72>" ).Add( systemStats.AOEMaximumNumberOfTargetsHitPerShot ).Add( "</color> targets" );
+                                        buffer.Add( "≤ <color=#ffdf72>" ).Add( systemStats.AOEMaximumNumberOfTargetsHitPerShot ).Add( "</color> 个目标" );
                                     else
-                                        buffer.Add( "all targets in range" );
+                                        buffer.Add( "范围内所有目标" );
 
                                     if ( systemData.AOEAndBeamDamageMultiplierToNonPrimaryTarget > FInt.Zero )
                                     {
-                                        buffer.Add( " and " );
+                                        buffer.Add( "，" );
                                         buffer.Add( systemData.AOEAndBeamDamageMultiplierToNonPrimaryTarget.GetNearestIntPreferringHigher() );
-                                        buffer.Add( "% damage to non-primary targets" );
+                                        buffer.Add( "%伤害对非主要目标" );
                                     }
 
                                     if ( systemData.AOEHitsFriendlyTargets )
-                                        buffer.Add( ", friendly fire.  " );
+                                        buffer.Add( "，友军误伤。  " );
                                     else
-                                        buffer.Add( ".  " );
+                                        buffer.Add( "。  " );
                                 }
                                 else
                                 {
@@ -5637,12 +5632,12 @@ buffer.Add( "。  " );
                                 if ( detailLevel < TooltipDetail.Full )
                                 {
                                     if ( systemData.NumberBeamsToFire == 1 )
-                                        buffer.Add( "<color=#f25e1c>COIL-BEAM WEAPON</color>: length <color=#ffdf72>" );
+                                        buffer.Add( "<color=#f25e1c>线圈光束武器</color>：长度 <color=#ffdf72>" );
                                     else
                                     {
-                                        buffer.Add( "<color=#f25e1c>COIL-BEAM-ARRAY WEAPON</color>: <color=#ffdf72>" );
+                                        buffer.Add( "<color=#f25e1c>线圈光束阵列武器</color>：<color=#ffdf72>" );
                                         buffer.Add( systemData.NumberBeamsToFire );
-                                        buffer.Add( "</color> beams, length <color=#ffdf72>" );
+                                        buffer.Add( "</color> 束光束，长度 <color=#ffdf72>" );
                                     }
                                     buffer.AddNumberMoreReadable( (systemStats.CalculateActualRange( relatedSquadOrNull ) * systemData.BeamLengthMultiplier).IntValue );
 
@@ -5652,64 +5647,64 @@ buffer.Add( "。  " );
                                         buffer.Add( "</color>" );
                                     }
                                     else
-                                        buffer.Add( "</color> with 1/" ).Add( systemData.NumberBeamsToFire ).Add( " DMG/beam" );
+                                        buffer.Add( "</color>，1/" ).Add( systemData.NumberBeamsToFire ).Add( " 伤害/束" );
                                     if ( systemStats.AOEMaximumNumberOfTargetsHitPerShot >= 1 )
                                     {
-                                        buffer.Add( ", hitting main target for full damage, then <color=#ffdf72>" ).Add( systemStats.AOEMaximumNumberOfTargetsHitPerShot );
-                                        buffer.Add( "</color> targets with " );
+                                        buffer.Add( "，对主目标造成全额伤害，然后 <color=#ffdf72>" ).Add( systemStats.AOEMaximumNumberOfTargetsHitPerShot );
+                                        buffer.Add( "</color> 个目标承受 " );
                                         if ( systemData.AOEAndBeamDamageMultiplierToNonPrimaryTarget > FInt.Zero )
                                             buffer.Add( systemData.AOEAndBeamDamageMultiplierToNonPrimaryTarget.GetNearestIntPreferringHigher() )
-                                                .Add( "% damage" );
+                                                .Add( "%伤害" );
                                         else
-                                            buffer.Add( "damage" );
-                                        buffer.Add( " divided evenly, max damage per beam <color=#ffdf72>" ).Add( (systemData.ForMark[effectiveMarkLevel].CalculateShipOrFleetMemDamagePerShot( relatedSquadOrNull, relatedMembershipOrNull ) * 2) ).Add( "</color>" );
+                                            buffer.Add( "伤害" );
+                                        buffer.Add( "，平均分摊，每束最大伤害 <color=#ffdf72>" ).Add( (systemData.ForMark[effectiveMarkLevel].CalculateShipOrFleetMemDamagePerShot( relatedSquadOrNull, relatedMembershipOrNull ) * 2) ).Add( "</color>" );
                                     }
                                     else
                                     {
-                                        buffer.Add( ", hitting main target for full damage, hits everything else with " );
+                                        buffer.Add( "，对主目标造成全额伤害，其余目标承受 " );
                                         if ( systemData.AOEAndBeamDamageMultiplierToNonPrimaryTarget > FInt.Zero )
-                                            buffer.Add( "a second copy of " ).Add( systemData.AOEAndBeamDamageMultiplierToNonPrimaryTarget.GetNearestIntPreferringHigher() )
-                                                .Add( "% of the damage" );
+                                            buffer.Add( "第二份 " ).Add( systemData.AOEAndBeamDamageMultiplierToNonPrimaryTarget.GetNearestIntPreferringHigher() )
+                                                .Add( "%的伤害" );
                                         else
-                                            buffer.Add( "a second copy of the damage" );
-                                        buffer.Add( " divided evenly, max damage per beam <color=#ffdf72>" )
+                                            buffer.Add( "第二份全额伤害" );
+                                        buffer.Add( "，平均分摊，每束最大伤害 <color=#ffdf72>" )
                                             .Add( (systemData.ForMark[effectiveMarkLevel].CalculateShipOrFleetMemDamagePerShot( relatedSquadOrNull, relatedMembershipOrNull ) * 2) ).Add( "</color>" );
                                     }
 
                                     if ( systemData.AOEHitsFriendlyTargets )
-                                        buffer.Add( ", friendly fire.  " );
+                                        buffer.Add( "，友军误伤。  " );
                                     else
-                                        buffer.Add( ".  " );
+                                        buffer.Add( "。  " );
                                 }
                                 else
                                 {
                                     if ( systemData.NumberBeamsToFire == 1 )
-                                        buffer.Add( "<color=#f25e1c>COIL-BEAM WEAPON</color>: Attacks from the above weapon are in the form of a fan of a beam of length <color=#ffdf72>" );
+                                        buffer.Add( "<color=#f25e1c>线圈光束武器</color>：上述武器的攻击呈扇形光束，长度 <color=#ffdf72>" );
                                     else
                                     {
-                                        buffer.Add( "<color=#f25e1c>COIL-BEAM-ARRAY WEAPON</color>: Attacks from the above weapon are in the form of a fan of <color=#ffdf72>" );
+                                        buffer.Add( "<color=#f25e1c>线圈光束阵列武器</color>：上述武器的攻击呈扇形，<color=#ffdf72>" );
                                         buffer.Add( systemData.NumberBeamsToFire );
-                                        buffer.Add( "</color> beams of length <color=#ffdf72>" );
+                                        buffer.Add( "</color> 束光束，长度 <color=#ffdf72>" );
                                     }
                                     buffer.AddNumberMoreReadable( (systemStats.CalculateActualRange( relatedSquadOrNull ) * systemData.BeamLengthMultiplier).IntValue );
                                     if ( systemData.NumberBeamsToFire == 1 )
                                     {
-                                        buffer.Add( "</color>, " );
+                                        buffer.Add( "</color>，" );
                                     }
                                     else
                                     {
-                                        buffer.Add( "</color> with <color=#ffdf72>" );
+                                        buffer.Add( "</color>，每束间隔 <color=#ffdf72>" );
                                         buffer.AddFixedDecimal( systemData.DegreesOffsetPerBeam, 1 );
-                                        buffer.Add( " degrees</color> between each beam, " );
+                                        buffer.Add( " 度</color>，" );
                                     }
                                     if ( systemStats.AOEMaximumNumberOfTargetsHitPerShot >= 1 )
                                     {
-                                        buffer.Add( "hitting the main intended target for full damage, then hits <color=#ffdf72>" ).Add( systemStats.AOEMaximumNumberOfTargetsHitPerShot ).Add( "</color> targets with a second copy of damage, divided evenly among all those hit, max damage per beam <color=#ffdf72>" ).Add( (systemData.ForMark[effectiveMarkLevel].CalculateShipOrFleetMemDamagePerShot( relatedSquadOrNull, relatedMembershipOrNull ) * 2) ).Add( "</color>. " );
+                                        buffer.Add( "对主目标造成全额伤害，然后击中 <color=#ffdf72>" ).Add( systemStats.AOEMaximumNumberOfTargetsHitPerShot ).Add( "</color> 个目标，承受第二份伤害，平均分摊给所有被击中的目标，每束最大伤害 <color=#ffdf72>" ).Add( (systemData.ForMark[effectiveMarkLevel].CalculateShipOrFleetMemDamagePerShot( relatedSquadOrNull, relatedMembershipOrNull ) * 2) ).Add( "</color>。" );
                                     }
                                     else
-                                        buffer.Add( "hitting the main intended target for full damage, then hits everything else with a second copy of damage, divided evenly among all those hit max damage per beam <color=#ffdf72>" ).Add( (systemData.ForMark[effectiveMarkLevel].CalculateShipOrFleetMemDamagePerShot( relatedSquadOrNull, relatedMembershipOrNull ) * 2) ).Add( "</color>. " );
+                                        buffer.Add( "对主目标造成全额伤害，其余目标承受第二份伤害，平均分摊给所有被击中的目标，每束最大伤害 <color=#ffdf72>" ).Add( (systemData.ForMark[effectiveMarkLevel].CalculateShipOrFleetMemDamagePerShot( relatedSquadOrNull, relatedMembershipOrNull ) * 2) ).Add( "</color>。" );
                                     if ( systemData.NumberBeamsToFire > 1 )
-                                        buffer.Add( "Note that because of multiple beams potentially hitting a single target, closer or larger targets tend to take more damage.  " );
+                                        buffer.Add( "注意，由于多束光束可能命中同一目标，距离更近或体型更大的目标往往承受更多伤害。  " );
                                 }
                             }
                             else 
@@ -5724,40 +5719,40 @@ buffer.Add( "。  " );
 
                                     if ( systemStats.AOEMaximumNumberOfTargetsHitPerShot >= 1 )
                                     {
-                                        buffer.Add( "up to <color=#ffdf72>" ).Add( systemStats.AOEMaximumNumberOfTargetsHitPerShot ).Add( "</color> overall targets " );
+                                        buffer.Add( "最多 <color=#ffdf72>" ).Add( systemStats.AOEMaximumNumberOfTargetsHitPerShot ).Add( "</color> 个总目标 " );
                                     }
                                     else
-                                        buffer.Add( "any number of overall targets " );
+                                        buffer.Add( "任意数量总目标 " );
 
-                                    buffer.Add( "with a chain lightning attack that jumps <color=#ffdf72>" ).AddNumberMoreReadable( systemData.BeamChainsOutToTargetsXTimes ).Add( "</color> times " );
-                                    buffer.Add( "with chain range <color=#ffdf72>" ).AddNumberMoreReadable( systemData.BeamChainsOutToTargetsXRange ).Add( "</color>.  " );
+                                    buffer.Add( "以连锁闪电攻击跳跃 <color=#ffdf72>" ).AddNumberMoreReadable( systemData.BeamChainsOutToTargetsXTimes ).Add( "</color> 次 " );
+                                    buffer.Add( "连锁范围 <color=#ffdf72>" ).AddNumberMoreReadable( systemData.BeamChainsOutToTargetsXRange ).Add( "</color>。" );
 
                                     if ( detailLevel < TooltipDetail.Full )
                                     { }
                                     else
                                     {
-                                        buffer.Add( "Each time the lightning jumps, it can strike " );
+                                        buffer.Add( "每次闪电跳跃时，可击中 " );
                                         if ( systemStats.AOEMaximumNumberOfTargetsHitPerShot >= 1 )
                                         {
-                                            buffer.Add( "up to <color=#ffdf72>" ).Add( systemData.BeamChainsOutToMaxTargetsFromEachSource ).Add( "</color> targets in the next cycle.  " );
+                                            buffer.Add( "最多 <color=#ffdf72>" ).Add( systemData.BeamChainsOutToMaxTargetsFromEachSource ).Add( "</color> 个下一周期目标。" );
                                         }
                                         else
-                                            buffer.Add( "any number of targets in the next cycle.  " );
+                                            buffer.Add( "任意数量下一周期目标。" );
                                         if ( systemData.AOEAndBeamDamageMultiplierToNonPrimaryTarget > FInt.Zero )
                                         {
-                                            buffer.Add( "Each target after the primary takes " ).Add(
-                                                systemData.AOEAndBeamDamageMultiplierToNonPrimaryTarget.GetNearestIntPreferringHigher() ).Add( "% of the usual damage.  " );
+                                            buffer.Add( "主目标后的每个目标承受 " ).Add(
+                                                systemData.AOEAndBeamDamageMultiplierToNonPrimaryTarget.GetNearestIntPreferringHigher() ).Add( "%的通常伤害。" );
                                         }
                                         else
-                                            buffer.Add( "Each target after the primary takes full damage.  " );
+                                            buffer.Add( "主目标后的每个目标承受全额伤害。" );
                                     }
                                 }
                                 else
                                 {
                                     if ( detailLevel < TooltipDetail.Full )
-                                        buffer.Add( "<color=#f25e1c>POINT-BEAM WEAPON</color>: Hits one target. " );
+                                        buffer.Add( "<color=#f25e1c>定点光束武器</color>：击中一个目标。" );
                                     else
-                                        buffer.Add( "<color=#f25e1c>POINT-BEAM WEAPON</color>: Attacks from the above weapon are in the form of beam that hits only the target it was aimed at. " );
+                                        buffer.Add( "<color=#f25e1c>定点光束武器</color>：上述武器的攻击呈光束形式，仅击中瞄准的目标。" );
                                 }
                             }
                             else
@@ -5765,15 +5760,15 @@ buffer.Add( "。  " );
                                 if ( detailLevel < TooltipDetail.Full )
                                 {
                                     if ( systemData.NumberBeamsToFire == 1 )
-                                        buffer.Add( "<color=#f25e1c>BEAM WEAPON</color>: length <color=#ffdf72>" );
+                                        buffer.Add( "<color=#f25e1c>光束武器</color>：长度 <color=#ffdf72>" );
                                     else
                                     {
                                         if ( systemData.DistanceFromCenterForBeamEmission > 0 )
-                                            buffer.Add( "<color=#f25e1c>RADIAL BEAM-ARRAY WEAPON</color>: <color=#ffdf72>" );
+                                            buffer.Add( "<color=#f25e1c>径向光束阵列武器</color>：<color=#ffdf72>" );
                                         else
-                                            buffer.Add( "<color=#f25e1c>BEAM-ARRAY WEAPON</color>: <color=#ffdf72>" );
+                                            buffer.Add( "<color=#f25e1c>光束阵列武器</color>：<color=#ffdf72>" );
                                         buffer.Add( systemData.NumberBeamsToFire );
-                                        buffer.Add( "</color> beams, length <color=#ffdf72>" );
+                                        buffer.Add( "</color> 束光束，长度 <color=#ffdf72>" );
                                     }
                                     buffer.AddNumberMoreReadable( (systemStats.CalculateActualRange( relatedSquadOrNull ) * systemData.BeamLengthMultiplier).IntValue );
 
@@ -5782,77 +5777,77 @@ buffer.Add( "。  " );
                                         buffer.Add( "</color>" );
                                     }
                                     else
-                                        buffer.Add( "</color> with 1/" ).Add( systemData.NumberBeamsToFire ).Add( " DMG/beam" );
+                                        buffer.Add( "</color>，1/" ).Add( systemData.NumberBeamsToFire ).Add( " 伤害/束" );
                                     if ( systemStats.AOEMaximumNumberOfTargetsHitPerShot >= 1 )
-                                        buffer.Add( ", hitting <color=#ffdf72>" ).Add( systemStats.AOEMaximumNumberOfTargetsHitPerShot ).Add( "</color> targets, max damage per beam <color=#ffdf72>" ).Add( (systemData.ForMark[effectiveMarkLevel].CalculateShipOrFleetMemDamagePerShot( relatedSquadOrNull, relatedMembershipOrNull ) * systemStats.AOEMaximumNumberOfTargetsHitPerShot / systemData.NumberBeamsToFire) ).Add( "</color>" );
+                                        buffer.Add( "，击中 <color=#ffdf72>" ).Add( systemStats.AOEMaximumNumberOfTargetsHitPerShot ).Add( "</color> 个目标，每束最大伤害 <color=#ffdf72>" ).Add( (systemData.ForMark[effectiveMarkLevel].CalculateShipOrFleetMemDamagePerShot( relatedSquadOrNull, relatedMembershipOrNull ) * systemStats.AOEMaximumNumberOfTargetsHitPerShot / systemData.NumberBeamsToFire) ).Add( "</color>" );
                                     if ( systemData.AOEHitsFriendlyTargets )
-                                        buffer.Add( ", friendly fire" );
+                                        buffer.Add( "，友军误伤" );
 
                                     if ( systemData.AOEAndBeamDamageMultiplierToNonPrimaryTarget > FInt.Zero )
                                     {
-                                        buffer.Add( ", " );
+                                        buffer.Add( "，" );
                                         buffer.Add( systemData.AOEAndBeamDamageMultiplierToNonPrimaryTarget.GetNearestIntPreferringHigher() );
-                                        buffer.Add( "% damage to non-primary targets" );
+                                        buffer.Add( "%伤害对非主要目标" );
                                     }
-                                    buffer.Add( ".  " );
+                                    buffer.Add( "。" );
                                 }
                                 else
                                 {
                                     if ( systemData.NumberBeamsToFire == 1 )
-                                        buffer.Add( "<color=#f25e1c>BEAM WEAPON</color>: Attacks from the above weapon are in the form of a fan of a beam of length <color=#ffdf72>" );
+                                        buffer.Add( "<color=#f25e1c>光束武器</color>：上述武器的攻击呈扇形光束，长度 <color=#ffdf72>" );
                                     else
                                     {
                                         if ( systemData.DistanceFromCenterForBeamEmission > 0 )
-                                            buffer.Add( "<color=#f25e1c>RADIAL BEAM-ARRAY WEAPON</color>: <color=#ffdf72>" );
+                                            buffer.Add( "<color=#f25e1c>径向光束阵列武器</color>：<color=#ffdf72>" );
                                         else
-                                            buffer.Add( "<color=#f25e1c>BEAM-ARRAY WEAPON</color>: Attacks from the above weapon are in the form of a fan of <color=#ffdf72>" );
+                                            buffer.Add( "<color=#f25e1c>光束阵列武器</color>：上述武器的攻击呈扇形，<color=#ffdf72>" );
                                         buffer.Add( systemData.NumberBeamsToFire );
-                                        buffer.Add( "</color> beams of length <color=#ffdf72>" );
+                                        buffer.Add( "</color> 束光束，长度 <color=#ffdf72>" );
                                     }
                                     buffer.AddNumberMoreReadable( (systemStats.CalculateActualRange( relatedSquadOrNull ) * systemData.BeamLengthMultiplier).IntValue );
                                     if ( systemData.NumberBeamsToFire == 1 )
                                     {
-                                        buffer.Add( "</color>, " );
+                                        buffer.Add( "</color>，" );
                                     }
                                     else
                                     {
-                                        buffer.Add( "</color> with <color=#ffdf72>" );
+                                        buffer.Add( "</color>，每束间隔 <color=#ffdf72>" );
                                         buffer.AddFixedDecimal( systemData.DegreesOffsetPerBeam, 1 );
-                                        buffer.Add( " degrees</color> between each beam, " );
+                                        buffer.Add( " 度</color>，" );
                                     }
                                     if ( systemStats.AOEMaximumNumberOfTargetsHitPerShot >= 1 )
                                     {
-                                        buffer.Add( "hitting <color=#ffdf72>" ).Add( systemStats.AOEMaximumNumberOfTargetsHitPerShot ).Add( "</color> targets" );
+                                        buffer.Add( "击中 <color=#ffdf72>" ).Add( systemStats.AOEMaximumNumberOfTargetsHitPerShot ).Add( "</color> 个目标" );
                                     }
                                     else
-                                        buffer.Add( "hitting all targets intersected by the beam" );
+                                        buffer.Add( "击中光束经过的所有目标" );
                                     if ( systemData.NumberBeamsToFire == 1 )
                                     {
                                         if ( systemData.AOEAndBeamDamageMultiplierToNonPrimaryTarget > FInt.Zero )
                                         {
-                                            buffer.Add( " with " );
+                                            buffer.Add( "，" );
                                             buffer.Add( systemData.AOEAndBeamDamageMultiplierToNonPrimaryTarget.GetNearestIntPreferringHigher() );
-                                            buffer.Add( "% damage to targets other than the primary" );
+                                            buffer.Add( "%伤害对主目标外的目标" );
                                         }
                                         else
-                                            buffer.Add( " with its full damage" );
+                                            buffer.Add( "，全额伤害" );
                                     }
                                     else
                                     {
-                                        buffer.Add( " with 1/" ).Add( systemData.NumberBeamsToFire ).Add( " its damage per beam that strikes them" );
+                                        buffer.Add( "，1/" ).Add( systemData.NumberBeamsToFire ).Add( " 每束伤害作用于命中目标" );
                                         if ( systemData.AOEAndBeamDamageMultiplierToNonPrimaryTarget > FInt.Zero )
                                         {
-buffer.Add( "，" );
-                                    buffer.Add( systemData.AOEAndBeamDamageMultiplierToNonPrimaryTarget.GetNearestIntPreferringHigher() );
-                                    buffer.Add( "%伤害对非主要目标" );
+                                            buffer.Add( "，" );
+                                            buffer.Add( systemData.AOEAndBeamDamageMultiplierToNonPrimaryTarget.GetNearestIntPreferringHigher() );
+                                            buffer.Add( "%伤害对非主要目标" );
                                         }
                                     }
                                     if ( systemData.AOEHitsFriendlyTargets )
-                                        buffer.Add( " -- including any friendlies caught in the blast.  " );
+                                        buffer.Add( "——包括爆炸范围内的任何友军。" );
                                     else
-                                        buffer.Add( ".  " );
+                                        buffer.Add( "。" );
                                     if ( systemData.NumberBeamsToFire > 1 )
-                                        buffer.Add( "Note that because of multiple beams potentially hitting a single target, closer or larger targets tend to take more damage.  " );
+                                        buffer.Add( "注意，由于多束光束可能命中同一目标，距离更近或体型更大的目标往往承受更多伤害。  " );
                                 }
                             }
                         }
@@ -5868,35 +5863,35 @@ buffer.Add( "，" );
                                 HandleNewlineAndSize( buffer, ref haveDoneNewLineAndSize );
                                 if ( detailLevel < TooltipDetail.Full )
                                 {
-                                    buffer.Add( "<color=#f25e1c>MULTI-BEAM</color>: up to <color=#ffdf72>" ).Add( systemData.ForMark[effectiveMarkLevel].ShotsPerSalvo ).Add( "</color> beams" );
+                                    buffer.Add( "<color=#f25e1c>多重光束</color>：最多 <color=#ffdf72>" ).Add( systemData.ForMark[effectiveMarkLevel].ShotsPerSalvo ).Add( "</color> 束光束" );
                                     if ( !systemData.HitsAllIntersectingTargets )
-                                        buffer.Add( ", one target per beam.  " );
+                                        buffer.Add( "，每束一个目标。" );
                                     else if ( systemStats.AOEMaximumNumberOfTargetsHitPerShot >= 1 )
-                                        buffer.Add( ", full DMG to intersected targets.  " );
+                                        buffer.Add( "，对经过目标造成全额伤害。" );
                                 } else
                                 {
-                                    buffer.Add( "<color=#f25e1c>MULTI-BEAM</color>: Up to <color=#ffdf72>" ).Add( systemData.ForMark[effectiveMarkLevel].ShotsPerSalvo )
-                                        .Add( "</color> beams can be fired at a time. " );
+                                    buffer.Add( "<color=#f25e1c>多重光束</color>：最多 <color=#ffdf72>" ).Add( systemData.ForMark[effectiveMarkLevel].ShotsPerSalvo )
+                                        .Add( "</color> 束光束可同时发射。" );
                                     if ( systemData.ForMark[effectiveMarkLevel].ShotsPerSalvo > systemData.ForMark[effectiveMarkLevel].ShotsPerTarget )
-                                        buffer.Add( "Only " ).Add( systemData.ForMark[effectiveMarkLevel].ShotsPerTarget ).Add( " can be fired per target and stack. " );
+                                        buffer.Add( "仅 " ).Add( systemData.ForMark[effectiveMarkLevel].ShotsPerTarget ).Add( " 可对每目标发射并叠加。" );
                                     else
-                                        buffer.Add( "All can be aimed at the same target. " );
+                                        buffer.Add( "全部可瞄准同一目标。" );
                                     if ( !systemData.HitsAllIntersectingTargets )
-                                        buffer.Add( "A single target may be damaged by multiple intersecting beams.  Each beam does the full damage listed above.  " );
+                                        buffer.Add( "单个目标可被多束交错光束伤害。每束造成上述全额伤害。" );
                                     else if ( systemStats.AOEMaximumNumberOfTargetsHitPerShot >= 1 )
-                                        buffer.Add( "Each beam does the full damage listed above.  " );
+                                        buffer.Add( "每束造成上述全额伤害。" );
                                 }
                             } else
                             {
                                 if ( detailLevel >= TooltipDetail.Full )
                                 {
                                     HandleNewlineAndSize( buffer, ref haveDoneNewLineAndSize );
-                                    buffer.Add( "<color=#f25e1c>MULTI-SHOT</color>: Up to <color=#ffdf72>" ).Add( systemData.ForMark[effectiveMarkLevel].ShotsPerSalvo )
-                                        .Add( "</color> shots can be fired at a time. " );
+                                    buffer.Add( "<color=#f25e1c>多重射击</color>：最多 <color=#ffdf72>" ).Add( systemData.ForMark[effectiveMarkLevel].ShotsPerSalvo )
+                                        .Add( "</color> 发可同时发射。" );
                                     if ( systemData.ForMark[effectiveMarkLevel].ShotsPerSalvo > systemData.ForMark[effectiveMarkLevel].ShotsPerTarget )
-                                        buffer.Add( "Only " ).Add( systemData.ForMark[effectiveMarkLevel].ShotsPerTarget ).Add( " can be fired per target and stack" );
+                                        buffer.Add( "仅 " ).Add( systemData.ForMark[effectiveMarkLevel].ShotsPerTarget ).Add( " 可对每目标发射并叠加" );
                                     else
-                                        buffer.Add( "All can be aimed at the same target" );
+                                        buffer.Add( "全部可瞄准同一目标" );
                                     buffer.Add( "，每发造成上述全额伤害。  " );
                                 }
                             }
@@ -5909,15 +5904,15 @@ buffer.Add( "，" );
                         {
                             buffer.Add( "<color=#f25e1c>" );
                             buffer.Add( (systemData.ReturnsThisPercentageOfDamageWhenFiringRetaliatoryShot * 100).GetNearestIntPreferringHigher() );
-                            buffer.Add( "% MIRROR DAMAGE:</color> " );
+                            buffer.Add( "%镜像伤害</color>：" );
                             if ( detailLevel >= TooltipDetail.Medium )
                             {
-                                buffer.Add( "This mirror weapon fires a projectile back with " ).Add(
+                                buffer.Add( "此镜像武器向攻击者发射射弹，威力为 " ).Add(
                                     (systemData.ReturnsThisPercentageOfDamageWhenFiringRetaliatoryShot * 100).GetNearestIntPreferringHigher() )
-                                    .Add( "% of the power of any shots that hit its parent, back to the unit that shot it. This is considered <color=#dfff72>exotic damage</color>. " );
+                                    .Add( "%击中其父舰的攻击的威力。这被视为 <color=#dfff72>奇异伤害</color>。" );
                             }
                             else
-                                buffer.Add( "Fires a projectile back with power based on shot impact to parent unit.  " );
+                                buffer.Add( "根据对父舰的射击冲击力，发射反向射弹。" );
                         }
                         #endregion
                         debugStage = 221;
@@ -5926,19 +5921,19 @@ buffer.Add( "，" );
                         {
                             HandleNewlineAndSize( buffer, ref haveDoneNewLineAndSize );
 
-                            buffer.Add( "<color=#f25e1c>LIMITED TARGETS</color>: Can only target static structures.  " );
+                            buffer.Add( "<color=#f25e1c>限制目标</color>：只能瞄准固定建筑。" );
                         }
                         if ( systemData.OnlyTargetsMobileUnits )
                         {
                             HandleNewlineAndSize( buffer, ref haveDoneNewLineAndSize );
 
-                            buffer.Add( "<color=#f25e1c>LIMITED TARGETS</color>: Can only target mobile units.  " );
+                            buffer.Add( "<color=#f25e1c>限制目标</color>：只能瞄准移动单位。" );
                         }
                         if ( systemData.OnlyTargetsStrikecraftAndFrigates )
                         {
                             HandleNewlineAndSize( buffer, ref haveDoneNewLineAndSize );
 
-                            buffer.Add( "<color=#f25e1c>LIMITED TARGETS</color>: Can only target strikecraft and frigates.  " );
+                            buffer.Add( "<color=#f25e1c>限制目标</color>：只能瞄准战机与护卫舰。" );
                         }
                         #endregion
                         debugStage = 225;
@@ -5952,22 +5947,22 @@ buffer.Add( "，" );
                             if ( detailLevel < TooltipDetail.Full )
                             {
                                 if ( systemData.MaxEngineStunSeconds > 0 )
-                                    buffer.Add( "<color=#f25e1c>ENGINE-SLOWER</color>: <color=#ffdf72>" );
+                                    buffer.Add( "<color=#f25e1c>引擎减速</color>：<color=#ffdf72>" );
                                 else
-                                    buffer.Add( "<color=#f25e1c>ENGINE-STUNNER</color>: <color=#ffdf72>" );
+                                    buffer.Add( "<color=#f25e1c>引擎眩晕</color>：<color=#ffdf72>" );
                                 buffer.AddNumberMoreReadable( systemStats.EngineStunPerShot );
-                                buffer.Add( "s</color> if target engine < <color=#ffdf72>" );
+                                buffer.Add( "秒</color> 如果目标引擎 < <color=#ffdf72>" );
                                 buffer.Add( systemData.EngineStunToEngine_gxLessThan );
                                 buffer.Add( " gx</color>" );
                                 if ( systemData.MaxEngineStunSeconds > 0 )
                                 {
                                     if ( systemData.MaxEngineStunSeconds >= ExternalConstants.Instance.EngineStunMultipliersByStunSeconds.Count )
-                                        buffer.Add( ".  " ); //fully stunned
+                                        buffer.Add( "。" ); //fully stunned
                                     else //partially stunned
-                                        buffer.Add( ", max " ).AddNumberMoreReadable( systemData.MaxEngineStunSeconds ).Add( "s.  " );
+                                        buffer.Add( "，最大 " ).AddNumberMoreReadable( systemData.MaxEngineStunSeconds ).Add( "秒。" );
                                 }
                                 else
-                                    buffer.Add( ".  " );
+                                    buffer.Add( "。" );
                             }
                             else
                             {
@@ -6005,19 +6000,19 @@ buffer.Add( " gx</color>。  " );
 
                             if ( detailLevel < TooltipDetail.Full )
                             {
-                                buffer.Add( "<color=#f25e1c>PARALYZER</color>: <color=#ffdf72>" );
+                                buffer.Add( "<color=#f25e1c>麻痹者</color>：<color=#ffdf72>" );
                                 buffer.AddNumberMoreReadable( systemStats.ParalysisSecondsPerShot );
-                                buffer.Add( "s</color> if target mass < <color=#ffdf72>" );
+                                buffer.Add( "秒</color> 如果目标质量 < <color=#ffdf72>" );
                                 buffer.Add( systemData.ParalysisToShipsMass_tXLessThan.ReadableString );
-                                buffer.Add( " tX</color>.  " );
+                                buffer.Add( " tX</color>。  " );
                             }
                             else
                             {
-                                buffer.Add( "<color=#f25e1c>PARALYZER</color>: Shots from the above weapon completely shut down enemy ships for <color=#ffdf72>" );
+                                buffer.Add( "<color=#f25e1c>麻痹者</color>：上述武器的射击使敌方舰船完全停机 <color=#ffdf72>" );
                                 buffer.AddNumberMoreReadable( systemStats.ParalysisSecondsPerShot );
-                                buffer.Add( "s</color> if the target has a mass less than <color=#ffdf72>" );
+                                buffer.Add( "秒</color> 如果目标质量小于 <color=#ffdf72>" );
                                 buffer.Add( systemData.ParalysisToShipsMass_tXLessThan.ReadableString );
-                                buffer.Add( " tX</color>.  " );
+                                buffer.Add( " tX</color>。  " );
                             }
                         }
                         #endregion
@@ -6030,11 +6025,11 @@ buffer.Add( " gx</color>。  " );
 
                             if ( detailLevel < TooltipDetail.Full )
                             {
-                                buffer.Add( "<color=#f25e1c>FIRES THROUGH FORCEFIELDS</color>  " );
+                                buffer.Add( "<color=#f25e1c>穿透力场</color>  " );
                             }
                             else
                             {
-                                buffer.Add( "<color=#f25e1c>FIRES THROUGH FORCEFIELDS</color>: Shots from the above weapon completely ignore forcefields as if they were not there, damaging ships under them like normal.  " );
+                                buffer.Add( "<color=#f25e1c>穿透力场</color>：上述武器的射击完全无视力场，正常伤害力场下的舰船。  " );
                             }
                         }
                         #endregion
@@ -6046,11 +6041,11 @@ buffer.Add( " gx</color>。  " );
 
                             if ( detailLevel < TooltipDetail.Full )
                             {
-                                buffer.Add( "<color=#f25e1c>TARGET WARP</color>  " );
+                                buffer.Add( "<color=#f25e1c>目标扭曲</color>  " );
                             }
                             else
                             {
-                                buffer.Add( "<color=#f25e1c>TARGET WARP</color>: Shots from the above weapon cause enemies that are hit to be moved to a completely random spot in the planet's gravity well.  " );
+                                buffer.Add( "<color=#f25e1c>目标扭曲</color>：上述武器的射击将击中的敌人移至行星重力井内完全随机的位置。  " );
                             }
                         }
                         #endregion
@@ -6059,7 +6054,7 @@ buffer.Add( " gx</color>。  " );
                         #region StackingDamage
                         if ( systemData.MaxStacksToKill != 1 )
                         {
-                            buffer.Add( " <color=#f25e1c>MULTI KILL</color>: Allowed to kill <color=#ffdf72>" + systemData.MaxStacksToKill + "</color> stacks at a time from a squad with each shot. " );
+                            buffer.Add( " <color=#f25e1c>多重击杀</color>：每次射击允许杀死 <color=#ffdf72>" + systemData.MaxStacksToKill + "</color> 个小队堆叠。 " );
                         }
                         #endregion
 
@@ -6070,7 +6065,7 @@ buffer.Add( " gx</color>。  " );
 
                         {
                             HandleNewlineAndSize( buffer, ref haveDoneNewLineAndSize );
-                            buffer.Add( "<color=#f25e1c>ATTACK BONUS</color>: Shots from the above weapon do <color=#ffdf72>" ).Add( systemStats.DamageMultiplierToTractoredUnits.ReadableString, "a1ffa1" ).Add( "x</color> damage to units in tractor beams. " );
+                            buffer.Add( "<color=#f25e1c>攻击加成</color>：上述武器对牵引光束中的单位造成 <color=#ffdf72>" ).Add( systemStats.DamageMultiplierToTractoredUnits.ReadableString, "a1ffa1" ).Add( "x</color> 伤害。 " );
                         }
                         #endregion
 
@@ -6083,7 +6078,7 @@ buffer.Add( " gx</color>。  " );
                                 hasSystemWithBonusFromAttackingUnderForcefields = true;
 
                             HandleNewlineAndSize( buffer, ref haveDoneNewLineAndSize );
-                            buffer.Add( "<color=#f25e1c>ATTACK BONUS</color>: Shots from the above weapon do <color=#ffdf72>" ).Add( systemData.DamageModifierWhileUnderForcefield.ReadableString, "a1ffa1" ).Add( "x</color> damage if this unit is under a forcefield, ignoring the normal penalty. " );
+                            buffer.Add( "<color=#f25e1c>攻击加成</color>：上述武器造成 <color=#ffdf72>" ).Add( systemData.DamageModifierWhileUnderForcefield.ReadableString, "a1ffa1" ).Add( "x</color> 伤害，如果该单位在力场下则忽略正常惩罚。 " );
                         }
                         #endregion
 
@@ -6097,9 +6092,9 @@ buffer.Add( " gx</color>。  " );
                             HandleNewlineAndSize( buffer, ref haveDoneNewLineAndSize );
 
                             if ( detailLevel < TooltipDetail.Full )
-                                buffer.Add( "<color=#f25e1c>ATTACK BONUS</color>: Additional <color=#ffdf72>" ).Add( systemData.AdditionalDamageModifierPerWeaponPoint.ReadableString, "a1ffa1" ).Add( "x</color> per current Weapon Point. " );
+                                buffer.Add( "<color=#f25e1c>攻击加成</color>：每个当前武器点额外 <color=#ffdf72>" ).Add( systemData.AdditionalDamageModifierPerWeaponPoint.ReadableString, "a1ffa1" ).Add( "x</color> 伤害。 " );
                             else
-                                buffer.Add( "<color=#f25e1c>ATTACK BONUS</color>: Shots from the above weapon do an additional <color=#ffdf72>" ).Add( systemData.AdditionalDamageModifierPerWeaponPoint.ReadableString, "a1ffa1" ).Add( "x</color> damage for every Weapon Point it currently has. " );
+                                buffer.Add( "<color=#f25e1c>攻击加成</color>：上述武器为其每个当前武器点额外造成 <color=#ffdf72>" ).Add( systemData.AdditionalDamageModifierPerWeaponPoint.ReadableString, "a1ffa1" ).Add( "x</color> 伤害。 " );
                         }
 
                         // The case where it DOES consume Weapon Points on firing, i.e Powerslaver style.
@@ -6109,16 +6104,16 @@ buffer.Add( " gx</color>。  " );
                             HandleNewlineAndSize( buffer, ref haveDoneNewLineAndSize );
 
                             if ( detailLevel < TooltipDetail.Full )
-                                buffer.Add( "<color=#f25e1c>ATTACK BONUS</color>: Consumes <color=#ffdf72>" + systemData.NumberOfWeaponPointsToConsumeOnFiring + "</color> Weapon Points, additional <color=#ffdf72>" ).Add( systemData.AdditionalDamageModifierPerWeaponPoint.ReadableString, "a1ffa1" ).Add( "x</color> damage per consumed Weapon Point. " );
+                                buffer.Add( "<color=#f25e1c>攻击加成</color>：消耗 <color=#ffdf72>" + systemData.NumberOfWeaponPointsToConsumeOnFiring + "</color> 武器点，每个消耗的武器点额外 <color=#ffdf72>" ).Add( systemData.AdditionalDamageModifierPerWeaponPoint.ReadableString, "a1ffa1" ).Add( "x</color> 伤害。 " );
                             else
-                                buffer.Add( "<color=#f25e1c>ATTACK BONUS</color>: Shots from the above weapon consume <color=#ffdf72>" + systemData.NumberOfWeaponPointsToConsumeOnFiring + "</color> Weapon Points per salvo, doing an additional <color=#ffdf72>" ).Add( systemData.AdditionalDamageModifierPerWeaponPoint.ReadableString, "a1ffa1" ).Add( "x</color> damage for every Weapon Point it consumed. " );
+                                buffer.Add( "<color=#f25e1c>攻击加成</color>：上述武器每次齐射消耗 <color=#ffdf72>" + systemData.NumberOfWeaponPointsToConsumeOnFiring + "</color> 武器点，每个消耗的武器点额外造成 <color=#ffdf72>" ).Add( systemData.AdditionalDamageModifierPerWeaponPoint.ReadableString, "a1ffa1" ).Add( "x</color> 伤害。 " );
                         }
 
                         if ( systemData.NumberOfWeaponPointsToGainOnFiring != FInt.Zero )
                         {
                             HandleNewlineAndSize( buffer, ref haveDoneNewLineAndSize );
 
-                            buffer.Add( "<color=#f25e1c>GAINS WEAPON POINTS</color>: Shots from the above weapon increase this units Weapon Points by <color=#ffdf72>" + systemData.NumberOfWeaponPointsToGainOnFiring + "</color>, up to max of <color=#ffdf72>" + systemData.ParentEntityTypeData.MaxNumberOfWeaponPoints + "</color>. " );
+                            buffer.Add( "<color=#f25e1c>获得武器点</color>：上述武器每次射击增加该单位 <color=#ffdf72>" + systemData.NumberOfWeaponPointsToGainOnFiring + "</color> 武器点，上限为 <color=#ffdf72>" + systemData.ParentEntityTypeData.MaxNumberOfWeaponPoints + "</color>。 " );
                         }
                         #endregion
 
@@ -6132,8 +6127,8 @@ buffer.Add( " gx</color>。  " );
                             if ( systemData.DevourFunctionNameUpper.Length <= 0 )
                                 systemData.DevourFunctionNameUpper = systemData.DevourFunctionName.ToUpper();
 
-                            buffer.Add( "<color=#f25e1c>" ).Add( systemData.DevourFunctionNameUpper ).Add( "</color>: If the target ship is the same or lower mark, and has mass lower than <color=#ffdf72>" )
-                                .Add( systemData.DevourMassLowerThan.ReadableString ).Add( "tX</color>, then instakill the target ship. " );
+                            buffer.Add( "<color=#f25e1c>" ).Add( systemData.DevourFunctionNameUpper ).Add( "</color>：如果目标舰船等级相同或更低，且质量低于 <color=#ffdf72>" )
+                                .Add( systemData.DevourMassLowerThan.ReadableString ).Add( "tX</color>，则秒杀目标舰船。 " );
                         }
                         #endregion
 
@@ -6149,7 +6144,7 @@ buffer.Add( " gx</color>。  " );
 
                             GameEntityTypeData thingToSpawnFromInfestedUnit = GameEntityTypeDataTable.Instance.GetRowByName( systemData.UnitToSpawnOnInfestation );
 
-                            buffer.Add( "<color=#f25e1c>" ).Add( systemData.InfestationFunctionNameUpper ).Add( ":</color> Whenever this unit deals the killing blow to a foe, it will spawn a " + (thingToSpawnFromInfestedUnit?.DisplayName ?? systemData.UnitToSpawnOnInfestation) + " at the foe's location. " );
+                            buffer.Add( "<color=#f25e1c>" ).Add( systemData.InfestationFunctionNameUpper ).Add( "：</color>当该单位对敌人造成致命一击时，会在敌人位置生成一个 " + (thingToSpawnFromInfestedUnit?.DisplayName ?? systemData.UnitToSpawnOnInfestation) + "。 " );
                         }
                         #endregion
 
@@ -6169,11 +6164,11 @@ buffer.Add( " gx</color>。  " );
 
                                 if ( detailLevel < TooltipDetail.Full )
                                 {
-                                    buffer.Add( "<color=#f25e1c> " ).Add( row.DescriptionPrefix ).Add( "</color>: <color=#ffdf72>" );
+                                    buffer.Add( "<color=#f25e1c> " ).Add( row.DescriptionPrefix ).Add( "</color>：<color=#ffdf72>" );
                                     buffer.AddNumberMoreReadable( damageAmount );
-                                    buffer.Add( "</color> " ).Add( row.DescriptionDamageName ).Add( " damage" )
+                                    buffer.Add( "</color> " ).Add( row.DescriptionDamageName ).Add( " 伤害" )
                                         .Add( row.DescriptionConditions != null && row.DescriptionConditions.Length > 0 ? " " : "" ).Add( row.DescriptionConditions )
-                                        .Add( ".  " ).AddNumberMoreReadable( row.Scale ).Add( " total damage required for effect.  " );
+                                        .Add( "。  " ).AddNumberMoreReadable( row.Scale ).Add( " 总伤害触发效果。  " );
                                     //only for player ships or things that are being contemplated for construction
                                     if ( relatedSquadOrNull == null || relatedSquadOrNull.GetFactionTypeSafe() != FactionType.Player )
                                     {
@@ -6183,12 +6178,12 @@ buffer.Add( " gx</color>。  " );
                                 }
                                 else
                                 {
-                                    buffer.Add( "<color=#f25e1c> " ).Add( row.DescriptionPrefix ).Add( "</color>: The above does <color=#ffdf72>" );
+                                    buffer.Add( "<color=#f25e1c> " ).Add( row.DescriptionPrefix ).Add( "</color>：上述造成 <color=#ffdf72>" );
                                     buffer.AddNumberMoreReadable( damageAmount );
-                                    buffer.Add( "</color> " ).Add( row.DescriptionDamageName ).Add( " damage" )
+                                    buffer.Add( "</color> " ).Add( row.DescriptionDamageName ).Add( " 伤害" )
                                         .Add( row.DescriptionConditions != null && row.DescriptionConditions.Length > 0 ? " " : "" ).Add( row.DescriptionConditions )
-                                        .Add( ".  If at least " ).AddNumberMoreReadable( row.Scale ).Add( " " ).Add( row.DescriptionDamageName )
-                                        .Add( " damage has been done to the target when it dies, then " ).Add( row.DescriptionOfEffects ).Add( ".  " );
+                                        .Add( "。 如果目标死亡时已受到至少 " ).AddNumberMoreReadable( row.Scale ).Add( " " ).Add( row.DescriptionDamageName )
+                                        .Add( " 伤害，则 " ).Add( row.DescriptionOfEffects ).Add( "。  " );
                                     //only for player ships or things that are being contemplated for construction
                                     if ( relatedSquadOrNull == null || relatedSquadOrNull.GetFactionTypeSafe() != FactionType.Player )
                                     {
@@ -6207,7 +6202,7 @@ buffer.Add( " gx</color>。  " );
                         {
                             HandleNewlineAndSize( buffer, ref haveDoneNewLineAndSize );
 
-                            buffer.Add( "<color=#f25e1c>MELEE WEAPON</color>: This ship must get within touching range of its target to hit it.  " );
+                            buffer.Add( "<color=#f25e1c>近战武器</color>：该舰船必须靠近目标至接触范围才能击中。  " );
                         }
                         #endregion
 
@@ -6220,29 +6215,29 @@ buffer.Add( " gx</color>。  " );
 
                             if ( detailLevel < TooltipDetail.Full )
                             {
-                                buffer.Add( "<color=#f25e1c>WEAPON JAMMER</color>: target reload +<color=#ffdf72>" );
+                                buffer.Add( "<color=#f25e1c>武器干扰器</color>：目标装弹 +<color=#ffdf72>" );
                                 buffer.AddNumberMoreReadable( systemStats.EnemyWeaponReloadSlowingSecondsPerShot );
-                                buffer.Add( "s</color> if armor < <color=#ffdf72>" );
+                                buffer.Add( "秒</color> 如果护甲 < <color=#ffdf72>" );
                                 buffer.Add( systemData.EnemyWeaponReloadSlowingSecondsArmor_mmLessThan );
-                                buffer.Add( "mm</color>, max " );
+                                buffer.Add( "mm</color>，最大 " );
                                 if ( systemData.MaxEnemyWeaponReloadSlowingSeconds > 0 )
                                     buffer.Add( systemData.MaxEnemyWeaponReloadSlowingSeconds );
                                 else
                                     buffer.Add( ExternalConstants.Instance.MaxWeaponAddedReloadSeconds );
-                                buffer.Add( "s.  " );
+                                buffer.Add( "秒。  " );
                             }
                             else
                             {
-                                buffer.Add( "<color=#f25e1c>WEAPON JAMMER</color>: Shots from the above weapon add to the reload times of enemies they hit by <color=#ffdf72>" );
+                                buffer.Add( "<color=#f25e1c>武器干扰器</color>：上述武器的射击增加被击中敌人的装弹时间 <color=#ffdf72>" );
                                 buffer.AddNumberMoreReadable( systemStats.EnemyWeaponReloadSlowingSecondsPerShot );
-                                buffer.Add( "s</color> if the target has an armor thickness of less than <color=#ffdf72>" );
+                                buffer.Add( "秒</color> 如果目标护甲厚度小于 <color=#ffdf72>" );
                                 buffer.Add( systemData.EnemyWeaponReloadSlowingSecondsArmor_mmLessThan );
-                                buffer.Add( "mm</color>.  The total amount of extra reload time per target that can be applied is " );
+                                buffer.Add( "mm</color>。 每个目标可被施加的额外装弹时间总量为 " );
                                 if ( systemData.MaxEnemyWeaponReloadSlowingSeconds > 0 )
                                     buffer.Add( systemData.MaxEnemyWeaponReloadSlowingSeconds );
                                 else
                                     buffer.Add( ExternalConstants.Instance.MaxWeaponAddedReloadSeconds );
-                                buffer.Add( "s.  " );
+                                buffer.Add( "秒。  " );
                             }
                         }
                         #endregion
@@ -6256,21 +6251,21 @@ buffer.Add( " gx</color>。  " );
 
                             if ( detailLevel < TooltipDetail.Full )
                             {
-                                buffer.Add( "<color=#f25e1c>FUSION REACTION</color>: <color=#ffdf72>" );
+                                buffer.Add( "<color=#f25e1c>聚变反应</color>：<color=#ffdf72>" );
                                 buffer.Add( Mathf.RoundToInt( systemStats.PercentDamageBypassesPersonalShields.ToFloatNonSim() * 100f ) );
-                                buffer.Add( "%</color> direct to target hull.  " );
+                                buffer.Add( "%</color> 直接作用于目标船体。  " );
                             }
                             else if ( !systemData.FiresThroughEnemyShields )
                             {
-                                buffer.Add( "<color=#f25e1c>FUSION REACTION</color>: Shots from the above weapon do <color=#ffdf72>" );
+                                buffer.Add( "<color=#f25e1c>聚变反应</color>：上述武器的射击将其伤害的 <color=#ffdf72>" );
                                 buffer.Add( Mathf.RoundToInt( systemStats.PercentDamageBypassesPersonalShields.ToFloatNonSim() * 100f ) );
-                                buffer.Add( "%</color> of their damage directly to the hull of their target, bypassing any personal shields (NOT bubble forcefields).  " );
+                                buffer.Add( "%</color> 直接作用于目标船体，绕过任何个人护盾（不绕过气泡力场）。  " );
                             }
                             else
                             {
-                                buffer.Add( "<color=#f25e1c>FUSION REACTION</color>: Shots from the above weapon do <color=#ffdf72>" );
+                                buffer.Add( "<color=#f25e1c>聚变反应</color>：上述武器的射击将其伤害的 <color=#ffdf72>" );
                                 buffer.Add( Mathf.RoundToInt( systemStats.PercentDamageBypassesPersonalShields.ToFloatNonSim() * 100f ) );
-                                buffer.Add( "%</color> of their damage directly to the hull of their target, bypassing any personal shields.  " );
+                                buffer.Add( "%</color> 直接作用于目标船体，绕过任何个人护盾。  " );
                             }
                         }
                         #endregion
@@ -6284,43 +6279,43 @@ buffer.Add( " gx</color>。  " );
                             #region Abbreviated
                             if ( detailLevel < TooltipDetail.Full )
                             {
-                                buffer.Add( "<color=#f25e1c>KNOCKBACK</color>: " );
+                                buffer.Add( "<color=#f25e1c>击退</color>： " );
                                 if ( systemStats.KnockbackPerShot > 0 )
                                 {
                                     if ( !systemData.KnockbackAtTargetLocation )
                                     {
-                                        buffer.Add( "Targets pushed <color=#ffdf72>" );
+                                        buffer.Add( "目标被推开 <color=#ffdf72>" );
                                         buffer.AddNumberMoreReadable( systemStats.KnockbackPerShot );
-                                        buffer.Add( "</color> away from this ship if mass <= <color=#ffdf72>" );
+                                        buffer.Add( "</color> 远离该舰船，如果质量 <= <color=#ffdf72>" );
                                         buffer.Add( systemData.KnockbackPerShotToShipsMass_tXLessThan );
-                                        buffer.Add( " tX</color>. Knockback decreases with higher mass.  " );
+                                        buffer.Add( " tX</color>。击退效果随质量增大而减弱。  " );
                                     }
                                     else
                                     {
-                                        buffer.Add( "Targets hit by the AoE pushed <color=#ffdf72>" );
+                                        buffer.Add( "被 AoE 击中的目标被推开 <color=#ffdf72>" );
                                         buffer.AddNumberMoreReadable( systemStats.KnockbackPerShot );
-                                        buffer.Add( "</color> away from the AoE center if mass <= <color=#ffdf72>" );
+                                        buffer.Add( "</color> 远离 AoE 中心，如果质量 <= <color=#ffdf72>" );
                                         buffer.Add( systemData.KnockbackPerShotToShipsMass_tXLessThan );
-                                        buffer.Add( " tX</color>. Knockback decreases with higher mass.  " );
+                                        buffer.Add( " tX</color>。击退效果随质量增大而减弱。  " );
                                     }
                                 }
                                 else
                                 {
                                     if ( !systemData.KnockbackAtTargetLocation )
                                     {
-                                        buffer.Add( "Targets pulled <color=#ffdf72>" );
+                                        buffer.Add( "目标被拉近 <color=#ffdf72>" );
                                         buffer.AddNumberMoreReadable( systemStats.KnockbackPerShot );
-                                        buffer.Add( "</color> towards this ship if mass <= <color=#ffdf72>" );
+                                        buffer.Add( "</color> 靠近该舰船，如果质量 <= <color=#ffdf72>" );
                                         buffer.Add( systemData.KnockbackPerShotToShipsMass_tXLessThan );
-                                        buffer.Add( " tX</color>. Knockback decreases with higher mass.  " );
+                                        buffer.Add( " tX</color>。击退效果随质量增大而减弱。  " );
                                     }
                                     else
                                     {
-                                        buffer.Add( "Targets hit by the AoE pulled <color=#ffdf72>" );
+                                        buffer.Add( "被 AoE 击中的目标被拉近 <color=#ffdf72>" );
                                         buffer.AddNumberMoreReadable( systemStats.KnockbackPerShot );
-                                        buffer.Add( "</color> towards the AoE center if mass <= <color=#ffdf72>" );
+                                        buffer.Add( "</color> 靠近 AoE 中心，如果质量 <= <color=#ffdf72>" );
                                         buffer.Add( systemData.KnockbackPerShotToShipsMass_tXLessThan );
-                                        buffer.Add( " tX</color>. Knockback decreases with higher mass.  " );
+                                        buffer.Add( " tX</color>。击退效果随质量增大而减弱。  " );
                                     }
                                 }
                             }
@@ -6329,23 +6324,23 @@ buffer.Add( " gx</color>。  " );
                             #region Non-Abbreviated
                             else
                             {
-                                buffer.Add( "<color=#f25e1c>KNOCKBACK</color>: Enemies hit by this weapon are " );
+                                buffer.Add( "<color=#f25e1c>击退</color>：被此武器击中的敌人被 " );
                                 if ( systemStats.KnockbackPerShot > 0 )
-                                    buffer.Add( "pushed away from " );
+                                    buffer.Add( "推开远离 " );
                                 else
-                                    buffer.Add( "pulled towards " );
+                                    buffer.Add( "拉近靠近 " );
                                 if ( !systemData.KnockbackAtTargetLocation )
-                                    buffer.Add( "this ship. " );
+                                    buffer.Add( "该舰船。 " );
                                 else
-                                    buffer.Add( "the center of the AoE of this ship's shots. " );
+                                    buffer.Add( "该舰船射击的 AoE 中心。 " );
                                 if ( systemStats.KnockbackPerShot > 0 )
-                                    buffer.Add( "The maximum distance a ship can be pushed is <color=#ffdf72>" );
+                                    buffer.Add( "舰船可被推开的距离最大为 <color=#ffdf72>" );
                                 else
-                                    buffer.Add( "The maximum distance a ship can be pulled is <color=#ffdf72>" );
+                                    buffer.Add( "舰船可被拉近的距离最大为 <color=#ffdf72>" );
                                 buffer.AddNumberMoreReadable( systemStats.KnockbackPerShot );
-                                buffer.Add( "</color>, decreasing as the target's mass approaches the max mass of <color=#ffdf72>" );
+                                buffer.Add( "</color>，随目标质量接近最大质量 <color=#ffdf72>" );
                                 buffer.Add( systemData.KnockbackPerShotToShipsMass_tXLessThan );
-                                buffer.Add( "tX</color>.  " );
+                                buffer.Add( "tX</color> 而减小。  " );
                             }
                             #endregion
                         }
@@ -6360,19 +6355,19 @@ buffer.Add( " gx</color>。  " );
 
                             if ( detailLevel < TooltipDetail.Full )
                             {
-                                buffer.Add( "<color=#f25e1c>DAMAGE AMPLIFICATION</color>: <color=#ffdf72>" );
+                                buffer.Add( "<color=#f25e1c>伤害放大</color>：<color=#ffdf72>" );
                                 buffer.Add( Mathf.RoundToInt( systemStats.DamageAmplificationFlat ) );
-                                buffer.Add( "</color> extra damage taken by target for <color=#ffdf72>" );
+                                buffer.Add( "</color> 目标额外承受的伤害，持续 <color=#ffdf72>" );
                                 buffer.Add( Mathf.RoundToInt( systemData.DamageAmplificationDuration_Max15 ) );
-                                buffer.Add( "</color>s.  " );
+                                buffer.Add( "</color>秒。  " );
                             }
                             else
                             {
-                                buffer.Add( "<color=#f25e1c>DAMAGE AMPLIFICATION</color>: Shots from the above weapon cause the target to take <color=#ffdf72>" );
+                                buffer.Add( "<color=#f25e1c>伤害放大</color>：上述武器的射击使目标每次被击中时额外承受 <color=#ffdf72>" );
                                 buffer.Add( Mathf.RoundToInt( systemStats.DamageAmplificationFlat ) );
-                                buffer.Add( "</color> more damage from every shot that hits it for <color=#ffdf72>" );
+                                buffer.Add( "</color> 伤害，持续 <color=#ffdf72>" );
                                 buffer.Add( Mathf.RoundToInt( systemData.DamageAmplificationDuration_Max15 ) );
-                                buffer.Add( "</color> seconds.  " );
+                                buffer.Add( "</color> 秒。  " );
                             }
                         }
 
@@ -6382,19 +6377,19 @@ buffer.Add( " gx</color>。  " );
 
                             if ( detailLevel < TooltipDetail.Full )
                             {
-                                buffer.Add( "<color=#f25e1c>DAMAGE AMPLIFICATION</color>: Target takes <color=#ffdf72>" );
+                                buffer.Add( "<color=#f25e1c>伤害放大</color>：目标承受 <color=#ffdf72>" );
                                 buffer.Add( Mathf.RoundToInt( systemData.DamageAmplificationMult.ToFloatNonSim() * 100f ) );
-                                buffer.Add( "%</color> of normal damage for <color=#ffdf72>" );
+                                buffer.Add( "%</color> 正常伤害，持续 <color=#ffdf72>" );
                                 buffer.Add( Mathf.RoundToInt( systemData.DamageAmplificationDuration_Max15 ) );
-                                buffer.Add( "</color>s.  " );
+                                buffer.Add( "</color>秒。  " );
                             }
                             else
                             {
-                                buffer.Add( "<color=#f25e1c>DAMAGE AMPLIFICATION</color>: Shots from the above weapon cause the target to take <color=#ffdf72>" );
+                                buffer.Add( "<color=#f25e1c>伤害放大</color>：上述武器的射击使目标每次被击中时承受 <color=#ffdf72>" );
                                 buffer.Add( Mathf.RoundToInt( systemData.DamageAmplificationMult.ToFloatNonSim() * 100f ) );
-                                buffer.Add( "%</color> of normal damage from every shot that hits it for <color=#ffdf72>" );
+                                buffer.Add( "%</color> 正常伤害，持续 <color=#ffdf72>" );
                                 buffer.Add( Mathf.RoundToInt( systemData.DamageAmplificationDuration_Max15 ) );
-                                buffer.Add( "</color> seconds.  " );
+                                buffer.Add( "</color> 秒。  " );
                             }
                         }
                         #endregion
@@ -6410,27 +6405,27 @@ buffer.Add( " gx</color>。  " );
                             {
                                 if ( systemData.HealthChangePerDamageDealt > FInt.Zero )
                                 {
-                                    buffer.Add( "<color=#f25e1c>VAMPIRISM</color>: repairs <color=#ffdf72>" );
+                                    buffer.Add( "<color=#f25e1c>吸血</color>：每次造成伤害修复 <color=#ffdf72>" );
                                 }
                                 else
                                 {
-                                    buffer.Add( "<color=#f25e1c>SELF DAMAGE</color>: damages itself by <color=#ffdf72>" );
+                                    buffer.Add( "<color=#f25e1c>自伤</color>：每次造成伤害自身损失 <color=#ffdf72>" );
                                 }
                                 buffer.AddNumberMoreReadable( systemData.HealthChangePerDamageDealt );
-                                buffer.Add( " health</color> per damage dealt.  " );
+                                buffer.Add( " 生命</color>。  " );
                             }
                             else
                             {
                                 if ( systemData.HealthChangePerDamageDealt > FInt.Zero )
                                 {
-                                    buffer.Add( "<color=#f25e1c>VAMPIRISM</color>: repairs itself by <color=#ffdf72>" );
+                                    buffer.Add( "<color=#f25e1c>吸血</color>：每造成 1 点伤害自身修复 <color=#ffdf72>" );
                                 }
                                 else
                                 {
-                                    buffer.Add( "<color=#f25e1c>SELF DAMAGE</color>: damages itself by <color=#ffdf72>" );
+                                    buffer.Add( "<color=#f25e1c>自伤</color>：每造成 1 点伤害自身损失 <color=#ffdf72>" );
                                 }
                                 buffer.AddNumberMoreReadable( systemData.HealthChangePerDamageDealt );
-                                buffer.Add( " health</color> for every 1 damage it has dealt.  " );
+                                buffer.Add( " 生命</color>。  " );
                             }
                         }
 
@@ -6443,40 +6438,40 @@ buffer.Add( " gx</color>。  " );
                             {
                                 if ( systemData.HealthChangeByMaxHealthDividedByThisPerAttack >= FInt.One * -1 && systemData.HealthChangeByMaxHealthDividedByThisPerAttack < FInt.Zero )
                                 {
-                                    buffer.Add( "<color=#f25e1c>SELF-DESTRUCT</color>: kills itself to attack.  " );
+                                    buffer.Add( "<color=#f25e1c>自毁</color>：自毁以发动攻击。  " );
                                 }
                                 else
                                 {
                                     if ( systemData.HealthChangeByMaxHealthDividedByThisPerAttack > FInt.Zero )
                                     {
-                                        buffer.Add( "<color=#f25e1c>SELF-ASSEMBLY</color>: repairs <color=#ffdf72>" );
+                                        buffer.Add( "<color=#f25e1c>自组装</color>：每次攻击修复 <color=#ffdf72>" );
                                     }
                                     else
                                     {
-                                        buffer.Add( "<color=#f25e1c>DISASSEMBLY</color>: damages itself by <color=#ffdf72>" );
+                                        buffer.Add( "<color=#f25e1c>瓦解</color>：每次攻击自身损失 <color=#ffdf72>" );
                                     }
                                     buffer.AddPercentFormated( ( 1 / systemData.HealthChangeByMaxHealthDividedByThisPerAttack).ToPercent( 1 ) );
-                                    buffer.Add( " health</color> each attack.  " );
+                                    buffer.Add( " 生命</color>。  " );
                                 }
                             }
                             else
                             {
                                 if ( systemData.HealthChangeByMaxHealthDividedByThisPerAttack >= FInt.One * -1 && systemData.HealthChangeByMaxHealthDividedByThisPerAttack < FInt.Zero )
                                 {
-                                    buffer.Add( "<color=#f25e1c>SELF-DESTRUCT</color>: kills itself to attack.  " );
+                                    buffer.Add( "<color=#f25e1c>自毁</color>：自毁以发动攻击。  " );
                                 }
                                 else
                                 {
                                     if ( systemData.HealthChangeByMaxHealthDividedByThisPerAttack > FInt.Zero )
                                     {
-                                        buffer.Add( "<color=#f25e1c>SELF-ASSEMBLY</color>: repairs itself by <color=#ffdf72>" );
+                                        buffer.Add( "<color=#f25e1c>自组装</color>：每次攻击自身修复 <color=#ffdf72>" );
                                     }
                                     else
                                     {
-                                        buffer.Add( "<color=#f25e1c>DISASSEMBLY</color>: damages itself by <color=#ffdf72>" );
+                                        buffer.Add( "<color=#f25e1c>瓦解</color>：每次攻击自身损失 <color=#ffdf72>" );
                                     }
                                     buffer.AddPercentFormated( (1 / systemData.HealthChangeByMaxHealthDividedByThisPerAttack).ToPercent( 1 ) );
-                                    buffer.Add( " health</color> each attack.  " );
+                                    buffer.Add( " 生命</color>。  " );
                                 }
                             }
                         }
@@ -6488,20 +6483,20 @@ buffer.Add( " gx</color>。  " );
 
                         if ( systemData.InflictsStateOfMatterOnTargetForSeconds > 0 && systemData.StateOfMatterForTargetToBecome != null )
                         {
-                            buffer.Add( "<color=#f25e1c>PHASER</color>: Inflicts " ).Add( systemData.StateOfMatterForTargetToBecome.DisplayName, "aaaaaa" ).Add( " for " )
-                                .StartReloadWrapper( false ).Add( systemData.InflictsStateOfMatterOnTargetForSeconds ).Add( "s</color>" );
+                            buffer.Add( "<color=#f25e1c>相位</color>：造成 " ).Add( systemData.StateOfMatterForTargetToBecome.DisplayName, "aaaaaa" ).Add( " 持续 " )
+                                .StartReloadWrapper( false ).Add( systemData.InflictsStateOfMatterOnTargetForSeconds ).Add( "秒</color>" );
                             if ( systemData.CannotInflictStateOfMatterIfTargetHasAnyShieldsUp )
                             {
                                 if ( detailLevel < TooltipDetail.Full )
-                                    buffer.Add( " if target " ).WrapHull( "hull struck", false, false );
+                                    buffer.Add( " 如果目标 " ).WrapHull( "船体被击中", false, false );
                                 else
-                                    buffer.Add( " if the target's " ).WrapHull( "hull is struck", false, false );
+                                    buffer.Add( " 如果目标的 " ).WrapHull( "船体被击中", false, false );
                                 if ( systemData.CannotInflictStateOfMatterIfTargetHasEnergyUsageOfAtLeast > 0 )
                                 {
                                     if ( detailLevel < TooltipDetail.Full )
-                                        buffer.Add( " and consumes < " ).WrapEnergyTruncated( systemData.CannotInflictStateOfMatterIfTargetHasEnergyUsageOfAtLeast, useIcons, useText );
+                                        buffer.Add( " 且消耗 < " ).WrapEnergyTruncated( systemData.CannotInflictStateOfMatterIfTargetHasEnergyUsageOfAtLeast, useIcons, useText );
                                     else
-                                        buffer.Add( " and the target uses less than " ).WrapEnergyMoreReadable( systemData.CannotInflictStateOfMatterIfTargetHasEnergyUsageOfAtLeast, useIcons, useText );
+                                        buffer.Add( " 且目标使用小于 " ).WrapEnergyMoreReadable( systemData.CannotInflictStateOfMatterIfTargetHasEnergyUsageOfAtLeast, useIcons, useText );
                                 }
                             } else if ( systemData.CannotInflictStateOfMatterIfTargetHasEnergyUsageOfAtLeast > 0 )
                             {
@@ -6537,16 +6532,16 @@ buffer.Add( " gx</color>。  " );
                     if( ShowTargetInfo && relatedSquadOrNull != null && !isForMultipleUnits && WeaponActivityDetails > 0 && actualEntitySystemOrNull != null )
                     {
                         GameEntity_Squad targeted = actualEntitySystemOrNull.GetTargetOrNull();
-                        buffer.Add( "\nPrimary Target: " );
+                        buffer.Add( "\n主要目标: " );
                         if ( targeted != null )
-                            buffer.Add( targeted.TypeData.InternalName ).Add( " " ).Add( targeted.PrimaryKeyID ).Add( ", Priority " ).Add( actualEntitySystemOrNull.CurrentFRDPriority )
-                                .Add( ", Valid = " ).Add( actualEntitySystemOrNull.GetIsTargetValid( targeted ) ).Add( ", Expires in " ).Add( actualEntitySystemOrNull.TimeFRDTargetExpires );
+                            buffer.Add( targeted.TypeData.InternalName ).Add( " " ).Add( targeted.PrimaryKeyID ).Add( ", 优先级 " ).Add( actualEntitySystemOrNull.CurrentFRDPriority )
+                                .Add( ", 有效 = " ).Add( actualEntitySystemOrNull.GetIsTargetValid( targeted ) ).Add( ", 过期于 " ).Add( actualEntitySystemOrNull.TimeFRDTargetExpires );
                         else
-                            buffer.Add( "None" );
+                            buffer.Add( "无" );
                         bool added = false;
                         bool first = true;
                         int count = 0;
-                        buffer.AddSize_VerySmall().Add( "\nTargets by priority: " );
+                        buffer.AddSize_VerySmall().Add( "\n按优先级目标: " );
                         foreach ( LazyLoadSquadWrapper Wrapper in actualEntitySystemOrNull.PotentialTargetsByPriorityForSystem() )
                         {
                             if ( !added )
@@ -6561,12 +6556,12 @@ buffer.Add( " gx</color>。  " );
                                 buffer.Add( " | " );
                             buffer.Add( count - 1 ).Add( ": " ).Add( Wrapper.TypeData.InternalName ).Add( " " ).Add( Wrapper.PrimaryKeyID );
                             if ( Wrapper.Planet != relatedSquadOrNull.Planet )
-                                buffer.Add( " on " ).Add( Wrapper.GetPlanetName_Safe() );
+                                buffer.Add( " 在 " ).Add( Wrapper.GetPlanetName_Safe() );
                             if ( !actualEntitySystemOrNull.GetIsTargetInRange( Wrapper.GetSquad(), RangeCheckType.ForActualFiring ) )
-                                buffer.Add( ", not in range" );
+                                buffer.Add( ", 不在射程内" );
                         }
                         if ( !added )
-                            buffer.Add( "None" );
+                            buffer.Add( "无" );
                         //buffer.Add( "\nIn sim planning group " ).Add( relatedSquadOrNull.GetFactionTargetPlanningGroupSafe() );
                     }
                 } //end "must be weapon" IF statement
@@ -6631,25 +6626,25 @@ buffer.Add( " gx</color>。  " );
 
                         if ( detailLevel < TooltipDetail.Full )
                         {
-                            buffer.Add( "<color=#f25e1c>DE-CLOAKER</color>: range <color=#ffdf72>" );
+                            buffer.Add( "<color=#f25e1c>反隐形</color>: 射程 <color=#ffdf72>" );
                             buffer.AddNumberMoreReadable( systemStats.TachyonRange );
-                            buffer.Add( "</color>, strength <color=#ffdf72>" );
+                            buffer.Add( "</color>, 强度 <color=#ffdf72>" );
                             //we use simFrameMultiplier to get the actual number per second, rather than the number per frame
                             buffer.AddNumberMoreReadable( Mathf.RoundToInt( systemStats.TachyonPoints * simFrameMultiplier ) );
                             buffer.Add( "</color>, " );
 
-                            WriteMinMaxOrVariant( buffer, "any albedo", "only albedo", true, "ffdf72", systemData.TachyonHitsAlbedoMoreThan, systemData.TachyonHitsAlbedoLessThan );
+                            WriteMinMaxOrVariant( buffer, "任意反照率", "仅反照率", true, "ffdf72", systemData.TachyonHitsAlbedoMoreThan, systemData.TachyonHitsAlbedoLessThan );
                         }
                         else
                         {
-                            buffer.Add( "<color=#f25e1c>DE-CLOAKER</color>: Cloaked enemy ships within a range of <color=#ffdf72>" );
+                            buffer.Add( "<color=#f25e1c>反隐形</color>: 射程 <color=#ffdf72>内的隐形敌舰" );
                             buffer.AddNumberMoreReadable( systemStats.TachyonRange );
-                            buffer.Add( "</color> are saturated with a tachyon field that drains <color=#ffdf72>" );
+                            buffer.Add( "</color> 被快子场饱和照射，每秒消耗 <color=#ffdf72>" );
                             //we use simFrameMultiplier to get the actual number per second, rather than the number per frame
                             buffer.AddNumberMoreReadable( Mathf.RoundToInt( systemStats.TachyonPoints * simFrameMultiplier ) );
-                            buffer.Add( "</color> cloaking points per second from enemy ships with " );
+                            buffer.Add( "</color> 隐形点，对" );
 
-                            WriteMinMaxOrVariant( buffer, "any albedo", "an albedo", true, "ffdf72", systemData.TachyonHitsAlbedoMoreThan, systemData.TachyonHitsAlbedoLessThan );
+                            WriteMinMaxOrVariant( buffer, "任意反照率", "反照率", true, "ffdf72", systemData.TachyonHitsAlbedoMoreThan, systemData.TachyonHitsAlbedoLessThan );
                         }
                         if ( systemData.CareAboutStateOfMatterToBeEnabled )
                             WriteSystemStateOfMatterSuffix( buffer, systemData, relatedSquadOrNull );
@@ -6683,18 +6678,18 @@ buffer.Add( " gx</color>。  " );
                         {
                             buffer.Add( "Max Cloaking Points: <color=#ffdf72>" );
                             buffer.AddNumberMoreReadable( systemStats.CloakingPoints );
-                            buffer.Add( "</color>.  " );
+                    buffer.Add( "</color>。  " );
                         }
                         else
                         {
-                            buffer.Add( "Cloaking", cloakColor ).Add( ": This ship has <color=#ffdf72>" );
+                            buffer.Add( "隐形", cloakColor ).Add( "：该舰船拥有<color=#ffdf72>" );
                             buffer.AddNumberMoreReadable( systemStats.CloakingPoints );
                             buffer.Add( "</color> max cloaking points.  As long as its current cloaking points are above zero, it will be invisible to enemies (although detected).  " );
                             if ( systemData.ParentEntityTypeData.IsCombatant )
                                 buffer.Add( "Every time this ship fires, it will expend " )
                                     .Add( Mathf.RoundToInt( maxWeaponCloakingReductionCost.ToFloatNonSim() * 100f ) )
                                     .Add( "% of its cloaking points." );
-                            buffer.Add( "After " ).Add( ExternalConstants.Instance.SecondsToWaitBeforeRecloaking ).Add( " seconds of not losing any cloaking points, this ship will regain all of the lost cloaking points.  " );
+                            buffer.Add( "在 " ).Add( ExternalConstants.Instance.SecondsToWaitBeforeRecloaking ).Add( " 秒内未损失任何隐形点后，该舰船将恢复所有损失的隐形点。  " );
                         }
                         if ( systemData.CareAboutStateOfMatterToBeEnabled )
                             WriteSystemStateOfMatterSuffix( buffer, systemData, relatedSquadOrNull );
@@ -6709,20 +6704,20 @@ buffer.Add( " gx</color>。  " );
                             {
                                 buffer.Add( "<color=#ffdf72>" );
                                 buffer.Add( systemStats.TractorCount );
-                                buffer.Add( "</color>x <color=#f25e1c>REVERSE TRACTOR BEAMS</color>: range <color=#ffdf72>" );
+                                buffer.Add( "</color>x <color=#f25e1c>反向牵引光束</color>: 射程 <color=#ffdf72>" );
                                 buffer.AddNumberMoreReadable( systemStats.TractorRange );
                                 buffer.Add( "</color>" );
                                 WriteTractorRangeInfo( buffer, systemData, false );
                             }
                             else
                             {
-                                buffer.Add( "<color=#f25e1c>REVERSE TRACTOR BEAMS</color>: A maximum of <color=#ffdf72>" );
+                                buffer.Add( "<color=#f25e1c>反向牵引光束</color>: 最多 <color=#ffdf72>" );
                                 buffer.Add( systemStats.TractorCount );
-                                buffer.Add( "</color> enemy units can be grappled, pulling this unit with them, if they are within <color=#ffdf72>" );
+                                buffer.Add( "</color> 个敌方单位可被捕获，拉动该单位跟随它们，如果它们在 <color=#ffdf72>" );
                                 buffer.AddNumberMoreReadable( systemStats.TractorRange );
-                                buffer.Add( "</color> range" );
+                                buffer.Add( "</color> 射程内" );
                                 WriteTractorRangeInfo( buffer, systemData, true );
-                                buffer.Add( "They can still move freely, pulling this unit with them, but they can't leave the current planet.  " );
+                                buffer.Add( "它们仍可自由移动，拉动该单位跟随它们，但不能离开当前行星。  " );
                             }
                         }
                         else
@@ -6731,18 +6726,18 @@ buffer.Add( " gx</color>。  " );
                             {
                                 buffer.Add( "<color=#ffdf72>" );
                                 buffer.Add( systemStats.TractorCount );
-                                buffer.Add( "</color>x <color=#f25e1c>TRACTOR BEAMS</color>: range <color=#ffdf72>" );
+                                buffer.Add( "</color>x <color=#f25e1c>牵引光束</color>: 射程 <color=#ffdf72>" );
                                 buffer.AddNumberMoreReadable( systemStats.TractorRange );
                                 buffer.Add( "</color>" );
                                 WriteTractorRangeInfo( buffer, systemData, false );
                             }
                             else
                             {
-                                buffer.Add( "<color=#f25e1c>TRACTOR BEAMS</color>: A maximum of <color=#ffdf72>" );
+                                buffer.Add( "<color=#f25e1c>牵引光束</color>: 最多 <color=#ffdf72>" );
                                 buffer.Add( systemStats.TractorCount );
-                                buffer.Add( "</color> enemy squads can be frozen in place if they are within <color=#ffdf72>" );
+                                buffer.Add( "</color> 个敌方小队可被定在原地，如果它们在 <color=#ffdf72>" );
                                 buffer.AddNumberMoreReadable( systemStats.TractorRange );
-                                buffer.Add( "</color> range" );
+                                buffer.Add( "</color> 射程内" );
                                 WriteTractorRangeInfo( buffer, systemData, true );
                             }
                         }
@@ -6753,13 +6748,13 @@ buffer.Add( " gx</color>。  " );
                     #region Gravity System
                     else if ( systemData.GravityHitsEngine_gxLessThan > 0 )
                     {
-                        buffer.Add( "<color=#f25e1c>GRAVITY FIELD</color>: ");
+                        buffer.Add( "<color=#f25e1c>重力场</color>: ");
                         if ( detailLevel < TooltipDetail.Full )
                         {
                             if (systemStats.GravityRange > 99999) {
-                                buffer.Add("infinite range" );
+                                buffer.Add("无限射程" );
                             } else {
-                                buffer.Add("range " );
+                                buffer.Add("射程 " );
                                 buffer.AddNumberMoreReadable( systemStats.GravityRange, "ffdf72" );
                             }
                             buffer.Add( ", slows to <color=#ffdf72>" );
@@ -6771,9 +6766,9 @@ buffer.Add( " gx</color>。  " );
                         else
                         {
                             if (systemStats.GravityRange > 99999) {
-                                buffer.Add( "All enemy squads on-planet" );
+                                buffer.Add( "行星上所有敌方小队" );
                             } else {
-                                buffer.Add( "All enemy squads within range " );
+                                buffer.Add( "射程内所有敌方小队 " );
                                 buffer.AddNumberMoreReadable( systemStats.GravityRange, "ffdf72" );
                             }
                             buffer.Add( " are slowed to <color=#ffdf72>" );
@@ -6822,100 +6817,100 @@ buffer.Add( " gx</color>。  " );
                         if ( multiplier >= FInt.One )
                         {
                             if ( Modifier.ComparisonRefersToMyself )
-                                buffer.Add( "<color=#f25e1c>ATTACK BONUS</color>: If  " );
+                                buffer.Add( "<color=#f25e1c>攻击加成</color>：如果 " );
                             else
-                                buffer.Add( "<color=#f25e1c>ATTACK BONUS</color>: If target " );
+                                buffer.Add( "<color=#f25e1c>攻击加成</color>：如果目标 " );
                         } else
                         {
                             if ( Modifier.ComparisonRefersToMyself )
-                                buffer.Add( "<color=#f25e1c>ATTACK PENALTY</color>: If " );
+                                buffer.Add( "<color=#f25e1c>攻击惩罚</color>: 如果 " );
                             else
-                                buffer.Add( "<color=#f25e1c>ATTACK PENALTY</color>: If target " );
+                                buffer.Add( "<color=#f25e1c>攻击惩罚</color>: 如果目标 " );
                         }
                     } else
                     {
                         if ( multiplier < FInt.One )
                         {
                             if ( Modifier.ComparisonRefersToMyself )
-                                buffer.Add( "<color=#f25e1c>DEFENSIVE BONUS</color>: If " );
+                                buffer.Add( "<color=#f25e1c>防御加成</color>: 如果 " );
                             else
-                                buffer.Add( "<color=#f25e1c>DEFENSIVE BONUS</color>: If target " );
+                                buffer.Add( "<color=#f25e1c>防御加成</color>: 如果目标 " );
                         } else
                         {
                             if ( Modifier.ComparisonRefersToMyself )
-                                buffer.Add( "<color=#f25e1c>DEFENSIVE PENALTY</color>: If " );
+                                buffer.Add( "<color=#f25e1c>防御惩罚</color>: 如果 " );
                             else
-                                buffer.Add( "<color=#f25e1c>DEFENSIVE PENALTY</color>: If attacker " );
+                                buffer.Add( "<color=#f25e1c>防御惩罚</color>: 如果攻击者 " );
                         }
 
                     }
                     switch ( Modifier.BasedOn )
                     {
                         case DamageModifierBasedOn.MaxHull:
-                            buffer.Add( "max hull health" );
+                            buffer.Add( "最大船体生命" );
                             break;
                         case DamageModifierBasedOn.CurrentHullPercentage:
                         case DamageModifierBasedOn.MyCurrentHullPercentage:
-                            buffer.Add( "current hull health" );
+                            buffer.Add( "当前船体生命" );
                             break;
                         case DamageModifierBasedOn.MaxPersonalShield:
-                            buffer.Add( "max personal shields" );
+                            buffer.Add( "最大个人护盾" );
                             break;
                         case DamageModifierBasedOn.TargetShieldPercentageMissing:
                         case DamageModifierBasedOn.MyShieldPercentageMissing:
-                            buffer.Add( "current missing personal shields" );
+                            buffer.Add( "当前缺失个人护盾" );
                             break;
                         case DamageModifierBasedOn.TargetHullPercentageMissing:
                         case DamageModifierBasedOn.MyHullPercentageMissing:
-                            buffer.Add( "current missing hull health" );
+                            buffer.Add( "当前缺失船体生命" );
                             break;
                         case DamageModifierBasedOn.MaxBubbleForcefield:
-                            buffer.Add( "max bubble forcefield strength" );
+                            buffer.Add( "最大气泡力场强度" );
                             limitedToBubble = true;
                             break;
                         case DamageModifierBasedOn.CurrentPersonalShieldPercentage:
                         case DamageModifierBasedOn.MyCurrentPersonalShieldPercentage:
-                            buffer.Add( "current personal shields" );
+                            buffer.Add( "当前个人护盾" );
                             break;
                         case DamageModifierBasedOn.AttackDistance:
-                            buffer.Add( "is" );
+                            buffer.Add( "距离" );
                             break;
                         case DamageModifierBasedOn.CurrentSpeedIfMoving:
-                            buffer.Add( "current speed" );
+                            buffer.Add( "当前速度" );
                             break;
                         case DamageModifierBasedOn.Armor_mm:
-                            buffer.Add( "armor" );
+                            buffer.Add( "护甲" );
                             break;
                         case DamageModifierBasedOn.EnergyUsage:
-                            buffer.Add( "energy usage" );
+                            buffer.Add( "能量消耗" );
                             break;
                         case DamageModifierBasedOn.Albedo:
-                            buffer.Add( "albedo" );
+                            buffer.Add( "反照率" );
                             break;
                         case DamageModifierBasedOn.Mass_tX:
-                            buffer.Add( "mass" );
+                            buffer.Add( "质量" );
                             break;
                         case DamageModifierBasedOn.Engine_gx:
-                            buffer.Add( "engine power" );
+                            buffer.Add( "引擎功率" );
                             break;
                         case DamageModifierBasedOn.TargetTimeAtPlanet:
-                            buffer.Add( "has been here for" );
+                            buffer.Add( "已在此停留" );
                             break;
                         case DamageModifierBasedOn.MyTimeAtPlanet:
-                            buffer.Add( "have been here for" );
+                            buffer.Add( "已在此停留" );
                             break;
                         case DamageModifierBasedOn.FactionNetEnergy:
-                            buffer.Add( " have " );
+                            buffer.Add( " 有 " );
                             break;
                         case DamageModifierBasedOn.TargetMobility:
-                            buffer.Add( "type" );
+                            buffer.Add( "类型" );
                             break;
                         case DamageModifierBasedOn.TargetIsDrone:
-                            buffer.Add( "type" );
+                            buffer.Add( "类型" );
                             break;
 
                         default:
-                            buffer.Add( "Unknown DamageModifierBasedOn." ).Add( EnumNameCache.GetName( Modifier.BasedOn ) );
+                            buffer.Add( "未知伤害修正基于。" ).Add( EnumNameCache.GetName( Modifier.BasedOn ) );
                             break;
                     }
                     buffer.Add( " " );
@@ -6934,18 +6929,18 @@ buffer.Add( " gx</color>。  " );
                             buffer.Add( ">=" );
                             break;
                         case DamageModifierComparisonType.MultiplesOf:
-                            buffer.Add( "multiples of" );
+                            buffer.Add( "倍数" );
                             break;
                         case DamageModifierComparisonType.Equals:
-                            buffer.Add( "is" );
+                            buffer.Add( "等于" );
                             break;
                         default: break;
                     }
                     buffer.Add( " <color=#ffdf72>" );
                     if ( Modifier.BasedOn == DamageModifierBasedOn.TargetMobility)
-                        buffer.Add( Modifier.ComparedToInt > 0 ? "Mobile" : "Stationary");
+                        buffer.Add( Modifier.ComparedToInt > 0 ? "移动" : "静止");
                     else if ( Modifier.BasedOn == DamageModifierBasedOn.TargetIsDrone)
-                        buffer.Add( Modifier.ComparedToInt > 0 ? "Drone" : "Not Drone");
+                        buffer.Add( Modifier.ComparedToInt > 0 ? "无人机" : "非无人机");
                     else if ( Modifier.UsesInt )
                         buffer.AddNumberMoreReadable( Modifier.ComparedToInt );
                     else
@@ -6969,7 +6964,7 @@ buffer.Add( " gx</color>。  " );
                             buffer.Add( "%" );
                             break;
                         case DamageModifierBasedOn.AttackDistance:
-                            buffer.Add( " away" );
+                            buffer.Add( " 距离" );
                             break;
                         case DamageModifierBasedOn.CurrentSpeedIfMoving:
                             break;
@@ -6988,13 +6983,13 @@ buffer.Add( " gx</color>。  " );
                             break;
                         case DamageModifierBasedOn.MyTimeAtPlanet:
                         case DamageModifierBasedOn.TargetTimeAtPlanet:
-                            buffer.Add( " seconds" );
+                            buffer.Add( " 秒" );
                             break;
                         case DamageModifierBasedOn.FactionNetEnergy:
-                            buffer.Add( " net energy " );
+                            buffer.Add( " 净能量 " );
                             break;
                         default:
-                            buffer.Add( "Unknown DamageModifierBasedOn." ).Add( EnumNameCache.GetName( Modifier.BasedOn ) );
+                            buffer.Add( "未知伤害修正基于。" ).Add( EnumNameCache.GetName( Modifier.BasedOn ) );
                             break;
                     }
                     buffer.Add( "</color>, " );
@@ -7006,14 +7001,14 @@ buffer.Add( " gx</color>。  " );
                     buffer.Add( multiplier.ReadableString );
 
                     if ( Modifier.IsForOutgoingDamage )
-                        buffer.Add( "x</color> damage to target" );
+                        buffer.Add( "x</color> 伤害对目标" );
                     else
-                        buffer.Add( "x</color> damage to this" );
+                        buffer.Add( "x</color> 伤害对本舰" );
 
                     switch ( Modifier.BasedOn )
                     {
                         case DamageModifierBasedOn.FactionNetEnergy:
-                            buffer.Add( " for each such multiple." );
+                            buffer.Add( " 每倍。" );
                             break;
                         default:
                             break;
@@ -7021,28 +7016,28 @@ buffer.Add( " gx</color>。  " );
                     switch ( Modifier.AppliesTo )
                     {
                         case DamageModifierAppliesTo.Everything:
-                            buffer.Add( ".  " );
+                            buffer.Add( "。  " );
                             break;
                         case DamageModifierAppliesTo.PersonalShieldOnly:
                             if ( limitedToBubble )
-                                buffer.Add( "'s bubble-forcefield.  " );
+                                buffer.Add( "的气泡力场。  " );
                             else
-                                buffer.Add( "'s personal shields.  " );
+                                buffer.Add( "的个人护盾。  " );
                             break;
                         case DamageModifierAppliesTo.HullOnly:
                             if ( SystemStatsOrNull != null && SystemStatsOrNull.PercentDamageBypassesPersonalShields > FInt.Zero )
-                                buffer.Add( "'s hull.  " );
+                                buffer.Add( "的船体。  " );
                             else
-                                buffer.Add( "'s hull (assuming shields are down).  " );
+                                buffer.Add( "的船体（假设护盾已关闭）。  " );
                             break;
                         case DamageModifierAppliesTo.AllShields:
                             if ( limitedToBubble )
-                                buffer.Add( "'s bubble-forcefield.  " );
+                                buffer.Add( "的气泡力场。  " );
                             else
-                                buffer.Add( "'s shields (personal or bubble-forcefield).  " );
+                                buffer.Add( "的护盾（个人或力场护盾）。  " );
                             break;
                         default:
-                            buffer.Add( "Unknown DamageModifierAppliesTo." ).Add( EnumNameCache.GetName( Modifier.AppliesTo ) );
+                            buffer.Add( "未知伤害修正适用于。" ).Add( EnumNameCache.GetName( Modifier.AppliesTo ) );
                             break;
                     }
 
@@ -7053,130 +7048,130 @@ buffer.Add( " gx</color>。  " );
                         if ( multiplier >= FInt.One )
                         {
                             if ( Modifier.ComparisonRefersToMyself )
-                                buffer.Add( "<color=#f25e1c>ATTACK BONUS</color>: If this ship " );
+                                buffer.Add( "<color=#f25e1c>攻击加成</color>：如果本舰 " );
                             else
-                                buffer.Add( "<color=#f25e1c>ATTACK BONUS</color>: If the target " );
+                                buffer.Add( "<color=#f25e1c>攻击加成</color>：如果目标 " );
                         } else
                         {
                             if ( Modifier.ComparisonRefersToMyself )
-                                buffer.Add( "<color=#f25e1c>ATTACK PENALTY</color>: If this ship " );
+                                buffer.Add( "<color=#f25e1c>攻击惩罚</color>: 如果本舰 " );
                             else
-                                buffer.Add( "<color=#f25e1c>ATTACK PENALTY</color>: If the target " );
+                                buffer.Add( "<color=#f25e1c>攻击惩罚</color>: 如果目标 " );
                         }
                     } else
                     {
                         if ( multiplier < FInt.One )
                         {
                             if ( Modifier.ComparisonRefersToMyself )
-                                buffer.Add( "<color=#f25e1c>DEFENSIVE BONUS</color>: If this ship " );
+                                buffer.Add( "<color=#f25e1c>防御加成</color>: 如果本舰 " );
                             else
-                                buffer.Add( "<color=#f25e1c>DEFENSIVE BONUS</color>: If the target " );
+                                buffer.Add( "<color=#f25e1c>防御加成</color>: 如果目标 " );
                         } else
                         {
                             if ( Modifier.ComparisonRefersToMyself )
-                                buffer.Add( "<color=#f25e1c>DEFENSIVE PENALTY</color>: If this ship " );
+                                buffer.Add( "<color=#f25e1c>防御惩罚</color>: 如果本舰 " );
                             else
-                                buffer.Add( "<color=#f25e1c>DEFENSIVE PENALTY</color>: If the attacker " );
+                                buffer.Add( "<color=#f25e1c>防御惩罚</color>: 如果攻击者 " );
                         }
 
                     }
                     switch ( Modifier.BasedOn )
                     {
                         case DamageModifierBasedOn.MaxHull:
-                            buffer.Add( "has max hull health of" );
+                            buffer.Add( "最大船体生命值为" );
                             break;
                         case DamageModifierBasedOn.MyCurrentHullPercentage:
                         case DamageModifierBasedOn.CurrentHullPercentage:
-                            buffer.Add( "has current hull health of" );
+                            buffer.Add( "当前船体生命值为" );
                             break;
                         case DamageModifierBasedOn.TargetShieldPercentageMissing:
                         case DamageModifierBasedOn.MyShieldPercentageMissing:
-                            buffer.Add( "has missing current personal shields of" );
+                            buffer.Add( "当前缺失个人护盾值为" );
                             break;
                         case DamageModifierBasedOn.TargetHullPercentageMissing:
                         case DamageModifierBasedOn.MyHullPercentageMissing:
-                            buffer.Add( "has missing current hull health of" );
+                            buffer.Add( "当前缺失船体生命值为" );
                             break;
                         case DamageModifierBasedOn.MaxPersonalShield:
-                            buffer.Add( "has max personal shields of" );
+                            buffer.Add( "最大个人护盾值为" );
                             break;
                         case DamageModifierBasedOn.MaxBubbleForcefield:
-                            buffer.Add( "has a max bubble forcefield strength of" );
+                            buffer.Add( "最大气泡力场强度为" );
                             limitedToBubble = true;
                             break;
                         case DamageModifierBasedOn.MyCurrentPersonalShieldPercentage:
                         case DamageModifierBasedOn.CurrentPersonalShieldPercentage:
-                            buffer.Add( "has current personal shields of" );
+                            buffer.Add( "当前个人护盾值为" );
                             break;
                         case DamageModifierBasedOn.AttackDistance:
-                            buffer.Add( "is" );
+                            buffer.Add( "距离" );
                             break;
                         case DamageModifierBasedOn.CurrentSpeedIfMoving:
-                            buffer.Add( "is currently moving at a speed of" );
+                            buffer.Add( "当前移动速度为" );
                             break;
                         case DamageModifierBasedOn.Armor_mm:
-                            buffer.Add( "has armor of" );
+                            buffer.Add( "护甲为" );
                             break;
                         case DamageModifierBasedOn.EnergyUsage:
-                            buffer.Add( "has energy usage of" );
+                            buffer.Add( "能量消耗为" );
                             break;
                         case DamageModifierBasedOn.Albedo:
-                            buffer.Add( "has an albedo of" );
+                            buffer.Add( "反照率为" );
                             break;
                         case DamageModifierBasedOn.Mass_tX:
-                            buffer.Add( "has mass of" );
+                            buffer.Add( "质量为" );
                             break;
                         case DamageModifierBasedOn.Engine_gx:
-                            buffer.Add( "has engine power of" );
+                            buffer.Add( "引擎功率为" );
                             break;
                         case DamageModifierBasedOn.TargetTimeAtPlanet:
-                            buffer.Add( "has been at this planet for" );
+                            buffer.Add( "已在本行星停留" );
                             break;
                         case DamageModifierBasedOn.MyTimeAtPlanet:
-                            buffer.Add( "have been at this planet for" );
+                            buffer.Add( "已在本行星停留" );
                             break;
                         case DamageModifierBasedOn.FactionNetEnergy:
-                            buffer.Add( " have " );
+                            buffer.Add( "的阵营" );
                             break;
                         case DamageModifierBasedOn.TargetMobility:
-                            buffer.Add( "type" );
+                            buffer.Add( "类型" );
                             break;
                         case DamageModifierBasedOn.TargetIsDrone:
-                            buffer.Add( "type" );
+                            buffer.Add( "类型" );
                             break;
 
                         default:
-                            buffer.Add( "Unknown DamageModifierBasedOn." ).Add( EnumNameCache.GetName( Modifier.BasedOn ) );
+                            buffer.Add( "未知伤害修正基于。" ).Add( EnumNameCache.GetName( Modifier.BasedOn ) );
                             break;
                     }
                     buffer.Add( " " );
                     switch ( Modifier.ComparisonType )
                     {
                         case DamageModifierComparisonType.LessThan:
-                            buffer.Add( "less than" );
+                            buffer.Add( "小于" );
                             break;
                         case DamageModifierComparisonType.GreaterThan:
-                            buffer.Add( "more than" );
+                            buffer.Add( "大于" );
                             break;
                         case DamageModifierComparisonType.AtMost:
-                            buffer.Add( "at most" );
+                            buffer.Add( "至多" );
                             break;
                         case DamageModifierComparisonType.AtLeast:
-                            buffer.Add( "at least" );
+                            buffer.Add( "至少" );
                             break;
                         case DamageModifierComparisonType.MultiplesOf:
-                            buffer.Add( "multiples of" );
+                            buffer.Add( "倍数" );
                             break;
                         case DamageModifierComparisonType.Equals:
-                            buffer.Add("is");
+                            buffer.Add( "等于" );
                             break;
                         default: break;
                     }
                     buffer.Add( " <color=#ffdf72>" );
                     if ( Modifier.BasedOn == DamageModifierBasedOn.TargetMobility)
-                        buffer.Add( Modifier.ComparedToInt > 0 ? "Mobile" : "Stationary");
+                        buffer.Add( Modifier.ComparedToInt > 0 ? "移动" : "静止");
                     else if ( Modifier.BasedOn == DamageModifierBasedOn.TargetIsDrone)
-                        buffer.Add( Modifier.ComparedToInt > 0 ? "Drone" : "Not Drone");
+                        buffer.Add( Modifier.ComparedToInt > 0 ? "无人机" : "非无人机");
                     else if ( Modifier.UsesInt )
                         buffer.AddNumberMoreReadable( Modifier.ComparedToInt );
                     else
@@ -7200,7 +7195,7 @@ buffer.Add( " gx</color>。  " );
                             buffer.Add( "%" );
                             break;
                         case DamageModifierBasedOn.AttackDistance:
-                            buffer.Add( " away from this ship" );
+                            buffer.Add( "" );
                             break;
                         case DamageModifierBasedOn.CurrentSpeedIfMoving:
                             break;
@@ -7219,32 +7214,32 @@ buffer.Add( " gx</color>。  " );
                             break;
                         case DamageModifierBasedOn.MyTimeAtPlanet:
                         case DamageModifierBasedOn.TargetTimeAtPlanet:
-                            buffer.Add( " seconds" );
+                            buffer.Add( "秒" );
                             break;
                         case DamageModifierBasedOn.FactionNetEnergy:
-                            buffer.Add( " net energy " );
+                            buffer.Add( "净能量" );
                             break;
                         default:
-                            buffer.Add( "Unknown DamageModifierBasedOn." ).Add( EnumNameCache.GetName( Modifier.BasedOn ) );
+                            buffer.Add( "未知伤害修正基于。" ).Add( EnumNameCache.GetName( Modifier.BasedOn ) );
                             break;
                     }
-                    buffer.Add( "</color>, then " );
+                    buffer.Add( "</color>，则 " );
                     if ( Modifier.IsForOutgoingDamage )
-                        buffer.Add( "the above weapon does <color=#ffdf72>" );
+                        buffer.Add( "上方武器造成 <color=#ffdf72>" );
                     else
-                        buffer.Add( "the attacker does <color=#ffdf72>" );
+                        buffer.Add( "攻击者造成 <color=#ffdf72>" );
 
                     buffer.Add( multiplier.ReadableString );
 
                     if ( Modifier.IsForOutgoingDamage )
-                        buffer.Add( "x</color> damage to the target" );
+                        buffer.Add( "x</color> 伤害对目标" );
                     else
-                        buffer.Add( "x</color> damage to this ship" );
+                        buffer.Add( "x</color> 伤害对本舰" );
 
                     switch ( Modifier.BasedOn )
                     {
                         case DamageModifierBasedOn.FactionNetEnergy:
-                            buffer.Add( " for each such multiple." );
+                            buffer.Add( " 每倍。" );
                             break;
                         default:
                             break;
@@ -7252,28 +7247,28 @@ buffer.Add( " gx</color>。  " );
                     switch ( Modifier.AppliesTo )
                     {
                         case DamageModifierAppliesTo.Everything:
-                            buffer.Add( ".  " );
+                            buffer.Add( "。  " );
                             break;
                         case DamageModifierAppliesTo.PersonalShieldOnly:
                             if ( limitedToBubble )
-                                buffer.Add( "'s bubble-forcefield.  " );
+                                buffer.Add( "的气泡力场。  " );
                             else
-                                buffer.Add( "'s personal shields.  " );
+                                buffer.Add( "的个人护盾。  " );
                             break;
                         case DamageModifierAppliesTo.HullOnly:
                             if ( SystemStatsOrNull != null && SystemStatsOrNull.PercentDamageBypassesPersonalShields > FInt.Zero )
-                                buffer.Add( "'s hull.  " );
+                                buffer.Add( "的船体。  " );
                             else
-                                buffer.Add( "'s hull (assuming shields are down).  " );
+                                buffer.Add( "的船体（假设护盾已关闭）。  " );
                             break;
                         case DamageModifierAppliesTo.AllShields:
                             if ( limitedToBubble )
-                                buffer.Add( "'s bubble-forcefield.  " );
+                                buffer.Add( "的气泡力场。  " );
                             else
-                                buffer.Add( "'s shields (personal or bubble-forcefield).  " );
+                                buffer.Add( "的护盾（个人或力场护盾）。  " );
                             break;
                         default:
-                            buffer.Add( "Unknown DamageModifierAppliesTo." ).Add( EnumNameCache.GetName( Modifier.AppliesTo ) );
+                            buffer.Add( "未知伤害修正适用于。" ).Add( EnumNameCache.GetName( Modifier.AppliesTo ) );
                             break;
                     }
 
@@ -7423,7 +7418,7 @@ buffer.Add( " gx</color>。  " );
                             buffer.Add( " 该舰阵营的净能量 " );
                             break;
                         default:
-                            buffer.Add( "未知 DamageModifierBasedOn." ).Add( EnumNameCache.GetName( Modifier.BasedOn ) );
+                            buffer.Add( "未知伤害修正基于。" ).Add( EnumNameCache.GetName( Modifier.BasedOn ) );
                             break;
                     }
 
@@ -7464,7 +7459,7 @@ buffer.Add( " gx</color>。  " );
                             buffer.Add( "的护盾（个人或力场护盾）" );
                             break;
                         default:
-                            buffer.Add( "未知 DamageModifierAppliesTo" ).Add( EnumNameCache.GetName( Modifier.AppliesTo ) );
+                            buffer.Add( "未知伤害修正适用于" ).Add( EnumNameCache.GetName( Modifier.AppliesTo ) );
                             break;
                     }
 
@@ -7687,13 +7682,13 @@ buffer.Add( " gx</color>。  " );
                 switch ( (int)relatedSystem.LastDamageAbortCode )
                 {
                     case 1:
-                        buffer.Add( "Immune to All Damage" );
+                        buffer.Add( "对所有伤害免疫" );
                         break;
                     case 2:
-                        buffer.Add( "Newly-Created Immunity To Damage" );
+                        buffer.Add( "新生伤害免疫" );
                         break;
                     case 3:
-                        buffer.Add( "External Invulnerability" );
+                        buffer.Add( "外部无敌" );
                         break;
                     case 4:
                         buffer.Add( "foundProtectorButCouldNotHitDueToFiniteHitCountAOE" );
@@ -7702,25 +7697,25 @@ buffer.Add( " gx</color>。  " );
                         buffer.Add( "Debug_IgnoresDamage" );
                         break;
                     case 6:
-                        buffer.Add( "HonorFiniteHitCountAOE and not in list" );
+                        buffer.Add( "有限命中计数AOE且不在列表中" );
                         break;
                     case 7:
-                        buffer.Add( "Calculated Zero Damage!" );
+                        buffer.Add( "计算伤害为零！" );
                         break;
                     case 8:
-                        buffer.Add( "Damage-Drop-During-Hit" );
+                        buffer.Add( "命中时伤害衰减" );
                         break;
                     case 9:
-                        buffer.Add( "Health-Of-Target-Zero" );
+                        buffer.Add( "目标生命为零" );
                         break;
                     case 10:
-                        buffer.Add( "Overdrives-Shields-No-Shields" );
+                        buffer.Add( "过载护盾-无护盾" );
                         break;
                     case 11:
-                        buffer.Add( "Shooting Dead Target" );
+                        buffer.Add( "攻击已死目标" );
                         break;
                     default:
-                        buffer.Add( "CODE " ).Add( (int)relatedSystem.LastDamageAbortCode );
+                        buffer.Add( "代码 " ).Add( (int)relatedSystem.LastDamageAbortCode );
                         break;
                 }
                 buffer.EndColor().Add( "  " );
@@ -8377,7 +8372,7 @@ buffer.Add( " gx</color>。  " );
             if ( squad.TypeData.GrantsStuffToBeAddedToPlayerFleets )
             {
                 if ( squad.ShipGrantsList != null && squad.ShipGrantsList.Count > 0 )
-                    return "此处的舰船详情";
+                    return "此处可用舰船的详情";
             }
             if ( squad.TypeData.IsFleetLeader )
             {
@@ -8790,7 +8785,7 @@ buffer.Add( " gx</color>。  " );
                         buffer.Add( " 小于 " );
                     buffer.StartColor( Color );
                     buffer.AddFixedDecimal( max.ToFloatNonSim(), 2 );
-                    buffer.Add( "</color>.  " );
+                    buffer.Add( "</color>。  " );
                 }
             }
         }
@@ -8929,11 +8924,11 @@ buffer.Add( " gx</color>。  " );
             if ( useText )
             {
                 if ( fuelType == ResourceType.FuelArgon )
-                    buffer.Add( "Argon: " );
+                    buffer.Add( "氩：" );
                 else if ( fuelType == ResourceType.FuelRadon )
-                    buffer.Add( "Radon: " );
+                    buffer.Add( "氡：" );
                 else if ( fuelType == ResourceType.FuelXenon )
-                    buffer.Add( "Xenon: " );
+                    buffer.Add( "氙：" );
             }
             if ( fuelCurr == 0 )
             {
@@ -9139,7 +9134,7 @@ buffer.Add( " gx</color>。  " );
             } else
             {
                 WriteBuffsStartIfNeeded( buffer, ref alreadyWroteBuffsStart );
-                buffer.WrapHull( "Hull: ", false, false );
+                buffer.WrapHull( "船体： ", false, false );
                 alreadyWroteHullBuffsStart = true;
             }
         }
@@ -9152,7 +9147,7 @@ buffer.Add( " gx</color>。  " );
             } else
             {
                 WriteBuffsStartIfNeeded( buffer, ref alreadyWroteBuffsStart );
-                buffer.WrapShield( "Shield: ", false, false );
+                buffer.WrapShield( "护盾： ", false, false );
                 alreadyWroteShieldBuffsStart = true;
             }
         }
@@ -9165,7 +9160,7 @@ buffer.Add( " gx</color>。  " );
             } else
             {
                 WriteBuffsStartIfNeeded( buffer, ref alreadyWroteBuffsStart );
-                buffer.WrapDamage( "Damage: ", false, false );
+                buffer.WrapDamage( "伤害： ", false, false );
                 alreadyWroteDamageBuffsStart = true;
             }
         }
@@ -9178,7 +9173,7 @@ buffer.Add( " gx</color>。  " );
             } else
             {
                 WriteBuffsStartIfNeeded( buffer, ref alreadyWroteBuffsStart );
-                buffer.WrapSpeed( "Speed: ", false, false );
+                buffer.WrapSpeed( "速度： ", false, false );
                 alreadyWroteSpeedBuffsStart = true;
             }
         }
@@ -9191,7 +9186,7 @@ buffer.Add( " gx</color>。  " );
             } else
             {
                 WriteBuffsStartIfNeeded( buffer, ref alreadyWroteBuffsStart );
-                buffer.WrapRange( "Range: ", false, false );
+                buffer.WrapRange( "射程： ", false, false );
                 alreadyWroteRangeBuffsStart = true;
             }
         }
@@ -9204,7 +9199,7 @@ buffer.Add( " gx</color>。  " );
             } else
             {
                 WriteBuffsStartIfNeeded( buffer, ref alreadyWroteBuffsStart );
-                buffer.WrapCloak( "Cloak: ", false, false );
+                buffer.WrapCloak( "隐形： ", false, false );
                 alreadyWroteCloakBuffsStart = true;
             }
         }
@@ -9231,7 +9226,7 @@ buffer.Add( " gx</color>。  " );
             } else
             {
                 WriteDebuffsStartIfNeeded( Debuffer, ref alreadyWroteDebuffsStart );
-                Debuffer.WrapHull( "Hull: ", false, false );
+                Debuffer.WrapHull( "船体： ", false, false );
                 alreadyWroteHullDebuffsStart = true;
             }
         }
@@ -9244,7 +9239,7 @@ buffer.Add( " gx</color>。  " );
             } else
             {
                 WriteDebuffsStartIfNeeded( Debuffer, ref alreadyWroteDebuffsStart );
-                Debuffer.WrapShield( "Shield: ", false, false );
+                Debuffer.WrapShield( "护盾： ", false, false );
                 alreadyWroteShieldDebuffsStart = true;
             }
         }
@@ -9257,7 +9252,7 @@ buffer.Add( " gx</color>。  " );
             } else
             {
                 WriteDebuffsStartIfNeeded( Debuffer, ref alreadyWroteDebuffsStart );
-                Debuffer.WrapDamage( "Damage: ", false, false );
+                Debuffer.WrapDamage( "伤害： ", false, false );
                 alreadyWroteDamageDebuffsStart = true;
             }
         }
@@ -9270,7 +9265,7 @@ buffer.Add( " gx</color>。  " );
             } else
             {
                 WriteDebuffsStartIfNeeded( Debuffer, ref alreadyWroteDebuffsStart );
-                Debuffer.WrapSpeed( "Speed: ", false, false );
+                Debuffer.WrapSpeed( "速度： ", false, false );
                 alreadyWroteSpeedDebuffsStart = true;
             }
         }
@@ -9566,9 +9561,9 @@ buffer.Add( " gx</color>。  " );
                 WriteShipClass_GreaterCategoryStartIfNeeded( Buffer, ref AlreadyWroteGeneralStart, DetailLevel, GreaterCategory );
                 WriteShipClass_LesserCategoryStartIfNeeded( Buffer, ref AlreadyWroteLesserStart, DetailLevel, GreaterCategory, ShipClassData_LesserCategoryType.DeathEffect, false );
                 if ( DetailLevel == TooltipDetail.Full )
-                    Buffer.Add( "All Zombifying Types" );
+                    Buffer.Add( "所有僵尸化类型" );
                 else
-                    Buffer.Add( "Zombifying Types" );
+                    Buffer.Add( "僵尸化类型" );
             }*/
             if ( ShipClass.HasAnyDeathEffectModifiers )
             {

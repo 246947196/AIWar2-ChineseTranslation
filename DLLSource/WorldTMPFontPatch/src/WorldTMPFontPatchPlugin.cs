@@ -4,25 +4,29 @@ using BepInEx;
 using HarmonyLib;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace WorldTMPFontPatch;
 
 [BepInPlugin("aiwar2.chinesetranslation.worldtmpfont", "World TMP Font Patch", "1.0.0")]
 public class WorldTMPFontPatchPlugin : BaseUnityPlugin
 {
-    private static TMP_FontAsset cachedFont;
+    private static TMP_FontAsset cachedTMPFont;
+    private static Font cachedLegacyFont;
     private static bool fontInitialized;
 
     private void Awake()
     {
-        Harmony.CreateAndPatchAll(typeof(WorldTMPFontPatchPlugin));
+        Harmony harmony = new Harmony("aiwar2.chinesetranslation.worldtmpfont");
+        harmony.PatchAll(typeof(WorldTMPFontPatchPlugin));
         Logger.LogInfo("World TMP Font Patch loaded");
+        EnsureFonts();
     }
 
-    private static TMP_FontAsset GetFont()
+    private static void EnsureFonts()
     {
         if (fontInitialized)
-            return cachedFont;
+            return;
 
         fontInitialized = true;
 
@@ -45,76 +49,129 @@ public class WorldTMPFontPatchPlugin : BaseUnityPlugin
                 }
             }
 
+            Debug.Log($"[WorldTMPFontPatch] EnsureFonts: fontName={fontName}");
+
             string fontPath = Path.Combine(Paths.PluginPath, "I18NFont4UnityGame", fontName);
             if (!File.Exists(fontPath))
             {
                 Debug.LogWarning($"[WorldTMPFontPatch] Font not found: {fontPath}");
-                return null;
+                return;
             }
 
             AssetBundle bundle = AssetBundle.LoadFromFile(fontPath);
             if (bundle == null)
             {
-                Debug.LogWarning($"[WorldTMPFontPatch] Failed to load AssetBundle: {fontPath}");
-                return null;
+                Debug.LogWarning($"[WorldTMPFontPatch] Failed to load bundle");
+                return;
             }
 
-            cachedFont = bundle.LoadAsset<TMP_FontAsset>($"{fontName} SDF");
-            if (cachedFont == null)
+            Debug.Log($"[WorldTMPFontPatch] Bundle loaded, size={new FileInfo(fontPath).Length}");
+
+            Debug.Log($"[WorldTMPFontPatch] Trying system CJK fonts...");
+            string[] cjkFonts = { "Microsoft YaHei", "SimHei", "SimSun", "Noto Sans CJK SC", "Source Han Sans SC", "DengXian", "Microsoft JhengHei" };
+            foreach (string fn in cjkFonts)
             {
-                TMP_FontAsset[] all = bundle.LoadAllAssets<TMP_FontAsset>();
-                if (all != null && all.Length > 0)
-                    cachedFont = all[0];
+                Font sysFont = Font.CreateDynamicFontFromOSFont(fn, 14);
+                if (sysFont != null && sysFont.name == fn)
+                {
+                    Debug.Log($"[WorldTMPFontPatch] Found: {fn}");
+                    cachedLegacyFont = sysFont;
+                    cachedTMPFont = TMP_FontAsset.CreateFontAsset(cachedLegacyFont);
+                    Debug.Log($"[WorldTMPFontPatch] CreateFontAsset: {(cachedTMPFont != null ? cachedTMPFont.name : "NULL")}");
+                    if (cachedTMPFont != null) break;
+                }
             }
+            if (cachedTMPFont == null)
+                Debug.LogWarning($"[WorldTMPFontPatch] No system CJK font found");
 
             bundle.Unload(false);
-
-            if (cachedFont != null)
-                Debug.Log($"[WorldTMPFontPatch] Loaded TMP font: {cachedFont.name}");
-            else
-                Debug.LogWarning($"[WorldTMPFontPatch] No TMP_FontAsset found in {fontPath}");
         }
         catch (Exception ex)
         {
-            Debug.LogError($"[WorldTMPFontPatch] Error: {ex.Message}");
+            Debug.LogError($"[WorldTMPFontPatch] Error: {ex.GetType().Name}: {ex.Message}\n{ex.StackTrace}");
         }
-
-        return cachedFont;
     }
 
     [HarmonyPostfix]
-    [HarmonyPatch(typeof(TextMeshPro), "OnEnable")]
-    private static void OnTextMeshProEnable(TextMeshPro __instance)
+    [HarmonyPatch(typeof(TMP_Text), "set_font")]
+    private static void OnSetFont(TMP_Text __instance, TMP_FontAsset value)
     {
-        TMP_FontAsset font = GetFont();
-        if (font != null)
-            __instance.font = font;
+        EnsureFonts();
+        if (cachedTMPFont == null)
+            return;
+        if (value == cachedTMPFont)
+        {
+            Debug.Log($"[WorldTMPFontPatch] TMP_Text.set_font SKIP (already CJK): {__instance.GetType().Name} '{__instance.name}' gameObject='{__instance.gameObject.name}' parent='{__instance.transform.parent?.name}'");
+            return;
+        }
+        Debug.Log($"[WorldTMPFontPatch] TMP_Text.set_font REPLACE: {__instance.GetType().Name} '{__instance.name}' in '{__instance.gameObject.name}' (parent={__instance.transform.parent?.name}) font={value?.name}");
+        __instance.font = cachedTMPFont;
     }
 
     [HarmonyPostfix]
-    [HarmonyPatch(typeof(TextMeshPro), "InternalUpdate")]
-    private static void OnTextMeshProInternalUpdate(TextMeshPro __instance)
+    [HarmonyPatch(typeof(Text), "set_font")]
+    private static void OnLegacySetFont(Text __instance, Font value)
     {
-        if (!fontInitialized)
+        EnsureFonts();
+        if (cachedLegacyFont == null)
             return;
-        if (cachedFont == null)
+        if (value == cachedLegacyFont)
+        {
+            Debug.Log($"[WorldTMPFontPatch] Text.set_font SKIP (already CJK): '{__instance.name}' parent='{__instance.transform.parent?.name}'");
             return;
-        if (__instance.font == cachedFont)
-            return;
+        }
+        Debug.Log($"[WorldTMPFontPatch] Text.set_font REPLACE: '{__instance.name}' in '{__instance.gameObject.name}' (parent={__instance.transform.parent?.name}) font={value?.name}");
+        __instance.font = cachedLegacyFont;
+    }
 
-        __instance.font = cachedFont;
+    [HarmonyPostfix]
+    [HarmonyPatch(typeof(TextMeshProUGUI), "Awake")]
+    private static void OnTextMeshProUGUIAwake(TextMeshProUGUI __instance)
+    {
+        EnsureFonts();
+        if (cachedTMPFont == null)
+            return;
+        if (__instance.font == cachedTMPFont)
+            return;
+        Debug.Log($"[WorldTMPFontPatch] TMPUGUI.Awake replace: '{__instance.name}' parent='{__instance.transform.parent?.name}'");
+        __instance.font = cachedTMPFont;
+    }
+
+    [HarmonyPostfix]
+    [HarmonyPatch(typeof(TextMeshProUGUI), "OnEnable")]
+    private static void OnTextMeshProUGUIEnable(TextMeshProUGUI __instance)
+    {
+        EnsureFonts();
+        if (cachedTMPFont == null)
+            return;
+        if (__instance.font == cachedTMPFont)
+            return;
+        Debug.Log($"[WorldTMPFontPatch] TMPUGUI.OnEnable replace: '{__instance.name}' parent='{__instance.transform.parent?.name}'");
+        __instance.font = cachedTMPFont;
     }
 
     [HarmonyPostfix]
     [HarmonyPatch(typeof(TextMeshProUGUI), "InternalUpdate")]
     private static void OnTextMeshProUGUIInternalUpdate(TextMeshProUGUI __instance)
     {
-        TMP_FontAsset font = GetFont();
-        if (font == null)
+        if (cachedTMPFont == null)
             return;
-        if (__instance.font == font)
+        if (__instance.font == cachedTMPFont)
             return;
+        Debug.Log($"[WorldTMPFontPatch] TMPUGUI.InternalUpdate catch: '{__instance.name}' parent='{__instance.transform.parent?.name}'");
+        __instance.font = cachedTMPFont;
+    }
 
-        __instance.font = font;
+    [HarmonyPostfix]
+    [HarmonyPatch(typeof(Text), "OnEnable")]
+    private static void OnLegacyTextEnable(Text __instance)
+    {
+        EnsureFonts();
+        if (cachedLegacyFont == null)
+            return;
+        if (__instance.font == cachedLegacyFont)
+            return;
+        Debug.Log($"[WorldTMPFontPatch] Text.OnEnable replace: '{__instance.name}' parent='{__instance.transform.parent?.name}'");
+        __instance.font = cachedLegacyFont;
     }
 }

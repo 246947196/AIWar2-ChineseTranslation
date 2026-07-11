@@ -5,7 +5,7 @@
            can_record_another_copy_if_already_recorded_in_this_campaign="false"
            text_replacement_related_faction_color="true"
 		   text_replacement_related_player_name="true"
-           chat_text="{FactionColor}Astro Trains&lt;/color&gt; sighted"
+           chat_text="{FactionColor}星际列车&lt;/color&gt;已发现"
            full_text="发件人: 蒂莫西·科波菲尔博士
 人工智能研发部 - 总部指挥部
 
@@ -23,7 +23,7 @@
            can_record_another_copy_if_already_recorded_in_this_campaign="false"
            text_replacement_related_faction_color="true"
 		   text_replacement_related_player_name="true"
-        chat_text="{FactionColor}Astro Trains&lt;/color&gt; defenses intensifed"
+        chat_text="{FactionColor}星际列车&lt;/color&gt;防御已加强"
         full_text="发件人: 蒂莫西·科波菲尔博士
 人工智能研发部 - 总部指挥部
 

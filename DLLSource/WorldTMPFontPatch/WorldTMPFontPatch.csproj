@@ -61,6 +61,15 @@
       <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.TextRenderingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+
   </ItemGroup>
   <ItemGroup>
     <Compile Include="src\WorldTMPFontPatchPlugin.cs" />

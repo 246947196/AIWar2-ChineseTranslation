@@ -360,7 +360,7 @@ Please check the Journal in the sidebar for more details."
              can_record_another_copy_if_already_recorded_in_this_campaign="false"
              text_replacement_related_faction_color="true"
              text_replacement_related_planet="true"
-             chat_text="Commander, we have just encountered a Turret Schematic Server (TSS) on {PlanetName}!"
+             chat_text="指挥官，我们在{PlanetName}上发现了一个炮塔蓝图服务器（TSS）！"
              full_text="&lt;b&gt;可入侵炮塔设计&lt;/b&gt;
 &lt;size=80%&gt;指挥官，我们有机会渗透该星系中AI的网络。 &lt;/size&gt;
 
@@ -383,7 +383,7 @@ Please check the Journal in the sidebar for more details."
              can_record_another_copy_if_already_recorded_in_this_campaign="false"
              text_replacement_related_faction_color="true"
              text_replacement_related_planet="true"
-             chat_text="Commander, we have just encountered a Advanced Research Station (ARS) on {PlanetName}!"
+             chat_text="指挥官，我们在{PlanetName}上发现了一个高级研究站（ARS）！"
              full_text="&lt;b&gt;可入侵舰船设计&lt;/b&gt;
 &lt;size=80%&gt;指挥官，我们有机会渗透该星系中AI的舰船蓝图网络。 &lt;/size&gt;
 
