@@ -207,6 +207,7 @@ $transModsDir = Join-Path $translationDir "XMLMods"
 $gameModsDir = Join-Path $gameDir "XMLMods"
 
 if (Test-Path $transModsDir) {
+    # Copy XML files (entity definitions, planet name type metadata, etc.)
     $modsFilesToDeploy = @(Get-ChildItem -Path $transModsDir -Recurse -Filter "*.xml")
     $modsDeployed = 0
     foreach ($f in $modsFilesToDeploy) {
@@ -221,7 +222,22 @@ if (Test-Path $transModsDir) {
         Copy-Item $f.FullName $destFile -Force
         $modsDeployed++
     }
-    Write-Host "Deployed $modsDeployed XMLMods files" -ForegroundColor Green
+    # Copy text files (planet name lists, etc.)
+    $txtFilesToDeploy = @(Get-ChildItem -Path $transModsDir -Recurse -Filter "*.txt")
+    $txtDeployed = 0
+    foreach ($f in $txtFilesToDeploy) {
+        $relPath = $f.FullName.Substring($transModsDir.Length + 1)
+        $destFile = Join-Path $gameModsDir $relPath
+        $destDir = Split-Path $destFile -Parent
+        
+        if (-not (Test-Path $destDir)) {
+            New-Item -ItemType Directory -Path $destDir -Force | Out-Null
+        }
+        
+        Copy-Item $f.FullName $destFile -Force
+        $txtDeployed++
+    }
+    Write-Host "Deployed $modsDeployed XML files and $txtDeployed text files to XMLMods" -ForegroundColor Green
 } else {
     Write-Host "  XMLMods directory not found, skipping" -ForegroundColor DarkYellow
 }

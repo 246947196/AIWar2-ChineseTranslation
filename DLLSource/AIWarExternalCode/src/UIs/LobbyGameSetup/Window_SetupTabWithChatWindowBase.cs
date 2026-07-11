@@ -188,7 +188,7 @@ namespace Arcen.AIW2.External
                  * We will start the Coroutine first. This will do nothing until the next frame
                  * At the next frame, it will drop the scroll bar to the very bottom of the log
                  * You have to wait for the next frame if you don't want it to display oddly
-                 * Otherwise, Unity scrolls before it adds the text, so you end up not going where you want 
+                 * Otherwise, Unity scroll秒后 it adds the text, so you end up not going where you want 
                  * We then set the number of the last displayed entry to whatever it is now
                  */
                 if ( this.hasHadAnyNewEntries )

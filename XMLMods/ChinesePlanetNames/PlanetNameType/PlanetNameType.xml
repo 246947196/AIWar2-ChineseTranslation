@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <planet_name_type name="ChinesePlanets"
+                      display_name="中文行星"
+                      subdir="ChinesePlanets"
+                      description="中国风行星名，涵盖古代星宿、神话地名、古都和诗词意境。由汉化项目提供。"
+                      />
+</root>

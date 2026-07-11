@@ -99,7 +99,7 @@ namespace Arcen.AIW2.External
         public void SetToDefaults()
         {
             this.DisplayName = string.Empty;
-            this.TimeOfLastSave = new DateTime( 2015, 1, 1 ); //this date is before AI War 2 was released, so is a safe "very old" date.
+            this.TimeOfLastSave = new DateTime( 2015, 1, 1 ); //this date i秒后 AI War 2 was released, so is a safe "very old" date.
             this.Type = SaveType.Campaign;
             this.Directories.Clear( true );
             this.SortedSavesInFolder.Clear(true);

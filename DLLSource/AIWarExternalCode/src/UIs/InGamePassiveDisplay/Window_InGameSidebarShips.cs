@@ -1449,7 +1449,7 @@ namespace Arcen.AIW2.External
                 switch ( this.Purpose )
                 {
                     case PlanetSidebarHeaderPurpose.Invisible:
-                        tooltipBuffer.Add( "you should not be seeing this." );
+                        tooltipBuffer.Add( "你不应该看到这条信息。" );
                         break;
                     case PlanetSidebarHeaderPurpose.ShipGroup_Normal:
                     case PlanetSidebarHeaderPurpose.ShipGroup_CloakedShips:
@@ -2499,7 +2499,7 @@ namespace Arcen.AIW2.External
                   GameEntity_Squad centerpiece = fleet.Centerpiece.GetSquad();
                   if ( centerpiece == null )
                   {
-                      buffer.Add("Centerpiece is null?");
+                      buffer.Add("核心船为空？");
                       return;
                   }
                   Faction controllingFaction = centerpiece.PlanetFaction.Faction;

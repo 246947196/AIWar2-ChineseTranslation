@@ -1811,8 +1811,8 @@ namespace Arcen.AIW2.External
                     buffer.EndColor();
 
                     if ( relatedMembershipOrNull != null && localPlayerFaction.NetEnergy < relatedMembershipOrNull.GetEnergyUsage() && relatedMembershipOrNull.GetEnergyUsage() > 0 )
-                        buffer.Add( "\n" ).StartColor( QuickColors.Danger ).Add( "Ship requires " ).Add( relatedMembershipOrNull.GetEnergyUsage() )
-                            .Add( " energy to function, but you only have " ).Add( localPlayerFaction.NetEnergy ).Add( " available." ).EndColor();
+                        buffer.Add( "\n" ).StartColor( QuickColors.Danger ).Add( "该舰船需要 " ).Add( relatedMembershipOrNull.GetEnergyUsage() )
+                            .Add( " 能量才能运作，但你只有 " ).Add( localPlayerFaction.NetEnergy ).Add( " available." ).EndColor();
                 }*/
 
                 debugStage = 60;
@@ -2027,9 +2027,9 @@ namespace Arcen.AIW2.External
                     //{
                     //    if ( !relatedSquadOrNull.TypeData.ImmuneToRepairs )
                     //    {
-                    //        buffer.StartColor( "aaaaaa" ).Add( "Repairs to this unit will cost " ).Add(
+                    //        buffer.StartColor( "aaaaaa" ).Add( "修复此单位将花费 " ).Add(
                     //        ExternalConstants.Instance.Balance_MultiplierForShipsThatHaveExtraRepairCostTemporarily.ToFloatNonSim().ToString( "0.##" )
-                    //        ).Add( "x more until " ).Add( relatedSquadOrNull.RepairExtraCostForSeconds, "aa3434" ).Add( "s pass.  " ).EndColor();
+                    //        ).Add( "倍，持续 " ).Add( relatedSquadOrNull.RepairExtraCostForSeconds, "aa3434" ).Add( "秒。  " ).EndColor();
                     //    }
                     //}
                     //if ( relatedSquadOrNull.GetIsCrippled() )
@@ -2037,8 +2037,8 @@ namespace Arcen.AIW2.External
                     //    if ( !relatedSquadOrNull.TypeData.ImmuneToRepairs )
                     //    {
                     //        FInt extraCost = relatedEntityTypeData.GetExtraCostWhileCrippled();
-                    //        buffer.StartColor( "aaaaaa" ).Add( "Repairs to this unit cost " ).Add( extraCost.ToFloatNonSim().ToString( "0.##" )
-                    //        ).Add( "x more until it is no longer crippled (when it reaches full hull health).  " ).EndColor();
+                    //        buffer.StartColor( "aaaaaa" ).Add( "修复此单位需要 " ).Add( extraCost.ToFloatNonSim().ToString( "0.##" )
+                    //        ).Add( "倍，持续 it is no longer crippled (when it reaches full hull health).  " ).EndColor();
                     //    }
                     //}
                 } else
@@ -2595,7 +2595,7 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                 debugStage = 390;
                 if ( relatedEntityTypeData.RegeneratesDyingShipsAtThisHealthCostRatio > FInt.Zero )
                     buffer.Add( "当此星球上的友方单位将要死亡时，此舰船改为减少自身生命值来复活它们。效率为每 <color=#ffdf72>" )
-                        .Add( relatedEntityTypeData.RegeneratesDyingShipsAtThisHealthCostRatio.ReadableString ).Add( " health regenerated</color>.  " );
+                        .Add( relatedEntityTypeData.RegeneratesDyingShipsAtThisHealthCostRatio.ReadableString ).Add( " 生命恢复</color>。  " );
 
                 debugStage = 395;
 
@@ -3349,7 +3349,7 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                         if ( markStats.MarkLevel.Ordinal <= 0 )
                         {
                             // This is redundant. If you don't see the techs that upgrade it, it isn't upgradable.
-                            //buffer.Add( "Cannot be upgraded.  " );
+                            //buffer.Add( "无法升级。  " );
                         }
                         else
                         {
@@ -3362,7 +3362,7 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                             if ( relatedEntityTypeData.TechUpgradesThatBenefitMe == null || relatedEntityTypeData.TechUpgradesThatBenefitMe.Count == 0 )
                             {
                                 // This is redundant. If you don't see the techs that upgrade it, it isn't upgradable.
-                                //buffer.Add( "Not upgraded by any techs.  " );
+                                //buffer.Add( "未被任何科技升级。  " );
                             }
                             else
                             {
@@ -3619,7 +3619,7 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                 // This is already described in the ship class line...
                 /*
                 if ( !relatedEntityTypeData.ShipClass.CanBeDamaged )
-                    buffer.Add( "Immune to all damage.  " );
+                    buffer.Add( "免疫所有伤害。  " );
                 */
 
                 debugStage = 3051;
@@ -3644,7 +3644,7 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                         if ( relatedEntityTypeData.MetalCostMultiplierForScrapping == FInt.Zero ) {
                             buffer.Add( "Scrapping this unit gives no metal.  ");
                         } else {
-                            buffer.Add( "Scrapping this unit on a friendly planet refunds ").AddMetal_MoreReadable(metalCostForScrapping, true).Add(".  ");
+                            buffer.Add( "在友方星球拆解此单位返还 ").AddMetal_MoreReadable(metalCostForScrapping, true).Add(".  ");
                         }
                     }
                 }
@@ -4443,7 +4443,7 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                                     if ( mem.Fleet.Faction.Type == FactionType.Player )
                                     {
                                         if ( mem.TypeData.EnergyUsage > 0 && mem.Fleet.Faction.NetEnergy - mem.GetEnergyUsage() < 0 && mem.GetEnergyUsage() > 0 )
-                                            buffer.StartColor( ColorMath.LightRed ).Add( " ENERGY SHORTAGE" ).EndColor();
+                                            buffer.StartColor( ColorMath.LightRed ).Add( " 能量短缺" ).EndColor();
                                     }
                                 }
 
@@ -4844,7 +4844,7 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                         CannotTransportReason noTransportBase = relatedSquadOrNull.TypeData.GetCanBeTransported();
                         if ( noTransportBase != CannotTransportReason.TranportingIsFine )
                         {
-                            //Don't bother telling me about that, actually.  buffer.StartColor( QuickColors.HeaderDull ).Add( "This ship can never be transported.  " ).EndColor();
+                            //Don't bother telling me about that, actually.  buffer.StartColor( QuickColors.HeaderDull ).Add( "该舰船永远无法被运输。  " ).EndColor();
                         } else
                         {
                             CannotTransportReason noTransport = relatedSquadOrNull.GetCanBeTransportedRightNow();
@@ -4890,7 +4890,7 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                                     buffer.Add( "在未探索空间 - 没有侦察兵到过此地则无法运作！" );
                                     break;
                                 //case ArcenRejectionReason.EntityConsideredOutOfSupplyOfParentFleetCenterpiece:
-                                //    buffer.Add( "No supply - not on same or adjacent parent to the fleet centerpiece." );
+                                //    buffer.Add( "无补给——未在舰队核心船的同一或相邻母星上。" );
                                 //    break;
                                 case ArcenRejectionReason.EntityHasNotYetBeenFullyClaimed:
                                     if ( relatedSquadOrNull.IsInHoldFireMode )
@@ -4916,7 +4916,7 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                                             Faction facOrNull = relatedSquadOrNull.GetFactionOrNull_Safe();
                                             if ( relatedSquadOrNull.TypeData.EnergyUsage > 0 && (facOrNull != null && facOrNull.NetEnergy < 0) &&
                                                  relatedSquadOrNull.GetEnergyUsage() > 0 )
-                                                buffer.StartColor( ColorMath.LightRed ).Add( " ENERGY SHORTAGE" ).EndColor();
+                                                buffer.StartColor( ColorMath.LightRed ).Add( " 能量短缺" ).EndColor();
                                         }
                                         buffer.Add( "." );
                                     }
@@ -5354,12 +5354,12 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                                 buffer.Add( ": " );
                                 if ( detailLevel >= TooltipDetail.Full )
                                     buffer.WrapReload( systemData.UseAlternateRateOfFireAfterXShots, false, false ).Add( " salvos fired at " )
-                                        .WrapReload( systemStats.SecondsPerSalvo, false, false ).Add( "s per salvo before switching to " )
+                                        .WrapReload( systemStats.SecondsPerSalvo, false, false ).Add( "秒/轮后切换至" )
                                         .WrapReload( systemData.UseAlternateRateOfFireForXShotsBeforeReverting, false, false ).Add( " salvos fired at " )
                                         .WrapReload( systemStats.AltSecondsPerSalvo, false, false ).Add( "s per salvo (and then switching back)" );
                                 else
                                     buffer.WrapReload( systemData.UseAlternateRateOfFireAfterXShots, false, false ).Add( " at " )
-                                        .WrapReload( systemStats.SecondsPerSalvo, false, false ).Add( "s before " )
+                                        .WrapReload( systemStats.SecondsPerSalvo, false, false ).Add( "秒后 " )
                                         .WrapReload( systemData.UseAlternateRateOfFireForXShotsBeforeReverting, false, false ).Add( " at " )
                                         .WrapReload( systemStats.AltSecondsPerSalvo, false, false ).Add( "s" );
                             }
@@ -5391,10 +5391,10 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                         //beam weapons detonate immediately but still have a range
                         systemData.BeamLengthMultiplier <= FInt.Zero )
                     {
-                        //buffer.Add(" at ").WrapRange( "Detonates From Ship", false, false );
+                        //buffer.Add(" at ").WrapRange( "从舰船引爆", false, false );
                     }
                     else if ( systemData.IsMelee )
-                        buffer.Add( " at " ).WrapRange( "Melee Range", false, false );
+                        buffer.Add( " at " ).WrapRange( "近战范围", false, false );
                     else
                     {
                         int actualRange;
@@ -5407,7 +5407,7 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                         if ( actualRange > 99999 ) {
                             //FiresFromAnyRange actually just has to do with targeting logic, and doesn't seem
                             //like something that we should be surfacing to players here.  Just doesn't seem relevant.
-                            buffer.WrapRange( "Infinite Range", false, false );
+                            buffer.WrapRange( "无限射程", false, false );
                         } else if ( detailLevel < TooltipDetail.Full )
                         {
                             buffer.WrapRangeTruncated( actualRange, false, true );
@@ -5491,7 +5491,7 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                             {
                                 if ( detailLevel < TooltipDetail.Full )
                                 {
-                                    buffer.Add( "<color=#f25e1c>DIRECT AOE</color>: radius <color=#ffdf72>" );
+                                    buffer.Add( "<color=#f25e1c>直接范围伤害</color>: radius <color=#ffdf72>" );
                                     buffer.AddNumberMoreReadable( systemStats.ShotAreaOfEffect );
                                     buffer.Add( "</color>, " );
                                     if ( systemData.AOESpreadsDamageAmongAvailableTargets )
@@ -5505,7 +5505,7 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                                     {
                                         buffer.Add( " and " );
                                         buffer.Add( systemData.AOEAndBeamDamageMultiplierToNonPrimaryTarget.GetNearestIntPreferringHigher() );
-                                        buffer.Add( "% damage to non-primary targets" );
+                                        buffer.Add( "%伤害对非主要目标" );
                                     }
 
                                     if ( systemData.AOEHitsFriendlyTargets )
@@ -5529,7 +5529,7 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                                         {
                                             buffer.Add( ", with " );
                                             buffer.Add( systemData.AOEAndBeamDamageMultiplierToNonPrimaryTarget.GetNearestIntPreferringHigher() );
-                                            buffer.Add( "% damage to targets other than the primary" );
+                                            buffer.Add( "%伤害对主要目标外的目标" );
                                         }
                                     }
                                     else
@@ -5557,7 +5557,7 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                             {
                                 if ( detailLevel < TooltipDetail.Full )
                                 {
-                                    buffer.Add( "<color=#f25e1c>AOE AT TARGET</color>: radius <color=#ffdf72>" );
+                                    buffer.Add( "<color=#f25e1c>目标处范围伤害</color>: radius <color=#ffdf72>" );
                                     buffer.AddNumberMoreReadable( systemStats.ShotAreaOfEffect );
                                     buffer.Add( "</color>, " );
                                     if ( systemData.AOESpreadsDamageAmongAvailableTargets )
@@ -5571,7 +5571,7 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                                     {
                                         buffer.Add( " and " );
                                         buffer.Add( systemData.AOEAndBeamDamageMultiplierToNonPrimaryTarget.GetNearestIntPreferringHigher() );
-                                        buffer.Add( "% damage to non-primary targets" );
+                                        buffer.Add( "%伤害对非主要目标" );
                                     }
 
                                     if ( systemData.AOEHitsFriendlyTargets )
@@ -5595,7 +5595,7 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                                         {
                                             buffer.Add( ", with " );
                                             buffer.Add( systemData.AOEAndBeamDamageMultiplierToNonPrimaryTarget.GetNearestIntPreferringHigher() );
-                                            buffer.Add( "% damage to targets other than the primary" );
+                                            buffer.Add( "%伤害对主要目标外的目标" );
                                         }
                                     }
                                     else
@@ -5634,10 +5634,10 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                                 if ( detailLevel < TooltipDetail.Full )
                                 {
                                     if ( systemData.NumberBeamsToFire == 1 )
-                                        buffer.Add( "<color=#f25e1c>COIL-BEAM WEAPON</color>: length <color=#ffdf72>" );
+                                        buffer.Add( "<color=#f25e1c>线圈光束武器</color>: length <color=#ffdf72>" );
                                     else
                                     {
-                                        buffer.Add( "<color=#f25e1c>COIL-BEAM-ARRAY WEAPON</color>: <color=#ffdf72>" );
+                                        buffer.Add( "<color=#f25e1c>线圈光束阵列武器</color>: <color=#ffdf72>" );
                                         buffer.Add( systemData.NumberBeamsToFire );
                                         buffer.Add( "</color> beams, length <color=#ffdf72>" );
                                     }
@@ -5652,21 +5652,21 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                                         buffer.Add( "</color> with 1/" ).Add( systemData.NumberBeamsToFire ).Add( " DMG/beam" );
                                     if ( systemStats.AOEMaximumNumberOfTargetsHitPerShot >= 1 )
                                     {
-                                        buffer.Add( ", hitting main target for full damage, then <color=#ffdf72>" ).Add( systemStats.AOEMaximumNumberOfTargetsHitPerShot );
+                                        buffer.Add( "，击中主要目标全额伤害，然后 <color=#ffdf72>" ).Add( systemStats.AOEMaximumNumberOfTargetsHitPerShot );
                                         buffer.Add( "</color> targets with " );
                                         if ( systemData.AOEAndBeamDamageMultiplierToNonPrimaryTarget > FInt.Zero )
                                             buffer.Add( systemData.AOEAndBeamDamageMultiplierToNonPrimaryTarget.GetNearestIntPreferringHigher() )
-                                                .Add( "% damage" );
+                                                .Add( "%伤害" );
                                         else
                                             buffer.Add( "伤害" );
                                         buffer.Add( " divided evenly, max damage per beam <color=#ffdf72>" ).Add( (systemData.ForMark[effectiveMarkLevel].CalculateShipOrFleetMemDamagePerShot( relatedSquadOrNull, relatedMembershipOrNull ) * 2) ).Add( "</color>" );
                                     }
                                     else
                                     {
-                                        buffer.Add( ", hitting main target for full damage, hits everything else with " );
+                                        buffer.Add( "，击中主要目标全额伤害，其余目标造成" );
                                         if ( systemData.AOEAndBeamDamageMultiplierToNonPrimaryTarget > FInt.Zero )
-                                            buffer.Add( "a second copy of " ).Add( systemData.AOEAndBeamDamageMultiplierToNonPrimaryTarget.GetNearestIntPreferringHigher() )
-                                                .Add( "% of the damage" );
+                                            buffer.Add( "第二份" ).Add( systemData.AOEAndBeamDamageMultiplierToNonPrimaryTarget.GetNearestIntPreferringHigher() )
+                                                .Add( "%的伤害" );
                                         else
                                             buffer.Add( "第二份伤害" );
                                         buffer.Add( " divided evenly, max damage per beam <color=#ffdf72>" )
@@ -5681,10 +5681,10 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                                 else
                                 {
                                     if ( systemData.NumberBeamsToFire == 1 )
-                                        buffer.Add( "<color=#f25e1c>COIL-BEAM WEAPON</color>: Attacks from the above weapon are in the form of a fan of a beam of length <color=#ffdf72>" );
+                                        buffer.Add( "<color=#f25e1c>线圈光束武器</color>: Attacks from the above weapon are in the form of a fan of a beam of length <color=#ffdf72>" );
                                     else
                                     {
-                                        buffer.Add( "<color=#f25e1c>COIL-BEAM-ARRAY WEAPON</color>: Attacks from the above weapon are in the form of a fan of <color=#ffdf72>" );
+                                        buffer.Add( "<color=#f25e1c>线圈光束阵列武器</color>: Attacks from the above weapon are in the form of a fan of <color=#ffdf72>" );
                                         buffer.Add( systemData.NumberBeamsToFire );
                                         buffer.Add( "</color> beams of length <color=#ffdf72>" );
                                     }
@@ -5715,9 +5715,9 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                                 if ( systemData.BeamChainsOutToTargetsXTimes > 0 && systemData.BeamChainsOutToTargetsXRange > 0 )
                                 {
                                     if ( systemData.DistanceFromCenterForBeamEmission > 0 )
-                                        buffer.Add( "<color=#f25e1c>RADIAL CHAIN-LIGHTNING WEAPON</color>: <color=#ffdf72>" );
+                                        buffer.Add( "<color=#f25e1c>径向连锁闪电武器</color>: <color=#ffdf72>" );
                                     else
-                                        buffer.Add( "<color=#f25e1c>CHAIN-LIGHTNING WEAPON</color>: Hits " );
+                                        buffer.Add( "<color=#f25e1c>连锁闪电武器</color>: Hits " );
 
                                     if ( systemStats.AOEMaximumNumberOfTargetsHitPerShot >= 1 )
                                     {
@@ -5752,9 +5752,9 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                                 else
                                 {
                                     if ( detailLevel < TooltipDetail.Full )
-                                        buffer.Add( "<color=#f25e1c>POINT-BEAM WEAPON</color>: Hits one target. " );
+                                        buffer.Add( "<color=#f25e1c>点光束武器</color>: Hits one target. " );
                                     else
-                                        buffer.Add( "<color=#f25e1c>POINT-BEAM WEAPON</color>: Attacks from the above weapon are in the form of beam that hits only the target it was aimed at. " );
+                                        buffer.Add( "<color=#f25e1c>点光束武器</color>: Attacks from the above weapon are in the form of beam that hits only the target it was aimed at. " );
                                 }
                             }
                             else
@@ -5762,13 +5762,13 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                                 if ( detailLevel < TooltipDetail.Full )
                                 {
                                     if ( systemData.NumberBeamsToFire == 1 )
-                                        buffer.Add( "<color=#f25e1c>BEAM WEAPON</color>: length <color=#ffdf72>" );
+                                        buffer.Add( "<color=#f25e1c>光束武器</color>: length <color=#ffdf72>" );
                                     else
                                     {
                                         if ( systemData.DistanceFromCenterForBeamEmission > 0 )
-                                            buffer.Add( "<color=#f25e1c>RADIAL BEAM-ARRAY WEAPON</color>: <color=#ffdf72>" );
+                                            buffer.Add( "<color=#f25e1c>径向光束阵列武器</color>: <color=#ffdf72>" );
                                         else
-                                            buffer.Add( "<color=#f25e1c>BEAM-ARRAY WEAPON</color>: <color=#ffdf72>" );
+                                            buffer.Add( "<color=#f25e1c>光束阵列武器</color>: <color=#ffdf72>" );
                                         buffer.Add( systemData.NumberBeamsToFire );
                                         buffer.Add( "</color> beams, length <color=#ffdf72>" );
                                     }
@@ -5783,26 +5783,26 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                                     if ( systemStats.AOEMaximumNumberOfTargetsHitPerShot >= 1 )
                                         buffer.Add( "，击中 <color=#ffdf72>" ).Add( systemStats.AOEMaximumNumberOfTargetsHitPerShot ).Add( " 个目标，每束最大伤害 <color=#ffdf72>" ).Add( (systemData.ForMark[effectiveMarkLevel].CalculateShipOrFleetMemDamagePerShot( relatedSquadOrNull, relatedMembershipOrNull ) * systemStats.AOEMaximumNumberOfTargetsHitPerShot / systemData.NumberBeamsToFire) ).Add( "</color>" );
                                     if ( systemData.AOEHitsFriendlyTargets )
-                                        buffer.Add( ", friendly fire" );
+                                        buffer.Add( "，友军火力" );
 
                                     if ( systemData.AOEAndBeamDamageMultiplierToNonPrimaryTarget > FInt.Zero )
                                     {
                                         buffer.Add( ", " );
                                         buffer.Add( systemData.AOEAndBeamDamageMultiplierToNonPrimaryTarget.GetNearestIntPreferringHigher() );
-                                        buffer.Add( "% damage to non-primary targets" );
+                                        buffer.Add( "%伤害对非主要目标" );
                                     }
                                     buffer.Add( ".  " );
                                 }
                                 else
                                 {
                                     if ( systemData.NumberBeamsToFire == 1 )
-                                        buffer.Add( "<color=#f25e1c>BEAM WEAPON</color>: Attacks from the above weapon are in the form of a fan of a beam of length <color=#ffdf72>" );
+                                        buffer.Add( "<color=#f25e1c>光束武器</color>: Attacks from the above weapon are in the form of a fan of a beam of length <color=#ffdf72>" );
                                     else
                                     {
                                         if ( systemData.DistanceFromCenterForBeamEmission > 0 )
-                                            buffer.Add( "<color=#f25e1c>RADIAL BEAM-ARRAY WEAPON</color>: <color=#ffdf72>" );
+                                            buffer.Add( "<color=#f25e1c>径向光束阵列武器</color>: <color=#ffdf72>" );
                                         else
-                                            buffer.Add( "<color=#f25e1c>BEAM-ARRAY WEAPON</color>: Attacks from the above weapon are in the form of a fan of <color=#ffdf72>" );
+                                            buffer.Add( "<color=#f25e1c>光束阵列武器</color>: Attacks from the above weapon are in the form of a fan of <color=#ffdf72>" );
                                         buffer.Add( systemData.NumberBeamsToFire );
                                         buffer.Add( "</color> beams of length <color=#ffdf72>" );
                                     }
@@ -5829,7 +5829,7 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                                         {
                                             buffer.Add( " with " );
                                             buffer.Add( systemData.AOEAndBeamDamageMultiplierToNonPrimaryTarget.GetNearestIntPreferringHigher() );
-                                            buffer.Add( "% damage to targets other than the primary" );
+                                            buffer.Add( "%伤害对主要目标外的目标" );
                                         }
                                         else
                                             buffer.Add( " with its full damage" );
@@ -5841,7 +5841,7 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                                         {
                                             buffer.Add( " and " );
                                             buffer.Add( systemData.AOEAndBeamDamageMultiplierToNonPrimaryTarget.GetNearestIntPreferringHigher() );
-                                            buffer.Add( "% damage to targets other than the primary" );
+                                            buffer.Add( "%伤害对主要目标外的目标" );
                                         }
                                     }
                                     if ( systemData.AOEHitsFriendlyTargets )
@@ -5865,14 +5865,14 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                                 HandleNewlineAndSize( buffer, ref haveDoneNewLineAndSize );
                                 if ( detailLevel < TooltipDetail.Full )
                                 {
-                                    buffer.Add( "<color=#f25e1c>MULTI-BEAM</color>: up to <color=#ffdf72>" ).Add( systemData.ForMark[effectiveMarkLevel].ShotsPerSalvo ).Add( "</color> beams" );
+                                    buffer.Add( "<color=#f25e1c>多光束</color>: up to <color=#ffdf72>" ).Add( systemData.ForMark[effectiveMarkLevel].ShotsPerSalvo ).Add( "</color> beams" );
                                     if ( !systemData.HitsAllIntersectingTargets )
-                                        buffer.Add( ", one target per beam.  " );
+                                        buffer.Add( "，每束一个目标。  " );
                                     else if ( systemStats.AOEMaximumNumberOfTargetsHitPerShot >= 1 )
-                                        buffer.Add( ", full DMG to intersected targets.  " );
+                                        buffer.Add( "，对交叉目标全额伤害。  " );
                                 } else
                                 {
-                                    buffer.Add( "<color=#f25e1c>MULTI-BEAM</color>: Up to <color=#ffdf72>" ).Add( systemData.ForMark[effectiveMarkLevel].ShotsPerSalvo )
+                                    buffer.Add( "<color=#f25e1c>多光束</color>: Up to <color=#ffdf72>" ).Add( systemData.ForMark[effectiveMarkLevel].ShotsPerSalvo )
                                         .Add( "</color> beams can be fired at a time. " );
                                     if ( systemData.ForMark[effectiveMarkLevel].ShotsPerSalvo > systemData.ForMark[effectiveMarkLevel].ShotsPerTarget )
                                         buffer.Add( "仅 " ).Add( systemData.ForMark[effectiveMarkLevel].ShotsPerTarget ).Add( " 可对每个目标和堆叠发射。" );
@@ -5888,7 +5888,7 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                                 if ( detailLevel >= TooltipDetail.Full )
                                 {
                                     HandleNewlineAndSize( buffer, ref haveDoneNewLineAndSize );
-                                    buffer.Add( "<color=#f25e1c>MULTI-SHOT</color>: Up to <color=#ffdf72>" ).Add( systemData.ForMark[effectiveMarkLevel].ShotsPerSalvo )
+                                    buffer.Add( "<color=#f25e1c>多发</color>: Up to <color=#ffdf72>" ).Add( systemData.ForMark[effectiveMarkLevel].ShotsPerSalvo )
                                         .Add( "</color> shots can be fired at a time. " );
                                     if ( systemData.ForMark[effectiveMarkLevel].ShotsPerSalvo > systemData.ForMark[effectiveMarkLevel].ShotsPerTarget )
                                         buffer.Add( "仅 " ).Add( systemData.ForMark[effectiveMarkLevel].ShotsPerTarget ).Add( " 可对每个目标和堆叠发射" );
@@ -5906,7 +5906,7 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                         {
                             buffer.Add( "<color=#f25e1c>" );
                             buffer.Add( (systemData.ReturnsThisPercentageOfDamageWhenFiringRetaliatoryShot * 100).GetNearestIntPreferringHigher() );
-                            buffer.Add( "% MIRROR DAMAGE:</color> " );
+                            buffer.Add( "% 镜像伤害:</color> " );
                             if ( detailLevel >= TooltipDetail.Medium )
                             {
                                 buffer.Add( "此镜面武器反射一枚射弹，拥有击中母舰的 " ).Add(
@@ -5949,9 +5949,9 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                             if ( detailLevel < TooltipDetail.Full )
                             {
                                 if ( systemData.MaxEngineStunSeconds > 0 )
-                                    buffer.Add( "<color=#f25e1c>ENGINE-SLOWER</color>: <color=#ffdf72>" );
+                                    buffer.Add( "<color=#f25e1c>引擎减速</color>: <color=#ffdf72>" );
                                 else
-                                    buffer.Add( "<color=#f25e1c>ENGINE-STUNNER</color>: <color=#ffdf72>" );
+                                    buffer.Add( "<color=#f25e1c>引擎眩晕</color>: <color=#ffdf72>" );
                                 buffer.AddNumberMoreReadable( systemStats.EngineStunPerShot );
                                 buffer.Add( "秒</color> 如果目标引擎 < <color=#ffdf72>" );
                                 buffer.Add( systemData.EngineStunToEngine_gxLessThan );
@@ -5969,9 +5969,9 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                             else
                             {
                                 if ( systemData.MaxEngineStunSeconds > 0 )
-                                    buffer.Add( "<color=#f25e1c>ENGINE-SLOWER</color>: Shots from the above weapon slow enemy engines for <color=#ffdf72>" );
+                                    buffer.Add( "<color=#f25e1c>引擎减速</color>: Shots from the above weapon slow enemy engines for <color=#ffdf72>" );
                                 else
-                                    buffer.Add( "<color=#f25e1c>ENGINE-STUNNER</color>: Shots from the above weapon stun enemy engines for <color=#ffdf72>" );
+                                    buffer.Add( "<color=#f25e1c>引擎眩晕</color>: Shots from the above weapon stun enemy engines for <color=#ffdf72>" );
                                 buffer.AddNumberMoreReadable( systemStats.EngineStunPerShot );
                                 buffer.Add( "秒</color> 如果目标引擎动力低于 <color=#ffdf72>" );
                                 buffer.Add( systemData.EngineStunToEngine_gxLessThan );
@@ -6002,7 +6002,7 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
 
                             if ( detailLevel < TooltipDetail.Full )
                             {
-                                buffer.Add( "<color=#f25e1c>PARALYZER</color>: <color=#ffdf72>" );
+                                buffer.Add( "<color=#f25e1c>麻痹</color>: <color=#ffdf72>" );
                                 buffer.AddNumberMoreReadable( systemStats.ParalysisSecondsPerShot );
                                 buffer.Add( "秒</color> 如果目标质量 < <color=#ffdf72>" );
                                 buffer.Add( systemData.ParalysisToShipsMass_tXLessThan.ReadableString );
@@ -6010,7 +6010,7 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                             }
                             else
                             {
-                                buffer.Add( "<color=#f25e1c>PARALYZER</color>: Shots from the above weapon completely shut down enemy ships for <color=#ffdf72>" );
+                                buffer.Add( "<color=#f25e1c>麻痹</color>: Shots from the above weapon completely shut down enemy ships for <color=#ffdf72>" );
                                 buffer.AddNumberMoreReadable( systemStats.ParalysisSecondsPerShot );
                                 buffer.Add( "秒</color> 如果目标质量低于 <color=#ffdf72>" );
                                 buffer.Add( systemData.ParalysisToShipsMass_tXLessThan.ReadableString );
@@ -6027,11 +6027,11 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
 
                             if ( detailLevel < TooltipDetail.Full )
                             {
-                                buffer.Add( "<color=#f25e1c>FIRES THROUGH FORCEFIELDS</color>  " );
+                                buffer.Add( "<color=#f25e1c>穿透力场射击</color>  " );
                             }
                             else
                             {
-                                buffer.Add( "<color=#f25e1c>FIRES THROUGH FORCEFIELDS</color>: Shots from the above weapon completely ignore forcefields as if they were not there, damaging ships under them like normal.  " );
+                                buffer.Add( "<color=#f25e1c>穿透力场射击</color>: Shots from the above weapon completely ignore forcefields as if they were not there, damaging ships under them like normal.  " );
                             }
                         }
                         #endregion
@@ -6043,11 +6043,11 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
 
                             if ( detailLevel < TooltipDetail.Full )
                             {
-                                buffer.Add( "<color=#f25e1c>TARGET WARP</color>  " );
+                                buffer.Add( "<color=#f25e1c>目标传送</color>  " );
                             }
                             else
                             {
-                                buffer.Add( "<color=#f25e1c>TARGET WARP</color>: Shots from the above weapon cause enemies that are hit to be moved to a completely random spot in the planet's gravity well.  " );
+                                buffer.Add( "<color=#f25e1c>目标传送</color>: Shots from the above weapon cause enemies that are hit to be moved to a completely random spot in the planet's gravity well.  " );
                             }
                         }
                         #endregion
@@ -6067,7 +6067,7 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
 
                         {
                             HandleNewlineAndSize( buffer, ref haveDoneNewLineAndSize );
-                            buffer.Add( "<color=#f25e1c>ATTACK BONUS</color>: Shots from the above weapon do <color=#ffdf72>" ).Add( systemStats.DamageMultiplierToTractoredUnits.ReadableString, "a1ffa1" ).Add( "x</color> damage to units in tractor beams. " );
+                            buffer.Add( "<color=#f25e1c>攻击加成</color>: Shots from the above weapon do <color=#ffdf72>" ).Add( systemStats.DamageMultiplierToTractoredUnits.ReadableString, "a1ffa1" ).Add( "x</color>伤害对牵引光束中的单位。" );
                         }
                         #endregion
 
@@ -6080,7 +6080,7 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                                 hasSystemWithBonusFromAttackingUnderForcefields = true;
 
                             HandleNewlineAndSize( buffer, ref haveDoneNewLineAndSize );
-                            buffer.Add( "<color=#f25e1c>ATTACK BONUS</color>: Shots from the above weapon do <color=#ffdf72>" ).Add( systemData.DamageModifierWhileUnderForcefield.ReadableString, "a1ffa1" ).Add( "x</color> damage if this unit is under a forcefield, ignoring the normal penalty. " );
+                            buffer.Add( "<color=#f25e1c>攻击加成</color>: Shots from the above weapon do <color=#ffdf72>" ).Add( systemData.DamageModifierWhileUnderForcefield.ReadableString, "a1ffa1" ).Add( "x</color>伤害如果此单位在力场下，忽略正常惩罚。" );
                         }
                         #endregion
 
@@ -6094,9 +6094,9 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                             HandleNewlineAndSize( buffer, ref haveDoneNewLineAndSize );
 
                             if ( detailLevel < TooltipDetail.Full )
-                                buffer.Add( "<color=#f25e1c>ATTACK BONUS</color>: Additional <color=#ffdf72>" ).Add( systemData.AdditionalDamageModifierPerWeaponPoint.ReadableString, "a1ffa1" ).Add( "x</color> per current Weapon Point. " );
+                                buffer.Add( "<color=#f25e1c>攻击加成</color>: Additional <color=#ffdf72>" ).Add( systemData.AdditionalDamageModifierPerWeaponPoint.ReadableString, "a1ffa1" ).Add( "x</color>每当前武器点数。" );
                             else
-                                buffer.Add( "<color=#f25e1c>ATTACK BONUS</color>: Shots from the above weapon do an additional <color=#ffdf72>" ).Add( systemData.AdditionalDamageModifierPerWeaponPoint.ReadableString, "a1ffa1" ).Add( "x</color> damage for every Weapon Point it currently has. " );
+                                buffer.Add( "<color=#f25e1c>攻击加成</color>: Shots from the above weapon do an additional <color=#ffdf72>" ).Add( systemData.AdditionalDamageModifierPerWeaponPoint.ReadableString, "a1ffa1" ).Add( "x</color>伤害每当前拥有的武器点数。" );
                         }
 
                         // The case where it DOES consume Weapon Points on firing, i.e Powerslaver style.
@@ -6106,16 +6106,16 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                             HandleNewlineAndSize( buffer, ref haveDoneNewLineAndSize );
 
                             if ( detailLevel < TooltipDetail.Full )
-                                buffer.Add( "<color=#f25e1c>ATTACK BONUS</color>: Consumes <color=#ffdf72>" + systemData.NumberOfWeaponPointsToConsumeOnFiring + "</color> Weapon Points, additional <color=#ffdf72>" ).Add( systemData.AdditionalDamageModifierPerWeaponPoint.ReadableString, "a1ffa1" ).Add( "x</color> damage per consumed Weapon Point. " );
+                                buffer.Add( "<color=#f25e1c>攻击加成</color>: Consumes <color=#ffdf72>" + systemData.NumberOfWeaponPointsToConsumeOnFiring + "</color> Weapon Points, additional <color=#ffdf72>" ).Add( systemData.AdditionalDamageModifierPerWeaponPoint.ReadableString, "a1ffa1" ).Add( "x</color>伤害每消耗的武器点数。" );
                             else
-                                buffer.Add( "<color=#f25e1c>ATTACK BONUS</color>: Shots from the above weapon consume <color=#ffdf72>" + systemData.NumberOfWeaponPointsToConsumeOnFiring + "</color> Weapon Points per salvo, doing an additional <color=#ffdf72>" ).Add( systemData.AdditionalDamageModifierPerWeaponPoint.ReadableString, "a1ffa1" ).Add( "x</color> damage for every Weapon Point it consumed. " );
+                                buffer.Add( "<color=#f25e1c>攻击加成</color>: Shots from the above weapon consume <color=#ffdf72>" + systemData.NumberOfWeaponPointsToConsumeOnFiring + "</color> Weapon Points per salvo, doing an additional <color=#ffdf72>" ).Add( systemData.AdditionalDamageModifierPerWeaponPoint.ReadableString, "a1ffa1" ).Add( "x</color>伤害每消耗的武器点数。" );
                         }
 
                         if ( systemData.NumberOfWeaponPointsToGainOnFiring != FInt.Zero )
                         {
                             HandleNewlineAndSize( buffer, ref haveDoneNewLineAndSize );
 
-                            buffer.Add( "<color=#f25e1c>GAINS WEAPON POINTS</color>: Shots from the above weapon increase this units Weapon Points by <color=#ffdf72>" + systemData.NumberOfWeaponPointsToGainOnFiring + "</color>, up to max of <color=#ffdf72>" + systemData.ParentEntityTypeData.MaxNumberOfWeaponPoints + "</color>. " );
+                            buffer.Add( "<color=#f25e1c>获得武器点数</color>: Shots from the above weapon increase this units Weapon Points by <color=#ffdf72>" + systemData.NumberOfWeaponPointsToGainOnFiring + "</color>, up to max of <color=#ffdf72>" + systemData.ParentEntityTypeData.MaxNumberOfWeaponPoints + "</color>. " );
                         }
                         #endregion
 
@@ -6129,8 +6129,8 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                             if ( systemData.DevourFunctionNameUpper.Length <= 0 )
                                 systemData.DevourFunctionNameUpper = systemData.DevourFunctionName.ToUpper();
 
-                            buffer.Add( "<color=#f25e1c>" ).Add( systemData.DevourFunctionNameUpper ).Add( "</color>: If the target ship is the same or lower mark, and has mass lower than <color=#ffdf72>" )
-                                .Add( systemData.DevourMassLowerThan.ReadableString ).Add( "tX</color>, then instakill the target ship. " );
+                            buffer.Add( "<color=#f25e1c>" ).Add( systemData.DevourFunctionNameUpper ).Add( "</color>：如果目标舰船同级或更低，且质量低于 <color=#ffdf72>" )
+                                .Add( systemData.DevourMassLowerThan.ReadableString ).Add( "tX</color>，则秒杀目标舰船。" );
                         }
                         #endregion
 
@@ -6180,11 +6180,11 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                                 }
                                 else
                                 {
-                                    buffer.Add( "<color=#f25e1c> " ).Add( row.DescriptionPrefix ).Add( "</color>: The above does <color=#ffdf72>" );
+                                    buffer.Add( "<color=#f25e1c> " ).Add( row.DescriptionPrefix ).Add( "</color>：上述造成 <color=#ffdf72>" );
                                     buffer.AddNumberMoreReadable( damageAmount );
                                     buffer.Add( "</color> " ).Add( row.DescriptionDamageName ).Add( " damage" )
                                         .Add( row.DescriptionConditions != null && row.DescriptionConditions.Length > 0 ? " " : "" ).Add( row.DescriptionConditions )
-                                        .Add( ".  If at least " ).AddNumberMoreReadable( row.Scale ).Add( " " ).Add( row.DescriptionDamageName )
+                                        .Add( "。如果至少 " ).AddNumberMoreReadable( row.Scale ).Add( " " ).Add( row.DescriptionDamageName )
                                         .Add( " damage has been done to the target when it dies, then " ).Add( row.DescriptionOfEffects ).Add( ".  " );
                                     //only for player ships or things that are being contemplated for construction
                                     if ( relatedSquadOrNull == null || relatedSquadOrNull.GetFactionTypeSafe() != FactionType.Player )
@@ -6217,7 +6217,7 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
 
                             if ( detailLevel < TooltipDetail.Full )
                             {
-                                buffer.Add( "<color=#f25e1c>WEAPON JAMMER</color>: target reload +<color=#ffdf72>" );
+                                buffer.Add( "<color=#f25e1c>武器干扰器</color>: target reload +<color=#ffdf72>" );
                                 buffer.AddNumberMoreReadable( systemStats.EnemyWeaponReloadSlowingSecondsPerShot );
 buffer.Add( "秒</color> 如果护甲 < <color=#ffdf72>" );
                                  buffer.Add( systemData.EnemyWeaponReloadSlowingSecondsArmor_mmLessThan );
@@ -6230,7 +6230,7 @@ buffer.Add( "秒</color> 如果护甲 < <color=#ffdf72>" );
                             }
                             else
                             {
-                                buffer.Add( "<color=#f25e1c>WEAPON JAMMER</color>: Shots from the above weapon add to the reload times of enemies they hit by <color=#ffdf72>" );
+                                buffer.Add( "<color=#f25e1c>武器干扰器</color>: Shots from the above weapon add to the reload times of enemies they hit by <color=#ffdf72>" );
                                 buffer.AddNumberMoreReadable( systemStats.EnemyWeaponReloadSlowingSecondsPerShot );
 buffer.Add( "秒</color> 如果目标护甲厚度低于 <color=#ffdf72>" );
                                  buffer.Add( systemData.EnemyWeaponReloadSlowingSecondsArmor_mmLessThan );
@@ -6253,19 +6253,19 @@ buffer.Add( "秒</color> 如果目标护甲厚度低于 <color=#ffdf72>" );
 
                             if ( detailLevel < TooltipDetail.Full )
                             {
-                                buffer.Add( "<color=#f25e1c>FUSION REACTION</color>: <color=#ffdf72>" );
+                                buffer.Add( "<color=#f25e1c>聚变反应</color>: <color=#ffdf72>" );
                                 buffer.Add( Mathf.RoundToInt( systemStats.PercentDamageBypassesPersonalShields.ToFloatNonSim() * 100f ) );
                                 buffer.Add( "%</color> direct to target hull.  " );
                             }
                             else if ( !systemData.FiresThroughEnemyShields )
                             {
-                                buffer.Add( "<color=#f25e1c>FUSION REACTION</color>: Shots from the above weapon do <color=#ffdf72>" );
+                                buffer.Add( "<color=#f25e1c>聚变反应</color>: Shots from the above weapon do <color=#ffdf72>" );
                                 buffer.Add( Mathf.RoundToInt( systemStats.PercentDamageBypassesPersonalShields.ToFloatNonSim() * 100f ) );
                                 buffer.Add( "%</color> of their damage directly to the hull of their target, bypassing any personal shields (NOT bubble forcefields).  " );
                             }
                             else
                             {
-                                buffer.Add( "<color=#f25e1c>FUSION REACTION</color>: Shots from the above weapon do <color=#ffdf72>" );
+                                buffer.Add( "<color=#f25e1c>聚变反应</color>: Shots from the above weapon do <color=#ffdf72>" );
                                 buffer.Add( Mathf.RoundToInt( systemStats.PercentDamageBypassesPersonalShields.ToFloatNonSim() * 100f ) );
                                 buffer.Add( "%</color> 的伤害直接作用于目标船体，绕过所有个人护盾。  " );
                             }
@@ -6281,7 +6281,7 @@ buffer.Add( "秒</color> 如果目标护甲厚度低于 <color=#ffdf72>" );
                             #region Abbreviated
                             if ( detailLevel < TooltipDetail.Full )
                             {
-                                buffer.Add( "<color=#f25e1c>KNOCKBACK</color>: " );
+                                buffer.Add( "<color=#f25e1c>击退</color>: " );
                                 if ( systemStats.KnockbackPerShot > 0 )
                                 {
                                     if ( !systemData.KnockbackAtTargetLocation )
@@ -6326,7 +6326,7 @@ buffer.Add( "秒</color> 如果目标护甲厚度低于 <color=#ffdf72>" );
                             #region Non-Abbreviated
                             else
                             {
-                                buffer.Add( "<color=#f25e1c>KNOCKBACK</color>: Enemies hit by this weapon are " );
+                                buffer.Add( "<color=#f25e1c>击退</color>: Enemies hit by this weapon are " );
                                 if ( systemStats.KnockbackPerShot > 0 )
                                     buffer.Add( "被推开远离 " );
                                 else
@@ -6357,7 +6357,7 @@ buffer.Add( "秒</color> 如果目标护甲厚度低于 <color=#ffdf72>" );
 
                             if ( detailLevel < TooltipDetail.Full )
                             {
-                                buffer.Add( "<color=#f25e1c>DAMAGE AMPLIFICATION</color>: <color=#ffdf72>" );
+                                buffer.Add( "<color=#f25e1c>伤害增幅</color>: <color=#ffdf72>" );
                                 buffer.Add( Mathf.RoundToInt( systemStats.DamageAmplificationFlat ) );
                                 buffer.Add( "</color> extra damage taken by target for <color=#ffdf72>" );
                                 buffer.Add( Mathf.RoundToInt( systemData.DamageAmplificationDuration_Max15 ) );
@@ -6365,7 +6365,7 @@ buffer.Add( "秒</color> 如果目标护甲厚度低于 <color=#ffdf72>" );
                             }
                             else
                             {
-                                buffer.Add( "<color=#f25e1c>DAMAGE AMPLIFICATION</color>: Shots from the above weapon cause the target to take <color=#ffdf72>" );
+                                buffer.Add( "<color=#f25e1c>伤害增幅</color>: Shots from the above weapon cause the target to take <color=#ffdf72>" );
                                 buffer.Add( Mathf.RoundToInt( systemStats.DamageAmplificationFlat ) );
                                 buffer.Add( "</color> more damage from every shot that hits it for <color=#ffdf72>" );
                                 buffer.Add( Mathf.RoundToInt( systemData.DamageAmplificationDuration_Max15 ) );
@@ -6379,7 +6379,7 @@ buffer.Add( "秒</color> 如果目标护甲厚度低于 <color=#ffdf72>" );
 
                             if ( detailLevel < TooltipDetail.Full )
                             {
-                                buffer.Add( "<color=#f25e1c>DAMAGE AMPLIFICATION</color>: Target takes <color=#ffdf72>" );
+                                buffer.Add( "<color=#f25e1c>伤害增幅</color>: Target takes <color=#ffdf72>" );
                                 buffer.Add( Mathf.RoundToInt( systemData.DamageAmplificationMult.ToFloatNonSim() * 100f ) );
                                 buffer.Add( "%</color> of normal damage for <color=#ffdf72>" );
                                 buffer.Add( Mathf.RoundToInt( systemData.DamageAmplificationDuration_Max15 ) );
@@ -6387,7 +6387,7 @@ buffer.Add( "秒</color> 如果目标护甲厚度低于 <color=#ffdf72>" );
                             }
                             else
                             {
-                                buffer.Add( "<color=#f25e1c>DAMAGE AMPLIFICATION</color>: Shots from the above weapon cause the target to take <color=#ffdf72>" );
+                                buffer.Add( "<color=#f25e1c>伤害增幅</color>: Shots from the above weapon cause the target to take <color=#ffdf72>" );
                                 buffer.Add( Mathf.RoundToInt( systemData.DamageAmplificationMult.ToFloatNonSim() * 100f ) );
                                 buffer.Add( "%</color> of normal damage from every shot that hits it for <color=#ffdf72>" );
                                 buffer.Add( Mathf.RoundToInt( systemData.DamageAmplificationDuration_Max15 ) );
@@ -6407,11 +6407,11 @@ buffer.Add( "秒</color> 如果目标护甲厚度低于 <color=#ffdf72>" );
                             {
                                 if ( systemData.HealthChangePerDamageDealt > FInt.Zero )
                                 {
-                                    buffer.Add( "<color=#f25e1c>VAMPIRISM</color>: repairs <color=#ffdf72>" );
+                                    buffer.Add( "<color=#f25e1c>吸血</color>: repairs <color=#ffdf72>" );
                                 }
                                 else
                                 {
-                                    buffer.Add( "<color=#f25e1c>SELF DAMAGE</color>: damages itself by <color=#ffdf72>" );
+                                    buffer.Add( "<color=#f25e1c>自伤</color>: damages itself by <color=#ffdf72>" );
                                 }
                                 buffer.AddNumberMoreReadable( systemData.HealthChangePerDamageDealt );
                                 buffer.Add( " health</color> per damage dealt.  " );
@@ -6420,11 +6420,11 @@ buffer.Add( "秒</color> 如果目标护甲厚度低于 <color=#ffdf72>" );
                             {
                                 if ( systemData.HealthChangePerDamageDealt > FInt.Zero )
                                 {
-                                    buffer.Add( "<color=#f25e1c>VAMPIRISM</color>: repairs itself by <color=#ffdf72>" );
+                                    buffer.Add( "<color=#f25e1c>吸血</color>: repairs itself by <color=#ffdf72>" );
                                 }
                                 else
                                 {
-                                    buffer.Add( "<color=#f25e1c>SELF DAMAGE</color>: damages itself by <color=#ffdf72>" );
+                                    buffer.Add( "<color=#f25e1c>自伤</color>: damages itself by <color=#ffdf72>" );
                                 }
                                 buffer.AddNumberMoreReadable( systemData.HealthChangePerDamageDealt );
                                 buffer.Add( " health</color> for every 1 damage it has dealt.  " );
@@ -6440,17 +6440,17 @@ buffer.Add( "秒</color> 如果目标护甲厚度低于 <color=#ffdf72>" );
                             {
                                 if ( systemData.HealthChangeByMaxHealthDividedByThisPerAttack >= FInt.One * -1 && systemData.HealthChangeByMaxHealthDividedByThisPerAttack < FInt.Zero )
                                 {
-                                    buffer.Add( "<color=#f25e1c>SELF-DESTRUCT</color>: kills itself to attack.  " );
+                                    buffer.Add( "<color=#f25e1c>自毁</color>: kills itself to attack.  " );
                                 }
                                 else
                                 {
                                     if ( systemData.HealthChangeByMaxHealthDividedByThisPerAttack > FInt.Zero )
                                     {
-                                        buffer.Add( "<color=#f25e1c>SELF-ASSEMBLY</color>: repairs <color=#ffdf72>" );
+                                        buffer.Add( "<color=#f25e1c>自组装</color>: repairs <color=#ffdf72>" );
                                     }
                                     else
                                     {
-                                        buffer.Add( "<color=#f25e1c>DISASSEMBLY</color>: damages itself by <color=#ffdf72>" );
+                                        buffer.Add( "<color=#f25e1c>分解</color>: damages itself by <color=#ffdf72>" );
                                     }
                                     buffer.AddPercentFormated( ( 1 / systemData.HealthChangeByMaxHealthDividedByThisPerAttack).ToPercent( 1 ) );
                                     buffer.Add( " health</color> each attack.  " );
@@ -6460,17 +6460,17 @@ buffer.Add( "秒</color> 如果目标护甲厚度低于 <color=#ffdf72>" );
                             {
                                 if ( systemData.HealthChangeByMaxHealthDividedByThisPerAttack >= FInt.One * -1 && systemData.HealthChangeByMaxHealthDividedByThisPerAttack < FInt.Zero )
                                 {
-                                    buffer.Add( "<color=#f25e1c>SELF-DESTRUCT</color>: kills itself to attack.  " );
+                                    buffer.Add( "<color=#f25e1c>自毁</color>: kills itself to attack.  " );
                                 }
                                 else
                                 {
                                     if ( systemData.HealthChangeByMaxHealthDividedByThisPerAttack > FInt.Zero )
                                     {
-                                        buffer.Add( "<color=#f25e1c>SELF-ASSEMBLY</color>: repairs itself by <color=#ffdf72>" );
+                                        buffer.Add( "<color=#f25e1c>自组装</color>: repairs itself by <color=#ffdf72>" );
                                     }
                                     else
                                     {
-                                        buffer.Add( "<color=#f25e1c>DISASSEMBLY</color>: damages itself by <color=#ffdf72>" );
+                                        buffer.Add( "<color=#f25e1c>分解</color>: damages itself by <color=#ffdf72>" );
                                     }
                                     buffer.AddPercentFormated( (1 / systemData.HealthChangeByMaxHealthDividedByThisPerAttack).ToPercent( 1 ) );
                                     buffer.Add( " health</color> each attack.  " );
@@ -6485,7 +6485,7 @@ buffer.Add( "秒</color> 如果目标护甲厚度低于 <color=#ffdf72>" );
 
                         if ( systemData.InflictsStateOfMatterOnTargetForSeconds > 0 && systemData.StateOfMatterForTargetToBecome != null )
                         {
-                            buffer.Add( "<color=#f25e1c>PHASER</color>: Inflicts " ).Add( systemData.StateOfMatterForTargetToBecome.DisplayName, "aaaaaa" ).Add( " for " )
+                            buffer.Add( "<color=#f25e1c>相位武器</color>: Inflicts " ).Add( systemData.StateOfMatterForTargetToBecome.DisplayName, "aaaaaa" ).Add( " for " )
                                 .StartReloadWrapper( false ).Add( systemData.InflictsStateOfMatterOnTargetForSeconds ).Add( "s</color>" );
                             if ( systemData.CannotInflictStateOfMatterIfTargetHasAnyShieldsUp )
                             {
@@ -6628,7 +6628,7 @@ buffer.Add( "秒</color> 如果目标护甲厚度低于 <color=#ffdf72>" );
 
                         if ( detailLevel < TooltipDetail.Full )
                         {
-                            buffer.Add( "<color=#f25e1c>DE-CLOAKER</color>: range <color=#ffdf72>" );
+                            buffer.Add( "<color=#f25e1c>反隐形</color>: range <color=#ffdf72>" );
                             buffer.AddNumberMoreReadable( systemStats.TachyonRange );
                             buffer.Add( "</color>, strength <color=#ffdf72>" );
                             //we use simFrameMultiplier to get the actual number per second, rather than the number per frame
@@ -6639,7 +6639,7 @@ buffer.Add( "秒</color> 如果目标护甲厚度低于 <color=#ffdf72>" );
                         }
                         else
                         {
-                            buffer.Add( "<color=#f25e1c>DE-CLOAKER</color>: Cloaked enemy ships within a range of <color=#ffdf72>" );
+                            buffer.Add( "<color=#f25e1c>反隐形</color>: Cloaked enemy ships within a range of <color=#ffdf72>" );
                             buffer.AddNumberMoreReadable( systemStats.TachyonRange );
                             buffer.Add( "</color> are saturated with a tachyon field that drains <color=#ffdf72>" );
                             //we use simFrameMultiplier to get the actual number per second, rather than the number per frame
@@ -6706,14 +6706,14 @@ buffer.Add( "秒</color> 如果目标护甲厚度低于 <color=#ffdf72>" );
                             {
                                 buffer.Add( "<color=#ffdf72>" );
                                 buffer.Add( systemStats.TractorCount );
-                                buffer.Add( "</color>x <color=#f25e1c>REVERSE TRACTOR BEAMS</color>: range <color=#ffdf72>" );
+                                buffer.Add( "</color>x <color=#f25e1c>反向牵引光束</color>: range <color=#ffdf72>" );
                                 buffer.AddNumberMoreReadable( systemStats.TractorRange );
                                 buffer.Add( "</color>" );
                                 WriteTractorRangeInfo( buffer, systemData, false );
                             }
                             else
                             {
-                                buffer.Add( "<color=#f25e1c>REVERSE TRACTOR BEAMS</color>: A maximum of <color=#ffdf72>" );
+                                buffer.Add( "<color=#f25e1c>反向牵引光束</color>: A maximum of <color=#ffdf72>" );
                                 buffer.Add( systemStats.TractorCount );
                                 buffer.Add( "</color> enemy units can be grappled, pulling this unit with them, if they are within <color=#ffdf72>" );
                                 buffer.AddNumberMoreReadable( systemStats.TractorRange );
@@ -6728,14 +6728,14 @@ buffer.Add( "秒</color> 如果目标护甲厚度低于 <color=#ffdf72>" );
                             {
                                 buffer.Add( "<color=#ffdf72>" );
                                 buffer.Add( systemStats.TractorCount );
-                                buffer.Add( "</color>x <color=#f25e1c>TRACTOR BEAMS</color>: range <color=#ffdf72>" );
+                                buffer.Add( "</color>x <color=#f25e1c>牵引光束</color>: range <color=#ffdf72>" );
                                 buffer.AddNumberMoreReadable( systemStats.TractorRange );
                                 buffer.Add( "</color>" );
                                 WriteTractorRangeInfo( buffer, systemData, false );
                             }
                             else
                             {
-                                buffer.Add( "<color=#f25e1c>TRACTOR BEAMS</color>: A maximum of <color=#ffdf72>" );
+                                buffer.Add( "<color=#f25e1c>牵引光束</color>: A maximum of <color=#ffdf72>" );
                                 buffer.Add( systemStats.TractorCount );
                                 buffer.Add( "</color> enemy squads can be frozen in place if they are within <color=#ffdf72>" );
                                 buffer.AddNumberMoreReadable( systemStats.TractorRange );
@@ -6750,7 +6750,7 @@ buffer.Add( "秒</color> 如果目标护甲厚度低于 <color=#ffdf72>" );
                     #region Gravity System
                     else if ( systemData.GravityHitsEngine_gxLessThan > 0 )
                     {
-                        buffer.Add( "<color=#f25e1c>GRAVITY FIELD</color>: ");
+                        buffer.Add( "<color=#f25e1c>重力场</color>: ");
                         if ( detailLevel < TooltipDetail.Full )
                         {
                             if (systemStats.GravityRange > 99999) {
@@ -6786,7 +6786,7 @@ buffer.Add( "秒</color> 如果目标护甲厚度低于 <color=#ffdf72>" );
                     #region Attractant System
                     else if ( systemStats.AttractRangeForShotsAgainstAllies > 0 )
                     {
-                        buffer.Add( "<color=#f25e1c>ATTRACTANT FIELD</color>: All shots fired against friendly units within range <color=#ffdf72>" );
+                        buffer.Add( "<color=#f25e1c>吸引场</color>: All shots fired against friendly units within range <color=#ffdf72>" );
                         buffer.AddNumberMoreReadable( systemStats.AttractRangeForShotsAgainstAllies );
                         buffer.Add( "</color> are automatically redirected at this unit, instead.  " );
                         if ( systemData.CareAboutStateOfMatterToBeEnabled )
@@ -6819,30 +6819,30 @@ buffer.Add( "秒</color> 如果目标护甲厚度低于 <color=#ffdf72>" );
                         if ( multiplier >= FInt.One )
                         {
                             if ( Modifier.ComparisonRefersToMyself )
-                                buffer.Add( "<color=#f25e1c>ATTACK BONUS</color>: If  " );
+                                buffer.Add( "<color=#f25e1c>攻击加成</color>: If  " );
                             else
-                                buffer.Add( "<color=#f25e1c>ATTACK BONUS</color>: If target " );
+                                buffer.Add( "<color=#f25e1c>攻击加成</color>: If target " );
                         } else
                         {
                             if ( Modifier.ComparisonRefersToMyself )
-                                buffer.Add( "<color=#f25e1c>ATTACK PENALTY</color>: If " );
+                                buffer.Add( "<color=#f25e1c>攻击减益</color>: If " );
                             else
-                                buffer.Add( "<color=#f25e1c>ATTACK PENALTY</color>: If target " );
+                                buffer.Add( "<color=#f25e1c>攻击减益</color>: If target " );
                         }
                     } else
                     {
                         if ( multiplier < FInt.One )
                         {
                             if ( Modifier.ComparisonRefersToMyself )
-                                buffer.Add( "<color=#f25e1c>DEFENSIVE BONUS</color>: If " );
+                                buffer.Add( "<color=#f25e1c>防御加成</color>: If " );
                             else
-                                buffer.Add( "<color=#f25e1c>DEFENSIVE BONUS</color>: If target " );
+                                buffer.Add( "<color=#f25e1c>防御加成</color>: If target " );
                         } else
                         {
                             if ( Modifier.ComparisonRefersToMyself )
-                                buffer.Add( "<color=#f25e1c>DEFENSIVE PENALTY</color>: If " );
+                                buffer.Add( "<color=#f25e1c>防御减益</color>: If " );
                             else
-                                buffer.Add( "<color=#f25e1c>DEFENSIVE PENALTY</color>: If attacker " );
+                                buffer.Add( "<color=#f25e1c>防御减益</color>: If attacker " );
                         }
 
                     }
@@ -7050,30 +7050,30 @@ buffer.Add( "秒</color> 如果目标护甲厚度低于 <color=#ffdf72>" );
                         if ( multiplier >= FInt.One )
                         {
                             if ( Modifier.ComparisonRefersToMyself )
-                                buffer.Add( "<color=#f25e1c>ATTACK BONUS</color>: If this ship " );
+                                buffer.Add( "<color=#f25e1c>攻击加成</color>: If this ship " );
                             else
-                                buffer.Add( "<color=#f25e1c>ATTACK BONUS</color>: If the target " );
+                                buffer.Add( "<color=#f25e1c>攻击加成</color>: If the target " );
                         } else
                         {
                             if ( Modifier.ComparisonRefersToMyself )
-                                buffer.Add( "<color=#f25e1c>ATTACK PENALTY</color>: If this ship " );
+                                buffer.Add( "<color=#f25e1c>攻击减益</color>: If this ship " );
                             else
-                                buffer.Add( "<color=#f25e1c>ATTACK PENALTY</color>: If the target " );
+                                buffer.Add( "<color=#f25e1c>攻击减益</color>: If the target " );
                         }
                     } else
                     {
                         if ( multiplier < FInt.One )
                         {
                             if ( Modifier.ComparisonRefersToMyself )
-                                buffer.Add( "<color=#f25e1c>DEFENSIVE BONUS</color>: If this ship " );
+                                buffer.Add( "<color=#f25e1c>防御加成</color>: If this ship " );
                             else
-                                buffer.Add( "<color=#f25e1c>DEFENSIVE BONUS</color>: If the target " );
+                                buffer.Add( "<color=#f25e1c>防御加成</color>: If the target " );
                         } else
                         {
                             if ( Modifier.ComparisonRefersToMyself )
-                                buffer.Add( "<color=#f25e1c>DEFENSIVE PENALTY</color>: If this ship " );
+                                buffer.Add( "<color=#f25e1c>防御减益</color>: If this ship " );
                             else
-                                buffer.Add( "<color=#f25e1c>DEFENSIVE PENALTY</color>: If the attacker " );
+                                buffer.Add( "<color=#f25e1c>防御减益</color>: If the attacker " );
                         }
 
                     }
@@ -7286,30 +7286,30 @@ buffer.Add( "秒</color> 如果目标护甲厚度低于 <color=#ffdf72>" );
                         if ( multiplier > FInt.Zero )
                         {
                             if ( Modifier.ComparisonRefersToMyself )
-                                buffer.Add( "<color=#f25e1c>ATTACK BONUS</color>: For every " );
+                                buffer.Add( "<color=#f25e1c>攻击加成</color>: For every " );
                             else
-                                buffer.Add( "<color=#f25e1c>ATTACK BONUS</color>: For every " );
+                                buffer.Add( "<color=#f25e1c>攻击加成</color>: For every " );
                         } else
                         {
                             if ( Modifier.ComparisonRefersToMyself )
-                                buffer.Add( "<color=#f25e1c>ATTACK PENALTY</color>: For every " );
+                                buffer.Add( "<color=#f25e1c>攻击减益</color>: For every " );
                             else
-                                buffer.Add( "<color=#f25e1c>ATTACK PENALTY</color>: For every " );
+                                buffer.Add( "<color=#f25e1c>攻击减益</color>: For every " );
                         }
                     } else
                     {
                         if ( multiplier <= FInt.One )
                         {
                             if ( Modifier.ComparisonRefersToMyself )
-                                buffer.Add( "<color=#f25e1c>DEFENSIVE BONUS</color>: For every " );
+                                buffer.Add( "<color=#f25e1c>防御加成</color>: For every " );
                             else
-                                buffer.Add( "<color=#f25e1c>DEFENSIVE BONUS</color>: For every " );
+                                buffer.Add( "<color=#f25e1c>防御加成</color>: For every " );
                         } else
                         {
                             if ( Modifier.ComparisonRefersToMyself )
-                                buffer.Add( "<color=#f25e1c>DEFENSIVE PENALTY</color>: For every " );
+                                buffer.Add( "<color=#f25e1c>防御减益</color>: For every " );
                             else
-                                buffer.Add( "<color=#f25e1c>DEFENSIVE PENALTY</color>: For every " );
+                                buffer.Add( "<color=#f25e1c>防御减益</color>: For every " );
                         }
 
                     }
@@ -7482,30 +7482,30 @@ buffer.Add( "秒</color> 如果目标护甲厚度低于 <color=#ffdf72>" );
                         if ( multiplier > FInt.Zero )
                         {
                             if ( Modifier.ComparisonRefersToMyself )
-                                buffer.Add( "<color=#f25e1c>ATTACK BONUS</color>: For every " );
+                                buffer.Add( "<color=#f25e1c>攻击加成</color>: For every " );
                             else
-                                buffer.Add( "<color=#f25e1c>ATTACK BONUS</color>: For every " );
+                                buffer.Add( "<color=#f25e1c>攻击加成</color>: For every " );
                         } else
                         {
                             if ( Modifier.ComparisonRefersToMyself )
-                                buffer.Add( "<color=#f25e1c>ATTACK PENALTY</color>: For every " );
+                                buffer.Add( "<color=#f25e1c>攻击减益</color>: For every " );
                             else
-                                buffer.Add( "<color=#f25e1c>ATTACK PENALTY</color>: For every " );
+                                buffer.Add( "<color=#f25e1c>攻击减益</color>: For every " );
                         }
                     } else
                     {
                         if ( multiplier <= FInt.One )
                         {
                             if ( Modifier.ComparisonRefersToMyself )
-                                buffer.Add( "<color=#f25e1c>DEFENSIVE BONUS</color>: For every " );
+                                buffer.Add( "<color=#f25e1c>防御加成</color>: For every " );
                             else
-                                buffer.Add( "<color=#f25e1c>DEFENSIVE BONUS</color>: For every " );
+                                buffer.Add( "<color=#f25e1c>防御加成</color>: For every " );
                         } else
                         {
                             if ( Modifier.ComparisonRefersToMyself )
-                                buffer.Add( "<color=#f25e1c>DEFENSIVE PENALTY</color>: For every " );
+                                buffer.Add( "<color=#f25e1c>防御减益</color>: For every " );
                             else
-                                buffer.Add( "<color=#f25e1c>DEFENSIVE PENALTY</color>: For every " );
+                                buffer.Add( "<color=#f25e1c>防御减益</color>: For every " );
                         }
 
                     }
@@ -8548,7 +8548,7 @@ buffer.Add( "秒</color> 如果目标护甲厚度低于 <color=#ffdf72>" );
             EntityText.Write_Tooltip_Hotkeys_Footer( buffer, false, true, null );
             buffer.Add( "\n\n" );
 
-            buffer.Add( "<u>Main Ship:</u>\n" );
+            buffer.Add( "<u>主舰：</u>\n" );
             EntityText.GetTooltip( buffer, squad, squad.FleetMembership,
                 null, -1, null, 0, FromSidebarType.NonSidebar_SingleUnit, ShipExtraDetailFlags.None, PositionScaleMultiplier, IsBeingDrawnInPopupWindowRatherThanTooltip );
             buffer.Add( "\n\n" );
@@ -8560,7 +8560,7 @@ buffer.Add( "秒</color> 如果目标护甲厚度低于 <color=#ffdf72>" );
                 {
                     Faction localFaction = World_AIW2.Instance.GetPlayerFactionForUIOrNull();
                     ShipLineEntry entry = null;
-                    buffer.Add( "<u>Defensive Lines For Theft:</u>\n" );
+                    buffer.Add( "<u>可窃取的防御线：</u>\n" );
                     for ( int i = 0; i < squad.ShipGrantsList.Count; i++ )
                     {
                         entry = squad.ShipGrantsList[i];
@@ -8586,7 +8586,7 @@ buffer.Add( "秒</color> 如果目标护甲厚度低于 <color=#ffdf72>" );
                 {
                     Faction localFaction = World_AIW2.Instance.GetPlayerFactionForUIOrNull();
                     ShipLineEntry entry = null;
-                    buffer.Add( "<u>Ships Available For Theft:</u>\n" );
+                    buffer.Add( "<u>可窃取的舰船：</u>\n" );
                     for ( int i = 0; i < squad.ShipGrantsList.Count; i++ )
                     {
                         entry = squad.ShipGrantsList[i];
@@ -8615,7 +8615,7 @@ buffer.Add( "秒</color> 如果目标护甲厚度低于 <color=#ffdf72>" );
                     bool isForCapture = squadFleet.GetFactionType_Safe() == FactionType.NaturalObject;
                     Faction localFaction = World_AIW2.Instance.GetPlayerFactionForUIOrNull();
 
-                    buffer.Add( "<u>Ship Lines In Fleet:</u>\n" );
+                    buffer.Add( "<u>舰队中的舰船线：</u>\n" );
                     foreach ( FleetMembership mem in squadFleet.MemberGroupsSorted_NonSim_ForUIOnly_SeriouslyDoNotCallFromBGCode() )
                     {
                         if ( mem.TypeData.IsFleetLeader )
@@ -8651,7 +8651,7 @@ buffer.Add( "秒</color> 如果目标护甲厚度低于 <color=#ffdf72>" );
                 #region show the contents of fleet leaders that are transports
                 if ( squadFleet != null && squadFleet.GetHasAnyMobileFleetTransportContents() )
                 {
-                    buffer.Add( "<u>Ships Transported In Flagship:</u>\n" );
+                    buffer.Add( "<u>旗舰运输的舰船：</u>\n" );
                     foreach ( FleetMembership mem in squadFleet.MemberGroupsSorted_NonSim_ForUIOnly_SeriouslyDoNotCallFromBGCode() )
                     {
                         if ( mem.TypeData.IsFleetLeader )
@@ -8673,7 +8673,7 @@ buffer.Add( "秒</color> 如果目标护甲厚度低于 <color=#ffdf72>" );
                 byte markLevelOfContents = squad.GetMarkLevelOfContents();
 
                 #region show ai reinforcement point contents
-                buffer.Add( "<u>Ships Contained In This AI Reinforcement Point:</u>\n" );
+                buffer.Add( "<u>此AI增援点包含的舰船：</u>\n" );
                 RefPair<GameEntityTypeData, int> pair;
                 for ( int i = 0; i < squad.AIReinforcementPointContents.Count; i++ )
                 {
@@ -10076,9 +10076,9 @@ buffer.Add( "秒</color> 如果目标护甲厚度低于 <color=#ffdf72>" );
             }
             AlreadyWroteStart = true;
             if( IsAmplifier )
-                Buffer.Add( "<color=#f25e1c>PLANETARY AMPLIFIER:</color> On this planet boosts " );
+                Buffer.Add( "<color=#f25e1c>行星增幅器:</color> On this planet boosts " );
             else
-                Buffer.Add( "<color=#f25e1c>PLANETARY INHIBITOR:</color> On this planet impairs " );
+                Buffer.Add( "<color=#f25e1c>行星抑制器:</color> On this planet impairs " );
         }
 
         public static void WriteAmplifierOrInhibitorSubCategoryStartIfNeeded( ArcenCharacterBufferBase Buffer, bool IsForAllies, ref bool AlreadyWroteStart )

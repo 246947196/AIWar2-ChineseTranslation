@@ -358,7 +358,7 @@ namespace Arcen.AIW2.External
         {
             public override void GetTextToShowFromVolatile( ArcenDoubleCharacterBuffer Buffer )
             {
-                Buffer.Add( "<color=#999999>Close</color>" );
+                Buffer.Add( "<color=#999999>关闭</color>" );
             }
             public override MouseHandlingResult HandleClick_Subclass( MouseHandlingInput input )
             {

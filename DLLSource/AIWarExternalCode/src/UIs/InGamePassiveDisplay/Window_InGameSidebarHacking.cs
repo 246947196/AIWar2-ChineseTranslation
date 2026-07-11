@@ -626,7 +626,7 @@ namespace Arcen.AIW2.External
                     //{
                     //    GameEntity_Squad hacker = Window_InGameSidebarHacking.GetClosestHacker(this.Target, this.Type, planet, false );
                     //    if ( hacker != null )
-                    //        tooltipBuffer.Add( " This hack is done by Fleet " ).Add( hacker.GetFleetName_Safe() ).Add( ".";
+                    //        tooltipBuffer.Add( " 此入侵由舰队执行 " ).Add( hacker.GetFleetName_Safe() ).Add( ".";
                     //}
 
                 if ( this._type.MultiplierToHackingPointCostWhenOnHostileWorld > FInt.One )

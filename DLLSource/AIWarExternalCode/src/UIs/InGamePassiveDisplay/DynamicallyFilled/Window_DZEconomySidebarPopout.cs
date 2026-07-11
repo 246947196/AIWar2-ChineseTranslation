@@ -319,7 +319,7 @@ namespace Arcen.AIW2.External
         {
             public override void GetTextToShowFromVolatile( ArcenDoubleCharacterBuffer Buffer )
             {
-                Buffer.Add( "<b>DZ Economy Manager</b>", "a1d4ff" );
+                Buffer.Add( "<b>暗天顶经济管理器</b>", "a1d4ff" );
             }
         }
 
@@ -327,7 +327,7 @@ namespace Arcen.AIW2.External
         {
             public override void GetTextToShowFromVolatile( ArcenDoubleCharacterBuffer Buffer )
             {
-                Buffer.Add( "<color=#999999>Close</color>" );
+                Buffer.Add( "<color=#999999>关闭</color>" );
             }
             public override MouseHandlingResult HandleClick_Subclass( MouseHandlingInput input )
             {
@@ -637,7 +637,7 @@ namespace Arcen.AIW2.External
                 if ( !any ) Buffer.Add( "none", "666666" );
 
                 if ( epd.NextConversion == null ) return;
-                Buffer.Add( "   Needs: ", "888888" );
+                Buffer.Add( "   需求：", "888888" );
                 bool anyNeed = false;
                 foreach ( KeyValuePair<DZResource, int> kv in epd.NextConversion.Cost )
                 {

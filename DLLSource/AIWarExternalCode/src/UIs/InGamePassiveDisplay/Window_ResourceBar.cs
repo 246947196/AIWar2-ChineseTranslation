@@ -960,21 +960,21 @@ namespace Arcen.AIW2.External
                         if ( !printedHeader )
                         {
                             printedHeader = true;
-                            tooltipBuffer.Add( "\n" ).Add( "Science is being extracted from:\n" );
+                            tooltipBuffer.Add( "\n" ).Add( "正在从以下行星提取科技：\n" );
                         }
                         for(int j = 0; j < playerFac.PlanetsHavingScienceExtracted.Count; j++)
                         {
                             Planet planet = playerFac.PlanetsHavingScienceExtracted[j];
-                            tooltipBuffer.Add("\t").AddFactionColoredString(planet.Name, playerFac).Add( ":  <color=#7CE9FF>" ).AddNumberMoreReadable( planet.GetScienceLeftForHumans().IntValue ).Add("</color> science left.").Add("\n");
+                            tooltipBuffer.Add("\t").AddFactionColoredString(planet.Name, playerFac).Add( ":  <color=#7CE9FF>" ).AddNumberMoreReadable( planet.GetScienceLeftForHumans().IntValue ).Add("</color> 科技剩余").Add("\n");
                             totalScienceAvailable += planet.GetScienceLeftForHumans().IntValue;
                         }
                     }
                 }
                 if( printedHeader )
-                    tooltipBuffer.Add( "Total science left to collect: <color=#7CE9FF>" + totalScienceAvailable +"</color>.");
+                    tooltipBuffer.Add( "待收集科技总计：<color=#7CE9FF>" + totalScienceAvailable +"</color>。");
 
-                // tooltipBuffer.Add( "\n" ).Add( "Current Ark Upgrade Points: " ).AddNumberMoreReadable( localFaction.StoredArkUpgradePoints.IntValue );
-                // tooltipBuffer.Add( "\n" ).Add( "Current Destruction Points: " ).AddNumberMoreReadable( localFaction.StoredDestructionPoints.IntValue );
+                // tooltipBuffer.Add( "\n" ).Add( "当前方舟升级点数：" ).AddNumberMoreReadable( localFaction.StoredArkUpgradePoints.IntValue );
+                // tooltipBuffer.Add( "\n" ).Add( "当前毁灭点数：" ).AddNumberMoreReadable( localFaction.StoredDestructionPoints.IntValue );
                 Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, tooltipBuffer.GetStringAndResetForNextUpdate() );
             }
             public override MouseHandlingResult HandleClick_Subclass( MouseHandlingInput input )

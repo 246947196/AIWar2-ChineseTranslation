@@ -180,7 +180,7 @@ namespace Arcen.AIW2.External
                         }
                         else //one of these is not a note
                         {
-                            //prefer to put filled notes before blanks
+                            //prefer to put filled note秒后 blanks
                             val = (R.Note.SingletonHandler == null).CompareTo( L.Note.SingletonHandler == null ); //desc
                             if ( val != 0 )
                                 return val;
@@ -188,7 +188,7 @@ namespace Arcen.AIW2.External
                     }
                     else //at least one of these is a wave
                     {
-                        //prefer to put non-waves before waves
+                        //prefer to put non-wave秒后 waves
                         val = (L.Wave == null).CompareTo( R.Wave == null ); //asc
                         if ( val != 0 )
                             return val;
