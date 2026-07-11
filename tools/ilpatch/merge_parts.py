@@ -31,9 +31,10 @@ for i in range(1, 9):
             count += 1
     print(f"Part{i}: extracted {count} translations")
 
-# Inject into skeleton
+# Inject into skeleton (also fix value format)
 for key, val in translations.items():
     if key in skeleton:
+        val = val.replace('\\\\n', '\n').replace('\\\\t', '\t').replace('\\\\r', '\r')
         skeleton[key] = val
     else:
         print(f"Warning: key not found in skeleton: {key[:80]}...")
