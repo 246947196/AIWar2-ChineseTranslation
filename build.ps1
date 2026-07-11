@@ -19,6 +19,11 @@ $bepInExProjects = @(
 function Build-MSBuildProject {
     param($projPath)
     Write-Host "Building $([System.IO.Path]::GetFileName($projPath))..." -ForegroundColor Cyan
+    # Clean obj/Release to avoid stale incremental cache
+    $objDir = Join-Path (Split-Path $projPath) "obj\Release"
+    if (Test-Path $objDir) {
+        Remove-Item -Recurse -Force $objDir
+    }
     return & $msbuild $projPath /t:Build /p:Configuration=Release "/p:CscToolPath=$roslynDir" /nologo 2>&1
 }
 

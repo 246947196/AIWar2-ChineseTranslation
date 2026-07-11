@@ -85,7 +85,13 @@ Copy-Item "$translationDir\BepInEx\config\BepInEx.cfg" "$gameDir\BepInEx\config\
 $transPatched = Join-Path $translationDir "PatchedAssemblies"
 foreach ($asm in @("ArcenAIW2Core", "ArcenAIW2Visualization", "ArcenUniversal")) {
     $translated = Join-Path $transPatched "$asm.dll"
-    if (Test-Path $translated) {
+    $newDll = Join-Path $transPatched "$asm.new.dll"
+    # Prefer .new.dll (side-by-side fallback from ilpatch when DLL was locked)
+    if (Test-Path $newDll) {
+        Copy-Item $newDll "$gameDir\PatchedAssemblies\$asm.dll" -Force
+        Write-Host "  Deployed IL-patched (from .new.dll fallback): $asm.dll" -ForegroundColor Gray
+        Remove-Item $newDll -Force
+    } elseif (Test-Path $translated) {
         Copy-Item $translated "$gameDir\PatchedAssemblies\" -Force
         Write-Host "  Deployed IL-patched: $asm.dll" -ForegroundColor Gray
     } else {

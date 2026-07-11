@@ -31,9 +31,16 @@ for i in range(1, PART_COUNT + 1):
         continue
     count = 0
     for key, val in part.items():
-        if val.strip():
-            translations[key] = val
-            count += 1
+        if not val.strip():
+            continue
+        while '\\\\' in key:
+            key = key.replace('\\\\', '\\')
+        key = key.replace('\\n', '\n').replace('\\t', '\t').replace('\\r', '\r')
+        while '\\\\' in val:
+            val = val.replace('\\\\', '\\')
+        val = val.replace('\\n', '\n').replace('\\t', '\t').replace('\\r', '\r')
+        translations[key] = val
+        count += 1
     print(f"Part{i}: extracted {count} translations")
 
 injected = 0
@@ -44,8 +51,35 @@ for key, val in translations.items():
     else:
         print(f"Warning: key not found in skeleton: {key[:80]}...")
 
+# --- Regression check: detect previously translated keys that went silent ---
+OLD_MERGED = OUTPUT + ".bak"
+if os.path.exists(OLD_MERGED):
+    with open(OLD_MERGED, "r", encoding="utf-8") as f:
+        old = json.load(f)
+    new_translated = [k for k, v in skeleton.items() if v.strip()]
+    old_translated = set(k for k, v in old.items() if v.strip())
+    lost = old_translated - set(new_translated)
+    old_keys = set(old.keys())
+    new_keys = set(skeleton.keys())
+    overlap = len(old_keys & new_keys) / max(len(old_keys), len(new_keys)) if old_keys else 1.0
+    version_changed = overlap < 0.9
+    if lost:
+        print(f"\n*** REGRESSION [{DLL}]: {len(lost)} previously translated keys went empty! ***")
+        for k in sorted(lost)[:20]:
+            print(f"  LOST: {k[:80]}")
+        if len(lost) > 20:
+            print(f"  ... and {len(lost) - 20} more")
+        if version_changed:
+            print(f"  → Skeleton changed (game version update), continuing.")
+        else:
+            print(f"  → Skeleton unchanged — {len(lost)} translation(s) lost due to format mismatch!")
+            sys.exit(1)
+
 with open(OUTPUT, "w", encoding="utf-8") as f:
     json.dump(skeleton, f, ensure_ascii=False, indent=2)
+
+import shutil
+shutil.copy2(OUTPUT, OLD_MERGED)
 
 total = len(skeleton)
 translated = sum(1 for v in skeleton.values() if v.strip())

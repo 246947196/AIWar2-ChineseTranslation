@@ -870,3 +870,34 @@ GameData/QuickStarts2/
 - `ilpatch patch` 后 ArcenAIW2Core.dll 替换 943 条 ldstr（+47 条），全部 Civilian 字符串确认中文
 
 **教训**：ilpatch 的 `extract` 与手写 `part*.json` 之间的 key/value 格式差异是系统性风险。编辑 part JSON 时必须确保 `\t`/`\n` 为实际制表符和换行符（ilpatch 接受这些字符串），而非 `\\t`/`\\n`。`merge_parts.py` 的 key 和 value 转换应作为标准步骤保留。
+
+### 9.18 增量编译缓存 + ilpatch 格式验证 + 回归校验（2026-07-11）
+
+**问题**：翻译反复无声退回英文。根因分析详见 `AGENTS.md`，涉及 5 个层面：
+
+| # | 问题 | 影响范围 | 修复 |
+|---|------|---------|------|
+| 1 | 增量编译 `obj/Release` | 外部代码 DLL 部署旧版 | `build.ps1` 编译前自动 `Remove-Item obj/Release` |
+| 2 | ilpatch key 格式 `\\` 层数不匹配 | 翻译 key 匹配失败，无声丢失 | `merge_parts.py`/`merge_all.py`：`while` 循环反复 `replace('\\\\', '\\')` 直到无剩余双反斜杠 |
+| 3 | ilpatch value 格式 `\\n` 字面量 | 写入 DLL 的是文本 `\n` 而非换行 | value 也应用同样的 while 循环折叠 |
+| 4 | DLL 被游戏锁，写 .new.dll | 补丁未生效，旧版继续用 | `deploy.ps1` 检测 `.new.dll` 并自动提升 |
+| 5 | C# `JsonSerializer.Deserialize` 拒绝 JSON 字符串中的原始控制字符 | merged.json 含原始 0x0A 时 deserialize 失败 | Python 的 `json.dump` 默认已正确转义控制字符为 `\n`/`\t` |
+
+**回归校验**：`merge_parts.py`/`merge_all.py` 在写 merged.json 前对比 `.bak`，自动检测 skeleton 是否变化：
+- skeleton 不变 → 任何翻译丢失视为格式 bug，`sys.exit(1)` 终止
+- skeleton 变了（游戏版本更新）→ 告警不终止
+
+**验证脚本** `verify_patch.py`：
+- 对比 merged.json 与 patched DLL 的实际内容
+- 3 层验证：`ilpatch extract`（可见层）→ UTF-16LE 二进制搜索（`LooksTranslatable` 盲区）→ 最终确认
+- 用法：`python verify_patch.py <dll> <merged.json>`
+
+**DLL 验证结果**（Steam 恢复原始 DLL 后重新 patch）：
+
+| DLL | 翻译数 | 已写入 | 丢失 |
+|-----|--------|--------|------|
+| ArcenAIW2Core | 775 | 774 | 0 |
+| ArcenAIW2Visualization | 12 | 12 | 0 |
+| ArcenUniversal | 156 | 156 | 0 |
+
+**工作流更新**：patch 前必须从 `AIWar2_Data\Managed\` 复制原始 DLL（禁止在已 patch 的 DLL 上重复运行 `ilpatch patch`，否则英文 dict key 匹配不到已被替换的中文 ldstr）。

@@ -191,6 +191,20 @@ MSBuild：`C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe`
 
 【教训】翻译大型 UI 文件（如 Window_InGameHoverEntityInfo.cs 8390 行、Window_ResourceBar.cs 3413 行）时，必须遍历所有区块确保无遗漏。
 
+## IL 补丁验证
+
+Patch 后运行：
+```powershell
+python tools/ilpatch/verify_patch.py PatchedAssemblies\ArcenAIW2Core.dll tools\ilpatch\ArcenAIW2Core.merged.json
+```
+
+三层验证：
+1. `ilpatch extract` — 确认 key/value 是否在提取结果中（`LooksTranslatable` 可见）
+2. UTF-16LE 二进制搜索 — 补上纯中文 value 被过滤的盲区
+3. 统计 pending/applied/missing
+
+patch 前必须从 `AIWar2_Data\Managed\` 复制原始 DLL（禁止在已 patch 的 DLL 上重复运行 `ilpatch patch`）。
+
 ## 翻译规则
 
 1. **Edit 工具**逐字符串替换，禁止 Write 覆写整个文件
