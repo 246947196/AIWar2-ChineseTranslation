@@ -68,41 +68,9 @@ public class WorldTMPFontPatchPlugin : BaseUnityPlugin
             }
 
             if (cachedTMPFont != null)
-            {
-                Debug.Log($"[WorldTMPFontPatch] Loaded TMP font: {cachedTMPFont.name}");
-
-                // Inject raw TTF data into TMP font for dynamic atlas generation
-                string ttfPath = Path.Combine(Paths.PluginPath, "ChineseTranslation", "mi_sans.ttf");
-                if (File.Exists(ttfPath))
-                {
-                    byte[] fontData = File.ReadAllBytes(ttfPath);
-                    Debug.Log($"[WorldTMPFontPatch] Read TTF: {fontData.Length} bytes");
-
-                    var srcField = typeof(TMP_FontAsset).GetField("m_SourceFontFile", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-                    if (srcField != null)
-                    {
-                        srcField.SetValue(cachedTMPFont, fontData);
-                        Debug.Log($"[WorldTMPFontPatch] Set m_SourceFontFile");
-                    }
-
-                    var modeField = typeof(TMP_FontAsset).GetField("m_AtlasPopulationMode", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-                    if (modeField != null)
-                    {
-                        modeField.SetValue(cachedTMPFont, 1);
-                        Debug.Log($"[WorldTMPFontPatch] Set atlas mode to Dynamic");
-                    }
-
-                    cachedTMPFont.ReadFontAssetDefinition();
-                    Debug.Log($"[WorldTMPFontPatch] ReadFontAssetDefinition() done");
-                }
-                else
-                {
-                    Debug.Log($"[WorldTMPFontPatch] TTF not found at: {ttfPath}");
-                }
-            }
-
+                Debug.Log($"[WorldTMPFontPatch] TMP font: {cachedTMPFont.name}");
             if (cachedLegacyFont != null)
-                Debug.Log($"[WorldTMPFontPatch] Loaded legacy font: {cachedLegacyFont.name}");
+                Debug.Log($"[WorldTMPFontPatch] Legacy font: {cachedLegacyFont.name}");
 
             bundle.Unload(false);
         }
@@ -110,6 +78,16 @@ public class WorldTMPFontPatchPlugin : BaseUnityPlugin
         {
             Debug.LogError($"[WorldTMPFontPatch] Error: {ex.GetType().Name}: {ex.Message}");
         }
+    }
+
+    [HarmonyPostfix]
+    [HarmonyPatch(typeof(TMP_Text), "set_font")]
+    private static void OnSetFont(TMP_Text __instance, TMP_FontAsset value)
+    {
+        if (cachedTMPFont == null) return;
+        if (value == cachedTMPFont) return;
+        if (value == null) return;
+        __instance.font = cachedTMPFont;
     }
 
     [HarmonyPostfix]
@@ -124,15 +102,6 @@ public class WorldTMPFontPatchPlugin : BaseUnityPlugin
     [HarmonyPostfix]
     [HarmonyPatch(typeof(TextMeshPro), "InternalUpdate")]
     private static void OnTextMeshProInternalUpdate(TextMeshPro __instance)
-    {
-        if (cachedTMPFont == null) return;
-        if (__instance.font == cachedTMPFont) return;
-        __instance.font = cachedTMPFont;
-    }
-
-    [HarmonyPostfix]
-    [HarmonyPatch(typeof(TextMeshProUGUI), "OnEnable")]
-    private static void OnTextMeshProUGUIEnable(TextMeshProUGUI __instance)
     {
         if (cachedTMPFont == null) return;
         if (__instance.font == cachedTMPFont) return;
