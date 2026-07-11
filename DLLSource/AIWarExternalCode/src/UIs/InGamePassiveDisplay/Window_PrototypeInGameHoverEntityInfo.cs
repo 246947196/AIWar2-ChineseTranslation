@@ -6067,7 +6067,7 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
 
                         {
                             HandleNewlineAndSize( buffer, ref haveDoneNewLineAndSize );
-                            buffer.Add( "<color=#f25e1c>攻击加成</color>: Shots from the above weapon do <color=#ffdf72>" ).Add( systemStats.DamageMultiplierToTractoredUnits.ReadableString, "a1ffa1" ).Add( "x</color>伤害对牵引光束中的单位。" );
+                            buffer.Add( "<color=#f25e1c>攻击加成</color>: 上述武器的射击造成 <color=#ffdf72>" ).Add( systemStats.DamageMultiplierToTractoredUnits.ReadableString, "a1ffa1" ).Add( "x</color>伤害对牵引光束中的单位。" );
                         }
                         #endregion
 
@@ -6080,7 +6080,7 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                                 hasSystemWithBonusFromAttackingUnderForcefields = true;
 
                             HandleNewlineAndSize( buffer, ref haveDoneNewLineAndSize );
-                            buffer.Add( "<color=#f25e1c>攻击加成</color>: Shots from the above weapon do <color=#ffdf72>" ).Add( systemData.DamageModifierWhileUnderForcefield.ReadableString, "a1ffa1" ).Add( "x</color>伤害如果此单位在力场下，忽略正常惩罚。" );
+                            buffer.Add( "<color=#f25e1c>攻击加成</color>: 上述武器的射击造成 <color=#ffdf72>" ).Add( systemData.DamageModifierWhileUnderForcefield.ReadableString, "a1ffa1" ).Add( "x</color>伤害如果此单位在力场下，忽略正常惩罚。" );
                         }
                         #endregion
 
@@ -6096,7 +6096,7 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                             if ( detailLevel < TooltipDetail.Full )
                                 buffer.Add( "<color=#f25e1c>攻击加成</color>: Additional <color=#ffdf72>" ).Add( systemData.AdditionalDamageModifierPerWeaponPoint.ReadableString, "a1ffa1" ).Add( "x</color>每当前武器点数。" );
                             else
-                                buffer.Add( "<color=#f25e1c>攻击加成</color>: Shots from the above weapon do an additional <color=#ffdf72>" ).Add( systemData.AdditionalDamageModifierPerWeaponPoint.ReadableString, "a1ffa1" ).Add( "x</color>伤害每当前拥有的武器点数。" );
+                                buffer.Add( "<color=#f25e1c>攻击加成</color>: 上述武器的射击造成 an additional <color=#ffdf72>" ).Add( systemData.AdditionalDamageModifierPerWeaponPoint.ReadableString, "a1ffa1" ).Add( "x</color>伤害每当前拥有的武器点数。" );
                         }
 
                         // The case where it DOES consume Weapon Points on firing, i.e Powerslaver style.
@@ -6259,13 +6259,13 @@ buffer.Add( "秒</color> 如果目标护甲厚度低于 <color=#ffdf72>" );
                             }
                             else if ( !systemData.FiresThroughEnemyShields )
                             {
-                                buffer.Add( "<color=#f25e1c>聚变反应</color>: Shots from the above weapon do <color=#ffdf72>" );
+                                buffer.Add( "<color=#f25e1c>聚变反应</color>: 上述武器的射击造成 <color=#ffdf72>" );
                                 buffer.Add( Mathf.RoundToInt( systemStats.PercentDamageBypassesPersonalShields.ToFloatNonSim() * 100f ) );
                                 buffer.Add( "%</color> of their damage directly to the hull of their target, bypassing any personal shields (NOT bubble forcefields).  " );
                             }
                             else
                             {
-                                buffer.Add( "<color=#f25e1c>聚变反应</color>: Shots from the above weapon do <color=#ffdf72>" );
+                                buffer.Add( "<color=#f25e1c>聚变反应</color>: 上述武器的射击造成 <color=#ffdf72>" );
                                 buffer.Add( Mathf.RoundToInt( systemStats.PercentDamageBypassesPersonalShields.ToFloatNonSim() * 100f ) );
                                 buffer.Add( "%</color> 的伤害直接作用于目标船体，绕过所有个人护盾。  " );
                             }

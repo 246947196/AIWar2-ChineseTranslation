@@ -6336,7 +6336,7 @@ namespace Arcen.AIW2.External
                             if ( isRetaliatory )
                                 buffer.Add( " <color=#dfff72>Exotic Damage</color>, " );
                             else
-                                buffer.Add( " Damage, " );
+                                buffer.Add( " 伤害，" );
                         }
                     }
                     
@@ -7098,7 +7098,7 @@ namespace Arcen.AIW2.External
 
                         {
                             HandleNewlineAndSize( buffer, ref haveDoneNewLineAndSize );
-                            buffer.Add( "<color=#f25e1c>攻击加成</color>: Shots from the above weapon do <color=#ffdf72>" ).Add( systemStats.DamageMultiplierToTractoredUnits.ReadableString, "a1ffa1" ).Add( "x</color>伤害对牵引光束中的单位。" );
+                            buffer.Add( "<color=#f25e1c>攻击加成</color>: 上述武器的射击造成 <color=#ffdf72>" ).Add( systemStats.DamageMultiplierToTractoredUnits.ReadableString, "a1ffa1" ).Add( "x</color>伤害对牵引光束中的单位。" );
                         }
                         #endregion
 
@@ -7111,7 +7111,7 @@ namespace Arcen.AIW2.External
                                 hasSystemWithBonusFromAttackingUnderForcefields = true;
 
                             HandleNewlineAndSize( buffer, ref haveDoneNewLineAndSize );
-                            buffer.Add( "<color=#f25e1c>攻击加成</color>: Shots from the above weapon do <color=#ffdf72>" ).Add( systemData.DamageModifierWhileUnderForcefield.ReadableString, "a1ffa1" ).Add( "x</color>伤害如果此单位在力场下，忽略正常惩罚。" );
+                            buffer.Add( "<color=#f25e1c>攻击加成</color>: 上述武器的射击造成 <color=#ffdf72>" ).Add( systemData.DamageModifierWhileUnderForcefield.ReadableString, "a1ffa1" ).Add( "x</color>伤害如果此单位在力场下，忽略正常惩罚。" );
                         }
                         #endregion
 
@@ -7127,7 +7127,7 @@ namespace Arcen.AIW2.External
                             if ( detailLevel < TooltipDetail.Full )
                                 buffer.Add( "<color=#f25e1c>攻击加成</color>: Additional <color=#ffdf72>" ).Add( systemData.AdditionalDamageModifierPerWeaponPoint.ReadableString, "a1ffa1" ).Add( "x</color>每当前武器点数。" );
                             else
-                                buffer.Add( "<color=#f25e1c>攻击加成</color>: Shots from the above weapon do an additional <color=#ffdf72>" ).Add( systemData.AdditionalDamageModifierPerWeaponPoint.ReadableString, "a1ffa1" ).Add( "x</color>伤害每当前拥有的武器点数。" );
+                                buffer.Add( "<color=#f25e1c>攻击加成</color>: 上述武器的射击造成 an additional <color=#ffdf72>" ).Add( systemData.AdditionalDamageModifierPerWeaponPoint.ReadableString, "a1ffa1" ).Add( "x</color>伤害每当前拥有的武器点数。" );
                         }
 
                         // The case where it DOES consume Weapon Points on firing, i.e Powerslaver style.
@@ -7214,7 +7214,7 @@ namespace Arcen.AIW2.External
                             }
                             else
                             {
-                                buffer.Add( "<color=#f25e1c>电离辐射</color>: Shots from the above weapon do <color=#ffdf72>" );
+                                buffer.Add( "<color=#f25e1c>电离辐射</color>: 上述武器的射击造成 <color=#ffdf72>" );
                                 buffer.Add( (systemData.IonPercentagePerMarkLevelLower * FInt.FromParts( 100, 0 )).IntValue );
                                 buffer.Add( "%</color> of the target's max health (shield if present, then hull) to any targets whose Mark is lower than <color=#ffdf72>Mark " );
                                 buffer.AddNumberMoreReadable( systemStats.MarkLevel.Ordinal );
@@ -7334,13 +7334,13 @@ namespace Arcen.AIW2.External
                             }
                             else if ( !systemData.FiresThroughEnemyShields )
                             {
-                                buffer.Add( "<color=#f25e1c>聚变反应</color>: Shots from the above weapon do <color=#ffdf72>" );
+                                buffer.Add( "<color=#f25e1c>聚变反应</color>: 上述武器的射击造成 <color=#ffdf72>" );
                                 buffer.Add( Mathf.RoundToInt( systemStats.PercentDamageBypassesPersonalShields.ToFloatNonSim() * 100f ) );
                                 buffer.Add( "%</color> of their damage directly to the hull of their target, bypassing any personal shields (NOT bubble forcefields).  " );
                             }
                             else
                             {
-                                buffer.Add( "<color=#f25e1c>聚变反应</color>: Shots from the above weapon do <color=#ffdf72>" );
+                                buffer.Add( "<color=#f25e1c>聚变反应</color>: 上述武器的射击造成 <color=#ffdf72>" );
                                 buffer.Add( Mathf.RoundToInt( systemStats.PercentDamageBypassesPersonalShields.ToFloatNonSim() * 100f ) );
                                 buffer.Add( "%</color> of their damage directly to the hull of their target, bypassing any personal shields.  " );
                             }

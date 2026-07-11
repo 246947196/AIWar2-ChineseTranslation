@@ -49,7 +49,7 @@ namespace Arcen.AIW2.External
         public static readonly FixedTextFormatingStats Albedo = new FixedTextFormatingStats( "反照率", ColorMath.LightPurple.GetHexCode(), "ShipStats_Albedo", SpaceAfterIcon );
         public static readonly FixedTextFormatingStats Engine = new FixedTextFormatingStats( "引擎", ColorMath.LightWhipBlue.GetHexCode(), "ShipStats_EnginePower", SpaceAfterIcon );
 
-        public static readonly FixedTextFormatingStats Mark = new FixedTextFormatingStats( "等级" );
+        public static readonly FixedTextFormatingStats Mark = new FixedTextFormatingStats( "Mark" );
         
         public static readonly FixedTextFormatingStats Buffs = new FixedTextFormatingStats( "增益", "0ba70b");
         public static readonly FixedTextFormatingStats BuffsLight = new FixedTextFormatingStats( "增益亮", "007c00");
