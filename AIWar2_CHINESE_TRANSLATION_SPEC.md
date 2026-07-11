@@ -865,7 +865,8 @@ GameData/QuickStarts2/
 
 **修复**：
 - `merge_parts.py`：在 key 匹配前添加 `.replace('\\\\n', '\n').replace('\\\\t', '\t')` 转换
+- **值格式修复（第 2 轮）**：上述修复只处理了 key，但 value 同样有 `\\n`/`\\t` 格式问题，导致补丁写入字面量 `\n` 文本而非真正的换行符。在第 2 轮给注入骨架步骤也添加了同样的 value 格式转换后，换行才正常。
 - `ArcenAIW2Core.part2.json`：补充 4 条 Civilian 相关翻译（来自/赠予/偿还/净结余）
 - `ilpatch patch` 后 ArcenAIW2Core.dll 替换 943 条 ldstr（+47 条），全部 Civilian 字符串确认中文
 
-**教训**：ilpatch 的 `extract` 与手写 `part*.json` 之间的 key 格式差异是系统性风险。编辑 part JSON 时必须确保 `\t`/`\n` 为实际制表符和换行符（ilpatch 接受这些字符串），而非 `\\t`/`\\n`。`merge_parts.py` 的 key 转换应作为标准步骤保留。
+**教训**：ilpatch 的 `extract` 与手写 `part*.json` 之间的 key/value 格式差异是系统性风险。编辑 part JSON 时必须确保 `\t`/`\n` 为实际制表符和换行符（ilpatch 接受这些字符串），而非 `\\t`/`\\n`。`merge_parts.py` 的 key 和 value 转换应作为标准步骤保留。
