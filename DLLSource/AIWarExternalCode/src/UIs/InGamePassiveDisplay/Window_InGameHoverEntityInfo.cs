@@ -6668,7 +6668,7 @@ namespace Arcen.AIW2.External
                                     {
                                         buffer.Add( "<color=#f25e1c>线圈光束阵列武器</color>: <color=#ffdf72>" );
                                         buffer.Add( systemData.NumberBeamsToFire );
-                                        buffer.Add( "</color> beams, length <color=#ffdf72>" );
+                                        buffer.Add( "</color> 束，长度 <color=#ffdf72>" );
                                     }
                                     buffer.AddNumberMoreReadable( (systemStats.CalculateActualRange( relatedSquadOrNull ) * systemData.BeamLengthMultiplier).IntValue );
 
@@ -6781,7 +6781,7 @@ namespace Arcen.AIW2.External
                                 else
                                 {
                                     if ( detailLevel < TooltipDetail.Full )
-                                        buffer.Add( "<color=#f25e1c>点光束武器</color>: Hits one target. " );
+                                        buffer.Add( "<color=#f25e1c>点光束武器</color>: 击中一个目标。 " );
                                     else
                                         buffer.Add( "<color=#f25e1c>点光束武器</color>: Attacks from the above weapon are in the form of beam that hits only the target it was aimed at. " );
                                 }
@@ -6799,7 +6799,7 @@ namespace Arcen.AIW2.External
                                         else
                                             buffer.Add( "<color=#f25e1c>光束阵列武器</color>: <color=#ffdf72>" );
                                         buffer.Add( systemData.NumberBeamsToFire );
-                                        buffer.Add( "</color> beams, length <color=#ffdf72>" );
+                                        buffer.Add( "</color> 束，长度 <color=#ffdf72>" );
                                     }
                                     buffer.AddNumberMoreReadable( (systemStats.CalculateActualRange( relatedSquadOrNull ) * systemData.BeamLengthMultiplier).IntValue );
 
@@ -6894,7 +6894,7 @@ namespace Arcen.AIW2.External
                                 HandleNewlineAndSize( buffer, ref haveDoneNewLineAndSize );
                                 if ( detailLevel < TooltipDetail.Full )
                                 {
-                                    buffer.Add( "<color=#f25e1c>多光束</color>: up to <color=#ffdf72>" ).Add( systemData.ForMark[effectiveMarkLevel].ShotsPerSalvo ).Add( "</color> beams" );
+                                    buffer.Add( "<color=#f25e1c>多光束</color>: 最多 <color=#ffdf72>" ).Add( systemData.ForMark[effectiveMarkLevel].ShotsPerSalvo ).Add( "</color> 束" );
                                     if ( !systemData.HitsAllIntersectingTargets )
                                         buffer.Add( "，每束一个目标。  " );
                                     else if ( systemStats.AOEMaximumNumberOfTargetsHitPerShot >= 1 )
@@ -6902,8 +6902,8 @@ namespace Arcen.AIW2.External
                                 }
                                 else
                                 {
-                                    buffer.Add( "<color=#f25e1c>多光束</color>: Up to <color=#ffdf72>" ).Add( systemData.ForMark[effectiveMarkLevel].ShotsPerSalvo )
-                                        .Add( "</color> beams can be fired at a time. " );
+                                    buffer.Add( "<color=#f25e1c>多光束</color>: 最多 <color=#ffdf72>" ).Add( systemData.ForMark[effectiveMarkLevel].ShotsPerSalvo )
+                                        .Add( "</color> 束可同时发射。 " );
                                     if ( systemData.ForMark[effectiveMarkLevel].ShotsPerSalvo > systemData.ForMark[effectiveMarkLevel].ShotsPerTarget )
                                         buffer.Add( "仅 " ).Add( systemData.ForMark[effectiveMarkLevel].ShotsPerTarget ).Add( " 可对每个目标和堆叠发射。" );
                                     else
@@ -6919,8 +6919,8 @@ namespace Arcen.AIW2.External
                                 if ( detailLevel >= TooltipDetail.Full )
                                 {
                                     HandleNewlineAndSize( buffer, ref haveDoneNewLineAndSize );
-                                    buffer.Add( "<color=#f25e1c>多发</color>: Up to <color=#ffdf72>" ).Add( systemData.ForMark[effectiveMarkLevel].ShotsPerSalvo )
-                                        .Add( "</color> shots can be fired at a time. " );
+                                    buffer.Add( "<color=#f25e1c>多发</color>: 最多 <color=#ffdf72>" ).Add( systemData.ForMark[effectiveMarkLevel].ShotsPerSalvo )
+                                        .Add( "</color> 发可同时发射。 " );
                                     if ( systemData.ForMark[effectiveMarkLevel].ShotsPerSalvo > systemData.ForMark[effectiveMarkLevel].ShotsPerTarget )
                                         buffer.Add( "仅 " ).Add( systemData.ForMark[effectiveMarkLevel].ShotsPerTarget ).Add( " 可对每个目标和堆叠发射" );
                                     else
@@ -6954,19 +6954,19 @@ namespace Arcen.AIW2.External
                         {
                             HandleNewlineAndSize( buffer, ref haveDoneNewLineAndSize );
 
-                            buffer.Add( "<color=#f25e1c>有限目标</color>: Can only target static structures.  " );
+                            buffer.Add( "<color=#f25e1c>有限目标</color>: 只能瞄准静态建筑。  " );
                         }
                         if ( systemData.OnlyTargetsMobileUnits )
                         {
                             HandleNewlineAndSize( buffer, ref haveDoneNewLineAndSize );
 
-                            buffer.Add( "<color=#f25e1c>有限目标</color>: Can only target mobile units.  " );
+                            buffer.Add( "<color=#f25e1c>有限目标</color>: 只能瞄准移动单位。  " );
                         }
                         if ( systemData.OnlyTargetsStrikecraftAndFrigates )
                         {
                             HandleNewlineAndSize( buffer, ref haveDoneNewLineAndSize );
 
-                            buffer.Add( "<color=#f25e1c>有限目标</color>: Can only target strikecraft and frigates.  " );
+                            buffer.Add( "<color=#f25e1c>有限目标</color>: 只能瞄准舰载机和护卫舰。  " );
                         }
                         #endregion
                         debugStage = 225;
@@ -7016,7 +7016,7 @@ namespace Arcen.AIW2.External
                                         engineSpeed = ExternalConstants.Instance.EngineStunMultipliersByStunSeconds[systemData.MaxEngineStunSeconds];
 
                                     buffer.Add( "目标可被减速最多 " ).AddNumberMoreReadable( systemData.MaxEngineStunSeconds )
-                                        .Add( "s, at which point its movement speed will only be  <color=#ffdf72>" ).Add( engineSpeed.ReadableString ).Add( "x</color> normal.  " );
+                                        .Add( "s, at which point its movement speed will only be  <color=#ffdf72>" ).Add( engineSpeed.ReadableString ).Add( "x</color> 正常。  " );
                                 }
                                 else
                                     buffer.Add( "目标累积的眩晕秒数越多，速度越慢。4秒 = 50%移动速度，7秒以上 = 无法移动。" );
@@ -7146,7 +7146,7 @@ namespace Arcen.AIW2.External
                         {
                             HandleNewlineAndSize( buffer, ref haveDoneNewLineAndSize );
 
-                            buffer.Add( "<color=#f25e1c>获得武器点数</color>: Shots from the above weapon increase this units Weapon Points by <color=#ffdf72>" + systemData.NumberOfWeaponPointsToGainOnFiring + "</color>, up to max of <color=#ffdf72>" + systemData.ParentEntityTypeData.MaxNumberOfWeaponPoints + "</color>. " );
+                            buffer.Add( "<color=#f25e1c>获得武器点数</color>: Shots from the above weapon increase this units Weapon Points by <color=#ffdf72>" + systemData.NumberOfWeaponPointsToGainOnFiring + "</color>，最大上限 <color=#ffdf72>" + systemData.ParentEntityTypeData.MaxNumberOfWeaponPoints + "</color>. " );
                         }
                         #endregion
 
@@ -7330,7 +7330,7 @@ namespace Arcen.AIW2.External
                             {
                                 buffer.Add( "<color=#f25e1c>聚变反应</color>: <color=#ffdf72>" );
                                 buffer.Add( Mathf.RoundToInt( systemStats.PercentDamageBypassesPersonalShields.ToFloatNonSim() * 100f ) );
-                                buffer.Add( "%</color> direct to target hull.  " );
+                                buffer.Add( "%</color> 直接作用于目标船体。  " );
                             }
                             else if ( !systemData.FiresThroughEnemyShields )
                             {
@@ -7502,7 +7502,7 @@ namespace Arcen.AIW2.External
                                     buffer.Add( "<color=#f25e1c>自伤</color>: damages itself by <color=#ffdf72>" );
                                 }
                                 buffer.AddNumberMoreReadable( systemData.HealthChangePerDamageDealt );
-                                buffer.Add( " health</color> for every 1 damage it has dealt.  " );
+                                buffer.Add( " 生命</color>每造成1点伤害。  " );
                             }
                         }
 
