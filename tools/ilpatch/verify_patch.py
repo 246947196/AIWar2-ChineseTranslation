@@ -1,10 +1,8 @@
 # Verify which translations in merged.json are already applied to a DLL.
 # Usage: python verify_patch.py <dll> <merged.json>
 #
-# 3-layer verification:
-# 1. ilpatch extract (LooksTranslatable filter) -> visible English/Chinese keys
-# 2. ilpatch inspect raw bytes (system encoding) -> cross-check English key NOT in DLL
-# 3. UTF-16LE binary search in DLL -> detect Chinese values invisible to extract
+# Uses ilpatch dump-ldstr to get ALL unique ldstr as clean JSON
+# (no Console.WriteLine fragmentation, no encoding issues, no LooksTranslatable filter).
 
 import json, subprocess, sys, os, tempfile
 
@@ -21,76 +19,50 @@ def main():
             print(f"ERROR: not found: {path}")
             sys.exit(1)
 
+    ilpatch = os.path.join(os.path.dirname(__file__), "bin", "Release", "net8.0", "ilpatch.exe")
+
+    # Get ALL unique ldstr from DLL via dump-ldstr (clean JSON, no fragmentation)
+    tmp = os.path.join(tempfile.gettempdir(), "verify_all_ldstr.json")
+    result = subprocess.run([ilpatch, "dump-ldstr", dll, tmp], capture_output=True)
+    if result.returncode != 0:
+        print(f"ERROR: ilpatch dump-ldstr failed: {result.stderr.decode('utf-8', errors='replace')}")
+        sys.exit(1)
+
+    with open(tmp, "r", encoding="utf-8") as f:
+        all_ldstr = set(json.load(f))
+
     with open(merged_path, "r", encoding="utf-8") as f:
         merged = json.load(f)
 
-    with open(dll, "rb") as f:
-        dll_bytes = f.read()
-
-    ilpatch = os.path.join(os.path.dirname(__file__), "bin", "Release", "net8.0", "ilpatch.exe")
-
-    # Layer 1: fresh extract (LooksTranslatable filter)
-    tmp = os.path.join(tempfile.gettempdir(), "verify_fresh_extract.json")
-    result = subprocess.run([ilpatch, "extract", dll, tmp], capture_output=True)
-    if result.returncode != 0:
-        print(f"ERROR: ilpatch extract failed: {result.stderr.decode('utf-8', errors='replace')}")
-        sys.exit(1)
-    with open(tmp, "r", encoding="utf-8") as f:
-        fresh = json.load(f)
-    fresh_keys = set(fresh.keys())
-
-    # Layer 2: raw inspect bytes (search for English keys in system-encoded output)
-    r = subprocess.run([ilpatch, "inspect", dll], capture_output=True)
-    inspect_bytes = r.stdout
-
     pending = []
-    applied_visible = []
-    applied_hidden = []
+    applied = []
     missing = []
 
     for key, val in merged.items():
         if not val.strip():
             continue
-        if key in fresh_keys:
+        if key in all_ldstr:
             pending.append(key)
-            continue
-        if val in fresh_keys:
-            applied_visible.append(key)
-            continue
-
-        # Key not in extract -> either patched or removed.
-        # Cross-check: is the English key still in inspect output (as a separate line)?
-        # Each ldstr is followed by \r\n from Console.WriteLine. Use this boundary to
-        # avoid false positives where key is a substring of a longer ldstr.
-        key_bytes = key.encode("utf-8")
-        if key_bytes + b"\r\n" in inspect_bytes or key_bytes + b"\n" in inspect_bytes:
-            # English key still in DLL as ldstr -> should have been patched but wasn't
-            missing.append(key)
-            continue
-
-        # English not in DLL -> value should be there. Check via UTF-16LE binary search.
-        val_bytes = val.encode("utf-16-le")
-        if val_bytes in dll_bytes:
-            applied_hidden.append(key)
+        elif val in all_ldstr:
+            applied.append(key)
         else:
             missing.append(key)
 
-    total = len(pending) + len(applied_visible) + len(applied_hidden) + len(missing)
+    total = len(pending) + len(applied) + len(missing)
 
-    print(f"DLL: {os.path.basename(dll)} ({len(dll_bytes)} bytes)")
-    print(f"  Fresh extract: {len(fresh)} keys")
-    print(f"  Merged dict:   {len(merged)} keys, {total} translated")
+    print(f"DLL: {os.path.basename(dll)} ({os.path.getsize(dll)} bytes)")
+    print(f"  Unique ldstr: {len(all_ldstr)}")
+    print(f"  Merged dict:  {len(merged)} keys, {total} translated")
     print()
 
     print("=" * 60)
-    print(f"  {'Status':<30} {'Count':>6}")
+    print(f"  {'Status':<20} {'Count':>6}")
     print("=" * 60)
-    print(f"  {'pending (English in extract)':<30} {len(pending):>6}")
-    print(f"  {'applied (Chinese in extract)':<30} {len(applied_visible):>6}")
-    print(f"  {'applied (Chinese in DLL binary)':<30} {len(applied_hidden):>6}")
-    print(f"  {'missing':<30} {len(missing):>6}")
+    print(f"  {'pending':<20} {len(pending):>6}  — English key still in DLL")
+    print(f"  {'applied':<20} {len(applied):>6}  — Chinese value in DLL")
+    print(f"  {'missing':<20} {len(missing):>6}  — key/value not found in DLL")
     print("=" * 60)
-    print(f"  {'total':<30} {total:>6}")
+    print(f"  {'total':<20} {total:>6}")
     print()
 
     if pending:
@@ -101,24 +73,18 @@ def main():
             print(f"  ... and {len(pending) - 5} more")
         print()
 
-    if applied_hidden:
-        print(f"APPLIED hidden ({len(applied_hidden)} — in DLL but filtered by extract):")
-        for k in sorted(applied_hidden)[:3]:
-            print(f"  {k[:80]!r}")
-        if len(applied_hidden) > 3:
-            print(f"  ... and {len(applied_hidden) - 3} more")
-        print()
-
     if missing:
         print(f"MISSING ({len(missing)}):")
         for k in sorted(missing)[:5]:
-            print(f"  {k[:80]!r}")
+            v = merged[k]
+            print(f"  key={k[:80]!r}")
+            print(f"  val={v[:80]!r}")
         if len(missing) > 5:
             print(f"  ... and {len(missing) - 5} more")
         print()
 
-    s = "OK" if not pending and not missing else "PARTIAL" if not missing else "ISSUES"
-    print(f"{s}: {len(applied_visible)+len(applied_hidden)} applied, {len(pending)} pending, {len(missing)} missing.")
+    s = "OK" if not pending and not missing else "PARTIAL" if not pending else "ISSUES"
+    print(f"{s}: {len(applied)} applied, {len(pending)} pending, {len(missing)} missing.")
 
 if __name__ == "__main__":
     main()

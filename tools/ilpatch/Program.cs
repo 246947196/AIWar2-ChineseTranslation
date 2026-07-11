@@ -10,9 +10,10 @@ using dnlib.DotNet.Writer;
 // AI War 2 IL-level localization tool.
 //
 // Modes:
-//   inspect <dll> [contains]   dump unique Ldstr strings (optionally filtered)
-//   extract <dll> <out.json>   dump all unique Ldstr as {"text":""} skeleton
-//   patch   <dll> <dict.json>  replace Ldstr via dictionary, write in place (with .bak)
+//   inspect    <dll> [contains]   dump unique Ldstr strings (optionally filtered)
+//   extract    <dll> <out.json>   dump translatable Ldstr as {"text":""} skeleton
+//   dump-ldstr <dll> <out.json>   dump ALL unique Ldstr as ["str1","str2",...] (unfiltered)
+//   patch      <dll> <dict.json>  replace Ldstr via dictionary, write in place (with .bak)
 
 class Program
 {
@@ -20,7 +21,7 @@ class Program
     {
         if (args.Length < 1)
         {
-            Console.WriteLine("Usage:\n  ilpatch inspect <dll> [contains]\n  ilpatch extract <dll> <out.json>\n  ilpatch patch <dll> <dict.json> [--dry]");
+            Console.WriteLine("Usage:\n  ilpatch inspect <dll> [contains]\n  ilpatch extract <dll> <out.json>\n  ilpatch dump-ldstr <dll> <out.json>\n  ilpatch patch <dll> <dict.json> [--dry]");
             return 1;
         }
 
@@ -31,6 +32,7 @@ class Program
             {
                 case "inspect": return Inspect(args);
                 case "extract": return Extract(args);
+                case "dump-ldstr": return DumpLdstr(args);
                 case "patch": return Patch(args);
                 default:
                     Console.WriteLine($"Unknown mode: {mode}");
@@ -100,6 +102,19 @@ class Program
                 dict[s] = "";
         File.WriteAllText(args[2], JsonSerializer.Serialize(dict, new JsonSerializerOptions { WriteIndented = true, Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping }));
         Console.Error.WriteLine($"[extract] wrote {dict.Count} entries to {args[2]}");
+        return 0;
+    }
+
+    static int DumpLdstr(string[] args)
+    {
+        if (args.Length < 3) { Console.WriteLine("need dll + out.json"); return 1; }
+        using var module = ModuleDefMD.Load(args[1]);
+        var list = new List<string>();
+        foreach (var s in UniqueLdstrs(module))
+            list.Add(s);
+        var opts = new JsonSerializerOptions { WriteIndented = true, Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping };
+        File.WriteAllText(args[2], JsonSerializer.Serialize(list, opts));
+        Console.Error.WriteLine($"[dump-ldstr] wrote {list.Count} entries to {args[2]}");
         return 0;
     }
 
