@@ -59,10 +59,11 @@ def main():
             continue
 
         # Key not in extract -> either patched or removed.
-        # Cross-check: is the English key still in inspect output (raw bytes)?
-        # inspect outputs in system encoding (GBK on Chinese Windows).
-        key_bytes = key.encode("utf-8")  # utf-8 because key is English ASCII
-        if key_bytes in inspect_bytes:
+        # Cross-check: is the English key still in inspect output (as a separate line)?
+        # Each ldstr is followed by \r\n from Console.WriteLine. Use this boundary to
+        # avoid false positives where key is a substring of a longer ldstr.
+        key_bytes = key.encode("utf-8")
+        if key_bytes + b"\r\n" in inspect_bytes or key_bytes + b"\n" in inspect_bytes:
             # English key still in DLL as ldstr -> should have been patched but wasn't
             missing.append(key)
             continue
