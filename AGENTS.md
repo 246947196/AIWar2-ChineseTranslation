@@ -94,7 +94,7 @@ Control Bindings 菜单左侧分类按钮显示的是 `InputAction` XML 文件�
 
 | 项目 | 源码 | 编译 | 翻译 |
 |------|------|------|------|
-| AIWarExternalCode | DLLSource/AIWarExternalCode/src/ | ✅ | ✅ 完成（~655 条字符串） |
+| AIWarExternalCode | DLLSource/AIWarExternalCode/src/ | ✅ | ✅ 完成（~2000+ 条字符串，含 2 个大文件全量补译） |
 | AIWarExternalDeepProcessingCode | DLLSource/AIWarExternalDeepProcessingCode/src/ | ✅ | ✅ 完成 |
 | AIWarExternalVisualizationCode | DLLSource/AIWarExternalVisualizationCode/src/ | ✅ | ✅ 完成 |
 | ArcenUIAssetRedirect（BepInEx 插件） | DLLSource/ArcenUIAssetRedirect/src/ | ✅ | ✅ 完成 |
@@ -231,6 +231,26 @@ XMLMods/ChinesePlanetNames/
 | PublicDZInvasionNotifier.cs | Dark Zenith 入侵提示 x1 |
 | PublicImperialSpireNotifier.cs | 帝国尖塔到达提示 x1 |
 | PublicArchitraveExpansionNotifier.cs | 天顶拱门扩张模式描述 x6 |
+
+## 大文件并行翻译记录 (2026-07-11)
+
+本次对两个最大的 UI 文件进行了全量补译，采用**子代理并行翻译**策略：
+
+| 文件 | 行数 | 翻译方式 | 结果 |
+|------|------|---------|------|
+| Window_PrototypeInGameHoverEntityInfo.cs | 10,672 行 | 22 个子代理 × ~500 行/代理 | ✅ 全部完成 |
+| Window_InGameHoverEntityInfo.cs | 9,184 行 | 19 个子代理 × ~500 行/代理 | ✅ 全部完成 |
+
+### 翻译内容
+- 武器系统标签（COIL-BEAM→线圈光束、ARMOR-PIERCING→穿甲、INSTA-KILL→秒杀 等 ~50 个标签）
+- 状态/行为标签（Paused/Ready/Stand Down 等）
+- DamageModifier 区块（DEFENSIVE BONUS→防御加成、ATTACK PENALTY→攻击惩罚 等）
+- 完整描述段落（牵引光束/重力场/反隐形/AOE 等系统说明）
+- 资源/统计标签
+
+### 已知剩余问题
+1. `" of "`（L373）：涉及英文语序，需改代码结构才能正确翻译
+2. WorldTMPFontPatch.csproj：`BindingFlags` 编译错误（已有问题，需修复 csproj 引用）
 
 ## 最近补译记录 (2026-07-10 第3批)
 
