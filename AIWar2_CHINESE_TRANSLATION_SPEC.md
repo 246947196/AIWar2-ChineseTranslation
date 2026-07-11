@@ -377,8 +377,8 @@ ArcenUIAssetRedirect (BepInEx 插件)
 4. **（外部代码项目）编译验证**：翻译有源码的外部代码项目时，每翻译完一个文件后编译验证，0 错误再继续下一个。核心 DLL 走 IL 汉化（8.15），不编译，用 `ilpatch inspect` 回读验证即可。
 5. **翻译优先级**：UI 文件（src/UIs/）优先，游戏逻辑文件（BaseInfo/、Sim/ 等）通常不需要翻译。但 BaseInfo/ 下的 Notifier 通报文本（如 AI Reserves、Crashing Nomad、Architrave Expansion 等）是玩家可见提示，必须翻译
 6. **检查遗漏**：翻译大型 UI 文件（如 Window_InGameHoverEntityInfo.cs 8390 行）时，需确保不遗漏任何包含玩家可见文本的区块。2026-07-10 曾发现 "Resource Multipliers After Time Being Here And Not Crippled" 区块 11 处英文字符串被遗漏
-7. **禁止中文引号**：C# 字符串中不能使用 `""`（中文左右双引号），会被编译器误认为字符串分隔符。必须用 `''`（单引号）替代。例如：`"点击'是'确认"` 而非 `"点击"是"确认"`
-8. **引号嵌套**：如果翻译文本中需要引用按钮名称或其他 UI 元素，使用 `'单引号'` 包裹，不要使用 `"双引号"`
+7. **禁止中文引号**：C# 字符串中不能使用 `""`（中文左右双引号），会被编译器误认为字符串分隔符。**不要使用单引号 `''`** —— C# 中 `'...'` 是字符字面量，只允许单个字符。正确做法是保持 C# 双引号 `"..."`，如需在字符串内引用则用 `「」`。例如：`"点击「是」确认"`。
+8. **引号嵌套**：如果翻译文本中需要引用按钮名称或其他 UI 元素，使用 `「」` 包裹，不要使用 `""` 或 `''`
 
 ### 8.15 核心 DLL 的 IL 级汉化（dnlib 工具方案）
 
@@ -697,7 +697,7 @@ AIWar2_ChineseTranslation/
 
 **教训**：翻译大型 UI 文件（>5000 行）时，必须逐区块检查确保无遗漏。BaseInfo/ 下的 Notifier 类包含玩家可见通报文本，必须翻译。
 
-### 9.10 C# UI 文本补译（2026-07-10 第3批）
+### 9.10 C# UI 文本补译（2026-07-10 第3批——补遗）
 
 修复 `Window_UnitEncyclopedia.cs` 中遗漏的 10 条英文字符串（编译通过，0 错误）：
 
@@ -830,3 +830,29 @@ GameData/QuickStarts2/
 **背景**：`display_name` 在 XML 中已有中文翻译（如 `display_name="天顶戴森球"`），但 `custom_NameForLobby` 是独立属性，专门用于大厅 UI 的派系选择下拉列表和标签页，需单独翻译。`AI风险分析器` 的 `custom_NameForLobby` 不存在（使用 `display_name` 回退），所以无需翻译。
 
 **注意**：TSR_SpecialFactions.xml 中 `SphereType` 自定义字段的 description 属性（第 118-120 行，关于 Gray Spire/Chromatic Spire 的英文介绍）仍有待翻译，因 XML 解析需要保留内部属性格式且原文较长，留待后续处理。
+
+### 9.16 C# 实例字符串补译 + 单引号语法修复（2026-07-11）
+
+补译 `DLLSource/` 下约 30 个 C# 文件中的遗漏英文字符串 ~100 条（全量编译通过，3 项目 0 错误）：
+
+| 文件 | 遗漏内容 | 条数 |
+|------|---------|:----:|
+| Window_ResourceBar.cs | 能量/燃料/入侵/AIP/攻击/百科/暂停等 tooltip 及 UI 标签（第 2 轮补翻） | ~30 |
+| EntityText.Writer.cs | 威胁/猎杀/隐形状态 tooltip | 8 |
+| GameFlowGameCommands.cs | 无法拆除各处类型提示 + SuperCommon 资源不足 | 9 |
+| TSR_GameCommands.cs | 尖塔城市升级消息（含 sidekick 副本） | 7 |
+| SuperCommonGameCommands.cs | 资源/能量/指挥站上限聊天消息 + 放置拒绝原因 | 7 |
+| SelfHacking_Base.cs / Hacking.cs | 入侵拒绝原因 5 处 | 5 |
+| NeinzulAbyss_Hacking.cs | 死灵法师入侵/升级/精英入侵等拒绝原因 & 描述 | 19 |
+| 目标生成器（6 个文件） | 任务前缀 "Destroy/Hack/Hold/Capture and hold" | 13 |
+| DeepInfo 事件消息（多种族） | 尖塔遗物/Scourge/Renegade/Ark/Doomsday 等 ~25 处 | ~25 |
+| PlanetViewSelector.cs / CheatsAndCommands.cs | 发送舰船/客户端限制消息 | 4 |
+| _EntityText.cs / Window_PrototypeInGameHoverEntityInfo.cs | 窗口标题/按钮文本 | 8 |
+| 其他（Fireteam / Outguard / ExoGalactic 等） | 工具提示及聊天消息 | 5 |
+| **合计** | **~30 个文件** | **~200 条** |
+
+**C# 单引号语法修复**：增量编译掩盖了 10 个文件中的 62 处 `'中文...'` 错误（C# 中 `'` 是 char 字面量，不能多字符）。清理 `obj/Release` 后全量编译暴露了这些错误。本次批量修复：将 `'...'` 改为 `"..."`，内部中文引号改用 `「」`（替代原规则建议的 `''`）。
+
+**构建注意事项**：
+- `build.ps1` 使用的 MSBuild `Build` 目标（增量编译）有时不会检测源文件变更。修改翻译后**必须**先 `Remove-Item -Recurse -Force "DLLSource/AIWarExternalCode/obj/Release"` 再 `build.ps1`，否则旧 DLL 会被部署
+- 原翻译规则第 7 条「禁止中文引号，用 `''` 替代」有误——C# 单引号只允许单个字符。已更正为：用 `"..."` + 内部 `「」`
