@@ -208,7 +208,7 @@ namespace Arcen.AIW2.External
                     #region Rifts
                     ActualObjective objective = ActualObjective.GetFromPoolOrCreate();
                     objective.SetHook( "DestroyConstructor" );
-                    objective.DisplayNameBase = "Destroy ";
+                    objective.DisplayNameBase = "摧毁 ";
                     objective.RelatedEntity1 = entity;
                     ObjectiveCategory.AddActualObjective( objective );
                     #endregion

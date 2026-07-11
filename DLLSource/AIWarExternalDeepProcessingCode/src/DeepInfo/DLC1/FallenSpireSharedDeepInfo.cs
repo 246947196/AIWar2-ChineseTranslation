@@ -188,8 +188,8 @@ namespace Arcen.AIW2.External
                             if ( chatHandlerOrNull != null )
                                 chatHandlerOrNull.SquadToView = LazyLoadSquadWrapper.Create( debris );
 
-                            World_AIW2.Instance.QueueChatMessageOrCommand( "Spire Debris is spawning on " + debris.GetPlanetName_Safe() + ". You have " + debrisTime +
-                                " seconds to retrieve it before someone else does. Some Spire Debris is generated shortly after a new Spire City is built.", ChatType.LogToCentralChat, string.Empty, chatHandlerOrNull );
+                            World_AIW2.Instance.QueueChatMessageOrCommand( "尖塔碎片正在 " + debris.GetPlanetName_Safe() + "上生成。你有 " + debrisTime +
+                                " 秒时间取回它，否则他人将捷足先登。新尖塔城市建成后不久便会生成一些尖塔碎片。", ChatType.LogToCentralChat, string.Empty, chatHandlerOrNull );
                         }
                         BaseInfo.SpireDebris.AddToDisplayList( debris );
                     }
@@ -873,7 +873,7 @@ namespace Arcen.AIW2.External
                     }
                     options.newExoLeaderTag="ExtragalacticWar";
 
-                    options.exoText = "The AI has detected the Imperial Spire!";
+                    options.exoText = "AI 已检测到帝国尖塔！";
 
                     ExoGalacticAttackManager.SendExoGalacticAttack( options, Context );
 

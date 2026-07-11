@@ -25,13 +25,13 @@ namespace Arcen.AIW2.External
         {
             if ( Target.GetFactionTypeSafe() != FactionType.Player )
             {
-                RejectionReasonDescription = "This hack only works against units owned by a player.";
+                RejectionReasonDescription = "此入侵仅对玩家拥有的单位有效。";
                 return Hackable.NeverCanBeHacked_Hide;
             }
             Faction controllingFaction = Target.Planet.GetControllingFaction();
             if ( controllingFaction == null || controllingFaction.Type != FactionType.Player )
             {
-                RejectionReasonDescription = "This hack can only be performed on planets owned by a player.";
+                RejectionReasonDescription = "此入侵只能在玩家拥有的星球上执行。";
                 return Hackable.NeverBeHacked_ButStillShow;
             }
 
@@ -48,7 +48,7 @@ namespace Arcen.AIW2.External
 
             if ( numberOfTimesDone >= maxTimesCanBeDone )
             {
-                RejectionReasonDescription = "This hack has already been done " + maxTimesCanBeDone;
+                RejectionReasonDescription = "此入侵已经完成 " + maxTimesCanBeDone;
                 if ( maxTimesCanBeDone > 1 )
                     RejectionReasonDescription += " times, which is the maximum per unit.";
                 else
@@ -59,7 +59,7 @@ namespace Arcen.AIW2.External
             FInt cost = Type.GetHackPointCostForTarget( Target );
             if ( cost > HackerFaction.StoredHacking )
             {
-                RejectionReasonDescription = "This hack costs more hacking points than you have.";
+                RejectionReasonDescription = "此入侵消耗的入侵点超出你拥有的数量。";
                 return Hackable.NeverBeHacked_ButStillShow;
             }
 

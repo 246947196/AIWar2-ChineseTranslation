@@ -645,7 +645,7 @@ namespace Arcen.AIW2.External
             if ( scienceOrOtherResourceRequired <= 0 )
             {
                 //if ( ArcenNetworkAuthority.DesiredStatus != DesiredMultiplayerStatus.Client )
-                    World_AIW2.Instance.QueueChatMessageOrCommand( "Cannot upgrade fleet any further!", ChatType.ShowLocallyOnly, null );
+                    World_AIW2.Instance.QueueChatMessageOrCommand( "无法进一步升级舰队！", ChatType.ShowLocallyOnly, null );
                 return;
             }
             UpgradeResourceStyle resourceNeeded = fleetToManage.GetResourceNeededForNextLevelUp();

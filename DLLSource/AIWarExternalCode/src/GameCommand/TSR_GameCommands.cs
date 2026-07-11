@@ -51,8 +51,8 @@ namespace Arcen.AIW2.External
                     if ( chatHandlerOrNull != null )
                         chatHandlerOrNull.SquadToView = LazyLoadSquadWrapper.Create( city );
 
-                    World_AIW2.Instance.QueueChatMessageOrCommand( "Cannot upgrade city " + city.GetFleetName_Safe() +
-                            " at the moment.", ChatType.LogToCentralChat, "CannotDoThatThing", chatHandlerOrNull );
+                    World_AIW2.Instance.QueueChatMessageOrCommand( "目前无法升级城市 " + city.GetFleetName_Safe() +
+                            "。", ChatType.LogToCentralChat, "CannotDoThatThing", chatHandlerOrNull );
                 }
                 return;
             }
@@ -66,8 +66,8 @@ namespace Arcen.AIW2.External
                     if ( chatHandlerOrNull != null )
                         chatHandlerOrNull.SquadToView = LazyLoadSquadWrapper.Create( city );
 
-                    World_AIW2.Instance.QueueChatMessageOrCommand( "Cannot upgrade city " + city.GetFleetName_Safe() +
-                            " at the moment, because we could not find its fleet.  Please try again, or this is an error.", ChatType.LogToCentralChat, "CannotDoThatThing", chatHandlerOrNull );
+                    World_AIW2.Instance.QueueChatMessageOrCommand( "目前无法升级城市 " + city.GetFleetName_Safe() +
+                            "，因为找不到其舰队。请重试，否则这是一个错误。", ChatType.LogToCentralChat, "CannotDoThatThing", chatHandlerOrNull );
                 }
                 return;
             }
@@ -83,8 +83,8 @@ namespace Arcen.AIW2.External
                 if ( chatHandlerOrNull != null )
                     chatHandlerOrNull.SquadToView = LazyLoadSquadWrapper.Create( city );
 
-                World_AIW2.Instance.QueueChatMessageOrCommand( "Spire city " + city.GetFleetName_Safe() + " on planet " + city.GetPlanetName_Safe() +
-                    " has increased in power to Mark " + city.CurrentMarkLevel + "!", ChatType.LogToCentralChat, string.Empty, chatHandlerOrNull );
+                World_AIW2.Instance.QueueChatMessageOrCommand( "尖塔城市 " + city.GetFleetName_Safe() + " 在星球 " + city.GetPlanetName_Safe() +
+                    " 上已提升至等级 " + city.CurrentMarkLevel + "！", ChatType.LogToCentralChat, string.Empty, chatHandlerOrNull );
             }
         }
     }
@@ -139,8 +139,8 @@ namespace Arcen.AIW2.External
                     if ( chatHandlerOrNull != null )
                         chatHandlerOrNull.SquadToView = LazyLoadSquadWrapper.Create( city );
 
-                    World_AIW2.Instance.QueueChatMessageOrCommand( "Cannot upgrade city " + city.GetFleetName_Safe() +
-                            " at the moment.", ChatType.LogToCentralChat, "CannotDoThatThing", chatHandlerOrNull );
+                    World_AIW2.Instance.QueueChatMessageOrCommand( "目前无法升级城市 " + city.GetFleetName_Safe() +
+                            "。", ChatType.LogToCentralChat, "CannotDoThatThing", chatHandlerOrNull );
                 }
                 return;
             }
@@ -154,8 +154,8 @@ namespace Arcen.AIW2.External
                     if ( chatHandlerOrNull != null )
                         chatHandlerOrNull.SquadToView = LazyLoadSquadWrapper.Create( city );
 
-                    World_AIW2.Instance.QueueChatMessageOrCommand( "Cannot upgrade city " + city.GetFleetName_Safe() +
-                            " at the moment, because we could not find its fleet.  Please try again, or this is an error.", ChatType.LogToCentralChat, "CannotDoThatThing", chatHandlerOrNull );
+                    World_AIW2.Instance.QueueChatMessageOrCommand( "目前无法升级城市 " + city.GetFleetName_Safe() +
+                            "，因为找不到其舰队。请重试，否则这是一个错误。", ChatType.LogToCentralChat, "CannotDoThatThing", chatHandlerOrNull );
                 }
                 return;
             }
@@ -171,8 +171,8 @@ namespace Arcen.AIW2.External
                 if ( chatHandlerOrNull != null )
                     chatHandlerOrNull.SquadToView = LazyLoadSquadWrapper.Create( city );
 
-                World_AIW2.Instance.QueueChatMessageOrCommand( "Spire city " + city.GetFleetName_Safe() + " on planet " + city.GetPlanetName_Safe() +
-                    " has increased in power to Mark " + city.CurrentMarkLevel + "!", ChatType.LogToCentralChat, string.Empty, chatHandlerOrNull );
+                World_AIW2.Instance.QueueChatMessageOrCommand( "尖塔城市 " + city.GetFleetName_Safe() + " 在星球 " + city.GetPlanetName_Safe() +
+                    " 上已提升至等级 " + city.CurrentMarkLevel + "！", ChatType.LogToCentralChat, string.Empty, chatHandlerOrNull );
             }
         }
     }

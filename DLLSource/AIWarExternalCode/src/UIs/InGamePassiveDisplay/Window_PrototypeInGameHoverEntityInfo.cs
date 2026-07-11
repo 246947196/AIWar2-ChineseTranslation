@@ -4958,7 +4958,7 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                         rejectionReason = relatedSquadOrNull.GetCannotRebuildRemainsReason();
                         if ( rejectionReason != ArcenRejectionReason.Unknown )
                         {//HandleNewline( buffer, ref haveDoneNewLine );
-                            buffer.StartColor( QuickColors.OldValue ).Add( "Cannot Rebuild Remains: " );
+                            buffer.StartColor( QuickColors.OldValue ).Add( "无法重建残骸：" );
 
                             switch ( rejectionReason )
                             {
@@ -5024,7 +5024,7 @@ buffer.Add( "<color=#f25e1c>可入侵（" ).Add( remaining ).Add( " / " ).Add( g
                          relatedSquadOrNull.TypeData.EnergyUsage > 0 && localPlayerFactionOrNull.NetEnergy - relatedSquadOrNull.TypeData.EnergyUsage < 0 )
                     {
                         buffer.StartColor( QuickColors.OldValue )
-                            .Add( "Cannot be claimed because you need " ).Add( -(localPlayerFactionOrNull.NetEnergy - relatedSquadOrNull.TypeData.EnergyUsage) ).Add( " more energy to operate this entity.  " );
+                            .Add( "无法认领，因为你需要 " ).Add( -(localPlayerFactionOrNull.NetEnergy - relatedSquadOrNull.TypeData.EnergyUsage) ).Add( " 更多能量来运行此实体。  " );
                         buffer.EndColor();
                     }
 
@@ -8733,7 +8733,7 @@ buffer.Add( "秒</color> 如果目标护甲厚度低于 <color=#ffdf72>" );
             }
 
             float centerPopupScale = GameSettings.Current.GetFloatBySetting( "CentralPopupTextScale" );
-            Window_ModalSelfUpdatingTextWindow_Wide.Instance.Open( 0.25f, 2f, "Details Of Multiple Ship Lines", "Close",
+            Window_ModalSelfUpdatingTextWindow_Wide.Instance.Open( 0.25f, 2f, "多舰船线路详情", "关闭",
                 delegate ( ArcenDoubleCharacterBuffer Buffer ) { return WriteDetailsOfAllShipContents( Buffer, squad, centerPopupScale, true ); } );
         }
 
@@ -8745,7 +8745,7 @@ buffer.Add( "秒</color> 如果目标护甲厚度低于 <color=#ffdf72>" );
             Faction localFaction = World_AIW2.Instance.GetPlayerFactionForUIOrNull();
 
             float centerPopupScale = GameSettings.Current.GetFloatBySetting( "CentralPopupTextScale" );
-            Window_ModalSelfUpdatingTextWindow_Wide.Instance.Open( 0.25f, 2f, "Details Of Outguard Group", "Close",
+            Window_ModalSelfUpdatingTextWindow_Wide.Instance.Open( 0.25f, 2f, "外卫部队组详情", "关闭",
                 delegate ( ArcenDoubleCharacterBuffer Buffer ) { return WriteDetailsOfAnOutguardGroupContents( Buffer, OutguardInfo, true, localFaction, centerPopupScale, true ); } );
         }
 

@@ -44,7 +44,7 @@ namespace Arcen.AIW2.External
                     pf.AIPLeftFromCommandStation = 0;
                     pf.AIPLeftFromWarpGate = 0;
                 }
-                World_AIW2.Instance.QueueChatMessageOrCommand( $"You have managed to lay claim to a powerful Ark, a small fleet, and an extended map of the galaxy. Due to how minor your forces are, the first planet you capture will cost 0 AIP, so pick wisely. If you raise your AIP above 20 before doing so, the AI will take full notice of you and you will no longer get a free planet.", ChatType.LogToCentralChat, null );
+                World_AIW2.Instance.QueueChatMessageOrCommand( $"你成功占领了一艘强大的方舟、一支小型舰队和一张扩展的星系地图。由于你的力量较小，你占领的第一颗星球将消耗 0 AIP，请明智选择。如果你在此之前将 AIP 提升到 20 以上，AI 将完全注意到你，你将不再获得免费星球。", ChatType.LogToCentralChat, null );
                 IScenarioImplementation scenarioImp = World_AIW2.Instance.GetScenarioImplementationSafe_OrNull();
                 foreach ( GameEntity_Squad king in AttachedFaction.Squads( EntityRollupType.KingUnitsOnly ) )
                 {

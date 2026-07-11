@@ -1318,7 +1318,7 @@ namespace Arcen.AIW2.ExternalVisualization
                                 if ( targetPlanet != null )
                                 {
                                     if ( targetPlanet.IntelLevel == PlanetIntelLevel.Unexplored )
-                                        World_AIW2.Instance.QueueChatMessageOrCommand( "Cannot send ships to planet " + targetPlanet.Name + ", because it has not been explored via scouting.", ChatType.ShowLocallyOnly, null );
+                                        World_AIW2.Instance.QueueChatMessageOrCommand( "无法派遣舰船至星球 " + targetPlanet.Name + ", because it has not been explored via scouting.", ChatType.ShowLocallyOnly, null );
                                     else
                                     {
                                         workingSquadsThatNeedOtherKindsOfOrders.Clear();
@@ -1406,13 +1406,13 @@ namespace Arcen.AIW2.ExternalVisualization
                                         {
                                             if ( couldSomePass )
                                             {
-                                                World_AIW2.Instance.QueueChatMessageOrCommand( "Cannot send some of your selected units to planet " + targetPlanet.Name +
-                                                    ", because: " + reasons + ".", ChatType.ShowLocallyOnly, null );
+                                                World_AIW2.Instance.QueueChatMessageOrCommand( "无法将你选中的部分单位派遣至星球 " + targetPlanet.Name +
+                                                    "，原因：" + reasons + "。", ChatType.ShowLocallyOnly, null );
                                             }
                                             else
                                             {
-                                                World_AIW2.Instance.QueueChatMessageOrCommand( "Cannot send any of your selected units to planet " + targetPlanet.Name +
-                                                    ", because: " + reasons + ".", ChatType.ShowLocallyOnly, null );
+                                                World_AIW2.Instance.QueueChatMessageOrCommand( "无法将你选中的任何单位派遣至星球 " + targetPlanet.Name +
+                                                    "，原因：" + reasons + "。", ChatType.ShowLocallyOnly, null );
                                             }
                                         }
 

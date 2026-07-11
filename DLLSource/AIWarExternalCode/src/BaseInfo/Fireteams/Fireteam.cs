@@ -1059,7 +1059,7 @@ namespace Arcen.AIW2.External
 
             buffer.Add( this.status.ToString(), color );
             if ( this.SuicideMission )
-                buffer.Add( "This fireteam will press home its attack regardless of numbers." );
+                buffer.Add( "此火力组将无视数量对比，坚决执行攻击。" );
             try
             {
                 if ( this.status == FireteamStatus.Escorting && this.Target != null )

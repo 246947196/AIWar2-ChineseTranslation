@@ -27,7 +27,7 @@ namespace Arcen.AIW2.External
                             #region Tell Me To Kill The One I Can See
                             ActualObjective objective = ActualObjective.GetFromPoolOrCreate();
                             objective.SetHook( "DestroyEnemyKing" );
-                            objective.DisplayNameBase = "Destroy ";
+                            objective.DisplayNameBase = "摧毁 ";
                             objective.RelatedEntity1 = king;
                             ObjectiveCategory.AddActualObjective( objective );
                             #endregion

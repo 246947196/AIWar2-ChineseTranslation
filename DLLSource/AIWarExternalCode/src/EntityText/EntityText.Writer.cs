@@ -1408,11 +1408,11 @@ namespace Arcen.AIW2.External
                                 if (secondsIHaveBeenThreat > -1 && orders != null)
                                 {
                                     buffer.Open(TextStyle.Newline_NoLabel);
-                                    buffer.Add( "This ship has been Threat against " );
+                                    buffer.Add( "该舰船曾作为威胁针对 " );
                                     if (againstFaction != null)
                                         buffer.AddFactionNameInItsColor(againstFaction, true);
                                     else
-                                        buffer.Add( "Players", TextStyle.Brighter);
+                                        buffer.Add( "玩家", TextStyle.Brighter);
                                     buffer.Add(" 持续 ").AddMinutesAndSeconds(secondsIHaveBeenThreat).Add( "." );
                                     buffer.Close(TextStyle.Newline_NoLabel);
                                 }
@@ -1420,7 +1420,7 @@ namespace Arcen.AIW2.External
                                 if ( againstPlanet != null && secondsIHaveBeenWaiting > -1 )
                                 {
                                     buffer.Open(TextStyle.Newline_NoLabel)
-                                          .Add( "This ship has been waiting to attack " )
+                                          .Add( "该舰船一直在等待攻击 " )
                                           .AddPlanetNameFormated(againstPlanet,true)
                                           .Add(" 持续 ").AddMinutesAndSeconds(secondsIHaveBeenWaiting)
                                           .Close(TextStyle.Newline_NoLabel);
@@ -1430,17 +1430,17 @@ namespace Arcen.AIW2.External
                                 {
                                     if ( etype.NotEligibleToJoinHunterFleet || etype.IsDrone )
                                     {
-                                        buffer.Open(TextStyle.Newline_NoLabel).Add( "This ship will not join Hunter, because of its type." ).Close(TextStyle.Newline_NoLabel);
+                                        buffer.Open(TextStyle.Newline_NoLabel).Add( "该舰船不会加入猎杀舰队，因为其类型。" ).Close(TextStyle.Newline_NoLabel);
                                     }
                                     else
                                     if ( againstFaction != null && againstFaction.Type != FactionType.Player )
                                     {
-                                        buffer.Open(TextStyle.Newline_NoLabel).Add( "This ship will not join Hunter, because not targeting players." ).Close(TextStyle.Newline_NoLabel);
+                                        buffer.Open(TextStyle.Newline_NoLabel).Add( "该舰船不会加入猎杀舰队，因为未以玩家为目标。" ).Close(TextStyle.Newline_NoLabel);
                                     }
                                     else
                                     if ( aidif == null )
                                     {
-                                        buffer.Open(TextStyle.Newline_NoLabel).Add( "This ship will not join Hunter, because not connected to sentinels." ).Close(TextStyle.Newline_NoLabel);
+                                        buffer.Open(TextStyle.Newline_NoLabel).Add( "该舰船不会加入猎杀舰队，因为未连接到哨兵。" ).Close(TextStyle.Newline_NoLabel);
                                     }
                                     else
                                     {
@@ -3603,10 +3603,10 @@ namespace Arcen.AIW2.External
                 WriteDebuffsStartIfNeeded( Debuffer, ref alreadyWroteDebuffsStart );
                 if ( isAlreadyDecloaked )
                 {
-                    Debuffer.WrapCloak( "Already Decloaked!", false, false );
+                    Debuffer.WrapCloak( "已解除隐形！", false, false );
                 } else
                 {
-                    Debuffer.WrapCloak( "Tachyon Radiation Decloaking Us", false, false );
+                    Debuffer.WrapCloak( "快子辐射正在解除我们的隐形", false, false );
                 }
                 alreadyWroteCloakDebuffsStart = true;
             }

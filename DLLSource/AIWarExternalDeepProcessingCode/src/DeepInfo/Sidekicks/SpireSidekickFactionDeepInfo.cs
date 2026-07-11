@@ -174,7 +174,7 @@ namespace Arcen.AIW2.External
                                 if ( chatHandlerOrNull != null )
                                     chatHandlerOrNull.PlanetToView = World_AIW2.Instance.GetPlanetByIndex( BaseInfo.CurrentRelicSpawnPlanetIdx );
 
-                                World_AIW2.Instance.QueueChatMessageOrCommand( "A Spire Relic has spawned on planet " + World_AIW2.Instance.GetPlanetByIndex( BaseInfo.CurrentRelicSpawnPlanetIdx ).Name + ".",
+                                World_AIW2.Instance.QueueChatMessageOrCommand( "尖塔遗物已在星球 " + World_AIW2.Instance.GetPlanetByIndex( BaseInfo.CurrentRelicSpawnPlanetIdx ).Name + ".",
                                     ChatType.LogToCentralChat, string.Empty, chatHandlerOrNull );
                             }
                         }
@@ -227,7 +227,7 @@ namespace Arcen.AIW2.External
                         if ( DarkSpireFactionBaseInfo.Instance != null )
                         {
                             if ( ArcenNetworkAuthority.GetIsHostMode() )
-                                World_AIW2.Instance.QueueChatMessageOrCommand( "The Dark Spire has detected a surge in Fallen Spire energy, and is performing a Vengeance Strike as a result",
+                                World_AIW2.Instance.QueueChatMessageOrCommand( "黑暗尖塔检测到能量激增...",
                                     ChatType.LogToCentralChat, string.Empty, null );
                             DarkSpireFactionBaseInfo.Instance.PerformVengeanceStrike();
                         }
@@ -238,7 +238,7 @@ namespace Arcen.AIW2.External
                         if ( BaseInfo.SpireCities.Count > 3 ) //this number could be in the BaseInfo.Difficulty
                             options.newExoLeaderTag = "ExtragalacticWar";
                         options.distanceFromTargetOverride = 1;
-                        options.exoText = "The AI has detected the Relic's energy signature and is attacking!";
+                        options.exoText = "AI 已检测到遗物的能量特征并正在攻击！";
 
                         ExoGalacticAttackManager.SendExoGalacticAttack( options, Context );
                         relicData.TimeForNextRelicResponse = World_AIW2.Instance.GameSecond + BaseInfo.Difficulty.RelicResponseInterval;
@@ -272,7 +272,7 @@ namespace Arcen.AIW2.External
                         if ( BaseInfo.SpireCities.Count > 3 ) //this number could be in the BaseInfo.Difficulty
                             options1.newExoLeaderTag = "ExtragalacticWar";
                         options1.distanceFromTargetOverride = 2;
-                        options1.exoText = "The AI has detected the Relic's energy signature and is attacking!";
+                        options1.exoText = "AI 已检测到遗物的能量特征并正在攻击！";
 
                         ExoGalacticAttackManager.SendExoGalacticAttack( options1, Context );
 
@@ -280,7 +280,7 @@ namespace Arcen.AIW2.External
                         if ( BaseInfo.SpireCities.Count > 3 ) //this number could be in the BaseInfo.Difficulty
                             options2.newExoLeaderTag = "ExtragalacticWar";
                         options2.distanceFromTargetOverride = 2;
-                        options2.exoText = "The AI has detected the Relic's energy signature and is attacking!";
+                        options2.exoText = "AI 已检测到遗物的能量特征并正在攻击！";
 
                         GameEntity_Squad.ReleaseTemporarySquadList( workingTargets );
 
@@ -821,7 +821,7 @@ namespace Arcen.AIW2.External
                         if ( chatHandlerOrNull != null )
                             chatHandlerOrNull.PlanetToView = relic.Planet;
 
-                        World_AIW2.Instance.QueueChatMessageOrCommand( "A new city can't be built on " + relic.GetPlanetName_Safe() + " since there is already a city there.", 
+                        World_AIW2.Instance.QueueChatMessageOrCommand( "无法在 " + relic.GetPlanetName_Safe() + "上建造新城市，因为该星球上已有一座城市。", 
                             ChatType.LogToCentralChat, string.Empty, chatHandlerOrNull );
                     }
                     return;
@@ -838,7 +838,7 @@ namespace Arcen.AIW2.External
                     if ( chatHandlerOrNull != null )
                         chatHandlerOrNull.PlanetToView = relic.Planet;
 
-                    World_AIW2.Instance.QueueChatMessageOrCommand( "The Spire Relic has arrived safely on " + relic.GetPlanetName_Safe(), ChatType.LogToCentralChat, string.Empty, chatHandlerOrNull );
+                    World_AIW2.Instance.QueueChatMessageOrCommand( "尖塔遗物已安全抵达 " + relic.GetPlanetName_Safe(), ChatType.LogToCentralChat, string.Empty, chatHandlerOrNull );
                 }
                 bool useGalacticCapitol = false;
                 if ( BaseInfo.NumRelicsCaptured == 1 )
@@ -870,7 +870,7 @@ namespace Arcen.AIW2.External
                 if ( BaseInfo.SpireCities.Count > 3 ) //this number could be in the BaseInfo.Difficulty
                     options.newExoLeaderTag = "ExtragalacticWar";
                 options.distanceFromTargetOverride = 2;
-                options.exoText = "The AI is sending a powerful strike against you and your new city.";
+                options.exoText = "AI 正在向你和你新城市发动强力打击。";
                 ExoGalacticAttackManager.SendExoGalacticAttack( options, Context );
                 SpawnDragons( Context );
                 GameEntity_Squad.ReleaseTemporarySquadList( workingTargets );
@@ -2272,8 +2272,8 @@ namespace Arcen.AIW2.External
                             if ( chatHandlerOrNull != null )
                                 chatHandlerOrNull.SquadToView = LazyLoadSquadWrapper.Create( debris );
 
-                            World_AIW2.Instance.QueueChatMessageOrCommand( "Spire Debris is spawning on " + debris.GetPlanetName_Safe() + ". You have " + debrisTime +
-                                " seconds to retrieve it before someone else does. Some Spire Debris is generated shortly after a new Spire City is built.", ChatType.LogToCentralChat, string.Empty, chatHandlerOrNull );
+                            World_AIW2.Instance.QueueChatMessageOrCommand( "尖塔碎片正在 " + debris.GetPlanetName_Safe() + "上生成。你有 " + debrisTime +
+                                " 秒时间取回它，否则他人将捷足先登。新尖塔城市建成后不久便会生成一些尖塔碎片。", ChatType.LogToCentralChat, string.Empty, chatHandlerOrNull );
                         }
                         BaseInfo.SpireDebris.AddToDisplayList( debris );
                     }
@@ -2773,7 +2773,7 @@ namespace Arcen.AIW2.External
                         options.UnitBlocksToUse.Add(ExoUnitType.ExoLeaders);
                     }
                     options.newExoLeaderTag="ExtragalacticWar";
-                    options.exoText = "The AI has detected the Imperial Spire!";
+                    options.exoText = "AI 已检测到帝国尖塔！";
 
                     ExoGalacticAttackManager.SendExoGalacticAttack( options, Context );
 

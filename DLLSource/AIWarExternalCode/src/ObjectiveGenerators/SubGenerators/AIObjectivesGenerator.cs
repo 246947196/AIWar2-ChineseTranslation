@@ -26,7 +26,7 @@ namespace Arcen.AIW2.External
                     #region Reduce Progress
                     ActualObjective objective = ActualObjective.GetFromPoolOrCreate();
                     objective.SetHook( "DestroyToReduceProgress" );
-                    objective.DisplayNameBase = "Destroy ";
+                    objective.DisplayNameBase = "摧毁 ";
                     objective.RelatedEntity1 = entity;
                     ObjectiveCategory.AddActualObjective( objective );
                     #endregion
@@ -41,9 +41,9 @@ namespace Arcen.AIW2.External
                     ActualObjective objective = ActualObjective.GetFromPoolOrCreate();
                     objective.SetHook( "HoldToReduceAIPLoseToRaiseAIP" );
                     if ( entity.GetFactionTypeSafe() == FactionType.Player )
-                        objective.DisplayNameBase = "Hold ";
+                        objective.DisplayNameBase = "坚守 ";
                     else
-                        objective.DisplayNameBase = "Capture and hold ";
+                        objective.DisplayNameBase = "占领并坚守 ";
 
                     objective.RelatedEntity1 = entity;
                     ObjectiveCategory.AddActualObjective( objective );
@@ -58,7 +58,7 @@ namespace Arcen.AIW2.External
                     #region Reduce Progress
                     ActualObjective objective = ActualObjective.GetFromPoolOrCreate();
                     objective.SetHook( "HackToReduceProgress" );
-                    objective.DisplayNameBase = "Hack ";
+                    objective.DisplayNameBase = "入侵 ";
                     objective.RelatedEntity1 = entity;
                     ObjectiveCategory.AddActualObjective( objective );
                     #endregion
@@ -75,7 +75,7 @@ namespace Arcen.AIW2.External
                     #region Reduce Progress
                     ActualObjective objective = ActualObjective.GetFromPoolOrCreate();
                     objective.SetHook( "DestroyToWeakenCPA" );
-                    objective.DisplayNameBase = "Destroy ";
+                    objective.DisplayNameBase = "摧毁 ";
                     objective.RelatedEntity1 = entity;
                     ObjectiveCategory.AddActualObjective( objective );
                     #endregion
@@ -114,7 +114,7 @@ namespace Arcen.AIW2.External
                         {
                             ActualObjective objective = ActualObjective.GetFromPoolOrCreate();
                             objective.SetHook( "HackShipGranter" );
-                            objective.DisplayNameBase = "Hack ";
+                            objective.DisplayNameBase = "入侵 ";
                             objective.RelatedEntity1 = entity;
                             ObjectiveCategory.AddActualObjective( objective );
                         }
@@ -136,7 +136,7 @@ namespace Arcen.AIW2.External
                                 continue;
                             ActualObjective objective = ActualObjective.GetFromPoolOrCreate();
                             objective.SetHook( objectiveCategory.InternalName );
-                            objective.DisplayNameBase = "Hack ";
+                            objective.DisplayNameBase = "入侵 ";
                             objective.RelatedEntity1 = entity;
                             ObjectiveCategory.AddActualObjective( objective );
                         }
@@ -352,7 +352,7 @@ namespace Arcen.AIW2.External
                         debugStage = 300;
                         ActualObjective objective = ActualObjective.GetFromPoolOrCreate();
                         objective.SetHook( "HackShipCapLineGranter" );
-                        objective.DisplayNameBase = "Hack ";
+                        objective.DisplayNameBase = "入侵 ";
                         objective.RelatedEntity1 = entity;
                         ObjectiveCategory.AddActualObjective( objective );
                         #endregion

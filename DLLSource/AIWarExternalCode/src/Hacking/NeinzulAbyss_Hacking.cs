@@ -17,7 +17,7 @@ namespace Arcen.AIW2.External
         {
             if ( Target.CurrentMarkLevel >= 7 )
             {
-                RejectionReasonDescription = "This " + Target.TypeData.GetDisplayName() +" is already at maximum level";
+                RejectionReasonDescription = "此 " + Target.TypeData.GetDisplayName() +" 已处于最高等级";
                 return Hackable.NeverBeHacked_ButStillShow;
             }
 
@@ -48,7 +48,7 @@ namespace Arcen.AIW2.External
         {
             if ( Target.PlanetFaction.Faction == HackerFaction )
             {
-                RejectionReasonDescription = "You have already claimed this structure";
+                RejectionReasonDescription = "你已经认领了此建筑";
                 return Hackable.NeverCanBeHacked_Hide;
             }
             return base.GetCanBeHacked( Target, HackerOrNull, planet, HackerFaction, Type, RelatedStringOrNull, RelatedIntOrNull, out RejectionReasonDescription );
@@ -83,7 +83,7 @@ namespace Arcen.AIW2.External
             if ( HackerOrNull != null &&
                  Target.PlanetFaction.Faction == HackerOrNull.PlanetFaction.Faction )
             {
-                RejectionReasonDescription = "You have already claimed this structure";
+                RejectionReasonDescription = "你已经认领了此建筑";
                 return Hackable.NeverCanBeHacked_Hide;
             }
             if ( HackerOrNull != null && NecromancerEmpireFactionBaseInfo.GetIsThisANecromancerFaction( HackerOrNull.PlanetFaction.Faction ) )
@@ -100,7 +100,7 @@ namespace Arcen.AIW2.External
                 }
                 if ( necropolis == null )
                 {
-                    RejectionReasonDescription = "You must have a necropolis on this planet";
+                    RejectionReasonDescription = "你必须在此星球上有一座死灵城";
                     return Hackable.NeverCanBeHacked_Hide;
                 }
             }
@@ -134,7 +134,7 @@ namespace Arcen.AIW2.External
             if ( HackerOrNull != null &&
                  Target.PlanetFaction.Faction != HackerOrNull.PlanetFaction.Faction )
             {
-                RejectionReasonDescription = "You must already own this structure";
+                RejectionReasonDescription = "你必须已经拥有此建筑";
                 return Hackable.NeverCanBeHacked_Hide;
             }
             return base.GetCanBeHacked( Target, HackerOrNull, planet, HackerFaction, Type, RelatedStringOrNull, RelatedIntOrNull, out RejectionReasonDescription );
@@ -175,7 +175,7 @@ namespace Arcen.AIW2.External
             }
             if ( !foundValidNecropolis )
             {
-                RejectionReasonDescription = "You must have a non-crippled necropolis somewhere to swap this phylactery with";
+                RejectionReasonDescription = "你必须在某处有一座未残废的死灵城来交换此圣匣";
                 return Hackable.NeverBeHacked_ButStillShow;
             }
 
@@ -214,7 +214,7 @@ namespace Arcen.AIW2.External
             }
             if ( !NecromancerEmpireFactionBaseInfo.GetIsThisANecromancerFaction( Target.PlanetFaction.Faction ) )
             {
-                RejectionReasonDescription = "This is not a necromancer target";
+                RejectionReasonDescription = "这不是死灵法师目标";
                 return Hackable.NeverCanBeHacked_Hide;
             }
             NecromancerEmpireFactionBaseInfo baseInfo = Target.PlanetFaction.Faction.GetExternalBaseInfoAs<NecromancerEmpireFactionBaseInfo>();
@@ -229,7 +229,7 @@ namespace Arcen.AIW2.External
             }
             if ( !foundValidNecropolis )
             {
-                RejectionReasonDescription = "You must have a non-crippled necropolis somewhere to swap this necropolis with";
+                RejectionReasonDescription = "你必须在某处有一座未残废的死灵城来交换此死灵城";
                 return Hackable.NeverBeHacked_ButStillShow;
             }
 
@@ -256,7 +256,7 @@ namespace Arcen.AIW2.External
     {
         public override string GetDynamicDescription( GameEntity_Squad target, GameEntity_Squad hackerOrNull, Planet planet, Faction hackerFaction, HackingType hackingType )
         {
-            return "This hack will transform the flagship of <color=#a1a1a1>" + target.FleetMembership.Fleet.GetName() + "</color> (" + target.TypeData.GetDisplayName() + ")";
+            return "此入侵将改造 <color=#a1a1a1>" + target.FleetMembership.Fleet.GetName() + "</color> (" + target.TypeData.GetDisplayName() + ")";
         }
 
         public override void GetMinAndMaxCostToHackForSidebar( GameEntity_Squad Target, Planet planet, Faction hackerFaction, HackingType Type, out FInt MinCost, out FInt MaxCost )
@@ -317,7 +317,7 @@ namespace Arcen.AIW2.External
 
             if ( Target.PlanetFaction.DataByStance[FactionStance.Hostile].TotalStrength > 500 )
             {
-                RejectionReasonDescription = "You cannot transform on a planet with significant enemy strength.";
+                RejectionReasonDescription = "你无法在敌方力量显著的星球上进行改造。";
                 return Hackable.NeverBeHacked_ButStillShow;
             }
             RejectionReasonDescription = "";
@@ -558,7 +558,7 @@ Buffer.Add( "<color=#c74639>不可行：</color> " );
                     debugCode = 250;
                     if ( hacker.TypeData == item.RelatedShip )
                     {
-                        lastRejectionReason = "Your flagship is already of this type";
+                        lastRejectionReason = "你的旗舰已经是此类型";
                         return false;
                     }
                     debugCode = 300;
@@ -570,20 +570,20 @@ Buffer.Add( "<color=#c74639>不可行：</color> " );
                     debugCode = 400;
                     if ( faction.StoredHacking < item.BlueprintTransformCostInHacking )
                     {
-                        lastRejectionReason = "You don't have enough hacking points";
+                        lastRejectionReason = "你没有足够的入侵点";
                         return false;
                     }
                     if ( faction.StoredFactionResourceOne < item.BlueprintTransformCostInResourceOne )
                     {
                         if ( NecromancerEmpireFactionBaseInfo.GetIsThisANecromancerFaction( faction ) )
-                            lastRejectionReason = "You don't have enough Essence. You will need to hack Rifts or fight Elderlings for more Essence";
+                            lastRejectionReason = "你没有足够的 Essence。你需要入侵裂隙或与远古生物战斗来获取更多 Essence";
                         else
-                            lastRejectionReason = "You don't have enough resource one";
+                            lastRejectionReason = "你没有足够的资源一";
                         return false;
                     }
                     if ( faction.StoredHacking < item.BlueprintTransformCostInHacking + costForActiveHacks )
                     {
-                        lastRejectionReason = "You don't have enough hacking points due to your active hacks";
+                        lastRejectionReason = "由于你正在进行的入侵，你没有足够的入侵点";
                         return false;
                     }
                     debugCode = 500;
@@ -675,7 +675,7 @@ Buffer.Add( "<color=#c74639>不可行：</color> " );
         {
             // if ( Target.CurrentMarkLevel >= 7 )
             // {
-            //     RejectionReasonDescription = "This " + Target.TypeData.GetDisplayName() +" is already at maximum level";
+            //     RejectionReasonDescription = "此 " + Target.TypeData.GetDisplayName() +" 已处于最高等级";
             //     return Hackable.NeverBeHacked_ButStillShow;
             // }
 
@@ -720,7 +720,7 @@ Buffer.Add( "<color=#c74639>不可行：</color> " );
             DLC3GameEntityTypeDataExtension transformedUnit_DLC3TypeData = transformedUnit.TryGetDataExtensionAs<DLC3GameEntityTypeDataExtension>( "DLC3" );
             if ( transformedUnit_DLC3TypeData != null && gData.NecromancerCompletedUpgrades.Contains( transformedUnit_DLC3TypeData.NecromancerUpgradeToGrantOnDeath ) )
             {
-                RejectionReasonDescription = "You have already unlocked this blueprint";
+                RejectionReasonDescription = "你已经解锁了此蓝图";
                 return Hackable.NeverBeHacked_ButStillShow;
             }
             
@@ -832,7 +832,7 @@ Buffer.Add( "<color=#c74639>不可行：</color> " );
             int lurableElderlings = FactionUtilityMethods.Instance.HostileElderlingsWithThisPlanetInTerritory( HackerFaction, planet, appliesToOnlyTrackedElderlings );
             if ( lurableElderlings == 0 )
             {
-                RejectionReasonDescription = "You can only lure Elderlings you have tracked.";
+                RejectionReasonDescription = "你只能引诱你追踪过的远古生物。";
                 return Hackable.NeverBeHacked_ButStillShow;
             }
             RejectionReasonDescription = "";
@@ -908,7 +908,7 @@ Buffer.Add( "<color=#c74639>不可行：</color> " );
         {
             ElderlingsPerUnitBaseInfo data = Target.CreateExternalBaseInfo<ElderlingsPerUnitBaseInfo>( "ElderlingsPerUnitBaseInfo" );
             if ( data.TrackedByPlayer ) {
-                RejectionReasonDescription = "This unit is already hacked";
+                RejectionReasonDescription = "此单位已被入侵";
                 return Hackable.NeverCanBeHacked_Hide;
             }
             //TODO: if we have already gotten this blueprint, don't show anymore
@@ -1001,7 +1001,7 @@ Buffer.Add( "<color=#c74639>不可行：</color> " );
                 debugCode = 500;
                 if ( baseInfo.GetHighestNecropolisMarkLevel() < item.MustHaveAnyNecropolisAtThisLevel )
                 {
-                    rejectionReason = "You must have at least one necropolis at mark level " + item.MustHaveAnyNecropolisAtThisLevel + " to claim this upgrade, and your highest mark level necropolis is " + baseInfo.GetHighestNecropolisMarkLevel();
+                    rejectionReason = "你必须至少有一座等级为 " + item.MustHaveAnyNecropolisAtThisLevel + " 的死灵城才能认领此升级，你最高等级的死灵城是 " + baseInfo.GetHighestNecropolisMarkLevel();
                     return Hackable.NeverBeHacked_ButStillShow;
                 }
                 
@@ -1445,7 +1445,7 @@ buffer.Add("不足 ");
     {
         public override string GetDynamicDescription( GameEntity_Squad target, GameEntity_Squad hackerOrNull, Planet planet, Faction hackerFaction, HackingType hackingType )
         {
-            return "You must keep control of at least " + (GlobalAIWorldBaseInfo.Instance.DevicesToSpawn - 1) + " showdown devices through the duration of the hack";
+            return "你必须至少控制 " + (GlobalAIWorldBaseInfo.Instance.DevicesToSpawn - 1) + " 个决战装置在入侵期间。";
         }
         public override Hackable GetCanBeHacked( GameEntity_Squad Target, GameEntity_Squad HackerOrNull, Planet planet, Faction HackerFaction, HackingType Type, string RelatedStringOrNull, int RelatedIntOrNull, out string RejectionReasonDescription )
         {
@@ -1462,7 +1462,7 @@ buffer.Add("不足 ");
             }
             if ( playerOwnedDevices < GlobalAIWorldBaseInfo.Instance.DevicesToSpawn - 1 )
             {
-                RejectionReasonDescription = "You and your allies must control at least " + (GlobalAIWorldBaseInfo.Instance.DevicesToSpawn - 1) + " devices to trigger the showdown; you have "+ playerOwnedDevices;
+                RejectionReasonDescription = "你和你的盟友必须至少控制 " + (GlobalAIWorldBaseInfo.Instance.DevicesToSpawn - 1) + " 个装置才能触发决战；你拥有 "+ playerOwnedDevices;
                 return Hackable.NeverBeHacked_ButStillShow;
 
             }
@@ -1470,7 +1470,7 @@ buffer.Add("不足 ");
                  GlobalAIWorldBaseInfo.Instance.CrisisCountdownTriggered ||
                  GlobalAIWorldBaseInfo.Instance.CrisisFailed )
             {
-                RejectionReasonDescription = "The showdown crisis has already been triggered";
+                RejectionReasonDescription = "决战危机已经被触发";
                 return Hackable.NeverBeHacked_ButStillShow;
             }
             return base.GetCanBeHacked( Target, HackerOrNull, planet, HackerFaction, Type, RelatedStringOrNull, RelatedIntOrNull, out RejectionReasonDescription );

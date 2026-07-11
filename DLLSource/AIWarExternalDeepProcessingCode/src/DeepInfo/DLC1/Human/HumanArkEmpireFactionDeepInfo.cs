@@ -45,7 +45,7 @@ namespace Arcen.AIW2.External
             GameEntity_Squad command = AttachedFaction.GetFirstMatching( EntityRollupType.CommandStation, true, true );
             if ( command != null )
             {
-                World_AIW2.Instance.QueueChatMessageOrCommand( $"You have acquired A Command Station. The AI is now fully aware of you, and you will no longer be able to capture a planet for free.", ChatType.LogToCentralChat, null );
+                World_AIW2.Instance.QueueChatMessageOrCommand( $"你获得了一个指挥站。AI 现在完全意识到了你的存在，你将不再能免费占领星球。", ChatType.LogToCentralChat, null );
                 foreach ( Planet workingPlanet in World_AIW2.Instance.Planets( false ) )
                 {
                     if ( workingPlanet.GetIsControlledByFactionType( FactionType.Player ) || command.Planet == workingPlanet )
@@ -60,7 +60,7 @@ namespace Arcen.AIW2.External
             }
             else if ( FactionUtilityMethods.Instance.GetCurrentAIP() > 20 )
             {
-                World_AIW2.Instance.QueueChatMessageOrCommand( $"Your AIP has increased beyond 20. The AI is now fully aware of you, and you will no longer be able to capture a planet for free.", ChatType.LogToCentralChat, null );
+                World_AIW2.Instance.QueueChatMessageOrCommand( $"你的 AIP 已超过 20。AI 现在完全意识到了你的存在，你将不再能免费占领星球。", ChatType.LogToCentralChat, null );
                 foreach ( Planet workingPlanet in World_AIW2.Instance.Planets( false ) )
                 {
                     if ( workingPlanet.GetIsControlledByFactionType( FactionType.Player ) )

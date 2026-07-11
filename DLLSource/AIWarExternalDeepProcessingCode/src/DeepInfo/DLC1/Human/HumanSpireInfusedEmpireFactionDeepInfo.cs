@@ -96,7 +96,7 @@ namespace Arcen.AIW2.External
                 options.newExoLeaderTag="ExtragalacticWar";
 
             GameEntity_Squad.ReleaseTemporarySquadList( workingTargets );
-            options.exoText = "The AI is sending an Exogalactic Strikeforce due to your new Spire City!";
+            options.exoText = "AI 正在因你的新尖塔城市派遣银河外打击部队！";
             ExoGalacticAttackManager.SendExoGalacticAttack( options, Context );
         }
 

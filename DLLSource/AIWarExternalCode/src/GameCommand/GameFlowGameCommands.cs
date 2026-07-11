@@ -113,16 +113,16 @@ namespace Arcen.AIW2.External
                     {
                         case SpecialEntityType.HumanHomeCommand:
                             if ( command.ShouldGenerateLocalUIFeedback )
-                                World_AIW2.Instance.QueueChatMessageOrCommand( "Cannot scrap your home command station!", ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
+                                World_AIW2.Instance.QueueChatMessageOrCommand( "无法拆除你的母星指挥站！", ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
                             continue;
                         case SpecialEntityType.BattlestationBasic:
                         case SpecialEntityType.BattlestationCitadel:
                             if ( command.ShouldGenerateLocalUIFeedback )
-                                World_AIW2.Instance.QueueChatMessageOrCommand( "Cannot scrap a Battlestation!", ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
+                                World_AIW2.Instance.QueueChatMessageOrCommand( "无法拆除战斗空间站！", ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
                             continue;
                         case SpecialEntityType.CityCenter:
                             if ( command.ShouldGenerateLocalUIFeedback )
-                                World_AIW2.Instance.QueueChatMessageOrCommand( "Cannot scrap a " + entity.TypeData.NameForCityCenter + "!", ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
+                                World_AIW2.Instance.QueueChatMessageOrCommand( "无法拆除 " + entity.TypeData.NameForCityCenter + "！", ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
                             continue;
                         case SpecialEntityType.MobileOfficerCombatFleetFlagship:
                         case SpecialEntityType.MobileStrikeCombatFleetFlagship:
@@ -130,17 +130,17 @@ namespace Arcen.AIW2.External
                         case SpecialEntityType.MobileSupportFleetFlagship:
                         case SpecialEntityType.MobileCustomCityFedFleetFlagship:
                             if ( command.ShouldGenerateLocalUIFeedback )
-                                World_AIW2.Instance.QueueChatMessageOrCommand( "Cannot scrap a Flagship!", ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
+                                World_AIW2.Instance.QueueChatMessageOrCommand( "无法拆除旗舰！", ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
                             continue;
                         case SpecialEntityType.LoneGolem:
                             if ( command.ShouldGenerateLocalUIFeedback )
-                                World_AIW2.Instance.QueueChatMessageOrCommand( "Cannot scrap a Golem!", ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
+                                World_AIW2.Instance.QueueChatMessageOrCommand( "无法拆除傀儡！", ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
                             continue;
                     }
                     if ( entity.TypeData.IsScrappingByPlayerDisallowed && !entity.TypeData.IsScrappingByPlayerToTurnUnclaimed )
                     {
                         if ( command.ShouldGenerateLocalUIFeedback )
-                            World_AIW2.Instance.QueueChatMessageOrCommand( "Cannot scrap your " + entity.TypeData.DisplayName + "!", ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
+                            World_AIW2.Instance.QueueChatMessageOrCommand( "无法拆除你的 " + entity.TypeData.DisplayName + "！", ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
                         continue;
                     }
                 }

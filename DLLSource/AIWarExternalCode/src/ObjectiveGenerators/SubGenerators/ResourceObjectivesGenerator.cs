@@ -73,7 +73,7 @@ namespace Arcen.AIW2.External
                     #region Intra-Galactic Coordinator
                     ActualObjective objective = ActualObjective.GetFromPoolOrCreate();
                     objective.SetHook( "HackTechVault" );
-                    objective.DisplayNameBase = "Hack ";
+                    objective.DisplayNameBase = "入侵 ";
                     objective.RelatedEntity1 = entity;
                     ObjectiveCategory.AddActualObjective( objective );
                     #endregion

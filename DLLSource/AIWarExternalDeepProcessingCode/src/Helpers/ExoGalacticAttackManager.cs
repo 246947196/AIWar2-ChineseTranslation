@@ -110,7 +110,7 @@ namespace Arcen.AIW2.External
 
                 if ( string.IsNullOrEmpty( options.exoText ) )
                     World_AIW2.Instance.QueueChatMessageOrCommand( "<size=75%>" + Engine_Universal.ToHoursAndMinutesString( World_AIW2.Instance.GameSecond ) + ":</size> " + 
-                        options.spawningFaction.StartFactionColourForLog() + "Exostrike Incoming</color> "/* +
+                        options.spawningFaction.StartFactionColourForLog() + "外域打击来袭</color> "/* +
                         ArcenExternalUIUtilities.GUI_StrengthTextColorAndIcon +
                         ( totalStrength/ 1000f ).ToString( "0.#" )*/, ChatType.LogToCentralChat, voiceLine, chatHandlerOrNull );
                 else

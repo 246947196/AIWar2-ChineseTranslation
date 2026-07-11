@@ -304,7 +304,7 @@ namespace Arcen.AIW2.External
 
                         Planet.ReleaseTemporaryPlanetList( potentialPlanets );
 
-                        World_AIW2.Instance.QueueChatMessageOrCommand( $"The Anti-Dark Spire Coalition has succeeded in blowing up a Vengeance Generator on {VG.Planet.Name}. Derelict Dark Spire shards have broken off onto neighboring systems. The Dark Spire are responding harshly.", ChatType.LogToCentralChat, null );
+                        World_AIW2.Instance.QueueChatMessageOrCommand( $"反黑暗尖塔联盟已成功炸毁了 {VG.Planet.Name} 上的复仇发生器。废弃的黑暗尖塔碎片已散落到邻近星系。黑暗尖塔正在做出严厉回应。", ChatType.LogToCentralChat, null );
                         World_AIW2.Instance.QueueLogJournalEntryToSidebar( "TSR_SplinteringSpire_TheDismantlingSucceeds", string.Empty, AttachedFaction, null, VG.Planet, OnClient.DoThisOnHostOnly_WillBeSentToClients );
                         World_AIW2.Instance.QueueLogJournalEntryToSidebar( "DarkSpireConquestModeFromCoalition", string.Empty, AttachedFaction, null, VG.Planet, OnClient.DoThisOnHostOnly_WillBeSentToClients );
 

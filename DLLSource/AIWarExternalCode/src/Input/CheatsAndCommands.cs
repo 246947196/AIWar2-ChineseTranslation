@@ -55,7 +55,7 @@ namespace Arcen.AIW2.External
                     case "split":
                         {
                             if (hostCtx == null)
-                                WriteCheatOrCommandResult( CameFrom, RawText, OnPlanet, "Cannot use this command on client.", false, false, null);
+                                WriteCheatOrCommandResult( CameFrom, RawText, OnPlanet, "无法在客户端使用此命令。", false, false, null);
                             else
                             {
                                 foreach (var e in OnPlanet.Squads())

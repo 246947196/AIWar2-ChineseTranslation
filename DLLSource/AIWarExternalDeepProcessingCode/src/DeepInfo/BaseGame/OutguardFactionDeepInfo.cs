@@ -853,7 +853,7 @@ namespace Arcen.AIW2.External
             Faction localFaction = World_AIW2.Instance.GetLocalPlayerFactionOrNull();
             if ( localFaction == null ) //for spectator mode
             {
-                World_AIW2.Instance.QueueChatMessageOrCommand( "Cannot summon Outguard as a spectator.", ChatType.ShowLocallyOnly, null );
+                World_AIW2.Instance.QueueChatMessageOrCommand( "作为旁观者无法召唤外卫部队。", ChatType.ShowLocallyOnly, null );
                 return;
             }
 

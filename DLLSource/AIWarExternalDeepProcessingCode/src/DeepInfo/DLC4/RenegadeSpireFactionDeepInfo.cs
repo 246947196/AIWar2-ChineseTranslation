@@ -945,12 +945,12 @@ namespace Arcen.AIW2.External
                     if ( influencingFaction != null && influencingFaction.GetIsFriendlyTowards( faction ) )
                     {
 
-                        World_AIW2.Instance.QueueChatMessageOrCommand( faction.StartFactionColourForLog() + "The Renegade</color> have joined the " + 
+                        World_AIW2.Instance.QueueChatMessageOrCommand( faction.StartFactionColourForLog() + "Renegade</color> 已加入 " + 
                             influencingFaction.StartFactionColourForLog() + influencingFaction.GetDisplayName() + "</color> invasion on " + planet.Name, ChatType.LogToCentralChat, chatHandlerOrNull );
                         hasAllies = true;
                     }
                     else
-                        World_AIW2.Instance.QueueChatMessageOrCommand( faction.StartFactionColourForLog() + "The Renegade</color> is building infrastructure on " + planet.Name, 
+                        World_AIW2.Instance.QueueChatMessageOrCommand( faction.StartFactionColourForLog() + "Renegade</color> 正在 " + planet.Name, 
                             ChatType.LogToCentralChat, chatHandlerOrNull );
                 }
             }

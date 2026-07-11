@@ -6102,7 +6102,7 @@ namespace Arcen.AIW2.External
                          relatedSquadOrNull.TypeData.EnergyUsage > 0 && localPlayerFactionOrNull.NetEnergy - relatedSquadOrNull.TypeData.EnergyUsage < 0 )
                     {
                         buffer.StartColor( QuickColors.OldValue )
-                            .Add( "Cannot be claimed because you need " ).Add( -(localPlayerFactionOrNull.NetEnergy - relatedSquadOrNull.TypeData.EnergyUsage ) ).Add( " more energy to operate this entity.  " );
+                            .Add( "无法认领，因为你需要 " ).Add( -(localPlayerFactionOrNull.NetEnergy - relatedSquadOrNull.TypeData.EnergyUsage ) ).Add( " 更多能量来运行此实体。  " );
                         buffer.EndColor();
                     }
 

@@ -979,7 +979,7 @@ namespace Arcen.AIW2.External
 
             EntityText.ShowDetails(
                     0.25f, 2f,
-                    "Details of Ship Line(s)", "Close",
+                    "舰船线路详情", "关闭",
                     (b)=>
                     {
                         EntityText.GetContents(b, obj);
@@ -991,7 +991,7 @@ namespace Arcen.AIW2.External
         {
             EntityText.ShowDetails(
                     0.25f, 2f,
-                    "Details of Outguard Group", "Close",
+                    "外卫部队组详情", "关闭",
                     (b)=>
                     {
                         EntityText.GetContents(b, obj);

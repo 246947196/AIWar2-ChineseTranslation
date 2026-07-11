@@ -125,7 +125,7 @@ namespace Arcen.AIW2.External
                 if ( chatHandlerOrNull != null )
                     chatHandlerOrNull.PlanetToView = planet;
 
-                World_AIW2.Instance.QueueChatMessageOrCommand( "<color=#ff0000>Doomsday Mode</color>: Planet " + planet.Name + " has been destroyed.", 
+                World_AIW2.Instance.QueueChatMessageOrCommand( "<color=#ff0000>末日模式</color>：星球 " + planet.Name + " 已被摧毁。", 
                     ChatType.LogToCentralChat, chatHandlerOrNull );
                 DoomsdayModeWorldBaseInfo.Instance.TimeForNextPlanetDeath = World_AIW2.Instance.GameSecond + nextTime;
             }

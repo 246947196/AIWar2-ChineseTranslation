@@ -161,7 +161,7 @@ namespace Arcen.AIW2.External
 
             if ( World_AIW2.Instance.GetOutguardState( target ).HasBeenContacted )
             {
-                rejectionReason = "Cannot contact again; have already been contacted!";
+                rejectionReason = "无法再次联系；已经联系过了！";
                 return Hackable.NeverBeHacked_ButStillShow;
             }
 

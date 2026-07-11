@@ -1042,7 +1042,7 @@ namespace Arcen.AIW2.External
                             World_AIW2.Instance.QueueChatMessageOrCommand( "舰队设计不包含 " + typeToPlace.DisplayName, ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
                             break;
                         default:
-                            World_AIW2.Instance.QueueChatMessageOrCommand( "During placement: rejectionReason " + rejectionReason, ChatType.ShowLocallyOnly, null );
+                            World_AIW2.Instance.QueueChatMessageOrCommand( "放置期间，拒绝原因：" + rejectionReason, ChatType.ShowLocallyOnly, null );
                             break;
                     }
                     break;
@@ -1059,8 +1059,8 @@ namespace Arcen.AIW2.External
                         {
                             PlayerTypeData pTypeData = placingFaction.PlayerTypeDataOrNull_ModeratelyExpensive;
                             string resourceName = pTypeData != null ? pTypeData.Resource1DisplayName : "Resource 1";
-                            World_AIW2.Instance.QueueChatMessageOrCommand( "Insufficient " + resourceName + "; you need " + typeToPlace.CostInResourceOne +
-                                " and your faction has only " + placingFaction.StoredFactionResourceOne, ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
+                            World_AIW2.Instance.QueueChatMessageOrCommand( "不足 " + resourceName + "；你需要 " + typeToPlace.CostInResourceOne +
+                                "，你的派系仅有 " + placingFaction.StoredFactionResourceOne, ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
                         }
                         break;
                     }
@@ -1073,8 +1073,8 @@ namespace Arcen.AIW2.External
                         {
                             PlayerTypeData pTypeData = placingFaction.PlayerTypeDataOrNull_ModeratelyExpensive;
                             string resourceName = pTypeData != null ? pTypeData.Resource2DisplayName : "Resource 2";
-                            World_AIW2.Instance.QueueChatMessageOrCommand( "Insufficient " + resourceName + "; you need " + typeToPlace.CostInResourceTwo +
-                                " and your faction has only " + placingFaction.StoredFactionResourceTwo, ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
+                            World_AIW2.Instance.QueueChatMessageOrCommand( "不足 " + resourceName + "；你需要 " + typeToPlace.CostInResourceTwo +
+                                "，你的派系仅有 " + placingFaction.StoredFactionResourceTwo, ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
                         }
                         break;
                     }
@@ -1087,8 +1087,8 @@ namespace Arcen.AIW2.External
                         {
                             PlayerTypeData pTypeData = placingFaction.PlayerTypeDataOrNull_ModeratelyExpensive;
                             string resourceName = pTypeData != null ? pTypeData.Resource3DisplayName : "Resource 3";
-                            World_AIW2.Instance.QueueChatMessageOrCommand( "Insufficient " + resourceName + "; you need " + typeToPlace.CostInResourceThree +
-                                " and your faction has only " + placingFaction.StoredFactionResourceThree, ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
+                            World_AIW2.Instance.QueueChatMessageOrCommand( "不足 " + resourceName + "；你需要 " + typeToPlace.CostInResourceThree +
+                                "，你的派系仅有 " + placingFaction.StoredFactionResourceThree, ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
                         }
                         break;
                     }
