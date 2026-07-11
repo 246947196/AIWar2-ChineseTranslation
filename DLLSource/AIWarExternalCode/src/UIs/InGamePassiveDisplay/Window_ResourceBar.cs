@@ -2235,26 +2235,26 @@ namespace Arcen.AIW2.External
                     Buffer.Add("</color>\n");
                 }
 
-                Buffer.Add( "\nTotal Visible Threat Against Humans: <color=#ff0909>" + (allThreatAgainstHumans.IntValue / 1000).ToString( "#,##0" ) + "</color>." );
-                Buffer.Add( "\nTotal Threat Against Humans In Entire Galaxy: <color=#ff0909>" + (valOverTimeHumans.GetCurrentMax() / 1000).ToString( "#,##0" ) + "</color>." );
-                Buffer.Add( "\nTotal Visible Threat Against Other Factions: <color=#ff0909>" + ( allThreatAgainstOthers.IntValue / 1000).ToString( "#,##0" ) + "</color>." );
-                Buffer.Add( "\nTotal Threat Against Other Factions In Entire Galaxy: <color=#ff0909>" + (valOverTimeOtherFactions.GetCurrentMax() / 1000).ToString( "#,##0" ) + "</color>." );
-                Buffer.Add( "\n\nVisible Warden Strength: <color=#ff0909>" + (wardenStrength.IntValue / 1000).ToString( "#,##0" ) + "</color>." );
-                Buffer.Add( "\nVisible Hunter Strength Against Humans: <color=#ff0909>" + (hunterThreatAgainstHumans.IntValue/1000).ToString( "#,##0" ) + "</color>. ");
-                Buffer.Add( "\nVisible Hunter Strength Against Other Factions: <color=#ff0909>" + (hunterThreatAgainstOthers.IntValue / 1000).ToString( "#,##0" ) + "</color>.\n " );
+                Buffer.Add( "\n对人类的可见威胁总计：<color=#ff0909>" + (allThreatAgainstHumans.IntValue / 1000).ToString( "#,##0" ) + "</color>。" );
+                Buffer.Add( "\n全银河系中对人类的威胁总计：<color=#ff0909>" + (valOverTimeHumans.GetCurrentMax() / 1000).ToString( "#,##0" ) + "</color>。" );
+                Buffer.Add( "\n对其他派系的可见威胁总计：<color=#ff0909>" + ( allThreatAgainstOthers.IntValue / 1000).ToString( "#,##0" ) + "</color>。" );
+                Buffer.Add( "\n全银河系中对其他派系的威胁总计：<color=#ff0909>" + (valOverTimeOtherFactions.GetCurrentMax() / 1000).ToString( "#,##0" ) + "</color>。" );
+                Buffer.Add( "\n\n可见守卫力量：<color=#ff0909>" + (wardenStrength.IntValue / 1000).ToString( "#,##0" ) + "</color>。" );
+                Buffer.Add( "\n针对人类的可见猎杀力量：<color=#ff0909>" + (hunterThreatAgainstHumans.IntValue/1000).ToString( "#,##0" ) + "</color>。 ");
+                Buffer.Add( "\n针对其他派系的可见猎杀力量：<color=#ff0909>" + (hunterThreatAgainstOthers.IntValue / 1000).ToString( "#,##0" ) + "</color>。\n " );
 
                 {
-                    Buffer.Add( "\n\nEnemy Units Disbanded From Chasing Distant Other Factions: <color=#ff0909>" +
-                        World_AIW2.Instance.KilledBecauseChasingAFactionWeAreTooFarFrom_Count.ToString( "#,##0" ) + "</color>." );
-                    Buffer.Add( "\nEnemy Strength Disbanded From Chasing Distant Other Factions: <color=#ff0909>" +
-                        (World_AIW2.Instance.KilledBecauseChasingAFactionWeAreTooFarFrom_Strength / 1000).ToString( "#,##0" ) + "</color>." );
+                    Buffer.Add( "\n\n因追击过远其他派系而解散的敌方单位：<color=#ff0909>" +
+                        World_AIW2.Instance.KilledBecauseChasingAFactionWeAreTooFarFrom_Count.ToString( "#,##0" ) + "</color>。" );
+                    Buffer.Add( "\n因追击过远其他派系而解散的敌方力量：<color=#ff0909>" +
+                        (World_AIW2.Instance.KilledBecauseChasingAFactionWeAreTooFarFrom_Strength / 1000).ToString( "#,##0" ) + "</color>。" );
                     foreach ( Faction fac in World_AIW2.Instance.Factions )
                     {
                         if ( fac.KilledBecauseChasingAFactionWeAreTooFarFrom_Count > 0 )
                         {
-                            Buffer.Add( "\n   " ).StartColor( fac.FactionCenterColor.TeamColorBrighter ).Add( fac.GetDisplayName_Short( 999 ) ).EndColor().Add( " Disbanded <color=#ff0909>" +
-                                fac.KilledBecauseChasingAFactionWeAreTooFarFrom_Count.ToString( "#,##0" ) + "</color> Units, <color=#ff0909>" +
-                                (fac.KilledBecauseChasingAFactionWeAreTooFarFrom_Strength / 1000).ToString( "#,##0" ) + "</color> Strength. " );
+                            Buffer.Add( "\n   " ).StartColor( fac.FactionCenterColor.TeamColorBrighter ).Add( fac.GetDisplayName_Short( 999 ) ).EndColor().Add( " 解散了 <color=#ff0909>" +
+                                fac.KilledBecauseChasingAFactionWeAreTooFarFrom_Count.ToString( "#,##0" ) + "</color> 个单位，<color=#ff0909>" +
+                                (fac.KilledBecauseChasingAFactionWeAreTooFarFrom_Strength / 1000).ToString( "#,##0" ) + "</color> 力量。" );
                         }
                     }
                 }
