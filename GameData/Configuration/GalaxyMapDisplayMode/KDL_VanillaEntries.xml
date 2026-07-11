@@ -60,7 +60,7 @@
   />
   
   <display_mode name="GravityWellSizes"
-           display_name="Gravity Well Sizes"
+           display_name="重力井尺寸"
            dll_name="AIWarExternalVisualizationCode"
            type_name="Arcen.AIW2.ExternalVisualization.GalaxyMapDisplayMode_GravityWellSizes"
            tooltip="显示哪些星球在可建造空间方面更大或更小。较大的星球更容易防守，也更难攻击……除非您有狙击手。小星球很难防守，但如果敌人数量远远超过您，也很难攻击。最终结果实际上是大小和其他因素的综合作用。"

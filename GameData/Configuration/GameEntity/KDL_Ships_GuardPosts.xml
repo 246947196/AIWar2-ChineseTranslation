@@ -833,7 +833,7 @@
 		<ai_ship_group_membership name="GravitySpiderShredderTethuidaDireGuardPosts" weight="100"/>
 		<ai_ship_group_membership name="SpiderConcussionDireGuardPosts" weight="100"/>
 		<ai_ship_group_membership name="SpiderHeavyBeamDireGuardPosts" weight="100"/>	
-		<system name="Q4" display_name=" Dire Spider Cannon"
+		<system name="Q4" display_name="  dire蜘蛛炮"
 				category="Weapon" firing_timing="OnlyInRange"
 				damage_per_shot="2000" range="High1" shot_speed="Normal" rate_of_fire="Misery" 
 				shots_per_salvo="40" fires_salvos_sequentially="false"
