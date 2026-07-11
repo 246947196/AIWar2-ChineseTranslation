@@ -23,6 +23,9 @@ for i in range(1, 9):
     for m in part_pattern.finditer(content):
         key = m.group(1)
         val = m.group(2)
+        # Part files encode control chars as \\n/\\t (double escape)
+        # due to regex JSON unescaping. Convert to actual control chars to match skeleton.
+        key = key.replace('\\\\n', '\n').replace('\\\\t', '\t').replace('\\\\r', '\r')
         if val.strip():
             translations[key] = val
             count += 1
