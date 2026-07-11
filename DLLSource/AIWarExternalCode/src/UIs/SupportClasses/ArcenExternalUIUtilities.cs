@@ -32,44 +32,44 @@ namespace Arcen.AIW2.External
         public static readonly FixedTextFormatingStats AIPReduction = new FixedTextFormatingStats( "AIPReduction", "ffbca1", "Res_AIP", SpaceAfterIcon );
         public static readonly FixedTextFormatingStats Threat = new FixedTextFormatingStats( "Threat", "FFB74B", "Res_Threat", SpaceAfterIcon );
         
-        public static readonly FixedTextFormatingStats Range = new FixedTextFormatingStats( "Range", ColorMath.OrangeRed.GetHexCode() );
+        public static readonly FixedTextFormatingStats Range = new FixedTextFormatingStats( "射程", ColorMath.OrangeRed.GetHexCode() );
         
-        public static readonly FixedTextFormatingStats TimeOnPlanet = new FixedTextFormatingStats( "time on planet", "e8f3fc", afterIcon:SpaceAfterIcon );
+        public static readonly FixedTextFormatingStats TimeOnPlanet = new FixedTextFormatingStats( "星球停留时间", "e8f3fc", afterIcon:SpaceAfterIcon );
         
-        public static readonly FixedTextFormatingStats Speed = new FixedTextFormatingStats( "Speed", ColorMath.LightSkyBlue.GetHexCode(), "ShipStats_Speed", SpaceAfterIcon );
+        public static readonly FixedTextFormatingStats Speed = new FixedTextFormatingStats( "速度", ColorMath.LightSkyBlue.GetHexCode(), "ShipStats_Speed", SpaceAfterIcon );
         
-        public static readonly FixedTextFormatingStats EHP = new FixedTextFormatingStats( "Health", "f5fff5", "ShipStats_HullHealth", SpaceAfterIcon );
-        public static readonly FixedTextFormatingStats Hull = new FixedTextFormatingStats( "Hull", ColorMath.LightGreen.GetHexCode(), "ShipStats_HullHealth", SpaceAfterIcon );
-        public static readonly FixedTextFormatingStats Shield = new FixedTextFormatingStats( "Shields", ColorMath.LightCyan.GetHexCode(), "ShipStats_ShieldHealth", SpaceAfterIcon );
-        public static readonly FixedTextFormatingStats Cloak = new FixedTextFormatingStats( "Cloak", ColorMath.PaleVioletRed.GetHexCode(), "ShipStats_Cloaking");
-        public static readonly FixedTextFormatingStats Tachyon = new FixedTextFormatingStats( "Tachyon", "ffdf72", "ShipStats_Tachyon");
+        public static readonly FixedTextFormatingStats EHP = new FixedTextFormatingStats( "生命", "f5fff5", "ShipStats_HullHealth", SpaceAfterIcon );
+        public static readonly FixedTextFormatingStats Hull = new FixedTextFormatingStats( "船体", ColorMath.LightGreen.GetHexCode(), "ShipStats_HullHealth", SpaceAfterIcon );
+        public static readonly FixedTextFormatingStats Shield = new FixedTextFormatingStats( "护盾", ColorMath.LightCyan.GetHexCode(), "ShipStats_ShieldHealth", SpaceAfterIcon );
+        public static readonly FixedTextFormatingStats Cloak = new FixedTextFormatingStats( "隐形", ColorMath.PaleVioletRed.GetHexCode(), "ShipStats_Cloaking");
+        public static readonly FixedTextFormatingStats Tachyon = new FixedTextFormatingStats( "快子", "ffdf72", "ShipStats_Tachyon");
         
-        public static readonly FixedTextFormatingStats Armor = new FixedTextFormatingStats( "Armor", ColorMath.LighterRed.GetHexCode(), "ShipStats_Armor", SpaceAfterIcon );
-        public static readonly FixedTextFormatingStats Mass = new FixedTextFormatingStats( "Mass", ColorMath.LightOrange.GetHexCode(), "ShipStats_Mass", SpaceAfterIcon );
-        public static readonly FixedTextFormatingStats Albedo = new FixedTextFormatingStats( "Albedo", ColorMath.LightPurple.GetHexCode(), "ShipStats_Albedo", SpaceAfterIcon );
-        public static readonly FixedTextFormatingStats Engine = new FixedTextFormatingStats( "Engine", ColorMath.LightWhipBlue.GetHexCode(), "ShipStats_EnginePower", SpaceAfterIcon );
+        public static readonly FixedTextFormatingStats Armor = new FixedTextFormatingStats( "装甲", ColorMath.LighterRed.GetHexCode(), "ShipStats_Armor", SpaceAfterIcon );
+        public static readonly FixedTextFormatingStats Mass = new FixedTextFormatingStats( "质量", ColorMath.LightOrange.GetHexCode(), "ShipStats_Mass", SpaceAfterIcon );
+        public static readonly FixedTextFormatingStats Albedo = new FixedTextFormatingStats( "反照率", ColorMath.LightPurple.GetHexCode(), "ShipStats_Albedo", SpaceAfterIcon );
+        public static readonly FixedTextFormatingStats Engine = new FixedTextFormatingStats( "引擎", ColorMath.LightWhipBlue.GetHexCode(), "ShipStats_EnginePower", SpaceAfterIcon );
 
-        public static readonly FixedTextFormatingStats Mark = new FixedTextFormatingStats( "Mark" );
+        public static readonly FixedTextFormatingStats Mark = new FixedTextFormatingStats( "等级" );
         
-        public static readonly FixedTextFormatingStats Buffs = new FixedTextFormatingStats( "Buffs", "0ba70b");
-        public static readonly FixedTextFormatingStats BuffsLight = new FixedTextFormatingStats( "BuffsLight", "007c00");
-        public static readonly FixedTextFormatingStats Debuffs = new FixedTextFormatingStats( "Debuffs", "a70b0b");
-        public static readonly FixedTextFormatingStats DebuffsLight = new FixedTextFormatingStats( "DebuffsLight", "7c0000");
-        public static readonly FixedTextFormatingStats Immunities = new FixedTextFormatingStats( "Immunities", "888888");
-        public static readonly FixedTextFormatingStats ImmunitiesLight = new FixedTextFormatingStats( "ImmunitiesLight", "555555");
-        public static readonly FixedTextFormatingStats Mixed = new FixedTextFormatingStats( "Mixed", "b7890c");
-        public static readonly FixedTextFormatingStats MixedLight = new FixedTextFormatingStats( "MixedLight", "947d00");
-        public static readonly FixedTextFormatingStats Limits = new FixedTextFormatingStats( "Limits", "3749e6");
-        public static readonly FixedTextFormatingStats LimitsLight = new FixedTextFormatingStats( "LimitsLight", "1527b3");
+        public static readonly FixedTextFormatingStats Buffs = new FixedTextFormatingStats( "增益", "0ba70b");
+        public static readonly FixedTextFormatingStats BuffsLight = new FixedTextFormatingStats( "增益亮", "007c00");
+        public static readonly FixedTextFormatingStats Debuffs = new FixedTextFormatingStats( "减益", "a70b0b");
+        public static readonly FixedTextFormatingStats DebuffsLight = new FixedTextFormatingStats( "减益亮", "7c0000");
+        public static readonly FixedTextFormatingStats Immunities = new FixedTextFormatingStats( "免疫", "888888");
+        public static readonly FixedTextFormatingStats ImmunitiesLight = new FixedTextFormatingStats( "免疫亮", "555555");
+        public static readonly FixedTextFormatingStats Mixed = new FixedTextFormatingStats( "混合", "b7890c");
+        public static readonly FixedTextFormatingStats MixedLight = new FixedTextFormatingStats( "混合亮", "947d00");
+        public static readonly FixedTextFormatingStats Limits = new FixedTextFormatingStats( "限制", "3749e6");
+        public static readonly FixedTextFormatingStats LimitsLight = new FixedTextFormatingStats( "限制亮", "1527b3");
 
-        public static readonly FixedTextFormatingStats Damage = new FixedTextFormatingStats( "Damage", ColorMath.LightRed.GetHexCode(), "ShipStats_Attack");
-        public static readonly FixedTextFormatingStats ExoticDamage = new FixedTextFormatingStats( "Exotic", "dfff72", "ShipStats_Attack");
-        public static readonly FixedTextFormatingStats CorrosiveDamage = new FixedTextFormatingStats( "Corrosive", "a1ffa1", "ShipStats_Attack");
-        public static readonly FixedTextFormatingStats IonDamage = new FixedTextFormatingStats( "Ion", "04d9ff", "ShipStats_Attack");
+        public static readonly FixedTextFormatingStats Damage = new FixedTextFormatingStats( "伤害", ColorMath.LightRed.GetHexCode(), "ShipStats_Attack");
+        public static readonly FixedTextFormatingStats ExoticDamage = new FixedTextFormatingStats( "异种", "dfff72", "ShipStats_Attack");
+        public static readonly FixedTextFormatingStats CorrosiveDamage = new FixedTextFormatingStats( "腐蚀", "a1ffa1", "ShipStats_Attack");
+        public static readonly FixedTextFormatingStats IonDamage = new FixedTextFormatingStats( "离子", "04d9ff", "ShipStats_Attack");
         public static readonly FixedTextFormatingStats Multishot = new FixedTextFormatingStats( Text.Times, "ffdf72");
         public static readonly FixedTextFormatingStats DamagePerSecond = new FixedTextFormatingStats( "DPS", ColorMath.LightRed.GetHexCode(), "ShipStats_Attack" );
-        public static readonly FixedTextFormatingStats Shots = new FixedTextFormatingStats( "Shots", "ffdf72" );
-        public static readonly FixedTextFormatingStats Reload = new FixedTextFormatingStats( "Reload", "ee56bb" );
+        public static readonly FixedTextFormatingStats Shots = new FixedTextFormatingStats( "射击", "ffdf72" );
+        public static readonly FixedTextFormatingStats Reload = new FixedTextFormatingStats( "装弹", "ee56bb" );
         
         public static readonly string ShipLineIncreaseColor = "46cdff";
         public static readonly string DefenseLineIncreaseColor = "41ff9a";
