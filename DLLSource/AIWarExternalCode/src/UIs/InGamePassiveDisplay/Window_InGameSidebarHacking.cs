@@ -755,7 +755,7 @@ namespace Arcen.AIW2.External
                 else
                     tooltipBuffer.Add( "<color=#59ffa3>你可以执行此入侵。</color>\n\n");
 
-                tooltipBuffer.Add( "<color=#a1ff1a>战力估算更像是 guidelines，只是一个粗略的近似值。</color>\n<color=#ffa1a1>并非所有入侵都有战力估算</color>。" );
+                tooltipBuffer.Add( "<color=#a1ff1a>战力估算更像是 guidelines,只是一个粗略的近似值。</color>\n<color=#ffa1a1>并非所有入侵都有战力估算</color>。" );
 
                 if ( !string.IsNullOrEmpty( debugEstimateLog ) )
                     tooltipBuffer.Add( "\nDebug estimate log: " + debugEstimateLog + "." );

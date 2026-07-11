@@ -3361,7 +3361,7 @@ namespace Arcen.AIW2.External
                         buffer.Add( " of <color=#ffdf72>" ).Add( relatedEntityTypeData.PeriodicSpawn_WaveOrExoSizeMultiplier.ReadableString ).Add( "倍 </color>正常强度" );
                     }
 
-                    buffer.Add( " <color=#ffdf72>每 " ).Add( relatedEntityTypeData.PeriodicSpawn_DelayBetween生成 ).Add( " 秒</color>" );
+                    buffer.Add( " <color=#ffdf72>每 " ).Add( relatedEntityTypeData.PeriodicSpawn_DelayBetweenSpawns ).Add( " 秒</color>" );
                     if ( relatedEntityTypeData.PeriodicSpawn_InitialDelay > 0 )
                         buffer.Add( " 在 <color=#ffdf72>" ).Add( relatedEntityTypeData.PeriodicSpawn_InitialDelay ).Add( " 秒</color>后" );
                     else
@@ -3758,11 +3758,11 @@ namespace Arcen.AIW2.External
                         attritionDamage = relatedSquadOrNull.GetAttritionDamage();
                     debugStage = 55502;
                     if ( detailLevel < TooltipDetail.Full )
-                        buffer.Add( "<color=#f25e1c>消耗器:</color>: 每秒 " ).Add( attrition伤害，"a1ffa1" ).Add( "/s " );
+                        buffer.Add( "<color=#f25e1c>消耗器:</color>: 每秒 " ).Add( attritionDamage, "a1ffa1" ).Add( "/s " );
                     else
                     {
                         debugStage = 55503;
-                        buffer.Add( "<color=#f25e1c>消耗器:</color>: 对移动中的敌方单位每秒造成 " ).Add( attrition伤害，"a1ffa1" )
+                        buffer.Add( "<color=#f25e1c>消耗器:</color>: 对移动中的敌方单位每秒造成 " ).Add( attritionDamage, "a1ffa1" )
                             .Add( " 伤害。这被视为 <color=#dfff72>特殊伤害</color>。 " );
                         if (relatedMarkLevelData.MaxAttritionDamagePreFleetModifiers > 0)
                         {
@@ -4777,7 +4777,7 @@ namespace Arcen.AIW2.External
                                 debugStage = 3078;
                                 int secondsIHaveBeenWaiting = World_AIW2.Instance.GameSecond - relatedSquadOrNull.StartedWaitingAtGameSecond;
                                 buffer.Add("正在等待对抗 " + World_AIW2.Instance.GetPlanetByIndex(relatedSquadOrNull.WaitingAgainstPlanetIndex).Name + 
-                                    " for " + secondsIHaveBeenWaiting + " 秒后完全生成。 ");
+                                    " for " + secondsIHaveBeenWaiting + " seconds. ");
                             }
                             if ( relatedSquadOrNull.TypeData.NotEligibleToJoinHunterFleet || relatedSquadOrNull.TypeData.IsDrone )
                                 buffer.Add( "此类舰船将留在威胁舰队中，而不会加入猎手。" );
@@ -6081,7 +6081,7 @@ namespace Arcen.AIW2.External
                                             ExternalConstants.Instance.SecondsToWaitBeforeBrownoutEnds - facOrNull.SecondsSinceBrownout ).Add( "秒。" );
                             else
                                 buffer.Add( "电力不足：能量平衡为负！你的气泡力场将在 " ).Add(
-                                        ExternalConstants.Instance.SecondsToWaitBeforeBrownoutEnds - facOrNull.SecondsSinceBrownout ).Add( " 秒。  " );
+                                        ExternalConstants.Instance.SecondsToWaitBeforeBrownoutEnds - facOrNull.SecondsSinceBrownout ).Add( " seconds.  " );
                             buffer.EndColor();
                         }
                     }
@@ -6334,9 +6334,9 @@ namespace Arcen.AIW2.External
                         {
                             buffer.StartColor( damageColor ).AddNumberMoreReadable( display_shotdamage ).EndColor();
                             if ( isRetaliatory )
-                                buffer.Add( " <color=#dfff72>异种伤害</color>，" );
+                                buffer.Add( " <color=#dfff72>Exotic Damage</color>, " );
                             else
-                                buffer.Add( " 伤害，" );
+                                buffer.Add( " Damage, " );
                         }
                     }
                     
@@ -6400,7 +6400,7 @@ namespace Arcen.AIW2.External
                         }
                     }
                     if ( systemStats.CorrosionDamage > 0 )
-                        buffer.Add("将额外造成 ").Add( systemStats.Corrosion伤害，"a1ffa1" ).Add(" 腐蚀伤害。" );
+                        buffer.Add("将额外造成 ").Add( systemStats.CorrosionDamage, "a1ffa1" ).Add(" 腐蚀伤害。" );
                     if ( systemData.AllDamageIsCorrosive )
                         buffer.Add( "所有伤害均为腐蚀伤害。", "69ff69" );
                     if ( detailLevel == TooltipDetail.Full && (systemStats.CorrosionDamage > 0 || systemData.AllDamageIsCorrosive) )
@@ -6668,7 +6668,7 @@ namespace Arcen.AIW2.External
                                     {
                                         buffer.Add( "<color=#f25e1c>线圈光束阵列武器</color>: <color=#ffdf72>" );
                                         buffer.Add( systemData.NumberBeamsToFire );
-                                        buffer.Add( "</color> 束，长度 <color=#ffdf72>" );
+                                        buffer.Add( "</color> beams, length <color=#ffdf72>" );
                                     }
                                     buffer.AddNumberMoreReadable( (systemStats.CalculateActualRange( relatedSquadOrNull ) * systemData.BeamLengthMultiplier).IntValue );
 
@@ -6781,7 +6781,7 @@ namespace Arcen.AIW2.External
                                 else
                                 {
                                     if ( detailLevel < TooltipDetail.Full )
-                                        buffer.Add( "<color=#f25e1c>点光束武器</color>: 击中一个目标。 " );
+                                        buffer.Add( "<color=#f25e1c>点光束武器</color>: Hits one target. " );
                                     else
                                         buffer.Add( "<color=#f25e1c>点光束武器</color>: Attacks from the above weapon are in the form of beam that hits only the target it was aimed at. " );
                                 }
@@ -6799,7 +6799,7 @@ namespace Arcen.AIW2.External
                                         else
                                             buffer.Add( "<color=#f25e1c>光束阵列武器</color>: <color=#ffdf72>" );
                                         buffer.Add( systemData.NumberBeamsToFire );
-                                        buffer.Add( "</color> 束，长度 <color=#ffdf72>" );
+                                        buffer.Add( "</color> beams, length <color=#ffdf72>" );
                                     }
                                     buffer.AddNumberMoreReadable( (systemStats.CalculateActualRange( relatedSquadOrNull ) * systemData.BeamLengthMultiplier).IntValue );
 
@@ -6894,7 +6894,7 @@ namespace Arcen.AIW2.External
                                 HandleNewlineAndSize( buffer, ref haveDoneNewLineAndSize );
                                 if ( detailLevel < TooltipDetail.Full )
                                 {
-                                    buffer.Add( "<color=#f25e1c>多光束</color>: 最多 <color=#ffdf72>" ).Add( systemData.ForMark[effectiveMarkLevel].ShotsPerSalvo ).Add( "</color> 束" );
+                                    buffer.Add( "<color=#f25e1c>多光束</color>: up to <color=#ffdf72>" ).Add( systemData.ForMark[effectiveMarkLevel].ShotsPerSalvo ).Add( "</color> beams" );
                                     if ( !systemData.HitsAllIntersectingTargets )
                                         buffer.Add( "，每束一个目标。  " );
                                     else if ( systemStats.AOEMaximumNumberOfTargetsHitPerShot >= 1 )
@@ -6902,8 +6902,8 @@ namespace Arcen.AIW2.External
                                 }
                                 else
                                 {
-                                    buffer.Add( "<color=#f25e1c>多光束</color>: 最多 <color=#ffdf72>" ).Add( systemData.ForMark[effectiveMarkLevel].ShotsPerSalvo )
-                                        .Add( "</color> 束可同时发射。 " );
+                                    buffer.Add( "<color=#f25e1c>多光束</color>: Up to <color=#ffdf72>" ).Add( systemData.ForMark[effectiveMarkLevel].ShotsPerSalvo )
+                                        .Add( "</color> beams can be fired at a time. " );
                                     if ( systemData.ForMark[effectiveMarkLevel].ShotsPerSalvo > systemData.ForMark[effectiveMarkLevel].ShotsPerTarget )
                                         buffer.Add( "仅 " ).Add( systemData.ForMark[effectiveMarkLevel].ShotsPerTarget ).Add( " 可对每个目标和堆叠发射。" );
                                     else
@@ -6919,8 +6919,8 @@ namespace Arcen.AIW2.External
                                 if ( detailLevel >= TooltipDetail.Full )
                                 {
                                     HandleNewlineAndSize( buffer, ref haveDoneNewLineAndSize );
-                                    buffer.Add( "<color=#f25e1c>多发</color>: 最多 <color=#ffdf72>" ).Add( systemData.ForMark[effectiveMarkLevel].ShotsPerSalvo )
-                                        .Add( "</color> 发可同时发射。 " );
+                                    buffer.Add( "<color=#f25e1c>多发</color>: Up to <color=#ffdf72>" ).Add( systemData.ForMark[effectiveMarkLevel].ShotsPerSalvo )
+                                        .Add( "</color> shots can be fired at a time. " );
                                     if ( systemData.ForMark[effectiveMarkLevel].ShotsPerSalvo > systemData.ForMark[effectiveMarkLevel].ShotsPerTarget )
                                         buffer.Add( "仅 " ).Add( systemData.ForMark[effectiveMarkLevel].ShotsPerTarget ).Add( " 可对每个目标和堆叠发射" );
                                     else
@@ -6954,19 +6954,19 @@ namespace Arcen.AIW2.External
                         {
                             HandleNewlineAndSize( buffer, ref haveDoneNewLineAndSize );
 
-                            buffer.Add( "<color=#f25e1c>有限目标</color>: 只能瞄准静态建筑。  " );
+                            buffer.Add( "<color=#f25e1c>有限目标</color>: Can only target static structures.  " );
                         }
                         if ( systemData.OnlyTargetsMobileUnits )
                         {
                             HandleNewlineAndSize( buffer, ref haveDoneNewLineAndSize );
 
-                            buffer.Add( "<color=#f25e1c>有限目标</color>: 只能瞄准移动单位。  " );
+                            buffer.Add( "<color=#f25e1c>有限目标</color>: Can only target mobile units.  " );
                         }
                         if ( systemData.OnlyTargetsStrikecraftAndFrigates )
                         {
                             HandleNewlineAndSize( buffer, ref haveDoneNewLineAndSize );
 
-                            buffer.Add( "<color=#f25e1c>有限目标</color>: 只能瞄准舰载机和护卫舰。  " );
+                            buffer.Add( "<color=#f25e1c>有限目标</color>: Can only target strikecraft and frigates.  " );
                         }
                         #endregion
                         debugStage = 225;
@@ -7016,7 +7016,7 @@ namespace Arcen.AIW2.External
                                         engineSpeed = ExternalConstants.Instance.EngineStunMultipliersByStunSeconds[systemData.MaxEngineStunSeconds];
 
                                     buffer.Add( "目标可被减速最多 " ).AddNumberMoreReadable( systemData.MaxEngineStunSeconds )
-                                        .Add( "s, at which point its movement speed will only be  <color=#ffdf72>" ).Add( engineSpeed.ReadableString ).Add( "x</color> 正常。  " );
+                                        .Add( "s, at which point its movement speed will only be  <color=#ffdf72>" ).Add( engineSpeed.ReadableString ).Add( "x</color> normal.  " );
                                 }
                                 else
                                     buffer.Add( "目标累积的眩晕秒数越多，速度越慢。4秒 = 50%移动速度，7秒以上 = 无法移动。" );
@@ -7078,7 +7078,7 @@ namespace Arcen.AIW2.External
                             }
                             else
                             {
-                                buffer.Add( "<color=#f25e1c>目标传送</color>: 上述武器的射击导致enemies that are hit to be moved to a completely random spot in the planet's gravity well.  " );
+                                buffer.Add( "<color=#f25e1c>目标传送</color>: Shots from the above weapon cause enemies that are hit to be moved to a completely random spot in the planet's gravity well.  " );
                             }
                         }
                         #endregion
@@ -7098,7 +7098,7 @@ namespace Arcen.AIW2.External
 
                         {
                             HandleNewlineAndSize( buffer, ref haveDoneNewLineAndSize );
-                            buffer.Add( "<color=#f25e1c>攻击加成</color>: 上述武器的射击造成 <color=#ffdf72>" ).Add( systemStats.DamageMultiplierToTractoredUnits.ReadableString, "a1ffa1" ).Add( "x</color>伤害对牵引光束中的单位。" );
+                            buffer.Add( "<color=#f25e1c>攻击加成</color>: Shots from the above weapon do <color=#ffdf72>" ).Add( systemStats.DamageMultiplierToTractoredUnits.ReadableString, "a1ffa1" ).Add( "x</color>伤害对牵引光束中的单位。" );
                         }
                         #endregion
 
@@ -7111,7 +7111,7 @@ namespace Arcen.AIW2.External
                                 hasSystemWithBonusFromAttackingUnderForcefields = true;
 
                             HandleNewlineAndSize( buffer, ref haveDoneNewLineAndSize );
-                            buffer.Add( "<color=#f25e1c>攻击加成</color>: 上述武器的射击造成 <color=#ffdf72>" ).Add( systemData.DamageModifierWhileUnderForcefield.ReadableString, "a1ffa1" ).Add( "x</color>伤害如果此单位在力场下，忽略正常惩罚。" );
+                            buffer.Add( "<color=#f25e1c>攻击加成</color>: Shots from the above weapon do <color=#ffdf72>" ).Add( systemData.DamageModifierWhileUnderForcefield.ReadableString, "a1ffa1" ).Add( "x</color>伤害如果此单位在力场下，忽略正常惩罚。" );
                         }
                         #endregion
 
@@ -7127,7 +7127,7 @@ namespace Arcen.AIW2.External
                             if ( detailLevel < TooltipDetail.Full )
                                 buffer.Add( "<color=#f25e1c>攻击加成</color>: Additional <color=#ffdf72>" ).Add( systemData.AdditionalDamageModifierPerWeaponPoint.ReadableString, "a1ffa1" ).Add( "x</color>每当前武器点数。" );
                             else
-                                buffer.Add( "<color=#f25e1c>攻击加成</color>: 上述武器的射击造成 an additional <color=#ffdf72>" ).Add( systemData.AdditionalDamageModifierPerWeaponPoint.ReadableString, "a1ffa1" ).Add( "x</color>伤害每当前拥有的武器点数。" );
+                                buffer.Add( "<color=#f25e1c>攻击加成</color>: Shots from the above weapon do an additional <color=#ffdf72>" ).Add( systemData.AdditionalDamageModifierPerWeaponPoint.ReadableString, "a1ffa1" ).Add( "x</color>伤害每当前拥有的武器点数。" );
                         }
 
                         // The case where it DOES consume Weapon Points on firing, i.e Powerslaver style.
@@ -7139,14 +7139,14 @@ namespace Arcen.AIW2.External
                             if ( detailLevel < TooltipDetail.Full )
                                 buffer.Add( "<color=#f25e1c>攻击加成</color>: Consumes <color=#ffdf72>" + systemData.NumberOfWeaponPointsToConsumeOnFiring + "</color> Weapon Points, additional <color=#ffdf72>" ).Add( systemData.AdditionalDamageModifierPerWeaponPoint.ReadableString, "a1ffa1" ).Add( "x</color>伤害每消耗的武器点数。" );
                             else
-                                buffer.Add( "<color=#f25e1c>攻击加成</color>: 上述武器的射击消耗<color=#ffdf72>" + systemData.NumberOfWeaponPointsToConsumeOnFiring + "</color> Weapon Points per salvo, doing an additional <color=#ffdf72>" ).Add( systemData.AdditionalDamageModifierPerWeaponPoint.ReadableString, "a1ffa1" ).Add( "x</color>伤害每消耗的武器点数。" );
+                                buffer.Add( "<color=#f25e1c>攻击加成</color>: Shots from the above weapon consume <color=#ffdf72>" + systemData.NumberOfWeaponPointsToConsumeOnFiring + "</color> Weapon Points per salvo, doing an additional <color=#ffdf72>" ).Add( systemData.AdditionalDamageModifierPerWeaponPoint.ReadableString, "a1ffa1" ).Add( "x</color>伤害每消耗的武器点数。" );
                         }
 
                         if ( systemData.NumberOfWeaponPointsToGainOnFiring != FInt.Zero )
                         {
                             HandleNewlineAndSize( buffer, ref haveDoneNewLineAndSize );
 
-                            buffer.Add( "<color=#f25e1c>获得武器点数</color>: Shots from the above weapon increase this units Weapon Points by <color=#ffdf72>" + systemData.NumberOfWeaponPointsToGainOnFiring + "</color>，最大上限 <color=#ffdf72>" + systemData.ParentEntityTypeData.MaxNumberOfWeaponPoints + "</color>. " );
+                            buffer.Add( "<color=#f25e1c>获得武器点数</color>: Shots from the above weapon increase this units Weapon Points by <color=#ffdf72>" + systemData.NumberOfWeaponPointsToGainOnFiring + "</color>, up to max of <color=#ffdf72>" + systemData.ParentEntityTypeData.MaxNumberOfWeaponPoints + "</color>. " );
                         }
                         #endregion
 
@@ -7214,7 +7214,7 @@ namespace Arcen.AIW2.External
                             }
                             else
                             {
-                                buffer.Add( "<color=#f25e1c>电离辐射</color>: 上述武器的射击造成 <color=#ffdf72>" );
+                                buffer.Add( "<color=#f25e1c>电离辐射</color>: Shots from the above weapon do <color=#ffdf72>" );
                                 buffer.Add( (systemData.IonPercentagePerMarkLevelLower * FInt.FromParts( 100, 0 )).IntValue );
                                 buffer.Add( "%</color> of the target's max health (shield if present, then hull) to any targets whose Mark is lower than <color=#ffdf72>Mark " );
                                 buffer.AddNumberMoreReadable( systemStats.MarkLevel.Ordinal );
@@ -7292,7 +7292,7 @@ namespace Arcen.AIW2.External
 
                             if ( detailLevel < TooltipDetail.Full )
                             {
-                                buffer.Add( "<color=#f25e1c>武器干扰器</color>: 目标装弹 +<color=#ffdf72>" );
+                                buffer.Add( "<color=#f25e1c>武器干扰器</color>: target reload +<color=#ffdf72>" );
                                 buffer.AddNumberMoreReadable( systemStats.EnemyWeaponReloadSlowingSecondsPerShot );
                                 buffer.Add( "秒</color> 如果护甲 < <color=#ffdf72>" );
                                 buffer.Add( systemData.EnemyWeaponReloadSlowingSecondsArmor_mmLessThan );
@@ -7305,7 +7305,7 @@ namespace Arcen.AIW2.External
                             }
                             else
                             {
-                                buffer.Add( "<color=#f25e1c>武器干扰器</color>: 上述武器的射击增加to the reload times of enemies they hit by <color=#ffdf72>" );
+                                buffer.Add( "<color=#f25e1c>武器干扰器</color>: Shots from the above weapon add to the reload times of enemies they hit by <color=#ffdf72>" );
                                 buffer.AddNumberMoreReadable( systemStats.EnemyWeaponReloadSlowingSecondsPerShot );
                                 buffer.Add( "秒</color> 如果目标护甲厚度低于 <color=#ffdf72>" );
                                 buffer.Add( systemData.EnemyWeaponReloadSlowingSecondsArmor_mmLessThan );
@@ -7330,17 +7330,17 @@ namespace Arcen.AIW2.External
                             {
                                 buffer.Add( "<color=#f25e1c>聚变反应</color>: <color=#ffdf72>" );
                                 buffer.Add( Mathf.RoundToInt( systemStats.PercentDamageBypassesPersonalShields.ToFloatNonSim() * 100f ) );
-                                buffer.Add( "%</color> 直接作用于目标船体。  " );
+                                buffer.Add( "%</color> direct to target hull.  " );
                             }
                             else if ( !systemData.FiresThroughEnemyShields )
                             {
-                                buffer.Add( "<color=#f25e1c>聚变反应</color>: 上述武器的射击造成 <color=#ffdf72>" );
+                                buffer.Add( "<color=#f25e1c>聚变反应</color>: Shots from the above weapon do <color=#ffdf72>" );
                                 buffer.Add( Mathf.RoundToInt( systemStats.PercentDamageBypassesPersonalShields.ToFloatNonSim() * 100f ) );
                                 buffer.Add( "%</color> of their damage directly to the hull of their target, bypassing any personal shields (NOT bubble forcefields).  " );
                             }
                             else
                             {
-                                buffer.Add( "<color=#f25e1c>聚变反应</color>: 上述武器的射击造成 <color=#ffdf72>" );
+                                buffer.Add( "<color=#f25e1c>聚变反应</color>: Shots from the above weapon do <color=#ffdf72>" );
                                 buffer.Add( Mathf.RoundToInt( systemStats.PercentDamageBypassesPersonalShields.ToFloatNonSim() * 100f ) );
                                 buffer.Add( "%</color> of their damage directly to the hull of their target, bypassing any personal shields.  " );
                             }
@@ -7363,7 +7363,7 @@ namespace Arcen.AIW2.External
                                     {
                                         buffer.Add( "目标被推开 <color=#ffdf72>" );
                                         buffer.AddNumberMoreReadable( systemStats.KnockbackPerShot );
-                                        buffer.Add( "</color> 远离此舰如果质量 <= <color=#ffdf72>" );
+                                        buffer.Add( "</color> away from this ship if mass <= <color=#ffdf72>" );
                                         buffer.Add( systemData.KnockbackPerShotToShipsMass_tXLessThan );
                                         buffer.Add( " tX</color>. Knockback decreases with higher mass.  " );
                                     }
@@ -7371,7 +7371,7 @@ namespace Arcen.AIW2.External
                                     {
                                         buffer.Add( "被AOE击中的目标被推开 <color=#ffdf72>" );
                                         buffer.AddNumberMoreReadable( systemStats.KnockbackPerShot );
-                                        buffer.Add( "</color> 远离范围中心如果质量 <= <color=#ffdf72>" );
+                                        buffer.Add( "</color> away from the AoE center if mass <= <color=#ffdf72>" );
                                         buffer.Add( systemData.KnockbackPerShotToShipsMass_tXLessThan );
                                         buffer.Add( " tX</color>. Knockback decreases with higher mass.  " );
                                     }
@@ -7382,7 +7382,7 @@ namespace Arcen.AIW2.External
                                     {
                                         buffer.Add( "目标被拉向 <color=#ffdf72>" );
                                         buffer.AddNumberMoreReadable( systemStats.KnockbackPerShot );
-                                        buffer.Add( "</color> 朝向此舰如果质量 <= <color=#ffdf72>" );
+                                        buffer.Add( "</color> towards this ship if mass <= <color=#ffdf72>" );
                                         buffer.Add( systemData.KnockbackPerShotToShipsMass_tXLessThan );
                                         buffer.Add( " tX</color>. Knockback decreases with higher mass.  " );
                                     }
@@ -7390,7 +7390,7 @@ namespace Arcen.AIW2.External
                                     {
                                         buffer.Add( "被AOE击中的目标被拉向 <color=#ffdf72>" );
                                         buffer.AddNumberMoreReadable( systemStats.KnockbackPerShot );
-                                        buffer.Add( "</color> 朝向范围中心如果质量 <= <color=#ffdf72>" );
+                                        buffer.Add( "</color> towards the AoE center if mass <= <color=#ffdf72>" );
                                         buffer.Add( systemData.KnockbackPerShotToShipsMass_tXLessThan );
                                         buffer.Add( " tX</color>. Knockback decreases with higher mass.  " );
                                     }
@@ -7434,17 +7434,17 @@ namespace Arcen.AIW2.External
                             {
                                 buffer.Add( "<color=#f25e1c>伤害增幅</color>: <color=#ffdf72>" );
                                 buffer.Add( Mathf.RoundToInt( systemStats.DamageAmplificationFlat ) );
-                                buffer.Add( "</color> 额外伤害由目标承受<color=#ffdf72>" );
+                                buffer.Add( "</color> extra damage taken by target for <color=#ffdf72>" );
                                 buffer.Add( Mathf.RoundToInt( systemData.DamageAmplificationDuration_Max15 ) );
                                 buffer.Add( "</color>s.  " );
                             }
                             else
                             {
-                                buffer.Add( "<color=#f25e1c>伤害增幅</color>: 上述武器的射击导致the target to take <color=#ffdf72>" );
+                                buffer.Add( "<color=#f25e1c>伤害增幅</color>: Shots from the above weapon cause the target to take <color=#ffdf72>" );
                                 buffer.Add( Mathf.RoundToInt( systemStats.DamageAmplificationFlat ) );
-                                buffer.Add( "</color> 更多伤害从每次命中射击<color=#ffdf72>" );
+                                buffer.Add( "</color> more damage from every shot that hits it for <color=#ffdf72>" );
                                 buffer.Add( Mathf.RoundToInt( systemData.DamageAmplificationDuration_Max15 ) );
-                                buffer.Add( "</color> 秒。  " );
+                                buffer.Add( "</color> seconds.  " );
                             }
                         }
 
@@ -7462,11 +7462,11 @@ namespace Arcen.AIW2.External
                             }
                             else
                             {
-                                buffer.Add( "<color=#f25e1c>伤害增幅</color>: 上述武器的射击导致the target to take <color=#ffdf72>" );
+                                buffer.Add( "<color=#f25e1c>伤害增幅</color>: Shots from the above weapon cause the target to take <color=#ffdf72>" );
                                 buffer.Add( Mathf.RoundToInt( systemData.DamageAmplificationMult.ToFloatNonSim() * 100f ) );
                                 buffer.Add( "%</color> of normal damage from every shot that hits it for <color=#ffdf72>" );
                                 buffer.Add( Mathf.RoundToInt( systemData.DamageAmplificationDuration_Max15 ) );
-                                buffer.Add( "</color> 秒。  " );
+                                buffer.Add( "</color> seconds.  " );
                             }
                         }
                         #endregion
@@ -7486,23 +7486,23 @@ namespace Arcen.AIW2.External
                                 }
                                 else
                                 {
-                                    buffer.Add( "<color=#f25e1c>自伤</color>: 自身受损<color=#ffdf72>" );
+                                    buffer.Add( "<color=#f25e1c>自伤</color>: damages itself by <color=#ffdf72>" );
                                 }
                                 buffer.AddNumberMoreReadable( systemData.HealthChangePerDamageDealt );
-                                buffer.Add( " 生命</color>每造成伤害。  " );
+                                buffer.Add( " health</color> per damage dealt.  " );
                             }
                             else
                             {
                                 if ( systemData.HealthChangePerDamageDealt > FInt.Zero )
                                 {
-                                    buffer.Add( "<color=#f25e1c>吸血</color>: 自身修复<color=#ffdf72>" );
+                                    buffer.Add( "<color=#f25e1c>吸血</color>: repairs itself by <color=#ffdf72>" );
                                 }
                                 else
                                 {
-                                    buffer.Add( "<color=#f25e1c>自伤</color>: 自身受损<color=#ffdf72>" );
+                                    buffer.Add( "<color=#f25e1c>自伤</color>: damages itself by <color=#ffdf72>" );
                                 }
                                 buffer.AddNumberMoreReadable( systemData.HealthChangePerDamageDealt );
-                                buffer.Add( " 生命</color>每造成1点伤害。  " );
+                                buffer.Add( " health</color> for every 1 damage it has dealt.  " );
                             }
                         }
 
@@ -7515,7 +7515,7 @@ namespace Arcen.AIW2.External
                             {
                                 if ( systemData.HealthChangeByMaxHealthDividedByThisPerAttack >= FInt.One * -1 && systemData.HealthChangeByMaxHealthDividedByThisPerAttack < FInt.Zero )
                                 {
-                                    buffer.Add( "<color=#f25e1c>自毁</color>: 自毁以攻击。  " );
+                                    buffer.Add( "<color=#f25e1c>自毁</color>: kills itself to attack.  " );
                                 }
                                 else
                                 {
@@ -7525,30 +7525,30 @@ namespace Arcen.AIW2.External
                                     }
                                     else
                                     {
-                                        buffer.Add( "<color=#f25e1c>分解</color>: 自身受损<color=#ffdf72>" );
+                                        buffer.Add( "<color=#f25e1c>分解</color>: damages itself by <color=#ffdf72>" );
                                     }
                                     buffer.AddPercentFormated( ( 1 / systemData.HealthChangeByMaxHealthDividedByThisPerAttack).ToPercent( 1 ) );
-                                    buffer.Add( " 生命</color>每次攻击。  " );
+                                    buffer.Add( " health</color> each attack.  " );
                                 }
                             }
                             else
                             {
                                 if ( systemData.HealthChangeByMaxHealthDividedByThisPerAttack >= FInt.One * -1 && systemData.HealthChangeByMaxHealthDividedByThisPerAttack < FInt.Zero )
                                 {
-                                    buffer.Add( "<color=#f25e1c>自毁</color>: 自毁以攻击。  " );
+                                    buffer.Add( "<color=#f25e1c>自毁</color>: kills itself to attack.  " );
                                 }
                                 else
                                 {
                                     if ( systemData.HealthChangeByMaxHealthDividedByThisPerAttack > FInt.Zero )
                                     {
-                                        buffer.Add( "<color=#f25e1c>自组装</color>: 自身修复<color=#ffdf72>" );
+                                        buffer.Add( "<color=#f25e1c>自组装</color>: repairs itself by <color=#ffdf72>" );
                                     }
                                     else
                                     {
-                                        buffer.Add( "<color=#f25e1c>分解</color>: 自身受损<color=#ffdf72>" );
+                                        buffer.Add( "<color=#f25e1c>分解</color>: damages itself by <color=#ffdf72>" );
                                     }
                                     buffer.AddPercentFormated( (1 / systemData.HealthChangeByMaxHealthDividedByThisPerAttack).ToPercent( 1 ) );
-                                    buffer.Add( " 生命</color>每次攻击。  " );
+                                    buffer.Add( " health</color> each attack.  " );
                                 }
                             }
                         }
@@ -8046,7 +8046,7 @@ namespace Arcen.AIW2.External
                     }
                     else
                     {
-                        buffer.Add( " 小于 " );
+                        buffer.Add( " less than " );
                     }
                     buffer.Add( "<color=#ffdf72>" );
                     buffer.AddFixedDecimal( lessThanVal.ToFloatNonSim(), 2 );
@@ -8062,7 +8062,7 @@ namespace Arcen.AIW2.External
                 }
                 else
                 {
-                    buffer.Add( " 大于 " );
+                    buffer.Add( " greater than " );
                 }
                 buffer.Add( "<color=#ffdf72>" );
                 buffer.AddFixedDecimal( greaterThanVal.ToFloatNonSim(), 2 );
@@ -8910,12 +8910,12 @@ namespace Arcen.AIW2.External
                             .Add( intoType.GetDisplayName(), "a1ffa1" )
                             .Add( " after " )
                             .AddMinutesAndSeconds( e.SecondsTillTransformation, "ffa1a1" )
-                            .Add( " 战斗中。" );
+                            .Add( " in combat." );
                     else
                         buffer
                             .Add( "This " )
                             .Add( intoType.GetDisplayName(), "a1ffa1" )
-                            .Add( " 正在跃迁进入，将在" )
+                            .Add( " is warping in and will be fully created in " )
                             .AddMinutesAndSeconds( e.SecondsTillTransformation, "ffa1a1" )
                             .Add( "." );
                 }
@@ -8940,7 +8940,7 @@ namespace Arcen.AIW2.External
                     if ( IsBrief )
                         buffer.Add( " > " );
                     else
-                        buffer.Add( " 大于 " );
+                        buffer.Add( " greater than " );
                     buffer.StartColor( Color );
                     buffer.AddFixedDecimal( min.ToFloatNonSim(), 2 );
                     buffer.EndColor();
@@ -8961,7 +8961,7 @@ namespace Arcen.AIW2.External
                     if ( IsBrief )
                         buffer.Add( " < " );
                     else
-                        buffer.Add( " 小于 " );
+                        buffer.Add( " less than " );
                     buffer.StartColor( Color );
                     buffer.AddFixedDecimal( max.ToFloatNonSim(), 2 );
                     buffer.Add( "</color>.  " );

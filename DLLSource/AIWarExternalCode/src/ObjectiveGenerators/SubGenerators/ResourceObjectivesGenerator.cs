@@ -638,7 +638,7 @@ namespace Arcen.AIW2.External
             buffer.Add( "占领它让你所有的指挥站都能建造" ).Add( "更多防御建筑", ObjectiveColors.Keyword ).Add( "，如下所列。" );
             ResourceObjectivesGenerator.AppendDefensiveCapMultiplierNote( buffer );
             if ( Objective.RelatedEntity1 == null || Objective.RelatedEntity1.ShipGrantsList.Count <= 0 )
-                buffer.Add( "\n\n这个没有提供任何炮塔或其他建筑！原因不明。（这是一个 bug，请用存档报告。）" );
+                buffer.Add( "\n\n这个没有提供任何炮塔或其他建筑！原因不明。（这是一个 bug,请用存档报告。）" );
             else
             {
                 buffer.Add( "\n\n" ).Add( "<color=#8092ff>" ).Add( Objective.RelatedEntity1.ShipGrantsList.Count ).Add( "</color>" ).Add( " 已获得的结构" );
@@ -706,7 +706,7 @@ namespace Arcen.AIW2.External
                 .Add( "，你所有的指挥站、战斗空间站和堡垒都可以建造。" );
             ResourceObjectivesGenerator.AppendDefensiveCapMultiplierNote( buffer );
             if ( Objective.RelatedEntity1 == null || Objective.RelatedEntity1.ShipGrantsList.Count <= 0 )
-                buffer.Add( "\n\n这个没有提供任何炮塔或其他防御物品！原因不明。（这是一个 bug，请用存档报告。）" );
+                buffer.Add( "\n\n这个没有提供任何炮塔或其他防御物品！原因不明。（这是一个 bug,请用存档报告。）" );
             else
             {
                 buffer.Add( "\n\n" ).Add( "<color=#8092ff>" ).Add( Objective.RelatedEntity1.ShipGrantsList.Count ).Add( "</color>" ).Add( " 防御线可供获取" );

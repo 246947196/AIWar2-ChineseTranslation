@@ -338,7 +338,7 @@ namespace Arcen.AIW2.External
                         else if ( !Condition.MovingToMiddlePlanet_UserHasSetAllMilitaryShipsToControlGroup1.GetMetNow() )
                         {
                             WriteHeader( Buffer, 12, maxHeader );
-                            Buffer.Add( "接下来，将所有已选单位加入第一个控制组，按 ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "ModifyControlGroup" )).Add(" + X，X 是一个数字。例如你可以使用 " ).Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("ModifyControlGroup")).Add(" + 1 作为控制组 1。游戏中最多可以定义 10 个控制组，但现在我们用一个控制组包含所有单位。").Add( "\n\n" );
+                            Buffer.Add( "接下来，将所有已选单位加入第一个控制组，按 ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "ModifyControlGroup" )).Add(" + X,X 是一个数字。例如你可以使用 " ).Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("ModifyControlGroup")).Add(" + 1 作为控制组 1。游戏中最多可以定义 10 个控制组，但现在我们用一个控制组包含所有单位。").Add( "\n\n" );
                             Buffer.Add( "完成后，让我们重新打开船坞菜单，这样新建舰船可以直接集结到你的舰队。" ).Add( "\n" );
                         }
                         else if( !Condition.UserHasOpenedDocksMenu.GetMetNow() )

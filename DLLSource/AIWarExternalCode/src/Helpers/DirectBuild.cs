@@ -825,9 +825,9 @@ namespace Arcen.AIW2.External
             if ( baseInfo != null )
             {
                 if ( buildable.TypeData.GetHasTag( "DysonPlanetaryDrill" ) )
-                    buffer.Add( "\n建造此建筑将产生 " ).Add( baseInfo.Difficulty.AIPForPlanetDrilling.ToString(), "ff0000" ).Add( " AIP，因为星球正在被钻探。" );
+                    buffer.Add( "\n建造此建筑将产生 " ).Add( baseInfo.Difficulty.AIPForPlanetDrilling.ToString(), "ff0000" ).Add( " AIP,因为星球正在被钻探。" );
                 else if ( buildable.TypeData.GetHasTag( "DysonOverloader" ) )
-                    buffer.Add( "\n建造此建筑将产生 " ).Add( baseInfo.Difficulty.AIPForPlanetOverloading.ToString(), "ff0000" ).Add( " AIP，并在过载完成时摧毁星球。" );
+                    buffer.Add( "\n建造此建筑将产生 " ).Add( baseInfo.Difficulty.AIPForPlanetOverloading.ToString(), "ff0000" ).Add( " AIP,并在过载完成时摧毁星球。" );
             }
         }
 

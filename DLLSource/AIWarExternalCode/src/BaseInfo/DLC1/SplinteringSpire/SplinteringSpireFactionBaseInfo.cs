@@ -463,7 +463,7 @@ namespace Arcen.AIW2.External
                 try
                 {
                     short lowestTimer = 9999;
-                    string message = $"反黑暗尖塔联盟目前正在拆除一个黑暗尖塔 VG，位于 ";
+                    string message = $"反黑暗尖塔联盟目前正在拆除一个黑暗尖塔 VG,位于 ";
                     if ( GameSecondControlWasEstablishedOnPlanet.Count == 1 )
                         message += "一个星球。";
                     else

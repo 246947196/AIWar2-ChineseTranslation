@@ -1153,7 +1153,7 @@ namespace Arcen.AIW2.External
             else if ( totalLoad > 2700 )
             {
                 CategoryName = "极端";
-                Description = "在2700-4000负载下，2022年一款非常好的现代CPU大概能运行，甚至可能达到60-80fps，但老计算机会吃不消。存档会很大且稍慢，但所有计算应该都能正确完成。";
+                Description = "在2700-4000负载下，2022年一款非常好的现代CPU大概能运行，甚至可能达到60-80fps,但老计算机会吃不消。存档会很大且稍慢，但所有计算应该都能正确完成。";
                 return "ff34cd";
             }
             else if ( totalLoad > 1600 )

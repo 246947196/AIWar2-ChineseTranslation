@@ -927,7 +927,7 @@ namespace Arcen.AIW2.External
                     {
                     tooltipBuffer.Add( "点击启用或禁用完全转换Mod将立即关闭整个游戏，不会保存此处的其他设置（您需要手动重新启动游戏）。\n\n" );
                     tooltipBuffer.Add( "重新启动游戏后，您将拥有完全不同的设置集，并且只会看到当前完全转换的子Mod。\n\n" );
-                    tooltipBuffer.Add( "完全转换是绝对大规模的Mod，几乎替换了整个游戏，因此一次只能激活一个。但是，每个完全转换都可以像普通游戏一样进行Mod，因此可能有一些特定于它的Mod在主游戏中不存在。\n\n" );
+                    tooltipBuffer.Add( "完全转换是绝对大规模的Mod,几乎替换了整个游戏，因此一次只能激活一个。但是，每个完全转换都可以像普通游戏一样进行Mod,因此可能有一些特定于它的Mod在主游戏中不存在。\n\n" );
                     }
                     else if (mod.IsFrameworkMod)
                     {
@@ -1007,7 +1007,7 @@ namespace Arcen.AIW2.External
                     "这是假设其他玩家不在您同一位置，而是通过互联网连接到您。我们的软件将尝试与您的路由器配合" +
                     "以允许他们连接到您——这个过程称为'NAT穿透'——但这通常不太成功。\n\n如果这是您连接朋友的唯一方式（没有Steam或GOG），" +
                     "并且他们无法直接连接到此地址，那么您需要在路由器上设置'端口转发'（具体说明因硬件而异，但可以轻松在线搜索），或者" +
-                    "您需要与朋友设置VPN，如Hamachi或Tunngle，然后您可以通过VPN软件中看到的新'本地'IP地址相互连接。这都是比较老且更困难的方式。";
+                    "您需要与朋友设置VPN,如Hamachi或Tunngle,然后您可以通过VPN软件中看到的新'本地'IP地址相互连接。这都是比较老且更困难的方式。";
 
                 Window_AtMouseTooltipPanelSnapToLeft.bPanel.Instance.SetText( Element, tooltip );
             }
