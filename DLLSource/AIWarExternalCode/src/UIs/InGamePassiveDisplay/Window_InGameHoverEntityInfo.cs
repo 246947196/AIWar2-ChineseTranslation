@@ -6441,7 +6441,7 @@ namespace Arcen.AIW2.External
                         {
                             if ( systemData.CannotInflictStateOfMatterIfTargetHasEnergyUsageOfAtLeast > 0 )
                                 buffer.Add( "当击中无个人护盾且使用少于 " )
-                                    .AddNumberMoreReadable( systemData.CannotInflictStateOfMatterIfTargetHasEnergyUsageOfAtLeast ).Add( " energy, causes it to change to " )
+                                    .AddNumberMoreReadable( systemData.CannotInflictStateOfMatterIfTargetHasEnergyUsageOfAtLeast ).Add( " 能量，使其变为 " )
                                     .Add( systemData.StateOfMatterForTargetToBecome.DisplayName ).Add( " for " )
                                     .AddNumberMoreReadable( systemData.InflictsStateOfMatterOnTargetForSeconds ).Add( "秒。" );
                             else
@@ -6454,7 +6454,7 @@ namespace Arcen.AIW2.External
                         {
                             if ( systemData.CannotInflictStateOfMatterIfTargetHasEnergyUsageOfAtLeast > 0 )
                                 buffer.Add( "当击中任何使用少于 " )
-                                    .AddNumberMoreReadable( systemData.CannotInflictStateOfMatterIfTargetHasEnergyUsageOfAtLeast ).Add( " energy, causes it to change to " )
+                                    .AddNumberMoreReadable( systemData.CannotInflictStateOfMatterIfTargetHasEnergyUsageOfAtLeast ).Add( " 能量，使其变为 " )
                                     .Add( systemData.StateOfMatterForTargetToBecome.DisplayName ).Add( " for " )
                                     .AddNumberMoreReadable( systemData.InflictsStateOfMatterOnTargetForSeconds ).Add( "秒。" );
                             else
@@ -8014,7 +8014,7 @@ namespace Arcen.AIW2.External
                 if ( WriteAndInsteadOfComma )
                     buffer.Add( " and " );
                 else
-                    buffer.Add( ", only target " );
+                    buffer.Add( "，仅瞄准 " );
             }
             buffer.Add( UnitPrefix );
 

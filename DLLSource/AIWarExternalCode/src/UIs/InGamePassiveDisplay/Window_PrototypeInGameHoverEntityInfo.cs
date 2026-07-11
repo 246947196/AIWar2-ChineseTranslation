@@ -7468,9 +7468,9 @@ buffer.Add( "秒</color> 如果目标护甲厚度低于 <color=#ffdf72>" );
                     if ( Modifier.MaxMultiplier != int.MaxValue )//if it's not unlimited. Note that setting it to unlimited can be done by setting it to <= 0
                     {
                         if ( Modifier.MultiplierIsAdditive )
-                            buffer.Add( ", but no more than extra <color=#ffdf72>" );
+                            buffer.Add( "，但不超过额外 <color=#ffdf72>" );
                         else
-                            buffer.Add( ", but no more than <color=#ffdf72>" );
+                            buffer.Add( "，但不超过 <color=#ffdf72>" );
                         buffer.Add( Modifier.MaxMultiplier );
                         buffer.Add( "</color>x.  " );
                     } else
@@ -7664,9 +7664,9 @@ buffer.Add( "秒</color> 如果目标护甲厚度低于 <color=#ffdf72>" );
                     if ( Modifier.MaxMultiplier != int.MaxValue )//if it's not unlimited. Note that setting it to unlimited can be done by setting it to <= 0
                     {
                         if ( Modifier.MultiplierIsAdditive )
-                            buffer.Add( ", but no more than extra <color=#ffdf72>" );
+                            buffer.Add( "，但不超过额外 <color=#ffdf72>" );
                         else
-                            buffer.Add( ", but no more than <color=#ffdf72>" );
+                            buffer.Add( "，但不超过 <color=#ffdf72>" );
                         buffer.Add( Modifier.MaxMultiplier );
                         buffer.Add( "</color>x.  " );
                     } else
@@ -7855,7 +7855,7 @@ buffer.Add( "秒</color> 如果目标护甲厚度低于 <color=#ffdf72>" );
                 if ( WriteAndInsteadOfComma )
                     buffer.Add( " and " );
                 else
-                    buffer.Add( ", only target " );
+                    buffer.Add( "，仅瞄准 " );
             }
             buffer.Add( UnitPrefix );
 
