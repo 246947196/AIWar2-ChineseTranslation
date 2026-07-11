@@ -308,29 +308,29 @@ namespace Arcen.AIW2.External
                         if ( faction.StoredHacking < newType.HackingCostForOtherFleetLeadersOfSameTypeToBecomeMe )
                         {
                             if ( faction.GetIsLocalFaction() )
-                                ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.Normal, null, '黑客点数不足！',
-                                    '派系 ' + faction.GetDisplayName() + ' 没有足够的黑客点数来转化 ' + entity.TypeData.DisplayName, '确定' );
+                                ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.Normal, null, "黑客点数不足！",
+                                    "派系 " + faction.GetDisplayName() + " 没有足够的黑客点数来转化 " + entity.TypeData.DisplayName, "确定" );
                             return;
                         }
                         if ( entity.GetIsCrippled() )
                         {
                             if ( faction.GetIsLocalFaction() )
-                                ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.Normal, null, '转化目标已瘫痪！',
-                                    entity.TypeData.DisplayName + ' 已瘫痪，派系 ' + faction.GetDisplayName() + ' 没有转化它。', '确定' );
+                                ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.Normal, null, "转化目标已瘫痪！",
+                                    entity.TypeData.DisplayName + " 已瘫痪，派系 " + faction.GetDisplayName() + " 没有转化它。", "确定" );
                             return;
                         }
                         if ( entity.SelfBuildingMetalRemaining > FInt.Zero )
                         {
                             if ( faction.GetIsLocalFaction() )
-                                ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.Normal, null, '转化目标未完成建造！',
-                                    entity.TypeData.DisplayName + ' 仍在建造中，派系 ' + faction.GetDisplayName() + ' 没有转化它。', '确定' );
+                                ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.Normal, null, "转化目标未完成建造！",
+                                    entity.TypeData.DisplayName + " 仍在建造中，派系 " + faction.GetDisplayName() + " 没有转化它。", "确定" );
                             return;
                         }
                         if ( entity.HasNotYetBeenFullyClaimed )
                         {
                             if ( faction.GetIsLocalFaction() )
-                                ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.Normal, null, '转化目标尚未被占领！',
-                                    entity.TypeData.DisplayName + ' 尚未被完全占领，派系 ' + faction.GetDisplayName() + ' 没有转化它。', '确定' );
+                                ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.Normal, null, "转化目标尚未被占领！",
+                                    entity.TypeData.DisplayName + " 尚未被完全占领，派系 " + faction.GetDisplayName() + " 没有转化它。", "确定" );
                             return;
                         }
 

@@ -35,7 +35,7 @@ namespace Arcen.AIW2.External
                 }, 
                 entry.DoLocalTextReplacements( campaignEntry, entry.SidebarText ),
                 entry.DoLocalTextReplacements( campaignEntry, entry.FullText ), 
-                '确定' );
+                "确定" );
         }
 
         public override void DoOnTooltip( ArcenDoubleCharacterBuffer Buffer )

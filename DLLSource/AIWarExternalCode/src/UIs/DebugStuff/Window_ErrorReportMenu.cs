@@ -108,7 +108,7 @@ namespace Arcen.AIW2.External
                 Instance.Close();
                 return MouseHandlingResult.None;
             }
-            public override void HandleMouseover() { Window_AtMouseTooltipPanelNarrow.bPanel.Instance.SetText( this.Element, '请随时在 bugtracker.arcengames.com 上报告错误并附上这份日志！主菜单的''附加内容''部分有一个链接可以跳转到问题跟踪器。' ); }
+            public override void HandleMouseover() { Window_AtMouseTooltipPanelNarrow.bPanel.Instance.SetText( this.Element, "请随时在 bugtracker.arcengames.com 上报告错误并附上这份日志！主菜单的「附加内容」部分有一个链接可以跳转到问题跟踪器。" ); }
             public override void OnUpdate() { }
         }
 
@@ -119,7 +119,7 @@ namespace Arcen.AIW2.External
                 Instance.Close();
                 return MouseHandlingResult.None;
             }
-            public override void HandleMouseover() { Window_AtMouseTooltipPanelNarrow.bPanel.Instance.SetText( this.Element, '有些错误只是无害的界面小故障（但我们仍然希望修复它们）。其他错误则会让游戏运行略微异常，直到你重启程序。' ); }
+            public override void HandleMouseover() { Window_AtMouseTooltipPanelNarrow.bPanel.Instance.SetText( this.Element, "有些错误只是无害的界面小故障（但我们仍然希望修复它们）。其他错误则会让游戏运行略微异常，直到你重启程序。" ); }
             public override void OnUpdate() { }
         }
 
@@ -131,7 +131,7 @@ namespace Arcen.AIW2.External
                 Instance.Close();
                 return MouseHandlingResult.None;
             }
-            public override void HandleMouseover() { Window_AtMouseTooltipPanelNarrow.bPanel.Instance.SetText( this.Element, '错误将不再以可见方式弹出，但它们会继续记录到日志中。你会在游戏画面右上角看到自游戏开始以来发生错误的次数。你的游戏可能会变得越来越卡顿，错误日志可能会在循环超过最大限制后开始覆盖自身。如果你遇到如此多的错误以至于想使用此选项，那么你应该保存游戏（尽量不要覆盖已有的存档文件！）并退出，尽快重启程序。' ); }
+            public override void HandleMouseover() { Window_AtMouseTooltipPanelNarrow.bPanel.Instance.SetText( this.Element, "错误将不再以可见方式弹出，但它们会继续记录到日志中。你会在游戏画面右上角看到自游戏开始以来发生错误的次数。你的游戏可能会变得越来越卡顿，错误日志可能会在循环超过最大限制后开始覆盖自身。如果你遇到如此多的错误以至于想使用此选项，那么你应该保存游戏（尽量不要覆盖已有的存档文件！）并退出，尽快重启程序。" ); }
             public override void OnUpdate() { }
         }
 

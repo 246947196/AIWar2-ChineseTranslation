@@ -183,6 +183,12 @@ MSBuild：`C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe`
 | GetDysonSidekickIncome | 戴森球解锁条件提示 |
 | 窗口标题 | Current Metal Flows、Dark Zenith Sidekick Income、Scourge State、Apkallu Overview、Armada Mining Overview、Necromancer Resource Acquisition、History of Hacks、History of Tech Unlocks、Current Energy Production and Consumption 共 9 处 |
 
+## 构建注意事项 (2026-07-11 发现)
+
+1. **清理编译缓存**：`build.ps1` 使用 MSBuild `Build` 目标（增量编译），有时不会检测源文件变更。修改翻译后务必先执行 `Remove-Item -Recurse -Force "DLLSource\AIWarExternalCode\obj\Release"` 再 `build.ps1`，否则旧 DLL 会被部署。
+2. **禁止 C# 单引号字符串**：AGENTS.md 原规则 `禁止中文引号 ""，用 '' 替代` 有误——C# 中单引号 `'` 是字符字面量，不能包含多字符字符串。正确的做法是：**将中文引号 `""` 替换为 `"..."`（C# 双引号字符串），内部如需引用则用 `「」`**。
+3. **之前翻译的多处文件**使用了单引号包裹中文，导致增量编译被缓存掩盖。清理后全量编译时会暴露这些语法错误，本次已修复全部 62 处。
+
 【教训】翻译大型 UI 文件（如 Window_InGameHoverEntityInfo.cs 8390 行、Window_ResourceBar.cs 3413 行）时，必须遍历所有区块确保无遗漏。
 
 ## 翻译规则

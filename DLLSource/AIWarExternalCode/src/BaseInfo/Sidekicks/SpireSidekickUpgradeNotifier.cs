@@ -46,11 +46,11 @@ namespace Arcen.AIW2.External
                 if ( chatHandlerOrNull != null )
                     chatHandlerOrNull.SquadToView = LazyLoadSquadWrapper.Create( entity );
 
-                World_AIW2.Instance.QueueChatMessageOrCommand( '目前无法升级城市 ' + entity.GetFleetName_Safe() +
+                World_AIW2.Instance.QueueChatMessageOrCommand( "目前无法升级城市 " + entity.GetFleetName_Safe() +
                     '。', ChatType.ShowLocallyOnly, "CannotDoThatThing", chatHandlerOrNull );
                 return MouseHandlingResult.PlayClickDeniedSound;
             }
-            ModalPopupData.CreateAndLogYesNoStyle( delegate { UpgradeCity( entity  ); }, null, '升级城市', '你确定要升级城市 ' + entity.GetFleetName_Safe() + ' 在 ' + entity.Planet.Name + ' 吗？', '升级城市', '不升级' );
+            ModalPopupData.CreateAndLogYesNoStyle( delegate { UpgradeCity( entity  ); }, null, "升级城市", "你确定要升级城市 " + entity.GetFleetName_Safe() + " 在 " + entity.Planet.Name + " 吗？", "升级城市", "不升级" );
 
 
 
