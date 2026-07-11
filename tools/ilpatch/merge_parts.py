@@ -12,7 +12,7 @@ with open(SKELETON, "r", encoding="utf-8") as f:
 part_pattern = re.compile(r'^\s*"((?:[^"\\]|\\.)*)"\s*:\s*"((?:[^"\\]|\\.)*)"\s*,?\s*$', re.MULTILINE)
 
 translations = {}
-for i in range(1, 9):
+for i in range(1, 10):
     part_path = os.path.join(PARTS_DIR, f"ArcenAIW2Core.part{i}.json")
     if not os.path.exists(part_path):
         print(f"Warning: {part_path} not found, skipping")
@@ -23,9 +23,9 @@ for i in range(1, 9):
     for m in part_pattern.finditer(content):
         key = m.group(1)
         val = m.group(2)
-        # Part files encode control chars as \\n/\\t (double escape)
-        # due to regex JSON unescaping. Convert to actual control chars to match skeleton.
-        key = key.replace('\\\\n', '\n').replace('\\\\t', '\t').replace('\\\\r', '\r')
+        # Part files encode control chars as \n/\t (JSON escape).
+        # Convert to actual control chars to match skeleton.
+        key = key.replace('\\n', '\n').replace('\\t', '\t').replace('\\r', '\r')
         if val.strip():
             translations[key] = val
             count += 1
@@ -34,7 +34,7 @@ for i in range(1, 9):
 # Inject into skeleton (also fix value format)
 for key, val in translations.items():
     if key in skeleton:
-        val = val.replace('\\\\n', '\n').replace('\\\\t', '\t').replace('\\\\r', '\r')
+        val = val.replace('\\n', '\n').replace('\\t', '\t').replace('\\r', '\r')
         skeleton[key] = val
     else:
         print(f"Warning: key not found in skeleton: {key[:80]}...")
