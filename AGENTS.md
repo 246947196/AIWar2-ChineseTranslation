@@ -98,6 +98,7 @@ Control Bindings 菜单左侧分类按钮显示的是 `InputAction` XML 文件�
 | AIWarExternalDeepProcessingCode | DLLSource/AIWarExternalDeepProcessingCode/src/ | ✅ | ✅ 完成 |
 | AIWarExternalVisualizationCode | DLLSource/AIWarExternalVisualizationCode/src/ | ✅ | ✅ 完成 |
 | ArcenUIAssetRedirect（BepInEx 插件） | DLLSource/ArcenUIAssetRedirect/src/ | ✅ | ✅ 完成 |
+| WorldTMPFontPatch（BepInEx 插件） | DLLSource/WorldTMPFontPatch/src/ | ✅ | ✅ 完成 |
 | ArcenUniversal（IL 汉化） | —（无源码，见 SPEC 8.15） | — | ✅ 已部署（151 条 ldstr） |
 | ArcenAIW2Core（IL 汉化） | —（无源码，见 SPEC 8.15） | — | ✅ 已部署（889 条 ldstr） |
 | ArcenAIW2Visualization（IL 汉化） | —（无源码，见 SPEC 8.15） | — | ✅ 已完成 |
@@ -119,10 +120,45 @@ Control Bindings 菜单左侧分类按钮显示的是 `InputAction` XML 文件�
 MSBuild：`C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe`
 目标框架：
 - 外部代码项目：.NET Framework 4.7.1
-- BepInEx 插件 (ArcenUIAssetRedirect)：.NET Framework 4.7.2
-引用：`..\..\..\ReliableDLLStorage\`（插件额外引用 `..\..\..\BepInEx\core\`）
+- BepInEx 插件 (ArcenUIAssetRedirect, WorldTMPFontPatch)：.NET Framework 4.7.2
+引用：`..\..\..\ReliableDLLStorage\`（插件额外引用 `..\..\..\BepInEx\core\` 和 `..\..\..\ReliableDLLStorage\Unity.TextMeshPro.dll`）
 
 > 核心 DLL（ArcenUniversal / ArcenAIW2Core / ArcenAIW2Visualization）不走编译路线，改用 `ilpatch`（dnlib）做 IL 字面量替换，详见 SPEC 8.15。
+
+## World TMP Font Patch 插件
+
+**新建于 2026-07-11**，独立 BepInEx 插件，用于修复世界空间 `TextMeshPro` 组件的字体替换问题。
+
+### 背景
+
+`I18NFont4UnityGame` 插件只 patch 了 `TMPro.TextMeshProUGUI`（画布 UI 文字）。银河地图星球名、实体标签等使用 `TMPro.TextMeshPro`（世界空间 3D 文字），两者是不同的 Unity 组件，I18NFont4UnityGame 未覆盖。
+
+### 原理
+
+- Harmony postfix patch `TMPro.TextMeshPro.OnEnable` + `InternalUpdate`
+- 自动读取 `xiaoye97.I18NFont4UnityGame.cfg` 中的 `FontName` 配置，复用同一字体 AssetBundle
+- 从 Bundle 中加载 `TMP_FontAsset`（按 `{FontName} SDF` 名称匹配），注入到世界空间 TMP 组件
+- 部署位置：`BepInEx/plugins/ChineseTranslation/WorldTMPFontPatch.dll`
+
+### 源码
+
+```
+DLLSource/WorldTMPFontPatch/
+├── src/
+│   └── WorldTMPFontPatchPlugin.cs
+└── WorldTMPFontPatch.csproj
+```
+
+### 字体类型对比
+
+| 组件类型 | 用途 | 处理插件 |
+|---------|------|---------|
+| `TextMeshProUGUI` | 画布 UI 文字（菜单、面板、提示框） | I18NFont4UnityGame |
+| `TextMeshPro` | 世界空间 3D 文字（星球名、实体标签） | WorldTMPFontPatch |
+
+### 部署
+
+`deploy.ps1` 自动部署到 `BepInEx/plugins/ChineseTranslation/`。
 
 ## QuickStarts2 战役名称翻译
 

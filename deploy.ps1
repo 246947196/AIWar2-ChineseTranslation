@@ -259,11 +259,12 @@ if (Test-Path $dllBinDir) {
     Write-Host "  DLLBin directory not found, skipping DLL deployment" -ForegroundColor DarkYellow
 }
 
-# Deploy ArcenUIAssetRedirect BepInEx plugin
+# Deploy ChineseTranslation BepInEx plugins
 Write-Host ""
-Write-Host "Deploying ArcenUIAssetRedirect plugin..." -ForegroundColor Yellow
+Write-Host "Deploying ChineseTranslation plugins..." -ForegroundColor Yellow
 $pluginDir = "$gameDir\BepInEx\plugins\ChineseTranslation"
 New-Item -ItemType Directory -Path $pluginDir -Force | Out-Null
+
 $redirectDll = Join-Path $translationDir "DLLBin\ArcenUIAssetRedirect.dll"
 if (Test-Path $redirectDll) {
     Copy-Item $redirectDll "$pluginDir\" -Force
@@ -271,7 +272,16 @@ if (Test-Path $redirectDll) {
 } else {
     Write-Host "  ArcenUIAssetRedirect.dll not found in DLLBin, skipping" -ForegroundColor DarkYellow
 }
-Write-Host "ArcenUIAssetRedirect plugin deployed" -ForegroundColor Green
+
+$worldTmpDll = Join-Path $translationDir "DLLBin\WorldTMPFontPatch.dll"
+if (Test-Path $worldTmpDll) {
+    Copy-Item $worldTmpDll "$pluginDir\" -Force
+    Write-Host "  Deployed: WorldTMPFontPatch.dll ($([math]::Round((Get-Item $worldTmpDll).Length/1KB)) KB)" -ForegroundColor Gray
+} else {
+    Write-Host "  WorldTMPFontPatch.dll not found in DLLBin, skipping" -ForegroundColor DarkYellow
+}
+
+Write-Host "ChineseTranslation plugins deployed" -ForegroundColor Green
 
 # Deploy arcenui AssetBundle
 # NOTE: 汉化版 arcenui bundle (约 220MB) 因 GitHub 单文件 100MB 限制无法入库，

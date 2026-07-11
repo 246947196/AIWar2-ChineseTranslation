@@ -13,7 +13,8 @@ $projects = @(
 )
 
 $bepInExProjects = @(
-    "DLLSource\ArcenUIAssetRedirect\ArcenUIAssetRedirect.csproj"
+    "DLLSource\ArcenUIAssetRedirect\ArcenUIAssetRedirect.csproj",
+    "DLLSource\WorldTMPFontPatch\WorldTMPFontPatch.csproj"
 )
 
 function Build-MSBuildProject {

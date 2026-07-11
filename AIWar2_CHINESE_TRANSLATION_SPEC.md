@@ -242,12 +242,17 @@ AIWar2_ChineseTranslation/
 │   │   ├── src/
 │   │   │   └── ArcenUIRedirectPlugin.cs           ← Harmony 拦截逻辑
 │   │   └── ArcenUIAssetRedirect.csproj
+│   ├── WorldTMPFontPatch/                        ← BepInEx 插件（世界空间 TMP 字体替换）
+│   │   ├── src/
+│   │   │   └── WorldTMPFontPatchPlugin.cs
+│   │   └── WorldTMPFontPatch.csproj
 │   └── （核心 DLL 无源码，不经 DLLSource；其 IL 汉化见 8.15，产物在 PatchedAssemblies/）
 ├── DLLBin/                                       ← 编译产物（外部代码项目）
-│   ├── AIWarExternalCode.dll                     (3778 KB)
-│   ├── AIWarExternalDeepProcessingCode.dll        (1762 KB)
-│   ├── AIWarExternalVisualizationCode.dll         (228 KB)
-│   └── ArcenUIAssetRedirect.dll                  (6 KB)
+│   ├── AIWarExternalCode.dll                     (3564 KB)
+│   ├── AIWarExternalDeepProcessingCode.dll        (1758 KB)
+│   ├── AIWarExternalVisualizationCode.dll         (224 KB)
+│   ├── ArcenUIAssetRedirect.dll                  (6 KB)
+│   └── WorldTMPFontPatch.dll                     (6 KB)
 ├── BepInEx/
 ├── GameData/
 ├── build.ps1                                     ← DLL 编译脚本
@@ -299,7 +304,7 @@ $msbuild = "C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe"
 `deploy.ps1` 已集成所有部署步骤：
 - XML 翻译文件 → `GameData/Configuration/`
 - DLL 编译产物 → `GameData/ModdableLogicDLLs/`
-- BepInEx 插件 (ArcenUIAssetRedirect) → `BepInEx/plugins/ChineseTranslation/`
+- BepInEx 插件 (ArcenUIAssetRedirect, WorldTMPFontPatch) → `BepInEx/plugins/ChineseTranslation/`
 - 汉化 AssetBundle → `BepInEx/plugins/ChineseTranslation/AssetBundles_Win/arcenui`（**不纳入仓库**：约 220MB，超 GitHub 单文件 100MB 限制。改由 `patch_arcenui.py` 据仓库内 `arcenui_translations.json` + 游戏原文 bundle 本地生成；deploy.ps1 在缺失时提示运行该脚本）
 - **核心 DLL IL 汉化版**（见 8.15）→ 游戏 `PatchedAssemblies/`
 
@@ -337,7 +342,10 @@ AIWarExternalDeepProcessingCode
 ArcenUIAssetRedirect (BepInEx 插件)
   └─ 依赖: ArcenUniversal, BepInEx, 0Harmony, UnityEngine
 
-**编译顺序：** AIWarExternalCode → AIWarExternalDeepProcessingCode + AIWarExternalVisualizationCode → ArcenUIAssetRedirect（可独立编译）
+WorldTMPFontPatch (BepInEx 插件)
+  └─ 依赖: BepInEx, 0Harmony, UnityEngine, Unity.TextMeshPro
+
+**编译顺序：** AIWarExternalCode → AIWarExternalDeepProcessingCode + AIWarExternalVisualizationCode → ArcenUIAssertRedirect + WorldTMPFontPatch（可独立编译）
 
 ### 8.11 翻译优先级
 
@@ -364,10 +372,11 @@ ArcenUIAssetRedirect (BepInEx 插件)
 | AIWarExternalDeepProcessingCode | 有源码 | 133 | ✅ 0 错误 | ✅ 完成 |
 | AIWarExternalVisualizationCode | 有源码 | 45 | ✅ 0 错误 | ✅ 完成 |
 | ArcenUIAssetRedirect | BepInEx 插件 | 1 | ✅ 0 错误 | ✅ 完成 |
+| WorldTMPFontPatch | BepInEx 插件 | 1 | ✅ 0 错误 | ✅ 完成 |
 | ArcenUniversal | IL 汉化 | 613 | — | ✅ 已部署（151 条 ldstr） |
 | ArcenAIW2Core | IL 汉化 | ~350 | — | ✅ 已部署（637 条 ldstr） |
 | ArcenAIW2Visualization | IL 汉化 | ~100 | — | ✅ 已完成（20 条 ldstr） |
-| **合计** | | **~1841** | | |
+| **合计** | | **~1842** | | |
 
 ### 8.14 翻译注意事项
 
