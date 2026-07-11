@@ -608,7 +608,7 @@ AIWar2_ChineseTranslation/
         ├── ModDetails.txt
         ├── ModDescription.txt
         ├── PlanetNameType/PlanetNameType.xml
-        └── PlanetNames/ChinesePlanets/Names.txt  ← 400 个真实恒星名（写实恒星风）
+        └── PlanetNames/ChinesePlanets/Names.txt  ← 372 个真实恒星名（写实恒星风，无二十八宿）
 ```
 
 ### 9.4 部署说明

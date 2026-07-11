@@ -146,7 +146,7 @@ MSBuild：`C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe`
 
 ## 中文行星名 (ChinesePlanetNames)
 
-项目增加了一套中国风行星名，作为独立 XMLMod 部署。
+项目增加了一套写实恒星风行行星名，作为独立 XMLMod 部署。
 
 ### 文件结构
 
@@ -158,7 +158,7 @@ XMLMods/ChinesePlanetNames/
 │   └── PlanetNameType.xml      ← 注册「中文行星」命名风格
 └── PlanetNames/
     └── ChinesePlanets/
-        └── Names.txt           ← 400 个真实恒星名（写实恒星风）
+        └── Names.txt           ← 372 个真实恒星名（写实恒星风，无二十八宿）
 ```
 
 ### 使用方式
@@ -169,7 +169,7 @@ XMLMods/ChinesePlanetNames/
 
 ### 数据来源
 
-全部名称来自中国传统星官体系（三垣、二十八宿、星官附属星及恒星专名），每条对应一颗真实恒星或星官。共 400 个不重复名称。
+全部名称来自中国传统星官体系（三垣、星官附属星及恒星专名），每条对应一颗真实恒星或星官。共 372 个不重复名称。
 
 ### 翻译方式
 
