@@ -198,10 +198,7 @@ Patch 后运行：
 python tools/ilpatch/verify_patch.py PatchedAssemblies\ArcenAIW2Core.dll tools\ilpatch\ArcenAIW2Core.merged.json
 ```
 
-三层验证：
-1. `ilpatch extract` — 确认 key/value 是否在提取结果中（`LooksTranslatable` 可见）
-2. UTF-16LE 二进制搜索 — 补上纯中文 value 被过滤的盲区
-3. 统计 pending/applied/missing
+验证原理：`ilpatch dump-ldstr <dll> <out.json>` 直读 #US 堆全部 ldstr 为 JSON 数组（无 Console.WriteLine 碎片、无系统编码干扰、无 `LooksTranslatable` 过滤），验证脚本加载后逐一检查 key/value 是否存在，0 盲区。
 
 patch 前必须从 `AIWar2_Data\Managed\` 复制原始 DLL（禁止在已 patch 的 DLL 上重复运行 `ilpatch patch`）。
 

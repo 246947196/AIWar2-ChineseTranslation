@@ -887,9 +887,15 @@ GameData/QuickStarts2/
 - skeleton 不变 → 任何翻译丢失视为格式 bug，`sys.exit(1)` 终止
 - skeleton 变了（游戏版本更新）→ 告警不终止
 
+**新增 `ilpatch dump-ldstr` 模式**（2026-07-11）：
+- 读取 DLL 中所有唯一 ldstr，不经过 `LooksTranslatable` 过滤，直接用 `JsonSerializer` 输出为 JSON 数组 `["str1","str2",...]`
+- 避免了 `inspect` 模式下 `Console.WriteLine` 对多行字符串的输出分行问题、以及系统编码（GBK）导致的中文截断问题
+- 用法：`ilpatch dump-ldstr <dll> <out.json>`
+
 **验证脚本** `verify_patch.py`：
-- 对比 merged.json 与 patched DLL 的实际内容
-- 3 层验证：`ilpatch extract`（可见层）→ UTF-16LE 二进制搜索（`LooksTranslatable` 盲区）→ 最终确认
+- 用 `ilpatch dump-ldstr` 从 #US 堆直接读取全部 ldstr 为纯净 JSON 数组
+- 对比 merged.json 的 key/value 是否存在于该数组中
+- 0 盲区：无 Console.WriteLine 碎片、无系统编码干扰、无 `LooksTranslatable` 过滤、无子串假阳性
 - 用法：`python verify_patch.py <dll> <merged.json>`
 
 **DLL 验证结果**（Steam 恢复原始 DLL 后重新 patch）：
