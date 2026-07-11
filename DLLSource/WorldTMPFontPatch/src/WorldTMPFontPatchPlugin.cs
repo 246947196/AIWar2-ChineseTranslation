@@ -67,22 +67,37 @@ public class WorldTMPFontPatchPlugin : BaseUnityPlugin
 
             Debug.Log($"[WorldTMPFontPatch] Bundle loaded, size={new FileInfo(fontPath).Length}");
 
-            Debug.Log($"[WorldTMPFontPatch] Trying system CJK fonts...");
-            string[] cjkFonts = { "Microsoft YaHei", "SimHei", "SimSun", "Noto Sans CJK SC", "Source Han Sans SC", "DengXian", "Microsoft JhengHei" };
-            foreach (string fn in cjkFonts)
-            {
-                Font sysFont = Font.CreateDynamicFontFromOSFont(fn, 14);
-                if (sysFont != null && sysFont.name == fn)
-                {
-                    Debug.Log($"[WorldTMPFontPatch] Found: {fn}");
-                    cachedLegacyFont = sysFont;
-                    cachedTMPFont = TMP_FontAsset.CreateFontAsset(cachedLegacyFont);
-                    Debug.Log($"[WorldTMPFontPatch] CreateFontAsset: {(cachedTMPFont != null ? cachedTMPFont.name : "NULL")}");
-                    if (cachedTMPFont != null) break;
-                }
-            }
+            // Load Font for legacy text components
+            cachedLegacyFont = bundle.LoadAsset<Font>(fontName);
+            Debug.Log($"[WorldTMPFontPatch] Bundle Font: {(cachedLegacyFont != null ? cachedLegacyFont.name : "NULL")}");
+
+            // Load and repair the broken TMP_FontAsset
+            cachedTMPFont = bundle.LoadAsset<TMP_FontAsset>($"{fontName} SDF");
             if (cachedTMPFont == null)
-                Debug.LogWarning($"[WorldTMPFontPatch] No system CJK font found");
+            {
+                TMP_FontAsset[] all = bundle.LoadAllAssets<TMP_FontAsset>();
+                if (all != null && all.Length > 0)
+                    cachedTMPFont = all[0];
+            }
+
+            if (cachedTMPFont != null)
+            {
+                Debug.Log($"[WorldTMPFontPatch] Loaded TMP font: {cachedTMPFont.name}");
+
+                // Force repair: set to dynamic mode via reflection
+                var bf = typeof(TMP_FontAsset).GetField("m_AtlasPopulationMode", BindingFlags.NonPublic | BindingFlags.Instance);
+                if (bf != null)
+                {
+                    bf.SetValue(cachedTMPFont, 1); // 1 = Dynamic
+                    Debug.Log($"[WorldTMPFontPatch] Set atlas mode to Dynamic");
+                }
+                var mf = typeof(TMP_FontAsset).GetField("m_IsMultiAtlasTexturesEnabled", BindingFlags.NonPublic | BindingFlags.Instance);
+                if (mf != null)
+                    mf.SetValue(cachedTMPFont, true);
+
+                cachedTMPFont.ReadFontAssetDefinition();
+                Debug.Log($"[WorldTMPFontPatch] ReadFontAssetDefinition() called");
+            }
 
             bundle.Unload(false);
         }

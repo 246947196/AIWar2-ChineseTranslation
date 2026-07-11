@@ -421,21 +421,21 @@ namespace Arcen.AIW2.External
                         if ( owningFactionOrNull.Type == FactionType.Player )
                         {
                             if ( relatedMemFleetOrNull != null )
-                                buffer.EndColor().Add( " fleet " ).AddFactionColoredString( relatedMemFleetOrNull.GetName(), owningFactionOrNull );
+                                buffer.EndColor().Add( " 舰队 " ).AddFactionColoredString( relatedMemFleetOrNull.GetName(), owningFactionOrNull );
                             if ( fedFromCityFleetOrNull != null )
                             {
-                                buffer.EndColor().Add( " from " ).AddFactionColoredString( fedFromCityFleetOrNull.GetName(), owningFactionOrNull );
+                                buffer.EndColor().Add( " 来自 " ).AddFactionColoredString( fedFromCityFleetOrNull.GetName(), owningFactionOrNull );
                             }
                         }
                         if ( entity.ExoGalacticAttackPlanetIdx != -1 )
-                            buffer.Add( " (Exogalactic Strikeforce)" );
+                            buffer.Add( "（河外星系打击部队）" );
                         buffer.EndColor();
                     }
                 }
                 debugStage = 17;
                 if ( GameSettings.Current.GetBoolBySetting( "ShowEntityIDInHovertext" ) )
                 {
-                    buffer.Add( FontSizes.BASE_SIZE_STRING ).StartColor( "33dd33" ).Add( " ID-" ).Add( entity.PrimaryKeyID ).EndColor().EndSize();
+                    buffer.Add( FontSizes.BASE_SIZE_STRING ).StartColor( "33dd33" ).Add( " 编号-" ).Add( entity.PrimaryKeyID ).EndColor().EndSize();
                 }
                 if ( GameSettings.Current.GetBoolBySetting( "Debug_WriteFleetIDInTooltips" ) )
                 {
@@ -444,7 +444,7 @@ namespace Arcen.AIW2.External
 
                 if ( GameSettings.Current.GetBoolBySetting( "ShowEntityLocationInHovertext" ) )
                 {
-                    buffer.Add( FontSizes.SLIGHTLY_SMALLER_SIZE_STRING ).StartColor( "87dd33" ).Add( " Loc: " ).Add( entity.WorldLocation.X - 400000 )
+                    buffer.Add( FontSizes.SLIGHTLY_SMALLER_SIZE_STRING ).StartColor( "87dd33" ).Add( " 位置: " ).Add( entity.WorldLocation.X - 400000 )
                         .Add( "," ).Add( entity.WorldLocation.Y - 400000 ).EndColor().EndSize();
                 }
                 #endregion
@@ -1663,7 +1663,7 @@ namespace Arcen.AIW2.External
                             if ( owningFactionOrNull != null && entity.Planet != null && entity.Planet.IsFimbulwintered && !owningFactionOrNull.BenefitsFromFimbulwinter )
                             {
                                 Window_PrototypeInGameHoverEntityInfoUtils.WriteSpeedDebuffsStartIfNeeded( buffer, useIcons, ref wroteDebuffStart, ref wroteSpeedDebuffStart );
-                                buffer.Add( "Fimbulwinter: " ).AddPercentRoundedDynamically( -ExternalConstants.Instance.FimbulwinterSlowdownPercent, 100 );
+                                buffer.Add( "永冬: " ).AddPercentRoundedDynamically( -ExternalConstants.Instance.FimbulwinterSlowdownPercent, 100 );
                             }
 
                             FInt grav = entity.CurrentGravitySpeedMultiplier.Display;
@@ -5110,7 +5110,7 @@ buffer.Add( "  （祖先死亡则自身死亡）" );
                 if ( detailLevel < TooltipDetail.Full )
                     buffer.AddDlcMod(relatedEntityTypeData);
                 else
-                    buffer.AddDlcMod(relatedEntityTypeData, "This unit was added by" );
+                    buffer.AddDlcMod(relatedEntityTypeData, "该单位由" );
 
                 buffer.Add( "</size>" );
 
@@ -5366,19 +5366,19 @@ buffer.Add( "：" );
                     
                     if ( basePreModifierDPS > 0 && !isRetaliatory && !isOnDeath)
                     {
-                        buffer.Add( " => " );
+                        buffer.Add( " → " );
                         if ( detailLevel < TooltipDetail.Full )
                         {
                             buffer.WrapDamagePerSecondTruncated( basePreModifierDPS, false, false );
                             if ( effectiveMaxTargets > 1 )
-                                buffer.Add( " to " ).WrapDamagePerSecondTruncated( maxPreModifierDPS, false, false );
+                                buffer.Add( " 至 " ).WrapDamagePerSecondTruncated( maxPreModifierDPS, false, false );
                         } else
                         {
                             buffer.WrapDamagePerSecondMoreReadable( basePreModifierDPS, false, false );
                             if ( effectiveMaxTargets > 1 )
-                                buffer.Add( " to " ).WrapDamagePerSecondMoreReadable( maxPreModifierDPS, false, false );
+                                buffer.Add( " 至 " ).WrapDamagePerSecondMoreReadable( maxPreModifierDPS, false, false );
                         }
-                        buffer.Add( " DPS" );
+                        buffer.Add( " DPS（每秒伤害）" );
                     }
 
                     debugStage = 205;
@@ -5501,13 +5501,13 @@ buffer.Add( "：" );
 
                                     if ( systemData.AOEAndBeamDamageMultiplierToNonPrimaryTarget > FInt.Zero )
                                     {
-                                        buffer.Add( " and " );
+                                        buffer.Add( "，" );
                                         buffer.Add( systemData.AOEAndBeamDamageMultiplierToNonPrimaryTarget.GetNearestIntPreferringHigher() );
-                                        buffer.Add( "% damage to non-primary targets" );
+                                        buffer.Add( "% 伤害对非主要目标" );
                                     }
 
                                     if ( systemData.AOEHitsFriendlyTargets )
-                                        buffer.Add( ", friendly fire.  " );
+                                        buffer.Add( "，友军误伤。  " );
                                     else
 buffer.Add( "。  " );
                                 }
@@ -6583,13 +6583,13 @@ buffer.Add( " gx</color>。  " );
                                 if ( detailLevel < TooltipDetail.Full )
                                     buffer.AddFixedDecimal( systemData.ModuleStatAdjusterMultiplier.ToFloatNonSim(), 3 ).Add( "x" );
                                 else
-                                    buffer.Add( "Hull Health Multiplied By ").AddFixedDecimal( systemData.ModuleStatAdjusterMultiplier.ToFloatNonSim(), 3 ).Add( "x" );
+                                    buffer.Add( "船体生命乘以 ").AddFixedDecimal( systemData.ModuleStatAdjusterMultiplier.ToFloatNonSim(), 3 ).Add( "x" );
                                 break;
                             case ModularStatAdjustment.ShieldHealth:
                                 if ( detailLevel < TooltipDetail.Full )
                                     buffer.AddFixedDecimal( systemData.ModuleStatAdjusterMultiplier.ToFloatNonSim(), 3 ).Add( "x" );
                                 else
-                                    buffer.Add( "Shield Health Multiplied By " ).AddFixedDecimal( systemData.ModuleStatAdjusterMultiplier.ToFloatNonSim(), 3 ).Add( "x" );
+                                    buffer.Add( "护盾生命乘以 " ).AddFixedDecimal( systemData.ModuleStatAdjusterMultiplier.ToFloatNonSim(), 3 ).Add( "x" );
                                 break;
                             case ModularStatAdjustment.BubbleForcefield:
                                 if ( systemData.ModuleStatAdjusterMultiplier != FInt.One )
@@ -6597,12 +6597,12 @@ buffer.Add( " gx</color>。  " );
                                     if ( detailLevel < TooltipDetail.Full )
                                         buffer.AddFixedDecimal( systemData.ModuleStatAdjusterMultiplier.ToFloatNonSim(), 3 ).Add( "x" );
                                     else
-                                        buffer.Add( "Bubble Forcefield added with " ).AddFixedDecimal( systemData.ModuleStatAdjusterMultiplier.ToFloatNonSim(), 3 ).Add( "x normal personal shield rating." );
+                                        buffer.Add( "气泡力场，附带 " ).AddFixedDecimal( systemData.ModuleStatAdjusterMultiplier.ToFloatNonSim(), 3 ).Add( "x 正常个人护盾等级。" );
                                 }
                                 else
                                 {
                                     if ( detailLevel >= TooltipDetail.Full )
-                                        buffer.Add( "Bubble Forcefield replaces personal shield; no shield strength change." );
+                                        buffer.Add( "气泡力场取代个人护盾；护盾强度不变。" );
                                 }
                                 break;
                         }
@@ -6676,7 +6676,7 @@ buffer.Add( " gx</color>。  " );
                         Color cloakColor = ColorMath.PaleVioletRed;
                         if ( detailLevel < TooltipDetail.Full )
                         {
-                            buffer.Add( "Max Cloaking Points: <color=#ffdf72>" );
+                            buffer.Add( "最大隐形点: <color=#ffdf72>" );
                             buffer.AddNumberMoreReadable( systemStats.CloakingPoints );
                     buffer.Add( "</color>。  " );
                         }
@@ -6684,11 +6684,11 @@ buffer.Add( " gx</color>。  " );
                         {
                             buffer.Add( "隐形", cloakColor ).Add( "：该舰船拥有<color=#ffdf72>" );
                             buffer.AddNumberMoreReadable( systemStats.CloakingPoints );
-                            buffer.Add( "</color> max cloaking points.  As long as its current cloaking points are above zero, it will be invisible to enemies (although detected).  " );
+                            buffer.Add( "</color> 最大隐形点。只要当前隐形点大于零，它将隐形于敌人（但会被探测到）。  " );
                             if ( systemData.ParentEntityTypeData.IsCombatant )
-                                buffer.Add( "Every time this ship fires, it will expend " )
+                                buffer.Add( "每当该舰船开火，将消耗 " )
                                     .Add( Mathf.RoundToInt( maxWeaponCloakingReductionCost.ToFloatNonSim() * 100f ) )
-                                    .Add( "% of its cloaking points." );
+                                    .Add( "% 的隐形点。" );
                             buffer.Add( "在 " ).Add( ExternalConstants.Instance.SecondsToWaitBeforeRecloaking ).Add( " 秒内未损失任何隐形点后，该舰船将恢复所有损失的隐形点。  " );
                         }
                         if ( systemData.CareAboutStateOfMatterToBeEnabled )
@@ -6771,11 +6771,11 @@ buffer.Add( " gx</color>。  " );
                                 buffer.Add( "射程内所有敌方小队 " );
                                 buffer.AddNumberMoreReadable( systemStats.GravityRange, "ffdf72" );
                             }
-                            buffer.Add( " are slowed to <color=#ffdf72>" );
+                            buffer.Add( " 被减速至 <color=#ffdf72>" );
                             buffer.Add( systemStats.GravitySpeedMultiplier.ReadableString );
-                            buffer.Add( "x</color> their normal speed if they have an engine power less than <color=#ffdf72>" );
+                            buffer.Add( "x</color> 正常速度，如果引擎动力低于 <color=#ffdf72>" );
                             buffer.Add( systemData.GravityHitsEngine_gxLessThan );
-                            buffer.Add( " gx</color>.  " );
+                            buffer.Add( " gx</color>。  " );
                         }
                         if ( systemData.CareAboutStateOfMatterToBeEnabled )
                             WriteSystemStateOfMatterSuffix( buffer, systemData, relatedSquadOrNull );
@@ -6784,9 +6784,9 @@ buffer.Add( " gx</color>。  " );
                     #region Attractant System
                     else if ( systemStats.AttractRangeForShotsAgainstAllies > 0 )
                     {
-                        buffer.Add( "<color=#f25e1c>ATTRACTANT FIELD</color>: All shots fired against friendly units within range <color=#ffdf72>" );
+                        buffer.Add( "<color=#f25e1c>吸引场</color>: 范围内 <color=#ffdf72>" );
                         buffer.AddNumberMoreReadable( systemStats.AttractRangeForShotsAgainstAllies );
-                        buffer.Add( "</color> are automatically redirected at this unit, instead.  " );
+                        buffer.Add( "</color> 内对友军单位发射的所有射击将自动重定向至此单位。  " );
                         if ( systemData.CareAboutStateOfMatterToBeEnabled )
                             WriteSystemStateOfMatterSuffix( buffer, systemData, relatedSquadOrNull );
                     }
