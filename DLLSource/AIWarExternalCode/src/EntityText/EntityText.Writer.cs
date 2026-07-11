@@ -3063,7 +3063,7 @@ namespace Arcen.AIW2.External
                 }
                 */
                 debugstage = 105;
-                buffer.Open(TextTerm.Damage, TermUse.Icon);
+                buffer.Open(TextTerm.伤害，TermUse.Icon);
                 if ( !modifier.IsForOutgoingDamage )
                     buffer.Add(multiplier * 100).Add("%");
                 else
@@ -3100,7 +3100,7 @@ namespace Arcen.AIW2.External
                     buffer.Add(" 对 ").Add(TextTerm.Hull, TermUse.Icon_Name).Add("");
                 }
 
-                //buffer.AddNumber( multiplier, "脳", TextTerm.Damage, TermUse.Name );
+                //buffer.AddNumber( multiplier, "脳", TextTerm.伤害，TermUse.Name );
 
                 if ( modifier.BasedOn == DamageModifierBasedOn.Always )
                 {
@@ -3939,7 +3939,7 @@ namespace Arcen.AIW2.External
                 if ( GreaterCategory == ShipClassData_ModifierData_Type.Immunity )
                 {
                     WriteShipClass_GreaterCategoryStartIfNeeded( Buffer, ShipClass, ref AlreadyWroteGeneralStart, ref AlreadyWroteAbsoluteStart, DetailLevel, GreaterCategory );
-                    WriteShipClass_LesserCategoryStartIfNeeded( Buffer, ref AlreadyWroteLesserStart, DetailLevel, GreaterCategory, ShipClassData_LesserCategoryType.GeneralDamage, true );
+                    WriteShipClass_LesserCategoryStartIfNeeded( Buffer, ref AlreadyWroteLesserStart, DetailLevel, GreaterCategory, ShipClassData_LesserCategoryType.General伤害，true );
                     if ( DetailLevel == TooltipDetail.Full )
                         Buffer.Add( "Immune to all damage" );
                     else
@@ -3971,7 +3971,7 @@ namespace Arcen.AIW2.External
                 if ( ShipClass.AllExoticDamageModifier.ModifierType == GreaterCategory )
                 {
                     WriteShipClass_ModifierData( Buffer, ShipClass, "All Exotic Damage", "Exotic Damage", ShipClass.AllExoticDamageModifier, ShipClassData_ModifiedUnit.None,
-                        DetailLevel, ref AlreadyWroteLesserStart, ref AlreadyWroteAbsoluteStart, ref AlreadyWroteGeneralStart, GreaterCategory, ShipClassData_LesserCategoryType.ExoticDamage, true );
+                        DetailLevel, ref AlreadyWroteLesserStart, ref AlreadyWroteAbsoluteStart, ref AlreadyWroteGeneralStart, GreaterCategory, ShipClassData_LesserCategoryType.Exotic伤害，true );
                 } 
                 else 
                 if ( ShipClass.HasAnyExoticDamageModifiers )
@@ -3980,25 +3980,25 @@ namespace Arcen.AIW2.External
                     if ( data.ModifierType == GreaterCategory && EntityBaseSpeed > 0 )
                     {
                         WriteShipClass_ModifierData( Buffer, ShipClass, "Attrition", "Attr", data, ShipClassData_ModifiedUnit.None, DetailLevel,
-                            ref AlreadyWroteLesserStart, ref AlreadyWroteAbsoluteStart, ref AlreadyWroteGeneralStart, GreaterCategory,ShipClassData_LesserCategoryType.ExoticDamage, false );
+                            ref AlreadyWroteLesserStart, ref AlreadyWroteAbsoluteStart, ref AlreadyWroteGeneralStart, GreaterCategory,ShipClassData_LesserCategoryType.Exotic伤害，false );
                     }
                     data = ShipClass.ExoticDamageModifiers[1];
                     if ( data.ModifierType == GreaterCategory )
                     {
                         WriteShipClass_ModifierData( Buffer, ShipClass, "Electrotoxicity", "ETox", data, ShipClassData_ModifiedUnit.None, DetailLevel,
-                            ref AlreadyWroteLesserStart, ref AlreadyWroteAbsoluteStart, ref AlreadyWroteGeneralStart, GreaterCategory,ShipClassData_LesserCategoryType.ExoticDamage, false );
+                            ref AlreadyWroteLesserStart, ref AlreadyWroteAbsoluteStart, ref AlreadyWroteGeneralStart, GreaterCategory,ShipClassData_LesserCategoryType.Exotic伤害，false );
                     }
                     data = ShipClass.ExoticDamageModifiers[2];
                     if ( data.ModifierType == GreaterCategory )
                     {
                         WriteShipClass_ModifierData( Buffer, ShipClass, "Revenge Shots", "Veng", data, ShipClassData_ModifiedUnit.None, DetailLevel,
-                            ref AlreadyWroteLesserStart, ref AlreadyWroteAbsoluteStart, ref AlreadyWroteGeneralStart, GreaterCategory,ShipClassData_LesserCategoryType.ExoticDamage, false );
+                            ref AlreadyWroteLesserStart, ref AlreadyWroteAbsoluteStart, ref AlreadyWroteGeneralStart, GreaterCategory,ShipClassData_LesserCategoryType.Exotic伤害，false );
                     }
                     data = ShipClass.ExoticDamageModifiers[3];
                     if ( data.ModifierType == GreaterCategory )
                     {
                         WriteShipClass_ModifierData( Buffer, ShipClass, "Ion Cannon", "Ion", data, ShipClassData_ModifiedUnit.None, DetailLevel,
-                            ref AlreadyWroteLesserStart, ref AlreadyWroteAbsoluteStart, ref AlreadyWroteGeneralStart, GreaterCategory,ShipClassData_LesserCategoryType.ExoticDamage, false );
+                            ref AlreadyWroteLesserStart, ref AlreadyWroteAbsoluteStart, ref AlreadyWroteGeneralStart, GreaterCategory,ShipClassData_LesserCategoryType.Exotic伤害，false );
                     }
                 }
             }
@@ -4149,7 +4149,7 @@ namespace Arcen.AIW2.External
             } else
             {
                 ShipClassData defaultHull = ShipClassDataTable.Instance.DefaultRow;
-                WriteShipClass_BuffLimitIfNeeded( Buffer, ShipClass, ref alreadyWroteBuffLimitStart, ref AlreadyWroteAbsoluteStart, DetailLevel, ShipClassData_BuffType.Damage, defaultHull.DamageBuff_MaxMultiplier,
+                WriteShipClass_BuffLimitIfNeeded( Buffer, ShipClass, ref alreadyWroteBuffLimitStart, ref AlreadyWroteAbsoluteStart, DetailLevel, ShipClassData_BuffType.伤害，defaultHull.DamageBuff_MaxMultiplier,
                     ShipClass.DamageBuff_MaxMultiplier );
                 WriteShipClass_BuffLimitIfNeeded( Buffer, ShipClass, ref alreadyWroteBuffLimitStart, ref AlreadyWroteAbsoluteStart, DetailLevel, ShipClassData_BuffType.Hull, defaultHull.HullBuff_MaxMultiplier,
                     ShipClass.HullBuff_MaxMultiplier );

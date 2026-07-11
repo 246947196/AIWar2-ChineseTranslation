@@ -483,7 +483,7 @@ namespace Arcen.AIW2.External
                         {
                             if ( Type.MustBeThisStateOfMatterToBeEnabled == Squad.CurrentStateOfMatter )
                             {
-                                buffer.Add( "Enabled", Color.green ).Add( " due to being in " ).Add( Type.MustBeThisStateOfMatterToBeEnabled.DisplayName, "aaaaaa" ).Add( " state of matter" );
+                                buffer.Add( "Enabled", Color.green ).Add( " 因处于 " ).Add( Type.MustBeThisStateOfMatterToBeEnabled.DisplayName, "aaaaaa" ).Add( " 物质状态" );
                             } 
                             else
                             {
@@ -507,7 +507,7 @@ namespace Arcen.AIW2.External
                     debugStage = 191;
                     buffer.Open( TextStyle.System_Sub_Lines );
 
-                    #region Damage, Reload, Salvo-Size
+                    #region 伤害，Reload, Salvo-Size
 
                     #endregion
                     
@@ -752,9 +752,9 @@ namespace Arcen.AIW2.External
                                 
                                 buffer
                                         .Add(" 造成 ")
-                                        .AddNumber(display_shotdamage, TextTerm.Damage, TermUse.Icon)
+                                        .AddNumber(display_shotdamage, TextTerm.伤害，TermUse.Icon)
                                         .Add(" 对主目标，另外 ")
-                                        .AddNumber(secondary_damage, TextTerm.Damage, TermUse.Icon)
+                                        .AddNumber(secondary_damage, TextTerm.伤害，TermUse.Icon)
                                         .Add(" 分摊至其他目标 " );
 
                                 
@@ -801,7 +801,7 @@ namespace Arcen.AIW2.External
                                                     .AddNumber(perc, null, TextStyle.Empty)
                                                     .Add("%");
                                             },
-                                            null, TextTerm.Damage, TermUse.Icon, null);
+                                            null, TextTerm.伤害，TermUse.Icon, null);
                                     
                                     if ( Type.AOEHitsFriendlyTargets )
                                         buffer.Add("，包括友军");
@@ -867,16 +867,16 @@ namespace Arcen.AIW2.External
                                 {
                                 buffer
                                         .Add(" 造成 ")
-                                        .AddNumber(display_shotdamage, TextTerm.Damage, TermUse.Icon)
+                                        .AddNumber(display_shotdamage, TextTerm.伤害，TermUse.Icon)
                                         .Add(" 对主目标，另外 ")
-                                        .AddNumber(secondary_damage, TextTerm.Damage, TermUse.Icon)
+                                        .AddNumber(secondary_damage, TextTerm.伤害，TermUse.Icon)
                                         .Add(" 分摊至其他目标 " );
                                 }
                                 else
                                 {
                                     buffer
                                         .Add(" 造成 ")
-                                        .AddNumber(display_shotdamage, TextTerm.Damage, TermUse.Icon)
+                                        .AddNumber(display_shotdamage, TextTerm.伤害，TermUse.Icon)
                                         .Add(" 对每个目标 ");
                                 }
 
@@ -1024,7 +1024,7 @@ namespace Arcen.AIW2.External
                                     else //partially stunned
                                         engineSpeed = ExternalConstants.Instance.EngineStunMultipliersByStunSeconds[Type.MaxEngineStunSeconds];
 
-                                    buffer.Add( " The target can be slowed up to a full " ).AddNumberMoreReadable( Type.MaxEngineStunSeconds )
+                                    buffer.Add( " 目标最多可以被减速" ).AddNumberMoreReadable( Type.MaxEngineStunSeconds )
                                         .Add( "s, at which point its movement speed will only be  <color=#ffdf72>" ).Add( engineSpeed.ReadableString ).Add( "x</color> normal." );
                                 }
                                 else
@@ -1090,7 +1090,7 @@ namespace Arcen.AIW2.External
 
                             if ( detailLevel >= TooltipDetail.Medium )
                             {
-                                buffer.Add( ": Shots from the above weapon cause enemies that are hit to be moved to a completely random spot in the planet's gravity well." );
+                                buffer.Add( ": 上述武器的射击导致enemies that are hit to be moved to a completely random spot in the planet's gravity well." );
                             }
                             
                             buffer.Close( TextStyle.System_Line2 );
@@ -1261,7 +1261,7 @@ namespace Arcen.AIW2.External
                                 buffer.AddNumberMoreReadable( ForMark.EnemyWeaponReloadSlowingSecondsPerShot );
                                 buffer.Add( "s</color> if the target has an armor thickness of less than <color=#ffdf72>" );
                                 buffer.Add( Type.EnemyWeaponReloadSlowingSecondsArmor_mmLessThan );
-                                buffer.Add( "mm</color>.  The total amount of extra reload time per target that can be applied is " );
+                                buffer.Add( "mm</color>。每目标可应用的最大额外装弹时间为" );
                                 if ( Type.MaxEnemyWeaponReloadSlowingSeconds > 0 )
                                     buffer.Add( Type.MaxEnemyWeaponReloadSlowingSeconds );
                                 else
@@ -2074,13 +2074,13 @@ namespace Arcen.AIW2.External
                             .Open(TextTerm.Damage_Exotic, TermUse.Icon)
                             .Add( Type.ReturnsThisPercentageOfDamageWhenFiringRetaliatoryShot * FInt.OneHundred )
                             .Add( "%" ).Close(TextTerm.Damage_Exotic)
-                            .Add(" 的 ").Add(TextTerm.Damage, TermUse.Name)
+                            .Add(" 的 ").Add(TextTerm.伤害，TermUse.Name)
                             .Add( " on " ).WrapReload( "Hit", false, false );
                     }
                     else
                     if ( Type.OverdrivesShields )
                     {
-                        buffer.Add( "100%", TextTerm.Damage, TermUse.Icon).Add(" ").Add("目标 ", TextTerm.Shields, TermUse.IconAfter);
+                        buffer.Add( "100%", TextTerm.伤害，TermUse.Icon).Add(" ").Add("目标 ", TextTerm.Shields, TermUse.IconAfter);
                     }
                     else
                     if ( IsDroneGun )
@@ -2102,7 +2102,7 @@ namespace Arcen.AIW2.External
                     else
                     if ( IsOnDeath )
                     {
-                        buffer.Open( TextTerm.Damage, TermUse.Icon, TextStyle.Empty );
+                        buffer.Open( TextTerm.伤害，TermUse.Icon, TextStyle.Empty );
                         buffer.AddNumber( dps_min, null, TextStyle.Empty );
                         if (dps_min != dps_max)
                             buffer.Add(" 禄 ").AddNumber( dps_max, null, TextStyle.Empty );
@@ -2113,7 +2113,7 @@ namespace Arcen.AIW2.External
                     else
                     if ( IsRetaliatory )
                     {
-                        buffer.Open( TextTerm.Damage, TermUse.Icon, TextStyle.Empty );
+                        buffer.Open( TextTerm.伤害，TermUse.Icon, TextStyle.Empty );
                         buffer.AddNumber( dps_min, null, TextStyle.Empty );
                         if (dps_min != dps_max)
                             buffer.Add(" 禄 ").AddNumber( dps_max, null, TextStyle.Empty );
@@ -2188,7 +2188,7 @@ namespace Arcen.AIW2.External
                 {
                     debugstage = 400;
                     
-                    buffer.AddNumber(this.System.GetShotDamage(), TextTerm.Damage, TermUse.Icon_Name_Abbr);
+                    buffer.AddNumber(this.System.GetShotDamage(), TextTerm.伤害，TermUse.Icon_Name_Abbr);
 
                     return;
                 }
@@ -2309,7 +2309,7 @@ namespace Arcen.AIW2.External
                 if (name.Equals("LastDamage"))
                 {
                     debugstage = 900;
-                    buffer.AddNumber( System.LastTotalDamageMyShotDidCaused, TextTerm.Damage, TermUse.Icon );
+                    buffer.AddNumber( System.LastTotalDamageMyShotDidCaused, TextTerm.伤害，TermUse.Icon );
 
                     return;
                 }

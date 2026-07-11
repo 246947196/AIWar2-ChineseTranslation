@@ -124,7 +124,7 @@ namespace Arcen.AIW2.External
                 //if ( GreaterCategory == ShipClassData_ModifierData_Type.Immunity )
                 //{
                 //    WriteShipClass_GreaterCategoryStartIfNeeded( Buffer, ShipClass, ref AlreadyWroteGeneralStart, ref AlreadyWroteAbsoluteStart, DetailLevel, GreaterCategory );
-                //    WriteShipClass_LesserCategoryStartIfNeeded( Buffer, ref AlreadyWroteLesserStart, DetailLevel, GreaterCategory, ShipClassData_LesserCategoryType.GeneralDamage, true );
+                //    WriteShipClass_LesserCategoryStartIfNeeded( Buffer, ref AlreadyWroteLesserStart, DetailLevel, GreaterCategory, ShipClassData_LesserCategoryType.General伤害，true );
                 //    if ( DetailLevel == TooltipDetail.Full )
                 //        Buffer.Add( "Immune to all damage" );
                 //    else
@@ -160,7 +160,7 @@ namespace Arcen.AIW2.External
             {
                 list.Add(data);
                 //WriteShipClass_ModifierData( Buffer, ShipClass, "All Exotic Damage", "Exotic Damage", ShipClass.AllExoticDamageModifier, ShipClassData_ModifiedUnit.None,
-                    //DetailLevel, ref AlreadyWroteLesserStart, ref AlreadyWroteAbsoluteStart, ref AlreadyWroteGeneralStart, GreaterCategory, ShipClassData_LesserCategoryType.ExoticDamage, true );
+                    //DetailLevel, ref AlreadyWroteLesserStart, ref AlreadyWroteAbsoluteStart, ref AlreadyWroteGeneralStart, GreaterCategory, ShipClassData_LesserCategoryType.Exotic伤害，true );
             } 
              
             if ( ShipClass.HasAnyExoticDamageModifiers )

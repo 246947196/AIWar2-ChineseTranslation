@@ -219,7 +219,7 @@ namespace Arcen.AIW2.External
 
                 (this.Element as ArcenUI_Button).ClickSoundEffect = "ButtonStartGame";
 
-                //This should propagate over to the real in-game lobby settings after 0.1 seconds.
+                //This should propagate over to the real in-game lobby settings after 0.1 秒后完全生成。
                 //That should then cause the REAL map to generate with all the details on it.
                 //That in turn should then also cause the game to unpause for the first time (DoFirstUnpauseIfNotDoneYet).
                 World_AIW2.Instance.Setup.ShouldSeedDetailsYet = true;

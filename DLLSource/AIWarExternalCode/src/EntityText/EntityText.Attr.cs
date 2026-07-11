@@ -825,7 +825,7 @@ namespace Arcen.AIW2.External
                         if ( Squad.TypeData.PeriodicSpawn_CreatesWave && 
                              Squad.TypeData.PeriodicSpawn_CreatesExoStrike )
                         {
-buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
+buffer.Add( "Exo/Raid Engine: 生成 waves and exo strikes" );
                     buffer.Add( "Exo-Raid Engine:", Attr_Label ).Add("：触发一波进攻和远征打击");
                         } 
                         else 
@@ -844,7 +844,7 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                             .Add( "x </color> 标准强度" );
                     }
 
-                    buffer.Add( " <color=#ffdf72>每 " ).Add( Squad.TypeData.PeriodicSpawn_DelayBetweenSpawns ).Add( " 秒</color>" );
+                    buffer.Add( " <color=#ffdf72>每 " ).Add( Squad.TypeData.PeriodicSpawn_DelayBetween生成 ).Add( " 秒</color>" );
                     if ( Squad.TypeData.PeriodicSpawn_InitialDelay > 0 )
                         buffer.Add( " 在 <color=#ffdf72>" ).Add( Squad.TypeData.PeriodicSpawn_InitialDelay ).Add( " 秒</color> 后" );
                     else
@@ -1048,7 +1048,7 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                         .Add( "电毒", Attr_Label ).Add("： ")
                         .Add("返还 ")
                         .Open(TextStyle.Number).AddPercent( etoxic_amt ).Close(TextStyle.Number)
-                        .Add( " 的 ").Add(TextTerm.Damage, TermUse.Name).Add(" 以 ").Add(TextTerm.Damage_Exotic, TermUse.Name).Add("。");
+                        .Add( " 的 ").Add(TextTerm.伤害，TermUse.Name).Add(" 以 ").Add(TextTerm.Damage_Exotic, TermUse.Name).Add("。");
                     buffer.EndStatement(Attr_Line);
                 }
                 #endregion
@@ -1107,7 +1107,7 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                         {
                             buffer
                                 .Open(Attr_Line2).Add( "减弱", Attr_Label2 )
-                                .Add("：受护盾保护的盟友的输出伤害降低 ").AddNumber( "50%", TextTerm.Damage, TermUse.Icon ).Close(Attr_Line2);
+                                .Add("：受护盾保护的盟友的输出伤害降低 ").AddNumber( "50%", TextTerm.伤害，TermUse.Icon ).Close(Attr_Line2);
                         }
                         
                         buffer.Close(TextStyle.Attr_Sub_Lines);
@@ -1242,9 +1242,9 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                     buffer
                         .Add( "谐波", Attr_Label)
                         .Add("：加成 ")
-                        .AddNumber( bonus, "+", TextTerm.Damage, TermUse.Icon )
+                        .AddNumber( bonus, "+", TextTerm.伤害，TermUse.Icon )
                         .Add(" 每艘此类舰船（在本星球上），上限 ")
-                        .AddNumber( cap, "+", TextTerm.Damage, TermUse.Icon )
+                        .AddNumber( cap, "+", TextTerm.伤害，TermUse.Icon )
                         .Add("。");
                     
                     buffer.EndStatement(Attr_Line);
