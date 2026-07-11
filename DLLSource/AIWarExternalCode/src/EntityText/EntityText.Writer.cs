@@ -714,7 +714,7 @@ namespace Arcen.AIW2.External
                                     }
                                     if ( queuedOrderCount - i > 0 )
                                     {
-                                        buffer.Add( " + " ).Add( queuedOrderCount - i ).Add( " more" );
+                                        buffer.Add( " + " ).Add( queuedOrderCount - i ).Add( " 更多" );
                                     }
                                 }
                             }
@@ -861,7 +861,7 @@ namespace Arcen.AIW2.External
                             buffer.Add( "快速部署：+" ).AddPercentRoundedDynamically( (entityType.SpeedMultiplierFirst5SecondsOnPlanet - 1) * 100 );
                             if ( detailLevel == TooltipDetail.Full )
                             {
-                                buffer.Add( " (" ).Add( 6 - entityTimeOnPlanet ).Add( "s)" );
+                                    buffer.Add( "（" ).Add( 6 - entityTimeOnPlanet ).Add( "秒）" );
                             }
                         }
 
@@ -1085,7 +1085,7 @@ namespace Arcen.AIW2.External
                                 buffer.Add( "力场下：-50%" );
                                 if ( !toEveryWeapon )
                                 {
-                                    buffer.Add( " to " );
+                                    buffer.Add( "（针对 " );
                                     if ( detailLevel == TooltipDetail.Full )
                                     {
                                         bool isFirst = true;
@@ -1101,8 +1101,9 @@ namespace Arcen.AIW2.External
                                     } 
                                     else
                                     {
-                                        buffer.Add( "some weapons" );
+                                        buffer.Add( "部分武器" );
                                     }
+                                    buffer.Add( "）" );
                                 }
                             }
 
@@ -1181,7 +1182,7 @@ namespace Arcen.AIW2.External
                                 buffer.Add( "抵达：" ).AddPercentRoundedDynamically( (entityType.SpeedMultiplierFirst5SecondsOnPlanet * 100) - 100 );
                                 if ( detailLevel == TooltipDetail.Full )
                                 {
-                                    buffer.Add( " (for " ).Add( 6 - entityTimeOnPlanet ).Add( "s)" );
+                                    buffer.Add( "（持续 " ).Add( 6 - entityTimeOnPlanet ).Add( "秒）" );
                                 }
                             }
 
@@ -1220,14 +1221,14 @@ namespace Arcen.AIW2.External
                             this.WriteDecloakDebuffsStartIfNeeded( buffer, useIcons, true, ref wroteDebuffStart, ref wroteCloakBuffStart );
                             if ( relatedSquadOrNull.ActiveHack != null )
                             {
-                                buffer.Add( ", Disabled by Hack" );
+                                buffer.Add( "，因黑客禁用" );
                             } else if ( relatedSquadOrNull.GetIsCrippled() )
                             {
-                                buffer.Add( ", Crippled" );
+                                buffer.Add( "，残废" );
                             } else if ( detailLevel == TooltipDetail.Full )
                             {
-                                buffer.Add( " (Regen: " ).Add( 1 + ExternalConstants.Instance.SecondsToWaitBeforeRecloaking - (World_AIW2.Instance.GameSecond - relatedSquadOrNull.GameSecondOfLastCloakingPointLoss) )
-                                    .Add( "s)" );
+                                buffer.Add( "（恢复：" ).Add( 1 + ExternalConstants.Instance.SecondsToWaitBeforeRecloaking - (World_AIW2.Instance.GameSecond - relatedSquadOrNull.GameSecondOfLastCloakingPointLoss) )
+                                    .Add( "秒）" );
                             }
                         } 
                         else if ( World_AIW2.Instance.GameSecond - relatedSquadOrNull.GameSecondOfLastCloakingPointLoss < 2 )
@@ -1930,7 +1931,7 @@ namespace Arcen.AIW2.External
                                 buff.Add( fac.GetDisplayNameInternal(true, false ) );
 
                             if ( Squad.ExoGalacticAttackPlanetIdx != -1 )
-                                buff.Add( " (Exo-Strike)" );
+                                buff.Add( "（远征打击）" );
                                     
                             buff.EndColor();
                             
@@ -2403,7 +2404,7 @@ namespace Arcen.AIW2.External
                         buffer.Add( "前往 " );
                         if ( planet == null )
                         {
-                            buffer.Add( "unknown planet" );
+                            buffer.Add( "未知星球" );
                         } else
                         {
                             buffer.AddPlanetNameFormated( planet, false );
@@ -2415,15 +2416,15 @@ namespace Arcen.AIW2.External
                         buffer.Add( "途经 " );
                         if ( planet1 == null )
                         {
-                            buffer.Add( "unknown planet" );
+                            buffer.Add( "未知星球" );
                         } else
                         {
                             buffer.AddPlanetNameFormated( planet1, false );
                         }
-                        buffer.Add( " to " );
+                        buffer.Add( " 至 " );
                         if ( planet2 == null )
                         {
-                            buffer.Add( "unknown planet" );
+                            buffer.Add( "未知星球" );
                         } else
                         {
                             buffer.AddPlanetNameFormated( planet2, false );
@@ -2530,21 +2531,21 @@ namespace Arcen.AIW2.External
                     if ( detailLevel <= TooltipDetail.Medium )
                     {
                         buffer
-                            .Add("<voffset=0.05em>(</voffset>")
+                            .Add("<voffset=0.05em>（</voffset>")
                             .AddColor( upgrade.UIOnly_Tech_ShipLinesAffected, ArcenExternalUIUtilities.ShipLineIncreaseColor )
                             .Add( " " )
                             .AddColor( upgrade.UIOnly_Tech_DefensiveLinesAffected, ArcenExternalUIUtilities.DefenseLineIncreaseColor )
-                            .Add("<voffset=0.05em>)</voffset>");
+                            .Add("<voffset=0.05em>）</voffset>");
                     }
                     else 
                     //if ( detailLevel > TooltipDetail.SuperShort )
                     {
                         buffer
-                            .Add("<voffset=0.05em>(</voffset>")
+                            .Add("<voffset=0.05em>（</voffset>")
                             .AddColor( upgrade.UIOnly_Tech_ShipLinesAffected, ArcenExternalUIUtilities.ShipLineIncreaseColor )
-                            .Add( " ship " )
+                            .Add( " 舰船 " )
                             .AddColor( upgrade.UIOnly_Tech_DefensiveLinesAffected, ArcenExternalUIUtilities.DefenseLineIncreaseColor )
-                            .Add(" defense<voffset=0.05em>)</voffset>");
+                            .Add(" 防御<voffset=0.05em>）</voffset>");
                     }
                 }
             }
@@ -2783,22 +2784,22 @@ namespace Arcen.AIW2.External
                             buffer.Add( "× " );
                             break;
                         case EntityTypeDrawingBag_SpawnMode.AIBudget:
-                            buffer.Add( " AI budget worth of " );
+                            buffer.Add( " AI 预算量的 " );
                             break;
                         case EntityTypeDrawingBag_SpawnMode.Strength_BaseMark:
-                            buffer.Add( " base strength worth of " );
+                            buffer.Add( " 基础强度量的 " );
                             break;
                         case EntityTypeDrawingBag_SpawnMode.Strength_CurrentMark:
-                            buffer.Add( " strength worth of " );
+                            buffer.Add( " 强度量的 " );
                             break;
                         case EntityTypeDrawingBag_SpawnMode.MetalCost:
-                            buffer.Add( " metal worth of " );
+                            buffer.Add( " 金属量的 " );
                             break;
                         case EntityTypeDrawingBag_SpawnMode.EnergyCost:
-                            buffer.Add( " energy worth of " );
+                            buffer.Add( " 能量量的 " );
                             break;
                         default:
-                            buffer.Add( " unhandled value '" ).Add(Extensions.ToString(type)).Add("' ");
+                            buffer.Add( " 未处理的值 '" ).Add(Extensions.ToString(type)).Add("' ");
                             break;
                     }
                     
@@ -3027,26 +3028,26 @@ namespace Arcen.AIW2.External
                 debugstage = 104;
                 if ( modifier.IsForOutgoingDamage )
                 {
-                    if ( multiplier >= FInt.One )
-                        buffer.Add( "Bonus");
-                    else
-                        buffer.Add( "Penalty");
+                if ( multiplier >= FInt.One )
+                    buffer.Add( "加成");
+                else
+                    buffer.Add( "惩罚");
                 }
                 else
                 {
-                    if ( multiplier < FInt.One )
-                        buffer.Add( "Defense-Bonus");
-                    else
-                        buffer.Add( "Defense-Penalty");
+                if ( multiplier < FInt.One )
+                    buffer.Add( "防御加成");
+                else
+                    buffer.Add( "防御惩罚");
                 }
                 buffer.Close(TextStyle.System_Label2);
                 debugstage = 105;
                 buffer.Add(": ");
 
                 if ( modifier.IsForOutgoingDamage )
-                    buffer.Add( "Deals ");
+                    buffer.Add( "造成 ");
                 else
-                    buffer.Add( "Takes ");
+                    buffer.Add( "承受 ");
                 
                 if (modifier.NeedsToGetMultiples)
                     multiplier += 1;
@@ -3107,9 +3108,9 @@ namespace Arcen.AIW2.External
                     debugstage = 110;
                     
                     if ( modifier.IsForOutgoingDamage )
-                        buffer.Add( " to all targets." );
+                        buffer.Add( " 对所有目标。" );
                     else
-                        buffer.Add( " from all targets." );
+                        buffer.Add( " 来自所有目标。" );
 
                     buffer.Close(TextStyle.System_Line);
                     
@@ -3259,7 +3260,7 @@ namespace Arcen.AIW2.External
 
                 if ( modifier.ComparisonType == DamageModifierComparisonType.MultiplesOf )
                 {
-                    buffer.Add( " per " );//.AddNumber(comp_val, Text.Multiply).Add(" ").Add(comp_term, TermUse.Icon);
+                    buffer.Add( " 每 " );//.AddNumber(comp_val, Text.Multiply).Add(" ").Add(comp_term, TermUse.Icon);
                     
                     if ( modifier.BasedOn == DamageModifierBasedOn.MyTimeAtPlanet ||
                          modifier.BasedOn == DamageModifierBasedOn.TargetTimeAtPlanet )
@@ -3297,7 +3298,7 @@ namespace Arcen.AIW2.External
                 {
                     if ( modifier.ComparisonRefersToMyself )
                     {
-                        buffer.Add( " if our " );
+                        buffer.Add( " 如果己方 " );
                     }
                     else
                     {
@@ -3311,7 +3312,7 @@ namespace Arcen.AIW2.External
                 {
                     debugstage = 120;
                     
-                    buffer.Add("是 ").Add( modifier.ComparedToInt > 0 ? "'Mobile'" : "'Stationary'", TextStyle.Brighter).Add(".");
+                    buffer.Add("是 ").Add( modifier.ComparedToInt > 0 ? "移动" : "静止", TextStyle.Brighter).Add("。");
                     buffer.Close(TextStyle.System_Line2);
                     
                     debugstage = 121;
@@ -3323,7 +3324,7 @@ namespace Arcen.AIW2.External
                 {
                     debugstage = 122;
                     
-                    buffer.Add("是 ").Add( modifier.ComparedToInt > 0 ? "'Drone'" : "'Not Drone'", TextStyle.Brighter).Add(".");
+                    buffer.Add("是 ").Add( modifier.ComparedToInt > 0 ? "无人机" : "非无人机", TextStyle.Brighter).Add("。");
                     buffer.Close(TextStyle.System_Line2);
                     
                     debugstage = 123;
@@ -3408,11 +3409,11 @@ namespace Arcen.AIW2.External
                 {
                     if ( modifier.ComparisonRefersToMyself )
                     {
-                        buffer.Add( " of this ship." );
+                        buffer.Add( " 自身。" );
                     }
                     else
                     {
-                        buffer.Add( " of the target." );
+                        buffer.Add( " 目标。" );
                     }
                 }
                 else
@@ -3650,33 +3651,33 @@ namespace Arcen.AIW2.External
             {
                 Buffer.StartColor( ArcenExternalUIUtilities.Debuffs.Color );
                 if ( DetailLevel == TooltipDetail.Full )
-                    Buffer.Add( "Vulnerabilities: " );
+                    Buffer.Add( "弱点： " );
                 else if ( DetailLevel == TooltipDetail.Medium )
-                    Buffer.Add( "Vul: " );
+                    Buffer.Add( "弱点： " );
             }
             else if ( GreaterCategory == ShipClassData_ModifierData_Type.Resistance )
             {
                 Buffer.StartColor( ArcenExternalUIUtilities.Buffs.Color );
                 if ( DetailLevel == TooltipDetail.Full )
-                    Buffer.Add( "Resistances: " );
+                    Buffer.Add( "抗性： " );
                 else if ( DetailLevel == TooltipDetail.Medium )
-                    Buffer.Add( "Res: " );
+                    Buffer.Add( "抗性： " );
             }
             else if ( GreaterCategory == ShipClassData_ModifierData_Type.Immunity )
             {
                 Buffer.StartColor( ArcenExternalUIUtilities.Immunities.Color );
                 if ( DetailLevel == TooltipDetail.Full )
-                    Buffer.Add( "Immunities: " );
+                    Buffer.Add( "免疫： " );
                 else if ( DetailLevel == TooltipDetail.Medium )
-                    Buffer.Add( "Imu: " );
+                    Buffer.Add( "免疫： " );
             }
             else if ( GreaterCategory == ShipClassData_ModifierData_Type.Mixed )
             {
                 Buffer.StartColor( ArcenExternalUIUtilities.Mixed.Color );
                 if ( DetailLevel == TooltipDetail.Full )
-                    Buffer.Add( "Other: " );
+                    Buffer.Add( "其他： " );
                 else if ( DetailLevel == TooltipDetail.Medium )
-                    Buffer.Add( "Oth: " );
+                    Buffer.Add( "其他： " );
             }
             else
             {
@@ -3728,27 +3729,27 @@ namespace Arcen.AIW2.External
             
             if ( LesserCategory == ShipClassData_LesserCategoryType.Debuff )
             {
-                Buffer.Add( "Debuffs: " );
+                Buffer.Add( "减益： " );
             } 
             else 
             if ( LesserCategory == ShipClassData_LesserCategoryType.DeathEffect )
             {
-                Buffer.Add( "Death Effects: " );
+                Buffer.Add( "死亡效果： " );
             } 
             else 
             if ( LesserCategory == ShipClassData_LesserCategoryType.AmmoType )
             {
-                Buffer.Add( "Ammo Types: " );
+                Buffer.Add( "弹药类型： " );
             } 
             else 
             if ( LesserCategory == ShipClassData_LesserCategoryType.ExoticDamage )
             {
-                Buffer.Add( "Exotic Damage: " );
+                Buffer.Add( "异种伤害： " );
             } 
             else 
             if ( LesserCategory == ShipClassData_LesserCategoryType.GeneralDamage )
             {
-                Buffer.Add( "General Damage: " );
+                Buffer.Add( "通用伤害： " );
             } 
             else 
             if ( LesserCategory == ShipClassData_LesserCategoryType.AllDamage )
@@ -3758,7 +3759,7 @@ namespace Arcen.AIW2.External
             else 
             if ( LesserCategory == ShipClassData_LesserCategoryType.SpecialMechanic )
             {
-                Buffer.Add( "Special Mechanic: " );
+                Buffer.Add( "特殊机制： " );
             } 
             else
             {
@@ -3790,20 +3791,20 @@ namespace Arcen.AIW2.External
                 Buffer.Add( " " );
             } else
             {
-                if ( DetailLevel == TooltipDetail.Full )
-                {
-                    if ( DataType == ShipClassData_ModifiedUnit.TimeBased )
-                        Buffer.Add( " duration " );
-                    else
-                        Buffer.Add( " damage " );
-                }
-                else if ( DetailLevel == TooltipDetail.Medium )
-                {
-                    if ( DataType == ShipClassData_ModifiedUnit.TimeBased )
-                        Buffer.Add( " dur " );
-                    else
-                        Buffer.Add( " dmg " );
-                }
+                    if ( DetailLevel == TooltipDetail.Full )
+                    {
+                        if ( DataType == ShipClassData_ModifiedUnit.TimeBased )
+                            Buffer.Add( " 持续时间 " );
+                        else
+                            Buffer.Add( " 伤害 " );
+                    }
+                    else if ( DetailLevel == TooltipDetail.Medium )
+                    {
+                        if ( DataType == ShipClassData_ModifiedUnit.TimeBased )
+                            Buffer.Add( " 持续 " );
+                        else
+                            Buffer.Add( " 伤害 " );
+                    }
             }
 
             if ( Data.Multiplier != FInt.One )
@@ -3818,7 +3819,7 @@ namespace Arcen.AIW2.External
                     Buffer.Add( "+" );
                 Buffer.Add( Data.AddedCount );
                 if ( DataType == ShipClassData_ModifiedUnit.TimeBased )
-                    Buffer.Add( "s" );
+                    Buffer.Add( "秒" );
             }
         }
 
@@ -3833,9 +3834,9 @@ namespace Arcen.AIW2.External
                 WriteShipClass_GreaterCategoryStartIfNeeded( Buffer, ShipClass, ref AlreadyWroteGeneralStart, ref AlreadyWroteAbsoluteStart, DetailLevel, GreaterCategory );
                 WriteShipClass_LesserCategoryStartIfNeeded( Buffer, ref AlreadyWroteLesserStart, DetailLevel, GreaterCategory, ShipClassData_LesserCategoryType.Debuff, true );
                 if ( DetailLevel == TooltipDetail.Full )
-                    Buffer.Add( "All Debuffs" );
+                    Buffer.Add( "所有减益" );
                 else
-                    Buffer.Add( "Debuffs" );
+                    Buffer.Add( "减益" );
             } 
             else 
             if(ShipClass.HasAnyDebuffModifiers)
@@ -3843,49 +3844,49 @@ namespace Arcen.AIW2.External
                 data = ShipClass.DebuffModifiers[0];
                 if ( data.ModifierType == GreaterCategory && EntityBaseSpeed > 0 )
                 {
-                    WriteShipClass_ModifierData( Buffer, ShipClass, "Engine Slow", "E Slow", data, ShipClassData_ModifiedUnit.TimeBased, DetailLevel, ref AlreadyWroteLesserStart, ref AlreadyWroteGeneralStart,
+                    WriteShipClass_ModifierData( Buffer, ShipClass, "引擎减速", "引擎减速", data, ShipClassData_ModifiedUnit.TimeBased, DetailLevel, ref AlreadyWroteLesserStart, ref AlreadyWroteGeneralStart,
                         ref AlreadyWroteAbsoluteStart, GreaterCategory, ShipClassData_LesserCategoryType.Debuff, false );
                 }
                 data = ShipClass.DebuffModifiers[1];
                 if ( data.ModifierType == GreaterCategory )
                 {
-                    WriteShipClass_ModifierData( Buffer, ShipClass, "Weapon Slow", "W Slow", data, ShipClassData_ModifiedUnit.TimeBased, DetailLevel, ref AlreadyWroteLesserStart, ref AlreadyWroteGeneralStart,
+                    WriteShipClass_ModifierData( Buffer, ShipClass, "武器减速", "武器减速", data, ShipClassData_ModifiedUnit.TimeBased, DetailLevel, ref AlreadyWroteLesserStart, ref AlreadyWroteGeneralStart,
                         ref AlreadyWroteAbsoluteStart, GreaterCategory, ShipClassData_LesserCategoryType.Debuff, false );
                 }
                 data = ShipClass.DebuffModifiers[2];
                 if ( data.ModifierType == GreaterCategory )
                 {
-                    WriteShipClass_ModifierData( Buffer, ShipClass, "Paralysis", "Stun", data, ShipClassData_ModifiedUnit.TimeBased, DetailLevel, ref AlreadyWroteLesserStart, ref AlreadyWroteGeneralStart,
+                    WriteShipClass_ModifierData( Buffer, ShipClass, "瘫痪", "瘫痪", data, ShipClassData_ModifiedUnit.TimeBased, DetailLevel, ref AlreadyWroteLesserStart, ref AlreadyWroteGeneralStart,
                         ref AlreadyWroteAbsoluteStart, GreaterCategory, ShipClassData_LesserCategoryType.Debuff, false );
                 }
                 data = ShipClass.DebuffModifiers[3];
                 if ( data.ModifierType == GreaterCategory )
                 {
-                    WriteShipClass_ModifierData( Buffer, ShipClass, "Acid", "Acid", data, ShipClassData_ModifiedUnit.TimeBased, DetailLevel, ref AlreadyWroteLesserStart, ref AlreadyWroteGeneralStart,
+                    WriteShipClass_ModifierData( Buffer, ShipClass, "酸蚀", "酸蚀", data, ShipClassData_ModifiedUnit.TimeBased, DetailLevel, ref AlreadyWroteLesserStart, ref AlreadyWroteGeneralStart,
                         ref AlreadyWroteAbsoluteStart, GreaterCategory,ShipClassData_LesserCategoryType.Debuff, false );
                 }
                 data = ShipClass.DebuffModifiers[4];
                 if ( data.ModifierType == GreaterCategory )
                 {
-                    WriteShipClass_ModifierData( Buffer, ShipClass, "Weapon Phasing", "Phase", data, ShipClassData_ModifiedUnit.TimeBased, DetailLevel, ref AlreadyWroteLesserStart, ref AlreadyWroteGeneralStart,
+                    WriteShipClass_ModifierData( Buffer, ShipClass, "武器相位", "相位", data, ShipClassData_ModifiedUnit.TimeBased, DetailLevel, ref AlreadyWroteLesserStart, ref AlreadyWroteGeneralStart,
                         ref AlreadyWroteAbsoluteStart, GreaterCategory,ShipClassData_LesserCategoryType.Debuff, false );
                 }
                 data = ShipClass.DebuffModifiers[5];
                 if ( data.ModifierType == GreaterCategory && EntityBaseSpeed > 0 )
                 {
-                    WriteShipClass_ModifierData( Buffer, ShipClass, "Knockback", "Knock", data, ShipClassData_ModifiedUnit.TimeBased, DetailLevel, ref AlreadyWroteLesserStart, ref AlreadyWroteGeneralStart,
+                    WriteShipClass_ModifierData( Buffer, ShipClass, "击退", "击退", data, ShipClassData_ModifiedUnit.TimeBased, DetailLevel, ref AlreadyWroteLesserStart, ref AlreadyWroteGeneralStart,
                         ref AlreadyWroteAbsoluteStart, GreaterCategory,ShipClassData_LesserCategoryType.Debuff, false );
                 }
                 data = ShipClass.DebuffModifiers[6];
                 if ( data.ModifierType == GreaterCategory )
                 {
-                    WriteShipClass_ModifierData( Buffer, ShipClass, "Tachyon Beams", "Tach", data, ShipClassData_ModifiedUnit.TimeBased, DetailLevel, ref AlreadyWroteLesserStart, ref AlreadyWroteGeneralStart,
+                    WriteShipClass_ModifierData( Buffer, ShipClass, "快子光束", "快子", data, ShipClassData_ModifiedUnit.TimeBased, DetailLevel, ref AlreadyWroteLesserStart, ref AlreadyWroteGeneralStart,
                         ref AlreadyWroteAbsoluteStart, GreaterCategory,ShipClassData_LesserCategoryType.Debuff, false );
                 }
                 data = ShipClass.GraviticCoreModifier;
                 if ( data.ModifierType == GreaterCategory && EntityBaseSpeed > 0 )
                 {
-                    WriteShipClass_ModifierData( Buffer, ShipClass, "Gravitic Cores", "Grav", data, ShipClassData_ModifiedUnit.None, DetailLevel, ref AlreadyWroteLesserStart, ref AlreadyWroteGeneralStart,
+                    WriteShipClass_ModifierData( Buffer, ShipClass, "引力核心", "引力", data, ShipClassData_ModifiedUnit.None, DetailLevel, ref AlreadyWroteLesserStart, ref AlreadyWroteGeneralStart,
                         ref AlreadyWroteAbsoluteStart, GreaterCategory,ShipClassData_LesserCategoryType.Debuff, false );
                 }
             }
@@ -3895,9 +3896,9 @@ namespace Arcen.AIW2.External
                 WriteShipClass_GreaterCategoryStartIfNeeded( Buffer, ShipClass, ref AlreadyWroteGeneralStart, ref AlreadyWroteAbsoluteStart, DetailLevel, GreaterCategory );
                 WriteShipClass_LesserCategoryStartIfNeeded( Buffer, ref AlreadyWroteLesserStart, DetailLevel, GreaterCategory, ShipClassData_LesserCategoryType.DeathEffect, true );
                 if ( DetailLevel == TooltipDetail.Full )
-                    Buffer.Add( "All Death Effects" );
+                    Buffer.Add( "所有死亡效果" );
                 else
-                    Buffer.Add( "Death Effects" );
+                    Buffer.Add( "死亡效果" );
             } 
             /* Since a *lot* of things have zombification immunity being all they use from the ShipClass this is not displayed here but in the main tooltip of the unit
              * Less visual clutter this way
@@ -3941,16 +3942,16 @@ namespace Arcen.AIW2.External
                     WriteShipClass_GreaterCategoryStartIfNeeded( Buffer, ShipClass, ref AlreadyWroteGeneralStart, ref AlreadyWroteAbsoluteStart, DetailLevel, GreaterCategory );
                     WriteShipClass_LesserCategoryStartIfNeeded( Buffer, ref AlreadyWroteLesserStart, DetailLevel, GreaterCategory, ShipClassData_LesserCategoryType.GeneralDamage, true );
                     if ( DetailLevel == TooltipDetail.Full )
-                        Buffer.Add( "Immune to all damage" );
+                        Buffer.Add( "免疫所有伤害" );
                     else
-                        Buffer.Add( "Invulnerable" );
+                        Buffer.Add( "无敌" );
                 }
             } 
             else
             {
                 if ( ShipClass.NonExoticDamageModifier.ModifierType == GreaterCategory )
                 {
-                    WriteShipClass_ModifierData( Buffer, ShipClass, "All Shots", "All", ShipClass.NonExoticDamageModifier, ShipClassData_ModifiedUnit.None, DetailLevel,
+                    WriteShipClass_ModifierData( Buffer, ShipClass, "所有射击", "所有", ShipClass.NonExoticDamageModifier, ShipClassData_ModifiedUnit.None, DetailLevel,
                         ref AlreadyWroteLesserStart, ref AlreadyWroteAbsoluteStart, ref AlreadyWroteGeneralStart, GreaterCategory,ShipClassData_LesserCategoryType.AmmoType, false );
                 }
                 if ( ShipClass.HasAnyAmmoDamageModifiers )
@@ -3970,7 +3971,7 @@ namespace Arcen.AIW2.External
 
                 if ( ShipClass.AllExoticDamageModifier.ModifierType == GreaterCategory )
                 {
-                    WriteShipClass_ModifierData( Buffer, ShipClass, "All Exotic Damage", "Exotic Damage", ShipClass.AllExoticDamageModifier, ShipClassData_ModifiedUnit.None,
+                    WriteShipClass_ModifierData( Buffer, ShipClass, "所有异种伤害", "异种伤害", ShipClass.AllExoticDamageModifier, ShipClassData_ModifiedUnit.None,
                         DetailLevel, ref AlreadyWroteLesserStart, ref AlreadyWroteAbsoluteStart, ref AlreadyWroteGeneralStart, GreaterCategory, ShipClassData_LesserCategoryType.ExoticDamage, true );
                 } 
                 else 
@@ -3979,25 +3980,25 @@ namespace Arcen.AIW2.External
                     data = ShipClass.ExoticDamageModifiers[0];
                     if ( data.ModifierType == GreaterCategory && EntityBaseSpeed > 0 )
                     {
-                        WriteShipClass_ModifierData( Buffer, ShipClass, "Attrition", "Attr", data, ShipClassData_ModifiedUnit.None, DetailLevel,
+                        WriteShipClass_ModifierData( Buffer, ShipClass, "损耗", "损耗", data, ShipClassData_ModifiedUnit.None, DetailLevel,
                             ref AlreadyWroteLesserStart, ref AlreadyWroteAbsoluteStart, ref AlreadyWroteGeneralStart, GreaterCategory,ShipClassData_LesserCategoryType.ExoticDamage, false );
                     }
                     data = ShipClass.ExoticDamageModifiers[1];
                     if ( data.ModifierType == GreaterCategory )
                     {
-                        WriteShipClass_ModifierData( Buffer, ShipClass, "Electrotoxicity", "ETox", data, ShipClassData_ModifiedUnit.None, DetailLevel,
+                        WriteShipClass_ModifierData( Buffer, ShipClass, "电毒", "电毒", data, ShipClassData_ModifiedUnit.None, DetailLevel,
                             ref AlreadyWroteLesserStart, ref AlreadyWroteAbsoluteStart, ref AlreadyWroteGeneralStart, GreaterCategory,ShipClassData_LesserCategoryType.ExoticDamage, false );
                     }
                     data = ShipClass.ExoticDamageModifiers[2];
                     if ( data.ModifierType == GreaterCategory )
                     {
-                        WriteShipClass_ModifierData( Buffer, ShipClass, "Revenge Shots", "Veng", data, ShipClassData_ModifiedUnit.None, DetailLevel,
+                        WriteShipClass_ModifierData( Buffer, ShipClass, "复仇射击", "复仇", data, ShipClassData_ModifiedUnit.None, DetailLevel,
                             ref AlreadyWroteLesserStart, ref AlreadyWroteAbsoluteStart, ref AlreadyWroteGeneralStart, GreaterCategory,ShipClassData_LesserCategoryType.ExoticDamage, false );
                     }
                     data = ShipClass.ExoticDamageModifiers[3];
                     if ( data.ModifierType == GreaterCategory )
                     {
-                        WriteShipClass_ModifierData( Buffer, ShipClass, "Ion Cannon", "Ion", data, ShipClassData_ModifiedUnit.None, DetailLevel,
+                        WriteShipClass_ModifierData( Buffer, ShipClass, "离子炮", "离子", data, ShipClassData_ModifiedUnit.None, DetailLevel,
                             ref AlreadyWroteLesserStart, ref AlreadyWroteAbsoluteStart, ref AlreadyWroteGeneralStart, GreaterCategory,ShipClassData_LesserCategoryType.ExoticDamage, false );
                     }
                 }
@@ -4010,9 +4011,9 @@ namespace Arcen.AIW2.External
                     WriteShipClass_GreaterCategoryStartIfNeeded( Buffer, ShipClass, ref AlreadyWroteGeneralStart, ref AlreadyWroteAbsoluteStart, DetailLevel, GreaterCategory );
                     WriteShipClass_LesserCategoryStartIfNeeded( Buffer, ref AlreadyWroteLesserStart, DetailLevel, GreaterCategory, ShipClassData_LesserCategoryType.SpecialMechanic, true );
                     if ( DetailLevel == TooltipDetail.Full )
-                        Buffer.Add( "Tractor Beams  Black Hole Machines  Getting Devoured  Getting Infested" );
+                        Buffer.Add( "牵引光束  黑洞机器  被吞噬  被感染" );
                     else
-                        Buffer.Add( "All Special Mechanics" );
+                        Buffer.Add( "所有特殊机制" );
                 } else
                 {
                     if ( !(ShipClass.CanBeTractored && ShipClass.CanBeBlackHoleMachineBlocked && ShipClass.CanBeDevoured && ShipClass.CanBeInfested) )
@@ -4023,31 +4024,31 @@ namespace Arcen.AIW2.External
                         if ( !ShipClass.CanBeTractored )
                         {
                             if(DetailLevel == TooltipDetail.Full)
-                                Buffer.Add( "Tractor Beams " );
+                                Buffer.Add( "牵引光束 " );
                             else
-                                Buffer.Add( "Tractors " );
+                                Buffer.Add( "牵引 " );
                             if ( !ShipClass.CanBeBlackHoleMachineBlocked )
                                 Buffer.Add( " " );
                         }
                         if ( !ShipClass.CanBeBlackHoleMachineBlocked )
                         {
                             if ( DetailLevel == TooltipDetail.Full )
-                                Buffer.Add( "Black Hole Machines " );
+                                Buffer.Add( "黑洞机器 " );
                             else
-                                Buffer.Add( "Black Holes " );
+                                Buffer.Add( "黑洞 " );
                             if ( !ShipClass.CanBeDevoured )
                                 Buffer.Add( " " );
                         }
                         if ( !ShipClass.CanBeDevoured )
                             if ( DetailLevel == TooltipDetail.Full )
-                                Buffer.Add( "Getting Devoured " );
+                                Buffer.Add( "被吞噬 " );
                             else
-                                Buffer.Add( "Devouring " );
+                                Buffer.Add( "吞噬 " );
                         if ( !ShipClass.CanBeInfested )
                             if ( DetailLevel == TooltipDetail.Full )
-                                Buffer.Add( "Getting Infested " );
+                                Buffer.Add( "被感染 " );
                             else
-                                Buffer.Add( "Infestation " );
+                                Buffer.Add( "感染 " );
                     }
                 }
             }
@@ -4067,7 +4068,7 @@ namespace Arcen.AIW2.External
             else
                 WriteShipClass_AbsoluteStart( Buffer, ShipClass, DetailLevel, ref AlreadyWroteAbsoluteStart );
             if ( !SkipInitialStart )
-                Buffer.StartColor( ArcenExternalUIUtilities.Limits.Color ).Add( "Buff Limits:" ).EndColor().StartColor( ArcenExternalUIUtilities.LimitsLight.Color ).AddSize_Small();
+                Buffer.StartColor( ArcenExternalUIUtilities.Limits.Color ).Add( "增益限制：" ).EndColor().StartColor( ArcenExternalUIUtilities.LimitsLight.Color ).AddSize_Small();
         }
 
         public void WriteShipClass_BuffLimitEndIfNeeded( ArcenCharacterBufferBase Buffer, bool AlreadyWroteStart )
@@ -4088,7 +4089,7 @@ namespace Arcen.AIW2.External
                 Buffer.Add( " |" );
             }
             if ( !SkipInitialStart )
-                Buffer.StartColor( ArcenExternalUIUtilities.Limits.Color ).Add( " Cannot Supercharge:" ).EndColor().StartColor( ArcenExternalUIUtilities.LimitsLight.Color ).AddSize_Small();
+                Buffer.StartColor( ArcenExternalUIUtilities.Limits.Color ).Add( " 无法超充：" ).EndColor().StartColor( ArcenExternalUIUtilities.LimitsLight.Color ).AddSize_Small();
         }
 
         public void WriteShipClass_BuffLimitOrSuperchargeEndIfNeeded( ArcenCharacterBufferBase Buffer, ref bool AlreadyWroteStart )
@@ -4108,30 +4109,30 @@ namespace Arcen.AIW2.External
             if ( BuffType == ShipClassData_BuffType.Damage )
             {
                 if ( DetailLevel == TooltipDetail.Full )
-                    Buffer.Add( " Damage: " );
+                    Buffer.Add( " 伤害上限：" );
                 else
-                    Buffer.Add( " Dmg " );
+                    Buffer.Add( " 伤害 " );
                 Buffer.AddFIntTruncated( BuffLimit_Current ).Add("倍 ");
             } else if( BuffType == ShipClassData_BuffType.Hull )
             {
                 if ( DetailLevel == TooltipDetail.Full )
-                    Buffer.Add( " Hull: " );
+                    Buffer.Add( " 船体上限：" );
                 else
-                    Buffer.Add( " Hull " );
+                    Buffer.Add( " 船体 " );
                 Buffer.AddFIntTruncated( BuffLimit_Current ).Add( "x " );
             } else if( BuffType == ShipClassData_BuffType.Shield )
             {
                 if ( DetailLevel == TooltipDetail.Full )
-                    Buffer.Add( " Shield: " );
+                    Buffer.Add( " 护盾上限：" );
                 else
-                    Buffer.Add( " Shd " );
+                    Buffer.Add( " 护盾 " );
                 Buffer.AddFIntTruncated( BuffLimit_Current ).Add( "x " );
             } else if( BuffType == ShipClassData_BuffType.Speed )
             {
                 if ( DetailLevel == TooltipDetail.Full )
-                    Buffer.Add( " Speed: " );
+                    Buffer.Add( " 速度上限：" );
                 else
-                    Buffer.Add( " Spd " );
+                    Buffer.Add( " 速度 " );
                 Buffer.AddNumberMoreReadable( ShipClass.GetMaxSpeedForShip( EntityBaseSpeed ) );
             }
             WriteShipClass_BuffLimitEndIfNeeded( Buffer, AlreadyWroteStart );
@@ -4145,7 +4146,7 @@ namespace Arcen.AIW2.External
             if ( !ShipClass.CanBeBuffed )
             {
                 WriteShipClass_BuffLimitStartIfNeeded( Buffer, ref alreadyWroteBuffLimitStart, ref AlreadyWroteAbsoluteStart, ShipClass, DetailLevel, true );
-                Buffer.StartColor( ArcenExternalUIUtilities.Limits.Color ).Add( " Cannot be buffed. " ).EndColor();
+                Buffer.StartColor( ArcenExternalUIUtilities.Limits.Color ).Add( " 无法获得增益。 " ).EndColor();
             } else
             {
                 ShipClassData defaultHull = ShipClassDataTable.Instance.DefaultRow;
@@ -4173,23 +4174,23 @@ namespace Arcen.AIW2.External
                     if ( ShipClass.DamageBuff_MaxMultiplier > 1 && !ShipClass.CanBeSuperchargedByFleet( ShipClassData_BuffType.Damage ) )
                     {
                         WriteShipClass_SuperchargingStartIfNeeded( Buffer, ref alreadyWroteSuperchargeLimitStart, ref alreadyWroteBuffLimitStart, false );
-                        Buffer.Add( " Damage " );
+                        Buffer.Add( " 伤害 " );
                     }
                     if ( ShipClass.HullBuff_MaxMultiplier > 1 && !ShipClass.CanBeSuperchargedByFleet( ShipClassData_BuffType.Hull ) )
                     {
                         WriteShipClass_SuperchargingStartIfNeeded( Buffer, ref alreadyWroteSuperchargeLimitStart, ref alreadyWroteBuffLimitStart, false );
-                        Buffer.Add( " Hull " );
+                        Buffer.Add( " 船体 " );
                     }
                     if ( ShipClass.ShieldBuff_MaxMultiplier > 1 && !ShipClass.CanBeSuperchargedByFleet( ShipClassData_BuffType.Shield ) )
                     {
                         WriteShipClass_SuperchargingStartIfNeeded( Buffer, ref alreadyWroteSuperchargeLimitStart, ref alreadyWroteBuffLimitStart, false );
-                        Buffer.Add( " Shield " );
+                        Buffer.Add( " 护盾 " );
                     }
                     if ( EntityBaseSpeed > 0 && (ShipClass.SpeedBuff_MaxMultiplier > 1 || ShipClass.SpeedBuff_BaseBonus > 0) &&
                         !ShipClass.CanBeSuperchargedByFleet( ShipClassData_BuffType.Speed ) )
                     {
                         WriteShipClass_SuperchargingStartIfNeeded( Buffer, ref alreadyWroteSuperchargeLimitStart, ref alreadyWroteBuffLimitStart, false );
-                        Buffer.Add( " Speed " );
+                        Buffer.Add( " 速度 " );
                     }
                 }
             }
@@ -4310,7 +4311,7 @@ namespace Arcen.AIW2.External
                 bool forceDoesNotMeetCriteria = false;
 
                 debugStage = 400;
-                buffer.Add( "<color=#ff7150>\nYour ships have the following damage multipliers against this unit:</color>\n" );
+                buffer.Add( "<color=#ff7150>\n您的对此单位的伤害倍率如下：</color>\n" );
 
                 bool wroteAny = false;
                 foreach ( KeyValuePair<GameEntityTypeData, ShipDataByMark> pair in weakAgainst_Ships_ThatYouHave )
@@ -4386,7 +4387,7 @@ namespace Arcen.AIW2.External
                 buffer.Add( "\n" );
 
                 debugStage = 3200;
-                buffer.Add( "<color=#ffe450>\nThese ships you could capture have the following damage multipliers against this unit:</color>\n" );
+                buffer.Add( "<color=#ffe450>\n可占领战舰对此单位的伤害倍率如下：</color>\n" );
 
                 wroteAny = false;
 
@@ -4481,7 +4482,7 @@ namespace Arcen.AIW2.External
             FInt comparisonFInt = FInt.Zero;
             bool forceDoesNotMeetCriteria = false;
 
-            buffer.Add( "<color=#50abff>\nHas the following damage multipliers against enemy ships:</color>\n" );
+            buffer.Add( "<color=#50abff>\n对敌方舰船的伤害倍率如下：</color>\n" );
 
             bool wroteAny = false;
             foreach ( KeyValuePair<GameEntityTypeData, ShipDataByMark> pair in strongAgainst_Ships_EnemiesHave )

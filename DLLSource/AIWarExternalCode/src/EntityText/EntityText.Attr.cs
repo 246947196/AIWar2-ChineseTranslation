@@ -718,7 +718,7 @@ namespace Arcen.AIW2.External
                                         c.Add(min);
                                         if (show_range)
                                             c.Add("~").Add(max);
-                                        c.Add("s");
+                                        c.Add("秒");
                                         c.Close(TextStyle.MinutesAndSeconds);
                                     }
                                     else
@@ -732,7 +732,7 @@ namespace Arcen.AIW2.External
                                             c.Add("~").Add(max);
                                         
                                         //c.Open(TextStyle.Fraction_Gray);
-                                        c.AddColor("/sec",Color.gray.GetHexCode());//TextStyle.Fraction_Gray);
+                                        c.AddColor("/秒",Color.gray.GetHexCode());//TextStyle.Fraction_Gray);
                                         //c.Close(TextStyle.Fraction_Gray);
                                     }
                                     
@@ -753,7 +753,7 @@ namespace Arcen.AIW2.External
                     buffer.BeginStatement(Attr_Line);
                     
                     buffer
-                        .Add( "AI-Accelerator", Attr_Label)
+                        .Add( "AI 加速器", Attr_Label)
                         .Add("：本星球的 AI 增援增加 " )
                         .AddMultiplier( Squad.TypeData.AIReinforcementMultiplier, TextStyle.Number );
                     
@@ -813,11 +813,11 @@ namespace Arcen.AIW2.External
                         var forFaction = relatedSquadFactionOrNull?.TryGetAISentinelsCoreData()?.GetAiSubFaction(spawnFor);
                         if (forFaction != null)
                         {
-                            buffer.Add( " for " ).AddFactionNameInItsColor( forFaction );
+                            buffer.Add( " 归属 " ).AddFactionNameInItsColor( forFaction );
                         }
                         else
                         {
-                            buffer.Add( " for " ).Add(Extensions.ToString(spawnFor), TextStyle.Emphasis);
+                            buffer.Add( " 归属 " ).Add(Extensions.ToString(spawnFor), TextStyle.Emphasis);
                         }
                     } 
                     else
@@ -912,9 +912,9 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                     int hopCount = Squad.TypeData.WatchPlanetsAtXHops + (relatedMembershipOrNull == null ? 0 : relatedMembershipOrNull.Hacked_ExtraWatchPlanetsAtXHops);
                     buffer.Add( "侦察", Attr_Label).Add("：监视 " ).Add( hopCount, "ffdf72" );
                     if ( hopCount > 1 )
-                        buffer.Add( " hops." );
+                        buffer.Add( " 跳。" );
                     else
-                        buffer.Add( " hop." );
+                        buffer.Add( " 跳。" );
                     
                     buffer.EndStatement(Attr_Line);
                 }
@@ -1193,7 +1193,7 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                     if ( Config.Detail < TooltipDetail.Full )
                     {
                         buffer
-                            .Add( "Hardened:", Attr_Label)
+                            .Add( "硬化", Attr_Label)
                             .Add("：单次承受伤害不超过 " )
                             .Add( val )
                             .Add( "% 最大船体生命值的伤害。" );
@@ -1201,7 +1201,7 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                     else
                     {
                         buffer
-                            .Add( "Hardened:", Attr_Label)
+                            .Add( "硬化", Attr_Label)
                             .Add("：任何单次来源的伤害（爆炸、射击、损耗等）将降低至 " )
                             .Add( val )
                             .Add( "% 此单位最大船体生命值（若超过该值）。防止巨型火炮、离子炮、质量驱动器等。" );
@@ -1216,7 +1216,7 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                 if ( Squad.TypeData.CreatesCeasefireOnPlanet )
                 {
                     buffer.BeginStatement(Attr_Line);
-                    buffer.Add( "Ceasefire:", Attr_Label).Add(" 阻止本星球上所有单位开火。" );
+                    buffer.Add( "停火", Attr_Label).Add("：阻止本星球上所有单位开火。" );
                     buffer.EndStatement(Attr_Line);
                 }
                 #endregion
@@ -1225,7 +1225,7 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                 if ( Squad.TypeData.BlocksCeasefireOnPlanet )
                 {
                     buffer.BeginStatement(Attr_Line);
-                    buffer.Add( "Ceasefire Blocker", Attr_Label).Add("：如果在本星球上，则无法停火。" );
+                    buffer.Add( "停火阻挡者", Attr_Label).Add("：如果在本星球上，则无法停火。" );
                     buffer.EndStatement(Attr_Line);
                 }
                 #endregion
@@ -1399,7 +1399,7 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                     
                     buffer.BeginStatement(Attr_Line);
                     
-                    string label = is_currently ? "Invincible" : "Vulerable";
+                    string label = is_currently ? "无敌" : "脆弱";
                     buffer.Add(label, TextStyle.Attr_Label).Add(": ");
                 
                     if (!is_currently && !Squad.IsFakeEntity)
@@ -2330,7 +2330,7 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                           Squad.GetFleetFactionType_Safe() == FactionType.NaturalObject))
                     {
                         buffer.BeginStatement(Attr_Line);
-                        buffer.Add( "When controlled by a " ).Add("玩家", TextStyle.PlayerType_Name).Add(" 死亡后留下可重建的残骸。" );
+                        buffer.Add( "由 " ).Add("玩家", TextStyle.PlayerType_Name).Add(" 控制时，死亡后留下可重建的残骸。" );
                         buffer.EndStatement(Attr_Line);
                     }
                     else 
@@ -2702,7 +2702,7 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                     
                     var cost = Squad.TypeData.CitySocketCost;
                     buffer
-                        .Add(" and ")
+                        .Add(" 及 ")
                         .Open(TextStyle.Color_Count).Add( cost ).Add(Text.Multiply).Close(TextStyle.Color_Count)
                         .Add(Squad.SocketName(cost), TextStyle.Brighter);
                         ;

@@ -1000,7 +1000,7 @@ namespace Arcen.AIW2.External
                                     if ( Type.MaxEngineStunSeconds >= ExternalConstants.Instance.EngineStunMultipliersByStunSeconds.Count )
                                         buffer.Add( "." );
                                     else 
-                                        buffer.Add( ", max " ).AddNumberMoreReadable( Type.MaxEngineStunSeconds ).Add( "s." );
+                                        buffer.Add( "，最多 " ).AddNumberMoreReadable( Type.MaxEngineStunSeconds ).Add( " 秒。" );
                                 }
                                 else
                                     buffer.Add( "." );
@@ -1012,7 +1012,7 @@ namespace Arcen.AIW2.External
                                 else
                                     buffer.Add("引擎眩晕",TextStyle.System_Label2).Add("：上述武器的射击眩晕敌方引擎 <color=#ffdf72>" );
                                 buffer.AddNumberMoreReadable( ForMark.EngineStunPerShot );
-                                buffer.Add( "s</color> if the target has an engine power less than <color=#ffdf72>" );
+                                buffer.Add( "s</color> 如果目标引擎功率小于 <color=#ffdf72>" );
                                 buffer.Add( Type.EngineStunToEngine_gxLessThan );
                                 buffer.Add( " gx</color>." );
                                 
@@ -1024,12 +1024,12 @@ namespace Arcen.AIW2.External
                                     else //partially stunned
                                         engineSpeed = ExternalConstants.Instance.EngineStunMultipliersByStunSeconds[Type.MaxEngineStunSeconds];
 
-                                    buffer.Add( " The target can be slowed up to a full " ).AddNumberMoreReadable( Type.MaxEngineStunSeconds )
-                                        .Add( "s, at which point its movement speed will only be  <color=#ffdf72>" ).Add( engineSpeed.ReadableString ).Add( "x</color> normal." );
+                                    buffer.Add( " 目标最多可被减速 " ).AddNumberMoreReadable( Type.MaxEngineStunSeconds )
+                                        .Add( " 秒，届时其移动速度仅 <color=#ffdf72>" ).Add( engineSpeed.ReadableString ).Add( "x</color> 正常。" );
                                 }
                                 else
                                 {
-                                    buffer.Add( " The more stun-seconds accumlated on a target, the slower it goes. 4s = 50% move speed, 7s+ = immobilized." );
+                                    buffer.Add( " 目标累积的眩晕秒数越多，速度越慢。4秒 = 50% 移动速度，7秒以上 = 无法移动。" );
                                 }
                             }
                             
@@ -1055,7 +1055,7 @@ namespace Arcen.AIW2.External
                             {
                                 buffer.Add("麻痹",TextStyle.System_Label2).Add("：上述武器的射击完全瘫痪敌方舰船 <color=#ffdf72>" );
                                 buffer.AddNumberMoreReadable( ForMark.ParalysisSecondsPerShot );
-                                buffer.Add( "s</color> if the target has a mass less than <color=#ffdf72>" );
+                                buffer.Add( "s</color> 如果目标质量小于 <color=#ffdf72>" );
                                 buffer.Add( Type.ParalysisToShipsMass_tXLessThan.ReadableString );
                                 buffer.Add( " tX</color>." );
                             }
@@ -1090,7 +1090,7 @@ namespace Arcen.AIW2.External
 
                             if ( detailLevel >= TooltipDetail.Medium )
                             {
-                                buffer.Add( ": Shots from the above weapon cause enemies that are hit to be moved to a completely random spot in the planet's gravity well." );
+                                buffer.Add( "：上述武器的射击将被命中的敌人传送至星球引力场内一个完全随机的位置。" );
                             }
                             
                             buffer.Close( TextStyle.System_Line2 );
@@ -1193,7 +1193,7 @@ namespace Arcen.AIW2.External
                                         .Add(row.DescriptionPrefix, TextStyle.System_Label2)
                                         .Add( ": " )
                                         .Open(TextStyle.Number).AddNumber( damageAmount ).Close(TextStyle.Number)
-                                        .Add(" ").Add( row.DescriptionDamageName ).Add( " damage." );
+                                        .Add(" ").Add( row.DescriptionDamageName ).Add( " 伤害。" );
                                 
                                 if ( detailLevel > TooltipDetail.Medium )
                                 {
@@ -1246,27 +1246,27 @@ namespace Arcen.AIW2.External
                             {
                                 buffer.Add("武器干扰器",TextStyle.System_Label2).Add("：目标装填时间 +<color=#ffdf72>" );
                                 buffer.AddNumberMoreReadable( ForMark.EnemyWeaponReloadSlowingSecondsPerShot );
-                                buffer.Add( "s</color> if armor < <color=#ffdf72>" );
+                                buffer.Add( "s</color> 如果装甲 < <color=#ffdf72>" );
                                 buffer.Add( Type.EnemyWeaponReloadSlowingSecondsArmor_mmLessThan );
-                                buffer.Add( "mm</color>, max " );
+                                buffer.Add( "mm</color>，最多 " );
                                 if ( Type.MaxEnemyWeaponReloadSlowingSeconds > 0 )
                                     buffer.Add( Type.MaxEnemyWeaponReloadSlowingSeconds );
                                 else
                                     buffer.Add( ExternalConstants.Instance.MaxWeaponAddedReloadSeconds );
-                                buffer.Add( "s." );
+                                buffer.Add( " 秒。" );
                             }
                             else
                             {
                                 buffer.Add("武器干扰器",TextStyle.System_Label2).Add("：上述武器的射击增加被命中敌方的装填时间 <color=#ffdf72>" );
                                 buffer.AddNumberMoreReadable( ForMark.EnemyWeaponReloadSlowingSecondsPerShot );
-                                buffer.Add( "s</color> if the target has an armor thickness of less than <color=#ffdf72>" );
+                                buffer.Add( "s</color> 如果目标装甲厚度小于 <color=#ffdf72>" );
                                 buffer.Add( Type.EnemyWeaponReloadSlowingSecondsArmor_mmLessThan );
-                                buffer.Add( "mm</color>.  The total amount of extra reload time per target that can be applied is " );
+                                buffer.Add( "mm</color>。每目标可被附加的额外装弹时间总量为 " );
                                 if ( Type.MaxEnemyWeaponReloadSlowingSeconds > 0 )
                                     buffer.Add( Type.MaxEnemyWeaponReloadSlowingSeconds );
                                 else
                                     buffer.Add( ExternalConstants.Instance.MaxWeaponAddedReloadSeconds );
-                                buffer.Add( "s." );
+                                buffer.Add( " 秒。" );
                             }
                             
                             buffer.Close( TextStyle.System_Line2 );
@@ -1314,13 +1314,13 @@ namespace Arcen.AIW2.External
                             {
                                 buffer.Add( "护盾汲取", TextStyle.System_Label2 ).Add( "：<color=#72cfff>" );
                                 buffer.Add( Mathf.RoundToInt( ForMark.ShieldDrainPercent.ToFloatNonSim() * 100f ) );
-                                buffer.Add( "%</color> of shield damage restored to attacker's shields." );
+                                buffer.Add( "%</color> 的护盾伤害恢复至攻击者护盾。" );
                             }
                             else
                             {
                                 buffer.Add( "护盾汲取", TextStyle.System_Label2 ).Add( "：每次射击恢复 <color=#72cfff>" );
                                 buffer.Add( Mathf.RoundToInt( ForMark.ShieldDrainPercent.ToFloatNonSim() * 100f ) );
-                                buffer.Add( "%</color> of the shield damage it deals back to this ship's own shields (capped by current shield damage taken)." );
+                                buffer.Add( "%</color> 的护盾伤害恢复至本舰自身护盾（上限为当前已受护盾伤害）。" );
                             }
 
                             buffer.Close( TextStyle.System_Line2 );
@@ -1454,7 +1454,7 @@ namespace Arcen.AIW2.External
                                 buffer.Add("自伤",TextStyle.System_Label2).Add("：自身受到 <color=#ffdf72>" );
 
                             buffer.AddNumberMoreReadable( Type.HealthChangePerDamageDealt );
-                            buffer.Add( " health</color> per damage dealt." );
+                            buffer.Add( " 生命</color> 每造成一点伤害。" );
                             
                             buffer.Close( TextStyle.System_Line2 );
                         }
@@ -1476,7 +1476,7 @@ namespace Arcen.AIW2.External
                                     buffer.Add("分解",TextStyle.System_Label2).Add("：自身受到 <color=#ffdf72>" );
 
                                 buffer.AddPercentFormated( (1 / Type.HealthChangeByMaxHealthDividedByThisPerAttack).ToPercent( 1 ) );
-                                buffer.Add( " health</color> each attack." );
+                                buffer.Add( " 生命</color> 每次攻击。" );
                             }
                             
                             buffer.Close( TextStyle.System_Line2 );
@@ -1495,7 +1495,7 @@ namespace Arcen.AIW2.External
                                 .Add("相位",TextStyle.System_Label2)
                                 .Add("：造成 " )
                                 .Add( Type.StateOfMatterForTargetToBecome.DisplayName, "aaaaaa" )
-                                .Add( " for " )
+                                .Add( " 持续 " )
                                 .StartReloadWrapper( false ).Add( Type.InflictsStateOfMatterOnTargetForSeconds ).Add( "s</color>" );
                             
                             if ( Type.CannotInflictStateOfMatterIfTargetHasAnyShieldsUp )
@@ -1503,13 +1503,13 @@ namespace Arcen.AIW2.External
                                 if ( detailLevel < TooltipDetail.Full )
                                     buffer.Add( " 如果目标 " ).WrapHull( "hull struck", false, false );
                                 else
-                                    buffer.Add( " if the target's " ).WrapHull( "hull is struck", false, false );
+                                    buffer.Add( " 如果目标的 " ).WrapHull( "hull is struck", false, false );
                                 if ( Type.CannotInflictStateOfMatterIfTargetHasEnergyUsageOfAtLeast > 0 )
                                 {
                                     if ( detailLevel < TooltipDetail.Full )
-                                        buffer.Add( " and consumes < " ).WrapEnergyTruncated( Type.CannotInflictStateOfMatterIfTargetHasEnergyUsageOfAtLeast, useIcons, useText );
+                                        buffer.Add( " 且消耗 < " ).WrapEnergyTruncated( Type.CannotInflictStateOfMatterIfTargetHasEnergyUsageOfAtLeast, useIcons, useText );
                                     else
-                                        buffer.Add( " and the target uses less than " ).WrapEnergyMoreReadable( Type.CannotInflictStateOfMatterIfTargetHasEnergyUsageOfAtLeast, useIcons, useText );
+                                        buffer.Add( " 且目标消耗小于 " ).WrapEnergyMoreReadable( Type.CannotInflictStateOfMatterIfTargetHasEnergyUsageOfAtLeast, useIcons, useText );
                                 }
                             } 
                             else 
@@ -1520,7 +1520,7 @@ namespace Arcen.AIW2.External
                                     if ( detailLevel < TooltipDetail.Full )
                                         buffer.Add( " 目标消耗 < " ).WrapEnergyTruncated( Type.CannotInflictStateOfMatterIfTargetHasEnergyUsageOfAtLeast, useIcons, useText );
                                     else
-                                        buffer.Add( " if the target uses less than " ).WrapEnergyMoreReadable( Type.CannotInflictStateOfMatterIfTargetHasEnergyUsageOfAtLeast, useIcons, useText );
+                                        buffer.Add( " 如果目标消耗小于 " ).WrapEnergyMoreReadable( Type.CannotInflictStateOfMatterIfTargetHasEnergyUsageOfAtLeast, useIcons, useText );
                                 }
                             }
                             
@@ -1710,10 +1710,10 @@ namespace Arcen.AIW2.External
                     {
                         buffer.AddModuleTag(System).Add("反隐形",TextStyle.System_Label).Add("：范围 <color=#ffdf72>" );
                         buffer.AddNumberMoreReadable( ForMark.TachyonRange );
-                        buffer.Add( "</color>, strength <color=#ffdf72>" );
+                        buffer.Add( "</color>，强度 <color=#ffdf72>" );
                         //we use simFrameMultiplier to get the actual number per second, rather than the number per frame
                         buffer.AddNumberMoreReadable( Mathf.RoundToInt( ForMark.TachyonPoints * simFrameMultiplier ) );
-                        buffer.Add( "</color>, " );
+                        buffer.Add( "</color>，" );
 
                         WriteMinMaxOrVariant( buffer, "any albedo", "only albedo", true, "ffdf72", Type.TachyonHitsAlbedoMoreThan, Type.TachyonHitsAlbedoLessThan );
                     }
@@ -1893,7 +1893,7 @@ namespace Arcen.AIW2.External
                         .AddModuleTag(System).Add("引力场",Label_Style)
                         .Add("：针对友军的射击被自动偏转。" )
                         .AddNumber( ForMark.AttractRangeForShotsAgainstAllies )
-                        .Add( "</color> are automatically redirected at this unit, instead." );
+                        .Add( "</color> 的射击自动偏转至本单位。" );
                     
                     if ( Type.CareAboutStateOfMatterToBeEnabled )
                         WriteSystemStateOfMatterSuffix( buffer, Type, Squad );
@@ -2061,7 +2061,7 @@ namespace Arcen.AIW2.External
                         buffer
                             .Open(TextStyle.Ion)
                             .Add( Type.IonPercentagePerMarkLevelLower * FInt.OneHundred )
-                            .Add( "% Ion Damage" ).Close(TextStyle.Ion);
+                            .Add( "% 离子伤害" ).Close(TextStyle.Ion);
                         
                         buffer.Add(" | ",TextStyle.Color_Gray).Add("如果 ", TextStyle.JustBold);
                         buffer.AddNumberRange(Type.IonAlbedoRange, TextTerm.Albedo, TermUse.Icon);
