@@ -104,4 +104,18 @@ public class WorldTMPFontPatchPlugin : BaseUnityPlugin
 
         __instance.font = cachedFont;
     }
+
+    [HarmonyPostfix]
+    [HarmonyPatch(typeof(TextMeshProUGUI), "InternalUpdate")]
+    private static void OnTextMeshProUGUIInternalUpdate(TextMeshProUGUI __instance)
+    {
+        if (!fontInitialized)
+            return;
+        if (cachedFont == null)
+            return;
+        if (__instance.font == cachedFont)
+            return;
+
+        __instance.font = cachedFont;
+    }
 }
