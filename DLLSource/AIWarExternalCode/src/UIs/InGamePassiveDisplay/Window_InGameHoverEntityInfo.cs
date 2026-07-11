@@ -7330,7 +7330,7 @@ namespace Arcen.AIW2.External
                             {
                                 buffer.Add( "<color=#f25e1c>聚变反应</color>: <color=#ffdf72>" );
                                 buffer.Add( Mathf.RoundToInt( systemStats.PercentDamageBypassesPersonalShields.ToFloatNonSim() * 100f ) );
-                                buffer.Add( "%</color> direct to target hull.  " );
+                                buffer.Add( "%</color> 直接作用于目标船体。  " );
                             }
                             else if ( !systemData.FiresThroughEnemyShields )
                             {
