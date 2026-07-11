@@ -2,7 +2,7 @@
 <root>
   <display_mode name="Normal" sort_order="1"
            is_default="true"
-           display_name="&lt;color=#ffb22c&gt;Normal&lt;/color&gt;"
+           display_name="&lt;color=#ffb22c&gt;普通&lt;/color&gt;"
            dll_name="AIWarExternalVisualizationCode"
            type_name="Arcen.AIW2.ExternalVisualization.GalaxyMapDisplayMode_Normal"
            tooltip="忽略您在左侧下拉菜单中选择的阵营。显示每个星球右侧您的实力，以及左侧敌人的实力。星球下方显示的单位图标是高优先级单位的通用组合。"
@@ -14,7 +14,7 @@
            tooltip="以灰色显示所选阵营在该星球上的金属产量，以红色显示该阵营可用但未使用的金属量。星球下方显示的单位图标每种金属发生器各一个。"
   />
   <display_mode name="FuelAvailability"
-           display_name="&lt;color=#ff983d&gt;Fuel Availability&lt;/color&gt;"
+           display_name="&lt;color=#ff983d&gt;燃料可用性&lt;/color&gt;"
            dll_name="AIWarExternalVisualizationCode"
            type_name="Arcen.AIW2.ExternalVisualization.GalaxyMapDisplayMode_FuelAvailability"
            tooltip="显示每个星球上每种燃料的可用量。星球下方显示的单位图标每种燃料发生器各一个。"
@@ -39,14 +39,14 @@
   />
 
   <display_mode name="DeepstrikeDanger"
-           display_name="&lt;color=#ff5aea&gt;Deepstrike Danger&lt;/color&gt;"
+           display_name="&lt;color=#ff5aea&gt;深度打击危险&lt;/color&gt;"
            dll_name="AIWarExternalVisualizationCode"
            type_name="Arcen.AIW2.ExternalVisualization.GalaxyMapDisplayMode_DeepstrikeDanger"
            tooltip="显示如果您将自己的舰船带到哪些星球并卸载，将会触发深度打击。星球工具提示会提供有关此含义的建议。显示的图标与正常视图相同。"
   />
 
   <display_mode name="AsteroidCounts"
-           display_name="&lt;color=#ffd674&gt;Asteroid Counts&lt;/color&gt;"
+           display_name="&lt;color=#ffd674&gt;小行星数量&lt;/color&gt;"
            dll_name="AIWarExternalVisualizationCode"
            type_name="Arcen.AIW2.ExternalVisualization.GalaxyMapDisplayMode_AsteroidCounts"
            tooltip="显示哪些星球在小行星采矿发电厂数量方面更有价值。您会强烈考虑在数量较多的星球上使用以经济为重点的指挥站。六被认为是一个星球上小行星数量的平均基线计数。显示的图标与正常视图相同。"
