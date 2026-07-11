@@ -949,7 +949,7 @@ namespace Arcen.AIW2.External
                     return;
                 tooltipBuffer.Add( Window_InGameSidebarScience.ScienceTooltipText );
 
-                tooltipBuffer.Add( "\n\n" ).Add( "Current Science: <color=#7CE9FF>" ).AddNumberMoreReadable( localFaction.StoredScience.IntValue ).Add("</color>");
+                tooltipBuffer.Add( "\n\n" ).Add( "当前科技：<color=#7CE9FF>" ).AddNumberMoreReadable( localFaction.StoredScience.IntValue ).Add("</color>");
                 bool printedHeader = false;
                 int totalScienceAvailable = 0;
                 for ( int i = 0; i < World_AIW2.Instance.AllPlayerFactions.Count; i++ )
