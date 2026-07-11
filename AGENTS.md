@@ -154,8 +154,26 @@ DLLSource/WorldTMPFontPatch/
 
 | 组件类型 | 用途 | 处理插件 |
 |---------|------|---------|
-| `TextMeshProUGUI` | 画布 UI 文字（菜单、面板、提示框） | I18NFont4UnityGame |
+| `TextMeshProUGUI` | 画布 UI 文字（菜单、面板、提示框） | I18NFont4UnityGame + WorldTMPFontPatch（后备） |
 | `TextMeshPro` | 世界空间 3D 文字（星球名、实体标签） | WorldTMPFontPatch |
+
+### 已知问题：聊天/消息日志中文方框
+
+**2026-07-11 记录**。聊天日志（ChatLog）的中文字符显示为 `_` / `__`，而非正确的中文。
+
+**根因**：游戏使用了高度修改的 TextMeshPro（位于 `AIW2ModdingAndGUI/Assets/com.unity.textmeshpro@2.0.1/`），其 `FontEngine` 在运行时无法加载字体数据，导致 `TMP_FontAsset.CreateFontAsset()` 创建的字形图集为空。
+
+尝试过的方案均无效：
+
+| 方案 | 结果 |
+|------|------|
+| I18NFont4UnityGame 自带 `mi_sans` bundle | TMP_FontAsset 图集为空（0 字形） |
+| `TMP_FontAsset.CreateFontAsset(Font)` | 运行时 `FontEngine.LoadFontFace()` 失败 |
+| 系统字体 `Microsoft YaHei` 等 | 同上，FontEngine 无法加载 |
+| 标准 Unity TMP 生成的 AssetBundle | 格式与游戏修改版 TMP 不兼容，渲染全空白 |
+| UnityPy 注入标准字体图集到 bundle | 8192x8192 图集格式不兼容，渲染全空白 |
+
+**唯一可行方案**：用游戏的修改版 TMP（`AIW2ModdingAndGUI` Unity 项目）在 Unity Editor 中生成 TMP_FontAsset。需要将 `tools/mi_sans.ttf` 导入该项目，使用 TMP Font Asset Creator 生成（Dynamic，4096x4096），然后打成 AssetBundle 替换 `BepInEx/plugins/I18NFont4UnityGame/mi_sans`。
 
 ### 部署
 
