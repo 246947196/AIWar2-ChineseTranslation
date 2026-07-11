@@ -900,10 +900,31 @@ GameData/QuickStarts2/
 
 **DLL 验证结果**（Steam 恢复原始 DLL 后重新 patch）：
 
-| DLL | 翻译数 | 已写入 | 丢失 |
-|-----|--------|--------|------|
-| ArcenAIW2Core | 775 | 774 | 0 |
-| ArcenAIW2Visualization | 12 | 12 | 0 |
-| ArcenUniversal | 156 | 156 | 0 |
+| DLL | 翻译数 | 已写入 | pending | 丢失 |
+|-----|--------|--------|---------|------|
+| ArcenAIW2Core | 776 | 775 | 1 | 0 |
+| ArcenAIW2Visualization | 12 | 12 | 0 | 0 |
+| ArcenUniversal | 156 | 156 | 0 | 0 |
 
 **工作流更新**：patch 前必须从 `AIWar2_Data\Managed\` 复制原始 DLL（禁止在已 patch 的 DLL 上重复运行 `ilpatch patch`，否则英文 dict key 匹配不到已被替换的中文 ldstr）。
+
+### 9.19 科技面板 + 金属面板残余翻译 + 验证脚本最终修复（2026-07-11）
+
+**补译内容**：
+
+| 条目 | 位置 | 修改 |
+|------|------|------|
+| ` earned ` | `ArcenAIW2Core.part1.json` → IL patch | `" 获得了 "` |
+| `Current Science:` | `Window_ResourceBar.cs:952` → 源码编译 | `"当前科技："` |
+| `Weapon:/Hull:/Civilian:/Command:/Defense:` | `CMP_Techs.xml` → XML 替换 | `武器：/船体：/民用：/指挥：/防御：` |
+| `"Mark "` (x4) | `Window_InGameSidebarScience.cs` → 源码编译 | `"等级 "` |
+
+**`ilpatch` 新增 `dump-ldstr` 模式**：
+- 直接从 #US 堆读取全部唯一 ldstr，用 `JsonSerializer` 输出为 JSON 数组
+- 不经过 `LooksTranslatable` 过滤，不使用 `Console.WriteLine`（避免多行字符串碎片和系统编码问题）
+- 用法：`ilpatch dump-ldstr <dll> <out.json>`
+
+**`verify_patch.py` 重写**：
+- 使用 `dump-ldstr` 获取纯净 ldstr 集合
+- 对每条翻译检查：key 在集合中 → pending，value 在集合中 → applied
+- 0 盲区：无 Console.WriteLine 碎片、无编码假阳性、无子串误判、无 `LooksTranslatable` 过滤

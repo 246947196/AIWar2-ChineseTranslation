@@ -198,7 +198,9 @@ Patch 后运行：
 python tools/ilpatch/verify_patch.py PatchedAssemblies\ArcenAIW2Core.dll tools\ilpatch\ArcenAIW2Core.merged.json
 ```
 
-验证原理：`ilpatch dump-ldstr <dll> <out.json>` 直读 #US 堆全部 ldstr 为 JSON 数组（无 Console.WriteLine 碎片、无系统编码干扰、无 `LooksTranslatable` 过滤），验证脚本加载后逐一检查 key/value 是否存在，0 盲区。
+验证原理：`ilpatch dump-ldstr <dll> <out.json>` 直读 #US 堆全部 ldstr 为 JSON 数组。`verify_patch.py` 加载后逐一检查 key/value 是否存在，0 盲区。
+
+修改源码编译的 DLL 后必须运行 `build.ps1` 重新编译，`deploy` 部署（或手动复制 DLLBin/*.dll 到 GameData/ModdableLogicDLLs/）。修改 XML 后必须重新 `deploy` 或手动复制到对应目录。
 
 patch 前必须从 `AIWar2_Data\Managed\` 复制原始 DLL（禁止在已 patch 的 DLL 上重复运行 `ilpatch patch`）。
 
