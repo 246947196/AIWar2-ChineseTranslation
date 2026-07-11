@@ -542,7 +542,7 @@ namespace Arcen.AIW2.External
                             if ( showExtraUpgradables )
                             {
                                 ArcenDoubleCharacterBuffer buffer = SubTexts[1].Text.StartWritingToBuffer();
-                                buffer.Add( markByOrdinal.ColorHexStart ).Add( "Mark " ).Add( this.UpgradesSoFar
+                                buffer.Add( markByOrdinal.ColorHexStart ).Add( "等级 " ).Add( this.UpgradesSoFar
                                     ).Add( "/" ).Add( upgradeCosts.Count ).Add( "</color>" ).Add( "\t"
                                     ).Add( FontSizes.MUCH_SMALLER_SIZE_PLUS_A_TAD_STRING );
                                 buffer.Add( "<pos=65%><color=#" )
@@ -559,7 +559,7 @@ namespace Arcen.AIW2.External
                                 buffer.Add("</color></pos></size>");
                             }
                             else
-                                SubTexts[1].Text.StartWritingToBuffer().Add( markByOrdinal.ColorHexStart ).Add( "Mark " ).Add(
+                                SubTexts[1].Text.StartWritingToBuffer().Add( markByOrdinal.ColorHexStart ).Add( "等级 " ).Add(
                                   this.UpgradesSoFar ).Add( "/" ).Add( upgradeCosts.Count ).Add("</color>");
                             debugStage = 22;
                             SubTexts[1].Text.FinishWritingToBuffer();
@@ -674,7 +674,7 @@ namespace Arcen.AIW2.External
                             if ( showExtraUpgradables )
                             {
                                 ArcenDoubleCharacterBuffer buffer = SubTexts[1].Text.StartWritingToBuffer();
-                                buffer.Add( markByOrdinal.ColorHexStart ).Add( "Mark " ).Add( this.UpgradesSoFar
+                                buffer.Add( markByOrdinal.ColorHexStart ).Add( "等级 " ).Add( this.UpgradesSoFar
                                     ).Add( "/6</color>" ).Add( "\t"
                                     ).Add( FontSizes.MUCH_SMALLER_SIZE_PLUS_A_TAD_STRING );
                                 buffer.Add( "<pos=65%><color=#" )
@@ -691,7 +691,7 @@ namespace Arcen.AIW2.External
                                 buffer.Add( "</color></pos></size>" );
                             }
                             else
-                                SubTexts[1].Text.StartWritingToBuffer().Add( markByOrdinal.ColorHexStart ).Add( "Mark " ).Add(
+                                SubTexts[1].Text.StartWritingToBuffer().Add( markByOrdinal.ColorHexStart ).Add( "等级 " ).Add(
                                   this.UpgradesSoFar ).Add( "/6</color>" );
                             debugStage = 22;
                             SubTexts[1].Text.FinishWritingToBuffer();
