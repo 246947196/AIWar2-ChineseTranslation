@@ -175,7 +175,7 @@ namespace Arcen.AIW2.External
                 if ( entryToUse.IsForTheTipsTab )
                 {
                     if ( GameSettings.Current.GetBoolBySetting( "CenterScreenBannerForTips", true ) )
-                        CenterScreenPopupData.CreateAndLogNewOrExtendExistingAndReplaceText( "<color=#ffba36>New Gameplay Tip Available:</color> " + entryToUse.SidebarText, entryToUse.InternalName, 3f );
+                        CenterScreenPopupData.CreateAndLogNewOrExtendExistingAndReplaceText( "<color=#ffba36>新游戏提示可用：</color> " + entryToUse.SidebarText, entryToUse.InternalName, 3f );
                 }
 
                 bool isfirsttime = entryToUse.GetIsAlreadyLoggedInCurrentCampaign();
@@ -206,9 +206,9 @@ namespace Arcen.AIW2.External
                             if ( handler != null )
                                 handler.String = entryWithData.UniqueID;
                             
-                            string prefix = "<color=#3BF6D7>New Journal Entry:</color> ";
+                            string prefix = "<color=#3BF6D7>新日志条目：</color> ";
                             if ( entryToUse.IsForTheTipsTab )
-                                prefix = "<color=#ffba36>New Tip:</color> ";
+                                prefix = "<color=#ffba36>新提示：</color> ";
                             
                             World_AIW2.Instance.QueueChatMessageOrCommand( prefix + finalChatText, ChatType.LogToCentralChat, handler );
                         }

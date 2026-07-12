@@ -963,3 +963,13 @@ GameData/QuickStarts2/
 - 使用 `dump-ldstr` 获取纯净 ldstr 集合
 - 对每条翻译检查：key 在集合中 → pending，value 在集合中 → applied
 - 0 盲区：无 Console.WriteLine 碎片、无编码假阳性、无子串误判、无 `LooksTranslatable` 过滤
+
+### 9.20 日志前缀补译（2026-07-12）
+
+`ChatAndJournalGameCommands.cs` 中 3 处日志/提示前缀补译：
+
+| 位置 | 原文 | 译文 |
+|------|------|------|
+| L178 | `New Gameplay Tip Available:` | `新游戏提示可用：` |
+| L209 | `New Journal Entry:` | `新日志条目：` |
+| L211 | `New Tip:` | `新提示：` |
