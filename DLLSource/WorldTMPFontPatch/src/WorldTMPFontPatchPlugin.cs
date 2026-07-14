@@ -15,6 +15,7 @@ namespace WorldTMPFontPatch;
 public class WorldTMPFontPatchPlugin : BaseUnityPlugin
 {
     private static Font cachedLegacyFont;
+    private static TMP_FontAsset cachedTMPFont;
     private static bool fontInitialized;
 
     private static readonly object captureLock = new object();
@@ -45,13 +46,15 @@ public class WorldTMPFontPatchPlugin : BaseUnityPlugin
         fontInitialized = true;
         try
         {
+            // Legacy font for overlay
             try
             {
                 Font sysFont = Font.CreateDynamicFontFromOSFont("Microsoft YaHei", 14);
-                if (sysFont != null) { cachedLegacyFont = sysFont; Log("Font: Microsoft YaHei"); return; }
+                if (sysFont != null) { cachedLegacyFont = sysFont; Log("Font: Microsoft YaHei"); }
             }
             catch { }
 
+            // TMP font for world-space / canvas text (loading screen, map, planet names)
             string fontName = "mi_sans";
             string configPath = Path.Combine(Paths.ConfigPath, "xiaoye97.I18NFont4UnityGame.cfg");
             if (File.Exists(configPath))
@@ -69,13 +72,26 @@ public class WorldTMPFontPatchPlugin : BaseUnityPlugin
             }
 
             string fontPath = Path.Combine(Paths.PluginPath, "I18NFont4UnityGame", fontName);
-            if (!File.Exists(fontPath)) { Debug.LogWarning($"[WorldTMPFontPatch] Font not found: {fontPath}"); return; }
+            if (!File.Exists(fontPath))
+            {
+                Debug.LogWarning($"[WorldTMPFontPatch] Font bundle not found: {fontPath}");
+                return;
+            }
 
             AssetBundle bundle = AssetBundle.LoadFromFile(fontPath);
             if (bundle == null) return;
-            Font bundleFont = bundle.LoadAsset<Font>(fontName);
+
+            if (cachedLegacyFont == null)
+            {
+                Font bundleFont = bundle.LoadAsset<Font>(fontName);
+                if (bundleFont != null) cachedLegacyFont = bundleFont;
+            }
+
+            cachedTMPFont = bundle.LoadAsset<TMP_FontAsset>($"{fontName} SDF");
+            if (cachedTMPFont != null) Log($"TMP Font: {fontName} SDF loaded");
+            else Debug.LogWarning($"[WorldTMPFontPatch] TMP_FontAsset '{fontName} SDF' not found in bundle");
+
             bundle.Unload(false);
-            cachedLegacyFont = bundleFont;
         }
         catch (Exception ex) { Debug.LogError($"[WorldTMPFontPatch] Font error: {ex.Message}"); }
     }
@@ -145,17 +161,41 @@ public class WorldTMPFontPatchPlugin : BaseUnityPlugin
         __instance.font = cachedLegacyFont;
     }
 
-    // ========== ChatLog overlay (child of TMP, auto-scrolls, Viewport clips) ==========
+    // ========== TMP font replacement (world-space: planet names, loading screen) ==========
+    [HarmonyPostfix]
+    [HarmonyPatch(typeof(TextMeshPro), "OnEnable")]
+    private static void OnTextMeshProEnable(TextMeshPro __instance)
+    {
+        if (cachedTMPFont == null) return;
+        if (__instance.font == cachedTMPFont) return;
+        __instance.font = cachedTMPFont;
+        __instance.UpdateFontAsset();
+    }
+
+    // ========== TMP font fallback (canvas UI, catches I18NFont4UnityGame timing gap) ==========
+    [HarmonyPostfix]
+    [HarmonyPatch(typeof(TextMeshProUGUI), "InternalUpdate")]
+    private static void OnTextMeshProUGUIInternalUpdate(TextMeshProUGUI __instance)
+    {
+        if (cachedTMPFont == null) return;
+        if (__instance.font == cachedTMPFont) return;
+        if (__instance.name == "ChatLog") return;
+        __instance.font = cachedTMPFont;
+        __instance.UpdateFontAsset();
+    }
+
+    // ========== ChatLog overlay (child of TMP, pixelation accepted) ==========
     [HarmonyPostfix]
     [HarmonyPatch(typeof(TextMeshProUGUI), "OnEnable")]
     private static void OnChatLogOverlay(TextMeshProUGUI __instance)
     {
         if (cachedLegacyFont == null) return;
         if (__instance.name != "ChatLog") return;
+
         Transform existing = __instance.transform.Find("TMP_LegacyOverlay");
         if (existing != null) { Log("OVERLAY: already exists"); return; }
 
-        // Leave TMP visible for debugging comparison
+        __instance.color = new Color(0, 0, 0, 0);
 
         int fontSize = Math.Max(11, (int)(__instance.fontSize * 0.65f));
 
@@ -176,17 +216,12 @@ public class WorldTMPFontPatchPlugin : BaseUnityPlugin
         t.horizontalOverflow = HorizontalWrapMode.Overflow;
         t.raycastTarget = false;
 
-        // Fill TMP rect with left padding
         var rt = t.rectTransform;
         rt.anchorMin = Vector2.zero;
         rt.anchorMax = Vector2.one;
-        int leftPad = 0;
-        rt.offsetMin = new Vector2(leftPad, 0);
+        rt.offsetMin = Vector2.zero;
         rt.offsetMax = Vector2.zero;
-
-        t.text = "[覆盖层]";
-        Log($"OVERLAY: created as child, fontSize={fontSize}, leftPad={leftPad}");
-
+        Log($"OVERLAY: created as child, fontSize={fontSize}");
     }
 
     // ========== Message type classification ==========
@@ -208,10 +243,8 @@ public class WorldTMPFontPatchPlugin : BaseUnityPlugin
         if (cachedLegacyFont == null) return;
         if (__instance.name != "ChatLog") return;
 
-        // Find overlay as child of TMP
         Transform overlay = __instance.transform.Find("TMP_LegacyOverlay");
         UnityEngine.UI.Text legacy = overlay?.GetComponent<UnityEngine.UI.Text>();
-
         if (legacy == null)
         {
             Log($"RENDER#{renderCounter}: NO OVERLAY");
@@ -246,14 +279,14 @@ public class WorldTMPFontPatchPlugin : BaseUnityPlugin
             Log($"RENDER#{renderCounter}: FINAL_LEGACY_TEXT_BEGIN>>>>");
             Log(finalText);
             Log($"RENDER#{renderCounter}: FINAL_LEGACY_TEXT_END<<<<");
-            legacy.text = "[OVERLAY]" + finalText;
+            legacy.text = finalText;
         }
         else
         {
             Log($"RENDER#{renderCounter}: CLEAN (no underscores) len={text.Length}");
             string finalText = StripRichTextRegex.Replace(text, "");
             Log($"RENDER#{renderCounter}: CLEAN_FINAL_TEXT=\"{Truncate(finalText, 200)}\"");
-            legacy.text = "[OVERLAY]" + finalText;
+            legacy.text = finalText;
         }
     }
 
