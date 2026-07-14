@@ -237,6 +237,16 @@ DLLSource/WorldTMPFontPatch/
 
 **实测效果**：所有消息类型（JOURNAL/TIP/PLAYER_CHAT/WARDEN）均能正确恢复中文。内容匹配幂等，滚动条正常，鼠标不拦截。
 
+#### 已知限制：聊天链接点击区域偏移
+
+ChatLog 条目中包含 `<link=N>` 标签用于可点击交互（如点击跳转日志条目）。overlay Legacy Text 不支持链接点击，所以点击事件由隐藏的 TMP 处理。但由于 overlay 中文文本（全角宽）和 TMP 文本（`_`，半角窄）的字符宽度不同，`<link>` 的 hitbox 位置按 TMP 的 `_` 宽度计算，与用户看到的中文位置存在偏移。用户需要点击中文稍左侧的位置才能触发链接。
+
+**尝试过的方案**：
+- overlay `raycastTarget=true` + 自实现链接点击 → Legacy Text 无原生支持，需完整的事件路由，复杂度高
+- 源码修改 `GetTextToShowFromVolatile` 把正确中文传给 TMP（期望 TMP 缺字 fallback `□` 是全角，宽度匹配）→ TMP 对缺失字形实际显示 `_`（半角）而非 `□`，宽度不匹配问题未解决
+
+**结论**：点击偏移属于可接受范围（聊天框链接点击不频繁），不做进一步修复。
+
 #### 尝试过但失败的全部方案
 
 | 方案 | 失败原因 |
