@@ -237,6 +237,19 @@ DLLSource/WorldTMPFontPatch/
 
 **实测效果**：所有消息类型（JOURNAL/TIP/PLAYER_CHAT/WARDEN）均能正确恢复中文。内容匹配幂等，滚动条正常，鼠标不拦截。
 
+#### 已知限制：Overlay 文字像素化
+
+Legacy Text（位图渲染）放在有 CanvasScaler 的 Canvas 下时，Canvas 缩放会拉伸位图导致文字模糊/像素化。TMP（SDF 渲染）无此问题，但修改版 TMP 无法渲染中文。
+
+**尝试过的方案**：
+- 字号乘 0.65/0.8/1.0 均无效（像素化与字号大小无关）
+- `Font.CreateDynamicFontFromOSFont` vs `new Font(path)` TTF 直接加载 → `new Font()` 在某些 Unity 版本不可用，导致崩溃
+- 独立 Canvas 无 CanvasScaler（ScreenSpaceOverlay, sortingOrder+10）→ 渲染于屏幕原生分辨率，理论上文字最清晰，但多次实现均出现异常（不显示文字、Canvas 定位失效等问题）
+
+**结论**：像素化属于 Legacy Text + CanvasScaler 的固有限制，目前不可彻底解决。TMP 可渲染中文前只能接受此折衷。
+
+**可行方向（如果将来要修）**：用 `Graphics.DrawMesh` 或 `CommandBuffer` 绕过 Canvas 系统直接渲染文字到屏幕，但复杂度极高。
+
 #### 已知限制：聊天链接点击区域偏移
 
 ChatLog 条目中包含 `<link=N>` 标签用于可点击交互（如点击跳转日志条目）。overlay Legacy Text 不支持链接点击，所以点击事件由隐藏的 TMP 处理。但由于 overlay 中文文本（全角宽）和 TMP 文本（`_`，半角窄）的字符宽度不同，`<link>` 的 hitbox 位置按 TMP 的 `_` 宽度计算，与用户看到的中文位置存在偏移。用户需要点击中文稍左侧的位置才能触发链接。
