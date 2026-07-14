@@ -10,5 +10,6 @@
   "\nYou are currently a spectator and have not highlighted a faction on the factions tab, so clicking planets does nothing.": "\n你当前是观察者模式，未在阵营面板高亮任何阵营，点击星球无效。",
   "Nomad planet '{0}' has moved.": "流浪行星 '{0}' 已移动。",
   "Achievement Unlocked: ": "成就已解锁：",
-  "Placement Mode Gimbal": "放置模式万向节"
+  "Placement Mode Gimbal": "放置模式万向节",
+  " wormholes ": " 个虫洞 "
 }
