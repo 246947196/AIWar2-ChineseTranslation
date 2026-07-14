@@ -69,6 +69,15 @@
       <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.UI.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>..\..\..\ReliableDLLStorage\UnityEngine.UIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ArcenUniversal">
+      <HintPath>..\..\..\AIWar2_Data\Managed\ArcenUniversal.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+
 
   </ItemGroup>
   <ItemGroup>

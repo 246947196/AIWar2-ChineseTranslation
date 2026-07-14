@@ -157,23 +157,123 @@ DLLSource/WorldTMPFontPatch/
 | `TextMeshProUGUI` | 画布 UI 文字（菜单、面板、提示框） | I18NFont4UnityGame + WorldTMPFontPatch（后备） |
 | `TextMeshPro` | 世界空间 3D 文字（星球名、实体标签） | WorldTMPFontPatch |
 
-### 已知问题：聊天/消息日志中文方框
+### 已知问题：聊天/消息日志中文方框（无法修复）
 
-**2026-07-11 记录**。聊天日志（ChatLog）的中文字符显示为 `_` / `__`，而非正确的中文。
+**2026-07-13 记录**。聊天日志（ChatLog）的中文字符显示为 `_` / `__`，而非正确的中文。其他 UI 中文显示为 `□`（方框）。
 
-**根因**：游戏使用了高度修改的 TextMeshPro（位于 `AIW2ModdingAndGUI/Assets/com.unity.textmeshpro@2.0.1/`），其 `FontEngine` 在运行时无法加载字体数据，导致 `TMP_FontAsset.CreateFontAsset()` 创建的字形图集为空。
+**根因**：游戏使用了高度修改的 TextMeshPro，其 `FontEngine` 在运行时无法加载字体数据，且标准 SDF 图集格式与修改版 TMP 渲染管线不兼容。
 
-尝试过的方案均无效：
+**修改版 TMP 现状**：
+- 原位于 `AIW2ModdingAndGUI/Assets/com.unity.textmeshpro@2.0.1/` 的修改版 TMP 源码**已丢失**（目录为空）
+- `AIWar2_Data/Managed/Unity.TextMeshPro.dll` 比标准版小 16KB（372KB vs 389KB），`ReliableDLLStorage/` 有备份 DLL 但无源码
+- 修改内容涉及自定义精灵支持和富文本标签变更（见 `ReliableDLLStorage/Unity.TextMeshPro Info.txt`）
+
+**2026-07-13 尝试的方案**（使用 `AIW2ModdingAndGUI` 项目生成）：
+
+| 方案 | 结果 |
+|------|------|
+| 嵌入游戏修改版 `Unity.TextMeshPro.dll` 生成 SDFAA Dynamic 字体 | 渲染全空白 |
+| MSDFA（多通道 SDF，20,997 字形）| 渲染全空白 |
+| RASTER 位图模式（非 SDF）| 渲染全空白 |
+| RASTER + `Unlit/Texture` 着色器（绕过 TMP shader）| 渲染全空白 |
+| BepInEx 插件：用 GDI+（System.Drawing）从 mi_sans.ttf 直接渲染字形，创建 TMP_FontAsset 绕过 FontEngine | 无效 |
+| 标准 Unity TMP 生成的 AssetBundle | 格式与游戏修改版 TMP 不兼容，渲染全空白 |
+| UnityPy 注入标准字体图集到 bundle | 8192x8192 图集格式不兼容，渲染全空白 |
+
+之前尝试过的方案：
 
 | 方案 | 结果 |
 |------|------|
 | I18NFont4UnityGame 自带 `mi_sans` bundle | TMP_FontAsset 图集为空（0 字形） |
 | `TMP_FontAsset.CreateFontAsset(Font)` | 运行时 `FontEngine.LoadFontFace()` 失败 |
 | 系统字体 `Microsoft YaHei` 等 | 同上，FontEngine 无法加载 |
-| 标准 Unity TMP 生成的 AssetBundle | 格式与游戏修改版 TMP 不兼容，渲染全空白 |
-| UnityPy 注入标准字体图集到 bundle | 8192x8192 图集格式不兼容，渲染全空白 |
 
-**唯一可行方案**：用游戏的修改版 TMP（`AIW2ModdingAndGUI` Unity 项目）在 Unity Editor 中生成 TMP_FontAsset。需要将 `tools/mi_sans.ttf` 导入该项目，使用 TMP Font Asset Creator 生成（Dynamic，4096x4096），然后打成 AssetBundle 替换 `BepInEx/plugins/I18NFont4UnityGame/mi_sans`。
+**结论**：无源码无法修复 TMP 渲染层。但**聊天消息内容损坏**（中文变 `_`）的问题根源不在 TMP 渲染，而在**反序列化层**。
+
+---
+
+### 聊天中文 `_` 问题（序列化损坏，最终方案 v3）
+
+**2026-07-14 最终结论**。聊天窗口（ChatLog）中文显示为 `_` 的完整链路已定位并解决。
+
+#### 根因链路
+
+```
+输入框中文 → AddString_Condensed(WRITE, 我们的 CharMapping 补丁让中文通过 ✅)
+  → ReadString_Condensed(READ, C++ InternalCall, 无 IL 体, 无法 patch, 中文变 _ ❌)
+    → ChatLog 存 _ → 显示 _
+```
+
+不可 patch 的 InternalCall：`ReadString_Condensed`、`FillString_Condensed`、`ReadChar_Condensed`，Harmony 报 BadImageFormatException: Method has no body。NativeDetour 也无法获取函数指针。
+
+#### 最终方案：三层捕获 + 内容匹配恢复 + Legacy Text 覆盖层
+
+| 组件 | 位置 | 作用 |
+|------|------|------|
+| **捕获** | `ArcenSerializationBuffer.AddString_Condensed` Prefix | 捕获所有 `FieldNameForErrors=="RelatedString"` 且含非 ASCII 的原文，存入线程安全列表 |
+| **渲染恢复** | `TMP_Text.set_text` Postfix | 解析 ChatLog 文本，逐条 `IsContentMatch()` 匹配后替换 overlay text |
+| **字体覆盖层** | `TextMeshProUGUI.OnEnable` Postfix | 在 ChatLog TMP 下创建子 `Text`（Legacy），`Font.CreateDynamicFontFromOSFont("Microsoft YaHei", 14)` 渲染中文 |
+
+**关键实现细节**（当前插件 `WorldTMPFontPatchPlugin.cs`）:
+
+1. **`IsContentMatch` 匹配逻辑**：长度相等 + 非 `_` 位置一一对应 + 任意 `_` 位置原文为非 ASCII（不要求 exact char match——实测 `——` → `??`）
+2. **不消耗列表**：从末尾搜索最新匹配，每次 render 重新搜，无 `consumedCount` 偏移
+3. **捕获过滤**：`!hasNonAscii`，不依赖 `<color>` 或 `：` 格式假设
+4. **ChatLog 时间格式**：`<u>Xs</u>`（纯秒数如 `1s`、`13s`），不是 `HH:MM`。正则用 `[^<]+` 匹配
+5. **Overlay**：TMP 子级（跟着 ScrollRect 滚动），`raycastTarget=false`，字号 `TMP.fontSize * 0.65`，左缩进 0，`lineSpacing=0.9664`
+6. **Harmony 兼容**：只用 `Harmony.CreateAndPatchAll(typeof(WorldTMPFontPatchPlugin))`，不引用被 AssemblyRedirector 替换的程序集（ArcenAIW2Core）。引用 `ArcenUniversal.dll` 仅用于 `ArcenSerializationBuffer`——该类型不受 redirector 影响
+
+**补丁列表**：`WorldTMPFontPatchPlugin.cs` 共 5 个 Harmony 补丁：
+
+| 方法 | 类型 | 作用 |
+|------|------|------|
+| `ArcenSerializationBuffer.AddString_Condensed` | Prefix | 捕获序列化原文 |
+| `Text.OnEnable` | Postfix | 替换所有 Legacy Text 字体为 Microsoft YaHei |
+| `TextMeshProUGUI.OnEnable` | Postfix | 创建 ChatLog 中文覆盖层 |
+| `TMP_Text.set_text` | Postfix | 恢复中文文本到覆盖层 |
+| `ArcenSerializationBuffer.AddString_Condensed`（2nd）| Prefix | 仅过滤 `RelatedString` |
+
+**调试日志**：`BepInEx/ChatLogRestore.txt`，每次启动覆写。记录 CAPTURE、FULL_TEXT、MATCH_OK/FAILED、FINAL_LEGACY_TEXT 和 overlay rect 位置。
+
+**实测效果**：所有消息类型（JOURNAL/TIP/PLAYER_CHAT/WARDEN）均能正确恢复中文。内容匹配幂等，滚动条正常，鼠标不拦截。
+
+#### 尝试过但失败的全部方案
+
+| 方案 | 失败原因 |
+|------|---------|
+| 替换 `TMP_FontAsset` 为 mi_sans SDF | 图集为空（0 字形），显示 `_` |
+| `TMP_FontAsset.CreateFontAsset()` 运行时创建 | `FontEngine.LoadFontFace()` 失败 |
+| 系统字体（微软雅黑等）作为 TMP source font | FontEngine 无法加载 |
+| `TryAddCharacters` 注入字形 | FontEngine 失败，返回 false |
+| `Text.OnEnable` 替换所有 Legacy Text 字体 | I18NFont4UnityGame.FontPatch 冲突 NRE |
+| 子对象 LegacyText 覆盖层（AddComponent<Text>） | I18NFont4UnityGame 的 Text.OnEnable 补丁 NRE |
+| try-catch 包裹 AddComponent | Unity 在 AddComponent 内部吞异常，try-catch 接不到 |
+| 同级对象 LegacyText（非子对象） | 定位问题，渲染时不在正确位置 |
+| 禁用 TMP + 子 Text | TMP 禁用后游戏对 ReferenceText 的引用崩溃 |
+| TMP alpha=0 + 子 Text | 位置对了但 TMP 透明渲染仍遮挡 |
+| 子 Text 尺寸锚点拉伸 | 尺寸正确但 I18NFont4UnityGame NRE 阻止创建 |
+| 反射绕过 AddComponent | 无法绕过 Unity 生命周期 |
+| 序列化 CharMapping 加 CJK | WRITE 端有效（中文通过），READ 端是 InternalCall 无法 patch |
+| `InternalAddString_CondensedToMatch` 捕获队列 | 队列被旧 set_text 过早消费，时序错乱 |
+| `TMP_InputField.get_text` / `set_text` 捕获 | 捕获到战役名称等非聊天输入，且每按键触发多次 |
+| `TextMeshProUGUI.OnEnable` 全局覆盖层 | 所有 UI 文字变双重叠，界面混乱 |
+| Harmony Prefix return false 跳过 Text.OnEnable | 跳过原始方法导致 Text 组件初始化不完整 |
+| NativeDetour 钩 ReadString_Condensed | InternalCall 方法无函数指针可获取 |
+| 顺序队列 + set_text 替换（旧方案） | consumedCount 永不重置，render 偏移；regex 只匹配 `<color>` 包裹的 `_`，遗漏其余 |
+
+#### 核心难点
+
+1. **修改版 TMP FontEngine 源码丢失** — C++ 原生层 FontEngine.LoadFontFace() 永远失败，无法创建运行时 TMP 字体
+2. **反序列化是 C++ InternalCall** — `ReadString_Condensed` / `FillString_Condensed` / `ReadChar_Condensed` 均无 IL 体，Harmony 无法 patch，MonoMod NativeDetour 也无法获取函数指针
+3. **I18NFont4UnityGame 冲突** — 该插件 patch `Text.OnEnable` 且内部 NRE，导致所有尝试 AddComponent<Text>() 的操作都崩溃
+4. **输入框中文** — 输入框本身能显示中文（原因不明，可能 I18NFont4UnityGame 处理了 TMP_InputField），但提交后序列化损坏
+
+#### 可行方向的线索
+
+- Legacy `Text` 组件 + `Font.CreateDynamicFontFromOSFont("Microsoft YaHei", 14)` 能正确渲染中文 ✓
+- 游戏内自动生成的汉化消息（如`新日志条目：`、`新提示：`）存的是正确中文，不走 GameCommand 序列化管道
+- 世界空间 `TextMeshPro` 的行星名因 mesh 缓存行为，字体替换后不重建 mesh，仍显示旧字形
+- `I18NFont4UnityGame.FontPatch` 的 NRE 可能是因为 Text 组件初始化未完成时访问了 null 属性
 
 ### 部署
 
