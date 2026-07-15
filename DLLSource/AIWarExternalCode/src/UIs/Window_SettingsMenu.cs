@@ -1422,7 +1422,7 @@ namespace Arcen.AIW2.External
                     if ( setting.TempValue_Bool != GameSettings.Current.GetBoolBySetting( setting ) )
                     {
                         willRequireReload = true;
-                        reasonsForReload.Append( setting.TempValue_Bool ? "Disabled" : "Enabled" ).Append( " expansion " ).Append( expansion.DisplayName ).Append( "\n" );
+                        reasonsForReload.Append( "扩展「" ).Append( expansion.DisplayName ).Append( "」" ).Append( setting.TempValue_Bool ? "已禁用" : "已启用" ).Append( "\n" );
                     }
                 }
 
@@ -1434,9 +1434,7 @@ namespace Arcen.AIW2.External
                     if ( setting.TempValue_Bool != GameSettings.Current.GetBoolBySetting( setting ) )
                     {
                         willRequireReload = true;
-                        reasonsForReload.Append( setting.TempValue_Bool ? "Enabled" : "Disabled" );
-
-                        reasonsForReload.Append( " mod " ).Append( mod.DisplayName ).Append( "\n" );
+                        reasonsForReload.Append( "模组「" ).Append( mod.DisplayName ).Append( "」" ).Append( setting.TempValue_Bool ? "已启用" : "已禁用" ).Append( "\n" );
                     }
                 }
 
