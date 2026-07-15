@@ -144,7 +144,7 @@ AIWar2_ChineseTranslation/
 | DLC1 XML | 64 | 30 | 0 | ✅ 完成 |
 | DLC2 XML | 69 | 35 | 0 | ✅ 完成 |
 | DLC3 XML | 90 | 60 | 0 | ✅ 完成 |
-| XMLMods | 9 | 9 | 0 | ✅ 完成 |
+| XMLMods | 65 | 65 | 0 | ✅ 完成 |
 | **合计** | **630** | **431** | **0** | **✅ 完成** |
 
 ### 4.2 DLL 替换 (Preloader Patcher)
@@ -657,8 +657,8 @@ AIWar2_ChineseTranslation/
 | DLC JournalEntries | 14 | 14 |
 | DLC Achievement | 3 | 3 |
 | DLC ScourgeTypeData | 2 | 2 |
-| ExoticShips 模组 | 5 | 5 |
-| **合计** | **24** | **24** |
+| XMLMods（全部 65 个模组） | 511 | 511 |
+| **合计** | **530** | **530** |
 
 ### 9.7 完整翻译清单
 
@@ -685,7 +685,7 @@ AIWar2_ChineseTranslation/
 | DLC3 Achievement | 1 | 成就 |
 | DLC3 GameEntity | 22 | DLC3 舰船和实体 |
 | DLC3 其他 | 28 | 设置、阵营等 |
-| XMLMods | 9 | ExoticShips 模组舰船 + ChinesePlanetNames 中文行星名 |
+| XMLMods | 511 | 65 个模组（JuicyJournals/DysonSidekick/DevourerChrysalis/NecroParty/Reclaimers/ExoticShips 等），含实体定义、日志条目、科技升级、阵营描述 |
 | **总计** | **214** | - |
 
 ### 9.8 合并脚本 bug 修复（2026-07-10）
@@ -973,6 +973,12 @@ GameData/QuickStarts2/
 | L178 | `New Gameplay Tip Available:` | `新游戏提示可用：` |
 | L209 | `New Journal Entry:` | `新日志条目：` |
 | L211 | `New Tip:` | `新提示：` |
+
+### 9.21 日志条目 chat_text 补译（2026-07-15）
+
+`JournalEntries/Badger_Journal_BeginnerJournals.xml` 和 `JournalEntries/ExpertMode_Journals.xml` 中 31 条 `chat_text`（消息日志中显示的简介文字）此前被遗漏，已全部翻译为中文。
+
+**注意**：XML 属性值中禁止使用中文双引号 `""`（U+201C/U+201D，会被 XML 解析器误认作属性分隔符），内部引用统一用 `『』`。
 
 ## 十、UI 字号与重叠修复
 
