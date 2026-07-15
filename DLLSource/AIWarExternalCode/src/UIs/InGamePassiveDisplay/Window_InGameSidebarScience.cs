@@ -491,11 +491,14 @@ namespace Arcen.AIW2.External
                 if ( this.TechUpgrade == null )
                     return;
                 {
-                    TMPro.TextMeshProUGUI mainTMP = SubTexts[0].ReferenceText;
-                    if ( mainTMP != null )
+                    for ( int sti = 0; sti < 3; sti++ )
                     {
-                        mainTMP.enableAutoSizing = false;
-                        mainTMP.fontSize = 9f;
+                        TMPro.TextMeshProUGUI tmp = SubTexts[sti].ReferenceText;
+                        if ( tmp != null )
+                        {
+                            tmp.enableAutoSizing = false;
+                            tmp.fontSize = 9f;
+                        }
                     }
                     int debugStage = 0;
                     try
@@ -631,11 +634,14 @@ namespace Arcen.AIW2.External
                 if ( this.FleetToUpgrade == null )
                     return;
                 {
-                    TMPro.TextMeshProUGUI mainTMP = SubTexts[0].ReferenceText;
-                    if ( mainTMP != null )
+                    for ( int sti = 0; sti < 3; sti++ )
                     {
-                        mainTMP.enableAutoSizing = false;
-                        mainTMP.fontSize = 9f;
+                        TMPro.TextMeshProUGUI tmp = SubTexts[sti].ReferenceText;
+                        if ( tmp != null )
+                        {
+                            tmp.enableAutoSizing = false;
+                            tmp.fontSize = 9f;
+                        }
                     }
                     int debugStage = 0;
                     try

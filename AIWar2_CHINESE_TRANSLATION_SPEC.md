@@ -973,3 +973,57 @@ GameData/QuickStarts2/
 | L178 | `New Gameplay Tip Available:` | `新游戏提示可用：` |
 | L209 | `New Journal Entry:` | `新日志条目：` |
 | L211 | `New Tip:` | `新提示：` |
+
+## 十、UI 字号与重叠修复
+
+### 10.1 背景与根因
+
+部分 UI 界面的 prefab 中 TMP 文本组件开启了 **auto-sizing**（自动缩放，范围约 6~17pt），导致：
+- 短文字被放大、长文字被缩小，**同一界面字号参差不齐**
+- 中文比英文宽，放大后的中文撑爆行宽，出现**文字重叠**
+
+此问题不是翻译遗漏，而是 Unity prefab 字体设置 + 中文字宽导致的布局问题，需要在 C# 代码层强制统一字号。
+
+### 10.2 字号的三个控制层（改前先确认层级）
+
+| 控制层 | 文件 | 影响范围 | 重编译方式 |
+|--------|------|---------|-----------|
+| 全局相对字号 | `DLLSource/AIWarExternalCode/src/UIs/SupportClasses/FontSizes.cs` 的 `BASE_SIZE_STRING = "<size=100%>"` | 所有 UI 文字（TMP 富文本标签） | `build.ps1`（改动影响全局，慎用） |
+| 聊天/消息框覆盖层 | `DLLSource/WorldTMPFontPatch/src/WorldTMPFontPatchPlugin.cs` 的 `0.65f` 系数 | 仅 ChatLog + BasicText 覆盖层 | 编译插件 DLL |
+| SDF 图集点大小 | `tools/MiSansFontBuilder.cs` 的 point size `90` | 小字号渲染清晰度（非显示大小） | Unity Editor 重建 bundle |
+
+> 注意：`FontSizes.cs` 的 `BASE_SIZE_STRING` 改全局百分比（如试过 83%）会影响**所有**文字，需谨慎。多数重叠问题应在具体界面针对性修复，而非动全局。
+
+### 10.3 修复方案：关闭 auto-sizing + 固定字号
+
+在对应 UI 类的更新方法中，获取 TMP 组件并关闭 auto-sizing、设置固定 `fontSize`。
+
+**获取 TMP 组件的两种方式：**
+- 继承 `ImageButtonAbstractBase`（有 `SubTexts`）：`SubTexts[i].ReferenceText`
+- 继承 `ButtonAbstractBase` / `CustomUIAbstractBase`（无 `SubTexts`）：`((ArcenUI_Button)this.Element).ReferenceText`；父容器可 `this.Element.RelevantRect.gameObject.GetComponentsInChildren<TMPro.TextMeshProUGUI>(true)` 批量获取
+
+### 10.4 已修复的界面（2026-07-15）
+
+| 界面 | 文件 | 修改方法 | 字号 | 说明 |
+|------|------|---------|------|------|
+| 科技升级侧边栏（名称/等级/费用共 3 行） | `src/UIs/InGamePassiveDisplay/Window_InGameSidebarScience.cs` | `UpdateContentFromVolatile_TechUpgrade` / `UpdateContentFromVolatile_FleetUpgrade` 开头循环 `for (int sti = 0; sti < 3; sti++)` | 9f | 关闭 `SubTexts[0~2]` 全部 auto-sizing；行内 `<size=79%>`/`<size=70%>` 富文本标签相对固定基准值仍生效 |
+| 情报报告侧边栏 | `src/UIs/InGamePassiveDisplay/Window_InGameSidebarObjectives.cs` | `btnObjective.OnUpdate()` 覆写 | 9f | 继承 `ButtonAbstractBase`，用 `((ArcenUI_Button)this.Element).ReferenceText` |
+| 资源栏数字（金属/能量/燃料/科技/AIP/入侵/威胁等） | `src/UIs/InGamePassiveDisplay/Window_ResourceBar.cs` | `customParent.OnUpdate()` 中 `GetComponentsInChildren<TMPro.TextMeshProUGUI>(true)` 批量遍历 | 10f | 资源栏 26px 高、整体缩放 0.6，字号用 10f 略大于侧边栏 |
+
+**参考代码片段（资源栏）：**
+```csharp
+TMPro.TextMeshProUGUI[] allTexts = this.Element.RelevantRect.gameObject
+    .GetComponentsInChildren<TMPro.TextMeshProUGUI>( true );
+for ( int i = 0; i < allTexts.Length; i++ )
+{
+    allTexts[i].enableAutoSizing = false;
+    allTexts[i].fontSize = 10f;
+}
+```
+
+### 10.5 注意事项
+
+- 改完必须 `Remove-Item -Recurse -Force "DLLSource/AIWarExternalCode/obj/Release"` 后重新编译（见 9.16 / 8.7），否则旧 DLL 会被部署
+- 部署后启动游戏 Ctrl+F5 强制刷新验证；若字号仍不对，优先排查编译缓存（见 9.18）
+- 字号取值经验：侧边栏按钮 9f，资源栏 10f；如需微调直接改 `fontSize` 数值重编
+- 富文本标签（`<size=XX%>`）在关闭 auto-sizing 后相对**固定基准值**缩放，不会出现有大有小；无需改动这些标签

@@ -29,6 +29,14 @@ namespace Arcen.AIW2.External
                 //make sure the back bar of the header stays wide enough as it gets smaller
                 this.Element.RelevantRect.UI_SetWidth( 980 / this.WindowController.myScale );
 
+                // 资源栏数字字号统一调小
+                TMPro.TextMeshProUGUI[] allTexts = this.Element.RelevantRect.gameObject.GetComponentsInChildren<TMPro.TextMeshProUGUI>( true );
+                for ( int i = 0; i < allTexts.Length; i++ )
+                {
+                    allTexts[i].enableAutoSizing = false;
+                    allTexts[i].fontSize = 10f;
+                }
+
                 this.HandleLogicForAttackButtons();
                 this.HandleButtonPositions();
             }

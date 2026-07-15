@@ -4,11 +4,11 @@
   <journal name="Beginner_TooMuchAIP" sidebar_text="&lt;color=#ffd267&gt;概念:&lt;/color&gt; 警惕AIP值" is_for_the_tips_tab="true"
            can_record_another_copy_if_already_recorded_in_this_campaign="false"
            text_replacement_related_faction_color="true"
-        chat_text="Commander, we need to be careful about increasing the AIP too much. Remember, we are running a Guerrila campaign!
+        chat_text="指挥官，我们需要小心不要过多增加AIP。记住，我们正在进行游击战！
 
-It's a good idea to neuter planets (aka defeat all the AI defenses without blowing up the command station or warp gate); this allows our ships to strike deeper against the AI with safely, but without generating more AIP.
+清除行星（即击败所有AI防御而不摧毁指挥站或跃迁门）是个好策略；这样我们的舰队可以更安全地深入打击AI，而不会产生更多AIP。
 
-Capturing too many planets will cause the AI to get very strong very quickly."
+占领太多行星会导致AI迅速变得非常强大。"
         full_text="指挥官，我们必须谨慎控制AIP值的增长。请记住，我们正在进行一场游击战役！
 
 最好的做法是使行星失去防御能力（即击败所有AI防御设施，但不摧毁指挥站或跃迁门）；这样能让我们的舰船更深入地打击AI，同时又不会增加AIP值。
@@ -147,9 +147,7 @@ Turrets are a very strong mechanism of stationary defense."
              can_record_another_copy_if_already_recorded_in_this_campaign="false"
              text_replacement_related_faction_color="true"
              text_replacement_related_planet="true"
-             chat_text="Commander, we have identified a good nearby target; a nearby Advanced Research Station (ARS). 
-
-Please check the Journal in the sidebar for more details."
+             chat_text="指挥官，我们找到一个不错的附近目标；附近有一座高级研究站（ARS）。详情请查看侧边栏中的日志。"
 
              full_text="指挥官，我们发现了一个不错的附近目标。{PlanetName}行星上有一个我们可以入侵的高级研究站（ARS）。AI利用高级研究站来研究舰船的改进，通过入侵它，我们可以提升一艘旗舰的能力，使其能够建造AI研究出的舰船之一。这是我们增强实力的最佳方法之一。
 
