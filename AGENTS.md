@@ -200,11 +200,11 @@ DLLSource/WorldTMPFontPatch/
 
 ```
 输入框中文 → AddString_Condensed(WRITE, 我们的 CharMapping 补丁让中文通过 ✅)
-  → ReadString_Condensed(READ, C++ InternalCall, 无 IL 体, 无法 patch, 中文变 _ ❌)
+  → ReadString_Condensed(READ, 普通 IL 方法, 原以为 InternalCall, 中文变 _ ❌)
     → ChatLog 存 _ → 显示 _
 ```
 
-不可 patch 的 InternalCall：`ReadString_Condensed`、`FillString_Condensed`、`ReadChar_Condensed`，Harmony 报 BadImageFormatException: Method has no body。NativeDetour 也无法获取函数指针。
+**勘误（2026-07-14 修正）：** 经实际反射验证，`ReadString_Condensed`、`FillString_Condensed`、`ReadChar_Condensed` 在 `ArcenDeserializationBufferModern` 上均为**普通 IL 方法**（各有 700B/11B/149B IL 体），**不是 InternalCall**，Harmony 可直接 Patch。整 `ArcenUniversal.dll` 含 0 个 InternalCall 方法。之前记录的"InternalCall 无法 patch"不适用于当前版本。
 
 #### 最终方案：三层捕获 + 内容匹配恢复 + Legacy Text 覆盖层
 
@@ -223,15 +223,15 @@ DLLSource/WorldTMPFontPatch/
 5. **Overlay**：TMP 子级（跟着 ScrollRect 滚动），`raycastTarget=false`，字号 `TMP.fontSize * 0.65`，左缩进 0，`lineSpacing=0.9664`
 6. **Harmony 兼容**：只用 `Harmony.CreateAndPatchAll(typeof(WorldTMPFontPatchPlugin))`，不引用被 AssemblyRedirector 替换的程序集（ArcenAIW2Core）。引用 `ArcenUniversal.dll` 仅用于 `ArcenSerializationBuffer`——该类型不受 redirector 影响
 
-**补丁列表**：`WorldTMPFontPatchPlugin.cs` 共 5 个 Harmony 补丁：
+**补丁列表**：`WorldTMPFontPatchPlugin.cs` 共 5 个 Harmony 补丁，覆盖 ChatLog 和 BasicText 两个 TMP 组件：
 
 | 方法 | 类型 | 作用 |
 |------|------|------|
-| `ArcenSerializationBuffer.AddString_Condensed` | Prefix | 捕获序列化原文 |
+| `ArcenSerializationBuffer.AddString_Condensed` | Prefix | 捕获序列化原文（`RelatedString` 含非 ASCII） |
 | `Text.OnEnable` | Postfix | 替换所有 Legacy Text 字体为 Microsoft YaHei |
-| `TextMeshProUGUI.OnEnable` | Postfix | 创建 ChatLog 中文覆盖层 |
-| `TMP_Text.set_text` | Postfix | 恢复中文文本到覆盖层 |
-| `ArcenSerializationBuffer.AddString_Condensed`（2nd）| Prefix | 仅过滤 `RelatedString` |
+| `TextMeshProUGUI.OnEnable` | Postfix | 创建 ChatLog + BasicText 中文覆盖层 |
+| `TMP_Text.set_text` | Postfix | 恢复中文文本到覆盖层（按组件名分发两种正则） |
+| `TextMeshProUGUI.InternalUpdate` | Postfix | 后备字体替换（补 I18NFont4UnityGame 时序缺口） |
 
 **调试日志**：`BepInEx/ChatLogRestore.txt`，每次启动覆写。记录 CAPTURE、FULL_TEXT、MATCH_OK/FAILED、FINAL_LEGACY_TEXT 和 overlay rect 位置。
 
@@ -260,6 +260,31 @@ ChatLog 条目中包含 `<link=N>` 标签用于可点击交互（如点击跳转
 
 **结论**：点击偏移属于可接受范围（聊天框链接点击不频繁），不做进一步修复。
 
+#### 右上角瞬时消息框（BasicText）中文恢复（2026-07-15 修复）
+
+**问题**：右上角动态消息框（`Window_OngoingMessageDisplay`）中走序列化管道的内容（`GameCommand.RelatedString`）中文显示为 `_`。
+
+**调查发现**：
+- 消息框有三类文字：`OnUpdate()` 硬编码中文（不走序列化，正常）、教程 XML（不走序列化，正常）、瞬时日志 `LocalMomentaryDisplayLog`（走序列化，损坏）
+- 现有捕获层（`OnAddStringCondensed` Prefix）已经在抓所有 `RelatedString` 中文原文——只差恢复层
+- 消息框的 TMP 组件名为 **`BasicText`**（不是 AssetBundle 中的 prefab 名 `BasicTextUnderlay`，Unity 实例化后真实名字是 `BasicText`）
+- 瞬时日志的富文本格式是 `<link=N>content</link>`，与 ChatLog 的 `<link=N><u>HH:MM</u> content</link>` 不同
+
+**修复**（`WorldTMPFontPatchPlugin.cs`）：
+1. 新增 `NeedsChineseOverlay()` 辅助方法，同时匹配 `ChatLog` 和 `BasicText`
+2. 覆盖层创建从 OnEnable 改为 `set_text` 时机按需创建（`EnsureOverlay()`），不依赖时序
+3. `OnTMPTextSetText` 按组件名分发两种恢复器：
+   - ChatLog → `RestoreChatLogText()`（正则 `<link=\d+><u>[^<]+</u>\s+(?<content>.*?)</link>`）
+   - BasicText → `RestoreOngoingText()`（正则 `<link=\d+>(?<content>.*?)</link>`）
+4. 两种恢复器共用同一套 `TryRestoreContent` + `IsContentMatch` 匹配引擎
+
+**实测效果**：瞬时日志中文正确恢复（如星系视图中点击无法分配起始星球的提示）。Overlay 与 ChatLog 共享同样的像素化限制。
+
+**踩坑记录**：
+- 初版用 `StartsWith("BasicTextUnderlay")` 匹配，永远匹配不到——prefab 名和运行时 GameObject 名不同
+- 为排查名字匹配问题，临时加了兜底路径（任何含 `_` 的组件都拦截），虽确认了 `BasicText` 名字，但也误伤了 `SubjectSummaryText`、`Cost Text` 等组件，已移除
+- 编译缓存问题：`strings` 命令在 Git Bash 对 DLL 二进制不生效，需用 `grep -a` 验证 DLL 内容
+
 #### 尝试过但失败的全部方案
 
 | 方案 | 失败原因 |
@@ -276,27 +301,43 @@ ChatLog 条目中包含 `<link=N>` 标签用于可点击交互（如点击跳转
 | TMP alpha=0 + 子 Text | 位置对了但 TMP 透明渲染仍遮挡 |
 | 子 Text 尺寸锚点拉伸 | 尺寸正确但 I18NFont4UnityGame NRE 阻止创建 |
 | 反射绕过 AddComponent | 无法绕过 Unity 生命周期 |
-| 序列化 CharMapping 加 CJK | WRITE 端有效（中文通过），READ 端是 InternalCall 无法 patch |
+| 序列化 CharMapping 加 CJK | WRITE 端有效（中文通过），READ 端原本是普通 IL 方法可 Patch，但数据在写入时已损坏，Patch 读端不解决根因 |
 | `InternalAddString_CondensedToMatch` 捕获队列 | 队列被旧 set_text 过早消费，时序错乱 |
 | `TMP_InputField.get_text` / `set_text` 捕获 | 捕获到战役名称等非聊天输入，且每按键触发多次 |
 | `TextMeshProUGUI.OnEnable` 全局覆盖层 | 所有 UI 文字变双重叠，界面混乱 |
 | Harmony Prefix return false 跳过 Text.OnEnable | 跳过原始方法导致 Text 组件初始化不完整 |
-| NativeDetour 钩 ReadString_Condensed | InternalCall 方法无函数指针可获取 |
+| Harmony Patch ReadString_Condensed | 原以为是 InternalCall 未尝试，实际是普通 IL 方法，理论上可 Patch |
 | 顺序队列 + set_text 替换（旧方案） | consumedCount 永不重置，render 偏移；regex 只匹配 `<color>` 包裹的 `_`，遗漏其余 |
 
 #### 核心难点
 
 1. **修改版 TMP FontEngine 源码丢失** — C++ 原生层 FontEngine.LoadFontFace() 永远失败，无法创建运行时 TMP 字体
-2. **反序列化是 C++ InternalCall** — `ReadString_Condensed` / `FillString_Condensed` / `ReadChar_Condensed` 均无 IL 体，Harmony 无法 patch，MonoMod NativeDetour 也无法获取函数指针
+2. ~~反序列化是 C++ InternalCall~~ **已修正：反序列化方法是普通 IL 方法** — `ReadString_Condensed` / `FillString_Condensed` / `ReadChar_Condensed` 在 `ArcenDeserializationBufferModern` 上均有 IL 体，Harmony 可直接 Patch。但写入端 CharMapping 压缩数据时已将非 ASCII 字符损坏，仅 Patch 读端无法恢复已损数据
 3. **I18NFont4UnityGame 冲突** — 该插件 patch `Text.OnEnable` 且内部 NRE，导致所有尝试 AddComponent<Text>() 的操作都崩溃
 4. **输入框中文** — 输入框本身能显示中文（原因不明，可能 I18NFont4UnityGame 处理了 TMP_InputField），但提交后序列化损坏
 
-#### 可行方向的线索
+#### 序列化层修复尝试（全部失败）
 
-- Legacy `Text` 组件 + `Font.CreateDynamicFontFromOSFont("Microsoft YaHei", 14)` 能正确渲染中文 ✓
-- 游戏内自动生成的汉化消息（如`新日志条目：`、`新提示：`）存的是正确中文，不走 GameCommand 序列化管道
-- 世界空间 `TextMeshPro` 的行星名因 mesh 缓存行为，字体替换后不重建 mesh，仍显示旧字形
-- `I18NFont4UnityGame.FontPatch` 的 NRE 可能是因为 Text 组件初始化未完成时访问了 null 属性
+**目标**：从根源修复 `ReadString_Condensed` / `AddString_Condensed`，让中文字符能正确通过序列化管道，不依赖捕获+覆盖层。
+
+**失败方案汇总：**
+
+| 方案 | 做法 | 失败原因 |
+|------|------|---------|
+| 扩展 `SupportedCharList`（全量 21000 CJK） | 反射替换 `SupportedCharList`，调用 `InitializeStringHandling()` 重建 `CharMapping`+`CharUETypeData` | `GetUltraEfficientStyleThatFits(21000)` 返回的 BaseBits 风格与实际位宽不匹配，读写两端编码不一致 → 乱码 |
+| 扩展 `SupportedCharList`（300 常用字） | 同上，仅加 300 字 | 索引 0-127（7位）工作正常；索引 128 起因 `BaseBits` 算法卡在 2^7 边界 → 溢出为 `?` |
+| 扩展 `SupportedCharList`（257 字推过 256 边界） | 同上，加 148 字到总 257 | 过 128 边界后依然锁死，`GetUltraEfficientStyleThatFits` 的 BaseBits 选择算法根本不能处理变长的 Unicode 范围 |
+| FullUnicode 旁路（标记位法） | 写端 1-bit 标记 + `WriteBits_InnerHelper16(c,16)` 原始 16-bit；读端 Transpiler 检查标记位 | 标记位消耗了位流，旧存档压缩数据首比特若为 1 则误入 FullUnicode 路径 → 崩溃；不兼容向后 |
+| FullUnicode 全量替换（无标记位） | Prefix 强制 `WriteFullUnicode=true`，Prefix 全量替换 `ReadString_Condensed` | 旧存档所有字符串用压缩格式，新读端按原始 16-bit 解析 → 长度/字符完全错位 → 严重破坏存档兼容性（canary 校验失败） |
+| 捕获+恢复修复 | 剥离富文本标签后再 `IsContentMatch`；移除 `Contains("_")` 门控 | 捕获系统本身不触发（ChatLog 格式与正则不匹配），恢复永远走不到 |
+
+**根因**：`GetUltraEfficientStyleThatFits(int max)` 的 BaseBits 算法存在 2^n 边界锁死问题。超过 2^7=128 后无论加多少字符，BaseBits 不跟随增长到 8，导致索引 ≥128 的字符编码溢出为 0→`?`。该算法是为 ASCII 范围（109 字符，7 位）设计的，无法安全扩展到 Unicode 范围。
+
+**结论**：序列化层不可修复。不破坏旧存档的前提下，游戏的自定义二进制压缩编码无法支持中文。捕获覆盖层（capture → overlay）方案已实现并验证有效，覆盖 ChatLog 和右上角瞬时消息（BasicText）两个组件。
+
+**唯一经用户验证有效的方案**：捕获覆盖层（capture → overlay），覆盖 ChatLog 和 BasicText 两个 TMP 组件。`SupportedCharList` 静态扩展至 ≤128 字（109 ASCII + ≤19 汉字）亦可工作，但覆盖层方案词汇量不受限。
+
+#### 可行方向的线索
 
 ### 部署
 

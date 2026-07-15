@@ -30,6 +30,7 @@ public class WorldTMPFontPatchPlugin : BaseUnityPlugin
         try { File.WriteAllText(LogPath, $"[{DateTime.Now:HH:mm:ss}] Plugin Awake\n"); }
         catch { }
 
+        PatchCharMapping.Ensure();
         Harmony.CreateAndPatchAll(typeof(WorldTMPFontPatchPlugin));
         EnsureFonts();
     }
@@ -151,6 +152,17 @@ public class WorldTMPFontPatchPlugin : BaseUnityPlugin
         @"</?(?:link|u|s|mark|size|voffset|cspace|mspace|sub|sup)[^>]*>",
         RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
+    // ========== Target detection (matches ChatLog and OngoingMessage TMP components) ==========
+    // OngoingMessage uses "BasicText" (NOT "BasicTextUnderlay" — that's the prefab name, not the instance)
+    private static bool NeedsChineseOverlay(TMP_Text instance)
+    {
+        string name = instance.name;
+        return name == "ChatLog" || name == "BasicText";
+    }
+
+    private static bool IsChatLogTarget(TMP_Text instance) => instance.name == "ChatLog";
+    private static bool IsOngoingTarget(TMP_Text instance) => instance.name == "BasicText";
+
     // ========== Legacy Text font replacement ==========
     [HarmonyPostfix]
     [HarmonyPatch(typeof(UnityEngine.UI.Text), "OnEnable")]
@@ -179,7 +191,7 @@ public class WorldTMPFontPatchPlugin : BaseUnityPlugin
     {
         if (cachedTMPFont == null) return;
         if (__instance.font == cachedTMPFont) return;
-        if (__instance.name == "ChatLog") return;
+        if (NeedsChineseOverlay(__instance)) return;
         __instance.font = cachedTMPFont;
         __instance.UpdateFontAsset();
     }
@@ -190,7 +202,7 @@ public class WorldTMPFontPatchPlugin : BaseUnityPlugin
     private static void OnChatLogOverlay(TextMeshProUGUI __instance)
     {
         if (cachedLegacyFont == null) return;
-        if (__instance.name != "ChatLog") return;
+        if (!NeedsChineseOverlay(__instance)) return;
 
         Transform existing = __instance.transform.Find("TMP_LegacyOverlay");
         if (existing != null) { Log("OVERLAY: already exists"); return; }
@@ -213,7 +225,7 @@ public class WorldTMPFontPatchPlugin : BaseUnityPlugin
         t.supportRichText = true;
         t.color = Color.white;
         t.verticalOverflow = VerticalWrapMode.Overflow;
-        t.horizontalOverflow = HorizontalWrapMode.Overflow;
+        t.horizontalOverflow = HorizontalWrapMode.Wrap;
         t.raycastTarget = false;
 
         var rt = t.rectTransform;
@@ -235,63 +247,83 @@ public class WorldTMPFontPatchPlugin : BaseUnityPlugin
         return "PLAIN";
     }
 
+    // ========== Overlay creation helper ==========
+    private static UnityEngine.UI.Text EnsureOverlay(TMP_Text tmp)
+    {
+        Transform existing = tmp.transform.Find("TMP_LegacyOverlay");
+        UnityEngine.UI.Text legacy = existing?.GetComponent<UnityEngine.UI.Text>();
+        if (legacy != null) return legacy;
+
+        // Create on-demand
+        tmp.color = new Color(0, 0, 0, 0);
+        int fontSize = Math.Max(11, (int)(tmp.fontSize * 0.65f));
+
+        var go = new GameObject("TMP_LegacyOverlay", typeof(RectTransform));
+        go.transform.SetParent(tmp.transform, false);
+
+        try { legacy = go.AddComponent<UnityEngine.UI.Text>(); }
+        catch { legacy = go.GetComponent<UnityEngine.UI.Text>(); }
+        if (legacy == null) { UnityEngine.Object.Destroy(go); return null; }
+
+        legacy.font = cachedLegacyFont;
+        legacy.fontSize = fontSize;
+        legacy.lineSpacing = 0.9664f;
+        legacy.alignment = TextAnchor.UpperLeft;
+        legacy.supportRichText = true;
+        legacy.color = Color.white;
+        legacy.verticalOverflow = VerticalWrapMode.Overflow;
+        legacy.horizontalOverflow = HorizontalWrapMode.Wrap;
+        legacy.raycastTarget = false;
+
+        var rt = legacy.rectTransform;
+        rt.anchorMin = Vector2.zero;
+        rt.anchorMax = Vector2.one;
+        rt.offsetMin = Vector2.zero;
+        rt.offsetMax = Vector2.zero;
+
+        Log($"OVERLAY: on-demand created for '{tmp.name}', fontSize={fontSize}");
+        return legacy;
+    }
+
     // ========== LAYER: set_text display interception ==========
     [HarmonyPostfix]
     [HarmonyPatch(typeof(TMP_Text), "set_text")]
     private static void OnTMPTextSetText(TMP_Text __instance, string value)
     {
         if (cachedLegacyFont == null) return;
-        if (__instance.name != "ChatLog") return;
-
-        Transform overlay = __instance.transform.Find("TMP_LegacyOverlay");
-        UnityEngine.UI.Text legacy = overlay?.GetComponent<UnityEngine.UI.Text>();
-        if (legacy == null)
-        {
-            Log($"RENDER#{renderCounter}: NO OVERLAY");
-            return;
-        }
-
-        renderCounter++;
         string text = value ?? "";
+        bool hasDamage = text.Contains("_") || text.Contains("?");
 
-        if (text.Contains("_"))
+        // Fast path: known targets
+        if (NeedsChineseOverlay(__instance))
         {
-            Log($"RENDER#{renderCounter}: HAS_UNDERSCORES len={text.Length}");
-            Log($"RENDER#{renderCounter}: FULL_TEXT_BEGIN>>>>");
-            Log(text);
-            Log($"RENDER#{renderCounter}: FULL_TEXT_END<<<<");
+            UnityEngine.UI.Text legacy = EnsureOverlay(__instance);
+            if (legacy == null) return;
 
-            var matches = EntryContentRegex.Matches(text);
-            Log($"RENDER#{renderCounter}: REGEX_FOUND {matches.Count} entries");
-            foreach (Match m in matches)
+            renderCounter++;
+            if (hasDamage)
             {
-                string content = m.Groups["content"].Value;
-                string flag = content.Contains("_") ? " [HAS_]" : " [OK]";
-                string type = ClassifyEntry(content);
-                Log($"RENDER#{renderCounter}:  entry len={content.Length}{flag} type={type} preview=\"{Truncate(content, 100)}\"");
+                string restored = IsChatLogTarget(__instance)
+                    ? RestoreChatLogText(text) : RestoreOngoingText(text);
+                if (restored == text)
+                    Log($"RENDER#{renderCounter}: NO_RESTORE_NEEDED (or failed)");
+                legacy.text = StripRichTextRegex.Replace(restored, "");
             }
-
-            string restored = RestoreChatLogText(text);
-            if (restored == text)
-                Log($"RENDER#{renderCounter}: NO_RESTORE_NEEDED (or failed)");
-
-            string finalText = StripRichTextRegex.Replace(restored, "");
-            Log($"RENDER#{renderCounter}: FINAL_LEGACY_TEXT_BEGIN>>>>");
-            Log(finalText);
-            Log($"RENDER#{renderCounter}: FINAL_LEGACY_TEXT_END<<<<");
-            legacy.text = finalText;
-        }
-        else
-        {
-            Log($"RENDER#{renderCounter}: CLEAN (no underscores) len={text.Length}");
-            string finalText = StripRichTextRegex.Replace(text, "");
-            Log($"RENDER#{renderCounter}: CLEAN_FINAL_TEXT=\"{Truncate(finalText, 200)}\"");
-            legacy.text = finalText;
+            else
+            {
+                legacy.text = StripRichTextRegex.Replace(text, "");
+            }
+            return;
         }
     }
 
     private static readonly Regex EntryContentRegex = new Regex(
         @"<link=\d+><u>[^<]+</u>\s+(?<content>.*?)</link>",
+        RegexOptions.Compiled | RegexOptions.Singleline);
+
+    // OngoingMessage format: <link=N>content</link> (no <u> time prefix)
+    private static readonly Regex OngoingEntryRegex = new Regex(
+        @"<link=\d+>(?<content>.*?)</link>",
         RegexOptions.Compiled | RegexOptions.Singleline);
 
     private static string RestoreChatLogText(string fullText)
@@ -300,20 +332,21 @@ public class WorldTMPFontPatchPlugin : BaseUnityPlugin
         string result = EntryContentRegex.Replace(fullText, match =>
         {
             matchCount++;
-            string content = match.Groups["content"].Value;
-            if (!content.Contains("_")) return match.Value;
+            string rawContent = match.Groups["content"].Value;
+            string content = StripRichTextRegex.Replace(rawContent, "");
+            if (!content.Contains("_") && !content.Contains("?")) return match.Value;
             underscoreCount++;
 
             string restored = TryRestoreContent(content);
             if (restored == content)
             {
-                Log($"RENDER#{renderCounter}: MATCH_FAILED content=\"{Truncate(content, 120)}\"");
+                Log($"RENDER#{renderCounter}: MATCH_FAILED raw=\"{Truncate(rawContent, 120)}\" stripped=\"{Truncate(content, 80)}\"");
                 return match.Value;
             }
 
             restoredCount++;
             string type = ClassifyEntry(content);
-            int prefixLen = match.Value.Length - content.Length;
+            int prefixLen = match.Value.Length - rawContent.Length;
             string prefix = match.Value.Substring(0, prefixLen);
             string assembled = prefix + restored;
             // Fix duplicate <color= from regex eating it into prefix
@@ -327,6 +360,31 @@ public class WorldTMPFontPatchPlugin : BaseUnityPlugin
         });
 
         Log($"RENDER#{renderCounter}: RESTORE_SUMMARY matches={matchCount} underscored={underscoreCount} restored={restoredCount} captures_in_list={capturedMessages.Count}");
+        return result;
+    }
+
+    private static string RestoreOngoingText(string fullText)
+    {
+        int matchCount = 0, underscoreCount = 0, restoredCount = 0;
+        string result = OngoingEntryRegex.Replace(fullText, match =>
+        {
+            matchCount++;
+            string rawContent = match.Groups["content"].Value;
+            string content = StripRichTextRegex.Replace(rawContent, "");
+            if (!content.Contains("_") && !content.Contains("?")) return match.Value;
+            underscoreCount++;
+
+            string restored = TryRestoreContent(content);
+            if (restored == content) return match.Value;
+
+            restoredCount++;
+            int prefixLen = match.Value.Length - rawContent.Length;
+            string prefix = match.Value.Substring(0, prefixLen);
+            Log($"RENDER#{renderCounter}: ONGOING_MATCH_OK content->\"{Truncate(restored, 80)}\"");
+            return prefix + restored;
+        });
+
+        Log($"RENDER#{renderCounter}: ONGOING_RESTORE_SUMMARY matches={matchCount} underscored={underscoreCount} restored={restoredCount} captures_in_list={capturedMessages.Count}");
         return result;
     }
 

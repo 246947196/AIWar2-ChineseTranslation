@@ -363,7 +363,7 @@ WorldTMPFontPatch (BepInEx 插件)
 - 翻译时只能替换字符串字面量，不能修改代码逻辑
 - 编译器版本必须与原版一致（Roslyn 4.12.0），否则会产生运行时错误
 - Debug 日志、内部标识符、错误码（如 `Immune to All Damage`、`CODE `、`PrimaryKeyID `）保持英文，不翻译
-- **聊天/消息日志中文方框**：游戏使用了高度修改的 TextMeshPro（`AIW2ModdingAndGUI` 项目），其 `FontEngine` 在运行时无法加载字体数据，导致 `TMP_FontAsset.CreateFontAsset()` 创建的字形图集为空。所有尝试（系统字体、标准 TMP FontAsset、UnityPy 注入）均因格式/兼容性问题无效。**唯一方案**：用游戏修改版 TMP 在 Unity Editor 中生成 TMP_FontAsset，打包为 AssetBundle 替换 `BepInEx/plugins/I18NFont4UnityGame/mi_sans`。
+- **聊天/消息日志中文方框**：游戏使用了高度修改的 TextMeshPro（`AIW2ModdingAndGUI` 项目），其 `FontEngine` 在运行时无法加载字体数据。标准 SDF 图集格式与修改版 TMP 渲染管线不兼容。**解决方案**：对于聊天框（ChatLog）和右上角瞬时消息框（BasicText），使用三层捕获覆盖层（capture → Legacy Text overlay）绕过 TMP 渲染问题，中文文本通过 Legacy Text（Microsoft YaHei 位图字体）显示。代价是文字像素化和点击链接偏移（可接受范围）。详见 `AGENTS.md`。
 
 ### 8.13 汉化统计
 
@@ -374,7 +374,7 @@ WorldTMPFontPatch (BepInEx 插件)
 | AIWarExternalVisualizationCode | 有源码 | 45 | ✅ 0 错误 | ✅ 完成 |
 | ArcenUIAssetRedirect | BepInEx 插件 | 1 | ✅ 0 错误 | ✅ 完成 |
 | WorldTMPFontPatch | BepInEx 插件 | 1 | ✅ 0 错误 | ✅ 完成 |
-| **聊天日志中文方框** | — | — | — | ❌ 已知限制（见 8.12） |
+| **聊天日志中文方框** | — | — | ✅ 已解决（捕获覆盖层方案，覆盖 ChatLog + BasicText） |
 | ArcenUniversal | IL 汉化 | 613 | — | ✅ 已部署（151 条 ldstr） |
 | ArcenAIW2Core | IL 汉化 | ~350 | — | ✅ 已部署（637 条 ldstr） |
 | ArcenAIW2Visualization | IL 汉化 | ~100 | — | ✅ 已完成（20 条 ldstr） |
