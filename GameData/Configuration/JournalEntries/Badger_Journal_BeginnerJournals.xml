@@ -18,11 +18,7 @@
   <journal name="Beginner_HackARS" sidebar_text="&lt;color=#d267ff&gt;建议:&lt;/color&gt; 高级研究站（舰船）" is_for_the_tips_tab="true"
            can_record_another_copy_if_already_recorded_in_this_campaign="false"
            text_replacement_related_faction_color="true"
-           chat_text="Commander, it looks like we have access to a number of poorly guarded Advanced Research Stations (ARSs).
-
- Hacking these can be a really good way to increase our fleet's power! To hack an ARS, bring one of your flagships there and look in the Hacking menu.
-
-You can find a list of all the ARSs you've found in the Intel Menu."
+           chat_text="指挥官，看来我们可以访问一些防守薄弱的高级研究站（ARS）。入侵它们是增强舰队实力的好方法！要入侵ARS，派旗舰前往该行星，然后查看入侵菜单。你可以在情报菜单中查看已发现的全部ARS列表。"
            full_text="指挥官，看来我们有机会接触到一些防守薄弱的高级研究站（ARS）。
 
 入侵这些研究站是增强我们舰队实力的绝佳途径！
@@ -32,11 +28,7 @@ You can find a list of all the ARSs you've found in the Intel Menu."
   <journal name="Beginner_UpgradeMetal" sidebar_text="&lt;color=#d267ff&gt;建议:&lt;/color&gt; 提升金属收入" is_for_the_tips_tab="true"
            can_record_another_copy_if_already_recorded_in_this_campaign="false"
            text_replacement_related_faction_color="true"
-           chat_text="Commander, it looks like we are running low on metal!
-
-There are 2 easy ways of increasing metal production. The first is to upgrade your home command station via the Fleets menu. The second is to upgrade Metal Generation via the Tech menu.
-
-Finally you can always capture more planets and build Economic or Logistical command stations there."
+           chat_text="指挥官，看来我们的金属资源不足了！有两种简单方法提高金属产量：一是通过舰队菜单升级母星指挥站；二是通过科技菜单升级金属生产。最后还可以占领更多行星并在上面建造经济型或后勤型指挥站。"
            full_text="指挥官，看来我们的金属储备不足了！
 
 有两种简单的方法可以增加金属产量。第一种是通过舰队菜单升级你的母星指挥站。第二种是通过科技菜单升级金属生成。
@@ -46,11 +38,7 @@ Finally you can always capture more planets and build Economic or Logistical com
   <journal name="Beginner_HackDSS" sidebar_text="&lt;color=#d267ff&gt;建议:&lt;/color&gt; 炮塔蓝图服务器（炮塔）" is_for_the_tips_tab="true"
            can_record_another_copy_if_already_recorded_in_this_campaign="false"
            text_replacement_related_faction_color="true"
-           chat_text="Commander, we can improve our defenses by hacking one or more Turret Schematic Servers (TSSes).
-
-Once you own enough planets, it can be hard to defend them all. Hacking TSSes allow you to power up ALL of your command stations, battlestations, and citadels.  Some types benefit more than others from the improvements, but in general you want more turrets, minefields, and other defensive features to be available to you.
-
-There are also Other Defense Schematic Servers (ODSS) that can give you yet more benefits."
+           chat_text="指挥官，我们可以通过入侵一个或多个炮塔蓝图服务器（TSS）来提升防御。当你拥有足够多行星时，很难防守全部。入侵TSS可以增强所有指挥站、战斗站和堡垒。不同类型的增益效果不同，但总体而言，更多炮塔、雷区和防御设施对你有利。此外还有其他防御蓝图服务器（ODSS）可提供更多增益。"
            full_text="指挥官，我们可以通过入侵一个或多个防御蓝图服务器（TSS）来加强防御。
 
 一旦你拥有足够多的行星，就很难防御所有行星。入侵防御蓝图服务器可以增强你所有指挥站、战斗站和堡垒的实力。 某些类型的设施从这些改进中受益更多，但总体而言，你会希望有更多炮塔、雷区和其他防御设施可用。" />
@@ -58,8 +46,7 @@ There are also Other Defense Schematic Servers (ODSS) that can give you yet more
     <journal name="Beginner_UseLoadMode" sidebar_text="&lt;color=#ffd267&gt;概念:&lt;/color&gt; 运输舰船" is_for_the_tips_tab="true"
              can_record_another_copy_if_already_recorded_in_this_campaign="false"
              text_replacement_related_faction_color="true"
-             chat_text="Commander, one important trick is to put your flagships in 'Load Mode'. This lets them operate as Transports to move your ships around the map very quickly.
-                        The default hotkey to enter Load Mode is 'L' and to then unload, hit 'U'. You can override this in the Controls menu."
+             chat_text="指挥官，一个重要技巧是将旗舰设为"装载模式"。这能让它们作为运输舰在地图上快速移动舰船。默认进入装载模式的快捷键是L，卸载按U。你可以在控制菜单中修改。"
              full_text="指挥官，一个重要的技巧是让你的旗舰进入“装载模式”。这能让它们充当运输船，快速在地图上移动你的舰船。
 
 处于装载模式的旗舰非常适合绕过AI防御，打击关键目标。
@@ -69,7 +56,7 @@ There are also Other Defense Schematic Servers (ODSS) that can give you yet more
     <journal name="Beginner_Automation" sidebar_text="&lt;color=#dbadfe&gt;信息:&lt;/color&gt; 自动化设置" is_for_the_tips_tab="true"
            can_record_another_copy_if_already_recorded_in_this_campaign="false"
              text_replacement_related_faction_color="true"
-             chat_text="Commander, you should consider automating some of your planetary defensive options."
+             chat_text="指挥官，你应该考虑自动化一些行星防御选项。"
              full_text="指挥官，你应该考虑自动化一些建造选项。在设置菜单的自动化选项下，有设置可以自动在你的行星上建造一些常见的防御舰船。"
              />
 
@@ -82,9 +69,7 @@ There are also Other Defense Schematic Servers (ODSS) that can give you yet more
     <journal name="Beginner_UpgradeFlagships" sidebar_text="&lt;color=#ffd267&gt;概念:&lt;/color&gt; 升级旗舰" is_for_the_tips_tab="true"
              can_record_another_copy_if_already_recorded_in_this_campaign="false"
              text_replacement_related_faction_color="true"
-             chat_text="Commander, it looks like some of your flagships are being crippled during battles.
-
-It may be worthwhile to upgrade fleet centerpieces with science at least once or twice to make them more durable and less prone to being crippled. You can do that via the Fleets menu by clicking on the fleet in question."
+             chat_text="指挥官，看来你的一些旗舰在战斗中受到重创。用科技至少升级一两次舰队核心舰船，让它们更耐用、减少被重创的风险。你可以通过舰队菜单点击相关舰队进行升级。"
              full_text="指挥官，看来你的一些旗舰在战斗中受到重创。
 
 用科技至少升级一两次舰队核心舰船可能是值得的，这样能让它们更耐用，减少被重创的可能性。你可以通过舰队菜单点击相关舰队来进行升级。" />
@@ -92,11 +77,7 @@ It may be worthwhile to upgrade fleet centerpieces with science at least once or
     <journal name="Beginner_WarpGateNearKing" sidebar_text="&lt;color=#ff6a30&gt;敌人:&lt;/color&gt; 跃迁门" is_for_the_tips_tab="true"
              can_record_another_copy_if_already_recorded_in_this_campaign="false"
              text_replacement_related_faction_color="true"
-             chat_text="Commander, be careful of AI warp gates.
-
-Warp Gates are used by the AI to warp in Waves of units against your planets. Sniping warp gates except for those next to heavily defended planets will let you control AI aggression, albeit at a small AIP cost.
-
-Right now, our homeworld is open to AI attacks by leaving Warp Gates alive on plants adjacent to our Homeworld. We either need to very heavily defend our Homeworld or we should consider killing the Warp Gates to better protect yourself from AI Aggression."
+             chat_text="指挥官，小心AI跃迁门。AI利用跃迁门向你的行星传送攻击波。狙杀跃迁门（重防行星旁的除外）可以控制AI侵略性，代价是少量AIP。目前母星因相邻行星上的跃迁门而易受AI攻击，我们需要加强母星防御或摧毁跃迁门以保护自己。"
              full_text="指挥官，小心AI的跃迁门。
 
 跃迁门被AI用来向你的行星传送一波又一波的单位。狙击跃迁门（除了那些位于重兵防守行星旁边的跃迁门）可以让你控制AI的侵略性，尽管这会带来少量的AIP值增加。这种技巧被称为“跃迁门突袭”。
@@ -108,9 +89,7 @@ Right now, our homeworld is open to AI attacks by leaving Warp Gates alive on pl
     <journal name="Beginner_SpendScience" sidebar_text="&lt;color=#d267ff&gt;建议:&lt;/color&gt; 消耗科技值" is_for_the_tips_tab="true"
              can_record_another_copy_if_already_recorded_in_this_campaign="false"
              text_replacement_related_faction_color="true"
-             chat_text="Commander, using your Science to upgrade ships is a key way to make your fleets more powerful.
-
-Sitting on huge amounts of science can make the game unnecessarily hard."
+             chat_text="指挥官，用科技点数升级舰船是增强舰队实力的关键方法。囤积大量科技值会让游戏变得不必要地困难。"
              full_text="指挥官，用你的科技值来升级舰船是增强舰队实力的关键方法。
 
 囤积大量科技值会让游戏变得不必要地困难。
@@ -120,9 +99,7 @@ Sitting on huge amounts of science can make the game unnecessarily hard."
         <journal name="Beginner_BuildTurrets" sidebar_text="&lt;color=#d267ff&gt;建议:&lt;/color&gt; 建造炮塔" is_for_the_tips_tab="true"
              can_record_another_copy_if_already_recorded_in_this_campaign="false"
              text_replacement_related_faction_color="true"
-             chat_text="Commander, we should consider building some turrets to defend our planets.
-
-Turrets are a very strong mechanism of stationary defense."
+             chat_text="指挥官，我们应该考虑建造一些炮塔来保卫行星。炮塔是一种非常强大的固定防御手段。"
              full_text="指挥官，我们应该考虑建造一些炮塔来防御我们的行星。
 
 炮塔是一种非常强大的静态防御手段，你会希望在可能受到攻击的行星上部署它们。" />
@@ -130,7 +107,7 @@ Turrets are a very strong mechanism of stationary defense."
         <journal name="Beginner_WatchFleets" sidebar_text="&lt;color=#dbadfe&gt;信息:&lt;/color&gt; 关注舰队" is_for_the_tips_tab="true"
              can_record_another_copy_if_already_recorded_in_this_campaign="false"
              text_replacement_related_faction_color="true"
-             chat_text="Commander, we can Watch fleets to be able to see their status even when they are on other planets. Look at the Journal for more details."
+             chat_text="指挥官，我们可以关注舰队，即使它们在其他行星上也能看到状态。详情请查看日志。"
              full_text="指挥官，我们可以使用行星菜单来关注舰队，这样即使它们在遥远的行星上，我们也能看到它们的生命值和实力。这可以让你有效地同时监控多场战斗。关注你最重要的舰队是个好主意（注意，指挥站也被视为舰队！）。 
 
 有很多方法可以自定义这个功能；查看行星侧边栏的底部选项。例如，有些人喜欢将关注的舰队显示在行星侧边栏的舰船列表上方。" />
@@ -138,7 +115,7 @@ Turrets are a very strong mechanism of stationary defense."
         <journal name="Beginner_QueueUnload" sidebar_text="&lt;color=#dbadfe&gt;信息:&lt;/color&gt; 队列舰队卸载" is_for_the_tips_tab="true"
              can_record_another_copy_if_already_recorded_in_this_campaign="false"
              text_replacement_related_faction_color="true"
-             chat_text="Commander, the ability to queue fleet unload is very useful! If you have a loaded fleet you can give it a move order on the galaxy map, then hold Shift and press 'U' to queue the unload after the move completes."
+             chat_text="指挥官，排队卸载舰队的功能非常有用！给已装载的舰队下达移动命令后，按住Shift再按U即可在到达后排隊卸载。"
              full_text="指挥官，队列舰队卸载功能非常有用！如果你有一艘满载的舰队，你可以在星系地图上给它下达移动命令，然后按住Shift键并按“U”键，在移动完成后队列卸载。
 
 你也可以用Shift键队列其他类型的命令，但能够告诉舰队“前往这场战斗，到达后卸载舰船”是非常有用的。" />
@@ -167,9 +144,7 @@ Turrets are a very strong mechanism of stationary defense."
              can_record_another_copy_if_already_recorded_in_this_campaign="false"
              text_replacement_related_faction_color="true"
              text_replacement_related_planet="true"
-             chat_text="Commander, we have identified a good target; a nearby Flagship. 
-
-Please check the Journal in the sidebar for more details."
+             chat_text="指挥官，我们找到一个不错的目标；附近有一艘旗舰。详情请查看侧边栏中的日志。"
 
              full_text="指挥官，我们发现了一个不错的目标。附近的{PlanetName}行星上有一艘我们可以占领的旗舰。 
 
@@ -181,7 +156,7 @@ Please check the Journal in the sidebar for more details."
              can_record_another_copy_if_already_recorded_in_this_campaign="false"
              text_replacement_related_faction_color="true"
              text_replacement_related_planet="true"
-             chat_text="Commander, we need some additional objectives. See the Journal for some Next Steps."
+             chat_text="指挥官，我们需要一些额外目标。请查看日志获取下一步建议。"
 
              full_text="指挥官，现在你已经将势力扩展到母星系统之外，还有许多其他可能性可供你选择。 如果你在任何时候陷入困境，不确定该做什么，情报标签是寻找目标和任务的好方法。 你可能还会发现以下想法很有用：
 
@@ -205,7 +180,7 @@ Please check the Journal in the sidebar for more details."
              can_record_another_copy_if_already_recorded_in_this_campaign="false"
              text_replacement_related_faction_color="true"
              text_replacement_related_planet="true"
-             chat_text="Commander, we have just claimed an Officer Fleet! These are very powerful but have some interesting aspects explained in the Journal."
+             chat_text="指挥官，我们刚获得一支军官舰队！它们非常强大，日志中会解释其特性。"
 
              full_text="指挥官，我们俘获了一艘研究人员命名为“军官”级的舰船。
 
@@ -224,7 +199,7 @@ Please check the Journal in the sidebar for more details."
              can_record_another_copy_if_already_recorded_in_this_campaign="false"
              text_replacement_related_faction_color="true"
              text_replacement_related_planet="true"
-             chat_text="Commander, the Tech menu is just one of two ways to upgrade your fleets with science.  Advice available in the journal."
+             chat_text="指挥官，科技菜单只是用科学点数升级舰队的两种方式之一。详细建议见日志。"
              full_text="你可以通过将舰船的等级从1提升到7来用科技值升级它们。 这可以通过几种方式实现。
              
 最明显的方式是通过科技侧边栏（按T键）。 大多数舰船与两项科技相关联，所以你选择的科技决定了哪些舰船会升级。
@@ -249,7 +224,7 @@ Please check the Journal in the sidebar for more details."
              can_record_another_copy_if_already_recorded_in_this_campaign="false"
              text_replacement_related_faction_color="true"
              text_replacement_related_planet="true"
-             chat_text="Commander, it looks like the AI is starting to build up Threat against our planets"
+             chat_text="指挥官，看来AI开始对各行星积累威胁。"
              full_text="&lt;b&gt;检测到AI中度威胁等级&lt;/b&gt;
 &lt;size=80%&gt;指挥官，我们的侦察表明，AI的部分部队已经察觉到我们的行动，并进入了“威胁”模式。&lt;/size&gt;
 
@@ -267,7 +242,7 @@ Please check the Journal in the sidebar for more details."
              can_record_another_copy_if_already_recorded_in_this_campaign="false"
              text_replacement_related_faction_color="true"
              text_replacement_related_planet="true"
-             chat_text="Commander, it looks like the AI has accumulated a lot of Threat against our planets"
+             chat_text="指挥官，看来AI对各行星积累了大量威胁。"
              full_text="&lt;b&gt;检测到AI大规模威胁等级！&lt;/b&gt;
 &lt;size=80%&gt;指挥官，我们的侦察表明，AI的大量部队已经察觉到我们的行动，并进入了“威胁”模式。&lt;/size&gt;
 
@@ -280,7 +255,7 @@ Please check the Journal in the sidebar for more details."
              can_record_another_copy_if_already_recorded_in_this_campaign="false"
              text_replacement_related_faction_color="true"
              text_replacement_related_planet="true"
-             chat_text="Commander, our forces on {PlanetName} are badly outnumbered"
+             chat_text="指挥官，我们在{PlanetName}上的部队严重寡不敌众。"
              full_text="&lt;b&gt;我们严重寡不敌众！&lt;/b&gt;
 &lt;size=80%&gt;指挥官，我们的军事模拟表明，该星系中的敌人比我们目前的部队强大得多。&lt;/size&gt;
 
@@ -305,7 +280,7 @@ Please check the Journal in the sidebar for more details."
              can_record_another_copy_if_already_recorded_in_this_campaign="false"
              text_replacement_related_faction_color="true"
              text_replacement_related_planet="true"
-             chat_text="Commander, our forces on {PlanetName} are mostly dealing with Guards"
+             chat_text="指挥官，我们在{PlanetName}上的部队主要在对付守卫部队。"
              full_text="&lt;b&gt;星系中有许多守卫舰船未察觉&lt;/b&gt;
 &lt;size=80%&gt;指挥官，我们的侦察表明，这个行星上有大量处于“守卫”模式的单位。&lt;/size&gt;
 
@@ -319,7 +294,7 @@ Please check the Journal in the sidebar for more details."
              can_record_another_copy_if_already_recorded_in_this_campaign="false"
              text_replacement_related_faction_color="true"
              text_replacement_related_planet="true"
-             chat_text="Commander, we have just obtained our first Citadel on {PlanetName}!"
+             chat_text="指挥官，我们刚在{PlanetName}上获得第一座堡垒！"
              full_text="&lt;b&gt;新堡垒&lt;/b&gt;
 &lt;size=80%&gt;指挥官，我们俘获了一座“堡垒”级防御建筑。&lt;/size&gt;
 
@@ -337,7 +312,7 @@ Please check the Journal in the sidebar for more details."
              can_record_another_copy_if_already_recorded_in_this_campaign="false"
              text_replacement_related_faction_color="true"
              text_replacement_related_planet="true"
-             chat_text="Commander, we have just encountered an AI Eye on {PlanetName}!  Advice available in the journal."
+             chat_text="指挥官，我们在{PlanetName}上遭遇了AI监视眼！日志中有应对建议。"
              full_text="&lt;b&gt;AI监视眼非常致命&lt;/b&gt;
 指挥官，监视眼是一种特别致命的AI武器，在你将部队派往该行星之前，应该仔细研究。
 
@@ -404,7 +379,7 @@ Please check the Journal in the sidebar for more details."
              can_record_another_copy_if_already_recorded_in_this_campaign="false"
              text_replacement_related_faction_color="true"
              text_replacement_related_planet="true"
-             chat_text="Commander, we have just encountered a Raid Engine on {PlanetName}!"
+             chat_text="指挥官，我们在{PlanetName}上遭遇了突袭引擎！"
              full_text="&lt;b&gt;威胁总结：突袭引擎&lt;/b&gt;
 &lt;size=80%&gt;指挥官，我们在{PlanetName}行星上检测到一个AI突袭引擎。只要我们在这个行星上有部队，这些设施就会生成相对强大的舰船波来攻击我们。 &lt;/size&gt;
 
@@ -418,7 +393,7 @@ Please check the Journal in the sidebar for more details."
              can_record_another_copy_if_already_recorded_in_this_campaign="false"
              text_replacement_related_faction_color="true"
              text_replacement_related_planet="true"
-             chat_text="Commander, we have just encountered an Orbital Mass Driver on {PlanetName}!"
+             chat_text="指挥官，我们在{PlanetName}上遭遇了轨道质量驱动器！"
              full_text="&lt;b&gt;威胁总结：轨道质量驱动器（OMD）&lt;/b&gt;
 &lt;size=80%&gt;指挥官，我们在{PlanetName}行星上检测到一个轨道质量驱动器。这些设施对我们的旗舰构成了特别重大的威胁。 &lt;/size&gt;
 
@@ -434,7 +409,7 @@ Please check the Journal in the sidebar for more details."
              can_record_another_copy_if_already_recorded_in_this_campaign="false"
              text_replacement_related_faction_color="true"
              text_replacement_related_planet="true"
-             chat_text="Commander, we have just encountered a Wormhole Projector on {PlanetName}!"
+             chat_text="指挥官，我们在{PlanetName}上遭遇了虫洞投影仪！"
              full_text="&lt;b&gt;威胁总结：虫洞投影仪&lt;/b&gt;
 &lt;size=80%&gt;指挥官，我们在{PlanetName}行星上检测到一个虫洞投影仪。虫洞投影仪会在地图上创建新的虫洞连接，并由虫洞入侵触发。
 

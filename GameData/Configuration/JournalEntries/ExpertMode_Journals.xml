@@ -4,7 +4,7 @@
   <journal name="ExpertMode_Fuel" sidebar_text="&lt;color=#ffd267&gt;概念:&lt;/color&gt; 氩气、氡气和氙气燃料" is_for_the_tips_tab="true"
            can_record_another_copy_if_already_recorded_in_this_campaign="false"
            text_replacement_related_faction_color="true"
-        chat_text="Commander, if you're new to using fuel, then you may want to read this brief on what fuels are available to you and how they are used."
+        chat_text="指挥官，如果你是第一次使用燃料系统，建议阅读这份简要说明，了解可用的燃料种类和使用方法。"
         full_text="后勤专家模式旨在通过增加玩家必须保护的基础设施来提升战略深度，以维持一支有效的军事力量。这会影响你想要占领的星球，以及你部署军队以确保重要资产不被摧毁的方式。
 
 为此，资源栏中新增了三种燃料：供机动舰队使用的氩气，供炮塔和其他固定防御设施使用的氡气，以及供军官、外层警卫、堡垒等使用的氙气。你初始拥有基本的燃料储备，足以支撑你最初占领的几个星球，但最终你需要获取并保护新的燃料站，才能为你的部队提供充足的补给。你可以建造超出燃料容量的新单位，但它们的效能会迅速下降；任何效能低于 100% 的单位，其耐久度和伤害输出都会受到相应的惩罚。
@@ -14,7 +14,7 @@
 	<journal name="ChallengerMode_Intro" sidebar_text="&lt;color=#ffd267&gt;概念:&lt;/color&gt; 挑战者战役类型" is_for_the_tips_tab="true"
 			 can_record_another_copy_if_already_recorded_in_this_campaign="false"
 			 text_replacement_related_faction_color="true"
-		  chat_text="Commander, if you're new to the Challenger campaign type, you may wish to read this brief on what it's all about."
+		  chat_text="指挥官，如果你是第一次玩挑战者战役类型，建议阅读这份简要说明。"
 		  full_text="挑战者模式专为那些希望获得比“人类崛起”模式更具战略性体验，但又不想采用专家模式全部限制规则的玩家设计。如果你对各种模式有任何疑问，请访问阿尔森游戏的 Discord 频道，那里有一个专门的 expert_challenger_deathwish 频道，你可以随时向战略贤者提问。一如既往，螳螂网站也欢迎你的反馈和 bug 报告。这两个渠道都可以从主菜单轻松访问。
 
 与“人类崛起”模式相比，挑战者模式会始终开启一些设置。
@@ -33,7 +33,7 @@
 	<journal name="ExpertMode_Intro" sidebar_text="&lt;color=#ffd267&gt;概念:&lt;/color&gt; 专家战役类型" is_for_the_tips_tab="true"
 			 can_record_another_copy_if_already_recorded_in_this_campaign="false"
 			 text_replacement_related_faction_color="true"
-		  chat_text="Commander, if you're new to the Expert campaign type, you may wish to read this brief on what it's all about."
+		  chat_text="指挥官，如果你是第一次玩专家战役类型，建议阅读这份简要说明。"
 		  full_text="恭喜！你做出了尝试《AI 战争 2》专家模式的明智选择。专家模式的目标是为有经验的《AI 战争 2》玩家提供更具挑战性和趣味性的战略体验。请注意，强烈建议在较为“开放”的地图上游玩，即那些没有大量瓶颈点的地图。过于“封闭”的地图布局会使专家模式的一些特色功能失效，但最终决定权在你手中。
 
 如果你在任何时候觉得专家模式过于困难，可以考虑挑战者模式，它允许你关闭大部分你不喜欢的专家模式功能。另一方面，如果你想挑战更高难度，后勤专家模式需要你管理燃料，而死亡愿望模式则有更多额外挑战。如果你对这些模式有任何疑问，请访问阿尔森游戏的 Discord 频道，那里有一个专门的 expert_challenger_deathwish 频道，你可以随时向战略贤者提问。一如既往，螳螂网站也欢迎你的反馈和 bug 报告。这两个渠道都可以从主菜单轻松访问。
@@ -64,7 +64,7 @@
 	<journal name="LogisticianMode_Intro" sidebar_text="&lt;color=#ffd267&gt;概念:&lt;/color&gt; 后勤专家战役类型" is_for_the_tips_tab="true"
 			 can_record_another_copy_if_already_recorded_in_this_campaign="false"
 			 text_replacement_related_faction_color="true"
-		  chat_text="Commander, if you're new to the Logistician campaign type, you may wish to read this brief on what it's all about."
+		  chat_text="指挥官，如果你是第一次玩后勤专家战役类型，建议阅读这份简要说明。"
 		  full_text="恭喜！你做出了尝试《AI 战争 2》后勤专家模式的明智选择。后勤专家模式的目标是为有经验的《AI 战争 2》玩家提供更具挑战性和趣味性的战略体验。请注意，强烈建议在较为“开放”的地图上游玩，即那些没有大量瓶颈点的地图。过于“封闭”的地图布局会使后勤专家模式的一些特色功能失效，但最终决定权在你手中。
 
 如果你在任何时候觉得后勤专家模式过于困难，可以考虑专家模式，它取消了燃料管理的要求。或者你也可以选择挑战者模式，它允许你关闭大部分你不喜欢的后勤专家/专家模式功能。另一方面，如果你想挑战更高难度，死亡愿望模式则有更多额外挑战。如果你对这些模式有任何疑问，请访问阿尔森游戏的 Discord 频道，那里有一个专门的 expert_challenger_deathwish 频道，你可以随时向战略贤者提问。一如既往，螳螂网站也欢迎你的反馈和 bug 报告。这两个渠道都可以从主菜单轻松访问。
@@ -98,7 +98,7 @@
 	<journal name="DeathwishMode_Intro" sidebar_text="&lt;color=#ffd267&gt;概念:&lt;/color&gt; 死亡愿望战役类型" is_for_the_tips_tab="true"
 			 can_record_another_copy_if_already_recorded_in_this_campaign="false"
 			 text_replacement_related_faction_color="true"
-		  chat_text="Commander, if you're new to the Deathwish campaign type, you may wish to read this brief on what it's all about."
+		  chat_text="指挥官，如果你是第一次玩死亡愿望战役类型，建议阅读这份简要说明。"
 		  full_text="哇，你可真勇敢！死亡愿望模式是《AI 战争 2》中限制最多、惩罚最严厉的模式。如果你来到了这里，大概率已经对等待你的挑战有了一定了解。如果你对各种模式有任何疑问，请访问阿尔森游戏的 Discord 频道，那里有一个专门的 expert_challenger_deathwish 频道，你可以随时向战略贤者提问。一如既往，螳螂网站也欢迎你的反馈和 bug 报告。这两个渠道都可以从主菜单轻松访问。
 
 死亡愿望模式被戏称为“完全贤者”模式。在某些方面，对玩家的公平性几乎被抛诸脑后，取而代之的是恶意的嘲笑。它包含了后勤专家模式的所有内容：燃料管理、分布式经济、限制战列舰使用等。此外，AI 还会给你带来以下额外的“刁难”，未来可能还会增加更多：
@@ -115,7 +115,7 @@
 	<journal name="ExpertUpLimitedBattlestations_Intro" sidebar_text="&lt;color=#ffd267&gt;概念:&lt;/color&gt; 限制战列舰使用" is_for_the_tips_tab="true"
 			 can_record_another_copy_if_already_recorded_in_this_campaign="false"
 			 text_replacement_related_faction_color="true"
-		  chat_text="Commander, if you're new to the having only one starting battlestation, you may be interested to learn why this is."
+		  chat_text="指挥官，如果你是第一次遇到仅有一个起始战斗站的情况，你可能想了解原因。"
 		  full_text="在默认的“人类崛起”模式的标准玩法中，有经验的《AI 战争 2》玩家发现，在敌方星球上建造炮塔的滩头推进策略比主要依靠机动舰队和舰船更为有效。专家模式旨在实现一种更平衡的玩法，让滩头推进策略仍可使用，但不会过于强大。
 
 正如你可能已经注意到的，你只能选择一艘战列舰，而不是默认的两艘。此外，通过黑客技术从 TSS 获取额外炮塔时，只有在为战列舰单独使用 3 倍选项时，这些炮塔才会分配给战列舰。使用 1 倍选项时，这些炮塔只会分配给你的指挥站，战列舰的炮塔配置不会改变。
