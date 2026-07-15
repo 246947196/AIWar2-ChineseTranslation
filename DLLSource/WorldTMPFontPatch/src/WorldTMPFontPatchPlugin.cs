@@ -50,8 +50,8 @@ public class WorldTMPFontPatchPlugin : BaseUnityPlugin
             // Legacy font for overlay
             try
             {
-                Font sysFont = Font.CreateDynamicFontFromOSFont("Microsoft YaHei", 14);
-                if (sysFont != null) { cachedLegacyFont = sysFont; Log("Font: Microsoft YaHei"); }
+                Font sysFont = Font.CreateDynamicFontFromOSFont("Microsoft YaHei", 48);
+                if (sysFont != null) { cachedLegacyFont = sysFont; Log("Font: Microsoft YaHei 48pt"); }
             }
             catch { }
 
@@ -218,8 +218,17 @@ public class WorldTMPFontPatchPlugin : BaseUnityPlugin
         try { t = go.AddComponent<UnityEngine.UI.Text>(); }
         catch { t = go.GetComponent<UnityEngine.UI.Text>(); }
         if (t == null) { UnityEngine.Object.Destroy(go); Log("OVERLAY: AddComponent FAILED"); return; }
+
+        // 2x render resolution to combat CanvasScaler pixelation
+        Rect parentRect = __instance.rectTransform.rect;
+        var rt = t.rectTransform;
+        rt.anchorMin = new Vector2(0.5f, 0.5f);
+        rt.anchorMax = new Vector2(0.5f, 0.5f);
+        rt.sizeDelta = new Vector2(parentRect.width * 2f, parentRect.height * 2f);
+        rt.localScale = new Vector3(0.5f, 0.5f, 1f);
+
         t.font = cachedLegacyFont;
-        t.fontSize = fontSize;
+        t.fontSize = fontSize * 2;
         t.lineSpacing = 0.9664f;
         t.alignment = TextAnchor.UpperLeft;
         t.supportRichText = true;
@@ -228,12 +237,7 @@ public class WorldTMPFontPatchPlugin : BaseUnityPlugin
         t.horizontalOverflow = HorizontalWrapMode.Wrap;
         t.raycastTarget = false;
 
-        var rt = t.rectTransform;
-        rt.anchorMin = Vector2.zero;
-        rt.anchorMax = Vector2.one;
-        rt.offsetMin = Vector2.zero;
-        rt.offsetMax = Vector2.zero;
-        Log($"OVERLAY: created as child, fontSize={fontSize}");
+        Log($"OVERLAY: created as child, fontSize={fontSize * 2} (2x), parent={parentRect.width}x{parentRect.height}");
     }
 
     // ========== Message type classification ==========
@@ -252,36 +256,43 @@ public class WorldTMPFontPatchPlugin : BaseUnityPlugin
     {
         Transform existing = tmp.transform.Find("TMP_LegacyOverlay");
         UnityEngine.UI.Text legacy = existing?.GetComponent<UnityEngine.UI.Text>();
-        if (legacy != null) return legacy;
 
-        // Create on-demand
-        tmp.color = new Color(0, 0, 0, 0);
-        int fontSize = Math.Max(11, (int)(tmp.fontSize * 0.65f));
+        if (legacy == null)
+        {
+            // Create on-demand
+            tmp.color = new Color(0, 0, 0, 0);
+            int fontSize = Math.Max(11, (int)(tmp.fontSize * 0.65f));
 
-        var go = new GameObject("TMP_LegacyOverlay", typeof(RectTransform));
-        go.transform.SetParent(tmp.transform, false);
+            var go = new GameObject("TMP_LegacyOverlay", typeof(RectTransform));
+            go.transform.SetParent(tmp.transform, false);
 
-        try { legacy = go.AddComponent<UnityEngine.UI.Text>(); }
-        catch { legacy = go.GetComponent<UnityEngine.UI.Text>(); }
-        if (legacy == null) { UnityEngine.Object.Destroy(go); return null; }
+            try { legacy = go.AddComponent<UnityEngine.UI.Text>(); }
+            catch { legacy = go.GetComponent<UnityEngine.UI.Text>(); }
+            if (legacy == null) { UnityEngine.Object.Destroy(go); return null; }
 
-        legacy.font = cachedLegacyFont;
-        legacy.fontSize = fontSize;
-        legacy.lineSpacing = 0.9664f;
-        legacy.alignment = TextAnchor.UpperLeft;
-        legacy.supportRichText = true;
-        legacy.color = Color.white;
-        legacy.verticalOverflow = VerticalWrapMode.Overflow;
-        legacy.horizontalOverflow = HorizontalWrapMode.Wrap;
-        legacy.raycastTarget = false;
+            var rt = legacy.rectTransform;
+            rt.anchorMin = new Vector2(0.5f, 0.5f);
+            rt.anchorMax = new Vector2(0.5f, 0.5f);
+            rt.localScale = new Vector3(0.5f, 0.5f, 1f);
 
-        var rt = legacy.rectTransform;
-        rt.anchorMin = Vector2.zero;
-        rt.anchorMax = Vector2.one;
-        rt.offsetMin = Vector2.zero;
-        rt.offsetMax = Vector2.zero;
+            legacy.font = cachedLegacyFont;
+            legacy.fontSize = fontSize * 2;
+            legacy.lineSpacing = 0.9664f;
+            legacy.alignment = TextAnchor.UpperLeft;
+            legacy.supportRichText = true;
+            legacy.color = Color.white;
+            legacy.verticalOverflow = VerticalWrapMode.Overflow;
+            legacy.horizontalOverflow = HorizontalWrapMode.Wrap;
+            legacy.raycastTarget = false;
 
-        Log($"OVERLAY: on-demand created for '{tmp.name}', fontSize={fontSize}");
+            Log($"OVERLAY: on-demand created for '{tmp.name}', fontSize={fontSize * 2} (2x)");
+        }
+
+        // Refresh sizeDelta from current parent rect — OnEnable may fire before layout,
+        // but set_text (which triggers us) guarantees layout is complete.
+        Rect parentRect = tmp.rectTransform.rect;
+        legacy.rectTransform.sizeDelta = new Vector2(parentRect.width * 2f, parentRect.height * 2f);
+
         return legacy;
     }
 
