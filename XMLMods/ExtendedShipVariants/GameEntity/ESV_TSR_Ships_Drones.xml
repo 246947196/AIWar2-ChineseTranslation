@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<entity name="AcidicDrone" copy_from="AMU_DroneBase" required_expansion_list="1_The_Spire_Rises"
+		icon_overlay="Overlays1/Turret_Acid"
+		visuals="Assets/_FinalGameMeshes/FleetShips/Parasite/Parasite.prefab"
+		size_scale="0.9"
+		visuals_scale_multiplier="3"
+		display_name="酸性无人机"
+		display_name_for_sidebar="酸性DRN"
+		description="对敌人施加伤害放大效果，并以高射速利用这一效果。"
+		self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="35"
+		hull_points="2000" speed="Normal3"
+		metal_cost="3500" energy_consumption="0"
+		armor_mm="10" albedo="0.3" engine_gx="8" mass_tx="0.15"
+	>
+		<fleet_membership name="AcidicDrones" ship_cap_group="Strike" weight="100" min="5" max="5"/>
+		<system name="AS" display_name="酸性射击"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="7" range="VeryTiny2" shot_speed="Instant" rate_of_fire="Devourer"
+			shots_per_salvo="5"
+			shot_type_data="DoubleShot_Green"
+			damage_amplification="true" damage_amplification_duration="10" damage_amplification_flat="50"
+			>
+		</system>
+	</entity>
+</root>

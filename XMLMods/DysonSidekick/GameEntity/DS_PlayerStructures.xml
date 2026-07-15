@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <entity name="TurretSchematicServerForEasyMode" copy_from="TurretSchematicServer" thematic_groups="Hidden"
+          tags="TurretSchematicServerEasy,Capturable"          
+          hackable_for_command_stations_and_battle_stations_turret_count="6"
+          >
+  </entity>
+
+  <entity name="AdvancedResearchStationForEasyMode" copy_from="AdvancedResearchStation" thematic_groups="Hidden"
+          tags="HackForShipType,ShowsOnNormalDisplayMode,HackAsIfCapturable,ARSEasy"
+          grants_stuff_to_be_added_to_player_fleets_strikecraft_options="4"
+          grants_stuff_to_be_added_to_player_fleets_frigate_options="2"
+
+     >
+  </entity>
+</root>

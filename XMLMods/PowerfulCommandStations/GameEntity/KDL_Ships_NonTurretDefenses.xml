@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <entity name="ForcefieldGenerator" is_partial_record="true"
+			shield_size_scale="4"
+			display_name="力场护盾发生器"
+			description="保护附近的舰船和建筑。受其保护的单位将造成一半的常规伤害。略微可移动，因此易受具有诺里斯效应的舰船推动。仅提供给指挥站。"
+			
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Forcefields,Command" 
+			
+			hull_points="50000" shield_points="350000" speed="AlmostNone"
+			metal_cost="80000" energy_consumption="50000"
+			
+			absolute_max_cap_when_in_fleets="12"
+			is_blocked_from_dss_grant_to_Battlestations_and_citadels="true"
+      priority_as_ai_target="ShieldGenerator" priority_as_frd_target="NotDangerous" priority_to_protect="MidFavoriteToy"
+			>
+    <fleet_membership name="PlayerEconomicCommand" ship_cap_group="OtherDefense" weight="100" cap="1"/>
+    <fleet_membership name="PlayerLogisticalCommand" ship_cap_group="OtherDefense" weight="100" cap="1"/>
+	<fleet_membership name="PlayerMilitaryCommand" ship_cap_group="OtherDefense" weight="100" cap="1"/>
+	<fleet_membership name="AddedToCommandStation" ship_cap_group="OtherDefense" weight="100" cap="1"/>
+	<fleet_membership name="PlayerHomeCommand" ship_cap_group="OtherDefense" weight="100" cap="1"/>
+	
+    <metal_flow purpose="SelfConstruction" throughput="500"/>
+  </entity>
+
+  <entity name="StartingForcefieldGenerator" is_partial_record="true"
+   absolute_max_cap_when_in_fleets="0"
+			    collision_priority="11000" mark_level_scale_style="PlayerHomeForcefield" speed="Immobile"
+					description="保护附近的舰船和建筑。受其保护的单位将造成一半的常规伤害。完全不可移动，因此无法被诺里斯效应推动。">>
+    <fleet_membership name="PlayerHomeCommand" ship_cap_group="OtherDefense" weight="100" cap="0"/>
+  </entity>
+  
+
+  <entity name="FocusedGravityGenerator" is_partial_record="true"
+			>
+    <fleet_membership name="AddedToCommandStation" ship_cap_group="OtherDefense" weight="100" cap="5"/>
+    <fleet_membership name="GeneralTurrets" ship_cap_group="OtherDefense" weight="20" cap="9"/>
+    <fleet_membership name="OtherDefenseFocus" ship_cap_group="OtherDefense" weight="20" cap="12"/>
+    <fleet_membership name="PlayerLogisticalCommand" ship_cap_group="OtherDefense" weight="100" cap="0"/>
+    <ai_ship_group_membership name="TurretTrapWormholeSentinels_GravityPikes" weight="1"/>
+    <ai_ship_group_membership name="AnyNonTurretDefenses_FreeforAll" weight="10"/>
+	<ai_ship_group_membership name="FocusedGravityGenerators" weight="10"/>
+    <ai_ship_group_membership name="TutorialNonTurretDefenses_FreeforAll" weight="10"/>
+    <metal_flow purpose="SelfConstruction" throughput="100"/>
+    <system name="G" display_name="引力核心"
+				category="Passive"
+				base_gravity_speed_multiplier="0.7" subtracted_gravity_speed_multiplier_per_mark="0.1" gravity_hits_engine_gx_less_than="14" gravity_range="Normal6"
+				>
+    </system>
+  </entity>
+ 
+  
+</root>

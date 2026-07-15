@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <display_mode name="Leere"
+        display_name="<color=#654321>戾尔光环s</color>"
+           dll_name="LeereDeepInfo"
+           type_name="Modding.Leere.GalaxyMapDisplayMode_Leere"
+           tooltip="Shows the strength of all active 戾尔光环s on the map, as well as the currently active Aura, if any, appended onto each Planet's name."
+  />
+
+</root>

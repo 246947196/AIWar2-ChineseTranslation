@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <window name="Window_KMUpgradeDisplay"
+        canvas_sort_order="101000" dll_name="KaizersMarauders_Base" type_name="KaizersMarauders_Base.Window_KMUpgradeDisplay"
+        width="500" height="500"
+        y_align="MiddleOfScreen" x_align="MiddleOfScreen"
+  >
+    <element prefab_lookup_name="BasicWindowBG" x="-2000" y="-2000" width="4000" height="4000" is_intentionally_without_controller="true" />
+    <element prefab_lookup_name="BasicText" x="0" y="-20" width="450" height="20" type_name="ResearchDisplayTopLabel" font_size="13" text_alignment="Bottom" />
+    <element prefab_lookup_name="ButtonSet_BlueSmallerCenter" width="450" height="132" button_width="400" button_height="18" font_size="13" type_name="KMUpgradeDisplayMenuRoot" />
+  </window>
+</root>

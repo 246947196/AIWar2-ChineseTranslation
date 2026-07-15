@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+<galaxy_setting name="CanHackShields" category="ShieldGenerators" display_name="护盾 Generators Can Be Hacked" type="BoolToggle"
+default="true" changeable_during_gameplay="false"
+description="By default, 护盾 Generators can be hacked. Disabling this will remove the option to hack 护盾 Generators, forcing the player to destroy more Command 站s and thus incur more AI Progress."
+	/>
+	<galaxy_setting name="CanOverload" category="ShieldGenerators" display_name="核心护盾s Can Be Overloaded" type="BoolToggle"
+		default="true" changeable_during_gameplay="false"
+		description="Determines whether 核心护盾s can be overloaded if a non-player faction destroys the Command 站 on a 堡垒 World.
+If Enabled, this will result in the destruction of all 核心护盾s and 护盾 Generators owned by the owner of the Command 站, leaving them vulnerable to the attacking faction."
+	/>
+		<galaxy_setting name="CanPlayerAlliesOverload" category="ShieldGenerators" display_name="Allied Factions Can Overload 核心护盾s" type="BoolToggle"
+		default="false" changeable_during_gameplay="false"
+		description="By default, factions allied to the player cannot overload a 核心护盾 even if they destroy an appropriate Command 站 as allowing them to do so can result in cheese.
+If this is enabled, this restriction will be removed assuming that Overloading is also enabled."
+	/>
+</root>

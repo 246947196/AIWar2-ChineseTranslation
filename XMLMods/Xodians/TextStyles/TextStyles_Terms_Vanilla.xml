@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+    <!-- Text Terms -->
+    
+    <style name="Devour"
+           color="#c95eed"
+           />
+
+    <style name="Infest"
+           color="#19e680"
+           />
+
+    <style name="Strength"
+           color="#FFB74B"
+           sprite="Res_Strength"
+           />
+
+    <style name="Threat"
+           color="#FFB74B"
+           sprite="Res_Threat"
+           />
+
+    <style name="Hull"
+           color="#46ff46"
+           sprite="ShipStats_HullHealth"
+           />
+
+    <style name="Shields"
+           color="#7dfcfa"
+           sprite="ShipStats_ShieldHealth"
+           />
+
+    <style name="EHP"
+           color="#f5fff5"
+           sprite="ShipStats_HullHealth"
+           />
+
+    <style name="Energy"
+           color="#ffde00"
+           sprite="Res_Energy"
+           />
+
+   <style name="Metal"
+           color="#ccccee"
+           sprite="Res_Metal"
+           />
+
+    <style name="Range"
+           color="#ff4500"
+           />
+
+    <style name="Damage"
+           color="#ff7878"
+           sprite="ShipStats_Attack"
+           />
+
+    <style name="Exotic"
+           color="#dfff72"
+           sprite="ShipStats_Attack"
+           />
+
+    <style name="Corrosive"
+           color="#A1FFA1"
+           sprite="ShipStats_Attack"
+           />
+
+    <style name="DPS"
+           color="#ff7878"
+           sprite="ShipStats_Attack"
+           />
+
+    <style name="Cloak"
+           color="#db7093"
+           />
+
+    <style name="Tachyon"
+           color="#ffdf72"
+           />
+
+    <style name="Armor"
+           color="#ff9696"
+           sprite="ShipStats_Armor"
+           />
+
+    <style name="Mass"
+           color="#ffcd21"
+           sprite="ShipStats_Mass"
+           />
+
+    <style name="Albedo"
+           color="#eaa1ff"
+           sprite="ShipStats_Albedo"
+           />
+
+    <style name="Engine"
+           color="#8aaef8"
+           sprite="ShipStats_EnginePower"
+           />
+
+</root>

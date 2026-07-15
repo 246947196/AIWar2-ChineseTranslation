@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!-- AJEA main settings -->
+	<setting name="AJEA_Enable" serialization_name="AJEAE" is_network_and_game_synced_setting="true"
+		category="Automation" subcategory="AJEA_Settings" display_name="启用自动调整能源助手" type="BoolToggle" default="false"
+		description="AJEA (Auto-Juggle Energy Assistant) is a sort of 'smart grid' for AIW2. If your net energy is lower than the amount specified below AJEA will automatically build more Matter Converters to match or exceed the set amount. If afterwards your raw net energy allows for some of these to be destroyed AJEA will automatically do so as well.
+In effect AJEA very quickly prevents brownouts while min/maxing the economy for as little conversion as needed. It's still very possible to ruin your economy, conversion is not very 高效 - but if so you will be warned by a notification.
+ 
+There are also some conditions under which AJEA will not work:
+When both metal and energy income are negative (which is probably impossible without mods or bugs), when all Matter Converters running still wouldn't be enough to match the energy needed not to brown out (this may happen if the player has lost a lot of planets but still has full fleets for some reason), and when a brownout is ongoing and AJEA could match the energy needed to get out of the red, but in doing so would burn metal so fast it'd run out before the brownout ends.
+
+The specified amount may be increased if you attempt to capture something that costs more energy than set (do mind that on any game mode other than deathwish pausing somethinig to be captured will stop its capture, also making AJEA ignore it).
+AJEA will also look at each player's current build selection and how many they may attempt to build (1x, 5x, 10x, 50x, up to the max possible if any), if needed freeing up at least this much energy." />
+
+	<setting name="AJEA_AutoDetermineEnergyCount" serialization_name="AJEAA" is_network_and_game_synced_setting="true"
+		category="Automation" subcategory="AJEA_Settings" display_name="自动确定能源数量" type="BoolToggle" default="true"
+		description="If enabled the amount of energy AJEA will hold available is based on what ship lines currently need reinforcing. If only 星战 are being built, the count may be as low as a few hundred. If big cruisers or modded ships are being built it may be as high as multiple tens of thousands.
+
+This value is added to the target counts under normal conditions, and when in brownout." />
+
+	<setting name="AJEA_ExtraEnergyCount" serialization_name="AJEAC" is_network_and_game_synced_setting="true"
+		category="Automation" subcategory="AJEA_Settings" display_name="目标能源" type="IntTextbox" default="5000" min="0" max="10000000"
+		description="How much energy should AJEA provide if at all possible? Usually this should be the most expensive ship to build, and then some. 5,000 energy is a good default value that should work for almost any scenario.
+If you ever find that a big (possibly modded) ship is not being built check whether AJEA is providing enough energy and adjust this value accordingly.
+
+If 自动确定能源数量 is enabled it is added to the 目标能源 count. Then this is simply a buffer value to not immediately block all ship building if something has been constructed.
+If 自动确定能源数量 is not enabled the value should be a bit higher than the most energy-expensive ship the player can currently build, otherwise there is a chance it will never construct due to not having enough power." />
+
+	<setting name="AJEA_ExtraEnergyCountInBrownout" serialization_name="AJEAB" is_network_and_game_synced_setting="true"
+		category="Automation" subcategory="AJEA_Settings" display_name="低电力时目标能源" type="IntTextbox" default="50000" min="0" max="10000000"
+		description="This works the same as the 目标能源 above, but is used if the player is in a brownout instead of the normal value. During a brownout hitting negative energy for but a moment may reset the timer, which makes it more important to not go into debt.
+
+It follows the same rules of interaction with the 自动确定能源数量 setting as the normal 目标能源 above." />
+
+	<setting name="AJEA_AlwaysShowNotification" category="Automation" subcategory="AJEA_Settings" display_name="始终显示通知" type="BoolToggle" default="false"
+		description="Usually AJEA does not display a notification when no faction is bleeding metal at least slightly significantly, or for some reason AJEA can't (reasonably) stabilize the economy.
+If this setting is enabled AJEA will always display its notification so long as it's enabled, running and converters exist, which makes it easy to see how good the economy may be." />
+
+	<setting name="AJEA_DoPerSimStep" category="Automation" subcategory="AJEA_Settings" display_name="每模拟步执行" type="BoolToggle" default="false"
+		description="If enabled AJEA will make its calculations and potential adjustments for each sim step. Note that only the host's setting here matters.
+Executing AJEA once per sim step increases the CPU use, but makes it more responsive. However, since the values for energy consumption and production aren't instantly updated it may lead to converters being built or destroyed by mistake.
+
+In AIW2 sim steps are attempted to be executed 10x per second. This does not change if the player speeds up or slows down the game speed, but naturally if the CPU unable to keep up it will slow down." />
+	
+	<setting name="EDA_Enable" serialization_name="EDAE" is_network_and_game_synced_setting="true"
+		category="Automation" subcategory="EDA_Settings" display_name="启用实验性防御自动建造" type="BoolToggle" default="false"
+		description="EDA (Experimental 防御 Autobuilding), once finished, should take a lot of hassle out of planetary building. It's designed to place turrets, gravity generators, forcefields, etc, etc in REASONABLE although by the very nature of the game never PERFECT locations without the player doing more than enabling and disabling the mechanism for certain planets and units." />
+</root>

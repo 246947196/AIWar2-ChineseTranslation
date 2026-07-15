@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<setting 
+		name="AutoBuildStationReclaimerFrigate"
+		serialization_name="AB-CLAIM-RF"
+		is_network_and_game_synced_setting="true"
+		tags="IsAutoBuildingSetting,CountsAsDefenseForHelperJournal,ReclamationFrigateTag"
+		category="Automation"
+		subcategory="AutoBuildAtPlanets"
+		display_name="自动建造回收护卫舰"
+		type="BoolToggle"
+		default="true"
+		description="自动在指挥站旁建造驻站回收护卫舰。注意它们非常便宜且几乎总是值得建造。"/>
+
+</root>

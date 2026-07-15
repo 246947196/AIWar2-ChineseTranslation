@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>  
+
+    <line_type name="OP_Laser_BlueBright" display_name="激光"
+             visuals_bundle="aiwar2goodiebox" visuals="assets/shotparts/lines/_Laser_BlueBright.prefab"
+             z_length_of_original_object="1.18" x_scale_multiplier="1.0" y_scale_multiplier="1.0" />
+	<line_type name="OP_Laser_Cyan" display_name="激光"
+			   visuals_bundle="aiwar2goodiebox" visuals="assets/shotparts/lines/_Laser_Cyan.prefab"
+			   z_length_of_original_object="1.18" x_scale_multiplier="1.0" y_scale_multiplier="1.0" />
+	<line_type name="OP_Laser_Green" display_name="激光"
+			   visuals_bundle="aiwar2goodiebox" visuals="assets/shotparts/lines/_Laser_Green.prefab"
+			   z_length_of_original_object="1.18" x_scale_multiplier="1.5" y_scale_multiplier="1.0" />
+	<line_type name="OP_Laser_GreenBright" 
+			   display_name="激光"  visuals_bundle="aiwar2goodiebox" visuals="assets/shotparts/lines/_Laser_GreenBright.prefab"
+			   z_length_of_original_object="1.18" x_scale_multiplier="1.0" y_scale_multiplier="1.0" />
+	<line_type name="OP_Laser_Purple" display_name="激光"
+			   visuals_bundle="aiwar2goodiebox" visuals="assets/shotparts/lines/_Laser_Purple.prefab"
+			   z_length_of_original_object="1.18" x_scale_multiplier="1.0" y_scale_multiplier="1.0" />
+	<line_type name="OP_Laser_PurpleBright" display_name="激光"
+			   visuals_bundle="aiwar2goodiebox" visuals="assets/shotparts/lines/_Laser_PurpleBright.prefab"
+			   z_length_of_original_object="1.18" x_scale_multiplier="1.0" y_scale_multiplier="1.0" />
+	<line_type name="OP_Laser_Red" display_name="激光"
+			   visuals_bundle="aiwar2goodiebox" visuals="assets/shotparts/lines/_Laser_Red.prefab"
+			   z_length_of_original_object="1.18" x_scale_multiplier="1.0" y_scale_multiplier="1.0" />
+	<line_type name="OP_Laser_RedBlack" display_name="激光"
+			   visuals_bundle="aiwar2goodiebox" visuals="assets/shotparts/lines/_Laser_RedBlack.prefab"
+			   z_length_of_original_object="1.18" x_scale_multiplier="1.0" y_scale_multiplier="1.0" />
+	<line_type name="OP_Laser_Yellow" display_name="激光"
+			   visuals_bundle="aiwar2goodiebox" visuals="assets/shotparts/lines/_Laser_Yellow.prefab"
+			   z_length_of_original_object="1.18" x_scale_multiplier="1.0" y_scale_multiplier="1.0" />
+	<line_type name="OP_Laser_YellowBright" display_name="激光"
+			   visuals_bundle="aiwar2goodiebox" visuals="assets/shotparts/lines/_Laser_YellowBright.prefab"
+			   z_length_of_original_object="1.18" x_scale_multiplier="1.0" y_scale_multiplier="1.0" />	
+	<line_type name="OP_Lightning_Gold" display_name="闪电"
+			   visuals_bundle="aiwar2goodiebox" visuals="assets/shotparts/lines/_Lightning_Gold.prefab"
+			   z_length_of_original_object="1.5" x_scale_multiplier="1.0" y_scale_multiplier="1.0" />
+
+</root>

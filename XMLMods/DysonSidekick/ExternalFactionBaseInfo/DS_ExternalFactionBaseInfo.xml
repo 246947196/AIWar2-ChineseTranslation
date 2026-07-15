@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <item name="DysonSidekickFactionBaseInfo" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.DysonSidekickFactionBaseInfo" />
+  <item name="ArmadaFactionBaseInfo" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.ArmadaFactionBaseInfo" />
+  <item name="ReapersFactionBaseInfo" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.ReapersFactionBaseInfo" />
+  <item name="DarkZenithSidekickFactionBaseInfo" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.DarkZenithSidekickFactionBaseInfo" />
+  <item name="ScourgeInfusedHumanEmpireFactionBaseInfo" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.ScourgeInfusedHumanEmpireFactionBaseInfo" />
+  <item name="ScourgeVassalFactionBaseInfo" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.ScourgeVassalFactionBaseInfo" />
+
+  <item name="ScourgeCivilWarFactionBaseInfo" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.ScourgeCivilWarFactionBaseInfo" />
+
+  <item name="TiberiumFactionBaseInfo" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.TiberiumFactionBaseInfo" />
+<item name="SpireSidekickFactionBaseInfo" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.SpireSidekickFactionBaseInfo" />
+</root>

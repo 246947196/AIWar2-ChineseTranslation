@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <item name="ZombieAntiEveryoneRatio"
+        faction_name="AntiEveryoneZombie"
+        harvest_ratio_when_dying="0.01"
+        harvest_ratio_when_killing="0.01"
+        />
+
+</root>

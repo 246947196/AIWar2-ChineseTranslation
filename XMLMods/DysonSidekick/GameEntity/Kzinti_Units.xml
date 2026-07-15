@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- Defensive Structures -->
+  <entity name="KzintiFortress" tags="KzintiFortress" ship_class_name="Superweapon"
+          npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+          thematic_groups="AI" 
+	  visuals="Assets/_DLC2/Zenith/DZTrelleborg/DZTrelleborg.prefab" visuals_bundle="exp2_zenith_onslaught"
+          material_override_path="Assets/_FinalGameMeshes/Nanocaust/Aberration/Aberration.prefab"
+	  icon_name="Ships4/SomethingRakes" gimbal_icon_size_multiplier="1.5"
+          icon_overlay="Overlays2/BrutalEntrenchingGuardian_Mobile"
+	  y_offset_of_icon="35"
+	  category="Ship"
+	  size_scale="10"
+	  visuals_scale_multiplier="25"
+          collision_priority="800"
+	  display_name="Kzinti Fortress"
+          display_name_for_sidebar="Kzi Fortress"
+	  description="Very powerful defensive structure, with 牵引 光束 and penetrating blasts that do more damage to ships in 牵引 beams."
+	  behavior="Stationary"
+          is_major_ai_structure="true"
+          seconds_to_fully_regenerate_hull="600"
+	  starting_mark_level="Mark1" max_mark_level="5" tech_upgrades_that_benefit_me="Unused"	
+	  cost_for_ai_to_purchase="3000"
+	  hull_points="250000" shield_points="750000" speed="Immobile"
+	  metal_cost="1500000" energy_consumption="50000"
+	  armor_mm="300" albedo="0.7" mass_tx="8"
+	  ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+	  voice_group="Turret"
+	  is_reinforcement_location="true" always_is_ai_turret_spawn_point="true"
+	  eligible_for_hacks="Sabotage"
+          priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+	  >
+    <data_extension name="DLC3" required_expansion_list="3_The_Neinzul_Abyss"
+                    dark_zenith_sidekick_science_to_grant_on_death="10"
+                    spire_sidekick_science_to_grant_on_death="10"
+        necromancer_hacking_to_grant_on_death="4"/>
+    <hack_data hack_type="Sabotage" override_cost_in_hacking_points="11" />
+    <metal_flow purpose="SelfConstruction" throughput="700"/>
+    <system name="R1" display_name="Kzinti Fusion Rockets"
+            category="Weapon" firing_timing="OnlyInRange"
+            damage_per_shot="1500" range="High1" shot_speed="Normal" rate_of_fire="Normal"
+            shots_per_salvo="30" fires_salvos_sequentially="false"
+            shot_type_data="FusionRocket"
+            base_percent_damage_bypasses_personal_shields="1"
+            multiplier_damage_to_tractored_unit="2"
+	    >
+      <outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="50" multiplier="3" />
+    </system>
+    <system name="R2" display_name="Kzinti Energy Wave"
+          category="Weapon" firing_timing="OnlyInRange" shots_per_salvo="4"
+          damage_per_shot="3750" range="High1" shot_speed="Normal" rate_of_fire="Low" fires_salvos_sequentially="true"
+          shot_type_data="EnergyWave"
+          base_percent_damage_bypasses_personal_shields="1"
+          multiplier_damage_to_tractored_unit="2"
+	  >
+      <outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="8" />
+    </system>
+    <system name="T" display_name="Tractor Beam"
+	    category="Passive"
+	    tractor_range="Normal1" tractor_count="10" tractor_count_added_per_mark="10" tractor_hits_albedo_less_than="0.4" tractor_hits_engine_gx_less_than="18"
+	    >
+    </system>
+
+  </entity>
+
+  <entity name="RenegadeFortress" tags="KzintiFortress" ship_class_name="Superweapon"
+          npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+          thematic_groups="AI"
+          visuals="Assets/_DLC2/Zenith/DZTrelleborg/DZAtgeir.prefab" visuals_bundle="exp2_zenith_onslaught"
+          material_override_path="Assets/_FinalGameMeshes/Nanocaust/Aberration/Aberration.prefab"
+	  icon_name="Ships4/SomethingRakes" gimbal_icon_size_multiplier="1.5"
+          icon_overlay="Overlays2/GuardPost_Shield"
+          shield_size_scale="5" my_forcefield_has_no_penalty_for_enemies_firing_out_of_it="true"
+	  y_offset_of_icon="35"
+	  category="Ship"
+	  size_scale="10"
+	  visuals_scale_multiplier="25"
+          collision_priority="800"
+	  display_name="Renegade Fortress"
+          display_name_for_sidebar="Ren Fortress"
+	  description="Very powerful defensive structure, with a blast that penetrates 护盾 and 装甲. Has a strong bubble 护盾."
+	  behavior="Stationary"
+          is_major_ai_structure="true"
+	  starting_mark_level="Mark1" max_mark_level="5" tech_upgrades_that_benefit_me="Unused"	
+	  cost_for_ai_to_purchase="3000"
+	  hull_points="250000" shield_points="750000" speed="Immobile"
+	  metal_cost="1500000" energy_consumption="50000"
+	  armor_mm="300" albedo="0.7" mass_tx="8"
+	  ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+	  voice_group="Turret"
+	  is_reinforcement_location="true" always_is_ai_turret_spawn_point="true"
+	  eligible_for_hacks="Sabotage"
+          priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+	  >
+    <data_extension name="DLC3" required_expansion_list="3_The_Neinzul_Abyss"
+                    dark_zenith_sidekick_science_to_grant_on_death="10"
+                    spire_sidekick_science_to_grant_on_death="10"
+        necromancer_hacking_to_grant_on_death="4"/>
+    <hack_data hack_type="Sabotage" override_cost_in_hacking_points="11" />
+    <metal_flow purpose="SelfConstruction" throughput="700"/>
+    <system name="R1" display_name="Kzinti Fusion Rockets"
+                category="Weapon" firing_timing="OnlyInRange"
+                damage_per_shot="1500" range="High1" shot_speed="Normal" rate_of_fire="Normal"
+                shots_per_salvo="30" fires_salvos_sequentially="false"
+                shot_type_data="FusionRocket"
+                base_percent_damage_bypasses_personal_shields="1" 
+		>
+
+      <outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="50" multiplier="3" />
+    </system>
+    <system name="R2" display_name="Kzinti Energy Wave"
+          category="Weapon" firing_timing="OnlyInRange" shots_per_salvo="4"
+          damage_per_shot="3750" range="High1" shot_speed="Normal" rate_of_fire="Low" fires_salvos_sequentially="true"
+          shot_type_data="EnergyWave"
+          base_percent_damage_bypasses_personal_shields="1" 
+	  >
+      <outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="8" />
+    </system>
+  </entity>
+
+  <!-- Fleetships -->
+
+
+  <entity name="AIArrow" copy_from="TerranArrow"
+          >
+    <ai_ship_group_membership name="ArmadaStrikecraft" weight="100"/>
+  </entity>
+  <entity name="AIScryer" copy_from="TerranScryer"
+          >
+    <ai_ship_group_membership name="ArmadaStrikecraft" weight="10"/>
+  </entity>
+  <entity name="AIPhantom" copy_from="TerranPhantom"
+          >
+    <ai_ship_group_membership name="ArmadaStrikecraft" weight="100"/>
+  </entity>
+  <entity name="AISabre" copy_from="TerranSabre"
+          >
+    <ai_ship_group_membership name="ArmadaStrikecraft" weight="50"/>
+  </entity>
+  <entity name="AIDralthi" copy_from="KilrathiDralthi"
+          >
+    <ai_ship_group_membership name="ArmadaStrikecraft" weight="100"/>
+  </entity>
+  <entity name="AIShoklar" copy_from="KilrathiShoklar"
+          >
+    <ai_ship_group_membership name="ArmadaStrikecraft" weight="100"/>
+  </entity>
+  <entity name="AIAvicenna" copy_from="KilrathiAvicenna"
+          >
+    <ai_ship_group_membership name="ArmadaStrikecraft" weight="10"/>
+  </entity>
+  <entity name="AIMonarch" copy_from="ArmadaAprahantiMonarch"
+          >
+    <ai_ship_group_membership name="ArmadaStrikecraft" weight="10"/>
+  </entity>
+
+  <entity name="AIAprahantiMonarch" copy_from="ArmadaAprahantiMonarch"
+          >
+    <ai_ship_group_membership name="ArmadaStrikecraft" weight="50"/>
+  </entity>
+  <entity name="AISkrinBuzzer" copy_from="SkrinBuzzer"
+          >
+    <ai_ship_group_membership name="ArmadaStrikecraft" weight="50"/>
+  </entity>
+
+  <entity name="AIReaperHusk" copy_from="ReaperHusk"
+          >
+    <ai_ship_group_membership name="ArmadaStrikecraft" weight="50"/>
+  </entity>
+
+  <entity name="AIAcutianAuditor" copy_from="AcutianAuditor"
+          >
+    <ai_ship_group_membership name="ArmadaStrikecraft" weight="100"/>
+  </entity>
+
+  <entity name="AITerranLocust" copy_from="TerranLocust"
+          >
+    <ai_ship_group_membership name="ArmadaStrikecraft" weight="100"/>
+  </entity>
+  <entity name="AIKilrathiLocust" copy_from="KilrathiLocust"
+          >
+    <ai_ship_group_membership name="ArmadaStrikecraft" weight="100"/>
+  </entity>
+
+  <entity name="AIAprahantiLocust" copy_from="AprahantiLocust"
+          >
+    <ai_ship_group_membership name="ArmadaStrikecraft" weight="100"/>
+  </entity>
+  <entity name="AISkrinLocust" copy_from="SkrinLocust"
+          >
+    <ai_ship_group_membership name="ArmadaStrikecraft" weight="100"/>
+  </entity>
+  <entity name="AIReaperLocust" copy_from="ReaperLocust"
+          >
+    <ai_ship_group_membership name="ArmadaStrikecraft" weight="100"/>
+  </entity>
+
+  <!-- Guardians -->
+
+  <entity name="AIWraith" copy_from="TerranWraith"
+          hull_points="130000" shield_points="30000" speed="Normal1"
+          >
+    <ai_ship_group_membership name="ArmadaGuardians" weight="100"/>
+  </entity>
+  <entity name="AIStormRanger" copy_from="TerranStormRanger"
+          hull_points="44000" shield_points="26000" speed="AboveAverage6"
+          >
+    <ai_ship_group_membership name="ArmadaGuardians" weight="100"/>
+  </entity>
+
+  <entity name="AIScimatar" copy_from="TerranScimatar"
+          hull_points="100000" shield_points="30000" speed="Normal1"
+          >
+    <ai_ship_group_membership name="ArmadaGuardians" weight="100"/>
+  </entity>
+  <entity name="AIJrathek" copy_from="KilrathiJrathek"
+          hull_points="160000" shield_points="40000" speed="Normal1"
+          >
+    <ai_ship_group_membership name="ArmadaGuardians" weight="100"/>
+  </entity>
+  <entity name="AIGrikath" copy_from="KilrathiGrikath"
+          hull_points="20000" shield_points="40000" speed="Normal1"
+          >
+    <system name="Q1" display_name="Dire Tesla Coil"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="500" range="Tiny3" shot_speed="Normal" rate_of_fire="VeryLow" fires_salvos_sequentially="false"
+	    shot_type_data="LightningGuardianExplosionAOEShot" added_target_evaluator="WeaponJamAsPrimary" 
+	    area_of_effect_size="3200"
+	    shots_detonate_immediately="true"
+	    maximum_number_of_targets_hit_per_shot="50"
+            base_enemy_weapon_reload_slowing_seconds_per_shot="20"
+            max_enemy_weapon_reload_slowing_seconds="20"
+            enemy_weapon_reload_slowing_to_armor_mm_less_than="70"
+	    >
+    </system>
+    <incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="2500" multiplier="0.1" />
+
+    <ai_ship_group_membership name="ArmadaGuardians" weight="100"/>
+  </entity>
+  <entity name="AIBloodfangRanger" copy_from="KilrathiBloodfangRanger"
+          >
+    <ai_ship_group_membership name="ArmadaGuardians" weight="100"/>
+  </entity>
+
+  <entity name="AITripodRanger" copy_from="SkrinTripodRanger"
+          >
+    <ai_ship_group_membership name="ArmadaGuardians" weight="100"/>
+  </entity>
+  <entity name="AICannibalRanger" copy_from="ReaperCannibalRanger"
+          >
+    <ai_ship_group_membership name="ArmadaGuardians" weight="100"/>
+  </entity>
+
+  <entity name="AIAprahantiBlighter" copy_from="ArmadaAprahantiBlighter"
+          >
+    <ai_ship_group_membership name="ArmadaGuardians" weight="50"/>
+  </entity>
+
+  <entity name="AISkrinFirehawk" copy_from="SkrinFirehawk"
+          >
+    <ai_ship_group_membership name="ArmadaGuardians" weight="50"/>
+  </entity>
+
+  <entity name="AIReaperScion" copy_from="ReaperScion"
+          >
+    <ai_ship_group_membership name="ArmadaGuardians" weight="50"/>
+  </entity>
+
+  <entity name="AIAcutianExecutor" copy_from="AcutianExecutor"
+          >
+    <ai_ship_group_membership name="ArmadaGuardians" weight="100"/>
+  </entity>
+
+
+  <!-- Dire Guardians -->
+
+  <entity name="AIBanshee" copy_from="TerranBanshee"
+          hull_points="1000000" shield_points="130000" speed="Normal1"
+          >
+    <ai_ship_group_membership name="ArmadaDireGuardians" weight="100"/>
+  </entity>
+  <entity name="AIGladius" copy_from="TerranGladius"
+          hull_points="500000" shield_points="130000" speed="Normal1"
+          >
+    <ai_ship_group_membership name="ArmadaDireGuardians" weight="100"/>
+  </entity>
+  <entity name="AIDireHurricaneRanger" copy_from="TerranDireHurricaneRanger"
+          >
+    <ai_ship_group_membership name="ArmadaDireGuardians" weight="100"/>
+  </entity>
+
+  <entity name="AIKorLarh" copy_from="KilrathiKorLarh"
+          hull_points="1900000" shield_points="130000" speed="Normal1"
+          >
+    <ai_ship_group_membership name="ArmadaDireGuardians" weight="100"/>
+  </entity>
+  <entity name="AIGoran" copy_from="KilrathiGoran"
+          hull_points="1000000" shield_points="40000" speed="AboveAverage1"
+          >
+    <ai_ship_group_membership name="ArmadaDireGuardians" weight="100"/>
+  </entity>
+  <entity name="AIKrantDireRanger" copy_from="KilrathiKrantDireRanger"
+          >
+    <ai_ship_group_membership name="ArmadaDireGuardians" weight="100"/>
+  </entity>
+
+  <entity name="AIAprahantiDreadnaught" copy_from="ArmadaAprahantiDreadnaught"
+          cost_for_ai_to_purchase="9500"
+          >
+    <ai_ship_group_membership name="ArmadaDireGuardians" weight="100"/>
+  </entity>
+
+  <entity name="AISkrinEradicator" copy_from="SkrinEradicator"
+          cost_for_ai_to_purchase="9500"
+          >
+    <ai_ship_group_membership name="ArmadaDireGuardians" weight="100"/>
+  </entity>
+
+  <entity name="AIAcutianImperator" copy_from="AcutianImperator"
+          cost_for_ai_to_purchase="9500"
+          >
+    <ai_ship_group_membership name="ArmadaDireGuardians" weight="100"/>
+  </entity>
+
+  <!-- Praetorian Leader -->
+  <entity name="KzintiPraetorianLeader" ship_class_name="ExowarTier1"
+          thematic_groups="ExogalacticWarFront"
+	  draw_in_galaxy_view="true"
+	  visuals="Assets/_FinalGameMeshes/AIExtragalactic/Tier1_ExtragalacticHunterSeeker/Tier1_ExtragalacticHunterSeeker.prefab"
+	  icon_name="Ships1/HunterKiller"
+          icon_overlay="Overlays1/Guardian_SpeedBoost" gimbal_icon_size_multiplier="2"
+          material_override_path="Assets/_FinalGameMeshes/Nanocaust/Abomination/Abomination.prefab"
+	  voice_group="Silent"
+	  uses_large_health_bar="true"
+	  category="Ship"
+          size_scale="21"
+	  visuals_scale_multiplier="24"
+	  y_offset_of_icon="30"
+	  collision_priority="810"
+	  display_name="Kzinti Battlemaster"
+          display_name_for_sidebar="KZ Bttlm"
+	  description="This powerful 隐形 ship leads the Kzinti forces in battle. It leads the defense of the AI 霸主 by 麻痹 its foes, then 僵尸化 them."
+    starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+    cost_for_ai_to_purchase="49500"
+    hull_points="10000000" shield_points="40000000" speed="AboveAverage3"
+    metal_cost="2000000" energy_consumption="75000"	
+    armor_mm="180" albedo="0.4" engine_gx="18" mass_tx="7"
+    ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+    ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+    priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+    should_never_count_as_threat="true"
+    >
+    <incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="2500" multiplier="0.20" />
+    <system name="WR" display_name="Wrathful Vengeance"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="2000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Misery"
+	    shots_per_salvo="40" fires_salvos_sequentially="false"
+	    added_shots_per_salvo_per_mark="20"
+	    only_targets_mobile_units="true"
+	    shot_type_data="ParasiteCurvedPinkShot"
+            base_paralysis_seconds_per_shot="2" paralysis_to_ships_mass_tx_less_than="2" added_target_evaluator="ParalyzerAsPrimary"
+            cloaking_percent_loss_from_firing="0.05"
+	    >
+      <outgoing_damage_modifier based_on="mass_tx" comparison_type="AtMost" compared_to="2" multiplier="2" />
+      <death_effect_damage type="Zombification" tier_name="Parasite"/>
+    </system>
+    <system name="C" display_name="Cloaking Device"
+	    category="Passive" cloaking_points="6000" cloaking_points_added_per_mark="1000"
+	    >
+    </system>
+
+  </entity>
+
+  <!-- Guard Posts -->
+
+
+    <entity name="KzintiStealthGuardPost" copy_from="StealthGuardPost"
+            >
+      <ai_ship_group_membership name="ArmadaGuardPosts" weight="20"/>
+    </entity>
+    <entity name="KzintiCorrosiveGuardPost" copy_from="CorrosiveGuardPost"
+            >
+      <ai_ship_group_membership name="ArmadaGuardPosts" weight="20"/>
+    </entity>
+    <entity name="KzintiOrbitingPikeOne" copy_from="OrbitalPikeGuardPost6"
+            >
+      <ai_ship_group_membership name="ArmadaGuardPosts" weight="20"/>
+    </entity>
+    <entity name="KzintiOrbitingSabotOne" copy_from="OrbitalSabotGuardPost1"
+            >
+      <ai_ship_group_membership name="ArmadaGuardPosts" weight="20"/>
+    </entity>
+    <entity name="KzintiSabotOne" copy_from="SabotGuardPost"
+            >
+      <ai_ship_group_membership name="ArmadaGuardPosts" weight="20"/>
+    </entity>
+    <entity name="KzintiSabotGhost" copy_from="GhostSabotGuardPost"
+            >
+      <ai_ship_group_membership name="ArmadaGuardPosts" weight="20"/>
+    </entity>
+    <entity name="KzintiConcussionGuardPost" copy_from="ConcussionGuardPost"
+            >
+      <ai_ship_group_membership name="ArmadaGuardPosts" weight="20"/>
+    </entity>
+
+    <entity name="KzintiSwarmShieldGuardPost" copy_from="SwarmerShieldGuardPost"
+            >
+      <ai_ship_group_membership name="ArmadaGuardPosts" weight="20"/>
+    </entity>
+
+</root>

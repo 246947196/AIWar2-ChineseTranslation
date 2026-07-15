@@ -1,0 +1,338 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>    
+	<!-- The AI version of the newly acid toting Vanguard drones -->
+	<entity skip_export="true" copy_from="Vanguard" name="VanguardDroneAI" special_entity_type="DroneGeneral"
+		icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+		size_scale="0.8" description="Launched from an 护航航母 守护者, attacks enemies with damage amplifying acid."
+	    self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="35"
+		cannot_target_or_alert_ai_reinforcement_spots="true"
+		armor_mm="70" display_name="AI 无人机 Vanguard"
+		display_name_for_sidebar="AI Vanguard DRN"
+		multiplier_to_all_costs="2.5" multiplier_to_all_healths="2.5" damage_multiplier_to_all_weapons="2.5"
+	    starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused">
+		<system name="WW" display_name="次级霰弹酸液炮"
+                damage_per_shot="30" shots_per_salvo="6"
+                damage_amplification="true" damage_amplification_duration="10" damage_amplification_flat="15" damage_amplification_flat_added_per_mark="5"
+                >
+		</system>
+		<fleet_membership name="TechCarrierDrones" ship_cap_group="Strike" weight="100" cap="4"/>
+	</entity>
+	
+	<!-- Player drone gun version of the acid using Vanguard drones -->
+	<entity skip_export="true" copy_from="Vanguard" name="VanguardDrone" special_entity_type="SmallShipNotStackable"
+		icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+		voice_group="Silent"
+		size_scale="0.8"
+		display_name="护航先锋无人机"
+		display_name_for_sidebar="Esc. Vanguard DRN"
+		description="Launched from an 护航航母 护卫舰, attacks enemies with damage amplifying acid."
+		starting_mark_level="Mark1"
+		self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="4"
+	    always_self_attritions="true"
+		cost_for_ai_to_purchase="10"
+		cannot_target_or_alert_ai_reinforcement_spots="true"
+		energy_consumption="0" armor_mm="70"
+		metal_cost_multiplier_for_scrapping="0"
+		shot_fired_sfx="BasicLaunchWhine_Firing"
+		immune_to_swapping_between_fleets="true">
+		<system name="WW" display_name="次级霰弹酸液炮"
+                damage_per_shot="30" shots_per_salvo="6"
+                damage_amplification="true" damage_amplification_duration="10" damage_amplification_flat="15" damage_amplification_flat_added_per_mark="5"
+                >
+		</system>
+		<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>	
+	
+	<!-- The version to be used with the AI Guardian version of the Ambush Carrier -->
+	<entity skip_export="true" copy_from="Raptor" name="RaptorDroneAI" special_entity_type="DroneGeneral"
+        icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+		size_scale="0.8"
+	    self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="35"
+		cannot_target_or_alert_ai_reinforcement_spots="true"
+		armor_mm="30" display_name="AI 无人机 Raptor"
+		display_name_for_sidebar="AI Raptor DRN"
+		multiplier_to_all_costs="2.5" multiplier_to_all_healths="2.5" damage_multiplier_to_all_weapons="2.5"
+	    starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused">
+    <fleet_membership name="AmbuCarrierDrones" ship_cap_group="Strike" weight="100" cap="4"/>
+	<system name="R5" damage_per_shot="200">
+    </system>
+	</entity>
+	
+	<!--Sub unit of the Gorgon Aggregate Body Frigate, breaks away when build points from damage reach certain thresholds-->
+	<entity name="GorgonViperPiece"
+		gimbal_icon_size_multiplier="1.25"
+		visuals="Assets/_FinalGameMeshes/Guardians/FragmentingGuardianAlt/FragmentingGuardianShard.prefab"
+        icon_name="Ships1/Guardian" icon_overlay="Overlays2/Guardian_FragmentingShard"
+		uses_large_health_bar="false"
+		category="Ship" is_strikecraft="true"
+		size_scale="1.4"
+		visuals_scale_multiplier="0.8"
+		y_offset_of_icon="16"
+		collision_priority="100"
+		display_name="毒蛇护卫舰"
+		display_name_for_sidebar="Viper Corv. DRN"
+		description="A 毒蛇护卫舰 released from a Gorgon Body via combat damage."
+		blocks_enemy_claim_flows="true"
+		voice_group="Silent"
+		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Subterfuge,Medium"
+		self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="3"
+		always_self_attritions="true"
+		cost_for_ai_to_purchase="60"
+		cannot_target_or_alert_ai_reinforcement_spots="true"
+		hull_points="30000" shield_points="0" speed="Normal3"
+		metal_cost="20000" energy_consumption="0"
+		metal_cost_multiplier_for_scrapping="0"
+		armor_mm="75" albedo="0.4" engine_gx="14" mass_tx="0.5"
+		immune_to_swapping_between_fleets="true"
+		ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+		ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+        priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+		>
+		<system name="R5" display_name="歼灭激光炮"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="1250" range="AboveAverage2" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="false"
+			shot_type_data="LaserPulse_SicklyGreen"				
+			>
+		</system>
+		<system name="VF" display_name="毒蛇双联速射炮"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="500" range="Normal4" shot_speed="Normal" rate_of_fire="Misery"
+			shot_type_data="DoubleShot_Green"
+			shots_per_salvo="2" fires_salvos_sequentially="True"
+			>
+		</system>
+	</entity>
+	
+	<!-- The pair of self-homing missiles used by the Cruise Missile Battery -->
+	<entity name="ShockwaveMissile" required_expansion_list="1_The_Spire_Rises"
+	        special_entity_type="SmallShipNotStackable"	
+			visuals="Assets/_DLC1/Strikecraft/TeslaTorpedo/TeslaTorpedo.prefab" visuals_bundle="exp1_the_spire_rises"
+            icon_name="Ships1/WarheadStyle1" icon_overlay="Overlays2/WarheadStyle1_Tesla" gimbal_icon_size_multiplier="1"
+			voice_group="Silent"
+			category="Ship" is_strikecraft="true"
+			size_scale="1.25"
+			visuals_scale_multiplier="5"
+			collision_priority="50"
+			display_name="冲击波巡航导弹"
+			display_name_for_sidebar="Shockwave Cru DRN"
+			description="Area Denial 导弹, detonates across an area for shared damage."
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Splash,Turret"
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="3"
+		    always_self_attritions="true"
+			cost_for_ai_to_purchase="10"
+			hull_points="6000" shield_points="0" speed="High"
+			metal_cost="2000" energy_consumption="0"
+			metal_cost_multiplier_for_scrapping="0"
+			armor_mm="30" albedo="0.3" engine_gx="7" mass_tx="0.21"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			 shot_fired_sfx="BasicLaunchWhine_Firing"
+			immune_to_swapping_between_fleets="true"
+			strength_multiplier="0.2"
+			priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			>
+			<system name="SE" display_name="Shockwave 导弹 Detonation"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="7500" range="AlmostNone" seek_range="Normal1" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+				shot_type_data="PlasmaTorpedoAOEBurstAtEnd"
+				area_of_effect_size="2400"				
+				shots_detonate_immediately="true"
+                aoe_spreads_damage_among_available_targets="true"
+				maximum_number_of_targets_hit_per_shot="10"
+				health_change_by_max_health_divided_by_this_per_attack="-1">
+			</system>
+			<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>	
+	
+	<entity name="NovaMissile" required_expansion_list="1_The_Spire_Rises"
+	        special_entity_type="SmallShipNotStackable"	
+			visuals="Assets/_DLC1/Strikecraft/TeslaTorpedo/TeslaTorpedo.prefab" visuals_bundle="exp1_the_spire_rises"
+            icon_name="Ships1/AutoBomb" gimbal_icon_size_multiplier="1"
+			voice_group="Silent"
+			category="Ship" is_strikecraft="true"
+			size_scale="1.75"
+			visuals_scale_multiplier="5"
+			collision_priority="50"
+			display_name="新星爆裂巡航导弹"
+			display_name_for_sidebar="NovaBurst Cru DRN"
+			description="Paralysis delivery cruise 导弹. For when you want them to stand in place while you deliver."
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Splash,Turret"
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="3"
+		    always_self_attritions="true"
+			cost_for_ai_to_purchase="10"
+			hull_points="10000" shield_points="0" speed="High"
+			metal_cost="3000" energy_consumption="0"
+			metal_cost_multiplier_for_scrapping="0"
+			armor_mm="30" albedo="0.3" engine_gx="7" mass_tx="0.21"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			 shot_fired_sfx="BasicLaunchWhine_Firing"
+			immune_to_swapping_between_fleets="true"
+			strength_multiplier="0.2"
+			priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			>
+			<system name="NM" display_name="Shockwave 导弹 Detonation"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="3000" range="AlmostNone" seek_range="Normal1" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+				shot_type_data="PlasmaTorpedoAOEBurstAtEnd"
+				area_of_effect_size="3000"				
+				shots_detonate_immediately="true"
+				maximum_number_of_targets_hit_per_shot="20"
+				base_paralysis_seconds_per_shot="5" paralysis_to_ships_mass_tx_less_than="3"
+				health_change_by_max_health_divided_by_this_per_attack="-1">
+			</system>
+			<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+	
+	<!--Stormfront MIRV (Cap 8)-->
+	<!--When within range of an enemy breaks into submunitions-->
+	<!--Bonused against any unit under 1 tX weight class-->
+	<entity name="StormfrontMissileDrone"	    
+			visuals="Assets/_FinalGameMeshes/FleetShips/AutoBomb/AutoBomb.prefab" 
+			icon_name="Ships1/AutoBomb"
+			voice_group="Silent"
+			category="Ship" is_strikecraft="true" special_entity_type="DroneGeneral"
+			icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+			size_scale="0.8" visuals_scale_multiplier="5"
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="35"
+			cannot_target_or_alert_ai_reinforcement_spots="true"
+			collision_priority="100"
+			display_name="风暴前哨多弹头导弹"
+			description="Fast moving ordinance that breaks into a smaller series of individual attacks at final approach."
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly"
+			cost_for_ai_to_purchase="20" strength_multiplier="0.7"
+			hull_points="3000" shield_points="0" speed="High"
+			metal_cost="2000" energy_consumption="150"
+			armor_mm="60" albedo="0.3" engine_gx="7" mass_tx="0.21"
+			immune_to_swapping_between_fleets="true"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			>
+		<entity_type_drawing_bag_used_on_death data_list="StormMissileHead" min_spawn_value_list="3" />
+		<fleet_membership name="StormfrontDrones" ship_cap_group="Strike" weight="100" cap="8"/>
+		<system name="WS" display_name="弹头部署"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="200" range="AlmostNone" shot_speed="Normal" rate_of_fire="High" shots_per_salvo="1" fires_salvos_sequentially="false"
+				shot_type_data="StormMissileHead"
+				area_of_effect_size="600"
+				maximum_number_of_targets_hit_per_shot="3"
+				health_change_by_max_health_divided_by_this_per_attack="-1"
+				>
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtMost" compared_to="1" multiplier="3" />
+		</system>
+	</entity>
+	
+	<entity name="StormMissileHead"	    
+			visuals="Assets/_FinalGameMeshes/FleetShips/AutoBomb/AutoBomb.prefab" 
+			icon_name="Ships1/AutoBomb"
+			voice_group="Silent"
+			category="Ship" is_strikecraft="true" special_entity_type="SmallShipNotStackable"
+			icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+			size_scale="0.8" visuals_scale_multiplier="5"
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="20"
+			always_self_attritions="true"
+			cannot_target_or_alert_ai_reinforcement_spots="true"
+			collision_priority="100"
+			display_name="风暴前哨多弹头导弹 弹头"
+			display_name_for_sidebar="Stormfront 弹头"
+			description="A kaboom moments away from completion."
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly"
+			cost_for_ai_to_purchase="20" strength_multiplier="0.7"
+			hull_points="1500" shield_points="0" speed="High"
+			metal_cost="400" energy_consumption="75"
+			metal_cost_multiplier_for_scrapping="0"
+			armor_mm="30" albedo="0.3" engine_gx="7" mass_tx="0.21"
+			absolute_max_cap_when_in_fleets="32"
+			immune_to_swapping_between_fleets="true"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			>
+    	<system name="FA" display_name="弹头引爆"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="200" range="AlmostNone" seek_range="Normal1" shot_speed="Instant" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+				shot_type_data="ExplosiveFlakBurst"
+				area_of_effect_size="600"
+				maximum_number_of_targets_hit_per_shot="3"
+				health_change_by_max_health_divided_by_this_per_attack="-1"
+				>
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtMost" compared_to="1" multiplier="3" />
+		</system>
+	</entity>
+	
+	<!--Stormfront Raider (Cap 16)-->
+	<!--Raiders packing a supplementary missile tube and early on-planet damage bonus-->
+	<entity skip_export="true" copy_from="Raider" name="StormfrontRaiderDrone" special_entity_type="DroneGeneral"
+        icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+		size_scale="0.8"
+	    self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="35"
+		cannot_target_or_alert_ai_reinforcement_spots="true"
+		metal_cost="4000" armor_mm="30" display_name="Stormfront 突击者"
+		description="Raiders augmented with a pair of lightweight 伯劳 导弹 tubes. Does bonus damage on planet entry."
+		immune_to_swapping_between_fleets="true"
+	    starting_mark_level="Mark1" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly">
+		<fleet_membership name="StormfrontDrones" ship_cap_group="Strike" weight="100" cap="16"/>
+		<system name="SM" display_name="伯劳导弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="350" range="AboveAverage2" shot_speed="Fast" rate_of_fire="VeryLow" shots_per_salvo="2" fires_salvos_sequentially="false"
+				shot_type_data="FusionRocket"
+				>
+				<outgoing_damage_modifier based_on="MyTimeAtPlanet" comparison_type="LessThan" compared_to="20" multiplier="3" />	
+		</system>
+	</entity>
+	
+	<!--Stormfront Raid Frigate (Cap 2)-->
+	<!--The bodyguards of the Ark effectively, Mini-Nucleo Cannon and paired missile launchers-->
+	<entity name="StormfrontGuardDrone"
+			special_entity_type="DroneGeneral" gimbal_icon_size_multiplier="0.6"			 
+			visuals="assets/_finalgamemeshes/starships/raidstarship/raidstarship.prefab"
+			icon_name="Ships1/Starship" icon_overlay="Overlays1/Drone"
+			size_scale="2.8"
+			visuals_scale_multiplier="4.5"
+			category="Ship"
+			y_offset_of_icon="15"
+			collision_priority="500"
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="35"
+			cannot_target_or_alert_ai_reinforcement_spots="true"
+			display_name="风暴前哨突击护卫舰"
+			display_name_for_sidebar="Storm 突袭 FFL"
+			description="Fast 隐形 护卫舰 serving as the elite 守卫 of the 风暴前哨方舟."
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly"
+			cost_for_ai_to_purchase="500"
+			hull_points="42000" shield_points="88000" speed="VeryHigh1"
+			metal_cost="67200" energy_consumption="6500"
+			armor_mm="50" engine_gx="18" albedo="0.7" mass_tx="5"
+			voice_group="Starship"
+			immune_to_swapping_between_fleets="true"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+      		priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			>
+		<fleet_membership name="StormfrontDrones" ship_cap_group="Frigate" weight="100" cap="2"/>
+		<system name="MN" display_name="迷你亲核加农炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="3500" range="AboveAverage4" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="true"
+				shot_type_data="LaserPulse_DeepBlue" cloaking_percent_loss_from_firing="0.2"
+				>
+				<outgoing_damage_modifier based_on="EnergyUsage" comparison_type="AtLeast" compared_to="7000" multiplier="3" />
+		</system>
+		<system name="SM" display_name="重型伯劳导弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="500" range="AboveAverage4" shot_speed="Fast" rate_of_fire="Low" shots_per_salvo="2" fires_salvos_sequentially="false"
+				shot_type_data="FusionRocket" cloaking_percent_loss_from_firing="0.2" added_shots_per_salvo_per_mark="2"
+				>
+				<outgoing_damage_modifier based_on="MyTimeAtPlanet" comparison_type="LessThan" compared_to="20" multiplier="3" />	
+		</system>
+		<system name="C" display_name="隐形装置"
+				category="Passive"
+				cloaking_points="2000"
+				cloaking_points_added_per_mark="1000"
+				>
+		</system>
+		<incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="4400" multiplier="0.25" />
+	</entity>
+	
+</root>

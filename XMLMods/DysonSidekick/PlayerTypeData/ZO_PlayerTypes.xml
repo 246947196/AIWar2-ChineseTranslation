@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <player_type name="DarkZenithEmpire"
+        display_name="Dark Zenith Empire" short_name="Dark Zenith" auto_name_postfix=" (DZ)" uncontrolled_name="Dark Zenith" lobby_prefix="DZ Empire "
+        sort_order="800"
+        tags="DarkZenith,DarkZenithEmpire"
+        base_info_source="DarkZenithSidekickFactionBaseInfo"
+        deep_info_source="DarkZenithSidekickFactionDeepInfo"
+        is_allowed_to_buy_from_zenith_trader="false"
+        is_subject_to_energy_brownouts="false"
+
+        is_considered_a_full_empire="true"
+        takes_ownership_of_starting_planet="false"
+        can_lose_game="true"
+        city_centers_can_control="false"
+
+        hacks_fail_when_hacking_points_exhausted="false"
+        ship_counts_go_up_from_upgrades="false"
+        does_not_collect_science_or_hacking_with_other_players="true"
+        uses_any_random_hacker_for_hacks="true"
+        reject_tech_upgrades_that_benefit_nothing="true"
+        only_show_tech_upgrades_that_benefit_me="true"
+        fleets_only_show_mobile_strength_in_sidebar="true"
+        excess_metal_auto_gifts_to_player_types="None"
+
+        mark_level_increase_does_not_increase_ship_cap="true"
+        uses_energy_and_fuel="false"
+        uses_metal="false"
+        uses_necromancer_hacking_and_science="false"
+        uses_resource_1="false"
+        resource_1_display_name="Essence"
+        resource_1_color="e16cff"
+        resource_1_icon="Res_NecromancerEssence"
+        mapgen_should_fuel_seed_for_me_if_fuel_is_enabled="false"
+        mapgen_should_arses_seed_for_me="false"
+        mapgen_should_coprocessors_seed_for_me="true"
+        mapgen_should_distributionnodes_seed_for_me="true"
+        mapgen_should_datacenters_seed_for_me="true"
+        mapgen_should_majordatacenters_seed_for_me="true"
+        mapgen_should_superterminals_seed_for_me="true"
+        mapgen_should_minorcapturables_seed_for_me="false"
+        mapgen_require_minorcapturable_tag=""
+        mapgen_should_zenithpowergenerators_seed_for_me="false"
+        mapgen_should_zenithmatterconverters_seed_for_me="false"
+        mapgen_should_officerfleets_seed_for_me="false"
+        mapgen_require_officerfleet_tag=""
+        mapgen_should_citadels_seed_for_me="false"
+        mapgen_require_citadel_tag=""
+        mapgen_should_supportfleets_seed_for_me="false"
+        mapgen_require_supportfleet_tag=""
+        mapgen_should_destroyers_seed_for_me="false"
+        mapgen_should_cruisers_seed_for_me="false"
+        mapgen_should_frses_seed_for_me="false"
+        mapgen_should_lonespire_seed_for_me="false"
+        mapgen_should_techvaults_seed_for_me="false"
+        mapgen_should_earlyofficers_seed_for_me="false"
+        mapgen_require_earlyofficer_tag=""
+        mapgen_should_tsses_seed_for_me="false"
+        mapgen_should_odsses_seed_for_me="false"
+        mapgen_should_mobilestrikefleets_seed_for_me="false"
+        mapgen_require_mobilestrikefleet_tag=""
+        mapgen_should_spirearchive_seed_for_me="false"
+        mapgen_should_outguard_seed_for_me="false"
+        mapgen_should_all_guard_posts_be_armed="false"
+
+        description="The Dark 天顶 Empire is a mod allowing the player to play as the Dark 天顶. You can control all their military units, though you have no control over their economy.
+
+Restriction: You'll need to specify some planet as your starting planet for the DZ Empire; this has no effect on gameplay; your planets will link into the 银河 'as usual'.
+Most sidekicks will not work if the Dark 天顶 Empire is the only Empire; 尖塔 Sidekick will work.
+
+Written by Badger. This is only a mod, and has no official Arcen support."/>
+  
+  <player_type name="DarkZenithSidekick"
+        display_name="Dark Zenith Sidekick" short_name="Dark Zenith" auto_name_postfix=" (DZ)" uncontrolled_name="Dark Zenith" lobby_prefix="DZ Sidekick "
+        sort_order="810"
+        tags="DarkZenith,DarkZenithSidekick"
+        base_info_source="DarkZenithSidekickFactionBaseInfo"
+        deep_info_source="DarkZenithSidekickFactionDeepInfo"
+        is_allowed_to_buy_from_zenith_trader="false"
+        is_subject_to_energy_brownouts="false"
+
+        is_considered_a_full_empire="false"
+        takes_ownership_of_starting_planet="false"
+        city_centers_can_control="false"
+        can_lose_game="false"
+        starts_with_allied_empire="true"
+
+        hacks_fail_when_hacking_points_exhausted="false"
+        ship_counts_go_up_from_upgrades="false"
+        does_not_collect_science_or_hacking_with_other_players="true"
+        uses_any_random_hacker_for_hacks="true"
+        reject_tech_upgrades_that_benefit_nothing="true"
+        only_show_tech_upgrades_that_benefit_me="true"
+        fleets_only_show_mobile_strength_in_sidebar="true"
+        excess_metal_auto_gifts_to_player_types="None"
+        
+        mark_level_increase_does_not_increase_ship_cap="true"
+        uses_energy_and_fuel="false"
+        uses_metal="false"
+        uses_necromancer_hacking_and_science="false"
+        uses_resource_1="false"
+        resource_1_display_name="Essence"
+        resource_1_color="e16cff"
+        resource_1_icon="Res_NecromancerEssence"
+               
+        mapgen_should_fuel_seed_for_me_if_fuel_is_enabled="false"
+        mapgen_should_arses_seed_for_me="false"
+        mapgen_should_coprocessors_seed_for_me="false"
+        mapgen_should_distributionnodes_seed_for_me="false"
+        mapgen_should_datacenters_seed_for_me="false"
+        mapgen_should_majordatacenters_seed_for_me="false"
+        mapgen_should_superterminals_seed_for_me="false"
+        mapgen_should_minorcapturables_seed_for_me="false"
+        mapgen_require_minorcapturable_tag=""
+        mapgen_should_zenithpowergenerators_seed_for_me="false"
+        mapgen_should_zenithmatterconverters_seed_for_me="false"
+        mapgen_should_officerfleets_seed_for_me="false"
+        mapgen_require_officerfleet_tag=""
+        mapgen_should_citadels_seed_for_me="false"
+        mapgen_require_citadel_tag=""
+        mapgen_should_supportfleets_seed_for_me="false"
+        mapgen_require_supportfleet_tag=""
+        mapgen_should_destroyers_seed_for_me="false"
+        mapgen_should_cruisers_seed_for_me="false"
+        mapgen_should_frses_seed_for_me="false"
+        mapgen_should_lonespire_seed_for_me="false"
+        mapgen_should_techvaults_seed_for_me="false"
+        mapgen_should_earlyofficers_seed_for_me="false"
+        mapgen_require_earlyofficer_tag=""
+        mapgen_should_tsses_seed_for_me="false"
+        mapgen_should_odsses_seed_for_me="false"
+        mapgen_should_mobilestrikefleets_seed_for_me="false"
+        mapgen_require_mobilestrikefleet_tag=""
+        mapgen_should_spirearchive_seed_for_me="false"
+        mapgen_should_outguard_seed_for_me="false"
+               
+        mapgen_should_all_guard_posts_be_armed="false"
+
+        description="The Dark 天顶 Sidekick is a mod allowing the player to play as the Dark 天顶. You can control all their military units, though you have no control over their economy.
+
+Restrictions: You cannot actually lose the game, so you must play with another player type; this is the same restriction as the 死灵法师 Sidekick.
+
+For solo play, you'll control both this empire and your chosen other Empire simultaneously; hitting F4 will swap control between the two empires. I would suggest using the 方舟 Infused empire (if you own DLC1) to move your King to join the Dark 天顶. Note you can set the DZ to use its usual logic, so it can take care of itself if you request.
+Restriction: You'll need to specify some planet as your starting planet for the DZ Sidekick; this will not affect anything.
+
+Written by Badger. This is only a mod, and has no official Arcen support."/>
+
+
+
+</root>

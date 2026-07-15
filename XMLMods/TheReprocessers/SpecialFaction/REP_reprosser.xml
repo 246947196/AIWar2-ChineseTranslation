@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<faction name="Reprocessors"
+           display_name="再处理器"
+           dll_name="_Reprocesser"
+           type_name="Arcen.AIW2.External.SpecialFaction_Reprocessors"
+           team_center_color="c00563B" team_border_color="cBFFF00"
+           type="SpecialFaction"
+           must_be_at_most_one="false"
+           counts_as_part_of_player_strength_at_planet_for_counterattack_blocking="false"
+           player_discoverable="false"
+		   ai_can_send_waves_against_this="false"
+           ai_threat_against_this_faction_goes_back_to_guarding="true"
+           description="一个栖息在深空中并喜欢用舰船攻击的派系，但必须研究新型舰船。
+
+&lt;color=#f25e1c&gt;低影响：&lt;/color&gt;该派系偶尔会跃迁进入，可能会偷走几架小型战斗机。它的'攻击'通常微不足道且无害。"
+           impact="Easier"
+           CanBeFriendlyToPlayer="true"
+		   CanBeHostileToAll="true"
+           >
+		   <custom_field name="Intensity" display_name="强度" description="这个派系到底有多可怕？"
+          sort_group="200" setting_type="IntSlider" default="5" min="1" max="10"/>
+			<custom_field name="Allegiance" display_name="阵营" description="该派系对 AI、人类友好，还是对谁也不友好？"
+          sort_group="250" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Hostile To All,Friendly To Players,Hostile To Players Only,Minor Faction Team Red,Minor Faction Team Blue,Minor Faction Team Green" default_option="Hostile To All" />
+  </faction>
+
+  
+</root>

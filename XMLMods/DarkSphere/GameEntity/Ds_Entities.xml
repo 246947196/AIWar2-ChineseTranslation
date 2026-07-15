@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+    <entity copy_from="BaseInvisibleEntity"
+      name="DsKingPlanet" icon_name="Ships2/NonAIPlanetHome" is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+      />
+
+	<entity name="DarkSphere" tags="DsSphere,DysonSphere,ShowsOnNormalDisplayMode" 
+            thematic_groups="DysonSphere,DarkSphere"
+			voice_group="Spire" 
+			
+			visuals_bundle="exp1_the_spire_rises" 
+			visuals="Assets/_DLC1/GraySpire/GraySpireDysonSphere/GraySpireDysonSphere.prefab"  
+			material_override_path="Assets/_FinalGameMeshes/Spire/DarkSpireWard/DarkSpireWard.prefab"
+            material_override_spin="0"
+			rotation_x_of_ship="0" 
+            rotation_z_of_ship="0"
+            nonsim_rotates_to_face_targets="false"
+            nonsim_rotates_to_face_travel="false"
+            y_offset_of_ship_in_visual_space="-100" 
+			y_offset_of_icon="370"
+
+			icon_name="Ships1/Dyson_Sphere" 
+			icon_overlay=""
+
+			category="Ship"
+			is_king_unit="true"
+
+			gimbal_icon_size_multiplier="3.0"
+			visual_model_draw_cutoff="0"
+			size_scale="120"
+			visuals_scale_multiplier="100" 
+			collision_priority="20000"
+			
+			draw_in_galaxy_view="true"
+            uses_large_health_bar="false"
+            always_visible_to_players_even_unexplored="true"
+            custom_king_planet_icon="DarkSphere"
+            displaces_other_ships_planet_tier="true"
+			
+			display_name="阿尼卡——熵之慈悲"
+			display_name_for_sidebar="Anicca"
+			description="Suffer no more. Be no more."
+
+			behavior="Attacker_Full"
+            starting_mark_level="Mark1"
+            mark_level_scale_style="Ds_Sphere"
+
+			cost_for_ai_to_purchase="100000"
+			hull_points="60000000" shield_points="400000" speed="AlmostNone"
+			metal_cost="605000" energy_consumption="1000000"
+			armor_mm="420" albedo="0" mass_tx="420"
+			engine_gx="420"
+
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			description_appender_dll="AIWarExternalCode"
+			description_appender_type="Arcen.AIW2.External.SphereDescriptionAppender"
+			priority_as_ai_target="MajorPlanetLevelObjective" priority_as_frd_target="IgnoreMe" priority_to_protect="IgnoreMe"
+
+			per_second_custom_logic_dll="DarkSphere"
+			per_second_custom_logic_type="DarkSphere.Ds_Sphere_CustomLogic"
+
+            can_be_given_orders_by_any_player_even_if_not_owner="true"
+            >
+
+            <ship_class_data 
+                can_be_zombified_and_similar="false" 
+                can_be_tractored="false"
+                can_receive_exotic_damage="false"
+                />
+            
+            <system
+                name="C1"
+                custom_type="TurboSpeed"
+            />
+                <!-- Burning Fan -->
+            <!-- 
+		<system
+				name="W1"
+				display_name="Anicca"
+				category="Weapon"
+				firing_timing="OnlyInRange"
+				damage_per_shot="25000"
+				range="ExtremelyHigh"
+				shot_speed="Normal"
+				rate_of_fire="Devourer"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="1.0"
+				hits_all_intersecting_targets="true"
+				shots_detonate_immediately="false"
+				maximum_number_of_targets_hit_per_shot="15"
+				number_beams_to_fire="1"
+				beam_weapon_line_type="Ds_Lightning"
+				degrees_offset_per_beam="12"
+				seconds_for_beam_to_rotate_fully="0"
+                beam_width="10"
+                fires_salvos_sequentially="true"
+                shots_per_salvo="10"
+                shots_per_target="1"
+                no_compression="true"
+                salvo_shot_min_delay="100"
+                salvo_shot_max_delay="500"
+				>
+		</system>
+    -->
+
+    <!-- Detonating Lightning Shot -->
+    
+        <system
+				name="W1"
+				display_name="Anicca"
+				category="Weapon"
+				firing_timing="OnlyInRange"
+				damage_per_shot="2500"
+				range="ExtremelyHigh"
+				shot_speed="Ds_DeadTurtle"
+				rate_of_fire="Devourer"
+				
+				shots_detonate_immediately="false"
+				maximum_number_of_targets_hit_per_shot="15"
+                area_of_effect_size="10000"
+
+                fires_salvos_sequentially="true"
+                shots_per_salvo="10"
+                shots_per_target="1"
+                no_compression="true"
+                salvo_shot_min_delay="50"
+                salvo_shot_max_delay="150"
+
+                shot_type_data="Ds_Glowball_Shot"
+				>
+		</system>
+   
+<!--
+		<system
+				name="W2"
+				display_name="Anatta"
+				category="Weapon"
+				firing_timing="OnlyInRange"
+				damage_per_shot="25000"
+				range="ExtremelyHigh"
+				shot_speed="Normal"
+				rate_of_fire="Devourer"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="-1.3"
+				hits_all_intersecting_targets="true"
+				shots_detonate_immediately="true"
+				maximum_number_of_targets_hit_per_shot="15"
+				number_beams_to_fire="30"
+				beam_weapon_line_type="Ds_Erupt"
+				degrees_offset_per_beam="-24"
+				seconds_for_beam_to_rotate_fully="120"
+				use_alternate_rate_of_fire_after_x_shots="2"
+				alternate_rate_of_fire="Tortoise"
+				use_alternate_rate_of_fire_for_x_shots_before_reverting="1"
+				>
+		</system>
+    -->
+<!-- Huge Laser -->
+<!--
+		<system
+				name="W3"
+				display_name="Dukka"
+				category="Weapon"
+				firing_timing="OnlyInRange"
+				damage_per_shot="500000"
+				range="ExtremelyHigh"
+				shot_speed="Ds_ExcessivelySlow"
+				rate_of_fire="Normal"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="2"
+				hits_all_intersecting_targets="true"
+				shots_detonate_immediately="false"
+				maximum_number_of_targets_hit_per_shot="15000"
+                aoe_spreads_damage_among_available_targets="true"
+
+                
+                fires_salvos_sequentially="true"
+                shots_per_salvo="1"
+                shots_per_target="1"
+                no_compression="true"
+                salvo_shot_min_delay="200"
+                salvo_shot_max_delay="700"
+
+				number_beams_to_fire="1"
+				beam_weapon_line_type="Ds_Laser"
+				beam_width="1000"
+				base_knockback_per_shot="100000" added_knockback_per_shot_per_mark="0" knockback_to_ships_mass_tx_less_than="100"
+				knockback_at_target_location="false"
+				>
+		</system>
+    -->
+        <system name="D1" 
+				 display_name="无人机周界"
+				 category="Weapon" 
+				 firing_timing="OnlyInRange"
+				 damage_per_shot="1" 
+				 range="High2" 
+				 shot_speed="Normal" 
+				 rate_of_fire="Sloth" 
+				 fires_salvos_sequentially="true" 	
+				 shots_per_salvo="5"
+				 shot_type_data="Ds_Escort_Gatling"
+				 >
+		 </system>
+
+  </entity>
+
+</root>

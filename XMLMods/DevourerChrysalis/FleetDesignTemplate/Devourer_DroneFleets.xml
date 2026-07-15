@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<fleet_design name="DevourerGolemTier3_Swarm_Drones" design_logic="Drones" weight="1" include_full_cap_of_each_type="true" />
+	<fleet_design name="DevourerGolemTier4_Hurricane_Drones" design_logic="Drones" weight="1" include_full_cap_of_each_type="true" />
+	
+	<fleet_design name="DevourerGolemTier3_SwarmEnraged_Drones" design_logic="Drones" weight="1" include_full_cap_of_each_type="true" />
+	<fleet_design name="DevourerGolemTier4_HurricaneEnraged_Drones" design_logic="Drones" weight="1" include_full_cap_of_each_type="true" />
+</root>

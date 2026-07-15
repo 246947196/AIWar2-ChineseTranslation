@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <setting_category name="Outguard" display_name="外卫"
+      description="这些设置影响外卫的生成。"/>
+</root>

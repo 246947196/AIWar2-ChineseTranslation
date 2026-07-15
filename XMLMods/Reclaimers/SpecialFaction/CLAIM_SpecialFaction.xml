@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+     <faction
+               name="Reclaimers"
+               display_name="回收者"
+               short_name="回收者"
+               processing_group="Reclaimers"
+               base_info_source="ReclaimersFactionBaseInfo"
+               deep_info_source="ReclaimersFactionDeepInfo"
+               team_center_color="c414A4C"
+               team_border_color="c00FFFF"
+               type="SpecialFaction"
+               must_be_at_most_one="true"
+               description="
+A faction dedicated to advancing the reach of humanity in the galaxy and reclaiming what was lost. They will assist in defending your planets and with scouting and suppressing your neighbors. Locate their research outposts to aquire helpful alien technology. Make use of their deep space outposts which form temporary wormholes to distant parts of the galaxy.
+
+&lt;color=#f25e1c&gt;LOW IMPACT:&lt;/color&gt; This faction will assist their allies and have no downsides."
+               can_use_spire_debris="false"
+               impact="Easier"
+               icon_name_for_lobby="Ships4/SomethingRevolution"
+               is_considered_player_allied_for_filter_purposes="true"
+               >
+
+            <custom_field
+                    is_hidden="true"
+                    name="Allegiance"
+                    display_name="归属"
+                    description="始终对玩家友好。"
+                    sort_group="300"
+                    setting_type="CustomDropdownArbitraryOptions"
+                    arbitrary_options="Friendly To Players"
+                    default_option="Friendly To Players"
+                    />
+
+          <custom_field
+                    name="DebugMode"
+                    is_advanced_setting="true"
+                    display_name="&lt;color=#a0a0a0&gt;Debug Mode&lt;/color&gt;"
+                    description="供开发者使用。"
+                    sort_group="500"
+                    setting_type="BoolToggle"
+                    default="false"
+                    />
+                    
+          <custom_field
+                    name="NumDeepSpaceOutposts"
+                    is_advanced_setting="false"
+                    display_name="深空前哨站数量"
+                    description="回收者会创建这么多深空前哨站，然后开始轮换它们的位置。重要的是，这些前哨站始终由人工虫洞连接，因此数量越多行星连接越随机。设为零可禁用。"
+                    sort_group="250"
+                    setting_type="CustomDropdownArbitraryOptions"
+                    arbitrary_options="0,2,3,4,5" default_option="3"
+                    />
+
+          <custom_field
+                    name="OutpostShuffleTime"
+                    is_advanced_setting="false"
+                    display_name="深空前哨站持续时间"
+                    description="深空前哨站位置变更的间隔分钟数。第一个前哨站始终在20分钟出现。之后每经过这个间隔，将添加或移除一个前哨站。"
+                    sort_group="250"
+                    setting_type="CustomDropdownArbitraryOptions" 
+                    arbitrary_options="5,10,20,30" default_option="20"
+                    />
+
+          <custom_field
+                    name="NumResearchOutposts"
+                    is_advanced_setting="false"
+                    display_name="研究前哨站数量"
+                    description="研究前哨站在游戏开始时随机分布在银河系中。每个都会为您提供一条舰船生产线（或其他东西）。默认为3。"
+                    sort_group="250"
+                    setting_type="IntSlider" 
+                    default="3" 
+                    min="0" 
+                    max="6"
+                    />
+
+          <custom_field
+                    name="MaxScrapBoxes"
+                    is_advanced_setting="false"
+                    display_name="废料箱数量"
+                    description="当在设有回收者近空前哨站的行星上发生战斗金属损失时，最终会奖励您含有金属的废料箱。默认最多可同时积累5个。"
+                    sort_group="250"
+                    setting_type="IntSlider" 
+                    default="5" 
+                    min="0" 
+                    max="20"
+                    />
+
+     </faction>
+
+</root>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+    <item name="ShieldGeneratorHack" dll_name="CML_ShieldsDeepInfo" type_name="CML.AIW2.Shields.Hacking_ShieldGeneratorHack" display_name="破坏护盾发生器" description="This will allow the player to destroy an AI护盾发生器 that would otherwise be protected by a Command 站. The AI will take this less lightly than it would a regular act of sabotage."
+        hack_duration="120"
+		hacking_cost_multiplier_per_attempt="0"
+        primary_hacking_response_interval="30"
+        primary_response_strength_per_interval="2"
+		primary_response_increase_per_effect="2"
+		secondary_hacking_response_interval="5"
+		secondary_response_strength_per_interval="1"
+        cost_in_hacking_points="30"
+        response_strength_on_completion="8"
+        local_hacker_required="true"
+        hack_is_against_planet="false"
+        use_closest_hacker_for_check="true"
+        destroy_hack_target_on_completion="false"
+		exo_on_completion="true"
+/>
+</root>

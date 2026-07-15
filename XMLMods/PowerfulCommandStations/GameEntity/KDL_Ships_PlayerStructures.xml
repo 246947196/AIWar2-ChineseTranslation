@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <entity name="HumanHomeCommandStation" is_partial_record="true"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Command" this_centerpiece_grants_its_direct_science_upgrades_to_rest_of_fleet="true" tech_upgrade_that_is_used_for_my_direct_science="Direct_CommandStations"
+      fleet_design_templates_i_always_grant="PlayerHomeCommand"
+			cost_for_ai_to_purchase="200"			
+			hull_points="3500000" shield_points="3500000" speed="Immobile"
+			metal_cost="200000" energy_consumption="0"
+			assist_range="InsanelyHigh"
+			armor_mm="120" albedo="0.7" mass_tx="7"
+			metal_storage="2500000" added_metal_storage_per_mark_level="500000"
+			aip_on_death="90"
+			allied_speed_multiplier="3.0"
+			allied_speed_multiplier_added_per_mark="0.5"								   
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			shield_size_scale="6"
+			my_forcefield_does_not_shrink="true"			
+			>
+  </entity>
+
+  <entity name="EconomicCommandStation" is_partial_record="true"
+			special_entity_type="NormalHumanCommandStation" tags="DirectBuilder" defensive_structure_cap_multiplier="0.25"
+			visuals="assets/_finalgamemeshes/buildings/commandstations/economiccommandstation/economiccommandstation.prefab"
+			icon_name="Ships1/CommandStation" icon_overlay="Overlays1/CommandStation_Economic" icon_overlay_galaxy_map="Overlays1/CommandStation_Economic_Small" gimbal_icon_size_multiplier="2"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="4.5" y_offset_of_ship_in_visual_space="10" y_offset_of_icon="25"
+			visuals_scale_multiplier="2.5"
+			collision_priority="10000"
+			display_name="经济指挥站" display_name_for_sidebar="经济指令"
+			description="经济指挥中心。如果被摧毁，您将失去对该星球的控制。大幅提升的金属和能量输出，集成了引力发生器，但自卫能力仍然很弱。需要强大的堡垒或战斗空间站保护，或远离前线以确保安全。"
+			description_short="专注于经济，高金属和能量产出，但防御能力较弱。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="CommandEconomic,Command" this_centerpiece_grants_its_direct_science_upgrades_to_rest_of_fleet="true" tech_upgrade_that_is_used_for_my_direct_science="Direct_CommandStations"
+			build_sidebar_categories_i_am_part_of="CommandStations,CommandStationUpgrades"
+      fleet_design_templates_i_always_grant="PlayerEconomicCommand"
+			cost_for_ai_to_purchase="20"
+			hull_points="350000" shield_points="700000" speed="Immobile"
+			metal_cost="60000" energy_consumption="0"
+			assist_range="InsanelyHigh"
+			armor_mm="90" albedo="0.6" mass_tx="6"
+			metal_storage="300000" added_metal_storage_per_mark_level="100000"
+			allied_speed_multiplier="2"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			voice_group="Flagship"
+			external_invulnerability_unit_type="Buttress"
+      external_invulnerability_region="ThisPlanet"
+		shield_size_scale="5"
+			my_forcefield_does_not_shrink="true"				
+      
+      priority_as_frd_target="MajorPlanetLevelObjective" priority_as_ai_target="MajorPlanetLevelObjective" priority_to_protect="MajorPlanetLevelObjective"
+			>
+    <resource_production type="Metal" amount="400" increase_per_mark_level="220"/>
+    <resource_production type="Energy" amount="500000" increase_per_mark_level="240000"/>
+	<resource_production type="Science" amount="2"/>
+	 <resource_production type="Hacking" amount="2"/>
+     <!--SelfConstruction is: MetalCost/60=Selfconstruction throughput-->
+    <metal_flow purpose="SelfConstruction" throughput="1000"/>
+    <metal_flow purpose="ClaimingNeutrals" throughput="900" increase_per_mark_level="100"/>
+	<metal_flow purpose="RebuildingRemains" throughput="100" increase_per_mark_level="100"/>
+	<system name="G" display_name="引力核心"
+				category="Passive"
+				base_gravity_speed_multiplier="0.3" 
+				gravity_hits_engine_gx_less_than="14" gravity_range="AboveAverage1"
+				>
+    </system>				  
+  </entity>
+
+
+  <entity name="LogisticalCommandStation" is_partial_record="true"
+			display_name="后勤指挥站" display_name_for_sidebar="后勤指令"
+			description="后勤指挥中心。如果被摧毁，您将失去对该星球的控制。经济与防御的平衡组合，配有强大的个人力场护盾。还有更多的工厂和工程师用于大规模生产，并监视邻近星球。"
+			description_short="平衡的经济和防御能力。拥有更多力场护盾、牵引器和工程师，监视邻近星球。大幅提升友方单位的速度。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="CommandLogistical,Command" this_centerpiece_grants_its_direct_science_upgrades_to_rest_of_fleet="true" tech_upgrade_that_is_used_for_my_direct_science="Direct_CommandStations"
+      			hull_points="700000" shield_points="2100000" speed="Immobile"
+			metal_cost="200000" energy_consumption="0"
+			assist_range="InsanelyHigh"
+			armor_mm="90" albedo="0.6" mass_tx="6"
+			metal_storage="600000" added_metal_storage_per_mark_level="300000"
+      eligible_for_hacks="HackIncreaseReconRange"
+			allied_speed_multiplier="3.0"
+			allied_speed_multiplier_added_per_mark="0.5"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			voice_group="Flagship"
+			external_invulnerability_unit_type="Buttress"
+      external_invulnerability_region="ThisPlanet"
+						shield_size_scale="5"
+			my_forcefield_does_not_shrink="true"						 
+      
+      priority_as_frd_target="MajorPlanetLevelObjective" priority_as_ai_target="MajorPlanetLevelObjective" priority_to_protect="MajorPlanetLevelObjective"
+      watch_planets_at_X_hops="2"
+			>
+    <hack_data hack_type="HackIncreaseReconRange"
+        override_cost_in_hacking_points="60"
+        cost_in_hacking_points_multiplier_per_times_same_unit_hacked="2.5"
+        max_times_single_unit_can_be_hacked="2">
+      <custom_hack_data key="AddedRangePerHack" value="2" />
+    </hack_data>
+    <resource_production type="Metal" amount="90" increase_per_mark_level="50"/>
+    <resource_production type="Energy" amount="175000" increase_per_mark_level="50000"/>
+	<resource_production type="Science" amount="10"/>
+	<resource_production type="Hacking" amount="10"/>
+    <metal_flow purpose="SelfConstruction" throughput="3334"/>
+    <metal_flow purpose="ClaimingNeutrals" throughput="900" increase_per_mark_level="100"/>
+	<metal_flow purpose="RebuildingRemains" throughput="100" increase_per_mark_level="100"/>
+  </entity>
+
+  <entity name="MilitaryCommandStation" is_partial_record="true"
+			special_entity_type="NormalHumanCommandStation" tags="DirectBuilder" defensive_structure_cap_multiplier="1.15"
+			visuals="assets/_finalgamemeshes/buildings/commandstations/militarycommandstation/militarycommandstation.prefab"
+			icon_name="Ships1/CommandStation" icon_overlay="Overlays1/CommandStation_Military" icon_overlay_galaxy_map="Overlays1/CommandStation_Military_Small" gimbal_icon_size_multiplier="2"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="4.5" y_offset_of_ship_in_visual_space="10" y_offset_of_icon="25"
+			visuals_scale_multiplier="2.5"
+			collision_priority="10000"
+			display_name="军事指挥站" display_name_for_sidebar="军事指令"
+			description="军事指挥中心。如果被摧毁，您将失去对该星球的控制。极其强大的战斗单位，非常适合危险的边境星球。建造费用高昂。其经济产出可怜，尤其是在能量方面，所以不要太依赖它们。从 Mark II 开始，获得对星球上所有友方单位的全星球伤害放大效果。"
+			description_short="高防御能力，几乎没有经济。为星球上的盟友提供伤害加成（Mark II+），并拥有最多的炮塔。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="CommandMilitary,Command" this_centerpiece_grants_its_direct_science_upgrades_to_rest_of_fleet="true" tech_upgrade_that_is_used_for_my_direct_science="Direct_CommandStations"
+      build_sidebar_categories_i_am_part_of="CommandStations,CommandStationUpgrades"
+			fleet_design_templates_i_always_grant="PlayerMilitaryCommand"
+			cost_for_ai_to_purchase="20" strength_multiplier="2"
+			hull_points="1400000" shield_points="1400000" speed="Immobile"
+			metal_cost="500000" energy_consumption="0"
+			assist_range="InsanelyHigh"
+      eligible_for_hacks="HackIncreaseReconRange"
+			armor_mm="140" albedo="0.7" mass_tx="6"
+			metal_storage="50000" added_metal_storage_per_mark_level="50000"
+			allied_speed_multiplier="2"
+			allied_speed_multiplier_added_per_mark="0.25"
+			allied_attack_multiplier="1.0"
+			allied_attack_multiplier_added_per_mark="0.25"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			voice_group="Flagship"
+			external_invulnerability_unit_type="Buttress"
+      external_invulnerability_region="ThisPlanet"
+      watch_planets_at_X_hops="1"
+		shield_size_scale="5"
+			my_forcefield_does_not_shrink="true"									
+          
+      priority_as_frd_target="MajorPlanetLevelObjective" priority_as_ai_target="MajorPlanetLevelObjective" priority_to_protect="MajorPlanetLevelObjective"
+			>
+    <hack_data hack_type="HackIncreaseReconRange"
+        override_cost_in_hacking_points="40"
+        cost_in_hacking_points_multiplier_per_times_same_unit_hacked="1.5"
+        max_times_single_unit_can_be_hacked="3">
+      <custom_hack_data key="AddedRangePerHack" value="1" />
+    </hack_data>
+    <resource_production type="Metal" amount="50" increase_per_mark_level="20"/>
+    <resource_production type="Energy" amount="70000" increase_per_mark_level="10000"/>
+	<resource_production type="Science" amount="2"/>
+	 <resource_production type="Hacking" amount="2"/>
+    <metal_flow purpose="SelfConstruction" throughput="8334"/>
+    <metal_flow purpose="ClaimingNeutrals" throughput="900" increase_per_mark_level="100"/>
+
+    <metal_flow purpose="RebuildingRemains" throughput="100" increase_per_mark_level="100"/>
+    <system name="R2" display_name="能量波"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="3600" range="ExtremelyHigh" shot_speed="Normal" rate_of_fire="Misery"
+                shots_per_salvo="12" 
+				added_shots_per_salvo_per_mark="12"	fires_salvos_sequentially="false"
+                base_paralysis_seconds_per_shot="4" added_paralysis_seconds_per_shot_per_mark="1" paralysis_to_ships_mass_tx_less_than="2" added_target_evaluator="ParalyzerAsPrimary"
+				base_knockback_per_shot="3000" added_knockback_per_shot_per_mark="750" knockback_to_ships_mass_tx_less_than="2"
+				shot_type_data="EnergyWave"
+				>
+    </system>
+  </entity>
+
+
+  
+
+</root>

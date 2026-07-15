@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <item name="AJEA_Base" dll_name="AMU_Base" type_name="AMU_Base.AJEA_Base" />
+  <item name="CapturableRepositioning_Base" dll_name="AMU_Base" type_name="AMU_Base.CapturableRepositioning_Base" />
+  <item name="GlobalFactionResourceStorage" dll_name="AMU_Base" type_name="AMU_Base.GlobalFactionResourceStorage" />
+  <item name="ExperimentalDefenseAutobuilding_Base" dll_name="AMU_Base" type_name="AMU_Base.ExperimentalDefenseAutobuilding_Base" />
+</root>

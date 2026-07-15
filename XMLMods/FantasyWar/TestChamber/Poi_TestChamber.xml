@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<chamber name="Example" is_partial_record="true">	
+	
+		<spawn entity="FantasyAdjucatorArchangel" count="1" mark_level="1" faction_name="FirstPlayer" x="0" y="-900" />
+		
+		<spawn entity="FantasyCustodianArchangel" count="1" mark_level="1" faction_name="FirstPlayer" x="0" y="-900" />
+		
+		<spawn entity="FantasyRadiantArchangel" count="1" mark_level="1" faction_name="FirstPlayer" x="0" y="-900" />
+		
+		<spawn entity="FantasyDismissalArchangel" count="1" mark_level="1" faction_name="FirstPlayer" x="0" y="-900" />
+		
+		<spawn entity="FantasyAdjucatorAngel" count="1" mark_level="1" faction_name="FirstPlayer" x="0" y="-900" />
+		<spawn entity="FantasyCustodianAngel" count="1" mark_level="1" faction_name="FirstPlayer" x="0" y="-900" />
+		<spawn entity="FantasyRadiantAngel" count="1" mark_level="1" faction_name="FirstPlayer" x="0" y="-900" />
+		<spawn entity="FantasyDismissalAngel" count="1" mark_level="1" faction_name="FirstPlayer" x="0" y="-900" />
+		<spawn entity="FantasyMortalProphet" count="1" mark_level="1" faction_name="FirstPlayer" x="0" y="-900" />
+		
+		<spawn entity="FantasyAdjucatorLesserAngel" count="1" mark_level="1" faction_name="FirstPlayer" x="0" y="-900" />
+		<spawn entity="FantasyCustodianLesserAngel" count="1" mark_level="1" faction_name="FirstPlayer" x="0" y="-900" />
+		<spawn entity="FantasyRadiantLesserAngel" count="1" mark_level="1" faction_name="FirstPlayer" x="0" y="-900" />
+		<spawn entity="FantasyDismissalLesserAngel" count="1" mark_level="1" faction_name="FirstPlayer" x="0" y="-900" />
+		<spawn entity="FantasyMortalSaint" count="1" mark_level="1" faction_name="FirstPlayer" x="0" y="-900" />
+		
+		<spawn entity="FantasyCherub" count="1" mark_level="1" faction_name="FirstPlayer" x="0" y="-900" />
+		<spawn entity="FantasyPriest" count="1" mark_level="1" faction_name="FirstPlayer" x="0" y="-900" />
+		<spawn entity="FantasyZealot" count="1" mark_level="1" faction_name="FirstPlayer" x="0" y="-900" />
+        <!--<spawn entity="Tarantula" count="100" faction_name="AI" x="0" y="1500" />		-->
+	</chamber>		
+</root>

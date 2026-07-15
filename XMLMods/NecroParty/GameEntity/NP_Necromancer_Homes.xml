@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<entity	name="SkeletonWarriorHome"
+			is_partial_record="true"
+			base_galaxy_wide_cap_for_players_constructing="0"
+			galaxy_wide_cap_match_string="SkeletonWarriorHome"
+			>
+			<data_extension
+				name="DLC3"
+				skeleton_cap_increase="15"
+				/>
+	</entity>
+
+	<entity	name="SkeletonArcherHome"
+			is_partial_record="true"
+			base_galaxy_wide_cap_for_players_constructing="0"
+			galaxy_wide_cap_match_string="SkeletonArcherHome"
+			>
+	</entity>
+
+	<entity	name="SkeletonDetonatorHome"
+			is_partial_record="true"
+			base_galaxy_wide_cap_for_players_constructing="0"
+			galaxy_wide_cap_match_string="SkeletonDetonatorHome"
+			>
+	</entity>
+
+	<entity	name="SkeletonMageHome"
+			is_partial_record="true"
+			base_galaxy_wide_cap_for_players_constructing="0"
+			galaxy_wide_cap_match_string="SkeletonMageHome"
+			>
+		<data_extension
+				name="DLC3"
+				skeleton_cap_increase="15"
+				/>
+	</entity>
+
+	<entity	name="SkeletonLordHome"
+			is_partial_record="true"
+			base_galaxy_wide_cap_for_players_constructing="0"
+			galaxy_wide_cap_match_string="SkeletonLordHome"
+			>
+		<data_extension
+				name="DLC3"
+				skeleton_cap_increase="15"
+				/>
+	</entity>	
+
+	<entity name="PossessedWightHome" is_partial_record="true"
+			base_galaxy_wide_cap_for_players_constructing="0"
+			galaxy_wide_cap_match_string="PossessedWightHome"
+	        >
+    </entity>
+
+	<entity name="InfectiousWightHome" is_partial_record="true"
+			base_galaxy_wide_cap_for_players_constructing="0"
+			galaxy_wide_cap_match_string="InfectiousWightHome"
+	        >
+    </entity>
+
+	<entity name="RavenousWightHome" is_partial_record="true"
+			base_galaxy_wide_cap_for_players_constructing="0"
+			galaxy_wide_cap_match_string="RavenousWightHome"
+	        >
+    </entity>
+
+	<entity	name="SpectralWightHome"
+			is_partial_record="true"
+			base_galaxy_wide_cap_for_players_constructing="0"
+			galaxy_wide_cap_match_string="SpectralWightHome"
+			>
+		<data_extension
+				name="DLC3"
+				wight_cap_increase="10"
+				/>
+	</entity>
+
+	<entity	name="VengefulWightHome"
+			is_partial_record="true"
+			base_galaxy_wide_cap_for_players_constructing="0"
+			galaxy_wide_cap_match_string="VengefulWightHome"
+			>
+		<data_extension
+				name="DLC3"
+				wight_cap_increase="10"
+				/>
+	</entity>
+
+	<entity	name="LifeForceTotem"
+			is_partial_record="true"
+			city_socket_cost="1"
+			/>
+
+	<!-- Ghasts -->
+	<entity	name="NecromancerCatacomb"
+			is_partial_record="true"
+			city_socket_cost="1"
+			base_galaxy_wide_cap_for_players_constructing="0"
+			galaxy_wide_cap_match_string="NecromancerCatacomb"
+			/>
+
+	<!-- Draugrs -->
+	<entity	name="NecromancerMansion"
+			is_partial_record="true"
+			city_socket_cost="1"
+			base_galaxy_wide_cap_for_players_constructing="0"
+			galaxy_wide_cap_match_string="NecromancerMansion"
+			/>
+
+	<!-- Igors -->
+	<entity	name="NecromancerMorgue"
+			is_partial_record="true"
+			ship_type_count_to_grant_more_of_in_custom_fleet="2"
+			base_galaxy_wide_cap_for_players_constructing="0"
+			galaxy_wide_cap_match_string="NecromancerMorgue"
+			/>
+
+	<!-- Specters -->
+	<entity	name="NecromancerTomb"
+			is_partial_record="true"
+			base_galaxy_wide_cap_for_players_constructing="0"
+			galaxy_wide_cap_match_string="NecromancerTomb"
+			/>
+
+	<!-- Revenants -->
+	<entity name="NecromancerMausoleum" 
+			is_partial_record="true"               
+			base_galaxy_wide_cap_for_players_constructing="0"
+			galaxy_wide_cap_match_string="NecromancerMausoleum"
+			/>
+
+	<!-- Banshee -->
+	<entity name="NecromancerGraveyard"
+			is_partial_record="true"
+			base_galaxy_wide_cap_for_players_constructing="0"
+			galaxy_wide_cap_match_string="NecromancerGraveyard"
+	        />
+
+</root>

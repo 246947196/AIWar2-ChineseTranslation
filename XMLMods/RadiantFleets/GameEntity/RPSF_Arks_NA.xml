@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<!-- Daybreak Ark -->
+	<!--
+		Concept: it is dark before the dawn, but then it appears in a grean flash, and shines like the sun.
+		
+		v1:
+			Green flash during first 15s, sunbeam after that
+		tech_upgrades_that_benefit_me="Raid"
+			
+		v2:
+		forced_to_always_be_this_state_of_matter="Normal" 
+		state_of_matter_to_become_on_wormhole_exit="SoloPhase"   returns_to_default_state_of_matter_after_seconds_from_wormhole_exit="15" 
+		
+		
+		Green flash:
+        <outgoing_damage_modifier based_on="MyTimeAtPlanet" comparison_type="GreaterThan" compared_to="1" multiplier="0"
+        rate_of_fire="ExtremelyLow"
+        15s * 300k / 6 = 50k*15 = 750k base damage... except this is a really tough conditional.
+        
+        So actually maybe we do twice that.
+        
+        
+        Then we want to clean things up with a weak-ish full-fusion beam (75kdps = 12.5k base dps)
+        
+        Sunbeam:
+        <outgoing_damage_modifier based_on="MyTimeAtPlanet" comparison_type="LessThan" compared_to="1" multiplier="0"
+		
+		Uses green flash the moment it comes out of solo phase, then sunbeam
+		
+		
+			outgoing_damage_modifier based_on="MyTimeAtPlanet" comparison_type="GreaterThan" compared_to="1" multiplier="0"
+			outgoing_damage_modifier based_on="MyTimeAtPlanet" comparison_type="LessThan" compared_to="1" multiplier="0"
+		v3:
+		Dark beam -> Green Flash -> Sunbeam, with green flash triggered
+		
+		v4:
+		Mono-sunbeam
+		
+		visuals="Assets/_DLC3/Venators/DemolitionVenator/DemolitionVenator.prefab" visuals_bundle="exp3_neinzul_abyss"
+		visuals_scale_multiplier="2.67" size_scale="12"
+		
+		material_override_path="assets/_finalgamemeshes/fleetships/bomber/bomber.prefab"  material_override_bundle="aiwar2goodiebox"
+		material_override_path="assets/_finalgamemeshes/starships/assaultstarship/assaultstarship.prefab" material_override_bundle="aiwar2goodiebox"
+		visuals="Assets/_FinalGameMeshes/AIExtragalactic/Tier1_ExtralacticRaven/Tier1_ExtralacticRaven.prefab" visuals_bundle="aiwar2goodiebox"
+		size_scale="12.4" visuals_scale_multiplier="6"
+		
+		visuals="assets/_finalgamemeshes/fleetships/multi_needler_corvette/multi_needler corvette single.prefab" visuals_bundle="aiwar2goodiebox"
+		size_scale="10" visuals_scale_multiplier="50"
+		
+		visuals="Assets/_DLC3/Necromancer/ProtectiveTotem/ProtectiveTotem.prefab" visuals_bundle="exp3_neinzul_abyss" rotation_x_of_ship="-90" rotation_z_of_ship="0"
+		visuals="Assets/_DLC3/Templar/TemplarHerald/TemplarHerald.prefab" visuals_bundle="exp3_neinzul_abyss"
+		material_override_bundle="aiwar2goodiebox" material_override_path="Assets/_FinalGameMeshes/FleetShips/AutoBomb/AutoBomb.prefab" 
+		visuals_bundle="aiwar2goodiebox" visuals="assets/_finalgamemeshes/guardians/stealthguardian/stealthguardian.prefab"
+		
+		material_override_bundle="exp3_neinzul_abyss" material_override="Assets/_DLC3/Venators/FoppishVenator/FoppishVenator.prefab" 
+		
+		Alternate visuals:
+		
+		visuals="assets/_finalgamemeshes/fleetships/multi_needler_corvette/multi_needler corvette single.prefab"
+		size_scale="10" visuals_scale_multiplier="60" 
+		rotation_x_of_ship="0" rotation_z_of_ship="0"
+	-->
+	<entity copy_from="RPSF_Ark_Template" name="RPSF_Ark_Daybreak"
+	
+		required_expansion_list="3_The_Neinzul_Abyss"
+		
+		visuals_bundle="exp3_neinzul_abyss" visuals="Assets/_DLC3/Venators/FoppishVenator/FoppishVenator.prefab" 
+		size_scale="10" visuals_scale_multiplier="2.25" 
+		rotation_x_of_ship="0" rotation_z_of_ship="180"
+		
+		thematic_groups="ArkCapturable,Human"
+	
+		tags="ShowsOnNormalDisplayMode,Capturable,AnyEarlyOfficer,AnyEarlyOfficer_Expert"
+		capturable_seed_weight="50" capturable_max_per_galaxy="1" capturable_can_seed_at_all="true"
+		
+		
+		icon_overlay="Overlays1/MegaTurret_SolarFlare" 
+		
+		voice_group="Raider"
+		display_name="破晓方舟"
+		description="一艘极快的方舟，用聚变光束撕裂天空。"
+		aip_to_claim="4"
+		
+		strength_multiplier="1.0"
+		 
+		  hull_points="500000" 
+		shield_points="500000" 
+		speed="VeryHigh2"
+		albedo="0.8" engine_gx="22"
+		
+		seconds_to_fully_regenerate_hull="600"
+		tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" tech_upgrade_that_is_used_for_my_direct_science="Direct_ArkGeneral"
+		eligible_for_hacks="IncreaseShieldDurability,IncreaseWeaponPower"
+		>
+		
+		<!--Coilbeam deal 1x damage_per_shot to the main target, then x1dmg/TargetsHitByBeam. Total 2x weapon dmg.-->
+		<system name="WM" display_name="阳光射线"
+			category="Weapon" firing_timing="OnlyInRange"
+			range="AboveAverage2" shot_speed="Normal" 
+			damage_per_shot="15000" rate_of_fire="High"
+			shot_type_data="HeavyBeamInvisible" beam_weapon_visual_style="Laser_Yellow"
+			hits_all_intersecting_targets="true" is_coilbeam="true"
+			shots_detonate_immediately="true" beam_length_multiplier="1.3" 
+			base_percent_damage_bypasses_personal_shields="1"
+			>
+			<outgoing_damage_modifier based_on="TargetTimeAtPlanet" comparison_type="AtLeast" compared_to="15" multiplier="3" />
+		</system><!-- 5k x2 targets x1.5 coil x2 fusion x(~2) bonus = 60k -->
+		<!--<system name="WR" display_name="绿色闪光"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="482000" range="Normal3" shot_speed="Normal" rate_of_fire="Low"
+			shot_type_data="HeavyBeamInvisible"
+			beam_length_multiplier="1.3" beam_weapon_visual_style="Lightning_Green"
+			hits_all_intersecting_targets="false"
+			shots_detonate_immediately="true"
+			is_coilbeam="false"
+			base_percent_damage_bypasses_personal_shields="1"
+			>
+			<outgoing_damage_modifier based_on="MyTimeAtPlanet" comparison_type="GreaterThan" compared_to="15" multiplier="0" />
+			<outgoing_damage_modifier based_on="MaxHull" comparison_type="AtLeast" compared_to="200000" multiplier="1.25" />
+		</system>
+		<system name="W1" display_name="阳光射线"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="10000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Devourer"
+			shot_type_data="HeavyBeamInvisible"
+			beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_YellowBright"
+			hits_all_intersecting_targets="true"
+			shots_detonate_immediately="true"
+			is_coilbeam="true"
+			base_percent_damage_bypasses_personal_shields="0.65"
+			>
+			<outgoing_damage_modifier based_on="MyTimeAtPlanet" comparison_type="LessThan" compared_to="15" multiplier="0" />
+		</system>-->
+		
+		<!--<system name="C" display_name="隐形装置"
+			category="Passive"
+			cloaking_points="2000"
+			cloaking_points_added_per_mark="1000"
+			>
+		</system>-->
+		<incoming_damage_modifier based_on="AttackDistance" comparison_type="AtLeast" compared_to="7900" multiplier="0" />
+	</entity>
+	<entity copy_from="RPSF_Ark_Daybreak" name="RPSF_Ark_Daybreak_Sidekick" 
+		required_expansion_list="3_The_Neinzul_Abyss"
+		
+		thematic_groups="ArkHomeCommand,Human"
+		gimbal_icon_size_multiplier="2" is_critical_infrastructure="true"
+		tags="ShowsOnNormalDisplayMode,HumanArkSidekickArks"
+	  	energy_consumption="0"
+		player_loses_if_any_die="false"
+		capturable_can_seed_at_all="false"
+		metal_storage="2500000" added_metal_storage_per_mark_level="500000"
+		is_scrapping_by_player_disallowed="true"
+		tech_upgrade_that_is_used_for_my_direct_science="Direct_ArkGeneral"
+		>
+		<resource_production type="Metal" amount="2200" increase_per_mark_level="800"/>
+		<resource_production type="Energy" amount="750000" increase_per_mark_level="55000"/>
+		<resource_production type="FuelArgon" amount="500000" />
+		<resource_production type="FuelRadon" amount="500000" />
+		<metal_flow purpose="FactoryConstructionForPlayerMobileFleets" throughput="3000" increase_per_mark_level="2000"/>
+		
+	</entity>
+	<entity copy_from="RPSF_Ark_Daybreak_Sidekick" name="RPSF_Ark_Daybreak_Home" 
+		required_expansion_list="3_The_Neinzul_Abyss"
+		special_entity_type="HumanHomeArk" 
+		icon_name="Ships1/King"
+		tags="ShowsOnNormalDisplayMode,HumanArkEmpireArks"
+		player_loses_if_any_die="true"
+		>	
+		<resource_production type="Metal" amount="2200" increase_per_mark_level="400"/>
+		<resource_production type="Energy" amount="350000" increase_per_mark_level="25000"/>
+	</entity>
+	
+	<!-- Neinzul Mourner Flagship -->
+		<!--
+			Dimensional Prison
+			Insanity Inducer
+			Vampire
+			
+			
+			
+			Jellyfish? Ankylosaurus? Sabretooth? Elderling?
+		visuals="Assets/_DLC3/Clanlings/NeinzulClanlingJellyfish/NeinzulClanlingJellyfish.prefab" visuals_bundle="exp3_neinzul_abyss"
+		size_scale="10" visuals_scale_multiplier="30"
+		icon_name="Ships4/ElderlingHigh" 
+		icon_overlay="Overlays1/Starship_Carrier"
+	    material_override_path="Assets/_DLC3/NeinzulHomes/SapperHabitat/SapperHabitat.prefab" material_override_bundle="exp3_neinzul_abyss"
+	    
+	    
+	    visuals="Assets/_DLC3/RoamingEnclaves/RoamingEnclaveJustice/RoamingEnclaveJustice.prefab" visuals_bundle="exp3_neinzul_abyss" size_scale="16" visuals_scale_multiplier="36"
+	    
+	    visuals="Assets/_DLC3/Frigates/BladeSpawnerFFH/BladeSpawnerFFH.prefab" visuals_bundle="exp3_neinzul_abyss"
+	    size_scale="16" visuals_scale_multiplier="16"
+		rotation_x_of_ship="0" rotation_z_of_ship="0"
+		
+		visuals_bundle="exp3_neinzul_abyss" visuals="Assets/_DLC3/Wards/FalconWard/FalconWard.prefab" 
+		visuals_bundle="exp3_neinzul_abyss" visuals="Assets/_DLC3/Venators/QuaintVenator/QuaintVenator.prefab" rotation_x_of_ship="0" rotation_z_of_ship="180"
+		visuals_bundle="exp3_neinzul_abyss" visuals="Assets/_DLC3/Venators/FoppishVenator/FoppishVenator.prefab" 
+		Maybe a Raptor?
+		-->
+	<entity	copy_from="RPSF_Ark_Template" name="RPSF_Flagship_Mourner_Ark"
+		required_expansion_list="3_The_Neinzul_Abyss"
+		thematic_groups="ArkCapturable,Neinzul" voice_group="Zenith" 
+		tags="ShowsOnNormalDisplayMode,Capturable,AnyEarlyOfficer,AnyEarlyOfficer_Expert,AnyOfficer,AnyOfficer_Expert"
+		capturable_seed_weight="100" capturable_max_per_galaxy="1" capturable_can_seed_at_all="false"
+		
+		visuals_bundle="exp3_neinzul_abyss" visuals="Assets/_DLC3/Venators/QuaintVenator/QuaintVenator.prefab"
+	    size_scale="13" visuals_scale_multiplier="6"
+		rotation_x_of_ship="0" rotation_z_of_ship="180"
+		y_offset_of_ship_in_visual_space="20"
+	    material_override_path="Assets/_DLC3/NeinzulHomes/SapperHabitat/SapperHabitat.prefab" material_override_bundle="exp3_neinzul_abyss"
+		
+		icon_overlay="Overlays2/Race_Neinzul"
+		tech_upgrades_that_benefit_me="Alien" tech_upgrade_that_is_used_for_my_direct_science="RPSF_Direct_ArkWithTech_AlienExpatriate"
+		
+		
+		
+		display_name="尾流"
+		display_name_for_sidebar="NM尾流"
+		description="一艘生成无人机的大型哀悼者旗舰。"
+		aip_to_claim="9"
+		
+		  hull_points="500000" 
+		shield_points="500000"
+		speed="VeryHigh1"
+		armor_mm="180" albedo="0.7" mass_tx="7" engine_gx="25" 
+		
+		fleet_design_template_i_use_for_drones="RPSF_Drones_NeinzulMournerWake"
+		drone_starting_behavior_type="Attacker_Full"
+		>
+		<hack_data hack_type="IncreaseWeaponPower"
+			override_cost_in_hacking_points="24"
+			cost_in_hacking_points_multiplier_per_times_same_unit_hacked="4.5"
+			max_times_single_unit_can_be_hacked="2">
+			<custom_hack_data key="AddedMultiplierPerHack" value="2" />
+		</hack_data>
+		<hack_data hack_type="IncreaseHullDurability"
+			override_cost_in_hacking_points="24"
+			cost_in_hacking_points_multiplier_per_times_same_unit_hacked="4.5"
+			max_times_single_unit_can_be_hacked="2">
+			<custom_hack_data key="AddedMultiplierPerHack" value="2" />
+		</hack_data>
+		<system name="W2" display_name="宁苏火焰波"
+			category="Weapon" firing_timing="OnlyInRange" fires_salvos_sequentially="false"
+			range="AboveAverage1" shot_speed="Normal" 
+			damage_per_shot="9001" rate_of_fire="High"
+			shots_per_salvo="3" 
+			shot_type_data="FlameWave"
+			health_change_per_damage_dealt="0.2"
+			>
+			<outgoing_damage_modifier based_on="TargetHullPercentageMissing" comparison_type="MultiplesOf" compared_to="25" multiplier="1" />
+			<death_effect_damage type="Zombification" tier_name="SuperficialDamage"/>
+		</system><!-- 3k x (1 + 3) salvo x (~2.5) bonus = 30k-->
+		<!--<system name="WR" display_name="疯狂诱导器"
+			category="Weapon" firing_timing="OnlyInRange"
+			range="Normal6" shot_speed="Normal" 
+			damage_per_shot="10000" rate_of_fire="RatherLow"
+			shots_per_salvo="6" fires_salvos_sequentially="false"
+			added_shots_per_salvo_per_mark="5"
+			only_targets_mobile_units="true"
+			shot_type_data="ParasiteCurvedPinkShot"	added_target_evaluator="ZombifyAsPrimary"	
+			must_be_this_state_of_matter_to_be_enabled="MultiPhase" care_about_state_of_matter_to_be_enabled="true" is_invisible_in_tooltips_if_not_a_match_by_state_of_matter="true"		
+			>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="0" />
+			<death_effect_damage type="Zombification_HostileToAll" tier_name="SuperficialDamage"/>
+		</system>--><!-- 1.25k x ( 1 + 36) x (~0.5) multiplier x (~0.5) phasing = ~11.5k -->
+		<system name="C" display_name="隐形装置"
+			category="Passive" 
+			cloaking_points="5000" cloaking_points_added_per_mark="2500"
+			/>
+		<incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="4400" multiplier="0.01" />
+	</entity>
+	<entity copy_from="RPSF_Flagship_Mourner_Ark" name="RPSF_Flagship_Mourner_Ark_Sidekick" 
+		required_expansion_list="3_The_Neinzul_Abyss"
+		thematic_groups="ArkHomeCommand,Neinzul" is_ark="true" 
+		capturable_can_seed_at_all="false"
+		special_entity_type="MobileOfficerCombatFleetFlagship"  
+		tags="ShowsOnNormalDisplayMode,HumanArkSidekickArks"
+		icon_name="Ships1/Ark" 
+		gimbal_icon_size_multiplier="2" is_critical_infrastructure="true"
+	  	energy_consumption="0"
+		is_scrapping_by_player_disallowed="true" player_loses_if_any_die="false"
+		tech_upgrades_that_benefit_me="Alien" tech_upgrade_that_is_used_for_my_direct_science="RPSF_Direct_ArkWithTech_AlienExpatriate_EZ"
+		metal_storage="2500000" added_metal_storage_per_mark_level="500000"
+		display_name_for_sidebar="NM尾流" 
+		>
+		<resource_production type="Metal" amount="2200" increase_per_mark_level="800"/>
+		<resource_production type="Energy" amount="750000" increase_per_mark_level="55000"/>
+		<resource_production type="FuelArgon" amount="500000" />
+		<resource_production type="FuelRadon" amount="500000" />
+		<metal_flow purpose="FactoryConstructionForPlayerMobileFleets" throughput="3000" increase_per_mark_level="2000"/>
+	</entity>
+	
+	<entity copy_from="RPSF_Flagship_Mourner_Ark_Sidekick" name="RPSF_Flagship_Mourner_Ark_Home" 
+		required_expansion_list="3_The_Neinzul_Abyss"
+		special_entity_type="HumanHomeArk" 
+		icon_name="Ships1/King"
+		tags="ShowsOnNormalDisplayMode,HumanArkEmpireArks"
+		player_loses_if_any_die="true"
+		display_name="尾流家园方舟"
+		display_name_for_sidebar="NM尾流"
+		description="一艘生成无人机的大型哀悼者旗舰。你人民的最后避难所。"
+		>	
+		<resource_production type="Metal" amount="2200" increase_per_mark_level="400"/>
+		<resource_production type="Energy" amount="350000" increase_per_mark_level="25000"/>
+	</entity>
+	<entity copy_from="RPSF_Drone_Template" name="RPSF_Drone_NM_Bomber"
+		required_expansion_list="3_The_Neinzul_Abyss"
+        thematic_groups="Neinzul,Drone"
+		voice_group="Bomber"
+		
+		visuals="Assets/_DLC3/NeinzulSappers/TopazBlaster/TopazBlaster.prefab" visuals_bundle="exp3_neinzul_abyss"
+		icon_name="Ships4/TopazBlaster" icon_overlay="Overlays2/TopazBlaster"
+		size_scale="2" visuals_scale_multiplier="2.2"
+      	
+		display_name="哀悼者轰炸机" display_name_for_sidebar="NM轰炸机"
+		description="优秀的大型舰船杀手，能完全绕过其高护盾。"
+		
+		is_strikecraft="true"
+		
+		cost_for_ai_to_purchase="85" strength_multiplier="1.5"
+		hull_points="12500" shield_points="0" 
+		speed="Normal2"
+		metal_cost="600" energy_consumption="400"
+		armor_mm="70" albedo="0.7" engine_gx="7" mass_tx="0.21"
+		>
+		<fleet_membership name="RPSF_Drones_NeinzulMournerWake" ship_cap_group="Strike" weight="100" cap="10"/>
+		
+		<system name="WL" display_name="精确聚变光束"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="900" range="Normal4" shot_speed="Normal" rate_of_fire="RatherLow"
+			shot_type_data="HeavyBeamInvisible" beam_weapon_visual_style="Laser_YellowBright"
+			beam_length_multiplier="1.1"
+			hits_all_intersecting_targets="false"
+			shots_detonate_immediately="false"
+			base_percent_damage_bypasses_personal_shields="1"
+			>
+			<outgoing_damage_modifier based_on="Mass_tx" comparison_type="AtLeast" compared_to="4" multiplier="3" />
+			<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="HullOnly" comparison_type="AtLeast" compared_to="25" multiplier="1.1" />
+		</system><!-- 900 /8s x2 targets x2 fusion x(~3) bonus /2 slow = 750 dps-->
+	</entity>
+	<entity copy_from="RPSF_Drone_Template" name="RPSF_Drone_NM_Fighter"
+		required_expansion_list="3_The_Neinzul_Abyss"
+        thematic_groups="Neinzul,Drone"
+		voice_group="Fighter"
+		
+		visuals="Assets/_DLC3/NeinzulSappers/EmeraldBlaster/EmeraldBlaster.prefab" visuals_bundle="exp3_neinzul_abyss"
+		icon_name="Ships4/EmeraldBlaster" icon_overlay="Overlays2/EmeraldBlaster"
+		size_scale="2" visuals_scale_multiplier="2.4"
+      	
+		display_name="哀悼者战斗机" display_name_for_sidebar="NM战斗机"
+		description="短程战斗机，擅长消除引擎较弱或反照率高的威胁。"
+		
+		is_strikecraft="true"
+		
+		cost_for_ai_to_purchase="45"
+		hull_points="5500" shield_points="0" speed="AboveAverage1"
+		metal_cost="450" energy_consumption="400"
+		armor_mm="60" albedo="0.3" engine_gx="8" mass_tx="0.21"
+		>
+		<fleet_membership name="RPSF_Drones_NeinzulMournerWake" ship_cap_group="Strike" weight="100" cap="30"/>
+		
+		<system name="WG" display_name="引力炮"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="240" range="Small1" shot_speed="Normal" rate_of_fire="Normal"
+			shot_type_data="ElegantCurl"
+			>
+			<outgoing_damage_modifier based_on="engine_gx" comparison_type="AtMost" compared_to="7" multiplier="3" />
+			<outgoing_damage_modifier based_on="Albedo" comparison_type="AtLeast" compared_to="0.7" multiplier="3" />
+		</system><!-- 240 / 4s x2 targets x(~3) bonuses combined = 360-->
+	</entity>
+</root>

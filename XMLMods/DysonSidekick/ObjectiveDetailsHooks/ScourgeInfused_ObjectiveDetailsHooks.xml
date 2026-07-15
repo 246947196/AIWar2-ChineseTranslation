@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <objective_details_hook name="ScourgeSpawners" category="ScourgeInfusedStrategy"
+          default_display_name="Build Spawners"
+          use_default_display_name_instead_of_display_name_base="true"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.ScourgeSpawners"
+          display_name_color="ff8877"
+          click_behavior="DoNothing" focus_type="DarkenAllPlanet"
+          serialization_type="Nothing" importance_calculation="NotSettable"
+          difficulty_method="Nothing"/>
+
+  <objective_details_hook name="ScourgeArmories" category="ScourgeInfusedStrategy"
+          default_display_name="Build Armories"
+          use_default_display_name_instead_of_display_name_base="true"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.ScourgeArmories"
+          display_name_color="ff8877"
+          click_behavior="DoNothing" focus_type="DarkenAllPlanet"
+          serialization_type="Nothing" importance_calculation="NotSettable"
+          difficulty_method="Nothing"/>
+
+  <objective_details_hook name="ScourgeCorbomite" category="ScourgeInfusedStrategy"
+          default_display_name="Grow Corbomite"
+          use_default_display_name_instead_of_display_name_base="true"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.ScourgeCorbomite"
+          display_name_color="ff8877"
+          click_behavior="DoNothing" focus_type="DarkenAllPlanet"
+          serialization_type="Nothing" importance_calculation="NotSettable"
+          difficulty_method="Nothing"/>
+
+  <objective_details_hook name="ScourgeUpgradeInfrastructure" category="ScourgeInfusedStrategy"
+          default_display_name="Upgrade Scourge Infrastructure"
+          use_default_display_name_instead_of_display_name_base="true"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.ScourgeUpgradeInfrastructure"
+          display_name_color="ffaa44"
+          click_behavior="DoNothing" focus_type="DarkenAllPlanet"
+          serialization_type="Nothing" importance_calculation="NotSettable"
+          difficulty_method="Nothing"/>
+
+  <objective_details_hook name="ScourgeUnlockRaces" category="ScourgeInfusedStrategy"
+          default_display_name="Unlock Alien Races"
+          use_default_display_name_instead_of_display_name_base="true"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.ScourgeUnlockRaces"
+          display_name_color="a1ffa1"
+          click_behavior="DoNothing" focus_type="DarkenAllPlanet"
+          serialization_type="Nothing" importance_calculation="NotSettable"
+          difficulty_method="Nothing"/>
+
+</root>

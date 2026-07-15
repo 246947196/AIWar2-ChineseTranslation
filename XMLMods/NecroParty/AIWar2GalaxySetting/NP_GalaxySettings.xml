@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+    <!-- Necro Party -->
+
+    <galaxy_setting
+            category="Necromancer"
+            subcategory="NecroParty"
+            name="NecroFlagshipsMustBeUnique"
+            display_name="旗舰必须唯一"
+            type="BoolToggle"
+            default="true"
+            changeable_during_gameplay="true"
+            description="通常情况下，死灵法师解锁新的变形后，可以拥有任意数量的该类型旗舰。启用此设置后，每种类型的旗舰最多只能拥有一艘。"
+            optional_dll_name="AIWarExternalCode" optional_type_name="Arcen.AIW2.External.GalaxySetting_Necromancer"
+            >
+    </galaxy_setting>
+
+    <galaxy_setting
+            category="Necromancer" 
+            subcategory="NecroParty"
+            name="TemplarRiftsToSeed"
+            display_name="圣殿裂隙数量" type="CustomDropdownArbitraryOptions" 
+            arbitrary_options="0x,0.5x,0.75x,1x,1.25x,1.5x,1.75x,2x,2.5x,3x" default_option="1x"
+            description="在银河中预先分布的圣殿裂隙数量。若设为0x，裂隙将随时间生成（与原版死灵法师相同）。"
+            optional_dll_name="AIWarExternalCode" optional_type_name="Arcen.AIW2.External.GalaxySetting_Necromancer"
+            >
+    </galaxy_setting>
+
+    
+    <!-- 原版 -->
+
+    <galaxy_setting name="NecromancerSharkB" is_partial_record="true" subcategory="Vanilla"/>
+    <galaxy_setting name="NecromancerFlagshipCrippleCost" is_partial_record="true" subcategory="Vanilla"/>
+    <galaxy_setting name="BoringNecroNames" is_partial_record="true" subcategory="Vanilla"/>
+    <galaxy_setting name="CrippledFlagshipCanPracticeNecromancy" is_partial_record="true" subcategory="Vanilla"/>
+    <galaxy_setting name="ForgivingNecromancy" is_partial_record="true" subcategory="Vanilla"/>
+    <galaxy_setting name="SkeletonDecayInterval" is_partial_record="true" subcategory="Vanilla"/>
+    <galaxy_setting name="WightDecayInterval" is_partial_record="true" subcategory="Vanilla"/>
+    <galaxy_setting name="BonusNecromancerResources" is_partial_record="true" subcategory="Vanilla"/>
+    <galaxy_setting name="BonusNecromancerSockets" is_partial_record="true" subcategory="Vanilla"/>
+    <galaxy_setting name="BonusNecromancerRiftOptions" is_partial_record="true" subcategory="Vanilla"/>
+    <galaxy_setting name="NecromancerScarceResources" is_partial_record="true" subcategory="Vanilla"/>
+    <galaxy_setting name="NecromancerAutoLoad" is_partial_record="true" subcategory="Vanilla"/>
+    <galaxy_setting name="NecromancerAutoDefend" is_partial_record="true" subcategory="Vanilla"/>
+
+
+</root>

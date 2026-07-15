@@ -1,0 +1,1265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+   
+	<!-- Zeus's Notes:
+	    Theming: The Zenith are the backbone of the Dyson Coalition, that specialize in metabolizing their foes. 
+		Elites take this further with vampirism and weapon points to power special weapons.
+		
+		Naming theme is based on construction and automatons, to emphasize the construction of the Dyson Sphere
+				 
+		District One Roster
+		    Blacksmith      Corvette cap (10). Engineer + combat support. Uses acid to improve damage output from allies
+			Demolitionist   Heavy Frigate cap (6). Cloaked. Fusion, anti-static defense specialist
+			Salvager		Swarmer cap (30). Anti-strikecraft grenadier. Bonus damage to low mass enemies
+			Melter			Light Frigate cap (10). Corrosive, anti-guardian. Explodes on death inflicting significant corrosive damage
+			
+		District Two Roster
+			
+		    Reprocessor
+			Disintegrator
+			
+		District Three Roster
+		    Forgemaster
+			
+	    -->
+	
+	
+	<!-- Zenith Ships -->
+	<!-- Disctrict 1 -->
+	<!--Blacksmith:     Corvette cap (10) Engineer + combat support. Uses acid to improve damage output from allies-->
+	<entity name="DysonSidekickBlacksmith"
+	    thematic_groups="DysonSidekick" npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+	    visuals="Assets/_DLC3/Necromancer/Igor/Igor.prefab" visuals_bundle="exp3_neinzul_abyss"
+	    icon_name="Ships4/NecromancerIgor"
+            icon_overlay="Overlays1/Guardian_SpeedBoost"
+	    y_offset_of_icon="15"
+	    voice_group="Silent"
+	    category="Ship"
+	    size_scale="4.2"
+	    visuals_scale_multiplier="16"
+	    collision_priority="100"
+            display_name="Zenith Blacksmith"
+            display_name_for_sidebar="Blacksmith"
+            description="Combines engineering support with combat assistance. Applies acid to enemies to make them take extra damage from all sources."
+		starting_mark_level="Mark1" mark_level_scale_style="DysonTierOne" tech_upgrades_that_benefit_me="DysonZenithTierOne"
+	    cost_for_ai_to_purchase="500" strength_multiplier="1.1"
+	    hull_points="10000" shield_points="10000" speed="AboveAverage1"
+	    metal_cost="5000" energy_consumption="750"
+	    armor_mm="90" albedo="0.5" engine_gx="14" mass_tx="0.24"
+	    ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+            assist_range="High1"
+	    priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+	    multiplier_to_all_costs="1" multiplier_to_all_healths="1" damage_multiplier_to_all_weapons="1"
+            description_appender_dll="AIWarExternalCode"
+            description_appender_type="Arcen.AIW2.External.DysonSidekickDescriptionAppender"
+            >
+		<metal_flow purpose="RepairingHullsOfFriendlies" throughput="10" increase_per_mark_level="40"/>
+		<metal_flow purpose="RepairingShieldsOfFriendlies" throughput="10" increase_per_mark_level="40"/>
+		<metal_flow purpose="RepairingEnginesOfFriendlies" throughput="10" increase_per_mark_level="40"/>
+		<metal_flow purpose="AssistConstruction" throughput="50" increase_per_mark_level="100"/>
+		<system name="W1" display_name="Armor Softener"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="200" range="AboveAverage2" shot_speed="Normal" rate_of_fire="High"
+				fires_salvos_sequentially="true" shot_type_data="LaserPulse_DeepBlue" 
+				damage_amplification="true" damage_amplification_duration="4" damage_amplification_flat="20" damage_amplification_flat_added_per_mark="10"
+				>
+		<death_effect_damage type="Metabolization" tier_name="Gangsaw"/>
+		</system>
+
+	</entity>
+	
+	
+  <!--Salvager	Swarmer cap (30). Anti-strikecraft grenadier. Bonus damage to low mass enemies-->
+  <entity name="DysonSidekickSalvager"
+          display_name="Zenith Salvager" display_name_for_sidebar="Sentinel" 
+	  thematic_groups="DysonSidekick"
+	  visuals="assets/_dlc2/zenith/dzdregil/dzdregil.prefab" visuals_bundle="exp2_zenith_onslaught"
+	  icon_name="Ships3/DarkZenithDregil"
+	  voice_group="Silent"
+	  category="Ship" is_strikecraft="true"
+	  size_scale="1.8" visuals_scale_multiplier="6.5"
+	  description="These small 天顶 vessels are used in large numbers to collect usable 金属 for 天顶 projects and efficiently convert hostile 攻击机 into salvage."
+	  starting_mark_level="Mark1" mark_level_scale_style="DysonTierOne" tech_upgrades_that_benefit_me="DysonZenithTierOne"
+	  cost_for_ai_to_purchase="450"  strength_multiplier="2"
+	  hull_points="5000" shield_points="0" speed="AboveAverage1"
+	  metal_cost="1650" energy_consumption="450"
+      armor_mm="50" albedo="0.3" engine_gx="8" mass_tx="0.25"
+	  ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+	  description_appender_dll="AIWarExternalCode"
+	  description_appender_type="Arcen.AIW2.External.DysonSidekickDescriptionAppender"
+	  priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+	  >
+    <system name="W1" display_name="Grenade"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="600" range="Normal5" shot_speed="Normal" rate_of_fire="VeryLow" fires_salvos_sequentially="true"
+			shot_type_data="FlakShotAOEBurstAtEnd"
+			area_of_effect_size="600"
+			maximum_number_of_targets_hit_per_shot="15"
+			>
+		<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtMost" compared_to="1" multiplier="3" />
+		<death_effect_damage type="Metabolization" tier_name="Gangsaw"/>
+    </system>
+
+  </entity>
+
+	
+  <!--Melter	Light Frigate cap (10). Corrosive, anti-guardian. Explodes on death inflicting significant corrosive damage-->	
+  <entity name="DysonSidekickMelter" 
+          thematic_groups="DysonSidekick"
+          visuals="Assets/_DLC2/Zenith/ZABustuarius/ZABustuarius.prefab" visuals_bundle="exp2_zenith_onslaught"
+		  icon_name="Ships3/ZenithArchitraveBustuarius"
+		  size_scale="6" visuals_scale_multiplier="10" y_offset_of_icon="40"
+		  uses_large_health_bar="true"
+          category="Ship" special_entity_type="Frigate"
+          display_name="Zenith Melter" display_name_for_sidebar="Zenith Melter"
+          starting_mark_level="Mark1" mark_level_scale_style="DysonTierOne" tech_upgrades_that_benefit_me="DysonZenithTierOne"
+          description="These moderate sized 天顶 vessels utilize potent 腐蚀 attacks to gradually destroy foes and explode upon death."
+		  cost_for_ai_to_purchase="1200" strength_multiplier="1.5"
+		  hull_points="90000" shield_points="90000" speed="Normal2"
+		  metal_cost="20000" energy_consumption="3750"
+		  armor_mm="85" engine_gx="16" albedo="0.4" mass_tx="5"
+		  description_appender_dll="AIWarExternalCode"
+		  description_appender_type="Arcen.AIW2.External.DysonSidekickDescriptionAppender"
+		  voice_group="Silent"
+		  ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+		  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+		  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+          priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+          >
+	  <system name="W1" display_name="Corrosive Missiles"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="1200" range="Small5" shot_speed="Normal" rate_of_fire="SlightlyLow"
+			shots_per_salvo="5" fires_salvos_sequentially="false"
+			shot_type_data="GuidedMissile"
+			base_percent_damage_bypasses_personal_shields="0.1"
+			corrosion_damage="600"
+			corrosion_damage_added_per_mark="600"
+			>
+		<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtLeast" compared_to="90" multiplier="5" />
+		<death_effect_damage type="Metabolization" tier_name="Gangsaw"/>
+	  </system>
+
+	  <system name="W2" display_name="Corrosive Finale"
+			category="Weapon" firing_timing="OnlyInRange"
+			only_fires_on_death="true"
+			damage_per_shot="9000" range="VeryTiny3" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+			shot_type_data="LightningExplosionAOEShot"
+			area_of_effect_size="1500"
+			shots_detonate_immediately="true"
+			maximum_number_of_targets_hit_per_shot="15"
+			health_change_by_max_health_divided_by_this_per_attack="-1"
+			all_damage_is_corrosive="true"
+			>
+		  <death_effect_damage type="Metabolization" tier_name="Gangsaw"/>
+	  </system>
+
+  </entity>
+
+	<!--Demolitionist  Med Frigate cap (8). Cloaked, Fusion anti-static defense specialist-->
+  <entity name="DysonSidekickDemolitionist" 	
+          thematic_groups="DysonSidekick"
+          visuals="Assets/_DLC2/Zenith/ZACestus/ZACestus.prefab" visuals_bundle="exp2_zenith_onslaught"
+		  icon_name="Ships3/ZenithArchitraveCestus"
+		  size_scale="4"  visuals_scale_multiplier="80" gimbal_icon_size_multiplier="1.3"  collision_priority="100"
+		  voice_group="Melee"
+		  category="Ship" special_entity_type="Frigate"
+		  uses_large_health_bar="true"
+          display_name="Zenith Demolitionist" display_name_for_sidebar="Demolitionist" 
+          description="The Demolitionist is an excellent anti-structure ship with its 护盾 bypassing fusion attack and 隐形."
+          starting_mark_level="Mark1" mark_level_scale_style="DysonTierOne" tech_upgrades_that_benefit_me="DysonZenithTierOne"
+		  cost_for_ai_to_purchase="360" strength_multiplier="1"
+		  hull_points="100000" shield_points="100000" speed="AboveAverage1"
+		  metal_cost="20000" energy_consumption="8000"
+		  armor_mm="50" albedo="0.7" engine_gx="16" mass_tx="5"
+          description_appender_dll="AIWarExternalCode"
+		  description_appender_type="Arcen.AIW2.External.DysonSidekickDescriptionAppender"
+		  ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+		  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+          priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+          >
+    <system name="W1" display_name="Fusion Bomb"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="2000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="true"
+			shot_type_data="FusionBomb"
+			base_percent_damage_bypasses_personal_shields="1" 	
+			use_alternate_rate_of_fire_after_x_shots="5" alternate_rate_of_fire="PeriodicActivation"  use_alternate_rate_of_fire_for_x_shots_before_reverting="1" 
+			>
+		<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="HullOnly" comparison_type="AtLeast" compared_to="50" multiplier="5" />
+		<death_effect_damage type="Metabolization" tier_name="Gangsaw"/>
+	</system>
+	<system name="C" display_name="Cloaking Device" category="Passive" cloaking_points="1000" cloaking_points_added_per_mark="1000"> </system>
+  </entity>
+
+  <!-- Tier Two Ships -->
+  <entity name="DysonSidekickRetiarus" copy_from="ArchitraveRetiarius"
+          thematic_groups="DysonSidekick"
+          special_entity_type="Frigate"
+          metal_cost="16000"
+          tech_upgrades_that_benefit_me="DysonZenithTierTwo"
+          description="A cunning fighter of the 拱门使团 that wields a trident 光束 weapon and will net foes that stumble in range of its 牵引 beams. Also possesses a weapon jammer."
+          mark_level_scale_style="DysonTierTwo"
+          tags="ZenithArchitrave,ArchitraveTierOne"
+	   gimbal_icon_size_multiplier="1.25"
+	   visuals="Assets/_DLC2/Zenith/ZARetiarius/ZARetiarius.prefab" visuals_bundle="exp2_zenith_onslaught"
+	   icon_name="Ships3/ZenithArchitraveRetiarius"
+	   uses_large_health_bar="true"
+	   category="Ship" 
+	   size_scale="8.2"
+	   visuals_scale_multiplier="22"
+	   y_offset_of_icon="16"
+	   collision_priority="400"
+	   blocks_enemy_claim_flows="true"
+	   voice_group="Silent"
+	   starting_mark_level="Mark1" 
+	   cost_for_ai_to_purchase="800" strength_multiplier="2"		
+	   hull_points="40000" shield_points="30000" speed="AboveAverage1"
+	   energy_consumption="7500"
+	   armor_mm="90" albedo="0.3" engine_gx="14" mass_tx="5"
+	   ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	   ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	   ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+           priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+           description_appender_dll="AIWarExternalCode"
+	   description_appender_type="Arcen.AIW2.External.DysonSidekickDescriptionAppender"
+	   >
+    <system name="XY"
+            display_name="Stunner"
+            base_enemy_weapon_reload_slowing_seconds_per_shot="4" added_enemy_weapon_reload_slowing_seconds_per_shot_per_mark="1"
+	    max_enemy_weapon_reload_slowing_seconds="20"
+	    enemy_weapon_reload_slowing_to_armor_mm_less_than="60"
+            category="Weapon" firing_timing="OnlyInRange"
+            shots_per_salvo="8" fires_salvos_sequentially="false"
+	    damage_per_shot="100" range="Normal4" shot_speed="Normal" rate_of_fire="SlightlyLow"
+	    shot_type_data="DoubleShot_Blue"
+            >
+    </system>
+    <system name="B3" display_name="Trident beam"
+	    category="Weapon" firing_timing="OnlyInRange" damage_per_shot="1000" range="Normal4" shot_speed="Normal" rate_of_fire="High" 
+	    shot_type_data="HeavyBeamInvisible" beam_length_multiplier="1.3" hits_all_intersecting_targets="true" 
+	    shots_detonate_immediately="true" maximum_number_of_targets_hit_per_shot="15" 
+	    number_beams_to_fire="3" beam_weapon_visual_style="Laser_BlueBright" degrees_offset_per_beam="10" 
+	    multiplier_damage_to_tractored_unit="3">
+		<death_effect_damage type="Metabolization" tier_name="Gangsaw"/>
+    </system>
+    <system name="Tr" display_name="Tractor Beam"
+	    category="Passive"
+	    tractor_range="Normal4" tractor_count="40" tractor_count_added_per_mark="20" tractor_hits_albedo_less_than="0.5" tractor_hits_engine_gx_less_than="15"
+	    >
+    </system>
+  </entity>
+
+  <entity name="DysonSidekickHersir" 
+          thematic_groups="DysonSidekick"
+          special_entity_type="Frigate"
+	  gimbal_icon_size_multiplier="1.25"
+          visuals="Assets/_DLC2/Zenith/Z4_SpikyHorns/DZHersir.prefab" visuals_bundle="exp2_zenith_onslaught"
+	  icon_name="Ships3/DarkZenithHersir"
+	  size_scale="4.5"
+	  visuals_scale_multiplier="20"
+	  category="Ship"
+	  y_offset_of_icon="10"
+	  collision_priority="100"
+	  display_name="Hersir"
+	  starting_mark_level="Mark1" 
+	  cost_for_ai_to_purchase="1500" strength_multiplier="1.3"
+	  energy_consumption="7500"
+	  armor_mm="120" albedo="0.4" engine_gx="18" mass_tx="5"
+	  voice_group="Starship"
+	  ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+          priority_as_ai_target="NormalStarship" priority_as_frd_target="BiggerStarship" priority_to_protect="SlightlyLessExpendable"
+          metal_cost="16000"
+          hull_points="108000" shield_points="64000" speed="BelowAverage1"
+          description="A fearsome Dark 天顶 Ship, equipped with a stunner that slows the weapon reload of lightly-armored enemies, and plasma torpedoes for destroying 建筑 and powerful ships. Also carries a tachyon array for detecting 隐形 targets."
+          tech_upgrades_that_benefit_me="DysonZenithTierTwo"
+          mark_level_scale_style="DysonTierTwo"
+          description_appender_dll="AIWarExternalCode"
+	  description_appender_type="Arcen.AIW2.External.DysonSidekickDescriptionAppender"
+          >
+    <system name="XY" display_name="Stunner"
+            base_enemy_weapon_reload_slowing_seconds_per_shot="4" added_enemy_weapon_reload_slowing_seconds_per_shot_per_mark="1"
+	    max_enemy_weapon_reload_slowing_seconds="20"
+	    enemy_weapon_reload_slowing_to_armor_mm_less_than="60"
+            category="Weapon" firing_timing="OnlyInRange"
+            shots_per_salvo="8" fires_salvos_sequentially="false"
+	    damage_per_shot="100" range="Normal4" shot_speed="Normal" rate_of_fire="SlightlyLow"
+	    shot_type_data="DoubleShot_Blue"
+            >
+    </system>
+    <system name="WT" display_name="Implosion Torpedo" category="Weapon" firing_timing="OnlyInRange" shot_type_data="PlasmaTorpedo" 
+	    damage_per_shot="2800" range="Normal1" shot_speed="Normal" rate_of_fire="FairlyLow" fires_salvos_sequentially="false"				
+	    >
+      <outgoing_damage_modifier based_on="CurrentHullPercentage" applies_to="HullOnly" comparison_type="MultiplesOf" compared_to="10" multiplier="1" />
+      <outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="PersonalShieldOnly" comparison_type="AtLeast" compared_to="10" multiplier="4" />
+      <outgoing_damage_modifier based_on="mass_tx" comparison_type="GreaterThan" compared_to="5" multiplier="1.2" />
+	  <death_effect_damage type="Metabolization" tier_name="Gangsaw"/>
+	</system>
+    <system name="T" display_name="Tachyon Array"
+	    category="Passive" tachyon_points="50" tachyon_range="Normal1" tachyon_hits_albedo_less_than="0.75">
+    </system>
+  </entity>
+
+  <entity name="DysonSidekickBulwark" copy_from="DysonBulwark"
+          icon_name="ShipsSpire/DarkSpirePhantom"
+          thematic_groups="DysonSidekick"
+          special_entity_type="Frigate"
+          metal_cost="16000"
+          tech_upgrades_that_benefit_me="DysonZenithTierTwo"
+          mark_level_scale_style="DysonTierTwo"
+          description_appender_dll="AIWarExternalCode"
+	  description_appender_type="Arcen.AIW2.External.DysonSidekickDescriptionAppender"
+          >
+  </entity>
+
+  <entity name="DysonSidekickParmularius" 
+          thematic_groups="DysonSidekick"
+          special_entity_type="Frigate"
+          metal_cost="16000"
+          tech_upgrades_that_benefit_me="DysonZenithTierTwo"
+          mark_level_scale_style="DysonTierTwo"
+          hull_points="10000" shield_points="9000" speed="AboveAverage1"
+	  gimbal_icon_size_multiplier="1.25"
+	  visuals="Assets/_DLC2/Zenith/ZAParmularius/ZAParmularius.prefab" visuals_bundle="exp2_zenith_onslaught"
+	  icon_name="Ships3/ZenithArchitraveParmularius"
+	  uses_large_health_bar="true"
+	  category="Ship" 
+	  size_scale="5.6"
+	  visuals_scale_multiplier="40"
+	  y_offset_of_icon="16"
+	  collision_priority="400"
+          energy_consumption="7500"
+		display_name="Parmularius"
+	  description="A nimble but fragile artillery ship for the 拱门使团 that fires its salvos in bursts. It also has a weak phaser that is neutralized by 护盾 of at least 10K energy consumption of its target. Occasionally phases in and out of realspace."
+	  blocks_enemy_claim_flows="true"
+	  voice_group="Silent"
+	  starting_mark_level="Mark1" 
+	  cost_for_ai_to_purchase="825" strength_multiplier="1.2"			
+	  armor_mm="50" albedo="0.4" engine_gx="7" mass_tx="5"
+          priority_as_ai_target="NormalStarship" priority_as_frd_target="BiggerStarship" priority_to_protect="SlightlyLessExpendable"
+	  alternative_state_of_matter="MultiPhase" phases_to_other_alternative_state_of_matter_after_seconds="17" phases_back_to_default_state_of_matter_after_seconds="9"
+	  ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+          description_appender_dll="AIWarExternalCode"
+	  description_appender_type="Arcen.AIW2.External.DysonSidekickDescriptionAppender"
+          >
+    <system name="T1" display_name="Zenith Howitzer"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="400" range="High2" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+	    shot_type_data="PlasmaTorpedoAOEBurstAtEnd"	 shots_per_salvo="5" 
+	    use_alternate_rate_of_fire_after_x_shots="5" alternate_rate_of_fire="Sloth"  use_alternate_rate_of_fire_for_x_shots_before_reverting="1"
+	    area_of_effect_size="600" maximum_number_of_targets_hit_per_shot="5" aoe_spreads_damage_among_available_targets="true"
+	    >		
+    </system>  
+    <system name="T2" display_name="Zenith Mass Driver"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="1350" range="High2" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+	    shot_type_data="Sabot"	 
+	    use_alternate_rate_of_fire_after_x_shots="5" alternate_rate_of_fire="Sloth"  use_alternate_rate_of_fire_for_x_shots_before_reverting="1"
+	    >		
+      <outgoing_damage_modifier based_on="mass_tx" comparison_type="MultiplesOf" compared_to="1" multiplier="1" max_multiplier="10" />
+	  <death_effect_damage type="Metabolization" tier_name="Gangsaw"/>
+    </system>  
+    <system name="W3" display_name="Phaser"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="100" range="High2" shot_speed="Normal" rate_of_fire="SlightlyLow" 
+	    shots_per_salvo="10" fires_salvos_sequentially="false"
+	    shot_type_data="HeavyBeamInvisible" beam_length_multiplier="1"	beam_weapon_visual_style="Laser_Purple"
+	    state_of_matter_for_target_to_become="MultiPhase" inflicts_state_of_matter_on_target_for_seconds="10" cannot_inflict_state_of_matter_if_target_has_any_shields_up="true" cannot_inflict_state_of_matter_if_target_has_energy_usage_of_at_least="10000"
+	    must_be_this_state_of_matter_to_be_enabled="Normal" care_about_state_of_matter_to_be_enabled="true" is_invisible_in_tooltips_if_not_a_match_by_state_of_matter="true"
+	    >	
+    </system>
+		
+  </entity>
+
+    <!--Tier Three Ships -->
+    <entity name="DysonSidekickMurmillo"
+	    gimbal_icon_size_multiplier="1.25"
+	    visuals="Assets/_DLC2/Zenith/ZAMurmillo/ZAMurmillo.prefab" visuals_bundle="exp2_zenith_onslaught"
+	    icon_name="Ships3/ZenithArchitraveMurmillo" 
+	    uses_large_health_bar="true"
+	    category="Ship" 
+	    size_scale="18"
+	    visuals_scale_multiplier="40"
+	    y_offset_of_icon="16"
+	    collision_priority="400"
+            thematic_groups="DysonSidekick"
+            special_entity_type="Frigate"
+            metal_cost="100000"
+            tech_upgrades_that_benefit_me="DysonZenithTierThree"
+            mark_level_scale_style="DysonTierThree"
+		display_name="Murmillo"
+	    description="Among the most powerful combatants of the 拱门使团, the Murmillo swiftly moves into close-range combat. Its baneful phasers, in addition to phasing out susceptible foes, increase in damage as both itself and its target lose hull health. Once it deals with its immediate threats, it will regenerate its hull in a few minutes."
+	    blocks_enemy_claim_flows="true"
+	    voice_group="Silent"
+	    starting_mark_level="Mark1" 
+	    cost_for_ai_to_purchase="20000" strength_multiplier="1.5"		
+	    hull_points="1200000" shield_points="900000" speed="AboveAverage3"
+	    energy_consumption="50000"
+	    armor_mm="245" albedo="0.3" engine_gx="25" mass_tx="11"
+	    seconds_to_fully_regenerate_hull="300"
+	    immune_to_repairs="true"
+	    custom_repair_impossible_for_seconds_after_damaged_by_enemy_max_15="15"
+	    ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	    ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+            description_appender_dll="AIWarExternalCode"
+	    description_appender_type="Arcen.AIW2.External.DysonSidekickDescriptionAppender"
+	    >
+      <system name="W1" display_name="Baneful Phaser"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      damage_per_shot="1000" range="Normal4" shot_speed="Normal" rate_of_fire="SlightlyLow" 
+	      shots_per_salvo="20" fires_salvos_sequentially="false"
+	      shot_type_data="HeavyBeamInvisible" beam_length_multiplier="1"  beam_weapon_visual_style="Laser_Purple"
+	      state_of_matter_for_target_to_become="MultiPhase" inflicts_state_of_matter_on_target_for_seconds="10" cannot_inflict_state_of_matter_if_target_has_any_shields_up="true" cannot_inflict_state_of_matter_if_target_has_energy_usage_of_at_least="250000"
+	      >	
+		<outgoing_damage_modifier based_on="CurrentHullPercentage" comparison_type="AtMost" compared_to="35" multiplier="3" />
+		<outgoing_damage_modifier based_on="MyHullPercentageMissing" comparison_type="MultiplesOf" compared_to="20" multiplier="1" />
+		<death_effect_damage type="Metabolization" tier_name="Major"/>
+      </system>
+      
+	<system name="T" display_name="Tachyon Array" category="Passive" tachyon_points="50" tachyon_points_added_per_mark="25" tachyon_range="Normal4" tachyon_hits_albedo_less_than="0.75">
+      </system>
+      <ship_class_data can_be_zombified_and_similar="false" />
+  </entity>
+
+    <entity name="DysonSidekickEssedarius" 
+	    gimbal_icon_size_multiplier="1.25"
+	    visuals="Assets/_DLC2/Zenith/ZAEssedarius/ZAEssedarius.prefab" visuals_bundle="exp2_zenith_onslaught"
+	    icon_name="Ships3/ZenithArchitraveEssedarius"
+	    uses_large_health_bar="true"
+	    category="Ship" special_entity_type="Frigate"
+	    size_scale="9.4"
+	    visuals_scale_multiplier="22"
+	    y_offset_of_icon="16"
+	    collision_priority="400"
+            display_name="Essedarius"
+	    description="A superior Eques, with all of its strengths but even more durable and destructive. Beware its phasion bombs and anti-engine weapons."
+	    blocks_enemy_claim_flows="true"
+	    voice_group="Silent"
+            thematic_groups="DysonSidekick"
+            metal_cost="100000"
+            tech_upgrades_that_benefit_me="DysonZenithTierThree"
+            mark_level_scale_style="DysonTierThree"
+	    starting_mark_level="Mark1" 
+	    cost_for_ai_to_purchase="9000" strength_multiplier="2.1"
+	    hull_points="560000" shield_points="90000" speed="AboveAverage6"
+	     energy_consumption="25000"
+	    armor_mm="50" albedo="0.7" engine_gx="20" mass_tx="7"
+	    alternative_state_of_matter="MultiPhase" phases_to_other_alternative_state_of_matter_after_seconds="15" phases_back_to_default_state_of_matter_after_seconds="15"
+	    ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	    ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+            description_appender_dll="AIWarExternalCode"
+	    description_appender_type="Arcen.AIW2.External.DysonSidekickDescriptionAppender"
+	    >
+      <system name="L" display_name="Phasion Seekerbomb Launcher"
+	      category="Weapon" firing_timing="OnlyInRange" shot_type_data="ZAPhasionBomb"
+	      damage_per_shot="5" range="Planetary" shot_speed="Slow" rate_of_fire="Devourer" fires_salvos_sequentially="true"  
+	      shots_per_salvo="1" 
+	      use_alternate_rate_of_fire_after_x_shots="3" alternate_rate_of_fire="Sloth"  use_alternate_rate_of_fire_for_x_shots_before_reverting="1"
+	      must_be_this_state_of_matter_to_be_enabled="Normal" care_about_state_of_matter_to_be_enabled="true"
+	      >
+      </system>	
+      <system name="Q4" display_name="Phase Spider Cannon"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      damage_per_shot="300" shots_per_salvo="30" range="AboveAverage3" shot_speed="Normal" rate_of_fire="ExtremelyLow" fires_salvos_sequentially="false"
+	      base_engine_stun_per_shot="12" added_engine_stun_per_shot_per_mark="3" engine_stun_to_engine_gx_less_than="14"
+	      max_engine_stun_seconds="30" added_target_evaluator="EngineDamageAsMajorPrimary"
+	      shot_type_data="EngineDisruptingShell"
+	      state_of_matter_for_target_to_become="MultiPhase" inflicts_state_of_matter_on_target_for_seconds="30" cannot_inflict_state_of_matter_if_target_has_any_shields_up="true"  cannot_inflict_state_of_matter_if_target_has_energy_usage_of_at_least="20000"
+	      >
+      </system>
+      <system name="WG" display_name="Zenith Gravitic Cannon"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      damage_per_shot="1500" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Misery"
+	      shot_type_data="ElegantCurl"
+	      >
+			<outgoing_damage_modifier based_on="engine_gx" comparison_type="AtLeast" compared_to="14" multiplier="3" />	
+			<outgoing_damage_modifier based_on="CurrentSpeedIfMoving" comparison_type="AtMost" compared_to="600" multiplier="3" />
+		  <death_effect_damage type="Metabolization" tier_name="Major"/>
+      </system>
+      <system name="T" display_name="Tachyon Array"
+	      category="Passive" tachyon_points="50" tachyon_points_added_per_mark="25" tachyon_range="Normal4" tachyon_hits_albedo_less_than="0.75">
+      </system>
+      <ship_class_data can_be_zombified_and_similar="false" />
+  </entity>
+
+  <entity name="DysonSidekickCoerl"
+		thematic_groups="DysonSidekick"
+		special_entity_type="Frigate"
+		metal_cost="100000"
+		starting_mark_level="Mark1"
+		description="A very strong Dark 天顶 ship made exclusively by Pirate Epistyles. These piratical ships like to lurk far from their prey, hidden by their 隐形. Their broadside artillery can only target distant ships, so exploit this weakness. But beware their seeker bombs that unleash terrible damage if they aren't shot down."
+		tech_upgrades_that_benefit_me="DysonZenithTierThree"
+		mark_level_scale_style="DysonTierThree"
+		description_appender_dll="AIWarExternalCode"
+		description_appender_type="Arcen.AIW2.External.DysonSidekickDescriptionAppender"
+		gimbal_icon_size_multiplier="1.5"
+		visuals="Assets/_DLC2/Zenith/DZCoerl/DZCoerl.prefab" visuals_bundle="exp2_zenith_onslaught"
+		icon_name="Ships3/DarkZenithCoerl"
+		uses_large_health_bar="true"
+		category="Ship"
+		size_scale="14"
+		visuals_scale_multiplier="20"
+		y_offset_of_icon="35"
+		collision_priority="800"
+		display_name="Ceorl"
+		blocks_enemy_claim_flows="true"
+		voice_group="Silent"
+		cost_for_ai_to_purchase="6500" strength_multiplier="1.4"			
+	  
+		hull_points="1000000" shield_points="500000"  speed="AboveAverage1"
+		energy_consumption="25000"
+		armor_mm="40" albedo="0.7" engine_gx="20" mass_tx="7"
+		can_pass_through_enemy_forcefields="true"
+		ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+		ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+		priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+		>
+		<system name="W1" display_name="Broadside Artillery"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="10000" range="ExtremelyHigh" shot_speed="Normal" rate_of_fire="RatherLow" fires_salvos_sequentially="true"
+			shots_per_salvo="20"
+			shot_type_data="EngineDisruptingShell" cloaking_percent_loss_from_firing="0.2"	
+			>
+		  <outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="1.2"/>
+		  <outgoing_damage_modifier based_on="AttackDistance" comparison_type="LessThan" compared_to="5000" multiplier="0"/>
+			<death_effect_damage type="Metabolization" tier_name="Major"/>
+		</system>
+		<system name="L" display_name="Seekerbomb Launcher"
+			category="Weapon" firing_timing="OnlyInRange" shot_type_data="DZSeekerBomb"
+			damage_per_shot="5" range="Planetary" shot_speed="Slow" rate_of_fire="PeriodicActivation" fires_salvos_sequentially="true"  
+			shots_per_salvo="1"  cloaking_percent_loss_from_firing="0.2"
+			>
+		</system>
+		<system name="C" display_name="Cloaking Device"
+			category="Passive"
+			cloaking_points="4000" cloaking_points_added_per_mark="1000"
+			>
+        </system>
+	</entity>
+
+
+  <!-- Zenith Vaults; vaults are structures that grant ships to flagships. These use essentially the same mechanic as Necromancer Homes; feel free to rename them from Vault if you want -->
+  <entity name="DysonSalvagerVault" tags="DysonZenithBuildMenu,DysonFeedsFleet,DysonBuildMenu,DysonZenithBuildMenuOnly,GatedByZenithDistrict,RequiresZenithDistrictOne"
+	    thematic_groups="DysonSidekick" 
+	    visuals="Assets/_DLC2/Zenith/DZLibrary/DZLibrary.prefab" visuals_bundle="exp2_zenith_onslaught"
+	    icon_name="Ships3/DarkZenithDregil"
+            gimbal_icon_size_multiplier="1.5"
+            icon_overlay="Overlays2/Carnelion"
+            voice_group="Spire"
+            uses_large_health_bar="true"
+            category="Ship"
+	    size_scale="7"
+            visuals_scale_multiplier="14"
+	    y_offset_of_icon="20"
+	    collision_priority="1000"
+            display_name="Dyson Salvager Vault" display_name_for_sidebar="Salvager V."
+            description_short="This grants a squadron of Salvagers to the bolstered 旗舰."
+            description="This outpost allows the 天顶 to create salvagers that specialize in breaking down enemy 攻击机 into 金属."
+            starting_mark_level="Markless" build_sidebar_categories_i_am_part_of="DysonZenith"
+            cost_for_ai_to_purchase="10000" strength_multiplier="0"
+	    hull_points="100000" shield_points="200000" speed="Immobile"
+            armor_mm="180" albedo="0.7" mass_tx="6"
+            metal_cost="50000" energy_consumption="1000"
+            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+	    city_socket_cost="1" name_for_city_sockets="Dyson Socket" minimum_required_city_level_for_construction="1" base_ship_cap_in_custom_city="2"
+            name_for_city_sockets_short="Socket"
+            ship_type_name_to_grant_more_of_in_custom_fleet="DysonSidekickSalvager" ship_type_count_to_grant_more_of_in_custom_fleet="10"
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			>
+      <metal_flow purpose="SelfConstruction" throughput="2500"/>
+  </entity>
+
+	<entity name="DysonBlacksmithVault" copy_from="DysonSalvagerVault"
+		   tags="DysonZenithBuildMenu,DysonFeedsFleet,DysonBuildMenu,DysonZenithBuildMenuOnly,SpawnsWithZenithStronghold,GatedByZenithDistrict,RequiresZenithDistrictOne"
+	   icon_name="Ships4/NecromancerIgor"
+		   gimbal_icon_size_multiplier="1.5"
+		   icon_overlay="Overlays2/Carnelion"
+		   display_name="Dyson Blacksmith Vault" display_name_for_sidebar="Blacksmith V."
+		   description_short="This grants a squadron of Blacksmith to the bolstered 旗舰."
+		   description="This outpost allows the 天顶 to create Blacksmiths to support their projects."
+		   starting_mark_level="Markless" build_sidebar_categories_i_am_part_of="DysonZenith"
+		   ship_type_name_to_grant_more_of_in_custom_fleet="DysonSidekickBlacksmith" ship_type_count_to_grant_more_of_in_custom_fleet="10"
+		   metal_cost="50000"
+            >
+	</entity>
+
+  <entity name="DysonMelterVault" copy_from="DysonSalvagerVault"
+          visuals="Assets/_DLC2/Zenith/DZLibrary/DZLibrary.prefab" visuals_bundle="exp2_zenith_onslaught"
+		  icon_name="Ships3/ZenithArchitraveBustuarius"
+		  gimbal_icon_size_multiplier="1.5"
+          icon_overlay="Overlays2/Carnelion"
+          tags="DysonZenithBuildMenu,DysonFeedsFleet,DysonBuildMenu,DysonZenithBuildMenuOnly,GatedByZenithDistrict,RequiresZenithDistrictOne"
+          display_name="Dyson Melter Vault" display_name_for_sidebar="Melter V."
+          description_short="This grants a squadron of Melter to the bolstered 旗舰."
+          description="This outpost allows the 天顶 to create Melters, moderate sized 天顶 vessels that utilize potent 腐蚀 attacks to gradually destroy foes."
+          starting_mark_level="Markless" build_sidebar_categories_i_am_part_of="DysonZenith"
+          ship_type_name_to_grant_more_of_in_custom_fleet="DysonSidekickMelter" ship_type_count_to_grant_more_of_in_custom_fleet="10"
+          metal_cost="50000"
+		  base_ship_cap_in_custom_city="1"
+            >
+    </entity>
+  
+  <entity name="DysonDemolitionistVault" copy_from="DysonSalvagerVault"
+            tags="DysonZenithBuildMenu,DysonFeedsFleet,DysonBuildMenu,DysonZenithBuildMenuOnly,GatedByZenithDistrict,RequiresZenithDistrictOne"
+	    icon_name="Ships3/ZenithArchitraveCestus"
+            gimbal_icon_size_multiplier="1.5"
+            icon_overlay="Overlays2/Carnelion"
+            display_name="Dyson Demolitionist Vault" display_name_for_sidebar="Demolitionist V."
+            description_short="This grants a squadron of Demolitionist to the bolstered 旗舰."
+            description="This outpost allows the 天顶 to create Demolitionists that specialize in destroying 建筑."
+            starting_mark_level="Markless" build_sidebar_categories_i_am_part_of="DysonZenith"
+            ship_type_name_to_grant_more_of_in_custom_fleet="DysonSidekickDemolitionist" ship_type_count_to_grant_more_of_in_custom_fleet="6"
+            metal_cost="50000"
+			base_ship_cap_in_custom_city="1"
+            >
+    </entity>
+	
+	
+	
+<!-- District Two Vaults -->
+  <entity name="DysonHersirVault" copy_from="DysonSalvagerVault"
+            tags="DysonZenithBuildMenu,DysonFeedsFleet,DysonBuildMenu,DysonZenithBuildMenuOnly,GatedByZenithDistrict,RequiresZenithDistrictTwo"
+            icon_name="Ships3/DarkZenithHersir"
+            gimbal_icon_size_multiplier="1.5"
+            icon_overlay="Overlays2/Carnelion"
+            display_name="Dyson Hersir Vault" display_name_for_sidebar="Hersir V."
+            description_short="This grants a squadron of Hersir to the bolstered 旗舰."
+            description="This outpost allows the 天顶 to grow their Hersir from the voidness."
+            starting_mark_level="Markless" build_sidebar_categories_i_am_part_of="DysonZenith"
+            ship_type_name_to_grant_more_of_in_custom_fleet="DysonSidekickHersir" ship_type_count_to_grant_more_of_in_custom_fleet="5"
+            city_socket_cost="2" name_for_city_sockets="Dyson Socket" minimum_required_city_level_for_construction="2" base_ship_cap_in_custom_city="2"
+            metal_cost="200000"
+            >
+    </entity>
+
+    <entity name="DysonBulwarkVault" copy_from="DysonSalvagerVault"
+            tags="DysonZenithBuildMenu,DysonFeedsFleet,DysonBuildMenu,DysonZenithBuildMenuOnly,GatedByZenithDistrict,RequiresZenithDistrictTwo"
+	    icon_name="ShipsSpire/DarkSpirePhantom"
+            gimbal_icon_size_multiplier="1.5"
+            icon_overlay="Overlays2/Carnelion"
+            display_name="Dyson Bulwark Vault" display_name_for_sidebar="Bulwark V."
+            description_short="This grants a squadron of Bulwark to the bolstered 旗舰."
+            description="This outpost allows the 天顶 to grow their Bulwark from the voidness."
+            starting_mark_level="Markless" build_sidebar_categories_i_am_part_of="DysonZenith"
+            ship_type_name_to_grant_more_of_in_custom_fleet="DysonSidekickBulwark" ship_type_count_to_grant_more_of_in_custom_fleet="5"
+            city_socket_cost="2" name_for_city_sockets="Dyson Socket" minimum_required_city_level_for_construction="2" base_ship_cap_in_custom_city="2"
+            metal_cost="200000"
+            >
+    </entity>
+    <entity name="DysonParmulariusVault" copy_from="DysonSalvagerVault"
+            tags="DysonZenithBuildMenu,DysonFeedsFleet,DysonBuildMenu,DysonZenithBuildMenuOnly,GatedByZenithDistrict,RequiresZenithDistrictTwo"
+ 	    icon_name="Ships3/ZenithArchitraveParmularius"
+            gimbal_icon_size_multiplier="1.5"
+            icon_overlay="Overlays2/Carnelion"
+            display_name="Dyson Parmularius Vault" display_name_for_sidebar="Parmularius V."
+            description_short="This grants a squadron of Parmularius to the bolstered 旗舰."
+            description="This outpost allows the 天顶 to grow their Parmularius from the voidness."
+            starting_mark_level="Markless" build_sidebar_categories_i_am_part_of="DysonZenith"
+            ship_type_name_to_grant_more_of_in_custom_fleet="DysonSidekickParmularius" ship_type_count_to_grant_more_of_in_custom_fleet="5"
+            city_socket_cost="2" name_for_city_sockets="Dyson Socket" minimum_required_city_level_for_construction="2" base_ship_cap_in_custom_city="2"
+            metal_cost="200000"
+            >
+    </entity>
+
+    <entity name="DysonRetiariusVault" copy_from="DysonSalvagerVault"
+            tags="DysonZenithBuildMenu,DysonFeedsFleet,DysonBuildMenu,DysonZenithBuildMenuOnly,GatedByZenithDistrict,RequiresZenithDistrictTwo"
+ 	    icon_name="Ships3/ZenithArchitraveRetiarius"
+            gimbal_icon_size_multiplier="1.5"
+            icon_overlay="Overlays2/Carnelion"
+            display_name="Dyson Retiarius Vault" display_name_for_sidebar="Retiarius V."
+            description_short="This grants a squadron of Retiarius to the bolstered 旗舰."
+            description="This outpost allows the 天顶 to grow their Retiarius from the great pits."
+            starting_mark_level="Markless" build_sidebar_categories_i_am_part_of="DysonZenith"
+            ship_type_name_to_grant_more_of_in_custom_fleet="DysonSidekickRetiarus" ship_type_count_to_grant_more_of_in_custom_fleet="5"
+            city_socket_cost="2" name_for_city_sockets="Dyson Socket" minimum_required_city_level_for_construction="2" base_ship_cap_in_custom_city="2"
+            metal_cost="200000"
+            >
+    </entity>
+
+    <entity name="DysonMurmilloVault" copy_from="DysonSalvagerVault"
+            tags="DysonZenithBuildMenu,DysonFeedsFleet,DysonBuildMenu,DysonZenithBuildMenuOnly,GatedByZenithDistrict,RequiresZenithDistrictThree"
+            icon_name="Ships3/ZenithArchitraveMurmillo"
+            gimbal_icon_size_multiplier="1.5"
+            icon_overlay="Overlays2/Carnelion"
+            display_name="Dyson Murmillo Vault" display_name_for_sidebar="Murmillo V."
+            description_short="This grants a squadron of Murmillo to the bolstered 旗舰."
+            description="This outpost allows the 天顶 to grow their Murmillo from the smokey desert."
+            starting_mark_level="Markless" build_sidebar_categories_i_am_part_of="DysonZenith"
+            ship_type_name_to_grant_more_of_in_custom_fleet="DysonSidekickMurmillo" ship_type_count_to_grant_more_of_in_custom_fleet="3"
+            city_socket_cost="3" name_for_city_sockets="Dyson Socket" minimum_required_city_level_for_construction="3" base_ship_cap_in_custom_city="2"
+            metal_cost="600000"
+            >
+    </entity>
+    <entity name="DysonEssedariusVault" copy_from="DysonSalvagerVault"
+            tags="DysonZenithBuildMenu,DysonFeedsFleet,DysonBuildMenu,DysonZenithBuildMenuOnly,GatedByZenithDistrict,RequiresZenithDistrictThree"
+            icon_name="Ships3/ZenithArchitraveEssedarius"
+            gimbal_icon_size_multiplier="1.5"
+            icon_overlay="Overlays2/Carnelion"
+            display_name="Dyson Essedarius Vault" display_name_for_sidebar="Essedarius V."
+            description_short="This grants a squadron of Essedarius to the bolstered 旗舰."
+            description="This outpost allows the 天顶 to grow their Essedarius from the smokey desert."
+            starting_mark_level="Markless" build_sidebar_categories_i_am_part_of="DysonZenith"
+            ship_type_name_to_grant_more_of_in_custom_fleet="DysonSidekickEssedarius" ship_type_count_to_grant_more_of_in_custom_fleet="3"
+            city_socket_cost="3" name_for_city_sockets="Dyson Socket" minimum_required_city_level_for_construction="3" base_ship_cap_in_custom_city="2"
+            metal_cost="600000"
+            >
+    </entity>
+
+    <entity name="DysonCoerlVault" copy_from="DysonSalvagerVault"
+            tags="DysonZenithBuildMenu,DysonFeedsFleet,DysonBuildMenu,DysonZenithBuildMenuOnly,GatedByZenithDistrict,RequiresZenithDistrictThree"
+            icon_name="Ships3/DarkZenithCoerl"
+            icon_overlay="Overlays2/Carnelion"
+            gimbal_icon_size_multiplier="1.5"
+            display_name="Dyson Coerl Vault" display_name_for_sidebar="Coerl V."
+            description_short="This grants a squadron of Coerl to the bolstered 旗舰."
+            description="This outpost allows the 天顶 to grow their Coerl from the smokey desert."
+            starting_mark_level="Markless" build_sidebar_categories_i_am_part_of="DysonZenith"
+            ship_type_name_to_grant_more_of_in_custom_fleet="DysonSidekickCoerl" ship_type_count_to_grant_more_of_in_custom_fleet="3"
+            city_socket_cost="3" name_for_city_sockets="Dyson Socket" minimum_required_city_level_for_construction="3" base_ship_cap_in_custom_city="2"
+            metal_cost="600000"
+            >
+    </entity>
+
+    <!-- Districts -->
+    <!--
+    <entity name="DysonZenithDistrictTierTwo" copy_from="DysonSpireDistrictTierTwo"
+            tags="DysonZenithBuildMenu,DysonDistrict,DysonBuildMenu,DysonZenithBuildMenuOnly,DysonZenithDistrict,DistrictTierTwo,GatedByDrilling,RequiresOnePlanetDrilled"
+            display_name="Zenith District Two"
+            display_name_for_sidebar="Z District 2"
+            >
+    </entity>
+    <entity name="DysonZenithDistrictTierThree" copy_from="DysonZenithDistrictTierTwo"
+            tags="DysonZenithBuildMenu,DysonDistrict,DysonBuildMenu,DysonZenithBuildMenuOnly,DysonZenithDistrict,DistrictTierThree,GatedByZenithDistrict,RequiresZenithDistrictTwo,GatedByDrilling,RequiresTwoPlanetsDrilled"
+            display_name="Zenith District Three"
+            display_name_for_sidebar="Z District 3"
+            >
+    </entity>
+    -->
+    
+    <!-- Defensive Structures -->
+    <entity name="DysonZenithTurretTemplate" 
+		thematic_groups="DysonSidekick"
+		icon_name="Ships3/ZenithTurret" 
+		uses_large_health_bar="true"
+		category="Ship"
+		voice_group="Zenith"
+		collision_priority="810"
+	    mark_level_scale_style="DysonSidekickDefenses"
+		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="DysonZenithDefenses"
+		cost_for_ai_to_purchase="10000" strength_multiplier="2"
+		hull_points="200000" shield_points="400000" speed="Immobile"
+		armor_mm="350" albedo="0.7" mass_tx="6"
+		metal_cost="1000" energy_consumption="20000"
+	    amount_added_to_damage_per_ship_of_this_type_on_planet="500" amount_added_to_damage_per_ship_of_this_type_on_planet_per_mark="250" max_amount_added_to_damage_per_ship_of_this_type_on_planet="5000"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+		ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+		is_nonfunctional_when_on_planet_not_owned_by_player="false"
+		priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+		build_sidebar_categories_i_am_part_of="DysonZenithDefenses"
+	    minimum_required_city_level_for_construction="1"
+	    name_for_city_sockets="Dyson Socket" 
+		name_for_city_sockets_short="Socket"
+	    city_socket_cost="1"
+	    base_ship_cap_in_custom_city="5"
+	    added_ship_cap_in_custom_city_per_city_level="1"
+	    added_ship_cap_in_custom_city_per_city_level_above_level="4"
+	    
+	    description="A powerful 炮塔 built to dissuade attacks against the 戴森 Sidekick."
+	    visuals="Assets/_DLC2/Zenith/DZTrelleborg/DZTrelleborg.prefab" visuals_bundle="exp2_zenith_onslaught"
+	    size_scale="11"
+	    visuals_scale_multiplier="22"
+		y_offset_of_icon="30"
+		>
+		<metal_flow purpose="SelfConstruction" throughput="2000"/>
+    </entity>
+    <entity copy_from="DysonZenithTurretTemplate" name="DysonZenithTrelleborg" 
+		tags="DysonZenithBuildMenu,DysonZenithDefensiveBuildMenu,DysonBuildMenu,DysonZenithBuildMenuOnly,RequiresZenithDistrictOne,GatedByZenithDistrict"
+		thematic_groups="DysonSidekick"
+	    visuals="Assets/_DLC2/Zenith/DZTrelleborg/DZTrelleborg.prefab" visuals_bundle="exp2_zenith_onslaught"
+	    icon_overlay="Overlays1/Turret_ChainLightning"
+	    display_name="Trelleborg" display_name_for_sidebar="Trelleborg"
+	    metal_cost="1000" base_ship_cap_in_custom_city="5"
+        >
+		<system name="CE" display_name="Chain Lightning Emitter"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="3500" range="Normal5" shot_speed="Normal" rate_of_fire="FairlyLow"
+			shot_type_data="HeavyBeamInvisible"  beam_length_multiplier="1.3" shots_detonate_immediately="true"  beam_weapon_visual_style="Lightning_Blue"
+			beam_chains_out_to_targets_x_times="1" beam_chains_out_to_target_min_range="200" beam_chains_out_to_targets_x_range="2000"
+			maximum_number_of_targets_hit_per_shot="5" beam_chains_out_to_max_targets_from_each_source="4"
+			only_targets_strikecraft_and_frigates="true" aoe_and_beam_damage_multiplier_to_non_primary_target="50" 
+			added_target_evaluator="LowestHealthAsMajorPrimary"
+			>
+		</system>
+    </entity>	
+    <entity copy_from="DysonZenithTurretTemplate" name="DysonZenithAtgeir"
+		tags="DysonZenithBuildMenu,DysonZenithDefensiveBuildMenu,DysonBuildMenu,DysonZenithBuildMenuOnly,RequiresZenithDistrictOne,GatedByZenithDistrict"
+		thematic_groups="DysonSidekick"
+		visuals="Assets/_DLC2/Zenith/DZTrelleborg/DZAtgeir.prefab" visuals_bundle="exp2_zenith_onslaught"
+		icon_overlay="Overlays2/Turret_Atgeir"
+		display_name="Atgeir" display_name_for_sidebar="Atgeir"
+		metal_cost="6000" base_ship_cap_in_custom_city="3"
+		>
+		<system name="WT" display_name="Ion Disruption Blast" category="Weapon" firing_timing="OnlyInRange"  
+			damage_per_shot="3200" range="High2" shot_speed="Slow" rate_of_fire="High" fires_salvos_sequentially="true"
+			shot_type_data="PlasmaTorpedoAOEBurstAtEnd"
+			area_of_effect_size="1500" aoe_spreads_damage_among_available_targets="true"
+			base_knockback_per_shot="-1500" knockback_to_ships_mass_tx_less_than="2" knockback_at_target_location="true" added_target_evaluator="CanKnockback"
+			base_paralysis_seconds_per_shot="6" paralysis_to_ships_mass_tx_less_than="5"
+			>
+        </system>
+
+    </entity>
+    <entity copy_from="DysonZenithTurretTemplate" name="DysonZenithBulwark"
+		tags="DysonZenithBuildMenu,DysonZenithDefensiveBuildMenu,DysonBuildMenu,DysonZenithBuildMenuOnly,RequiresZenithDistrictOne,GatedByZenithDistrict"
+		thematic_groups="DysonSidekick"
+		visuals="Assets/_DLC2/Zenith/DZTrelleborg/DZAtgeir.prefab" visuals_bundle="exp2_zenith_onslaught"
+                icon_overlay="Overlays2/DysonSentinel_Bulwark"
+		display_name="Bulwark" display_name_for_sidebar="Bulwark"
+		metal_cost="6000" base_ship_cap_in_custom_city="3"
+		>
+      <system name="WJ" display_name="Disrupter Grenade"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      damage_per_shot="1200" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+	      shot_type_data="FlakShotAOEBurstAtEnd" added_target_evaluator="WeaponJamAsPrimary"
+	      area_of_effect_size="500"
+	      maximum_number_of_targets_hit_per_shot="16"
+              base_enemy_weapon_reload_slowing_seconds_per_shot="4" added_enemy_weapon_reload_slowing_seconds_per_shot_per_mark="1"
+	      max_enemy_weapon_reload_slowing_seconds="20"
+              enemy_weapon_reload_slowing_to_armor_mm_less_than="60"
+	      >
+      </system>
+
+      <system name="R5" display_name="Pulse Deleter"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      damage_per_shot="36000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="VeryLow" fires_salvos_sequentially="true"
+	      shot_type_data="LaserPulse_RedLevel2"
+              base_percent_damage_bypasses_personal_shields="0.6" 
+	    >
+	<outgoing_damage_modifier based_on="CurrentHullPercentage" comparison_type="AtLeast" compared_to="90" multiplier="2" />
+      </system>
+      <ship_class_data can_be_zombified_and_similar="false" />
+
+    </entity>
+
+    <!-- tier two defenses -->
+    <entity copy_from="DysonZenithTurretTemplate" name="DysonZenithSkeggox"
+		tags="DysonZenithBuildMenu,DysonZenithDefensiveBuildMenu,DysonBuildMenu,DysonZenithBuildMenuOnly,RequiresZenithDistrictTwo,GatedByZenithDistrict"
+		thematic_groups="DysonSidekick"
+		visuals="Assets/_DLC2/Zenith/DZSkeggox/DZSkeggox.prefab" visuals_bundle="exp2_zenith_onslaught"
+		icon_name="Ships3/ZenithTurretStrong" icon_overlay="Overlays2/Turret_Skeggox"
+		display_name="Skeggox" display_name_for_sidebar="Skeggox"
+		metal_cost="6000" base_ship_cap_in_custom_city="3"
+		>
+		<system name="R1" display_name="Tracking Rockets"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="500" range="High2" shot_speed="Normal" rate_of_fire="Normal"
+			shots_per_salvo="30" fires_salvos_sequentially="false"
+			shot_type_data="FusionRocket"	multiplier_damage_to_tractored_unit="6"			
+			>
+		</system>
+		<system name="L" display_name="Net Launcher"
+			category="Weapon" firing_timing="OnlyInRange" shot_type_data="DZExplosiveNet"
+			damage_per_shot="5" range="Planetary" shot_speed="Slow" rate_of_fire="PeriodicActivation" fires_salvos_sequentially="true"  
+			shots_per_salvo="1" 
+			>
+		</system>
+    </entity>
+    <entity copy_from="DysonZenithTurretTemplate" name="DysonZenithStativa"
+		tags="DysonZenithBuildMenu,DysonZenithDefensiveBuildMenu,DysonBuildMenu,DysonZenithBuildMenuOnly,RequiresZenithDistrictTwo,GatedByZenithDistrict"
+		thematic_groups="DysonSidekick"
+		visuals="Assets/_DLC2/Zenith/ZAStativa/ZAStativa.prefab" visuals_bundle="exp2_zenith_onslaught"
+		icon_overlay="Overlays2/Turret_Stativa"
+		display_name="Stativa" display_name_for_sidebar="Stativa"
+		description="A powerful 炮塔 built to dissuade attacks against the 戴森 Sidekick and uses two powerful weapons for dealing with shielded and armored foes, respectively. While phased, it prefers its vorpal beams for dealing with weakened ships."
+		metal_cost="6000" base_ship_cap_in_custom_city="3"
+		alternative_state_of_matter="MultiPhase" phases_to_other_alternative_state_of_matter_after_seconds="20" phases_back_to_default_state_of_matter_after_seconds="20"
+		strength_multiplier="1"
+		>
+		<system name="V7" display_name="Polarized Cannon"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="1000"  range="High2" shot_speed="Normal" rate_of_fire="Normal" 
+			shots_per_salvo="5" fires_salvos_sequentially="false"
+			shot_type_data="ElegantCurl"
+			must_be_this_state_of_matter_to_be_enabled="Normal" care_about_state_of_matter_to_be_enabled="true" is_invisible_in_tooltips_if_not_a_match_by_state_of_matter="true"
+			>
+			<outgoing_damage_modifier based_on="Armor_mm" comparison_type="MultiplesOf" compared_to="35" multiplier="1" max_multiplier="10" />
+		</system>
+		<system name="V8" display_name="Ionized Cannon"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="1000"  range="High2" shot_speed="Normal" rate_of_fire="Normal"
+			shots_per_salvo="5" fires_salvos_sequentially="false"
+			shot_type_data="PlasmaTorpedo"
+			must_be_this_state_of_matter_to_be_enabled="Normal" care_about_state_of_matter_to_be_enabled="true" is_invisible_in_tooltips_if_not_a_match_by_state_of_matter="true"
+			>
+			<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="PersonalShieldOnly" comparison_type="AtLeast" compared_to="10" multiplier="4" />	
+		</system>
+		<system name="R6" display_name="Vorpal Beam"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="1000" range="High2" shot_speed="VeryFast" rate_of_fire="Normal"
+			shots_per_salvo="10" fires_salvos_sequentially="false"
+			shot_type_data="HeavyBeamInvisible" beam_length_multiplier="1"  beam_weapon_visual_style="Laser_Purple"
+			must_be_this_state_of_matter_to_be_enabled="MultiPhase"	care_about_state_of_matter_to_be_enabled="true"	is_invisible_in_tooltips_if_not_a_match_by_state_of_matter="true"	
+			>
+			<outgoing_damage_modifier based_on="TargetHullPercentageMissing" comparison_type="MultiplesOf" compared_to="25" multiplier="1" />
+		</system>
+    </entity>
+    <!-- tier 3 defenses -->
+	<entity copy_from="DysonZenithTurretTemplate" name="DysonZenithIngelrii"
+		tags="DysonZenithBuildMenu,DysonZenithDefensiveBuildMenu,DysonBuildMenu,DysonZenithBuildMenuOnly,RequiresZenithDistrictTwo,GatedByZenithDistrict"
+		thematic_groups="DysonSidekick"
+		visuals="Assets/_DLC2/Zenith/DZSkeggox/DZIngelrii.prefab" visuals_bundle="exp2_zenith_onslaught"
+		icon_name="Ships3/ZenithTurretStrong" icon_overlay="Overlays2/Turret_Ingelrii"
+		display_name="Ingelrii" display_name_for_sidebar="Ingelrii"
+		description="A powerful 炮塔 built to dissuade attacks against the Dark 天顶.  This 炮塔 excels at neutralizing massive and highly armored targets. Its primary weapon is polarized to do increasing damage to thicker 装甲. Furthermore, it launches javelins designed to cripple massive enemies, first by dealing major damage, and second by tractoring it in place for a short duration."
+		metal_cost="6000" base_ship_cap_in_custom_city="3"
+		>
+		<system name="WK" display_name="Armor Polarizer"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="4000" shots_per_salvo="4" range="Normal4" shot_speed="Normal" rate_of_fire="Normal"
+			fires_salvos_sequentially="true" shot_type_data="LaserPulse_DeepBlue"
+			>
+			<outgoing_damage_modifier based_on="Armor_mm" comparison_type="MultiplesOf" compared_to="35" multiplier="1" max_multiplier="10" />
+		</system>
+		<system name="L" display_name="Harpoon Launcher"
+			category="Weapon" firing_timing="OnlyInRange" shot_type_data="DZJavelin"
+			damage_per_shot="5" range="Planetary" shot_speed="Slow" rate_of_fire="Sloth" fires_salvos_sequentially="true"  
+			shots_per_salvo="1" 
+			>
+		</system>
+    </entity>
+    <entity copy_from="DysonZenithTurretTemplate" name="DysonZenithNavalia"
+		tags="DysonZenithBuildMenu,DysonZenithDefensiveBuildMenu,DysonBuildMenu,DysonZenithBuildMenuOnly,RequiresZenithDistrictThree,GatedByZenithDistrict"
+		thematic_groups="DysonSidekick"
+		visuals="Assets/_DLC2/Zenith/ZANavalia/ZANavalia.prefab" visuals_bundle="exp2_zenith_onslaught"
+	    icon_name="Ships3/ZenithTurret" icon_overlay="Overlays2/Turret_Navalia"
+		display_name="Navalia"
+		display_name_for_sidebar="Navalia"
+		description="A powerful 炮塔 built to dissuade attacks against the 戴森 Sidekick, armed with a long-range mass driver that turns its target's mass into a liability. It periodically launches phasion seeker bombs to 相位 out groups of ships, regardless if they have active 护盾."
+    
+		metal_cost="6000" base_ship_cap_in_custom_city="3"
+		alternative_state_of_matter="MultiPhase" phases_to_other_alternative_state_of_matter_after_seconds="20" phases_back_to_default_state_of_matter_after_seconds="20"
+		>
+		<system name="L" display_name="Phasion Bomb Launcher"
+			category="Weapon" firing_timing="OnlyInRange" shot_type_data="ZAPhasionBomb"
+			damage_per_shot="5" range="Planetary" shot_speed="Slow" rate_of_fire="ExtremelyLow" fires_salvos_sequentially="true"  
+			shots_per_salvo="1"  
+			must_be_this_state_of_matter_to_be_enabled="Normal" care_about_state_of_matter_to_be_enabled="true"
+			>
+		</system>	
+		<system name="WT" display_name="Zenith Mass Driver"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="5000" range="High2" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+			shot_type_data="Sabot"	 
+			use_alternate_rate_of_fire_after_x_shots="5" alternate_rate_of_fire="Sloth"  use_alternate_rate_of_fire_for_x_shots_before_reverting="1"
+			>		
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="MultiplesOf" compared_to="1" multiplier="1" max_multiplier="10" />	
+		</system>
+
+    </entity>
+
+    <!-- The Strongholds -->
+    
+    <entity name="DysonMajorZenithStronghold"
+            display_name="Major Zenith Stronghold" display_name_for_sidebar="Maj Z Stronghold"
+	    thematic_groups="DysonSidekick" 
+            tags="DysonStronghold,DysonMajorStronghold,SpawnsDysonZenithFleet,SapperImportantPoint,DysonZenithStronghold,StartingZenithStronghold,DysonZenith"
+	    draw_in_galaxy_view="true"
+	    visuals="assets/_finalgamemeshes/blankshipsootheraddonscandrawalone.prefab" ship_skips_traditional_rendering="true"
+            addon_object_or_particle_field="ZAHomePortal" addon_object_or_particle_field_scale="32"
+	    icon_name="Ships3/ZenithArchitravePortal"
+	    special_entity_type="CityCenter"
+            metal_storage="80000" added_metal_storage_per_mark_level="3000"
+	    y_offset_of_icon="30"
+	    voice_group="Silent"
+	    category="Ship"
+	    size_scale="22"
+	    visuals_scale_multiplier="16"
+	    y_offset_of_ship_in_visual_space="140"
+	    collision_priority="810"
+	    description="An outpost of the 戴森.
+
+This is a major 要塞, which comes with a 旗舰"
+	    behavior="Stationary"
+	    starting_mark_level="Mark1"
+            build_sidebar_categories_i_am_part_of="DysonStrongholds"
+            this_unit_gets_direct_science_upgrades_from_central_fleet="true"
+	    cost_for_ai_to_purchase="500" mark_level_scale_style="Templar"
+            hull_points="600000" shield_points="1800000" speed="Immobile"
+            metal_cost="5000" energy_consumption="35000"
+            cost_in_resource_one="18"
+            armor_mm="350" albedo="0.6" mass_tx="10"
+	    is_nonfunctional_when_on_planet_owned_by_ai="true"
+	    seconds_to_fully_regenerate_hull="600"
+            is_crippled_instead_of_dying="true"
+	    is_scrapping_by_player_disallowed="true"
+            assist_range="EssentiallyInfinite"
+            shows_on_galaxy_map_for_explored_planets="true" 
+	    always_visible_to_players="true"
+	    name_for_city_center="Stronghold" name_for_city_sockets="Stronghold Socket"
+            name_for_city_sockets_short="Socket"
+            city_sockets="7" added_city_sockets_per_mark="2" 
+            this_centerpiece_grants_its_direct_science_upgrades_to_bolstered_fleet="false"
+            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" tech_upgrade_that_is_used_for_my_direct_science="Direct_DysonMajorStronghold" is_upgradeable_by_direct_science="true"
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"	
+            description_appender_dll="AIWarExternalCode"
+            description_appender_type="Arcen.AIW2.External.DysonSidekickDescriptionAppender"
+            base_galaxy_wide_cap_for_players_constructing="1" galaxy_wide_cap_match_string="MajorStronghold"
+            added_galaxy_wide_cap_for_players_constructing_per_x_planets="1" galaxy_wide_cap_for_players_constructing_x_planet_variable="3"
+            special_factory_type="Dyson Stronghold"
+            eligible_for_hacks="DismantleStronghold"
+            allied_speed_multiplier="1.3"
+            allied_speed_multiplier_added_per_mark="0.3"
+            >
+          <metal_flow purpose="SelfConstruction" throughput="2500"/>
+    <resource_production type="Energy" amount="100000"/>
+    <resource_production type="FuelArgon" amount="70000" />
+    <resource_production type="FuelRadon" amount="70000" />
+    <metal_flow purpose="FactoryConstructionForPlayerMobileFleets" throughput="100" increase_per_mark_level="20"/>
+    <metal_flow purpose="RepairingHullsOfFriendlies" throughput="300" increase_per_mark_level="150"/>
+    <metal_flow purpose="RebuildingRemains" throughput="200" increase_per_mark_level="100"/>
+
+      <system name="R1" display_name="Castle Concussion Rockets"
+              category="Weapon" firing_timing="OnlyInRange"
+              damage_per_shot="4000" range="High1" shot_speed="Normal" rate_of_fire="Normal"
+              shots_per_salvo="40" fires_salvos_sequentially="false"
+              shot_type_data="FusionRocket" 
+	      >
+        <outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="50" multiplier="2" />
+      </system>
+    </entity>      
+    <entity name="DysonMinorZenithStronghold" tags="DysonStronghold,MinorStronghold,DysonZenithStronghold,BolstersDysonFleet,SapperImportantPoint,DysonZenith"
+	    thematic_groups="DysonSidekick"
+	    special_entity_type="CityCenter"
+            metal_storage="30000" added_metal_storage_per_mark_level="2000"
+	    visuals="Assets/_FinalGameMeshes/Macrophage/Telium/MacrophageTelium.prefab"
+            material_override_path="Assets/_FinalGameMeshes/AIBuildings/AIWarpGate.prefab"
+	    icon_name="Ships3/DarkZenithLibrary"
+            voice_group="Silent" 
+            uses_large_health_bar="true"
+            category="Ship"
+	    visuals_scale_multiplier="5"
+            size_scale="6"
+	    y_offset_of_icon="30"
+	    display_name="Minor Zenith Stronghold"
+            display_name_for_sidebar="Min Z Stronghold"
+	    description_short="An outpost of the 戴森.
+
+This is a minor Stronghole, which bolsters a major 要塞."
+            collision_priority="810"
+            starting_mark_level="Mark1" this_unit_gets_direct_science_upgrades_from_central_fleet="true"
+            cost_for_ai_to_purchase="10000" strength_multiplier="1.5"
+            hull_points="500000" shield_points="500000" speed="Immobile"
+            armor_mm="180" albedo="0.7" mass_tx="8"
+            metal_cost="5000" energy_consumption="0" cost_in_resource_one="10"
+	    is_nonfunctional_when_on_planet_owned_by_ai="true"
+	    seconds_to_fully_regenerate_hull="600"
+            is_crippled_instead_of_dying="true"
+	    is_scrapping_by_player_disallowed="true"
+            assist_range="EssentiallyInfinite"
+            build_sidebar_categories_i_am_part_of="DysonStrongholds"
+	    draw_in_galaxy_view="true"
+            shows_on_galaxy_map_for_explored_planets="true" 
+	    always_visible_to_players="true"
+	    name_for_city_center="Stronghold" name_for_city_sockets="Stronghold Socket"
+            name_for_city_sockets_short="Socket"
+            city_sockets="6" added_city_sockets_per_mark="1" 
+            this_centerpiece_grants_its_direct_science_upgrades_to_bolstered_fleet="false"
+            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" tech_upgrade_that_is_used_for_my_direct_science="Direct_DysonMinorStronghold" is_upgradeable_by_direct_science="true"
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+            description_appender_dll="AIWarExternalCode"
+            description_appender_type="Arcen.AIW2.External.DysonSidekickDescriptionAppender"
+            special_factory_type="Dyson Stronghold"
+            eligible_for_hacks="DismantleStronghold"
+            allied_speed_multiplier="1.3"
+            allied_speed_multiplier_added_per_mark="0.3"
+	    >
+      <metal_flow purpose="SelfConstruction" throughput="2500"/>
+      <resource_production type="Energy" amount="100000"/>
+      <resource_production type="FuelArgon" amount="60000" />
+      <resource_production type="FuelRadon" amount="60000" />
+      <metal_flow purpose="FactoryConstructionForPlayerMobileFleets" throughput="80" increase_per_mark_level="15"/>
+      <metal_flow purpose="RepairingHullsOfFriendlies" throughput="300" increase_per_mark_level="150"/>
+      <metal_flow purpose="RebuildingRemains" throughput="200" increase_per_mark_level="100"/>
+    </entity>
+
+      <!-- Flagships -->
+      <entity name="DysonZenithFlagshipTierOne" tags="DysonFlagship,ShowsOnNormalDisplayMode,ZenithFlagshipTierOne,FlagshipTierOne,ZenithFlagship" 
+	      thematic_groups="DysonSidekick"
+	      special_entity_type="MobileCustomCityFedFleetFlagship"
+              draw_in_galaxy_view="true" shows_on_galaxy_map_for_explored_planets="true" always_visible_to_players="true"
+	      visuals="Assets/_DLC2/Zenith/ZAPioneer/ZAPioneer.prefab" visuals_bundle="exp2_zenith_onslaught"
+              gimbal_icon_size_multiplier="1.5"
+	      icon_name="Ships3/ZenithArchitravePioneer"
+	      voice_group="Silent"
+	      category="Ship"
+	      size_scale="18"
+	      visuals_scale_multiplier="72"
+	      y_offset_of_icon="24"
+	      collision_priority="100"
+              display_name="Zenith Pioneer Flagship"
+              display_name_for_sidebar="Pnr Flgshp"
+	      description="This is the lowest-tier 天顶 旗舰 for the 戴森."
+	      starting_mark_level="Mark1"
+	      cost_for_ai_to_purchase="500" strength_multiplier="1.1"
+	      hull_points="900000" shield_points="600000" speed="High"
+	      armor_mm="180" albedo="0.7" engine_gx="22" mass_tx="7"
+	      metal_cost="5000" energy_consumption="40000"	
+	      ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+	      ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+	      special_factory_type="Dyson Stronghold"
+              tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly"
+              tech_upgrade_that_is_used_for_my_direct_science="Direct_DysonFlagships"	is_upgradeable_by_direct_science="true"
+              priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="MidFavoriteToy"
+	      multiplier_to_all_costs="1" multiplier_to_all_healths="1" damage_multiplier_to_all_weapons="1" 
+	      assist_range="Normal1"
+	      firing_delay_for_transported_ships="6"
+	      is_scrapping_by_player_disallowed="true"
+              transform_after_kills="DysonZenithFlagshipTierTwo"
+              kills_to_trigger_transformation="3000"
+              module_points_from_hacking="true"
+              eligible_for_hacks="GrantModules"
+              description_appender_dll="AIWarExternalCode"
+              description_appender_type="Arcen.AIW2.External.DysonSidekickDescriptionAppender"
+              >
+        <metal_flow purpose="SelfConstruction" throughput="2500"/>
+        <metal_flow purpose="RepairingHullsOfFriendlies" throughput="250" increase_per_mark_level="250"/>
+        <metal_flow purpose="RepairingShieldsOfFriendlies" throughput="250" increase_per_mark_level="250"/>
+        <metal_flow purpose="RepairingEnginesOfFriendlies" throughput="250" increase_per_mark_level="250"/>
+        <metal_flow purpose="AssistSelfConstruction" throughput="200" increase_per_mark_level="200"/>
+        <metal_flow purpose="AssistFactoryConstruction" throughput="200" increase_per_mark_level="200"/>
+        <metal_flow purpose="RebuildingRemains" throughput="200" increase_per_mark_level="100"/>
+        <system name="R1" display_name="Wasting Micro Rockets"
+		category="Weapon" firing_timing="OnlyInRange"
+		damage_per_shot="3400" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Low" 
+		shots_per_salvo="16" fires_salvos_sequentially="false"
+		shot_type_data="NanocaustCurvedSicklyGreenShot"
+		>
+	  <outgoing_damage_modifier based_on="CurrentHullPercentage" comparison_type="AtMost" compared_to="50" multiplier="2" />
+	  <outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="HullOnly" comparison_type="LessThan" compared_to="1" multiplier="1.5" />
+        </system>	
+	<ship_class_data can_be_zombified_and_similar="false" can_be_fleet_supercharged="false" />
+        <system name="M1" unique_module_index="1" display_name="Reinforced Hull"
+	  module_point_cost="1" module_screen_sort_group="10"
+	  category="Passive"
+	  module_stat_adjuster="HullHealth" module_stat_adjuster_multiplier="1.5"
+		>
+	</system>
+	<system name="M2" unique_module_index="2" display_name="Reinforced Shield"
+	  module_point_cost="1" module_screen_sort_group="20"
+	  category="Passive"
+	  module_stat_adjuster="ShieldHealth" module_stat_adjuster_multiplier="1.5"
+		>
+	</system>
+
+      </entity>	
+
+      <entity name="DysonZenithFlagshipTierTwo" copy_from="DysonZenithFlagshipTierOne"
+           tags="DysonFlagship,ShowsOnNormalDisplayMode,DysonZenithFlagshipTierTwo,FlagshipTierTwo,ZenithFlagship"
+           description="This is the mid-tier 天顶 旗舰 for the 戴森."
+           visuals="assets/_dlc2/zenith/dzymir/ymir.prefab" visuals_bundle="exp2_zenith_onslaught"
+	   icon_name="Ships3/DarkZenithYmir"
+           gimbal_icon_size_multiplier="1.5"
+           display_name="Zenith Ymir Flagship"
+           display_name_for_sidebar="Ymr Flgshp"
+           hull_points="1200000" shield_points="700000" speed="High"
+           transform_after_kills="DysonZenithFlagshipTierThree"
+           kills_to_trigger_transformation="5500"
+           >
+        <system name="R1" display_name="Wasting Micro Rockets"
+		category="Weapon" firing_timing="OnlyInRange"
+		damage_per_shot="5400" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Low" 
+		shots_per_salvo="32" fires_salvos_sequentially="false"
+		shot_type_data="NanocaustCurvedSicklyGreenShot"
+		>
+	  <outgoing_damage_modifier based_on="CurrentHullPercentage" comparison_type="AtMost" compared_to="50" multiplier="2" />
+	  <outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="HullOnly" comparison_type="LessThan" compared_to="1" multiplier="1.5" />
+        </system>	
+
+   </entity>
+   <entity name="DysonZenithFlagshipTierThree" 
+           tags="DysonFlagship,ShowsOnNormalDisplayMode,DysonZenithFlagshipTierThree,FlagshipTierThree,ZenithFlagship"
+	      thematic_groups="DysonSidekick"
+	      special_entity_type="MobileCustomCityFedFleetFlagship"
+              draw_in_galaxy_view="true" shows_on_galaxy_map_for_explored_planets="true" always_visible_to_players="true"
+	      visuals="assets/_dlc2/zenith/dzjormugandr/jormugandr.prefab" visuals_bundle="exp2_zenith_onslaught"
+	      icon_name="Ships3/DarkZenithJormugandr"
+	      voice_group="Silent"
+              gimbal_icon_size_multiplier="1.5"
+	      category="Ship"
+              size_scale="22"
+	      visuals_scale_multiplier="6" y_offset_of_ship_in_visual_space="100"
+	      y_offset_of_icon="150"
+	      collision_priority="3000"
+              display_name="Zenith Jormugandr Flagship"
+              display_name_for_sidebar="Jorm Flgshp"
+	      description="This is the most powerful 天顶 旗舰 for the 戴森."
+	      starting_mark_level="Mark1"
+	      cost_for_ai_to_purchase="500" strength_multiplier="1.1"
+              hull_points="1500000" shield_points="800000" speed="High"
+	      armor_mm="180" albedo="0.7" engine_gx="22" mass_tx="7"
+	      metal_cost="5000" energy_consumption="40000"
+	      ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+	      ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+	      special_factory_type="Dyson Stronghold"
+              tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly"
+              tech_upgrade_that_is_used_for_my_direct_science="Direct_DysonFlagships"	is_upgradeable_by_direct_science="true"
+              priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="MidFavoriteToy"
+	      multiplier_to_all_costs="1" multiplier_to_all_healths="1.5" damage_multiplier_to_all_weapons="1.5"
+	      assist_range="Normal1"
+	      firing_delay_for_transported_ships="6"
+	      is_scrapping_by_player_disallowed="true"
+              description_appender_dll="AIWarExternalCode"
+              description_appender_type="Arcen.AIW2.External.DysonSidekickDescriptionAppender"
+              module_points_from_hacking="true"
+              eligible_for_hacks="GrantModules"
+              >
+     <metal_flow purpose="SelfConstruction" throughput="2500"/>
+     <metal_flow purpose="RepairingHullsOfFriendlies" throughput="250" increase_per_mark_level="250"/>
+        <metal_flow purpose="RepairingShieldsOfFriendlies" throughput="250" increase_per_mark_level="250"/>
+        <metal_flow purpose="RepairingEnginesOfFriendlies" throughput="250" increase_per_mark_level="250"/>
+        <metal_flow purpose="AssistSelfConstruction" throughput="200" increase_per_mark_level="200"/>
+        <metal_flow purpose="AssistFactoryConstruction" throughput="200" increase_per_mark_level="200"/>
+        <metal_flow purpose="RebuildingRemains" throughput="200" increase_per_mark_level="100"/>
+        <system name="R1" display_name="Wasting Micro Rockets"
+		category="Weapon" firing_timing="OnlyInRange"
+		damage_per_shot="12800" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Low"
+		shots_per_salvo="32" fires_salvos_sequentially="false"
+		shot_type_data="NanocaustCurvedSicklyGreenShot"
+		>
+	  <outgoing_damage_modifier based_on="CurrentHullPercentage" comparison_type="AtMost" compared_to="50" multiplier="4" />
+	  <outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="HullOnly" comparison_type="LessThan" compared_to="1" multiplier="1.9" />
+        </system>
+	<ship_class_data can_be_zombified_and_similar="false" can_be_fleet_supercharged="false" />
+	<system name="M1" unique_module_index="1" display_name="Reinforced Hull"
+	  module_point_cost="1" module_screen_sort_group="10"
+	  category="Passive"
+	  module_stat_adjuster="HullHealth" module_stat_adjuster_multiplier="1.5"
+		>
+	</system>
+	<system name="M2" unique_module_index="2" display_name="Reinforced Shield"
+	  module_point_cost="1" module_screen_sort_group="20"
+	  category="Passive"
+	  module_stat_adjuster="ShieldHealth" module_stat_adjuster_multiplier="1.5"
+		>
+	</system>
+      </entity>	
+
+</root>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!-- D1 -->
+	
+	<entity is_partial_record="true" name="DysonSidekickSentinel"
+		>
+		<system name="WD"
+			damage_per_shot="1500" 
+			range="High1" 
+			rate_of_fire="High"
+			>
+		</system>
+	</entity>
+	<!-- D2 -->
+	<!-- D3 -->
+	
+</root>

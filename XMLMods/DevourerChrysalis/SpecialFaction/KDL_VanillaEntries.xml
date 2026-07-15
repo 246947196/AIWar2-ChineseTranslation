@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<faction name="DevourerChrysalis" display_name="吞噬者蛹" short_name="吞噬者 C" team_center_color="c191970" team_border_color="c00FF7F"
+		dll_name="DevourerChrysalis"
+		type_name="DevourerChrysalis.DevourerChrysalisFaction"
+		type="SpecialFaction"
+		ai_can_send_waves_against_this="false"
+		ai_does_not_generate_threat_against="true"
+		description="巨大的吞噬者傀儡以缓慢的速度在银河系中移动，摧毁沿途的任何移动单位，瞄准最大数量的舰船来吞噬。配备先进的船体、护盾和武器技术，它是一股强大的力量，玩家有多种入侵选项来操纵其行为。
+但真正让它与众不同的是它在死亡时进化的方式，变得更加强大，在蛹形态中变形，提供入侵选项来操纵其蜕变结果、虹吸金属，甚至获得先进、极其强大的舰船系列。
+
+预期 AI 会将其赶出自己的星球——但为了效率起见，它不会试图杀死这头野兽，那样只会触发其持续进化，需要更多资源来防范。虽然吞噬者猎手对与任何其他东西交战不感兴趣，但它们可能会进行报复。一旦它们赶走了吞噬者傀儡，这可能代表着攻击削弱后的猎物、将其推入蛹形态并从中获益的机会。
+
+但请注意：它不仅每次变形都会变得更强大，其总体力量也会随着被入侵而增强，反向分析人类和 AI 技术以进一步改进自身。通过入侵这只怪物来获取力量与试图不释放出强大到无法控制的怪物之间的平衡可能具有挑战性，但也同样具有回报。
+
+此外，如果它访问的星球上存在任何停火协议，那么只要吞噬者在场，该停火协议就会失效。
+
+&lt;color=#f25e1c&gt;低影响：&lt;/color&gt; 此派系不会扩张，只有在被激怒时才能攻击建筑。有时能在战斗中造成巨大的局势转变。
+如果它达到或在第 4 级生成，则上述两点不再适用，届时即使未被激怒也能攻击建筑，并且除了游牧星球外几乎无法被击败，会立即击败同一星球上的任何其他敌对派系。"
+		ai_threat_against_this_faction_goes_back_to_guarding="true"
+		player_discoverable="true"
+		impact="Easier"
+		RequiresMinorFactionTeammates="true"
+		CanBeFriendlyToPlayer="true"
+		CanBeHostileToAll="true"
+		CanBeOnMinorFactionTeam="true"
+	>
+	<custom_field name="Allegiance" display_name="阵营" description="该派系对 AI、人类还是无人友好？"
+		sort_group="200" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="对所有敌对,对玩家友好,仅对玩家敌对,小派系小队红,小派系小队蓝,小派系小队绿" default_option="对所有敌对" />
+
+	<custom_field name="BeaconStart" display_name="信标启动" description="如果启用，吞噬者不会一开始就激活，而是作为信标生成。"
+		sort_group="300" setting_type="BoolToggle" default="false" />
+
+	<custom_field name="AwarenessRange" display_name="感知范围" description="吞噬者（除非被迫离开某个派系）只会考虑一定范围内的星球。"
+		sort_group="400" setting_type="IntSlider" default="3" min="1" max="10" />
+
+	<custom_field name="StartingDevourer" display_name="初始吞噬者类型" description="选择开始时或信标释放时生成的吞噬者傀儡类型。"
+		sort_group="500" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="吞噬者 (T1),毁灭者吞噬者 (T2),海啸吞噬者 (T2),随机 (T2),迫击炮吞噬者 (T3),坦克吞噬者 (T3),蜂群吞噬者 (T3),重力吞噬者 (T3),随机 (T3),水晶吞噬者 (T4),复仇吞噬者 (T4),九头蛇吞噬者 (T4),再生吞噬者 (T4),飓风吞噬者 (T4),方阵吞噬者 (T4),曲速吞噬者 (T4),奇点吞噬者 (T4),随机 (T4),任意" default_option="吞噬者 (T1)" />
+
+	<custom_field name="StartingTechLevel" display_name="初始技术等级" description="吞噬者可能通过某些行动（如入侵或对抗装置生成）提升等级。此设置控制生成时的技术等级。
+请注意，如果技术等级高于当前吞噬者傀儡的最高标记等级，它将立即开始进化；如果较低，则不会生成低于最低标记等级，但允许在实际上提升标记之前进行更多的技术升级。
+
+第 1 级：标记 1 - 3
+第 2 级：标记 2 - 4
+第 3 级：标记 3 - 5
+第 4 级：标记 4 - 7"
+		sort_group="400" setting_type="IntSlider" default="1" min="1" max="7" />
+
+	<custom_field name="DeathHandling" display_name="死亡处理" description="选择吞噬者傀儡被摧毁时会发生什么：
+蛹无循环：将经历蛹形态，直到达到第 4 级吞噬者，如果这最终形态死亡，它将永久消失。
+蛹循环：将经历蛹形态，直到达到第 4 级吞噬者，如果这最终形态死亡，第 1 级吞噬者将重生。
+自身重生：将无限期地以当前类型重生。
+以同级随机吞噬者重生：将以该等级的随机吞噬者重生。"
+		sort_group="700" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="蛹无循环,蛹循环,自身重生,以同级随机吞噬者重生" default_option="蛹无循环" />
+
+	<custom_field name="EnableDevourerAntagonizers" display_name="生成吞噬者对抗装置" description="如果启用，AI 可以生成吞噬者对抗装置。"
+		sort_group="800" setting_type="BoolToggle" default="true" />
+
+	</faction>
+</root>

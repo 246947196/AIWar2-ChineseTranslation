@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <!-- 0 = off, 1 == show damage, 2 = show metal loss -->
+  <setting name="PlanetSidebar_Option_ShowDpsMode" category="Invisible" display_name="N/A" type="IntHidden" default="0" />
+
+</root>

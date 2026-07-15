@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<journal name="NA_WildHives_WildHiveDiscovered" sidebar_text="{FactionColor}野生宁苏：&lt;/color&gt; 侵扰"
+			can_record_another_copy_if_already_recorded_in_this_campaign="false"
+			text_replacement_related_faction_color="true"
+		    text_replacement_related_player_name="true"
+			text_replacement_related_planet="true"
+			chat_text="指挥官，我们发现我们一个潜在资源节点被他人占据了！"
+			is_partial_record="true" 
+            full_text="发件人：首席情报官雨果·道森
+情报部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+我们在 {PlanetName} 上的扫描仪有了一个惊人的发现。到目前为止，我们发现的每一支敌对力量都避免使用遍布银河系的各种金属发生器。然而，这些外星人似乎像我们一样开始利用它们。你的科学顾问称它们为"野生蜂巢"，它们对我们的战役构成了潜在障碍。
+
+这种侵扰似乎深深植根于金属发生器中，我们可以检测到大量知觉生命在发生器中流动，随着时间变得越来越强大。它们似乎并非天生敌对，但确实似乎在其行星上对引擎和武器造成问题。
+
+你的军事顾问强烈建议在它们得以扩散并削弱你已经紧张的战时经济之前展示武力。
+
+然而，你的科学顾问建议采取更温和的方法。他们声称我们不需要银河系中的每一种资源，而这是一个深入了解外星生命的绝佳机会。但他们不情愿地同意，如果它们占领了我们太多领土，武力可能是必要的。" />
+
+	<journal name="NA_WildHives_WildHiveAttacked" sidebar_text="{FactionColor}野生宁苏：&lt;/color&gt; 自卫"
+			can_record_another_copy_if_already_recorded_in_this_campaign="false"
+			text_replacement_related_faction_color="true"
+		    text_replacement_related_player_name="true"
+			text_replacement_related_planet="true"
+			chat_text="指挥官，银河系中的一个野生蜂巢遭到了攻击。"
+			is_partial_record="true" 
+            full_text="发件人：尤安娜·派恩希尔博士
+宁苏研究部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+银河系中的一个野生蜂巢遭到了攻击，并进行了强力反击。一些被称为"士兵"的族人从蜂巢中出现，并与它们的侵略者交战。
+
+有趣的是，我们的科学家注意到，在这种被激怒的状态下，它们通常阻止大多数舰船攻击它们的瞄准干扰器会失灵，即使是最小的战机现在也能够攻击它们。虽然这不影响我们指挥部队手动瞄准它们的能力，但这可能为其他派系在其行星上打开突破口。
+
+最后，大量太小的修理舰船（我们的扫描仪无法准确探测）正在等待修复蜂巢所受到的损害。基于蜂巢附近的数量，我们的科学家相信它们有能力在有机会时进行快速修复。" />
+
+	<journal name="NA_WildHives_WildHiveFriendly" sidebar_text="{FactionColor}野生宁苏：&lt;/color&gt; 友好"
+			can_record_another_copy_if_already_recorded_in_this_campaign="false"
+			text_replacement_related_faction_color="true"
+		    text_replacement_related_player_name="true"
+			text_replacement_related_planet="true"
+			chat_text="指挥官，我们现在可以访问 {PlanetName} 上的一个野生蜂巢。"
+			is_partial_record="true" 
+            full_text="发件人：尤安娜·派恩希尔博士
+宁苏研究部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+出于某种原因，我们现在可以访问 {PlanetName} 上的一个野生蜂巢。
+
+虽然我们当地的舰船和建筑仍然报告能力的下降，但我们的指挥站似乎至少在某种程度上抵消了这种效果。不过，空间站指挥官注意到他担心如果更多的金属发生器被感染，他们将能发挥出多好的性能。
+
+我们的科学家们兴奋不已，终于能够深入研究它们了，他们处于各种兴奋状态。他们的初步发现证实了我们已知的大部分情况，但更有趣的是，似乎有一种他们以前从未见过的奇怪变异。一些小型宁苏似乎也在使用强大的传感器反过来研究我们的科学家，这让科学家们充满了希望。" />
+
+	<journal name="NA_WildHives_WildHiveFriendlyMultiHive" sidebar_text="{FactionColor}野生宁苏：&lt;/color&gt; 友好"
+			can_record_another_copy_if_already_recorded_in_this_campaign="false"
+			text_replacement_related_faction_color="true"
+		    text_replacement_related_player_name="true"
+			text_replacement_related_planet="true"
+			chat_text="指挥官，我们现在可以访问 {PlanetName} 上的一个野生蜂巢。"
+			is_partial_record="true" 
+            full_text="发件人：尤安娜·派恩希尔博士
+宁苏研究部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+出于某种原因，我们现在可以访问 {PlanetName} 上的一个野生蜂巢。
+
+虽然我们当地的舰船和建筑仍然报告能力的下降，但我们的指挥站似乎至少在某种程度上抵消了这种效果。不过，空间站指挥官注意到他担心如果更多的金属发生器被感染，他们将能发挥出多好的性能。
+
+我们的科学家们兴奋不已，终于能够深入研究它们了，他们处于各种兴奋状态。他们的初步发现证实了我们已知的大部分情况，但更有趣的是，似乎有一种他们以前从未见过的奇怪变异。一些小型宁苏似乎也在使用强大的传感器反过来研究我们的科学家，这让科学家们充满了希望。
+
+奇怪的是，我们的一位科学家注意到它们不再使用他们认为用于探测敌对蜂巢的波长进行广播。他们的理论是野生蜂巢并不天然地对彼此敌对，这是人工智能为了防止它们失控扩散而设置的反制措施。" />
+
+	<journal name="NA_WildHives_WildHiveFriendlyDefense" sidebar_text="{FactionColor}野生宁苏：&lt;/color&gt; 友好防御者"
+			can_record_another_copy_if_already_recorded_in_this_campaign="false"
+			text_replacement_related_faction_color="true"
+		    text_replacement_related_player_name="true"
+			text_replacement_related_planet="true"
+			chat_text="指挥官，{PlanetName} 上的野生蜂巢前来援助我们了。"
+			is_partial_record="true" 
+            full_text="发件人：首席情报官雨果·道森
+情报部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+敌对力量出现在 {PlanetName} 上的那一刻，大量族人士兵出现了！我们当地的指挥官起初很担心，但很快意识到这些新舰船只瞄准敌对力量。
+
+我们当地的科学家推测这是由于它们天生不喜欢人工智能控制的空间。由于缺乏更好的解释，他们说当地的宁苏在占据我们的行星后似乎总体上……更平静了。" />
+
+	<journal name="NA_WildHives_WildHiveNonMetalGenerator" sidebar_text="{FactionColor}野生宁苏：&lt;/color&gt; 更大感染"
+			can_record_another_copy_if_already_recorded_in_this_campaign="false"
+			text_replacement_related_faction_color="true"
+		    text_replacement_related_player_name="true"
+			text_replacement_related_planet="true"
+			chat_text="指挥官，野生蜂巢占据了一个可占领物！"
+			is_partial_record="true" 
+            full_text="发件人：军事顾问安娜·斯诺
+舰队指挥部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+你的科学顾问带来了令人不安的消息……金属发生器似乎不是这些"野生蜂巢"侵扰的唯一可行宿主。我们检测到行星 {PlanetName} 上的一个可占领物经历了与金属发生器类似的侵扰，然而更大的内部空间加上"野生蜂巢"生物不断运送物资到被侵扰的可占领物，使其变成了一个"更大"的蜂巢。其中的活动被注意到比金属发生器中的更加活跃。我们可以期望从那个被侵扰的可占领物中出现更多数量的部队。
+
+虽然我们可以预料到被侵扰的可占领物会对敌对者进行更强的抵抗，但我们自己无法占领它。然而，经过你的科学顾问团队对侵扰的彻底分析，以及你的军事顾问指导的一些武器调整和校准，可占领物结构完整性的弱点已被识别，可以在不造成可占领物毁灭的情况下加以利用来破坏和清除侵扰。瞄准被侵扰的可占领物应该能将其从"野生蜂巢"的控制中解放出来，如果我们想要自己占领它的话。
+
+这一发展的影响相当令人担忧。虽然我们目前没有理由相信"野生蜂巢"除了将这个可占领物用作繁殖巢穴外还有其他用途，但这可能意味着其他可占领物也容易受到野生蜂巢的侵扰。我们将密切关注其他可占领物，并相应调整武器以对其造成最小伤害。" />
+
+	<journal name="NA_WildHives_WildHiveContested" sidebar_text="{FactionColor}野生宁苏：&lt;/color&gt; 争夺中的领土"
+			can_record_another_copy_if_already_recorded_in_this_campaign="false"
+			text_replacement_related_faction_color="true"
+		    text_replacement_related_player_name="true"
+			text_replacement_related_planet="true"
+			chat_text="指挥官，野生蜂群开始了一场混战！"
+			is_partial_record="true" 
+            full_text="发件人：尤安娜·派恩希尔博士
+宁苏研究部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+我们了解到了一个最有趣的发展。看来"野生蜂巢"并不像它们看起来那样统一。经过更仔细的检查，实际上有几种不同的野生蜂巢亚种，每个亚种或"派系"都有独特的特征和标记。值得注意的是，当两个或更多不同的派系在一个行星的引力井相遇时，它们会试图争夺领土，相互战斗。
+
+我们通知你的原因是这种争夺中的领土正在导致野生蜂巢派系猛烈攻击。虽然它们之前是一种"你不惹我我就不惹你"的交易，现在它们正在侵略性地攻击一切事物。这可能会是一张相当难以预料的牌。它们可能最终为我们摧毁人工智能部队，或者我们自己可能被卷入交火。如果一个派系在争夺中的领土取得统治地位，它应该会恢复到"和平共处"的行为。
+
+你的军事顾问指出这是"彻底消灭那些虫子的绝佳机会"，她说得没错。当它们忙着互相射击时，我们可以在一方即将取得统治地位时突袭，将它们全部清理并清除所有侵扰。然而，你的科学顾问建议要么静观其变以避免不必要的损失，要么帮助一方结束这场混战。选择权在你，指挥官。" />
+
+	<journal name="NA_WildHives_WildHiveFriendlyBond" sidebar_text="{FactionColor}野生宁苏：&lt;/color&gt; 族人"
+			can_record_another_copy_if_already_recorded_in_this_campaign="false"
+			text_replacement_related_faction_color="true"
+		    text_replacement_related_player_name="true"
+			chat_text="指挥官，一艘中等大小的宁苏舰船开始模仿我们的行动。"
+			is_partial_record="true" 
+            full_text="发件人：尤安娜·派恩希尔博士
+宁苏研究部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+一艘寿命较长的宁苏舰船离开了它的巢穴空间并开始向我们的部队移动。它似乎径直朝着一艘舰船飞去，我们能翻译的来自它的传输似乎表明它不愿与之分离，并且表现出我们认为的想要保护的意愿。更有趣的是，看起来这个我们一些人称之为"族人"的舰船能够制造自己的幼崽来协助战斗。" />
+			
+	<journal name="NA_WildHives_WildHiveWitheringWorker" sidebar_text="{FactionColor}野生宁苏：&lt;/color&gt; 衰败"
+			can_record_another_copy_if_already_recorded_in_this_campaign="false"
+			text_replacement_related_faction_color="true"
+		    text_replacement_related_player_name="true"
+			text_replacement_related_planet="true"
+			chat_text="指挥官，一艘宁苏工人舰船开始衰败。"
+			is_partial_record="true" 
+            full_text="发件人：尤安娜·派恩希尔博士
+宁苏研究部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+{PlanetName} 上的一艘宁苏工人舰船已经开始衰败。我们的科学家认为这是由于某种原因无法离开该行星。如果它在更长的时间内无法逃脱，它将很快触发该行星上所有野生蜂巢的防御响应。" />
+
+</root>

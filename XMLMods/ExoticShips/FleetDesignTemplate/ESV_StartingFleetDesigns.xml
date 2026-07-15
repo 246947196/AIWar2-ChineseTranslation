@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <fleet_design name="ExS_BombSwarmFleet"
+        display_name="炸弹蜂群舰队"
+        description="拥有大量可制造的弹头，这支舰队可以同时歼灭结构和舰船，但消耗大量金属。如需额外火力，光束医疗护卫舰在工厂附近时还能帮助更快地建造舰船。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Base" ship_cap_group="Centerpiece" weight="100" min="1" max="1"/>
+	
+    <ship_membership name="FusionMissile" ship_cap_group="Strike" weight="100" cap="14" />
+    <ship_membership name="ClusterBomb" ship_cap_group="Strike" weight="100" cap="19" />
+    <ship_membership name="BeamMedicLightFrigate" ship_cap_group="Frigate" weight="100" cap="9" />
+  </fleet_design>
+
+  <fleet_design name="ExS_ExploiterFleet"
+        display_name="剥削者舰队"
+        description="拥有液化者提供的极端内置伤害放大，以及豪猪和麻痹-拆解者护卫舰的足够多发齐射使其物有所值，这支舰队可以字面意思地熔化敌人，但其对结构的攻击力有些不足。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Base" ship_cap_group="Centerpiece" weight="100" min="1" max="1"/>
+	
+    <ship_membership name="Liquifier" ship_cap_group="Strike" weight="100" cap="9" />
+    <ship_membership name="Porcupine" ship_cap_group="Strike" weight="100" cap="32" />
+    <ship_membership name="ParalyzerScrapperFrigate" ship_cap_group="Frigate" weight="100" cap="6" />
+  </fleet_design>
+
+  <fleet_design name="ExS_GuardFleet"
+        display_name="守卫舰队"
+        description="由更坚韧和缓慢的舰船组成，这支舰队擅长持久战。抓钩护卫舰对付小型舰船，重型聚变轰炸机对付任何有护盾的目标，反过来可由支援发射器护卫舰保护和修复。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Base" ship_cap_group="Centerpiece" weight="100" min="1" max="1"/>
+	
+    <ship_membership name="GrapplerCorvette" ship_cap_group="Strike" weight="100" cap="7" />
+    <ship_membership name="HeavyFusionBomber" ship_cap_group="Strike" weight="100" cap="35" />
+    <ship_membership name="SupportLauncherFrigate" ship_cap_group="Frigate" weight="100" cap="6" />
+  </fleet_design>
+
+  <fleet_design name="ExS_LightFrigateFleet"
+        display_name="轻型护卫舰队"
+        description="拥有所有初始舰队中最少的舰船线，只有聚变-拦截者和雷达轻型护卫舰各一线，这支舰队可能看起来弱小，但其火力和强度非同寻常。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Base" ship_cap_group="Centerpiece" weight="100" min="1" max="1"/>
+	
+    <ship_membership name="FusionInterceptorLightFrigate" ship_cap_group="Frigate" weight="100" cap="9" />
+    <ship_membership name="RadarLightFrigate" ship_cap_group="Frigate" weight="100" cap="9" />
+  </fleet_design>
+
+  <fleet_design name="ExS_CounterFleet"
+        display_name="反制舰队"
+        description="这支舰队有效反制对手。引力汲取者护卫舰处理大多数攻击艇，而潜行者摧毁护卫舰、守护者及以上级别的目标。对于最大的目标，诺里斯重型护卫舰帮助快速移除护盾。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Base" ship_cap_group="Centerpiece" weight="100" min="1" max="1"/>
+	
+    <ship_membership name="GraviticDrainerCorvette" ship_cap_group="Strike" weight="100" cap="10" />
+    <ship_membership name="Stalker" ship_cap_group="Strike" weight="100" cap="32" />
+    <ship_membership name="NorrisHeavyFrigate" ship_cap_group="Frigate" weight="100" cap="4" />
+  </fleet_design>
+
+  <fleet_design name="ExS_UniversalFleet"
+        display_name="通用舰队"
+        description="这里应有尽有。小型攻击艇被黑寡妇护卫舰吞噬，反过来大型星舰被撞击舰炸毁。如果敌人想躲在护盾后面，护盾水蛭很乐意处置它们。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Base" ship_cap_group="Centerpiece" weight="100" min="1" max="1"/>
+	
+    <ship_membership name="ShieldLeech" ship_cap_group="Strike" weight="100" cap="18" />
+    <ship_membership name="Ram" ship_cap_group="Strike" weight="100" cap="19" />
+    <ship_membership name="BlackWidowFrigate" ship_cap_group="Frigate" weight="100" cap="6" />
+  </fleet_design>
+
+  <fleet_design name="ExS_FormationFleet" required_expansion_list="1_The_Spire_Rises"
+        display_name="编队舰队"
+        description="设计用于紧密协作并以几乎零损失消灭敌人。伏击光束机器人和狙击网络阻止敌人靠近，而虹吸者保护它们并进一步放大机器人的伤害。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Base" ship_cap_group="Centerpiece" weight="100" min="1" max="1"/>
+	
+    <ship_membership name="AmbushBeamBot" ship_cap_group="Strike" weight="100" cap="72" />
+    <ship_membership name="SniperNetwork" ship_cap_group="Strike" weight="100" cap="40" />
+    <ship_membership name="Siphoner" ship_cap_group="Frigate" weight="100" cap="4" />
+  </fleet_design>
+
+  <fleet_design name="ExS_HarmonyFleet" required_expansion_list="1_The_Spire_Rises"
+        display_name="谐波舰队"
+        description="部署两线谐波微型战斗机以提供额外打击力，尤其在游戏后期，这支舰队的成长性无与伦比，但可能难以应对高DPS敌人。离子干扰器帮助眩晕它们。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Base" ship_cap_group="Centerpiece" weight="100" min="1" max="1"/>
+	
+    <ship_membership name="HarmonicMicroFighter" ship_cap_group="Strike" weight="100" cap="72" />
+    <ship_membership name="IonDisruptor" ship_cap_group="Frigate" weight="100" cap="6" />
+  </fleet_design><!-- 另一条舰队成员关系在 HarmonicMicroFighter 自身中定义，这就是在其中放入两条线的方法-->
+
+  <fleet_design name="ExS_MultiplierFleet" required_expansion_list="1_The_Spire_Rises"
+        display_name="增殖舰队"
+        description="设计用于以数量压倒敌人。僵尸杀手在造成伤害时复制，先锋九头蛇在被击杀时复制，协同航母通过不断释放更多无人机快速击杀敌人——如果它们存活下来，而敌人忙于射击不断增长的敌人数量。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Base" ship_cap_group="Centerpiece" weight="100" min="1" max="1"/>
+	
+    <ship_membership name="ZombieSlayer" ship_cap_group="Strike" weight="100" cap="27" />
+    <ship_membership name="VanguardHydra" ship_cap_group="Strike" weight="100" cap="15" />
+    <ship_membership name="SynergyCarrier" ship_cap_group="Frigate" weight="100" cap="4" />
+  </fleet_design>
+
+  <fleet_design name="ExS_BlockadeFleet" required_expansion_list="1_The_Spire_Rises"
+        display_name="封锁舰队"
+        description="一个装在盒子里的完整防御线。在乌龟重型护卫舰组成的墙的保护下，反护盾脉冲坦克同时快速解决护卫舰和攻击艇，而后方线上的狙击巢轻型护卫舰不断敲击。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Base" ship_cap_group="Centerpiece" weight="100" min="1" max="1"/>
+	
+    <ship_membership name="TurtleHeavyCorvette" ship_cap_group="Strike" weight="100" cap="7" />
+    <ship_membership name="AntiShieldPulsarTank" ship_cap_group="Strike" weight="100" cap="15" />
+    <ship_membership name="SniperNestLightFrigate" ship_cap_group="Frigate" weight="100" cap="9" />
+  </fleet_design>
+
+  <fleet_design name="ExS_EliteFleet" required_expansion_list="2_Zenith_Onslaught"
+        display_name="精英舰队"
+        description="用于更专业化作战行动的精英单位。滴答机器人一旦选定目标就能快速解决，或与敌人同归于尽，而老兵狙击手和增殖者处理剩余的敌方力量。战斗很快结束——无论哪边赢。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Base" ship_cap_group="Centerpiece" weight="100" min="1" max="1"/>
+	
+    <ship_membership name="TickBot" ship_cap_group="Strike" weight="100" cap="13" />
+    <ship_membership name="VeteranSniper" ship_cap_group="Strike" weight="100" cap="32" />
+    <ship_membership name="Ramifier" ship_cap_group="Frigate" weight="100" cap="6" />
+  </fleet_design>
+
+  <fleet_design name="ExS_ThunderstormFleet" required_expansion_list="2_Zenith_Onslaught"
+        display_name="雷暴舰队"
+        description="以各种闪电单位为基础，这支舰队既能承受伤害也能造成伤害。风暴重型护卫舰和电击者的组合在前线处理敌人，而闪电炮击护卫舰从远处轰击敌人。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Base" ship_cap_group="Centerpiece" weight="100" min="1" max="1"/>
+	
+    <ship_membership name="StormHeavyCorvette" ship_cap_group="Strike" weight="100" cap="7" />
+    <ship_membership name="Zapper" ship_cap_group="Strike" weight="100" cap="11" />
+    <ship_membership name="LightningArtilleryFrigate" ship_cap_group="Frigate" weight="100" cap="6" />
+  </fleet_design>
+
+  <fleet_design name="ExS_PaybackFleet" required_expansion_list="2_Zenith_Onslaught"
+        display_name="复仇舰队"
+        description="以超出敌人预期的力量进行反击，这支舰队使用暗镜和拾荒者重型护卫舰进行火力反击。多艘后卫舰帮助治疗受损舰船以获得更强的耐力和伤害返还潜力。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Base" ship_cap_group="Centerpiece" weight="100" min="1" max="1"/>
+	
+    <ship_membership name="Rearguard" ship_cap_group="Strike" weight="100" cap="36" />
+    <ship_membership name="DarkMirror" ship_cap_group="Strike" weight="100" cap="12" />
+    <ship_membership name="ScavengerHeavyFrigate" ship_cap_group="Frigate" weight="100" cap="4" />
+  </fleet_design>
+
+  <fleet_design name="ExS_ParadimensionalFleet" required_expansion_list="2_Zenith_Onslaught"
+        display_name="异次元舰队"
+        description="以高度先进和奇异的武器对付敌人，一旦铁砧重型护卫舰使用空间炸弹和虚空编织者在多相位中消灭敌人以移除其护盾，这支舰队就能将敌人从当前存在层面移除。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Base" ship_cap_group="Centerpiece" weight="100" min="1" max="1"/>
+	
+    <ship_membership name="WarpBomb" ship_cap_group="Strike" weight="100" cap="11" />
+    <ship_membership name="VoidWeaver" ship_cap_group="Strike" weight="100" cap="16" />
+    <ship_membership name="AnvilHeavyFrigate" ship_cap_group="Frigate" weight="100" cap="4" />
+  </fleet_design>
+
+
+  <fleet_design name="ExS_StartTest" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss"
+        display_name="测试舰队"
+        description="用于测试的所有 ExS 舰船。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Base" ship_cap_group="Centerpiece" weight="100" min="1" max="1"/>
+	
+    <ship_membership name="FusionMissile" ship_cap_group="Strike" weight="100" cap="14" />
+    <ship_membership name="GrapplerCorvette" ship_cap_group="Strike" weight="100" cap="7" />
+    <ship_membership name="GraviticDrainerCorvette" ship_cap_group="Strike" weight="100" cap="10" />
+    <ship_membership name="Liquifier" ship_cap_group="Strike" weight="100" cap="9" />
+    <ship_membership name="PyoticTranslocatorCorvette" ship_cap_group="Strike" weight="100" cap="11" />
+    <ship_membership name="ShieldLeech" ship_cap_group="Strike" weight="100" cap="18" />
+	
+    <ship_membership name="BeamMedicLightFrigate" ship_cap_group="Frigate" weight="100" cap="9" />
+    <ship_membership name="BlackWidowFrigate" ship_cap_group="Frigate" weight="100" cap="6" />
+    <ship_membership name="FusionInterceptorLightFrigate" ship_cap_group="Frigate" weight="100" cap="9" />
+    <ship_membership name="NorrisHeavyFrigate" ship_cap_group="Frigate" weight="100" cap="4" />
+    <ship_membership name="ParalyzerScrapperFrigate" ship_cap_group="Frigate" weight="100" cap="6" />
+    <ship_membership name="RadarLightFrigate" ship_cap_group="Frigate" weight="100" cap="9" />
+    <ship_membership name="SupportLauncherFrigate" ship_cap_group="Frigate" weight="100" cap="6" />
+	
+    <ship_membership name="InitiatorHeavyCorvette" ship_cap_group="Strike" weight="100" cap="6" />
+    <ship_membership name="NucleonFighter" ship_cap_group="Strike" weight="100" cap="55" />
+    <ship_membership name="RavagerBot" ship_cap_group="Strike" weight="100" cap="260" />
+	
+    <ship_membership name="FlamebladeLightFrigate" ship_cap_group="Frigate" weight="100" cap="3" />
+	
+	
+    <ship_membership name="AmbushBeamBot" ship_cap_group="Strike" weight="100" cap="72" />
+    <ship_membership name="HarmonicMicroFighter" ship_cap_group="Strike" weight="100" cap="72" />
+    <ship_membership name="SniperNetwork" ship_cap_group="Strike" weight="100" cap="40" />
+    <ship_membership name="TurtleHeavyCorvette" ship_cap_group="Strike" weight="100" cap="7" />
+    <ship_membership name="ZombieSlayer" ship_cap_group="Strike" weight="100" cap="27" />
+	
+    <ship_membership name="SniperNestLightFrigate" ship_cap_group="Frigate" weight="100" cap="9" />
+    <ship_membership name="SynergyCarrier" ship_cap_group="Frigate" weight="100" cap="4" />
+	
+    <ship_membership name="AttritionerFrigate" ship_cap_group="Frigate" weight="100" cap="12" />
+	
+	
+    <ship_membership name="Rearguard" ship_cap_group="Strike" weight="100" cap="36" />
+    <ship_membership name="StormHeavyCorvette" ship_cap_group="Strike" weight="100" cap="7" />
+    <ship_membership name="TickBot" ship_cap_group="Strike" weight="100" cap="13" />
+    <ship_membership name="VoidWeaver" ship_cap_group="Strike" weight="100" cap="16" />
+    <ship_membership name="WarpBomb" ship_cap_group="Strike" weight="100" cap="11" />
+	
+    <ship_membership name="AnvilHeavyFrigate" ship_cap_group="Frigate" weight="100" cap="4" />
+    <ship_membership name="AssaultCruiser" ship_cap_group="Frigate" weight="100" cap="1" />
+    <ship_membership name="ImmortalCruiser" ship_cap_group="Frigate" weight="100" cap="1" />
+    <ship_membership name="LightningArtilleryFrigate" ship_cap_group="Frigate" weight="100" cap="6" />
+    <ship_membership name="ScavengerHeavyFrigate" ship_cap_group="Frigate" weight="100" cap="4" />
+	
+    <ship_membership name="InvasionBomber" ship_cap_group="Strike" weight="100" cap="40" />
+	
+    <ship_membership name="PhaseCruiser" ship_cap_group="Frigate" weight="100" cap="1" />
+	
+	
+    <ship_membership name="AntiGravityDestroyer" ship_cap_group="Frigate" weight="100" cap="2" />
+	
+	
+    <ship_membership name="GreatSabotDestroyer" ship_cap_group="Frigate" weight="100" cap="2" />
+	
+    <ship_membership name="SiegeEngineDestroyer" ship_cap_group="Frigate" weight="100" cap="4" />
+  </fleet_design>
+</root>

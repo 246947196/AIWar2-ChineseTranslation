@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<entity name="ArtilleryCruiser" is_partial_record="true" required_expansion_list="1_The_Spire_Rises" required_mod_list="MoreSystemDefenders" >
+		<data_extension name="ShipLineUpgradeOverride" exclude_from_dependencies="true" />
+	</entity>
+</root>

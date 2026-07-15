@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<!-- Slicer Ark -->
+	<entity name="RPSF_Ark_Slicer" copy_from="RPSF_Ark_Template"
+		tags="ShowsOnNormalDisplayMode,Capturable,AnyEarlyOfficer,AnyEarlyOfficer_Expert"
+		capturable_seed_weight="50" capturable_max_per_galaxy="1" capturable_can_seed_at_all="true"
+		thematic_groups="ArkCapturable,Human"
+		
+		visuals="Assets/_FinalGameMeshes/AIExtragalactic/Tier3_ExtragalacticWarSlicerFrigate/Tier3_ExtragalacticWarSlicerFrigate.prefab"
+		visuals_scale_multiplier="16"
+		
+		icon_overlay="Overlays2/Guardian_Shredder"
+		
+		voice_group="Melee"
+		display_name="切割者方舟"
+		description="快速的隐形方舟，用其穿盾颚部代谢敌人，对更大目标造成更高伤害。"
+		
+		aip_to_claim="9"
+		
+		tech_upgrades_that_benefit_me="Melee" 
+		tech_upgrade_that_is_used_for_my_direct_science="RPSF_Direct_ArkWithTech_Weapon"
+		
+		cost_for_ai_to_purchase="500"
+		
+		speed="VeryHigh1"
+		
+		engine_gx="22"
+		
+		priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty"
+		>
+		<system name="WM" display_name="聚变巨口" 
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="5000" 
+			rate_of_fire="Devourer" fires_salvos_sequentially="false"
+			range="AlmostNone" 
+			shot_speed="Fast" shot_type_data="MeleeInvisible" 
+			added_target_evaluator="Melee"
+			seek_range="Normal1" 
+			base_percent_damage_bypasses_personal_shields="1"
+			health_change_per_damage_dealt="1"
+			>
+			<death_effect_damage type="GreaterMetabolization" tier_name="BountyHunter"/> 
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="MultiplesOf" compared_to="1" multiplier="1" max_multiplier="12" />
+		</system><!-- 5000 x 2 targets x2 fusion x(~5) bonus /2 melee = 50k -->
+		<system name="C" display_name="隐形装置" category="Passive" cloaking_points="5000" cloaking_points_added_per_mark="2500" />
+		<system name="T" display_name="快子阵列"
+			category="Passive" 
+			tachyon_points="400"
+			tachyon_range="AboveAverage1" 
+			tachyon_hits_albedo_less_than="0.75">
+		</system>
+		<incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="3000" multiplier="0.1" />
+	</entity>
+	<entity copy_from="RPSF_Ark_Slicer" name="RPSF_Ark_Slicer_Sidekick" 
+		thematic_groups="ArkHomeCommand,Human"
+		gimbal_icon_size_multiplier="2" is_critical_infrastructure="true"
+		tags="ShowsOnNormalDisplayMode,HumanArkSidekickArks"
+	  	energy_consumption="0"
+		player_loses_if_any_die="false"
+		capturable_can_seed_at_all="false"
+		metal_storage="2500000" added_metal_storage_per_mark_level="500000"
+		is_scrapping_by_player_disallowed="true"
+		tech_upgrade_that_is_used_for_my_direct_science="Direct_ArkGeneral"
+		>
+		<resource_production type="Metal" amount="2200" increase_per_mark_level="800"/>
+		<resource_production type="Energy" amount="750000" increase_per_mark_level="55000"/>
+		<resource_production type="FuelArgon" amount="500000" />
+		<resource_production type="FuelRadon" amount="500000" />
+		<metal_flow purpose="FactoryConstructionForPlayerMobileFleets" throughput="3000" increase_per_mark_level="2000"/>
+		
+	</entity>
+	<entity copy_from="RPSF_Ark_Slicer_Sidekick" name="RPSF_Ark_Slicer_Home" 
+		special_entity_type="HumanHomeArk" 
+		icon_name="Ships1/King"
+		tags="ShowsOnNormalDisplayMode,HumanArkEmpireArks"
+		player_loses_if_any_die="true"
+		>	
+		<resource_production type="Metal" amount="2200" increase_per_mark_level="400"/>
+		<resource_production type="Energy" amount="350000" increase_per_mark_level="25000"/>
+	</entity>
+	
+	<!-- Raid Transport Ark -->
+	
+	<entity name="RPSF_Ark_RaidTransport" copy_from="RPSF_Ark_Template"
+		tags="ShowsOnNormalDisplayMode,Capturable,AnyOfficer,AnyOfficer_Expert"
+		capturable_seed_weight="50" capturable_max_per_galaxy="1" capturable_can_seed_at_all="true"
+	
+		thematic_groups="ArkCapturable,Human"
+		visuals="assets/_finalgamemeshes/humanoddities/colonyship/colonyship.prefab"
+		size_scale="10" visuals_scale_multiplier="12"
+		y_offset_of_icon="25"
+	
+		icon_overlay="Overlays1/Starship_Raid"
+		
+		voice_group="Raider"
+		display_name="突袭方舟"
+		description="快得离谱。隐形。无开火延迟。无武器。"
+	
+		aip_to_claim="1"
+		
+		armor_mm="180" albedo="0.7" engine_gx="25" mass_tx="6"
+		seconds_to_fully_regenerate_hull="600"
+		
+		metal_cost="250000" energy_consumption="100000"
+		
+		speed="ExtremelyHigh2"
+		
+		tech_upgrades_that_benefit_me="Raid"
+		tech_upgrade_that_is_used_for_my_direct_science="RPSF_Direct_ArkWithTech_Weapon"
+		
+		firing_delay_for_transported_ships="0"	
+		eligible_for_hacks="IncreaseShieldDurability,IncreaseHullDurability"
+		>
+		<system name="C" display_name="隐形装置"
+			category="Passive"
+			cloaking_points="2000"
+			cloaking_points_added_per_mark="1000"
+			>
+		</system>
+		<incoming_damage_modifier based_on="AttackDistance" comparison_type="AtLeast" compared_to="4400" multiplier="0.01" />
+	</entity>
+	<entity copy_from="RPSF_Ark_RaidTransport" name="RPSF_Ark_RaidTransport_Sidekick" 
+		thematic_groups="ArkHomeCommand,Human"
+		gimbal_icon_size_multiplier="2" is_critical_infrastructure="true"
+		tags="ShowsOnNormalDisplayMode,HumanArkSidekickArks"
+	  	energy_consumption="0"
+		player_loses_if_any_die="false"
+		capturable_can_seed_at_all="false"
+		metal_storage="2500000" added_metal_storage_per_mark_level="500000"
+		is_scrapping_by_player_disallowed="true"
+		tech_upgrade_that_is_used_for_my_direct_science="Direct_ArkGeneral"
+		custom_neverRandom="true"
+		>
+		<resource_production type="Metal" amount="2200" increase_per_mark_level="800"/>
+		<resource_production type="Energy" amount="750000" increase_per_mark_level="55000"/>
+		<resource_production type="FuelArgon" amount="500000" />
+		<resource_production type="FuelRadon" amount="500000" />
+		<metal_flow purpose="FactoryConstructionForPlayerMobileFleets" throughput="3000" increase_per_mark_level="2000"/>
+	</entity>
+	<entity copy_from="RPSF_Ark_RaidTransport_Sidekick" name="RPSF_Ark_RaidTransport_Home" 
+		special_entity_type="HumanHomeArk" 
+		icon_name="Ships1/King"
+		tags="ShowsOnNormalDisplayMode,HumanArkEmpireArks"
+		player_loses_if_any_die="true"
+		custom_neverRandom="true"
+		>	
+		<resource_production type="Metal" amount="2200" increase_per_mark_level="400"/>
+		<resource_production type="Energy" amount="350000" increase_per_mark_level="25000"/>
+	</entity>
+</root>

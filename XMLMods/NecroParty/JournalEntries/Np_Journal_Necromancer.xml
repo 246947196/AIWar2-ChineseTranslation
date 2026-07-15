@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!--- Necromancer -->
+
+    <journal
+            name="Np_Necromancer_Reminder"
+            sidebar_text="{color=#fefefe}Mod:{/color} {color=#a67cb2}死灵派对{/color}"
+            is_for_the_tips_tab="true"
+            can_record_another_copy_if_already_recorded_in_this_campaign="false"
+            text_replacement_related_faction_color="true"
+            full_text=
+"该Mod为{color=#0BDA51}死灵法师{/color}玩家带来了显著的游戏性变化。
+
+目标：
+增加获胜策略的多样性。
+让较少使用的机制和舰船发挥作用。
+让每局死灵法师游戏和银河都更具变化。
+
+详情：
+* {u}圣殿裂隙{/u}现在会{u}预先分布{/u}在银河中，而不会随时间生成。你将在探索过程中发现银河中可用的裂隙，并充分利用它们。
+* 所有线路和旗舰都经过了调整，使其价值与成本相匹配——而且可能也是你所能找到的全部了！"
+            />
+
+</root>

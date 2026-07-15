@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+        <!-- This is the same as the destroyer/cruiser hack -->
+        <item name="HackToGrantShipLine_Ds_ARS" copy_from="HackToGrantShipLine"
+                primary_response_strength_per_interval="9"
+                secondary_response_strength_per_interval="3"
+                cost_in_hacking_points="20"
+                hack_cost_multiplier_on_deepstrike_worlds="1"
+                hack_time_multiplier_on_deepstrike_worlds="1"
+                multiplier_to_hacking_point_cost_when_on_hostile_world="1"
+                multiplier_to_hacking_time_when_on_neutral_or_friendly_world="1.0"
+                hacking_points_against_this_faction_percentage_recorded_modifer="1.0"
+                display_name="恢复受损蓝图"
+                choice_text="为舰队获取此蓝图？"
+                description="This former AI facility has been compromised and it's schematics corrupted. But we think we can recover something usable, though unusual, from it."
+                
+                do_not_destroy_structure_after_hacking_multiple_times="false"
+        />
+
+        <item name="HackToGrantShipLine_Ds_TSS" copy_from="HackToGrantShipLine"
+                primary_response_strength_per_interval="12"
+                secondary_response_strength_per_interval="4"
+                cost_in_hacking_points="25"
+                hack_cost_multiplier_on_deepstrike_worlds="1"
+                hack_time_multiplier_on_deepstrike_worlds="1"
+                multiplier_to_hacking_point_cost_when_on_hostile_world="1"
+                multiplier_to_hacking_time_when_on_neutral_or_friendly_world="1.0"
+                hacking_points_against_this_faction_percentage_recorded_modifer="1.0"
+                display_name="恢复受损蓝图"
+                choice_text="为防御系统获取此蓝图？"
+                description="This former AI facility has been compromised and it's schematics corrupted. But we think we can recover something usable, though unusual, from it."
+
+                hacker_can_be_battlestation="true"
+                hacker_can_be_support_fleet="true"
+                is_for_granting_to_command_stations_and_battlestations="true"
+
+                do_not_destroy_structure_after_hacking_multiple_times="false"
+        />
+
+        <item name="HackToGrantShipLine_Ds_ODS" copy_from="HackToGrantShipLine"
+                primary_response_strength_per_interval="9"
+                secondary_response_strength_per_interval="3"
+                cost_in_hacking_points="15"
+                hack_cost_multiplier_on_deepstrike_worlds="1"
+                hack_time_multiplier_on_deepstrike_worlds="1"
+                multiplier_to_hacking_point_cost_when_on_hostile_world="1"
+                multiplier_to_hacking_time_when_on_neutral_or_friendly_world="1.0"
+                hacking_points_against_this_faction_percentage_recorded_modifer="1.0"
+                display_name="恢复受损蓝图"
+                choice_text="为防御系统获取此蓝图？"
+                description="This former AI facility has been compromised and it's schematics corrupted. But we think we can recover something usable, though unusual, from it."
+
+                hacker_can_be_battlestation="true"
+                hacker_can_be_support_fleet="true"
+                is_for_granting_to_command_stations_and_battlestations="true"
+
+                do_not_destroy_structure_after_hacking_multiple_times="false"
+        />
+	
+</root>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<entity name="Ds_ARS" copy_from="AdvancedResearchStation" tags="Ds_ARS"
+            thematic_groups="Hidden"
+            is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+
+            eligible_for_hacks="HackToGrantShipLine_Ds_ARS"
+			grants_stuff_to_be_added_to_player_fleets="true"
+			grants_stuff_to_be_added_to_player_fleets_required_tag="Ds_ARS_Choice"
+			grants_stuff_to_be_added_to_player_fleets_strikecraft_options="1"
+			grants_stuff_to_be_added_to_player_fleets_remove_overlapping_ships="true"
+			>
+	</entity>
+
+</root>

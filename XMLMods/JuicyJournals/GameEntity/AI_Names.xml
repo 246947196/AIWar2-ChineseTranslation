@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <!--难度 1-->
+  <entity name="AIOverlordPhase1_Diff1" is_partial_record="true"
+      display_name="人工智能中央指挥核心（v0.001proto）"
+      description="整个人工智能派系的中央处理单元。我们必须摧毁它的两个阶段才能击败这个派系，但请确保你先准备好了。
+      
+我们非常幸运地面对的是低级的 v0.001proto 变体，它极其弱小。" />
+
+  <entity name="AIOverlordPhase2_Diff1" is_partial_record="true"
+          forced_to_be_this_state_of_matter_when_on_former_or_current_ai_homeworld_or_bastion_worlds_unless_enemy_king_present="SoloPhase"
+      display_name="人工智能中央指挥核心第二阶段（v0.001proto）"
+      description="整个人工智能派系的中央处理单元，现已动员并愤怒——正朝我们的指挥部进发。我们必须摧毁这最后一个阶段才能击败这个派系。
+      
+我们非常幸运地面对的是低级的 v0.001proto 变体，它极其弱小并额外缓慢。" />
+
+  <!--难度 2-->
+  <entity name="AIOverlordPhase1_Diff2" is_partial_record="true"
+      display_name="人工智能中央指挥核心（v0.002proto）"
+      description="整个人工智能派系的中央处理单元。我们必须摧毁它的两个阶段才能击败这个派系，但请确保你先准备好了。
+      
+我们非常幸运地面对的是低级的 v0.002proto 变体，它极其弱小。" />
+
+  <entity name="AIOverlordPhase2_Diff2" is_partial_record="true"
+          forced_to_be_this_state_of_matter_when_on_former_or_current_ai_homeworld_or_bastion_worlds_unless_enemy_king_present="SoloPhase"
+      display_name="人工智能中央指挥核心第二阶段（v0.002proto）"
+      description="整个人工智能派系的中央处理单元，现已动员并愤怒——正朝我们的指挥部进发。我们必须摧毁这最后一个阶段才能击败这个派系。
+      
+我们非常幸运地面对的是低级的 v0.002proto 变体，它极其弱小并额外缓慢。" />
+
+  <!--难度 3-->
+  <entity name="AIOverlordPhase1_Diff3" is_partial_record="true"
+      display_name="人工智能中央指挥核心（v0.003proto）"
+      description="整个人工智能派系的中央处理单元。我们必须摧毁它的两个阶段才能击败这个派系，但请确保你先准备好了。
+      
+我们非常幸运地面对的是低级的 v0.003proto 变体，它极其弱小。" />
+
+  <entity name="AIOverlordPhase2_Diff3" is_partial_record="true"
+          forced_to_be_this_state_of_matter_when_on_former_or_current_ai_homeworld_or_bastion_worlds_unless_enemy_king_present="SoloPhase"
+      display_name="人工智能中央指挥核心第二阶段（v0.003proto）"
+      description="整个人工智能派系的中央处理单元，现已动员并愤怒——正朝我们的指挥部进发。我们必须摧毁这最后一个阶段才能击败这个派系。
+      
+我们非常幸运地面对的是低级的 v0.003proto 变体，它极其弱小并额外缓慢。" />
+
+  <!--难度 4-->
+  <entity name="AIOverlordPhase1_Diff4" is_partial_record="true"
+      display_name="人工智能中央指挥核心（v0.44rc）"
+      description="整个人工智能派系的中央处理单元。我们必须摧毁它的两个阶段才能击败这个派系，但请确保你先准备好了。
+      
+我们非常幸运地面对的是低级的 v0.44rc 变体，它相当弱小。" />
+
+  <entity name="AIOverlordPhase2_Diff4" is_partial_record="true"
+          forced_to_be_this_state_of_matter_when_on_former_or_current_ai_homeworld_or_bastion_worlds_unless_enemy_king_present="SoloPhase"
+      display_name="人工智能中央指挥核心第二阶段（v0.44rc）"
+      description="整个人工智能派系的中央处理单元，现已动员并愤怒——正朝我们的指挥部进发。我们必须摧毁这最后一个阶段才能击败这个派系。
+      
+我们非常幸运地面对的是低级的 v0.44rc 变体，它相当弱小并额外缓慢。" />
+
+  <!--难度 5-->
+  <entity name="AIOverlordPhase1_Diff5" is_partial_record="true"
+      display_name="人工智能中央指挥核心（v5xrc）"
+      description="整个人工智能派系的中央处理单元。我们必须摧毁它的两个阶段才能击败这个派系，但请确保你先准备好了。
+      
+我们幸运地面对的是 v5xrc 变体，它比报告让我们相信的情况要弱。" />
+
+  <entity name="AIOverlordPhase2_Diff5" is_partial_record="true"
+          forced_to_be_this_state_of_matter_when_on_former_or_current_ai_homeworld_or_bastion_worlds_unless_enemy_king_present="SoloPhase"
+      display_name="人工智能中央指挥核心第二阶段（v5xrc）"
+      description="整个人工智能派系的中央处理单元，现已动员并愤怒——正朝我们的指挥部进发。我们必须摧毁这最后一个阶段才能击败这个派系。
+      
+我们幸运地面对的是 v5xrc 变体，它比报告让我们相信的情况要弱，并且也比预期的要慢。" />
+
+  <!--难度 6-->
+  <entity name="AIOverlordPhase1_Diff6" is_partial_record="true"
+      display_name="人工智能中央指挥核心（x6kx）"
+      description="整个人工智能派系的中央处理单元。我们必须摧毁它的两个阶段才能击败这个派系，但请确保你先准备好了。
+      
+我们面对的是 x6kx 变体，它比报告让我们相信的要弱，但仍然令人生畏。" />
+
+  <entity name="AIOverlordPhase2_Diff6" is_partial_record="true"
+          forced_to_be_this_state_of_matter_when_on_former_or_current_ai_homeworld_or_bastion_worlds_unless_enemy_king_present="SoloPhase"
+      display_name="人工智能中央指挥核心第二阶段（x6kx）"
+      description="整个人工智能派系的中央处理单元，现已动员并愤怒——正朝我们的指挥部进发。我们必须摧毁这最后一个阶段才能击败这个派系。
+      
+我们面对的是 x6kx 变体，它比报告让我们相信的要弱，但仍然令人生畏。" />
+
+  <!--难度 7-->
+  <entity name="AIOverlordPhase1_Diff7" is_partial_record="true"
+      display_name="人工智能中央指挥核心（t7000）"
+      description="整个人工智能派系的中央处理单元。我们必须摧毁它的两个阶段才能击败这个派系，但请确保你先准备好了。
+      
+我们面对的是 t7000 变体，不可小觑。第二阶段将可移动且非常危险。" />
+
+  <entity name="AIOverlordPhase2_Diff7" is_partial_record="true"
+          forced_to_be_this_state_of_matter_when_on_former_or_current_ai_homeworld_or_bastion_worlds_unless_enemy_king_present="SoloPhase"
+      display_name="人工智能中央指挥核心第二阶段（t7000）"
+      description="整个人工智能派系的中央处理单元，现已动员并愤怒——正朝我们的指挥部进发。我们必须摧毁这最后一个阶段才能击败这个派系。
+      
+我们面对的是 t7000 变体，不可小觑。" />
+
+  <!--难度 8-->
+  <entity name="AIOverlordPhase1_Diff8" is_partial_record="true"
+      display_name="人工智能中央指挥核心（t80）"
+      description="整个人工智能派系的中央处理单元。我们必须摧毁它的两个阶段才能击败这个派系，但请确保你先准备好了。
+      
+我们面对的是致命的 t80 变体，它又强又快。第二阶段将可移动且非常危险。" />
+
+  <entity name="AIOverlordPhase2_Diff8" is_partial_record="true"
+          forced_to_be_this_state_of_matter_when_on_former_or_current_ai_homeworld_or_bastion_worlds_unless_enemy_king_present="SoloPhase"
+      display_name="人工智能中央指挥核心第二阶段（t80）"
+      description="整个人工智能派系的中央处理单元，现已动员并愤怒——正朝我们的指挥部进发。我们必须摧毁这最后一个阶段才能击败这个派系。
+      
+我们面对的是致命的 t80 变体，它又强又快。" />
+
+  <!--难度 9-->
+  <entity name="AIOverlordPhase1_Diff9" is_partial_record="true"
+      display_name="人工智能中央指挥核心（z90）"
+      description="整个人工智能派系的中央处理单元。我们必须摧毁它的两个阶段才能击败这个派系，但请确保你先准备好了。
+      
+我们面对的是致命的 z90 变体，它非常强且非常快。第二阶段将可移动且非常危险。" />
+
+  <entity name="AIOverlordPhase2_Diff9" is_partial_record="true"
+          forced_to_be_this_state_of_matter_when_on_former_or_current_ai_homeworld_or_bastion_worlds_unless_enemy_king_present="SoloPhase"
+      display_name="人工智能中央指挥核心第二阶段（z90）"
+      description="整个人工智能派系的中央处理单元，现已动员并愤怒——正朝我们的指挥部进发。我们必须摧毁这最后一个阶段才能击败这个派系。
+      
+我们面对的是致命的 z90 变体，它非常强且非常快。" />
+
+  <!--难度 10 - 变体 1-->
+  <entity name="AIOverlordPhase1_Diff10" is_partial_record="true"
+      display_name="人工智能中央指挥核心（x4000 超级）"
+      description="整个人工智能派系的中央处理单元。我们必须摧毁它的两个阶段才能击败这个派系，但请确保你先准备好了。
+      
+我们面对的是世界末日的 x4000 超级变体，它极其强大且速度快得惊人。第二阶段将可移动且非常危险。" />
+
+  <entity name="AIOverlordPhase2_Diff10" is_partial_record="true"
+          forced_to_be_this_state_of_matter_when_on_former_or_current_ai_homeworld_or_bastion_worlds_unless_enemy_king_present="SoloPhase"
+      display_name="人工智能中央指挥核心第二阶段（x4000 超级）"
+      description="整个人工智能派系的中央处理单元，现已动员并愤怒——正朝我们的指挥部进发。我们必须摧毁这最后一个阶段才能击败这个派系。
+      
+我们面对的是世界末日的 x4000 超级变体，它极其强大且速度快得惊人。" />
+
+  <!--难度 10 - 变体 2-->
+  <entity name="AIOverlordPhase1_Diff10_Puffin" is_partial_record="true"
+      display_name="人工智能中央指挥核心（PFFN）"
+      description="整个人工智能派系的中央处理单元。我们必须摧毁它的两个阶段才能击败这个派系，但请确保你先准备好了。
+      
+我们面对的是世界末日的 PFFN 变体，它极其强大、远程且速度快得惊人。第二阶段将可移动且非常危险。" />
+
+  <entity name="AIOverlordPhase2_Diff10_Puffin" is_partial_record="true"
+          forced_to_be_this_state_of_matter_when_on_former_or_current_ai_homeworld_or_bastion_worlds_unless_enemy_king_present="SoloPhase"
+      display_name="人工智能中央指挥核心第二阶段（PFFN）"
+      description="整个人工智能派系的中央处理单元，现已动员并愤怒——正朝我们的指挥部进发。我们必须摧毁这最后一个阶段才能击败这个派系。
+      
+我们面对的是世界末日的 PFFN 变体，它极其强大、远程且速度快得惊人。" />
+</root>

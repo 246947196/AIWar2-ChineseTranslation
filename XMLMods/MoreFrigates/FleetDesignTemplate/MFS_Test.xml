@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <fleet_design name="MFSAncientFleet"
+        display_name="远古舰队"
+        description="A fleet composed of frigates with lost technologies."
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Starter" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="MFSCommandFrigate" ship_cap_group="Frigate" weight="100" cap="3"/>
+	<ship_membership name="MFSPlasmaSiegeFrigate" ship_cap_group="Frigate" weight="100" cap="6"/>
+	<ship_membership name="MFSWarhawkFrigate" ship_cap_group="Frigate" weight="100" cap="6"/>
+  </fleet_design>
+
+  <fleet_design name="MFSExperimentalFleet"
+        display_name="Experimental Fleet"
+        description="A fleet composed of frigates with experimental technologies."
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Starter" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="MFSVampireFrigate" ship_cap_group="Frigate" weight="100" cap="6"/>
+	<ship_membership name="MFSCombatCarrier" ship_cap_group="Frigate" weight="100" cap="6"/>
+	<ship_membership name="MFSBeamAssaultFrigate" ship_cap_group="Frigate" weight="100" cap="6"/>
+  </fleet_design>
+</root>
+

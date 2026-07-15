@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- Dyson Moons: Combines a mobile factory with a Battlestation/Citadel
+ 
+		1) Every race gets their own unique “moon” 
+		2) every time the DS builds a major stronghold, they also get a corresponding moon. This is ideal because then every time a flagship is produced they get a moon to support it
+		3) every moon has a complement of thematic turrets to go along with it
+		4) there will be ways to increase the number and variety of turrets it can get. This is basically just a total copy of the Turrret servers for humans
+ 
+  -->
+	
+	
+	<!--TO DO: In Configuration, create folder "FleetLeaderTypeData" and make xml file for Fleet leader type in order to have unique special_entity_type for Dyson Moons
+	
+	<fleet_leader_type name="DysonMoon" display_name="Dyson Moon" required_special_entity_type="DysonMoon"/>
+	
+	For some reason, this is giving me an error when I try to create it, regardless if I simply try to add this to the existing basegame file-->
+
+	
+	<!--TO DO: 1) Update special_entity_type="DysonMoons"  (getting an error when I try to create this type; see the above point) 
+			   2) Update thematic_groups	(I think, maybe they just need "DysonSidekick")
+			   3) Update fleet_leader_type"DysonMoon"  (using "Battlestation" for the time being)
+			   4) Update tags (not sure what existing ones apply or nonexisting ones are needed)
+			   5) Update special_factory_type="Dyson Stronghold" (probably needs to be different from strongholds? But if these seed along with major strongholds, then maybe not?)
+		-->
+
+
+	<!--Moon Factory
+		So since its there's issues with making the Moon's factories themselves, we will have an oribtal factory accompany the Moon-->
+	
+	
+	<!--
+			-->
+
+	<entity name="MoonFactory"
+			thematic_groups="DysonSidekick,Factory" npc_ship_cap_type="SpecialLowCapGroup"
+			special_entity_type="FactoryForPlayerMobileFleets"
+			visuals="assets/_finalgamemeshes/humanbuildings/spacedock/spacedock.prefab"
+			tags="MoonFactory,SupportFleet"
+			icon_name="Ships1/SpaceDock" gimbal_icon_size_multiplier="1.5"
+			y_offset_of_icon="20"
+			category="Ship" 
+			visuals_scale_multiplier="4.8" size_scale="3.9"
+			collision_priority="500"
+			display_name="Moon Factory"
+			display_name_for_sidebar="卫星工厂"
+			description="Orbital factory of an alien moon. If a 舰队 旗舰 is on the same or adjacent planet, and is missing ships, then this will automatically produce replacements which will warp directly to that 旗舰."
+			description_short="移动设施，自动替换附近舰队损失并维修附近单位。"
+			starting_mark_level="Mark1"   
+			cost_for_ai_to_purchase="200"
+			aip_to_claim="0"
+			skip_drawing_ship_cap="true"
+			hull_points="100000" shield_points="100000" speed="Immobile"
+			metal_cost="8000" energy_consumption="2200"
+			assist_range="AboveAverage5"
+			armor_mm="140" engine_gx="16" albedo="0.4" mass_tx="5"
+			orbits_parent_at_range="2000" degrees_to_orbit_per_second="3"  attempts_to_reach_orbital_point_at_speed="8000"
+			dies_if_parent_dies="true"
+			immune_to_swapping_between_fleets="true"
+			can_pass_through_enemy_forcefields="true"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			voice_group="Silent"
+			never_leaves_remains="true"
+                        special_factory_type="Dyson Stronghold"
+			priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="BigFavoriteToy"
+	 		>
+		<metal_flow purpose="SelfConstruction" throughput="500"/>
+		<metal_flow purpose="RebuildingRemains" throughput="100" increase_per_mark_level="100"/>
+		<metal_flow purpose="FactoryConstructionForPlayerMobileFleets" throughput="2000" increase_per_mark_level="1000"/>
+		<metal_flow purpose="RepairingHullsOfFriendlies" throughput="100" increase_per_mark_level="100"/>
+		<metal_flow purpose="RepairingShieldsOfFriendlies" throughput="100" increase_per_mark_level="100"/>
+		<metal_flow purpose="RepairingEnginesOfFriendlies" throughput="100" increase_per_mark_level="100"/>
+	</entity>
+	
+	
+	<!--Zenith Moon-->
+	<entity name="DysonZenithMoon" display_name="Zenith Moon" display_name_for_sidebar="Zenith Moon"
+			thematic_groups="DysonSidekick"
+			special_entity_type="BattlestationBasic" fleet_design_templates_i_always_grant="ZenithMoon"
+			capturable_can_seed_at_all="false" capturable_seed_weight="10" capturable_max_per_galaxy="6"
+			draw_in_galaxy_view="true" uses_large_health_bar="true" defensive_structure_cap_multiplier="1.0"
+			tags="DirectBuilder,ShowsOnNormalDisplayMode,DysonMoon,ZenithMoon"
+			visuals="Assets/_DLC3/BrutalGuardians/BrutalGuardianLair/BrutalGuardianLair.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships4/BrutalGuardianLair" gimbal_icon_size_multiplier="1.75" icon_overlay="Overlays2/Race_Zenith"
+			category="Ship"
+			size_scale="25" visuals_scale_multiplier="90" y_offset_of_icon="60"
+			collision_priority="500"
+			description="Can move from planet to planet and build various 建筑 on them, even if you don't own it. Also rebuilds 建筑 from their remains. This 战斗空间站 has very powerful engineering capabilities."
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly"  this_centerpiece_grants_its_direct_science_upgrades_to_rest_of_fleet="true" tech_upgrade_that_is_used_for_my_direct_science="Direct_DysonMoons"
+			this_centerpiece_grants_its_direct_science_upgrades_to_bolstered_fleet="false" is_upgradeable_by_direct_science="true"
+			cost_for_ai_to_purchase="5000"
+			aip_to_claim="0"
+			metal_to_claim="200000"
+			skip_drawing_ship_cap="true"
+			hull_points="500000" shield_points="1000000" speed="BelowAverage2"
+			metal_cost="250000" energy_consumption="50000"
+			assist_range="ExtremelyHigh"
+			armor_mm="140" engine_gx="16" albedo="0.4" mass_tx="15"
+			build_points_per_second="100" build_point_cost_for_per_second_construction="6000"
+			tag_to_spawn_from_for_build_point_for_per_second_construction="MoonFactory"
+			personal_ship_cap_for_per_second_build_point_construction="1"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			voice_group="Zenith"
+			shows_on_galaxy_map_for_explored_planets="true" always_visible_to_players="true"
+			priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="BigFavoriteToy"
+			fleet_leader_type="Battlestation" hacking_cost_for_other_fleet_leaders_of_same_type_to_become_me="25"
+			>
+		<metal_flow purpose="SelfConstruction" throughput="500"/>
+		<metal_flow purpose="RebuildingRemains" throughput="100" increase_per_mark_level="100"/>
+		<metal_flow purpose="RepairingHullsOfFriendlies" throughput="3000" increase_per_mark_level="3000"/>
+		<metal_flow purpose="RepairingShieldsOfFriendlies" throughput="750" increase_per_mark_level="700"/>
+		<metal_flow purpose="RepairingEnginesOfFriendlies" throughput="3000" increase_per_mark_level="3000"/>
+		<metal_flow purpose="AssistSelfConstruction" throughput="3000" increase_per_mark_level="1500"/>
+		<metal_flow purpose="FactoryConstructionForPlayerMobileFleets" throughput="4000" increase_per_mark_level="1000" />
+		<system name="W1" display_name="Antimatter Beams"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="8000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="ExtremelyLow"
+				shot_type_data="HeavyBeamInvisible"
+				hits_all_intersecting_targets="true"
+				shots_detonate_immediately="true"
+				maximum_number_of_targets_hit_per_shot="10"
+				number_beams_to_fire="6" beam_weapon_visual_style="Laser_GreenBright"
+				distance_from_center_for_beam_emission="600"
+				>
+		</system>
+	</entity>
+
+	<!--Neinzul Moon-->
+	<entity name="DysonNeinzulMoon" copy_from="DysonZenithMoon"
+			display_name="Neinzul Moon" display_name_for_sidebar="Neinzul Moon"
+			thematic_groups="DysonSidekick"
+			icon_overlay="Overlays2/Race_Neinzul"
+			fleet_design_templates_i_always_grant="NeinzulMoon"
+			tags="DirectBuilder,ShowsOnNormalDisplayMode,DysonMoon,NeinzulMoon"
+			description="Can move from planet to planet and build various 建筑 on them, even if you don't own it. Also rebuilds 建筑 from their remains. This 战斗空间站 has very powerful engineering capabilities."
+			strength_multiplier="1.1"
+			>
+		<system name="W1" max_mark_level_to_function="0"></system>
+		<system name="L1" display_name="Siren Spawn"
+					category="Weapon" firing_timing="OnlyInRange"
+					damage_per_shot="5" range="EssentiallyInfinite" shot_speed="Normal" rate_of_fire="ExtremelyLow" fires_salvos_sequentially="true"
+					shot_type_data="DysonSirenDrone"
+					shots_per_salvo="3" added_shots_per_salvo_per_mark="3"
+					>
+			</system>
+			<system name="L2" display_name="Harpy Spawn"
+					category="Weapon" firing_timing="OnlyInRange"
+					damage_per_shot="5" range="EssentiallyInfinite" shot_speed="Normal" rate_of_fire="ExtremelyLow" fires_salvos_sequentially="true"
+					shot_type_data="DysonHarpyDrone"
+					shots_per_salvo="3" added_shots_per_salvo_per_mark="3"
+					>
+			</system>
+			<system name="L3" display_name="Wisp Spawn"
+					category="Weapon" firing_timing="OnlyInRange"
+					damage_per_shot="5" range="EssentiallyInfinite" shot_speed="Normal" rate_of_fire="ExtremelyLow" fires_salvos_sequentially="true"
+					shot_type_data="DysonWispDrone"
+					shots_per_salvo="3" added_shots_per_salvo_per_mark="3"
+					>
+			</system>
+
+		</entity>
+                
+	        <entity name="DysonSpireMoon" copy_from="DysonZenithMoon"
+			display_name="Spire Moon" display_name_for_sidebar="Spire Moon"
+			thematic_groups="DysonSidekick"
+                        icon_overlay="Overlays2/NecromancerFlagship_Harrowing" 
+			tags="DirectBuilder,ShowsOnNormalDisplayMode,DysonMoon,SpireMoon"
+			fleet_design_templates_i_always_grant="SpireMoon"
+			description="Can move from planet to planet and build various 建筑 on them, even if you don't own it. Also rebuilds 建筑 from their remains. This 战斗空间站 has very powerful engineering capabilities."
+			strength_multiplier="1.1"
+			>
+                </entity>
+	
+	        <entity name="DysonTemplarMoon" copy_from="DysonZenithMoon"
+			display_name="Templar Moon" display_name_for_sidebar="Templar Moon"
+			thematic_groups="DysonSidekick"
+                        icon_overlay="Overlays2/TemplarElite"
+			tags="DirectBuilder,ShowsOnNormalDisplayMode,DysonMoon,TemplarMoon"
+                        fleet_design_templates_i_always_grant="TemplarMoon"
+			description="Can move from planet to planet and build various 建筑 on them, even if you don't own it. Also rebuilds 建筑 from their remains. This 战斗空间站 has very powerful engineering capabilities."
+                        >
+                </entity>	
+	
+	
+	
+	
+
+</root>

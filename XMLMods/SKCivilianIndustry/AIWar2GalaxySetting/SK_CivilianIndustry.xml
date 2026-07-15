@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <!-- Civilian Industries -->
+	<galaxy_setting name="CiviliansPerformanceMode" category="Civilians" display_name="Performance Mode" type="BoolToggle"
+		default="true" changeable_during_gameplay="true"
+		description="Enables performance mode for Civilians."
+	/>
+
+	<galaxy_setting name="MinimumOutpostDeploymentRange" category="Civilians" display_name="Minimum 前哨 Deployment Range" type="IntSlider"
+		default="6000" min="3000" max="10000" changeable_during_gameplay="true"
+		description="How far away must an 前哨 be from your 贸易站 in order to spawn. If set too high, 前哨 may fail to spawn on smaller planets."  
+	/>
+	<galaxy_setting name="DefensiveBattlestationForces" category="Civilians" display_name="Defensive 要塞 Forces" type="BoolToggle"
+		default="false" changeable_during_gameplay="true"
+		description="Should 民兵 forces created for a 要塞 always stay on the 要塞's planet?"
+	/>
+
+	<galaxy_setting name="MilitiaAttackMinimumStrength" category="Civilians" display_name="Minimum Hostile Strength to 攻击" type="IntSlider"
+		default="5" min="1" max="50" changeable_during_gameplay="true"
+		description="How much hostile Strength must there be on a planet for Civilians to consider attacking it?"
+	/>
+	<galaxy_setting name="MilitiaAttackOverkillPercentage" category="Civilians" display_name="民用 Overkill Percentage" type="IntSlider"
+		default="150" min="100" max="500" changeable_during_gameplay="true"
+		description="What percentage of forces does a group of 民兵 need to 攻击 a planet? Does not change defensive priorities or assisting player attacks."
+	/>
+	
+	<galaxy_setting name="PatrolPostsOnAdjacentPlanets" category="Civilians" display_name="贸易站 Influence" type="BoolToggle"
+		default="false" changeable_during_gameplay="true"
+		description="Allows 巡逻 Posts to be built on weakened planets adjacent to 贸易哨站s/站s."
+	/>
+	<galaxy_setting name="MilitiaExpandWithAllAllies" category="Civilians" display_name="Expands With All Allies" type="BoolToggle"
+		default="false" changeable_during_gameplay="true"
+		description="Should friendly Civilians expand alongside all allies instead of just player influence? (This will make them mimic the minor faction team logic, where they will expand alongside any allies with stationary buildings on a planet.)"
+	/>
+
+	<galaxy_setting name="MilitiaStockpilePercentage" category="Civilians" display_name="民兵 Stockpiling Capacity" type="IntSlider"
+	default="300" min="300" max="1000" changeable_during_gameplay="false"
+	description="When a 民兵 building is full on units, it will request this % of additional resources to attempt to counteract losses suffered. Raising this will make resources spread slower, but allow worlds you've owned for longer to better reinforce after large fights."
+	/>
+</root>

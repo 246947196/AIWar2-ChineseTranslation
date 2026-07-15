@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--These "InitialPlayerBattlestation" are completely hand-designed battlestation-stlye fleets that are very inflexible by design.
+      They are intended to be basic starting points that you can choose at the start of the game,
+      which you can then use to further supplement yourself later on.  Each one is a major archetype,
+      focused on a different style of defensive play, and they use both their display name and description in the lobby.
+      
+      Creating too many of these would be a Bad Thing, because it creates paralysis for players.
+      
+      Note that ONLY the description and the name are shown, so the description had better be 
+      clear enough to let players choose things.  THAT said, the description for each turret or mine type will automatically
+      be appended if you use append_each_ship_description_to_main_description="true", so that will help.-->
+
+
+  <fleet_design name="MSFDeprived1"
+        display_name="匮乏防御 #1"
+        description="This unlucky battlestation had all of its turret design schematics destroyed. Starts only with a gravitic battlestation, meant for real Fleet Commanders looking for a challenge. Picking the same starting battlestation twice will randomize the second one."
+        design_logic="InitialPlayerBattlestation" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="GraviticBattlestation" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="InterplanetaryEngineer" ship_cap_group="Civilian" weight="100" cap="4"/>
+  </fleet_design>
+  
+  <fleet_design name="MSFDeprived2"
+        display_name="匮乏防御 #2"
+        description="This unlucky battlestation had all of its turret design schematics destroyed. Starts only with a revealer battlestation, meant for real Fleet Commanders looking for a challenge. Picking the same starting battlestation twice will randomize the second one."
+        design_logic="InitialPlayerBattlestation" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="RevealerBattlestation" ship_cap_group="Centerpiece" weight="100" min="1" cap="1"/>
+	<ship_membership name="InterplanetaryEngineer" ship_cap_group="Civilian" weight="100" cap="4"/>
+  </fleet_design>
+
+  <fleet_design name="MSFHanger" required_expansion_list="2_Zenith_Onslaught"
+        display_name="Hanger Defences"
+        description="This battlestation trades out turrets for field hangers that can be built off planet for combat."
+        design_logic="InitialPlayerBattlestation" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="RevealerBattlestation" ship_cap_group="Centerpiece" weight="100" min="1" cap="1"/>
+	<ship_membership name="InterplanetaryEngineer" ship_cap_group="Civilian" weight="100" cap="4"/>
+	<ship_membership name="CoreHangar" ship_cap_group="OtherDefense" weight="100" cap="6"/>
+	<ship_membership name="PiercingHangar" ship_cap_group="OtherDefense" weight="100" cap="6"/>
+	<ship_membership name="ExoticHangar" ship_cap_group="OtherDefense" weight="100" cap="6"/>
+	<ship_membership name="TractorArray" ship_cap_group="OtherDefense" weight="100" cap="20"/>
+	<ship_membership name="TachyonArray" ship_cap_group="OtherDefense" weight="100" cap="10"/>
+  </fleet_design>
+</root>

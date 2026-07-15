@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <!--
+<fleet_design 
+  name="AlienStartingFleet"
+  display_name="外星舰队"
+  description="人类使用自己的舰船已经输掉了战争。这次我们不会了。小心，我们完全不知道这些东西如何运作。"
+  design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+  append_each_ship_description_to_main_description="true"
+  >
+  <ship_membership name="TransportFlagship_Alien" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+
+<ship_membership name="AWing" ship_cap_group="Strike" weight="100" cap="40"/>
+<ship_membership name="AlienCorvette" ship_cap_group="Strike" weight="100" cap="40"/>
+<ship_membership name="AlienSlimeBomber" ship_cap_group="Strike" weight="100" cap="30"/>
+
+  <ship_membership name="AlienGenesisPod" ship_cap_group="Strike" weight="100" cap="40"/>
+  <ship_membership name="AlienOrdinanceBeta" ship_cap_group="Strike" weight="100" cap="25"/>
+  <ship_membership name="AlienTorpedoFrigate" ship_cap_group="Frigate" weight="100" cap="6"/>
+  <ship_membership name="AlienChainLightningFrigate" ship_cap_group="Frigate" weight="100" cap="6"/>
+
+</fleet_design>
+-->
+</root>

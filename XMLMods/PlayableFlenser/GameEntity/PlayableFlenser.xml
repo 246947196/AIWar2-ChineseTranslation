@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<entity name="PlayableFlenser" 
+		category="Ship" is_ark="true" 
+		special_entity_type="MobileOfficerCombatFleetFlagship" 	
+		draw_in_galaxy_view="true" shows_on_galaxy_map_for_explored_planets="true" always_visible_to_players="true"
+		
+		capturable_can_seed_at_all="false"
+		
+		
+		visuals="Assets/_FinalGameMeshes/AIExtragalactic/Tier5_ExtragalacticFlenser/Tier5_ExtragalacticFlenser.prefab" is_particularly_heavy_visual_model="true"
+		icon_name="Ships2/SomethingApocalypse" gimbal_icon_size_multiplier="2" uses_large_health_bar="true"
+		
+		voice_group="Silent"			
+		
+		pushes_enemy_shields="true"
+		can_pass_through_enemy_forcefields="true"
+		
+		size_scale="75" visuals_scale_multiplier="70"
+		y_offset_of_icon="30"
+		collision_priority="10000"
+		display_name="剥皮者"
+		description="极其巨大的 AI 战舰。现已归您使用。
+
+需要自行组装。不含电池。"
+		
+		starting_mark_level="Mark1"
+		tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly"
+		mark_level_scale_style="PlayableFlenser"
+		tech_upgrade_that_is_used_for_my_direct_science="Direct_ArkGeneral"
+		is_upgradeable_by_direct_science="true"
+		
+		cost_for_ai_to_purchase="3522500" strength_multiplier="4"
+		hull_points="15000000" shield_points="7500000" speed="VeryVeryLittle2"
+		metal_cost="10000000" energy_consumption="1000000"	
+		
+		armor_mm="500" albedo="0.7" engine_gx="25" mass_tx="25"			
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+		ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+		priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+		
+		assist_range="High2"
+		firing_delay_for_transported_ships="0"
+		is_scrapping_by_player_disallowed="true"
+		
+		eligible_for_hacks="IncreaseHullDurability,IncreaseShieldDurability,IncreaseWeaponPower"
+		>
+		<hack_data hack_type="IncreaseWeaponPower"
+			override_cost_in_hacking_points="24"
+			cost_in_hacking_points_multiplier_per_times_same_unit_hacked="4.5"
+			max_times_single_unit_can_be_hacked="2">
+			<custom_hack_data key="AddedMultiplierPerHack" value="2" />
+		</hack_data>
+		<hack_data hack_type="IncreaseShieldDurability"
+			override_cost_in_hacking_points="24"
+			cost_in_hacking_points_multiplier_per_times_same_unit_hacked="4.5"
+			max_times_single_unit_can_be_hacked="2">
+			<custom_hack_data key="AddedMultiplierPerHack" value="2" />
+		</hack_data>
+		<hack_data hack_type="IncreaseHullDurability"
+			override_cost_in_hacking_points="24"
+			cost_in_hacking_points_multiplier_per_times_same_unit_hacked="4.5"
+			max_times_single_unit_can_be_hacked="2">
+			<custom_hack_data key="AddedMultiplierPerHack" value="2" />
+		</hack_data>
+		<system name="R9" display_name="Doomsday Heavy Beam Cannon"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="1250" range="High2" shot_speed="Normal" rate_of_fire="Devourer"
+			shot_type_data="HeavyBeamInvisible"
+			hits_all_intersecting_targets="true"				
+			shots_detonate_immediately="true"
+			maximum_number_of_targets_hit_per_shot="30"
+			number_beams_to_fire="20" beam_weapon_visual_style="Laser_YellowBright"
+			degrees_offset_per_beam="1"				
+			>
+		</system>
+		<system name="WU" display_name="Planet Cracker Array"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="33750" range="EssentiallyInfinite" shot_speed="Normal" rate_of_fire="Devourer"
+			shots_per_salvo="4"
+			shot_type_data="MassDriver"			
+			>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="1.2" />
+		</system>	
+	</entity>
+	<entity copy_from="PlayableFlenser" name="PlayableFlenser_ArkSidekick" 
+		gimbal_icon_size_multiplier="2" is_critical_infrastructure="true"
+		tags="ShowsOnNormalDisplayMode,HumanArkSidekickArks"
+	  	energy_consumption="0"
+		player_loses_if_any_die="false"
+		capturable_can_seed_at_all="false"
+		metal_storage="2500000" added_metal_storage_per_mark_level="500000"
+		is_scrapping_by_player_disallowed="true"
+		tech_upgrade_that_is_used_for_my_direct_science="Direct_ArkGeneral"
+		description="极其巨大的 AI 战舰。现已归您使用。
+
+需要自行组装。已含电池。"
+		>
+		<resource_production type="Metal" amount="2200" increase_per_mark_level="800"/>
+		<resource_production type="Energy" amount="750000" increase_per_mark_level="55000"/>
+		<resource_production type="FuelArgon" amount="500000" />
+		<resource_production type="FuelRadon" amount="500000" />
+		<metal_flow purpose="FactoryConstructionForPlayerMobileFleets" throughput="3000" increase_per_mark_level="2000"/>
+		
+	</entity>
+	<entity copy_from="PlayableFlenser_ArkSidekick" name="PlayableFlenser_HomeArkEmpire" 
+		special_entity_type="HumanHomeArk" 
+		icon_name="Ships1/King"
+		tags="ShowsOnNormalDisplayMode,HumanArkEmpireArks"
+		player_loses_if_any_die="true"
+		description="极其巨大的 AI 战舰。现已归您所有。
+
+需要自行组装。已含电池。"
+		>	
+		<resource_production type="Metal" amount="2200" increase_per_mark_level="400"/>
+		<resource_production type="Energy" amount="350000" increase_per_mark_level="25000"/>
+	</entity>
+	
+</root>

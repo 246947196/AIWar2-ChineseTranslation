@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <faction name="UniversalNemesis" 
+    display_name="League of Evil" short_name="League of Evil" processing_group="UniversalNemesis"
+    base_info_source="UniversalNemesisBaseInfo" deep_info_source="UniversalNemesisDeepInfo" team_center_color="c343434" team_border_color="c8F00FF"
+    type="SpecialFaction"
+    description="普遍复仇女神已抵达银河系。它将试图摧毁一切以增强自身及其军队。
+
+&lt;color=#f25e1c&gt;极高影响：&lt;/color&gt;虽然难度因所选设置而异，但普遍复仇女神通常需要大量规划才能应对。
+普遍复仇女神及其军队不会升级，而是每杀死一个敌人就永久获得最大船体和护盾。凭借数量和质量的积累，一旦启动可能很难阻止。请注意，普遍复仇女神独自入侵，此时非常脆弱，是消灭他的最佳时机。"
+		ai_can_send_waves_against_this="true" 
+		can_use_spire_debris="false"
+		impact="Brutal" 
+		must_be_at_most_one="true"
+		CanBeFriendlyToPlayer="true" 
+		CanBeHostileToAll="true" 
+		CanBeOnMinorFactionTeam="true" 
+		icon_name_for_lobby="Ships3/ZenithArchitraveCastra"
+		defeat_condition="HasNoStrength">
+        <npc_ship_cap name="Strikecraft"    overriding_per_faction_cap_of_stacks="5000" />
+        <custom_field name="Intensity"      display_name="强度" description="这个派系到底有多可怕？" sort_group="200" setting_type="IntSlider" default="5" min="1" max="10"/>
+        <custom_field name="Allegiance"     display_name="阵营" description="该派系对 AI、人类友好，还是对谁也不友好？" sort_group="250" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Hostile To All,Friendly To Players,Hostile To Players Only,Minor Faction Team Red,Minor Faction Team Blue,Minor Faction Team Green,Dark Alliance" default_option="Dark Alliance" />
+	<custom_field name="InvasionTime" display_name="入侵时刻" description="The Universal Nemesis can be set to invade the galaxy at some unknown time during the game, or immediately. An immediate spawn is very scary, with late invasion times being far less powerful."
+                  sort_group="300" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Immediate,Early Game,Mid Game,Late Game" default_option="Mid Game"/>
+    <custom_field name="SpawnNearPlayer" is_advanced_setting="true" display_name="Spawn Near Player" description="Not recommended unless friendly to you."
+                  sort_group="300" setting_type="BoolToggle" default="false"  />
+	</faction>
+</root>

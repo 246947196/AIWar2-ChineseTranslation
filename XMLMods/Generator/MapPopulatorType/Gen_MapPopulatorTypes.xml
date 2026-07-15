@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <map_populator_type name="Improved" description="这是 Generator 对常规算法的改进，能更好地将相似事物分散开来。"
+        dll_name="Generator_Deep" type_name="Generator.ImprovedMapPopulator"/>
+
+</root>

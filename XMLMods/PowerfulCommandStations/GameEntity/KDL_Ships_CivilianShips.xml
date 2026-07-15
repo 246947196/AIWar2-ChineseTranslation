@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <entity name="Engineer" is_partial_record="true"
+  >
+    <fleet_membership name="PlayerHomeCommand" ship_cap_group="OtherDefense" weight="100" cap="15"/>
+    <fleet_membership name="PlayerEconomicCommand" ship_cap_group="OtherDefense" weight="100" cap="10"/>
+    <fleet_membership name="PlayerMilitaryCommand" ship_cap_group="OtherDefense" weight="100" cap="5"/>
+    <fleet_membership name="PlayerLogisticalCommand" ship_cap_group="OtherDefense" weight="100" cap="15"/>
+	<fleet_membership name="AddedToCommandStation" ship_cap_group="OtherDefense" weight="150" cap="5"/>
+  </entity>
+  
+  <!--These are the same as regular engineers, but are for battlestations and citadels and are able to move between planets.
+       They also have the extra health and shields of a combat engineer.-->
+  <entity name="InterplanetaryEngineer" is_partial_record="true"
+	  >
+    <fleet_membership name="GeneralTurrets" ship_cap_group="Civilian" weight="100" cap="9"/>
+    <fleet_membership name="MonochromeTurrets" ship_cap_group="Civilian" weight="100" cap="12"/>
+    <fleet_membership name="OtherDefenseFocus" ship_cap_group="Civilian" weight="100" cap="16"/>
+    <fleet_membership name="Minelayer" ship_cap_group="Civilian" weight="100" cap="14"/>
+    <fleet_membership name="EnsnarerTurrets" ship_cap_group="Civilian" weight="100" cap="7"/>
+		<fleet_membership name="AddedToCommandStation" ship_cap_group="OtherDefense" weight="300" cap="3"/>
+  </entity>
+</root>

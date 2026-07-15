@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- Defensive Structures -->
+  <entity name="BandersnatchFortress" tags="BandersnatchFortress" ship_class_name="Superweapon"
+          npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+          thematic_groups="AI" 
+	  visuals="assets/_dlc2/outguard/hyperion/aifortress.prefab"
+          material_override_path="Assets/_FinalGameMeshes/Spire/DarkSpireWraith/DarkSpireWraith.prefab"
+	  icon_name="Ships4/SomethingRakes" gimbal_icon_size_multiplier="1.5"
+          icon_overlay="Overlays2/BrutalEntrenchingGuardian_Stationary"
+	  y_offset_of_icon="35"
+	  category="Ship"
+	  size_scale="10"
+	  visuals_scale_multiplier="25"
+          collision_priority="800"
+	  display_name="Bandersnatch Fortress"
+          display_name_for_sidebar="B Fortress"
+	  description="Very powerful defensive structure, with unnaturally powerful weaponry. This will slowly regenerate health over time."
+	  behavior="Stationary"
+          is_major_ai_structure="true"
+          seconds_to_fully_regenerate_hull="600"
+	  starting_mark_level="Mark1" max_mark_level="5" tech_upgrades_that_benefit_me="Unused"	
+	  cost_for_ai_to_purchase="3000"
+	  hull_points="200000" shield_points="50000" speed="Immobile"
+	  metal_cost="1500000" energy_consumption="50000"
+	  armor_mm="300" albedo="0.7" mass_tx="8"
+	  ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+	  voice_group="Turret"
+	  is_reinforcement_location="true" always_is_ai_turret_spawn_point="true"
+	  eligible_for_hacks="Sabotage"
+          priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+	  >
+    <data_extension name="DLC3" required_expansion_list="3_The_Neinzul_Abyss"
+                    dark_zenith_sidekick_science_to_grant_on_death="10"
+                    spire_sidekick_science_to_grant_on_death="10"
+        necromancer_hacking_to_grant_on_death="4"/>
+    <hack_data hack_type="Sabotage" override_cost_in_hacking_points="11" />
+    <metal_flow purpose="SelfConstruction" throughput="700"/>
+    <system name="R1" display_name="Bandersnatch Fusion Rockets"
+                category="Weapon" firing_timing="OnlyInRange"
+                damage_per_shot="600" range="High1" shot_speed="Normal" rate_of_fire="Normal"
+                shots_per_salvo="30" fires_salvos_sequentially="false"
+                shot_type_data="FusionRocket"    
+				>
+      <outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtLeast" compared_to="100" multiplier="3" />
+    </system>
+    <system name="R2" display_name="Bandersnatch Energy Wave"
+          category="Weapon" firing_timing="OnlyInRange" shots_per_salvo="4"
+          damage_per_shot="1750" range="High1" shot_speed="Normal" rate_of_fire="Low" fires_salvos_sequentially="true"
+          shot_type_data="EnergyWave"
+	  >
+      <outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="8" />
+    </system>
+  </entity>
+
+  <!-- Ships -->
+  <entity name="Bandersnatch"
+	  thematic_groups="GolemEnemy,Zenith"
+	  special_entity_type="LoneGolem" tags="PraetorianBandersnatch" voice_group="Zenith" gimbal_icon_size_multiplier="1.5"
+          visuals="assets/_dlc2/zenith/dzymir/ymir.prefab" visuals_bundle="exp2_zenith_onslaught"
+          material_override_path="Assets/_FinalGameMeshes/Spire/DarkSpireWraith/DarkSpireWraith.prefab"
+	  icon_name="Ships3/DarkZenithYmir"
+          icon_overlay="Overlays2/Race_Burlust"
+	  uses_large_health_bar="true"
+	  category="Ship"
+	  size_scale="11.5"
+	  visuals_scale_multiplier="11"
+	  y_offset_of_icon="70"
+	  display_name="Bandersnatch"
+	  display_name_for_sidebar="Bndrsntch"
+	  description="This powerful Bandersnatch has allied itself with the AI. It regenerates over time, and is very durable."
+	  collision_priority="810"
+	  starting_mark_level="Markless"
+	  cost_for_ai_to_purchase="35000"
+          hull_points="8000000" shield_points="4000000" speed="VeryVeryLittle4"
+	  metal_cost="5000000" energy_consumption="150000"
+	  armor_mm="400" albedo="0.5" engine_gx="18" mass_tx="11"
+	  ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+	  priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+	  seconds_to_fully_regenerate_hull="1200"
+	  >
+    <system name="W2" display_name="Bandersnatch Crushing Blast"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="48000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Misery" fires_salvos_sequentially="true"
+	    shot_type_data="Sabot"
+	    >
+      <outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="5" />
+    </system>
+    <ship_class_data can_be_zombified_and_similar="false" />
+  </entity>
+
+    <!-- Wave Leaders -->
+  <entity name="BandersnatchWaveLeader"
+          display_name="Bandersnatch Distractor" display_name_for_sidebar="Ba Distractor"
+	  thematic_groups="Templar"
+	  tags="BandersnatchWaveLeader"
+	  visuals="Assets/_DLC3/Templar/TemplarHerald/TemplarHerald.prefab" visuals_bundle="exp3_neinzul_abyss"
+          material_override_path="Assets/_FinalGameMeshes/Nanocaust/Abomination/Abomination.prefab"
+	  icon_name="Ships3/SomethingThornEmbrace" gimbal_icon_size_multiplier="1.5"
+          icon_overlay="Overlays1/DZ_Black_Sinister"
+	  voice_group="Silent"
+	  category="Ship" special_entity_type="LoneGolem"
+	  size_scale="5.4"
+	  visuals_scale_multiplier="3"
+          collision_priority="850"
+          starting_mark_level="Markless" tech_upgrades_that_benefit_me="Unused"
+	  description="This powerful Bandersnatch ship attracts enemy shots to it, helping the rest of the wave strike home."
+	  cost_for_ai_to_purchase="11500" mark_level_scale_style="Templar" strength_multiplier="1"
+	  hull_points="500000" shield_points="3000000" speed="AlmostNone"
+	  metal_cost="800000" energy_consumption="25000"
+	  armor_mm="85" albedo="0.4" engine_gx="20" mass_tx="7"
+	  shield_size_scale="3.5" my_forcefield_does_not_shrink="true" max_count_per_npc_faction_before_stack="3" my_forcefield_has_no_penalty_for_enemies_firing_out_of_it="true"
+	  ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+          priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+          attrition_damage="200"
+	  max_attrition_damage="100000" added_max_attrition_damage_per_mark="25000"
+	  >
+    <system name="A" display_name="Attractant Field"
+	    category="Passive"
+	    attract_range_for_shots_against_allies="Small5"
+	    >
+    </system>
+
+    <data_extension name="DLC3"
+		    necromancer_science_to_grant_on_death="1"
+		    immune_to_necromancy="true"/>
+    <system name="WJ" display_name="Shattering Grenade"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="100" range="Small5" shot_speed="Normal" rate_of_fire="High"
+	    shots_per_salvo="6" fires_salvos_sequentially="false"
+	    shot_type_data="FlakShotAOEBurstAtEnd"
+	    area_of_effect_size="300"
+	    maximum_number_of_targets_hit_per_shot="9" cloaking_percent_loss_from_firing="0.2"
+	    >
+      <outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="30" multiplier="3" />
+    </system>	
+
+    <ship_class_data can_be_zombified_and_similar="false" />
+  </entity>
+
+</root>

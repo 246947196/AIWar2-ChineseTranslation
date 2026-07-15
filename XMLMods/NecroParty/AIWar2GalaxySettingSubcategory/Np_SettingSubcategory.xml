@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<setting_subcategory parent="Necromancer" name="NecroParty" display_name="&lt;u&gt;死灵派对&lt;/u&gt;" description="来自死灵派对的死灵法师设置。" color="46f0ff"/>
+    <setting_subcategory parent="Necromancer" name="Vanilla" display_name="&lt;u&gt;原版&lt;/u&gt;" description="来自基础游戏的死灵法师设置。" color="46f0ff"/>
+
+</root>

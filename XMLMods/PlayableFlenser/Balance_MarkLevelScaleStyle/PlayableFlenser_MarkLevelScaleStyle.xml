@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<mark_level_scale_style name="PlayableFlenser"
+		is_default="false"
+		attack_multiplier_list="1,2,3,4,6,8,10"
+		human_squad_cap_multiplier_list_cumulative="1,1,1,1,1,1,1"
+		hull_points_multiplier_list="1,2,3,4,6,8,10"
+		shield_points_multiplier_list="1,2,3,4,6,8,10"
+		assist_range_multiplier_list="1,1,1,1,1,1,1"
+		attack_range_multiplier_list="1,1,1,1,1,1,1"
+		shield_radius_multiplier_list="1,1,1,1,1,1,1"
+		metal_cost_multiplier_list="1,1,1,1,1,1,1"
+		/>
+</root>

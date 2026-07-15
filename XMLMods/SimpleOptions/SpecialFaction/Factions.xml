@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>		
+	<faction name="Human" is_partial_record="true" >
+		<custom_field requires_player_types="HumanEmpire,SpireInfusedEmpire" name="HumanCryogenicPodsToStartWith" is_partial_record = "true" is_hidden="true"/>
+		<custom_field requires_player_types="HumanEmpire,SpireInfusedEmpire" name="HomeHumanSettlementsToStartWith" is_partial_record = "true" is_hidden="true"/>
+		<custom_field requires_player_types="HumanEmpire,SpireInfusedEmpire" name="StartingMetal" is_partial_record = "true" is_hidden="true"/>
+		<custom_field requires_player_types="HumanEmpire,SpireInfusedEmpire" name="StartingScience" is_partial_record = "true" is_hidden="true"/>
+		<custom_field requires_player_types="HumanEmpire,SpireInfusedEmpire" name="StartingHacking" is_partial_record = "true" is_hidden="true"/>
+		<custom_field requires_player_types="HumanEmpire,SpireInfusedEmpire" name="StartingFleet" is_partial_record = "true" default_option="RandomCombatFleet"/>
+		<custom_field requires_player_types="HumanEmpire,SpireInfusedEmpire" name="StartingSupportFleet" is_partial_record = "true" default_option="RandomSupportFleet"/>
+		<custom_field requires_player_types="SpireInfusedEmpire" name="ExpertMode" is_partial_record = "true" is_hidden="true" default="true" required_expansion_list="1_The_Spire_Rises"/>		
+		<custom_field requires_player_types="NecromancerSidekick,NecromancerEmpire" name="Templar_Color" is_partial_record = "true" is_hidden="true" required_expansion_list="3_The_Neinzul_Abyss"/>
+		<custom_field requires_player_types="NecromancerSidekick,NecromancerEmpire" name="Templar_Difficulty" is_partial_record = "true" is_hidden="true" required_expansion_list="3_The_Neinzul_Abyss"/>
+		<custom_field requires_player_types="NecromancerSidekick,NecromancerEmpire" name="Elderling_Color" is_partial_record = "true" is_hidden="true" required_expansion_list="3_The_Neinzul_Abyss"/>
+		<custom_field requires_player_types="NecromancerSidekick,NecromancerEmpire" name="Elderling_Difficulty" is_partial_record = "true" is_hidden="true" required_expansion_list="3_The_Neinzul_Abyss"/>
+		<custom_field requires_player_types="NecromancerSidekick,NecromancerEmpire" name="BonusStartingResources" is_partial_record = "true" is_hidden="true" required_expansion_list="3_The_Neinzul_Abyss"/>
+		<custom_field requires_player_types="NecromancerSidekick,NecromancerEmpire" name="BonusSkeletonCap" is_partial_record = "true" is_hidden="true" required_expansion_list="3_The_Neinzul_Abyss"/>
+		<custom_field requires_player_types="NecromancerSidekick,NecromancerEmpire" name="BonusWightCap" is_partial_record = "true" is_hidden="true" required_expansion_list="3_The_Neinzul_Abyss"/>
+		<custom_field requires_player_types="NecromancerSidekick,NecromancerEmpire" name="BonusStartingWight" is_partial_record = "true" is_hidden="true" required_expansion_list="3_The_Neinzul_Abyss"/>
+		<custom_field requires_player_types="NecromancerSidekick,NecromancerEmpire" name="StartWithAllUpgrades" is_partial_record = "true" is_hidden="true" required_expansion_list="3_The_Neinzul_Abyss"/>		
+	</faction>
+	
+	<faction name="AI" is_partial_record="true">
+		<custom_field name="UniversalDifficulty" is_partial_record="true" is_hidden="true"/>
+		<custom_field name="AIDifficulty" is_partial_record="true" display_name="AI难度"/>
+		<custom_field name="AIWarden_TrimColor" is_partial_record="true" is_hidden="true"/>
+		<custom_field name="WardenType" is_partial_record="true" is_advanced_setting="false"/>
+		<custom_field name="AIDifficulty_WardenFleet" is_partial_record="true" is_hidden="true"/>
+		<custom_field name="HunterFleet_TrimColor" is_partial_record="true" is_hidden="true"/>
+		<custom_field name="HunterFleetType" is_partial_record="true" is_advanced_setting="false"/>
+		<custom_field name="AIDifficulty_HunterFleet" is_partial_record="true" is_hidden="true"/>
+		<custom_field name="PraetorianGuard_TrimColor" is_partial_record="true" is_hidden="true"/>
+		<custom_field name="AIDifficulty_PraetorianGuard" is_partial_record="true" is_hidden="true"/>
+		<custom_field name="StartingAIPlanetRatio" is_partial_record="true" is_hidden="true" required_expansion_list="2_Zenith_Onslaught"/>
+		<custom_field name="StartingAILayout" is_partial_record="true" is_hidden="true" required_expansion_list="2_Zenith_Onslaught"/>
+		<custom_field name="WormholeBorerIncomeModifier" is_partial_record="true" is_hidden="true" required_expansion_list="2_Zenith_Onslaught"/>			
+	</faction>	
+	
+	<faction name="AIRiskAnalyzers" is_partial_record="true">
+		<custom_field name="timeIntervalForAnalyzer" is_partial_record ="true" is_hidden="true"/>
+		<custom_field name="AIPIncrease" is_partial_record ="true" is_hidden="true"/>
+		<custom_field name="AIPDecrease" is_partial_record ="true" is_hidden="true"/>
+		<custom_field name="AIPIncreaseOnDeath" is_partial_record ="true" is_hidden="true"/>
+	</faction>
+	
+	<faction name="DarkSpire" is_partial_record="true">		
+		<custom_field name="EnableExpansion" is_partial_record ="true" is_hidden="true"/>
+		<custom_field name="AlternateSpawningStyle" is_partial_record ="true" is_hidden="true"/>
+	</faction>
+	
+	<faction name="Nanocaust" is_partial_record="true">
+		<custom_field name="SpawnNearPlayer" is_partial_record ="true" is_hidden="true"/>
+		<custom_field name="Intelligence" is_partial_record ="true" is_hidden="true"/>
+		<custom_field name="SpawnPlanet" is_partial_record ="true" is_hidden="true"/>
+		<custom_field name="ReinvadeFrequency" is_partial_record ="true" is_hidden="true"/>
+	</faction>
+	
+	<faction name="FallenSpire" is_partial_record="true" required_expansion_list="1_The_Spire_Rises">
+		<custom_field name="Allegiance" is_partial_record ="true" is_hidden="true"/>
+		<custom_field name="DebugMode" is_partial_record ="true" is_hidden="true"/>
+		<custom_field name="ExpertMode" is_partial_record ="true" is_hidden="true" default="true"/>
+	</faction>
+	
+	<faction name="Scourge" is_partial_record="true" required_expansion_list="1_The_Spire_Rises">
+		<custom_field name="ExtraStrongMode" is_partial_record ="true" is_hidden="true"/>
+		<custom_field name="FirstArmory" is_partial_record ="true" is_hidden="true"/>
+		<custom_field name="SmoothUpgrade" is_partial_record ="true" is_hidden="true"/>
+	</faction>
+	
+	<faction name="ZenithDysonSphere" is_partial_record="true">
+		<custom_field name="SeedOnNomadIfPossible" is_partial_record ="true" is_hidden="true" required_expansion_list="2_Zenith_Onslaught"/>		
+	</faction>
+	
+	<faction name="MacrophageInfestation" is_partial_record="true">
+		<custom_field name="SeedOnNomadIfPossible" is_partial_record ="true" is_hidden="true" required_expansion_list="2_Zenith_Onslaught"/>
+	</faction>
+	
+	<faction name="ZenithArchitrave" is_partial_record="true" required_expansion_list="2_Zenith_Onslaught">
+		<custom_field name="CivilWarEnabled" is_partial_record ="true" is_hidden="true" default="true"/>
+		<custom_field name="DebugMode" is_partial_record ="true" is_hidden="true"/>
+		<custom_field name="NumberToSeed" is_partial_record ="true" is_hidden="true"/>
+	</faction>
+	
+	<faction name="ZenithMiners" is_partial_record="true" required_expansion_list="2_Zenith_Onslaught">
+		<custom_field name="DebugMode" is_partial_record ="true" is_hidden="true"/>
+	</faction>
+	
+	<faction name="NomadPlanets" is_partial_record="true" required_expansion_list="2_Zenith_Onslaught">
+		<custom_field name="DebugMode" is_partial_record ="true" is_hidden="true"/>
+		<custom_field name="NomadMovementSpeed" is_partial_record ="true" is_hidden="true"/>			
+	</faction>
+	
+	<faction name="DarkZenith" is_partial_record="true" required_expansion_list="2_Zenith_Onslaught">
+		<custom_field name="EnableFimbulwinter" is_partial_record ="true" is_hidden="true"/>
+	</faction>
+	
+	<faction name="DarkZenithSvikari" is_partial_record="true" required_expansion_list="2_Zenith_Onslaught">
+		<custom_field name="EnableFimbulwinter" is_partial_record ="true" is_hidden="true"/>
+	</faction>
+	
+	<faction name="NeinzulCustodiansParent" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss">
+		<custom_field name="LogicPreset" is_partial_record ="true" is_hidden="true"/>
+		<custom_field name="NeinzulCustodiansPearl" is_partial_record ="true" is_hidden="true"/>
+		<custom_field name="NeinzulCustodiansDiamond" is_partial_record ="true" is_hidden="true"/>
+		<custom_field name="NeinzulCustodiansRuby" is_partial_record ="true" is_hidden="true"/>
+		<custom_field name="NeinzulCustodiansSaphire" is_partial_record ="true" is_hidden="true"/>
+		<custom_field name="NeinzulCustodiansEmerald" is_partial_record ="true" is_hidden="true"/>
+		<custom_field name="NeinzulCustodiansOnyx" is_partial_record ="true" is_hidden="true"/>	
+		<custom_field name="UseCustomLogicForHumanAllies" is_partial_record ="true" is_hidden="true"/>
+		<custom_field name="HopsFromTerritoryToAttack" is_partial_record ="true" is_hidden="true"/>
+		<custom_field name="HullRatioToRetreatAt" is_partial_record ="true" is_hidden="true"/>
+		<custom_field name="EveryXFireteamsAsDefense" is_partial_record ="true" is_hidden="true"/>
+		<custom_field name="OverkillRatio" is_partial_record ="true" is_hidden="true"/>
+	</faction>
+	
+	<faction name="Sappers" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss">
+		<custom_field name="ExtraStrongMode" is_partial_record ="true" is_hidden="true"/>
+	</faction>
+	
+	<faction name="Elderlings" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss">
+		<custom_field name="ExtraStrongMode" is_partial_record ="true" is_hidden="true"/>
+	</faction>
+</root>

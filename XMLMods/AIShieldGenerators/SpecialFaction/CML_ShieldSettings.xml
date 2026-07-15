@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+<faction name="AI" is_partial_record="true">
+<custom_field name="ShieldGeneratorSpawn1" display_name="护盾发生器基础数量 (Network 1)" description="How many 护盾 Generators should be created?
+Each AI can have up to three networks of 护盾 Generators, this option applies to the first network."
+	  sort_group="630" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="0,1,2,3,4,5,6,7,8,9,10" default_option="7" />
+<custom_field name="ShieldGeneratorSpawn2" display_name="护盾发生器基础数量 (Network 2)" description="How many 护盾 Generators should be created?
+Each AI can have up to three networks of 护盾 Generators, this option applies to the second network."
+	  sort_group="635" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="0,1,2,3,4,5,6,7,8,9,10" default_option="0" />
+<custom_field name="ShieldGeneratorSpawn3" display_name="护盾发生器基础数量 (Network 3)" description="How many 护盾 Generators should be created?
+Each AI can have up to three networks of 护盾 Generators, this option applies to the third network."
+	  sort_group="640" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="0,1,2,3,4,5,6,7,8,9,10" default_option="0" />
+
+<custom_field name="ShieldGeneratorTarget1" display_name="护盾发生器网络稳定性 (Network 1)" description="If the destruction of a 护盾 Generator leaves fewer 护盾 Generators in the network than this number, the entire network is destroyed.
+Each AI can have up to three networks of 护盾 Generators, this option applies to the first network."
+	  sort_group="632" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="1,2,3,4,5,6,7,8,9" default_option="4" />
+<custom_field name="ShieldGeneratorTarget2" display_name="护盾发生器网络稳定性 (Network 2)" description="If the destruction of a 护盾 Generator leaves fewer 护盾 Generators in the network than this number, the entire network is destroyed.
+Each AI can have up to three networks of 护盾 Generators, this option applies to the second network."
+	  sort_group="637" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="1,2,3,4,5,6,7,8,9" default_option="4" />
+<custom_field name="ShieldGeneratorTarget3" display_name="护盾发生器网络稳定性 (Network 3)" description="If the destruction of a 护盾 Generator leaves fewer 护盾 Generators in the network than this number, the entire network is destroyed.
+Each AI can have up to three networks of 护盾 Generators, this option applies to the third network."
+	  sort_group="642" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="1,2,3,4,5,6,7,8,9" default_option="4" />
+	  
+  
+<custom_field name="RandomGeneratorsMax1" is_advanced_setting="true" display_name="护盾发生器最大额外数量 (Network 1)" description="What is the maximum number of additional 护盾 Generators that should be created at random?
+Each AI can have up to three networks of 护盾 Generators, this option applies to the first network.
+Each network can have a maximum of ten 护盾 Generators, split between this option and the previous one."
+	  sort_group="631" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="0,1,2,3,4,5,6,7,8,9,10" default_option="0" />
+<custom_field name="RandomGeneratorsMax2" is_advanced_setting="true" display_name="护盾发生器最大额外数量 (Network 2)" description="What is the maximum number of additional 护盾 Generators that should be created at random?
+Each AI can have up to three networks of 护盾 Generators, this option applies to the second network.
+Each network can have a maximum of ten 护盾 Generators, split between this option and the previous one."
+	  sort_group="636" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="0,1,2,3,4,5,6,7,8,9,10" default_option="0" />
+<custom_field name="RandomGeneratorsMax3" is_advanced_setting="true" display_name="护盾发生器最大额外数量 (Network 3)" description="What is the maximum number of additional 护盾 Generators that should be created at random?
+Each AI can have up to three networks of 护盾 Generators, this option applies to the third network.
+Each network can have a maximum of ten 护盾 Generators, split between this option and the previous one."
+	  sort_group="641" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="0,1,2,3,4,5,6,7,8,9,10" default_option="0" />		  
+
+</faction>
+	
+</root>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <journal name="CP_AIDef_More" sidebar_text="&lt;color=#a1ffa1&gt;简报：&lt;/color&gt; {FactionName} 已被击败" can_record_another_copy_if_already_recorded_in_this_campaign="true"
+        text_replacement_related_faction="true"
+		text_replacement_related_player_name="true"
+        chat_text="{FactionName} 已被击败！它已与其他人工智能指挥核心失去协调，现已失控。"
+        is_partial_record="true"  
+           full_text="发件人：军事顾问安娜·斯诺
+舰队指挥部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官！
+
+{FactionName} 已被击败！干得好！它已与其他人工智能指挥核心失去协调，现已失控。
+这将至少给我们片刻喘息的机会，并在下一次进攻前修复舰队，但不要等太久。当人工智能在最初的混乱之后开始全面内战时，我想我们可不想被卷入交火中。" />
+
+  <journal name="CP_AIDef_Final" sidebar_text="&lt;color=#a1ffa1&gt;简报：&lt;/color&gt; {FactionName} 已被击败" can_record_another_copy_if_already_recorded_in_this_campaign="true"
+        text_replacement_related_faction="true"
+		text_replacement_related_player_name="true"
+        chat_text="{FactionName} 已被击败！那是人工智能最后一个指挥核心，这意味着我们胜利了！"
+        is_partial_record="true"  
+           full_text="发件人：军事顾问安娜·斯诺
+舰队指挥部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官！
+
+{FactionName} 已被击败！那是人工智能最后一个指挥核心，这意味着我们胜利了！这是值得纪念的一天！我从没想过这一天会到来，但我们做到了！尤其是你，指挥官！没有你，这绝对是无法实现的。" />
+
+  <journal name="CP_AIDef_MoreOthers" sidebar_text="&lt;color=#a1ffa1&gt;简报：&lt;/color&gt; {FactionName} 已被击败" can_record_another_copy_if_already_recorded_in_this_campaign="true"
+        text_replacement_related_faction="true"
+		text_replacement_related_player_name="true"
+        chat_text="{FactionName} 已被击败！那是人工智能的最后一个指挥核心，但我们还没有胜利！"
+        is_partial_record="true"  
+           full_text="发件人：军事顾问安娜·斯诺
+舰队指挥部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官！
+
+{FactionName} 已被击败！那是人工智能最后一个指挥核心，但我们还没有胜利！仍有敌人必须被消灭，这样我们才能开始和平地重建我们的文明。" />
+
+  <journal name="Badg_AI_Civ" sidebar_text="&lt;color=#a1ffa1&gt;简报：&lt;/color&gt; 人工智能内战" can_record_another_copy_if_already_recorded_in_this_campaign="true"
+		text_replacement_related_player_name="true"
+        chat_text="人工智能内战已经开始。"
+        is_partial_record="true"  
+           full_text="发件人：蒂莫西·科波菲尔博士
+人工智能研发部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+好吧，这真是前所未见，而且看起来还挺壮观的。所有人工智能似乎现在都互相憎恨，但我们能利用这一点并活下来吗？即使只是想到被人工智能主力舰队的交火波及也让我夜不能寐……" />
+
+  <journal name="OutguardFirstDetected" sidebar_text="{FactionColor}外卫部队：&lt;/color&gt; 潜在的雇佣兵！"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+		   text_replacement_related_player_name="true"
+           chat_text="{FactionColor}外卫部队&lt;/color&gt; 信标已发现——潜在的雇佣兵！"
+           is_partial_record="true"  
+           full_text="发件人：首席通信官德米特里·罗森鲍姆
+通信部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+我们从一个异常的人工智能数据中心捡到了微弱的背景活动广播。经过进一步检查，我们检测到一条高度加密的信息，该信息起源于……好吧，据我们所知，是在星际网格之外的某个地方。令人难以置信的是，有人找到了破坏数据中心收发器的方法，锁定了人工智能对其外部存储库的访问，并劫持了其发射器。
+
+我们差点错过了第二条未加密的信息。这是一段循环录音，声称存在一个去中心化的抵抗运动对抗人工智能。如果我们能解密主要信息，我们将了解到这些"外卫部队"（我们内部如此称呼）的联络频率。
+
+这个"外卫信标"只能访问几个外卫频率，但我们相信还有更多这样的信标隐藏在显眼之处。如果我们能成功打开联络信道，这些外卫部队将成为强大的盟友，我们可以在绝望时召唤他们。人工智能肯定会试图阻止这一点，没有足够力量不应该尝试。
+
+我们将能够与这些外卫部队分享一些我们的技术，如果我们有兼容的舰船，他们将能够召唤更强大的部队。然而，他们缺乏像我们的工厂一样高效生产高级别舰船的制造能力，因此随着级别提高，我们预计看到的舰船数量会减少。他们需要在召唤之间重新集结力量，所以我们应该谨慎使用，没有需要就不要召唤。
+
+就我个人而言，看到有其他人在对抗机器威胁的迹象给了我希望。我相信他们需要我们的程度不亚于我们需要他们。" />
+
+  <journal name="BeaconEncounter" sidebar_text="&lt;color=#a1ffa1&gt;简报：&lt;/color&gt; 信标概述" can_record_another_copy_if_already_recorded_in_this_campaign="false"
+		text_replacement_related_player_name="true"
+        is_partial_record="true"  
+           full_text="发件人：首席通信官德米特里·罗森鲍姆
+通信部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+信标是一种将游戏大厅的游戏灵活性带入游戏本身的方法。你可以入侵信标来为你的游戏添加额外的派系。
+
+其目标是让你能够动态地根据自己的喜好更新游戏；感觉快要输了？加入一个盟友。想要更多挑战？加入一个可怕的新对手。
+
+信标的使用是可选的，并且可以在游戏大厅中禁用。" />
+
+</root>

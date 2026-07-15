@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+<!--
+  <faction name="TiberiumInfestation"
+           display_name="Tiberium Infestation" short_name="Tiberium"
+           copy_from="TiberiumInfestationForArmada"
+           should_not_be_shown_in_game_lobby="false"
+           should_not_be_shown_in_game_lobby_add_factions_list="false"
+           description="The 泰伯利亚 Infestation will empower and permanently change the AI. Their Veins will spread across the 银河, empowering and transforming their ships and 建筑."
+           takes_difficulty_from_armada="false"
+           >
+    <custom_field name="Intensity" display_name="Intensity" description="How much of an impact are they likely to have on gameplay? If the 强度 is too low then the 死灵法师 will have fewer 资源 to work with."
+		  sort_group="200" setting_type="IntSlider" default="5" min="0" max="10"/>
+
+  </faction>
+-->
+  <faction name="TiberiumInfestation"
+     display_name="Tyderian Infestation" short_name="Tyderian"
+     base_info_source="TiberiumFactionBaseInfo"
+     deep_info_source="TiberiumFactionDeepInfo"
+     team_center_color="c00563B" team_border_color="Coyote" processing_group="Tiberium"
+     type="SpecialFaction"
+     must_be_at_most_one="true"
+     should_not_be_shown_in_game_lobby="false"
+     takes_difficulty_from_armada="false"
+     should_not_be_shown_in_game_lobby_add_factions_list="false"
+     description="The 泰德瑞安 Infestation will empower the AI. Their Veins will spread across the 银河, empowering and transforming their ships and 建筑. Harvest them for 资源, and ignore them at your peril!
+
+Do not use this faction if you have the 无敌舰队 Empire in the game; a copy of this faction will automatically be added if you use the 无敌舰队 Empire."
+     can_use_spire_debris="false"
+     icon_name_for_lobby="Ships4/SpeedBooster"
+     allied_to_ai_by_default="true"
+           >
+    <custom_field name="Intensity" display_name="Intensity" description="How much of an impact are they likely to have on gameplay? If the 强度 is too low then the 无敌舰队 will have fewer 资源 to work with."
+		  sort_group="200" setting_type="IntSlider" default="5" min="0" max="10"/>
+
+  </faction>
+  
+
+  <faction name="TiberiumInfestationForArmada"
+     display_name="Tyderian Infestation" short_name="Tyderian"
+     base_info_source="TiberiumFactionBaseInfo"
+     deep_info_source="TiberiumFactionDeepInfo"
+     team_center_color="c00563B" team_border_color="Coyote" processing_group="Tiberium"
+     type="SpecialFaction"
+     must_be_at_most_one="true"
+     should_not_be_shown_in_game_lobby="true"
+     takes_difficulty_from_armada="true"
+     auto_add_singleton_of_faction_when_any_count_of_other_player_types_present="ArmadaEmpire"
+     should_not_be_shown_in_game_lobby_add_factions_list="true"
+     description="The 泰德瑞安 Infestation will empower and permanently change the AI. Their Veins will spread across the 银河, empowering and transforming their ships and 建筑. This version exists because the 无敌舰队 is in the game. This version will take its Difficulty from the 无敌舰队."
+     can_use_spire_debris="false"
+     icon_name_for_lobby="Ships4/SpeedBooster"
+     allied_to_ai_by_default="true"
+           >
+    <custom_field name="Intensity" display_name="Intensity" description="How much of an impact are they likely to have on gameplay? If the 强度 is too low then the 无敌舰队 will have fewer 资源 to work with."
+		  sort_group="200" setting_type="IntSlider" default="5" min="0" max="10"/>
+
+  </faction>
+
+
+</root>

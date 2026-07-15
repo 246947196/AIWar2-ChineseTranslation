@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+<!-- Modify the elderlings/Templar to give resources to the DZ/Spire Sidekicks -->
+     <entity name="SlothfulElderling" is_partial_record="true"
+             >
+       <data_extension name="DLC3"
+                       dark_zenith_sidekick_science_to_grant_on_death="10"
+                       dark_zenith_sidekick_resource_to_grant="Metal"
+                       dark_zenith_sidekick_resource_amount_to_grant="50"
+                       scourge_empire_corbomite_to_grant_on_death="1"
+                       armada_science_to_grant_on_death="20"
+                       spire_sidekick_science_to_grant_on_death="10"/>
+       />
+    </entity>
+     <entity name="CyclopeanElderling" is_partial_record="true"
+             >
+       <data_extension name="DLC3"
+                       dark_zenith_sidekick_science_to_grant_on_death="10"
+                       dark_zenith_sidekick_resource_to_grant="Metal"
+                       dark_zenith_sidekick_resource_amount_to_grant="50"
+                       scourge_empire_corbomite_to_grant_on_death="1"
+                       armada_science_to_grant_on_death="20"
+                       spire_sidekick_science_to_grant_on_death="10"/>
+       />
+    </entity>
+     <entity name="WrathfulElderling" is_partial_record="true"
+             >
+       <data_extension name="DLC3"
+                       dark_zenith_sidekick_science_to_grant_on_death="10"
+                       dark_zenith_sidekick_resource_to_grant="Metal"
+                       dark_zenith_sidekick_resource_amount_to_grant="50"
+                       scourge_empire_corbomite_to_grant_on_death="1"
+                       armada_science_to_grant_on_death="20"
+                       spire_sidekick_science_to_grant_on_death="10"/>
+       />
+    </entity>
+    <entity name="DecadentElderling" is_partial_record="true"
+            >
+      <data_extension name="DLC3"
+                      dark_zenith_sidekick_science_to_grant_on_death="15"
+                      dark_zenith_sidekick_resource_to_grant="Metal"
+                      dark_zenith_sidekick_resource_amount_to_grant="50"
+                      scourge_empire_corbomite_to_grant_on_death="1"
+                      armada_science_to_grant_on_death="50"
+                       spire_sidekick_science_to_grant_on_death="15"/>
+       />
+    </entity>
+    <entity name="AccursedElderling" is_partial_record="true"
+            >
+      <data_extension name="DLC3"
+                      dark_zenith_sidekick_science_to_grant_on_death="15"
+                      dark_zenith_sidekick_resource_to_grant="Thaumite"
+                      dark_zenith_sidekick_resource_amount_to_grant="50"
+                      scourge_empire_corbomite_to_grant_on_death="2"
+                      armada_science_to_grant_on_death="50"
+                       spire_sidekick_science_to_grant_on_death="15"/>
+       />
+    </entity>
+    <entity name="EnviousElderling" is_partial_record="true"
+            >
+      <data_extension name="DLC3"
+                      dark_zenith_sidekick_science_to_grant_on_death="15"
+                      dark_zenith_sidekick_resource_to_grant="Alkahest"
+                      dark_zenith_sidekick_resource_amount_to_grant="50"
+                      scourge_empire_corbomite_to_grant_on_death="2"
+                      armada_science_to_grant_on_death="50"
+                       spire_sidekick_science_to_grant_on_death="15"/>
+       />
+    </entity>
+
+    <entity name="BlasphemousElderling" is_partial_record="true"
+            >
+      <data_extension name="DLC3"
+                      dark_zenith_sidekick_science_to_grant_on_death="35"
+                      dark_zenith_sidekick_resource_to_grant="Chelonium"
+                      dark_zenith_sidekick_resource_amount_to_grant="50"
+                      scourge_empire_corbomite_to_grant_on_death="5"
+                      armada_science_to_grant_on_death="200"
+                      spire_sidekick_science_to_grant_on_death="35"/>
+      />
+    </entity>
+    <entity name="PlagueswarmElderling" is_partial_record="true"
+            >
+      <data_extension name="DLC3"
+                      dark_zenith_sidekick_science_to_grant_on_death="35"
+                      dark_zenith_sidekick_resource_to_grant="Skrith"
+                      dark_zenith_sidekick_resource_amount_to_grant="40"
+                      scourge_empire_corbomite_to_grant_on_death="5"
+                      armada_science_to_grant_on_death="200"
+                      spire_sidekick_science_to_grant_on_death="35"/>
+       />
+    </entity>
+    <entity name="DrakeElderling" is_partial_record="true"
+            >
+      <data_extension name="DLC3"
+                      dark_zenith_sidekick_science_to_grant_on_death="35"
+                      dark_zenith_sidekick_resource_to_grant="Izumite"
+                      dark_zenith_sidekick_resource_amount_to_grant="40"
+                      scourge_empire_corbomite_to_grant_on_death="5"
+                      armada_science_to_grant_on_death="200"
+                      spire_sidekick_science_to_grant_on_death="35"/>
+       />
+    </entity>
+    <!-- Templar structures -->
+    <entity name="TemplarEncampment" is_partial_record="true"
+            >
+      <data_extension name="DLC3"
+                      dark_zenith_sidekick_science_to_grant_on_death="50"
+                      dark_zenith_sidekick_resource_to_grant="Metal"
+                      dark_zenith_sidekick_resource_amount_to_grant="50"
+                      armada_science_to_grant_on_death="1"
+                       spire_sidekick_science_to_grant_on_death="50"/>
+       />
+    </entity>
+    <entity name="TemplarEliteEncampment" is_partial_record="true"
+            >
+      <data_extension name="DLC3"
+                      dark_zenith_sidekick_science_to_grant_on_death="75"
+                      dark_zenith_sidekick_resource_to_grant="Metal"
+                      dark_zenith_sidekick_resource_amount_to_grant="500"
+                      armada_science_to_grant_on_death="1"
+                      spire_sidekick_science_to_grant_on_death="750"/>
+       />
+    </entity>
+    <entity name="TemplarFastness" is_partial_record="true"
+            >
+      <data_extension name="DLC3"
+                      dark_zenith_sidekick_science_to_grant_on_death="100"
+                      dark_zenith_sidekick_resource_to_grant="White"
+                      dark_zenith_sidekick_resource_amount_to_grant="30"
+                      scourge_empire_corbomite_to_grant_on_death="2"
+                      armada_science_to_grant_on_death="5"
+                       spire_sidekick_science_to_grant_on_death="100"/>
+       />
+    </entity>
+    <entity name="TemplarEliteFastness" is_partial_record="true"
+            >
+      <data_extension name="DLC3"
+                      dark_zenith_sidekick_science_to_grant_on_death="150"
+                      dark_zenith_sidekick_resource_to_grant="White"
+                      dark_zenith_sidekick_resource_amount_to_grant="50"
+                      armada_science_to_grant_on_death="5"
+                       spire_sidekick_science_to_grant_on_death="150"/>
+       />
+    </entity>
+    <entity name="TemplarCastle" is_partial_record="true"
+            >
+      <data_extension name="DLC3"
+                      dark_zenith_sidekick_science_to_grant_on_death="200"
+                      dark_zenith_sidekick_resource_to_grant="Thaumite"
+                      dark_zenith_sidekick_resource_amount_to_grant="50"
+                      scourge_empire_corbomite_to_grant_on_death="5"
+                      armada_science_to_grant_on_death="10"
+                       spire_sidekick_science_to_grant_on_death="200"/>
+       />
+    </entity>
+    <entity name="TemplarEliteCastle" is_partial_record="true"
+            >
+      <data_extension name="DLC3"
+                      dark_zenith_sidekick_resource_to_grant="Thaumite"
+                      dark_zenith_sidekick_resource_amount_to_grant="80"
+                      dark_zenith_sidekick_science_to_grant_on_death="250"
+                      scourge_empire_corbomite_to_grant_on_death="6"
+                      armada_science_to_grant_on_death="10"
+                      spire_sidekick_science_to_grant_on_death="250"/>
+       />
+    </entity>
+    <entity name="TemplarConstructor" is_partial_record="true"
+            >
+      <data_extension name="DLC3"
+                      dark_zenith_sidekick_science_to_grant_on_death="500"
+                      scourge_empire_corbomite_to_grant_on_death="10"
+                      armada_science_to_grant_on_death="50"
+                      spire_sidekick_science_to_grant_on_death="500"/>
+       />
+    </entity>
+    <entity name="TemplarHerald" is_partial_record="true"
+            >
+      <data_extension name="DLC3"
+                      dark_zenith_sidekick_resource_to_grant="Chelonium"
+                      dark_zenith_sidekick_resource_amount_to_grant="30"
+                      dark_zenith_sidekick_science_to_grant_on_death="30"
+                      scourge_empire_corbomite_to_grant_on_death="1"
+                      spire_sidekick_science_to_grant_on_death="30"/>
+      />
+    </entity>
+
+    <entity name="TemplarProphet" is_partial_record="true"
+            >
+      <data_extension name="DLC3"
+                      dark_zenith_sidekick_science_to_grant_on_death="40"
+                      dark_zenith_sidekick_resource_to_grant="Chelonium"
+                      dark_zenith_sidekick_resource_amount_to_grant="75"
+                      scourge_empire_corbomite_to_grant_on_death="1"
+                      spire_sidekick_science_to_grant_on_death="40"/>
+      />
+    </entity>
+
+    <entity name="TemplarHarbinger" is_partial_record="true"
+            >
+      <data_extension name="DLC3"
+                      dark_zenith_sidekick_science_to_grant_on_death="50"
+                      dark_zenith_sidekick_resource_to_grant="Chelonium"
+                      dark_zenith_sidekick_resource_amount_to_grant="100"
+                      scourge_empire_corbomite_to_grant_on_death="2"
+                      spire_sidekick_science_to_grant_on_death="50"/>
+       />
+    </entity>
+
+    <entity name="AICommandStation" is_partial_record="true"
+             >
+      <data_extension name="DLC3"
+                      dark_zenith_sidekick_science_to_grant_on_death="50"
+                      dark_zenith_sidekick_hacking_to_grant_on_death="2"
+                      armada_science_to_grant_on_death="2000"
+                      spire_sidekick_hacking_to_grant_on_death="10"/>
+       />
+    </entity>
+
+    <entity name="SuperTerminal" is_partial_record="true"
+            eligible_for_hacks="SubvertSuperTerminal,SubvertSuperTerminal_Diff8,SubvertSuperTerminal_Diff9,SubvertSuperTerminal_Diff10,SubvertSuperTerminalForArmada"
+             >
+    </entity>
+
+</root>

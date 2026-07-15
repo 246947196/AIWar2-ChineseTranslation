@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--These "MoonFleets" are completely hand-designed battlestation-stlye fleets unique to each race: Zenith, Neinzul, Spire, and Templar.
+      
+	    A new moon is unlocked at the same time as a fleet created by making a Major Stronghold. 
+		
+	-->
+
+
+  <fleet_design name="ZenithMoon"
+        display_name="Zenith Moon"
+        description="The 天顶 Moon is equipped with turrets designed to shred and soften 装甲 to facilitate metabolism."
+        design_logic="Special" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="DysonZenithMoon" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+    <ship_membership name="ZenithDriver" ship_cap_group="Turret" weight="100" cap="1"/>
+    <ship_membership name="ZenithPulverizerTurret" ship_cap_group="Turret" weight="100" cap="10"/>
+	<ship_membership name="ZenithPolarizerTurret" ship_cap_group="Turret" weight="100" cap="15"/>
+	<ship_membership name="ZenithDissolverTurret" ship_cap_group="Turret" weight="100" cap="20"/>
+	<ship_membership name="DysonZenithTractorArray" ship_cap_group="OtherDefense" weight="100" cap="25"/>
+	<ship_membership name="DysonZenithGravityGenerator" ship_cap_group="OtherDefense" weight="100" cap="12"/>
+	<ship_membership name="DysonZenithMinefield" ship_cap_group="OtherDefense" weight="100" cap="40"/>
+  </fleet_design>
+
+  <fleet_design name="NeinzulMoon"
+                display_name="Neinzul Moon"
+                description="The 奈祖尔 Moon is equipped with harmonic turrets to 掠夺 poorly armored ships and convert foes into useful zombies."
+                design_logic="Special" weight="100" include_full_cap_of_each_type="true"
+                append_each_ship_description_to_main_description="true"
+                >
+    <ship_membership name="DysonNeinzulMoon" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+    <ship_membership name="NeinzulProtectionTower" ship_cap_group="Turret" weight="100" cap="1"/>
+    <ship_membership name="NeinzulPolyhymniaTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+    <ship_membership name="NeinzulEuterpeTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+    <ship_membership name="NeinzulThaliaTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+    <ship_membership name="DysonZenithTractorArray" ship_cap_group="OtherDefense" weight="110" cap="25"/>
+    <ship_membership name="DysonZenithGravityGenerator" ship_cap_group="OtherDefense" weight="110" cap="12"/>
+    <ship_membership name="DysonZenithMinefield" ship_cap_group="OtherDefense" weight="100" cap="40"/>	
+  </fleet_design>
+
+  <fleet_design name="SpireMoon"
+                display_name="Spire Moon"
+                description="The 尖塔 Moon is equipped with various long range turrets."
+                design_logic="Special" weight="100" include_full_cap_of_each_type="true"
+                append_each_ship_description_to_main_description="true"
+                >
+    <ship_membership name="DysonSpireMoon" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+    <ship_membership name="DysonSpireShieldEmitter" ship_cap_group="Turret" weight="100" cap="1"/>
+    <ship_membership name="SpireSniperTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+    <ship_membership name="SpireSpiderTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+    <ship_membership name="SpireParalysisTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+    <ship_membership name="DysonZenithTractorArray" ship_cap_group="OtherDefense" weight="110" cap="25"/>
+    <ship_membership name="DysonZenithGravityGenerator" ship_cap_group="OtherDefense" weight="110" cap="12"/>
+    <ship_membership name="DysonZenithMinefield" ship_cap_group="OtherDefense" weight="110" cap="40"/>	
+  </fleet_design>
+
+    <fleet_design name="TemplarMoon"
+                display_name="Templar Moon"
+                description="The 圣殿骑士 Moon is equipped with various long range turrets."
+                design_logic="Special" weight="100" include_full_cap_of_each_type="true"
+                append_each_ship_description_to_main_description="true"
+                >
+      <ship_membership name="DysonTemplarMoon" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+      <ship_membership name="TemplarMatrixFortress" ship_cap_group="Turret" weight="100" cap="1"/>
+    <ship_membership name="TemplarPurgingTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+    <ship_membership name="TemplarCloakedTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+    <ship_membership name="TemplarBattleTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+    <ship_membership name="DysonZenithTractorArray" ship_cap_group="OtherDefense" weight="100" cap="25"/>
+    <ship_membership name="DysonZenithGravityGenerator" ship_cap_group="OtherDefense" weight="100" cap="12"/>
+    <ship_membership name="DysonZenithMinefield" ship_cap_group="OtherDefense" weight="100" cap="40"/>	
+  </fleet_design>
+
+</root>

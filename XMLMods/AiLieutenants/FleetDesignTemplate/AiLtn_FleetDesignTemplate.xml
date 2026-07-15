@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <fleet_design name="AiLieutenant_Hacking_Response_T2" design_logic="MobileCombatFleet" weight="1" include_full_cap_of_each_type="true">
+    <ship_membership name="DireParalysisGuardian" ship_cap_group="Frigate" weight="100" cap="1" />
+  </fleet_design>
+
+  <fleet_design name="AiLieutenant_Hacking_Response_T1" design_logic="MobileCombatFleet" weight="1" include_full_cap_of_each_type="true">
+    <ship_membership name="FVWing" ship_cap_group="Strike" weight="100" cap="35" />
+    <ship_membership name="GhostRam" ship_cap_group="Strike" weight="100" cap="35" />
+  </fleet_design>
+
+  <fleet_design name="AiLieutenant_Hacking_Response" design_logic="MobileCombatFleet" weight="1" include_full_cap_of_each_type="true">
+    
+    <ship_membership name="DireParalysisGuardian" ship_cap_group="Frigate" weight="100" cap="1" />
+    <ship_membership name="FVWing" ship_cap_group="Strike" weight="100" cap="35" />
+    <ship_membership name="GhostRam" ship_cap_group="Strike" weight="100" cap="35" />
+
+  </fleet_design>
+
+  <fleet_design
+      name="AiLieutenant_Hunter_Drones"
+      design_logic="Drones"
+      weight="1"
+      include_full_cap_of_each_type="true"
+      >
+  </fleet_design>
+
+  <fleet_design
+      name="AiLieutenant_Logistics_Drones"
+      design_logic="Drones"
+      weight="1"
+      include_full_cap_of_each_type="true"
+      >
+  </fleet_design>
+
+</root>

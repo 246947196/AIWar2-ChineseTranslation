@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <record name="Difficulty_7" is_partial_record="true"
+       income_for_extragalactic_war_tier4="240.0"
+       income_for_extragalactic_war_tier5="480.0"
+       >
+
+  </record>
+  <record name="Difficulty_8" is_partial_record="true"
+       income_for_extragalactic_war_tier4="420.0"
+       income_for_extragalactic_war_tier5="816.5"
+       >
+
+  </record>
+  <record name="Difficulty_9" is_partial_record="true"
+       income_for_extragalactic_war_tier4="660"
+       income_for_extragalactic_war_tier5="1283.5"
+       >
+
+  </record>
+  <record name="SuperCat" is_partial_record="true"
+       income_for_extragalactic_war_tier4="1080.0"
+       income_for_extragalactic_war_tier5="2100.0"
+       >
+
+  </record>
+
+</root>

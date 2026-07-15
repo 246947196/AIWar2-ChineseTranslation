@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+    <line_type
+			name="Ds_Detonating_Lightning_Shot"
+			display_name="Detonating Lightning Shot"
+			hardcoded_type="None"
+			visuals_bundle="aiwar2goodiebox"
+			visuals="assets/shotparts/lines/_Lightning_Red.prefab"
+			z_length_of_original_object="1.5"
+			x_scale_multiplier="1.0"
+			y_scale_multiplier="1.0"
+			/>
+
+	<line_type
+			name="Ds_Lightning"
+			display_name="Darksun Lightning"
+			hardcoded_type="None"
+			visuals_bundle="aiwar2goodiebox"
+			visuals="assets/shotparts/lines/_Lightning_Red.prefab"
+			z_length_of_original_object="1.5"
+			x_scale_multiplier="-1.1"
+			y_scale_multiplier="-5.5"
+			/>
+
+	<line_type
+			name="Ds_Erupt"
+			display_name="Darksun Eruption"
+			hardcoded_type="None"
+			visuals_bundle="aiwar2goodiebox"
+			visuals="assets/shotparts/lines/_Lightning_Red.prefab"
+			z_length_of_original_object="1.5"
+			x_scale_multiplier="10.1"
+			y_scale_multiplier="10.5"
+			/>
+
+	<line_type
+			name="Ds_Laser"
+			display_name="Darksun 激光"
+			hardcoded_type="None"
+			visuals_bundle="aiwar2goodiebox"
+			visuals="assets/shotparts/lines/_Laser_Red.prefab"
+			z_length_of_original_object="1.18"
+			x_scale_multiplier="15"
+			y_scale_multiplier="15"
+			/>
+
+</root>

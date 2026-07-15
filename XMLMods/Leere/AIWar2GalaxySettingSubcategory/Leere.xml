@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!-- Having your own category for only a few settings is overkill, but this is included to showcase how to do so. -->
+	<setting_subcategory parent="Leere" name="EnableLeereFeatures" display_name="Enable Features" color="46f0ff"
+		description="启用戾尔模组的不同功能。"/>
+
+	<setting_subcategory parent="Leere" name="ConfigureLeereFeatures" display_name="Configure Features" color="46f0ff"
+		description="配置戾尔模组的不同功能。"/>
+
+</root>

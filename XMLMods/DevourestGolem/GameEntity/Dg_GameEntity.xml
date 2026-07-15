@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+    <entity name="DevourestGolem"
+            thematic_groups="Zenith,GolemEnemy"
+            tags="DevourestGolem,ShowsOnNormalDisplayMode"
+            voice_group="Zenith"
+            gimbal_icon_size_multiplier="2"
+            draw_in_galaxy_view="true"
+            visuals="assets/_finalgamemeshes/golems/devourergolem/devourergolem.prefab"
+            icon_name="Ships1/DevourerGolem"
+            uses_large_health_bar="true"
+            category="Ship"
+            size_scale="19.2"
+            visuals_scale_multiplier="1.2"
+            y_offset_of_icon="150"
+            collision_priority="810"
+            display_name="吞噬者"
+            display_name_for_sidebar="吞噬者"
+            description="这个近乎无敌的怪物游荡在银河系中，吸收所见之物来为其供能和修复自身。"
+            behavior="Stationary"
+            blocks_ceasefire_on_planet="true"
+            starting_mark_level="Markless"
+            cost_for_ai_to_purchase="140000"
+            hull_points="60000000"
+            shield_points="19000000"
+            speed="VeryVeryLittle1"
+            armor_mm="400"
+            albedo="1"
+            engine_gx="25"
+            mass_tx="19"
+            metal_cost="1085000"
+            energy_consumption="0"
+            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            pushes_enemy_shields="true"
+            can_pass_through_enemy_forcefields="true"
+            shows_on_galaxy_map_for_explored_planets="true"
+            priority_as_ai_target="NormalFleetship"
+            priority_as_frd_target="BiggerFleetship"
+            priority_to_protect="Expendable"
+            description_appender_dll="DevourestGolem"
+            description_appender_type="DevourestGolem.DevourerDescAppender"
+            hide_faction_name="true"
+            >
+    <system name="Q7" display_name="反物质巨颚"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="30000" range="Normal1" shot_speed="Normal" rate_of_fire="Devourer"
+			shots_per_salvo="30" fires_salvos_sequentially="false"
+			shot_type_data="DevourerShot"
+			area_of_effect_size="200"				
+			aoe_spreads_damage_among_available_targets="true"
+			health_change_per_damage_dealt="0.1"
+			>                
+    </system>
+        <ship_class_data can_be_zombified_and_similar="false"
+                         final_incoming_exotic_damage_multiplier="0.1"
+                         can_be_devoured="false"
+                         >
+            <debuff_modifier debuff_type="WeaponPhase"
+                             multiplier="0"
+                             />
+        </ship_class_data>
+    </entity>
+
+</root>

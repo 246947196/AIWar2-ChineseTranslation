@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <setting_subcategory parent="Custom" name="DevourerChrysalis_Debug" display_name="吞噬者蛹调试" color="ffbbbb"
+      description="用于调试吞噬者蛹的设置。"/>
+</root>

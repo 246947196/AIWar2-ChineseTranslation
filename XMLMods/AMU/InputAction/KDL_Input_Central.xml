@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <input_action name="ResourceDisplayHotkey"
+      category="AMU" display_name="Open/Close Resource Display"
+      description="Press this button to open the AMU resource display, an overview over all resources including custom ones created with the AMU framework."
+      dll_name="AMU_Base" type_name="AMU_Base.ResourceDisplayHotkey"
+      check_type="ButtonPress" key="R" />
+	  
+  <input_action name="TracingWindowHotkey"
+      category="AMU" display_name="Open/Close AMU Tracing Window"
+      description="Press this button to open the AMU tracing window, an overview over all debug flags for AMU-managed structures (such as ManagedWorldInfo- and ManagedFaction-based classes)."
+      dll_name="AMU_Base" type_name="AMU_Base.TracingWindowHotkey"
+      check_type="ButtonPress" key="Y" modifier_1="LeftShift" />
+	  
+  <input_action name="FactionRelationsWindowHotkey"
+      category="AMU" display_name="Open/Close AMU Faction Relations Window"
+      description="Press this button to open the AMU faction relations window, an overview over all factions and what relations they have to each other. Extremely useful for games with random factions."
+      dll_name="AMU_Base" type_name="AMU_Base.FactionRelationsWindowHotkey"
+      check_type="ButtonPress" key="Y" />
+	  
+  <input_action name="ObjectContentDisplayWindowHotkey"
+      category="AMU" display_name="Open/Close AMU Object Content Display Window"
+      description="Press this button to open the AMU OCD window. This UI allows the user to navigate through, inspect and manipulate aspects of the current game object content itself."
+      dll_name="AMU_Base" type_name="AMU_Base.ObjectContentDisplayWindowHotkey"
+      check_type="ButtonPress" key="Y" modifier_1="LeftAlt" />
+	  
+  <input_action name="ObjectContentDisplayClearSearchText"
+      category="AMU" display_name="Clear and edit Object Content Display Search Textbox"
+      description="Press this button to clear all text from the OCD search textbox, allowing one to quickly clear it after searching and selecting something as well as entering new text."
+      dll_name="AMU_Base" type_name="AMU_Base.ObjectContentDisplayClearSearchText"
+      check_type="ButtonPress" key="Delete" />
+	  
+  <input_action name="ObjectContentDisplayShowOnScreenDisplay"
+      category="AMU" display_name="Show/Hide Object Content Display - On Screen Display"
+      description="The OCD allows (with middle mouse click) to add and remove a value to the OSD. The OSD itself can be shown and hidden with this hotkey.
+The combination of OCD / OSD can be used to monitor certain important values ingame at one glance."
+      dll_name="AMU_Base" type_name="AMU_Base.ObjectContentDisplayShowOnScreenDisplay"
+      check_type="ButtonPress" key="Q" />
+	  
+  <input_action name="ObjectContentDisplayOnScreenDisplayEditorHotkey"
+      category="AMU" display_name="Show/Hide Object Content Display - On Screen Display Editor"
+      description="This allows for editing the name, disabling or removing items from the OCD /OSD."
+      dll_name="AMU_Base" type_name="AMU_Base.ObjectContentDisplayOnScreenDisplayEditorHotkey"
+      check_type="ButtonPress" key="Q" modifier_1="LeftShift" />
+</root>

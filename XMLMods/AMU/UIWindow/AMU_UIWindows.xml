@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <window name="Window_AMUResourceDisplay"
+        canvas_sort_order="101000" dll_name="AMU_Base" type_name="AMU_Base.Window_AMUResourceDisplay"
+        width="500" height="500"
+        y_align="MiddleOfScreen" x_align="MiddleOfScreen"
+  >
+    <element prefab_lookup_name="BasicWindowBG" x="-2000" y="-2000" width="4000" height="4000" is_intentionally_without_controller="true" />
+    <element prefab_lookup_name="ModalOKWindowTall" width="500" height="500" type_name="ResourceDisplayController" />
+  </window>
+
+  <window name="Window_AMUFactionRelations"
+      canvas_sort_order="1000" dll_name="AMU_Base" type_name="AMU_Base.Window_AMUFactionRelations"
+      width="360" height="132" x_align="MiddleOfScreen" y_align="MiddleOfScreen"
+  >
+    <element prefab_lookup_name="BasicWindowBG" x="-2000" y="-2000" width="4000" height="4000" is_intentionally_without_controller="true" />
+    <element prefab_lookup_name="BasicText" x="0" y="-20" width="450" height="20" type_name="FactionRelationsTopLabel" font_size="13" text_alignment="Bottom" />
+    <element prefab_lookup_name="ButtonSet_BlueSmallerCenter" width="450" height="132" button_width="400" button_height="18" font_size="13" type_name="FactionRelationsMenuRoot" />
+  </window>
+
+  <window name="Window_AMUTracing"
+      canvas_sort_order="1000" dll_name="AMU_Base" type_name="AMU_Base.Window_AMUTracing"
+      width="360" height="132" x_align="MiddleOfScreen" y_align="MiddleOfScreen"
+  >
+    <element prefab_lookup_name="BasicWindowBG" x="-2000" y="-2000" width="4000" height="4000" is_intentionally_without_controller="true" />
+    <element prefab_lookup_name="BasicText" x="0" y="-20" width="100" height="20" type_name="CustomTracingTopLabel" font_size="13" text_alignment="Bottom" />
+    <element prefab_lookup_name="ButtonBlue" x="100" y="-20" width="175" height="20" type_name="ClearDebugLogButton" font_size="13" text_alignment="Bottom" />
+    <element prefab_lookup_name="ButtonBlue" x="275" y="-20" width="175" height="20" type_name="ClearDevConsoleButton" font_size="13" text_alignment="Bottom" />
+    <element prefab_lookup_name="ButtonSet_BlueSmallerCenter" width="360" height="132" button_width="360" button_height="18" font_size="13" type_name="CustomTracingMenuRoot" />
+  </window>
+
+  <window name="Window_AMUObjectContentDisplay"
+      canvas_sort_order="1000" dll_name="AMU_Base" type_name="AMU_Base.Window_AMUObjectContentDisplay"
+      width="360" height="132" x_align="MiddleOfScreen" y_align="MiddleOfScreen"
+  >
+    <element prefab_lookup_name="BasicWindowBG" x="-2000" y="-2000" width="4000" height="4000" is_intentionally_without_controller="true" />
+    <element prefab_lookup_name="BasicText" x="0" y="-20" width="760" height="20" type_name="TopLabel" font_size="13" text_alignment="Bottom" />
+    <element prefab_lookup_name="BasicText" x="760" y="-20" width="90" height="20" type_name="SearchLabel" font_size="13" text_alignment="Bottom" />
+    <element prefab_lookup_name="BasicTextbox" x="850" y="-20" width="160" height="20" type_name="SearchTextbox" font_size="13" text_alignment="Bottom" />
+    <element prefab_lookup_name="ButtonBlue" x="1010" y="-20" width="40" height="20" type_name="FirstPageButton" font_size="13" text_alignment="Bottom" />
+    <element prefab_lookup_name="ButtonBlue" x="1050" y="-20" width="40" height="20" type_name="PreviousPageButton" font_size="13" text_alignment="Bottom" />
+    <element prefab_lookup_name="BasicTextbox" x="1090" y="-20" width="60" height="20" type_name="PageTextbox" font_size="13" text_alignment="Bottom" />
+    <element prefab_lookup_name="BasicText" x="1150" y="-20" width="60" height="20" type_name="MaxPageCountLabel" font_size="13" text_alignment="Bottom" />
+    <element prefab_lookup_name="ButtonBlue" x="1210" y="-20" width="40" height="20" type_name="NextPageButton" font_size="13" text_alignment="Bottom" />
+    <element prefab_lookup_name="ButtonBlue" x="1250" y="-20" width="40" height="20" type_name="LastPageButton" font_size="13" text_alignment="Bottom" />
+    <element prefab_lookup_name="ButtonBlue" x="1290" y="-20" width="60" height="20" type_name="BackButton" font_size="13" text_alignment="Bottom" />
+    <element prefab_lookup_name="ButtonSet_BlueSmallerCenter" width="450" height="132" button_width="400" button_height="18" font_size="13" type_name="ObjectContentDisplayMenuRoot" />
+  </window>
+
+  <window name="Window_AMUObjectContentDisplayEditing"
+      canvas_sort_order="1005" dll_name="AMU_Base" type_name="AMU_Base.Window_AMUObjectContentDisplayEditing"
+      width="840" height="540" x_align="MiddleOfScreen" y_align="MiddleOfScreen"
+  >
+    <element prefab_lookup_name="ModalOKWindowTallWide" width="840" height="540" type_name="ModalWindow" />
+    <element prefab_lookup_name="BasicTextbox" x="20" y="50" width="800" height="20" type_name="InputTextbox" font_size="13" text_alignment="Bottom" />
+  </window>
+
+  <window name="Window_AMUObjectContentDisplayOnScreenDisplay"
+      canvas_sort_order="1005" dll_name="AMU_Base" type_name="AMU_Base.Window_AMUObjectContentDisplayOnScreenDisplay"
+      width="840" height="540" x_align="MaximumOfScreen" y_align="MaximumOfScreen"
+  >
+    <element prefab_lookup_name="BasicText" x="0" y="0" width="5000" height="540" type_name="OnScreenText" font_size="13" text_alignment="Right" />
+  </window>
+
+  <window name="Window_AMUObjectContentDisplayOnScreenDisplayEditor"
+      canvas_sort_order="1000" dll_name="AMU_Base" type_name="AMU_Base.Window_AMUObjectContentDisplayOnScreenDisplayEditor"
+      width="840" height="540" x_align="MiddleOfScreen" y_align="MiddleOfScreen"
+  >
+    <element prefab_lookup_name="BasicWindowBG" x="-2000" y="-2000" width="4000" height="4000" is_intentionally_without_controller="true" />
+    <element prefab_lookup_name="BasicText" x="0" y="-20" width="450" height="20" type_name="TopLabel" font_size="13" text_alignment="Bottom" />
+    <element prefab_lookup_name="ButtonSet_BlueSmallerCenter" width="450" height="132" button_width="400" button_height="18" font_size="13" type_name="ObjectContentDisplayOnScreenEditorMenuRoot" />
+  </window>
+
+</root>

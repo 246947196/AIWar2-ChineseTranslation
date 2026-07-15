@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<entity name="RPSF_Frigate_Slicer" copy_from="RPSF_Frigate_Template"
+		thematic_groups="Frigate,Human"
+		visuals="Assets/_FinalGameMeshes/AIExtragalactic/Tier3_ExtragalacticWarSlicerFrigate/Tier3_ExtragalacticWarSlicerFrigate.prefab"
+		visuals_scale_multiplier="8"
+		icon_name="Ships1/Starship_Heavy" 
+		icon_overlay="Overlays2/Guardian_Shredder"
+		size_scale="3"
+		display_name="切割者护卫舰"
+		display_name_for_sidebar="切割FFH"
+		description="快速护卫舰，用其穿盾颚部代谢敌人。对更大目标造成更高伤害，但也是AI的高优先级目标。"
+		tags="ArkEmpireOptionGroup5" custom_arkempire_fleetcap="6"
+		tech_upgrades_that_benefit_me="Melee,Raid"
+		hull_points="130000" shield_points="130000" 
+		speed="VeryHigh1"
+		metal_cost="50000" energy_consumption="9000"
+		engine_gx="20" albedo="0.6" mass_tx="5"
+
+		priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty"
+		>	
+		<fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<fleet_membership name="UnusualMix" ship_cap_group="Frigate" weight="10" cap="6"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<fleet_membership name="CloakedMix" ship_cap_group="Frigate" weight="0" cap="6"/>
+		<fleet_membership name="AntiLargeMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<fleet_membership name="RaidOffensiveMix" ship_cap_group="Frigate" weight="10" cap="7"/>
+		<system name="WM" display_name="聚变巨口" 
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="450" range="AlmostNone" seek_range="Normal1" shot_speed="Fast" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+			shot_type_data="MeleeInvisible" added_target_evaluator="Melee"
+			base_percent_damage_bypasses_personal_shields="1"
+			health_change_per_damage_dealt="0.2"
+			>
+			<death_effect_damage type="Metabolization" tier_name="Gangsaw"/> 
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="MultiplesOf" compared_to="1" multiplier="1" max_multiplier="12" />
+		</system>
+		<!--<system name="W2" display_name="伏击轨道炮"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="180" shots_per_salvo="2" fires_salvos_sequentially="false" 
+			range="EssentiallyInfinite" shot_speed="VeryFast" rate_of_fire="Normal"
+			shot_type_data="ExtremeLongRangeRailgun"
+			>
+			<death_effect_damage type="Metabolization" tier_name="Gangsaw"/> 
+			<outgoing_damage_modifier based_on="TargetTimeAtPlanet" comparison_type="LessThan" compared_to="15" multiplier="12" />
+			<outgoing_damage_modifier based_on="CurrentHullPercentage" applies_to="HullOnly" comparison_type="AtMost" compared_to="50" multiplier="1.1" /> 
+		</system>-->
+		<incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="3000" multiplier="0.01" />
+	</entity>
+	
+</root>

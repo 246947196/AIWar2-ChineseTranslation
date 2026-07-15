@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<rof name="Fifty" seconds_per_salvo="50" />
+	<rof name="OneHundred" seconds_per_salvo="100" />
+	<rof name="OneHundredFifty" seconds_per_salvo="150" />
+	<rof name="TwoHundred" seconds_per_salvo="200" />
+	<rof name="TwoHundredFifty" seconds_per_salvo="250" />
+	<rof name="ThreeHundred" seconds_per_salvo="300" />
+	<rof name="ThreeHundredFifty" seconds_per_salvo="350" />
+	<rof name="FourHundred" seconds_per_salvo="400" />
+	<rof name="FourHundredFifty" seconds_per_salvo="450" />
+	<rof name="FiveHundred" seconds_per_salvo="500" />
+	<rof name="FiveHundredFifty" seconds_per_salvo="550" />
+	<rof name="SixHundred" seconds_per_salvo="600" />
+	<rof name="SixHundredFifty" seconds_per_salvo="650" />
+	<rof name="SevenHundred" seconds_per_salvo="700" />
+	<rof name="SevenHundredFifty" seconds_per_salvo="750" />
+	<rof name="EightHundred" seconds_per_salvo="800" />
+	<rof name="EightHundredFifty" seconds_per_salvo="850" />
+	<rof name="NineHundred" seconds_per_salvo="900" />
+	<rof name="NineHundredFifty" seconds_per_salvo="950" />
+	<rof name="OneThousand" seconds_per_salvo="1000" />
+</root>

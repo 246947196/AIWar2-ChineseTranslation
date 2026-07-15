@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>    
+
+	<!--The basic AI version of the Gorgon Aggregate Body Frigate-->
+	<entity skip_export="true" copy_from="GorgonFrigate" name="AIGorgonGuardian" special_entity_type="AIGuardian"
+        display_name="AI Gorgon Aggregate Body 守护者" display_name_for_sidebar="AI Gorgon GU"
+		description="An AI controlled Gorgon aggregate body. Powers a paralysis weapon and breaks apart into independent 攻击 craft as it takes damage."
+	    starting_mark_level="Mark1" cost_for_ai_to_purchase="950" tech_upgrades_that_benefit_me="Unused"
+		blocks_enemy_claim_flows="true">
+		<ai_ship_group_membership name="EyeGuardiansWithAntiLargeSupport" weight="100"/>
+		<ai_ship_group_membership name="PoliceGuardians" weight="100"/>
+		<ai_ship_group_membership name="RiotPoliceGuardians" weight="100"/>
+		<ai_ship_group_membership name="WardenGuardians" weight="100"/>
+	</entity>
+	
+	<!-- AI version of the Escort Carrier -->
+	<entity skip_export="true" copy_from="EscortCarrier" name="AIEscortCarrier" special_entity_type="AIGuardian"
+        display_name="AI 护航航母" display_name_for_sidebar="AI 护航 GU"
+		description="A light 航母 for AI system 防御 carrying a small complement of 星战 it supports with a parasitic 加农炮."
+	    starting_mark_level="Mark1" cost_for_ai_to_purchase="650" tech_upgrades_that_benefit_me="Unused"
+		fleet_design_template_i_use_for_drones="TechCarrierDrones"
+		drone_starting_behavior_type="Attacker_Full">
+		<metal_flow purpose="BuildingDronesInternally" throughput="1000" increase_per_mark_level="250"/>
+		<ai_ship_group_membership name="OverrunnerGuardians" weight="100"/>
+		<ai_ship_group_membership name="MassCarrierGuardiansWithSupport" weight="100"/>
+		<ai_ship_group_membership name="TemperamentalsWithSupport" weight="100"/>
+		<ai_ship_group_membership name="CloakingForcefieldAndCarrierGuardians" weight="100"/>
+		<system name="LT" 
+		max_mark_level_to_function="0" system_is_hidden_for_ui="true">
+		</system>
+	</entity>
+  	
+	<!-- AI version of the Ambush Carrier -->
+	<entity skip_export="true" copy_from="AmbushCarrier" name="AIAmbushCarrier" special_entity_type="AIGuardian"
+		gimbal_icon_size_multiplier="1.25"			 
+        visuals="assets/_finalgamemeshes/guardians/carrierguardian/carrierguardian.prefab"
+		icon_name="Ships1/Guardian" icon_overlay="Overlays2/Guardian_Carrier"
+		size_scale="3.1" visuals_scale_multiplier="4.5"
+		display_name="AI Ambush 航母" display_name_for_sidebar="AI Ambush GU"
+		description="A lightly 装甲 specialist with 隐形 that supports a wing of raptor 无人机."
+		starting_mark_level="Mark1" cost_for_ai_to_purchase="700" tech_upgrades_that_benefit_me="Unused"
+		fleet_design_template_i_use_for_drones="AmbuCarrierDrones"
+		drone_starting_behavior_type="Attacker_Full">
+		<metal_flow purpose="BuildingDronesInternally" throughput="1000" increase_per_mark_level="250"/>
+		<ai_ship_group_membership name="OverrunnerGuardians" weight="100"/>
+		<ai_ship_group_membership name="MassCarrierGuardiansWithSupport" weight="100"/>
+		<ai_ship_group_membership name="TemperamentalsWithSupport" weight="100"/>
+		<ai_ship_group_membership name="CloakingForcefieldAndCarrierGuardians" weight="100"/>
+		<system name="W2" 
+		max_mark_level_to_function="0" system_is_hidden_for_ui="true">
+		</system>
+	</entity>
+	
+	<!-- Start of the Dire Guardian entries -->
+	<!-- AI version of the Artillery Cruiser -->
+		<entity name="AIArtilleryCruiser" display_name="AI 火炮驱逐舰" copy_from="Bombard" required_expansion_list="1_The_Spire_Rises"
+		tags="DireGuardian" display_name_for_sidebar="AI Artillery DGU"
+		description="A slow moving juggernaut with strong 护盾s and stronger weapons."
+		special_entity_type="AIDireGuardian" gimbal_icon_size_multiplier="1.25"			 
+		multiplier_to_all_scales="2.5"
+		uses_large_health_bar="true"
+		hull_points="60000" shield_points="250000"
+		metal_cost="450000" energy_consumption="20000"
+		cost_for_ai_to_purchase="8500" tech_upgrades_that_benefit_me="Unused"
+		armor_mm="70" albedo="0.6" engine_gx="20" mass_tx="6"
+		starting_mark_level="Mark7"
+		priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy">
+		<system name="W1" display_name="双联磁力加速器"
+				damage_per_shot="5500" shot_speed="VeryFast" rate_of_fire="ExtremelyLow"
+				shots_per_salvo="2" fires_salvos_sequentially="false"
+				>
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="5" />
+		</system>
+		<system name="FB" display_name="压制防空炮"
+				category="Weapon" firing_timing="OnlyInRange" shot_speed="Normal" rate_of_fire="Normal" shots_per_salvo="3" fires_salvos_sequentially="true"
+				damage_per_shot="750" range="High1" aoe_spreads_damage_among_available_targets="true" area_of_effect_size="750"
+				maximum_number_of_targets_hit_per_shot="10" shot_type_data="FlakShotAOEBurstAtEnd">
+				<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="50" multiplier="4" />
+		</system>
+		<ai_ship_group_membership name="AnyDireGuardians" weight="100"/>
+		<ai_ship_group_membership name="DefensiveDireGuardians" weight="100"/>
+		<ai_ship_group_membership name="DireExoLeaders" weight="50"/>
+		<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>	
+	
+</root>

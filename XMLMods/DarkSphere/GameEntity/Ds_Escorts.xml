@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<entity name="Ds_Escort_Gatling" tags="Ds_ARS_Choice"
+			thematic_groups="Strikecraft" 			
+			category="Ship"
+            npc_ship_cap_type="Strikecraft"
+
+            display_name="黑暗加特林"
+			description="Aggressively swarms anything near the Dark Sphere."
+
+            voice_group="Fighter"
+            ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+            visuals="assets/_finalgamemeshes/fleetships/lasergatling/laser_gatlingold.prefab"
+			icon_name="Ships1/AblativeGatling"
+            size_scale="1"
+			visuals_scale_multiplier="6"
+			collision_priority="100"
+
+			hull_points="1500" 
+            shield_points="0" 
+            speed="Normal3"
+            strength_multiplier="1.4"
+
+            cost_for_ai_to_purchase="18" metal_cost="900" energy_consumption="135"
+			armor_mm="30" albedo="0.3" engine_gx="8" mass_tx="0.21"
+			
+            starting_mark_level="Mark1" 
+            tech_upgrades_that_benefit_me="Unused"
+			priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+
+            self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="3"
+            
+            custom_weight="100"
+			>		
+
+		<system name="Q8" display_name="黑暗加农炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="52" range="Normal4" shot_speed="Fast" rate_of_fire="High" fires_salvos_sequentially="true"
+				shot_type_data="Ds_Shot_Gatling"
+				>
+			<outgoing_damage_modifier based_on="Albedo" comparison_type="AtLeast" compared_to="0.5" multiplier="5" />
+		</system>
+
+		<fleet_membership
+				name="AddedToFleet_MinorFaction"
+				ship_cap_group="Strike"
+				weight="100"
+				cap="70"
+				faction="DarkSphere"
+				/>
+
+
+	</entity>
+
+</root>

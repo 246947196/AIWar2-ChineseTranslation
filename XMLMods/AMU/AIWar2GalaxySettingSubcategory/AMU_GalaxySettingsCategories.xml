@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <setting_subcategory parent="MapGen" name="CapturableRepositioning" display_name="Capturable Repositioning" color="46f0ff"
+      description="Settings related to capturable repositioning." />
+</root>

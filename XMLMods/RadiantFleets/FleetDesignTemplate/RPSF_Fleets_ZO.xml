@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	
+	<!-- Ambush --> 
+	<fleet_design name="RPSF_Mobile_Ambush"
+		display_name="伏击舰队"
+		description="使用伏击技术的舰船集合。"
+		design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+		append_each_ship_description_to_main_description="true"
+		required_expansion_list="2_Zenith_Onslaught"
+		>
+		<ship_membership name="TransportFlagship_Agile" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+		
+		<ship_membership name="RPSF_Frigate_Zenith_Harpoon" ship_cap_group="Frigate" weight="100" cap="9"/> <!-- Ambush, Alien -->
+		<ship_membership name="BountyHunter" ship_cap_group="Frigate" weight="100" cap="9"/><!-- Ambush, Raid -->
+		<ship_membership name="RPSF_Strike_DZJavelin" ship_cap_group="Strike" weight="100" cap="5"/> <!-- Ambush, Melee -->
+		<ship_membership name="Aggressor" ship_cap_group="Strike" weight="100" cap="40"/> <!-- Ambush, Disruptive -->
+	</fleet_design>
+	<!-- Melee --> 
+	<fleet_design name="RPSF_Mobile_Melee"
+		display_name="近战舰队"
+		description="使用近战技术的舰船集合，大多数使用自杀式攻击。好在你的旗舰可以重建它们！"
+		design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+		append_each_ship_description_to_main_description="true"
+		required_expansion_list="2_Zenith_Onslaught"
+		>
+		<ship_membership name="RPSF_Transport_Factory" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+		
+		<ship_membership name="RPSF_Frigate_Slicer" ship_cap_group="Frigate" weight="100" cap="9"/> <!-- Melee, Raid -->
+		<ship_membership name="RPSF_Strike_Ram_Fusion" ship_cap_group="Strike" weight="100" cap="40"/>
+		<ship_membership name="RPSF_Strike_DZJavelin" ship_cap_group="Strike" weight="100" cap="3"/><!-- Melee, Ambush -->
+		<ship_membership name="ClusterBomb" ship_cap_group="Strike" weight="100" cap="30"/><!-- Melee, Heavy -->
+	</fleet_design>
+	<!-- Piercing ("Fusion") --> 
+	<fleet_design name="RPSF_Mobile_Fusion"
+		display_name="穿透舰队"
+		description="使用穿透技术的舰船集合"
+		design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+		append_each_ship_description_to_main_description="true"
+		required_expansion_list="2_Zenith_Onslaught"
+		>
+		<ship_membership name="TransportFlagship_HighCapacity" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+		
+		<ship_membership name="CloakedMugger" ship_cap_group="Frigate" weight="100" cap="9"/>
+		<ship_membership name="ElectricBomber" ship_cap_group="Strike" weight="100" cap="40"/>
+		<ship_membership name="FusionSaw" ship_cap_group="Strike" weight="100" cap="40"/>
+		<ship_membership name="RPSF_Strike_Raid_Fusion" ship_cap_group="Strike" weight="100" cap="40"/>
+	</fleet_design>
+</root>

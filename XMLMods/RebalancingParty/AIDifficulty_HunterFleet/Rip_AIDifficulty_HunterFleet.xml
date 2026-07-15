@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <record name="Difficulty_9_5"
+       display_name="难度 9.5"
+       hunter_fleet_starting_budget="8000"
+       hunter_bonus_income_per_minute="750"
+       overconfidence_ratio="1.0"
+       difficulty="9"
+       can_use_dire_guardians="true"
+       aip_for_dire_unlock="150"
+       can_wait_for_reinforcements="true"
+       >
+    <BonusAntiTaggedUnitIncome
+        tag="MajorDataCenter"
+        income_per_interval="1.4"
+        interval_in_seconds="4"
+        linear_income_increase_per_10_aip="0.01"
+        only_player_owned="true"
+        income_increased_with_multiple_targets="true"
+        />
+    <BonusAntiTaggedUnitIncome
+           tag="MarauderOutpost"
+           income_per_interval="1"
+           interval_in_seconds="30"
+           linear_income_increase_per_10_aip="0.01"
+           only_player_or_ally_owned="true"
+           income_increased_with_multiple_targets="true"
+           />
+      <BonusAntiTaggedUnitIncome
+           tag="NanobotCenter"
+           income_per_interval="2"
+           interval_in_seconds="10"
+           linear_income_increase_per_10_aip="0.02"
+           only_player_or_ally_owned="true"
+           income_increased_with_multiple_targets="true"
+           />
+
+  </record>
+  
+</root>

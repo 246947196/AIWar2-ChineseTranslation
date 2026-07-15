@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+    <faction name="Scourge" is_partial_record="true" required_expansion_list="1_The_Spire_Rises">
+      <!--Just to add Civil War to the allegiances to support Scourge Civil War-->
+    <custom_field name="Allegiance" display_name="Allegiance" description="Is this faction friendly to the AI(s) or the player? Having it allied to the player makes the game much easier."
+                  sort_group="250" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Allied To AI,Friendly To Players,Minor Faction Team Red,Minor Faction Team Blue,Minor Faction Team Green,Civil War" default_option="Allied To AI" />
+    </faction>
+
+    <faction name="ScourgeVassal"
+             display_name="Scourge Vassal" short_name="Scourge" processing_group="Scourge"
+      base_info_source="ScourgeVassalFactionBaseInfo"
+      deep_info_source="ScourgeVassalFactionDeepInfo"
+      team_center_color="Pink" team_border_color="c660000"
+      type="SpecialFaction"
+      description="These 天灾 are vassal to the 天灾 Infused Human Empire. Should not appear in lobby, but should be auto-added to the game if the 天灾 Infused Empire are present."
+      should_not_be_shown_in_game_lobby="true"
+      icon_name_for_lobby="Ships1/ScourgeSubjugator"
+      auto_add_singleton_of_faction_when_any_count_of_other_player_types_present="ScourgeInfusedHumanEmpire"
+      >
+      <custom_field name="Allegiance" display_name="Allegiance" description="Each scourge faction (one for each AI) is friendly to the AI but hostile to each of the other newly added scourge factions. These factions are all also hostile to you."
+                  sort_group="250" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Friendly To Players" default_option="Friendly To Players" />
+
+    </faction>
+
+      <!-- Note for Zeus: this can be moved to the base game if you want/if Chris signs off -->
+    <faction name="DarkZenith" is_partial_record="true" required_expansion_list="2_Zenith_Onslaught">
+      <custom_field name="IncrementalUpgrade" display_name="Incremental Upgrade" description="By default, the DZ Full Invasion will arrive with all their Upgrades. This setting will cause them to have a different set of upgrades based on when they invade; earlier invasions still have to do research."
+                    is_advanced_setting="true"
+                    sort_group="900" setting_type="BoolToggle" default="false"/>/>
+    </faction>
+
+  <faction name="ScourgeCivilWar"
+           display_name="Scourge War" short_name="S War" processing_group="Scourge"
+           base_info_source="ScourgeCivilWarFactionBaseInfo"
+           deep_info_source="ScourgeCivilWarFactionDeepInfo"
+           team_center_color="Coyote" team_border_color="cF8F8FF"
+           type="SpecialFaction"
+           description="The 天灾 remain loyal to the AI, but different Hives of 天灾 no longer trust one another. The chaos of their civil war will prevent them from focusing on you.
+
+&lt;color=#f25e1c&gt;HIGH IMPACT:&lt;/color&gt; Each AI will get its own faction of the 天灾. Each scourge faction is an ally to the AI, and enemy to all the other scourge factions and to you."
+           can_use_spire_debris="true"
+           impact="Brutal"
+           CanBeAlliedToAI="true"
+           adds_civil_war_scourge="true"
+           must_be_at_most_one="true"
+	   icon_name_for_lobby="Ships2/SomethingAlien"
+           >
+    <custom_field name="Intensity" display_name="Strength" description="How much of an impact each scourge faction has.
+
+Increasing strength increases how quickly the scourge build units or 建筑, how quickly their units individually mark up, how many top-tier units they can build and how fast they produce their units. At Strength 6 the scourge have access to all their intelligence."
+                  sort_group="200" setting_type="IntSlider" default="5" min="1" max="10"/>
+    <custom_field name="Allegiance" display_name="Allegiance" description="Each scourge faction (one for each AI) is friendly to the AI but hostile to each of the other newly added scourge factions. These factions are all also hostile to you."
+                  sort_group="250" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Civil War" default_option="Civil War" />
+
+    <custom_field name="AllowDarkZenith" display_name="Allow Dark Zenith" description="Instead of only scourge factions spawning (one for each AI), some of those factions may be replaced with Dark 天顶 斯维卡里."
+                   sort_group="930" setting_type="BoolToggle" default="false"/>
+    <custom_field name="OnlyDarkZenith" display_name="Only Dark Zenith" description="Instead of only scourge factions spawning (one for each AI), all of those factions will be replaced with Dark 天顶 斯维卡里."
+                   sort_group="930" setting_type="BoolToggle" default="false"/>
+    
+  </faction>
+  <faction name="TemplarWithoutNecromancer"
+           display_name="AI Templar" short_name="AI Templar" processing_group="Templar"
+           base_info_source="TemplarFactionBaseInfo"
+           deep_info_source="TemplarFactionDeepInfo"
+           team_center_color="Coyote" team_border_color="c301934"
+           icon_name_for_lobby="Ships4/TemplarSovereign"
+           type="SpecialFaction"
+           must_be_at_most_one="true"
+           allied_to_ai_by_default="true"
+           CanBeAlliedToAI="true"
+           allegiance_player_types_i_always_enemy="NecromancerSidekick,NecromancerEmpire"
+	   creases_hack_responses_if_all_ais_are_defeated="true"
+           description="This variant of the 圣殿骑士 serves the AI regardless of whether there is a 死灵法师. These 圣殿骑士 build powerful defensive 建筑 across the 银河, to make your life harder. They also launch periodic assaults against you.
+
+I have no idea how remotely balanced they will be against Non-死灵法师 player types, but people have expressed an interest in finding out. The only change from the default behaviour is that Rifts won't spawn, since only the 死灵法师 can interact with them.
+
+If you have this faction enabled and also turn on the 死灵法师, you'll get two 圣殿骑士 factions, but I'm not sure how well behaved that will be. This is not supported behaviour."
+           >
+    <custom_field name="Intensity" display_name="Intensity" description="How much of an impact are they likely to have on gameplay?"
+		  sort_group="200" setting_type="IntSlider" default="5" min="1" max="10"/>
+    <custom_field name="Allegiance" display_name="Allegiance" description="The 圣殿骑士 are always Allied To AI."
+                  sort_group="250" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Allied To AI" default_option="Allied To AI" />
+
+  </faction>
+
+  <faction name="Reapers"
+     display_name="Reapers" short_name="Reapers"
+     base_info_source="ReapersFactionBaseInfo"
+     deep_info_source="ReapersFactionDeepInfo"
+     team_center_color="Gunmetal" team_border_color="ByzantineBlue" processing_group="Reapers"
+     type="SpecialFaction"
+     must_be_at_most_one="true"
+     should_not_be_shown_in_game_lobby="true"
+     auto_add_singleton_of_faction_when_any_count_of_other_player_types_present="DysonSidekick,DysonEmpire"
+     should_not_be_shown_in_game_lobby_add_factions_list="true"
+     description="被掠夺 planets grant access to this universe to a powerful, evil 死灵法师.  They will send dangerous attacks through. This is not visible in the game lobby, and is only exposed in game."
+     can_use_spire_debris="false"
+     takes_difficulty_from_dyson_sidekick="true"
+           >
+    <custom_field name="Allegiance" display_name="Allegiance" description="This faction is always hostile to all."
+                  sort_group="250" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Hostile To All" default_option="Hostile To All" />
+    <custom_field name="Intensity" display_name="Intensity" description="How much of an impact are they likely to have on gameplay? If the 强度 is too low then the 死灵法师 will have fewer 资源 to work with."
+		  sort_group="200" setting_type="IntSlider" default="-1" min="0" max="10"/>
+
+  </faction>
+
+  <faction name="ReapersWithoutDyson"
+     display_name="Reapers" short_name="Reapers"
+     base_info_source="ReapersFactionBaseInfo"
+     deep_info_source="ReapersFactionDeepInfo"
+     team_center_color="Gunmetal" team_border_color="ByzantineBlue" processing_group="Reapers"
+     type="SpecialFaction"
+     must_be_at_most_one="true"
+     should_not_be_shown_in_game_lobby="true"
+     icon_name_for_lobby="Ships4/EmblemDragon"
+
+description="The 收割者 are a powerful force of Necromancers seeking to conquer the 银河. They will seize planets, or 掠夺 them to fuel their war machine.
+
+The 收割者 exist normally to counter the 戴森 Sidekick, but this version does not require a 戴森 Sidekick.
+
+Badger doesn't have much balance data for this, so if you have problems please give feedback on discord.
+
+Adding this faction alongside a dyson sidekick is not supported (instead just use the dyson sidekick and the 收割者 will be added automatically)"
+     can_use_spire_debris="false"
+           >
+    <custom_field name="Allegiance" display_name="Allegiance" description="This faction is always hostile to all."
+                  sort_group="250" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Hostile To All" default_option="Hostile To All" />
+    <custom_field name="Intensity" display_name="Intensity" description="How much of an impact are they likely to have on gameplay? Currently only intensity 5 is supported."
+		  sort_group="200" setting_type="IntSlider" default="5" min="1" max="10"/>
+
+  </faction>
+
+  <faction name="Human" is_partial_record="true">
+    <!-- Dyson Empire/Sidekick custom fields. -->
+    <custom_field requires_player_types="DysonSidekick,DysonEmpire"
+                  name="DysonStartingStronghold" display_name="Starting Stronghold" description="Which Strongold do you want to start with?"
+                  sort_group="100" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Zenith,Neinzul" default_option="Zenith"/>
+    
+    <custom_field requires_player_types="DysonSidekick,DysonEmpire"
+                  name="DysonStartingMoon" display_name="Starting Moon" description="Which Moon do you want to start with?"
+                  sort_group="100" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Zenith,Neinzul,Templar,Spire,Random" default_option="Random"/>
+
+    <custom_field requires_player_types="DysonSidekick,DysonEmpire"
+                  name="DysonSidekickIncome" display_name="Income" description="How much income does the 戴森 Sidekick get? Higher numbers mean more 资源."
+                  sort_group="100"  setting_type="IntSlider" default="5" min="1" max="10"/> 
+    <custom_field requires_player_types="DysonSidekick,DysonEmpire"
+                  name="DysonSidekickIntensity" display_name="Reaper Difficulty" description="How strong of responses do the 戴森's enemies get? Higher numbers mean more forces. This is balanced for the Sidekick (which has allies), so on Empire you may want a lower Difficulty."
+                  sort_group="100"  setting_type="IntSlider" default="5" min="1" max="10"/> 
+
+
+    <custom_field requires_player_types="DysonSidekick,DysonEmpire"
+                  name="DysonStartingResources" display_name="Sandbox: Bonus Starting Resources" description="Moving this above 0 will grant the 戴森 bonus 资源 at the start of the game."
+                  is_advanced_setting="true"
+                  sort_group="600" setting_type="IntSlider" default="0" min="0" max="10"/>
+    <custom_field  requires_player_types="DysonSidekick,DysonEmpire" name="DysonUnlockAllTechs" display_name="Sandbox: All Unit Access" description="Buildings are not gated by 区域, or Drilled planets or 要塞 标记等级, so you get access to all 建筑 immediately. Intended for sandbox play/testing."
+                   is_advanced_setting="true"
+                   sort_group="930" setting_type="BoolToggle" default="false"
+                   />
+    <!-- Spire Sidekick custom fields -->
+    <custom_field requires_player_types="SpireSidekick"
+                  name="SpireSidekickIntensity" display_name="Strength" description="This determines the AI response to the 尖塔 Sidekick."
+                  sort_group="200" setting_type="IntSlider" default="5" min="1" max="10"/>
+
+
+    <!-- Scourge Infused Empire Sidekick custom fields -->
+    <custom_field requires_player_types="ScourgeInfusedHumanEmpire"
+                   name="ScourgeEmpireStrength" display_name="Strength" description="This determines the strength of your 天灾 forces."
+                   sort_group="200" setting_type="IntSlider" default="5" min="1" max="10"/>
+    <custom_field  requires_player_types="ScourgeInfusedHumanEmpire"
+                   name="ScourgeEmpireDifficulty" display_name="Strength" description="This determines the strength of the AI response to your 天灾 forces."
+                   sort_group="300" setting_type="IntSlider" default="5" min="1" max="10"/>
+
+  <!-- Ark Sidekick custom fields. -->
+		<custom_field requires_player_types="HumanArkSidekick"
+			name="StartingArkSidekick" display_name="Ark" related_table="ETag_HumanArkSidekickArks" description="Choose what kind of 方舟 serves as the Sidekick's home base."
+			sort_group="200" setting_type="CustomDropdownCoreTableSubset" default_option="RandomArk"
+			random_option_name="RandomArk" random_option_display_name="&lt;color=#ffd965&gt;Random&lt;/color&gt;" random_option_description="Picks a completely random ark for the Sidekick."/>
+		<custom_field requires_player_types="HumanArkSidekick"
+			name="ArkSidekickOptionGroup1" display_name="Ship Line 1" related_table="ETag_ArkSidekickOptionGroup1" description="What will the first ship line flying from your ark be?"
+			sort_group="200" setting_type="CustomDropdownCoreTableSubset" default_option="RandomShipLine"
+			random_option_name="RandomShipLine" random_option_display_name="&lt;color=#ffd965&gt;Random&lt;/color&gt;" random_option_description="Picks a completely random ship line."/>
+		<custom_field requires_player_types="HumanArkSidekick"
+			name="ArkSidekickOptionGroup2" display_name="Ship Line 2" related_table="ETag_ArkSidekickOptionGroup2" description="What will the second ship line flying from your ark be?"
+			sort_group="200" setting_type="CustomDropdownCoreTableSubset" default_option="RandomShipLine"
+			random_option_name="RandomShipLine" random_option_display_name="&lt;color=#ffd965&gt;Random&lt;/color&gt;" random_option_description="Picks a completely random ship line."/>
+		<custom_field requires_player_types="HumanArkSidekick"
+			name="ArkSidekickOptionGroup3" display_name="Ship Line 3" related_table="ETag_ArkSidekickOptionGroup3" description="What will the third ship line flying from your ark be?"
+			sort_group="200" setting_type="CustomDropdownCoreTableSubset" default_option="RandomShipLine"
+			random_option_name="RandomShipLine" random_option_display_name="&lt;color=#ffd965&gt;Random&lt;/color&gt;" random_option_description="Picks a completely random ship line."/>
+		<custom_field requires_player_types="HumanArkSidekick"
+			name="ArkSidekickOptionGroup4" display_name="Ship Line 4" related_table="ETag_ArkSidekickOptionGroup4" description="What will the fourth ship line flying from your ark be?"
+			sort_group="200" setting_type="CustomDropdownCoreTableSubset" default_option="RandomShipLine"
+			random_option_name="RandomShipLine" random_option_display_name="&lt;color=#ffd965&gt;Random&lt;/color&gt;" random_option_description="Picks a completely random ship line."/>
+		<custom_field requires_player_types="HumanArkSidekick"
+			name="ArkSidekickOptionGroup5" display_name="Ship Line 5" related_table="ETag_ArkSidekickOptionGroup5" description="What will the fifth ship line flying from your ark be?"
+			sort_group="200" setting_type="CustomDropdownCoreTableSubset" default_option="RandomShipLine"
+			random_option_name="RandomShipLine" random_option_display_name="&lt;color=#ffd965&gt;Random&lt;/color&gt;" random_option_description="Picks a completely random ship line."/>
+
+                <!-- Armada Empire Sidekick custom fields -->
+    <custom_field requires_player_types="ArmadaEmpire"
+                  name="ArmadaIncome" display_name="Power" description="Influences the 无敌舰队's power; economic and military."
+                  sort_group="200" setting_type="IntSlider" default="5" min="1" max="10"/>
+    <custom_field  requires_player_types="ArmadaEmpire"
+                   name="ArmadaDifficulty" display_name="Difficulty" description="This determines the strength of the AI response to your 无敌舰队 forces; this includes both power of the 泰德瑞安 and the bonuses to the AI."
+                   sort_group="300" setting_type="IntSlider" default="5" min="1" max="10"/>
+    <custom_field  requires_player_types="ArmadaEmpire"
+                   name="ArmadaStartingResources" display_name="Sandbox: Bonus Starting Resources" description="Moving this above 0 will grant the 无敌舰队 bonus 资源 at the start of the game."
+                  is_advanced_setting="true"
+                  sort_group="600" setting_type="IntSlider" default="0" min="0" max="10"/>
+
+    <custom_field  requires_player_types="ArmadaEmpire"
+                   name="ArmadaStartingStarbase" display_name="Starting Starbase" description="The type of 星站 you start with"
+                   sort_group="100" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Terran,Kilrathi,Random" default_option="Random"/>
+
+  </faction>
+
+
+    <faction name="DarkZenith" is_partial_record="true" >
+      <!--Just add this one option to the existing field-->
+      <custom_field name="Allegiance" display_name="Allegiance" description="This faction is a member of the Dark Alliance canonically."
+                    sort_group="400" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Dark Alliance,Allied To AI,Hostile To All,Minor Faction Team Red,Minor Faction Team Blue,Minor Faction Team Green" default_option="Dark Alliance" />
+
+    </faction>
+
+    <faction name="DarkZenithSvikari" is_partial_record="true" >
+      <!--Just add this one option to the existing field-->
+    <custom_field name="Allegiance" display_name="Allegiance" description="These 天顶 are traitors to the Dark Alliance."
+                  sort_group="300" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Friendly To Players,Minor Faction Team Red,Minor Faction Team Blue,Minor Faction Team Green,Allied To AI,Civil War" default_option="Friendly To Players" />
+    </faction>
+
+  
+</root>

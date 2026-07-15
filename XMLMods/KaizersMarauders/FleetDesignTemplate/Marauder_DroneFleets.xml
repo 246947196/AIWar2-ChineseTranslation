@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<fleet_design name="DroneBattleship_Drones" design_logic="Drones" weight="1" include_full_cap_of_each_type="true"
+	>
+		<ship_membership name="NeedleInterceptorDrone" ship_cap_group="Strike" weight="100" cap="20"/>
+		<ship_membership name="TorpedoBomberDrone" ship_cap_group="Strike" weight="100" cap="15"/>
+		<ship_membership name="HunterFighterDrone" ship_cap_group="Strike" weight="100" cap="10"/>
+		<ship_membership name="AcidicLightCorvetteDrone" ship_cap_group="Strike" weight="100" cap="8"/>
+		<ship_membership name="DisrupterCorvetteDrone" ship_cap_group="Strike" weight="100" cap="6"/>
+		<ship_membership name="MortarHeavyCorvetteDrone" ship_cap_group="Strike" weight="100" cap="4"/>
+	</fleet_design>
+	
+	<fleet_design name="PlatedDroneBattleship_Drones" design_logic="Drones" weight="1" include_full_cap_of_each_type="true"
+	>
+		<ship_membership name="NeedleInterceptorDrone" ship_cap_group="Strike" weight="100" cap="22"/>
+		<ship_membership name="TorpedoBomberDrone" ship_cap_group="Strike" weight="100" cap="16"/>
+		<ship_membership name="HunterFighterDrone" ship_cap_group="Strike" weight="100" cap="11"/>
+		<ship_membership name="AcidicLightCorvetteDrone" ship_cap_group="Strike" weight="100" cap="9"/>
+		<ship_membership name="DisrupterCorvetteDrone" ship_cap_group="Strike" weight="100" cap="7"/>
+		<ship_membership name="MortarHeavyCorvetteDrone" ship_cap_group="Strike" weight="100" cap="4"/>
+	</fleet_design>
+	
+	<fleet_design name="ArmoredDroneBattleship_Drones" design_logic="Drones" weight="1" include_full_cap_of_each_type="true"
+	>
+		<ship_membership name="NeedleInterceptorDrone" ship_cap_group="Strike" weight="100" cap="24"/>
+		<ship_membership name="TorpedoBomberDrone" ship_cap_group="Strike" weight="100" cap="18"/>
+		<ship_membership name="HunterFighterDrone" ship_cap_group="Strike" weight="100" cap="12"/>
+		<ship_membership name="AcidicLightCorvetteDrone" ship_cap_group="Strike" weight="100" cap="10"/>
+		<ship_membership name="DisrupterCorvetteDrone" ship_cap_group="Strike" weight="100" cap="7"/>
+		<ship_membership name="MortarHeavyCorvetteDrone" ship_cap_group="Strike" weight="100" cap="5"/>
+	</fleet_design>
+	
+</root>

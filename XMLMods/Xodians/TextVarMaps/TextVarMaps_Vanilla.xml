@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+    <map name="Xod_Lobby_SlotStatus">
+
+        <line id="1"
+              text="{Faction_Color_Center:}Hu~Xod Ath~Xi Ha~Ath{:Faction_Color_Center}"
+              />
+
+        <var_map var="this"
+        >
+            <style name="Faction_Color_Center"
+                   />
+        </var_map>
+
+    </map>
+
+</root>

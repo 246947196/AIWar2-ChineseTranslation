@@ -1,0 +1,741 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<entity name="HydralFederationHydral" npc_ship_cap_type="SpecialThingsToAlwaysSeed" is_expecting_to_not_be_encyclopedia_counted_at_all='false'
+           thematic_groups="Hidden,VeryMinorAliens"  grants_minor_faction_planet_control="true" is_partial_record="true"
+            draw_in_galaxy_view="true"
+			tags="HydralFederationHydral,BecomesNecromancyMummy,GeneratesBonusHunterShips,HydralFederationUnitProducer"
+			visuals="Assets/_FinalGameMeshes/Guardians/EMPGuardian/EMPGuardian.prefab"
+			icon_name="Ships2/SomethingApocalypse" gimbal_icon_size_multiplier="2"
+			voice_group="Silent"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="25"
+			visuals_scale_multiplier="30"
+			y_offset_of_icon="30"
+			collision_priority="10000"
+			display_name="海德拉联邦旗舰" display_name_for_sidebar="海德拉旗舰"
+			description="The centerpiece of the Hydral Federation. Incredibly durable, and very effective at locking down ships of any size.
+			
+Respawns when destroyed."
+			blocks_ceasefire_on_planet="true" 
+			pushes_enemy_shields="true"
+			can_pass_through_enemy_forcefields="true"
+			starting_mark_level="Markless" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="3522500" strength_multiplier="4"
+			hull_points="12000000" shield_points="32000000" speed="AboveAverage1"
+			metal_cost="10000000" energy_consumption="1000000"
+			armor_mm="500" albedo="0.7" engine_gx="25" mass_tx="25"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			seconds_to_fully_regenerate_hull="1200"
+			>
+		<system name="HI" display_name="海德拉禁锢加农炮"
+					category="Weapon" firing_timing="OnlyInRange"
+					damage_per_shot="9000" range="High1" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+					shot_type_data="LaserPulse_DeepBlue" shots_per_salvo="9"
+					base_engine_stun_per_shot="3" engine_stun_to_engine_gx_less_than="18" max_engine_stun_seconds="9"
+					base_enemy_weapon_reload_slowing_seconds_per_shot="3" enemy_weapon_reload_slowing_to_armor_mm_less_than="225"
+					max_enemy_weapon_reload_slowing_seconds="18"
+				>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="10" />
+		</system>
+		<ship_class_data can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.5" can_be_devoured="false"
+	>
+		</ship_class_data>
+	</entity>
+
+	<entity name="HydralFederationShipyard" tags="HydralFederationShipyard,HydralFederationUnitProducer,GeneratesBonusHunterShips" grants_minor_faction_planet_control="true"
+        thematic_groups="Hidden,VeryMinorAliens" visuals_bundle="exp1_the_spire_rises" is_expecting_to_not_be_encyclopedia_counted_at_all='false'
+	    visuals="Assets/_DLC1/MinorCapturables/WanderingScientist/WanderingScientist.prefab"
+		icon_name="Ships1/SpaceDock" gimbal_icon_size_multiplier="1.5" is_partial_record="true"
+		y_offset_of_icon="35"
+		category="Ship"
+	    size_scale="4"
+		visuals_scale_multiplier="10"
+        collision_priority="800"
+	    display_name="海德拉联邦船坞"
+		display_name_for_sidebar="海德拉船坞"
+	    description="Constantly churns out ships for the Hydral Federation."
+	    behavior="Stationary"
+		starting_mark_level="Markless"  tech_upgrades_that_benefit_me="Unused"
+		cost_for_ai_to_purchase="3000"
+		hull_points="800000" shield_points="1600000" speed="Immobile"
+		metal_cost="1500000" energy_consumption="50000"
+		armor_mm="300" albedo="0.7" mass_tx="8"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+		voice_group="Turret"
+		priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+		>
+	</entity>
+
+	<!-- The Federation Members
+		Some are just modified Scourge -->
+
+	<entity name="Burlust" is_expecting_to_not_be_encyclopedia_counted_at_all='false'
+			  thematic_groups="Hidden,VeryMinorAliens" npc_ship_cap_type="FrigatesAndGuardians" tags="HydralFederationSpawn"
+			  visuals="Assets/_DLC1/Scourge/BurlustParts/BurlustWarrior.prefab" visuals_bundle="exp1_the_spire_rises"
+			  icon_name="Ships2/SomethingAlien" icon_overlay="Overlays2/Race_Burlust"
+			  y_offset_of_icon="30" is_partial_record="true"
+			  voice_group="Silent"
+			  category="Ship"
+			  size_scale="3.6"
+			  visuals_scale_multiplier="8"
+			  collision_priority="100"
+			  display_name="爆裂族"
+			  display_name_for_sidebar="爆裂族"
+			  description="联邦的重型战士之一，在战斗中茁壮成长，船体越低，造成的伤害越多，受到的伤害越少。"
+			  starting_mark_level="Markless"
+			  cost_for_ai_to_purchase="120"
+			  hull_points="160000" shield_points="0" speed="AboveAverage6"
+			  metal_cost="80000" energy_consumption="5000"
+			  armor_mm="50" albedo="0.4" engine_gx="16" mass_tx="5"
+			  ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			
+			  priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="Expendable"
+            >
+		<system name="W1" display_name="爆裂族战斗炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="10000" range="Small2" shot_speed="Normal" rate_of_fire="Misery" fires_salvos_sequentially="false"
+				shot_type_data="DoubleShot_Red"
+				>
+			<outgoing_damage_modifier based_on="MyHullPercentageMissing" comparison_type="MultiplesOf" compared_to="10" multiplier="1" />
+		</system>
+		<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+
+	<entity name="Evuck" is_expecting_to_not_be_encyclopedia_counted_at_all='false'
+	        thematic_groups="Hidden,VeryMinorAliens" npc_ship_cap_type="FrigatesAndGuardians" tags="HydralFederationSpawn"
+			visuals="Assets/_DLC1/Scourge/EvuckParts/EvuckWarrior.prefab" visuals_bundle="exp1_the_spire_rises"
+			icon_name="Ships2/SomethingAlien" icon_overlay="Overlays2/Race_Evuck"
+			y_offset_of_icon="30"
+			voice_group="Silent" is_partial_record="true"
+			category="Ship"
+			size_scale="3.2"
+			visuals_scale_multiplier="8"
+			collision_priority="100"
+			display_name="伊维克族"
+			display_name_for_sidebar="伊维克族"
+			description="联邦中更有思想的成员之一，为盟友承担宝贵的支援角色，为友军瘫痪敌方建筑和护盾。"
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="550"
+			hull_points="104000" shield_points="56000" speed="AboveAverage1"
+			metal_cost="80000" energy_consumption="5000"
+			armor_mm="70" albedo="0.7" engine_gx="16" mass_tx="5"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			
+            priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="Expendable"
+            >
+		<system name="W1" display_name="伊维克聚变炸弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="33000" range="Small4" shot_speed="Slow" rate_of_fire="High" fires_salvos_sequentially="false"
+				shot_type_data="FusionBomb" cloaking_percent_loss_from_firing="0.2"
+				base_percent_damage_bypasses_personal_shields="0.65"
+			>
+			<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="HullOnly" comparison_type="AtLeast" compared_to="75" multiplier="1.25" />
+		</system>
+		<system name="W2" display_name="伊维克离子干扰器"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="2000" range="Small4" shot_speed="Fast" rate_of_fire="Low" fires_salvos_sequentially="false"
+				shot_type_data="ExtremelyLongRangeIon" cloaking_percent_loss_from_firing="0.2"
+				base_paralysis_seconds_per_shot="3" paralysis_to_ships_mass_tx_less_than="7"
+				only_targets_static_units="true"
+				fires_through_enemy_shields="true"
+			>
+		</system>
+		<system name="C" display_name="伊维克隐形装置"
+					category="Passive" cloaking_points="2000" cloaking_points_added_per_mark="1000"
+				>
+		</system>
+		<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+
+	<entity name="Peltian" is_expecting_to_not_be_encyclopedia_counted_at_all='false'
+	        thematic_groups="Hidden,VeryMinorAliens" npc_ship_cap_type="FrigatesAndGuardians" tags="HydralFederationSpawn"
+			visuals="Assets/_DLC1/Scourge/PeltianParts/PeltianWarrior.prefab" visuals_bundle="exp1_the_spire_rises"
+			icon_name="Ships2/SomethingAlien" icon_overlay="Overlays2/Race_Peltian"
+			y_offset_of_icon="30"
+			voice_group="Silent"
+			category="Ship" is_partial_record="true"
+			size_scale="3.2"
+			visuals_scale_multiplier="10"
+			collision_priority="100"
+			display_name="佩尔蒂安族"
+			display_name_for_sidebar="佩尔蒂安族"
+			description="虽然通常和平，但佩尔蒂安族的群体协作能力使得这艘通常较弱的轰炸舰在有足够数量聚集时变得强大得多。"
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="250"
+			hull_points="104000" shield_points="56000" speed="AboveAverage1"
+			metal_cost="80000" energy_consumption="5000"
+			armor_mm="50" albedo="0.4" engine_gx="16" mass_tx="5"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+            priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="Expendable"
+            >
+		<system name="W1" display_name="佩尔蒂安迫击炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="40000" range="High1" shot_speed="Slow" rate_of_fire="VeryLow" fires_salvos_sequentially="false"
+				shot_type_data="FlakShotAOEBurstAtEnd"
+				area_of_effect_size="900"
+				aoe_spreads_damage_among_available_targets="true"
+			>
+			<outgoing_damage_modifier based_on="AttackDistance" comparison_type="MultiplesOf" compared_to="3000" multiplier="1" />
+		</system>
+		<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+
+	<entity name="Thoraxian" is_expecting_to_not_be_encyclopedia_counted_at_all='false'
+	        thematic_groups="Hidden,VeryMinorAliens" npc_ship_cap_type="FrigatesAndGuardians" tags="HydralFederationSpawn"
+			visuals="Assets/_DLC1/Scourge/ThoraxianParts/ThoraxianWarrior.prefab" visuals_bundle="exp1_the_spire_rises"
+			icon_name="Ships2/SomethingAlien" icon_overlay="Overlays2/Race_Thoraxian"
+			y_offset_of_icon="30"
+			voice_group="Silent" is_partial_record="true"
+			category="Ship"
+			size_scale="3.2"
+			visuals_scale_multiplier="10"
+			collision_priority="100"
+			display_name="索拉克斯族"
+			display_name_for_sidebar="索拉克斯族"
+			description="可以说是联邦中最强的成员，索拉克斯族充当强大的防御力量，吸收瞄准盟友的射击，并通过强大的远程防御分散伤害。"
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="200"
+			hull_points="104000" shield_points="56000" speed="AboveAverage2"
+			metal_cost="80000" energy_consumption="5000"
+			armor_mm="110" albedo="0.3" engine_gx="16" mass_tx="5"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			
+            priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="Expendable"
+            >
+		<system name="W1" display_name="索拉克斯利爪"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="5000" range="VeryTiny1" seek_range="Normal1" shot_speed="Fast" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+				shot_type_data="MeleeInvisible" added_target_evaluator="Melee"
+			>
+		</system>
+		<system name="A" display_name="吸引场"
+				category="Passive"
+				attract_range_for_shots_against_allies="Tiny4"
+				>
+		</system>
+		<incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="6000" multiplier="0.33" />
+		<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+
+	<entity name="Acutian"
+	        thematic_groups="Hidden,VeryMinorAliens" npc_ship_cap_type="FrigatesAndGuardians" tags="HydralFederationSpawn" is_expecting_to_not_be_encyclopedia_counted_at_all='false'
+			visuals="Assets/_DLC1/Scourge/ThoraxianParts/ThoraxianWarrior.prefab" visuals_bundle="exp1_the_spire_rises"
+			icon_name="Ships1/AITachyonSentinel"
+			y_offset_of_icon="30"
+			voice_group="Silent"
+			category="Ship"
+			size_scale="3.2" is_partial_record="true"
+			visuals_scale_multiplier="10"
+			collision_priority="100"
+			display_name="阿库提安族"
+			display_name_for_sidebar="阿库提安族"
+			description="联邦的支柱，减缓其行星上的敌人并提供宝贵的反隐形能力，但本身较脆弱。"
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="200"
+			hull_points="76000" shield_points="40000" speed="AboveAverage3"
+			metal_cost="80000" energy_consumption="5000"
+			armor_mm="110" albedo="0.3" engine_gx="16" mass_tx="5"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+            priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="Expendable"
+            >
+		<system name="W1" display_name="阿库提安收费服务"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="6400" range="EssentiallyInfinite" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+				shot_type_data="EnergyWave"
+				>
+		</system>
+		<system name="T" display_name="超子阵列"
+				category="Passive"
+				tachyon_points="50" tachyon_points_added_per_mark="25" tachyon_range="High2" tachyon_hits_albedo_less_than="0.75"
+				>
+		</system>
+		<system name="G" display_name="引力核心"
+				category="Passive"
+				base_gravity_speed_multiplier="0.95" subtracted_gravity_speed_multiplier_per_mark="0" gravity_hits_engine_gx_less_than="14" gravity_range="EssentiallyInfinite"
+				>
+    </system>
+		<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+
+	<entity name="Andor"
+	        thematic_groups="Hidden,VeryMinorAliens" npc_ship_cap_type="FrigatesAndGuardians" tags="HydralFederationSpawn" is_expecting_to_not_be_encyclopedia_counted_at_all='false'
+			visuals="Assets/_DLC1/Scourge/ThoraxianParts/ThoraxianWarrior.prefab" visuals_bundle="exp1_the_spire_rises"
+			icon_name="Ships2/Nanobot_Aberration" icon_overlay="Overlays2/DevourerGolem_RavenousShadow"
+			y_offset_of_icon="30"
+			voice_group="Silent"
+			category="Ship"
+			size_scale="3.2" is_partial_record="true"
+			visuals_scale_multiplier="10"
+			collision_priority="100"
+			display_name="安多尔族"
+			display_name_for_sidebar="安多尔族"
+			description="作为联邦中通常和平主义的成员，他们在这场战争中扮演了支援角色。为盟友提供速度加成，并通过酸性效果削弱敌舰。"
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="200"
+			hull_points="76000" shield_points="40000" speed="AboveAverage3"
+			metal_cost="80000" energy_consumption="5000"
+			armor_mm="110" albedo="0.3" engine_gx="16" mass_tx="5"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			
+			allied_speed_multiplier="1.005"
+            allied_speed_multiplier_added_per_mark="0.001"
+
+            priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="Expendable"
+            >
+		<system name="W1" display_name="安多尔维和阵列"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="800" range="AboveAverage3" shot_speed="Normal" rate_of_fire="High"
+				shots_per_salvo="5" fires_salvos_sequentially="false"
+				shot_type_data="DoubleShot_Green" cloaking_percent_loss_from_firing="0.1"
+				area_of_effect_size="350"
+				maximum_number_of_targets_hit_per_shot="3"
+				damage_amplification="true" damage_amplification_duration="10" damage_amplification_flat="500" damage_amplification_flat_added_per_mark="5"
+				>
+		</system>
+		<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+
+	<entity name="Boarine"
+			  thematic_groups="Hidden,VeryMinorAliens" npc_ship_cap_type="FrigatesAndGuardians" tags="HydralFederationSpawn" is_expecting_to_not_be_encyclopedia_counted_at_all='false'
+			  visuals="Assets/_DLC1/Scourge/BurlustParts/BurlustWarrior.prefab" visuals_bundle="exp1_the_spire_rises"
+			  icon_name="Ships2/SomethingAlien" icon_overlay="Overlays2/Guardian_Tesla"
+			  y_offset_of_icon="30"
+			  voice_group="Silent"
+			  category="Ship"
+			  size_scale="3.6"
+			  visuals_scale_multiplier="8" is_partial_record="true"
+			  collision_priority="100"
+			  display_name="博亚林族"
+			  display_name_for_sidebar="博亚林族"
+			  description="可以说是联邦中最耐久的成员，博亚林族拥有非常强大但缓慢的近战攻击，需要在距离上消灭以免受到重创。"
+			  starting_mark_level="Markless"
+			  cost_for_ai_to_purchase="120"
+			  hull_points="320000" shield_points="0" speed="Normal1"
+			  metal_cost="80000" energy_consumption="5000"
+			  armor_mm="150" albedo="0.3" engine_gx="7" mass_tx="5"
+			  ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			
+			  priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="Expendable"
+            >
+		<system name="W1" display_name="博亚林利爪"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="200000" range="VeryTiny1" seek_range="Normal1" shot_speed="Fast" rate_of_fire="ExtremelyLow" fires_salvos_sequentially="false"
+				shot_type_data="MeleeInvisible" added_target_evaluator="Melee"
+			>
+		</system>
+		<ship_class_data can_be_zombified_and_similar="false" />
+		<incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="6000" multiplier="0.5" />
+	</entity>
+
+	<entity name="Skylaxian"
+	        thematic_groups="Hidden,VeryMinorAliens" npc_ship_cap_type="FrigatesAndGuardians" tags="HydralFederationSpawn" is_expecting_to_not_be_encyclopedia_counted_at_all='false'
+			visuals="Assets/_DLC1/Scourge/ThoraxianParts/ThoraxianWarrior.prefab" visuals_bundle="exp1_the_spire_rises"
+			icon_name="Ships2/Nanobot_Aberration" icon_overlay="Overlays2/DevourerGolem_RavenousShadow"
+			y_offset_of_icon="30"
+			voice_group="Silent"
+			category="Ship"
+			size_scale="3.2" is_partial_record="true"
+			visuals_scale_multiplier="10"
+			collision_priority="100"
+			display_name="斯凯拉克斯族"
+			display_name_for_sidebar="斯凯拉克斯族"
+			description="联邦中更外向的成员之一，充当核心力量，提供中等耐久和伤害，但提升所有盟友的伤害。"
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="200"
+			hull_points="104000" shield_points="56000" speed="AboveAverage3"
+			metal_cost="40000" energy_consumption="5000"
+			armor_mm="110" albedo="0.3" engine_gx="16" mass_tx="5"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			
+			allied_attack_multiplier="1.002"
+			allied_attack_multiplier_added_per_mark="0.002"
+
+            priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="Expendable"
+            >
+		<system name="WD" display_name="斯凯拉克斯双连射"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="2000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Normal"
+				shots_per_salvo="8" fires_salvos_sequentially="false"
+				shot_type_data="DoubleShot_Green"
+			>
+		</system>
+		<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+
+
+	<!--	Commanders; more powerful units that are only created on planets the Federation have total control over. Also released whenever a planet is fully locked down. -->
+
+	<entity name="BurlustCommander" tags="HydralFederationCommander" is_expecting_to_not_be_encyclopedia_counted_at_all='false'
+	        thematic_groups="Hidden,VeryMinorAliens" npc_ship_cap_type="FrigatesAndGuardians"
+			gimbal_icon_size_multiplier="1.5"
+			visuals="Assets/_FinalGameMeshes/AIExtragalactic/Tier1_ExtragalacticMaugrim/Tier1_ExtragalacticMaugrim.prefab"
+			icon_name="Ships2/SomethingAperture" icon_overlay="Overlays2/Guardian_Carrier"
+			uses_large_health_bar="true" strength_multiplier="3"
+			category="Ship"
+			size_scale="9.5"
+			visuals_scale_multiplier="110" is_partial_record="true"
+			y_offset_of_icon="35"
+			collision_priority="800"
+			display_name="爆裂族 warlord"
+			description="爆裂族Warlord的个人旗舰。对强大目标造成额外伤害，同时将弱者从猎物旁击飞。"
+			blocks_enemy_claim_flows="true"
+			voice_group="Silent"
+			starting_mark_level="Markless" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="3000"
+			hull_points="5000000" shield_points="2500000" speed="Normal2"
+			metal_cost="800000" energy_consumption="100000"
+			armor_mm="245" albedo="0.4" engine_gx="20" mass_tx="9"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+		>
+		<system name="R9" display_name="爆裂族扇刃"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="2500" range="Small1" shot_speed="Normal" rate_of_fire="SlightlyLow"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="1"
+				hits_all_intersecting_targets="true"
+				shots_detonate_immediately="true"
+				number_beams_to_fire="3" beam_weapon_visual_style="Laser_RedBlack"
+			>
+			<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtLeast" compared_to="90" multiplier="6" />
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="6" />
+			<outgoing_damage_modifier based_on="Albedo" comparison_type="AtLeast" compared_to="0.7" multiplier="6" />
+		</system>
+		<system name="WJ" display_name="驱散乌合之众"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="600" range="High2" shot_speed="Normal" rate_of_fire="VeryLow"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="1"
+				hits_all_intersecting_targets="true"
+				shots_detonate_immediately="true"
+				number_beams_to_fire="9" beam_weapon_visual_style="Laser_Cyan"
+				degrees_offset_per_beam="1" base_knockback_per_shot="7500" knockback_to_ships_mass_tx_less_than="5"
+				shots_per_salvo="9"
+			>
+		</system>
+		<ship_class_data can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.5" can_be_devoured="false" />
+	</entity>
+
+	<entity name="EvuckCommander" tags="HydralFederationCommander"
+				is_expecting_to_not_be_encyclopedia_counted_at_all='false'
+				thematic_groups="Hidden,VeryMinorAliens" npc_ship_cap_type="FrigatesAndGuardians"
+				gimbal_icon_size_multiplier="1.5"
+				visuals="Assets/_FinalGameMeshes/AIExtragalactic/Tier1_ExtragalacticTrespasser/Tier1_ExtragalacticTrespasser.prefab"
+				icon_name="Ships2/SomethingAperture" icon_overlay="Overlays2/Guardian_Stealth"
+				uses_large_health_bar="true"
+				category="Ship" is_partial_record="true"
+				size_scale="9"
+				visuals_scale_multiplier="60"
+				y_offset_of_icon="35"
+				collision_priority="800"
+				display_name="伊维克合闭者"
+				description="这艘几乎无法探测的舰船装载着一件独特武器：合闭者加农炮。这门炮眩晕半径内的大量舰船。绕过所有护盾，但无法瞄准固定建筑。"
+				blocks_enemy_claim_flows="true"
+				voice_group="Silent"
+				starting_mark_level="Markless" tech_upgrades_that_benefit_me="Unused"
+				cost_for_ai_to_purchase="3000"
+				hull_points="2500000" shield_points="1250000" speed="Normal2"
+				metal_cost="800000" energy_consumption="100000"
+				armor_mm="245" albedo="0.7" engine_gx="20" mass_tx="9"
+				ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+				ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+				ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+				priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+		>
+		<system name="WL" display_name="合闭者加农炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="50000" range="AboveAverage1" shot_speed="Slow" rate_of_fire="Sloth"
+				shots_per_salvo="1" fires_salvos_sequentially="false" cloaking_percent_loss_from_firing="1"
+				shot_type_data="PlasmaTorpedoAOEBurstAtEnd"
+				area_of_effect_size="4000"
+				base_percent_damage_bypasses_personal_shields="1"
+				fires_through_enemy_shields="true"
+				base_paralysis_seconds_per_shot="20" paralysis_to_ships_mass_tx_less_than="6"
+			>
+		</system>
+		<system name="C" display_name="隐形装置"
+				category="Passive"
+				cloaking_points="10000" />
+		<ship_class_data can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.5" can_be_devoured="false" />
+	</entity>
+
+	<entity name="PeltianCommander" tags="HydralFederationCommander"
+				
+				thematic_groups="Hidden,VeryMinorAliens" npc_ship_cap_type="FrigatesAndGuardians" gimbal_icon_size_multiplier="1.5" is_expecting_to_not_be_encyclopedia_counted_at_all='false'
+					visuals="Assets/_FinalGameMeshes/AIExtragalactic/Tier2_ExtragalacticShellshocker/Tier2_ExtragalacticShellshocker.prefab"
+					icon_name="Ships2/SomethingAperture" icon_overlay="Overlays2/Guardian_Grenade"
+					uses_large_health_bar="true"
+					category="Ship"
+					size_scale="4.8"
+					visuals_scale_multiplier="50" is_partial_record="true"
+					y_offset_of_icon="35"
+					collision_priority="800"
+					display_name="佩尔蒂安火箭发射井" display_name_for_sidebar="佩尔蒂安火箭井"
+					description="称其为舰船实在过于慷慨，因为他们只是把一些引擎和装甲绑到一个在太空中漂流时发现的废弃导弹发射井上。"
+					blocks_enemy_claim_flows="true"
+					voice_group="Silent"
+					starting_mark_level="Markless" tech_upgrades_that_benefit_me="Unused"
+					cost_for_ai_to_purchase="3000"
+					hull_points="2500000" shield_points="1250000" speed="Normal2"
+					metal_cost="800000" energy_consumption="100000"
+					armor_mm="245" albedo="0.4" engine_gx="20" mass_tx="9"
+					ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+					ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+					ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+					priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			>
+		<system name="W1" display_name="鱼雷发射器"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="5" range="EssentiallyInfinite" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="true"
+				shot_type_data="TeslaTorpedo"
+				system_is_hidden_for_ui="true"
+					>
+		</system>
+		<system name="W2" display_name="鱼雷发射器"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="5" range="EssentiallyInfinite" shot_speed="Normal" rate_of_fire="Misery" fires_salvos_sequentially="true"
+				shot_type_data="TeslaTorpedo"
+				system_is_hidden_for_ui="true"
+					>
+		</system>
+		<system name="W3" display_name="鱼雷发射器"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="5" range="EssentiallyInfinite" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="true"
+				shot_type_data="TeslaTorpedo"
+				system_is_hidden_for_ui="true"
+					>
+		</system>
+		<system name="W4" display_name="鱼雷发射器"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="5" range="EssentiallyInfinite" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+				shot_type_data="TeslaTorpedo"
+				system_is_hidden_for_ui="true"
+					>
+		</system>
+		<system name="W5" display_name="鱼雷发射器"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="5" range="EssentiallyInfinite" shot_speed="Normal" rate_of_fire="SlightlyLow" fires_salvos_sequentially="true"
+				shot_type_data="TeslaTorpedo"
+				system_is_hidden_for_ui="true"
+					>
+		</system>
+		<ship_class_data can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.5" can_be_devoured="false" />
+	</entity>
+	<entity name="ThoraxianCommander" tags="HydralFederationCommander" is_expecting_to_not_be_encyclopedia_counted_at_all='false'
+			 npc_ship_cap_type="FrigatesAndGuardians"
+	        thematic_groups="Hidden,VeryMinorAliens" gimbal_icon_size_multiplier="1.5"
+			visuals="Assets/_FinalGameMeshes/AIOnly/HunterKiller/HunterKiller.prefab"
+			icon_name="Ships1/HunterKiller" icon_overlay="Overlays2/HunterKiller_Rank1"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="10.8"
+			visuals_scale_multiplier="12"
+			y_offset_of_icon="35" is_partial_record="true"
+			collision_priority="800"
+			display_name="索拉克斯猎杀者" display_name_for_sidebar="索拉克斯 H/K"
+			description="精英中的精英。索拉克斯猎杀者追杀单个目标至死，将目标及任何不幸靠近它们的舰船拖出阵型，在孤立中摧毁。"
+			blocks_enemy_claim_flows="true"
+			voice_group="Silent"
+			starting_mark_level="Markless" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="7500" strength_multiplier="2"
+			hull_points="5000000" shield_points="2500000" speed="Normal2"
+			metal_cost="800000" energy_consumption="25000"
+			armor_mm="150" albedo="0.4" engine_gx="20" mass_tx="8"
+			can_pass_through_enemy_forcefields="true"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+			priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			>
+		<system name="Q1" display_name="索拉克斯死亡震荡器"
+			   category="Weapon" firing_timing="OnlyInRange"
+			   damage_per_shot="100000" range="Small1" shot_speed="Normal" rate_of_fire="VeryLow" fires_salvos_sequentially="false"
+			   shot_type_data="LightningGuardianExplosionAOEShot" added_target_evaluator="WeaponJamAsPrimary"
+			   area_of_effect_size="3200"
+			   shots_detonate_immediately="true"
+			   maximum_number_of_targets_hit_per_shot="15"
+			>
+			<outgoing_damage_modifier based_on="Engine_gx" comparison_type="AtMost" compared_to="15" multiplier="4" />
+			<outgoing_damage_modifier based_on="albedo" comparison_type="AtMost" compared_to="0.4" multiplier="4" />
+		</system>
+		<system name="T" display_name="牵引光束"
+					category="Passive"
+					tractor_range="Small3" tractor_count="15" tractor_hits_albedo_less_than="0.4" tractor_hits_engine_gx_less_than="15" />
+		<ship_class_data can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.5" can_be_devoured="false" />
+	</entity>
+
+	<entity name="AcutianCommander" tags="HydralFederationCommander" npc_ship_cap_type="FrigatesAndGuardians"
+			
+			thematic_groups="Hidden,VeryMinorAliens" gimbal_icon_size_multiplier="1.5" is_expecting_to_not_be_encyclopedia_counted_at_all='false'
+			visuals="assets/_finalgamemeshes/guardians/gravityguardian/gravityguardian.prefab"
+			icon_name="Ships1/GuardianDire" icon_overlay="Overlays1/Turret_Imploder"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="11.4" is_partial_record="true"
+			visuals_scale_multiplier="13"
+			y_offset_of_icon="35"
+			collision_priority="800"
+			display_name="阿库提安资本舰" display_name_for_sidebar="阿库提安资本"
+			description="搭载少量阿库提安股东。他们资助了一台强大的移动黑洞生成器，阻止敌人逃跑，让盟友获得更有利可图的交战。"
+			blocks_enemy_claim_flows="true"
+			voice_group="Silent"
+			adds_black_hole_effect_for_entities_with_engine_gx_less_than="20"
+			attrition_damage="250" added_attrition_damage_per_mark="0" max_attrition_damage="250000"
+			starting_mark_level="Markless" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="13050" strength_multiplier="2"
+			hull_points="2500000" shield_points="1250000" speed="Normal2"
+			metal_cost="800000" energy_consumption="25000"
+			armor_mm="210" albedo="0.3" engine_gx="23" mass_tx="8"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+			priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			>
+		<system name="W1" display_name="安全脉冲"
+					category="Weapon" firing_timing="OnlyInRange"
+					damage_per_shot="10000" range="Small5" shot_speed="Instant" rate_of_fire="Misery" fires_salvos_sequentially="false"
+					base_knockback_per_shot="2500" knockback_to_ships_mass_tx_less_than="2"
+					shot_type_data="MeleeInvisible"
+					area_of_effect_size="1000"
+					maximum_number_of_targets_hit_per_shot="30"
+				>
+		</system>
+
+		<system name="G" display_name="引力核心"
+					category="Passive"
+					base_gravity_speed_multiplier="0.3" gravity_hits_engine_gx_less_than="14" gravity_range="AboveAverage3" />
+		<ship_class_data can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.5" can_be_devoured="false" />
+	</entity>
+
+
+	<entity name="AndorCommander" tags="HydralFederationCommander,HydralFederationUnitProducer" is_expecting_to_not_be_encyclopedia_counted_at_all='false'
+			 npc_ship_cap_type="FrigatesAndGuardians"
+			thematic_groups="Hidden,VeryMinorAliens" gimbal_icon_size_multiplier="1.5"
+			visuals="assets/_finalgamemeshes/guardians/shieldguardian/shieldguardian.prefab"
+			icon_name="Ships1/GuardianDire" icon_overlay="Overlays2/Guardian_Shield"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="10.8" is_partial_record="true"
+			visuals_scale_multiplier="12"
+			y_offset_of_icon="35"
+			collision_priority="850"
+			display_name="安多尔航母"
+			description="安多尔人的防御杰作，充当移动联邦船坞，受其保护的单位将造成全额伤害。"
+			shield_size_scale="12" max_count_per_npc_faction_before_stack="8" my_forcefield_has_no_penalty_for_enemies_firing_out_of_it="true"
+			blocks_enemy_claim_flows="true"
+			voice_group="Silent"
+			starting_mark_level="Markless" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="6700" strength_multiplier="0.8"
+			hull_points="1000000" shield_points="7000000" speed="Normal2"
+			metal_cost="800000" energy_consumption="25000"
+			armor_mm="85" albedo="0.4" engine_gx="20" mass_tx="8"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+			priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			>
+		<system name="WW" display_name="弹道加农炮"
+		  category="Weapon" firing_timing="OnlyInRange"
+		  damage_per_shot="120000" range="Normal6" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+		  shot_type_data="ArmorPiercingShell"
+				>
+		</system>
+		<ship_class_data can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.5" can_be_devoured="false" />
+	</entity>
+
+
+	<entity name="BoarineCommander" tags="HydralFederationCommander" npc_ship_cap_type="FrigatesAndGuardians"
+			
+			thematic_groups="Hidden,VeryMinorAliens" gimbal_icon_size_multiplier="1.5" is_expecting_to_not_be_encyclopedia_counted_at_all='false'
+			visuals="assets/_finalgamemeshes/guardians/widowguardian/widowguardian.prefab" is_partial_record="true"
+			icon_name="Ships1/GuardianDire" icon_overlay="Overlays2/Guardian_Paralysis"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="10.8"
+			visuals_scale_multiplier="12"
+			y_offset_of_icon="35"
+			collision_priority="800"
+			display_name="博亚林巨兽"
+			description="一艘移动缓慢但拥有巨大耐久和自愈能力的舰船。"
+			blocks_enemy_claim_flows="true"
+			voice_group="Silent"
+			starting_mark_level="Markless" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="6350" strength_multiplier="1.5"
+			is_disallowed_from_spawning_in_waves="true"
+			hull_points="6400000" shield_points="0" speed="Normal2"
+			metal_cost="800000" energy_consumption="25000"
+			armor_mm="90" albedo="0.4" engine_gx="20" mass_tx="8"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			seconds_to_fully_regenerate_hull="100"
+			priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			>
+		<system name="Q2" display_name="博亚林尖刺"
+			category="Weapon" firing_timing="OnlyInRange" shot_type_data="ArmorPiercingShell"
+			damage_per_shot="12000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Normal"
+			shots_per_salvo="60" fires_salvos_sequentially="false"
+			health_change_per_damage_dealt="1"
+				>
+		</system>
+		<ship_class_data can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.5" can_be_devoured="false" />
+	</entity>
+
+
+	<entity name="SkylaxianCommander" tags="HydralFederationCommander,HydralFederationUnitProducer"
+			is_expecting_to_not_be_encyclopedia_counted_at_all='false' npc_ship_cap_type="FrigatesAndGuardians"
+			thematic_groups="Hidden,VeryMinorAliens" gimbal_icon_size_multiplier="1.5"
+			visuals="assets/_finalgamemeshes/guardians/shieldguardian/shieldguardian.prefab"
+			icon_name="Ships1/GuardianDire" icon_overlay="Overlays2/Guardian_Shield"
+			uses_large_health_bar="true" is_partial_record="true"
+			category="Ship"
+			size_scale="10.8"
+			visuals_scale_multiplier="12"
+			y_offset_of_icon="35"
+			collision_priority="850"
+			display_name="斯凯拉克斯摄政者"
+			description="斯凯拉克斯人的科学杰作，充当移动联邦船坞，在其行星上复活盟友。缓慢恢复船体。"
+			blocks_enemy_claim_flows="true"
+			voice_group="Silent"
+			starting_mark_level="Markless" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="6700" strength_multiplier="0.8"
+			hull_points="1000000" shield_points="3500000" speed="Normal2"
+			metal_cost="800000" energy_consumption="25000"
+			armor_mm="85" albedo="0.4" engine_gx="20" mass_tx="8"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+			priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			seconds_to_fully_regenerate_hull="120"
+			regenerates_dying_ships_at_this_health_cost_ratio="0.75"
+			>
+		<system name="WW" display_name="弹道加农炮"
+		  category="Weapon" firing_timing="OnlyInRange"
+		  damage_per_shot="60000" range="High1" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+		  shot_type_data="ArmorPiercingShell"
+				>
+		</system>
+		<ship_class_data can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.5" can_be_devoured="false" />
+	</entity>
+
+</root>

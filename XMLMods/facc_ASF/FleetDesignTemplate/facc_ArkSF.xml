@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <fleet_design name="ASFArmadaOne"
+        display_name="第一舰队"
+        description="这艘方舟旗舰拥有相当强大的力场发生器，可以通过伤害敌人来为其充能。使用虫洞后受到的伤害也会减少。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="RorqualHegira" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="VWing" ship_cap_group="Strike" weight="100" cap="6"/>
+	<ship_membership name="PikeCorvette" ship_cap_group="Strike" weight="100" cap="6"/>
+	</fleet_design>
+
+  <fleet_design name="ASFArmadaTwo"
+        display_name="第二舰队"
+        description="这艘方舟旗舰拥有相当高的伤害，并将敌人转化为友方僵尸为你而战。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="Thanatos" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="ConcussionCorvette" ship_cap_group="Strike" weight="100" cap="6"/>
+	<ship_membership name="FusionBomber" ship_cap_group="Strike" weight="100" cap="6"/>
+	</fleet_design>
+
+  <fleet_design name="ASFArmadaThree"
+        display_name="第三舰队"
+        description="非常强大的移动设施方舟旗舰。如果某舰队旗舰在同一或相邻行星上且缺少舰船，则会自动生产替代品直接跃迁至该旗舰。同时生产无人机并产生一些能量。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="Gyrn" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="Zapper" ship_cap_group="Strike" weight="100" cap="20"/>
+	<ship_membership name="Porcupine" ship_cap_group="Strike" weight="100" cap="40"/>
+	<ship_membership name="Ranger" ship_cap_group="Strike" weight="100" cap="20"/>
+  </fleet_design>
+
+  <fleet_design name="ASFArmadaFour"
+        display_name="第四舰队"
+        description="这艘方舟旗舰专注于超快速治疗。它还生成救援孢子，这些孢子会牺牲自己来修复你的其他舰船。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+	<ship_membership name="Orchid" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="Raider" ship_cap_group="Strike" weight="100" cap="40"/>
+	<ship_membership name="Harasser" ship_cap_group="Strike" weight="100" cap="40"/>
+  </fleet_design>
+
+  <fleet_design name="ASFArmadaFive"
+        display_name="第五舰队"
+        description="这艘方舟旗舰专注于在远程减缓并击退成群敌人。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="ArkOne" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="SpacePlane" ship_cap_group="Strike" weight="100" cap="60"/>
+	<ship_membership name="Gunbot" ship_cap_group="Strike" weight="100" cap="80"/>
+  </fleet_design>
+</root>

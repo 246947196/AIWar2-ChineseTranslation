@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <display_mode name="DeepstrikeIntegration"
+             display_name="&lt;color=#562f5e&gt;Deepstrike Integration&lt;/color&gt;"
+             dll_name="AIWarExternalVisualizationCode"
+             type_name="Arcen.AIW2.ExternalVisualization.GalaxyMapDisplayMode_DeepstrikeIntegration"
+             tooltip="Shows primarily 'standard' information, but also integrates Deepstrike Information."
+      />
+    <display_mode name="CuendillarAmount"
+             display_name="Cuendillar Remaining"
+             dll_name="AIWarExternalVisualizationCode"
+             type_name="Arcen.AIW2.ExternalVisualization.GalaxyMapDisplayMode_CuendillarAmount"
+             tooltip="Shows how much cuendillar there is per planet. Only meaningful for Dyson Sidekick or Dyson Empire."
+      />
+
+    <display_mode name="ShowNetMetal"
+             display_name="&lt;color=#33ffcc&gt;Net Metal&lt;/color&gt;"
+             dll_name="AIWarExternalVisualizationCode"
+             type_name="Arcen.AIW2.ExternalVisualization.GalaxyMapDisplayMode_ShowNetMetal"
+             tooltip="Shows the net metal change for each planet."
+      />
+
+    <display_mode name="ShowEnergyMetal"
+             display_name="&lt;color=#bd8811&gt;Net Energy&lt;/color&gt;"
+             dll_name="AIWarExternalVisualizationCode"
+             type_name="Arcen.AIW2.ExternalVisualization.GalaxyMapDisplayMode_ShowNetEnergy"
+             tooltip="Shows the net energy change for each planet."
+      />
+
+</root>

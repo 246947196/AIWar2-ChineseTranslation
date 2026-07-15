@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <item name="SKCivCargoShipPerUnitBaseInfo" dll_name="SKCivilianIndustryBaseInfo" type_name="SKCivilianIndustry.SKCivCargoShipPerUnitBaseInfo" />
+  <item name="SKCivMilitiaPerUnitBaseInfo" dll_name="SKCivilianIndustryBaseInfo" type_name="SKCivilianIndustry.SKCivMilitiaPerUnitBaseInfo" />
+  <item name="SKCivTradeStationOrPostPerUnitBaseInfo" dll_name="SKCivilianIndustryBaseInfo" type_name="SKCivilianIndustry.SKCivTradeStationOrPostPerUnitBaseInfo" />
+</root>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <fleet_design name="GSFArmadaNine"
+        display_name="第九舰队"
+        description="极其耐久的傀儡，返还部分受到的伤害并拥有自我修复能力。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="RetributionGolem" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="VWing" ship_cap_group="Strike" weight="100" cap="32"/>
+	<ship_membership name="PikeCorvette" ship_cap_group="Strike" weight="100" cap="32"/>
+	</fleet_design>
+
+  <fleet_design name="GSFArmadaTen"
+        display_name="第十舰队"
+        description="随着受到伤害而火力逐渐增强的傀儡。在严重受损时释放其最强武器。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="SoloFrenzyGolem" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="ConcussionCorvette" ship_cap_group="Strike" weight="100" cap="32"/>
+	<ship_membership name="FusionBomber" ship_cap_group="Strike" weight="100" cap="32"/>
+	</fleet_design>
+
+  <fleet_design name="GSFArmadaEleven"
+        display_name="第十一舰队"
+        description="相当脆弱的舰队领袖，拥有极其强大的闪电武器。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="RaijinGolem" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="Zapper" ship_cap_group="Strike" weight="100" cap="32"/>
+	<ship_membership name="Porcupine" ship_cap_group="Strike" weight="100" cap="40"/>
+	<ship_membership name="Ranger" ship_cap_group="Strike" weight="100" cap="32"/>
+  </fleet_design>
+  
+  <fleet_design name="GSFArmadaTwelve"
+        display_name="第十二舰队"
+        description="根据天顶价值观进化的装甲傀儡。比其前身更强。其可怕的武器能撕裂无装甲舰队。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="FortressGolem" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="VWing" ship_cap_group="Strike" weight="100" cap="32"/>
+	<ship_membership name="PikeCorvette" ship_cap_group="Strike" weight="100" cap="32"/>
+	</fleet_design>  
+  
+   <fleet_design name="GSFArmadaThirteen"
+        display_name="第十三舰队"
+        description="根据黑暗天顶价值观进化的装甲傀儡。比其前身更强。它会发出强大的脉冲，干扰整个军队的武器。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="BeachGolem" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="VWing" ship_cap_group="Strike" weight="100" cap="32"/>
+	<ship_membership name="PikeCorvette" ship_cap_group="Strike" weight="100" cap="32"/>
+	</fleet_design>
+
+  <fleet_design name="GSFArmadaFourteen"
+        display_name="第十四舰队"
+        description="根据天顶价值观进化的火炮傀儡。比其前身更强。它发射巨大的反装甲导弹齐射。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="BarrageGolem" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="VWing" ship_cap_group="Strike" weight="100" cap="32"/>
+	<ship_membership name="PikeCorvette" ship_cap_group="Strike" weight="100" cap="32"/>
+	</fleet_design>
+
+  <fleet_design name="GSFArmadaFifteen"
+        display_name="第十五舰队"
+        description="根据天顶价值观进化的火炮傀儡。比其前身更强。其射击能撕裂庞大敌人。人类可以改造他们的傀儡使用此形态。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="CannonGolem" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="VWing" ship_cap_group="Strike" weight="100" cap="32"/>
+	<ship_membership name="PikeCorvette" ship_cap_group="Strike" weight="100" cap="32"/>
+	</fleet_design>	
+
+  <fleet_design name="GSFArmadaSixteen"
+        display_name="第十六舰队"
+        description="根据天顶价值观进化的再生傀儡。比其前身更强。它免疫远程伤害。人类可以改造他们的傀儡使用此形态。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="PreserverGolem" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="VWing" ship_cap_group="Strike" weight="100" cap="32"/>
+	<ship_membership name="PikeCorvette" ship_cap_group="Strike" weight="100" cap="32"/>
+	</fleet_design>
+
+  <fleet_design name="GSFArmadaSeventeen"
+        display_name="第十七舰队"
+        description="根据天顶价值观进化的再生傀儡。比其前身更强。它在造成伤害时大量治疗自身。人类可以改造他们的傀儡使用此形态。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="ConsumerGolem" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="VWing" ship_cap_group="Strike" weight="100" cap="32"/>
+	<ship_membership name="PikeCorvette" ship_cap_group="Strike" weight="100" cap="32"/>
+	</fleet_design>
+
+  <fleet_design name="GSFArmadaEighteen"
+        display_name="第十八舰队"
+        description="根据天顶价值观进化的诅咒傀儡。比其前身更强。它可以瘫痪整个打击机舰队和一队护卫舰。人类可以改造他们的傀儡使用此形态。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="BlasphemyGolem" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="VWing" ship_cap_group="Strike" weight="100" cap="32"/>
+	<ship_membership name="PikeCorvette" ship_cap_group="Strike" weight="100" cap="32"/>
+	</fleet_design>
+
+  <fleet_design name="GSFArmadaNineteen"
+        display_name="第十九舰队"
+        description="根据天顶价值观进化的诅咒傀儡。比其前身更强。其破坏武器可以眩晕甚至摧毁银河系中最庞大的舰船。人类可以改造他们的傀儡使用此形态。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="ExpletiveGolem" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="VWing" ship_cap_group="Strike" weight="100" cap="32"/>
+	<ship_membership name="PikeCorvette" ship_cap_group="Strike" weight="100" cap="32"/>
+	</fleet_design> 
+
+  <fleet_design name="GSFArmadaTwenty"
+        display_name="第二十舰队"
+        description="根据天顶价值观进化的傀儡网络傀儡。比其前身更强。它可以攻击并将所有移动目标僵尸化。人类可以改造他们的傀儡使用此形态。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="NethackGolem" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="VWing" ship_cap_group="Strike" weight="100" cap="32"/>
+	<ship_membership name="PikeCorvette" ship_cap_group="Strike" weight="100" cap="32"/>
+	</fleet_design>
+
+  <fleet_design name="GSFArmadaTwentyOne"
+        display_name="第二十一舰队"
+        description="根据天顶价值观进化的傀儡网络傀儡。比其前身更强。它可以攻击并将低于一定质量的的所有目标僵尸化。人类可以改造他们的傀儡使用此形态。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="HackbotGolem" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="VWing" ship_cap_group="Strike" weight="100" cap="32"/>
+	<ship_membership name="PikeCorvette" ship_cap_group="Strike" weight="100" cap="32"/>
+	</fleet_design> 
+
+  <fleet_design name="GSFArmadaTwentyTwo"
+        display_name="第二十二舰队"
+        description="根据天顶价值观进化的黑寡妇傀儡。比其前身更强。它可以牵引大量打击机并抵抗它们的武器。人类可以改造他们的傀儡使用此形态。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="HuggerGolem" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="VWing" ship_cap_group="Strike" weight="100" cap="32"/>
+	<ship_membership name="PikeCorvette" ship_cap_group="Strike" weight="100" cap="32"/>
+	</fleet_design> 
+
+  <fleet_design name="GSFArmadaTwentyThree"
+        display_name="第二十三舰队"
+        description="根据天顶价值观进化的黑寡妇傀儡。比其前身更强。它可以在引力井中任意位置牵引敌人，并对被捕获的舰船造成额外伤害。人类可以改造他们的傀儡使用此形态。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="WidowmakerGolem" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="VWing" ship_cap_group="Strike" weight="100" cap="32"/>
+	<ship_membership name="PikeCorvette" ship_cap_group="Strike" weight="100" cap="32"/>
+	</fleet_design> 
+
+  <fleet_design name="GSFArmadaTwentyFour"
+        display_name="第二十四舰队"
+        description="根据天顶价值观进化的蜂巢傀儡。比其前身更强。它持续生成金蜂，这些凶猛的无人机会瘫痪目标。人类可以改造他们的傀儡使用此形态。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="GoldenWaspGolem" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="GoldenWaspDrone" ship_cap_group="Strike" weight="100" cap="400"/>
+	</fleet_design> 
+
+  <fleet_design name="GSFArmadaTwentyFive"
+        display_name="第二十五舰队"
+        description="根据天顶价值观进化的蜂巢傀儡。比其前身更强。它持续生成蜂后，这些凶猛的无人机会自我治疗。人类可以改造他们的傀儡使用此形态。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+	<ship_membership name="QueenBeeGolem" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="QueenBeeDrone" ship_cap_group="Strike" weight="100" cap="540"/>
+	</fleet_design>
+</root>

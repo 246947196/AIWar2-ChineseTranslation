@@ -1,0 +1,1297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <entity name="SidekickLoneFrigate"
+          copy_from="SpireSidekickCommandVessel"
+          >
+  </entity>
+  <entity name="SpireSidekickCommandVessel"
+            thematic_groups="Spire" 
+            special_entity_type="MobileOfficerCombatFleetFlagship"
+            tech_upgrade_that_is_used_for_my_direct_science="Direct_SpireSidekickGolems"
+            is_upgradeable_by_direct_science="true"
+            tags="ShowsOnNormalDisplayMode,SpireSidekickFirstShip"
+	    voice_group="Spire" gimbal_icon_size_multiplier="1.5"
+	    draw_in_galaxy_view="true"
+	    visuals="assets/_finalgamemeshes/arks/arkone/arkone.prefab"
+            material_override_path="Assets/_FinalGameMeshes/Spire/SpireLostFrigate/SpireLostFrigate.prefab"
+	    icon_name="Ships4/SomethingCane"
+	    uses_large_health_bar="true"
+
+	    category="Ship"
+	    size_scale="6"
+	    visuals_scale_multiplier="3"
+	    y_offset_of_icon="40"
+	    display_name="Spire Vanguard"
+	    display_name_for_sidebar="Sp Van"
+	    description="This ship is the vanguard of your 尖塔 forces. It will help you survive until you can find some Relics"
+	    collision_priority="810"
+	    metal_to_claim="2000000"
+	    aip_to_claim="11"
+            seconds_to_fully_regenerate_hull="300"
+	    starting_mark_level="Mark1" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" 
+	    cost_for_ai_to_purchase="10000" strength_multiplier="2"
+	    hull_points="2200000" shield_points="900000" speed="AboveAverage3"
+	    armor_mm="180" albedo="0.7" engine_gx="18" mass_tx="9"
+	    metal_cost="1000000" energy_consumption="250000"
+            assist_range="Normal1"			
+	    ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	    ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+	    speed_multiplier_first_5_seconds_on_planet="1.5"
+	    firing_delay_for_transported_ships="6"
+            shows_on_galaxy_map_for_explored_planets="true" always_visible_to_players="true"
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+            fleet_leader_type="SpireLostFrigate" hacking_cost_for_other_fleet_leaders_of_same_type_to_become_me="5"
+	    metal_storage="50000" added_metal_storage_per_mark_level="50000"
+	    >
+    <metal_flow purpose="AssistSelfConstruction" throughput="2000" increase_per_mark_level="200"/>
+    <metal_flow purpose="AssistFactoryConstruction" throughput="2000" increase_per_mark_level="200"/>
+    <metal_flow purpose="RebuildingRemains" throughput="2000" increase_per_mark_level="200"/>
+
+    <resource_production type="Energy" amount="350000" increase_per_mark_level="25000"/>
+    <resource_production type="Metal" amount="500" increase_per_mark_level="300"/>
+   <system name="R9" display_name="Spire Photon Lance"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="3050" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Devourer"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_Cyan"
+				hits_all_intersecting_targets="true"				
+				shots_detonate_immediately="true"
+				maximum_number_of_targets_hit_per_shot="15"
+				>
+    </system>
+    <system name="R5" display_name="Spire Laser Pulse"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="3800" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Misery"
+				shots_per_salvo="20" fires_salvos_sequentially="false"
+				shot_type_data="LaserPulse_DeepBlue"
+				>
+    </system>	
+	<ship_class_data can_be_fleet_supercharged="false" />
+  </entity>
+  <entity name="SpireSidekickLoneFrigate"
+          copy_from="SpireLostFrigateLance"
+          tags="SpireSidekickLoneFrigate"
+          assist_range="Normal1"
+          eligible_for_hacks="ClaimSpireFlagship"
+          tech_upgrade_that_is_used_for_my_direct_science="Direct_SpireSidekickGolems"
+          >
+    <metal_flow purpose="AssistSelfConstruction" throughput="2000" increase_per_mark_level="200"/>
+    <metal_flow purpose="AssistFactoryConstruction" throughput="2000" increase_per_mark_level="200"/>
+    <metal_flow purpose="RebuildingRemains" throughput="2000" increase_per_mark_level="200"/>
+
+  </entity>
+  <!-- Stuff from the Fallen Spire -->
+      <entity name="SpireSidekickCityHub" tags="SpireSidekickCity,SpireFeedsFleet,ProducesRangers"
+	    thematic_groups="FallenSpire,Spire"
+	    special_entity_type="CityCenter" draw_in_galaxy_view="true"
+	    name_for_city_center="Spire City" name_for_city_sockets="Spire Casing"
+	    name_for_city_sockets_short="Casing"
+	    visuals="Assets/_DLC1/FallenSpire/SpireCityHub/SpireCityHub.prefab" visuals_bundle="exp1_the_spire_rises"
+	    icon_name="ShipsSpire/Spire_City_Hub" gimbal_icon_size_multiplier="1.5"
+	    voice_group="Spire"
+	    uses_large_health_bar="true"
+	    category="Ship"
+	    size_scale="7.4"
+	    visuals_scale_multiplier="20"
+	    y_offset_of_icon="30"
+	    collision_priority="810" construction_priority="400"
+	    display_name="Spire City Hub"
+	    display_name_for_sidebar="Spire City"
+	    description_short="This facility doubles as the nerve center and central habitat of a 尖塔 城市. See detailed tooltip for information on how Cities work."
+	    description="This facility doubles as the nerve center of a 尖塔 城市. To level up this 城市, all sockets must be used, there must be at least 2 other Cities of the same mark, and for each mark 2, 3 or 4 城市 you must control 1 additional planet without a 尖塔 城市. Mark 5 Cities require 2 additional planets. Mark 6 and 7 require 3 additional planets. At mark 3, your 巡洋舰 旗舰 becomes a Battleship and you get +1 巡洋舰 for every mark at or above 3.  At mark 6, your Battleship 旗舰 becomes a Dreadnought and you get +1 Battleship for every mark at or above 6."
+	    starting_mark_level="Mark1" is_scrapping_by_player_disallowed="true"
+	    cost_for_ai_to_purchase="10000"
+	    hull_points="4000000" shield_points="4000000" speed="Immobile"
+	    armor_mm="180" albedo="0.7" mass_tx="6"
+	    metal_cost="100000" energy_consumption="0"
+	    ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	    ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            is_crippled_instead_of_dying="true" is_nonfunctional_when_on_planet_not_owned_by_player="false"
+            city_sockets="4" added_city_sockets_per_mark="2"
+	    this_centerpiece_grants_its_direct_science_upgrades_to_rest_of_fleet="true"
+	    this_centerpiece_grants_its_direct_science_upgrades_to_bolstered_fleet="true"
+            metal_storage="100000" added_metal_storage_per_mark_level="50000"
+            causes_parent_fleet_to_not_allow_ship_line_swaps="true"
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+	    description_appender_dll="AIWarExternalCode"
+	    description_appender_type="Arcen.AIW2.External.SpireSidekickHubDescriptionAppender"
+	    shows_on_galaxy_map_for_explored_planets="true" always_visible_to_players="true"
+	    ship_type_name_to_grant_more_of_in_custom_fleet="SpireFrigate" ship_type_count_to_grant_more_of_in_custom_fleet="1"
+            base_galaxy_wide_cap_for_players_constructing="1" galaxy_wide_cap_match_string="SpireCityHub"
+            added_galaxy_wide_cap_for_players_constructing_per_x_planets="1" galaxy_wide_cap_for_players_constructing_x_planet_variable="3"
+			>
+      <metal_flow purpose="SelfConstruction" throughput="3500"/>
+    </entity>
+    <entity name="SpireSidekickGalacticCapitol" tags="SpireSidekickCity,SpireFeedsFleet,ProducesRangers"
+	    thematic_groups="FallenSpire,Spire"
+            special_entity_type="CityCenter" draw_in_galaxy_view="true"
+            name_for_city_center="Spire City" name_for_city_sockets="Spire Casing"
+            name_for_city_sockets_short="Casing"
+            visuals="Assets/_DLC1/FallenSpire/SpireGalacticCapitol/SpireGalacticCapitol.prefab" visuals_bundle="exp1_the_spire_rises"
+            icon_name="ShipsSpire/Spire_Galactic_Capitol"
+	    voice_group="Spire" gimbal_icon_size_multiplier="1.5"
+            uses_large_health_bar="true"
+            category="Ship"
+            size_scale="8"
+            visuals_scale_multiplier="20"
+            y_offset_of_icon="30"
+            display_name="Spire Galactic Capitol"
+	    display_name_for_sidebar="Spire Capitol"
+            description_short="This facility serves as the central seat of government for all 尖塔 settlements in a 银河. See detailed tooltip for information on how Cities work."
+            description="This facility serves as the central seat of government for all 尖塔 settlements in a 银河. It always has two more sockets than other Cities of the same mark. To level up this 城市, all sockets must be used, there must be at least 2 other Cities of the same mark, and for each mark 2, 3 or 4 城市 you must control 1 additional planet without a 尖塔 城市. Mark 5 Cities require 2 additional planets. Mark 6 and 7 require 3 additional planets.  At mark 3, your 巡洋舰 旗舰 becomes a Battleship and you get +1 巡洋舰 for every mark at or above 3.  At mark 6, your Battleship 旗舰 becomes a Dreadnought and you get +1 Battleship for every mark at or above 6. SIDEKICK"
+            collision_priority="810" construction_priority="400"
+            starting_mark_level="Mark1" is_scrapping_by_player_disallowed="true"
+            cost_for_ai_to_purchase="10000" strength_multiplier="1.1"
+            hull_points="6000000" shield_points="6000000" speed="Immobile"
+            armor_mm="180" albedo="0.7" mass_tx="6"
+            metal_cost="1000000" energy_consumption="0"
+            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            is_crippled_instead_of_dying="true" is_nonfunctional_when_on_planet_not_owned_by_player="false"
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+            metal_storage="200000" added_metal_storage_per_mark_level="100000"
+            city_sockets="7" added_city_sockets_per_mark="2" causes_parent_fleet_to_not_allow_ship_line_swaps="true"
+	    this_centerpiece_grants_its_direct_science_upgrades_to_rest_of_fleet="true"
+	    this_centerpiece_grants_its_direct_science_upgrades_to_bolstered_fleet="true"
+	    description_appender_dll="AIWarExternalCode"
+	    description_appender_type="Arcen.AIW2.External.SpireSidekickHubDescriptionAppender"
+	    shows_on_galaxy_map_for_explored_planets="true" always_visible_to_players="true"
+	    ship_type_name_to_grant_more_of_in_custom_fleet="SpireFrigate" ship_type_count_to_grant_more_of_in_custom_fleet="1"
+	    >
+      <metal_flow purpose="SelfConstruction" throughput="3500"/>
+      <resource_production type="Energy" amount="350000" increase_per_mark_level="25000"/>
+      <resource_production type="Metal" amount="3000" increase_per_mark_level="1200"/>
+    <system name="W1" display_name="Spire Coil Beam"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="45000" range="High2" shot_speed="Normal" rate_of_fire="Devourer"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_Cyan"
+				hits_all_intersecting_targets="true"				
+				shots_detonate_immediately="true"
+                is_coilbeam="true"				
+				>
+    </system>
+    <system name="W2" display_name="Laser Pulse"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="4500" range="High2" shot_speed="Normal" rate_of_fire="Misery"
+				shots_per_salvo="20" fires_salvos_sequentially="false"
+				shot_type_data="LaserPulse_DeepBlue"				
+				>
+    </system>	
+	</entity>
+
+            <entity name="SpireSidekickShardReactor"
+	        thematic_groups="FallenSpire,Spire"
+			tags="SpireSidekickCityBuildMenu"
+			visuals="Assets/_DLC1/FallenSpire/SpireShardReactor/SpireShardReactor.prefab" visuals_bundle="exp1_the_spire_rises"
+			icon_name="ShipsSpire/Spire_Shard_Reactor" gimbal_icon_size_multiplier="1.5"
+			voice_group="Spire"			
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="7.4"
+			visuals_scale_multiplier="32"
+			y_offset_of_icon="30"
+			collision_priority="810" construction_priority="150"
+			display_name="Spire Shard Reactor" 
+      display_name_for_sidebar="Spire Reactor"
+			description="This facility produces the crystalline formations used as power cores in 尖塔 reactors, generating a massive amount of energy in the process."
+			starting_mark_level="Markless" build_sidebar_categories_i_am_part_of="SpireSidekickCity"
+			cost_for_ai_to_purchase="10000" strength_multiplier="1.2" city_socket_cost="1" name_for_city_sockets="Spire Casing" base_ship_cap_in_custom_city="2" added_ship_cap_in_custom_city_per_city_level="2" added_ship_cap_in_custom_city_per_city_level_above_level="1" mark_level_scale_style="OriginalWithoutCapRise"
+			name_for_city_sockets_short="Casing"
+			hull_points="4000000" shield_points="4000000" speed="Immobile"
+			armor_mm="180" albedo="0.7" mass_tx="6"
+			metal_cost="300000" energy_consumption="0"			
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+             is_nonfunctional_when_on_planet_not_owned_by_player="false"
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			>
+    <metal_flow purpose="SelfConstruction" throughput="9000"/>
+    <resource_production type="Energy" amount="1000000"/>
+    <system name="W1" display_name="Spire Coil Beam"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="30000" range="High2" shot_speed="Normal" rate_of_fire="Devourer"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_Cyan"
+				hits_all_intersecting_targets="true"				
+				shots_detonate_immediately="true"
+                is_coilbeam="true"				
+				>
+    </system>
+    <system name="W2" display_name="Laser Pulse"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="3000" range="High2" shot_speed="Normal" rate_of_fire="Misery"
+				shots_per_salvo="20" fires_salvos_sequentially="false"
+				shot_type_data="LaserPulse_DeepBlue"				
+				>
+    </system>	
+    </entity>
+
+    <entity name="SpireSidekickShipyard"
+	        thematic_groups="FallenSpire,Spire"
+			tags="SpireSidekickCityBuildMenu"
+			visuals="Assets/_DLC1/FallenSpire/SpireShipyard/SpireShipyard.prefab" visuals_bundle="exp1_the_spire_rises"
+			icon_name="ShipsSpire/Spire_Shipyard" gimbal_icon_size_multiplier="1.5"
+			uses_large_health_bar="true"
+			voice_group="Spire"			
+			category="Ship"
+			size_scale="7.4"
+			visuals_scale_multiplier="50"
+			y_offset_of_icon="30"
+			collision_priority="810" construction_priority="200"
+			display_name="Spire Shipyard" display_name_for_sidebar="Spire Shipyard"
+			description="This facility is responsible for the construction and support of 尖塔 craft, from escorts up to capital ships."
+			starting_mark_level="Mark1" build_sidebar_categories_i_am_part_of="SpireSidekickCity" this_unit_gets_direct_science_upgrades_from_central_fleet="true"
+			cost_for_ai_to_purchase="10000" strength_multiplier="1.2" city_socket_cost="1" name_for_city_sockets="Spire Casing" base_ship_cap_in_custom_city="2" added_ship_cap_in_custom_city_per_city_level="1" added_ship_cap_in_custom_city_per_city_level_above_level="1" mark_level_scale_style="OriginalWithoutCapRise"
+			name_for_city_sockets_short="Casing"
+			hull_points="2000000" shield_points="2000000" speed="Immobile"
+			armor_mm="180" albedo="0.7" mass_tx="6"
+			metal_cost="800000" energy_consumption="30000"			
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+             is_nonfunctional_when_on_planet_not_owned_by_player="false"
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+            special_entity_type="FactoryForPlayerMobileFleets" special_factory_type="Spire City"
+			>
+    <metal_flow purpose="SelfConstruction" throughput="3500"/>
+    <metal_flow purpose="FactoryConstructionForPlayerMobileFleets" throughput="5000" increase_per_mark_level="2500"/>
+    <system name="W1" display_name="Spire Coil Beam"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="30000" range="High2" shot_speed="Normal" rate_of_fire="Devourer"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_Cyan"
+				hits_all_intersecting_targets="true"				
+				shots_detonate_immediately="true"
+                is_coilbeam="true"				
+				>
+    </system>
+    <system name="W2" display_name="Laser Pulse"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="3000" range="High2" shot_speed="Normal" rate_of_fire="Misery"
+				shots_per_salvo="20" fires_salvos_sequentially="false"
+				shot_type_data="LaserPulse_DeepBlue"				
+				>
+    </system>	
+    </entity>
+
+    <entity name="SpireSidekickEngineeringCenter"
+	        thematic_groups="FallenSpire,Spire"
+			tags="SpireSidekickCityBuildMenu"
+			visuals="Assets/_DLC1/FallenSpire/SpireEngineeringCenter/SpireEngineeringCenter.prefab" visuals_bundle="exp1_the_spire_rises"
+			icon_name="ShipsSpire/Spire_Habitation_Complex" gimbal_icon_size_multiplier="1.5"
+			voice_group="Spire"			
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="7.4"
+			visuals_scale_multiplier="65"
+			y_offset_of_icon="30"
+			collision_priority="810"
+			display_name="Spire Repair Center" display_name_for_sidebar="Spire Repair Ctr"
+			description="This facility provides rapid repair for friendly damaged ships."
+			starting_mark_level="Mark1" build_sidebar_categories_i_am_part_of="SpireSidekickCity" this_unit_gets_direct_science_upgrades_from_central_fleet="true"
+			cost_for_ai_to_purchase="10000" strength_multiplier="1.2" city_socket_cost="1" name_for_city_sockets="Spire Casing" base_ship_cap_in_custom_city="2" added_ship_cap_in_custom_city_per_city_level="1" added_ship_cap_in_custom_city_per_city_level_above_level="1" mark_level_scale_style="OriginalWithoutCapRise"
+			name_for_city_sockets_short="Casing"
+			hull_points="2000000" shield_points="2000000" speed="Immobile"
+			armor_mm="180" albedo="0.7" mass_tx="6"
+			metal_cost="1000000" energy_consumption="30000"			
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+                        is_nonfunctional_when_on_planet_not_owned_by_player="false"
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+            assist_range="ExtremelyHigh"
+			>
+      <metal_flow purpose="SelfConstruction" throughput="5000"/>
+      <metal_flow purpose="RepairingHullsOfFriendlies" throughput="6000" increase_per_mark_level="6000"/>
+      <metal_flow purpose="RepairingShieldsOfFriendlies" throughput="6000" increase_per_mark_level="6000"/>
+      <metal_flow purpose="RepairingEnginesOfFriendlies" throughput="6000" increase_per_mark_level="6000"/>
+    <system name="W1" display_name="Spire Coil Beam"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="30000" range="High2" shot_speed="Normal" rate_of_fire="Devourer"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_Cyan"
+				hits_all_intersecting_targets="true"				
+				shots_detonate_immediately="true"
+                is_coilbeam="true"				
+				>
+    </system>
+    <system name="W2" display_name="Laser Pulse"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="3000" range="High2" shot_speed="Normal" rate_of_fire="Misery"
+				shots_per_salvo="20" fires_salvos_sequentially="false"
+				shot_type_data="LaserPulse_DeepBlue"				
+				>
+    </system>	
+    </entity>
+
+    <entity name="SpireSidekickFrigateNeuralNet"
+	        thematic_groups="FallenSpire,Spire"
+            tags="SpireSidekickCityBuildMenu,Spire_Normal,SpireFeedsFleet"
+            visuals="Assets/_DLC1/FallenSpire/SpireFrigateNeuralNet/SpireFrigateNeuralNet.prefab" visuals_bundle="exp1_the_spire_rises"
+            icon_name="Ships1/NeuralNet" icon_overlay="Overlays2/NeuralNet_SpireFrigate" gimbal_icon_size_multiplier="1.5"
+            voice_group="Spire"
+            uses_large_health_bar="true"
+            category="Ship"
+            size_scale="7.4"
+            visuals_scale_multiplier="25"
+            y_offset_of_icon="30"
+            collision_priority="810" construction_priority="100"
+            display_name="Spire Frigate Neural Net" display_name_for_sidebar="Spi Neural FFH"
+            description_short="This facility allows the 城市 to build an extra two 尖塔 Frigates. They are built via a 船坞."
+            description="This facility allows the 城市 to build an extra two 尖塔 Frigates.  If the facility is destroyed, the extra Frigates will also be destroyed.  The 城市 Center must be functional for the cap to increase, but a nonfunctional 城市 Center won't decrease the cap. They are built via a 船坞."
+            starting_mark_level="Markless" build_sidebar_categories_i_am_part_of="SpireSidekickCity"
+            cost_for_ai_to_purchase="10000" strength_multiplier="1.2" city_socket_cost="1" name_for_city_sockets="Spire Casing" base_ship_cap_in_custom_city="2" added_ship_cap_in_custom_city_per_city_level="1" added_ship_cap_in_custom_city_per_city_level_above_level="1" mark_level_scale_style="OriginalWithoutCapRise"
+            name_for_city_sockets_short="Casing"
+            hull_points="2000000" shield_points="2000000" speed="Immobile"
+            armor_mm="180" albedo="0.7" mass_tx="6"
+            metal_cost="1200000" energy_consumption="30000"
+            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+             is_nonfunctional_when_on_planet_not_owned_by_player="false"
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+            ship_type_name_to_grant_more_of_in_custom_fleet="SpireFrigate" ship_type_count_to_grant_more_of_in_custom_fleet="2"
+			>
+    <metal_flow purpose="SelfConstruction" throughput="5000"/>
+    <system name="W1" display_name="Spire Coil Beam"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="30000" range="High2" shot_speed="Normal" rate_of_fire="Devourer"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_Cyan"
+				hits_all_intersecting_targets="true"
+				shots_detonate_immediately="true"
+                is_coilbeam="true"
+				>
+    </system>
+    <system name="W2" display_name="Laser Pulse"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="3000" range="High2" shot_speed="Normal" rate_of_fire="Misery"
+				shots_per_salvo="20" fires_salvos_sequentially="false"
+				shot_type_data="LaserPulse_DeepBlue"
+				>
+    </system>	
+    </entity>
+    <entity name="SpireSidekickFrigateNeuralNet_Expert" thematic_groups="Hidden"
+            tags="SpireSidekickCityBuildMenu,Spire_Expert,SpireFeedsFleet"
+            copy_from="SpireFrigateNeuralNet"
+            ship_type_name_to_grant_more_of_in_custom_fleet="SpireFrigate_Expert"
+        >
+        <metal_flow purpose="SelfConstruction" throughput="2500"/>
+    </entity>
+
+
+    <entity name="SpireSidekickDestroyerNeuralNet"
+	        thematic_groups="FallenSpire,Spire"
+            tags="SpireSidekickCityBuildMenu,Spire_Normal,SpireFeedsFleet"
+            visuals="Assets/_DLC1/FallenSpire/SpireDestroyerNeuralNet/SpireDestroyerNeuralNet.prefab" visuals_bundle="exp1_the_spire_rises"
+            icon_name="Ships1/NeuralNet" icon_overlay="Overlays2/NeuralNet_SpireDestroyer" gimbal_icon_size_multiplier="1.5"
+            voice_group="Spire"
+            uses_large_health_bar="true"
+            category="Ship"
+            size_scale="7.4"
+            visuals_scale_multiplier="25"
+            y_offset_of_icon="30"
+            collision_priority="810" construction_priority="100"
+            display_name="Spire Destroyer Neural Net" display_name_for_sidebar="Spi Neural DD"
+            description_short="This facility allows the 城市 to build an extra 尖塔 驱逐舰. They are built via a 船坞."
+            description="This facility allows the 城市 to build an extra 尖塔 驱逐舰.  If the facility is destroyed, the extra 驱逐舰 will also be destroyed.  The 城市 Center must be functional for the cap to increase, but a nonfunctional 城市 Center won't decrease the cap. They are built via a 船坞."
+            starting_mark_level="Markless" build_sidebar_categories_i_am_part_of="SpireSidekickCity"
+            cost_for_ai_to_purchase="10000" strength_multiplier="1.2" city_socket_cost="2" name_for_city_sockets="Spire Casing" base_ship_cap_in_custom_city="1" added_ship_cap_in_custom_city_per_city_level="1" added_ship_cap_in_custom_city_per_city_level_above_level="3" mark_level_scale_style="OriginalWithoutCapRise"
+            name_for_city_sockets_short="Casing"
+            hull_points="2000000" shield_points="2000000" speed="Immobile"
+            armor_mm="180" albedo="0.7" mass_tx="6"
+            metal_cost="1400000" energy_consumption="15000"
+            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+             is_nonfunctional_when_on_planet_not_owned_by_player="false"
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+            ship_type_name_to_grant_more_of_in_custom_fleet="SpireDestroyer" ship_type_count_to_grant_more_of_in_custom_fleet="1"
+            minimum_required_city_level_for_construction="2"
+			>
+    <metal_flow purpose="SelfConstruction" throughput="2500"/>
+    <system name="W1" display_name="Spire Coil Beam"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="30000" range="High2" shot_speed="Normal" rate_of_fire="Devourer"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_Cyan"
+				hits_all_intersecting_targets="true"				
+				shots_detonate_immediately="true"
+                is_coilbeam="true"				
+				>
+    </system>
+    <system name="W2" display_name="Laser Pulse"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="3000" range="High2" shot_speed="Normal" rate_of_fire="Misery"
+				shots_per_salvo="20" fires_salvos_sequentially="false"
+				shot_type_data="LaserPulse_DeepBlue"				
+				>
+    </system>	
+    </entity>
+    <entity name="SpireSidekickDestroyerNeuralNet_Expert" thematic_groups="Hidden"
+            tags="SpireSidekickCityBuildMenu,Spire_Expert,SpireFeedsFleet"
+            copy_from="SpireDestroyerNeuralNet"
+            ship_type_name_to_grant_more_of_in_custom_fleet="SpireDestroyer_Expert"
+        >
+        <metal_flow purpose="SelfConstruction" throughput="2500"/>
+    </entity>
+
+
+    <entity name="SpireSidekickGreatShieldEmitter"
+	        thematic_groups="FallenSpire,Spire"
+            tags="SpireSidekickCityBuildMenu"
+            visuals="Assets/_DLC1/FallenSpire/SpireGreatShieldEmitter/SpireGreatShieldEmitter.prefab" visuals_bundle="exp1_the_spire_rises"
+            icon_name="ShipsSpire/SpireGreatShield" gimbal_icon_size_multiplier="1.5"
+            voice_group="Spire"
+            uses_large_health_bar="true"
+            category="Ship"
+            size_scale="5.2"
+            visuals_scale_multiplier="35"
+            y_offset_of_icon="30"
+            collision_priority="810" construction_priority="380"
+            display_name="Spire Great-Shield Emitter" display_name_for_sidebar="Spi Great-Shield"
+            description="This immobile facility provides an incredibly massive 力场 to block all enemies.  Uses a massive amount of energy."
+            starting_mark_level="Markless" build_sidebar_categories_i_am_part_of="SpireSidekickCity"
+            cost_for_ai_to_purchase="10000" city_socket_cost="1" name_for_city_sockets="Spire Casing" base_ship_cap_in_custom_city="1" mark_level_scale_style="OriginalWithoutCapRise"
+            name_for_city_sockets_short="Casing"
+            hull_points="4000000" shield_points="16000000" speed="Immobile"
+            armor_mm="180" albedo="0.7" mass_tx="6"
+            metal_cost="1500000" energy_consumption="1000000"
+            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+             is_nonfunctional_when_on_planet_not_owned_by_player="false"
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+            shield_size_scale="32" my_forcefield_has_no_penalty_for_enemies_firing_out_of_it="true"
+			>
+    <metal_flow purpose="SelfConstruction" throughput="24000"/>
+    </entity>
+
+    <entity name="SpireSidekickLesserSpyCradle"
+	        thematic_groups="FallenSpire,Spire"
+            tags="SpireSidekickCityBuildMenu"
+            visuals="Assets/_DLC1/FallenSpire/SpireLesserSpyCradle/SpireLesserSpyCradle.prefab" visuals_bundle="exp1_the_spire_rises"
+            icon_name="ShipsSpire/SpireSpyCradle" icon_overlay="Overlays2/SpireSpyCradle_Lesser" gimbal_icon_size_multiplier="1.5"
+            voice_group="Spire"
+            uses_large_health_bar="true"
+            category="Ship"
+            size_scale="7.4"
+            visuals_scale_multiplier="15"
+            y_offset_of_icon="30"
+            collision_priority="810"
+            display_name="Lesser Spire Spy Cradle" display_name_for_sidebar="Spi Spy Cradle Ls"
+            description="This facility provides complete visibility on all planets up to five hops out, and has a very powerful tachyon system.  Uses a massive amount of energy."
+            starting_mark_level="Markless" build_sidebar_categories_i_am_part_of="SpireSidekickCity"
+            cost_for_ai_to_purchase="10000" strength_multiplier="1.2" city_socket_cost="1" name_for_city_sockets="Spire Casing" base_ship_cap_in_custom_city="1" mark_level_scale_style="OriginalWithoutCapRise"
+            name_for_city_sockets_short="Casing"
+            hull_points="2000000" shield_points="2000000" speed="Immobile"
+            armor_mm="180" albedo="0.7" mass_tx="6"
+            metal_cost="300000" energy_consumption="500000"
+            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+             is_nonfunctional_when_on_planet_not_owned_by_player="false"
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+            watch_planets_at_X_hops="5" minimum_required_city_level_for_construction="2"
+			>
+    <metal_flow purpose="SelfConstruction" throughput="8000"/>
+    <system name="W1" display_name="Spire Coil Beam"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="30000" range="High2" shot_speed="Normal" rate_of_fire="Devourer"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_Cyan"
+				hits_all_intersecting_targets="true"				
+				shots_detonate_immediately="true"
+                is_coilbeam="true"				
+				>
+    </system>
+    <system name="W2" display_name="Laser Pulse"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="3000" range="High2" shot_speed="Normal" rate_of_fire="Misery"
+				shots_per_salvo="20" fires_salvos_sequentially="false"
+				shot_type_data="LaserPulse_DeepBlue"				
+				>
+    </system>
+    <system name="T" display_name="Tachyon Array"
+	            category="Passive" tachyon_points="400" tachyon_points_added_per_mark="50" tachyon_range="EssentiallyInfinite" tachyon_hits_albedo_less_than="0.75"
+		        >	 
+	</system>
+    </entity>
+
+    <entity name="SpireSidekickGreaterSpyCradle"
+	        thematic_groups="FallenSpire,Spire"
+            tags="SpireSidekickCityBuildMenu"
+            visuals="Assets/_DLC1/FallenSpire/SpireGreaterSpyCradle/SpireGreaterSpyCradle.prefab" visuals_bundle="exp1_the_spire_rises"
+            icon_name="ShipsSpire/SpireSpyCradle" icon_overlay="Overlays2/SpireSpyCradle_Greater" gimbal_icon_size_multiplier="1.5"
+            voice_group="Spire"
+            uses_large_health_bar="true"
+            category="Ship"
+            size_scale="11"
+            visuals_scale_multiplier="20"
+            y_offset_of_icon="30"
+            collision_priority="810"
+            display_name="Greater Spire Spy Cradle" display_name_for_sidebar="Spi Spy Cradle Gr"
+            description="This facility provides complete visibility on all planets up to eight hops out (probably most of the map), and has a very powerful tachyon system.  Uses a massive amount of energy."
+            starting_mark_level="Markless" build_sidebar_categories_i_am_part_of="SpireSidekickCity"
+            cost_for_ai_to_purchase="10000" strength_multiplier="1.2" city_socket_cost="1" name_for_city_sockets="Spire Casing" base_ship_cap_in_custom_city="1" mark_level_scale_style="OriginalWithoutCapRise"
+            name_for_city_sockets_short="Casing"
+            hull_points="2000000" shield_points="2000000" speed="Immobile"
+            armor_mm="180" albedo="0.7" mass_tx="6"
+            metal_cost="900000" energy_consumption="500000"
+            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+             is_nonfunctional_when_on_planet_not_owned_by_player="false"
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+            watch_planets_at_X_hops="8" minimum_required_city_level_for_construction="4"
+			>
+    <metal_flow purpose="SelfConstruction" throughput="28000"/>
+    <system name="W1" display_name="Spire Coil Beam"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="30000" range="High2" shot_speed="Normal" rate_of_fire="Devourer"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_Cyan"
+				hits_all_intersecting_targets="true"				
+				shots_detonate_immediately="true"
+                is_coilbeam="true"				
+				>
+    </system>
+    <system name="W2" display_name="Laser Pulse"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="3000" range="High2" shot_speed="Normal" rate_of_fire="Misery"
+				shots_per_salvo="20" fires_salvos_sequentially="false"
+				shot_type_data="LaserPulse_DeepBlue"				
+				>
+    </system>
+    <system name="T" display_name="Tachyon Array"
+	            category="Passive" tachyon_points="400" tachyon_points_added_per_mark="50" tachyon_range="EssentiallyInfinite" tachyon_hits_albedo_less_than="0.75"
+		        >	 
+	</system>	
+    </entity>
+
+
+    <entity name="SpireSidekickPlasmaDriver"
+	        thematic_groups="FallenSpire,Spire"
+            tags="SpireSidekickCityBuildMenu"
+            visuals="Assets/_DLC1/FallenSpire/SpirePlasmaDriver/SpirePlasmaDriver.prefab" visuals_bundle="exp1_the_spire_rises"
+            icon_name="ShipsSpire/SpirePlasmaDriver" gimbal_icon_size_multiplier="1.5"
+            voice_group="Spire"
+            uses_large_health_bar="true"
+            category="Ship"
+            size_scale="7.4"
+            visuals_scale_multiplier="6"
+            y_offset_of_icon="30"
+            collision_priority="810"
+            display_name="Spire Beam Cannon" display_name_for_sidebar="Spi Beam Cannon"
+            description="Advanced 尖塔 weapon against large targets. It fires powerful beams that can wipe out larger threats. It's less useful against smaller threat, albeit sheer damage can still destroy most 攻击机."
+            starting_mark_level="Mark1" build_sidebar_categories_i_am_part_of="SpireSidekickCity" this_unit_gets_direct_science_upgrades_from_central_fleet="true"
+            cost_for_ai_to_purchase="10000" city_socket_cost="1" base_ship_cap_in_custom_city="1" name_for_city_sockets="Spire Casing" added_ship_cap_in_custom_city_per_city_level="1" added_ship_cap_in_custom_city_per_city_level_above_level="5" mark_level_scale_style="OriginalWithoutCapRise"
+            name_for_city_sockets_short="Casing"
+            hull_points="2000000" shield_points="2000000" speed="Immobile"
+            armor_mm="180" albedo="0.7" mass_tx="6"
+            metal_cost="500000" energy_consumption="500000"
+            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+             is_nonfunctional_when_on_planet_not_owned_by_player="false"
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			>
+    <metal_flow purpose="SelfConstruction" throughput="7000"/>
+	<system name="W1" display_name="Spire Heavy Coil Beam"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="40000" range="InsanelyHigh" shot_speed="Normal" rate_of_fire="Devourer" shots_per_salvo="2"
+				added_shots_per_salvo_per_mark="1"
+				shot_type_data="HeavyBeamInvisible"
+			beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_Cyan"
+				hits_all_intersecting_targets="true"				
+				shots_detonate_immediately="true"
+                is_coilbeam="true"				
+				>
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="10" />
+    </system>
+      <!--
+    <system name="W2" display_name="Plasma Driver"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="4000" range="InsanelyHigh" shot_speed="VeryFast" rate_of_fire="Misery" fires_salvos_sequentially="true"
+				shot_type_data="MassDriver"
+				>
+                <outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="100" />
+    </system>
+	-->
+    </entity>
+
+
+    <entity name="LesserSpireSidekickFortress"
+	        thematic_groups="FallenSpire,Spire"
+            tags="SpireSidekickCityBuildMenu"
+            visuals="Assets/_DLC1/FallenSpire/SpireFortressLesser/SpireFortressLesser.prefab" visuals_bundle="exp1_the_spire_rises"
+            icon_name="ShipsSpire/SpireFortress" icon_overlay="Overlays2/SpireFortress_Lesser" gimbal_icon_size_multiplier="1.5"
+            voice_group="Spire"
+            uses_large_health_bar="true"
+            category="Ship"
+            size_scale="7.4"
+            visuals_scale_multiplier="40"
+            y_offset_of_icon="30"
+            collision_priority="810"
+            display_name="Lesser Spire Fortress" display_name_for_sidebar="Spi Fortress Ls"
+            description="Built for killing.  Nothing more, nothing less. Also knocking enemies back.  Uses a massive amount of energy."
+            starting_mark_level="Mark1" build_sidebar_categories_i_am_part_of="SpireSidekickCity" this_unit_gets_direct_science_upgrades_from_central_fleet="true"
+            cost_for_ai_to_purchase="10000" strength_multiplier="1.7" city_socket_cost="2" name_for_city_sockets="Spire Casing" minimum_required_city_level_for_construction="3" base_ship_cap_in_custom_city="1" mark_level_scale_style="OriginalWithoutCapRise"
+            name_for_city_sockets_short="Casing"
+            hull_points="6000000" shield_points="6000000" speed="Immobile"
+            armor_mm="180" albedo="0.7" mass_tx="6"
+            metal_cost="400000" energy_consumption="1000000"
+            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+             is_nonfunctional_when_on_planet_not_owned_by_player="false"
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			>
+    <metal_flow purpose="SelfConstruction" throughput="10000"/>
+	<system name="W1" display_name="Spire Coil Beam"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="80000" range="InsanelyHigh" shot_speed="Normal" rate_of_fire="Devourer" shots_per_salvo="2"
+				added_shots_per_salvo_per_mark="1"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_YellowBright"
+				hits_all_intersecting_targets="true"				
+				shots_detonate_immediately="true"
+                is_coilbeam="true"				
+				>
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="10" />
+    </system>
+    <system name="W2" display_name="Energy Wave"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="6000" range="EssentiallyInfinite" shot_speed="Normal" rate_of_fire="Misery"
+                shots_per_salvo="48" added_shots_per_salvo_per_mark="24"	fires_salvos_sequentially="false"
+                base_paralysis_seconds_per_shot="4" added_paralysis_seconds_per_shot_per_mark="2" paralysis_to_ships_mass_tx_less_than="2" added_target_evaluator="ParalyzerAsPrimary"
+				base_knockback_per_shot="3000" added_knockback_per_shot_per_mark="750" knockback_to_ships_mass_tx_less_than="2"
+				shot_type_data="EnergyWave"
+				>
+    </system>
+    <system name="W3" display_name="Laser Pulse"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="4000" range="High2" shot_speed="Normal" rate_of_fire="Misery"
+				shots_per_salvo="60" added_knockback_per_shot_per_mark="30" fires_salvos_sequentially="false"
+				shot_type_data="LaserPulse_DeepBlue"				
+				>
+    </system>	
+   </entity>
+
+
+    <entity name="GreaterSpireSidekickFortress"
+	        thematic_groups="FallenSpire,Spire"
+            tags="SpireSidekickCityBuildMenu"
+            visuals="Assets/_DLC1/FallenSpire/SpireFortressGreater/SpireFortressGreater.prefab" visuals_bundle="exp1_the_spire_rises"
+            icon_name="ShipsSpire/SpireFortress" icon_overlay="Overlays2/SpireFortress_Greater" gimbal_icon_size_multiplier="1.5"
+            voice_group="Spire"
+            uses_large_health_bar="true"
+            category="Ship"
+            size_scale="9.6"
+            visuals_scale_multiplier="50"
+            y_offset_of_icon="30"
+            collision_priority="810"
+            display_name="Greater Spire Fortress" display_name_for_sidebar="Spi Fortress Gr"
+            description="Built for killing, and surpassingly good at it. Also knocking enemies back.  Uses a massive amount of energy."
+            starting_mark_level="Mark1" build_sidebar_categories_i_am_part_of="SpireSidekickCity" this_unit_gets_direct_science_upgrades_from_central_fleet="true"
+            cost_for_ai_to_purchase="10000" strength_multiplier="2.4" city_socket_cost="3" name_for_city_sockets="Spire Casing" minimum_required_city_level_for_construction="5" base_ship_cap_in_custom_city="1" mark_level_scale_style="OriginalWithoutCapRise"
+            name_for_city_sockets_short="Casing"
+            hull_points="12000000" shield_points="12000000" speed="Immobile"
+            armor_mm="180" albedo="0.7" mass_tx="6"
+            metal_cost="800000" energy_consumption="2000000"
+            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+             is_nonfunctional_when_on_planet_not_owned_by_player="false"
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			>
+    <metal_flow purpose="SelfConstruction" throughput="20000"/>
+    <system name="W1" display_name="Spire Coil Beam"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="160000" range="InsanelyHigh" shot_speed="Normal" rate_of_fire="Devourer" shots_per_salvo="2"
+				added_shots_per_salvo_per_mark="1"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_YellowBright"
+				hits_all_intersecting_targets="true"				
+				shots_detonate_immediately="true"
+                is_coilbeam="true"				
+				>
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="10" />
+    </system>
+    <system name="W2" display_name="Energy Wave"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="6000" range="EssentiallyInfinite" shot_speed="Normal" rate_of_fire="Misery"
+                shots_per_salvo="96" added_shots_per_salvo_per_mark="48"	fires_salvos_sequentially="false"
+                base_paralysis_seconds_per_shot="4" added_paralysis_seconds_per_shot_per_mark="2" paralysis_to_ships_mass_tx_less_than="2" added_target_evaluator="ParalyzerAsPrimary"
+				base_knockback_per_shot="3000" added_knockback_per_shot_per_mark="1000" knockback_to_ships_mass_tx_less_than="3"
+				shot_type_data="EnergyWave"
+				>
+    </system>
+    <system name="W3" display_name="Laser Pulse"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="8000" range="High2" shot_speed="Normal" rate_of_fire="Misery"
+				shots_per_salvo="120" added_knockback_per_shot_per_mark="60" fires_salvos_sequentially="false"
+				shot_type_data="LaserPulse_DeepBlue"				
+				>
+    </system>	
+    </entity>
+
+
+    <entity name="SpireSidekickButtress"
+	        thematic_groups="FallenSpire,Spire"
+            tags="SpireSidekickCityBuildMenu,InvulnerabilityGranter"
+            visuals="Assets/_DLC1/FallenSpire/SpireButtress/SpireButtress.prefab" visuals_bundle="exp1_the_spire_rises"
+            icon_name="ShipsSpire/SpireButtress" gimbal_icon_size_multiplier="1.5"
+            voice_group="Spire" special_entity_type="Buttress"
+            uses_large_health_bar="true"
+            category="Ship"
+            size_scale="7.4"
+            visuals_scale_multiplier="40"
+            y_offset_of_icon="30"
+            collision_priority="810"
+            display_name="Spire Buttress" display_name_for_sidebar="Spi Buttress"
+            description="Protects the local command station from all harm while living (does not work on home command stations), slows most enemies anywhere on the planet and also traps them here.  Uses a massive amount of energy."
+            starting_mark_level="Markless" build_sidebar_categories_i_am_part_of="SpireSidekickCity"
+            cost_for_ai_to_purchase="10000" city_socket_cost="1" name_for_city_sockets="Spire Casing" minimum_required_city_level_for_construction="4" base_ship_cap_in_custom_city="1" mark_level_scale_style="OriginalWithoutCapRise"
+            name_for_city_sockets_short="Casing"
+			adds_black_hole_effect_for_entities_with_engine_gx_less_than="20"
+            hull_points="4000000" shield_points="4000000" speed="Immobile"
+            armor_mm="180" albedo="0.7" mass_tx="6"
+            metal_cost="800000" energy_consumption="2000000"
+            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+             is_nonfunctional_when_on_planet_not_owned_by_player="false"
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			>
+    <metal_flow purpose="SelfConstruction" throughput="25000"/>
+	<system name="G" display_name="Gravitic Core"
+				category="Passive"
+				base_gravity_speed_multiplier="0.5" gravity_hits_engine_gx_less_than="20" gravity_range="EssentiallyInfinite"
+				>
+    </system>
+	<system name="W1" display_name="Spire Coil Beam"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="30000" range="High2" shot_speed="Normal" rate_of_fire="Devourer"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_PurpleBright"
+				hits_all_intersecting_targets="true"				
+				shots_detonate_immediately="true"
+                is_coilbeam="true"				
+				>
+    </system>
+    <system name="W2" display_name="Laser Pulse"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="3000" range="High2" shot_speed="Normal" rate_of_fire="Misery"
+				shots_per_salvo="20" fires_salvos_sequentially="false"
+				shot_type_data="LaserPulse_DeepBlue"				
+				>
+    </system>	
+    </entity>
+
+
+    <entity name="SpireSidekickMiningFacility"
+	        thematic_groups="FallenSpire,Spire"
+            tags="SpireSidekickCityBuildMenu"
+            visuals="Assets/_DLC1/FallenSpire/SpireMiningFacility/SpireMiningFacility.prefab" visuals_bundle="exp1_the_spire_rises"
+            icon_name="ShipsSpire/SpireMining" gimbal_icon_size_multiplier="1.5"
+            voice_group="Spire"
+            uses_large_health_bar="true"
+            category="Ship"
+            size_scale="7.4"
+            visuals_scale_multiplier="17"
+            y_offset_of_icon="30"
+            collision_priority="810"
+            display_name="Spire Mining Facility" display_name_for_sidebar="Spi Mining"
+            description="尖塔 require massive amounts of 金属 to construct themselves, and they're excellent at 采矿 for it."
+            starting_mark_level="Mark1" build_sidebar_categories_i_am_part_of="SpireSidekickCity" this_unit_gets_direct_science_upgrades_from_central_fleet="true"
+            cost_for_ai_to_purchase="10000" strength_multiplier="1.2" city_socket_cost="1" name_for_city_sockets="Spire Casing" base_ship_cap_in_custom_city="2" added_ship_cap_in_custom_city_per_city_level="1" added_ship_cap_in_custom_city_per_city_level_above_level="1" mark_level_scale_style="OriginalWithoutCapRise"
+            name_for_city_sockets_short="Casing"
+            hull_points="2000000" shield_points="2000000" speed="Immobile"
+            armor_mm="180" albedo="0.7" mass_tx="6"
+            metal_cost="350000" energy_consumption="15000"
+	    metal_storage="1000000" added_metal_storage_per_mark_level="100000"
+            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+             is_nonfunctional_when_on_planet_not_owned_by_player="false"
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+            assist_range="AboveAverage3"
+			>
+    <resource_production type="Metal" amount="5000" increase_per_mark_level="500"/>
+    <metal_flow purpose="SelfConstruction" throughput="7500"/>
+    <system name="W1" display_name="Spire Coil Beam"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="30000" range="High2" shot_speed="Normal" rate_of_fire="Devourer"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_Cyan"
+				hits_all_intersecting_targets="true"				
+				shots_detonate_immediately="true"
+                is_coilbeam="true"				
+				>
+    </system>
+    <system name="W2" display_name="Laser Pulse"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="3000" range="High2" shot_speed="Normal" rate_of_fire="Misery"
+				shots_per_salvo="20" fires_salvos_sequentially="false"
+				shot_type_data="LaserPulse_DeepBlue"				
+				>
+    </system>	
+    </entity>
+  
+  <entity name="SpireSidekickTransceiver"
+            thematic_groups="FallenSpire,Spire"
+            tags="SpireSidekickCityBuildMenu,SummonsImperialFleet"
+            visuals="Assets/_DLC1/FallenSpire/SpireTransceiver/SpireTransceiver.prefab" visuals_bundle="exp1_the_spire_rises"
+            icon_name="ShipsSpire/SpireTransciever" gimbal_icon_size_multiplier="1.5"
+            voice_group="Spire"
+            uses_large_health_bar="true"
+            category="Ship"
+            size_scale="11"
+            visuals_scale_multiplier="85"
+            y_offset_of_icon="30"
+            collision_priority="810"
+            display_name="Spire Transceiver" display_name_for_sidebar="Spi Transceiver"
+            description="We're getting transwarp signals from somewhere very far away, but we can't understand them.  Building this machine might just call in the cavalry, but also will intensely anger the AI."
+            starting_mark_level="Markless" build_sidebar_categories_i_am_part_of="SpireSidekickCity"
+            cost_for_ai_to_purchase="10000" city_socket_cost="4" name_for_city_sockets="Spire Casing" minimum_required_city_level_for_construction="5" base_ship_cap_in_custom_city="1" mark_level_scale_style="OriginalWithoutCapRise"
+            name_for_city_sockets_short="Casing"
+            hull_points="4000000" shield_points="4000000" speed="Immobile"
+            armor_mm="180" albedo="0.7" mass_tx="6"
+            metal_cost="800000" energy_consumption="2000000"
+            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+             is_nonfunctional_when_on_planet_not_owned_by_player="false"
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+            ship_type_names_required_to_exist_in_custom_fleet="SpireShardReactor,SpireEngineeringCenter" ship_type_counts_required_to_exist_in_custom_fleet="2,1"
+            base_galaxy_wide_cap_for_players_constructing="1" galaxy_wide_cap_match_string="SpireTrans"
+			>
+    <metal_flow purpose="SelfConstruction" throughput="25000"/>
+	<system name="W1" display_name="Spire Coil Beam"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="30000" range="High2" shot_speed="Normal" rate_of_fire="Devourer"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_Cyan"
+				hits_all_intersecting_targets="true"				
+				shots_detonate_immediately="true"
+                is_coilbeam="true"				
+				>
+    </system>
+    <system name="W2" display_name="Laser Pulse"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="3000" range="High2" shot_speed="Normal" rate_of_fire="Misery"
+				shots_per_salvo="20" fires_salvos_sequentially="false"
+				shot_type_data="LaserPulse_DeepBlue"				
+				>
+    </system>
+    </entity>
+
+    <!-- Relics -->
+        <entity name="SpireSidekickRelic"
+	        thematic_groups="FallenSpire,Spire"
+			tags="SpireSidekickRelic,SphericalSpireSidekickRelic"
+			voice_group="Spire" gimbal_icon_size_multiplier="1.5"
+			draw_in_galaxy_view="true"
+			visuals="Assets/_DLC1/FallenSpire/SpireRelic/SpireRelicA1.prefab" visuals_bundle="exp1_the_spire_rises"
+			icon_name="ShipsSpire/SpireRelic"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="2"
+			visuals_scale_multiplier="5.5"
+			y_offset_of_icon="30"
+			display_name="Spire Relic"
+			description="Alien relic, giving off extreme energy readings.  Select this unit and click on the planet (and optionally the place on a planet) you want it to go to, and the relic will transform into a 尖塔 城市 when it gets there.
+			
+If need be, you can scrap the Relic like any other unit to prevent any further response from the AI against it."
+			collision_priority="810"
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="10000"
+            can_be_given_orders_by_any_player_even_if_not_owner="true"
+            has_custom_move_order_and_no_other_direct_commands_can_be_given_from_player="true"
+            alternative_move_handler_dll="AIWarExternalCode" alternative_move_handler_type="Arcen.AIW2.External.SpireSidekickRelicMoveHandler"
+			hull_points="3600000" shield_points="0" speed="VeryVeryLittle3"
+			armor_mm="180" albedo="0.7" engine_gx="25" mass_tx="6"
+			metal_cost="2000000" energy_consumption="15000"			
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+      can_pass_through_enemy_forcefields="true"
+            
+      immune_to_repairs="true" immune_to_protection_by_forcefields="true" 
+      alternative_state_of_matter="MultiPhase" phases_to_other_alternative_state_of_matter_after_seconds="30" phases_back_to_default_state_of_matter_after_seconds="30"
+                        priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+                        pushes_enemy_shields="true"
+                        description_appender_dll="AIWarExternalCode"
+			description_appender_type="Arcen.AIW2.External.SpireSidekickRelicDescriptionAppender"
+
+			>		
+	<ship_class_data can_be_zombified_and_similar="false" speed_buff_max_multipler="2" />
+    </entity>
+
+    <entity  copy_from="SpireSidekickRelic" name="SpireSidekickRelicA2" tags="SpireSidekickRelic,SphericalSpireSidekickRelic" thematic_groups="Hidden"
+	        visuals="Assets/_DLC1/FallenSpire/SpireRelic/SpireRelicA2.prefab"
+	        >
+    </entity>
+
+    <entity  copy_from="SpireSidekickRelic" name="SpireSidekickRelicA3" tags="SpireSidekickRelic,SphericalSpireSidekickRelic" thematic_groups="Hidden"
+	        visuals="Assets/_DLC1/FallenSpire/SpireRelic/SpireRelicA3.prefab"
+	        >
+    </entity>
+
+    <entity  copy_from="SpireSidekickRelic" name="SpireSidekickRelicA4" tags="SpireSidekickRelic,SphericalSpireSidekickRelic" thematic_groups="Hidden"
+	        visuals="Assets/_DLC1/FallenSpire/SpireRelic/SpireRelicA4.prefab"
+	        >
+    </entity>
+
+    <entity  copy_from="SpireSidekickRelic" name="SpireSidekickRelicB1" tags="SpireSidekickRelic,AngularSpireSidekickRelic" thematic_groups="Hidden"
+	        visuals="Assets/_DLC1/FallenSpire/SpireRelic/SpireRelicB1.prefab"
+	        >
+    </entity>	
+
+    <entity  copy_from="SpireSidekickRelic" name="SpireSidekickRelicB2" tags="SpireSidekickRelic,AngularSpireSidekickRelic" thematic_groups="Hidden"
+	        visuals="Assets/_DLC1/FallenSpire/SpireRelic/SpireRelicB2.prefab"
+	        >
+    </entity>	
+
+    <entity  copy_from="SpireSidekickRelic" name="SpireSidekickRelicB3" tags="SpireSidekickRelic,AngularSpireSidekickRelic" thematic_groups="Hidden"
+	        visuals="Assets/_DLC1/FallenSpire/SpireRelic/SpireRelicB3.prefab"
+	        >
+    </entity>	
+
+    <entity  copy_from="SpireSidekickRelic" name="SpireSidekickRelicB4" tags="SpireSidekickRelic,AngularSpireSidekickRelic" thematic_groups="Hidden"
+	        visuals="Assets/_DLC1/FallenSpire/SpireRelic/SpireRelicB4.prefab"
+	        >
+    </entity>		
+
+    <!-- Debris -->
+        <entity name="SpireSidekickDebris"
+	        thematic_groups="FallenSpire,Spire"
+		tags="SpireSidekickDebris,OnlyPlayerCanTarget"
+		voice_group="Spire" gimbal_icon_size_multiplier="1.5"
+		draw_in_galaxy_view="true"
+		visuals="Assets/_DLC1/FallenSpire/SpireDebris/SpireDebris1.prefab" visuals_bundle="exp1_the_spire_rises"
+		icon_name="ShipsSpire/SpireDebris"
+		uses_large_health_bar="true"
+		category="Ship"
+		size_scale="2"
+		visuals_scale_multiplier="28"
+		y_offset_of_icon="30"
+		display_name="Spire Debris"
+		description="Some leftover spire artifacts; you can hack it for 科技. Note that if you don't get to it in time then the AI or some other faction will take the technology."
+		collision_priority="810"
+		starting_mark_level="Markless"
+                target_type_for_player="NeverAutotargetButAllowManualTarget"
+		cost_for_ai_to_purchase="10000"
+		hull_points="24000" shield_points="24000" speed="Immobile"
+		armor_mm="180" albedo="0.7"  mass_tx="6"
+		metal_cost="2000000" energy_consumption="15000"			
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+		ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+                priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+                eligible_for_hacks="AnalyzeSpireSidekickDebris"
+		>
+	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity> 
+
+    <entity  copy_from="SpireSidekickDebris" name="SpireSidekickDebris2" tags="SpireSidekickDebris,OnlyPlayerCanTarget" thematic_groups="Hidden"
+	        visuals="Assets/_DLC1/FallenSpire/SpireDebris/SpireDebris2.prefab"
+	        >
+    </entity>
+
+    <entity  copy_from="SpireSidekickDebris" name="SpireSidekickDebris3" tags="SpireSidekickDebris,OnlyPlayerCanTarget" thematic_groups="Hidden"
+	        visuals="Assets/_DLC1/FallenSpire/SpireDebris/SpireDebris3.prefab"
+	        >
+    </entity>	
+
+    <!-- AI stuff -->
+    <!--
+    <entity name="AISpireSidekickCitadel" 
+	    thematic_groups="FallenSpire,Spire,AI"
+            tags="AISpireCitadel,AISpireSidekickCitadel"
+	    draw_in_galaxy_view="true"
+	    visuals="assets/_dlc1/fallenspire/aispirefortress/aispirefortress2.prefab" visuals_bundle="exp1_the_spire_rises"
+	    icon_name="Ships1/Fortress" icon_overlay="Overlays2/Guardian_Beam" gimbal_icon_size_multiplier="1.5"
+	    voice_group="Silent"
+            uses_large_health_bar="true"			
+	    category="Ship"
+	    size_scale="11"
+	    visuals_scale_multiplier="25"
+	    y_offset_of_icon="30"
+	    collision_priority="810"
+	    display_name="AI Spire Citadel"
+			display_name_for_sidebar="AI Spire CIT"
+	    description="The AI is using a 尖塔 Relic to power the 防御 on this citadel. If you destroy it then you can recover the Relic; the burst of AI energy when the 要塞 is destroyed should obscure the Relic's energy signature, leading to reduced AI response after you take the relic."
+	    behavior="Stationary"
+	    starting_mark_level="Markless"
+	    cost_for_ai_to_purchase="3000" strength_multiplier="2.3"		
+	    hull_points="8000000" shield_points="16000000" speed="Immobile"
+	    metal_cost="800000" energy_consumption="25000"
+	    armor_mm="300" albedo="0.7" mass_tx="7"
+	    ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+	    >
+      <system name="W1" display_name="Spire Coil Beam"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="30000" range="High2" shot_speed="Normal" rate_of_fire="Devourer"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_Red"
+				hits_all_intersecting_targets="true"				
+				shots_detonate_immediately="true"
+                is_coilbeam="true"				
+				>
+    </system>
+    <system name="W2" display_name="Laser Pulse"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="4000" range="High2" shot_speed="Normal" rate_of_fire="Misery"
+				shots_per_salvo="40" fires_salvos_sequentially="false"
+				shot_type_data="LaserPulse_DeepBlue"				
+				>
+    </system>	
+    </entity>
+
+    <entity name="AISpireSidekickResearchLab"
+	        thematic_groups="FallenSpire,Spire,AI"
+            tags="AISpireResearchLab,AISpireSidekickResearchLab"
+			draw_in_galaxy_view="true"
+	        visuals="Assets/_DLC1/FallenSpire/AISpireResearchLab/AISpireResearchLab.prefab" visuals_bundle="exp1_the_spire_rises"
+	        icon_name="Ships2/SomethingScienceBuilding" icon_overlay="Overlays2/Guardian_Beam" gimbal_icon_size_multiplier="1.5"
+			voice_group="Silent"	
+            uses_large_health_bar="true"			
+			category="Ship"
+			size_scale="9"
+			visuals_scale_multiplier="20"
+			y_offset_of_icon="30"
+			collision_priority="810"
+	    display_name="AI Spire Research Lab"
+			display_name_for_sidebar="AI Spire Lab"
+	        description="The AI is researching a 尖塔 Relic here. Their investigations have damaged the relic; after you rescue the relic, it can't leave the planet and must build a 尖塔 城市 here. Cities spawned in this way override adjacency rules, though you still can't place two cities on a single planet."
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="10000"
+			hull_points="4000000" shield_points="8000000" speed="Immobile"
+			armor_mm="180" albedo="0.7" mass_tx="6"
+			metal_cost="2000000" energy_consumption="15000"			
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+		    >
+    <system name="W1" display_name="Spire Coil Beam"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="30000" range="High2" shot_speed="Normal" rate_of_fire="Devourer"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_Red"
+				hits_all_intersecting_targets="true"				
+				shots_detonate_immediately="true"
+                is_coilbeam="true"				
+				>
+    </system>
+    </entity>
+-->
+    <!-- Rangers and Outposts -->
+    <!-- Note I changed the name and descriptions to make them feel more unique, but still the same as Rangers from Armada -->
+    <entity name="SpireRangerOutpost"
+	    thematic_groups="FallenSpire,Spire"
+            tags="SpireSidekickCityBuildMenu,BoostsRangerCap"
+            visuals="Assets/_DLC1/FallenSpire/SpireButtress/SpireButtress.prefab" visuals_bundle="exp1_the_spire_rises"
+            icon_name="Ships4/SomethingFire"
+            icon_overlay="Overlays2/Ark_RorqualHegira"
+            voice_group="Spire" 
+            uses_large_health_bar="true"
+            category="Ship"
+            size_scale="7.4"
+            visuals_scale_multiplier="40"
+            y_offset_of_icon="30"
+            collision_priority="810"
+	    display_name="Crystal Outpost" display_name_for_sidebar="C Outpost"
+            description="Spawns Crystalline Wardens to defend planets around this 星站. Typically can defend up to 3 hops from this planet. The 守望者 uses a powerful photon lance."
+            starting_mark_level="Mark1" build_sidebar_categories_i_am_part_of="SpireSidekickCity" this_unit_gets_direct_science_upgrades_from_central_fleet="true"
+            cost_for_ai_to_purchase="10000" city_socket_cost="1" base_ship_cap_in_custom_city="3" name_for_city_sockets="Spire Casing" added_ship_cap_in_custom_city_per_city_level="1" added_ship_cap_in_custom_city_per_city_level_above_level="5" mark_level_scale_style="OriginalWithoutCapRise"
+            name_for_city_sockets_short="Casing"
+            hull_points="4000000" shield_points="4000000" speed="Immobile"
+            armor_mm="180" albedo="0.7" mass_tx="6"
+            metal_cost="300000" energy_consumption="20000"
+            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            is_nonfunctional_when_on_planet_not_owned_by_player="false"
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+            description_appender_dll="AIWarExternalCode"
+	    description_appender_type="Arcen.AIW2.External.SpireSidekickOutpostDescriptionAppender"
+	    >
+    <metal_flow purpose="SelfConstruction" throughput="25000"/>
+    <system name="W1" display_name="Spire Coil Beam"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="15000" range="High2" shot_speed="Normal" rate_of_fire="Devourer"
+	    shot_type_data="HeavyBeamInvisible"
+	    beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_PurpleBright"
+	    hits_all_intersecting_targets="true"				
+	    shots_detonate_immediately="true"
+            is_coilbeam="true"				
+	    >
+    </system>
+    <system name="W2" display_name="Laser Pulse"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="1500" range="High2" shot_speed="Normal" rate_of_fire="Misery"
+	    shots_per_salvo="20" fires_salvos_sequentially="false"
+	    shot_type_data="LaserPulse_DeepBlue"				
+	    >
+    </system>	
+    </entity>
+    <entity name="SpireDireRangerOutpost"
+            copy_from="SpireRangerOutpost"
+            icon_name="Ships4/SomethingFire2"
+            icon_overlay="Overlays2/Ark_RorqualHegira"
+
+	    tags="SpireSidekickCityBuildMenu,BoostsDireRangerCap"
+            display_name="Spire Shiver Outpost" display_name_for_sidebar="S Outpost"
+            description="Spawns Shivers to defend planets around this 城市. Typically can defend up to 5 hops from this planet. The Shiver is an powerful ship with railcannons."
+            metal_cost="1000000"
+            city_socket_cost="2"
+            energy_consumption="30000"
+            hull_points="5000000" shield_points="4000000" speed="Immobile"
+            description_appender_dll="AIWarExternalCode"
+            description_appender_type="Arcen.AIW2.External.SpireSidekickOutpostDescriptionAppender"
+            >
+      <system name="G" display_name="Gravitic Core"
+	      category="Passive"
+	      base_gravity_speed_multiplier="0.5" gravity_hits_engine_gx_less_than="20" gravity_range="EssentiallyInfinite"
+	      >
+      </system>
+      <system name="W1" display_name="Spire Coil Beam"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      damage_per_shot="30000" range="High2" shot_speed="Normal" rate_of_fire="Devourer"
+	      shot_type_data="HeavyBeamInvisible"
+	      beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_PurpleBright"
+	      hits_all_intersecting_targets="true"
+	      shots_detonate_immediately="true"
+              is_coilbeam="true"
+	      >
+      </system>
+      <system name="W2" display_name="Laser Pulse"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      damage_per_shot="3000" range="High2" shot_speed="Normal" rate_of_fire="Misery"
+	      shots_per_salvo="20" fires_salvos_sequentially="false"
+	      shot_type_data="LaserPulse_DeepBlue"
+	      >
+      </system>	
+      <metal_flow purpose="SelfConstruction" throughput="3000"/>
+    </entity>
+
+    <entity name="SpireRanger"
+	   visuals="Assets/_FinalGameMeshes/Guardians/SpiderAndParalysisGuardian/ParalysisGuardian.prefab"
+	   icon_name="Ships4/SomethingFire"
+           special_entity_type="AIGuardian"
+           material_override_path="Assets/_FinalGameMeshes/Spire/SpireLostFrigate/SpireLostFrigate.prefab"
+           tags="AutoDefenseShip,SpireBaseRanger"
+	   category="Ship"
+	   size_scale="3.6"
+           gimbal_icon_size_multiplier="0.9"
+	   visuals_scale_multiplier="2"
+	   y_offset_of_icon="16"
+	   collision_priority="400"
+	   display_name="Crystalline Warden"
+	   display_name_for_sidebar="C Warden"
+	   description="The Crystilline Wardens defend planets near their city, wielding a powerful photon lance. Also has metabolization to improve your income."
+           mark_level_scale_style="ArmadaRanger"
+	   blocks_enemy_claim_flows="true"
+	   voice_group="Silent"
+	   starting_mark_level="Mark1" tech_upgrades_that_benefit_me="SpireSidekickRangers"
+	   cost_for_ai_to_purchase="1000" strength_multiplier="1.5"
+           hull_points="284000" shield_points="560000"
+	   speed="AboveAverage2"
+	   metal_cost="1000" energy_consumption="7500"
+	   armor_mm="90" albedo="0.4" engine_gx="7" mass_tx="5"
+	   ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	   ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	   ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+           priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+           allowed_hops_from_centerpiece="3"
+            >
+      <system name="W1" display_name="Photon Lance"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      damage_per_shot="10000" range="AboveAverage4" shot_speed="Normal" rate_of_fire="High"
+	      shot_type_data="HeavyBeamInvisible"
+	      beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_Yellow"
+	      hits_all_intersecting_targets="true"
+	      shots_detonate_immediately="true"
+              is_coilbeam="true"
+	      >
+      </system>
+      <system name="V1" display_name="Metabolozing Blast"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="30" range="Normal4" shot_speed="Normal" rate_of_fire="Misery"
+	    fires_salvos_sequentially="false"
+	    shot_type_data="PikeShot_Gold"
+	    >
+      <outgoing_damage_modifier based_on="Armor_mm" comparison_type="GreaterThan" compared_to="120" multiplier="3" />
+      <outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="3" />
+      <death_effect_damage type="Metabolization" tier_name="Gangsaw"/>
+    </system>
+
+    </entity>
+    <entity name="SpireDireRanger"
+            tags="AutoDefenseShip,SpireDireRanger"
+            icon_name="Ships4/SomethingFire" icon_overlay="Overlays2/Spire_Imperial"
+            gimbal_icon_size_multiplier="1.3"
+	    display_name="Spire Shiver"
+	    display_name_for_sidebar="Shiver"
+	    description="The 尖塔 Shiver is a very powerful ship with a pair of railcannons."
+            visuals="Assets/_DLC1/SpireSplintering/ZenithCollector/ZenithCollector.prefab" visuals_bundle="exp1_the_spire_rises"
+           special_entity_type="AIGuardian"
+           material_override_path="Assets/_FinalGameMeshes/Spire/SpireLostFrigate/SpireLostFrigate.prefab"
+	   category="Ship"
+	   size_scale="3.6"
+	   visuals_scale_multiplier="2"
+	   y_offset_of_icon="16"
+	   collision_priority="400"
+           mark_level_scale_style="ArmadaRanger"
+	   blocks_enemy_claim_flows="true"
+	   voice_group="Silent"
+	   starting_mark_level="Mark1" tech_upgrades_that_benefit_me="SpireSidekickRangers"
+	   cost_for_ai_to_purchase="1000" strength_multiplier="1.5"
+	   hull_points="1200000" shield_points="0" speed="BelowAverage1"
+	   metal_cost="28800" energy_consumption="30000"
+	   armor_mm="70" albedo="0.5" engine_gx="23" mass_tx="2"
+
+	   ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	   ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	   ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+           priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+           allowed_hops_from_centerpiece="5"
+           >
+      <system name="W1" display_name="Spire Heavy Gravitic Railcannon"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      damage_per_shot="4500" range="Planetary" shot_speed="VeryFast" rate_of_fire="High"
+              shot_type_data="HeavyBeamInvisible"
+              beam_length_multiplier="1" beam_weapon_visual_style="Laser_Red"
+              base_engine_stun_per_shot="3"
+	      engine_stun_to_engine_gx_less_than="23"
+	      max_engine_stun_seconds="5" added_target_evaluator="EngineDamageAsMinorPart"
+	      >
+	<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="2" />
+      </system>
+      <system name="W2" display_name="Spire Gravitic Railcannon"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      damage_per_shot="1000" range="Planetary" shot_speed="VeryFast" rate_of_fire="Normal"
+              shots_per_salvo="10" fires_salvos_sequentially="false"
+	      shot_type_data="HeavyBeamInvisible"
+	      beam_length_multiplier="1" beam_weapon_visual_style="Laser_Red"
+	      base_engine_stun_per_shot="2" 
+	      engine_stun_to_engine_gx_less_than="18"
+	      max_engine_stun_seconds="5" added_target_evaluator="EngineDamageAsMinorPart"
+	      >
+      </system>
+      <ship_class_data can_be_zombified_and_similar="true" />
+
+    </entity>
+
+</root>

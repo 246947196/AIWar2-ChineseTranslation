@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<entity name="DarkSpireSphere_Shade" tags="DsSpawn,DsTier1,Ds_ARS_Choice" custom_weight="100"
+			visuals="Assets/_DLC1/GraySpire/GraySpireIllumin/GraySpireIllumin.prefab" visuals_bundle="exp1_the_spire_rises"
+			material_override_path="Assets/_FinalGameMeshes/Spire/DarkSpireWraith/DarkSpireWraith.prefab"
+			icon_name="Ships2/GraySpireIllumin"
+			voice_group="Spire"
+			category="Ship"
+			size_scale="2.5"
+			visuals_scale_multiplier="1"
+			collision_priority="100"
+			display_name="Dark Shade"
+			display_name_for_sidebar="Dark Shade"
+			description="The Shade-class 护卫舰 is a 守卫 vessel commonly used by the Dark 尖塔 Sphere."			
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="150"
+			hull_points="15000" shield_points="0" speed="Normal1"
+			metal_cost="9600" energy_consumption="1000"
+			armor_mm="50" albedo="0.5" engine_gx="23" mass_tx="1"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			npc_ship_cap_type="FrigatesAndGuardians"	
+			priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="Expendable"
+			>
+		<ship_class_data can_be_zombified_and_similar="false" />	
+		<system name="W1" display_name="尖塔 线圈 光束"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="3750" range="Small4" shot_speed="Normal" rate_of_fire="ExtremelyLow"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_Cyan"
+				hits_all_intersecting_targets="true"				
+				shots_detonate_immediately="true"
+				is_coilbeam="true"			
+				>
+		</system>			
+
+        <fleet_membership
+			name="AddedToFleet_MinorFaction"
+			ship_cap_group="Strike"
+			weight="100"
+			cap="9"
+			faction="DarkSphere"
+			/>
+
+	</entity>
+
+	<entity name="DarkSpireSphere_Shadowseeker" tags="DsSpawn,DsTier2,Ds_ARS_Choice"  custom_weight="100"
+
+            visuals="Assets/_DLC1/GraySpire/GraySpireLightseeker/GraySpireLightseeker.prefab" visuals_bundle="exp1_the_spire_rises"
+			material_override_path="Assets/_FinalGameMeshes/Spire/DarkSpireWraith/DarkSpireWraith.prefab"
+			icon_name="Ships2/GraySpireLightSeeker"
+			
+			
+            category="Ship"
+            special_entity_type="Frigate"
+            npc_ship_cap_type="FrigatesAndGuardians"
+            collision_priority="100"
+            starting_mark_level="Markless"
+
+			size_scale="5.25"
+			visuals_scale_multiplier="1.5" 
+			y_offset_of_ship_in_visual_space="-8"
+			
+			display_name="Shadowseeker"
+			display_name_for_sidebar="Shadowseeker"
+			description="The Shadowseeker-class heavy 护卫舰 is an advanced 守卫 vessel used by the Dark Sphere."			
+
+			cost_for_ai_to_purchase="600"
+			hull_points="375000" shield_points="0" speed="BelowAverage2"
+			metal_cost="28800" energy_consumption="1000"
+			armor_mm="70" albedo="0.5" engine_gx="23" mass_tx="2"
+
+            voice_group="Spire"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="Expendable"
+			>
+		    
+            <ship_class_data can_be_zombified_and_similar="false" />	
+
+			<system name="W1" display_name="Railgun"
+					category="Weapon" firing_timing="OnlyInRange"
+					damage_per_shot="11200" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Normal" 
+					shots_per_salvo="5" shots_per_target="5" fires_salvos_sequentially="true"
+					shot_type_data="ExtremeLongRangeRailgun"			
+			        />
+
+            <fleet_membership
+                    name="AddedToFleet_MinorFaction"
+                    ship_cap_group="Strike"
+                    weight="100"
+                    cap="6"
+                    faction="DarkSphere"
+                    />
+	</entity>	
+
+	<entity name="DarkSpireSphere_Dusk" tags="DsSpawn,DsTier2,Ds_ARS_Choice" custom_weight="100"
+			visuals="Assets/_DLC1/GraySpire/GraySpireDawn/GraySpireDawn.prefab" visuals_bundle="exp1_the_spire_rises"
+			material_override_path="Assets/_FinalGameMeshes/Spire/DarkSpireWraith/DarkSpireWraith.prefab"
+			icon_name="Ships2/GraySpireDawn"
+			voice_group="Spire"
+
+            display_name="Dusk"
+			display_name_for_sidebar="Dusk"
+			description="The Dusk-class light 巡洋舰 is an advanced command-and-control vessel used by the Dark Sphere."	
+
+			category="Ship"
+            special_entity_type="Cruiser"
+            npc_ship_cap_type="LargeShips"
+
+			size_scale="16"
+			visuals_scale_multiplier="2.2" 
+			collision_priority="100"		
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="1600"
+			
+            hull_points="2625000" shield_points="0" speed="BelowAverage2"
+			metal_cost="116000" energy_consumption="3000"
+			armor_mm="180" albedo="0.5" engine_gx="23" mass_tx="5.2"
+
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="Expendable"
+			>
+		<ship_class_data can_be_zombified_and_similar="false" />
+			<system name="W1" display_name="Dark-Energy Launcher"
+					category="Weapon" firing_timing="OnlyInRange"
+					damage_per_shot="50000" range="High2" shot_speed="Slow" rate_of_fire="Normal" fires_salvos_sequentially="true"
+					shot_type_data="PlasmaTorpedo"
+					area_of_effect_size="3000"
+					maximum_number_of_targets_hit_per_shot="15"
+					base_engine_stun_per_shot="60" engine_stun_to_engine_gx_less_than="12"
+					aoe_and_beam_damage_multiplier_to_non_primary_target="6"
+			>
+			</system>		
+
+        <fleet_membership
+			name="AddedToFleet_MinorFaction"
+			ship_cap_group="Strike"
+			weight="100"
+			cap="1"
+			faction="DarkSphere"
+			/>
+    </entity>
+
+	<entity name="DarkSpireSphere_Wraith" tags="DsSpawn,DsTier1"  custom_weight="100"
+			copy_from="DarkSpireWraith"
+			starting_mark_level="Mark2"
+			max_mark_level="7"
+			does_not_use_multipliers_from_mark_level="false"
+			mark_level_scale_style="Original"
+			display_name="Dark Wraith"
+			display_name_for_sidebar="Dark Wraith"
+			metal_cost="16000"
+			tech_upgrades_that_benefit_me="Unused"
+			is_strikecraft="true"
+			>
+	</entity>
+
+	<entity	name="DarkSpireSphere_Phantom" tags="DsSpawn,DsTier1"  custom_weight="100"
+			copy_from="DarkSpirePhantom"
+			starting_mark_level="Mark2"
+			max_mark_level="7"
+			does_not_use_multipliers_from_mark_level="false"
+			mark_level_scale_style="Original"
+			display_name="Dark Phantom"
+			display_name_for_sidebar="Dark Phantom"
+			metal_cost="16000"
+			tech_upgrades_that_benefit_me="Unused"
+			is_strikecraft="true"
+			>
+	</entity>
+
+	<entity	name="DarkSpireSphere_Specter" tags="DsSpawn,DsTier2"  custom_weight="100"
+			copy_from="DarkSpireSpecter"
+			starting_mark_level="Mark2"
+			max_mark_level="7"
+			does_not_use_multipliers_from_mark_level="false"
+			mark_level_scale_style="OriginalWithoutCapRise"
+			display_name="Dark Specter"
+			display_name_for_sidebar="Dark Specter"
+			metal_cost="135000"
+			tech_upgrades_that_benefit_me="Unused"
+			special_entity_type="Frigate"
+			>
+	</entity>
+
+	<entity	name="DarkSpireSphere_Eidolon" tags="DsSpawn,DsTier3"  custom_weight="100"
+			copy_from="DarkSpireEidolon"
+			starting_mark_level="Mark2"
+			max_mark_level="7"
+			does_not_use_multipliers_from_mark_level="false"
+			mark_level_scale_style="OriginalWithoutCapRise"
+			display_name="Dark Eidolon"
+			display_name_for_sidebar="Dark Eidolon"
+			metal_cost="135000"
+			tech_upgrades_that_benefit_me="Unused"
+			>
+	</entity>
+
+</root>

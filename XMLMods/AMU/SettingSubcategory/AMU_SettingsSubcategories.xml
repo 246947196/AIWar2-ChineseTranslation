@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <setting_subcategory parent="Automation" name="AJEA_Settings" display_name="Auto-Juggle Energy Assistant" color="46f0ff"
+      description="Configure AJEA."/>
+  <setting_subcategory parent="Automation" name="EDA_Settings" display_name="Experimental 防御 Autobuilding" color="46f0ff"
+      description="Configure EDA."/>
+  <setting_subcategory parent="Debug" name="AJEA_Debug" display_name="AJEA Debugging" color="46f0ff"
+      description="If something goes wrong with AJEA, this is where it can hopefully be debugged."/>
+</root>

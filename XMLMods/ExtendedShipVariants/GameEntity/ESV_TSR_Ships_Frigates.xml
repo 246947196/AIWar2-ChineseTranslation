@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <entity name="EMPMissileFrigate" copy_from="AMU_MediumFrigateBase" required_expansion_list="1_The_Spire_Rises"
+		visuals="Assets/_DLC1/Frigates/TeslaTorpedoGunboat/TeslaTorpedoGunboat.prefab" visuals_bundle="exp1_the_spire_rises"
+		icon_overlay="Overlays1/MegaTurret_Paralysis"
+		voice_group="Saboteur"
+		size_scale="4.5"
+		visuals_scale_multiplier="5"
+		display_name="电磁脉冲导弹护卫舰"
+		display_name_for_sidebar="电磁脉冲导弹FFM"
+		description="Has modest firepower in its own right, but is able to stun enemies using missiles tipped with EMP warheads strong enough to affect even small frigates. Spawns 10 every 12 seconds, 2 more for every mark beyond 1."
+		drone_starting_behavior_type="Attacker_Full"
+		tech_upgrades_that_benefit_me="Disruptive,Medium"
+		strength_multiplier="2"
+		hull_points="120000" shield_points="60000" speed="BelowAverage2"
+		metal_cost="140000" energy_consumption="10000"
+		armor_mm="60" engine_gx="17" albedo="0.4" mass_tx="5"
+		>
+    <fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="10" cap="8"/>
+    <fleet_membership name="UnusualMix" ship_cap_group="Frigate" weight="100" cap="8"/>
+	<fleet_membership name="CrowdControlMix" ship_cap_group="Frigate" weight="100" cap="8"/>
+	<fleet_membership name="DebufferMix" ship_cap_group="Frigate" weight="100" cap="8"/>
+    <fleet_membership name="FrigatesWithSupport" ship_cap_group="Frigate" weight="100" cap="8"/>
+	<fleet_membership name="MissileMix" ship_cap_group="Frigate" weight="100" cap="8"/>
+    <system name="PB" display_name="等离子弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1200" range="Normal4" shot_speed="Normal" rate_of_fire="Normal" 
+				shots_per_salvo="3" fires_salvos_sequentially="true"
+				shot_type_data="PlasmaBolt"
+				>
+    </system>
+    <system name="L1" display_name="电磁脉冲导弹发射器"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="100" range="EssentiallyInfinite" shot_speed="Normal" rate_of_fire="ExtremelyLow" fires_salvos_sequentially="true"
+				shot_type_data="EMPMissile"
+				system_is_hidden_for_ui="true"
+				shots_per_salvo="10" added_shots_per_salvo_per_mark="2"
+				>
+    </system>	
+    </entity>
+  
+    <entity name="EMPMissile" copy_from="AMU_DroneProjectileBase" required_expansion_list="1_The_Spire_Rises"
+		special_entity_type="LargeShipNotStackable"	is_strikecraft="false"
+		visuals="Assets/_DLC1/Strikecraft/TeslaTorpedo/TeslaTorpedo.prefab" visuals_bundle="exp1_the_spire_rises"
+		icon_name="Ships1/WarheadStyle1" icon_overlay="Overlays1/MegaTurret_Paralysis"
+		size_scale="0.8"
+		visuals_scale_multiplier="3.75"
+		display_name="电磁脉冲导弹"
+		display_name_for_sidebar="电磁脉冲导弹PDRN"
+		description="由电磁脉冲导弹护卫舰生成，伤害低但麻痹敌人。"
+		tech_upgrades_that_benefit_me="Disruptive,Medium"
+		self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="2"
+		strength_multiplier="0.5"
+		hull_points="200" shield_points="0" speed="VeryHigh2" speed_multiplier_first_5_seconds_on_planet="1.5"
+		metal_cost="3000" energy_consumption="0"
+		armor_mm="30" albedo="0.6" engine_gx="8" mass_tx="0.21"
+		>
+		<system name="EM" display_name="电磁脉冲爆炸"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="100" range="AlmostNone" seek_range="Normal1" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+			shot_type_data="PlasmaTorpedoAOEBurstAtEnd"
+			area_of_effect_size="500"
+			shots_detonate_immediately="true"
+			aoe_spreads_damage_among_available_targets="false"
+			maximum_number_of_targets_hit_per_shot="7"
+			base_paralysis_seconds_per_shot="5" paralysis_to_ships_mass_tx_less_than="5" added_target_evaluator="ParalyzerAsPrimary"
+			health_change_by_max_health_divided_by_this_per_attack="-1"
+		>
+		</system>
+    </entity>
+	
+</root>

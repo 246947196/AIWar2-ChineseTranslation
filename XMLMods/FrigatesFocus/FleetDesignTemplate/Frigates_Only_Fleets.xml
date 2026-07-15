@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>    
+
+	<!-- Frigate only fleets for a change of pace in gameplay -->
+	<fleet_design name="FastFrigates"
+        display_name="快速响应护卫舰"
+        description="一支可以追击几乎任何目标的快速响应舰队。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+		<ship_membership name="TransportFlagship_Agile" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+		<ship_membership name="RaidFrigate" ship_cap_group="Frigate" weight="100" cap="9"/>
+		<ship_membership name="AmbushCarrier" ship_cap_group="Frigate" weight="100" cap="9"/>
+		<ship_membership name="TritiumSniperFrigate" ship_cap_group="Frigate" weight="100" cap="6"/>
+	</fleet_design>
+	
+	<fleet_design name="HitNRunFrigates"
+		display_name="游击护卫舰"
+		description="一艘隐形运输舰搭载脆弱但高伤害的护卫舰。"
+		design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+		>
+		<ship_membership name="TransportFlagship_Cloaked" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+		<ship_membership name="SiegeFrigate" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<ship_membership name="ViciousRaidFrigate" ship_cap_group="Frigate" weight="100" cap="9"/>
+		<ship_membership name="WarbirdFrigateHydra" ship_cap_group="Frigate" weight="100" cap="5"/>
+	</fleet_design>
+	
+	<fleet_design name="SniperFrigates" required_expansion_list="1_The_Spire_Rises"
+        display_name="(TSR) 狙击型护卫舰"
+        description="这些护卫舰主要想保持距离并在敌人接近时消耗他们。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+		<ship_membership name="TransportFlagship_Agile" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+		<ship_membership name="Devestator" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<ship_membership name="Ramifier" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<ship_membership name="TackleDroneLauncherFrigate" ship_cap_group="Frigate" weight="100" cap="6"/>
+	</fleet_design>
+	
+	<fleet_design name="OffenseFrigates" required_expansion_list="2_Zenith_Onslaught"
+        display_name="(ZO) 全力进攻护卫舰"
+        description="配备专业化武器的护卫舰，用于全力进攻。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+		<ship_membership name="TransportFlagship_Starter" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+		<ship_membership name="Mugger" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<ship_membership name="DarkerMirrorFrigate" ship_cap_group="Frigate" weight="100" cap="4"/>
+		<ship_membership name="Ripper" ship_cap_group="Frigate" weight="100" cap="6"/>
+	</fleet_design>
+	
+	<fleet_design name="MSD_ControlFrigates" required_expansion_list="1_The_Spire_Rises" required_mod_list="MoreSystemDefenders"
+		display_name="(MSD+TSR) 控场护卫舰"
+		description="一支在扫平该区域时注重控制的舰队。"
+		design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+		>
+		<ship_membership name="TransportFlagship_Starter" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+		<ship_membership name="GorgonFrigate" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<ship_membership name="FlypaperFrigate" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<ship_membership name="TeslaTorpedoFrigate" ship_cap_group="Frigate" weight="100" cap="6"/>
+	</fleet_design>
+	
+	<fleet_design name="MSD_ZO_ArtilleryFleet" required_expansion_list="2_Zenith_Onslaught" required_mod_list="MoreSystemDefenders"
+		display_name="(MSD+ZO) 控场护卫舰"
+		description="一支拥有超远射程和一些诱饵的舰队。"
+		design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+		>
+		<ship_membership name="TransportFlagship_Starter" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+		<ship_membership name="EscortCarrier" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<ship_membership name="PhantasmalHostFrigate" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<ship_membership name="ArtilleryCruiser" ship_cap_group="Frigate" weight="100" cap="2"/>
+	</fleet_design>
+	
+</root>

@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<entity name="Leere" tags="Leere" is_expecting_to_not_be_encyclopedia_counted_at_all='true'
+	        thematic_groups="Hidden"
+			ship_class_name="AstroTrainPrototype"
+            draw_in_galaxy_view="true"
+            gimbal_icon_size_multiplier="1.5"
+            visuals="Assets/_FinalGameMeshes/AIExtragalactic/Tier1_ExtragalacticTrespasser/Tier1_ExtragalacticTrespasser.prefab"
+            icon_name="Ships2/SomethingAperture" icon_overlay="Overlays2/Guardian_Stealth"
+            uses_large_health_bar="true"
+            category="Ship"
+            size_scale="9"
+			visuals_scale_multiplier="60"
+            y_offset_of_icon="35"
+            collision_priority="800"
+            display_name="Leere"
+            description="The Leere is a ship of great durability and a powerful corrupting nature. Releases powerful Knallen 无人机 that deal extreme damage if not immediately dispatched.
+
+Anything that dies nearby is converted into part of its endless void horde, and it can even endlessly revive any that die on its planet."
+            blocks_enemy_claim_flows="true"
+            voice_group="Silent"
+			starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+			cost_for_ai_to_purchase="3000"
+			hull_points="50000000" shield_points="0" speed="BelowAverage2"
+			metal_cost="800000" energy_consumption="100000"
+			armor_mm="245" albedo="0.7" engine_gx="24" mass_tx="9"
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="0.083"
+			always_self_attritions="true"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			>
+		<system name="W1" display_name="Void"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="14000" range="Normal1" shot_speed="Normal" rate_of_fire="ExtremelyLow"
+			shot_type_data="HeavyBeamInvisible"
+			beam_length_multiplier="1.3"
+			hits_all_intersecting_targets="true"
+			shots_detonate_immediately="true"
+			number_beams_to_fire="30" beam_weapon_visual_style="Laser_RedBlack"
+			degrees_offset_per_beam="1"
+			is_coilbeam="true"
+			>
+		</system>
+		<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+
+	<entity name="KnallenBomb" tags="Knallen" is_expecting_to_not_be_encyclopedia_counted_at_all='true'
+            thematic_groups="Hidden"
+			visuals="Assets/_FinalGameMeshes/FleetShips/AutoBomb/AutoBomb.prefab"
+			icon_name="Ships1/AutoBomb"
+			voice_group="Silent"
+			category="Ship" is_strikecraft="true"
+			size_scale="2.2"
+			visuals_scale_multiplier="7.5"
+			collision_priority="100"
+			display_name="克纳伦炸弹"
+			description="The 克纳伦炸弹 is, by itself, a very minor threat. It brings immense firepower at the cost of nearly no durability and heavy self damage after firing.
+
+The Leere's ability to endlessly revive this bomb with an engine strapped to it however... make it a much more sticky and credible threat."
+		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+			cost_for_ai_to_purchase="20" 
+			hull_points="10000" shield_points="0" speed="AboveAverage1"
+			metal_cost="28000" energy_consumption="140"
+			armor_mm="110" albedo="0.3" engine_gx="7" mass_tx="0.21"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			>
+
+		<system name="WM" display_name="Detonation"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="140000" range="AlmostNone" seek_range="Normal1" shot_speed="Instant" rate_of_fire="Minute" fires_salvos_sequentially="false"
+				shot_type_data="ExplosiveFlakBurst"
+				area_of_effect_size="600"
+				maximum_number_of_targets_hit_per_shot="9"
+				health_change_by_max_health_divided_by_this_per_attack="-2"
+				>
+		</system>
+	</entity>
+
+</root>

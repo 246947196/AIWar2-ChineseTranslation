@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <entity name="PikeTurret"	is_partial_record="true"		
+
+			>
+    <fleet_membership name="AddedToCommandStation" ship_cap_group="Turret" weight="100" cap="75"/>
+    <fleet_membership name="GeneralTurrets" ship_cap_group="Turret" weight="100" cap="100"/>    
+    <fleet_membership name="MonochromeTurrets" ship_cap_group="Turret" weight="100" cap="225"/>
+	  <fleet_membership name="OtherDefenseFocus" ship_cap_group="Turret" weight="100" cap="75"/>
+	  <fleet_membership name="PlayerHomeCommand" ship_cap_group="Turret" weight="100" cap="50"/>
+    <fleet_membership name="PlayerEconomicCommand" ship_cap_group="Turret" weight="100" cap="50"/>
+    <fleet_membership name="PlayerMilitaryCommand" ship_cap_group="Turret" weight="100" cap="50"/>
+    <fleet_membership name="PlayerLogisticalCommand" ship_cap_group="Turret" weight="100" cap="50"/>
+  </entity>
+
+  <entity name="MLRSTurret"	is_partial_record="true"		  
+			>
+    <fleet_membership name="AddedToCommandStation" ship_cap_group="Turret" weight="100" cap="75"/>
+    <fleet_membership name="GeneralTurrets" ship_cap_group="Turret" weight="100" cap="100"/>
+    <fleet_membership name="MonochromeTurrets" ship_cap_group="Turret" weight="100" cap="225"/>
+	<fleet_membership name="OtherDefenseFocus" ship_cap_group="Turret" weight="100" cap="75"/>
+	<fleet_membership name="PlayerHomeCommand" ship_cap_group="Turret" weight="100" cap="50"/>
+    <fleet_membership name="PlayerEconomicCommand" ship_cap_group="Turret" weight="100" cap="50"/>
+    <fleet_membership name="PlayerMilitaryCommand" ship_cap_group="Turret" weight="100" cap="50"/>
+    <fleet_membership name="PlayerLogisticalCommand" ship_cap_group="Turret" weight="100" cap="50"/>
+  </entity>
+  
+</root>

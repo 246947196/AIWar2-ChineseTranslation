@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<surrogate_table name="ResourceTypeData" dll_name="AMU_Base" type_name="AMU_Base.ResourceTypeDataTable" />
+	<surrogate_table name="HookData" dll_name="AMU_Deep" type_name="AMU_Deep.HookTable" />
+</root>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+      <handler
+                  name="Gen_Handle_CheatCommand"
+                  hook="OnCheatCommand"
+                  dll_name="Generator_Deep"
+                  type_name="Generator.Handle_CheatCommand"
+                  />
+
+</root>

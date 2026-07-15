@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--Note: multiple items here can use the same dll and type/class.  
+  Having multiple entries in here simplifies setting up titles and descriptions by a huge amount.-->
+
+  <item name="RerollARS" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_RerollARS" display_name="重roll ARS（模组版）" 
+        description="入侵此结构会导致大量敌人出现。这没有任何好处。"
+        hack_duration="60"
+        primary_hacking_response_interval="15"
+        primary_response_strength_per_interval="1.5"
+	secondary_hacking_response_interval="15"
+	secondary_response_strength_per_interval="0.4"
+        tertiary_hacking_response_interval="7"
+	tertiary_response_strength_per_interval="0.2"
+
+        cost_in_hacking_points="20"
+        response_strength_on_completion="10"
+        local_hacker_required="true"
+	exo_on_completion="true"
+        hack_cost_multiplier_on_deepstrike_worlds="3"
+        destroy_hack_target_on_cancel="true"
+        for_player_type_tags_or_blank_if_for_all_empire_style_types="HumanEmpire"
+/>
+
+
+</root>

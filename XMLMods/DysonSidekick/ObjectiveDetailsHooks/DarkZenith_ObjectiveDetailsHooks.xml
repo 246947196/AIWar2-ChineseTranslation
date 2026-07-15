@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <objective_details_hook name="DZFleetMenu" category="DZEmpireStrategy"
+          default_display_name="Check the Fleets Menu"
+          use_default_display_name_instead_of_display_name_base="true"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.DZFleetMenu"
+          display_name_color="55aaff"
+          click_behavior="DoNothing" focus_type="DarkenAllPlanet"
+          serialization_type="Nothing" importance_calculation="NotSettable"
+          difficulty_method="Nothing"/>
+
+  <objective_details_hook name="DZEconomy" category="DZEmpireStrategy"
+          default_display_name="Build Your Economy"
+          use_default_display_name_instead_of_display_name_base="true"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.DZEconomy"
+          display_name_color="55aaff"
+          click_behavior="DoNothing" focus_type="DarkenAllPlanet"
+          serialization_type="Nothing" importance_calculation="NotSettable"
+          difficulty_method="Nothing"/>
+
+  <objective_details_hook name="DZTechTree" category="DZEmpireStrategy"
+          default_display_name="The Tech Tree"
+          use_default_display_name_instead_of_display_name_base="true"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.DZTechTree"
+          display_name_color="55aaff"
+          click_behavior="DoNothing" focus_type="DarkenAllPlanet"
+          serialization_type="Nothing" importance_calculation="NotSettable"
+          difficulty_method="Nothing"/>
+
+  <objective_details_hook name="DZShipVariants" category="DZEmpireStrategy"
+          default_display_name="Ship Variants"
+          use_default_display_name_instead_of_display_name_base="true"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.DZShipVariants"
+          display_name_color="55aaff"
+          click_behavior="DoNothing" focus_type="DarkenAllPlanet"
+          serialization_type="Nothing" importance_calculation="NotSettable"
+          difficulty_method="Nothing"/>
+
+  <objective_details_hook name="DZFimbulwinter" category="DZEmpireStrategy"
+          default_display_name="The Fimbulwinter"
+          use_default_display_name_instead_of_display_name_base="true"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.DZFimbulwinter"
+          display_name_color="55aaff"
+          click_behavior="DoNothing" focus_type="DarkenAllPlanet"
+          serialization_type="Nothing" importance_calculation="NotSettable"
+          difficulty_method="Nothing"/>
+
+  <objective_details_hook name="DZNadir" category="DZEmpireStrategy"
+          default_display_name="Nadir Forces"
+          use_default_display_name_instead_of_display_name_base="true"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.DZNadir"
+          display_name_color="ff8877"
+          click_behavior="DoNothing" focus_type="DarkenAllPlanet"
+          serialization_type="Nothing" importance_calculation="NotSettable"
+          difficulty_method="Nothing"/>
+
+</root>

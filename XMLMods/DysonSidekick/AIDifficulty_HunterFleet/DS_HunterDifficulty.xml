@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- Nota Bene: if adding a new BonusAntiTaggedUnitIncome you must add the GeneratesBonusHunterShips tag to the units in question
+       for performance reasons -->
+  <record name="Difficulty_ZR"
+       display_name="Zerg Rush"
+       hunter_fleet_starting_budget="6000"
+       hunter_bonus_income_per_minute="1000"
+       overconfidence_ratio="0.6"
+       difficulty="8"
+       can_use_dire_guardians="true"
+       aip_for_dire_unlock="100"
+       can_wait_for_reinforcements="true"
+       >
+           <BonusAntiTaggedUnitIncome
+           tag="MarauderOutpost"
+           income_per_interval="1"
+           interval_in_seconds="30"
+           linear_income_increase_per_10_aip="0.01"
+           only_player_or_ally_owned="true"
+           income_increased_with_multiple_targets="true"
+           />
+      <BonusAntiTaggedUnitIncome
+           tag="NanobotCenter"
+           income_per_interval="2"
+           interval_in_seconds="10"
+           linear_income_increase_per_10_aip="0.01"
+           only_player_or_ally_owned="true"
+           income_increased_with_multiple_targets="true"
+           />
+  </record>
+</root>

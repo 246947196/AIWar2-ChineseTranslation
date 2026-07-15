@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	
+	<!-- vwing:
+		32 cap
+		28 ai cost
+		896
+
+		pulsar tank
+		15 cap
+		66 ai cost
+		990
+
+		Vanguard
+		15 cap
+		80 ai cost
+		1200
+
+		mlrs corvette
+		32 cap
+		30 ai cost
+		960
+
+		forcefield guardian
+		740
+		+ 800 ai cost worth of...
+		vwings = 29
+		+ 800 ai cost worth of...
+		pulsar tanks = 12
+		+ 800 ai cost worth of...
+		Vanguard = 10
+		+ 800 ai cost worth of...
+		mlrs corvette = 27
+		
+
+		guardians all cost 80k metal, but vary in 'ai cost' with 500 or 600 being normal
+		dire guardians all cost 800k metal, but vary in 'ai cost' with ~9k median
+
+		so we probably want fewer of these 'carriers' than normal guardians
+		so lets make them worth 3x normal guardians
+		1x value of a guardian, in their own stats
+		2x value of a guardian, in drones
+
+	-->
+
+	<!--
+	visuals="Assets/_FinalGameMeshes/HumanBuildings/HumanFortress/Citadel.prefab"
+	    icon_name="Ships1/Fortress" gimbal_icon_size_multiplier="1.5"
+		y_offset_of_icon="35"
+		category="Ship"
+	    size_scale="9"
+		visuals_scale_multiplier="120"
+        collision_priority="800"
+	
+	special_entity_type="Frigate" gimbal_icon_size_multiplier="1.35"
+	visuals="assets/_finalgamemeshes/starships/prototypeflagship/prototypeflagship.prefab"
+	icon_name="Ships1/Starship_Heavy" icon_overlay="Overlays1/Starship_Assault"
+	size_scale="5"
+	visuals_scale_multiplier="3"
+	category="Ship"
+	y_offset_of_icon="15"
+
+	special_entity_type="Frigate" gimbal_icon_size_multiplier="1.30"		
+	visuals="assets/_finalgamemeshes/starships/siegestarship/siege_starship.prefab"
+	icon_name="Ships1/Starship" icon_overlay="Overlays1/Starship_Siege"
+	category="Ship"
+	size_scale="4.5"
+	visuals_scale_multiplier="6"
+	y_offset_of_icon="15"
+	collision_priority="500"
+	-->
+
+	<!-- StrikerGuardiansGroup -->
+
+	<entity	name="StrikerGuardian_Base"
+			thematic_groups="Guardian"
+			tags=""
+			special_entity_type="AIGuardian"
+			visuals="assets/_finalgamemeshes/humanoddities/colonyship/colonyship.prefab"
+			material_override_path="Assets/_FinalGameMeshes/Resources/MatterConverter/MatterConverter.prefab"
+			icon_name="Ships1/ColonyShip"
+			icon_overlay="Overlays2/Guardian_Carrier"
+			gimbal_icon_size_multiplier="1.25"
+			size_scale="3.1"
+			visuals_scale_multiplier="4.5"
+			category="Ship"
+			y_offset_of_icon="16"
+			collision_priority="400"
+			display_name="'打击'航母基础守卫"
+			display_name_for_sidebar="S-航母GU"
+			description="快速运输AI打击机投入战斗。"
+			hull_points="120000" 
+			shield_points="60000"
+			speed="Normal2"
+			metal_cost="65000"
+			energy_consumption="4500"
+			armor_mm="50"
+			engine_gx="18"
+			albedo="0.6"
+			mass_tx="4"
+			explicit_kite_distance="15000"
+			voice_group="Starship"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			priority_as_ai_target="MidNasty"
+			priority_as_frd_target="MidNasty"
+			priority_to_protect="SlightlyLessExpendable"
+			starting_mark_level="Mark1"
+			cost_for_ai_to_purchase="700"
+			tech_upgrades_that_benefit_me="Unused"
+			fleet_design_template_i_use_for_drones="StrikerDireGuardianDrones"
+			drone_starting_behavior_type="Attacker_Full"
+			>
+		<metal_flow
+				purpose="BuildingDronesInternally"
+				throughput="1000"
+				increase_per_mark_level="250"
+				/>
+		<system
+				name="W1"
+				display_name="驱动干扰器"
+				category="Weapon"
+				firing_timing="OnlyInRange"
+				cloaking_percent_loss_from_firing="1"
+				damage_per_shot="50"
+				range="AboveAverage4"
+				shot_speed="Normal"
+				rate_of_fire="Normal"
+				fires_salvos_sequentially="false"
+				base_engine_stun_per_shot="6"
+				added_engine_stun_per_shot_per_mark="2"
+				engine_stun_to_engine_gx_less_than="14"
+				max_engine_stun_seconds="30"
+				added_target_evaluator="EngineDamageAsMajorPrimary"
+				shots_per_salvo="10"
+				shot_type_data="EngineDisruptingShell"
+				>
+		</system>
+	</entity>
+
+	<!-- 
+		lets make them worth 3x normal guardians
+		1x value of a guardian, in their own stats
+		2x value of a guardian, in drones
+
+		pike guardian is 550 cost, forcefield guardian is 740
+
+		so lets make this one 800 itself, and 1600 worth of drones
+
+		lets pick 2 drone types for each guardian
+		800 ai purchase cost worth of each
+	-->
+	<entity	name="StrikerGuardian"
+			copy_from="StrikerGuardian_Base"
+
+			thematic_groups="Guardian"
+			tags=""
+			special_entity_type="AIGuardian"
+			category="Ship"
+			
+			visuals="assets/_finalgamemeshes/humanoddities/colonyship/colonyship.prefab"
+			material_override_path="Assets/_FinalGameMeshes/Resources/MatterConverter/MatterConverter.prefab"
+			icon_name="Ships1/ColonyShip"
+			icon_overlay="Overlays2/Guardian_Carrier"
+			
+			gimbal_icon_size_multiplier="1.25"
+			size_scale="7"
+			visuals_scale_multiplier="10"
+			y_offset_of_icon="16"
+			collision_priority="400"
+			
+			display_name="打击者守卫"
+			display_name_for_sidebar="打击者GU"
+			description="快速运输AI打击机投入战斗。"
+
+			metal_cost="80000"
+			energy_consumption="7500"
+			cost_for_ai_to_purchase="2340"
+
+			fleet_design_template_i_use_for_drones="StrikerGuardianDrones"
+			drone_starting_behavior_type="Attacker_Full"
+			>
+		<ai_ship_group_membership
+				name="StrikerGuardiansGroup"
+				weight="100"
+				/>
+	</entity>  
+
+<!--	
+	<entity	name="StrikeCarrierGuardian_B"
+			copy_from="StrikeCarrierGuardian_Base"
+
+			thematic_groups="Guardian"
+			tags="StrikeCarrierGuardian"
+			special_entity_type="AIGuardian"
+			category="Ship"
+
+			visuals="assets/_finalgamemeshes/starships/prototypeflagship/prototypeflagship.prefab"
+			icon_name="Ships1/Guardian"
+			icon_overlay="Overlays2/Guardian_Carrier"
+
+			gimbal_icon_size_multiplier="1.25"
+			size_scale="4"
+			visuals_scale_multiplier="2"
+			y_offset_of_icon="16"
+			collision_priority="400"
+
+			display_name="'打击'航母守卫B"
+			display_name_for_sidebar="S-航母B GU"
+			description="快速运输AI打击机投入战斗。"
+			>
+		<ai_ship_group_membership name="StrikerGuardiansGroup" weight="100"/>
+	</entity>
+
+	<entity	name="StrikeCarrierGuardian_C"
+			copy_from="StrikeCarrierGuardian_Base"
+
+			thematic_groups="Guardian"
+			tags="StrikeCarrierGuardian"
+			special_entity_type="AIGuardian"
+			category="Ship"
+
+			visuals="assets/_finalgamemeshes/starships/siegestarship/siege_starship.prefab"
+			icon_name="Ships1/Guardian"
+			icon_overlay="Overlays2/Guardian_Carrier"
+
+			gimbal_icon_size_multiplier="1.5"
+			size_scale="9"
+			visuals_scale_multiplier="120"
+			y_offset_of_icon="35"
+			collision_priority="800"
+
+			display_name="'打击'航母守卫C"
+			display_name_for_sidebar="S-航母C GU"
+			description="快速运输AI打击机投入战斗。"
+			>
+		<ai_ship_group_membership name="StrikerGuardiansGroup" weight="100"/>
+	</entity>
+-->
+
+	<!-- StrikerDireGuardiansGroup -->
+
+	<!-- 
+		lets make them worth 3x normal dire guardians
+		1x value of a guardian, in their own stats
+		2x value of a guardian, in drones
+
+		dire pike guardian is 8000 cost
+		so this one is 24000
+
+		lets pick 2 drone types for each guardian
+		8000 ai purchase cost worth of each
+
+    	human_squad_cap_multiplier_list_cumulative="1.4,1.6,1.5,1.3,1,1,1"
+		in sum that means a mark 7 strikecraft line is boosted in cap by... x4.368
+		...
+		probably this means that pre-multiplying the drone count to be '8000' ai purchase cost worth
+		is going to end up being 4x as much as expected...
+
+	-->
+	<entity
+			name="StrikerDireGuardian"
+			copy_from="StrikerGuardian_Base"
+
+			thematic_groups="AI,DireGuardian"
+			tags="AIDireGuardian"
+			special_entity_type="AIDireGuardian"
+			category="Ship"
+			priority_as_ai_target="BigThreateningWeapon"
+			priority_as_frd_target="BigThreateningWeapon"
+			priority_to_protect="BigFavoriteToy"
+			
+			visuals="assets/_finalgamemeshes/humanoddities/colonyship/colonyship.prefab"
+			material_override_path="Assets/_FinalGameMeshes/Resources/MatterConverter/MatterConverter.prefab"
+			icon_name="Ships1/ColonyShip"
+			icon_overlay="Overlays2/Guardian_Carrier"
+			gimbal_icon_size_multiplier="1.75"
+			size_scale="10"
+			visuals_scale_multiplier="15"
+			y_offset_of_icon="16"
+			collision_priority="400"
+			uses_large_health_bar="true"
+
+			display_name="打击者可怕守卫"
+			display_name_for_sidebar="打击者DGU"
+			description="快速运输大量AI打击机投入战斗。"
+
+			starting_mark_level="Mark7"
+			tech_upgrades_that_benefit_me="Unused"
+			does_not_use_multipliers_from_mark_level="true"
+
+			hull_points="1400000"
+			shield_points="700000"
+			metal_cost="800000"
+			energy_consumption="25000"
+			cost_for_ai_to_purchase="24000"
+			>
+
+		<system
+				name="V1"
+				display_name="可怕爆破弹"
+				category="Weapon"
+				firing_timing="OnlyInRange"
+				damage_per_shot="4000"
+				range="AboveAverage1"
+				shot_speed="Normal"
+				rate_of_fire="Misery"
+				shots_per_salvo="30"
+				fires_salvos_sequentially="false"
+				shot_type_data="PikeShot_Gold"
+				>
+			<outgoing_damage_modifier
+					based_on="Armor_mm"
+					comparison_type="AtLeast"
+					compared_to="90"
+					multiplier="6"
+					/>
+			<outgoing_damage_modifier
+					based_on="CurrentHullPercentage"
+					applies_to="HullOnly"
+					comparison_type="AtLeast"
+					compared_to="75"
+					multiplier="2"
+					/>
+		</system>
+
+		<ai_ship_group_membership
+				name="StrikerDireGuardiansGroup"
+				weight="100"
+				/>
+	</entity>
+
+
+	<!-- StrikerStrikecraftGroup -->
+
+	<entity	name="StrikerVWing"
+			copy_from="VWing"
+			display_name="V翼"
+			special_entity_type="DroneGeneral"
+			is_drone_but_cap_increases="true"
+			>
+
+		<fleet_membership
+				name="StrikerGuardianDrones"
+				ship_cap_group="Strike"
+				weight="100"
+				cap="10"
+				starts_already_built="true"
+				/>
+
+		<fleet_membership
+				name="StrikerDireGuardianDrones"
+				ship_cap_group="Strike"
+				weight="100"
+				cap="100"
+				starts_already_built="true"
+				/>
+
+	</entity>
+
+	<entity	name="StrikerPulsarTank"
+			copy_from="PulsarTank"
+			display_name="脉冲星坦克"
+			special_entity_type="DroneGeneral"
+			is_drone_but_cap_increases="true"
+			>
+
+		<fleet_membership
+				name="StrikerGuardianDrones"
+				ship_cap_group="Strike"
+				weight="100"
+				cap="4"
+				starts_already_built="true"
+				/>
+
+		<fleet_membership
+				name="StrikerDireGuardianDrones"
+				ship_cap_group="Strike"
+				weight="100"
+				cap="40"
+				starts_already_built="true"
+				/>
+
+	</entity>
+
+	<entity	name="StrikerVanguard"
+			copy_from="Vanguard"
+			display_name="先锋"
+			special_entity_type="DroneGeneral"
+			is_drone_but_cap_increases="true"
+			>
+
+		<fleet_membership
+				name="StrikerGuardianDrones"
+				ship_cap_group="Strike"
+				weight="100"
+				cap="3"
+				starts_already_built="true"
+				/>
+
+		<fleet_membership
+				name="StrikerDireGuardianDrones"
+				ship_cap_group="Strike"
+				weight="100"
+				cap="30"
+				starts_already_built="true"
+				/>
+
+	</entity>
+
+	<entity	name="StrikerMLRSCorvette"
+			copy_from="MLRSCorvette"
+			display_name="脉冲星坦克"
+			special_entity_type="DroneGeneral"
+			is_drone_but_cap_increases="true"
+			>
+
+		<fleet_membership
+				name="StrikerGuardianDrones"
+				ship_cap_group="Strike"
+				weight="100"
+				cap="9"
+				starts_already_built="true"
+				/>
+
+		<fleet_membership
+				name="StrikerDireGuardianDrones"
+				ship_cap_group="Strike"
+				weight="100"
+				cap="90"
+				starts_already_built="true"
+				/>
+	</entity>
+
+	<entity name="VWing" is_partial_record="true">
+		<ai_ship_group_membership name="StrikerStrikecraftGroup" weight="100"/>
+	</entity>
+
+	<!-- StrikerForcefieldGuardiansGroup -->
+
+	<entity name="ForcefieldGuardian" is_partial_record="true">
+		<ai_ship_group_membership name="StrikerForcefieldGuardiansGroup" weight="100"/>
+	</entity>
+
+	<!-- StrikerExoLeadersGroup -->
+
+	<entity name="DireGravityGuardian" is_partial_record="true">
+		<ai_ship_group_membership name="StrikerExoLeadersGroup" weight="100"/>
+	</entity>
+</root>

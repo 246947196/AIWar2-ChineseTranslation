@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!-- JCF: outguard rebalance -->
+	
+	<item name="ShadesofHades" display_name="冥王 Shades"
+		is_partial_record="true"
+		spawn_location="Manual_ByClick"
+		required_expansion_list="2_Zenith_Onslaught"
+	/>
+	<item name="RagnarsBreachers" display_name="拉格纳突破者"
+		is_partial_record="true"
+		spawn_location="Manual_ByClick"
+		required_expansion_list="2_Zenith_Onslaught"
+	/>
+	<item name="Hyperion" display_name="许珀里翁"
+		is_partial_record="true"
+		spawn_location="Manual_ByClick"
+		required_expansion_list="2_Zenith_Onslaught"
+	/>
+	<item name="HephaestusRecyclingIndustries" display_name="赫菲斯托斯回收工业" short_name="赫菲斯托斯公司"
+		is_partial_record="true"
+		spawn_location="Manual_ByClick"
+		required_expansion_list="2_Zenith_Onslaught"
+	/>	
+	<item name="TrojanHorse" display_name="特洛伊木马"
+		is_partial_record="true"
+		spawn_location="Manual_ByClick"
+		required_expansion_list="2_Zenith_Onslaught"
+	/>
+	<item name="DemetersCornucopia" display_name="德墨忒尔的丰饶之角"
+		is_partial_record="true"
+		spawn_location="Manual_ByClick"
+		required_expansion_list="2_Zenith_Onslaught"
+	/>
+	<item name="TheMonarch" display_name="君主"
+		is_partial_record="true"
+		spawn_location="Manual_ByClick"
+		aip_cost_on_contact="12"
+		required_expansion_list="2_Zenith_Onslaught"
+	/>	
+	<item name="ZenithTrader" display_name="天顶商人"
+		is_partial_record="true"
+		spawn_location="Manual_ByClick"
+		required_expansion_list="2_Zenith_Onslaught"
+	/>
+	<item name="Voidcallers" display_name="虚空召唤者"
+		is_partial_record="true"
+		spawn_location="Manual_ByClick"
+		required_expansion_list="2_Zenith_Onslaught"
+	/>
+	<item name="CyborgPacificists" display_name="生化人和平主义者"
+		is_partial_record="true"
+		spawn_location="Manual_ByClick"
+		required_expansion_list="2_Zenith_Onslaught"
+	/>
+	<item name="Spymaster" display_name="间谍大师"
+		is_partial_record="true"
+		spawn_location="Manual_ByClick"
+		required_expansion_list="2_Zenith_Onslaught"
+	/>
+</root>

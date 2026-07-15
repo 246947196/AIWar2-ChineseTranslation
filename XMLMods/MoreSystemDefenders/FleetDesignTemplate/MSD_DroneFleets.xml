@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!--Setting the table for required fleet templates for drone sub-units.-->
+ 
+	<fleet_design name="TechCarrierDrones" design_logic="Drones" weight="1" include_full_cap_of_each_type="true" />
+	<fleet_design name="AmbuCarrierDrones" design_logic="Drones" weight="1" include_full_cap_of_each_type="true" />
+	<fleet_design name="StormfrontDrones" design_logic="Drones" weight="1" include_full_cap_of_each_type="true" />
+
+</root>

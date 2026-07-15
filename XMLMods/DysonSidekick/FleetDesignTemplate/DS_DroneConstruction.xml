@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--These drone "fleets" build a full cap of each type that is a potential within them,
+      which means that they are not really procedural at all.  When a ship says "I am in the 'HiveGolemDrones' fleet and my max cap is 5,"
+      all drone producers that use 'HiveGolemDrones' will have 5 of that type of ship.
+      
+      The weight tag is also not used on these (it's just set to 1) because they are not actually chosen from at random at any time.
+      
+      The potential_ships stuff is not used, because the definitions of ships themselves say what are in there, and we don't have any limitations on types of categories.
+      The ships themselves are filled elsewhere by ships saying "I'm in that fleet" versus this file referencing them directly.-->
+ 
+  <fleet_design name="NeinzulTierOneDrones" design_logic="Drones" weight="1" include_full_cap_of_each_type="true" />
+  <fleet_design name="NeinzulTierTwoDrones" design_logic="Drones" weight="1" include_full_cap_of_each_type="true" />
+  <fleet_design name="NeinzulTierThreeDrones" design_logic="Drones" weight="1" include_full_cap_of_each_type="true" />
+
+  <fleet_design name="TemplarTierOneDrones" design_logic="Drones" weight="1" include_full_cap_of_each_type="true" />
+  <fleet_design name="TemplarTierTwoDrones" design_logic="Drones" weight="1" include_full_cap_of_each_type="true" />
+  <fleet_design name="TemplarTierThreeDrones" design_logic="Drones" weight="1" include_full_cap_of_each_type="true" />
+
+  <fleet_design name="SpireTierOneDrones" design_logic="Drones" weight="1" include_full_cap_of_each_type="true" />
+  <fleet_design name="SpireTierTwoDrones" design_logic="Drones" weight="1" include_full_cap_of_each_type="true" />
+  <fleet_design name="SpireTierThreeDrones" design_logic="Drones" weight="1" include_full_cap_of_each_type="true" />
+
+</root>

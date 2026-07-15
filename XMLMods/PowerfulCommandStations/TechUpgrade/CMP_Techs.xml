@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!--The New Command tech, missing custom icon and tags need to be handed out-->
+	
+	 <item name="Command" sort_group="50" sort_index="500" display_name="&lt;color=#fa7bff&gt;船体：&lt;/color&gt;指挥部" science_cost_per_time_unlocked="3500,7500" icon_path="assets/sci-fi_game_icons/icons/png/transparent/46_b.png" tags="Hull,HullCommand,SpecialBonus" for_player_type_tags="HumanEmpire"
+        description="指挥站是宣示您对星球所有权的建筑。每种类型都提供强大的本地加成以及金属和能量的经济收益。如同指挥站的个人力场护盾，该技术可提升您的固定式力场护盾。"/>
+
+  <item name="Forcefields" is_partial_record="true"
+  sort_group="80" sort_index="400" display_name="&lt;color=#908dfe&gt;防御：&lt;/color&gt;力场护盾" science_cost_per_time_unlocked="2000,2500,2500,2500" icon_path="assets/sci-fi_game_icons/icons/png/transparent/24_b.png" tags="Defense" for_player_type_tags="HumanEmpire"
+        description="升级您可以在各种指挥站建造的所有球形力场护盾。同时也改进移动式球形力场护盾发生器（力场护盾护卫舰等）。"/>
+ 
+</root>

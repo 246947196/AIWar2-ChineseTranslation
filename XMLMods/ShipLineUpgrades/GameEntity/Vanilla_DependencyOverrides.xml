@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<entity name="Tripper" is_partial_record="true" >
+		<data_extension name="ShipLineUpgradeOverride" override_progenitor="Sniper" />
+	</entity>
+
+	<entity name="Railpod" is_partial_record="true" >
+		<data_extension name="ShipLineUpgradeOverride" override_progenitor="Sniper" />
+	</entity>
+	
+	<entity name="Devestator" is_partial_record="true" >
+		<data_extension name="ShipLineUpgradeOverride" override_progenitor="SiegeFrigate" />
+	</entity>
+
+	<entity name="IonDisruptor" is_partial_record="true" >
+		<data_extension name="ShipLineUpgradeOverride" override_progenitor="SiegeFrigate" />
+	</entity>
+</root>

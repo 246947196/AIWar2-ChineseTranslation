@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <map_type name="VaguelyModerate"
+            display_name="Vagueness"
+            description="This is similar to Classic, but has a lot more connections randomly removed."
+            dll_name="AIWarExternalDeepProcessingCode"
+            type_name="Arcen.AIW2.External.Mapgen_Test1"
+            author_line="Credit to Badger"
+            min_planets="40"
+            max_planets="300"
+            hidden_from_lists_above_harshness="2200"
+            >
+  </map_type>
+
+  <map_type name="Double"
+            display_name="Double"
+            description="The 银河 has two large clusters, separated by a single connection."
+            dll_name="AIWarExternalDeepProcessingCode"
+            type_name="Arcen.AIW2.External.Mapgen_Pairs"
+            author_line="Credit to Badger"
+            min_planets="40"
+            max_planets="300"
+            hidden_from_lists_above_harshness="2200"
+            >
+  </map_type>
+
+  <map_type name="Solar_Systems_Lite"
+              display_name="Solar Systems Lite"
+              description="This map type is a series of small rings around a central ring."
+              dll_name="AIWarExternalDeepProcessingCode"
+              type_name="Arcen.AIW2.External.Mapgen_Circles"
+              min_planets="40"
+              max_planets="300"
+
+              >
+    <map_option name="SolarSystemsLinkMethod" display_name="Map Linking Algorithm" description="Linking Mechanism for Map; controls map connectivity.">
+      <choice_value id="0" display_name="Solar System" description="Connect planets via Solar Systems method." related_int_value="0" />
+      <choice_value id="1" display_name="Broken" description="Connect planets via spanning tree only." related_int_value="1" />
+      <choice_value id="3" display_name="Spiderweb" description="Connect planets via Gabriel Graph." related_int_value="2" />
+      <choice_value id="4" display_name="Haystack" description="Connect planets via Spanning Graph." related_int_value="3" />
+    </map_option>
+  </map_type>
+
+       <map_type name="Nebula"
+            display_name="Nebula"
+            description="Available as an option under Clusters"
+            dll_name="AIWarExternalDeepProcessingCode"
+            type_name="Arcen.AIW2.External.Mapgen_Nebula"
+            min_planets="40"
+            max_planets="300"
+            >
+       <map_option name="NumberOfNebulae" display_name="Number of Clusters" description="How many different nebulae">
+         <choice_value id="0" display_name="Low" description="" related_int_value="0" />
+         <choice_value id="1" display_name="Medium" description="" related_int_value="1" />
+         <choice_value id="2" display_name="High" description="" related_int_value="2" />
+       </map_option>
+       <map_option name="NebulaeConnectivity" display_name="Connectivity Type" description="Overall Level of Connectivity">
+         <choice_value id="0" display_name="Low" description="" related_int_value="0" />
+         <choice_value id="1" display_name="Medium" description="" related_int_value="1" />
+         <choice_value id="2" display_name="High" description="" related_int_value="2" />
+       </map_option>
+  </map_type>
+
+    <!--
+    <map_option name="OctopusNumArms" display_name="Number of Arms" description="Linking Mechanism for Map; controls map connectivity." default_id="2">
+      <choice_value id="0" display_name="Two" description="" related_int_value="2"/>
+      <choice_value id="1" display_name="Three" description="" related_int_value="3"/>
+      <choice_value id="2" display_name="Four" description="" related_int_value="4" />
+      <choice_value id="3" display_name="Five" description="" related_int_value="5" />
+      <choice_value id="4" display_name="Six" description="" related_int_value="6" />
+      <choice_value id="5" display_name="Seven" description="" related_int_value="7" />
+      <choice_value id="6" display_name="Eight" description="" related_int_value="8" />
+      </map_option>
+      -->
+
+
+</root>

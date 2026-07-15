@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <ship_group name="PoliceGuardians" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="WardenFirebaseShips" weight="50"/>
+  </ship_group>
+
+  <ship_group name="WardenGuardians" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="WardenFirebaseShips" weight="50"/>
+  </ship_group>
+
+  <ship_group name="RaidStrikecraftAndFrigates" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="WardenFirebaseShips" weight="100"/>
+  </ship_group>
+
+</root>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+<item name="HackToGrantShipLine_UniversalNemesis" copy_from="HackToGrantShipLine" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_GrantShipLine" 
+        display_name="讨价还价获取一条舰船线" description="Hacking this Beacon will give the Fleet that did it a few of the League of Evil ships. And destroy the Beacon. Our advisors worry that this hack, while beneficial, could also have some consequences."
+		hack_duration="60"
+        primary_hacking_response_interval="45"
+        primary_response_strength_per_interval="1.5"
+		secondary_hacking_response_interval="30"
+		secondary_response_strength_per_interval="0.8"
+        cost_in_hacking_points="20"
+        local_hacker_required="true"
+        hack_is_against_planet="false"
+        use_closest_hacker_for_check="true"
+        choose_a_specific_ship_line_to_grant="true"
+        choice_text="Which ship line would you like to add to the fleet of this hacker?"
+        choice_text_height="60"
+        relatedstring_is_a_ship_type="true"
+        exo_on_completion="false"
+		is_a_grant_ship_style_hack="true"
+/>
+
+
+</root>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<ship_class_data name="ExowarTier1Proteus" required_expansion_list="2_Zenith_Onslaught" display_name="系外战争 第1级" short_name="系外战争 T1"
+        	can_be_zombified_and_similar="false" can_be_devoured="false"
+		>
+	</ship_class_data>
+	<ship_class_data name="ExowarTier2DireProteus" required_expansion_list="2_Zenith_Onslaught" display_name="系外战争 第1级" short_name="系外战争 T2"
+        	can_be_zombified_and_similar="false" can_be_devoured="false"
+		>
+	</ship_class_data>
+<!--
+Using is_partial_record="true" is somewhat buggy on ship classes at the moment, so you still need to re-specifiy all these attributes or they get lost:
+-->
+	<ship_class_data name="ExowarTier5" is_partial_record="true" short_name="系外战争 T5"
+        	can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.2" can_be_devoured="false"
+		can_be_buffed="False"
+	>
+		<debuff_modifier debuff_type="WeaponPhase" multiplier="0" />
+	</ship_class_data>
+
+	<ship_class_data name="ExowarTier5ODIN" required_expansion_list="2_Zenith_Onslaught" display_name="系外战争 第5级" short_name="系外战争 T5"
+        	can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.2" can_be_devoured="false"
+		can_be_buffed="False"
+		>
+	</ship_class_data>
+
+	<ship_class_data name="ExowarTier5Jupiter" required_expansion_list="3_The_Neinzul_Abyss" display_name="系外战争 木星型" short_name="木星"
+        	can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.2" can_be_devoured="false"
+		>
+		<debuff_modifier debuff_type="WeaponPhase" multiplier="0" />
+	</ship_class_data>
+
+</root>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+     <!-- neonish green c0BDA51 -->
+     <!-- dim blue c3284BF -->
+     <faction
+               name="Xushido"
+               display_name="旭道"
+               short_name="Xushido"
+               processing_group="Xushido"
+               base_info_source="XushidoFactionBaseInfo"
+               deep_info_source="XushidoFactionDeepInfo"
+               team_center_color="Scarlet2"
+               team_border_color="White"
+               type="SpecialFaction"
+               must_be_at_most_one="false"
+               description="一个宣誓追求战斗极致的异族战士氏族。他们的语言中没有&quot;盟友&quot;这个词。一个人要么是至上者，要么是侍奉者。至上者是最伟大的战士，所有侍奉者为其服务。至上者使他们的仆人更接近真正的至上之境，但如果他们倒下，他们就不再是至上者。
+                
+&lt;color=#f25e1c&gt;低影响：&lt;/color&gt; 随着游戏进程增长力量，但没有自己的领土。他们的阵营在被击败时改变。"
+               can_use_spire_debris="false"
+               impact="Easier"
+               icon_name_for_lobby="Ships3/SomethingYinYang"
+               >
+
+          <custom_field
+                    name="Allegiance"
+                    is_advanced_setting="true"
+                    display_name="阵营"
+                    description="旭道永远侍奉至上者。"
+                    sort_group="250"
+                    setting_type="CustomDropdownArbitraryOptions" 
+                    arbitrary_options="Ascendancy"
+                    default_option="Ascendancy"
+                    is_hidden="true"
+                    />
+
+          <custom_field
+                    name="DebugMode"
+                    is_advanced_setting="true"
+                    display_name="调试模式"
+                    description="供开发者使用。"
+                    sort_group="250"
+                    setting_type="BoolToggle"
+                    default="false"
+                    />
+
+          <custom_field
+                    name="Intensity"
+                    display_name="强度"
+                    description="强度越高，旭道军队规模越大。"
+                    sort_group="200"
+                    setting_type="IntSlider"
+                    default="5"
+                    min="1"
+                    max="10"
+                    />
+                    
+     </faction>
+
+</root>

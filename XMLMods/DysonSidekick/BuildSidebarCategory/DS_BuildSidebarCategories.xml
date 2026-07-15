@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>  
+  
+  <!--The purpose of these build categories is to organize things for the player on the sidebar.
+      And by "things," I mean "stuff that you build via direct placement."
+      
+      Those sorts of things include anything that a Battlestation or a Command Station
+      or the Zenith Trader makes available to you at a planet.
+      
+      Other than how things are organized on the sidebar, this has no effect on anything.
+      Repeat: this is purely a visual organization thing on the sidebar 
+      for player ships/structures that are directly built.
+      
+      It has no gameplay, seeding, or other structural significance and doesn't
+      affect how the game plays.-->
+  <build_category name="DysonSpire" sort_index="10" display_name="Spire"
+                  description="尖塔 建筑."
+                  />
+  <build_category name="DysonZenith" sort_index="10" display_name="Zenith"
+                  description="天顶 建筑."
+                  />
+  <build_category name="DysonNeinzul" sort_index="10" display_name="Neinzul"
+                  description="奈祖尔 建筑."
+                  />
+
+  <build_category name="DysonTemplar" sort_index="10" display_name="Templar"
+                  description="圣殿骑士 建筑."
+                  />
+  <build_category name="DysonHybrid" sort_index="15" display_name="Hybrid"
+                  description="混合体 建筑."
+                  />
+
+  <build_category name="DysonSpireDefenses" sort_index="20" display_name="Spire Defenses"
+                  description="尖塔 Defensive 建筑."
+                  />
+  <build_category name="DysonZenithDefenses" sort_index="20" display_name="Zenith Defenses"
+                  description="天顶 Defensive 建筑."
+                  />
+  <build_category name="DysonNeinzulDefenses" sort_index="20" display_name="Neinzul Defenses"
+                  description="奈祖尔 Defensive 建筑."
+                  />
+  <build_category name="DysonTemplarDefenses" sort_index="20" display_name="Templar Defenses"
+                  description="圣殿骑士 Defensive 建筑."
+                  />
+  <build_category name="DysonUtility" sort_index="20" display_name="Utility"
+                  description="Utility 建筑."
+                  />
+
+  <build_category name="DysonUpgrades" sort_index="25" display_name="Upgrades"
+                  description="建筑 that will upgrade your 要塞 to grant new ship classes."
+                  />
+  <build_category name="DysonEconomy" sort_index="30" display_name="Economy"
+                  description="Economic 建筑."
+                  />
+  
+  <build_category name="DysonStrongholds" sort_index="35" display_name="Strongholds"
+                  description="Building a new 要塞." granted_by_any_mobile_fleet="true"
+                  for_player_type_tags="DysonSidekick"
+                  custom_sidebar_category_info_dll="AIWarExternalCode"
+                  custom_sidebar_category_info_type="Arcen.AIW2.External.DirectBuild_Stronghold"
+                  />
+
+  <build_category name="DysonDrills" sort_index="40" display_name="Drills"
+                  description="For building 钻机." granted_by_any_mobile_fleet="true"
+                  custom_sidebar_category_info_dll="AIWarExternalCode"
+                  custom_sidebar_category_info_type="Arcen.AIW2.External.DirectBuild_DysonDrill"
+                  for_player_type_tags="DysonSidekick"
+                  />
+
+  <build_category name="DysonSphere" sort_index="45" display_name="Sphere"
+                  description="For building a 戴森球." granted_by_any_mobile_fleet="true"
+                  for_player_type_tags="DysonSidekick"
+                  custom_sidebar_category_info_dll="AIWarExternalCode"
+                  custom_sidebar_category_info_type="Arcen.AIW2.External.DirectBuild_DysonSidekickSphere"
+                  />
+  <build_category name="DysonOverloaders" sort_index="50" display_name="Overloader"
+                  description="For building Overloaders." granted_by_any_mobile_fleet="true"
+                  custom_sidebar_category_info_dll="AIWarExternalCode"
+                  custom_sidebar_category_info_type="Arcen.AIW2.External.DirectBuild_DysonDrill"
+                  for_player_type_tags="DysonSidekick"
+                  />
+
+  <build_category name="ScourgeVassalBuild" sort_index="35" display_name="Scourge"
+                  description="Building 天灾建筑." granted_by_any_mobile_fleet="true"
+                  for_player_type_tags="ScourgeInfusedHumanEmpire,ScourgeInfusedEmpire"
+                  custom_sidebar_category_info_dll="AIWarExternalCode"
+                  custom_sidebar_category_info_type="Arcen.AIW2.External.DirectBuild_ScourgeVassal"
+                  />
+
+  <build_category name="SpireSidekickCity" sort_index="5" display_name="Spire City Sidekick"
+                  for_player_type_tags="SpireSidekick"
+                  description="建筑 for building up your 尖塔 city - more unlock with each city level all the way to 7."
+  />
+
+</root>

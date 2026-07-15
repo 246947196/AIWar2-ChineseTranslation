@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- Neinzul Drones -->
+  <!-- Tier One -->
+ 
+	<entity name="DysonSirenDrone" copy_from="DysonSiren"
+          special_entity_type="DroneGeneral"
+          icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+          display_name="塞壬无人机"
+	  description="An upgraded, drone form of the Siren."
+	  immune_to_repairs="false"
+	  multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"
+          self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="1"
+          always_self_attritions="true"
+          >
+      <fleet_membership name="NeinzulTierOneDrones" ship_cap_group="Strike" weight="100" cap="10"/>
+    </entity>
+
+  <entity name="DysonHarpyDrone" copy_from="DysonHarpy"
+          special_entity_type="DroneGeneral"
+          icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+          metal_cost="8000"
+          display_name="鹰身女妖无人机"
+	  description="An upgraded, drone form of the Harpy."
+	  immune_to_repairs="false"
+	  multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"
+          self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="1"
+          always_self_attritions="true"
+          >
+      <fleet_membership name="NeinzulTierOneDrones" ship_cap_group="Strike" weight="100" cap="10"/>
+  </entity>
+  <entity name="DysonCockatriceDrone" copy_from="DysonCockatrice"
+          special_entity_type="DroneGeneral"
+          icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+          metal_cost="8000"
+          display_name="鸡蛇无人机"
+	  description="An upgraded, drone form of the Cockatrice."
+	  immune_to_repairs="false"
+	  multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"
+          self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="1"
+          always_self_attritions="true"
+          >
+      <fleet_membership name="NeinzulTierOneDrones" ship_cap_group="Strike" weight="100" cap="10"/>
+    </entity>
+
+    <entity name="DysonWispDrone" copy_from="DysonWisp"
+          special_entity_type="DroneGeneral"
+          icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+          metal_cost="8000"
+          display_name="幽魂无人机"
+	  description="An upgraded, drone form of the Wisp."
+	  immune_to_repairs="false"
+	  multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"
+          self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="1"
+          always_self_attritions="true"
+          >
+      <fleet_membership name="NeinzulTierOneDrones" ship_cap_group="Strike" weight="100" cap="10"/>
+    </entity>
+
+  <!-- Tier Two -->
+  <entity name="DysonGorgonDrone" copy_from="DysonGorgon"
+          special_entity_type="DroneGeneral"
+          icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+          display_name="戈耳工无人机"
+	  description="An upgraded, drone form of the Gorgon."
+	  immune_to_repairs="false"
+	  multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"
+          self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="1"
+          always_self_attritions="true"
+          >
+      <fleet_membership name="NeinzulTierTwoDrones" ship_cap_group="Strike" weight="100" cap="5"/>
+    </entity>
+
+  <entity name="DysonChimeraDrone" copy_from="DysonChimera"
+          thematic_groups="DysonSidekick"
+          special_entity_type="DroneGeneral"
+          icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+          display_name="奇美拉无人机"
+	  description="An upgraded, drone form of the Chimera."
+	  immune_to_repairs="false"
+	  multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"
+          self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="1"
+          always_self_attritions="true"
+          >
+    <fleet_membership name="NeinzulTierTwoDrones" ship_cap_group="Strike" weight="100" cap="5"/>
+  </entity>
+  <entity name="DysonBasiliskDrone" copy_from="DysonBasilisk"
+          thematic_groups="DysonSidekick"
+          special_entity_type="DroneGeneral"
+          icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+          display_name="蛇怪无人机"
+	  description="An upgraded, drone form of the Basilisk."
+	  immune_to_repairs="false"
+	  multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"
+          self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="1"
+          always_self_attritions="true"
+          >
+    <fleet_membership name="NeinzulTierTwoDrones" ship_cap_group="Strike" weight="100" cap="5"/>
+  </entity>
+  <entity name="DysonManticoreDrone" copy_from="DysonManticore"
+          special_entity_type="DroneGeneral"
+          icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+          display_name="蝎尾狮无人机"
+	  description="An upgraded, drone form of the Manticore."
+	  immune_to_repairs="false"
+	  multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"
+          self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="1"
+          always_self_attritions="true"
+          >
+    <fleet_membership name="NeinzulTierTwoDrones" ship_cap_group="Strike" weight="100" cap="5"/>
+  </entity>
+	
+	<!--Manticore Quill. Launched from the Manticore-->
+
+	<entity name="ManticoreQuill"	display_name="Manticore Quill" display_name_for_sidebar="Quill"
+	        thematic_groups="DysonSidekick,Drone" npc_ship_cap_type="Strikecraft"
+			special_entity_type="DroneGeneral"
+		    visuals="Assets/_DLC3/Younglings/NeinzulYounglingBee/NeinzulYounglingBee.prefab" visuals_bundle="exp3_neinzul_abyss"
+		    icon_name="Ships4/NeinzulBee"  icon_overlay="Overlays1/Minefield_TargetDummy"
+		    size_scale="1.0" visuals_scale_multiplier="0.2" gimbal_icon_size_multiplier="0.75"
+			voice_group="Silent"
+			category="Ship" 
+			collision_priority="100"
+			description="A deadly melee Youngling launched by the Manticore. Ignores most crowd control effects and takes reduced damage from distant sources."
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="3"
+			always_self_attritions="true"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="DysonNeinzulTierTwo"
+			mark_level_scale_style="DysonTierTwo"
+			cost_for_ai_to_purchase="10" 
+			hull_points="6500" shield_points="0" speed="Youngling6"
+			metal_cost="50" energy_consumption="50"
+			metal_cost_multiplier_for_scrapping="0"
+			armor_mm="90" albedo="0.4" engine_gx="18" mass_tx="0.21"
+			can_pass_through_enemy_forcefields="true"
+			immune_to_swapping_between_fleets="true"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+                        priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			>
+		<system name="WM" display_name="Quill Strike"
+					category="Weapon" firing_timing="OnlyInRange"
+					damage_per_shot="1000" range="AlmostNone" seek_range="Normal1" shot_speed="Fast" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+					shot_type_data="MeleeInvisible" added_target_evaluator="Melee"
+				    >
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="2" multiplier="3" />
+		</system>
+		<incoming_damage_modifier based_on="AttackDistance" comparison_type="AtLeast" compared_to="3500" multiplier="0.10" />
+		<incoming_damage_modifier based_on="MyTimeAtPlanet" comparison_type="LessThan" compared_to="5" multiplier="0" />
+		<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+	
+	
+
+  <!-- Tier Three -->
+  <entity name="DysonLeviathanDrone" copy_from="DysonLeviathan"
+          special_entity_type="DroneGeneral"
+          icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+          display_name="利维坦无人机"
+	  description="An upgraded, drone form of the Leviathan."
+	  immune_to_repairs="false"
+	  multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"
+          self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="1"
+          always_self_attritions="true"
+          >
+    <fleet_membership name="NeinzulTierThreeDrones" ship_cap_group="Strike" weight="100" cap="3"/>
+  </entity>
+  <entity name="DysonKrakenDrone" copy_from="DysonKraken"
+          special_entity_type="DroneGeneral"
+          icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+          display_name="海妖无人机"
+	  description="An upgraded, drone form of the Kraken."
+	  immune_to_repairs="false"
+	  multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"
+          self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="1"
+          always_self_attritions="true"
+          >
+    <fleet_membership name="NeinzulTierThreeDrones" ship_cap_group="Strike" weight="100" cap="3"/>
+  </entity>
+  <entity name="DysonScyllaDrone" copy_from="DysonScylla"
+          special_entity_type="DroneGeneral"
+          icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+          display_name="斯库拉无人机"
+	  description="An upgraded, drone form of the Scylla."
+	  immune_to_repairs="false"
+	  multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"
+          self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="1"
+          always_self_attritions="true"
+          >
+    <fleet_membership name="NeinzulTierThreeDrones" ship_cap_group="Strike" weight="100" cap="3"/>
+  </entity>
+  <entity name="DysonBehemothDrone" copy_from="DysonBehemoth"
+          special_entity_type="DroneGeneral"
+          icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+          display_name="巨兽无人机"
+	  description="An upgraded, drone form of the Behemoth."
+	  immune_to_repairs="false"
+	  multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"
+          self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="1"
+          always_self_attritions="true"
+          >
+    <fleet_membership name="NeinzulTierThreeDrones" ship_cap_group="Strike" weight="100" cap="3"/>
+  </entity>
+
+  <!-- Templar Drones -->
+  <!-- Tier One -->
+  <entity name="DysonPageDrone" copy_from="DysonPage"
+          special_entity_type="DroneGeneral"
+          icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+          display_name="侍从无人机"
+	  description="An upgraded, drone form of the Page."
+	  immune_to_repairs="false"
+	  multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"
+          self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="5"
+          >
+    <fleet_membership name="TemplarTierOneDrones" ship_cap_group="Strike" weight="100" cap="10"/>
+  </entity>
+
+  <entity name="DysonApprenticeDrone" copy_from="DysonApprentice"
+          special_entity_type="DroneGeneral"
+          icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+          display_name="学徒无人机"
+	  description="An upgraded, drone form of the Apprentice."
+	  immune_to_repairs="false"
+	  multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"
+          self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="5"
+          >
+    <fleet_membership name="TemplarTierOneDrones" ship_cap_group="Strike" weight="100" cap="10"/>
+  </entity>
+
+  <entity name="DysonSquireDrone" copy_from="DysonSquire"
+          special_entity_type="DroneGeneral"
+          icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+          display_name="扈从无人机"
+	  description="An upgraded, drone form of the Squire."
+	  immune_to_repairs="false"
+	  multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"
+          self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="5"
+          >
+    <fleet_membership name="TemplarTierOneDrones" ship_cap_group="Strike" weight="100" cap="10"/>
+  </entity>
+  <!-- Tier Two -->
+    <entity name="DysonKnightDrone" copy_from="DysonKnight"
+          special_entity_type="DroneGeneral"
+          icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+          display_name="骑士无人机"
+	  description="An upgraded, drone form of the Knight."
+	  immune_to_repairs="false"
+	  multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"
+          self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="5"
+          >
+    <fleet_membership name="TemplarTierTwoDrones" ship_cap_group="Strike" weight="100" cap="5"/>
+  </entity>
+    <entity name="DysonSergeantDrone" copy_from="DysonSergeant"
+          special_entity_type="DroneGeneral"
+          icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+          display_name="军士无人机"
+	  description="An upgraded, drone form of the Sergeant."
+	  immune_to_repairs="false"
+	  multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"
+          self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="5"
+          >
+    <fleet_membership name="TemplarTierTwoDrones" ship_cap_group="Strike" weight="100" cap="5"/>
+  </entity>
+    <entity name="DysonExorcistDrone" copy_from="DysonExorcist"
+          special_entity_type="DroneGeneral"
+          icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+          display_name="驱魔者无人机"
+	  description="An upgraded, drone form of the Exorcist."
+	  immune_to_repairs="false"
+	  multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"
+          self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="5"
+          >
+    <fleet_membership name="TemplarTierTwoDrones" ship_cap_group="Strike" weight="100" cap="5"/>
+  </entity>
+    <entity name="DysonPaladinDrone" copy_from="DysonPaladin"
+          special_entity_type="DroneGeneral"
+          icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+          display_name="圣骑士无人机"
+	  description="An upgraded, drone form of the Paladin."
+	  immune_to_repairs="false"
+	  multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"
+          self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="5"
+          >
+    <fleet_membership name="TemplarTierTwoDrones" ship_cap_group="Strike" weight="100" cap="5"/>
+  </entity>
+  <entity name="DysonSeneschalDrone" copy_from="DysonSeneschal"
+          special_entity_type="DroneGeneral"
+          icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+          display_name="管家无人机"
+	  description="An upgraded, drone form of the Seneschal."
+	  immune_to_repairs="false"
+	  multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"
+          self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="5"
+          >
+    <fleet_membership name="TemplarTierThreeDrones" ship_cap_group="Strike" weight="100" cap="3"/>
+  </entity>
+  <entity name="DysonHospitallerDrone" copy_from="DysonHospitaller"
+          special_entity_type="DroneGeneral"
+          icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+          display_name="医护骑士无人机"
+	  description="An upgraded, drone form of the Hospitaller."
+	  immune_to_repairs="false"
+	  multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"
+          self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="5"
+          >
+    <fleet_membership name="TemplarTierThreeDrones" ship_cap_group="Strike" weight="100" cap="3"/>
+  </entity>
+  <entity name="DysonGrandMasterDrone" copy_from="DysonGrandMaster"
+          special_entity_type="DroneGeneral"
+          icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+          display_name="大宗师无人机"
+	  description="An upgraded, drone form of the GrandMaster."
+	  immune_to_repairs="false"
+	  multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"
+          self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="5"
+          >
+    <fleet_membership name="TemplarTierThreeDrones" ship_cap_group="Strike" weight="100" cap="3"/>
+  </entity>
+
+  <!-- Spire Ships -->
+  <!-- Tier One -->
+  <entity name="DysonMiniRamDrone" copy_from="DysonMiniRam"
+          special_entity_type="DroneGeneral"
+          icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+          display_name="迷你冲车无人机" display_name_for_sidebar="Mini Ram DRN"
+	  description="An upgraded, drone form of the Mini Ram."
+	  immune_to_repairs="false"
+	  multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"
+          self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="5"
+          >
+    <fleet_membership name="SpireTierOneDrones" ship_cap_group="Strike" weight="100" cap="10"/>
+  </entity>
+  <entity name="DysonArmorRotterDrone" copy_from="DysonArmorRotter"
+          special_entity_type="DroneGeneral"
+          icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+          display_name="腐甲者无人机" display_name_for_sidebar="Armor Rotter DRN"
+	  description="An upgraded, drone form of the 尖塔 Armor Rotter."
+	  immune_to_repairs="false"
+	  multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"
+          self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="5"
+          >
+    <fleet_membership name="SpireTierOneDrones" ship_cap_group="Strike" weight="100" cap="10"/>
+  </entity>
+ 
+
+  <!-- Tier Two -->
+  <entity name="DysonRamDrone" copy_from="DysonRam"
+          special_entity_type="DroneGeneral"
+          icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+          display_name="冲车无人机"
+	  description="An upgraded, drone form of the 尖塔 Ram."
+	  immune_to_repairs="false"
+	  multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"
+          self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="5"
+          >
+    <fleet_membership name="SpireTierTwoDrones" ship_cap_group="Strike" weight="100" cap="5"/>
+  </entity>
+  <entity name="DysonDawnDrone" copy_from="DysonDawn"
+          special_entity_type="DroneGeneral"
+          icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+          display_name="黎明无人机"
+	  description="An upgraded, drone form of the Dawn."
+	  immune_to_repairs="false"
+	  multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"
+          self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="5"
+          >
+    <fleet_membership name="SpireTierTwoDrones" ship_cap_group="Strike" weight="100" cap="5"/>
+  </entity>
+
+  <!-- Tier Three -->
+    <entity name="DysonSpireDestroyerDrone" copy_from="DysonSpireDestroyer"
+          special_entity_type="DroneGeneral"
+          icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+          display_name="Spire Destroyer Drone"
+	  description="An upgraded, drone form of the SpireDestroyer."
+	  immune_to_repairs="false"
+	  multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"
+          self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="5"
+          >
+    <fleet_membership name="SpireTierThreeDrones" ship_cap_group="Strike" weight="100" cap="3"/>
+  </entity>
+
+    <entity name="DysonSpireCruiserDrone" copy_from="DysonSpireCruiser"
+          special_entity_type="DroneGeneral"
+          icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+          display_name="Spire Cruiser Drone"
+	  description="An upgraded, drone form of the SpireCruiser."
+	  immune_to_repairs="false"
+	  multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"
+          self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="5"
+          >
+    <fleet_membership name="SpireTierThreeDrones" ship_cap_group="Strike" weight="100" cap="3"/>
+  </entity>
+  <entity name="DysonOpalescenceDrone" copy_from="DysonOpalescence"
+          special_entity_type="DroneGeneral"
+          icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+          display_name="乳光无人机"
+	  description="An upgraded, drone form of the Opalescence."
+	  immune_to_repairs="false"
+	  multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"
+          self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="5"
+          >
+    <fleet_membership name="SpireTierThreeDrones" ship_cap_group="Strike" weight="100" cap="10"/>
+  </entity>
+</root>

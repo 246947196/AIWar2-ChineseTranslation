@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <entity name="BeamBombard" copy_from="Bombard" required_expansion_list="1_The_Spire_Rises"
+		icon_overlay="Overlays2/SpireSpyCradle_Greater"
+		display_name="光束轰炸舰"
+		display_name_for_sidebar="光束轰炸舰SC"
+		description="采用适配尖塔技术建造，发射强大的远程单目标光束，对打击机危险，但造价昂贵且装填速度极慢。"
+		tech_upgrades_that_benefit_me="Technologist,Heavy"
+		hull_points="5000"
+		metal_cost="20000" energy_consumption="1400"
+		cost_for_ai_to_purchase="130"
+		armor_mm="90"
+		>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="10" cap="12"/>
+		<fleet_membership name="BasicOffensiveMix" ship_cap_group="Strike" weight="100" cap="12"/>
+		<fleet_membership name="AntiSmallMix" ship_cap_group="Strike" weight="100" cap="12"/>
+		<fleet_membership name="AntiStructureMix" ship_cap_group="Strike" weight="100" cap="12"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Strike" weight="100" cap="12"/>
+		<ai_ship_group_membership name="ArtilleristStrikecraft" weight="11"/>
+		<ai_ship_group_membership name="DefensiveStrikecraft" weight="10"/>	
+		<ai_ship_group_membership name="MassBombard" weight="35"/>
+		<ai_ship_group_membership name="AutocannonMinipodBombard" weight="17"/>		
+		<system name="W1" display_name="适配光束炮"
+			damage_per_shot="1000" range="High2" shot_speed="Instant"
+			shots_per_salvo="5" fires_salvos_sequentially="true"
+			shot_type_data="HeavyBeamInvisible" beam_weapon_visual_style="Laser_YellowBright"
+			beam_length_multiplier="1"
+			hits_all_intersecting_targets="false"
+			>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtMost" compared_to="0.25" multiplier="1.5" />
+		</system>
+    </entity>
+	
+    <entity name="CompactBombard" copy_from="Bombard" required_expansion_list="1_The_Spire_Rises"
+		size_scale="2" icon_overlay="Overlays2/SpireSpyCradle_Lesser"
+		visuals_scale_multiplier="6.4"
+		display_name="紧凑型轰炸舰"
+		display_name_for_sidebar="紧凑型轰炸舰SC"
+		description="较小、较便宜且较弱的轰炸舰变体，使用尖塔晶体基合金以获得更高的移动和攻击速度，但总体伤害较低。同时为量产优化，允许更高舰船数量。"
+		tech_upgrades_that_benefit_me="Concussion,Medium"
+		hull_points="4500" speed="Normal1"
+		metal_cost="13000" energy_consumption="750"
+		cost_for_ai_to_purchase="100"
+		armor_mm="70" albedo="0.4" engine_gx="8" mass_tx="0.25"
+		>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="10" cap="16"/>
+		<fleet_membership name="BasicOffensiveMix" ship_cap_group="Strike" weight="100" cap="16"/>
+		<fleet_membership name="AntiLargeMix" ship_cap_group="Strike" weight="100" cap="16"/>
+		<fleet_membership name="AntiStructureMix" ship_cap_group="Strike" weight="100" cap="16"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Strike" weight="100" cap="16"/>
+		<ai_ship_group_membership name="ArtilleristStrikecraft" weight="10"/>
+		<ai_ship_group_membership name="DefensiveStrikecraft" weight="11"/>	
+		<ai_ship_group_membership name="MassBombard" weight="35"/>
+		<ai_ship_group_membership name="AutocannonMinipodBombard" weight="17"/>		
+		<system name="W1" display_name="轻型等离子鱼雷"
+			damage_per_shot="1500" range="AboveAverage4" shot_speed="Normal" rate_of_fire="PeriodicActivation"
+			>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="1.35" />
+		</system>
+    </entity>
+
+	<entity name="RailBombard" copy_from="BeamBombard" tags="IncludeInFRS" required_expansion_list="1_The_Spire_Rises"
+		icon_overlay="Overlays1/MegaTurret_Beam"
+		display_name="轨道轰炸舰"
+		display_name_for_sidebar="轨道轰炸舰SC"
+		description="比人类科技更接近尖塔，具有惊人的超高射程光束湮灭潜力，尤其对刚到达的敌人。最好将本舰视为快速部署的高脆弱轨道炮塔，而非靠自身推进力移动和生存的舰船。"
+		tech_upgrades_that_benefit_me="Ambush,Heavy"
+		hull_points="4000" speed="VeryVeryLittle1"
+		metal_cost="40000" energy_consumption="1750"
+		armor_mm="130"
+		strength_multiplier="2.5"
+		aip_when_granted_by_hack="35"
+		>
+		<fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="10" cap="36"/>
+		<system name="W1" display_name="尖塔轨道炮"
+			range="ExtremelyHigh"
+			shots_per_salvo="10" fires_salvos_sequentially="false"
+			>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtMost" compared_to="1" multiplier="2" />
+			<outgoing_damage_modifier based_on="TargetTimeAtPlanet" comparison_type="AtMost" compared_to="35" multiplier="3" />
+		</system>
+	</entity>
+  	
+    <entity name="CloakedViralShredder" copy_from="ViralShredder" required_expansion_list="1_The_Spire_Rises"
+		icon_overlay="Overlays2/GuardPost_Stealth"
+		display_name="隐形病毒撕裂者"
+		display_name_for_sidebar="隐形病毒撕裂SC"
+		description="脆弱的近战舰船，在造成伤害时生成自身的复制体。自身和复制体均可保持隐形最多6次攻击。"
+		tech_upgrades_that_benefit_me="Subterfuge,Medium"
+		cost_for_ai_to_purchase="250" strength_multiplier="2.5"
+		hull_points="2250" speed="Normal3"
+		metal_cost="3000" energy_consumption="500"
+		armor_mm="90" albedo="0.7" 
+		unit_to_make_with_build_points="CloakedViralShredderCopy"
+		base_ship_line_for_build_points="CloakedViralShredder"
+		>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="ReplicatingOffensiveMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="MeleeWithSupportMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="CloakedMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<system name="W1" display_name="隐形近战"
+			cloaking_percent_loss_from_firing="0.15"
+			>
+		</system>	
+		<system name="C" display_name="隐形装置" category="Passive" cloaking_points="2000" cloaking_points_added_per_mark="1000" />
+    </entity>
+	
+    <entity name="CloakedViralShredderCopy" skip_export="true" copy_from="CloakedViralShredder" required_expansion_list="1_The_Spire_Rises"
+		cannot_actually_be_built_builds_self_indirectly="true"
+		unit_to_make_with_build_points="CloakedViralShredderCopy"
+		base_ship_line_for_build_points="CloakedViralShredder"
+		build_points_per_damage_dealt="0.5"
+		immune_to_swapping_between_fleets="true"
+		>
+	</entity>
+  	
+    <entity name="ParasiticViralShredder" copy_from="ViralShredder" required_expansion_list="1_The_Spire_Rises"
+		icon_overlay="Overlays2/GuardPostDire_Parasite"
+		display_name="寄生病毒撕裂者"
+		display_name_for_sidebar="寄生病毒撕裂SC"
+		description="近战舰船，在造成伤害时生成自身的复制体。自身和复制体随后从敌人处生成僵尸化复制体。"
+		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Technologist,Heavy"
+		cost_for_ai_to_purchase="300" strength_multiplier="3"
+		hull_points="4500" shield_points="0" speed="Normal1"
+		metal_cost="4500"
+		unit_to_make_with_build_points="ParasiticViralShredderCopy"
+		base_ship_line_for_build_points="ParasiticViralShredder"
+		>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="100" cap="20"/>
+		<fleet_membership name="ReplicatingOffensiveMix" ship_cap_group="Strike" weight="15" cap="20"/>
+		<fleet_membership name="MeleeWithSupportMix" ship_cap_group="Strike" weight="100" cap="20"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Strike" weight="100" cap="20"/>
+		<fleet_membership name="ZombificationMix" ship_cap_group="Strike" weight="150" cap="20"/>
+		<fleet_membership name="ZombificationAntiCounterMix" ship_cap_group="Strike" weight="150" cap="20"/>
+		<system name="W1" display_name="寄生近战"
+			damage_per_shot="50"
+			shot_type_data="ParasiteCurvedPinkShot" added_target_evaluator="ZombifyAsPrimary"
+			>
+			<death_effect_damage type="Zombification" tier_name="Parasite"/>
+		</system>	
+    </entity>
+	
+    <entity name="ParasiticViralShredderCopy" skip_export="true" copy_from="ParasiticViralShredder" required_expansion_list="1_The_Spire_Rises"
+		cannot_actually_be_built_builds_self_indirectly="true"
+		unit_to_make_with_build_points="ParasiticViralShredderCopy"
+		base_ship_line_for_build_points="ParasiticViralShredder"
+		build_points_per_damage_dealt="0.5"
+		immune_to_swapping_between_fleets="true"
+		>
+	</entity>
+</root>

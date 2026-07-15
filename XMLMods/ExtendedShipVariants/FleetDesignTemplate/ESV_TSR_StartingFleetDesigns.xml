@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <fleet_design name="ESVFS_HackerStartingFleet" required_expansion_list="1_The_Spire_Rises"
+        display_name="黑客舰队"
+        description="不仅通过其网络指挥运输旗舰减少入侵响应，还拥有伏击、僵尸化和群体控制舰船，有效打击来袭波次。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_CyberCommand" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+    <ship_membership name="ParasiticViralShredder" ship_cap_group="Strike" weight="100" cap="25"/>
+    <ship_membership name="Raptor" ship_cap_group="Strike" weight="100" cap="40"/>
+    <ship_membership name="Spider" ship_cap_group="Strike" weight="100" cap="40"/>
+    <ship_membership name="EMPMissileFrigate" ship_cap_group="Frigate" weight="100" cap="10"/>
+  </fleet_design>
+</root>

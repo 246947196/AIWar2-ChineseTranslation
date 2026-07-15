@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <entity name="MassDriver_AOEBurstAtEnd"
+          category="Shot" size_scale="0.06"
+          visuals_bundle="aiwar2goodiebox" visuals="assets/arcenbundle/shots/new/massdriver.prefab"
+          shot_fired_sfx="BasicLaunchWhine_Firing" shot_hitting_sfx="BasicLaunchWhine_Hitting"
+          effects_death_bundle="aiw2_effects" effects_death="assets/effects/flakexplosionradius50.prefab"
+  >
+  </entity>
+
+  <entity name="DevourerShot_AOEBurstAtEnd"
+          category="Shot" size_scale="0.06"
+          visuals_bundle="aiwar2goodiebox" visuals="assets/arcenbundle/shots/new/devourershot.prefab"
+          shot_fired_sfx="PlasmaTorpedo_Firing" shot_hitting_sfx="PlasmaTorpedo_Hitting"
+          effects_death_bundle="aiw2_effects" effects_death="assets/effects/plasmaexplosionradius50.prefab"
+  >
+  </entity>
+</root>

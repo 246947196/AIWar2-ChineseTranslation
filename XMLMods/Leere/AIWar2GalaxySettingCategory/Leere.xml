@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<!-- Having your own category for only a few settings is overkill, but this is included to showcase how to do so. -->
+	<setting_category name="Leere" display_name="Leere"
+      description="与戾尔模组相关的设置。"/>
+
+</root>

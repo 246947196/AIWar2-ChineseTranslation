@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<fleet_design name="Radiant_Battlestation_RadiantMix"
+        display_name="光辉防御"
+        description="RadiantPhoenix最喜欢的炮塔。"
+        design_logic="InitialPlayerBattlestation" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        required_expansion_list="1_The_Spire_Rises"
+        >
+		<ship_membership name="RevealerBattlestation" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+		
+		<ship_membership name="InterplanetaryEngineer" ship_cap_group="Civilian" weight="100" cap="4"/>
+		<ship_membership name="TractorArray" ship_cap_group="OtherDefense" weight="100" cap="20"/>
+		<ship_membership name="TachyonArray" ship_cap_group="OtherDefense" weight="100" cap="10"/>
+		
+		<ship_membership name="AmbushTurret" ship_cap_group="Turret" weight="100" cap="50"/>
+		<ship_membership name="EMPTurret" ship_cap_group="Turret" weight="100" cap="5"/>
+		<ship_membership name="FuseballTurret" ship_cap_group="Turret" weight="100" cap="5"/>
+	</fleet_design>
+	
+	<!-- Monotech -->
+	<fleet_design name="RPSF_Battlestation_Ambush"
+		display_name="伏击防御"
+		description="使用伏击技术的防御集合。"
+		design_logic="InitialPlayerBattlestation" weight="100" include_full_cap_of_each_type="true"
+		append_each_ship_description_to_main_description="true"
+		required_expansion_list="1_The_Spire_Rises"
+		>
+		<ship_membership name="RevealerBattlestation" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+		
+		<ship_membership name="InterplanetaryEngineer" ship_cap_group="Civilian" weight="100" cap="4"/>
+		<ship_membership name="TractorArray" ship_cap_group="OtherDefense" weight="100" cap="20"/>
+		<ship_membership name="TachyonArray" ship_cap_group="OtherDefense" weight="100" cap="10"/>
+		
+		<ship_membership name="AmbushTurret" ship_cap_group="Turret" weight="100" cap="50"/>
+		<ship_membership name="InterceptorTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+		<ship_membership name="EMPTurret" ship_cap_group="Turret" weight="100" cap="5"/>
+	
+	</fleet_design>
+	
+	<fleet_design name="RPSF_Battlestation_Fusion"
+		display_name="穿透防御"
+		description="使用聚变技术的防御集合。"
+		design_logic="InitialPlayerBattlestation" weight="100" include_full_cap_of_each_type="true"
+		append_each_ship_description_to_main_description="true"
+		required_expansion_list="1_The_Spire_Rises"
+		>
+		<ship_membership name="RevealerBattlestation" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+		<ship_membership name="InterplanetaryEngineer" ship_cap_group="Civilian" weight="100" cap="4"/>
+		<ship_membership name="TractorArray" ship_cap_group="OtherDefense" weight="100" cap="20"/>
+		<ship_membership name="TachyonArray" ship_cap_group="OtherDefense" weight="100" cap="10"/>
+		
+		<ship_membership name="MLRSTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+		<ship_membership name="FusionTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+		<ship_membership name="FuseballTurret" ship_cap_group="Turret" weight="100" cap="5"/>
+	</fleet_design>
+	
+</root>

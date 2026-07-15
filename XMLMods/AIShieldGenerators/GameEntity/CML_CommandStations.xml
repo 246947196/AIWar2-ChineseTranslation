@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>  	
+  <entity name="AICommandStation" is_partial_record="true"
+tags="AICommandStationOriginal,InvulnerabilityGranter,Command Station"
+	></entity>
+	  <entity name="AICommandStationReconquest" is_partial_record="true"
+tags="AICommandStationReconquest,InvulnerabilityGranter,Command Station"
+	></entity>
+	  <entity name="AICommandStation_Clone1" is_partial_record="true" required_mod_list="MicroModCollection"
+tags="AICommandStationOriginal,InvulnerabilityGranter,Command Station"
+	></entity>
+		  <entity name="AICommandStation_Clone2" is_partial_record="true" required_mod_list="MicroModCollection"
+tags="AICommandStationOriginal,InvulnerabilityGranter,Command Station"
+	></entity>
+		  <entity name="AICommandStation_Gravitic" is_partial_record="true" required_mod_list="MicroModCollection"
+tags="AICommandStationOriginal,InvulnerabilityGranter,Command Station"
+	></entity>
+		  <entity name="AICommandStation_Tachyon" is_partial_record="true" required_mod_list="MicroModCollection"
+tags="AICommandStationOriginal,InvulnerabilityGranter,Command Station"
+	></entity>
+		  <entity name="AICommandStation_Pulsar" is_partial_record="true" required_mod_list="MicroModCollection"
+tags="AICommandStationOriginal,InvulnerabilityGranter,Command Station"
+	></entity>
+  </root>

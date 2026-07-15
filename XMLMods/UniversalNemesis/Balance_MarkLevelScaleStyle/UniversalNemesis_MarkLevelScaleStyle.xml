@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <mark_level_scale_style name="UN_HackedShips"
+    attack_multiplier_list="1,1.5,2,2.6,3.3,4.1,5"
+    human_squad_cap_multiplier_list_cumulative="1,1,1,1,1,1,1"
+    hull_points_multiplier_list="1,1.5,2,2.6,3.3,4.1,5"
+    shield_points_multiplier_list="1,1.5,2,2.6,3.3,4.1,5"
+    assist_range_multiplier_list="1,1,1,1,1,1,1"
+    attack_range_multiplier_list="1,1,1,1,1,1,1"
+    shield_radius_multiplier_list="1,1,1,1,1,1,1"
+    metal_cost_multiplier_list="1,1,1,1,1,1,1"
+	/>
+
+    
+</root>

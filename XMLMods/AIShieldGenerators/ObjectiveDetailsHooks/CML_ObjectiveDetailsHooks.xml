@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+
+  <objective_details_hook name="DestroyShieldGenerator" category="ShieldGenerators"
+          dll_name="CML_ShieldsBaseInfo" type_name="CML.AIW2.Shields.DestroyShieldGenerator"
+          display_name_color="ff5782" finish_display_name_with_related_entity1_name_and_planet="true"
+          click_behavior="CenterOnRelatedEntity1" focus_type="FocusOnRelatedEntity1"
+          serialization_type="RelatedEntity1AndDisplayName" importance_calculation="RelatedEntity1Importance"
+          difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedEntity1"/>
+
+
+</root>

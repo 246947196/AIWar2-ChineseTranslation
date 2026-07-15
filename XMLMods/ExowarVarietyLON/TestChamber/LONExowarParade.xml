@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!-- Disables the Chamber to avoid DLC requirements, re-enable if you want to see them all.
+	<chamber name="Example" is_partial_record="true">
+
+	<spawn entity="ExtragalacticMaugrim" mark_level="1" faction_name="AI" x="-4400" y="-4000" />
+	<spawn entity="ExtragalacticPhoenix" mark_level="1" faction_name="AI" x="-4400" y="-4000" />
+	<spawn entity="ExtragalacticAIHunterSeeker" mark_level="1" faction_name="AI" x="-4400" y="-4000" />          
+	<spawn entity="LONExtragalacticEchidna" mark_level="1" faction_name="AI" x="-4400" y="-4000" />
+	<spawn entity="LONExtragalacticCyclops" mark_level="1" faction_name="AI" x="-4400" y="-4000" />
+	<spawn entity="LONExtragalacticProteus" mark_level="1" faction_name="AI" x="-4400" y="-4000" />
+	<spawn entity="LONExtragalacticMagni" mark_level="1" faction_name="AI" x="-4400" y="-4000" />
+	<spawn entity="LONExtragalacticBasilisk" mark_level="1" faction_name="AI" x="-4400" y="-4000" />
+
+	<spawn entity="ExtragalacticWendigo" mark_level="1" faction_name="AI" x="4400" y="-4000" />
+	<spawn entity="ExtragalacticPoltergeist" mark_level="1" faction_name="AI" x="4400" y="-4000" />
+	<spawn entity="ExtragalacticWyrm" mark_level="1" faction_name="AI" x="4400" y="-4000" />
+	<spawn entity="ExtragalacticChimeraArtillery" mark_level="1" faction_name="AI" x="4400" y="-4000" />
+	<spawn entity="LONExtragalacticPhoenixV2" mark_level="1" faction_name="AI" x="4400" y="-4000" />
+	<spawn entity="LONExtragalacticPhoenixV2Stage2" mark_level="1" faction_name="AI" x="4400" y="-4000" />
+	<spawn entity="LONExtragalacticCentaur" mark_level="1" faction_name="AI" x="4400" y="-4000" />
+	<spawn entity="LONExtragalacticLamassu" mark_level="1" faction_name="AI" x="4400" y="-4000" />
+	<spawn entity="LONExtragalacticTyphon" mark_level="1" faction_name="AI" x="4400" y="-4000" />
+	<spawn entity="LONExtragalacticStrix" mark_level="1" faction_name="AI" x="4400" y="-4000" />
+	<spawn entity="LONExtragalacticDireProteus" mark_level="1" faction_name="AI" x="4400" y="-4000" />
+	<spawn entity="LONExtragalacticPolaris" mark_level="1" faction_name="AI" x="4400" y="-4000" />
+	<spawn entity="LONExtragalacticOgre" mark_level="1" faction_name="AI" x="4400" y="-4000" />
+
+	<spawn entity="ExtragalacticAIHunterAnnihilator" mark_level="1" faction_name="AI" x="4000" y="4400" />
+	<spawn entity="ExtragalacticJackalope" mark_level="1" faction_name="AI" x="4000" y="4400" />
+	<spawn entity="ExtragalacticThunderbird" mark_level="1" faction_name="AI" x="4000" y="4400" />
+	<spawn entity="LONExtragalacticRedback" mark_level="1" faction_name="AI" x="4000" y="4400" />
+	<spawn entity="LONExtragalacticGrendel" mark_level="1" faction_name="AI" x="4000" y="4400" />
+	<spawn entity="LONExtragalacticManticore" mark_level="1" faction_name="AI" x="4000" y="4400" />
+	<spawn entity="LONExtragalacticHydra" mark_level="1" faction_name="AI" x="4000" y="4400" />
+	<spawn entity="LONExtragalacticHydraHead" mark_level="1" faction_name="AI" x="4000" y="4400" />
+
+	<spawn entity="LONExowarSuperdragon" mark_level="1" faction_name="AI" x="-4000" y="4400" />
+	<spawn entity="LONNeinzulDragon" mark_level="1" faction_name="AI" x="-4000" y="4400" />
+	<spawn entity="LONNanocaustDragon" mark_level="1" faction_name="AI" x="-4000" y="4400" />
+
+  	</chamber>
+ 	--> 
+</root>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <!-- Custom -->
+  <setting name="DisableOutguardTimeTillWarpout" category="Game" subcategory="Notifications" display_name="禁用外卫剩余时间通知" type="BoolToggle" default="false"
+          description="通常外卫派对会添加一个通知计时器，显示当前召唤的外卫将跃迁离开的时间。此设置允许你禁用它。" />
+
+</root>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <entity name="DarkerGravityMirrorFrigate" copy_from="DarkerMirrorFrigate" required_expansion_list="2_Zenith_Onslaught"
+		display_name="暗黑引力镜护卫舰"
+		display_name_for_sidebar="D.引力镜FFH"
+		description="通过吸引攻击来保护附近舰船，然后主动寻求报复。除了伤害攻击者外还使其减速。"
+		tech_upgrades_that_benefit_me="Subterfuge,Heavy"
+		strength_multiplier="1.2"
+		>
+		<system name="W1" display_name="复仇反击引力射击"
+			returns_this_percentage_of_damage_when_firing_retalitatory_shot="0.6"
+			shot_type_data="LaserPulse_RedLevel2"
+			base_engine_stun_per_shot="5" max_engine_stun_seconds="10" engine_stun_to_engine_gx_less_than="16"
+		>
+		</system>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="10" cap="4"/>
+		<fleet_membership name="CrowdControlMix" ship_cap_group="Frigate" weight="10" cap="4"/>
+		<fleet_membership name="DebufferMix" ship_cap_group="Frigate" weight="10" cap="4"/>
+		<fleet_membership name="EngineStunMix" ship_cap_group="Frigate" weight="10" cap="4"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Frigate" weight="10" cap="4"/>
+		<fleet_membership name="SelfSacrificingOffensiveMix" ship_cap_group="Frigate" weight="10" cap="4"/>
+		<fleet_membership name="SturdyOffensiveMix" ship_cap_group="Frigate" weight="10" cap="4"/>
+		<fleet_membership name="UnusualMix" ship_cap_group="Frigate" weight="10" cap="4"/>
+	</entity>
+	
+	
+    <entity name="DarkerEchoFrigate" copy_from="DarkerMirrorFrigate" required_expansion_list="2_Zenith_Onslaught"
+		display_name="暗黑回声护卫舰"
+		display_name_for_sidebar="暗黑回声FFH"
+		description="通过吸引攻击来保护附近舰船，然后主动寻求报复。死亡时重生为回声，仅持续短暂时间。"
+		tech_upgrades_that_benefit_me="Technologist,Heavy"
+		strength_multiplier="1.35"
+		>
+		<entity_type_drawing_bag_used_on_death data_list="DarkerEchoFrigateEcho" />
+		<fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="10" cap="4"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Frigate" weight="10" cap="4"/>
+		<fleet_membership name="HydraOffensiveMix" ship_cap_group="Frigate" weight="10" cap="4"/>
+		<fleet_membership name="ReplicatingOffensiveMix" ship_cap_group="Frigate" weight="10" cap="4"/>
+		<fleet_membership name="SelfSacrificingOffensiveMix" ship_cap_group="Frigate" weight="10" cap="4"/>
+		<fleet_membership name="SturdyOffensiveMix" ship_cap_group="Frigate" weight="10" cap="4"/>
+		<fleet_membership name="UnusualMix" ship_cap_group="Frigate" weight="10" cap="4"/>
+	</entity>
+	
+    <entity name="DarkerEchoFrigateEcho" copy_from="DarkerEchoFrigate" required_expansion_list="2_Zenith_Onslaught"
+		display_name="暗黑回声护卫舰回声"
+		display_name_for_sidebar="D.回声FFH回声"
+		description="暗黑回声护卫舰的回声。"
+		self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="10"
+		always_self_attritions="true"
+		>
+		<entity_type_drawing_bag_used_on_death data_list="ShatteredMirror" min_spawn_value_list="3" />
+	</entity>
+	
+	
+    <entity name="BomberHostFrigate" copy_from="PhantasmalHostFrigate" required_expansion_list="2_Zenith_Onslaught"
+		display_name="轰炸机宿主护卫舰"
+		display_name_for_sidebar="轰炸机宿主FFM"
+		description="远程护卫舰，拥有独特的防御能力，可生成吸收攻击的短命诱饵。护卫舰及其诱饵的主武器均可穿透护盾。"
+		unit_to_make_with_build_points_from_damage_taken="BomberHostFrigateDecoy"
+		tech_upgrades_that_benefit_me="Fusion,Medium"
+		strength_multiplier="3"
+		>
+		<system name="W1" display_name="重型聚变轨道炮" damage_per_shot="500" base_percent_damage_bypasses_personal_shields="0.8"
+		>
+			<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" comparison_type="AtLeast" compared_to="50" multiplier="1.1" />
+		</system>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="10" cap="6"/>
+		<fleet_membership name="AntiStructureMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<fleet_membership name="CooperativeFusionMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<fleet_membership name="HydraOffensiveMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<fleet_membership name="SniperMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+	</entity>
+	
+	<entity name="BomberHostFrigateDecoy" copy_from="BomberHostFrigate" display_name="轰炸机宿主护卫舰诱饵" required_expansion_list="2_Zenith_Onslaught"
+		display_name_for_sidebar="轰炸机宿主FFL诱饵"
+		description="一个短命的诱饵，伤害极小，吸引火力远离友军单位。其主炮穿透护盾。"
+		icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+		hull_points="40000" shield_points="0" energy_consumption="0"
+		build_points_per_damage_taken="0"
+		self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="3"
+		always_self_attritions="true"
+		immune_to_swapping_between_fleets="true"
+		strength_multiplier="1.5"
+		>
+		<system name="W1" damage_per_shot="50" />
+		<system name="W2" damage_per_shot="50" />
+		<system name="A" display_name="幻影吸引" category="Passive" attract_range_for_shots_against_allies="Small3" />
+	</entity>
+	
+	
+    <entity name="DecoyHostFrigate" copy_from="PhantasmalHostFrigate" required_expansion_list="2_Zenith_Onslaught"
+		display_name="诱饵宿主护卫舰"
+		display_name_for_sidebar="诱饵宿主FFM"
+		description="远程护卫舰，拥有独特的防御能力，可生成带有牵引光束的短命诱饵，在拖走攻击者的同时吸引攻击。"
+		unit_to_make_with_build_points_from_damage_taken="DecoyHostFrigateDecoy"
+		tech_upgrades_that_benefit_me="Technologist,Medium"
+		strength_multiplier="2.5"
+		>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="10" cap="6"/>
+		<fleet_membership name="CrowdControlMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<fleet_membership name="SniperMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<fleet_membership name="TractorMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<fleet_membership name="UnusualMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+	</entity>
+	
+	<entity name="DecoyHostFrigateDecoy" copy_from="DecoyHostFrigate" display_name="诱饵宿主护卫舰诱饵" required_expansion_list="2_Zenith_Onslaught"
+		display_name_for_sidebar="诱饵宿主FFL诱饵"
+		description="一个短命的诱饵，伤害极小，吸引火力远离友军单位并用牵引光束拉住敌人。"
+		icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+		hull_points="75000" shield_points="0" energy_consumption="0"
+		build_points_per_damage_taken="0"
+		self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="3"
+		always_self_attritions="true"
+		immune_to_swapping_between_fleets="true"
+		strength_multiplier="0.5"
+		>
+		<system name="W1" range="Small5" min_mark_level_to_function="8" />
+		<system name="W2" damage_per_shot="50" />
+		<system name="A" display_name="幻影吸引" category="Passive" attract_range_for_shots_against_allies="Normal2" />
+		<system name="T" display_name="牵引光束" category="Passive" tractor_range="Normal1" tractor_count="5" tractor_hits_albedo_less_than="0.5" tractor_hits_engine_gx_less_than="12" />
+	</entity>
+</root>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <setting_category name="DysonSidekick" display_name="Dyson Sidekick"
+                    description="Settings related to the 戴森 Sidekick faction."/>
+  <setting_category name="DarkZenith" display_name="Dark Zenith Sidekick"
+                    description="Settings related to how the Dark 天顶 Sidekick behaves during the game."/>
+
+  <setting_category name="ArmadaEmpire" display_name="Armada Empire"
+                    description="Settings related to how the 无敌舰队 Empire behaves during the game."/>
+
+</root>

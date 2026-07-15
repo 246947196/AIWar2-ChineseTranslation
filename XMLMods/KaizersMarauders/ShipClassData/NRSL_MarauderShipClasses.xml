@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!-- Skin: Implosion Guardian (Marauder Raider) -->
+	<ship_class_data name="PSC" display_name="PSC" short_name="PSC"
+	>
+		<debuff_modifier debuff_type="Knockback" multiplier="1.5" />
+		<debuff_modifier debuff_type="TachyonBeams" added_count="-50" />
+		<death_effect_modifier death_effect_type="Metabolization" multiplier="0" />
+		<death_effect_modifier death_effect_type="GreaterMetabolization" multiplier="0" />
+		<exotic_damage_modifier exotic_type="Ion" multiplier="0.1" />
+	</ship_class_data>
+
+	<!-- Skin: material_override_path="assets/_finalgamemeshes/guardians/implosionguardian/implosionguardian.prefab" -->
+	<ship_class_data name="PPSC" copy_from="PSC" display_name="镀层 PSC" short_name="PPSC"
+		can_be_zombified_and_similar="false"
+		final_incoming_non_exotic_damage_added="-75"
+	>
+		<debuff_modifier debuff_type="EngineSlow" multiplier="0.75" />
+		<debuff_modifier debuff_type="WeaponSlow" multiplier="0.75" />
+		<debuff_modifier debuff_type="Knockback" multiplier="1.2" />
+		<exotic_damage_modifier exotic_type="Ion" multiplier="0.45" />
+	</ship_class_data>
+
+	<!-- Skin: Implosion Guardian (Marauder Raider) -->
+	<ship_class_data name="APSC" copy_from="PPSC" display_name="装甲 PSC" short_name="APSC"
+		final_incoming_non_exotic_damage_added="-175"
+		can_be_tractored="false"
+	>
+		<debuff_modifier debuff_type="EngineSlow" multiplier="0.5" />
+		<debuff_modifier debuff_type="WeaponSlow" multiplier="0.5" />
+		<debuff_modifier debuff_type="Knockback" multiplier="0.9" />
+		<exotic_damage_modifier exotic_type="Ion" multiplier="1" />
+	</ship_class_data>
+
+	<!-- Skin: Implosion Guardian (Marauder Raider) -->
+	<ship_class_data name="RPSC" copy_from="PSC" display_name="折射 PSC" short_name="RPSC"
+		can_be_zombified_and_similar="false"
+		final_incoming_exotic_damage_multiplier="0.8"
+	>
+		<debuff_modifier debuff_type="Acid" multiplier="0.8" />
+	</ship_class_data>
+
+	<!-- Skin: Implosion Guardian (Marauder Raider) -->
+	<ship_class_data name="LPSC" copy_from="RPSC" display_name="光莹 PSC" short_name="RPSC"
+		final_incoming_exotic_damage_multiplier="0.5"
+		can_be_devoured="false"
+	>
+		<debuff_modifier debuff_type="Acid" multiplier="0.5" />
+		<death_effect_modifier death_effect_type="Necromancy" multiplier="0" />
+	</ship_class_data>
+
+	<!-- Skin: Implosion Guardian (Marauder Raider) -->
+	<ship_class_data name="SiPSC" copy_from="PSC" display_name="尖塔-灌注 PSC" short_name="SiPSC"
+		can_be_zombified_and_similar="false"
+		can_be_devoured="false"
+	>
+		<exotic_damage_modifier exotic_type="Electrotoxicity" multiplier="0.75" />
+		<exotic_damage_modifier exotic_type="RevengeShot" multiplier="0.75" />
+	</ship_class_data>
+</root>

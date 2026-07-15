@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<faction name="KaizersMarauders" team_center_color="c00563B" team_border_color="cFF5A36"
+		display_name="凯泽掠夺者" short_name="Kaizers" processing_group="KaizersMarauders"
+		base_info_source="KaizersMarauderFactionInfo_Base"
+		deep_info_source="KaizersMarauderFactionInfo_Deep"
+		type="SpecialFaction"
+		description="Lead by Dread Pirate Kaizer these deep-space 掠夺者 return from their involuntary intergalactic journey to the 人类 home galaxy. When they arrive they will begin harvesting metal and using it to heavily fortify planets with advanced turrets - then spawn highly effective ship designs in order to conquer more territory.
+
+Using Parametrium-based drive technology their ability to appear anywhere and everywhere in the blink of an eye makes them only predictable in that they are likely to be anywhere in the galaxy where there's no resistance to thwart them. Expect to see them frequently near your planets if they border on neutral or neutered worlds.
+
+As their technology is similar to the 人类 Remnant large parts of it can be... Assimilated via hacks. Be it outnumbered Raiders becoming defectors, allowing the player to acquire new centerpieces and fleet lines, or hacking turrets from outposts and the 掠夺者 首都 for battlestations, citadels and command 站s: Merging these 人类 technologies can greatly increase the power of the 人类 Remnant.
+
+In Kaizer the game receives another alternate victory condition. If this powerful boss is defeated in combat and 废弃 hacked the player can gain an incredibly powerful centerpiece that can easily break open a path to the AI's 堡垒 and home worlds, taking on entire fleets by itself in the process and win the game - before the AI's response overwhelms the player's planets.
+Note that Kaizer is barred from spawning by default and must be enabled.
+
+<color=#f25e1c>HIGHLY VARIABLE IMPACT:</color> This faction expands, and can do irreparable damage. If allowed to expand enough, they can be an enormous threat or powerful ally."
+		can_use_spire_debris="true"
+		impact="Moderate"
+		CanBeFriendlyToPlayer="true"
+		CanBeHostileToAll="true"
+		CanBeOnMinorFactionTeam="true"
+		icon_name_for_lobby="Ships1/MarauderOutpost"
+		defeat_condition="HasNoStrength"
+	>
+		<custom_field name="Intensity" display_name="Intensity" description="How much of an impact are they likely to have on gameplay? 
+		It's recommended to raise this from 5 with higher AI difficulties or with more factions.
+		At intensity 8+ the AI 戴森 Antagonize will regularly appear."
+			sort_group="200" setting_type="IntSlider" default="5" min="1" max="10"/>
+	</faction>
+</root>

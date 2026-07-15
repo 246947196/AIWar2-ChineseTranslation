@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <!--The purpose of these "AI Ship Groups" is to define a mix of ships that can be used
+      to populate a planet, or an offensive wave, or similar.  
+      This does not affect the player's fleets directly, it is AI-only.
+      
+      The weight on these says how frequently they will appear inside of each category
+      that they say they are a part of.  Basically these are children defining how many "raffle tickets"
+      they have bought inside their parent.  100 is the standard, and anything less makes them comparably more rare.
+      
+      There's no way for any one child group to know how many other groups have added themselves to the parent category,
+      so going with this "100 means regular, less means more rare" mentality keeps things feeling consistent
+      despite the fact that mods and further additions may diltute the value of any given ticket.
+      
+      By the same token, these ship groups don't define what ships are in them;
+      instead, the ships themselves say which groups they belong to, and what their weight is.
+      
+      This might seem a bit on the complicated side, but it's what lets mods play nicely together.
+      This also gives us a good mix of hand-designed and procedural aspects, since these groups
+      are each thematic in their own way (based on Puffin's work), but the game will wind up
+      choosing a randomized subset from the groups in most cases.  And further ships
+      can be designed and added that we never thought about, which carries it even further.-->
+  
+  
+  <!--Basic Ones
+      ********************************************************************************************************-->
+  
+  
+<!-- Fleetships -->  
+  <ship_group name="SneakyStrikecraft" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="MiskatonicFleetships" weight="15"/>
+    <ai_ship_cat_i_am_in category="FlenseriteFleetships" weight="15"/>
+    <ai_ship_cat_i_am_in category="ShadowenFleetships" weight="15"/>
+    <ai_ship_cat_i_am_in category="AmetorFleetships" weight="15"/>
+    <ai_ship_cat_i_am_in category="LerneanFleetships" weight="15"/>
+    <ai_ship_cat_i_am_in category="BandersnatchFleetships" weight="15"/>
+  </ship_group>
+  <ship_group name="ReplicatingStrikecraft" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="LerneanFleetships" weight="50"/>
+    <ai_ship_cat_i_am_in category="BandersnatchFleetships" weight="15"/>
+    <ai_ship_cat_i_am_in category="TiberianFleetships" weight="15"/>
+  </ship_group>
+
+  <ship_group name="ArtilleristStrikecraft" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="MiskatonicFleetships" weight="15"/>
+    <ai_ship_cat_i_am_in category="KzintiFleetships" weight="50"/>
+    <ai_ship_cat_i_am_in category="FlenseriteFleetships" weight="15"/>
+    <ai_ship_cat_i_am_in category="ShadowenFleetships" weight="15"/>
+    <ai_ship_cat_i_am_in category="AmetorFleetships" weight="15"/>
+    <ai_ship_cat_i_am_in category="LerneanFleetships" weight="15"/>
+    <ai_ship_cat_i_am_in category="BandersnatchFleetships" weight="15"/>
+  </ship_group>
+
+  <ship_group name="HeavyStrikecraft" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="MiskatonicFleetships" weight="30"/>
+    <ai_ship_cat_i_am_in category="FlenseriteFleetships" weight="15"/>
+    <ai_ship_cat_i_am_in category="ShadowenFleetships" weight="15"/>
+    <ai_ship_cat_i_am_in category="AmetorFleetships" weight="15"/>
+    <ai_ship_cat_i_am_in category="LerneanFleetships" weight="15"/>
+    <ai_ship_cat_i_am_in category="BandersnatchFleetships" weight="15"/>
+    <ai_ship_cat_i_am_in category="TiberianFleetships" weight="50"/>
+  </ship_group>
+  <ship_group name="SniperStrikecraft" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="FlenseriteFleetships" weight="30"/>
+    <ai_ship_cat_i_am_in category="ShadowenFleetships" weight="15"/>
+    <ai_ship_cat_i_am_in category="AmetorFleetships" weight="15"/>
+    <ai_ship_cat_i_am_in category="LerneanFleetships" weight="15"/>
+    <ai_ship_cat_i_am_in category="BandersnatchFleetships" weight="15"/>
+  </ship_group>
+  <ship_group name="BullyStrikecraft" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="FlenseriteFleetships" weight="30"/>
+    <ai_ship_cat_i_am_in category="ShadowenFleetships" weight="15"/>
+    <ai_ship_cat_i_am_in category="KzintiFleetships" weight="50"/>
+    <ai_ship_cat_i_am_in category="AmetorFleetships" weight="15"/>
+    <ai_ship_cat_i_am_in category="LerneanFleetships" weight="15"/>
+  </ship_group>
+
+  <ship_group name="DefensiveStrikecraft" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="MiskatonicFleetships" weight="30"/>
+    <ai_ship_cat_i_am_in category="FlenseriteFleetships" weight="15"/>
+    <ai_ship_cat_i_am_in category="KzintiFleetships" weight="30"/>
+    <ai_ship_cat_i_am_in category="AmetorFleetships" weight="15"/>
+    <ai_ship_cat_i_am_in category="LerneanFleetships" weight="80"/>
+  </ship_group>
+  
+  <ship_group name="ClassicTrioStrikecraft" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="MiskatonicFleetships" weight="20"/>
+    <ai_ship_cat_i_am_in category="FlenseriteFleetships" weight="15"/>
+    <ai_ship_cat_i_am_in category="AmetorFleetships" weight="15"/>
+    <ai_ship_cat_i_am_in category="LerneanFleetships" weight="15"/>
+  </ship_group>
+
+  <ship_group name="SupporterStrikecraft" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="MiskatonicFleetships" weight="5"/>
+    <ai_ship_cat_i_am_in category="FlenseriteFleetships" weight="15"/>
+    <ai_ship_cat_i_am_in category="ShadowenFleetships" weight="15"/>
+    <ai_ship_cat_i_am_in category="AmetorFleetships" weight="15"/>
+    <ai_ship_cat_i_am_in category="LerneanFleetships" weight="15"/>
+    <ai_ship_cat_i_am_in category="BandersnatchFleetships" weight="50"/>
+  </ship_group>
+
+  <ship_group name="ScourgeRacialWarriors" can_be_empty_or_filled_and_no_complaints="true" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="MiskatonicFleetships" weight="50"/>
+    <ai_ship_cat_i_am_in category="FlenseriteFleetships" weight="50"/>
+    <ai_ship_cat_i_am_in category="ShadowenFleetships" weight="15"/>
+    <ai_ship_cat_i_am_in category="AmetorFleetships" weight="15"/>
+    <ai_ship_cat_i_am_in category="HatefulFleetships" weight="50"/>
+  </ship_group>
+  
+  <ship_group name="NanocaustFleetships" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="MiskatonicFleetships" weight="50"/>
+    <ai_ship_cat_i_am_in category="FlenseriteFleetships" weight="50"/>
+    <ai_ship_cat_i_am_in category="HatefulFleetships" weight="50"/>
+  </ship_group>
+
+  <ship_group name="MassVanguardHydra" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="LerneanFleetships" weight="100"/>
+  </ship_group>
+
+  <ship_group name="FragileFreakyStrikecraft" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="LerneanFleetships" weight="100"/>
+    <ai_ship_cat_i_am_in category="ShadowenFleetships" weight="60"/>
+    <ai_ship_cat_i_am_in category="BandersnatchFleetships" weight="50"/>
+  </ship_group>
+
+  <ship_group name="FragileAntiHighArmourMix" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="LerneanFleetships" weight="100"/>
+    <ai_ship_cat_i_am_in category="ShadowenFleetships" weight="60"/>
+    <ai_ship_cat_i_am_in category="KzintiFleetships" weight="30"/>
+    <ai_ship_cat_i_am_in category="AmetorFleetships" weight="60"/>
+    <ai_ship_cat_i_am_in category="BandersnatchFleetships" weight="50"/>
+    <ai_ship_cat_i_am_in category="TiberianFleetships" weight="20"/>
+  </ship_group>
+
+  <ship_group name="DarkAllianceFleetships" can_be_empty_or_filled_and_no_complaints="true" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="MiskatonicFleetships" weight="10"/>
+    <ai_ship_cat_i_am_in category="FlenseriteFleetships" weight="60"/>
+  </ship_group>
+
+  <ship_group name="HatingFleetships" can_be_empty_or_filled_and_no_complaints="true">
+    <ai_ship_cat_i_am_in category="HatefulFleetships" weight="150"/>
+  </ship_group>
+
+
+  <ship_group name="ArmadaStrikecraft" can_be_empty_or_filled_and_no_complaints="true">
+    <ai_ship_cat_i_am_in category="KzintiFleetships" weight="300"/>
+    <ai_ship_cat_i_am_in category="BandersnatchFleetships" weight="50"/>
+  </ship_group>
+
+  <ship_group name="TiberiumInfusedStrikecraft" can_be_empty_or_filled_and_no_complaints="true">
+    <ai_ship_cat_i_am_in category="TiberianFleetships" weight="100"/>
+    <ai_ship_cat_i_am_in category="BandersnatchFleetships" weight="50"/>
+  </ship_group>
+
+  <ship_group name="HydraFleetships" can_be_empty_or_filled_and_no_complaints="true">
+    <ai_ship_cat_i_am_in category="LerneanFleetships" weight="200"/>
+    <ai_ship_cat_i_am_in category="TiberianFleetships" weight="20"/>
+  </ship_group>
+  
+  <!--Guardians -->
+  <ship_group name="RiotPoliceGuardians" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="ShadowenGuardians" weight="40"/>
+    <ai_ship_cat_i_am_in category="AmetorGuardians" weight="15"/>
+    <ai_ship_cat_i_am_in category="LerneanWardenGuardians" weight="10"/>
+    <ai_ship_cat_i_am_in category="WandererGuardians" weight="60"/>
+    
+  </ship_group>
+  <ship_group name="CoreGuardians" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="ShadowenGuardians" weight="40"/>
+    <ai_ship_cat_i_am_in category="LerneanWardenGuardians" weight="40"/>
+    <ai_ship_cat_i_am_in category="BandersnatchPraetorianGuardians" weight="40"/>
+    <ai_ship_cat_i_am_in category="BandersnatchWardenGuardians" weight="40"/>
+    <ai_ship_cat_i_am_in category="WandererGuardians" weight="60"/>
+  </ship_group>
+
+  <ship_group name="PoliceGuardians" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="MiskatonicGuardians" weight="10"/>
+    <ai_ship_cat_i_am_in category="FlenseriteGuardians" weight="40"/>
+    <ai_ship_cat_i_am_in category="ShadowenGuardians" weight="40"/>
+    <ai_ship_cat_i_am_in category="AmetorPraetorianGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="AmetorWardenGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="AmetorGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="WandererGuardians" weight="60"/>
+  </ship_group>
+  <ship_group name="SwarmerCloakingForcefieldAndCarrierGuardians" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="LerneanPraetorianGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="LerneanWardenGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="LerneanGuardians" weight="40"/>
+    <ai_ship_cat_i_am_in category="KzintiPraetorianGuardians" weight="40"/>
+    <ai_ship_cat_i_am_in category="WraithGuardians" weight="60"/>
+    <ai_ship_cat_i_am_in category="WandererGuardians" weight="60"/>
+  </ship_group>
+
+  <ship_group name="SwarmerMassCarrierGuardiansWithSupport" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="FlenseriteGuardians" weight="50"/>
+    <ai_ship_cat_i_am_in category="ShadowenGuardians" weight="40"/>
+    <ai_ship_cat_i_am_in category="LerneanPraetorianGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="WandererGuardians" weight="60"/>
+  </ship_group>
+
+  <ship_group name="WardenGuardians" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="MiskatonicWardenGuardians" weight="50"/>
+    <ai_ship_cat_i_am_in category="ShadowenWardenGuardians" weight="40"/>
+    <ai_ship_cat_i_am_in category="FlenseriteWardenGuardians" weight="40"/>
+    <ai_ship_cat_i_am_in category="KzintiWardenGuardians" weight="10"/>
+    <ai_ship_cat_i_am_in category="AmetorWardenGuardians" weight="40"/>
+    <ai_ship_cat_i_am_in category="LerneanWardenGuardians" weight="40"/>
+  </ship_group>
+  
+  <ship_group name="EnergeticGuardians" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="FlenseriteGuardians" weight="50"/>
+    <ai_ship_cat_i_am_in category="LerneanGuardians" weight="40"/>
+    <ai_ship_cat_i_am_in category="BandersnatchPraetorianGuardians" weight="40"/>
+    <ai_ship_cat_i_am_in category="BandersnatchWardenGuardians" weight="40"/>
+    <ai_ship_cat_i_am_in category="WandererGuardians" weight="60"/>
+    <ai_ship_cat_i_am_in category="KzintiWardenGuardians" weight="10"/>
+  </ship_group>
+  
+  <ship_group name="BombardmentGuardiansWithSupport" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="MiskatonicGuardians" weight="30"/>
+    <ai_ship_cat_i_am_in category="KzintiGuardians" weight="30"/>
+    <ai_ship_cat_i_am_in category="ShadowenGuardians" weight="50"/>
+    <ai_ship_cat_i_am_in category="LerneanGuardians" weight="40"/>
+    <ai_ship_cat_i_am_in category="LerneanWardenGuardians" weight="40"/>
+  </ship_group>
+  
+  <ship_group name="EyeGuardiansWithAOESupport" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="MiskatonicGuardians" weight="20"/>
+    <ai_ship_cat_i_am_in category="LerneanWardenGuardians" weight="40"/>
+    <ai_ship_cat_i_am_in category="LerneanPraetorianGuardians" weight="40"/>
+  </ship_group>  
+  <ship_group name="EyeGuardiansWithAntiLargeSupport" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="FlenseriteGuardians" weight="20"/>
+    <ai_ship_cat_i_am_in category="ShadowenGuardians" weight="50"/>
+    <ai_ship_cat_i_am_in category="AmetorPraetorianGuardians" weight="50"/>
+    <ai_ship_cat_i_am_in category="AmetorWardenGuardians" weight="50"/>
+    <ai_ship_cat_i_am_in category="AmetorGuardians" weight="50"/>
+  </ship_group>  
+  
+  <ship_group name="OverrunnerGuardians" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="MiskatonicGuardians" weight="30"/>
+    <ai_ship_cat_i_am_in category="AmetorPraetorianGuardians" weight="10"/>
+    <ai_ship_cat_i_am_in category="AmetorWardenGuardians" weight="10"/>
+  </ship_group>  
+
+  <ship_group name="AntiLargeGuardians" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="MiskatonicGuardians" weight="30"/>
+    <ai_ship_cat_i_am_in category="WandererGuardians" weight="10"/>
+  </ship_group>
+
+  <ship_group name="AntiMeleeGuardians" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="FlenseriteGuardians" weight="50"/>
+  </ship_group>
+  <ship_group name="ParalysisAndVampireGuardians" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="FlenseriteWardenGuardians" weight="50"/>
+    <ai_ship_cat_i_am_in category="KzintiPraetorianGuardians" weight="40"/>
+  </ship_group>
+    
+  <ship_group name="HullPercentageGuardians" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="FlenseriteGuardians" weight="50"/>
+    <ai_ship_cat_i_am_in category="ShadowenGuardians" weight="15"/>
+    <ai_ship_cat_i_am_in category="KzintiGuardians" weight="30"/>
+    <ai_ship_cat_i_am_in category="BandersnatchPraetorianGuardians" weight="40"/>
+    <ai_ship_cat_i_am_in category="BandersnatchWardenGuardians" weight="40"/>
+  </ship_group>
+
+  <ship_group name="TemperamentalsWithSupport" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="FlenseriteGuardians" weight="50"/>
+    <ai_ship_cat_i_am_in category="ShadowenGuardians" weight="50"/>
+    <ai_ship_cat_i_am_in category="KzintiGuardians" weight="30"/>
+  </ship_group>
+
+  <ship_group name="AntiArmorGuardians" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="MiskatonicGuardians" weight="30"/>
+    <ai_ship_cat_i_am_in category="AmetorGuardians" weight="50"/>
+    <ai_ship_cat_i_am_in category="TiberianGuardians" weight="50"/>
+  </ship_group>
+
+  <ship_group name="LeecherGuardians" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="MiskatonicPraetorianGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="ShadowenPraetorianGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="AmetorPraetorianGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="AmetorGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="TiberianGuardians" weight="50"/>
+  </ship_group> 
+  <ship_group name="UndeadGuardians" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="MiskatonicPraetorianGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="ShadowenPraetorianGuardians" weight="50"/>
+    <ai_ship_cat_i_am_in category="FlenseritePraetorianGuardians" weight="50"/>
+  </ship_group>
+  <ship_group name="SwarmerOverrunnerGuardians" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="MiskatonicPraetorianGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="LerneanGuardians" weight="10"/>
+    <ai_ship_cat_i_am_in category="KzintiGuardians" weight="30"/>
+  </ship_group> 
+
+  <ship_group name="ScourgeHybrids" can_be_empty_or_filled_and_no_complaints="true" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="MiskatonicGuardians" weight="10"/>
+    <ai_ship_cat_i_am_in category="HatefulGuardians" weight="50"/>
+    <ai_ship_cat_i_am_in category="FlenseritePraetorianGuardians" weight="5"/>
+  </ship_group>
+  <ship_group name="DarkAllianceGuardians" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="FlenseriteGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="FlenseritePraetorianGuardians" weight="100"/>
+  </ship_group>
+  <ship_group name="SpireLowTier" can_be_empty_or_filled_and_no_complaints="true" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="HatefulGuardians" weight="30"/>
+  </ship_group>
+  <ship_group name="DarkSpireGuardians" can_be_empty_or_filled_and_no_complaints="true" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="MiskatonicGuardians" weight="10"/>
+    <ai_ship_cat_i_am_in category="FlenseriteWardenGuardians" weight="10"/>
+    <ai_ship_cat_i_am_in category="WandererGuardians" weight="100"/>
+  </ship_group>
+  <ship_group name="ZAGuardians" can_be_empty_or_filled_and_no_complaints="true" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="FlenseritePraetorianGuardians" weight="50"/>
+    <ai_ship_cat_i_am_in category="FlenseriteWardenGuardians" weight="10"/>
+    <ai_ship_cat_i_am_in category="ShadowenWardenGuardians" weight="15"/>
+    <ai_ship_cat_i_am_in category="WandererGuardians" weight="100"/>
+  </ship_group>
+
+  <ship_group name="VenatorGuardians" can_be_empty_or_filled_and_no_complaints="true" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="MiskatonicGuardians" weight="10"/>
+    <ai_ship_cat_i_am_in category="MiskatonicPraetorianGuardians" weight="50"/>
+    <ai_ship_cat_i_am_in category="LerneanPraetorianGuardians" weight="50"/>
+    <ai_ship_cat_i_am_in category="BandersnatchPraetorianGuardians" weight="50"/>
+  </ship_group>
+
+  <ship_group name="LovecraftianGuardians" can_be_empty_or_filled_and_no_complaints="true">
+    <ai_ship_cat_i_am_in category="MiskatonicGuardians" weight="250"/>
+    <ai_ship_cat_i_am_in category="MiskatonicPraetorianGuardians" weight="150"/>
+    <ai_ship_cat_i_am_in category="MiskatonicWardenGuardians" weight="150"/>
+    <ai_ship_cat_i_am_in category="JJBGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="AmetorPraetorianGuardians" weight="10"/>
+    <ai_ship_cat_i_am_in category="AmetorWardenGuardians" weight="10"/>
+    <ai_ship_cat_i_am_in category="AmetorGuardians" weight="10"/>
+    <ai_ship_cat_i_am_in category="BandersnatchPraetorianGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="BandersnatchWardenGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="BandersnatchGuardians" weight="100"/>
+    
+  </ship_group>
+  <ship_group name="HatingGuardians" can_be_empty_or_filled_and_no_complaints="true">
+    <ai_ship_cat_i_am_in category="HatefulGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="HatefulWardenGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="HatefulPraetorianGuardians" weight="100"/>
+  </ship_group>
+  <ship_group name="PlayerCloakedFrigates" can_be_empty_or_filled_and_no_complaints="true">
+    <ai_ship_cat_i_am_in category="MiskatonicWardenGuardians" weight="40"/>
+    <ai_ship_cat_i_am_in category="ShadowenWardenGuardians" weight="40"/>
+    <ai_ship_cat_i_am_in category="FlenseriteWardenGuardians" weight="40"/>
+    <ai_ship_cat_i_am_in category="KzintiWardenGuardians" weight="40"/>
+    <ai_ship_cat_i_am_in category="AmetorWardenGuardians" weight="40"/>
+    <ai_ship_cat_i_am_in category="LerneanWardenGuardians" weight="40"/>
+  </ship_group>
+  <ship_group name="ArmadaGuardians" can_be_empty_or_filled_and_no_complaints="true">
+    <ai_ship_cat_i_am_in category="KzintiGuardians" weight="250"/>
+    <ai_ship_cat_i_am_in category="KzintiPraetorianGuardians" weight="250"/>
+    <ai_ship_cat_i_am_in category="KzintiWardenGuardians" weight="250"/>
+    <ai_ship_cat_i_am_in category="JJBGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="HatefulPraetorianGuardians" weight="10"/>
+    <ai_ship_cat_i_am_in category="BandersnatchGuardians" weight="50"/>
+  </ship_group>
+
+  <ship_group name="TiberiumInfusedGuardians" can_be_empty_or_filled_and_no_complaints="true">
+    <ai_ship_cat_i_am_in category="TiberianGuardians" weight="250"/>
+    <ai_ship_cat_i_am_in category="TiberianPraetorianGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="TiberianWardenGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="JJBGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="BandersnatchGuardians" weight="50"/>
+  </ship_group>
+  <ship_group name="TiberiumInfusedWardenGuardians" can_be_empty_or_filled_and_no_complaints="true">
+    <ai_ship_cat_i_am_in category="TiberianWardenGuardians" weight="250"/>
+  </ship_group>
+  <ship_group name="TiberiumInfusedPraetorianGuardians" can_be_empty_or_filled_and_no_complaints="true">
+    <ai_ship_cat_i_am_in category="TiberianPraetorianGuardians" weight="250"/>
+  </ship_group>
+
+  <ship_group name="FlensingGuardians" can_be_empty_or_filled_and_no_complaints="true">
+    <ai_ship_cat_i_am_in category="FlenseriteGuardians" weight="200"/>
+    <ai_ship_cat_i_am_in category="FlenseritePraetorianGuardians" weight="200"/>
+    <ai_ship_cat_i_am_in category="FlenseriteWardenGuardians" weight="200"/>
+    <ai_ship_cat_i_am_in category="AmetorPraetorianGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="AmetorWardenGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="AmetorGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="JJBGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="BandersnatchPraetorianGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="BandersnatchWardenGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="BandersnatchGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="HatefulPraetorianGuardians" weight="10"/>
+
+  </ship_group>
+  <ship_group name="ShadowyGuardians" can_be_empty_or_filled_and_no_complaints="true">
+    <ai_ship_cat_i_am_in category="ShadowenGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="ShadowenPraetorianGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="ShadowenWardenGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="JJBGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="BandersnatchPraetorianGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="BandersnatchWardenGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="BandersnatchGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="HatefulWardenGuardians" weight="10"/>
+  </ship_group>
+  <ship_group name="HydraGuardians" can_be_empty_or_filled_and_no_complaints="true">
+    <ai_ship_cat_i_am_in category="LerneanGuardians" weight="200"/>
+    <ai_ship_cat_i_am_in category="LerneanWardenGuardians" weight="200"/>
+    <ai_ship_cat_i_am_in category="LerneanPraetorianGuardians" weight="200"/>
+    <ai_ship_cat_i_am_in category="ShadowenGuardians" weight="10"/>
+    <ai_ship_cat_i_am_in category="AmetorGuardians" weight="10"/>
+    <ai_ship_cat_i_am_in category="FlenseriteGuardians" weight="10"/>
+    <ai_ship_cat_i_am_in category="MiskatonicGuardians" weight="10"/>
+    <ai_ship_cat_i_am_in category="JJBGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="BandersnatchPraetorianGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="BandersnatchWardenGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="BandersnatchGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="HatefulWardenGuardians" weight="10"/>
+    <ai_ship_cat_i_am_in category="TiberianGuardians" weight="100"/>
+  </ship_group>
+
+  <!-- Dire Guardians and Exo Leaders -->
+    <ship_group name="SpireMidTier" can_be_empty_or_filled_and_no_complaints="true" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="HatefulDireGuardians" weight="60"/>
+    </ship_group>
+  <ship_group name="AnyDireGuardians" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="MiskatonicDireGuardians" weight="50"/>
+    <ai_ship_cat_i_am_in category="FlenseriteDireGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="ShadowenDireGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="ShadowenExoLeaders" weight="20"/>
+    <ai_ship_cat_i_am_in category="AmetorExoLeaders" weight="100"/>
+    <ai_ship_cat_i_am_in category="AmetorDireGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="LerneanExoLeaders" weight="100"/>
+    <ai_ship_cat_i_am_in category="LerneanDireGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="BandersnatchExoLeaders" weight="50"/>
+    <ai_ship_cat_i_am_in category="BandersnatchDireGuardians" weight="50"/>
+    <ai_ship_cat_i_am_in category="KzintiDireGuardians" weight="40"/>
+    <ai_ship_cat_i_am_in category="TiberianDireGuardians" weight="40"/>
+  </ship_group>
+  <ship_group name="DarkSpireDireGuardians" can_be_empty_or_filled_and_no_complaints="true" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="MiskatonicDireGuardians" weight="10"/>
+    <ai_ship_cat_i_am_in category="LerneanExoLeaders" weight="10"/>
+    <ai_ship_cat_i_am_in category="LerneanDireGuardians" weight="10"/>
+  </ship_group>
+
+  <ship_group name="FlensingDireGuardians" can_be_empty_or_filled_and_no_complaints="true">
+    <ai_ship_cat_i_am_in category="FlenseriteDireGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="FlenseriteExoLeaders" weight="100"/>
+    <ai_ship_cat_i_am_in category="JJBDireGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="AmetorExoLeaders" weight="100"/>
+    <ai_ship_cat_i_am_in category="AmetorDireGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="BandersnatchExoLeaders" weight="100"/>
+    <ai_ship_cat_i_am_in category="BandersnatchDireGuardians" weight="100"/>
+
+  </ship_group>
+  <ship_group name="ArmadaDireGuardians" can_be_empty_or_filled_and_no_complaints="true">
+    <ai_ship_cat_i_am_in category="KzintiExoLeaders" weight="100"/>
+    <ai_ship_cat_i_am_in category="KzintiDireGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="BandersnatchDireGuardians" weight="50"/>
+    <ai_ship_cat_i_am_in category="JJBDireGuardians" weight="50"/>
+  </ship_group>
+  <ship_group name="TiberiumInfusedDireGuardians" can_be_empty_or_filled_and_no_complaints="true">
+    <ai_ship_cat_i_am_in category="TiberianExoLeaders" weight="100"/>
+    <ai_ship_cat_i_am_in category="TiberianDireGuardians" weight="100"/>
+  </ship_group>
+
+  <ship_group name="ShadowyDireGuardians" can_be_empty_or_filled_and_no_complaints="true">
+    <ai_ship_cat_i_am_in category="ShadowenDireGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="ShadowenExoLeaders" weight="100"/>
+    <ai_ship_cat_i_am_in category="JJBDireGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="AmetorExoLeaders" weight="10"/>
+    <ai_ship_cat_i_am_in category="AmetorDireGuardians" weight="10"/>
+    <ai_ship_cat_i_am_in category="BandersnatchExoLeaders" weight="100"/>
+    <ai_ship_cat_i_am_in category="BandersnatchDireGuardians" weight="100"/>
+
+  </ship_group>
+
+  <ship_group name="LovecraftianDireGuardians" can_be_empty_or_filled_and_no_complaints="true">
+    <ai_ship_cat_i_am_in category="MiskatonicDireGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="MiskatonicExoLeaders" weight="100"/>
+    <ai_ship_cat_i_am_in category="JJBDireGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="AmetorExoLeaders" weight="10"/>
+    <ai_ship_cat_i_am_in category="AmetorDireGuardians" weight="10"/>
+    <ai_ship_cat_i_am_in category="BandersnatchExoLeaders" weight="100"/>
+    <ai_ship_cat_i_am_in category="BandersnatchDireGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="HatefulDireGuardians" weight="20"/>
+
+  </ship_group>
+  <ship_group name="ArnaudGolems" can_be_empty_or_filled_and_no_complaints="true">
+    <ai_ship_cat_i_am_in category="ShadowenExoLeaders" weight="20"/>
+    <ai_ship_cat_i_am_in category="AmetorExoLeaders" weight="100"/>
+    <ai_ship_cat_i_am_in category="LerneanExoLeaders" weight="100"/>
+    <ai_ship_cat_i_am_in category="BandersnatchExoLeaders" weight="50"/>
+    <ai_ship_cat_i_am_in category="HatefulDireGuardians" weight="40"/>
+    <ai_ship_cat_i_am_in category="HatefulExoLeaders" weight="100"/>
+  </ship_group>
+  <ship_group name="HatingDireGuardians" can_be_empty_or_filled_and_no_complaints="true">
+    <ai_ship_cat_i_am_in category="HatefulDireGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="HatefulExoLeaders" weight="100"/>
+  </ship_group>
+
+  <ship_group name="HydraDireGuardians" can_be_empty_or_filled_and_no_complaints="true">
+    <ai_ship_cat_i_am_in category="LerneanExoLeaders" weight="100"/>
+    <ai_ship_cat_i_am_in category="LerneanDireGuardians" weight="100"/>
+    <ai_ship_cat_i_am_in category="MiskatonicDireGuardians" weight="10"/>
+    <ai_ship_cat_i_am_in category="FlenseriteDireGuardians" weight="10"/>
+    <ai_ship_cat_i_am_in category="ShadowenDireGuardians" weight="10"/>
+    <ai_ship_cat_i_am_in category="AmetorDireGuardians" weight="10"/>
+    <ai_ship_cat_i_am_in category="BandersnatchExoLeaders" weight="100"/>
+    <ai_ship_cat_i_am_in category="BandersnatchDireGuardians" weight="100"/>
+
+  </ship_group>
+
+  <ship_group name="GolemExoLeaders" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="MiskatonicDireGuardians" weight="10"/>
+    <ai_ship_cat_i_am_in category="MiskatonicExoLeaders" weight="10"/>
+    <ai_ship_cat_i_am_in category="FlenseriteExoLeaders" weight="20"/>
+    <ai_ship_cat_i_am_in category="KzintiExoLeaders" weight="20"/>
+    <ai_ship_cat_i_am_in category="ShadowenDireGuardians" weight="10"/>
+    <ai_ship_cat_i_am_in category="ShadowenExoLeaders" weight="10"/>
+    <ai_ship_cat_i_am_in category="LerneanExoLeaders" weight="10"/>
+    <ai_ship_cat_i_am_in category="LerneanDireGuardians" weight="10"/>
+  </ship_group>
+
+  <ship_group name="DireExoLeaders" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="MiskatonicExoLeaders" weight="20"/>
+    <ai_ship_cat_i_am_in category="FlenseriteExoLeaders" weight="20"/>
+    <ai_ship_cat_i_am_in category="ShadowenExoLeaders" weight="20"/>
+    <ai_ship_cat_i_am_in category="AmetorExoLeaders" weight="80"/>
+    <ai_ship_cat_i_am_in category="LerneanExoLeaders" weight="80"/>
+  </ship_group>
+
+  <ship_group name="ScourgeExoLeaders" can_be_empty_or_filled_and_no_complaints="true" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="MiskatonicExoLeaders" weight="10"/>
+  </ship_group>
+
+  <ship_group name="TiberiumInfusedExoLeaders" can_be_empty_or_filled_and_no_complaints="true" >
+    <ai_ship_cat_i_am_in category="TiberianExoLeaders" weight="10"/>
+  </ship_group>
+
+  <!-- Guard Posts -->
+  <ship_group name="LovecraftianGuardPosts" can_be_empty_or_filled_and_no_complaints="true">
+    <ai_ship_cat_i_am_in category="MiskatonicGuardPosts" weight="100"/>
+    <ai_ship_cat_i_am_in category="ShadowenGuardPosts" weight="10"/>
+    <ai_ship_cat_i_am_in category="FlenseriteGuardPosts" weight="10"/>
+    <ai_ship_cat_i_am_in category="AmetorGuardPosts" weight="10"/>
+    <ai_ship_cat_i_am_in category="KzintiGuardPosts" weight="10"/>
+    <ai_ship_cat_i_am_in category="LerneanGuardPosts" weight="10"/>
+    <ai_ship_cat_i_am_in category="JJBGuardPosts" weight="100"/>
+    <ai_ship_cat_i_am_in category="BandersnatchGuardPosts" weight="100"/>
+  </ship_group>
+  <ship_group name="AnyGuardPosts_FreeforAll" is_partial_record="true">
+    <ai_ship_cat_i_am_in category="MiskatonicGuardPosts" weight="20"/>
+    <ai_ship_cat_i_am_in category="FlenseriteGuardPosts" weight="20"/>
+    <ai_ship_cat_i_am_in category="AmetorGuardPosts" weight="20"/>
+    <ai_ship_cat_i_am_in category="KzintiGuardPosts" weight="100"/>
+    <ai_ship_cat_i_am_in category="ShadowenGuardPosts" weight="80"/>
+    <ai_ship_cat_i_am_in category="LerneanGuardPosts" weight="80"/>
+    <ai_ship_cat_i_am_in category="BandersnatchGuardPosts" weight="10"/>
+  </ship_group>
+  <ship_group name="FlensingGuardPosts" can_be_empty_or_filled_and_no_complaints="true">
+    <ai_ship_cat_i_am_in category="FlenseriteGuardPosts" weight="100"/>
+    <ai_ship_cat_i_am_in category="AmetorGuardPosts" weight="100"/>
+    <ai_ship_cat_i_am_in category="KzintiGuardPosts" weight="100"/>
+    <ai_ship_cat_i_am_in category="ShadowenGuardPosts" weight="10"/>
+    <ai_ship_cat_i_am_in category="MiskatonicGuardPosts" weight="10"/>
+    <ai_ship_cat_i_am_in category="LerneanGuardPosts" weight="10"/>
+    <ai_ship_cat_i_am_in category="JJBGuardPosts" weight="100"/>
+    <ai_ship_cat_i_am_in category="BandersnatchGuardPosts" weight="100"/>
+  </ship_group>
+
+  <ship_group name="ArmadaGuardPosts" can_be_empty_or_filled_and_no_complaints="true">
+    <ai_ship_cat_i_am_in category="KzintiGuardPosts" weight="100"/>
+  </ship_group>
+
+  <!-- Turrets -->
+  <ship_group name="LovecraftianTurrets" can_be_empty_or_filled_and_no_complaints="true">
+    <ai_ship_cat_i_am_in category="MiskatonicTurrets" weight="100"/>
+  </ship_group>
+  
+</root>

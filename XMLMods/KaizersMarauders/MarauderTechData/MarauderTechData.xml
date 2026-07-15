@@ -1,0 +1,643 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!-- All of the mark upgrade techs require the other mark upgrade techs to be at most 8 levels = 2 marks behind - this is to prevent KM from stacking too heavily into one tech -->
+	
+	<marauder_tech name="MarkLevels_FleetShips" display_name="Fleet Ship Mark Levels"
+		description="Upgrades the mark levels of all fleet ships. Starts at 1, each upgrade add a 25% for the starting mark level of newly spawned ships to be 1 greater than the natural number threshold (i.e. a mark level of 1.25 means that there's a 75% chance for the unit to spawn at mark level 1, and 25% chance of spawning at mark level 2').
+When it reaches a new threshold all existing units of lower mark can be upgraded to the threshold."
+		serialization_index="0"
+		base_research_time="60" research_time_multiplier_per_upgrade="1.1"
+		base_tech_level="1" tech_type="MarkLevels_FleetShips"
+		required_tech_list="1,2,3" required_tech_level_list="-2,-2,-2" />
+	
+	<marauder_tech name="MarkLevels_Defenses" display_name="防御 Mark Levels"
+		description="Upgrades the mark levels of all defenses. Starts at 1, each upgrade add a 25% for the starting mark level of newly spawned ships to be 1 greater than the natural number threshold (i.e. a mark level of 1.25 means that there's a 75% chance for the unit to spawn at mark level 1, and 25% chance of spawning at mark level 2').
+When it reaches a new threshold all existing units of lower mark can be upgraded to the threshold."
+		serialization_index="1"
+		base_research_time="60" research_time_multiplier_per_upgrade="1.1"
+		base_tech_level="1" tech_type="MarkLevels_Defenses"
+		required_tech_list="0,2,3" required_tech_level_list="-2,-2,-2" />
+	
+	<marauder_tech name="MarkLevels_Centerpieces" display_name="Centerpiece Mark Levels"
+		description="Upgrades the mark levels of all centerpieces. Starts at 1, each upgrade add a 25% for the starting mark level of newly spawned ships to be 1 greater than the natural number threshold (i.e. a mark level of 1.25 means that there's a 75% chance for the unit to spawn at mark level 1, and 25% chance of spawning at mark level 2').
+When it reaches a new threshold all existing units of lower mark can be upgraded to the threshold."
+		serialization_index="2"
+		base_research_time="60" research_time_multiplier_per_upgrade="1.1"
+		base_tech_level="1" tech_type="MarkLevels_Centerpieces"
+		required_tech_list="0,1,3" required_tech_level_list="-2,-2,-2" />
+	
+	<marauder_tech name="MarkLevels_Economy" display_name="Economy Mark Levels"
+		description="Upgrades the mark levels of all economy units. Starts at 1, each upgrade add a 25% for the starting mark level of newly spawned ships to be 1 greater than the natural number threshold (i.e. a mark level of 1.25 means that there's a 75% chance for the unit to spawn at mark level 1, and 25% chance of spawning at mark level 2').
+When it reaches a new threshold all existing units of lower mark can be upgraded to the threshold."
+		serialization_index="3"
+		base_research_time="60" research_time_multiplier_per_upgrade="1.1"
+		base_tech_level="1" tech_type="MarkLevels_Economy"
+		required_tech_list="0,1,2" required_tech_level_list="-2,-2,-2" />
+	
+	
+	<!-- Tier 1 Fleet Ships -->
+	
+	<marauder_tech name="UnlockNeedleInterceptorSeries" display_name="飞针拦截机 Series"
+		description="Unlocks the upgrades of the 飞针拦截机."
+		serialization_index="4"
+		base_research_time="240" research_time_multiplier_per_upgrade="2"
+		base_tech_level="1" tech_type="UnlockEntityLine" entity_line_type="FleetShips"
+		base_entity="NeedleInterceptor" upgraded_entity="PlatedNeedleInterceptor"
+		required_tech_list="0" required_tech_level_list="1" />
+	
+	<marauder_tech name="UnlockNeedleInterceptorSeries" is_partial_record="true" required_expansion_list="2_Zenith_Onslaught"
+		faction_upgraded_entity="ArmoredNeedleInterceptor"
+		faction_upgrade_resource_index="9" faction_upgrade_resource_cost="1000" />
+	
+	
+	<marauder_tech name="UnlockMortarHeavyCorvetteSeries" display_name="迫击炮重型护卫舰 Series"
+		description="Unlocks the upgrades of the 迫击炮重型护卫舰."
+		serialization_index="5"
+		base_research_time="240" research_time_multiplier_per_upgrade="2"
+		base_tech_level="1" tech_type="UnlockEntityLine" entity_line_type="FleetShips"
+		base_entity="MortarHeavyCorvette" upgraded_entity="GuardMortarHeavyCorvette"
+		required_tech_list="0" required_tech_level_list="1" />
+	
+	<marauder_tech name="UnlockMortarHeavyCorvetteSeries" is_partial_record="true" required_expansion_list="2_Zenith_Onslaught"
+		faction_upgraded_entity="ProtectorMortarHeavyCorvette"
+		faction_upgrade_resource_index="10" faction_upgrade_resource_cost="1000" />
+	
+	
+	<marauder_tech name="UnlockStingLightFrigateSeries" display_name="螫刺轻型护卫舰 Series"
+		description="Unlocks the upgrades of the M螫刺轻型护卫舰."
+		serialization_index="6"
+		base_research_time="240" research_time_multiplier_per_upgrade="2"
+		base_tech_level="1" tech_type="UnlockEntityLine" entity_line_type="FleetShips"
+		base_entity="StingLightFrigate" upgraded_entity="CloakedStingLightFrigate"
+		required_tech_list="0" required_tech_level_list="1" />
+	
+	<marauder_tech name="UnlockStingLightFrigateSeries" is_partial_record="true" required_expansion_list="2_Zenith_Onslaught"
+		faction_upgraded_entity="MercurialStingLightFrigate"
+		faction_upgrade_resource_index="13" faction_upgrade_resource_cost="1000" />
+	
+	
+	<!-- Tier 2 Fleet Ships -->
+	
+	<marauder_tech name="UnlockTorpedoBomberSeries" display_name="鱼雷轰炸机 Series"
+		description="Unlocks the base variant and upgrades of the 鱼雷轰炸机."
+		serialization_index="7"
+		base_research_time="120" research_time_multiplier_per_upgrade="2"
+		base_tech_level="0" tech_type="UnlockEntityLine" entity_line_type="FleetShips"
+		base_entity="TorpedoBomber" upgraded_entity="StrikeTorpedoBomber"
+		required_tech_list="0" required_tech_level_list="2" />
+	
+	<marauder_tech name="UnlockTorpedoBomberSeries" is_partial_record="true" required_expansion_list="2_Zenith_Onslaught"
+		faction_upgraded_entity="BlitzTorpedoBomber"
+		faction_upgrade_resource_index="11" faction_upgrade_resource_cost="1000" />
+	
+	
+	<marauder_tech name="UnlockDisrupterCorvetteSeries" display_name="干扰者护卫舰 Series"
+		description="Unlocks the base variant and upgrades of the 干扰者护卫舰."
+		serialization_index="8"
+		base_research_time="120" research_time_multiplier_per_upgrade="2"
+		base_tech_level="0" tech_type="UnlockEntityLine" entity_line_type="FleetShips"
+		base_entity="DisrupterCorvette" upgraded_entity="PlatedDisrupterCorvette"
+		required_tech_list="0" required_tech_level_list="2" />
+	
+	<marauder_tech name="UnlockDisrupterCorvetteSeries" is_partial_record="true" required_expansion_list="2_Zenith_Onslaught"
+		faction_upgraded_entity="ArmoredDisrupterCorvette"
+		faction_upgrade_resource_index="11" faction_upgrade_resource_cost="1000" />
+	
+	
+	<marauder_tech name="UnlockRampageFrigateSeries" display_name="狂怒护卫舰 Series"
+		description="Unlocks the base variant and upgrades of the 狂怒护卫舰."
+		serialization_index="9"
+		base_research_time="120" research_time_multiplier_per_upgrade="2"
+		base_tech_level="0" tech_type="UnlockEntityLine" entity_line_type="FleetShips"
+		base_entity="RampageFrigate" upgraded_entity="KillerRampageFrigate"
+		required_tech_list="0" required_tech_level_list="2" />
+	
+	<marauder_tech name="UnlockRampageFrigateSeries" is_partial_record="true" required_expansion_list="2_Zenith_Onslaught"
+		faction_upgraded_entity="DeathRampageFrigate"
+		faction_upgrade_resource_index="12" faction_upgrade_resource_cost="1000" />
+	
+	
+	<!-- Tier 3 Fleet Ships -->
+	
+	<marauder_tech name="UnlockHunterFighterSeries" display_name="猎人 战斗机 Series"
+		description="Unlocks the base variant and upgrades of the 猎人 战斗机."
+		serialization_index="10"
+		base_research_time="120" research_time_multiplier_per_upgrade="2"
+		base_tech_level="0" tech_type="UnlockEntityLine" entity_line_type="FleetShips"
+		base_entity="HunterFighter" upgraded_entity="CloakedHunterFighter"
+		required_tech_list="0" required_tech_level_list="3" />
+	
+	<marauder_tech name="UnlockHunterFighterSeries" is_partial_record="true" required_expansion_list="2_Zenith_Onslaught"
+		faction_upgraded_entity="MercurialHunterFighter"
+		faction_upgrade_resource_index="13" faction_upgrade_resource_cost="1000" />
+	
+	
+	<marauder_tech name="UnlockAcidicLightCorvetteSeries" display_name="酸性轻型护卫舰 Series"
+		description="Unlocks the base variant and upgrades of the 酸性轻型护卫舰."
+		serialization_index="11"
+		base_research_time="120" research_time_multiplier_per_upgrade="2"
+		base_tech_level="0" tech_type="UnlockEntityLine" entity_line_type="FleetShips"
+		base_entity="AcidicLightCorvette" upgraded_entity="StrikeAcidicLightCorvette"
+		required_tech_list="0" required_tech_level_list="3" />
+	
+	<marauder_tech name="UnlockAcidicLightCorvetteSeries" is_partial_record="true" required_expansion_list="2_Zenith_Onslaught"
+		faction_upgraded_entity="BlitzAcidicLightCorvette"
+		faction_upgrade_resource_index="11" faction_upgrade_resource_cost="1000" />
+	
+	
+	<marauder_tech name="UnlockBulkHeavyFrigateSeries" display_name="堡垒重型护卫舰 Series"
+		description="Unlocks the base variant and upgrades of the 堡垒重型护卫舰."
+		serialization_index="12"
+		base_research_time="120" research_time_multiplier_per_upgrade="2"
+		base_tech_level="0" tech_type="UnlockEntityLine" entity_line_type="FleetShips"
+		base_entity="BulkHeavyFrigate" upgraded_entity="GuardBulkHeavyFrigate"
+		required_tech_list="0" required_tech_level_list="3" />
+	
+	<marauder_tech name="UnlockBulkHeavyFrigateSeries" is_partial_record="true" required_expansion_list="2_Zenith_Onslaught"
+		faction_upgraded_entity="ProtectorBulkHeavyFrigate"
+		faction_upgrade_resource_index="10" faction_upgrade_resource_cost="1000" />
+	
+	
+	<!-- Tier 4 Fleet Ships -->
+	
+	<marauder_tech name="UnlockLightshowCruiserSeries" display_name="光秀巡洋舰 Series" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught"
+		description="Unlocks the base variant and upgrades of the 光秀巡洋舰."
+		serialization_index="13"
+		base_research_time="120" research_time_multiplier_per_upgrade="2"
+		base_tech_level="0" tech_type="UnlockEntityLine" entity_line_type="FleetShips"
+		base_entity="LightshowCruiser" upgraded_entity="KillerLightshowCruiser"
+		required_tech_list="0" required_tech_level_list="3" requires_relic_to_research_first_upgrade="true" />
+	
+	<marauder_tech name="UnlockLightshowCruiserSeries" is_partial_record="true" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught"
+		faction_upgraded_entity="DeathLightshowCruiser"
+		faction_upgrade_resource_index="12" faction_upgrade_resource_cost="1000" />
+	
+	
+	<marauder_tech name="UnlockMineDestroyerSeries" display_name="Mine 驱逐舰 Series" required_expansion_list="3_The_Neinzul_Abyss"
+		description="Unlocks the base variant and upgrades of the Mine 驱逐舰."
+		serialization_index="14"
+		base_research_time="120" research_time_multiplier_per_upgrade="2"
+		base_tech_level="0" tech_type="UnlockEntityLine" entity_line_type="FleetShips"
+		base_entity="MineDestroyer" upgraded_entity="EfficientMineDestroyer"
+		required_tech_list="0" required_tech_level_list="3" />
+	
+	<marauder_tech name="UnlockMineDestroyerSeries" is_partial_record="true" required_expansion_list="2_Zenith_Onslaught,3_The_Neinzul_Abyss"
+		faction_upgraded_entity="InfusedMineDestroyer"
+		faction_upgrade_resource_index="14,15" faction_upgrade_resource_cost="500,500" />
+	
+	
+	
+	<!-- Tier 1 Defenses -->
+	
+	<marauder_tech name="UnlockConsumerTurretSeries" display_name="消耗者 炮塔 Series"
+		description="Unlocks the upgrades of the 消耗者 炮塔."
+		serialization_index="15"
+		base_research_time="120" research_time_multiplier_per_upgrade="2"
+		base_tech_level="1" tech_type="UnlockEntityLine" entity_line_type="Defenses"
+		base_entity="ConsumerTurret" upgraded_entity="RefractingConsumerTurret"
+		required_tech_list="1" required_tech_level_list="1" />
+	
+	<marauder_tech name="UnlockConsumerTurretSeries" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
+		faction_upgraded_entity="LucentConsumerTurret"
+		faction_upgrade_resource_index="15" faction_upgrade_resource_cost="1000" />
+	
+	
+	<marauder_tech name="UnlockBreachTorpedoTurretSeries" display_name="突破 鱼雷 炮塔 Series"
+		description="Unlocks the upgrades of the 突破 鱼雷 炮塔."
+		serialization_index="16"
+		base_research_time="240" research_time_multiplier_per_upgrade="2"
+		base_tech_level="1" tech_type="UnlockEntityLine" entity_line_type="Defenses"
+		base_entity="BreachTorpedoTurret" upgraded_entity="ChargedBreachTorpedoTurret"
+		required_tech_list="1" required_tech_level_list="1" />
+	
+	<marauder_tech name="UnlockBreachTorpedoTurretSeries" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
+		faction_upgraded_entity="RadiantBreachTorpedoTurret"
+		faction_upgrade_resource_index="14" faction_upgrade_resource_cost="1000" />
+	
+	
+	<marauder_tech name="UnlocChainMinefieldkSeries" display_name="链式 Minefield Series"
+		description="Unlocks the upgrades of the 链式 Minefield."
+		serialization_index="17"
+		base_research_time="240" research_time_multiplier_per_upgrade="2"
+		base_tech_level="1" tech_type="UnlockEntityLine" entity_line_type="Defenses"
+		base_entity="ChainMinefield" upgraded_entity="ChargedChainMinefield"
+		required_tech_list="1" required_tech_level_list="1" />
+	
+	<marauder_tech name="UnlocChainMinefieldkSeries" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
+		faction_upgraded_entity="RadiantChainMinefield"
+		faction_upgrade_resource_index="14" faction_upgrade_resource_cost="1000" />
+	
+	
+	
+	<!-- Tier 2 Defenses -->
+	
+	<marauder_tech name="UnlockForceshieldSeries" display_name="力场盾 Series"
+		description="Unlocks the base variant and upgrades of the 力场盾."
+		serialization_index="18"
+		base_research_time="120" research_time_multiplier_per_upgrade="2"
+		base_tech_level="0" tech_type="UnlockEntityLine" entity_line_type="Defenses"
+		base_entity="Forceshield" upgraded_entity="RefractingForceshield"
+		required_tech_list="1" required_tech_level_list="2" />
+	
+	<marauder_tech name="UnlockForceshieldSeries" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
+		faction_upgraded_entity="LucentForceshield"
+		faction_upgrade_resource_index="15" faction_upgrade_resource_cost="1000" />
+	
+	
+	<marauder_tech name="UnlockBeamSniperTurretSeries" display_name="光束 狙击手 炮塔 Series"
+		description="Unlocks the base variant and upgrades of the 光束 狙击手 炮塔."
+		serialization_index="19"
+		base_research_time="120" research_time_multiplier_per_upgrade="2"
+		base_tech_level="0" tech_type="UnlockEntityLine" entity_line_type="Defenses"
+		base_entity="BeamSniperTurret" upgraded_entity="RefractingBeamSniperTurret"
+		required_tech_list="1" required_tech_level_list="2" />
+	
+	<marauder_tech name="UnlockBeamSniperTurretSeries" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
+		faction_upgraded_entity="LucentBeamSniperTurret"
+		faction_upgrade_resource_index="14" faction_upgrade_resource_cost="1000" />
+	
+	
+	<marauder_tech name="UnlockGooMinefieldSeries" display_name="粘液 Minefield Series"
+		description="Unlocks the base variant and upgrades of the 粘液 Minefield."
+		serialization_index="20"
+		base_research_time="120" research_time_multiplier_per_upgrade="2"
+		base_tech_level="0" tech_type="UnlockEntityLine" entity_line_type="Defenses"
+		base_entity="GooMinefield" upgraded_entity="ChargedGooMinefield"
+		required_tech_list="1" required_tech_level_list="2" />
+	
+	<marauder_tech name="UnlockGooMinefieldSeries" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
+		faction_upgraded_entity="RadiantGooMinefield"
+		faction_upgrade_resource_index="14" faction_upgrade_resource_cost="1000" />
+	
+	
+	
+	<!-- Tier 3 Defenses -->
+	
+	<marauder_tech name="UnlockBlockadeStationSeries" display_name="封锁 站 Series"
+		description="Unlocks the base variant and upgrades of the 封锁 站."
+		serialization_index="21"
+		base_research_time="120" research_time_multiplier_per_upgrade="2"
+		base_tech_level="0" tech_type="UnlockEntityLine" entity_line_type="Defenses"
+		base_entity="BlockadeStation" upgraded_entity="RefractingBlockadeStation"
+		required_tech_list="1" required_tech_level_list="3" />
+	
+	<marauder_tech name="UnlockBlockadeStationSeries" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
+		faction_upgraded_entity="LucentBlockadeStation"
+		faction_upgrade_resource_index="14" faction_upgrade_resource_cost="1000" />
+	
+	
+	<marauder_tech name="UnlockPhaseCannonTurretSeries" display_name="相位 加农炮 炮塔 Series"
+		description="Unlocks the base variant and upgrades of the 相位 加农炮 炮塔."
+		serialization_index="22"
+		base_research_time="120" research_time_multiplier_per_upgrade="2"
+		base_tech_level="0" tech_type="UnlockEntityLine" entity_line_type="Defenses"
+		base_entity="PhaseCannonTurret" upgraded_entity="ChargedPhaseCannonTurret"
+		required_tech_list="1" required_tech_level_list="3" />
+	
+	<marauder_tech name="UnlockPhaseCannonTurretSeries" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
+		faction_upgraded_entity="RadiantPhaseCannonTurret"
+		faction_upgrade_resource_index="15" faction_upgrade_resource_cost="1000" />
+	
+	
+	<marauder_tech name="UnlockAdaptorTurretSeries" display_name="适配者 炮塔 Series"
+		description="Unlocks the base variant and upgrades of the 适配者 炮塔."
+		serialization_index="23"
+		base_research_time="120" research_time_multiplier_per_upgrade="2"
+		base_tech_level="0" tech_type="UnlockEntityLine" entity_line_type="Defenses"
+		base_entity="AdaptorTurret" upgraded_entity="RefractingAdaptorTurret"
+		required_tech_list="1" required_tech_level_list="3" />
+	
+	<marauder_tech name="UnlockAdaptorTurretSeries" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
+		faction_upgraded_entity="LucentAdaptorTurret"
+		faction_upgrade_resource_index="15" faction_upgrade_resource_cost="1000" />
+	
+	
+	
+	<!-- Tier 4 Defenses -->
+	
+	<marauder_tech name="UnlockCoilBeamTurretSeries" display_name="线圈 光束 炮塔 Series" required_expansion_list="1_The_Spire_Rises"
+		description="Unlocks the base variant and upgrades of the 线圈 光束 炮塔."
+		serialization_index="24"
+		base_research_time="120" research_time_multiplier_per_upgrade="2"
+		base_tech_level="0" tech_type="UnlockEntityLine" entity_line_type="Defenses"
+		base_entity="CoilBeamTurret" upgraded_entity="ChargedCoilBeamTurret"
+		required_tech_list="1" required_tech_level_list="4" />
+	
+	<marauder_tech name="UnlockCoilBeamTurretSeries" is_partial_record="true" required_expansion_list="1_The_Spire_Rises,3_The_Neinzul_Abyss"
+		faction_upgraded_entity="RadiantCoilBeamTurret"
+		faction_upgrade_resource_index="15" faction_upgrade_resource_cost="1000" />
+	
+	
+	<marauder_tech name="UnlockCorrosiveTurretSeries" display_name="腐蚀 炮塔 Series" required_expansion_list="3_The_Neinzul_Abyss"
+		description="Unlocks the base variant and upgrades of the 腐蚀 炮塔."
+		serialization_index="25"
+		base_research_time="120" research_time_multiplier_per_upgrade="2"
+		base_tech_level="0" tech_type="UnlockEntityLine" entity_line_type="Defenses"
+		base_entity="CorrosiveTurret" upgraded_entity="EfficientCorrosiveTurret"
+		required_tech_list="1" required_tech_level_list="4" />
+	
+	<marauder_tech name="UnlockCorrosiveTurretSeries" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
+		faction_upgraded_entity="InfusedCorrosiveTurret"
+		faction_upgrade_resource_index="14,15" faction_upgrade_resource_cost="500,500" />
+	
+	
+	
+	<!-- Tier 1 Centerpieces -->
+	
+	
+	<marauder_tech name="UnlockAdaptorRaiderSeries" display_name="适配者 突击者 Series" unlockable_empire_type="NonPlayerOnly"
+		description="Unlocks the upgrades of the 适配者 突击者."
+		serialization_index="26"
+		base_research_time="240" research_time_multiplier_per_upgrade="2"
+		base_tech_level="1" tech_type="UnlockEntityLine" entity_line_type="Centerpieces"
+		base_entity="AdaptorRaider" upgraded_entity="StrikeAdaptorRaider"
+		required_tech_list="2" required_tech_level_list="1" />
+	
+	<marauder_tech name="UnlockAdaptorRaiderSeries" is_partial_record="true" required_expansion_list="2_Zenith_Onslaught"
+		faction_upgraded_entity="BlitzAdaptorRaider"
+		faction_upgrade_resource_index="11" faction_upgrade_resource_cost="1000" />
+	
+	<marauder_tech name="UnlockAdaptorRaiderSeries_Player" copy_from="UnlockAdaptorRaiderSeries" unlockable_empire_type="PlayerOnly"
+		serialization_index="27"
+		base_entity="AdaptorRaider_Player" upgraded_entity="StrikeAdaptorRaider_Player" />
+	
+	<marauder_tech name="UnlockAdaptorRaiderSeries_Player" is_partial_record="true" required_expansion_list="2_Zenith_Onslaught"
+		faction_upgraded_entity="BlitzAdaptorRaider_Player"
+		faction_upgrade_resource_index="11" faction_upgrade_resource_cost="1000" />
+	
+	
+	<marauder_tech name="UnlockLightRaiderSeries" display_name="Light 突击者 Series" unlockable_empire_type="NonPlayerOnly"
+		description="Unlocks the upgrades of the Light 突击者."
+		serialization_index="28"
+		base_research_time="240" research_time_multiplier_per_upgrade="2"
+		base_tech_level="1" tech_type="UnlockEntityLine" entity_line_type="Centerpieces"
+		base_entity="LightRaider" upgraded_entity="CloakedLightRaider"
+		required_tech_list="2" required_tech_level_list="1" />
+	
+	<marauder_tech name="UnlockLightRaiderSeries" is_partial_record="true" required_expansion_list="2_Zenith_Onslaught"
+		faction_upgraded_entity="MercurialLightRaider"
+		faction_upgrade_resource_index="13" faction_upgrade_resource_cost="1000" />
+	
+	<marauder_tech name="UnlockLightRaiderSeries_Player" copy_from="UnlockLightRaiderSeries" unlockable_empire_type="PlayerOnly"
+		serialization_index="29"
+		base_entity="LightRaider_Player" upgraded_entity="CloakedLightRaider_Player" />
+	
+	<marauder_tech name="UnlockLightRaiderSeries_Player" is_partial_record="true" required_expansion_list="2_Zenith_Onslaught"
+		faction_upgraded_entity="MercurialLightRaider_Player"
+		faction_upgrade_resource_index="13" faction_upgrade_resource_cost="1000" />
+	
+	
+	
+	<!-- Tier 2 Centerpieces -->
+	
+	
+	<marauder_tech name="UnlockDroneBattleshipSeries" display_name="无人机 战列舰 Series" unlockable_empire_type="NonPlayerOnly"
+		description="Unlocks the base variant and upgrades of the 无人机 战列舰."
+		serialization_index="30"
+		base_research_time="120" research_time_multiplier_per_upgrade="2"
+		base_tech_level="0" tech_type="UnlockEntityLine" entity_line_type="Centerpieces"
+		base_entity="DroneBattleship" upgraded_entity="PlatedDroneBattleship"
+		required_tech_list="2" required_tech_level_list="2" />
+	
+	<marauder_tech name="UnlockDroneBattleshipSeries" is_partial_record="true" required_expansion_list="2_Zenith_Onslaught"
+		faction_upgraded_entity="ArmoredDroneBattleship"
+		faction_upgrade_resource_index="9" faction_upgrade_resource_cost="1000" />
+	
+	<marauder_tech name="UnlockDroneBattleshipSeries_Player" copy_from="UnlockDroneBattleshipSeries" unlockable_empire_type="PlayerOnly"
+		serialization_index="31"
+		base_entity="DroneBattleship_Player" upgraded_entity="PlatedDroneBattleship_Player" />
+	
+	<marauder_tech name="UnlockDroneBattleshipSeries_Player" is_partial_record="true" required_expansion_list="2_Zenith_Onslaught"
+		faction_upgraded_entity="ArmoredDroneBattleship_Player"
+		faction_upgrade_resource_index="9" faction_upgrade_resource_cost="1000" />
+	
+	
+	<marauder_tech name="UnlockTachyonRaiderSeries" display_name="快子 突击者 Series" unlockable_empire_type="NonPlayerOnly"
+		description="Unlocks the base variant and upgrades of the 快子 突击者."
+		serialization_index="32"
+		base_research_time="120" research_time_multiplier_per_upgrade="2"
+		base_tech_level="0" tech_type="UnlockEntityLine" entity_line_type="Centerpieces"
+		base_entity="TachyonRaider" upgraded_entity="RefractingTachyonRaider"
+		required_tech_list="2" required_tech_level_list="2" />
+	
+	<marauder_tech name="UnlockTachyonRaiderSeries" is_partial_record="true" required_expansion_list="2_Zenith_Onslaught"
+		faction_upgraded_entity="LucentTachyonRaider"
+		faction_upgrade_resource_index="15" faction_upgrade_resource_cost="1000" />
+	
+	<marauder_tech name="UnlockTachyonRaiderSeries_Player" copy_from="UnlockTachyonRaiderSeries" unlockable_empire_type="PlayerOnly"
+		serialization_index="33"
+		base_entity="TachyonRaider_Player" upgraded_entity="RefractingTachyonRaider_Player" />
+	
+	<marauder_tech name="UnlockTachyonRaiderSeries_Player" is_partial_record="true" required_expansion_list="2_Zenith_Onslaught"
+		faction_upgraded_entity="LucentTachyonRaider_Player"
+		faction_upgrade_resource_index="15" faction_upgrade_resource_cost="1000" />
+	
+	
+	
+	<!-- Tier 3 Centerpieces -->
+	
+	
+	<marauder_tech name="UnlockAmplifierBattleshipSeries" display_name="放大器 战列舰 Series" unlockable_empire_type="NonPlayerOnly"
+		description="Unlocks the base variant and upgrades of the 放大器 战列舰."
+		serialization_index="34"
+		base_research_time="120" research_time_multiplier_per_upgrade="2"
+		base_tech_level="0" tech_type="UnlockEntityLine" entity_line_type="Centerpieces"
+		base_entity="AmplifierBattleship" upgraded_entity="GuardAmplifierBattleship"
+		required_tech_list="2" required_tech_level_list="3" />
+	
+	<marauder_tech name="UnlockAmplifierBattleshipSeries" is_partial_record="true" required_expansion_list="2_Zenith_Onslaught"
+		faction_upgraded_entity="ProtectorAmplifierBattleship"
+		faction_upgrade_resource_index="10" faction_upgrade_resource_cost="1000" />
+	
+	<marauder_tech name="UnlockAmplifierBattleshipSeries_Player" copy_from="UnlockAmplifierBattleshipSeries" unlockable_empire_type="PlayerOnly"
+		serialization_index="35"
+		base_entity="AmplifierBattleship_Player" upgraded_entity="GuardAmplifierBattleship_Player" />
+	
+	<marauder_tech name="UnlockAmplifierBattleshipSeries_Player" is_partial_record="true" required_expansion_list="2_Zenith_Onslaught"
+		faction_upgraded_entity="ProtectorAmplifierBattleship_Player"
+		faction_upgrade_resource_index="10" faction_upgrade_resource_cost="1000" />
+	
+	
+	<marauder_tech name="UnlockIonosphereRaiderSeries" display_name="电离层 突击者 Series" unlockable_empire_type="NonPlayerOnly"
+		description="Unlocks the base variant and upgrades of the 电离层 突击者."
+		serialization_index="36"
+		base_research_time="120" research_time_multiplier_per_upgrade="2"
+		base_tech_level="0" tech_type="UnlockEntityLine" entity_line_type="Centerpieces"
+		base_entity="IonosphereRaider" upgraded_entity="KillerIonosphereRaider"
+		required_tech_list="2" required_tech_level_list="3" />
+	
+	<marauder_tech name="UnlockIonosphereRaiderSeries" is_partial_record="true" required_expansion_list="2_Zenith_Onslaught"
+		faction_upgraded_entity="DeathIonosphereRaider"
+		faction_upgrade_resource_index="12" faction_upgrade_resource_cost="1000" />
+	
+	<marauder_tech name="UnlockIonosphereRaiderSeries_Player" copy_from="UnlockIonosphereRaiderSeries" unlockable_empire_type="PlayerOnly"
+		serialization_index="37"
+		base_entity="IonosphereRaider_Player" upgraded_entity="KillerIonosphereRaider_Player" />
+	
+	<marauder_tech name="UnlockIonosphereRaiderSeries_Player" is_partial_record="true" required_expansion_list="2_Zenith_Onslaught"
+		faction_upgraded_entity="DeathIonosphereRaider_Player"
+		faction_upgrade_resource_index="12" faction_upgrade_resource_cost="1000" />
+	
+	
+	
+	<!-- Tier 4 Centerpieces -->
+	
+	
+	<marauder_tech name="UnlockBeamDreadnoughtSeries" display_name="光束 无畏舰 Series" required_expansion_list="1_The_Spire_Rises" unlockable_empire_type="NonPlayerOnly"
+		description="Unlocks the base variant and upgrades of the 光束 无畏舰."
+		serialization_index="38"
+		base_research_time="120" research_time_multiplier_per_upgrade="2"
+		base_tech_level="0" tech_type="UnlockEntityLine" entity_line_type="Centerpieces"
+		base_entity="BeamDreadnought" upgraded_entity="ChargedBeamDreadnought"
+		required_tech_list="2" required_tech_level_list="4" />
+	
+	<marauder_tech name="UnlockBeamDreadnoughtSeries" is_partial_record="true" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught"
+		faction_upgraded_entity="RadiantBeamDreadnought"
+		faction_upgrade_resource_index="15" faction_upgrade_resource_cost="1000" />
+	
+	<marauder_tech name="UnlockBeamDreadnoughtSeries_Player" copy_from="UnlockBeamDreadnoughtSeries" unlockable_empire_type="PlayerOnly"
+		serialization_index="39"
+		base_entity="BeamDreadnought_Player" upgraded_entity="ChargedBeamDreadnought_Player" />
+	
+	<marauder_tech name="UnlockBeamDreadnoughtSeries_Player" is_partial_record="true" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught"
+		faction_upgraded_entity="RadiantBeamDreadnought_Player"
+		faction_upgrade_resource_index="15" faction_upgrade_resource_cost="1000" />
+	
+	
+	<marauder_tech name="UnlockTorpedoSubmarineSeries" display_name="鱼雷 潜艇 Series" required_expansion_list="3_The_Neinzul_Abyss" unlockable_empire_type="NonPlayerOnly"
+		description="Unlocks the base variant and upgrades of the 鱼雷 潜艇."
+		serialization_index="40"
+		base_research_time="120" research_time_multiplier_per_upgrade="2"
+		base_tech_level="0" tech_type="UnlockEntityLine" entity_line_type="Centerpieces"
+		base_entity="TorpedoSubmarine" upgraded_entity="EfficientTorpedoSubmarine"
+		required_tech_list="2" required_tech_level_list="4" />
+	
+	<marauder_tech name="UnlockTorpedoSubmarineSeries" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
+		faction_upgraded_entity="InfusedTorpedoSubmarine"
+		faction_upgrade_resource_index="14,15" faction_upgrade_resource_cost="500,500" />
+	
+	<marauder_tech name="UnlockTorpedoSubmarineSeries_Player" copy_from="UnlockTorpedoSubmarineSeries" unlockable_empire_type="PlayerOnly"
+		serialization_index="41"
+		base_entity="TorpedoSubmarine_Player" upgraded_entity="EfficientTorpedoSubmarine_Player" />
+	
+	<marauder_tech name="UnlockTorpedoSubmarineSeries_Player" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
+		faction_upgraded_entity="InfusedTorpedoSubmarine_Player"
+		faction_upgrade_resource_index="14,15" faction_upgrade_resource_cost="500,500" />
+	
+	
+	
+	<!-- Tier 4 Centerpieces -->
+	
+	
+	<marauder_tech name="UnlockCapitalSeries" display_name="Unlock 首都 Series"
+		description="Unlocks the upgrades of the 掠夺者 首都."
+		serialization_index="42"
+		base_research_time="240" research_time_multiplier_per_upgrade="2"
+		base_tech_level="1" tech_type="UnlockEntityLine" entity_line_type="Economy"
+		base_entity="MarauderCapital"
+		required_tech_list="3" required_tech_level_list="1" />
+	<!--
+	
+	
+	
+	For Tier 1 Entity Series:
+	
+	
+	<marauder_tech name="UnlockSeries" display_name="xxxxxxxx Series"
+		description="Unlocks the upgrades of the xxxxxxxx."
+		serialization_index="xxxxxxxx"
+		base_research_time="240" research_time_multiplier_per_upgrade="2"
+		base_tech_level="1" tech_type="UnlockEntityLine"
+		base_entity="xxxxxxxx" upgraded_entity="xxxxxxxx"
+		required_tech_list="3" required_tech_level_list="1" />
+	
+	<marauder_tech name="xxxxxxxx" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
+		faction_upgraded_entity="xxxxxxxx"
+		faction_upgrade_resource_index="xxxxxxxx" faction_upgrade_resource_cost="1000" />
+	
+	<marauder_tech name="_Player" copy_from="xxxxxxxx"
+		serialization_index="xxxxxxxx"
+		base_entity="_Player" upgraded_entity="_Player" />
+	
+	<marauder_tech name="xxxxxxxx" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
+		faction_upgraded_entity="_Player"
+		faction_upgrade_resource_index="xxxxxxxx" faction_upgrade_resource_cost="1000" />
+	
+	
+	
+	For Tier 2 Entity Series:
+	
+	
+	<marauder_tech name="UnlockSeries" display_name="xxxxxxxx Series"
+		description="Unlocks the base variant and upgrades of the xxxxxxxx."
+		serialization_index="xxxxxxxx"
+		base_research_time="120" research_time_multiplier_per_upgrade="2"
+		base_tech_level="0" tech_type="UnlockEntityLine"
+		base_entity="xxxxxxxx" upgraded_entity="xxxxxxxx"
+		required_tech_list="3" required_tech_level_list="1" />
+	
+	<marauder_tech name="xxxxxxxx" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
+		faction_upgraded_entity="xxxxxxxx"
+		faction_upgrade_resource_index="xxxxxxxx" faction_upgrade_resource_cost="1000" />
+	
+	<marauder_tech name="_Player" copy_from="xxxxxxxx"
+		serialization_index="xxxxxxxx"
+		base_entity="_Player" upgraded_entity="_Player" />
+	
+	<marauder_tech name="xxxxxxxx" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
+		faction_upgraded_entity="_Player"
+		faction_upgrade_resource_index="xxxxxxxx" faction_upgrade_resource_cost="1000" />
+	
+	
+	
+	For Tier 3 Entity Series:
+	
+	
+	<marauder_tech name="UnlockSeries" display_name="xxxxxxxx Series"
+		description="Unlocks the base variant and upgrades of the xxxxxxxx."
+		serialization_index="xxxxxxxx"
+		base_research_time="120" research_time_multiplier_per_upgrade="2"
+		base_tech_level="0" tech_type="UnlockEntityLine"
+		base_entity="xxxxxxxx" upgraded_entity="xxxxxxxx"
+		required_tech_list="3" required_tech_level_list="2" />
+	
+	<marauder_tech name="xxxxxxxx" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
+		faction_upgraded_entity="xxxxxxxx"
+		faction_upgrade_resource_index="xxxxxxxx" faction_upgrade_resource_cost="1000" />
+	
+	<marauder_tech name="_Player" copy_from="xxxxxxxx"
+		serialization_index="xxxxxxxx"
+		base_entity="_Player" upgraded_entity="_Player" />
+	
+	<marauder_tech name="xxxxxxxx" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
+		faction_upgraded_entity="_Player"
+		faction_upgrade_resource_index="xxxxxxxx" faction_upgrade_resource_cost="1000" />
+	
+	
+	
+	For Tier 4 Entity Series:
+	
+	
+	<marauder_tech name="UnlockSeries" display_name="xxxxxxxx Series" required_expansion_list="3_The_Neinzul_Abyss"
+		description="Unlocks the base variant and upgrades of the xxxxxxxx."
+		serialization_index="xxxxxxxx"
+		base_research_time="120" research_time_multiplier_per_upgrade="2"
+		base_tech_level="0" tech_type="UnlockEntityLine"
+		base_entity="xxxxxxxx" upgraded_entity="xxxxxxxx"
+		required_tech_list="3" required_tech_level_list="3" />
+	
+	<marauder_tech name="xxxxxxxx" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
+		faction_upgraded_entity="xxxxxxxx"
+		faction_upgrade_resource_index="xxxxxxxx" faction_upgrade_resource_cost="1000" />
+	
+	<marauder_tech name="_Player" copy_from="xxxxxxxx"
+		serialization_index="xxxxxxxx"
+		base_entity="_Player" upgraded_entity="_Player" />
+	
+	<marauder_tech name="xxxxxxxx" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
+		faction_upgraded_entity="_Player"
+		faction_upgrade_resource_index="xxxxxxxx" faction_upgrade_resource_cost="1000" />
+	-->
+	
+	
+</root>

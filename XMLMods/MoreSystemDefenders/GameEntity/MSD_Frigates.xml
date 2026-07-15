@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>    
+
+	<!--Primary unit of the Gorgon Aggregate Body Frigate-->
+	<entity name="GorgonFrigate"
+		tags="GorgonFrigate"
+		special_entity_type="Frigate" gimbal_icon_size_multiplier="1.25"			 
+		visuals="Assets/_FinalGameMeshes/Guardians/FragmentingGuardianAlt/FragmentingGuardian.prefab"
+        icon_name="Ships1/Guardian" icon_overlay="Overlays2/Guardian_Fragmenting"
+		size_scale="3"
+		visuals_scale_multiplier="2"
+		category="Ship"
+		collision_priority="400"
+		display_name="戈耳工聚合体护卫舰" display_name_for_sidebar="Gorgon FFL"
+		description="Interlocked mass of 毒蛇护卫舰s redirecting primary armament energy into a paralyzer 光束."
+		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Subterfuge,Medium"
+		cost_for_ai_to_purchase="950" strength_multiplier="1.5"
+		hull_points="100000" shield_points="50000" speed="Normal3"
+		metal_cost="90000" energy_consumption="9000"
+		armor_mm="75" engine_gx="16" albedo="0.5" mass_tx="3"
+		voice_group="Starship"
+		ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+		ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+		build_points_per_damage_taken="1" unit_to_make_with_build_points_from_damage_taken="GorgonViperPiece"
+		priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable">
+		<system name="GB" display_name="戈耳工麻痹光束"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="2000" range="AboveAverage2" shot_speed="Normal" rate_of_fire="SlightlyLow"
+			shot_type_data="HeavyBeamInvisible" beam_weapon_visual_style="Laser_Green"
+			beam_length_multiplier="1.3"
+			hits_all_intersecting_targets="true"				
+			shots_detonate_immediately="true"
+			maximum_number_of_targets_hit_per_shot="10"
+			base_paralysis_seconds_per_shot="3" paralysis_to_ships_mass_tx_less_than="2"
+			>
+		</system>
+		<system name="VF" display_name="毒蛇双联速射炮 Banks"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="500" range="Normal4" shot_speed="Normal" rate_of_fire="Misery"
+			shot_type_data="DoubleShot_Green"
+			shots_per_salvo="6" fires_salvos_sequentially="True">
+		</system>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<fleet_membership name="UnusualMix" ship_cap_group="Frigate" weight="10" cap="6"/>
+		<fleet_membership name="DebufferMix" ship_cap_group="Frigate" weight="10" cap="6"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Frigate" weight="100" cap="9"/>
+	</entity>
+	
+	<!--Station-Keeping variant of the Gorgon Aggregate Body Frigate-->
+	<entity skip_export="true" copy_from="GorgonFrigate" name="StationGorgonFrigate" tags="StationGorgonFrigate"
+		build_sidebar_categories_i_am_part_of="StationKeepers" fleet_membership="Planetary" destroys_self_until_not_over_ship_cap_if_planetary_command="true"
+        behavior="Attacker_Full"
+		display_name="站-Keeping 戈耳工聚合体护卫舰" energy_consumption="6000"
+		display_name_for_sidebar="Gorgon PFFL"
+		tech_upgrades_that_benefit_me="Sentries"
+		is_blocked_from_dss_grant_to_Battlestations_and_citadels="true">
+		<fleet_membership name="PlayerMilitaryCommand" ship_cap_group="OtherDefense" weight="100" cap="6"/>
+		<fleet_membership name="AddedToCommandStation" ship_cap_group="OtherDefense" weight="100" cap="6"/>
+		<metal_flow purpose="SelfConstruction" throughput="1000"/>
+	</entity>
+	
+	<!-- The Escort Carrier Frigate -->
+	<entity name="EscortCarrier" tags="EscortCarrier" special_entity_type="Frigate" gimbal_icon_size_multiplier="1.25"			 
+        visuals="assets/_finalgamemeshes/guardians/carrierguardian/carrierguardian.prefab"
+		icon_name="Ships1/Guardian" icon_overlay="Overlays2/Guardian_Carrier"
+		size_scale="3.1" visuals_scale_multiplier="4.5"
+		category="Ship"
+		y_offset_of_icon="16"
+		collision_priority="400"
+		display_name="护航航母" display_name_for_sidebar="Esc. 航母 FFL"
+		description="A light 航母 tasked for fleet 支援 carrying a small complement of 星战 it supports with a parasitic 加农炮."
+		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Technologist,Light"
+		cost_for_ai_to_purchase="400"
+		hull_points="84000" shield_points="42000" speed="AboveAverage3"
+		metal_cost="75000" energy_consumption="4500"
+		armor_mm="50" engine_gx="18" albedo="0.6" mass_tx="4"
+		voice_group="Starship"
+		ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+		ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+    	priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable">
+		<system name="BC" display_name="寄生高爆炮"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="500" range="AboveAverage2" shot_speed="Normal" rate_of_fire="Normal" shots_per_salvo="1" fires_salvos_sequentially="false"
+			shot_type_data="DoubleShot_Green"
+			area_of_effect_size="750"
+			maximum_number_of_targets_hit_per_shot="3" added_shots_per_salvo_per_mark="0.3"
+			added_target_evaluator="ZombifyAsPrimary">
+			<death_effect_damage type="Zombification" tier_name="Botnet"/>
+		</system>
+		<system name="LT" display_name="先锋无人机"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="5" range="ExtremelyHigh" shot_speed="Normal" rate_of_fire="Normal" shots_per_salvo="2" fires_salvos_sequentially="true" 				
+			shot_type_data="VanguardDrone">
+		</system>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Frigate" weight="10" cap="9"/>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<fleet_membership name="AntiSmallMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<fleet_membership name="ZombificationMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+	</entity>
+	
+	<!-- Station-Keeping variant of Escort Carrier Frigate -->
+	<entity skip_export="true" copy_from="EscortCarrier" name="DefenseEscortCarrier" tags="DefenseEscortCarrier"
+		build_sidebar_categories_i_am_part_of="StationKeepers" fleet_membership="Planetary" destroys_self_until_not_over_ship_cap_if_planetary_command="true"
+        behavior="Attacker_Full"
+	    display_name="驻防护航航母" display_name_for_sidebar="Esc. 航母 PFFL"
+		description="A light 航母 for system 防御 carrying a small complement of 星战 it supports with a parasitic 加农炮."
+		energy_consumption="2500"
+		tech_upgrades_that_benefit_me="Sentries"
+		is_blocked_from_dss_grant_to_Battlestations_and_citadels="true">
+		<fleet_membership name="PlayerHomeCommand" ship_cap_group="OtherDefense" weight="100" cap="12"/>
+		<fleet_membership name="PlayerMilitaryCommand" ship_cap_group="OtherDefense" weight="100" cap="9"/>
+		<fleet_membership name="PlayerLogisticalCommand" ship_cap_group="OtherDefense" weight="100" cap="6"/>
+		<fleet_membership name="PlayerEconomicCommand" ship_cap_group="OtherDefense" weight="100" cap="3"/>
+		<fleet_membership name="AddedToCommandStation" ship_cap_group="OtherDefense" weight="100" cap="6"/>
+		<metal_flow purpose="SelfConstruction" throughput="750"/>
+	</entity>
+	
+	<!-- Station-Keeping variant of the Ambush Carrier Frigate -->
+	<entity skip_export="true" copy_from="AmbushCarrier" name="DefenseAmbushCarrier" tags="DefenseAmbushCarrier"
+		build_sidebar_categories_i_am_part_of="StationKeepers" fleet_membership="Planetary" destroys_self_until_not_over_ship_cap_if_planetary_command="true"
+        behavior="Attacker_Full"
+		display_name="驻防伏击航母" display_name_for_sidebar="Amb. 航母 PFFL"
+		description="A lightly 装甲 special-ops 隐形 航母 retasked for system 防御."
+		energy_consumption="2500"
+		tech_upgrades_that_benefit_me="Sentries"
+		is_blocked_from_dss_grant_to_Battlestations_and_citadels="true">
+		<fleet_membership name="AddedToCommandStation" ship_cap_group="OtherDefense" weight="100" cap="6"/>
+		<metal_flow purpose="SelfConstruction" throughput="750"/>
+	</entity>
+	
+	<!-- The Flypaper Frigate, a frigate specializing in destruction of low mass and lower power ships -->
+	<entity name="FlypaperFrigate" tags="FlypaperFrigate" special_entity_type="Frigate" gimbal_icon_size_multiplier="1.25"			 
+        visuals="assets/_finalgamemeshes/fleetships/sentinelfrigate/sentinelfrigate.prefab"	icon_name="Ships1/SentinelFrigate"
+		size_scale="5" visuals_scale_multiplier="8"
+		category="Ship"	collision_priority="400"
+		display_name="粘蝇纸护卫舰" display_name_for_sidebar="Flypaper FFH"
+		description="Heavyweight brawler interested in snagging smaller enemies and repeatedly frying their electrical systems."
+		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Disruptive,Heavy"
+			cost_for_ai_to_purchase="1250"
+			hull_points="230000" shield_points="115000" speed="Normal3"
+			metal_cost="115000" energy_consumption="9000"
+			armor_mm="110" engine_gx="16" albedo="0.5" mass_tx="5"
+			voice_group="Starship"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable">
+		<system name="BC" display_name="充能弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1500" range="Normal1" shot_speed="Normal" rate_of_fire="Low"
+				shots_per_salvo="3" fires_salvos_sequentially="false" added_shots_per_salvo_per_mark="0.4"
+				shot_type_data="DoubleShot_Blue"
+				base_enemy_weapon_reload_slowing_seconds_per_shot="10"
+				max_enemy_weapon_reload_slowing_seconds="10"
+				enemy_weapon_reload_slowing_to_armor_mm_less_than="60">
+		</system>
+		<system name="EW" display_name="电气过载发射器"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="750" range="Small2" shot_speed="Normal" rate_of_fire="FairlyLow" shots_per_salvo="1" fires_salvos_sequentially="false"
+				shot_type_data="LightningExplosionAOEShot"
+				shots_detonate_immediately="true"
+				area_of_effect_size="3500"
+				maximum_number_of_targets_hit_per_shot="15">
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtMost" compared_to="1" multiplier="2" />
+				<outgoing_damage_modifier based_on="EnergyUsage" comparison_type="AtMost" compared_to="150" multiplier="3" />
+		</system>
+		<system name="T" display_name="牵引光束"
+				category="Passive"
+				tractor_range="Small1" tractor_count="7" tractor_count_added_per_mark="2" tractor_hits_albedo_less_than="0.5" tractor_hits_engine_gx_less_than="14">
+		</system>
+		<incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="3500" multiplier="0.5" />
+		<fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Frigate" weight="10" cap="9"/>
+		<fleet_membership name="BasicOffensiveMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<fleet_membership name="CrowdControlMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<fleet_membership name="AntiSmallMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+	</entity>
+	
+	<!-- Station-Keeping variant of the Flypaper Frigate -->
+	<entity skip_export="true" copy_from="FlypaperFrigate" name="DefenseFlypaper" tags="DefenseFlypaper"
+        build_sidebar_categories_i_am_part_of="StationKeepers" fleet_membership="Planetary" destroys_self_until_not_over_ship_cap_if_planetary_command="true"
+        behavior="Attacker_Full"
+	    display_name="站-Keeping 粘蝇纸护卫舰" energy_consumption="6000"
+		display_name_for_sidebar="Flypaper PFFH"
+		tech_upgrades_that_benefit_me="Sentries"
+		is_blocked_from_dss_grant_to_Battlestations_and_citadels="true">
+		<fleet_membership name="AddedToCommandStation" ship_cap_group="OtherDefense" weight="100" cap="6"/>
+		<metal_flow purpose="SelfConstruction" throughput="1000"/>
+	</entity>
+	
+	<!-- Artillery Destroyer entries section -->
+	<!-- Note that the base version is uncommonly found in fleets but is used as a base stat block for both the defensive and FRS sub-entities -->
+	<entity name="ArtilleryCruiser" display_name="火炮驱逐舰" copy_from="Bombard" required_expansion_list="1_The_Spire_Rises"
+        tags="ArtilleryCruiser" display_name_for_sidebar="Artillery DD"
+		description="Slow moving, slow to reload, and fit to smite the heavens."
+		special_entity_type="Frigate" gimbal_icon_size_multiplier="1.25"			 
+		multiplier_to_all_scales="2.5"
+		hull_points="150000" shield_points="250000"
+		metal_cost="450000" energy_consumption="22500"
+		armor_mm="70" albedo="0.6" engine_gx="20" mass_tx="6"
+		tech_upgrades_that_benefit_me="Concussion,Medium"
+		priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="MidFavoriteToy">
+		<system name="W1" display_name="双联磁力加速器"
+				damage_per_shot="7500" shot_speed="VeryFast" rate_of_fire="ExtremelyLow"
+				shots_per_salvo="2" fires_salvos_sequentially="false"
+				>
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="5" />
+		</system>
+		<system name="FB" display_name="压制防空炮"
+				category="Weapon" firing_timing="OnlyInRange" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="false"
+				damage_per_shot="2000" range="High1" aoe_spreads_damage_among_available_targets="true" area_of_effect_size="750"
+				maximum_number_of_targets_hit_per_shot="10" shot_type_data="FlakShotAOEBurstAtEnd">
+				<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="50" multiplier="4" />
+		</system>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="25" cap="2"/>
+		<fleet_membership name="UnusualMix" ship_cap_group="Frigate" weight="5" cap="2"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Frigate" weight="10" cap="3"/>
+		<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+	
+	<!-- The Station-Keeping based defensive Artillery Destroyer -->
+	<entity copy_from="ArtilleryCruiser" skip_export="True" name="DefenseArtilleryCruiser" tags="DefenseArtilleryCruiser" required_expansion_list="1_The_Spire_Rises"
+		build_sidebar_categories_i_am_part_of="StationKeepers" fleet_membership="Planetary" destroys_self_until_not_over_ship_cap_if_planetary_command="true"
+        behavior="Attacker_Full"
+	    display_name="驻防火炮 驱逐舰" display_name_for_sidebar="Artillery PDD"
+		description="A slow moving high firepower 驱逐舰 tasked with defending the system."
+		tech_upgrades_that_benefit_me="Sentries"
+		is_blocked_from_dss_grant_to_Battlestations_and_citadels="true">
+		<fleet_membership name="PlayerEconomicCommand" ship_cap_group="OtherDefense" weight="100" cap="1"/>
+		<fleet_membership name="PlayerMilitaryCommand" ship_cap_group="OtherDefense" weight="100" cap="2"/>
+		<metal_flow purpose="SelfConstruction" throughput="1500"/>
+	</entity>
+	
+	<!-- The Augmented Artillery Cruiser found within certain FRS as a hackable super-ship option -->
+	<entity name="AugmentedArtilleryCruiser" copy_from="ArtilleryCruiser" required_expansion_list="1_The_Spire_Rises"
+	  description="Augmented 驱逐舰 sporting stronger defenses and gun batteries with longer reach and a slightly stronger kick."
+      display_name="Augmented 火炮驱逐舰" aip_when_granted_by_hack="12"
+	  display_name_for_sidebar="Aug. Artillery DD"
+	  hull_points="175000" shield_points="300000"
+	  metal_cost="500000" energy_consumption="22500"
+	  starting_mark_level="Mark3" speed="Normal3"
+      tags="IncludeInFRS" supercharges_shields_of_rest_of_player_fleet="1.5"
+	  supercharges_only_apply_when_fleet_line_count_is_x_or_less="5">
+		<system name="W1" display_name="双联磁力加速器"
+				damage_per_shot="8500" shot_speed="VeryFast" rate_of_fire="ExtremelyLow"
+				shots_per_salvo="2" range="ExtremelyHigh" fires_salvos_sequentially="false"
+				>
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="5" />
+		</system>
+		<system name="FB" display_name="压制防空炮"
+				category="Weapon" firing_timing="OnlyInRange" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="false"
+				damage_per_shot="2500" range="High1" aoe_spreads_damage_among_available_targets="true" area_of_effect_size="1250"
+				maximum_number_of_targets_hit_per_shot="10" shot_type_data="FlakShotAOEBurstAtEnd">
+				<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="50" multiplier="4" />
+		</system>
+    <fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="15" cap="2"/>
+	</entity>
+	
+</root>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+    <entity
+            name="AIOverlordPhase2"
+            is_partial_record="true"
+            forced_to_be_this_state_of_matter_when_on_former_or_current_ai_homeworld_or_bastion_worlds_unless_enemy_king_present="Normal"
+            />
+
+    <entity
+            name="CoreHangar"
+            is_partial_record="true"
+            energy_consumption="6000"
+            />
+
+    <entity
+            name="DroneGarrison"
+            is_partial_record="true"
+            energy_consumption="24000"
+            />
+
+    <entity
+            name="DroneReclamator"
+            is_partial_record="true"
+            energy_consumption="24000"
+            metal_cost="500000"
+            />
+
+    <entity
+            name="DroneStockade"
+            is_partial_record="true"
+            energy_consumption="24000"
+            metal_cost="250000"
+            />
+
+</root>

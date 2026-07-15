@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <journal name="AstroTrainsFirstDetected" sidebar_text="{FactionColor}星际列车：&lt;/color&gt;  首次探测到"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+		   text_replacement_related_player_name="true"
+           chat_text="{FactionColor}星际列车：&lt;/color&gt; 已被目击"
+           is_partial_record="true"  
+           full_text="发件人：蒂莫西·科波菲尔博士
+人工智能研发部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+我们探测到一些新的人工智能舰船和基础设施，名为"星际列车"。
+
+这些机器信使似乎在星系中从一站旅行到另一站，直到抵达目的地仓库并卸下货物。我们不知道那些货物究竟是什么，但如果我们摧毁其中一列，或许能获得科学和黑客知识。
+
+它们很可能在协助大型建设项目，其中可能包括要塞、恐怖守卫、傀儡复制品，甚至更糟的东西。当足够多的列车抵达时，我们怀疑该项目将启动。" />
+
+  <journal name="AstroTrainsTierTwo" sidebar_text="{FactionColor}星际列车：&lt;/color&gt;  中级列车"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+		   text_replacement_related_player_name="true"
+        chat_text="{FactionColor}星际列车：&lt;/color&gt; 防御增强"
+        is_partial_record="true"  
+           full_text="发件人：蒂莫西·科波菲尔博士
+人工智能研发部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+由于我们对"星际列车"的攻击以及随后摧毁的若干列车，人工智能似乎正在加大投入，导致列车比之前更加强大。" />
+
+    <journal name="AstroTrainsTierThree" sidebar_text="{FactionColor}星际列车：&lt;/color&gt;  高级列车"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+		   text_replacement_related_player_name="true"
+        chat_text="{FactionColor}星际列车：&lt;/color&gt; 防御进一步增强"
+        is_partial_record="true"  
+           full_text="发件人：蒂莫西·科波菲尔博士
+人工智能研发部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+由于我们持续的摧毁行动，人工智能正在进一步加大投入，现在我们面对的车列比最初的要强大得多。" />
+
+</root>

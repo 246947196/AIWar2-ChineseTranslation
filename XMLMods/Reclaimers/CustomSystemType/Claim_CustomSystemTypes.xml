@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+    <custom_system_type
+            name="CustomSystem_Base"
+            dll_name="AIWarExternalCode"
+            type_name="Arcen.AIW2.External.System_Transformation"
+            style="None"
+            text_usage_activate="To activate $(Click) on the notification icon or press $(Binding) with this ship selected."
+            >
+            <!--
+        <var_map
+                var="Name"
+                style="EntitySystem_Line1_Label"
+                />
+        <var_map
+                var="Duration"
+                style="MinutesAndSeconds"
+                />
+        <var_map
+                var="Cooldown"
+                style="MinutesAndSeconds"
+                />
+        <var_map
+                var="Activity"
+                style="MinutesAndSeconds"
+                />
+        <var_map
+                var="Status"
+                style="EntitySystem_Status"
+                />
+        <var_map
+                var="Label"
+                style="EntitySystem_Line2_Label"
+                />
+        <var_map
+                var="Usage"
+                style="BasicText"
+                />
+        <var_map
+                var="Description"
+                style="SecondaryText"
+                />
+        <var_map
+                var="Binding"
+                style="UserAction"
+                />
+        <var_map
+                var="Click"
+                style="UserAction"
+                />
+                -->
+    </custom_system_type>
+
+    <custom_system_type
+            name="Claim_RageGolem_Enrage"
+            copy_from="CustomSystem_Base"
+            display_name="暴怒"
+            dll_name="AIWarExternalCode"
+            type_name="Arcen.AIW2.External.System_Transformation"
+            style="Activate"
+            input_number="1"
+            cooldown="300"
+            duration="30"
+            transform_into="RageGolem_Enraged"
+            transform_back="RageGolem"
+            description="暂时获得速度、伤害增强并减少受到的伤害。"
+
+            text_line_1="$(Name): Transform into $(TransformInto) for $(Duration) once every $(Cooldown) ($(Status)) $(Activity)"
+            text_line_2="$(Description)"
+            text_line_3="$(Label): $(Usage)"
+            >
+    </custom_system_type>
+
+    <!--
+    <custom_system_type
+            name="Claim_Ruptura_Mine"
+            copy_from="CustomSystem_Base"
+            display_name="我的"
+            dll_name="AIWarExternalCode"
+            type_name="Arcen.AIW2.External.System_SpawnEntity"
+            style="Activate"
+            input_number="1"
+            cooldown="300"
+            duration="30"
+            spawn_bag="RageGolem_Enraged"
+            description="暂时获得速度、伤害增强并减少受到的伤害。"
+
+            text_line_1="$(Name): Transform into $(TransformInto) for $(Duration) once every $(Cooldown) ($(Status)) $(Activity)"
+            text_line_2="$(Description)"
+            text_line_3="$(Label): $(Usage)"
+            >
+    </custom_system_type>
+    -->
+
+</root>

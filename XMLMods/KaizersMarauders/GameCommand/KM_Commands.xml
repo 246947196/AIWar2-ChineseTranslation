@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<command name="GameCommand_KaizersMaraudersAlterShipSpawnerTargets" dll_name="KaizersMarauders_Base" type_name="KaizersMarauders_Base.GameCommand_KaizersMaraudersAlterShipSpawnerTargets" />
+</root>

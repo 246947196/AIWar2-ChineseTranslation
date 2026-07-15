@@ -1,0 +1,1141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!-- Zeus's Notes:
+	    Theming: The Neinzul are the glass cannons of the Dyson Coalition, featuring powerful but realtively fragile units in their roster. 
+		         Neinzul supercolonies will release a frenzied spawn of younglings that fight until they are killed or attrition
+				 
+		District One Roster (Younglings)
+		    
+			Harpy         Swarmer cap     (30). Melee. Deals extra damage based on how damaged opponet is. Some fusion damage
+			Siren         L. Corvette cap (15). Harmonic. Generalist and zombifier
+			Cockatrice    H. Corvette cap (10). Engine stunner/Weapon jammer. Anti-strikecraft
+			Wisp          Standard cap    (20). Stealth, melee unit. Fortified, Anti-Guardian; weak vs. strikecraft
+		
+		District Two Roster (Clanlings)
+		    
+			Wyvern.       Light Frigate Cap (8). Corrosive damage (poison) and Acid damage
+			Gorgon        Heavy Frigate Cap (4). Paralyzes large ships  
+			Chimera.      Heavy Frigate Cap (4). 3 unique weapons, as befiting a chimera. Splits into 3 ships upon death 
+			Basilisk      Medium Frigate Cap (6). Paralyzes small ships  
+			Manticore     Medium Frigate Cap (6). Cloaked with burst fire attack and spine launcher. Returns to cloaking between firing
+			                                         
+			
+		District Three Roster (Supercolonies)
+		    
+			Leviathan  Devours units to heal itself. 
+			Kraken  Powerful tractor beams, deals extra to tractored units. Launches Tentacle-younglings that deal extra to tractored units
+			Scylla 
+			Behemoth 
+			
+			
+	    -->
+
+
+
+	<!-- Neinzul Ships 
+	    
+		District One Roster (Younglings)-->
+
+	<!--Harpy       Swarmer cap. Melee. Deals extra damage based on how damaged opponet is. Some fusion damage -->
+	<entity name="DysonHarpy" display_name="Harpy" display_name_for_sidebar="Harpy"
+		tags="DysonSidekickNeinzulTierZero"
+                visuals="Assets/_DLC3/Clanlings/NeinzulClanlingMammoth/NeinzulClanlingMammoth.prefab" visuals_bundle="exp3_neinzul_abyss"
+	        icon_name="Ships4/NeinzulClanlingMammoth"
+		voice_group="Silent"
+	        category="Ship" is_strikecraft="true"
+		size_scale="1.3" visuals_scale_multiplier="15" y_offset_of_icon="35" gimbal_icon_size_multiplier="0.75"
+		collision_priority="100"
+                thematic_groups="DysonSidekick"
+                description="This fierce Youngling fights close and personal, inflicting greater damage to weakened foes."
+		metal_cost="1650" energy_consumption="200"
+                hull_points="6500" shield_points="0" speed="AboveAverage4"
+                starting_mark_level="Mark1" tech_upgrades_that_benefit_me="DysonNeinzulTierOne"  mark_level_scale_style="DysonTierOne"
+	        cost_for_ai_to_purchase="40"
+	        strength_multiplier="1"
+	        armor_mm="35" albedo="0.5" engine_gx="20" mass_tx="0.1"
+                description_appender_dll="AIWarExternalCode"
+	        description_appender_type="Arcen.AIW2.External.DysonSidekickDescriptionAppender"
+		ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+		priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+                >
+	  <system name="W1" display_name="Harpy Claws"
+		  category="Weapon" firing_timing="OnlyInRange"
+		  damage_per_shot="500" range="AlmostNone" seek_range="Normal1" shot_speed="Fast" rate_of_fire="High" fires_salvos_sequentially="false"
+		  shot_type_data="MeleeInvisible" added_target_evaluator="Melee"
+		  base_percent_damage_bypasses_personal_shields="0.7"
+		  >
+	    <outgoing_damage_modifier based_on="TargetHullPercentageMissing" comparison_type="MultiplesOf" compared_to="15" multiplier="1" />
+	  </system>
+	  <incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="3400" multiplier="0.1" />
+	</entity>
+
+	<!--Siren:  Corvette cap. Harmonic. Generalist zombifier-->
+  <entity name="DysonSiren" 
+          display_name="Siren" display_name_for_sidebar="Siren" 
+	  thematic_groups="DysonSidekick"
+          visuals="Assets/_DLC3/Clanlings/NeinzulClanlingJellyfish/NeinzulClanlingJellyfish.prefab" visuals_bundle="exp3_neinzul_abyss"
+	  icon_name="Ships4/NeinzulClanlingJellyfish" icon_overlay="Overlays1/Turret_Harmonic"
+	  voice_group="Silent"
+	  category="Ship" is_strikecraft="true"
+	  size_scale="2" gimbal_icon_size_multiplier="1.1"
+	  visuals_scale_multiplier="6.2" 
+	  y_offset_of_icon="16"
+	  collision_priority="100"
+	  description="This Siren-class Clanling ship is weak individually but becomes a cacophony as a chorus, beckoning foes to the Siren's call."
+	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="DysonNeinzulTierOne"
+	  cost_for_ai_to_purchase="200" mark_level_scale_style="DysonTierOne" strength_multiplier="3"		
+	  hull_points="11000" shield_points="0" speed="AboveAverage1"
+	  metal_cost="3500" energy_consumption="900"
+	  armor_mm="40" albedo="0.5" engine_gx="7" mass_tx="0.3"
+	  amount_added_to_damage_per_ship_of_this_type_on_planet="35" amount_added_to_damage_per_ship_of_this_type_on_planet_per_mark="15" max_amount_added_to_damage_per_ship_of_this_type_on_planet="3000"
+	  ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+          priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+	  description_appender_dll="AIWarExternalCode"
+	  description_appender_type="Arcen.AIW2.External.DysonSidekickDescriptionAppender"
+	  >
+    <system name="W1" display_name="Cacophonous Blast"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="75" range="Normal4" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="false"
+	    shot_type_data="PlasmaTorpedo" 
+	    >
+      <death_effect_damage type="Zombification" tier_name="Parasite"/>
+    </system>
+   
+  </entity>
+   
+
+	
+
+	<!--   Corvette cap. Engine stunner/Weapon jammer. Anti-strikecraft-->
+    <entity name="DysonCockatrice" 
+			display_name="Cockatrice" display_name_for_sidebar="Cockatrice"
+            visuals="Assets/_DLC3/Younglings/NeinzulYounglingPuffin/NeinzulYounglingPuffin.prefab"  visuals_bundle="exp3_neinzul_abyss"
+	        icon_name="Ships4/NeinzulPuffin"
+	        voice_group="Silent"
+            category="Ship" is_strikecraft="true"
+			size_scale="1" visuals_scale_multiplier="0.4" gimbal_icon_size_multiplier="0.75"  
+			collision_priority="100"
+            thematic_groups="DysonSidekick"
+			strength_multiplier="2"
+			description="This Cockatrice-class Clanling has a dreadful gaze to cripple poorly armored ships."
+            metal_cost="5250" energy_consumption="900" 
+			armor_mm="40" albedo="0.1" engine_gx="13" mass_tx="0.3"
+            hull_points="16000" shield_points="0" speed="AboveAverage2"
+            starting_mark_level="Mark1" tech_upgrades_that_benefit_me="DysonNeinzulTierOne"  mark_level_scale_style="DysonTierOne"
+			cost_for_ai_to_purchase="200"
+            description_appender_dll="AIWarExternalCode"
+	        description_appender_type="Arcen.AIW2.External.DysonSidekickDescriptionAppender"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+            >
+      <system name="W1" display_name="Dreadful Gaze"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      damage_per_shot="150" range="Normal4" shot_speed="Normal" rate_of_fire="Normal"
+	      shots_per_salvo="8" added_shots_per_salvo_per_mark="2" fires_salvos_sequentially="false"
+	      shot_type_data="FusionRocket"
+	      base_engine_stun_per_shot="6" added_engine_stun_per_shot_per_mark="3" engine_stun_to_engine_gx_less_than="14" max_engine_stun_seconds="24" added_target_evaluator="WeaponJamAsPrimary"
+	      base_enemy_weapon_reload_slowing_seconds_per_shot="6" added_enemy_weapon_reload_slowing_seconds_per_shot_per_mark="3" enemy_weapon_reload_slowing_to_armor_mm_less_than="70" max_enemy_weapon_reload_slowing_seconds="24"
+	      >
+	<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="70" multiplier="3" />
+      </system>
+
+  </entity>
+
+	<!--Wisp    Standard cap. Stealth, melee unit. Fortified, Anti-Guardian; weak vs. strikecraft --> 
+	<entity name="DysonWisp" 
+		    display_name="Wisp" display_name_for_sidebar="Wisp"
+			visuals="Assets/_DLC3/Younglings/NeinzulYounglingCheetah/NeinzulYounglingCheetah.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships4/NeinzulCheetah"
+			voice_group="Silent"
+            category="Ship" is_strikecraft="true"
+			size_scale="1" visuals_scale_multiplier="0.3" y_offset_of_icon="35" gimbal_icon_size_multiplier="0.75"
+		    collision_priority="100"
+            thematic_groups="DysonSidekick"
+		    description="This wily Youngling has 隐形 to get in melee range of its anti-energy attack."
+		    strength_multiplier="1.5"
+            metal_cost="1650" energy_consumption="200"
+            hull_points="8500" shield_points="0" speed="AboveAverage3"
+		    armor_mm="40" albedo="0.7" engine_gx="18" mass_tx="0.2"
+	        starting_mark_level="Mark1" tech_upgrades_that_benefit_me="DysonNeinzulTierOne"  mark_level_scale_style="DysonTierOne"
+		    damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.25"
+		    cost_for_ai_to_purchase="120"
+            description_appender_dll="AIWarExternalCode"
+	        description_appender_type="Arcen.AIW2.External.DysonSidekickDescriptionAppender"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+            >
+	<system name="W1" display_name="Energetic Whip"
+		category="Weapon" firing_timing="OnlyInRange"
+		damage_per_shot="325" range="AlmostNone" seek_range="Normal1" shot_speed="Fast" rate_of_fire="High" fires_salvos_sequentially="false"
+		shot_type_data="MeleeInvisible" added_target_evaluator="Melee"
+	    >
+	<outgoing_damage_modifier based_on="EnergyUsage" comparison_type="AtLeast" compared_to="7000" multiplier="10" />
+	</system>
+   <system name="C" display_name="Cloaking Device" category="Passive" cloaking_points="1000" cloaking_points_added_per_mark="1000"> </system>
+ </entity>
+
+  <!-- District Two Roster (Clanlings) -->
+  <entity name="DysonWyvern" copy_from="ClanlingBear"
+		  display_name="Wyvern" display_name_for_sidebar="Wyvern"
+          special_entity_type="Frigate"
+          thematic_groups="DysonSidekick"
+          hull_points="75000" shield_points="20000" speed="AboveAverage3"
+          metal_cost="16000"
+          tech_upgrades_that_benefit_me="DysonNeinzulTierTwo"
+          mark_level_scale_style="DysonTierTwo"
+          description_appender_dll="AIWarExternalCode"
+	  description_appender_type="Arcen.AIW2.External.DysonSidekickDescriptionAppender"
+          >
+  </entity>
+  <entity name="DysonGorgon" copy_from="ClanlingCassowary"
+		  display_name="Gorgon" display_name_for_sidebar="Gorgon"
+          thematic_groups="DysonSidekick"
+          special_entity_type="Frigate"
+          metal_cost="16000"
+          max_number_of_weapon_points="4"
+          tech_upgrades_that_benefit_me="DysonNeinzulTierTwo"
+          mark_level_scale_style="DysonTierTwo"
+          description_appender_dll="AIWarExternalCode"
+	  description_appender_type="Arcen.AIW2.External.DysonSidekickDescriptionAppender"
+          >
+    <system name="B5" display_name="Biting Strike"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="700" range="High2" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+	    shot_type_data="NanocaustCurvedSicklyGreenShot"
+	    number_of_weapon_points_to_gain_on_firing="1"
+	    >
+      <outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="40" multiplier="4" added_multiplier_per_mark="0.4"/>
+    </system>
+    <system name="W2" display_name="Critical Stike"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="3200" range="High2" shot_speed="Normal" rate_of_fire="PeriodicActivation" fires_salvos_sequentially="true"
+	    shot_type_data="EnergyWave"  
+	    number_of_weapon_points_to_consume_on_firing="4" additional_damage_modifier_per_weapon_point="2"
+	    >
+      <outgoing_damage_modifier applies_to="AllShields" based_on="MaxBubbleForcefield" comparison_type="GreaterThan" compared_to="10000" multiplier="5" />
+    </system>	
+    <incoming_damage_modifier based_on="MyTimeAtPlanet" comparison_type="LessThan" compared_to="5" multiplier="0.2" />
+  </entity>
+
+  <entity name="DysonChimera" copy_from="ClanlingSabretooth"
+		  display_name="Chimera" display_name_for_sidebar="Chimera"
+          thematic_groups="DysonSidekick"
+          special_entity_type="Frigate"
+          metal_cost="16000"
+          tech_upgrades_that_benefit_me="DysonNeinzulTierTwo"
+          mark_level_scale_style="DysonTierTwo"
+          description_appender_dll="AIWarExternalCode"
+	  description_appender_type="Arcen.AIW2.External.DysonSidekickDescriptionAppender"
+          description="The dreadful Chimera wields a powerful ray."
+          >
+    <system name="W1" display_name="Ray of Disintegration"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="420" range="ExtremelyHigh" shot_speed="Normal" rate_of_fire="VeryLow" fires_salvos_sequentially="true"
+	    shot_type_data="NecroticRay"  
+	    base_percent_damage_bypasses_personal_shields="1"
+	    corrosion_damage="3350"
+	    corrosion_damage_added_per_mark="3000"
+	    number_of_weapon_points_to_consume_on_firing="5" additional_damage_modifier_per_weapon_point="2"
+	    >
+      <outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="7" multiplier="2" />
+    </system>
+    <system name="D1" display_name="Hornet Gun"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="5" range="EssentiallyInfinite" shot_speed="Normal" fires_salvos_sequentially="true"
+	    shot_type_data="YounglingHornet"
+	    system_is_hidden_for_ui="true"
+	    rate_of_fire="High"
+	    use_alternate_rate_of_fire_after_x_shots="3"
+	    alternate_rate_of_fire="Minute"
+	    use_alternate_rate_of_fire_for_x_shots_before_reverting="1"
+	    >
+    </system>
+    <system name="D2" display_name="Moray Gun"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="5" range="EssentiallyInfinite" shot_speed="Normal" fires_salvos_sequentially="true"
+	    shot_type_data="YounglingMoray"
+	    system_is_hidden_for_ui="true"
+	    rate_of_fire="High"
+	    use_alternate_rate_of_fire_after_x_shots="3"
+	    alternate_rate_of_fire="Minute"
+	    use_alternate_rate_of_fire_for_x_shots_before_reverting="1"
+	    >
+    </system>
+  </entity>
+  <entity name="DysonBasilisk" copy_from="YounglingSnake"
+          display_name="Basilisk" display_name_for_sidebar="Basilisk"
+		  thematic_groups="DysonSidekick"
+          special_entity_type="Frigate"
+          metal_cost="16000"
+          self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="0"
+          tech_upgrades_that_benefit_me="DysonNeinzulTierTwo"
+          mark_level_scale_style="DysonTierTwo"
+          description_appender_dll="AIWarExternalCode"
+	  description_appender_type="Arcen.AIW2.External.DysonSidekickDescriptionAppender"
+          >
+    <system name="W1" display_name="Grappling Bolt"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="800" range="Tiny2" shot_speed="Normal" rate_of_fire="Normal"
+	    shots_per_salvo="3" fires_salvos_sequentially="false"
+	    shot_type_data="ParalysisProngedShot_Blue" added_target_evaluator="ParalyzerAsPrimary"
+	    base_knockback_per_shot="-250"
+	    base_paralysis_seconds_per_shot="4" paralysis_to_ships_mass_tx_less_than="2"
+	    >
+      <outgoing_damage_modifier based_on="AttackDistance" comparison_type="LessThan" compared_to="1000" multiplier="5.0" />
+    </system>
+  </entity>
+	
+	
+  <!--Manticore     Medium Frigate Cap (6). Cloaked with burst fire attack and Quill-Youngling launcher. Returns to cloaking between firing-->
+    <entity name="DysonManticore" 
+		    display_name="Manticore" display_name_for_sidebar="Manticore"
+            thematic_groups="DysonSidekick"
+		    visuals="Assets/_DLC3/Younglings/NeinzulYounglingApe/NeinzulYounglingApe.prefab" visuals_bundle="exp3_neinzul_abyss"
+		    icon_name="Ships4/NeinzulApe"
+		    voice_group="Zenith"
+		    size_scale="1.3" gimbal_icon_size_multiplier="1.25"
+		    visuals_scale_multiplier="1.5" collision_priority="100"
+            category="Ship" special_entity_type="Frigate" 
+            description="This Clanling lurks in the shadows before releasing a volley of spines and quills at its prey. It hides between strikes, attacking in bursts."
+		    metal_cost="16500" energy_consumption="12500"
+            hull_points="165000" shield_points="82500" speed="AboveAverage1"
+		    armor_mm="40" albedo="0.7" engine_gx="16" mass_tx="5"
+            starting_mark_level="Mark1"  tech_upgrades_that_benefit_me="DysonNeinzulTierTwo"
+		    cost_for_ai_to_purchase="850"
+            mark_level_scale_style="DysonTierTwo"
+            description_appender_dll="AIWarExternalCode"
+	        description_appender_type="Arcen.AIW2.External.DysonSidekickDescriptionAppender"
+		    ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+		    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+		    amount_added_to_damage_per_ship_of_this_type_on_planet="5" max_amount_added_to_damage_per_ship_of_this_type_on_planet="50"
+		    priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+            >
+		<system name="W1" display_name="Manticore Spines"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1100" range="Normal5" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+				shot_type_data="EngineDisruptingShell"	 shots_per_salvo="10" added_shots_per_salvo_per_mark="5"
+				use_alternate_rate_of_fire_after_x_shots="5" alternate_rate_of_fire="ExtremelyLow"  use_alternate_rate_of_fire_for_x_shots_before_reverting="1"
+				>
+		</system>
+		<system name="L1" display_name="Quill Launcher"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="500" range="Normal5" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+				shot_type_data="ManticoreQuill"	 shots_per_salvo="3" added_shots_per_salvo_per_mark="0" shots_per_target="3"
+				use_alternate_rate_of_fire_after_x_shots="5" alternate_rate_of_fire="ExtremelyLow"  use_alternate_rate_of_fire_for_x_shots_before_reverting="1"
+				>
+		</system>
+		<system name="C" display_name="Cloaking Device" category="Passive" cloaking_points="3000" cloaking_points_added_per_mark="1500"> </system>
+		<ship_class_data can_be_zombified_and_similar="false" />
+  </entity>
+
+  <!-- District Three Roster (Supercolonies)  -->
+  <entity name="DysonLeviathan" copy_from="ClanlingOrbWeaver"
+		  display_name="Leviathan" display_name_for_sidebar="Leviathan"
+          thematic_groups="DysonSidekick"
+          special_entity_type="Frigate"
+          metal_cost="100000"
+          hull_points="1160000" shield_points="120000" speed="Normal1"
+          tech_upgrades_that_benefit_me="DysonNeinzulTierThree"
+          mark_level_scale_style="DysonTierThree"
+          description_appender_dll="AIWarExternalCode"
+	  description_appender_type="Arcen.AIW2.External.DysonSidekickDescriptionAppender"
+          >
+  </entity>
+  <entity name="DysonKraken" copy_from="ClanlingAnkylosaurus"
+		  display_name="Kraken" display_name_for_sidebar="Kraken"
+          thematic_groups="DysonSidekick"
+          special_entity_type="Frigate"
+          metal_cost="100000"
+          hull_points="1200000" shield_points="120000" speed="Normal1"
+          description="This heavily armored Clanling attacks with a powerful tail strike, and spawns Fireflies and Rams."
+          tech_upgrades_that_benefit_me="DysonNeinzulTierThree"
+          mark_level_scale_style="DysonTierThree"
+          description_appender_dll="AIWarExternalCode"
+	  description_appender_type="Arcen.AIW2.External.DysonSidekickDescriptionAppender"
+          >
+    <system name="W1" display_name="Tail Strike"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="7500" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Low"
+	    shots_per_salvo="6" fires_salvos_sequentially="true"
+	    shot_type_data="EnergyWave"
+            base_knockback_per_shot="250"
+	    >
+      <outgoing_damage_modifier based_on="mass_tx" comparison_type="LessThan" compared_to="2" multiplier="1.5" /> 
+    </system>
+    <system name="D1" display_name="Firefly Gun"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="5" range="EssentiallyInfinite" shot_speed="Normal" fires_salvos_sequentially="true"
+	    shot_type_data="YounglingFirefly"
+	    system_is_hidden_for_ui="true"
+	    rate_of_fire="High"
+	    use_alternate_rate_of_fire_after_x_shots="3"
+	    alternate_rate_of_fire="Minute"
+	    use_alternate_rate_of_fire_for_x_shots_before_reverting="1"
+	    >
+    </system>
+    <system name="D2" display_name="Ram Gun"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="5" range="EssentiallyInfinite" shot_speed="Normal" fires_salvos_sequentially="true"
+	    shot_type_data="YounglingRam"
+	    system_is_hidden_for_ui="true"
+	    rate_of_fire="High"
+	    use_alternate_rate_of_fire_after_x_shots="3"
+	    alternate_rate_of_fire="Minute"
+	    use_alternate_rate_of_fire_for_x_shots_before_reverting="1"
+	    >
+    </system>
+
+  </entity>
+  <entity name="DysonScylla" copy_from="YounglingBadger"
+		  display_name="Scylla" display_name_for_sidebar="Scylla"
+          thematic_groups="DysonSidekick"
+          special_entity_type="Frigate"
+          metal_cost="100000"
+          hull_points="1200000" shield_points="120000" speed="Normal1"
+          self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="0"
+          tech_upgrades_that_benefit_me="DysonNeinzulTierThree"
+          mark_level_scale_style="DysonTierThree"
+          description_appender_dll="AIWarExternalCode"
+	  description_appender_type="Arcen.AIW2.External.DysonSidekickDescriptionAppender"
+          >
+    <system name="W1" display_name="Claws"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="6000" range="AlmostNone" shot_speed="Fast" rate_of_fire="Normal" fires_salvos_sequentially="false"
+	    shot_type_data="MeleeInvisible" added_target_evaluator="Melee"
+	    >
+    </system>
+    <incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="500" multiplier="0.05" />
+
+  </entity>
+  <entity name="DysonBehemoth" copy_from="YounglingTurtle"
+		  display_name="Behemoth" display_name_for_sidebar="Behemoth"
+          thematic_groups="DysonSidekick"
+          special_entity_type="Frigate"
+          metal_cost="100000"
+          hull_points="1200000" shield_points="120000" speed="Normal1"
+          self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="0"
+          tech_upgrades_that_benefit_me="DysonNeinzulTierThree"
+          mark_level_scale_style="DysonTierThree"
+          description_appender_dll="AIWarExternalCode"
+	  description_appender_type="Arcen.AIW2.External.DysonSidekickDescriptionAppender"
+          >
+    <system name="W1" display_name="Yawn"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="6000" range="VeryTiny1" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="false"
+	    shot_type_data="FlakShotAOEBurstAtEnd"
+	    area_of_effect_size="1000"
+	    shots_detonate_immediately="true"
+	    maximum_number_of_targets_hit_per_shot="12"
+	    health_change_per_damage_dealt="2"
+	    >
+    </system>
+    <incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="1000" multiplier="0.05" />
+
+  </entity>
+
+  <!-- Neinzul Vaults; vaults are structures that grant ships to flagships. These use essentially the same mechanic as Necromancer Homes; feel free to rename them from Vault if you want -->
+    <entity name="DysonSirenVault" tags="DysonNeinzulBuildMenu,DysonFeedsFleet,DysonBuildMenu,DysonNeinzulBuildMenuOnly,GatedByNeinzulDistrict,RequiresNeinzulDistrictOne"
+	    thematic_groups="DysonSidekick" 
+	    visuals="Assets/_DLC3/Necromancer/NecroSkeletonHome/NecroSkeletonHome.prefab" visuals_bundle="exp3_neinzul_abyss"
+	    icon_name="Ships4/NeinzulClanlingJellyfish" gimbal_icon_size_multiplier="1.5"
+            icon_overlay="Overlays2/Carnelion"
+            voice_group="Spire"
+            uses_large_health_bar="true"
+            category="Ship"
+	    size_scale="7"
+            visuals_scale_multiplier="14"
+	    y_offset_of_icon="20"
+	    collision_priority="1000"
+            display_name="Dyson Siren Vault" display_name_for_sidebar="Siren V."
+            description_short="This grants a squadron of enthralling Sirens to the bolstered 旗舰."
+            description="This outpost allows the 奈祖尔 to grow Siren-class Clanlings. Weak individually, they are a cacophony in large numbers and seduce foes with their song."
+            starting_mark_level="Markless" build_sidebar_categories_i_am_part_of="DysonNeinzul"
+            cost_for_ai_to_purchase="10000" strength_multiplier="0"
+	    hull_points="100000" shield_points="200000" speed="Immobile"
+            armor_mm="180" albedo="0.7" mass_tx="6"
+            metal_cost="50000" energy_consumption="1000"
+            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+	    city_socket_cost="1" name_for_city_sockets="Dyson Socket" minimum_required_city_level_for_construction="1" base_ship_cap_in_custom_city="1"
+            name_for_city_sockets_short="Socket"
+            ship_type_name_to_grant_more_of_in_custom_fleet="DysonSiren" ship_type_count_to_grant_more_of_in_custom_fleet="15"
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+	    >
+      <metal_flow purpose="SelfConstruction" throughput="2500"/>
+    </entity>
+    <!-- note: requiring district one is the default state, but I sometimes include it for clarity -->
+    <entity name="DysonHarpyVault" copy_from="DysonSirenVault"
+            tags="DysonNeinzulBuildMenu,DysonFeedsFleet,DysonBuildMenu,DysonNeinzulBuildMenuOnly,SpawnsWithNeinzulStronghold,GatedByNeinzulDistrict,RequiresNeinzulDistrictOne"
+	    icon_name="Ships4/NeinzulClanlingMammoth" gimbal_icon_size_multiplier="1.5"
+            icon_overlay="Overlays2/Carnelion"
+            metal_cost="50000"
+            display_name="Dyson Harpy Vault" display_name_for_sidebar="Harpy V."
+            description_short="This grants a squadron of fierce Harpies to the bolstered 旗舰. "
+            description="This outpost allows the 奈祖尔 to nurture younglings into fierce Harpies, frenzied melee fighters that are dangerous to damaged foes."
+            starting_mark_level="Markless" build_sidebar_categories_i_am_part_of="DysonNeinzul"
+            ship_type_name_to_grant_more_of_in_custom_fleet="DysonHarpy" ship_type_count_to_grant_more_of_in_custom_fleet="30"
+			base_ship_cap_in_custom_city="2"
+            >
+    </entity>
+    <entity name="DysonCockatriceVault" copy_from="DysonSirenVault"
+            tags="DysonNeinzulBuildMenu,DysonFeedsFleet,DysonBuildMenu,DysonNeinzulBuildMenuOnly,GatedByNeinzulDistrict,RequiresNeinzulDistrictOne"
+	    icon_name="Ships4/NeinzulPuffin" gimbal_icon_size_multiplier="1.5"
+            icon_overlay="Overlays2/Carnelion"
+            display_name="Dyson Cockatrice Vault" display_name_for_sidebar="Cockatrice V."
+            description_short="This grants a squadron of dreadful Cockatrices to the bolstered 旗舰."
+            description="This outpost allows the 奈祖尔 to grow fearsome Cockatrice-Class Clanlings. Its dreadful gaze is particularly dangerous to poorly armored enemies."
+            starting_mark_level="Markless" build_sidebar_categories_i_am_part_of="DysonNeinzul"
+            ship_type_name_to_grant_more_of_in_custom_fleet="DysonCockatrice" ship_type_count_to_grant_more_of_in_custom_fleet="10"
+            metal_cost="50000"
+            >
+    </entity>
+    <entity name="DysonWispVault" copy_from="DysonSirenVault"
+            tags="DysonNeinzulBuildMenu,DysonFeedsFleet,DysonBuildMenu,DysonNeinzulBuildMenuOnly,GatedByNeinzulDistrict,RequiresNeinzulDistrictOne"
+	    icon_name="Ships4/NeinzulCheetah" gimbal_icon_size_multiplier="1.5"
+            icon_overlay="Overlays2/Carnelion"
+            display_name="Dyson Wisp Vault" display_name_for_sidebar="Wisp V."
+            description_short="This grants a squadron of wily Wisps to the bolstered 旗舰."
+            description="This outpost allows the 奈祖尔 to nurture their younglings into wily wisps. These 隐形 melee fighters excel at destroying ships with high energy usage."
+            starting_mark_level="Markless" build_sidebar_categories_i_am_part_of="DysonNeinzul"
+            ship_type_name_to_grant_more_of_in_custom_fleet="DysonWisp" ship_type_count_to_grant_more_of_in_custom_fleet="20"
+            metal_cost="50000"
+            >
+    </entity>
+    <!-- district two -->
+    <entity name="DysonWyvernVault" copy_from="DysonSirenVault"
+            tags="DysonNeinzulBuildMenu,DysonFeedsFleet,DysonBuildMenu,DysonNeinzulBuildMenuOnly,GatedByNeinzulDistrict,RequiresNeinzulDistrictTwo"
+	    icon_name="Ships4/NeinzulClanlingBear" gimbal_icon_size_multiplier="1.5"
+            icon_overlay="Overlays2/Carnelion"
+            display_name="Dyson Wyvern Vault" display_name_for_sidebar="Wyvern V."
+            description_short="This grants a squadron of Wyverns to the bolstered 旗舰."
+            description="This outpost allows the 奈祖尔 to grow their Wyverns. 区域 Two Tier."
+            starting_mark_level="Markless" build_sidebar_categories_i_am_part_of="DysonNeinzul"
+            ship_type_name_to_grant_more_of_in_custom_fleet="DysonWyvern" ship_type_count_to_grant_more_of_in_custom_fleet="5"
+            city_socket_cost="2" name_for_city_sockets="Dyson Socket" minimum_required_city_level_for_construction="2" base_ship_cap_in_custom_city="2"
+            metal_cost="200000"
+            >
+    </entity>
+
+    <entity name="DysonGorgonVault" copy_from="DysonSirenVault"
+            tags="DysonNeinzulBuildMenu,DysonFeedsFleet,DysonBuildMenu,DysonNeinzulBuildMenuOnly,GatedByNeinzulDistrict,RequiresNeinzulDistrictTwo"
+	    icon_name="Ships4/NeinzulClanlingCassowary" gimbal_icon_size_multiplier="1.5"
+            icon_overlay="Overlays2/Carnelion"
+            display_name="Dyson Gorgon Vault" display_name_for_sidebar="Gorgon V."
+            description_short="This grants a squadron of Cassowaries to the bolstered 旗舰."
+            description="This outpost allows the 奈祖尔 to grow their Gorgons. 区域 Two Tier."
+            starting_mark_level="Markless" build_sidebar_categories_i_am_part_of="DysonNeinzul"
+            ship_type_name_to_grant_more_of_in_custom_fleet="DysonGorgon" ship_type_count_to_grant_more_of_in_custom_fleet="5"
+            city_socket_cost="2" name_for_city_sockets="Dyson Socket" minimum_required_city_level_for_construction="2" base_ship_cap_in_custom_city="2"
+            metal_cost="200000"
+            >
+    </entity>
+    <entity name="DysonChimeraVault" copy_from="DysonSirenVault"
+            tags="DysonNeinzulBuildMenu,DysonFeedsFleet,DysonBuildMenu,DysonNeinzulBuildMenuOnly,GatedByNeinzulDistrict,RequiresNeinzulDistrictTwo"
+	    icon_name="Ships4/NeinzulClanlingSabertooth" gimbal_icon_size_multiplier="1.5"
+            icon_overlay="Overlays2/Carnelion"
+            display_name="Dyson Chimera Vault" display_name_for_sidebar="Chimera V."
+            description_short="This grants a squadron of Chimeras to the bolstered 旗舰."
+            description="This outpost allows the 奈祖尔 to grow their Chimeras. 区域 Two Tier."
+            starting_mark_level="Markless" build_sidebar_categories_i_am_part_of="DysonNeinzul"
+            ship_type_name_to_grant_more_of_in_custom_fleet="DysonChimera" ship_type_count_to_grant_more_of_in_custom_fleet="5"
+            city_socket_cost="2" name_for_city_sockets="Dyson Socket" minimum_required_city_level_for_construction="2" base_ship_cap_in_custom_city="2"
+            metal_cost="200000"
+            >
+    </entity>
+    <entity name="DysonBasiliskVault" copy_from="DysonSirenVault"
+            tags="DysonNeinzulBuildMenu,DysonFeedsFleet,DysonBuildMenu,DysonNeinzulBuildMenuOnly,GatedByNeinzulDistrict,RequiresNeinzulDistrictTwo"
+	    icon_name="Ships4/NeinzulSnake" gimbal_icon_size_multiplier="1.5"
+            icon_overlay="Overlays2/Carnelion"
+            display_name="Dyson Basilisk Vault" display_name_for_sidebar="Basilisk V."
+            description_short="This grants a squadron of Basilisks to the bolstered 旗舰."
+            description="This outpost allows the 奈祖尔 to grow their Basilisks. 区域 Two Tier."
+            starting_mark_level="Markless" build_sidebar_categories_i_am_part_of="DysonNeinzul"
+            ship_type_name_to_grant_more_of_in_custom_fleet="DysonBasilisk" ship_type_count_to_grant_more_of_in_custom_fleet="5"
+            city_socket_cost="2" name_for_city_sockets="Dyson Socket" minimum_required_city_level_for_construction="2" base_ship_cap_in_custom_city="2"
+            metal_cost="200000"
+            >
+    </entity>
+    <entity name="DysonManticoreVault" copy_from="DysonSirenVault"
+            tags="DysonNeinzulBuildMenu,DysonFeedsFleet,DysonBuildMenu,DysonNeinzulBuildMenuOnly,GatedByNeinzulDistrict,RequiresNeinzulDistrictTwo"
+	    icon_name="Ships4/NeinzulApe" gimbal_icon_size_multiplier="1.5"
+            icon_overlay="Overlays2/Carnelion"
+            display_name="Dyson Manticore Vault" display_name_for_sidebar="Manticore V."
+            description_short="This grants a squadron of cunning Manticores to the bolstered 旗舰."
+            description="This outpost allows the 奈祖尔 to grow cunning Manticores. This class lurks in the shadows before launching a burst of spines and quills at its prey. "
+            starting_mark_level="Markless" build_sidebar_categories_i_am_part_of="DysonNeinzul"
+            ship_type_name_to_grant_more_of_in_custom_fleet="DysonManticore" ship_type_count_to_grant_more_of_in_custom_fleet="6"
+            city_socket_cost="2" name_for_city_sockets="Dyson Socket" minimum_required_city_level_for_construction="2" base_ship_cap_in_custom_city="2"
+            metal_cost="200000"
+            >
+    </entity>
+<!-- District 3 -->
+    <entity name="DysonLeviathanVault" copy_from="DysonSirenVault"
+            tags="DysonNeinzulBuildMenu,DysonFeedsFleet,DysonBuildMenu,DysonNeinzulBuildMenuOnly,GatedByNeinzulDistrict,RequiresNeinzulDistrictThree"
+	    icon_name="Ships4/NeinzulClanlingOrbWeaver" gimbal_icon_size_multiplier="1.5"
+            icon_overlay="Overlays2/Carnelion"
+            display_name="Dyson Leviathan Vault" display_name_for_sidebar="Leviathan V."
+            description_short="This grants a squadron of Leviathans to the bolstered 旗舰."
+            description="This outpost allows the 奈祖尔 to grow their Leviathans. 区域 Three Tier."
+            starting_mark_level="Markless" build_sidebar_categories_i_am_part_of="DysonNeinzul"
+            ship_type_name_to_grant_more_of_in_custom_fleet="DysonLeviathan" ship_type_count_to_grant_more_of_in_custom_fleet="3"
+            city_socket_cost="3" name_for_city_sockets="Dyson Socket" minimum_required_city_level_for_construction="3" base_ship_cap_in_custom_city="2"
+            metal_cost="600000"
+            >
+    </entity>
+    <entity name="DysonKrakenVault" copy_from="DysonSirenVault"
+            tags="DysonNeinzulBuildMenu,DysonFeedsFleet,DysonBuildMenu,DysonNeinzulBuildMenuOnly,GatedByNeinzulDistrict,RequiresNeinzulDistrictThree"
+	    icon_name="Ships4/NeinzulClanlingAnkylosaurus" gimbal_icon_size_multiplier="1.5"
+            icon_overlay="Overlays2/Carnelion"
+            display_name="Dyson Kraken Vault" display_name_for_sidebar="Kraken V."
+            description_short="This grants a squadron of Kraken to the bolstered 旗舰."
+            description="This outpost allows the 奈祖尔 to grow their Kraken. 区域 Three Tier."
+            starting_mark_level="Markless" build_sidebar_categories_i_am_part_of="DysonNeinzul"
+            ship_type_name_to_grant_more_of_in_custom_fleet="DysonKraken" ship_type_count_to_grant_more_of_in_custom_fleet="3"
+            city_socket_cost="3" name_for_city_sockets="Dyson Socket" minimum_required_city_level_for_construction="3" base_ship_cap_in_custom_city="2"
+            metal_cost="600000"
+            >
+    </entity>
+    <entity name="DysonScyllaVault" copy_from="DysonSirenVault"
+            tags="DysonNeinzulBuildMenu,DysonFeedsFleet,DysonBuildMenu,DysonNeinzulBuildMenuOnly,GatedByNeinzulDistrict,RequiresNeinzulDistrictThree"
+	    icon_name="Ships4/NeinzulBadger" gimbal_icon_size_multiplier="1.5"
+            icon_overlay="Overlays2/Carnelion"
+            display_name="Dyson Scylla Vault" display_name_for_sidebar="Scylla V."
+            description_short="This grants a squadron of Scylla to the bolstered 旗舰."
+            description="This outpost allows the 奈祖尔 to grow their Scylla. 区域 Three Tier."
+            starting_mark_level="Markless" build_sidebar_categories_i_am_part_of="DysonNeinzul"
+            ship_type_name_to_grant_more_of_in_custom_fleet="DysonScylla" ship_type_count_to_grant_more_of_in_custom_fleet="3"
+            city_socket_cost="3" name_for_city_sockets="Dyson Socket" minimum_required_city_level_for_construction="3" base_ship_cap_in_custom_city="2"
+            metal_cost="600000"
+            >
+    </entity>
+    <entity name="DysonBehemothVault" copy_from="DysonSirenVault"
+            tags="DysonNeinzulBuildMenu,DysonFeedsFleet,DysonBuildMenu,DysonNeinzulBuildMenuOnly,GatedByNeinzulDistrict,RequiresNeinzulDistrictThree"
+	    icon_name="Ships4/NeinzulTurtle" gimbal_icon_size_multiplier="1.5"
+            icon_overlay="Overlays2/Carnelion"
+            display_name="Dyson Behemoth  Vault" display_name_for_sidebar="Behemoth  V."
+            description_short="This grants a squadron of Behemoths to the bolstered 旗舰."
+            description="This outpost allows the 奈祖尔 to grow their Behemoths. 区域 Three Tier."
+            starting_mark_level="Markless" build_sidebar_categories_i_am_part_of="DysonNeinzul"
+            ship_type_name_to_grant_more_of_in_custom_fleet="DysonBehemoth" ship_type_count_to_grant_more_of_in_custom_fleet="3"
+            city_socket_cost="3" name_for_city_sockets="Dyson Socket" minimum_required_city_level_for_construction="3" base_ship_cap_in_custom_city="2"
+            metal_cost="600000"
+            >
+    </entity>
+
+    <!-- Districts -->
+    <!--
+    <entity name="DysonNeinzulDistrictTierTwo" copy_from="DysonSpireDistrictTierTwo"
+            tags="DysonNeinzulBuildMenu,DysonDistrict,DysonBuildMenu,DysonNeinzulBuildMenuOnly,DysonNeinzulDistrict,DistrictTierTwo,GatedByDrilling,RequiresOnePlanetDrilled"
+            display_name="Neinzul District Two"
+            display_name_for_sidebar="N District 2"
+            >
+    </entity>
+    <entity name="DysonNeinzulDistrictTierThree" copy_from="DysonNeinzulDistrictTierTwo"
+            tags="DysonNeinzulBuildMenu,DysonDistrict,DysonBuildMenu,DysonNeinzulBuildMenuOnly,DysonNeinzulDistrict,DistrictTierThree,GatedByNeinzulDistrict,RequiresNeinzulDistrictTwo,GatedByDrilling,RequiresThreePlanetDrilled"
+            display_name="Neinzul District Three"
+            display_name_for_sidebar="N District 3"
+            >
+    </entity>
+    -->
+    <!-- Defensive Structures -->
+
+    <!-- Tier One -->
+    <entity name="DysonNeinzulNest" tags="DysonNeinzulBuildMenu,DysonNeinzulDefensiveBuildMenu,DysonBuildMenu,DysonNeinzulBuildMenuOnly,RequiresNeinzulDistrictOne,GatedByNeinzulDistrict"
+            thematic_groups="DysonSidekick"
+	    visuals="Assets/_DLC3/NeinzulHomes/NeinzulCluster/NeinzulCluster.prefab" visuals_bundle="exp3_neinzul_abyss"
+            icon_name="Ships4/NeinzulCluster" 
+            voice_group="Spire"
+            uses_large_health_bar="true"
+            category="Ship"
+	    size_scale="11"
+	    visuals_scale_multiplier="22"
+            y_offset_of_icon="30"
+            collision_priority="810"
+	    mark_level_scale_style="DysonSidekickDefenses"
+	    display_name="Nest" display_name_for_sidebar="Nest"
+	    description="A neinzul defensive structure. Fires rapid electron pulses with a damage increase against units with low 装甲."
+            starting_mark_level="Mark1" tech_upgrades_that_benefit_me="DysonNeinzulDefenses"
+            cost_for_ai_to_purchase="10000" strength_multiplier="2"
+            hull_points="200000" shield_points="400000" speed="Immobile"
+            armor_mm="350" albedo="0.7" mass_tx="6"
+            metal_cost="1000" energy_consumption="20000"
+            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            is_nonfunctional_when_on_planet_not_owned_by_player="false"
+            build_sidebar_categories_i_am_part_of="DysonNeinzulDefenses"
+	    minimum_required_city_level_for_construction="1"
+	    name_for_city_sockets="Dyson Socket" 
+            name_for_city_sockets_short="Socket"
+	    city_socket_cost="1"
+	    base_ship_cap_in_custom_city="5"
+	    added_ship_cap_in_custom_city_per_city_level="1"
+	    added_ship_cap_in_custom_city_per_city_level_above_level="4"
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+            >
+      <metal_flow purpose="SelfConstruction" throughput="200"/>
+    <system name="R5" display_name="Electron Pulse"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="250" shots_per_salvo="10" range="AboveAverage1" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="true"
+				shot_type_data="LaserPulse_RedLevel2"
+				>
+      <outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="50" multiplier="10" />
+    </system>
+    </entity>	
+    <entity name="NeinzulCannon" 
+            thematic_groups="DysonSidekick"	
+            tags="DysonNeinzulBuildMenu,DysonNeinzulDefensiveBuildMenu,DysonBuildMenu,DysonNeinzulBuildMenuOnly,RequiresNeinzulDistrictOne,GatedByNeinzulDistrict"
+            visuals="Assets/_DLC3/Necromancer/NecromancerCatapult/NecromancerCatapult.prefab" visuals_bundle="exp3_neinzul_abyss"
+            icon_overlay="Overlays2/Carnelion"
+            icon_name="Ships4/Catapult" gimbal_icon_size_multiplier="1.3"
+            voice_group="Spire"
+            uses_large_health_bar="true"
+            category="Ship"
+	    size_scale="7.4"
+	    visuals_scale_multiplier="23"
+            y_offset_of_icon="30"
+            collision_priority="810"
+	    mark_level_scale_style="DysonSidekickDefenses"
+	    display_name="Neinzul Cannon" display_name_for_sidebar="N Cannon"
+	    description="A powerful, long ranged defensive structure for the 戴森 to ward off enemies. Orbits the planet, based on the position of its placement. Deals more damage the further it is from its targets."
+            starting_mark_level="Mark1" 
+            cost_for_ai_to_purchase="10000" strength_multiplier="1.7" 
+            hull_points="150000" shield_points="300000" speed="Immobile"
+            armor_mm="180" albedo="0.5" mass_tx="6"
+            metal_cost="6000" energy_consumption="0"
+	    orbits_gravity_well_center_at_its_current_radius="true"   
+	    degrees_to_orbit_per_second="-0.5"	
+            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            is_nonfunctional_when_on_planet_not_owned_by_player="false"	
+	    minimum_required_city_level_for_construction="1"
+            name_for_city_sockets_short="Socket"
+            city_socket_cost="1" name_for_city_sockets="Dyson Socket" base_ship_cap_in_custom_city="1"
+	    added_ship_cap_in_custom_city_per_city_level="1"
+	    added_ship_cap_in_custom_city_per_city_level_above_level="1"
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+            tech_upgrades_that_benefit_me="DysonNeinzulDefenses"
+            build_sidebar_categories_i_am_part_of="DysonNeinzulDefenses"
+	    >
+    <metal_flow purpose="SelfConstruction" throughput="2000"/>
+     <system name="R8" display_name="Neinzul Mangonel"
+             category="Weapon" firing_timing="OnlyInRange" 
+             damage_per_shot="400" shots_per_salvo="5"  added_shots_per_salvo_per_mark="1" 
+	     range="InsanelyHigh" shot_speed="Normal" rate_of_fire="FairlyLow"
+	     fires_salvos_sequentially="false"
+             shot_type_data="Sabot"
+	     >
+       <outgoing_damage_modifier based_on="AttackDistance" comparison_type="MultiplesOf" compared_to="2000" multiplier="1" max_multiplier="10" />		
+       <outgoing_damage_modifier based_on="mass_tx" comparison_type="AtMost" compared_to="2" multiplier="2" />	
+     </system>
+     <system name="R9" display_name="Neinzul Catapult"
+             category="Weapon" firing_timing="OnlyInRange" 
+             damage_per_shot="1000" range="InsanelyHigh" shot_speed="Normal" rate_of_fire="FairlyLow"
+	     fires_salvos_sequentially="false"
+             shot_type_data="EnergyWave"
+	     >
+       <outgoing_damage_modifier based_on="AttackDistance" comparison_type="MultiplesOf" compared_to="2000" multiplier="1" max_multiplier="10" />		
+       <outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="7" multiplier="2" />	
+     </system>
+    
+	
+    </entity>
+
+    <!-- Tier Two -->
+    <entity name="DysonNeinzulDen" tags="DysonNeinzulBuildMenu,DysonNeinzulDefensiveBuildMenu,DysonBuildMenu,DysonNeinzulBuildMenuOnly,RequiresNeinzulDistrictTwo,GatedByNeinzulDistrict"
+            copy_from="DysonNeinzulNest"
+            thematic_groups="DysonSidekick"
+	    visuals="Assets/_DLC3/NeinzulHomes/NeinzulNest/NeinzulNest.prefab" visuals_bundle="exp3_neinzul_abyss"
+	    icon_name="Ships4/NeinzulCrystal" 
+            voice_group="Spire"
+            uses_large_health_bar="true"
+            category="Ship"
+	    size_scale="11"
+	    visuals_scale_multiplier="22"
+            y_offset_of_icon="30"
+            collision_priority="810"
+	    mark_level_scale_style="DysonSidekickDefenses"
+	    display_name="Den" display_name_for_sidebar="Den"
+	    description="A strong neinzul defensive structure. Fires rapid electron pulses with a damage increase against units with high 装甲."
+            starting_mark_level="Mark1" tech_upgrades_that_benefit_me="DysonNeinzulDefenses"
+            cost_for_ai_to_purchase="10000" strength_multiplier="2"
+            hull_points="500000" shield_points="700000" speed="Immobile"
+            armor_mm="350" albedo="0.7" mass_tx="6"
+            metal_cost="5000" energy_consumption="20000"
+	    amount_added_to_damage_per_ship_of_this_type_on_planet="500" amount_added_to_damage_per_ship_of_this_type_on_planet_per_mark="250" max_amount_added_to_damage_per_ship_of_this_type_on_planet="5000"
+            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            is_nonfunctional_when_on_planet_not_owned_by_player="false"
+            build_sidebar_categories_i_am_part_of="DysonNeinzulDefenses"
+	    minimum_required_city_level_for_construction="1"
+	    name_for_city_sockets="Dyson Socket" 
+            name_for_city_sockets_short="Socket"
+	    city_socket_cost="1"
+	    base_ship_cap_in_custom_city="5"
+	    added_ship_cap_in_custom_city_per_city_level="1"
+	    added_ship_cap_in_custom_city_per_city_level_above_level="4"
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+            drone_starting_behavior_type="Attacker_Full"
+	    >
+    <system name="R5" display_name="Electron Pulse"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="2850" shots_per_salvo="15" range="AboveAverage1" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="true"
+				shot_type_data="LaserPulse_RedLevel2"
+				>
+      <outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtLeast" compared_to="20" multiplier="10" />
+    </system>
+    </entity>
+
+    <!-- Tier Three -->
+    <entity name="DysonNeinzulAerie" tags="DysonNeinzulBuildMenu,DysonNeinzulDefensiveBuildMenu,DysonBuildMenu,DysonNeinzulBuildMenuOnly,RequiresNeinzulDistrictThree,GatedByNeinzulDistrict"
+            thematic_groups="DysonSidekick"
+	    visuals="Assets/_DLC3/RoamingEnclaves/RoamingEnclaveBasic/RoamingEnclaveBasic.prefab" visuals_bundle="exp3_neinzul_abyss"
+	    icon_name="Ships4/NeinzulRoamingEnclave"
+            icon_overlay="Overlays2/WightPossessed"
+            voice_group="Spire"
+            uses_large_health_bar="true"
+            category="Ship"
+	    size_scale="11"
+	    visuals_scale_multiplier="22"
+            y_offset_of_icon="30"
+            collision_priority="810"
+	    mark_level_scale_style="DysonSidekickDefenses"
+	    display_name="Aerie" display_name_for_sidebar="Aerie"
+	    description="A powerful neinzul defensive structure."
+            starting_mark_level="Mark1" tech_upgrades_that_benefit_me="DysonNeinzulDefenses"
+            cost_for_ai_to_purchase="10000" strength_multiplier="2"
+            hull_points="600000" shield_points="400000" speed="Immobile"
+            armor_mm="350" albedo="0.7" mass_tx="6"
+            metal_cost="10000" energy_consumption="20000"
+            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            is_nonfunctional_when_on_planet_not_owned_by_player="false"
+            build_sidebar_categories_i_am_part_of="DysonNeinzulDefenses"
+	    minimum_required_city_level_for_construction="1"
+	    name_for_city_sockets="Dyson Socket" 
+            name_for_city_sockets_short="Socket"
+	    city_socket_cost="1"
+	    base_ship_cap_in_custom_city="5"
+	    added_ship_cap_in_custom_city_per_city_level="1"
+	    added_ship_cap_in_custom_city_per_city_level_above_level="4"
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+            drone_starting_behavior_type="Attacker_Full"
+	        >
+      <metal_flow purpose="SelfConstruction" throughput="200"/>
+    <system name="W1" display_name="Energy Burst"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="2500" range="AboveAverage4" shot_speed="Slow" rate_of_fire="Devourer" 
+				shots_per_salvo="40" fires_salvos_sequentially="false"				
+				shot_type_data="LaserPulse_Pink"
+				>
+    </system>
+    </entity>	
+
+    <!-- The Strongholds -->
+    
+    <entity name="DysonMajorNeinzulStronghold"
+            display_name="Major Neinzul Stronghold" display_name_for_sidebar="Maj N Stronghold"
+	    thematic_groups="DysonSidekick" 
+            tags="DysonStronghold,DysonMajorStronghold,SpawnsDysonNeinzulFleet,SapperImportantPoint,StartingNeinzulStronghold,DysonNeinzul"
+	    draw_in_galaxy_view="true"
+            special_entity_type="CityCenter"
+            gimbal_icon_size_multiplier="1.5"
+            visuals="Assets/_FinalGameMeshes/Spire/DarkSpireVG/DarkSpireVG.prefab" gimbal_name="Telium"
+            material_override_path="Assets/_FinalGameMeshes/AIBuildings/AIWarpGate.prefab"
+	    icon_name="Ships4/SapperBeachheadConstructor" icon_overlay="Overlays2/Race_Peltian"
+	    y_offset_of_icon="30"
+	    voice_group="Silent"
+	    category="Ship"
+	    size_scale="9"
+	    visuals_scale_multiplier="11"
+	    y_offset_of_ship_in_visual_space="140"
+	    collision_priority="810"
+	    description="An outpost of the 戴森.
+
+This is a major 要塞, which comes with a 旗舰"
+	    behavior="Stationary"
+	    starting_mark_level="Mark1"
+            build_sidebar_categories_i_am_part_of="DysonStrongholds"
+            this_unit_gets_direct_science_upgrades_from_central_fleet="true"
+	    cost_for_ai_to_purchase="500" mark_level_scale_style="Templar"
+            hull_points="600000" shield_points="1800000" speed="Immobile"
+            metal_cost="5000" energy_consumption="35000"
+            cost_in_resource_one="18"
+            armor_mm="350" albedo="0.6" mass_tx="10"
+	    is_nonfunctional_when_on_planet_owned_by_ai="true"
+	    seconds_to_fully_regenerate_hull="600"
+            is_crippled_instead_of_dying="true"
+	    is_scrapping_by_player_disallowed="true"
+            assist_range="EssentiallyInfinite"
+            shows_on_galaxy_map_for_explored_planets="true" 
+	    always_visible_to_players="true"
+	    name_for_city_center="Stronghold" name_for_city_sockets="Stronghold Socket"
+            name_for_city_sockets_short="Socket"
+            city_sockets="7" added_city_sockets_per_mark="2" 
+            this_centerpiece_grants_its_direct_science_upgrades_to_bolstered_fleet="false"
+            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" tech_upgrade_that_is_used_for_my_direct_science="Direct_DysonMajorStronghold" is_upgradeable_by_direct_science="true"
+            metal_storage="80000" added_metal_storage_per_mark_level="3000"
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"	
+            description_appender_dll="AIWarExternalCode"
+            description_appender_type="Arcen.AIW2.External.DysonSidekickDescriptionAppender"
+            base_galaxy_wide_cap_for_players_constructing="1" galaxy_wide_cap_match_string="MajorStronghold"
+            added_galaxy_wide_cap_for_players_constructing_per_x_planets="1" galaxy_wide_cap_for_players_constructing_x_planet_variable="3"
+            special_factory_type="Dyson Stronghold"
+            eligible_for_hacks="DismantleStronghold"
+            >
+      <metal_flow purpose="SelfConstruction" throughput="2500"/>
+      <resource_production type="Energy" amount="100000"/>
+      <resource_production type="Science" amount="1" />
+      <resource_production type="FuelArgon" amount="70000" />
+      <resource_production type="FuelRadon" amount="70000" />
+      <metal_flow purpose="FactoryConstructionForPlayerMobileFleets" throughput="100" increase_per_mark_level="20"/>
+      <metal_flow purpose="RepairingHullsOfFriendlies" throughput="300" increase_per_mark_level="150"/>
+      <metal_flow purpose="RebuildingRemains" throughput="200" increase_per_mark_level="100"/>
+
+      <system name="R1" display_name="Castle Concussion Rockets"
+              category="Weapon" firing_timing="OnlyInRange"
+              damage_per_shot="4000" range="High1" shot_speed="Normal" rate_of_fire="Normal"
+              shots_per_salvo="40" fires_salvos_sequentially="false"
+              shot_type_data="FusionRocket" 
+	      >
+        <outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="50" multiplier="2" />
+      </system>
+    </entity>      
+    <entity name="DysonMinorNeinzulStronghold" tags="DysonStronghold,MinorStronghold,DysonNeinzulStronghold,BolstersDysonFleet,SapperImportantPoint,DysonNeinzul"
+	    thematic_groups="DysonSidekick"
+	    special_entity_type="CityCenter"
+            gimbal_icon_size_multiplier="1.2"
+	    visuals="Assets/_DLC3/AI/ShowdownDevice/ShowdownDevice.prefab" visuals_bundle="exp3_neinzul_abyss"
+	    icon_name="Ships4/SomethingDoodle4" icon_overlay="Overlays2/Race_Burlust"
+            voice_group="Silent"
+            uses_large_health_bar="true"
+            category="Ship"
+            size_scale="3.0"
+            visuals_scale_multiplier="3.0"
+	    display_name="Minor Neinzul Stronghold"
+            display_name_for_sidebar="Min N Stronghold"
+	    description_short="An outpost of the 戴森.
+
+This is a minor Stronghole, which bolsters a major 要塞."
+            collision_priority="810"
+            starting_mark_level="Mark1" this_unit_gets_direct_science_upgrades_from_central_fleet="true"
+            cost_for_ai_to_purchase="10000" strength_multiplier="1.5"
+            hull_points="500000" shield_points="500000" speed="Immobile"
+            armor_mm="180" albedo="0.7" mass_tx="8"
+            metal_cost="5000" energy_consumption="0" cost_in_resource_one="8"
+	    is_nonfunctional_when_on_planet_owned_by_ai="true"
+	    seconds_to_fully_regenerate_hull="600"
+            is_crippled_instead_of_dying="true"
+	    is_scrapping_by_player_disallowed="true"
+            assist_range="EssentiallyInfinite"
+            build_sidebar_categories_i_am_part_of="DysonStrongholds"
+	    draw_in_galaxy_view="true"
+            shows_on_galaxy_map_for_explored_planets="true" 
+	    always_visible_to_players="true"
+	    name_for_city_center="Stronghold" name_for_city_sockets="Stronghold Socket"
+            name_for_city_sockets_short="Socket"
+            city_sockets="6" added_city_sockets_per_mark="1" 
+            this_centerpiece_grants_its_direct_science_upgrades_to_bolstered_fleet="false"
+            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" tech_upgrade_that_is_used_for_my_direct_science="Direct_DysonMinorStronghold" is_upgradeable_by_direct_science="true"
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+            description_appender_dll="AIWarExternalCode"
+            description_appender_type="Arcen.AIW2.External.DysonSidekickDescriptionAppender"
+            special_factory_type="Dyson Stronghold"
+            metal_storage="30000" added_metal_storage_per_mark_level="2000"
+            eligible_for_hacks="DismantleStronghold"
+	    >
+      <metal_flow purpose="SelfConstruction" throughput="2500"/>
+      <resource_production type="Energy" amount="100000"/>
+      <resource_production type="FuelArgon" amount="60000" />
+      <resource_production type="FuelRadon" amount="60000" />
+      <metal_flow purpose="FactoryConstructionForPlayerMobileFleets" throughput="80" increase_per_mark_level="15"/>
+      <metal_flow purpose="RepairingHullsOfFriendlies" throughput="300" increase_per_mark_level="150"/>
+      <metal_flow purpose="RebuildingRemains" throughput="200" increase_per_mark_level="100"/>
+    </entity>
+
+      <!-- Flagships. These should all be Elderlings -->
+      <entity name="DysonNeinzulFlagshipTierOne" tags="DysonFlagship,ShowsOnNormalDisplayMode,NeinzulFlagshipTierOne,FlagshipTierOne,NeinzulFlagship" 
+	      thematic_groups="DysonSidekick"
+	      special_entity_type="MobileCustomCityFedFleetFlagship"
+              draw_in_galaxy_view="true" shows_on_galaxy_map_for_explored_planets="true" always_visible_to_players="true"
+	      visuals="Assets/_DLC3/Elderlings/CyclopeanElderling/CyclopeanElderling.prefab" visuals_bundle="exp3_neinzul_abyss"
+	      icon_name="Ships4/ElderlingLow" icon_overlay="Overlays2/NecromancerFlagship_Cyclopean"  gimbal_icon_size_multiplier="1.25"
+	      y_offset_of_icon="15"
+	      voice_group="Silent"
+	      category="Ship"
+	      size_scale="15"
+	      visuals_scale_multiplier="90"
+	      collision_priority="400"
+	      display_name="Neinzul Flagship"
+              display_name_for_sidebar="Flagship"
+	      description="This is the lowest-tier 奈祖尔 旗舰 for the 戴森. This ship's main weapon is very effective agianst high-护盾 low-hull ships."
+	      starting_mark_level="Mark1"
+	      cost_for_ai_to_purchase="500" strength_multiplier="1.1"
+	      hull_points="900000" shield_points="600000" speed="High"
+	      armor_mm="180" albedo="0.7" engine_gx="22" mass_tx="7"
+	      metal_cost="50000" energy_consumption="40000"	
+	      ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+	      ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+	      special_factory_type="Dyson Stronghold"
+              tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly"
+              tech_upgrade_that_is_used_for_my_direct_science="Direct_DysonFlagships"	is_upgradeable_by_direct_science="true"
+              priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="MidFavoriteToy"
+	      multiplier_to_all_costs="1" multiplier_to_all_healths="1" damage_multiplier_to_all_weapons="1" 
+	      assist_range="Normal1"
+	      firing_delay_for_transported_ships="6"
+	      is_scrapping_by_player_disallowed="true"
+              transform_after_kills="DysonNeinzulTierTwoFlagship"
+              kills_to_trigger_transformation="3000"
+              description_appender_dll="AIWarExternalCode"
+              description_appender_type="Arcen.AIW2.External.DysonSidekickDescriptionAppender"
+              >
+        <metal_flow purpose="SelfConstruction" throughput="2500"/>
+        <metal_flow purpose="RepairingHullsOfFriendlies" throughput="250" increase_per_mark_level="250"/>
+        <metal_flow purpose="RepairingShieldsOfFriendlies" throughput="250" increase_per_mark_level="250"/>
+        <metal_flow purpose="RepairingEnginesOfFriendlies" throughput="250" increase_per_mark_level="250"/>
+        <metal_flow purpose="AssistSelfConstruction" throughput="200" increase_per_mark_level="200"/>
+        <metal_flow purpose="AssistFactoryConstruction" throughput="200" increase_per_mark_level="200"/>
+        <metal_flow purpose="RebuildingRemains" throughput="200" increase_per_mark_level="100"/>
+        <system name="R1" display_name="Wasting Micro Rockets"
+		category="Weapon" firing_timing="OnlyInRange"
+		damage_per_shot="2400" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Low" 
+		shots_per_salvo="16" fires_salvos_sequentially="false"
+		shot_type_data="NanocaustCurvedSicklyGreenShot"
+		>
+	  <outgoing_damage_modifier based_on="CurrentHullPercentage" comparison_type="AtMost" compared_to="50" multiplier="2" />
+	  <outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="HullOnly" comparison_type="LessThan" compared_to="1" multiplier="1.5" />
+        </system>	
+	<ship_class_data can_be_zombified_and_similar="false" can_be_fleet_supercharged="false" />
+      </entity>	
+
+      <entity name="DysonNeinzulTierTwoFlagship" tags="DysonFlagship,ShowsOnNormalDisplayMode,DysonNeinzulFlagshipTierTwo,FlagshipTierTwo,NeinzulFlagship" 
+	      thematic_groups="DysonSidekick"
+	      special_entity_type="MobileCustomCityFedFleetFlagship"
+              draw_in_galaxy_view="true" shows_on_galaxy_map_for_explored_planets="true" always_visible_to_players="true"
+	      visuals="Assets/_DLC3/Elderlings/DecadentElderling/DecadentElderling.prefab" visuals_bundle="exp3_neinzul_abyss"
+	      icon_name="Ships4/ElderlingMedium" icon_overlay="Overlays2/NecromancerFlagship_Decadent"  gimbal_icon_size_multiplier="1.5"
+	      y_offset_of_icon="35"
+	      voice_group="Silent"
+	      category="Ship"
+              size_scale="25"
+	      visuals_scale_multiplier="150"
+	      collision_priority="400"
+	      display_name="Neinzul Blaster Flagship"
+              display_name_for_sidebar="布莱旗舰"
+	      description="This is the mid-tier 奈祖尔 旗舰 for the 戴森."
+	      starting_mark_level="Mark1"
+	      cost_for_ai_to_purchase="500" strength_multiplier="1.1"
+              hull_points="1100000" shield_points="800000" speed="High"
+	      armor_mm="180" albedo="0.7" engine_gx="22" mass_tx="7"
+	      metal_cost="50000" energy_consumption="40000"	
+	      ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+	      ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+	      special_factory_type="Dyson Stronghold"
+              tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly"
+              tech_upgrade_that_is_used_for_my_direct_science="Direct_DysonFlagships"	is_upgradeable_by_direct_science="true"
+              priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="MidFavoriteToy"
+	      multiplier_to_all_costs="1" multiplier_to_all_healths="1" damage_multiplier_to_all_weapons="1" 
+	      assist_range="Normal1"
+	      firing_delay_for_transported_ships="6"
+	      is_scrapping_by_player_disallowed="true"
+              transform_after_kills="DysonNeinzulTierThreeFlagship"
+              kills_to_trigger_transformation="5500"
+              description_appender_dll="AIWarExternalCode"
+              description_appender_type="Arcen.AIW2.External.DysonSidekickDescriptionAppender"
+              >
+        <metal_flow purpose="SelfConstruction" throughput="2500"/>
+        <metal_flow purpose="RepairingHullsOfFriendlies" throughput="250" increase_per_mark_level="250"/>
+        <metal_flow purpose="RepairingShieldsOfFriendlies" throughput="250" increase_per_mark_level="250"/>
+        <metal_flow purpose="RepairingEnginesOfFriendlies" throughput="250" increase_per_mark_level="250"/>
+        <metal_flow purpose="AssistSelfConstruction" throughput="200" increase_per_mark_level="200"/>
+        <metal_flow purpose="AssistFactoryConstruction" throughput="200" increase_per_mark_level="200"/>
+        <metal_flow purpose="RebuildingRemains" throughput="200" increase_per_mark_level="100"/>
+        <system name="WX" display_name="Paralyzing Cannon"
+		category="Weapon" firing_timing="OnlyInRange"
+		damage_per_shot="1250" range="High2" shot_speed="VeryFast" rate_of_fire="Misery"
+		shots_per_salvo="20" added_shots_per_salvo_per_mark="5" fires_salvos_sequentially="false"
+		shot_type_data="ParalysisProngedShot_Blue"
+		base_paralysis_seconds_per_shot="4" paralysis_to_ships_mass_tx_less_than="4"
+		>
+        </system>
+	<system name="R8" display_name="Paralyzing Blaster"
+		category="Weapon" firing_timing="OnlyInRange"
+		damage_per_shot="2000" range="High2" shot_speed="VeryFast" rate_of_fire="Misery" fires_salvos_sequentially="true"
+		shot_type_data="Sabot" added_shots_per_salvo_per_mark="1"
+		base_paralysis_seconds_per_shot="4" paralysis_to_ships_mass_tx_less_than="6"				
+		>
+	  <outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="5" />
+        </system>
+	<ship_class_data can_be_zombified_and_similar="false" can_be_fleet_supercharged="false" />
+      </entity>	
+
+      <entity name="DysonNeinzulTierThreeFlagship" tags="DysonFlagship,ShowsOnNormalDisplayMode,DysonNeinzulFlagshipTierThree,FlagshipTierThree,NeinzulFlagship" 
+	      thematic_groups="DysonSidekick"
+	      special_entity_type="MobileCustomCityFedFleetFlagship"
+              draw_in_galaxy_view="true" shows_on_galaxy_map_for_explored_planets="true" always_visible_to_players="true"
+	      visuals="Assets/_DLC3/Elderlings/BlasphemousElderling/BlasphemousElderling.prefab" visuals_bundle="exp3_neinzul_abyss"
+	      icon_name="Ships4/ElderlingHigh" icon_overlay="Overlays2/NecromancerFlagship_Blasphemous" gimbal_icon_size_multiplier="1.5" 
+	      y_offset_of_icon="15"
+	      voice_group="Silent"
+	      category="Ship"
+	      size_scale="15"
+	      visuals_scale_multiplier="90"
+	      collision_priority="400"
+	      display_name="Neinzul Cyclopean Flagship"
+              display_name_for_sidebar="赛旗舰"
+	      description="This is the highest-tier 奈祖尔 旗舰 for the 戴森."
+	      starting_mark_level="Mark1"
+	      cost_for_ai_to_purchase="500" strength_multiplier="1.1"
+	      hull_points="1400000" shield_points="1000000" speed="High"
+	      armor_mm="180" albedo="0.7" engine_gx="22" mass_tx="7"
+	      metal_cost="50000" energy_consumption="40000"	
+	      ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+	      ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+	      special_factory_type="Dyson Stronghold"
+              tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly"
+              tech_upgrade_that_is_used_for_my_direct_science="Direct_DysonFlagships"	is_upgradeable_by_direct_science="true"
+              priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="MidFavoriteToy"
+	      multiplier_to_all_costs="1" multiplier_to_all_healths="1.2" damage_multiplier_to_all_weapons="1.5" 
+	      assist_range="Normal1"
+	      firing_delay_for_transported_ships="6"
+	      is_scrapping_by_player_disallowed="true"
+              description_appender_dll="AIWarExternalCode"
+              description_appender_type="Arcen.AIW2.External.DysonSidekickDescriptionAppender"
+              >
+        <metal_flow purpose="SelfConstruction" throughput="2500"/>
+        <metal_flow purpose="RepairingHullsOfFriendlies" throughput="250" increase_per_mark_level="250"/>
+        <metal_flow purpose="RepairingShieldsOfFriendlies" throughput="250" increase_per_mark_level="250"/>
+        <metal_flow purpose="RepairingEnginesOfFriendlies" throughput="250" increase_per_mark_level="250"/>
+        <metal_flow purpose="AssistSelfConstruction" throughput="200" increase_per_mark_level="200"/>
+        <metal_flow purpose="AssistFactoryConstruction" throughput="200" increase_per_mark_level="200"/>
+        <metal_flow purpose="RebuildingRemains" throughput="200" increase_per_mark_level="100"/>
+	<system name="R1" display_name="Neinzul Cyclopean Beam"
+		category="Weapon" firing_timing="OnlyInRange"
+		damage_per_shot="20000" range="AboveAverage4" shot_speed="Normal" rate_of_fire="Normal"
+		shot_type_data="HeavyBeamInvisible"
+		beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_Purple"
+		hits_all_intersecting_targets="true"				
+		shots_detonate_immediately="true"
+		is_coilbeam="true"	
+		base_percent_damage_bypasses_personal_shields="0.65" 
+		>
+	</system>
+	<ship_class_data can_be_zombified_and_similar="false" can_be_fleet_supercharged="false" />
+      </entity>	
+
+</root>

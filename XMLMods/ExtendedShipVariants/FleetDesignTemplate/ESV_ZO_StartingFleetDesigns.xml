@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <fleet_design name="ESVZO_SturdyStartingFleet" required_expansion_list="2_Zenith_Onslaught"
+        display_name="坚固舰队"
+        description="难以摧毁且进攻毫不畏缩，这支舰队拥有掩护火力和死后复仇射击、酸性攻击和良好的总体火力。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Hardened" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+    <ship_membership name="Polarazer" ship_cap_group="Strike" weight="100" cap="64"/>
+    <ship_membership name="PulsarTank" ship_cap_group="Strike" weight="100" cap="15"/>
+    <ship_membership name="InhibitingTeslaCorvette" ship_cap_group="Strike" weight="100" cap="13"/>
+    <ship_membership name="DarkerEchoFrigate" ship_cap_group="Frigate" weight="100" cap="4"/>
+  </fleet_design>
+</root>

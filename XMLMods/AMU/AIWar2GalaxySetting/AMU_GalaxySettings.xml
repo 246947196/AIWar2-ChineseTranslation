@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<galaxy_setting category="MapGen" subcategory="CapturableRepositioning" is_advanced_setting="true" name="CapturableRepositioning_Enabled" display_name="启用可占领物重定位" type="BoolToggle" default="false"
+		description="If enabled at the start of the game all immobile capturables (i.e. 天顶 Power Generators, Major Data Centers, etc) will be relocated to, with default or close settings, somewhere on the outter side of the gravity well and further away from wormholes.
+This reduces or outright prevents situations where an important capturable is unreasonable to get, simply because it is located between wormholes, bordering an AI 堡垒 world or similar.
+
+By default this is disabled." >
+		<harshness_override min_campaign_harshness_to_apply="500" fixed_value="false" />
+	</galaxy_setting>
+	
+	<galaxy_setting category="MapGen" subcategory="CapturableRepositioning" is_advanced_setting="true" name="CapturableRepositioning_MinGravwellDistance" display_name="最小重力井距离" type="IntTextbox" changeable_during_gameplay="false"
+		default="500" min="0" max="20000"
+		description="What is minimum distance from the gravity well capturables are relocated to?
+Note that this is for the default gravwell size of 52k diameter, and will modify accordingly for larger or smaller planets. Additionally, as positioning attempts are done this value may be relaxed to find viable locations.
+
+The default is 500, potentially going from 0 to 20000." >
+		<harshness_override min_campaign_harshness_to_apply="500" fixed_value="500" />
+	</galaxy_setting>
+	
+	<galaxy_setting category="MapGen" subcategory="CapturableRepositioning" is_advanced_setting="true" name="CapturableRepositioning_MaxGravwellDistance" display_name="最大重力井距离" type="IntTextbox" changeable_during_gameplay="false"
+		default="7500" min="500" max="26000"
+		description="What is maximum distance from the gravity well capturables are relocated to?
+Note that this is for the default gravwell size of 52k diameter, and will modify accordingly for larger or smaller planets. Additionally, as positioning attempts are done this value may be relaxed to find viable locations.
+Additinally it will be at least 500 more than the 最小重力井距离 setting above.
+
+The default is 7500, potentially going from 500 to 26000." >
+		<harshness_override min_campaign_harshness_to_apply="500" fixed_value="500" />
+	</galaxy_setting>
+	
+	<galaxy_setting category="MapGen" subcategory="CapturableRepositioning" is_advanced_setting="true" name="CapturableRepositioning_MinWormholeDistance" display_name="最小虫洞距离" type="IntTextbox" changeable_during_gameplay="false"
+		default="10000" min="0" max="20000"
+		description="What is minimum distance from all wormholes capturables are relocated to?
+Note that this is for the default gravwell size of 52k diameter, and will modify accordingly for larger or smaller planets. Additionally, as positioning attempts are done this value may be relaxed to find viable locations.
+Additinally it will be at least 500 more than the 最小重力井距离 setting above.
+
+The default is 10000, potentially going from 0 to 20000." >
+		<harshness_override min_campaign_harshness_to_apply="500" fixed_value="10000" />
+	</galaxy_setting>
+	
+	<galaxy_setting category="MapGen" subcategory="CapturableRepositioning" is_advanced_setting="true" name="CapturableRepositioning_AffectAsteroidMines" display_name="重定位小行星矿场" type="BoolToggle" default="false"
+		description="If enabled asteroid mines or asteroid mining powerplants will also be affected by the repositioning logic
+Note that this setting does not affect Lost Energy Reactors or Abandoned Asteroid Mines.
+
+By default this is disabled." >
+		<harshness_override min_campaign_harshness_to_apply="500" fixed_value="false" />
+	</galaxy_setting>
+</root>

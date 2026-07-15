@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root
+	is_partial_record="true"
+	custom_int_UniversalNemesis_weak_nemesis_hull_divider="2"
+	custom_int_UniversalNemesis_weak_nemesis_shield_divider="4"
+	custom_int_UniversalNemesis_nemesis_hull_divider="1"
+	custom_int_UniversalNemesis_nemesis_shield_divider="2"
+	custom_int_UniversalNemesis_cataclysm_hull_divider="4"
+	custom_int_UniversalNemesis_cataclysm_shield_divider="8"
+	custom_int_UniversalNemesis_catastrophe_hull_divider="32"
+	custom_int_UniversalNemesis_catastrophe_shield_divider="16"
+	custom_int_UniversalNemesis_disaster_hull_divider="64"
+	custom_int_UniversalNemesis_disaster_shield_divider="32"
+	custom_int_UniversalNemesis_villain_hull_divider="256"
+	custom_int_UniversalNemesis_villain_shield_divider="256"
+	custom_int_UniversalNemesis_henchman_hull_divider="2048"
+	custom_int_UniversalNemesis_henchman_shield_divider="2048"
+	custom_int_UniversalNemesis_beacon_hull_divider="16"
+	custom_int_UniversalNemesis_beacon_shield_divider="16"
+	custom_int_UniversalNemesis_threshold_villain_spawn="400000"
+	custom_int_UniversalNemesis_threshold_disaster_spawn="3200000"
+	custom_int_UniversalNemesis_threshold_catastrophe_spawn="6400000"
+	custom_int_UniversalNemesis_threshold_cataclysm_spawn="12800000"
+	custom_int_UniversalNemesis_gain_multiplier_per_intensity="4" 
+>   <!--Made higher, as a lot of territroy was cleared without a significant boost to the nemesis-->
+</root>

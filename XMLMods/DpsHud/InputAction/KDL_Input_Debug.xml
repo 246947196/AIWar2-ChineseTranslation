@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+
+    <input_action name="DumpDps"
+        category="Debug" display_name="转储 Dps"
+        description="Dump to debug output a list of damage collected."
+        dll_name="DpsHud" type_name="DpsHud.Input_Handler"
+        key="D" modifier_1="LeftControl" modifier_2="LeftShift" />
+    
+    <input_action name="ClearDps"
+        category="Other UI" display_name="Clear DpsHud Damage"
+        description="Clear damage data."
+        dll_name="DpsHud" type_name="DpsHud.Input_Handler"
+        key="D" modifier_1="LeftControl" 
+        default_should_override_saved_if_older_than_version="5511_PlanetaryResourceOne"/>
+
+    <input_action name="ToggleDpsMode"
+        category="Other UI" display_name="Toggle DpsHud Mode"
+        description="Toggle between showing Damage and Metal Loss."
+        dll_name="DpsHud" type_name="DpsHud.Input_Handler"
+        key="TildeBackquote" /> 
+
+</root>

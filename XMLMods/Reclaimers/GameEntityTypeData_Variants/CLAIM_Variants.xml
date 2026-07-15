@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<variant name="AlienInfused"
+			 display_name="外星注入"
+			 display_name_for_sidebar="V"
+			 append_tech_upgrades_that_benefit_me="Alien"
+			>
+			<ship_class_data display_name="外星船体" short_name="外星船体" can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.1" can_be_devoured="false" />
+	</variant>
+
+</root>

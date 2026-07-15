@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+<entity copy_from="SpireDreadnought" name="LostSpireDreadnoughtFlagship" 
+display_name="失落尖塔无畏舰旗舰" display_name_for_sidebar="失落尖塔 DN 旗舰" is_scrapping_by_player_disallowed="true"
+is_crippled_instead_of_dying="true" special_entity_type="MobileOfficerCombatFleetFlagship" 
+shows_on_galaxy_map_for_explored_planets="true" always_visible_to_players="true" 
+tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" is_upgradeable_by_direct_science="true"
+tech_upgrade_that_is_used_for_my_direct_science="Direct_LostSpire"
+tags="ShowsOnNormalDisplayMode,Capturable" capturable_seed_weight="30" capturable_max_per_galaxy="1"
+voice_group="Ark_LeeSen" 
+aip_to_claim="150"
+metal_to_claim="2500000"
+starting_mark_level="Mark1" eligible_for_hacks="IncreaseWeaponPower"
+assist_range="Normal1"
+energy_consumption="2500000"
+draw_in_galaxy_view="true"
+			>
+    <hack_data hack_type="IncreaseWeaponPower"
+        override_cost_in_hacking_points="100"   cost_in_hacking_points_multiplier_per_times_same_unit_hacked="4.5"
+        max_times_single_unit_can_be_hacked="2">
+      <custom_hack_data key="AddedMultiplierPerHack" value="2" />
+    </hack_data>
+	<metal_flow purpose="RebuildingRemains" throughput="100" increase_per_mark_level="100"/>
+		<ship_class_data can_be_fleet_supercharged="false" />
+    </entity>
+
+<entity copy_from="SpireBattleship" name="LostSpireBattleshipFlagship" 
+display_name="失落尖塔战列舰旗舰" display_name_for_sidebar="失落尖塔 BB 旗舰" is_scrapping_by_player_disallowed="true"
+is_crippled_instead_of_dying="true" special_entity_type="MobileOfficerCombatFleetFlagship" 
+shows_on_galaxy_map_for_explored_planets="true" always_visible_to_players="true" 
+tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" is_upgradeable_by_direct_science="true"
+tech_upgrade_that_is_used_for_my_direct_science="Direct_LostSpire"
+tags="ShowsOnNormalDisplayMode,Capturable" capturable_seed_weight="60" capturable_max_per_galaxy="1"
+voice_group="Ark_LeeSen" 
+aip_to_claim="75"
+metal_to_claim="1000000"
+starting_mark_level="Mark1" eligible_for_hacks="IncreaseWeaponPower"
+assist_range="Normal1"
+energy_consumption="1000000"
+draw_in_galaxy_view="true"
+			>
+    <hack_data hack_type="IncreaseWeaponPower"
+        override_cost_in_hacking_points="50"   cost_in_hacking_points_multiplier_per_times_same_unit_hacked="4.5"
+        max_times_single_unit_can_be_hacked="2">
+      <custom_hack_data key="AddedMultiplierPerHack" value="2" />
+    </hack_data>
+	<metal_flow purpose="RebuildingRemains" throughput="100" increase_per_mark_level="100"/>
+		<ship_class_data can_be_fleet_supercharged="false" />
+    </entity>
+
+<entity copy_from="SpireCruiser" name="LostSpireCruiserFlagship" 
+display_name="失落尖塔巡洋舰旗舰" display_name_for_sidebar="失落尖塔 CC 旗舰" is_scrapping_by_player_disallowed="true"
+is_crippled_instead_of_dying="true" special_entity_type="MobileOfficerCombatFleetFlagship" 
+shows_on_galaxy_map_for_explored_planets="true" always_visible_to_players="true" 
+tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" is_upgradeable_by_direct_science="true"
+tech_upgrade_that_is_used_for_my_direct_science="Direct_LostSpire"
+tags="ShowsOnNormalDisplayMode,Capturable" capturable_seed_weight="90" capturable_max_per_galaxy="1"
+voice_group="Ark_LeeSen" 
+aip_to_claim="35"
+metal_to_claim="400000"
+starting_mark_level="Mark1" eligible_for_hacks="IncreaseWeaponPower"
+assist_range="Normal1"
+energy_consumption="400000"
+draw_in_galaxy_view="true"
+			>
+    <hack_data hack_type="IncreaseWeaponPower"
+        override_cost_in_hacking_points="25"   cost_in_hacking_points_multiplier_per_times_same_unit_hacked="4.5"
+        max_times_single_unit_can_be_hacked="2">
+      <custom_hack_data key="AddedMultiplierPerHack" value="2" />
+    </hack_data>
+	<metal_flow purpose="RebuildingRemains" throughput="100" increase_per_mark_level="100"/>
+		<ship_class_data can_be_fleet_supercharged="false" />
+    </entity>
+</root>

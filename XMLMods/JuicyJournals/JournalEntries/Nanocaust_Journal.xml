@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <journal name="FriendlyNanocaust_BeWaryOfWaveSnipes" sidebar_text="{FactionColor}纳米浩劫：&lt;/color&gt; 保护巢群"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+		   text_replacement_related_player_name="true"
+           is_partial_record="true"  
+           full_text="发件人：军事顾问安娜·斯诺
+舰队指挥部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+我们在纳米浩劫中有一个强大的盟友。我们已经请求他们不要摧毁任何人工智能指挥站以免增加 AIP，但这使他们的巢群容易受到强大的人工智能波次攻击。我们应该尝试帮助他们处理危险的星际之门。" />
+
+    <journal name="Nanocaust_Friendly_InvasionStarts" sidebar_text="{FactionColor}纳米浩劫：&lt;/color&gt; 入侵开始"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+		   text_replacement_related_player_name="true"
+           chat_text="{FactionColor}纳米浩劫&lt;/color&gt; 入侵开始"
+           is_partial_record="true"  
+           full_text="发件人：军事顾问安娜·斯诺
+舰队指挥部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+我们的情报部门检测到一群纳米机器人入侵了银河系。我们称之为纳米浩劫。它们似乎愿意帮助我们对抗人工智能。它们的武器可以同化它们摧毁的舰船加入它们的舰队，使它们成为真正可怕的敌人。" />
+
+        <journal name="Nanocaust_Unfriendly_InvasionStarts" sidebar_text="{FactionColor}纳米浩劫：&lt;/color&gt; 入侵开始"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+		   text_replacement_related_player_name="true"
+           chat_text="{FactionColor}纳米浩劫&lt;/color&gt; 入侵开始"
+           is_partial_record="true"  
+           full_text="发件人：军事顾问安娜·斯诺
+舰队指挥部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+我们的情报部门检测到一群纳米机器人入侵了银河系。我们称之为纳米浩劫。它们的武器可以同化它们摧毁的舰船加入它们的舰队，使它们成为真正可怕的敌人。我们必须保持警惕。" />
+
+</root>

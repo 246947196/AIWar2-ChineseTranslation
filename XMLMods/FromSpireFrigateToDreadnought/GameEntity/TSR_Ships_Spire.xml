@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <entity  copy_from="SpireBattleship" name="SpireBattleshipFlagshipFromFrigate" display_name="尖塔战列舰旗舰" display_name_for_sidebar="尖塔战列舰旗舰" is_scrapping_by_player_disallowed="true"
+  tags="ShowsOnNormalDisplayMode" capturable_seed_weight="1" capturable_max_per_galaxy="0" capturable_can_seed_at_all="false" is_crippled_instead_of_dying="true" draw_in_galaxy_view="true"
+			shows_on_galaxy_map_for_explored_planets="true" always_visible_to_players="true"
+			this_unit_gets_direct_science_upgrades_from_central_fleet="false"
+			
+			special_entity_type="MobileOfficerCombatFleetFlagship" is_spire_lone_wolf="true" tech_upgrade_that_is_used_for_my_direct_science="Direct_LostSpire"
+			
+			fleet_leader_type="SpireLostFrigate" hacking_cost_for_other_fleet_leaders_of_same_type_to_become_me="120"
+			aip_to_claim="30"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" 
+			
+			description="一艘由人类向孤零零的尖塔护卫舰投入大量能量使其生长而成的巨大尖塔战舰。这艘巨舰可以消灭银河系中大多数已知力量。"
+			energy_consumption="1000000"
+			>
+		<ship_class_data can_be_fleet_supercharged="false" />
+    </entity>
+
+    <entity  copy_from="SpireDreadnought" name="SpireDreadnoughtFlagshipFromFrigate" display_name="尖塔无畏舰旗舰" display_name_for_sidebar="尖塔无畏舰旗舰"
+	is_scrapping_by_player_disallowed="true"
+	tags="ShowsOnNormalDisplayMode" capturable_seed_weight="1" capturable_max_per_galaxy="0" capturable_can_seed_at_all="false" is_crippled_instead_of_dying="true" draw_in_galaxy_view="true"
+			shows_on_galaxy_map_for_explored_planets="true" always_visible_to_players="true"
+			 this_unit_gets_direct_science_upgrades_from_central_fleet="false"
+			 
+			 special_entity_type="MobileOfficerCombatFleetFlagship" is_spire_lone_wolf="true" tech_upgrade_that_is_used_for_my_direct_science="Direct_LostSpire"
+			 
+			
+			fleet_leader_type="SpireLostFrigate" hacking_cost_for_other_fleet_leaders_of_same_type_to_become_me="320"
+			aip_to_claim="75"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" 
+			
+			description="一艘通过从人类储备中投入荒谬能量使其从孤零零的尖塔护卫舰生长而成的巨大尖塔无畏舰。这艘舰船单独即可压倒银河系中任何已知对手。"
+			energy_consumption="2500000"
+			>
+		<ship_class_data can_be_fleet_supercharged="false" />
+    </entity>
+	
+<!--  
+
+    <entity name="SpireBattleship"
+			tags="SpireBattleship"
+			visuals="Assets/_DLC1/FallenSpire/Spire4Battleship/SpireBattleship.prefab" visuals_bundle="exp1_the_spire_rises"
+			icon_name="ShipsSpire/Spire_Battleship" gimbal_icon_size_multiplier="1.5"
+			voice_group="Spire"			
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="18"
+			visuals_scale_multiplier="3"
+			y_offset_of_icon="30"
+			collision_priority="4500"
+			display_name="Spire Battleship"
+			display_name_for_sidebar="Spire BB"
+			description="A large Spire warship."
+			starting_mark_level="Mark1" this_unit_gets_direct_science_upgrades_from_central_fleet="true"
+			cost_for_ai_to_purchase="34000" strength_multiplier="1.4"
+			hull_points="4800000" shield_points="4800000" speed="AboveAverage1"
+			armor_mm="180" albedo="0.7" engine_gx="22" mass_tx="12"
+			metal_cost="1280000" energy_consumption="15000"			
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+			multiplier_to_all_healths="1.25" damage_multiplier_to_all_weapons="1.25"
+            
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			>		
+    <system name="HeavyBeamCannon" display_name="尖塔线圈光束"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="120000" range="AboveAverage2" shot_speed="Normal" rate_of_fire="Devourer"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_Cyan"
+				hits_all_intersecting_targets="true"				
+				shots_detonate_immediately="true"
+                is_coilbeam="true"				
+				>
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+
+	</entity>
+    
+
+
+    <entity name="SpireDreadnought"
+			tags="SpireDreadnought"
+			visuals="Assets/_DLC1/FallenSpire/Spire5Dreadnought/SpireDreadnought.prefab" visuals_bundle="exp1_the_spire_rises"
+			icon_name="ShipsSpire/Spire_Dreadnought" gimbal_icon_size_multiplier="1.5"
+			voice_group="Spire"			
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="40"
+			visuals_scale_multiplier="2.3"
+			y_offset_of_icon="30"
+			collision_priority="5000"
+			display_name="Spire Dreadnought"
+			display_name_for_sidebar="Spire DN"
+			description="An enormous Spire warship."
+			starting_mark_level="Mark1" this_unit_gets_direct_science_upgrades_from_central_fleet="true"
+			cost_for_ai_to_purchase="67000" strength_multiplier="1.4"
+			hull_points="9600000" shield_points="9600000" speed="AboveAverage1"
+			armor_mm="180" albedo="0.7" engine_gx="22" mass_tx="15"
+			metal_cost="2560000" energy_consumption="15000"			
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+			multiplier_to_all_healths="1.25" damage_multiplier_to_all_weapons="1.25"
+            
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			>		
+    <system name="HeavyBeamCannon" display_name="尖塔线圈光束"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="180000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Devourer"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_Cyan"
+				hits_all_intersecting_targets="true"				
+				shots_detonate_immediately="true"
+                is_coilbeam="true"				
+				>
+    </system>
+	<system name="LaserPulse" display_name="Spire Laser Pulse"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="36000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Misery"
+				shots_per_salvo="20" fires_salvos_sequentially="false"
+				shot_type_data="LaserPulse_DeepBlue"				
+				>
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+	
+    
+	
+-->
+</root>

@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<entity is_partial_record="true" name="DysonSpireFlagshipTierOne"
+		gimbal_icon_size_multiplier="1.5"
+		collision_priority="1000"
+		>
+		<system name="W1" 
+			damage_per_shot="3750"
+			shots_per_salvo="1" 
+			rate_of_fire="Devourer"
+			range="AboveAverage1" 
+			><!-- I basically scaled this up from 3750 to 10k base dps then split it 2:1 between the main beam and the secondary attack, then added a mulitplier, and the DPS wound up where it was :P -->
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="3" />
+		</system> 
+		<system name="W2" display_name="激光脉冲"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="450" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Misery"
+			shots_per_salvo="10" fires_salvos_sequentially="false"
+			shot_type_data="LaserPulse_DeepBlue"
+			>
+			<outgoing_damage_modifier based_on="CurrentHullPercentage" comparison_type="AtMost" compared_to="50" multiplier="2" />
+	  <outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="HullOnly" comparison_type="LessThan" compared_to="1" multiplier="1.5" />
+		</system><!-- 1/3rd of the DPS of the OG t1 Zenith Flagship-->
+	</entity>
+	<entity is_partial_record="true" name="DysonSpireFlagshipTierTwo"
+		gimbal_icon_size_multiplier="1.5"
+	
+		visuals="Assets/_DLC1/FallenSpire/Spire2Destroyer/SpireDestroyer.prefab" visuals_bundle="exp1_the_spire_rises"
+		
+		size_scale="11"
+		visuals_scale_multiplier="3"
+		
+		display_name="Spire Destroyer Flagship"
+		display_name_for_sidebar="SD 旗舰"
+		description="This is the Spire Flagship based on the Destroyer design. Used by the Dyson Sidekick."
+		collision_priority="1000"
+		>
+		<system name="W1" display_name="Heavy Railcannon"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="7500" range="Planetary" shot_speed="VeryFast" rate_of_fire="Misery"
+			shots_per_salvo="1" fires_salvos_sequentially="false"
+			shot_type_data="HeavyBeamInvisible"
+			beam_length_multiplier="1" beam_weapon_visual_style="Laser_Purple"
+			hits_all_intersecting_targets="false"				
+			shots_detonate_immediately="false"
+            is_coilbeam="false"
+			>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="3" />
+		</system><!-- was 7500dps, scaled up to 20k base dps , then split 2:1 with the other weapon, and reduced by half because sniper-->
+		<system name="W2" display_name="激光脉冲"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="900" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Misery"
+			shots_per_salvo="10" fires_salvos_sequentially="false"
+			shot_type_data="LaserPulse_DeepBlue"
+			>
+			<outgoing_damage_modifier based_on="CurrentHullPercentage" comparison_type="AtMost" compared_to="50" multiplier="2" />
+	  <outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="HullOnly" comparison_type="LessThan" compared_to="1" multiplier="1.5" />
+		</system><!-- 1/3rd of the DPS of the OG t2 zenith flagship -->
+	</entity>
+	<entity is_partial_record="true" name="DysonSpireFlagshipTierThree"
+		gimbal_icon_size_multiplier="1.5"
+		collision_priority="1000"
+	
+		>
+		 <system name="W1" display_name="尖塔线圈光束"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="20000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Devourer"
+			shots_per_salvo="1" fires_salvos_sequentially="false"
+			shot_type_data="HeavyBeamInvisible"
+			beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_Red"
+			hits_all_intersecting_targets="true"				
+			shots_detonate_immediately="true"
+            is_coilbeam="true"
+	    ><!-- was 40k dps.  this is the final evolution, so we don't need more EXP -->
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="3" />
+		</system>
+		<system name="W2" display_name="Light Railcannon"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="1800" range="EssentiallyInfinite" shot_speed="VeryFast" rate_of_fire="Normal"
+			shots_per_salvo="10" fires_salvos_sequentially="false"
+			shot_type_data="HeavyBeamInvisible"
+			beam_length_multiplier="1" beam_weapon_visual_style="Laser_Purple"
+			hits_all_intersecting_targets="false"				
+			shots_detonate_immediately="false"
+            is_coilbeam="false"
+			max_mark_level_to_function="0"
+			>
+			<outgoing_damage_modifier based_on="CurrentHullPercentage" comparison_type="AtMost" compared_to="50" multiplier="2" />
+	  <outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="HullOnly" comparison_type="LessThan" compared_to="1" multiplier="1.5" />
+		</system><!-- 1/3rd of dps of the OG t3 Zenith flagship, cut in half because sniper-->
+	</entity>
+	<entity is_partial_record="true" name="DysonZenithFlagshipTierOne"
+		gimbal_icon_size_multiplier="1.5"
+		collision_priority="1000"
+	
+		>
+		<system name="R1" 
+			damage_per_shot="2400"
+			shots_per_salvo="16" 
+			rate_of_fire="Normal" 
+			range="AboveAverage1" 
+			> 
+		</system><!-- 6.4kdps -> 9.6kdps, multiple targets -->
+	</entity>
+	<entity is_partial_record="true" name="DysonZenithFlagshipTierTwo"
+		gimbal_icon_size_multiplier="1.5"
+		collision_priority="1000"
+	
+		>
+		<system name="R1" 
+			max_mark_level_to_function="0"
+			>
+		</system>
+		<system name="B1" display_name="暴风雪光束"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="2400" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Normal"
+			shots_per_salvo="32"
+			shot_type_data="HeavyBeamInvisible"
+			beam_length_multiplier="1.1"  beam_weapon_visual_style="Lightning_Blue"
+			added_target_evaluator="LowestHealthAsMajorPrimary"
+			base_engine_stun_per_shot="2" added_engine_stun_per_shot_per_mark="1" engine_stun_to_engine_gx_less_than="18" max_engine_stun_seconds="10"				
+			>
+			<outgoing_damage_modifier based_on="CurrentHullPercentage" comparison_type="AtMost" compared_to="50" multiplier="2" />
+	  <outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="HullOnly" comparison_type="LessThan" compared_to="1" multiplier="1.5" />
+		</system>
+	</entity>
+	<entity is_partial_record="true" name="DysonZenithFlagshipTierThree"
+		gimbal_icon_size_multiplier="1.5"
+	
+		display_name="Zenith Jormugandr Flagship"
+		display_name_for_sidebar="Jorm 旗舰"
+		description="This is the most powerful Zenith Flagship for the Dyson."
+		seconds_to_fully_regenerate_hull="600"
+		collision_priority="1000"
+		>
+		<system name="R1" display_name="蛇之毒液"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="4800" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Low" 
+			shots_per_salvo="16" fires_salvos_sequentially="false" 
+			shot_type_data="NanocaustCurvedSicklyGreenShot"
+			all_damage_is_corrosive="true"
+			max_mark_level_to_function="0"
+			>
+			<outgoing_damage_modifier based_on="CurrentHullPercentage" comparison_type="AtLeast" compared_to="50" multiplier="2" />
+	  <outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" comparison_type="AtLeast" compared_to="25" multiplier="1.5" />
+		</system>
+		<!--<system name="J2" display_name="蛇之牙"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="4800" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Low" 
+			shots_per_salvo="16" fires_salvos_sequentially="false"
+			shot_type_data="Sabot"
+			max_mark_level_to_function="10"
+			>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="5" />
+		</system>-->
+		<system name="B1" 
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="0" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Low"
+			shot_type_data="HeavyBeamInvisible"
+			beam_length_multiplier="1.1"  beam_weapon_visual_style="Lightning_Blue"
+			max_mark_level_to_function="0"
+			>
+		</system>
+		
+		<system name="J1" display_name="Annihilator Beam"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="15000" range="AboveAverage5" shot_speed="Normal" rate_of_fire="High"
+			shot_type_data="HeavyBeamInvisible"
+			hits_all_intersecting_targets="true"
+			shots_detonate_immediately="true"
+			maximum_number_of_targets_hit_per_shot="50"
+			number_beams_to_fire="1" beam_weapon_visual_style="Laser_BlueBright"
+			distance_from_center_for_beam_emission="150"
+			>
+		</system>
+		<system name="L" display_name="Seekerbomb Launcher"
+			category="Weapon" firing_timing="OnlyInRange" shot_type_data="DZSeekerBomb"
+			damage_per_shot="5" range="Planetary" shot_speed="Slow" rate_of_fire="Devourer" fires_salvos_sequentially="true"  
+			shots_per_salvo="1"  cloaking_percent_loss_from_firing="0.2"
+			use_alternate_rate_of_fire_after_x_shots="3" alternate_rate_of_fire="ExtremelyLow"  use_alternate_rate_of_fire_for_x_shots_before_reverting="1"
+			>
+		</system>
+	</entity>
+	<entity is_partial_record="true" name="DysonNeinzulFlagshipTierOne"
+		gimbal_icon_size_multiplier="1.5"
+		visuals="Assets/_DLC3/Elderlings/WrathfulElderling/WrathfulElderling.prefab" visuals_bundle="exp3_neinzul_abyss"
+		size_scale="15"
+		visuals_scale_multiplier="108" y_offset_of_ship_in_visual_space="90"
+		icon_overlay="Overlays2/NecromancerFlagship_Wrathful" 
+		collision_priority="1000"
+		>
+		<system name="R1" 
+			damage_per_shot="2400"
+			shots_per_salvo="16" 
+			rate_of_fire="Normal" 
+			range="AboveAverage1" 
+			> 
+		</system><!-- 6.4kdps -> 9.6kdps, multiple targets -->
+	</entity>
+	<entity is_partial_record="true" name="DysonNeinzulTierTwoFlagship"
+		gimbal_icon_size_multiplier="1.5"
+	
+		visuals="Assets/_DLC3/Elderlings/BlasphemousElderling/BlasphemousElderling.prefab" visuals_bundle="exp3_neinzul_abyss"
+		size_scale="15"
+		visuals_scale_multiplier="100"  y_offset_of_ship_in_visual_space="70"
+        
+		icon_overlay="Overlays2/NecromancerFlagship_Blasphemous"  
+		collision_priority="1000"
+		>
+	</entity>
+	<entity is_partial_record="true" name="DysonNeinzulTierThreeFlagship"
+		gimbal_icon_size_multiplier="1.5"
+	
+		visuals="Assets/_DLC3/Elderlings/PlagueswarmElderling/PlagueswarmElderling.prefab" visuals_bundle="exp3_neinzul_abyss"
+		visuals_scale_multiplier="125"  y_offset_of_ship_in_visual_space="70"
+		
+		icon_overlay="Overlays2/NecromancerFlagship_Plagueswarm"
+		
+		display_name="Neinzul Plagueswarm Flagship"
+		display_name_for_sidebar="PL 旗舰"
+		description="This is the highest-tier Neinzul Flagship for the Dyson."  
+		collision_priority="1000"
+		>
+		<system name="R1" display_name="独眼光束"
+			damage_per_shot="40000" 
+			range="AboveAverage4" 
+			rate_of_fire="Normal"
+			max_mark_level_to_function="0"
+			>
+		</system>
+		<system name="RE" display_name="诡异射线"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="1000" range="Normal3" shot_speed="Fast" rate_of_fire="High" 
+			shots_per_salvo="4" fires_salvos_sequentially="true"
+			base_percent_damage_bypasses_personal_shields="1"
+			shot_type_data="NecroticRay" 
+			corrosion_damage="9000"
+			corrosion_damage_added_per_mark="4500"
+			>
+		</system>
+	</entity>
+	<entity is_partial_record="true" name="DysonTemplarFlagshipTierOne"
+		collision_priority="1000"
+		>
+	</entity>
+	<entity is_partial_record="true" name="DysonTemplarFlagshipTierTwo"
+		collision_priority="1000"
+		>
+		
+		<system name="W2" 
+			shot_type_data="PlasmaTorpedoAOEBurstAtEnd"
+			area_of_effect_size="1000"
+			maximum_number_of_targets_hit_per_shot="50"
+			aoe_and_beam_damage_multiplier_to_non_primary_target="2"
+			>
+		</system>
+	</entity>
+	<entity is_partial_record="true" name="DysonTemplarFlagshipTierThree"
+		collision_priority="1000"
+		>
+		
+	</entity>
+	
+</root>

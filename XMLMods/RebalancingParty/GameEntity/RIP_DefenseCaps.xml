@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+    <entity
+            name="HumanHomeCommandStation"
+            is_partial_record="true"
+            defensive_structure_cap_multiplier="1.0"
+            />
+
+    <entity
+            name="EconomicCommandStation"
+            is_partial_record="true"
+            defensive_structure_cap_multiplier="0.40"
+            />
+
+    <entity
+            name="LogisticalCommandStation"
+            is_partial_record="true"
+            defensive_structure_cap_multiplier="0.80"
+            />
+
+    <entity
+            name="MilitaryCommandStation"
+            is_partial_record="true"
+            defensive_structure_cap_multiplier="1.0"
+            />
+
+</root>

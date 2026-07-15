@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<fleet_design name="LONMothershipDrones" design_logic="Drones" weight="1" include_full_cap_of_each_type="true" />
+	<fleet_design name="LONOdinDrones" design_logic="Drones" weight="1" include_full_cap_of_each_type="true" required_expansion_list="2_Zenith_Onslaught" />
+</root>

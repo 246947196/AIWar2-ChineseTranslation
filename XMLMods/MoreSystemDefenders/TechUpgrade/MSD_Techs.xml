@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<item name="Minefields" is_partial_record="true" science_cost_per_time_unlocked="1000,1500,2250,3000" />
+	<item name="Sentries" is_partial_record="true" science_cost_per_time_unlocked="1250,1750,2250,2750" />
+
+</root>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <item name="Xod_King" dll_name="Xodian" type_name="Xodian.Xod_King" />
+  <item name="Xod_Berth" dll_name="Xodian" type_name="Xodian.Xod_Berth" />
+  <item name="Xod_RepairDrone_SquadInfo" dll_name="Xodian" type_name="Xodian.Xod_RepairDrone_SquadInfo" />
+  <item name="Xod_RepairBase_SquadInfo" dll_name="Xodian" type_name="Xodian.Xod_RepairBase_SquadInfo" />
+
+</root>

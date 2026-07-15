@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!-- JCF: outguard rebalance -->
+
+	<item name="Arnaud de Cervole"
+		is_partial_record="true"
+		spawn_location="Manual_ByClick"
+	/>
+
+	<item name="Lobar the Wolf"
+		is_partial_record="true"
+		spawn_location="Manual_ByClick"
+	/>
+
+	<item name="Xenophon"
+		is_partial_record="true"
+		spawn_location="Manual_ByClick"
+	/>
+
+	<item name="Prufrock's Partisans"
+		is_partial_record="true"
+		spawn_location="Manual_ByClick"
+	/>
+
+	<item name="Hereward the Wake"
+		is_partial_record="true"
+		spawn_location="Manual_ByClick"
+	/>
+
+	<item name="Kosciuszko Fortifications Inc" short_name="科希丘什科公司"
+		is_partial_record="true"
+		spawn_location="Manual_ByClick"
+	/>
+</root>

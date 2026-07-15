@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <faction
+            name="DarkSphere"
+            display_name="Dark Sphere"
+            short_name="Dark Sphere"
+            processing_group="DarkSphere"
+            custom_NameForLobby="Dyson Sphere: <color=#242124>Dark</color>"
+            base_info_source="Ds_Faction_Base"
+            deep_info_source="Ds_Faction_Deep"
+            team_center_color="c242124"
+            team_border_color="c317873"
+            icon_name_for_lobby="Ships1/Dyson_Sphere"
+            icon_overlay_name_for_lobby=""
+            type="SpecialFaction"
+            impact="Brutal"
+            CanBeHostileToAll="true"
+            exclude_from_za_territory="true"
+            defeat_condition="AllKingsDead_IncludingSubfactions"
+            must_defeat="true"
+            description="Adds a <color=#242124>Dark Sphere</color> invasion to the galaxy. The <color=#242124>Dark Sphere</color> is an intelligent mega-structure, seeking the universal end of suffering - through eradication.
+
+<color=#f25e1c>FATAL IMPACT:</color> What hell did this come from?"
+            >
+        <custom_field
+                name="Intensity"
+                display_name="Intensity"
+                description="Just kidding, you can't change this. RIP."
+                sort_group="200"
+                setting_type="IntSlider"
+                default="666"
+                min="666"
+                max="667"
+                />
+
+        <custom_field
+                is_hidden="true"
+                name="Allegiance"
+                display_name="Allegiance"
+                description="Always hostile."
+                sort_group="300"
+                setting_type="CustomDropdownArbitraryOptions"
+                arbitrary_options="Hostile To All"
+                default_option="Hostile To All"
+                />
+                
+                
+    </faction>
+</root>

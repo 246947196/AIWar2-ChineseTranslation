@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  
+  <grav_well_size name="Grand" is_partial_record="true"
+  >
+    <planet_grav_well_schema_membership name="ReasonableSmall" weight="10"/>
+    <planet_grav_well_schema_membership name="ReasonableSmaller" weight="10"/>
+  </grav_well_size>
+
+  <grav_well_size name="Extensive" is_partial_record="true"
+  >
+    <planet_grav_well_schema_membership name="ReasonableSmall" weight="20"/>
+    <planet_grav_well_schema_membership name="ReasonableSmaller" weight="10"/>
+  </grav_well_size>
+  
+  <grav_well_size name="Spacious" is_partial_record="true"
+  >
+    <planet_grav_well_schema_membership name="ReasonableSmall" weight="30"/>
+    <planet_grav_well_schema_membership name="ReasonableSmaller" weight="10"/>
+  </grav_well_size>
+
+  <grav_well_size name="Modest" is_partial_record="true"
+  >
+    <planet_grav_well_schema_membership name="ReasonableSmall" weight="40"/>
+    <planet_grav_well_schema_membership name="ReasonableSmaller" weight="20"/>
+  </grav_well_size>
+  
+  <grav_well_size name="Compact" is_partial_record="true"
+  >
+    <planet_grav_well_schema_membership name="ReasonableSmall" weight="50"/>
+    <planet_grav_well_schema_membership name="ReasonableSmaller" weight="80"/>
+  </grav_well_size>
+
+  <grav_well_size name="Cramped" is_partial_record="true"
+  >
+    <planet_grav_well_schema_membership name="ReasonableSmall" weight="50"/>
+    <planet_grav_well_schema_membership name="ReasonableSmaller" weight="40"/>
+  </grav_well_size>
+
+</root>

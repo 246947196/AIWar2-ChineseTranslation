@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>    
+
+	<!--Stormfront Raider Drone Carrier Ark-->
+	<!--High damage specialist meant to breach for beachheads-->
+	<entity name="StormfrontARK"
+			thematic_groups="ArkCapturable,Human"
+			special_entity_type="MobileOfficerCombatFleetFlagship"
+			voice_group="Ark_LeeSen" gimbal_icon_size_multiplier="1.5" is_ark="true"
+			visuals="assets/_finalgamemeshes/guardians/mlrsguardian/mlrsguardian.prefab"
+			icon_name="Ships1/Ark"
+			draw_in_galaxy_view="true"
+			tags="ShowsOnNormalDisplayMode,Capturable" capturable_seed_weight="100" capturable_max_per_galaxy="1"
+			size_scale="9"
+			visuals_scale_multiplier="10"
+			y_offset_of_icon="40"
+			uses_large_health_bar="true"
+			category="Ship"
+			collision_priority="10000"
+			display_name="风暴前哨方舟"
+			description="This 旗舰 and attendant fleet is configured to 突击 hard on system entry."
+			fleet_design_template_i_use_for_drones="StormfrontDrones"
+			drone_starting_behavior_type="Attacker_Full"
+			aip_to_claim="10"
+			metal_to_claim="500000"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" tech_upgrade_that_is_used_for_my_direct_science="Direct_ArkGeneral"
+			cost_for_ai_to_purchase="200"		
+			hull_points="650000" shield_points="350000" speed="AboveAverage4"
+			metal_cost="500000" energy_consumption="100000"
+			assist_range="Normal1"			
+			armor_mm="120" albedo="0.8" engine_gx="18" mass_tx="7"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			speed_multiplier_first_5_seconds_on_planet="1.5"
+			priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="MajorPlanetLevelObjective"
+            firing_delay_for_transported_ships="6"
+			shows_on_galaxy_map_for_explored_planets="true" always_visible_to_players="true"
+			eligible_for_hacks="IncreaseShieldDurability">
+			<hack_data hack_type="IncreaseShieldDurability"
+				override_cost_in_hacking_points="20"
+				cost_in_hacking_points_multiplier_per_times_same_unit_hacked="3"
+				max_times_single_unit_can_be_hacked="2">
+				<custom_hack_data key="AddedMultiplierPerHack" value="2" />
+			</hack_data>
+			<metal_flow purpose="BuildingDronesInternally" throughput="2000" increase_per_mark_level="500"/>
+			<metal_flow purpose="RebuildingRemains" throughput="100" increase_per_mark_level="100"/>		
+			<system name="BV" display_name="弹道涡旋"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="10000" range="AboveAverage2" shot_speed="Normal" rate_of_fire="Misery" fires_salvos_sequentially="true"
+				shot_type_data="ElegantCurl"				
+				>	
+			</system>
+			<system name="SB" display_name="重型伯劳发射器"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1600" range="AboveAverage2" shot_speed="Fast" rate_of_fire="SlightlyLow"
+				shots_per_salvo="16" fires_salvos_sequentially="true"
+				shot_type_data="FusionRocket"
+				>
+				<outgoing_damage_modifier based_on="MyTimeAtPlanet" comparison_type="LessThan" compared_to="20" multiplier="3" />	
+			</system>
+	</entity>
+	
+	<entity name="StormfrontHomeArk" copy_from="StormfrontARK"
+			thematic_groups="ArkHomeCommand,Human"
+			special_entity_type="HumanHomeArk" icon_name="Ships1/King"
+			uses_large_health_bar="true"  gimbal_icon_size_multiplier="2" is_critical_infrastructure="true"
+			tags="ShowsOnNormalDisplayMode,HumanArkEmpireArks"
+	  		energy_consumption="0"
+			player_loses_if_any_die="true"
+			capturable_can_seed_at_all="false"
+			metal_storage="2500000" added_metal_storage_per_mark_level="500000"
+			>
+				<resource_production type="Metal" amount="2200" increase_per_mark_level="400"/>
+				<resource_production type="Energy" amount="350000" increase_per_mark_level="25000"/>
+				<resource_production type="FuelArgon" amount="500000" />
+				<resource_production type="FuelRadon" amount="500000" />
+				<metal_flow purpose="FactoryConstructionForPlayerMobileFleets" throughput="3000" increase_per_mark_level="2000"/>
+    </entity>
+	
+</root>

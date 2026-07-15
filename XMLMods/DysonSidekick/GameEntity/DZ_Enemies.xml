@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <!-- Science only -->
+  <entity name="JoyfulNadir"
+          tags="AntiDarkZenithTierOne,TiberiumCPATierOne"
+          thematic_groups="DarkZenith" 
+	  special_entity_type="AIGuardian" gimbal_icon_size_multiplier="0.80"
+	  visuals="assets/_finalgamemeshes/guardians/heavybeamguardian/heavybeamguardian.prefab"
+          material_override_path="Assets/_FinalGameMeshes/Spire/DarkSpireWraith/DarkSpireWraith.prefab"
+          icon_name="Ships3/SomethingWeeds2" icon_overlay="Overlays2/SkeletonArcher"
+	  uses_large_health_bar="true"
+	  category="Ship"
+	  size_scale="3.6"
+	  visuals_scale_multiplier="4"
+	  y_offset_of_icon="16"
+	  collision_priority="400"
+	  display_name="Joyful Nadir"
+	  display_name_for_sidebar="J Nadir"
+	  description="These powerful guardians are summoned to combat the AI's Enemies. They charge up a powerful blast by firing their weaker weapon, and are resistant to far away enemies."
+	  blocks_enemy_claim_flows="true"
+	  voice_group="Silent"
+          mark_level_scale_style="AntiDarkZenith"
+	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+	  cost_for_ai_to_purchase="700" strength_multiplier="3"	
+	  hull_points="40000" shield_points="20000" speed="BelowAverage2"
+	  metal_cost="80000" energy_consumption="7500"
+	  armor_mm="90" albedo="0.4" engine_gx="14" mass_tx="5"
+	  ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+          priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+	  >
+    <data_extension name="DLC3"
+                    necromancer_science_to_grant_on_death="10"
+                    dark_zenith_sidekick_science_to_grant_on_death="10"
+                    dark_zenith_sidekick_resource_to_grant="Metal"
+                    dark_zenith_sidekick_resource_amount_to_grant="10"
+                    armada_metal_to_grant_on_death="200"
+                    scourge_empire_corbomite_to_grant_on_death="2"
+                    spire_sidekick_science_to_grant_on_death="10"/>
+
+    <system name="B5" display_name="Charging Blast"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="300" range="High2" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+	    shot_type_data="NanocaustCurvedSicklyGreenShot"
+	    number_of_weapon_points_to_gain_on_firing="1"
+	    >
+
+    </system>	
+    <system name="W2" display_name="Critical Stike"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="900" range="High2" shot_speed="Normal" rate_of_fire="PeriodicActivation" fires_salvos_sequentially="true"
+	    shot_type_data="EnergyWave"  
+	    number_of_weapon_points_to_consume_on_firing="4" additional_damage_modifier_per_weapon_point="2"
+	    >
+    </system>
+    <incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="3400" multiplier="0.5" />
+  </entity>
+
+    <entity name="HappyNadir"
+          tags="AntiDarkZenithTierOne,TiberiumCPATierOne"
+          thematic_groups="DarkZenith" 
+	  special_entity_type="AIGuardian" gimbal_icon_size_multiplier="0.80"
+	  visuals="assets/_finalgamemeshes/guardians/heavybeamguardian/heavybeamguardian.prefab"
+          material_override_path="Assets/_FinalGameMeshes/Spire/DarkSpireWraith/DarkSpireWraith.prefab"
+          icon_name="Ships3/SomethingWeeds2" icon_overlay="Overlays2/WightPossessed"
+	  uses_large_health_bar="true"
+	  category="Ship"
+	  size_scale="3.6"
+	  visuals_scale_multiplier="4"
+	  y_offset_of_icon="16"
+	  collision_priority="400"
+	  display_name="Happy Nadir"
+	  display_name_for_sidebar="H Nadir"
+	  description="These powerful guardians are summoned to combat the AI's Enemies.  Periodic, high single target damage, especially very massive targets."
+	  blocks_enemy_claim_flows="true"
+          mark_level_scale_style="AntiDarkZenith"
+	  voice_group="Silent"
+	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+	  cost_for_ai_to_purchase="450" strength_multiplier="3"	
+	  hull_points="40000" shield_points="20000" speed="BelowAverage2"
+	  metal_cost="80000" energy_consumption="7500"
+	  armor_mm="90" albedo="0.4" engine_gx="14" mass_tx="5"
+	  ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+          priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+	  >
+      <data_extension name="DLC3"
+                      necromancer_science_to_grant_on_death="1"
+                      dark_zenith_sidekick_science_to_grant_on_death="10"
+                      spire_sidekick_science_to_grant_on_death="10"
+                      scourge_empire_corbomite_to_grant_on_death="2"
+                      armada_science_to_grant_on_death="1"
+                      dark_zenith_sidekick_resource_to_grant="Blue"
+                      dark_zenith_sidekick_resource_amount_to_grant="3"
+                      />
+
+    <system name="R5" display_name="Torturous Blast"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="20000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="PeriodicActivation" fires_salvos_sequentially="true"
+			shot_type_data="TorturousBlast"
+			>
+      <outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="7" multiplier="3" />
+    </system>
+  </entity>
+
+  <entity name="AcidicNadir"
+          tags="AntiDarkZenithTierOne,TiberiumCPATierOne"
+          thematic_groups="DarkZenith" 
+	  special_entity_type="AIGuardian" gimbal_icon_size_multiplier="0.80"
+	  visuals="assets/_finalgamemeshes/guardians/heavybeamguardian/heavybeamguardian.prefab"
+          material_override_path="Assets/_FinalGameMeshes/Spire/DarkSpireWraith/DarkSpireWraith.prefab"
+          icon_name="Ships3/SomethingWeeds2" icon_overlay="Overlays1/Turret_Acid"
+	  uses_large_health_bar="true"
+	  category="Ship"
+	  size_scale="3.6"
+	  visuals_scale_multiplier="4"
+	  y_offset_of_icon="16"
+	  collision_priority="400"
+	  display_name="Acidic Nadir"
+	  display_name_for_sidebar="A Nadir"
+	  description="These powerful guardians are summoned to combat the AI's Enemies.  They use acidic weapons to disintigrate the hulls of their enemies."
+	  blocks_enemy_claim_flows="true"
+          mark_level_scale_style="AntiDarkZenith"
+	  voice_group="Silent"
+	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+	  cost_for_ai_to_purchase="450" strength_multiplier="3"	
+	  hull_points="40000" shield_points="10000" speed="BelowAverage2"
+	  metal_cost="80000" energy_consumption="7500"
+	  armor_mm="90" albedo="0.4" engine_gx="14" mass_tx="5"
+	  ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+          priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+	  >
+      <data_extension name="DLC3"
+                      necromancer_science_to_grant_on_death="1"
+                      dark_zenith_sidekick_science_to_grant_on_death="10"
+                      spire_sidekick_science_to_grant_on_death="10"
+                      scourge_empire_corbomite_to_grant_on_death="2"
+                      armada_science_to_grant_on_death="1"
+                      dark_zenith_sidekick_resource_to_grant="Blue"
+                      dark_zenith_sidekick_resource_amount_to_grant="3"
+                      />
+
+    <system name="R5" display_name="Acid Wave"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="200" range="AboveAverage3" shot_speed="Normal" rate_of_fire="PeriodicActivation" fires_salvos_sequentially="true"
+	    shot_type_data="TorturousBlast"
+            corrosion_damage="500"
+	    corrosion_damage_added_per_mark="125"
+	    >
+    </system>
+  </entity>
+
+  <entity name="SneakingNadir" 
+          display_name="Sneaking Nadir" display_name_for_sidebar="Sn Nadir" 
+	  thematic_groups="DarkZenith"
+          tags="AntiDarkZenithTierOne,TiberiumCPATierOne"
+	  visuals="Assets/_DLC3/Templar/TemplarSergeant/TemplarSergeant.prefab" visuals_bundle="exp3_neinzul_abyss"
+          material_override_path="Assets/_FinalGameMeshes/Spire/DarkSpireWraith/DarkSpireWraith.prefab"
+          icon_name="Ships3/SomethingWeeds2" 
+          icon_overlay="Overlays2/Ark_RorqualHegira"
+          gimbal_icon_size_multiplier="0.80"
+	  voice_group="Silent"
+	  category="Ship" special_entity_type="Frigate"
+	  size_scale="6.8"
+	  visuals_scale_multiplier="2.8"
+	  y_offset_of_icon="16"
+	  collision_priority="400"
+	  description="A fragile but deadly Nadir ship, the Sneak is a 隐形 bombardier that fires in bursts, 隐形 before it fires another salvo. Its weapon specializes in taking out ships with powerful engines."
+	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="DysonTemplarTierOne"
+	  cost_for_ai_to_purchase="450" strength_multiplier="2"
+          mark_level_scale_style="AntiDarkZenith"
+	  hull_points="36000" shield_points="16000" speed="BelowAverage1"
+	  metal_cost="2000" energy_consumption="7500"
+	  armor_mm="40" albedo="0.7" engine_gx="7" mass_tx="5"
+	  ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+          priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+	  >
+    <data_extension name="DLC3"
+                    necromancer_science_to_grant_on_death="1"
+                    dark_zenith_sidekick_science_to_grant_on_death="10"
+                    dark_zenith_sidekick_resource_to_grant="Green"
+                    dark_zenith_sidekick_resource_amount_to_grant="3"
+                    armada_science_to_grant_on_death="1"
+                    scourge_empire_corbomite_to_grant_on_death="2"
+                    spire_sidekick_science_to_grant_on_death="10"/>
+
+    <system name="W1" display_name="Agravic Torpedo"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="9000" range="High1" shot_speed="Slow" rate_of_fire="Devourer" fires_salvos_sequentially="true"
+	    shot_type_data="PlasmaTorpedo" cloaking_percent_loss_from_firing="0.2"
+	    use_alternate_rate_of_fire_after_x_shots="6" alternate_rate_of_fire="PeriodicActivation" use_alternate_rate_of_fire_for_x_shots_before_reverting="1"	
+	    >
+      <outgoing_damage_modifier based_on="engine_gx" comparison_type="AtLeast" compared_to="14" multiplier="3" />
+    </system>
+    <system name="C" display_name="Cloaking Device" category="Passive" cloaking_points="2000" cloaking_points_added_per_mark="1000"  >
+    </system>
+    <ship_class_data can_be_zombified_and_similar="false"/>
+  </entity>
+
+  <entity name="MirageNadir" 
+          display_name="Mirage Nadir" display_name_for_sidebar="Mi Nadir" 
+	  thematic_groups="DarkZenith"
+          tags="AntiDarkZenithTierOne,TiberiumCPATierOne"
+	  visuals="assets/_finalgamemeshes/fleetships/spaceplane/spaceplane.prefab"
+          material_override_path="Assets/_FinalGameMeshes/Spire/DarkSpireWraith/DarkSpireWraith.prefab"
+          icon_name="Ships3/SomethingWeeds2" 
+          icon_overlay="Overlays2/Ark_RorqualHegira"
+          gimbal_icon_size_multiplier="0.80"
+	  voice_group="Silent"
+	  category="Ship" special_entity_type="Frigate"
+	  size_scale="6.8"
+	  visuals_scale_multiplier="2.8"
+	  y_offset_of_icon="16"
+	  collision_priority="400"
+	  description="A durable 隐形 brawler, this Nadir ship has a 腐蚀 weapon. It's 隐形 device does not last long, just enough for it to get a powerful first salvo.
+
+A bit more powerful than the other low-tier Nadier, and worth a bit more 资源."
+	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="DysonTemplarTierOne"
+	  cost_for_ai_to_purchase="450" strength_multiplier="2"
+          mark_level_scale_style="AntiDarkZenith"
+	  hull_points="66000" shield_points="20000" speed="AboveAverage1"
+	  metal_cost="2000" energy_consumption="7500"
+	  armor_mm="40" albedo="0.7" engine_gx="7" mass_tx="5"
+	  ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+          priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+	  >
+    <system name="W1" display_name="Corrosive Blast"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="100" range="Small1" shot_speed="Normal" rate_of_fire="Normal"
+	    shots_per_salvo="10" fires_salvos_sequentially="true" shot_type_data="CorrosiveBlast"
+            base_percent_damage_bypasses_personal_shields="1"
+	    corrosion_damage="200"
+	    corrosion_damage_added_per_mark="150"
+            cloaking_percent_loss_from_firing="0.5"
+	    >
+      <outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="90" multiplier="4"  />
+    </system>
+    <system name="C" display_name="Cloaking Device" category="Passive" cloaking_points="2000" cloaking_points_added_per_mark="1000"  >
+    </system>
+    <ship_class_data can_be_zombified_and_similar="false"/>
+    <data_extension name="DLC3"
+                    necromancer_science_to_grant_on_death="11"
+                    armada_science_to_grant_on_death="1"
+                    armada_metal_to_grant_on_death="100"
+                    dark_zenith_sidekick_science_to_grant_on_death="11"
+                    dark_zenith_sidekick_resource_to_grant="White"
+                    dark_zenith_sidekick_resource_amount_to_grant="2"
+                    scourge_empire_corbomite_to_grant_on_death="2"
+                    spire_sidekick_science_to_grant_on_death="11"/>
+
+  </entity>
+
+  <!-- Hacking and Science (higher tier, based on Scourge) -->b
+  <entity name="DreadNadir"
+	  thematic_groups="DarkZenith" npc_ship_cap_type="FrigatesAndGuardians" 
+          tags="AntiDarkZenithTierTwo,TiberiumCPATierTwo"
+	  visuals="Assets/_DLC1/Scourge/NeinzulParts/NeinzulBurlust/NeinzulBurlustWarrior.prefab" visuals_bundle="exp1_the_spire_rises"
+	  icon_name="Ships3/SomethingShell" icon_overlay="Overlays2/HunterKiller_Rank3"
+	  y_offset_of_icon="30"
+	  voice_group="Silent"
+	  category="Ship"
+	  size_scale="9"
+	  visuals_scale_multiplier="16"
+	  collision_priority="100"
+	  display_name="Dread Nadir"
+          display_name_for_sidebar="D Nadir"
+	  description="These implacable ships are esigned to combat the numbers of the AI's Enemies with hostile-to-all zombification, "
+	  starting_mark_level="Mark1"
+          mark_level_scale_style="AntiDarkZenith"
+	  cost_for_ai_to_purchase="1250"
+	  hull_points="900000" shield_points="0" speed="AboveAverage6"
+	  metal_cost="800000" energy_consumption="25000"
+	  armor_mm="50" albedo="0.4" engine_gx="18" mass_tx="7"
+	  ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+          priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="Expendable"
+          >
+    <system name="W1" display_name="Neinzul Subverting Doom Accelerator"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="7" range="Small4" shot_speed="Normal" rate_of_fire="Misery"
+				shots_per_salvo="5" fires_salvos_sequentially="false"
+				shot_type_data="DoubleShot_Red"				
+				health_change_per_damage_dealt="0.5"
+				>
+                <outgoing_damage_modifier based_on="MyHullPercentageMissing" comparison_type="MultiplesOf" compared_to="20" multiplier="1" />
+		<outgoing_damage_modifier based_on="TargetHullPercentageMissing" comparison_type="MultiplesOf" compared_to="25" multiplier="1" />
+		<death_effect_damage type="Zombification_HostileToAll" tier_name="Parasite"/>	
+    </system>
+    <data_extension name="DLC3"
+                    necromancer_science_to_grant_on_death="10"
+                    dark_zenith_sidekick_science_to_grant_on_death="100"
+                    spire_sidekick_science_to_grant_on_death="100"
+                    spire_sidekick_hacking_to_grant_on_death="1"
+                    scourge_empire_corbomite_to_grant_on_death="30"
+                    armada_resource_one_to_grant_on_death="1"
+                    dark_zenith_sidekick_resource_to_grant="Red"
+                    dark_zenith_sidekick_resource_amount_to_grant="4"
+                    dark_zenith_sidekick_hacking_to_grant_on_death="2"/>
+
+	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+
+    <entity name="SpectralNadir"
+	    thematic_groups="DarkZenith" npc_ship_cap_type="FrigatesAndGuardians"
+            tags="AntiDarkZenithTierTwo,TiberiumCPATierTwo"
+	    visuals="Assets/_DLC1/Scourge/BurlustParts/BurlustEvuck/BurlustEvuckWarrior.prefab" visuals_bundle="exp1_the_spire_rises"
+	    icon_name="Ships3/SomethingSkull" icon_overlay="Overlays2/WarpingIn"
+	    y_offset_of_icon="30"
+	    voice_group="Silent"
+	    category="Ship"
+	    size_scale="9"
+	    visuals_scale_multiplier="12"
+	    y_offset_of_ship_in_visual_space="15"
+	    collision_priority="100"
+	    display_name="Spectral Nadir"
+            display_name_for_sidebar="Sp Nadir"
+	    description="These heavily shielded 隐形 ships do extra damage to high-mass enemies, to allow them to take down the larger enemy ships."
+	    starting_mark_level="Mark1"
+	    cost_for_ai_to_purchase="1250"
+            mark_level_scale_style="AntiDarkZenith"
+	    hull_points="450000" shield_points="900000" speed="AboveAverage6"
+	    metal_cost="800000" energy_consumption="25000"
+	    armor_mm="70" albedo="0.7" engine_gx="18" mass_tx="7"
+	    ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="Expendable"
+            >
+    <system name="W1" display_name="Burlust Fusion Blaster"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="7000" range="Normal4" shot_speed="Slow" rate_of_fire="Misery"
+	    shots_per_salvo="6" fires_salvos_sequentially="false"
+	    shot_type_data="FusionBomb" cloaking_percent_loss_from_firing="0.2"
+	    base_percent_damage_bypasses_personal_shields="0.65" 
+	    >
+      <outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="6" multiplier="6" />
+    </system>
+    <system name="W2" display_name="Burlust Ion Blaster"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="850" range="Normal4" shot_speed="Fast" rate_of_fire="Low"
+	    shots_per_salvo="5" fires_salvos_sequentially="false"
+	    shot_type_data="ExtremelyLongRangeIon"
+	    base_paralysis_seconds_per_shot="3" paralysis_to_ships_mass_tx_less_than="6"
+            only_targets_static_units="true"
+	    fires_through_enemy_shields="true"
+	    >
+    </system>	
+    <system name="C" display_name="Nadir Cloaking Device"
+	    category="Passive" cloaking_points="2000" cloaking_points_added_per_mark="1000"
+	    >
+    </system>
+    <ship_class_data can_be_zombified_and_similar="false" />
+    <data_extension name="DLC3"
+                    necromancer_science_to_grant_on_death="10"
+                    dark_zenith_sidekick_science_to_grant_on_death="100"
+                    spire_sidekick_science_to_grant_on_death="100"
+                    spire_sidekick_hacking_to_grant_on_death="1"
+                    scourge_empire_corbomite_to_grant_on_death="30"
+                    armada_resource_one_to_grant_on_death="1"
+                    dark_zenith_sidekick_resource_to_grant="Red"
+                    dark_zenith_sidekick_resource_amount_to_grant="4"
+                    dark_zenith_sidekick_hacking_to_grant_on_death="2"/>
+
+
+    </entity>
+  
+    <entity name="BallisticNadir"
+	    thematic_groups="DarkZenith" npc_ship_cap_type="FrigatesAndGuardians"
+            tags="AntiDarkZenithTierTwo,TiberiumCPATierTwo"
+	    visuals="Assets/_DLC1/Scourge/PeltianParts/PeltianSpire/PeltianSpireWarrior.prefab" visuals_bundle="exp1_the_spire_rises"
+	    icon_name="Ships3/SomethingSpherical" icon_overlay="Overlays2/SpireFortress_Lesser"
+	    y_offset_of_icon="30"
+	    voice_group="Silent"
+	    category="Ship"
+	    size_scale="9"
+	    visuals_scale_multiplier="34"
+	    y_offset_of_ship_in_visual_space="15"
+	    collision_priority="100"
+	    display_name="Ballistic Nadir"
+            display_name_for_sidebar="B Nadir"
+	    description="This powerful ship is able to fight the AI's Enemies very effectively from range."
+	    starting_mark_level="Mark1"
+            mark_level_scale_style="AntiDarkZenith"
+	    cost_for_ai_to_purchase="1250"
+	    hull_points="800000" shield_points="700000" speed="AboveAverage1"
+	    metal_cost="800000" energy_consumption="25000"
+	    armor_mm="70" albedo="0.7" engine_gx="18" mass_tx="7"
+	    ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	    amount_added_to_range_per_ship_of_this_type_on_planet="500"
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="Expendable"
+            >
+    <system name="W1" display_name="Spire Coil Beam"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="5000" range="High1" shot_speed="Normal" rate_of_fire="Misery"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_Yellow"
+				hits_all_intersecting_targets="true"				
+				shots_detonate_immediately="true"
+                is_coilbeam="true"	
+		>
+      <outgoing_damage_modifier based_on="AttackDistance" comparison_type="MultiplesOf" compared_to="3000" multiplier="1" />			
+    </system>
+    <ship_class_data can_be_zombified_and_similar="false" />
+    <data_extension name="DLC3"
+                    necromancer_science_to_grant_on_death="10"
+                    dark_zenith_sidekick_science_to_grant_on_death="100"
+                    spire_sidekick_science_to_grant_on_death="100"
+                    spire_sidekick_hacking_to_grant_on_death="1"
+                    scourge_empire_corbomite_to_grant_on_death="30"
+                    armada_resource_one_to_grant_on_death="1"
+                    dark_zenith_sidekick_resource_to_grant="Black"
+                    dark_zenith_sidekick_resource_amount_to_grant="4"
+                    dark_zenith_sidekick_hacking_to_grant_on_death="2"/>
+
+    </entity>
+
+    <!--Nadir Structures -->
+    <entity name="DefensiveNadirBase"
+            npc_ship_cap_type="FrigatesAndGuardians"
+          thematic_groups="AI" 
+	  tags="NadirBase"
+	  draw_in_galaxy_view="true"
+	  visuals="Assets/_FinalGameMeshes/AIBuildings/DistributionAndInstigator/InstigatorBase.prefab" gimbal_name="AstroTrainDepot"
+          material_override_path="Assets/_DLC1/GraySpire/GraySpireIllumin/GraySpireIllumin.prefab"  material_override_bundle="exp1_the_spire_rises"
+	  icon_name="Ships1/Dyson_Sphere" icon_overlay="Overlays2/DysonSentinel_Defender"
+          gimbal_icon_size_multiplier="1.5"
+	  category="Ship"
+	  visuals_scale_multiplier="2"
+	  size_scale="8"
+	  y_offset_of_icon="30"
+	  collision_priority="810"
+	  display_name="Defensive Nadir Base"
+          display_name_for_sidebar="Def N Bse"
+	  description="This Base periodically spawns Nadir ships to attack the AI's Enemies. This base is particularly tanky.
+
+As this increases in 标记等级, it will spawn more and more enemies."
+	  behavior="Stationary"
+	  starting_mark_level="Mark1"
+          mark_level_scale_style="AntiDarkZenith"
+	  cost_for_ai_to_purchase="1250"
+	  hull_points="1250000" shield_points="950000" speed="Immobile"
+	  metal_cost="1500000" energy_consumption="50000"
+          armor_mm="90" albedo="0.6" mass_tx="6"
+          ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+          ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+          ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+          voice_group="Silent"
+          is_reinforcement_location="true" always_is_ai_turret_spawn_point="true"
+          priority_as_ai_target="IrreplaceableMisc" priority_as_frd_target="NotDangerous" priority_to_protect="Irreplaceable"
+          >
+    <system name="R5" display_name="Laser Pulse"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="1000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Misery"
+	    shots_per_salvo="20" fires_salvos_sequentially="false"
+	    shot_type_data="LaserPulse_DeepBlue"				
+	    >
+    </system>
+    <system name="WS" display_name="Sabot"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="400" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+	    shot_type_data="Sabot"				
+	    >
+      <outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="100" />
+    </system>
+    <data_extension name="DLC3" required_expansion_list="3_The_Neinzul_Abyss"
+                    necromancer_science_to_grant_on_death="10"
+                    spire_sidekick_hacking_to_grant_on_death="1"
+                    dark_zenith_sidekick_resource_to_grant="White"
+                    dark_zenith_sidekick_resource_amount_to_grant="80"
+                    dark_zenith_sidekick_hacking_to_grant_on_death="8"
+                    />
+
+    </entity>
+    <entity name="GraviticNadirBase"
+            copy_from="DefensiveNadirBase"
+            icon_overlay="Overlays2/Guardian_Gravity"
+            display_name="Gravitic Nadir Base"
+            display_name_for_sidebar="Grav N Bse"
+            description="This Base periodically spawns Nadir ships to oppose the AI's Enemies. This base uses a powerful gravitic generator to defend its planet.
+                         As this increases in 标记等级, it will spawn more and more enemies."
+            hull_points="850000" shield_points="450000" speed="Immobile"
+            >
+      <system name="R5" display_name="Laser Pulse"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      damage_per_shot="1000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Misery"
+	      shots_per_salvo="20" fires_salvos_sequentially="false"
+	      shot_type_data="LaserPulse_DeepBlue"				
+	      >
+      </system>
+      <system name="WS" display_name="Sabot"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      damage_per_shot="400" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+	      shot_type_data="Sabot"
+	      >
+        <outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="100" />
+      </system>
+
+      <system name="G" display_name="Gravitic Core"
+	      category="Passive"
+	      base_gravity_speed_multiplier="0.5" subtracted_gravity_speed_multiplier_per_mark="0" gravity_hits_engine_gx_less_than="14" gravity_range="Normal4"
+	      >
+      </system>
+      <system name="T" display_name="Tachyon Array"
+	      category="Passive" tachyon_points="50" tachyon_points_added_per_mark="25" tachyon_range="Normal1" tachyon_hits_albedo_less_than="0.75"></system>
+      <data_extension name="DLC3" required_expansion_list="3_The_Neinzul_Abyss"
+                    necromancer_science_to_grant_on_death="10"
+                    dark_zenith_sidekick_hacking_to_grant_on_death="8"
+                    />
+      />
+      <data_extension name="DLC3" required_expansion_list="3_The_Neinzul_Abyss"
+                      necromancer_science_to_grant_on_death="10"
+                      spire_sidekick_hacking_to_grant_on_death="1"
+                      dark_zenith_sidekick_resource_to_grant="Blue"
+                      dark_zenith_sidekick_resource_amount_to_grant="80"
+                      dark_zenith_sidekick_hacking_to_grant_on_death="8"
+                      />
+
+    </entity>
+
+    <!-- Nadir minor defenses, can be blown up for science or hacked for resources -->
+    <entity name="NadirOctironSpawner"
+	    thematic_groups="Zenith,DarkZenith" npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+	    tags="NadirSpawner,OctironSpawner,LowTierSpawner"
+	    visuals="assets/_dlc2/zenith/dzterminus/dzterminus_red.prefab" visuals_bundle="exp2_zenith_onslaught" gimbal_name="AstroTrainDepot"
+	    icon_name="Ships4/SomethingBush" gimbal_icon_size_multiplier="1.5"
+            icon_overlay="Overlays2/DarkZenithTerminus_Metal"
+	    y_offset_of_icon="30"
+            draw_in_galaxy_view="true"
+	    voice_group="Silent"
+	    category="Ship"
+	    visuals_scale_multiplier="26" lod_distance_multiplier="1.4"
+	    y_offset_of_ship_in_visual_space="50"
+	    size_scale="6"
+	    collision_priority="810"
+	    display_name="Nadir Octiron Spawner"
+	    display_name_for_sidebar="Oct Spawn"
+	    description="This Nadir defensive structure is powered by Dark 天顶 资源. You can blow it up for 科技, or hack it to extract the 资源 to be used in your economy. It slowly produces low-tier Nadir fighters."
+	    behavior="Stationary"
+	    starting_mark_level="Mark1"
+	    cost_for_ai_to_purchase="1250"
+            grants_minor_faction_planet_control="true"
+            hull_points="250000" shield_points="300000" speed="Immobile"
+            metal_cost="1085000" energy_consumption="15000"
+            armor_mm="90" albedo="0.6" mass_tx="6"
+            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            priority_as_ai_target="IrreplaceableMisc" priority_as_frd_target="NotDangerous" priority_to_protect="Irreplaceable"
+            eligible_for_hacks="HackForMetal"
+            target_type_for_player="NeverAutotargetButAllowManualTarget"
+            >
+    <data_extension name="DLC3"
+                    necromancer_science_to_grant_on_death="3"
+                    dark_zenith_sidekick_science_to_grant_on_death="800"
+                    scourge_empire_corbomite_to_grant_on_death="5"
+                    spire_sidekick_science_to_grant_on_death="3"/>
+
+    </entity>
+    <entity copy_from="NadirOctironSpawner" name="NadirThaumiteSpawner"
+            tags="NadirSpawner,ThaumiteSpawner,LowTierSpawner"
+            icon_overlay="Overlays2/DarkZenithTerminus_Green"
+            display_name="Nadir Thaumite Spawner"
+	    display_name_for_sidebar="Thm Spawn"
+            eligible_for_hacks="HackForGreen"
+            >
+    </entity>
+
+    <entity copy_from="NadirOctironSpawner" name="NadirCheloniumSpawner"
+            tags="NadirSpawner,CheloniumSpawner,LowTierSpawner"
+            icon_overlay="Overlays2/DarkZenithTerminus_Blue"
+            display_name="Nadir Chelonium Spawner"
+	    display_name_for_sidebar="攀爬生成器"
+            eligible_for_hacks="HackForBlue"
+            >
+    </entity>
+
+    <entity copy_from="NadirOctironSpawner" name="NadirAlkahestSpawner"
+            tags="NadirSpawner,AlkahestSpawner,LowTierSpawner"
+            icon_overlay="Overlays2/DarkZenithTerminus_White"
+            display_name="Nadir Alkahest Spawner"
+	    display_name_for_sidebar="烷烃生成器"
+            eligible_for_hacks="HackForWhite"
+            >
+    </entity>
+
+    <entity copy_from="NadirOctironSpawner" name="NadirIzumiteSpawner"
+            tags="NadirSpawner,IzumiteSpawner"
+            icon_overlay="Overlays2/DarkZenithTerminus_Red"
+            display_name="Nadir Izumite Spawner"
+	    display_name_for_sidebar="Izu Spawn"
+            eligible_for_hacks="HackForRed"
+            >
+    </entity>
+
+    <entity copy_from="NadirOctironSpawner" name="NadirSkrithSpawner"
+            tags="NadirSpawner,SkrithSpawner"
+            icon_overlay="Overlays2/DarkZenithTerminus_Black"
+            display_name="Nadir Skrith Spawner"
+	    display_name_for_sidebar="Skr Spawn"
+            eligible_for_hacks="HackForBlack"
+            >
+    </entity>
+
+    
+</root>

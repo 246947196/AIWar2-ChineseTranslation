@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<command name="GameCommand_AJEAInformHostOfClientBuildThoughts" dll_name="AMU_Base" type_name="AMU_Base.GameCommand_AJEAInformHostOfClientBuildThoughts" />
+	<command name="GameCommand_MoveAllToPlanet" dll_name="AMU_Base" type_name="AMU_Base.GameCommand_MoveAllToPlanet" />
+	<command name="GameCommand_AllAttackOrEscortTarget" dll_name="AMU_Base" type_name="AMU_Base.GameCommand_AllAttackOrEscortTarget" />
+	<command name="GameCommand_AllClearBehavior" dll_name="AMU_Base" type_name="AMU_Base.GameCommand_AllClearBehavior" />
+	<command name="GameCommand_MoveToPosition" dll_name="AMU_Base" type_name="AMU_Base.GameCommand_MoveToPosition" />
+	<command name="GameCommand_LoadOrUnloadFleet" dll_name="AMU_Base" type_name="AMU_Base.GameCommand_LoadOrUnloadFleet" />
+</root>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<item name="Hacking_UpgradeShipLine" dll_name="ShipLineUpgrades_Base" type_name="ShipLineUpgrades_Base.Hacking_UpgradeShipLine" 
+		display_name="Modify Ship Lines" description="This hack modifies ship lines."
+		hack_completes_instantly="true"
+		cost_in_hacking_points="0"
+		local_hacker_required="true"
+		hack_is_against_planet="true"
+        choice_text="Text"
+        choice_text_height="60"
+	/>
+	
+	<item name="Hacking_ExtractCommandFrequency" dll_name="ShipLineUpgrades_Base" type_name="ShipLineUpgrades_Base.Hacking_ExtractCommandFrequency" 
+		display_name="Extract Command Frequency" 
+		description="与其使用外卫信标联系其他派系，我们也可以入侵其数据库并为自己提取一些额外的指挥频率带宽。
+这将使我们能够对自己的舰船线进行更多升级，但我们将失去从此信标联系外卫的任何机会。"
+		hack_duration="40"
+		primary_hacking_response_interval="4"
+		primary_response_strength_per_interval="0.4"
+		cost_in_hacking_points="2"
+		response_strength_on_completion="4"
+		local_hacker_required="true"
+		aip_on_completion="2"
+		for_player_type_tags_or_blank_if_for_all_empire_style_types="HumanEmpire"
+		hacking_response_is_as_ai="true"
+	/>
+</root>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	
+	<entity is_partial_record="true" name="DysonSidekickTransport"
+		>
+		<ship_class_data can_be_zombified_and_similar="false" can_be_devoured="false" />
+	</entity>
+</root>

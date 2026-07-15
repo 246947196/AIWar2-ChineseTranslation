@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<fleet_design name="PlayableFlenser"
+        display_name="剥皮者"
+        description="One Flenser. Some assembly required."
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        is_intentionally_empty_beyond_centerpiece="true"
+        >
+		<ship_membership name="PlayableFlenser" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	</fleet_design>
+	
+</root>

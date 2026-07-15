@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <entity name="DireSabotGuardPost" is_partial_record="true"
+	external_invulnerability_unit_tag="Core Shield"
+    external_invulnerability_region="ThisPlanet"
+	
+	
+	></entity>
+	
+	 <entity name="DireTeslaGuardPost" is_partial_record="true"
+    external_invulnerability_unit_tag="Core Shield"
+    external_invulnerability_region="ThisPlanet"
+	
+	
+	></entity>
+	
+	 <entity name="DireHeavyBeamGuardPost" is_partial_record="true"
+    external_invulnerability_unit_tag="Core Shield"
+    external_invulnerability_region="ThisPlanet"
+	
+	
+	></entity>
+	
+	 <entity name="DireConcussionGuardPost" is_partial_record="true"
+    external_invulnerability_unit_tag="Core Shield"
+    external_invulnerability_region="ThisPlanet"
+	
+	
+	></entity>
+	
+	 <entity name="DireParasiteGuardPost" is_partial_record="true"
+	external_invulnerability_unit_tag="Core Shield"
+    external_invulnerability_region="ThisPlanet"
+	
+		
+	></entity>
+	
+	 <entity name="DireSpiderGuardPost" is_partial_record="true"
+    external_invulnerability_unit_tag="Core Shield"
+    external_invulnerability_region="ThisPlanet"
+	
+		
+	></entity>
+	
+	<entity name="DireNucleophilicGuardPost" is_partial_record="true"
+    external_invulnerability_unit_tag="Core Shield"
+    external_invulnerability_region="ThisPlanet"
+	
+	
+	></entity>
+	
+	<entity name="DireGravityGuardPost" is_partial_record="true"
+    external_invulnerability_unit_tag="Core Shield"
+    external_invulnerability_region="ThisPlanet"
+	
+	
+	></entity>
+	
+	<entity name="DireShredderGuardPost" is_partial_record="true"
+    external_invulnerability_unit_tag="Core Shield"
+    external_invulnerability_region="ThisPlanet"
+	
+	
+	></entity>
+	
+	<entity name="DireTethuidaGuardPost" is_partial_record="true"
+    external_invulnerability_unit_tag="Core Shield"
+    external_invulnerability_region="ThisPlanet"
+	
+		
+	></entity>
+</root>

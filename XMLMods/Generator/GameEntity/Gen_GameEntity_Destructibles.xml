@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<entity
+			name="MajorDataCenter"
+			is_partial_record="true"
+			>
+	</entity>
+
+	<entity
+			name="DataCenter"
+			is_partial_record="true"
+			>
+	</entity>
+
+	<entity
+			name="DistributionNode"
+			is_partial_record="true"
+			>
+	</entity>
+
+</root>

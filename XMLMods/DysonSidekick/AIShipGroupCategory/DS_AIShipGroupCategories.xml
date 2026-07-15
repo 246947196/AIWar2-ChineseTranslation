@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <ship_group_cat name="MiskatonicFleetships" />
+  <ship_group_cat name="MiskatonicGuardians" />
+  <ship_group_cat name="MiskatonicWardenGuardians" />
+  <ship_group_cat name="MiskatonicPraetorianGuardians" />
+  <ship_group_cat name="MiskatonicDireGuardians" />
+  <ship_group_cat name="MiskatonicExoLeaders" />
+  <ship_group_cat name="MiskatonicGuardPosts" />
+  <ship_group_cat name="MiskatonicTurrets" />
+
+  <ship_group_cat name="HatefulFleetships" />
+  <ship_group_cat name="HatefulGuardians" />
+  <ship_group_cat name="HatefulWardenGuardians" />
+  <ship_group_cat name="HatefulPraetorianGuardians" />
+  <ship_group_cat name="HatefulDireGuardians" />
+  <ship_group_cat name="HatefulExoLeaders" />
+  <ship_group_cat name="HatefulGuardPosts" />
+  <ship_group_cat name="HatefulTurrets" />
+
+
+  <ship_group_cat name="FlenseriteFleetships" />
+  <ship_group_cat name="FlenseriteGuardians" />
+  <ship_group_cat name="FlenseriteWardenGuardians" />
+  <ship_group_cat name="FlenseritePraetorianGuardians" />
+  <ship_group_cat name="FlenseriteDireGuardians" />
+  <ship_group_cat name="FlenseriteExoLeaders" />
+  <ship_group_cat name="FlenseriteGuardPosts" />
+
+  <ship_group_cat name="ShadowenFleetships" />
+  <ship_group_cat name="ShadowenGuardians" />
+  <ship_group_cat name="ShadowenWardenGuardians" />
+  <ship_group_cat name="ShadowenPraetorianGuardians" />
+  <ship_group_cat name="ShadowenDireGuardians" />
+  <ship_group_cat name="ShadowenExoLeaders" />
+  <ship_group_cat name="ShadowenGuardPosts" />
+
+  <ship_group_cat name="AmetorFleetships" />
+  <ship_group_cat name="AmetorGuardians" />
+  <ship_group_cat name="AmetorWardenGuardians" />
+  <ship_group_cat name="AmetorPraetorianGuardians" />
+  <ship_group_cat name="AmetorDireGuardians" />
+  <ship_group_cat name="AmetorExoLeaders" />
+  <ship_group_cat name="AmetorGuardPosts" />
+
+  <ship_group_cat name="LerneanFleetships" />
+  <ship_group_cat name="LerneanGuardians" />
+  <ship_group_cat name="LerneanWardenGuardians" />
+  <ship_group_cat name="LerneanPraetorianGuardians" />
+  <ship_group_cat name="LerneanDireGuardians" />
+  <ship_group_cat name="LerneanExoLeaders" />
+  <ship_group_cat name="LerneanGuardPosts" />
+
+  <ship_group_cat name="TiberianFleetships" />
+  <ship_group_cat name="TiberianGuardians" />
+  <ship_group_cat name="TiberianWardenGuardians" />
+  <ship_group_cat name="TiberianPraetorianGuardians" />
+  <ship_group_cat name="TiberianDireGuardians" />
+  <ship_group_cat name="TiberianExoLeaders" />
+
+  <ship_group_cat name="BandersnatchFleetships" />
+  <ship_group_cat name="BandersnatchGuardians" />
+  <ship_group_cat name="BandersnatchWardenGuardians" />
+  <ship_group_cat name="BandersnatchPraetorianGuardians" />
+  <ship_group_cat name="BandersnatchDireGuardians" />
+  <ship_group_cat name="BandersnatchExoLeaders" />
+  <ship_group_cat name="BandersnatchGuardPosts" />
+
+  <ship_group_cat name="WandererGuardians" />
+
+  <ship_group_cat name="WraithGuardians" />
+
+  <ship_group_cat name="KzintiFleetships" />
+  <ship_group_cat name="KzintiGuardians" />
+  <ship_group_cat name="KzintiWardenGuardians" />
+  <ship_group_cat name="KzintiPraetorianGuardians" />
+  <ship_group_cat name="KzintiDireGuardians" />
+  <ship_group_cat name="KzintiExoLeaders" />
+  <ship_group_cat name="KzintiGuardPosts" />
+
+</root>

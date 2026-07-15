@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<ship_class_data name="FantasyLesserAngelShipClass" display_name="下级天使" short_name="下级天使"
+        can_be_zombified_and_similar="false"
+	>
+	<debuff_modifier debuff_type="WeaponSlow" multiplier="0" added_count="0" />
+	</ship_class_data>
+	
+	<ship_class_data name="FantasyAngelShipClass" display_name="天使" short_name="天使"
+        can_be_zombified_and_similar="false"
+		can_be_devoured="false"
+	>
+	<debuff_modifier debuff_type="WeaponSlow" multiplier="0" added_count="0" />
+	</ship_class_data>
+	
+	<ship_class_data name="FantasyArchangelShipClass" display_name="大天使" short_name="大天使"
+        can_be_zombified_and_similar="false"
+		can_be_devoured="false"
+		can_be_tractored="false"
+		can_receive_debuffs="false"
+		final_incoming_exotic_damage_multiplier="0.2"
+	>
+	<debuff_modifier debuff_type="WeaponSlow" multiplier="0" added_count="0" />
+	<debuff_modifier debuff_type="WeaponPhase" multiplier="0" />
+	</ship_class_data>
+	
+	<ship_class_data name="FantasyUndeadBuilding" display_name="血肉合金" short_name="血肉合金"
+	>
+	<debuff_modifier debuff_type="WeaponPhase" multiplier="0" />
+	</ship_class_data>
+	
+	<!--
+	can_be_tractored="false"
+	can_receive_debuffs="true"
+	can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.75" can_be_devoured="false"
+	-->
+</root>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<entity name="RPSF_Citadel_DungeonMaster" copy_from="RPSF_Citadel_Template"
+		thematic_groups="Human"
+		capturable_can_seed_at_all="true"
+		icon_overlay="Overlays2/BrutalEntrenchingGuardian_Stationary" 
+		  hull_points="1000000"
+		shield_points="1000000"
+		
+		damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.1"
+		display_name="地下城主堡垒"
+		display_name_for_sidebar="CIT地下城主"
+		description="一座坚固的堡垒，在行星上停留越久就越强大。"
+		
+		fleet_leader_type="Citadel" hacking_cost_for_other_fleet_leaders_of_same_type_to_become_me="13"
+		>
+		<!--Coilbeam deal 1x damage_per_shot to the main target, then x1dmg/TargetsHitByBeam. Total 2x weapon dmg.-->
+		<system name="WD" display_name="地下城主放电"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="6666" range="ExtremelyHigh" shot_speed="Normal" rate_of_fire="Low"
+			shots_per_salvo="6" added_shots_per_salvo_per_mark="0" 
+			shot_type_data="HeavyBeamInvisible"
+			beam_length_multiplier="1.3" beam_weapon_visual_style="Lightning_Red"
+			hits_all_intersecting_targets="true"
+			shots_detonate_immediately="true"
+			base_percent_damage_bypasses_personal_shields="0.65"
+			health_change_per_damage_dealt="0.7"
+			aoe_spreads_damage_among_available_targets="true"		
+			>
+			<death_effect_damage type="Zombification" tier_name="SuperficialDamage"/>
+			<outgoing_damage_modifier based_on="MyTimeAtPlanet" comparison_type="MultiplesOf" compared_to="5" multiplier="1"  max_multiplier="12" />
+		</system><!-- 1111 x(1+6) targets x1.5 coil x(1.65) fusion x(???) bonus = 19.2k x ??? -->
+		<incoming_damage_modifier based_on="MyTimeAtPlanet" comparison_type="AtLeast" compared_to="60" multiplier="0.4" />
+	</entity>
+	
+</root>

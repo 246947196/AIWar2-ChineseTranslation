@@ -1,0 +1,705 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <!-- Base Game Arks -->
+  <entity name="RorqualHegiraSidekickArk" copy_from="RorqualHegira"
+          thematic_groups="ArkHomeCommand,Human"
+	  uses_large_health_bar="true"  gimbal_icon_size_multiplier="2" is_critical_infrastructure="true"
+	  tags="ShowsOnNormalDisplayMode,HumanArkSidekickArks"
+	  energy_consumption="0"
+	  player_loses_if_any_die="false"
+          capturable_can_seed_at_all="false"
+          metal_storage="2500000" added_metal_storage_per_mark_level="500000"
+          is_scrapping_by_player_disallowed="true"
+          >
+    <resource_production type="Metal" amount="3200" increase_per_mark_level="1800"/>
+    <resource_production type="Energy" amount="750000" increase_per_mark_level="55000"/>
+    <resource_production type="FuelArgon" amount="500000" />
+    <resource_production type="FuelRadon" amount="500000" />
+    <metal_flow purpose="FactoryConstructionForPlayerMobileFleets" throughput="3000" increase_per_mark_level="2000"/>
+  </entity>
+  <entity name="ThanatosSidekickArk" copy_from="Thanatos"
+          thematic_groups="ArkHomeCommand,Human"
+	  uses_large_health_bar="true"  gimbal_icon_size_multiplier="2" is_critical_infrastructure="true"
+	  tags="ShowsOnNormalDisplayMode,HumanArkSidekickArks"
+	  energy_consumption="0"
+	  player_loses_if_any_die="true"
+          capturable_can_seed_at_all="false"
+          metal_storage="2500000" added_metal_storage_per_mark_level="500000"
+          is_scrapping_by_player_disallowed="true"
+          >
+    <resource_production type="Metal" amount="3200" increase_per_mark_level="1800"/>
+    <resource_production type="Energy" amount="750000" increase_per_mark_level="55000"/>
+    <resource_production type="FuelArgon" amount="500000" />
+    <resource_production type="FuelRadon" amount="500000" />
+    <metal_flow purpose="FactoryConstructionForPlayerMobileFleets" throughput="3000" increase_per_mark_level="2000"/>
+  </entity>
+  <entity name="GyrnSidekickArk" copy_from="Gyrn"
+          thematic_groups="ArkHomeCommand,Human,Factory"
+	  uses_large_health_bar="true"  gimbal_icon_size_multiplier="2" is_critical_infrastructure="true"
+	  tags="ShowsOnNormalDisplayMode,HumanArkSidekickArks"
+	  energy_consumption="0"
+	  player_loses_if_any_die="true"
+          capturable_can_seed_at_all="false"
+          metal_storage="2500000" added_metal_storage_per_mark_level="500000"
+          is_scrapping_by_player_disallowed="true"
+	  >
+    <resource_production type="Metal" amount="3200" increase_per_mark_level="1800"/>
+    <resource_production type="Energy" amount="750000" increase_per_mark_level="55000"/>
+    <resource_production type="FuelArgon" amount="500000" />
+    <resource_production type="FuelRadon" amount="500000" />
+  </entity>
+  <entity name="OrchidSidekickArk" copy_from="Orchid"
+          thematic_groups="ArkHomeCommand,Human"
+	  uses_large_health_bar="true"  gimbal_icon_size_multiplier="2" is_critical_infrastructure="true"
+	  tags="ShowsOnNormalDisplayMode,HumanArkSidekickArks"
+	  energy_consumption="0"
+	  player_loses_if_any_die="true"
+          capturable_can_seed_at_all="false"
+          metal_storage="2500000" added_metal_storage_per_mark_level="500000"
+          is_scrapping_by_player_disallowed="true"
+          >
+    <resource_production type="Metal" amount="3200" increase_per_mark_level="1800"/>
+    <resource_production type="Energy" amount="750000" increase_per_mark_level="55000"/>
+    <resource_production type="FuelArgon" amount="500000" />
+    <resource_production type="FuelRadon" amount="500000" />
+    <metal_flow purpose="FactoryConstructionForPlayerMobileFleets" throughput="3000" increase_per_mark_level="2000"/>
+  </entity>
+  <entity name="ArkOneSidekickArk" copy_from="ArkOne"
+          thematic_groups="ArkHomeCommand,Human"
+	  uses_large_health_bar="true"  gimbal_icon_size_multiplier="2" is_critical_infrastructure="true"
+	  tags="ShowsOnNormalDisplayMode,HumanArkSidekickArks"
+	  energy_consumption="0"
+	  player_loses_if_any_die="true"
+          capturable_can_seed_at_all="false"
+	  metal_storage="2500000" added_metal_storage_per_mark_level="500000"
+          is_scrapping_by_player_disallowed="true"
+          >
+    <resource_production type="Metal" amount="3200" increase_per_mark_level="1800"/>
+    <resource_production type="Energy" amount="750000" increase_per_mark_level="55000"/>
+    <resource_production type="FuelArgon" amount="500000" />
+    <resource_production type="FuelRadon" amount="500000" />
+    <metal_flow purpose="FactoryConstructionForPlayerMobileFleets" throughput="3000" increase_per_mark_level="2000"/>
+  </entity>
+
+  <!-- DLC 1 Arks -->
+  <entity name="BellePrimeSidekickArk" copy_from="BellePrime"
+          thematic_groups="ArkHomeCommand,Human"
+	  uses_large_health_bar="true"  gimbal_icon_size_multiplier="2" is_critical_infrastructure="true"
+	  tags="ShowsOnNormalDisplayMode,HumanArkSidekickArks"
+	  energy_consumption="0"
+	  player_loses_if_any_die="false"
+          capturable_can_seed_at_all="false"
+	  metal_storage="2500000" added_metal_storage_per_mark_level="500000"
+          is_scrapping_by_player_disallowed="true"
+	  >
+    <resource_production type="Metal" amount="3200" increase_per_mark_level="1800"/>
+    <resource_production type="Energy" amount="750000" increase_per_mark_level="55000"/>
+    <resource_production type="FuelArgon" amount="500000" />
+    <resource_production type="FuelRadon" amount="500000" />
+    <metal_flow purpose="FactoryConstructionForPlayerMobileFleets" throughput="3000" increase_per_mark_level="2000"/>
+  </entity>
+
+  <entity name="GreatAThomekSidekickArk" copy_from="GreatAThomek"
+	  thematic_groups="ArkHomeCommand,Human"
+	  uses_large_health_bar="true"  gimbal_icon_size_multiplier="2" is_critical_infrastructure="true"
+	  tags="ShowsOnNormalDisplayMode,HumanArkSidekickArks"
+	  energy_consumption="0"
+	  player_loses_if_any_die="false"
+	  capturable_can_seed_at_all="false"
+	  metal_storage="2500000" added_metal_storage_per_mark_level="500000"
+          is_scrapping_by_player_disallowed="true"
+	  >
+    <resource_production type="Metal" amount="3200" increase_per_mark_level="1800"/>
+    <resource_production type="Energy" amount="750000" increase_per_mark_level="55000"/>
+    <resource_production type="FuelArgon" amount="500000" />
+    <resource_production type="FuelRadon" amount="500000" />
+    <metal_flow purpose="FactoryConstructionForPlayerMobileFleets" throughput="3000" increase_per_mark_level="2000"/>
+  </entity>
+  <entity name="NodorianTortoidSidekickArk" copy_from="NodorianTortoid"
+	  thematic_groups="ArkHomeCommand,Human"
+	  uses_large_health_bar="true"  gimbal_icon_size_multiplier="2" is_critical_infrastructure="true"
+	  tags="ShowsOnNormalDisplayMode,HumanArkSidekickArks"
+	  energy_consumption="0"
+	  player_loses_if_any_die="false"
+	  capturable_can_seed_at_all="false"
+	  metal_storage="2500000" added_metal_storage_per_mark_level="500000"
+          is_scrapping_by_player_disallowed="true"
+	  >
+    <resource_production type="Metal" amount="3200" increase_per_mark_level="1800"/>
+    <resource_production type="Energy" amount="750000" increase_per_mark_level="55000"/>
+    <resource_production type="FuelArgon" amount="500000" />
+    <resource_production type="FuelRadon" amount="500000" />
+    <metal_flow purpose="FactoryConstructionForPlayerMobileFleets" throughput="3000" increase_per_mark_level="2000"/>
+  </entity>
+
+  <entity name="SolAterSidekickArk" copy_from="SolAter"
+          thematic_groups="ArkHomeCommand,Human"
+	  uses_large_health_bar="true"  gimbal_icon_size_multiplier="2" is_critical_infrastructure="true"
+	  tags="ShowsOnNormalDisplayMode,HumanArkSidekickArks"
+	  energy_consumption="0"
+	  player_loses_if_any_die="false"
+          capturable_can_seed_at_all="false"
+          metal_storage="2500000" added_metal_storage_per_mark_level="500000"
+          is_scrapping_by_player_disallowed="true"
+          >
+    <resource_production type="Metal" amount="3200" increase_per_mark_level="1800"/>
+    <resource_production type="Energy" amount="750000" increase_per_mark_level="55000"/>
+    <resource_production type="FuelArgon" amount="500000" />
+    <resource_production type="FuelRadon" amount="500000" />
+    <metal_flow purpose="FactoryConstructionForPlayerMobileFleets" throughput="3000" increase_per_mark_level="2000"/>
+  </entity>
+
+      <entity name="GrandSalvageSidekickArk" copy_from="GrandSalvage"
+              thematic_groups="ArkHomeCommand,Human"
+	      uses_large_health_bar="true"  gimbal_icon_size_multiplier="2" is_critical_infrastructure="true"
+	      tags="ShowsOnNormalDisplayMode,HumanArkSidekickArks"
+	      energy_consumption="0"
+	      player_loses_if_any_die="false"
+              capturable_can_seed_at_all="false"
+              metal_storage="2500000" added_metal_storage_per_mark_level="500000"
+              is_scrapping_by_player_disallowed="true"
+              >
+	<resource_production type="Metal" amount="3200" increase_per_mark_level="1800"/>
+	<resource_production type="Energy" amount="750000" increase_per_mark_level="55000"/>
+	<resource_production type="FuelArgon" amount="500000" />
+	<resource_production type="FuelRadon" amount="500000" />
+	<metal_flow purpose="FactoryConstructionForPlayerMobileFleets" throughput="3000" increase_per_mark_level="2000"/>
+      </entity>
+
+      <!-- Golems -->
+      <entity name="ArmoredGolemSidekickArk"
+              thematic_groups="ArkHomeCommand,Human"
+              special_entity_type="MobileOfficerCombatFleetFlagship"
+	      voice_group="Ark_CherylHarris" gimbal_icon_size_multiplier="1.5"
+	      draw_in_galaxy_view="true" is_golem="true"
+	      visuals="assets/_finalgamemeshes/golems/armoredgolem/armoredgolem.prefab"
+	      icon_name="Ships1/Armor_Golem"
+	      uses_large_health_bar="true"
+	      category="Ship"
+	      size_scale="11.5"
+	      visuals_scale_multiplier="1.5"
+	      y_offset_of_icon="70"
+	      display_name="装甲魔像"
+	      display_name_for_sidebar="Armored GOL"
+	      description="Very durable 旗舰 with good firepower on all targets."
+	      collision_priority="810"
+	      metal_to_claim="5000000"
+	      aip_to_claim="16"
+	      starting_mark_level="Mark1" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" tech_upgrade_that_is_used_for_my_direct_science="Direct_GolemGeneral"
+	      is_critical_infrastructure="true"
+	      tags="ShowsOnNormalDisplayMode,HumanArkSidekickArks"
+	      energy_consumption="0"
+              is_scrapping_by_player_disallowed="true"
+	      player_loses_if_any_die="false"
+              capturable_can_seed_at_all="false"
+              metal_cost="500000"
+              metal_storage="2500000" added_metal_storage_per_mark_level="500000"
+	      cost_for_ai_to_purchase="10000"			
+	      hull_points="2000000" shield_points="1000000" speed="AboveAverage1"
+	      assist_range="Normal1"			
+	      armor_mm="300" albedo="0.8" engine_gx="18" mass_tx="11"
+	      ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+	      ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	      ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+	      speed_multiplier_first_5_seconds_on_planet="1.5"
+	      shows_on_galaxy_map_for_explored_planets="true" always_visible_to_players="true"
+	      firing_delay_for_transported_ships="6"
+	      priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+	      eligible_for_hacks="IncreaseHullDurability"
+	      >
+	<hack_data	hack_type="IncreaseHullDurability"
+			override_cost_in_hacking_points="35"
+			cost_in_hacking_points_multiplier_per_times_same_unit_hacked="2.6"
+			max_times_single_unit_can_be_hacked="2">
+	  <custom_hack_data key="AddedMultiplierPerHack" value="1.5" />
+	</hack_data>
+	<system name="WX" display_name="Zenith Ballistic Vortex"
+		category="Weapon" firing_timing="OnlyInRange"
+		damage_per_shot="4000" range="AboveAverage3" shot_speed="Slow" rate_of_fire="Misery"
+		shots_per_salvo="20" fires_salvos_sequentially="false"
+		shot_type_data="ElegantCurl"
+		>
+		</system>
+		<system name="WS" display_name="Zenith Sabot"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="8000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Misery" fires_salvos_sequentially="true"
+				shot_type_data="Sabot"				
+				>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="5" />
+		</system>
+		<ship_class_data can_be_zombified_and_similar="false" can_be_fleet_supercharged="false" />
+                <metal_flow purpose="RebuildingRemains" throughput="100" increase_per_mark_level="100"/>		
+                <resource_production type="Metal" amount="3200" increase_per_mark_level="1800"/>
+                <resource_production type="Energy" amount="750000" increase_per_mark_level="55000"/>
+                <resource_production type="FuelArgon" amount="500000" />
+                <resource_production type="FuelRadon" amount="500000" />
+                <metal_flow purpose="FactoryConstructionForPlayerMobileFleets" throughput="3000" increase_per_mark_level="2000"/>
+      </entity>
+
+ <entity name="ArtilleryGolemSidekickArk" copy_from="ArtilleryGolem"
+         thematic_groups="ArkHomeCommand,Human"
+         special_entity_type="MobileOfficerCombatFleetFlagship"
+	 uses_large_health_bar="true"  gimbal_icon_size_multiplier="2" is_critical_infrastructure="true"
+	 tags="ShowsOnNormalDisplayMode,HumanArkSidekickArks"
+	 energy_consumption="0"
+         is_scrapping_by_player_disallowed="true"
+	 player_loses_if_any_die="false"
+         capturable_can_seed_at_all="false"
+         metal_cost="500000"
+         metal_storage="2500000" added_metal_storage_per_mark_level="500000"
+         voice_group="Ark_NiklasWagner"
+	 draw_in_galaxy_view="true" is_golem="true"
+	 visuals="assets/_finalgamemeshes/starships/carrierstarship/carrierstarship.prefab"
+	 icon_name="Ships1/ArtilleryGolem"
+	 category="Ship"
+	 size_scale="12"
+	 visuals_scale_multiplier="15"
+	 y_offset_of_icon="70"
+	 collision_priority="100"
+	 display_name="火炮魔像"
+	 display_name_for_sidebar="Artillery GOL"
+	 description="Fragile 旗舰 that can annihilate single targets at incredible range."
+	 metal_to_claim="5000000"
+	 aip_to_claim="12"
+	 starting_mark_level="Mark1" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" tech_upgrade_that_is_used_for_my_direct_science="Direct_GolemGeneral"
+	 cost_for_ai_to_purchase="10000" strength_multiplier="1.2"			
+	 hull_points="900000" shield_points="450000" speed="AboveAverage1"
+	 assist_range="Normal1"			
+	 armor_mm="180" albedo="0.5" engine_gx="18" mass_tx="11"
+	 ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+	 ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	 ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+	 speed_multiplier_first_5_seconds_on_planet="1.5"
+	 shows_on_galaxy_map_for_explored_planets="true" always_visible_to_players="true"
+	 firing_delay_for_transported_ships="6"
+	 priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+	 eligible_for_hacks="IncreaseHullDurability,IncreaseWeaponPower"
+         >
+   <metal_flow purpose="RebuildingRemains" throughput="100" increase_per_mark_level="100"/>
+   <resource_production type="Metal" amount="3200" increase_per_mark_level="1800"/>
+   <resource_production type="Energy" amount="750000" increase_per_mark_level="55000"/>
+   <resource_production type="FuelArgon" amount="500000" />
+   <resource_production type="FuelRadon" amount="500000" />
+   <metal_flow purpose="FactoryConstructionForPlayerMobileFleets" throughput="3000" increase_per_mark_level="2000"/>
+ </entity>
+
+ <entity name="RegeneratorGolemSidekickArk" copy_from="RegeneratorGolem"
+         thematic_groups="ArkHomeCommand,Human"
+         special_entity_type="MobileOfficerCombatFleetFlagship"
+	 uses_large_health_bar="true"  gimbal_icon_size_multiplier="2" is_critical_infrastructure="true"
+	 tags="ShowsOnNormalDisplayMode,HumanArkSidekickArks"
+	 energy_consumption="0"
+         is_scrapping_by_player_disallowed="true"
+	 player_loses_if_any_die="false"
+         capturable_can_seed_at_all="false"
+         metal_storage="2500000" added_metal_storage_per_mark_level="500000"
+         metal_cost="500000"
+         voice_group="Ark_ElijahFreeman"
+	 draw_in_galaxy_view="true" is_golem="true"
+	 visuals="assets/_finalgamemeshes/golems/regeneratorgolem/regeneratorgolem.prefab"
+	 icon_name="Ships1/Regenerator_Golem"
+	 category="Ship"
+	 size_scale="6.5"
+	 visuals_scale_multiplier="1.44"
+	 y_offset_of_icon="75"
+	 display_name="Regenerator Golem"
+	 display_name_for_sidebar="Regen GOL"
+	 description="旗舰 that hurts itself to revive allied ships that die on the same planet."
+	 collision_priority="810"
+	 regenerates_dying_ships_at_this_health_cost_ratio="0.3"
+	 will_not_regenerate_dying_ships_if_health_below_this_percentage="0.2"
+	 metal_to_claim="5000000"
+	 aip_to_claim="12"
+	 starting_mark_level="Mark1" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" tech_upgrade_that_is_used_for_my_direct_science="Direct_GolemRegen"
+	 cost_for_ai_to_purchase="10000"			
+	 hull_points="3000000" shield_points="0" speed="AboveAverage1"
+	 assist_range="Normal1"			
+	 armor_mm="180" albedo="0.6" engine_gx="18" mass_tx="11"
+	 ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+	 ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	 counter_attack_budget_override_multiplier="0.1"
+	 ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+	 speed_multiplier_first_5_seconds_on_planet="1.5"
+	 shows_on_galaxy_map_for_explored_planets="true" always_visible_to_players="true"
+	 firing_delay_for_transported_ships="6"
+	 priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+	 eligible_for_hacks="IncreaseHullDurability"
+
+         >
+   <metal_flow purpose="RebuildingRemains" throughput="100" increase_per_mark_level="100"/>		
+   <resource_production type="Metal" amount="3200" increase_per_mark_level="1800"/>
+   <resource_production type="Energy" amount="750000" increase_per_mark_level="55000"/>
+   <resource_production type="FuelArgon" amount="500000" />
+   <resource_production type="FuelRadon" amount="500000" />
+   <metal_flow purpose="FactoryConstructionForPlayerMobileFleets" throughput="3000" increase_per_mark_level="2000"/>
+ </entity>
+
+ <entity name="CursedGolemSidekickArk" copy_from="CursedGolem"
+         thematic_groups="ArkHomeCommand,Human"
+         special_entity_type="MobileOfficerCombatFleetFlagship"
+	 uses_large_health_bar="true"  gimbal_icon_size_multiplier="2" is_critical_infrastructure="true"
+	 tags="ShowsOnNormalDisplayMode,HumanArkSidekickArks"
+	 energy_consumption="0"
+         is_scrapping_by_player_disallowed="true"
+	 player_loses_if_any_die="false"
+         capturable_can_seed_at_all="false"
+         metal_storage="2500000" added_metal_storage_per_mark_level="500000"
+         metal_cost="500000"
+         voice_group="Ark_JackBishop"
+	 draw_in_galaxy_view="true" is_golem="true"
+	 visuals="assets/_finalgamemeshes/golems/cursedgolem/cursedgolem.prefab"
+	 icon_name="Ships1/CursedGolem"
+	 category="Ship"
+	 size_scale="7.2"
+	 visuals_scale_multiplier="1.44"
+	 y_offset_of_icon="70"
+	 display_name="诅咒魔像"
+	 display_name_for_sidebar="Cursed GOL"
+	 description="Fires long range shots that inflict paralysis, but very fragile relative to other Flagships."
+	 collision_priority="810"
+	 metal_to_claim="2000000"
+	 aip_to_claim="12"
+	 starting_mark_level="Mark1" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" tech_upgrade_that_is_used_for_my_direct_science="Direct_GolemGeneral"
+	 cost_for_ai_to_purchase="10000" 		
+	 hull_points="800000" shield_points="400000" speed="AboveAverage1"
+	 assist_range="Normal1"			
+	 armor_mm="210" albedo="0.7" engine_gx="18" mass_tx="11"
+	 ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+	 ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	 ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+	 speed_multiplier_first_5_seconds_on_planet="1.5"
+	 shows_on_galaxy_map_for_explored_planets="true" always_visible_to_players="true"
+	 firing_delay_for_transported_ships="6"
+	 priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+	 eligible_for_hacks="IncreaseHullDurability"
+         >
+   <metal_flow purpose="RebuildingRemains" throughput="100" increase_per_mark_level="100"/>		
+   <resource_production type="Metal" amount="3200" increase_per_mark_level="1800"/>
+   <resource_production type="Energy" amount="750000" increase_per_mark_level="55000"/>
+   <resource_production type="FuelArgon" amount="500000" />
+   <resource_production type="FuelRadon" amount="500000" />
+   <metal_flow purpose="FactoryConstructionForPlayerMobileFleets" throughput="3000" increase_per_mark_level="2000"/>
+ </entity>
+
+ <entity name="HiveGolemSidekickArk" copy_from="HiveGolem"
+         thematic_groups="ArkHomeCommand,Human"
+         special_entity_type="MobileOfficerCombatFleetFlagship"
+	 uses_large_health_bar="true"  gimbal_icon_size_multiplier="2" is_critical_infrastructure="true"
+	 tags="ShowsOnNormalDisplayMode,HumanArkSidekickArks"
+	 energy_consumption="0"
+         is_scrapping_by_player_disallowed="true"
+	 player_loses_if_any_die="false"
+         capturable_can_seed_at_all="false"
+         metal_storage="2500000" added_metal_storage_per_mark_level="500000"
+         metal_cost="500000"
+         voice_group="Ark_ThomasWalker"
+	 draw_in_galaxy_view="true" is_golem="true"
+	 visuals="Assets/_FinalGameMeshes/Golems/HiveGolem/HiveGolemNew/HiveGolemNew.prefab" visuals_scale_multiplier="12" lod_distance_overrides="120,200,300,15000"
+	 icon_name="Ships1/Hive_Golem"  
+	 category="Ship"
+	 size_scale="8"
+	 y_offset_of_icon="55"
+	 collision_priority="810"
+	 display_name="Hive Golem"
+	 display_name_for_sidebar="Hive GOL"
+	 description="旗舰 that continuously spawns many Yellow Jackets, somewhat speedy and vicious attack 无人机."
+	 fleet_design_template_i_use_for_drones="HiveGolemDrones"
+	 drone_starting_behavior_type="Attacker_Full"
+	 metal_to_claim="5000000"
+	 aip_to_claim="15"
+	 starting_mark_level="Mark1" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" tech_upgrade_that_is_used_for_my_direct_science="Direct_GolemHive"
+	 cost_for_ai_to_purchase="20000" strength_multiplier="2"			
+	 hull_points="1800000" shield_points="900000" speed="AboveAverage1"
+	 assist_range="Normal1"			
+	 armor_mm="190" albedo="0.8" engine_gx="18" mass_tx="11"
+	 ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+	 ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	 ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true" always_visible_to_players="true"
+	 speed_multiplier_first_5_seconds_on_planet="1.5"
+	 shows_on_galaxy_map_for_explored_planets="true"
+	 firing_delay_for_transported_ships="6"
+	 priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+	 eligible_for_hacks="IncreaseHullDurability"
+         >
+   <metal_flow purpose="RebuildingRemains" throughput="100" increase_per_mark_level="100"/>		
+   <resource_production type="Metal" amount="3200" increase_per_mark_level="1800"/>
+   <resource_production type="Energy" amount="750000" increase_per_mark_level="55000"/>
+   <resource_production type="FuelArgon" amount="500000" />
+   <resource_production type="FuelRadon" amount="500000" />
+   <metal_flow purpose="FactoryConstructionForPlayerMobileFleets" throughput="3000" increase_per_mark_level="2000"/>
+ </entity>
+
+ <entity name="RetributionGolemSidekickArk"
+         thematic_groups="ArkHomeCommand,Human"
+         special_entity_type="MobileOfficerCombatFleetFlagship"
+	 uses_large_health_bar="true"  gimbal_icon_size_multiplier="2" is_critical_infrastructure="true"
+	 tags="ShowsOnNormalDisplayMode,HumanArkSidekickArks"
+	 energy_consumption="0"
+         is_scrapping_by_player_disallowed="true"
+	 player_loses_if_any_die="false"
+         capturable_can_seed_at_all="false"
+         metal_storage="2500000" added_metal_storage_per_mark_level="500000"
+         metal_cost="500000"
+         voice_group="Silent" 
+	 draw_in_galaxy_view="true" is_golem="true"
+	 visuals="Assets/_DLC2/Golems/RetributionGolem/RetributionGolem.prefab" visuals_bundle="exp2_zenith_onslaught"
+	 icon_name="Ships3/RetributionGolem"
+	 category="Ship"
+	 size_scale="11.5"
+	 visuals_scale_multiplier="11"
+	 y_offset_of_icon="70"
+	 display_name="Retribution Golem"
+	 display_name_for_sidebar="Retribution GOL"
+	 description="Extremely durable 魔像 that returns a portion of all damage taken and possesses self-regeneration."
+	 collision_priority="810"
+	 metal_to_claim="5000000"
+	 aip_to_claim="20"
+	 starting_mark_level="Mark1" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" tech_upgrade_that_is_used_for_my_direct_science="Direct_GolemGeneral"
+	 cost_for_ai_to_purchase="10000"			
+	 hull_points="3500000" shield_points="1500000" speed="AboveAverage1"
+	 assist_range="Normal1"			
+	 armor_mm="400" albedo="0.5" engine_gx="18" mass_tx="11"
+	 ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+	 ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	 ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+	 shows_on_galaxy_map_for_explored_planets="true" always_visible_to_players="true"
+	 firing_delay_for_transported_ships="6"
+	 priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+	 eligible_for_hacks="IncreaseHullDurability"
+	 returns_this_percentage_of_damage_if_damaged_by_enemy_attack="0.6"
+	 seconds_to_fully_regenerate_hull="180"
+	 immune_to_repairs="true" forced_to_bail_out_on_cripple_deepstrike_only="true"
+	 custom_repair_impossible_for_seconds_after_damaged_by_enemy_max_15="15"
+	 counter_attack_budget_override_multiplier="5"
+         >
+   <metal_flow purpose="RebuildingRemains" throughput="100" increase_per_mark_level="100"/>		
+   <resource_production type="Metal" amount="3200" increase_per_mark_level="1800"/>
+   <resource_production type="Energy" amount="750000" increase_per_mark_level="55000"/>
+   <resource_production type="FuelArgon" amount="500000" />
+   <resource_production type="FuelRadon" amount="500000" />
+   <metal_flow purpose="FactoryConstructionForPlayerMobileFleets" throughput="3000" increase_per_mark_level="2000"/>
+ </entity>
+
+ <entity name="RaijinGolemSidekickArk" copy_from="RaijinGolem"
+         thematic_groups="ArkHomeCommand,Human"
+         special_entity_type="MobileOfficerCombatFleetFlagship"
+	 uses_large_health_bar="true"  gimbal_icon_size_multiplier="2" is_critical_infrastructure="true"
+	 tags="ShowsOnNormalDisplayMode,HumanArkSidekickArks"
+	 energy_consumption="0"
+         is_scrapping_by_player_disallowed="true"
+	 player_loses_if_any_die="false"
+         capturable_can_seed_at_all="false"
+         metal_storage="2500000" added_metal_storage_per_mark_level="500000"
+         metal_cost="500000"
+         >
+   <metal_flow purpose="RebuildingRemains" throughput="100" increase_per_mark_level="100"/>		
+   <resource_production type="Metal" amount="3200" increase_per_mark_level="1800"/>
+   <resource_production type="Energy" amount="750000" increase_per_mark_level="55000"/>
+   <resource_production type="FuelArgon" amount="500000" />
+   <resource_production type="FuelRadon" amount="500000" />
+   <metal_flow purpose="FactoryConstructionForPlayerMobileFleets" throughput="3000" increase_per_mark_level="2000"/>
+ </entity>
+
+ <entity name="AprahantiDreadnoughtSidekickArk" copy_from="AprahantiDreadnought"
+         thematic_groups="ArkHomeCommand,Human"
+         special_entity_type="MobileOfficerCombatFleetFlagship"
+	 uses_large_health_bar="true"  gimbal_icon_size_multiplier="2" is_critical_infrastructure="true"
+         starting_mark_level="Mark1" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" tech_upgrade_that_is_used_for_my_direct_science="Direct_ArkGeneral"
+         is_ark="true"
+         draw_in_galaxy_view="true"
+         does_not_use_multipliers_from_mark_level="false"
+	 tags="ShowsOnNormalDisplayMode,HumanArkSidekickArks"
+	 energy_consumption="0"
+         assist_range="Normal1"
+         is_scrapping_by_player_disallowed="true"
+	 player_loses_if_any_die="false"
+         capturable_can_seed_at_all="false"
+         metal_storage="2500000" added_metal_storage_per_mark_level="500000"
+         hull_points="4000000" shield_points="200000"
+         metal_cost="500000"
+         speed="AboveAverage1"
+         >
+   <metal_flow purpose="RebuildingRemains" throughput="100" increase_per_mark_level="100"/>		
+   <resource_production type="Metal" amount="3200" increase_per_mark_level="1800"/>
+   <resource_production type="Energy" amount="750000" increase_per_mark_level="55000"/>
+   <resource_production type="FuelArgon" amount="500000" />
+   <resource_production type="FuelRadon" amount="500000" />
+   <metal_flow purpose="FactoryConstructionForPlayerMobileFleets" throughput="3000" increase_per_mark_level="2000"/>
+       <system name="W1" display_name="Broadside Artillery"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="52000" range="ExtremelyHigh" shot_speed="Normal" rate_of_fire="VeryLow" fires_salvos_sequentially="true"
+	    shots_per_salvo="25"
+	    shot_type_data="EngineDisruptingShell"
+	    >
+      <outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="1.2"/>
+      <outgoing_damage_modifier based_on="AttackDistance" comparison_type="LessThan" compared_to="8000" multiplier="0"/>
+    </system>
+    <system name="R9" display_name="Bow Disintegration Ray"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="26000" range="AboveAverage2" shot_speed="Normal" rate_of_fire="Devourer"
+	    shot_type_data="HeavyBeamInvisible"
+	    beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_YellowBright"
+	    hits_all_intersecting_targets="false"
+	    shots_detonate_immediately="false"
+	    >
+      <outgoing_damage_modifier based_on="mass_tx" comparison_type="LessThan" compared_to="2" multiplier="0"/>
+    </system>
+    <system name="W2" display_name="Aft Plasma Cannon"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="33000" range="AboveAverage2" shot_speed="Slow" rate_of_fire="PeriodicActivation" fires_salvos_sequentially="true"
+	    shot_type_data="PlasmaTorpedoAOEBurstAtEnd"
+	    area_of_effect_size="800"
+	    aoe_spreads_damage_among_available_targets="true"
+	    >
+    </system>
+ </entity>
+-->
+ <entity name="GauntShadowSidekickArk" copy_from="GauntShadow"
+         thematic_groups="ArkHomeCommand,Human"
+         special_entity_type="MobileOfficerCombatFleetFlagship"
+	 uses_large_health_bar="true"  gimbal_icon_size_multiplier="2" is_critical_infrastructure="true"
+         starting_mark_level="Mark1" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" tech_upgrade_that_is_used_for_my_direct_science="Direct_ArkGeneral"
+	 tags="ShowsOnNormalDisplayMode,HumanArkSidekickArks"
+         is_ark="true"
+	 energy_consumption="0"
+         assist_range="Normal1"	
+	 player_loses_if_any_die="false"
+         capturable_can_seed_at_all="false"
+         metal_storage="2500000" added_metal_storage_per_mark_level="500000"
+         hull_points="4000000" shield_points="300000" speed="AboveAverage1"
+         is_scrapping_by_player_disallowed="true"
+         metal_cost="500000"
+         >
+   <metal_flow purpose="RebuildingRemains" throughput="100" increase_per_mark_level="100"/>		
+   <resource_production type="Metal" amount="2700" increase_per_mark_level="1600"/>
+   <resource_production type="Energy" amount="750000" increase_per_mark_level="55000"/>
+   <resource_production type="FuelArgon" amount="500000" />
+   <resource_production type="FuelRadon" amount="500000" />
+   <metal_flow purpose="FactoryConstructionForPlayerMobileFleets" throughput="3000" increase_per_mark_level="2000"/>
+   <system name="Q7" display_name="Gaunt Jaws"
+	   category="Weapon" firing_timing="OnlyInRange"
+	   damage_per_shot="5000" range="Normal1" shot_speed="Normal" rate_of_fire="Devourer"
+	   shots_per_salvo="8" fires_salvos_sequentially="false"
+	   shot_type_data="DevourerShot"
+	   area_of_effect_size="200"
+	   aoe_spreads_damage_among_available_targets="true"
+	   health_change_per_damage_dealt="0.2"
+	   > 
+    </system>
+    <system name="W1" display_name="Metallic Hunger"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="600" range="Normal5" shot_speed="Normal" rate_of_fire="VeryLow" fires_salvos_sequentially="true"
+	    shot_type_data="FlakShotAOEBurstAtEnd"
+	    area_of_effect_size="600"
+	    maximum_number_of_targets_hit_per_shot="15"
+	    >
+      <outgoing_damage_modifier based_on="mass_tx" comparison_type="AtMost" compared_to="1" multiplier="3" />
+      <death_effect_damage type="Metabolization" tier_name="Gangsaw"/>
+    </system>
+
+ </entity>
+
+ <entity name="OrmrSidekickArk" copy_from="OrmrFlagship"
+         thematic_groups="ArkHomeCommand,Human"
+         special_entity_type="MobileOfficerCombatFleetFlagship"
+	 uses_large_health_bar="true"  gimbal_icon_size_multiplier="2" is_critical_infrastructure="true"
+         starting_mark_level="Mark1" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" tech_upgrade_that_is_used_for_my_direct_science="Direct_ArkGeneral"
+	 tags="ShowsOnNormalDisplayMode,HumanArkSidekickArks"
+	 energy_consumption="0"
+         assist_range="Normal1"	
+	 player_loses_if_any_die="false"
+         capturable_can_seed_at_all="false"
+         is_scrapping_by_player_disallowed="true"
+         metal_storage="2500000" added_metal_storage_per_mark_level="500000"
+         metal_cost="500000"
+         hull_points="5000000" shield_points="700000" speed="High"
+         >
+   <metal_flow purpose="RebuildingRemains" throughput="100" increase_per_mark_level="100"/>
+   <resource_production type="Metal" amount="3200" increase_per_mark_level="1800"/>
+   <resource_production type="Energy" amount="750000" increase_per_mark_level="55000"/>
+   <resource_production type="FuelArgon" amount="500000" />
+   <resource_production type="FuelRadon" amount="500000" />
+   <metal_flow purpose="FactoryConstructionForPlayerMobileFleets" throughput="3000" increase_per_mark_level="2000"/>
+   </entity>
+
+ <!-- Copies of things for the Ark Empire -->
+
+ <entity name="ArmoredGolemEmpireArk" copy_from="ArmoredGolemSidekickArk"
+         special_entity_type="HumanHomeArk" icon_name="Ships1/King"
+	 tags="ShowsOnNormalDisplayMode,HumanArkEmpireArks"
+         fleet_leader_type="HomeArk"
+         >
+ </entity>
+ <entity name="ArtilleryGolemEmpireArk" copy_from="ArtilleryGolemSidekickArk"
+         special_entity_type="HumanHomeArk" icon_name="Ships1/King"
+	 tags="ShowsOnNormalDisplayMode,HumanArkEmpireArks"
+         fleet_leader_type="HomeArk"
+         >
+ </entity>
+ <entity name="RegeneratorGolemEmpireArk" copy_from="RegeneratorGolemSidekickArk"
+         special_entity_type="HumanHomeArk" icon_name="Ships1/King"
+	 tags="ShowsOnNormalDisplayMode,HumanArkEmpireArks"
+         fleet_leader_type="HomeArk"
+         >
+ </entity>
+<entity name="CursedGolemEmpireArk" copy_from="CursedGolemSidekickArk"
+        special_entity_type="HumanHomeArk" icon_name="Ships1/King"
+	tags="ShowsOnNormalDisplayMode,HumanArkEmpireArks"
+        fleet_leader_type="HomeArk"
+         >
+ </entity>
+<entity name="HiveGolemEmpireArk" copy_from="HiveGolemSidekickArk"
+        special_entity_type="HumanHomeArk" icon_name="Ships1/King"
+	tags="ShowsOnNormalDisplayMode,HumanArkEmpireArks"
+        fleet_leader_type="HomeArk"
+         >
+ </entity>
+<entity name="RetributionGolemEmpireArk" copy_from="RetributionGolemSidekickArk"
+        special_entity_type="HumanHomeArk" icon_name="Ships1/King"
+	tags="ShowsOnNormalDisplayMode,HumanArkEmpireArks"
+        fleet_leader_type="HomeArk"
+         >
+ </entity>
+<entity name="RaijinGolemEmpireArk" copy_from="RaijinGolemSidekickArk"
+        special_entity_type="HumanHomeArk" icon_name="Ships1/King"
+	tags="ShowsOnNormalDisplayMode,HumanArkEmpireArks"
+        fleet_leader_type="HomeArk"
+         >
+ </entity>
+ <entity name="AprahantiDreadnaughtEmpireArk" copy_from="AprahantiDreadnoughtSidekickArk"
+         special_entity_type="HumanHomeArk" icon_name="Ships1/King"
+	 tags="ShowsOnNormalDisplayMode,HumanArkEmpireArks"
+         fleet_leader_type="HomeArk"
+         >
+ </entity>
+ <entity name="GauntShadowEmpireArk" copy_from="GauntShadowSidekickArk"
+        special_entity_type="HumanHomeArk" icon_name="Ships1/King"
+	tags="ShowsOnNormalDisplayMode,HumanArkEmpireArks"
+        fleet_leader_type="HomeArk"
+        >
+
+      <system name="Q7" display_name="Gaunt Jaws"
+	   category="Weapon" firing_timing="OnlyInRange"
+	   damage_per_shot="5000" range="Normal1" shot_speed="Normal" rate_of_fire="Devourer"
+	   shots_per_salvo="8" fires_salvos_sequentially="false"
+	   shot_type_data="DevourerShot"
+	   area_of_effect_size="200"
+	   aoe_spreads_damage_among_available_targets="true"
+	   health_change_per_damage_dealt="0.2"
+	   > 
+    </system>
+
+ </entity>
+ <entity name="OrmrEmpireArk" copy_from="OrmrSidekickArk"
+        special_entity_type="HumanHomeArk" icon_name="Ships1/King"
+	tags="ShowsOnNormalDisplayMode,HumanArkEmpireArks"
+        fleet_leader_type="HomeArk"
+         >
+ </entity>
+  
+
+</root>
+
+
+

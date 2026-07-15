@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+    <shot_speed name="Ds_EvenSlower" shot_speed="8000" />
+    <shot_speed name="Ds_Turtle" shot_speed="6000" />
+    <shot_speed name="Ds_DeadTurtle" shot_speed="2000" />
+    
+</root>

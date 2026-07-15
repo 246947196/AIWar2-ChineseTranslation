@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!-- D1 -->
+	<entity is_partial_record="true" name="DysonOvertone"
+		strength_multiplier="0.5"
+		>
+		<system name="W1" 
+			damage_per_shot="2000" 
+			range="EssentiallyInfinite"
+			rate_of_fire="ExtremelyLow"
+			>
+		</system>
+	</entity>
+	<entity is_partial_record="true" name="DysonBloom"
+		>
+		
+		<system name="W1" 
+			damage_per_shot="12060" 
+			range="AboveAverage1"
+			rate_of_fire="Normal"
+			>
+		</system>
+	</entity>
+	<entity is_partial_record="true" name="DysonIllumin"
+		strength_multiplier="0.5"
+		>
+		<system name="W1" 
+		
+			damage_per_shot="10350" 
+			range="AboveAverage1"
+			rate_of_fire="Normal"
+			>
+		</system>
+	</entity>
+	<!-- D2 -->
+	<entity is_partial_record="true" name="DysonLightseeker"
+		strength_multiplier="0.5"
+		>
+		<system name="W1" 
+		
+			damage_per_shot="5020" 
+			range="High2" 
+			rate_of_fire="Normal" 
+			shots_per_salvo="8" shots_per_target="4"
+			corrosion_damage="1500"
+			corrosion_damage_added_per_mark="750"
+			>
+		</system>
+	</entity>
+	<entity is_partial_record="true" name="DysonDawn"
+		>
+		<system name="W1" 
+		
+			damage_per_shot="40000" 
+			range="High2" 
+			rate_of_fire="Normal"
+			>
+		</system>
+	</entity>
+	<entity is_partial_record="true" name="DysonSpireFrigate"
+		strength_multiplier="0.5"
+		>
+		<system name="W1" 
+			damage_per_shot="8500" 
+			range="AboveAverage1" 
+			rate_of_fire="Devourer"
+			>
+		</system>
+	</entity>
+	<!-- D3 -->
+	<entity is_partial_record="true" name="DysonOpalescence"
+		>
+		<system name="W1" 
+			>
+		</system>
+	</entity>
+	<entity is_partial_record="true" name="DysonSpireDestroyer"
+		>
+		<system name="W1" 
+			damage_per_shot="10000" 
+			range="Planetary"
+			rate_of_fire="High"
+			>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="3" />
+		</system>
+		
+		<system name="W2" 
+			damage_per_shot="5000" 
+			range="Planetary" 
+			rate_of_fire="Normal"
+			shots_per_salvo="12"
+			>
+		</system>
+	</entity>
+	<entity is_partial_record="true" name="DysonSpireCruiser"
+		strength_multiplier="0.5"
+		>
+		<system name="W1" 
+			damage_per_shot="14000"  
+			range="AboveAverage1" 
+			rate_of_fire="Devourer"
+			>
+		</system>
+		<system name="W2"
+		
+			damage_per_shot="2500" 
+			range="AboveAverage1" 
+			rate_of_fire="Misery"
+			shots_per_salvo="15" 
+			>
+		</system>
+	</entity>
+	
+</root>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+ 
+  <record name="Difficulty_9_5"
+       display_name="难度 9.5"
+       warden_fleet_starting_budget="16000"
+       warden_base_strength_cap="51598"
+       warden_strength_cap_per_aip="1631"
+       warden_strength_cap_per_aip_above_200="536"
+       warden_strength_cap_per_aip_above_400="1072"
+       warden_strength_cap_per_aip_above_600="1286"
+       warden_fleet_never_camp_closer_than_x_hops_to_hostile_territory="1"
+       overconfidence_ratio="3.0"
+       difficulty="9"
+       can_use_top_tier_units="true"
+       can_wait_for_reinforcements="true"
+       aip_for_top_tier_unlock="200"
+       cap_scales_with_mark_level="true"
+  >
+  </record>
+
+</root>

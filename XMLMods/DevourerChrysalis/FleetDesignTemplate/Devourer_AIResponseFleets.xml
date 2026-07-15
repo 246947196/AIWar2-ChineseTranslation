@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<fleet_design name="DevourerHunter_MaugrimDrones" design_logic="Drones" weight="1" include_full_cap_of_each_type="true" />
+	<fleet_design name="DevourerHunter_FenrirDrones" design_logic="Drones" weight="1" include_full_cap_of_each_type="true" />
+</root>

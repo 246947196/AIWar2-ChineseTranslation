@@ -1,0 +1,2582 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<entity name="PhotonTorpedo"
+	        thematic_groups="Drone"
+	        special_entity_type="SmallShipNotStackable"	
+			
+            display_name="光子鱼雷"
+			display_name_for_sidebar="光子鱼雷"
+			description="在行驶最小布防距离并到达目标后，引爆造成区域伤害和引擎眩晕。"
+
+            visuals="assets/_finalgamemeshes/blankshipsootheraddonscandrawalone.prefab" 
+            ship_skips_traditional_rendering="true"
+
+            icon_name="Ships1/WarheadStyle1" gimbal_icon_size_multiplier="0.8"
+			voice_group="Silent"
+			category="Ship" is_strikecraft="true"
+			size_scale="1.25"
+			visuals_scale_multiplier="5"
+			collision_priority="50"
+
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly"
+			cost_for_ai_to_purchase="10" strength_multiplier="0.1"
+            
+			hull_points="7500" shield_points="0" speed="AboveAverage5"
+			metal_cost="3000" energy_consumption="0"
+			metal_cost_multiplier_for_scrapping="0"
+			armor_mm="30" albedo="0.3" engine_gx="7" mass_tx="0.21"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			shot_fired_sfx="BasicLaunchWhine_Firing" 
+            priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			
+			immune_to_swapping_between_fleets="true"
+            self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="10"
+            is_blocked_from_transporting="true"
+            has_custom_move_order_and_no_other_direct_commands_can_be_given_from_player="true"
+			>
+            <system
+                    name="W1"
+                    display_name="引爆"
+                    category="Weapon"
+                    firing_timing="OnlyInRange"
+                    damage_per_shot="8000"
+                    range="AlmostNone"
+                    shot_speed="Instant"
+                    rate_of_fire="Devourer"
+                    shot_type_data="MeleeInvisible"
+                    area_of_effect_size="2800"
+                    shots_detonate_immediately="true"
+                    aoe_spreads_damage_among_available_targets="true"
+                    only_fires_on_death="true"
+
+                    base_engine_stun_per_shot="5" 
+				    engine_stun_to_engine_gx_less_than="22"
+				    max_engine_stun_seconds="5" added_target_evaluator="EngineDamageAsMinorPart"
+                    />
+            <system
+                    name="W2"
+                    display_name="自毁"
+                    category="Weapon"
+                    firing_timing="OnlyInRange"
+                    damage_per_shot="5"
+                    range="AlmostNone"
+                    shot_speed="Instant"
+                    rate_of_fire="Devourer"
+                    shots_detonate_immediately="true"
+                    system_is_hidden_for_ui="true"
+                    health_change_by_max_health_divided_by_this_per_attack="-1"
+                    shot_type_data="MeleeInvisible"
+                    added_target_evaluator="Melee"
+                    area_of_effect_size="300"
+                    />
+
+	        <ship_class_data can_be_zombified_and_similar="false" />
+
+    </entity>
+
+    <entity name="DecoyTorpedo"
+	        thematic_groups="Drone"
+	        special_entity_type="SmallShipNotStackable"	
+			
+            display_name="诱饵鱼雷"
+			display_name_for_sidebar="诱饵鱼雷"
+			description="用作来自真正鱼雷的廉价干扰。"
+
+			visuals="Assets/_DLC1/Strikecraft/TeslaTorpedo/TeslaTorpedo.prefab" visuals_bundle="exp1_the_spire_rises"
+
+            icon_name="Ships1/WarheadStyle1" gimbal_icon_size_multiplier="0.8"
+			voice_group="Silent"
+			category="Ship" is_strikecraft="true"
+			size_scale="1.25"
+			visuals_scale_multiplier="5"
+			collision_priority="50"
+
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Concussion,Alien"
+			cost_for_ai_to_purchase="10" strength_multiplier="0.1"
+
+			hull_points="7500" shield_points="0" speed="AboveAverage5"
+			metal_cost="3000" energy_consumption="0"
+			metal_cost_multiplier_for_scrapping="0"
+			armor_mm="30" albedo="0.3" engine_gx="7" mass_tx="0.21"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			shot_fired_sfx="BasicLaunchWhine_Firing" 
+            priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			
+			immune_to_swapping_between_fleets="true"
+            dies_if_parent_is_dead_or_remains="true"
+            is_blocked_from_transporting="true"
+			>
+            <system
+                    name="W1"
+                    display_name="引爆"
+                    category="Weapon"
+                    firing_timing="OnlyInRange"
+                    damage_per_shot="5"
+                    range="AlmostNone"
+                    shot_speed="Instant"
+                    rate_of_fire="Devourer"
+                    shot_type_data="MeleeInvisible"
+                    shots_detonate_immediately="true"
+                    only_fires_on_death="true"
+                    area_of_effect_size="300"
+                    />
+            <system
+                    name="W2"
+                    display_name="自毁"
+                    category="Weapon"
+                    firing_timing="OnlyInRange"
+                    damage_per_shot="5"
+                    range="AlmostNone"
+                    shot_speed="Instant"
+                    rate_of_fire="Devourer"
+                    shots_detonate_immediately="true"
+                    system_is_hidden_for_ui="true"
+                    health_change_by_max_health_divided_by_this_per_attack="-1"
+                    shot_type_data="MeleeInvisible"
+                    added_target_evaluator="Melee"
+                    area_of_effect_size="300"
+                    />
+
+	        <ship_class_data can_be_zombified_and_similar="false" />
+
+    </entity>
+
+<!--
+<entity name="AlienTorpedoShot"
+        category="Shot" visuals_scale_multiplier="1.0" size_scale="0.06"
+        visuals_bundle="aiwar2goodiebox" visuals="assets/arcenbundle/shots/new/extremelylongrangeion.prefab"
+        shot_fired_sfx="EnergyWave_Firing" shot_hitting_sfx="EnergyWave_Hitting"
+        >
+</entity>
+
+<entity name="TransportFlagship_Alien" copy_from="TransportFlagship_Base" tags="ShowsOnNormalDisplayMode,Capturable" thematic_groups="Hidden"
+        display_name="外星运输舰"
+		capturable_can_seed_at_all="false"
+        fleet_leader_type="Transport" 
+        hacking_cost_for_other_fleet_leaders_of_same_type_to_become_me="30"
+        firing_delay_for_transported_ships="2"
+        boost_to_planetary_metal_production_if_have_been_here_and_non_crippled_for_x_time="1.04"
+        boost_to_planetary_energy_production_if_have_been_here_and_non_crippled_for_x_time="1.04"
+
+        required_expansion_list="3_The_Neinzul_Abyss"
+        visuals="Assets/_DLC3/Necromancer/_FlagshipBase/PaladinTransport.prefab" visuals_bundle="exp3_neinzul_abyss"
+        visuals_scale_multiplier="32"
+
+        description="可能是因为这些黏液，但舰船卸载后准备战斗的速度比标准快得多。"
+      >
+</entity>
+-->
+
+    <entity name="PhotonTorpedoFrigate"
+    		thematic_groups="Frigate,Reclaimers"
+    		special_entity_type="Frigate"
+    		tags="IncludeInReclaimersOutpost"
+    		visuals="Assets/_DLC1/Frigates/TeslaTorpedoGunboat/TeslaTorpedoGunboat.prefab" visuals_bundle="exp1_the_spire_rises"
+    		icon_name="Ships1/Starship_Light" icon_overlay="Overlays2/Guardian_Nucleophilic" gimbal_icon_size_multiplier="1.25"
+    		voice_group="Saboteur"
+    		category="Ship"
+    		size_scale="4.5"
+    		visuals_scale_multiplier="7"
+    		collision_priority="100"
+    		display_name="光子鱼雷护卫舰"
+    		display_name_for_sidebar="光子FFA"
+    		description="这艘外星护卫舰通过连续齐射光子鱼雷在任何范围内散布伤害，并能瘫痪引擎。"
+    		drone_starting_behavior_type="Attacker_Full"
+    		cost_for_ai_to_purchase="200" strength_multiplier="2"
+    		hull_points="126000" shield_points="52500" speed="BelowAverage1"
+    		metal_cost="100000" energy_consumption="9000"
+    		armor_mm="40" engine_gx="16" albedo="0.4" mass_tx="5"
+    		ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+    		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+    		ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+    		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Concussion,Alien"
+    		priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+    		>
+
+    		<fleet_membership
+    				name="OtherHackables"
+    				ship_cap_group="Strike"
+    				weight="50"
+    				cap="6"
+    				/>
+    		<fleet_membership
+    				name="AddedToFleet_MinorFaction"
+    				ship_cap_group="Strike"
+    				weight="50"
+    				cap="6"
+    				faction="Reclaimers"
+    				/>
+
+    		<system name="WD" display_name="发射器"
+    				category="Weapon" firing_timing="OnlyInRange"
+    				damage_per_shot="5" range="EssentiallyInfinite" shot_speed="Claim_Turtle" 
+    				seek_range="AlmostNone"
+    				rate_of_fire="Normal" 
+    				
+                    shots_per_salvo="3"
+                    shots_per_target="1"
+                    fires_salvos_sequentially="true"
+                    no_compression="true"
+                    salvo_shot_min_delay="50"
+                    salvo_shot_max_delay="1000"
+
+    				shot_type_data="PhotonTorpedo"
+    				>
+    		</system>
+	</entity>
+
+<entity name="AlienOrdinanceBeta" copy_from="AutoBomb" display_name="外星弹药" thematic_groups="Strikecraft,Reclaimers" tags="IncludeInReclaimersOutpost"
+		display_name_for_sidebar="外星弹药" size_scale="2.2" visuals_scale_multiplier="1"                 	
+		description="此弹药仅授权无人部署。最低自我意识可通过注射治疗。"
+		speed="High"
+		cost_for_ai_to_purchase="35" 
+		icon_name="Ships1/Zenith_Trader" icon_overlay="Overlays2/MummyRoyal" gimbal_icon_size_multiplier="0.8"
+		ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+		tech_upgrades_that_benefit_me="Alien,Disruptive"
+		>
+
+		<fleet_membership
+				name="OtherHackables"
+				ship_cap_group="Strike"
+				weight="50"
+				cap="19"
+				/>
+		<fleet_membership
+				name="AddedToFleet_MinorFaction"
+				ship_cap_group="Strike"
+				weight="50"
+				cap="19"
+				faction="Reclaimers"
+				/>
+
+		<!-- Inherit AutoBomb's Detonation weapon. 
+				Reduce its damage since we have more effects. 
+				Knockback and engine stun values from KineticMinefield 'Shockwave'
+				Reduced max targets hit per shot, greatly -->
+		<system name="WM"		
+				damage_per_shot="2000"
+				maximum_number_of_targets_hit_per_shot="10" 
+				base_knockback_per_shot="2000" 
+				added_knockback_per_shot_per_mark="500" 
+				knockback_to_ships_mass_tx_less_than="7" 
+				added_target_evaluator="CanKnockback"
+				base_engine_stun_per_shot="15" 
+				added_engine_stun_per_shot_per_mark="3" 
+				max_engine_stun_seconds="30" 
+				engine_stun_to_engine_gx_less_than="22" 
+				>
+			<outgoing_damage_modifier
+					based_on="Armor_mm"
+					comparison_type="AtMost"
+					compared_to="50"
+					multiplier="6"
+					/>
+		</system>
+	</entity> 
+
+<!-- This is the original "ChainLightingFrigate from zeus_frigates.xml before it was repurposed to become the corrosive frigate -->
+<entity name="AlienChainLightningFrigate"
+		thematic_groups="Frigate,Reclaimers"	
+		special_entity_type="Frigate"
+		tags="IncludeInReclaimersOutpost"
+		category="Ship"
+
+		visuals="Assets/_DLC3/Frigates/ChainLightningFFM/ChainLightningFFM.prefab" visuals_bundle="exp3_neinzul_abyss"
+		icon_name="Ships1/Starship" icon_overlay="Overlays1/Corvette_Tesla" gimbal_icon_size_multiplier="1.25" 
+
+		size_scale="1.0"
+		visuals_scale_multiplier="4"
+		y_offset_of_icon="15"
+
+		display_name="整流护卫舰"
+		display_name_for_sidebar="整流FFA"
+		description="用强大的闪电打击目标，连锁到附近目标造成较小伤害。高能量消耗的舰船受到最严重的打击。被摧毁时剧烈爆炸，伤害敌友双方。"
+		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Splash,Alien"
+
+		collision_priority="600"
+		cost_for_ai_to_purchase="1200"
+		
+		hull_points="168000" shield_points="70250" speed="Normal3"
+		metal_cost="31500" energy_consumption="3750"
+		armor_mm="85" engine_gx="16" albedo="0.4" mass_tx="5"
+		
+		voice_group="Starship"
+		ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+		ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+
+		priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+		>
+
+		<fleet_membership
+				name="OtherHackables"
+				ship_cap_group="Strike"
+				weight="50"
+				cap="6"
+				/>
+		<fleet_membership
+				name="AddedToFleet_MinorFaction"
+				ship_cap_group="Strike"
+				weight="50"
+				cap="6"
+				faction="Reclaimers"
+				/>
+
+	<system name="CE" display_name="连锁闪电发射器"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="8000" range="Normal4" shot_speed="Normal" rate_of_fire="VeryLow"
+			shot_type_data="HeavyBeamInvisible"  beam_length_multiplier="1.3" shots_detonate_immediately="true" beam_weapon_visual_style="Lightning_Blue"
+			beam_chains_out_to_targets_x_times="2" beam_chains_out_to_target_min_range="400" beam_chains_out_to_targets_x_range="2000"
+			maximum_number_of_targets_hit_per_shot="20" beam_chains_out_to_max_targets_from_each_source="10" aoe_and_beam_damage_multiplier_to_non_primary_target="25" 
+			>
+			<outgoing_damage_modifier
+					based_on="EnergyUsage"
+					comparison_type="AtLeast"
+					compared_to="7000"
+					multiplier="3"
+					/>
+		</system>
+
+	<system name="W2" display_name="闪电终曲"
+		category="Weapon" firing_timing="OnlyInRange"
+		only_fires_on_death="true"
+		damage_per_shot="3000" range="VeryTiny3" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+		shot_type_data="LightningExplosionAOEShot" 
+		area_of_effect_size="3000"				
+		shots_detonate_immediately="true"
+		aoe_hits_friendly_targets="true"
+		maximum_number_of_targets_hit_per_shot="10"
+		health_change_by_max_health_divided_by_this_per_attack="-1"
+		>
+			<outgoing_damage_modifier
+					based_on="Armor_mm"
+					comparison_type="AtMost"
+					compared_to="90"
+					multiplier="4"
+					/>
+		</system>
+
+	</entity>
+
+<!-- Based on Husk (Free-Form)
+	 A tenth of the durability
+	 A fraction of weapon damage -->
+<entity name="NanoDebris"
+		tags=""
+
+		visuals="Assets/_FinalGameMeshes/Nanocaust/FighterMutation/FighterMutation.prefab"
+		icon_overlay="Overlays2/DevourerGolem_RavenousShadow"
+		icon_name="Ships2/Nanobot_Mutation"
+
+		gimbal_icon_size_multiplier="0.5"
+		size_scale="0.5"
+		visuals_scale_multiplier="4"
+		y_offset_of_icon="30"
+
+		special_entity_type="SmallShipYesStacks"
+		category="Ship"
+
+		display_name="纳米碎片"
+		description="某种畸形的纳米技术。部署结束后彻底摧毁。"
+
+		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Technologist,Alien"
+		
+		collision_priority="100"
+		cost_for_ai_to_purchase="20"			
+
+		self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="6"
+		always_self_attritions="true"
+		dies_if_parent_is_dead_or_remains="true"
+
+		hull_points="800" shield_points="500" speed="AboveAverage4"
+		metal_cost="500" energy_consumption="0"
+		armor_mm="50" albedo="0.4" engine_gx="13" mass_tx="0.24"
+		voice_group="Silent"
+		assist_range="High1"
+		ship_or_structure_explosion_sfx="ShipLostOnOtherPlanet_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+		priority_as_ai_target="NormalFleetship" priority_as_frd_target="BiggerFleetship" priority_to_protect="Expendable"
+
+		cannot_actually_be_built_builds_self_indirectly="true"
+		immune_to_swapping_between_fleets="true"
+		>
+		<system name="WM" display_name="壶菌穿刺者"
+					category="Weapon" firing_timing="OnlyInRange"
+					damage_per_shot="70" range="VeryTiny1" seek_range="Normal1" shot_speed="Fast" rate_of_fire="SlightlyLow" fires_salvos_sequentially="false"
+					base_engine_stun_per_shot="3" added_engine_stun_per_shot_per_mark="3" engine_stun_to_engine_gx_less_than="16"
+					shot_type_data="MeleeInvisible" added_target_evaluator="Melee"
+					>
+			<death_effect_damage
+					type="Nanocaustation"
+					tier_name="Major"
+					/>
+		</system>
+		<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+
+<!-- Based on Husk (Ward-Form)
+	 A tenth of the durability
+	 Half the weapon damage -->
+<entity name="NanoDebrisWard"
+		tags="GenesisPodWards"
+		copy_from="NanoDebris"
+
+		orbits_parent_at_range="350" 
+		orbits_parent_unless_parent_system_has_target="W1"
+		degrees_to_orbit_per_second="0" 
+		attempts_to_reach_orbital_point_at_speed="1000"
+		self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="0"
+		always_self_attritions="false"
+		dies_if_parent_is_dead_or_remains="true"
+		has_custom_move_order_and_no_other_direct_commands_can_be_given_from_player="true"
+
+		cannot_actually_be_built_builds_self_indirectly="true"
+		immune_to_swapping_between_fleets="true"
+		>
+		<system name="WM" display_name="壶菌穿刺者"
+					category="Weapon" firing_timing="OnlyInRange"
+					damage_per_shot="415" range="VeryTiny1" seek_range="Normal1" shot_speed="Fast" rate_of_fire="SlightlyLow" fires_salvos_sequentially="false"
+					base_engine_stun_per_shot="3" added_engine_stun_per_shot_per_mark="3" engine_stun_to_engine_gx_less_than="16"
+					shot_type_data="MeleeInvisible" added_target_evaluator="Melee"
+					>
+			<death_effect_damage
+					type="Nanocaustation"
+					tier_name="Minor"
+					/>
+		</system>
+		<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+
+<!-- Based on Scourge Warrior (Ward-Form)
+	 Hull and shields are halved
+	 Damage unchanged
+-->
+<entity name="ScourgeWard"
+		tags="GenesisPodWards"
+
+		visuals="Assets/_DLC1/Scourge/ScourgeWarrior/ScourgeWarrior.prefab" 
+		visuals_bundle="exp1_the_spire_rises"
+		icon_name="Ships2/SomethingAlien"
+
+		gimbal_icon_size_multiplier="0.5"
+		size_scale="0.5"
+		visuals_scale_multiplier="4"
+		y_offset_of_icon="30"
+
+		special_entity_type="SmallShipYesStacks"
+		category="Ship"
+
+		orbits_parent_at_range="375" 
+		orbits_parent_unless_parent_system_has_target="W1"
+		degrees_to_orbit_per_second="0" 
+		attempts_to_reach_orbital_point_at_speed="800"
+		self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="0"
+		always_self_attritions="false"
+		dies_if_parent_is_dead_or_remains="true"
+		has_custom_move_order_and_no_other_direct_commands_can_be_given_from_player="true"
+
+		display_name="灾祸碎片"
+		display_name_for_sidebar="太空碎片"
+		description="灾祸技术的碎片。一个漂浮的炮台平台，通过微型牵引器远程维持在轨道上。武器本身与其说是自动化，不如说是'不受我们控制'。发射前切勿移除眼罩。"
+
+		collision_priority="100"
+		cost_for_ai_to_purchase="0"
+
+		starting_mark_level="Mark1"
+		tech_upgrades_that_benefit_me="Technologist,Alien"
+
+		hull_points="1300" shield_points="700" speed="AboveAverage1"
+		metal_cost="0" energy_consumption="0"
+		armor_mm="50" albedo="0.3" engine_gx="8" mass_tx="0.21"
+
+		voice_group="Silent"
+		ship_or_structure_explosion_sfx="ShipLostOnOtherPlanet_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+
+		priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="Expendable"
+
+		cannot_actually_be_built_builds_self_indirectly="true"
+		immune_to_swapping_between_fleets="true"
+		>
+
+		<system 
+			name="W1" display_name="弹道双连射"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="90" range="Small2" shot_speed="Normal" rate_of_fire="Misery" fires_salvos_sequentially="false"
+			shot_type_data="DoubleShot_Red"				
+			>
+		</system>
+		<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+
+<!-- Based on Architrav Cestus (Ward-Form)
+	 Hull halved
+	 Attack aoe size and max targets halved
+	 Multi-phase duration hugely reduced
+	 Does not spawn itself in multi-phase on death
+ -->
+<entity name="CestusWard"
+		tags="GenesisPodWards"
+
+		visuals="Assets/_DLC2/Zenith/ZACestus/ZACestus.prefab" visuals_bundle="exp2_zenith_onslaught"
+		icon_name="Ships3/ZenithArchitraveCestus"
+
+		gimbal_icon_size_multiplier="0.5"
+		size_scale="0.5"
+		visuals_scale_multiplier="4"
+		y_offset_of_icon="30"
+ 
+		special_entity_type="SmallShipYesStacks"
+		category="Ship"
+ 
+		orbits_parent_at_range="380" 
+		orbits_parent_unless_parent_system_has_target="W1"
+		degrees_to_orbit_per_second="0" 
+		attempts_to_reach_orbital_point_at_speed="2000"
+		self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="0"
+		always_self_attritions="false"
+		dies_if_parent_is_dead_or_remains="true"
+		has_custom_move_order_and_no_other_direct_commands_can_be_given_from_player="true"
+		
+		display_name="天顶质量"
+		description="这团天顶组织以有用但潮湿的方式自燃。"
+	
+		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Technologist,Alien"
+		
+		collision_priority="100"
+		cost_for_ai_to_purchase="20"		
+	
+		hull_points="1500" shield_points="0" speed="AboveAverage1"
+		metal_cost="0" energy_consumption="0"
+		armor_mm="50" albedo="0.7" engine_gx="14" mass_tx="0.21"
+		voice_group="Melee"
+		assist_range="High1"
+		ship_or_structure_explosion_sfx="ShipLostOnOtherPlanet_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+		priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+
+		cannot_actually_be_built_builds_self_indirectly="true"
+		immune_to_swapping_between_fleets="true"
+		>
+		<system name="W1" display_name="引爆"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="220" range="Small2" seek_range="Normal1" shot_speed="Instant" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+				shot_type_data="ExplosiveFlakBurst"
+				area_of_effect_size="300"
+				maximum_number_of_targets_hit_per_shot="7"	
+				state_of_matter_for_target_to_become="MultiPhase" inflicts_state_of_matter_on_target_for_seconds="5" cannot_inflict_state_of_matter_if_target_has_any_shields_up="true" cannot_inflict_state_of_matter_if_target_has_energy_usage_of_at_least="800"				
+				health_change_by_max_health_divided_by_this_per_attack="-1"
+				>
+		</system>
+		<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+
+<!-- Genesis Pod -->
+<entity name="AlienGenesisPod"	
+	thematic_groups="Strikecraft,Reclaimers"   
+	tags="IncludeInReclaimersOutpost"
+	visuals="assets/_finalgamemeshes/starships/shieldstarship/shieldstarship.prefab"
+	icon_name="ShipsSpire/SpireDebris"
+	
+	size_scale="1"
+	visuals_scale_multiplier="1"
+	y_offset_of_icon="30"
+	gimbal_icon_size_multiplier="1.0"
+
+	category="Ship" is_strikecraft="true"
+
+	voice_group="Spire"
+	ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+	ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+
+	starting_mark_level="Mark1"
+	tech_upgrades_that_benefit_me="Technologist,Alien"
+	cost_for_ai_to_purchase="0"
+
+	collision_priority="100"
+	display_name="创世荚舱"
+	display_name_for_sidebar="创世荚舱"
+	description="这个外星科技母体产出……我们实际上不知道是什么，但对敌人来说是个巨大的干扰。"
+	
+	hull_points="4000" shield_points="0" speed="AboveAverage1"
+
+	metal_cost="1500" energy_consumption="600"
+	armor_mm="10" albedo="0.3" engine_gx="5" mass_tx="1.0"
+		
+	priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+
+	build_points_per_second="100"
+	build_point_cost_for_per_second_construction="500"
+	personal_ship_cap_for_per_second_build_point_construction="3"
+	tag_to_spawn_from_for_build_point_for_per_second_construction="GenesisPodWards"
+	>
+
+		<fleet_membership
+				name="OtherHackables"
+				ship_cap_group="Strike"
+				weight="50"
+				cap="32"
+				/>
+		<fleet_membership
+				name="AddedToFleet_MinorFaction"
+				ship_cap_group="Strike"
+				weight="50"
+				cap="32"
+				faction="Reclaimers"
+				/>
+
+	<system name="W1" display_name="呐喊" description="此武器对建筑造成金属疲劳。对有机体的影响在放电事件期间无法记录。但我们推测包括全身出血和自食。"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="60" range="AboveAverage1" seek_range="Normal1" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="true"
+			shot_type_data="EnergyWave"
+			>
+		</system>
+
+	<system name="L8" display_name="排放纳米"
+		category="Weapon" firing_timing="OnlyInRange"
+		damage_per_shot="5" range="EssentiallyInfinite" shot_speed="Normal" rate_of_fire="Sloth" fires_salvos_sequentially="true"
+		shots_per_salvo="3"
+		shot_type_data="NanoDebris"
+		>
+		</system>
+
+		<ship_class_data can_be_zombified_and_similar="false" />
+
+	</entity>
+
+<entity name="NanoShredder"
+		thematic_groups="Strikecraft,Reclaimers" 	
+		tags="IncludeInReclaimersOutpost"
+		
+		visuals="Assets/_FinalGameMeshes/Nanocaust/FighterMutation/FighterMutation.prefab"
+		icon_overlay="Overlays2/DevourerGolem_RavenousShadow"
+		icon_name="Ships2/Nanobot_Mutation"
+		voice_group="Melee"
+		category="Ship"  is_strikecraft="true"
+		size_scale="0.9"
+		visuals_scale_multiplier="6"
+		gimbal_icon_size_multiplier="1.0"
+		collision_priority="100"
+
+		display_name="纳米撕裂者"
+		description="撕裂舰船，在身后留下纳米云。"
+
+		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Melee,Alien"
+		
+		cost_for_ai_to_purchase="200" strength_multiplier="2"
+		hull_points="4000" shield_points="0" speed="AboveAverage3"
+		metal_cost="4000" energy_consumption="400"
+		armor_mm="110" albedo="0.3" engine_gx="12" mass_tx="0.21"
+		ship_or_structure_explosion_sfx="ShipLarge_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"           
+		
+		unit_to_make_with_build_points="NanoNanoShredder"
+		base_ship_line_for_build_points="NanoShredder"
+		build_points_per_damage_dealt="1.4"
+		priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+		>
+
+		<fleet_membership
+				name="OtherHackables"
+				ship_cap_group="Strike"
+				weight="50"
+				cap="32"
+				/>
+		<fleet_membership
+				name="AddedToFleet_MinorFaction"
+				ship_cap_group="Strike"
+				weight="50"
+				cap="32"
+				faction="Reclaimers"
+				/>
+
+		<system name="W1" display_name="啃咬"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="60" range="AlmostNone" seek_range="Normal1" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="true"
+				shot_type_data="PlasmaBolt"			
+				>
+		</system>
+		<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+
+<entity name="NanoNanoShredder"  copy_from="NanoShredder" thematic_groups="Strikecraft,Reclaimers" 
+
+		display_name="纳米纳米撕裂者"
+		display_name_for_sidebar="纳米撕裂者"
+
+		unit_to_make_with_build_points="NanoNanoNanoShredder"
+		base_ship_line_for_build_points="NanoShredder"
+
+		metal_cost_multiplier_for_scrapping="0"
+		cannot_actually_be_built_builds_self_indirectly="true"
+		immune_to_swapping_between_fleets="true"
+
+		build_points_per_damage_dealt="2.4"
+
+		multiplier_to_all_costs="0.667" gimbal_icon_size_multiplier="0.667" multiplier_to_all_scales="0.667" multiplier_to_all_healths="0.667" damage_multiplier_to_all_weapons="0.667"
+		>
+
+		<system
+				name="W1"
+				display_name="撕咬"
+				/>
+	</entity>
+
+<entity name="NanoNanoNanoShredder"  copy_from="NanoNanoShredder" thematic_groups="Strikecraft,Reclaimers" 
+
+		display_name="纳米纳米纳米撕裂者"
+		display_name_for_sidebar="纳米纳米纳米撕裂者"
+
+		unit_to_make_with_build_points="NanoNanoNanoShredder"
+		base_ship_line_for_build_points="NanoShredder"
+
+		build_points_per_damage_dealt="0.55"
+
+		multiplier_to_all_costs="0.445" gimbal_icon_size_multiplier="0.445" multiplier_to_all_scales="0.445" multiplier_to_all_healths="0.445" damage_multiplier_to_all_weapons="0.445"
+		>
+
+		<system
+				name="W1"
+				display_name="轻咬"
+				/>
+	</entity>
+
+<entity name="ReclaimedDysonBastion"
+	thematic_groups="Reclaimers,Reclaimers"
+	tags="IncludeInReclaimersOutpost"
+	special_entity_type="Frigate"
+	gimbal_icon_size_multiplier="1.7"
+	visuals="Assets/_FinalGameMeshes/Zenith/Dyson4Bastion/DysonBastion.prefab"
+	icon_name="Ships1/DysonSentinel"
+	icon_overlay="Overlays2/DysonSentinel_Bastion"
+	uses_large_health_bar="true"
+	category="Ship"
+	size_scale="7.75"
+	visuals_scale_multiplier="5"
+	y_offset_of_icon="24"
+	collision_priority="100"
+	display_name="天顶堡垒"
+	display_name_for_sidebar="天顶堡垒"
+	description="这个回收的天顶堡垒'大而不倒'，但也太大无法装入运输舰，而且跑得比龟族还慢。"
+	blocks_enemy_claim_flows="true"
+	voice_group="Zenith"
+	starting_mark_level="Mark1"
+	tech_upgrades_that_benefit_me="Generalist,Alien"
+	cost_for_ai_to_purchase="2800"
+	hull_points="2000000"
+	shield_points="1000000"
+	speed="BelowAverage2"
+	metal_cost="800000"
+	energy_consumption="50000"
+	armor_mm="90"
+	albedo="0.8"
+	engine_gx="18"
+	mass_tx="7"
+	ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+	priority_as_ai_target="MidNasty"
+	priority_as_frd_target="MidNasty"
+	priority_to_protect="SlightlyLessExpendable"
+	  
+	is_blocked_from_transporting="true"
+
+	aip_when_granted_by_hack="5"
+	multiplier_to_all_costs="1.0" multiplier_to_all_scales="1.0" multiplier_to_all_healths="1.0" damage_multiplier_to_all_weapons="1.0"
+	>
+
+	<system name="WD"
+		display_name="弹道双连射"
+		category="Weapon"
+		firing_timing="OnlyInRange"
+		damage_per_shot="50000"
+		range="High2"
+		shot_speed="Normal"
+		rate_of_fire="Low"
+		fires_salvos_sequentially="true"
+		shot_type_data="DoubleShot_Gold">
+		</system>
+	<system name="R5"
+		display_name="激光脉冲"
+		category="Weapon"
+		firing_timing="OnlyInRange"
+		damage_per_shot="10150"
+		range="AboveAverage1"
+		shot_speed="Normal"
+		rate_of_fire="High"
+		shots_per_salvo="3"
+		fires_salvos_sequentially="false"
+		shot_type_data="LaserPulse_RedLevel3">
+		</system>
+
+		<ship_class_data can_be_zombified_and_similar="false" />
+
+		<fleet_membership
+				name="OtherHackables"
+				ship_cap_group="Strike"
+				weight="50"
+				cap="1"
+				/>
+		<fleet_membership
+				name="AddedToFleet_MinorFaction"
+				ship_cap_group="Strike"
+				weight="50"
+				cap="1"
+				faction="Reclaimers"
+				/>
+
+	</entity>
+
+<!-- Copied from Tritium Sniper Frigate -->
+<entity	name="CounterDroneFrigate"
+		tags="IncludeInReclaimersOutpost"
+		thematic_groups="Frigate,Reclaimers"
+		special_entity_type="Frigate"
+		gimbal_icon_size_multiplier="1.25"
+		visuals="assets/_finalgamemeshes/starships/sniperstarship/sniper_starship.prefab"
+		icon_name="Ships1/Starship_Light"
+		icon_overlay="Overlays1/Starship_Sniper"
+		size_scale="6.2"
+		visuals_scale_multiplier="6"
+		category="Ship"
+		y_offset_of_icon="15"
+		collision_priority="500"
+		display_name="反无人机护卫舰"
+		display_name_for_sidebar="反无人机FFL"
+		description="专门的反无人机武器，在击杀时生成更多的爆炸性无人机。"
+		starting_mark_level="Mark1"
+		tech_upgrades_that_benefit_me="Alien,Light"
+		cost_for_ai_to_purchase="1000"
+		strength_multiplier="2"
+		hull_points="108000"
+		shield_points="45000"
+		speed="AboveAverage2"
+		metal_cost="100000"
+		energy_consumption="9000"
+		armor_mm="40"
+		engine_gx="16"
+		albedo="0.4"
+		mass_tx="5"
+		voice_group="Starship"
+		ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+		ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+		cannot_target_or_alert_ai_reinforcement_spots="true"
+		priority_as_ai_target="NormalStarship"
+		priority_as_frd_target="NormalStarship"
+		priority_to_protect="SlightlyLessExpendable"
+		>
+	
+	<system
+			name="W1"
+			display_name="无人机炮"
+			category="Weapon"
+			firing_timing="OnlyInRange"
+			damage_per_shot="800"
+			range="EssentiallyInfinite"
+			shot_speed="VeryFast"
+			rate_of_fire="SlightlyLow"
+			fires_salvos_sequentially="true"
+            shots_per_salvo="5"
+			shot_type_data="ExtremeLongRangeRailgun"
+            salvo_shot_min_delay="100"
+            salvo_shot_max_delay="500"
+			added_shots_per_salvo_per_mark="0.4"
+			unit_to_spawn_on_infestation="MakeshiftDrone" infestation_function_name="Conversion"
+			>
+            <outgoing_damage_modifier
+					based_on="AttackDistance"
+					comparison_type="LessThan"
+					compared_to="4000"
+					multiplier="0"
+					/>
+			<outgoing_damage_modifier
+					based_on="TargetIsDrone"
+					comparison_type="Equals"
+					compared_to="1"
+					multiplier="8"
+					/>
+			<!--
+		<outgoing_damage_modifier
+				based_on="Albedo"
+				comparison_type="AtMost"
+				compared_to="0.3"
+				multiplier="8"
+					/>
+			-->
+		</system>
+	<system
+			name="W2"
+			display_name="弹道炮"
+			category="Weapon"
+			firing_timing="OnlyInRange"
+			damage_per_shot="444"
+			range="Small5"
+			shot_speed="Normal"
+			rate_of_fire="Normal"
+			fires_salvos_sequentially="true"
+			shot_type_data="ElegantCurl"
+            priority_for_kiting="0"
+			>
+		</system>
+
+    <system
+			name="W3"
+			display_name="纳米新星"
+			category="Weapon"
+			firing_timing="OnlyInRange"
+			damage_per_shot="800"
+			range="Tiny3"
+			shot_speed="Normal"
+			rate_of_fire="Sloth"
+			shot_type_data="ParalysisProngedShot_Blue"
+            shots_detonate_immediately="true"
+			maximum_number_of_targets_hit_per_shot="20"
+            area_of_effect_size="6000"		
+            unit_to_spawn_on_infestation="MakeshiftDrone" infestation_function_name="Conversion"
+            priority_for_kiting="0"		
+			>
+
+            <outgoing_damage_modifier
+					based_on="TargetIsDrone"
+					comparison_type="Equals"
+					compared_to="1"
+					multiplier="8"
+					/>
+		</system>
+
+	<fleet_membership
+			name="OtherHackables"
+			ship_cap_group="Strike"
+			weight="200"
+			cap="6"
+			/>
+	<fleet_membership
+			name="AddedToFleet_MinorFaction"
+			ship_cap_group="Strike"
+			weight="200"
+			cap="6"
+			faction="Reclaimers"
+			/>
+
+</entity>
+    
+<!--
+<entity
+			name="SubvertedCarrierGuardian"
+			thematic_groups="Reclaimers"
+			special_entity_type="AIGuardian"
+			gimbal_icon_size_multiplier="1.25"
+			visuals="assets/_finalgamemeshes/guardians/carrierguardian/carrierguardian.prefab"
+			icon_name="Ships1/Guardian"
+			icon_overlay="Overlays2/Guardian_Carrier"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="3.6"
+			visuals_scale_multiplier="4.3"
+			y_offset_of_icon="16"
+			collision_priority="400"
+			display_name="策反航母守卫"
+			display_name_for_sidebar="策反航母GU"
+			description="当敌人存在时持续生成无人机。"
+			fleet_design_template_i_use_for_drones="CarrierGuardianDrones"
+			is_disallowed_from_spawning_in_waves="true"
+			drone_starting_behavior_type="Attacker_Full"
+			blocks_enemy_claim_flows="true"
+			voice_group="Silent"
+			starting_mark_level="Mark1"
+			tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="450"
+			hull_points="26000"
+			shield_points="14000"
+			speed="BelowAverage2"
+			metal_cost="80000"
+			energy_consumption="7500"
+			armor_mm="110"
+			albedo="0.3"
+			engine_gx="14"
+			mass_tx="5"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			priority_as_ai_target="MidNasty"
+			priority_as_frd_target="MidNasty"
+			priority_to_protect="SlightlyLessExpendable"
+			>
+		<metal_flow
+				purpose="BuildingDronesInternally"
+				throughput="1500"
+				increase_per_mark_level="1000"
+				 />
+		<system
+				name="WW"
+				display_name="弹道炮"
+				category="Weapon"
+				firing_timing="OnlyInRange"
+				damage_per_shot="1000"
+				range="AboveAverage4"
+				shot_speed="Normal"
+				rate_of_fire="Normal"
+				fires_salvos_sequentially="true"
+				shot_type_data="ArmorPiercingShell"
+				>
+		</system>
+	</entity>
+-->
+<!-- <entity	name="ReclaimedPaladin"
+		copy_from="TemplarElitePaladin"
+		display_name="回收圣骑士"
+		display_name_for_sidebar="圣骑士"
+		tags="IncludeInReclaimersOutpost"
+		special_entity_type="Cruiser"
+		icon_overlay="Overlays2/TemplarElite"
+		description="此圣殿护卫舰的致命一击将舰船转化为同盟仆从。我们不知道其原理，但至少确定不是宗教狂热。"
+		starting_mark_level="Mark1"
+		tech_upgrades_that_benefit_me="Subterfuge,Alien"
+		>
+	<data_extension
+			name="DLC3"
+			necromancer_science_to_grant_on_death="0"
+			necromancer_hacking_to_grant_on_death="0"
+			immune_to_necromancy="true"
+				/>
+	<system
+			name="WJ"
+			damage_per_shot="2000"
+			></system>
+	<system
+			name="R9"
+			damage_per_shot="1000"
+			></system>
+	<fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="250" cap="1"/>
+	<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="250" cap="1" faction="Reclaimers"/>
+	<ship_class_data can_be_zombified_and_similar="false" />
+</entity>
+-->
+
+<!-- 
+<entity name="PhaseFrigate"
+	thematic_groups="Reclaimers"
+	tags="IncludeInReclaimersOutpost"
+
+	special_entity_type="Frigate"
+	gimbal_icon_size_multiplier="1.7"
+	visuals="Assets/_FinalGameMeshes/Zenith/Dyson4Bastion/DysonBastion.prefab"
+	icon_name="Ships1/DysonSentinel"
+	icon_overlay="Overlays2/DysonSentinel_Bastion"
+	uses_large_health_bar="true"
+	category="Ship"
+	size_scale="7.75"
+	visuals_scale_multiplier="5"
+	y_offset_of_icon="24"
+	collision_priority="100"
+
+	display_name="相位护卫舰"
+	display_name_for_sidebar="相位护卫舰"
+	description="高伤害输出但在相位期间武器会自伤，然后在替代相位中充能护盾。"
+
+	starting_mark_level="Mark1"
+	tech_upgrades_that_benefit_me="Subterfuge,Alien"
+
+	cost_for_ai_to_purchase="1200" strength_multiplier="1.5"
+	metal_cost="75000" energy_consumption="3750"
+	hull_points="35250" shield_points="108000" speed="AboveAverage3"
+	armor_mm="85" engine_gx="16" albedo="0.4" mass_tx="5"
+
+	voice_group="Starship"
+	ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+	ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+	priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+
+	aip_when_granted_by_hack="5"
+	multiplier_to_all_costs="1.0" multiplier_to_all_scales="1.0" multiplier_to_all_healths="1.0" damage_multiplier_to_all_weapons="1.0"
+
+	phases_to_other_alternative_state_of_matter_after_seconds="20"
+	phases_back_to_default_state_of_matter_after_seconds="20"
+	alternative_state_of_matter="Caution"
+	>
+
+	<system name="W1"
+		display_name="激光脉冲"
+		category="Weapon"
+		firing_timing="OnlyInRange"
+		damage_per_shot="10150"
+		range="Small1"
+		shot_speed="Normal"
+		rate_of_fire="High"
+		shots_per_salvo="3"
+		fires_salvos_sequentially="true"
+		shot_type_data="LaserPulse_RedLevel3"
+
+		care_about_state_of_matter_to_be_enabled="true"
+		must_be_this_state_of_matter_to_be_enabled="Normal"
+
+		health_change_by_max_health_divided_by_this_per_attack="-20"
+		>
+	</system>
+
+	<system name="W2"
+		display_name="激光脉冲"
+		category="Weapon"
+		firing_timing="OnlyInRange"
+		damage_per_shot="10150"
+		range="AboveAverage1"
+		shot_speed="Normal"
+		rate_of_fire="High"
+		shots_per_salvo="3"
+		fires_salvos_sequentially="true"
+		shot_type_data="LaserPulse_DeepBlue"
+
+		care_about_state_of_matter_to_be_enabled="true"
+		must_be_this_state_of_matter_to_be_enabled="Caution"
+		>
+	</system>
+
+	<ship_class_data can_be_zombified_and_similar="false" />
+
+	<fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="250" cap="1"/>
+	<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="250" cap="1" faction="Reclaimers"/>
+
+</entity> 
+-->
+
+<!-- 
+<entity name="YeetaMcYeet"
+	thematic_groups="Reclaimers"
+	tags="IncludeInReclaimersOutpost"
+
+	special_entity_type="Frigate"
+	gimbal_icon_size_multiplier="1.7"
+	visuals="Assets/_FinalGameMeshes/Zenith/Dyson4Bastion/DysonBastion.prefab"
+	icon_name="Ships1/DysonSentinel"
+	icon_overlay="Overlays2/DysonSentinel_Bastion"
+	uses_large_health_bar="true"
+	category="Ship"
+	size_scale="7.75"
+	visuals_scale_multiplier="5"
+	y_offset_of_icon="24"
+	collision_priority="100"
+
+	display_name="耶塔·麦耶特"
+	display_name_for_sidebar="耶塔·麦耶特"
+	description="拉入舰船，然后牵引自身并抛射。"
+
+	starting_mark_level="Mark1"
+	tech_upgrades_that_benefit_me="Subterfuge,Alien"
+
+	cost_for_ai_to_purchase="1200" strength_multiplier="1.5"
+	metal_cost="75000" energy_consumption="3750"
+	hull_points="35250" shield_points="108000" speed="VeryVeryLittle2"
+	armor_mm="85" engine_gx="16" albedo="0.4" mass_tx="5"
+
+	voice_group="Starship"
+	ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+	ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+	priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+
+	aip_when_granted_by_hack="5"
+	multiplier_to_all_costs="1.0" multiplier_to_all_scales="1.0" multiplier_to_all_healths="1.0" damage_multiplier_to_all_weapons="1.0"
+	>
+
+	<system name="W1" display_name="磁力牵引"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="10" range="AboveAverage3" shot_speed="Instant" rate_of_fire="Devourer" fires_salvos_sequentially="true"
+			base_knockback_per_shot="-3000" knockback_to_ships_mass_tx_less_than="20" shots_per_salvo="50"
+			shot_type_data="MeleeInvisible" cloaking_percent_loss_from_firing="0.1"	
+			>	
+			<outgoing_damage_modifier based_on="AttackDistance" comparison_type="LessThan" compared_to="1125" multiplier="0"/>
+	</system>
+
+	<system name="W2" display_name="耶特"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="10" range="VeryTiny1" shot_speed="Instant" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+			base_knockback_per_shot="8000" knockback_to_ships_mass_tx_less_than="20" shots_per_salvo="50"
+			shot_type_data="MeleeInvisible" cloaking_percent_loss_from_firing="0.1"	
+			>	
+    </system>
+
+	<system name="T" display_name="抱紧我"
+			category="Passive" is_reverse_tractor_beam="true"
+			tractor_range="VeryTiny1" tractor_count="1"  tractor_hits_albedo_less_than="1" tractor_hits_engine_gx_less_than="20" tractor_hits_mass_greater_than="0"
+			>
+	</system>
+
+	<ship_class_data can_be_zombified_and_similar="false" />
+
+	<fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="250" cap="1"/>
+	<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="250" cap="1" faction="Reclaimers"/>
+
+</entity> 
+-->
+
+<entity name="ScorpionFrigate"
+		tags="IncludeInReclaimersOutpost"
+		thematic_groups="Frigate,Reclaimers" 
+		special_entity_type="Frigate" gimbal_icon_size_multiplier="1.25"
+		visuals="Assets/_FinalGameMeshes/Turrets/SpiderTurret/SpiderTurret.prefab" lod_distance_overrides=""
+		icon_name="Ships1/Starship" icon_overlay="Overlays1/Turret_Translocator"
+		size_scale="6.2"
+		visuals_scale_multiplier="25"
+		category="Ship"
+		y_offset_of_icon="15"
+		collision_priority="500"
+		display_name="蝎子护卫舰"
+		display_name_for_sidebar="蝎子护卫舰"
+		description="专门拉近距离敌方舰船，逐一处理。"
+		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Subterfuge,Alien"
+		cost_for_ai_to_purchase="1000" strength_multiplier="2"
+		hull_points="120000" shield_points="60000" speed="AboveAverage2"
+		metal_cost="100000" energy_consumption="9000"
+		armor_mm="40" engine_gx="16" albedo="0.4" mass_tx="5"
+		build_points_per_damage_taken="1" unit_to_make_with_build_points_from_damage_taken="PhantasmalDecoyFrigate"
+		voice_group="Starship"
+		ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+		ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+		cannot_target_or_alert_ai_reinforcement_spots="true"
+		priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+		>
+
+		<fleet_membership
+				name="OtherHackables"
+				ship_cap_group="Strike"
+				weight="50"
+				cap="3"
+				/>
+		<fleet_membership
+				name="AddedToFleet_MinorFaction"
+				ship_cap_group="Strike"
+				weight="50"
+				cap="3"
+				faction="Reclaimers"
+				/>
+
+		<system name="W1" display_name="能量鱼叉"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="200" range="ExtremelyHigh" shot_speed="VeryFast" rate_of_fire="Normal" 
+				shots_per_salvo="10" shots_per_target="10" fires_salvos_sequentially="true"
+				shot_type_data="HeavyBeamInvisible" cloaking_percent_loss_from_firing="0.1"
+				beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_YellowBright"
+				hits_all_intersecting_targets="false"				
+				shots_detonate_immediately="true"			
+				base_knockback_per_shot="-4000" knockback_to_ships_mass_tx_less_than="13"
+				>
+
+			<outgoing_damage_modifier
+					based_on="TargetMobility"
+					comparison_type="Equals"
+					compared_to="0"
+					multiplier="0.0"
+					/>
+			<outgoing_damage_modifier
+					based_on="AttackDistance"
+					comparison_type="LessThan"
+					compared_to="6000"
+					multiplier="0.5"
+					/>
+			<outgoing_damage_modifier
+					based_on="TargetHullPercentageMissing"
+					comparison_type="MultiplesOf"
+					compared_to="25"
+					multiplier="1"
+					/>
+		</system>
+
+		<system name="W2" display_name="冲击波"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="200" range="Normal2" shot_speed="VeryFast" rate_of_fire="Devourer" 
+				shots_per_salvo="20" shots_per_target="20" fires_salvos_sequentially="true"
+				shot_type_data="DoubleShot_Green" cloaking_percent_loss_from_firing="0.1"
+				>
+		</system>
+
+		<!-- Because enemy ships with this extreme knockback and wide range of stats affected would be obnoxious -->
+		<ship_class_data can_be_zombified_and_similar="false" />
+
+		<!--
+		<system name="T" display_name="牵引"
+			category="Passive"
+			tractor_range="Tiny3" tractor_count="10" tractor_count_added_per_mark="5" tractor_hits_albedo_less_than="1" tractor_hits_engine_gx_less_than="18" tractor_hits_mass_less_than="20"
+			>
+		</system>
+		-->
+	</entity>
+
+<entity name="CorrosiveWarhead"
+		thematic_groups="Warhead,Reclaimers"
+		special_entity_type="SmallShipNotStackable"
+		visuals="Assets/_DLC2/Warheads/WarheadLightning/WarheadLightning.prefab" visuals_bundle="exp1_the_spire_rises"
+		icon_name="Ships3/WarheadStyle2"
+		icon_overlay=""
+		gimbal_icon_size_multiplier="1"
+		voice_group="Silent"
+		category="Ship"
+		is_strikecraft="true"
+		size_scale="2"
+		visuals_scale_multiplier="2.5"
+		collision_priority="50"
+		display_name="腐蚀弹头"
+		description="引爆这个，看着敌人融化。比普通炸弹更大，波及范围更广。"
+		starting_mark_level="Mark1"
+		tech_upgrades_that_benefit_me="Melee,Alien"
+		cost_for_ai_to_purchase="10"
+		strength_multiplier="0.2"
+		hull_points="6000"
+		shield_points="0"
+		speed="AboveAverage5"
+		metal_cost="8000"
+		energy_consumption="1000"
+		armor_mm="40"
+		albedo="0.7"
+		engine_gx="10"
+		mass_tx="3"
+		ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+		priority_as_ai_target="NormalFleetship"
+		priority_as_frd_target="NormalFleetship"
+		priority_to_protect="Expendable"
+		>
+
+		<ship_class_data can_be_zombified_and_similar="false" />
+
+	<!--
+	<fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="100" cap="6"/>
+	<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="100" cap="6" faction="Reclaimers"/>
+	-->
+
+		<system
+				name="W1"
+				display_name="引爆"
+				category="Weapon"
+				firing_timing="OnlyInRange"
+				damage_per_shot="4000"
+				range="AlmostNone"
+				shot_speed="Instant"
+				rate_of_fire="Devourer"
+				fires_salvos_sequentially="true"
+				shot_type_data="CorrosiveBlast"
+				area_of_effect_size="2400"
+				shots_detonate_immediately="true"
+				maximum_number_of_targets_hit_per_shot="45"
+				only_fires_on_death="true"
+				all_damage_is_corrosive="true"
+				/>
+		<system
+				name="W2"
+				display_name="自毁"
+				category="Weapon"
+				firing_timing="OnlyInRange"
+				damage_per_shot="5"
+				range="AlmostNone"
+				shot_speed="Instant"
+				rate_of_fire="Devourer"
+				shots_detonate_immediately="true"
+				system_is_hidden_for_ui="true"
+				health_change_by_max_health_divided_by_this_per_attack="-1"
+				shot_type_data="MeleeInvisible"
+				added_target_evaluator="Melee"
+				area_of_effect_size="300"
+				/>
+		<system
+				name="U1"
+				display_name="隐形装置"
+				category="Passive"
+				cloaking_points="10"
+				/>
+	</entity>
+
+<!-- Weapon Point Experiment 2 -->
+<!--
+<entity name="AlienCorvetteRocket"
+		copy_from="AutoBomb"
+		display_name="外星火箭"
+		display_name_for_sidebar="外星火箭"
+		multiplier_to_all_scales="0.8"
+		multiplier_to_all_healths="0.8"
+		multiplier_to_all_costs="0.8"
+		gimbal_icon_size_multiplier="0.8"
+		>
+</entity>
+
+<entity name="AlienCorvette"
+		thematic_groups="Strikecraft,Reclaimers"
+		tags="IncludeInReclaimersOutpost"
+		visuals="assets/_finalgamemeshes/fleetships/mlrscorvette/mlrscorvette.prefab"
+		icon_name="Ships1/Corvette" icon_overlay="Overlays1/MegaTurret_MassDriver" gimbal_icon_size_multiplier="1.25"
+		voice_group="MLRS"
+		category="Ship"
+		is_strikecraft="true"
+		size_scale="2.5"
+		visuals_scale_multiplier="10"
+		collision_priority="100"
+		display_name="外星熔毁护卫舰"
+		display_name_for_sidebar="熔毁K"
+		description="这艘外星护卫舰交替攻击，每隔一发射击要么是能量炮要么是火箭。"
+		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Generalist,Alien"
+		cost_for_ai_to_purchase="30" strength_multiplier="1.2"
+		hull_points="3600" shield_points="0" speed="Normal3"
+		metal_cost="3150" energy_consumption="300"
+		armor_mm="70" albedo="0.3" engine_gx="7" mass_tx="0.21"
+		ship_or_structure_explosion_sfx="ShipMidsize_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+		priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+		max_number_of_weapon_points="3"
+		>
+
+		<fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="50" cap="32"/>
+		<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="50" cap="32" faction="Reclaimers"/>
+
+		<system name="W1" display_name="黄金火炮"
+				category="Weapon" 
+				firing_timing="OnlyInRange"
+				damage_per_shot="1000" 
+				range="Planetary" 
+				shot_speed="Instant" 
+				seek_range="AlmostNone"
+				rate_of_fire="Misery" 
+				
+				shots_per_salvo="1"
+				added_shots_per_salvo_per_mark="0"
+				fires_salvos_sequentially="true"
+
+				shots_detonate_immediately="true"
+				beam_length_multiplier="0.8"
+				hits_all_intersecting_targets="true"
+				shot_type_data="HeavyBeamInvisible"
+				beam_weapon_visual_style="Laser_YellowBright"
+
+				number_of_weapon_points_to_gain_on_firing="1"
+				>
+		</system>
+
+		<system name="W2" display_name="绿色火炮"
+				category="Weapon" 
+				firing_timing="OnlyInRange"
+				damage_per_shot="1000" 
+				range="Planetary" 
+				shot_speed="Instant" 
+				seek_range="AlmostNone"
+				rate_of_fire="Misery" 
+				
+				shots_per_salvo="5"
+				added_shots_per_salvo_per_mark="0"
+				fires_salvos_sequentially="true"
+
+				shots_detonate_immediately="true"
+				beam_length_multiplier="0.8"
+				hits_all_intersecting_targets="true"
+				shot_type_data="HeavyBeamInvisible"
+				beam_weapon_visual_style="Laser_Green"
+
+				number_of_weapon_points_to_consume_on_firing="3"
+				>
+		</system>
+</entity>
+-->
+
+<!-- Modular Corvette Experiment -->
+
+<entity name="RedeemerCorvette"
+		thematic_groups="Strikecraft,Reclaimers"
+		tags="IncludeInReclaimersOutpost"
+		visuals="assets/_finalgamemeshes/fleetships/mlrscorvette/mlrscorvette.prefab"
+		icon_name="Ships1/Corvette" icon_overlay="Overlays1/MegaTurret_Beam" gimbal_icon_size_multiplier="1.25"
+		voice_group="MLRS"
+		category="Ship"
+		is_strikecraft="true"
+		size_scale="2.5"
+		visuals_scale_multiplier="10"
+		collision_priority="100"
+		display_name="救赎者护卫舰"
+		display_name_for_sidebar="救赎者K"
+		description="救赎者旨在取代过时的人类护卫舰生产线，融合了外星科技的聚变光束武器。它可以根据情况配备多重打击宽光束或聚焦点光束。"
+		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Medium,Alien"
+		cost_for_ai_to_purchase="40" strength_multiplier="1.2"
+		hull_points="3600" shield_points="0" speed="Normal3"
+		metal_cost="3780" energy_consumption="500"
+		armor_mm="70" albedo="0.3" engine_gx="7" mass_tx="0.21"
+		ship_or_structure_explosion_sfx="ShipMidsize_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+		priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+		
+		module_points_from_start="1"
+		module_points_added_per_mark_level="0"
+		>
+
+		<fleet_membership
+				name="OtherHackables"
+				ship_cap_group="Strike"
+				weight="50"
+				cap="32"
+				/>
+		<fleet_membership
+				name="AddedToFleet_MinorFaction"
+				ship_cap_group="Strike"
+				weight="50"
+				cap="32"
+				faction="Reclaimers"
+				/>
+
+		<system name="W1" display_name="聚变光束扩散器"
+				category="Weapon" 
+				firing_timing="OnlyInRange"
+				damage_per_shot="30" 
+				range="Normal5" 
+				shot_speed="Instant" 
+				seek_range="AlmostNone"
+				rate_of_fire="High" 
+				
+				shots_per_salvo="1"
+				added_shots_per_salvo_per_mark="0"
+				fires_salvos_sequentially="true"
+				hits_all_intersecting_targets="true"
+				maximum_number_of_targets_hit_per_shot="15"
+
+				shots_detonate_immediately="true"
+				beam_length_multiplier="1.0"
+				shot_type_data="HeavyBeamInvisible"
+				beam_weapon_visual_style="Lightning_Gold"
+
+				unique_module_index="0"
+				module_point_cost="1"
+				module_is_enabled_by_default_at_mark_level="1"
+				module_screen_sort_group="0"
+				modular_sidebar_name_prefix=""
+				modular_full_name_prefix=""
+
+				base_percent_damage_bypasses_personal_shields="1.0" 
+				>
+			<outgoing_damage_modifier
+					based_on="mass_tx"
+					comparison_type="AtLeast"
+					compared_to="2"
+					multiplier="2"
+					/>
+		</system>
+
+		<system name="W2" display_name="聚变光束聚焦器"
+				category="Weapon" 
+				firing_timing="OnlyInRange"
+				damage_per_shot="90" 
+				range="Normal5" 
+				shot_speed="Instant" 
+				seek_range="AlmostNone"
+				rate_of_fire="High" 
+				
+				shots_per_salvo="1"
+				added_shots_per_salvo_per_mark="0"
+				fires_salvos_sequentially="true"
+
+				shots_detonate_immediately="true"
+				beam_length_multiplier="1.0"
+				shot_type_data="HeavyBeamInvisible"
+				beam_weapon_visual_style="Lightning_Blue"
+
+				unique_module_index="1"
+				module_point_cost="1"
+				module_is_enabled_by_default_at_mark_level="1"
+				module_screen_sort_group="0"
+				modular_sidebar_name_prefix=""
+				modular_full_name_prefix=""
+
+				base_percent_damage_bypasses_personal_shields="1.0" 
+				>
+			<outgoing_damage_modifier
+					based_on="mass_tx"
+					comparison_type="AtLeast"
+					compared_to="2"
+					multiplier="2"
+					/>
+		</system>
+	</entity>
+
+<entity name="ReparationCorvette_Mine"	display_name="赔偿地雷"
+		thematic_groups="Reclaimers" 
+		display_name_for_sidebar="赔偿地雷" required_expansion_list="2_Zenith_Onslaught"
+		visuals="Assets/_DLC2/Minefields/ProximityMinefield/MinefieldProximity.prefab" visuals_bundle="exp2_zenith_onslaught"
+		size_scale="2.5"
+		visuals_scale_multiplier="0.8"
+		icon_name="Ships1/Minefield" icon_overlay="Overlays1/Minefield_Proximity" 		gimbal_icon_size_multiplier="0.75"  
+		collision_priority="1"
+		special_entity_type="Minefield" category="Ship"
+		description="由你的赔偿护卫舰生产的隐形爆炸物。开火时完全自毁，将伤害扩散到爆炸范围内的所有单位。"
+		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Heavy,Alien"
+		behavior="Stationary"
+		cost_for_ai_to_purchase="100" strength_multiplier="0.1"
+		hull_points="100" shield_points="0" speed="Immobile"
+		metal_cost="0" energy_consumption="0"
+		armor_mm="30" albedo="0.3" mass_tx="0.3"
+		self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="6"
+		always_self_attritions="true"
+		immune_to_swapping_between_fleets="true"
+		voice_group="Silent"
+		fleet_membership="Planetary"
+		ship_or_structure_explosion_sfx="Turret_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+		absolute_max_cap_when_in_fleets="200"
+		priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable"
+		>
+
+	<system name="B4" display_name="引爆"
+			category="Weapon" firing_timing="OnlyInRange" damage_per_shot="630" range="Tiny3" 
+			area_of_effect_size="600" aoe_spreads_damage_among_available_targets="true" maximum_number_of_targets_hit_per_shot="10"
+			shot_speed="Instant" rate_of_fire="Devourer" fires_salvos_sequentially="true"
+			shot_type_data="ExplosiveFlakBurst" cloaking_percent_loss_from_firing="0.05"
+			health_change_by_max_health_divided_by_this_per_attack="-1"
+			>
+		</system>
+	<system name="C" display_name="隐形装置"
+			category="Passive"
+			cloaking_points="2000" cloaking_points_added_per_mark="1000"
+			>
+		</system>
+	</entity>
+
+<entity name="ReparationCorvette_Rocket"	display_name="赔偿火箭"
+		thematic_groups="Reclaimers" 
+		display_name_for_sidebar="赔偿火箭" required_expansion_list="2_Zenith_Onslaught"
+		size_scale="2.5"
+		visuals_scale_multiplier="0.8"
+		visuals="Assets/_FinalGameMeshes/FleetShips/AutoBomb/AutoBomb.prefab" 
+		icon_name="Ships1/AutoBomb" icon_overlay="Overlays1/Drone" 		gimbal_icon_size_multiplier="0.75"  
+		collision_priority="1"
+		special_entity_type="Minefield" category="Ship"
+		description="由你的赔偿护卫舰生产的隐形火箭。开火时完全自毁，将伤害扩散到爆炸范围内的所有单位。"
+		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Heavy,Alien"
+		cost_for_ai_to_purchase="100" strength_multiplier="0.1"
+		hull_points="100" shield_points="0" speed="VeryHigh1"
+		metal_cost="0" energy_consumption="0"
+		armor_mm="30" albedo="0.3" mass_tx="0.3" engine_gx="10"
+		self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="6"
+		always_self_attritions="true"
+		immune_to_swapping_between_fleets="true"
+		voice_group="Silent"
+		fleet_membership="Planetary"
+		ship_or_structure_explosion_sfx="Turret_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+		absolute_max_cap_when_in_fleets="200"
+		priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable"
+		>
+
+	<system name="B4" display_name="引爆"
+			category="Weapon" firing_timing="OnlyInRange" damage_per_shot="315" range="AlmostNone" 
+			area_of_effect_size="600" aoe_spreads_damage_among_available_targets="true" maximum_number_of_targets_hit_per_shot="10"
+			shot_speed="Instant" rate_of_fire="Devourer" fires_salvos_sequentially="true"
+			shot_type_data="ExplosiveFlakBurst" cloaking_percent_loss_from_firing="0.05"
+			health_change_by_max_health_divided_by_this_per_attack="-1"
+			>
+		</system>
+	<system name="C" display_name="隐形装置"
+			category="Passive"
+			cloaking_points="2000" cloaking_points_added_per_mark="1000"
+			>
+		</system>
+	</entity>
+
+<entity name="ReparationCorvette"
+		thematic_groups="Strikecraft,Reclaimers"
+		tags="IncludeInReclaimersOutpost"
+		visuals="assets/_finalgamemeshes/fleetships/mlrscorvette/mlrscorvette.prefab"
+		icon_name="Ships1/Corvette" icon_overlay="Overlays1/MegaTurret_MassDriver" gimbal_icon_size_multiplier="1.25"
+		voice_group="MLRS"
+		category="Ship"
+		is_strikecraft="true"
+		size_scale="2.5"
+		visuals_scale_multiplier="10"
+		collision_priority="100"
+		display_name="赔偿护卫舰"
+		display_name_for_sidebar="赔偿K"
+		description="这艘多功能护卫舰装载了我们几乎不了解的外星科技弹头。这些弹头可以通过中当量火箭或高当量地雷投放。当船体高于中位时使用地雷，受损时切换为火箭。"
+		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Heavy,Alien"
+		cost_for_ai_to_purchase="40" strength_multiplier="1.2"
+		hull_points="3600" shield_points="0" speed="Normal3"
+		metal_cost="3780" energy_consumption="400"
+		armor_mm="70" albedo="0.3" engine_gx="7" mass_tx="0.21"
+		ship_or_structure_explosion_sfx="ShipMidsize_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+		priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+		
+		module_points_from_start="1"
+		module_points_added_per_mark_level="0"
+
+		is_combatant_despite_no_weapons="true"
+		>
+
+		<fleet_membership
+				name="OtherHackables"
+				ship_cap_group="Strike"
+				weight="50"
+				cap="32"
+				/>
+		<fleet_membership
+				name="AddedToFleet_MinorFaction"
+				ship_cap_group="Strike"
+				weight="50"
+				cap="32"
+				faction="Reclaimers"
+				/>
+
+		<system name="W1" display_name="火箭"
+				category="Weapon" 
+				firing_timing="OnlyInRange"
+				damage_per_shot="1" 
+				range="AboveAverage3" 
+				shot_speed="Normal"  
+				seek_range="AlmostNone"
+				rate_of_fire="Normal" 
+				
+				shots_per_salvo="1"
+				added_shots_per_salvo_per_mark="0"
+				fires_salvos_sequentially="true"
+
+				shot_type_data="ReparationCorvette_Rocket"
+
+				unique_module_index="0"
+				module_point_cost="1"
+				module_is_enabled_by_default_at_mark_level="1"
+				module_screen_sort_group="0"
+				modular_sidebar_name_prefix=""
+				modular_full_name_prefix=""
+				>
+		</system>
+
+		<system name="W2" display_name="地雷"
+				category="Weapon" 
+				firing_timing="OnlyInRange"
+				damage_per_shot="1" 
+				range="AlmostNone" 
+				shot_speed="Normal" 
+				seek_range="AlmostNone"
+				rate_of_fire="Normal" 
+				
+				shots_per_salvo="1"
+				added_shots_per_salvo_per_mark="0"
+				fires_salvos_sequentially="true"
+				
+				shot_type_data="ReparationCorvette_Mine"
+
+				unique_module_index="1"
+				module_point_cost="1"
+				module_is_enabled_by_default_at_mark_level="1"
+				module_screen_sort_group="0"
+				modular_sidebar_name_prefix=""
+				modular_full_name_prefix=""
+
+				added_target_evaluator="Melee"
+				>
+		</system>
+	</entity>
+<!--
+    <entity name="ReparationCorvette2"
+		thematic_groups="Strikecraft,Reclaimers"
+		tags="IncludeInReclaimersOutpost"
+		visuals="assets/_finalgamemeshes/fleetships/mlrscorvette/mlrscorvette.prefab"
+		icon_name="Ships1/Corvette" icon_overlay="Overlays1/MegaTurret_MassDriver" gimbal_icon_size_multiplier="1.25"
+		voice_group="MLRS"
+		category="Ship"
+		is_strikecraft="true"
+		size_scale="2.5"
+		visuals_scale_multiplier="10"
+		collision_priority="100"
+		display_name="赔偿护卫舰"
+		display_name_for_sidebar="赔偿K"
+		description="这艘多功能护卫舰装载了我们几乎不了解的外星科技弹头。这些弹头可以通过中当量火箭或高当量地雷投放。当船体高于中位时使用地雷，受损时切换为火箭。"
+		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Heavy,Alien"
+		cost_for_ai_to_purchase="40" strength_multiplier="1.2"
+		hull_points="3600" shield_points="0" speed="Normal3"
+		metal_cost="3780" energy_consumption="400"
+		armor_mm="70" albedo="0.3" engine_gx="7" mass_tx="0.21"
+		ship_or_structure_explosion_sfx="ShipMidsize_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+		priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+		
+		>
+
+		<fleet_membership
+				name="OtherHackables"
+				ship_cap_group="Strike"
+				weight="50"
+				cap="32"
+				/>
+		<fleet_membership
+				name="AddedToFleet_MinorFaction"
+				ship_cap_group="Strike"
+				weight="50"
+				cap="32"
+				faction="Reclaimers"
+				/>
+
+		<system name="W1" display_name="火箭"
+				category="Weapon" 
+				firing_timing="OnlyInRange"
+				damage_per_shot="1" 
+				range="AboveAverage3" 
+				shot_speed="Normal"  
+				seek_range="AlmostNone"
+				rate_of_fire="Normal" 
+				
+				shots_per_salvo="1"
+				added_shots_per_salvo_per_mark="0"
+				fires_salvos_sequentially="true"
+
+				shot_type_data="ReparationCorvette_Rocket"
+				>
+                <outgoing_damage_modifier based_on="MyCurrentHullPercentage" comparison_type="GreaterThan" compared_to="90" multiplier="0" />
+		</system>
+
+		<system name="W2" display_name="地雷"
+				category="Weapon" 
+				firing_timing="OnlyInRange"
+				damage_per_shot="1" 
+				range="AlmostNone" 
+				shot_speed="Normal" 
+				seek_range="AlmostNone"
+				rate_of_fire="Normal" 
+				
+				shots_per_salvo="1"
+				added_shots_per_salvo_per_mark="0"
+				fires_salvos_sequentially="true"
+				
+				shot_type_data="ReparationCorvette_Mine"
+				>
+                <outgoing_damage_modifier based_on="MyCurrentHullPercentage" comparison_type="LessThan" compared_to="90" multiplier="0" />
+		</system>
+	</entity>
+-->
+<!-- Confusion Ward -->
+<!--
+<entity 
+		name="ConfusionWard"
+		tags="ConfusionWard"
+		thematic_groups=""			
+		visuals="Assets/_FinalGameMeshes/AIBuildings/AdvancedStarshipConstructor/AdvancedStarshipConstructor.prefab"
+		icon_name="Ships2/Ward" icon_overlay="Overlays1/Turret_Sniper"
+		category="Ship" is_turret="true"
+		size_scale="1.0"
+		visuals_scale_multiplier="0.5"
+		collision_priority="1"
+		display_name="混乱守卫"
+		display_name_for_sidebar="混乱守卫"
+		description="这个名称错误的守卫实际上会附着在敌舰上，用火力猛击它们，然后跳转到另一艘。"
+		behavior="Stationary"
+		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Alien,Raid"
+		cost_for_ai_to_purchase="1000" strength_multiplier="1"
+		hull_points="6000" shield_points="0" speed="Immobile"
+		metal_cost="1500" energy_consumption="0"
+		armor_mm="30" albedo="0.6" mass_tx="0.21"
+		orbits_parent_at_range="1500" degrees_to_orbit_per_second="6" attempts_to_reach_orbital_point_at_speed="8000"
+		cannot_target_or_alert_ai_reinforcement_spots="true"
+		voice_group="Silent"
+		ship_or_structure_explosion_sfx="Turret_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+		priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable"
+		dies_if_parent_is_dead_or_remains="true"
+		>
+		<system name="Q9" display_name="解离光束"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="200" range="Tiny4" shot_speed="VeryFast" rate_of_fire="Normal" 
+				shots_per_salvo="10" shots_per_target="10" fires_salvos_sequentially="true"
+				shot_type_data="HeavyBeamInvisible" cloaking_percent_loss_from_firing="0.1"
+				beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_PurpleBright"
+				hits_all_intersecting_targets="false"				
+				shots_detonate_immediately="true"			
+				health_change_by_max_health_divided_by_this_per_attack="-3"
+				>
+				<outgoing_damage_modifier based_on="Albedo" comparison_type="AtLeast" compared_to="0.7" multiplier="3" />  
+				<outgoing_damage_modifier based_on="Mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="3" /> 
+		</system>
+</entity>
+-->
+
+<!-- -->
+<!-- Very cheap in metal but low damage and not very durable mostly just spreads metabolism
+before it dies -->
+<entity	name="ReclamationFrigate"
+		tags="IncludeInReclaimersOutpost_ODS,ReclamationFrigateTag"
+		special_entity_type="Frigate"
+		gimbal_icon_size_multiplier="1.25"
+		visuals="assets/_finalgamemeshes/guardians/carrierguardian/carrierguardian.prefab"
+		icon_name="Ships1/Starship_Light"
+		icon_overlay="Overlays1/Turret_Shredder"
+		size_scale="3.1"
+		visuals_scale_multiplier="4.5"
+		category="Ship"
+		y_offset_of_icon="16"
+		collision_priority="400"
+		display_name="回收护卫舰"
+		display_name_for_sidebar="回收FFL"
+		description="这艘护卫舰轻量化且金属成本几乎为零。其代谢武器在中距离攻击敌人，提升你在战斗中及之后的金属维持能力。"
+		starting_mark_level="Mark1"
+		cost_for_ai_to_purchase="400"
+		voice_group="Starship"
+		ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+		ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+		priority_as_ai_target="NormalStarship"
+		priority_as_frd_target="NormalStarship"
+		priority_to_protect="Expendable"
+		hull_points="84000"
+		shield_points="42000"
+		speed="AboveAverage3"
+		metal_cost="10000"
+		armor_mm="50"
+		engine_gx="18"
+		albedo="0.6"
+		mass_tx="4"
+		energy_consumption="2500"
+		tech_upgrades_that_benefit_me="Sentries"
+		is_blocked_from_dss_grant_to_Battlestations_and_citadels="true"
+		build_sidebar_categories_i_am_part_of="StationKeepers"
+        behavior="Attacker_Full"
+		fleet_membership="Planetary"
+		destroys_self_until_not_over_ship_cap_if_planetary_command="true"
+		>
+
+		<fleet_membership
+			name="AddedToFleet_MinorFaction"
+			ship_cap_group="Strike"
+			weight="200"
+			cap="10"
+			faction="Reclaimers"
+			/>
+		
+	<metal_flow
+			purpose="SelfConstruction"
+			throughput="750"
+			/>
+
+	<!-- assault frigate's point defense weapon
+but only a fraction the damage
+plus metabolism -->
+	<system
+			name="W1"
+			display_name="点防御"
+			category="Weapon"
+			firing_timing="OnlyInRange"
+			damage_per_shot="70"
+			range="Normal1"
+			shot_speed="Normal"
+			rate_of_fire="High"
+			fires_salvos_sequentially="false"
+			shots_per_salvo="8"
+			added_shots_per_salvo_per_mark="2"
+			shot_type_data="ArmorPiercingShell"
+			>
+		<death_effect_damage
+				type="Metabolization"
+				tier_name="SupportWithoutDPS"
+				/>
+	</system>
+</entity>
+
+	<!-- The core stats are same as Watchman Frigate, but more hull -->
+	<!--
+	<entity
+			name="VampireFrigate"
+			tags="IncludeInReclaimersOutpost_ODS"
+			special_entity_type="Frigate"
+			gimbal_icon_size_multiplier="1.25"
+			visuals="assets/_finalgamemeshes/guardians/vampireguardian/vampireguardian.prefab"
+			icon_name="Ships1/Starship_Light"
+			icon_overlay="Overlays1/Turret_Vampire"
+			size_scale="3.1"
+			visuals_scale_multiplier="4.5"
+			category="Ship"
+			y_offset_of_icon="16"
+			collision_priority="400"
+			display_name="吸血鬼护卫舰"
+			display_name_for_sidebar="吸血鬼FFL"
+			description="这艘护卫舰近距离吸引火力，通过其吸血武器维持生存。"
+			starting_mark_level="Mark1"
+			mark_level_scale_style="OriginalWithoutCapRise"
+			voice_group="Starship"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			priority_as_ai_target="NormalStarship"
+			priority_as_frd_target="NormalStarship"
+			priority_to_protect="Expendable"
+			tech_upgrades_that_benefit_me="Sentries"
+			is_blocked_from_dss_grant_to_Battlestations_and_citadels="true"
+			build_sidebar_categories_i_am_part_of="StationKeepers"
+			fleet_membership="Planetary"
+			destroys_self_until_not_over_ship_cap_if_planetary_command="true"
+			cost_for_ai_to_purchase="800"
+			hull_points="90000"
+			shield_points="30000"
+			speed="VeryHigh1"
+			metal_cost="58800"
+			energy_consumption="1000"
+			armor_mm="50"
+			engine_gx="18"
+			albedo="0.4"
+			mass_tx="4"
+			strength_multiplier="1.5"
+			>
+		<fleet_membership
+				name="AddedToCommandStation"
+				ship_cap_group="Strike"
+				weight="200"
+				cap="10"
+				/>
+		<metal_flow
+				purpose="SelfConstruction"
+				throughput="750"
+				/>
+		<system
+				name="W1"
+				display_name="点防御"
+				category="Weapon"
+				firing_timing="OnlyInRange"
+				damage_per_shot="210"
+				range="Tiny4"
+				shot_speed="Normal"
+				rate_of_fire="High"
+				fires_salvos_sequentially="true"
+				shots_per_salvo="8"
+				added_shots_per_salvo_per_mark="2"
+				shot_type_data="ArmorPiercingShell"
+				health_change_per_damage_dealt="1.0"
+				></system>
+	</entity>
+-->
+
+    <entity name="PrototypeBattleCruiser"
+            thematic_groups="Hidden"
+            is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+    		tags=""
+	        special_entity_type="Cruiser"
+			visuals="Assets/_DLC2/Cruisers/StarfishCruiser/StarfishCruiser.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships2/Cruiser" icon_overlay="Overlays2/Cruiser_Starfish"  gimbal_icon_size_multiplier="1.25"
+			voice_group="Saboteur"
+			category="Ship"
+			size_scale="7.5"
+			visuals_scale_multiplier="6"
+			collision_priority="100"
+			uses_large_health_bar="true"
+			display_name="原型战列巡洋舰"
+			display_name_for_sidebar="原型BC" aip_when_granted_by_hack="15"
+			description="这艘独特的舰船是新型外星武器的重要测试平台。其主炮稳定，但当需要击杀特定目标时，启用最合适的模块，尽管没有一个是完全调谐的，也会对本舰造成伤害。"
+			
+            starting_mark_level="Mark1" 
+            tech_upgrades_that_benefit_me="Alien" 
+            tech_upgrade_that_is_used_for_my_direct_science="Direct_Battlestation"
+            is_upgradeable_by_direct_science="true"
+
+			cost_for_ai_to_purchase="1600" strength_multiplier="1"
+			hull_points="1000000" shield_points="0" speed="AboveAverage6"
+			metal_cost="500000" energy_consumption="45000"
+			armor_mm="175" engine_gx="23" albedo="0.4" mass_tx="6.5"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+
+            module_points_from_start="1"
+		    module_points_added_per_mark_level="0"
+			>
+        <fleet_membership
+                name="OtherHackables"
+                ship_cap_group="Strike"
+                weight="50"
+                cap="1"
+                />
+        <fleet_membership
+                name="AddedToFleet_MinorFaction"
+                ship_cap_group="Strike"
+                weight="50"
+                cap="1"
+                faction="Reclaimers"
+                />		
+
+            <system name="W1" display_name="戴森加特林"
+    				category="Weapon" 
+    				firing_timing="OnlyInRange"
+    				damage_per_shot="10" 
+    				range="Small5" 
+    				shot_speed="Normal"  
+    				seek_range="AlmostNone"
+    				rate_of_fire="Normal" 
+
+                    shot_type_data="ArmorPiercingShell"
+
+                    shots_per_salvo="100"
+                    shots_per_target="100"
+                    fires_salvos_sequentially="true"
+                    salvo_shot_max_delay="200"
+                    salvo_shot_min_delay="200"
+                    no_compression="true"
+    				>
+    		</system>
+
+    		<system name="M1" display_name="+反照率调节器"
+    				category="Weapon" 
+    				firing_timing="OnlyInRange"
+    				damage_per_shot="15000" 
+    				range="AboveAverage3" 
+    				shot_speed="Normal" 
+    				seek_range="AlmostNone"
+    				rate_of_fire="Normal" 
+
+                    shot_type_data="ArmorPiercingShell"
+    				
+    				shots_per_salvo="1"
+    				added_shots_per_salvo_per_mark="0"
+    				fires_salvos_sequentially="true"
+
+    				unique_module_index="0"
+    				module_point_cost="1"
+                    min_mark_level_to_function="2"
+    				module_screen_sort_group="0"
+    				modular_sidebar_name_prefix=""
+    				modular_full_name_prefix=""
+    				>
+    		</system>
+
+            <system name="M2" display_name="-反照率调节器"
+    				category="Weapon" 
+    				firing_timing="OnlyInRange"
+    				damage_per_shot="15000" 
+    				range="AboveAverage3" 
+    				shot_speed="Normal" 
+    				seek_range="AlmostNone"
+    				rate_of_fire="Normal" 
+
+                    shot_type_data="ArmorPiercingShell"
+    				
+    				shots_per_salvo="1"
+    				added_shots_per_salvo_per_mark="0"
+    				fires_salvos_sequentially="true"
+
+    				unique_module_index="1"
+    				module_point_cost="1"
+                    min_mark_level_to_function="2"
+    				module_screen_sort_group="0"
+    				modular_sidebar_name_prefix=""
+    				modular_full_name_prefix=""
+    				>
+    		</system>
+
+            <system name="M3" display_name="+质量调节器"
+            category="Weapon" 
+            firing_timing="OnlyInRange"
+            damage_per_shot="15000" 
+            range="AboveAverage3" 
+            shot_speed="Normal" 
+            seek_range="AlmostNone"
+            rate_of_fire="Normal" 
+
+            shot_type_data="ArmorPiercingShell"
+            
+            shots_per_salvo="1"
+            added_shots_per_salvo_per_mark="0"
+            fires_salvos_sequentially="true"
+
+            unique_module_index="2"
+            module_point_cost="1"
+            min_mark_level_to_function="3"
+            module_screen_sort_group="1"
+            modular_sidebar_name_prefix=""
+            modular_full_name_prefix=""
+            >
+    </system>
+
+            <system name="M4" display_name="-质量调节器"
+            category="Weapon" 
+            firing_timing="OnlyInRange"
+            damage_per_shot="15000" 
+            range="AboveAverage3" 
+            shot_speed="Normal" 
+            seek_range="AlmostNone"
+            rate_of_fire="Normal" 
+
+            shot_type_data="ArmorPiercingShell"
+            
+            shots_per_salvo="1"
+            added_shots_per_salvo_per_mark="0"
+            fires_salvos_sequentially="true"
+
+            unique_module_index="3"
+            module_point_cost="1"
+            min_mark_level_to_function="3"
+            module_screen_sort_group="1"
+            modular_sidebar_name_prefix=""
+            modular_full_name_prefix=""
+            >
+    </system>
+
+    	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+
+    <entity name="ProtoWing"
+            thematic_groups="Strikecraft,Reclaimers" 	
+            tags="IncludeInReclaimersOutpost"
+
+            visuals="assets/_finalgamemeshes/fleetships/fighter/fighterold.prefab"
+            icon_overlay="Overlays2/DysonSentinel_Defender"
+            icon_name="Ships1/Fighter"
+            voice_group="Fighter"
+            category="Ship"  is_strikecraft="true"
+            size_scale="0.9"
+            visuals_scale_multiplier="6"
+            gimbal_icon_size_multiplier="0.9"
+            collision_priority="100"
+
+            display_name="P翼"
+            description="这个原型将人类打击机系列与不稳定的外星武器融合。只能发射几发，然后自身变成炸弹。这些攻击还会给敌人留下持续电荷，在摧毁时剧烈爆炸。"
+
+            starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Alien,Expatriate"
+            
+            cost_for_ai_to_purchase="200" 
+            metal_cost="1600" 
+            energy_consumption="800"
+
+            hull_points="4000" 
+            shield_points="0" 
+            speed="AboveAverage3"
+            armor_mm="110" albedo="0.3" engine_gx="12" mass_tx="0.21"
+
+            strength_multiplier="1"
+
+            ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"           
+            priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+            >
+
+            <charge_type id="C1" name="Void Energy" short_name="Void" color="#9132a8" num_start="5" num_max="5" delta_num="1" delta_ms="15000"/>
+
+            <system name="W1" display_name="虚空炮"
+                    category="Weapon" firing_timing="OnlyInRange"
+                    damage_per_shot="160" range="Small1" shot_speed="Claim_VeryTurtle" rate_of_fire="Misery"
+                    shot_type_data="LaserPulse_Pink"
+                    charge="C1-1"
+                    >
+                    <death_effect_damage type="Instability" tier_name="Lots"/>
+            </system>
+
+            <system name="D1" display_name="引爆"
+        			category="Weapon" firing_timing="OnlyInRange"
+        			damage_per_shot="420" range="AlmostNone" seek_range="Normal1" shot_speed="Instant" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+        			shot_type_data="ExplosiveFlakBurst"
+        			area_of_effect_size="600"
+        			maximum_number_of_targets_hit_per_shot="9"		
+        			health_change_by_max_health_divided_by_this_per_attack="-1"
+                     
+                    charge="C1=0"
+        			>
+                    <death_effect_damage type="Instability" tier_name="Lots"/>
+        	</system>
+
+            <fleet_membership
+                name="OtherHackables"
+                ship_cap_group="Strike"
+                weight="100"
+                cap="32"
+                />
+            <fleet_membership
+                name="AddedToFleet_MinorFaction"
+                ship_cap_group="Strike"
+                weight="100"
+                cap="32"
+                faction="Reclaimers"
+                />
+
+    </entity>
+
+    <entity name="Hybrid"
+            thematic_groups="Strikecraft,Reclaimers" 	
+            tags="IncludeInReclaimersOutpost"
+
+            visuals="assets/_finalgamemeshes/fleetships/fighter/fighterold.prefab"
+            icon_overlay=""
+            icon_name="Ships1/EtherJet"
+            voice_group="Fighter"
+            category="Ship"  is_strikecraft="true"
+            size_scale="0.9"
+            visuals_scale_multiplier="6"
+            gimbal_icon_size_multiplier="1.2"
+            collision_priority="100"
+
+            display_name="混合体"
+            description="受损时在不错距离外狙击。一旦完全修复，就冲入使用其高得多的伤害火炮。"
+
+            starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Alien,Expatriate"
+            
+            cost_for_ai_to_purchase="200" 
+            metal_cost="2000" 
+            energy_consumption="800"
+
+            hull_points="4000" 
+            shield_points="0" 
+
+            speed="AboveAverage3"
+            armor_mm="110" albedo="0.3" engine_gx="12" mass_tx="0.21"
+
+            strength_multiplier="1"
+
+            ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"           
+            priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+
+            per_second_custom_logic_dll="Reclaimers"
+			per_second_custom_logic_type="Reclaimers.Claim_SafetyFirst_CustomLogic"
+            >
+
+            <system name="W1" display_name="火炮"
+                    category="Weapon" firing_timing="OnlyInRange"
+                    damage_per_shot="60" range="Small5" shot_speed="Normal" rate_of_fire="Low"
+                    shot_type_data="NecroticRay"
+                    shots_per_salvo="5"
+                    shots_per_target="5"
+                    fires_salvos_sequentially="true"
+                    salvo_shot_max_delay="200"
+                    salvo_shot_min_delay="200"
+                    no_compression="true"
+                    >
+            </system>
+
+            <system name="W2" display_name="狙击"
+        			category="Weapon" firing_timing="OnlyInRange"
+        			damage_per_shot="60" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Low"
+        			shot_type_data="NecroticRay"
+
+                    health_change_by_max_health_divided_by_this_per_attack="5"
+        			>
+        	</system>
+
+            <fleet_membership
+                name="OtherHackables"
+                ship_cap_group="Strike"
+                weight="100"
+                cap="32"
+                />
+            <fleet_membership
+                name="AddedToFleet_MinorFaction"
+                ship_cap_group="Strike"
+                weight="100"
+                cap="32"
+                faction="Reclaimers"
+                />
+
+    </entity>
+
+    <entity name="IWing"
+        thematic_groups="Hidden" 	
+        tags=""
+        is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+
+        visuals="assets/_finalgamemeshes/fleetships/fighter/fighterold.prefab"
+        icon_overlay="Overlays1/AIEye_PlasmaAlerted"
+        icon_name="Ships1/Fighter"
+        voice_group="Fighter"
+        category="Ship"  is_strikecraft="true"
+        size_scale="0.9"
+        visuals_scale_multiplier="6"
+        gimbal_icon_size_multiplier="1.0"
+        collision_priority="100"
+
+        display_name="I翼"
+        description="使被击中的舰船变得不稳定。"
+
+        starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Alien"
+        
+        cost_for_ai_to_purchase="200" 
+        metal_cost="4000" 
+        energy_consumption="400"
+
+        hull_points="4000" 
+
+        shield_points="0" 
+        speed="AboveAverage3"
+        armor_mm="110" albedo="0.3" engine_gx="12" mass_tx="0.21"
+
+        strength_multiplier="1"
+
+        ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+        ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"           
+        priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+    >
+
+    <system name="W1" display_name="射击"
+            category="Weapon" firing_timing="OnlyInRange"
+            damage_per_shot="186" range="Normal4" shot_speed="Claim_VeryTurtle" rate_of_fire="Normal" fires_salvos_sequentially="true"
+            shot_type_data="LaserPulse_Pink"
+            shots_per_salvo="1"
+            >
+            <death_effect_damage type="Instability" tier_name="Normal"/>
+    </system>
+
+    <fleet_membership
+        name="OtherHackables"
+        ship_cap_group="Strike"
+        weight="50"
+        cap="32"
+        />
+    <fleet_membership
+        name="AddedToFleet_MinorFaction"
+        ship_cap_group="Strike"
+        weight="50"
+        cap="32"
+        faction="Reclaimers"
+        />
+
+    </entity>
+
+    <entity name="UnstableExplosion"
+        category="NaturalObject" 
+        special_entity_type="None" 
+        
+        display_name="不稳定爆炸" 
+        description="受到不稳定性影响的舰船死亡时，在区域内造成伤害的爆炸。"
+
+        visuals="assets/arcenbundle/other/wormhole.prefab"
+        ship_skips_traditional_rendering="true"
+
+        size_scale="0.01" 
+        gimbal_name_extra_offset_y="0" 
+        gimbal_name_text_size="1.2" 
+        y_offset_of_icon="100" 
+
+        custom_type="CustomEntityType_UnstableExplosion"
+
+        custom_line_type="Lightning_Purple"
+        custom_radius="900"
+        custom_jitter_min="200"
+        custom_jitter_max="400"
+        custom_delay_min="10"
+        custom_delay_max="50"
+        custom_pfx_type="Instability"
+    />
+
+    <entity name="ChaosWing"
+        thematic_groups="Hidden" 	
+        tags=""
+        is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+
+        visuals="assets/_finalgamemeshes/fleetships/fighter/fighterold.prefab"
+        icon_overlay="Overlays1/AIEye_PlasmaAlerted"
+        icon_name="Ships1/Fighter"
+        voice_group="Fighter"
+        category="Ship"  is_strikecraft="true"
+        size_scale="0.9"
+        visuals_scale_multiplier="6"
+        gimbal_icon_size_multiplier="1.0"
+        collision_priority="100"
+
+        display_name="混沌之翼"
+        description="用武器传播混沌腐蚀的诅咒。"
+
+        starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Alien"
+        
+        cost_for_ai_to_purchase="200" 
+        metal_cost="4000" 
+        energy_consumption="400"
+
+        hull_points="4000" 
+
+        shield_points="0" 
+        speed="AboveAverage3"
+        armor_mm="110" albedo="0.3" engine_gx="12" mass_tx="0.21"
+
+        strength_multiplier="1"
+
+        ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+        ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"           
+        priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+    >
+
+    <system name="V1" display_name="混沌弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="186" range="Normal6" shot_speed="Fast" rate_of_fire="Normal" fires_salvos_sequentially="true"
+				shot_type_data="LaserPulse_RedLevel3"				
+				>
+                <death_effect_damage type="Chaos" tier_name="Normal"/>
+	</system>
+
+    <fleet_membership
+        name="OtherHackables"
+        ship_cap_group="Strike"
+        weight="50"
+        cap="32"
+        />
+    <fleet_membership
+        name="AddedToFleet_MinorFaction"
+        ship_cap_group="Strike"
+        weight="50"
+        cap="32"
+        faction="Reclaimers"
+        />
+
+    </entity>
+
+    <entity name="FleetSupportFrigate"
+            thematic_groups="Hidden"	
+    		special_entity_type="Frigate" 
+            tags=""
+            is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+
+            visuals_bundle="exp3_neinzul_abyss"
+            visuals="Assets/_DLC3/Frigates/PugilistFFH/PugilistFFH.prefab"
+            icon_overlay="Overlays2/NecropolisDefensive"
+            icon_name="Ships1/Starship"
+            voice_group="Starship"
+            category="Ship"
+            size_scale="4.5"
+            visuals_scale_multiplier="5"
+            gimbal_icon_size_multiplier="1.35"
+            collision_priority="600"
+
+            display_name="舰队支援护卫舰"
+            display_name_for_sidebar="舰队支援FFH"
+            description="牵引受损的护卫舰进行维修。"
+
+            starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Alien"
+            
+            cost_for_ai_to_purchase="4800" 
+            metal_cost="400000" 
+            energy_consumption="12000"
+
+            hull_points="126000" shield_points="52500"
+            speed="BelowAverage1"
+
+            armor_mm="120" engine_gx="12" albedo="0.5" mass_tx="6"
+
+            strength_multiplier="1"
+
+            ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+    		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+    		ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+    		priority_as_ai_target="NotDangerous" priority_as_frd_target="NotDangerous" priority_to_protect="SlightlyLessExpendable"
+
+            per_second_custom_logic_dll="Reclaimers"
+            per_second_custom_logic_type="Reclaimers.Claim_FleetSupport_CustomLogic"
+
+            description_appender_dll="Reclaimers"
+            description_appender_type="Reclaimers.Claim_FleetSupport_CustomLogic"
+
+            is_combatant_despite_no_weapons="true"
+            >
+
+            <fleet_membership
+                name="OtherHackables"
+                ship_cap_group="Strike"
+                weight="50"
+                cap="3"
+                />
+            <fleet_membership
+                name="AddedToFleet_MinorFaction"
+                ship_cap_group="Strike"
+                weight="50"
+                cap="3"
+                faction="Reclaimers"
+                />
+
+    </entity>
+
+</root>

@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <journal name="TSR_Spire_CampaignStartMessage" sidebar_text="{FactionColor}尖塔：&lt;/color&gt; 异常读数" can_record_another_copy_if_already_recorded_in_this_campaign="false"
+    text_replacement_related_faction_color="true"
+    text_replacement_related_player_name="true"
+    chat_text=""
+    text_replacement_related_planet="true"
+    is_partial_record="true" 
+    full_text="发件人：首席通信官德米特里·罗森鲍姆
+通信部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+我们检测到亚空间频段中有一些异常能量读数。我们应该密切关注异常现象和意外事件。有什么大事要来了。" />
+
+
+  <journal name="TSR_Spire_RelicSpawn_1" sidebar_text="{FactionColor}尖塔：&lt;/color&gt; 信号已检测到" can_record_another_copy_if_already_recorded_in_this_campaign="false"
+    text_replacement_related_faction_color="true"
+    text_replacement_related_player_name="true"
+    chat_text="亚空间信号已检测到"
+    text_replacement_related_planet="true"
+    is_partial_record="true" 
+    full_text="发件人：首席通信官德米特里·罗森鲍姆
+通信部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+在最近一次扫描人工智能跃迁网格变化的过程中，我们的人员在 {PlanetName} 上检测到了一个异常的亚空间信号。进一步分析确认我们对类似现象没有任何记录。它似乎是由某种外星遗物产生的。
+
+我们应该考虑派遣一艘旗舰去研究这个遗物；我们的入侵界面应该能让我们更清楚地理解它。扫描还显示该区域的人工智能跃迁活动增加。虽然本实验室不能提出军事建议，但为了我们团队的安全，我个人请求你带上一根非常大的棍棒。
+
+我们还怀疑这次入侵后将没有回头路。我建议准备防守我们的行星，因为人工智能在此之后将高度意识到我们的存在。" />
+
+  <journal name="TSR_Spire_FirstRelicFound" sidebar_text="{FactionColor}尖塔：&lt;/color&gt; 首个遗物已发现"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+           text_replacement_related_player_name="true"
+           chat_text="遗物已发现"
+           text_replacement_related_planet="true"
+           is_partial_record="true" 
+    full_text="发件人：首席通信官德米特里·罗森鲍姆
+通信部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+这……是值得纪念的一天。假设我们能活下来。我们在 {PlanetName} 上找到了强大能量信号的来源。这个遗物似乎是一艘外星星际飞船的能量核心，一艘由未知外星种族驾驶的飞船。它似乎在我们的现实之外相位隐藏，直到我们的扫描仪触发了某种反应。虽然飞船本身只有微小的碎片幸存下来，但一部分船员和基本的推进能力仍然完好。
+
+我们之前与天顶以及其他种族的接触使语言处理至少成为可能，但我们仍在努力让这些翻译器做除了吐出胡言乱语之外的事情。撇开胡言乱语不谈，我们已经能够确定他们正在逃离人工智能，并希望我们营救他们。我们只能假设这意味着要带他们到一个安全的行星，在那里我们可以保护他们免受人工智能的伤害。考虑到那个核心中所展现的纯粹力量水平，这个新种族显然有能力变得危险。是对我们还是对人工智能，还有待确定。这是否是个好主意，由你来决定。无论如何，外星飞船的残骸将听命于你的指挥。
+
+从当地人工智能跃迁活动的情况来看，我们最好赶紧行动！" />
+
+  <journal name="TSR_Spire_NumCities_1" sidebar_text="{FactionColor}尖塔：&lt;/color&gt; 第一座城市已建成"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+           text_replacement_related_player_name="true"
+           chat_text="尖塔首都已建成"
+           text_replacement_related_planet="true"
+           is_partial_record="true" 
+    full_text="发件人：莱谢克·贝德诺兹博士
+尖塔研究与通信部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+我们已经克服了与外星难民的大部分基本交流障碍。他们自称尖塔。他们不太爱说话，但他们很感激有一个地方可以在 {PlanetName} 上重建他们的银河首都。
+
+另外，他们是石头。
+
+呃，这样说也许不太外交。换种说法：他们的身体是水晶结构。成分未知，原因你可以推断。他们在我们的银河系建造了一个新的基地，并主动提出要建造一些他们称之为"小型飞行器"的东西来帮助我们。我们不确定翻译器是否仍然有问题，但他们传输的设计远非小型。
+
+我们不确定他们之前是否一直在研究我们，但他们已经建造了一些功能类似但远比我们的旗舰强大的东西。我们相信这些"小型飞行器"将与这个旗舰关联，类似于我们自己的小型战机和护卫舰与我们的旗舰关联，尽管它们似乎与自己的城市核心及相关旗舰联系更紧密。我们不会像在这些舰队之间转移舰船那样灵活，但它们拥有的纯粹火力至少弥补了这一不便的一部分。
+
+最后，他们似乎正在扫描亚空间以寻找其他难民。或者也许是其他神器。我们真的搞不清楚是哪个。无论如何，他们似乎是我们找出正在发生的事情的最佳线索……如果我们想知道的话。" />
+
+    <journal name="TSR_Spire_SimCityOverview" sidebar_text="{FactionColor}尖塔：&lt;/color&gt; 城市机制"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+           text_replacement_related_player_name="true"
+           text_replacement_related_planet="true"
+           is_partial_record="true" 
+    full_text="发件人：莱谢克·贝德诺兹博士
+尖塔研究与通信部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+我们开始理解尖塔城市的工作原理了。每座城市都有几个"外壳"来支持建造额外的尖塔建筑。这些建筑种类繁多；有些具有军事用途，另一些的功能似乎类似于我们自己的金属提取器和发电机。我们仍在研究它们各自的功能。
+
+需要注意的是，尖塔必须在城市中建造造船厂，才能在该城市生产其进攻性舰船。造船厂可以为任何附近的尖塔舰队建造舰船，即使那些舰队在它们自己的母城没有造船厂。
+
+它们的城市似乎拥有共鸣发生器，当更多此类发生器存在时工作效率更高。这表明如果我们能帮助建造更多的尖塔城市，它们现有的城市可能会"升级"。更高级的城市将允许更多的外壳和更强大的舰船和建筑。
+
+悬停在尖塔城市上将告诉你需要满足哪些要求才能升级该城市的等级。当城市准备好升级时，你会看到通知；与通知交互将使城市升级。
+
+尖塔从其银河首都开始拥有一艘旗舰，并在其第三和第五座城市时获得额外的旗舰。所有其他城市将增援那些舰队。当一个舰队被城市增援时，在增援城市中建造的建筑将影响该舰队。这给你提供了 3 个舰队，每个舰队都可以变得非常强大。尖塔可以选择增援哪个舰队（参见舰队菜单）。
+
+最后，还有一件事。尖塔城市不能靠得太近；你必须将它们建在至少相隔一跳的位置。我们不知道原因，但这是他们指示我们做的。我相信他们有他们的理由。他们也不想与人工智能堡垒或母星相邻，这我完全理解。" />
+
+  <journal name="TSR_Spire_RelicSpawn_2" sidebar_text="{FactionColor}尖塔：&lt;/color&gt; 第二个遗物已检测到" can_record_another_copy_if_already_recorded_in_this_campaign="false"
+    text_replacement_related_faction_color="true"
+    text_replacement_related_player_name="true"
+    chat_text="第二个亚空间信号已检测到"
+    text_replacement_related_planet="true"
+    is_partial_record="true" 
+    full_text="发件人：莱谢克·贝德诺兹博士
+尖塔研究与通信部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+我们在理解尖塔方面取得了一些进展。以下是尝试转写的信息：
+
+发件人：（尝试转写）恩特尔玛伦·埃克萨隆
+{FactionColor}
+感激。
+惊讶。
+怀疑。
+耐心。
+重建。
+可以帮忙。很小。
+在寻找。其他的。
+&lt;/color&gt;
+
+我们在理解尖塔的通信方面取得了一些进展；似乎埃克萨隆是他们的领袖或发言人。据我们所知，他们原本没有指望人类的帮助。我们可能对他们一无所知，但他们显然听说过很多关于我们的事。而且不是正面意义上的。尽管如此，他们愿意将我们最近营救他们的行为与我们可疑的声誉进行权衡，并且非常感激我们允许他们的一小批难民在这个星系定居。
+
+看来他们在银河系中检测到了一个新的遗物，里面有更多的难民，并请求我们派遣一支舰队去回收该物体。我们向他们询问了一些细节。鉴于目前的情况，他们并不避讳。
+
+这些遗物似乎是强大的能量碎片，每个都可以为一座城市提供能量。我们不太确定这些碎片以前是为什提供能量的，但尖塔显然现在可以围绕它们建造城市。
+
+我们想要他们扩张吗？指挥官，这由你来决定。但到目前为止，他们的行为是光荣的。
+
+最后一点：他们警告我们，人工智能已经意识到他们的存在，而且尖塔和人工智能有着……复杂的历史。如果我们继续走这条路，我们应该为强大的攻击做好准备。" />
+
+    <journal name="TSR_Spire_NumCities_2" sidebar_text="{FactionColor}尖塔：&lt;/color&gt; 第二座城市已建成"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+           text_replacement_related_player_name="true"
+           chat_text="第二座尖塔城市已建成"
+           text_replacement_related_planet="true"
+           is_partial_record="true" 
+    full_text="发件人：莱谢克·贝德诺兹博士
+尖塔研究与通信部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+很难从一块石头上读出情绪，但难民们正在欢庆。另外，这座城市和首都之间正在建立一种迷人的共鸣；就像这座新城市在增援之前首都的能量一样。" />
+
+    <journal name="TSR_Spire_NumCities_3" sidebar_text="{FactionColor}尖塔：&lt;/color&gt; 第三座城市已建成"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+           text_replacement_related_player_name="true"
+           chat_text="第三座尖塔城市已建成"
+           text_replacement_related_planet="true"
+           is_partial_record="true" 
+    full_text="发件人：莱谢克·贝德诺兹博士
+尖塔研究与通信部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+尖塔已经建造了他们的第二艘旗舰，真是一艘美丽的舰船。他们似乎散发着骄傲。这将为我们的部队在保卫帝国方面提供更大的灵活性。" />
+
+    <journal name="TSR_Spire_NumCities_5" sidebar_text="{FactionColor}尖塔：&lt;/color&gt; 第五座城市已建成"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+           text_replacement_related_player_name="true"
+           chat_text="第五座尖塔城市已建成"
+           text_replacement_related_planet="true"
+           is_partial_record="true" 
+    full_text="发件人：莱谢克·贝德诺兹博士
+尖塔研究与通信部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+尖塔成功建造了他们的第三艘也是最后一艘旗舰。他们似乎散发着决心。" />
+
+  <journal name="TSR_Spire_MarkLevel_2" sidebar_text="{FactionColor}尖塔：&lt;/color&gt; 城市已达 2 级" can_record_another_copy_if_already_recorded_in_this_campaign="false"
+    text_replacement_related_faction_color="true"
+    text_replacement_related_player_name="true"
+    chat_text="一座 {FactionColor}尖塔城市&lt;/color&gt; 已达到 2 级"
+    text_replacement_related_planet="true"
+    is_partial_record="true" 
+    full_text="发件人：恩特尔玛伦·埃克萨隆
+
+致：指挥官 {PlayerName}
+
+{FactionColor}
+感激。
+已经成长。
+可以战斗。一点点。
+必须成长。更多。
+威胁。正在到来。
+道歉。补偿。
+&lt;/color&gt;
+
+发件人：莱谢克·贝德诺兹博士
+尖塔研究与通信部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+自从 {PlanetName} 上的城市开始汲取其他城市的共鸣能量以来，它又开始成长了。他们在枢纽内建造了一些先进的亚空间扫描设备，正在寻找……从我能理解的来看，另一个遗物。我不太确定，但我相信他们发现我们银河系的背景辐射正在干扰他们建造新城市的能力。他们可以建造设施和舰船所需的东西，但他们没有新的遗物就无法实际建造另一个城市枢纽所需的那种能源。
+
+顺便说一句，这正是他们接下来想建造的东西。
+
+明确地说，他们并没有要求任何东西。我们可以继续我们的事务，忘记追踪这些信号。如果我们打算停下来，现在是个好时机。人工智能对尖塔的侵略是显著的，但已经有所稳定。如果尖塔继续成长，我们可能会发现自己陷入一场全面战争的漩涡。" />
+
+  <journal name="TSR_Spire_RelicSpawn_3" sidebar_text="{FactionColor}尖塔：&lt;/color&gt; 第三个遗物已检测到" can_record_another_copy_if_already_recorded_in_this_campaign="false"
+    text_replacement_related_faction_color="true"
+    text_replacement_related_player_name="true"
+    chat_text="第三个亚空间信号已检测到"
+    text_replacement_related_planet="true"
+    is_partial_record="true" 
+    full_text="发件人：恩特尔玛伦·埃克萨隆
+
+致：指挥官 {PlayerName}
+
+{FactionColor}
+恩塞尔-伊缪敏，大地之子。你的（翻译失败：最近似词'公主'）外星生物学。辛勤工作。改善通信。
+我们的感激。不朽。总有一天。或许。债务偿还。
+无法面对机器。还不行。
+它们来了。你知道的。它们来了。为了我们两个。
+需要扩张。更多。
+无法建造。在这里。
+已找到另一个。可以用那个建造。
+我们。听候你的差遣。
+&lt;/color&gt;
+
+发件人：莱谢克·贝德诺兹博士
+尖塔研究与通信部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+虽然基本通信从一开始就成为可能，但这一直……很困难。虽然尖塔之前的信息可能看起来适合一块石头的举止，但我发现他们实际上有着更流畅的思维过程和相互交谈的方式。希望我的努力能继续改善……融洽关系。
+
+无论如何，他们成功找到了另一个遗物，他们认为这将为另一座城市提供能量。这次回收任务可能极其危险，人工智能继续攻击，但希望不断壮大的尖塔舰队能抵消这些额外的挑战。
+
+但请记住，人工智能现在在追捕我们两个。我们学会了如何躲避人工智能，避免激怒它并招致它的愤怒。尖塔似乎没有学到这一课。他们听从我们不必要地挑衅人工智能的意愿，但我不认为我们可以在继续协助尖塔扩张的同时保持低调。
+
+我不必告诉你这可能是多么荒谬地危险。" />
+
+      <journal name="TSR_Spire_MarkLevel_3" sidebar_text="{FactionColor}尖塔：&lt;/color&gt; 城市已达 3 级" can_record_another_copy_if_already_recorded_in_this_campaign="false"
+    text_replacement_related_faction_color="true"
+    text_replacement_related_player_name="true"
+    chat_text="一座 {FactionColor}尖塔城市&lt;/color&gt; 已达到 3 级"
+    text_replacement_related_planet="true"
+    is_partial_record="true" 
+    full_text="发件人：恩特尔玛伦·埃克萨隆
+
+致：指挥官 {PlayerName}
+
+{FactionColor}
+恩塞尔-伊鲁明，大地之子。愿我们都能幸存。
+仍然受阻。糟糕的振荡。也许那些故事……
+没关系。我们必须用现有资源工作。
+另一个遗物。更强的城市。
+但受恩于你。你说打，我们就打。你说留，我们就留。机器。还未完全（翻译失败，最佳猜测：'觉醒'）。
+&lt;/color&gt;
+
+发件人：莱谢克·贝德诺兹博士
+尖塔研究与通信部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+这些更强的尖塔城市使他们能够创造一些毁灭性的武器。这些战列舰是工程学的奇迹，给了我们对抗人工智能的真正机会。
+" />
+    <journal name="TSR_Spire_MarkLevel_4" sidebar_text="{FactionColor}尖塔：&lt;/color&gt; 城市已达 4 级" can_record_another_copy_if_already_recorded_in_this_campaign="false"
+    text_replacement_related_faction_color="true"
+    text_replacement_related_player_name="true"
+    chat_text="一座 {FactionColor}尖塔城市&lt;/color&gt; 已达到 4 级"
+    text_replacement_related_planet="true"
+    is_partial_record="true" 
+    full_text="发件人：埃克萨隆七世
+
+致：指挥官 {PlayerName}
+
+{FactionColor}
+恩塞尔-伊鲁明，大地之子。胜利越来越近。或者说，胜利的可能性。
+是的，没错。我是尖塔的皇帝；我和少数几人逃脱了人工智能对母星的攻击。并非有意欺骗，只是没有更早透露。
+人工智能摧毁了我们的中央收发器，将我的舰队困在无尽裂缝中。我们可以带它们回家。
+再强一点就能重建收发器。
+&lt;/color&gt;
+
+发件人：莱谢克·贝德诺兹博士
+尖塔研究与通信部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官！
+
+这太了不起了！我们非常幸运地营救了尖塔的领袖。如果我们建造他们要求的收发器，我们可以将完整的帝国尖塔舰队带进来对抗人工智能。不过，如果我们这样做，应该预期会有重大的人工智能回应。
+看来我们只需要帮助他们再升级一次他们最强的城市，然后我们就可以营救尖塔舰队了！" />
+
+    <journal name="TSR_Spire_MarkLevel_5" sidebar_text="{FactionColor}尖塔：&lt;/color&gt; 城市已达 5 级" can_record_another_copy_if_already_recorded_in_this_campaign="false"
+    text_replacement_related_faction_color="true"
+    text_replacement_related_player_name="true"
+    chat_text="一座 {FactionColor}尖塔城市&lt;/color&gt; 已达到 5 级"
+    text_replacement_related_planet="true"
+    is_partial_record="true" 
+    full_text="发件人：埃克萨隆七世
+
+致：指挥官 {PlayerName}
+
+{FactionColor}
+恩塞尔-伊鲁明，大地之子。
+我的祝贺。收发器可以重建。我感谢你。我想对外人来说并不明显，但我们所建造的是从我们自己建造的。不完全相同类型，但属于尖塔的，就是尖塔。{PlanetName} 的城市再次唱响了它的歌。
+
+有了这个，我们可以再次连接星系，星与星之间将彼此歌唱。这对人类这样的种族来说可能很难理解。没关系，我们都明白一个道理：要么我们摧毁机器，要么机器摧毁我们。
+
+记住风险。机器会来的，比之前糟糕得多。我们仍然可以选择用附近的部队击败机器，而不是召唤帝国舰队来参加这场战斗。
+
+选择权在你。&lt;/color&gt;" />
+
+    <journal name="TSR_Spire_TranscieverStartedBuilding" sidebar_text="{FactionColor}尖塔：&lt;/color&gt; 收发器开始建造" can_record_another_copy_if_already_recorded_in_this_campaign="false"
+    text_replacement_related_faction_color="true"
+    text_replacement_related_player_name="true"
+    chat_text="一座 {FactionColor}尖塔城市&lt;/color&gt; 收发器开始建造"
+    text_replacement_related_planet="true"
+    is_partial_record="true" 
+    full_text="发件人：埃克萨隆七世
+
+致：指挥官 {PlayerName}
+
+{FactionColor}
+恩塞尔-伊鲁明，大地之子。
+感谢你开始走上这条路，承担这个风险。这是我们共同承担的风险。
+机器来了。我准备战斗。&lt;/color&gt;" />
+
+    <journal name="TSR_Spire_ImperialFleetInbound" sidebar_text="{FactionColor}尖塔：&lt;/color&gt; 帝国舰队已召唤" can_record_another_copy_if_already_recorded_in_this_campaign="false"
+    text_replacement_related_faction_color="true"
+    text_replacement_related_player_name="true"
+    chat_text="一座 {FactionColor}尖塔城市&lt;/color&gt; 收发器已完成"
+    text_replacement_related_planet="true"
+    is_partial_record="true" 
+    full_text="发件人：莱谢克·贝德诺兹博士
+尖塔研究与通信部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官！
+
+{PlanetName} 上的河外收发器已经完成！指挥官，我观察天空已经很长时间了，从未见过这样的辐射。
+据尖塔所说，重新建立星际间的通信和运输渠道需要一些时间。在这段时间里，我们处于巨大的危险中，因为人工智能不可能不知道我们在做什么。指挥官，这是一个像火炬一样明显的告密，而人工智能并不愚蠢。
+
+在这个阶段，如果真的到了那一步，我们只需要保护指挥部和收发器本身。无论如何，这场战争应该很快就会结束。" />
+
+    <journal name="TSR_Spire_ImperialFleetArrived" sidebar_text="{FactionColor}尖塔：&lt;/color&gt; 帝国舰队已抵达" can_record_another_copy_if_already_recorded_in_this_campaign="false"
+    text_replacement_related_faction_color="true"
+    text_replacement_related_player_name="true"
+    chat_text="一座 {FactionColor}尖塔城市&lt;/color&gt; 帝国舰队已抵达"
+    text_replacement_related_planet="true"
+    is_partial_record="true" 
+    full_text="发件人：埃克萨隆七世
+
+致：指挥官 {PlayerName}
+
+{FactionColor}
+胜利在望！
+
+我的召唤已经传遍诸个星系。我的臣民前来援助。确实，幸存者比我希望的还要多。我曾担心机器已经扩散得太远，摧毁了太多。
+但还不到休息的时候。我们的舰队将净化这个银河系，但机器仍在战斗。不要放松警惕。&lt;/color&gt;" />
+
+  <journal name="TSR_Spire_AILoreDump" sidebar_text="{FactionColor}尖塔：&lt;/color&gt; 人工智能记录"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+           text_replacement_related_player_name="true"
+           chat_text="人工智能尖塔记录被发现"
+           is_partial_record="true" 
+    full_text="发件人：首席情报官雨果·道森
+情报部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+我们从这个人造基地的残骸中发现了一大量关于尖塔的信息。
+
+在过去几百年中的某个时候，人工智能发现了尖塔，他们已经殖民了几个附近的星系。经过大量准备，人工智能对尖塔母星发动了毁灭性的突袭。尖塔试图使用他们的超跃迁技术将他们的完整帝国舰队跃迁回家以保卫他们的文明中心。然而，在跃迁进行时，人工智能破坏了母星上的收发器。尖塔舰队没有在复仇的烈焰中抵达，而是被困在了跨维空间。尖塔的本地防御不是人工智能的对手。
+
+在绝望中，尖塔发射了一些遗物试图逃脱并找到新的地方重建帝国。逃脱者之一就是帝国尖塔的统治者埃克萨隆七世，这让人工智能非常烦恼。人工智能也非常担心埃克萨隆现在可能已经与我们结盟。
+
+如果我们能让尖塔城市足够强大，我们也许能够建造一个新的超跃迁收发器，使主力帝国舰队能够逃离被困的跨维裂缝。这将使我们能够一劳永逸地终结人工智能。如果人工智能检测到超跃迁能量信号，我们应该预计会有一场真正大规模的人工智能攻击。" />
+
+  <journal name="TSR_SpireRelicTrain" sidebar_text="{FactionColor}尖塔：&lt;/color&gt; 遗物列车已检测到" can_record_another_copy_if_already_recorded_in_this_campaign="false"
+    text_replacement_related_faction_color="true"
+    text_replacement_related_player_name="true"
+    is_partial_record="true" 
+    full_text="发件人：首席情报官雨果·道森
+情报部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+我们从一个人工智能来源捕获到一些尖塔能量。看起来他们在攻击中捕获了一个遗物。我们应该从人工智能那里营救这些尖塔！如果我们不能，人工智能可能会将其转化为一艘强大的舰船来对付我们。" />
+
+  <journal name="TSR_SpireDebris" sidebar_text="{FactionColor}尖塔：&lt;/color&gt; 残骸" can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+           text_replacement_related_player_name="true"
+    is_partial_record="true" 
+    full_text="发件人：首席情报官雨果·道森
+情报部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+似乎并非所有尖塔遗物都保持完好。建造新的尖塔城市使他们能够找到破碎遗物的残骸。这些残骸充满了能量，对于任何能够获取它们的人来说都可能有用。" />
+
+  <journal name="TSR_Spire_FrigateNeuralNet" sidebar_text="{FactionColor}尖塔：&lt;/color&gt; 护卫舰" can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+           text_replacement_related_player_name="true"
+           chat_text="尖塔护卫舰已可用"           
+    is_partial_record="true" 
+    full_text="发件人：莱谢克·贝德诺兹博士
+尖塔研究与通信部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+尖塔建造了他们的第一个护卫舰神经网。附属于这个城市核心的旗舰现在将能够在靠近尖塔造船厂时建造护卫舰，即使是属于另一座城市的造船厂。
+
+虽然尖塔称这些为"玩具"舰船，但这仍然是令人望而生畏的战舰。让我们看看它们能做什么！" />
+
+  <journal name="TSR_Spire_DestroyerNeuralNet" sidebar_text="{FactionColor}尖塔：&lt;/color&gt; 驱逐舰" can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           chat_text="尖塔驱逐舰已可用"           
+           text_replacement_related_faction_color="true"
+           text_replacement_related_player_name="true"
+    is_partial_record="true" 
+    full_text="发件人：莱谢克·贝德诺兹博士
+尖塔研究与通信部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+尖塔建造了他们的第一个驱逐舰神经网。该城市的旗舰现在将能够在靠近尖塔造船厂时建造驱逐舰。
+
+这些舰船配备了对大型单个目标的毁灭性武器，但需要显著更多的资源来建造。" />
+
+      <journal name="TSR_Spire_FallenSpireModules" sidebar_text="{FactionColor}尖塔：&lt;/color&gt; 模块"
+           is_for_the_tips_tab="true"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+           text_replacement_related_player_name="true"
+           is_partial_record="true" 
+    full_text="发件人：莱谢克·贝德诺兹博士
+尖塔研究与通信部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+我们新的尖塔盟友真是太惊人了。显然，它们是在"生长"而不是制造它们的舰船！但这还不是全部。它们甚至能够在战场上修改它们的舰船！由于我们的盟友已决定听从你的指挥，他们允许你对其舰船线进行修改。你会在舰队菜单中找到名为"模块"的界面，位于任何可以被修改的舰船线旁边。如果你选择该选项，你将看到一个模块菜单，可应用于该舰船线。
+
+来自每个行星的每条尖塔舰船线都可以分配一个模板（因此来自他们首都的所有护卫舰将是相同的，等等）。随着尖塔城市的复杂性增长，从它们那里生长出来的舰船能够处理额外和/或更复杂的模块。如果任何舰船有能力安装额外模块，你会在屏幕顶部看到提醒。
+
+请注意，更改模块是非常消耗资源的，舰船在重新配置期间将被禁用。我强烈建议不要在交火中更改模块。" />
+
+	<journal name="TSR_Spire_InfusedEmpireIntroduction" sidebar_text="{FactionColor}灌注帝国：&lt;/color&gt; 概述"
+           is_for_the_tips_tab="true"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+           text_replacement_related_player_name="true"
+        is_partial_record="true" 
+    full_text="发件人：莱谢克·贝德诺兹博士
+尖塔研究与通信部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+当我们在试图逃避和躲藏追捕的人工智能部队时，发现了一群自称尖塔的外星难民。即使我们之前与天顶及其他种族的接触使语言处理至少成为可能，我们仍在努力让这些翻译器做除了吐出难以理解的单字句子之外的事情。撇开语言问题不谈，我们已经能够确定他们也在逃离人工智能。
+
+经过一些尴尬的外交尝试，我们达成协议组建了一个联盟。我们将我们的系统合并在一起，形成了他们喜欢称之为灌注帝国的联盟。他们在靠近我们指挥部的地方建造了一个巨大的尖塔银河首都，并授予我们指挥他们的尖塔舰队的权限。
+
+&lt;b&gt;他们告诉我们，每占领 3 个行星就能让我们建造一座新的尖塔城市。&lt;/b&gt;我们建造的第三和第五座尖塔城市也将为我们提供一个新的尖塔舰队，总共 3 个。当我们问他们为什么有如此具体的规则时，他们提到了关于辐射、能量以及一些我们完全不懂的东西。
+
+他们还告诉我们，没有自己舰队的尖塔城市可以转而增援其他城市的尖塔舰队，以增强那些舰队的力量。这意味着我们将拥有最多 3 个舰队，但每个舰队背后都有多个城市的力量。实际上，这意味着增援城市中的建筑将将其加成授予被增援的舰队。我们可以在舰队菜单中更改一个城市增援哪个舰队。
+
+我们担心，每隔一段时间，人工智能会向我们的"灌注帝国"派遣大型河外打击力量。每当我们建造新城市时，它们可能还会派遣凶残的河外打击力量。至少我们的情报部门是这么认为的。
+
+当我们建造新城市时，尖塔会扫描银河系几分钟，希望能找到一些靠近我们帝国的"尖塔残骸"。如果人工智能没有抢先，我们可以入侵它们以获取资源。
+
+最后，还有一件事。尖塔城市不能靠得太近；你必须将它们建在至少相隔一跳的位置。我们不知道原因，但这是他们指示我们做的。我相信他们有他们的理由。他们也不想与人工智能堡垒或母星相邻，这我完全理解。" />
+
+    <journal name="TSR_Spire_InfusedEmpireModules" sidebar_text="{FactionColor}灌注帝国：&lt;/color&gt; 模块"
+             is_for_the_tips_tab="true"
+             text_replacement_related_faction_color="true"
+           text_replacement_related_player_name="true"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           is_partial_record="true" 
+    full_text="发件人：总工程师加布里埃尔·拉森
+研发部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+虽然我们的舰船是最先进的，但我们剩下的工程师们不明白"休息"这个词的含义。他们想出了即使在建造后也能修改某些舰船的方法。当然不是全部，但有些可以。如果你看到这条消息，那么你至少有了一条可模块化的舰船线。
+
+好吧……舰船线。显然，逐一配置每艘舰船太复杂了，所以工程师们将你限制为一次性将模板应用于整条舰船线。如果你查看舰队管理界面，任何能够修改的舰船线都会有一个标有"模块"的按钮。舰船只能支持一定数量的模块，但更高级别的舰船可能能够支持更多的模块以及更复杂的单个模块。
+
+你应该知道，更换模块会短暂禁用该舰船线，所以不要计划在"战略性撤退"时突然添加更好的护盾来帮忙。
+
+现在，如果你允许，我需要给工程师休息室送几公斤纯咖啡因。"/>
+</root>

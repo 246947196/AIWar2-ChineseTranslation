@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!-- 
+		required_expansion_list="3_The_Neinzul_Abyss"
+		-->
+	<fleet_design name="RPSF_Mobile_Ark_Daybreak"
+        display_name="破晓方舟"
+        description="仅方舟。"
+        design_logic="InitialPlayerFleet" weight="0" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        is_intentionally_empty_beyond_centerpiece="true"
+		required_expansion_list="3_The_Neinzul_Abyss"
+        >
+		<ship_membership name="RPSF_Ark_Daybreak" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	</fleet_design>
+</root>
+

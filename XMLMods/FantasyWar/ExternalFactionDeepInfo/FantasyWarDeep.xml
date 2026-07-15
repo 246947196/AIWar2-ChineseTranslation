@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<item name="FantasyUndeadFactionDeepInfo" dll_name="FantasyWarDeep" type_name="Arcen.AIW2.External.FantasyUndeadFactionDeepInfo" />
+	<item name="FantasyHeavenDeep" dll_name="FantasyWarDeep" type_name="Arcen.AIW2.External.FantasyHeavenDeep" />
+</root>

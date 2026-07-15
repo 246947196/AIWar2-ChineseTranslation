@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <objective_category name="DysonDrillables" display_name="Drillables" sort_priority="30"
+        description="These drillables will give you 坤迪亚." />
+
+  <objective_category name="ArmadaStrategy" display_name="Armada Strategy" sort_priority="13"
+        description="Strategic objectives for your 无敌舰队 — ways to grow your 舰队, gather 泰德瑞安, and press the offensive." />
+
+  <objective_category name="ScourgeInfusedStrategy" display_name="Scourge Strategy" sort_priority="14"
+        description="Strategic objectives for your 天灾 Infused Empire — managing your vassals, gathering 科波麦特, and expanding your power." />
+
+  <objective_category name="DZEmpireStrategy" display_name="Dark Zenith Strategy" sort_priority="15"
+        description="Strategic objectives for your Dark 天顶 Empire — managing your 舰队, economy, and tech tree." />
+
+  <objective_category name="DysonStrategy" display_name="Dyson Strategy" sort_priority="11"
+        description="Strategic objectives for the 戴森 Sidekick and Empire — drilling for 坤迪亚, managing the 收割者 threat, and building your coalition." />
+
+
+</root>

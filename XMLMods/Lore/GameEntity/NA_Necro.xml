@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+    <!-- Skeleton Homes -->
+
+    <entity name="SkeletonWarriorHome" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
+            display_name_for_sidebar="Warrior S. Home"
+	        >
+    </entity>
+        
+    <entity name="SkeletonArcherHome" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
+            display_name_for_sidebar="弓箭手起始家"
+            >
+    </entity>
+	
+    <entity name="SkeletonDetonatorHome" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
+    display_name_for_sidebar="Rogue 起始家"
+            >
+    </entity>
+
+
+    <entity name="SkeletonMageHome" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
+            display_name_for_sidebar="法师起始家"
+            >
+    </entity>
+
+    <entity name="SkeletonLordHome" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
+            display_name_for_sidebar="领主起始家"
+            >
+    </entity>	
+
+    <!-- Wight Bodyguards -->
+
+    <entity name="RavenousWightBodyguard" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss" 
+            display_name_for_sidebar="Ravenous Wight BG"
+            >
+    </entity>
+
+    <entity name="PossessedWightBodyguard" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss" 
+            display_name_for_sidebar="Possessed Wight BG"
+            >
+    </entity>	
+
+
+    <entity name="InfectiousWightBodyguard" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
+            display_name_for_sidebar="Infectious W. BG"
+            >
+    </entity>
+
+    <entity name="SpectralWightBodyguard" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
+            display_name_for_sidebar="Spectral Wight BG"
+            >
+    </entity>
+	
+    <entity name="VengefulWightBodyguard" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
+            display_name_for_sidebar="Vengeful Wight BG"
+            >
+    </entity>
+
+    <!-- Wight Homes -->
+  
+    <entity name="RavenousWightHome" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
+            display_name_for_sidebar="Ravenous W. Home"
+	        >
+    </entity>
+        
+    <entity name="PossessedWightHome" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
+            display_name_for_sidebar="Possessed W. Home"
+            >
+    </entity>
+	
+    <entity name="InfectiousWightHome" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
+            display_name_for_sidebar="Infectious W. Home"
+            >
+    </entity>
+
+    <entity name="SpectralWightHome" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
+            display_name_for_sidebar="Spectral W. Home"
+            >
+    </entity>
+
+    <entity name="VengefulWightHome" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
+            display_name_for_sidebar="Vengeful W. Home"
+            >
+    </entity>	
+		
+    <!-- Other -->
+
+    <entity name="NecromancerMorgue" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
+            display_name="Igor 之家" display_name_for_sidebar="Igor 之家"
+            >
+    </entity>
+
+    <entity name="NecromancerShipyard" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
+            display_name="船坞"
+            >
+    </entity>
+
+    <!-- Mummy Bodyguards -->
+
+    <entity name="RoyalMummyBodyguard" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
+            display_name="Royal Mummy Bodyguard"
+            >
+    </entity>
+
+    <entity name="DecayingMummyBodyguard" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
+            display_name="Decaying Mummy Bodyguard"
+            >
+    </entity>
+
+    <entity name="WitheredMummyBodyguard" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
+            display_name="Withered Mummy Bodyguard"
+            >
+    </entity>
+
+    <!-- Mummy Homes -->
+    <entity name="DecayingMummyHome" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
+            display_name_for_sidebar="Decaying M. Home"
+            >
+    </entity>
+
+    <entity name="WitheredMummyHome" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
+            display_name_for_sidebar="Withered M. Home"
+            >
+    </entity>
+
+    <entity name="RoyalMummyHome" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
+            display_name_for_sidebar="皇家起始家"
+            >
+    </entity>
+
+</root>

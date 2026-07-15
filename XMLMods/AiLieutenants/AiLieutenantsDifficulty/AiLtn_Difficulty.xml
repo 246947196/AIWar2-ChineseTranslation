@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <record name="Lone"
+          display_name="孤狼"
+          description="One officer exists at the start of the game and only one officer is in play at a time."
+          budget_spawnofficer_initialbudget="30"
+          budget_spawnofficer_interval="5"
+          budget_spawnofficer_income="1"
+          budget_spawnofficer_max="1500"
+          budget_personal_income="100"
+          max_officers_alive="1"
+          cost_spawnofficer="30"
+          cost_spawnofficerpermark="250"
+          >
+  </record>
+
+  <record name="Crescendo"
+          display_name="渐强"
+          description="One officer exists at the start of the game but more join over time up to a maximum of three."
+          budget_spawnofficer_initialbudget="30"
+          budget_spawnofficer_interval="5"
+          budget_spawnofficer_income="1"
+          budget_spawnofficer_max="1500"
+          budget_personal_income="100"
+          max_officers_alive="3"
+          cost_spawnofficer="30"
+          cost_spawnofficerpermark="250"
+          >
+  </record>
+
+  <record name="Full"
+          display_name="满"
+          description="All officers exist at the start of the game."
+          budget_spawnofficer_initialbudget="1000"
+          budget_spawnofficer_interval="5"
+          budget_spawnofficer_income="1"
+          budget_spawnofficer_max="1500"
+          budget_personal_income="100"
+          max_officers_alive="3"
+          cost_spawnofficer="30"
+          cost_spawnofficerpermark="250"
+          >
+  </record>
+
+<!--
+        ltn_1_at_time = "30m"
+        ltn_2_at_time = "1hr30m"
+        ltn_3_at_time = "2hr30m"
+
+        ltn_respawn_cooldown_max = "45m"
+        ltn_respawn_cooldown_min = "20m"
+        ltn_respawn_cooldown_reaches_min_at_aip = "200"
+        ltn_respawn_variation = "0.25"
+
+        ltn_mark_up_random_ltn
+        ltn_xp_to_markup = "10000"
+        ltn_xp_gain_base_min = "1"   
+
+        hunter_fleet_starting_budget="8000"
+        hunter_bonus_income_per_minute="750"
+        aip_for_dire_unlock="150"
+
+        warden_fleet_starting_budget="16000"
+        warden_base_strength_cap="51598"
+        warden_strength_cap_per_aip="1631"
+        warden_strength_cap_per_aip_above_200="536"
+        warden_strength_cap_per_aip_above_400="1072"
+        warden_strength_cap_per_aip_above_600="1286"
+        aip_for_top_tier_unlock="200"
+        
+        praetorian_guard_starting_budget="8000"
+        praetorian_guard_base_strength_cap="51258"
+        praetorian_guard_strength_cap_per_aip="1395"
+        praetorian_guard_strength_cap_per_aip_above_200="429"
+        praetorian_guard_strength_cap_per_aip_above_400="816"
+        praetorian_guard_strength_cap_per_aip_above_600="816"
+        praetorian_guard_never_camp_closer_than_x_hops_to_hostile_territory="1"
+        can_use_top_tier_units="true"
+        aip_for_top_tier_unlock="250"
+-->
+
+</root>

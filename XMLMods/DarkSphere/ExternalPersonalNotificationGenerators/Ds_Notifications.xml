@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  
+  <personal_notification_generator name="Ds_Notifications" dll_name="DarkSphere" type_name="DarkSphere.Ds_Notifications" />
+  
+</root>

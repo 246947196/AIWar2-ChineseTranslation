@@ -1,0 +1,364 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<fleet_design name="MarauderUniversalFleet"
+		display_name="掠夺者 Universal Fleet"
+		description="A balanced fleet of an Adaptive 突击者 which can fight both swarms and single targets with its main guns, 酸性轻型护卫舰s which improve each hit's damage and 堡垒重型护卫舰s for durability and croud control."
+		design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+		append_each_ship_description_to_main_description="true"
+	>
+		<ship_membership name="AdaptorRaider_Player" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+		<ship_membership name="AcidicLightCorvette" ship_cap_group="Strike" weight="100" cap="10"/>
+		<ship_membership name="BulkHeavyFrigate" ship_cap_group="Frigate" weight="100" cap="4"/>
+	</fleet_design>
+	
+	<fleet_design name="MarauderUniversalFleetU1"
+		display_name="掠夺者 Universal Fleet +1"
+		description="A balanced fleet of an Adaptive 突击者 which can fight both swarms and single targets with its main guns, 酸性轻型护卫舰s which improve each hit's damage and 堡垒重型护卫舰s for durability and croud control.
+This fleet is full of upgraded ships."
+		design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+		append_each_ship_description_to_main_description="true"
+	>
+		<ship_membership name="StrikeAdaptorRaider_Player" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+		<ship_membership name="StrikeAcidicLightCorvette" ship_cap_group="Strike" weight="100" cap="10"/>
+		<ship_membership name="GuardBulkHeavyFrigate" ship_cap_group="Frigate" weight="100" cap="4"/>
+	</fleet_design>
+	
+	<fleet_design name="MarauderUniversalFleetU2"
+		display_name="掠夺者 Universal Fleet +2"
+		description="A balanced fleet of an Adaptive 突击者 which can fight both swarms and single targets with its main guns, 酸性轻型护卫舰s which improve each hit's damage and 堡垒重型护卫舰s for durability and croud control.
+This fleet is full of faction-upgraded ships."
+		design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+		append_each_ship_description_to_main_description="true"
+	>
+		<ship_membership name="BlitzAdaptorRaider_Player" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+		<ship_membership name="BlitzAcidicLightCorvette" ship_cap_group="Strike" weight="100" cap="10"/>
+		<ship_membership name="ProtectorBulkHeavyFrigate" ship_cap_group="Frigate" weight="100" cap="4"/>
+	</fleet_design>
+	
+
+	<fleet_design name="MarauderStrikerFleet"
+		display_name="掠夺者 Striker Fleet"
+		description="A fast fleet of a Light 突击者 which is fast and hits hard, 飞针拦截机s which are cheap and can quickly swarm out to hit slow, isolated targets and 螫刺轻型护卫舰s which deal with 护盾s and forcefields quickly."
+		design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+		append_each_ship_description_to_main_description="true"
+	>
+		<ship_membership name="LightRaider_Player" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+		<ship_membership name="NeedleInterceptor" ship_cap_group="Strike" weight="100" cap="60"/>
+		<ship_membership name="StingLightFrigate" ship_cap_group="Frigate" weight="100" cap="9"/>
+	</fleet_design>
+
+	<fleet_design name="MarauderStrikerFleetU1"
+		display_name="掠夺者 Striker Fleet +1"
+		description="A fast fleet of a Light 突击者 which is fast and hits hard, 飞针拦截机s which are cheap and can quickly swarm out to hit slow, isolated targets and 螫刺轻型护卫舰s which deal with 护盾s and forcefields quickly.
+This fleet is full of upgraded ships."
+		design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+		append_each_ship_description_to_main_description="true"
+	>
+		<ship_membership name="CloakedLightRaider_Player" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+		<ship_membership name="PlatedNeedleInterceptor" ship_cap_group="Strike" weight="100" cap="60"/>
+		<ship_membership name="CloakedStingLightFrigate" ship_cap_group="Frigate" weight="100" cap="9"/>
+	</fleet_design>
+
+	<fleet_design name="MarauderStrikerFleetU2"
+		display_name="掠夺者 Striker Fleet +2"
+		description="A fast fleet of a Light 突击者 which is fast and hits hard, 飞针拦截机s which are cheap and can quickly swarm out to hit slow, isolated targets and 螫刺轻型护卫舰s which deal with 护盾s and forcefields quickly.
+This fleet is full of faction-upgraded ships."
+		design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+		append_each_ship_description_to_main_description="true"
+	>
+		<ship_membership name="MercurialLightRaider_Player" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+		<ship_membership name="ArmoredNeedleInterceptor" ship_cap_group="Strike" weight="100" cap="60"/>
+		<ship_membership name="MercurialStingLightFrigate" ship_cap_group="Frigate" weight="100" cap="9"/>
+	</fleet_design>
+	
+
+	<fleet_design name="MarauderDroneFleet"
+		display_name="掠夺者 无人机 Fleet"
+		description="A durable fleet of a 无人机 战列舰 which can use stand-off tactics while reinforcing with a wide variety of 无人机, and 狂怒护卫舰s which deal exceptional damage protected behind the 无人机 chaff."
+		design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+		append_each_ship_description_to_main_description="true"
+	>
+		<ship_membership name="DroneBattleship_Player" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+		<ship_membership name="RampageFrigate" ship_cap_group="Frigate" weight="100" cap="6"/>
+	</fleet_design>
+
+	<fleet_design name="MarauderDroneFleetU1"
+		display_name="掠夺者 无人机 Fleet +2"
+		description="A durable fleet of a 无人机 战列舰 which can use stand-off tactics while reinforcing with a wide variety of 无人机, and 狂怒护卫舰s which deal exceptional damage protected behind the 无人机 chaff.
+This fleet is full of upgraded ships."
+		design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+		append_each_ship_description_to_main_description="true"
+	>
+		<ship_membership name="PlatedDroneBattleship_Player" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+		<ship_membership name="KillerRampageFrigate" ship_cap_group="Frigate" weight="100" cap="6"/>
+	</fleet_design>
+
+	<fleet_design name="MarauderDroneFleetU2"
+		display_name="掠夺者 无人机 Fleet +2"
+		description="A durable fleet of a 无人机 战列舰 which can use stand-off tactics while reinforcing with a wide variety of 无人机, and 狂怒护卫舰s which deal exceptional damage protected behind the 无人机 chaff.
+This fleet is full of faction-upgraded ships."
+		design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+		append_each_ship_description_to_main_description="true"
+	>
+		<ship_membership name="ArmoredDroneBattleship_Player" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+		<ship_membership name="DeathRampageFrigate" ship_cap_group="Frigate" weight="100" cap="6"/>
+	</fleet_design>
+	
+
+	<fleet_design name="MarauderHunterFleet"
+		display_name="掠夺者 猎人 Fleet"
+		description="An anti-隐形 fleet of a 快子 突击者 which slowly decloaks stealth enemies on the entire planet, 猎人战斗机s which destroy wounded targets and 迫击炮重型护卫舰s to inflict these wounds at range."
+		design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+		append_each_ship_description_to_main_description="true"
+	>
+		<ship_membership name="TachyonRaider_Player" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+		<ship_membership name="HunterFighter" ship_cap_group="Strike" weight="100" cap="20"/>
+		<ship_membership name="MortarHeavyCorvette" ship_cap_group="Strike" weight="100" cap="5"/>
+	</fleet_design>
+
+	<fleet_design name="MarauderHunterFleetU1"
+		display_name="掠夺者 猎人 Fleet +1"
+		description="An anti-隐形 fleet of a 快子 突击者 which slowly decloaks stealth enemies on the entire planet, 猎人战斗机s which destroy wounded targets and 迫击炮重型护卫舰s to inflict these wounds at range.
+This fleet is full of upgraded ships."
+		design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+		append_each_ship_description_to_main_description="true"
+	>
+		<ship_membership name="RefractingTachyonRaider_Player" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+		<ship_membership name="CloakedHunterFighter" ship_cap_group="Strike" weight="100" cap="20"/>
+		<ship_membership name="GuardMortarHeavyCorvette" ship_cap_group="Strike" weight="100" cap="5"/>
+	</fleet_design>
+
+	<fleet_design name="MarauderHunterFleetU2"
+		display_name="掠夺者 猎人 Fleet +2"
+		description="An anti-隐形 fleet of a 快子 突击者 which slowly decloaks stealth enemies on the entire planet, 猎人战斗机s which destroy wounded targets and 迫击炮重型护卫舰s to inflict these wounds at range.
+This fleet is full of faction-upgraded ships."
+		design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+		append_each_ship_description_to_main_description="true"
+	>
+		<ship_membership name="LucentTachyonRaider_Player" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+		<ship_membership name="MercurialHunterFighter" ship_cap_group="Strike" weight="100" cap="20"/>
+		<ship_membership name="ProtectorMortarHeavyCorvette" ship_cap_group="Strike" weight="100" cap="5"/>
+	</fleet_design>
+	
+
+	<fleet_design name="MarauderAmplifiedFleet"
+		display_name="掠夺者 Amplified Fleet"
+		description="A powerful fleet of an 放大器 战列舰 which boosts all friendly units on the planet with damage and speed including itself, and a 光秀巡洋舰 elevated to incredible power levels by the amplification."
+		design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+		append_each_ship_description_to_main_description="true"
+	>
+		<ship_membership name="AmplifierBattleship_Player" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+		<ship_membership name="LightshowCruiser" ship_cap_group="Frigate" weight="100" cap="1"/>
+	</fleet_design>
+
+	<fleet_design name="MarauderAmplifiedFleetU1"
+		display_name="掠夺者 Amplified Fleet +1"
+		description="A powerful fleet of an 放大器 战列舰 which boosts all friendly units on the planet with damage and speed including itself, and a 光秀巡洋舰 elevated to incredible power levels by the amplification.
+This fleet is full of upgraded ships."
+		design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+		append_each_ship_description_to_main_description="true"
+	>
+		<ship_membership name="GuardAmplifierBattleship_Player" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+		<ship_membership name="KillerLightshowCruiser" ship_cap_group="Frigate" weight="100" cap="1"/>
+	</fleet_design>
+
+	<fleet_design name="MarauderAmplifiedFleetU2"
+		display_name="掠夺者 Amplified Fleet +2"
+		description="A powerful fleet of an 放大器 战列舰 which boosts all friendly units on the planet with damage and speed including itself, and a 光秀巡洋舰 elevated to incredible power levels by the amplification.
+This fleet is full of faction-upgraded ships."
+		design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+		append_each_ship_description_to_main_description="true"
+	>
+		<ship_membership name="ProtectorAmplifierBattleship_Player" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+		<ship_membership name="DeathLightshowCruiser" ship_cap_group="Frigate" weight="100" cap="1"/>
+	</fleet_design>
+	
+
+	<fleet_design name="MarauderIonizedFleet"
+		display_name="掠夺者 Ionized Fleet"
+		description="A counter-heavy fleet of an 电离层 突击者 which quickly dispatches low-albedo ships at long range, 鱼雷轰炸机s that can destroy most larger enemies with a few volleys and 干扰者护卫舰s to protect the fragile ships."
+		design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+		append_each_ship_description_to_main_description="true"
+	>
+		<ship_membership name="IonosphereRaider_Player" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+		<ship_membership name="TorpedoBomber" ship_cap_group="Strike" weight="100" cap="40"/>
+		<ship_membership name="DisrupterCorvette" ship_cap_group="Strike" weight="100" cap="7"/>
+	</fleet_design>
+
+	<fleet_design name="MarauderIonizedFleetU1"
+		display_name="掠夺者 Ionized Fleet +1"
+		description="A counter-heavy fleet of an 电离层 突击者 which quickly dispatches low-albedo ships at long range, 鱼雷轰炸机s that can destroy most larger enemies with a few volleys and 干扰者护卫舰s to protect the fragile ships.
+This fleet is full of upgraded ships."
+		design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+		append_each_ship_description_to_main_description="true"
+	>
+		<ship_membership name="KillerIonosphereRaider_Player" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+		<ship_membership name="StrikeTorpedoBomber" ship_cap_group="Strike" weight="100" cap="40"/>
+		<ship_membership name="PlatedDisrupterCorvette" ship_cap_group="Strike" weight="100" cap="7"/>
+	</fleet_design>
+
+	<fleet_design name="MarauderIonizedFleetU2"
+		display_name="掠夺者 Ionized Fleet +2"
+		description="A counter-heavy fleet of an 电离层 突击者 which quickly dispatches low-albedo ships at long range, 鱼雷轰炸机s that can destroy most larger enemies with a few volleys and 干扰者护卫舰s to protect the fragile ships.
+This fleet is full of faction-upgraded ships."
+		design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+		append_each_ship_description_to_main_description="true"
+	>
+		<ship_membership name="DeathIonosphereRaider_Player" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+		<ship_membership name="BlitzTorpedoBomber" ship_cap_group="Strike" weight="100" cap="40"/>
+		<ship_membership name="ArmoredDisrupterCorvette" ship_cap_group="Strike" weight="100" cap="7"/>
+	</fleet_design>
+
+	
+	<fleet_design name="MarauderSpecOpsFleet"
+		display_name="掠夺者 SpecOps Fleet"
+		description="A special-purpose fleet of an 导弹 潜艇 which demolishes large enemies and can change its state of matter, and Mine Destroyers which spam mines wherever they go, killing all types of enemies alike."
+		design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+		append_each_ship_description_to_main_description="true"
+	>
+		<ship_membership name="TorpedoSubmarine_Player" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+		<ship_membership name="MineDestroyer" ship_cap_group="Frigate" weight="100" cap="2"/>
+	</fleet_design>
+	
+	<fleet_design name="MarauderSpecOpsFleetU1"
+		display_name="掠夺者 SpecOps Fleet +1"
+		description="A special-purpose fleet of an 导弹 潜艇 which demolishes large enemies and can change its state of matter, and Mine Destroyers which spam mines wherever they go, killing all types of enemies alike.
+This fleet is full of upgraded ships."
+		design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+		append_each_ship_description_to_main_description="true"
+	>
+		<ship_membership name="EfficientTorpedoSubmarine_Player" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+		<ship_membership name="EfficientMineDestroyer" ship_cap_group="Frigate" weight="100" cap="2"/>
+	</fleet_design>
+	
+	<fleet_design name="MarauderSpecOpsFleetU2"
+		display_name="掠夺者 SpecOps Fleet +2"
+		description="A special-purpose fleet of an 导弹 潜艇 which demolishes large enemies and can change its state of matter, and Mine Destroyers which spam mines wherever they go, killing all types of enemies alike.
+This fleet is full of faction-upgraded ships."
+		design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+		append_each_ship_description_to_main_description="true"
+	>
+		<ship_membership name="InfusedTorpedoSubmarine_Player" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+		<ship_membership name="InfusedMineDestroyer" ship_cap_group="Frigate" weight="100" cap="2"/>
+	</fleet_design>
+	
+
+	<fleet_design name="MarauderBeamDevestator"
+		display_name="掠夺者 光束 Devestator"
+		description="An overpowered fleet of a 光束 无畏舰 which in itself holds the durabiltiy and firepower of an entire fleet of ships and uses 线圈 Beams and Adaptive 激光 Pulses to deal with large enemies and swarms alike."
+		design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+		append_each_ship_description_to_main_description="true"
+		is_intentionally_empty_beyond_centerpiece="true"
+	>
+		<ship_membership name="BeamDreadnought_Player" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	</fleet_design>
+
+	<fleet_design name="MarauderBeamDevestatorU1"
+		display_name="掠夺者 光束 Devestator +1"
+		description="An overpowered fleet of a 光束 无畏舰 which in itself holds the durabiltiy and firepower of an entire fleet of ships and uses 线圈 Beams and Adaptive 激光 Pulses to deal with large enemies and swarms alike.
+This fleet is full of upgraded ships."
+		design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+		append_each_ship_description_to_main_description="true"
+		is_intentionally_empty_beyond_centerpiece="true"
+	>
+		<ship_membership name="ChargedBeamDreadnought_Player" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	</fleet_design>
+
+	<fleet_design name="MarauderBeamDevestatorU2"
+		display_name="掠夺者 光束 Devestator +2"
+		description="An overpowered fleet of a 光束 无畏舰 which in itself holds the durabiltiy and firepower of an entire fleet of ships and uses 线圈 Beams and Adaptive 激光 Pulses to deal with large enemies and swarms alike.
+This fleet is full of faction-upgraded ships."
+		design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+		append_each_ship_description_to_main_description="true"
+		is_intentionally_empty_beyond_centerpiece="true"
+	>
+		<ship_membership name="RadiantBeamDreadnought_Player" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	</fleet_design>
+	
+	<fleet_design name="MarauderTestFleet"
+		display_name="掠夺者 Test Fleet"
+		description="[DEBUG]: All KM Fleet Ships"
+		design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+		append_each_ship_description_to_main_description="true"
+	>
+		<ship_membership name="AdaptorRaider_Player" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+		<ship_membership name="AcidicLightCorvette" ship_cap_group="Strike" weight="100" cap="10"/>
+		<ship_membership name="BulkHeavyFrigate" ship_cap_group="Frigate" weight="100" cap="4"/>
+		<ship_membership name="StrikeAcidicLightCorvette" ship_cap_group="Strike" weight="100" cap="10"/>
+		<ship_membership name="GuardBulkHeavyFrigate" ship_cap_group="Frigate" weight="100" cap="4"/>
+		<ship_membership name="BlitzAcidicLightCorvette" ship_cap_group="Strike" weight="100" cap="10"/>
+		<ship_membership name="ProtectorBulkHeavyFrigate" ship_cap_group="Frigate" weight="100" cap="4"/>
+		<ship_membership name="NeedleInterceptor" ship_cap_group="Strike" weight="100" cap="60"/>
+		<ship_membership name="StingLightFrigate" ship_cap_group="Frigate" weight="100" cap="9"/>
+		<ship_membership name="PlatedNeedleInterceptor" ship_cap_group="Strike" weight="100" cap="60"/>
+		<ship_membership name="CloakedStingLightFrigate" ship_cap_group="Frigate" weight="100" cap="9"/>
+		<ship_membership name="ArmoredNeedleInterceptor" ship_cap_group="Strike" weight="100" cap="60"/>
+		<ship_membership name="MercurialStingLightFrigate" ship_cap_group="Frigate" weight="100" cap="9"/>
+		<ship_membership name="RampageFrigate" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<ship_membership name="KillerRampageFrigate" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<ship_membership name="DeathRampageFrigate" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<ship_membership name="HunterFighter" ship_cap_group="Strike" weight="100" cap="20"/>
+		<ship_membership name="MortarHeavyCorvette" ship_cap_group="Strike" weight="100" cap="5"/>
+		<ship_membership name="CloakedHunterFighter" ship_cap_group="Strike" weight="100" cap="20"/>
+		<ship_membership name="GuardMortarHeavyCorvette" ship_cap_group="Strike" weight="100" cap="5"/>
+		<ship_membership name="MercurialHunterFighter" ship_cap_group="Strike" weight="100" cap="20"/>
+		<ship_membership name="ProtectorMortarHeavyCorvette" ship_cap_group="Strike" weight="100" cap="5"/>
+		<ship_membership name="LightshowCruiser" ship_cap_group="Frigate" weight="100" cap="1"/>
+		<ship_membership name="KillerLightshowCruiser" ship_cap_group="Frigate" weight="100" cap="1"/>
+		<ship_membership name="DeathLightshowCruiser" ship_cap_group="Frigate" weight="100" cap="1"/>
+		<ship_membership name="TorpedoBomber" ship_cap_group="Strike" weight="100" cap="40"/>
+		<ship_membership name="DisrupterCorvette" ship_cap_group="Strike" weight="100" cap="7"/>
+		<ship_membership name="StrikeTorpedoBomber" ship_cap_group="Strike" weight="100" cap="40"/>
+		<ship_membership name="PlatedDisrupterCorvette" ship_cap_group="Strike" weight="100" cap="7"/>
+		<ship_membership name="BlitzTorpedoBomber" ship_cap_group="Strike" weight="100" cap="40"/>
+		<ship_membership name="ArmoredDisrupterCorvette" ship_cap_group="Strike" weight="100" cap="7"/>
+		<ship_membership name="MineDestroyer" ship_cap_group="Frigate" weight="100" cap="2"/>
+		<ship_membership name="EfficientMineDestroyer" ship_cap_group="Frigate" weight="100" cap="2"/>
+		<ship_membership name="InfusedMineDestroyer" ship_cap_group="Frigate" weight="100" cap="2"/>
+	</fleet_design>
+	
+	
+	<fleet_design name="MarauderDefenseTests"
+		display_name="掠夺者 防御 Tests"
+		description="[DEBUG]: All KM Defenses"
+		design_logic="InitialPlayerBattlestation" weight="100" include_full_cap_of_each_type="true"
+	>
+		<ship_membership name="GraviticBattlestation" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+		<ship_membership name="InterplanetaryEngineer" ship_cap_group="Civilian" weight="100" cap="100"/>
+		<ship_membership name="ConsumerTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+		<ship_membership name="RefractingConsumerTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+		<ship_membership name="LucentConsumerTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+		<ship_membership name="BreachTorpedoTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+		<ship_membership name="ChargedBreachTorpedoTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+		<ship_membership name="RadiantBreachTorpedoTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+		<ship_membership name="ChainMinefield" ship_cap_group="Turret" weight="100" cap="25"/>
+		<ship_membership name="ChargedChainMinefield" ship_cap_group="Turret" weight="100" cap="25"/>
+		<ship_membership name="RadiantChainMinefield" ship_cap_group="Turret" weight="100" cap="25"/>
+		<ship_membership name="BeamSniperTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+		<ship_membership name="RefractingBeamSniperTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+		<ship_membership name="LucentBeamSniperTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+		<ship_membership name="GooMinefield" ship_cap_group="Turret" weight="100" cap="25"/>
+		<ship_membership name="ChargedGooMinefield" ship_cap_group="Turret" weight="100" cap="25"/>
+		<ship_membership name="RadiantGooMinefield" ship_cap_group="Turret" weight="100" cap="25"/>
+		<ship_membership name="BlockadeStation" ship_cap_group="Turret" weight="100" cap="25"/>
+		<ship_membership name="RefractingBlockadeStation" ship_cap_group="Turret" weight="100" cap="25"/>
+		<ship_membership name="LucentBlockadeStation" ship_cap_group="Turret" weight="100" cap="25"/>
+		<ship_membership name="PhaseCannonTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+		<ship_membership name="ChargedPhaseCannonTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+		<ship_membership name="RadiantPhaseCannonTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+		<ship_membership name="AdaptorTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+		<ship_membership name="RefractingAdaptorTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+		<ship_membership name="LucentAdaptorTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+		<ship_membership name="CoilBeamTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+		<ship_membership name="ChargedCoilBeamTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+		<ship_membership name="RadiantCoilBeamTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+		<ship_membership name="CorrosiveTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+		<ship_membership name="EfficientCorrosiveTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+		<ship_membership name="InfusedCorrosiveTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+		<ship_membership name="Forceshield" ship_cap_group="OtherDefense" weight="100" cap="10"/>
+		<ship_membership name="RefractingForceshield" ship_cap_group="OtherDefense" weight="100" cap="10"/>
+		<ship_membership name="LucentForceshield" ship_cap_group="OtherDefense" weight="100" cap="10"/>
+	</fleet_design>
+	
+</root>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+    <setting
+            name="Np_LogLight"
+            category="Debug"
+            subcategory="GameplayLogging" 
+            display_name="NecroParty：调试日志（轻量）"
+            type="BoolToggle"
+            default="false"
+            description="仅供开发者使用。"
+            />
+
+    <setting
+            name="Np_LogAll"
+            category="Debug"
+            subcategory="GameplayLogging" 
+            display_name="NecroParty：调试日志（完整）"
+            type="BoolToggle"
+            default="false"
+            description="仅供开发者使用。会大量写入日志并可能降低性能。"
+            />
+
+</root>

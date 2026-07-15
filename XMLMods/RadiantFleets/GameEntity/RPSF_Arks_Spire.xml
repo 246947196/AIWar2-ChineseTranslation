@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!-- FS Flagship: Destroyer -->
+		<!-- Modular with all standard Spire Flagship weapons -->
+	<!-- Gray spire: Traders, Spire, small
+		
+		
+		So they supply resources and tech...
+		
+		... IDK why they wound up with engineering/factory capabilities in this?
+		
+		I guess so you could use the resources, and wanted to have them around what you were doing?
+		
+		Yeah, I guess engineering fits better than factory
+		
+		
+		Appearance:
+		
+		icon_name="Ships4/EmeraldBlaster"
+		icon_overlay="Overlays2/DysonSphereGraySpire"
+		
+		Plow: rotation_x_of_ship="185" rotation_z_of_ship="180" size_scale="16" visuals_scale_multiplier="1.6"
+		Crown: rotation_x_of_ship="85" rotation_z_of_ship="0" size_scale="10" visuals_scale_multiplier="2"
+		
+		Citadel version?
+		
+		thematic_groups="ArkCapturable,Spire"
+		tags="ShowsOnNormalDisplayMode,Capturable,AnyEarlyOfficer,AnyEarlyOfficer_Expert,AnyOfficer,AnyOfficer_Expert"
+		fleet_design_templates_i_always_grant="∅"
+		
+		tags="DirectBuilder,Capturable,ShowsOnNormalDisplayMode,SeededCitadel"
+		thematic_groups="Battlestation,Spire" special_entity_type="BattlestationBasic" 
+		icon_name="Ships1/Fortress" icon_overlay="Overlays2/DysonSphereGraySpire"
+		this_centerpiece_grants_its_direct_science_upgrades_to_rest_of_fleet="true" defensive_structure_cap_multiplier="1.0"
+		
+		fleet_design_templates_i_always_grant="RPSF_Alien_GreySpire_Capturable"
+		tech_upgrades_that_benefit_me="Citadels" tech_upgrade_that_is_used_for_my_direct_science="Direct_Battlestation" 
+		
+		<metal_flow purpose="SelfConstruction" throughput="700"/>
+		
+		Alternate:
+		
+		visuals_bundle="aiwar2goodiebox" visuals="Assets/_FinalGameMeshes/Spire/DarkSpireEidolon/DarkSpireEidolon.prefab"
+		material_override_bundle="aiwar2goodiebox" material_override_path="Assets/_FinalGameMeshes/Spire/SpireLostFrigate/SpireLostFrigate.prefab" 
+		size_scale="12" visuals_scale_multiplier="1"
+		rotation_x_of_ship="270" rotation_z_of_ship="0"
+		
+		required_expansion_list="1_The_Spire_Rises"
+		
+	-->
+	<entity copy_from="RPSF_Ark_Template" name="RPSF_Flagship_GraySpire_Ark"
+		required_expansion_list="1_The_Spire_Rises"
+		voice_group="Spire"
+		capturable_seed_weight="100" capturable_max_per_galaxy="1" capturable_can_seed_at_all="false"
+		
+		tags="DirectBuilder,Capturable,ShowsOnNormalDisplayMode,SeededCitadel"
+		thematic_groups="Battlestation,Spire" special_entity_type="BattlestationBasic" 
+		icon_name="Ships1/Fortress"
+		this_centerpiece_grants_its_direct_science_upgrades_to_rest_of_fleet="true" defensive_structure_cap_multiplier="1.0"
+		
+		visuals_bundle="exp1_the_spire_rises" visuals="Assets/_DLC1/ChromaticSpire/ChromaticSpireHorror/ChromaticSpireHorror.prefab" 
+	    material_override_bundle="exp1_the_spire_rises" material_override_path="Assets/_DLC1/GraySpire/GraySpireIllumin/GraySpireIllumin.prefab"  
+		size_scale="8" visuals_scale_multiplier="1.5"
+		rotation_x_of_ship="85" rotation_z_of_ship="0"
+		
+		icon_overlay="Overlays2/DysonSphereGraySpire"
+		tech_upgrades_that_benefit_me="Alien" tech_upgrade_that_is_used_for_my_direct_science="RPSF_Direct_ArkWithTech_AlienExpatriate"
+		
+		strength_multiplier="0.8"
+		metal_storage="1000000" added_metal_storage_per_mark_level="100000"
+		
+		display_name="光辉" display_name_for_sidebar="守卫站光辉"
+		description="一艘拥有强大工程和金属生成能力的灰色尖塔旗舰。"
+		aip_to_claim="10"
+		
+		  hull_points="500000" 
+		shield_points="500000" 
+		speed="High"
+		armor_mm="180" albedo="0.8" mass_tx="7" engine_gx="25" 
+		
+		assist_range="Planetary"
+		
+		priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" 
+		>
+		<resource_production type="Metal" amount="3000" increase_per_mark_level="1500"/> <!-- Base on... Drone Reclamator (500/100)? Spire Metal Mine? 3000/1500? -->
+		<metal_flow purpose="SelfConstruction" throughput="500"/>
+		<!--<metal_flow purpose="FactoryConstructionForPlayerMobileFleets" throughput="2000" increase_per_mark_level="1000"/>-->
+		<metal_flow purpose="RepairingHullsOfFriendlies" throughput="3000" increase_per_mark_level="1500"/> 
+		<metal_flow purpose="RepairingShieldsOfFriendlies" throughput="3000" increase_per_mark_level="1500"/>
+		<metal_flow purpose="RepairingEnginesOfFriendlies" throughput="3000" increase_per_mark_level="1500"/>	
+		<metal_flow purpose="AssistSelfConstruction" throughput="3000" increase_per_mark_level="1500"/>
+		<metal_flow purpose="AssistFactoryConstruction" throughput="3000" increase_per_mark_level="1500"/>
+	<!--Coilbeam deal 1x damage_per_shot to the main target, then x1dmg/TargetsHitByBeam. Total 2x weapon dmg.-->
+		<system name="WS" display_name="线圈光束"
+			category="Weapon" firing_timing="OnlyInRange"
+			range="AboveAverage2" shot_speed="Normal" 
+			damage_per_shot="15000" rate_of_fire="Devourer"
+			shot_type_data="HeavyBeamInvisible" beam_weapon_visual_style="Laser_Cyan"
+			shots_detonate_immediately="true" beam_length_multiplier="1.3" 
+			hits_all_intersecting_targets="true" is_coilbeam="true"		
+			>
+		</system><!-- 15k x2 target x1.5 coil = 45k -->
+		<system name="C" display_name="隐形装置"
+			category="Passive" cloaking_points="0" cloaking_points_added_per_mark="0"
+			/>
+		<incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="7000" multiplier="0.1" />
+	</entity>
+	<entity copy_from="RPSF_Flagship_GraySpire_Ark" name="RPSF_Flagship_GraySpire_Ark_Sidekick" 
+		required_expansion_list="1_The_Spire_Rises"
+		thematic_groups="ArkHomeCommand,Spire" is_ark="true" 
+		capturable_can_seed_at_all="false" 
+		special_entity_type="MobileOfficerCombatFleetFlagship" this_centerpiece_grants_its_direct_science_upgrades_to_rest_of_fleet="false" fleet_design_templates_i_always_grant=""
+		tags="ShowsOnNormalDisplayMode,HumanArkSidekickArks"
+		icon_name="Ships1/Ark" 
+		gimbal_icon_size_multiplier="2" is_critical_infrastructure="true"
+	  	energy_consumption="0"
+		is_scrapping_by_player_disallowed="true" player_loses_if_any_die="false"
+		tech_upgrades_that_benefit_me="Alien" tech_upgrade_that_is_used_for_my_direct_science="RPSF_Direct_ArkWithTech_AlienExpatriate_EZ"
+		metal_storage="3500000" added_metal_storage_per_mark_level="600000"
+		description="一艘拥有强大工程和金属生成能力的灰色尖塔旗舰。"
+		>
+		<resource_production type="Metal" amount="5200" increase_per_mark_level="2300"/>  <!-- base 2200/800, plu 3000/1500 from  spire metal mine :P -->
+		<resource_production type="Energy" amount="750000" increase_per_mark_level="55000"/>
+		<resource_production type="FuelArgon" amount="600000" /> <!-- more fuel -->
+		<resource_production type="FuelRadon" amount="600000" />
+		<metal_flow purpose="FactoryConstructionForPlayerMobileFleets" throughput="3000" increase_per_mark_level="2000" /> <!-- base 3000/2000, formerly +2000/1000 like having an extra factory-->
+	</entity>
+	<entity copy_from="RPSF_Flagship_GraySpire_Ark_Sidekick" name="RPSF_Flagship_GraySpire_Ark_Home" 
+		required_expansion_list="1_The_Spire_Rises"
+		special_entity_type="HumanHomeArk" 
+		icon_name="Ships1/King"
+		tags="ShowsOnNormalDisplayMode,HumanArkEmpireArks"
+		player_loses_if_any_die="true"
+		display_name="光辉家园方舟"
+		description="一艘拥有强大工程和金属生成能力的灰色尖塔旗舰。你人民的最后避难所。"
+		>	
+		<resource_production type="Metal" amount="5200" increase_per_mark_level="1900"/>
+		<resource_production type="Energy" amount="350000" increase_per_mark_level="25000"/>
+	</entity>
+	<!-- Chromatic Spire: Scary and weird -->
+	
+	<entity copy_from="RPSF_Golem_Template" name="RPSF_Flagship_ChromaSpire_Spectrum"
+		required_expansion_list="1_The_Spire_Rises"
+		thematic_groups="Spire" voice_group="Spire"
+		
+		tags="ShowsOnNormalDisplayMode,Capturable,AnyOfficer,AnyOfficer_Expert"
+		capturable_seed_weight="100" capturable_max_per_galaxy="1" capturable_can_seed_at_all="true"
+		
+		visuals="Assets/_DLC1/FallenSpire/SpireTransceiver/SpireTransceiver.prefab" visuals_bundle="exp1_the_spire_rises"
+	    material_override_path="Assets/_DLC1/ChromaticSpire/ChromaticSpireHorror/ChromaticSpireHorror.prefab" material_override_bundle="exp1_the_spire_rises"
+		
+		size_scale="20" visuals_scale_multiplier="160"
+		
+		icon_name="Ships3/SomethingTentacle"
+		icon_overlay="Overlays2/DysonSphereChromaticSpire"
+		
+		 hull_points="1000000" 
+		shield_points="1000000" 
+		speed="AboveAverage1"
+		
+		armor_mm="180" albedo="0.5" engine_gx="23" mass_tx="9"
+		
+		tech_upgrades_that_benefit_me="Alien" tech_upgrade_that_is_used_for_my_direct_science="RPSF_Direct_GolemWithTech_AlienExpatriate_EZ"
+		
+		display_name="光谱" display_name_for_sidebar="指挥站光谱"
+		description="一艘大型彩色尖塔旗舰，用短程时空透镜和引力发生器阻挡近战敌人，并损耗星系内的一切。"
+		aip_to_claim="21"
+		strength_multiplier="2"
+		
+		attrition_damage="500" added_attrition_damage_per_mark="400"
+		><!-- attrition: x(1 + 100) targets x 2 range = x200-->
+		<system name="H1" display_name="时空透镜"
+			category="Weapon" firing_timing="OnlyInRange"
+			range="AboveAverage2" shot_speed="Normal" 
+			damage_per_shot="1700" rate_of_fire="Devourer"
+			shots_per_salvo="7"
+			shot_type_data="HeavyBeamInvisible"	beam_weapon_visual_style="Laser_Red"
+			shots_detonate_immediately="true" beam_length_multiplier="1.3" 
+			is_coilbeam="true" hits_all_intersecting_targets="true"
+			
+			sets_target_to_random_location="true" fires_through_enemy_shields="true"
+			base_engine_stun_per_shot="15" added_engine_stun_per_shot_per_mark="3" max_engine_stun_seconds="30" engine_stun_to_engine_gx_less_than="18" 
+			>
+		</system><!-- 1.7k x ( 1 + 7) targets x2 coil = 27.2k-->
+		<system name="G" display_name="引力核心"
+			category="Passive"
+			base_gravity_speed_multiplier="0.7" 
+			subtracted_gravity_speed_multiplier_per_mark="0.1" 
+			gravity_hits_engine_gx_less_than="20" 
+			gravity_range="AboveAverage5"
+			/>
+		<incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="7000" multiplier="0.5" />
+	</entity>
+	<entity copy_from="RPSF_Flagship_ChromaSpire_Spectrum" name="RPSF_Flagship_ChromaSpire_Spectrum_Sidekick" 
+		required_expansion_list="1_The_Spire_Rises"
+		is_ark="true" 
+		thematic_groups="ArkHomeCommand,Spire"
+		gimbal_icon_size_multiplier="2" is_critical_infrastructure="true"
+		tags="ShowsOnNormalDisplayMode,HumanArkSidekickArks"
+	  	energy_consumption="0"
+		player_loses_if_any_die="false"
+		capturable_can_seed_at_all="false"
+		metal_storage="2500000" added_metal_storage_per_mark_level="500000"
+		is_scrapping_by_player_disallowed="true"
+		tech_upgrade_that_is_used_for_my_direct_science="RPSF_Direct_ArkWithTech_AlienExpatriate_EZ"
+		
+		display_name_for_sidebar="指挥站光谱"
+		custom_neverRandom="true"
+		>
+		<resource_production type="Metal" amount="2200" increase_per_mark_level="800"/>
+		<resource_production type="Energy" amount="750000" increase_per_mark_level="55000"/>
+		<resource_production type="FuelArgon" amount="500000" />
+		<resource_production type="FuelRadon" amount="500000" />
+		<metal_flow purpose="FactoryConstructionForPlayerMobileFleets" throughput="3000" increase_per_mark_level="2000"/>
+	</entity>
+	<!-- Dark Spire go here -->
+</root>

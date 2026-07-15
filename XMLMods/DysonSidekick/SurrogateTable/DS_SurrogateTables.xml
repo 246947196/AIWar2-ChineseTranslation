@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <surrogate_table name="DysonSidekickDifficulty"
+              dll_name="AIWarExternalCode"
+              type_name="Arcen.AIW2.External.DysonSidekickDifficultyTable"
+  >
+  </surrogate_table>
+  <surrogate_table name="DysonSidekickIncome"
+              dll_name="AIWarExternalCode"
+              type_name="Arcen.AIW2.External.DysonSidekickIncomeTable"
+  >
+  </surrogate_table>
+  <surrogate_table name="ArmadaDifficulty"
+              dll_name="AIWarExternalCode"
+              type_name="Arcen.AIW2.External.ArmadaDifficultyTable"
+  >
+  </surrogate_table>
+  <surrogate_table name="ArmadaIncome"
+              dll_name="AIWarExternalCode"
+              type_name="Arcen.AIW2.External.ArmadaIncomeTable"
+  >
+  </surrogate_table>
+
+  <surrogate_table name="TiberiumDifficulty"
+              dll_name="AIWarExternalCode"
+              type_name="Arcen.AIW2.External.TiberiumDifficultyTable"
+  >
+  </surrogate_table>
+  <surrogate_table name="SpireSidekickDifficulty"
+              dll_name="AIWarExternalCode"
+              type_name="Arcen.AIW2.External.SpireSidekickDifficultyTable"
+  >
+  </surrogate_table>
+
+
+</root>

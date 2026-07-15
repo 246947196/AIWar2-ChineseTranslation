@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <item name="AiLieutenantsPerUnitBaseInfo" dll_name="AiLieutenants" type_name="AiLieutenants.AiLieutenantsPerUnitBaseInfo" />
+  <item name="LogisticsLtnSquadInfo" dll_name="AiLieutenants" type_name="AiLieutenants.LogisticsLtnSquadInfo" />
+  <item name="HackingLtnSquadInfo" dll_name="AiLieutenants" type_name="AiLieutenants.HackingLtnSquadInfo" />
+  <item name="WardenLtnSquadInfo" dll_name="AiLieutenants" type_name="AiLieutenants.WardenLtnSquadInfo" />
+  <item name="ConquestLtnSquadInfo" dll_name="AiLieutenants" type_name="AiLieutenants.ConquestLtnSquadInfo" />
+
+</root>

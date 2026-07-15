@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<ship_class_data 
+						name="Undetectable" display_name="不可探测" short_name="不可探测" copy_from="DefaultShipClass"
+						can_be_damaged="false"
+						>
+	</ship_class_data>
+
+</root>

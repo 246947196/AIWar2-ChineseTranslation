@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <item name="Ds_Sphere_SquadInfo" dll_name="DarkSphere" type_name="DarkSphere.Ds_Sphere_SquadInfo" />
+  <item name="Ds_City_SquadInfo" dll_name="DarkSphere" type_name="DarkSphere.Ds_City_SquadInfo" />
+
+</root>

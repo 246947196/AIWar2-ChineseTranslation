@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>  
+  
+  <!--The purpose of these build categories is to organize things for the player on the sidebar.
+      And by "things," I mean "stuff that you build via direct placement."
+      
+      Those sorts of things include anything that a Battlestation or a Command Station
+      or the Zenith Trader makes available to you at a planet.
+      
+      Other than how things are organized on the sidebar, this has no effect on anything.
+      Repeat: this is purely a visual organization thing on the sidebar 
+      for player ships/structures that are directly built.
+      
+      It has no gameplay, seeding, or other structural significance and doesn't
+      affect how the game plays.-->
+
+  <build_category name="ArmadaVaults" sort_index="10" display_name="Vaults"
+                  description="Vaults."
+                  />
+  <build_category name="ArmadaUtility" sort_index="30" display_name="Utility"
+                  description="Utility."
+                  />
+  <build_category name="ArmadaDefenses" sort_index="30" display_name="Defenses"
+                  description="防御."
+                  />
+
+  <build_category name="ArmadaMinesT1" sort_index="50" display_name="Mines"
+                  description="Building a new 矿场." granted_by_any_mobile_fleet="true"
+                  for_player_type_tags="ArmadaEmpire"
+                  custom_sidebar_category_info_dll="AIWarExternalCode"
+                  custom_sidebar_category_info_type="Arcen.AIW2.External.DirectBuild_Mine_T1"
+                  />
+  <build_category name="ArmadaMinesT2" sort_index="50" display_name="Mines"
+                  description="Building a new 矿场." granted_by_any_mobile_fleet="true"
+                  for_player_type_tags="ArmadaEmpire"
+                  custom_sidebar_category_info_dll="AIWarExternalCode"
+                  custom_sidebar_category_info_type="Arcen.AIW2.External.DirectBuild_Mine_T2"
+                  />
+  <build_category name="ArmadaMinesT3" sort_index="50" display_name="Mines"
+                  description="Building a new 矿场." granted_by_any_mobile_fleet="true"
+                  for_player_type_tags="ArmadaEmpire"
+                  custom_sidebar_category_info_dll="AIWarExternalCode"
+                  custom_sidebar_category_info_type="Arcen.AIW2.External.DirectBuild_Mine_T3"
+                  />
+  <build_category name="ArmadaMinesT4" sort_index="50" display_name="Mines"
+                  description="Building a new 矿场." granted_by_any_mobile_fleet="true"
+                  for_player_type_tags="ArmadaEmpire"
+                  custom_sidebar_category_info_dll="AIWarExternalCode"
+                  custom_sidebar_category_info_type="Arcen.AIW2.External.DirectBuild_Mine_T4"
+                  />
+  <build_category name="ArmadaSwarm" sort_index="50" display_name="Swarm"
+                  description="建筑 related to the Swarm." granted_by_any_mobile_fleet="true"
+                  for_player_type_tags="ArmadaEmpire"
+                  custom_sidebar_category_info_dll="AIWarExternalCode"
+                  custom_sidebar_category_info_type="Arcen.AIW2.External.DirectBuild_Swarm"
+                  />
+
+  <build_category name="ArmadaStarbases" sort_index="50" display_name="Starbases"
+                  description="Building a new 星站." granted_by_any_mobile_fleet="true"
+                  for_player_type_tags="ArmadaEmpire"
+                  custom_sidebar_category_info_dll="AIWarExternalCode"
+                  custom_sidebar_category_info_type="Arcen.AIW2.External.DirectBuild_Starbase"
+                  />
+
+</root>

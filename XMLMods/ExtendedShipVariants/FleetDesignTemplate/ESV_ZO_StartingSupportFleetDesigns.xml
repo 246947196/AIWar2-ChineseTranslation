@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <fleet_design name="ESVZO_RepairingFactory" required_expansion_list="2_Zenith_Onslaught"
+        display_name="C.工程师与修理工厂"
+        description="A good number of Combat Engineers that can go anywhere you please, enemy planets or otherwise -- plus a Mobile Factory with planet-wide repair beams and self-regeneration!"
+        design_logic="InitialPlayerSupportFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="RepairingSupportFactory" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+    <ship_membership name="CombatEngineer" ship_cap_group="Strike" weight="100" cap="14"/>
+	<ship_membership name="CombatSentryFrigate" ship_cap_group="Frigate" weight="100" cap="2"/>
+  </fleet_design>
+</root>

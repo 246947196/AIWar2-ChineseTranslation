@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--This is currently giving me errors. Not sure if there's some non xml related thing-->
+	
+	<!--
+	
+	<fleet_leader_type name="DysonMoon" display_name="Dyson Moon" required_special_entity_type="DysonMoon"/>
+	
+	-->
+	
+	
+</root>

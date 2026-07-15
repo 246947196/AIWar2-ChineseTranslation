@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <item name="DysonSidekickFactionDeepInfo" dll_name="AIWarExternalDeepProcessingCode" type_name="Arcen.AIW2.External.DysonSidekickFactionDeepInfo" />
+  <item name="ArmadaFactionDeepInfo" dll_name="AIWarExternalDeepProcessingCode" type_name="Arcen.AIW2.External.ArmadaFactionDeepInfo" />
+  <item name="ReapersFactionDeepInfo" dll_name="AIWarExternalDeepProcessingCode" type_name="Arcen.AIW2.External.ReapersFactionDeepInfo" />
+  <item name="DarkZenithSidekickFactionDeepInfo" dll_name="AIWarExternalDeepProcessingCode" type_name="Arcen.AIW2.External.DarkZenithSidekickFactionDeepInfo" />
+  <item name="HumanArkSidekickFactionDeepInfo" dll_name="AIWarExternalDeepProcessingCode" type_name="Arcen.AIW2.External.HumanArkSidekickFactionDeepInfo" />
+  <item name="ScourgeInfusedHumanEmpireFactionDeepInfo" dll_name="AIWarExternalDeepProcessingCode" type_name="Arcen.AIW2.External.ScourgeInfusedHumanEmpireFactionDeepInfo" />
+  <item name="ScourgeVassalFactionDeepInfo" dll_name="AIWarExternalDeepProcessingCode" type_name="Arcen.AIW2.External.ScourgeVassalFactionDeepInfo" />
+
+  <item name="ScourgeCivilWarFactionDeepInfo" dll_name="AIWarExternalDeepProcessingCode" type_name="Arcen.AIW2.External.ScourgeCivilWarFactionDeepInfo" />
+  <item name="SpireSidekickFactionDeepInfo" dll_name="AIWarExternalDeepProcessingCode" type_name="Arcen.AIW2.External.SpireSidekickFactionDeepInfo" />
+
+  <item name="TiberiumFactionDeepInfo" dll_name="AIWarExternalDeepProcessingCode" type_name="Arcen.AIW2.External.TiberiumFactionDeepInfo" />
+</root>

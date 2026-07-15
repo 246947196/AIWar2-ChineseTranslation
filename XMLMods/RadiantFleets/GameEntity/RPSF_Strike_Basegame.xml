@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<entity copy_from="Dagger" name="RPSF_Strike_Raid_Fusion"
+		thematic_groups="Strikecraft,Human"
+		icon_overlay="Overlays1/Turret_Fusion"
+		
+		display_name="聚变袭击者"
+		display_name_for_sidebar="F突袭"
+		description="快速的隐形舰船，绕过大多数护盾"
+		
+		tech_upgrades_that_benefit_me="Fusion,Raid" 
+		cost_for_ai_to_purchase="1000" strength_multiplier="2"
+		engine_gx="20" albedo="0.7"
+		tags="ArkEmpireOptionGroup5,ArkSidekickOptionGroup5" custom_arkempire_fleetcap="32"
+		>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="100" cap="32"/>		
+		<fleet_membership name="RaidOffensiveMix" ship_cap_group="Strike" weight="200" cap="32"/>
+		<system name="V1" display_name="聚变弹"
+			damage_per_shot="186"
+			shot_type_data="FusionBolt"
+			base_percent_damage_bypasses_personal_shields="0.9"
+			>
+			<outgoing_damage_modifier based_on="MyTimeAtPlanet" comparison_type="LessThan" compared_to="15" multiplier="3" />
+		</system>
+		<system name="C" display_name="隐形装置"
+			category="Passive"
+			cloaking_points="2000"
+			cloaking_points_added_per_mark="1000"
+			>
+		</system>
+		<incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="4400" multiplier="0.25" />
+	</entity>
+	<entity copy_from="Ram" name="RPSF_Strike_Ram_Fusion" 
+		thematic_groups="Strikecraft,Human"
+		icon_overlay="Overlays1/Turret_Fusion"
+		display_name="聚变撞击" 
+		display_name_for_sidebar="聚变撞击" 
+		description="大型无人自动炸弹，撞击时引爆，自毁并对高质量目标造成高伤害，绕过护盾。"
+		strength_multiplier="1"
+		cost_for_ai_to_purchase="1000" 
+		tech_upgrades_that_benefit_me="Fusion,Melee"
+		tags="ArkSidekickOptionGroup2" custom_arkempire_fleetcap="32"
+		>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="50" cap="19"/>			
+		<fleet_membership name="SelfSacrificingOffensiveMix" ship_cap_group="Strike" weight="100" cap="19"/>
+		<fleet_membership name="AntiLargeMix" ship_cap_group="Strike" weight="50" cap="19"/>
+		<fleet_membership name="ZombificationAntiCounterMix" ship_cap_group="Strike" weight="50" cap="19"/>
+		<ai_ship_group_membership name="BullyStrikecraft" weight="15"/>
+		<ai_ship_group_membership name="RamRamifierFrigate" weight="50"/>
+		<ai_ship_group_membership name="ViciousLightStrikecraft" weight="25"/>
+		<ai_ship_group_membership name="ViciousRaidStrikecraftAndFrigates" weight="25"/>
+		<system name="WM" 
+			damage_per_shot="500"
+			base_percent_damage_bypasses_personal_shields="1" 
+			>
+		</system>
+	</entity>
+</root>

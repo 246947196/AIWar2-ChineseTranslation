@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<fleet_design name="RPSF_Mobile_Ram"
+		display_name="撞击舰队"
+		description="完全由撞击舰组成的舰队能有多好？"
+		design_logic="InitialPlayerFleet" weight="0" include_full_cap_of_each_type="true"
+		append_each_ship_description_to_main_description="true"
+		>
+		<ship_membership name="RPSF_Transport_Factory" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+		<ship_membership name="Ram" ship_cap_group="Strike" weight="100" cap="100"/>
+	</fleet_design>
+	<fleet_design name="RPSF_Support_Backdoor"
+		display_name="后门支援"
+		description="相当数量的战斗工程师，可以前往任何你想要的地方，包括敌方行星——加上一座隐形移动工厂，可以带你深入敌方领土！"
+		design_logic="InitialPlayerSupportFleet" weight="100" include_full_cap_of_each_type="true"
+		append_each_ship_description_to_main_description="true"
+		>
+		<ship_membership name="BackdoorCombatFactory" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+		<ship_membership name="CombatEngineer" ship_cap_group="Strike" weight="100" cap="16"/>
+		<ship_membership name="CombatSentryFrigate" ship_cap_group="Frigate" weight="100" cap="2"/>
+	</fleet_design>
+	<fleet_design name="RPSF_Support_Transport"
+		display_name="打击支援"
+		description="这个工厂实际上是一艘运输舰，因此可以执行普通工厂无法进行的入侵。"
+		design_logic="InitialPlayerSupportFleet" weight="100" include_full_cap_of_each_type="true"
+		append_each_ship_description_to_main_description="true"
+		>
+		<ship_membership name="RPSF_Transport_Factory" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+		<ship_membership name="CombatEngineer" ship_cap_group="Strike" weight="100" cap="16"/>
+		<ship_membership name="CombatSentryFrigate" ship_cap_group="Frigate" weight="100" cap="2"/>
+	</fleet_design>
+	
+	<!-- Officers and Elites -->
+	
+	<fleet_design name="RPSF_Citadel_Interceptor"
+        display_name="拦截者堡垒"
+        description="拦截者堡垒、工程师和快子哨戒护卫舰。"
+        design_logic="InitialPlayerBattlestation" weight="0" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+		<ship_membership name="InterceptorCitadel" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+		<ship_membership name="InterplanetaryEngineer" ship_cap_group="Civilian" weight="100" cap="8"/>
+		<ship_membership name="CombatSentryFrigate" ship_cap_group="Frigate" weight="100" cap="2"/>
+	</fleet_design>
+	<fleet_design name="RPSF_Citadel_DungeonMaster"
+        display_name="地下城主堡垒"
+        description="地下城主堡垒、工程师和快子哨戒护卫舰。"
+        design_logic="InitialPlayerBattlestation" weight="0" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+		<ship_membership name="RPSF_Citadel_DungeonMaster" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+		<ship_membership name="InterplanetaryEngineer" ship_cap_group="Civilian" weight="100" cap="8"/>
+		<ship_membership name="CombatSentryFrigate" ship_cap_group="Frigate" weight="100" cap="2"/>
+	</fleet_design>
+
+	<!-- monotechs -->
+	
+	<!-- Raid -->
+	<fleet_design name="RPSF_Mobile_Raid"
+		display_name="突袭舰队"
+		description="突袭护卫舰和魅影持续作战。"
+		design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+		append_each_ship_description_to_main_description="true"
+		>
+		<ship_membership name="TransportFlagship_Cloaked" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+		<ship_membership name="Apparition" ship_cap_group="Frigate" weight="100" cap="18"/>
+		<ship_membership name="ViciousRaidFrigate" ship_cap_group="Frigate" weight="100" cap="18"/>
+	</fleet_design>
+	
+</root>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+
+  <item name="HackToGrantShipLine_ODSS_All" is_partial_record="true"
+        number_of_times_individual_unit_can_be_hacked="4"
+        cost_in_hacking_points_multiplier_per_times_same_unit_hacked="1.4"
+        response_strength_multiplier_per_time_hacked_same_target="1.8"
+        cost_in_hacking_points="6"
+        description="其他防御结构设计正在两个隔离区域中进行研究。大多数设计可识别为人类起源，但 AI 一直在进行各种更新，包括在某些情况下适应外星科技。您可以入侵以在每个区域仅检索一个蓝图，之后 AI 将警觉并关闭该区域。一旦所有区域被攻破，站点将自毁。
+
+成功入侵将授予一条新的防御线，（几乎总是）可以用于您的所有指挥站、战斗空间站和堡垒。在少数情况下，您可能会注意到防御结构仅适用于指挥站，或某种特定类型的指挥站，或存在其他限制。
+
+一旦某个区域被入侵，它将揭示来自下一个区域的整套新的潜在防御线。
+
+随着您连续入侵该结构，AI 的反应将变得越来越凶猛；请务必小心。"
+    />
+
+  <item name="HackToGrantShipLine_ODSS_SingleBattlestation" is_partial_record="true"
+        number_of_times_individual_unit_can_be_hacked="4"
+        cost_in_hacking_points_multiplier_per_times_same_unit_hacked="1.4"
+        response_strength_multiplier_per_time_hacked_same_target="1.8"
+        cost_in_hacking_points="3"
+        display_name="窃取防御线（三倍于单次）"
+        description="其他防御结构设计正在两个隔离区域中进行研究。大多数设计可识别为人类起源，但 AI 一直在进行各种更新，包括在某些情况下适应外星科技。您可以入侵以在每个区域仅检索一个蓝图，之后 AI 将警觉并关闭该区域。一旦所有区域被攻破，站点将自毁。
+
+此类成功入侵将仅向执行入侵的战斗空间站或堡垒授予一条新的防御线，但会授予其正常数量的三倍。
+
+一旦某个区域被入侵，它将揭示来自下一个区域的整套新的潜在防御线。
+
+随着您连续入侵该结构，AI 的反应将变得越来越凶猛；请务必小心。"
+    />
+
+
+</root>

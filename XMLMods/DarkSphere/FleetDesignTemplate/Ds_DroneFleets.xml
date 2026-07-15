@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <fleet_design 
+        name="Ds_Sphere_Drones"
+        design_logic="Drones" 
+        weight="1" 
+        include_full_cap_of_each_type="true"
+        >
+
+        <ship_membership name="Ds_Escort_Gatling" ship_cap_group="Strike" weight="100" cap="70"/>
+
+  </fleet_design>
+
+</root>

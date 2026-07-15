@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>    
+
+	<!-- Nasty Pick #1 the Fortified AI Cruise Missile Base -->
+	<entity name="AICruMisBase" required_expansion_list="1_The_Spire_Rises"
+		tags="AICruMisBase,NormalPlanetNastyPick,BigGunNastyPick,WildCardNastyPick"
+        visuals="assets/_finalgamemeshes/turrets/missileturret/missile_turret.prefab"
+		icon_name="Ships1/Turret" icon_overlay="Overlays1/Turret_Concussion"
+		size_scale="6.5"
+		visuals_scale_multiplier="11.5"
+		category="Ship" is_turret="true"
+		draw_in_galaxy_view="true"
+		collision_priority="1000"
+		eligible_for_hacks="Reprogram,Sabotage"
+		display_name="强化AI巡航导弹基地" display_name_for_sidebar="AI 导弹 Base"
+		description="A heavily fortified long range 导弹 base. Massive area damage and some attacks even paralyze!"
+		behavior="Stationary"
+		starting_mark_level="Markless"
+			cost_for_ai_to_purchase="500"
+			hull_points="150000" shield_points="450000" speed="Immobile"
+			metal_cost="200000" energy_consumption="12000"
+			armor_mm="80" albedo="0.45" mass_tx="3"
+			voice_group="Turret"
+			ship_or_structure_explosion_sfx="StructureSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+		priority_as_ai_target="BigTurret" priority_as_frd_target="BigTurret" priority_to_protect="BigFavoriteToy">
+		<hack_data hack_type="Sabotage" override_cost_in_hacking_points="12" />
+		<hack_data hack_type="Reprogram" override_cost_in_hacking_points="25" />
+		<system name="ST" display_name="AI冲击波导弹设施"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="50000" range="InsanelyHigh" shots_per_salvo="3" shot_speed="Fast" rate_of_fire="Low" fires_salvos_sequentially="true" 				
+				shot_type_data="GuidedMissile"
+				area_of_effect_size="1500"
+				maximum_number_of_targets_hit_per_shot="10"
+				aoe_spreads_damage_among_available_targets="true"
+				>
+		</system>
+		<system name="NB" display_name="新星爆裂导弹发射器"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="17000" range="ExtremelyHigh" shot_speed="Normal" rate_of_fire="PeriodicActivation" fires_salvos_sequentially="true" 				
+				shot_type_data="GuidedMissile"
+				area_of_effect_size="3000"				
+				maximum_number_of_targets_hit_per_shot="20"
+				base_paralysis_seconds_per_shot="10" paralysis_to_ships_mass_tx_less_than="3"
+				>
+		</system>
+		<incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="8000" multiplier="0.1" />
+	</entity>
+	
+</root>

@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!-- Tier 4 Infrastructure -->
+	<entity name="ImperialShipyard" tags="ImperialTier4Build,ImperialShipyard" npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+        thematic_groups="AI" visuals_bundle="exp1_the_spire_rises"
+		draw_in_galaxy_view="true"
+	    visuals="Assets/_DLC1/MinorCapturables/WanderingScientist/WanderingScientist.prefab"
+		icon_name="Ships1/SpaceDock" gimbal_icon_size_multiplier="1.5"
+		y_offset_of_icon="35"
+		category="Ship"
+	    size_scale="4"
+		visuals_scale_multiplier="10"
+        collision_priority="800"
+	    display_name="帝国船坞"
+		display_name_for_sidebar="帝国船坞"
+	    description="为所属AI生产建造者。每20分钟。还根据AIP定期生产一些帝国守卫。"
+	    behavior="Stationary"
+		starting_mark_level="Markless"  tech_upgrades_that_benefit_me="Unused"
+		cost_for_ai_to_purchase="3000"
+		hull_points="800000" shield_points="1600000" speed="Immobile"
+		metal_cost="1500000" energy_consumption="50000"
+		armor_mm="300" albedo="0.7" mass_tx="8"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+		voice_group="Turret"
+		priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+		per_second_custom_logic_dll="Poi"
+		per_second_custom_logic_type="Poi.Poi_ImperialShipyard_CustomLogic"
+		description_appender_dll="Poi"
+		description_appender_type="Poi.Poi_ImperialShipyard_CustomLogic"
+		should_not_be_given_normal_orders_by_ai_logic="true"
+		>
+	</entity>
+	<!-- Tier 3 Infrastructure -->
+	<entity
+		copy_from="TroopAccelerator"  npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+		name="TroopAcceleratorImperial"
+		icon_overlay="Overlays2/SpireFortress_Lesser"
+		display_name="帝国部队加速器"
+		display_name_for_sidebar="部队加速"
+		aip_on_death="0"
+		tags="TroopAccelerator,ImperialSpecialSpawn,ImperialTier3Build"
+		target_type_for_player="AutotargetAlways"
+		eligible_for_hacks="Sabotage"
+        description="AI在此行星获得额外增援。由于这是帝国AI添加的防御特性，死亡时不增加AIP。"
+    >
+		<hack_data hack_type="Sabotage" override_cost_in_hacking_points="7" />
+	</entity>
+	
+	<entity
+		copy_from="Magnifier"  npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+		name="MagnifierImperial"
+		icon_overlay="Overlays2/SpireFortress_Lesser"
+		aip_on_death="0"
+		description="大幅提升此行星上友军舰船的伤害，略微提升速度。由于这是帝国AI添加的防御特性，死亡时不增加AIP。"
+		tags="Magnifier,ImperialSpecialSpawn,ImperialTier3Build"
+		eligible_for_hacks="Reprogram,Sabotage"
+		target_type_for_player="AutotargetAlways"
+      >
+		<data_extension name="DLC3" required_expansion_list="3_The_Neinzul_Abyss"
+			necromancer_hacking_to_grant_on_death="0"/>
+		<hack_data hack_type="Sabotage" override_cost_in_hacking_points="7" />
+		<hack_data hack_type="Reprogram" override_cost_in_hacking_points="36" />
+  </entity> 
+  
+  
+  <!-- T2 Imperial infrastructure-->
+  <entity name="ImperialIonCannon" voice_group="Silent" is_auto_scrapping_skipped_when_command_station_type_changes="true" ship_class_name="Superweapon"
+            thematic_groups="AI"   npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+			tags="ImperialIonCannon,ImperialTier2Build" gimbal_icon_size_multiplier="1.75"
+			draw_in_galaxy_view="true"
+			visuals="assets/_finalgamemeshes/turrets/IonCannon/Giant_Turret_Ion_Cannon.prefab"
+			icon_name="Ships1/MegaTurret" icon_overlay="Overlays1/MegaTurret_Ion"
+			category="Ship"
+			size_scale="5.7"
+			visuals_scale_multiplier="3"
+			y_offset_of_icon="50"
+			display_name="帝国离子炮"
+			display_name_for_sidebar="离子炮"
+			description="一种高级武器，发射远程电离弹，对等级不高于其自身的目标造成递增的大量伤害。无法瞄准任何更高等级或没有等级的目标。"
+			behavior="Stationary"
+			never_leaves_remains="false"
+			starting_mark_level="Mark4"
+			cost_for_ai_to_purchase="200" strength_multiplier="20"			
+			hull_points="30000" shield_points="90000" speed="Immobile"
+			metal_cost="2500000" energy_consumption="20000"
+			armor_mm="70" albedo="0.45" mass_tx="5"
+			ship_or_structure_explosion_sfx="StructureMidsize_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="StructureLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			do_not_target_if_being_hacked="true"
+			eligible_for_hacks="Reprogram,Sabotage"
+      priority_as_ai_target="NotDangerous" priority_as_frd_target="NotDangerous" priority_to_protect="BigFavoriteToy"
+			>
+    <data_extension name="DLC3" required_expansion_list="3_The_Neinzul_Abyss"
+        necromancer_hacking_to_grant_on_death="3"/>
+    <hack_data hack_type="Sabotage" override_cost_in_hacking_points="11" />
+    <hack_data hack_type="Reprogram" override_cost_in_hacking_points="5" />
+    <metal_flow purpose="SelfConstruction" throughput="500"/>
+    <system name="Q6" display_name="离子炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="720" range="InsanelyHigh" shot_speed="Fast" rate_of_fire="Devourer" fires_salvos_sequentially="true"
+				max_stacks_allowed_to_kill_per_shot="3" added_shots_per_salvo_per_mark="1"
+				shot_type_data="ExtremelyLongRangeIon"
+				ion_percentage_per_mark_level_lower="0.9" ion_damage_to_albedo_less_than="0.4"
+				health_change_per_damage_dealt="0.1"
+				>
+    </system>
+	<incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="10000" multiplier="0.1" />
+  </entity>
+  
+  <entity name="ImperialOrbitalMassDriver" voice_group="Silent" is_auto_scrapping_skipped_when_command_station_type_changes="true" ship_class_name="Superweapon"
+           thematic_groups="AI"   npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+			tags="ImperialOrbitalMassDriver,ImperialTier2Build" gimbal_icon_size_multiplier="1.75"
+			draw_in_galaxy_view="true"
+                        journal_name_to_play_on_player_encounter="Beginner_OrbitalMassDriver"
+                        journal_high_priority="true"
+
+			visuals="assets/_finalgamemeshes/turrets/orbitalmassdriver/Giant_Turret_Orbital_Mass_Driver.prefab"
+	    icon_name="Ships1/MegaTurret" icon_overlay="Overlays1/MegaTurret_MassDriver"
+			category="Ship"
+			size_scale="5.7"
+			visuals_scale_multiplier="3"
+			y_offset_of_icon="50"
+			display_name="帝国质量驱动器"
+      display_name_for_sidebar="质量驱动器"
+			description="高级武器发射从铁质小行星剥离的射弹，对高质量目标造成重创，但对较小目标几乎无效。"
+			behavior="Stationary"
+			never_leaves_remains="false"			
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="200"			
+			hull_points="100000" shield_points="200000" speed="Immobile"
+			metal_cost="2000000" energy_consumption="20000"
+			armor_mm="70" albedo="0.45" mass_tx="5"
+			damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.1"
+			ship_or_structure_explosion_sfx="StructureMidsize_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="StructureLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			do_not_target_if_being_hacked="true"
+			eligible_for_hacks="Reprogram,Sabotage"
+      priority_as_ai_target="NotDangerous" priority_as_frd_target="NotDangerous" priority_to_protect="BigFavoriteToy"
+			>
+     <data_extension name="DLC3" required_expansion_list="3_The_Neinzul_Abyss"
+         necromancer_hacking_to_grant_on_death="3"/>
+     <hack_data hack_type="Sabotage" override_cost_in_hacking_points="11" />
+     <hack_data hack_type="Reprogram" override_cost_in_hacking_points="24" />
+    <metal_flow purpose="SelfConstruction" throughput="500"/>
+    <system name="WU" display_name="质量驱动器"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="15000" range="InsanelyHigh" shot_speed="VeryFast" rate_of_fire="Low" fires_salvos_sequentially="true"
+				shot_type_data="MassDriver"				
+				>
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="100" />
+    </system>
+  </entity>
+  
+  <!-- Tier 1 Infrastructure/Guard Posts -->
+  <entity name="ImperialUnarmedGuardPost"
+            thematic_groups="GuardPost,AI"
+			tags="ImperialTier1Build"
+			special_entity_type="GuardPost"
+			visuals="Assets/_FinalGameMeshes/AIBuildings/GuardPosts/UnderConstruction/GuardPostUnderConstruction.prefab" 
+			icon_name="Ships1/GuardPost" gimbal_icon_size_multiplier="1.4"
+			category="Ship"
+			size_scale="5" y_offset_of_icon="30"
+			visuals_scale_multiplier="13"
+			collision_priority="1000"
+			display_name="帝国无武装岗哨"
+	    display_name_for_sidebar="帝国无武装GP"
+			description="此行星AI防御者的无武装存储建筑。摧毁它减少此处的最大增援容量。每次AI获得增援时，此行星都会获得额外增援。"
+			behavior="Stationary"
+			starting_mark_level="Markless" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="200"			
+			hull_points="25000" shield_points="125000" speed="Immobile"
+			metal_cost="80000" energy_consumption="10000"
+			armor_mm="80" albedo="0.3" mass_tx="5"
+			voice_group="Silent"
+			ship_or_structure_explosion_sfx="Turret_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			ai_reinforcement_multiplier="1.1"
+			
+      priority_as_ai_target="NotDangerous" priority_as_frd_target="NotDangerous" priority_to_protect="NormalGuardPost"
+			>
+  </entity>
+  
+  <!--Tier 0 Guardian-->
+  <entity name="ImperialGuardian"
+	        thematic_groups="AI,Guardian"
+			special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+			tags="ImperialTier0Build,ImperialGuardian"
+			visuals="assets/_finalgamemeshes/guardians/vampireguardian/vampireguardian.prefab"
+            icon_name="Ships1/Guardian"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="3.6"
+			visuals_scale_multiplier="4"
+			y_offset_of_icon="16"
+			collision_priority="400"
+			display_name="帝国守卫"
+	    display_name_for_sidebar="帝国GU"
+			description="基础守卫。配备普通火炮和点防御。"
+			blocks_enemy_claim_flows="true"
+			voice_group="Silent"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="700" strength_multiplier="1"
+			hull_points="50000" shield_points="25000" speed="Normal1"
+			metal_cost="80000" energy_consumption="7500"
+			armor_mm="90" albedo="0.4" engine_gx="7" mass_tx="5"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+      priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			>
+      <system name="WD" display_name="弹道双连射"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="3000" range="Normal5" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="true"
+				shot_type_data="DoubleShot_Red"	
+				>
+    </system>
+	<system name="WW" display_name="点防御"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="400" range="Normal5" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="false"
+				shots_per_salvo="4" added_shots_per_salvo_per_mark="1"
+				shot_type_data="ArmorPiercingShell"	
+				>
+    </system>
+  </entity>
+  
+  <entity name="DireImperialGuardian"
+	        thematic_groups="AI,DireGuardian"
+			special_entity_type="GuardPost" gimbal_icon_size_multiplier="1.75"
+			tags="ImperialTier2Build,ImperialDireGuardian"
+			visuals="assets/_finalgamemeshes/guardians/carrierguardian/carrierguardian.prefab"
+            icon_name="Ships1/GuardianDire"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="7.2"
+			visuals_scale_multiplier="8"
+			y_offset_of_icon="16"
+			collision_priority="400"
+			display_name="可怕帝国守卫"
+	    display_name_for_sidebar="可怕帝国GU"
+			description="基础守卫。配备普通火炮和点防御。现在充当增援点。"
+			blocks_enemy_claim_flows="true"
+			voice_group="Silent"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="700" strength_multiplier="1"
+			hull_points="500000" shield_points="250000" speed="Normal1"
+			metal_cost="800000" energy_consumption="15000"
+			armor_mm="110" albedo="0.5" engine_gx="18" mass_tx="8"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+			is_reinforcement_location="true"
+			
+      priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			>
+      <system name="WD" display_name="弹道双连射"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="30000" range="Normal5" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="true"
+				shot_type_data="DoubleShot_Red"	
+				>
+    </system>
+	<system name="WW" display_name="点防御"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="4000" range="Normal5" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="false"
+				shots_per_salvo="4" added_shots_per_salvo_per_mark="1"
+				shot_type_data="ArmorPiercingShell"	
+				>
+    </system>
+  </entity>
+  
+  <!--Infrastructure Builder-->
+  <entity name="AIImperialBuilder" display_name="帝国建造者"  display_name_for_sidebar="AI建造者"
+	thematic_groups="AI" npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+        tags="AIImperialBuilder"
+        visuals="Assets/_DLC3/Templar/TemplarConstructor/TemplarConstructor.prefab" visuals_bundle="exp3_neinzul_abyss"
+        icon_name="Ships4/TemplarConstructor" gimbal_icon_size_multiplier="1.4"
+	y_offset_of_icon="30"
+	voice_group="Silent"
+	category="Ship"
+	size_scale="6.5"
+	visuals_scale_multiplier="11"
+        draw_in_galaxy_view="true"
+        shows_on_galaxy_map_for_explored_planets="true" 
+	collision_priority="100"
+	description="帝国AI带来了这些舰船，帮助它建立一个横跨银河的帝国。它们会建造各种东西，从普通的守卫到可怕的傀儡，以及离子炮和质量驱动器，在您身后派出，以完成对这个银河系的控制。"
+	starting_mark_level="Mark1"
+	cost_for_ai_to_purchase="5000" mark_level_scale_style="Original"
+	hull_points="500000" shield_points="1500000" speed="AboveAverage1"
+	metal_cost="300000" energy_consumption="12500"
+	armor_mm="120" albedo="0.4" engine_gx="12" mass_tx="7"
+	ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+	ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+        priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="Expendable"
+	per_second_custom_logic_dll="Poi"
+	per_second_custom_logic_type="Poi.Poi_ImperialBuilder_CustomLogic"
+	description_appender_dll="Poi"
+	description_appender_type="Poi.Poi_ImperialBuilder_CustomLogic"
+	should_not_be_given_normal_orders_by_ai_logic="true"
+	>
+    <system name="WG" display_name="引力炮"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="2500" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Misery"
+	    shot_type_data="ElegantCurl"
+            shots_per_salvo="30"
+            base_engine_stun_per_shot="8" 
+            engine_stun_to_engine_gx_less_than="22"
+	    max_engine_stun_seconds="10" added_target_evaluator="EngineDamageAsMinorPart"
+		>
+      <outgoing_damage_modifier based_on="engine_gx" comparison_type="AtMost" compared_to="7" multiplier="3" />		
+    </system>
+    <system name="W1" display_name="防御爆裂"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="500" range="AboveAverage3" shot_speed="Normal" rate_of_fire="High"
+	    shots_per_salvo="20" fires_salvos_sequentially="false"
+	    shot_type_data="DevourerShot_Nemesis"
+	    area_of_effect_size="400"
+	    maximum_number_of_targets_hit_per_shot="10"
+	    >
+    </system>
+
+    <ship_class_data can_be_zombified_and_similar="false" />
+    <data_extension name="DLC3"
+                    necromancer_science_to_grant_on_death="250"
+                    necromancer_hacking_to_grant_on_death="5"/>
+
+  </entity>
+  
+</root>

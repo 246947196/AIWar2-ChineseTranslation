@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <item name="DysonSidekickPerUnitBaseInfo" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.DysonSidekickPerUnitBaseInfo" />
+  <item name="ArmadaPerUnitBaseInfo" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.ArmadaPerUnitBaseInfo" />
+  <item name="ReapersPerUnitBaseInfo" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.ReapersPerUnitBaseInfo" />
+
+  <item name="TiberiumPerUnitBaseInfo" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.TiberiumPerUnitBaseInfo" />
+<item name="SpireSidekickPerUnitBaseInfo" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.SpireSidekickPerUnitBaseInfo" />
+<!--
+      <item name="ScourgeVassalPerUnitBaseInfo" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.ScourgeVassalPerUnitBaseInfo" />
+      -->
+</root>

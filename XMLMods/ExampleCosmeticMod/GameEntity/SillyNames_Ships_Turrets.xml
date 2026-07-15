@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<entity name="AmbushTurret" is_partial_record="true" display_name="灌木炮塔" > </entity>
+	<entity name="PikeTurret" is_partial_record="true" display_name="皮卡德炮塔" ></entity>
+  <entity name="ConcussionTurret" is_partial_record="true" display_name="头痛炮塔" ></entity>
+
+</root>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <build_category name="Specials" sort_index="55" display_name="特殊"
+    description="Every command station has special constructables. Home Command has all of them and then some."
+                  for_player_type_tags="HumanEmpire"
+    />
+</root>

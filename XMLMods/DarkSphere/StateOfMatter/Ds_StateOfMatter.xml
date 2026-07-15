@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <state_of_matter name="DarkSphereAlt" display_name="Weapons-Offline"
+      ships_draw_as_multi_phase_material_in_this_state="true" icon_ship_status_to_draw_when_not_in_alt_mode="Lantern"
+      description_short="Weapons are offline."
+      description_full="Weapons are offline."
+  >
+  </state_of_matter>
+</root>

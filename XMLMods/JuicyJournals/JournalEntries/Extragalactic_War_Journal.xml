@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <journal name="Extragalactic_War_Start" sidebar_text="&lt;color=#ff6a30&gt;敌人：&lt;/color&gt; 河外战争单位" is_for_the_tips_tab="true"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+		   text_replacement_related_player_name="true"
+        chat_text="河外战争单位已释放"
+        is_partial_record="true"  
+           full_text="发件人：军事顾问安娜·斯诺
+舰队指挥部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+看来我们已经变得足够强大，人工智能可能会开始将用于对抗河外战争的单位转向对付我们。
+
+这些是极其巨大而强大的舰船，出现频率不高，但出现时会带来重大打击。" />
+
+  <journal name="AI_Overlord_Transforms" sidebar_text="&lt;color=#ff6a30&gt;敌人：&lt;/color&gt; 霸主第二阶段" is_for_the_tips_tab="true"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+		   text_replacement_related_player_name="true"
+        chat_text="人工智能霸主已相位转移并正在逃跑！"
+        is_partial_record="true"  
+           full_text="发件人：军事顾问安娜·斯诺
+舰队指挥部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官！
+
+人工智能指挥核心正在逃跑！它似乎暂时改变了相位，我们的武器无法击中它，它正朝我们的主指挥站进发！在我们能再次击中它之前，它必须重新进入与我们舰船同相位的状态。
+
+我们认为相位变化只有在它位于堡垒世界上时才能维持。这个新的指挥核心装备了非常重型的武器；我们可能需要一些新的策略来对付它。它似乎特别擅长摧毁小型战机。" />
+  
+</root>

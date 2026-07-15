@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+    <!-- material_override_path="Assets/Effects/Materials/Watery_Mat.mat" material_override_bundle="bonus" -->
+    <entity name="RageGolem"
+            thematic_groups="Reclaimers"
+			special_entity_type="MobileOfficerCombatFleetFlagship"
+			tags="ShowsOnNormalDisplayMode" capturable_seed_weight="0" capturable_max_per_galaxy="0"
+			voice_group="Ark_CherylHarris" gimbal_icon_size_multiplier="1.5"
+			draw_in_galaxy_view="true" is_golem="true"
+
+			visuals="assets/_finalgamemeshes/fleetships/raptor/raptor.prefab"
+            material_override_path="Assets/Effects/Materials/Angry_Mat.mat" material_override_bundle="bonus"
+
+			icon_name="Ships4/SomethingGolden"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="11.5"
+			visuals_scale_multiplier="80.5"
+			y_offset_of_icon="70"
+            rotation_x_of_ship="0"
+			display_name="怒之傀儡"
+			display_name_for_sidebar="怒之傀儡"
+			description="一艘独特的旗舰，能够在危急时刻改变战局。根据你的指令，它会进入暴怒状态，获得巨大的伤害和速度。但使用它会导致金属大量赤字，停止生产直到还清。"
+			collision_priority="810"
+			metal_to_claim="5000000"
+			aip_to_claim="16"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" tech_upgrade_that_is_used_for_my_direct_science="Direct_GolemGeneral"
+			cost_for_ai_to_purchase="10000"
+			hull_points="2000000" shield_points="1000000" speed="AboveAverage1"
+			metal_cost="5000000" energy_consumption="200000"
+			assist_range="Normal1"
+			armor_mm="300" albedo="0.8" engine_gx="18" mass_tx="11"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			speed_multiplier_first_5_seconds_on_planet="1.5"
+			firing_delay_for_transported_ships="6"
+			priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			eligible_for_hacks="IncreaseHullDurability"
+			>
+		<hack_data	hack_type="IncreaseHullDurability"
+					override_cost_in_hacking_points="35"
+					cost_in_hacking_points_multiplier_per_times_same_unit_hacked="2.6"
+					max_times_single_unit_can_be_hacked="2">
+			<custom_hack_data key="AddedMultiplierPerHack" value="1.5" />
+		</hack_data>
+
+		<metal_flow purpose="RebuildingRemains" throughput="100" increase_per_mark_level="100"/>
+
+		<system name="W1" display_name="天顶弹道涡旋"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="4000" range="AboveAverage3" shot_speed="Slow" rate_of_fire="Misery"
+				shots_per_salvo="20" fires_salvos_sequentially="false"
+				shot_type_data="ElegantCurl"
+				>
+		</system>
+
+		<system name="W2" display_name="天顶脱壳弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="8000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Misery" fires_salvos_sequentially="true"
+				shot_type_data="Sabot"
+				>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="5" />
+		</system>
+
+        <system name="C1"
+                display_name="暴怒"
+                custom_type="Claim_RageGolem_Enrage"
+                />
+
+		<ship_class_data can_be_zombified_and_similar="false" can_be_fleet_supercharged="false" />
+
+	</entity>
+
+    <entity name="RageGolem_Enraged"
+            copy_from="RageGolem"
+            thematic_groups="Reclaimers"
+
+            display_name="暴怒傀儡"
+            display_name_for_sidebar="暴怒傀儡"
+            description="暂时获得速度和力量强化。"
+
+            speed="VeryHigh2"
+
+            addon_object_or_particle_field="EnrageFx"
+            addon_object_or_particle_field_scale="26"
+            addon_object_or_particle_field_y_offset="0"
+			>
+            <incoming_damage_modifier based_on="Always" multiplier="0.5" />
+		<system name="W1"
+				damage_per_shot="4000" range="AboveAverage3" shot_speed="Slow" rate_of_fire="Devourer"
+				>
+		</system>
+
+		<system name="W2" display_name="天顶脱壳弹"
+				damage_per_shot="8000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Devourer"
+				>
+		</system>
+	</entity>
+
+</root>

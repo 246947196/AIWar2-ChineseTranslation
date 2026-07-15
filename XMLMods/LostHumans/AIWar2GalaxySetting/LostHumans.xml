@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<!-- Enablers -->
+	<galaxy_setting name="LostHumansTravelers" category="LostHumans" subcategory="EnableFeatures" display_name="旅行者" type="BoolToggle"
+		default="true" changeable_during_gameplay="true"
+		description="Relatively low impact.
+
+Enables 失落人类 旅行者 to appear. These humans have no place to call their own, and travel the galaxy in destitution.
+Can be found traveling throughout the galaxy. May respond to your forces. May not. Depends on their mood.
+
+Disabling this mid game will disable the spawning of new 旅行者, and all interactions.
+It will NOT remove any existing 旅行者."
+	/>
+
+	<galaxy_setting name="LostHumansColonies" category="LostHumans" display_name="失落殖民地" subcategory="EnableFeatures" type="BoolToggle"
+		default="true" changeable_during_gameplay="true"
+		description="Moderate impact.
+
+人类 colonies are hidden throughout the galaxy. They will occasionally request aid. These colonies will spawn into the galaxy with random fleetlines.
+
+If you capture their planet before their aid request expires, the planet will cost you 5 less AIP than it normally would. (Cannot give you AIP this way.)
+You can than transfer the shiplines out of the 殖民地, while the 殖民地 itself will continue to provide resources for as long as you protect it.
+
+If you fail to capture their planet before they are captured, the AI will force them to send attacks against you, consisting of waves of their fleetlines.
+The only way to stop this is to destroy the 殖民地, and it will cost 5 AIP to do so.
+
+Disabling this mid game will disable the spawning of new 失落殖民地, and stop hostile 失落殖民地 from spawning units.
+It will NOT stop any logic around neutral 失落殖民地 that are in the process of being lost, or remove any 失落殖民地 under your control."
+	/>
+
+	<galaxy_setting name="LostHumansRoguesEnabled" category="LostHumans" subcategory="EnableFeatures" display_name="浪客" type="BoolToggle"
+		default="false" changeable_during_gameplay="true"
+		description="Moderate impact, by default. Changing settings can cause this to potentially reach Extreme impact.
+
+Enables 失落人类 浪客 to appear. These humans traverse the galaxy, attempting to hijack fleet designs from the AI.
+The AI will build up defenses against their meddling over time, but as these 浪客 are incredibly sneaky, this will simply result in more hostiles for YOU to deal with.
+
+It is not all downsides, however, for 浪客 on your planets will contact you and request the 建造 of a 浪客公会.
+If built, 浪客 that wander onto that planet will deposit their ill gotten goods in order to give you a constant stream of zombies of types they've stolen.
+
+Disabling this mid game will ONLY disable the spawning of new 浪客. It will not halt any other logic."
+	/>
+
+	<galaxy_setting name="LostHumansConstructionConvoyEnabled" category="LostHumans" subcategory="EnableFeatures" display_name="建造护航队s" type="BoolToggle"
+		default="false" changeable_during_gameplay="true"
+		description="Moderate impact.
+
+Occasionally, fleets of neutral ships may arrive in the galaxy, and begin a slow journey through space. Said journey follows a fixed path, and can be seen via the 建造护航队 galaxy map mode.
+
+These neutral ships build a number of structures for the owner of planets they visist, such as Mines, 牵引光束s, Gravity Generators, and Turrets.
+
+Disabling this mid game will ONLY disable the spawning of new 建造护航队s. It will not halt any other logic."
+	/>
+
+	<galaxy_setting name="LostHumansScourgeLab" category="LostHumans" subcategory="EnableFeatures" display_name="天灾实验室s" type="BoolToggle"
+		default="false" changeable_during_gameplay="true"
+		description="Moderate impact. Requires The 尖塔 Rises expansion.
+
+The AI has a number of labs dedicated to the studying of various alien races hidden throughout the galaxy, crewed by some of the brightest scientific minds that they have yet to purge. Due to the nature of these studies, these 'labs' would be better described as Fortresses, built to defend themselves and withstand any attempts of rescue.
+
+Rarely, 人类 ingenuity can defeat AI's sheer processing power, and the humans on board the lab will manage to remove ai influence on the 站. In doing so, however, they will be splitting the lab off from the AI's power grid, leaving it defenseless.
+
+Should we take a planet during this weak point, we will be able to repair and gain full control over the lab, including the vastly increased Science and HaP from the various data packets on the planet's local AI grid, but the capture of the Lab itself costs 20 more AIP. Should we not claim it in time, it will still cost 20 AIP, in order to destroy it.
+
+Regardless of if we win or fail, the Lab will than be put into military use, producing powerful '天灾' units for whomever owns it. Better make sure it's yours."
+	/>
+
+	<!-- Travelers-->
+	<galaxy_setting name="LostHumansTravelersCountInitial" category="LostHumans" subcategory="Travelers" display_name="旅行者 Initial Spawns" type="IntSlider" 
+		default="5" min="1" max="10" changeable_during_gameplay="false"
+		description="How many 旅行者 to spawn on game start? Has no effect if enabled midway through the game." />
+
+	<galaxy_setting name="LostHumansTravelersSpawnTimer" category="LostHumans" subcategory="Travelers" display_name="Minutes Between Traveler Spawns" type="IntSlider" 
+		default="30" min="15" max="120" changeable_during_gameplay="true"
+		description="How many minutes between new 旅行者 spawning on the map." />
+
+	<galaxy_setting name="LostHumansTravelersInteractionsTrustGain" category="LostHumans" subcategory="Travelers" display_name="Maximum Trust Gain Per Second" type="IntSlider" 
+		default="5" min="1" max="10" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="旅行者 have Trust, a mechanic that determines how likely they are to interact with you. This increases while they are on a planet where you have a strength advantage.
+
+This decides the upper limit on how much trust they can gain per second." />
+
+	<galaxy_setting name="LostHumansTravelersInteractionsTrustLost" category="LostHumans" subcategory="Travelers" display_name="Maximum Trust Loss Per Second" type="IntSlider" 
+		default="1" min="1" max="10" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="旅行者 have Trust, a mechanic that determines how likely they are to interact with you. This decreases while they are on a planet where you have no strength or a strength disadvantage.
+
+This decides the upper limit on how much trust they can lose per second." />
+
+	<!-- Lost Colonies -->
+	<galaxy_setting name="LostHumansColoniesFirstSpawnTimer" category="LostHumans" subcategory="LostColonies" display_name="殖民地 First Spawn" type="IntSlider" 
+		default="60" min="15" max="120" changeable_during_gameplay="false"
+		description="How many minutes into the game before the first 殖民地 spawns?" />
+
+	<galaxy_setting name="LostHumansColoniesSpawnInterval" category="LostHumans" subcategory="LostColonies" display_name="殖民地 Spawn Intervals" type="IntSlider" 
+		default="120" min="30" max="300" changeable_during_gameplay="true"
+		description="How many minutes between Lost 殖民地 spawns?
+
+This cooldown begins after a prior 殖民地 is spawned." />
+
+	<galaxy_setting name="LostHumansColoniesRescueTimer" category="LostHumans" subcategory="LostColonies" display_name="殖民地 Rescue Timer" type="IntSlider" 
+		default="15" min="5" max="20" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="How many minutes after a 殖民地 spawns do you have to rescue it?
+
+May have unexpected results if changed mid game." />
+
+	<galaxy_setting name="LostHumansColoniesHostileInterval" category="LostHumans" subcategory="LostColonies" display_name="Hostile 殖民地 Interval" type="IntSlider" 
+		default="5" min="1" max="30" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="How many minutes between each hostile 殖民地's 攻击 wave." />
+
+	<galaxy_setting name="LostHumansColoniesHostileStrength" category="LostHumans" subcategory="LostColonies" display_name="Hostile 殖民地 Strength" type="IntSlider" 
+		default="20" min="10" max="100" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="(Roughly) How much strength will a hostile 殖民地 put out per 攻击 wave?" />
+
+	<galaxy_setting name="LostHumansColoniesHostileStrengthIncreasePerHour" category="LostHumans" subcategory="LostColonies" display_name="Hostile 殖民地 Strength Per Hour" type="IntSlider"
+		default="6" min="0" max="100" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="Increases Hostile 殖民地 Strength by this value every hour." />
+
+	<galaxy_setting name="LostHumansColoniesHostileStrengthIncreasePer100AIP" category="LostHumans" subcategory="LostColonies" display_name="Hostile 殖民地 Strength Per 100AIP" type="IntSlider"
+		default="6" min="0" max="100" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="Increases Hostile 殖民地 Strength by this value every 100 AIP." />
+
+	<!-- Rogues -->
+	<galaxy_setting name="LostHumansRoguesCountInitial" category="LostHumans" subcategory="Rogues" display_name="Initial Rogue Spawns" type="IntSlider"
+		default="2" min="1" max="5" changeable_during_gameplay="false"
+		description="How many 浪客 will spawn on game start?" />
+
+	<galaxy_setting name="LostHumansRoguesSpawnInterval" category="LostHumans" subcategory="Rogues" display_name="Rogue Spawn Interval" type="IntSlider"
+		default="90" min="30" max="300" changeable_during_gameplay="true"
+		description="How many minutes between each new Rogue spawn?" />
+
+	<galaxy_setting name="LostHumansRoguesStealingTime" category="LostHumans" subcategory="Rogues" display_name="Rogue Stealing Time" type="IntSlider"
+		default="5" min="2" max="30" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="How many minutes does it take for a Rogue to finish stealing from a target?" />
+
+	<galaxy_setting name="LostHumansRoguesRelaxingTime" category="LostHumans" subcategory="Rogues" display_name="Rogue Relaxing Time" type="IntSlider"
+		default="10" min="2" max="30" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="How many minutes does a Rogue idle for after depositing goods at a Guild?" />
+
+	<galaxy_setting name="LostHumansRoguesFirewallWaveInterval" category="LostHumans" subcategory="Rogues" display_name="Firewall Wave Interval" type="IntSlider"
+		default="10" min="1" max="30" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="How many minutes between each wave spawned by Firewalls? (Firewalls are produced in response to Rogue's stealing.)" />
+
+	<galaxy_setting name="LostHumansRoguesFirewallWaveStrength" category="LostHumans" subcategory="Rogues" display_name="Firewall Wave Strength" type="IntSlider"
+		default="20" min="10" max="100" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="(Roughly) How much strength will a Firewall put out per 攻击 wave?" />
+
+	<galaxy_setting name="LostHumansRoguesFirewallWaveStrengthIncreasePerHour" category="LostHumans" subcategory="Rogues" display_name="Firewall Wave Strength Per Hour" type="IntSlider"
+		default="6" min="0" max="100" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="Increases Firewall Wave Strength by this value every hour." />
+
+	<galaxy_setting name="LostHumansRoguesFirewallWaveStrengthIncreasePer100AIP" category="LostHumans" subcategory="Rogues" display_name="Firewall Wave Strength Per 100AIP" type="IntSlider"
+		default="6" min="0" max="100" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="Increases Firewall Wave Strength by this value every 100 AIP." />
+
+	<galaxy_setting name="LostHumansRoguesGuildWaveInterval" category="LostHumans" subcategory="Rogues" display_name="浪客公会 Interval" type="IntSlider"
+		default="5" min="1" max="15" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="How many minutes between each wave spawned by 浪客公会s? (浪客公会s appear in your Build List when there is a Rogue on your planet with loot.)" />
+
+	<galaxy_setting name="LostHumansRoguesGuildWaveStrength" category="LostHumans" subcategory="Rogues" display_name="浪客公会 Strength" type="IntSlider"
+		default="10" min="10" max="100" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="(Roughly) How much strength will a 浪客公会 put out per 攻击 wave?" />
+
+	<galaxy_setting name="LostHumansRoguesGuildWaveStrengthIncreasePerHour" category="LostHumans" subcategory="Rogues" display_name="浪客公会 Strength Per Hour" type="IntSlider"
+		default="3" min="0" max="100" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="Increases 浪客公会 Strength by this value every hour." />
+
+	<galaxy_setting name="LostHumansRoguesGuildWaveStrengthIncreasePer100AIP" category="LostHumans" subcategory="Rogues" display_name="浪客公会 Strength Per 100AIP" type="IntSlider"
+		default="3" min="0" max="100" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="Increases 浪客公会 Strength by this value every 100 AIP." />
+
+	<!-- Construction Convoys -->
+	<galaxy_setting name="LostHumansConstructionConvoyInitialSpawn" category="LostHumans" subcategory="ConstructionConvoys" display_name="建造护航队 First Spawn" type="IntSlider"
+		default="30" min="15" max="120" changeable_during_gameplay="false"
+		description="How many minutes into the game before the first 建造护航队 spawns?" />
+
+	<galaxy_setting name="LostHumansConstructionConvoyCooldownBetweenSpawns" category="LostHumans" subcategory="ConstructionConvoys" display_name="建造护航队 Cooldown" type="IntSlider"
+		default="45" min="15" max="120" changeable_during_gameplay="true"
+		description="How many minutes, after a 护航队 leaves the galaxy, for a new 护航队 to spawn?" />
+
+	<galaxy_setting name="LostHumansConstructionConvoySpawnsPerConvoy" category="LostHumans" subcategory="ConstructionConvoys" display_name="建造护航队 Spawns" type="IntSlider"
+		default="8" min="1" max="20" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="How many ships are spawned as part of each 建造护航队?" />
+
+	<galaxy_setting name="LostHumansConstructionConvoyStructuresToBuildPerPlanet" category="LostHumans" subcategory="ConstructionConvoys" display_name="建造护航队 Structures Per Planet" type="IntSlider"
+		default="2" min="1" max="3" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="How many structures can each 护航队 ship build on each planet they visit?" />
+
+	<galaxy_setting name="LostHumansConstructionConvoyBuildTimer" category="LostHumans" subcategory="ConstructionConvoys" display_name="Seconds To Build Structures" type="IntSlider"
+		default="60" min="30" max="120" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="How many seconds does it take to build each 护航队 structure?" />
+
+	<!-- Scourge Lab -->
+	<galaxy_setting name="LostHumansScourgeLabFirstSpawnTimer" category="LostHumans" subcategory="ScourgeLabs" display_name="天灾实验室 First Spawn" type="IntSlider"
+		default="90" min="30" max="240" changeable_during_gameplay="false"
+		description="How many minutes into the game before the first 天灾实验室 spawns?" />
+
+	<galaxy_setting name="LostHumansScourgeLabSpawnInterval" category="LostHumans" subcategory="ScourgeLabs" display_name="天灾实验室 Spawn Intervals" type="IntSlider"
+		default="180" min="60" max="600" changeable_during_gameplay="true"
+		description="How many minutes between 天灾实验室 spawns?
+
+This cooldown begins after a prior lab is spawned." />
+
+	<galaxy_setting name="LostHumansScourgeLabRescueTimer" category="LostHumans" subcategory="ScourgeLabs" display_name="天灾实验室 Rescue Timer" type="IntSlider"
+		default="15" min="5" max="20" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="How many minutes after a 天灾实验室 spawns do you have to rescue it?
+
+May have unexpected results if changed mid game." />
+
+	<galaxy_setting name="LostHumansScourgeLabHostileInterval" category="LostHumans" subcategory="ScourgeLabs" display_name="天灾实验室 Hostile Wave Interval" type="IntSlider"
+		default="10" min="1" max="30" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="How many minutes between each wave spawned by Hostile 天灾实验室?" />
+
+	<galaxy_setting name="LostHumansScourgeLabHostileStrength" category="LostHumans" subcategory="ScourgeLabs" display_name="天灾实验室 Hostile Wave Strength" type="IntSlider"
+		default="20" min="10" max="100" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="(Roughly) How much strength will a Hostile 天灾实验室 put out per 攻击 wave?" />
+
+	<galaxy_setting name="LostHumansScourgeLabHostileStrengthIncreasePerHour" category="LostHumans" subcategory="ScourgeLabs" display_name="天灾实验室 Hostile Wave Strength Per Hour" type="IntSlider"
+		default="6" min="0" max="100" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="Increases Hostile 天灾实验室 Wave Strength by this value every hour." />
+
+	<galaxy_setting name="LostHumansScourgeLabHostileStrengthIncreasePer100AIP" category="LostHumans" subcategory="ScourgeLabs" display_name="天灾实验室 Hostile Wave Strength Per 100AIP" type="IntSlider"
+		default="6" min="0" max="100" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="Increases Hostile 天灾实验室 Wave Strength by this value every 100 AIP." />
+
+	<galaxy_setting name="LostHumansScourgeLabFriendlyInterval" category="LostHumans" subcategory="ScourgeLabs" display_name="天灾实验室 Friendly Wave Interval" type="IntSlider"
+		default="5" min="1" max="15" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="How many minutes between each wave spawned by Friendly 天灾实验室s?" />
+
+	<galaxy_setting name="LostHumansScourgeLabFriendlyStrength" category="LostHumans" subcategory="ScourgeLabs" display_name="天灾实验室 Friendly Wave Strength" type="IntSlider"
+		default="10" min="10" max="100" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="(Roughly) How much strength will a Friendly 天灾实验室 put out per 攻击 wave?" />
+
+	<galaxy_setting name="LostHumansScourgeLabFriendlyStrengthIncreasePerHour" category="LostHumans" subcategory="ScourgeLabs" display_name="天灾实验室 Friendly Wave Strength Per Hour" type="IntSlider"
+		default="3" min="0" max="100" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="Increases 天灾实验室 Friendly Wave Strength by this value every hour." />
+
+	<galaxy_setting name="LostHumansScourgeLabFriendlyStrengthIncreasePer100AIP" category="LostHumans" subcategory="ScourgeLabs" display_name="天灾实验室 Friendly Wave Strength Per 100AIP" type="IntSlider"
+		default="3" min="0" max="100" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="Increases 天灾实验室 Friendly Wave Strength by this value every 100 AIP." />
+
+</root>

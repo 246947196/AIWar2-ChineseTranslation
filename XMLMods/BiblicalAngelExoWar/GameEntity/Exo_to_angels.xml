@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <entity name="Usurper" 
+			is_partial_record="true"
+			display_name="奥法"
+			display_name_for_sidebar="奥法"
+			>
+  </entity>
+
+  <entity name="Subjugator" 
+			is_partial_record="true"
+			display_name="伊芙"
+			display_name_for_sidebar="伊芙"
+			>
+  </entity>
+  
+  <entity name="Nemesis" 
+			is_partial_record="true"
+			display_name="莉莉丝"
+			display_name_for_sidebar="莉莉丝"
+			>
+  </entity>
+  
+  <entity name="MobileWormholeBorer" 
+			is_partial_record="true"
+			display_name="移动拿非利人"
+			display_name_for_sidebar="移动拿非利"
+			description="一艘快速虫洞钻探船，会找到一个位置尝试创建新虫洞，然后转变为完整的拿非利人。"
+			>
+  </entity>
+  
+  <entity name="WormholeBorer"
+			is_partial_record="true"
+			display_name="拿非利人"
+			display_name_for_sidebar="拿非利人"
+			>
+  </entity>
+
+  <entity name="ExtragalacticFlenser"
+			is_partial_record="true"
+			display_name="伊斯拉菲尔"
+			display_name_for_sidebar="伊斯拉菲尔"
+			>
+  </entity>
+
+  <entity name="ExtragalacticFlenser"
+			required_mod_list="ExowarVarietyLON"
+			is_partial_record="true"
+			display_name="Israfel - Ra Pattern" 
+			display_name_for_sidebar="伊斯拉菲尔-拉"
+			>
+  </entity>
+  
+  <entity name="ExtragalacticMothership"
+			is_partial_record="true"
+			display_name="米迦勒"
+			display_name_for_sidebar="米迦勒"
+			>
+  </entity>
+  
+  <entity name="ExtragalacticPlanetCracker"
+			is_partial_record="true"
+			display_name="加百列"
+			display_name_for_sidebar="加百列"
+			>
+  </entity>
+  
+  <entity name="LONExtragalacticTrueMothership"
+			required_mod_list="ExowarVarietyLON"
+			is_partial_record="true"
+			display_name="马斯提玛"
+			display_name_for_sidebar="马斯提玛"
+			>
+  </entity>
+  
+  <entity name="LONTrueMothershipDrone"
+			required_mod_list="ExowarVarietyLON"
+			is_partial_record="true"
+			display_name="马斯提玛蜂群无人机"
+			display_name_for_sidebar="马斯提玛无人机"
+			>
+  </entity>
+  
+  <entity name="LONExtragalacticFlenserOdin"
+			required_mod_list="ExowarVarietyLON"
+			is_partial_record="true"
+			display_name="伊斯拉菲尔 - 奥丁型" 
+			display_name_for_sidebar="伊斯拉菲尔-奥丁"
+			>
+  </entity>
+  
+  <entity name="LONExtragalacticFlenserThor"
+			required_mod_list="ExowarVarietyLON"
+			is_partial_record="true"
+			display_name="伊斯拉菲尔 - 托尔型" 
+			display_name_for_sidebar="伊斯拉菲尔-托尔"
+			>
+  </entity>
+  
+  <entity name="LONExtragalacticFlenserZeus"
+			required_mod_list="ExowarVarietyLON"
+			is_partial_record="true"
+			display_name="伊斯拉菲尔 - 宙斯型" 
+			display_name_for_sidebar="伊斯拉菲尔-宙斯"
+			>
+  </entity>
+  
+  <entity name="LONExtragalacticFlenserJupiter"
+			required_mod_list="ExowarVarietyLON"
+			is_partial_record="true"
+			display_name="伊斯拉菲尔 - 朱庇特型" 
+			display_name_for_sidebar="伊斯拉菲尔-朱庇特"
+			>
+  </entity>
+  
+  <entity name="LONExtragalacticFlenserJupiterWardJuno"
+			required_mod_list="ExowarVarietyLON"
+			is_partial_record="true"
+			description="朱庇特型伊斯拉菲尔的一部分的强大子单位。在主船体周围生成保护屏障，并使用强大的击退武器击退较小舰船。"
+			>
+  </entity>
+  
+  <entity name="LONExtragalacticFlenserJupiterWardVesta"
+			required_mod_list="ExowarVarietyLON"
+			is_partial_record="true"
+			description="朱庇特型伊斯拉菲尔的一部分的强大子单位。在主船体周围生成保护屏障，并发出强大的阻尼场，降低整个行星上敌对单位的攻击力。"
+			>
+  </entity>
+  
+  <entity name="LONExtragalacticFlenserJupiterWardMinerva"
+			required_mod_list="ExowarVarietyLON"
+			is_partial_record="true"
+			description="朱庇特型伊斯拉菲尔的一部分的强大子单位。在主船体周围生成保护屏障，并使用强大的击退武器击退较小舰船。"
+			>
+  </entity>
+  
+  <entity name="LONExtragalacticFlenserJupiterWardCeres"
+			required_mod_list="ExowarVarietyLON"
+			is_partial_record="true"
+			description="朱庇特型伊斯拉菲尔的一部分的强大子单位。在主船体周围生成保护屏障，并维持一群生产守护者的小型工厂。"
+			>
+  </entity>
+  
+  <entity name="LONExtragalacticCeresWard"
+			required_mod_list="ExowarVarietyLON"
+			is_partial_record="true"
+			description="朱庇特型伊斯拉菲尔的一部分的子子单位。在其母舰船体周围生成保护屏障，并生产一群AI守护者。"
+			>
+  </entity>
+  
+  <entity name="LONExtragalacticFlenserJupiterWardDiana"
+			required_mod_list="ExowarVarietyLON"
+			is_partial_record="true"
+			description="朱庇特型伊斯拉菲尔的一部分的强大子单位。以其强大的远程武器威胁整个引力井。"
+			>
+  </entity>
+  
+  <entity name="LONExtragalacticFlenserJupiterWardVenus"
+			required_mod_list="ExowarVarietyLON"
+			is_partial_record="true"
+			description="朱庇特型伊斯拉菲尔的一部分的强大子单位。以可怕的速度将附近较小舰船转化为AI控制。"
+			>
+  </entity>
+  
+  <entity name="LONExtragalacticFlenserJupiterWardMars"
+			required_mod_list="ExowarVarietyLON"
+			is_partial_record="true"
+			description="朱庇特型伊斯拉菲尔的一部分的强大子单位。使用强大的光束武器对抗附近舰船，并增强整个行星上的AI舰船。"
+			>
+  </entity>
+  
+  <entity name="LONExtragalacticFlenserJupiterWardMercury"
+			required_mod_list="ExowarVarietyLON"
+			is_partial_record="true"
+			description="朱庇特型伊斯拉菲尔的一部分的强大子单位。除了加速行星上的友军舰船外，还使用先进的隐形系统，其调谐如此之好，可以在几乎不干扰隐形场的情况下开火。"
+			>
+  </entity>
+  
+  <entity name="LONExtragalacticFlenserJupiterWardNeptune"
+			required_mod_list="ExowarVarietyLON"
+			is_partial_record="true"
+			description="朱庇特型伊斯拉菲尔的一部分的强大子单位。其海啸导弹对建筑具有毁灭性。"
+			>
+  </entity>
+  
+  <entity name="LONExtragalacticFlenserJupiterWardVulcan"
+			required_mod_list="ExowarVarietyLON"
+			is_partial_record="true"
+			description="朱庇特型伊斯拉菲尔的一部分的强大子单位。装有强大的反主力舰武器，并维持一群生产恐怖守护者的小型工厂。"
+			>
+  </entity>
+  
+  <entity name="LONExtragalacticVulcanWard"
+			required_mod_list="ExowarVarietyLON"
+			is_partial_record="true"
+			description="朱庇特型伊斯拉菲尔的一部分的子子单位。生产一群AI恐怖守护者。"
+			>
+  </entity>
+  
+  <entity name="LONExtragalacticFlenserJupiterWardApollo"
+			required_mod_list="ExowarVarietyLON"
+			is_partial_record="true"
+			description="朱庇特型伊斯拉菲尔的一部分的强大子单位。在主船体周围生成保护屏障，并使用强大的击退武器击退较小舰船。"
+			>
+  </entity>
+  
+  <entity name="AIDragon"
+			is_partial_record="true"
+			display_name="尖塔梅塔特隆"
+			display_name_for_sidebar="尖塔梅塔"
+			>
+  </entity>
+  
+  <entity name="AIDZDragon"
+			is_partial_record="true"
+			display_name="天顶梅塔特隆"
+			display_name_for_sidebar="天顶梅塔"
+			>
+  </entity>
+  
+  <entity name="LONNeinzulDragon"
+			required_mod_list="ExowarVarietyLON"
+			is_partial_record="true"
+			display_name="涅祖尔梅塔特隆"
+			display_name_for_sidebar="涅祖尔梅塔"
+			>
+  </entity>
+  
+  <entity name="LONNanocaustDragon"
+			required_mod_list="ExowarVarietyLON"
+			is_partial_record="true"
+			display_name="纳米灾变梅塔特隆"
+			display_name_for_sidebar="纳米梅塔"
+			>
+  </entity>
+  
+  <entity name="LONExowarSuperdragon"
+			required_mod_list="ExowarVarietyLON"
+			is_partial_record="true"
+			display_name="路西法"
+			display_name_for_sidebar="路西法"
+			>
+  </entity>
+  
+  <entity name="ExtragalacticThunderbird"
+			is_partial_record="true"
+			display_name="拉米艾尔"
+			display_name_for_sidebar="拉米艾尔"
+			>
+  </entity>
+  
+  <entity name="Custodian"
+			is_partial_record="true"
+			display_name="沙姆谢尔"
+			display_name_for_sidebar="沙姆谢尔"
+			description="下一版"拉米艾尔"舰船的高级原型。更易于生产，但比原型弱。远程爆破，增强行星上的盟友，用力场保护它们，如果有哨站存在则无敌。"
+			>
+  </entity>
+  
+  <entity name="ExtragalacticJackalope"
+			is_partial_record="true"
+			display_name="乌列尔"
+			display_name_for_sidebar="乌列尔"
+			>
+  </entity>
+  
+  <entity name="LONExtragalacticRedback"
+			required_mod_list="ExowarVarietyLON"
+			is_partial_record="true"
+			display_name="拉结尔"
+			display_name_for_sidebar="拉结尔"
+			>
+  </entity>
+  
+  <entity name="LONExtragalacticGrendel"
+			required_mod_list="ExowarVarietyLON"
+			is_partial_record="true"
+			display_name="阿撒兹勒"
+			display_name_for_sidebar="阿撒兹勒"
+			>
+  </entity>
+  
+  <entity name="LONExtragalacticManticore"
+			required_mod_list="ExowarVarietyLON"
+			is_partial_record="true"
+			display_name="祖列尔"
+			display_name_for_sidebar="祖列尔"
+			>
+  </entity>
+  
+  <entity name="LONExtragalacticHydra"
+			required_mod_list="ExowarVarietyLON"
+			is_partial_record="true"
+			display_name="莱列尔"
+			display_name_for_sidebar="莱列尔"
+			>
+  </entity>
+  
+  <entity name="LONExtragalacticHydraHead"
+			required_mod_list="ExowarVarietyLON"
+			is_partial_record="true"
+			display_name="莱列尔之首"
+			display_name_for_sidebar="莱列尔之首"
+			description="从莱列尔生成的一个头部，具有先进的腐蚀性武器。"	
+			>
+  </entity>
+  
+  <entity name="Reanimator"
+			is_partial_record="true"
+			display_name="桑达尔丰"
+			display_name_for_sidebar="桑达尔丰"
+			description="下一版"拉斐尔"舰船的高级原型。将敌人转化到己方，释放无人机带回阵亡盟友。"
+			>
+  </entity>
+  
+  <entity name="ExtragalacticWendigo"
+			is_partial_record="true"
+			display_name="拉斐尔"
+			display_name_for_sidebar="拉斐尔"
+			>
+  </entity>
+  
+  <entity name="WendigoDrone"
+			is_partial_record="true"
+			display_name="拉斐尔无人机"
+			display_name_for_sidebar="拉斐尔无人机"
+			>
+  </entity>
+  
+  <entity name="ExtragalacticPoltergeist"
+			is_partial_record="true"
+			display_name="阿兹瑞尔"
+			display_name_for_sidebar="阿兹瑞尔"
+			>
+  </entity>
+  
+  <entity name="Umbra"
+			is_partial_record="true"
+			display_name="乌姆布里尔"
+			display_name_for_sidebar="乌姆布里尔"
+			description="下一版"阿兹瑞尔"舰船的高级原型。隐形且极难被发现，能够完全无视力场和个人护盾。"
+			>
+  </entity>
+  
+  <entity name="ExtragalacticWyrm"
+			is_partial_record="true"
+			display_name="萨奇尔"
+			display_name_for_sidebar="萨奇尔"
+			>
+  </entity>
+  
+  <entity name="Shellshocker"
+			is_partial_record="true"
+			display_name="马特里尔"
+			display_name_for_sidebar="马特里尔"
+			description="下一版"萨奇尔"舰船的高级原型。远程溅射伤害，同时削弱被击中的目标。"
+			>
+  </entity>
+  
+  <entity name="ExtragalacticChimeraArtillery"
+			is_partial_record="true"
+			display_name="阿拉基尔火炮"
+			display_name_for_sidebar="阿拉基尔火炮"
+			>
+  </entity>
+  
+  <entity name="ExtragalacticChimera"
+			is_partial_record="true"
+			display_name="阿拉基尔"
+			display_name_for_sidebar="阿拉基尔"
+			description="阿拉基尔移除主炮但改为发射暴露的导弹发射器。"
+			>
+  </entity>
+  
+  <entity name="WarspiteArtillery"
+			is_partial_record="true"
+			display_name="图列尔火炮"
+			display_name_for_sidebar="图列尔火炮"
+			description="下一版"阿拉基尔火炮"舰船的高级原型。持续远程爆破，影响小爆炸半径内的一切。"
+			>
+  </entity>
+  
+  <entity name="Warspite"
+			is_partial_record="true"
+			display_name="图列尔"
+			display_name_for_sidebar="图列尔"
+			description="隐藏在Turiel火炮内部，而且不高兴。"
+			>
+  </entity>
+  
+  <entity name="ExtragalacticPhoenix"
+			is_partial_record="true"
+			display_name="巴比埃尔"
+			display_name_for_sidebar="巴比埃尔"
+			>
+  </entity>
+  
+  <entity name="LONExtragalacticPhoenixV2"
+			required_mod_list="ExowarVarietyLON"
+			is_partial_record="true"
+			display_name="不稳定巴比埃尔"
+			display_name_for_sidebar="不稳定巴比"
+			>
+  </entity>
+  
+  <entity name="LONExtragalacticPhoenixV2Stage2"
+			required_mod_list="ExowarVarietyLON"
+			is_partial_record="true"
+			display_name="炽热巴比埃尔"
+			display_name_for_sidebar="炽热巴比"
+			description="横冲直撞、过载的Barbiel版本，从不稳定Barbiel的灰烬中诞生。无论涉及何种外来技术，对舰船来说都不太健康。"
+			>
+  </entity>
+  
+  <entity name="LONExtragalacticCentaur"
+			required_mod_list="ExowarVarietyLON"
+			is_partial_record="true"
+			display_name="阿里埃尔"
+			display_name_for_sidebar="阿里埃尔"
+			>
+  </entity>
+  
+  <entity name="LONExtragalacticLamassu"
+			required_mod_list="ExowarVarietyLON"
+			is_partial_record="true"
+			display_name="巴拉基尔"
+			display_name_for_sidebar="巴拉基尔"
+			>
+  </entity>
+  
+  <entity name="LONExtragalacticTyphon"
+			required_mod_list="ExowarVarietyLON"
+			is_partial_record="true"
+			display_name="阿巴顿"
+			display_name_for_sidebar="阿巴顿"
+			>
+  </entity>
+  
+  <entity name="LONExtragalacticStrix"
+			required_mod_list="ExowarVarietyLON"
+			is_partial_record="true"
+			display_name="穆里尔"
+			display_name_for_sidebar="穆里尔"
+			>
+  </entity>
+  
+  <entity name="LONExtragalacticDireProteus"
+			required_mod_list="ExowarVarietyLON"
+			is_partial_record="true"
+			display_name="恐怖工厂"
+			display_name_for_sidebar="恐怖工厂"
+			description="我们之前遇到过工厂，与其说是一艘船，不如说是一个伪装成船的贪婪蜂群。这个类似。但更大。大得多。"	
+			>
+  </entity>
+  
+  <entity name="LONExtragalacticDireProteusStage2"
+			required_mod_list="ExowarVarietyLON"
+			is_partial_record="true"
+			display_name="复苏恐怖工厂"
+			display_name_for_sidebar="新恐怖工厂"
+			description="我们之前遇到过工厂，与其说是一艘船，不如说是一个伪装成船的贪婪蜂群。这个类似。但更大。大得多。"	
+			>
+  </entity>
+  
+  <entity name="LONExtragalacticDireProteusStage3"
+			required_mod_list="ExowarVarietyLON"
+			is_partial_record="true"
+			display_name="改型恐怖工厂"
+			display_name_for_sidebar="改恐怖工厂"
+			description="我们之前遇到过工厂，与其说是一艘船，不如说是一个伪装成船的贪婪蜂群。这个类似。但更大。大得多。"	
+			>
+  </entity>
+  
+  <entity name="LONExtragalacticDireProteusStage4"
+			required_mod_list="ExowarVarietyLON"
+			is_partial_record="true"
+			display_name="衰退恐怖工厂"
+			display_name_for_sidebar="衰恐怖工厂"
+			description="我们之前遇到过工厂，与其说是一艘船，不如说是一个伪装成船的贪婪蜂群。这个类似。但更大。大得多。"	
+			>
+  </entity>
+  
+  <entity name="LONExtragalacticProteus"
+			required_mod_list="ExowarVarietyLON"
+			is_partial_record="true"
+			display_name="工厂"
+			display_name_for_sidebar="工厂"	
+			>
+  </entity>
+  
+  <entity name="LONExtragalacticProteusStage2"
+			required_mod_list="ExowarVarietyLON"
+			is_partial_record="true"
+			display_name="改型工厂"
+			display_name_for_sidebar="改工厂"	
+			>
+  </entity>
+  
+  <entity name="LONExtragalacticProteusStage3"
+			required_mod_list="ExowarVarietyLON"
+			is_partial_record="true"
+			display_name="衰退工厂"
+			display_name_for_sidebar="衰工厂"	
+			>
+  </entity>
+  
+  <entity name="ExtragalacticMaugrim"
+			is_partial_record="true"
+			display_name="阿巴图尔"
+			display_name_for_sidebar="阿巴图尔"		
+			>
+  </entity>
+  
+  <entity name="MaugrimDrone"
+			is_partial_record="true"
+			display_name="阿巴图尔无人机"
+			display_name_for_sidebar="阿巴图尔无人机"		
+			>
+  </entity>
+  
+  <entity name="Fenrir"
+			is_partial_record="true"
+			display_name="萨哈奎尔"
+			display_name_for_sidebar="萨哈奎尔"	
+			description="下一版"阿巴图尔"舰船的高级原型。拥有能够贯穿多个目标的远程扇形光束，以及短程防空炮和一组无人机。"
+			>
+  </entity>
+  
+  <entity name="LONExtragalacticPolaris"
+			required_mod_list="ExowarVarietyLON"
+			is_partial_record="true"
+			display_name="泽丰"
+			display_name_for_sidebar="泽丰"	
+			>
+  </entity>
+  
+  <entity name="LONExtragalacticOgre"
+			required_mod_list="ExowarVarietyLON"
+			is_partial_record="true"
+			display_name="格莱蒙瑞"
+			display_name_for_sidebar="格莱蒙瑞"	
+			>
+  </entity>
+  
+  <entity name="LONExtragalacticEchidna"
+			required_mod_list="ExowarVarietyLON"
+			is_partial_record="true"
+			display_name="阿斯蒙蒂斯"
+			display_name_for_sidebar="阿斯蒙蒂斯"	
+			>
+  </entity>
+  
+  <entity name="LONEchidnaNanoswarm"
+			required_mod_list="ExowarVarietyLON"
+			is_partial_record="true"
+			display_name="混沌之种"
+			display_name_for_sidebar="混沌之种"	
+			>
+  </entity>
+  
+  <entity name="LONExtragalacticCyclops"
+			required_mod_list="ExowarVarietyLON"
+			is_partial_record="true"
+			display_name="马尔法斯"
+			display_name_for_sidebar="马尔法斯"	
+			>
+  </entity>
+  
+  <entity name="LONExtragalacticMagni"
+			required_mod_list="ExowarVarietyLON"
+			is_partial_record="true"
+			display_name="阿斯塔罗特"
+			display_name_for_sidebar="阿斯塔罗特"	
+			>
+  </entity>
+  
+  <entity name="LONExtragalacticBasilisk"
+			required_mod_list="ExowarVarietyLON"
+			is_partial_record="true"
+			display_name="巴弗灭"
+			display_name_for_sidebar="巴弗灭"	
+			>
+  </entity>
+  
+  <entity name="ExtragalacticAIHunterAnnihilator"
+			is_partial_record="true"
+			display_name="萨里尔"
+			display_name_for_sidebar="萨里尔"
+			description="全面升级的炽天使。"		
+			>
+  </entity>
+  
+  <entity name="ExtragalacticAIHunterSeeker"
+			is_partial_record="true"
+			display_name="以西结"
+			display_name_for_sidebar="以西结"
+			description="更大更危险的炽天使。"		
+			>
+  </entity>
+  
+  <entity name="AIHunterKiller"
+			is_partial_record="true"
+			display_name="炽天使"
+			display_name_for_sidebar="炽天使"
+			>
+  </entity>
+
+</root>

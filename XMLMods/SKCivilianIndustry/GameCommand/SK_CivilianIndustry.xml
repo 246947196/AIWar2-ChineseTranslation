@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<command name="SetWormholePath_CivilianIndustryBulk" audio_cue="SetWormholePath" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.GameCommand_SetWormholePath" />
+	<command name="MoveManyToOnePoint_CivilianIndustryBulk" audio_cue="Move" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.GameCommand_MoveManyToOnePoint" />
+	<command name="SetMilitiaCaps" core_function="None" audio_cue="Move" dll_name="SKCivilianIndustryBaseInfo" type_name="SKCivilianIndustry.GameCommands.SetMilitiaCaps" />
+	<command name="SetMilitiaAtEase" core_function="None" audio_cue="Move" dll_name="SKCivilianIndustryBaseInfo" type_name="SKCivilianIndustry.GameCommands.SetMilitiaAtEase" />
+	<command name="AttemptedToStoreAtEaseUnit" core_function="None" audio_cue="Move" dll_name="SKCivilianIndustryBaseInfo" type_name="SKCivilianIndustry.GameCommands.AttemptedToStoreAtEaseUnit" />
+	<command name="SetNextTargetForTradeStation" core_function="None" audio_cue="Move" dll_name="SKCivilianIndustryBaseInfo" type_name="SKCivilianIndustry.GameCommands.SetNextTargetForTradeStation" />
+</root>

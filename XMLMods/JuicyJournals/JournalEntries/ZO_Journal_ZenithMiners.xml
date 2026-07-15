@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <journal name="ZO_ZenithMiners_InitialProbe" sidebar_text="{FactionColor}天顶采矿者：&lt;/color&gt; 天顶探测机被发现"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+		   text_replacement_related_player_name="true"
+
+           is_partial_record="true" 
+           full_text="发件人：首席情报官雨果·道森
+情报部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+我们检测到一个发出 {FactionColor}天顶&lt;/color&gt; 能量信号的探测机。它似乎在向银河系广播一个导航信号，返回的脉冲表明可能有一艘非常强大的天顶舰船正在进入。当那艘强大的舰船到达时，我们将面临一场重大战斗。
+
+如果它像我们多年来看到的其他天顶装置一样，我们也许能够用入侵与其系统进行交互。" />
+
+    <journal name="ZO_ZenithMiners_InitialMiner" sidebar_text="{FactionColor}天顶采矿者：&lt;/color&gt;  天顶采矿者已抵达"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+		   text_replacement_related_player_name="true"
+
+           is_partial_record="true" 
+           full_text="发件人：首席情报官雨果·道森
+情报部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+我们检测到一艘真正巨大的 {FactionColor}天顶傀儡&lt;/color&gt;。它似乎能够影响行星本身；我们以前从未见过这样的情况。
+
+看起来它可能能够完全摧毁一个行星，包括上面的一切。即使是旗舰如果在行星上也将被永久摧毁。" />
+
+    <journal name="ZO_ZenithMiners_AttackingDyson" sidebar_text="{FactionColor}天顶采矿者：&lt;/color&gt;  戴森球体遭到攻击"
+             can_record_another_copy_if_already_recorded_in_this_campaign="false"
+             text_replacement_related_faction_color="true"
+		     text_replacement_related_player_name="true"
+
+           is_partial_record="true" 
+           full_text="发件人：首席情报官雨果·道森
+情报部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+我们一直认为没有什么能杀死一个戴森球体，但也许我们错了。看起来一个天顶采矿者正在攻击一个戴森球体！如果我们想拯救球体，我们需要尽快行动。" />
+
+    <journal name="ZO_ZenithMiners_DysonDestroyed" sidebar_text="{FactionColor}天顶采矿者：&lt;/color&gt;  戴森球体被摧毁"
+             can_record_another_copy_if_already_recorded_in_this_campaign="false"
+             text_replacement_related_faction_color="true"
+		     text_replacement_related_player_name="true"
+
+           is_partial_record="true" 
+           full_text="发件人：首席情报官雨果·道森
+情报部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+一个天顶采矿者杀死了一个戴森球体。这是悲惨的一天。" />
+
+</root>

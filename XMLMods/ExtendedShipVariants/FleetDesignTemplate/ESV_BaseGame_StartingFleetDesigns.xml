@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <fleet_design name="ESV_ThirdEyeStartingFleet"
+        display_name="第三眼舰队"
+        description="A mix of powerful mostly anti-large ships along with a Target Painter Transport Flagship to crush big targets, intended to use their full potential later in the game."
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_TargetPainter" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+    <ship_membership name="Eyebot" ship_cap_group="Strike" weight="100" cap="40"/>
+    <ship_membership name="Oculus" ship_cap_group="Strike" weight="100" cap="40"/>
+    <ship_membership name="Stalker" ship_cap_group="Strike" weight="100" cap="40"/>
+    <ship_membership name="Devestator" ship_cap_group="Frigate" weight="100" cap="6"/>
+  </fleet_design>
+  
+  <fleet_design name="ESV_TurboStartingFleet"
+        display_name="涡轮舰队"
+        description="快速反应舰船，配备灵活运输旗舰。兼具突袭和伏击能力。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Agile" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+    <ship_membership name="StrikeWing" ship_cap_group="Strike" weight="100" cap="40"/>
+    <ship_membership name="Raider" ship_cap_group="Strike" weight="100" cap="40"/>
+    <ship_membership name="Tracker" ship_cap_group="Strike" weight="100" cap="40"/>
+    <ship_membership name="ShredderFrigate" ship_cap_group="Frigate" weight="100" cap="6"/>
+  </fleet_design>
+  
+  <fleet_design name="ESV_BlockadeBreakerStartingFleet"
+        display_name="破封锁舰队"
+        description="缓慢但数量少而强大的重击手，设计为被投送到敌军中心造成破坏，由先锋运输旗舰运送。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Vanguard" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+    <ship_membership name="ElectroStrikeCorvette" ship_cap_group="Strike" weight="100" cap="15"/>
+    <ship_membership name="VexGuard" ship_cap_group="Strike" weight="100" cap="20"/>
+    <ship_membership name="Suppressor" ship_cap_group="Strike" weight="100" cap="6"/>
+    <ship_membership name="WedgeFrigate" ship_cap_group="Frigate" weight="100" cap="6"/>
+  </fleet_design>
+  
+  <fleet_design name="ESV_GeneratorStartingFleet"
+        display_name="发生器舰队"
+        description="生产并使用金属通过工程运输旗舰修理舰船，能够比其他舰队更持久地维持攻击并进行更大规模的消耗战。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Engineering" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+    <ship_membership name="MetabolizingMLRSCorvette" ship_cap_group="Strike" weight="100" cap="40"/>
+    <ship_membership name="ClusterBomb" ship_cap_group="Strike" weight="100" cap="25"/>
+    <ship_membership name="Ram" ship_cap_group="Strike" weight="100" cap="25"/>
+    <ship_membership name="BountyHunter" ship_cap_group="Frigate" weight="100" cap="9"/>
+  </fleet_design>
+  
+  <fleet_design name="ESV_GravityStartingFleet"
+        display_name="引力舰队"
+        description="使用非常慢的舰船配合拖船运输旗舰将其加速到可观的速度值，同时减速敌人，利用其缓慢和无法接近的弱点。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Tugboat" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+    <ship_membership name="ObstructorWing" ship_cap_group="Strike" weight="100" cap="40"/>
+    <ship_membership name="Tarantula" ship_cap_group="Strike" weight="100" cap="25"/>
+    <ship_membership name="Zapper" ship_cap_group="Strike" weight="100" cap="15"/>
+    <ship_membership name="TranslocatorSniperFrigate" ship_cap_group="Frigate" weight="100" cap="6"/>
+  </fleet_design>
+  
+  <fleet_design name="ESV_PartisanStartingFleet"
+        display_name="游击队舰队"
+        description="使用隐形运输旗舰和多个隐形或强化舰船，深入敌后摧毁敌方据点。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Cloaked" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+    <ship_membership name="CannonBot" ship_cap_group="Strike" weight="100" cap="80" />
+    <ship_membership name="FortifiedAgravicPod" ship_cap_group="Strike" weight="100" cap="40"/>
+    <ship_membership name="SpaceBomber" ship_cap_group="Strike" weight="100" cap="55"/>
+    <ship_membership name="RaidFrigate" ship_cap_group="Frigate" weight="100" cap="9"/>
+  </fleet_design>
+</root>

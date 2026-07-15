@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<!-- Zenith Whaler -->
+	<entity name="RPSF_Frigate_Zenith_Harpoon" copy_from="RPSF_Frigate_Template"
+		required_expansion_list="2_Zenith_Onslaught"
+		thematic_groups="Frigate,Zenith,DarkZenith"
+		visuals="Assets/_DLC2/Zenith/ZAScutarius/ZAScutarius.prefab" visuals_bundle="exp2_zenith_onslaught"
+		size_scale="7.5" visuals_scale_multiplier="30"
+		icon_overlay="Overlays1/DZ_Red_Enraged"
+		
+		display_name="天顶捕鲸护卫舰"
+		display_name_for_sidebar="天顶捕鲸FF"
+		description="猎杀星舰鲸脂"
+		tech_upgrades_that_benefit_me="Alien,Ambush"
+		hull_points="260000" shield_points="130000" 
+		>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<fleet_membership name="UnusualMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<fleet_membership name="AntiLargeMix" ship_cap_group="Frigate" weight="100" cap="6"/>
+		<!-- Harpoon: 486k damage per shot at mk7 / 30s = 16.2kdps at Mk7 -->
+	    <system name="L" display_name="鱼叉发射器"
+			category="Weapon" firing_timing="OnlyInRange" shot_type_data="DZJavelin" required_expansion_list="2_Zenith_Onslaught"
+			damage_per_shot="5" range="Planetary" shot_speed="Slow" rate_of_fire="Sloth" fires_salvos_sequentially="true"  
+			shots_per_salvo="1"
+			>
+		</system>
+		<system name="Q9" display_name="死握鱼雷"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="4500" 
+			range="High2" 
+			rate_of_fire="SlightlyLow"
+			fires_salvos_sequentially="true"
+			shot_speed="Slow"	shot_type_data="PlasmaTorpedo"			
+			multiplier_damage_to_tractored_unit="8"
+			>
+			<outgoing_damage_modifier based_on="MaxHull" comparison_type="AtLeast" compared_to="100000" multiplier="1.1" />
+			<death_effect_damage type="GreaterMetabolization" tier_name="BountyHunter"/> 
+		</system>
+		<incoming_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="0.1" />
+	</entity>
+</root>

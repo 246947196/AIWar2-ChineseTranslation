@@ -491,6 +491,12 @@ namespace Arcen.AIW2.External
                 if ( this.TechUpgrade == null )
                     return;
                 {
+                    TMPro.TextMeshProUGUI mainTMP = SubTexts[0].ReferenceText;
+                    if ( mainTMP != null )
+                    {
+                        mainTMP.enableAutoSizing = false;
+                        mainTMP.fontSize = 9f;
+                    }
                     int debugStage = 0;
                     try
                     {
@@ -625,6 +631,12 @@ namespace Arcen.AIW2.External
                 if ( this.FleetToUpgrade == null )
                     return;
                 {
+                    TMPro.TextMeshProUGUI mainTMP = SubTexts[0].ReferenceText;
+                    if ( mainTMP != null )
+                    {
+                        mainTMP.enableAutoSizing = false;
+                        mainTMP.fontSize = 9f;
+                    }
                     int debugStage = 0;
                     try
                     {

@@ -1,0 +1,1602 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--
+	<system name="W3" display_name="Archon Plasma Overdriver"
+          category="Weapon" firing_timing="OnlyInRange"
+          damage_per_shot="50000" range="AboveAverage3" shot_speed="Slow" rate_of_fire="Low" fires_salvos_sequentially="true"
+          shot_type_data="PlasmaTorpedoAOEBurstAtEnd"
+          overdrives_shields="true"
+          area_of_effect_size="1500"
+          aoe_spreads_damage_among_available_targets="true"
+				>
+    </system>
+	<system name="T" display_name="Incredible Tachyon Array"
+				category="Passive" tachyon_points="25" tachyon_range="EssentiallyInfinite" tachyon_hits_albedo_less_than="0.85"
+				>
+		</system>
+		<data_extension name="DLC3"
+                            necromancer_resource_one_to_grant_on_death="200"
+							necromancer_hacking_to_grant_on_death="50"
+                            immune_to_necromancy="true"
+                            />
+							
+		damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.05"
+		pushes_enemy_shields="true"
+		returns_this_percentage_of_damage_if_damaged_by_enemy_attack="1.25"
+		does_not_use_multipliers_from_mark_level="true"
+				max_number_of_weapon_points="1000"
+				multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5"
+				regenerates_dying_ships_at_this_health_cost_ratio="0.3"
+			will_not_regenerate_dying_ships_if_health_below_this_percentage="0.2"
+			holy lance
+		shots_per_salvo="2"
+		heavenly lance
+		heavenly wrath
+		maybe melee attack
+		aoe weapon points
+		
+		wings number?
+		
+		different order :
+		-> references to modders/players
+		dimissal order
+		radiant order
+		
+	-->
+	<!-- Strikecraft -->
+	<!-- 2 * hull and shield, 1.5 * dmg-->
+	<entity name="FantasyCherub" tags="FantasyCherub,HeavenFighter,FantasyHeavenT1"
+        thematic_groups="Hidden,VeryMinorAliens"
+	    visuals="Assets/_DLC3/Strikecraft/AreaBombard/AreaBombard.prefab" visuals_bundle="exp3_neinzul_abyss"
+		icon_name="Ships3/DarkZenithSkald" icon_overlay="Overlays2/Guardian_Fragmenting"
+		category="Ship" is_strikecraft="true" 
+	    size_scale="3"
+			visuals_scale_multiplier="5"
+        collision_priority="8000"
+	    display_name="基路伯"
+		display_name_for_sidebar="基路伯"
+	    description="This weak holy creature spreads a harmonic aura allowing other Cherubs to increase their damage. Carries a weapon made to deal with other strikecraft. Deployed by the Heavenly realm to destroy all evil in the galaxy."
+		starting_mark_level="Mark1"  tech_upgrades_that_benefit_me="Unused"
+		cost_for_ai_to_purchase="100000"		
+		hull_points="300" shield_points="6000" speed="AboveAverage1"
+		metal_cost="3000" energy_consumption="500"
+		armor_mm="20" albedo="0.3" mass_tx="0.3"
+		engine_gx="7"
+		amount_added_to_damage_per_ship_of_this_type_on_planet="4" amount_added_to_damage_per_ship_of_this_type_on_planet_per_mark="4" max_amount_added_to_damage_per_ship_of_this_type_on_planet="400"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+		voice_group="Turret"
+		priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+		>
+		<data_extension name="DLC3"
+                            necromancer_resource_one_to_grant_on_death="0"
+                            immune_to_necromancy="true"
+				necromancer_science_to_grant_on_death="1"
+				necromancer_hacking_to_grant_on_death="0"
+				/>
+		<system name="R1" display_name="圣光冲击波"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="30" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Low"
+				shots_per_salvo="8" fires_salvos_sequentially="false"
+				shot_type_data="LaserPulse_DeepBlue"
+				>
+		</system>
+	</entity>
+	
+	<entity name="FantasyPriest" tags="FantasyPriest,HeavenFighter,FantasyHeavenT1"
+        thematic_groups="Hidden,VeryMinorAliens"
+	    visuals="Assets/_DLC3/Strikecraft/Pillager/Pillager.prefab" visuals_bundle="exp3_neinzul_abyss"
+		icon_name="Ships3/DarkMirror" icon_overlay="Overlays1/Turret_Imploder"
+		y_offset_of_icon="35"
+		category="Ship" is_strikecraft="true" 
+	    size_scale="1.2"
+			visuals_scale_multiplier="4.8"
+        collision_priority="8000"
+	    display_name="Mortal Order Priest"
+		display_name_for_sidebar="祭司"
+	    description="A mortal on the brink of ascendance, it uses its own health to regenerate its allies on the brink of death. Deployed by the Heavenly realm to destroy all evil in the galaxy."
+		starting_mark_level="Mark1"  tech_upgrades_that_benefit_me="Unused"
+		cost_for_ai_to_purchase="100000"		
+		hull_points="16000" shield_points="0" speed="Normal1"
+		metal_cost="3000" energy_consumption="500"
+		armor_mm="70" albedo="0.4" mass_tx="0.3"
+		engine_gx="7"
+		regenerates_dying_ships_at_this_health_cost_ratio="10"
+		will_not_regenerate_dying_ships_if_health_below_this_percentage="0.2"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+		voice_group="Turret"
+		priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+		>
+		<data_extension name="DLC3"
+                            necromancer_resource_one_to_grant_on_death="0"
+                            immune_to_necromancy="true"
+				necromancer_science_to_grant_on_death="1"
+				necromancer_hacking_to_grant_on_death="0"
+				/>
+		<system name="WW" display_name="霰弹炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="20" range="Small5" shot_speed="Normal" rate_of_fire="RatherLow"
+				shots_per_salvo="8" fires_salvos_sequentially="false"
+				shot_type_data="DoubleShot_Green"	
+				>
+		</system>	
+	</entity>
+	
+	<entity name="FantasyZealot" tags="FantasyZealot,HeavenFighter,FantasyHeavenT1"
+        thematic_groups="Hidden,VeryMinorAliens"
+	    visuals="Assets/_DLC2/General/ShrikeInterceptor/ShrikeInterceptor.prefab" visuals_bundle="exp2_zenith_onslaught"
+		icon_name="Ships1/ViralShredder" icon_overlay="Overlays1/Starship_Samurai"
+		y_offset_of_icon="35"
+		category="Ship" is_strikecraft="true" 
+	    size_scale="2.4"
+			visuals_scale_multiplier="10.2"
+        collision_priority="8000"
+	    display_name="Mortal Order Zealot"
+		display_name_for_sidebar="狂热者"
+	    description="A mortal going down the path of good with great conviction. The Zealot uses melee weaponry that deals bonus damage to armored enemies. Deployed by the Heavenly realm to destroy all evil in the galaxy."
+		starting_mark_level="Mark1"  tech_upgrades_that_benefit_me="Unused"
+		cost_for_ai_to_purchase="100000"		
+		hull_points="600" shield_points="12000" speed="Normal1"
+		metal_cost="3000" energy_consumption="500"
+		armor_mm="120" albedo="0.3" mass_tx="0.3"
+		engine_gx="7"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+		voice_group="Turret"
+		priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+		>
+		<data_extension name="DLC3"
+                            necromancer_resource_one_to_grant_on_death="0"
+                            immune_to_necromancy="true"
+				necromancer_science_to_grant_on_death="1"
+				necromancer_hacking_to_grant_on_death="0"
+				/>
+		<system name="WD" display_name="狂热之剑"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="500" range="AlmostNone" seek_range="Normal1" shot_speed="Fast" rate_of_fire="FairlyLow" fires_salvos_sequentially="false"
+				shot_type_data="MeleeInvisible" added_target_evaluator="Melee"
+				>
+		<outgoing_damage_modifier based_on="Armor_mm" comparison_type="MultiplesOf" compared_to="35" multiplier="1" max_multiplier="10" />	
+		</system>
+	</entity>
+	
+	
+	
+	
+	<!-- Guardians -->
+	<!--
+	<entity name="FantasyLesserAngel" tags="FantasyLesserAngel,HeavenFighter,FantasyHeavenT2" npc_ship_cap_type="SpecialThingsToAlwaysSeed" ship_class_name="FantasyLesserAngelShipClass"
+        thematic_groups="Hidden,VeryMinorAliens"
+		draw_in_galaxy_view="true"
+	    visuals="Assets/_FinalGameMeshes/AIExtragalactic/Tier3_ExtragalacticWarSlicerFrigate/Tier3_ExtragalacticWarSlicerFrigate.prefab"
+		icon_name="Ships3/ZenithArchitraveCastra" gimbal_icon_size_multiplier="2.2"
+		uses_large_health_bar="true"
+		category="Ship"
+	    size_scale="21"
+			visuals_scale_multiplier="64"
+			y_offset_of_icon="30"
+        collision_priority="8000"
+	    display_name="下级天使"
+		display_name_for_sidebar="L 级天使"
+	    description="The Lesser Angel is an elite unit protected mostly by advanced shielding, with a very fragile hull and armor, but that is immune to weapon jamming. Deployed by the Heavenly realm to destroy all evil in the galaxy."
+		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+		cost_for_ai_to_purchase="100000"		
+		hull_points="5000" shield_points="100000" speed="AboveAverage4"
+		metal_cost="150000" energy_consumption="7500"
+		armor_mm="20" albedo="0.5" mass_tx="5"
+		engine_gx="14"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+		voice_group="Turret"
+
+		priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+		seconds_to_fully_regenerate_hull="10"
+		
+		>
+		<data_extension name="DLC3"
+                            necromancer_resource_one_to_grant_on_death="0"
+                            immune_to_necromancy="true"
+				necromancer_science_to_grant_on_death="3"
+				necromancer_hacking_to_grant_on_death="0"
+				/>
+		<system name="W1" display_name="Lesser Soul Siphon"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="33" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"				
+				shot_type_data="FusionBolt" cloaking_percent_loss_from_firing="0.1"
+				health_change_per_damage_dealt="3"
+				shots_per_salvo="3"
+				>
+			<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="PersonalShieldOnly" comparison_type="AtLeast" compared_to="1" multiplier="10" />	
+		</system>
+		<system name="W2" display_name="Lesser Holy Lance"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="4000" range="Normal2" shot_speed="Normal" rate_of_fire="Low" fires_salvos_sequentially="false"
+				shot_type_data="HeavyBeamInvisible"
+				shots_per_salvo="3"
+				beam_length_multiplier="1" beam_weapon_visual_style="Laser_YellowBright"
+				hits_all_intersecting_targets="true"				
+				shots_detonate_immediately="true"
+                is_coilbeam="true"	
+				>  
+		</system>
+	</entity>
+	-->
+	<entity name="FantasyAdjucatorLesserAngel" tags="FantasyAdjucatorLesserAngel,HeavenFighter,FantasyHeavenT2" ship_class_name="FantasyLesserAngelShipClass"
+        thematic_groups="Hidden,VeryMinorAliens"
+			visuals="Assets/_DLC3/Frigates/BladeSpawnerFFH/BladeSpawnerFFH.prefab" visuals_bundle="exp3_neinzul_abyss"
+			material_override_path="Assets/_DLC1/FallenSpire/Spire3Cruiser/SpireImperialCruiser.prefab" material_override_bundle="exp1_the_spire_rises"
+		icon_name="Ships2/Destroyer"   icon_overlay="Overlays2/Hacked"
+		uses_large_health_bar="true"
+		category="Ship"
+	    size_scale="6"
+			visuals_scale_multiplier="5.8"
+			y_offset_of_icon="15"
+        collision_priority="8000"
+	    display_name="Adjucator Order Lesser Angel"
+		display_name_for_sidebar="A Lesser Angel"
+	    description="The Lesser Angel is an elite unit protected mostly by advanced shielding, with a very fragile hull and armor, but that is immune to weapon jamming. Deployed by the Heavenly realm to destroy all evil in the galaxy."
+		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+		cost_for_ai_to_purchase="100000"		
+		hull_points="5000" shield_points="100000" speed="AboveAverage4"
+		metal_cost="150000" energy_consumption="7500"
+		armor_mm="20" albedo="0.5" mass_tx="5"
+		engine_gx="14"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+		voice_group="Turret"
+
+		priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+		seconds_to_fully_regenerate_hull="10"
+		
+		>
+		<data_extension name="DLC3"
+                            necromancer_resource_one_to_grant_on_death="0"
+                            immune_to_necromancy="true"
+				necromancer_science_to_grant_on_death="3"
+				necromancer_hacking_to_grant_on_death="0"
+				/>
+		<system name="W1" display_name="Lesser Soul Siphon"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="33" range="ExtremelyHigh" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"				
+				shot_type_data="FusionBolt" cloaking_percent_loss_from_firing="0.1"
+				health_change_per_damage_dealt="3"
+				shots_per_salvo="3"
+				>
+			<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="PersonalShieldOnly" comparison_type="AtLeast" compared_to="1" multiplier="10" />	
+		</system>
+		<system name="W2" display_name="Lesser Angelic Railcannon"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="500" range="ExtremelyHigh" shot_speed="VeryFast" rate_of_fire="Normal" fires_salvos_sequentially="false"
+				shot_type_data="ExtremeLongRangeRailgun"
+				shots_per_salvo="3"	
+				>  
+				<outgoing_damage_modifier based_on="AttackDistance" comparison_type="MultiplesOf" compared_to="3000" multiplier="1" />	
+		</system>
+	</entity>
+	
+	<entity name="FantasyCustodianLesserAngel" tags="FantasyCustodianLesserAngel,HeavenFighter,FantasyHeavenT2" ship_class_name="FantasyLesserAngelShipClass"
+        thematic_groups="Hidden,VeryMinorAliens"
+		visuals="Assets/_DLC3/Venators/SadisticVenator/SadisticVenator.prefab" visuals_bundle="exp3_neinzul_abyss"
+		material_override_path="Assets/_DLC1/FallenSpire/Spire3Cruiser/SpireImperialCruiser.prefab" material_override_bundle="exp1_the_spire_rises"
+		icon_name="Ships2/Destroyer"   icon_overlay="Overlays1/Starship_Shield"
+		uses_large_health_bar="true"
+		category="Ship"
+	    size_scale="11"
+	  visuals_scale_multiplier="9"
+	  y_offset_of_icon="16"
+        collision_priority="8000"
+	    display_name="Custodian Order Lesser Angel"
+		display_name_for_sidebar="C Lesser Angel"
+	    description="The Lesser Angel is an elite unit protected mostly by advanced shielding, with a very fragile hull and armor, but that is immune to weapon jamming. Deployed by the Heavenly realm to destroy all evil in the galaxy."
+		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+		cost_for_ai_to_purchase="100000"		
+		shield_size_scale="5" my_forcefield_does_not_shrink="true" my_forcefield_has_no_penalty_for_enemies_firing_out_of_it="true"
+		hull_points="10000" shield_points="200000" speed="AboveAverage4"
+		metal_cost="150000" energy_consumption="7500"
+		armor_mm="20" albedo="0.5" mass_tx="5"
+		engine_gx="14"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+		voice_group="Turret"
+		returns_this_percentage_of_damage_if_damaged_by_enemy_attack="0.25"
+		priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+		seconds_to_fully_regenerate_hull="10"
+		
+		>
+		<data_extension name="DLC3"
+                            necromancer_resource_one_to_grant_on_death="0"
+                            immune_to_necromancy="true"
+				necromancer_science_to_grant_on_death="3"
+				necromancer_hacking_to_grant_on_death="0"
+				/>
+		<system name="W1" display_name="Lesser Soul Siphon"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="33" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"				
+				shot_type_data="FusionBolt" cloaking_percent_loss_from_firing="0.1"
+				health_change_per_damage_dealt="3"
+				shots_per_salvo="3"
+				>
+			<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="PersonalShieldOnly" comparison_type="AtLeast" compared_to="1" multiplier="10" />	
+		</system>
+		<system name="W2" display_name="Lesser Holy Lance"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1000" range="Normal2" shot_speed="Normal" rate_of_fire="Low" fires_salvos_sequentially="false"
+				shot_type_data="HeavyBeamInvisible"
+				shots_per_salvo="3"
+				beam_length_multiplier="1" beam_weapon_visual_style="Laser_YellowBright"
+				hits_all_intersecting_targets="true"				
+				shots_detonate_immediately="true"
+                is_coilbeam="true"	
+				>  
+			<!--<outgoing_damage_modifier based_on="MaxHull" comparison_type="MultiplesOf" compared_to="67500" multiplier="1" />	-->				
+		</system>
+	</entity>
+	
+	<entity name="FantasyRadiantLesserAngel" tags="FantasyRadiantLesserAngel,HeavenFighter,FantasyHeavenT2" ship_class_name="FantasyLesserAngelShipClass"
+        thematic_groups="Hidden,VeryMinorAliens"
+			visuals="Assets/_DLC3/Frigates/PugilistFFH/PugilistFFH.prefab" visuals_bundle="exp3_neinzul_abyss"
+			material_override_path="Assets/_DLC1/FallenSpire/Spire3Cruiser/SpireImperialCruiser.prefab" material_override_bundle="exp1_the_spire_rises"
+		icon_name="Ships2/Destroyer"  icon_overlay="Overlays2/Destroyer_Hellfire"
+		uses_large_health_bar="true"
+		category="Ship"
+	    size_scale="7"
+			visuals_scale_multiplier="6.1"
+			y_offset_of_icon="15"
+        collision_priority="8000"
+	    display_name="Radiant Order Lesser Angel"
+		display_name_for_sidebar="R Lesser Angel"
+	    description="The Lesser Angel is an elite unit protected mostly by advanced shielding, with a very fragile hull and armor, but that is immune to weapon jamming. Deployed by the Heavenly realm to destroy all evil in the galaxy."
+		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+		cost_for_ai_to_purchase="100000"		
+		hull_points="5000" shield_points="100000" speed="AboveAverage4"
+		metal_cost="150000" energy_consumption="7500"
+		armor_mm="20" albedo="0.5" mass_tx="5"
+		engine_gx="14"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+		voice_group="Turret"
+
+		priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+		seconds_to_fully_regenerate_hull="10"
+		
+		>
+		<data_extension name="DLC3"
+                            necromancer_resource_one_to_grant_on_death="0"
+                            immune_to_necromancy="true"
+				necromancer_science_to_grant_on_death="3"
+				necromancer_hacking_to_grant_on_death="0"
+				/>
+		<system name="W1" display_name="Lesser Soul Siphon"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="33" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"				
+				shot_type_data="FusionBolt" cloaking_percent_loss_from_firing="0.1"
+				health_change_per_damage_dealt="3"
+				shots_per_salvo="3"
+				>
+			<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="PersonalShieldOnly" comparison_type="AtLeast" compared_to="1" multiplier="10" />	
+		</system>
+		<system name="R1" display_name="Angelic Micro Rockets"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="120" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Normal"
+				shots_per_salvo="15" fires_salvos_sequentially="false"
+				shot_type_data="FusionRocket"
+				base_percent_damage_bypasses_personal_shields="1"				
+				>
+			<outgoing_damage_modifier based_on="CurrentHullPercentage" comparison_type="LessThan" compared_to="35" multiplier="5" />
+		</system>
+		<system name="Q4" display_name="Lesser Brasier Lance"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="5000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Low" fires_salvos_sequentially="false"
+				shot_type_data="HeavyBeamInvisible"
+				shots_per_salvo="2"
+				beam_length_multiplier="1" beam_weapon_visual_style="Laser_YellowBright"
+				hits_all_intersecting_targets="true"				
+				shots_detonate_immediately="true"
+                is_coilbeam="true"	
+				all_damage_is_corrosive="true"
+				>
+		</system>
+	</entity>
+	
+	<entity name="FantasyDismissalLesserAngel" tags="FantasyDismissalLesserAngel,HeavenFighter,FantasyHeavenT2" ship_class_name="FantasyLesserAngelShipClass"
+        thematic_groups="Hidden,VeryMinorAliens"
+		visuals="Assets/_DLC3/Venators/TruantVenator/TruantVenator.prefab" visuals_bundle="exp3_neinzul_abyss"
+		material_override_path="Assets/_DLC1/FallenSpire/Spire3Cruiser/SpireImperialCruiser.prefab" material_override_bundle="exp1_the_spire_rises"
+		icon_name="Ships2/Destroyer"  icon_overlay="Overlays2/Guardian_Spider"
+		uses_large_health_bar="true"
+		category="Ship"
+	    size_scale="7.5"
+		visuals_scale_multiplier="3"
+		y_offset_of_icon="16"
+        collision_priority="8000"
+	    display_name="Dismissal Order Lesser Angel"
+		display_name_for_sidebar="D Lesser Angel"
+	    description="The Lesser Angel is an elite unit protected mostly by advanced shielding, with a very fragile hull and armor, but that is immune to weapon jamming. Deployed by the Heavenly realm to destroy all evil in the galaxy."
+		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+		cost_for_ai_to_purchase="100000"		
+		hull_points="5000" shield_points="100000" speed="AboveAverage4"
+		metal_cost="150000" energy_consumption="7500"
+		armor_mm="20" albedo="0.5" mass_tx="5"
+		engine_gx="14"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+		voice_group="Turret"
+
+		priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+		seconds_to_fully_regenerate_hull="10"
+		
+		>
+		<data_extension name="DLC3"
+                            necromancer_resource_one_to_grant_on_death="0"
+                            immune_to_necromancy="true"
+				necromancer_science_to_grant_on_death="3"
+				necromancer_hacking_to_grant_on_death="0"
+				/>
+		<system name="W1" display_name="Lesser Soul Siphon"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="33" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"				
+				shot_type_data="FusionBolt" cloaking_percent_loss_from_firing="0.1"
+				health_change_per_damage_dealt="3"
+				shots_per_salvo="3"
+				>
+			<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="PersonalShieldOnly" comparison_type="AtLeast" compared_to="1" multiplier="10" />	
+		</system>
+		<system name="Q4" display_name="蜘蛛炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="750" shots_per_salvo="15" range="AboveAverage3" shot_speed="Normal" rate_of_fire="ExtremelyLow" fires_salvos_sequentially="false"
+				base_engine_stun_per_shot="6" engine_stun_to_engine_gx_less_than="14"
+				max_engine_stun_seconds="24" added_target_evaluator="EngineDamageAsMajorPrimary"
+				shot_type_data="EngineDisruptingShell"
+				>
+		</system>
+		<system name="WG" display_name="引力炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="600" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Misery"
+				shot_type_data="ElegantCurl"
+				>
+		<outgoing_damage_modifier based_on="engine_gx" comparison_type="AtLeast" compared_to="14" multiplier="6" />	
+		</system>	
+	</entity>
+	
+	<entity name="FantasyMortalSaint" tags="FantasyMortalSaint,HeavenFighter,FantasyHeavenT2"
+        thematic_groups="Hidden,VeryMinorAliens"
+		visuals="Assets/_DLC2/General/MinelayerFrigate/MinelayerFrigate.prefab" visuals_bundle="exp2_zenith_onslaught"
+		icon_name="Ships4/FuelRadon"  icon_overlay="Overlays1/Turret_Imploder"
+		uses_large_health_bar="true"
+		category="Ship"
+	    size_scale="13"
+			visuals_scale_multiplier="35"
+			y_offset_of_icon="15"
+        collision_priority="8000"
+		regenerates_dying_ships_at_this_health_cost_ratio="10"
+		will_not_regenerate_dying_ships_if_health_below_this_percentage="0.2"
+		seconds_to_fully_regenerate_hull="180"
+	    display_name="Mortal Order Saint"
+		display_name_for_sidebar="圣徒"
+	    description="Mortals oftentime serve the Heavenly Realm and obtain recognition for their deeds. This is such a case, where a mortal was elevated to the status of Saint among the Mortal Order. Uses its own hull to regenerate allies and has a powerful paralysis beam, able to paralyse strikecraft."
+		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+		cost_for_ai_to_purchase="100000"		
+		hull_points="300000" shield_points="0" speed="Normal1"
+		metal_cost="150000" energy_consumption="7500"
+		armor_mm="80" albedo="0.3" mass_tx="5"
+		engine_gx="7"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+		voice_group="Turret"
+
+		priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+		>
+		<data_extension name="DLC3"
+                            necromancer_resource_one_to_grant_on_death="0"
+                            immune_to_necromancy="true"
+				necromancer_science_to_grant_on_death="3"
+				necromancer_hacking_to_grant_on_death="0"
+				/>
+		<system name="W1" display_name="Paralysis Fan Beam"
+				category="Weapon" firing_timing="OnlyInRange" damage_per_shot="200" range="Normal3" shot_speed="Normal" rate_of_fire="FairlyLow" shot_type_data="HeavyBeamInvisible" beam_length_multiplier="1" hits_all_intersecting_targets="true" shots_detonate_immediately="true" maximum_number_of_targets_hit_per_shot="5" 
+				number_beams_to_fire="4" beam_weapon_visual_style="Lightning_Gold" degrees_offset_per_beam="1"
+				base_paralysis_seconds_per_shot="6" paralysis_to_ships_mass_tx_less_than="2"				>
+		</system>
+	</entity>
+	
+	<!-- Dire Guardians -->
+	<!--
+	<entity name="FantasyAngel" tags="FantasyAngel,HeavenFighter,FantasyHeavenT3" npc_ship_cap_type="SpecialThingsToAlwaysSeed" ship_class_name="FantasyAngelShipClass"
+        thematic_groups="Hidden,VeryMinorAliens"
+		draw_in_galaxy_view="true"
+	    visuals="Assets/_FinalGameMeshes/AIExtragalactic/Tier3_ExtragalacticWarSlicerFrigate/Tier3_ExtragalacticWarSlicerFrigate.prefab"
+		icon_name="Ships3/ZenithArchitraveCastra" gimbal_icon_size_multiplier="2.2"
+		uses_large_health_bar="true"
+		category="Ship"
+	    size_scale="21"
+			visuals_scale_multiplier="64"
+			y_offset_of_icon="30"
+        collision_priority="8000"
+	    display_name="天使"
+		display_name_for_sidebar="天使"
+	    description="A celestial being of immense strength, the Angel sports extensive shielding and fearsome weapons. It is immune to weapon jamming and devour. Deployed by the Heavenly realm to destroy all evil in the galaxy."
+		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+		cost_for_ai_to_purchase="100000"		
+		hull_points="150000" shield_points="3000000" speed="AboveAverage1"
+		metal_cost="150000" energy_consumption="1500000"
+		armor_mm="30" albedo="0.6" mass_tx="7"
+		engine_gx="18"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+		voice_group="Turret"
+
+		priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+		seconds_to_fully_regenerate_hull="10"
+		
+		>
+		<data_extension name="DLC3"
+                            necromancer_resource_one_to_grant_on_death="1"
+                            immune_to_necromancy="true"
+				necromancer_science_to_grant_on_death="20"
+				necromancer_hacking_to_grant_on_death="0"
+				/>
+		<system name="W1" display_name="灵魂虹吸"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="330" range="AboveAverage5" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"				
+				shot_type_data="FusionBolt" cloaking_percent_loss_from_firing="0.1"
+				health_change_per_damage_dealt="3"
+				shots_per_salvo="9"
+				>
+			<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="PersonalShieldOnly" comparison_type="AtLeast" compared_to="1" multiplier="10" />	
+		</system>
+		<system name="W2" display_name="圣枪"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="40000" range="AboveAverage2" shot_speed="Normal" rate_of_fire="Low" fires_salvos_sequentially="false"
+				shot_type_data="HeavyBeamInvisible"
+				shots_per_salvo="9"
+				beam_length_multiplier="1" beam_weapon_visual_style="Laser_YellowBright"
+				hits_all_intersecting_targets="true"				
+				shots_detonate_immediately="true"
+                is_coilbeam="true"	
+				>  
+		</system>
+		<system name="T" display_name="Incredible Tachyon Array"
+				category="Passive" tachyon_points="25" tachyon_range="EssentiallyInfinite" tachyon_hits_albedo_less_than="0.85"
+				>
+		</system>
+	</entity>
+	-->
+	<entity name="FantasyAdjucatorAngel" tags="FantasyAdjucatorAngel,HeavenFighter,FantasyHeavenT3" ship_class_name="FantasyAngelShipClass"
+        thematic_groups="Hidden,VeryMinorAliens"
+			visuals="Assets/_DLC3/Frigates/BladeSpawnerFFH/BladeSpawnerFFH.prefab" visuals_bundle="exp3_neinzul_abyss"
+		material_override_path="Assets/_DLC1/FallenSpire/Spire3Cruiser/SpireImperialCruiser.prefab" material_override_bundle="exp1_the_spire_rises"
+		icon_name="Ships3/ZenithArchitraveHoplomachus"  icon_overlay="Overlays2/Hacked" gimbal_icon_size_multiplier="1.5"
+		uses_large_health_bar="true"
+		category="Ship"
+	    size_scale="9"
+			visuals_scale_multiplier="9"
+			y_offset_of_icon="30"
+        collision_priority="8000"
+	    display_name="Adjucator Order Angel"
+		display_name_for_sidebar="A 级天使"
+	    description="A celestial being of immense strength, the Angel sports extensive shielding and fearsome weapons. It is immune to weapon jamming and devour. Deployed by the Heavenly realm to destroy all evil in the galaxy."
+		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+		cost_for_ai_to_purchase="100000"		
+		hull_points="150000" shield_points="3000000" speed="AboveAverage1"
+		metal_cost="150000" energy_consumption="1500000"
+		armor_mm="30" albedo="0.6" mass_tx="7"
+		engine_gx="18"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+		voice_group="Turret"
+
+		priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+		seconds_to_fully_regenerate_hull="10"
+		
+		>
+		<data_extension name="DLC3"
+                            necromancer_resource_one_to_grant_on_death="3"
+                            immune_to_necromancy="true"
+				necromancer_science_to_grant_on_death="50"
+				necromancer_hacking_to_grant_on_death="0"
+				/>
+		<system name="W1" display_name="灵魂虹吸"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="330" range="ExtremelyHigh" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"				
+				shot_type_data="FusionBolt" cloaking_percent_loss_from_firing="0.1"
+				health_change_per_damage_dealt="3"
+				shots_per_salvo="9"
+				>
+			<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="PersonalShieldOnly" comparison_type="AtLeast" compared_to="1" multiplier="10" />	
+		</system>
+		<system name="W2" display_name="Angelic Railcannon"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="2500" range="ExtremelyHigh" shot_speed="VeryFast" rate_of_fire="Normal" fires_salvos_sequentially="false"
+				shot_type_data="ExtremeLongRangeRailgun"
+				shots_per_salvo="12"	
+				>  
+				<outgoing_damage_modifier based_on="AttackDistance" comparison_type="MultiplesOf" compared_to="3000" multiplier="1" />	
+		</system>
+	</entity>
+	
+	<entity name="FantasyCustodianAngel" tags="FantasyCustodianAngel,HeavenFighter,FantasyHeavenT3" ship_class_name="FantasyAngelShipClass"
+        thematic_groups="Hidden,VeryMinorAliens"
+	    visuals="Assets/_DLC3/Venators/SadisticVenator/SadisticVenator.prefab" visuals_bundle="exp3_neinzul_abyss"
+		material_override_path="Assets/_DLC1/FallenSpire/Spire3Cruiser/SpireImperialCruiser.prefab" material_override_bundle="exp1_the_spire_rises"
+		icon_name="Ships3/ZenithArchitraveHoplomachus"  icon_overlay="Overlays1/Starship_Shield" gimbal_icon_size_multiplier="1.5"
+		uses_large_health_bar="true"
+		category="Ship"
+	    size_scale="16"
+	  visuals_scale_multiplier="13"
+	  y_offset_of_icon="16"
+        collision_priority="8000"
+	    display_name="Custodian Order Angel"
+		display_name_for_sidebar="C 级天使"
+	    description="A celestial being of immense strength, the Angel sports extensive shielding and fearsome weapons. It is immune to weapon jamming and devour. Deployed by the Heavenly realm to destroy all evil in the galaxy."
+		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+		shield_size_scale="5" my_forcefield_does_not_shrink="true" my_forcefield_has_no_penalty_for_enemies_firing_out_of_it="true"
+		cost_for_ai_to_purchase="100000"		
+		hull_points="300000" shield_points="6000000" speed="AboveAverage1"
+		metal_cost="150000" energy_consumption="1500000"
+		armor_mm="30" albedo="0.6" mass_tx="7"
+		engine_gx="18"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+		voice_group="Turret"
+		returns_this_percentage_of_damage_if_damaged_by_enemy_attack="0.25"
+		priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+		seconds_to_fully_regenerate_hull="10"
+		
+		>
+		<data_extension name="DLC3"
+                            necromancer_resource_one_to_grant_on_death="3"
+                            immune_to_necromancy="true"
+				necromancer_science_to_grant_on_death="50"
+				necromancer_hacking_to_grant_on_death="0"
+				/>
+		<system name="W1" display_name="灵魂虹吸"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="330" range="AboveAverage5" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"				
+				shot_type_data="FusionBolt" cloaking_percent_loss_from_firing="0.1"
+				health_change_per_damage_dealt="3"
+				shots_per_salvo="9"
+				>
+			<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="PersonalShieldOnly" comparison_type="AtLeast" compared_to="1" multiplier="10" />	
+		</system>
+		<system name="W2" display_name="圣枪"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="10000" range="AboveAverage2" shot_speed="Normal" rate_of_fire="Low" fires_salvos_sequentially="false"
+				shot_type_data="HeavyBeamInvisible"
+				shots_per_salvo="6"
+				beam_length_multiplier="1" beam_weapon_visual_style="Laser_YellowBright"
+				hits_all_intersecting_targets="true"				
+				shots_detonate_immediately="true"
+                is_coilbeam="true"	
+				>  
+			<!--<outgoing_damage_modifier based_on="MaxHull" comparison_type="MultiplesOf" compared_to="67500" multiplier="1" />	-->				
+		</system>
+	</entity>
+	
+	<entity name="FantasyRadiantAngel" tags="FantasyRadiantAngel,HeavenFighter,FantasyHeavenT3" ship_class_name="FantasyAngelShipClass"
+        thematic_groups="Hidden,VeryMinorAliens"
+	    visuals="Assets/_DLC3/Frigates/PugilistFFH/PugilistFFH.prefab" visuals_bundle="exp3_neinzul_abyss"
+		material_override_path="Assets/_DLC1/FallenSpire/Spire3Cruiser/SpireImperialCruiser.prefab" material_override_bundle="exp1_the_spire_rises"
+		icon_name="Ships3/ZenithArchitraveHoplomachus"  icon_overlay="Overlays2/Destroyer_Hellfire" gimbal_icon_size_multiplier="1.5"
+		uses_large_health_bar="true"
+		category="Ship"
+	    size_scale="10"
+			visuals_scale_multiplier="9.4"
+			y_offset_of_icon="15"
+        collision_priority="8000"
+	    display_name="Radiant Order Angel"
+		display_name_for_sidebar="R 级天使"
+	    description="A celestial being of immense strength, the Angel sports extensive shielding and fearsome weapons. It is immune to weapon jamming and devour. Deployed by the Heavenly realm to destroy all evil in the galaxy."
+		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+		cost_for_ai_to_purchase="100000"		
+		hull_points="150000" shield_points="3000000" speed="AboveAverage1"
+		metal_cost="150000" energy_consumption="1500000"
+		armor_mm="30" albedo="0.6" mass_tx="7"
+		engine_gx="18"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+		voice_group="Turret"
+
+		priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+		seconds_to_fully_regenerate_hull="10"
+		
+		>
+		<data_extension name="DLC3"
+                            necromancer_resource_one_to_grant_on_death="3"
+                            immune_to_necromancy="true"
+				necromancer_science_to_grant_on_death="50"
+				necromancer_hacking_to_grant_on_death="0"
+				/>
+		<system name="W1" display_name="灵魂虹吸"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="330" range="AboveAverage5" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"				
+				shot_type_data="FusionBolt" cloaking_percent_loss_from_firing="0.1"
+				health_change_per_damage_dealt="3"
+				shots_per_salvo="9"
+				>
+			<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="PersonalShieldOnly" comparison_type="AtLeast" compared_to="1" multiplier="10" />	
+		</system>
+		<system name="R1" display_name="Archon Micro Rockets"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1200" range="AboveAverage2" shot_speed="Normal" rate_of_fire="Normal"
+				shots_per_salvo="30" fires_salvos_sequentially="false"
+				shot_type_data="FusionRocket"	
+				base_percent_damage_bypasses_personal_shields="1"				
+				>
+			<outgoing_damage_modifier based_on="CurrentHullPercentage" comparison_type="LessThan" compared_to="35" multiplier="5" />
+		</system>
+		<system name="Q4" display_name="炽热长枪"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="40000" range="AboveAverage2" shot_speed="Normal" rate_of_fire="Low" fires_salvos_sequentially="false"
+				shot_type_data="HeavyBeamInvisible"
+				shots_per_salvo="9"
+				beam_length_multiplier="1" beam_weapon_visual_style="Laser_YellowBright"
+				hits_all_intersecting_targets="true"				
+				shots_detonate_immediately="true"
+                is_coilbeam="true"	
+				all_damage_is_corrosive="true"
+				>
+		</system>
+	</entity>
+	
+	<entity name="FantasyDismissalAngel" tags="FantasyDismissalAngel,HeavenFighter,FantasyHeavenT3" ship_class_name="FantasyAngelShipClass"
+        thematic_groups="Hidden,VeryMinorAliens"
+		visuals="Assets/_DLC3/Venators/TruantVenator/TruantVenator.prefab" visuals_bundle="exp3_neinzul_abyss"
+		material_override_path="Assets/_DLC1/FallenSpire/Spire3Cruiser/SpireImperialCruiser.prefab" material_override_bundle="exp1_the_spire_rises"
+		icon_name="Ships3/ZenithArchitraveHoplomachus"  icon_overlay="Overlays2/Guardian_Spider" gimbal_icon_size_multiplier="1.5"
+		uses_large_health_bar="true"
+		category="Ship"
+	    size_scale="7"
+			visuals_scale_multiplier="4.5"
+			y_offset_of_icon="20"
+        collision_priority="8000"
+	    display_name="Dismissal Order Angel"
+		display_name_for_sidebar="D 级天使"
+	    description="A celestial being of immense strength, the Angel sports extensive shielding and fearsome weapons. It is immune to weapon jamming and devour. Deployed by the Heavenly realm to destroy all evil in the galaxy."
+		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+		cost_for_ai_to_purchase="100000"		
+		hull_points="150000" shield_points="3000000" speed="AboveAverage1"
+		metal_cost="150000" energy_consumption="1500000"
+		armor_mm="30" albedo="0.6" mass_tx="7"
+		engine_gx="18"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+		voice_group="Turret"
+
+		priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+		seconds_to_fully_regenerate_hull="10"
+		
+		>
+		<data_extension name="DLC3"
+                            necromancer_resource_one_to_grant_on_death="3"
+                            immune_to_necromancy="true"
+				necromancer_science_to_grant_on_death="50"
+				necromancer_hacking_to_grant_on_death="0"
+				/>
+		<system name="W1" display_name="灵魂虹吸"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="330" range="AboveAverage5" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"				
+				shot_type_data="FusionBolt" cloaking_percent_loss_from_firing="0.1"
+				health_change_per_damage_dealt="3"
+				shots_per_salvo="9"
+				>
+			<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="PersonalShieldOnly" comparison_type="AtLeast" compared_to="1" multiplier="10" />	
+		</system>
+		<system name="Q4" display_name="Angelic Spider Cannon"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="600" shots_per_salvo="60" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="false"
+				base_engine_stun_per_shot="12" engine_stun_to_engine_gx_less_than="14"
+				max_engine_stun_seconds="24" added_target_evaluator="EngineDamageAsMajorPrimary"
+				shot_type_data="EngineDisruptingShell"
+				>
+		</system>
+		<system name="WG" display_name="Angelic Gravitic Cannon"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="6000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Devourer"
+				shot_type_data="ElegantCurl"
+				shots_per_salvo="3"
+				>
+		<outgoing_damage_modifier based_on="engine_gx" comparison_type="AtLeast" compared_to="14" multiplier="10" />	
+		</system>
+	</entity>
+	
+	<entity name="FantasyMortalProphet" tags="FantasyMortalProphet,HeavenFighter,FantasyHeavenT3"
+        thematic_groups="Hidden,VeryMinorAliens"
+	    visuals="Assets/_DLC2/General/MinelayerFrigate/MinelayerFrigate.prefab" visuals_bundle="exp2_zenith_onslaught"
+		icon_name="Ships1/MarauderRaider" icon_overlay="Overlays1/Turret_Imploder" gimbal_icon_size_multiplier="1.5"
+		uses_large_health_bar="true"
+		category="Ship"
+	    size_scale="18"
+			visuals_scale_multiplier="53"
+			y_offset_of_icon="15"
+        collision_priority="8000"
+		regenerates_dying_ships_at_this_health_cost_ratio="10"
+		will_not_regenerate_dying_ships_if_health_below_this_percentage="0.2"
+		seconds_to_fully_regenerate_hull="180"
+	    display_name="Mortal Order Prophet"
+		display_name_for_sidebar="先知"
+	    description="The most illustrious of mortals are promoted to be Prophets, and give counsel to the angels of various orders. Uses its own hull to regenerate allies and has a powerful paralysis beam, able to paralyse strikecraft alongside guardians."
+		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+		cost_for_ai_to_purchase="100000"		
+		hull_points="6000000" shield_points="0" speed="Normal1"
+		metal_cost="1500000" energy_consumption="50000"
+		armor_mm="110" albedo="0.3" mass_tx="7"
+		engine_gx="14"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+		voice_group="Turret"
+
+		priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+		>
+		<data_extension name="DLC3"
+                            necromancer_resource_one_to_grant_on_death="0"
+                            immune_to_necromancy="true"
+				necromancer_science_to_grant_on_death="50"
+				necromancer_hacking_to_grant_on_death="3"
+				/>
+		<system name="W1" display_name="灵魂虹吸"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="330" range="AboveAverage5" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"				
+				shot_type_data="FusionBolt" cloaking_percent_loss_from_firing="0.1"
+				health_change_per_damage_dealt="3"
+				shots_per_salvo="9"
+				>
+			<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="PersonalShieldOnly" comparison_type="AtLeast" compared_to="1" multiplier="10" />	
+		</system>
+		<system name="W2" display_name="Paralysis Fan Beam"
+				category="Weapon" firing_timing="OnlyInRange" damage_per_shot="1000" range="AboveAverage5" shot_speed="Normal" rate_of_fire="FairlyLow" shot_type_data="HeavyBeamInvisible" beam_length_multiplier="1" hits_all_intersecting_targets="true" shots_detonate_immediately="true" maximum_number_of_targets_hit_per_shot="20" 
+				number_beams_to_fire="6" beam_weapon_visual_style="Lightning_Gold" degrees_offset_per_beam="1"
+				base_paralysis_seconds_per_shot="12" paralysis_to_ships_mass_tx_less_than="5.1"				>
+		</system>
+	</entity>
+	
+	<!--Archangel  gain extra hull and shield over time
+	<system name="W2" display_name="Archon Holy Lance"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="400000" range="High2" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="false"
+				shot_type_data="HeavyBeamInvisible"
+				shots_per_salvo="18"
+				beam_length_multiplier="1" beam_weapon_visual_style="Laser_YellowBright"
+				hits_all_intersecting_targets="true"				
+				shots_detonate_immediately="true"
+                is_coilbeam="true"	
+				>  
+			<outgoing_damage_modifier based_on="MaxHull" comparison_type="MultiplesOf" compared_to="67500" multiplier="1" />				
+		</system>
+		<system name="W1" display_name="湮灭"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1" range="High2" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="true"
+				shot_type_data="ExtremeLongRangeRailgun"
+				health_change_by_max_health_divided_by_this_per_attack="5"
+				>  
+			<outgoing_damage_modifier based_on="MaxHull" comparison_type="MultiplesOf" compared_to="180" multiplier="1" />			
+		</system>-->
+		<!--
+	<entity name="FantasyArchangel" tags="FantasyArchangel,HeavenFighter,FantasyHeavenT4" npc_ship_cap_type="SpecialThingsToAlwaysSeed" ship_class_name="FantasyArchangelShipClass"
+        thematic_groups="Hidden,VeryMinorAliens"
+		draw_in_galaxy_view="true"
+	    visuals="Assets/_FinalGameMeshes/AIExtragalactic/Tier3_ExtragalacticWarSlicerFrigate/Tier3_ExtragalacticWarSlicerFrigate.prefab"
+		icon_name="Ships3/ZenithArchitraveCastra" gimbal_icon_size_multiplier="2.2"
+		uses_large_health_bar="true"
+		category="Ship"
+	    size_scale="21"
+			visuals_scale_multiplier="64"
+			y_offset_of_icon="30"
+        collision_priority="8000"
+	    display_name="大天使"
+		display_name_for_sidebar="大天使"
+	    description="The pinnacle of what lies in the Heavenly Realms, Archangels are powerful beyond measure and wield weapons as exotic as they are deadly. Furthermore, they are immune to all ailments, and finally, act as a portal for units to warp in. Deployed by the Heavenly realm to destroy all evil in the galaxy."
+		starting_mark_level="Markless" tech_upgrades_that_benefit_me="Unused"
+		cost_for_ai_to_purchase="100000"		
+		hull_points="3000000" shield_points="60000000" speed="AboveAverage1"
+		metal_cost="10000000" energy_consumption="3000000"
+		armor_mm="40" albedo="1" mass_tx="11"
+		engine_gx="26"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+		voice_group="Turret"
+		shield_size_scale="0.1" my_forcefield_does_not_shrink="true" my_forcefield_has_no_penalty_for_enemies_firing_out_of_it="true"
+		priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+		seconds_to_fully_regenerate_hull="10"
+		
+		>
+		<data_extension name="DLC3"
+                            necromancer_resource_one_to_grant_on_death="10"
+                            immune_to_necromancy="true"
+				necromancer_science_to_grant_on_death="500"
+				necromancer_hacking_to_grant_on_death="0"
+				/>
+		<system name="W3" display_name="Archon Soul Siphon"
+          category="Weapon" firing_timing="OnlyInRange"
+          damage_per_shot="50000" range="High2" shot_speed="Slow" rate_of_fire="Devourer" fires_salvos_sequentially="true"
+          shot_type_data="PlasmaTorpedoAOEBurstAtEnd"
+          overdrives_shields="true"
+          area_of_effect_size="1500"
+          aoe_spreads_damage_among_available_targets="true"
+		  health_change_per_damage_dealt="3"
+				>
+		</system>
+		<system name="W2" display_name="Archon Holy Lance"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="400000" range="High2" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="false"
+				shot_type_data="HeavyBeamInvisible"
+				shots_per_salvo="18"
+				beam_length_multiplier="1" beam_weapon_visual_style="Laser_YellowBright"
+				hits_all_intersecting_targets="true"				
+				shots_detonate_immediately="true"
+                is_coilbeam="true"	
+				>  
+		</system>
+		<system name="W1" display_name="湮灭"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1" range="High2" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="true"
+				shot_type_data="ExtremeLongRangeRailgun"
+				health_change_by_max_health_divided_by_this_per_attack="5"
+				>  
+			<outgoing_damage_modifier based_on="MaxHull" comparison_type="MultiplesOf" compared_to="180" multiplier="1" />			
+		</system>
+		<system name="T" display_name="Incredible Tachyon Array"
+				category="Passive" tachyon_points="25" tachyon_range="EssentiallyInfinite" tachyon_hits_albedo_less_than="0.85"
+				>
+		</system>
+	</entity>
+	-->
+	<entity name="FantasyAdjucatorArchangel" tags="FantasyAdjucatorArchangel,HeavenFighter,FantasyHeavenT4" ship_class_name="FantasyArchangelShipClass"
+        thematic_groups="Hidden,VeryMinorAliens"
+		draw_in_galaxy_view="true"
+	    visuals="Assets/_DLC3/BrutalGuardians/BrutalAmalgamDeltaGuardian/BrutalAmalgamDeltaGuardian.prefab" visuals_bundle="exp3_neinzul_abyss"
+		material_override_path="Assets/_DLC1/FallenSpire/Spire2Destroyer/SpireImperialDestroyer.prefab" material_override_bundle="exp1_the_spire_rises"
+		icon_name="Ships3/ZenithArchitraveMurmillo"  icon_overlay="Overlays2/Hacked" gimbal_icon_size_multiplier="2"
+		uses_large_health_bar="true"
+		category="Ship"
+		size_scale="20"
+		visuals_scale_multiplier="4"
+		y_offset_of_icon="50"
+        collision_priority="8000"
+	    display_name="审判秩序大天使 '马尔杜克'" 
+		display_name_for_sidebar="A 级大天使"
+	    description="The pinnacle of what lies in the Heavenly Realms, Archangels are powerful beyond measure and wield weapons as exotic as they are deadly. Furthermore, they are immune to all ailments. Deployed by the Heavenly realm to destroy all evil in the galaxy."
+		starting_mark_level="Markless" tech_upgrades_that_benefit_me="Unused"
+		cost_for_ai_to_purchase="100000"		
+		hull_points="3000000" shield_points="12000000" speed="AboveAverage1"
+		metal_cost="10000000" energy_consumption="3000000"
+		armor_mm="40" albedo="1" mass_tx="11"
+		engine_gx="26"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+		voice_group="Turret"
+		shield_size_scale="0.1" my_forcefield_does_not_shrink="true" my_forcefield_has_no_penalty_for_enemies_firing_out_of_it="true"
+		priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+		seconds_to_fully_regenerate_hull="1200"
+		per_second_custom_logic_dll="FantasyWarBase"
+		per_second_custom_logic_type="Arcen.AIW2.External.FantasyArchangel_CustomLogic"
+		description_appender_dll="FantasyWarBase"
+			description_appender_type="Arcen.AIW2.External.FantasyArchangel_CustomLogic"
+		>
+		<data_extension name="DLC3"
+                            necromancer_resource_one_to_grant_on_death="50"
+                            immune_to_necromancy="true"
+				necromancer_science_to_grant_on_death="1000"
+				necromancer_hacking_to_grant_on_death="0"
+				/>
+		<system name="W3" display_name="Archon Soul Siphon"
+          category="Weapon" firing_timing="OnlyInRange"
+          damage_per_shot="10000" range="ExtremelyHigh" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="true"
+          shot_type_data="DevourerShot"
+          area_of_effect_size="2500"
+          aoe_spreads_damage_among_available_targets="true"
+		  health_change_per_damage_dealt="3"
+				>
+				<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="PersonalShieldOnly" comparison_type="AtLeast" compared_to="1" multiplier="10" />	
+		</system>
+		<system name="W2" display_name="Archon Railcannon"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="6000" range="ExtremelyHigh" shot_speed="VeryFast" rate_of_fire="High" fires_salvos_sequentially="false"
+				shot_type_data="ExtremeLongRangeRailgun"
+				shots_per_salvo="36"
+				area_of_effect_size="600"
+				aoe_spreads_damage_among_available_targets="true"				
+				>  
+				<outgoing_damage_modifier based_on="AttackDistance" comparison_type="MultiplesOf" compared_to="3000" multiplier="1" />	
+		</system>
+		<system name="W1" display_name="法则"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="50" range="ExtremelyHigh" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="true"
+				shot_type_data="ExtremelyLongRangeIon"
+				>  
+			<outgoing_damage_modifier based_on="MaxHull" comparison_type="MultiplesOf" compared_to="100" multiplier="1" />			
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="MultiplesOf" compared_to="1" multiplier="-0.1" />				
+		</system>
+		<system name="W4" display_name="审判者"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="5" range="ExtremelyHigh" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="true"
+				shot_type_data="ExtremelyLongRangeIon"
+				>  
+			<outgoing_damage_modifier based_on="MaxHull" comparison_type="MultiplesOf" compared_to="100" multiplier="1" />			
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="MultiplesOf" compared_to="5" multiplier="-0.25" />				
+		</system>
+		<system name="T" display_name="Incredible Tachyon Array"
+				category="Passive" tachyon_points="25" tachyon_range="EssentiallyInfinite" tachyon_hits_albedo_less_than="0.85"
+				>
+		</system>
+	</entity>
+	
+	<entity name="FantasyCustodianArchangel" tags="FantasyCustodianArchangel,HeavenFighter,FantasyHeavenT4" ship_class_name="FantasyArchangelShipClass"
+        thematic_groups="Hidden,VeryMinorAliens"
+		draw_in_galaxy_view="true"
+	    visuals="Assets/_DLC3/BrutalGuardians/BrutalWarpGateGuardian/BrutalWarpGateGuardian.prefab" visuals_bundle="exp3_neinzul_abyss"
+		material_override_path="Assets/_DLC1/FallenSpire/Spire2Destroyer/SpireImperialDestroyer.prefab" material_override_bundle="exp1_the_spire_rises"
+		icon_name="Ships3/ZenithArchitraveMurmillo"  icon_overlay="Overlays1/Starship_Shield" gimbal_icon_size_multiplier="2"
+		uses_large_health_bar="true"
+		category="Ship"
+		size_scale="16"
+		visuals_scale_multiplier="14"
+		y_offset_of_icon="50"
+        collision_priority="8000"
+	    display_name="监护秩序大天使 '守护者'"
+		display_name_for_sidebar="C 级大天使"
+	    description="The pinnacle of what lies in the Heavenly Realms, Archangels are powerful beyond measure and wield weapons as exotic as they are deadly. Furthermore, they are immune to all ailments. Deployed by the Heavenly realm to destroy all evil in the galaxy."
+		starting_mark_level="Markless" tech_upgrades_that_benefit_me="Unused"
+		cost_for_ai_to_purchase="100000"		
+		hull_points="6000000" shield_points="24000000" speed="AboveAverage1"
+		metal_cost="10000000" energy_consumption="3000000"
+		armor_mm="40" albedo="1" mass_tx="11"
+		engine_gx="26"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+		voice_group="Turret"
+		shield_size_scale="5" my_forcefield_does_not_shrink="true" my_forcefield_has_no_penalty_for_enemies_firing_out_of_it="true"
+		priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+		seconds_to_fully_regenerate_hull="1200"
+		returns_this_percentage_of_damage_if_damaged_by_enemy_attack="0.25"
+		per_second_custom_logic_dll="FantasyWarBase"
+		per_second_custom_logic_type="Arcen.AIW2.External.FantasyArchangel_CustomLogic"
+		description_appender_dll="FantasyWarBase"
+			description_appender_type="Arcen.AIW2.External.FantasyArchangel_CustomLogic"
+		>
+		<data_extension name="DLC3"
+                            necromancer_resource_one_to_grant_on_death="50"
+                            immune_to_necromancy="true"
+				necromancer_science_to_grant_on_death="1000"
+				necromancer_hacking_to_grant_on_death="0"
+				/>
+		<system name="W3" display_name="Archon Soul Siphon"
+			  category="Weapon" firing_timing="OnlyInRange"
+			  damage_per_shot="10000" range="High2" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="true"
+			  shot_type_data="DevourerShot"
+			  area_of_effect_size="2500"
+			  aoe_spreads_damage_among_available_targets="true"
+			  health_change_per_damage_dealt="3"
+				>
+			<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="PersonalShieldOnly" comparison_type="AtLeast" compared_to="1" multiplier="10" />	
+		</system>
+		<system name="W2" display_name="Archon Holy Lance"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="80000" range="High2" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="false"
+				shot_type_data="HeavyBeamInvisible"
+				shots_per_salvo="18"
+				beam_length_multiplier="1" beam_weapon_visual_style="Laser_YellowBright"
+				hits_all_intersecting_targets="true"				
+				shots_detonate_immediately="true"
+                is_coilbeam="true"	
+				>  
+		</system>
+		<system name="T" display_name="Incredible Tachyon Array"
+				category="Passive" tachyon_points="25" tachyon_range="EssentiallyInfinite" tachyon_hits_albedo_less_than="0.85"
+				>
+		</system>
+	</entity>
+	
+	
+	<!-- Maybe a fire aura? perhaps attrition but afaik that doesn't go through shields
+GuidedMissile
+FlakShotAOEBurstAtEnd
+
+		<system name="R1" display_name="Radiant Archon Nuke"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="144000" range="High2" shot_speed="Normal" rate_of_fire="Normal"
+				fires_salvos_sequentially="false"
+				shot_type_data="PlasmaTorpedoAOEBurstAtEnd"	
+				base_percent_damage_bypasses_personal_shields="1"
+				area_of_effect_size="5000"
+				aoe_spreads_damage_among_available_targets="true"
+				>
+			<outgoing_damage_modifier based_on="CurrentHullPercentage" comparison_type="LessThan" compared_to="35" multiplier="5" />
+		</system>	-->
+	<entity name="FantasyRadiantArchangel" tags="FantasyRadiantArchangel,HeavenFighter,FantasyHeavenT4" ship_class_name="FantasyArchangelShipClass"
+        thematic_groups="Hidden,VeryMinorAliens"
+		draw_in_galaxy_view="true"
+	    visuals="Assets/_DLC3/BrutalGuardians/BrutalAdaptiveGuardian/BrutalAdaptiveGuardian.prefab" visuals_bundle="exp3_neinzul_abyss"
+		material_override_path="Assets/_DLC1/FallenSpire/Spire2Destroyer/SpireImperialDestroyer.prefab" material_override_bundle="exp1_the_spire_rises"
+		icon_name="Ships3/ZenithArchitraveMurmillo"  icon_overlay="Overlays2/Destroyer_Hellfire" gimbal_icon_size_multiplier="2"
+		uses_large_health_bar="true"
+		category="Ship"
+		size_scale="16"
+		visuals_scale_multiplier="8"
+		y_offset_of_icon="50"
+        collision_priority="8000"
+	    display_name="光辉秩序大天使 '凤凰'"
+		display_name_for_sidebar="P 级大天使"
+	    description="The pinnacle of what lies in the Heavenly Realms, Archangels are powerful beyond measure and wield weapons as exotic as they are deadly. Furthermore, they are immune to all ailments. Deployed by the Heavenly realm to destroy all evil in the galaxy."
+		starting_mark_level="Markless" tech_upgrades_that_benefit_me="Unused"
+		cost_for_ai_to_purchase="100000"		
+		hull_points="3000000" shield_points="12000000" speed="AboveAverage1"
+		metal_cost="10000000" energy_consumption="3000000"
+		armor_mm="40" albedo="1" mass_tx="11"
+		engine_gx="26"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+		voice_group="Turret"
+		attrition_damage="10"
+		shield_size_scale="0.1" my_forcefield_does_not_shrink="true" my_forcefield_has_no_penalty_for_enemies_firing_out_of_it="true"
+		priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+		seconds_to_fully_regenerate_hull="1200"
+		per_second_custom_logic_dll="FantasyWarBase"
+		per_second_custom_logic_type="Arcen.AIW2.External.FantasyArchangel_CustomLogic"
+		description_appender_dll="FantasyWarBase"
+			description_appender_type="Arcen.AIW2.External.FantasyArchangel_CustomLogic"
+		>
+		<data_extension name="DLC3"
+                            necromancer_resource_one_to_grant_on_death="50"
+                            immune_to_necromancy="true"
+				necromancer_science_to_grant_on_death="1000"
+				necromancer_hacking_to_grant_on_death="0"
+				/>
+		<system name="W3" display_name="Archon Soul Explosion"
+			  category="Weapon" firing_timing="OnlyInRange"
+			  damage_per_shot="500000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="false"
+			  area_of_effect_size="8000"	
+			  shots_detonate_immediately="true"
+			  shot_type_data="FlakShotAOEBurstAtEnd"
+			  aoe_spreads_damage_among_available_targets="true"
+			  health_change_per_damage_dealt="3"
+				>
+		</system>
+		<system name="Q4" display_name="Archon Brasier Explosion"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1000000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="false"
+				area_of_effect_size="8000"				
+				shots_detonate_immediately="true"
+				aoe_spreads_damage_among_available_targets="true"
+				base_enemy_weapon_reload_slowing_seconds_per_shot="6"
+				max_enemy_weapon_reload_slowing_seconds="24"
+				enemy_weapon_reload_slowing_to_armor_mm_less_than="100"
+				shot_type_data="LightningExplosionAOEShot"
+				all_damage_is_corrosive="true"
+				>
+		</system>
+		<system name="T" display_name="Incredible Tachyon Array"
+				category="Passive" tachyon_points="25" tachyon_range="EssentiallyInfinite" tachyon_hits_albedo_less_than="0.85"
+				>
+		</system>
+	</entity>
+	
+	<entity name="FantasyDismissalArchangel" tags="FantasyDismissalArchangel,HeavenFighter,FantasyHeavenT4" ship_class_name="FantasyArchangelShipClass"
+        thematic_groups="Hidden,VeryMinorAliens"
+		draw_in_galaxy_view="true"
+	    visuals="Assets/_DLC3/BrutalGuardians/BrutalAmalgamBetaGuardian/BrutalAmalgamBetaGuardian.prefab" visuals_bundle="exp3_neinzul_abyss"
+		material_override_path="Assets/_DLC1/FallenSpire/Spire2Destroyer/SpireImperialDestroyer.prefab" material_override_bundle="exp1_the_spire_rises"
+		icon_name="Ships3/ZenithArchitraveMurmillo"  icon_overlay="Overlays2/Guardian_Spider" gimbal_icon_size_multiplier="2"
+		uses_large_health_bar="true"
+		category="Ship"
+		size_scale="20"
+		visuals_scale_multiplier="3.6"
+		y_offset_of_icon="50"
+        collision_priority="8000"
+	    display_name="驱逐秩序大天使 '驱逐'"
+		display_name_for_sidebar="大天使 D"
+	    description="The pinnacle of what lies in the Heavenly Realms, Archangels are powerful beyond measure and wield weapons as exotic as they are deadly. Furthermore, they are immune to all ailments, and finally, act as a portal for units to warp in. Deployed by the Heavenly realm to destroy all evil in the galaxy."
+		starting_mark_level="Markless" tech_upgrades_that_benefit_me="Unused"
+		cost_for_ai_to_purchase="100000"		
+		hull_points="3000000" shield_points="12000000" speed="AboveAverage1"
+		metal_cost="10000000" energy_consumption="3000000"
+		armor_mm="40" albedo="1" mass_tx="11"
+		engine_gx="26"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+		voice_group="Turret"
+		shield_size_scale="0.1" my_forcefield_does_not_shrink="true" my_forcefield_has_no_penalty_for_enemies_firing_out_of_it="true"
+		priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+		seconds_to_fully_regenerate_hull="1200"
+		per_second_custom_logic_dll="FantasyWarBase"
+		per_second_custom_logic_type="Arcen.AIW2.External.FantasyArchangel_CustomLogic"
+		description_appender_dll="FantasyWarBase"
+			description_appender_type="Arcen.AIW2.External.FantasyArchangel_CustomLogic"
+		>
+		<data_extension name="DLC3"
+                            necromancer_resource_one_to_grant_on_death="50"
+                            immune_to_necromancy="true"
+				necromancer_science_to_grant_on_death="1000"
+				necromancer_hacking_to_grant_on_death="0"
+				/>
+		<system name="W3" display_name="Archon Soul Siphon"
+			  category="Weapon" firing_timing="OnlyInRange"
+			  damage_per_shot="10000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="true"
+			  shot_type_data="DevourerShot"
+			  area_of_effect_size="2500"
+			  aoe_spreads_damage_among_available_targets="true"
+			  health_change_per_damage_dealt="3"
+				>
+			<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="PersonalShieldOnly" comparison_type="AtLeast" compared_to="1" multiplier="10" />	
+		</system>
+		<system name="Q4" display_name="Archon Spider Cannon"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="600" shots_per_salvo="40" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="false"
+				base_engine_stun_per_shot="24" engine_stun_to_engine_gx_less_than="18"
+				max_engine_stun_seconds="24" added_target_evaluator="EngineDamageAsMajorPrimary"
+				shot_type_data="EngineDisruptingShell"
+				area_of_effect_size="600"
+				aoe_spreads_damage_among_available_targets="true"	
+				>
+		</system>
+		<system name="Q3" display_name="Dismissal Cannon"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="10000" shots_per_salvo="20" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+				shot_type_data="EngineDisruptingShell"
+				use_alternate_rate_of_fire_after_x_shots="10" alternate_rate_of_fire="Sloth"  use_alternate_rate_of_fire_for_x_shots_before_reverting="1"	
+				area_of_effect_size="600"
+				aoe_spreads_damage_among_available_targets="true"					
+				>
+				<outgoing_damage_modifier based_on="CurrentSpeedIfMoving" comparison_type="LessThan" compared_to="200" multiplier="10" />
+		</system>
+		<system name="WG" display_name="Archon Gravitic Cannon"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="12000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Devourer"
+				shot_type_data="ElegantCurl"
+				shots_per_salvo="6"
+				use_alternate_rate_of_fire_after_x_shots="10" alternate_rate_of_fire="Sloth"  use_alternate_rate_of_fire_for_x_shots_before_reverting="1"		
+				area_of_effect_size="600"
+				aoe_spreads_damage_among_available_targets="true"	
+				>
+		<outgoing_damage_modifier based_on="engine_gx" comparison_type="AtLeast" compared_to="18" multiplier="10" />	
+		</system>
+		
+		<system name="T" display_name="Incredible Tachyon Array"
+				category="Passive" tachyon_points="25" tachyon_range="EssentiallyInfinite" tachyon_hits_albedo_less_than="0.85"
+				>
+		</system>
+	</entity>
+	
+	<!-- Portal structures -->
+	<!-- grants_minor_faction_planet_control="true"
+	attrition_damage="50"
+                        added_attrition_damage_per_mark="10"
+						-->
+	<entity name="FantasyHeavenlyHost" display_name="天军" display_name_for_sidebar="天军" npc_ship_cap_type="SpecialThingsToAlwaysSeed"  ship_class_name="FantasyArchangelShipClass"
+          thematic_groups="Hidden,VeryMinorAliens"
+	  tags="FantasyHeavenlyHost" voice_group="Turret" gimbal_icon_size_multiplier="1.5"
+	  draw_in_galaxy_view="true"
+	  visuals="assets/_finalgamemeshes/blankshipsootheraddonscandrawalone.prefab" ship_skips_traditional_rendering="true"
+          addon_object_or_particle_field="ZAHomePortal" addon_object_or_particle_field_scale="144"
+			icon_name="Ships2/SomethingAperture"
+			is_always_forced_to_planet_center="true" displaces_other_immobile_objects_as_if_were_planet_tier="true" added_displacement_buffer="1000"
+			category="Ship"
+			size_scale="36.9"
+			visuals_scale_multiplier="22.5"
+			y_offset_of_icon="50"
+			collision_priority="810"
+			description="天堂领域在此银河系中入侵的大本营。"
+			behavior="Stationary"
+			starting_mark_level="Mark1"
+			cost_for_ai_to_purchase="100000"
+			hull_points="4800000" shield_points="4800000" speed="Immobile"
+			metal_cost="605000" energy_consumption="1000000"
+			armor_mm="350" albedo="1" mass_tx="17"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            seconds_to_fully_regenerate_hull="1800"
+            priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable"
+            external_invulnerability_unit_tag="FantasyThrone"
+			external_invulnerability_region="Galaxy"            
+			>
+			<data_extension name="DLC3"
+                            necromancer_resource_one_to_grant_on_death="100"
+                            immune_to_necromancy="true"
+				necromancer_science_to_grant_on_death="0"
+				necromancer_hacking_to_grant_on_death="50"
+				/>
+		<system name="T" display_name="Incredible Tachyon Array"
+				category="Passive" tachyon_points="25" tachyon_range="EssentiallyInfinite" tachyon_hits_albedo_less_than="0.85"
+				>
+		</system>
+	</entity>
+	
+	<entity name="FantasyThrone" display_name="座天使" display_name_for_sidebar="座天使" npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+          thematic_groups="Hidden,VeryMinorAliens"
+	  tags="FantasyThrone,InvulnerabilityGranter" voice_group="Turret" gimbal_icon_size_multiplier="1.5"
+	  draw_in_galaxy_view="true"
+	  visuals="assets/_finalgamemeshes/blankshipsootheraddonscandrawalone.prefab" ship_skips_traditional_rendering="true"
+          addon_object_or_particle_field="ZAHomePortal" addon_object_or_particle_field_scale="32"
+			icon_name="Ships3/ZenithArchitravePortal"
+			category="Ship"
+			size_scale="8.2"
+			visuals_scale_multiplier="5"
+			y_offset_of_icon="50"
+			collision_priority="810"
+			description="The Throne is a portal able to bring forth defensive and offensive reinforcements from the Heavenly Realms to this galaxy at certain intervals."
+			behavior="Stationary"
+			starting_mark_level="Mark1"
+			cost_for_ai_to_purchase="100000"
+			hull_points="600000" shield_points="400000" speed="Immobile"
+			metal_cost="605000" energy_consumption="1000000"
+			armor_mm="350" albedo="1" mass_tx="17"
+			strength_multiplier="3"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+                        
+            priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable"
+            external_invulnerability_unit_tag="HeavenInvulnerabilityGrant"
+			external_invulnerability_region="ThisPlanet"   
+			>
+			<data_extension name="DLC3"
+                            necromancer_resource_one_to_grant_on_death="0"
+                            immune_to_necromancy="true"
+				necromancer_science_to_grant_on_death="0"
+				necromancer_hacking_to_grant_on_death="6"
+				/>
+		<system name="T" display_name="Incredible Tachyon Array"
+				category="Passive" tachyon_points="25" tachyon_range="EssentiallyInfinite" tachyon_hits_albedo_less_than="0.85"
+				>
+		</system>
+	</entity>
+	
+	<entity name="WarpingInThrone" display_name="扭曲王座" display_name_for_sidebar="W 王座" npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+          thematic_groups="Hidden,VeryMinorAliens"
+	  tags="WarpingInThrone" voice_group="Turret" gimbal_icon_size_multiplier="1.5"
+	  visuals="assets/_finalgamemeshes/blankshipsootheraddonscandrawalone.prefab" ship_skips_traditional_rendering="true"
+          addon_object_or_particle_field="ZAHomePortal" addon_object_or_particle_field_scale="32"
+			icon_name="Ships3/ZenithArchitravePortal"
+			category="Ship"
+			size_scale="8.2"
+			visuals_scale_multiplier="5"
+			y_offset_of_icon="50"
+			collision_priority="810"
+			description="The Throne is a portal able to bring forth reinforcements from the Heavenly Realm to this galaxy. It is currently warping"
+			behavior="Stationary"
+			starting_mark_level="Mark1"
+			cost_for_ai_to_purchase="100000"
+			hull_points="60000" shield_points="40000" speed="Immobile"
+			metal_cost="605000" energy_consumption="1000000"
+			armor_mm="350" albedo="1" mass_tx="17"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+                        
+            priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable"
+                        
+			>
+	</entity>
+	
+	<!-- Defenses -->
+	<entity name="HeavenHeavenlyHowitzer" display_name="Heavenly Howitzer" display_name_for_sidebar="H 榴弹炮"
+	        thematic_groups="Hidden,VeryMinorAliens"
+			tags="HeavenDefensiveStructure,HeavenInvulnerabilityGrant,InvulnerabilityGranter"
+			visuals="Assets/_DLC2/Zenith/ZAStativa/ZAStativa.prefab" visuals_bundle="exp2_zenith_onslaught"
+			material_override_path="Assets/_DLC1/FallenSpire/Spire3Cruiser/SpireImperialCruiser.prefab" material_override_bundle="exp1_the_spire_rises"
+			icon_name="Ships3/ZenithTurret" icon_overlay="Overlays1/MegaTurret_MassDriver"
+			category="Ship" is_turret="true"
+			size_scale="5"
+			visuals_scale_multiplier="22"
+			collision_priority="1000"
+			description="A powerful turret built to deal with crowds of ships at long range."
+            never_leaves_remains="true"
+			behavior="Stationary"	
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused" 			
+			cost_for_ai_to_purchase="150" strength_multiplier="1.2"			
+			hull_points="30000" shield_points="240000" speed="Immobile"
+			metal_cost="60000" energy_consumption="10000"
+			armor_mm="60" albedo="0.45" mass_tx="2"
+			voice_group="Turret"
+			fleet_membership="Planetary"
+			ship_or_structure_explosion_sfx="Turret_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable"
+			>
+			<system name="T1" display_name="榴弹炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="3000" range="High2" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+				shot_type_data="PlasmaTorpedoAOEBurstAtEnd"	 shots_per_salvo="15" 
+				use_alternate_rate_of_fire_after_x_shots="5" alternate_rate_of_fire="Sloth"  use_alternate_rate_of_fire_for_x_shots_before_reverting="1"
+				area_of_effect_size="600" maximum_number_of_targets_hit_per_shot="5" aoe_spreads_damage_among_available_targets="true"
+				>		
+			</system>  
+    </entity>
+  
+    <entity name="HeavenHeavenlyPunisher" display_name="Heavenly Punisher" display_name_for_sidebar="H 惩罚者"
+	        thematic_groups="Hidden,VeryMinorAliens"
+			tags="HeavenDefensiveStructure,HeavenInvulnerabilityGrant,InvulnerabilityGranter"
+			visuals="Assets/_DLC2/Zenith/ZANavalia/ZANavalia.prefab" visuals_bundle="exp2_zenith_onslaught"
+			material_override_path="Assets/_DLC1/FallenSpire/Spire3Cruiser/SpireImperialCruiser.prefab" material_override_bundle="exp1_the_spire_rises"
+			icon_name="Ships3/ZenithTurret" icon_overlay="Overlays2/Destroyer_Hellfire"
+			category="Ship" is_turret="true"
+			size_scale="5"
+			visuals_scale_multiplier="30"
+			collision_priority="1000"
+			description="A powerful turret made to inflict heavy damage on enemies with large hulls."
+			behavior="Stationary"			
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused" 
+			cost_for_ai_to_purchase="150"			
+			hull_points="30000" shield_points="240000" speed="Immobile"
+			metal_cost="60000" energy_consumption="10000"
+			armor_mm="80" albedo="0.45" mass_tx="2"
+			voice_group="Turret"
+			fleet_membership="Planetary"
+			ship_or_structure_explosion_sfx="Turret_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable"
+			>
+			<system name="WT" display_name="Burst Mass Driver"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="10000" range="High2" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+				shot_type_data="Sabot"	 
+				use_alternate_rate_of_fire_after_x_shots="5" alternate_rate_of_fire="Sloth"  use_alternate_rate_of_fire_for_x_shots_before_reverting="1"
+				>		
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="MultiplesOf" compared_to="1" multiplier="1" max_multiplier="10" />	
+			</system>
+	</entity>
+	
+    <entity name="HeavenFatefulDispatcher" display_name="Fateful Dispatcher" display_name_for_sidebar="F 调度员"
+	        thematic_groups="Hidden,VeryMinorAliens"
+			tags="HeavenDefensiveStructure,HeavenInvulnerabilityGrant,InvulnerabilityGranter"
+			visuals="Assets/_DLC2/Zenith/ZAPhrourion/ZAPhrourion.prefab" visuals_bundle="exp2_zenith_onslaught"
+			material_override_path="Assets/_DLC1/FallenSpire/Spire3Cruiser/SpireImperialCruiser.prefab" material_override_bundle="exp1_the_spire_rises"
+			icon_name="Ships3/ZenithTurret" icon_overlay="Overlays2/Guardian_Fragmenting"
+			category="Ship" is_turret="true"
+			size_scale="5"
+			visuals_scale_multiplier="20"
+			collision_priority="1000"
+			description="A turret built to quickly dispatch those who cannot espace fate. Useful in tandem with tractors, but otherwise often found lacking."
+			behavior="Stationary"		
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused" 			
+			cost_for_ai_to_purchase="150" strength_multiplier="1.2"			
+			hull_points="30000" shield_points="240000" speed="Immobile"
+			metal_cost="60000" energy_consumption="10000"
+			armor_mm="80" albedo="0.45" mass_tx="2"
+			voice_group="Turret"
+			fleet_membership="Planetary"
+			ship_or_structure_explosion_sfx="Turret_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable"
+			>
+			<system name="W1" display_name="Tracking Rockets"
+					category="Weapon" firing_timing="OnlyInRange"
+					damage_per_shot="500" range="Planetary" shot_speed="Normal" rate_of_fire="Misery"
+					shots_per_salvo="30" fires_salvos_sequentially="false"
+					shot_type_data="FusionRocket"	multiplier_damage_to_tractored_unit="6"		
+					use_alternate_rate_of_fire_after_x_shots="5" alternate_rate_of_fire="Sloth"  use_alternate_rate_of_fire_for_x_shots_before_reverting="1"
+					>
+			</system>
+    </entity>
+	
+    <entity name="HeavenHeavenlyPerimeter" display_name="Heavenly Perimeter" display_name_for_sidebar="H 周界"
+	        thematic_groups="Hidden,VeryMinorAliens"
+	  tags="HeavenDefensiveStructure,HeavenInvulnerabilityGrant,InvulnerabilityGranter"
+			visuals="Assets/_DLC2/Zenith/ZAStratopedon/ZAStratopedon.prefab" visuals_bundle="exp2_zenith_onslaught"
+			material_override_path="Assets/_DLC1/FallenSpire/Spire3Cruiser/SpireImperialCruiser.prefab" material_override_bundle="exp1_the_spire_rises"
+			icon_name="Ships3/ZenithTurret" icon_overlay="Overlays1/Turret_Bastille"
+			category="Ship" is_turret="true"
+			size_scale="5"
+			visuals_scale_multiplier="160"
+			collision_priority="1000"
+			description="A turret made to knockback others out of a designated range. Also disables engines for some time."
+			behavior="Stationary"		
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused" 
+			cost_for_ai_to_purchase="150" strength_multiplier="1.2"			
+			hull_points="30000" shield_points="240000" speed="Immobile"
+			metal_cost="60000" energy_consumption="10000"
+			armor_mm="80" albedo="0.45" mass_tx="2"
+			voice_group="Turret"
+			fleet_membership="Planetary"
+			ship_or_structure_explosion_sfx="Turret_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable"
+			>
+			<system name="R7" display_name="Providential Push"
+					category="Weapon" firing_timing="OnlyInRange"
+					damage_per_shot="400" range="AboveAverage2" shot_speed="Normal" rate_of_fire="VeryLow" 
+					shots_per_salvo="20" fires_salvos_sequentially="false"
+					base_engine_stun_per_shot="8" added_engine_stun_per_shot_per_mark="4" engine_stun_to_engine_gx_less_than="16"
+					max_engine_stun_seconds="16" added_target_evaluator="EngineDamageAsMajorPrimary"
+					base_knockback_per_shot="2000" added_knockback_per_shot_per_mark="500" knockback_to_ships_mass_tx_less_than="5.5"
+					shot_type_data="HeavyBeamInvisible" beam_length_multiplier="1" beam_weapon_visual_style="Laser_Purple"
+					>	
+			</system>
+	</entity>
+	
+	<!-- Utility structures -->
+	<entity name="HeavenHeavenlyTractorArray" display_name="Heavenly Tractor Array" display_name_for_sidebar="H Tractor Array" npc_ship_cap_type="SpecialDefenses"
+	        thematic_groups="Zenith,Architrave,OtherDefense"
+			tags="HeavenUtilityStructure,HeavenInvulnerabilityGrant,InvulnerabilityGranter"
+			visuals="Assets/_DLC2/Zenith/ZATractorArray/ZATractorArray.prefab" visuals_bundle="exp2_zenith_onslaught"
+			material_override_path="Assets/_DLC1/FallenSpire/Spire3Cruiser/SpireImperialCruiser.prefab" material_override_bundle="exp1_the_spire_rises"
+			icon_name="Ships1/TractorTurret"
+			size_scale="5"
+			visuals_scale_multiplier="160"
+			category="Ship"
+			collision_priority="1000"
+			description="锁定附近的敌方舰船，阻止它们移动（但不阻止开火）。"
+			behavior="Stationary"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused" 
+			cost_for_ai_to_purchase="500"
+			hull_points="60000" shield_points="360000" speed="Immobile"
+			metal_cost="22500" energy_consumption="4500"
+			armor_mm="50" albedo="0.45" mass_tx="0.3"
+			ship_or_structure_explosion_sfx="Turret_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			voice_group="Turret"
+			fleet_membership="Planetary"
+			priority_as_ai_target="BigTurret" priority_as_frd_target="LowGradeAnnoyance" priority_to_protect="SlightlyLessExpendable"
+			>
+			<system name="T" display_name="牵引光束"
+				category="Passive"
+				tractor_range="Small5" tractor_count="42" tractor_count_added_per_mark="21" tractor_hits_albedo_less_than="0.4" tractor_hits_engine_gx_less_than="18"
+				>
+			</system>
+  </entity>
+  
+  
+    <entity name="HeavenHeavenlyGravityGenerator" display_name="Heavenly Gravity Generator" display_name_for_sidebar="H 引力发生器" npc_ship_cap_type="SpecialDefenses"
+	        thematic_groups="Zenith,Architrave,OtherDefense"
+			tags="HeavenUtilityStructure,HeavenInvulnerabilityGrant,InvulnerabilityGranter"
+			visuals="Assets/_DLC2/Zenith/ZAFocusedGravityGen/ZAFocusedGravityGen.prefab" visuals_bundle="exp2_zenith_onslaught"
+			material_override_path="Assets/_DLC1/FallenSpire/Spire3Cruiser/SpireImperialCruiser.prefab" material_override_bundle="exp1_the_spire_rises"
+			icon_name="Ships1/FocusedGravityGenerator"
+			category="Ship"
+			size_scale="5"
+			visuals_scale_multiplier="100"
+			description="Slows down hostile ships in an area around itself."
+			behavior="Stationary"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused" 
+			cost_for_ai_to_purchase="500"
+			hull_points="60000" shield_points="360000" speed="Immobile"
+			metal_cost="10000" energy_consumption="5000"
+			armor_mm="50" albedo="0.45" mass_tx="0.3"
+			ship_or_structure_explosion_sfx="Turret_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			voice_group="Turret"
+			fleet_membership="Planetary"
+			priority_as_ai_target="BigTurret" priority_as_frd_target="LowGradeAnnoyance" priority_to_protect="SlightlyLessExpendable"
+			>
+		<system name="G" display_name="引力核心"
+				category="Passive"
+				base_gravity_speed_multiplier="0.7" subtracted_gravity_speed_multiplier_per_mark="0.1" gravity_hits_engine_gx_less_than="14" gravity_range="Normal6"
+				>
+		</system>
+   </entity>
+   
+   <entity name="HeavenHeavenlyTemple" display_name="天堂神殿" display_name_for_sidebar="H 神殿" npc_ship_cap_type="SpecialDefenses"
+	        thematic_groups="Hidden,VeryMinorAliens"
+			tags="HeavenUtilityStructure,HeavenInvulnerabilityGrant,InvulnerabilityGranter"
+			visuals="Assets/_DLC2/Zenith/ZANavalia/ZANavalia.prefab" visuals_bundle="exp2_zenith_onslaught"
+			material_override_path="Assets/_DLC1/FallenSpire/Spire3Cruiser/SpireImperialCruiser.prefab" material_override_bundle="exp1_the_spire_rises"
+			icon_name="Ships3/ZenithTurret" icon_overlay="Overlays1/Turret_Imploder"
+			category="Ship" is_turret="true"
+			size_scale="5"
+			visuals_scale_multiplier="30"
+			collision_priority="1000"
+			description="This peculiar turret turns enemies into allies through the power of faith."
+			behavior="Stationary"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused" 			
+			cost_for_ai_to_purchase="300" strength_multiplier="2.2"			
+			hull_points="30000" shield_points="360000" speed="Immobile"
+			metal_cost="60000" energy_consumption="10000"
+			armor_mm="120" albedo="0.45" mass_tx="2"
+			voice_group="Turret"
+			fleet_membership="Planetary"
+			ship_or_structure_explosion_sfx="Turret_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable"
+			>
+			<system name="WT" display_name="命运使命"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="4000" range="High2" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="false"
+				shot_type_data="ElegantCurl"	 
+				unit_to_spawn_on_infestation="FantasyZealot" infestation_function_name="Convert"
+				>		
+			</system>
+	</entity>
+	
+</root>

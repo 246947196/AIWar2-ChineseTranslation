@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root
+
+    is_partial_record="true"
+
+    ds_power_per_aip = "0.5"
+    ds_power_per_min = "0.1"
+    ds_power_per_city = "0.2"
+
+    ds_wave_budget="100000"
+    ds_sec_per_wave="560"
+
+    ds_escort_budget_per_sec="50"
+    ds_escort_sec_per_spend="2"
+    ds_escort_cap_alive="50000"
+
+    ds_city_count_per_mark="3,3,3,3,2,2"
+    ds_city_budget_per_sec="50"
+    ds_city_sec_per_spend="5"
+    ds_city_cap_alive="50000"
+
+    steering_enabled="true"
+    disable_stack_planning="false"
+    disable_move_planning="false"
+    disable_decollide_planning="false"
+    
+    steering_radius_scale="1"
+    steering_max_separation_force_at_this_penetration = "50"
+    steering_max_separation_force="10"
+
+/>

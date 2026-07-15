@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <objective_details_hook name="ArmadaUnclaimedStarbase" category="CriticalCapturables"
+          default_display_name="Claim Starbase on "  finish_display_name_with_related_planet1="true"
+          use_default_display_name_instead_of_display_name_base="true"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.ArmadaUnclaimedStarbase"
+          display_name_color="57ffca"
+          click_behavior="CenterOnRelatedEntity1" focus_type="FocusOnRelatedEntity1"
+          serialization_type="RelatedEntity1Only" importance_calculation="RelatedEntity1Importance"
+          difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedEntity1"/>
+
+  <objective_details_hook name="ArmadaClaimStarbases" category="ArmadaStrategy"
+          default_display_name="Claim Starbases"
+          use_default_display_name_instead_of_display_name_base="true"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.ArmadaClaimStarbases"
+          display_name_color="ffb347"
+          click_behavior="DoNothing" focus_type="DarkenAllPlanet"
+          serialization_type="Nothing" importance_calculation="NotSettable"
+          difficulty_method="Nothing"/>
+
+  <objective_details_hook name="ArmadaSwarmTactics" category="ArmadaStrategy"
+          default_display_name="Swarm Lures and Launchers"
+          use_default_display_name_instead_of_display_name_base="true"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.ArmadaSwarmTactics"
+          display_name_color="ffb347"
+          click_behavior="DoNothing" focus_type="DarkenAllPlanet"
+          serialization_type="Nothing" importance_calculation="NotSettable"
+          difficulty_method="Nothing"/>
+
+  <objective_details_hook name="ArmadaMining" category="ArmadaStrategy"
+          default_display_name="Mining for Resources"
+          use_default_display_name_instead_of_display_name_base="true"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.ArmadaMining"
+          display_name_color="ffb347"
+          click_behavior="DoNothing" focus_type="DarkenAllPlanet"
+          serialization_type="Nothing" importance_calculation="NotSettable"
+          difficulty_method="Nothing"/>
+
+  <objective_details_hook name="ArmadaRangers" category="ArmadaStrategy"
+          default_display_name="Rangers"
+          use_default_display_name_instead_of_display_name_base="true"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.ArmadaRangers"
+          display_name_color="ffb347"
+          click_behavior="DoNothing" focus_type="DarkenAllPlanet"
+          serialization_type="Nothing" importance_calculation="NotSettable"
+          difficulty_method="Nothing"/>
+
+  <objective_details_hook name="ArmadaFightTyderian" category="ArmadaStrategy"
+          default_display_name="Fight Tyderian for Resources"
+          use_default_display_name_instead_of_display_name_base="true"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.ArmadaFightTyderian"
+          display_name_color="ffb347"
+          click_behavior="DoNothing" focus_type="DarkenAllPlanet"
+          serialization_type="Nothing" importance_calculation="NotSettable"
+          difficulty_method="Nothing"/>
+
+</root>

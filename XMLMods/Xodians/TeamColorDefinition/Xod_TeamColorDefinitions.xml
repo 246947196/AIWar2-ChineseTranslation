@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root> 
+
+  <teamcolor is_hidden="true" name="Xod_Fill" special_status="hovered" color_hex="333333" />
+  <teamcolor is_hidden="true" name="Xod_Border" special_status="hovered" color_hex="C0C0C0" />
+
+</root>

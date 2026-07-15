@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<journal name="NA_Custodians_Introduction" sidebar_text="{FactionColor}宁苏守护者：&lt;/color&gt; 联盟"
+			can_record_another_copy_if_already_recorded_in_this_campaign="false"
+			text_replacement_related_faction_color="true"
+		    text_replacement_related_player_name="true"
+			text_replacement_related_planet="true"
+			chat_text="指挥官，一群自称为珍珠守护者的宁苏人已经跃迁到了我们的母星。"
+			is_partial_record="true" 
+            full_text="发件人：首席情报官雨果·道森
+情报部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+一群自称为珍珠守护者的宁苏人已经跃迁到了我们的母星。他们广播了结盟请求，我们已经接受，并简要解释了为什么他们会在这里。
+
+他们是现已不复存在的宁苏帝国的一个分裂派系之一，因内斗而分裂。为了重拾失去的安全，他们一直在宇宙中搜寻外星人以求融合，因为他们的人数已大幅减少。他们相信，他们的一些同胞守护者可能很快也会到达这个银河系（如果还没到的话），并且每个人都会试图与另一个群体结盟。当被问及是否有人认为会大胆到与人工智能结盟时，他们异口同声地回答了一个词：钻石。
+
+虽然我们不会用我们协议的具体细节来烦扰你，指挥官，但有四件重要的事情你应该知道。首先，守护者是一支非常强大且有组织的部队。他们已经准备好向我们的敌人证明自己以巩固联盟，但不会故意为此自杀。预计我们的盟友和其他人的游荡飞地都会更愿意从战斗中撤退。
+
+第二，你可能已经在我们的母星上看到过的所有游荡飞地，都与它们通过跃迁空间带来的巢群有着天生的联系。巢群会随时间被动地生产战舰来协助其结盟的游荡飞地。如果任一方的死亡，另一方很快就会随之死去。同样的逻辑也适用于我们遇到的任何其他守护者；如果一个守护者群体变得过于强大，就瞄准巢群。
+
+第三，这些只是其总兵力的一小部分。他们在搜寻宇宙时分成了数千个方向，与他们的各个群体的通信需要时间。因此，虽然他们能够生产额外的幼崽和族人增援力量，但额外的游荡飞地将依赖这些外部力量的到达。
+
+最后，我们遇到的每个守护者群体都共享相同的幼崽和族人风格，但拥有独特的游荡飞地战舰。在与他们交战之前，明智的做法是先了解每个守护者的能力。" />
+
+	<journal name="NA_Custodians_Diamond" sidebar_text="{FactionColor}宁苏守护者：&lt;/color&gt; 钻石"
+			can_record_another_copy_if_already_recorded_in_this_campaign="false"
+			text_replacement_related_faction_color="true"
+		    text_replacement_related_player_name="true"
+			text_replacement_related_planet="true"
+			chat_text="指挥官，我们发现了 {FactionColor}钻石守护者。&lt;/color&gt;"
+			is_partial_record="true" 
+            full_text="发件人：首席情报官雨果·道森
+情报部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+我们在银河系中发现了宁苏的另一个子派系，钻石守护者。
+
+他们似乎是珍珠守护者（我们目前结盟的守护者）的长期竞争对手。他们对绝对控制的渴望使他们寻求他们认为是宇宙中最强大、最无情的实体，试图将自己融入他们认为的下一个银河帝国，作为其法律的强力臂膀。不用说，人工智能在我们当前的银河系中最符合这一点，他们已经将他们支持投入到了人工智能已经庞大的力量之中。" />
+
+	<journal name="NA_Custodians_Sapphire" sidebar_text="{FactionColor}宁苏守护者：&lt;/color&gt; 蓝宝石"
+			can_record_another_copy_if_already_recorded_in_this_campaign="false"
+			text_replacement_related_faction_color="true"
+		    text_replacement_related_player_name="true"
+			text_replacement_related_planet="true"
+			chat_text="指挥官，我们发现了 {FactionColor}蓝宝石守护者。&lt;/color&gt;"
+			is_partial_record="true" 
+            full_text="发件人：首席情报官雨果·道森
+情报部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+我们在银河系中发现了宁苏的另一个子派系，蓝宝石守护者。
+
+虽然珍珠守护者对这个派系本身没有直接的反感，但他们指出蓝宝石最好被描述为……偏离主流。很难确定他们的长期目标，我们可能会发现他们随机地帮助任何愿意接受他们的派系。（任何拥有"蓝色小队"小派系的派系。）" />
+
+	<journal name="NA_Custodians_Ruby" sidebar_text="{FactionColor}宁苏守护者：&lt;/color&gt; 红宝石"
+			can_record_another_copy_if_already_recorded_in_this_campaign="false"
+			text_replacement_related_faction_color="true"
+		    text_replacement_related_player_name="true"
+			text_replacement_related_planet="true"
+			chat_text="指挥官，我们发现了 {FactionColor}红宝石守护者。&lt;/color&gt;"
+			is_partial_record="true" 
+            full_text="发件人：首席情报官雨果·道森
+情报部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+我们在银河系中发现了宁苏的另一个子派系，红宝石守护者。
+
+虽然珍珠守护者对这个派系本身没有直接的反感，但他们指出红宝石最好被描述为……偏离主流。很难确定他们的长期目标，我们可能会发现他们随机地帮助任何愿意接受他们的派系。（任何拥有"红色小队"小派系的派系。）" />
+
+	<journal name="NA_Custodians_Emerald" sidebar_text="{FactionColor}宁苏守护者：&lt;/color&gt; 翡翠"
+			can_record_another_copy_if_already_recorded_in_this_campaign="false"
+			text_replacement_related_faction_color="true"
+		    text_replacement_related_player_name="true"
+			text_replacement_related_planet="true"
+			chat_text="指挥官，我们发现了 {FactionColor}翡翠守护者。&lt;/color&gt;"
+			is_partial_record="true" 
+            full_text="发件人：首席情报官雨果·道森
+情报部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+我们在银河系中发现了宁苏的另一个子派系，翡翠守护者。
+
+虽然珍珠守护者对这个派系本身没有直接的反感，但他们指出翡翠最好被描述为……偏离主流。很难确定他们的长期目标，我们可能会发现他们随机地帮助任何愿意接受他们的派系。（任何拥有"绿色小队"小派系的派系。）" />
+
+	<journal name="NA_Custodians_Onyx" sidebar_text="{FactionColor}宁苏守护者：&lt;/color&gt; 缟玛瑙"
+			can_record_another_copy_if_already_recorded_in_this_campaign="false"
+			text_replacement_related_faction_color="true"
+		    text_replacement_related_player_name="true"
+			text_replacement_related_planet="true"
+			chat_text="指挥官，我们发现了 {FactionColor}缟玛瑙守护者。&lt;/color&gt;"
+			is_partial_record="true" 
+            full_text="发件人：首席情报官雨果·道森
+情报部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+我们在银河系中发现了宁苏的另一个子派系，缟玛瑙守护者。
+
+珍珠守护者无法用言语描述缟玛瑙所带来的恐怖。虽然他们至少能够解释钻石对控制的渴望是一种寻求和平的方式，但缟玛瑙没有任何这样的迹象。他们除了摧毁任何不顺从的人之外没有任何长期目标，并且会乐于加入任何推动这一议程的群体。他们除了力量外不尊重任何东西，并且已经加入了新命名的"黑暗联盟"来压制我们的银河系。" />
+
+</root>

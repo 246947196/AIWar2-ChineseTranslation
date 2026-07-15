@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<style  name="GreenTextNoNewline"
+        color="#1cf290"
+        size="80%"
+        line_height="80%"
+    />
+			
+</root>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!-- JCF: outguard rebalance -->
+
+	<item name="War Harvesters"
+		is_partial_record="true"
+		spawn_location="Manual_ByClick"
+	/>
+
+	<item name="War Siegers"
+		is_partial_record="true"
+		spawn_location="Manual_ByClick"
+	/>
+
+	<item name="Automated Firesupport" short_name="自动火力支援"
+		is_partial_record="true"
+		spawn_location="Manual_ByClick"
+	/>
+
+	<item name="Automated Shredders"
+		is_partial_record="true"
+		aip_cost_on_contact="5"
+		spawn_location="Manual_ByClick"
+	/>
+
+	<item name="Automated Construction Swarm" short_name="自动建筑蜂群"
+		is_partial_record="true"
+		aip_cost_on_contact="5"
+		spawn_location="Manual_ByClick"
+	/>
+
+	<item name="Anvil Securities"
+		is_partial_record="true"
+		spawn_location="Manual_ByClick"
+	/>
+
+	<item name="Sabre Company"
+		is_partial_record="true"
+		spawn_location="Manual_ByClick"
+	/>
+</root>

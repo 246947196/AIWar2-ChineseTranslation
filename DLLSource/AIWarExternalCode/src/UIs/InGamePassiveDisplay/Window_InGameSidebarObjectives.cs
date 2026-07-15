@@ -175,6 +175,17 @@ namespace Arcen.AIW2.External
                 this.ParentCategory = ParentCategory;
             }
 
+            public override void OnUpdate()
+            {
+                base.OnUpdate();
+                ArcenUI_Button button = this.Element as ArcenUI_Button;
+                if ( button != null && button.ReferenceText != null )
+                {
+                    button.ReferenceText.enableAutoSizing = false;
+                    button.ReferenceText.fontSize = 9f;
+                }
+            }
+
             public override void GetTextToShowFromVolatile( ArcenDoubleCharacterBuffer Buffer )
             {
                 int debugCode = 0;

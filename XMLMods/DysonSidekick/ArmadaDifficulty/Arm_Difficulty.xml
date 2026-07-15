@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- See ArmadaDifficultyTable.cs for the fill list of balance options -->
+  
+  <record name="Difficulty1"
+          Intensity="1"
+          EnemyIncomePerSecond="1.1"
+          EnemyIncomePerSecondPer10AIP="1.0"
+          BonusEnemyResponsePerMine="1200"
+          >
+  </record>
+  <record name="Difficulty2"
+          Intensity="2"
+          EnemyIncomePerSecond="1.2"
+          EnemyIncomePerSecondPer10AIP="2.0"
+          BonusEnemyResponsePerMine="1400"
+          >
+  </record>
+  <record name="Difficulty3"
+          Intensity="3"
+          EnemyIncomePerSecond="1.3"
+          EnemyIncomePerSecondPer10AIP="2.4"
+          BonusEnemyResponsePerMine="1600"
+          >
+  </record>
+  <record name="Difficulty4"
+          Intensity="4"
+          EnemyIncomePerSecond="1.4"
+          EnemyIncomePerSecondPer10AIP="2.7"
+          BonusEnemyResponsePerMine="1800"
+          >
+  </record>
+  <record name="Difficulty5"
+          Intensity="5"
+          EnemyIncomePerSecond="1.5"
+          EnemyIncomePerSecondPer10AIP="3.0"
+          BonusEnemyResponsePerMine="2000"
+          >
+  </record>
+  <record name="Difficulty6"
+          Intensity="6"
+          EnemyIncomePerSecond="1.6"
+          EnemyIncomePerSecondPer10AIP="3.1"
+          BonusEnemyResponsePerMine="2200"
+          >
+  </record>
+  <record name="Difficulty7"
+          Intensity="7"
+          EnemyIncomePerSecond="1.7"
+          EnemyIncomePerSecondPer10AIP="3.2"
+          BonusEnemyResponsePerMine="2400"
+          >
+  </record>
+  <record name="Difficulty8"
+          Intensity="8"
+          EnemyIncomePerSecond="1.8"
+          EnemyIncomePerSecondPer10AIP="3.3"
+          BonusEnemyResponsePerMine="2600"
+          >
+  </record>
+  <record name="Difficulty9"
+          Intensity="9"
+          EnemyIncomePerSecond="1.9"
+          EnemyIncomePerSecondPer10AIP="3.4"
+          BonusEnemyResponsePerMine="2800"
+          >
+  </record>
+  <record name="Difficulty10"
+          Intensity="10"
+          EnemyIncomePerSecond="2.0"
+          EnemyIncomePerSecondPer10AIP="3.5"
+          BonusEnemyResponsePerMine="3000"
+          >
+  </record>
+
+</root>

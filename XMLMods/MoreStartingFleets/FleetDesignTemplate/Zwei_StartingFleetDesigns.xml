@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <fleet_design name="MSFImperialFleet"
+        display_name="帝国舰队"
+        description="代表人类帝国力量的舰队。该舰队相对平衡，能够对抗所有敌人。荣耀属于人类！"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Starter" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="Mugger" ship_cap_group="Frigate" weight="100" cap="6"/>
+	<ship_membership name="Ramifier" ship_cap_group="Frigate" weight="100" cap="6"/>
+	<ship_membership name="Devestator" ship_cap_group="Frigate" weight="100" cap="6"/>
+  </fleet_design>
+
+  <fleet_design name="MSFCarrierFleet" required_expansion_list="1_The_Spire_Rises"
+        display_name="航母舰队"
+        description="Fleet composed of carriers and their escorts. Great at long range, terrible at close range."
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Starter" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="TeslaTorpedoFrigate" ship_cap_group="Frigate" weight="100" cap="6"/>
+	<ship_membership name="TackleDroneLauncherFrigate" ship_cap_group="Frigate" weight="100" cap="6"/>
+	<ship_membership name="AmbushCarrier" ship_cap_group="Frigate" weight="100" cap="12"/>
+	<ship_membership name="MLRSCorvette" ship_cap_group="Strike" weight="100" cap="40"/>
+  </fleet_design>
+
+  <fleet_design name="MSFEscortFleet"
+        display_name="护航舰队"
+        description="A remnant of the human civil war. A fleet of corvettes used to escort larger starships. This fleet specializes in anti-air combat against fighter and bomber swarms."
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Starter" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="Harasser" ship_cap_group="Strike" weight="100" cap="40"/>
+	<ship_membership name="Zapper" ship_cap_group="Strike" weight="100" cap="20"/>
+	<ship_membership name="Porcupine" ship_cap_group="Strike" weight="100" cap="40"/>
+	<ship_membership name="Ranger" ship_cap_group="Strike" weight="100" cap="20"/>
+  </fleet_design>
+
+  <fleet_design name="MSFThanatos"
+        display_name="Thanatos 舰队"
+        description="A fleet comprised of an abandoned Thanatos class battleship. The pride of the Imperial Navy, this fleet starts with a powerful battleship armed with powerful cannons but only has basic fighters as escorts."
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+	<ship_membership name="Thanatos" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="Raider" ship_cap_group="Strike" weight="100" cap="40"/>
+  </fleet_design>
+
+  <fleet_design name="MSFAssin"
+        display_name="刺客舰队"
+        description="A fleet focused on getting close and personal, silent and deadly."
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Starter" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="SpacePlane" ship_cap_group="Strike" weight="100" cap="60"/>
+	<ship_membership name="Gunbot" ship_cap_group="Strike" weight="100" cap="80"/>
+	<ship_membership name="RaidFrigate" ship_cap_group="Frigate" weight="100" cap="9"/>
+	<ship_membership name="Ripper" ship_cap_group="Frigate" weight="100" cap="6"/>
+  </fleet_design>
+
+  <fleet_design name="MSFBarrage"
+        display_name="弹幕舰队"
+        description="A powerful yet fragile fleet specializing in long range bombardment."
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Starter" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="TritiumSniperFrigate" ship_cap_group="Frigate" weight="100" cap="6"/>
+	<ship_membership name="ConcussionCorvette" ship_cap_group="Strike" weight="100" cap="40"/>
+	<ship_membership name="SentinelGunboat" ship_cap_group="Strike" weight="100" cap="20"/>
+	<ship_membership name="SiegeFrigate" ship_cap_group="Frigate" weight="100" cap="6"/>
+  </fleet_design>
+
+<fleet_design name="MSFPolar" required_expansion_list="2_Zenith_Onslaught"
+        display_name="极性舰队"
+        description="This fleet specializes in eliminating both high and low armor targets."
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Starter" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="PhantasmalHostFrigate" ship_cap_group="Frigate" weight="100" cap="6"/>
+	<ship_membership name="Polarizer" ship_cap_group="Strike" weight="100" cap="80"/>
+	<ship_membership name="Kite" ship_cap_group="Strike" weight="100" cap="40"/>
+	<ship_membership name="Devestator" ship_cap_group="Frigate" weight="100" cap="6"/>
+  </fleet_design>
+
+<fleet_design name="MSFDemo"
+        display_name="Democracy Fleet"
+        description="This fleet is composed of ships making up the early Terran Federation. It lacks capital ships, but make up for it in versatility with its fighters and corvettes."
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Starter" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="VeteranSentinelGunboat" ship_cap_group="Strike" weight="100" cap="20"/>
+	<ship_membership name="AblativeTroll" ship_cap_group="Strike" weight="100" cap="80"/>
+	<ship_membership name="VWing" ship_cap_group="Strike" weight="100" cap="40"/>
+	<ship_membership name="Gunbot" ship_cap_group="Strike" weight="100" cap="80"/>
+  </fleet_design>
+
+<fleet_design name="MSFArmoured" required_expansion_list="2_Zenith_Onslaught"
+        display_name="装甲舰队"
+        description="This fleet is composed of heavily armoured ships. Experts at doorkicking and breaching operations."
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Starter" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="PulsarTank" ship_cap_group="Strike" weight="100" cap="20"/>
+	<ship_membership name="AntiShieldPulsarTank" ship_cap_group="Strike" weight="100" cap="20"/>
+	<ship_membership name="HeavyMinelayerFrigate" ship_cap_group="Frigate" weight="100" cap="6"/>
+	<ship_membership name="Zapper" ship_cap_group="Strike" weight="100" cap="20"/>
+  </fleet_design>
+
+<fleet_design name="MSFAlliance" required_expansion_list="2_Zenith_Onslaught"
+        display_name="联盟舰队"
+        description="This fleet is composed of fleets from the Zenith and the Human Forces. All ships of this Galactic Alliance start at MKII due to their advanced technology. Desperate times calls for desperate measures. "
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Starter" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="HumanHersirEnraged" ship_cap_group="Frigate"  weight="100" cap="9"/>
+	<ship_membership name="HRFAssaultFrigate" ship_cap_group="Frigate" weight="100" cap="9"/>
+  </fleet_design>
+
+<fleet_design name="MSFMissileFleet" required_expansion_list="1_The_Spire_Rises"
+        display_name="导弹舰队"
+        description="A fleet comprised of a transport armed with guided missiles, and ships that fire long range guided missiles. Great against short ranged units. Guided missiles require factories and metal to reload."
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Starter" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="ClusterBomb" ship_cap_group="Strike"  weight="100" cap="25"/>
+	<ship_membership name="Ram" ship_cap_group="Strike" weight="100" cap="25"/>
+	<ship_membership name="TeslaTorpedoFrigate" ship_cap_group="Frigate" weight="100" cap="6"/>
+	<ship_membership name="AutoBomb" ship_cap_group="Strike" weight="100" cap="25"/>
+	</fleet_design>
+
+<fleet_design name="MSFRetribution" required_expansion_list="2_Zenith_Onslaught"
+        display_name="Retribution Fleet"
+        description="A fleet comprised of geometric cubes and other exotic ships. Very good at tanking and reflecting damage, but is on the slower side overall and falls prey to anti-armour weapons."
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Starter" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="HumanCrupellarii" ship_cap_group="Strike"  weight="100" cap="20"/>
+	<ship_membership name="DarkMirror" ship_cap_group="Strike" weight="100" cap="20"/>
+	<ship_membership name="DarkerMirrorFrigate" ship_cap_group="Frigate" weight="100" cap="6"/>
+	<ship_membership name="LightMinelayerFrigate" ship_cap_group="Frigate" weight="100" cap="9"/>
+	</fleet_design>
+
+<fleet_design name="MSFSOF"
+        display_name="特种作战舰队"
+        description="由特种部队组成的舰队，人类的矛尖。该舰队精通打了就跑的战术。荣耀属于人类！"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Starter" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="ViciousRaidFrigate" ship_cap_group="Frigate" weight="100" cap="9"/>
+	<ship_membership name="Raider" ship_cap_group="Strike" weight="100" cap="40"/>
+	<ship_membership name="Tarantula" ship_cap_group="Strike" weight="100" cap="20"/>
+	<ship_membership name="WarbirdFrigate" ship_cap_group="Frigate" weight="100" cap="6"/>
+  </fleet_design>
+
+<fleet_design name="MSFRiot"
+        display_name=" riot 舰队"
+        description="A defensive fleet composed of Riot Police and Security Troops. Experts at defending turrets and suppressing attacks, but lacks offensive power. A classic fleet."
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Starter" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="Suppressor" ship_cap_group="Frigate" weight="100" cap="6"/>
+	<ship_membership name="Brawler" ship_cap_group="Frigate" weight="100" cap="6"/>
+	<ship_membership name="IonDisruptor" ship_cap_group="Frigate" weight="100" cap="6"/>
+	<ship_membership name="VanguardHydra" ship_cap_group="Strike" weight="100" cap="20"/>
+  </fleet_design>
+
+<fleet_design name="MSFSiege" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught"
+        display_name="攻城舰队"
+        description="A fleet composed of heavily armoured starships, bombers, escort corvettes, and long range siege ships. Slow but powerful."
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Starter" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="Bombard" ship_cap_group="Strike" weight="100" cap="20"/>
+	<ship_membership name="ElectricBomber" ship_cap_group="Strike" weight="100" cap="15"/>
+	<ship_membership name="SiegeFrigate" ship_cap_group="Frigate" weight="100" cap="6"/>
+	<ship_membership name="HeavyStingray" ship_cap_group="Strike" weight="100" cap="60"/>
+  </fleet_design>
+
+<fleet_design name="MSFConquer"
+        display_name="Conqueror Fleet"
+        description="A fleet composed of heavily armoured starships, bombers, escort fighters and railgun starships. Built for aggression and attacking."
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Starter" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="VWing" ship_cap_group="Strike" weight="100" cap="40"/>
+	<ship_membership name="HeavyFusionBomber" ship_cap_group="Strike" weight="100" cap="30"/>
+	<ship_membership name="AssaultFrigate" ship_cap_group="Frigate" weight="100" cap="9"/>
+	<ship_membership name="TritiumSniperFrigate" ship_cap_group="Frigate" weight="100" cap="6"/>
+  </fleet_design>
+
+<fleet_design name="MSFDeprived"
+        display_name="匮乏舰队"
+        description="An abandoned fleet that has already been raided for salvage. Starts only with Dagger space fighters. A very challenging start, meant for only true Fleet Commanders."
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Starter" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="Dagger" ship_cap_group="Strike" weight="100" cap="40"/>
+  </fleet_design>
+</root>
+

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <faction name="Human" is_partial_record="true">
+    <!-- custom fields. -->
+
+    <custom_field requires_player_types="DarkZenithSidekick,DarkZenithEmpire"
+                  name="Intensity" display_name="Strength" description="This determines the overall power budget of the Dark 天顶"
+                  sort_group="200" setting_type="IntSlider" default="5" min="1" max="10"/>
+    
+    <custom_field  requires_player_types="DarkZenithSidekick,DarkZenithEmpire" name="InvasionTime" display_name="Invasion Time" description="By default your forces are a full Dark 天顶 Invasion. By using 斯维卡里, you will spawn with a small force with your empire ally. If you are choosing DZ Empire, you must pick Full Invasion."
+                   sort_group="210" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Svikari,Full Invasion" default_option="Full Invasion" />
+
+        <custom_field requires_player_types="DarkZenithSidekick,DarkZenithEmpire"
+                  name="NadirStrength" display_name="Nadir Power" description="The Nadir are spawned by the AI to fight the Dark 天顶; fighting them is an important source of 资源 for the Dark 天顶."
+                  sort_group="250" setting_type="IntSlider" default="5" min="1" max="10"/>
+    <custom_field requires_player_types="DarkZenithSidekick,DarkZenithEmpire"
+                  name="DZSidekickStartingFlagship" display_name="Starting Flagship" description="Which 旗舰 do you want to start with?"
+                  sort_group="100" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Medusa,Asclepius,Chameleon,Random" default_option="Random"/>
+    
+    <custom_field requires_player_types="ScourgeInfusedHumanEmpire"
+                  name="ScourgeVassalIntensity" display_name="Scourge Intensity" description="The intensity for your scourge allies." setting_type="IntSlider" default="5" min="1" max="10"/>
+    <custom_field requires_player_types="ScourgeInfusedHumanEmpire"
+                  name="FirstArmory" display_name="First Armory" description="The first armory the scourge will build."
+                  sort_group="260" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Random,Burlust,Evuck,Neinzul,Peltian,Thoraxian" default_option="Random" />
+    <custom_field requires_player_types="ScourgeInfusedHumanEmpire"
+                  name="StartsWithBane" is_advanced_setting="true" display_name="Starts with Flagship" description="The scourge infused empire gets a powerful scourge-themed 旗舰 at game start time."
+                  sort_group="300"  setting_type="BoolToggle" default="false"  />
+
+
+    <custom_field  requires_player_types="DarkZenithSidekick,DarkZenithEmpire"
+                   name="EnableFimbulwinter" is_advanced_setting="true" display_name="Enable Fimbulwinter" description="When enabled, Dark 天顶 will attempt to bring about the Fimbulwinter, modifying all of the planets in the 银河 to be more suitable for their needs. The Dark 天顶 will begin transforming the planets they capture; once transformed the DZ and its allies are more powerful there, and their enemies are weaker.
+
+DO NOT DISABLE."
+                  sort_group="800" setting_type="BoolToggle" default="true"  />
+
+    <custom_field   requires_player_types="DarkZenithSidekick,DarkZenithEmpire" is_advanced_setting="true"
+        name="Allegiance" display_name="Allegiance" description="These 天顶 are loyal to the Player."
+                  sort_group="900" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Friendly To Players" default_option="Friendly To Players" />
+  </faction>
+</root>

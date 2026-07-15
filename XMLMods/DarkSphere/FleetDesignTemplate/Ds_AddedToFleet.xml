@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+    <!--
+  <fleet_design 
+        name="Ds_ARS_Choices"
+        design_logic="AddedToPlayerFleetMinorFaction" 
+        weight="1" 
+        skip_adding_to_seed_lists="true"
+        include_full_cap_of_each_type="true"
+        >
+
+        <ship_membership name="DarkSpireSphere_Shade" ship_cap_group="Frigate" weight="100" cap="6"/>
+        <ship_membership name="DarkSpireSphere_Dusk" ship_cap_group="Frigate" weight="100" cap="1"/>
+        <ship_membership name="Ds_Escort_Gatling" ship_cap_group="Strike" weight="100" cap="70"/>
+
+  </fleet_design>
+
+  <fleet_design 
+        name="Ds_ARS_Choices2"
+        design_logic="AddedToPlayerFleet" 
+        weight="1" 
+        skip_adding_to_seed_lists="true"
+        include_full_cap_of_each_type="true"
+        >
+
+        <ship_membership name="DarkSpireSphere_Shade" ship_cap_group="Frigate" weight="100" cap="6"/>
+        <ship_membership name="DarkSpireSphere_Dusk" ship_cap_group="Frigate" weight="100" cap="1"/>
+        <ship_membership name="Ds_Escort_Gatling" ship_cap_group="Strike" weight="100" cap="70"/>
+
+  </fleet_design>
+-->
+</root>

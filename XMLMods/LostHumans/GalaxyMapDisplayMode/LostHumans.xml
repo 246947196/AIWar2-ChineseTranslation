@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <display_mode name="LostHumansGeneral"
+        display_name="<color=#ADD8E6>失落人类s</color>"
+           dll_name="LostHumansDeepInfo"
+           type_name="SK.LostHumans.GalaxyMapDisplayMode_LostHumans"
+           tooltip="Shows any active 失落人类s on the galaxy map as well as any unique structures spawned by 失落人类 activity, such as Firewalls. (Shows only the first Icon of each type on a planet, aka, 5 旅行者 on a single player would be covered as a singular Icon.)
+
+Shows a Green Line showing the current 建造护航队 path, if it exists."
+  />
+
+</root>

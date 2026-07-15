@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <!--The purpose of these "AI Ship Groups" is to define a mix of ships that can be used
+      to populate a planet, or an offensive wave, or similar.  
+      This does not affect the player's fleets directly, it is AI-only.
+      
+      The weight on these says how frequently they will appear inside of each category
+      that they say they are a part of.  Basically these are children defining how many "raffle tickets"
+      they have bought inside their parent.  100 is the standard, and anything less makes them comparably more rare.
+      
+      There's no way for any one child group to know how many other groups have added themselves to the parent category,
+      so going with this "100 means regular, less means more rare" mentality keeps things feeling consistent
+      despite the fact that mods and further additions may diltute the value of any given ticket.
+      
+      By the same token, these ship groups don't define what ships are in them;
+      instead, the ships themselves say which groups they belong to, and what their weight is.
+      
+      This might seem a bit on the complicated side, but it's what lets mods play nicely together.
+      This also gives us a good mix of hand-designed and procedural aspects, since these groups
+      are each thematic in their own way (based on Puffin's work), but the game will wind up
+      choosing a randomized subset from the groups in most cases.  And further ships
+      can be designed and added that we never thought about, which carries it even further.-->
+  	
+	<!-- Stuff for Rear Admiral AI -->
+	<!-- First, we want these groups to be able to use the basic dire guardians and exo leaders than the standard AI's such as Full Ensemble have access to: -->
+ 
+ 	<ship_group name="AnyDireGuardians" is_partial_record="true" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss">
+    		<ai_ship_cat_i_am_in category="LONRearAdmiralDireGuardians" weight="100"/>
+  	</ship_group>
+  	<ship_group name="DireExoLeaders" is_partial_record="true" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss" >
+		<ai_ship_cat_i_am_in category="LONRearAdmiralExoLeaders" weight="60"/>
+  	</ship_group>
+
+	<!-- Next, we add in the exowar units. I don't know of a better way to get the level of control I wanted than to have all these different groups: -->
+
+ 	<ship_group name="LONExowarTier1Guardians" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss">
+    		<ai_ship_cat_i_am_in category="LONRearAdmiralDireGuardians" weight="50"/>
+  	</ship_group>
+  	<ship_group name="LONExowarTier1Exoleaders" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss">
+    		<ai_ship_cat_i_am_in category="LONRearAdmiralExoLeaders" weight="135"/>
+  	</ship_group>
+  	<ship_group name="LONExowarTier1ExoWaveUnits" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss">
+		<ai_ship_cat_i_am_in category="LONRearAdmiralExoWaves" weight="100"/>
+  	</ship_group>
+  	<ship_group name="LONExowarTier1SingularFreakySurprises" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss">
+    		<ai_ship_cat_i_am_in category="LONRearAdmiral_SingularFreakySurprises" weight="50"/>
+  	</ship_group>
+ 
+ 	<ship_group name="LONExowarTier2Exoleaders" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss">
+    		<ai_ship_cat_i_am_in category="LONRearAdmiralExoLeaders" weight="65"/>
+		<ai_ship_cat_i_am_in category="LONRearAdmiralWardenTotallyADireGuardianTier" weight="100"/>
+  	</ship_group>
+ 	<ship_group name="LONExowarTier2ExoWaveUnits" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss">
+    		<ai_ship_cat_i_am_in category="LONRearAdmiralExoWaves" weight="30"/>
+  	</ship_group>
+  	<ship_group name="LONExowarTier2SingularFreakySurprises" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss">
+    		<ai_ship_cat_i_am_in category="LONRearAdmiral_SingularFreakySurprises" weight="6"/>
+  	</ship_group>
+ 
+ 	<ship_group name="ExowarTier3" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss">
+    		<ai_ship_cat_i_am_in category="LONRearAdmiralExoLeaders" weight="25"/>
+  	</ship_group>
+
+	<!-- And finally, we prevent the singular freaky suprises from, in fact, being unsuprising and present everywhere. Uses a similar relative value to golemite: -->
+  	<ship_group name="AnySingularFreakySurprises_NobodyHere" is_partial_record="true" is_intentionally_empty="true" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss">
+    		<ai_ship_cat_i_am_in category="LONRearAdmiral_SingularFreakySurprises" weight="95"/>
+  	</ship_group>
+
+</root>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+     <faction
+               name="PointsOfInterest"
+               display_name="兴趣点"
+               short_name="现象"
+               processing_group="Poi"
+               base_info_source="PoiFactionBaseInfo"
+               deep_info_source="PoiFactionDeepInfo"
+               team_center_color="Hidden_eed202"
+               team_border_color="Hidden_fef18f"
+               type="SpecialFaction"
+               must_be_at_most_one="true"
+               ai_does_not_generate_threat_against="true"
+               ai_threat_against_this_faction_goes_back_to_guarding="true"
+               ai_can_send_waves_against_this="false"
+               description="Adds interesting locations throughout the galaxy with strategic value.
+
+&lt;color=#f25e1c&gt;LOW IMPACT:&lt;/color&gt; This faction is neutral for the most part or affects every faction equally."
+               can_use_spire_debris="false"
+               impact="Easier"
+               icon_name_for_lobby="Ships4/SomethingHuh"
+               >
+
+               <custom_field
+                    name="Allegiance"
+                    is_advanced_setting="true"
+                    display_name="归属"
+                    description="该派系始终对所有势力敌对。"
+                    sort_group="250"
+                    setting_type="CustomDropdownArbitraryOptions" 
+                    arbitrary_options="Hostile To All"
+                    default_option="Hostile To All"
+                    is_hidden="true"
+                    />
+
+               <custom_field
+                    name="Prevalence"
+                    is_advanced_setting="false"
+                    display_name="普遍性"
+                    description="看到有废弃物或异常的行星有多常见或多罕见？"
+                    sort_group="250"
+                    setting_type="CustomDropdownArbitraryOptions" 
+                    arbitrary_options="Everywhere,Common,Uncommon,Rare"
+                    default_option="Common"
+                    />
+
+               <custom_field
+                    name="Temperament"
+                    is_advanced_setting="false"
+                    display_name="性情"
+                    description="某些异常比其他更具破坏性。此设置允许你调整生成类型的平衡。"
+                    sort_group="260"
+                    setting_type="CustomDropdownArbitraryOptions" 
+                    arbitrary_options="Balanced,Friendly,Hostile"
+                    default_option="Balanced"
+                    />
+
+     </faction>
+
+</root>

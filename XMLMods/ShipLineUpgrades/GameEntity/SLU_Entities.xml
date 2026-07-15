@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root> 
+	<entity name="OutguardBeacon" is_partial_record="true" eligible_for_hacks="AccessOutguardBeacon,Hacking_ExtractCommandFrequency" />
+</root>

@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<setting_category name="Civilians" display_name="Civilians"
+      description="Settings related to the 民用 Industries mod."/>
+</root>

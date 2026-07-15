@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <!-- long term plan: split this into per-ship-line upgrades -->
+  <item name="TerranArrow" sort_group="12" sort_index="1" display_name="&lt;color=#ffb37b&gt;Terran:&lt;/color&gt; Arrow" science_cost_per_time_unlocked="1200,3600,4800,5000,6500,7800" icon_path="assets/sci-fi_game_icons/icons/png/transparent/50_b.png" weapon_upgrade="false" for_player_type_tags="ArmadaEmpire" skips_rejection_if_benefits_nothing="false"
+        description="此升级将提升人类箭矢的标记等级。"/>
+  <item name="TerranPhantom" sort_group="12" sort_index="1" display_name="&lt;color=#ffb37b&gt;Terran:&lt;/color&gt; Phantom" science_cost_per_time_unlocked="1200,3600,4800,5000,6500,7800" icon_path="assets/sci-fi_game_icons/icons/png/transparent/51_b.png" weapon_upgrade="false" for_player_type_tags="ArmadaEmpire" skips_rejection_if_benefits_nothing="false"
+        description="此升级将提升人类幻影的标记等级。"/>
+  <item name="TerranScryer" sort_group="12" sort_index="5" display_name="&lt;color=#ffb37b&gt;Terran:&lt;/color&gt; Scryer" science_cost_per_time_unlocked="800,1200,3600,4800,5000,6500" icon_path="assets/sci-fi_game_icons/icons/png/transparent/52_b.png" weapon_upgrade="false" for_player_type_tags="ArmadaEmpire" skips_rejection_if_benefits_nothing="false"
+        description="此升级将提升人类洞察者的标记等级。"/>
+  <item name="TerranSabre" sort_group="12" sort_index="10" display_name="&lt;color=#ffb37b&gt;Terran:&lt;/color&gt; Sabre" science_cost_per_time_unlocked="600,900,1500,2000,2500,3500" icon_path="assets/sci-fi_game_icons/icons/png/transparent/53_b.png" weapon_upgrade="false" for_player_type_tags="ArmadaEmpire" skips_rejection_if_benefits_nothing="true"
+        description="此升级将提升人类军刀的标记等级。军刀是通过黑客入侵敌方舰船创造的。"/>
+
+
+  
+  <item name="TerranWraith" sort_group="13" sort_index="1" display_name="&lt;color=#ff7bb3&gt;Terran:&lt;/color&gt; Wraith" science_cost_per_time_unlocked="1400,2100,2800,4500,7000,12000" icon_path="assets/sci-fi_game_icons/icons/png/transparent/54_b.png" weapon_upgrade="false" for_player_type_tags="ArmadaEmpire" skips_rejection_if_benefits_nothing="false"
+        description="此升级将提升人类幽灵的标记等级。"/>
+    <item name="TerranScimatar" sort_group="13" sort_index="1" display_name="&lt;color=#ff7bb3&gt;Terran:&lt;/color&gt; Scimatar" science_cost_per_time_unlocked="1400,2100,2800,4500,7000,12000" icon_path="assets/sci-fi_game_icons/icons/png/transparent/55_b.png" weapon_upgrade="false" for_player_type_tags="ArmadaEmpire" skips_rejection_if_benefits_nothing="false"
+        description="此升级将提升人类弯刀的标记等级。"/>
+
+  <item name="TerranBanshee" sort_group="14" sort_index="1" display_name="&lt;color=#ff7b10&gt;Terran:&lt;/color&gt; Banshee" science_cost_per_time_unlocked="2500,4000,7000,10000,14000,17000" icon_path="assets/sci-fi_game_icons/icons/png/transparent/56_b.png" weapon_upgrade="false" for_player_type_tags="ArmadaEmpire" skips_rejection_if_benefits_nothing="false"
+        description="此升级将提升人类女妖的标记等级。"/>
+  <item name="TerranGladius" sort_group="14" sort_index="1" display_name="&lt;color=#ff7b10&gt;Terran:&lt;/color&gt; Gladius" science_cost_per_time_unlocked="2500,4000,7000,10000,14000,17000" icon_path="assets/sci-fi_game_icons/icons/png/transparent/57_b.png" weapon_upgrade="false" for_player_type_tags="ArmadaEmpire" skips_rejection_if_benefits_nothing="false"
+        description="此升级将提升人类短剑的标记等级。"/>
+
+    <item name="KilrathiDralthi" sort_group="20" sort_index="1" display_name="&lt;color=#b7b3ff&gt;Kilrathi:&lt;/color&gt; Dralthi" science_cost_per_time_unlocked="1200,3600,4800,5000,6500,7800" icon_path="assets/sci-fi_game_icons/icons/png/transparent/50_b.png" weapon_upgrade="false" for_player_type_tags="ArmadaEmpire" skips_rejection_if_benefits_nothing="false"
+          description="此升级将提升基拉西德拉西的标记等级。"/>
+    <item name="KilrathiShoklar" sort_group="20" sort_index="5" display_name="&lt;color=#b7b3ff&gt;Kilrathi:&lt;/color&gt; Shoklar" science_cost_per_time_unlocked="1200,3600,4800,5000,6500,7800" icon_path="assets/sci-fi_game_icons/icons/png/transparent/51_b.png" weapon_upgrade="false" for_player_type_tags="ArmadaEmpire" skips_rejection_if_benefits_nothing="false"
+        description="此升级将提升基拉西肖克拉的标记等级。"/>
+    <item name="KilrathiAvicenna" sort_group="20" sort_index="10" display_name="&lt;color=#b7b3ff&gt;Kilrathi:&lt;/color&gt; Avicenna" science_cost_per_time_unlocked="800,1200,3600,4800,5000,6500" icon_path="assets/sci-fi_game_icons/icons/png/transparent/52_b.png" weapon_upgrade="false" for_player_type_tags="ArmadaEmpire" skips_rejection_if_benefits_nothing="false"
+        description="此升级将提升基拉西阿维森纳的标记等级。"/>
+
+  <item name="KilrathiJrathek" sort_group="30" sort_index="1" display_name="&lt;color=#ff23ff&gt;Kilrathi:&lt;/color&gt; Jrathek" science_cost_per_time_unlocked="1400,2100,2800,4500,7000,12000" icon_path="assets/sci-fi_game_icons/icons/png/transparent/53_b.png" weapon_upgrade="false" for_player_type_tags="ArmadaEmpire" skips_rejection_if_benefits_nothing="false"
+        description="此升级将提升基拉西杰拉塞克的标记等级。"/>
+  <item name="KilrathiGrikath" sort_group="30" sort_index="2" display_name="&lt;color=#ff23ff&gt;Kilrathi:&lt;/color&gt; Grikath" science_cost_per_time_unlocked="1400,2100,2800,4500,7000,12000" icon_path="assets/sci-fi_game_icons/icons/png/transparent/54_b.png" weapon_upgrade="false" for_player_type_tags="ArmadaEmpire" skips_rejection_if_benefits_nothing="false"
+        description="此升级将提升基拉西格里卡思的标记等级。"/>
+
+  <item name="KilrathiKorLarh" sort_group="40" sort_index="1" display_name="&lt;color=#2723ff&gt;Kilrathi:&lt;/color&gt; KorLarh" science_cost_per_time_unlocked="2500,4000,7000,10000,14000,17000"  icon_path="assets/sci-fi_game_icons/icons/png/transparent/52_b.png" weapon_upgrade="false" for_player_type_tags="ArmadaEmpire" skips_rejection_if_benefits_nothing="false"
+        description="此升级将提升基拉西科拉尔的标记等级。"/>
+  <item name="KilrathiGoran" sort_group="40" sort_index="1" display_name="&lt;color=#2723ff&gt;Kilrathi:&lt;/color&gt; Goran" science_cost_per_time_unlocked="2500,4000,7000,10000,14000,17000"  icon_path="assets/sci-fi_game_icons/icons/png/transparent/52_b.png" weapon_upgrade="false" for_player_type_tags="ArmadaEmpire" skips_rejection_if_benefits_nothing="false"
+        description="此升级将提升基拉西戈兰的标记等级。"/>
+
+    <item name="AprahantiMonarch" sort_group="50" sort_index="1" display_name="&lt;color=#4444ff&gt;Aprahanti:&lt;/color&gt; Monarch" science_cost_per_time_unlocked="1200,3600,4800,5000,6500,7800"  icon_path="assets/sci-fi_game_icons/icons/png/transparent/52_b.png" weapon_upgrade="false" for_player_type_tags="ArmadaEmpire" skips_rejection_if_benefits_nothing="false"
+        description="此升级将提升阿普拉汉蒂君主的标记等级。"/>
+    <item name="AprahantiBlighter" sort_group="53" sort_index="1" display_name="&lt;color=#4444ff&gt;Aprahanti:&lt;/color&gt; Blaster" science_cost_per_time_unlocked="1400,2100,2800,4500,7000,12000"  icon_path="assets/sci-fi_game_icons/icons/png/transparent/53_b.png" weapon_upgrade="false" for_player_type_tags="ArmadaEmpire" skips_rejection_if_benefits_nothing="false"
+        description="此升级将提升阿普拉汉蒂毁灭者的标记等级。"/>
+
+    <item name="AprahantiDreadnaught" sort_group="56" sort_index="1" display_name="&lt;color=#4444ff&gt;Aprahanti:&lt;/color&gt; Dreadnaught" science_cost_per_time_unlocked="2500,4000,7000,10000,14000,17000"  icon_path="assets/sci-fi_game_icons/icons/png/transparent/53_b.png" weapon_upgrade="false" for_player_type_tags="ArmadaEmpire" skips_rejection_if_benefits_nothing="false"
+          description="此升级将提升阿普拉汉蒂无畏舰的标记等级。"/>
+
+
+    <item name="SkrinBuzzer" sort_group="60" sort_index="1" display_name="&lt;color=#ff4444&gt;Skrin:&lt;/color&gt; Buzzer" science_cost_per_time_unlocked="1200,3600,4800,5000,6500,7800"  icon_path="assets/sci-fi_game_icons/icons/png/transparent/52_b.png" weapon_upgrade="false" for_player_type_tags="ArmadaEmpire" skips_rejection_if_benefits_nothing="false"
+        description="此升级将提升斯克林蜂鸣者的标记等级。"/>
+    <item name="SkrinFirehawk" sort_group="60" sort_index="2" display_name="&lt;color=#ff4444&gt;Skrin:&lt;/color&gt; Firehawk" science_cost_per_time_unlocked="1400,2100,2800,4500,7000,12000"  icon_path="assets/sci-fi_game_icons/icons/png/transparent/53_b.png" weapon_upgrade="false" for_player_type_tags="ArmadaEmpire" skips_rejection_if_benefits_nothing="false"
+        description="此升级将提升斯克林火鹰的标记等级。"/>
+
+    <item name="SkrinEradicator" sort_group="60" sort_index="3" display_name="&lt;color=#ff4444&gt;Skrin:&lt;/color&gt; Eradicator" science_cost_per_time_unlocked="2500,4000,7000,10000,14000,17000"  icon_path="assets/sci-fi_game_icons/icons/png/transparent/53_b.png" weapon_upgrade="false" for_player_type_tags="ArmadaEmpire" skips_rejection_if_benefits_nothing="false"
+          description="此升级将提升斯克林灭绝者的标记等级。"/>
+
+    <item name="ReaperHusk" sort_group="60" sort_index="1" display_name="&lt;color=#44ff44&gt;Reaper:&lt;/color&gt; Husk" science_cost_per_time_unlocked="1200,3600,4800,5000,6500,7800"  icon_path="assets/sci-fi_game_icons/icons/png/transparent/52_b.png" weapon_upgrade="false" for_player_type_tags="ArmadaEmpire" skips_rejection_if_benefits_nothing="false"
+        description="此升级将提升收割者空壳的标记等级。"/>
+    <item name="ReaperScion" sort_group="60" sort_index="2" display_name="&lt;color=#44ff44&gt;Reaper:&lt;/color&gt; Scion" science_cost_per_time_unlocked="1400,2100,2800,4500,7000,12000"  icon_path="assets/sci-fi_game_icons/icons/png/transparent/53_b.png" weapon_upgrade="false" for_player_type_tags="ArmadaEmpire" skips_rejection_if_benefits_nothing="false"
+        description="此升级将提升收割者后裔的标记等级。"/>
+
+    <item name="ReaperPraetorian" sort_group="60" sort_index="3" display_name="&lt;color=#44ff44&gt;Reaper:&lt;/color&gt; Praetorian" science_cost_per_time_unlocked="2500,4000,7000,10000,14000,17000"  icon_path="assets/sci-fi_game_icons/icons/png/transparent/53_b.png" weapon_upgrade="false" for_player_type_tags="ArmadaEmpire" skips_rejection_if_benefits_nothing="false"
+          description="此升级将提升收割者执政官的标记等级。"/>
+
+    <item name="AcutianAuditor" sort_group="60" sort_index="1" display_name="&lt;color=#cc00cc&gt;Acutian:&lt;/color&gt; Auditor" science_cost_per_time_unlocked="1200,3600,4800,5000,6500,7800"  icon_path="assets/sci-fi_game_icons/icons/png/transparent/52_b.png" weapon_upgrade="false" for_player_type_tags="ArmadaEmpire" skips_rejection_if_benefits_nothing="false"
+        description="此升级将提升阿库提安审计者的标记等级。"/>
+    <item name="AcutianImperator" sort_group="60" sort_index="2" display_name="&lt;color=#cc00cc&gt;Acutian:&lt;/color&gt; Imperator" science_cost_per_time_unlocked="1400,2100,2800,4500,7000,12000"  icon_path="assets/sci-fi_game_icons/icons/png/transparent/53_b.png" weapon_upgrade="false" for_player_type_tags="ArmadaEmpire" skips_rejection_if_benefits_nothing="false"
+        description="此升级将提升阿库提安统治者的标记等级。"/>
+
+    <item name="AcutianExecutor" sort_group="60" sort_index="3" display_name="&lt;color=#cc00cc&gt;Acutian:&lt;/color&gt; Executor" science_cost_per_time_unlocked="2500,4000,7000,10000,14000,17000"  icon_path="assets/sci-fi_game_icons/icons/png/transparent/53_b.png" weapon_upgrade="false" for_player_type_tags="ArmadaEmpire" skips_rejection_if_benefits_nothing="false"
+          description="此升级将提升阿库提安执行者的标记等级。"/>
+
+    
+    <item name="MetalMines" sort_group="100" sort_index="1" display_name="&lt;color=#ffb37b&gt;Mine:&lt;/color&gt; Metal" science_cost_per_time_unlocked="800,1200,3600,5500,7500,9500" icon_path="assets/sci-fi_game_icons/icons/png/transparent/50_b.png" weapon_upgrade="false" for_player_type_tags="ArmadaEmpire" skips_rejection_if_benefits_nothing="true"
+        description="此升级将提升金属矿场产生的资金。"/>
+    <item name="ScienceMines" sort_group="100" sort_index="1" display_name="&lt;color=#ffb37b&gt;Mine:&lt;/color&gt; Science" science_cost_per_time_unlocked="3600,4800,5000,6500,7200,9600" icon_path="assets/sci-fi_game_icons/icons/png/transparent/51_b.png" weapon_upgrade="false" for_player_type_tags="ArmadaEmpire" skips_rejection_if_benefits_nothing="true"
+        description="此升级将提升科技矿场产生的科技点数。"/>
+    <item name="HackingMines" sort_group="100" sort_index="1" display_name="&lt;color=#ffb37b&gt;Mine:&lt;/color&gt; Hacking" science_cost_per_time_unlocked="1200,3600,4800,6000,8000" icon_path="assets/sci-fi_game_icons/icons/png/transparent/52_b.png" weapon_upgrade="false" for_player_type_tags="ArmadaEmpire" skips_rejection_if_benefits_nothing="true"
+        description="This upgrade will increase the 黑客 points generated by 黑客 矿场."/>
+
+    <!-- Defenses -->
+    <item name="ArmadaDefenses" sort_group="120" sort_index="1" display_name="&lt;color=#ffb37b&gt;Defenses:&lt;/color&gt;" science_cost_per_time_unlocked="3600,4800,5000,6500,7800,10000" icon_path="assets/sci-fi_game_icons/icons/png/transparent/47_b.png" weapon_upgrade="false" for_player_type_tags="ArmadaEmpire" skips_rejection_if_benefits_nothing="true"
+        description="This upgrade will strengthen your 防御."/>
+
+    <item name="TerranRangers" sort_group="200" sort_index="1" display_name="&lt;color=#ffb37b&gt;Terran:&lt;/color&gt; Rangers" science_cost_per_time_unlocked="1200,3600,4800,5000,6500,7800" icon_path="assets/sci-fi_game_icons/icons/png/transparent/42_b.png" weapon_upgrade="false" for_player_type_tags="ArmadaEmpire" skips_rejection_if_benefits_nothing="false"
+        description="This upgrade will strengthen your 人类 Rangers."/>
+    <item name="KilrathiRangers" sort_group="200" sort_index="2" display_name="&lt;color=#ccb3cc&gt;Kilrathi:&lt;/color&gt; Rangers" science_cost_per_time_unlocked="1200,3600,4800,5000,6500,7800" icon_path="assets/sci-fi_game_icons/icons/png/transparent/43_b.png" weapon_upgrade="false" for_player_type_tags="ArmadaEmpire" skips_rejection_if_benefits_nothing="false"
+        description="This upgrade will strengthen your 基拉西 Rangers."/>
+    <item name="AprahantiRangers" sort_group="200" sort_index="3" display_name="&lt;color=#4444ff&gt;Aprahanti:&lt;/color&gt; Rangers" science_cost_per_time_unlocked="800,1200,3600,4800,5000,6500" icon_path="assets/sci-fi_game_icons/icons/png/transparent/43_b.png" weapon_upgrade="false" for_player_type_tags="ArmadaEmpire" skips_rejection_if_benefits_nothing="false"
+        description="This upgrade will strengthen your Aprahanti Rangers."/>
+    <item name="SkrinRangers" sort_group="200" sort_index="4" display_name="&lt;color=#ff4444&gt;Skrin:&lt;/color&gt; Rangers" science_cost_per_time_unlocked="800,1200,3600,4800,5000,6500" icon_path="assets/sci-fi_game_icons/icons/png/transparent/44_b.png" weapon_upgrade="false" for_player_type_tags="ArmadaEmpire" skips_rejection_if_benefits_nothing="false"
+          description="This upgrade will strengthen your Skrin Rangers."/>
+    <item name="ReaperRangers" sort_group="200" sort_index="5" display_name="&lt;color=#44ff44&gt;Reaper:&lt;/color&gt; Rangers" science_cost_per_time_unlocked="800,1200,3600,4800,5000,6500" icon_path="assets/sci-fi_game_icons/icons/png/transparent/44_b.png" weapon_upgrade="false" for_player_type_tags="ArmadaEmpire" skips_rejection_if_benefits_nothing="false"
+          description="This upgrade will strengthen your 收割者 Rangers."/>
+    <item name="AcutianRangers" sort_group="200" sort_index="10" display_name="&lt;color=#cc00cc&gt;Acutian:&lt;/color&gt; Rangers" science_cost_per_time_unlocked="800,1200,3600,4800,5000,6500" icon_path="assets/sci-fi_game_icons/icons/png/transparent/43_b.png" weapon_upgrade="false" for_player_type_tags="ArmadaEmpire" skips_rejection_if_benefits_nothing="false"
+          description="This upgrade will strengthen your Acutian Rangers."/>
+
+    <item name="TerranLocusts" sort_group="300" sort_index="1" display_name="&lt;color=#ffb37b&gt;Terran:&lt;/color&gt; Locusts" science_cost_per_time_unlocked="1000,1400,3600,4800,6500,7800" icon_path="assets/sci-fi_game_icons/icons/png/transparent/42_b.png" weapon_upgrade="false" for_player_type_tags="ArmadaEmpire" skips_rejection_if_benefits_nothing="false"
+        description="This upgrade will strengthen your 人类 蝗虫."/>
+    <item name="KilrathiLocusts" sort_group="300" sort_index="2" display_name="&lt;color=#ccb3cc&gt;Kilrathi:&lt;/color&gt; Locusts" science_cost_per_time_unlocked="1000,1400,3600,4800,6500,7800" icon_path="assets/sci-fi_game_icons/icons/png/transparent/43_b.png" weapon_upgrade="false" for_player_type_tags="ArmadaEmpire" skips_rejection_if_benefits_nothing="false"
+        description="This upgrade will strengthen your 基拉西 蝗虫."/>
+    <item name="AprahantiLocusts" sort_group="300" sort_index="3" display_name="&lt;color=#4444ff&gt;Aprahanti:&lt;/color&gt; Locusts" science_cost_per_time_unlocked="800,1200,2400,3600,4800,6500" icon_path="assets/sci-fi_game_icons/icons/png/transparent/44_b.png" weapon_upgrade="false" for_player_type_tags="ArmadaEmpire" skips_rejection_if_benefits_nothing="false"
+        description="This upgrade will strengthen your Aprahanti 蝗虫."/>
+    <item name="SkrinLocusts" sort_group="300" sort_index="4" display_name="&lt;color=#ff4444&gt;Skrin:&lt;/color&gt; Locusts" science_cost_per_time_unlocked="800,1200,2400,3600,4800,6500" icon_path="assets/sci-fi_game_icons/icons/png/transparent/44_b.png" weapon_upgrade="false" for_player_type_tags="ArmadaEmpire" skips_rejection_if_benefits_nothing="false"
+        description="This upgrade will strengthen your Skrin 蝗虫."/>
+    <item name="ReaperLocusts" sort_group="300" sort_index="5" display_name="&lt;color=#44ff44&gt;Reaper:&lt;/color&gt; Locusts" science_cost_per_time_unlocked="800,1200,2400,3600,4800,6500" icon_path="assets/sci-fi_game_icons/icons/png/transparent/44_b.png" weapon_upgrade="false" for_player_type_tags="ArmadaEmpire" skips_rejection_if_benefits_nothing="false"
+        description="This upgrade will strengthen your 收割者 蝗虫."/>
+    <item name="AcutianLocusts" sort_group="300" sort_index="6" display_name="&lt;color=#cc00cc&gt;Acutian:&lt;/color&gt; Locusts" science_cost_per_time_unlocked="800,1200,2400,3600,4800,6500" icon_path="assets/sci-fi_game_icons/icons/png/transparent/44_b.png" weapon_upgrade="false" for_player_type_tags="ArmadaEmpire" skips_rejection_if_benefits_nothing="false"
+        description="This upgrade will strengthen your Acutian 蝗虫."/>
+
+    <!-- Flagships/Starbases -->
+    <item name="Direct_ArmadaFlagships" sort_group="50" sort_index="1" is_visible_on_menus="false" direct_science_upgrade="true"
+          science_cost_per_time_unlocked="8,13,25,35,48,60" upgrade_resource="Resource1"/>
+    <item name="Direct_ArmadaWarleaders" sort_group="50" sort_index="2" is_visible_on_menus="false" direct_science_upgrade="true"
+        science_cost_per_time_unlocked="13,25,35,48,60,80" upgrade_resource="Resource1"/>
+
+  <!-- 12*1.3^x for x=0..5 total 153 -->
+  <item name="Direct_ArmadaMajorStarbase" sort_group="51" sort_index="1" is_visible_on_menus="false" direct_science_upgrade="true"
+        science_cost_per_time_unlocked="18,22,28,34,40,55" upgrade_resource="Resource1"/>
+  <!-- These values are subject to change. Currently, half a major necropolis. These give half the hexes per mark upgrade so seems resonable-->
+  <item name="Direct_ArmadaMinorStarbase" sort_group="52" sort_index="1" is_visible_on_menus="false" direct_science_upgrade="true"
+        science_cost_per_time_unlocked="13,19,23,29,35,47" upgrade_resource="Resource1"/>
+  <item name="Direct_ArmadaMinorStarbaseOther" sort_group="52" sort_index="1" is_visible_on_menus="false" direct_science_upgrade="true"
+        science_cost_per_time_unlocked="8,11,14,18,21,33" upgrade_resource="Resource1"/>
+
+</root>

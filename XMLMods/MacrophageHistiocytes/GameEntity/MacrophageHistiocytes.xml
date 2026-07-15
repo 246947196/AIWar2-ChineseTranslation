@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<entity name="MacrophageHistiocyte"
+			tags="MacrophageHistiocyte"
+			gimbal_icon_size_multiplier="0.75"
+			visuals="Assets/_FinalGameMeshes/Macrophage/Harvester/MacrophageHarvester.prefab"
+			icon_name="Ships1/MacrophageHarvester"
+			uses_large_health_bar="true"
+			category="Ship"
+			special_entity_type="DroneGeneral"
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="0.5"
+			size_scale="3.5"
+			visuals_scale_multiplier="1.5"
+			y_offset_of_icon="10"
+			collision_priority="100"
+			display_name="巨噬细胞组织细胞" display_name_for_sidebar="噬菌体组织细胞"
+			description="Released by the Macrophage to combat foreign matter in its territory."
+			starting_mark_level="Mark1"
+			cost_for_ai_to_purchase="1800"
+			hull_points="450000" shield_points="300000" speed="BelowAverage1"
+			metal_cost="200000" energy_consumption="500"
+			armor_mm="90" albedo="0.7" engine_gx="20" mass_tx="7"
+			tech_upgrades_that_benefit_me="Unused"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			voice_group="Silent"
+			speed_multiplier_first_5_seconds_on_planet="2"
+			priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			>
+		<system name="W1" display_name="破骨细胞碎片"
+					category="Weapon" firing_timing="OnlyInRange"
+					damage_per_shot="262" range="Normal3" shot_speed="Slow" rate_of_fire="Misery"
+					shots_per_salvo="16" fires_salvos_sequentially="false"
+					shot_type_data="PlasmaTorpedoAOEBurstAtEnd"
+					area_of_effect_size="99"
+					aoe_spreads_damage_among_available_targets="true"
+					health_change_per_damage_dealt="0.25"
+				>
+		</system>
+		<system name="W2" display_name="破骨细胞能量波"
+					category="Weapon" firing_timing="OnlyInRange"
+					damage_per_shot="262" range="Normal3" shot_speed="VeryFast" rate_of_fire="Misery"
+					shots_per_salvo="10" fires_salvos_sequentially="false"
+					shot_type_data="EnergyWave"
+					health_change_per_damage_dealt="0.25"
+				>
+		</system>
+		<fleet_membership name="HarvesterHistiocytesDrones" ship_cap_group="Frigate" weight="100" min="2" max="2"/>
+		<fleet_membership name="TeliumHistiocytesDrones" ship_cap_group="Frigate" weight="100" min="5" max="5"/>
+		<fleet_membership name="GeneratorHistiocytesDrones" ship_cap_group="Frigate" weight="100" min="3" max="3"/>
+
+		<fleet_membership name="SpireHarvesterHistiocytesDrones" ship_cap_group="Frigate" weight="100" min="4" max="4"/>
+		<fleet_membership name="SpireTeliumHistiocytesDrones" ship_cap_group="Frigate" weight="100" min="10" max="10"/>
+		
+		<fleet_membership name="AdiposeHistiocytesDrones" ship_cap_group="Frigate" weight="100" min="6" max="6"/>
+		<fleet_membership name="RPMHistiocytesDrones" ship_cap_group="Frigate" weight="100" min="1" max="1"/>
+
+		<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+
+	<entity name="MetalGeneratorInfested"
+			tags="MetalGenerator,MetalGeneratorInfested"
+			visuals="assets/_finalgamemeshes/resources/MetalHarvesterEmpty/MetalHarvesterEmpty.prefab"
+			icon_name="Ships1/Metal"
+			category="Ship"
+			size_scale="1.65"
+			visuals_scale_multiplier="3"
+			display_name="巨噬细胞感染的金属采集者" display_name_for_sidebar="噬菌体采集者"
+			description="Metal-rich asteroid with attached mine and refinery. This has been infested by the Macrophage, causing it to act as a host of Histiocytes. Can be destroyed to cleanse it, reverting it back to its neutral form."
+			behavior="Stationary"
+			reverts_to_neutral_on_death_if_permadeath_setting_is_false="MetalHarvesterPermadeath"
+			is_scrapping_by_player_disallowed="true" is_scrapping_by_player_to_turn_unclaimed="true"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="MetalGeneration"
+			cost_for_ai_to_purchase="200"
+			skip_drawing_ship_cap="true"
+			hull_points="200000" shield_points="300000" speed="Immobile"
+			metal_cost="0" energy_consumption="0"
+			armor_mm="10" albedo="0.2" mass_tx="0.6"
+			metal_to_claim="2000" fleet_membership="Planetary"
+			ship_or_structure_explosion_sfx="StructureMidsize_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="StructureLostOnOtherPlanet_Explosion"
+			voice_group="Civilian"
+			priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			fleet_design_template_i_use_for_drones="GeneratorHistiocytesDrones"
+			drone_starting_behavior_type="Attacker_Full"	
+			>
+		<metal_flow purpose="BuildingDronesInternally" throughput="1000" />
+		<resource_production type="Metal" amount="60" increase_per_mark_level="30"/>
+	</entity>
+	
+	<entity skip_export="true" name="Telium" is_partial_record="true"
+			starting_mark_level="Mark1"
+			fleet_design_template_i_use_for_drones="TeliumHistiocytesDrones"
+			drone_starting_behavior_type="Attacker_Full"	
+			>
+		<metal_flow purpose="BuildingDronesInternally" throughput="1000" />
+	</entity>
+
+
+	<entity skip_export="true" name="MacrophageHarvester" is_partial_record="true"
+			starting_mark_level="Mark1"
+			fleet_design_template_i_use_for_drones="HarvesterHistiocytesDrones"
+			drone_starting_behavior_type="Attacker_Full"	
+			>	
+		<metal_flow purpose="BuildingDronesInternally" throughput="1000" />
+	</entity>
+
+	<entity skip_export="true" name="SpireMacrophageHarvester" is_partial_record="true" required_expansion_list="1_The_Spire_Rises"
+			starting_mark_level="Mark1"
+			fleet_design_template_i_use_for_drones="SpireTeliumHistiocytesDrones"
+			drone_starting_behavior_type="Attacker_Full"
+			>
+		<metal_flow purpose="BuildingDronesInternally" throughput="2000" />
+	</entity>
+
+
+	<entity skip_export="true" name="SpireTelium" is_partial_record="true" required_expansion_list="1_The_Spire_Rises"
+			starting_mark_level="Mark1"
+			fleet_design_template_i_use_for_drones="SpireHarvesterHistiocytesDrones"
+			drone_starting_behavior_type="Attacker_Full"
+			>
+		<metal_flow purpose="BuildingDronesInternally" throughput="2000" />
+	</entity>
+</root>

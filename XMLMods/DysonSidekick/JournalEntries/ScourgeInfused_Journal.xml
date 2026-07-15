@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <journal name="Scourge_Infusion_Overview" sidebar_text="{FactionColor}天灾&lt;/color&gt;：概述"
+			can_record_another_copy_if_already_recorded_in_this_campaign="false"
+			text_replacement_related_faction_color="true"
+			text_replacement_related_planet="true"
+			full_text="天灾灌注帝国可以建造和管理其天灾盟友。要增强你的主力天灾部队，你需要建造大量生成器；这些生成器产生天灾舰船。天灾舰船会在军械库中自我升级；建造军械库允许舰船进化为该种族的舰船。更高标记的军械库允许你的舰船达到更高标记。
+
+要塞生产舰船防御其行星周围区域，兽栏也是如此。兽栏生产一艘非常强大的舰船，要塞生产大量小型舰船。
+
+你可以通过在特定行星上建造召唤者来召唤你的所有天灾部队；天灾将飞往该行星进行攻击。
+
+你需要升级你的天灾建筑；会有通知告诉你哪些建筑可以升级。你使用黑客菜单进行升级。
+
+你需要科波麦特来建造天灾建筑；科波麦特由花朵生长为水晶，通过攻击它们即可收获。AI会试图摧毁你的花朵。你可以种植额外的花朵。" />
+
+</root>

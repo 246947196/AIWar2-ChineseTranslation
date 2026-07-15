@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<resource_type name="CommandFrequencyBandwidth" display_name="Command Frequency Bandwidth" description="人类残余所能控制的舰船数量的主要限制不是资源、人员或任何其他问题。而是控制舰船的高度加密的超光速控制传输频率。舰船越大越复杂，控制所需的带宽就越多。
+目前我们缺乏创造它们的能力，但能够回收、入侵获取或重新利用频率，后者效率会递减。"
+		serialization_index="31" is_stockpiled="true" color_hex="a8be20" sprite="Res_Hack" sprite_should_not_be_colorized="false" />
+</root>

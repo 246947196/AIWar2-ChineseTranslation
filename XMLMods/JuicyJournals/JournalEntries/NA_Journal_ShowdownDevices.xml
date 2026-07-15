@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <journal name="NA_ShowdownDevices_Journal" sidebar_text="{FactionColor}对决装置：&lt;/color&gt; 概述"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+		   text_replacement_related_player_name="true"
+        chat_text="指挥官，我们遇到了一个对决装置！查看日志了解更多详情。"
+        is_partial_record="true" 
+           full_text="发件人：首席情报官雨果·道森
+情报部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+我们遇到了一个对决装置！人工智能使用这些来为其跃迁网络供能。如果你能捕获足够多的它们并进行入侵，你可以切断人工智能的增援，从而结束这场可怕的战争。
+
+但如果这样做，要做好全面人工智能回应的准备！而且如果我们失去太多对决装置，入侵将失败。" />
+  
+  <journal name="NA_ShowdownDevices_OverlordTransformation" sidebar_text="&lt;color=#a1ffa1&gt;简报：&lt;/color&gt; 银河指挥舰"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"                                                                                                                                                                
+           text_replacement_related_faction_color="true"
+		   text_replacement_related_player_name="true"
+                                                                                                                                                                                
+        chat_text="人工智能霸主已转化为银河控制舰！" 
+                                                                                                                                                                            
+        is_partial_record="true" 
+           full_text="发件人：首席情报官雨果·道森
+情报部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+人工智能指挥核心已成为一艘银河控制舰！它似乎暂时改变了相位，我们的武器无法击中它，它正朝我们的主指挥站进发！在我们能再次击中它之前，它必须重新进入与我们舰船同相位的状态。
+
+我们认为相位变化只有在它位于堡垒世界上时才能维持。这艘新的银河控制舰武装极其重型；我们可能需要一些新的策略来对付它。它似乎特别擅长摧毁小型战机。" />               
+
+</root>
+

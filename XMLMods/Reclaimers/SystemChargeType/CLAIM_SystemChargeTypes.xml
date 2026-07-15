@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<ammo_type name="Photon" display_name="光子" />
+	<ammo_type name="Kinetic" display_name="动能" />
+	<ammo_type name="Electric" display_name="电击" />
+	<ammo_type name="Explosive" display_name="爆炸" />
+	<ammo_type name="Heat" display_name="热能" />
+	<ammo_type name="Frost" display_name="冰冻" />
+	<ammo_type name="Acidic" display_name="酸性" />
+</root>

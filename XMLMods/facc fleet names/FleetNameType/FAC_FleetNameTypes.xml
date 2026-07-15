@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <fleet_name_type name="HUMANS 1" display_name="人类 1" subdir="HUM1"
+          description="舰队。 (由 FACC007 创建)" />
+  <fleet_name_type name="HUMAN 2" display_name="人类 2" subdir="HUM2"
+          description="编号舰队。 (由 FACC007 创建)" />
+  <fleet_name_type name="HUMAN 3" display_name="人类 3" subdir="HUM3"
+          description="编号远征舰队。 (由 FACC007 创建)" />
+  <fleet_name_type name="HUMAN 4" display_name="人类 4" subdir="HUM4"
+          description="编号波次。 (由 FACC007 创建)" />
+   <fleet_name_type name="MAMMAL 1" display_name="哺乳类 1" subdir="MAM1"
+          description="编号星舰队。 (由 FACC007 创建)" />
+   <fleet_name_type name="MAMMAL 2" display_name="哺乳类 2" subdir="MAM2"
+          description="编号黑暗星舰队。 (由 FACC007 创建)" />
+   <fleet_name_type name="MAMMAL 3" display_name="哺乳类 3" subdir="MAM3"
+          description="编号星际秩序。 (由 FACC007 创建)" />
+   <fleet_name_type name="NECRO 1" display_name="死灵 1" subdir="NEC1"
+          description="各种死灵名称。 (由 FACC007 创建)" />
+	<fleet_name_type name="NECRO 2" display_name="死灵 2" subdir="NEC2"
+          description="各种死灵名称。 (由 FACC007 创建)" />
+	<fleet_name_type name="NECRO 3" display_name="死灵 3" subdir="NEC3"
+          description="各种死灵名称。 (由 FACC007 创建)" />
+	<fleet_name_type name="NECRO 4" display_name="死灵 4" subdir="NEC4"
+          description="各种死灵名称。 (由 FACC007 创建)" />
+	<fleet_name_type name="PRE1" display_name="Prethoryn 1" subdir="Pre1"
+          description="星巢名称。 (由 FACC007 创建)" />
+	<fleet_name_type name="PRE2" display_name="Prethoryn 2" subdir="Pre2"
+          description="Prethoryn 舰队名称。 (由 FACC007 创建)" />
+</root>

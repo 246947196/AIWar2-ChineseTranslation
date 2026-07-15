@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- Defensive Structures -->
+  <entity name="WraithFortress" tags="WraithFortress" ship_class_name="Superweapon"
+          npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+          thematic_groups="AI" 
+	  visuals="Assets/_DLC2/Zenith/DZTrelleborg/DZTrelleborg.prefab" visuals_bundle="exp2_zenith_onslaught"
+          material_override_path="Assets/_FinalGameMeshes/Nanocaust/Aberration/Aberration.prefab"
+	  icon_name="Ships4/SomethingRakes" gimbal_icon_size_multiplier="1.5"
+	  y_offset_of_icon="35"
+	  category="Ship"
+	  size_scale="10"
+	  visuals_scale_multiplier="25"
+          collision_priority="800"
+	  display_name="Wraith Fortress"
+          display_name_for_sidebar="Wr Fortress"
+	  description="Very powerful defensive structure, that are 隐形, to add insult to injury. This will slowly regenerate health over time."
+	  behavior="Stationary"
+          is_major_ai_structure="true"
+          seconds_to_fully_regenerate_hull="600"
+	  starting_mark_level="Mark1" max_mark_level="5" tech_upgrades_that_benefit_me="Unused"	
+	  cost_for_ai_to_purchase="3000"
+	  hull_points="250000" shield_points="750000" speed="Immobile"
+	  metal_cost="1500000" energy_consumption="50000"
+	  armor_mm="300" albedo="0.7" mass_tx="8"
+	  ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+	  voice_group="Turret"
+	  is_reinforcement_location="true" always_is_ai_turret_spawn_point="true"
+	  eligible_for_hacks="Sabotage"
+          priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+	  >
+    <data_extension name="DLC3" required_expansion_list="3_The_Neinzul_Abyss"
+                    dark_zenith_sidekick_science_to_grant_on_death="10"
+                    spire_sidekick_science_to_grant_on_death="10"
+        necromancer_hacking_to_grant_on_death="4"/>
+    <hack_data hack_type="Sabotage" override_cost_in_hacking_points="11" />
+    <metal_flow purpose="SelfConstruction" throughput="700"/>
+    <system name="R1" display_name="Wraith Fusion Rockets"
+                category="Weapon" firing_timing="OnlyInRange"
+                damage_per_shot="1500" range="High1" shot_speed="Normal" rate_of_fire="Normal"
+                shots_per_salvo="30" fires_salvos_sequentially="false"
+                shot_type_data="FusionRocket"
+                base_percent_damage_bypasses_personal_shields="1" 
+		>
+    </system>
+    <system name="R2" display_name="Wraith Energy Wave"
+          category="Weapon" firing_timing="OnlyInRange" shots_per_salvo="4"
+          damage_per_shot="3750" range="High1" shot_speed="Normal" rate_of_fire="Low" fires_salvos_sequentially="true"
+          shot_type_data="EnergyWave"
+          base_percent_damage_bypasses_personal_shields="1"
+          cloaking_percent_loss_from_firing="0.25"
+	  >
+      <outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="2" />
+    </system>
+    <system name="C" display_name="Cloaking Device"
+	    category="Passive" cloaking_points="6000" cloaking_points_added_per_mark="1000"
+	    >
+    </system>
+
+  </entity>
+
+  <entity name="WraithPraetorianLeader" ship_class_name="ExowarTier1"
+          thematic_groups="ExogalacticWarFront"      
+	  draw_in_galaxy_view="true"
+	  visuals="Assets/_FinalGameMeshes/AIExtragalactic/Tier1_ExtragalacticHunterSeeker/Tier1_ExtragalacticHunterSeeker.prefab"
+	  icon_name="Ships1/HunterKiller"
+          icon_overlay="Overlays1/Guardian_SpeedBoost" gimbal_icon_size_multiplier="2"
+          material_override_path="Assets/_FinalGameMeshes/Nanocaust/Abomination/Abomination.prefab"
+	  voice_group="Silent"	
+	  uses_large_health_bar="true"
+	  category="Ship"
+          size_scale="21"
+	  visuals_scale_multiplier="24"
+	  y_offset_of_icon="30"
+	  collision_priority="810"
+	  display_name="Wraith Coordinator"
+          display_name_for_sidebar="Wr Coord"
+	  description="This powerful 隐形 ship Coordinates and Unites the various wraith ship types in purpose. It leads the defense of the AI 霸主 by 麻痹 its foes, then 僵尸化 them."
+    starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+    cost_for_ai_to_purchase="49500"
+    hull_points="10000000" shield_points="40000000" speed="AboveAverage3"
+    metal_cost="2000000" energy_consumption="75000"	
+    armor_mm="180" albedo="0.4" engine_gx="18" mass_tx="7"
+    ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+    ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+    priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+    should_never_count_as_threat="true"
+    >
+    <incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="2500" multiplier="0.20" />
+    <system name="WR" display_name="Wrathful Vengeance"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="2000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Misery"
+	    shots_per_salvo="40" fires_salvos_sequentially="false"
+	    added_shots_per_salvo_per_mark="20"
+	    only_targets_mobile_units="true"
+	    shot_type_data="ParasiteCurvedPinkShot"
+            base_paralysis_seconds_per_shot="2" paralysis_to_ships_mass_tx_less_than="2" added_target_evaluator="ParalyzerAsPrimary"
+            cloaking_percent_loss_from_firing="0.05"
+	    >
+      <outgoing_damage_modifier based_on="mass_tx" comparison_type="AtMost" compared_to="2" multiplier="2" />
+      <death_effect_damage type="Zombification" tier_name="Parasite"/>
+    </system>
+    <system name="C" display_name="Cloaking Device"
+	    category="Passive" cloaking_points="6000" cloaking_points_added_per_mark="1000"
+	    >
+    </system>
+
+  </entity>
+
+</root>

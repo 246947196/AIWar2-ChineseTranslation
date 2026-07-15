@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    
+  <setting_subcategory parent="Game" name="Notifications" display_name="通知" color="46f0ff"
+      description="与通知相关的设置，这些显示为屏幕顶部的图标。"/>
+  
+</root>

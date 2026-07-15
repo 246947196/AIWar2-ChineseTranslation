@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+    <entity name="BellePrime" is_partial_record="true"
+            tech_upgrades_that_benefit_me="Citadels,Ambush" 
+            tech_upgrade_that_is_used_for_my_direct_science="Direct_ArkGeneral"
+            />
+
+    <entity name="GreatAThomek" is_partial_record="true"
+            tech_upgrades_that_benefit_me="Citadels,Concussion" 
+            tech_upgrade_that_is_used_for_my_direct_science="Direct_ArkGeneral"
+            />
+
+	<entity name="ExpertGreatAThomek" is_partial_record="true"
+            tech_upgrades_that_benefit_me="Citadels,Concussion" 
+            tech_upgrade_that_is_used_for_my_direct_science="Direct_ArkGeneral"
+            />
+			
+    <entity name="NodorianTortoid" is_partial_record="true"
+            tech_upgrades_that_benefit_me="Citadels,Splash" 
+            tech_upgrade_that_is_used_for_my_direct_science="Direct_ArkGeneral"
+            />
+
+	<entity name="ExpertNodorianTortoid" is_partial_record="true"
+            tech_upgrades_that_benefit_me="Citadels,Splash" 
+            tech_upgrade_that_is_used_for_my_direct_science="Direct_ArkGeneral"
+            />
+
+    <entity name="SolAter" is_partial_record="true"
+            tech_upgrades_that_benefit_me="Citadels,Subterfuge" 
+            tech_upgrade_that_is_used_for_my_direct_science="Direct_ArkGeneral"
+            />
+	
+    <entity name="GrandSalvage" is_partial_record="true"
+            tech_upgrades_that_benefit_me="Citadels,Melee" 
+            tech_upgrade_that_is_used_for_my_direct_science="Direct_ArkGeneral"
+            />
+  
+  <entity name="RorqualHegira" is_partial_record="true"
+            tech_upgrades_that_benefit_me="Citadels,Forcefields" 
+            tech_upgrade_that_is_used_for_my_direct_science="Direct_ArkGeneral"
+            />
+
+  <entity name="Thanatos" is_partial_record="true"
+            tech_upgrades_that_benefit_me="Citadels,Technologist" 
+            tech_upgrade_that_is_used_for_my_direct_science="Direct_ArkGeneral"
+            />
+
+  <entity name="Gyrn" is_partial_record="true"
+            tech_upgrades_that_benefit_me="Citadels,Generalist" 
+            tech_upgrade_that_is_used_for_my_direct_science="Direct_ArkGeneral"
+            />
+
+  <entity name="Orchid" is_partial_record="true"
+            tech_upgrades_that_benefit_me="Citadels,Fusion" 
+            tech_upgrade_that_is_used_for_my_direct_science="Direct_ArkGeneral"
+            />
+
+  <entity name="ArkOne" is_partial_record="true"
+            tech_upgrades_that_benefit_me="Citadels,Disruptive" 
+            tech_upgrade_that_is_used_for_my_direct_science="Direct_ArkGeneral"
+            />
+
+</root>

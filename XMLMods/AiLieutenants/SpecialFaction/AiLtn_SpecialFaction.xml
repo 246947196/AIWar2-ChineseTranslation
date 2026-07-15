@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  
+<faction 
+  name="AiLieutenants"
+  display_name="AI 副官" short_name="AI 副官" processing_group="AiLieutenants"
+  base_info_source="AiLieutenantsFactionBaseInfo"
+  deep_info_source="AiLieutenantsFactionDeepInfo"
+  team_center_color="Gold" team_border_color="Silver"
+  type="SpecialFaction"
+  must_be_at_most_one="true"
+  description="The local galaxy seems of little interest to the AI but it is not forgotten. In its place the Overlord sends these greater AI minds, Lieutenant Officers, the executors of its war and sword of the Overlord."
+  can_use_spire_debris="false"
+  impact="Easier"
+  icon_name_for_lobby="Ships2/SomethingChevron3"
+  allied_to_ai_by_default="true"
+  >
+  <custom_field 
+    name="ExtraStrongMode" is_advanced_setting="true" display_name="沙盒：超强模式" description="For testing purposes."
+    sort_group="250" setting_type="BoolToggle" default="false" 
+  />
+  <custom_field 
+    name="Intensity" 
+    display_name="强度" 
+    description="Difficulty profile."
+    sort_group="260" 
+    setting_type="CustomDropdownSurrogateTable" 
+    related_table="AiLieutenantsDifficulty"
+    default_option="Crescendo" />
+
+</faction>
+  
+</root>

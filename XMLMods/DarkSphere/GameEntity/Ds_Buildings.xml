@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+    <!-- material_override_spin="5.2" -->
+    <!-- visuals_bundle="exp1_the_spire_rises"
+	    icon_name="ShipsSpire/Spire_City_Hub" gimbal_icon_size_multiplier="1.5"-->
+	<entity name="Ds_City" 
+            tags="Ds_City" 
+            thematic_groups="DarkSphere"
+            category="Ship"
+			special_entity_type="GuardPost"
+            npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+            npc_command_station="true"
+
+            visuals_bundle="exp1_the_spire_rises"
+            visuals="Assets/_DLC1/FallenSpire/SpireCityHub/SpireCityHub.prefab" 
+			material_override_path="Assets/_FinalGameMeshes/Spire/DarkSpireWard/DarkSpireWard.prefab"
+			rotation_x_of_ship="0" 
+            rotation_z_of_ship="0"
+            nonsim_rotation_speed="1"
+            nonsim_rotates_to_face_travel="false"
+			icon_name="ShipsSpire/Spire_City_Hub"
+			icon_overlay=""
+            size_scale="9.4"
+            gimbal_icon_size_multiplier="2.5"
+	        visuals_scale_multiplier="100"
+			y_offset_of_ship_in_visual_space="-100" 
+			y_offset_of_icon="300"
+			collision_priority="0"
+
+            display_name="黑暗指挥站"
+			display_name_for_sidebar="黑暗指挥站"
+			description="This Dark .. Monument .. was once something else."
+
+			behavior="None"
+			starting_mark_level="Mark1"
+            mark_level_scale_style="Ds_City"
+            tech_upgrades_that_benefit_me="Unused"
+            tech_upgrade_that_is_used_for_my_direct_science="Unused"
+
+			cost_for_ai_to_purchase="1000000"
+			hull_points="10000000" shield_points="10000000" speed="Immobile"
+			metal_cost="5000000" energy_consumption="0"
+			armor_mm="120" albedo="0" mass_tx="20"
+			engine_gx="0"
+
+            shield_size_scale="32" 
+            my_forcefield_does_not_shrink="true" 
+            my_forcefield_has_no_penalty_for_enemies_firing_out_of_it="true"
+            custom_forcefield_is_nonblocking="true"
+
+            voice_group="Spire" 
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+    	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+    	    ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+
+            priority_as_ai_target="NotDangerous" priority_as_frd_target="NotDangerous" priority_to_protect="NormalGuardPost"
+
+			per_second_custom_logic_dll="DarkSphere"
+			per_second_custom_logic_type="DarkSphere.Ds_City_Logic"
+            description_appender_dll="DarkSphere"
+			description_appender_type="DarkSphere.Ds_General_Appender"
+            >
+
+            <ship_class_data 
+                can_be_zombified_and_similar="false" 
+                can_receive_exotic_damage="false"
+                />
+
+  </entity>
+
+</root>

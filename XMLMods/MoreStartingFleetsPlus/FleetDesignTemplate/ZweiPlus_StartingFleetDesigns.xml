@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <fleet_design name="MSFOmegaFleet+"
+        display_name="欧米茄舰队"
+        description="由一艘塔纳托斯级战列舰及其护航舰艇组成的舰队。帝国海军的骄傲。这支舰队强大到近乎作弊。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+	<ship_membership name="Thanatos" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="VWing" ship_cap_group="Strike" weight="100" cap="40"/>
+	<ship_membership name="FusionBomber" ship_cap_group="Strike" weight="100" cap="40"/>
+	<ship_membership name="TritiumSniperFrigate" ship_cap_group="Frigate" weight="100" cap="6"/>
+	<ship_membership name="AssaultFrigate" ship_cap_group="Frigate" weight="100" cap="9"/>
+  </fleet_design>
+
+<fleet_design name="MSFCruiser+"
+        display_name="巡洋舰舰队"
+        description="这支舰队以一艘巡洋舰为核心，它是帝国海军的英雄。这支舰队如此强大，以它开局近乎作弊。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="TransportFlagship_Starter" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="FusionCruiser" ship_cap_group="Strike"  weight="100" min="1" max="1"/>
+	<ship_membership name="AssaultFrigate" ship_cap_group="Frigate" weight="100" cap="9"/>
+	<ship_membership name="TritiumSniperFrigate" ship_cap_group="Frigate" weight="100" cap="6"/>
+	<ship_membership name="VWing" ship_cap_group="Strike" weight="100" cap="40"/>
+  </fleet_design>
+</root>
+

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <galaxy_setting name="EnhancedOverlord" is_partial_record="true">
+      <harshness_override min_campaign_harshness_to_apply="200" disable_override="true" />
+  </galaxy_setting>
+
+  <galaxy_setting name="BrutalGuardianLairs" is_partial_record="true">
+      <harshness_override min_campaign_harshness_to_apply="700" disable_override="true" />
+  </galaxy_setting>
+
+  <galaxy_setting name="SharkB_Entirely_Off"  is_partial_record="true"
+                  category="AI Behavior" 
+                  subcategory="AdvancedDangers"
+  >
+  </galaxy_setting>
+
+</root>

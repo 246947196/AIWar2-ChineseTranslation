@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <entity name="ElectricBlaster" copy_from="ElectricBomber" required_expansion_list="2_Zenith_Onslaught"
+		icon_overlay="Overlays1/Turret_Tesla"
+		display_name="电击冲击波"
+		display_name_for_sidebar="电击冲击波SC"
+		description="异常巨大的轰炸机，释放毁灭性的电击攻击，尤其对护盾有效。此版本分裂射击以攻击更多目标。"
+		tech_upgrades_that_benefit_me="Splash,Heavy"
+		>
+		<system name="W1" display_name="电涌炸弹"
+			damage_per_shot="400" area_of_effect_size="300" maximum_number_of_targets_hit_per_shot="5" shots_per_salvo="3"
+			>
+		</system>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="10" cap="12"/>
+		<fleet_membership name="AntiSmallMix" ship_cap_group="Strike" weight="100" cap="12"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Strike" weight="100" cap="12"/>
+		<fleet_membership name="SlowHeavyMix" ship_cap_group="Strike" weight="100" cap="12"/>
+		<fleet_membership name="SturdyOffensiveMix" ship_cap_group="Strike" weight="100" cap="12"/>
+		<ai_ship_group_membership name="AntiShieldStrikecraftAndFrigates" weight="35"/>
+		<ai_ship_group_membership name="AntiStructureStrikecraft" weight="35"/>
+		<ai_ship_group_membership name="DurableFreakyStrikecraft" weight="35"/>
+		<ai_ship_group_membership name="HeavyStrikecraft" weight="35"/>
+		<ai_ship_group_membership name="HugelyVariedStrikecraft" weight="35"/>
+		<ai_ship_group_membership name="MediumStrikecraft" weight="35"/>
+    </entity>
+	
+    <entity name="StaticBomber" copy_from="ElectricBomber" required_expansion_list="2_Zenith_Onslaught"
+		icon_overlay="Overlays1/MegaTurret_Paralysis"
+		display_name="静态轰炸机"
+		display_name_for_sidebar="静态轰炸机SC"
+		description="异常巨大的轰炸机，释放毁灭性的电击攻击，尤其对护盾有效。此外还能眩晕低质量敌人。"
+		tech_upgrades_that_benefit_me="Subterfuge,Heavy"
+		strength_multiplier="1.85"
+		>
+		<system name="W1" display_name="静态涌浪炸弹"
+			damage_per_shot="700" area_of_effect_size="350"
+			base_paralysis_seconds_per_shot="2" paralysis_to_ships_mass_tx_less_than="1"
+			>
+		</system>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="10" cap="12"/>
+		<fleet_membership name="CrowdControlMix" ship_cap_group="Strike" weight="100" cap="12"/>
+		<fleet_membership name="DebufferMix" ship_cap_group="Strike" weight="100" cap="12"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Strike" weight="100" cap="12"/>
+		<ai_ship_group_membership name="AntiEngineStrikecraftAndFrigates" weight="35"/>
+		<ai_ship_group_membership name="AntiShieldStrikecraftAndFrigates" weight="35"/>
+		<ai_ship_group_membership name="AntiStructureStrikecraft" weight="35"/>
+		<ai_ship_group_membership name="DurableFreakyStrikecraft" weight="35"/>
+		<ai_ship_group_membership name="HugelyVariedStrikecraft" weight="35"/>
+		<ai_ship_group_membership name="MediumStrikecraft" weight="35"/>
+		<ai_ship_group_membership name="SniperAIDefensiveStrikecraft" weight="35"/>
+		<ai_ship_group_membership name="SupporterStrikecraft" weight="35"/>
+    </entity>
+	
+	
+    <entity name="Polarazer" copy_from="Polarizer" required_expansion_list="2_Zenith_Onslaught"
+		icon_overlay="Overlays1/Turret_Acid"
+		display_name="极地歼灭者"
+		display_name_for_sidebar="极地歼灭者SC"
+		description="打击机，其武器对更高装甲总值越来越有效，同时削弱船体以增加友军伤害。"
+		tech_upgrades_that_benefit_me="Disruptive,Light"
+		armor_mm="50"
+		hull_points="1000" speed="Normal3"
+		strength_multiplier="3"
+		>
+		<system name="W1" display_name="装甲极地歼灭者" damage_per_shot="20"
+			damage_amplification="true" damage_amplification_duration="3" damage_amplification_flat="16" damage_amplification_flat_added_per_mark="4"
+		  >
+			<outgoing_damage_modifier based_on="Armor_mm" comparison_type="MultiplesOf" compared_to="35" multiplier="1" max_multiplier="3" />
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="2" />
+		</system>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="10" cap="64"/>
+		<fleet_membership name="AntiLargeMix" ship_cap_group="Strike" weight="100" cap="64"/>
+		<fleet_membership name="CooperativeFusionMix" ship_cap_group="Strike" weight="100" cap="64"/>
+		<fleet_membership name="FragileOffensiveMix" ship_cap_group="Strike" weight="100" cap="64"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Strike" weight="100" cap="64"/>
+		<fleet_membership name="SwarmerMix" ship_cap_group="Strike" weight="100" cap="64"/>
+		<ai_ship_group_membership name="AntiHighArmourMix" weight="35"/>
+		<ai_ship_group_membership name="AntiStructureStrikecraft" weight="35"/>
+		<ai_ship_group_membership name="DisruptiveStrikecraft" weight="35"/>
+		<ai_ship_group_membership name="FragileAntiHighArmourMix" weight="35"/>
+		<ai_ship_group_membership name="FragileFreakyStrikecraft" weight="35"/>
+		<ai_ship_group_membership name="HugelyVariedStrikecraft" weight="35"/>
+		<ai_ship_group_membership name="SmallSwarmerStrikecraft" weight="35"/>
+		<ai_ship_group_membership name="StrangeSmallSwarmerStrikecraft" weight="35"/>
+		<ai_ship_group_membership name="SupporterStrikecraft" weight="35"/>
+	</entity>
+	
+    <entity name="Polaraider" copy_from="Polarizer" required_expansion_list="2_Zenith_Onslaught"
+		icon_overlay="Overlays1/Starship_Raid"
+		display_name="极地巡游者"
+		display_name_for_sidebar="极地巡游者SC"
+		description="突袭和入侵用打击机，其武器对更高装甲总值越来越有效。"
+		hull_points="1200" armor_mm="30" engine_gx="15" speed="AboveAverage3"
+		tech_upgrades_that_benefit_me="Raid,Medium"
+		cost_for_ai_to_purchase="36"
+		strength_multiplier="2.35"
+		>
+		<system name="W1" display_name="装甲极地巡游者"
+			>
+			<outgoing_damage_modifier based_on="TargetTimeAtPlanet" comparison_type="AtMost" compared_to="15" multiplier="2" />
+		</system>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="10" cap="42"/>
+		<fleet_membership name="AntiLargeMix" ship_cap_group="Strike" weight="100" cap="42"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Strike" weight="100" cap="42"/>
+		<fleet_membership name="RaidOffensiveMix" ship_cap_group="Strike" weight="100" cap="42"/>
+		<fleet_membership name="SwarmerMix" ship_cap_group="Strike" weight="100" cap="42"/>
+		<ai_ship_group_membership name="AntiHighArmourMix" weight="35"/>
+		<ai_ship_group_membership name="DisruptiveStrikecraft" weight="35"/>
+		<ai_ship_group_membership name="FragileAntiHighArmourMix" weight="35"/>
+		<ai_ship_group_membership name="FragileFreakyStrikecraft" weight="35"/>
+		<ai_ship_group_membership name="HugelyVariedStrikecraft" weight="35"/>
+		<ai_ship_group_membership name="LightStrikecraft" weight="35"/>
+		<ai_ship_group_membership name="ViciousLightStrikecraft" weight="35"/>
+		<ai_ship_group_membership name="ViciousRaidStrikecraftAndFrigates" weight="35"/>
+	</entity>
+	
+    <entity name="ExemplarPolaraider" copy_from="Polaraider" required_expansion_list="2_Zenith_Onslaught" aip_when_granted_by_hack="14" tags="IncludeInFRS"
+		display_name="典范极地巡游者"
+		display_name_for_sidebar="典范极地巡游者SC"
+		description="突袭和入侵用打击机，其武器对更高装甲总值越来越有效。提升少量舰船生产线的速度和攻击力。"
+		supercharges_attack_power_of_rest_of_player_fleet="1.25" supercharges_min_speed_of_rest_of_player_fleet="true"
+		supercharges_only_apply_when_fleet_line_count_is_x_or_less="5"
+		>
+		<fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="10" cap="42"/>
+	</entity>
+	
+	
+    <entity name="ShrikeFrighter" copy_from="ShrikeInterceptor" required_expansion_list="2_Zenith_Onslaught"
+		icon_overlay="Overlays1/Starship_Assault"
+		display_name="伯劳战斗机"
+		display_name_for_sidebar="伯劳战斗机SC"
+		description="快速坚韧的战斗机，装备的武器随对手移动速度提升而变得更快。"
+		hull_points="4500" speed="AboveAverage4"
+		metal_cost="3600" energy_consumption="900" cost_for_ai_to_purchase="60"
+		armor_mm="60" engine_gx="14" mass_tx="0.3"
+		tech_upgrades_that_benefit_me="Technologist,Medium"
+		strength_multiplier="1.15"
+		>
+		<system name="W1" damage_per_shot="160" range="Tiny3" rate_of_fire="High"
+			>
+			<outgoing_damage_modifier based_on="CurrentSpeedIfMoving" comparison_type="MultiplesOf" compared_to="150" multiplier="1" max_multiplier="12" />
+		</system>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="10" cap="20"/>
+		<fleet_membership name="BasicOffensiveMix" ship_cap_group="Strike" weight="100" cap="20"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Strike" weight="100" cap="20"/>
+		<fleet_membership name="RaidOffensiveMix" ship_cap_group="Strike" weight="100" cap="20"/>
+		<fleet_membership name="SturdyOffensiveMix" ship_cap_group="Strike" weight="100" cap="20"/>
+		<ai_ship_group_membership name="AmbushStrikecraft" weight="70"/>
+		<ai_ship_group_membership name="DurableFreakyStrikecraft" weight="70"/>
+		<ai_ship_group_membership name="MediumStrikecraft" weight="70"/>
+		<ai_ship_group_membership name="SniperAIDefensiveStrikecraft" weight="70"/>
+	</entity>
+	
+    <entity name="ShrikeSeeker" copy_from="ShrikeInterceptor" required_expansion_list="2_Zenith_Onslaught"
+		icon_overlay="Overlays1/Starship_Sentry"
+		display_name="伯劳搜寻者"
+		display_name_for_sidebar="伯劳搜寻者SC"
+		description="隐形且极快的拦截机，装备随对手移动速度提升而增强的武器。"
+		energy_consumption="600" cost_for_ai_to_purchase="35"
+		hull_points="1500" speed="High2" albedo="0.7"
+		tech_upgrades_that_benefit_me="Subterfuge,Light"
+		strength_multiplier="1.2"
+		>
+		<system name="C" display_name="隐形装置" category="Passive" cloaking_points="1000" cloaking_points_added_per_mark="500" />
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="10" cap="32"/>
+		<fleet_membership name="BreacherMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="CloakedMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="RaidOffensiveMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<fleet_membership name="SwarmerMix" ship_cap_group="Strike" weight="100" cap="32"/>
+		<ai_ship_group_membership name="FragileFreakyStrikecraft" weight="35"/>
+		<ai_ship_group_membership name="HugelyVariedStrikecraft" weight="35"/>
+		<ai_ship_group_membership name="LightStrikecraft" weight="35"/>
+		<ai_ship_group_membership name="RaidStrikecraftAndFrigates" weight="35"/>
+		<ai_ship_group_membership name="SneakyStrikecraft" weight="35"/>
+		<ai_ship_group_membership name="SniperAIDefensiveStrikecraft" weight="35"/>
+		<ai_ship_group_membership name="StrangeSmallSwarmerStrikecraft" weight="35"/>
+		<ai_ship_group_membership name="ViciousLightStrikecraft" weight="35"/>
+		<ai_ship_group_membership name="ViciousRaidStrikecraftAndFrigates" weight="35"/>
+		<ai_ship_group_membership name="ViciousSneakyStrikecraft" weight="35"/>
+	</entity>
+	
+	
+    <entity name="DarkSplitter" copy_from="DarkMirror" required_expansion_list="2_Zenith_Onslaught"
+		icon_overlay="Overlays2/Guardian_Fragmenting"
+		display_name="黑暗分裂者"
+		display_name_for_sidebar="黑暗分裂者SC"
+		description="缓慢的装甲立方体，对任何攻击都以同等愤怒回应。死亡时释放寻找并攻击敌人的碎片。"
+		hull_points="9000"
+		metal_cost="7500" cost_for_ai_to_purchase="90"
+		tech_upgrades_that_benefit_me="Technologist,Heavy"
+		strength_multiplier="1.65"
+		>
+		<entity_type_drawing_bag_used_on_death data_list="DarkSplinter" min_spawn_value_list="3" />
+		<system name="W1" display_name="复仇反击射击"
+				returns_this_percentage_of_damage_when_firing_retalitatory_shot="1.1"
+		>
+		</system>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="10" cap="12"/>
+		<fleet_membership name="BreacherMix" ship_cap_group="Strike" weight="75" cap="12"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Strike" weight="75" cap="12"/>
+		<fleet_membership name="HydraOffensiveMix" ship_cap_group="Strike" weight="75" cap="12"/>
+		<fleet_membership name="SelfSacrificingOffensiveMix" ship_cap_group="Strike" weight="75" cap="12"/>
+		<fleet_membership name="SlowHeavyMix" ship_cap_group="Strike" weight="75" cap="12"/>
+		<fleet_membership name="SturdyOffensiveMix" ship_cap_group="Strike" weight="75" cap="12"/>
+		<fleet_membership name="UnusualMix" ship_cap_group="Strike" weight="75" cap="12"/>
+		<ai_ship_group_membership name="AttritionerStrikecraft" weight="35"/>
+		<ai_ship_group_membership name="DefensiveStrikecraft" weight="35"/>
+		<ai_ship_group_membership name="DurableFreakyStrikecraft" weight="35"/>
+		<ai_ship_group_membership name="HeavyStrikecraft" weight="35"/>
+		<ai_ship_group_membership name="HugelyVariedStrikecraft" weight="35"/>
+		<ai_ship_group_membership name="ReplicatingStrikecraft" weight="35"/>
+		<ai_ship_group_membership name="SelfSacrificingStrikecraft" weight="35"/>
+	</entity>
+	
+    <entity name="DarkSplinter" copy_from="DarkMirror" required_expansion_list="2_Zenith_Onslaught"
+		icon_overlay="Overlays2/Guardian_FragmentingShard"
+		display_name="黑暗碎片"
+		display_name_for_sidebar="黑暗碎片SC"
+		description="黑暗分裂者的碎片。会寻找敌人，即使未能追上也能返还伤害。"
+		hull_points="1000" metal_cost="1000" energy_consumption="200"
+		armor_mm="10" engine_gx="5" speed="AboveAverage2" mass_tx="0.11"
+		strength_multiplier="1.1"
+		>
+		<system name="W1" display_name="复仇反击射击"
+			returns_this_percentage_of_damage_when_firing_retalitatory_shot="0.5"
+		>
+		</system>
+		<system name="W2" display_name="Shatter"
+			damage_per_shot="2000" range="AlmostNone" rate_of_fire="Devourer" shot_type_data="MeleeInvisible"
+			health_change_by_max_health_divided_by_this_per_attack="-1"
+		>
+		</system>
+	</entity>
+	
+	
+    <entity name="ToxicMirror" copy_from="DarkMirror" required_expansion_list="2_Zenith_Onslaught"
+		icon_overlay="Overlays2/Turret_Mirror"
+		display_name="剧毒镜面"
+		display_name_for_sidebar="剧毒镜面SC"
+		description="缓慢的装甲立方体，对任何攻击都以同等愤怒回应，直接将伤害应用于目标。"
+		returns_this_percentage_of_damage_if_damaged_by_enemy_attack="1"
+		tech_upgrades_that_benefit_me="Technologist,Heavy"
+		strength_multiplier="1.4"
+		>
+		<system name="W1" min_mark_level_to_function="8" />
+		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="10" cap="12"/>
+		<fleet_membership name="AttritionerMix" ship_cap_group="Strike" weight="80" cap="12"/>
+		<fleet_membership name="BreacherMix" ship_cap_group="Strike" weight="80" cap="12"/>
+		<fleet_membership name="SelfSacrificingOffensiveMix" ship_cap_group="Strike" weight="80" cap="12"/>
+		<fleet_membership name="SlowHeavyMix" ship_cap_group="Strike" weight="80" cap="12"/>
+		<fleet_membership name="SturdyOffensiveMix" ship_cap_group="Strike" weight="80" cap="12"/>
+		<fleet_membership name="UnusualMix" ship_cap_group="Strike" weight="80" cap="12"/>
+		<ai_ship_group_membership name="AttritionerStrikecraft" weight="35"/>
+		<ai_ship_group_membership name="BullyStrikecraft" weight="35"/>
+		<ai_ship_group_membership name="DefensiveStrikecraft" weight="35"/>
+		<ai_ship_group_membership name="DurableFreakyStrikecraft" weight="35"/>
+		<ai_ship_group_membership name="HeavyStrikecraft" weight="35"/>
+		<ai_ship_group_membership name="HugelyVariedStrikecraft" weight="35"/>
+		<ai_ship_group_membership name="SelfSacrificingStrikecraft" weight="35"/>
+	</entity>
+</root>

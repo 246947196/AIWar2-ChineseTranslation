@@ -1,0 +1,1056 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <entity name="TiberiumVein"
+	  thematic_groups="Armada" npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+	  tags="TiberiumVein,SapperImportantPoint"
+          draw_in_galaxy_view="true"
+	  visuals="assets/_dlc2/zenith/dzterminus/dzterminus_red.prefab" visuals_bundle="exp2_zenith_onslaught" gimbal_name="AstroTrainDepot"
+	  icon_name="Ships4/SpeedBooster"
+	  y_offset_of_icon="30"
+	  voice_group="Silent"
+	  category="Ship"
+	  visuals_scale_multiplier="52" lod_distance_multiplier="1.4"
+	  y_offset_of_ship_in_visual_space="50"
+	  size_scale="12"
+          gimbal_icon_size_multiplier="2.0"
+	  collision_priority="810"
+	  display_name="Tyderian Vein"
+	  display_name_for_sidebar="T Vein"
+	  description="The 泰德瑞安 Vein spreads the influence of 泰德瑞安; as it levels up it will strengthen the AI."
+	  behavior="Stationary"
+	  starting_mark_level="Mark1"
+	  cost_for_ai_to_purchase="5600"
+          grants_minor_faction_planet_control="true"
+          hull_points="150000" shield_points="300000" speed="Immobile"
+          metal_cost="1085000" energy_consumption="15000"
+          armor_mm="90" albedo="0.6" mass_tx="6"
+          ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+          ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+          ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+          priority_as_ai_target="IrreplaceableMisc" priority_as_frd_target="NotDangerous" priority_to_protect="Irreplaceable"
+          science_to_grant_on_death="225"
+          eligible_for_hacks="SummonTiberiumAbomination,SummonTiberiumEschaton,EmpowerVein"
+          description_appender_dll="AIWarExternalCode"
+	  description_appender_type="Arcen.AIW2.External.TiberiumDescriptionAppender"
+          >
+    <system name="R5" display_name="Laser Pulse"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="1000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Normal"
+	    shots_per_salvo="20" fires_salvos_sequentially="false"
+	    shot_type_data="LaserPulse_DeepBlue"
+	    >
+    </system>
+    <data_extension name="DLC3"
+                    armada_resource_one_to_grant_on_death="7"
+                    armada_resource_one_to_grant_on_death_per_mark="1"
+                    necromancer_science_to_grant_on_death="200"
+                    dark_zenith_sidekick_science_to_grant_on_death="800"
+                    dark_zenith_sidekick_resource_to_grant="Chelonium"
+                    dark_zenith_sidekick_resource_amount_to_grant="2"
+                    scourge_empire_corbomite_to_grant_on_death="2"
+                    />
+
+  </entity>
+  <!-- Summoner -->
+  <entity name="TiberiumSummoner"
+	  thematic_groups="Armada" npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+	  tags="TiberiumSummoner"
+          draw_in_galaxy_view="true"
+	  visuals="assets/_dlc2/zenith/dzterminus/dzterminus_red.prefab" visuals_bundle="exp2_zenith_onslaught" gimbal_name="AstroTrainDepot"
+	  icon_name="Ships4/EmblemGoat"
+	  y_offset_of_icon="30"
+	  voice_group="Silent"
+	  category="Ship"
+	  visuals_scale_multiplier="52" lod_distance_multiplier="1.4"
+	  y_offset_of_ship_in_visual_space="50"
+	  size_scale="12"
+          gimbal_icon_size_multiplier="2.0"
+	  collision_priority="810"
+	  display_name="Tyderian Summoner"
+	  display_name_for_sidebar="T Summoner"
+	  description="The 泰德瑞安 召唤者 is in Multiphase space; it will periodically spawn powerful AI ships, twisted by 泰德瑞安. You must send a 旗舰 into Multiphase to destroy it."
+	  behavior="Stationary"
+	  starting_mark_level="Markless"
+	  cost_for_ai_to_purchase="5600"
+          grants_minor_faction_planet_control="true"
+          hull_points="70000" shield_points="100000" speed="Immobile"
+          metal_cost="1085000" energy_consumption="15000"
+          armor_mm="90" albedo="0.6" mass_tx="6"
+          ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+          ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+          ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+          priority_as_ai_target="IrreplaceableMisc" priority_as_frd_target="NotDangerous" priority_to_protect="Irreplaceable"
+          science_to_grant_on_death="200"
+          forced_to_always_be_this_state_of_matter="MultiPhase"
+          description_appender_dll="AIWarExternalCode"
+	  description_appender_type="Arcen.AIW2.External.TiberiumDescriptionAppender"
+          >
+    <system name="R5" display_name="Laser Pulse"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="1000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Normal"
+	    shots_per_salvo="20" fires_salvos_sequentially="false"
+	    shot_type_data="LaserPulse_DeepBlue"
+	    >
+    </system>
+    <data_extension name="DLC3"
+                    armada_resource_one_to_grant_on_death="13"
+                    armada_resource_one_to_grant_on_death_per_mark="6"
+                    necromancer_science_to_grant_on_death="200"
+                    dark_zenith_sidekick_science_to_grant_on_death="800"
+                    dark_zenith_sidekick_resource_to_grant="Chelonium"
+                    dark_zenith_sidekick_resource_amount_to_grant="1"
+                    scourge_empire_corbomite_to_grant_on_death="5"
+                    />
+
+  </entity>
+
+
+
+  <!-- enemy ships; FwSen strikecraft. Wurrif light cruiser. Shree battle cruiser. Shner other ship. Apex something-or-others? -->
+    <entity name="TiberiumWurrif"
+            thematic_groups="Armada"
+            tags="TiberiumTierOne,TiberiumCPATierOne,TiberiumCPATierTwo"
+            special_entity_type="Frigate"
+	    gimbal_icon_size_multiplier="1.25"
+	    visuals="Assets/_DLC2/Zenith/DZDreng/DZDreng.prefab" visuals_bundle="exp2_zenith_onslaught"
+	    icon_name="Ships4/EmblemFire"
+            size_scale="4.5"
+            visuals_scale_multiplier="20"
+            category="Ship"
+            y_offset_of_icon="10"
+            collision_priority="100"
+            display_name="Wurrif"
+            description="The Wurrif light cruiser protects allies by attracting damage to itself in a small zone of protection. This is an AI ship evolved by 泰德瑞安."
+            starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Alien"
+            mark_level_scale_style="DarkZenith"
+            cost_for_ai_to_purchase="1500"  strength_multiplier="1.5"
+            hull_points="30000" shield_points="110000" speed="BelowAverage1"
+            metal_cost="160000" energy_consumption="7500"
+            armor_mm="50" albedo="0.8" engine_gx="10" mass_tx="5"
+            returns_this_percentage_of_damage_if_damaged_by_enemy_attack="0.15"
+            voice_group="Starship"
+            ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            priority_as_ai_target="NormalStarship" priority_as_frd_target="BiggerStarship" priority_to_protect="SlightlyLessExpendable"
+            >
+      <system name="WJ" display_name="Tyderian Grenade"
+              category="Weapon" firing_timing="OnlyInRange"
+              damage_per_shot="100" range="Small5" shot_speed="Normal" rate_of_fire="High"
+              shots_per_salvo="6" fires_salvos_sequentially="false"
+              shot_type_data="FlakShotAOEBurstAtEnd"
+              area_of_effect_size="300"
+              maximum_number_of_targets_hit_per_shot="9" cloaking_percent_loss_from_firing="0.2"
+              base_engine_stun_per_shot="1" added_engine_stun_per_shot_per_mark="1" engine_stun_to_engine_gx_less_than="14"
+	      max_engine_stun_seconds="4"
+
+              >
+        <outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="30" multiplier="3" />
+      </system>
+      <system name="A" display_name="Attractant Field"
+              category="Passive"
+              attract_range_for_shots_against_allies="Small1"
+              >
+      </system>
+    </entity>
+    <entity name="TiberumWurrif"
+            copy_from="TiberiumWurrif"
+            />
+    <!-- Raiders appear earlier in CPAs, and then later more generally -->
+    <entity name="TiberiumFwSenRaider"
+            thematic_groups="Armada"
+            tags="TiberiumTierTwo,TiberiumCPATierOne,TiberiumCPATierTwo"
+            special_entity_type="Frigate"
+            gimbal_icon_size_multiplier="1.75"
+            visuals="assets/_finalgamemeshes/guardians/carrierguardian/carrierguardian.prefab"
+            icon_name="Ships4/EmblemFire"
+            icon_overlay="Overlays2/Guardian_Carrier"
+	    size_scale="4.5"
+	    visuals_scale_multiplier="20"
+	    category="Ship"
+	    y_offset_of_icon="10"
+	    collision_priority="100"
+	    display_name="FwSen Raider"
+	    description="This large Raider has a number of FwSen ships hidden inside. Should the raider be destroyed, those ships will emerge and continue the battle."
+	    starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Alien"
+	    mark_level_scale_style="DarkZenith"
+	    cost_for_ai_to_purchase="4500"  strength_multiplier="1.5"	
+	    hull_points="80000" shield_points="90000" speed="BelowAverage1"
+	    metal_cost="160000" energy_consumption="7500"
+	    armor_mm="50" albedo="0.8" engine_gx="10" mass_tx="7"
+	    returns_this_percentage_of_damage_if_damaged_by_enemy_attack="0.15"
+	    voice_group="Starship"
+	    ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	    ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            priority_as_ai_target="NormalStarship" priority_as_frd_target="BiggerStarship" priority_to_protect="SlightlyLessExpendable"
+	    >
+      <ship_class_data can_be_zombified_and_similar="false" />
+      <system name="WJ" display_name="Carrier Grenade"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      damage_per_shot="100" range="Small5" shot_speed="Normal" rate_of_fire="High"
+	      shots_per_salvo="6" fires_salvos_sequentially="false"
+	      shot_type_data="FlakShotAOEBurstAtEnd"
+	      area_of_effect_size="300"
+	      maximum_number_of_targets_hit_per_shot="9" cloaking_percent_loss_from_firing="0.2"
+	      >
+	<outgoing_damage_modifier based_on="EnergyUsage" comparison_type="MultiplesOf" compared_to="2500" multiplier="1" max_multiplier="15" />
+      </system>
+      <entity_type_drawing_bag_used_on_death data_list="TiberiumFwSen" min_spawn_value_list="4" />
+      <data_extension name="DLC3"
+                      armada_science_to_grant_on_death="1"
+                      necromancer_science_to_grant_on_death="1"
+                      dark_zenith_sidekick_science_to_grant_on_death="1"
+                      dark_zenith_sidekick_resource_to_grant="Alkahest"
+                      dark_zenith_sidekick_resource_amount_to_grant="1"
+                      />
+
+    </entity>
+    <entity name="TiberiumWurrifRaider"
+            thematic_groups="Armada"
+            tags="TiberiumTierTwo,TiberiumCPATierOne,TiberiumCPATierTwo"
+            special_entity_type="Frigate"
+	    gimbal_icon_size_multiplier="1.75"
+	    visuals="assets/_finalgamemeshes/guardians/carrierguardian/carrierguardian.prefab"
+            icon_overlay="Overlays2/Guardian_Carrier"
+	    icon_name="Ships4/EmblemFire"
+	    size_scale="4.5"
+	    visuals_scale_multiplier="20"
+	    category="Ship"
+	    y_offset_of_icon="10"
+	    collision_priority="100"
+	    display_name="Wurrif Raider"
+	    description="This large Raider has a number of Wurrif ships hidden inside. Should the raider be destroyed, those ships will emerge and continue the battle."
+	    starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Alien"
+	    mark_level_scale_style="DarkZenith"
+	    cost_for_ai_to_purchase="4500"  strength_multiplier="1.5"	
+	    hull_points="60000" shield_points="110000" speed="BelowAverage1"
+	    metal_cost="160000" energy_consumption="7500"
+	    armor_mm="50" albedo="0.8" engine_gx="10" mass_tx="7"
+	    returns_this_percentage_of_damage_if_damaged_by_enemy_attack="0.15"
+	    voice_group="Starship"
+	    ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	    ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            priority_as_ai_target="NormalStarship" priority_as_frd_target="BiggerStarship" priority_to_protect="SlightlyLessExpendable"
+	    >
+      <ship_class_data can_be_zombified_and_similar="false" />
+      <system name="WJ" display_name="Carrier Grenade"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      damage_per_shot="100" range="Small5" shot_speed="Normal" rate_of_fire="High"
+	      shots_per_salvo="6" fires_salvos_sequentially="false"
+	      shot_type_data="FlakShotAOEBurstAtEnd"
+	      area_of_effect_size="300"
+	      maximum_number_of_targets_hit_per_shot="9" cloaking_percent_loss_from_firing="0.2"
+	      >
+	<outgoing_damage_modifier based_on="EnergyUsage" comparison_type="MultiplesOf" compared_to="2500" multiplier="1" max_multiplier="15" />
+      </system>
+      <entity_type_drawing_bag_used_on_death data_list="TiberumWurrif" min_spawn_value_list="4" />
+      <data_extension name="DLC3"
+                      armada_science_to_grant_on_death="1"
+                      necromancer_science_to_grant_on_death="1"
+                      dark_zenith_sidekick_science_to_grant_on_death="1"
+                      dark_zenith_sidekick_resource_to_grant="Octiron"
+                      dark_zenith_sidekick_resource_amount_to_grant="5"
+                      />
+    </entity>
+    <entity name="TiberumWurrifRaider"
+            copy_from="TiberiumWurrifRaider"
+            />
+
+    <entity name="TiberiumFwSen"
+            thematic_groups="Armada"
+            tags="TiberiumTierOne,TiberiumCPATierOne,TiberiumCPATierTwo"
+            special_entity_type="Frigate"
+	    gimbal_icon_size_multiplier="1.25"
+	    visuals="Assets/_DLC2/Zenith/DZDreng/DZDreng.prefab" visuals_bundle="exp2_zenith_onslaught"
+	    icon_name="Ships4/EmblemFire"
+            icon_overlay="Overlays1/MegaTurret_Ion"
+	    size_scale="4.5"
+	    visuals_scale_multiplier="20"
+	    category="Ship"
+	    y_offset_of_icon="10"
+	    collision_priority="100"
+	    display_name="FwSen"
+	    description="The FwSen light cruiser is excellent at attacing 护盾. This is an AI ship enhanced with 泰德瑞安."
+	    starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Alien"
+	    mark_level_scale_style="DarkZenith"
+	    cost_for_ai_to_purchase="1500"  strength_multiplier="1.5"	
+	    hull_points="40000" shield_points="90000" speed="BelowAverage1"
+	    metal_cost="160000" energy_consumption="7500"
+	    armor_mm="50" albedo="0.8" engine_gx="10" mass_tx="5"
+	    returns_this_percentage_of_damage_if_damaged_by_enemy_attack="0.15"
+	    voice_group="Starship"
+	    ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	    ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            priority_as_ai_target="NormalStarship" priority_as_frd_target="BiggerStarship" priority_to_protect="SlightlyLessExpendable"
+	    >
+      <system name="Q3" display_name="Stinger Bolt"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      damage_per_shot="2250" range="Normal3" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="false"
+	      shots_per_salvo="8"
+	      shot_type_data="StingerBolt"
+	      >
+	<outgoing_damage_modifier applies_to="AllShields" based_on="MaxBubbleForcefield" comparison_type="GreaterThan" compared_to="10000" multiplier="4" />
+      </system>
+    </entity>
+    <entity name="TiberumFwSen"
+            copy_from="TiberiumFwSen"
+            />
+    <!-- Weapon borrowed from NRSirLimbo -->
+    <entity name="TiberiumGuardian"
+            thematic_groups="AI,Guardian"
+            tags="TiberiumTierOne,TiberiumCPATierOne,TiberiumCPATierTwo"
+	    special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+	    visuals="assets/_finalgamemeshes/guardians/laserguardian/laserguardian.prefab"
+	    icon_name="Ships1/Guardian" icon_overlay="Overlays2/Turret_Atgeir"
+	    uses_large_health_bar="true"
+	    category="Ship"
+	    size_scale="3.6"
+	    visuals_scale_multiplier="4"
+	    y_offset_of_icon="16"
+	    collision_priority="400"
+	    display_name="Tyderian Guardian"
+	    display_name_for_sidebar="Tydr GU"
+	    description="Infused with dreadful 泰德瑞安, this guardian has a powerful sniper gun."
+	    blocks_enemy_claim_flows="true"
+	    voice_group="Silent"
+	    starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+	    cost_for_ai_to_purchase="2500"  strength_multiplier="1.5"	
+	    hull_points="108000" shield_points="52000"
+	    metal_cost="80000" energy_consumption="7500"
+            speed="AboveAverage1"
+	    armor_mm="50" albedo="0.3" engine_gx="7" mass_tx="5"
+	    ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	    ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+	    >
+      <entity_type_drawing_bag_used_on_death data_list="JoyfulNadir,HappyNadir" min_spawn_value_list="1" />
+      <system name="ES" display_name="Escalation Sniper"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      damage_per_shot="1500" range="High1" shot_speed="VeryFast" rate_of_fire="High"
+              shots_per_salvo="3"
+	      shot_type_data="ExtremeLongRangeRailgun"
+	      >
+        <outgoing_damage_modifier based_on="AttackDistance" comparison_type="MultiplesOf" compared_to="500" multiplier="0.1" />
+        <outgoing_damage_modifier based_on="TargetTimeAtPlanet" comparison_type="AtMost" compared_to="10" multiplier="3" />
+      </system>
+      <ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+
+    
+    <entity name="TiberiumShree"
+            thematic_groups="Armada"
+            tags="TiberiumTierTwo,TiberiumCPATierOne,TiberiumCPATierTwo"
+            special_entity_type="Frigate"
+	    gimbal_icon_size_multiplier="1.1"
+	    visuals="Assets/_DLC2/Zenith/DZDreng/DZDreng.prefab" visuals_bundle="exp2_zenith_onslaught"
+	    icon_name="Ships4/EmblemPhoenix"
+            icon_overlay="Overlays1/Warhead_Storm"
+	    size_scale="4.5"
+	    visuals_scale_multiplier="20"
+	    category="Ship"
+	    y_offset_of_icon="10"
+	    collision_priority="100"
+	    display_name="Shree"
+	    hull_points="345000" shield_points="175000" speed="BelowAverage1"
+            description="The Shree Battle 巡洋舰 wields tyderian-enhanced zombifying weapons to convert our ships."
+	    starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Alien"
+	    mark_level_scale_style="DarkZenith"
+	    cost_for_ai_to_purchase="4000"  strength_multiplier="1.5"
+	    metal_cost="160000" energy_consumption="7500"
+	    armor_mm="50" albedo="0.8" engine_gx="10" mass_tx="7"
+	    returns_this_percentage_of_damage_if_damaged_by_enemy_attack="0.15"
+	    voice_group="Starship"
+	    ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	    ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            priority_as_ai_target="NormalStarship" priority_as_frd_target="BiggerStarship" priority_to_protect="SlightlyLessExpendable"
+	    >
+            <entity_type_drawing_bag_used_on_death data_list="TiberiumGuardian" min_spawn_value_list="1" />
+      <system name="B5" display_name="Energy Drain"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      damage_per_shot="100" shots_per_salvo="15" range="Normal1" shot_speed="Normal" rate_of_fire="PeriodicActivation" fires_salvos_sequentially="false"
+	      shot_type_data="HeavyBeamInvisible" beam_length_multiplier="1" beam_weapon_visual_style="Laser_YellowBright"
+	      health_change_by_max_health_divided_by_this_per_attack="10"
+	      can_devour="true"
+	      devour_mass_lower_than="5.5"
+	      >  
+	<death_effect_damage type="Zombification" tier_name="Minor"/>
+      </system>	
+      <system name="W2" display_name="Omega Blast"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      damage_per_shot="6000" range="Normal1" shot_speed="Fast" rate_of_fire="FairlyLow" fires_salvos_sequentially="true"
+	      shot_type_data="LaserPulse_RedLevel2"
+	      >
+	<outgoing_damage_modifier based_on="EnergyUsage" comparison_type="MultiplesOf" compared_to="2500" multiplier="1" max_multiplier="15" />
+	<death_effect_damage type="Zombification" tier_name="Minor"/>
+      </system>
+      <system name="T" display_name="Tractor Beam"
+				category="Passive"
+				tractor_range="Normal1" tractor_count="30" tractor_count_added_per_mark="15" tractor_hits_albedo_less_than="0.4" tractor_hits_engine_gx_less_than="18"
+				>
+      </system>
+      <data_extension name="DLC3"
+                      armada_science_to_grant_on_death="1"
+                      necromancer_science_to_grant_on_death="1"
+                      dark_zenith_sidekick_science_to_grant_on_death="1"
+                      dark_zenith_sidekick_resource_to_grant="Alkahest"
+                      dark_zenith_sidekick_resource_amount_to_grant="1"
+                      />
+    </entity>
+    <entity name="TiberumShree"
+            copy_from="TiberiumShree"
+            />
+    <!-- Defensive structures -->
+    <entity name="TiberiumPweck"
+	    thematic_groups="Armada"
+	    tags="TiberiumDefense"
+	    visuals="Assets/_DLC2/Zenith/DZTrelleborg/DZTrelleborg.prefab" visuals_bundle="exp2_zenith_onslaught"
+	    icon_name="Ships3/ZenithTurret" icon_overlay="Overlays1/Turret_ChainLightning"
+	    category="Ship" is_turret="true"
+            never_leaves_remains="true"
+	    size_scale="1.02"
+	    visuals_scale_multiplier="8.1"
+	    collision_priority="1000"
+	    display_name="Pweck"
+	    description="This 泰德瑞安-powered Battle Emplacement has a powerful chain lightning weapon."
+	    behavior="Stationary"
+	    starting_mark_level="Mark4"
+	    cost_for_ai_to_purchase="76" strength_multiplier="1.2"
+	    hull_points="27000" shield_points="6750" speed="Immobile"
+	    metal_cost="60000" energy_consumption="450"
+	    armor_mm="80" albedo="0.45" mass_tx="2"
+	    voice_group="Turret"
+	    fleet_membership="Planetary"
+	    ship_or_structure_explosion_sfx="Turret_Explosion"
+	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+            priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable"
+            multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5"
+            >
+      <system name="CE" display_name="Chain Lightning Emitter"
+              category="Weapon" firing_timing="OnlyInRange"
+              damage_per_shot="1750" range="Normal5" shot_speed="Normal" rate_of_fire="RatherLow"
+              shot_type_data="HeavyBeamInvisible"  beam_length_multiplier="1.3" shots_detonate_immediately="true"  beam_weapon_visual_style="Lightning_Blue"
+              beam_chains_out_to_targets_x_times="1" beam_chains_out_to_target_min_range="200" beam_chains_out_to_targets_x_range="2000"
+              beam_chains_out_to_max_targets_from_each_source="4"
+              only_targets_strikecraft_and_frigates="true" aoe_and_beam_damage_multiplier_to_non_primary_target="50" 
+              added_target_evaluator="LowestHealthAsMajorPrimary"
+	      >
+      </system>
+    </entity>
+    
+    <entity name="TiberiumRuuk"
+	    thematic_groups="Armada"
+	    tags="TiberiumDefense"
+	    visuals="Assets/_DLC2/Zenith/DZTrelleborg/DZAtgeir.prefab" visuals_bundle="exp2_zenith_onslaught"
+	    icon_name="Ships3/ZenithTurret" icon_overlay="Overlays2/Turret_Atgeir"
+	    category="Ship" is_turret="true"
+	    size_scale="1.02"
+            never_leaves_remains="true"
+	    visuals_scale_multiplier="8.1"
+	    collision_priority="1000"
+	    display_name="Ruuk"
+	    description="A tyderian-powered 炮塔 that shoots Ion Torpedoes, 麻痹 and knocking back their foes."
+	    behavior="Stationary"
+	    starting_mark_level="Mark4"
+	    cost_for_ai_to_purchase="76" strength_multiplier="1.2"			
+	    hull_points="27000" shield_points="6750" speed="Immobile"
+	    metal_cost="60000" energy_consumption="450"
+	    armor_mm="80" albedo="0.45" mass_tx="2"
+	    voice_group="Turret"
+	    fleet_membership="Planetary"
+	    ship_or_structure_explosion_sfx="Turret_Explosion"
+	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+            priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable"
+            multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5"
+            >
+      <system name="WT" display_name="Ion Disruption Blast" category="Weapon" firing_timing="OnlyInRange"  
+	      damage_per_shot="1600" range="AboveAverage2" shot_speed="Slow" rate_of_fire="RatherLow" fires_salvos_sequentially="true"
+	      shot_type_data="PlasmaTorpedoAOEBurstAtEnd"
+	      area_of_effect_size="1500" aoe_spreads_damage_among_available_targets="true"
+	      base_knockback_per_shot="-1500" knockback_to_ships_mass_tx_less_than="2" knockback_at_target_location="true" added_target_evaluator="CanKnockback"
+              base_paralysis_seconds_per_shot="6" paralysis_to_ships_mass_tx_less_than="5"
+	      >
+      </system>	
+    </entity> 
+
+<entity name="TiberiumDireGuardian"
+        thematic_groups="AI,Guardian,Armada"
+        tags="TiberiumDireGuardian,TiberiumCPATierTwo"
+	special_entity_type="AIDireGuardian" gimbal_icon_size_multiplier="1.25"
+	visuals="assets/_finalgamemeshes/guardians/laserguardian/laserguardian.prefab"
+        material_override_path="Assets/_FinalGameMeshes/Nanocaust/Abomination/Abomination.prefab"
+	icon_name="Ships1/GuardianDire" icon_overlay="Overlays2/Turret_Atgeir"
+	uses_large_health_bar="true"
+	category="Ship"
+	size_scale="3.6"
+	visuals_scale_multiplier="4"
+	y_offset_of_icon="16"
+	collision_priority="400"
+	display_name="Tyderian Dire Guardian"
+	display_name_for_sidebar="Tydr D GU"
+	description="Infused with dreadful 泰德瑞安, this guardian attracts nearby enemy fire. Charges up a powerful 泰德瑞安 Blast."
+	blocks_enemy_claim_flows="true"
+	voice_group="Silent"
+	starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+        mark_level_scale_style="ArmadaRanger"
+	cost_for_ai_to_purchase="5250" strength_multiplier="1.5"
+	hull_points="600000" shield_points="400000" speed="BelowAverage1"
+	metal_cost="80000" energy_consumption="7500"
+	armor_mm="50" albedo="0.3" engine_gx="7" mass_tx="7"
+	ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+        priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+	>
+    <system name="R5" display_name="Tyderian Wve"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="3000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="true"
+	    shot_type_data="LaserPulse_RedLevel2"
+            number_of_weapon_points_to_gain_on_firing="1"
+	    >
+      <outgoing_damage_modifier based_on="EnergyUsage" comparison_type="AtLeast" compared_to="7000" multiplier="6" />
+    </system>
+    <system name="W2" display_name="Tyderian Blast"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="300" range="High2" shot_speed="Normal" rate_of_fire="PeriodicActivation" fires_salvos_sequentially="true"
+            shot_type_data="HeavyBeamInvisible"  beam_length_multiplier="1.3" shots_detonate_immediately="true"  beam_weapon_visual_style="Lightning_Blue"
+            beam_chains_out_to_targets_x_times="1" beam_chains_out_to_target_min_range="200" beam_chains_out_to_targets_x_range="2000"
+            beam_chains_out_to_max_targets_from_each_source="4"
+            only_targets_strikecraft_and_frigates="true" aoe_and_beam_damage_multiplier_to_non_primary_target="50" 
+            added_target_evaluator="LowestHealthAsMajorPrimary"
+	    number_of_weapon_points_to_consume_on_firing="10" additional_damage_modifier_per_weapon_point="2"
+	    >
+      <outgoing_damage_modifier applies_to="AllShields" based_on="MaxBubbleForcefield" comparison_type="GreaterThan" compared_to="10000" multiplier="5" />
+    </system>	
+
+    <system name="A" display_name="Shot Attraction Matrix"
+            category="Passive"
+            attract_range_for_shots_against_allies="Small2" >
+    </system>
+    <data_extension name="DLC3"
+                    armada_resource_one_to_grant_on_death="1"
+                    armada_science_to_grant_on_death="8"
+                    immune_to_necromancy="true"
+                    />
+      <entity_type_drawing_bag_used_on_death data_list="TiberiumShree,TiberiumFwSen" min_spawn_value_list="1" />
+</entity>
+
+<entity name="TiberiumDonatingDireGuardian"
+        copy_from="TiberiumDireGuardian"
+        tags="DonatesToAIOnVictory"
+        >
+</entity>
+
+
+<entity name="TiberiumDropship"
+            thematic_groups="Armada"
+            tags="TiberiumAutoDefenseShip,TiberiumDropship"
+            special_entity_type="Frigate"
+	    gimbal_icon_size_multiplier="1.1"
+	    visuals="Assets/_DLC2/Warheads/WarheadLightning/WarheadLightning.prefab" visuals_bundle="exp1_the_spire_rises"
+            material_override_path="Assets/_FinalGameMeshes/Nanocaust/Abomination/Abomination.prefab"
+            icon_name="Ships3/WarheadStyle2" icon_overlay="Overlays1/Warhead_Lightning" 
+	    size_scale="9"
+	    visuals_scale_multiplier="14"
+	    collision_priority="50"
+	    category="Ship"
+	    y_offset_of_icon="10"
+	    display_name="Tyderian Dropship"
+	    hull_points="4500" shield_points="175000" speed="High"
+            description="This huge ship is a shell around a swarm of 泰德瑞安 蝗虫; it rapidly dies in battle to unleash its swarm."
+	    starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Alien"
+	    mark_level_scale_style="DarkZenith"
+	    cost_for_ai_to_purchase="4000"  strength_multiplier="1.5"
+	    metal_cost="160000" energy_consumption="7500"
+	    armor_mm="50" albedo="0.8" engine_gx="10" mass_tx="7"
+	    voice_group="Starship"
+	    ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	    ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            priority_as_ai_target="NormalStarship" priority_as_frd_target="BiggerStarship" priority_to_protect="SlightlyLessExpendable"
+            description_appender_dll="AIWarExternalCode"
+	    description_appender_type="Arcen.AIW2.External.TiberiumDescriptionAppender"
+	    >
+      <system name="W2" display_name="Ablative Blast"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      damage_per_shot="100" range="Normal1" shot_speed="Fast" rate_of_fire="FairlyLow" fires_salvos_sequentially="true"
+	      shot_type_data="LaserPulse_RedLevel2"
+              health_change_by_max_health_divided_by_this_per_attack="-1"
+	      >
+	<outgoing_damage_modifier based_on="EnergyUsage" comparison_type="MultiplesOf" compared_to="2500" multiplier="1" max_multiplier="15" />
+	<death_effect_damage type="Zombification" tier_name="Minor"/>
+      </system>
+      <ship_class_data can_be_zombified_and_similar="false" />
+      <entity_type_drawing_bag_used_on_death data_list="TiberiumLocust" min_spawn_value_list="5" />
+</entity>
+
+    <!-- Locusts -->
+    <entity name="TiberiumLocust"
+	   visuals="Assets/_FinalGameMeshes/Guardians/SpiderAndParalysisGuardian/ParalysisGuardian.prefab"
+	   icon_name="Ships2/Nanobot_Mutation" icon_overlay="Overlays2/Guardian_Spider"
+           special_entity_type="AIGuardian"
+           material_override_path="Assets/_FinalGameMeshes/Spire/DarkSpireWraith/DarkSpireWraith.prefab"
+           tags="TiberiumLocust,AttritioningLocust"
+	   category="Ship"
+	   size_scale="3.6"
+	   visuals_scale_multiplier="2"
+	   y_offset_of_icon="16"
+	   collision_priority="400"
+	   display_name="Tyderian Locust"
+	   display_name_for_sidebar="Tydr Lcst"
+	   description="These 蝗虫 have been outfitted with powerful tyderian weapons that damage the engines of their targets. When a locust is killed, it spawns a lesser locust.
+
+蝗虫 spawn from regions with lots of high-tier 泰德瑞安 Veins. You should destroy the veins to prevent them from coming."
+	   blocks_enemy_claim_flows="true"
+	   voice_group="Silent"
+	   starting_mark_level="Mark1"
+	   cost_for_ai_to_purchase="1000" strength_multiplier="1.5"
+	   hull_points="54000" shield_points="26000" speed="VeryHigh1"
+	   metal_cost="1000" energy_consumption="7500"
+	   armor_mm="90" albedo="0.4" engine_gx="7" mass_tx="5"
+	   ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	   ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	   ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+           priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+	   >
+      <system name="Q2" display_name="Tyderian Disruptor"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      damage_per_shot="200" range="Normal4" shot_speed="Normal" rate_of_fire="Normal"
+	      shots_per_salvo="20" fires_salvos_sequentially="false"
+              base_percent_damage_bypasses_personal_shields="1"
+	      corrosion_damage="100"
+	      corrosion_damage_added_per_mark="150"
+	      shot_type_data="ParalysisProngedShot_Blue" 
+              >
+    </system>
+    <entity_type_drawing_bag_used_on_death data_list="TiberiumLesserLocust" min_spawn_value_list="1" />
+    <ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+    <!-- Lesser Locusts -->
+    <entity name="TiberiumLesserLocust" copy_from="TiberiumLocust"
+	   visuals="Assets/_FinalGameMeshes/Guardians/SpiderAndParalysisGuardian/ParalysisGuardian.prefab"
+	   icon_name="Ships2/Nanobot_Center"  icon_overlay="Overlays2/Guardian_Spider"
+           tags="AttritioningLocust"
+           gimbal_icon_size_multiplier="0.8"
+	   display_name="Tyderian L Locust"
+	   display_name_for_sidebar="Tydr L Lcst"
+	   description="The 泰德瑞安 Lesser 蝗虫 carries on the battle, though they are much weaker."
+	   hull_points="14000" shield_points="6000" speed="High"
+           >
+      <system name="Q2" display_name="Tyderian Disruptor"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      damage_per_shot="100" range="Normal4" shot_speed="Normal" rate_of_fire="Normal"
+	      shots_per_salvo="10" fires_salvos_sequentially="false"
+	      shot_type_data="ParalysisProngedShot_Blue" 
+              base_percent_damage_bypasses_personal_shields="1"
+	      corrosion_damage="100"
+	      corrosion_damage_added_per_mark="125"
+	      >
+      </system>
+      <ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+
+
+    <!-- The big ships -->
+    <entity name="TiberiumAbomination"  thematic_groups="Armada"
+            display_name="Tyderian Abomination" display_name_for_sidebar="Tydr A"
+	    tags="TiberiumAbomination"
+	    visuals="Assets/_DLC3/Elderlings/DecadentElderling/DecadentElderling.prefab" visuals_bundle="exp3_neinzul_abyss"
+            material_override_path="Assets/_FinalGameMeshes/Nanocaust/Abomination/Abomination.prefab"
+	    icon_name="Ships4/NecromancerBanshee" icon_overlay="Overlays2/Turret_Atgeir"  gimbal_icon_size_multiplier="1.5"
+            draw_in_galaxy_view="true"
+	    uses_large_health_bar="true"
+            category="Ship"
+            size_scale="25"
+	    visuals_scale_multiplier="150"
+            collision_priority="600"
+	    y_offset_of_icon="140"
+            starting_mark_level="Mark4" tech_upgrades_that_benefit_me="Unused" 
+            cost_for_ai_to_purchase="10500" strength_multiplier="1"
+	    mark_level_scale_style="Elderlings"
+	    hull_points="6000000" shield_points="3000000" speed="BelowAverage2"
+	    metal_cost="800000" energy_consumption="45000"
+	    armor_mm="180" albedo="0.7" engine_gx="22" mass_tx="7"
+	    description="This dreadful 泰德瑞安 monstrosity was summoned by unwise 无敌舰队 forces.
+
+It reels ships towards itself so it can devour them, replenishing health in the process."
+	    science_to_grant_on_death="50"
+	    ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	    ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+	    voice_group="Silent"
+	    priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+	    >
+      <data_extension name="DLC3"
+                      armada_resource_one_to_grant_on_death="13"
+                      armada_resource_one_to_grant_on_death_per_mark="4"
+                      armada_science_to_grant_on_death="600"
+                      necromancer_science_to_grant_on_death="200"
+                      dark_zenith_sidekick_science_to_grant_on_death="800"
+                      dark_zenith_sidekick_resource_to_grant="Blue"
+                      dark_zenith_sidekick_resource_amount_to_grant="1"
+                      scourge_empire_corbomite_to_grant_on_death="5"
+                      immune_to_necromancy="true"
+                      />
+
+      <system name="WT" display_name="Tyderian Lure"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      damage_per_shot="2000" range="AboveAverage4" shot_speed="Normal" rate_of_fire="Low" 
+	      shots_per_salvo="50" fires_salvos_sequentially="false"
+	      base_engine_stun_per_shot="16" added_engine_stun_per_shot_per_mark="4" engine_stun_to_engine_gx_less_than="14"
+	      max_engine_stun_seconds="40" added_target_evaluator="EngineDamageAsMajorPrimary"
+	      base_knockback_per_shot="-3000" added_knockback_per_shot_per_mark="-1000" knockback_to_ships_mass_tx_less_than="5.5"
+	      shot_type_data="HeavyBeamInvisible" beam_length_multiplier="1" beam_weapon_visual_style="Laser_YellowBright"
+	      >	
+      </system>
+      <system name="WJ" display_name="Devour"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      damage_per_shot="1000" range="Small5" shot_speed="Normal" rate_of_fire="VeryLow" fires_salvos_sequentially="true"
+	      shots_per_salvo="10" shot_type_data="MeleeInvisible"
+	      health_change_by_max_health_divided_by_this_per_attack="40"
+	      can_devour="true" devour_mass_lower_than="5.1"
+	      only_targets_mobile_units="true"
+	      >
+      </system>
+      <ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+
+    <entity name="TiberiumDesolation"  thematic_groups="Armada"
+            display_name="Tyderian Desolation" display_name_for_sidebar="Tydr D"
+	    tags="TiberiumDesolation"
+            visuals="Assets/_DLC3/BrutalGuardians/BrutalAmalgamAlphaGuardian/BrutalAmalgamAlphaGuardian.prefab" visuals_bundle="exp3_neinzul_abyss"
+            material_override_path="Assets/_FinalGameMeshes/Nanocaust/Abomination/Abomination.prefab"
+	    icon_name="Ships4/NecromancerBanshee" icon_overlay="Overlays2/BrutalAmalgamAlpha"  gimbal_icon_size_multiplier="1.5"
+            draw_in_galaxy_view="true"
+	    uses_large_health_bar="true"
+            category="Ship"
+	    size_scale="20" visuals_scale_multiplier="7" y_offset_of_icon="50"
+            collision_priority="600"
+            starting_mark_level="Mark4" tech_upgrades_that_benefit_me="Unused" 
+            cost_for_ai_to_purchase="10500" strength_multiplier="1"
+	    mark_level_scale_style="Elderlings"
+	    hull_points="5000000" shield_points="200000" speed="AboveAverage2"
+	    metal_cost="800000" energy_consumption="45000"
+	    armor_mm="180" albedo="0.7" engine_gx="22" mass_tx="7"
+	    description="This dreadful 泰德瑞安 monstrosity leads the AI's CPAs against the 无敌舰队. It has good range, and you must close with it to do real damage.
+
+Upon death, it spawns additional 泰德瑞安 enhanced ships."
+	    science_to_grant_on_death="100"
+	    ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	    ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+	    voice_group="Silent"
+	    priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+	    >
+      <entity_type_drawing_bag_used_on_death data_list="TiberiumDireGuardian" min_spawn_value_list="4" />
+      <data_extension name="DLC3"
+                      armada_resource_one_to_grant_on_death="4"
+                      armada_resource_one_to_grant_on_death_per_mark="2"
+                      armada_science_to_grant_on_death="50"
+                      necromancer_science_to_grant_on_death="200"
+                      dark_zenith_sidekick_science_to_grant_on_death="800"
+                      dark_zenith_sidekick_resource_to_grant="Chelonium"
+                      dark_zenith_sidekick_resource_amount_to_grant="1"
+                      scourge_empire_corbomite_to_grant_on_death="5"
+                      immune_to_necromancy="true"
+                      />
+      <incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="2500" multiplier="0.4" />
+      <system name="WN" display_name="Nucleon Petard"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      damage_per_shot="4000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Normal"
+	      shots_per_salvo="6" fires_salvos_sequentially="false"
+	      shot_type_data="PikeShot_Gold"
+	      >
+	<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtLeast" compared_to="90" multiplier="3"  />
+	<outgoing_damage_modifier based_on="CurrentHullPercentage" applies_to="HullOnly" comparison_type="AtLeast" compared_to="75" multiplier="1.5"  />
+	<outgoing_damage_modifier based_on="EnergyUsage" comparison_type="AtLeast" compared_to="7000" multiplier="2"  />
+      </system>
+      <system name="WC" display_name="Ablative Cannon"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      damage_per_shot="3000" range="Normal5" shot_speed="Normal" rate_of_fire="Normal"
+	      shots_per_salvo="50" fires_salvos_sequentially="false"
+	      shot_type_data="ExtremeLongRangeRailgun"
+	      >
+	<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="50" multiplier="2"  />
+	<outgoing_damage_modifier based_on="Albedo" comparison_type="AtMost" compared_to="0.3" multiplier="2" />
+      </system>
+      <ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+
+    <entity name="TiberiumEscaton"  thematic_groups="Armada"
+            display_name="Tyderian Eschaton" display_name_for_sidebar="Tydr E"
+	    tags="TiberiumEschaton"
+            visuals="Assets/_DLC3/BrutalGuardians/BrutalAmalgamAlphaGuardian/BrutalAmalgamAlphaGuardian.prefab" visuals_bundle="exp3_neinzul_abyss"
+            material_override_path="Assets/_DLC1/GraySpire/GraySpireIllumin/GraySpireIllumin.prefab"  material_override_bundle="exp1_the_spire_rises"
+	    icon_name="Ships4/NecromancerBanshee" icon_overlay="Overlays2/Destroyer_Predator"  gimbal_icon_size_multiplier="1.5"
+            draw_in_galaxy_view="true"
+	    uses_large_health_bar="true"
+            category="Ship"
+	    size_scale="20" visuals_scale_multiplier="7" y_offset_of_icon="50"
+            collision_priority="600"
+            starting_mark_level="Mark4" tech_upgrades_that_benefit_me="Unused" 
+            cost_for_ai_to_purchase="10500" strength_multiplier="1"
+	    mark_level_scale_style="Elderlings"
+	    hull_points="5000000" shield_points="200000" speed="AboveAverage2"
+	    metal_cost="800000" energy_consumption="45000"
+	    armor_mm="180" albedo="0.7" engine_gx="22" mass_tx="7"
+	    description="This dreadful 泰德瑞安 monstrosity will be an invaluable subject for scientific research when killed. It wields a fire weapon, and is surrounded by acidic 泰德瑞安 Pustules."
+            build_points_per_second="5"
+	    build_point_cost_for_per_second_construction="10"
+	    personal_ship_cap_for_per_second_build_point_construction="5"
+            tag_to_spawn_from_for_build_point_for_per_second_construction="Pustule"
+	    science_to_grant_on_death="100"
+	    ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	    ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+	    voice_group="Silent"
+	    priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+	    >
+      <entity_type_drawing_bag_used_on_death data_list="TiberiumDireGuardian" min_spawn_value_list="1" />
+      <data_extension name="DLC3"
+                      armada_science_to_grant_on_death="7500"
+                      necromancer_science_to_grant_on_death="200"
+                      dark_zenith_sidekick_science_to_grant_on_death="800"
+                      dark_zenith_sidekick_resource_to_grant="Chelonium"
+                      dark_zenith_sidekick_resource_amount_to_grant="5"
+                      scourge_empire_corbomite_to_grant_on_death="5"
+                      immune_to_necromancy="true"
+                      />
+      <system name="V9" display_name="Fiery Blast"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      damage_per_shot="9000" range="Normal3" shot_speed="Fast" rate_of_fire="Devourer" 
+	      shots_per_salvo="32" fires_salvos_sequentially="true"
+	      shot_type_data="FlameWave"
+	      >
+      </system>
+
+      <incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="2500" multiplier="0.4" />
+      <system name="WN" display_name="Nucleon Petard"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      damage_per_shot="4000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Normal"
+	      shots_per_salvo="6" fires_salvos_sequentially="false"
+	      shot_type_data="PikeShot_Gold"
+	      >
+	<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtLeast" compared_to="90" multiplier="3"  />
+	<outgoing_damage_modifier based_on="CurrentHullPercentage" applies_to="HullOnly" comparison_type="AtLeast" compared_to="75" multiplier="1.5"  />
+	<outgoing_damage_modifier based_on="EnergyUsage" comparison_type="AtLeast" compared_to="7000" multiplier="2"  />
+      </system>
+      <system name="WC" display_name="Ablative Cannon"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      damage_per_shot="3000" range="Normal5" shot_speed="Normal" rate_of_fire="Normal"
+	      shots_per_salvo="50" fires_salvos_sequentially="false"
+	      shot_type_data="ExtremeLongRangeRailgun"
+	      >
+	<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="50" multiplier="2"  />
+	<outgoing_damage_modifier based_on="Albedo" comparison_type="AtMost" compared_to="0.3" multiplier="2" />
+      </system>
+      <ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+
+    <entity name="Pustule" tags="Pustule"
+	    thematic_groups="Armada"
+	    visuals="Assets/_DLC3/Necromancer/Fireball/Fireball.prefab" visuals_bundle="exp3_neinzul_abyss"
+            material_override_path="Assets/_FinalGameMeshes/Nanocaust/Abomination/Abomination.prefab"
+	    icon_name="Ships4/Fireball"
+	    voice_group="Silent"
+	    category="Ship" is_strikecraft="true"
+	    size_scale="2"
+	    visuals_scale_multiplier="30"
+	    collision_priority="100"
+	    display_name="Pustule"
+	    description="A dreadfull sphere of acid and bile. It is deeply 腐蚀 to things it hits."
+	    starting_mark_level="Markless" tech_upgrades_that_benefit_me="Unused"
+	    cost_for_ai_to_purchase="6" strength_multiplier="0.2"
+	    hull_points="50000" shield_points="0" speed="Immobile"
+	    metal_cost="10" energy_consumption="0"
+	    armor_mm="40" albedo="0.65" mass_tx="2"
+	    blocks_ceasefire_on_planet="true"
+	    ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+	    orbits_parent_at_range="4800" 
+	    degrees_to_orbit_per_second="30" 
+	    attempts_to_reach_orbital_point_at_speed="8000"
+	    dies_if_parent_dies="true"
+	    immune_to_swapping_between_fleets="true"
+            priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+            >
+      <system name="W1" display_name="Acid Blast"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      range="VeryTiny4" shot_speed="Fast" rate_of_fire="Devourer" fires_salvos_sequentially="true"
+              damage_per_shot="200"
+              corrosion_damage="5000"
+	      corrosion_damage_added_per_mark="125"
+	      shot_type_data="MeleeInvisible" added_target_evaluator="Melee"
+	      health_change_by_max_health_divided_by_this_per_attack="-1"
+	      >
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+    <!-- End Eschaton -->
+
+    
+    <entity name="TiberiumTorment"  thematic_groups="Armada"
+            display_name="Tyderian Torment" display_name_for_sidebar="Tydr T"
+	    tags="TiberiumTorment"
+            visuals="Assets/_DLC3/BrutalGuardians/BrutalAmalgamAlphaGuardian/BrutalAmalgamAlphaGuardian.prefab" visuals_bundle="exp3_neinzul_abyss"
+            material_override_path="Assets/_FinalGameMeshes/Nanocaust/Abomination/Abomination.prefab"
+	    icon_name="Ships4/NecromancerBanshee" icon_overlay="Overlays1/Starship_Corrosive" gimbal_icon_size_multiplier="1.5"
+            draw_in_galaxy_view="true"
+	    uses_large_health_bar="true"
+            category="Ship"
+	    size_scale="20" visuals_scale_multiplier="7" y_offset_of_icon="50"
+            collision_priority="600"
+            starting_mark_level="Mark4" tech_upgrades_that_benefit_me="Unused" 
+            cost_for_ai_to_purchase="10500" strength_multiplier="1"
+	    mark_level_scale_style="Elderlings"
+	    hull_points="3000000" shield_points="200000" speed="AboveAverage2"
+	    metal_cost="800000" energy_consumption="45000"
+	    armor_mm="180" albedo="0.7" engine_gx="22" mass_tx="7"
+	    description="This ship is endlessly tormented by 泰德瑞安; it uses powerful 腐蚀 guns.
+
+Upon death, it spawns additional 泰德瑞安 enhanced ships."
+	    science_to_grant_on_death="100"
+	    ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	    ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+	    voice_group="Silent"
+	    priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+	    >
+      <entity_type_drawing_bag_used_on_death data_list="TiberiumDireGuardian" min_spawn_value_list="4" />
+      <data_extension name="DLC3"
+                      armada_resource_one_to_grant_on_death="2"
+                      armada_resource_one_to_grant_on_death_per_mark="2"
+                      armada_science_to_grant_on_death="50"
+                      necromancer_science_to_grant_on_death="200"
+                      dark_zenith_sidekick_science_to_grant_on_death="800"
+                      dark_zenith_sidekick_resource_to_grant="Green"
+                      dark_zenith_sidekick_resource_amount_to_grant="1"
+                      scourge_empire_corbomite_to_grant_on_death="5"
+                      immune_to_necromancy="true"
+                      />
+      <incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="2500" multiplier="0.4" />
+      <system name="WN" display_name="Corrosive Petard"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      damage_per_shot="2000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Normal"
+	      shots_per_salvo="6" fires_salvos_sequentially="false"
+	      shot_type_data="PikeShot_Gold"
+              corrosion_damage="2000"
+	      corrosion_damage_added_per_mark="300"
+	      >
+      </system>
+      <system name="W2" display_name="Corrosive Finale"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      only_fires_on_death="true"
+	      damage_per_shot="12000" range="Tiny2" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+	      shot_type_data="LightningExplosionAOEShot" 
+	      area_of_effect_size="3000"
+	      shots_detonate_immediately="true"
+	      maximum_number_of_targets_hit_per_shot="15"
+	      health_change_by_max_health_divided_by_this_per_attack="-1"
+	      all_damage_is_corrosive="true"
+	      >
+      </system>
+
+      <system name="WC" display_name="Ablative Cannon"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      damage_per_shot="3000" range="Normal5" shot_speed="Normal" rate_of_fire="Normal"
+	      shots_per_salvo="50" fires_salvos_sequentially="false"
+	      shot_type_data="ExtremeLongRangeRailgun"
+	      >
+	<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="50" multiplier="2"  />
+	<outgoing_damage_modifier based_on="Albedo" comparison_type="AtMost" compared_to="0.3" multiplier="2" />
+      </system>
+      <ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+
+
+    <!-- Ships for the AI versions of these -->
+    
+    <entity name="AIFwSen" copy_from="TiberiumFwSen"
+            hull_points="40000" shield_points="90000" speed="BelowAverage1"
+            >
+      <ai_ship_group_membership name="TiberiumInfusedStrikecraft" weight="100"/>
+    </entity>
+
+    <entity name="AITiberiumLocust" copy_from="TiberiumLocust"
+	   hull_points="44000" shield_points="26000" speed="VeryHigh1"
+            >
+      <ai_ship_group_membership name="TiberiumInfusedStrikecraft" weight="100"/>
+    </entity>
+
+    <entity name="AIWurrif" copy_from="TiberiumWurrif"
+            hull_points="30000" shield_points="110000" speed="BelowAverage1"
+            >
+      <ai_ship_group_membership name="TiberiumInfusedStrikecraft" weight="100"/>
+    </entity>
+    <entity name="AIFwSenRaider" copy_from="TiberiumFwSenRaider"
+            hull_points="80000" shield_points="90000" speed="BelowAverage1"
+            >
+      <ai_ship_group_membership name="TiberiumInfusedWardenGuardians" weight="100"/>
+      <ai_ship_group_membership name="TiberiumInfusedPraetorianGuardians" weight="100"/>
+    </entity>
+
+    <entity name="AIWurrifRaider" copy_from="TiberiumWurrifRaider"
+	    hull_points="80000" shield_points="90000" speed="BelowAverage1"
+            >
+      <ai_ship_group_membership name="TiberiumInfusedWardenGuardians" weight="100"/>
+      <ai_ship_group_membership name="TiberiumInfusedPraetorianGuardians" weight="100"/>
+    </entity>
+
+    <entity name="AITiberiumGuardian" copy_from="TiberiumGuardian"
+	    hull_points="108000" shield_points="52000"
+            >
+      <ai_ship_group_membership name="TiberiumInfusedGuardians" weight="100"/>
+    </entity>
+
+    <entity name="AIShree" copy_from="TiberiumShree"
+	    hull_points="345000" shield_points="175000" speed="BelowAverage1"
+            >
+      <ai_ship_group_membership name="TiberiumInfusedDireGuardians" weight="50"/>
+      <ai_ship_group_membership name="TiberiumInfusedWardenGuardians" weight="50"/>
+      <ai_ship_group_membership name="TiberiumInfusedPraetorianGuardians" weight="50"/>
+    </entity>
+
+    <entity name="AITiberiumDireGuardian" copy_from="TiberiumDireGuardian"
+	    hull_points="600000" shield_points="400000" speed="BelowAverage1"
+            >
+      <ai_ship_group_membership name="TiberiumInfusedDireGuardians" weight="50"/>
+    </entity>
+
+    <entity name="AITiberiumAbomination" copy_from="TiberiumAbomination"
+	    hull_points="6000000" shield_points="3000000" speed="BelowAverage2"
+            >
+      <ai_ship_group_membership name="TiberiumInfusedExoLeaders" weight="50"/>
+    </entity>
+
+    <entity name="AITiberiumDesolation" copy_from="TiberiumDesolation"
+	    hull_points="5000000" shield_points="200000" speed="AboveAverage2"
+            >
+      <ai_ship_group_membership name="TiberiumInfusedExoLeaders" weight="50"/>
+    </entity>
+
+    <entity name="AITiberiumTorment" copy_from="TiberiumTorment"
+	    hull_points="3000000" shield_points="200000" speed="AboveAverage2"
+            >
+      <ai_ship_group_membership name="TiberiumInfusedExoLeaders" weight="50"/>
+    </entity>
+
+    <entity name="TiberiumFinalBoss" copy_from="TiberiumEscaton"
+	    hull_points="6000000" shield_points="1200000" speed="AboveAverage4"
+            >
+      <system name="C" display_name="Cloaking Device"
+	    category="Passive" cloaking_points="10000" cloaking_points_added_per_mark="1000"
+	    >
+    </system>
+
+    </entity>
+
+
+</root>
+
+

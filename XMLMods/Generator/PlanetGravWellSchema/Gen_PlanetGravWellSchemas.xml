@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <grav_well_schema name="ReasonableSmall"
+      sort_order="150"
+      display_name="&lt;color=#ffd965&gt;合理小&lt;/color&gt;"
+      description="Gravity wells will be range from 36k sU to 148k sU, but the smaller sizes are more common." />
+
+  <grav_well_schema name="ReasonableSmaller"
+      sort_order="150"
+      display_name="&lt;color=#ffd965&gt;合理较小&lt;/color&gt;"
+      description="Gravity wells will be range from 36k sU to 148k sU, but the smaller sizes are much more common." />
+  
+</root>

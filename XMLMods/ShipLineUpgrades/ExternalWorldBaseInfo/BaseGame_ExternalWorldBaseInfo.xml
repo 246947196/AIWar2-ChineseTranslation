@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <item name="ShipLineUpgradeDatabase_Base" dll_name="ShipLineUpgrades_Base" type_name="ShipLineUpgrades_Base.ShipLineUpgradeDatabase_Base" />
+</root>

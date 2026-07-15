@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <faction
+      name="Human"
+      is_partial_record="true"
+      >
+
+    <custom_field
+        is_hidden="true"
+        name="Populator_PlayerHomeworld_PreferredGalaxyRegion"
+        display_name="&lt;color=#ff7e64&gt;高级：&lt;/color&gt;首选起始区域"
+        description="Normally the starting planet for player factions is either completely random, or picked by the player in the map tab of the lobby. If you have Improved Generator selected though, you can use this option to guide the random algorithm to prefer starting planets either more or less centered in the galaxy."
+        requires_player_types="HumanEmpire,SpireInfusedEmpire,HumanArkEmpire,NecromancerEmpire"
+        is_advanced_setting="true"
+        sort_group="250"
+        setting_type="CustomDropdownArbitraryOptions"
+        arbitrary_options="Random,Centralized,Somewhat Centralized,Somewhat On Edge,Farthest Edge"
+        default_option="Random"
+        />
+
+    <custom_field
+        is_hidden="true"
+        name="Populator_PlayerHomeworld_PreferredLinks"
+        display_name="&lt;color=#ff7e64&gt;高级：&lt;/color&gt;首选起始连通性"
+        description="Normally the starting planet for player factions is either completely random, or picked by the player in the map tab of the lobby. If you have Improved Generator selected though, you can use this option to guide the random algorithm to prefer starting planets with either more or less links."
+        requires_player_types="HumanEmpire,SpireInfusedEmpire,HumanArkEmpire,NecromancerEmpire"
+        is_advanced_setting="true"
+        sort_group="250"
+        setting_type="CustomDropdownArbitraryOptions"
+        arbitrary_options="Random,Farthest Deadend,Prefer Deadends,Fewer Links,Average Links,More Links,Always Most Links"
+        default_option="Random"
+        />
+
+    <custom_field
+        is_hidden="true"
+        name="Populator_PlayerHomeworld_RandomizeOnStart"
+        display_name="玩家母星：开始时随机化"
+        description="Normally the starting planet for player factions is picked and shown in the map tab of the lobby. If you have Improved Generator selected though, you can use this option to always re-random starting planets before the game begins."
+        requires_player_types="HumanEmpire,SpireInfusedEmpire,HumanArkEmpire,NecromancerEmpire"
+        is_advanced_setting="true"
+        sort_group="250"
+        setting_type="BoolToggle"
+        default="false"
+        />
+
+  </faction>
+
+</root>

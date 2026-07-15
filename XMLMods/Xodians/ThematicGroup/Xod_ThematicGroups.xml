@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <thematic_group_type 
+          name="Xodian" 
+          display_name="克赛迪安"
+          sort_order="50" 
+          group_type="Race"
+          description="The Xodia are intellegent mega-ships fleets that roam in search of resources."/>
+  
+</root>

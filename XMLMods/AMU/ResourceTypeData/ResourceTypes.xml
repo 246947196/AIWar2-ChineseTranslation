@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!-- Vanilla stuff (metal also is a sappers resource) -->
+	<resource_type name="Metal" display_name="Metal" description="Under 'Metal' we refer to the all the necessary elements to manufacture our ships, turrets, structures and other goods for our war efforts."
+		serialization_index="0" is_stockpiled="true" is_alternate_vanilla_resource="true" alternate_vanilla_resource_name="Metal" is_alternate_sappers_resource="true" alternate_sappers_resource_name="Metal" color_hex="ccccee" sprite="Res_Metal" sprite_should_not_be_colorized="false" />
+	
+	<resource_type name="Energy" display_name="Energy" description="In order to power our machines we extract and convert Dark Matter, then transmit the power through a highly effective warp network to reach our ships, even far behind enemy lines."
+		serialization_index="1" is_stockpiled="false" is_alternate_vanilla_resource="true" alternate_vanilla_resource_name="Energy" color_hex="ffde00" sprite="Res_Energy" sprite_should_not_be_colorized="false" />
+	
+	<resource_type name="Science" display_name="Science" description="The total free computational capacities of our FTL processor network. 'Spending' science is less trading a resource and more like allocating CPU power to a certain task or faction."
+		serialization_index="2" is_stockpiled="true" is_alternate_vanilla_resource="true" alternate_vanilla_resource_name="Science" color_hex="7ce9ff" sprite="Res_Science" sprite_should_not_be_colorized="false" />
+	
+	<resource_type name="Hacking" display_name="Hacking" description="These freely programmable, tiny nanomachines are used to direclty interface with the AI's systems, and thoug the AI quickly dispatches of them we are able to extract data in the meantime."
+		serialization_index="3" is_stockpiled="true" is_alternate_vanilla_resource="true" alternate_vanilla_resource_name="Hacking" color_hex="3de799" sprite="Res_Hack" sprite_should_not_be_colorized="false" />
+	
+	<resource_type name="Argon" display_name="Argon" description="Noble gas fuel required by any normal non-officer, non-elite ship line."
+		serialization_index="4" is_stockpiled="false" is_alternate_vanilla_resource="true" alternate_vanilla_resource_name="FuelArgon" color_hex="aaffff" sprite="" />
+	
+	<resource_type name="Radon" display_name="Radon" description="Noble gas fuel required by turrets and other defenses."
+		serialization_index="5" is_stockpiled="false" is_alternate_vanilla_resource="true" alternate_vanilla_resource_name="FuelRadon" color_hex="ffffaa" sprite="" />
+	
+	<resource_type name="Xenon" display_name="Xenon" description="Noble gas fuel required by any offficer or elite ship line."
+		serialization_index="6" is_stockpiled="false" is_alternate_vanilla_resource="true" alternate_vanilla_resource_name="FuelXenon" color_hex="ffaaff" sprite="" />
+
+
+	<!-- Player resources -->
+	<resource_type name="Essence" required_expansion_list="3_The_Neinzul_Abyss"
+	display_name="Essence" description="A mostly unknown biological energy source, predominantly contained within a species known as Elderlings."
+		serialization_index="7" is_stockpiled="true" is_alternate_custom_players_resource="true" alternate_player_resource_name="Essence" color_hex="e16cff" sprite="Res_NecromancerEssence" />
+	
+	
+	<!-- Dark Zenith -->
+	<resource_type name="Octiron" required_expansion_list="2_Zenith_Onslaught"
+	display_name="Octiron" description="A type of metal-equivalent of the Dark 天顶's home dimension that must be synthesized artificially and can't be found natural in our universe. The Dark 天顶 can use this material to construct ships and stuctures."
+		serialization_index="8" is_stockpiled="true" is_alternate_dark_zenith_resource="true" alternate_dark_zenith_resource_name="Metal" color_hex="d3d3d3" sprite="" />
+	
+	<resource_type name="Thaumite" required_expansion_list="2_Zenith_Onslaught"
+	display_name="Thaumite" description="The crystalline structure of Thaumite reacts uniquely to energies from different universes, separating the them like a prism. Our universes energies are reflected, causing less damage. The Dark 天顶 can use this material to enhance ships, making them stout."
+		serialization_index="9" is_stockpiled="true" is_alternate_dark_zenith_resource="true" alternate_dark_zenith_resource_name="Green" color_hex="10ff10" sprite="" />
+	
+	<resource_type name="Chelonium" required_expansion_list="2_Zenith_Onslaught"
+	display_name="Chelonium" description="A material causing an effect similar to gravity lenses, only inverted. Hulls enhanced with it cause attacks to redirect outwards and miss, unless fired from a range close enough. The Dark 天顶 can use this material to enhance ships, making them fortified."
+		serialization_index="10" is_stockpiled="true" is_alternate_dark_zenith_resource="true" alternate_dark_zenith_resource_name="Blue" color_hex="d7be69" sprite="" />
+	
+	<resource_type name="Alkahest" required_expansion_list="2_Zenith_Onslaught"
+	display_name="Alkahest" description="Named 'Space Oil' by our scientists Alkahest, if smeared onto ship hulls reduces the external interaction with our space-time. This results in more 高效 engines and sensor evasion. The Dark 天顶 can use this material to enhance ships, making them spirited."
+		serialization_index="11" is_stockpiled="true" is_alternate_dark_zenith_resource="true" alternate_dark_zenith_resource_name="White" color_hex="1020ff" sprite="" />
+	
+	<resource_type name="Izumite" required_expansion_list="2_Zenith_Onslaught"
+	display_name="Izumite" description="The 天顶 - Dark and not - have bodies working with materials similar to our hormones. Superchargers we suspect hurt their cognitive abilities but grant power, effectively what we do with Hacking nanomachines. The Dark 天顶 can use this material to enhance ships, making them enraged."
+		serialization_index="12" is_stockpiled="true" is_alternate_dark_zenith_resource="true" alternate_dark_zenith_resource_name="Red" color_hex="ff2010" sprite="" />
+	
+	<resource_type name="Skrith" required_expansion_list="2_Zenith_Onslaught"
+	display_name="Skrith" description="The purfified anti-particle to another universe's Dark Matter It's properties are mostly unknown to us, but it seems to disrupt our ship systems and cause havoc in all our technology. The Dark 天顶 can use this material to enhance ships, making them sinister."
+		serialization_index="13" is_stockpiled="true" is_alternate_dark_zenith_resource="true" alternate_dark_zenith_resource_name="Black" color_hex="223322" sprite="" />
+	
+	
+	<!-- Sappers (their metal already is the "normal" metal -->
+	<resource_type name="Bloodstone" required_expansion_list="3_The_Neinzul_Abyss"
+	display_name="Bloodstone" description="A crystal 灌注 with 宁苏 genetic material. Looking through it makes it look as though the world is bathed in alien blood and bring about 死亡 and slaughter in space, which is why some taken to calling it 'Curse Crystal'."
+		serialization_index="14" is_stockpiled="true" is_alternate_sappers_resource="true" alternate_sappers_resource_name="Bloodstone" color_hex="d3d3d3" sprite="" />
+	
+	<resource_type name="Moonstone" required_expansion_list="3_The_Neinzul_Abyss"
+	display_name="Moonstone" description="A crystal 灌注 with the energy of stellar background radiation. Its ability to siphon even the faintest of signals makes it very potent in creating self-sufficient constructs, which makes it powerful and sought-after by many factions."
+		serialization_index="15" is_stockpiled="true" is_alternate_sappers_resource="true" alternate_sappers_resource_name="Moonstone" color_hex="10ff10" sprite="" />
+	
+	
+	<!-- Civvies -->
+	<resource_type name="Atium" required_mod_list="SKCivilianIndustry"
+	display_name="Atium" description="Atium is a combustable metallic substance that seemingly allows for the formation of localized temporal entanglement, meaning one can see a foreshadowing of the near future. The 民用工业 can use this material to create Ambush-tech ships and turrets."
+		serialization_index="16" is_stockpiled="true" is_alternate_civilian_industries_resource="true" alternate_civilian_resource_name="Atium" color_hex="9a9a9a" sprite="" />
+	
+	<resource_type name="Saronite" required_mod_list="SKCivilianIndustry"
+	 display_name="Saronite" description="The elementary structure of Saronite is unknown even today. It can only be transmuted by someone with enough wrath, and any projectile forged with it will seek out the target of said wrath even over incredible distance. The 民用工业 can use this material to create Artillery-tech ships and turrets."
+		serialization_index="17" is_stockpiled="true" is_alternate_civilian_industries_resource="true" alternate_civilian_resource_name="Saronite" color_hex="43464b" sprite="" />
+	
+	<resource_type name="Collapsium" required_mod_list="SKCivilianIndustry"
+	 display_name="Collapsium" description="An artificial material imploding space itself by converting dark energy into matter at the point of impact, taking all other forms of surrounding matter with it. The 民用工业 can use this material to create Disruptive-tech ships and turrets."
+		serialization_index="18" is_stockpiled="true" is_alternate_civilian_industries_resource="true" alternate_civilian_resource_name="Collapsium" color_hex="e0ca8b" sprite="" />
+	
+	<resource_type name="Byzanium" required_mod_list="SKCivilianIndustry"
+	 display_name="Byzanium" description="A highly radioactive atom with the periodic number 4976, unique because it retains a a halflife of 4 decades. Its fission-based power yield surpasses even higher-level atomic fusion. The 民用工业 can use this material to create Piercing-tech ships and turrets."
+		serialization_index="19" is_stockpiled="true" is_alternate_civilian_industries_resource="true" alternate_civilian_resource_name="Byzanium" color_hex="72eb6e" sprite="" />
+	
+	<resource_type name="Orichalcum" required_mod_list="SKCivilianIndustry"
+	 display_name="Orichalcum" description="While displaying no outstanding properties Orichalcum surpasses our best metal alloys in all regards: Sturdier, lighter, stronger, more resistant to heat. A great 建造 material. The 民用工业 can use this material to create Core-tech ships and turrets."
+		serialization_index="20" is_stockpiled="true" is_alternate_civilian_industries_resource="true" alternate_civilian_resource_name="Orichalcum" color_hex="e8e28b" sprite="" />
+	
+	<resource_type name="Carbonadium" required_mod_list="SKCivilianIndustry"
+	 display_name="Carbonadium" description="One of the hardest materials ever found, even forging it requires heat and gravity normally only found inside of stars. But once create a ship from Carbonadium is extremely tough to kill. The 民用工业 can use this material to create Melee-tech ships and turrets."
+		serialization_index="21" is_stockpiled="true" is_alternate_civilian_industries_resource="true" alternate_civilian_resource_name="Carbonadium" color_hex="52689c" sprite="" />
+	
+	<resource_type name="Inerton" required_mod_list="SKCivilianIndustry"
+	 display_name="Inerton" description="A substance that seemingly defies a number of laws of nature. Up to a saturation point it absorbs the energy from all sources, and directing the energy released when saturated releases pure kinetic energy. The 民用工业 can use this material to create 突袭-tech ships and turrets."
+		serialization_index="22" is_stockpiled="true" is_alternate_civilian_industries_resource="true" alternate_civilian_resource_name="Inerton" color_hex="8f1579" sprite="" />
+	
+	<resource_type name="Naqahdah" required_mod_list="SKCivilianIndustry"
+	 display_name="Naqahdah" description="Extremely volatile mineral. Applying too much pressure or electrical current will immediately release an explosive burst of power, capable of downright annihilating anything in range. The 民用工业 can use this material to create Splash-tech ships and turrets."
+		serialization_index="23" is_stockpiled="true" is_alternate_civilian_industries_resource="true" alternate_civilian_resource_name="Naqahdah" color_hex="a83e3e" sprite="" />
+	
+	<resource_type name="Frinkonium" required_mod_list="SKCivilianIndustry"
+	 display_name="Frinkonium" description="This material changes its properties when observed to actively avoid observation - no wonder it was unknown for a very long time. While its observation-evasion isn't perfect hulls made from it are hard to detect. The 民用工业 can use this material to create Subterfuge-tech ships and turrets."
+		serialization_index="24" is_stockpiled="true" is_alternate_civilian_industries_resource="true" alternate_civilian_resource_name="Frinkonium" color_hex="10adb3" sprite="" />
+	
+	<resource_type name="Computronium" required_mod_list="SKCivilianIndustry"
+	 display_name="Computronium" description="Matter that consists almost entirely out of sub-atomic nanomachines. They can be used to make 'fake' atoms, which in return allows for morphing, self-shaping, highly complex internal structures. The 民用工业 can use this material to create Exotic-tech ships and turrets."
+		serialization_index="25" is_stockpiled="true" is_alternate_civilian_industries_resource="true" alternate_civilian_resource_name="Computronium" color_hex="c2ffc6" sprite="" />
+
+
+	<!-- Resource Ideas -->
+	<resource_type name="Antihydrogen" display_name="Antihydrogen" description="The antimatter particle to hydrogen, consiting out of a positron (anti-electron) orbiting anti-proton. Completely annihilates into pure energy when combined with normal hydrogen, perfect for energy production and weapons."
+		serialization_index="26" is_stockpiled="true" color_hex="ababce" sprite="" />
+	
+	<resource_type name="NeutroniumCrystals" display_name="Neutronium Crystals" description="Neutronium Crystals are an extraordinarily dense and hard substance comprised of entirely neutrons. It is unaffected by magnetism, blocks most forms of energy and thus is well suited for strong armor."
+		serialization_index="27" is_stockpiled="true" color_hex="ce35ce" sprite="" />
+	
+	<resource_type name="Microsingularities" display_name="Microsingularities" description="Though dangerous the power to bend space and time harnessed from microscopic black holes grants us artificial gravity and gravity manipulation, as well as warp and teleportation technology."
+		serialization_index="28" is_stockpiled="true" color_hex="997777" sprite="" />
+	
+	<resource_type name="HyperchargedTachyons" display_name="Hypercharged Tachyons" description="When further energized Tachyons become less likely to pierce matter and instead reflect or get absorbed, making it possible to detect ships with exceptional albedo as well as allowing for FTL data and matter transmission technology."
+		serialization_index="29" is_stockpiled="true" color_hex="fe35ce" sprite="" />
+	
+	<resource_type name="DarkEnergy" display_name="Dark Energy" description="Practically a pocket 'compressed empty space' the value of Dark Energy is in its property to allow for dimensional transfer and 'impossible' space technology (= objects that are larger or smaller on the inside than outside)."
+		serialization_index="30" is_stockpiled="true" color_hex="88face" sprite="" />
+</root>

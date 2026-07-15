@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <galaxy_setting category="DysonSidekick" name="DysonAutoDefend" display_name="Auto-Defend Mode" changeable_during_gameplay="true"
+                  type="CustomDropdownArbitraryOptions" arbitrary_options="Disabled,Defense Only,Full Assistance" default_option="Disabled"
+        description="You can opt into having your dyson fleets fight automatically. The 戴森 Fleets will assist you (or other allied factions), but it will not attack enemy planets or targets on its own.
+
+Audo-Defend mode is automatically disabled if a player is controlling the faction; this makes it more efficient to control as a sidekick.
+
+Defense Only will mean that the 戴森's fleets will not go to enemy planets. Full Assistance allows them to join you in enemy territory.
+
+Flagships in Auto-Defend mode will patrol between your Shipyards when there are no battles to help in.
+
+Note: If you are setting your 旗舰 to Auto-Defend Mode, you will probably want to make sure they are in pursuit mode.
+
+This allows for the 戴森 Sidekick to act as a 'Vassal' to some other player faction, helping automatically in combat/acting to defend your planets. Another player can then swap using F4 to the sidekick periodically to make economic choices."/>
+
+  <galaxy_setting category="DysonSidekick"  name="BoringDysonNames" display_name="Strongholds Named After Planets" type="BoolToggle" 
+                  default="false" changeable_during_gameplay="true"
+                  description="When this is enabled, new strongholds and their 旗舰 will be named after their planets, instead of having thematic names" >
+  </galaxy_setting>
+
+  <galaxy_setting category="DysonSidekick"  name="ReaperRapidSpawn" display_name="Debug: Spawn some Reaper attacks much more often" type="BoolToggle" 
+                  default="false" changeable_during_gameplay="true"
+                  description="The 收割者 will attack much more often. You will die quickly, this is for debugging/testing." >
+  </galaxy_setting>
+
+  <!-- Necromancer -->
+  <galaxy_setting category="Necromancer"  name="BonusElderlings" display_name="Spawn Additional Elderlings" type="BoolToggle" 
+                  default="false" changeable_during_gameplay="true"
+                  description="There will be more elderlings, and they will level up faster. The goal is to allow the player more access to 精华. This is a lesser version of Challenger Elderlings, and can stack with it to make the Elderlings extra fearsome" 
+                  optional_dll_name="AIWarExternalCode" optional_type_name="Arcen.AIW2.External.GalaxySetting_Necromancer"
+                  >
+  </galaxy_setting>
+
+  <galaxy_setting category="Necromancer"  name="ShieldTemplar" display_name="Shield Templar" type="BoolToggle" 
+                  default="false" changeable_during_gameplay="true"
+                  description="The templar will focus more heavily on defensive power, but be less powerful on the attack." 
+                  optional_dll_name="AIWarExternalCode" optional_type_name="Arcen.AIW2.External.GalaxySetting_Necromancer"
+                  >
+  </galaxy_setting>
+
+  <galaxy_setting category="Necromancer" name="ZombiesGoToNecromancer" display_name="Sandbox: Zombies Go To Necromancer" type="BoolToggle" default="false" changeable_during_gameplay="true"
+        description="With this enabled, when Anti-AI zombies would be created, the game instead gives these units to the 死灵法师 Faction. Only meaningful if the 死灵法师 is enabled. Makes the 死灵法师 much, much more powerful." 
+        optional_dll_name="AIWarExternalCode" optional_type_name="Arcen.AIW2.External.GalaxySetting_Necromancer"
+        >
+      <harshness_override min_campaign_harshness_to_apply="200" fixed_value="false" />
+  </galaxy_setting>
+
+  <!-- Dark Zenith Sidekick -->
+      <galaxy_setting category="DarkZenith"  name="PlayerControllingDZ" display_name="Under Player Control" type="BoolToggle" default="true"
+                    changeable_during_gameplay="true"
+        description="With this enabled, the Dark 天顶 military is controlled by the player. When disabled, the Dark 天顶 military will play with its typical intelligence." />
+    <galaxy_setting category="DarkZenith"  name="ShipsRallyToNearestFlagshipDZ" display_name="Created Ships Rally To Flagship" type="BoolToggle" default="true"
+                    changeable_during_gameplay="true"
+        description="When a new DZ ship is created, it rally to its 旗舰. This requires the DZ to be under player control; if the DZ is not under player control this setting is ignored.
+
+You probably want this on, unless you are striking behind enemy lines." />
+
+    <!-- Armada Empire -->
+    <galaxy_setting category="ArmadaEmpire"  name="BoringArmadaNames" display_name="Starbases Named After Planets" type="BoolToggle" 
+                  default="true" changeable_during_gameplay="true"
+                  description="When this is enabled, new Starbases and their 旗舰 will be named after their planets, instead of having thematic names" >
+  </galaxy_setting>
+
+  <galaxy_setting category="ArmadaEmpire" name="ArmadaAutoDefend" display_name="Auto-Defend Mode" changeable_during_gameplay="true"
+                  type="CustomDropdownArbitraryOptions" arbitrary_options="Disabled,Defense Only,Full Assistance" default_option="Disabled"
+        description="You can opt into having your 无敌舰队 fleets fight automatically. The 无敌舰队 Fleets will assist you (or other allied factions), but it will not attack enemy planets or targets on its own.
+
+Defense Only will mean that the 戴森's fleets will not go to enemy planets. Full Assistance allows them to join you in enemy territory.
+
+Flagships in Auto-Defend mode will patrol between your Shipyards when there are no battles to help in.
+
+Note: If you are setting your 旗舰 to Auto-Defend Mode, you will probably want to make sure they are in pursuit mode.
+
+This allows for the 无敌舰队 Empire to act as a 'Vassal' to some other player faction, helping automatically in combat/acting to defend your planets. Another player can then swap using F4 to the sidekick periodically to make economic choices."/>
+
+  <!--
+  <galaxy_setting category="Balance"  name="ExoWarUnitsInExos" display_name="Allow Exos to spawn ExoWar Units" type="BoolToggle" 
+                  default="false" changeable_during_gameplay="true"
+                  description="When this is enabled, AI waves Exogalatic Waves can sometimes spawn Exo-War units" >
+  </galaxy_setting>
+  -->
+
+  <galaxy_setting name="MoreARSOptions" category="Balance" is_advanced_setting="true" subcategory="HumanBalance" display_name="More ARS and TSS options" type="BoolToggle" default="false"
+           description="Normally you get 4 options per ARS or TSS. With this option enabled you will have more choices." >
+  </galaxy_setting>
+
+</root>

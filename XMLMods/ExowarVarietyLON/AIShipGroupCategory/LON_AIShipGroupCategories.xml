@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  
+  <!--The purpose of these "AI Ship Group Categories" (there's a mouthful)
+      is for the AIs to be able to reference them.  AIs specify which 
+      category (as shown below) they wish to use for a given purpose.
+      
+      And THEN, whichever actual AI Ship Groups have inserted themselves 
+      into that category become usable by that AI in the circumstances that
+      the AI has chosen the category for.
+      
+      For example: a bunch of AI Ship Groups like to put themselves in the "SimpleWaves"
+      category.  There's a single AI type that uses these simpler types of waves
+      in place of the usual "AnyWaves" that most ofthe AI types use.-->
+  
+
+  	<ship_group_cat name="LONRearAdmiralDireGuardians" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss"/>
+  	<ship_group_cat name="LONRearAdmiralWardenTotallyADireGuardianTier" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss"/>
+  	<ship_group_cat name="LONRearAdmiralExoLeaders" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss"/>
+  	<ship_group_cat name="LONRearAdmiralExoWaves" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss"/>
+	<ship_group_cat name="LONRearAdmiral_SingularFreakySurprises" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss"/>
+ 
+</root>

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+///人工智能背景故事///
+
+  <journal name="Base_Lore_TheAI" sidebar_text="&lt;color=#a1ffa1&gt;简报：&lt;/color&gt; {FactionColor}人工智能&lt;/color&gt;"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+		   text_replacement_related_player_name="true"
+           chat_text="{FactionColor}欢迎登舰，指挥官！&lt;/color&gt;"
+           is_partial_record="true"  
+           full_text="发件人：军官赫尔曼·韦德
+舰队指挥部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，让我跟你直说吧。
+
+我们输掉了一场你甚至不知道我们一直在打的战争。你是人类有史以来最杰出的军事头脑，正因如此，你被从低温休眠中唤醒，作为我们的最后手段。
+
+由于你在冷冻期间，你可能不知道的是，我们的科学家和工程师一直在努力制造自动化战争机器。在过去的一个世纪里，我们已经转向使用高度计算机化技术创建和操作的无人驾驶舰船。随着从远处指挥这些机械舰队的能力，使用人工智能的想法应运而生。这些决定并非轻率做出，我们认为所有适当的安全检查都已到位，但我想你能猜到发生了什么。
+
+我们创造的人工智能指挥官如此迅速、如此有条理，以至于我们当代的人类指挥官中没有谁能够匹敌。当时甚至就有关于是否要将像你这样的指挥官从休眠中移除并让你们继续生活的激烈辩论。谢天谢地，我们决定将你们作为后备保留。当人工智能决定背叛我们时，它在几天之内就将我们消灭了。
+
+那是三周前的事了，而它已经视我们为不屑一顾，甚至不值得彻底铲除。人工智能将其注意力转向别处，转向银河系之外的某样东西。我们不知道它在做什么，不知道它在那里发现了什么，但这可能为我们提供了反击的唯一机会。
+
+你现在处于留给我们人类的最后一个微小的银河角落，尽管我们认为可能还有一些被囚禁的定居点仍然幸存。我说这是我们最后的机会，绝非夸张。人工智能目前对我们可怜的最后部队不感兴趣，但它不知道你的存在——当它看到我们的舰队不断壮大，并由能干、聪明的指挥官指挥时，它将会做出反应。你越是侵犯它的领土，越是展示你的力量，它就越有可能碾压我们。
+
+人工智能的部队数量是我们的万倍以上，所以直接突击就是自杀。我们没有资源，几乎没有舰船，而我们最先进硬件的蓝图已落入人工智能之手。你的任务是利用我们仅有的一点资源，以你所能的方式将其转化为胜利。从人工智能手中夺回我们的资源，窃取我们曾经轻松建造的舰船的知识，并在找到数据中心时将其摧毁。最重要的是，找到并摧毁其核心指挥站以彻底消灭它。
+
+我们已经被打得跪地求饶，但我们不会坐视我们的物种灭亡。你是我们所能培养出的最杰出的军事头脑，所以如果你不能获胜，我们就真的完了。在外面要用脑子，确保不让情绪或侵略性蒙蔽你的良好判断。聪明地战斗。记住你的战术训练以及大局观。在所有人都失败过的地方取得胜利。" />
+
+  <journal name="Base_Lore_Warden" sidebar_text="&lt;color=#a1ffa1&gt;简报：&lt;/color&gt; {FactionColor}守卫舰队&lt;/color&gt;"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+		   text_replacement_related_player_name="true"
+           chat_text="{FactionColor}守卫舰队&lt;/color&gt; 已被目击"
+           is_partial_record="true"  
+           full_text="发件人：蒂莫西·科波菲尔博士
+人工智能研发部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+我们检测到一个人工智能子程序，目前被称为"守卫舰队"，因其几乎完全是防御性的行为。
+
+当前数据似乎表明它是一支持续活跃的部队，不断被补充到某个看不见的数量。随着我们对人工智能的惊动程度增加，这个数量似乎也会增加。
+
+由于其强烈的防御性行为，"守卫舰队"似乎不太可能直接攻击我们，甚至可能完全避开我们的世界，这或许我们可以利用这一点，防止它在一个地方集结全部力量。" />
+
+  <journal name="Base_Lore_Hunter" sidebar_text="&lt;color=#a1ffa1&gt;简报：&lt;/color&gt; {FactionColor}猎手舰队&lt;/color&gt;"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+		   text_replacement_related_player_name="true"
+           chat_text="{FactionColor}猎手舰队&lt;/color&gt; 已被目击"
+           is_partial_record="true"  
+           full_text="发件人：蒂莫西·科波菲尔博士
+人工智能研发部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+我们发现了目前称之为"猎手舰队"的人工智能子程序，因其展现出的类似捕食者的侵略性行为。
+
+我们目前的理论是，当前不处于守卫任务且已闲置一段时间的人工智能单位被挂载到此子程序下，并且比单位自身行动时更主动、更智能地使用，前提是它们尚未被挂载。
+
+看来对我们有利的做法是尽可能多地摧毁舰船，在它们可能逃脱、加入这个"猎手舰队"并在以后成为更大的问题之前。" />
+
+    <journal name="Base_Lore_Praetorian" sidebar_text="&lt;color=#a1ffa1&gt;简报：&lt;/color&gt; {FactionColor}禁卫军&lt;/color&gt;"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+		   text_replacement_related_player_name="true"
+           chat_text="{FactionColor}禁卫军&lt;/color&gt; 已被目击"
+           is_partial_record="true"  
+           full_text="发件人：蒂莫西·科波菲尔博士
+人工智能研发部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+我们注意到另一个人工智能子程序，被称为"禁卫军"。
+
+这一个似乎与"守卫舰队"类似，但限制在人工智能"霸主"周围的区域，如果我们在接近时将保护它。
+
+它们似乎具有与"守卫舰队"相同的持续增援能力和上限。
+
+最后一点。我们预计如果攻击"霸主"，会有强烈的反应，可能会从银河系其他地方调集部队前来支援。" />
+
+    <journal name="Base_Lore_Reserves" sidebar_text="&lt;color=#a1ffa1&gt;简报：&lt;/color&gt; {FactionColor}人工智能储备&lt;/color&gt;"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+		   text_replacement_related_player_name="true"
+           chat_text="{FactionColor}人工智能储备&lt;/color&gt; 正在到来"
+           is_partial_record="true"  
+           full_text="发件人：蒂莫西·科波菲尔博士
+人工智能研发部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+看来我们的深入打击（在远离我们任何世界的敌方深处攻击）正触发人工智能的防御响应。我们检测到多个虫洞正在打开，以及正在接近的舰船信号。
+
+目前看来，靠近我们自己的领土会导致响应部队通过同样的虫洞撤退。然而，如果我们继续深入打击，我们怀疑响应只会增加。" />
+
+  <journal name="Base_Lore_RiskAnalyzers" sidebar_text="&lt;color=#a1ffa1&gt;简报：&lt;/color&gt; {FactionColor}风险分析器&lt;/color&gt;"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+		   text_replacement_related_player_name="true"
+        is_partial_record="true"  
+           full_text="发件人：蒂莫西·科波菲尔博士
+人工智能研发部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+我们注意到风险分析器是人工智能的设备，允许它们定期扫描银河系寻找敌方部队，并在发现敌人时提高 AIP。我们有理论认为摧毁风险分析器会导致一次性 AIP 提升，但不会随时间增加。然而，捕获风险分析器应该能让我们向人工智能提供关于我们有多和平和无威胁的错误数据，从而降低 AIP。
+
+风险分析器还将允许人工智能向其在此处的敌人发送不频繁的河外打击力量。捕获风险分析器会使这些打击力量更频繁，并且它们会优先攻击任何被捕获的风险分析器。" />
+
+  <journal name="Base_Lore_Scourge" sidebar_text="&lt;color=#a1ffa1&gt;简报：&lt;/color&gt; {FactionColor}天灾&lt;/color&gt;"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+		   text_replacement_related_player_name="true"
+        is_partial_record="true"  
+           full_text="发件人：蒂莫西·科波菲尔博士
+人工智能研发部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+在我们输掉第一次战争后的某个时候，人工智能感到需要一支附属部队来消灭小的麻烦（比如我们），而不必用它的主要处理器来处理琐事。它似乎将从（可能来自）其他星系征服的各种种族进行了基因工程改造，将它们融合成一支新的强大力量来粉碎其敌人。这可能是个坏消息。
+
+我们将其称为天灾，它使用"生成器"生产"新信徒"，新信徒进化成"战士"和"建造者"。天灾可以在军械库升级其单位。随着这些建筑的等级随时间提升，它们变得更强大，因此主动摧毁敌方天灾的基础设施（或保护盟友的基础设施）对我们的生存至关重要。" />
+
+///天顶背景故事///
+
+  <journal name="Base_Lore_Zenith" sidebar_text="&lt;color=#a1ffa1&gt;简报：&lt;/color&gt; {FactionColor}天顶&lt;/color&gt;"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+		   text_replacement_related_player_name="true"
+        is_partial_record="true"  
+           full_text="发件人：萨曼莎·韦格曼博士
+天顶历史学家 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+我相信对已灭绝的天顶种族进行快速回顾将为你对抗人工智能的战斗提供一些有用的信息。
+
+天顶外星人是一个真正古老的种族，直到几百万年前，他们还是我们银河系大部分地区无可争议的主人。然而，数十万年前，他们的文明崩溃了，银河系中散落着他们昔日辉煌的遗迹。
+
+天顶帝国毁灭的确切原因我们目前尚不清楚，但可以确定的是，它并未完全消灭该种族的所有个体。相反，它使他们分裂并散落到群星之中。有些与其他物种进行贸易，无论有机物还是其他。有些只是毫无道德地游荡，吞噬着一切。
+
+该种族留下的大部分是破碎的残骸，我们称之为"傀儡"，它们在很大程度上……对于天顶来说，就像机器人对于我们一样。这些傀儡拥有其旧主人的形状，但没有独立的思维和自由意志。
+
+所有天顶自动机都包含机械和有机部分，并且它们确实包含接近知觉的东西，但它们从未被设计为独立行动者。它们不是公民。它们没有文化，没有超越那些千年前分配给它们的任务的目标。
+
+存活的零星天顶个体要罕见得多，但确实存在。
+
+解开天顶的历史（如果有任何残留的话）可能需要几代人的工作。目前我们知道一些事情，但失去的东西——以及仍然存在但被隐藏的东西——的范围几乎是不可想象的。
+
+我们确实知道，他们的公民从不超过一辆大型陆地车辆的大小开始，然后在几十年的时间里长到一艘中型星际飞船的体积。由于一种独特的生物学特性——他们不断用机械部件增强自己——他们似乎能够在没有障碍的情况下进出大气层，并在真空中生存。根据他们希望承担的功能，公民可以将自己塑造成许多不同的用途，从战争到科学或哲学。" />
+
+    <journal name="Expansion_Lore_Zenith" sidebar_text="&lt;color=#a1ffa1&gt;简报：&lt;/color&gt; {FactionColor}跨维度天顶&lt;/color&gt;"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+		   text_replacement_related_player_name="true"
+        is_partial_record="true"  
+           full_text="发件人：萨曼莎·韦格曼博士
+天顶历史学家 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+如你所知，天顶长期以来一直被认为是一个完全沦为废墟的文明。他们的战争机器和自动机散布在我们的银河系，但少数幸存的活着的知觉公民一直被认为是孤独的或几乎野性的碎片。
+
+但现在有新的情况发生了。我不知道是什么，但来自多个处于全盛时期的天顶文明的公民正在被发现。他们从哪里来，或者一直在哪里？
+
+几年前弗兰斯·贝克特提出的理论似乎最可能是真的——尽管这说起来很奇怪——这些个体来自多元宇宙中的相邻宇宙。多元宇宙本身的存在几个世纪以来已经被科学家们无可辩驳地证实，但这将是第一次观察到任何事物在宇宙之间穿行。
+
+可能有另一种解释，这些新的天顶人由于某种未知原因一直隐藏在我们银河系中显而易见的地方。但这些似乎只是仍然存在的更宏大帝国的一小部分，因此最简单的解释是——奇怪的是——要看向多元宇宙。" />
+
+///尖塔背景故事///
+
+  <journal name="Base_Lore_Spire" sidebar_text="{FactionColor}尖塔&lt;/color&gt;：首次遭遇"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+		   text_replacement_related_player_name="true"
+        is_partial_record="true"  
+           full_text="发件人：首席情报官雨果·道森
+情报部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+我们发现了一种岩石/水晶生物的残余物，它们以能量为食，如果有足够能量可以非常快速地生长和繁殖。我们还拾取到一个非常微弱的信号，但对我们来说只是一些胡言乱语。它是从那些残余物中发出的。我们不知道它们是什么，也不知道它们从哪里来。我们不知道它们在说什么，甚至不知道它们是否有知觉，但我们认为我们可以利用它们或请求它们帮助对抗人工智能。这可能有很大的风险，但也许值得？你来决定，指挥官。研究团队已待命，如果你决定继续的话。
+
+我们的情报还发现，人工智能捕获了许多由相同岩石/水晶材料制成的未知反应堆，并在隐秘的研究实验室中尝试利用它们的能量。人工智能打算用它们做什么？很难说，但如果人工智能对它们感兴趣，对我们来说绝不可能是好事。我们还发现了一些隐藏的未知遗物散落在银河系各处，来自过去的战斗，似乎人工智能也在出于未知原因寻找它们。" />
+
+</root>

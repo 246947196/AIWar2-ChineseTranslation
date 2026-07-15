@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+    <!-- 
+        visuals_bundle="bonus" visuals="assets/effects/Crystal_Shot.prefab" 
+        effects_death_bundle="bonus" effects_death="assets/effects/flakexplosion_new.prefab"
+    
+    <entity name="Ds_Shot_DetonatingLightning"
+            category="Shot"
+
+            visuals_scale_multiplier="100.0" 
+            size_scale="4.0"
+            
+            visuals="assets/_finalgamemeshes/blankshipsootheraddonscandrawalone.prefab"
+            ship_skips_traditional_rendering="true"
+
+            effects_death_bundle="bonus" 
+            effects_death="assets/effects/flakexplosion_new.prefab"
+            
+            shot_fired_sfx="Lightning_Firing" 
+            shot_hitting_sfx="Lightning_Hitting"
+            >
+    </entity>
+-->
+    <!-- <material  name="LightningExplosionGuardianP1"
+    >
+    <prop name="DeathAmount" value="0" />
+    <prop name="EmissionStrength" value="10.5" />
+    <prop name="EmissionColorFinal" value="10,0,0,1" />
+    <prop name="AlbedoColor" value="10,1,1,1" />
+</material>
+<material  name="LightningExplosionGuardianP2"
+    >
+    <prop name="DeathAmount" value="0" />
+    <prop name="EmissionStrength" value="10.5" />
+    <prop name="EmissionColorFinal" value="10,0,0,1" />
+    <prop name="AlbedoColor" value="10,1,1,1" />
+</material>
+<material  name="LightningExplosionGuardianP3"
+    >
+    <prop name="DeathAmount" value="0" />
+    <prop name="EmissionStrength" value="10.5" />
+    <prop name="EmissionColorFinal" value="10,0,0,1" />
+    <prop name="AlbedoColor" value="10,1,1,1" />
+</material> -->
+
+    <entity name="Ds_Glowball_Shot"
+            category="Shot"
+
+            size_scale="1"
+            visuals_scale_multiplier="10"
+            visuals_bundle="aiw2_lines_shots" visuals="assets/visualshotsandlines/shots/simplebulletsbyspeed/invisiblebullet.prefab"
+            addon_object_or_particle_field="Glowball" 
+            addon_object_or_particle_field_scale="50" 
+            addon_object_or_particle_field_y_offset="0"
+
+            shot_fired_sfx="ExplosivePopLarger_Firing" 
+            shot_hitting_sfx="ExplosivePopLarger_Hitting"
+            />
+
+    <entity name="Ds_Shot_Gatling"
+            category="Shot"
+
+            visuals_scale_multiplier="2" 
+            size_scale="0.1"
+            visuals_bundle="aiwar2goodiebox" 
+            visuals="assets/arcenbundle/shots/new/paralysisprongedshot_blue.prefab"
+            shot_fired_sfx="ExplosivePopLarger_Firing" 
+            shot_hitting_sfx="ExplosivePopLarger_Hitting"
+            />
+  
+</root>

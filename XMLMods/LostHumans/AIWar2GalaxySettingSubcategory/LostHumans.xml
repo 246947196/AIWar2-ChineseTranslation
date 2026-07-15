@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<setting_subcategory parent="LostHumans" name="EnableFeatures" display_name="Enable Features" color="46f0ff"
+		description="Enable different features of 失落人类s."/>
+
+	<setting_subcategory parent="LostHumans" name="Travelers" display_name="旅行者" color="46f0ff"
+		description="Lone NPC ships that wander the galaxy, occasionally responding to your presence."/>
+
+	<setting_subcategory parent="LostHumans" name="LostColonies" display_name="失落殖民地" color="46f0ff"
+		description="Occasional bastions of 人类 civilization that request your assistance. Ignore at your peril."/>
+
+	<setting_subcategory parent="LostHumans" name="Rogues" display_name="浪客" color="46f0ff"
+		description="Lone NPC ships that wander the galaxy, stealing ship designs from the AI."/>
+
+	<setting_subcategory parent="LostHumans" name="ConstructionConvoys" display_name="建造护航队s" color="46f0ff"
+		description="A collection of NPC Ships that fly across a predefined galaxy path, building units for planet owners on their way."/>
+
+	<setting_subcategory parent="LostHumans" name="ScourgeLabs" display_name="天灾实验室s" color="46f0ff"
+		description="Powerful weaponized labs that occasionally defect from the AI. Ignore at your peril."/>
+
+</root>

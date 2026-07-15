@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!-- Darkers -->
+	<teamcolor color_hex="400020" name="rp402" display_name="深泰尔紫" />
+	<teamcolor color_hex="400000" name="rp400" display_name="深红" />
+	<teamcolor color_hex="402000" name="rp420" display_name="深棕" />
+	<teamcolor color_hex="403000" name="rp430" display_name="深琥珀" />
+	<teamcolor color_hex="404000" name="rp440" display_name="深黄" />
+	<teamcolor color_hex="204000" name="rp240" display_name="深浅绿" />
+	<teamcolor color_hex="004000" name="rp040" display_name="深绿" />
+	<teamcolor color_hex="004030" name="rp043" display_name="深海" />
+	<teamcolor color_hex="004040" name="rp044" display_name="深青" />
+	<teamcolor color_hex="002040" name="rp024" display_name="深硫酸蓝" />
+	<teamcolor color_hex="000040" name="rp004" display_name="深蓝" />
+	<teamcolor color_hex="200040" name="rp204" display_name="深紫罗兰" />
+	<teamcolor color_hex="400040" name="rp404" display_name="深紫" />
+	
+	<!-- Darks -->
+	<teamcolor color_hex="660033" name="rp603" display_name="泰尔紫" />
+	<teamcolor color_hex="a00050" name="rpa05" />
+	<teamcolor color_hex="7f0000" name="rp800" display_name="栗色" />
+	<teamcolor color_hex="7f4000" name="rp840" display_name="棕色" />
+	
+	<teamcolor color_hex="7f6000" name="rp860" display_name="暗琥珀" />
+	<teamcolor color_hex="7f7f00" name="rp770" display_name="暗黄" />
+	
+	<teamcolor color_hex="407f00" name="rp480" display_name="暗荧光绿" />
+	<teamcolor color_hex="009000" name="rp090" display_name="伊斯兰绿" />
+	<teamcolor color_hex="007f40" name="rp084" display_name="池塘绿" />
+	
+	<teamcolor color_hex="007f7f" name="rp077" display_name="青色" />
+	<teamcolor color_hex="00607f" name="rp068"/>
+	
+	<teamcolor color_hex="00407f" name="rp048" display_name="暗硫酸蓝" />
+	<teamcolor color_hex="00207f" name="rp028"/>
+	<teamcolor color_hex="00007f" name="rp008" display_name="暗蓝" />
+	<teamcolor color_hex="20007f" name="rp208" display_name="靛蓝" />
+	<teamcolor color_hex="40007f" name="rp408" display_name="暗紫罗兰" />
+	
+	<teamcolor color_hex="60007f" name="rp608"/>
+	<teamcolor color_hex="7f007f" name="rp707" display_name="狂欢紫" />
+	<!-- Mid-Darks -->
+	
+	<teamcolor color_hex="c00060" name="rpc06" display_name="中粉" />
+	<teamcolor color_hex="c00000" name="rpc00" display_name="中红" />
+	<teamcolor color_hex="c06000" name="rpc60" display_name="中橙" />
+	
+	<teamcolor color_hex="d07f30" name="rpd83" display_name="青铜" />
+	
+	<teamcolor color_hex="c09000" name="rpc90" display_name="中琥珀" />
+	<teamcolor color_hex="c0c000" name="rpcc0" display_name="中黄" />
+	<teamcolor color_hex="90c000" name="rp9c0" display_name="中霓虹绿" />
+	
+	<teamcolor color_hex="60c000" name="rp6c0" display_name="中荧光绿" />
+	<teamcolor color_hex="00c000" name="rp0c0" display_name="中绿" />
+	<teamcolor color_hex="00c060" name="rp0c6" display_name="中海绿" />
+	
+	<teamcolor color_hex="00c090" name="rp0c9" />
+	<teamcolor color_hex="00c0c0" name="rp0cc" display_name="中青" />
+	<teamcolor color_hex="0090c0" name="rp09c" />
+	
+	<teamcolor color_hex="0060c0" name="rp06c" display_name="中硫酸蓝" />
+	<teamcolor color_hex="0030c0" name="rp03c" />
+	<teamcolor color_hex="0000c0" name="rp00c" display_name="中蓝" />
+	<teamcolor color_hex="3000c0" name="rp30c" />
+	<teamcolor color_hex="6000c0" name="rp60c" display_name="中紫罗兰" />
+	
+	<teamcolor color_hex="9000c0" name="rp90c" />
+	<teamcolor color_hex="c000c0" name="rpc0c" display_name="中紫" />
+	<teamcolor color_hex="c00090" name="rpc09" />
+	
+	<!-- Vivids -->
+	<teamcolor color_hex="ff007f" name="rpf08" display_name="热粉" />
+	<teamcolor color_hex="ff0000" name="rpf00" display_name="RGB红" />
+	<teamcolor color_hex="ff4000" name="rpf40" display_name="航空橙" />
+	<teamcolor color_hex="ff7f00" name="rpf80" display_name="安全橙" />
+	
+	<teamcolor color_hex="ffa000" name="rpfa0" display_name="橙色" />
+	<teamcolor color_hex="ffc000" name="rpfc0" display_name="琥珀色" />
+	<teamcolor color_hex="ffff00" name="rpff0" display_name="RGB黄" />
+	<teamcolor color_hex="c0ff00" name="rpcf0" display_name="霓虹绿" />
+	
+	<teamcolor color_hex="7fff00" name="rp8f0" display_name="黄绿色" />
+	<teamcolor color_hex="00ff00" name="rp0f0" display_name="RGB绿" />
+	<teamcolor color_hex="00ff7f" name="rp0f8" display_name="海绿" />
+	
+	<teamcolor color_hex="00ffc0" name="rp0fc" />
+	<teamcolor color_hex="00ffff" name="rp0ff" display_name="RGB青" />
+	<teamcolor color_hex="00c0ff" name="rp0cf" />
+	
+	<teamcolor color_hex="007fff" name="rp08f" display_name="硫酸铜蓝" />
+	<teamcolor color_hex="0040ff" name="rp04f" />
+	<teamcolor color_hex="0000ff" name="rp00f" display_name="RGB蓝" />
+	<teamcolor color_hex="4000ff" name="rp40f" />
+	<teamcolor color_hex="7f00ff" name="rp80f" display_name="紫罗兰" />
+	
+	<teamcolor color_hex="aa00ff" name="rpa0f" />
+	<teamcolor color_hex="dd00ff" name="rpd0f" display_name="福禄考紫" />
+	<teamcolor color_hex="ff00ff" name="rpf0f" display_name="RGB品红" />
+	<teamcolor color_hex="ff00c0" name="rpf0c"/>
+	
+	<!-- low lights -->
+	
+	<teamcolor color_hex="ff40a0" name="rpf4a" display_name="粉红" />
+	<teamcolor color_hex="ff4040" name="rpf44" display_name="中红" />
+	<teamcolor color_hex="ffa040" name="rpfa4" display_name="中橙" />
+	<teamcolor color_hex="ffd040" name="rpfd4" display_name="中琥珀" />
+	<teamcolor color_hex="ffff40" name="rpff4" display_name="中黄" />
+	<teamcolor color_hex="a0ff40" name="rpaf4" display_name="中荧光绿" />
+	<teamcolor color_hex="40ff40" name="rp4f4" display_name="中绿" />
+	<teamcolor color_hex="40ffa0" name="rp4fa" display_name="中海" />
+	<teamcolor color_hex="40ffff" name="rp4ff" display_name="中青" />
+	<teamcolor color_hex="40a0ff" name="rp4af" display_name="中硫酸蓝" />
+	<teamcolor color_hex="4040ff" name="rp44f" display_name="中蓝" />
+	<teamcolor color_hex="a040ff" name="rpa4f" display_name="中靛蓝" />
+	<teamcolor color_hex="ff40ff" name="rpf4f" display_name="中品红" />
+	
+	<!-- lights -->
+	<teamcolor color_hex="ff7fc0" name="rpf8c" display_name="浅粉" />
+	<teamcolor color_hex="ff7f7f" name="rpf77" display_name="鲑鱼色" />
+	<teamcolor color_hex="ffaaaa" name="rpfaa" display_name="浅红" />
+	<teamcolor color_hex="ffc07f" name="rpfc8" display_name="撒哈拉沙色" />
+	<teamcolor color_hex="ffff7f" name="rpff8" display_name="浅黄" />
+	<teamcolor color_hex="7fff7f" name="rp7f7" display_name="浅绿" />
+	<teamcolor color_hex="7fffc0" name="rp8fc" display_name="硫酸亚铁绿" />
+	<teamcolor color_hex="b0ffff" name="rpbff" display_name="天蓝" />
+	<teamcolor color_hex="7fc0ff" name="rp8cf" display_name="亮硫酸蓝" />
+	<teamcolor color_hex="7f7fff" name="rp77f" display_name="电光蓝" />
+	<teamcolor color_hex="e07fff" name="rpe8f" display_name="紫粉" />
+	<teamcolor color_hex="ff7fff" name="rpf8f" display_name="超紫" />
+	
+	<!-- grays -->
+	<teamcolor color_hex="000000" name="rp000" display_name="虚空黑" />
+	<teamcolor color_hex="101010" name="rp111" display_name="6%灰" />
+	<teamcolor color_hex="404040" name="rp444" display_name="25%灰" />
+	<teamcolor color_hex="7f7f7f" name="rp777" display_name="50%灰" />
+	<teamcolor color_hex="c0c0c0" name="rpccc" display_name="75%灰" />
+	<teamcolor color_hex="eeeeee" name="rpeee" display_name="93%灰" />
+	<teamcolor color_hex="ffffff" name="rpfff" display_name="炫目白" />
+	
+	<!-- Whites -->
+	
+	<teamcolor color_hex="ffe7e7" name="rpfee" display_name="暖白" />
+	<teamcolor color_hex="ffeedd" name="rpfed" display_name="温白" />
+	<teamcolor color_hex="d0ffff" name="rpdff" display_name="冷白" />
+	
+	
+</root>

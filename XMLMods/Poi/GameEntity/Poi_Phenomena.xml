@@ -1,0 +1,1511 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<entity	name="PhoenixDreadnought_HeatWave_Shot"
+			category="Shot"
+			visuals_scale_multiplier="5.0"
+			size_scale="0.6"
+			visuals_bundle="aiw2_lines_shots"
+			visuals="assets/visualshotsandlines/shots/simplebulletsbyspeed/invisiblebullet.prefab"
+			shot_fired_sfx="FusionBomb_Firing"
+			shot_hitting_sfx="FusionBomb_Hitting"
+			effects_death_bundle="aiw2_effects"
+			effects_death="assets/effects/flakexplosionradius50.prefab"
+			>
+	</entity>
+
+	<entity	name="PhoenixEgg"
+			thematic_groups="VeryMinorAliens"
+			special_entity_type="Cruiser"
+			visuals="assets/_dlc2/cruisers/starburstprojectile/starburstprojectile.prefab"
+			visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships4/SomethingFire"
+			gimbal_icon_size_multiplier="1.5"
+			category="Ship"
+			icon_overlay=""
+			size_scale="1.5"
+			visuals_scale_multiplier="2.5"
+			lod_distance_overrides="75,150,15000"
+			collision_priority="100"
+			voice_group="Silent"
+			display_name="凤凰蛋"
+			description="凤凰已被击败，暂时。它将顺从地回到新主人身边。"
+			starting_mark_level="Mark3"
+			tech_upgrades_that_benefit_me="Alien"
+			cost_for_ai_to_purchase="150"
+			strength_multiplier="1"
+			hull_points="1071428"
+			shield_points="0"
+			speed="Immobile"
+			metal_cost="1000"
+			energy_consumption="0"
+			metal_cost_multiplier_for_scrapping="0"
+			armor_mm="5"
+			albedo="0.7"
+			mass_tx="0.2"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			priority_as_ai_target="NormalFleetship"
+			priority_as_frd_target="NormalFleetship"
+			priority_to_protect="Expendable"
+
+			per_second_custom_logic_dll="Poi"
+			per_second_custom_logic_type="Poi.Poi_Phoenix_CustomLogic"
+
+			is_scrapping_by_player_disallowed="true"
+
+			override_faction_center_color="AIWC_Red"
+			override_faction_trim_color="AIWC_BrightOrange"
+			>
+		<ship_class_data can_be_zombified_and_similar="false" />
+
+	</entity>
+
+	<entity	name="PhoenixDreadnought" 
+			tags="NaturalPhenomena"
+			capturable_seed_weight="50000" capturable_max_per_galaxy="1"
+			thematic_groups="Derelicts"
+			special_entity_type="LoneGolem"
+			visuals="Assets/_DLC2/Cruisers/RadiantCruiser/RadiantCruiser.prefab"
+			visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships3/SomethingWing6"
+			icon_overlay=""
+			gimbal_icon_size_multiplier="2.0"
+			voice_group="Silent"
+			category="Ship"
+			draw_in_galaxy_view="true"
+			shows_on_galaxy_map_for_explored_planets="true"
+			always_visible_to_players="true"
+			size_scale="7.5"
+			lod_distance_overrides="250,400,15000"
+			visuals_scale_multiplier="13"
+			collision_priority="100"
+			uses_large_health_bar="true"
+			display_name="凤凰无畏舰"
+			display_name_for_sidebar="凤凰无畏舰"
+			description="以其死后重生的能力和对最后击败者的忠诚而闻名。"
+			starting_mark_level="Markless"
+			tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="1600"
+			strength_multiplier="2"
+			hull_points="1500000"
+			shield_points="0"
+			speed="Normal1"
+			metal_cost="250000"
+			energy_consumption="45000"
+			armor_mm="90"
+			engine_gx="32"
+			albedo="0.7"
+			mass_tx="6.5"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			drone_starting_behavior_type="Attacker_Full"
+			priority_as_ai_target="NormalStarship"
+			priority_as_frd_target="NormalStarship"
+			priority_to_protect="SlightlyLessExpendable"
+
+			on_death_custom_logic_dll="Poi"
+			on_death_custom_logic_type="Poi.Poi_Phoenix_CustomLogic"
+
+			description_appender_dll="Poi"
+			description_appender_type="Poi.Poi_Phoenix_CustomLogic"
+
+			never_leaves_remains="true"
+			is_crippled_instead_of_dying="false"
+			subtract_one_ship_cap_on_death="true" 
+			is_scrapping_by_player_disallowed="true"
+
+			immune_to_repairs="true"
+			immune_to_all_damage_for_seconds_after_creation="0"
+
+			override_faction_center_color="AIWC_Red"
+			override_faction_trim_color="AIWC_BrightOrange"
+			>
+
+		<system
+				name="W1"
+				display_name="燃烧凝视"
+				category="Weapon"
+				firing_timing="OnlyInRange"
+				damage_per_shot="35000"
+				range="AboveAverage1"
+				shot_speed="Normal"
+				rate_of_fire="FairlyLow"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="1.3"
+				hits_all_intersecting_targets="true"
+				shots_detonate_immediately="true"
+				maximum_number_of_targets_hit_per_shot="15"
+				number_beams_to_fire="3"
+				beam_weapon_visual_style="Lightning_Red"
+				degrees_offset_per_beam="15"
+				>
+		</system>
+
+		<system
+				name="W2"
+				display_name="热浪"
+				category="Weapon"
+				firing_timing="OnlyInRange"
+				damage_per_shot="16000"
+				range="Normal1"
+				shot_speed="Normal"
+				rate_of_fire="Devourer"
+				shot_type_data="PhoenixDreadnought_HeatWave_Shot"
+				area_of_effect_size="5000"
+				shots_detonate_immediately="true"
+				fires_salvos_sequentially="false"
+				damage_amplification="true" damage_amplification_duration="10" damage_amplification_flat="150"
+				aoe_spreads_damage_among_available_targets="true"
+				>
+		</system>
+
+		<ship_class_data can_be_zombified_and_similar="false" />
+
+	</entity>
+
+	<entity name="HauntedShipyard" 
+			tags="NaturalPhenomena"
+			thematic_groups="NaturalPhenomena"
+			capturable_seed_weight="1000" capturable_max_per_galaxy="1" 
+			visuals="Assets/_DLC1/FallenSpire/SpireEngineeringCenter/SpireEngineeringCenter.prefab" visuals_bundle="exp1_the_spire_rises"
+			icon_name="ShipsSpire/Spire_Habitation_Complex" gimbal_icon_size_multiplier="1.5"
+			voice_group="Spire"
+			category="Ship"
+			size_scale="7.4"
+			visuals_scale_multiplier="65"
+			collision_priority="810"
+			display_name="闹鬼船坞"
+			display_name_for_sidebar="闹鬼船坞"
+			description="虽然废弃了几十年甚至几个世纪，机器却无法关闭，继续向太空倾泻僵尸舰船。某种程度仍在运行的敌友算法瞄准控制者行星的敌人。"
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="10000"
+			hull_points="200000" shield_points="0" speed="Immobile"
+			armor_mm="75" albedo="0.5" mass_tx="6"
+			metal_cost="50000" energy_consumption="20000"		
+			ship_or_structure_explosion_sfx="StructureSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+			draw_in_galaxy_view="true"
+			assist_range="ExtremelyHigh"
+			priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"       
+
+			per_second_custom_logic_dll="Poi"
+			per_second_custom_logic_type="Poi.Poi_HauntedShipyard_CustomLogic"
+
+			custom_position="InnerOrbit"
+
+			strength_multiplier="0"
+			always_counts_as_x_strength_including_any_contents="0"
+
+			override_faction_center_color="Hiden_Black"
+			override_faction_trim_color="cF2F3F4"
+
+			eligible_for_hacks="Sabotage"
+
+			hide_stat_block="true"
+			>
+			<hack_data hack_type="Sabotage" override_cost_in_hacking_points="15" />
+			<ship_class_data 
+						can_be_damaged="false" 
+						requires_tooltip_at_all="false"
+						>
+		</ship_class_data>
+    </entity>	
+
+	<entity name="InterstellarShipyard" 
+			tags="NaturalPhenomena"
+			thematic_groups="Derelicts"
+			special_entity_type="FactoryForPlayerMobileFleets"
+			capturable_seed_weight="100" capturable_max_per_galaxy="2" 
+			visuals="Assets/_DLC1/FallenSpire/SpireEngineeringCenter/SpireEngineeringCenter.prefab" visuals_bundle="exp1_the_spire_rises"
+			icon_name="ShipsSpire/Spire_Habitation_Complex" gimbal_icon_size_multiplier="1.5"
+			voice_group="Spire"			
+			category="Ship"
+			size_scale="7.4"
+			visuals_scale_multiplier="65"
+			collision_priority="810"
+			display_name="星际船坞" 
+			display_name_for_sidebar="星际船坞"
+			description="此设施提供极快的舰队建造和修理。"
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="10000" strength_multiplier="1.2"
+			hull_points="200000" shield_points="0" speed="Immobile"
+			armor_mm="75" albedo="0.5" mass_tx="6"
+			metal_cost="50000" energy_consumption="20000"		
+			ship_or_structure_explosion_sfx="StructureSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+			metal_to_claim="20000"
+			draw_in_galaxy_view="true"
+			assist_range="ExtremelyHigh"
+			priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"            
+			>
+    <metal_flow purpose="SelfConstruction" throughput="5000"/>
+	<metal_flow purpose="FactoryConstructionForPlayerMobileFleets" throughput="6000"/>
+    <metal_flow purpose="RepairingHullsOfFriendlies" throughput="6000"/>
+    <metal_flow purpose="RepairingShieldsOfFriendlies" throughput="6000"/>
+    <metal_flow purpose="RepairingEnginesOfFriendlies" throughput="6000"/>
+    </entity>	
+
+	<entity name="UnstableSolarSiphon" 
+			tags="NaturalPhenomena" 
+			thematic_groups="Derelicts"
+			special_entity_type="FactoryForPlayerMobileFleets"
+			visuals="assets/_finalgamemeshes/blankshipsootheraddonscandrawalone.prefab"
+			ship_skips_traditional_rendering="true"
+			icon_name="Ships4/SomethingMagma" gimbal_icon_size_multiplier="1.5"
+			voice_group="Spire"			
+			category="Ship"
+			size_scale="7.4"
+			visuals_scale_multiplier="65"
+			collision_priority="810"
+			display_name="不稳定太阳能虹吸器" 
+			display_name_for_sidebar="太阳能虹吸器"
+			description="某个古老的能量生产实验产生了这个设施。事实上，它确实提供相当多的能量。也许当他们发现它使恒星不稳定时就废弃了它。巨大的爆炸周期性蹂躏行星。没有什么是完全摧毁的，但广泛的损坏造成了昂贵的修理账单。"
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="10000" strength_multiplier="1.2"
+			hull_points="200000" shield_points="0" speed="Immobile"
+			armor_mm="75" albedo="0.5" mass_tx="6"
+			metal_cost="100000" energy_consumption="0"		
+			ship_or_structure_explosion_sfx="StructureSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+			metal_to_claim="100000"
+			draw_in_galaxy_view="true"
+			assist_range="ExtremelyHigh"
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"     
+			
+			per_second_custom_logic_dll="Poi"
+			per_second_custom_logic_type="Poi.Poi_UnstableSolarSiphon_CustomLogic"
+
+			description_appender_dll="Poi"
+			description_appender_type="Poi.Poi_UnstableSolarSiphon_CustomLogic"
+
+			custom_position="Center"
+			capturable_seed_weight="100" 
+			capturable_max_per_galaxy="1" 
+			>
+			<resource_production type="Energy" amount="700000"/>
+			<metal_flow purpose="SelfConstruction" throughput="500"/>
+    </entity>	
+
+	<entity	name="FungalGrowth"	
+			tags="NaturalPhenomena" 
+			capturable_seed_weight="150" 
+			capturable_max_per_galaxy="-1"
+			thematic_groups="NaturalPhenomena"
+			visuals="assets/_finalgamemeshes/blankshipsootheraddonscandrawalone.prefab"
+			ship_skips_traditional_rendering="true"
+			icon_name="Ships4/SomethingGrass4"
+			voice_group="Silent"
+			category="Ship"
+			size_scale="1"
+			gimbal_icon_size_multiplier="1.5" 
+			collision_priority="0"
+			display_name="真菌生长"
+			description="一种普遍的菌类生长物似乎附着在这里的一切上。也许要避开那些破裂时的大型孢子荚。"
+			behavior="Stationary"
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="100000"
+			hull_points="2000000"
+			shield_points="0"
+			speed="Immobile"
+			metal_cost="0"
+			energy_consumption="0"
+			armor_mm="75"
+			albedo="0.5"
+			mass_tx="25"
+			ship_or_structure_explosion_sfx="StructureSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+			draw_in_galaxy_view="true"
+			target_type_for_player="NeverTarget"
+			is_always_forced_to_planet_center="true"
+			priority_as_ai_target="IgnoreMe"
+			priority_as_frd_target="IgnoreMe"
+			priority_to_protect="IgnoreMe"
+			per_second_custom_logic_dll="Poi"
+			per_second_custom_logic_type="Poi.Poi_FungalGrowth_CustomLogic"
+			description_appender_dll="Poi"
+			description_appender_type="Poi.Poi_FungalGrowth_CustomLogic"
+
+			strength_multiplier="0"
+			always_counts_as_x_strength_including_any_contents="0"
+			should_never_count_as_threat="true"
+
+			override_faction_center_color="Hidden_013220"
+			override_faction_trim_color="Hidden_3FFF00"
+
+			hide_stat_block="true"
+			>
+
+		<ship_class_data 
+						can_be_damaged="false" 
+						requires_tooltip_at_all="false"
+						>
+		</ship_class_data>
+
+	</entity>
+
+	<entity	name="SporeExplosionAOEShot"
+			category="Shot"
+			visuals_scale_multiplier="2.3"
+			size_scale="0.06"
+			visuals_bundle="aiw2_lines_shots"
+			visuals="assets/visualshotsandlines/shots/simplebulletsbyspeed/invisiblebullet.prefab"
+			shot_fired_sfx="Lightning_Firing"
+			shot_hitting_sfx="Lightning_Hitting"
+			effects_death_bundle="aiw2_effects"
+			effects_death="assets/effects/greenplasmaexplosionradius50.prefab"
+			>
+	</entity>
+
+	<entity	name="DecayingMass"
+			tags=""
+			thematic_groups=""
+			visuals="assets/_finalgamemeshes/blankshipsootheraddonscandrawalone.prefab"
+			ship_skips_traditional_rendering="true"
+			icon_name="Ships4/SomethingMushroom"
+			voice_group="Silent"
+			category="Ship"
+			size_scale="1"
+			collision_priority="0"
+			display_name="腐朽质量"
+			description="一个以金属废料为食的真菌菌落。金属在被代谢后似乎会迅速腐烂，然后以孢子形式扩散，这些孢子有堵塞所有武器的倾向。"
+			behavior="Stationary"
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="10000"
+			hull_points="100000"
+			shield_points="0"
+			speed="Immobile"
+			metal_cost="0"
+			energy_consumption="0"
+			armor_mm="75"
+			albedo="0.5"
+			mass_tx="25"
+			ship_or_structure_explosion_sfx="StructureSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			npc_ship_cap_type="Drones"
+			target_type_for_player="NeverTarget"
+			priority_as_ai_target="IgnoreMe"
+			priority_as_frd_target="IgnoreMe"
+			priority_to_protect="IgnoreMe"
+
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="1.0"
+			always_self_attritions="true"
+
+			strength_multiplier="0"
+			always_counts_as_x_strength_including_any_contents="0"
+			should_never_count_as_threat="true"
+			is_not_combatant_despite_weapons="true"
+
+			override_faction_center_color="Hidden_013220"
+			override_faction_trim_color="Hidden_3FFF00"
+
+			hide_stat_block="true"
+			>
+
+		<system
+				name="W2"
+				display_name="呼吸"
+				category="Weapon"
+				firing_timing="OnlyInRange"
+				damage_per_shot="25"
+				range="Normal1"
+				shot_speed="Normal"
+				rate_of_fire="PeriodicActivation"
+				fires_salvos_sequentially="false"
+
+				aoe_spreads_damage_among_available_targets="false"
+				base_enemy_weapon_reload_slowing_seconds_per_shot="10"
+				max_enemy_weapon_reload_slowing_seconds="20"
+				enemy_weapon_reload_slowing_to_armor_mm_less_than="200"
+
+				shot_type_data="SporeExplosionAOEShot"
+				area_of_effect_size="5000"				
+				shots_detonate_immediately="true"
+				maximum_number_of_targets_hit_per_shot="200"
+				>
+		</system>
+				
+		<ship_class_data 
+						can_be_damaged="false" 
+						requires_tooltip_at_all="false"
+						>
+		</ship_class_data>
+
+	</entity>
+	
+	<entity	name="FairyGrotto" 
+			tags="NaturalPhenomena" 
+			thematic_groups="NaturalPhenomena"
+			visuals="assets/_finalgamemeshes/blankshipsootheraddonscandrawalone.prefab"
+			ship_skips_traditional_rendering="true"
+			icon_name="Ships4/SomethingCave"
+			voice_group="Silent"
+			category="Ship"
+			size_scale="1"
+			gimbal_icon_size_multiplier="1.5" 
+			collision_priority="0"
+			display_name="仙女洞穴"
+			description="这颗行星上被称为'仙女'的本土生命形式会附着在访客身上，提供保护性护盾。"
+			behavior="Stationary"
+			starting_mark_level="Mark1"
+			cost_for_ai_to_purchase="100000"
+			hull_points="2000000"
+			shield_points="0"
+			speed="Immobile"
+			metal_cost="0"
+			energy_consumption="0"
+			armor_mm="75"
+			albedo="0.5"
+			mass_tx="25"
+			ship_or_structure_explosion_sfx="StructureSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+			draw_in_galaxy_view="true"
+			target_type_for_player="NeverTarget"
+			is_always_forced_to_planet_center="true"
+			priority_as_ai_target="IgnoreMe"
+			priority_as_frd_target="IgnoreMe"
+			priority_to_protect="IgnoreMe"
+			per_second_custom_logic_dll="Poi"
+			per_second_custom_logic_type="Poi.Poi_FairyGrotto_CustomLogic"
+			description_appender_dll="Poi"
+			description_appender_type="Poi.Poi_FairyGrotto_CustomLogic"
+
+			strength_multiplier="0"
+			always_counts_as_x_strength_including_any_contents="0"
+			should_never_count_as_threat="true"
+
+			override_faction_center_color="Gray"
+			override_faction_trim_color="c414A4C"
+
+			hide_stat_block="true"
+
+			capturable_seed_weight="200" 
+			capturable_max_per_galaxy="-1"
+			>
+		<ship_class_data 
+						can_be_damaged="false" 
+						requires_tooltip_at_all="false"
+						>
+		</ship_class_data>
+	</entity>
+
+	<entity	name="FairyWard"
+			tags=""
+			thematic_groups="NaturalPhenomena"
+			visuals="assets/_finalgamemeshes/blankshipsootheraddonscandrawalone.prefab"
+			ship_skips_traditional_rendering="true"
+			icon_name="Ships4/SomethingButterflies"
+			voice_group="Silent"
+			category="Ship"
+			size_scale="1"
+			gimbal_icon_size_multiplier="1.5" 
+			collision_priority="0"
+			display_name="仙女守卫"
+			description="这些不寻常的生命形式保护与其结合的舰船。推测这是其生命周期的一部分，为星际传播而适应。"
+			behavior="Stationary"
+			starting_mark_level="Mark1"
+			cost_for_ai_to_purchase="28"
+
+			ship_or_structure_explosion_sfx="Turret_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+
+			npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+			draw_in_galaxy_view="false"
+			priority_as_ai_target="ShieldGenerator" priority_as_frd_target="NotDangerous" priority_to_protect="MidFavoriteToy"
+
+			hull_points="100000" shield_points="1200000" speed="Normal3"
+			metal_cost="250000" energy_consumption="0"
+			armor_mm="0" albedo="1.0" mass_tx="1" engine_gx="1"
+
+			shield_size_scale="4" 
+			my_forcefield_does_not_shrink="true" 
+			mark_level_scale_style="Poi_Fairy"
+			
+			orbits_parent_at_range="1000" 
+			degrees_to_orbit_per_second="30" 
+			attempts_to_reach_orbital_point_at_speed="1000"
+
+			dies_if_parent_dies="true" 
+			is_blocked_from_transporting="true"
+			immune_to_swapping_between_fleets="true"
+			subtract_one_ship_cap_on_death="true"
+            cannot_actually_be_built_is_not_a_ship_line="true"
+            does_its_own_mark_level_management="true"
+            
+            dies_after_lifetime_sec="300"
+
+			override_faction_center_color="Orange"
+			override_faction_trim_color="cFDEE00"
+
+			per_second_custom_logic_dll="Poi"
+			per_second_custom_logic_type="Poi.Poi_FairyWard_CustomLogic"
+
+			on_death_custom_logic_dll="Poi"
+			on_death_custom_logic_type="Poi.Poi_FairyWard_CustomLogic"
+			>
+	</entity>
+
+	<entity	name="NullField" 
+			tags="NaturalPhenomena"
+			thematic_groups="NaturalPhenomena"
+			visuals="assets/_finalgamemeshes/blankshipsootheraddonscandrawalone.prefab"
+			ship_skips_traditional_rendering="true"
+			icon_name="Ships3/SomethingSolarFlare"
+			voice_group="Silent"
+			category="Ship"
+			size_scale="1"
+			gimbal_icon_size_multiplier="1.5" 
+			collision_priority="0"
+			display_name="无效场"
+			description="这颗行星充满了护盾干扰辐射，周期性打击异常附近的所有护盾。"
+			behavior="Stationary"
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="100000"
+			hull_points="1000000"
+
+			shield_points="0"
+			speed="Immobile"
+			metal_cost="0"
+			energy_consumption="0"
+			armor_mm="0"
+			albedo="0"
+			mass_tx="0"
+			
+			ship_or_structure_explosion_sfx="StructureSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+			draw_in_galaxy_view="true"
+
+			target_type_for_player="NeverTarget"
+			priority_as_ai_target="IgnoreMe"
+			priority_as_frd_target="IgnoreMe"
+			priority_to_protect="IgnoreMe"
+
+			strength_multiplier="0"
+			always_counts_as_x_strength_including_any_contents="0"
+			should_never_count_as_threat="true"
+			is_not_combatant_despite_weapons="true"
+
+			override_faction_center_color="cFF4500"
+			override_faction_trim_color="cFFDB58"
+
+			orbits_gravity_well_center_at_its_current_radius="true"
+			
+			degrees_to_orbit_per_second="5"
+
+			capturable_seed_weight="100"
+			capturable_max_per_galaxy="2"
+			custom_position="InnerOrbit"
+			custom_temperament="Hostile"
+			
+
+			hide_stat_block="true"
+			>
+		<ship_class_data 
+						can_be_damaged="false" 
+						requires_tooltip_at_all="false"
+						>
+		</ship_class_data>
+
+		<system
+			name="W1"
+			display_name="散发"
+			category="Weapon"
+			firing_timing="OnlyInRange"
+			damage_per_shot="1"
+			range="AboveAverage1"
+			shot_speed="Normal"
+			rate_of_fire="Normal"
+			fires_salvos_sequentially="false"
+
+			aoe_spreads_damage_among_available_targets="false"
+
+			shot_type_data="ExplosiveInvisible"
+			area_of_effect_size="8000"	
+			shots_detonate_immediately="true"
+
+			maximum_number_of_targets_hit_per_shot="3000"
+			overdrives_shields="true"
+		>
+		</system>
+	</entity>
+
+	<entity	name="Flux"	
+			tags="NaturalPhenomena"
+			thematic_groups="NaturalPhenomena"
+			visuals="assets/_finalgamemeshes/blankshipsootheraddonscandrawalone.prefab"
+			ship_skips_traditional_rendering="true"
+			icon_name="Ships3/SomethingTeleporter"
+			voice_group="Silent"
+			category="Ship"
+			size_scale="1"
+			gimbal_icon_size_multiplier="1.5" 
+			collision_priority="0"
+			display_name="通量"
+			description="这颗行星处于持续的空间通量状态。舰船甚至通常固定的建筑在此异常经过附近时都会神秘地改变位置。"
+			behavior="Stationary"
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="1000000"
+			hull_points="1000000"
+			shield_points="0"
+			speed="Immobile"
+
+			metal_cost="0"
+			energy_consumption="0"
+			armor_mm="0"
+			albedo="0"
+			mass_tx="0"
+
+			ship_or_structure_explosion_sfx="StructureSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+			draw_in_galaxy_view="true"
+			target_type_for_player="NeverTarget"
+
+			priority_as_ai_target="IgnoreMe"
+			priority_as_frd_target="IgnoreMe"
+			priority_to_protect="IgnoreMe"
+
+			strength_multiplier="0"
+			always_counts_as_x_strength_including_any_contents="0"
+			should_never_count_as_threat="true"
+			is_not_combatant_despite_weapons="true"
+
+			override_faction_center_color="cFF007F"
+			override_faction_trim_color="cFF00FF"
+
+			orbits_gravity_well_center_at_its_current_radius="true"
+			
+			degrees_to_orbit_per_second="5"
+
+			capturable_seed_weight="100"
+			capturable_max_per_galaxy="2"
+			custom_position="InnerOrbit"
+			custom_temperament="Hostile"
+
+			hide_stat_block="true"
+			>
+		<ship_class_data 
+						can_be_damaged="false" 
+						requires_tooltip_at_all="false"
+						>
+		</ship_class_data>
+
+		<system
+				name="W1"
+				display_name="散发"
+				category="Weapon"
+				firing_timing="OnlyInRange"
+				damage_per_shot="1"
+				range="AboveAverage1"
+				shot_speed="Normal"
+				rate_of_fire="Normal"
+				fires_salvos_sequentially="false"
+
+				aoe_spreads_damage_among_available_targets="false"
+
+				shot_type_data="ExplosiveInvisible"
+				area_of_effect_size="8000"	
+				shots_detonate_immediately="true"
+
+				maximum_number_of_targets_hit_per_shot="3000"
+				sets_target_to_random_location="true"
+				fires_through_enemy_shields="true"
+		>
+		</system>
+
+	</entity>
+
+<!--
+	<entity
+			name="DormantExoWormhole"
+			display_name="休眠EXO虫洞"
+			display_name_for_sidebar="休眠EXO虫洞"
+			description="有迹象表明这里曾有一个虫洞。奇怪的是其轨迹指向银河系之外。"
+
+			capturable_seed_weight="300"
+			tags="NaturalPhenomena,CustomPosition"
+			thematic_groups="NaturalPhenomena"
+			visuals="assets/_finalgamemeshes/blankshipsootheraddonscandrawalone.prefab"
+			ship_skips_traditional_rendering="true"
+			icon_name="Ships2/SomethingAperture"
+			voice_group="Silent"
+			category="Ship"
+			size_scale="1"
+			gimbal_icon_size_multiplier="1.5" 
+			collision_priority="0"
+			
+			behavior="Stationary"
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="100000"
+			hull_points="2000000"
+			shield_points="0"
+			speed="Normal3"
+
+			metal_cost="0"
+			energy_consumption="0"
+			armor_mm="1"
+			albedo="0.5"
+			mass_tx="1"
+			engine_gx="1"
+
+			ship_or_structure_explosion_sfx="StructureSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+			draw_in_galaxy_view="true"
+			target_type_for_player="NeverTarget"
+
+			priority_as_ai_target="IgnoreMe"
+			priority_as_frd_target="IgnoreMe"
+			priority_to_protect="IgnoreMe"
+
+			strength_multiplier="0"
+			always_counts_as_x_strength_including_any_contents="0"
+			should_never_count_as_threat="true"
+			is_not_combatant_despite_weapons="true"
+
+			override_faction_center_color="Gunmetal"
+			override_faction_trim_color="c808080"
+
+			custom_position="OuterOrbit"
+			>
+	</entity>
+
+	<entity
+			name="ExoWormhole"
+			display_name="EXO虫洞"
+			description="这个虫洞曾处于休眠状态，但现在打开了，持续未知的时间。奇怪的是其轨迹通向空无一物的空间。"
+
+			tags=""
+			thematic_groups="NaturalPhenomena"
+			visuals="assets/_finalgamemeshes/blankshipsootheraddonscandrawalone.prefab"
+			ship_skips_traditional_rendering="true"
+			icon_name="Ships2/SomethingAperture"
+			voice_group="Silent"
+			category="Ship"
+			size_scale="1"
+			gimbal_icon_size_multiplier="1.5" 
+			collision_priority="0"
+			
+			behavior="Stationary"
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="100000"
+			hull_points="2000000"
+			shield_points="0"
+			speed="Normal3"
+
+			metal_cost="0"
+			energy_consumption="0"
+			armor_mm="1"
+			albedo="0.5"
+			mass_tx="1"
+			engine_gx="1"
+
+			ship_or_structure_explosion_sfx="StructureSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+			draw_in_galaxy_view="true"
+			target_type_for_player="NeverTarget"
+
+			priority_as_ai_target="IgnoreMe"
+			priority_as_frd_target="IgnoreMe"
+			priority_to_protect="IgnoreMe"
+
+			strength_multiplier="0"
+			always_counts_as_x_strength_including_any_contents="0"
+			should_never_count_as_threat="true"
+			is_not_combatant_despite_weapons="true"
+
+			override_faction_center_color="ElectricBlue"
+			override_faction_trim_color="Turquoise"
+			>
+	</entity>
+-->
+
+	<entity	name="SingularityCluster"
+			tags="NaturalPhenomena"
+			thematic_groups="NaturalPhenomena"
+			
+			ship_skips_traditional_rendering="true"
+			visuals="assets/_finalgamemeshes/blankshipsootheraddonscandrawalone.prefab"
+			icon_name="Ships3/SomethingShockwave"
+			gimbal_icon_size_multiplier="1.5" 
+			size_scale="1"
+			visuals_scale_multiplier="1"
+
+			voice_group="Silent"
+			category="Ship"
+			
+			collision_priority="0"
+			display_name="奇点星团"
+			display_name_for_sidebar="奇点星团"
+			description="此空间区域有一簇微型奇点，阻挡安全通行。"
+			behavior="Stationary"
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="100000"
+			hull_points="2000000"
+			shield_points="0"
+			speed="Immobile"
+			metal_cost="0"
+			energy_consumption="0"
+			armor_mm="75"
+			albedo="0.5"
+			mass_tx="25"
+			ship_or_structure_explosion_sfx="StructureSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+			draw_in_galaxy_view="true"
+			target_type_for_player="NeverTarget"
+			is_always_forced_to_planet_center="true"
+			priority_as_ai_target="IgnoreMe"
+			priority_as_frd_target="IgnoreMe"
+			priority_to_protect="IgnoreMe"
+
+			strength_multiplier="0"
+			always_counts_as_x_strength_including_any_contents="0"
+			should_never_count_as_threat="true"
+
+			per_second_custom_logic_dll="Poi"
+			per_second_custom_logic_type="Poi.Poi_SingularityCluster_CustomLogic"
+
+			override_faction_center_color="c007BA7"
+			override_faction_trim_color="c7BAFD4"
+
+			hide_stat_block="true"
+
+			capturable_seed_weight="200"
+			>
+		<ship_class_data 
+						can_be_damaged="false" 
+						requires_tooltip_at_all="false"
+						>
+		</ship_class_data>
+	</entity>
+	
+	<entity	name="MicroSingularity"
+			tags="MicroSingularity"
+			thematic_groups="NaturalPhenomena"
+
+			ship_skips_traditional_rendering="true"
+			visuals="assets/_finalgamemeshes/blankshipsootheraddonscandrawalone.prefab"
+            addon_object_or_particle_field="ZAWarpPoint" 
+			addon_object_or_particle_field_scale="150" 
+			gimbal_icon_size_multiplier="1.5" 
+			icon_name="Ships3/SomethingTarget4"
+			size_scale="40"
+			visuals_scale_multiplier="1"
+			shield_size_scale="5"
+
+			voice_group="Silent"
+			category="Ship"
+			collision_priority="0"
+			display_name="受控微型奇点"
+			display_name_for_sidebar="微型奇点"
+			description="一个被控制住的危险微型奇点，但阻挡舰船通行。"
+			behavior="Stationary"
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="10000"
+			hull_points="100000"
+			shield_points="100000"
+			speed="Immobile"
+			metal_cost="0"
+			energy_consumption="0"
+			armor_mm="75"
+			albedo="0.5"
+			mass_tx="25"
+			ship_or_structure_explosion_sfx="StructureSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+			target_type_for_player="NeverTarget"
+			priority_as_ai_target="IgnoreMe"
+			priority_as_frd_target="IgnoreMe"
+			priority_to_protect="IgnoreMe"
+
+			strength_multiplier="0"
+			always_counts_as_x_strength_including_any_contents="0"
+			should_never_count_as_threat="true"
+
+			override_faction_center_color="c007BA7"
+			override_faction_trim_color="c7BAFD4"
+
+			hide_stat_block="true"
+			>
+		<ship_class_data 
+						can_be_damaged="false" 
+						requires_tooltip_at_all="false"
+						>
+		</ship_class_data>
+
+	</entity>
+	
+    <entity name="ShatteredWorld" 
+			tags="NaturalPhenomena"	
+	        thematic_groups="NaturalPhenomena"
+			visuals="Assets/_DLC3/BrutalGuardians/BrutalGuardianLair/BrutalGuardianLair.prefab" visuals_bundle="exp3_neinzul_abyss"		
+			icon_name="Ships4/SomethingCrackedBall"
+			voice_group="Silent"
+			category="Ship"
+	        size_scale="5"
+			visuals_scale_multiplier="500" visual_model_draw_cutoff="3000"
+			y_offset_of_ship_in_visual_space="-900"		
+			rotation_x_of_ship="90"
+			collision_priority="810"
+			display_name="破碎世界"
+			description="一个破碎的世界。碎片和尘埃造成了严重的凯斯勒综合征，使这里任何造成的伤害减半。"
+			behavior="Stationary"
+			starting_mark_level="Markless"            
+			cost_for_ai_to_purchase="100000"
+			hull_points="2000000" shield_points="0" speed="Immobile"
+			metal_cost="80000000" energy_consumption="80000000"
+			armor_mm="75" albedo="0.5" mass_tx="25"
+			ship_or_structure_explosion_sfx="StructureSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+			draw_in_galaxy_view="true"           
+			target_type_for_player="NeverTarget"
+			force_background_planet_to_disappear="true"
+			is_always_forced_to_planet_center="true"
+			hostile_attack_multiplier="0.5"
+            priority_as_ai_target="IgnoreMe" priority_as_frd_target="IgnoreMe" priority_to_protect="IgnoreMe"
+
+			strength_multiplier="0"
+			always_counts_as_x_strength_including_any_contents="0"
+			hide_stat_block="true"
+
+			override_faction_center_color="Brown"
+			override_faction_trim_color="Ash"
+
+			capturable_seed_weight="200"	
+			>
+			<ship_class_data 
+				can_be_damaged="false" 
+				requires_tooltip_at_all="false"
+				>
+			</ship_class_data>
+    </entity>
+	
+    <entity name="BlackHole" 
+			tags="NaturalPhenomena"	
+	        thematic_groups="NaturalPhenomena"
+			visuals="assets/_finalgamemeshes/blankshipsootheraddonscandrawalone.prefab" ship_skips_traditional_rendering="true"
+            addon_object_or_particle_field="ZAWarpPoint" addon_object_or_particle_field_scale="500" addon_object_or_particle_field_y_offset="-500"
+			icon_name="Ships3/SomethingSuckIn2" gimbal_icon_size_multiplier="1.5" 
+			voice_group="Silent"
+			category="Ship"
+	        size_scale="5"
+			visuals_scale_multiplier="2700" visual_model_draw_cutoff="3000"		
+			collision_priority="810"
+			display_name="黑洞"
+			description="一个黑洞。引力将使这里所有速度减半。强烈辐射也会揭示任何隐形物体。"
+			behavior="Stationary"
+			starting_mark_level="Markless"            
+			cost_for_ai_to_purchase="100000"
+			hull_points="2000000" shield_points="0" speed="Immobile"
+			metal_cost="80000000" energy_consumption="80000000"
+			armor_mm="75" albedo="0.5" mass_tx="25"
+			ship_or_structure_explosion_sfx="StructureSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+			draw_in_galaxy_view="true"           
+			target_type_for_player="NeverTarget"
+			force_background_planet_to_disappear="true"
+			is_always_forced_to_planet_center="true"
+			hostile_speed_multiplier="0.5"		
+            priority_as_ai_target="IgnoreMe" priority_as_frd_target="IgnoreMe" priority_to_protect="IgnoreMe"
+
+			strength_multiplier="0"
+			always_counts_as_x_strength_including_any_contents="0"
+			hide_stat_block="true"
+
+			override_faction_center_color="Silver"
+			override_faction_trim_color="AIWC_Black"
+
+			capturable_seed_weight="200"
+            capturable_max_per_galaxy="2" 
+			>
+
+			<ship_class_data 
+				can_be_damaged="false" 
+				requires_tooltip_at_all="false"
+				>
+			</ship_class_data>
+
+			<system name="U1" display_name="快子阵列"
+					category="Passive" tachyon_points="50" tachyon_range="EssentiallyInfinite" tachyon_hits_albedo_less_than="0.75"
+					>
+			</system>	
+    </entity>
+
+    <entity name="ExtremeAmbientEnergy" 
+			tags="NaturalPhenomena"		
+	        thematic_groups="NaturalPhenomena"
+			visuals="assets/_finalgamemeshes/blankshipsootheraddonscandrawalone.prefab" ship_skips_traditional_rendering="true"
+            addon_object_or_particle_field="ZAHomePortal" addon_object_or_particle_field_scale="2000" addon_object_or_particle_field_y_offset="-10000"
+			icon_name="Ships3/SomethingSun" gimbal_icon_size_multiplier="1.5" 
+			voice_group="Silent"
+			category="Ship"
+	        size_scale="5"
+			visuals_scale_multiplier="2700" visual_model_draw_cutoff="3000"
+			y_offset_of_ship_in_visual_space="-10000" 			
+			collision_priority="810"
+			display_name="极端环境能量"
+			display_name_for_sidebar="环境能量"
+			description="一个高能量空间区域。允许引擎过载，使这里所有速度加倍。"
+			behavior="Stationary"
+			starting_mark_level="Markless"            
+			cost_for_ai_to_purchase="100000"
+			hull_points="2000000" shield_points="0" speed="Immobile"
+			metal_cost="80000000" energy_consumption="80000000"
+			armor_mm="75" albedo="0.5" mass_tx="25"
+			ship_or_structure_explosion_sfx="StructureSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+			draw_in_galaxy_view="true"           
+			target_type_for_player="NeverTarget"
+			force_background_planet_to_disappear="true"
+			is_always_forced_to_planet_center="true"
+			hostile_speed_multiplier="2"		
+            priority_as_ai_target="IgnoreMe" priority_as_frd_target="IgnoreMe" priority_to_protect="IgnoreMe"
+
+			override_faction_center_color="cBFFF00"
+			override_faction_trim_color="c000000"
+
+			strength_multiplier="0"
+			always_counts_as_x_strength_including_any_contents="0"
+			hide_stat_block="true"
+
+			capturable_seed_weight="200"
+			>
+    		<ship_class_data 
+				can_be_damaged="false" 
+				requires_tooltip_at_all="false"
+				>
+			</ship_class_data>
+    </entity>
+
+	<entity name="LongRangeSensorArray" 
+			tags="NaturalPhenomena"
+	        thematic_groups="NaturalPhenomena"
+            visuals="Assets/_DLC1/FallenSpire/SpireGreaterSpyCradle/SpireGreaterSpyCradle.prefab" visuals_bundle="exp1_the_spire_rises"
+            icon_name="ShipsSpire/SpireSpyCradle" gimbal_icon_size_multiplier="1.5"
+            voice_group="Spire"
+            uses_large_health_bar="true"
+            category="Ship"
+            size_scale="11"
+            visuals_scale_multiplier="20"
+            y_offset_of_icon="30"
+            collision_priority="810"
+            display_name="远程传感器阵列" 
+			display_name_for_sidebar="传感器阵列"
+            description="此设施提供三跳范围内所有行星的完整视野。你可以在不控制该行星的情况下通过入侵获得所有权。"
+            starting_mark_level="Markless" 
+            cost_for_ai_to_purchase="10000"
+			hull_points="200000" shield_points="0" speed="Immobile"
+			armor_mm="75" albedo="0.5" mass_tx="6"
+			metal_cost="50000" energy_consumption="20000"
+            ship_or_structure_explosion_sfx="StructureSmall_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+			draw_in_galaxy_view="true"
+			watch_planets_at_X_hops="3"
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			eligible_for_hacks="Poi_Reprogram"
+
+			override_faction_center_color="Cyan"
+			override_faction_trim_color="cA4DDED"
+
+			strength_multiplier="0"
+			always_counts_as_x_strength_including_any_contents="0"
+			hide_stat_block="true"
+
+			capturable_seed_weight="100" 
+			capturable_max_per_galaxy="1" 
+			>
+			<ship_class_data 
+				can_be_damaged="false" 
+				requires_tooltip_at_all="false"
+				>
+			</ship_class_data>
+		<hack_data
+				hack_type="Poi_Reprogram"
+				override_cost_in_hacking_points="15"
+				/>
+		<metal_flow
+				purpose="SelfConstruction"
+				throughput="5000"
+				/>
+    </entity>
+
+	<entity	name="WormholeAttractor" 
+			tags="NaturalPhenomena"
+			thematic_groups="NaturalPhenomena"
+			
+			visuals="assets/_finalgamemeshes/blankshipsootheraddonscandrawalone.prefab"
+			ship_skips_traditional_rendering="true"
+			icon_name="Ships4/SomethingHoverBall"
+			icon_overlay=""
+			size_scale="10"
+			draw_in_galaxy_view="true"
+
+			display_name="虫洞吸引器"
+			description="此现象将所有虫洞拉入紧密星团，使穿越旅行更快。分析师确信这也会影响行星的可攻击性和可防御性……不知何故。"
+			behavior="Stationary"
+			
+			starting_mark_level="Markless"
+			category="Ship"
+			npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+			collision_priority="0"
+
+			cost_for_ai_to_purchase="10000"
+			hull_points="100000"
+			shield_points="0"
+			speed="Immobile"
+			metal_cost="0"
+			energy_consumption="0"
+			armor_mm="75"
+			albedo="0.5"
+			mass_tx="25"
+
+			voice_group="Silent"
+			ship_or_structure_explosion_sfx="StructureSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+			target_type_for_player="NeverTarget"
+			priority_as_ai_target="IgnoreMe"
+			priority_as_frd_target="IgnoreMe"
+			priority_to_protect="IgnoreMe"
+
+			strength_multiplier="0"
+			always_counts_as_x_strength_including_any_contents="0"
+
+			hide_stat_block="true"
+
+			capturable_seed_weight="200"
+			custom_position="Center"
+			
+			override_faction_center_color="Green"
+			override_faction_trim_color="AIWC_DarkGray"
+			>
+				
+		<ship_class_data 
+						can_be_damaged="false" 
+						requires_tooltip_at_all="false"
+						>
+		</ship_class_data>
+
+	</entity>
+
+	<entity	name="WormholeRepeller"	
+			tags="NaturalPhenomena"
+			thematic_groups="NaturalPhenomena"
+			
+			visuals="assets/_finalgamemeshes/blankshipsootheraddonscandrawalone.prefab"
+			ship_skips_traditional_rendering="true"
+			icon_name="Ships4/SomethingHoverBall"
+			icon_overlay=""
+			size_scale="10"
+			draw_in_galaxy_view="true"
+
+			display_name="虫洞排斥器"
+			description="此现象将所有虫洞推至引力井的远端边缘，使穿越旅行更慢。分析师确信这也会影响行星的可攻击性和可防御性……不知何故。"
+			behavior="Stationary"
+			
+			starting_mark_level="Markless"
+			category="Ship"
+			npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+			collision_priority="0"
+
+			cost_for_ai_to_purchase="10000"
+			hull_points="100000"
+			shield_points="0"
+			speed="Immobile"
+			metal_cost="0"
+			energy_consumption="0"
+			armor_mm="75"
+			albedo="0.5"
+			mass_tx="25"
+
+			voice_group="Silent"
+			ship_or_structure_explosion_sfx="StructureSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+			target_type_for_player="NeverTarget"
+			priority_as_ai_target="IgnoreMe"
+			priority_as_frd_target="IgnoreMe"
+			priority_to_protect="IgnoreMe"
+
+			strength_multiplier="0"
+			always_counts_as_x_strength_including_any_contents="0"
+
+			hide_stat_block="true"
+
+			capturable_seed_weight="200"
+			custom_position="Center"
+
+			override_faction_center_color="cB2FFFF"
+			override_faction_trim_color="AIWC_DarkGray"
+			>
+				
+		<ship_class_data 
+						can_be_damaged="false" 
+						requires_tooltip_at_all="false"
+						>
+		</ship_class_data>
+
+</entity>
+
+	<entity	name="DwarfPlanetCluster" 
+			tags="NaturalPhenomena"
+			thematic_groups="NaturalPhenomena"
+			visuals="assets/_finalgamemeshes/blankshipsootheraddonscandrawalone.prefab"
+			ship_skips_traditional_rendering="true"
+			icon_name="Ships4/SomethingPlanet2"
+			icon_overlay=""
+			size_scale="2"
+			draw_in_galaxy_view="true"
+			display_name="矮行星星团"
+			display_name_for_sidebar="矮行星星团"
+			description="勘测将其标记为矮行星星团。理论认为这样的小行星星团不应该以如此接近的距离绕恒星运行，仿佛这些曾经是一个失踪气态巨行星的卫星。无论如何，这是金属矿床的恩赐，而且非常非常小。"
+			behavior="Stationary"
+			starting_mark_level="Markless"
+			category="Ship"
+			npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+			collision_priority="0"
+			cost_for_ai_to_purchase="10000"
+			hull_points="100000"
+			shield_points="0"
+			speed="Immobile"
+			metal_cost="0"
+			energy_consumption="0"
+			armor_mm="75"
+			albedo="0.5"
+			mass_tx="25"
+			voice_group="Silent"
+			ship_or_structure_explosion_sfx="StructureSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			target_type_for_player="NeverTarget"
+			priority_as_ai_target="IgnoreMe"
+			priority_as_frd_target="IgnoreMe"
+			priority_to_protect="IgnoreMe"
+			strength_multiplier="0"
+			always_counts_as_x_strength_including_any_contents="0"
+			hide_stat_block="true"
+			capturable_seed_weight="200"
+			capturable_max_per_galaxy="1"
+			custom_position="Center"
+			force_gravity_well_size_of_planet_to_be_at_least="10000"
+			force_gravity_well_size_of_planet_to_be_at_most="10000"
+			override_faction_center_color="c353839"
+			override_faction_trim_color="cDE3163"
+			force_background_planet_to_disappear="true"
+			is_always_forced_to_planet_center="true"
+			>
+
+		<ship_class_data
+				can_be_damaged="false"
+				requires_tooltip_at_all="false"
+				>
+		</ship_class_data>
+
+	</entity>
+
+	<entity	name="MegaPlanet" 
+			tags="NaturalPhenomena"
+			thematic_groups="NaturalPhenomena"
+			visuals="assets/_finalgamemeshes/blankshipsootheraddonscandrawalone.prefab"
+			ship_skips_traditional_rendering="true"
+			icon_name="Ships4/SomethingPlanet2"
+			icon_overlay=""
+			size_scale="10"
+			draw_in_galaxy_view="true"
+			display_name="超级行星"
+			description="这个不寻常的星系只有一颗行星，而行星本身更加奇怪：一颗气态巨行星大小的岩石世界。人们认为这不可能自然形成，因此一种理论是某人将整个星系的全部矿物财富整合在一起，准备建造……什么东西？不幸的是，留给我们的结果是几乎没有容易开采的小行星和一个非常非常大的行星。"
+			behavior="Stationary"
+			starting_mark_level="Markless"
+			category="Ship"
+			npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+			collision_priority="0"
+			cost_for_ai_to_purchase="10000"
+			hull_points="100000"
+			shield_points="0"
+			speed="Immobile"
+			metal_cost="0"
+			energy_consumption="0"
+			armor_mm="75"
+			albedo="0.5"
+			mass_tx="1337"
+			voice_group="Silent"
+			ship_or_structure_explosion_sfx="StructureSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			target_type_for_player="NeverTarget"
+			priority_as_ai_target="IgnoreMe"
+			priority_as_frd_target="IgnoreMe"
+			priority_to_protect="IgnoreMe"
+			strength_multiplier="0"
+			always_counts_as_x_strength_including_any_contents="0"
+			hide_stat_block="true"
+			capturable_seed_weight="200"
+			capturable_max_per_galaxy="1"
+			custom_position="Center"
+			force_gravity_well_size_of_planet_to_be_at_least="127000"
+			force_gravity_well_size_of_planet_to_be_at_most="127000"
+			override_faction_center_color="Cyan"
+			override_faction_trim_color="c87CEEB"
+			force_background_planet_to_disappear="true"
+			is_always_forced_to_planet_center="true"
+			>
+
+		<ship_class_data
+				can_be_damaged="false"
+				requires_tooltip_at_all="false"
+				>
+		</ship_class_data>
+
+	</entity>
+
+    <!--
+    <entity name="VoidReef"
+            tags="NaturalPhenomena"
+            thematic_groups="NaturalPhenomena"
+            ship_skips_traditional_rendering="true"
+            visuals="assets/_finalgamemeshes/blankshipsootheraddonscandrawalone.prefab"
+            icon_name="Ships3/SomethingWeeds"
+            gimbal_icon_size_multiplier="1.5"
+            size_scale="1"
+            visuals_scale_multiplier="1"
+            voice_group="Silent"
+            category="Ship"
+            collision_priority="0"
+            display_name="虚空礁石"
+            display_name_for_sidebar="虚空礁石"
+            description="这个星系的小行星要么从未形成，要么通过某种过程变成粉末状的弥漫金属尘埃云——我们的工业难以收获这种形态。在这个不寻常的环境中，一种基于太空的生物群落发展起来。珊瑚和海绵状生物用不断扩展的细丝金属网过滤尘埃。"
+            behavior="Stationary"
+            starting_mark_level="Markless"
+            cost_for_ai_to_purchase="100000"
+            hull_points="2000000"
+            shield_points="0"
+            speed="Immobile"
+            metal_cost="0"
+            energy_consumption="0"
+            armor_mm="75"
+            albedo="0.5"
+            mass_tx="25"
+            ship_or_structure_explosion_sfx="StructureSmall_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+            draw_in_galaxy_view="true"
+            target_type_for_player="NeverTarget"
+            is_always_forced_to_planet_center="true"
+            priority_as_ai_target="IgnoreMe"
+            priority_as_frd_target="IgnoreMe"
+            priority_to_protect="IgnoreMe"
+            strength_multiplier="0"
+            always_counts_as_x_strength_including_any_contents="0"
+            should_never_count_as_threat="true"
+            override_faction_center_color="c006600"
+            override_faction_trim_color="c301934"
+            hide_stat_block="true"
+            capturable_seed_weight="200"
+            per_second_custom_logic_dll="Poi"
+			per_second_custom_logic_type="Poi.Poi_VoidReef_CustomLogic"
+            >
+        <ship_class_data can_be_damaged="false"
+                         requires_tooltip_at_all="false"
+                         >
+        </ship_class_data>
+    </entity>
+
+    <entity name="CoralFragment"
+            tags="CoralFragment"
+            thematic_groups="NaturalPhenomena"
+            visuals="assets/_finalgamemeshes/blankshipsootheraddonscandrawalone.prefab"
+            gimbal_icon_size_multiplier="1.5"
+            icon_name="Ships3/SomethingWeeds2"
+            size_scale="1"
+            visuals_scale_multiplier="1"
+            voice_group="Silent"
+            category="Ship"
+            collision_priority="0"
+            display_name="珊瑚碎片"
+            display_name_for_sidebar="珊瑚碎片"
+            description="废弃它以获取其金属。"
+            behavior="Stationary"
+            starting_mark_level="Markless"
+            cost_for_ai_to_purchase="10000"
+            hull_points="100000"
+            shield_points="100000"
+            speed="Immobile"
+            metal_cost="0"
+            energy_consumption="0"
+            armor_mm="75"
+            albedo="0.5"
+            mass_tx="25"
+            ship_or_structure_explosion_sfx="StructureSmall_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+            target_type_for_player="NeverTarget"
+            priority_as_ai_target="IgnoreMe"
+            priority_as_frd_target="IgnoreMe"
+            priority_to_protect="IgnoreMe"
+            strength_multiplier="0"
+            always_counts_as_x_strength_including_any_contents="0"
+            should_never_count_as_threat="true"
+
+            hide_stat_block="true"
+            metal_cost_multiplier_for_scrapping="0"
+            metal_to_grant_on_death="1000000"
+            can_be_given_orders_by_any_player_even_if_not_owner="true"
+            >
+        <ship_class_data can_be_damaged="false"
+                         requires_tooltip_at_all="false"
+                         >
+        </ship_class_data>
+    </entity>
+
+    <entity name="CoralFragment_2"
+            copy_from="CoralFragment"
+            tags="CoralFragment"
+            is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+            gimbal_icon_size_multiplier="1.25"
+    >
+    </entity>
+
+    <entity name="CoralFragment_3"
+            copy_from="CoralFragment"
+            tags="CoralFragment"
+            is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+            gimbal_icon_size_multiplier="1.75"
+    >
+    </entity>
+    -->
+    
+</root>

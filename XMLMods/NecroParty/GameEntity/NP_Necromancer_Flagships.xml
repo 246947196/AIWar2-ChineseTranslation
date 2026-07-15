@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!-- 模块参考 -->
+	<!-- 
+	<system
+			name="M1"
+			display_name="强化船体"
+	/>
+	<system
+			name="M2"
+			display_name="强化护盾"
+			/>
+	<system
+			name="FF"
+			display_name="力场"
+			/>
+	<system
+			name="TB"
+			display_name="牵引光束"
+			/>
+	<system
+			name="GC"
+			display_name="引力核心"
+			/>
+	<system
+			name="DC"
+			display_name="反隐形"
+			/>
+	<system
+			name="CL"
+			display_name="隐形"
+			/>
+	<system
+			name="W2"
+			display_name="反护盾等离子弹"
+			/>
+	<system
+			name="W3"
+			display_name="聚变炸弹"
+			/>
+	<system
+			name="M3"
+			display_name="增强船体"
+			/>
+	<system
+			name="M4"
+			display_name="增强护盾"
+			/>
+	-->
+
+	<entity	name="NecromancerBaseFlagship"
+			is_partial_record="true"
+
+            my_forcefield_has_no_penalty_for_enemies_firing_out_of_it="true"
+            my_forcefield_does_not_shrink="true"
+            engine_gx="18"
+			>
+
+			<system
+					name="FF"
+					display_name="力场"
+					module_point_cost="1"
+					/>
+
+			<system
+					name="M1"
+					display_name="强化船体"
+					system_is_hidden_for_ui="true"
+					/>
+			<system
+					name="M3"
+					display_name="增强船体"
+					system_is_hidden_for_ui="true"
+					/>
+			<system
+					name="CL"
+					display_name="隐形"
+					system_is_hidden_for_ui="true"
+					/>
+			<system
+					name="W3"
+					display_name="聚变炸弹"
+					system_is_hidden_for_ui="true"
+					/>
+
+	</entity>
+
+	<!-- 无改动，拥有所有模块 -->
+	<entity	name="NecromancerBlasterFlagship"
+			is_partial_record="true"
+
+            my_forcefield_has_no_penalty_for_enemies_firing_out_of_it="true"
+            my_forcefield_does_not_shrink="true"
+			engine_gx="18"
+			>
+
+			<system
+					name="FF"
+					display_name="力场"
+					module_point_cost="1"
+					/>
+	</entity>
+
+	<!-- 无改动，拥有所有模块 -->
+	<entity	name="NecromancerTankFlagship"
+			is_partial_record="true"
+
+            my_forcefield_has_no_penalty_for_enemies_firing_out_of_it="true"
+            my_forcefield_does_not_shrink="true"
+			engine_gx="18"
+			>
+
+			<system
+					name="FF"
+					display_name="力场"
+					module_point_cost="1"
+					/>
+	</entity>
+
+	<!-- 无改动，拥有所有模块 -->
+	<entity	name="NecromancerStarburstFlagship"
+			is_partial_record="true"
+
+            my_forcefield_has_no_penalty_for_enemies_firing_out_of_it="true"
+            my_forcefield_does_not_shrink="true"
+			engine_gx="18"
+			>
+
+			<system
+					name="FF"
+					display_name="力场"
+					module_point_cost="1"
+					/>
+	</entity>
+
+	<entity	name="NecromancerWrathfulFlagship"
+			is_partial_record="true"
+			engine_gx="18"
+			>
+
+			<system
+					name="FF"
+					display_name="力场"
+					module_point_cost="1"
+					/>
+
+			<system
+					name="CL"
+					display_name="隐形"
+					system_is_hidden_for_ui="true"
+					/>
+	</entity>
+
+	<entity	name="NecromancerEnviousFlagship"
+			is_partial_record="true"
+
+            my_forcefield_has_no_penalty_for_enemies_firing_out_of_it="true"
+            my_forcefield_does_not_shrink="true"
+			engine_gx="18"
+			>
+
+			<system
+					name="FF"
+					display_name="力场"
+					module_point_cost="1"
+					/>
+
+			<system
+					name="CL"
+					display_name="隐形"
+					system_is_hidden_for_ui="true"
+					/>
+	</entity>
+
+	<entity	name="NecromancerPlagueswarmFlagship"
+			is_partial_record="true"
+			engine_gx="18"
+			>
+
+			<system
+					name="FF"
+					display_name="力场"
+					module_point_cost="1"
+					/>
+
+			<system
+					name="CL"
+					display_name="隐形"
+					system_is_hidden_for_ui="true"
+					/>
+	</entity>
+
+	<entity	name="NecromancerSlothfulFlagship"
+			is_partial_record="true"
+			engine_gx="18"
+			>
+
+			<system
+					name="FF"
+					display_name="力场"
+					module_point_cost="1"
+					/>
+
+			<system
+					name="W3"
+					display_name="聚变炸弹"
+					system_is_hidden_for_ui="true"
+					/>
+
+			<system name="V1">
+				<outgoing_damage_modifier
+						based_on="CurrentSpeedIfMoving"
+						comparison_type="AtLeast"
+						compared_to="1000"
+						multiplier="2"
+						/>
+			</system>
+	</entity>
+
+	<entity	name="NecromancerDecadentFlagship"
+			is_partial_record="true"
+			engine_gx="18"
+			>
+
+			<system
+					name="FF"
+					display_name="力场"
+					module_point_cost="1"
+					/>
+
+			<system
+					name="W3"
+					display_name="聚变炸弹"
+					system_is_hidden_for_ui="true"
+					/>
+	</entity>
+
+	<entity	name="NecromancerDrakeFlagship"
+			is_partial_record="true"
+			engine_gx="18"
+			>
+
+			<system
+					name="FF"
+					display_name="力场"
+					module_point_cost="1"
+					/>
+
+			<system
+				name="W3"
+				display_name="聚变炸弹"
+				system_is_hidden_for_ui="true"
+			/>
+	</entity>
+
+	<entity	name="NecromancerCyclopeanFlagship"
+			is_partial_record="true"
+			engine_gx="18"
+			>
+
+			<system
+					name="FF"
+					display_name="力场"
+					module_point_cost="1"
+					/>
+
+			<system
+				name="M1"
+				display_name="强化船体"
+				system_is_hidden_for_ui="true"
+			/>
+
+			<system
+				name="M3"
+				display_name="增强船体"
+				system_is_hidden_for_ui="true"
+			/>
+	</entity>
+
+	<entity	name="NecromancerAccursedFlagship"
+			is_partial_record="true"
+			engine_gx="18"
+			>
+
+			<system
+					name="FF"
+					display_name="力场"
+					module_point_cost="1"
+					/>
+
+			<system
+				name="M1"
+				display_name="强化船体"
+				system_is_hidden_for_ui="true"
+			/>
+
+			<system
+				name="M3"
+				display_name="增强船体"
+				system_is_hidden_for_ui="true"
+			/>
+	</entity>
+
+	<entity	name="NecromancerBlasphemousFlagship"
+			is_partial_record="true"
+			engine_gx="18"
+			>
+
+			<system
+					name="FF"
+					display_name="力场"
+					module_point_cost="1"
+					/>
+
+			<system
+				name="M1"
+				display_name="强化船体"
+				system_is_hidden_for_ui="true"
+			/>
+
+			<system
+				name="M3"
+				display_name="增强船体"
+				system_is_hidden_for_ui="true"
+			/>
+	</entity>
+
+</root>

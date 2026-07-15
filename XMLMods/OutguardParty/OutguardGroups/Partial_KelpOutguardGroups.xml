@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!-- JCF: outguard rebalance -->
+	
+	<item name="Spire Archivist"
+		is_partial_record="true"
+		spawn_location="Manual_ByClick"
+	/>
+
+	<item name="Hydral Hobbyist"
+		is_partial_record="true"
+		spawn_location="Manual_ByClick"
+	/>
+
+	<item name="Democratic Demolitionists" short_name="D的演示"
+		is_partial_record="true"
+		spawn_location="Manual_ByClick"
+	/>
+</root>

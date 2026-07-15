@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<!-- Shattered Pillar Zenith?  (the purple ones) 
+		They speak Human languages
+		They're also post-apocalyptic
+		And... relatively small, but alive
+		... they seem to use a fortress theme, to the Templar's knightly theme
+		-->
+		<!--
+			"Heat Beam" (multi-hit beam)
+			"Energy Wave" (single-target howitzer)
+			Medic Frigate, Siege Engine, Reprocessor
+			
+			
+			visuals="assets/_dlc2/zenith/dzmetalharvester/dzmetalharvester.prefab" visuals_bundle="exp2_zenith_onslaught"
+			material_override_path="assets/_finalgamemeshes/golems/cursedgolem/cursedgolem.prefab" material_override_bundle="aiwar2goodiebox"
+			size_scale="13.5" visuals_scale_multiplier="36"
+			
+			*
+		visuals_bundle="exp2_zenith_onslaught" visuals="Assets/_DLC2/Zenith/ZAHoplomachus/ZAHoplomachus.prefab" 
+			*
+		visuals_bundle="exp2_zenith_onslaught" visuals="Assets/_DLC2/AI/AntiZenithDragon/AntiZenithDragon.prefab" 
+		material_override_bundle="aiwar2goodiebox" material_override_path="assets/_finalgamemeshes/guardians/missileguardian/missileguardian.prefab" 
+			*
+		visuals_bundle="aiwar2goodiebox" visuals="assets/_finalgamemeshes/golems/botnetgolem/botnetgolem.prefab" rotation_x_of_ship="30" rotation_z_of_ship="0"
+		material_override_bundle="aiwar2goodiebox" material_override_path="assets/_finalgamemeshes/guardians/missileguardian/missileguardian.prefab" 
+	    material_override_bundle="exp2_zenith_onslaught" material_override_path="assets/_dlc2/zenith/dzepistyle/dzepistylepiratical.prefab" 
+			*
+		This might be nice but DLC3
+			material_override_bundle="exp3_neinzul_abyss" material_override_path="Assets/_DLC3/NeinzulHomes/NeinzulNest/NeinzulNest.prefab" 
+			
+		icon_name="Ships3/DarkZenithEpistyle_Pirate" 
+		icon_name="Ships3/DarkZenithMetalHarvester" 
+		icon_overlay="Overlays2/SkeletonLord"
+		
+		visuals="assets/_finalgamemeshes/starships/siegestarship/siege_starship.prefab" lod_distance_overrides="800,3200,15000"
+		size_scale="15" visuals_scale_multiplier="22" y_offset_of_icon="90"
+		
+		visuals="assets/_dlc2/cruisers/trailblazercruiser/trailblazercruiser.prefab" visuals_bundle="exp2_zenith_onslaught"
+		visuals="assets/_dlc2/cruisers/tempestcruiser/tempestcruiser.prefab" visuals_bundle="exp2_zenith_onslaught"
+		visuals="assets/_dlc2/cruisers/riotcontrolcruiser/riotcontrolcruiser.prefab" visuals_bundle="exp2_zenith_onslaught"
+		visuals="assets/_dlc2/cruisers/voicepiercercruiser/voicepiercercruiser.prefab" visuals_bundle="exp2_zenith_onslaught"
+
+		visuals="Assets/_DLC2/General/MinelayerFrigate/MinelayerFrigate.prefab" visuals_bundle="exp2_zenith_onslaught"
+
+
+	    material_override_bundle="exp2_zenith_onslaught" material_override_path="assets/_dlc2/zenith/dzepistyle/dzepistylepiratical.prefab" 
+		material_override_bundle="aiwar2goodiebox" material_override_path="Assets/_FinalGameMeshes/Zenith/Dyson4Bastion/DysonBastion.prefab"
+		material_override_bundle="aiwar2goodiebox" material_override_path="assets/_finalgamemeshes/guardians/missileguardian/missileguardian.prefab" 
+		-->
+		
+	<entity copy_from="RPSF_Ark_Template" name="RPSF_Flagship_ShatteredPillar_Ark"
+		required_expansion_list="2_Zenith_Onslaught"
+		thematic_groups="ArkCapturable,Zenith"
+		tags="ShowsOnNormalDisplayMode,Capturable,AnyEarlyOfficer,AnyEarlyOfficer_Expert,AnyOfficer,AnyOfficer_Expert"
+		capturable_seed_weight="100" capturable_max_per_galaxy="1" capturable_can_seed_at_all="false"
+		
+		
+		visuals_bundle="exp2_zenith_onslaught" visuals="Assets/_DLC2/General/MinelayerFrigate/MinelayerFrigate.prefab" 
+		rotation_x_of_ship="180" rotation_z_of_ship="0"
+
+	    size_scale="14" visuals_scale_multiplier="40" 
+		
+	    material_override_bundle="exp2_zenith_onslaught" material_override_path="assets/_dlc2/zenith/dzepistyle/dzepistylepiratical.prefab" 
+	    
+		y_offset_of_icon="90"
+		
+		icon_overlay="Overlays2/SkeletonLord"
+		tech_upgrades_that_benefit_me="Alien" tech_upgrade_that_is_used_for_my_direct_science="RPSF_Direct_ArkWithTech_AlienExpatriate"
+	    
+	  	energy_consumption="0"
+	    
+	    voice_group="Ark_CherylHarris" 
+		display_name="巨石" display_name_for_sidebar="SPZ巨石"
+		description="一艘产生大量能量的破碎支柱旗舰。"
+		aip_to_claim="10"
+		
+		  hull_points="500000" 
+		shield_points="500000" 
+		speed="High"
+		armor_mm="180" albedo="0.8" mass_tx="7" engine_gx="25" 
+		
+	    seconds_to_fully_regenerate_hull="600"
+		damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.05"
+		>
+		<resource_production type="Energy" amount="250000" increase_per_mark_level="125000"/>
+		<system name="W0" display_name="天顶榴弹炮"
+			category="Weapon" firing_timing="OnlyInRange" fires_salvos_sequentially="false"
+			range="High2" shot_speed="Slow"
+			damage_per_shot="20000" rate_of_fire="Misery"
+			shots_per_salvo="1"
+			shot_type_data="PlasmaTorpedoAOEBurstAtEnd"
+			area_of_effect_size="600" aoe_spreads_damage_among_available_targets="true"
+			>
+		</system><!-- 10k x2 targets = 20k -->
+		<system name="W1" display_name="热光束"
+			category="Weapon" firing_timing="OnlyInRange" fires_salvos_sequentially="false"
+			range="High2" shot_speed="Normal"
+			damage_per_shot="7500" rate_of_fire="FairlyLow"
+			shots_per_salvo="8"
+			shot_type_data="HeavyBeamInvisible" beam_weapon_visual_style="Laser_Red"
+			shots_detonate_immediately="true" beam_length_multiplier="1.3"
+			hits_all_intersecting_targets="true" maximum_number_of_targets_hit_per_shot="9"	
+			>
+		</system><!-- 1.1k x(1+8) salvo x(1+~3)/2 AOE = 19k-->
+	</entity>
+	<entity copy_from="RPSF_Flagship_ShatteredPillar_Ark" name="RPSF_Flagship_ShatteredPillar_Ark_Sidekick" 
+		required_expansion_list="2_Zenith_Onslaught"
+		thematic_groups="ArkHomeCommand,Zenith" is_ark="true" 
+		capturable_can_seed_at_all="false"
+		special_entity_type="MobileOfficerCombatFleetFlagship"  
+		tags="ShowsOnNormalDisplayMode,HumanArkSidekickArks"
+		icon_name="Ships1/Ark" 
+		gimbal_icon_size_multiplier="2" is_critical_infrastructure="true"
+	  	energy_consumption="0"
+		is_scrapping_by_player_disallowed="true" player_loses_if_any_die="false"
+		tech_upgrades_that_benefit_me="Alien" tech_upgrade_that_is_used_for_my_direct_science="RPSF_Direct_ArkWithTech_AlienExpatriate_EZ"
+		metal_storage="2500000" added_metal_storage_per_mark_level="500000"
+		display_name_for_sidebar="SPZ巨石"
+		description="一艘产生比平时更多能量的破碎支柱旗舰。"
+		>
+		<resource_production type="Metal" amount="2200" increase_per_mark_level="800"/>
+		<resource_production type="Energy" amount="1000000" increase_per_mark_level="180000"/> <!-- base 750k/55k -->
+		<resource_production type="FuelArgon" amount="500000" />
+		<resource_production type="FuelRadon" amount="500000" />
+		<metal_flow purpose="FactoryConstructionForPlayerMobileFleets" throughput="3000" increase_per_mark_level="2000"/>
+	</entity>
+	<entity copy_from="RPSF_Flagship_ShatteredPillar_Ark_Sidekick" name="RPSF_Flagship_ShatteredPillar_Ark_Home" 
+		required_expansion_list="2_Zenith_Onslaught"
+		special_entity_type="HumanHomeArk" 
+		icon_name="Ships1/King"
+		tags="ShowsOnNormalDisplayMode,HumanArkEmpireArks"
+		player_loses_if_any_die="true"
+		display_name="巨石家园方舟"
+		display_name_for_sidebar="SPZ巨石"
+		description="一艘产生比平时更多能量的破碎支柱旗舰。你人民的最后避难所。"
+		strength_multiplier="1"
+		>	
+		<resource_production type="Metal" amount="2200" increase_per_mark_level="400"/>
+		<resource_production type="Energy" amount="600000" increase_per_mark_level="150000"/> <!-- base 350k/25k -->
+	</entity>
+	<!-- DZ? -->
+	<!-- ZA? -->
+	<!-- "lurking" Ark that uses the Architrave golem mechanic-->
+	<!-- 
+	
+		Architrave Golem:
+		
+		icon_name="Ships3/ZenithArchitraveHastati" 	icon_overlay="Overlays2/GuardPost_MultiPhase" 
+		forced_to_always_be_this_state_of_matter="MultiPhase" 
+		state_of_matter_to_become_on_wormhole_exit="Normal"   returns_to_default_state_of_matter_after_seconds_from_wormhole_exit="15" 
+	-->
+	<entity copy_from="RPSF_Golem_Template" name="RPSF_Ark_Neptune" 
+		required_expansion_list="2_Zenith_Onslaught"
+		
+		thematic_groups="GolemCapturable,Zenith" 
+		visuals="Assets/_DLC2/Zenith/ZAHastati/ZAHastati.prefab" visuals_bundle="exp2_zenith_onslaught"
+		icon_name="Ships3/ZenithArchitraveHastati"
+		icon_overlay="Overlays2/GuardPost_MultiPhase" 
+		
+		tags="ShowsOnNormalDisplayMode,Capturable,AnyOfficer,AnyOfficer_Expert"
+		capturable_seed_weight="100" capturable_max_per_galaxy="1" capturable_can_seed_at_all="true"
+		
+		size_scale="11" visuals_scale_multiplier="60"
+		y_offset_of_icon="35"
+		
+		
+		  hull_points="1350000" 
+		shield_points="650000" 
+		display_name="海王星"
+		description="潜伏在多重相位中，建造无人机将敌人拖入其领域。"
+		aip_to_claim="15"
+		strength_multiplier="2"
+		
+		tech_upgrades_that_benefit_me="Alien" tech_upgrade_that_is_used_for_my_direct_science="RPSF_Direct_GolemWithTech_AlienExpatriate_EZ"
+		armor_mm="350" albedo="0.5" engine_gx="22"
+		
+		forced_to_always_be_this_state_of_matter="MultiPhase" 
+		state_of_matter_to_become_on_wormhole_exit="Normal"   returns_to_default_state_of_matter_after_seconds_from_wormhole_exit="15" 
+		
+		fleet_design_template_i_use_for_drones="RPSF_Drones_Neptune"
+		drone_starting_behavior_type="Attacker_Full"
+		
+	    seconds_to_fully_regenerate_hull="600"
+		>
+		<system name="W1" display_name="线圈巨口"
+			category="Weapon" firing_timing="OnlyInRange"
+			range="Normal2" shot_speed="Normal" 
+			damage_per_shot="18002" rate_of_fire="High" 
+			
+			shot_type_data="HeavyBeamInvisible"
+			is_coilbeam="true" hits_all_intersecting_targets="true"
+			shots_detonate_immediately="true" beam_length_multiplier="1"
+			number_beams_to_fire="12" beam_weapon_visual_style="Laser_BlueBright" distance_from_center_for_beam_emission="30"  
+				
+			fires_salvos_sequentially="false"
+			
+			health_change_per_damage_dealt="0.1"
+			state_of_matter_for_target_to_become="MultiPhase" inflicts_state_of_matter_on_target_for_seconds="30" cannot_inflict_state_of_matter_if_target_has_any_shields_up="true"
+			>
+		</system><!-- 6k x(12+12)beams x1.5 coil fusion x(~0.75) phasing nonsense = 162k -->
+	</entity>
+	
+	<entity copy_from="RPSF_Ark_Neptune" name="RPSF_Ark_Neptune_Sidekick" 
+		required_expansion_list="2_Zenith_Onslaught"
+		thematic_groups="ArkHomeCommand,Zenith"
+		gimbal_icon_size_multiplier="2" is_critical_infrastructure="true"
+		tags="ShowsOnNormalDisplayMode,HumanArkSidekickArks"
+	  	energy_consumption="0"
+		player_loses_if_any_die="false"
+		capturable_can_seed_at_all="false"
+		metal_storage="2500000" added_metal_storage_per_mark_level="500000"
+		is_scrapping_by_player_disallowed="true"
+		tech_upgrade_that_is_used_for_my_direct_science="RPSF_Direct_ArkWithTech_AlienExpatriate_EZ"
+		custom_neverRandom="true"
+		>
+		<resource_production type="Metal" amount="2200" increase_per_mark_level="800"/>
+		<resource_production type="Energy" amount="750000" increase_per_mark_level="55000"/>
+		<resource_production type="FuelArgon" amount="500000" />
+		<resource_production type="FuelRadon" amount="500000" />
+		<metal_flow purpose="FactoryConstructionForPlayerMobileFleets" throughput="3000" increase_per_mark_level="2000"/>
+	</entity>
+	<!-- <entity copy_from="RPSF_Ark_Neptune_Sidekick" name="RPSF_Ark_Neptune_Home" 
+		required_expansion_list="2_Zenith_Onslaught"
+		special_entity_type="HumanHomeArk" 
+		icon_name="Ships1/King"
+		tags="ShowsOnNormalDisplayMode,HumanArkEmpireArks"
+		player_loses_if_any_die="true"
+		custom_neverRandom="true"
+		>
+		<resource_production type="Metal" amount="2200" increase_per_mark_level="400"/>
+		<resource_production type="Energy" amount="350000" increase_per_mark_level="25000"/>
+	</entity>-->
+	<entity copy_from="RPSF_Drone_Template" name="RPSF_Drone_Whirlpool_Neptune"
+		required_expansion_list="2_Zenith_Onslaught"
+		visuals="assets/_dlc2/cruisers/void/void.prefab"  visuals_bundle="exp2_zenith_onslaught"
+		icon_name="Ships3/Void" icon_overlay="Overlays2/GuardPost_MultiPhase" 
+		
+		size_scale="3.6"
+		visuals_scale_multiplier="6"
+	
+	
+		  hull_points="62500" 
+		shield_points="62500"
+	
+		display_name="海王星漩涡" display_name_for_sidebar="海王星漩涡"
+		description="寻找敌方舰船并将其拖入海王星的领域。"
+		
+		speed="AboveAverage1"
+		
+		armor_mm="80" albedo="0.45" mass_tx="4"
+		
+		forced_to_always_be_this_state_of_matter="Normal" 
+		priority_as_ai_target="NotDangerous" priority_as_frd_target="NotDangerous" priority_to_protect="Expendable"
+		>
+		<fleet_membership name="RPSF_Drones_Neptune" ship_cap_group="Strike" weight="100" cap="3"/>
+		<system name="WM" display_name="漩涡" 
+			category="Weapon" firing_timing="OnlyInRange" 
+			range="AlmostNone" seek_range="Normal1" shot_speed="Instant" 
+			
+			damage_per_shot="24000" rate_of_fire="Low" 
+			area_of_effect_size="5000" aoe_spreads_damage_among_available_targets="true"
+			
+			shot_type_data="ExplosiveFlakBurst" fires_salvos_sequentially="false"
+			
+			state_of_matter_for_target_to_become="MultiPhase" inflicts_state_of_matter_on_target_for_seconds="30" 
+			cannot_inflict_state_of_matter_if_target_has_any_shields_up="true"  cannot_inflict_state_of_matter_if_target_has_energy_usage_of_at_least="250000"
+			>
+		</system><!-- 4k x (1 + ~7) targets /2 melee x(~0.75) phasing nonsense = 10.5k-->
+		<incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="3000" multiplier="0.1" />
+	</entity>
+	
+</root>
