@@ -27,7 +27,7 @@
 			thematic_groups="AI"
 			tags="AIOverlord_AnyTypeOrPhase,AIOverlordPhase2_AnyType,AIOverlordPhase2_Difficulty1,ShowsOnNormalDisplayMode"
 			display_name="游牧者AI霸主第二阶段(v0.001原型)"
-			description="The central processing unit for an entire AI faction. The Nomad AI prosecutes war, personally, roaming at will with the Warden Fleet. You are extremely fortunate to be facing the lowly v0.001proto variant, which is extremely weak and extra slow."
+			description="整个AI派系的中央处理单元。游牧者AI亲自执行战争，随守望舰队任意漫游。你极其幸运地面对低微的v0.001原型变体，极其弱小且格外缓慢。"
 			description_short="整个AI派系的中央处理单元。"
 			multiplier_to_all_costs="0.05" multiplier_to_all_healths="0.05" damage_multiplier_to_all_weapons="0.1"
 			/>
@@ -38,7 +38,7 @@
 			thematic_groups="AI"
 			tags="AIOverlord_AnyTypeOrPhase,AIOverlordPhase2_AnyType,AIOverlordPhase2_Difficulty2,ShowsOnNormalDisplayMode"
 			display_name="游牧者AI霸主第二阶段(v0.002原型)"
-			description="The central processing unit for an entire AI faction. The Nomad AI prosecutes war, personally, roaming at will with the Warden Fleet. You are extremely fortunate to be facing the lowly v0.002proto variant, which is extremely weak and extra slow."
+			description="整个AI派系的中央处理单元。游牧者AI亲自执行战争，随守望舰队任意漫游。你极其幸运地面对低微的v0.002原型变体，极其弱小且格外缓慢。"
 			description_short="整个AI派系的中央处理单元。"
 			multiplier_to_all_costs="0.1" multiplier_to_all_healths="0.1" damage_multiplier_to_all_weapons="0.1"
 			/>
@@ -49,7 +49,7 @@
 			thematic_groups="AI"
 			tags="AIOverlord_AnyTypeOrPhase,AIOverlordPhase2_AnyType,AIOverlordPhase2_Difficulty3,ShowsOnNormalDisplayMode"
 			display_name="游牧者AI霸主第二阶段(v0.003原型)"
-			description="The central processing unit for an entire AI faction. The Nomad AI prosecutes war, personally, roaming at will with the Warden Fleet. You are extremely fortunate to be facing the lowly v0.003proto variant, which is extremely weak and extra slow."
+			description="整个AI派系的中央处理单元。游牧者AI亲自执行战争，随守望舰队任意漫游。你极其幸运地面对低微的v0.003原型变体，极其弱小且格外缓慢。"
 			description_short="整个AI派系的中央处理单元。"
 			multiplier_to_all_costs="0.15" multiplier_to_all_healths="0.15" damage_multiplier_to_all_weapons="0.15"
 			/>
@@ -60,7 +60,7 @@
 			thematic_groups="AI"
 			tags="AIOverlord_AnyTypeOrPhase,AIOverlordPhase2_AnyType,AIOverlordPhase2_Difficulty4,ShowsOnNormalDisplayMode"
 			display_name="游牧者AI霸主第二阶段(v0.44rc)"
-			description="The central processing unit for an entire AI faction. The Nomad AI prosecutes war, personally, roaming at will with the Warden Fleet. You are extremely fortunate to be facing the lowly v0.44rc variant, which is pretty weak and extra slow."
+			description="整个AI派系的中央处理单元。游牧者AI亲自执行战争，随守望舰队任意漫游。你极其幸运地面对低微的v0.44rc变体，相当弱小且格外缓慢。"
 			description_short="整个AI派系的中央处理单元。"
 			multiplier_to_all_costs="0.2" multiplier_to_all_healths="0.2" damage_multiplier_to_all_weapons="0.2"
 			/>
@@ -71,7 +71,7 @@
 			thematic_groups="AI"
 			tags="AIOverlord_AnyTypeOrPhase,AIOverlordPhase2_AnyType,AIOverlordPhase2_Difficulty5,ShowsOnNormalDisplayMode"
 			display_name="游牧者AI霸主第二阶段(v5xrc)"
-			description="The central processing unit for an entire AI faction. The Nomad AI prosecutes war, personally, roaming at will with the Warden Fleet. You are fortunate to be facing the v5xrc variant, which is weaker than reports led us to believe would be the case, as well as slower than expected."
+			description="整个AI派系的中央处理单元。游牧者AI亲自执行战争，随守望舰队任意漫游。你很幸运面对v5xrc变体，比报告所述要弱且比预期要慢。"
 			description_short="整个AI派系的中央处理单元。"
 			multiplier_to_all_costs="0.25" multiplier_to_all_healths="0.25" damage_multiplier_to_all_weapons="0.25"
 			/>
@@ -82,7 +82,7 @@
 			thematic_groups="AI"
 			tags="AIOverlord_AnyTypeOrPhase,AIOverlordPhase2_AnyType,AIOverlordPhase2_Difficulty6,ShowsOnNormalDisplayMode"
 			display_name="游牧者AI霸主第二阶段(x6kx)"
-			description="The central processing unit for an entire AI faction. The Nomad AI prosecutes war, personally, roaming at will with the Warden Fleet. You are facing the x6kx variant, which is weaker than reports led us to believe, but still formidable."
+			description="整个AI派系的中央处理单元。游牧者AI亲自执行战争，随守望舰队任意漫游。你面对的是x6kx变体，虽比报告所述要弱，但依然强大。"
 			description_short="整个AI派系的中央处理单元。"
 			multiplier_to_all_costs="0.5" multiplier_to_all_healths="0.5" damage_multiplier_to_all_weapons="0.5"
 			/>
@@ -93,7 +93,7 @@
 			thematic_groups="AI"
 			tags="AIOverlord_AnyTypeOrPhase,AIOverlordPhase2_AnyType,AIOverlordPhase2_Difficulty7,ShowsOnNormalDisplayMode"
 			display_name="游牧者AI霸主第二阶段(t7000)"
-			description="The central processing unit for an entire AI faction. The Nomad AI prosecutes war, personally, roaming at will with the Warden Fleet. You are facing the t7000 variant, which is not to be trifled with."
+			description="整个AI派系的中央处理单元。游牧者AI亲自执行战争，随守望舰队任意漫游。你面对的是t7000变体，不可小觑。"
 			description_short="整个AI派系的中央处理单元。"
 			multiplier_to_all_costs="0.75" multiplier_to_all_healths="0.75" damage_multiplier_to_all_weapons="0.75"
 			/>
@@ -104,7 +104,7 @@
 			thematic_groups="AI"
 			tags="AIOverlord_AnyTypeOrPhase,AIOverlordPhase2_AnyType,AIOverlordPhase2_Difficulty8,ShowsOnNormalDisplayMode"
 			display_name="游牧者AI霸主第二阶段(t80)"
-			description="The central processing unit for an entire AI faction. The Nomad AI prosecutes war, personally, roaming at will with the Warden Fleet. You are facing the deadly t80 variant, which is strong and fast."
+			description="整个AI派系的中央处理单元。游牧者AI亲自执行战争，随守望舰队任意漫游。你面对的是致命的t80变体，强大而快速。"
 			description_short="整个AI派系的中央处理单元。"
 			multiplier_to_all_costs="1" multiplier_to_all_healths="1" damage_multiplier_to_all_weapons="1"
 			/>
@@ -115,7 +115,7 @@
 			thematic_groups="AI"
 			tags="AIOverlord_AnyTypeOrPhase,AIOverlordPhase2_AnyType,AIOverlordPhase2_Difficulty9,ShowsOnNormalDisplayMode"
 			display_name="游牧者AI霸主第二阶段(z90)"
-			description="The central processing unit for an entire AI faction. The Nomad AI prosecutes war, personally, roaming at will with the Warden Fleet. You are facing the deadly z90 variant, which is very strong and very fast."
+			description="整个AI派系的中央处理单元。游牧者AI亲自执行战争，随守望舰队任意漫游。你面对的是致命的z90变体，非常强大且非常快速。"
 			description_short="整个AI派系的中央处理单元。"
 			multiplier_to_all_costs="1.2" multiplier_to_all_healths="1.2" damage_multiplier_to_all_weapons="1.2"
 			/>
@@ -126,7 +126,7 @@
 			thematic_groups="AI"
 			tags="AIOverlord_AnyTypeOrPhase,AIOverlordPhase2_AnyType,AIOverlordPhase2_Difficulty10,ShowsOnNormalDisplayMode"
 			display_name="游牧者AI霸主(x4000超级)"
-			description="The central processing unit for an entire AI faction. The Nomad AI prosecutes war, personally, roaming at will with the Warden Fleet. You are facing the world-ending x4000 Super variant, which is ferociously strong and alarming fast."
+			description="整个AI派系的中央处理单元。游牧者AI亲自执行战争，随守望舰队任意漫游。你面对的是世界终结者x4000超级变体，凶猛地强大且惊异地快速。"
 			description_short="整个AI派系的中央处理单元。"
 			multiplier_to_all_costs="1.8" multiplier_to_all_healths="1.8" damage_multiplier_to_all_weapons="2"
 			/>

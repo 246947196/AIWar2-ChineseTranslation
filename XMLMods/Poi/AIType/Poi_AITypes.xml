@@ -1121,7 +1121,7 @@
                         dll_name="PoiDeep"
                         type_name="Poi.AITypeController_Ravager"
                         type_difficulty="Brutal"
-                        description="This AI will cede nothing! Destroying an AI Station causes the planet to be Ravaged, destroying all resources. &lt;color=#ffa132&gt;This AI should be paired with some other type and not played against by itself.&lt;/color&gt;"
+                        description="这个AI不会放弃任何东西！摧毁AI空间站会导致行星被蹂躏，摧毁所有资源。&lt;color=#ffa132&gt;此AI应与其他类型配对使用，不应单独对抗。&lt;/color&gt;"
                         
                         command_station_pick_tag="RavagerCommandStationPick"
                         
@@ -1613,7 +1613,7 @@
                         dll_name="PoiDeep"
                         type_name="Poi.AITypeController_PlanetAnnihilator"
                         type_difficulty="Brutal"
-                        description="This AI doesn't just send waves but hurls literal &lt;b&gt;planets&lt;/b&gt; at you. Destroy the AI's Nomad Control Device on these planets to stop them, but even so this has a ... destablizing impact on the galaxy's wormhole network."
+                        description="这个AI不仅发送波次，还向您投掷字面意义上的&lt;b&gt;行星&lt;/b&gt;。摧毁这些行星上的AI游牧者控制装置来阻止它们，但即便如此，这也会对银河系的虫洞网络产生…不稳定的影响。"
                         >
 </ai_type>
 -->

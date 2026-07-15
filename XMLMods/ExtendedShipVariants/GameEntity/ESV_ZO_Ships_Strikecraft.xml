@@ -225,7 +225,7 @@
 			returns_this_percentage_of_damage_when_firing_retalitatory_shot="0.5"
 		>
 		</system>
-		<system name="W2" display_name="Shatter"
+		<system name="W2" display_name="粉碎"
 			damage_per_shot="2000" range="AlmostNone" rate_of_fire="Devourer" shot_type_data="MeleeInvisible"
 			health_change_by_max_health_divided_by_this_per_attack="-1"
 		>

@@ -4,7 +4,7 @@
 	<entity name="TransportFlagship_Engineering" copy_from="TransportFlagship_Base" tags="ShowsOnNormalDisplayMode,Capturable"
 		display_name="工程运输旗舰"
 		display_name_for_sidebar="工程运输"
-		description="Hybrid between a transport flagship and an engineer: Slower and more fragile but with the ability to repair, assist construction and claiming units. It also boosts metal and energy income more and sooner when idle on planets."
+		description="运输旗舰和工程师的混合体：较慢更脆弱，但能够修理、协助建造和回收单位。在行星上闲置时还能更快更多地提升金属和能量收入。"
 		tech_upgrade_that_is_used_for_my_direct_science="Direct_AgileTransport"
 		capturable_can_seed_at_all="false"
 		speed="AboveAverage6" hull_points="250000" shield_points="250000"
@@ -105,12 +105,12 @@
 	</entity>
   
 	<entity name="TransportFlagship_Agile" is_partial_record="true" speed_multiplier_first_5_seconds_on_planet="1.25" engine_gx="21"
-		description="Extremely fast but less durable Flagship with no weaponry, mainly useful for shuttling its Fleet around quickly and protecting them during raid attacks. Resists damage from longer distances and can escape planets with hostile Black Hole Machines on them."
+		description="极快但耐久较低的旗舰，没有武器，主要用于快速穿梭舰队并在突袭攻击中保护它们。抵抗远距离伤害，并能逃离有敌对黑洞机器的行星。"
 	>
 	</entity>
 
 	<entity name="TransportFlagship_Agile_Seeded" is_partial_record="true" speed_multiplier_first_5_seconds_on_planet="1.25" engine_gx="21"
-		description="Extremely fast but less durable Flagship with no weaponry, mainly useful for shuttling its Fleet around quickly and protecting them during raid attacks. Resists damage from longer distances and can escape planets with hostile Black Hole Machines on them."
+		description="极快但耐久较低的旗舰，没有武器，主要用于快速穿梭舰队并在突袭攻击中保护它们。抵抗远距离伤害，并能逃离有敌对黑洞机器的行星。"
 	>
 	</entity>
 	
@@ -118,7 +118,7 @@
 		tags="Capturable,ShowsOnNormalDisplayMode"
 		display_name="代谢工厂"
 		display_name_for_sidebar="代谢C-FAC"
-		description="Mobile facility Flagship. If a Fleet Flagship is on the same or adjacent planet, and is missing ships, then this will automatically produce replacements which will warp directly to that Flagship. Also launches drones at close enemies that metabolize to help out with metal generation in larger wars of attrition."
+		description="机动设施旗舰。如果舰队旗舰在同一或相邻行星且缺少舰船，将自动生产替代品直接跃迁到该旗舰。也向近距敌人发射代谢无人机，在更大消耗战中帮助产生金属。"
 		description_short="机动设施，自动替换附近舰队损失并修理附近单位。通过代谢支援盟友。"
 		fleet_design_template_i_use_for_drones="ConsumerDrones"
 		drone_starting_behavior_type="Attacker_Full"
@@ -131,7 +131,7 @@
 		tags="Capturable,ShowsOnNormalDisplayMode"
 		display_name="救援工厂"
 		display_name_for_sidebar="救援C-FAC"
-		description="Mobile facility Flagship. If a Fleet Flagship is on the same or adjacent planet, and is missing ships, then this will automatically produce replacements which will warp directly to that Flagship. Launches no offensive drones but small beacons which can act as emergency warp beacons for ships to save themselves."
+		description="机动设施旗舰。如果舰队旗舰在同一或相邻行星且缺少舰船，将自动生产替代品直接跃迁到该旗舰。不发射攻击无人机，而是发射可作为舰船自救紧急跃迁信标的小型信标。"
 		description_short="机动设施，自动替换附近舰队损失并修理附近单位。通过复活无人机支援盟友。"
 		hacking_cost_for_other_fleet_leaders_of_same_type_to_become_me="40"
 	>
@@ -148,8 +148,8 @@
 		tags="Capturable,ShowsOnNormalDisplayMode"
 		display_name="传送工厂"
 		display_name_for_sidebar="传送C-FAC"
-		description="Mobile facility Flagship. If a Fleet Flagship is on the same or adjacent planet, and is missing ships, then this will automatically produce replacements which will warp directly to that Flagship. Pushes nearby enemies with low mass away and paralyzes them for a short while."
-		description_short="Mobile facility that automatically replaces nearby Fleet losses and repairs nearby units. Pushes nearby enemies with low mass away and paralyzes them for a short while."
+		description="机动设施旗舰。如果舰队旗舰在同一或相邻行星且缺少舰船，将自动生产替代品直接跃迁到该旗舰。推开附近低质量敌人并使其短暂瘫痪。"
+		description_short="机动设施，自动替换附近舰队损失并修理附近单位。推开附近低质量敌人并使其短暂瘫痪。"
 		hacking_cost_for_other_fleet_leaders_of_same_type_to_become_me="30"
 	>
 		<system name="GP" display_name="引力脉冲"

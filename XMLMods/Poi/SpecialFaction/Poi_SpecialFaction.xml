@@ -15,9 +15,9 @@
                ai_does_not_generate_threat_against="true"
                ai_threat_against_this_faction_goes_back_to_guarding="true"
                ai_can_send_waves_against_this="false"
-               description="Adds interesting locations throughout the galaxy with strategic value.
+               description="在银河系各处添加具有战略价值的有趣地点。
 
-&lt;color=#f25e1c&gt;LOW IMPACT:&lt;/color&gt; This faction is neutral for the most part or affects every faction equally."
+&lt;color=#f25e1c&gt;低影响：&lt;/color&gt;该派系大部分时间保持中立或平等影响每个派系。"
                can_use_spire_debris="false"
                impact="Easier"
                icon_name_for_lobby="Ships4/SomethingHuh"

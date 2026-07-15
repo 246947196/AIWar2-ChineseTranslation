@@ -4,7 +4,7 @@
     <galaxy_setting category="Outguard" is_partial_record="true"
                     name="OutguardToSeed"
                     default="6"
-                    description="How many Outguard Beacons will be seeded throughout the galaxy? By default (with Outguard Party) this is 6. Standard is 5."
+                    description="银河系中将生成多少个外卫信标？默认（使用外卫派对时）为6个。标准为5个。"
                     >
         <harshness_override min_campaign_harshness_to_apply="0"
                             disable_override="true"
@@ -14,7 +14,7 @@
     <galaxy_setting name="OutguardPerBeacon" is_partial_record="true"
                     category="Outguard"
                     default="1"
-                    description="How many Outguard are at each Beacon? By default (with Outguard Party) this is 1. Standard is 2."
+                    description="每个信标有多少个外卫？默认（使用外卫派对时）为1个。标准为2个。"
                     >
         <harshness_override min_campaign_harshness_to_apply="0"
                             disable_override="true"

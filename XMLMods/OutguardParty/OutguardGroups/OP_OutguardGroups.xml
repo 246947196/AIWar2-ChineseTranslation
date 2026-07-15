@@ -206,7 +206,7 @@
 
 	<item
 			name="SuperBulwark"
-			display_name="Super Bulwark"
+			display_name="超级堡垒"
 			description="这个防御承包商找到了快速设置防御的诀窍。他没有提供十个堡垒炮塔，而是将它们重新组装成一个拥有十倍力量的超级堡垒炮塔。但哪能止步于此？他还带来了动能缓冲器在其周围布雷。"
 
 			class="Stationary"

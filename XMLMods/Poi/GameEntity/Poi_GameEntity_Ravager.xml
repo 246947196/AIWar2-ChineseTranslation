@@ -22,7 +22,7 @@
 			display_name="蹂躏者指挥站"
 			display_name_for_sidebar="蹂躏者AI指挥"
 			target_type_for_player="AutotargetIfTakingPlanet"
-			description="Planetary command center. You must destroy this before you can build your own command station to claim the planet. Unlike a normal command station, this one Ravages the planet on death."
+			description="行星指挥中心。你必须先摧毁它才能建造自己的指挥站来占领行星。与普通指挥站不同，此指挥站死亡时会蹂躏行星。"
 			description_short="你必须先摧毁它才能建造自己的指挥站来占领行星。与普通指挥站不同，此指挥站死亡时会蹂躏行星。"
 			voice_group="Silent"
 			starting_mark_level="Mark1"

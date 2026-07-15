@@ -8,7 +8,7 @@
 		visuals_scale_multiplier="5"
 		display_name="电磁脉冲导弹护卫舰"
 		display_name_for_sidebar="电磁脉冲导弹FFM"
-		description="Has modest firepower in its own right, but is able to stun enemies using missiles tipped with EMP warheads strong enough to affect even small frigates. Spawns 10 every 12 seconds, 2 more for every mark beyond 1."
+		description="本身拥有适度的火力，但能使用配备电磁脉冲弹头的导弹眩晕敌人，其强度足以影响小型护卫舰。每12秒生成10枚，1级以上每级多2枚。"
 		drone_starting_behavior_type="Attacker_Full"
 		tech_upgrades_that_benefit_me="Disruptive,Medium"
 		strength_multiplier="2"

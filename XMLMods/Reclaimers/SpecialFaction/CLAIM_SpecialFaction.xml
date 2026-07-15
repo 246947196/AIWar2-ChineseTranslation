@@ -13,9 +13,9 @@
                type="SpecialFaction"
                must_be_at_most_one="true"
                description="
-A faction dedicated to advancing the reach of humanity in the galaxy and reclaiming what was lost. They will assist in defending your planets and with scouting and suppressing your neighbors. Locate their research outposts to aquire helpful alien technology. Make use of their deep space outposts which form temporary wormholes to distant parts of the galaxy.
+一个致力于扩大人类在银河系中影响力并回收失落之物的派系。他们将协助防御你的行星，并侦察和压制你的邻居。找到他们的研究前哨站以获取有用的外星科技。利用他们的深空前哨站形成通往银河系遥远区域的临时虫洞。
 
-&lt;color=#f25e1c&gt;LOW IMPACT:&lt;/color&gt; This faction will assist their allies and have no downsides."
+&lt;color=#f25e1c&gt;低影响：&lt;/color&gt;该派系将协助盟友且没有任何负面影响。"
                can_use_spire_debris="false"
                impact="Easier"
                icon_name_for_lobby="Ships4/SomethingRevolution"
@@ -36,7 +36,7 @@ A faction dedicated to advancing the reach of humanity in the galaxy and reclaim
           <custom_field
                     name="DebugMode"
                     is_advanced_setting="true"
-                    display_name="&lt;color=#a0a0a0&gt;Debug Mode&lt;/color&gt;"
+                    display_name="&lt;color=#a0a0a0&gt;调试模式&lt;/color&gt;"
                     description="供开发者使用。"
                     sort_group="500"
                     setting_type="BoolToggle"

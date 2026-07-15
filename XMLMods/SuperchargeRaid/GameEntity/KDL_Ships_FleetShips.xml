@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  
+  <entity name="Raider" is_partial_record="true"	
+		supercharges_min_speed_of_rest_of_player_fleet="true"
+		supercharges_only_apply_when_fleet_line_count_is_x_or_less="99"
+			>
+  </entity>
+<!--
+   <entity name="ViciousRaider" copy_from="Raider"
+           display_name="Vicious Raider" 
+	         hull_points="8000" shield_points="1500" metal_cost="2100" speed="AboveAverage6"
+	  >
+	 <fleet_membership name="VeteranViciousMix" ship_cap_group="Strike" weight="100" min="15" max="25"/> 
+     <fleet_membership name="UnusualMix" ship_cap_group="Strike" weight="100" min="15" max="25"/>
+	 <ai_ship_group_membership name="ViciousRaidStrikecraftAndFrigates" weight="100"/>
+	 <ai_ship_group_membership name="ViciousLightStrikecraft" weight="100"/>
+    <system name="PlasmaBolt" damage_per_shot="233" />
+  </entity>  
+  
+  <entity name="Dagger" copy_from="Raider" display_name="Dagger"	
+			description="Very fast, evasive, high damage and almost no durability ship that is immune to most speed penalties."
+			hull_points="2400" shield_points="600" speed="High"  cost_for_ai_to_purchase="20"
+			>
+    <fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="10" min="25" max="40"/>			
+    <fleet_membership name="FragileOffensiveMix" ship_cap_group="Strike" weight="100" min="25" max="40"/>
+	<fleet_membership name="RaidOffensiveMix" ship_cap_group="Strike" weight="100" min="25" max="40"/>
+	<fleet_membership name="SelfSacrificingOffensiveMix" ship_cap_group="Strike" weight="25" min="25" max="40"/>
+	<fleet_membership name="KiteMix" ship_cap_group="Strike" weight="5" min="25" max="40"/>
+    <ai_ship_group_membership name="FragileFreakyStrikecraft" weight="100"/>
+    <ai_ship_group_membership name="HugelyVariedStrikecraft" weight="20"/>
+    <ai_ship_group_membership name="ParalyserDaggerWarbird" weight="100"/>	
+    <system name="PlasmaBolt" damage_per_shot="372" />
+  </entity>
+
+  <entity name="TurboRaider" skip_export="true" copy_from="Raider"
+      display_name="Turbo Raider" aip_when_granted_by_hack="40"
+      tags="IncludeInFRS" supercharges_min_speed_of_rest_of_player_fleet="true">
+    <fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="10" min="90" max="90"/>
+  </entity>
+  
+-->
+  
+  
+</root>

@@ -3,7 +3,7 @@
 
   <fleet_design name="ESV_MetalolizingFactory"
         display_name="C.工程师与代谢工厂"
-        description="A higher number of Combat Engineers that can go anywhere you please, enemy planets or otherwise -- plus a Mobile Factory that launches small drones metabolizing enemies!"
+        description="更多数量的战斗工程师，可以前往任何你想要的地方，包括敌方行星——加上一座发射小型无人机代谢敌人的移动工厂！"
         design_logic="InitialPlayerSupportFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >
@@ -14,7 +14,7 @@
   
   <fleet_design name="ESV_RescueBeaconFactory"
         display_name="C.工程师与救援工厂"
-        description="A smaller number of Combat Engineers that can go anywhere you please, enemy planets or otherwise -- plus a Mobile Factory that produces rescue beacons to save ships from destruction!"
+        description="较少数量的战斗工程师，可以前往任何你想要的地方，包括敌方行星——加上一座生产救援信标拯救舰船免遭摧毁的移动工厂！"
         design_logic="InitialPlayerSupportFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >
@@ -25,7 +25,7 @@
   
   <fleet_design name="ESV_TranslocatorFactory"
         display_name="C.工程师与传送工厂"
-        description="A decent number of Combat Engineers that can go anywhere you please, enemy planets or otherwise -- plus a Mobile Factory that pushes and paralyzes lighter enemies!"
+        description="相当数量的战斗工程师，可以前往任何你想要的地方，包括敌方行星——加上一座推开并麻痹较轻敌人的移动工厂！"
         design_logic="InitialPlayerSupportFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >
@@ -36,7 +36,7 @@
   
   <fleet_design name="ESV_BackdoorFactory"
         display_name="C.工程师与后门工厂"
-        description="A decent number of Combat Engineers that can go anywhere you please, enemy planets or otherwise -- plus a Mobile Factory that is cloaked and can launch tractor drones to push enemies away."
+        description="相当数量的战斗工程师，可以前往任何你想要的地方，包括敌方行星——加上一座隐形移动工厂，可以发射牵引无人机推开敌人。"
         design_logic="InitialPlayerSupportFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >
@@ -47,7 +47,7 @@
   
   <fleet_design name="ESV_ScrapperFactory"
         display_name="C.工程师与拆解工厂"
-        description="A decent number of Combat Engineers that can go anywhere you please, enemy planets or otherwise -- plus a Mobile Factory that is cloaked and can launch tractor drones to push enemies away."
+        description="相当数量的战斗工程师，可以前往任何你想要的地方，包括敌方行星——加上一座隐形移动工厂，可以发射牵引无人机推开敌人。"
         design_logic="InitialPlayerSupportFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >

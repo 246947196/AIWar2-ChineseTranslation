@@ -2,7 +2,7 @@
 <root>
   <fleet_design name="ESV_ThirdEyeStartingFleet"
         display_name="第三眼舰队"
-        description="A mix of powerful mostly anti-large ships along with a Target Painter Transport Flagship to crush big targets, intended to use their full potential later in the game."
+        description="混合了强大的反大型舰船和一艘目标标记运输旗舰来摧毁大型目标，旨在游戏后期发挥其全部潜力。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >

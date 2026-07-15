@@ -277,9 +277,9 @@
 			tags="Beacon,ReclaimerBeacon" is_expecting_to_not_be_encyclopedia_counted_at_all="true"
 			thematic_groups="Beacon" icon_overlay="Overlays2/Turret_Garnet"
 			display_name="回收者信标" display_name_for_sidebar="回收者信标"
-			description="These Reclaimers will help their allies defend their planets.
+			description="这些回收者将协助盟友防御他们的行星。
 
-&lt;color=#f25e1c&gt;LOW IMPACT:&lt;/color&gt; This faction will assist their allies and have no downsides."
+&lt;color=#f25e1c&gt;低影响：&lt;/color&gt;该派系将协助盟友且没有任何负面影响。"
 			target_type_for_player="NeverTarget"
           >
 	</entity>

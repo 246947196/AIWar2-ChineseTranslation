@@ -2249,7 +2249,7 @@ plus metabolism -->
             priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
             >
 
-            <charge_type id="C1" name="Void Energy" short_name="Void" color="#9132a8" num_start="5" num_max="5" delta_num="1" delta_ms="15000"/>
+            <charge_type id="C1" name="Void Energy" short_name="虚空" color="#9132a8" num_start="5" num_max="5" delta_num="1" delta_ms="15000"/>
 
             <system name="W1" display_name="虚空炮"
                     category="Weapon" firing_timing="OnlyInRange"

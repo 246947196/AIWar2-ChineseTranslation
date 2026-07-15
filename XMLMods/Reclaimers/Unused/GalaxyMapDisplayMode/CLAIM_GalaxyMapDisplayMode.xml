@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root> 
+  
+  <display_mode name="ReclaimersDebug"
+           display_name="&lt;color=#6718c7&gt;回收者调试&lt;/color&gt;"
+           dll_name="Reclaimers"
+           type_name="Reclaimers.GalaxyMapDisplayMode_Reclaimers"
+           tooltip="Shows debug information related to Reclaimers faction."
+  />
+  
+</root>

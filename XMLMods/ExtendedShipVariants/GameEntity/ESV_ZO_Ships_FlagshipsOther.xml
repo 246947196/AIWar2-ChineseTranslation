@@ -3,7 +3,7 @@
 	<entity name="TransportFlagship_Hardened" copy_from="TransportFlagship_Base" required_expansion_list="2_Zenith_Onslaught" tags="ShowsOnNormalDisplayMode,Capturable"
 		display_name="强化运输旗舰"
 		display_name_for_sidebar="强化运输"
-		description="Very resilient to high-damage weapons, especially Orbital Mass Drivers and Sabots. It can never take more than 25% of its hull as damage from a single attack."
+		description="对高伤害武器极具韧性，尤其是轨道质量驱动器和脱壳弹。单次攻击永远无法对其造成超过25%船体的伤害。"
 		tech_upgrade_that_is_used_for_my_direct_science="Direct_AgileTransport"
 		hacking_cost_for_other_fleet_leaders_of_same_type_to_become_me="10"
 		boost_to_planetary_metal_production_if_have_been_here_and_non_crippled_for_x_time="0.9"
