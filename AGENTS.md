@@ -484,7 +484,7 @@ patch 前必须从 `AIWar2_Data\Managed\` 复制原始 DLL（禁止在已 patch 
 2. 只改 `"..."` 内文本，不碰引号外代码
 3. 保留 `{变量}` 和 `<color>` 标签
 4. 每翻译完一个**外部代码** DLL 编译验证，0 错误继续（核心 DLL 走 IL 汉化，不编译，用 `ilpatch inspect` 回读验证）
-5. 禁止中文引号 `""`，用 `''` 替代
+5. 禁止中文引号 `""` 出现在 XML 属性值或 C# 字符串中，用 `『』` 替代（`""` 在 XML 属性内会被误解析为属性分隔符，导致 XML 解析错误；`''` 在 C# 中不合法）
 6. Debug 日志、内部标识符不翻译
 7. 核心 DLL（IL 汉化）：用 `tools/ilpatch` 按 JSON 字典替换 `ldstr` 字面量，不碰任何代码结构（详见 SPEC 8.15）
 8. **JSON 字典编码**：合并/重写 ilpatch 字典必须用**无 BOM 的 UTF-8**（PowerShell `Set-Content -Encoding UTF8` 会加 BOM，导致 ilpatch/Python 解析失败）。优先用 Python `open(path,'w',encoding='utf-8')` 或 .NET `UTF8Encoding(false)`
