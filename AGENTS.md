@@ -550,3 +550,12 @@ patch 前必须从 `AIWar2_Data\Managed\` 复制原始 DLL（禁止在已 patch 
 | X型战斗站（display_name_prefix） | 去掉前綴，僅顯示"機動平台" |
 | 引力型机动平台 | 重力型机动平台 |
 | 捕获型机动平台 | 诱捕型机动平台 |
+
+## 最近修訂記錄 (2026-07-16 第7批)
+
+2026-07-16 修改行星名 MOD 标題：
+
+| 文件 | 舊值 | 新值 |
+|------|------|------|
+| `XMLMods/ChinesePlanetNames/ModDescription.txt` | AI War 2 汉化项目：中文行星名 | **中文行星名** |
+| `XMLMods/ChinesePlanetNames/ModDetails.txt` | AI War 2 汉化项目：中文行星名 | **中文行星名** |
