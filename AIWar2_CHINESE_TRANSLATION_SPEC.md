@@ -144,8 +144,8 @@ AIWar2_ChineseTranslation/
 | DLC1 XML | 64 | 30 | 0 | ✅ 完成 |
 | DLC2 XML | 69 | 35 | 0 | ✅ 完成 |
 | DLC3 XML | 90 | 60 | 0 | ✅ 完成 |
-| XMLMods | 65 | 65 | 0 | ✅ 完成 |
-| **合计** | **630** | **431** | **0** | **✅ 完成** |
+| XMLMods | 79 | 79 | 0 | ✅ 完成 |
+| **合计** | **644** | **445** | **0** | **✅ 完成** |
 
 ### 4.2 DLL 替换 (Preloader Patcher)
 
@@ -657,7 +657,7 @@ AIWar2_ChineseTranslation/
 | DLC JournalEntries | 14 | 14 |
 | DLC Achievement | 3 | 3 |
 | DLC ScourgeTypeData | 2 | 2 |
-| XMLMods（全部 65 个模组） | 511 | 511 |
+| XMLMods（全部 79 个模组） | 670 | 670 |
 | **合计** | **530** | **530** |
 
 ### 9.7 完整翻译清单
@@ -685,7 +685,7 @@ AIWar2_ChineseTranslation/
 | DLC3 Achievement | 1 | 成就 |
 | DLC3 GameEntity | 22 | DLC3 舰船和实体 |
 | DLC3 其他 | 28 | 设置、阵营等 |
-| XMLMods | 511 | 65 个模组（JuicyJournals/DysonSidekick/DevourerChrysalis/NecroParty/Reclaimers/ExoticShips 等），含实体定义、日志条目、科技升级、阵营描述 |
+| XMLMods | 670 | 79 个模组（JuicyJournals/DysonSidekick/DevourerChrysalis/NecroParty/Reclaimers/ExoticShips 等），含实体定义、日志条目、科技升级、阵营描述、ModDescription/ModDetails 简介（511 XML + 159 TXT） |
 | **总计** | **214** | - |
 
 ### 9.8 合并脚本 bug 修复（2026-07-10）
@@ -1033,3 +1033,31 @@ for ( int i = 0; i < allTexts.Length; i++ )
 - 部署后启动游戏 Ctrl+F5 强制刷新验证；若字号仍不对，优先排查编译缓存（见 9.18）
 - 字号取值经验：侧边栏按钮 9f，资源栏 10f；如需微调直接改 `fontSize` 数值重编
 - 富文本标签（`<size=XX%>`）在关闭 auto-sizing 后相对**固定基准值**缩放，不会出现有大有小；无需改动这些标签
+
+### 10.6 XMLMods 简介文件翻译（2026-07-16）
+
+此前漏译了每个 Mod 目录下的 `ModDescription.txt`（Mod 列表简介）与 `ModDetails.txt`（Mod 标题/作者/缩写/颜色），导致游戏内 Mod 管理界面显示英文。
+
+**处理**：
+- 游戏目录实际有 **79 个 Mod 目录**，翻译项目原先只纳入 65 个（缺 14 个：Bonus_Assets、ChromaticRemover、CoprocessorRebalance、DysonSphereLeech、ExoAIP、ExpertMinusScaling、ExtraTextStyles、NecromancerIsNotNeinzul、PaladinTransports、RadiantPruning、RaisingTheFloorMultiAIAdjustment、SpireRailgunShop、TameDarkSpire、VisibleCPABunkers）
+- 将全部 79 个 Mod 的 `ModDescription.txt` + `ModDetails.txt` 同步进翻译项目并翻译（`ModDetails.txt` 仅译第 1 行标题，作者/缩写/颜色码保留）
+- `deploy.ps1` 已支持部署 XMLMods 下所有 `*.txt`（共 159 个）
+
+### 10.7 XMLMods 散文漏译补译（2026-07-16）
+
+经精确扫描（区分「整段英文散文」与「中文+英文专名混合」），补译了以下真正漏译的用户可见英文散文：
+
+| 文件 | 补译内容 |
+|------|----------|
+| LostHumans/ThematicGroup/Kelp_ThematicGroups_LostHumans.xml | 主题组描述（"Various remnants of humanity..."）+ 修正 `display_name="失落人类s"` → `失落人类` |
+| UniversalNemesis/HackingType/UniversalNemesisHackEntries.xml | 选择提示 `choice_text`（"Which ship line would you like..."） |
+| DysonSidekick/AIWar2GalaxySettingCategory/DS_GalaxySettingsCategories.xml | 3 条设置分类描述（"Settings related to..."） |
+| DysonSidekick/GameEntity/DZ_Enemies.xml | 敌人描述（"These heavily shielded..."） |
+| DysonSidekick/BuildSidebarCategory/Armada_BuildSidebarCategories.xml | 7 条建造分类描述（"Building a new..." / "建筑 related to..."） |
+| DysonSidekick/GalaxyMapDisplayMode/DS_DisplayModes.xml | 显示模式名 + tooltip（Deepstrike Integration / Net Metal / Net Energy / 玉石 Remaining 等） |
+
+**保留未译**（按项目惯例，属派系/舰种专有名词）：
+- `Armada_Techs.xml` / `DS_Techs.xml` 科技升级的「派系: 舰种」标签（Terran: Arrow、Kilrathi: Dralthi、District One 等）
+- `[DEBUG]: All KM Fleet Ships` 等内部调试标记
+- Xodians 的 `~` 伪随机名生成器字符串（运行时随机生成，不可译）
+- `ModDescription.txt` 中的作者名、DLC 名、版本号等专名
