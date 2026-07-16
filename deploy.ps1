@@ -242,6 +242,33 @@ if (Test-Path $transModsDir) {
     Write-Host "  XMLMods directory not found, skipping" -ForegroundColor DarkYellow
 }
 
+# Deploy TotalConversions translation files
+Write-Host ""
+Write-Host "Deploying TotalConversions translation files..." -ForegroundColor Yellow
+$transTConsDir = Join-Path $translationDir "TotalConversions"
+$gameTConsDir = Join-Path $gameDir "TotalConversions"
+
+if (Test-Path $transTConsDir) {
+    $tcFilesToDeploy = @(Get-ChildItem -Path $transTConsDir -Recurse -Filter "*.xml")
+    $tcFilesToDeploy += @(Get-ChildItem -Path $transTConsDir -Recurse -Filter "*.txt")
+    $tcDeployed = 0
+    foreach ($f in $tcFilesToDeploy) {
+        $relPath = $f.FullName.Substring($transTConsDir.Length + 1)
+        $destFile = Join-Path $gameTConsDir $relPath
+        $destDir = Split-Path $destFile -Parent
+
+        if (-not (Test-Path $destDir)) {
+            New-Item -ItemType Directory -Path $destDir -Force | Out-Null
+        }
+
+        Copy-Item $f.FullName $destFile -Force
+        $tcDeployed++
+    }
+    Write-Host "Deployed $tcDeployed files to TotalConversions" -ForegroundColor Green
+} else {
+    Write-Host "  TotalConversions directory not found, skipping" -ForegroundColor DarkYellow
+}
+
 # Deploy translated DLLs
 Write-Host ""
 Write-Host "Deploying translated DLLs..." -ForegroundColor Yellow
