@@ -5,7 +5,7 @@
      <faction
                name="Xushido"
                display_name="旭道"
-               short_name="Xushido"
+               short_name="旭道"
                processing_group="Xushido"
                base_info_source="XushidoFactionBaseInfo"
                deep_info_source="XushidoFactionDeepInfo"

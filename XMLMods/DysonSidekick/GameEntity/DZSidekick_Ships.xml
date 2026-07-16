@@ -20,7 +20,7 @@
           y_offset_of_icon="35"
           collision_priority="800"
           display_name="Merkismathr"
-          description="An elusive and powerful Dark 天顶 ship. No longer phasing, it's annoying as a human player."
+          description="一艘难以捉摸的强大暗天顶舰船。不再进行相位位移，作为人类玩家来说很烦人。"
           blocks_enemy_claim_flows="true"
           voice_group="Silent"
 	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Alien" 
@@ -67,7 +67,7 @@
 	  collision_priority="100"
 	  display_name="Ormr Flagship"
           display_name_for_sidebar="O. Flagship"
-	  description="This great serpent is a powerful 旗舰 for the Dark 天顶. It uses a powerful 腐蚀 attack to weaken its enemies hulls, making them easy prey for the Dark 天顶 Horde.
+	  description="这条巨蛇是暗天顶的强大旗舰。它使用强力的腐蚀攻击削弱敌方船体，使其成为暗天顶部落的轻松猎物。
 
 Like all Dark 天顶 Serpent-class Flagships, it will regenerate its health over time."
 	  starting_mark_level="Mark1"
@@ -276,7 +276,7 @@ Like all Dark 天顶 Serpent-class Flagships, it will regenerate its health over
 	  collision_priority="100"
 	  display_name="阿斯克勒庇俄斯旗舰"
           display_name_for_sidebar="阿斯旗舰"
-	  description="This 旗舰 has significant healing/repair powers.
+	  description="此旗舰拥有强大的治疗/维修能力。
 
 Like all Dark 天顶 Serpent-class Flagships, it will regenerate its health over time."
 	  starting_mark_level="Mark1"
@@ -336,7 +336,7 @@ Like all Dark 天顶 Serpent-class Flagships, it will regenerate its health over
 	  collision_priority="100"
 	  display_name="阿波罗旗舰"
           display_name_for_sidebar="阿波旗舰"
-	  description="This 旗舰 has significant healing/repair powers, and also a bit faster.
+	  description="此旗舰拥有强大的治疗/维修能力，速度也更快一些。
 
 Like all Dark 天顶 Serpent-class Flagships, it will regenerate its health over time."
 	  starting_mark_level="Mark1"
@@ -434,7 +434,7 @@ Like all Dark 天顶 Serpent-class Flagships, it will regenerate its health over
 	  collision_priority="100"
 	  display_name="布丽吉特旗舰"
           display_name_for_sidebar="布旗舰"
-	  description="This 旗舰 has significant healing/repair powers, and also a bit faster.
+	  description="此旗舰拥有强大的治疗/维修能力，速度也更快一些。
 
 Like all Dark 天顶 Serpent-class Flagships, it will regenerate its health over time."
 	  starting_mark_level="Mark1"
@@ -783,7 +783,7 @@ Like all Dark 天顶 Serpent-class Flagships, it will regenerate its health over
 	  collision_priority="100"
 	  display_name="Medusa Flagship"
           display_name_for_sidebar="M. Flagship"
-	  description="This 旗舰 paralyzes its targets.
+	  description="此旗舰能使目标麻痹。
 
 Like all Dark 天顶 Serpent-class Flagships, it will regenerate its health over time."
 	  starting_mark_level="Mark1"
@@ -845,7 +845,7 @@ Like all Dark 天顶 Serpent-class Flagships, it will regenerate its health over
 	  collision_priority="100"
 	  display_name="Quetzelcoatl Flagship"
           display_name_for_sidebar="Q. Flagship"
-	  description="This serpent is a powerful 旗舰 for the Dark 天顶. It uses a powerful lightning blasts, and has some modular upgrades.
+	  description="这条蛇是暗天顶的强大旗舰。它使用强力的闪电爆炸，并具有一些模块化升级。
 
 Like all Dark 天顶 Serpent-class Flagships, it will regenerate its health over time."
 	  starting_mark_level="Mark1"
@@ -967,7 +967,7 @@ Like all Dark 天顶 Serpent-class Flagships, it will regenerate its health over
 	  collision_priority="100"
 	  display_name="Ormr Flagship"
           display_name_for_sidebar="O. Flagship"
-	  description="This great serpent is a powerful 旗舰 for the Dark 天顶. It uses a powerful 腐蚀 attack to weaken its enemies hulls, making them easy prey for the Dark 天顶 Horde.
+	  description="这条巨蛇是暗天顶的强大旗舰。它使用强力的腐蚀攻击削弱敌方船体，使其成为暗天顶部落的轻松猎物。
 
 Like all Dark 天顶 Serpent-class Flagships, it will regenerate its health over time."
 	  starting_mark_level="Mark1"
@@ -1132,7 +1132,7 @@ Like all Dark 天顶 Serpent-class Flagships, it will regenerate its health over
 	      visuals_scale_multiplier="25"
               display_name="Dragon Flagship"
               display_name_for_sidebar="Dr. Flagship"
-	      description="This great serpent is an exceptionally powerful 旗舰 for the Dark 天顶. It uses a powerful 腐蚀 attack to weaken its enemies hulls, making them easy prey for the Dark 天顶 Horde. It has many more module slots than lower-tier 旗舰.
+	      description="这条巨蛇是暗天顶特别强大的旗舰。它使用强力的腐蚀攻击削弱敌方船体，使其成为暗天顶部落的轻松猎物。它比低级旗舰拥有更多的模块插槽。
 
                            Like all Dark 天顶 Serpent-class Flagships, it will regenerate its health over time."
 	      hull_points="6000000" shield_points="850000" speed="High"
@@ -1163,7 +1163,7 @@ Like all Dark 天顶 Serpent-class Flagships, it will regenerate its health over
 	  collision_priority="100"
 	  display_name="变色旗舰"
           display_name_for_sidebar="变旗舰"
-	  description="This 旗舰 has only a very weak weapon by default. Instead, you need to choose from a wide variety of weapons available as modules. It is very flexible, but less tanky without upgrades base form.
+	  description="此旗舰默认只有非常弱的武器。你需要从多种可用武器模块中选择。它非常灵活，但基础形态下缺乏升级比较脆弱。
 
 Like all Dark 天顶 Serpent-class Flagships, it will regenerate its health over time."
 	  starting_mark_level="Mark1"
@@ -1484,7 +1484,7 @@ Like all Dark 天顶 Serpent-class Flagships, it will regenerate its health over
           draw_in_galaxy_view="true" 
 	  display_name="Dark Zenith Fortress"
           display_name_for_sidebar="DZ Fortress"
-	  description="Very powerful defensive structure, with a blast that penetrates 护盾 and 装甲. This will slowly regenerate health over time. This 建筑 can be re-powered by the Dark 天顶 to project power in the 银河"
+	  description="非常强大的防御建筑，其爆炸能够穿透护盾和装甲。随时间缓慢再生生命值。此建筑可由暗天顶重新充能在银河中投射力量。"
 	  behavior="Stationary"
           seconds_to_fully_regenerate_hull="600"
 	  starting_mark_level="Mark1" max_mark_level="7" tech_upgrades_that_benefit_me="DZFortress"
@@ -1541,7 +1541,7 @@ Like all Dark 天顶 Serpent-class Flagships, it will regenerate its health over
             draw_in_galaxy_view="true" 
 	    display_name="Dark Zenith Encampment"
             display_name_for_sidebar="DZ Encampment"
-	    description="This structure will generate defensive ships that will defend nearby planets"
+	    description="此建筑将生成防御性舰船来保卫附近的行星。"
 	    behavior="Stationary"
             seconds_to_fully_regenerate_hull="600"
 	    starting_mark_level="Mark1" max_mark_level="7" tech_upgrades_that_benefit_me="DZRegionProtector"

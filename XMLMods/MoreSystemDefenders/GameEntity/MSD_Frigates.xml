@@ -11,8 +11,8 @@
 		visuals_scale_multiplier="2"
 		category="Ship"
 		collision_priority="400"
-		display_name="戈耳工聚合体护卫舰" display_name_for_sidebar="Gorgon FFL"
-		description="Interlocked mass of 毒蛇护卫舰s redirecting primary armament energy into a paralyzer 光束."
+		display_name="戈耳工聚合体护卫舰" display_name_for_sidebar="戈耳工 FFL"
+		description="连锁在一起的毒蛇护卫舰群体，将主要武器能量重新定向为麻痹光束。"
 		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Subterfuge,Medium"
 		cost_for_ai_to_purchase="950" strength_multiplier="1.5"
 		hull_points="100000" shield_points="50000" speed="Normal3"
@@ -35,7 +35,7 @@
 			base_paralysis_seconds_per_shot="3" paralysis_to_ships_mass_tx_less_than="2"
 			>
 		</system>
-		<system name="VF" display_name="毒蛇双联速射炮 Banks"
+		<system name="VF" display_name="毒蛇双联速射炮组"
 			category="Weapon" firing_timing="OnlyInRange"
 			damage_per_shot="500" range="Normal4" shot_speed="Normal" rate_of_fire="Misery"
 			shot_type_data="DoubleShot_Green"
@@ -51,8 +51,8 @@
 	<entity skip_export="true" copy_from="GorgonFrigate" name="StationGorgonFrigate" tags="StationGorgonFrigate"
 		build_sidebar_categories_i_am_part_of="StationKeepers" fleet_membership="Planetary" destroys_self_until_not_over_ship_cap_if_planetary_command="true"
         behavior="Attacker_Full"
-		display_name="站-Keeping 戈耳工聚合体护卫舰" energy_consumption="6000"
-		display_name_for_sidebar="Gorgon PFFL"
+		display_name="驻防戈耳工聚合体护卫舰" energy_consumption="6000"
+		display_name_for_sidebar="戈耳工 PFFL"
 		tech_upgrades_that_benefit_me="Sentries"
 		is_blocked_from_dss_grant_to_Battlestations_and_citadels="true">
 		<fleet_membership name="PlayerMilitaryCommand" ship_cap_group="OtherDefense" weight="100" cap="6"/>
@@ -68,8 +68,8 @@
 		category="Ship"
 		y_offset_of_icon="16"
 		collision_priority="400"
-		display_name="护航航母" display_name_for_sidebar="Esc. 航母 FFL"
-		description="A light 航母 tasked for fleet 支援 carrying a small complement of 星战 it supports with a parasitic 加农炮."
+		display_name="护航航母" display_name_for_sidebar="护航航母 FFL"
+		description="舰队支援用轻型航母，携带少量用寄生加农炮支援的星际战机。"
 		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Technologist,Light"
 		cost_for_ai_to_purchase="400"
 		hull_points="84000" shield_points="42000" speed="AboveAverage3"
@@ -104,8 +104,8 @@
 	<entity skip_export="true" copy_from="EscortCarrier" name="DefenseEscortCarrier" tags="DefenseEscortCarrier"
 		build_sidebar_categories_i_am_part_of="StationKeepers" fleet_membership="Planetary" destroys_self_until_not_over_ship_cap_if_planetary_command="true"
         behavior="Attacker_Full"
-	    display_name="驻防护航航母" display_name_for_sidebar="Esc. 航母 PFFL"
-		description="A light 航母 for system 防御 carrying a small complement of 星战 it supports with a parasitic 加农炮."
+	    display_name="驻防护航航母" display_name_for_sidebar="护航航母 PFFL"
+		description="系统防御用轻型航母，携带少量用寄生加农炮支援的星际战机。"
 		energy_consumption="2500"
 		tech_upgrades_that_benefit_me="Sentries"
 		is_blocked_from_dss_grant_to_Battlestations_and_citadels="true">
@@ -121,8 +121,8 @@
 	<entity skip_export="true" copy_from="AmbushCarrier" name="DefenseAmbushCarrier" tags="DefenseAmbushCarrier"
 		build_sidebar_categories_i_am_part_of="StationKeepers" fleet_membership="Planetary" destroys_self_until_not_over_ship_cap_if_planetary_command="true"
         behavior="Attacker_Full"
-		display_name="驻防伏击航母" display_name_for_sidebar="Amb. 航母 PFFL"
-		description="A lightly 装甲 special-ops 隐形 航母 retasked for system 防御."
+		display_name="驻防伏击航母" display_name_for_sidebar="伏击航母 PFFL"
+		description="轻型装甲特种作战隐形航母，被重新分配用于系统防御。"
 		energy_consumption="2500"
 		tech_upgrades_that_benefit_me="Sentries"
 		is_blocked_from_dss_grant_to_Battlestations_and_citadels="true">
@@ -135,8 +135,8 @@
         visuals="assets/_finalgamemeshes/fleetships/sentinelfrigate/sentinelfrigate.prefab"	icon_name="Ships1/SentinelFrigate"
 		size_scale="5" visuals_scale_multiplier="8"
 		category="Ship"	collision_priority="400"
-		display_name="粘蝇纸护卫舰" display_name_for_sidebar="Flypaper FFH"
-		description="Heavyweight brawler interested in snagging smaller enemies and repeatedly frying their electrical systems."
+		display_name="粘蝇纸护卫舰" display_name_for_sidebar="粘蝇纸 FFH"
+		description="重型近战舰，擅长缠住较小的敌人并反复烧毁其电气系统。"
 		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Disruptive,Heavy"
 			cost_for_ai_to_purchase="1250"
 			hull_points="230000" shield_points="115000" speed="Normal3"
@@ -182,8 +182,8 @@
 	<entity skip_export="true" copy_from="FlypaperFrigate" name="DefenseFlypaper" tags="DefenseFlypaper"
         build_sidebar_categories_i_am_part_of="StationKeepers" fleet_membership="Planetary" destroys_self_until_not_over_ship_cap_if_planetary_command="true"
         behavior="Attacker_Full"
-	    display_name="站-Keeping 粘蝇纸护卫舰" energy_consumption="6000"
-		display_name_for_sidebar="Flypaper PFFH"
+	    display_name="驻防粘蝇纸护卫舰" energy_consumption="6000"
+		display_name_for_sidebar="粘蝇纸 PFFH"
 		tech_upgrades_that_benefit_me="Sentries"
 		is_blocked_from_dss_grant_to_Battlestations_and_citadels="true">
 		<fleet_membership name="AddedToCommandStation" ship_cap_group="OtherDefense" weight="100" cap="6"/>
@@ -193,8 +193,8 @@
 	<!-- Artillery Destroyer entries section -->
 	<!-- Note that the base version is uncommonly found in fleets but is used as a base stat block for both the defensive and FRS sub-entities -->
 	<entity name="ArtilleryCruiser" display_name="火炮驱逐舰" copy_from="Bombard" required_expansion_list="1_The_Spire_Rises"
-        tags="ArtilleryCruiser" display_name_for_sidebar="Artillery DD"
-		description="Slow moving, slow to reload, and fit to smite the heavens."
+        tags="ArtilleryCruiser" display_name_for_sidebar="火炮 DD"
+		description="移动缓慢、装填缓慢，足以令天穹震颤。"
 		special_entity_type="Frigate" gimbal_icon_size_multiplier="1.25"			 
 		multiplier_to_all_scales="2.5"
 		hull_points="150000" shield_points="250000"
@@ -224,8 +224,8 @@
 	<entity copy_from="ArtilleryCruiser" skip_export="True" name="DefenseArtilleryCruiser" tags="DefenseArtilleryCruiser" required_expansion_list="1_The_Spire_Rises"
 		build_sidebar_categories_i_am_part_of="StationKeepers" fleet_membership="Planetary" destroys_self_until_not_over_ship_cap_if_planetary_command="true"
         behavior="Attacker_Full"
-	    display_name="驻防火炮 驱逐舰" display_name_for_sidebar="Artillery PDD"
-		description="A slow moving high firepower 驱逐舰 tasked with defending the system."
+	    display_name="驻防火炮驱逐舰" display_name_for_sidebar="火炮 PDD"
+		description="移动缓慢、火力强大的驱逐舰，负责防御星系。"
 		tech_upgrades_that_benefit_me="Sentries"
 		is_blocked_from_dss_grant_to_Battlestations_and_citadels="true">
 		<fleet_membership name="PlayerEconomicCommand" ship_cap_group="OtherDefense" weight="100" cap="1"/>
@@ -235,9 +235,9 @@
 	
 	<!-- The Augmented Artillery Cruiser found within certain FRS as a hackable super-ship option -->
 	<entity name="AugmentedArtilleryCruiser" copy_from="ArtilleryCruiser" required_expansion_list="1_The_Spire_Rises"
-	  description="Augmented 驱逐舰 sporting stronger defenses and gun batteries with longer reach and a slightly stronger kick."
-      display_name="Augmented 火炮驱逐舰" aip_when_granted_by_hack="12"
-	  display_name_for_sidebar="Aug. Artillery DD"
+	  description="强化型驱逐舰，拥有更强的防御、更远的射程和更强的火力。"
+      display_name="强化火炮驱逐舰" aip_when_granted_by_hack="12"
+	  display_name_for_sidebar="强化火炮 DD"
 	  hull_points="175000" shield_points="300000"
 	  metal_cost="500000" energy_consumption="22500"
 	  starting_mark_level="Mark3" speed="Normal3"

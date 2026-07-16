@@ -9,7 +9,7 @@
 
   <fleet_design name="ZenithMoon"
         display_name="Zenith Moon"
-        description="The 天顶 Moon is equipped with turrets designed to shred and soften 装甲 to facilitate metabolism."
+        description="天顶之月配备有旨在撕碎并软化装甲以促进代谢的炮塔。"
         design_logic="Special" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >
@@ -25,7 +25,7 @@
 
   <fleet_design name="NeinzulMoon"
                 display_name="Neinzul Moon"
-                description="The 奈祖尔 Moon is equipped with harmonic turrets to 掠夺 poorly armored ships and convert foes into useful zombies."
+                description="奈祖尔之月配备有谐波炮塔，用于掠夺装甲薄弱的舰船并将敌人转化为有用的僵尸。"
                 design_logic="Special" weight="100" include_full_cap_of_each_type="true"
                 append_each_ship_description_to_main_description="true"
                 >
@@ -41,7 +41,7 @@
 
   <fleet_design name="SpireMoon"
                 display_name="Spire Moon"
-                description="The 尖塔 Moon is equipped with various long range turrets."
+                description="尖塔之月配备有各种远程炮塔。"
                 design_logic="Special" weight="100" include_full_cap_of_each_type="true"
                 append_each_ship_description_to_main_description="true"
                 >
@@ -57,7 +57,7 @@
 
     <fleet_design name="TemplarMoon"
                 display_name="Templar Moon"
-                description="The 圣殿骑士 Moon is equipped with various long range turrets."
+                description="圣殿骑士之月配备有各种远程炮塔。"
                 design_logic="Special" weight="100" include_full_cap_of_each_type="true"
                 append_each_ship_description_to_main_description="true"
                 >

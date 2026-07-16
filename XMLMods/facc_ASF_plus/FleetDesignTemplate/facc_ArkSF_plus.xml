@@ -37,7 +37,7 @@
 
   <fleet_design name="ASFArmadaNine"
         display_name="第九舰队"
-        description="没有显著战斗力的方舟旗舰，但比大多数更快，且进行黑客攻击时会削弱响应。"
+        description="没有显著战斗力的方舟旗舰，但比大多数更快，且进行入侵攻击时会削弱响应。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >

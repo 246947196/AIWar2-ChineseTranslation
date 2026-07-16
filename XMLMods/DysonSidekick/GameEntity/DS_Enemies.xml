@@ -7,7 +7,7 @@
 
   <entity name="UndeadWeakSkeleton" copy_from="SkeletonAttritioner"
           tags="UndeadFleetshipSummon"
-          description="A very weak variant of the 骷髅. Raised by the 收割者 to continue their assault against the 戴森 Sidekick"
+          description="骷髅的极弱变体。由收割者召唤以继续对戴森盟友的进攻。"
           >
   </entity>
   <entity name="UndeadWarrior" copy_from="SkeletonWarrior"
@@ -15,7 +15,7 @@
           thematic_groups="DysonSidekick"
           special_entity_type="Frigate"
           metal_cost="8000"
-          description="A melee fighter with a weapon-jamming, 装甲-piercing blade. Dispatched to fight the 戴森 Sidekick."
+          description="一名配备武器干扰、穿甲刀刃的近战战斗者。被派遣来对抗戴森盟友。"
           hull_points="8000" shield_points="0" speed="AboveAverage2"
           cost_for_ai_to_purchase="90"
           >
@@ -35,7 +35,7 @@
   <entity name="UndeadArcher" copy_from="SkeletonArcher"
           tags="UndeadFleetship,UndeadGeneralResponse,UndeadAssaultTierOne,UndeadAssaultTierTwo,UndeadAssaultTierThree"
           thematic_groups="DysonSidekick"
-          description="A long range, fragile unit effective at destroying bubbleshields (力场). Dispatched to fight the 戴森 Sidekick."
+          description="一种擅长摧毁气泡力场的远程脆弱单位。被派遣来对抗戴森盟友。"
           metal_cost="8000"
           cost_for_ai_to_purchase="90"
           hull_points="3000" shield_points="0" speed="Normal2"
@@ -62,7 +62,7 @@
     <entity name="UndeadRogue" copy_from="SkeletonDetonator"
           tags="UndeadFleetship,UndeadGeneralResponse,UndeadAssaultTierOne,UndeadAssaultTierTwo,UndeadAssaultTierThree"
           thematic_groups="DysonSidekick"
-          description="Cloaked and evasive, its attacks bypass 护盾. Dispatched to fight the 戴森 Sidekick."
+          description="隐形且具回避性，其攻击绕过护盾。被派遣来对抗戴森盟友。"
           metal_cost="8000"
           hull_points="4000" shield_points="0" speed="AboveAverage4"
           cost_for_ai_to_purchase="90"
@@ -80,7 +80,7 @@
   <entity name="UndeadMage" copy_from="SkeletonMage"
           tags="UndeadFleetship,UndeadGeneralResponse,UndeadAssaultTierTwo,UndeadAssaultTierThree"
           thematic_groups="DysonSidekick"
-          description="Mages wield a dreadful chain-lightning weapon that temporarily slows targets. Dispatched to fight the 戴森 Sidekick."
+          description="法师使用可怕的连锁闪电武器暂时减速目标。被派遣来对抗戴森盟友。"
           metal_cost="8000"
           hull_points="10000" shield_points="6000" speed="Normal2"
           cost_for_ai_to_purchase="140"
@@ -105,7 +105,7 @@
   <!-- Wights (aka Guardian Tier) -->
   <entity name="UndeadWeakWight" copy_from="WightAttritioner"
           tags="UndeadGuardianSummon"
-          description="A very weak variant of the 亡魂. Raised by the 收割者 to continue their assault against the 戴森 Sidekick"
+          description="亡魂的极弱变体。由收割者召唤以继续对戴森盟友的进攻。"
           >
   </entity>
 
@@ -138,7 +138,7 @@
           thematic_groups="DysonSidekick"
           special_entity_type="Frigate"
           metal_cost="8000"
-          description="Has low durability in exchange for life stealing and high damage output to match. Dispatched to fight the 戴森 Sidekick. Equipped with Engine Stunners to trap your 运输船."
+          description="以低耐久换取生命偷取和高伤害输出。被派遣来对抗戴森盟友。配备引擎眩晕器来困住你的运输船。"
           cost_for_ai_to_purchase="900"
           >
     <system name="R5" display_name="Ravenous Laser"
@@ -159,7 +159,7 @@
           special_entity_type="Frigate"
           metal_cost="8000"
           cost_for_ai_to_purchase="850"
-          description="Periodic, high single target damage, especially very massive targets, but harms itself on firing. Upon destruction, a now free from torture 亡魂 is created.  Dispatched to fight the 戴森 Sidekick. Equipped with Engine Stunners to trap your 运输船."
+          description="周期性造成高额单体伤害，对大型目标尤为有效，但开火时自伤。被摧毁后会生成一个终于从折磨中解脱的亡魂。被派遣来对抗戴森盟友。配备引擎眩晕器来困住你的运输船。"
           hull_points="28000" shield_points="15000" speed="Normal1"
           >
 	<entity_type_drawing_bag_used_on_death data_list="UndeadRavenousWight" min_spawn_value_list="1" />		
@@ -181,7 +181,7 @@
           special_entity_type="Frigate"
           metal_cost="8000"
           cost_for_ai_to_purchase="950"
-          description="Lobs three infectious grenades at a time, splitting damage between targets in the blast radius. Dispatched to fight the 戴森 Sidekick. Equipped with Engine Stunners to trap your 运输船."
+          description="一次性投掷三枚感染榴弹，伤害在爆炸范围内的目标间分配。被派遣来对抗戴森盟友。配备引擎眩晕器来困住你的运输船。"
           hull_points="35000" shield_points="20000" speed="Normal1"
           >
     <system name="R1" display_name="Infectious Grenade"
@@ -204,9 +204,9 @@
           special_entity_type="Frigate"
           metal_cost="8000"
           cost_for_ai_to_purchase="950"
-          description=" Emits unholy lightning around itself to victims caught in tractors. When it dies it explodes violently to damage up to 20 nearby enemy units.
-			
-                        The explosion damage done to each victim starts at half the strength of the Spectral 亡魂's normal shot, but increases with the charge the ship has accumulated, up to a maximum of 10 times the strength of its main weapon. Dispatched to fight the 戴森 Sidekick. Equipped with Engine Stunners to trap your 运输船."
+          description=" 围绕自身向被牵引光束捕获的受害者释放不洁闪电。死亡时剧烈爆炸，对最多20个附近敌方单位造成伤害。
+
+对每个受害者的爆炸伤害起始为幽灵亡魂普通射击的一半，但会随着舰船积累的充能增加，最高可达主武器伤害的10倍。被派遣来对抗戴森盟友。配备引擎眩晕器来困住你的运输船。"
           hull_points="25000" shield_points="15000" speed="AboveAverage4"
           >
     <system name="Q1" display_name="Unholy Lightning"
@@ -245,7 +245,7 @@
           special_entity_type="Frigate"
           metal_cost="8000"
           cost_for_ai_to_purchase="1100"
-          description="Damages those who dare to fire upon it, bypassing 护盾 partially. Revives itself once. Dispatched to fight the 戴森 Sidekick. Equipped with Engine Stunners to trap your 运输船."
+          description="伤害敢于向其开火的敌人，部分绕过护盾。可自我复活一次。被派遣来对抗戴森盟友。配备引擎眩晕器来困住你的运输船。"
           hull_points="35000" shield_points="20000" speed="Normal1"
           >
       <entity_type_drawing_bag_used_on_death data_list="UndeadRevivedVengefulWight" min_spawn_value_list="1" />		
@@ -268,14 +268,14 @@
     <entity name="UndeadRevivedVengefulWight" copy_from="UndeadVengefulWight" 
             display_name="Revived Vengeful Wight"
             display_name_for_sidebar="R. V Wight"
-	    description="Damages those who dare to fire upon it."
+	    description="伤害敢于向其开火的敌人。"
             >
     </entity>
 
     <!-- Dire Guardian Tier. Note that all of these aren't Dires for the Necromancer, so these will be stronger. -->
     <entity name="UndeadMummy" copy_from="NecromancerMummy"
             tags="UndeadDireGuardian,UndeadGeneralResponse,UndeadAssaultTierTwo"
-            description="A powerful mummy has arisen. Can sustain itself by devouring the souls of its enemies. This is the basic version."
+            description="一个强大的木乃伊已经崛起。可以通过吞噬敌人的灵魂来维持自身。这是基础版本。"
             cost_for_ai_to_purchase="5500"
             hull_points="300000" shield_points="175000" speed="BelowAverage2"
             >
@@ -304,13 +304,13 @@
     <entity name="UndeadWeakMummy" copy_from="UndeadMummy"
             tags="UndeadMummySummon"
             display_name="Weak Mummy"
-            description="A weak mummy has arisen. Can sustain itself by devouring the souls of its enemies."
+            description="一个弱小的木乃伊已经崛起。可以通过吞噬敌人的灵魂来维持自身。"
             hull_points="34500" shield_points="17500" speed="BelowAverage2"
             >
     </entity>
     <entity name="UndeadRoyalMummy" copy_from="RoyalMummy"
             tags="UndeadDireGuardian,UndeadGeneralResponse,UndeadAssaultTierThree"
-            description="A powerful mummy has arisen. Can sustain itself by devouring the souls of its enemies. This royal version is fast and tanky."
+            description="一个强大的木乃伊已经崛起。可以通过吞噬敌人的灵魂来维持自身。这个皇家版本快速且坚韧。"
             cost_for_ai_to_purchase="6000"
             hull_points="300000" shield_points="175000" speed="BelowAverage2"
             >
@@ -338,7 +338,7 @@
     </entity>
     <entity name="UndeadDecayingMummy" copy_from="DecayingMummy"
             tags="UndeadDireGuardian,UndeadGeneralResponse,UndeadAssaultTierThree"
-            description="A powerful mummy has arisen. Can sustain itself by devouring the souls of its enemies. This variant has a more powerful primary weapon and can attrition ships across the planet well."
+            description="一个强大的木乃伊已经崛起。可以通过吞噬敌人的灵魂来维持自身。此变体拥有更强的主武器，并能很好地消耗行星上的舰船。"
             cost_for_ai_to_purchase="8500"
             hull_points="300000" shield_points="175000" speed="BelowAverage2"
             >
@@ -366,7 +366,7 @@
     </entity>
     <entity name="UndeadWitheredMummy" copy_from="WitheredMummy"
             tags="UndeadDireGuardian,UndeadGeneralResponse,UndeadAssaultTierThree"
-            description="A powerful mummy has arisen. Can sustain itself by devouring the souls of its enemies. Upon death, splits into four enemies."
+            description="一个强大的木乃伊已经崛起。可以通过吞噬敌人的灵魂来维持自身。死亡时分裂为四个敌人。"
             cost_for_ai_to_purchase="8500"
             hull_points="300000" shield_points="175000" speed="BelowAverage2"
             >
@@ -433,7 +433,7 @@
 	    collision_priority="100"
 	    display_name="Spectre"
             display_name_for_sidebar="Spectre"
-	    description="Close range fighter, completely ignores 力场 and personal 护盾."
+	    description="近距离战斗者，完全无视力场和个人护盾。"
 	    starting_mark_level="Mark1" tech_upgrades_that_benefit_me="SpectreWeapon"
 	    mark_level_scale_style="Frigate"
 	    cost_for_ai_to_purchase="2500" strength_multiplier="1.2"
@@ -464,7 +464,7 @@
           thematic_groups="DysonSidekick"
           special_entity_type="Frigate"
           metal_cost="8000"
-          description="Periodic long range barrages of weapon jamming missiles with slight knockback, coupled with gravity generator. Dispatched to fight the 戴森 Sidekick"
+          description="周期性远程弹幕发射武器干扰导弹，带轻微击退效果，配合重力发生器。被派遣来对抗戴森盟友。"
           cost_for_ai_to_purchase="2500"
           >
       <system name="B5" display_name="Debilitating Grasp"
@@ -500,7 +500,7 @@
 	    collision_priority="100"
 	    display_name="Ghast"
             display_name_for_sidebar="Ghast"
-	    description="Crowd controller. Emits numerous explosive projectiles with slowing effects."
+	    description="群体控制者。发射大量具有减速效果的爆炸射弹。"
 	    starting_mark_level="Mark1" tech_upgrades_that_benefit_me="GhastWeapon"
 	    mark_level_scale_style="Frigate"
 	    cost_for_ai_to_purchase="2500" strength_multiplier="1.2"
@@ -547,7 +547,7 @@
 
             display_name="Acid Beast"
             display_name_for_sidebar="兽栏"
-            description="A frightening ship that fires extremely long range 麻痹 shots, powering up its secondary weapon with each attack: a powerful disintegrating ray that expends 5 weapon points per attack to deal massive 腐蚀 damage over time."
+            description="一艘令人生畏的舰船，发射极远程麻痹射击，每次攻击充能其副武器：一道强大的分解射线，每次攻击消耗5个武器点以造成大量持续性腐蚀伤害。"
             cost_for_ai_to_purchase="13000"
             hull_points="84000" shield_points="26000" speed="AboveAverage1"
 	    energy_consumption="7500"
@@ -572,7 +572,7 @@
             cost_for_ai_to_purchase="13000"
             display_name="Vampire"
             display_name_for_sidebar="Vampire"
-            description="A frightening ship that fires extremely long range 麻痹 shots, powering up its secondary weapon with each attack: a powerful disintegrating ray that expends 5 weapon points per attack to deal massive 腐蚀 damage over time."
+            description="一艘令人生畏的舰船，发射极远程麻痹射击，每次攻击充能其副武器：一道强大的分解射线，每次攻击消耗5个武器点以造成大量持续性腐蚀伤害。"
             >
     </entity>
     <!-- Ravager Tier Three -->
@@ -597,7 +597,7 @@
 	  y_offset_of_icon="20"
 	  collision_priority="1000"
           display_name="Mobile Ravager"
-	  description="This hideously modified 天顶 creature will 掠夺 a planet, turning its raw materials into new and deadly enemies."
+	  description="这个被可怕改造的天顶生物将掠夺一颗行星，将其原料转化为新的致命敌人。"
 	  starting_mark_level="Markless"
           cost_for_ai_to_purchase="74900" 
           hull_points="1700000" shield_points="2000000" speed="BelowAverage1"
@@ -655,9 +655,9 @@
           addon_object_or_particle_field="ZenithMinerMining" addon_object_or_particle_field_scale="20" addon_object_or_particle_field_y_offset="-90"
 	  icon_name="Ships3/ZenithMinerDrilling" gimbal_icon_size_multiplier="1.5"
           display_name="Ravager"
-          description="This hideously modified 天顶 creature is ravaging a planet, turning its raw materials into new and deadly enemies.
+          description="这个被可怕改造的天顶生物正在掠夺一颗行星，将其原料转化为新的致命敌人。
 
-Once the planet is 被掠夺, the 劫掠者 will become mobile and move on to other planets."
+一旦行星被掠夺，劫掠者将变为移动状态并前往其他行星。"
           speed="Immobile"
           description_appender_dll="AIWarExternalCode"
 	  description_appender_type="Arcen.AIW2.External.DysonSidekickDescriptionAppender"
@@ -713,7 +713,7 @@ Once the planet is 被掠夺, the 劫掠者 will become mobile and move on to ot
            collision_priority="800"
 	   display_name="AI Cuendillar Fortress"
            display_name_for_sidebar="Fortress"
-	   description="Very powerful defensive structure; uses 坤迪亚 to power an exceptionally strong 光束 weapon."
+	   description="非常强大的防御建筑；使用坤迪亚为极强光束武器供能。"
 	   behavior="Stationary"
            is_major_ai_structure="true"
 	   starting_mark_level="Mark3" max_mark_level="7" tech_upgrades_that_benefit_me="Unused"		
@@ -757,7 +757,7 @@ Once the planet is 被掠夺, the 劫掠者 will become mobile and move on to ot
            copy_from="AICuendillarFortress"
            display_name="AI Cuendillar Mini-Fortress"
            display_name_for_sidebar="Mini-Fortress"
-	   description="Mediocre defensive structure; uses 坤迪亚 to power an exceptionally strong 光束 weapon."
+	   description="中等防御建筑；使用坤迪亚为极强光束武器供能。"
            hull_points="25000" shield_points="750000" speed="Immobile"
            science_to_grant_on_death="200"
            >
@@ -798,7 +798,7 @@ Once the planet is 被掠夺, the 劫掠者 will become mobile and move on to ot
            collision_priority="800"
 	   display_name="AI Cuendillar Drill"
            display_name_for_sidebar="AI Drill"
-	   description="The AI has adapted this drill to help them extract 坤迪亚 from targets. It will periodically send off 运输船 which the AI can use to build powerful ships."
+	   description="AI改造了此钻机来帮助从目标中提取坤迪亚。它会定期派出运输船，AI可利用它建造强大的舰船。"
 	   behavior="Stationary"
            is_major_ai_structure="true"
 	   starting_mark_level="Markless" tech_upgrades_that_benefit_me="Unused"		
@@ -851,7 +851,7 @@ Once the planet is 被掠夺, the 劫掠者 will become mobile and move on to ot
 	  collision_priority="100"
 	  display_name="Cuendillar Transport"
 	  display_name_for_sidebar="C Transport"
-	  description="Used by the AI to carry 坤迪亚 from a 蛹."
+	  description="AI用于从蛹中运输坤迪亚。"
 	  starting_mark_level="Markless"
 	  cost_for_ai_to_purchase="10"
 	  hull_points="750000" shield_points="750000" speed="AboveAverage1"
@@ -890,7 +890,7 @@ Once the planet is 被掠夺, the 劫掠者 will become mobile and move on to ot
            shows_on_galaxy_map_for_explored_planets="true"
 	   display_name="Reaper Chrysalis"
            display_name_for_sidebar="R Chrysalis"
-	   description="This is a vast chrysalis containing huge amounts of 坤迪亚 to power it. The 坤迪亚 reflective coating on the 蛹 renders it impervious to traditional weaponry, but the powerful 天顶 钻机 we have access to will allow us to remove the 坤迪亚. Beware the powerful Gateway that will hatch! The Gateway will allow the 收割者 to attempt to conquer this 银河."
+	   description="这是一个巨大的蛹，含有大量坤迪亚为其供能。蛹上的坤迪亚反射涂层使其免疫传统武器，但我们可以使用强大的天顶钻机来去除坤迪亚。当心即将孵化的强大传送门！这道传送门将使收割者试图征服这个银河。"
 	   behavior="Stationary"
 	   starting_mark_level="Markless"  tech_upgrades_that_benefit_me="Unused"		
 	   cost_for_ai_to_purchase="3000"
@@ -981,7 +981,7 @@ These are critical targets; destroying Larvae will limit the 收割者's ability
            shows_on_galaxy_map_for_explored_planets="true"
 	   display_name="Reaper Gateway"
            display_name_for_sidebar="R Gateway"
-	   description="The Gateway allows the 收割者 to project their true strength into this 银河. The 收割者 can use this to maintain a powerful, ongoing army. Destroying these should be a high priority."
+	   description="传送门使收割者能够将其真正的力量投射到这个银河中。收割者可借此维持一支强大且持续的军队。摧毁它们应该是首要任务。"
 	   behavior="Stationary"
 	   starting_mark_level="Mark1"  tech_upgrades_that_benefit_me="Unused"		
 	   cost_for_ai_to_purchase="3000"
@@ -1089,44 +1089,44 @@ That's no moon. It's a space station!"
   <entity name="GatewaySpectre" copy_from="UndeadSpectre"
           tags="GatewaySpawnTierOne,GatewaySpawnTierTwo,GatewaySpawnTierThree,FireteamForces"
           icon_overlay="Overlays1/Guardian_SpeedBoost"
-          description="Close range fighter, completely ignores 力场 and personal 护盾. This 幽影 is controlled by the 收割者 invasion forces, making it more intelligent."
+          description="近距离战斗者，完全无视力场和个人护盾。 This 幽影 is controlled by the 收割者 invasion forces, making it more intelligent."
     >
   </entity>
   <entity name="GatewayDraugr" copy_from="UndeadDraugr"
           tags="GatewaySpawnTierOne,GatewaySpawnTierTwo,GatewaySpawnTierThree,FireteamForces"
           icon_overlay="Overlays1/Guardian_SpeedBoost"
-          description="Periodic long range barrages of weapon jamming missiles with slight knockback, coupled with gravity generator. This Draugr is controlled by the 收割者 invasion forces, making it more intelligent."
+          description="Periodic long range barrages of weapon jamming missiles with slight knockback, coupled with gravity generator. 此亡灵战士由收割者入侵部队控制，使其更加智能。"
     >
   </entity>
   <entity name="GatewayGhast" copy_from="UndeadGhast"
           tags="GatewaySpawnTierOne,GatewaySpawnTierTwo,GatewaySpawnTierThree,FireteamForces"
           icon_overlay="Overlays1/Guardian_SpeedBoost"
-          description="Crowd controller. Emits numerous explosive projectiles with slowing effects. This 惊惧鬼 is controlled by the 收割者 invasion forces, making it more intelligent."
+          description="群体控制者。发射大量具有减速效果的爆炸射弹。 This 惊惧鬼 is controlled by the 收割者 invasion forces, making it more intelligent."
     >
   </entity>
   <entity name="GatewayRevenant" copy_from="UndeadRevenant"
           tags="GatewaySpawnTierTwo,GatewaySpawnTierThree,FireteamForces"
           icon_overlay="Overlays1/Guardian_SpeedBoost"
-          description="A frightening ship that fires extremely long range 麻痹 shots, powering up its secondary weapon with each attack: a powerful disintegrating ray that expends 5 weapon points per attack to deal massive 腐蚀 damage over time. This 怨灵 is controlled by the 收割者 invasion forces, making it more intelligent."
+          description="一艘令人生畏的舰船，发射极远程麻痹射击，每次攻击充能其副武器：一道强大的分解射线，每次攻击消耗5个武器点以造成大量持续性腐蚀伤害。 此怨灵由收割者入侵部队控制，使其更加智能。"
     >
   </entity>
   <entity name="GatewayAcidBeast" copy_from="UndeadAcidBeast"
           tags="GatewaySpawnTierTwo,GatewaySpawnTierThree,FireteamForces"
           icon_overlay="Overlays1/Guardian_SpeedBoost"
-          description="A frightening ship that fires extremely long range 麻痹 shots, powering up its secondary weapon with each attack: a powerful disintegrating ray that expends 5 weapon points per attack to deal massive 腐蚀 damage over time. This ship is controlled by the 收割者 invasion forces, making it more intelligent."
+          description="一艘令人生畏的舰船，发射极远程麻痹射击，每次攻击充能其副武器：一道强大的分解射线，每次攻击消耗5个武器点以造成大量持续性腐蚀伤害。 此舰船由收割者入侵部队控制，使其更加智能。"
     >
   </entity>
 
   <entity name="GatewayVampire" copy_from="UndeadVampire"
           tags="GatewaySpawnTierTwo,GatewaySpawnTierThree,FireteamForces"
           icon_overlay="Overlays1/Guardian_SpeedBoost"
-       description="A frightening ship that fires extremely long range 麻痹 shots, powering up its secondary weapon with each attack: a powerful disintegrating ray that expends 5 weapon points per attack to deal massive 腐蚀 damage over time. This ship is controlled by the 收割者 invasion forces, making it more intelligent."
+       description="一艘令人生畏的舰船，发射极远程麻痹射击，每次攻击充能其副武器：一道强大的分解射线，每次攻击消耗5个武器点以造成大量持续性腐蚀伤害。 此舰船由收割者入侵部队控制，使其更加智能。"
     >
   </entity>
   <entity name="GatewayBoneDragon" copy_from="UndeadBoneDragon"
           tags="GatewaySpawnTierThree,FireteamForces"
           icon_overlay="Overlays1/Guardian_SpeedBoost"
-            description="The 死灵法师's most dangerous pet, the bone dragon is a force to be reckoned with. It breathes both fire and lightning. This ship is controlled by the 收割者 invasion forces, making it more intelligent."
+            description="死灵法师最危险的宠物——骨龙是一股不可忽视的力量。它同时喷吐火焰和闪电。此舰船由收割者入侵部队控制，使其更加智能。"
     >
   </entity>
 
@@ -1208,7 +1208,7 @@ That's no moon. It's a space station!"
 	  collision_priority="100"
 	  display_name="AI Draghkar"
           display_name_for_sidebar="Draghkar"
-	  description="The dreadful Draghkar is empowered by 坤迪亚, and used to fight 收割者 and 戴森 alike."
+	  description="可怕的德拉格卡被坤迪亚赋予力量，用来对抗收割者和戴森。"
 	  starting_mark_level="Mark1"
 	  cost_for_ai_to_purchase="950"
 	  hull_points="900000" shield_points="500000" speed="AboveAverage1"
@@ -1249,7 +1249,7 @@ That's no moon. It's a space station!"
     <entity name="DarkPrime" copy_from="AICuendillarDestroyer"
 	  display_name="Dark Prime"
           display_name_for_sidebar="Drk Prime"
-	  description="This powerful ship is used by the AI to counter 戴森 and 收割者 forces."
+	  description="这艘强大的舰船被AI用来对抗戴森和收割者部队。"
           icon_overlay="Overlays2/Race_Peltian"
           gimbal_icon_size_multiplier="1.2"
           cost_for_ai_to_purchase="9000"
@@ -1285,7 +1285,7 @@ That's no moon. It's a space station!"
     <entity name="DeathlyPrime" copy_from="AICuendillarDestroyer"
 	  display_name="Deathly Prime"
           display_name_for_sidebar="Dth Prime"
-	  description="This extra-strong Draghkar is used by the AI to counter 戴森 and 收割者 forces. This prime is 隐形."
+	  description="这个超强的德拉格卡被AI用来对抗戴森和收割者部队。此高级版本为隐形。"
           icon_overlay="Overlays1/Corvette_Concussion"
           cost_for_ai_to_purchase="9000"
           hull_points="35000" shield_points="200000" speed="AboveAverage1"
@@ -1322,7 +1322,7 @@ That's no moon. It's a space station!"
     <entity name="StormyPrime" copy_from="AICuendillarDestroyer"
 	  display_name="Stormy Prime"
           display_name_for_sidebar="Strm Prime"
-	  description="This extra-strong Draghkar is used by the AI to counter 戴森 and 收割者 forces. This prime has a powerful 范围 zombifying weapon."
+	  description="这个超强的德拉格卡被AI用来对抗戴森和收割者部队。此高级版本拥有强力的范围僵尸化武器。"
           hull_points="150000" shield_points="250000" speed="AboveAverage1"
           gimbal_icon_size_multiplier="1.2"
           icon_overlay="Overlays1/MegaTurret_Ion"
@@ -1372,7 +1372,7 @@ That's no moon. It's a space station!"
 	    y_offset_of_icon="16"
 	    collision_priority="100"
 	    display_name="Tank Prime"
-	    description="This powerful ship helps the AI fight off the 戴森 and 收割者."
+	    description="这艘强大的舰船帮助AI对抗戴森和收割者。"
 	    starting_mark_level="Mark1"
 	    cost_for_ai_to_purchase="9000"
 	    hull_points="400000" shield_points="800000" speed="BelowAverage1"

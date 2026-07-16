@@ -4,25 +4,25 @@
 	<!-- Automation: AutoBuildAtPlanets -->
 	<setting name="AutoBuildStationGorgonFrigate" serialization_name="AB-MSD-Ggn" is_network_and_game_synced_setting="true" tags="IsAutoBuildingSetting,CountsAsDefenseForHelperJournal,StationGorgonFrigate"
 		  category="Automation" subcategory="AutoBuildAtPlanets" display_name="自动建造戈耳工护卫舰" type="IntSlider" default="0" min="0" max="50"
-		  description="Automatically build 站-Keeping 戈耳工聚合体护卫舰s along with Command 站s, provided some are available. Up to the specified amount will be built."/>
+		  description="在指挥站旁边自动建造驻防戈耳工聚合体护卫舰（如果可用）。将建造最多指定数量。"/>
 	
 	<setting name="AutoBuildDefenseEscortCarrier" serialization_name="AB-MSD-EcC" is_network_and_game_synced_setting="true" tags="IsAutoBuildingSetting,CountsAsDefenseForHelperJournal,DefenseEscortCarrier"
 		  category="Automation" subcategory="AutoBuildAtPlanets" display_name="自动建造护航航母" type="IntSlider" default="0" min="0" max="50"
-		  description="Automatically build 驻防护航航母s along with Command 站s, provided some are available. Up to the specified amount will be built."/>
+		  description="在指挥站旁边自动建造驻防护航航母（如果可用）。将建造最多指定数量。"/>
 	
 	<setting name="AutoBuildDefenseAmbushCarrier" serialization_name="AB-MSD-AbC" is_network_and_game_synced_setting="true" tags="IsAutoBuildingSetting,CountsAsDefenseForHelperJournal,DefenseAmbushCarrier"
 		  category="Automation" subcategory="AutoBuildAtPlanets" display_name="自动建造伏击航母" type="IntSlider" default="0" min="0" max="50"
-		  description="Automatically build 驻防伏击航母s along with Command 站s, provided some are available. Up to the specified amount will be built."/>
+		  description="在指挥站旁边自动建造驻防伏击航母（如果可用）。将建造最多指定数量。"/>
 	
 	<setting name="AutoBuildDefenseFlypaper" serialization_name="AB-MSD-FpF" is_network_and_game_synced_setting="true" tags="IsAutoBuildingSetting,CountsAsDefenseForHelperJournal,DefenseFlypaper"
 		  category="Automation" subcategory="AutoBuildAtPlanets" display_name="自动建造粘蝇纸护卫舰" type="IntSlider" default="0" min="0" max="50"
-		  description="Automatically build 站-Keeping 粘蝇纸护卫舰s along with Command 站s, provided some are available. Up to the specified amount will be built."/>
+		  description="在指挥站旁边自动建造驻防粘蝇纸护卫舰（如果可用）。将建造最多指定数量。"/>
 	
 	<setting name="AutoBuildDefenseArtilleryCruiser" serialization_name="AB-MSD-AtD" is_network_and_game_synced_setting="true" tags="IsAutoBuildingSetting,CountsAsDefenseForHelperJournal,DefenseArtilleryCruiser" required_expansion_list="1_The_Spire_Rises"
 		  category="Automation" subcategory="AutoBuildAtPlanets" display_name="自动建造火炮驱逐舰" type="IntSlider" default="0" min="0" max="2"
-		  description="Automatically build 驻防火炮 Destroyers along with Command 站s, provided some are available. Up to the specified amount will be built."/>
+		  description="在指挥站旁边自动建造驻防火炮驱逐舰（如果可用）。将建造最多指定数量。"/>
 	
 	<setting name="AutoBuildCruMisBattery" serialization_name="AB-MSD-CMB" is_network_and_game_synced_setting="true" tags="IsAutoBuildingSetting,CountsAsDefenseForHelperJournal,CruMisBattery" required_expansion_list="1_The_Spire_Rises"
 		  category="Automation" subcategory="AutoBuildAtPlanets" display_name="自动建造巡航导弹炮台" type="IntSlider" default="0" min="0" max="5"
-		  description="Automatically build Cruise 导弹 Batteries along with Command 站s, provided some are available. Up to the specified amount will be built."/>
+		  description="在指挥站旁边自动建造巡航导弹炮台（如果可用）。将建造最多指定数量。"/>
 </root>

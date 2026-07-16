@@ -9,7 +9,7 @@
 		size_scale="4"
 		visuals_scale_multiplier="4"
 		category="Ship" is_strikecraft="true"
-		description="A swarmer Templar strikecraft with a hardened hull, the Page is exceptional against highly-armored ships, particularly if they are also massive."
+		description="一种拥有硬化船体的蜂群型圣殿骑士打击舰，侍从对高装甲舰船尤为出色，尤其是体型庞大的目标。"
 		hull_points="17000" shield_points="0" speed="AboveAverage2"
 		metal_cost="1500" energy_consumption="150"
 		armor_mm="30" albedo="0.3" engine_gx="14" mass_tx="0.21"

@@ -52,11 +52,11 @@
            type_difficulty="Brutal"
            adaptive_difficulty="Unset"
            random_difficulty="Unset"
-           description="This AI has a Flenser in its Praetorian Guard at the beginning of the game, and some new ships designed to slice through your 防御.
+            description="该AI在游戏开始时，其禁卫军中有一艘「剥皮者」，以及一些设计用于撕裂你的防御的新型舰船。
 
-It has exceptional border aggression, and also prefer CPAs to Waves (which are infrequent but strong).
+它具有极强的边境侵略性，并且相比波次（波次不频繁但强大）更倾向于CPA。
 
-&lt;color=#ffa132&gt;Not recommended without a 尖塔-Tier ally or two due to the strength of the Flenser.&lt;/color&gt;"
+&lt;color=#ffa132&gt;由于剥皮者的强度，不建议在没有一两个尖塔级盟友的情况下使用。&lt;/color&gt;"
          >
     <budget_item type="Reinforcement" seconds_between_attempts_to_spend="300" normal_ship_group_cat="AnyReinforcements"
       spend_on_threshold="true"
@@ -135,9 +135,9 @@ It has exceptional border aggression, and also prefer CPAs to Waves (which are i
            type_difficulty="Hard"
            adaptive_difficulty="Unset"
            random_difficulty="Unset"
-           description="This AI gets a Mothership in it's Praetorian Guard at game start, and also shares ships from the Flenserite. For those who find the Flenser a bit excessive.
+            description="该AI在游戏开始时，其禁卫军中有一艘母舰，同时也共享剥皮者的舰船。适合那些觉得剥皮者有点过强的玩家。
 
-It has exceptional border aggression, and also prefer CPAs to Waves (which are infrequent but strong). Overall a bit weaker than the Flenserite."
+它具有极强的边境侵略性，并且相比波次（波次不频繁但强大）更倾向于CPA。总体比剥皮者弱一些。"
          >
     <budget_item type="Reinforcement" seconds_between_attempts_to_spend="300" normal_ship_group_cat="AnyReinforcements"
       spend_on_threshold="true"
@@ -214,9 +214,9 @@ It has exceptional border aggression, and also prefer CPAs to Waves (which are i
            support_structure_nasty_pick_tag="SupportStructureNastyPick"
            wildcard_nasty_pick_tag="WildCardNastyPick"
            type_difficulty="Brutal"
-           description="The AI has allied itself with Lovecraftian horrors intent on shattering reality, alongside many other factions.
+            description="该AI与意图粉碎现实的洛夫克拉夫特式恐怖存在结盟，同时还联合了许多其他派系。
 
-They focus on on cross planet attacks through normal space. Be prepared for a horrifying battle!"
+他们专注于通过常规空间进行跨星球攻击。准备迎接一场恐怖的战斗吧！"
   >
     <budget_item type="Reinforcement" seconds_between_attempts_to_spend="300" normal_ship_group_cat="AnyReinforcements"
       spend_on_threshold="true"
@@ -293,9 +293,9 @@ They focus on on cross planet attacks through normal space. Be prepared for a ho
            support_structure_nasty_pick_tag="SupportStructureNastyPick"
            wildcard_nasty_pick_tag="WildCardNastyPick"
            type_difficulty="Hard"
-           description="This AI has a Ravenous Shadow in its Praetorian Guard at the beginning of the game, and a variety of other powerful Shadow Ships.
+            description="该AI在游戏开始时，其禁卫军中有一艘「贪婪暗影」，以及各种其他强大的暗影舰船。
 
-This AI focuses more on heavily defending its planets with turrets and guard posts."
+该AI更侧重于用炮塔和哨站重兵防守其星球。"
   >
     <budget_item type="Reinforcement" seconds_between_attempts_to_spend="300" normal_ship_group_cat="AnyReinforcements"
       spend_on_threshold="true"
@@ -372,9 +372,9 @@ This AI focuses more on heavily defending its planets with turrets and guard pos
            support_structure_nasty_pick_tag="SupportStructureNastyPick"
            wildcard_nasty_pick_tag="WildCardNastyPick"
            type_difficulty="Hard"
-           description="Uses a number of Hydra style units. Also gets additional Orbital Mass Drivers and Ion Cannons.
+            description="使用多种九头蛇风格的单位。同时还拥有额外的轨道质量驱动器（OMD）和离子炮。
 
-Their waves come with Hydra Beachheading ships."
+他们的波次会随带九头蛇滩头登陆舰。"
            spawn_one_of_ship_tag_in_waves="HydraWaveLeader"
   >
     <budget_item type="Reinforcement" seconds_between_attempts_to_spend="300" normal_ship_group_cat="LerneanFleetships"
@@ -452,9 +452,9 @@ Their waves come with Hydra Beachheading ships."
            support_structure_nasty_pick_tag="SupportStructureNastyPick"
            wildcard_nasty_pick_tag="WildCardNastyPick"
            type_difficulty="Moderate"
-           description="Gets units from all the Sidekick Mod AI Types, and likes to focus your command stations.
+            description="从所有Sidekick Mod AI类型中获取单位，并喜欢集中攻击你的指挥站。
 
-This AI Type works very similarly to the scarier Sidekick AI Types (Miskatonic et al), but it's significantly nerfed from them. So you can still see the new goodies without as many challenges."
+该AI类型的工作方式与更可怕的Sidekick AI类型（米斯卡托尼克等）非常相似，但相比它们大幅削弱。因此你仍然可以看到新内容，而不用面对太多挑战。"
            spawn_one_of_ship_tag_in_waves="BandersnatchWaveLeader"
   >
     <budget_item type="Reinforcement" seconds_between_attempts_to_spend="300" normal_ship_group_cat="AnyReinforcements"
@@ -487,9 +487,9 @@ This AI Type works very similarly to the scarier Sidekick AI Types (Miskatonic e
            abbreviation="Chivalric"
            is_default="false"
            type_name="Arcen.AIW2.External.AITypeController_Chivalric"
-           description="This kindhearted AI prefers to leave your 旗舰 till last.
+            description="这位心地善良的AI喜欢把你的旗舰留到最后处理。
 
-If you get frustrated with your 旗舰 getting crippled, this AI is for you."
+如果你对旗舰被重创感到沮丧，这个AI适合你。"
            type_difficulty="Easier"
            >
     </ai_type>
@@ -498,7 +498,7 @@ If you get frustrated with your 旗舰 getting crippled, this AI is for you."
            display_name="Deepstriker"
            abbreviation="Deepstriker"
            is_default="false"
-           description="This AI's 霸主 will always have the AI Reserves help it regardless of whether it is in Deepstrike"
+            description="该AI的霸主将始终获得AI预备队的帮助，无论它是否处于深度打击状态"
            overlord_always_in_deepstrike="true"
            type_difficulty="Moderate"
            >
@@ -508,9 +508,9 @@ If you get frustrated with your 旗舰 getting crippled, this AI is for you."
              display_name="Jub Jub Bird"
              abbreviation="JJB"
              is_default="false"
-     description="Beware the Jub Jub Bird! This is the Jabberwock, but also has ships from Forge of Empires. This might be harder than the Jabberwock.
+      description="当心Jub Jub鸟！这是炸脖龙（Jabberwock），但同时也拥有帝国锻造（Forge of Empires）的舰船。这可能比炸脖龙更难。
 
-This may be the hardest AI type in the game."
+这可能是游戏中最难的AI类型。"
      >
       <budget_item type="Reinforcement" seconds_between_attempts_to_spend="300" normal_ship_group_cat="JJBFleetships"
       spend_on_threshold="true"
@@ -588,9 +588,9 @@ This may be the hardest AI type in the game."
            support_structure_nasty_pick_tag="SupportStructureNastyPick"
            wildcard_nasty_pick_tag="WildCardNastyPick"
            type_difficulty="Hard"
-           description="This AI type uses a variety of different ship types in their sub-fleets. They use 天灾 in the 守望者 舰队, 奈祖尔 in the Border Aggression and 圣殿骑士 in the Praetorian Guard.
+            description="该AI类型在其子舰队中使用了多种不同的舰船类型。他们在守望者舰队中使用天灾，在边境侵略中使用奈祖尔，在禁卫军中使圣殿骑士。
 
-In addition, they have a particularly powerful Hunter 舰队 focused on 隐形 ships."
+此外，他们拥有一支特别强大的猎手舰队，专注于隐形舰船。"
          >
     <budget_item type="Reinforcement" seconds_between_attempts_to_spend="300" normal_ship_group_cat="AnyReinforcements"
       spend_on_threshold="true"
@@ -668,9 +668,9 @@ In addition, they have a particularly powerful Hunter 舰队 focused on 隐形 s
            support_structure_nasty_pick_tag="SupportStructureNastyPick"
            wildcard_nasty_pick_tag="WildCardNastyPick"
            type_difficulty="Moderate"
-           description="This AI type has all its Bastion Worlds on Nomad Planets, and uses a wide variety of units.
+            description="该AI类型的所有要塞世界都位于流浪星球上，并使用各种各样的单位。
 
-Has an emphasis on waves in the early game especially."
+尤其在早期游戏中侧重于波次攻击。"
            >
         <budget_item type="Reinforcement" seconds_between_attempts_to_spend="300" normal_ship_group_cat="AnyReinforcements"
       spend_on_threshold="true"
@@ -750,9 +750,9 @@ Has an emphasis on waves in the early game especially."
            type_difficulty="Brutal"
            adaptive_difficulty="Unset"
            random_difficulty="Unset"
-           description="This AI uses ships from the 无敌舰队 Empire. Has pretty powerful waves.
+            description="该AI使用来自无敌舰队帝国的舰船。拥有相当强大的波次。
 
-It's possibly that the Difficulty should be Brutal, some feedback would be great."
+它的难度可能应该设为Brutal（残暴），欢迎大家提供反馈。"
          >
     <budget_item type="Reinforcement" seconds_between_attempts_to_spend="300" normal_ship_group_cat="AnyReinforcements"
       spend_on_threshold="true"
@@ -831,7 +831,7 @@ It's possibly that the Difficulty should be Brutal, some feedback would be great
            type_difficulty="Hard"
            adaptive_difficulty="Unset"
            random_difficulty="Unset"
-           description="This AI uses ships infused with 泰德瑞安; they often spawn weaker ships when destroyed, leading to protracted battles. Has powerful waves"
+            description="该AI使用注入了泰德瑞安的舰船；它们被摧毁时经常生成较弱的舰船，导致旷日持久的战斗。拥有强大的波次"
          >
     <budget_item type="Reinforcement" seconds_between_attempts_to_spend="300" normal_ship_group_cat="TiberianFleetships"
       spend_on_threshold="true"
@@ -908,9 +908,9 @@ It's possibly that the Difficulty should be Brutal, some feedback would be great
            support_structure_nasty_pick_tag="SupportStructureNastyPick"
            wildcard_nasty_pick_tag="WildCardNastyPick"
            type_difficulty="Hard"
-           description="Is an excessive fan of turrets.
+            description="是炮塔的超级狂热粉丝。
 
-On higher difficulties, this AI type will trigger the 'too many turrets' warnings; but isn't that what you signed up for?"
+在较高难度下，该AI类型会触发「炮塔过多」警告；但这不正是你想要的吗？"
   >
     <budget_item type="Reinforcement" seconds_between_attempts_to_spend="300" normal_ship_group_cat="AnyReinforcements"
       spend_on_threshold="true"
@@ -989,11 +989,11 @@ On higher difficulties, this AI type will trigger the 'too many turrets' warning
            support_structure_nasty_pick_tag="SupportStructureNastyPick"
            wildcard_nasty_pick_tag="WildCardNastyPick"
            type_difficulty="Brutal"
-           description="Haters gotta hate! This AI type extensively features players least favourite AI ships, along with other nasty surprises.
+            description="恨就对了！该AI类型大量使用玩家最讨厌的AI舰船，以及其它恶心惊喜。
 
-You will hate this AI type or your money back.
+你一定会恨这个AI类型，否则包退钱。
 
-Thanks to a number of Discord folks for ideas, including Lord of Nothing, CRCGamer and The Grand Mugwump"
+感谢Discord上的许多朋友提供想法，包括 Lord of Nothing、CRCGamer 和 The Grand Mugwump"
   >
     <budget_item type="Reinforcement" seconds_between_attempts_to_spend="300" normal_ship_group_cat="HatefulFleetships"
       spend_on_threshold="true"
@@ -1079,7 +1079,7 @@ Thanks to a number of Discord folks for ideas, including Lord of Nothing, CRCGam
            support_structure_nasty_pick_tag="SupportStructureNastyPick"
            wildcard_nasty_pick_tag="WildCardNastyPick"
            type_difficulty="Hard"
-           description="This AI has an especially powerful Hunter 舰队. It is intended to be paired with the Hunter Difficulty 'Zerg Rush'; to use that, you will need to disable 'Universal Difficulty' and set the 守望者 and Hunter difficulties manually."
+            description="该AI拥有一支特别强大的猎手舰队。它旨在配合猎手难度「虫群冲锋」使用；要使用该难度，你需要禁用「统一难度」并手动设置守望者和猎手的难度。"
   >
     <budget_item type="Reinforcement" seconds_between_attempts_to_spend="300" normal_ship_group_cat="AnyReinforcements"
       spend_on_threshold="true"

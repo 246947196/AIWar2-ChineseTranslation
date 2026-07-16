@@ -30,7 +30,7 @@
 
             display_name="黑暗指挥站"
 			display_name_for_sidebar="黑暗指挥站"
-			description="This Dark .. Monument .. was once something else."
+			description="这座黑暗...纪念碑...曾经是别的东西。"
 
 			behavior="None"
 			starting_mark_level="Mark1"

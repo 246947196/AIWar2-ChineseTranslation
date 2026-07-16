@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <root>
 	<setting_category name="Histiocytes" display_name="组织细胞"
-      description="Settings related to the Histiocytes mod."/>
+      description="与组织细胞模组相关的设置。"/>
 </root>

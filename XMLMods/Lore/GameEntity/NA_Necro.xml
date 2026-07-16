@@ -4,7 +4,7 @@
     <!-- Skeleton Homes -->
 
     <entity name="SkeletonWarriorHome" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
-            display_name_for_sidebar="Warrior S. Home"
+            display_name_for_sidebar="战士骷髅 主星"
 	        >
     </entity>
         
@@ -14,7 +14,7 @@
     </entity>
 	
     <entity name="SkeletonDetonatorHome" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
-    display_name_for_sidebar="Rogue 起始家"
+    display_name_for_sidebar="流浪起始家"
             >
     </entity>
 
@@ -32,55 +32,55 @@
     <!-- Wight Bodyguards -->
 
     <entity name="RavenousWightBodyguard" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss" 
-            display_name_for_sidebar="Ravenous Wight BG"
+            display_name_for_sidebar="贪婪幽灵 护卫"
             >
     </entity>
 
     <entity name="PossessedWightBodyguard" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss" 
-            display_name_for_sidebar="Possessed Wight BG"
+            display_name_for_sidebar="附身幽灵 护卫"
             >
     </entity>	
 
 
     <entity name="InfectiousWightBodyguard" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
-            display_name_for_sidebar="Infectious W. BG"
+            display_name_for_sidebar="感染幽灵 护卫"
             >
     </entity>
 
     <entity name="SpectralWightBodyguard" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
-            display_name_for_sidebar="Spectral Wight BG"
+            display_name_for_sidebar="鬼魂幽灵 护卫"
             >
     </entity>
 	
     <entity name="VengefulWightBodyguard" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
-            display_name_for_sidebar="Vengeful Wight BG"
+            display_name_for_sidebar="复仇幽灵 护卫"
             >
     </entity>
 
     <!-- Wight Homes -->
   
     <entity name="RavenousWightHome" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
-            display_name_for_sidebar="Ravenous W. Home"
+            display_name_for_sidebar="贪婪幽灵 主星"
 	        >
     </entity>
         
     <entity name="PossessedWightHome" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
-            display_name_for_sidebar="Possessed W. Home"
+            display_name_for_sidebar="附身幽灵 主星"
             >
     </entity>
 	
     <entity name="InfectiousWightHome" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
-            display_name_for_sidebar="Infectious W. Home"
+            display_name_for_sidebar="感染幽灵 主星"
             >
     </entity>
 
     <entity name="SpectralWightHome" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
-            display_name_for_sidebar="Spectral W. Home"
+            display_name_for_sidebar="鬼魂幽灵 主星"
             >
     </entity>
 
     <entity name="VengefulWightHome" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
-            display_name_for_sidebar="Vengeful W. Home"
+            display_name_for_sidebar="复仇幽灵 主星"
             >
     </entity>	
 		
@@ -99,28 +99,28 @@
     <!-- Mummy Bodyguards -->
 
     <entity name="RoyalMummyBodyguard" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
-            display_name="Royal Mummy Bodyguard"
+            display_name="皇家木乃伊护卫"
             >
     </entity>
 
     <entity name="DecayingMummyBodyguard" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
-            display_name="Decaying Mummy Bodyguard"
+            display_name="腐朽木乃伊护卫"
             >
     </entity>
 
     <entity name="WitheredMummyBodyguard" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
-            display_name="Withered Mummy Bodyguard"
+            display_name="枯萎木乃伊护卫"
             >
     </entity>
 
     <!-- Mummy Homes -->
     <entity name="DecayingMummyHome" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
-            display_name_for_sidebar="Decaying M. Home"
+            display_name_for_sidebar="腐朽木乃伊 主星"
             >
     </entity>
 
     <entity name="WitheredMummyHome" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
-            display_name_for_sidebar="Withered M. Home"
+            display_name_for_sidebar="枯萎木乃伊 主星"
             >
     </entity>
 

@@ -14,8 +14,8 @@
 			y_offset_of_icon="15"
 			collision_priority="500"
 			display_name="突击护卫舰"
-			display_name_for_sidebar="Assault FFH"
-			description="The base 失落人类 Ship all the others copy from. Should not be seen."
+			display_name_for_sidebar="突击重护卫舰"
+			description="所有其它失落人类舰船复制的模板基础。不应在游戏中出现。"
 			starting_mark_level="Markless" tech_upgrades_that_benefit_me="Unused" 
 			cost_for_ai_to_purchase="982"			
 			hull_points="198000" shield_points="82500" speed="Normal2"
@@ -30,11 +30,11 @@
   </entity>   
 
 	<!--	Travelers -->
-    <entity name="LostHumansTraveler" display_name="失落人类 Traveler" skip_export="true" copy_from="BaseLostHumanShip" tags="LostHumansTraveler"
+    <entity name="LostHumansTraveler" display_name="失落人类旅行者" skip_export="true" copy_from="BaseLostHumanShip" tags="LostHumansTraveler"
             hull_points="10000" shield_points="0" speed="BelowAverage1" cannot_be_stacked="true"
 			visuals="assets/_finalgamemeshes/humanoddities/colonyship/colonyship.prefab"
 			icon_name="Ships1/ColonyShip" icon_overlay="Overlays2/Guardian_Shield" gimbal_icon_size_multiplier="0.75"
-            description="Crewed by homeless humans, they are wandering aimlessly throughout the galaxy."
+            description="由无家可归的人类驾驶，他们在银河系中漫无目的地游荡。"
 		    starting_mark_level="Markless" tech_upgrades_that_benefit_me="Unused" 
             base_info_source="LostHumansPerUnitBaseInfo"
             >
@@ -53,7 +53,7 @@
 			y_offset_of_icon="16"
 			collision_priority="400" immune_to_repairs="true"
 			display_name="民兵航母"
-			display_name_for_sidebar="Mil 航母"
+			display_name_for_sidebar="军用航母"
 			description="A relatively tanky ship that creates 无人机 to 攻击 hostiles. Held together by spit, duct tape, and dreams of a future free from the AI."
 			fleet_design_template_i_use_for_drones="CarrierGuardianDrones" is_disallowed_from_spawning_in_waves="true"
 			drone_starting_behavior_type="Attacker_Full"
@@ -179,7 +179,7 @@ Can be assigned to a fleet key by pressing CTRL + #. Useful to pair these up int
             voice_group="Silent"
             category="Ship"
             collision_priority="10000"
-            display_name="Captured 人类殖民地" display_name_for_sidebar="Cap 人类殖民地"
+            display_name="被占领的人类殖民地" display_name_for_sidebar="占领殖民地"
             description="Once contained a 殖民地 of free humans. It has now been taken over by the AI, and is churning out ships to 攻击 us. As we lack a ground army, we have no way to retake the 殖民地.
 
 There is no saving them now."
@@ -205,7 +205,7 @@ There is no saving them now."
 	</entity>
 
 	<!--	Rogues -->
-	<entity name="LostHumansRogue" display_name="失落人类 Rogue" skip_export="true" copy_from="BaseLostHumanShip" tags="LostHumansRogue"
+	<entity name="LostHumansRogue" display_name="失落人类浪客" skip_export="true" copy_from="BaseLostHumanShip" tags="LostHumansRogue"
             hull_points="10000" shield_points="0" speed="BelowAverage1" cannot_be_stacked="true"
 			visuals="assets/_finalgamemeshes/humanoddities/colonyship/colonyship.prefab"
 			icon_name="Ships1/ColonyShip" icon_overlay="Overlays2/Guardian_Vampire" gimbal_icon_size_multiplier="0.75"
@@ -261,7 +261,7 @@ While they are on your planet, you can choose to invest in a 浪客公会 for th
             category="Ship"
             collision_priority="10000"
             display_name="浪客防火墙"
-            description="Spawned in response to a Rogue's action, this structure will unleash an endless number of Relentless Wave ships until destroyed."
+            description="因应游侠行动而生成，此建筑将不断释放无尽的无情波次舰船，直到被摧毁为止。"
             starting_mark_level="Markless" tech_upgrade_that_is_used_for_my_direct_science="Unused"
             cost_for_ai_to_purchase="200"
             hull_points="100000" shield_points="0" speed="Immobile"
@@ -283,7 +283,7 @@ While they are on your planet, you can choose to invest in a 浪客公会 for th
 	</entity>
 
 	<!-- Construction Convoy -->
-	<entity name="LostHumansConstructionConvoy" display_name="失落人类 建造护航队" skip_export="true" copy_from="BaseLostHumanShip" tags="LostHumansConstructionConvoy" display_name_for_sidebar="LHuman ConConvoy"
+	<entity name="LostHumansConstructionConvoy" display_name="失落人类 建造护航队" skip_export="true" copy_from="BaseLostHumanShip" tags="LostHumansConstructionConvoy" display_name_for_sidebar="人类建造车队"
 			hull_points="10000" shield_points="0" speed="AboveAverage2" cannot_be_stacked="true"
 			visuals="Assets/_FinalGameMeshes/Specials/AstroTrain/AstroTrainWithRegularWeapons.prefab"
 			size_scale="7"

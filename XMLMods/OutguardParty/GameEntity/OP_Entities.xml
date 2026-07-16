@@ -139,7 +139,7 @@
 			visuals_scale_multiplier="8.0"
 			size_scale="7.0"
 			collision_priority="500"
-			display_name="战斗超级工厂"
+			display_name="超级机动兵工厂"
 			display_name_for_sidebar="C-S-FAC"
 			description="为战斗配装的机动超级工厂旗舰。如果舰队旗舰在同一或相邻行星且缺少舰船，将自动生产替代品直接跃迁到该旗舰。这个超大型变体拥有更多无人机和工程师。其修理和建造能力大幅扩展，并在其生命周期内自我消耗以生产金属。"
 			description_short="机动超级工厂，自动替换附近舰队损失并修理附近单位。这个超大型变体拥有更多无人机、工程师和容量。在其生命周期内自我消耗以生产金属。"
@@ -353,8 +353,8 @@
 -->
 
 	<entity name="HackingDroneShip"
-		display_name="黑客无人机"
-		display_name_for_sidebar="黑客无人机"
+		display_name="入侵无人机"
+		display_name_for_sidebar="入侵无人机"
 		cost_for_ai_to_purchase="10"
 		strength_multiplier="1"
 		hull_points="100"
@@ -413,7 +413,7 @@
 		size_scale="5"
 		visuals_scale_multiplier="7"
 		collision_priority="50"
-		display_name="天启弹头"
+		display_name="天启飞弹"
 		description="感染行星上所有舰船使其僵尸化。不幸的是，它们也恨我们。"
 		starting_mark_level="Markless"
 		tech_upgrades_that_benefit_me="Unused"

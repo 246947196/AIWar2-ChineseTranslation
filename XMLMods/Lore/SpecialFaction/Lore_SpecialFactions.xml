@@ -2,20 +2,20 @@
 <root>
    
     <faction name="AntiAIZombie" is_partial_record="true"
-             display_name="Allied Zombie Fleet" short_name="友方僵尸" processing_group="Zombies"
-             description="Fleet of Zombified ships controlled by you or your allies and fighting against the AI."
+             display_name="友军僵尸舰队" short_name="友方僵尸" processing_group="Zombies"
+             description="由您或您的盟友控制的僵尸化舰船舰队，与AI作战。"
     >
     </faction>
 
     <faction name="AntiPlayerZombie" is_partial_record="true"
-             display_name="AI Zombie Fleet" short_name="AI 僵尸" processing_group="Zombies"
-             description="Fleet of Zombified ships controlled by the AI and fighting against you."
+             display_name="AI僵尸舰队" short_name="AI 僵尸" processing_group="Zombies"
+             description="由AI控制的僵尸化舰船舰队，与您作战。"
     >
     </faction>
 
     <faction name="AntiEveryoneZombie" is_partial_record="true"
-             display_name="Rogue Zombie Fleet" short_name=" rogue 僵尸" processing_group="Zombies"
-             description="Fleet of Zombified ships completely out of control and a threat to everyone."
+             display_name="流浪僵尸舰队" short_name=" rogue 僵尸" processing_group="Zombies"
+             description="完全失控的僵尸化舰船舰队，对所有人构成威胁。"
     >
     </faction>
 

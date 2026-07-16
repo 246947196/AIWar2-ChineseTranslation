@@ -2,7 +2,7 @@
 <root>
   <fleet_design name="MFSAncientFleet"
         display_name="远古舰队"
-        description="A fleet composed of frigates with lost technologies."
+        description="由搭载失落科技的护卫舰组成的舰队。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >
@@ -13,8 +13,8 @@
   </fleet_design>
 
   <fleet_design name="MFSExperimentalFleet"
-        display_name="Experimental Fleet"
-        description="A fleet composed of frigates with experimental technologies."
+        display_name="实验舰队"
+        description="由搭载实验性科技的护卫舰组成的舰队。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >

@@ -9,7 +9,7 @@
   team_center_color="Xod_Fill" team_border_color="Xod_Border"
   type="SpecialFaction"
   must_be_at_most_one="true"
-  description="The Xodians are a sentient race of mega-ships that come from outside the galaxy. These ships are powered by a unique fuel they roam the galaxy in search of."
+  description="克赛迪安是来自银河系外的一支有意识的巨型舰船种族。这些舰船由一种独特燃料驱动，它们在银河系中漫游正是为了寻找这种燃料。"
   can_use_spire_debris="false"
   impact="Easier"
   icon_name_for_lobby="Ships4/ExoTier3"

@@ -22,8 +22,8 @@
           description="各种死灵名称。 (由 FACC007 创建)" />
 	<fleet_name_type name="NECRO 4" display_name="死灵 4" subdir="NEC4"
           description="各种死灵名称。 (由 FACC007 创建)" />
-	<fleet_name_type name="PRE1" display_name="Prethoryn 1" subdir="Pre1"
+	<fleet_name_type name="PRE1" display_name="普雷索林 1" subdir="Pre1"
           description="星巢名称。 (由 FACC007 创建)" />
-	<fleet_name_type name="PRE2" display_name="Prethoryn 2" subdir="Pre2"
-          description="Prethoryn 舰队名称。 (由 FACC007 创建)" />
+	<fleet_name_type name="PRE2" display_name="普雷索林 2" subdir="Pre2"
+          description="普雷索林 舰队名称。 (由 FACC007 创建)" />
 </root>

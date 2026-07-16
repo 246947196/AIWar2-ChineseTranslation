@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
   <fleet_design name="ESVFS_HackerStartingFleet" required_expansion_list="1_The_Spire_Rises"
-        display_name="黑客舰队"
+        display_name="入侵舰队"
         description="不仅通过其网络指挥运输旗舰减少入侵响应，还拥有伏击、僵尸化和群体控制舰船，有效打击来袭波次。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"

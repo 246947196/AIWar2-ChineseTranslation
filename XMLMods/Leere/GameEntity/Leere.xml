@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
-	<entity name="Leere" tags="Leere" is_expecting_to_not_be_encyclopedia_counted_at_all='true'
+	<entity name="利尔" tags="利尔" is_expecting_to_not_be_encyclopedia_counted_at_all='true'
 	        thematic_groups="Hidden"
 			ship_class_name="AstroTrainPrototype"
             draw_in_galaxy_view="true"
@@ -14,10 +14,10 @@
 			visuals_scale_multiplier="60"
             y_offset_of_icon="35"
             collision_priority="800"
-            display_name="Leere"
-            description="The Leere is a ship of great durability and a powerful corrupting nature. Releases powerful Knallen 无人机 that deal extreme damage if not immediately dispatched.
+            display_name="利尔"
+			description="利尔是一艘拥有极高耐久和强大腐化特性的舰船。释放强大的克纳伦无人机，若不立即清除将造成巨额伤害。
 
-Anything that dies nearby is converted into part of its endless void horde, and it can even endlessly revive any that die on its planet."
+附近任何死亡的物体都将被转化为其无尽虚空大军的一部分，甚至可以无限复活其所在星球上阵亡的任何单位。"
             blocks_enemy_claim_flows="true"
             voice_group="Silent"
 			starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
@@ -32,7 +32,7 @@ Anything that dies nearby is converted into part of its endless void horde, and 
 			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
             priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
 			>
-		<system name="W1" display_name="Void"
+		<system name="W1" display_name="虚空"
 			category="Weapon" firing_timing="OnlyInRange"
 			damage_per_shot="14000" range="Normal1" shot_speed="Normal" rate_of_fire="ExtremelyLow"
 			shot_type_data="HeavyBeamInvisible"
@@ -57,9 +57,9 @@ Anything that dies nearby is converted into part of its endless void horde, and 
 			visuals_scale_multiplier="7.5"
 			collision_priority="100"
 			display_name="克纳伦炸弹"
-			description="The 克纳伦炸弹 is, by itself, a very minor threat. It brings immense firepower at the cost of nearly no durability and heavy self damage after firing.
+			description="克纳伦炸弹本身威胁极低。它以几乎零耐久和开火后严重自伤的代价换来了巨大火力。
 
-The Leere's ability to endlessly revive this bomb with an engine strapped to it however... make it a much more sticky and credible threat."
+然而，利尔能够无限复活这枚绑着引擎的炸弹……使其成为一个更加棘手且不容忽视的威胁。"
 		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
 			cost_for_ai_to_purchase="20" 
 			hull_points="10000" shield_points="0" speed="AboveAverage1"
@@ -70,7 +70,7 @@ The Leere's ability to endlessly revive this bomb with an engine strapped to it 
 			priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
 			>
 
-		<system name="WM" display_name="Detonation"
+		<system name="WM" display_name="引爆"
 				category="Weapon" firing_timing="OnlyInRange"
 				damage_per_shot="140000" range="AlmostNone" seek_range="Normal1" shot_speed="Instant" rate_of_fire="Minute" fires_salvos_sequentially="false"
 				shot_type_data="ExplosiveFlakBurst"

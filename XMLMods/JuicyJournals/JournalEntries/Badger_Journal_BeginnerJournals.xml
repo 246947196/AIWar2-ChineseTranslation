@@ -349,7 +349,7 @@
 
 如果你改变了主意，你随时可以使用科技选项卡底部的按钮退还花在舰队或科技上的科学点数。这需要消耗入侵点，但通常每局游戏你可以承担一到两次，而不会太缺入侵点。
 
-说到入侵点，你也可以通过花费入侵点从舰队详情屏幕升级甚至改造舰队核心。你可以将基础运输舰切换为更高级的运输舰类型，对战斗工厂进行同样的操作，将傀儡的船体生命值翻倍，或进行各种其他操作。" />
+说到入侵点，你也可以通过花费入侵点从舰队详情屏幕升级甚至改造舰队核心。你可以将基础运输舰切换为更高级的运输舰类型，对机动兵工厂进行同样的操作，将傀儡的船体生命值翻倍，或进行各种其他操作。" />
 
         <journal name="Beginner_LowThreat" sidebar_text="&lt;color=#d267ff&gt;建议：&lt;/color&gt; 中等威胁" is_for_the_tips_tab="true"
              can_record_another_copy_if_already_recorded_in_this_campaign="false"
@@ -486,7 +486,7 @@
 
 &lt;b&gt;提示：&lt;/b&gt; 如果你正在处理在试图接近之眼时释放出来的部队，你可以在相邻行星上设置你自己的部队来"捕捉"新解放的威胁。" />
 
-        <journal name="Beginner_EncounterTSS" sidebar_text="&lt;color=#57caff&gt;黑客：&lt;/color&gt; 炮塔蓝图服务器（炮塔）" is_for_the_tips_tab="true"
+        <journal name="Beginner_EncounterTSS" sidebar_text="&lt;color=#57caff&gt;入侵：&lt;/color&gt; 炮塔蓝图服务器（炮塔）" is_for_the_tips_tab="true"
              can_record_another_copy_if_already_recorded_in_this_campaign="false"
              text_replacement_related_faction_color="true"
 		     text_replacement_related_player_name="true"
@@ -509,7 +509,7 @@
 - 人工智能会从被入侵的实体中生成舰船，对同一人工智能完成的入侵越多，响应就越强。
 - 如果你感到无望被淹没，可以右键单击屏幕顶部的入侵图标来取消它。" />
 
-        <journal name="Beginner_EncounterARS" sidebar_text="&lt;color=#57caff&gt;黑客：&lt;/color&gt; 高级研究站（舰船）" is_for_the_tips_tab="true"
+        <journal name="Beginner_EncounterARS" sidebar_text="&lt;color=#57caff&gt;入侵：&lt;/color&gt; 高级研究站（舰船）" is_for_the_tips_tab="true"
              can_record_another_copy_if_already_recorded_in_this_campaign="false"
              text_replacement_related_faction_color="true"
 		     text_replacement_related_player_name="true"

@@ -3,10 +3,10 @@
 
   <thematic_group_type name="DysonSidekick" display_name="Dyson Sidekick"
         sort_order="50" group_type="Race"
-        description="This player-controllable faction alliance is striving to build a new 戴森球 ."/>
+        description="这个玩家可控制的派系联盟正在努力建造一个新的戴森球。"/>
 
   <thematic_group_type name="Armada" display_name="Armada"
         sort_order="50" group_type="Race"
-        description="This player-controllable faction alliance is ready to face off against the AI."/>
+        description="这个玩家可控制的派系联盟已经准备好迎战AI。"/>
 
 </root>

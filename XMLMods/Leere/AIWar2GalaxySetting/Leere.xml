@@ -22,18 +22,18 @@ The Zombification Aura is active for the most influencial Zombie faction near th
 
 	<galaxy_setting name="LeereAura" category="Leere" subcategory="ConfigureLeereFeatures" display_name="戾尔光环" type="IntSlider"
 		default="1" min="0" max="3" changeable_during_gameplay="true"
-		description="How many hops away can a Leere create zombies from its own planet? 0 means its own planet only." />
+		description="利尔可以在距离其自身行星多少跳的范围内制造僵尸？0表示仅限其自身行星。" />
 
 	<galaxy_setting name="KnallenTimer" category="Leere" subcategory="ConfigureLeereFeatures" display_name="克纳伦生成计时器" type="IntSlider"
 		default="60" min="30" max="300" changeable_during_gameplay="true"
-		description="How many seconds does it take for Leere to produce 克纳伦炸弹s?" />
+		description="利尔生产克纳伦炸弹需要多少秒？" />
 
 	<galaxy_setting name="LeereInitialSpawnTimer" category="Leere" subcategory="ConfigureLeereFeatures" display_name="首次生成计时器" type="IntSlider" 
 		default="60" min="10" max="480" changeable_during_gameplay="true"
-		description="How many minutes into the game before the Leere can spawn?" />
+		description="游戏开始后多少分钟利尔才能生成？" />
 
 	<galaxy_setting name="LeereCooldownTimer" category="Leere" subcategory="ConfigureLeereFeatures" display_name="冷却计时器" type="IntSlider"
 		default="30" min="10" max="480" changeable_during_gameplay="true"
-		description="How many minutes between each Leere spawn?" />
+		description="每次利尔生成之间间隔多少分钟？" />
 
 </root>

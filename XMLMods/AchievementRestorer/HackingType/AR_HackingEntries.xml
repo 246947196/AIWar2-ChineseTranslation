@@ -3,7 +3,7 @@
   <!--Note: multiple items here can use the same dll and type/class.  
   Having multiple entries in here simplifies setting up titles and descriptions by a huge amount.-->
 
-  <item name="RerollARS" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_RerollARS" display_name="重roll ARS（模组版）" 
+  <item name="RerollARS" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_RerollARS" display_name="重选 ARS（模组版）" 
         description="入侵此结构会导致大量敌人出现。这没有任何好处。"
         hack_duration="60"
         primary_hacking_response_interval="15"

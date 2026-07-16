@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
 	<entity name="BastilleTurret" is_partial_record="true" display_name="监狱炮塔" required_expansion_list="1_The_Spire_Rises" ></entity>	
-	<entity name="TranslocatorTurret" is_partial_record="true" display_name="Nightcrawler Turret" required_expansion_list="1_The_Spire_Rises" ></entity>
+	<entity name="TranslocatorTurret" is_partial_record="true" display_name="夜行者炮塔" required_expansion_list="1_The_Spire_Rises" ></entity>
 </root>

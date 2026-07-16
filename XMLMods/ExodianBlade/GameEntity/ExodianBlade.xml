@@ -16,7 +16,7 @@
 			visuals_scale_multiplier="110"
 			y_offset_of_icon="30"
 			collision_priority="810"
-			display_name="灭世之刃" display_name_for_sidebar="灭世之刃" override_faction_name="Lost Spire Expedition"
+			display_name="灭世之刃" display_name_for_sidebar="灭世之刃" override_faction_name="失落尖塔远征队"
 			description="失落尖塔远征队的远古尖塔神器……迄今为止我们遇到的所有尖塔遗物都提到了这艘传说中的舰船。
 原本在尖塔内战爆发前被派来殖民我们的银河系，灭世之刃在神秘情况下失能并陷入破败。
 我们甚至不知道这东西是如何驱动的。它拥有一门毁灭性的巨型光束炮，能分解任何被射穿的东西，射速高，可穿透任意数量的舰船，且拥有无限射程。召唤并修复它将极其昂贵且耗时，但这艘主力舰将处于我们的直接控制之下，代价是170 AIP。
@@ -95,7 +95,7 @@
 			collision_priority="810"
 			display_name="灭世之刃残骸"
 			display_name_for_sidebar="灭世之刃残骸"
-			description="灭世之刃裸露的核心……现已完全无用且无法挽救；无法修复、拆解或损坏；但破碎的核心形成了一个巨大的引力漩涡，减缓所有经过的敌舰速度，产生强大的超子发射揭示所有隐形敌人，同时仍在工作的传感器为我们提供所在系统的视野。
+			description="灭世之刃裸露的核心……现已完全无用且无法挽救；无法修复、废弃或损坏；但破碎的核心形成了一个巨大的引力漩涡，减缓所有经过的敌舰速度，产生强大的超子发射揭示所有隐形敌人，同时仍在工作的传感器为我们提供所在系统的视野。
 			
 "对不起……我只能做到这些了……"
 
@@ -152,7 +152,7 @@
             collision_priority="810"
 			behavior="Stationary"
             display_name="尖塔收发器废墟" display_name_for_sidebar="尖塔收发器废墟"
-            description="这是尖塔收发器的废墟……它已经完成了使命。现在无法修复、拆解或损坏；但它强大的信号使我们能够观察距离此处6跳的行星。"
+            description="这是尖塔收发器的废墟……它已经完成了使命。现在无法修复、废弃或损坏；但它强大的信号使我们能够观察距离此处6跳的行星。"
             starting_mark_level="Markless"
             cost_for_ai_to_purchase="10000" base_ship_cap_in_custom_city="1" mark_level_scale_style="OriginalWithoutCapRise"
             hull_points="100000" shield_points="0" speed="Immobile"

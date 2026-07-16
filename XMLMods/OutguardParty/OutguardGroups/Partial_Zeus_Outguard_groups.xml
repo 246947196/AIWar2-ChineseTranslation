@@ -2,7 +2,7 @@
 <root>
 	<!-- JCF: outguard rebalance -->
 	
-	<item name="ShadesofHades" display_name="冥王 Shades"
+	<item name="ShadesofHades" display_name="冥王暗影"
 		is_partial_record="true"
 		spawn_location="Manual_ByClick"
 		required_expansion_list="2_Zenith_Onslaught"

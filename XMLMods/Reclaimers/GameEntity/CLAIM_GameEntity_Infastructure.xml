@@ -99,7 +99,7 @@
 
 			display_name="收入电池"
 			display_name_for_sidebar="收入B"
-			description="回收者的基础设施，用于被动提升行星的金属产量。据推测他们拆解了大约20艘基础运输舰来制造这个。"
+			description="回收者的基础设施，用于被动提升行星的金属产量。据推测他们废弃了大约20艘基础运输舰来制造这个。"
 
 			starting_mark_level="Mark1"
 			tech_upgrades_that_benefit_me="Alien"

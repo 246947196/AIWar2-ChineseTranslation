@@ -7,7 +7,7 @@
             npc_ship_cap_type="Strikecraft"
 
             display_name="黑暗加特林"
-			description="Aggressively swarms anything near the Dark Sphere."
+			description="积极围攻黑暗球体附近的任何目标。"
 
             voice_group="Fighter"
             ship_or_structure_explosion_sfx="ShipSmall_Explosion"

@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <root>
-<galaxy_setting name="CanHackShields" category="ShieldGenerators" display_name="护盾 Generators Can Be Hacked" type="BoolToggle"
+<galaxy_setting name="CanHackShields" category="ShieldGenerators" display_name="护盾发生器可被入侵" type="BoolToggle"
 default="true" changeable_during_gameplay="false"
-description="By default, 护盾 Generators can be hacked. Disabling this will remove the option to hack 护盾 Generators, forcing the player to destroy more Command 站s and thus incur more AI Progress."
+description="默认情况下，护盾发生器可以被入侵。禁用此选项将移除入侵护盾发生器的选项，迫使玩家摧毁更多指挥站从而积累更多AI进度。"
 	/>
-	<galaxy_setting name="CanOverload" category="ShieldGenerators" display_name="核心护盾s Can Be Overloaded" type="BoolToggle"
+	<galaxy_setting name="CanOverload" category="ShieldGenerators" display_name="核心护盾可被过载" type="BoolToggle"
 		default="true" changeable_during_gameplay="false"
-		description="Determines whether 核心护盾s can be overloaded if a non-player faction destroys the Command 站 on a 堡垒 World.
-If Enabled, this will result in the destruction of all 核心护盾s and 护盾 Generators owned by the owner of the Command 站, leaving them vulnerable to the attacking faction."
+		description="决定当非玩家派系摧毁堡垒世界上的指挥站时，核心护盾是否可以被过载。
+如果启用，这将导致该指挥站所有者拥有的所有核心护盾和护盾发生器被摧毁，使其面对进攻派系变得脆弱。"
 	/>
-		<galaxy_setting name="CanPlayerAlliesOverload" category="ShieldGenerators" display_name="Allied Factions Can Overload 核心护盾s" type="BoolToggle"
+		<galaxy_setting name="CanPlayerAlliesOverload" category="ShieldGenerators" display_name="友军派系可过载核心护盾" type="BoolToggle"
 		default="false" changeable_during_gameplay="false"
-		description="By default, factions allied to the player cannot overload a 核心护盾 even if they destroy an appropriate Command 站 as allowing them to do so can result in cheese.
-If this is enabled, this restriction will be removed assuming that Overloading is also enabled."
+		description="默认情况下，与玩家结盟的派系不能过载核心护盾，即使他们摧毁了合适的指挥站也不行，因为允许他们这样做可能导致投机取巧。
+如果启用此选项，此限制将被移除——前提是过载功能也被启用。"
 	/>
 </root>

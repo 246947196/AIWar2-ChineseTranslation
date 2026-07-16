@@ -1,21 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-	<setting_subcategory parent="LostHumans" name="EnableFeatures" display_name="Enable Features" color="46f0ff"
+	<setting_subcategory parent="LostHumans" name="EnableFeatures" display_name="启用功能" color="46f0ff"
 		description="Enable different features of 失落人类s."/>
 
 	<setting_subcategory parent="LostHumans" name="Travelers" display_name="旅行者" color="46f0ff"
-		description="Lone NPC ships that wander the galaxy, occasionally responding to your presence."/>
+		description="孤独的NPC舰船在银河系中漂泊，偶尔对您的存在做出反应。"/>
 
 	<setting_subcategory parent="LostHumans" name="LostColonies" display_name="失落殖民地" color="46f0ff"
-		description="Occasional bastions of 人类 civilization that request your assistance. Ignore at your peril."/>
+		description="偶尔出现的人类文明据点请求您的援助。忽视后果自负。"/>
 
 	<setting_subcategory parent="LostHumans" name="Rogues" display_name="浪客" color="46f0ff"
-		description="Lone NPC ships that wander the galaxy, stealing ship designs from the AI."/>
+		description="孤独的NPC舰船在银河系中漂泊，窃取AI的舰船设计。"/>
 
 	<setting_subcategory parent="LostHumans" name="ConstructionConvoys" display_name="建造护航队s" color="46f0ff"
-		description="A collection of NPC Ships that fly across a predefined galaxy path, building units for planet owners on their way."/>
+		description="一组NPC舰船沿预定银河路径飞行，沿途为星球所有者建造单位。"/>
 
 	<setting_subcategory parent="LostHumans" name="ScourgeLabs" display_name="天灾实验室s" color="46f0ff"
-		description="Powerful weaponized labs that occasionally defect from the AI. Ignore at your peril."/>
+		description="强大的武器化实验室偶尔从AI叛逃。忽视后果自负。"/>
 
 </root>

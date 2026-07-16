@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
 	<galaxy_setting category="Balance" subcategory="ShipLineUpgrades" is_advanced_setting="true" name="ShipLineUpgrades_AIPUpgradeCost" display_name="AIP 升级成本" type="IntTextbox" default="3" min="1" max="10"
-		description="The amount of AIP inflicted upon a player when upgrading one of their ship lines. Upgrades always cost Command Frequency Bandwidth and either AIP, Science or Hacking points." >
+		description="升级舰船线时对玩家造成的AIP数量。升级始终消耗指挥频率带宽以及AIP、科技或入侵点数之一。" >
 		<harshness_override min_campaign_harshness_to_apply="500" fixed_value="3" />
 	</galaxy_setting>
 	
 	<galaxy_setting category="Balance" subcategory="ShipLineUpgrades" is_advanced_setting="true" name="ShipLineUpgrades_ScienceUpgradeCost" display_name="科学升级成本" type="IntTextbox" default="500" min="100" max="1000"
-		description="The cost of Science Points for a player when upgrading one of their ship lines. Upgrades always cost Command Frequency Bandwidth and either AIP, Science or Hacking points." >
+		description="升级舰船线时科技点数的成本。升级始终消耗指挥频率带宽以及AIP、科技或入侵点数之一。" >
 		<harshness_override min_campaign_harshness_to_apply="500" fixed_value="500" />
 	</galaxy_setting>
 	
 	<galaxy_setting category="Balance" subcategory="ShipLineUpgrades" is_advanced_setting="true" name="ShipLineUpgrades_HackingUpgradeCost" display_name="入侵升级成本" type="IntTextbox" default="10" min="1" max="20"
-		description="The cost of Hacking Points for a player when upgrading one of their ship lines. Upgrades always cost Command Frequency Bandwidth and either AIP, Science or Hacking points." >
+		description="升级舰船线时入侵点数的成本。升级始终消耗指挥频率带宽以及AIP、科技或入侵点数之一。" >
 		<harshness_override min_campaign_harshness_to_apply="500" fixed_value="10" />
 	</galaxy_setting>
 	
 	<galaxy_setting category="Balance" subcategory="ShipLineUpgrades" is_advanced_setting="true" name="ShipLineUpgrades_BaseFrequencyUpgradeCost" display_name="基础频率升级成本" type="IntTextbox" default="200" min="1" max="1000"
-		description="The base cost of Command Frequency Bandwidth for a player when upgrading one of their ship lines. This slightly balances out upgraded caps being rounded down and having less cap than theoretically yielded." >
+		description="升级舰船线时指挥频率带宽的基础成本。略微补偿升级上限向下取整导致的容量损失。" >
 		<harshness_override min_campaign_harshness_to_apply="500" fixed_value="200" />
 	</galaxy_setting>
 	
 	<galaxy_setting category="Balance" subcategory="ShipLineUpgrades" is_advanced_setting="true" name="ShipLineUpgrades_BaseFrequencyDowngradeYield" display_name="基础频率降级收益" type="IntTextbox" default="100" min="1" max="1000"
-		description="The base yield of Command Frequency Bandwidth for a player when downgrading one of their ship lines. This slightly balances out downgraded caps being rounded up and having more cap than theoretically yielded." >
+		description="降级舰船线时指挥频率带宽的基础收益。略微补偿降级上限向上取整导致的额外容量。" >
 		<harshness_override min_campaign_harshness_to_apply="500" fixed_value="100" />
 	</galaxy_setting>
 </root>

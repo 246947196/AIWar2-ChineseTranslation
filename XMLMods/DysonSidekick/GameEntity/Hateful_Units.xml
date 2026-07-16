@@ -49,7 +49,7 @@
   </entity>
 
   <entity name="HatefulQuaintVenator" copy_from="QuaintVenator"
-          description="This Hateful Venator is on a special mission to make you unhappy. Specialized against snipers. "
+          description="这艘仇恨猎手正在执行一项让你不开心的特殊任务。专精对抗狙击手。"
           hull_points="84000" shield_points="26000" speed="AboveAverage1"
             >
       <ai_ship_group_membership name="HatingGuardians" weight="20"/>
@@ -60,7 +60,7 @@
   <entity name="HatefulSpireIronclad" copy_from="AISpireDestroyerB"
           display_name="AI Spire Ironclad"
 	  display_name_for_sidebar="AI Iron"
-	  description="An AI replica of a 尖塔 destroyer, with some new Hateful enhancements. Beware its zombifying gun!"
+	  description="一艘尖塔驱逐舰的AI复制品，带有一些新的仇恨增强。小心它的尸化炮！"
           cost_for_ai_to_purchase="4200"
           >
     <system name="W1" display_name="Spire Coil Beam"
@@ -83,7 +83,7 @@
   <entity name="HatefulSpireAcidifier" copy_from="AISpireDestroyerB"
           display_name="AI Spire Acidifier"
 	  display_name_for_sidebar="AI Acid"
-	  description="An AI replica of a 尖塔 destroyer, with some new Hateful enhancements. This 光束 also does 腐蚀 damage!"
+	  description="一艘尖塔驱逐舰的AI复制品，带有一些新的仇恨增强。此光束也会造成腐蚀伤害！"
           cost_for_ai_to_purchase="4200"
           >
     <system name="W1" display_name="Spire Coil Beam"
@@ -222,7 +222,7 @@
 	tags="AlarmPost,HatefulAlarmPost"
 	npc_ship_cap_type="SpecialDefenses"
 	display_name="Minor Alarm Post"
-	description="Attacking this planet with overwhelming forces will rally AI forces from nearby planets to its defense. Unlike a normal 警报柱, this one does not grant AIP on death."
+	description="以压倒性兵力攻击此星球将集结附近星球的AI部队前来防御。与普通警报柱不同，此警报柱在死亡时不增加AIP。"
 	>
     </entity>
 
@@ -242,7 +242,7 @@
 	    collision_priority="810"
 	    display_name="Khorne"
             display_name_for_sidebar="Khorne"
-	  description="Blood for the blood, skulls for the skull throne, milk for the Khorne flakes."
+	  description="血祭血神！颅献颅座！牛奶献给恐虐麦片！"
           starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
           cost_for_ai_to_purchase="49500"
           hull_points="10000000" shield_points="40000000" speed="AboveAverage3"

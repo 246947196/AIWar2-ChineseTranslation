@@ -851,7 +851,7 @@
 			>
 			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="2.1" multiplier="0" />
 		</system>
-	 	<system name="W3" display_name="Scrap Blaster Cannon"
+	 		<system name="W3" display_name="废料冲击炮"
 			category="Weapon" firing_timing="OnlyInRange"
 			damage_per_shot="4375" range="AboveAverage2" shot_speed="Fast" rate_of_fire="ExtremelyLow"
 			shots_per_salvo="3"
@@ -870,7 +870,7 @@
 	<entity graphicsdone="true" name="AIDragon" is_partial_record="true" required_expansion_list="1_The_Spire_Rises"
 		hull_points="25000000" shield_points="12500000"
 		>
-		<system name="W2" display_name="Spire Coil Beam"
+		<system name="W2" display_name="尖塔线圈光束"
 			damage_per_shot="162500"
 			>
     		</system>
@@ -925,7 +925,7 @@
 		y_offset_of_icon="55"
 		collision_priority="810"
 		display_name="红背" override_faction_name="AI Exogalactic War Front"
-		description="This vessel appears to be a major upgrade of a Black Widow golem."			
+		description="该舰船似乎是黑寡妇巨像的重大升级版。"			
 		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
 		cost_for_ai_to_purchase="242000" strength_multiplier="1.4"
 		hull_points="40000000" shield_points="20000000" speed="AboveAverage2"			
@@ -936,7 +936,7 @@
 		ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
             	priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
 		>
-    		<system name="C1" display_name="Paralytic Cannon Array"
+    	<system name="C1" display_name="麻痹炮阵列"
 			category="Weapon" firing_timing="OnlyInRange"
 			damage_per_shot="7500" range="AboveAverage3" shot_speed="Normal" rate_of_fire="RatherLow"
 			shots_per_salvo="125" fires_salvos_sequentially="false"
@@ -946,7 +946,7 @@
 			>
 			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtMost" compared_to="5.9" multiplier="2" />
     		</system>
-		<system name="C2" display_name="Paralytic Sabot"
+		<system name="C2" display_name="麻痹破坏弹"
 			category="Weapon" firing_timing="OnlyInRange"
 			damage_per_shot="400000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="RatherLow"
 			base_paralysis_seconds_per_shot="17" paralysis_to_ships_mass_tx_less_than="9"
@@ -954,7 +954,7 @@
 			>
 			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="5" />
     		</system>
-		<system name="TB" display_name="Super-Heavy Tractor Array"
+		<system name="TB" display_name="超重型牵引阵列"
 			category="Passive"
 			tractor_range="AboveAverage1" tractor_count="500" tractor_hits_albedo_less_than="0.6" tractor_hits_engine_gx_less_than="20"
 			>
@@ -980,7 +980,7 @@
 		y_offset_of_icon="55"
 		collision_priority="810"
 		display_name="格伦德尔" override_faction_name="AI Exogalactic War Front"
-		description="This disturbingly stealthy vessel exists to prey on smaller vessels and structures."			
+		description="这艘令人不安的隐形舰船专为捕食小型舰船和建筑而存在。"			
 		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
 		cost_for_ai_to_purchase="150000" strength_multiplier="2"
 		hull_points="15000000" shield_points="15000000" speed="BelowAverage2"			
@@ -991,7 +991,7 @@
 		ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
             	priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
 		>
-    		<system name="C1" display_name="Terror Cannon Array"
+    	<system name="C1" display_name="恐怖炮阵列"
 			category="Weapon" firing_timing="OnlyInRange"
 			damage_per_shot="10000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="PeriodicActivation"
 			shots_per_salvo="110" fires_salvos_sequentially="false"
@@ -1000,7 +1000,7 @@
 			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtMost" compared_to="4" multiplier="3" />
 			<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="60" multiplier="3" />
     		</system>
-		<system name="C" display_name="Cloaked in Darkness"
+		<system name="C" display_name="黑暗披风"
 			category="Passive" cloaking_points="20000"
 		>	
 	</system>
@@ -1021,7 +1021,7 @@
 		blocks_ceasefire_on_planet="true"
 		collision_priority="810"
 		display_name="蝎尾狮" override_faction_name="AI Exogalactic War Front"
-		description="This powerful AI vessel appears to be an unholy hybrid of Spire and Zenith technologies, combining some of the best traits of both."			
+		description="这艘强大的 AI 舰船似乎是尖塔和天顶技术的不洁融合体，结合了两者的最佳特性。"			
 		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
 		cost_for_ai_to_purchase="410000" strength_multiplier="1.3"
 		hull_points="50000000" shield_points="40000000" speed="AboveAverage1"			
@@ -1044,7 +1044,7 @@
                 	is_coilbeam="true"
 			>
     		</system>
-		<system name="SA" display_name="Zenith Attractive Field"
+		<system name="SA" display_name="天顶吸引场"
 			category="Passive"
 			attract_range_for_shots_against_allies="AboveAverage1"
 			/>
@@ -1111,7 +1111,7 @@
 		y_offset_of_icon="16"
 		collision_priority="800"
 		display_name="勒拿之首" override_faction_name="AI Exogalactic War Front"
-		description="A Head spawned from an AI Lernaean, featuring advanced corrosive weapons."			
+		description="从 AI 勒拿怪身上生成的首级，配备了先进的腐蚀性武器。"			
 		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
 		cost_for_ai_to_purchase="38000" strength_multiplier="0.9"
 		hull_points="10000000" shield_points="0" speed="AboveAverage1"			
@@ -1159,7 +1159,7 @@
 		strength_multiplier="2"
 		hull_points="300000000" shield_points="150000000" speed="BelowAverage1"
 		>		
-    		<system name="R9" display_name="Doomsday Coil Beam"
+    	<system name="R9" display_name="末日线圈光束"
 			damage_per_shot="3125000" range="High1" shot_speed="Normal" rate_of_fire="Devourer"				
 			>
     		</system>
@@ -1174,7 +1174,7 @@
 
 		hull_points="250000000" shield_points="125000000" speed="BelowAverage1"
 		>		
-    		<system name="WU" display_name="Planet Cracker Array"
+    	<system name="WU" display_name="碎星者阵列"
 			damage_per_shot="562500"
 			shots_per_salvo="4"			
 			>
@@ -1235,8 +1235,8 @@
 		visuals_scale_multiplier="12"
 		y_offset_of_icon="30"
 		collision_priority="810"
-		display_name="Mothership Swarm Drone" display_name_for_sidebar="母舰无人机" override_faction_name="AI Exogalactic War Front"
-		description="Large drone with rapid fire laser bolts. Packs a ridiculously large punch for its size, and has extra capacitors to provide even more power for a short time after launch."
+		display_name="母舰蜂群无人机" display_name_for_sidebar="母舰无人机" override_faction_name="AI Exogalactic War Front"
+		description="装备了快速射击激光弹的大型无人机。以体型而言火力异常强大，并配备额外电容器，在发射后短时间内提供更多能量。"
 		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
 		mark_level_scale_style="Strikecraft"
 		self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="50"
@@ -1275,7 +1275,7 @@
 		collision_priority="8500"
 		blocks_ceasefire_on_planet="true"
 		display_name="兹梅-戈里内奇" override_faction_name="AI Prototype Testing Subroutines"
-		description="Extremely powerful AI vessel using a wide variety of exotic technologies. Vessels like this being deployed should concern us - either some AI subroutines are becoming concerned, or we have graduated from pest to test subject. Either possibility is worrying."
+		description="极其强大的 AI 舰船，使用各种奇异科技。此类舰船被部署应当引起我们的担忧——要么一些 AI 子程序开始担忧了，要么我们已经从害虫变成了试验对象。两种可能性都令人不安。"
 		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
 		cost_for_ai_to_purchase="900000" strength_multiplier="2"
 		hull_points="87500000" shield_points="37500000" speed="AboveAverage4"
@@ -1293,7 +1293,7 @@
 		<data_extension name="DLC3" required_expansion_list="3_The_Neinzul_Abyss"
 			immune_to_necromancy="true"/>
 		<entity_type_drawing_bag_used_on_death data_list="AIDragon,AIDZDragon,LONNeinzulDragon,LONNanocaustDragon" min_spawn_value_list="1" />
-    		<system name="C1" display_name="Corrosive Energy Burst"
+   	<system name="C1" display_name="腐蚀性能量爆发"
 			category="Weapon" firing_timing="OnlyInRange"
 			damage_per_shot="2500" range="AboveAverage4" shot_speed="Slow" rate_of_fire="Devourer" 
 			shots_per_salvo="200" fires_salvos_sequentially="false"
@@ -1301,7 +1301,7 @@
 			damage_amplification="true" damage_amplification_duration="10" damage_amplification_flat="1000"
 			>
     		</system>
-		<system name="B1" display_name="Spire Coil Beam"
+		<system name="B1" display_name="尖塔线圈光束"
 			category="Weapon" firing_timing="OnlyInRange"
 			damage_per_shot="162500" range="AboveAverage4" shot_speed="Normal" rate_of_fire="Devourer"
 			shot_type_data="HeavyBeamInvisible"
@@ -1311,7 +1311,7 @@
                 	is_coilbeam="true"
 			>
   		</system>
-		<system name="B2" display_name="Chain Lightning Cannon"
+		<system name="B2" display_name="连锁闪电炮"
 			category="Weapon" firing_timing="OnlyInRange"
 			damage_per_shot="15000" range="AboveAverage4" shot_speed="Normal" rate_of_fire="Devourer"
 			shot_type_data="HeavyBeamInvisible"
@@ -1326,7 +1326,7 @@
 			>
 			<outgoing_damage_modifier applies_to="AllShields" based_on="MaxBubbleForcefield" comparison_type="GreaterThan" compared_to="10000" multiplier="5" />
 		</system>
-    		<system name="B3" display_name="Nano-Infection Beam"
+     <system name="B3" display_name="纳米感染光束"
 			category="Weapon" firing_timing="OnlyInRange"
 			damage_per_shot="120000" range="AboveAverage4" shot_speed="Normal" rate_of_fire="Devourer"
 			shot_type_data="HeavyBeamInvisible"
@@ -1349,8 +1349,8 @@
 		visuals_scale_multiplier="15"
 		y_offset_of_icon="30"
 		collision_priority="810"
-		display_name="AI Neinzul Dragon"
-		description="Extremely advanced vessel, normally deployed to defend against the newly arrived Neinzul threat."
+		display_name="AI 奈因祖龙"
+		description="极其先进的舰船，通常部署用于防御新到达的奈因祖威胁。"
 		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
 		cost_for_ai_to_purchase="37500"
 		hull_points="25000000" shield_points="5000000" speed="AboveAverage4"			
@@ -1365,7 +1365,7 @@
 		immune_to_repairs="true"
 		custom_repair_impossible_for_seconds_after_damaged_by_enemy_max_15="15"
 		>		
-		<system name="C2" display_name="Corrosive Energy Burst"
+		<system name="C2" display_name="腐蚀性能量爆发"
 			category="Weapon" firing_timing="OnlyInRange"
 			damage_per_shot="2500" range="AboveAverage4" shot_speed="Slow" rate_of_fire="Devourer" 
 			shots_per_salvo="80" fires_salvos_sequentially="false"	
@@ -1390,8 +1390,8 @@
 		visuals_scale_multiplier="15"
 		y_offset_of_icon="30"
 		collision_priority="810"
-		display_name="AI Nanocaust Dragon" display_name_for_sidebar="AI 纳米龙"
-		description="Extremely advanced vessel, normally deployed to defend against the newly arrived Nanocaust threat."
+		display_name="AI 纳米浩劫龙" display_name_for_sidebar="AI 纳米龙"
+		description="极其先进的舰船，通常部署用于防御新到达的纳米浩劫威胁。"
 		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
 		cost_for_ai_to_purchase="37500"
 		hull_points="20000000" shield_points="10000000" speed="AboveAverage4"			
@@ -1409,7 +1409,7 @@
 			shot_type_data="LaserPulse_SicklyGreen"
 			>
     		</system>
-    		<system name="B3" display_name="Nano-Infection Beam"
+     <system name="B3" display_name="纳米感染光束"
 			category="Weapon" firing_timing="OnlyInRange"
 			damage_per_shot="120000" range="AboveAverage4" shot_speed="Normal" rate_of_fire="Devourer"
 			shot_type_data="HeavyBeamInvisible"
@@ -1431,8 +1431,8 @@
   <!-- Exowar Tier 5 Units:
   ************************************************************************************************--> 
 
-   	<entity graphicsdone="true" name="ExtragalacticFlenser" is_partial_record="true" display_name="Flenser - Ra Pattern" display_name_for_sidebar="剥皮者-拉"
-		description="Simply enormous AI warship. The AI has recently switched to an even more powerful design of its apocalyptically powerful Flenser series."
+   	<entity graphicsdone="true" name="ExtragalacticFlenser" is_partial_record="true" 		display_name="剥皮者 - 拉型" display_name_for_sidebar="剥皮者-拉"
+		description="极其巨大的 AI 战舰。AI 最近切换到了其具有末日级威力的剥皮者系列的更强大设计。"
 		strength_multiplier="3.65"
 		hull_points="900000000" shield_points="600000000" speed="VeryVeryLittle2"
 		metal_cost="13000000"
@@ -1453,7 +1453,7 @@
 			degrees_offset_per_beam="1"			
 			>
     		</system>
-    		<system name="WU" display_name="Apophis Bane Cannon"
+     <system name="WU" display_name="阿波菲斯之祸炮"
 			category="Weapon" firing_timing="OnlyInRange"
 			damage_per_shot="1700000" range="EssentiallyInfinite" shot_speed="Normal" rate_of_fire="Devourer"
 			shots_per_salvo="5"
@@ -1487,8 +1487,8 @@
 		visuals_scale_multiplier="70"
 		y_offset_of_icon="30"
 		collision_priority="10000"
-		display_name="Flenser - Zeus Pattern" display_name_for_sidebar="剥皮者-宙斯" override_faction_name="AI Exogalactic War Front"
-		description="Simply enormous AI warship. This version of the apocalyptically powerful Flenser series uses stolen Spire technology."
+		display_name="剥皮者 - 宙斯型" display_name_for_sidebar="剥皮者-宙斯" override_faction_name="AI Exogalactic War Front"
+		description="极其巨大的 AI 战舰。这款具有末日级威力的剥皮者系列版本使用了偷来的尖塔科技。"
       		blocks_ceasefire_on_planet="true"
 		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
 		cost_for_ai_to_purchase="3522500" strength_multiplier="2.35"
@@ -1514,7 +1514,7 @@
 			>
 			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="9" multiplier="1.3" />
     		</system>
-    		<system name="C1" display_name="Thunder of the Titanomachy"
+     <system name="C1" display_name="泰坦之战的雷霆"
 			category="Weapon" firing_timing="OnlyInRange"
 			damage_per_shot="6800000" range="EssentiallyInfinite" shot_speed="Fast" rate_of_fire="Normal"
 			shots_per_salvo="5"
@@ -1523,7 +1523,7 @@
 			>
 			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="1.1" />
     		</system>
-		<system name="GC" display_name="Gravitic Tempest"
+		<system name="GC" display_name="引力风暴"
 			category="Passive"
 			base_gravity_speed_multiplier="0.4" gravity_hits_engine_gx_less_than="25" gravity_range="EssentiallyInfinite"
 			>
@@ -1545,8 +1545,8 @@
 		visuals_scale_multiplier="70"
 		y_offset_of_icon="30"
 		collision_priority="10000"
-		display_name="Flenser - Thor Pattern" display_name_for_sidebar="剥皮者-托尔" override_faction_name="AI Exogalactic War Front"
-		description="Simply enormous AI warship. This version of the apocalyptically powerful Flenser series uses stolen Zenith technology."
+		display_name="剥皮者 - 托尔型" display_name_for_sidebar="剥皮者-托尔" override_faction_name="AI Exogalactic War Front"
+		description="极其巨大的 AI 战舰。这款具有末日级威力的剥皮者系列版本使用了偷来的天顶科技。"
       		blocks_ceasefire_on_planet="true"
 		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
 		cost_for_ai_to_purchase="3522500" strength_multiplier="3.5"
@@ -1571,7 +1571,7 @@
 			>
 			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="7" multiplier="2" />
     		</system>
-    		<system name="B2" display_name="Thunderstorm Cannon"
+     <system name="B2" display_name="雷暴炮"
 			category="Weapon" firing_timing="OnlyInRange"
 			damage_per_shot="800000" range="EssentiallyInfinite" shot_speed="Normal" rate_of_fire="Normal"
 			shot_type_data="HeavyBeamInvisible"
@@ -1601,8 +1601,8 @@
 		visuals_scale_multiplier="70"
 		y_offset_of_icon="30"
 		collision_priority="10000"
-		display_name="Flenser - Odin Pattern" display_name_for_sidebar="剥皮者-奥丁" override_faction_name="AI Exogalactic War Front"
-		description="Simply enormous AI warship. This version of the apocalyptically powerful Flenser series uses stolen Zenith technology... and an endless horde of Dark Zenith ships."
+		display_name="剥皮者 - 奥丁型" display_name_for_sidebar="剥皮者-奥丁" override_faction_name="AI Exogalactic War Front"
+		description="极其巨大的 AI 战舰。这款具有末日级威力的剥皮者系列版本使用了偷来的天顶科技……以及无尽的天顶暗影舰队。"
 		fleet_design_template_i_use_for_drones="LONOdinDrones"
       		blocks_ceasefire_on_planet="true"
 		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
@@ -1656,8 +1656,8 @@
 	  	visuals_scale_multiplier="52.5" y_offset_of_ship_in_visual_space="60"
 	  	y_offset_of_icon="55"
 	  	collision_priority="710"
-	  	display_name="Enslaved Einherjar" display_name_for_sidebar="英灵战士" override_faction_name="AI Exogalactic War Front"
-	  	description="An elite Dark Zenith ship, armed with railcannons that shred its foes, temporarily making victims take more damage from all sources. This one is under AI control."
+	  	display_name="被奴役的英灵战士" display_name_for_sidebar="英灵战士" override_faction_name="AI Exogalactic War Front"
+	  	description="一支精英暗天顶舰船，装备了能撕裂敌人的轨道炮，暂时使目标受到来自所有来源的更多伤害。本舰处于 AI 控制之下。"
 	  	starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused"
 		mark_level_scale_style="DarkZenith"
 		self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="2"
@@ -1670,7 +1670,7 @@
           	priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="Expendable"
 	  	>
 		<fleet_membership name="LONOdinDrones" ship_cap_group="Frigate" weight="100" min="30" max="30"/>
-		<system name="C1" display_name="Zenith Shredding Railcannon"
+		<system name="C1" display_name="天顶撕裂轨道炮"
 			category="Weapon" firing_timing="OnlyInRange"
 			damage_per_shot="1450" range="High2" shot_speed="VeryFast" rate_of_fire="Low"
 			shots_per_salvo="60" fires_salvos_sequentially="false"

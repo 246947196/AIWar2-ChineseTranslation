@@ -3,8 +3,8 @@
 
 	<!--The basic AI version of the Gorgon Aggregate Body Frigate-->
 	<entity skip_export="true" copy_from="GorgonFrigate" name="AIGorgonGuardian" special_entity_type="AIGuardian"
-        display_name="AI Gorgon Aggregate Body 守护者" display_name_for_sidebar="AI Gorgon GU"
-		description="An AI controlled Gorgon aggregate body. Powers a paralysis weapon and breaks apart into independent 攻击 craft as it takes damage."
+        display_name="AI 戈耳工聚合体守护者" display_name_for_sidebar="AI 戈耳工 GU"
+		description="AI 控制的戈耳工聚合体。为麻痹武器供能，并在承受伤害时碎裂为独立的攻击舰船。"
 	    starting_mark_level="Mark1" cost_for_ai_to_purchase="950" tech_upgrades_that_benefit_me="Unused"
 		blocks_enemy_claim_flows="true">
 		<ai_ship_group_membership name="EyeGuardiansWithAntiLargeSupport" weight="100"/>
@@ -15,8 +15,8 @@
 	
 	<!-- AI version of the Escort Carrier -->
 	<entity skip_export="true" copy_from="EscortCarrier" name="AIEscortCarrier" special_entity_type="AIGuardian"
-        display_name="AI 护航航母" display_name_for_sidebar="AI 护航 GU"
-		description="A light 航母 for AI system 防御 carrying a small complement of 星战 it supports with a parasitic 加农炮."
+		display_name="AI 护航航母" display_name_for_sidebar="AI 护航 GU"
+		description="AI 系统防御用的轻型航母，携带少量用寄生加农炮支援的星际战机。"
 	    starting_mark_level="Mark1" cost_for_ai_to_purchase="650" tech_upgrades_that_benefit_me="Unused"
 		fleet_design_template_i_use_for_drones="TechCarrierDrones"
 		drone_starting_behavior_type="Attacker_Full">
@@ -36,8 +36,8 @@
         visuals="assets/_finalgamemeshes/guardians/carrierguardian/carrierguardian.prefab"
 		icon_name="Ships1/Guardian" icon_overlay="Overlays2/Guardian_Carrier"
 		size_scale="3.1" visuals_scale_multiplier="4.5"
-		display_name="AI Ambush 航母" display_name_for_sidebar="AI Ambush GU"
-		description="A lightly 装甲 specialist with 隐形 that supports a wing of raptor 无人机."
+		display_name="AI 伏击航母" display_name_for_sidebar="AI 伏击 GU"
+		description="轻装甲隐身专家，支援一队猛禽无人机。"
 		starting_mark_level="Mark1" cost_for_ai_to_purchase="700" tech_upgrades_that_benefit_me="Unused"
 		fleet_design_template_i_use_for_drones="AmbuCarrierDrones"
 		drone_starting_behavior_type="Attacker_Full">
@@ -54,8 +54,8 @@
 	<!-- Start of the Dire Guardian entries -->
 	<!-- AI version of the Artillery Cruiser -->
 		<entity name="AIArtilleryCruiser" display_name="AI 火炮驱逐舰" copy_from="Bombard" required_expansion_list="1_The_Spire_Rises"
-		tags="DireGuardian" display_name_for_sidebar="AI Artillery DGU"
-		description="A slow moving juggernaut with strong 护盾s and stronger weapons."
+		tags="DireGuardian" display_name_for_sidebar="AI 火炮无畏 GU"
+		description="缓慢移动的重型战舰，拥有坚固的护盾和更强的武器。"
 		special_entity_type="AIDireGuardian" gimbal_icon_size_multiplier="1.25"			 
 		multiplier_to_all_scales="2.5"
 		uses_large_health_bar="true"

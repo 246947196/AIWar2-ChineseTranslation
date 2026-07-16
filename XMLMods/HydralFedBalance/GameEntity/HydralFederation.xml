@@ -15,9 +15,9 @@
 			y_offset_of_icon="30"
 			collision_priority="10000"
 			display_name="海德拉联邦旗舰" display_name_for_sidebar="海德拉旗舰"
-			description="The centerpiece of the Hydral Federation. Incredibly durable, and very effective at locking down ships of any size.
+			description="海德拉联邦的核心。极其耐久，对锁定任何尺寸的舰船都非常有效。
 			
-Respawns when destroyed."
+被摧毁后重生。"
 			blocks_ceasefire_on_planet="true" 
 			pushes_enemy_shields="true"
 			can_pass_through_enemy_forcefields="true"
@@ -58,7 +58,7 @@ Respawns when destroyed."
         collision_priority="800"
 	    display_name="海德拉联邦船坞"
 		display_name_for_sidebar="海德拉船坞"
-	    description="Constantly churns out ships for the Hydral Federation."
+	    description="持续为海德拉联邦生产舰船。"
 	    behavior="Stationary"
 		starting_mark_level="Markless"  tech_upgrades_that_benefit_me="Unused"
 		cost_for_ai_to_purchase="3000"

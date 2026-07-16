@@ -64,7 +64,7 @@
 			max_times_single_unit_can_be_hacked="2">
 			<custom_hack_data key="AddedMultiplierPerHack" value="2" />
 		</hack_data>
-		<system name="R9" display_name="Doomsday Heavy Beam Cannon"
+		<system name="R9" display_name="末日重型光束炮"
 			category="Weapon" firing_timing="OnlyInRange"
 			damage_per_shot="1250" range="High2" shot_speed="Normal" rate_of_fire="Devourer"
 			shot_type_data="HeavyBeamInvisible"
@@ -75,7 +75,7 @@
 			degrees_offset_per_beam="1"				
 			>
 		</system>
-		<system name="WU" display_name="Planet Cracker Array"
+		<system name="WU" display_name="行星裂解阵列"
 			category="Weapon" firing_timing="OnlyInRange"
 			damage_per_shot="33750" range="EssentiallyInfinite" shot_speed="Normal" rate_of_fire="Devourer"
 			shots_per_salvo="4"

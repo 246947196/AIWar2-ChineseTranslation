@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
   <build_category name="Specials" sort_index="55" display_name="特殊"
-    description="Every command station has special constructables. Home Command has all of them and then some."
+    description="每个指挥站都有特殊的可建造物。母星指挥站拥有全部甚至更多。"
                   for_player_type_tags="HumanEmpire"
     />
 </root>

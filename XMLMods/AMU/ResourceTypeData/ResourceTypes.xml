@@ -1,125 +1,125 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 	<!-- Vanilla stuff (metal also is a sappers resource) -->
-	<resource_type name="Metal" display_name="Metal" description="Under 'Metal' we refer to the all the necessary elements to manufacture our ships, turrets, structures and other goods for our war efforts."
+	<resource_type name="Metal" display_name="金属" description="「金属」指制造我们舰船、炮塔、结构及其他战争物资所需的所有必要元素。"
 		serialization_index="0" is_stockpiled="true" is_alternate_vanilla_resource="true" alternate_vanilla_resource_name="Metal" is_alternate_sappers_resource="true" alternate_sappers_resource_name="Metal" color_hex="ccccee" sprite="Res_Metal" sprite_should_not_be_colorized="false" />
 	
-	<resource_type name="Energy" display_name="Energy" description="In order to power our machines we extract and convert Dark Matter, then transmit the power through a highly effective warp network to reach our ships, even far behind enemy lines."
+	<resource_type name="Energy" display_name="能量" description="为了给我们的机器供能，我们提取并转化暗物质，然后通过高效的跃迁网络将能量传输到我们的舰船，即使远在敌后也能送达。"
 		serialization_index="1" is_stockpiled="false" is_alternate_vanilla_resource="true" alternate_vanilla_resource_name="Energy" color_hex="ffde00" sprite="Res_Energy" sprite_should_not_be_colorized="false" />
 	
-	<resource_type name="Science" display_name="Science" description="The total free computational capacities of our FTL processor network. 'Spending' science is less trading a resource and more like allocating CPU power to a certain task or faction."
+	<resource_type name="Science" display_name="科技" description="我们的超光速处理器网络的空闲计算能力总量。「花费」科技与其说是一种资源交易，不如说是为特定任务或派系分配CPU算力。"
 		serialization_index="2" is_stockpiled="true" is_alternate_vanilla_resource="true" alternate_vanilla_resource_name="Science" color_hex="7ce9ff" sprite="Res_Science" sprite_should_not_be_colorized="false" />
 	
-	<resource_type name="Hacking" display_name="Hacking" description="These freely programmable, tiny nanomachines are used to direclty interface with the AI's systems, and thoug the AI quickly dispatches of them we are able to extract data in the meantime."
+	<resource_type name="Hacking" display_name="入侵" description="这些可自由编程的微型纳米机器用于直接接入AI系统。尽管AI会迅速清除它们，但我们在此期间能够提取数据。"
 		serialization_index="3" is_stockpiled="true" is_alternate_vanilla_resource="true" alternate_vanilla_resource_name="Hacking" color_hex="3de799" sprite="Res_Hack" sprite_should_not_be_colorized="false" />
 	
-	<resource_type name="Argon" display_name="Argon" description="Noble gas fuel required by any normal non-officer, non-elite ship line."
+	<resource_type name="Argon" display_name="氩气" description="任何普通非军官、非精英舰船线所需的惰性气体燃料。"
 		serialization_index="4" is_stockpiled="false" is_alternate_vanilla_resource="true" alternate_vanilla_resource_name="FuelArgon" color_hex="aaffff" sprite="" />
 	
-	<resource_type name="Radon" display_name="Radon" description="Noble gas fuel required by turrets and other defenses."
+	<resource_type name="Radon" display_name="氡气" description="炮塔和其他防御设施所需的惰性气体燃料。"
 		serialization_index="5" is_stockpiled="false" is_alternate_vanilla_resource="true" alternate_vanilla_resource_name="FuelRadon" color_hex="ffffaa" sprite="" />
 	
-	<resource_type name="Xenon" display_name="Xenon" description="Noble gas fuel required by any offficer or elite ship line."
+	<resource_type name="Xenon" display_name="氙气" description="任何军官或精英舰船线所需的惰性气体燃料。"
 		serialization_index="6" is_stockpiled="false" is_alternate_vanilla_resource="true" alternate_vanilla_resource_name="FuelXenon" color_hex="ffaaff" sprite="" />
 
 
 	<!-- Player resources -->
 	<resource_type name="Essence" required_expansion_list="3_The_Neinzul_Abyss"
-	display_name="Essence" description="A mostly unknown biological energy source, predominantly contained within a species known as Elderlings."
+	display_name="精华" description="一种未知的生物能量源，主要存在于被称为长老的物种体内。"
 		serialization_index="7" is_stockpiled="true" is_alternate_custom_players_resource="true" alternate_player_resource_name="Essence" color_hex="e16cff" sprite="Res_NecromancerEssence" />
 	
 	
 	<!-- Dark Zenith -->
 	<resource_type name="Octiron" required_expansion_list="2_Zenith_Onslaught"
-	display_name="Octiron" description="A type of metal-equivalent of the Dark 天顶's home dimension that must be synthesized artificially and can't be found natural in our universe. The Dark 天顶 can use this material to construct ships and stuctures."
+	display_name="奥克提隆" description="暗天顶母维度的一种等效金属，必须通过人工合成，无法在我们的宇宙中天然找到。暗天顶可用此材料建造舰船和结构。"
 		serialization_index="8" is_stockpiled="true" is_alternate_dark_zenith_resource="true" alternate_dark_zenith_resource_name="Metal" color_hex="d3d3d3" sprite="" />
 	
 	<resource_type name="Thaumite" required_expansion_list="2_Zenith_Onslaught"
-	display_name="Thaumite" description="The crystalline structure of Thaumite reacts uniquely to energies from different universes, separating the them like a prism. Our universes energies are reflected, causing less damage. The Dark 天顶 can use this material to enhance ships, making them stout."
+	display_name="索迈特" description="索迈特的晶体结构对不同宇宙的能量有独特反应，如同棱镜般将其分离。我们宇宙的能量被反射，造成较少伤害。暗天顶可用此材料增强舰船，使其坚固。"
 		serialization_index="9" is_stockpiled="true" is_alternate_dark_zenith_resource="true" alternate_dark_zenith_resource_name="Green" color_hex="10ff10" sprite="" />
 	
 	<resource_type name="Chelonium" required_expansion_list="2_Zenith_Onslaught"
-	display_name="Chelonium" description="A material causing an effect similar to gravity lenses, only inverted. Hulls enhanced with it cause attacks to redirect outwards and miss, unless fired from a range close enough. The Dark 天顶 can use this material to enhance ships, making them fortified."
+	display_name="凯隆尼姆" description="一种产生类似引力透镜效应的材料，但效果相反。用其强化的船体会使攻击向外偏转而未命中，除非从足够近的射程发射。暗天顶可用此材料增强舰船，使其筑防。"
 		serialization_index="10" is_stockpiled="true" is_alternate_dark_zenith_resource="true" alternate_dark_zenith_resource_name="Blue" color_hex="d7be69" sprite="" />
 	
 	<resource_type name="Alkahest" required_expansion_list="2_Zenith_Onslaught"
-	display_name="Alkahest" description="Named 'Space Oil' by our scientists Alkahest, if smeared onto ship hulls reduces the external interaction with our space-time. This results in more 高效 engines and sensor evasion. The Dark 天顶 can use this material to enhance ships, making them spirited."
+	display_name="阿尔卡赫斯特" description="被我们的科学家称为「太空石油」，涂抹在舰船船体上可减少与时空的外部作用，使引擎更高效并增强传感器规避能力。暗天顶可用此材料增强舰船，使其灵动。"
 		serialization_index="11" is_stockpiled="true" is_alternate_dark_zenith_resource="true" alternate_dark_zenith_resource_name="White" color_hex="1020ff" sprite="" />
 	
 	<resource_type name="Izumite" required_expansion_list="2_Zenith_Onslaught"
-	display_name="Izumite" description="The 天顶 - Dark and not - have bodies working with materials similar to our hormones. Superchargers we suspect hurt their cognitive abilities but grant power, effectively what we do with Hacking nanomachines. The Dark 天顶 can use this material to enhance ships, making them enraged."
+	display_name="伊祖迈特" description="天顶族——无论黑暗与否——的身体运作依赖于类似我们激素的物质。我们推测过充器会损害其认知能力但赋予力量，类似于我们用入侵纳米机器做的事。暗天顶可用此材料增强舰船，使其狂怒。"
 		serialization_index="12" is_stockpiled="true" is_alternate_dark_zenith_resource="true" alternate_dark_zenith_resource_name="Red" color_hex="ff2010" sprite="" />
 	
 	<resource_type name="Skrith" required_expansion_list="2_Zenith_Onslaught"
-	display_name="Skrith" description="The purfified anti-particle to another universe's Dark Matter It's properties are mostly unknown to us, but it seems to disrupt our ship systems and cause havoc in all our technology. The Dark 天顶 can use this material to enhance ships, making them sinister."
+	display_name="斯克里思" description="来自另一宇宙暗物质的提纯反粒子。其性质对我们基本未知，但似乎会扰乱我们的舰船系统并对所有技术造成混乱。暗天顶可用此材料增强舰船，使其阴险。"
 		serialization_index="13" is_stockpiled="true" is_alternate_dark_zenith_resource="true" alternate_dark_zenith_resource_name="Black" color_hex="223322" sprite="" />
 	
 	
 	<!-- Sappers (their metal already is the "normal" metal -->
 	<resource_type name="Bloodstone" required_expansion_list="3_The_Neinzul_Abyss"
-	display_name="Bloodstone" description="A crystal 灌注 with 宁苏 genetic material. Looking through it makes it look as though the world is bathed in alien blood and bring about 死亡 and slaughter in space, which is why some taken to calling it 'Curse Crystal'."
+	display_name="血石" description="一种灌注了宁苏基因物质的晶体。透过它看世界仿佛沐浴在外星鲜血中，带来太空中的死亡与屠杀，因此有人称之为「诅咒水晶」。"
 		serialization_index="14" is_stockpiled="true" is_alternate_sappers_resource="true" alternate_sappers_resource_name="Bloodstone" color_hex="d3d3d3" sprite="" />
 	
 	<resource_type name="Moonstone" required_expansion_list="3_The_Neinzul_Abyss"
-	display_name="Moonstone" description="A crystal 灌注 with the energy of stellar background radiation. Its ability to siphon even the faintest of signals makes it very potent in creating self-sufficient constructs, which makes it powerful and sought-after by many factions."
+	display_name="月长石" description="一种灌注了恒星背景辐射能量的晶体。其吸收最微弱信号的能力使其在创造自给自足结构方面非常强大，因此被众多派系觊觎。"
 		serialization_index="15" is_stockpiled="true" is_alternate_sappers_resource="true" alternate_sappers_resource_name="Moonstone" color_hex="10ff10" sprite="" />
 	
 	
 	<!-- Civvies -->
 	<resource_type name="Atium" required_mod_list="SKCivilianIndustry"
-	display_name="Atium" description="Atium is a combustable metallic substance that seemingly allows for the formation of localized temporal entanglement, meaning one can see a foreshadowing of the near future. The 民用工业 can use this material to create Ambush-tech ships and turrets."
+	display_name="阿提姆" description="阿提姆是一种可燃金属物质，似乎能够形成局部时间纠缠，使人能看到近期未来的预兆。民用工业可用此材料制造伏击科技舰船和炮塔。"
 		serialization_index="16" is_stockpiled="true" is_alternate_civilian_industries_resource="true" alternate_civilian_resource_name="Atium" color_hex="9a9a9a" sprite="" />
 	
 	<resource_type name="Saronite" required_mod_list="SKCivilianIndustry"
-	 display_name="Saronite" description="The elementary structure of Saronite is unknown even today. It can only be transmuted by someone with enough wrath, and any projectile forged with it will seek out the target of said wrath even over incredible distance. The 民用工业 can use this material to create Artillery-tech ships and turrets."
+	 display_name="萨罗奈特" description="萨罗奈特的基本结构至今未知。它只能被怀有足够愤怒之人转化，任何用其锻造的弹丸都会寻找愤怒所指的目标，即使跨越不可思议的距离。民用工业可用此材料制造炮兵科技舰船和炮塔。"
 		serialization_index="17" is_stockpiled="true" is_alternate_civilian_industries_resource="true" alternate_civilian_resource_name="Saronite" color_hex="43464b" sprite="" />
 	
 	<resource_type name="Collapsium" required_mod_list="SKCivilianIndustry"
-	 display_name="Collapsium" description="An artificial material imploding space itself by converting dark energy into matter at the point of impact, taking all other forms of surrounding matter with it. The 民用工业 can use this material to create Disruptive-tech ships and turrets."
+	 display_name="坍缩素" description="一种在撞击点将暗能量转化为物质从而使空间内爆的人造材料，同时吞噬周围所有其他物质。民用工业可用此材料制造干扰科技舰船和炮塔。"
 		serialization_index="18" is_stockpiled="true" is_alternate_civilian_industries_resource="true" alternate_civilian_resource_name="Collapsium" color_hex="e0ca8b" sprite="" />
 	
 	<resource_type name="Byzanium" required_mod_list="SKCivilianIndustry"
-	 display_name="Byzanium" description="A highly radioactive atom with the periodic number 4976, unique because it retains a a halflife of 4 decades. Its fission-based power yield surpasses even higher-level atomic fusion. The 民用工业 can use this material to create Piercing-tech ships and turrets."
+	 display_name="拜占尼姆" description="原子序数4976的高放射性原子，独特之处在于其半衰期长达四十年。其裂变能量产出甚至超过高级核聚变。民用工业可用此材料制造穿透科技舰船和炮塔。"
 		serialization_index="19" is_stockpiled="true" is_alternate_civilian_industries_resource="true" alternate_civilian_resource_name="Byzanium" color_hex="72eb6e" sprite="" />
 	
 	<resource_type name="Orichalcum" required_mod_list="SKCivilianIndustry"
-	 display_name="Orichalcum" description="While displaying no outstanding properties Orichalcum surpasses our best metal alloys in all regards: Sturdier, lighter, stronger, more resistant to heat. A great 建造 material. The 民用工业 can use this material to create Core-tech ships and turrets."
+	 display_name="奥利哈钢" description="虽无突出特质，但奥利哈钢在各方面都超越了我们的最佳金属合金：更坚固、更轻、更强、更耐热。是绝佳的建造材料。民用工业可用此材料制造核心科技舰船和炮塔。"
 		serialization_index="20" is_stockpiled="true" is_alternate_civilian_industries_resource="true" alternate_civilian_resource_name="Orichalcum" color_hex="e8e28b" sprite="" />
 	
 	<resource_type name="Carbonadium" required_mod_list="SKCivilianIndustry"
-	 display_name="Carbonadium" description="One of the hardest materials ever found, even forging it requires heat and gravity normally only found inside of stars. But once create a ship from Carbonadium is extremely tough to kill. The 民用工业 can use this material to create Melee-tech ships and turrets."
+	 display_name="碳钢合金" description="有史以来最坚硬的物质之一，连锻造它都需要通常只存在于恒星内部的高温和重力。但一旦用碳钢合金制造出舰船，就极难被击毁。民用工业可用此材料制造近战科技舰船和炮塔。"
 		serialization_index="21" is_stockpiled="true" is_alternate_civilian_industries_resource="true" alternate_civilian_resource_name="Carbonadium" color_hex="52689c" sprite="" />
 	
 	<resource_type name="Inerton" required_mod_list="SKCivilianIndustry"
-	 display_name="Inerton" description="A substance that seemingly defies a number of laws of nature. Up to a saturation point it absorbs the energy from all sources, and directing the energy released when saturated releases pure kinetic energy. The 民用工业 can use this material to create 突袭-tech ships and turrets."
+	 display_name="惰性素" description="一种似乎违反多项自然法则的物质。在达到饱和点之前它能吸收所有来源的能量，饱和后引导释放的能量则是纯粹的动能。民用工业可用此材料制造突袭科技舰船和炮塔。"
 		serialization_index="22" is_stockpiled="true" is_alternate_civilian_industries_resource="true" alternate_civilian_resource_name="Inerton" color_hex="8f1579" sprite="" />
 	
 	<resource_type name="Naqahdah" required_mod_list="SKCivilianIndustry"
-	 display_name="Naqahdah" description="Extremely volatile mineral. Applying too much pressure or electrical current will immediately release an explosive burst of power, capable of downright annihilating anything in range. The 民用工业 can use this material to create Splash-tech ships and turrets."
+	 display_name="纳夸达" description="极度不稳定的矿物。施加过多压力或电流会立即释放出爆炸性的能量，足以彻底消灭射程内的一切。民用工业可用此材料制造溅射科技舰船和炮塔。"
 		serialization_index="23" is_stockpiled="true" is_alternate_civilian_industries_resource="true" alternate_civilian_resource_name="Naqahdah" color_hex="a83e3e" sprite="" />
 	
 	<resource_type name="Frinkonium" required_mod_list="SKCivilianIndustry"
-	 display_name="Frinkonium" description="This material changes its properties when observed to actively avoid observation - no wonder it was unknown for a very long time. While its observation-evasion isn't perfect hulls made from it are hard to detect. The 民用工业 can use this material to create Subterfuge-tech ships and turrets."
+	 display_name="弗林科尼姆" description="这种材料在被观察时会改变其性质以主动避免观测——难怪它长期不为人知。虽然其观测规避并非完美，但用它制成的船体难以探测。民用工业可用此材料制造诡计科技舰船和炮塔。"
 		serialization_index="24" is_stockpiled="true" is_alternate_civilian_industries_resource="true" alternate_civilian_resource_name="Frinkonium" color_hex="10adb3" sprite="" />
 	
 	<resource_type name="Computronium" required_mod_list="SKCivilianIndustry"
-	 display_name="Computronium" description="Matter that consists almost entirely out of sub-atomic nanomachines. They can be used to make 'fake' atoms, which in return allows for morphing, self-shaping, highly complex internal structures. The 民用工业 can use this material to create Exotic-tech ships and turrets."
+	 display_name="计算素" description="几乎完全由亚原子纳米机器构成的物质。它们可用于制造「假」原子，从而实现变形、自塑形和高度复杂的内部结构。民用工业可用此材料制造异域科技舰船和炮塔。"
 		serialization_index="25" is_stockpiled="true" is_alternate_civilian_industries_resource="true" alternate_civilian_resource_name="Computronium" color_hex="c2ffc6" sprite="" />
 
 
 	<!-- Resource Ideas -->
-	<resource_type name="Antihydrogen" display_name="Antihydrogen" description="The antimatter particle to hydrogen, consiting out of a positron (anti-electron) orbiting anti-proton. Completely annihilates into pure energy when combined with normal hydrogen, perfect for energy production and weapons."
+	<resource_type name="Antihydrogen" display_name="反氢" description="氢的反物质粒子，由正电子（反电子）绕反质子构成。与普通氢结合时完全湮灭为纯能量，极适合用于能源生产和武器。"
 		serialization_index="26" is_stockpiled="true" color_hex="ababce" sprite="" />
 	
-	<resource_type name="NeutroniumCrystals" display_name="Neutronium Crystals" description="Neutronium Crystals are an extraordinarily dense and hard substance comprised of entirely neutrons. It is unaffected by magnetism, blocks most forms of energy and thus is well suited for strong armor."
+	<resource_type name="NeutroniumCrystals" display_name="中子晶体" description="中子晶体是一种由纯中子构成的极度致密坚硬的物质。它不受磁性影响，能阻挡大多数形式的能量，因此非常适合制造坚固装甲。"
 		serialization_index="27" is_stockpiled="true" color_hex="ce35ce" sprite="" />
 	
-	<resource_type name="Microsingularities" display_name="Microsingularities" description="Though dangerous the power to bend space and time harnessed from microscopic black holes grants us artificial gravity and gravity manipulation, as well as warp and teleportation technology."
+	<resource_type name="Microsingularities" display_name="微型奇点" description="尽管危险，但从微型黑洞中获取的扭曲时空的力量赋予了我们人造重力和重力操控能力，以及跃迁和传送技术。"
 		serialization_index="28" is_stockpiled="true" color_hex="997777" sprite="" />
 	
-	<resource_type name="HyperchargedTachyons" display_name="Hypercharged Tachyons" description="When further energized Tachyons become less likely to pierce matter and instead reflect or get absorbed, making it possible to detect ships with exceptional albedo as well as allowing for FTL data and matter transmission technology."
+	<resource_type name="HyperchargedTachyons" display_name="过充超光速粒子" description="当进一步充能后，超光速粒子穿透物质的可能性降低，取而代之的是反射或被吸收，这使得探测具有高反照率的舰船成为可能，同时实现了超光速数据和物质传输技术。"
 		serialization_index="29" is_stockpiled="true" color_hex="fe35ce" sprite="" />
 	
-	<resource_type name="DarkEnergy" display_name="Dark Energy" description="Practically a pocket 'compressed empty space' the value of Dark Energy is in its property to allow for dimensional transfer and 'impossible' space technology (= objects that are larger or smaller on the inside than outside)."
+	<resource_type name="DarkEnergy" display_name="暗能量" description="本质上是口袋大小的「压缩虚空」，暗能量的价值在于其允许维度转移和「不可能」的空间技术（即内部比外部更大或更小的物体）。"
 		serialization_index="30" is_stockpiled="true" color_hex="88face" sprite="" />
 </root>

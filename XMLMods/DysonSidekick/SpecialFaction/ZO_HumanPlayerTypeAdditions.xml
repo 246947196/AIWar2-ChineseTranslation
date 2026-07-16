@@ -5,37 +5,37 @@
     <!-- custom fields. -->
 
     <custom_field requires_player_types="DarkZenithSidekick,DarkZenithEmpire"
-                  name="Intensity" display_name="Strength" description="This determines the overall power budget of the Dark 天顶"
+                  name="Intensity" display_name="强度" description="决定暗天顶的总战力预算"
                   sort_group="200" setting_type="IntSlider" default="5" min="1" max="10"/>
     
-    <custom_field  requires_player_types="DarkZenithSidekick,DarkZenithEmpire" name="InvasionTime" display_name="Invasion Time" description="By default your forces are a full Dark 天顶 Invasion. By using 斯维卡里, you will spawn with a small force with your empire ally. If you are choosing DZ Empire, you must pick Full Invasion."
+     <custom_field  requires_player_types="DarkZenithSidekick,DarkZenithEmpire" name="InvasionTime" display_name="入侵时间" description="默认情况下你的部队是一支完整的暗天顶入侵部队。选择斯维卡里的话，你将以一支小型部队与你的帝国盟友一同出生。如果你选择DZ帝国，必须选择全面入侵。"
                    sort_group="210" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Svikari,Full Invasion" default_option="Full Invasion" />
 
         <custom_field requires_player_types="DarkZenithSidekick,DarkZenithEmpire"
-                  name="NadirStrength" display_name="Nadir Power" description="The Nadir are spawned by the AI to fight the Dark 天顶; fighting them is an important source of 资源 for the Dark 天顶."
+                  name="NadirStrength" display_name="纳迪尔力量" description="纳迪尔由AI生成以对抗暗天顶；与他们作战是暗天顶获取资源的重要来源。"
                   sort_group="250" setting_type="IntSlider" default="5" min="1" max="10"/>
     <custom_field requires_player_types="DarkZenithSidekick,DarkZenithEmpire"
-                  name="DZSidekickStartingFlagship" display_name="Starting Flagship" description="Which 旗舰 do you want to start with?"
+                  name="DZSidekickStartingFlagship" display_name="起始旗舰" description="你想从哪艘旗舰开始？"
                   sort_group="100" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Medusa,Asclepius,Chameleon,Random" default_option="Random"/>
     
     <custom_field requires_player_types="ScourgeInfusedHumanEmpire"
-                  name="ScourgeVassalIntensity" display_name="Scourge Intensity" description="The intensity for your scourge allies." setting_type="IntSlider" default="5" min="1" max="10"/>
+                                     name="ScourgeVassalIntensity" display_name="天灾强度" description="你的天灾盟友的强度。" setting_type="IntSlider" default="5" min="1" max="10"/>
     <custom_field requires_player_types="ScourgeInfusedHumanEmpire"
-                  name="FirstArmory" display_name="First Armory" description="The first armory the scourge will build."
+                   name="FirstArmory" display_name="首个军械库" description="天灾将建造的首个军械库。"
                   sort_group="260" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Random,Burlust,Evuck,Neinzul,Peltian,Thoraxian" default_option="Random" />
     <custom_field requires_player_types="ScourgeInfusedHumanEmpire"
-                  name="StartsWithBane" is_advanced_setting="true" display_name="Starts with Flagship" description="The scourge infused empire gets a powerful scourge-themed 旗舰 at game start time."
+                   name="StartsWithBane" is_advanced_setting="true" display_name="起始拥有旗舰" description="天灾注入帝国在游戏开始时获得一艘强大的天灾主题旗舰。"
                   sort_group="300"  setting_type="BoolToggle" default="false"  />
 
 
     <custom_field  requires_player_types="DarkZenithSidekick,DarkZenithEmpire"
-                   name="EnableFimbulwinter" is_advanced_setting="true" display_name="Enable Fimbulwinter" description="When enabled, Dark 天顶 will attempt to bring about the Fimbulwinter, modifying all of the planets in the 银河 to be more suitable for their needs. The Dark 天顶 will begin transforming the planets they capture; once transformed the DZ and its allies are more powerful there, and their enemies are weaker.
+                    name="EnableFimbulwinter" is_advanced_setting="true" display_name="启用芬布尔之冬" description="启用后，暗天顶将尝试带来芬布尔之冬，改造银河中的所有行星以适应其需求。暗天顶将开始改造其占领的行星；一旦改造完成，DZ及其盟友在那里会更强大，而其敌人会更弱。
 
-DO NOT DISABLE."
+切勿禁用。"
                   sort_group="800" setting_type="BoolToggle" default="true"  />
 
     <custom_field   requires_player_types="DarkZenithSidekick,DarkZenithEmpire" is_advanced_setting="true"
-        name="Allegiance" display_name="Allegiance" description="These 天顶 are loyal to the Player."
+        name="Allegiance" display_name="归属" description="这些天顶忠于玩家。"
                   sort_group="900" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Friendly To Players" default_option="Friendly To Players" />
   </faction>
 </root>

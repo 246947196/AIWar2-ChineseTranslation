@@ -96,7 +96,7 @@
 	<entity name="DevourerHunter_HunterKiller" copy_from="AIHunterKiller" tags="DevourerHunter_Tier0_Normal,DevourerHunter_Tier0_Royal,AllDevourerHunters"
 		display_name_for_sidebar="DH 猎手/杀手"
 		override_faction_name="AI 吞噬者猎手" albedo="0.9" strength_multiplier="1.5"
-		description="极其强大的 AI 守卫。AI 进行了一些仓促的改装，利用完美的辐射反射来偷袭吞噬者傀儡，并在刚抵达时减少伤害。其聚变炸弹也被压缩为更少的弹头数，但伤害更高。"
+		description="极其强大的 AI 守卫。AI 进行了一些仓促的改装，利用完美的辐射反射来偷袭吞噬者傀儡，并在刚抵达时减少伤害。其聚变炸弹也被压缩为更少的飞弹数，但伤害更高。"
 		damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.5"
 	>
 		<system name="FusionBomb" damage_per_shot="17500" shots_per_salvo="6" />
@@ -132,7 +132,7 @@
 	<entity name="DevourerHunter_HunterSeeker" copy_from="ExtragalacticAIHunterSeeker" tags="DevourerHunter_Tier1,AllDevourerHunters"
 		display_name_for_sidebar="DH 猎手/搜索者"
 		override_faction_name="AI 吞噬者猎手" albedo="0.9" strength_multiplier="1.55"
-		description="更大、更快、更危险的猎手/杀手。AI 进行了一些改装，利用完美的辐射反射来偷袭吞噬者傀儡，并在刚抵达时减少伤害。其聚变炸弹也被压缩为更少的弹头数，但伤害更高。"
+		description="更大、更快、更危险的猎手/杀手。AI 进行了一些改装，利用完美的辐射反射来偷袭吞噬者傀儡，并在刚抵达时减少伤害。其聚变炸弹也被压缩为更少的飞弹数，但伤害更高。"
 		damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.4"
 	>
 		<system name="FusionBomb" damage_per_shot="56000" shots_per_salvo="5" />
@@ -180,7 +180,7 @@
 	<entity name="DevourerHunter_Warspite" copy_from="Warspite" tags="AllDevourerHunters"
 		display_name_for_sidebar="DH 厌战"
 		override_faction_name="AI 吞噬者猎手" albedo="0.9" strength_multiplier="1.25"
-		description="隐藏在火炮傀儡原型内部，而且很不高兴。AI 进行了改装，利用完美的辐射反射来偷袭吞噬者傀儡，并在刚抵达时减少伤害。其等离子鱼雷发射器拥有更少的弹头但伤害更高，并能够集中火力攻击单个目标或根据需要分散攻击。"
+		description="隐藏在火炮傀儡原型内部，而且很不高兴。AI 进行了改装，利用完美的辐射反射来偷袭吞噬者傀儡，并在刚抵达时减少伤害。其等离子鱼雷发射器拥有更少的飞弹但伤害更高，并能够集中火力攻击单个目标或根据需要分散攻击。"
 		behavior="Stationary"
 		damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.3"
 	>
@@ -195,7 +195,7 @@
 	<entity name="DevourerHunter_ChimeraArtillery" copy_from="ExtragalacticChimeraArtillery" tags="DevourerHunter_Tier2,AllDevourerHunters"
 		display_name_for_sidebar="DH 奇美拉 火炮"
 		override_faction_name="AI 吞噬者猎手" albedo="0.9" strength_multiplier="2.5"
-		description="持续发射大型弹射体横跨星球。AI 进行了改装，利用完美的辐射反射来偷袭吞噬者傀儡，并在刚抵达时减少伤害。其等离子鱼雷发射器也只发射一枚弹头，但威力翻倍。"
+		description="持续发射大型弹射体横跨星球。AI 进行了改装，利用完美的辐射反射来偷袭吞噬者傀儡，并在刚抵达时减少伤害。其等离子鱼雷发射器也只发射一枚飞弹，但威力翻倍。"
 		damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.3"
 	>
 		<entity_type_drawing_bag_used_on_death data_list="DevourerHunter_Chimera" min_spawn_value_list="5" />
@@ -220,7 +220,7 @@
 	<entity name="DevourerHunter_HunterAnnihilator" copy_from="ExtragalacticAIHunterAnnihilator" tags="DevourerHunter_Tier2,AllDevourerHunters"
 		display_name_for_sidebar="DH 猎手/歼灭者"
 		override_faction_name="AI 吞噬者猎手" albedo="0.9" strength_multiplier="1.6"
-		description="大幅升级的猎手/杀手。AI 进行了改装，利用完美的辐射反射来偷袭吞噬者傀儡，并在刚抵达时减少伤害。其聚变炸弹也被压缩为更少的弹头数，但伤害更高。"
+		description="大幅升级的猎手/杀手。AI 进行了改装，利用完美的辐射反射来偷袭吞噬者傀儡，并在刚抵达时减少伤害。其聚变炸弹也被压缩为更少的飞弹数，但伤害更高。"
 		damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.3"
 	>
 		<system name="FusionBomb" damage_per_shot="175000" shots_per_salvo="4" />

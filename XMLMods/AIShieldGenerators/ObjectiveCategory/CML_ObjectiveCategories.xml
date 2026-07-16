@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <objective_category name="ShieldGenerators" display_name="AI护盾发生器s" sort_priority="15"
-        description="A direct assault against the AI homeworld would be futile while these still stand. You will need to either destroy or hack them." />
+  <objective_category name="ShieldGenerators" display_name="AI护盾发生器" sort_priority="15"
+        description="只要这些还在，直接进攻AI母星就是徒劳的。你需要摧毁它们或者入侵它们。" />
 </root>

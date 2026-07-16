@@ -2,7 +2,7 @@
 <root>
 	<entity name="DistributionNode" is_partial_record="true"
 		tags="DistributionNode,ShowsOnNormalDisplayMode"
-		display_name="Universal Distribution Node"
+		display_name="通用配给节点"
 		display_name_for_sidebar="通用 DN"
 		description="储存了一些科学点和入侵点，以及大量金属（注意存储容量）。在消耗极少 AI 进程的情况下将其授予摧毁它的玩家。"
 		aip_on_death="4"
@@ -14,7 +14,7 @@
 	
 	<entity name="MetalDistributionNode" copy_from="DistributionNode" icon_overlay="Overlays2/GuardPostDire_Shredder"
 		tags="DistributionNode,ShowsOnNormalDisplayMode"
-		display_name="Metal Distribution Node"
+		display_name="金属配给节点"
 		display_name_for_sidebar="金属 DN"
 		description="大量金属的储备（注意存储容量）。在消耗极少 AI 进程的情况下将其授予摧毁它的玩家。"
 		aip_on_death="1"
@@ -26,9 +26,9 @@
 	
 	<entity name="HackingDistributionNode" copy_from="DistributionNode" icon_overlay="Overlays2/GuardPostDire_Beam"
 		tags="DistributionNode,ShowsOnNormalDisplayMode"
-		display_name="Hacking Distribution Node"
+		display_name="入侵点配给节点"
 		display_name_for_sidebar="入侵 DN"
-		description="Stockpile of a large amount of hacking points. Grants it to the player destroying it, at a very minor AI Progress cost."
+		description="大量入侵点的储备。以极小的 AI 进程代价，将其授予摧毁它的玩家。"
 		aip_on_death="2"
 		science_to_grant_on_death="0"
 		hacking_to_grant_on_death="120"
@@ -38,9 +38,9 @@
 	
 	<entity name="ScienceDistributionNode" copy_from="DistributionNode" icon_overlay="Overlays2/GuardPostDire_Nucleophilic"
 		tags="DistributionNode,ShowsOnNormalDisplayMode"
-		display_name="Science Distribution Node"
+		display_name="科学点配给节点"
 		display_name_for_sidebar="科学 DN"
-		description="Stockpile of a large amount of science points. Grants it to the player destroying it, at a very minor AI Progress cost."
+		description="大量科学点的储备。以极小的 AI 进程代价，将其授予摧毁它的玩家。"
 		aip_on_death="3"
 		science_to_grant_on_death="3000"
 		hacking_to_grant_on_death="0"
@@ -60,9 +60,9 @@
 		visuals_scale_multiplier="2.25"
 		y_offset_of_icon="10"
 		collision_priority="100"
-		display_name="Reinforcement Seeder"
+		display_name="增援播种器"
 		display_name_for_sidebar="增援播种器"
-		description="A small modified carrier guardian that can spawn a large number of minor reinforcement warp gates, each increasing the planetary reinforcement yield."
+		description="一种小型改装航母守护者，可以生成大量小型增援跃迁门，每个都会提升行星增援产量。"
 		starting_mark_level="Markless"
 		cost_for_ai_to_purchase="20000"
 		hull_points="300000" shield_points="200000" speed="Normal1"
@@ -99,8 +99,8 @@
 
 	<entity name="RoyalReinforcementSeeder" copy_from="ReinforcementSeeder"
 		tags="ShowsOnNormalDisplayMode"
-		display_name="Royal Reinforcement Seeder"
-		display_name_for_sidebar="R. Reinf. Seeder"
+		display_name="皇家增援播种器"
+		display_name_for_sidebar="R. 增援播种器"
 		hull_points="600000" shield_points="400000"
 	>
 		<system name="SN" damage_per_shot="20000"
@@ -125,10 +125,10 @@
 		category="Ship"
 		size_scale="1.8"
 		visuals_scale_multiplier="2"
-		display_name="Reinforcement Warp Gate"
-		display_name_for_sidebar="Reinforcement WGT"
+		display_name="增援跃迁门"
+		display_name_for_sidebar="增援跃迁门"
 		description="这不像可以容纳大规模舰队通过的大型跃迁门，它一次只运输几艘舰船，为 AI 提供了一种更简单的方式来增援其所在星球。"
-		description_short="Increases planetary reinforcements a bit. Dangerous only when left unchecked."
+		description_short="略微增加行星增援。只有放任不管时才危险。"
 		behavior="Stationary"
 		collision_priority="10000"
 		voice_group="Silent"
@@ -152,10 +152,10 @@
 	<entity name="AICommandStation_Clone2" copy_from="AICommandStation" tags="AICommandStationOriginal" />
 
 	<entity name="AICommandStation_Gravitic" copy_from="AICommandStation" tags="AICommandStationOriginal" icon_overlay="Overlays2/Guardian_Gravity"
-		display_name="Gravitic AI Command Station"
-		display_name_for_sidebar="Gravitic AI Cmd"
-		description="Planetary command center with a slowing aura. You must destroy this before you can build your own command station to claim the planet."
-		description_short="You must destroy this before you can build your own command station to claim the planet. Mind the gravity."
+		display_name="重力 AI 指挥站"
+		display_name_for_sidebar="重力 AI 指挥站"
+		description="带有减速光环的行星指挥中心。您必须先摧毁它，然后才能建造自己的指挥站来占领该星球。"
+		description_short="您必须先摧毁它，然后才能建造自己的指挥站来占领该星球。小心重力场。"
 	>
 		<system name="G1" display_name="引力核心" category="Passive" base_gravity_speed_multiplier="0.7" subtracted_gravity_speed_multiplier_per_mark="0" gravity_hits_engine_gx_less_than="8" gravity_range="Normal4" min_mark_level_to_function="1" max_mark_level_to_function="1" />
 		<system name="G2" display_name="引力核心" category="Passive" base_gravity_speed_multiplier="0.65" subtracted_gravity_speed_multiplier_per_mark="0" gravity_hits_engine_gx_less_than="10" gravity_range="Normal6" min_mark_level_to_function="2" max_mark_level_to_function="2" />
@@ -167,10 +167,10 @@
 	</entity>
 
 	<entity name="AICommandStation_Tachyon" copy_from="AICommandStation" tags="AICommandStationOriginal" icon_overlay="Overlays1/Starship_Sentry"
-		display_name="Tachyon AI Command Station"
-		display_name_for_sidebar="快子 AI 指令"
-		description="Planetary command center with a decloaking aura. You must destroy this before you can build your own command station to claim the planet."
-		description_short="You must destroy this before you can build your own command station to claim the planet. Mind the decloaking."
+		display_name="快子 AI 指挥站"
+		display_name_for_sidebar="快子 AI 指挥站"
+		description="带有反隐形光环的行星指挥中心。您必须先摧毁它，然后才能建造自己的指挥站来占领该星球。"
+		description_short="您必须先摧毁它，然后才能建造自己的指挥站来占领该星球。小心反隐形。"
 	>
 		<system name="T1" display_name="快子阵列" category="Passive" tachyon_points="15" tachyon_range="Normal6" tachyon_hits_albedo_less_than="0.75" min_mark_level_to_function="1" max_mark_level_to_function="1" />
 		<system name="T2" display_name="快子阵列" category="Passive" tachyon_points="30" tachyon_range="AboveAverage1" tachyon_hits_albedo_less_than="0.75" min_mark_level_to_function="2" max_mark_level_to_function="2" />
@@ -182,10 +182,10 @@
 	</entity>
 
 	<entity name="AICommandStation_Pulsar" copy_from="AICommandStation" tags="AICommandStationOriginal" icon_overlay="Overlays2/Guardian_Paralysis"
-		display_name="Attritioner AI Command Station"
-		display_name_for_sidebar="Attritioner AI Cmd"
-		description="Planetary command center with an attritioning aura. You must destroy this before you can build your own command station to claim the planet."
-		description_short="You must destroy this before you can build your own command station to claim the planet. Mind the Attrition."
+		display_name="消耗光环 AI 指挥站"
+		display_name_for_sidebar="消耗光环 AI 指挥站"
+		description="带有消耗光环的行星指挥中心。您必须先摧毁它，然后才能建造自己的指挥站来占领该星球。"
+		description_short="您必须先摧毁它，然后才能建造自己的指挥站来占领该星球。小心消耗。"
 		attrition_damage="50" added_attrition_damage_per_mark="25"
 		max_attrition_damage="50000" added_max_attrition_damage_per_mark="50000"
 	>

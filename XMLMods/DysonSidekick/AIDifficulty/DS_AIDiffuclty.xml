@@ -88,9 +88,9 @@
        shark_b2_base_strength_per_command_station="28000"
        shark_b2_bonus_strength_per_aip="500"
        number_of_ten_minute_increments_before_homeworld_is_fully_defensible="19"
-       description="Difficulty 9.5 slots in about halfway between difficulty 9 and 10. The AI has an exceptional economy, and will ruthless in their attacks and relentless in their harassment of your 防御.  To overcome this challenge, you will always need to be on full alert to prevent the AI from exploiting any weakness in your strategy.
+        description="难度9.5大致介于难度9和10之间。AI拥有出色的经济，攻击残酷无情，骚扰你的防御毫不松懈。要克服这一挑战，你需要时刻保持高度警惕，防止AI利用你策略中的任何弱点。
 
-Implementation note: The default Hunter/守望者 settings for this is Difficulty 8; you will need to set the Hunter and 守望者 to 9 or 10 manually."
+实现说明：此难度的默认猎手/守望者设置对应难度8；你需要手动将猎手和守望者设置为9或10。"
   >
   </record>
 
@@ -182,7 +182,7 @@ Implementation note: The default Hunter/守望者 settings for this is Difficult
        BaseBunkerSpawnInterval="1800"
        BaseBunkerStrengthMultiplier="1.0"
        number_of_ten_minute_increments_before_homeworld_is_fully_defensible="60"
-       description="This AI is particularly smart, though much weaker economically. The goal is to allow for a still challenging game, while keeping fewer ships in the 银河 for better Multiplayer. My first guess is that this will turn out to be around a 6.5."
+        description="该AI特别聪明，但经济上弱得多。目标是让游戏仍然有挑战性，同时保持银河中更少的舰船以便更好地进行多人游戏。我的初步估计是会大约在6.5左右。"
   >
   </record>
     <record name="ModSupportPowerfulBadger"
@@ -272,7 +272,7 @@ Implementation note: The default Hunter/守望者 settings for this is Difficult
        BaseBunkerSpawnInterval="1800"
        BaseBunkerStrengthMultiplier="1.0"
        number_of_ten_minute_increments_before_homeworld_is_fully_defensible="60"
-       description="This AI is particularly smart, though much weaker economically. The goal is to allow for a still challenging game, while keeping fewer ships in the 银河 for better Multiplayer. This AI makes up for fewer ships overall by going to higher 标记等级 early, and by strong responses to hacks and counterattacks. My guess is this will turn out around a 7.5"
+        description="该AI特别聪明，但经济上弱得多。目标是让游戏仍然有挑战性，同时保持银河中更少的舰船以便更好地进行多人游戏。该AI通过较早到达更高标记等级以及对入侵和反击的强烈响应来弥补整体舰船数量的不足。我的估计是会大约在7.5左右"
   >
   </record>
 
@@ -363,7 +363,7 @@ Implementation note: The default Hunter/守望者 settings for this is Difficult
        BaseBunkerSpawnInterval="1800"
        BaseBunkerStrengthMultiplier="1.0"
        number_of_ten_minute_increments_before_homeworld_is_fully_defensible="60"
-       description="This AI Difficulty is economomically around a 6, but it has some extra sneaky aspects, like early unlocking of wormhole invasions. Its ships will join the hunter more quickly, and be more cautious. They also really like killing 金属发生器."
+        description="该AI难度在经济上大约相当于6，但它有一些额外的狡猾特性，比如较早解锁虫洞入侵。它的舰船会更快加入猎手，并且更加谨慎。它们也非常喜欢击杀金属发生器。"
   >
   </record>
   <record name="ModSupportCoreBadget"
@@ -453,7 +453,7 @@ Implementation note: The default Hunter/守望者 settings for this is Difficult
        BaseBunkerSpawnInterval="1800"
        BaseBunkerStrengthMultiplier="1.0"
        number_of_ten_minute_increments_before_homeworld_is_fully_defensible="60"
-       description="The AI is weak economically (around a 5), but will climb through the 标记等级 very quickly. They really hate command stations."
+        description="该AI经济上很弱（大约5左右），但会非常迅速地攀升标记等级。它们极其厌恶指挥站。"
   >
   </record>
   <record name="ModSupportShark"
@@ -543,7 +543,7 @@ Implementation note: The default Hunter/守望者 settings for this is Difficult
        BaseBunkerSpawnInterval="1800"
        BaseBunkerStrengthMultiplier="1.0"
        number_of_ten_minute_increments_before_homeworld_is_fully_defensible="60"
-       description="This AI difficulty has an extremely strong shark response, and larger border aggression and 黑客 response. Has half the income of a 7."
+        description="该AI难度拥有极强的鲨鱼响应，以及更强的边境侵略和入侵响应。收入仅为7级的一半。"
   >
   </record>
 
@@ -632,7 +632,7 @@ Implementation note: The default Hunter/守望者 settings for this is Difficult
        shark_b2_base_strength_per_command_station="35000"
        shark_b2_bonus_strength_per_aip="600"
        number_of_ten_minute_increments_before_homeworld_is_fully_defensible="18"
-       description="This AI Difficulty has a ton of income, but has a lot of its intelligence knobs turned down. Think of it as a Difficulty 10 AI that has had a few drinks."
+        description="该AI难度拥有大量收入，但许多智能控制被调低了。可以把它想象成一个喝了几杯的难度10 AI。"
        >
   </record>
 
@@ -723,7 +723,7 @@ Implementation note: The default Hunter/守望者 settings for this is Difficult
        BaseBunkerSpawnInterval="1800"
        BaseBunkerStrengthMultiplier="1.0"
        number_of_ten_minute_increments_before_homeworld_is_fully_defensible="60"
-       description="This AI has all the intelligence knobs turned up but the income turned down. In addition, it leans heavily into exogalactic war ships"
+        description="该AI将所有智能控制调到了最高但收入调低了。此外，它极大地偏向河外战争舰船"
   >
   </record>
 

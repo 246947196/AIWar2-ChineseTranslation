@@ -3,7 +3,7 @@
 
   <record name="Lone"
           display_name="孤狼"
-          description="One officer exists at the start of the game and only one officer is in play at a time."
+          description="游戏开始时存在一名军官，且同时只有一名军官在场。"
           budget_spawnofficer_initialbudget="30"
           budget_spawnofficer_interval="5"
           budget_spawnofficer_income="1"
@@ -17,7 +17,7 @@
 
   <record name="Crescendo"
           display_name="渐强"
-          description="One officer exists at the start of the game but more join over time up to a maximum of three."
+          description="游戏开始时存在一名军官，随时间推移更多军官加入，最多三名。"
           budget_spawnofficer_initialbudget="30"
           budget_spawnofficer_interval="5"
           budget_spawnofficer_income="1"
@@ -31,7 +31,7 @@
 
   <record name="Full"
           display_name="满"
-          description="All officers exist at the start of the game."
+          description="游戏开始时所有军官均已存在。"
           budget_spawnofficer_initialbudget="1000"
           budget_spawnofficer_interval="5"
           budget_spawnofficer_income="1"

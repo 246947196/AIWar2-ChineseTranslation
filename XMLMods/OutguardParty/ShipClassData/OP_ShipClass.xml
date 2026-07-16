@@ -2,7 +2,7 @@
 <root>
 
 	<ship_class_data 
-						name="HackerShipClass" display_name="黑客舰船类型" short_name="黑客" copy_from="DefaultShipClass"
+						name="HackerShipClass" display_name="入侵舰船类型" short_name="入侵" copy_from="DefaultShipClass"
 						can_be_damaged="false"
 						>
 	</ship_class_data>

@@ -43,9 +43,9 @@
           emergency_repair_priority_if_below_percentage="90"
 	  display_name="Dyson Coalition Headquarters"
 	  display_name_for_sidebar="Dyson HQ"
-	  description="The command center of the 戴森 Coalition; This is a small dyson sphere.
+	  description="戴森联盟的指挥中心；这是一个小型戴森球。
 
-           Losing this will end the game."
+           失去它将导致游戏失败。"
 	  player_loses_if_any_die="true"
 	  starting_mark_level="Markless"
 	  cost_for_ai_to_purchase="200"
@@ -71,7 +71,7 @@
   <entity name="SidekickDysonCoalitionHQ" copy_from="DysonCoalitionHQ"
   	  player_loses_if_any_die="false"
           tags="ShowsOnNormalDisplayMode,DysonKing,TransportDestination,DysonSidekickKing"
-          description="The command center of the 戴森 Coalition; You don't want to lose this. This is a place where 运输船 can drop of their 坤迪亚."
+          description="戴森联盟的指挥中心；你不想失去它。这里是运输船可以卸载坤迪亚的地方。"
           aip_on_death="0"
           >
     <metal_flow purpose="SelfConstruction" throughput="2500"/>
@@ -88,7 +88,7 @@
 	  shield_size_scale="5"
 	  display_name="Forcefield Generator"
 	  display_name_for_sidebar="Forcefield"
-	  description="Protects nearby ships and 建筑. Units protected by this will deal half the usual damage.  Slightly mobile, and thus vulnerable to being moved by ships with the Norris Effect."
+	  description="保护附近的舰船和建筑。受其保护的单位造成的伤害减半。略有移动性，因此容易被具有诺里斯效应的舰船推动。"
 	  behavior="Stationary"
 	  voice_group="Turret"
           moves_back_after_being_norrised="true"
@@ -128,11 +128,11 @@
             y_offset_of_icon="30"
             collision_priority="810"
 	    display_name="Dyson Shipyard" display_name_for_sidebar="Shipyard"
-	    description="This facility is responsible for additional construction and support of 戴森 craft, from escorts up to capital ships.  
+	    description="此设施负责戴森舰船的额外建造与支援，从护卫舰到主力舰。
 
-Shipyards also function as repair centers.
+船坞同时也充当维修中心。
 
-For Flagships in Auto-Defend Mode, if there are no battles they will patrol between shipyards."
+对于自动防御模式下的旗舰，如果没有战斗，它们会在船坞之间巡逻。"
             starting_mark_level="Markless" 
             cost_for_ai_to_purchase="10000" strength_multiplier="0"   
             hull_points="150000" shield_points="300000" speed="Immobile"
@@ -173,7 +173,7 @@ For Flagships in Auto-Defend Mode, if there are no battles they will patrol betw
             y_offset_of_icon="30"
             collision_priority="810"
 	    display_name="Dyson Repair Center" display_name_for_sidebar="D Repair Cntr"
-	    description="This facility provides rapid repair for friendly damaged ships."
+	    description="此设施为受损友军舰船提供快速维修。"
             starting_mark_level="Markless" 
             cost_for_ai_to_purchase="10000" strength_multiplier="0"   
             hull_points="150000" shield_points="300000" speed="Immobile"
@@ -198,9 +198,9 @@ For Flagships in Auto-Defend Mode, if there are no battles they will patrol betw
             y_offset_of_icon="30"
             collision_priority="810"
 	    display_name="Science Generator" display_name_for_sidebar="Science Gen"
-	    description="This facility uses vast quantities of energy to generate 科技 for the 戴森球. The 戴森's enemies feed on the resonance, growing stronger.
+	    description="此设施消耗大量能量为戴森球生产科技。戴森的敌人会汲取共振能量而变得更强。
 
-These 建筑 are unique to the 尖塔."
+这些建筑为尖塔专属。"
             starting_mark_level="Mark1" tech_upgrades_that_benefit_me="DysonEconomy"
             cost_for_ai_to_purchase="10000" strength_multiplier="0"   
             hull_points="150000" shield_points="300000" speed="Immobile"
@@ -227,7 +227,7 @@ These 建筑 are unique to the 尖塔."
       <entity name="MinorDysonScienceGenerator"
               copy_from="DysonScienceGenerator"
               tags="DysonBuildMenu,DysonScienceGenerator,DysonResourceGenerator,DysonZenithBuildMenuOnly"
-              description="This facility uses vast quantities of energy to generate 科技 for the 戴森球. The 戴森's enemies feed on the resonance, growing stronger.
+              description="此设施消耗大量能量为戴森球生产科技。戴森的敌人会汲取共振能量而变得更强。
 
 科技发生器 built on 天顶 要塞 have a lower cap."
               base_ship_cap_in_custom_city="1"
@@ -238,7 +238,7 @@ These 建筑 are unique to the 尖塔."
       <entity name="MinorDysonMetalGenerator"
               copy_from="DysonMetalGenerator"
               tags="DysonBuildMenu,DysonMetalGenerator,DysonResourceGenerator,DysonZenithBuildMenuOnly"
-              description="This facility uses vast quantities of energy to generate 金属 for the 戴森球. The 戴森's enemies feed on the resonance, growing stronger.
+              description="此设施消耗大量能量为戴森球生产金属。戴森的敌人会汲取共振能量而变得更强。
 
 金属发生器 built on 天顶 要塞 have a lower cap."
               base_ship_cap_in_custom_city="1"
@@ -259,9 +259,9 @@ These 建筑 are unique to the 尖塔."
             y_offset_of_icon="30"
             collision_priority="810"
 	    display_name="Metal Generator" display_name_for_sidebar="Metal Gen"
-	    description="This facility uses vast quantities of energy to generate 金属 for the 戴森球 Construction (and also for general empire maintenance). The 戴森's enemies feed on the resonance, growing stronger.
+	    description="此设施消耗大量能量为戴森球生产金属 Construction (and also for general empire maintenance)。戴森的敌人会汲取共振能量而变得更强。
 
-These 建筑 are unique to the 奈祖尔."
+这些建筑为奈祖尔专属。"
             starting_mark_level="Mark1" tech_upgrades_that_benefit_me="DysonEconomy"
             cost_for_ai_to_purchase="10000" strength_multiplier="0"   
             hull_points="150000" shield_points="300000" speed="Immobile"
@@ -298,7 +298,7 @@ These 建筑 are unique to the 奈祖尔."
             y_offset_of_icon="30"
             collision_priority="810"
 	    display_name="Hacking Generator" display_name_for_sidebar="Hacking Gen"
-	    description="This facility uses vast quantities of energy to generate 黑客 for the 戴森球. The 戴森's enemies feed on the resonance, growing stronger"
+	    description="此设施消耗大量能量为戴森球生产入侵. The 戴森's enemies feed on the resonance, growing stronger"
             starting_mark_level="Mark1" tech_upgrades_that_benefit_me="DysonEconomy"
             cost_for_ai_to_purchase="10000" strength_multiplier="0"   
             hull_points="150000" shield_points="300000" speed="Immobile"
@@ -337,7 +337,7 @@ These 建筑 are unique to the 奈祖尔."
             y_offset_of_icon="30"
             collision_priority="810"
 	    display_name="Cuendillar Generator" display_name_for_sidebar="Cuend Gen"
-	    description="This facility uses vast quantities of energy to generate 坤迪亚 for the 戴森 Sidekick. The 戴森's enemies feed on the resonance, growing stronger. Using a 坤迪亚 generator will provoke a very strong response, so drilling planets is often a safer idea."
+	    description="This facility uses vast quantities of energy to generate 坤迪亚 for the 戴森 Sidekick。戴森的敌人会汲取共振能量而变得更强。 Using a 坤迪亚 generator will provoke a very strong response, so drilling planets is often a safer idea."
             starting_mark_level="Mark1" tech_upgrades_that_benefit_me="DysonEconomy"
             cost_for_ai_to_purchase="10000" strength_multiplier="0"   
             hull_points="150000" shield_points="300000" speed="Immobile"
@@ -380,11 +380,11 @@ These 建筑 are unique to the 奈祖尔."
               build_sidebar_categories_i_am_part_of="DysonDrills"
 	      display_name="Dyson Planetary Drill"
 	      display_name_for_sidebar="Plantery Drill"
-	      description="Contributed to the cause by the 天顶, this planet drill will dismantle the planet, generating vast amounts of 坤迪亚. These are shipped via 运输船 to a safe location (your HQ or a nearby Sphere).
+	      description="由天顶贡献的此行星钻机将拆解该行星，产生大量坤迪亚。这些资源通过运输船运往安全地点（你的总部或附近的球体）。
 
-While drilling, you will face attacks by 收割者. Once the drilling ends, the planet will be 被掠夺 and will lose many of its 资源. Once 被掠夺, a planet can no longer be overloaded.
+钻探期间，你会遭受收割者的攻击。钻探结束后，行星将被掠夺并失去许多资源。被掠夺后，行星不可再进行过载。
 
-You must have a 天顶 要塞 in the 银河 to use this drill. You cannot drill a planet with a 要塞 or Sphere, since you would destroy them by drilling."
+你必须拥有天顶要塞才能使用此钻机。不能在有要塞或球体的行星上钻探，因为钻探会摧毁它们。"
 	      starting_mark_level="Mark1" tech_upgrades_that_benefit_me="DysonDrill"
 	      cost_for_ai_to_purchase="74900" blocks_ceasefire_on_planet="true"
 	      hull_points="400000" shield_points="600000" speed="Immobile"	
@@ -413,9 +413,9 @@ You must have a 天顶 要塞 in the 银河 to use this drill. You cannot drill 
           is_scrapping_by_player_disallowed="false"
 	  display_name_for_sidebar="Minor Drill"
           never_leaves_remains="true"
-	  description="Contributed to the cause by the 天顶, this small miner will mine small local 建筑 like a 坤迪亚 小行星 or 收割者 蛹. The 资源 produced are shipped via 运输船 to a safe location (your HQ or a nearby Sphere).
+	  description="由天顶贡献的此小型矿机将开采当地小型建筑，如坤迪亚小行星或收割者蛹。产出的资源通过运输船运往安全地点（你的总部或附近的球体）。
 
-While drilling, you will face attacks by 收割者. If an 小行星 or 蛹 is mined of all 坤迪亚, it will vanish."
+钻探期间，你会遭受收割者的攻击。如果小行星或蛹中的坤迪亚被开采殆尽，它就会消失。"
           >
   </entity>
 
@@ -438,11 +438,11 @@ While drilling, you will face attacks by 收割者. If an 小行星 or 蛹 is mi
               never_leaves_remains="true"
 	      display_name="Dyson Planetary Overloader"
 	      display_name_for_sidebar="Dyson Overloader"
-	      description="Contributed to the cause by the 天顶, this 钻机 has been specially modified. Instead of collecting the 资源 of the dismantled planet, the Miner use those 资源 to create an enormously powerful explosion. This will destroy the planet, removing it from the 银河.
+	      description="由天顶贡献的此钻机经过特殊改造。不再收集被拆解行星的资源，矿机利用这些资源产生极其强大的爆炸，摧毁行星并将其从银河中移除。
 
-When the drilling is finished there will be an AIP increase and the planet will be removed from the 银河 (so make sure not to drill planets you really care about, and to get your important ships off).
+钻探结束后将增加AIP，行星将从银河中移除（所以请确保不要钻探你真正关心的行星，并将重要舰船撤离）。
 
-You must have a 天顶 要塞 in the 银河 to use this drill. You cannot drill a planet with a 要塞 or Sphere, since you would destroy them by drilling."
+你必须拥有天顶要塞才能使用此钻机。不能在有要塞或球体的行星上钻探，因为钻探会摧毁它们。"
 	      starting_mark_level="Mark1" tech_upgrades_that_benefit_me="DysonDrill" 
 	      cost_for_ai_to_purchase="74900" blocks_ceasefire_on_planet="true"
 	      hull_points="3000000" shield_points="9000000" speed="Immobile"	
@@ -496,11 +496,11 @@ You must have a 天顶 要塞 in the 银河 to use this drill. You cannot drill 
               build_sidebar_categories_i_am_part_of="DysonSphere"
 	      display_name="Zenith Dyson Sphere"
 	      display_name_for_sidebar="Zenith Sphere"
-	      description="This 戴森球 is under construction! It will produce a 旗舰 that will automatically assist you in combat.
+	      description="此戴森球正在建设中！它将生产一艘旗舰自动协助你战斗。
 
-Once at mark 7 the full power of the sphere will come online after a period of time; when that happens it will upgrade the 旗舰 and produces an army of golems to assist you in battle. It will also severely reduce the 收割者 forces in subsequent attacks.
+达到7级后，球体的全部力量将在一段时间后上线；届时将升级旗舰并生产一支魔像军团协助你战斗。它还将大幅削弱收割者在后续进攻中的兵力。
 
-Surviving the AI and 收割者 alliance that will attack you during the final upgrade process will be a challenge though."
+不过，在最终升级过程中，AI与收割者的联盟攻击将是一个严峻的挑战。"
 	      starting_mark_level="Mark1" tech_upgrades_that_benefit_me="DysonSphereWeapon" does_not_use_multipliers_from_mark_level="true"
 	      cost_for_ai_to_purchase="74900" blocks_ceasefire_on_planet="true"
 	      hull_points="500000" shield_points="300000" speed="Immobile"
@@ -540,14 +540,14 @@ Surviving the AI and 收割者 alliance that will attack you during the final up
   <entity name="DysonSidekickZenithSphereOnline" copy_from="DysonSidekickZenithSphere"
           build_sidebar_categories_i_am_part_of="None"
           tags="DysonSidekickSphere,ShowsOnNormalDisplayMode,TransportDestination,ZenithSidekickSphere"
-	  description="This 戴森球 fully online. It supports a very powerful 旗舰 to automatically aid you in combat, and produces small 魔像 to aid you in your battles."
+	  description="此戴森球已完全上线。它支持一艘非常强大的旗舰自动协助战斗，并生产小型魔像助你作战。"
               >
 </entity>
 
   <entity name="DysonSidekickSpireSphereOnline" copy_from="DysonSidekickSpireSphere"
           build_sidebar_categories_i_am_part_of="None"
           tags="DysonSidekickSphere,ShowsOnNormalDisplayMode,TransportDestination,SpireSidekickSphere"
-	      description="This 戴森球 fully online. It supports a very powerful 旗舰 to automatically aid you in combat, and produces small 魔像 to aid you in your battles."
+	      description="此戴森球已完全上线。它支持一艘非常强大的旗舰自动协助战斗，并生产小型魔像助你作战。"
               >
 </entity>
 
@@ -570,7 +570,7 @@ Surviving the AI and 收割者 alliance that will attack you during the final up
 	    collision_priority="100"
 	    display_name="Zenith Sphere Flagship"
             display_name_for_sidebar="Z S Flagship"
-	    description="This great 天顶 serpent is spawned to help defend the 戴森球. It is not directly controlled by the player, but will fight automatically. It uses a powerful 腐蚀 attack to weaken its enemies hulls."
+	    description="这条巨大的天顶级蛇被生成以协助保卫戴森球。玩家无法直接控制，但会自动战斗。它使用强力的腐蚀攻击削弱敌方船体。"
 	    starting_mark_level="Mark1"
             tech_upgrades_that_benefit_me="DysonSphereWeapon"
             seconds_to_fully_regenerate_hull="600"
@@ -619,7 +619,7 @@ Surviving the AI and 收割者 alliance that will attack you during the final up
             display_name="Zenith Sphere Devastator"
             display_name_for_sidebar="Z S Devastator"
 	    hull_points="9000000" shield_points="800000" speed="High"
-            description="This great 天顶 serpent is spawned to help defend the 戴森球. Now at it's highest power level, it is a fearsome combatant indeed. It is not directly controlled by the player, but will fight automatically. It uses a powerful 腐蚀 attack to weaken its enemies hulls."
+            description="这条巨大的天顶级蛇被生成以协助保卫戴森球。达到最高功率等级后，它确实是一个可怕的战斗者。玩家无法直接控制，但会自动战斗。它使用强力的腐蚀攻击削弱敌方船体。"
             >
       <system name="R1" display_name="Serpents Venom"
 	      category="Weapon" firing_timing="OnlyInRange"
@@ -650,7 +650,7 @@ Surviving the AI and 收割者 alliance that will attack you during the final up
             display_name="Spire Sphere Flagship"
             display_name_for_sidebar="S S Flagship"
 
-            description="This great 尖塔 serpent is spawned to help defend the 戴森球. It is not directly controlled by the player, but will fight automatically. It uses a powerful 腐蚀 attack to weaken its enemies hulls."
+            description="这条巨大的尖塔级蛇被生成以协助保卫戴森球。玩家无法直接控制，但会自动战斗。它使用强力的腐蚀攻击削弱敌方船体。"
             size_scale="11"
 	    visuals_scale_multiplier="2" y_offset_of_ship_in_visual_space="5"
             >
@@ -662,7 +662,7 @@ Surviving the AI and 收割者 alliance that will attack you during the final up
             display_name="Spire Sphere Devastator"
             display_name_for_sidebar="S S Devastator"
 	    hull_points="8000000" shield_points="800000" speed="High"
-            description="This great 尖塔 serpent is spawned to help defend the 戴森球. Now at it's highest power level, it is a fearsome combatant indeed. It is not directly controlled by the player, but will fight automatically. It uses a powerful 腐蚀 attack to weaken its enemies hulls."
+            description="这条巨大的尖塔级蛇被生成以协助保卫戴森球。达到最高功率等级后，它确实是一个可怕的战斗者。玩家无法直接控制，但会自动战斗。它使用强力的腐蚀攻击削弱敌方船体。"
             >
       <system name="R1" display_name="Serpents Venom"
 	      category="Weapon" firing_timing="OnlyInRange"
@@ -698,9 +698,9 @@ Surviving the AI and 收割者 alliance that will attack you during the final up
             display_name="HQ Flagship"
             display_name_for_sidebar="HQ Flagship"
 
-description="This is a 旗舰 deployed by the 戴森 HQ. This is much weaker than the much larger 旗舰 you will get for a full 戴森球.
+description="这是由戴森总部部署的旗舰。它比完整戴森球提供的更大旗舰要弱得多。
 
-It is not directly controlled by the player, but will fight automatically. It uses a powerful 腐蚀 attack to weaken its enemies hulls."
+玩家无法直接控制，但会自动战斗。它使用强力的腐蚀攻击削弱敌方船体。"
 
             hull_points="2000000" shield_points="500000" speed="High"
 
@@ -740,9 +740,9 @@ It is not directly controlled by the player, but will fight automatically. It us
             display_name="HQ Devastator"
             display_name_for_sidebar="HQ Devastator"
 
-description="This is a 旗舰 deployed by the 戴森 HQ. Greatly empowered due to the strength of your other spheres.
+description="这是由戴森总部部署的旗舰。由于你其他球体的力量而大幅增强。
 
-It is not directly controlled by the player, but will fight automatically. It uses a powerful 腐蚀 attack to weaken its enemies hulls."
+玩家无法直接控制，但会自动战斗。它使用强力的腐蚀攻击削弱敌方船体。"
 
             hull_points="3000000" shield_points="800000" speed="High"
 
@@ -787,7 +787,7 @@ It is not directly controlled by the player, but will fight automatically. It us
 	  visuals_scale_multiplier="1.0"
 	  display_name="Dyson Armored Golem"
 	  display_name_for_sidebar="D Armor GOL"
-	  description="This very durable 魔像 is a much smaller version of the giant Armored 魔像 of the current era, but they can be produced very quickly."
+	  description="这款非常耐久的魔像是当代巨装甲魔像的小型版本，但它们可以非常快速地生产。"
           description_appender_dll="AIWarExternalCode"
 	  description_appender_type="Arcen.AIW2.External.DysonSidekickDescriptionAppender"
 	  starting_mark_level="Markless"
@@ -838,7 +838,7 @@ It is not directly controlled by the player, but will fight automatically. It us
 	  visuals_scale_multiplier="7.0"
 	  display_name="Dyson Artillery Golem"
 	  display_name_for_sidebar="D Artlry GOL"
-	  description="This fragile 魔像 is a much smaller version of the giant Artillery 魔像 of the current era, but they can be produced very quickly."
+	  description="这个脆弱的魔像是当代巨炮兵魔像的小型版本，但它们可以非常快速地生产。"
           description_appender_dll="AIWarExternalCode"
 	  description_appender_type="Arcen.AIW2.External.DysonSidekickDescriptionAppender"
 	  starting_mark_level="Markless"
@@ -890,7 +890,7 @@ It is not directly controlled by the player, but will fight automatically. It us
 	  visuals_scale_multiplier="1.0"
 	  display_name="Dyson Cursed Golem"
 	  display_name_for_sidebar="D Cursed GOL"
-	  description="This long-range, paralysing 魔像 is a much smaller version of the giant Cursed 魔像 of the current era, but they can be produced very quickly."
+	  description="这个远程麻痹魔像是当代巨诅咒魔像的小型版本，但它们可以非常快速地生产。"
           description_appender_dll="AIWarExternalCode"
 	  description_appender_type="Arcen.AIW2.External.DysonSidekickDescriptionAppender"
 	  starting_mark_level="Markless"
@@ -936,7 +936,7 @@ It is not directly controlled by the player, but will fight automatically. It us
 	  visuals_scale_multiplier="7.0"
 	  display_name="Dyson Retribution Golem"
 	  display_name_for_sidebar="D Retr GOL"
-	  description="This 魔像 with a powerful retribution effect is a much smaller version of the giant Retribution 魔像 of the current era, but they can be produced very quickly."
+	  description="这个拥有强力复仇效果的魔像是当代复仇魔像的小型版本，但它们可以非常快速地生产。"
           description_appender_dll="AIWarExternalCode"
 	  description_appender_type="Arcen.AIW2.External.DysonSidekickDescriptionAppender"
 	  starting_mark_level="Markless"
@@ -989,7 +989,7 @@ It is not directly controlled by the player, but will fight automatically. It us
 	  visuals_scale_multiplier="7.0"
 	  display_name="Dyson Raijin Golem"
 	  display_name_for_sidebar="D Raijin GOL"
-	  description="This 魔像 with a powerful lightning weapon is a much smaller version of the giant Raijin 魔像 of the current era, but they can be produced very quickly."
+	  description="这个拥有强力闪电武器的魔像是当代雷神魔像的小型版本，但它们可以非常快速地生产。"
           description_appender_dll="AIWarExternalCode"
 	  description_appender_type="Arcen.AIW2.External.DysonSidekickDescriptionAppender"
 	  starting_mark_level="Markless"
@@ -1055,7 +1055,7 @@ It is not directly controlled by the player, but will fight automatically. It us
 	  visuals_scale_multiplier="4.6"
 	  display_name="Dyson Frenzy Golem"
 	  display_name_for_sidebar="D Frenzy GOL"
-	  description="This 魔像 with a ramping weapon is a much smaller version of the giant Frenzy 魔像 of the current era, but they can be produced very quickly."
+	  description="这个拥有递增伤害武器的魔像是当代狂怒魔像的小型版本，但它们可以非常快速地生产。"
           description_appender_dll="AIWarExternalCode"
 	  description_appender_type="Arcen.AIW2.External.DysonSidekickDescriptionAppender"
 	  starting_mark_level="Markless"
@@ -1195,7 +1195,7 @@ It is not directly controlled by the player, but will fight automatically. It us
            collision_priority="800"
 	   display_name="Cuendillar Asteroid"
            display_name_for_sidebar="C Asteroid"
-	   description="This chunk of wreckage can be drilled to produce 坤迪亚"
+	   description="这块残骸可以钻探以产出坤迪亚"
 	   behavior="Stationary"
 	   starting_mark_level="Mark1" max_mark_level="5" tech_upgrades_that_benefit_me="Unused"		
 	   cost_for_ai_to_purchase="3000"

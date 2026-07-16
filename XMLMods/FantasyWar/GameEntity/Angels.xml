@@ -56,7 +56,7 @@
         collision_priority="8000"
 	    display_name="基路伯"
 		display_name_for_sidebar="基路伯"
-	    description="This weak holy creature spreads a harmonic aura allowing other Cherubs to increase their damage. Carries a weapon made to deal with other strikecraft. Deployed by the Heavenly realm to destroy all evil in the galaxy."
+	    description="这个弱小的圣洁生物散发出和谐光环，允许其他基路伯增加伤害。携带专为对付其他打击飞行器而设计的武器。由天堂领域部署，以消灭银河系中的所有邪恶。"
 		starting_mark_level="Mark1"  tech_upgrades_that_benefit_me="Unused"
 		cost_for_ai_to_purchase="100000"		
 		hull_points="300" shield_points="6000" speed="AboveAverage1"
@@ -93,9 +93,9 @@
 	    size_scale="1.2"
 			visuals_scale_multiplier="4.8"
         collision_priority="8000"
-	    display_name="Mortal Order Priest"
+	    display_name="凡人秩序祭司"
 		display_name_for_sidebar="祭司"
-	    description="A mortal on the brink of ascendance, it uses its own health to regenerate its allies on the brink of death. Deployed by the Heavenly realm to destroy all evil in the galaxy."
+	    description="处于升华边缘的凡人，使用自身生命值来再生濒临死亡的盟友。由天堂领域部署，以消灭银河系中的所有邪恶。"
 		starting_mark_level="Mark1"  tech_upgrades_that_benefit_me="Unused"
 		cost_for_ai_to_purchase="100000"		
 		hull_points="16000" shield_points="0" speed="Normal1"
@@ -133,9 +133,9 @@
 	    size_scale="2.4"
 			visuals_scale_multiplier="10.2"
         collision_priority="8000"
-	    display_name="Mortal Order Zealot"
+	    display_name="凡人秩序狂热者"
 		display_name_for_sidebar="狂热者"
-	    description="A mortal going down the path of good with great conviction. The Zealot uses melee weaponry that deals bonus damage to armored enemies. Deployed by the Heavenly realm to destroy all evil in the galaxy."
+	    description="一名怀着坚定信念走上正义之路的凡人。狂热者使用近战武器，对装甲敌人造成额外伤害。由天堂领域部署，以消灭银河系中的所有邪恶。"
 		starting_mark_level="Mark1"  tech_upgrades_that_benefit_me="Unused"
 		cost_for_ai_to_purchase="100000"		
 		hull_points="600" shield_points="12000" speed="Normal1"
@@ -180,7 +180,7 @@
         collision_priority="8000"
 	    display_name="下级天使"
 		display_name_for_sidebar="L 级天使"
-	    description="The Lesser Angel is an elite unit protected mostly by advanced shielding, with a very fragile hull and armor, but that is immune to weapon jamming. Deployed by the Heavenly realm to destroy all evil in the galaxy."
+	    description="下级天使是主要由先进护盾保护的精英单位，船体和装甲非常脆弱，但免疫武器干扰。由天堂领域部署，以消灭银河系中的所有邪恶。"
 		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
 		cost_for_ai_to_purchase="100000"		
 		hull_points="5000" shield_points="100000" speed="AboveAverage4"
@@ -201,7 +201,7 @@
 				necromancer_science_to_grant_on_death="3"
 				necromancer_hacking_to_grant_on_death="0"
 				/>
-		<system name="W1" display_name="Lesser Soul Siphon"
+		<system name="W1" display_name="下级灵魂虹吸"
 				category="Weapon" firing_timing="OnlyInRange"
 				damage_per_shot="33" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"				
 				shot_type_data="FusionBolt" cloaking_percent_loss_from_firing="0.1"
@@ -210,7 +210,7 @@
 				>
 			<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="PersonalShieldOnly" comparison_type="AtLeast" compared_to="1" multiplier="10" />	
 		</system>
-		<system name="W2" display_name="Lesser Holy Lance"
+		<system name="W2" display_name="下级圣枪"
 				category="Weapon" firing_timing="OnlyInRange"
 				damage_per_shot="4000" range="Normal2" shot_speed="Normal" rate_of_fire="Low" fires_salvos_sequentially="false"
 				shot_type_data="HeavyBeamInvisible"
@@ -234,9 +234,9 @@
 			visuals_scale_multiplier="5.8"
 			y_offset_of_icon="15"
         collision_priority="8000"
-	    display_name="Adjucator Order Lesser Angel"
-		display_name_for_sidebar="A Lesser Angel"
-	    description="The Lesser Angel is an elite unit protected mostly by advanced shielding, with a very fragile hull and armor, but that is immune to weapon jamming. Deployed by the Heavenly realm to destroy all evil in the galaxy."
+	    display_name="审判秩序下级天使"
+		display_name_for_sidebar="A 下级天使"
+	    description="下级天使是主要由先进护盾保护的精英单位，船体和装甲非常脆弱，但免疫武器干扰。由天堂领域部署，以消灭银河系中的所有邪恶。"
 		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
 		cost_for_ai_to_purchase="100000"		
 		hull_points="5000" shield_points="100000" speed="AboveAverage4"
@@ -257,7 +257,7 @@
 				necromancer_science_to_grant_on_death="3"
 				necromancer_hacking_to_grant_on_death="0"
 				/>
-		<system name="W1" display_name="Lesser Soul Siphon"
+		<system name="W1" display_name="下级灵魂虹吸"
 				category="Weapon" firing_timing="OnlyInRange"
 				damage_per_shot="33" range="ExtremelyHigh" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"				
 				shot_type_data="FusionBolt" cloaking_percent_loss_from_firing="0.1"
@@ -266,7 +266,7 @@
 				>
 			<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="PersonalShieldOnly" comparison_type="AtLeast" compared_to="1" multiplier="10" />	
 		</system>
-		<system name="W2" display_name="Lesser Angelic Railcannon"
+		<system name="W2" display_name="下级天使轨道炮"
 				category="Weapon" firing_timing="OnlyInRange"
 				damage_per_shot="500" range="ExtremelyHigh" shot_speed="VeryFast" rate_of_fire="Normal" fires_salvos_sequentially="false"
 				shot_type_data="ExtremeLongRangeRailgun"
@@ -287,9 +287,9 @@
 	  visuals_scale_multiplier="9"
 	  y_offset_of_icon="16"
         collision_priority="8000"
-	    display_name="Custodian Order Lesser Angel"
-		display_name_for_sidebar="C Lesser Angel"
-	    description="The Lesser Angel is an elite unit protected mostly by advanced shielding, with a very fragile hull and armor, but that is immune to weapon jamming. Deployed by the Heavenly realm to destroy all evil in the galaxy."
+	    display_name="监护秩序下级天使"
+		display_name_for_sidebar="C 下级天使"
+	    description="下级天使是主要由先进护盾保护的精英单位，船体和装甲非常脆弱，但免疫武器干扰。由天堂领域部署，以消灭银河系中的所有邪恶。"
 		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
 		cost_for_ai_to_purchase="100000"		
 		shield_size_scale="5" my_forcefield_does_not_shrink="true" my_forcefield_has_no_penalty_for_enemies_firing_out_of_it="true"
@@ -311,7 +311,7 @@
 				necromancer_science_to_grant_on_death="3"
 				necromancer_hacking_to_grant_on_death="0"
 				/>
-		<system name="W1" display_name="Lesser Soul Siphon"
+		<system name="W1" display_name="下级灵魂虹吸"
 				category="Weapon" firing_timing="OnlyInRange"
 				damage_per_shot="33" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"				
 				shot_type_data="FusionBolt" cloaking_percent_loss_from_firing="0.1"
@@ -320,7 +320,7 @@
 				>
 			<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="PersonalShieldOnly" comparison_type="AtLeast" compared_to="1" multiplier="10" />	
 		</system>
-		<system name="W2" display_name="Lesser Holy Lance"
+		<system name="W2" display_name="下级圣枪"
 				category="Weapon" firing_timing="OnlyInRange"
 				damage_per_shot="1000" range="Normal2" shot_speed="Normal" rate_of_fire="Low" fires_salvos_sequentially="false"
 				shot_type_data="HeavyBeamInvisible"
@@ -345,9 +345,9 @@
 			visuals_scale_multiplier="6.1"
 			y_offset_of_icon="15"
         collision_priority="8000"
-	    display_name="Radiant Order Lesser Angel"
-		display_name_for_sidebar="R Lesser Angel"
-	    description="The Lesser Angel is an elite unit protected mostly by advanced shielding, with a very fragile hull and armor, but that is immune to weapon jamming. Deployed by the Heavenly realm to destroy all evil in the galaxy."
+	    display_name="光辉秩序下级天使"
+		display_name_for_sidebar="R 下级天使"
+	    description="下级天使是主要由先进护盾保护的精英单位，船体和装甲非常脆弱，但免疫武器干扰。由天堂领域部署，以消灭银河系中的所有邪恶。"
 		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
 		cost_for_ai_to_purchase="100000"		
 		hull_points="5000" shield_points="100000" speed="AboveAverage4"
@@ -368,7 +368,7 @@
 				necromancer_science_to_grant_on_death="3"
 				necromancer_hacking_to_grant_on_death="0"
 				/>
-		<system name="W1" display_name="Lesser Soul Siphon"
+		<system name="W1" display_name="下级灵魂虹吸"
 				category="Weapon" firing_timing="OnlyInRange"
 				damage_per_shot="33" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"				
 				shot_type_data="FusionBolt" cloaking_percent_loss_from_firing="0.1"
@@ -377,7 +377,7 @@
 				>
 			<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="PersonalShieldOnly" comparison_type="AtLeast" compared_to="1" multiplier="10" />	
 		</system>
-		<system name="R1" display_name="Angelic Micro Rockets"
+		<system name="R1" display_name="天使微型火箭"
 				category="Weapon" firing_timing="OnlyInRange"
 				damage_per_shot="120" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Normal"
 				shots_per_salvo="15" fires_salvos_sequentially="false"
@@ -386,7 +386,7 @@
 				>
 			<outgoing_damage_modifier based_on="CurrentHullPercentage" comparison_type="LessThan" compared_to="35" multiplier="5" />
 		</system>
-		<system name="Q4" display_name="Lesser Brasier Lance"
+		<system name="Q4" display_name="下级炽热长枪"
 				category="Weapon" firing_timing="OnlyInRange"
 				damage_per_shot="5000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Low" fires_salvos_sequentially="false"
 				shot_type_data="HeavyBeamInvisible"
@@ -411,9 +411,9 @@
 		visuals_scale_multiplier="3"
 		y_offset_of_icon="16"
         collision_priority="8000"
-	    display_name="Dismissal Order Lesser Angel"
-		display_name_for_sidebar="D Lesser Angel"
-	    description="The Lesser Angel is an elite unit protected mostly by advanced shielding, with a very fragile hull and armor, but that is immune to weapon jamming. Deployed by the Heavenly realm to destroy all evil in the galaxy."
+	    display_name="驱逐秩序下级天使"
+		display_name_for_sidebar="D 下级天使"
+	    description="下级天使是主要由先进护盾保护的精英单位，船体和装甲非常脆弱，但免疫武器干扰。由天堂领域部署，以消灭银河系中的所有邪恶。"
 		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
 		cost_for_ai_to_purchase="100000"		
 		hull_points="5000" shield_points="100000" speed="AboveAverage4"
@@ -434,7 +434,7 @@
 				necromancer_science_to_grant_on_death="3"
 				necromancer_hacking_to_grant_on_death="0"
 				/>
-		<system name="W1" display_name="Lesser Soul Siphon"
+		<system name="W1" display_name="下级灵魂虹吸"
 				category="Weapon" firing_timing="OnlyInRange"
 				damage_per_shot="33" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"				
 				shot_type_data="FusionBolt" cloaking_percent_loss_from_firing="0.1"
@@ -473,9 +473,9 @@
 		regenerates_dying_ships_at_this_health_cost_ratio="10"
 		will_not_regenerate_dying_ships_if_health_below_this_percentage="0.2"
 		seconds_to_fully_regenerate_hull="180"
-	    display_name="Mortal Order Saint"
+	    display_name="凡人秩序圣徒"
 		display_name_for_sidebar="圣徒"
-	    description="Mortals oftentime serve the Heavenly Realm and obtain recognition for their deeds. This is such a case, where a mortal was elevated to the status of Saint among the Mortal Order. Uses its own hull to regenerate allies and has a powerful paralysis beam, able to paralyse strikecraft."
+	    description="凡人经常为天堂领域服务，并因其所行而获得认可。这便是这样一个案例，一位凡人在凡人秩序中被提升为圣徒。使用自身船体来再生盟友，并拥有强大的麻痹光束，能够麻痹打击飞行器。"
 		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
 		cost_for_ai_to_purchase="100000"		
 		hull_points="300000" shield_points="0" speed="Normal1"
@@ -494,7 +494,7 @@
 				necromancer_science_to_grant_on_death="3"
 				necromancer_hacking_to_grant_on_death="0"
 				/>
-		<system name="W1" display_name="Paralysis Fan Beam"
+		<system name="W1" display_name="麻痹扇形光束"
 				category="Weapon" firing_timing="OnlyInRange" damage_per_shot="200" range="Normal3" shot_speed="Normal" rate_of_fire="FairlyLow" shot_type_data="HeavyBeamInvisible" beam_length_multiplier="1" hits_all_intersecting_targets="true" shots_detonate_immediately="true" maximum_number_of_targets_hit_per_shot="5" 
 				number_beams_to_fire="4" beam_weapon_visual_style="Lightning_Gold" degrees_offset_per_beam="1"
 				base_paralysis_seconds_per_shot="6" paralysis_to_ships_mass_tx_less_than="2"				>
@@ -516,7 +516,7 @@
         collision_priority="8000"
 	    display_name="天使"
 		display_name_for_sidebar="天使"
-	    description="A celestial being of immense strength, the Angel sports extensive shielding and fearsome weapons. It is immune to weapon jamming and devour. Deployed by the Heavenly realm to destroy all evil in the galaxy."
+	    description="天使是一种拥有强大力量的天界存在，拥有广泛的护盾和可怕的武器。免疫武器干扰和吞噬。由天堂领域部署，以消灭银河系中的所有邪恶。"
 		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
 		cost_for_ai_to_purchase="100000"		
 		hull_points="150000" shield_points="3000000" speed="AboveAverage1"
@@ -557,7 +557,7 @@
                 is_coilbeam="true"	
 				>  
 		</system>
-		<system name="T" display_name="Incredible Tachyon Array"
+		<system name="T" display_name="惊人快子阵列"
 				category="Passive" tachyon_points="25" tachyon_range="EssentiallyInfinite" tachyon_hits_albedo_less_than="0.85"
 				>
 		</system>
@@ -574,9 +574,9 @@
 			visuals_scale_multiplier="9"
 			y_offset_of_icon="30"
         collision_priority="8000"
-	    display_name="Adjucator Order Angel"
+	    display_name="审判秩序天使"
 		display_name_for_sidebar="A 级天使"
-	    description="A celestial being of immense strength, the Angel sports extensive shielding and fearsome weapons. It is immune to weapon jamming and devour. Deployed by the Heavenly realm to destroy all evil in the galaxy."
+	    description="天使是一种拥有强大力量的天界存在，拥有广泛的护盾和可怕的武器。免疫武器干扰和吞噬。由天堂领域部署，以消灭银河系中的所有邪恶。"
 		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
 		cost_for_ai_to_purchase="100000"		
 		hull_points="150000" shield_points="3000000" speed="AboveAverage1"
@@ -606,7 +606,7 @@
 				>
 			<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="PersonalShieldOnly" comparison_type="AtLeast" compared_to="1" multiplier="10" />	
 		</system>
-		<system name="W2" display_name="Angelic Railcannon"
+		<system name="W2" display_name="天使轨道炮"
 				category="Weapon" firing_timing="OnlyInRange"
 				damage_per_shot="2500" range="ExtremelyHigh" shot_speed="VeryFast" rate_of_fire="Normal" fires_salvos_sequentially="false"
 				shot_type_data="ExtremeLongRangeRailgun"
@@ -627,9 +627,9 @@
 	  visuals_scale_multiplier="13"
 	  y_offset_of_icon="16"
         collision_priority="8000"
-	    display_name="Custodian Order Angel"
+	    display_name="监护秩序天使"
 		display_name_for_sidebar="C 级天使"
-	    description="A celestial being of immense strength, the Angel sports extensive shielding and fearsome weapons. It is immune to weapon jamming and devour. Deployed by the Heavenly realm to destroy all evil in the galaxy."
+	    description="天使是一种拥有强大力量的天界存在，拥有广泛的护盾和可怕的武器。免疫武器干扰和吞噬。由天堂领域部署，以消灭银河系中的所有邪恶。"
 		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
 		shield_size_scale="5" my_forcefield_does_not_shrink="true" my_forcefield_has_no_penalty_for_enemies_firing_out_of_it="true"
 		cost_for_ai_to_purchase="100000"		
@@ -685,9 +685,9 @@
 			visuals_scale_multiplier="9.4"
 			y_offset_of_icon="15"
         collision_priority="8000"
-	    display_name="Radiant Order Angel"
+	    display_name="光辉秩序天使"
 		display_name_for_sidebar="R 级天使"
-	    description="A celestial being of immense strength, the Angel sports extensive shielding and fearsome weapons. It is immune to weapon jamming and devour. Deployed by the Heavenly realm to destroy all evil in the galaxy."
+	    description="天使是一种拥有强大力量的天界存在，拥有广泛的护盾和可怕的武器。免疫武器干扰和吞噬。由天堂领域部署，以消灭银河系中的所有邪恶。"
 		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
 		cost_for_ai_to_purchase="100000"		
 		hull_points="150000" shield_points="3000000" speed="AboveAverage1"
@@ -717,7 +717,7 @@
 				>
 			<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="PersonalShieldOnly" comparison_type="AtLeast" compared_to="1" multiplier="10" />	
 		</system>
-		<system name="R1" display_name="Archon Micro Rockets"
+		<system name="R1" display_name="执政官微型火箭"
 				category="Weapon" firing_timing="OnlyInRange"
 				damage_per_shot="1200" range="AboveAverage2" shot_speed="Normal" rate_of_fire="Normal"
 				shots_per_salvo="30" fires_salvos_sequentially="false"
@@ -751,9 +751,9 @@
 			visuals_scale_multiplier="4.5"
 			y_offset_of_icon="20"
         collision_priority="8000"
-	    display_name="Dismissal Order Angel"
+	    display_name="驱逐秩序天使"
 		display_name_for_sidebar="D 级天使"
-	    description="A celestial being of immense strength, the Angel sports extensive shielding and fearsome weapons. It is immune to weapon jamming and devour. Deployed by the Heavenly realm to destroy all evil in the galaxy."
+	    description="天使是一种拥有强大力量的天界存在，拥有广泛的护盾和可怕的武器。免疫武器干扰和吞噬。由天堂领域部署，以消灭银河系中的所有邪恶。"
 		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
 		cost_for_ai_to_purchase="100000"		
 		hull_points="150000" shield_points="3000000" speed="AboveAverage1"
@@ -783,7 +783,7 @@
 				>
 			<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="PersonalShieldOnly" comparison_type="AtLeast" compared_to="1" multiplier="10" />	
 		</system>
-		<system name="Q4" display_name="Angelic Spider Cannon"
+		<system name="Q4" display_name="天使蜘蛛炮"
 				category="Weapon" firing_timing="OnlyInRange"
 				damage_per_shot="600" shots_per_salvo="60" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="false"
 				base_engine_stun_per_shot="12" engine_stun_to_engine_gx_less_than="14"
@@ -791,7 +791,7 @@
 				shot_type_data="EngineDisruptingShell"
 				>
 		</system>
-		<system name="WG" display_name="Angelic Gravitic Cannon"
+		<system name="WG" display_name="天使引力炮"
 				category="Weapon" firing_timing="OnlyInRange"
 				damage_per_shot="6000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Devourer"
 				shot_type_data="ElegantCurl"
@@ -814,9 +814,9 @@
 		regenerates_dying_ships_at_this_health_cost_ratio="10"
 		will_not_regenerate_dying_ships_if_health_below_this_percentage="0.2"
 		seconds_to_fully_regenerate_hull="180"
-	    display_name="Mortal Order Prophet"
+	    display_name="凡人秩序先知"
 		display_name_for_sidebar="先知"
-	    description="The most illustrious of mortals are promoted to be Prophets, and give counsel to the angels of various orders. Uses its own hull to regenerate allies and has a powerful paralysis beam, able to paralyse strikecraft alongside guardians."
+	    description="最杰出的凡人被提升为先知，为各秩序的天使提供建议。使用自身船体再生盟友，并拥有强大的麻痹光束，能够麻痹打击飞行器和守护者。"
 		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
 		cost_for_ai_to_purchase="100000"		
 		hull_points="6000000" shield_points="0" speed="Normal1"
@@ -844,7 +844,7 @@
 				>
 			<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="PersonalShieldOnly" comparison_type="AtLeast" compared_to="1" multiplier="10" />	
 		</system>
-		<system name="W2" display_name="Paralysis Fan Beam"
+		<system name="W2" display_name="麻痹扇形光束"
 				category="Weapon" firing_timing="OnlyInRange" damage_per_shot="1000" range="AboveAverage5" shot_speed="Normal" rate_of_fire="FairlyLow" shot_type_data="HeavyBeamInvisible" beam_length_multiplier="1" hits_all_intersecting_targets="true" shots_detonate_immediately="true" maximum_number_of_targets_hit_per_shot="20" 
 				number_beams_to_fire="6" beam_weapon_visual_style="Lightning_Gold" degrees_offset_per_beam="1"
 				base_paralysis_seconds_per_shot="12" paralysis_to_ships_mass_tx_less_than="5.1"				>
@@ -886,7 +886,7 @@
         collision_priority="8000"
 	    display_name="大天使"
 		display_name_for_sidebar="大天使"
-	    description="The pinnacle of what lies in the Heavenly Realms, Archangels are powerful beyond measure and wield weapons as exotic as they are deadly. Furthermore, they are immune to all ailments, and finally, act as a portal for units to warp in. Deployed by the Heavenly realm to destroy all evil in the galaxy."
+	    description="天堂领域的巅峰所在，大天使拥有无法估量的力量，挥舞着既奇特又致命的武器。此外，它们对所有疾病免疫，并作为单位的传送门入口。由天堂领域部署，以消灭银河系中的所有邪恶。"
 		starting_mark_level="Markless" tech_upgrades_that_benefit_me="Unused"
 		cost_for_ai_to_purchase="100000"		
 		hull_points="3000000" shield_points="60000000" speed="AboveAverage1"
@@ -907,7 +907,7 @@
 				necromancer_science_to_grant_on_death="500"
 				necromancer_hacking_to_grant_on_death="0"
 				/>
-		<system name="W3" display_name="Archon Soul Siphon"
+		<system name="W3" display_name="执政官灵魂虹吸"
           category="Weapon" firing_timing="OnlyInRange"
           damage_per_shot="50000" range="High2" shot_speed="Slow" rate_of_fire="Devourer" fires_salvos_sequentially="true"
           shot_type_data="PlasmaTorpedoAOEBurstAtEnd"
@@ -917,7 +917,7 @@
 		  health_change_per_damage_dealt="3"
 				>
 		</system>
-		<system name="W2" display_name="Archon Holy Lance"
+		<system name="W2" display_name="执政官圣枪"
 				category="Weapon" firing_timing="OnlyInRange"
 				damage_per_shot="400000" range="High2" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="false"
 				shot_type_data="HeavyBeamInvisible"
@@ -936,7 +936,7 @@
 				>  
 			<outgoing_damage_modifier based_on="MaxHull" comparison_type="MultiplesOf" compared_to="180" multiplier="1" />			
 		</system>
-		<system name="T" display_name="Incredible Tachyon Array"
+		<system name="T" display_name="惊人快子阵列"
 				category="Passive" tachyon_points="25" tachyon_range="EssentiallyInfinite" tachyon_hits_albedo_less_than="0.85"
 				>
 		</system>
@@ -956,7 +956,7 @@
         collision_priority="8000"
 	    display_name="审判秩序大天使 '马尔杜克'" 
 		display_name_for_sidebar="A 级大天使"
-	    description="The pinnacle of what lies in the Heavenly Realms, Archangels are powerful beyond measure and wield weapons as exotic as they are deadly. Furthermore, they are immune to all ailments. Deployed by the Heavenly realm to destroy all evil in the galaxy."
+	    description="天堂领域的巅峰所在，大天使拥有无法估量的力量，挥舞着既奇特又致命的武器。此外，它们对所有疾病免疫。由天堂领域部署，以消灭银河系中的所有邪恶。"
 		starting_mark_level="Markless" tech_upgrades_that_benefit_me="Unused"
 		cost_for_ai_to_purchase="100000"		
 		hull_points="3000000" shield_points="12000000" speed="AboveAverage1"
@@ -980,7 +980,7 @@
 				necromancer_science_to_grant_on_death="1000"
 				necromancer_hacking_to_grant_on_death="0"
 				/>
-		<system name="W3" display_name="Archon Soul Siphon"
+		<system name="W3" display_name="执政官灵魂虹吸"
           category="Weapon" firing_timing="OnlyInRange"
           damage_per_shot="10000" range="ExtremelyHigh" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="true"
           shot_type_data="DevourerShot"
@@ -990,7 +990,7 @@
 				>
 				<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="PersonalShieldOnly" comparison_type="AtLeast" compared_to="1" multiplier="10" />	
 		</system>
-		<system name="W2" display_name="Archon Railcannon"
+		<system name="W2" display_name="执政官轨道炮"
 				category="Weapon" firing_timing="OnlyInRange"
 				damage_per_shot="6000" range="ExtremelyHigh" shot_speed="VeryFast" rate_of_fire="High" fires_salvos_sequentially="false"
 				shot_type_data="ExtremeLongRangeRailgun"
@@ -1016,7 +1016,7 @@
 			<outgoing_damage_modifier based_on="MaxHull" comparison_type="MultiplesOf" compared_to="100" multiplier="1" />			
 			<outgoing_damage_modifier based_on="mass_tx" comparison_type="MultiplesOf" compared_to="5" multiplier="-0.25" />				
 		</system>
-		<system name="T" display_name="Incredible Tachyon Array"
+		<system name="T" display_name="惊人快子阵列"
 				category="Passive" tachyon_points="25" tachyon_range="EssentiallyInfinite" tachyon_hits_albedo_less_than="0.85"
 				>
 		</system>
@@ -1036,7 +1036,7 @@
         collision_priority="8000"
 	    display_name="监护秩序大天使 '守护者'"
 		display_name_for_sidebar="C 级大天使"
-	    description="The pinnacle of what lies in the Heavenly Realms, Archangels are powerful beyond measure and wield weapons as exotic as they are deadly. Furthermore, they are immune to all ailments. Deployed by the Heavenly realm to destroy all evil in the galaxy."
+	    description="天堂领域的巅峰所在，大天使拥有无法估量的力量，挥舞着既奇特又致命的武器。此外，它们对所有疾病免疫。由天堂领域部署，以消灭银河系中的所有邪恶。"
 		starting_mark_level="Markless" tech_upgrades_that_benefit_me="Unused"
 		cost_for_ai_to_purchase="100000"		
 		hull_points="6000000" shield_points="24000000" speed="AboveAverage1"
@@ -1061,7 +1061,7 @@
 				necromancer_science_to_grant_on_death="1000"
 				necromancer_hacking_to_grant_on_death="0"
 				/>
-		<system name="W3" display_name="Archon Soul Siphon"
+		<system name="W3" display_name="执政官灵魂虹吸"
 			  category="Weapon" firing_timing="OnlyInRange"
 			  damage_per_shot="10000" range="High2" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="true"
 			  shot_type_data="DevourerShot"
@@ -1071,7 +1071,7 @@
 				>
 			<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="PersonalShieldOnly" comparison_type="AtLeast" compared_to="1" multiplier="10" />	
 		</system>
-		<system name="W2" display_name="Archon Holy Lance"
+		<system name="W2" display_name="执政官圣枪"
 				category="Weapon" firing_timing="OnlyInRange"
 				damage_per_shot="80000" range="High2" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="false"
 				shot_type_data="HeavyBeamInvisible"
@@ -1082,7 +1082,7 @@
                 is_coilbeam="true"	
 				>  
 		</system>
-		<system name="T" display_name="Incredible Tachyon Array"
+		<system name="T" display_name="惊人快子阵列"
 				category="Passive" tachyon_points="25" tachyon_range="EssentiallyInfinite" tachyon_hits_albedo_less_than="0.85"
 				>
 		</system>
@@ -1118,7 +1118,7 @@ FlakShotAOEBurstAtEnd
         collision_priority="8000"
 	    display_name="光辉秩序大天使 '凤凰'"
 		display_name_for_sidebar="P 级大天使"
-	    description="The pinnacle of what lies in the Heavenly Realms, Archangels are powerful beyond measure and wield weapons as exotic as they are deadly. Furthermore, they are immune to all ailments. Deployed by the Heavenly realm to destroy all evil in the galaxy."
+	    description="天堂领域的巅峰所在，大天使拥有无法估量的力量，挥舞着既奇特又致命的武器。此外，它们对所有疾病免疫。由天堂领域部署，以消灭银河系中的所有邪恶。"
 		starting_mark_level="Markless" tech_upgrades_that_benefit_me="Unused"
 		cost_for_ai_to_purchase="100000"		
 		hull_points="3000000" shield_points="12000000" speed="AboveAverage1"
@@ -1143,7 +1143,7 @@ FlakShotAOEBurstAtEnd
 				necromancer_science_to_grant_on_death="1000"
 				necromancer_hacking_to_grant_on_death="0"
 				/>
-		<system name="W3" display_name="Archon Soul Explosion"
+		<system name="W3" display_name="执政官灵魂爆炸"
 			  category="Weapon" firing_timing="OnlyInRange"
 			  damage_per_shot="500000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="false"
 			  area_of_effect_size="8000"	
@@ -1153,7 +1153,7 @@ FlakShotAOEBurstAtEnd
 			  health_change_per_damage_dealt="3"
 				>
 		</system>
-		<system name="Q4" display_name="Archon Brasier Explosion"
+		<system name="Q4" display_name="执政官炽热爆炸"
 				category="Weapon" firing_timing="OnlyInRange"
 				damage_per_shot="1000000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="false"
 				area_of_effect_size="8000"				
@@ -1166,7 +1166,7 @@ FlakShotAOEBurstAtEnd
 				all_damage_is_corrosive="true"
 				>
 		</system>
-		<system name="T" display_name="Incredible Tachyon Array"
+		<system name="T" display_name="惊人快子阵列"
 				category="Passive" tachyon_points="25" tachyon_range="EssentiallyInfinite" tachyon_hits_albedo_less_than="0.85"
 				>
 		</system>
@@ -1186,7 +1186,7 @@ FlakShotAOEBurstAtEnd
         collision_priority="8000"
 	    display_name="驱逐秩序大天使 '驱逐'"
 		display_name_for_sidebar="大天使 D"
-	    description="The pinnacle of what lies in the Heavenly Realms, Archangels are powerful beyond measure and wield weapons as exotic as they are deadly. Furthermore, they are immune to all ailments, and finally, act as a portal for units to warp in. Deployed by the Heavenly realm to destroy all evil in the galaxy."
+	    description="天堂领域的巅峰所在，大天使拥有无法估量的力量，挥舞着既奇特又致命的武器。此外，它们对所有疾病免疫，并作为单位的传送门入口。由天堂领域部署，以消灭银河系中的所有邪恶。"
 		starting_mark_level="Markless" tech_upgrades_that_benefit_me="Unused"
 		cost_for_ai_to_purchase="100000"		
 		hull_points="3000000" shield_points="12000000" speed="AboveAverage1"
@@ -1210,7 +1210,7 @@ FlakShotAOEBurstAtEnd
 				necromancer_science_to_grant_on_death="1000"
 				necromancer_hacking_to_grant_on_death="0"
 				/>
-		<system name="W3" display_name="Archon Soul Siphon"
+		<system name="W3" display_name="执政官灵魂虹吸"
 			  category="Weapon" firing_timing="OnlyInRange"
 			  damage_per_shot="10000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="true"
 			  shot_type_data="DevourerShot"
@@ -1220,7 +1220,7 @@ FlakShotAOEBurstAtEnd
 				>
 			<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="PersonalShieldOnly" comparison_type="AtLeast" compared_to="1" multiplier="10" />	
 		</system>
-		<system name="Q4" display_name="Archon Spider Cannon"
+		<system name="Q4" display_name="执政官蜘蛛炮"
 				category="Weapon" firing_timing="OnlyInRange"
 				damage_per_shot="600" shots_per_salvo="40" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="false"
 				base_engine_stun_per_shot="24" engine_stun_to_engine_gx_less_than="18"
@@ -1230,7 +1230,7 @@ FlakShotAOEBurstAtEnd
 				aoe_spreads_damage_among_available_targets="true"	
 				>
 		</system>
-		<system name="Q3" display_name="Dismissal Cannon"
+		<system name="Q3" display_name="驱逐炮"
 				category="Weapon" firing_timing="OnlyInRange"
 				damage_per_shot="10000" shots_per_salvo="20" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"
 				shot_type_data="EngineDisruptingShell"
@@ -1240,7 +1240,7 @@ FlakShotAOEBurstAtEnd
 				>
 				<outgoing_damage_modifier based_on="CurrentSpeedIfMoving" comparison_type="LessThan" compared_to="200" multiplier="10" />
 		</system>
-		<system name="WG" display_name="Archon Gravitic Cannon"
+		<system name="WG" display_name="执政官引力炮"
 				category="Weapon" firing_timing="OnlyInRange"
 				damage_per_shot="12000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Devourer"
 				shot_type_data="ElegantCurl"
@@ -1252,7 +1252,7 @@ FlakShotAOEBurstAtEnd
 		<outgoing_damage_modifier based_on="engine_gx" comparison_type="AtLeast" compared_to="18" multiplier="10" />	
 		</system>
 		
-		<system name="T" display_name="Incredible Tachyon Array"
+		<system name="T" display_name="惊人快子阵列"
 				category="Passive" tachyon_points="25" tachyon_range="EssentiallyInfinite" tachyon_hits_albedo_less_than="0.85"
 				>
 		</system>
@@ -1297,7 +1297,7 @@ FlakShotAOEBurstAtEnd
 				necromancer_science_to_grant_on_death="0"
 				necromancer_hacking_to_grant_on_death="50"
 				/>
-		<system name="T" display_name="Incredible Tachyon Array"
+		<system name="T" display_name="惊人快子阵列"
 				category="Passive" tachyon_points="25" tachyon_range="EssentiallyInfinite" tachyon_hits_albedo_less_than="0.85"
 				>
 		</system>
@@ -1315,7 +1315,7 @@ FlakShotAOEBurstAtEnd
 			visuals_scale_multiplier="5"
 			y_offset_of_icon="50"
 			collision_priority="810"
-			description="The Throne is a portal able to bring forth defensive and offensive reinforcements from the Heavenly Realms to this galaxy at certain intervals."
+			description="王座是一个传送门，能够按特定间隔从天堂领域向此银河系派遣防御和进攻性增援。"
 			behavior="Stationary"
 			starting_mark_level="Mark1"
 			cost_for_ai_to_purchase="100000"
@@ -1337,7 +1337,7 @@ FlakShotAOEBurstAtEnd
 				necromancer_science_to_grant_on_death="0"
 				necromancer_hacking_to_grant_on_death="6"
 				/>
-		<system name="T" display_name="Incredible Tachyon Array"
+		<system name="T" display_name="惊人快子阵列"
 				category="Passive" tachyon_points="25" tachyon_range="EssentiallyInfinite" tachyon_hits_albedo_less_than="0.85"
 				>
 		</system>
@@ -1354,7 +1354,7 @@ FlakShotAOEBurstAtEnd
 			visuals_scale_multiplier="5"
 			y_offset_of_icon="50"
 			collision_priority="810"
-			description="The Throne is a portal able to bring forth reinforcements from the Heavenly Realm to this galaxy. It is currently warping"
+			description="王座是一个传送门，能够从天堂领域向此银河系派遣增援。正在传送中"
 			behavior="Stationary"
 			starting_mark_level="Mark1"
 			cost_for_ai_to_purchase="100000"
@@ -1371,7 +1371,7 @@ FlakShotAOEBurstAtEnd
 	</entity>
 	
 	<!-- Defenses -->
-	<entity name="HeavenHeavenlyHowitzer" display_name="Heavenly Howitzer" display_name_for_sidebar="H 榴弹炮"
+	<entity name="HeavenHeavenlyHowitzer" display_name="天堂榴弹炮" display_name_for_sidebar="H 榴弹炮"
 	        thematic_groups="Hidden,VeryMinorAliens"
 			tags="HeavenDefensiveStructure,HeavenInvulnerabilityGrant,InvulnerabilityGranter"
 			visuals="Assets/_DLC2/Zenith/ZAStativa/ZAStativa.prefab" visuals_bundle="exp2_zenith_onslaught"
@@ -1381,7 +1381,7 @@ FlakShotAOEBurstAtEnd
 			size_scale="5"
 			visuals_scale_multiplier="22"
 			collision_priority="1000"
-			description="A powerful turret built to deal with crowds of ships at long range."
+			description="一台强大的炮塔，专为远距离对付大量舰船而建。"
             never_leaves_remains="true"
 			behavior="Stationary"	
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused" 			
@@ -1405,7 +1405,7 @@ FlakShotAOEBurstAtEnd
 			</system>  
     </entity>
   
-    <entity name="HeavenHeavenlyPunisher" display_name="Heavenly Punisher" display_name_for_sidebar="H 惩罚者"
+    <entity name="HeavenHeavenlyPunisher" display_name="天堂惩罚者" display_name_for_sidebar="H 惩罚者"
 	        thematic_groups="Hidden,VeryMinorAliens"
 			tags="HeavenDefensiveStructure,HeavenInvulnerabilityGrant,InvulnerabilityGranter"
 			visuals="Assets/_DLC2/Zenith/ZANavalia/ZANavalia.prefab" visuals_bundle="exp2_zenith_onslaught"
@@ -1415,7 +1415,7 @@ FlakShotAOEBurstAtEnd
 			size_scale="5"
 			visuals_scale_multiplier="30"
 			collision_priority="1000"
-			description="A powerful turret made to inflict heavy damage on enemies with large hulls."
+			description="一台强大的炮塔，旨在对拥有大船体的敌人造成沉重伤害。"
 			behavior="Stationary"			
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused" 
 			cost_for_ai_to_purchase="150"			
@@ -1428,7 +1428,7 @@ FlakShotAOEBurstAtEnd
 			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
 			priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable"
 			>
-			<system name="WT" display_name="Burst Mass Driver"
+			<system name="WT" display_name="爆发质量炮"
 				category="Weapon" firing_timing="OnlyInRange"
 				damage_per_shot="10000" range="High2" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"
 				shot_type_data="Sabot"	 
@@ -1438,7 +1438,7 @@ FlakShotAOEBurstAtEnd
 			</system>
 	</entity>
 	
-    <entity name="HeavenFatefulDispatcher" display_name="Fateful Dispatcher" display_name_for_sidebar="F 调度员"
+    <entity name="HeavenFatefulDispatcher" display_name="命运调度员" display_name_for_sidebar="F 调度员"
 	        thematic_groups="Hidden,VeryMinorAliens"
 			tags="HeavenDefensiveStructure,HeavenInvulnerabilityGrant,InvulnerabilityGranter"
 			visuals="Assets/_DLC2/Zenith/ZAPhrourion/ZAPhrourion.prefab" visuals_bundle="exp2_zenith_onslaught"
@@ -1448,7 +1448,7 @@ FlakShotAOEBurstAtEnd
 			size_scale="5"
 			visuals_scale_multiplier="20"
 			collision_priority="1000"
-			description="A turret built to quickly dispatch those who cannot espace fate. Useful in tandem with tractors, but otherwise often found lacking."
+			description="一座专为快速处理无法逃脱命运者的炮塔。与牵引装置配合使用时很有用，但单独使用时常显不足。"
 			behavior="Stationary"		
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused" 			
 			cost_for_ai_to_purchase="150" strength_multiplier="1.2"			
@@ -1461,7 +1461,7 @@ FlakShotAOEBurstAtEnd
 			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
 			priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable"
 			>
-			<system name="W1" display_name="Tracking Rockets"
+			<system name="W1" display_name="追踪火箭"
 					category="Weapon" firing_timing="OnlyInRange"
 					damage_per_shot="500" range="Planetary" shot_speed="Normal" rate_of_fire="Misery"
 					shots_per_salvo="30" fires_salvos_sequentially="false"
@@ -1471,7 +1471,7 @@ FlakShotAOEBurstAtEnd
 			</system>
     </entity>
 	
-    <entity name="HeavenHeavenlyPerimeter" display_name="Heavenly Perimeter" display_name_for_sidebar="H 周界"
+    <entity name="HeavenHeavenlyPerimeter" display_name="天堂周界" display_name_for_sidebar="H 周界"
 	        thematic_groups="Hidden,VeryMinorAliens"
 	  tags="HeavenDefensiveStructure,HeavenInvulnerabilityGrant,InvulnerabilityGranter"
 			visuals="Assets/_DLC2/Zenith/ZAStratopedon/ZAStratopedon.prefab" visuals_bundle="exp2_zenith_onslaught"
@@ -1481,7 +1481,7 @@ FlakShotAOEBurstAtEnd
 			size_scale="5"
 			visuals_scale_multiplier="160"
 			collision_priority="1000"
-			description="A turret made to knockback others out of a designated range. Also disables engines for some time."
+			description="一座用于将敌人击退出指定范围的炮塔。同时使引擎失效一段时间。"
 			behavior="Stationary"		
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused" 
 			cost_for_ai_to_purchase="150" strength_multiplier="1.2"			
@@ -1494,7 +1494,7 @@ FlakShotAOEBurstAtEnd
 			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
 			priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable"
 			>
-			<system name="R7" display_name="Providential Push"
+			<system name="R7" display_name="天意推动"
 					category="Weapon" firing_timing="OnlyInRange"
 					damage_per_shot="400" range="AboveAverage2" shot_speed="Normal" rate_of_fire="VeryLow" 
 					shots_per_salvo="20" fires_salvos_sequentially="false"
@@ -1507,7 +1507,7 @@ FlakShotAOEBurstAtEnd
 	</entity>
 	
 	<!-- Utility structures -->
-	<entity name="HeavenHeavenlyTractorArray" display_name="Heavenly Tractor Array" display_name_for_sidebar="H Tractor Array" npc_ship_cap_type="SpecialDefenses"
+	<entity name="HeavenHeavenlyTractorArray" display_name="天堂牵引阵列" display_name_for_sidebar="H 牵引阵列" npc_ship_cap_type="SpecialDefenses"
 	        thematic_groups="Zenith,Architrave,OtherDefense"
 			tags="HeavenUtilityStructure,HeavenInvulnerabilityGrant,InvulnerabilityGranter"
 			visuals="Assets/_DLC2/Zenith/ZATractorArray/ZATractorArray.prefab" visuals_bundle="exp2_zenith_onslaught"
@@ -1538,7 +1538,7 @@ FlakShotAOEBurstAtEnd
   </entity>
   
   
-    <entity name="HeavenHeavenlyGravityGenerator" display_name="Heavenly Gravity Generator" display_name_for_sidebar="H 引力发生器" npc_ship_cap_type="SpecialDefenses"
+    <entity name="HeavenHeavenlyGravityGenerator" display_name="天堂引力发生器" display_name_for_sidebar="H 引力发生器" npc_ship_cap_type="SpecialDefenses"
 	        thematic_groups="Zenith,Architrave,OtherDefense"
 			tags="HeavenUtilityStructure,HeavenInvulnerabilityGrant,InvulnerabilityGranter"
 			visuals="Assets/_DLC2/Zenith/ZAFocusedGravityGen/ZAFocusedGravityGen.prefab" visuals_bundle="exp2_zenith_onslaught"
@@ -1547,7 +1547,7 @@ FlakShotAOEBurstAtEnd
 			category="Ship"
 			size_scale="5"
 			visuals_scale_multiplier="100"
-			description="Slows down hostile ships in an area around itself."
+			description="减缓其周围区域内的敌方舰船速度。"
 			behavior="Stationary"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused" 
 			cost_for_ai_to_purchase="500"
@@ -1577,7 +1577,7 @@ FlakShotAOEBurstAtEnd
 			size_scale="5"
 			visuals_scale_multiplier="30"
 			collision_priority="1000"
-			description="This peculiar turret turns enemies into allies through the power of faith."
+			description="这座独特的炮塔通过信仰的力量将敌人转化为盟友。"
 			behavior="Stationary"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused" 			
 			cost_for_ai_to_purchase="300" strength_multiplier="2.2"			

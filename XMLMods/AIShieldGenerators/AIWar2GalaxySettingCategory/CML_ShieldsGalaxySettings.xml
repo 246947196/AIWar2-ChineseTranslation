@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <root>
-	<setting_category name="ShieldGenerators" display_name="AI护盾发生器s"
-      description="Settings related to AI护盾发生器s."/>
+	<setting_category name="ShieldGenerators" display_name="AI护盾发生器"
+      description="与AI护盾发生器相关的设置。"/>
 
 </root>

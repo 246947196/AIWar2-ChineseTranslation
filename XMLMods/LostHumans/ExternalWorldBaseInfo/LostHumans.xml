@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
-  <item name="LostHumansBaseInfo" dll_name="LostHumansBaseInfo" type_name="SK.LostHumans.LostHumansBaseInfo" />
+  <item name="失散人类BaseInfo" dll_name="失散人类BaseInfo" type_name="SK.失散人类.失散人类BaseInfo" />
 </root>

@@ -3,45 +3,45 @@
 
   <galaxy_setting category="DysonSidekick" name="DysonAutoDefend" display_name="Auto-Defend Mode" changeable_during_gameplay="true"
                   type="CustomDropdownArbitraryOptions" arbitrary_options="Disabled,Defense Only,Full Assistance" default_option="Disabled"
-        description="You can opt into having your dyson fleets fight automatically. The 戴森 Fleets will assist you (or other allied factions), but it will not attack enemy planets or targets on its own.
+        description="你可以选择让你的戴森舰队自动作战。戴森舰队将协助你（或其他结盟派系），但不会自行攻击敌方星球或目标。
 
-Audo-Defend mode is automatically disabled if a player is controlling the faction; this makes it more efficient to control as a sidekick.
+如果玩家正在控制该派系，自动防御模式将自动禁用；这使得作为Sidekick控制时更加高效。
 
-Defense Only will mean that the 戴森's fleets will not go to enemy planets. Full Assistance allows them to join you in enemy territory.
+仅防御意味着戴森舰队不会前往敌方星球。全面协助允许它们随你进入敌方领土。
 
-Flagships in Auto-Defend mode will patrol between your Shipyards when there are no battles to help in.
+没有战斗需要协助时，处于自动防御模式的旗舰将在你的船坞之间巡逻。
 
-Note: If you are setting your 旗舰 to Auto-Defend Mode, you will probably want to make sure they are in pursuit mode.
+注意：如果你将旗舰设置为自动防御模式，你很可能需要确保它们处于追击模式。
 
-This allows for the 戴森 Sidekick to act as a 'Vassal' to some other player faction, helping automatically in combat/acting to defend your planets. Another player can then swap using F4 to the sidekick periodically to make economic choices."/>
+这使得戴森Sidekick可以作为其他玩家派系的「附庸」，自动协助战斗/防御你的星球。其他玩家可以通过F4切换到Sidekick来周期性地做出经济选择。"/>
 
   <galaxy_setting category="DysonSidekick"  name="BoringDysonNames" display_name="Strongholds Named After Planets" type="BoolToggle" 
                   default="false" changeable_during_gameplay="true"
-                  description="When this is enabled, new strongholds and their 旗舰 will be named after their planets, instead of having thematic names" >
+                  description="启用此选项后，新的要塞及其旗舰将以它们所在的星球命名，而不是使用主题名称" >
   </galaxy_setting>
 
   <galaxy_setting category="DysonSidekick"  name="ReaperRapidSpawn" display_name="Debug: Spawn some Reaper attacks much more often" type="BoolToggle" 
                   default="false" changeable_during_gameplay="true"
-                  description="The 收割者 will attack much more often. You will die quickly, this is for debugging/testing." >
+                  description="收割者将更频繁地发动攻击。你会很快死亡，这仅用于调试/测试。" >
   </galaxy_setting>
 
   <!-- Necromancer -->
   <galaxy_setting category="Necromancer"  name="BonusElderlings" display_name="Spawn Additional Elderlings" type="BoolToggle" 
                   default="false" changeable_during_gameplay="true"
-                  description="There will be more elderlings, and they will level up faster. The goal is to allow the player more access to 精华. This is a lesser version of Challenger Elderlings, and can stack with it to make the Elderlings extra fearsome" 
+                  description="将会有更多的远古者，且它们升级更快。目标是让玩家更容易获取精华。这是挑战者远古者的较弱版本，可以叠加使远古者更加可怕" 
                   optional_dll_name="AIWarExternalCode" optional_type_name="Arcen.AIW2.External.GalaxySetting_Necromancer"
                   >
   </galaxy_setting>
 
   <galaxy_setting category="Necromancer"  name="ShieldTemplar" display_name="Shield Templar" type="BoolToggle" 
                   default="false" changeable_during_gameplay="true"
-                  description="The templar will focus more heavily on defensive power, but be less powerful on the attack." 
+                  description="圣殿骑士将更注重防御力，但在攻击方面较弱。" 
                   optional_dll_name="AIWarExternalCode" optional_type_name="Arcen.AIW2.External.GalaxySetting_Necromancer"
                   >
   </galaxy_setting>
 
   <galaxy_setting category="Necromancer" name="ZombiesGoToNecromancer" display_name="Sandbox: Zombies Go To Necromancer" type="BoolToggle" default="false" changeable_during_gameplay="true"
-        description="With this enabled, when Anti-AI zombies would be created, the game instead gives these units to the 死灵法师 Faction. Only meaningful if the 死灵法师 is enabled. Makes the 死灵法师 much, much more powerful." 
+        description="启用此选项后，当反AI僵尸本应生成时，游戏会将这些单位交给死灵法师派系。仅在启用了死灵法师时才有意义。这让死灵法师变得强大得多。" 
         optional_dll_name="AIWarExternalCode" optional_type_name="Arcen.AIW2.External.GalaxySetting_Necromancer"
         >
       <harshness_override min_campaign_harshness_to_apply="200" fixed_value="false" />
@@ -50,30 +50,30 @@ This allows for the 戴森 Sidekick to act as a 'Vassal' to some other player fa
   <!-- Dark Zenith Sidekick -->
       <galaxy_setting category="DarkZenith"  name="PlayerControllingDZ" display_name="Under Player Control" type="BoolToggle" default="true"
                     changeable_during_gameplay="true"
-        description="With this enabled, the Dark 天顶 military is controlled by the player. When disabled, the Dark 天顶 military will play with its typical intelligence." />
+        description="启用此选项后，暗天顶军队由玩家控制。禁用时，暗天顶军队将以其典型智能运行。" />
     <galaxy_setting category="DarkZenith"  name="ShipsRallyToNearestFlagshipDZ" display_name="Created Ships Rally To Flagship" type="BoolToggle" default="true"
                     changeable_during_gameplay="true"
-        description="When a new DZ ship is created, it rally to its 旗舰. This requires the DZ to be under player control; if the DZ is not under player control this setting is ignored.
+        description="当新的DZ舰船被创建时，它会集结到其旗舰。这要求DZ处于玩家控制下；如果DZ不受玩家控制，此设置将被忽略。
 
-You probably want this on, unless you are striking behind enemy lines." />
+你可能希望启用此选项，除非你正在敌方战线后方进行打击。" />
 
     <!-- Armada Empire -->
     <galaxy_setting category="ArmadaEmpire"  name="BoringArmadaNames" display_name="Starbases Named After Planets" type="BoolToggle" 
                   default="true" changeable_during_gameplay="true"
-                  description="When this is enabled, new Starbases and their 旗舰 will be named after their planets, instead of having thematic names" >
+                  description="启用此选项后，新的星站及其旗舰将以它们所在的星球命名，而不是使用主题名称" >
   </galaxy_setting>
 
   <galaxy_setting category="ArmadaEmpire" name="ArmadaAutoDefend" display_name="Auto-Defend Mode" changeable_during_gameplay="true"
                   type="CustomDropdownArbitraryOptions" arbitrary_options="Disabled,Defense Only,Full Assistance" default_option="Disabled"
-        description="You can opt into having your 无敌舰队 fleets fight automatically. The 无敌舰队 Fleets will assist you (or other allied factions), but it will not attack enemy planets or targets on its own.
+        description="你可以选择让你的无敌舰队舰队自动作战。无敌舰队舰队将协助你（或其他结盟派系），但不会自行攻击敌方星球或目标。
 
-Defense Only will mean that the 戴森's fleets will not go to enemy planets. Full Assistance allows them to join you in enemy territory.
+仅防御意味着戴森舰队不会前往敌方星球。全面协助允许它们随你进入敌方领土。
 
-Flagships in Auto-Defend mode will patrol between your Shipyards when there are no battles to help in.
+没有战斗需要协助时，处于自动防御模式的旗舰将在你的船坞之间巡逻。
 
-Note: If you are setting your 旗舰 to Auto-Defend Mode, you will probably want to make sure they are in pursuit mode.
+注意：如果你将旗舰设置为自动防御模式，你很可能需要确保它们处于追击模式。
 
-This allows for the 无敌舰队 Empire to act as a 'Vassal' to some other player faction, helping automatically in combat/acting to defend your planets. Another player can then swap using F4 to the sidekick periodically to make economic choices."/>
+这使得无敌舰队帝国可以作为其他玩家派系的「附庸」，自动协助战斗/防御你的星球。其他玩家可以通过F4切换到Sidekick来周期性地做出经济选择。"/>
 
   <!--
   <galaxy_setting category="Balance"  name="ExoWarUnitsInExos" display_name="Allow Exos to spawn ExoWar Units" type="BoolToggle" 
@@ -83,7 +83,7 @@ This allows for the 无敌舰队 Empire to act as a 'Vassal' to some other playe
   -->
 
   <galaxy_setting name="MoreARSOptions" category="Balance" is_advanced_setting="true" subcategory="HumanBalance" display_name="More ARS and TSS options" type="BoolToggle" default="false"
-           description="Normally you get 4 options per ARS or TSS. With this option enabled you will have more choices." >
+           description="通常每个ARS或TSS有4个选项。启用此选项后你将拥有更多选择。" >
   </galaxy_setting>
 
 </root>

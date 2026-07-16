@@ -14,7 +14,7 @@
 
   <fleet_design name="MSFCarrierFleet" required_expansion_list="1_The_Spire_Rises"
         display_name="航母舰队"
-        description="Fleet composed of carriers and their escorts. Great at long range, terrible at close range."
+        description="由航母及其护卫舰组成的舰队。远距离表现出色，近距离表现糟糕。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >
@@ -27,7 +27,7 @@
 
   <fleet_design name="MSFEscortFleet"
         display_name="护航舰队"
-        description="A remnant of the human civil war. A fleet of corvettes used to escort larger starships. This fleet specializes in anti-air combat against fighter and bomber swarms."
+        description="人类内战的残余。一支用于护卫大型星舰的护卫艇舰队。该舰队专精于对抗战斗机和轰炸机群的防空作战。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >
@@ -40,7 +40,7 @@
 
   <fleet_design name="MSFThanatos"
         display_name="Thanatos 舰队"
-        description="A fleet comprised of an abandoned Thanatos class battleship. The pride of the Imperial Navy, this fleet starts with a powerful battleship armed with powerful cannons but only has basic fighters as escorts."
+        description="由一艘被遗弃的塔纳托斯级战列舰组成的舰队。帝国海军的骄傲，这支舰队以一艘配备强力火炮的战列舰开局，但只有基础战斗机作为护航。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >
@@ -50,7 +50,7 @@
 
   <fleet_design name="MSFAssin"
         display_name="刺客舰队"
-        description="A fleet focused on getting close and personal, silent and deadly."
+        description="专注近距离作战的舰队，无声而致命。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >
@@ -63,7 +63,7 @@
 
   <fleet_design name="MSFBarrage"
         display_name="弹幕舰队"
-        description="A powerful yet fragile fleet specializing in long range bombardment."
+        description="一支强大但脆弱的舰队，专精于远程轰炸。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >
@@ -76,7 +76,7 @@
 
 <fleet_design name="MSFPolar" required_expansion_list="2_Zenith_Onslaught"
         display_name="极性舰队"
-        description="This fleet specializes in eliminating both high and low armor targets."
+        description="该舰队专精于消灭高护甲和低护甲目标。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >
@@ -88,8 +88,8 @@
   </fleet_design>
 
 <fleet_design name="MSFDemo"
-        display_name="Democracy Fleet"
-        description="This fleet is composed of ships making up the early Terran Federation. It lacks capital ships, but make up for it in versatility with its fighters and corvettes."
+        display_name="民主舰队"
+        description="该舰队由早期地球联邦时期的舰船组成。缺少主力舰，但以战斗机和护卫艇的多功能性弥补。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >
@@ -102,7 +102,7 @@
 
 <fleet_design name="MSFArmoured" required_expansion_list="2_Zenith_Onslaught"
         display_name="装甲舰队"
-        description="This fleet is composed of heavily armoured ships. Experts at doorkicking and breaching operations."
+        description="该舰队由重装甲舰船组成。精通破门和突破行动。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >
@@ -115,7 +115,7 @@
 
 <fleet_design name="MSFAlliance" required_expansion_list="2_Zenith_Onslaught"
         display_name="联盟舰队"
-        description="This fleet is composed of fleets from the Zenith and the Human Forces. All ships of this Galactic Alliance start at MKII due to their advanced technology. Desperate times calls for desperate measures. "
+        description="该舰队由天顶和人类部队的舰船组成。由于先进科技，这支银河联盟的所有舰船以 MKII 开局。绝望时期需要绝望措施。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >
@@ -126,7 +126,7 @@
 
 <fleet_design name="MSFMissileFleet" required_expansion_list="1_The_Spire_Rises"
         display_name="导弹舰队"
-        description="A fleet comprised of a transport armed with guided missiles, and ships that fire long range guided missiles. Great against short ranged units. Guided missiles require factories and metal to reload."
+        description="由一艘配备制导导弹的运输舰和发射远程制导导弹的舰船组成的舰队。对抗短程单位表现出色。制导导弹需要工厂和金属来重新装填。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >
@@ -138,8 +138,8 @@
 	</fleet_design>
 
 <fleet_design name="MSFRetribution" required_expansion_list="2_Zenith_Onslaught"
-        display_name="Retribution Fleet"
-        description="A fleet comprised of geometric cubes and other exotic ships. Very good at tanking and reflecting damage, but is on the slower side overall and falls prey to anti-armour weapons."
+        display_name="复仇舰队"
+        description="由几何立方体和其他异星舰船组成的舰队。非常擅长承受和反射伤害，但整体速度偏慢，且容易受到反装甲武器的攻击。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >
@@ -164,8 +164,8 @@
   </fleet_design>
 
 <fleet_design name="MSFRiot"
-        display_name=" riot 舰队"
-        description="A defensive fleet composed of Riot Police and Security Troops. Experts at defending turrets and suppressing attacks, but lacks offensive power. A classic fleet."
+        display_name="防暴舰队"
+        description="由防暴警察和安全部队组成的防御舰队。擅长防守炮塔和压制攻击，但缺乏进攻能力。经典舰队。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >
@@ -178,7 +178,7 @@
 
 <fleet_design name="MSFSiege" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught"
         display_name="攻城舰队"
-        description="A fleet composed of heavily armoured starships, bombers, escort corvettes, and long range siege ships. Slow but powerful."
+        description="由重装甲星舰、轰炸机、护航护卫艇和远程攻城舰组成的舰队。缓慢但强大。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >
@@ -190,8 +190,8 @@
   </fleet_design>
 
 <fleet_design name="MSFConquer"
-        display_name="Conqueror Fleet"
-        description="A fleet composed of heavily armoured starships, bombers, escort fighters and railgun starships. Built for aggression and attacking."
+        display_name="征服者舰队"
+        description="由重装甲星舰、轰炸机、护航战斗机和轨道炮星舰组成的舰队。为侵略和攻击而生。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >
@@ -204,7 +204,7 @@
 
 <fleet_design name="MSFDeprived"
         display_name="匮乏舰队"
-        description="An abandoned fleet that has already been raided for salvage. Starts only with Dagger space fighters. A very challenging start, meant for only true Fleet Commanders."
+        description="一支已被搜刮过残骸的废弃舰队。仅以「匕首」太空战斗机开局。极具挑战，专为真正的舰队指挥官准备。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >

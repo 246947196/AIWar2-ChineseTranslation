@@ -64,12 +64,12 @@
         mapgen_should_outguard_seed_for_me="false"
         mapgen_should_all_guard_posts_be_armed="false"
 
-        description="The Dark 天顶 Empire is a mod allowing the player to play as the Dark 天顶. You can control all their military units, though you have no control over their economy.
+        description="暗天顶帝国是一个模组，允许玩家扮演暗天顶。你可以控制他们的所有军事单位，尽管你无法控制他们的经济。
 
-Restriction: You'll need to specify some planet as your starting planet for the DZ Empire; this has no effect on gameplay; your planets will link into the 银河 'as usual'.
-Most sidekicks will not work if the Dark 天顶 Empire is the only Empire; 尖塔 Sidekick will work.
+限制：你需要为DZ帝国指定某个星球作为起始星球；这对游戏玩法没有影响；你的星球将「一如既往」地连接到银河。
+大多数Sidekick在暗天顶帝国是唯一帝国时将无法运作；尖塔Sidekick可以运作。
 
-Written by Badger. This is only a mod, and has no official Arcen support."/>
+Written by Badger。这只是一个模组，没有Arcen的官方支持。"/>
   
   <player_type name="DarkZenithSidekick"
         display_name="Dark Zenith Sidekick" short_name="Dark Zenith" auto_name_postfix=" (DZ)" uncontrolled_name="Dark Zenith" lobby_prefix="DZ Sidekick "
@@ -137,14 +137,14 @@ Written by Badger. This is only a mod, and has no official Arcen support."/>
                
         mapgen_should_all_guard_posts_be_armed="false"
 
-        description="The Dark 天顶 Sidekick is a mod allowing the player to play as the Dark 天顶. You can control all their military units, though you have no control over their economy.
+        description="暗天顶Sidekick是一个模组，允许玩家扮演暗天顶。你可以控制他们的所有军事单位，尽管你无法控制他们的经济。
 
-Restrictions: You cannot actually lose the game, so you must play with another player type; this is the same restriction as the 死灵法师 Sidekick.
+限制：你实际上无法输掉游戏，因此你必须配合其他玩家类型游玩；这与死灵法师Sidekick的限制相同。
 
-For solo play, you'll control both this empire and your chosen other Empire simultaneously; hitting F4 will swap control between the two empires. I would suggest using the 方舟 Infused empire (if you own DLC1) to move your King to join the Dark 天顶. Note you can set the DZ to use its usual logic, so it can take care of itself if you request.
-Restriction: You'll need to specify some planet as your starting planet for the DZ Sidekick; this will not affect anything.
+对于单人游戏，你将同时控制这个帝国和你选择的其他帝国；按F4将在两个帝国之间切换控制。我建议使用方舟注入帝国（如果你拥有DLC1）将你的王移动到暗天顶的位置。请注意你可以将DZ设置为使用其通常逻辑，这样如果你要求，它可以自行打理。
+限制：你需要为DZ Sidekick指定某个星球作为起始星球；这不会有任何影响。
 
-Written by Badger. This is only a mod, and has no official Arcen support."/>
+Written by Badger。这只是一个模组，没有Arcen的官方支持。"/>
 
 
 

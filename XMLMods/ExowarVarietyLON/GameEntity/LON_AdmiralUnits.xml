@@ -41,7 +41,7 @@
 			>
     		</system>
 		<entity_type_drawing_bag_used_on_periodic_spawning
-			display_name="Spawns an Exowar Wave"
+			display_name="生成一支系外战争波次"
 			parsed_data_type="AIShipGroupCategory"
 			data_list="LONRearAdmiralExoWaves"
 			spawn_count_type="Strength_BaseMark"
@@ -69,7 +69,7 @@
       			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="6" />
     		</system>
 		<entity_type_drawing_bag_used_on_periodic_spawning
-			display_name="Spawns an Exowar Wave"
+			display_name="生成一支系外战争波次"
 			parsed_data_type="AIShipGroupCategory"
 			data_list="LONRearAdmiralExoWaves"
 			spawn_count_type="Strength_BaseMark"
@@ -97,7 +97,7 @@
       			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="6" />
     		</system>
 		<entity_type_drawing_bag_used_on_periodic_spawning
-			display_name="Spawns an Exowar Wave"
+			display_name="生成一支系外战争波次"
 			parsed_data_type="AIShipGroupCategory"
 			data_list="LONRearAdmiralExoWaves"
 			spawn_count_type="Strength_BaseMark"

@@ -1,40 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <root>
   <!-- Civilian Industries -->
-	<galaxy_setting name="CiviliansPerformanceMode" category="Civilians" display_name="Performance Mode" type="BoolToggle"
+	<galaxy_setting name="CiviliansPerformanceMode" category="Civilians" display_name="性能模式" type="BoolToggle"
 		default="true" changeable_during_gameplay="true"
-		description="Enables performance mode for Civilians."
+		description="为民用工业启用性能模式。"
 	/>
 
-	<galaxy_setting name="MinimumOutpostDeploymentRange" category="Civilians" display_name="Minimum 前哨 Deployment Range" type="IntSlider"
+	<galaxy_setting name="MinimumOutpostDeploymentRange" category="Civilians" display_name="前哨最小部署距离" type="IntSlider"
 		default="6000" min="3000" max="10000" changeable_during_gameplay="true"
-		description="How far away must an 前哨 be from your 贸易站 in order to spawn. If set too high, 前哨 may fail to spawn on smaller planets."  
+		description="前哨生成位置距离贸易站的最远距离。若设置过高，前哨可能无法在较小星球上生成。"  
 	/>
-	<galaxy_setting name="DefensiveBattlestationForces" category="Civilians" display_name="Defensive 要塞 Forces" type="BoolToggle"
+	<galaxy_setting name="DefensiveBattlestationForces" category="Civilians" display_name="防守型要塞部队" type="BoolToggle"
 		default="false" changeable_during_gameplay="true"
-		description="Should 民兵 forces created for a 要塞 always stay on the 要塞's planet?"
+		description="为要塞创建的民兵部队是否永远留在要塞所在星球？"
 	/>
 
-	<galaxy_setting name="MilitiaAttackMinimumStrength" category="Civilians" display_name="Minimum Hostile Strength to 攻击" type="IntSlider"
+	<galaxy_setting name="MilitiaAttackMinimumStrength" category="Civilians" display_name="进攻最低敌方强度" type="IntSlider"
 		default="5" min="1" max="50" changeable_during_gameplay="true"
-		description="How much hostile Strength must there be on a planet for Civilians to consider attacking it?"
+		description="星球上需要有多少敌方强度，民用工业才会考虑进攻该星球？"
 	/>
-	<galaxy_setting name="MilitiaAttackOverkillPercentage" category="Civilians" display_name="民用 Overkill Percentage" type="IntSlider"
+	<galaxy_setting name="MilitiaAttackOverkillPercentage" category="Civilians" display_name="民用过度击杀百分比" type="IntSlider"
 		default="150" min="100" max="500" changeable_during_gameplay="true"
-		description="What percentage of forces does a group of 民兵 need to 攻击 a planet? Does not change defensive priorities or assisting player attacks."
+		description="一群民兵进攻星球时需要的兵力优势百分比？不影响防御优先级或协助玩家进攻。"
 	/>
 	
-	<galaxy_setting name="PatrolPostsOnAdjacentPlanets" category="Civilians" display_name="贸易站 Influence" type="BoolToggle"
+	<galaxy_setting name="PatrolPostsOnAdjacentPlanets" category="Civilians" display_name="贸易站影响范围" type="BoolToggle"
 		default="false" changeable_during_gameplay="true"
-		description="Allows 巡逻 Posts to be built on weakened planets adjacent to 贸易哨站s/站s."
+		description="允许巡逻哨站建在贸易哨站/站相邻的被削弱星球上。"
 	/>
-	<galaxy_setting name="MilitiaExpandWithAllAllies" category="Civilians" display_name="Expands With All Allies" type="BoolToggle"
+	<galaxy_setting name="MilitiaExpandWithAllAllies" category="Civilians" display_name="与所有盟友一同扩张" type="BoolToggle"
 		default="false" changeable_during_gameplay="true"
-		description="Should friendly Civilians expand alongside all allies instead of just player influence? (This will make them mimic the minor faction team logic, where they will expand alongside any allies with stationary buildings on a planet.)"
+		description="友善的民用工业是否与所有盟友一同扩张而不只是玩家影响范围？（这将模仿次要派系团队逻辑，即他们会与星球上有固定建筑的盟友一同扩张。）"
 	/>
 
-	<galaxy_setting name="MilitiaStockpilePercentage" category="Civilians" display_name="民兵 Stockpiling Capacity" type="IntSlider"
+	<galaxy_setting name="MilitiaStockpilePercentage" category="Civilians" display_name="民兵储备容量" type="IntSlider"
 	default="300" min="300" max="1000" changeable_during_gameplay="false"
-	description="When a 民兵 building is full on units, it will request this % of additional resources to attempt to counteract losses suffered. Raising this will make resources spread slower, but allow worlds you've owned for longer to better reinforce after large fights."
+	description="当民兵建筑单元满额时，会请求此百分比额外资源以应对损失。提高此值会使资源扩散变慢，但能让你持有更久的星球在大战之后更好地补充兵力。"
 	/>
 </root>

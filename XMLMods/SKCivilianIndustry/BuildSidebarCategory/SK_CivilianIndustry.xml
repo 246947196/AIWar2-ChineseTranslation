@@ -14,7 +14,7 @@
       It has no gameplay, seeding, or other structural significance and doesn't
       affect how the game plays.-->
 
-  <build_category name="MilitiaBuildings" sort_index="98" display_name="民兵 Buildings"
-      description="Buildings that bolster your 民兵 units in one way or another."
+  <build_category name="MilitiaBuildings" sort_index="98" display_name="民兵建筑"
+      description="以某种方式增强民兵单位的建筑。"
   />
 </root>

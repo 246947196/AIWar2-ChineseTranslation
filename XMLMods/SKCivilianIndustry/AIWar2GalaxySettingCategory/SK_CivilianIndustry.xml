@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <root>
-	<setting_category name="Civilians" display_name="Civilians"
-      description="Settings related to the 民用 Industries mod."/>
+	<setting_category name="Civilians" display_name="民用工业"
+      description="与民用工业模组相关的设置。"/>
 </root>

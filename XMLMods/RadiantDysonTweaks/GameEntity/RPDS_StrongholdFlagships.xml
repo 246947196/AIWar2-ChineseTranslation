@@ -30,12 +30,12 @@
 		size_scale="11"
 		visuals_scale_multiplier="3"
 		
-		display_name="Spire Destroyer Flagship"
+		display_name="尖塔驱逐舰指挥旗舰"
 		display_name_for_sidebar="SD 旗舰"
-		description="This is the Spire Flagship based on the Destroyer design. Used by the Dyson Sidekick."
+		description="这是基于驱逐舰设计的尖塔指挥旗舰。由戴森伙伴使用。"
 		collision_priority="1000"
 		>
-		<system name="W1" display_name="Heavy Railcannon"
+		<system name="W1" display_name="重型轨道炮"
 			category="Weapon" firing_timing="OnlyInRange"
 			damage_per_shot="7500" range="Planetary" shot_speed="VeryFast" rate_of_fire="Misery"
 			shots_per_salvo="1" fires_salvos_sequentially="false"
@@ -74,7 +74,7 @@
 	    ><!-- was 40k dps.  this is the final evolution, so we don't need more EXP -->
 			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="3" />
 		</system>
-		<system name="W2" display_name="Light Railcannon"
+		<system name="W2" display_name="轻型轨道炮"
 			category="Weapon" firing_timing="OnlyInRange"
 			damage_per_shot="1800" range="EssentiallyInfinite" shot_speed="VeryFast" rate_of_fire="Normal"
 			shots_per_salvo="10" fires_salvos_sequentially="false"
@@ -127,9 +127,9 @@
 	<entity is_partial_record="true" name="DysonZenithFlagshipTierThree"
 		gimbal_icon_size_multiplier="1.5"
 	
-		display_name="Zenith Jormugandr Flagship"
+		display_name="天顶约尔蒙甘德指挥旗舰"
 		display_name_for_sidebar="Jorm 旗舰"
-		description="This is the most powerful Zenith Flagship for the Dyson."
+		description="这是戴森球最强大的天顶指挥旗舰。"
 		seconds_to_fully_regenerate_hull="600"
 		collision_priority="1000"
 		>
@@ -162,7 +162,7 @@
 			>
 		</system>
 		
-		<system name="J1" display_name="Annihilator Beam"
+		<system name="J1" display_name="湮灭光束"
 			category="Weapon" firing_timing="OnlyInRange"
 			damage_per_shot="15000" range="AboveAverage5" shot_speed="Normal" rate_of_fire="High"
 			shot_type_data="HeavyBeamInvisible"
@@ -173,7 +173,7 @@
 			distance_from_center_for_beam_emission="150"
 			>
 		</system>
-		<system name="L" display_name="Seekerbomb Launcher"
+		<system name="L" display_name="搜寻炸弹发射器"
 			category="Weapon" firing_timing="OnlyInRange" shot_type_data="DZSeekerBomb"
 			damage_per_shot="5" range="Planetary" shot_speed="Slow" rate_of_fire="Devourer" fires_salvos_sequentially="true"  
 			shots_per_salvo="1"  cloaking_percent_loss_from_firing="0.2"
@@ -216,9 +216,9 @@
 		
 		icon_overlay="Overlays2/NecromancerFlagship_Plagueswarm"
 		
-		display_name="Neinzul Plagueswarm Flagship"
+		display_name="奈因祖尔瘟疫蜂指挥旗舰"
 		display_name_for_sidebar="PL 旗舰"
-		description="This is the highest-tier Neinzul Flagship for the Dyson."  
+		description="这是戴森球最高等级的奈因祖尔指挥旗舰。"  
 		collision_priority="1000"
 		>
 		<system name="R1" display_name="独眼光束"

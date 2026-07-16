@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
 	<item name="Hacking_UpgradeShipLine" dll_name="ShipLineUpgrades_Base" type_name="ShipLineUpgrades_Base.Hacking_UpgradeShipLine" 
-		display_name="Modify Ship Lines" description="This hack modifies ship lines."
+		display_name="修改舰船线" description="此入侵修改舰船线。"
 		hack_completes_instantly="true"
 		cost_in_hacking_points="0"
 		local_hacker_required="true"
@@ -11,7 +11,7 @@
 	/>
 	
 	<item name="Hacking_ExtractCommandFrequency" dll_name="ShipLineUpgrades_Base" type_name="ShipLineUpgrades_Base.Hacking_ExtractCommandFrequency" 
-		display_name="Extract Command Frequency" 
+		display_name="提取指挥频率" 
 		description="与其使用外卫信标联系其他派系，我们也可以入侵其数据库并为自己提取一些额外的指挥频率带宽。
 这将使我们能够对自己的舰船线进行更多升级，但我们将失去从此信标联系外卫的任何机会。"
 		hack_duration="40"

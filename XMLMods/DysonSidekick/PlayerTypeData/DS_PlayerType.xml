@@ -68,21 +68,21 @@
                
         mapgen_should_all_guard_posts_be_armed="false"
 
-        description="The 戴森 Sidekick allows the player to play as Coalition of races trying to build a 戴森球. You will control 天顶, 尖塔, 奈祖尔 and 圣殿骑士 ships. You will build major and minor 要塞 for each of the races, giving you access to different ships.
-Like the 死灵法师, Major 要塞 grant 旗舰, Minor 要塞 will allow for bolstering. Unlike the 死灵法师, you can dismantle a 要塞 using the 黑客 menu, getting back some of the 资源 invested. This allows you to respec your fleets.
+        description="戴森Sidekick允许玩家扮演一个试图建造戴森球的种族联盟。你将控制天顶、尖塔、奈祖尔和圣殿骑士的舰船。你将建造每个种族的大小要塞，从而获得不同的舰船。
+与死灵法师一样，大型要塞授予旗舰，小型要塞允许增强。与死灵法师不同的是，你可以通过入侵菜单拆除要塞，收回部分投入的资源。这允许你重新配置你的舰队。
 
-In order to build the 戴森球, you will need to 掠夺 a number of planets to get the raw materials by constructing vast 钻机. Since planets are used up in this way, small maps make the game harder for the 戴森 Sidekick.
+为了建造戴森球，你需要掠夺一些行星，通过建造巨大的钻机来获取原材料。由于行星会以这种方式被消耗，小型地图会让戴森Sidekick更加困难。
 
-Enabling the 戴森 Sidekick also adds the '收割者' faction to the game to add additional challenge; use the Difficulty slider to change how much impact the 收割者 will have.
-The 天顶 Miners can also add an interesting challenge.
+启用戴森Sidekick还会在游戏中添加「收割者」派系以增加额外挑战；使用难度滑块来改变收割者带来的影响程度。
+天顶矿工也能增加有趣的挑战。
 
-This faction comes with an 'auto-defend-my-allies' setting, which means a novice could just focus on building infrastructure and letting their ships fight automatically.
+这个派系自带「自动防御盟友」设置，意味着新手可以只专注于建造基础设施，让他们的舰船自动战斗。
 
-Restrictions: You cannot actually lose the game, so you must play with another player type; this is the same restriction as the 死灵法师 Sidekick.
+限制：你实际上无法输掉游戏，因此你必须配合其他玩家类型游玩；这与死灵法师Sidekick的限制相同。
 
-Designed and Coded by Badger.
-戴森 Sidekick Unit Design by Zeusalmighty.
-This is only a mod, and has no official Arcen support."/>
+设计与编码 by Badger。
+戴森Sidekick单位设计 by Zeusalmighty。
+这只是一个模组，没有Arcen的官方支持。"/>
 
   <player_type name="DysonEmpire"
         display_name="Dyson Empire" short_name="Dyson" auto_name_postfix=" (D)" uncontrolled_name="Dyson" lobby_prefix="Dyson Empire "
@@ -146,21 +146,21 @@ This is only a mod, and has no official Arcen support."/>
                
         mapgen_should_all_guard_posts_be_armed="false"
 
-        description="The 戴森 Empire works just like the 戴森 Sidekick except you get an immobile 'King' unit on your home planet. Also, it is recommended to turn the 收割者 Difficulty down as an empire.
+        description="戴森帝国的运作方式与戴森Sidekick相同，除了你在母星上有一个不可移动的「王」单位。此外，建议将收割者难度调低，因为你是帝国。
 
-The 戴森 Sidekick allows the player to play as Coalition of races trying to build a 戴森球. You will control 天顶, 尖塔, 奈祖尔 and 圣殿骑士 ships. You will build major and minor 要塞 for each of the races, giving you access to different ships. 
-Like the 死灵法师, Major 要塞 grant 旗舰, Minor 要塞 will allow for bolstering. Unlike the 死灵法师, You can dismantle a 要塞 using the 黑客 menu, getting back some of the 资源 invested. This allows you to respec your fleets.
+戴森Sidekick允许玩家扮演一个试图建造戴森球的种族联盟。你将控制天顶、尖塔、奈祖尔和圣殿骑士的舰船。你将建造每个种族的大小要塞，从而获得不同的舰船。
+与死灵法师一样，大型要塞授予旗舰，小型要塞允许增强。与死灵法师不同的是，你可以通过入侵菜单拆除要塞，收回部分投入的资源。这允许你重新配置你的舰队。
 
-In order to build the 戴森球, you will need to 掠夺 a number of planets to get the raw materials by constructing vast 钻机. Since planets are used up in this way, small maps make the game harder for the 戴森 Sidekick.
+为了建造戴森球，你需要掠夺一些行星，通过建造巨大的钻机来获取原材料。由于行星会以这种方式被消耗，小型地图会让戴森Sidekick更加困难。
 
-Enabling the 戴森 Sidekick also adds the '收割者' faction to the game to add additional challenge; use the Difficulty slider to change how much impact the 收割者 will have.
-The 天顶 Miners can also add an interesting challenge.
+启用戴森Sidekick还会在游戏中添加「收割者」派系以增加额外挑战；使用难度滑块来改变收割者带来的影响程度。
+天顶矿工也能增加有趣的挑战。
 
-The 戴森 Sidekick is not recommended for players who have not played the Fallen 尖塔 campaign, or played as the 死灵法师. The 戴森 Empire is better with some reasonably strong allied factions (天灾, 斯维卡里, etc), since it is lacking in defensive 建筑.
+戴森Sidekick不推荐给未玩过堕落尖塔战役或扮演过死灵法师的玩家。戴森帝国如果有一些较强的盟友派系（天灾、斯维卡里等）会更好，因为它缺乏防御建筑。
 
-Designed and Coded by Badger.
-戴森 Sidekick Unit Design assistance from Zeusalmighty.
-This is only a mod, and has no official Arcen support."/>
+设计与编码 by Badger。
+戴森Sidekick单位设计 with assistance from Zeusalmighty。
+这只是一个模组，没有Arcen的官方支持。"/>
 
   <player_type name="HumanArkSidekick"
         display_name="Human Ark Sidekick" short_name="Ark Sidekick" uncontrolled_name="Uncontrolled Ark Sidekick " lobby_prefix="Player Ark Sidekick "
@@ -216,13 +216,13 @@ This is only a mod, and has no official Arcen support."/>
         mapgen_require_mobilestrikefleet_tag=""
         mapgen_should_spirearchive_seed_for_me="true"
         mapgen_should_outguard_seed_for_me="true"
-        description="Humans don't even control a single homeworld, but rather exist only in a single 方舟 that must claim a starting world and begin construction from there.
+        description="人类甚至不控制一个母星，而只存在于一艘方舟中，必须占领一个起始世界并从那里开始建设。
 
-As a sidekick, your 方舟 cannot die, it can only be crippled. You win or lose with your Empire allies.
+作为Sidekick，你的方舟不会死亡，只能被重创。你要与你的帝国盟友一起获胜或失败。
 
-This mode is based on the earliest test versions of the game, and the Kickstarter design for the game.  Back in 2017, we ultimately decided that this style felt too different from classic AI War, but in 2021 this returned as a challenging and interesting new mode.
+这种模式基于游戏最早的测试版本以及游戏的Kickstarter设计。在2017年，我们最终认为这种风格与经典AI War差异过大，但在2021年它作为一个富有挑战性和趣味性的新模式回归。
 
-This player type also starts with a single 战斗空间站 and a Support 舰队."/>
+该玩家类型还起始带有一个战斗空间站和一个支援舰队。"/>
 
   <player_type name="SpireSidekick"
         display_name="Spire Sidekick" short_name="Spire" auto_name_postfix=" (Spire)" uncontrolled_name="Spire" lobby_prefix="Spire "
@@ -288,12 +288,12 @@ This player type also starts with a single 战斗空间站 and a Support 舰队.
 
         mapgen_should_all_guard_posts_be_armed="false"
 
-        description="The 尖塔 Sidekick is a mod allowing the player to play as the Fallen 尖塔. This works just like the regular Fallen 尖塔 campaign (from the 尖塔's POV), but this version has more 建筑 and sockets. As a result, it is also more powerful.
+        description="尖塔Sidekick是一个模组，允许玩家扮演堕落尖塔。这与常规的堕落尖塔战役（从尖塔的视角）运作方式相同，但此版本有更多的建筑和插槽。因此，它也更为强大。
 
-Restrictions: You cannot actually lose the game, so you must play with another player type; this is the same restriction as the 死灵法师 Sidekick.
-You will be pretty limited until you get your first Relic.
+限制：你实际上无法输掉游戏，因此你必须配合其他玩家类型游玩；这与死灵法师Sidekick的限制相同。
+在获得第一个遗物之前，你会相当受限。
 
-Written by Badger. This is only a mod, and has no official Arcen support."/>
+Written by Badger。这只是一个模组，没有Arcen的官方支持。"/>
 
   <!-- For necromancer, allow them to  get extra-socket-granters -->
   <player_type name="NecromancerSidekick" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
@@ -367,9 +367,9 @@ Written by Badger. This is only a mod, and has no official Arcen support."/>
         mapgen_require_mobilestrikefleet_tag=""
         mapgen_should_spirearchive_seed_for_me="true"
         mapgen_should_outguard_seed_for_me="true"
-        description=" Functions very much like a normal human empire, but also comes with the ability to build 天灾 生成器 and 军械库, and manage the 天灾 forces.
+        description="玩法与普通人类帝国非常相似，但也额外带有建造天灾生成器和军械库以及管理天灾部队的能力。
 
-You will have additional 天灾 defensive options. The scourge military operates independently, but you can request their aid by building a 天灾召唤者 on a planet."/>
+你将拥有额外的天灾防御选项。天灾军队独立运作，但你可以通过在星球上建造天灾召唤者来请求他们的援助。"/>
 
     <player_type name="ArmadaEmpire"
         display_name="Armada Empire" short_name="Armada" uncontrolled_name="Armada " lobby_prefix="Armada Empire"
@@ -436,11 +436,11 @@ You will have additional 天灾 defensive options. The scourge military operates
         mapgen_should_spirearchive_seed_for_me="false"
         mapgen_should_outguard_seed_for_me="false"
 
-description="The 无敌舰队 Empire is a group of races, led by the 人类 and 基拉西, who have banded together to fight the AI.
+description="无敌舰队帝国是一个由人类和基拉西领导的种族联盟，团结起来对抗AI。
 
-The 基拉西 provide tanky ships but less damage, and the 人类 provide damage but are less tanky. The 无敌舰队 can further compliment its ships by finding additional 星站 on the map. Having a good variety of ships is generally a good idea for the 无敌舰队!
+基拉西提供耐打的舰船但伤害较低，而人类提供伤害但较不耐打。无敌舰队可以通过在地图上找到额外的星站来进一步增强其舰船。拥有多样化的舰船通常对无敌舰队来说是个好主意！
 
-With the 无敌舰队 enabled, there will also be a significant infestation of 泰德瑞安 Veins on the map. These 建筑 can cause a variety of negative things (building extra AI ships in particular), and destroying them will give you 资源 you will need. You can do a variety different hacks on the Veins to get more 资源. "/>
+启用无敌舰队后，地图上还会出现大量的泰德瑞安矿脉感染。这些建筑可能导致各种负面情况（特别是建造额外的AI舰船），摧毁它们将为你提供所需的资源。你可以对矿脉进行各种入侵操作以获取更多资源。 "/>
 
     <!-- voodoo sidekick? like the orig necromancer with zombies-->
 

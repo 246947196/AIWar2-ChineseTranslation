@@ -14,7 +14,7 @@
 
   <fleet_design name="MSFDeprived1"
         display_name="匮乏防御 #1"
-        description="This unlucky battlestation had all of its turret design schematics destroyed. Starts only with a gravitic battlestation, meant for real Fleet Commanders looking for a challenge. Picking the same starting battlestation twice will randomize the second one."
+        description="这座不幸的战斗空间站所有炮塔设计图纸都被摧毁。仅以一座引力战斗空间站开局，适合追求挑战的真正舰队指挥官。选择相同的开局战斗空间站两次将随机分配第二个。"
         design_logic="InitialPlayerBattlestation" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >
@@ -24,7 +24,7 @@
   
   <fleet_design name="MSFDeprived2"
         display_name="匮乏防御 #2"
-        description="This unlucky battlestation had all of its turret design schematics destroyed. Starts only with a revealer battlestation, meant for real Fleet Commanders looking for a challenge. Picking the same starting battlestation twice will randomize the second one."
+		description="这座不幸的战斗空间站所有炮塔设计图纸都被摧毁。仅以一座揭示者战斗空间站开局，适合追求挑战的真正舰队指挥官。选择相同的开局战斗空间站两次将随机分配第二个。"
         design_logic="InitialPlayerBattlestation" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >
@@ -33,8 +33,8 @@
   </fleet_design>
 
   <fleet_design name="MSFHanger" required_expansion_list="2_Zenith_Onslaught"
-        display_name="Hanger Defences"
-        description="This battlestation trades out turrets for field hangers that can be built off planet for combat."
+        display_name="机库防御"
+        description="这座战斗空间站用可建造到其他星球作战的野战机库替代了炮塔。"
         design_logic="InitialPlayerBattlestation" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >

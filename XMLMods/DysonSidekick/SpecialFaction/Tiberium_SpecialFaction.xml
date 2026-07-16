@@ -25,15 +25,15 @@
      should_not_be_shown_in_game_lobby="false"
      takes_difficulty_from_armada="false"
      should_not_be_shown_in_game_lobby_add_factions_list="false"
-     description="The 泰德瑞安 Infestation will empower the AI. Their Veins will spread across the 银河, empowering and transforming their ships and 建筑. Harvest them for 资源, and ignore them at your peril!
+      description="泰德瑞安感染将增强AI。它们的矿脉将遍布银河，增强和转化它们的舰船和建筑。收割它们获取资源，忽视它们则后果自负！
 
-Do not use this faction if you have the 无敌舰队 Empire in the game; a copy of this faction will automatically be added if you use the 无敌舰队 Empire."
+如果你在游戏中使用了无敌舰队帝国，不要使用此派系；若使用无敌舰队帝国，将自动添加该派系的副本。"
      can_use_spire_debris="false"
      icon_name_for_lobby="Ships4/SpeedBooster"
      allied_to_ai_by_default="true"
            >
-    <custom_field name="Intensity" display_name="Intensity" description="How much of an impact are they likely to have on gameplay? If the 强度 is too low then the 无敌舰队 will have fewer 资源 to work with."
-		  sort_group="200" setting_type="IntSlider" default="5" min="0" max="10"/>
+    <custom_field name="Intensity" display_name="强度" description="它们对游戏玩法可能产生多大影响？如果强度太低，无敌舰队可用的资源会较少。"
+ 		  sort_group="200" setting_type="IntSlider" default="5" min="0" max="10"/>
 
   </faction>
   
@@ -49,13 +49,13 @@ Do not use this faction if you have the 无敌舰队 Empire in the game; a copy 
      takes_difficulty_from_armada="true"
      auto_add_singleton_of_faction_when_any_count_of_other_player_types_present="ArmadaEmpire"
      should_not_be_shown_in_game_lobby_add_factions_list="true"
-     description="The 泰德瑞安 Infestation will empower and permanently change the AI. Their Veins will spread across the 银河, empowering and transforming their ships and 建筑. This version exists because the 无敌舰队 is in the game. This version will take its Difficulty from the 无敌舰队."
+      description="泰德瑞安感染将增强并永久改变AI。它们的矿脉将遍布银河，增强和转化它们的舰船和建筑。此版本存在是因为无敌舰队在游戏中。此版本将从无敌舰队获取其难度。"
      can_use_spire_debris="false"
      icon_name_for_lobby="Ships4/SpeedBooster"
      allied_to_ai_by_default="true"
            >
-    <custom_field name="Intensity" display_name="Intensity" description="How much of an impact are they likely to have on gameplay? If the 强度 is too low then the 无敌舰队 will have fewer 资源 to work with."
-		  sort_group="200" setting_type="IntSlider" default="5" min="0" max="10"/>
+    <custom_field name="Intensity" display_name="强度" description="它们对游戏玩法可能产生多大影响？如果强度太低，无敌舰队可用的资源会较少。"
+ 		  sort_group="200" setting_type="IntSlider" default="5" min="0" max="10"/>
 
   </faction>
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
     <faction name="AzarEmpire" 
-    display_name="Azaran Empire Invasion" short_name="阿扎兰帝国" processing_group="AzarEmpire"
+    display_name="阿扎兰帝国入侵" short_name="阿扎兰帝国" processing_group="AzarEmpire"
     base_info_source="AzarEmpireFactionBaseInfo" deep_info_source="AzarEmpireFactionDeepInfo" team_center_color="cFFBF00" team_border_color="cF7E7CE"
     type="SpecialFaction"
     description="阿扎兰帝国正在入侵银河系。它们是一个高度集权的帝国，将自己的星球带入银河系，从那里生产舰船来占领行星并建造建筑以增强其生产能力。
@@ -19,9 +19,9 @@
         <npc_ship_cap name="Strikecraft"    overriding_per_faction_cap_of_stacks="5000" />
         <custom_field name="Intensity"      display_name="强度" description="这个派系到底有多可怕？" sort_group="200" setting_type="IntSlider" default="3" min="1" max="10"/>
         <custom_field name="Allegiance"     display_name="阵营" description="该派系对 AI、人类友好，还是对谁也不友好？" sort_group="250" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Hostile To All,Friendly To Players,Hostile To Players Only,Minor Faction Team Red,Minor Faction Team Blue,Minor Faction Team Green" default_option="Hostile To All" />
-	<custom_field name="InvasionTime" display_name="入侵时刻" description="The Azaran Empire can be set to invade the galaxy at some unknown time during the game, or immediately. An immediate spawn is the scariest, and can sometimes make the game extraordinarily hard."
+	<custom_field name="InvasionTime" display_name="入侵时刻" description="阿扎兰帝国可以设定在游戏中的某个未知时间入侵银河，或立即入侵。立即生成是最可怕的选项，有时会使游戏极其困难。"
                   sort_group="300" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Immediate,Early Game,Mid Game,Late Game" default_option="Immediate"/>
-    <custom_field name="SpawnNearPlayer" is_advanced_setting="true" display_name="Spawn Near Player" description="Definitely not recommended unless friendly to you."
+    <custom_field name="SpawnNearPlayer" is_advanced_setting="true" display_name="在玩家附近生成" description="除非对你友好，否则绝对不推荐。"
                   sort_group="300" setting_type="BoolToggle" default="false"  />
 	</faction>
 </root>

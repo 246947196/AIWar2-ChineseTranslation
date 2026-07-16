@@ -3,9 +3,9 @@
 
   <thematic_group_type 
           name="DarkSphere" 
-          display_name="Dark Sphere"
+          display_name="黑暗球体"
           sort_order="50" 
           group_type="Race"
-          description="The Dark Sphere is an intelligent mega-structure, seeking the universal end of suffering - through eradication."/>
+          description="黑暗球体是一个智能巨型结构，寻求通过灭绝来终结宇宙万物的苦难。"/>
   
 </root>

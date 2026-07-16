@@ -16,7 +16,7 @@
 			collision_priority="810"
 			display_name="克赛迪安门"
 			display_name_for_sidebar="克赛迪安门"
-			description="This gate allows the Xodian megaships to travel between distant locations."
+			description="此门使克赛迪安巨型舰船能够在遥远位置之间穿梭。"
 			behavior="Stationary"
 			starting_mark_level="Markless"
 			cost_for_ai_to_purchase="2000"
@@ -55,7 +55,7 @@
 			collision_priority="810"
 			display_name="克赛迪安燃料"
 			display_name_for_sidebar="克赛迪安燃料"
-			description="A source of fuel for the Xodian megaships. Without it their power is greatly reduced."
+			description="克赛迪安巨型舰船的燃料来源。没有它，它们的力量会大大减弱。"
 			behavior="Stationary"
 			starting_mark_level="Markless"
 			cost_for_ai_to_purchase="2000"
@@ -98,7 +98,7 @@
 			y_offset_of_icon="30"
 			collision_priority="810"
 			display_name="克赛迪安王权"
-			override_faction_name="Xodian King"
+			override_faction_name="克赛迪安王权"
 			description="*Hu~Xod.Xath~Xot.Ha~ath*"
 			starting_mark_level="Mark7"
 			tech_upgrades_that_benefit_me="Unused"
@@ -129,7 +129,7 @@
 			>
 		<system
 				name="Q1"
-				display_name="Tesla Blast Cannon"
+				display_name="特斯拉爆裂炮"
 				category="Weapon"
 				firing_timing="OnlyInRange"
 				damage_per_shot="8500000"
@@ -160,8 +160,8 @@
 			y_offset_of_ship_in_visual_space="15"
 			y_offset_of_icon="30"
 			collision_priority="810"
-			display_name="Xodian Knightship"
-			override_faction_name="Xodian Knightship"
+			display_name="克赛迪安骑士舰"
+			override_faction_name="克赛迪安骑士舰"
 			description="*Hu~Xod.Xath~Xot.Ha~ath*"
 			starting_mark_level="Mark7"
 			tech_upgrades_that_benefit_me="Unused"
@@ -189,7 +189,7 @@
 
 			<system
 					name="Q1"
-					display_name="Tesla Blast Cannon"
+					display_name="特斯拉爆裂炮"
 					category="Weapon"
 					firing_timing="OnlyInRange"
 					damage_per_shot="8500000"
@@ -221,8 +221,8 @@
 			y_offset_of_ship_in_visual_space="15"
 			y_offset_of_icon="30"
 			collision_priority="810"
-			display_name="Xodian Pawnship"
-			override_faction_name="Xodian Pawnship"
+			display_name="克赛迪安兵舰"
+			override_faction_name="克赛迪安兵舰"
 			description="*Hu~X.Xath~X.Ha~o*"
 			starting_mark_level="Mark7"
 			tech_upgrades_that_benefit_me="Unused"
@@ -250,7 +250,7 @@
 
 			<system
 					name="Q1"
-					display_name="Tesla Blast Cannon"
+					display_name="特斯拉爆裂炮"
 					category="Weapon"
 					firing_timing="OnlyInRange"
 					damage_per_shot="8500000"
@@ -282,7 +282,7 @@
 			y_offset_of_ship_in_visual_space="15"
 			y_offset_of_icon="30"
 			collision_priority="810"
-			display_name="Xodian Constructor"
+			display_name="克赛迪安建造者"
 			description="*Hu~X.Xath~X.Ha~o*"
 			starting_mark_level="Mark7"
 			tech_upgrades_that_benefit_me="Unused"
@@ -326,9 +326,9 @@
 			y_offset_of_ship_in_visual_space="15"
 			y_offset_of_icon="30"
 			collision_priority="810"
-			display_name="Xodian Repair Base"
+			display_name="克赛迪安维修基地"
 			display_name_for_sidebar="克赛迪安维修基地"
-			description="This Xodian base produces drones to repair damaged ships."
+			description="该克赛迪安基地制造无人机来修复受损舰船。"
 			starting_mark_level="Mark7"
 			tech_upgrades_that_benefit_me="Unused"
 			does_not_use_multipliers_from_mark_level="true"
@@ -374,9 +374,9 @@
 			y_offset_of_ship_in_visual_space="15"
 			y_offset_of_icon="30"
 			collision_priority="810"
-			display_name="Xodian Repair Drone"
-			display_name_for_sidebar="XOD Repair Drone"
-			description="This Xodian drone circles and repairs damaged ships."
+			display_name="克赛迪安维修无人机"
+			display_name_for_sidebar="克赛迪安维修无人机"
+			description="该克赛迪安无人机环绕受损舰船进行维修。"
 			starting_mark_level="Mark1"
 			tech_upgrades_that_benefit_me="Unused"
 			does_not_use_multipliers_from_mark_level="true"
@@ -427,9 +427,9 @@
 			y_offset_of_ship_in_visual_space="15"
 			y_offset_of_icon="30"
 			collision_priority="810"
-			display_name="Xodian Structure"
+			display_name="克赛迪安建筑"
 			display_name_for_sidebar="克赛迪安建筑"
-			description="An unknown structure built by the Xodians."
+			description="克赛迪安建造的未知建筑。"
 			starting_mark_level="Markless"
 			tech_upgrades_that_benefit_me="Unused"
 			does_not_use_multipliers_from_mark_level="true"
@@ -460,9 +460,9 @@
 			icon_name="Ships2/SomethingSatellite"
 			icon_overlay=""
 			
-			display_name="Xodian Solar Collector"
+			display_name="克赛迪安太阳能收集器"
 			display_name_for_sidebar="克赛迪安收集器"
-			description="Appears to collect solar power for the Xodians."
+			description="似乎为克赛迪安收集太阳能。"
 			
 			orbits_gravity_well_center_at_its_current_radius="true"   
 			degrees_to_orbit_per_second="1"	
@@ -565,7 +565,7 @@
 			
 			display_name="克赛迪安 ???"
 			display_name_for_sidebar="克赛迪安 ???"
-			description="Mysterious structure built by the Xodians for an unknown purpose."
+			description="克赛迪安为未知目的建造的神秘建筑。"
 			>
 	</entity>
 
@@ -580,7 +580,7 @@
 			
 			display_name="克赛迪安 ???"
 			display_name_for_sidebar="克赛迪安 ???"
-			description="Mysterious structure built by the Xodians for an unknown purpose."
+			description="克赛迪安为未知目的建造的神秘建筑。"
 			>
 	</entity>
 
@@ -595,7 +595,7 @@
 			
 			display_name="克赛迪安 ???"
 			display_name_for_sidebar="克赛迪安 ???"
-			description="Mysterious structure built by the Xodians for an unknown purpose."
+			description="克赛迪安为未知目的建造的神秘建筑。"
 			>
 	</entity>
 
@@ -610,7 +610,7 @@
 			
 			display_name="克赛迪安 ???"
 			display_name_for_sidebar="克赛迪安 ???"
-			description="Mysterious structure built by the Xodians for an unknown purpose."
+			description="克赛迪安为未知目的建造的神秘建筑。"
 			>
 	</entity>
 
@@ -625,7 +625,7 @@
 			
 			display_name="克赛迪安 ???"
 			display_name_for_sidebar="克赛迪安 ???"
-			description="Mysterious structure built by the Xodians for an unknown purpose."
+			description="克赛迪安为未知目的建造的神秘建筑。"
 			>
 	</entity>
 
@@ -640,7 +640,7 @@
 			
 			display_name="克赛迪安泊位"
 			display_name_for_sidebar="克赛迪安泊位"
-			description="A massive ship is being constructed here from an asteroid."
+			description="这里正在利用小行星建造一艘巨型舰船。"
 
 			description_appender_dll="Xodian"
 			description_appender_type="Xodian.Xod_Berth"
@@ -658,7 +658,7 @@
 			
 			display_name="克赛迪安框架"
 			display_name_for_sidebar="克赛迪安框架"
-			description="Frame structures built by the Xodians for an unknown purpose."
+			description="克赛迪安为未知目的建造的框架结构。"
 			>
 	</entity>
 
@@ -673,7 +673,7 @@
 			
 			display_name="克赛迪安框架"
 			display_name_for_sidebar="克赛迪安框架"
-			description="Frame structures built by the Xodians for an unknown purpose."
+			description="克赛迪安为未知目的建造的框架结构。"
 			>
 	</entity>
 
@@ -688,7 +688,7 @@
 			
 			display_name="克赛迪安框架"
 			display_name_for_sidebar="克赛迪安框架"
-			description="Frame structures built by the Xodians for an unknown purpose."
+			description="克赛迪安为未知目的建造的框架结构。"
 			>
 	</entity>
 
@@ -703,7 +703,7 @@
 			
 			display_name="克赛迪安环"
 			display_name_for_sidebar="克赛迪安环"
-			description="Ring structures built by the Xodians for an unknown purpose."
+			description="克赛迪安为未知目的建造的环形结构。"
 			>
 	</entity>
 
@@ -718,7 +718,7 @@
 			
 			display_name="克赛迪安环"
 			display_name_for_sidebar="克赛迪安环"
-			description="Ring structures built by the Xodians for an unknown purpose."
+			description="克赛迪安为未知目的建造的环形结构。"
 			>
 	</entity>
 
@@ -733,7 +733,7 @@
 			
 			display_name="克赛迪安环"
 			display_name_for_sidebar="克赛迪安环"
-			description="Ring structures built by the Xodians for an unknown purpose."
+			description="克赛迪安为未知目的建造的环形结构。"
 			>
 	</entity>
 
@@ -748,7 +748,7 @@
 			
 			display_name="克赛迪安环"
 			display_name_for_sidebar="克赛迪安环"
-			description="Ring structures built by the Xodians for an unknown purpose."
+			description="克赛迪安为未知目的建造的环形结构。"
 			>
 	</entity>
 
@@ -824,7 +824,7 @@
 			visuals_scale_multiplier="26"
 			display_name="外星布雷舰"
 			display_name_for_sidebar="外星布雷舰"
-			description="Mines nearby space using autonomous drones housed in this cloaked hanger."
+			description="使用驻扎在此隐形机库中的自主无人机在附近空间布雷。"
 			behavior="Stationary"
 			starting_mark_level="Mark1"
 			tech_upgrades_that_benefit_me="Unused"
@@ -867,8 +867,8 @@
 			size_scale="2.5"
 			visuals_scale_multiplier="0.8"
 			collision_priority="1"
-			display_name="Xodian Minefield"
-			display_name_for_sidebar="Xodian Minefield"
+			display_name="克赛迪安雷区"
+			display_name_for_sidebar="克赛迪安雷区"
 			description="隐形爆炸物，引爆时对单个附近目标造成高伤害，每次损失最大生命值的 10%。"
 			behavior="Stationary"
 			starting_mark_level="Mark1"
@@ -928,7 +928,7 @@
 			collision_priority="1"
 			display_name="克赛迪安 AI 核心"
 			display_name_for_sidebar="克赛迪安 AI 核心"
-			description="The bare housing of a Xodian AI, having shed its Megaship armor. Essentially escape pods, if these can return home they can be refitted to a new Megaship."
+			description="克赛迪安 AI 的裸露外壳，已剥离巨型舰船的装甲。本质上是逃生舱，如果它们能够返回家园，就可以被改装成新的巨型舰船。"
 			behavior="Stationary"
 			starting_mark_level="Mark1"
 			tech_upgrades_that_benefit_me="Unused"
@@ -993,9 +993,9 @@
 			size_scale="5.7"
 			visuals_scale_multiplier="5"
 			y_offset_of_icon="20"
-			display_name="Xodian Wormhole Suppressor"
+			display_name="克赛迪安虫洞抑制器"
 			display_name_for_sidebar="W 抑制器"
-			description="This structure has been constructed around what once was a wormhole endpoint. While it exists it suppresses the wormhole and blocks travel."
+			description="此建筑建在曾经的虫洞端点周围。只要它存在，就能抑制虫洞并阻止穿行。"
 			behavior="Stationary"
 			never_leaves_remains="false"
 			starting_mark_level="Markless"

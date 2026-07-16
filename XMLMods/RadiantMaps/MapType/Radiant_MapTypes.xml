@@ -110,7 +110,7 @@
 		<map_option
 			name="xDimension"
 			display_name="宽度"
-			description="Number horizontal repititions"
+			description="水平重复次数"
 			
 			type="CustomSliderArbitraryOptions"
 			option_names="1,2,3,4,5,6,7,8,9,10" 
@@ -399,7 +399,7 @@
 		<map_option
 			name="TrapezohedronType"
 			display_name="分支类型"
-			description="What should the branches look like?"
+			description="分支应该是什么样子？"
 			default_id="2"
 			>
 			<choice_value
@@ -446,7 +446,7 @@
 		<map_option
 			name="LeafType"
 			display_name="端点类型"
-			description="What should be at the ends of the roads?"
+			description="道路的终点应该是什么？"
 			default_id="0"
 			>
 			<choice_value

@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
-  <item name="LeereBaseInfo" dll_name="LeereBaseInfo" type_name="Modding.Leere.LeereBaseInfo" />
+  <item name="利尔BaseInfo" dll_name="利尔BaseInfo" type_name="Modding.利尔.利尔BaseInfo" />
 </root>

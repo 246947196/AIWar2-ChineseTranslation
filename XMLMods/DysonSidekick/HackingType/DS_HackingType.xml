@@ -2,7 +2,7 @@
 <root>
 
   <item name="DismantleStronghold"  dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_DismantleStronghold" display_name="Dismantle Stronghold"
-        description="Allows you to dismantle a 要塞; the 要塞 and all its 建筑 are destroyed. You will get a partial refund on 坤迪亚."
+        description="允许你拆除一个要塞；该要塞及其所有建筑都会被摧毁。你将获得坤迪亚的部分退款。"
         hack_completes_instantly="true"
         cost_in_hacking_points="5"
         cost_in_resource_one="0"
@@ -14,7 +14,7 @@
         destroy_hack_target_on_completion="false"
         />
     <item name="GrantModules"  dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_GrantModulePoints" display_name="Grant Modules"
-        description="Grants a module point to this 旗舰."
+        description="为这艘旗舰授予一个模块点。"
         hack_completes_instantly="true"
         cost_in_hacking_points="15"
         cost_in_resource_one="0"
@@ -27,7 +27,7 @@
         />
 
     <item name="ClaimMoonDysonSidekick"  dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_ClaimMoon" display_name="Claim Moon"
-        description="Takes control of this crashed 收割者 Moon; this allows you to make it a Moon of of your own; it can be for any faction."
+        description="夺取这艘坠毁的收割者月球；这将允许你将其变成自己的月球，可以是任何派系的。"
         hack_completes_instantly="true"
         cost_in_hacking_points="20"
         cost_in_resource_one="20"
@@ -39,7 +39,7 @@
         destroy_hack_target_on_completion="true"
         />
     <item name="ClaimMoonNonDysonSidekick" copy_from="ClaimMoonDysonSidekick"
-          description="Takes control of this crashed 收割者 Moon; this allows you to make it a Moon of of your own."
+          description="夺取这艘坠毁的收割者月球；这将允许你将其变成自己的月球。"
           cost_in_resource_one="0"
           cost_in_hacking_points="20"
           for_player_type_tags_or_blank_if_for_all_empire_style_types="DarkZenithSidekick,SpireSidekick,DarkZenithEmpire"
@@ -52,7 +52,7 @@
             type_name="Arcen.AIW2.External.Hacking_SubvertSuperTerminal"
             display_name="Subvert Super Terminal"
             only_show_when_max_ai_difficulty_is_less_than="8"
-            description="The longer you hold on, the more you'll reduce (AIP), but you'll also cause a massive incursion of AI forces while doing it, some of which will head directly to your homeworld as an Exo-Galactic Strike. Careful not to kill yourself by holding on too long. You only get one shot at this hack before the AI adapts, so make it count.  The intensity of the response is increased by the number of human empires present, so three human empires leads to 3x as strong a response."
+            description="你坚持得越久，就能减少越多的AIP，但同时也会引发AI部队的大规模入侵，其中一些会直接以河外打击的形式朝向你的母星。小心不要因为坚持太久而害死自己。你只有一次机会进行这次入侵，之后AI就会适应，所以要好好把握。响应的强度会随着人类帝国的数量增加而递增，因此三个人类帝国会导致3倍强度的响应。"
             hacking_cost_per_second="0.7"
             effect_per_second="0.1"
             hack_duration="1200"
@@ -80,7 +80,7 @@
 
 
   <item name="ChooseEpistyleProduction"  dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_ChooseEpistyleProduction" display_name="Epistyle Production"
-        description="Allows you to choose what an 楣构 will build"
+        description="允许你选择楣构将建造什么"
         hack_completes_instantly="true"
         cost_in_hacking_points="0"
         cost_in_resource_one="0"
@@ -94,7 +94,7 @@
         />
 
   <item name="ChooseFlagshipForEpistyle"  dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_ChooseFlagshipForEpistyle" display_name="Epistyle Rally Target"
-        description="Allows you to specify which 旗舰 this epistyle's produced ships will join. Default is 'the closest 舰队'."
+        description="允许你指定该楣构生产的舰船将加入哪艘旗舰。默认为「最近的舰队」。"
         hack_completes_instantly="true"
         cost_in_hacking_points="0"
         cost_in_resource_one="0"
@@ -108,7 +108,7 @@
         />
 
   <item name="ClaimDZFlagship"  dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_ClaimFlagship" display_name="Claim DZ Flagship"
-        description="Takes control of this Dark 天顶 旗舰."
+        description="夺取这艘暗天顶旗舰的控制权。"
         hack_completes_instantly="true"
         cost_in_hacking_points="8"
         cost_in_resource_one="0"
@@ -121,7 +121,7 @@
         />
 
   <item name="FimbulwinterPlanet"  dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_FimbulwinterPlanet" display_name="Fimbulwinter Planet"
-        description="The Fimbulwinter descends upon this planet. When completed, this will grant 科技 and allow your ships to move more quickly on the planet."
+        description="芬布尔之冬降临这个星球。完成后，这将授予科技，并允许你的舰船在星球上移动得更快。"
         hack_completes_instantly="true"
         cost_in_hacking_points="10"
         cost_in_resource_one="0"
@@ -134,7 +134,7 @@
         />
 
   <item name="ReclaimArchitraveTerritory"  dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_ReclaimArchitraveTerritory" display_name="Reclaim Architrave Territory"
-        description="Push the 天顶 拱门使团 back from the planet. They are allowed to reclaim it, but prefer not to claim heavily defended planets. You can probably prevent them from reclaiming this planet by fortifying it heavily."
+        description="将天顶拱门使团从该星球推回去。他们被允许重新占领，但倾向于不占领重兵防守的星球。你可以通过大量筑防来防止他们重新占领这个星球。"
         hack_completes_instantly="true"
         cost_in_hacking_points="20"
         aip_on_completion="10"
@@ -146,7 +146,7 @@
         />
 
   <item name="ClaimSpireFlagship"  dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_ClaimFlagship" display_name="Claim Spire Flagship"
-        description="Takes control of this 尖塔 旗舰."
+        description="夺取这艘尖塔旗舰的控制权。"
         hack_completes_instantly="true"
         cost_in_hacking_points="20"
         cost_in_resource_one="0"
@@ -160,7 +160,7 @@
         />
 
   <item name="ClaimDZFortress"  dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_ClaimFlagship" display_name="Claim DZ Fortress"
-        description="Takes control of this Dark 天顶 要塞; if killed this fortress will become neutral and you'll need to hack for it again."
+        description="夺取这座暗天顶要塞的控制权；如果该要塞被摧毁，它将变为中立状态，你需要再次入侵才能重新控制它。"
         hack_completes_instantly="true"
         cost_in_hacking_points="8"
         cost_in_resource_one="0"
@@ -173,7 +173,7 @@
         /> 
 
   <item name="ClaimDZRegionProtector"  dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_ClaimFlagship" display_name="Claim Encampment"
-        description="Takes control of this Dark 天顶 Encampment."
+        description="夺取这座暗天顶营地的控制权。"
         hack_completes_instantly="true"
         cost_in_hacking_points="8"
         cost_in_resource_one="0"
@@ -186,7 +186,7 @@
         />
        
   <item name="ClaimMinorSocketIncreaser"  dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_ClaimSocketIncreaser" display_name="Claim Minor Forge"
-        description="Takes control of this Forge for your faction."
+        description="为你的派系夺取这个锻造厂的控制权。"
         hack_completes_instantly="true"
         cost_in_hacking_points="15"
         cost_in_resource_one="0"
@@ -211,7 +211,7 @@
         />
 
   <item name="ClaimMinorProducer"  dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_ClaimFlagship" display_name="Claim Minor Producer"
-        description="Takes control of this Producer for your faction."
+        description="为你的派系夺取这个生产设施的控制权。"
         hack_completes_instantly="true"
         cost_in_hacking_points="30"
         cost_in_resource_one="0"
@@ -228,7 +228,7 @@
 
   <!-- for nadir fortresses -->
     <item name="HackForMetal"  dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_HackForDZResource" display_name="Hack For Octiron"
-        description="Consumes this structure to grant 奥克提龙 to the 黑客 舰队. These 资源 can then be used by Epistyles or Terminii"
+        description="消耗此结构以向入侵舰队授予奥克提龙。这些资源随后可由楣构或终端使用"
         hack_completes_instantly="true"
         cost_in_hacking_points="4"
         cost_in_resource_one="0"
@@ -240,24 +240,24 @@
         destroy_hack_target_on_completion="true"
         />
   <item name="HackForGreen" copy_from="HackForMetal" display_name="Hack For Thaumite"
-        description="Consumes this structure to grant 索迈特 to the 黑客 舰队. These 资源 can then be used by Epistyles or Terminii"
+        description="消耗此结构以向入侵舰队授予索迈特。这些资源随后可由楣构或终端使用"
         />
   <item name="HackForBlue" copy_from="HackForMetal" display_name="Hack For Chelonium"
-        description="Consumes this structure to grant 切洛尼姆 to the 黑客 舰队. These 资源 can then be used by Epistyles or Terminii"
+        description="消耗此结构以向入侵舰队授予切洛尼姆。这些资源随后可由楣构或终端使用"
         />
   <item name="HackForWhite" copy_from="HackForMetal" display_name="Hack For Alhahest"
-        description="Consumes this structure to grant 阿尔哈凯斯特 to the 黑客 舰队. These 资源 can then be used by Epistyles or Terminii"
+        description="消耗此结构以向入侵舰队授予阿尔哈凯斯特。这些资源随后可由楣构或终端使用"
         />
   <item name="HackForRed" copy_from="HackForMetal" display_name="Hack For Izumite"
-        description="Consumes this structure to grant 伊祖迈特 to the 黑客 舰队. These 资源 can then be used by Epistyles or Terminii"
+        description="消耗此结构以向入侵舰队授予伊祖迈特。这些资源随后可由楣构或终端使用"
         />
   <item name="HackForBlack" copy_from="HackForMetal" display_name="Hack For Skrith"
-        description="Consumes this structure to grant 斯克里特 to the 黑客 舰队. These 资源 can then be used by Epistyles or Terminii"
+        description="消耗此结构以向入侵舰队授予斯克里特。这些资源随后可由楣构或终端使用"
         />
 
   <item name="DepositResources" display_name="Transfer Resources"
         dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_DepositResources"
-        description="Deposit 资源 from this 旗舰 to this epistyle"
+        description="将资源从该旗舰转移至该楣构"
         hack_completes_instantly="true"
         cost_in_hacking_points="0"
         cost_in_resource_one="0"
@@ -272,7 +272,7 @@
   <!-- scourge hacks -->
   <item name="TransformArmory" display_name="Transform Scourge Vassal Armory"
         dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_TransformArmory"
-        description="Change this Vassal 军械库 into that of another race"
+        description="将此附庸军械库转换为另一种族的军械库"
         hack_completes_instantly="true"
         cost_in_hacking_points="0"
         cost_in_metal="1000000"
@@ -287,7 +287,7 @@
 
   <item name="MarkupSpawner" display_name="Mark Up Spawner"
         dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_MarkupScourgeStructure"
-        description="Increase the 标记等级 of this spawner if it has enough experience."
+        description="如果该生成器拥有足够的经验，提升其标记等级。"
         hack_completes_instantly="true"
         cost_in_hacking_points="0"
         cost_in_metal="0"
@@ -301,7 +301,7 @@
         />
   <item name="MarkupArmory" display_name="Mark Up Armory"
         dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_MarkupScourgeStructure"
-        description="Increase the 标记等级 of this armory if it has enough experience."
+        description="如果该军械库拥有足够的经验，提升其标记等级。"
         hack_completes_instantly="true"
         cost_in_hacking_points="0"
         cost_in_metal="0"
@@ -315,7 +315,7 @@
         />
     <item name="MarkupBestiary" display_name="Mark Up Bestiary"
         dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_MarkupScourgeStructure"
-        description="Increase the 标记等级 of this bestiary if it has enough experience."
+        description="如果该异兽图鉴拥有足够的经验，提升其标记等级。"
         hack_completes_instantly="true"
         cost_in_hacking_points="0"
         cost_in_metal="0"
@@ -330,7 +330,7 @@
 
   <item name="MarkupFortress" display_name="Mark Up Fortress"
         dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_MarkupScourgeStructure"
-        description="Increase the 标记等级 of this fortress if it has enough experience."
+        description="如果该要塞拥有足够的经验，提升其标记等级。"
         hack_completes_instantly="true"
         cost_in_hacking_points="0"
         cost_in_metal="0"
@@ -344,7 +344,7 @@
         />
     <item name="ClaimScourgeFlagship"
             dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_ClaimFlagship" display_name="Claim Scourge Flagship"
-        description="Takes control of this crashed 收割者 Moon; this allows you to make it a Moon of of your own; it can be for any faction."
+        description="夺取这艘坠毁的收割者月球；这将允许你将其变成自己的月球，可以是任何派系的。"
         hack_completes_instantly="true"
         cost_in_hacking_points="40"
         cost_in_resource_one="0"
@@ -357,7 +357,7 @@
         />
     <item name="ClaimArmadaStarbase"
           dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_ClaimStarbase" display_name="Claim Starbase"
-        description="Takes control of this 星站."
+        description="夺取这艘星站的控制权。"
         hack_completes_instantly="true"
         cost_in_hacking_points="40"
         cost_in_resource_one="0"
@@ -370,7 +370,7 @@
         />
     <item name="DismantleArmadaStarbase"
           dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_DismantleStarbase" display_name="Dismantle Starbase"
-        description="Dismantle this 星站 so you can build another one."
+        description="拆除这座星站，以便你可以建造另一座。"
         hack_completes_instantly="true"
         cost_in_hacking_points="40"
         cost_in_resource_one="0"
@@ -388,7 +388,7 @@
             type_name="Arcen.AIW2.External.Hacking_Sabotage"
             display_name="Sabotage An Enemy"
             short_name="Sabotage"
-            description="Hack into and destroy one of a few enemy 建筑 on this planet. Not every defensive structure can be sabotaged."
+            description="入侵并摧毁该星球上少数几个敌方建筑之一。并非每个防御结构都可以被破坏。"
             hack_duration="30"
             hacking_cost_multiplier_per_attempt="0"
             primary_hacking_response_interval="10"
@@ -413,7 +413,7 @@
 
 
         <item name="ArmadaReprogram" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_Reprogram" display_name="Reprogram An Enemy" short_name="Reprogram"
-              description="Hack into and turn one of a few enemy 建筑 on this planet to become yours! Not many enemy units are vulnerable to capture in this way, but there are a few. If the structure would normally increase AI Progress on death, capturing it this way does not cause that increase.  Hack runs very quickly, due to the likelihood that the target is trying to kill your hacker."
+              description="入侵并将该星球上少数几个敌方建筑之一变为你的！并非很多敌方单位可以这样被捕获，但确实有一些。如果该结构在死亡时通常会增加AI进度，那么以这种方式捕获它不会导致该增加。入侵运行非常快，因为目标很可能正在试图杀死你的入侵者。"
               hack_duration="8"
 	      hacking_cost_multiplier_per_attempt="0"
               primary_hacking_response_interval="10"
@@ -435,9 +435,9 @@
               for_player_type_tags_or_blank_if_for_all_empire_style_types="ArmadaEmpire"
               />
         <item name="SummonTiberiumAbomination"  dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_SummonTiberiumEnemy" display_name="Summon Tyderian Abomination (→Tyd)"
-              description="By blasting this vein with 黑客 radiation. you can call forth a powerful enemy. Defeat this enemy and get more 泰德瑞安!
+              description="通过用入侵辐射轰击这条矿脉，你可以召唤一个强大的敌人。击败这个敌人，获得更多泰德瑞安！
 
-Hope it doesn't run away and come hunt you later...."
+希望它不会逃跑并在以后来追猎你……"
               hack_completes_instantly="true"
               cost_in_hacking_points="35"
               cost_in_resource_one="0"
@@ -449,9 +449,9 @@ Hope it doesn't run away and come hunt you later...."
               destroy_hack_target_on_completion="true"
               />
         <item name="SummonTiberiumEschaton"  dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_SummonScienceEnemy" display_name="Summon Tyderian Eschaton (→Sci)"
-              description="By blasting this vein with 黑客 radiation. you can call forth a powerful enemy. Defeat this enemy and get more 科技!
+              description="通过用入侵辐射轰击这条矿脉，你可以召唤一个强大的敌人。击败这个敌人，获得更多科技！
 
-Hope it doesn't run away and come hunt you later...."
+希望它不会逃跑并在以后来追猎你……"
               hack_completes_instantly="true"
               cost_in_hacking_points="20"
               cost_in_resource_one="0"
@@ -464,9 +464,9 @@ Hope it doesn't run away and come hunt you later...."
               />
 
         <item name="EmpowerVein"  dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_EmpowerTiberiumVein" display_name="Empower Tyderian Vein"
-              description="By blasting this vein with 黑客 radiation. you greatly strengthen it, giving it more 资源. This also will make the vein more likely to generate new veins.
+              description="通过用入侵辐射轰击这条矿脉，你极大地增强了它，给予它更多资源。这也将使该矿脉更有可能生成新的矿脉。
 
-A risky idea; trying to farm 泰德瑞安 is dangerous."
+一个冒险的想法；试图养殖泰德瑞安是危险的。"
               hack_completes_instantly="true"
               cost_in_hacking_points="5"
               cost_in_resource_one="0"
@@ -478,7 +478,7 @@ A risky idea; trying to farm 泰德瑞安 is dangerous."
               destroy_hack_target_on_completion="false"
         />
         <item name="EnterMultiphase"  dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_EnterMultiphase" display_name="Enter Multiphase"
-              description="By using 黑客 power, you are able to generate enough quantum radiation to allow this 旗舰 to briefly enter Multiphase"
+              description="通过使用入侵能量，你能够产生足够的量子辐射，使这艘旗舰短暂进入多相位状态"
               hack_completes_instantly="true"
               cost_in_hacking_points="60"
               cost_in_resource_one="0"
@@ -491,13 +491,13 @@ A risky idea; trying to farm 泰德瑞安 is dangerous."
         />
 
         <item name="SearchForRelicSidekick" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_SearchForRelicSidekick" display_name="Search for Spire Relic"
-        description="Flood the system with radiation that will help capture a Relic falling through the 银河. The Relic will appear, or the resonance frequency will tell you how far this planet is from the Relic.
+        description="用辐射充斥整个星系，以帮助捕获一颗穿越银河的遗物。遗物会出现，或者共振频率会告诉你这个星球离遗物有多远。
 
-In the event that you DO find the Relic here, be prepared!  Be ready with huge fleets to protect it, and holding planets en route with 防御 can help a lot too. Be ready to probably pause and figure out where you want to send the Relic.
+如果遗物确实出现在这里，请做好准备！准备好庞大的舰队来保护它，沿途占据行星并设置防御也会有很大帮助。准备暂停并找出你要将遗物送往何处。
 
-You will be swarmed and die if you don't make a decision quickly, as AI forces spawn endlessly until you get this thing to safety, so pausing is a good idea.
+如果你不迅速做出决定，你会被淹没并死亡，因为AI部队会不断生成直到你将遗物送到安全地带，所以暂停是个好主意。
 
-In multiplayer, the player who hacks for the relic will have control over the resulting city."
+在多人游戏中，入侵获取遗物的玩家将控制产生的城市。"
         hacking_cost_per_second="0"
         effect_per_second="1"
         hack_duration="2"
@@ -516,7 +516,7 @@ In multiplayer, the player who hacks for the relic will have control over the re
 />
 
         <item name="AnalyzeSpireSidekickDebris" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_AnalyzeSpireSidekickDebris" display_name="Analyze Spire Debris"
-        description="Analyzing the debris will give you some 科技."
+        description="分析残骸将为你提供一些科技。"
         hacking_cost_per_second="0"
         hack_duration="60"
         hacking_cost_multiplier_per_attempt="0"

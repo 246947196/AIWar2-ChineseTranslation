@@ -24,7 +24,7 @@
 注意：与许多其他派系不同，该派系在所有强度级别都会产生显著影响，因此默认为1。提高前请三思。"
 			sort_group="200" setting_type="IntSlider" default="1" min="1" max="10"/>
 	  <custom_field name="Allegiance" display_name="阵营" description="始终敌对所有人。"
-			  sort_group="250" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Hostile To All" default_option="Hostile To All" />
+			  sort_group="250" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="敌对所有人" default_option="敌对所有人" />
 	  <custom_field name="InitialSpawnTime" display_name="生成计时器" description="游戏开始后多少分钟海德拉首次出现？"
 		sort_group="300" setting_type="IntSlider" default="120" min="10" max="600"/>
 	  <custom_field name="RandomInitialSpawnTime" is_advanced_setting="true" display_name="随机化生成计时器" description="随机化海德拉的生成计时器，介于上述值的 50% 到 100% 之间。"

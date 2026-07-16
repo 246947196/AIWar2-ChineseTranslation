@@ -15,7 +15,7 @@
           collision_priority="800"
 	  display_name="Kzinti Fortress"
           display_name_for_sidebar="Kzi Fortress"
-	  description="Very powerful defensive structure, with 牵引 光束 and penetrating blasts that do more damage to ships in 牵引 beams."
+	  description="非常强大的防御建筑，配备牵引光束和能对牵引光束中舰船造成更高伤害的穿透性爆炸。"
 	  behavior="Stationary"
           is_major_ai_structure="true"
           seconds_to_fully_regenerate_hull="600"

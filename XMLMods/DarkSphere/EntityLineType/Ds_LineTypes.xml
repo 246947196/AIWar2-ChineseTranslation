@@ -3,7 +3,7 @@
 
     <line_type
 			name="Ds_Detonating_Lightning_Shot"
-			display_name="Detonating Lightning Shot"
+			display_name="引爆闪电射击"
 			hardcoded_type="None"
 			visuals_bundle="aiwar2goodiebox"
 			visuals="assets/shotparts/lines/_Lightning_Red.prefab"
@@ -14,7 +14,7 @@
 
 	<line_type
 			name="Ds_Lightning"
-			display_name="Darksun Lightning"
+			display_name="暗日闪电"
 			hardcoded_type="None"
 			visuals_bundle="aiwar2goodiebox"
 			visuals="assets/shotparts/lines/_Lightning_Red.prefab"
@@ -25,7 +25,7 @@
 
 	<line_type
 			name="Ds_Erupt"
-			display_name="Darksun Eruption"
+			display_name="暗日喷发"
 			hardcoded_type="None"
 			visuals_bundle="aiwar2goodiebox"
 			visuals="assets/shotparts/lines/_Lightning_Red.prefab"
@@ -36,7 +36,7 @@
 
 	<line_type
 			name="Ds_Laser"
-			display_name="Darksun 激光"
+			display_name="暗日激光"
 			hardcoded_type="None"
 			visuals_bundle="aiwar2goodiebox"
 			visuals="assets/shotparts/lines/_Laser_Red.prefab"

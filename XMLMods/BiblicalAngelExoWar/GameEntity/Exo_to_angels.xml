@@ -46,7 +46,7 @@
   <entity name="ExtragalacticFlenser"
 			required_mod_list="ExowarVarietyLON"
 			is_partial_record="true"
-			display_name="Israfel - Ra Pattern" 
+			display_name="伊斯拉菲尔 - 拉型" 
 			display_name_for_sidebar="伊斯拉菲尔-拉"
 			>
   </entity>
@@ -447,8 +447,8 @@
   <entity name="LONExtragalacticDireProteus"
 			required_mod_list="ExowarVarietyLON"
 			is_partial_record="true"
-			display_name="恐怖工厂"
-			display_name_for_sidebar="恐怖工厂"
+			display_name="恐怖机动兵工厂"
+			display_name_for_sidebar="恐怖机动兵工厂"
 			description="我们之前遇到过工厂，与其说是一艘船，不如说是一个伪装成船的贪婪蜂群。这个类似。但更大。大得多。"	
 			>
   </entity>
@@ -456,8 +456,8 @@
   <entity name="LONExtragalacticDireProteusStage2"
 			required_mod_list="ExowarVarietyLON"
 			is_partial_record="true"
-			display_name="复苏恐怖工厂"
-			display_name_for_sidebar="新恐怖工厂"
+			display_name="复苏恐怖机动兵工厂"
+			display_name_for_sidebar="新恐怖机动兵工厂"
 			description="我们之前遇到过工厂，与其说是一艘船，不如说是一个伪装成船的贪婪蜂群。这个类似。但更大。大得多。"	
 			>
   </entity>
@@ -465,8 +465,8 @@
   <entity name="LONExtragalacticDireProteusStage3"
 			required_mod_list="ExowarVarietyLON"
 			is_partial_record="true"
-			display_name="改型恐怖工厂"
-			display_name_for_sidebar="改恐怖工厂"
+			display_name="改型恐怖机动兵工厂"
+			display_name_for_sidebar="改恐怖机动兵工厂"
 			description="我们之前遇到过工厂，与其说是一艘船，不如说是一个伪装成船的贪婪蜂群。这个类似。但更大。大得多。"	
 			>
   </entity>
@@ -474,8 +474,8 @@
   <entity name="LONExtragalacticDireProteusStage4"
 			required_mod_list="ExowarVarietyLON"
 			is_partial_record="true"
-			display_name="衰退恐怖工厂"
-			display_name_for_sidebar="衰恐怖工厂"
+			display_name="衰退恐怖机动兵工厂"
+			display_name_for_sidebar="衰恐怖机动兵工厂"
 			description="我们之前遇到过工厂，与其说是一艘船，不如说是一个伪装成船的贪婪蜂群。这个类似。但更大。大得多。"	
 			>
   </entity>
@@ -483,24 +483,24 @@
   <entity name="LONExtragalacticProteus"
 			required_mod_list="ExowarVarietyLON"
 			is_partial_record="true"
-			display_name="工厂"
-			display_name_for_sidebar="工厂"	
+			display_name="机动兵工厂"
+			display_name_for_sidebar="机动兵工厂"	
 			>
   </entity>
   
   <entity name="LONExtragalacticProteusStage2"
 			required_mod_list="ExowarVarietyLON"
 			is_partial_record="true"
-			display_name="改型工厂"
-			display_name_for_sidebar="改工厂"	
+			display_name="改型机动兵工厂"
+			display_name_for_sidebar="改机动兵工厂"	
 			>
   </entity>
   
   <entity name="LONExtragalacticProteusStage3"
 			required_mod_list="ExowarVarietyLON"
 			is_partial_record="true"
-			display_name="衰退工厂"
-			display_name_for_sidebar="衰工厂"	
+			display_name="衰退机动兵工厂"
+			display_name_for_sidebar="衰机动兵工厂"	
 			>
   </entity>
   

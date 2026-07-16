@@ -151,7 +151,7 @@
 		icon_overlay="Overlays1/Starship_MercFlagship_Distractor"
 		size_scale="5"
 		visuals_scale_multiplier="14"
-		display_name="麻痹-拆解者护卫舰"
+		display_name="麻痹-废弃者护卫舰"
 		display_name_for_sidebar="麻-拆 FFM"
 		description_short="麻痹甚至更重的结构，对舰船使用导弹，目标受损越严重伤害越高。"
 		description="这艘护卫舰诞生于离子干扰护卫舰早期设计的图纸，该设计因仅有反结构能力而被认为过于"小众"。最终这一弱点通过将其伤害输出转换为额外的反舰导弹得到了缓解。人类内战中它被用于通过停止炮塔火力并攻击那些刚刚还认为阵地可守的舰队来压倒防御阵地。"
@@ -169,7 +169,7 @@
 			only_targets_static_units="true"
 		>
 		</system>
-		<system name="SM" display_name="拆解者导弹"
+		<system name="SM" display_name="废弃者导弹"
 			category="Weapon" firing_timing="OnlyInRange"
 			damage_per_shot="500" range="AboveAverage1" shot_speed="Normal" rate_of_fire="High" shots_per_salvo="20"
 			shot_type_data="FusionRocket"

@@ -3,7 +3,7 @@
 	
 	<fleet_design name="PlayableFlenser"
         display_name="剥皮者"
-        description="One Flenser. Some assembly required."
+        description="一台剥皮者。需要自行组装。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         is_intentionally_empty_beyond_centerpiece="true"

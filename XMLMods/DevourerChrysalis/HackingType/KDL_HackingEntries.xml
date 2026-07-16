@@ -50,7 +50,7 @@
 	/>
 	
     <item name="Devourer_AntagonizeHack_T1" dll_name="DevourerChrysalis" type_name="DevourerChrysalis.Devourer_AntagonizeHack_T1" display_name="激怒吞噬者" description="这是个坏主意，但它是可行的，作为指挥官，所有选项都应当呈报给您。
-长话短说：吞噬者如此巨大，以至于它需要一个类似于 AI 的内部通信网络。我们的黑客有信心，只需在其系统中摸索几秒钟，就能帮助我们理解其他庞大而广泛的 AI。
+长话短说：吞噬者如此巨大，以至于它需要一个类似于 AI 的内部通信网络。我们的入侵者有信心，只需在其系统中摸索几秒钟，就能帮助我们理解其他庞大而广泛的 AI。
 然而，我们确实预期吞噬者会暴力反应，并且至少在短时间内将我们及我们的盟友视为其主要目标。请注意后果。"
         hack_duration="15"
         primary_hacking_response_interval="1000"

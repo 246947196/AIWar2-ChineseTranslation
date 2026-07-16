@@ -10,9 +10,9 @@
 			visuals_scale_multiplier="6"
 			y_offset_of_icon="15"
 			collision_priority="500"
-			display_name="Plasma Siege Frigate"
-			display_name_for_sidebar="Plasma Siege FFL"
-			description="Fragile frigate that fires long range shots which devastate forcefields."
+			display_name="等离子攻城护卫舰"
+			display_name_for_sidebar="等离子攻城护卫舰"
+			description="脆弱的护卫舰，发射远程射弹，对力场造成毁灭性打击。"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Medium,Disruptive"
 			cost_for_ai_to_purchase="1336" strength_multiplier="1"
 			hull_points="126000" shield_points="52500" speed="BelowAverage2"
@@ -52,9 +52,9 @@
 			category="Ship"
 			y_offset_of_icon="15"
 			collision_priority="500"
-			display_name="Beam Assault Frigate"
-			display_name_for_sidebar="Beam Assault FFH"
-			description="Heavy frigate that deals incredible damage with a beam cannon to multiple targets in a line."
+			display_name="光束突击护卫舰"
+			display_name_for_sidebar="光束突击护卫舰"
+			description="重型护卫舰，使用光束炮对一条直线上的多个目标造成惊人伤害。"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Heavy,Splash"
 			cost_for_ai_to_purchase="982"			
 			hull_points="198000" shield_points="82500" speed="Normal2"
@@ -74,7 +74,7 @@
     <fleet_membership name="SelfSacrificingOffensiveMix" ship_cap_group="Frigate" weight="25" cap="6"/>
 	<fleet_membership name="AbductorBomberMix" ship_cap_group="Frigate" weight="25" cap="6"/>
 	<fleet_membership name="CooperativeFusionMix" ship_cap_group="Frigate" weight="25" cap="6"/>
-        <system name="HB" display_name="Heavy Beam Cannon"
+        <system name="HB" display_name="重型光束炮"
 				category="Weapon" firing_timing="OnlyInRange"
 				damage_per_shot="780" range="AboveAverage4" shot_speed="Normal" rate_of_fire="High"
 				fires_salvos_sequentially="true"
@@ -103,9 +103,9 @@
 			category="Ship"
 			y_offset_of_icon="15"
 			collision_priority="500"
-			display_name="Vampyre Frigate"
+			display_name="吸血鬼护卫舰"
    			 display_name_for_sidebar="吸血鬼护卫舰"
-			description="Fast, cloaked frigate with close range ballistic cannons and self repair nanobots."
+			description="快速隐形护卫舰，配备近程弹道炮和自修复纳米机器人。"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Melee,Medium"
 			cost_for_ai_to_purchase="1200" strength_multiplier="1.2"
 			hull_points="168000" shield_points="70250" speed="High"
@@ -127,7 +127,7 @@
 	<fleet_membership name="EngineStunMix" ship_cap_group="Frigate" weight="50" cap="6"/>
 	<fleet_membership name="MeleeWithSupportMix" ship_cap_group="Frigate" weight="100" cap="6"/>
 	<fleet_membership name="FrigatesWithSupport" ship_cap_group="Frigate" weight="50" cap="9"/>
-     <system name="BD" display_name="Vampiric Doubleshot"
+     <system name="BD" display_name="吸血双发炮"
 				category="Weapon" firing_timing="OnlyInRange"
 				damage_per_shot="1250" range="Small2" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="true"
 				shot_type_data="DoubleShot_Red"		
@@ -148,9 +148,9 @@
 			category="Ship"
 			y_offset_of_icon="15"
 			collision_priority="500"
-			display_name="Warhawk Frigate"
+			display_name="战鹰护卫舰"
     display_name_for_sidebar="战鹰护卫舰"
-			description="Fast, cloaked frigate with multi-target energy cannons that target high energy systems."
+			description="快速隐形护卫舰，配备多目标能量炮，瞄准高能量系统。"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Subterfuge,Light"
 			cost_for_ai_to_purchase="1200" strength_multiplier="1.2"
 			hull_points="168000" shield_points="70250" speed="High"
@@ -168,7 +168,7 @@
     <fleet_membership name="FragileOffensiveMix" ship_cap_group="Frigate" weight="25" cap="6"/>
     <fleet_membership name="CloakedMix" ship_cap_group="Frigate" weight="25" cap="6"/>
 	<fleet_membership name="FrigatesWithSupport" ship_cap_group="Frigate" weight="25" cap="9"/>
-     <system name="PB" display_name="Multi-target energy cannon"
+     <system name="PB" display_name="多目标能量炮"
 				category="Weapon" firing_timing="OnlyInRange"
 				damage_per_shot="560" range="Normal4" shot_speed="Normal" rate_of_fire="Normal"
 				shots_per_salvo="16" fires_salvos_sequentially="false"
@@ -190,9 +190,9 @@
 		category="Ship"
 		y_offset_of_icon="16"
 		collision_priority="500"
-		display_name="Combat Carrier Frigate"
-		display_name_for_sidebar="Combat Carrier FFH"
-		description="A heavy carrier that launches drone fighters equipped with beam cannons."
+		display_name="战斗航母护卫舰"
+		display_name_for_sidebar="战斗航母护卫舰"
+		description="重型航母，发射配备光束炮的无人战斗机。"
 		drone_starting_behavior_type="Attacker_Full"
 		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Technologist,Heavy"
 		cost_for_ai_to_purchase="982"			
@@ -212,7 +212,7 @@
 		shot_type_data="ArmorPiercingShell"	
 		>
     		</system>
-		<system name="LT" display_name="Beam Raptor Drones"
+		<system name="LT" display_name="光束猛禽无人机"
 			category="Weapon" firing_timing="OnlyInRange" cloaking_percent_loss_from_firing="1"
 			damage_per_shot="5" range="EssentiallyInfinite" shot_speed="Normal" rate_of_fire="Normal" shots_per_salvo="2" fires_salvos_sequentially="true" 				
 			shot_type_data="MFSBeamRaptorDrone"
@@ -232,7 +232,7 @@
 			visuals_scale_multiplier="3"
 			display_name="光束无人机"
 			display_name_for_sidebar="光束 DRN"
-			description="Carrier launched combat specialist armed with beam cannons."
+			description="航母发射的战斗专家，配备光束炮。"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Heavy,Technologist"
 			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="4"
 			always_self_attritions="true"
@@ -243,7 +243,7 @@
 			shot_fired_sfx="BasicLaunchWhine_Firing"
 			>
 			<system name="R5" damage_per_shot="0" range="AlmostNone"/>
-			<system name="H1" display_name="Heavy Beam Cannon"
+			<system name="H1" display_name="重型光束炮"
 				category="Weapon" firing_timing="OnlyInRange"
 				damage_per_shot="260" range="Normal5" shot_speed="Normal" rate_of_fire="High"
 				fires_salvos_sequentially="true"
@@ -268,9 +268,9 @@
 			visuals_scale_multiplier="9"
 			y_offset_of_icon="15"
 			collision_priority="600"
-			display_name="Command Frigate"
-			display_name_for_sidebar="指挥 FFH"
-			description="Rare Heavy frigate that is equipped with ballistic cannons and C3 equipment. This flagship boosts the attack power of all allied ship on this planet."
+			display_name="指挥护卫舰"
+			display_name_for_sidebar="指挥护卫舰"
+			description="稀有重型护卫舰，配备弹道炮和 C3 设备。这艘旗舰可提升该星球上所有盟军舰船的攻击力。"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Heavy,CommandMilitary"
 			cost_for_ai_to_purchase="1200"
 			max_count_per_npc_faction_before_stack="3"
@@ -288,7 +288,7 @@
     <fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="5" cap="3"/>			
     <fleet_membership name="SelfSacrificingOffensiveMix" ship_cap_group="Frigate" weight="5" cap="3"/>
     <fleet_membership name="SturdyOffensiveMix" ship_cap_group="Frigate" weight="5" cap="3"/>
-    <system name="BC" display_name="Ballistic Cannon"
+    <system name="BC" display_name="弹道炮"
 				category="Weapon" firing_timing="OnlyInRange"
 				damage_per_shot="3000" range="Normal6" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
 				shot_type_data="ArmorPiercingShell"				

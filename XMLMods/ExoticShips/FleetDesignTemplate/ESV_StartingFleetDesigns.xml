@@ -3,7 +3,7 @@
 
   <fleet_design name="ExS_BombSwarmFleet"
         display_name="炸弹蜂群舰队"
-        description="拥有大量可制造的弹头，这支舰队可以同时歼灭结构和舰船，但消耗大量金属。如需额外火力，光束医疗护卫舰在工厂附近时还能帮助更快地建造舰船。"
+        description="拥有大量可制造的飞弹，这支舰队可以同时歼灭结构和舰船，但消耗大量金属。如需额外火力，光束医疗护卫舰在工厂附近时还能帮助更快地建造舰船。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >
@@ -16,7 +16,7 @@
 
   <fleet_design name="ExS_ExploiterFleet"
         display_name="剥削者舰队"
-        description="拥有液化者提供的极端内置伤害放大，以及豪猪和麻痹-拆解者护卫舰的足够多发齐射使其物有所值，这支舰队可以字面意思地熔化敌人，但其对结构的攻击力有些不足。"
+        description="拥有液化者提供的极端内置伤害放大，以及豪猪和麻痹-废弃者护卫舰的足够多发齐射使其物有所值，这支舰队可以字面意思地熔化敌人，但其对结构的攻击力有些不足。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >

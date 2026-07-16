@@ -18,7 +18,7 @@
 			category="Ship"
 			collision_priority="10000"
 			display_name="风暴前哨方舟"
-			description="This 旗舰 and attendant fleet is configured to 突击 hard on system entry."
+			description="该旗舰及其护卫舰队配置用于在进入星系时发动强力突击。"
 			fleet_design_template_i_use_for_drones="StormfrontDrones"
 			drone_starting_behavior_type="Attacker_Full"
 			aip_to_claim="10"

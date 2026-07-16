@@ -46,7 +46,7 @@
 			aip_per_additional_summon="100"
 			time_between_summons_in_seconds="600"
 			repair_time_in_seconds="1200"
-			description="如果你把一座战斗工厂做得像堡垒一样大会怎样？你会得到这座超级工厂，拥有4倍的无人机和工程师，加上10倍的修理和建造能力。如果不是通过在其生命周期内自我消耗来产生金属，它可能在几分钟内让你破产。"
+			description="如果你把一座机动兵工厂做得像堡垒一样大会怎样？你会得到这座超级工厂，拥有4倍的无人机和工程师，加上10倍的修理和建造能力。如果不是通过在其生命周期内自我消耗来产生金属，它可能在几分钟内让你破产。"
 			parsed_data_type="EntityName"
 			data_list="SuperCombatFactory"
 			spawn_count_type="RawCount"
@@ -128,8 +128,8 @@
 
 	<item
 			name="HackingDroneOutguard"
-			display_name="黑客无人机操作员"
-			short_name="黑客无人机"
+			display_name="入侵无人机操作员"
+			short_name="入侵无人机"
 			donate_to_player="true"
 			on_spawn_behaviour="DefendLocalPlanet"
 			class="Utility"
@@ -157,7 +157,7 @@
 
 	<item
 			name="ApocalypseWarheadOutguard"
-			display_name="天启弹头"
+			display_name="天启飞弹"
 			donate_to_player="true"
 			on_spawn_behaviour="DefendLocalPlanet"
 			class="Stationary"
@@ -169,7 +169,7 @@
 			aip_per_additional_summon="-1"
 			time_between_summons_in_seconds="-1"
 			repair_time_in_seconds="3600"
-			description="投送一个爆炸后感染所有人的弹头使其僵尸化。这对人类来说会是一个很好的武器，只是我们从未让僵尸变得友好。"
+			description="投送一个爆炸后感染所有人的飞弹使其僵尸化。这对人类来说会是一个很好的武器，只是我们从未让僵尸变得友好。"
 			parsed_data_type="EntityName"
 			data_list="ApocalypseWarhead"
 			spawn_count_type="RawCount"

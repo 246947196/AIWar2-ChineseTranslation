@@ -1,38 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 <faction name="AI" is_partial_record="true">
-<custom_field name="ShieldGeneratorSpawn1" display_name="护盾发生器基础数量 (Network 1)" description="How many 护盾 Generators should be created?
-Each AI can have up to three networks of 护盾 Generators, this option applies to the first network."
+<custom_field name="ShieldGeneratorSpawn1" display_name="护盾发生器基础数量 (网络1)" description="应该创建多少个护盾发生器？
+每个AI最多可以有三个护盾发生器网络，此选项适用于第一个网络。"
 	  sort_group="630" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="0,1,2,3,4,5,6,7,8,9,10" default_option="7" />
-<custom_field name="ShieldGeneratorSpawn2" display_name="护盾发生器基础数量 (Network 2)" description="How many 护盾 Generators should be created?
-Each AI can have up to three networks of 护盾 Generators, this option applies to the second network."
+<custom_field name="ShieldGeneratorSpawn2" display_name="护盾发生器基础数量 (网络2)" description="应该创建多少个护盾发生器？
+每个AI最多可以有三个护盾发生器网络，此选项适用于第二个网络。"
 	  sort_group="635" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="0,1,2,3,4,5,6,7,8,9,10" default_option="0" />
-<custom_field name="ShieldGeneratorSpawn3" display_name="护盾发生器基础数量 (Network 3)" description="How many 护盾 Generators should be created?
-Each AI can have up to three networks of 护盾 Generators, this option applies to the third network."
+<custom_field name="ShieldGeneratorSpawn3" display_name="护盾发生器基础数量 (网络3)" description="应该创建多少个护盾发生器？
+每个AI最多可以有三个护盾发生器网络，此选项适用于第三个网络。"
 	  sort_group="640" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="0,1,2,3,4,5,6,7,8,9,10" default_option="0" />
 
-<custom_field name="ShieldGeneratorTarget1" display_name="护盾发生器网络稳定性 (Network 1)" description="If the destruction of a 护盾 Generator leaves fewer 护盾 Generators in the network than this number, the entire network is destroyed.
-Each AI can have up to three networks of 护盾 Generators, this option applies to the first network."
+<custom_field name="ShieldGeneratorTarget1" display_name="护盾发生器网络稳定性 (网络1)" description="如果摧毁一个护盾发生器后网络中的护盾发生器数量低于此数，整个网络将被摧毁。
+每个AI最多可以有三个护盾发生器网络，此选项适用于第一个网络。"
 	  sort_group="632" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="1,2,3,4,5,6,7,8,9" default_option="4" />
-<custom_field name="ShieldGeneratorTarget2" display_name="护盾发生器网络稳定性 (Network 2)" description="If the destruction of a 护盾 Generator leaves fewer 护盾 Generators in the network than this number, the entire network is destroyed.
-Each AI can have up to three networks of 护盾 Generators, this option applies to the second network."
+<custom_field name="ShieldGeneratorTarget2" display_name="护盾发生器网络稳定性 (网络2)" description="如果摧毁一个护盾发生器后网络中的护盾发生器数量低于此数，整个网络将被摧毁。
+每个AI最多可以有三个护盾发生器网络，此选项适用于第二个网络。"
 	  sort_group="637" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="1,2,3,4,5,6,7,8,9" default_option="4" />
-<custom_field name="ShieldGeneratorTarget3" display_name="护盾发生器网络稳定性 (Network 3)" description="If the destruction of a 护盾 Generator leaves fewer 护盾 Generators in the network than this number, the entire network is destroyed.
-Each AI can have up to three networks of 护盾 Generators, this option applies to the third network."
+<custom_field name="ShieldGeneratorTarget3" display_name="护盾发生器网络稳定性 (网络3)" description="如果摧毁一个护盾发生器后网络中的护盾发生器数量低于此数，整个网络将被摧毁。
+每个AI最多可以有三个护盾发生器网络，此选项适用于第三个网络。"
 	  sort_group="642" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="1,2,3,4,5,6,7,8,9" default_option="4" />
 	  
   
-<custom_field name="RandomGeneratorsMax1" is_advanced_setting="true" display_name="护盾发生器最大额外数量 (Network 1)" description="What is the maximum number of additional 护盾 Generators that should be created at random?
-Each AI can have up to three networks of 护盾 Generators, this option applies to the first network.
-Each network can have a maximum of ten 护盾 Generators, split between this option and the previous one."
+<custom_field name="RandomGeneratorsMax1" is_advanced_setting="true" display_name="护盾发生器最大额外数量 (网络1)" description="最多应随机创建多少个额外的护盾发生器？
+每个AI最多可以有三个护盾发生器网络，此选项适用于第一个网络。
+每个网络最多有十个护盾发生器，在本选项和前一个选项之间分配。"
 	  sort_group="631" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="0,1,2,3,4,5,6,7,8,9,10" default_option="0" />
-<custom_field name="RandomGeneratorsMax2" is_advanced_setting="true" display_name="护盾发生器最大额外数量 (Network 2)" description="What is the maximum number of additional 护盾 Generators that should be created at random?
-Each AI can have up to three networks of 护盾 Generators, this option applies to the second network.
-Each network can have a maximum of ten 护盾 Generators, split between this option and the previous one."
+<custom_field name="RandomGeneratorsMax2" is_advanced_setting="true" display_name="护盾发生器最大额外数量 (网络2)" description="最多应随机创建多少个额外的护盾发生器？
+每个AI最多可以有三个护盾发生器网络，此选项适用于第二个网络。
+每个网络最多有十个护盾发生器，在本选项和前一个选项之间分配。"
 	  sort_group="636" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="0,1,2,3,4,5,6,7,8,9,10" default_option="0" />
-<custom_field name="RandomGeneratorsMax3" is_advanced_setting="true" display_name="护盾发生器最大额外数量 (Network 3)" description="What is the maximum number of additional 护盾 Generators that should be created at random?
-Each AI can have up to three networks of 护盾 Generators, this option applies to the third network.
-Each network can have a maximum of ten 护盾 Generators, split between this option and the previous one."
+<custom_field name="RandomGeneratorsMax3" is_advanced_setting="true" display_name="护盾发生器最大额外数量 (网络3)" description="最多应随机创建多少个额外的护盾发生器？
+每个AI最多可以有三个护盾发生器网络，此选项适用于第三个网络。
+每个网络最多有十个护盾发生器，在本选项和前一个选项之间分配。"
 	  sort_group="641" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="0,1,2,3,4,5,6,7,8,9,10" default_option="0" />		  
 
 </faction>
