@@ -4,13 +4,13 @@
   <journal name="DarkSpireFirstDetected" sidebar_text="{FactionColor}暗塔&lt;/color&gt;:  首次侦测到"
            can_record_another_copy_if_already_recorded_in_this_campaign="false"
            text_replacement_related_faction_color="true"
-           chat_text="{FactionColor}Dark Spire&lt;/color&gt; sighted"
+            chat_text="{FactionColor}暗塔&lt;/color&gt;已侦测到"
            full_text="指挥官，我们从一个新种族侦测到一些重要的新建筑，我们将其命名为暗塔。这些“复仇发生器”似乎能从附近单位的死亡中获取能量。我们在这些星球上作战时必须保持警惕。" />
 
   <journal name="DarkSpireConquestModeFromFallenSpire" sidebar_text="{FactionColor}暗塔&lt;/color&gt;:  征服模式已启用"
            can_record_another_copy_if_already_recorded_in_this_campaign="false"
            text_replacement_related_faction_color="true"
-        chat_text="The Dark Spire has entered Conquest Mode"
+        chat_text="暗塔已进入征服模式"
         full_text="指挥官，我们从暗塔的复仇发生器侦测到一些重大的新能量涌动。看起来它们是在对堕落之塔活动的增加做出反应。看起来即使附近没有单位死亡，复仇发生器现在也能产生少量能量。
 
 此外，看起来它们会更频繁地尝试建造新的复仇发生器。值得庆幸的是，由于这些新发生器被如此迅速地传送进来，它们不像其他复仇发生器那样具有无敌状态。" />
@@ -19,7 +19,7 @@
   <journal name="DarkSpireConquestModeFromDarkAlliance" sidebar_text="{FactionColor}暗塔&lt;/color&gt;:  征服模式已启用"
            can_record_another_copy_if_already_recorded_in_this_campaign="false"
            text_replacement_related_faction_color="true"
-        chat_text="The Dark Spire has entered Conquest Mode"
+        chat_text="暗塔已进入征服模式"
         full_text="指挥官，我们从暗塔的复仇发生器侦测到一些重大的新能量涌动。看起来它们是在响应他们的黑暗联盟盟友。看起来即使附近没有单位死亡，复仇发生器现在也能产生少量能量。
 
 此外，看起来它们会更频繁地尝试建造新的复仇发生器。值得庆幸的是，由于这些新发生器被如此迅速地传送进来，它们不像其他复仇发生器那样具有无敌状态。" />
@@ -27,7 +27,7 @@
 	<journal name="DarkSpireConquestModeFromCoalition" sidebar_text="{FactionColor}暗塔&lt;/color&gt;:  征服模式已启用"
            can_record_another_copy_if_already_recorded_in_this_campaign="false"
            text_replacement_related_faction_color="true"
-        chat_text="The Dark Spire has entered Conquest Mode"
+        chat_text="暗塔已进入征服模式"
         full_text="指挥官，我们从暗塔的复仇发生器侦测到一些重大的新能量涌动。看起来联盟主动摧毁它们建筑的能力激起了它们更多的愤怒。看起来即使附近没有单位死亡，复仇发生器现在也能产生少量能量。
 
 此外，看起来它们会更频繁地尝试建造新的复仇发生器。值得庆幸的是，由于这些新发生器被如此迅速地传送进来，它们不像其他复仇发生器那样具有无敌状态。" />

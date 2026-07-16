@@ -3,21 +3,21 @@
 
   <journal name="CP_AIDef_More" sidebar_text="{FactionName} 已被击败" can_record_another_copy_if_already_recorded_in_this_campaign="true"
         text_replacement_related_faction="true"
-        chat_text="{FactionName} has been defeated!  Well done.  It has lost its coordination with the other AI factions and is now rogue."
+        chat_text="{FactionName} 已被击败！干得好。它已与其他 AI 派系失去协调，现在处于失控状态。"
         full_text="{FactionName} 已被击败！干得好。它已与其他 AI 派系失去协调，现在处于失控状态。" />
 
   <journal name="CP_AIDef_Final" sidebar_text="{FactionName} 已被击败" can_record_another_copy_if_already_recorded_in_this_campaign="true"
         text_replacement_related_faction="true"
-        chat_text="{FactionName} has been defeated!  That was the last of the AIs, which means you have won!"
+        chat_text="{FactionName} 已被击败！那是最后一个 AI，这意味着你赢了！"
         full_text="{FactionName} 已被击败！那是最后一个 AI，这意味着你赢了！" />
 
   <journal name="CP_AIDef_MoreOthers" sidebar_text="{FactionName} 已被击败" can_record_another_copy_if_already_recorded_in_this_campaign="true"
         text_replacement_related_faction="true"
-        chat_text="{FactionName} has been defeated!  That was the last of the AIs, but we have not yet won!"
+        chat_text="{FactionName} 已被击败！那是最后一个 AI，但我们还没有获胜！"
         full_text="{FactionName} 已被击败！那是最后一个 AI，但我们还没有获胜！" />
 
   <journal name="Badg_AI_Civ" sidebar_text="AI 内战" can_record_another_copy_if_already_recorded_in_this_campaign="true"
-        chat_text="The AI Civil War has begun."
+        chat_text="AI 内战已经开始。"
         full_text="好吧，现在所有的 AI 似乎都互相仇视。你能利用这一点并成功存活下来吗？" />
 
   <journal name="OutguardFirstDetected" sidebar_text="{FactionColor}前哨守卫&lt;/color&gt;: 潜在的下属势力！"

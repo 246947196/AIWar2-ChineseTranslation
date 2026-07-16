@@ -489,3 +489,20 @@ patch 前必须从 `AIWar2_Data\Managed\` 复制原始 DLL（禁止在已 patch 
 7. 核心 DLL（IL 汉化）：用 `tools/ilpatch` 按 JSON 字典替换 `ldstr` 字面量，不碰任何代码结构（详见 SPEC 8.15）
 8. **JSON 字典编码**：合并/重写 ilpatch 字典必须用**无 BOM 的 UTF-8**（PowerShell `Set-Content -Encoding UTF8` 会加 BOM，导致 ilpatch/Python 解析失败）。优先用 Python `open(path,'w',encoding='utf-8')` 或 .NET `UTF8Encoding(false)`
 9. **大 DLL 并行翻译**：候选 >1000 条时按行切分为 `*.partN.json` 分片交多代理并行；合并时切忌直接拼接分片文件（子代理易破坏 JSON 结构），应重新 `extract` 干净骨架后用正则提取各分片 value 注入（详见 SPEC 8.15.9）
+
+## 日志类 chat_text 补译记录 (2026-07-16)
+
+2026-07-16 补全了 JournalEntries（日志类）中遗留的英文 `chat_text` 条目。经扫描，翻译 mod 下日志类 `chat_text` 共 588 条，其中 565 条已译，23 条为英文；排除 6 条 `CMP_Journal_TestDirectCodeEntries.xml` 测试占位条目（验证 `{FactionName}` 等占位符用，非真实文案，按惯例不译），实际有效未译 17 条，全部补译：
+
+| 文件 | 补译条目数 | 内容 |
+|------|----------|------|
+| AstroTrains_Journal.xml | 1 | 星际列车防御进一步升级 |
+| CMP_Journal_BaseGameDirectCodeEntries.xml | 4 | AI 被击败（3 种结局）、AI 内战已开始 |
+| DarkSpire_Journal.xml | 4 | 暗塔已侦测到、暗塔已进入征服模式（×3） |
+| Extragalactic_War_Journal.xml | 2 | 河外战争单位已释放、AI 霸主已相位转移正在逃离 |
+| Lore_Journal.xml | 4 | 猎手舰队/人工智能预备队/守卫舰队/禁卫军 已侦测到 |
+| Nanocaust_Journal.xml | 2 | 纳米浩劫入侵开始（友好/敌对 ×2） |
+
+**结论**：日志类 `chat_text` 翻译全部完成（588 条，仅余 6 条测试占位条目未翻）。
+
+**扫描方法**：PowerShell 遍历 `AIWar2_ChineseTranslation` 下含 `chat_text=` 的 XML，正则提取 `chat_text="..."`，判定含 `[A-Za-z]` 且不含 CJK 的为未译。

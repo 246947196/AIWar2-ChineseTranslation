@@ -46,7 +46,7 @@
     <journal name="Beginner_UseLoadMode" sidebar_text="&lt;color=#ffd267&gt;概念:&lt;/color&gt; 运输舰船" is_for_the_tips_tab="true"
              can_record_another_copy_if_already_recorded_in_this_campaign="false"
              text_replacement_related_faction_color="true"
-             chat_text="指挥官，一个重要技巧是将旗舰设为"装载模式"。这能让它们作为运输舰在地图上快速移动舰船。默认进入装载模式的快捷键是L，卸载按U。你可以在控制菜单中修改。"
+             chat_text="指挥官，一个重要技巧是将旗舰设为『装载模式』。这能让它们作为运输舰在地图上快速移动舰船。默认进入装载模式的快捷键是L，卸载按U。你可以在控制菜单中修改。"
              full_text="指挥官，一个重要的技巧是让你的旗舰进入“装载模式”。这能让它们充当运输船，快速在地图上移动你的舰船。
 
 处于装载模式的旗舰非常适合绕过AI防御，打击关键目标。

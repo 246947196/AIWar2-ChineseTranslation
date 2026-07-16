@@ -2,10 +2,10 @@
 <root>
     <faction
             name="DarkSphere"
-            display_name="Dark Sphere"
-            short_name="Dark Sphere"
+            display_name="黑暗球体"
+            short_name="黑暗球体"
             processing_group="DarkSphere"
-            custom_NameForLobby="Dyson Sphere: <color=#242124>Dark</color>"
+            custom_NameForLobby="戴森球: <color=#242124>黑暗</color>"
             base_info_source="Ds_Faction_Base"
             deep_info_source="Ds_Faction_Deep"
             team_center_color="c242124"
@@ -18,14 +18,14 @@
             exclude_from_za_territory="true"
             defeat_condition="AllKingsDead_IncludingSubfactions"
             must_defeat="true"
-            description="Adds a <color=#242124>Dark Sphere</color> invasion to the galaxy. The <color=#242124>Dark Sphere</color> is an intelligent mega-structure, seeking the universal end of suffering - through eradication.
+            description="向银河系添加一次<color=#242124>黑暗球体</color>入侵。黑暗球体是一个智能巨型结构，寻求通过灭绝来终结宇宙万物的苦难。
 
-<color=#f25e1c>FATAL IMPACT:</color> What hell did this come from?"
+<color=#f25e1c>致命影响：</color>这到底是从哪个地狱来的？"
             >
         <custom_field
                 name="Intensity"
-                display_name="Intensity"
-                description="Just kidding, you can't change this. RIP."
+                display_name="强度"
+                description="开玩笑的，你没法改。安息吧。"
                 sort_group="200"
                 setting_type="IntSlider"
                 default="666"
@@ -36,12 +36,12 @@
         <custom_field
                 is_hidden="true"
                 name="Allegiance"
-                display_name="Allegiance"
-                description="Always hostile."
+                display_name="归属"
+                description="始终对所有势力敌对。"
                 sort_group="300"
                 setting_type="CustomDropdownArbitraryOptions"
-                arbitrary_options="Hostile To All"
-                default_option="Hostile To All"
+                arbitrary_options="对所有势力敌对"
+                default_option="对所有势力敌对"
                 />
                 
                 
