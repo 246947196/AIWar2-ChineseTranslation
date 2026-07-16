@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
 	<entity name="ShowdownDevice" voice_group="Silent" is_auto_scrapping_skipped_when_command_station_type_changes="false"
@@ -16,7 +16,7 @@
 		display_name_for_sidebar="决战装置"
 		description="如果你控制了3个决战装置，就可以通过骇入任意一个决战装置来触发与AI的最终决战。AI会对你发起大规模攻击；你必须在整个过程中至少保留3个决战装置存活。
 
-对于人类帝国来说，你可以通过占领星球来夺取决战装置。死灵法师则必须骇入决战装置才能夺取它。"
+对于人类帝国来说，你可以通过占领行星来夺取决战装置。死灵法师则必须骇入决战装置才能夺取它。"
 		behavior="Stationary"
 		never_leaves_remains="false"
 		starting_mark_level="Markless"

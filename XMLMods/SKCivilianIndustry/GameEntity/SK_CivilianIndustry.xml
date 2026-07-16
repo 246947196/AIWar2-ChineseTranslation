@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
     <!--    File contains stations and ships for the PlayerTrains faction.
     -->
@@ -49,7 +49,7 @@
             Resources are always inported or exported through this station.
     -->
     <entity name="TradeStation" display_name="贸易站" draw_in_galaxy_view="true"
-            description="该星球贸易的中心。可受经济和后勤指挥及金属产出科技升级。"
+            description="该行星贸易的中心。可受经济和后勤指挥及金属产出科技升级。"
             tags="CivilianIndustryEntity,TradeStation,ShowsOnNormalDisplayMode,CenterOfTrade"
             visuals="assets/_finalgamemeshes/humanbuildings/spacedock/spacedock.prefab"
             gimbal_name="AstroTrainStation"
@@ -97,7 +97,7 @@
             Used to transfer resources between trade stations and the grand station.
     -->
     <entity name="CargoShip" display_name="货船" cannot_be_stacked="true"
-            description="一艘民用贸易船。负责在你的各星球之间运输资源。可受金属产出和轻型科技升级。"
+            description="一艘民用贸易船。负责在你的各行星之间运输资源。可受金属产出和轻型科技升级。"
             tags="CivilianIndustryEntity,CargoShip,ShowsOnNormalDisplayMode"
             visuals="assets/_finalgamemeshes/humanoddities/colonyship/colonyship.prefab"
             icon_name="Ships1/ColonyShip"
@@ -156,7 +156,7 @@
 		visuals_scale_multiplier="3"
         collision_priority="800"
 	    display_name="民兵前哨"
-	    description="民兵舰队的核心。为应对相邻星球上的 AI 威胁而建造。请求资源以建造固定防御工事。可受要塞和军事指挥科技升级。"
+	    description="民兵舰队的核心。为应对相邻行星上的 AI 威胁而建造。请求资源以建造固定防御工事。可受要塞和军事指挥科技升级。"
 	    behavior="Stationary"
         is_major_ai_structure="true"
 		starting_mark_level="Mark1" max_mark_level="5"
@@ -203,7 +203,7 @@
 			visuals_scale_multiplier="13"
 			collision_priority="1000"
 		    display_name="民兵巡逻哨站" display_name_for_sidebar="民兵巡逻哨"
-			description="该星球 AI 守卫的存储结构，配备一门对新抵达者危险的激光加农炮。摧毁它将降低此地的最大增援容量。"
+			description="该行星 AI 守卫的存储结构，配备一门对新抵达者危险的激光加农炮。摧毁它将降低此地的最大增援容量。"
 			behavior="Stationary"
 			starting_mark_level="Mark1"
 			cost_for_ai_to_purchase="200"			
@@ -329,7 +329,7 @@
             special_entity_type="NPCFactionCenterpiece"
             visuals="assets/_finalgamemeshes/humanbuildings/spacedock/spacedock.prefab"
             build_sidebar_categories_i_am_part_of="MilitiaBuildings"
-            description="该区域地方防御力量的焦点。使本星球和相邻星球上民兵建筑的炮塔和单位容量提升 15% + 每标记等级 5%，或固定提升 1，取较大值。可受指挥科技升级。"
+            description="该区域地方防御力量的焦点。使本行星和相邻行星上民兵建筑的炮塔和单位容量提升 15% + 每标记等级 5%，或固定提升 1，取较大值。可受指挥科技升级。"
             metal_cost="5000000" energy_consumption="200000" absolute_max_cap_when_in_fleets="1"
 			tech_upgrades_that_benefit_me="CommandEconomic,CommandLogistical,CommandMilitary"
     >
@@ -361,7 +361,7 @@
     <entity name="CrackerJack" display_name="巧手保护者" skip_export="true" copy_from="RaidFrigate"
                 tags="CivAmbushProtector,CivProtector,CivMilitiaSpawn"
 				armor_mm="180" albedo="0.6" engine_gx="25" mass_tx="25"	
-                description="强大的保护者，使用先进的伏击技术建造。该舰善于消灭最近抵达所在星球的一切部队。"
+                description="强大的保护者，使用先进的伏击技术建造。该舰善于消灭最近抵达所在行星的一切部队。"
                 hull_points="1000000" shield_points="500000"
                 tech_upgrades_that_benefit_me="Ambush,Medium"
 				multiplier_to_all_scales="4" 
@@ -806,7 +806,7 @@
 	<entity name="Orchestrator" display_name="指挥家保护者" skip_export="true" copy_from="CarrierGuardian"
                 tags="CivTechnologistProtector,CivProtector,CivMilitiaSpawn"
 				armor_mm="180" albedo="0.6" engine_gx="25" mass_tx="25"	
-                description="强大的保护者，使用先进的科技技术建造。该舰生成诱饵无人机，加速所在星球上的友军单位，并提供全星球范围的快子覆盖。"
+                description="强大的保护者，使用先进的科技技术建造。该舰生成诱饵无人机，加速所在行星上的友军单位，并提供全行星范围的快子覆盖。"
                 hull_points="1000000" shield_points="500000"
                 tech_upgrades_that_benefit_me="Technologist,Medium"
 				fleet_design_template_i_use_for_drones="DecoyDrones"

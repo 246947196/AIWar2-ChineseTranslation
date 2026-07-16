@@ -2,7 +2,7 @@
 <root>
   <warden_type name="BaseOriented" is_default="true"
             display_name="基地导向型" abbreviation="基地导向型"
-            description="最简单（但标准）的行为，要求监守舰队必须先停留在监守舰队基地，然后才能移动去防御一个星球。这给你提供了更大的进攻窗口期，在监守舰队到达防御之前，具体时间取决于最近的监守舰队基地与你想要攻击的星球之间的距离。小提示：摧毁监守舰队基地可以给自己争取更多时间！"
+            description="最简单（但标准）的行为，要求监守舰队必须先停留在监守舰队基地，然后才能移动去防御一个行星。这给你提供了更大的进攻窗口期，在监守舰队到达防御之前，具体时间取决于最近的监守舰队基地与你想要攻击的行星之间的距离。小提示：摧毁监守舰队基地可以给自己争取更多时间！"
             AllowEntryIntoHostileTerritory="false"
             ShouldCountAsThreat="false"
             HostileRatio_TooDangerousToStay="2.0"
@@ -18,7 +18,7 @@
   
   <warden_type name="Normal" copy_from="BaseOriented"
             display_name="预测型" abbreviation="预测型"
-            description="对标准行为的升级，监守舰队会根据其难度级别使用情报来预测并在它认为你可能会攻击的星球（或附近）进行部署。更高的监守难度级别会使其更加智能。"
+            description="对标准行为的升级，监守舰队会根据其难度级别使用情报来预测并在它认为你可能会攻击的行星（或附近）进行部署。更高的监守难度级别会使其更加智能。"
             MustCampOnNinjaBases="false"
   >
   </warden_type>

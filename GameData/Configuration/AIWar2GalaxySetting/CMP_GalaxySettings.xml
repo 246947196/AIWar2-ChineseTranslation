@@ -11,7 +11,7 @@
   <!-- General: ScoutingCoreMechanics -->  
   <galaxy_setting category="General" subcategory="ScoutingCoreMechanics" is_advanced_setting="true" name="MaxPlanetsToScoutAtOnce" display_name="同时侦察的最大行星数"
       type="IntSlider" default="8" min="0" max="10" changeable_during_gameplay="true"
-      description="根据你的地图地形，占领一个行星可能会导致大量行星突然被揭示。为了避免情况变得过于混乱以及在你占领一个行星后显示整个地图，这个设置让星球揭示过程更加渐进。默认值为8。" >
+      description="根据你的地图地形，占领一个行星可能会导致大量行星突然被揭示。为了避免情况变得过于混乱以及在你占领一个行星后显示整个地图，这个设置让行星揭示过程更加渐进。默认值为8。" >
       <harshness_override min_campaign_harshness_to_apply="200" max="8" />
   </galaxy_setting>
 
@@ -409,12 +409,12 @@
   </galaxy_setting>  
   <!-- Performance -->
   <galaxy_setting name="StackingCutoffNPCs" category="Performance" is_advanced_setting="true" display_name="NPC单位开始堆叠的数量" type="IntSlider" default="50" min="6" max="200" changeable_during_gameplay="true"
-             description="当一个星球上有这么多同类型的非玩家单位时，游戏会开始将它们堆叠显示。设置过高可能导致大型战斗时的性能问题。
+             description="当一个行星上有这么多同类型的非玩家单位时，游戏会开始将它们堆叠显示。设置过高可能导致大型战斗时的性能问题。
            
    你可以在游戏过程中随时调整此数值。" />
 
   <galaxy_setting name="StackingCutoffPlayers" category="Performance" is_advanced_setting="true" display_name="玩家单位开始堆叠的数量" type="IntSlider" default="30" min="6" max="90" changeable_during_gameplay="true"
-             description="当一个舰队在同一星球上有这么多同类型的移动玩家单位时，游戏会开始将它们堆叠显示。设置过高可能导致性能问题，即使是停泊的单位也会影响性能，战斗时更甚。
+             description="当一个舰队在同一行星上有这么多同类型的移动玩家单位时，游戏会开始将它们堆叠显示。设置过高可能导致性能问题，即使是停泊的单位也会影响性能，战斗时更甚。
            
    你可以在游戏过程中随时调整此数值。" />
 
@@ -426,7 +426,7 @@
             type="BoolToggle"
             default="false"
             changeable_during_gameplay="true"
-            description="正常堆叠算法会为每个派系在每个星球上的每种单位类型设定固定数量的编队。启用实验性堆叠后，我们会改为计算每个派系在每个星球上的所有类型单位数量。"
+            description="正常堆叠算法会为每个派系在每个行星上的每种单位类型设定固定数量的编队。启用实验性堆叠后，我们会改为计算每个派系在每个行星上的所有类型单位数量。"
             />
 
   <galaxy_setting
@@ -455,8 +455,8 @@
             description="如果启用了实验性堆叠，此设置会将每个行星所需的小队数量从基于侵略性计算得出的数量进一步调低，当值达到最大值100时，每个行星最多仅保留1个小队。这是一个0 - 100的百分比值。"
             />
 
-  <galaxy_setting name="CoarseProcessBackgroundPlanets" category="Performance" is_advanced_setting="true" display_name="高级：粗略处理背景星球" type="BoolToggle" default="true" changeable_during_gameplay="true"
-             description="除非你遇到模拟问题，否则应该保持开启。这会使背景星球占用的处理资源大大减少，特别是当多个第三方派系在战斗而你甚至看不到时。" />
+  <galaxy_setting name="CoarseProcessBackgroundPlanets" category="Performance" is_advanced_setting="true" display_name="高级：粗略处理背景行星" type="BoolToggle" default="true" changeable_during_gameplay="true"
+             description="除非你遇到模拟问题，否则应该保持开启。这会使背景行星占用的处理资源大大减少，特别是当多个第三方派系在战斗而你甚至看不到时。" />
 
   <galaxy_setting name="MaxShipSystemsToCalculatePerTargetingPass" category="Performance" is_advanced_setting="true" display_name="每次目标计算处理的单位系统最大数量" type="IntSlider" default="500" min="50" max="1000" changeable_during_gameplay="true"
              description="此值越低，单位对射程内新目标的反应越慢，但这在超大型游戏中更为重要。此值越高，单位反应越快，但如果大量单位同时获得新命令，游戏可能会出现卡顿。

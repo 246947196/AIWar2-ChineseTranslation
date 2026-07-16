@@ -28,7 +28,7 @@ Arcen Games 不为 Mod 提供技术支持。
 
 运输旗舰：
 - Engineering Transport Flagship、Vanguard Transport Flagship、Tugboat Transport Flagship、Target Painter Transport Flagship
-- 此外，Agile Transport Flagship 得到增强：在新星球上 5 秒内获得 25% 速度加成、一定雷达阻尼、21 gx（刚好足以逃离黑洞机）。
+- 此外，Agile Transport Flagship 得到增强：在新行星上 5 秒内获得 25% 速度加成、一定雷达阻尼、21 gx（刚好足以逃离黑洞机）。
 启用 The Spire Rises 后更多：
 - Cyber Command Transport Flagship
 启用 Zenith Onslaught 后更多：

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 	<!-- Somewhat unique Military Leader designs; ideally get looked over by a proper unit designer later. -->
     <entity copy_from="RoamingEnclave" name="BraveryEnclave" display_name="漫游飞地：勇敢级" display_name_for_sidebar="飞地：勇敢" thematic_groups="Neinzul,Custodian"
@@ -39,7 +39,7 @@
 			icon_name="Ships4/NeinzulRoamingEnclave" icon_overlay="Overlays2/NeinzulKindness"
 			size_scale="7.5" visuals_scale_multiplier="18"
             tags="ShowsOnNormalDisplayMode,CustodianEnclave"
-            description="一艘拥有非凡力量的奈因祖尔战舰。仁慈级能进一步提升其所在星球上所有盟友的战斗力。"
+            description="一艘拥有非凡力量的奈因祖尔战舰。仁慈级能进一步提升其所在行星上所有盟友的战斗力。"
             allied_speed_flat_bonus="50"
 			allied_speed_flat_bonus_added_per_mark="15"
             allied_attack_multiplier="1.04"

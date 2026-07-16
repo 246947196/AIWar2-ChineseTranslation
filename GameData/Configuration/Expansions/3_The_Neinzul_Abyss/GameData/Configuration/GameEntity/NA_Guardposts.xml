@@ -12,7 +12,7 @@
 			collision_priority="1000"
 			display_name="腐蚀守卫哨站"
 	    display_name_for_sidebar="腐蚀哨站"
-			description="该星球AI防御部队的存储设施，配备一门可发射腐蚀炮弹的加农炮。在被摧毁时，会向附近的单位喷射最后一轮腐蚀爆炸物。摧毁该哨站将降低此处的最大增援容量。"
+			description="该行星AI防御部队的存储设施，配备一门可发射腐蚀炮弹的加农炮。在被摧毁时，会向附近的单位喷射最后一轮腐蚀爆炸物。摧毁该哨站将降低此处的最大增援容量。"
 			behavior="Stationary"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="NecromancerDefense"
 			cost_for_ai_to_purchase="200"			

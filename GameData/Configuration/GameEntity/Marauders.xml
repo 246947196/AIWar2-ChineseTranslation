@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <entity name="Marauder_Raider"
             thematic_groups="IsolatedHumanSepratists,Marauder"
@@ -122,7 +122,7 @@
 			y_offset_of_icon="30"
 			collision_priority="810"
 			display_name="掠夺者前哨站"
-			description="掠夺者打算守住这个星球。这个前哨站将成为掠夺者防御的中心。"
+			description="掠夺者打算守住这个行星。这个前哨站将成为掠夺者防御的中心。"
 			fleet_design_template_i_use_for_drones="MarauderDrones"
 			drone_starting_behavior_type="Attacker_Full"
 			behavior="Stationary"

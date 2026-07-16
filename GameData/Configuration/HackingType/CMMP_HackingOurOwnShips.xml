@@ -42,7 +42,7 @@
         />
 
   <item name="IncreaseHullDurability" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_IncreaseHullDurability"
-      display_name="增加船体耐久度" description="增加您在该星球上某个单位的船体耐久度。"
+      display_name="增加船体耐久度" description="增加您在该行星上某个单位的船体耐久度。"
       hack_completes_instantly="true"
       local_hacker_required="true"
       only_for_target_type="MyUnits"
@@ -54,7 +54,7 @@
         />
 
   <item name="IncreaseShieldDurability" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_IncreaseShieldDurability"
-      display_name="增加护盾强度" description="增加您在该星球上某个单位的护盾耐久度（适用于个人护盾和气泡力场）。"
+      display_name="增加护盾强度" description="增加您在该行星上某个单位的护盾耐久度（适用于个人护盾和气泡力场）。"
       hack_completes_instantly="true"
       local_hacker_required="true"
       only_for_target_type="MyUnits"
@@ -66,7 +66,7 @@
         />
 
   <item name="IncreaseWeaponPower" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_IncreaseWeaponPower"
-      display_name="增加武器威力" description="增加您在该星球上某个单位所有武器的攻击力。"
+      display_name="增加武器威力" description="增加您在该行星上某个单位所有武器的攻击力。"
       hack_completes_instantly="true"
       local_hacker_required="true"
       only_for_target_type="MyUnits"

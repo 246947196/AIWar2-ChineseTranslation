@@ -71,8 +71,8 @@
              description="只有当敌人兵力超过友军兵力达到此比例时才会发出'重大攻击'语音警告。例如默认值2.5表示敌人兵力需达到友军的2.5倍。这可以避免收到过多不重要的威胁警告。" />
   <setting name="MinEnemyStrengthRequiredForMajorAttackWarning" category="Game" subcategory="Warnings" is_advanced_setting="true" display_name="重大攻击警告最低敌人兵力" type="IntSlider" default="20" min="5" max="200"
              description="只有当敌人攻击兵力总和至少达到此值时，才会发出'重大攻击'语音警告。默认值为20。" />
-  <setting name="MinSecondsBetweenAttackAlertsOnSamePlanet" category="Game" subcategory="Warnings" is_advanced_setting="true" display_name="同一星球攻击警告间隔(秒)" type="IntSlider" default="300" min="30" max="1200"
-             description="对同一星球的攻击警告不会比此间隔时间更频繁。默认300秒。" />
+  <setting name="MinSecondsBetweenAttackAlertsOnSamePlanet" category="Game" subcategory="Warnings" is_advanced_setting="true" display_name="同一行星攻击警告间隔(秒)" type="IntSlider" default="300" min="30" max="1200"
+             description="对同一行星的攻击警告不会比此间隔时间更频繁。默认300秒。" />
   <setting name="MinSecondsBetweenAttackAlertsOnHomeCommandStation" category="Game" subcategory="Warnings" is_advanced_setting="true" display_name="母星指挥站攻击警告间隔(秒)" type="IntSlider" default="30" min="10" max="1200"
              description="对未受保护的人类母星指挥站的攻击警告不会比此间隔时间更频繁。默认30秒。注意：如果母星指挥站被摧毁(或在多人游戏中全部被摧毁)，你将输掉游戏。" />
   <setting name="MinSecondsBetweenAttackAlertsOnShieldedHomeCommandStation" category="Game" subcategory="Warnings" is_advanced_setting="true" display_name="受保护母星指挥站攻击警告间隔(秒)" type="IntSlider" default="60" min="10" max="1200"
@@ -122,12 +122,12 @@
            description="默认开启，显示范围爆炸/闪电攻击的视觉效果。关闭此选项可以轻微提升性能，或减少屏幕上的视觉干扰。" />
 
   <!-- Performance: CPULoad -->
-  <setting name="AllowHigherPlanetCounts" category="Performance" subcategory="CPULoad" display_name="允许更多星球数量" type="BoolToggle" default="false"
-             description="游戏通常会限制您使用120个星球。如果想使用更多星球，可以启用此选项。但即使是在非常强大的机器上，性能也可能相当糟糕。
+  <setting name="AllowHigherPlanetCounts" category="Performance" subcategory="CPULoad" display_name="允许更多行星数量" type="BoolToggle" default="false"
+             description="游戏通常会限制您使用120个行星。如果想使用更多行星，可以启用此选项。但即使是在非常强大的机器上，性能也可能相当糟糕。
 
-由于一些吞吐量限制，即使在2021年的最新硬件上，180个星球的模拟在游戏中期也会运行不佳。如果您运行的游戏规模更大...那就只能看情况了。
+由于一些吞吐量限制，即使在2021年的最新硬件上，180个行星的模拟在游戏中期也会运行不佳。如果您运行的游戏规模更大...那就只能看情况了。
 
-说实话，主要游戏体验是基于80-100个星球设计的，即使您有很多派系或多人在线，这个范围也足够使用。" />
+说实话，主要游戏体验是基于80-100个行星设计的，即使您有很多派系或多人在线，这个范围也足够使用。" />
 
   <setting name="UseUnrestricteUIUpdateSpeeds" category="Performance" subcategory="CPULoad" is_advanced_setting="true" is_stored_in_graphics_settings_file="true" display_name="使用无限制UI更新速度" type="BoolToggle" default="false"
            description="通常情况下，大多数UI窗口每50-100毫秒更新一次内容。如果您的帧率远高于此，您可能希望UI以实际帧率更新。
@@ -135,7 +135,7 @@
 这可能会降低您的帧率(可能显著降低)，但会带来极致的响应速度。在2.633版本之前，以及从游戏alpha版本开始，所有UI都是以无限制更新速度运行的。" />
 
 <setting name="IgnoreShipIconPriority" category="Performance" subcategory="CPULoad" is_advanced_setting="true" is_stored_in_graphics_settings_file="true" display_name="忽略单位图标优先级" type="BoolToggle" default="false"
-           description="通常情况下，更重要的单位(如旗舰)图标会稍微靠近镜头，便于查看和选择。这样做会轻微增加性能开销，如果在繁忙的星球场景中性能较低，可以尝试禁用此选项。" />
+           description="通常情况下，更重要的单位(如旗舰)图标会稍微靠近镜头，便于查看和选择。这样做会轻微增加性能开销，如果在繁忙的行星场景中性能较低，可以尝试禁用此选项。" />
     <setting name="BehaviorIfNotFocused"
              category="Performance"
              subcategory="CPULoad"
@@ -162,12 +162,12 @@
            description="设置工程师自动执行工作。这个功能非常实用，通常不建议关闭——您仍然可以给工程师下达指令，这些指令会覆盖自动行为。"/>
 
   <setting name="WaitForStragglers" serialization_name="Auto-Stragglers" is_network_and_game_synced_setting="true"
-           category="Automation" display_name="旗舰等待掉队船只(安全星球)" type="BoolToggle" default="false" default_should_override_user_value_if_older_than_version="Unity2018_2"
-           description="当你在人类拥有(或没有敌人的中立星球)上装载旗舰时，运输船会等待该星球上所有属于它们的船只装载完毕后再前往下一个星球。"/>
+           category="Automation" display_name="旗舰等待掉队船只(安全行星)" type="BoolToggle" default="false" default_should_override_user_value_if_older_than_version="Unity2018_2"
+           description="当你在人类拥有(或没有敌人的中立行星)上装载旗舰时，运输船会等待该行星上所有属于它们的船只装载完毕后再前往下一个行星。"/>
 
   <setting name="WaitForStragglersFull" serialization_name="Auto-Stragglers-Full" is_network_and_game_synced_setting="true"
-           category="Automation" display_name="旗舰等待掉队船只(所有星球)" type="BoolToggle" default="false" default_should_override_user_value_if_older_than_version="Unity2018_2"
-           description="当你在任何星球上装载旗舰时，运输船会等待该星球上所有属于它们的船只装载完毕后再前往下一个星球。"/>
+           category="Automation" display_name="旗舰等待掉队船只(所有行星)" type="BoolToggle" default="false" default_should_override_user_value_if_older_than_version="Unity2018_2"
+           description="当你在任何行星上装载旗舰时，运输船会等待该行星上所有属于它们的船只装载完毕后再前往下一个行星。"/>
 
   <!-- Automation: AutoBuildAtPlanets -->
   <setting name="AutoBuildEngineers" serialization_name="AB-ENG" is_network_and_game_synced_setting="true" tags="IsAutoBuildingSetting,Engineer"
@@ -217,7 +217,7 @@
 
   <!-- Automation: experimental -->
   <setting name="ChainRightClickOrders" category="Automation" is_advanced_setting="true" display_name="实验性: 连锁修理/攻击指令" type="BoolToggle" default="false"
-           description="在本地星球界面右键点击单位组时，将对组内所有单位执行相同操作(如修理或攻击)，而非仅针对单个单位。启用后可以快速对整组单位下达相同指令。"/>
+           description="在本地行星界面右键点击单位组时，将对组内所有单位执行相同操作(如修理或攻击)，而非仅针对单个单位。启用后可以快速对整组单位下达相同指令。"/>
    
   <!-- Audio -->
   <setting name="MusicPlayClassicTracks" category="Audio" display_name="音乐: 播放AI War经典曲目" type="BoolToggle" default="true" default_should_override_user_value_if_older_than_version="1013_AudioLogs"
@@ -254,21 +254,21 @@
   <setting name="CombatVolume" category="Audio" subcategory="SoundMixing" is_advanced_setting="true" is_stored_in_graphics_settings_file="true" display_name="战斗音量" type="IntSlider" default="60" min="0" max="200" default_should_override_user_value_if_older_than_version="885_Bodyguard"
            description="战斗音效相对于界面和音乐的音量。调整此选项会保持各子频道的相对音量比例。范围0-200，默认60，因为有时可能会过于响亮。" />
   <setting name="DeathsRoutineVolume" category="Audio" subcategory="SoundMixing" is_advanced_setting="true" is_stored_in_graphics_settings_file="true" display_name="常规爆炸音量" type="IntSlider" default="100" min="0" max="200"
-           description="当你在同一星球时，大多数单位/建筑爆炸的音量。范围0-200，相对于混音器中的起始值，默认始终为100。" />
+           description="当你在同一行星时，大多数单位/建筑爆炸的音量。范围0-200，相对于混音器中的起始值，默认始终为100。" />
   <setting name="DeathsSubstantialVolume" category="Audio" subcategory="SoundMixing" is_advanced_setting="true" is_stored_in_graphics_settings_file="true" display_name="大型爆炸音量" type="IntSlider" default="100" min="0" max="200"
-             description="当你在同一星球时，较大单位/建筑爆炸的音量。范围0-200，相对于混音器中的起始值，默认始终为100。" />
+             description="当你在同一行星时，较大单位/建筑爆炸的音量。范围0-200，相对于混音器中的起始值，默认始终为100。" />
   <setting name="DeathsCriticalVolume" category="Audio" subcategory="SoundMixing" is_advanced_setting="true" is_stored_in_graphics_settings_file="true" display_name="关键爆炸音量" type="IntSlider" default="100" min="0" max="200"
-             description="当你在同一星球时，重要单位/建筑爆炸的音量。范围0-200，相对于混音器中的起始值，默认始终为100。" />
+             description="当你在同一行星时，重要单位/建筑爆炸的音量。范围0-200，相对于混音器中的起始值，默认始终为100。" />
   <setting name="WeaponsFiringVolume" category="Audio" subcategory="SoundMixing" is_advanced_setting="true" is_stored_in_graphics_settings_file="true" display_name="武器开火音量" type="IntSlider" default="40" min="0" max="200"
-             description="当你观看星球战斗时，武器开火的音量。范围0-200，默认40，因为有时可能会过于响亮。" />
+             description="当你观看行星战斗时，武器开火的音量。范围0-200，默认40，因为有时可能会过于响亮。" />
   <setting name="WeaponsHittingVolume" category="Audio" subcategory="SoundMixing" is_advanced_setting="true" is_stored_in_graphics_settings_file="true" display_name="武器命中音量" type="IntSlider" default="100" min="0" max="200"
-             description="当你观看星球战斗时，武器命中目标的音量。范围0-200，相对于混音器中的起始值，默认始终为100。" />
+             description="当你观看行星战斗时，武器命中目标的音量。范围0-200，相对于混音器中的起始值，默认始终为100。" />
   <setting name="OtherCombatSoundsVolume" category="Audio" subcategory="SoundMixing" is_advanced_setting="true" is_stored_in_graphics_settings_file="true" display_name="其他战斗音效音量" type="IntSlider" default="140" min="0" max="200"
-              description="当你观看星球战斗时，主要是虫洞穿越等音效的音量。范围0-200，相对于混音器中的起始值，我们认为起始值偏小，所以默认设为140。" />
-  <setting name="DeathsOtherPlanetsMinorVolume" category="Audio" subcategory="SoundMixing" is_advanced_setting="true" is_stored_in_graphics_settings_file="true" display_name="其他星球小型爆炸音量" type="IntSlider" default="100" min="0" max="200"
-              description="你在其他星球上小型单位爆炸的音量，让你能听到银河系远处发生的战斗。范围0-200，相对于混音器中的起始值，默认始终为100。" />
-  <setting name="DeathsOtherPlanetsVolume" category="Audio" subcategory="SoundMixing" is_advanced_setting="true" is_stored_in_graphics_settings_file="true" display_name="其他星球大型爆炸音量" type="IntSlider" default="100" min="0" max="200"
-              description="你在其他星球上大型单位爆炸的音量，让你能听到银河系远处发生的战斗。范围0-200，相对于混音器中的起始值，默认始终为100。" />
+              description="当你观看行星战斗时，主要是虫洞穿越等音效的音量。范围0-200，相对于混音器中的起始值，我们认为起始值偏小，所以默认设为140。" />
+  <setting name="DeathsOtherPlanetsMinorVolume" category="Audio" subcategory="SoundMixing" is_advanced_setting="true" is_stored_in_graphics_settings_file="true" display_name="其他行星小型爆炸音量" type="IntSlider" default="100" min="0" max="200"
+              description="你在其他行星上小型单位爆炸的音量，让你能听到银河系远处发生的战斗。范围0-200，相对于混音器中的起始值，默认始终为100。" />
+  <setting name="DeathsOtherPlanetsVolume" category="Audio" subcategory="SoundMixing" is_advanced_setting="true" is_stored_in_graphics_settings_file="true" display_name="其他行星大型爆炸音量" type="IntSlider" default="100" min="0" max="200"
+              description="你在其他行星上大型单位爆炸的音量，让你能听到银河系远处发生的战斗。范围0-200，相对于混音器中的起始值，默认始终为100。" />
   <setting name="InterfaceVolume" category="Audio" subcategory="SoundMixing" is_advanced_setting="true" is_stored_in_graphics_settings_file="true" display_name="界面音量" type="IntSlider" default="100" min="0" max="200"
            description="点击音效和其他界面反馈的音量。范围0-200，相对于混音器中的起始值，默认始终为100。" />
   <setting name="VoiceRoutineVolume" category="Audio" subcategory="SoundMixing" is_advanced_setting="true" is_stored_in_graphics_settings_file="true" display_name="常规语音音量" type="IntSlider" default="100" min="0" max="200" default_should_override_user_value_if_older_than_version="Alpha_FixSettingsDefaults"
@@ -382,9 +382,9 @@
   <setting name="Fulllscreen_EnableBeautify2" category="Display" subcategory="FullscreenEffects" is_stored_in_graphics_settings_file="true" display_name="全局: Beautify 2效果" type="BoolToggle" default="true"
             description="Beautify 2用于轻微的色彩校正和锐化因抗锯齿而略微模糊的图像。它能以极低的GPU/CPU开销提升图像质量。如果出现问题或不喜欢此效果，可以关闭。" />
   
-  <setting name="PlanetView_EnableBloom" category="Display" subcategory="FullscreenEffects" is_stored_in_graphics_settings_file="true" display_name="星球视图: Bloom效果" type="BoolToggle" default="true"
+  <setting name="PlanetView_EnableBloom" category="Display" subcategory="FullscreenEffects" is_stored_in_graphics_settings_file="true" display_name="行星视图: Bloom效果" type="BoolToggle" default="true"
              description="如果您想完全移除使战斗画面元素(武器开火、引擎等)发光的Bloom效果，这是最有效彻底的方法。禁用后许多元素会显得苍白平淡。" />
-  <setting name="PlanetView_BloomIntensity" category="Display" subcategory="FullscreenEffects" is_stored_in_graphics_settings_file="true" display_name="星球视图: Bloom强度" type="FloatSlider" default="0.5" min="0.1" max="2" rounding_type="Tenths"
+  <setting name="PlanetView_BloomIntensity" category="Display" subcategory="FullscreenEffects" is_stored_in_graphics_settings_file="true" display_name="行星视图: Bloom强度" type="FloatSlider" default="0.5" min="0.1" max="2" rounding_type="Tenths"
            description="战斗中的Bloom效果使武器射击和引擎看起来更真实，也使戴森球看起来像真的包含恒星。但对光敏感的眼睛或在暗室中可能过于刺眼，因此可以调整此值。默认值为0.45。" />
   
   <setting name="GalaxyMap_ShowHexagons" category="Display" subcategory="FullscreenEffects" is_stored_in_graphics_settings_file="true" display_name="星系地图: 显示背景六边形" type="BoolToggle" default="true"
@@ -396,10 +396,10 @@
            description="您希望星系地图看起来有多闪亮？值越高看起来越像电脑屏幕效果，但根据显示器对比度设置可能会分散注意力。默认值为1.4。" />
 
   <setting name="ShowStaleIntelCameraEffect" category="Display" subcategory="FullscreenEffects" is_advanced_setting="true" display_name="显示'情报过时'相机效果" type="BoolToggle" default="true"
-           description="当您查看情报过时的星球时，显示全屏模糊效果。默认开启。请注意，如果没有此效果，可能难以辨别您查看的是过时情报。不过侧边栏星球标签顶部会显示'旧情报'作为提示。" />
+           description="当您查看情报过时的行星时，显示全屏模糊效果。默认开启。请注意，如果没有此效果，可能难以辨别您查看的是过时情报。不过侧边栏行星标签顶部会显示'旧情报'作为提示。" />
 
   <setting name="ShowUnexploredCameraEffect" category="Display" subcategory="FullscreenEffects" is_advanced_setting="true" display_name="显示'未探索'相机效果" type="BoolToggle" default="true" default_should_override_user_value_if_older_than_version="3005_MoreFixes"
-           description="当您查看从未探索过的星球时，显示类似老式电视的严重波纹失真效果。默认关闭。如今不太可能触发此效果，因为您无法点击进入未探索的星球。" />
+           description="当您查看从未探索过的行星时，显示类似老式电视的严重波纹失真效果。默认关闭。如今不太可能触发此效果，因为您无法点击进入未探索的行星。" />
 
   <setting name="LossScene_EnableBloom" category="Display" subcategory="FullscreenEffects" is_advanced_setting="true" is_stored_in_graphics_settings_file="true" display_name="失败场景: Bloom效果" type="BoolToggle" default="true"
              description="失败场景没有此效果会显得非常平淡，但如果您遇到问题，可以禁用此选项。" />
@@ -413,7 +413,7 @@
 
 
   <!-- Display: AntiAliasing-->
-  <setting name="PlanetView_EnableFXAA" category="Display" subcategory="AntiAliasing" is_stored_in_graphics_settings_file="true" display_name="星球视图: FXAA抗锯齿" type="BoolToggle" default="true"
+  <setting name="PlanetView_EnableFXAA" category="Display" subcategory="AntiAliasing" is_stored_in_graphics_settings_file="true" display_name="行星视图: FXAA抗锯齿" type="BoolToggle" default="true"
              description="FXAA是一种后处理效果，可减少物体边缘的像素化。由于游戏发生在太空中，通常只在放大较多时才相关。但此过程消耗不大，因此默认启用。值得注意的是它会显著减弱背景中的星星效果，但总体而言似乎更好。" />
   <setting name="GalaxyMap_EnableFXAA" category="Display" subcategory="AntiAliasing" is_stored_in_graphics_settings_file="true" display_name="星系地图: FXAA抗锯齿" type="BoolToggle" default="true"
              description="FXAA是一种后处理效果，可减少物体边缘的像素化。对于星系地图，主要是平滑行星之间的线条等。此过程消耗不大，因此默认启用。值得注意的是它会显著减弱背景中的星星效果。" />
@@ -656,7 +656,7 @@
   <setting name="Debug_ThreatRaidsUseChunkTarget" category="Debug" subcategory="AILogging" is_advanced_setting="true" display_name="威胁袭击使用区块目标" type="BoolToggle" default="false"
             description="启用后，AI威胁袭击将使用威胁区块目标派系，而非当前行为模式。" />
   <setting name="EnableReinforcementLogging" category="Debug" subcategory="AILogging" is_advanced_setting="true" display_name="启用增援系统日志" type="BoolToggle" default="false" default_should_override_user_value_if_older_than_version="5540_NoReinforcementLogging"
-           description="增援是AI根据随时间累积的预算，向其各个星球派遣的单位/建筑。如果您认为存在问题，可以启用此选项并将结果发送给我们检查。" />
+           description="增援是AI根据随时间累积的预算，向其各个行星派遣的单位/建筑。如果您认为存在问题，可以启用此选项并将结果发送给我们检查。" />
   <setting name="Debug_TargettingDebugShipID" category="Debug" subcategory="AILogging" is_advanced_setting="true" display_name="特定单位目标选择调试" type="IntTextbox" default="0" max="400000" default_should_override_user_value_if_older_than_version="Alpha_FixSettingsDefaults"
            description="出于调试目的，将记录大量目标选择数据。仅供开发使用，需要源代码编辑权限。" />
   <setting name="Debug_LogReinforcementEventDetails" category="Debug" subcategory="AILogging" is_advanced_setting="true" display_name="记录增援事件详情" type="BoolToggle" default="false"
@@ -791,7 +791,7 @@ The purpose of this is mainly to use with diffing tools between this copy and th
            description="在游戏过程中，网络每100ms会发送多次消息，这是数据使用量最大的来源之一。如果您认为这可能是网络环境变慢的原因，可以查看这些消息的时间和负载大小。" />
 
   <setting name="LogNetworkHumanReadableShipSyncsToDisk" category="Debug" subcategory="NetworkLogging" is_advanced_setting="true" display_name="记录人类可读的单位网络同步到磁盘" type="BoolToggle" default="false"
-           description="仅与多人客户端相关，与主机无关。会显著降低游戏速度，但会将大量网络信息转储到PlayerData文件夹中的NetworkHumanReadablyShipSyncLog.txt文件中。这为每个被更改或删除的单位提供了一条消息，说明原因、所在星球和所有者。当同步出现问题时，这是一种手动检查并找出原因的方法。" />
+           description="仅与多人客户端相关，与主机无关。会显著降低游戏速度，但会将大量网络信息转储到PlayerData文件夹中的NetworkHumanReadablyShipSyncLog.txt文件中。这为每个被更改或删除的单位提供了一条消息，说明原因、所在行星和所有者。当同步出现问题时，这是一种手动检查并找出原因的方法。" />
   <setting name="Debug_WriteNetworkWorldSerializationLogs" category="Debug" subcategory="NetworkLogging" is_advanced_setting="true" display_name="写入网络世界序列化日志" type="BoolToggle" default="false"
            description="当向客户端发送游戏世界时，写入NetworkWorldSerialization.txt；当从主机接收时，写入NetworkWorldDeserialization.txt到PlayerData文件夹(位于两台不同电脑上)。主要用途是当客户端无法加入主机并出现异常时，通过比较这两个文件找出主机发送和客户端接收内容之间的差异。" />
  description="当向客户端发送游戏世界时，写入NetworkWorldSerialization.txt；当从主机接收时，写入NetworkWorldDeserialization.txt到PlayerData文件夹(位于两台不同电脑上)。主要用途是当客户端无法加入主机并出现异常时，通过比较这两个文件找出主机发送和客户端接收内容之间的差异。
@@ -816,7 +816,7 @@ The purpose of this is mainly to use with diffing tools between this copy and th
     min="0"
     max="1"
     rounding_type="Tenths"
-    description="在主视图中移动鼠标时，悬停在星球、单位或虫洞上显示工具提示前应等待多长时间？默认为无延迟。"
+    description="在主视图中移动鼠标时，悬停在行星、单位或虫洞上显示工具提示前应等待多长时间？默认为无延迟。"
     deprecated="true"
     />
 
@@ -843,7 +843,7 @@ The purpose of this is mainly to use with diffing tools between this copy and th
     display_name="默认显示'中等'详细信息"
     type="BoolToggle"
     default="false"
-    description="通常单位和星球在工具提示中显示非常简化的信息。您可以按住一个键(显示在工具提示底部)来查看更多或全部信息。如果您希望默认显示中等程度的信息，可以启用此选项。"
+    description="通常单位和行星在工具提示中显示非常简化的信息。您可以按住一个键(显示在工具提示底部)来查看更多或全部信息。如果您希望默认显示中等程度的信息，可以启用此选项。"
     />
 
 <setting
@@ -854,7 +854,7 @@ The purpose of this is mainly to use with diffing tools between this copy and th
     display_name="默认显示'详细'信息"
     type="BoolToggle"
     default="false"
-    description="通常单位和星球在工具提示中显示非常简化的信息。您可以按住一个键(显示在工具提示底部)来查看更多或全部信息。如果您希望默认显示完整信息，可以启用此选项。"
+    description="通常单位和行星在工具提示中显示非常简化的信息。您可以按住一个键(显示在工具提示底部)来查看更多或全部信息。如果您希望默认显示完整信息，可以启用此选项。"
     />
 
 <setting

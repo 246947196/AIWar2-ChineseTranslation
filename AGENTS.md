@@ -131,7 +131,7 @@ MSBuild：`C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe`
 
 ### 背景
 
-`I18NFont4UnityGame` 插件只 patch 了 `TMPro.TextMeshProUGUI`（画布 UI 文字）。银河地图星球名、实体标签等使用 `TMPro.TextMeshPro`（世界空间 3D 文字），两者是不同的 Unity 组件，I18NFont4UnityGame 未覆盖。
+`I18NFont4UnityGame` 插件只 patch 了 `TMPro.TextMeshProUGUI`（画布 UI 文字）。银河地图行星名、实体标签等使用 `TMPro.TextMeshPro`（世界空间 3D 文字），两者是不同的 Unity 组件，I18NFont4UnityGame 未覆盖。
 
 ### 原理
 
@@ -155,7 +155,7 @@ DLLSource/WorldTMPFontPatch/
 | 组件类型 | 用途 | 处理插件 |
 |---------|------|---------|
 | `TextMeshProUGUI` | 画布 UI 文字（菜单、面板、提示框） | I18NFont4UnityGame + WorldTMPFontPatch（后备） |
-| `TextMeshPro` | 世界空间 3D 文字（星球名、实体标签） | WorldTMPFontPatch |
+| `TextMeshPro` | 世界空间 3D 文字（行星名、实体标签） | WorldTMPFontPatch |
 
 ### 已知问题：聊天/消息日志中文方框（无法修复）
 
@@ -278,7 +278,7 @@ ChatLog 条目中包含 `<link=N>` 标签用于可点击交互（如点击跳转
    - BasicText → `RestoreOngoingText()`（正则 `<link=\d+>(?<content>.*?)</link>`）
 4. 两种恢复器共用同一套 `TryRestoreContent` + `IsContentMatch` 匹配引擎
 
-**实测效果**：瞬时日志中文正确恢复（如星系视图中点击无法分配起始星球的提示）。Overlay 与 ChatLog 共享同样的像素化限制。
+**实测效果**：瞬时日志中文正确恢复（如星系视图中点击无法分配起始行星的提示）。Overlay 与 ChatLog 共享同样的像素化限制。
 
 **踩坑记录**：
 - 初版用 `StartsWith("BasicTextUnderlay")` 匹配，永远匹配不到——prefab 名和运行时 GameObject 名不同
@@ -408,7 +408,7 @@ XMLMods/ChinesePlanetNames/
 | Window_PrototypeInGameHoverEntityInfo.cs | "Cannot be claimed" x1 |
 | EntityText.Attr.cs | "Cannot be claimed" x1 |
 | AIPChange.cs | "At ... AIP changed" x1 |
-| PublicCrashingNomadPlanetNotifier.cs | 撞击倒计时、星球移动提示 x2 |
+| PublicCrashingNomadPlanetNotifier.cs | 撞击倒计时、行星移动提示 x2 |
 | PublicAIReservesNotifier.cs | AI 预备队虫洞提示 x1 |
 | PublicDZInvasionNotifier.cs | Dark Zenith 入侵提示 x1 |
 | PublicImperialSpireNotifier.cs | 帝国尖塔到达提示 x1 |

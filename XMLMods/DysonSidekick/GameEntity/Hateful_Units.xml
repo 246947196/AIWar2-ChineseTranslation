@@ -222,7 +222,7 @@
 	tags="AlarmPost,HatefulAlarmPost"
 	npc_ship_cap_type="SpecialDefenses"
 	display_name="小型警戒哨站"
-	description="以压倒性兵力攻击此星球将集结附近星球的AI部队前来防御。与普通警报柱不同，此警报柱在死亡时不增加AIP。"
+	description="以压倒性兵力攻击此行星将集结附近行星的AI部队前来防御。与普通警报柱不同，此警报柱在死亡时不增加AIP。"
 	>
     </entity>
 

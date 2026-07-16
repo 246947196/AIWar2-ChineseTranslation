@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <entity name="Engineer" tags="Engineer"     visuals="assets/_finalgamemeshes/specials/engineer/engineer.prefab"
         thematic_groups="Human,Support" 
@@ -89,7 +89,7 @@
 			visuals_scale_multiplier="4"
 			collision_priority="200"
 			display_name="间谍"
-			description="在敌方星球上提供视野，极低的被发现概率。与指挥舰队的其他单位不同，能够穿越虫洞。"
+			description="在敌方行星上提供视野，极低的被发现概率。与指挥舰队的其他单位不同，能够穿越虫洞。"
 			starting_mark_level="Mark1"
 			build_sidebar_categories_i_am_part_of="Infrastructure" destroys_self_until_not_over_ship_cap_if_planetary_command="true"
       cost_for_ai_to_purchase="5"

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
     <!-- 此文件中的所有内容都是为了给模组制作者使用而创建的星系设置，但玩家通常不希望看到或使用这些设置。
@@ -18,14 +18,14 @@
 <galaxy_setting category="Hidden" name="SpawnBeaconOnHomeworld" display_name="在母星上生成信标" type="BoolToggle" 
     deprecated="true"
     default="False"
-    description="通常，前哨信标位于距离你起始星球几跳远的地方。如果此设置开启，你将在母星上获得一个前哨信标。"  >
+    description="通常，前哨信标位于距离你起始行星几跳远的地方。如果此设置开启，你将在母星上获得一个前哨信标。"  >
   <harshness_override min_campaign_harshness_to_apply="0" fixed_value="False" />
 </galaxy_setting>
 
 <galaxy_setting category="Hidden" name="SpecificBeaconOnHomeworld" display_name="在母星上生成特定信标" type="BoolToggle" 
     deprecated="true"
     default="False"
-    description="通常，前哨信标位于距离你起始星球几跳远的地方。如果此设置开启，你将在母星上获得一个特定的前哨信标，前哨类型由下拉菜单选择。"  >
+    description="通常，前哨信标位于距离你起始行星几跳远的地方。如果此设置开启，你将在母星上获得一个特定的前哨信标，前哨类型由下拉菜单选择。"  >
   <harshness_override min_campaign_harshness_to_apply="0" fixed_value="False" />
 </galaxy_setting>
 

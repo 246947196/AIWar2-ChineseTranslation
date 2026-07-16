@@ -44,7 +44,7 @@
 	
 		<entity name="CagedSkeleton" copy_from="BaseSkeleton" tags="" thematic_groups="Neinzul,Necromancer,Drone"            
             display_name="牢笼骷髅" display_name_for_sidebar="笼骷"
-	        description="最弱的死灵法师爪牙，由骷髅堆从坟墓中复活，被困在星球上战斗直至死亡。出人意料地耐打，但自身造成的伤害很低。当它们形成一定规模时，作为群体就会变得危险。"
+	        description="最弱的死灵法师爪牙，由骷髅堆从坟墓中复活，被困在行星上战斗直至死亡。出人意料地耐打，但自身造成的伤害很低。当它们形成一定规模时，作为群体就会变得危险。"
 			tech_upgrades_that_benefit_me="NecromancerDefense"
 			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="2"
 			visuals="Assets/_DLC3/Necromancer/SkeletonWeak/SkeletonWeak.prefab" visuals_bundle="exp3_neinzul_abyss"
@@ -58,7 +58,7 @@
 	
 	<entity name="SummonedSkeleton" copy_from="BaseSkeleton" tags="" thematic_groups="Neinzul,Necromancer,Drone"            
             display_name="召唤骷髅" display_name_for_sidebar="召骷"
-	        description="最弱的死灵法师爪牙，由死灵城召唤而来，被困在星球上战斗直至死亡。出人意料地耐打，但自身造成的伤害很低。当它们形成一定规模时，作为群体就会变得危险。"
+	        description="最弱的死灵法师爪牙，由死灵城召唤而来，被困在行星上战斗直至死亡。出人意料地耐打，但自身造成的伤害很低。当它们形成一定规模时，作为群体就会变得危险。"
 			tech_upgrades_that_benefit_me="NecromancerDefense"
 		  self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="2"
 			visuals="Assets/_DLC3/Necromancer/SkeletonWeak/SkeletonWeak.prefab" visuals_bundle="exp3_neinzul_abyss"
@@ -86,7 +86,7 @@
 	
 	<entity name="CagedSkeletonAttritioner" copy_from="SkeletonAttritioner" tags="" thematic_groups="Neinzul,Necromancer,Drone"          
             display_name="牢笼脆弱骷髅" display_name_for_sidebar="笼脆骷"
-	        description="骷髅的一种非常脆弱的变体，会快速损耗。由骷髅堆从坟墓中复活，被困在星球上战斗直至死亡。"
+	        description="骷髅的一种非常脆弱的变体，会快速损耗。由骷髅堆从坟墓中复活，被困在行星上战斗直至死亡。"
             tech_upgrades_that_benefit_me="NecromancerDefense"
 			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="2"
 			always_self_attritions="true"			
@@ -155,7 +155,7 @@
 
             display_name="牢笼骷髅战士" display_name_for_sidebar="笼骷战"
 
-	        description="骷髅的强化形态，配备能干扰武器、穿透护甲的利刃。由骷髅堆从坟墓中复活，被困在星球上战斗直至死亡。"
+	        description="骷髅的强化形态，配备能干扰武器、穿透护甲的利刃。由骷髅堆从坟墓中复活，被困在行星上战斗直至死亡。"
             tech_upgrades_that_benefit_me="NecromancerDefense"
 			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="2"
 			always_self_attritions="true"			
@@ -226,7 +226,7 @@
 	<entity name="CagedSkeletonArcher" copy_from="SkeletonArcherBodyguard" tags="" thematic_groups="Neinzul,Necromancer,Drone"          
             display_name="牢笼骷髅弓箭手" display_name_for_sidebar="笼骷弓"
 	        tech_upgrades_that_benefit_me="NecromancerDefense"
-			description="骷髅的一种强化但脆弱的形态，拥有远程攻击能力，能有效摧毁气泡护盾（力场）。由骷髅堆从坟墓中复活，被困在星球上战斗直至死亡。"
+			description="骷髅的一种强化但脆弱的形态，拥有远程攻击能力，能有效摧毁气泡护盾（力场）。由骷髅堆从坟墓中复活，被困在行星上战斗直至死亡。"
             self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="2"
 			always_self_attritions="true"			
 			immune_to_swapping_between_fleets="true"
@@ -291,7 +291,7 @@
 	
 	<entity name="CagedSkeletonDetonator" copy_from="SkeletonDetonatorBodyguard" tags="" thematic_groups="Neinzul,Necromancer,Drone"          
             display_name="牢笼骷髅刺客" display_name_for_sidebar="笼骷刺"
-	        description="骷髅的一种强化形态，具备隐形和闪避能力，攻击可无视护盾。由骷髅堆从坟墓中复活，被困在星球上战斗直至死亡。"
+	        description="骷髅的一种强化形态，具备隐形和闪避能力，攻击可无视护盾。由骷髅堆从坟墓中复活，被困在行星上战斗直至死亡。"
             tech_upgrades_that_benefit_me="NecromancerDefense"
 			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="2"
 			always_self_attritions="true"			
@@ -358,7 +358,7 @@
 	
 		<entity name="CagedSkeletonMage" copy_from="SkeletonMageBodyguard" tags="" thematic_groups="Neinzul,Necromancer,Drone"          
             display_name="牢笼骷髅法师" display_name_for_sidebar="笼骷法"
-	        description="骷髅的强化形态，在撞击敌人时会发生强力爆炸，随后粉碎。由骷髅堆从坟墓中复活，被困在星球上战斗直至死亡。"
+	        description="骷髅的强化形态，在撞击敌人时会发生强力爆炸，随后粉碎。由骷髅堆从坟墓中复活，被困在行星上战斗直至死亡。"
             tech_upgrades_that_benefit_me="NecromancerDefense"
 			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="2"
 			always_self_attritions="true"			
@@ -441,7 +441,7 @@
 	    visuals_scale_multiplier="2"
 	    collision_priority="100"
 	    display_name="牢笼骷髅领主" display_name_for_sidebar="笼骷领"
-	    description="最强大的骷髅。由骷髅堆从坟墓中复活，被困在星球上战斗直至死亡。"
+	    description="最强大的骷髅。由骷髅堆从坟墓中复活，被困在行星上战斗直至死亡。"
 	    starting_mark_level="Mark1" tech_upgrades_that_benefit_me="NecromancerDefense"
 	    cost_for_ai_to_purchase="66" strength_multiplier="1.1"
 	    hull_points="8000" shield_points="4000" speed="AboveAverage1"

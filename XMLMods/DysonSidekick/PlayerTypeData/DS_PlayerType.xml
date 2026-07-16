@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 <!-- Note: in theory you aren't supposed to play Dyson and Necromancer at the same time since they both use ResourceOne, but it actually seems to work fine most of the time.
      'uses resource one' will prevent the dyson and necromancer from working together; this will resolve some minor UI glitches, but isn't worth disabling the necromancer/DS interaction -->
@@ -369,7 +369,7 @@ Written by Badger。这只是一个模组，没有Arcen的官方支持。"/>
         mapgen_should_outguard_seed_for_me="true"
         description="玩法与普通人类帝国非常相似，但也额外带有建造天灾生成器和军械库以及管理天灾部队的能力。
 
-你将拥有额外的天灾防御选项。天灾军队独立运作，但你可以通过在星球上建造天灾召唤者来请求他们的援助。"/>
+你将拥有额外的天灾防御选项。天灾军队独立运作，但你可以通过在行星上建造天灾召唤者来请求他们的援助。"/>
 
     <player_type name="ArmadaEmpire"
         display_name="舰队帝国" short_name="舰队" uncontrolled_name="Armada " lobby_prefix="Armada Empire"

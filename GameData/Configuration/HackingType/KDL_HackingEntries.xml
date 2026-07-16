@@ -33,7 +33,7 @@
             dll_name="AIWarExternalCode"
             type_name="Arcen.AIW2.External.Hacking_WeakenTurretsOnAIWorld"
             display_name="削弱 AI 炮台"
-            description="入侵本地 AI 网络将把 AI 炮台的射程降低至正常值的 25%，伤害输出降低至正常值的 50%。仅适用于等级 6 或更低的星球。"
+            description="入侵本地 AI 网络将把 AI 炮台的射程降低至正常值的 25%，伤害输出降低至正常值的 50%。仅适用于等级 6 或更低的行星。"
             hack_duration="2"
             hacking_cost_multiplier_per_attempt="0"
             primary_hacking_response_interval="10"
@@ -58,7 +58,7 @@
             dll_name="AIWarExternalCode"
             type_name="Arcen.AIW2.External.Hacking_WeakenGuardPostsOnAIWorld"
             display_name="削弱 AI 岗哨"
-            description="入侵本地 AI 网络将把 AI 岗哨的射程降低至正常值的 50%，伤害输出降低至正常值的 75%。仅适用于等级 6 或更低的星球。"
+            description="入侵本地 AI 网络将把 AI 岗哨的射程降低至正常值的 50%，伤害输出降低至正常值的 75%。仅适用于等级 6 或更低的行星。"
             hack_duration="2"
             hacking_cost_multiplier_per_attempt="0"
             primary_hacking_response_interval="10"
@@ -82,8 +82,8 @@
             name="ScienceExtractionFromNeutralWorld"
             dll_name="AIWarExternalCode"
             type_name="Arcen.AIW2.External.Hacking_ScienceExtractionFromNeutralPlanet"
-            display_name="中性星球科学提取"
-            description="破解 AI 以分散其注意力，同时将您的科学相关纳米机器部署到星球上。"
+            display_name="中性行星科学提取"
+            description="破解 AI 以分散其注意力，同时将您的科学相关纳米机器部署到行星上。"
             hacking_cost_per_second="0"
             effect_per_second="0"
             hack_duration="60"
@@ -490,7 +490,7 @@
             type_name="Arcen.AIW2.External.Hacking_Sabotage"
             display_name="破坏敌方目标"
             short_name="Sabotage"
-            description="入侵并摧毁该星球上的一些敌方建筑。并非所有防御建筑都能被破坏。"
+            description="入侵并摧毁该行星上的一些敌方建筑。并非所有防御建筑都能被破坏。"
             hack_duration="15"
             hacking_cost_multiplier_per_attempt="0"
             primary_hacking_response_interval="10"
@@ -514,7 +514,7 @@
     />
 
   <item name="Reprogram" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_Reprogram" display_name="重新编程敌方目标" short_name="Reprogram"
-        description="入侵并将该星球上的一些敌方建筑转变为己方所有！并非许多敌方单位都容易以这种方式被捕获，但仍有一些。如果该建筑在被摧毁时通常会增加 AI 进度点数，那么以这种方式捕获它不会导致该点数增加。由于目标很可能正在攻击你的破解单位，因此破解过程会非常迅速。"
+        description="入侵并将该行星上的一些敌方建筑转变为己方所有！并非许多敌方单位都容易以这种方式被捕获，但仍有一些。如果该建筑在被摧毁时通常会增加 AI 进度点数，那么以这种方式捕获它不会导致该点数增加。由于目标很可能正在攻击你的破解单位，因此破解过程会非常迅速。"
         hack_duration="8"
 		    hacking_cost_multiplier_per_attempt="0"
         primary_hacking_response_interval="10"
@@ -544,7 +544,7 @@
   <item name="AccessOutguardBeacon" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_AccessOutguardBeacon" 
         display_name="与外层守卫取得联系" 
         short_name="Contact Outguard"
-        description="破解这个信标将允许你与一些外层守卫取得联系，他们是残余的反 AI 势力，可以为你提供援助。由于这将通过 AI 通信渠道进行，预计会引发 AI 的强烈反击。然而，一旦取得联系，外层守卫将在你的整个战役中根据需要供你调遣。他们可以直接被召唤到远离你领地的星球，不会产生跨星系打击或反击惩罚，而且他们通常能够到达你自己可能难以直接到达的地方。  
+        description="破解这个信标将允许你与一些外层守卫取得联系，他们是残余的反 AI 势力，可以为你提供援助。由于这将通过 AI 通信渠道进行，预计会引发 AI 的强烈反击。然而，一旦取得联系，外层守卫将在你的整个战役中根据需要供你调遣。他们可以直接被召唤到远离你领地的行星，不会产生跨星系打击或反击惩罚，而且他们通常能够到达你自己可能难以直接到达的地方。  
         
 许多外层守卫还可以扭转常规战斗的局势，如果你需要的话。还有一些外层守卫具有更实用或经济性质的其他功能。"
         hack_duration="150"
@@ -626,7 +626,7 @@ secondary_response_strength_per_interval="1.1"
 		increase_per_effect = mark level increase per pulse
 	-->
 	<item name="TameTelium" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_TameTelium" display_name="驯服巨噬体特利姆" 
-        description="破解该星球上一个特利姆的思维，使其为你所用。此破解将使其忽略其自然生产链中的思维部分，释放出大量愤怒的狂暴采集者来保卫自己。"
+        description="破解该行星上一个特利姆的思维，使其为你所用。此破解将使其忽略其自然生产链中的思维部分，释放出大量愤怒的狂暴采集者来保卫自己。"
 		hack_duration="300"
 		primary_response_strength_per_interval="1"
 		primary_hacking_response_interval="30"

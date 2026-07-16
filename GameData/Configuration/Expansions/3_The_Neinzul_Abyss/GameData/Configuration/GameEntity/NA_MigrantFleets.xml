@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 	<entity copy_from="RoamingEnclave" name="RoamingEnclaveMigrantFleets" display_name="漫游飞地移民" display_name_for_sidebar="漫游飞地移民" thematic_groups="Neinzul,Migrant"
 			tags="ShowsOnNormalDisplayMode,MigrantEnclave"
@@ -22,7 +22,7 @@
 			collision_priority="810"
 			display_name="内因祖尔孵化室"
 			display_name_for_sidebar="内孵室"
-			description="一种短暂存在的内因祖尔结构，内部正在缓慢孕育氏族幼体。受到对该星球的攻击时会释放幼体。"
+			description="一种短暂存在的内因祖尔结构，内部正在缓慢孕育氏族幼体。受到对该行星的攻击时会释放幼体。"
 			behavior="Stationary"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
 			cost_for_ai_to_purchase="2800"

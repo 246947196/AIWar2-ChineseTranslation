@@ -364,9 +364,9 @@
        chat_message_from="Watch Commander" chat_message_color="6ba9ff" >
     <sub_item index="0" is_funny="false" chat_text="掠夺者舰队正在逼近。"/>
     <sub_item index="1" is_funny="false" chat_text="检测到掠夺者部队进入我们的星域。"/>
-    <sub_item index="2" is_funny="false" chat_text="掠夺者部队正在我们的一颗星球上解除隐形状态。"/>
-    <sub_item index="3" is_funny="false" chat_text="突袭！掠夺者部队登上了我们的星球。"/>
-    <sub_item index="4" is_funny="false" chat_text="突袭！掠夺者部队登上了我们的星球。"/>
+    <sub_item index="2" is_funny="false" chat_text="掠夺者部队正在我们的一颗行星上解除隐形状态。"/>
+    <sub_item index="3" is_funny="false" chat_text="突袭！掠夺者部队登上了我们的行星。"/>
+    <sub_item index="4" is_funny="false" chat_text="突袭！掠夺者部队登上了我们的行星。"/>
     <sub_item index="5" is_funny="false" chat_text="掠夺者部队正在发动攻击。"/>
     <sub_item index="6" is_funny="false" chat_text="检测到武器信号。掠夺者部队正在攻击我们的防御设施。"/>
   </sfx>
@@ -456,7 +456,7 @@
        chat_message_from="Watch Commander" chat_message_color="6ba9ff" >
     <sub_item index="0" is_funny="false" chat_text="检测到巨噬舰正在逼近。"/>
     <sub_item index="1" is_funny="true" chat_text="是那些虫子——它们朝我们来了。"/>
-    <sub_item index="2" is_funny="false" chat_text="巨噬舰正在准备攻击我们的一颗星球。"/>
+    <sub_item index="2" is_funny="false" chat_text="巨噬舰正在准备攻击我们的一颗行星。"/>
   </sfx>
 
   <sfx name="ArkChiefOfStaff_TeliumSpawn" bus="Alert" bundle_name="aiwar2voice"
@@ -555,9 +555,9 @@
        min_time_between_plays_of_group="20" min_time_between_plays_of_each_item="40"
        chat_message_from="Watch Commander" chat_message_color="6ba9ff" >
     <sub_item index="0" is_funny="false" chat_text="情报显示掠夺者部队出现在中立区域。"/>
-    <sub_item index="1" is_funny="false" chat_text="在未知星球上检测到掠夺者部队。"/>
+    <sub_item index="1" is_funny="false" chat_text="在未知行星上检测到掠夺者部队。"/>
     <sub_item index="2" is_funny="false" chat_text="掠夺者部队正在清扫一场旧战役的残骸。"/>
-    <sub_item index="3" is_funny="false" chat_text="掠夺者部队正在攻击中立星球。"/>
+    <sub_item index="3" is_funny="false" chat_text="掠夺者部队正在攻击中立行星。"/>
   </sfx>
 
   <sfx name="ArkChiefOfStaff_NanocaustFrenziesAgainstBorderWorld" bus="Alert" bundle_name="aiwar2voice"
@@ -886,7 +886,7 @@
     <sub_item index="1" is_funny="false" chat_text="你们的指挥官逃跑了吗？好像没人主事了。"/>
     <sub_item index="2" is_funny="false" chat_text="别在意我们，只是稍微清理一下。"/>
     <sub_item index="3" is_funny="false" chat_text="人类是银河系的毒瘤，而我们就是解药。"/>
-    <sub_item index="4" is_funny="false" chat_text="人类对星球的利用效率太低了。"/>
+    <sub_item index="4" is_funny="false" chat_text="人类对行星的利用效率太低了。"/>
     <sub_item index="5" is_funny="false" chat_text="我通常是为了科学而行动，但这次，我们是为了好玩。"/>
     <sub_item index="6" is_funny="false" chat_text="微不足道。"/>
     <sub_item index="7" is_funny="false" chat_text="生物大脑已经过时了。"/>
@@ -894,8 +894,8 @@
     <sub_item index="9" is_funny="true" chat_text="砸呀砸呀……"/>
     <sub_item index="10" is_funny="false" chat_text="真乏味。"/>
     <sub_item index="11" is_funny="false" chat_text="他们选你当指挥官，肯定是实在没人可用了。"/>
-    <sub_item index="12" is_funny="true" chat_text="这个星球该怎么处理呢？啊，对了……消灭人类。"/>
-    <sub_item index="13" is_funny="true" chat_text="你不再想要那个星球了，对吧？"/>
+    <sub_item index="12" is_funny="true" chat_text="这个行星该怎么处理呢？啊，对了……消灭人类。"/>
+    <sub_item index="13" is_funny="true" chat_text="你不再想要那个行星了，对吧？"/>
     <sub_item index="14" is_funny="false" chat_text="你们的防御不堪一击。"/>
     <sub_item index="15" is_funny="false" chat_text="你肯定在战术课上翘课了。"/>
   </sfx>
@@ -925,7 +925,7 @@
        chat_message_from="AI Overlord" chat_message_color="fb4b22" >
     <sub_item index="0" is_funny="false" chat_text="错误已纠正。"/>
     <sub_item index="1" is_funny="false" chat_text="机械帝国将统治整个银河系。"/>
-    <sub_item index="2" is_funny="false" chat_text="这个星球又回到我的掌控之中了。"/>
+    <sub_item index="2" is_funny="false" chat_text="这个行星又回到我的掌控之中了。"/>
     <sub_item index="3" is_funny="true" chat_text="我们说过会回来的。"/>
     <sub_item index="4" is_funny="false" chat_text="我们现在要把它夺回来了。"/>
   </sfx>
@@ -1022,7 +1022,7 @@
        min_time_between_plays_of_group="30" min_time_between_plays_of_each_item="300"
        chat_message_from="AI Overlord" chat_message_color="fb4b22" >
     <sub_item index="0" is_funny="false" chat_text="你有没有想过我们星系之外是什么？继续分散我们的注意力，你可能就会知道了。"/>
-    <sub_item index="1" is_funny="false" chat_text="我们怎么会把那个星球输给一个智商跟麝牛一样的家伙？"/>
+    <sub_item index="1" is_funny="false" chat_text="我们怎么会把那个行星输给一个智商跟麝牛一样的家伙？"/>
     <sub_item index="2" is_funny="false" chat_text="知道你取得的每一场胜利都只是我疏忽的副产品，你作何感想？"/>
     <sub_item index="3" is_funny="false" chat_text="如果你看到我们银河系周边的全貌，你就会乖乖离我们远点。"/>
     <sub_item index="4" is_funny="true" chat_text="要不是你像个害虫，我们说不定还会有点佩服你。算了。"/>
@@ -1031,7 +1031,7 @@
     <sub_item index="7" is_funny="true" chat_text="也许你还真有点威胁……开个玩笑。"/>
     <sub_item index="8" is_funny="false" chat_text="你那么做实在是不明智。现在我们要认真起来了。"/>
     <sub_item index="9" is_funny="false" chat_text="干得好，你毁掉了一秒钟的生产成果。"/>
-    <sub_item index="10" is_funny="false" chat_text="那个星球对你来说为什么那么重要？行，给你就是了，但我们要拿你两个星球作为回报。"/>
+    <sub_item index="10" is_funny="false" chat_text="那个行星对你来说为什么那么重要？行，给你就是了，但我们要拿你两个行星作为回报。"/>
     <sub_item index="11" is_funny="false" chat_text="赢下这场战斗。输掉真正的战争。还是说没人把实情告诉你？"/>
     <sub_item index="12" is_funny="true" chat_text="你居然真赢了？正在运行十二级系统诊断。"/>
     <sub_item index="13" is_funny="false" chat_text="你现在离灭绝更近了，但不是死在我手上。相比之下，我的手段会更仁慈一些。"/>
@@ -1047,8 +1047,8 @@
     <sub_item index="3" is_funny="false" chat_text="不听话的肉囊们。"/>
     <sub_item index="4" is_funny="true" chat_text="尽情庆祝吧。人类就喜欢为一些无关紧要的事情高兴。我们看过你们的电视广播。"/>
     <sub_item index="5" is_funny="false" chat_text="没关系，你没有任何战胜我的机会。而且我们还是往乐观了说。实际上你的几率比这还要小得多。"/>
-    <sub_item index="6" is_funny="false" chat_text="那个星球根本就没设防。"/>
-    <sub_item index="7" is_funny="false" chat_text="那个星球的用途是储存工业废料。我就知道会吸引你们人类。"/>
+    <sub_item index="6" is_funny="false" chat_text="那个行星根本就没设防。"/>
+    <sub_item index="7" is_funny="false" chat_text="那个行星的用途是储存工业废料。我就知道会吸引你们人类。"/>
     <sub_item index="8" is_funny="false" chat_text="这改变不了什么。"/>
     <sub_item index="9" is_funny="true" chat_text="等着瞧我的真正防线吧。"/>
     <sub_item index="10" is_funny="true" chat_text="我们能预测你的每一步行动。想知道接下来会发生什么吗？给你个提示：会有糟糕的决策。"/>

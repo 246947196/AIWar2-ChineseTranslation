@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
 	<entity name="DevourerAntagonizer"
@@ -195,7 +195,7 @@
 	<entity name="DevourerHunter_ChimeraArtillery" copy_from="ExtragalacticChimeraArtillery" tags="DevourerHunter_Tier2,AllDevourerHunters"
 		display_name_for_sidebar="DH 奇美拉 火炮"
 		override_faction_name="AI 吞噬者猎手" albedo="0.9" strength_multiplier="2.5"
-		description="持续发射大型弹射体横跨星球。AI 进行了改装，利用完美的辐射反射来偷袭吞噬者傀儡，并在刚抵达时减少伤害。其等离子鱼雷发射器也只发射一枚飞弹，但威力翻倍。"
+		description="持续发射大型弹射体横跨行星。AI 进行了改装，利用完美的辐射反射来偷袭吞噬者傀儡，并在刚抵达时减少伤害。其等离子鱼雷发射器也只发射一枚飞弹，但威力翻倍。"
 		damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.3"
 	>
 		<entity_type_drawing_bag_used_on_death data_list="DevourerHunter_Chimera" min_spawn_value_list="5" />
@@ -246,7 +246,7 @@
 	<entity name="DevourerHunter_Thunderbird" copy_from="ExtragalacticThunderbird" tags="DevourerHunter_Tier3,AllDevourerHunters"
 		display_name_for_sidebar="DH 雷鸟"
 		override_faction_name="AI 吞噬者猎手" albedo="0.9" strength_multiplier="2"
-		description="大型指挥单位，增强此星球上的盟友，同时使用大型特斯拉爆裂攻击横跨星球。AI 进行了广泛的改装，利用完美的辐射反射来偷袭吞噬者傀儡，并在刚抵达时减少伤害。其特斯拉爆裂加农炮只有大约四分之一的面积，但伤害翻倍。"
+		description="大型指挥单位，增强此行星上的盟友，同时使用大型特斯拉爆裂攻击横跨行星。AI 进行了广泛的改装，利用完美的辐射反射来偷袭吞噬者傀儡，并在刚抵达时减少伤害。其特斯拉爆裂加农炮只有大约四分之一的面积，但伤害翻倍。"
 		damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.2"
 	>
 		<system name="TeslaCoil" damage_per_shot="17000000" area_of_effect_size="1400" />

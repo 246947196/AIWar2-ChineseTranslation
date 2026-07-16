@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 <entity name="REPScrapper"	    
 			visuals="Assets/_FinalGameMeshes/FleetShips/AutoBomb/AutoBomb.prefab" 
@@ -889,7 +889,7 @@
 			y_offset_of_icon="15"
 			collision_priority="500"
 			display_name="目标定位星舰"
-			description="这个单位增强系统中所有友方单位。它略微提高速度并增加 50% 伤害。警告：这会与星球上所有目标计算机叠加。"
+			description="这个单位增强系统中所有友方单位。它略微提高速度并增加 50% 伤害。警告：这会与行星上所有目标计算机叠加。"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Generalist,Light"
 			cost_for_ai_to_purchase="1000" strength_multiplier="2"
 			hull_points="90000" shield_points="45000" speed="AboveAverage2"

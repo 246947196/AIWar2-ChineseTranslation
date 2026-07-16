@@ -722,7 +722,7 @@
   </record>
 
   <record name="Build Additional Utility Per Planet (player)"
-          display_name="为每个星球建造额外效用建筑"
+          display_name="为每个行星建造额外效用建筑"
           index="308"
           CostInMetal="5000"
           UpgradeIndex="11"

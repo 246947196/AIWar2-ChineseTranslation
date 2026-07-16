@@ -82,7 +82,7 @@
 			thematic_groups="Beacon" icon_overlay="Overlays2/Turret_Garnet"
 			display_name="奈因祖尔工兵信标"
 			display_name_for_sidebar="奈工兵信标"
-			description="这些奈因祖尔工兵将帮助他们的盟友保卫星球。
+			description="这些奈因祖尔工兵将帮助他们的盟友保卫行星。
 
 &lt;color=#f25e1c&gt;低影响：&lt;/color&gt; 这个派系将协助他们的盟友，且没有任何负面影响。"
 			target_type_for_player="NeverTarget"
@@ -547,7 +547,7 @@
 	  collision_priority="1000"
 	  display_name="肉红玉髓滩头堡"
 	  display_name_for_sidebar="肉红滩"
-	  description="强大的工兵进攻型建筑；它会生成炮塔飞向星球协助玩家。"
+	  description="强大的工兵进攻型建筑；它会生成炮塔飞向行星协助玩家。"
 	  behavior="Stationary"
           immune_to_repairs="true"
 	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
@@ -613,7 +613,7 @@
 	  collision_priority="1000"
 	  display_name="灰褐色瞭望塔"
 	  display_name_for_sidebar="灰褐望"
-	  description="强大的工兵防御型建筑；它会生成单位保卫这个星球或附近的星球。"
+	  description="强大的工兵防御型建筑；它会生成单位保卫这个行星或附近的行星。"
 	  behavior="Stationary"
           immune_to_repairs="true"
 	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"

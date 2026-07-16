@@ -188,7 +188,7 @@
  
   <entity name="BountyHunter" copy_from="RaidFrigate" display_name="赏金猎人星舰" thematic_groups="Frigate" 
 			display_name_for_sidebar="赏金猎人星舰"
-			description="快速隐形星舰，能使被击中的敌人死亡时掉落金属，并对新抵达星球的目标造成巨大伤害。"
+			description="快速隐形星舰，能使被击中的敌人死亡时掉落金属，并对新抵达行星的目标造成巨大伤害。"
 			tech_upgrades_that_benefit_me="Raid,Ambush"
 			>
     <fleet_membership name="RaidOffensiveMix" ship_cap_group="Frigate" weight="100" cap="9"/>
@@ -247,7 +247,7 @@
 			collision_priority="500"
 			display_name="驻留守望者星舰"
     display_name_for_sidebar="驻留守望者星舰"
-    description="小型快速驻留星舰，有助于清理可能盘踞在你的星球上或躲在你的炮塔射程外的零散敌人。"
+    description="小型快速驻留星舰，有助于清理可能盘踞在你的行星上或躲在你的炮塔射程外的零散敌人。"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Sentries"
             behavior="Attacker_Full"
 			cost_for_ai_to_purchase="800"

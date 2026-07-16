@@ -305,11 +305,11 @@
            dll_name="AIWarExternalVisualizationCode" type_name="Arcen.AIW2.ExternalVisualization.UnitEncyclopediaListFilterStyle_Main" />
 
   <display_mode name="Weapon_Z_AttackBonus_B_TargetTimeAtPlanet" display_name="武器攻击加成 - 目标驻留时间" sort_order="50"
-           tooltip="仅包含任意武器基于目标在当前星球的驻留时间获得任意形式攻击加成的单位。"
+           tooltip="仅包含任意武器基于目标在当前行星的驻留时间获得任意形式攻击加成的单位。"
            dll_name="AIWarExternalVisualizationCode" type_name="Arcen.AIW2.ExternalVisualization.UnitEncyclopediaListFilterStyle_Main" />
 
   <display_mode name="Weapon_Z_AttackBonus_B_MyTimeAtPlanet" display_name="武器攻击加成 - 自身驻留时间" sort_order="50"
-           tooltip="仅包含任意武器基于攻击者在当前星球的驻留时间获得任意形式攻击加成的单位。"
+           tooltip="仅包含任意武器基于攻击者在当前行星的驻留时间获得任意形式攻击加成的单位。"
            dll_name="AIWarExternalVisualizationCode" type_name="Arcen.AIW2.ExternalVisualization.UnitEncyclopediaListFilterStyle_Main" />
 
   <display_mode name="Weapon_Z_AttackBonus_B_TargetShields" display_name="武器攻击加成 - 目标护盾" sort_order="50"
@@ -373,7 +373,7 @@
            dll_name="AIWarExternalVisualizationCode" type_name="Arcen.AIW2.ExternalVisualization.UnitEncyclopediaListFilterStyle_Main" />
 
   <display_mode name="DiesWhenParentNotPresent" display_name="母体不在时死亡" sort_order="50"
-           tooltip="仅包含与母体不在同一星球时会损耗生命值直至死亡的单位。"
+           tooltip="仅包含与母体不在同一行星时会损耗生命值直至死亡的单位。"
            dll_name="AIWarExternalVisualizationCode" type_name="Arcen.AIW2.ExternalVisualization.UnitEncyclopediaListFilterStyle_Main" />
 
   <display_mode name="CannotBeRepaired" display_name="无法修复" sort_order="50"
@@ -429,7 +429,7 @@
            dll_name="AIWarExternalVisualizationCode" type_name="Arcen.AIW2.ExternalVisualization.UnitEncyclopediaListFilterStyle_Main" />
 
   <display_mode name="BlackHole" display_name="黑洞效应" sort_order="50"
-           tooltip="仅包含具有黑洞效应，能阻止引擎较弱的敌方单位离开所在星球的单位。"
+           tooltip="仅包含具有黑洞效应，能阻止引擎较弱的敌方单位离开所在行星的单位。"
            dll_name="AIWarExternalVisualizationCode" type_name="Arcen.AIW2.ExternalVisualization.UnitEncyclopediaListFilterStyle_Main" />
 
   <display_mode name="AggroInvisible" display_name="仇恨隐形" sort_order="50"
@@ -437,7 +437,7 @@
            dll_name="AIWarExternalVisualizationCode" type_name="Arcen.AIW2.ExternalVisualization.UnitEncyclopediaListFilterStyle_Main" />
 
   <display_mode name="AIAccelerator" display_name="AI 加速装置" sort_order="50"
-           tooltip="仅包含能使 AI 星球增援部队加速抵达的单位。"
+           tooltip="仅包含能使 AI 行星增援部队加速抵达的单位。"
            dll_name="AIWarExternalVisualizationCode" type_name="Arcen.AIW2.ExternalVisualization.UnitEncyclopediaListFilterStyle_Main" />
 
   <display_mode name="PeriodicSpawns" display_name="定期生成" sort_order="50"
@@ -449,7 +449,7 @@
            dll_name="AIWarExternalVisualizationCode" type_name="Arcen.AIW2.ExternalVisualization.UnitEncyclopediaListFilterStyle_Main" />
 
   <display_mode name="Recon" display_name="侦察单位" sort_order="50"
-           tooltip="仅包含监视附近星球的单位。"
+           tooltip="仅包含监视附近行星的单位。"
            dll_name="AIWarExternalVisualizationCode" type_name="Arcen.AIW2.ExternalVisualization.UnitEncyclopediaListFilterStyle_Main" />
 
   <display_mode name="NorrisEffect" display_name="诺里斯效应" sort_order="50"
@@ -457,7 +457,7 @@
            dll_name="AIWarExternalVisualizationCode" type_name="Arcen.AIW2.ExternalVisualization.UnitEncyclopediaListFilterStyle_Main" />
 
   <display_mode name="Orbit_GravWell" display_name="轨道 - 引力井" sort_order="50"
-           tooltip="仅包含围绕所在星球引力井运行的单位。"
+           tooltip="仅包含围绕所在行星引力井运行的单位。"
            dll_name="AIWarExternalVisualizationCode" type_name="Arcen.AIW2.ExternalVisualization.UnitEncyclopediaListFilterStyle_Main" />
 
   <display_mode name="Orbit_Ancestor" display_name="轨道 - 母体" sort_order="50"
@@ -477,15 +477,15 @@
            dll_name="AIWarExternalVisualizationCode" type_name="Arcen.AIW2.ExternalVisualization.UnitEncyclopediaListFilterStyle_Main" />
 
   <display_mode name="PlanetaryAttackMultiplier" display_name="行星攻击乘数" sort_order="50"
-           tooltip="仅包含对所在星球其他单位攻击强度有影响的单位。"
+           tooltip="仅包含对所在行星其他单位攻击强度有影响的单位。"
            dll_name="AIWarExternalVisualizationCode" type_name="Arcen.AIW2.ExternalVisualization.UnitEncyclopediaListFilterStyle_Main" />
 
   <display_mode name="PlanetarySpeedMultiplier" display_name="行星速度乘数" sort_order="50"
-           tooltip="仅包含对所在星球其他单位速度有影响的单位。"
+           tooltip="仅包含对所在行星其他单位速度有影响的单位。"
            dll_name="AIWarExternalVisualizationCode" type_name="Arcen.AIW2.ExternalVisualization.UnitEncyclopediaListFilterStyle_Main" />
 
   <display_mode name="Attritioner" display_name="损耗器" sort_order="50"
-           tooltip="仅包含对所在星球其他单位造成损耗伤害的单位。"
+           tooltip="仅包含对所在行星其他单位造成损耗伤害的单位。"
            dll_name="AIWarExternalVisualizationCode" type_name="Arcen.AIW2.ExternalVisualization.UnitEncyclopediaListFilterStyle_Main" />
 
   <display_mode name="Hardened" display_name="硬化" sort_order="50"
@@ -493,11 +493,11 @@
            dll_name="AIWarExternalVisualizationCode" type_name="Arcen.AIW2.ExternalVisualization.UnitEncyclopediaListFilterStyle_Main" />
 
   <display_mode name="Ceasefire" display_name="停火" sort_order="50"
-           tooltip="仅包含在星球上创建或阻止停火的单位。"
+           tooltip="仅包含在行星上创建或阻止停火的单位。"
            dll_name="AIWarExternalVisualizationCode" type_name="Arcen.AIW2.ExternalVisualization.UnitEncyclopediaListFilterStyle_Main" />
 
   <display_mode name="Harmonic" display_name="谐波" sort_order="50"
-           tooltip="仅包含在星球上因同类型单位数量增加而获得谐波伤害加成的单位。"
+           tooltip="仅包含在行星上因同类型单位数量增加而获得谐波伤害加成的单位。"
            dll_name="AIWarExternalVisualizationCode" type_name="Arcen.AIW2.ExternalVisualization.UnitEncyclopediaListFilterStyle_Main" />
 
   <display_mode name="FleetWideBonuses" display_name="舰队范围加成" sort_order="50"

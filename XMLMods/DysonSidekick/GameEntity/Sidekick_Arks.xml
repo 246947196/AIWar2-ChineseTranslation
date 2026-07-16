@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   <!-- Base Game Arks -->
@@ -305,7 +305,7 @@
 	 y_offset_of_icon="75"
 	 display_name="再生傀儡"
 	 display_name_for_sidebar="再生傀儡"
-	 description="旗舰，通过自伤来复活同一星球上阵亡的友军单位。"
+	 description="旗舰，通过自伤来复活同一行星上阵亡的友军单位。"
 	 collision_priority="810"
 	 regenerates_dying_ships_at_this_health_cost_ratio="0.3"
 	 will_not_regenerate_dying_ships_if_health_below_this_percentage="0.2"

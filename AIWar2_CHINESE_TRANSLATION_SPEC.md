@@ -1,6 +1,6 @@
 # AI War 2 汉化项目规范
 
-**适配游戏版本: 5.825 (2026-07-11)**
+**适配游戏版本: 5.825 (2026-07-16)**
 
 ## 一、技术方案
 
@@ -123,7 +123,7 @@ AIWar2_ChineseTranslation/
 | `FramerateType/` | 帧率类型 | 数值配置 |
 | `ParticlePattern/` | 粒子效果路径 | 文件路径 |
 | `SpaceboxDefinition/` | 天空盒定义 | 文件路径 |
-| `PlanetDefinition/` | 星球定义 | 数值配置 |
+| `PlanetDefinition/` | 行星定义 | 数值配置 |
 | `TextEmbededSprites/` | 文本嵌入精灵 | 图标配置 |
 | `TextStyles/` | 文本样式 | 样式配置 |
 | `TextVarMaps/` | 文本变量映射 | 变量配置。注意：`TextVarMaps_Vanilla.xml` 包含快速开始、始祖格式等玩家可见文本，属于例外需翻译 |
@@ -220,9 +220,9 @@ BepInEx Preloader 在游戏程序集加载前调用 Patcher，通过 Mono.Cecil 
 | AIWarExternalDeepProcessingCode | DLLSource/AIWarExternalDeepProcessingCode/src/ | 聊天消息、少量 UI 文本 | ✅ 0 错误 | ✅ 已完成 |
 | AIWarExternalVisualizationCode | DLLSource/AIWarExternalVisualizationCode/src/ | 银河地图显示模式文本 | ✅ 0 错误 | ✅ 已完成 |
 | ArcenUIAssetRedirect | DLLSource/ArcenUIAssetRedirect/src/ | arcenui AssetBundle 拦截重定向 | ✅ 0 错误 | ✅ 已完成 |
-| ArcenUniversal (IL 汉化) | —（无源码，见 8.15） | UI 组件、通用工具、输入、网络等 | — | ⏳ 待翻译 |
-| ArcenAIW2Core (IL 汉化) | —（无源码，见 8.15） | 游戏主逻辑、实体、阵营、舰队、科技等 | — | 🔶 进行中 |
-| ArcenAIW2Visualization (IL 汉化) | —（无源码，见 8.15） | 渲染、特效、模型、Shader 等 | — | ✅ 已完成 |
+| ArcenUniversal (IL 汉化) | —（无源码，见 8.15） | UI 组件、通用工具、输入、网络等 | — | ✅ 已部署（151 条 ldstr） |
+| ArcenAIW2Core (IL 汉化) | —（无源码，见 8.15） | 游戏主逻辑、实体、阵营、舰队、科技等 | — | ✅ 已部署（889 条 ldstr） |
+| ArcenAIW2Visualization (IL 汉化) | —（无源码，见 8.15） | 渲染、特效、模型、Shader 等 | — | ✅ 已部署（20 条 ldstr） |
 
 ### 8.3 目录结构
 
@@ -312,11 +312,10 @@ $msbuild = "C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe"
 
 #### 核心 DLL 的仓库管理与部署
 
-核心 DLL（ArcenAIW2Core / ArcenAIW2Visualization）的 IL 汉化产物**已纳入本仓库**（`PatchedAssemblies/` 目录，与游戏目录同名；`.bak` 备份由 `.gitignore` 排除）。这样高级用户可查看/复用汉化成果，低级用户经 `deploy.ps1` 直接获得。
+核心 DLL（ArcenAIW2Core / ArcenAIW2Visualization / ArcenUniversal）的 IL 汉化产物**已纳入本仓库**（`PatchedAssemblies/` 目录，与游戏目录同名；`.bak` 备份由 `.gitignore` 排除）。这样高级用户可查看/复用汉化成果，低级用户经 `deploy.ps1` 直接获得。
 
 `deploy.ps1` 的部署逻辑（2026-07-08 修正）：
-- **Core / Visualization**：优先使用仓库内 `PatchedAssemblies/ArcenAIW2Core.dll` / `ArcenAIW2Visualization.dll`（IL 汉化版）；若仓库尚无对应汉化版，则回退拷贝游戏原版。
-- **Universal**：目前无 IL 汉化，始终从游戏 `AIWar2_Data\Managed\` 拷贝原版。
+- **Core / Visualization / Universal**：优先使用仓库内 `PatchedAssemblies/` 下的 IL 汉化版；若仓库尚无对应汉化版，则回退拷贝游戏原版。
 
 **重要**：原脚本曾无条件从 `AIWar2_Data\Managed\` 拷贝原版覆盖 `PatchedAssemblies/`，会冲掉 ilpatch 写入的中文，已修复。切勿改回该逻辑。
 
@@ -364,6 +363,7 @@ WorldTMPFontPatch (BepInEx 插件)
 - 编译器版本必须与原版一致（Roslyn 4.12.0），否则会产生运行时错误
 - Debug 日志、内部标识符、错误码（如 `Immune to All Damage`、`CODE `、`PrimaryKeyID `）保持英文，不翻译
 - **聊天/消息日志中文方框**：游戏使用了高度修改的 TextMeshPro（`AIW2ModdingAndGUI` 项目），其 `FontEngine` 在运行时无法加载字体数据。标准 SDF 图集格式与修改版 TMP 渲染管线不兼容。**解决方案**：对于聊天框（ChatLog）和右上角瞬时消息框（BasicText），使用三层捕获覆盖层（capture → Legacy Text overlay）绕过 TMP 渲染问题，中文文本通过 Legacy Text（Microsoft YaHei 位图字体）显示。代价是文字像素化和点击链接偏移（可接受范围）。详见 `AGENTS.md`。
+- **`Window_PrototypeInGameHoverEntityInfo.cs:373` `" of "`**：涉及英文语序（`Entity of Faction`），中文需改为 `Faction的Entity`。因需重构代码顺序而非常规字符串替换，暂未修复。
 
 ### 8.13 汉化统计
 
@@ -376,8 +376,8 @@ WorldTMPFontPatch (BepInEx 插件)
 | WorldTMPFontPatch | BepInEx 插件 | 1 | ✅ 0 错误 | ✅ 完成 |
 | **聊天日志中文方框** | — | — | ✅ 已解决（捕获覆盖层方案，覆盖 ChatLog + BasicText） |
 | ArcenUniversal | IL 汉化 | 613 | — | ✅ 已部署（151 条 ldstr） |
-| ArcenAIW2Core | IL 汉化 | ~350 | — | ✅ 已部署（637 条 ldstr） |
-| ArcenAIW2Visualization | IL 汉化 | ~100 | — | ✅ 已完成（20 条 ldstr） |
+| ArcenAIW2Core | IL 汉化 | ~350 | — | ✅ 已部署（889 条 ldstr） |
+| ArcenAIW2Visualization | IL 汉化 | ~100 | — | ✅ 已部署（20 条 ldstr） |
 | **合计** | | **~1842** | | |
 
 ### 8.14 翻译注意事项
@@ -551,6 +551,8 @@ ilpatch inspect "PatchedAssemblies\ArcenAIW2Visualization.dll" "起始行星归�
 | ArcenAIW2Core | 2347 | 889 | 748 | ✅ 已部署 |
 
 > 2026-07-09 本次新增 ArcenAIW2Core 翻译 +199 条目（252 处 ldstr 替换），涵盖星域调查、坐标验证、出哨站（Outguard）描述、小队行为调试信息、AI 预算分配等类别。合并脚本 `merge_parts.py` 已编写至 `tools/ilpatch/`，后续可直接复用。
+>
+> **2026-07-16 IL 补翻：** 在 `merged.json` 中新增 `"Science":"科技"` 和 `"Energy":"能量"`（各 1 处 ldstr），对应资源条上的资源类型标签。此前因核心 DLL 版本差异，`Science` ldstr 不在原字典中，玩家看到的仍是"Science"（上一次 ilpatch 基于旧版 DLL 生成）。本日从当前游戏 DLL 中 `ilpatch inspect` 找到并补翻。
 
 **2026-07-10 补翻：** 发现 `merged.json` 中有 2 条 wormhole 相关格式字符串翻译为空：
 - `" wormholes linking to their own planet in this map.  Harmless now."` — 用于生成地图界面动态数字拼接（`{0} wormholes linking...`），空翻译导致英文原文直接显示。
@@ -597,7 +599,7 @@ ilpatch inspect "PatchedAssemblies\ArcenAIW2Visualization.dll" "起始行星归�
 
 | 类型 | 文件数 | 内容 |
 |------|--------|------|
-| JournalEntries | 4 | 黑暗泽尼斯、游牧星球、拱顶石、矿工剧情 |
+| JournalEntries | 4 | 黑暗泽尼斯、游牧行星、拱顶石、矿工剧情 |
 | Achievement | 1 | 成就名称和描述 |
 
 #### DLC3 - The Neinzul Abyss (奈因祖尔深渊)
@@ -722,7 +724,7 @@ AIWar2_ChineseTranslation/
 | Window_PrototypeInGameHoverEntityInfo.cs | "Cannot be claimed for another..." | 1 |
 | EntityText.Attr.cs | "Cannot be claimed for another..." | 1 |
 | AIPChange.cs | "At ... AIP changed" | 1 |
-| PublicCrashingNomadPlanetNotifier.cs | 撞击倒计时、星球移动提示 | 2 |
+| PublicCrashingNomadPlanetNotifier.cs | 撞击倒计时、行星移动提示 | 2 |
 | PublicAIReservesNotifier.cs | AI 预备队虫洞提示 | 1 |
 | PublicDZInvasionNotifier.cs | Dark Zenith 入侵提示 | 1 |
 | PublicImperialSpireNotifier.cs | 帝国尖塔到达提示 | 1 |

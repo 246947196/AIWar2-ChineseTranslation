@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- Showdown Device Hack -->
   <item name="InitiateShowdown"  dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_InitiateShowdown" display_name="启动最终对决" 
@@ -30,7 +30,7 @@
 
 <!-- these showdown device related hacks are only for the necromancer; human empires just claim the structures normally, but the necromancer doesn't really do Claiming that way -->
   <item name="ClaimShowdownDevice"  dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_ClaimShowdownDevice" display_name="占领最终对决装置"
-        description="为死灵法师占领这个最终对决装置；对于人类帝国，你将在占领星球后正常占领这个建筑。"
+        description="为死灵法师占领这个最终对决装置；对于人类帝国，你将在占领行星后正常占领这个建筑。"
         hack_completes_instantly="true"
         cost_in_hacking_points="15"
         cost_in_resource_one="0"
@@ -85,7 +85,7 @@
         />
 
         <item name="MovePhylactery"  dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_MovePhylactery" display_name="移动魂匣"
-              description="将魂匣与你选择的另一个未受损的亡灵都市交换星球。如果你的魂匣即将被摧毁，但至少有一个合适的亡灵都市且有足够的精华，这将自动与一个随机的亡灵都市进行交换。"
+              description="将魂匣与你选择的另一个未受损的亡灵都市交换行星。如果你的魂匣即将被摧毁，但至少有一个合适的亡灵都市且有足够的精华，这将自动与一个随机的亡灵都市进行交换。"
         cost_in_hacking_points="0"
         cost_in_resource_one="15"
         hack_completes_instantly="true"
@@ -100,7 +100,7 @@
         />
 
         <item name="MoveNecropolis"  dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_MoveNecropolis" display_name="移动亡灵都市"
-              description="将此亡灵都市与你选择的另一个未受损的亡灵都市交换星球。你不能用这种方式与魂匣交换。"
+              description="将此亡灵都市与你选择的另一个未受损的亡灵都市交换行星。你不能用这种方式与魂匣交换。"
         cost_in_hacking_points="0"
         cost_in_resource_one="5"
         hack_completes_instantly="true"
@@ -208,7 +208,7 @@
               />
 
         <item name="LureElderling"  dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_LureElderling" display_name="引诱古灵"
-              description="此破解将发射辐射，将任何把这个星球纳入其领地的古灵引诱到这个星球。这对于让古灵离开位置去攻击另一个目标，或者进行一场大决战非常有用。"
+              description="此破解将发射辐射，将任何把这个行星纳入其领地的古灵引诱到这个行星。这对于让古灵离开位置去攻击另一个目标，或者进行一场大决战非常有用。"
               hacking_cost_per_second="0.1"
               cost_in_hacking_points="1"
               primary_hacking_response_interval="60"

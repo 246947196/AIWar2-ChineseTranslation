@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 	<!--	All groups in this file only use new values. Other files retain various values for prior save support. -->
 	<!-- 	Either a tag or an internal name can be specified for a unit_tag. It will attempt to find a tag by that name first. -->
@@ -13,7 +13,7 @@
 		aip_per_additional_summon="100"
 		time_between_summons_in_seconds="300"
 		repair_time_in_seconds="1200"
-		description="在数十年的沉寂之后，一位离经叛道的科学家联系了我们，提出用强大的尖塔技术来保卫我们的星球。然而，维持这些防御所需的能量巨大，我们只能在有限的时间内维持它们。"
+		description="在数十年的沉寂之后，一位离经叛道的科学家联系了我们，提出用强大的尖塔技术来保卫我们的行星。然而，维持这些防御所需的能量巨大，我们只能在有限的时间内维持它们。"
 		
 		parsed_data_type="EntityName"
 		data_list="OutguardFlagship,OutguardForcefieldGenerator,OutguardBeamCannon"

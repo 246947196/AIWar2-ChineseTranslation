@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
 <!-- New variety of stationkeepers: Drone Sentryposts
@@ -17,7 +17,7 @@
 			category="Ship"
 			collision_priority="900"
 			display_name="无人机卫戍站"
-			description="军事化岗哨站，在泡泡护盾的保护下能造成更多伤害，且只能通过指挥站建造。它会生产开拓者无人机，这些无人机在接近敌人近战范围时会布设地雷，并在战斗中吸引火力，释放致命的伏击无人机。卫戍站的等级越高，发射的开拓者无人机数量越多，最高五级。&lt;color=#FF5454&gt;每个星球最多建造1座！&lt;/color&gt;"
+			description="军事化岗哨站，在泡泡护盾的保护下能造成更多伤害，且只能通过指挥站建造。它会生产开拓者无人机，这些无人机在接近敌人近战范围时会布设地雷，并在战斗中吸引火力，释放致命的伏击无人机。卫戍站的等级越高，发射的开拓者无人机数量越多，最高五级。&lt;color=#FF5454&gt;每个行星最多建造1座！&lt;/color&gt;"
 			behavior="Stationary"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Sentries,CommandMilitary" 
 			build_sidebar_categories_i_am_part_of="OtherDefenses" destroys_self_until_not_over_ship_cap_if_planetary_command="true"
@@ -73,7 +73,7 @@
 			category="Ship"
 			collision_priority="900"
 			display_name="无人机回收站"
-			description="经济岗哨站，可开采金属，且只能通过指挥站建造。每三十秒生产回收无人机，这些无人机战斗能力有限，但能代谢敌人获取金属。回收站的等级越高，生产的无人机数量越多。&lt;color=#FF5454&gt;每个星球最多建造1座！&lt;/color&gt;"
+			description="经济岗哨站，可开采金属，且只能通过指挥站建造。每三十秒生产回收无人机，这些无人机战斗能力有限，但能代谢敌人获取金属。回收站的等级越高，生产的无人机数量越多。&lt;color=#FF5454&gt;每个行星最多建造1座！&lt;/color&gt;"
 			behavior="Stationary"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Sentries,CommandEconomic" 
 			build_sidebar_categories_i_am_part_of="OtherDefenses" destroys_self_until_not_over_ship_cap_if_planetary_command="true"
@@ -114,7 +114,7 @@
 			category="Ship"
 			collision_priority="900"
 			display_name="无人机堡垒"
-			description="后勤岗哨站，配备先进的泡泡护盾，不会降低护盾内单位的火力，且只能通过指挥站建造。当有敌人出现时，每三十秒释放蚊子无人机，释放的无人机数量随等级增加。&lt;color=#FF5454&gt;每个星球最多建造1座！&lt;/color&gt;"
+			description="后勤岗哨站，配备先进的泡泡护盾，不会降低护盾内单位的火力，且只能通过指挥站建造。当有敌人出现时，每三十秒释放蚊子无人机，释放的无人机数量随等级增加。&lt;color=#FF5454&gt;每个行星最多建造1座！&lt;/color&gt;"
 			behavior="Stationary"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Sentries,CommandLogistical" 
 			build_sidebar_categories_i_am_part_of="OtherDefenses" destroys_self_until_not_over_ship_cap_if_planetary_command="true"

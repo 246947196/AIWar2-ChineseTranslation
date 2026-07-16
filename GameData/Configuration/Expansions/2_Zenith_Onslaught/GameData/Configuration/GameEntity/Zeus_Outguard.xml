@@ -17,7 +17,7 @@
 		visuals_scale_multiplier="3"
         collision_priority="800"
 	    display_name="亥伯龙号"
-	    description="作为游牧的维克西亚人的避难所，这座堡垒会以星爆模式发射光束，并且可以在友方或中立星球巡逻。"
+	    description="作为游牧的维克西亚人的避难所，这座堡垒会以星爆模式发射光束，并且可以在友方或中立行星巡逻。"
 	    behavior="Stationary"
 		starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Expatriate" 
 		cost_for_ai_to_purchase="200"
@@ -646,7 +646,7 @@
 		  tags="Spy"
       thematic_groups="IsolatedHumanResistance,Outguard"
 			display_name="前哨站间谍"
-			description="能在极低被发现概率下提供敌方星球的视野。这些特殊的间谍由间谍大师前哨站派遣。"
+			description="能在极低被发现概率下提供敌方行星的视野。这些特殊的间谍由间谍大师前哨站派遣。"
 			starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Expatriate"
 			>			
 	</entity>

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 	<entity name="AntiGravityDestroyer" copy_from="AMU_DestroyerBase" required_expansion_list="3_The_Neinzul_Abyss"
 		visuals="assets/_finalgamemeshes/guardians/implosionguardian/implosionguardian.prefab"
@@ -81,7 +81,7 @@
 		display_name="攻城引擎驱逐舰"
 		display_name_for_sidebar="攻城引擎 DD"
 		description_short="远程'盒中攻城'：用破碎者炸弹攻击，在造成伤害时创建攻城导弹电池。生成慢速炸弹来拦截攻击者。不能被僵尸化。"
-		description="攻城引擎是一种旧设计，可以追溯到接管城堡和有城墙的城市的概念。虽然太空中不再有城墙，但我们的敌人仍然可以建造防御结构，将舰队化为灰烬。虽然不是一对多的解决方案，但能够召唤自己的防御阵地并阻止敌人接近的驱逐舰是对抗任何设防星球的良好开始。"
+		description="攻城引擎是一种旧设计，可以追溯到接管城堡和有城墙的城市的概念。虽然太空中不再有城墙，但我们的敌人仍然可以建造防御结构，将舰队化为灰烬。虽然不是一对多的解决方案，但能够召唤自己的防御阵地并阻止敌人接近的驱逐舰是对抗任何设防行星的良好开始。"
 		tech_upgrades_that_benefit_me="Generalist,Heavy"
 		cost_for_ai_to_purchase="6870" strength_multiplier="4"
 		hull_points="300000" shield_points="150000" speed="Normal1"

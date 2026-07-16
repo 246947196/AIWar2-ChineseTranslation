@@ -267,7 +267,7 @@
            type_name="Arcen.AIW2.External.AITypeController_Reservist"
            description="这个 AI 非常注重防御。它拥有额外的增援部队，并且其 AI 预备役会比平时更早地发现你的深度打击。 
 
-然后，这个 AI 会利用其增援部队发起特别大规模的跨星球攻击。"
+然后，这个 AI 会利用其增援部队发起特别大规模的跨行星攻击。"
            multiplier_for_budget_reinforcement="4"
            deepstrike_distance_modifier="-1"
            >

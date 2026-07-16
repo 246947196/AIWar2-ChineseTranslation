@@ -5,7 +5,7 @@
            can_record_another_copy_if_already_recorded_in_this_campaign="false"
            text_replacement_related_faction_color="true"
         chat_text="指挥官，{FactionColor}黑暗泽尼斯&lt;/color&gt;正在攻击！"
-        full_text="指挥官，我们检测到了大规模的维度偏移。看起来另一个宇宙的几个星球突然靠近了我们的星球；近到足以让虫洞网格对齐。
+        full_text="指挥官，我们检测到了大规模的维度偏移。看起来另一个宇宙的几个行星突然靠近了我们的行星；近到足以让虫洞网格对齐。
 
 我们的传感器检测到极其强大的能量特征；初步分析显示与泽尼斯能量相似，但与我们一直发现的遗迹不完全匹配。我们的科学家根据他们发现的发射光谱差异称它们为'黑暗泽尼斯'。我们不太确定这些黑暗泽尼斯在做什么，但从他们释放的能量来看，这看起来像是一次重大入侵。如果他们是功能正常的泽尼斯，而不仅仅是我们迄今发现的废弃残骸，我们将面临一场艰难的战争。
 
@@ -20,7 +20,7 @@ Solvet saeclum in favilla" />
         chat_text="指挥官，{FactionColor}黑暗泽尼斯&lt;/color&gt;正在加入我们！"
         full_text="指挥官，我们设法吸引了一小支黑暗泽尼斯远征军。他们来到我们的母星提供帮助。
 
-这些黑暗泽尼斯最终会成为强大的盟友，但他们现在几乎毫无用处。他们需要一段时间来建立能够支持有意义的进攻力量的经济，而且他们将受益于一个连续的帝国，使他们的经济能够繁荣，因为他们似乎无法在没有星际贸易的情况下生产所有所需的资源。他们的生产中心，柱廊，无法在人工智能星球上建造，因为人工智能指挥站的辐射会干扰他们的过程。这似乎并不阻止他们建造收集终端来在防御薄弱的人工智能系统中收集资源。" />
+这些黑暗泽尼斯最终会成为强大的盟友，但他们现在几乎毫无用处。他们需要一段时间来建立能够支持有意义的进攻力量的经济，而且他们将受益于一个连续的帝国，使他们的经济能够繁荣，因为他们似乎无法在没有星际贸易的情况下生产所有所需的资源。他们的生产中心，柱廊，无法在人工智能行星上建造，因为人工智能指挥站的辐射会干扰他们的过程。这似乎并不阻止他们建造收集终端来在防御薄弱的人工智能系统中收集资源。" />
 
   <journal name="ZO_DarkZenith_JoinMinorFaction" sidebar_text="{FactionColor}黑暗泽尼斯&lt;/color&gt;:  加入他们的盟友"
            can_record_another_copy_if_already_recorded_in_this_campaign="false"
@@ -31,18 +31,18 @@ Solvet saeclum in favilla" />
   <journal name="ZO_DarkZenith_Fimbulwinter" sidebar_text="{FactionColor}黑暗泽尼斯&lt;/color&gt;:  芬布尔之冬"
            can_record_another_copy_if_already_recorded_in_this_campaign="false"
            text_replacement_related_faction_color="true"
-        chat_text="指挥官，{FactionColor}黑暗泽尼斯&lt;/color&gt;正在开始改造星球"
-        full_text="指挥官，{FactionColor}黑暗泽尼斯&lt;/color&gt;正在将我们宇宙中的星球改造得更适合他们的文明。这些是可怕的改造，会加速黑暗泽尼斯及其盟友在星球上的行动，并减缓他们的敌人。
+        chat_text="指挥官，{FactionColor}黑暗泽尼斯&lt;/color&gt;正在开始改造行星"
+        full_text="指挥官，{FactionColor}黑暗泽尼斯&lt;/color&gt;正在将我们宇宙中的行星改造得更适合他们的文明。这些是可怕的改造，会加速黑暗泽尼斯及其盟友在行星上的行动，并减缓他们的敌人。
 
-他们似乎打算对他们遇到的每一颗星球都这样做。如果他们改造太多星球，即使我们在这场战争中幸存下来，我们也将无处可居；我们仍然可以在轨道上建造指挥站，但星球本身将无法用于殖民或工业目的。我们的科学家将星球的转变称为芬布尔之冬。让我们希望我们能在我们的科学家开始提到诸神黄昏之前阻止这次入侵。" />
+他们似乎打算对他们遇到的每一颗行星都这样做。如果他们改造太多行星，即使我们在这场战争中幸存下来，我们也将无处可居；我们仍然可以在轨道上建造指挥站，但行星本身将无法用于殖民或工业目的。我们的科学家将行星的转变称为芬布尔之冬。让我们希望我们能在我们的科学家开始提到诸神黄昏之前阻止这次入侵。" />
 
   <journal name="ZO_DarkZenith_Fimbulwinter_PlayerAlly" sidebar_text="{FactionColor}黑暗泽尼斯&lt;/color&gt;:  芬布尔之冬"
            can_record_another_copy_if_already_recorded_in_this_campaign="false"
            text_replacement_related_faction_color="true"
-        chat_text="指挥官，{FactionColor}黑暗泽尼斯&lt;/color&gt;正在开始改造星球"
-        full_text="指挥官，{FactionColor}黑暗泽尼斯&lt;/color&gt;正在将我们宇宙中的星球改造得更适合他们的文明。这些是重大改造，会加速黑暗泽尼斯及其盟友在星球上的行动，并减缓他们的敌人以重新夺取改造后的星系。
+        chat_text="指挥官，{FactionColor}黑暗泽尼斯&lt;/color&gt;正在开始改造行星"
+        full_text="指挥官，{FactionColor}黑暗泽尼斯&lt;/color&gt;正在将我们宇宙中的行星改造得更适合他们的文明。这些是重大改造，会加速黑暗泽尼斯及其盟友在行星上的行动，并减缓他们的敌人以重新夺取改造后的星系。
 
-他们似乎打算对他们遇到的每一颗星球都这样做。我们的科学家将星球的转变称为芬布尔之冬。值得庆幸的是，我们的盟友将确保这些变化不会干扰我们使用星球的能力，而且他们正在给我们技术，让我们的单位也能利用这些变化。" />
+他们似乎打算对他们遇到的每一颗行星都这样做。我们的科学家将行星的转变称为芬布尔之冬。值得庆幸的是，我们的盟友将确保这些变化不会干扰我们使用行星的能力，而且他们正在给我们技术，让我们的单位也能利用这些变化。" />
 
   <journal name="ZO_DarkZenith_EconomicOverview" sidebar_text="{FactionColor}黑暗泽尼斯&lt;/color&gt;:  经济"
            can_record_another_copy_if_already_recorded_in_this_campaign="false"
@@ -86,7 +86,7 @@ skrith：阴险；这些单位有额外的武器用于群体控制。" />
 
  
  <!-- For allied DZ conquest of AI world -->
-  <journal name="ZO_DarkZenith_Svikari_Conquest"  sidebar_text="{FactionColor}黑暗泽尼斯&lt;/color&gt;:  星球征服"
+  <journal name="ZO_DarkZenith_Svikari_Conquest"  sidebar_text="{FactionColor}黑暗泽尼斯&lt;/color&gt;:  行星征服"
            can_record_another_copy_if_already_recorded_in_this_campaign="false"
            text_replacement_related_faction_color="true"
         chat_text="指挥官，我们的{FactionColor}黑暗泽尼斯&lt;/color&gt;盟友已经从人工智能手中夺取了一个星系。"
@@ -111,13 +111,13 @@ skrith：阴险；这些单位有额外的武器用于群体控制。" />
 
 点击资源栏的入侵区域将显示经济概述。
 
-请记住，我们的部队根据我们的经济大幅扩展。您需要控制大量星球来建造足够的柱廊和终端；那是我们力量的来源。对我们经济的破坏可能是毁灭性的。
+请记住，我们的部队根据我们的经济大幅扩展。您需要控制大量行星来建造足够的柱廊和终端；那是我们力量的来源。对我们经济的破坏可能是毁灭性的。
 
-如果您在战斗中感到疲倦或分心，您可以使用银河系设置让我们的部队在没有您直接控制的情况下继续作战。用芬布尔之冬覆盖被捕获的星球可以给我们更多的科学，这将是加强我们部队的关键方式。
+如果您在战斗中感到疲倦或分心，您可以使用银河系设置让我们的部队在没有您直接控制的情况下继续作战。用芬布尔之冬覆盖被捕获的行星可以给我们更多的科学，这将是加强我们部队的关键方式。
 
-请注意，我们无法在敌对星球上建造柱廊（生产新单位和建筑），因此我们需要摧毁许多指挥站。
+请注意，我们无法在敌对行星上建造柱廊（生产新单位和建筑），因此我们需要摧毁许多指挥站。
 
 人工智能正试图用他们的深渊部队来对抗我们的力量。粉碎他们将为我们提供更多资源。
 
-我们应该确保将芬布尔之冬应用于这个银河系中未开化的星球，为我们提供更多科学。"/>
+我们应该确保将芬布尔之冬应用于这个银河系中未开化的行星，为我们提供更多科学。"/>
 </root>

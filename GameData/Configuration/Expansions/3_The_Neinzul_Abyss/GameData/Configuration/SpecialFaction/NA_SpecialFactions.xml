@@ -47,7 +47,7 @@
   
   <custom_field name="UseCustomLogicForHumanAllies" display_name="玩家自定义" description="与玩家结盟的奈因祖尔将使用下面定义的高级自定义逻辑。"
             sort_group="600" setting_type="BoolToggle" default="false" is_advanced_setting="true" />
-  <custom_field name="HopsFromTerritoryToAttack" display_name="玩家：最大攻击跃迁数" description="你的奈因祖尔会考虑攻击距离蜂巢星球多远的目标？"
+  <custom_field name="HopsFromTerritoryToAttack" display_name="玩家：最大攻击跃迁数" description="你的奈因祖尔会考虑攻击距离蜂巢行星多远的目标？"
 			sort_group="650" setting_type="IntSlider" default="3" min="2" max="5" is_advanced_setting="true"/>
   <custom_field name="HullRatioToRetreatAt" display_name="玩家：撤退百分比" description="你的奈因祖尔飞地的船体生命值降到多少百分比时应该撤退回血？不适用于氏族成员；但当飞地撤退时，他们会自然跟随。设置为0可禁用。"
 			sort_group="700" setting_type="IntSlider" default="75" min="0" max="100" is_advanced_setting="true"/>
@@ -190,7 +190,7 @@
 
 如果你只有一个野生蜂巢派系，除非你主动攻击它们，否则它们会保持被动，总体影响为中等。
 
-然而，如果你有多个该派系的实例，它们会积极地相互争夺资源，并且会变得更加激进。同一星球上的敌对蜂巢会变得具有攻击性，不仅会互相攻击，还会攻击任何妨碍它们争端的单位。"
+然而，如果你有多个该派系的实例，它们会积极地相互争夺资源，并且会变得更加激进。同一行星上的敌对蜂巢会变得具有攻击性，不仅会互相攻击，还会攻击任何妨碍它们争端的单位。"
   >
     <custom_field name="Intensity" display_name="强度" description="它们可能对游戏玩法产生多大影响？"
 			sort_group="200" setting_type="IntSlider" default="5" min="1" max="10"/>
@@ -216,7 +216,7 @@
      type="SpecialFaction"
      must_be_at_most_one="false"
      defeat_condition="HasNoStrength"
-     description="这些奈因祖尔工兵将帮助他们的盟友保卫星球。
+     description="这些奈因祖尔工兵将帮助他们的盟友保卫行星。
 
 &lt;color=#f25e1c&gt;低影响：&lt;/color&gt; 这个派系将协助他们的盟友，且没有负面影响。"
      can_use_spire_debris="false"

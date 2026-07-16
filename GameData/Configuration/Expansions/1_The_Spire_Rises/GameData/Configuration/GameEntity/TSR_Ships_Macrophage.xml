@@ -130,7 +130,7 @@
 			collision_priority="810"
 			display_name="尖塔感染Telium"
 			display_name_for_sidebar="尖塔Telium"
-			description="这是巨噬细胞感染群的尖塔感染中枢。它注入了收集的残骸，使其能够移动并亲自收割所在星球上的其他实体。强烈建议保持距离。它会释放强大的尖塔收割者来收集金属，比传统Telium产生更多孢子。杀死或黑入此结构会激怒它产生的巨噬细胞，不应轻率行事，但这样做会使其派系失去获取尖塔残骸的途径。"
+			description="这是巨噬细胞感染群的尖塔感染中枢。它注入了收集的残骸，使其能够移动并亲自收割所在行星上的其他实体。强烈建议保持距离。它会释放强大的尖塔收割者来收集金属，比传统Telium产生更多孢子。杀死或黑入此结构会激怒它产生的巨噬细胞，不应轻率行事，但这样做会使其派系失去获取尖塔残骸的途径。"
 			starting_mark_level="Markless"
 			cost_for_ai_to_purchase="9600" strength_multiplier="0.5"		
 			hull_points="300000000" shield_points="400000000" speed="AlmostNone"

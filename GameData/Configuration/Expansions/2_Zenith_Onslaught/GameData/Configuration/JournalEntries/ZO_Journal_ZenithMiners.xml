@@ -13,9 +13,9 @@
            can_record_another_copy_if_already_recorded_in_this_campaign="false"
            text_replacement_related_faction_color="true"
 
-           full_text="指挥官，我们检测到了一个巨大的{FactionColor}泽尼斯魔像&lt;/color&gt;。它似乎能够影响星球本身；我们以前从未见过这样的事情发生。
+           full_text="指挥官，我们检测到了一个巨大的{FactionColor}泽尼斯魔像&lt;/color&gt;。它似乎能够影响行星本身；我们以前从未见过这样的事情发生。
 
-看起来这可能能够完全摧毁一颗星球，包括上面的所有东西。即使旗舰如果在星球上也会被永久摧毁。" />
+看起来这可能能够完全摧毁一颗行星，包括上面的所有东西。即使旗舰如果在行星上也会被永久摧毁。" />
 
     <journal name="ZO_ZenithMiners_AttackingDyson" sidebar_text="{FactionColor}泽尼斯矿工&lt;/color&gt;:  戴森球受到攻击"
              can_record_another_copy_if_already_recorded_in_this_campaign="false"

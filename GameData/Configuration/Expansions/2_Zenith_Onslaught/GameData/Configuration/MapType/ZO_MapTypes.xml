@@ -1,8 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
     <map_type name="FatSnake"
             display_name="立方体"
-            description="该地图外观类似一个三维立方体。地形上与螺旋蛇形地图相似，但可以有多个星球的厚度。这使得游戏更容易，因为有更多方法可以绕过特别强大的星球。
+            description="该地图外观类似一个三维立方体。地形上与螺旋蛇形地图相似，但可以有多个行星的厚度。这使得游戏更容易，因为有更多方法可以绕过特别强大的行星。
             
 后勤专家模式及以上不可用。"
             dll_name="AIWarExternalDeepProcessingCode"
@@ -12,7 +12,7 @@
             max_planets="300"
               hidden_from_lists_above_harshness="1200"
             >
-      <map_option name="SnakeThickness" display_name="立方体厚度" description="立方体每一块的星球宽度是多少。">
+      <map_option name="SnakeThickness" display_name="立方体厚度" description="立方体每一块的行星宽度是多少。">
         <choice_value id="0" display_name="两层" description="两层跃迁距离的厚度。"  related_int_value="0"/>
         <choice_value id="1" display_name="三层" description="三层跃迁距离的厚度。" related_int_value="1" />
         <choice_value id="2" display_name="四层" description="四层跃迁距离的厚度。" related_int_value="2" />
@@ -26,9 +26,9 @@
         <choice_value id="2" display_name="较多" description="添加一些额外的连接。" related_int_value="2" />
         <choice_value id="3" display_name="混合" description="添加一些额外连接，同时减少一些连接。" related_int_value="3" />
       </map_option>
-      <map_option name="DaliStyle" display_name="达利风格" description="星球是否不应排成直线。">
-        <choice_value id="0" display_name="否" description="星球排成直线。" related_int_value="0" />
-        <choice_value id="1" display_name="是" description="星球不排成直线。" related_int_value="1" />
+      <map_option name="DaliStyle" display_name="达利风格" description="行星是否不应排成直线。">
+        <choice_value id="0" display_name="否" description="行星排成直线。" related_int_value="0" />
+        <choice_value id="1" display_name="是" description="行星不排成直线。" related_int_value="1" />
       </map_option> 
   </map_type>
 

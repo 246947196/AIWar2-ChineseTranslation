@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
 <entity name="MFSPlasmaSiegeFrigate"
@@ -270,7 +270,7 @@
 			collision_priority="600"
 			display_name="指挥护卫舰"
 			display_name_for_sidebar="指挥护卫舰"
-			description="稀有重型护卫舰，配备弹道炮和 C3 设备。这艘旗舰可提升该星球上所有盟军单位的攻击力。"
+			description="稀有重型护卫舰，配备弹道炮和 C3 设备。这艘旗舰可提升该行星上所有盟军单位的攻击力。"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Heavy,CommandMilitary"
 			cost_for_ai_to_purchase="1200"
 			max_count_per_npc_faction_before_stack="3"

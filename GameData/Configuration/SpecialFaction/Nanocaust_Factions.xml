@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
     <faction name="Nanocaust"
            display_name="纳米灾变" short_name="纳米灾变" processing_group="Nanocaust"
@@ -29,7 +29,7 @@
       <custom_field name="Intelligence" display_name="智能等级" description="纳米灾变扩张时应使用什么策略？战术家(Tactician)更聪明，蛮力(Brute Force)更简单直接。"
           sort_group="250" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Tactician,Brute Force" default_option="Tactician" />
 
-      <custom_field name="SpawnPlanet" is_advanced_setting="true" display_name="生成星球" description="通常纳米灾变会在银河系现有星球上生成。如果设为true，它们会获得一个连接至银河系的新母星作为巢穴。"
+      <custom_field name="SpawnPlanet" is_advanced_setting="true" display_name="生成行星" description="通常纳米灾变会在银河系现有行星上生成。如果设为true，它们会获得一个连接至银河系的新母星作为巢穴。"
           sort_group="400" setting_type="BoolToggle" default="false"  />
 
       <custom_field name="ReinvadeFrequency" is_advanced_setting="true" display_name="重新入侵频率" description="通常纳米灾变只会生成一个巢穴。如果更改此设置，它们会在银河系中没有巢穴一段时间后重新入侵并生成新巢穴。"

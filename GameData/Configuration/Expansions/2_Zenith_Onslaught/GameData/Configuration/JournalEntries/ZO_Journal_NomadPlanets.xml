@@ -1,22 +1,22 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
-  <journal name="ZO_NomadPlanets_InitialDiscovery" sidebar_text="{FactionColor}游牧星球&lt;/color&gt;: 探索游牧星球"
+  <journal name="ZO_NomadPlanets_InitialDiscovery" sidebar_text="{FactionColor}游牧行星&lt;/color&gt;: 探索游牧行星"
            can_record_another_copy_if_already_recorded_in_this_campaign="false"
            text_replacement_related_faction_color="true"
-           full_text="指挥官，我们发现了非凡的东西。一颗可移动的星球！它正在缓慢移动，并在移动过程中更新其在虫洞网格中的链接。
+           full_text="指挥官，我们发现了非凡的东西。一颗可移动的行星！它正在缓慢移动，并在移动过程中更新其在虫洞网格中的链接。
 
-它似乎只是在自动驾驶，但星球上休眠的 nexus 可能有一些控制装置，如果我们能通过入侵激活它。" />
+它似乎只是在自动驾驶，但行星上休眠的 nexus 可能有一些控制装置，如果我们能通过入侵激活它。" />
 
-    <journal name="ZO_NomadPlanets_ActiveNexus" sidebar_text="{FactionColor}游牧星球&lt;/color&gt;: 激活游牧星球"
+    <journal name="ZO_NomadPlanets_ActiveNexus" sidebar_text="{FactionColor}游牧行星&lt;/color&gt;: 激活游牧行星"
            can_record_another_copy_if_already_recorded_in_this_campaign="false"
            text_replacement_related_faction_color="true"
            chat_text="指挥官，这个活跃的游牧 nexus 令人着迷！有关更多详细信息，请参阅日志。"
-           full_text="指挥官，我们从未想象过能够控制一颗星球。泽尼斯真是一个令人惊叹的种族。
+           full_text="指挥官，我们从未想象过能够控制一颗行星。泽尼斯真是一个令人惊叹的种族。
 
-我们可以引导它撞向另一颗星球，甚至是人工智能母星！这将引发非常强烈的人工智能反应；我们怀疑他们会用大规模部队攻击这个游牧星球和我们帝国的其他部分。
+我们可以引导它撞向另一颗行星，甚至是人工智能母星！这将引发非常强烈的人工智能反应；我们怀疑他们会用大规模部队攻击这个游牧行星和我们帝国的其他部分。
 
-请记住，如果我们撞毁星球，两颗星球上的所有东西都将被永久摧毁，包括我们的旗舰。你应该记得在为时已晚之前将旗舰从星球上移开。" />
+请记住，如果我们撞毁行星，两颗行星上的所有东西都将被永久摧毁，包括我们的旗舰。你应该记得在为时已晚之前将旗舰从行星上移开。" />
 
   
 </root>

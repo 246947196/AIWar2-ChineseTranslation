@@ -14,7 +14,7 @@
 
   <fleet_design name="StartingCombatEngineerAndFactoryCombo"
         display_name="战斗支援舰队"
-        description="大量战斗工程师可以前往任何你想去的地方，包括敌方星球。此外，还有一个配备基础战斗无人机的移动工厂，即使深入敌方领土也能随行！"
+        description="大量战斗工程师可以前往任何你想去的地方，包括敌方行星。此外，还有一个配备基础战斗无人机的移动工厂，即使深入敌方领土也能随行！"
         design_logic="InitialPlayerSupportFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >
@@ -26,7 +26,7 @@
 
   <fleet_design name="StartingCombatEngineerAndRejuvenatorFactoryCombo"
         display_name="再生支援舰队"
-        description="大量工程师可以前往任何你想去的地方，包括敌方星球。此外，还有一个配备诱饵无人机的移动工厂，这些无人机可以吸引敌方火力，即使深入敌方领土也能随行！"
+        description="大量工程师可以前往任何你想去的地方，包括敌方行星。此外，还有一个配备诱饵无人机的移动工厂，这些无人机可以吸引敌方火力，即使深入敌方领土也能随行！"
         design_logic="InitialPlayerSupportFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >
@@ -38,7 +38,7 @@
 
   <fleet_design name="StartingCombatEngineerAndOverloaderFactoryCombo"
         display_name="超载支援舰队"
-        description="少量战斗工程师可以前往任何你想去的地方，包括敌方星球。此外，还有一个配备结构瘫痪无人机的移动工厂，即使深入敌方领土也能随行。当它在场时，还能加速友方单位！"
+        description="少量战斗工程师可以前往任何你想去的地方，包括敌方行星。此外，还有一个配备结构瘫痪无人机的移动工厂，即使深入敌方领土也能随行。当它在场时，还能加速友方单位！"
         design_logic="InitialPlayerSupportFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >

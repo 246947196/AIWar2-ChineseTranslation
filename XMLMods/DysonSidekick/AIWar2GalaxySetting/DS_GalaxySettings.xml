@@ -1,23 +1,23 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   <galaxy_setting category="DysonSidekick" name="DysonAutoDefend" display_name="自动防御模式" changeable_during_gameplay="true"
                   type="CustomDropdownArbitraryOptions" arbitrary_options="Disabled,Defense Only,Full Assistance" default_option="Disabled"
-        description="你可以选择让你的戴森舰队自动作战。戴森舰队将协助你（或其他结盟派系），但不会自行攻击敌方星球或目标。
+        description="你可以选择让你的戴森舰队自动作战。戴森舰队将协助你（或其他结盟派系），但不会自行攻击敌方行星或目标。
 
 如果玩家正在控制该派系，自动防御模式将自动禁用；这使得作为Sidekick控制时更加高效。
 
-仅防御意味着戴森舰队不会前往敌方星球。全面协助允许它们随你进入敌方领土。
+仅防御意味着戴森舰队不会前往敌方行星。全面协助允许它们随你进入敌方领土。
 
 没有战斗需要协助时，处于自动防御模式的旗舰将在你的船坞之间巡逻。
 
 注意：如果你将旗舰设置为自动防御模式，你很可能需要确保它们处于追击模式。
 
-这使得戴森Sidekick可以作为其他玩家派系的「附庸」，自动协助战斗/防御你的星球。其他玩家可以通过F4切换到Sidekick来周期性地做出经济选择。"/>
+这使得戴森Sidekick可以作为其他玩家派系的「附庸」，自动协助战斗/防御你的行星。其他玩家可以通过F4切换到Sidekick来周期性地做出经济选择。"/>
 
   <galaxy_setting category="DysonSidekick"  name="BoringDysonNames" display_name="用行星命名要塞" type="BoolToggle" 
                   default="false" changeable_during_gameplay="true"
-                  description="启用此选项后，新的要塞及其旗舰将以它们所在的星球命名，而不是使用主题名称" >
+                  description="启用此选项后，新的要塞及其旗舰将以它们所在的行星命名，而不是使用主题名称" >
   </galaxy_setting>
 
   <galaxy_setting category="DysonSidekick"  name="ReaperRapidSpawn" display_name="调试：更频繁地生成收割者攻击" type="BoolToggle" 
@@ -60,20 +60,20 @@
     <!-- Armada Empire -->
     <galaxy_setting category="ArmadaEmpire"  name="BoringArmadaNames" display_name="用行星命名星站" type="BoolToggle" 
                   default="true" changeable_during_gameplay="true"
-                  description="启用此选项后，新的星站及其旗舰将以它们所在的星球命名，而不是使用主题名称" >
+                  description="启用此选项后，新的星站及其旗舰将以它们所在的行星命名，而不是使用主题名称" >
   </galaxy_setting>
 
   <galaxy_setting category="ArmadaEmpire" name="ArmadaAutoDefend" display_name="自动防御模式" changeable_during_gameplay="true"
                   type="CustomDropdownArbitraryOptions" arbitrary_options="Disabled,Defense Only,Full Assistance" default_option="Disabled"
-        description="你可以选择让你的无敌舰队舰队自动作战。无敌舰队舰队将协助你（或其他结盟派系），但不会自行攻击敌方星球或目标。
+        description="你可以选择让你的无敌舰队舰队自动作战。无敌舰队舰队将协助你（或其他结盟派系），但不会自行攻击敌方行星或目标。
 
-仅防御意味着戴森舰队不会前往敌方星球。全面协助允许它们随你进入敌方领土。
+仅防御意味着戴森舰队不会前往敌方行星。全面协助允许它们随你进入敌方领土。
 
 没有战斗需要协助时，处于自动防御模式的旗舰将在你的船坞之间巡逻。
 
 注意：如果你将旗舰设置为自动防御模式，你很可能需要确保它们处于追击模式。
 
-这使得无敌舰队帝国可以作为其他玩家派系的「附庸」，自动协助战斗/防御你的星球。其他玩家可以通过F4切换到Sidekick来周期性地做出经济选择。"/>
+这使得无敌舰队帝国可以作为其他玩家派系的「附庸」，自动协助战斗/防御你的行星。其他玩家可以通过F4切换到Sidekick来周期性地做出经济选择。"/>
 
   <!--
   <galaxy_setting category="Balance"  name="ExoWarUnitsInExos" display_name="允许Exo生成河外战争单位" type="BoolToggle" 

@@ -295,7 +295,7 @@
            display_name="内因祖尔狂热者"
            abbreviation="Neinzul"
            is_default="false"
-           description="使用内因祖尔幼体和氏族成员进行激进攻击，并且在许多星球上设有内因祖尔集群和巢穴。预计会不断遭到蜂拥攻击。"
+           description="使用内因祖尔幼体和氏族成员进行激进攻击，并且在许多行星上设有内因祖尔集群和巢穴。预计会不断遭到蜂拥攻击。"
            type_difficulty="Hard"
            multiplier_for_budget_reinforcement="0.8"
            multiplier_for_budget_warden_fleet="1"

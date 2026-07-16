@@ -1,8 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <thematic_group_type name="Human" display_name="人类"
         sort_order="1" group_type="Race"
-        description="人类在银河系舞台上已濒临绝境，但这并不意味着真正的灭绝。人类分布太广，甚至他们自己都不知道所有幸存者的聚集地。这已不再是我们被困在一颗星球上的时代了。"/>
+        description="人类在银河系舞台上已濒临绝境，但这并不意味着真正的灭绝。人类分布太广，甚至他们自己都不知道所有幸存者的聚集地。这已不再是我们被困在一颗行星上的时代了。"/>
 
   <thematic_group_type name="Spire" display_name="尖塔族"
         sort_order="50" group_type="Race"

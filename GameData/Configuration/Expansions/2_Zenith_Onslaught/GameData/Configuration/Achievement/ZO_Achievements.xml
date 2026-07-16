@@ -15,7 +15,7 @@
   />
 
   <achievement name="Unmoored" api_key="UN_MOORED"
-    description="使用泽尼斯矿工使一颗星球变成游牧星球。"
+    description="使用泽尼斯矿工使一颗行星变成游牧行星。"
     condition_type="PerformHack"
     condition_related_strings="MakePlanetNomadic"
     level="bronze"

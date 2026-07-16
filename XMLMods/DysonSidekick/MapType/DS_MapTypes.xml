@@ -35,10 +35,10 @@
 
               >
     <map_option name="SolarSystemsLinkMethod" display_name="地图连接算法" description="地图的连接机制；控制地图连通性。">
-      <choice_value id="0" display_name="太阳系" description="通过太阳系方法连接星球。" related_int_value="0" />
-      <choice_value id="1" display_name="断裂" description="仅通过生成树连接星球。" related_int_value="1" />
-      <choice_value id="3" display_name="蛛网" description="通过加布里埃尔图连接星球。" related_int_value="2" />
-      <choice_value id="4" display_name="草垛" description="通过生成图连接星球。" related_int_value="3" />
+      <choice_value id="0" display_name="太阳系" description="通过太阳系方法连接行星。" related_int_value="0" />
+      <choice_value id="1" display_name="断裂" description="仅通过生成树连接行星。" related_int_value="1" />
+      <choice_value id="3" display_name="蛛网" description="通过加布里埃尔图连接行星。" related_int_value="2" />
+      <choice_value id="4" display_name="草垛" description="通过生成图连接行星。" related_int_value="3" />
     </map_option>
   </map_type>
 

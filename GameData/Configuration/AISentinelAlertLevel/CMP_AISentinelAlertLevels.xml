@@ -1,35 +1,35 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <alert_level name="Alert1" display_name="最低戒备状态"
     ordinal="1"
     color_hex="fbd488"
     reinforcement_cap_multiplier="0.3"
     reinforcement_grab_bag_tickets="50"
-    description="该星球的哨兵指挥部未察觉到星系内对自身存在的任何可信威胁。"
-    extra_notes="在AI失去几颗星球之前，大多数星球处于此状态。"
+    description="该行星的哨兵指挥部未察觉到星系内对自身存在的任何可信威胁。"
+    extra_notes="在AI失去几颗行星之前，大多数行星处于此状态。"
 	/>
   <alert_level name="Alert2" display_name="远程戒备状态"
     ordinal="2"
     color_hex="ffa453"
     reinforcement_cap_multiplier="0.6"
     reinforcement_grab_bag_tickets="100"
-    description="该星球的哨兵指挥部知晓星系内其他地方存在威胁，但认为在此处无需采取任何特殊预防措施。"
-    extra_notes="在AI失去几颗星球之后，大多数星球处于此状态。"
+    description="该行星的哨兵指挥部知晓星系内其他地方存在威胁，但认为在此处无需采取任何特殊预防措施。"
+    extra_notes="在AI失去几颗行星之后，大多数行星处于此状态。"
 	/>
   <alert_level name="Alert3" display_name="常规戒备状态"
     ordinal="3"
     color_hex="ff5917"
     reinforcement_cap_multiplier="0.8"
     reinforcement_grab_bag_tickets="250"
-    description="该星球的哨兵指挥部未察觉到自身面临任何直接威胁，但认为有普遍责任随时应对突发情况。"
-    extra_notes="这由星球上的某些AI结构触发，例如部队加速器、突袭引擎或AI霸主。"
+    description="该行星的哨兵指挥部未察觉到自身面临任何直接威胁，但认为有普遍责任随时应对突发情况。"
+    extra_notes="这由行星上的某些AI结构触发，例如部队加速器、突袭引擎或AI霸主。"
 	/>
   <alert_level name="Alert4" display_name="高度戒备状态"
     ordinal="4"
     color_hex="ff114f"
     reinforcement_cap_multiplier="1"
     reinforcement_grab_bag_tickets="600"
-    description="该星球的哨兵指挥部知晓存在直接且可信的威胁，并请求援助以保卫自身或修复过往攻击造成的损失。"
-    extra_notes="这基于近期曾遭受攻击，或处于对抗敌方星球（如人类，但不仅限于人类）的前线。"
+    description="该行星的哨兵指挥部知晓存在直接且可信的威胁，并请求援助以保卫自身或修复过往攻击造成的损失。"
+    extra_notes="这基于近期曾遭受攻击，或处于对抗敌方行星（如人类，但不仅限于人类）的前线。"
 	/>
 </root>

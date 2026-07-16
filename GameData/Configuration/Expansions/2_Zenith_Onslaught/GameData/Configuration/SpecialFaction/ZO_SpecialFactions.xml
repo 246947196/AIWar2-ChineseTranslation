@@ -15,7 +15,7 @@
 &lt;color=#f25e1c&gt;中等影响:&lt;/color&gt; 这个派系基本上会阻止你进入星系的某个区域，除非你想进行一些大规模的战斗（例如，这可能会使一些数据中心、自动资源站或其他有价值的可占领目标更难夺取）。
 
 若要体验 &lt;color=#f25e1c&gt;高影响&lt;/color&gt; 版本，你可以启用内战模式。
-如果有两个或更多开启内战模式的拱壁派势力，那么当任何一个开启内战模式的拱壁派变得过于强大时，他们就会相互开战（即使他们属于同一个次要派系阵营）。你可能会陷入交火之中，所以要小心。占据中心位置可能意味着会有庞大的拱壁派舰队穿过你的星球。由于内战的影响很大，这些拱壁派势力的扩张速度会更慢。请注意，这意味着你可以让单个拱壁派进入内战模式，使其稍微变弱，但不会触发内战。"
+如果有两个或更多开启内战模式的拱壁派势力，那么当任何一个开启内战模式的拱壁派变得过于强大时，他们就会相互开战（即使他们属于同一个次要派系阵营）。你可能会陷入交火之中，所以要小心。占据中心位置可能意味着会有庞大的拱壁派舰队穿过你的行星。由于内战的影响很大，这些拱壁派势力的扩张速度会更慢。请注意，这意味着你可以让单个拱壁派进入内战模式，使其稍微变弱，但不会触发内战。"
            can_use_spire_debris="true"
            impact="Hard"
            CanBeOnMinorFactionTeam="true"
@@ -29,7 +29,7 @@
       <npc_ship_cap name="Turrets" overriding_per_faction_cap_of_stacks="1000" />
     <custom_field name="Intensity" display_name="强度" description="这决定了拱壁派的整体实力预算；拱壁派建造单位的速度有多快，他们尝试扩张领地的频率（以及扩张的效果如何）等等..."
                   sort_group="200" setting_type="IntSlider" default="5" min="1" max="10"/>
-    <custom_field name="NumberToSeed" is_advanced_setting="true" display_name="领地大小" description="拱壁派将宣称多少颗星球作为他们的基础领地。"
+    <custom_field name="NumberToSeed" is_advanced_setting="true" display_name="领地大小" description="拱壁派将宣称多少颗行星作为他们的基础领地。"
                   sort_group="300" setting_type="IntSlider" default="4" min="2" max="8"/>
 
     <custom_field name="Allegiance" display_name="阵营" description="这个派系是否属于某个次要派系阵营？"
@@ -49,11 +49,11 @@
            team_center_color="Gray" team_border_color="AIWC_Teal"
            type="SpecialFaction"
            must_be_at_most_one="true"
-           description="吃掉一颗星球对你的“消化”能力来说，效果惊人。
+           description="吃掉一颗行星对你的“消化”能力来说，效果惊人。
 
-每隔一段时间，巨大的天顶矿工就会降临星系，试图吞噬星球。这可能会引发一些大规模的战斗来拯救星球。
+每隔一段时间，巨大的天顶矿工就会降临星系，试图吞噬行星。这可能会引发一些大规模的战斗来拯救行星。
 
-&lt;color=#f25e1c&gt;中等影响:&lt;/color&gt; 如果不加以控制，这个派系会从星系中移除星球，包括星球上的所有建筑。"
+&lt;color=#f25e1c&gt;中等影响:&lt;/color&gt; 如果不加以控制，这个派系会从星系中移除行星，包括行星上的所有建筑。"
            impact="Moderate"
            CanBeHostileToAll="true"
            ai_can_send_waves_against_this="false"
@@ -104,7 +104,7 @@
 
 黑暗天顶和黑暗尖塔组成的黑暗联盟尤其令人畏惧。
 
-&lt;color=#f25e1c&gt;极高影响:&lt;/color&gt; 当这个派系入侵时，他们会在星系中生成一些新的星球，并将其作为入侵的集结基地。在他们发动攻击之前，你只有很短的时间来准备防御。指挥官，祝你好运！"
+&lt;color=#f25e1c&gt;极高影响:&lt;/color&gt; 当这个派系入侵时，他们会在星系中生成一些新的行星，并将其作为入侵的集结基地。在他们发动攻击之前，你只有很短的时间来准备防御。指挥官，祝你好运！"
            impact="Brutal"
            must_be_at_most_one="true"
            CanBeHostileToAll="true"
@@ -120,9 +120,9 @@
                   sort_group="200" setting_type="IntSlider" default="5" min="1" max="10"/>
     <custom_field name="Allegiance" display_name="阵营" description="这个派系在设定上是黑暗联盟的成员。"
                   sort_group="400" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="黑暗联盟,对所有势力敌对,次要派系阵营红色,次要派系阵营蓝色,次要派系阵营绿色" default_option="黑暗联盟" />
-    <custom_field name="EnableFimbulwinter" is_advanced_setting="true" display_name="启用芬布尔之冬" description="启用后，黑暗天顶将尝试引发芬布尔之冬，将星系中的所有星球改造得更适合他们的需求。黑暗天顶将开始改造他们占领的星球；一旦改造完成，黑暗天顶及其盟友在这些星球上会更强大，而他们的敌人则会变弱。"
+    <custom_field name="EnableFimbulwinter" is_advanced_setting="true" display_name="启用芬布尔之冬" description="启用后，黑暗天顶将尝试引发芬布尔之冬，将星系中的所有行星改造得更适合他们的需求。黑暗天顶将开始改造他们占领的行星；一旦改造完成，黑暗天顶及其盟友在这些行星上会更强大，而他们的敌人则会变弱。"
                   sort_group="500" setting_type="BoolToggle" default="true"  />
-    <custom_field name="InvasionTime" is_advanced_setting="true" display_name="入侵时间" description="黑暗天顶何时会入侵星系？在全面入侵时，黑暗天顶会将新的星球连接到星系地图中。
+    <custom_field name="InvasionTime" is_advanced_setting="true" display_name="入侵时间" description="黑暗天顶何时会入侵星系？在全面入侵时，黑暗天顶会将新的行星连接到星系地图中。
 
 注意：立即入侵会极其困难。"
                   sort_group="600" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="游戏早期,游戏中期,游戏后期,立即" default_option="游戏中期" />
@@ -138,7 +138,7 @@
            deep_info_source="DarkZenithSvikariFactionDeepInfo"
            team_center_color="c614051" team_border_color="AIWC_Teal"
            type="SpecialFaction"
-           description="一小群叛逆的黑暗天顶势力想要背叛黑暗联盟，加入星系中的现有派系。如果被召唤，他们最初只会在一个盟友星球上拥有一座建筑。然而，如果给他们时间发展经济，他们仍然可以变得非常强大。
+           description="一小群叛逆的黑暗天顶势力想要背叛黑暗联盟，加入星系中的现有派系。如果被召唤，他们最初只会在一个盟友行星上拥有一座建筑。然而，如果给他们时间发展经济，他们仍然可以变得非常强大。
 
 &lt;color=#f25e1c&gt;影响不定:&lt;/color&gt; 他们在游戏早期需要大量保护，但一旦站稳脚跟，就会变得非常强大。"
            RequiresMinorFactionTeammates="true"
@@ -155,7 +155,7 @@
                   sort_group="200" setting_type="IntSlider" default="5" min="1" max="10"/>
     <custom_field name="Allegiance" display_name="阵营" description="这些天顶势力是黑暗联盟的叛徒。"
                   sort_group="300" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="对玩家友好,次要派系阵营红色,次要派系阵营蓝色,次要派系阵营绿色" default_option="对玩家友好" />
-    <custom_field name="EnableFimbulwinter" is_advanced_setting="true" display_name="启用芬布尔之冬" description="启用后，黑暗天顶斯维卡里将尝试引发芬布尔之冬，将星系中的所有星球改造得更适合他们及其盟友的需求。斯维卡里将开始改造他们占领的星球；一旦改造完成，斯维卡里及其盟友在这些星球上会更强大，而他们的敌人则会变弱。"
+    <custom_field name="EnableFimbulwinter" is_advanced_setting="true" display_name="启用芬布尔之冬" description="启用后，黑暗天顶斯维卡里将尝试引发芬布尔之冬，将星系中的所有行星改造得更适合他们及其盟友的需求。斯维卡里将开始改造他们占领的行星；一旦改造完成，斯维卡里及其盟友在这些行星上会更强大，而他们的敌人则会变弱。"
                   sort_group="500" setting_type="BoolToggle" default="false"  />
     
     <vassal_order order_type="MoveToPlanet" sort_group="100"/>

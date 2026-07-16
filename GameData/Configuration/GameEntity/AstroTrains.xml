@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   <entity name="AstroTrainStation"
@@ -643,7 +643,7 @@
             y_offset_of_icon="35"
             collision_priority="800"
             display_name="守护者"
-            description="'雷霆之子'飞船的下一代原型机。比原版更容易生产但更弱。拥有远程攻击能力，能增强星球上的盟友，用力场保护他们，并在有守卫哨站时无敌。"
+            description="'雷霆之子'飞船的下一代原型机。比原版更容易生产但更弱。拥有远程攻击能力，能增强行星上的盟友，用力场保护他们，并在有守卫哨站时无敌。"
 			shield_size_scale="5" my_forcefield_does_not_shrink="true" max_count_per_npc_faction_before_stack="3" my_forcefield_has_no_penalty_for_enemies_firing_out_of_it="true"
             blocks_enemy_claim_flows="true"
             voice_group="Silent"

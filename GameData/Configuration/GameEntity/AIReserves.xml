@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
       <entity name="AIReserveSpawnPoint"
@@ -86,7 +86,7 @@
           collision_priority="800"
           display_name="恐怖奇点守护者"
           display_name_for_sidebar="奇点DGU"
-          description="AI储备部队用于对抗玩家深入打击的单位。一个可移动的武器化黑洞发生器。能粉碎接近其事件视界的敌人，并对星球上所有敌人造成持续伤害。"
+          description="AI储备部队用于对抗玩家深入打击的单位。一个可移动的武器化黑洞发生器。能粉碎接近其事件视界的敌人，并对行星上所有敌人造成持续伤害。"
           blocks_enemy_claim_flows="true"
           voice_group="Silent"
     adds_black_hole_effect_for_entities_with_engine_gx_less_than="20"

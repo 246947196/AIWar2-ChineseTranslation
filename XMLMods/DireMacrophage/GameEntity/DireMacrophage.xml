@@ -118,7 +118,7 @@
 			y_offset_of_icon="10"
 			collision_priority="100"
 	  display_name="进化可怕巨噬细胞"
-	  description="进化可怕巨噬细胞是可怕巨噬细胞的最终形态，进化出了干扰武器，将其破坏弹替换为针对单一目标的轨道炮，将两种主要武器合并为一，并能在战斗外再生。倾向于前往有敌人的星球以积极收集金属。"
+	  description="进化可怕巨噬细胞是可怕巨噬细胞的最终形态，进化出了干扰武器，将其破坏弹替换为针对单一目标的轨道炮，将两种主要武器合并为一，并能在战斗外再生。倾向于前往有敌人的行星以积极收集金属。"
 			starting_mark_level="Mark1"
 			cost_for_ai_to_purchase="75000"			
 			hull_points="7200000" shield_points="4800000" speed="Normal3"

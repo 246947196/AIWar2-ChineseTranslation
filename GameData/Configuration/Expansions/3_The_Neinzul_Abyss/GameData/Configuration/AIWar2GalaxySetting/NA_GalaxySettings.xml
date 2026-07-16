@@ -9,7 +9,7 @@
   
   <!-- AI Behaviour: Showdown Devices -->
     <galaxy_setting category="AI Behavior" subcategory="CommonFeatures" name="EnableShutdownDevices" display_name="启用决战装置" type="BoolToggle" default="false"
-                  description="在各个星球上布置四个神秘装置。占领足够数量的装置后，你将能够破坏 warp 网格，阻止AI向我们的星系运送增援部队。你能在随后的对抗中存活下来吗？
+                  description="在各个行星上布置四个神秘装置。占领足够数量的装置后，你将能够破坏 warp 网格，阻止AI向我们的星系运送增援部队。你能在随后的对抗中存活下来吗？
 
 触发决战装置结局将引发AI剩余部队与玩家之间的全面战争。" />
 
@@ -20,7 +20,7 @@
  
 5分钟时间结束后，拥有该巢穴的AI猎人舰队将生成一名残暴守护者。之后，每30分钟将再生成一名，直到所有玩家被摧毁或巢穴被摧毁。
 
-一旦开始生成，在巢穴被摧毁之前不会停止。摧毁巢穴会增加AIP，但也会获得少量科学和入侵点数。如果巢穴所在星球的AI指挥站被摧毁，巢穴也会自毁。
+一旦开始生成，在巢穴被摧毁之前不会停止。摧毁巢穴会增加AIP，但也会获得少量科学和入侵点数。如果巢穴所在行星的AI指挥站被摧毁，巢穴也会自毁。
 
 如果巢穴为皇家AI生成，它将转变为皇家残暴守护者巢穴。" >
       <harshness_override min_campaign_harshness_to_apply="700" if_highest_ai_difficulty_is_at_least="8" min="3" />
@@ -42,9 +42,9 @@
         <harshness_override min_campaign_harshness_to_apply="700" fixed_value="false" />
     </galaxy_setting>
 
-  <galaxy_setting category="Necromancer"  name="BoringNecroNames" display_name="亡者都市以星球命名" type="BoolToggle" 
+  <galaxy_setting category="Necromancer"  name="BoringNecroNames" display_name="亡者都市以行星命名" type="BoolToggle" 
                   default="false" changeable_during_gameplay="true"
-                  description="启用此选项后，新的亡者都市及其旗舰将以所在星球命名，而非采用主题性名称。" 
+                  description="启用此选项后，新的亡者都市及其旗舰将以所在行星命名，而非采用主题性名称。" 
                   optional_dll_name="AIWarExternalCode" optional_type_name="Arcen.AIW2.External.GalaxySetting_Necromancer"
                   >
   </galaxy_setting>
@@ -55,7 +55,7 @@
         />
 
         <galaxy_setting category="Necromancer" name="ForgivingNecromancy" display_name="远程旗舰可进行亡灵召唤" type="BoolToggle" default="false" changeable_during_gameplay="true"
-        description="启用此选项后，当你通过亡灵法术召唤单位时，如果星球1跳范围内没有合适的旗舰，系统将为你的新单位寻找其他位置的旗舰。"
+        description="启用此选项后，当你通过亡灵法术召唤单位时，如果行星1跳范围内没有合适的旗舰，系统将为你的新单位寻找其他位置的旗舰。"
         optional_dll_name="AIWarExternalCode" optional_type_name="Arcen.AIW2.External.GalaxySetting_Necromancer"
         />
 
@@ -120,7 +120,7 @@ optional_dll_name="AIWarExternalCode" optional_type_name="Arcen.AIW2.External.Ga
         />
 
     <galaxy_setting category="Necromancer" name="NecromancerAutoLoad" display_name="旗舰自动装卸" type="BoolToggle" default="false" changeable_during_gameplay="true"
-                    description="当旗舰所在星球没有敌人时，亡灵巫师的单位将自动装载到旗舰中；当有敌人时，单位将自动卸载。
+                    description="当旗舰所在行星没有敌人时，亡灵巫师的单位将自动装载到旗舰中；当有敌人时，单位将自动卸载。
 
 这是自动防御模式的一个子集，因此当自动防御模式启用时，此功能将自动禁用。"
 optional_dll_name="AIWarExternalCode" optional_type_name="Arcen.AIW2.External.GalaxySetting_Necromancer"
@@ -129,11 +129,11 @@ optional_dll_name="AIWarExternalCode" optional_type_name="Arcen.AIW2.External.Ga
     
   <galaxy_setting category="Necromancer" name="NecromancerAutoDefend" display_name="实验性：自动防御模式" changeable_during_gameplay="true"
                   type="CustomDropdownArbitraryOptions" arbitrary_options="Disabled,Full Assistance" default_option="Disabled"
-        description="你可以选择让你的戴森舰队自动作战。亡灵巫师舰队将协助你（或其他盟友派系），但不会主动攻击敌方星球或目标。
+        description="你可以选择让你的戴森舰队自动作战。亡灵巫师舰队将协助你（或其他盟友派系），但不会主动攻击敌方行星或目标。
 
 如果玩家控制此派系，此功能将自动禁用。
 
-这允许亡灵巫师副手作为其他玩家派系的“附庸”，在战斗中自动提供帮助/防御你的星球。其他玩家可以通过按F4键定期切换到副手来做出经济决策。"
+这允许亡灵巫师副手作为其他玩家派系的“附庸”，在战斗中自动提供帮助/防御你的行星。其他玩家可以通过按F4键定期切换到副手来做出经济决策。"
 optional_dll_name="AIWarExternalCode" optional_type_name="Arcen.AIW2.External.GalaxySetting_Necromancer"
 />
 

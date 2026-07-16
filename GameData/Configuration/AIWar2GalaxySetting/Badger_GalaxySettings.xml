@@ -18,13 +18,13 @@
     <galaxy_setting deprecated="true"
                     category="UnitBehavior" subcategory="YourUnitIntelligence" name="MethodicalFRD" is_advanced_setting="true" display_name="单位有条不紊地攻击" type="BoolToggle" default="true" changeable_during_gameplay="true"
                     default_should_override_user_value_if_older_than_version="1018_MarauderFireteamTweaks"
-                    description="这是默认的追击模式风格。禁用此选项会使你的单位更加分散；因此，如果你在攻击一个星球时明显占优势，禁用此选项可以让你更快地赢得战斗。"/>
+                    description="这是默认的追击模式风格。禁用此选项会使你的单位更加分散；因此，如果你在攻击一个行星时明显占优势，禁用此选项可以让你更快地赢得战斗。"/>
     <galaxy_setting category="UnitBehavior" subcategory="YourUnitIntelligence" name="FRD_Considers_Overkill" is_advanced_setting="true" display_name="FRD考虑过度杀伤" type="BoolToggle" default="false" changeable_during_gameplay="true"
                     description="目前不完全清楚这具体做什么。但它与为追击模式中的单位选择目标有关。"/>
 
   <!-- UnitBehavior: AlliedUnitIntelligence -->
     <galaxy_setting category="UnitBehavior" subcategory="AlliedUnitIntelligence" name="DefensiveZombies" display_name="仅防御性僵尸" type="BoolToggle" default="false" changeable_during_gameplay="true"
-                    description="默认情况下，反AI僵尸可以飞出去攻击AI。启用此选项后，反AI僵尸只会移动到友好或中立的星球，但僵尸的消耗率会更快。"/>
+                    description="默认情况下，反AI僵尸可以飞出去攻击AI。启用此选项后，反AI僵尸只会移动到友好或中立的行星，但僵尸的消耗率会更快。"/>
 
   <!-- UnitBehavior: ExperimentalBehavior -->
     <setting name="IntelligentPursuit" category="UnitBehavior" subcategory="ExperimentalBehavior" display_name="实验性：智能追击" type="BoolToggle" default="false"
@@ -124,11 +124,11 @@
   </galaxy_setting>
 
 
-      <galaxy_setting category="General" subcategory="Spoilers" name="HiddenGalaxyForPlay" display_name="在游戏大厅外隐藏未探索的星球" type="BoolToggle" default="false"
+      <galaxy_setting category="General" subcategory="Spoilers" name="HiddenGalaxyForPlay" display_name="在游戏大厅外隐藏未探索的行星" type="BoolToggle" default="false"
                     is_advanced_setting="true"
-                  description="启用此选项后，不靠近任何已探索星球的星球将被隐藏。你将在探索过程中发现地图的布局。
+                  description="启用此选项后，不靠近任何已探索行星的行星将被隐藏。你将在探索过程中发现地图的布局。
 
-启用此选项后，星系地图将在游戏大厅中可见，但一旦游戏开始就不可见。这是为了让玩家在游戏大厅中选择起始星球，但一旦开始游玩后仍能享受探索的感觉。
+启用此选项后，星系地图将在游戏大厅中可见，但一旦游戏开始就不可见。这是为了让玩家在游戏大厅中选择起始行星，但一旦开始游玩后仍能享受探索的感觉。
 
 这会被常规的隐藏星系设置覆盖。" />
 

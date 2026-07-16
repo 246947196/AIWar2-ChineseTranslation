@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
     <entity name="LostEnergyReactor"
@@ -14,7 +14,7 @@
 			collision_priority="100"
 			display_name="失落能量反应堆"
       display_name_for_sidebar="失落反应堆"
-			description="老旧废弃的能量反应堆。如果通过占领星球回收，仍有一些可用输出，但如果被摧毁，会少量增加 AIP。"
+			description="老旧废弃的能量反应堆。如果通过占领行星回收，仍有一些可用输出，但如果被摧毁，会少量增加 AIP。"
 			starting_mark_level="Markless"
 			cost_for_ai_to_purchase="120"
 			metal_to_claim="2000"
@@ -44,7 +44,7 @@
 			collision_priority="100"
 			display_name="废弃小行星矿场"
 			display_name_for_sidebar="小行星矿"
-			description="废弃的富含金属的小行星矿场。如果通过占领星球回收，将产生相当数量的金属，但如果被摧毁，会少量增加 AIP。"
+			description="废弃的富含金属的小行星矿场。如果通过占领行星回收，将产生相当数量的金属，但如果被摧毁，会少量增加 AIP。"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="MetalGeneration"
 			cost_for_ai_to_purchase="120"
 			metal_to_claim="2000"

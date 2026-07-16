@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
 	<!-- Officers -->
@@ -899,7 +899,7 @@
 		size_scale="12"
 		visuals_scale_multiplier="3.5"
 		display_name="超级终端"
-		description="该建筑提供对 AI 核心网络的直接访问，您可以在此严重损害 AI 的处理能力。通过入侵该单位，您可以大幅降低 AI 进程，但 AI 将使用大量单位猛烈回击以阻止您的入侵。摧毁该星球上的 AI 指挥站将使您无法使用超级终端。AI 锁定防火墙阻止进一步访问之前，您只能入侵超级终端一次。反击强度会因人类帝国的数量而增加，因此三个人类帝国将导致三倍强度的反击。"
+		description="该建筑提供对 AI 核心网络的直接访问，您可以在此严重损害 AI 的处理能力。通过入侵该单位，您可以大幅降低 AI 进程，但 AI 将使用大量单位猛烈回击以阻止您的入侵。摧毁该行星上的 AI 指挥站将使您无法使用超级终端。AI 锁定防火墙阻止进一步访问之前，您只能入侵超级终端一次。反击强度会因人类帝国的数量而增加，因此三个人类帝国将导致三倍强度的反击。"
 		triggers_general_readiness_on_ai_sentinels="true"
 		automatically_dies_with_command_station="true"
 		eligible_for_hacks="SubvertSuperTerminal,SubvertSuperTerminal_Diff8,SubvertSuperTerminal_Diff9,SubvertSuperTerminal_Diff10"

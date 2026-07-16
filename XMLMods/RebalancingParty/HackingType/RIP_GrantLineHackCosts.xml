@@ -94,7 +94,7 @@
     <item
                         name="Sabotage"
                         is_partial_record="true"
-                        description="入侵并摧毁该星球上的少数敌方建筑之一。并非所有防御建筑都可以被破坏。"
+                        description="入侵并摧毁该行星上的少数敌方建筑之一。并非所有防御建筑都可以被破坏。"
                         />
 
 

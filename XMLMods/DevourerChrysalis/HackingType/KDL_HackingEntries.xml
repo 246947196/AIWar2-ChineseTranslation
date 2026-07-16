@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
     <item name="Devourer_SumonHack" dll_name="DevourerChrysalis" type_name="DevourerChrysalis.Devourer_SumonHack" display_name="分析 Zenith 信标" description="我们的科学家可以分析该信标及其 Zenith 技术，但冒着引起其连接对象注意的风险。"
         hack_duration="60"
@@ -77,7 +77,7 @@
         cost_in_hacking_points="40"
 	/>
 	
-    <item name="Devourer_PacifyHack_T1" dll_name="DevourerChrysalis" type_name="DevourerChrysalis.Devourer_PacifyHack_T1" display_name="安抚吞噬者" description="如果我们无法与吞噬者傀儡作战甚至无法容忍它，我们也许可以……喂饱它。如果半智能的 Zenith 杀戮机器的行为方式与动物相同，我们可以喂食并"请求"它暂时远离我们的星球。
+    <item name="Devourer_PacifyHack_T1" dll_name="DevourerChrysalis" type_name="DevourerChrysalis.Devourer_PacifyHack_T1" display_name="安抚吞噬者" description="如果我们无法与吞噬者傀儡作战甚至无法容忍它，我们也许可以……喂饱它。如果半智能的 Zenith 杀戮机器的行为方式与动物相同，我们可以喂食并"请求"它暂时远离我们的行星。
 它的食物是金属，这次入侵对我们的目标帮助不大，但总比被吃掉要好。
 需要注意的是：这不会在吞噬者积极追击我们时清除它，而只是将问题推迟。然而，它会获得优先权。"
         hack_duration="5"

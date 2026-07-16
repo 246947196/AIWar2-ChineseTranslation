@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   <item name="DismantleStronghold"  dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_DismantleStronghold" display_name="拆除据点"
@@ -121,7 +121,7 @@
         />
 
   <item name="FimbulwinterPlanet"  dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_FimbulwinterPlanet" display_name="芬布尔之冬行星"
-        description="芬布尔之冬降临这个星球。完成后，这将授予科技，并允许你的单位在星球上移动得更快。"
+        description="芬布尔之冬降临这个行星。完成后，这将授予科技，并允许你的单位在行星上移动得更快。"
         hack_completes_instantly="true"
         cost_in_hacking_points="10"
         cost_in_resource_one="0"
@@ -134,7 +134,7 @@
         />
 
   <item name="ReclaimArchitraveTerritory"  dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_ReclaimArchitraveTerritory" display_name="回收额枋领地"
-        description="将天顶拱门使团从该星球推回去。他们被允许重新占领，但倾向于不占领重兵防守的星球。你可以通过大量筑防来防止他们重新占领这个星球。"
+        description="将天顶拱门使团从该行星推回去。他们被允许重新占领，但倾向于不占领重兵防守的行星。你可以通过大量筑防来防止他们重新占领这个行星。"
         hack_completes_instantly="true"
         cost_in_hacking_points="20"
         aip_on_completion="10"
@@ -388,7 +388,7 @@
             type_name="Arcen.AIW2.External.Hacking_Sabotage"
             display_name="破坏敌方"
             short_name="破坏"
-            description="入侵并摧毁该星球上少数几个敌方建筑之一。并非每个防御结构都可以被破坏。"
+            description="入侵并摧毁该行星上少数几个敌方建筑之一。并非每个防御结构都可以被破坏。"
             hack_duration="30"
             hacking_cost_multiplier_per_attempt="0"
             primary_hacking_response_interval="10"
@@ -413,7 +413,7 @@
 
 
         <item name="ArmadaReprogram" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_Reprogram" display_name="重编程敌人" short_name="重编程"
-              description="入侵并将该星球上少数几个敌方建筑之一变为你的！并非很多敌方单位可以这样被捕获，但确实有一些。如果该结构在死亡时通常会增加AI进度，那么以这种方式捕获它不会导致该增加。入侵运行非常快，因为目标很可能正在试图杀死你的入侵者。"
+              description="入侵并将该行星上少数几个敌方建筑之一变为你的！并非很多敌方单位可以这样被捕获，但确实有一些。如果该结构在死亡时通常会增加AI进度，那么以这种方式捕获它不会导致该增加。入侵运行非常快，因为目标很可能正在试图杀死你的入侵者。"
               hack_duration="8"
 	      hacking_cost_multiplier_per_attempt="0"
               primary_hacking_response_interval="10"
@@ -491,7 +491,7 @@
         />
 
         <item name="SearchForRelicSidekick" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_SearchForRelicSidekick" display_name="搜索尖塔遗物"
-        description="用辐射充斥整个星系，以帮助捕获一颗穿越银河的遗物。遗物会出现，或者共振频率会告诉你这个星球离遗物有多远。
+        description="用辐射充斥整个星系，以帮助捕获一颗穿越银河的遗物。遗物会出现，或者共振频率会告诉你这个行星离遗物有多远。
 
 如果遗物确实出现在这里，请做好准备！准备好庞大的舰队来保护它，沿途占据行星并设置防御也会有很大帮助。准备暂停并找出你要将遗物送往何处。
 

@@ -22,7 +22,7 @@
 如果你选中了单位并将鼠标悬停在某个行星上，你的单位将要使用的连接线会显示得特别粗，并使用你的玩家颜色。" />
 
 
-  <tip category="GalaxyMap" name="PlanetMarkLevelColors" display_name="额外内容：星球等级颜色的含义" sort_priority="2000"
+  <tip category="GalaxyMap" name="PlanetMarkLevelColors" display_name="额外内容：行星等级颜色的含义" sort_priority="2000"
         full_text="游戏中有七个等级（从I到VII），它们的颜色划分暗示了它们的分组：
 
 I级是&lt;color=#fbffbd&gt;淡黄色&lt;/color&gt;

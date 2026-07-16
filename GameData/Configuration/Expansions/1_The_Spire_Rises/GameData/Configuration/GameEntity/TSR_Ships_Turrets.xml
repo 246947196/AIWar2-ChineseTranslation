@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
     <entity name="SubverterTurret"	
@@ -612,7 +612,7 @@
 			collision_priority="1000" construction_priority="50"
 			display_name="全新世导弹炮台"
 	    display_name_for_sidebar="全新世炮台"
-			description="大型炮台，缓慢发射巨大的爆炸性等离子导弹，覆盖整个星球。"
+			description="大型炮台，缓慢发射巨大的爆炸性等离子导弹，覆盖整个行星。"
 			behavior="Stationary"			
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Concussion,Turret"
 			build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true"
@@ -2307,7 +2307,7 @@
 			collision_priority="1000" construction_priority="50"
 			display_name="谐波炮台"
 			display_name_for_sidebar="谐波炮台"
-			description="低功率速射，但在同一星球上每多一座该炮台，伤害就会增加，直至达到上限。"
+			description="低功率速射，但在同一行星上每多一座该炮台，伤害就会增加，直至达到上限。"
 			amount_added_to_damage_per_ship_of_this_type_on_planet="120" amount_added_to_damage_per_ship_of_this_type_on_planet_per_mark="20" max_amount_added_to_damage_per_ship_of_this_type_on_planet="12000"			
 			behavior="Stationary"			
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Subterfuge,Turret"

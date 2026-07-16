@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- Resource Conversion
        Note that the C# uses both the display name and the internal name,
@@ -725,7 +725,7 @@
   </record>
 
   <record name="Build Additional Utility Per Planet"
-          display_name="每个星球建造额外效用建筑"
+          display_name="每个行星建造额外效用建筑"
           index="308"
           CostInMetal="10000"
 		  CostInWhite="300"

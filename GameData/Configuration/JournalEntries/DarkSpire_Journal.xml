@@ -1,11 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   <journal name="DarkSpireFirstDetected" sidebar_text="{FactionColor}暗塔&lt;/color&gt;:  首次侦测到"
            can_record_another_copy_if_already_recorded_in_this_campaign="false"
            text_replacement_related_faction_color="true"
             chat_text="{FactionColor}暗塔&lt;/color&gt;已侦测到"
-           full_text="指挥官，我们从一个新种族侦测到一些重要的新建筑，我们将其命名为暗塔。这些“复仇发生器”似乎能从附近单位的死亡中获取能量。我们在这些星球上作战时必须保持警惕。" />
+           full_text="指挥官，我们从一个新种族侦测到一些重要的新建筑，我们将其命名为暗塔。这些“复仇发生器”似乎能从附近单位的死亡中获取能量。我们在这些行星上作战时必须保持警惕。" />
 
   <journal name="DarkSpireConquestModeFromFallenSpire" sidebar_text="{FactionColor}暗塔&lt;/color&gt;:  征服模式已启用"
            can_record_another_copy_if_already_recorded_in_this_campaign="false"

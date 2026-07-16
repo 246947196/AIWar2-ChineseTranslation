@@ -156,7 +156,7 @@
           	draw_in_galaxy_view="true"   y_offset_of_icon="30"
 	      	display_name="时空操纵器"
 			display_name_for_sidebar="时空操"
-			description="通过使用逆向工程的古代天顶星技术扭曲时空结构，大幅提高本星球友方单位的速度。"
+			description="通过使用逆向工程的古代天顶星技术扭曲时空结构，大幅提高本行星友方单位的速度。"
 			behavior="Stationary"
 			automatically_dies_with_command_station="true"
 			never_leaves_remains="true"
@@ -190,7 +190,7 @@
 		icon_name="Ships4/SpeedBooster" 
 		display_name="恐怖时空操纵器"
 		display_name_for_sidebar="恐时操"
-		description="通过使用逆向工程的古代天顶星技术扭曲时空结构，大幅提高本星球友方单位的速度。这种恐怖变体提供更大的速度提升，并且对入侵有抵抗力。"
+		description="通过使用逆向工程的古代天顶星技术扭曲时空结构，大幅提高本行星友方单位的速度。这种恐怖变体提供更大的速度提升，并且对入侵有抵抗力。"
 		allied_speed_multiplier="4" 
 		eligible_for_hacks="SabotageDire,ReprogramDire"
 		>

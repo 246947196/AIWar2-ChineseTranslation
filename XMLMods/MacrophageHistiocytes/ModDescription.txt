@@ -9,4 +9,4 @@
 
 暗塔对抗：
 默认禁用。通过 galaxy 设置启用。
-启用后，Telium 在靠近暗塔（Dark Spire）星球时会枯萎，组织细胞可以吞噬暗塔的 VG。
+启用后，Telium 在靠近暗塔（Dark Spire）行星时会枯萎，组织细胞可以吞噬暗塔的 VG。

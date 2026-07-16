@@ -45,5 +45,5 @@ Radiant Fleets，由 RadiantPhoenix 制作
 
 其他新舰船：
 <b>原版游戏：</b>
-* <b>地下城主要塞（Dungeonmaster Citadel）：</b>远程吸血光束，要塞停留在星球上的时间越长，光束越强。
+* <b>地下城主要塞（Dungeonmaster Citadel）：</b>远程吸血光束，要塞停留在行星上的时间越长，光束越强。
 * <b>工厂运输舰（Factory Transport）：</b>一艘同时也是工厂的运输舰。

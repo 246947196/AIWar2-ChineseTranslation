@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 	<setting_subcategory parent="LostHumans" name="EnableFeatures" display_name="启用功能" color="46f0ff"
 		description="Enable different features of 失落人类s."/>
@@ -13,7 +13,7 @@
 		description="孤独的NPC单位在银河系中漂泊，窃取AI的单位设计。"/>
 
 	<setting_subcategory parent="LostHumans" name="ConstructionConvoys" display_name="建造护航队s" color="46f0ff"
-		description="一组NPC单位沿预定银河路径飞行，沿途为星球所有者建造单位。"/>
+		description="一组NPC单位沿预定银河路径飞行，沿途为行星所有者建造单位。"/>
 
 	<setting_subcategory parent="LostHumans" name="ScourgeLabs" display_name="天灾实验室s" color="46f0ff"
 		description="强大的武器化实验室偶尔从AI叛逃。忽视后果自负。"/>

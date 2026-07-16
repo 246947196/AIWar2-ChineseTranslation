@@ -34,7 +34,7 @@
 
   <fleet_design name="MSFHanger" required_expansion_list="2_Zenith_Onslaught"
         display_name="机库防御"
-        description="这座战斗空间站用可建造到其他星球作战的野战机库替代了炮塔。"
+        description="这座战斗空间站用可建造到其他行星作战的野战机库替代了炮塔。"
         design_logic="InitialPlayerBattlestation" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >

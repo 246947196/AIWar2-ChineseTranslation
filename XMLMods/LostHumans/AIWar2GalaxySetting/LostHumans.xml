@@ -18,10 +18,10 @@
 
 人类殖民地隐藏在整个银河系中。它们偶尔会请求援助。这些殖民地会带着随机舰队线生成到银河系中。
 
-如果您在援助请求过期前占领其所在星球，该星球的AIP消耗将比正常少5点。（无法通过此方式获得AIP。）
+如果您在援助请求过期前占领其所在行星，该行星的AIP消耗将比正常少5点。（无法通过此方式获得AIP。）
 您可以将单位产线从殖民地转移出来，而殖民地本身只要您保护就会持续提供资源。
 
-如果您未能在殖民地被占领前夺取其星球，AI将迫使他们向您发动攻击，包括其舰队线的波次进攻。
+如果您未能在殖民地被占领前夺取其行星，AI将迫使他们向您发动攻击，包括其舰队线的波次进攻。
 唯一阻止的方法是摧毁殖民地，这将消耗5点AIP。
 
 在游戏中途禁用只会禁止新失落殖民地生成，并停止敌对失落殖民地生产单位。
@@ -35,8 +35,8 @@
 启用失落人类浪客出现。这些人类穿梭银河系，试图劫持AI的舰队设计。
 AI会随时间推移建立防御来应对他们的干扰，但由于这些浪客极其狡猾，这只会导致更多敌对力量需要您来处理。
 
-不过并非全是坏处——您星球上的浪客会联系您并要求建造浪客公会。
-建成后，游荡到该星球的浪客会存入他们偷来的物资，为您提供持续不断的外星单位僵尸流。
+不过并非全是坏处——您行星上的浪客会联系您并要求建造浪客公会。
+建成后，游荡到该行星的浪客会存入他们偷来的物资，为您提供持续不断的外星单位僵尸流。
 
 在游戏中途禁用只会禁止新浪客生成。不会停止任何其他逻辑。"
 	/>
@@ -47,7 +47,7 @@ AI会随时间推移建立防御来应对他们的干扰，但由于这些浪客
 
 偶尔中立单位舰队会抵达银河系，开始一段穿越星空的缓慢旅程。该旅程遵循固定路线，可通过建造护航队星图模式查看。
 
-这些中立单位会为所访问星球的所有者建造多种建筑，如地雷、牵引光束、引力发生器和炮塔。
+这些中立单位会为所访问行星的所有者建造多种建筑，如地雷、牵引光束、引力发生器和炮塔。
 
 在游戏中途禁用只会禁止新建造护航队生成。不会停止任何其他逻辑。"
 	/>
@@ -60,7 +60,7 @@ AI拥有若干个专门研究隐藏在银河系各处的各种外星种族的实
 
 极少数情况下，人类智慧能够战胜AI的纯粹处理能力，实验室上的人类将成功消除AI对该站的影响。然而在此过程中，他们会使实验室脱离AI的电网，使其失去防御能力。
 
-如果我们在此弱点期间夺取该星球，我们将能够修复并完全控制实验室，包括星球本地AI网格上各种数据包带来的大幅增加的科学和入侵点数，但占领实验室本身会多消耗20点AIP。如果我们未能及时占领，仍需消耗20点AIP才能摧毁它。
+如果我们在此弱点期间夺取该行星，我们将能够修复并完全控制实验室，包括行星本地AI网格上各种数据包带来的大幅增加的科学和入侵点数，但占领实验室本身会多消耗20点AIP。如果我们未能及时占领，仍需消耗20点AIP才能摧毁它。
 
 无论成功与否，实验室随后都将投入军事用途，为拥有它的一方生产强大的「天灾」单位。最好确保它是您的。"
 	/>
@@ -76,13 +76,13 @@ AI拥有若干个专门研究隐藏在银河系各处的各种外星种族的实
 
 	<galaxy_setting name="LostHumansTravelersInteractionsTrustGain" category="LostHumans" subcategory="Travelers" display_name="每秒最大信任获取" type="IntSlider" 
 		default="5" min="1" max="10" changeable_during_gameplay="true" is_advanced_setting="true"
-		description="旅行者拥有信任度机制，用于决定他们与您互动的可能性。当他们在您拥有兵力优势的星球上时会增加。
+		description="旅行者拥有信任度机制，用于决定他们与您互动的可能性。当他们在您拥有兵力优势的行星上时会增加。
 
 这决定了他们每秒可获得的最大信任度。" />
 
 	<galaxy_setting name="LostHumansTravelersInteractionsTrustLost" category="LostHumans" subcategory="Travelers" display_name="每秒最大信任损失" type="IntSlider" 
 		default="1" min="1" max="10" changeable_during_gameplay="true" is_advanced_setting="true"
-		description="旅行者拥有信任度机制，用于决定他们与您互动的可能性。当他们在您没有兵力或兵力处于劣势的星球上时会减少。
+		description="旅行者拥有信任度机制，用于决定他们与您互动的可能性。当他们在您没有兵力或兵力处于劣势的行星上时会减少。
 
 这决定了他们每秒可能损失的最大信任度。" />
 
@@ -154,7 +154,7 @@ AI拥有若干个专门研究隐藏在银河系各处的各种外星种族的实
 
 	<galaxy_setting name="LostHumansRoguesGuildWaveInterval" category="LostHumans" subcategory="Rogues" display_name="浪客公会 间隔" type="IntSlider"
 		default="5" min="1" max="15" changeable_during_gameplay="true" is_advanced_setting="true"
-		description="浪客公会生成的每个波次之间间隔多少分钟？（当您的星球上有携带战利品的浪客时，浪客公会会出现在建造列表中。）" />
+		description="浪客公会生成的每个波次之间间隔多少分钟？（当您的行星上有携带战利品的浪客时，浪客公会会出现在建造列表中。）" />
 
 	<galaxy_setting name="LostHumansRoguesGuildWaveStrength" category="LostHumans" subcategory="Rogues" display_name="浪客公会 强度" type="IntSlider"
 		default="10" min="10" max="100" changeable_during_gameplay="true" is_advanced_setting="true"
@@ -181,9 +181,9 @@ AI拥有若干个专门研究隐藏在银河系各处的各种外星种族的实
 		default="8" min="1" max="20" changeable_during_gameplay="true" is_advanced_setting="true"
 		description="每个建造护航队生成多少个单位？" />
 
-	<galaxy_setting name="LostHumansConstructionConvoyStructuresToBuildPerPlanet" category="LostHumans" subcategory="ConstructionConvoys" display_name="建造护航队 每星球建筑数" type="IntSlider"
+	<galaxy_setting name="LostHumansConstructionConvoyStructuresToBuildPerPlanet" category="LostHumans" subcategory="ConstructionConvoys" display_name="建造护航队 每行星建筑数" type="IntSlider"
 		default="2" min="1" max="3" changeable_during_gameplay="true" is_advanced_setting="true"
-		description="每个护航队单位在每个访问的星球上可以建造多少建筑？" />
+		description="每个护航队单位在每个访问的行星上可以建造多少建筑？" />
 
 	<galaxy_setting name="LostHumansConstructionConvoyBuildTimer" category="LostHumans" subcategory="ConstructionConvoys" display_name="建造建筑所需秒数" type="IntSlider"
 		default="60" min="30" max="120" changeable_during_gameplay="true" is_advanced_setting="true"

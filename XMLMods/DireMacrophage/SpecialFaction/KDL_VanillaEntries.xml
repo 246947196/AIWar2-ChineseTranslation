@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
     <faction name="DireMacrophageInfestation" 
     display_name="可怕巨噬细胞感染" short_name="可怕巨噬细胞" processing_group="DireMacrophage"
@@ -21,7 +21,7 @@
         <custom_field name="Allegiance"     display_name="阵营" description="该派系对 AI、人类友好，还是对谁也不友好？" sort_group="250" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Hostile To All,Friendly To Players,Hostile To Players Only,Minor Faction Team Red,Minor Faction Team Blue,Minor Faction Team Green" default_option="Hostile To All" />
         <custom_field name="SpawningOptions" display_name="生成选项" description="修改该派系的生成方式。
 默认：在银河系某处生成一个 Telium。
-入侵：生成一个包含 Telium 的新星球。"
+入侵：生成一个包含 Telium 的新行星。"
     sort_group="300" 
     setting_type="CustomDropdownArbitraryOptions" 
     arbitrary_options="Default,Invasion" 

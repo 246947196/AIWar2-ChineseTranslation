@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 	<item name="Arnaud de Cervole" display_name="阿尔诺·德·塞尔沃勒"
 		on_spawn_behaviour="PatrolAdjacentFriendlyPlanets"
@@ -10,7 +10,7 @@
 		aip_per_additional_summon="100"
 		repair_time_in_seconds="1200"
 		seconds_allowed_to_exist="600"
-		description="在家人被受 AI 感染的袋熊吃掉后，阿尔诺成为了一位稳健且谨慎的领袖。他率领着一群攻击者和瘫痪者，将巡逻附近的友方星球。"
+		description="在家人被受 AI 感染的袋熊吃掉后，阿尔诺成为了一位稳健且谨慎的领袖。他率领着一群攻击者和瘫痪者，将巡逻附近的友方行星。"
 
 		parsed_data_type="EntityName,Tag"
 		data_list="OutguardFlagship,ArnaudStrikecraft"
@@ -32,7 +32,7 @@
 		aip_per_additional_summon="100"
 		time_between_summons_in_seconds="300"
 		repair_time_in_seconds="900"
-		description="洛巴尔和他的团队对 AI 恨之入骨，他们将使用先锋舰和重型聚变轰炸机攻击 AI 星球。"
+		description="洛巴尔和他的团队对 AI 恨之入骨，他们将使用先锋舰和重型聚变轰炸机攻击 AI 行星。"
 		
 		parsed_data_type="EntityName,Tag"
 		data_list="OutguardFlagship,LobarStrikecraft"
@@ -98,7 +98,7 @@
 		aip_per_additional_summon="100"
 		time_between_summons_in_seconds="300"
 		repair_time_in_seconds="1200"
-		description="作为防御专家，赫里沃德将率领他的团队使用一群迅猛龙舰巡逻附近的星球。"
+		description="作为防御专家，赫里沃德将率领他的团队使用一群迅猛龙舰巡逻附近的行星。"
 		
 		parsed_data_type="EntityName,Tag"
 		data_list="OutguardFlagship,HerewardStrikecraft"

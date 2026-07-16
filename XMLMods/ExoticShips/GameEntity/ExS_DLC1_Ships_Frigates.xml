@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 	<entity name="SniperNestLightFrigate" copy_from="AMU_LightFrigateBase" required_expansion_list="1_The_Spire_Rises"
 		visuals="assets/_finalgamemeshes/starships/sniperstarship/sniper_starship.prefab"
@@ -86,7 +86,7 @@
 		visuals_scale_multiplier="4.5"
 		display_name="协调爪无人机"
 		display_name_for_sidebar="协调爪 PDRN"
-		description="小型无人机，星球上的此类无人机越多，自身伤害越高。通过生命吸取抵消自身损耗。"
+		description="小型无人机，行星上的此类无人机越多，自身伤害越高。通过生命吸取抵消自身损耗。"
 		tech_upgrades_that_benefit_me="Disruptive,Heavy"
 		cost_for_ai_to_purchase="18" strength_multiplier="2"
 		amount_added_to_damage_per_ship_of_this_type_on_planet="3" amount_added_to_damage_per_ship_of_this_type_on_planet_per_mark="1" max_amount_added_to_damage_per_ship_of_this_type_on_planet="14900"
@@ -111,8 +111,8 @@
 		visuals_scale_multiplier="3.3"
 		display_name="消耗者护卫舰"
 		display_name_for_sidebar="消耗者 FFH"
-		description_short="对星球上所有移动敌人造成持续伤害，并将最多8个其他单位系列的攻击力提高30%。传送附近敌人以保持存活。"
-		description="凭借辐射星球上任何移动目标的能力，这些护卫舰只要有足够的时间就能消灭整个敌方舰队。因此，敌人对它们有特殊的攻击优先级，护卫舰配备了传送波来对抗接近的轰炸机，但它仍然需要对抗狙击手的帮助。此外，它可以放大中型舰队的所有伤害，使其成为一个真正可怕的敌人。"
+		description_short="对行星上所有移动敌人造成持续伤害，并将最多8个其他单位系列的攻击力提高30%。传送附近敌人以保持存活。"
+		description="凭借辐射行星上任何移动目标的能力，这些护卫舰只要有足够的时间就能消灭整个敌方舰队。因此，敌人对它们有特殊的攻击优先级，护卫舰配备了传送波来对抗接近的轰炸机，但它仍然需要对抗狙击手的帮助。此外，它可以放大中型舰队的所有伤害，使其成为一个真正可怕的敌人。"
 		tech_upgrades_that_benefit_me="Splash,Medium"
 		cost_for_ai_to_purchase="1965" strength_multiplier="6"
 		hull_points="100000" shield_points="50000" speed="BelowAverage1"

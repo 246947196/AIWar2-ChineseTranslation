@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>    
 
 	<!-- ZO Lanternfish (Turret)
@@ -319,7 +319,7 @@
 			y_offset_of_icon="25"
 			display_name="连锁闪电之眼"
 			display_name_for_sidebar="闪电之眼"
-			description="极为强大的连锁闪电发射器，必须直接从AI的曲速网络获取能量。只有当AI在该星球上的兵力处于明显劣势时，才会投入如此多的能量。"
+			description="极为强大的连锁闪电发射器，必须直接从AI的曲速网络获取能量。只有当AI在该行星上的兵力处于明显劣势时，才会投入如此多的能量。"
 			behavior="Stationary"
 			never_leaves_remains="true"
 			starting_mark_level="Mark5"

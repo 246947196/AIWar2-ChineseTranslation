@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   
     <!--This faction is the central AI.  All the factions lower down are sub-factions of individual AIs, 
@@ -49,11 +49,11 @@ x3 AI = 80%
               sort_group="260" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="启用,禁用" default_option="启用" />
 
     <custom_field name="AIWarden_TrimColor" display_name="守卫舰队边框颜色" related_table="TeamColorDefinition"
-        sort_group="400" setting_type="TeamColorPopup_TrimOnly" default_option="cF4C431" description="守卫舰队负责保卫AI星球免受你的攻击。" />
+        sort_group="400" setting_type="TeamColorPopup_TrimOnly" default_option="cF4C431" description="守卫舰队负责保卫AI行星免受你的攻击。" />
     <custom_field name="WardenType" is_advanced_setting="true" display_name="守卫舰队类型" related_table="AIWardenType" default_option="BaseOriented"
-          sort_group="410" setting_type="CustomDropdownSurrogateTable" description="守卫舰队负责保卫AI星球免受你的攻击。" />
+          sort_group="410" setting_type="CustomDropdownSurrogateTable" description="守卫舰队负责保卫AI行星免受你的攻击。" />
     <custom_field name="AIDifficulty_WardenFleet" is_advanced_setting="true" display_name="守卫舰队难度" related_table="AIDifficulty_WardenFleet" default_option="Normal"
-          sort_group="420" setting_type="CustomDropdownSurrogateTable" description="守卫舰队负责保卫AI星球免受你的攻击。" />
+          sort_group="420" setting_type="CustomDropdownSurrogateTable" description="守卫舰队负责保卫AI行星免受你的攻击。" />
 
     <custom_field name="HunterFleet_TrimColor" display_name="猎手舰队边框颜色" related_table="TeamColorDefinition"
         sort_group="500" setting_type="TeamColorPopup_TrimOnly" default_option="cFF3365" description="猎手舰队会寻找你防御体系的弱点并发起攻击。" />
@@ -83,7 +83,7 @@ x3 AI = 80%
          team_center_color="c882D17" team_border_color="cF4C431"
          type="SpecialFaction" is_considered_warden="true" is_a_subfaction_of="AI"
          should_not_be_shown="true" should_not_be_shown_even_as_separate_line_items_in_game_factions_menu="true" 
-         description="守卫舰队负责保卫AI星球免受你的攻击。"
+         description="守卫舰队负责保卫AI行星免受你的攻击。"
          takes_on_current_general_mark_level_of_parent_faction="true"
          upgrades_ships_to_general_mark_level_if_they_are_lower="true"
          takes_on_center_color_of_the_parent_faction="true"
@@ -134,12 +134,12 @@ x3 AI = 80%
   </faction>
 
   <faction name="AICrossPlanetAttacker"
-           display_name="跨星球攻击" short_name="CPA" processing_group="AIOtherSub"
+           display_name="跨行星攻击" short_name="CPA" processing_group="AIOtherSub"
            base_info_source="AICrossPlanetAttackerBaseInfo"
            deep_info_source="AICrossPlanetAttackerDeepInfo"
            team_center_color="cE32636" team_border_color="cA52A2A"
            type="SpecialFaction" is_always_a_direct_attack_against_players="true" is_a_subfaction_of="AI"
-           description="该AI阵营负责管理跨星球攻击的逻辑"
+           description="该AI阵营负责管理跨行星攻击的逻辑"
            should_not_be_shown="true" should_not_be_shown_even_as_separate_line_items_in_game_factions_menu="true"
            takes_on_current_general_mark_level_of_parent_faction="true"
            takes_on_center_color_of_the_parent_faction="true"

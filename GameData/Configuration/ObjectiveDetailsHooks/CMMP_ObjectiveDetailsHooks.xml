@@ -28,7 +28,7 @@
 		  
   <objective_details_hook name="LiberatePlanets" category="PrimeObjectives" 
           dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.LiberatePlanets"
-          default_display_name="从...解放星球"
+          default_display_name="从...解放行星"
           click_behavior="UseClickHandler" focus_type="None"
           serialization_type="Nothing" importance_calculation="NotSettable"
 		  finish_display_name_with_related_string="true" use_default_display_name_instead_of_display_name_base="true"
@@ -36,7 +36,7 @@
 		  
   <objective_details_hook name="LiberatePlanets_ExcludeHomeTerritory" category="PrimeObjectives" 
           dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.LiberatePlanets_ExcludeHomeTerritory"
-          default_display_name="从...解放非核心星球"
+          default_display_name="从...解放非核心行星"
           click_behavior="UseClickHandler" focus_type="None"
           serialization_type="Nothing" importance_calculation="NotSettable"
 		  finish_display_name_with_related_string="true" use_default_display_name_instead_of_display_name_base="true"
@@ -553,7 +553,7 @@
 
   <objective_details_hook name="EarlyExpansion" category="BeginnerTips"
             dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.EarlyExpansion"
-            display_name_color="8092ff" default_display_name="占领几颗星球"
+            display_name_color="8092ff" default_display_name="占领几颗行星"
             use_default_display_name_instead_of_display_name_base="true"
             click_behavior="DoNothing" focus_type="DarkenAllPlanet"
             serialization_type="Nothing" importance_calculation="NotSettable"

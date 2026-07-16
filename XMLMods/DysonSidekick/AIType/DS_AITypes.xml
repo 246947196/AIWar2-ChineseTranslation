@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <ai_type name="Flenserite"
   	   is_default="false"
@@ -216,7 +216,7 @@
            type_difficulty="Brutal"
             description="该AI与意图粉碎现实的洛夫克拉夫特式恐怖存在结盟，同时还联合了许多其他派系。
 
-他们专注于通过常规空间进行跨星球攻击。准备迎接一场恐怖的战斗吧！"
+他们专注于通过常规空间进行跨行星攻击。准备迎接一场恐怖的战斗吧！"
   >
     <budget_item type="Reinforcement" seconds_between_attempts_to_spend="300" normal_ship_group_cat="AnyReinforcements"
       spend_on_threshold="true"
@@ -295,7 +295,7 @@
            type_difficulty="Hard"
             description="该AI在游戏开始时，其禁卫军中有一艘「贪婪暗影」，以及各种其他强大的暗影单位。
 
-该AI更侧重于用炮塔和哨站重兵防守其星球。"
+该AI更侧重于用炮塔和哨站重兵防守其行星。"
   >
     <budget_item type="Reinforcement" seconds_between_attempts_to_spend="300" normal_ship_group_cat="AnyReinforcements"
       spend_on_threshold="true"
@@ -668,7 +668,7 @@
            support_structure_nasty_pick_tag="SupportStructureNastyPick"
            wildcard_nasty_pick_tag="WildCardNastyPick"
            type_difficulty="Moderate"
-            description="该AI类型的所有要塞世界都位于流浪星球上，并使用各种各样的单位。
+            description="该AI类型的所有要塞世界都位于流浪行星上，并使用各种各样的单位。
 
 尤其在早期游戏中侧重于波次攻击。"
            >

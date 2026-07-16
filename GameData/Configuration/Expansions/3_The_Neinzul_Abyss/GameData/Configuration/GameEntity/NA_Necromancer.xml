@@ -206,7 +206,7 @@ who is pretty worthless except to get shot at, hence the "just entered planet" r
             display_name="腐朽木乃伊"
             display_name_for_sidebar="腐朽木乃伊"
 			tech_upgrades_that_benefit_me="DecayingMummyWeapon"
-	    description="一具强大的木乃伊被召唤而出。不在大墓地时会随时间缓慢损耗，但它可以通过吞噬敌人的灵魂来维持自身。这个变种的主武器更强大，并且能很好地消耗全星球的船只。"
+	    description="一具强大的木乃伊被召唤而出。不在大墓地时会随时间缓慢损耗，但它可以通过吞噬敌人的灵魂来维持自身。这个变种的主武器更强大，并且能很好地消耗全行星的船只。"
 		attrition_damage="40" added_attrition_damage_per_mark="15"
 		max_attrition_damage="10000" added_max_attrition_damage_per_mark="2500"
 		multiplier_to_all_healths="1.25" damage_multiplier_to_all_weapons="1.25"
@@ -219,7 +219,7 @@ who is pretty worthless except to get shot at, hence the "just entered planet" r
     </entity>
     <entity name="DecayingMummyBodyguard" copy_from="DecayingMummy" tags="NecromancerShip,NecromancerBodyguard"
             display_name="腐朽护卫"
-	    description="木乃伊的强化形态，由大墓地直接激活。这个变种的主武器更强大，并且能很好地消耗全星球的船只。"
+	    description="木乃伊的强化形态，由大墓地直接激活。这个变种的主武器更强大，并且能很好地消耗全行星的船只。"
 	    immune_to_repairs="false"
 	    multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"
             no_explicit_cap="false"
@@ -1126,7 +1126,7 @@ who is pretty worthless except to get shot at, hence the "just entered planet" r
 	        display_name="防御型墓地"
             display_name_for_sidebar="防墓地"
 
-	        description_short="死灵法师的防御前哨站，可提供邻近星球的视野。在墓地中，不死族仆从的损耗速度会变慢。随着墓地等级提升，你将能够建造一些新建筑。
+	        description_short="死灵法师的防御前哨站，可提供邻近行星的视野。在墓地中，不死族仆从的损耗速度会变慢。随着墓地等级提升，你将能够建造一些新建筑。
 
 这是一个防御型墓地，可控制领土，但不会增强旗舰。它只能建造防御性建筑，并提供地图视野。防御型墓地也有可支配的模块点数。"
                 collision_priority="810"
@@ -1461,7 +1461,7 @@ who is pretty worthless except to get shot at, hence the "just entered planet" r
             collision_priority="810"
 			mark_level_scale_style="NecromancerDefenses"
 	    display_name="死灵法师闪电塔" display_name_for_sidebar="闪电塔"
-	    description="死灵法师的一种耐打、短程防御建筑，用于抵御敌人。星球上每多一座激活的闪电塔，其伤害输出都会大幅提升。"
+	    description="死灵法师的一种耐打、短程防御建筑，用于抵御敌人。行星上每多一座激活的闪电塔，其伤害输出都会大幅提升。"
             starting_mark_level="Mark1" tech_upgrades_that_benefit_me="NecromancerDefense"
             cost_for_ai_to_purchase="10000" strength_multiplier="2"   
             hull_points="200000" shield_points="400000" speed="Immobile"

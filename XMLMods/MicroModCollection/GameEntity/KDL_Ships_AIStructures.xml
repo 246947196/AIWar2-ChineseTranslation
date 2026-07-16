@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 	<entity name="DistributionNode" is_partial_record="true"
 		tags="DistributionNode,ShowsOnNormalDisplayMode"
@@ -127,7 +127,7 @@
 		visuals_scale_multiplier="2"
 		display_name="增援跃迁门"
 		display_name_for_sidebar="增援跃迁门"
-		description="这不像可以容纳大规模舰队通过的大型跃迁门，它一次只运输几个单位，为 AI 提供了一种更简单的方式来增援其所在星球。"
+		description="这不像可以容纳大规模舰队通过的大型跃迁门，它一次只运输几个单位，为 AI 提供了一种更简单的方式来增援其所在行星。"
 		description_short="略微增加行星增援。只有放任不管时才危险。"
 		behavior="Stationary"
 		collision_priority="10000"
@@ -154,8 +154,8 @@
 	<entity name="AICommandStation_Gravitic" copy_from="AICommandStation" tags="AICommandStationOriginal" icon_overlay="Overlays2/Guardian_Gravity"
 		display_name="重力 AI 指挥站"
 		display_name_for_sidebar="重力 AI 指挥站"
-		description="带有减速光环的行星指挥中心。您必须先摧毁它，然后才能建造自己的指挥站来占领该星球。"
-		description_short="您必须先摧毁它，然后才能建造自己的指挥站来占领该星球。小心重力场。"
+		description="带有减速光环的行星指挥中心。您必须先摧毁它，然后才能建造自己的指挥站来占领该行星。"
+		description_short="您必须先摧毁它，然后才能建造自己的指挥站来占领该行星。小心重力场。"
 	>
 		<system name="G1" display_name="引力核心" category="Passive" base_gravity_speed_multiplier="0.7" subtracted_gravity_speed_multiplier_per_mark="0" gravity_hits_engine_gx_less_than="8" gravity_range="Normal4" min_mark_level_to_function="1" max_mark_level_to_function="1" />
 		<system name="G2" display_name="引力核心" category="Passive" base_gravity_speed_multiplier="0.65" subtracted_gravity_speed_multiplier_per_mark="0" gravity_hits_engine_gx_less_than="10" gravity_range="Normal6" min_mark_level_to_function="2" max_mark_level_to_function="2" />
@@ -169,8 +169,8 @@
 	<entity name="AICommandStation_Tachyon" copy_from="AICommandStation" tags="AICommandStationOriginal" icon_overlay="Overlays1/Starship_Sentry"
 		display_name="快子 AI 指挥站"
 		display_name_for_sidebar="快子 AI 指挥站"
-		description="带有反隐形光环的行星指挥中心。您必须先摧毁它，然后才能建造自己的指挥站来占领该星球。"
-		description_short="您必须先摧毁它，然后才能建造自己的指挥站来占领该星球。小心反隐形。"
+		description="带有反隐形光环的行星指挥中心。您必须先摧毁它，然后才能建造自己的指挥站来占领该行星。"
+		description_short="您必须先摧毁它，然后才能建造自己的指挥站来占领该行星。小心反隐形。"
 	>
 		<system name="T1" display_name="快子阵列" category="Passive" tachyon_points="15" tachyon_range="Normal6" tachyon_hits_albedo_less_than="0.75" min_mark_level_to_function="1" max_mark_level_to_function="1" />
 		<system name="T2" display_name="快子阵列" category="Passive" tachyon_points="30" tachyon_range="AboveAverage1" tachyon_hits_albedo_less_than="0.75" min_mark_level_to_function="2" max_mark_level_to_function="2" />
@@ -184,8 +184,8 @@
 	<entity name="AICommandStation_Pulsar" copy_from="AICommandStation" tags="AICommandStationOriginal" icon_overlay="Overlays2/Guardian_Paralysis"
 		display_name="消耗光环 AI 指挥站"
 		display_name_for_sidebar="消耗光环 AI 指挥站"
-		description="带有消耗光环的行星指挥中心。您必须先摧毁它，然后才能建造自己的指挥站来占领该星球。"
-		description_short="您必须先摧毁它，然后才能建造自己的指挥站来占领该星球。小心消耗。"
+		description="带有消耗光环的行星指挥中心。您必须先摧毁它，然后才能建造自己的指挥站来占领该行星。"
+		description_short="您必须先摧毁它，然后才能建造自己的指挥站来占领该行星。小心消耗。"
 		attrition_damage="50" added_attrition_damage_per_mark="25"
 		max_attrition_damage="50000" added_max_attrition_damage_per_mark="50000"
 	>

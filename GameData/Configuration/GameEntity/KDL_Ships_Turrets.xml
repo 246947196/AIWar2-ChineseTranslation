@@ -121,7 +121,7 @@
 			collision_priority="1000" construction_priority="50"
 			display_name="伏击炮塔"
 	    display_name_for_sidebar="伏击炮塔"
-			description="专门用于摧毁刚到达该星球的敌人。"
+			description="专门用于摧毁刚到达该行星的敌人。"
 			behavior="Stationary"			
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Ambush,Turret"
 			build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true"

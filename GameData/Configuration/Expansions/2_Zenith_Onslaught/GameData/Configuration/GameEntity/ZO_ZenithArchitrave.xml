@@ -994,7 +994,7 @@
 			visuals_scale_multiplier="36"
 			y_offset_of_icon="24"
 			collision_priority="100"
-			description="这些巨大的单位可以转化为生成器，使天顶拱心石能够控制新的星球。"
+			description="这些巨大的单位可以转化为生成器，使天顶拱心石能够控制新的行星。"
 			blocks_enemy_claim_flows="true"
 			voice_group="Zenith"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Alien"
