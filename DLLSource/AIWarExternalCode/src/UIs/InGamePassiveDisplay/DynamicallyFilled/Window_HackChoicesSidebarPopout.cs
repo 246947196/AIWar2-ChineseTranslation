@@ -713,11 +713,11 @@ namespace Arcen.AIW2.External
                         factionColor = faction.FactionCenterColor.ColorHexBrighter;
                     if ( planet.PopulationType == PlanetPopulationType.AIBastionWorld )
                     {
-                        Buffer.Add("<b>Bastion: "+ this.Element.CreatedByCodeDirective.Identifier.CodeDirectiveTagString + "</b>", factionColor );
+                        Buffer.Add("<b>堡垒："+ this.Element.CreatedByCodeDirective.Identifier.CodeDirectiveTagString + "</b>", factionColor );
                     }
                     else if ( planet.PopulationType == PlanetPopulationType.AIHomeworld )
                     {
-                        Buffer.Add("<b>Overlord: "+ this.Element.CreatedByCodeDirective.Identifier.CodeDirectiveTagString + "</b>", factionColor );
+                        Buffer.Add("<b>母星："+ this.Element.CreatedByCodeDirective.Identifier.CodeDirectiveTagString + "</b>", factionColor );
                     }
                     else
                     {
@@ -778,7 +778,7 @@ namespace Arcen.AIW2.External
                 
                 if ( planet != null )
                 {
-                    tooltipBuffer.Add( "<b><u>Hack: " ).Add( Instance.HackTypeToChooseFor.DisplayName ).Add( "</u></b>\n" );
+                    tooltipBuffer.Add( "<b><u>入侵：" ).Add( Instance.HackTypeToChooseFor.DisplayName ).Add( "</u></b>\n" );
 
                     tooltipBuffer.Add("你可以选择 " + planet.Name + " 作为目标。");
 

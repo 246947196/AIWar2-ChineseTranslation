@@ -501,7 +501,7 @@ namespace Arcen.AIW2.External
                     Buffer.StartColor( "c0c0c0" );
                     if ( isForFleetLeader )
                     {
-                        Buffer.Add( lineCount ).Add( lineCount != 1 ? " Ship Lines" : "舰线" );
+                        Buffer.Add( lineCount ).Add( " 舰线" );
                     }
                     else
                     {

@@ -176,10 +176,10 @@ namespace Arcen.AIW2.External
                 DZResource res = TerminusTierOrder[i];
                 AllTerminusResources.Add( res );
                 string tierHeader = null;
-                if ( res == DZResource.Metal ) tierHeader = "Tier 1 - Raw Ore";
-                else if ( res == DZResource.White ) tierHeader = "Tier 2 - Reagents";
-                else if ( res == DZResource.Red ) tierHeader = "Tier 3 - Compounds";
-                else if ( res == DZResource.Black ) tierHeader = "Tier 4 - Quintessence";
+                if ( res == DZResource.Metal ) tierHeader = "第1阶 - 原矿石";
+                else if ( res == DZResource.White ) tierHeader = "第2阶 - 试剂";
+                else if ( res == DZResource.Red ) tierHeader = "第3阶 - 化合物";
+                else if ( res == DZResource.Black ) tierHeader = "第4阶 - 精萃";
                 TerminusTierHeaderBeforeIndex.Add( tierHeader );
                 TerminusCountsByResource[res] = 0;
                 EpistylesQueuedByResource[res] = 0;
@@ -594,7 +594,7 @@ namespace Arcen.AIW2.External
                             inboundCount++;
                     }
                     if ( inboundCount > 0 )
-                        Buffer.Add( inboundCount ).Add( inboundCount == 1 ? " inbound" : " inbound", "a1d4ff" );
+                        Buffer.Add( inboundCount ).Add( " 运输中", "a1d4ff" );
                     else
                         Buffer.Add( "-", "666666" );
                 }

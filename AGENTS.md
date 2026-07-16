@@ -506,3 +506,25 @@ patch 前必须从 `AIWar2_Data\Managed\` 复制原始 DLL（禁止在已 patch 
 **结论**：日志类 `chat_text` 翻译全部完成（588 条，仅余 6 条测试占位条目未翻）。
 
 **扫描方法**：PowerShell 遍历 `AIWar2_ChineseTranslation` 下含 `chat_text=` 的 XML，正则提取 `chat_text="..."`，判定含 `[A-Za-z]` 且不含 CJK 的为未译。
+
+## 最近补译记录 (2026-07-16 第5批)
+
+2026-07-16 补译了 C# 源码中 6 个文件的 ~18 条英文字符串，同时修正 IL patch：
+
+| 文件 | 补译内容 |
+|------|---------|
+| `tools/ilpatch/ArcenAIW2Core.merged.json` | IL patch: Science→科技, Energy→能量（各 1 处 ldstr） |
+| `ArcenExternalUIUtilities.cs` | 资源显示名全译（Metal→金属, Energy→能量, Science→科技, Hacking→入侵, Argon→氩, Radon→氡, Xenon→氙, Essence→精华, Cuendillar→库恩达, Strength→战力, Threat→威胁） |
+| `Window_ModalSwapFleetMembers.cs` | Fleet→舰队, Swap Away→换入, Empty Slots→空槽位, Elite→精英, Ship Lines→舰线 |
+| `Window_TechRefunds.cs` | Ok→确定, (Cost:→（花费： |
+| `Window_InGameSidebarHacking.cs` | " on "→" - "（旗舰位置连接符）|
+| `Window_DZLogisticsSidebarPopout.cs` | DZ Logistics→暗天顶后勤, Tier 1-4 阶分类, none queued→无队列, building→建造中, queued→已队列, inbound→运输中 |
+| `Window_DZEconomySidebarPopout.cs` | none→无, nothing→无需求, ⬇ none here→⬇ 此处无, ⬇ Deposit ×→⬇ 存入 ×, Cost:→成本：, IDLE→空闲, Lock/Unlock→锁定/已锁定, Priority→普通/优先 |
+| `Window_HackChoicesSidebarPopout.cs` | Bastion:→堡垒：, Overlord:→母星：, Hack:→入侵：（与已译的 NomadCrash 兄弟类一致）, Mark→等级 |
+| `WaveUtils.cs` | CPA→跨星攻击, SOON→即将 |
+| `Window_ModalFleetMemberModularEditing.cs` | Edit Loadout For:→编辑配置：, " on "→" - ", Mk→Mk（保留缩写）|
+| `Window_ResourceBar.cs` | Argon Fuel→氩燃料, Radon Fuel→氡燃料, Xenon Fuel→氙燃料 |
+
+### 已知剩余未翻译
+1. `Window_PrototypeInGameHoverEntityInfo.cs:373` — `" of "` 涉及英文语序，需改代码结构才能正确翻译
+2. WorldTMPFontPatch.csproj — `BindingFlags` 编译错误（需修复 csproj 引用）

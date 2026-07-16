@@ -78,7 +78,7 @@ namespace Arcen.AIW2.External
         {
             public override void GetTextToShowFromVolatile( ArcenDoubleCharacterBuffer Buffer )
             {
-                Buffer.Add( "<size=95%>Edit Loadout For: " ).StartColor( "a1ffa1" );
+                Buffer.Add( "<size=95%>编辑配置：" ).StartColor( "a1ffa1" );
 
                 if ( Instance._member.TypeData.IsModular && Instance._member != null )
                 {
@@ -100,7 +100,7 @@ namespace Arcen.AIW2.External
 
                 Buffer.Add( Instance._member.TypeData.GetDisplayName() );
                 if ( singleEntity != null )
-                    Buffer.Add("</color> on " ).Add( singleEntity.Planet.Name, "a1a1ff" );
+                    Buffer.Add("</color> - " ).Add( singleEntity.Planet.Name, "a1a1ff" );
                 Buffer.Add( "</size>" );
             }
 

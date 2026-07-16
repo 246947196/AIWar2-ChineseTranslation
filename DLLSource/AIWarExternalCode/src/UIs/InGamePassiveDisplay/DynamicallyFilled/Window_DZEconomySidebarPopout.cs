@@ -436,7 +436,7 @@ namespace Arcen.AIW2.External
 
                 if ( epd.NextConversion == null )
                 {
-                    Buffer.Add( isSelected ? "▶ [IDLE]" : "[IDLE — click to set]", col );
+                    Buffer.Add( isSelected ? "▶ [空闲]" : "[空闲 — 点击设置]", col );
                 }
                 else
                 {
@@ -491,7 +491,7 @@ namespace Arcen.AIW2.External
                 if ( ep == null ) return;
                 DarkZenithPerUnitBaseInfo epd = ep.CreateExternalBaseInfo<DarkZenithPerUnitBaseInfo>( "DarkZenithPerUnitBaseInfo" );
                 if ( epd == null || epd.NextConversion == null ) { Buffer.Add( "锁定", "444444" ); return; }
-                Buffer.Add( epd.KeepConversion ? "Locked" : "Lock", epd.KeepConversion ? "aaaaff" : "777777" );
+                Buffer.Add( epd.KeepConversion ? "已锁定" : "锁定", epd.KeepConversion ? "aaaaff" : "777777" );
             }
 
             public override bool GetShouldBeHidden()
@@ -533,7 +533,7 @@ namespace Arcen.AIW2.External
                 if ( ep == null ) return;
                 DarkZenithPerUnitBaseInfo epd = ep.CreateExternalBaseInfo<DarkZenithPerUnitBaseInfo>( "DarkZenithPerUnitBaseInfo" );
                 if ( epd == null || epd.NextConversion == null ) { Buffer.Add( "优先级", "444444" ); return; }
-                Buffer.Add( epd.HighPriority ? "▲ Priority" : "Priority", epd.HighPriority ? "ffdd44" : "777777" );
+                Buffer.Add( epd.HighPriority ? "▲ 优先" : "普通", epd.HighPriority ? "ffdd44" : "777777" );
             }
 
             public override bool GetShouldBeHidden()

@@ -714,13 +714,13 @@ namespace Arcen.AIW2.External
                 switch ( FuelType )
                 {
                     case ResourceType.FuelArgon:
-                        fuelName = "Argon Fuel";
+                        fuelName = "氩燃料";
                         break;
                     case ResourceType.FuelRadon:
-                        fuelName = "Radon Fuel";
+                        fuelName = "氡燃料";
                         break;
                     case ResourceType.FuelXenon:
-                        fuelName = "Xenon Fuel";
+                        fuelName = "氙燃料";
                         break;
                 }
 
