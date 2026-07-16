@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   <entity name="TiberiumVein"
@@ -121,7 +121,7 @@
             y_offset_of_icon="10"
             collision_priority="100"
             display_name="沃里夫"
-			description="伍里夫轻巡洋舰通过在一个小型保护区域内将伤害吸引到自己身上来保护友军。这是一艘由泰德瑞安进化而来的AI单位。"
+			description="伍里夫轻巡洋舰通过在一个小型保护区域内将伤害吸引到自己身上来保护友军。这是一个由泰德瑞安进化而来的AI单位。"
             starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Alien"
             mark_level_scale_style="DarkZenith"
             cost_for_ai_to_purchase="1500"  strength_multiplier="1.5"
@@ -172,7 +172,7 @@
 	    y_offset_of_icon="10"
 	    collision_priority="100"
 	    display_name="弗森袭击者"
-	    description="这艘大型突袭舰内部隐藏着数艘弗森单位。一旦突袭舰被摧毁，这些单位将蜂拥而出继续战斗。"
+	    description="这艘大型突袭舰内部隐藏着数个弗森单位。一旦突袭舰被摧毁，这些单位将蜂拥而出继续战斗。"
 	    starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Alien"
 	    mark_level_scale_style="DarkZenith"
 	    cost_for_ai_to_purchase="4500"  strength_multiplier="1.5"	
@@ -221,7 +221,7 @@
 	    y_offset_of_icon="10"
 	    collision_priority="100"
 	    display_name="沃里夫 Raider"
-	    description="这艘大型突袭舰内部隐藏着数艘伍里夫单位。一旦突袭舰被摧毁，这些单位将蜂拥而出继续战斗。"
+	    description="这艘大型突袭舰内部隐藏着数个伍里夫单位。一旦突袭舰被摧毁，这些单位将蜂拥而出继续战斗。"
 	    starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Alien"
 	    mark_level_scale_style="DarkZenith"
 	    cost_for_ai_to_purchase="4500"  strength_multiplier="1.5"	
@@ -273,7 +273,7 @@
 	    y_offset_of_icon="10"
 	    collision_priority="100"
 	    display_name="弗森"
-	    description="弗森轻巡洋舰擅长攻击护盾。这是一艘被泰德瑞安增强的AI单位。"
+	    description="弗森轻巡洋舰擅长攻击护盾。这是一个被泰德瑞安增强的AI单位。"
 	    starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Alien"
 	    mark_level_scale_style="DarkZenith"
 	    cost_for_ai_to_purchase="1500"  strength_multiplier="1.5"	
@@ -562,7 +562,7 @@
 	    y_offset_of_icon="10"
 	    display_name="泰德运输船"
 	    hull_points="4500" shield_points="175000" speed="High"
-	    description="这艘巨大的单位是包裹着泰德瑞安蝗虫群的空壳；它在战斗中迅速死亡以释放其虫群。"
+	    description="这个巨大的单位是包裹着泰德瑞安蝗虫群的空壳；它在战斗中迅速死亡以释放其虫群。"
 	    starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Alien"
 	    mark_level_scale_style="DarkZenith"
 	    cost_for_ai_to_purchase="4000"  strength_multiplier="1.5"

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
 	<journal name="NA_MigrantFleet_UnknownWormhole" sidebar_text="{FactionColor}神秘异常：&lt;/color&gt; 未知"
@@ -19,7 +19,7 @@
 
 我们注意到大量小型战机从虫洞中涌出，但它们在抵达我们的空间后正在迅速分解。我们的军事领导人报告说，它们在广播一个开放信号，我们能够远程复制，并且我们相信这些小单位是友好的。
 
-更值得注意的是，我们相信虫洞中有一个更大的信号来自一艘比这些蜂群规模大得多的单位。可能值得亲自调查。我们将继续监控情况，并在了解更多信息后向你汇报。" />
+更值得注意的是，我们相信虫洞中有一个更大的信号来自一个比这些蜂群规模大得多的单位。可能值得亲自调查。我们将继续监控情况，并在了解更多信息后向你汇报。" />
 
 	<journal name="NA_MigrantFleet_UnknownMigrantArrives" sidebar_text="{FactionColor}移民者&lt;/color&gt; 移民者"
 			can_record_another_copy_if_already_recorded_in_this_campaign="false"
@@ -35,9 +35,9 @@
 
 指挥官，
 
-我们在 {PlanetName} 上的扫描仪报告说，一艘更大的单位从虫洞中抵达，随后虫洞立即在它身后关闭。
+我们在 {PlanetName} 上的扫描仪报告说，一个更大的单位从虫洞中抵达，随后虫洞立即在它身后关闭。
 
-从我们能看到的情况来看，这艘被称为游荡飞地的单位虽然本身很弱，但拥有我们从未见过的最强效的酸性武器。
+从我们能看到的情况来看，这个被称为游荡飞地的单位虽然本身很弱，但拥有我们从未见过的最强效的酸性武器。
 
 有趣的是，虫洞停止的那一刻，幼崽单位的生产也停止了。看来游荡飞地自身缺乏生产幼崽的能力。
 
@@ -179,7 +179,7 @@
 			can_record_another_copy_if_already_recorded_in_this_campaign="false"
 			text_replacement_related_faction_color="true"
 		    text_replacement_related_player_name="true"
-			chat_text="指挥官，一艘中等大小的宁苏单位开始模仿我们的行动。"
+			chat_text="指挥官，一个中等大小的宁苏单位开始模仿我们的行动。"
 			is_partial_record="true" 
             full_text="发件人：尤安娜·派恩希尔博士
 宁苏研究部 - 指挥部
@@ -188,6 +188,6 @@
 
 指挥官，
 
-一艘寿命较长的宁苏单位开始跟随我们的一个舰队领袖四处移动。它似乎不愿与其分离，并表现出我们认为的想要保护的意愿。更有趣的是，看起来这个我们一些人称之为"族人"的单位能够制造自己的幼崽来协助战斗。" />
+一个寿命较长的宁苏单位开始跟随我们的一个舰队领袖四处移动。它似乎不愿与其分离，并表现出我们认为的想要保护的意愿。更有趣的是，看起来这个我们一些人称之为"族人"的单位能够制造自己的幼崽来协助战斗。" />
 
 </root>

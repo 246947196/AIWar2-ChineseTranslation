@@ -1,664 +1,1328 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<root>
-  <!-- Defensive Structures -->
-  <entity name="ShadowFortress" tags="ShadowenFortress" ship_class_name="Superweapon"
-          npc_ship_cap_type="SpecialThingsToAlwaysSeed"
-          thematic_groups="AI" 
-	  visuals="Assets/_DLC2/Zenith/DZTrelleborg/DZTrelleborg.prefab" visuals_bundle="exp2_zenith_onslaught"
-          material_override_path="Assets/_FinalGameMeshes/Nanocaust/Aberration/Aberration.prefab"
-	  icon_name="Ships4/SomethingRakes" gimbal_icon_size_multiplier="1.5"
-          icon_overlay="Overlays2/BrutalEntrenchingGuardian_Mobile"
-	  y_offset_of_icon="35"
-	  category="Ship"
-	  size_scale="10"
-	  visuals_scale_multiplier="25"
-          collision_priority="800"
-	  display_name="暗影堡垒"
-          display_name_for_sidebar="暗影堡垒"
-	  description="非常强大的防御建筑，其爆炸能够穿透护盾和装甲。随时间缓慢再生生命值。"
-	  behavior="Stationary"
-          is_major_ai_structure="true"
-          seconds_to_fully_regenerate_hull="600"
-	  starting_mark_level="Mark1" max_mark_level="5" tech_upgrades_that_benefit_me="Unused"	
-	  cost_for_ai_to_purchase="3000"
-	  hull_points="250000" shield_points="750000" speed="Immobile"
-	  metal_cost="1500000" energy_consumption="50000"
-	  armor_mm="300" albedo="0.7" mass_tx="8"
-	  ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
-	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
-	  voice_group="Turret"
-	  is_reinforcement_location="true" always_is_ai_turret_spawn_point="true"
-	  eligible_for_hacks="Sabotage"
-          priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
-	  >
-    <data_extension name="DLC3" required_expansion_list="3_The_Neinzul_Abyss"
-                    dark_zenith_sidekick_science_to_grant_on_death="10"
-                    spire_sidekick_science_to_grant_on_death="10"
-                    necromancer_hacking_to_grant_on_death="4"/>
-    <hack_data hack_type="Sabotage" override_cost_in_hacking_points="11" />
-    <metal_flow purpose="SelfConstruction" throughput="700"/>
-    <system name="R1" display_name="暗影聚变火箭"
-                category="Weapon" firing_timing="OnlyInRange"
-                damage_per_shot="1500" range="High1" shot_speed="Normal" rate_of_fire="Normal"
-                shots_per_salvo="30" fires_salvos_sequentially="false"
-                shot_type_data="FusionRocket"
-                base_percent_damage_bypasses_personal_shields="1" 
-		>
-
-      <outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="50" multiplier="3" />
-    </system>
-    <system name="R2" display_name="暗影能量波"
-          category="Weapon" firing_timing="OnlyInRange" shots_per_salvo="4"
-          damage_per_shot="3750" range="High1" shot_speed="Normal" rate_of_fire="Low" fires_salvos_sequentially="true"
-          shot_type_data="EnergyWave"
-          base_percent_damage_bypasses_personal_shields="1" 
-	  >
-      <outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="8" />
-    </system>
-  </entity>
-
-    <entity name="UmbralFortress" tags="ShadowenFortress" ship_class_name="Superweapon"
-          npc_ship_cap_type="SpecialThingsToAlwaysSeed"
-          thematic_groups="AI" 
-	  visuals="Assets/_DLC2/Zenith/DZTrelleborg/DZTrelleborg.prefab" visuals_bundle="exp2_zenith_onslaught"
-          material_override_path="Assets/_FinalGameMeshes/Nanocaust/Aberration/Aberration.prefab"
-	  icon_name="Ships4/SomethingRakes" gimbal_icon_size_multiplier="1.5"
-          icon_overlay="Overlays1/Planet_DarkZenith"
-	  y_offset_of_icon="35"
-	  category="Ship"
-	  size_scale="10"
-	  visuals_scale_multiplier="25"
-          collision_priority="800"
-	  display_name="暗影堡垒"
-          display_name_for_sidebar="暗影堡垒"
-	  description="非常强大的防御建筑，其爆炸伤害随要塞生命值降低而增加。随时间缓慢再生生命值。"
-	  behavior="Stationary"
-          is_major_ai_structure="true"
-          seconds_to_fully_regenerate_hull="600"
-	  starting_mark_level="Mark1" max_mark_level="5" tech_upgrades_that_benefit_me="Unused"	
-	  cost_for_ai_to_purchase="3000"
-	  hull_points="250000" shield_points="1500000" speed="Immobile"
-	  metal_cost="1500000" energy_consumption="50000"
-	  armor_mm="300" albedo="0.7" mass_tx="8"
-	  ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
-	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
-	  voice_group="Turret"
-	  is_reinforcement_location="true" always_is_ai_turret_spawn_point="true"
-	  eligible_for_hacks="Sabotage"
-          priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
-	  >
-      <data_extension name="DLC3" required_expansion_list="3_The_Neinzul_Abyss"
-                      dark_zenith_sidekick_science_to_grant_on_death="10"
-                      spire_sidekick_science_to_grant_on_death="10"
-                      necromancer_hacking_to_grant_on_death="4"/>
-    <hack_data hack_type="Sabotage" override_cost_in_hacking_points="11" />
-    <metal_flow purpose="SelfConstruction" throughput="700"/>
-    <system name="R1" display_name="暗影聚变火箭"
-                category="Weapon" firing_timing="OnlyInRange"
-                damage_per_shot="3000" range="High1" shot_speed="Normal" rate_of_fire="Normal"
-                shots_per_salvo="30" fires_salvos_sequentially="false"
-                shot_type_data="FusionRocket"
-                base_percent_damage_bypasses_personal_shields="1" 
-		>
-      <outgoing_damage_modifier based_on="MyHullPercentageMissing" comparison_type="MultiplesOf" compared_to="20" multiplier="1" />
-    </system>
-    <system name="R2" display_name="暗影能量波"
-          category="Weapon" firing_timing="OnlyInRange" shots_per_salvo="4"
-          damage_per_shot="3750" range="High1" shot_speed="Normal" rate_of_fire="Low" fires_salvos_sequentially="true"
-          shot_type_data="EnergyWave"
-          base_percent_damage_bypasses_personal_shields="1" 
-	  >
-      <outgoing_damage_modifier based_on="MyHullPercentageMissing" comparison_type="MultiplesOf" compared_to="20" multiplier="1" />
-    </system>
-  </entity>
-
-  <!-- Guardians -->
-  <entity name="TibArne"
-          thematic_groups="AI,Guardian"
-	  special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
-	  visuals="Assets/_FinalGameMeshes/Macrophage/Harvester/MacrophageHarvester.prefab"
-          icon_name="Ships4/SomethingMine"
-          icon_overlay="Overlays2/HunterKiller_Rank2"
-          material_override_path="Assets/_FinalGameMeshes/Nanocaust/Aberration/Aberration.prefab"
-	  uses_large_health_bar="true"
-	  category="Ship"
-	  size_scale="4"
-	  visuals_scale_multiplier="2"
-	  y_offset_of_icon="10"
-	  collision_priority="100"
-	  display_name="提布·阿尔内"
-	  description="这艘坚韧的单位对低辐射护盾的敌人有效。"
-	  starting_mark_level="Mark1"
-	  cost_for_ai_to_purchase="600"
-          hull_points="33000" shield_points="17000" speed="AboveAverage1"
-	  metal_cost="2000000" energy_consumption="25000"
-	  armor_mm="90" albedo="0.7" engine_gx="20" mass_tx="7"
-	  ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
-	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
-	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
-	  voice_group="Silent"
-	  speed_multiplier_first_5_seconds_on_planet="2"
-          priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
-	  >
-    <ai_ship_group_membership name="ShadowyGuardians" weight="100"/>
-    <incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="2500" multiplier="0.20" />
-    <system name="W1" display_name="破骨碎片"
-	    category="Weapon" firing_timing="OnlyInRange"
-	    damage_per_shot="700" range="Normal3" shot_speed="Slow" rate_of_fire="Misery"
-	    shots_per_salvo="16" fires_salvos_sequentially="false"
-	    shot_type_data="PlasmaTorpedoAOEBurstAtEnd"
-	    area_of_effect_size="99"
-	    aoe_spreads_damage_among_available_targets="true"
-	    health_change_per_damage_dealt="0.5"
-	    >
-      <outgoing_damage_modifier based_on="Albedo" comparison_type="AtMost" compared_to="0.3" multiplier="8" />
-    </system>
-    <system name="R2" display_name="破骨能量波"
-	    category="Weapon" firing_timing="OnlyInRange"
-	    damage_per_shot="700" range="Normal3" shot_speed="VeryFast" rate_of_fire="Misery"
-	    shots_per_salvo="10" fires_salvos_sequentially="false"
-	    shot_type_data="EnergyWave"		
-	    health_change_per_damage_dealt="0.5"		
-	    >
-    </system>
-    <incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="4480" multiplier="0.25" />	
-    <ship_class_data can_be_zombified_and_similar="false" />
-  </entity>
-
-  <entity name="Gloom"
-          thematic_groups="AI,Guardian"
-	  special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
-	  visuals="assets/_finalgamemeshes/golems/zenithtrader/zenithtrader.prefab"
-          icon_name="Ships4/SomethingMine"
-          icon_overlay="Overlays2/Guardian_Grenade"
-          material_override_path="Assets/_FinalGameMeshes/Nanocaust/Aberration/Aberration.prefab"
-	  uses_large_health_bar="true"
-	  category="Ship"
-	  size_scale="4"
-	  visuals_scale_multiplier="2"
-	  y_offset_of_icon="10"
-	  collision_priority="100"
-	  display_name="阴郁"
-	  description="这艘坚韧的单位对薄装甲目标有效。"
-	  starting_mark_level="Mark1"
-	  cost_for_ai_to_purchase="600"
-          hull_points="33000" shield_points="17000" speed="AboveAverage1"
-	  metal_cost="2000000" energy_consumption="25000"
-	  armor_mm="90" albedo="0.7" engine_gx="20" mass_tx="7"
-	  ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
-	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
-	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
-	  voice_group="Silent"
-	  speed_multiplier_first_5_seconds_on_planet="2"
-          priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
-	  >
-    <ai_ship_group_membership name="ShadowyGuardians" weight="100"/>
-    <system name="WJ" display_name="榴弹"
-				category="Weapon" firing_timing="OnlyInRange"
-				damage_per_shot="660" range="Small4" shot_speed="Normal" rate_of_fire="VeryLow" 
-				shots_per_salvo="3" fires_salvos_sequentially="true"
-				shot_type_data="FlakShotAOEBurstAtEnd"
-				area_of_effect_size="350"
-				maximum_number_of_targets_hit_per_shot="9"
-				>
-				<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="30" multiplier="6" />
-    </system>
-    <incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="4480" multiplier="0.25" />	
-  </entity>
-
-
-  <entity name="Jachyra"
-          thematic_groups="AI,Guardian"
-	  special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
-          icon_name="Ships4/SomethingMine"
-          visuals="assets/_finalgamemeshes/guardians/lightningguardian/lightningguardian.prefab"
-          icon_overlay="Overlays2/Guardian_Tesla"
-          material_override_path="Assets/_FinalGameMeshes/Nanocaust/Aberration/Aberration.prefab"
-	  uses_large_health_bar="true"
-	  category="Ship"
-	  size_scale="3.6"
-	  visuals_scale_multiplier="4"
-	  y_offset_of_icon="10"
-	  collision_priority="100"
-	  display_name="贾奇拉"
-	  description="这是一艘非常强韧的单位，具有反射伤害。很难伤害它。"
-	  starting_mark_level="Mark1"
-	  cost_for_ai_to_purchase="600"
-          hull_points="33000" shield_points="17000" speed="AboveAverage1"
-	  metal_cost="80000" energy_consumption="25000"
-	  armor_mm="90" albedo="0.7" engine_gx="20" mass_tx="7"
-	  ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
-	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
-	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
-	  voice_group="Silent"
-	  speed_multiplier_first_5_seconds_on_planet="2"
-          priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
-          returns_this_percentage_of_damage_if_damaged_by_enemy_attack="0.4"
-	  >
-    <incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="2500" multiplier="0.20" />
-      <ai_ship_group_membership name="ShadowyGuardians" weight="100"/>
-    <system name="Q1" display_name="特斯拉线圈"
-	    category="Weapon" firing_timing="OnlyInRange"
-	    damage_per_shot="920" range="Tiny3" shot_speed="Normal" rate_of_fire="PeriodicActivation" fires_salvos_sequentially="false"
-	    shot_type_data="LightningGuardianExplosionAOEShot"
-	    area_of_effect_size="3200"				
-	    shots_detonate_immediately="true"
-	    maximum_number_of_targets_hit_per_shot="40"
-	    >
-      <outgoing_damage_modifier based_on="Albedo" comparison_type="AtLeast" compared_to="0.7" multiplier="6" />
-      <outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtLeast" compared_to="90" multiplier="6" />
-    </system>
-  </entity>
-
-  <entity name="NightWalker"
-          thematic_groups="AI,Guardian"
-	  special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
-	  visuals="assets/_finalgamemeshes/guardians/stealthguardian/stealthguardian.prefab"
-          icon_name="Ships4/SomethingMine"
-          icon_overlay="Overlays2/Guardian_Stealth"
-          material_override_path="Assets/_FinalGameMeshes/Nanocaust/Aberration/Aberration.prefab"
-	  uses_large_health_bar="true"
-	  category="Ship"
-	  size_scale="3.6"
-	  visuals_scale_multiplier="4"
-	  y_offset_of_icon="10"
-	  collision_priority="100"
-	  display_name="夜行者"
-	  description="这艘隐形单位潜伏在星系边缘，使用狙击武器。"
-	  starting_mark_level="Mark1"
-	  cost_for_ai_to_purchase="600"
-          hull_points="53000" shield_points="17000" speed="AboveAverage1"
-	  metal_cost="80000" energy_consumption="25000"
-	  armor_mm="90" albedo="0.7" engine_gx="20" mass_tx="7"
-	  ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
-	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
-	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
-	  voice_group="Silent"
-	  speed_multiplier_first_5_seconds_on_planet="2"
-          priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
-	  >
-      <ai_ship_group_membership name="ShadowyGuardians" weight="100"/>
-      <system name="C" display_name="隐形装置"
-	      category="Passive"
-	      cloaking_points="8000"
-	      >
-      </system>
-        <system name="Q9" display_name="氚轨道炮"
-		category="Weapon" firing_timing="OnlyInRange"
-		damage_per_shot="360" range="EssentiallyInfinite" shot_speed="VeryFast" rate_of_fire="Misery" fires_salvos_sequentially="true"
-		shot_type_data="ExtremeLongRangeRailgun"
-                cloaking_percent_loss_from_firing="0.1"
-		>
-	  <outgoing_damage_modifier based_on="Albedo" comparison_type="AtMost" compared_to="0.3" multiplier="8" />
-	</system>
-	<system name="V3" display_name="刺针弹"
-		category="Weapon" firing_timing="OnlyInRange"
-		damage_per_shot="400" range="AboveAverage2" shot_speed="Normal" rate_of_fire="VeryLow" fires_salvos_sequentially="true"
-		shot_type_data="StingerBolt"
-                cloaking_percent_loss_from_firing="0.1"
-		>
-	  <outgoing_damage_modifier applies_to="AllShields" based_on="MaxBubbleForcefield" comparison_type="GreaterThan" compared_to="10000" multiplier="4" />
-	</system>
-
-      </entity>
-  <entity name="Creeper"
-          thematic_groups="AI,Guardian"
-	  special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
-          visuals="assets/_dlc2/zenith/dzmetalharvester/dzmetalharvester.prefab" visuals_bundle="exp2_zenith_onslaught"
-          material_override_path="Assets/_FinalGameMeshes/Nanocaust/Aberration/Aberration.prefab"
-          icon_name="Ships4/SomethingMine"
-          icon_overlay="Overlays1/Planet_DarkZenith"
-	  uses_large_health_bar="true"
-	  category="Ship"
-	  size_scale="3.6"
-	  visuals_scale_multiplier="4"
-	  y_offset_of_icon="10"
-	  collision_priority="100"
-	  display_name="爬行者"
-	  description="这艘强大的单位依靠引擎眩晕和速度来骚扰敌人。"
-	  starting_mark_level="Mark1"
-	  cost_for_ai_to_purchase="600"
-          hull_points="33000" shield_points="17000" speed="AboveAverage3"
-	  metal_cost="80000" energy_consumption="25000"
-	  armor_mm="90" albedo="0.7" engine_gx="20" mass_tx="7"
-	  ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
-	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
-	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
-	  voice_group="Silent"
-	  speed_multiplier_first_5_seconds_on_planet="6"
-          priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
-	  >
-    <ai_ship_group_membership name="ShadowyGuardians" weight="100"/>
-    <system name="WG" display_name="引力炮"
-	    category="Weapon" firing_timing="OnlyInRange"
-	    damage_per_shot="60" range="Small1" shot_speed="Normal" rate_of_fire="Misery"
-	    shot_type_data="ElegantCurl"
-            base_engine_stun_per_shot="5" 
-            engine_stun_to_engine_gx_less_than="22"
-	    max_engine_stun_seconds="5" added_target_evaluator="EngineDamageAsMinorPart"
-	    >
-      <outgoing_damage_modifier based_on="engine_gx" comparison_type="AtMost" compared_to="7" multiplier="3" />		
-    </system>
-  </entity>
-
-  <entity name="UmbralGuardian"
-          thematic_groups="AI,Guardian"
-	  special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
-	  visuals="Assets/_DLC2/AI/PolarizerGuardian/PolarizerGuardian.prefab" visuals_bundle="exp2_zenith_onslaught"
-          material_override_path="Assets/_FinalGameMeshes/Nanocaust/Aberration/Aberration.prefab"
-	  icon_name="Ships1/Guardian" icon_overlay="Overlays1/Planet_DarkZenith"
-	  uses_large_health_bar="true"
-	  category="Ship"
-	  size_scale="3.6"
-	  visuals_scale_multiplier="4"
-	  y_offset_of_icon="10"
-	  collision_priority="100"
-	  display_name="暗影守卫"
-          display_name_for_sidebar="暗影守卫"
-	  description="这个单位依靠弱隐形装置来获取位置释放强力范围闪电爆炸。"
-	  starting_mark_level="Mark1"
-	  cost_for_ai_to_purchase="600"
-          hull_points="23000" shield_points="17000" speed="AboveAverage3"
-	  metal_cost="80000" energy_consumption="25000"
-	  armor_mm="90" albedo="0.7" engine_gx="20" mass_tx="7"
-	  ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
-	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
-	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
-	  voice_group="Silent"
-	  speed_multiplier_first_5_seconds_on_planet="6"
-          priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
-	  >
-    <ai_ship_group_membership name="ShadowyGuardians" weight="100"/>
-    <system name="C" display_name="隐形装置"
-	    category="Passive"
-	    cloaking_points="100"
-	    >
-    </system>
-    <system name="Q1" display_name="特斯拉线圈"
-	    category="Weapon" firing_timing="OnlyInRange"
-	    damage_per_shot="1820" range="Tiny3" shot_speed="Normal" rate_of_fire="PeriodicActivation" fires_salvos_sequentially="false"
-	    shot_type_data="LightningGuardianExplosionAOEShot"
-	    area_of_effect_size="5200"				
-	    shots_detonate_immediately="true"
-	    maximum_number_of_targets_hit_per_shot="40"
-            cloaking_percent_loss_from_firing="0.5"
-	    >
-      <outgoing_damage_modifier based_on="Albedo" comparison_type="AtLeast" compared_to="0.7" multiplier="6" />	
-    </system>
-  </entity>
-
-  <entity name="UmbralBrand"
-          thematic_groups="AI,Guardian"
-	  special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
-	  visuals="Assets/_DLC2/AI/PolarizerGuardian/PolarizerGuardian.prefab" visuals_bundle="exp2_zenith_onslaught"
-          material_override_path="Assets/_FinalGameMeshes/Nanocaust/Aberration/Aberration.prefab"
-	  icon_name="Ships4/SomethingMine" icon_overlay="Overlays1/Starship_PhantasmalHost"
-	  uses_large_health_bar="true"
-	  category="Ship"
-	  size_scale="3.6"
-	  visuals_scale_multiplier="4"
-	  y_offset_of_icon="10"
-	  collision_priority="100"
-	  display_name="暗影烙印"
-          display_name_for_sidebar="暗影烙印"
-	  description="这艘舰船依靠报复射击进行防御，并使用鱼雷系统在高射程下造成更高伤害来进攻。"
-	  starting_mark_level="Mark1"
-	  cost_for_ai_to_purchase="800"
-          hull_points="53000" shield_points="17000" speed="AboveAverage3"
-	  metal_cost="80000" energy_consumption="25000"
-	  armor_mm="90" albedo="0.7" engine_gx="20" mass_tx="7"
-	  ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
-	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
-	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
-	  voice_group="Silent"
-	  speed_multiplier_first_5_seconds_on_planet="6"
-          priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
-	  >
-    <ai_ship_group_membership name="ShadowyGuardians" weight="100"/>
-    	<system name="WT" display_name="暴风雨鱼雷"
-		category="Weapon" firing_timing="OnlyInRange"
-		damage_per_shot="900" range="High2" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"
-		shot_type_data="EngineDisruptingShell"	 shots_per_salvo="8" added_shots_per_salvo_per_mark="2"
-		use_alternate_rate_of_fire_after_x_shots="5" alternate_rate_of_fire="Sloth"  use_alternate_rate_of_fire_for_x_shots_before_reverting="1"
-		>
-	  <outgoing_damage_modifier based_on="AttackDistance" comparison_type="MultiplesOf" compared_to="2000" multiplier="1" />
-	</system>
-        <system name="W2" display_name="报应反击"
-		category="Weapon" firing_timing="WhenParentEntityHit" range="Normal3"
-		returns_this_percentage_of_damage_when_firing_retalitatory_shot="1" shot_speed="Normal" fires_salvos_sequentially="false"
-		damage_per_shot="100" rate_of_fire="Normal"
-		shot_type_data="LaserPulse_RedLevel2">
-	</system>
-  </entity>
-
-
-
-  <!-- Dire Guardians -->
-  <entity name="Wisteron"
-          thematic_groups="AI,DireGuardian"
-          special_entity_type="AIDireGuardian" gimbal_icon_size_multiplier="1.5"
-          material_override_path="Assets/_FinalGameMeshes/Nanocaust/Aberration/Aberration.prefab"
-	  uses_large_health_bar="true"
-	  visuals="Assets/_FinalGameMeshes/Guardians/SpiderAndParalysisGuardian/SpiderGuardian.prefab"
-	  icon_name="Ships4/SomethingMoving" icon_overlay="Overlays2/Guardian_Spider"
-	  category="Ship"
-	  size_scale="7.2"
-	  visuals_scale_multiplier="4"
-	  y_offset_of_icon="16"
-	  collision_priority="400"
-	  display_name="维斯特隆"
-	  display_name_for_sidebar="维斯特隆"
-          description="这艘坚韧的蜘蛛舰能减速并麻痹敌人。"
-          seconds_to_fully_regenerate_hull="600"
-	  blocks_enemy_claim_flows="true"
-	  voice_group="Silent"
-	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
-	  cost_for_ai_to_purchase="8000" strength_multiplier="1.5"
-	  hull_points="3000000" shield_points="20000" speed="BelowAverage1"
-	  metal_cost="1000000" energy_consumption="50000"
-	  armor_mm="180" albedo="0.4" engine_gx="20" mass_tx="8"
-	  ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
-	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
-	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
-          priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
-	  >
-    <ai_ship_group_membership name="ShadowyDireGuardians" weight="50"/>
-    <system name="Q4" display_name="蜘蛛炮"
-	    category="Weapon" firing_timing="OnlyInRange"
-	    damage_per_shot="300" range="Normal4" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="false"
-	    shots_per_salvo="30"
-	    base_engine_stun_per_shot="12" added_engine_stun_per_shot_per_mark="3" engine_stun_to_engine_gx_less_than="14"
-            base_paralysis_seconds_per_shot="2" added_paralysis_seconds_per_shot_per_mark="1" paralysis_to_ships_mass_tx_less_than="2"
-	    max_engine_stun_seconds="30" added_target_evaluator="EngineDamageAsMajorPrimary"
-	    shot_type_data="EngineDisruptingShell"
-	    >
-    </system>
-    <incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="4480" multiplier="0.25" />	
-  </entity>
-
-  <entity name="GauntShadow"
-          thematic_groups="AI" 
-	  draw_in_galaxy_view="true"
-	  visuals="assets/_finalgamemeshes/golems/devourergolem/devourergolem.prefab"
-          icon_name="Ships4/SomethingMoving" 
-          icon_overlay="Overlays2/Guardian_Vampire"
-          material_override_path="Assets/_FinalGameMeshes/Nanocaust/Aberration/Aberration.prefab"
-	  uses_large_health_bar="true"
-	  category="Ship"
-	  size_scale="18"
-          visuals_scale_multiplier="0.5"
-	  y_offset_of_icon="150"
-	  collision_priority="810"
-	  display_name="枯瘦暗影"
-	  description="这暗影渴望生命，使用致命的吸血颚。"
-	  behavior="Attacker_Full"
-          blocks_ceasefire_on_planet="true"
-	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
-	  cost_for_ai_to_purchase="140000"
-	  hull_points="2000000" shield_points="200000" speed="VeryVeryLittle2"
-	  armor_mm="400" albedo="1" engine_gx="25" mass_tx="19"
-	  metal_cost="1085000" energy_consumption="0"
-	  ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
-	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
-	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
-          voice_group="Silent"
-          can_pass_through_enemy_forcefields="true"
-          priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
-	  >
-    <ai_ship_group_membership name="ShadowyDireGuardians" weight="50"/>
-    <system name="Q7" display_name="枯瘦巨颚"
-	    category="Weapon" firing_timing="OnlyInRange"
-	    damage_per_shot="3000" range="Normal1" shot_speed="Normal" rate_of_fire="Devourer"
-	    shots_per_salvo="8" fires_salvos_sequentially="false"
-	    shot_type_data="DevourerShot"
-	    area_of_effect_size="200"				
-	    aoe_spreads_damage_among_available_targets="true"
-	    health_change_per_damage_dealt="0.1"
-	    >                
-    </system>
-    <ship_class_data can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.1" can_be_devoured="false"
-	             >
-	</ship_class_data>
-  </entity>
-  <entity name="FrightfulShadow"
-          thematic_groups="AI" 
-	  draw_in_galaxy_view="true"
-	  visuals="assets/_finalgamemeshes/golems/devourergolem/devourergolem.prefab"
-          icon_name="Ships4/SomethingMoving" 
-          icon_overlay="Overlays2/Guardian_Vampire"
-          material_override_path="Assets/_FinalGameMeshes/Nanocaust/Abomination/Abomination.prefab"
-	  uses_large_health_bar="true"
-	  category="Ship"
-	  size_scale="18"
-          visuals_scale_multiplier="0.5"
-	  y_offset_of_icon="150"
-	  collision_priority="810"
-	  display_name="可怖暗影"
-	  description="这暗影通过干扰敌人的武器来恐吓它们。"
-	  behavior="Attacker_Full"
-          blocks_ceasefire_on_planet="true"
-	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
-	  cost_for_ai_to_purchase="140000"
-	  hull_points="4000000" shield_points="200000" speed="VeryVeryLittle2"
-	  armor_mm="400" albedo="1" engine_gx="25" mass_tx="19"
-	  metal_cost="1085000" energy_consumption="0"
-	  ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
-	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
-	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
-          voice_group="Silent"
-          can_pass_through_enemy_forcefields="true"
-          priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
-	  >
-    <ai_ship_group_membership name="ShadowyDireGuardians" weight="50"/>
-    <system name="Q7" display_name="枯瘦巨颚"
-	    category="Weapon" firing_timing="OnlyInRange"
-	    damage_per_shot="3000" range="Normal1" shot_speed="Normal" rate_of_fire="Devourer"
-	    shots_per_salvo="7" fires_salvos_sequentially="false"
-	    shot_type_data="DevourerShot"
-	    area_of_effect_size="200"	
-	    aoe_spreads_damage_among_available_targets="true"
-            base_enemy_weapon_reload_slowing_seconds_per_shot="1"
-	    added_enemy_weapon_reload_slowing_seconds_per_shot_per_mark="1"
-	    enemy_weapon_reload_slowing_to_armor_mm_less_than="85"
-	    max_enemy_weapon_reload_slowing_seconds="15"
-	    >
-    </system>
-    <ship_class_data can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.1" can_be_devoured="false"
-	             >
-	</ship_class_data>
-  </entity>
-
-  <entity name="CorrosiveShadow"
-          thematic_groups="AI" 
-	  draw_in_galaxy_view="true"
-	  visuals="assets/_finalgamemeshes/golems/devourergolem/devourergolem.prefab"
-          icon_name="Ships4/SomethingMoving" 
-          icon_overlay="Overlays1/Warhead_Storm"
-          material_override_path="Assets/_FinalGameMeshes/AIBuildings/AIWarpGate.prefab"
-	  uses_large_health_bar="true"
-	  category="Ship"
-	  size_scale="18"
-          visuals_scale_multiplier="0.5"
-	  y_offset_of_icon="150"
-	  collision_priority="810"
-	  display_name="腐蚀暗影"
-	  description="这暗影用腐蚀武器溶解敌人。"
-	  behavior="Attacker_Full"
-          blocks_ceasefire_on_planet="true"
-	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
-	  cost_for_ai_to_purchase="140000"
-	  hull_points="4000000" shield_points="2000000" speed="VeryVeryLittle2"
-	  armor_mm="400" albedo="1" engine_gx="25" mass_tx="19"
-	  metal_cost="1085000" energy_consumption="0"
-	  ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
-	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
-	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
-          voice_group="Silent"
-          can_pass_through_enemy_forcefields="true"
-          priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
-	  >
-    <ai_ship_group_membership name="ShadowyDireGuardians" weight="50"/>
-    <system name="Q7" display_name="枯瘦巨颚"
-	    category="Weapon" firing_timing="OnlyInRange"
-	    damage_per_shot="3000" range="Normal1" shot_speed="Normal" rate_of_fire="Devourer"
-	    shots_per_salvo="7" fires_salvos_sequentially="false"
-	    shot_type_data="DevourerShot"
-	    area_of_effect_size="200"	
-	    aoe_spreads_damage_among_available_targets="true"
-	    corrosion_damage="100"
-	    corrosion_damage_added_per_mark="125"
-	    >
-    </system>
-    <ship_class_data can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.1" can_be_devoured="false"
-	             >
-	</ship_class_data>
-  </entity>
-
-  <entity name="DespairingShadow"
-          thematic_groups="AI" 
-	  draw_in_galaxy_view="true"
-	  visuals="assets/_finalgamemeshes/golems/devourergolem/devourergolem.prefab"
-          icon_name="Ships4/SomethingMoving" 
-          icon_overlay="Overlays1/Guardian_SpeedBoost"
-          material_override_path="Assets/_FinalGameMeshes/Macrophage/Telium/MacrophageTelium.prefab"
-	  uses_large_health_bar="true"
-	  category="Ship"
-	  size_scale="18"
-          visuals_scale_multiplier="0.5"
-	  y_offset_of_icon="150"
-	  collision_priority="810"
-	  display_name="绝望暗影"
-	  description="这暗影通过将伤害反射回目标将其逼疯。"
-	  behavior="Attacker_Full"
-          blocks_ceasefire_on_planet="true"
-	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
-	  cost_for_ai_to_purchase="140000"
-	  hull_points="4000000" shield_points="200000" speed="VeryVeryLittle2"
-	  armor_mm="400" albedo="1" engine_gx="25" mass_tx="19"
-	  metal_cost="1085000" energy_consumption="0"
-	  ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
-	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
-	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
-          voice_group="Silent"
-          returns_this_percentage_of_damage_if_damaged_by_enemy_attack="0.4"
-          can_pass_through_enemy_forcefields="true"
-          priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
-	  >
-    <ai_ship_group_membership name="ShadowyDireGuardians" weight="50"/>
-    <system name="Q7" display_name="绝望巨颚"
-	    category="Weapon" firing_timing="OnlyInRange"
-	    damage_per_shot="3000" range="Normal1" shot_speed="Normal" rate_of_fire="Devourer"
-	    shots_per_salvo="7" fires_salvos_sequentially="false"
-	    shot_type_data="DevourerShot"
-	    area_of_effect_size="200"	
-	    aoe_spreads_damage_among_available_targets="true"
-	    >
-    </system>
-    <ship_class_data can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.1" can_be_devoured="false"
-	             >
-	</ship_class_data>
-  </entity>
-
-  
-  
-</root>
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+
+  <!-- Defensive Structures -->
+
+  <entity name="ShadowFortress" tags="ShadowenFortress" ship_class_name="Superweapon"
+
+          npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+
+          thematic_groups="AI" 
+
+	  visuals="Assets/_DLC2/Zenith/DZTrelleborg/DZTrelleborg.prefab" visuals_bundle="exp2_zenith_onslaught"
+
+          material_override_path="Assets/_FinalGameMeshes/Nanocaust/Aberration/Aberration.prefab"
+
+	  icon_name="Ships4/SomethingRakes" gimbal_icon_size_multiplier="1.5"
+
+          icon_overlay="Overlays2/BrutalEntrenchingGuardian_Mobile"
+
+	  y_offset_of_icon="35"
+
+	  category="Ship"
+
+	  size_scale="10"
+
+	  visuals_scale_multiplier="25"
+
+          collision_priority="800"
+
+	  display_name="暗影堡垒"
+
+          display_name_for_sidebar="暗影堡垒"
+
+	  description="非常强大的防御建筑，其爆炸能够穿透护盾和装甲。随时间缓慢再生生命值。"
+
+	  behavior="Stationary"
+
+          is_major_ai_structure="true"
+
+          seconds_to_fully_regenerate_hull="600"
+
+	  starting_mark_level="Mark1" max_mark_level="5" tech_upgrades_that_benefit_me="Unused"	
+
+	  cost_for_ai_to_purchase="3000"
+
+	  hull_points="250000" shield_points="750000" speed="Immobile"
+
+	  metal_cost="1500000" energy_consumption="50000"
+
+	  armor_mm="300" albedo="0.7" mass_tx="8"
+
+	  ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+
+	  voice_group="Turret"
+
+	  is_reinforcement_location="true" always_is_ai_turret_spawn_point="true"
+
+	  eligible_for_hacks="Sabotage"
+
+          priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+
+	  >
+
+    <data_extension name="DLC3" required_expansion_list="3_The_Neinzul_Abyss"
+
+                    dark_zenith_sidekick_science_to_grant_on_death="10"
+
+                    spire_sidekick_science_to_grant_on_death="10"
+
+                    necromancer_hacking_to_grant_on_death="4"/>
+
+    <hack_data hack_type="Sabotage" override_cost_in_hacking_points="11" />
+
+    <metal_flow purpose="SelfConstruction" throughput="700"/>
+
+    <system name="R1" display_name="暗影聚变火箭"
+
+                category="Weapon" firing_timing="OnlyInRange"
+
+                damage_per_shot="1500" range="High1" shot_speed="Normal" rate_of_fire="Normal"
+
+                shots_per_salvo="30" fires_salvos_sequentially="false"
+
+                shot_type_data="FusionRocket"
+
+                base_percent_damage_bypasses_personal_shields="1" 
+
+		>
+
+
+
+      <outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="50" multiplier="3" />
+
+    </system>
+
+    <system name="R2" display_name="暗影能量波"
+
+          category="Weapon" firing_timing="OnlyInRange" shots_per_salvo="4"
+
+          damage_per_shot="3750" range="High1" shot_speed="Normal" rate_of_fire="Low" fires_salvos_sequentially="true"
+
+          shot_type_data="EnergyWave"
+
+          base_percent_damage_bypasses_personal_shields="1" 
+
+	  >
+
+      <outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="8" />
+
+    </system>
+
+  </entity>
+
+
+
+    <entity name="UmbralFortress" tags="ShadowenFortress" ship_class_name="Superweapon"
+
+          npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+
+          thematic_groups="AI" 
+
+	  visuals="Assets/_DLC2/Zenith/DZTrelleborg/DZTrelleborg.prefab" visuals_bundle="exp2_zenith_onslaught"
+
+          material_override_path="Assets/_FinalGameMeshes/Nanocaust/Aberration/Aberration.prefab"
+
+	  icon_name="Ships4/SomethingRakes" gimbal_icon_size_multiplier="1.5"
+
+          icon_overlay="Overlays1/Planet_DarkZenith"
+
+	  y_offset_of_icon="35"
+
+	  category="Ship"
+
+	  size_scale="10"
+
+	  visuals_scale_multiplier="25"
+
+          collision_priority="800"
+
+	  display_name="暗影堡垒"
+
+          display_name_for_sidebar="暗影堡垒"
+
+	  description="非常强大的防御建筑，其爆炸伤害随要塞生命值降低而增加。随时间缓慢再生生命值。"
+
+	  behavior="Stationary"
+
+          is_major_ai_structure="true"
+
+          seconds_to_fully_regenerate_hull="600"
+
+	  starting_mark_level="Mark1" max_mark_level="5" tech_upgrades_that_benefit_me="Unused"	
+
+	  cost_for_ai_to_purchase="3000"
+
+	  hull_points="250000" shield_points="1500000" speed="Immobile"
+
+	  metal_cost="1500000" energy_consumption="50000"
+
+	  armor_mm="300" albedo="0.7" mass_tx="8"
+
+	  ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+
+	  voice_group="Turret"
+
+	  is_reinforcement_location="true" always_is_ai_turret_spawn_point="true"
+
+	  eligible_for_hacks="Sabotage"
+
+          priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+
+	  >
+
+      <data_extension name="DLC3" required_expansion_list="3_The_Neinzul_Abyss"
+
+                      dark_zenith_sidekick_science_to_grant_on_death="10"
+
+                      spire_sidekick_science_to_grant_on_death="10"
+
+                      necromancer_hacking_to_grant_on_death="4"/>
+
+    <hack_data hack_type="Sabotage" override_cost_in_hacking_points="11" />
+
+    <metal_flow purpose="SelfConstruction" throughput="700"/>
+
+    <system name="R1" display_name="暗影聚变火箭"
+
+                category="Weapon" firing_timing="OnlyInRange"
+
+                damage_per_shot="3000" range="High1" shot_speed="Normal" rate_of_fire="Normal"
+
+                shots_per_salvo="30" fires_salvos_sequentially="false"
+
+                shot_type_data="FusionRocket"
+
+                base_percent_damage_bypasses_personal_shields="1" 
+
+		>
+
+      <outgoing_damage_modifier based_on="MyHullPercentageMissing" comparison_type="MultiplesOf" compared_to="20" multiplier="1" />
+
+    </system>
+
+    <system name="R2" display_name="暗影能量波"
+
+          category="Weapon" firing_timing="OnlyInRange" shots_per_salvo="4"
+
+          damage_per_shot="3750" range="High1" shot_speed="Normal" rate_of_fire="Low" fires_salvos_sequentially="true"
+
+          shot_type_data="EnergyWave"
+
+          base_percent_damage_bypasses_personal_shields="1" 
+
+	  >
+
+      <outgoing_damage_modifier based_on="MyHullPercentageMissing" comparison_type="MultiplesOf" compared_to="20" multiplier="1" />
+
+    </system>
+
+  </entity>
+
+
+
+  <!-- Guardians -->
+
+  <entity name="TibArne"
+
+          thematic_groups="AI,Guardian"
+
+	  special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+
+	  visuals="Assets/_FinalGameMeshes/Macrophage/Harvester/MacrophageHarvester.prefab"
+
+          icon_name="Ships4/SomethingMine"
+
+          icon_overlay="Overlays2/HunterKiller_Rank2"
+
+          material_override_path="Assets/_FinalGameMeshes/Nanocaust/Aberration/Aberration.prefab"
+
+	  uses_large_health_bar="true"
+
+	  category="Ship"
+
+	  size_scale="4"
+
+	  visuals_scale_multiplier="2"
+
+	  y_offset_of_icon="10"
+
+	  collision_priority="100"
+
+	  display_name="提布·阿尔内"
+
+	  description="这个坚韧的单位对低辐射护盾的敌人有效。"
+
+	  starting_mark_level="Mark1"
+
+	  cost_for_ai_to_purchase="600"
+
+          hull_points="33000" shield_points="17000" speed="AboveAverage1"
+
+	  metal_cost="2000000" energy_consumption="25000"
+
+	  armor_mm="90" albedo="0.7" engine_gx="20" mass_tx="7"
+
+	  ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+
+	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+
+	  voice_group="Silent"
+
+	  speed_multiplier_first_5_seconds_on_planet="2"
+
+          priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+
+	  >
+
+    <ai_ship_group_membership name="ShadowyGuardians" weight="100"/>
+
+    <incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="2500" multiplier="0.20" />
+
+    <system name="W1" display_name="破骨碎片"
+
+	    category="Weapon" firing_timing="OnlyInRange"
+
+	    damage_per_shot="700" range="Normal3" shot_speed="Slow" rate_of_fire="Misery"
+
+	    shots_per_salvo="16" fires_salvos_sequentially="false"
+
+	    shot_type_data="PlasmaTorpedoAOEBurstAtEnd"
+
+	    area_of_effect_size="99"
+
+	    aoe_spreads_damage_among_available_targets="true"
+
+	    health_change_per_damage_dealt="0.5"
+
+	    >
+
+      <outgoing_damage_modifier based_on="Albedo" comparison_type="AtMost" compared_to="0.3" multiplier="8" />
+
+    </system>
+
+    <system name="R2" display_name="破骨能量波"
+
+	    category="Weapon" firing_timing="OnlyInRange"
+
+	    damage_per_shot="700" range="Normal3" shot_speed="VeryFast" rate_of_fire="Misery"
+
+	    shots_per_salvo="10" fires_salvos_sequentially="false"
+
+	    shot_type_data="EnergyWave"		
+
+	    health_change_per_damage_dealt="0.5"		
+
+	    >
+
+    </system>
+
+    <incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="4480" multiplier="0.25" />	
+
+    <ship_class_data can_be_zombified_and_similar="false" />
+
+  </entity>
+
+
+
+  <entity name="Gloom"
+
+          thematic_groups="AI,Guardian"
+
+	  special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+
+	  visuals="assets/_finalgamemeshes/golems/zenithtrader/zenithtrader.prefab"
+
+          icon_name="Ships4/SomethingMine"
+
+          icon_overlay="Overlays2/Guardian_Grenade"
+
+          material_override_path="Assets/_FinalGameMeshes/Nanocaust/Aberration/Aberration.prefab"
+
+	  uses_large_health_bar="true"
+
+	  category="Ship"
+
+	  size_scale="4"
+
+	  visuals_scale_multiplier="2"
+
+	  y_offset_of_icon="10"
+
+	  collision_priority="100"
+
+	  display_name="阴郁"
+
+	  description="这个坚韧的单位对薄装甲目标有效。"
+
+	  starting_mark_level="Mark1"
+
+	  cost_for_ai_to_purchase="600"
+
+          hull_points="33000" shield_points="17000" speed="AboveAverage1"
+
+	  metal_cost="2000000" energy_consumption="25000"
+
+	  armor_mm="90" albedo="0.7" engine_gx="20" mass_tx="7"
+
+	  ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+
+	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+
+	  voice_group="Silent"
+
+	  speed_multiplier_first_5_seconds_on_planet="2"
+
+          priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+
+	  >
+
+    <ai_ship_group_membership name="ShadowyGuardians" weight="100"/>
+
+    <system name="WJ" display_name="榴弹"
+
+				category="Weapon" firing_timing="OnlyInRange"
+
+				damage_per_shot="660" range="Small4" shot_speed="Normal" rate_of_fire="VeryLow" 
+
+				shots_per_salvo="3" fires_salvos_sequentially="true"
+
+				shot_type_data="FlakShotAOEBurstAtEnd"
+
+				area_of_effect_size="350"
+
+				maximum_number_of_targets_hit_per_shot="9"
+
+				>
+
+				<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="30" multiplier="6" />
+
+    </system>
+
+    <incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="4480" multiplier="0.25" />	
+
+  </entity>
+
+
+
+
+
+  <entity name="Jachyra"
+
+          thematic_groups="AI,Guardian"
+
+	  special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+
+          icon_name="Ships4/SomethingMine"
+
+          visuals="assets/_finalgamemeshes/guardians/lightningguardian/lightningguardian.prefab"
+
+          icon_overlay="Overlays2/Guardian_Tesla"
+
+          material_override_path="Assets/_FinalGameMeshes/Nanocaust/Aberration/Aberration.prefab"
+
+	  uses_large_health_bar="true"
+
+	  category="Ship"
+
+	  size_scale="3.6"
+
+	  visuals_scale_multiplier="4"
+
+	  y_offset_of_icon="10"
+
+	  collision_priority="100"
+
+	  display_name="贾奇拉"
+
+	  description="这是一个非常强韧的单位，具有反射伤害。很难伤害它。"
+
+	  starting_mark_level="Mark1"
+
+	  cost_for_ai_to_purchase="600"
+
+          hull_points="33000" shield_points="17000" speed="AboveAverage1"
+
+	  metal_cost="80000" energy_consumption="25000"
+
+	  armor_mm="90" albedo="0.7" engine_gx="20" mass_tx="7"
+
+	  ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+
+	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+
+	  voice_group="Silent"
+
+	  speed_multiplier_first_5_seconds_on_planet="2"
+
+          priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+
+          returns_this_percentage_of_damage_if_damaged_by_enemy_attack="0.4"
+
+	  >
+
+    <incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="2500" multiplier="0.20" />
+
+      <ai_ship_group_membership name="ShadowyGuardians" weight="100"/>
+
+    <system name="Q1" display_name="特斯拉线圈"
+
+	    category="Weapon" firing_timing="OnlyInRange"
+
+	    damage_per_shot="920" range="Tiny3" shot_speed="Normal" rate_of_fire="PeriodicActivation" fires_salvos_sequentially="false"
+
+	    shot_type_data="LightningGuardianExplosionAOEShot"
+
+	    area_of_effect_size="3200"				
+
+	    shots_detonate_immediately="true"
+
+	    maximum_number_of_targets_hit_per_shot="40"
+
+	    >
+
+      <outgoing_damage_modifier based_on="Albedo" comparison_type="AtLeast" compared_to="0.7" multiplier="6" />
+
+      <outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtLeast" compared_to="90" multiplier="6" />
+
+    </system>
+
+  </entity>
+
+
+
+  <entity name="NightWalker"
+
+          thematic_groups="AI,Guardian"
+
+	  special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+
+	  visuals="assets/_finalgamemeshes/guardians/stealthguardian/stealthguardian.prefab"
+
+          icon_name="Ships4/SomethingMine"
+
+          icon_overlay="Overlays2/Guardian_Stealth"
+
+          material_override_path="Assets/_FinalGameMeshes/Nanocaust/Aberration/Aberration.prefab"
+
+	  uses_large_health_bar="true"
+
+	  category="Ship"
+
+	  size_scale="3.6"
+
+	  visuals_scale_multiplier="4"
+
+	  y_offset_of_icon="10"
+
+	  collision_priority="100"
+
+	  display_name="夜行者"
+
+	  description="这个隐形单位潜伏在星系边缘，使用狙击武器。"
+
+	  starting_mark_level="Mark1"
+
+	  cost_for_ai_to_purchase="600"
+
+          hull_points="53000" shield_points="17000" speed="AboveAverage1"
+
+	  metal_cost="80000" energy_consumption="25000"
+
+	  armor_mm="90" albedo="0.7" engine_gx="20" mass_tx="7"
+
+	  ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+
+	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+
+	  voice_group="Silent"
+
+	  speed_multiplier_first_5_seconds_on_planet="2"
+
+          priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+
+	  >
+
+      <ai_ship_group_membership name="ShadowyGuardians" weight="100"/>
+
+      <system name="C" display_name="隐形装置"
+
+	      category="Passive"
+
+	      cloaking_points="8000"
+
+	      >
+
+      </system>
+
+        <system name="Q9" display_name="氚轨道炮"
+
+		category="Weapon" firing_timing="OnlyInRange"
+
+		damage_per_shot="360" range="EssentiallyInfinite" shot_speed="VeryFast" rate_of_fire="Misery" fires_salvos_sequentially="true"
+
+		shot_type_data="ExtremeLongRangeRailgun"
+
+                cloaking_percent_loss_from_firing="0.1"
+
+		>
+
+	  <outgoing_damage_modifier based_on="Albedo" comparison_type="AtMost" compared_to="0.3" multiplier="8" />
+
+	</system>
+
+	<system name="V3" display_name="刺针弹"
+
+		category="Weapon" firing_timing="OnlyInRange"
+
+		damage_per_shot="400" range="AboveAverage2" shot_speed="Normal" rate_of_fire="VeryLow" fires_salvos_sequentially="true"
+
+		shot_type_data="StingerBolt"
+
+                cloaking_percent_loss_from_firing="0.1"
+
+		>
+
+	  <outgoing_damage_modifier applies_to="AllShields" based_on="MaxBubbleForcefield" comparison_type="GreaterThan" compared_to="10000" multiplier="4" />
+
+	</system>
+
+
+
+      </entity>
+
+  <entity name="Creeper"
+
+          thematic_groups="AI,Guardian"
+
+	  special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+
+          visuals="assets/_dlc2/zenith/dzmetalharvester/dzmetalharvester.prefab" visuals_bundle="exp2_zenith_onslaught"
+
+          material_override_path="Assets/_FinalGameMeshes/Nanocaust/Aberration/Aberration.prefab"
+
+          icon_name="Ships4/SomethingMine"
+
+          icon_overlay="Overlays1/Planet_DarkZenith"
+
+	  uses_large_health_bar="true"
+
+	  category="Ship"
+
+	  size_scale="3.6"
+
+	  visuals_scale_multiplier="4"
+
+	  y_offset_of_icon="10"
+
+	  collision_priority="100"
+
+	  display_name="爬行者"
+
+	  description="这个强大的单位依靠引擎眩晕和速度来骚扰敌人。"
+
+	  starting_mark_level="Mark1"
+
+	  cost_for_ai_to_purchase="600"
+
+          hull_points="33000" shield_points="17000" speed="AboveAverage3"
+
+	  metal_cost="80000" energy_consumption="25000"
+
+	  armor_mm="90" albedo="0.7" engine_gx="20" mass_tx="7"
+
+	  ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+
+	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+
+	  voice_group="Silent"
+
+	  speed_multiplier_first_5_seconds_on_planet="6"
+
+          priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+
+	  >
+
+    <ai_ship_group_membership name="ShadowyGuardians" weight="100"/>
+
+    <system name="WG" display_name="引力炮"
+
+	    category="Weapon" firing_timing="OnlyInRange"
+
+	    damage_per_shot="60" range="Small1" shot_speed="Normal" rate_of_fire="Misery"
+
+	    shot_type_data="ElegantCurl"
+
+            base_engine_stun_per_shot="5" 
+
+            engine_stun_to_engine_gx_less_than="22"
+
+	    max_engine_stun_seconds="5" added_target_evaluator="EngineDamageAsMinorPart"
+
+	    >
+
+      <outgoing_damage_modifier based_on="engine_gx" comparison_type="AtMost" compared_to="7" multiplier="3" />		
+
+    </system>
+
+  </entity>
+
+
+
+  <entity name="UmbralGuardian"
+
+          thematic_groups="AI,Guardian"
+
+	  special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+
+	  visuals="Assets/_DLC2/AI/PolarizerGuardian/PolarizerGuardian.prefab" visuals_bundle="exp2_zenith_onslaught"
+
+          material_override_path="Assets/_FinalGameMeshes/Nanocaust/Aberration/Aberration.prefab"
+
+	  icon_name="Ships1/Guardian" icon_overlay="Overlays1/Planet_DarkZenith"
+
+	  uses_large_health_bar="true"
+
+	  category="Ship"
+
+	  size_scale="3.6"
+
+	  visuals_scale_multiplier="4"
+
+	  y_offset_of_icon="10"
+
+	  collision_priority="100"
+
+	  display_name="暗影守卫"
+
+          display_name_for_sidebar="暗影守卫"
+
+	  description="这个单位依靠弱隐形装置来获取位置释放强力范围闪电爆炸。"
+
+	  starting_mark_level="Mark1"
+
+	  cost_for_ai_to_purchase="600"
+
+          hull_points="23000" shield_points="17000" speed="AboveAverage3"
+
+	  metal_cost="80000" energy_consumption="25000"
+
+	  armor_mm="90" albedo="0.7" engine_gx="20" mass_tx="7"
+
+	  ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+
+	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+
+	  voice_group="Silent"
+
+	  speed_multiplier_first_5_seconds_on_planet="6"
+
+          priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+
+	  >
+
+    <ai_ship_group_membership name="ShadowyGuardians" weight="100"/>
+
+    <system name="C" display_name="隐形装置"
+
+	    category="Passive"
+
+	    cloaking_points="100"
+
+	    >
+
+    </system>
+
+    <system name="Q1" display_name="特斯拉线圈"
+
+	    category="Weapon" firing_timing="OnlyInRange"
+
+	    damage_per_shot="1820" range="Tiny3" shot_speed="Normal" rate_of_fire="PeriodicActivation" fires_salvos_sequentially="false"
+
+	    shot_type_data="LightningGuardianExplosionAOEShot"
+
+	    area_of_effect_size="5200"				
+
+	    shots_detonate_immediately="true"
+
+	    maximum_number_of_targets_hit_per_shot="40"
+
+            cloaking_percent_loss_from_firing="0.5"
+
+	    >
+
+      <outgoing_damage_modifier based_on="Albedo" comparison_type="AtLeast" compared_to="0.7" multiplier="6" />	
+
+    </system>
+
+  </entity>
+
+
+
+  <entity name="UmbralBrand"
+
+          thematic_groups="AI,Guardian"
+
+	  special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+
+	  visuals="Assets/_DLC2/AI/PolarizerGuardian/PolarizerGuardian.prefab" visuals_bundle="exp2_zenith_onslaught"
+
+          material_override_path="Assets/_FinalGameMeshes/Nanocaust/Aberration/Aberration.prefab"
+
+	  icon_name="Ships4/SomethingMine" icon_overlay="Overlays1/Starship_PhantasmalHost"
+
+	  uses_large_health_bar="true"
+
+	  category="Ship"
+
+	  size_scale="3.6"
+
+	  visuals_scale_multiplier="4"
+
+	  y_offset_of_icon="10"
+
+	  collision_priority="100"
+
+	  display_name="暗影烙印"
+
+          display_name_for_sidebar="暗影烙印"
+
+	  description="这艘舰船依靠报复射击进行防御，并使用鱼雷系统在高射程下造成更高伤害来进攻。"
+
+	  starting_mark_level="Mark1"
+
+	  cost_for_ai_to_purchase="800"
+
+          hull_points="53000" shield_points="17000" speed="AboveAverage3"
+
+	  metal_cost="80000" energy_consumption="25000"
+
+	  armor_mm="90" albedo="0.7" engine_gx="20" mass_tx="7"
+
+	  ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+
+	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+
+	  voice_group="Silent"
+
+	  speed_multiplier_first_5_seconds_on_planet="6"
+
+          priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+
+	  >
+
+    <ai_ship_group_membership name="ShadowyGuardians" weight="100"/>
+
+    	<system name="WT" display_name="暴风雨鱼雷"
+
+		category="Weapon" firing_timing="OnlyInRange"
+
+		damage_per_shot="900" range="High2" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+
+		shot_type_data="EngineDisruptingShell"	 shots_per_salvo="8" added_shots_per_salvo_per_mark="2"
+
+		use_alternate_rate_of_fire_after_x_shots="5" alternate_rate_of_fire="Sloth"  use_alternate_rate_of_fire_for_x_shots_before_reverting="1"
+
+		>
+
+	  <outgoing_damage_modifier based_on="AttackDistance" comparison_type="MultiplesOf" compared_to="2000" multiplier="1" />
+
+	</system>
+
+        <system name="W2" display_name="报应反击"
+
+		category="Weapon" firing_timing="WhenParentEntityHit" range="Normal3"
+
+		returns_this_percentage_of_damage_when_firing_retalitatory_shot="1" shot_speed="Normal" fires_salvos_sequentially="false"
+
+		damage_per_shot="100" rate_of_fire="Normal"
+
+		shot_type_data="LaserPulse_RedLevel2">
+
+	</system>
+
+  </entity>
+
+
+
+
+
+
+
+  <!-- Dire Guardians -->
+
+  <entity name="Wisteron"
+
+          thematic_groups="AI,DireGuardian"
+
+          special_entity_type="AIDireGuardian" gimbal_icon_size_multiplier="1.5"
+
+          material_override_path="Assets/_FinalGameMeshes/Nanocaust/Aberration/Aberration.prefab"
+
+	  uses_large_health_bar="true"
+
+	  visuals="Assets/_FinalGameMeshes/Guardians/SpiderAndParalysisGuardian/SpiderGuardian.prefab"
+
+	  icon_name="Ships4/SomethingMoving" icon_overlay="Overlays2/Guardian_Spider"
+
+	  category="Ship"
+
+	  size_scale="7.2"
+
+	  visuals_scale_multiplier="4"
+
+	  y_offset_of_icon="16"
+
+	  collision_priority="400"
+
+	  display_name="维斯特隆"
+
+	  display_name_for_sidebar="维斯特隆"
+
+          description="这艘坚韧的蜘蛛舰能减速并麻痹敌人。"
+
+          seconds_to_fully_regenerate_hull="600"
+
+	  blocks_enemy_claim_flows="true"
+
+	  voice_group="Silent"
+
+	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+
+	  cost_for_ai_to_purchase="8000" strength_multiplier="1.5"
+
+	  hull_points="3000000" shield_points="20000" speed="BelowAverage1"
+
+	  metal_cost="1000000" energy_consumption="50000"
+
+	  armor_mm="180" albedo="0.4" engine_gx="20" mass_tx="8"
+
+	  ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+
+	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+
+          priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+
+	  >
+
+    <ai_ship_group_membership name="ShadowyDireGuardians" weight="50"/>
+
+    <system name="Q4" display_name="蜘蛛炮"
+
+	    category="Weapon" firing_timing="OnlyInRange"
+
+	    damage_per_shot="300" range="Normal4" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="false"
+
+	    shots_per_salvo="30"
+
+	    base_engine_stun_per_shot="12" added_engine_stun_per_shot_per_mark="3" engine_stun_to_engine_gx_less_than="14"
+
+            base_paralysis_seconds_per_shot="2" added_paralysis_seconds_per_shot_per_mark="1" paralysis_to_ships_mass_tx_less_than="2"
+
+	    max_engine_stun_seconds="30" added_target_evaluator="EngineDamageAsMajorPrimary"
+
+	    shot_type_data="EngineDisruptingShell"
+
+	    >
+
+    </system>
+
+    <incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="4480" multiplier="0.25" />	
+
+  </entity>
+
+
+
+  <entity name="GauntShadow"
+
+          thematic_groups="AI" 
+
+	  draw_in_galaxy_view="true"
+
+	  visuals="assets/_finalgamemeshes/golems/devourergolem/devourergolem.prefab"
+
+          icon_name="Ships4/SomethingMoving" 
+
+          icon_overlay="Overlays2/Guardian_Vampire"
+
+          material_override_path="Assets/_FinalGameMeshes/Nanocaust/Aberration/Aberration.prefab"
+
+	  uses_large_health_bar="true"
+
+	  category="Ship"
+
+	  size_scale="18"
+
+          visuals_scale_multiplier="0.5"
+
+	  y_offset_of_icon="150"
+
+	  collision_priority="810"
+
+	  display_name="枯瘦暗影"
+
+	  description="这暗影渴望生命，使用致命的吸血颚。"
+
+	  behavior="Attacker_Full"
+
+          blocks_ceasefire_on_planet="true"
+
+	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+
+	  cost_for_ai_to_purchase="140000"
+
+	  hull_points="2000000" shield_points="200000" speed="VeryVeryLittle2"
+
+	  armor_mm="400" albedo="1" engine_gx="25" mass_tx="19"
+
+	  metal_cost="1085000" energy_consumption="0"
+
+	  ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+
+	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+
+          voice_group="Silent"
+
+          can_pass_through_enemy_forcefields="true"
+
+          priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+
+	  >
+
+    <ai_ship_group_membership name="ShadowyDireGuardians" weight="50"/>
+
+    <system name="Q7" display_name="枯瘦巨颚"
+
+	    category="Weapon" firing_timing="OnlyInRange"
+
+	    damage_per_shot="3000" range="Normal1" shot_speed="Normal" rate_of_fire="Devourer"
+
+	    shots_per_salvo="8" fires_salvos_sequentially="false"
+
+	    shot_type_data="DevourerShot"
+
+	    area_of_effect_size="200"				
+
+	    aoe_spreads_damage_among_available_targets="true"
+
+	    health_change_per_damage_dealt="0.1"
+
+	    >                
+
+    </system>
+
+    <ship_class_data can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.1" can_be_devoured="false"
+
+	             >
+
+	</ship_class_data>
+
+  </entity>
+
+  <entity name="FrightfulShadow"
+
+          thematic_groups="AI" 
+
+	  draw_in_galaxy_view="true"
+
+	  visuals="assets/_finalgamemeshes/golems/devourergolem/devourergolem.prefab"
+
+          icon_name="Ships4/SomethingMoving" 
+
+          icon_overlay="Overlays2/Guardian_Vampire"
+
+          material_override_path="Assets/_FinalGameMeshes/Nanocaust/Abomination/Abomination.prefab"
+
+	  uses_large_health_bar="true"
+
+	  category="Ship"
+
+	  size_scale="18"
+
+          visuals_scale_multiplier="0.5"
+
+	  y_offset_of_icon="150"
+
+	  collision_priority="810"
+
+	  display_name="可怖暗影"
+
+	  description="这暗影通过干扰敌人的武器来恐吓它们。"
+
+	  behavior="Attacker_Full"
+
+          blocks_ceasefire_on_planet="true"
+
+	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+
+	  cost_for_ai_to_purchase="140000"
+
+	  hull_points="4000000" shield_points="200000" speed="VeryVeryLittle2"
+
+	  armor_mm="400" albedo="1" engine_gx="25" mass_tx="19"
+
+	  metal_cost="1085000" energy_consumption="0"
+
+	  ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+
+	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+
+          voice_group="Silent"
+
+          can_pass_through_enemy_forcefields="true"
+
+          priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+
+	  >
+
+    <ai_ship_group_membership name="ShadowyDireGuardians" weight="50"/>
+
+    <system name="Q7" display_name="枯瘦巨颚"
+
+	    category="Weapon" firing_timing="OnlyInRange"
+
+	    damage_per_shot="3000" range="Normal1" shot_speed="Normal" rate_of_fire="Devourer"
+
+	    shots_per_salvo="7" fires_salvos_sequentially="false"
+
+	    shot_type_data="DevourerShot"
+
+	    area_of_effect_size="200"	
+
+	    aoe_spreads_damage_among_available_targets="true"
+
+            base_enemy_weapon_reload_slowing_seconds_per_shot="1"
+
+	    added_enemy_weapon_reload_slowing_seconds_per_shot_per_mark="1"
+
+	    enemy_weapon_reload_slowing_to_armor_mm_less_than="85"
+
+	    max_enemy_weapon_reload_slowing_seconds="15"
+
+	    >
+
+    </system>
+
+    <ship_class_data can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.1" can_be_devoured="false"
+
+	             >
+
+	</ship_class_data>
+
+  </entity>
+
+
+
+  <entity name="CorrosiveShadow"
+
+          thematic_groups="AI" 
+
+	  draw_in_galaxy_view="true"
+
+	  visuals="assets/_finalgamemeshes/golems/devourergolem/devourergolem.prefab"
+
+          icon_name="Ships4/SomethingMoving" 
+
+          icon_overlay="Overlays1/Warhead_Storm"
+
+          material_override_path="Assets/_FinalGameMeshes/AIBuildings/AIWarpGate.prefab"
+
+	  uses_large_health_bar="true"
+
+	  category="Ship"
+
+	  size_scale="18"
+
+          visuals_scale_multiplier="0.5"
+
+	  y_offset_of_icon="150"
+
+	  collision_priority="810"
+
+	  display_name="腐蚀暗影"
+
+	  description="这暗影用腐蚀武器溶解敌人。"
+
+	  behavior="Attacker_Full"
+
+          blocks_ceasefire_on_planet="true"
+
+	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+
+	  cost_for_ai_to_purchase="140000"
+
+	  hull_points="4000000" shield_points="2000000" speed="VeryVeryLittle2"
+
+	  armor_mm="400" albedo="1" engine_gx="25" mass_tx="19"
+
+	  metal_cost="1085000" energy_consumption="0"
+
+	  ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+
+	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+
+          voice_group="Silent"
+
+          can_pass_through_enemy_forcefields="true"
+
+          priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+
+	  >
+
+    <ai_ship_group_membership name="ShadowyDireGuardians" weight="50"/>
+
+    <system name="Q7" display_name="枯瘦巨颚"
+
+	    category="Weapon" firing_timing="OnlyInRange"
+
+	    damage_per_shot="3000" range="Normal1" shot_speed="Normal" rate_of_fire="Devourer"
+
+	    shots_per_salvo="7" fires_salvos_sequentially="false"
+
+	    shot_type_data="DevourerShot"
+
+	    area_of_effect_size="200"	
+
+	    aoe_spreads_damage_among_available_targets="true"
+
+	    corrosion_damage="100"
+
+	    corrosion_damage_added_per_mark="125"
+
+	    >
+
+    </system>
+
+    <ship_class_data can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.1" can_be_devoured="false"
+
+	             >
+
+	</ship_class_data>
+
+  </entity>
+
+
+
+  <entity name="DespairingShadow"
+
+          thematic_groups="AI" 
+
+	  draw_in_galaxy_view="true"
+
+	  visuals="assets/_finalgamemeshes/golems/devourergolem/devourergolem.prefab"
+
+          icon_name="Ships4/SomethingMoving" 
+
+          icon_overlay="Overlays1/Guardian_SpeedBoost"
+
+          material_override_path="Assets/_FinalGameMeshes/Macrophage/Telium/MacrophageTelium.prefab"
+
+	  uses_large_health_bar="true"
+
+	  category="Ship"
+
+	  size_scale="18"
+
+          visuals_scale_multiplier="0.5"
+
+	  y_offset_of_icon="150"
+
+	  collision_priority="810"
+
+	  display_name="绝望暗影"
+
+	  description="这暗影通过将伤害反射回目标将其逼疯。"
+
+	  behavior="Attacker_Full"
+
+          blocks_ceasefire_on_planet="true"
+
+	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+
+	  cost_for_ai_to_purchase="140000"
+
+	  hull_points="4000000" shield_points="200000" speed="VeryVeryLittle2"
+
+	  armor_mm="400" albedo="1" engine_gx="25" mass_tx="19"
+
+	  metal_cost="1085000" energy_consumption="0"
+
+	  ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+
+	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+
+          voice_group="Silent"
+
+          returns_this_percentage_of_damage_if_damaged_by_enemy_attack="0.4"
+
+          can_pass_through_enemy_forcefields="true"
+
+          priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+
+	  >
+
+    <ai_ship_group_membership name="ShadowyDireGuardians" weight="50"/>
+
+    <system name="Q7" display_name="绝望巨颚"
+
+	    category="Weapon" firing_timing="OnlyInRange"
+
+	    damage_per_shot="3000" range="Normal1" shot_speed="Normal" rate_of_fire="Devourer"
+
+	    shots_per_salvo="7" fires_salvos_sequentially="false"
+
+	    shot_type_data="DevourerShot"
+
+	    area_of_effect_size="200"	
+
+	    aoe_spreads_damage_among_available_targets="true"
+
+	    >
+
+    </system>
+
+    <ship_class_data can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.1" can_be_devoured="false"
+
+	             >
+
+	</ship_class_data>
+
+  </entity>
+
+
+
+  
+
+  
+
+</root>
+

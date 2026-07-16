@@ -1,0 +1,28 @@
+<color=#ffc000>Radiant</color> Maps，由 <color=#ffc000>Radiant Phoenix</color> 制作
+
+
+新地图类型！
+
+* 方形分形（Square Fractal）：以分形模式连接的网格。应在选项多样与咽喉要道之间取得良好平衡。
+
+* 砖墙（Brick Wall）：一道砖墙或蜂巢，随你喜好。应在选项多样与咽喉要道之间取得良好平衡。
+
+* 十字路口（Crossroads）：就像 X，但更好！
+
+* 螺旋（Spiral）：当你想在路上洒点牛奶时。
+
+* 螺旋 2（Spiral2）：现在拥有更多牛奶特征！
+
+* 地球仪（Globe）：拓扑结构像一个球体：中心与边缘是两极。这可能连接得过于紧密。
+
+* 旧印（Elder Sign）：不对称的树状形态，拟棱柱（trapezohedrons）像枝条一样悬挂其上。
+
+* 镜像宇宙（Mirror Universe）：两个网格，重叠但不相交。去寻找世界之间的门户吧！
+
+* 切割者（Flenser）：一个五边形，如果你在它之外，就会把 AI 置于中心。基本是理论上的。无配置。
+
+* 你好世界（Hello World）：你好世界！一个供 Mod 作者把玩的练习地图。
+
+* 诅咒（Cursed）：由随机虫洞组成的迷宫。这东西<color=#ff0000>旨在令人厌烦且难以导航！</color><color=#ff0000>风险自负！</color>
+
+* 香肠（Sausage）：这个玩笑是 worst（最糟）的。

@@ -1,0 +1,5 @@
+Radiant Colors，由 Radiant Phoenix 制作
+
+一组应当易于区分的颜色。
+
+替换了现有颜色，因为我就喜欢这样。

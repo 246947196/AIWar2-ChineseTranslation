@@ -1,0 +1,7 @@
+需要 DLC 1：The Spire Rises（尖塔崛起）
+         DLC 2：Zenith Onslaught（天顶猛攻）
+         DLC 3：Neinzul Abyss（纳因祖尔深渊）
+
+本 Mod 阻止“虹彩恐魔”（Chromatic Horror）被选为随机阵营。
+
+由 Badger 制作

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- Exowar Tier 1 Units:
   ************************************************************************************************--> 
@@ -749,7 +749,7 @@
 		y_offset_of_icon="30"
 		collision_priority="810"
 		display_name="北极星" override_faction_name="AI Exogalactic War Front"
-		description="这艘 AI 单位对混合反照率的舰队特别危险。如果遇到这样的舰队，它会以部分舰队为食来摧毁其余部分。"			
+		description="这个 AI 单位对混合反照率的舰队特别危险。如果遇到这样的舰队，它会以部分舰队为食来摧毁其余部分。"			
 		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
 		cost_for_ai_to_purchase="68000" strength_multiplier="1.2"
 		hull_points="4000000" shield_points="8000000" speed="BelowAverage2"			
@@ -817,7 +817,7 @@
 		y_offset_of_icon="30"
 		collision_priority="810"
 		display_name="食人魔" override_faction_name="AI Exogalactic War Front"
-		description="这艘 AI 单位对混合体型的舰队特别危险。其巨大的口中包含一个相位分解阵列，可以将较小的单位化为废料，为强大的废料冲击炮提供燃料。如果没有废料可用，火炮也能凑合，但在进食之后会强大得多。"
+		description="这个 AI 单位对混合体型的舰队特别危险。其巨大的口中包含一个相位分解阵列，可以将较小的单位化为废料，为强大的废料冲击炮提供燃料。如果没有废料可用，火炮也能凑合，但在进食之后会强大得多。"
 		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
 		cost_for_ai_to_purchase="75000" strength_multiplier="1.5"
 		hull_points="10000000" shield_points="2000000" speed="AboveAverage1"
@@ -980,7 +980,7 @@
 		y_offset_of_icon="55"
 		collision_priority="810"
 		display_name="格伦德尔" override_faction_name="AI Exogalactic War Front"
-		description="这艘令人不安的隐形单位专为捕食小型单位和建筑而存在。"			
+		description="这个令人不安的隐形单位专为捕食小型单位和建筑而存在。"			
 		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
 		cost_for_ai_to_purchase="150000" strength_multiplier="2"
 		hull_points="15000000" shield_points="15000000" speed="BelowAverage2"			
@@ -1021,7 +1021,7 @@
 		blocks_ceasefire_on_planet="true"
 		collision_priority="810"
 		display_name="蝎尾狮" override_faction_name="AI Exogalactic War Front"
-		description="这艘强大的 AI 单位似乎是尖塔和天顶技术的不洁融合体，结合了两者的最佳特性。"			
+		description="这个强大的 AI 单位似乎是尖塔和天顶技术的不洁融合体，结合了两者的最佳特性。"			
 		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
 		cost_for_ai_to_purchase="410000" strength_multiplier="1.3"
 		hull_points="50000000" shield_points="40000000" speed="AboveAverage1"			
@@ -1068,7 +1068,7 @@
 		blocks_ceasefire_on_planet="true"
 		collision_priority="810"
 		display_name="勒拿" override_faction_name="AI Exogalactic War Front"
-		description="这艘强大的 AI 单位似乎是'九头蛇'技术的巅峰，结合了临时自我复制和先进的腐蚀性武器。"			
+		description="这个强大的 AI 单位似乎是'九头蛇'技术的巅峰，结合了临时自我复制和先进的腐蚀性武器。"			
 		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
 		cost_for_ai_to_purchase="280000" strength_multiplier="2"
 		hull_points="50000000" shield_points="0" speed="AboveAverage1"

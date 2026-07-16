@@ -1,0 +1,23 @@
+每当我（Dismiss）遇到某些东西心想“那个数字不对”“凭什么要花那个代价”“你是在开玩笑吧……”的时候……我就改掉它，并加进本 Mod。
+
+欢迎在 Discord 上告诉我你自己对平衡的 pet peeves，供我参考！
+
+极端 AiP 重平衡版：
+- 为占领所有运输舰增加了 AIP 花费。
+- 新增 AI 难度 9.5，它并非真的介于 9 与 10 之间，而是会以快得多的速度 mark up。
+- 为许多授予舰线的入侵增加了 AIP 花费（tss、ods，甚至 ars）。
+- TSS 入侵不再可重复，只能进行一次。
+- 配发给人类指挥站的炮塔数量整体减少。
+
+在游戏内社区分区游玩快速开局“meet the intensity 9.5 ai”。
+
+此外：
+- 为 Brutal Guardian Lairs 与 Enhanced Overlord 解锁了设置。二者都不会被强制开启。
+- 从二阶段霸主体中移除了 solo 阶段。
+
+考虑中：
+- Nano Hive 入侵的 subvert 响应减半。
+- Ultimate Fortress 入侵的 subvert 花费降至 50 HaP。
+- Macrophage subvert 入侵的时间与响应减半。
+- 所有正向信标固定为 5-7 强度，且现在花费 20 AiP。
+- 所有负向信标固定为 5-7 强度，且现在给予 50 AiP 削减。

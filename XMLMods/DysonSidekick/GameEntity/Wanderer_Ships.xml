@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- Defensive Structures -->
   <entity name="WandererFortress" tags="WandererFortress" ship_class_name="Superweapon"
@@ -76,7 +76,7 @@
 	  collision_priority="810"
 	  display_name="流浪者协调者"
           display_name_for_sidebar="流浪者协调者"
-	  description="这艘强大的隐形单位协调并统一各类流浪者舰种的行​​动。它通过麻痹敌人再将其僵尸化来引领AI霸主的防御。"
+	  description="这个强大的隐形单位协调并统一各类流浪者舰种的行​​动。它通过麻痹敌人再将其僵尸化来引领AI霸主的防御。"
     starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
     cost_for_ai_to_purchase="49500"
     hull_points="10000000" shield_points="40000000" speed="AboveAverage3"

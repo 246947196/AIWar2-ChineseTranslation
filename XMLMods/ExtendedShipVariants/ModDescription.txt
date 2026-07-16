@@ -1,0 +1,57 @@
+Arcen Games 不为 Mod 提供技术支持。
+
+本 Mod 为各类玩家的口味新增了更多打击舰与护卫舰舰线。此外还新增了更多运输舰和机动工厂变体，各自配有专属初始舰队，并在需要时为现有变体创建初始舰队。
+舰船变体往往进一步向中型船体（Medium Hull）和较少被使用的武器科技组倾斜，使其成为可行的替代选择。作为交换，中型船体的科研费用被提高以与其他船体相匹配。
+许多 FRS 舰线没有全舰队加成，但其本身高 AIP 且极其强大，攻击伤害乘数随阶位提升而增加。
+
+更多打击舰：
+- Obstructor Wing、Strike Wing、Oculus、Vex Guard、Cannon Bot、Electro Strike Corvette、Fortified Agravic Pod、Ablative Artillery、Metabolizing MLRS Corvette、Tracker、Space Bomber
+- 此外，Etherjets、Ensnarer Ether Jets、Thiefs 和 Turbo Stingrays 现在也能在常规舰队和 ARS 中生成，AI 现在也能使用 Turbo Stingrays。
+启用 The Spire Rises 后更多：
+- Beam Bombard、Compact Bombard、Cloaked Viral Shredder、Parasitic Viral Shredder
+启用 Zenith Onslaught 后更多：
+- Electric Blaster、Static Bomber、Polarazer、Polaraider、Shrike Fighter、Shrike Seeker、Dark Splitter、Toxic Mirror
+
+更多护卫舰：
+- Translocator Sniper Frigate、Shredder Frigate、Sharpener Frigate、Wedge Frigate、Stealth Carrier、Attack Carrier
+启用 The Spire Rises 后更多：
+- EMP Missile Frigate
+启用 Zenith Onslaught 后更多：
+- Darker Gravity Mirror Frigate、Darker Echo Frigate、Bomber Host Frigate、Decoy Host Frigate
+
+仅 FRS 打击舰：
+- Alpha Strike Wing、Void Bombers
+启用 The Spire Rises 后更多：
+- Rail Bombard
+启用 Zenith Onslaught 后更多：
+- Exemplar Polaraider
+
+运输旗舰：
+- Engineering Transport Flagship、Vanguard Transport Flagship、Tugboat Transport Flagship、Target Painter Transport Flagship
+- 此外，Agile Transport Flagship 得到增强：在新星球上 5 秒内获得 25% 速度加成、一定雷达阻尼、21 gx（刚好足以逃离黑洞机）。
+启用 The Spire Rises 后更多：
+- Cyber Command Transport Flagship
+启用 Zenith Onslaught 后更多：
+- Hardened Transport Flagship
+
+机动工厂：
+- Metabolizing Factory、Rescue Factory、Translocator Factory
+启用 The Spire Rises 后更多：
+- Acidic Factory
+启用 Zenith Onslaught 后更多：
+- Repairing Factory
+
+机动初始舰队：
+- Third Eye Fleet、Turbo Fleet、Blockade Breaker Fleet、Generator Fleet、Gravity Fleet、Partisan Fleet
+启用 The Spire Rises 后更多：
+- Hacker Fleet
+启用 Zenith Onslaught 后更多：
+- Sturdy Fleet
+
+支援初始舰队：
+- Metabolizing Factory、Rescue Factory、Translocator Factory
+- 此外，Backdoor 与 Scrapper 工厂现在拥有各自的初始舰队。
+启用 The Spire Rises 后更多：
+- Acidic Factory
+启用 Zenith Onslaught 后更多：
+- Repairing Factory

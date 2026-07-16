@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   <journal name="TSR_Spire_CampaignStartMessage" sidebar_text="{FactionColor}尖塔：&lt;/color&gt; 异常读数" can_record_another_copy_if_already_recorded_in_this_campaign="false"
@@ -171,7 +171,7 @@
 
 指挥官，
 
-尖塔已经建造了他们的第二艘旗舰，真是一艘美丽的单位。他们似乎散发着骄傲。这将为我们的部队在保卫帝国方面提供更大的灵活性。" />
+尖塔已经建造了他们的第二艘旗舰，真是一个美丽的单位。他们似乎散发着骄傲。这将为我们的部队在保卫帝国方面提供更大的灵活性。" />
 
     <journal name="TSR_Spire_NumCities_5" sidebar_text="{FactionColor}尖塔：&lt;/color&gt; 第五座城市已建成"
            can_record_another_copy_if_already_recorded_in_this_campaign="false"
@@ -412,7 +412,7 @@
 
 指挥官，
 
-我们从一个人工智能来源捕获到一些尖塔能量。看起来他们在攻击中捕获了一个遗物。我们应该从人工智能那里营救这些尖塔！如果我们不能，人工智能可能会将其转化为一艘强大的单位来对付我们。" />
+我们从一个人工智能来源捕获到一些尖塔能量。看起来他们在攻击中捕获了一个遗物。我们应该从人工智能那里营救这些尖塔！如果我们不能，人工智能可能会将其转化为一个强大的单位来对付我们。" />
 
   <journal name="TSR_SpireDebris" sidebar_text="{FactionColor}尖塔：&lt;/color&gt; 残骸" can_record_another_copy_if_already_recorded_in_this_campaign="false"
            text_replacement_related_faction_color="true"

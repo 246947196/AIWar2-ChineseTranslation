@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 	
 	<!-- Modifiers:
@@ -827,7 +827,7 @@
 		display_name="雷区 驱逐舰"
 		display_name_for_sidebar="雷区 DD"
 		description_short="一艘缓慢「改造」星系以利于其所有者的驱逐舰：通过生产海量雷区。"
-		description="MD-67雷区驱逐舰是布雷舰系列护卫舰的升级版，将其力量与巡洋舰更大的底盘和轨道能力相结合。结果是一艘不断喷出固定雷区的单位，更适合来回拉锯或偏防御的战斗。强大的重力发生器吸引敌人，使其被生成的雷区打击。"
+		description="MD-67雷区驱逐舰是布雷舰系列护卫舰的升级版，将其力量与巡洋舰更大的底盘和轨道能力相结合。结果是一个不断喷出固定雷区的单位，更适合来回拉锯或偏防御的战斗。强大的重力发生器吸引敌人，使其被生成的雷区打击。"
 		tech_upgrades_that_benefit_me="Minefields"
 		cost_for_ai_to_purchase="8000" strength_multiplier="2"
 		hull_points="400000" shield_points="200000" speed="Normal2"
@@ -915,7 +915,7 @@
 		display_name="高效 雷区 驱逐舰"
 		display_name_for_sidebar="E 雷区 DD"
 		description_short="一艘缓慢「改造」星系以利于其所有者的驱逐舰：通过生产海量雷区。此型号金属和能源消耗更低。"
-		description="E-MD-67高效雷区驱逐舰是布雷舰系列护卫舰的升级版，将其力量与巡洋舰更大的底盘和轨道能力相结合。结果是一艘不断喷出固定雷区的单位，更适合来回拉锯或偏防御的战斗。强大的重力发生器吸引敌人，使其被生成的雷区打击。高效变体采用优化设计，除了降低金属、能量和燃料（如启用）的生产与运营成本外，不提供其他属性提升。"
+		description="E-MD-67高效雷区驱逐舰是布雷舰系列护卫舰的升级版，将其力量与巡洋舰更大的底盘和轨道能力相结合。结果是一个不断喷出固定雷区的单位，更适合来回拉锯或偏防御的战斗。强大的重力发生器吸引敌人，使其被生成的雷区打击。高效变体采用优化设计，除了降低金属、能量和燃料（如启用）的生产与运营成本外，不提供其他属性提升。"
 		metal_cost="640000" energy_consumption="24800"
 		tag_to_spawn_from_for_build_point_for_per_second_construction="EfficientBlastMineFactory"
 	>
@@ -950,7 +950,7 @@
 		display_name="灌注 雷区 驱逐舰"
 		display_name_for_sidebar="I 雷区 DD"
 		description_short="一艘缓慢「改造」星系以利于其所有者的驱逐舰：通过生产海量雷区。此型号金属和能源消耗更低，且生产速度更快、子单位更多。"
-		description="I-MD-67灌注雷区驱逐舰是布雷舰系列护卫舰的升级版，将其力量与巡洋舰更大的底盘和轨道能力相结合。结果是一艘不断喷出固定雷区的单位，更适合来回拉锯或偏防御的战斗。强大的重力发生器吸引敌人，使其被生成的雷区打击。灌注变体使用混合材料使单位建造和维护更加便宜，可维持更多子单位并以更快的速度生产它们。"
+		description="I-MD-67灌注雷区驱逐舰是布雷舰系列护卫舰的升级版，将其力量与巡洋舰更大的底盘和轨道能力相结合。结果是一个不断喷出固定雷区的单位，更适合来回拉锯或偏防御的战斗。强大的重力发生器吸引敌人，使其被生成的雷区打击。灌注变体使用混合材料使单位建造和维护更加便宜，可维持更多子单位并以更快的速度生产它们。"
 		metal_cost="480000" energy_consumption="18600"
 		build_points_per_second="1400"
 		tag_to_spawn_from_for_build_point_for_per_second_construction="InfusedBlastMineFactory"

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- Defensive Structures -->
 
@@ -1225,7 +1225,7 @@
 	  visuals_scale_multiplier="3"
           collision_priority="850"
           starting_mark_level="Markless" tech_upgrades_that_benefit_me="Unused" 
-	  description="这艘强大的单位用于为AI突击部队提供滩头阵支援。行星消耗伤害削弱了防御，而气泡力场为进攻提供了耐久度。"
+	  description="这个强大的单位用于为AI突击部队提供滩头阵支援。行星消耗伤害削弱了防御，而气泡力场为进攻提供了耐久度。"
 	  cost_for_ai_to_purchase="11500" mark_level_scale_style="Templar" strength_multiplier="1"
 	  hull_points="500000" shield_points="3000000" speed="AlmostNone"
 	  metal_cost="800000" energy_consumption="25000"

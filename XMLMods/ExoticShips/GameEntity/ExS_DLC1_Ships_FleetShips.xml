@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 	<entity name="AmbushBeamBot" copy_from="AMU_StrikeCraftBase" required_expansion_list="1_The_Spire_Rises"
 		visuals="assets/_finalgamemeshes/fleetships/autocannon_minipod/autocannon_minipod.prefab"
@@ -123,7 +123,7 @@
 		display_name="龟甲重型护卫舰"
 		display_name_for_sidebar="龟甲 KH"
 		description_short="成组使用，共享彼此的护盾以提高生存能力和攻击伤害。"
-		description="早在自动化太空战争之前，野蛮人（那时还在亲自互相战斗，想象一下！）使用物理盾牌来保护自己，盾牌墙阵型有效地阻挡了远程攻击。盾牌之间的缝隙允许他们攻击对手。虽然古老的想法是值得的，足以证明开发一艘重新使用这种战术的专用单位是合理的。"
+		description="早在自动化太空战争之前，野蛮人（那时还在亲自互相战斗，想象一下！）使用物理盾牌来保护自己，盾牌墙阵型有效地阻挡了远程攻击。盾牌之间的缝隙允许他们攻击对手。虽然古老的想法是值得的，足以证明开发一个重新使用这种战术的专用单位是合理的。"
 		tech_upgrades_that_benefit_me="Forcefields,Medium"
 		cost_for_ai_to_purchase="309" strength_multiplier="2.25"
 		hull_points="5000" shield_points="25000" speed="BelowAverage1"

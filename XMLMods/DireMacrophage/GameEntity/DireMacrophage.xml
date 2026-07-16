@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
 
@@ -559,7 +559,7 @@
 		    collision_priority="900"
 	  display_name="可怕巨噬突变体"
 			display_name_for_sidebar="巨噬突变体"
-		    description="突变体是一艘用于转化为可怕巨噬细胞防御结构的单位。"
+		    description="突变体是一个用于转化为可怕巨噬细胞防御结构的单位。"
 		    starting_mark_level="Mark1"
 	        cost_for_ai_to_purchase="10"
 		    hull_points="500000" shield_points="250000" speed="VeryVeryLittle1"
@@ -669,7 +669,7 @@
 			y_offset_of_icon="10"
 			collision_priority="100"
 	  display_name="可怕巨噬殖民者"
-	  description="一艘既强大又罕见的可怕巨噬细胞单位，它结合了采集者和航母的武器和能力并将其放大。这个怪物的任务是转化为一个新的可怕 Telium。"
+	  description="一个既强大又罕见的可怕巨噬细胞单位，它结合了采集者和航母的武器和能力并将其放大。这个怪物的任务是转化为一个新的可怕 Telium。"
 			starting_mark_level="Mark1"
 			cost_for_ai_to_purchase="250000"			
 			hull_points="25000000" shield_points="12500000" speed="AlmostNone"

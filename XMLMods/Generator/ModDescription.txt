@@ -1,0 +1,9 @@
+<color=#eeeeee>通过新的地图类型为 galaxy 生成增添更多多样性。
+在生成时优先将同类事物广泛散布而非集中在一起，从而提升 galaxy 的公平性。
+</color>
+<color=#999999>除非你选择使用新的设置或地图，否则不会生效。
+开局前大厅的 <color=#eeeeee>Map Population</color>（地图填充）选项卡中包含新设置。
+推荐：<color=#eeeeee>Map Population > Map Populator > <u>Improved GEN</u>（改进生成）</color>
+
+请遇到生成不佳的存档在 Discord 上反馈！
+<color=#ffffff>@Dismiss42</color> 于 <color=#ffffff>#mod-general-chat</color>

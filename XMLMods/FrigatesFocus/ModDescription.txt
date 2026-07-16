@@ -1,0 +1,13 @@
+Frigates Focus 1.01 - 专家兼容版
+由 CRCGamer 制作。最后更新于 2022/03/12
+由于这是一个 Mod，它不会获得 Arcen Games 的官方支持。
+
+本 Mod 对游戏中若干内容进行了有效的重平衡，带来不同的体验。
+你将开局拥有一支护卫舰舰队，并可在经过修订的初始舰队中进行选择。
+部分额外的初始舰队选项有前提条件。
+请启用 The Spire Rises（DLC 1）、Zenith Onslaught（DLC 2）以及 More System Defenders（Mod）
+这样就能解锁当前所有可用的选项。
+
+ARS 入侵将主要包含可用的护卫舰。每个槽位仅有 20% 的概率出现打击舰（strike）。
+Humanity Ascendent 每个 ARS 有四种选择，专家模式压缩为每个入侵三种选择。
+预置舰队将严重偏向护卫舰。偶尔也会出现一些打击舰。

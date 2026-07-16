@@ -1,0 +1,5 @@
+<color=#ffc000>辐射</color> 舰队
+Radiant Phoenix
+RPSF
+FFc000
+

@@ -1,0 +1,53 @@
+Radiant Pruning，由 Radiant Phoenix 制作
+
+大幅减少以下类别中的舰船多样性：
+* 可占领运输舰（Capturable Transports）
+* ARS
+
+只应出现以下舰船：
+
+<b>伏击（Ambush）：</b>
+* Veteran Sniper
+* Ambush Carrier（无 DLC2）
+* Light Minelayer Frigate（DLC2）
+
+<b>火炮（Artillery）：</b>
+* Kite（无 DLC3）
+* Stealth Bombard（DLC3）
+* Devastator Frigate
+
+<b>核心（Core）：</b>
+* Gunbot
+* Tritium Sniper Frigate
+
+<b>干扰（Disruptive）：</b>
+* Porcupine（无 DLC2）
+* Polarizer（DLC2）
+* Suppressor Frigate
+
+<b>异种（Exotic）：</b>
+* Medic Gunboat
+* Cloaked Mugger Frigate
+* Phantasmal Host Frigate（DLC2）
+
+<p>近战（Melee）：</b>
+* Vicious Vampire Claw
+* Blade Spawner Frigate（DLC3）
+
+<b>穿透（Piercing）：</b>
+* Fusion Bomber（无 DLC2）
+* Electric Bomber（DLC2）
+* Cloaked Mugger Frigate
+
+<b>突袭（Raid）：</b>
+* Mirage
+* Stealth Bombard（DLC3）
+* Apparition Frigate
+
+<p>溅射（Splash）：</b>
+* Molotov
+* Tesla Torpedo Frigate（DLC1）
+
+<p>诡计（Subterfuge）：</b>
+* Eyebot
+* Warbird Hydra Frigate

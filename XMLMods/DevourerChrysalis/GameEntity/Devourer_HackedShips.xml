@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 	
 	<entity name="DevourerAdaption_SpikeFighter" copy_from="AMU_StrikeCraftBase" tags="#Devourer_HackEnabledBy#Chrysalis_Tier1"
@@ -150,7 +150,7 @@
 		display_name="猎手机器人"
 		display_name_for_sidebar="猎手机器人 战机"
 		description_short="小型战机，在高生命值时伤害最高。装弹时重新隐形，几乎不可能被解除隐形。"
-		description="吞噬者的船体由超反射、活的、多调节合金制成，几乎可以反射所有射向它的能量。通过使用人类已知的金属制造具有类似特性的船体，并添加隐形装置，我们创造了一艘几乎无法被解除隐形的单位。最重要的是，我们可以复制其部分武器技术，以获得可怕的攻击力。"
+		description="吞噬者的船体由超反射、活的、多调节合金制成，几乎可以反射所有射向它的能量。通过使用人类已知的金属制造具有类似特性的船体，并添加隐形装置，我们创造了一个几乎无法被解除隐形的单位。最重要的是，我们可以复制其部分武器技术，以获得可怕的攻击力。"
 		tech_upgrades_that_benefit_me="Subterfuge,Light"
 		hull_points="1500" shield_points="0" speed="AboveAverage2"
 		metal_cost="5000" energy_consumption="300"
@@ -175,7 +175,7 @@
 		display_name="瞬态巡洋舰"
 		display_name_for_sidebar="瞬态 巡洋"
 		description_short="在现实和多重相位之间切换，每次 6 秒，与其恐怖武器的装填时间同步。"
-		description="随着我们对相位曲速技术的了解不断深入，我们现在可以将一个单位困在维度之间，就像钟摆在现实和多重相位之间每几秒摆动一次。通过将其与武器装填时间同步，我们可以创造出一艘既能躲避敌人攻击又无需牺牲伤害的单位。而这个单位拥有一门真正恐怖的主炮和一些反战机麻痹能力。"
+		description="随着我们对相位曲速技术的了解不断深入，我们现在可以将一个单位困在维度之间，就像钟摆在现实和多重相位之间每几秒摆动一次。通过将其与武器装填时间同步，我们可以创造出一个既能躲避敌人攻击又无需牺牲伤害的单位。而这个单位拥有一门真正恐怖的主炮和一些反战机麻痹能力。"
 		tech_upgrades_that_benefit_me="Ambush,Medium"
 		hull_points="400000" shield_points="200000" speed="Normal1"
 		metal_cost="400000" energy_consumption="15000"
@@ -319,7 +319,7 @@
 		display_name="史瓦西重型护卫舰"
 		display_name_for_sidebar="史瓦西 重护"
 		description_short="以重力光束反击，将目标拉入进行毁灭性的近战攻击。还拥有引力核心，使逃跑几乎不可能。"
-		description="经过我们最近的分析，我们现在能够将微型奇点武器化，使其不会撕裂产生它们的单位或建筑。这允许进行可怕的近战攻击，并通过引导来自攻击的能量，利用史瓦西半径的报复性引力牵引，我们可以让敌人通过攻击那艘将撕碎它们的单位来被拉入。"
+		description="经过我们最近的分析，我们现在能够将微型奇点武器化，使其不会撕裂产生它们的单位或建筑。这允许进行可怕的近战攻击，并通过引导来自攻击的能量，利用史瓦西半径的报复性引力牵引，我们可以让敌人通过攻击那个将撕碎它们的单位来被拉入。"
 		tech_upgrades_that_benefit_me="Technologist,Heavy"
 		strength_multiplier="3"
 		hull_points="150000" shield_points="75000" speed="BelowAverage1"
@@ -351,8 +351,8 @@
 		visuals_scale_multiplier="32"
 		display_name="马克西姆巡洋舰"
 		display_name_for_sidebar="马克西姆 巡洋"
-		description_short="作为一艘活着的、不断成长的单位，巡洋舰之王装备精良，可以应对几乎任何敌人。"
-		description="我们成功地将从吞噬者蛹分析中获得的 Zenith 生物有机自我扩展与人类装甲和武器技术融合，创造了一艘活着的、不断成长的单位。随着它升级，单位将自我优化，获得更高的伤害抗性和武器输出，最终成为一艘极其优越的单位。即使在其默认形态下，其武器也足够多样化，可以应对从最小的机器人到巨大的傀儡的一切。"
+		description_short="作为一个活着的、不断成长的单位，巡洋舰之王装备精良，可以应对几乎任何敌人。"
+		description="我们成功地将从吞噬者蛹分析中获得的 Zenith 生物有机自我扩展与人类装甲和武器技术融合，创造了一个活着的、不断成长的单位。随着它升级，单位将自我优化，获得更高的伤害抗性和武器输出，最终成为一个极其优越的单位。即使在其默认形态下，其武器也足够多样化，可以应对从最小的机器人到巨大的傀儡的一切。"
 		tech_upgrades_that_benefit_me="Disruptive,Heavy"
 		hull_points="1800000" shield_points="900000" speed="BelowAverage1"
 		metal_cost="1200000" energy_consumption="150000"

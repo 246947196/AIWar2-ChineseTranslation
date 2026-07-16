@@ -1,0 +1,5 @@
+<color=#ffc000>辐射</color> 颜色
+Radiant Phoenix
+RPrgb
+FFc000
+

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
 	<entity	name="Claim_ArtificialWormhole"
@@ -811,7 +811,7 @@
 			collision_priority="100"
 			display_name="研究船"
 			display_name_for_sidebar="研究船"
-			description="这艘回收者单位深入深空发现有用的蓝图。"
+			description="这个回收者单位深入深空发现有用的蓝图。"
 			starting_mark_level="Mark1"
 			cost_for_ai_to_purchase="10"
 			hull_points="75000" shield_points="75000" speed="AboveAverage1"

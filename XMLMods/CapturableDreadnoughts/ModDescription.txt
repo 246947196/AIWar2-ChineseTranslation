@@ -1,0 +1,7 @@
+由 Zweihand 制作，最后更新于 2022/04/30。
+
+由于这是一个 Mod，它不会获得 Arcen Games 的官方支持。
+
+本 Mod 让玩家即使在不游玩“陨落尖塔”（The Fallen Spire）战役时，也能发现失落尖塔（Lost Spire）的无畏舰、战列舰和巡洋舰。
+
+重要提示* 本 Mod 需要安装 DLC1！

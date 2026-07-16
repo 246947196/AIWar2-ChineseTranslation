@@ -1,0 +1,61 @@
+本 Mod 需要全部 DLC。
+
+“使徒。上帝的使者。我们的敌人，拥有天使之名。”
+——明日香·绫波
+
+本 Mod 仅将 40 多个河外战争前线（Exogalactic War Front）单位的名称改为符合圣经描述的天使与恶魔之名，纯属外观装饰。
+
+也许人类曾想用他们心目中圣经里的守护者来命名那些原本以为的盟友，直到这些盟友把武器转向了自己的主人？
+
+也许 AI 有上帝情结，所以才用天使之名来命名它最强大的爪牙？
+
+又或者你是个《新世纪福音战士》粉丝，真的很喜欢那种让可能毁灭世界的 AI 代理人以天使之名命名的主意。
+
+无论如何，请准备好再次体验那种面对未知与恐惧的感觉。
+
+如果你启用了 Lord of Nothing 制作的 Mod“ExoWar Overhaul”，本 Mod 也会一并重命名该 Mod 新增的河外战争单位。
+
+已更改的单位名称列表（含 Exowar Overhaul 单位）：
+
+Usurper -> Ophan（奥梵）
+Subjugator -> Eve（夏娃）
+Nemesis -> Lilith（莉莉丝）
+Wormhole Borer -> Nephilim（拿非利）
+Flenser -> Israfel（伊斯拉菲尔）
+Mothership / Dreadnaught -> Michael（米迦勒）
+Planetcracker -> Gabriel（加百列）
+Exowar Overhaul Mothership -> Mastema（玛斯特玛）
+Dragon -> Metatron（梅塔特隆）
+Zmey Gorynych -> Lucifer（路西法）
+Thunderchild -> Ramiel（雷米尔）
+Custodian -> Shamsiel（沙姆希尔）
+Jackalope -> Uriel（乌列）
+Redback -> Raziel（拉结尔）
+Grendel -> Azazel（阿撒兹勒）
+Manticore -> Zuriel（祖利尔）
+Lernaean -> Leliel（雷利尔）
+Reanimator -> Sandalphon（圣德芬）
+Wendigo -> Raphael（拉斐尔）
+Poltergeist -> Azrael（阿兹拉尔）
+Umbra -> Umbriel（乌姆里尔）
+Wyrm -> Sachiel（萨基尔）
+Shellshocker -> Matriel（玛特利尔）
+Chimera -> Arakiel（阿拉基尔）
+Warspite -> Turiel（图利尔）
+Phoenix -> Barbiel（巴巴列尔）
+Centaur -> Ariel（亚列尔）
+Lamassu -> Barachiel（巴拉基尔）
+Typhon -> Abaddon（亚巴顿）
+Strix -> Muriel（穆利尔）
+Proteus -> Factoriel（法克特里尔）
+Maugrim -> Abatur（阿巴图尔）
+Fenrir -> Sahaquiel（萨哈奎尔）
+Polaris -> Zephon（西芬）
+Ogre -> Gremory（格莱姆）
+Echidna -> Asmodeus（阿斯莫德）
+Cyclops -> Malphas（马尔法斯）
+Magni -> Astaroth（阿斯塔罗斯）
+Basilisk -> Baphomet（巴弗灭）
+Hunter / Annihilator -> Sariel（萨利尔）
+Hunter / Seeker -> Ezekiel（以西结）
+Hunter / Killer -> Seraph（炽天使）

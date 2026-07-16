@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   <!-- Science only -->
@@ -218,7 +218,7 @@
 	  visuals_scale_multiplier="2.8"
 	  y_offset_of_icon="16"
 	  collision_priority="400"
-	  description="一艘耐久的隐形格斗舰，这艘纳迪尔单位装备腐蚀武器。其隐形装置持续时间不长，只够打出一轮强力首波齐射。
+	  description="一艘耐久的隐形格斗舰，这个纳迪尔单位装备腐蚀武器。其隐形装置持续时间不长，只够打出一轮强力首波齐射。
 
 A bit more powerful than the other low-tier Nadier, and worth a bit more 资源."
 	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="DysonTemplarTierOne"
@@ -384,7 +384,7 @@ A bit more powerful than the other low-tier Nadier, and worth a bit more 资源.
 	    collision_priority="100"
 	    display_name="弹道奈迪尔"
             display_name_for_sidebar="弹道奈迪尔"
-	    description="这艘强大的单位能够从远距离有效对抗AI的敌人。"
+	    description="这个强大的单位能够从远距离有效对抗AI的敌人。"
 	    starting_mark_level="Mark1"
             mark_level_scale_style="AntiDarkZenith"
 	    cost_for_ai_to_purchase="1250"

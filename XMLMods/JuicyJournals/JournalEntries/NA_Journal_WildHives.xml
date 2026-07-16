@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
 	<journal name="NA_WildHives_WildHiveDiscovered" sidebar_text="{FactionColor}野生宁苏：&lt;/color&gt; 侵扰"
@@ -147,7 +147,7 @@
 			can_record_another_copy_if_already_recorded_in_this_campaign="false"
 			text_replacement_related_faction_color="true"
 		    text_replacement_related_player_name="true"
-			chat_text="指挥官，一艘中等大小的宁苏单位开始模仿我们的行动。"
+			chat_text="指挥官，一个中等大小的宁苏单位开始模仿我们的行动。"
 			is_partial_record="true" 
             full_text="发件人：尤安娜·派恩希尔博士
 宁苏研究部 - 指挥部
@@ -156,14 +156,14 @@
 
 指挥官，
 
-一艘寿命较长的宁苏单位离开了它的巢穴空间并开始向我们的部队移动。它似乎径直朝着一个单位飞去，我们能翻译的来自它的传输似乎表明它不愿与之分离，并且表现出我们认为的想要保护的意愿。更有趣的是，看起来这个我们一些人称之为"族人"的单位能够制造自己的幼崽来协助战斗。" />
+一个寿命较长的宁苏单位离开了它的巢穴空间并开始向我们的部队移动。它似乎径直朝着一个单位飞去，我们能翻译的来自它的传输似乎表明它不愿与之分离，并且表现出我们认为的想要保护的意愿。更有趣的是，看起来这个我们一些人称之为"族人"的单位能够制造自己的幼崽来协助战斗。" />
 			
 	<journal name="NA_WildHives_WildHiveWitheringWorker" sidebar_text="{FactionColor}野生宁苏：&lt;/color&gt; 衰败"
 			can_record_another_copy_if_already_recorded_in_this_campaign="false"
 			text_replacement_related_faction_color="true"
 		    text_replacement_related_player_name="true"
 			text_replacement_related_planet="true"
-			chat_text="指挥官，一艘宁苏工人单位开始衰败。"
+			chat_text="指挥官，一个宁苏工人单位开始衰败。"
 			is_partial_record="true" 
             full_text="发件人：尤安娜·派恩希尔博士
 宁苏研究部 - 指挥部
@@ -172,6 +172,6 @@
 
 指挥官，
 
-{PlanetName} 上的一艘宁苏工人单位已经开始衰败。我们的科学家认为这是由于某种原因无法离开该行星。如果它在更长的时间内无法逃脱，它将很快触发该行星上所有野生蜂巢的防御响应。" />
+{PlanetName} 上的一个宁苏工人单位已经开始衰败。我们的科学家认为这是由于某种原因无法离开该行星。如果它在更长的时间内无法逃脱，它将很快触发该行星上所有野生蜂巢的防御响应。" />
 
 </root>

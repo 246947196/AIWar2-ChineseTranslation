@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 	<!-- AJEA main settings -->
 	<setting name="AJEA_Enable" serialization_name="AJEAE" is_network_and_game_synced_setting="true"
@@ -21,7 +21,7 @@ AJEA还会查看每个玩家当前的建造选择及其可能的建造数量（1
 	<setting name="AJEA_ExtraEnergyCount" serialization_name="AJEAC" is_network_and_game_synced_setting="true"
 		category="Automation" subcategory="AJEA_Settings" display_name="目标能源" type="IntTextbox" default="5000" min="0" max="10000000"
 		description="如果可能的话，AJEA应该提供多少能源？通常这应该是最贵的建造单位所需的能源，再加一些。5,000能源是一个好的默认值，适用于几乎所有场景。
-如果你发现某艘大型（可能是模组）单位无法建造，请检查AJEA是否提供足够的能源并相应调整此值。
+如果你发现某个大型（可能是模组）单位无法建造，请检查AJEA是否提供足够的能源并相应调整此值。
 
 如果启用了「自动确定能源数量」，它会加到目标能源数值上。此时这只是为了防止刚一建造就立即阻塞所有单位建造的缓冲值。
 如果未启用「自动确定能源数量」，该值应略高于玩家当前可建造的最耗能单位，否则该单位可能因电力不足而永远无法建造。" />

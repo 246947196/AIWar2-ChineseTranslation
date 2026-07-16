@@ -1,0 +1,22 @@
+<color=#eeeeee>本 Mod 是一系列针对游戏内文字的微调合集。
+
+<color=#ffffff>目标是做到……</color>
+1.<indent=2em>更“符合角色设定”，而非“出戏”。</indent>
+2.<indent=2em>自身更一致。</indent>
+3.<indent=2em>措辞更清晰。</indent>
+
+<color=#ffffff>详情：</color>
+1.<indent=2em>更改了僵尸阵营的名称与描述。
+<color=#cccccc><nobr>Anti-AI Zombie -> Allied Zombie Fleet（同盟僵尸舰队）</nobr>、<nobr>Anti-Player Zombie -> AI Zombie Fleet（AI 僵尸舰队）</nobr>、<nobr>Anti-Everyone Zombie -> Rogue Zombie Fleet（流寇僵尸舰队）</color></nobr></indent>
+2.<indent=2em>[dlc3] 骷髅（Skeleton）与亡魂（Wight）母星（Home）的简称现在始终包含“home”。</indent>
+
+目前就这些。
+但本 Mod 的用意是让他人也能参与贡献，遇到尴尬或出戏的文字时一起完善。
+
+我更感兴趣的是直接的游戏内文字，例如阵营名称、描述、提示框中的一切等等。
+
+教程、提示与日志条目确实也可以用类似方式改进，但我不打算去碰那些（另外，去看看 Juicy Journals Mod）。
+
+本 Mod 任何有意愿的 Mod 作者都可以自由修改。
+下次你看到某段让你不舒服的游戏内文字，我强烈建议你直接把它加进本 Mod。或者更省事地，在 #mod-general-chat、#mod-requests 和/或 @dismiss42 处留言。
+</color>

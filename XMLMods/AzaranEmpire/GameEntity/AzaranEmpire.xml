@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
 	<!--King Unit
@@ -528,7 +528,7 @@ material_override_path="Assets/_DLC3/Venators/NadirVenator/NadirVenator.prefab" 
 		draw_in_galaxy_view="true"
 	  display_name="阿扎兰新星机器人"
     display_name_for_sidebar="新星机器人"
-	  description="一艘巨型单位，缓慢但发射扇形破坏光束，有时释放大规模超新星造成巨大伤害。"
+	  description="一个巨型单位，缓慢但发射扇形破坏光束，有时释放大规模超新星造成巨大伤害。"
 		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
 		cost_for_ai_to_purchase="80000"
 		hull_points="3000000" shield_points="6000000" speed="BelowAverage1"

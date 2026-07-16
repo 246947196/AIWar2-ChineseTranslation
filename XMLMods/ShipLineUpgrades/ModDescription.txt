@@ -1,0 +1,7 @@
+-+#   SHIP LINE UPGRADES（舰线升级）   #+-
+
+由 -NR-SirLimbo 制作。
+Arcen Games 不为 Mod 提供技术支持。
+
+本 Mod 允许玩家升级自己的舰线，例如将一支聚变轰炸机（Fusion Bombers）舰线升级为重聚变轰炸机（Heavy Fusion Bombers）。
+它从舰船的 XML 数据中获取“是什么”与“有多少”的信息，这意味着只要升级变体使用了基础变体的 copy_from，新增舰船变体的 Mod（例如 Extended Ship Variants）就能无缝整合。

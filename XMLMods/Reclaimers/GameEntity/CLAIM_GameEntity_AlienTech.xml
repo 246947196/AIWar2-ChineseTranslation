@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
 	<entity name="PhotonTorpedo"
@@ -2062,7 +2062,7 @@ plus metabolism -->
 			uses_large_health_bar="true"
 			display_name="原型战列巡洋舰"
 			display_name_for_sidebar="原型BC" aip_when_granted_by_hack="15"
-			description="这艘独特的单位是新型外星武器的重要测试平台。其主炮稳定，但当需要击杀特定目标时，启用最合适的模块，尽管没有一个是完全调谐的，也会对本舰造成伤害。"
+			description="这个独特的单位是新型外星武器的重要测试平台。其主炮稳定，但当需要击杀特定目标时，启用最合适的模块，尽管没有一个是完全调谐的，也会对本舰造成伤害。"
 			
             starting_mark_level="Mark1" 
             tech_upgrades_that_benefit_me="Alien" 

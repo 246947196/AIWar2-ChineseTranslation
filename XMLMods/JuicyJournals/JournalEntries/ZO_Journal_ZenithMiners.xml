@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   <journal name="ZO_ZenithMiners_InitialProbe" sidebar_text="{FactionColor}天顶采矿者：&lt;/color&gt; 天顶探测机被发现"
@@ -14,7 +14,7 @@
 
 指挥官，
 
-我们检测到一个发出 {FactionColor}天顶&lt;/color&gt; 能量信号的探测机。它似乎在向银河系广播一个导航信号，返回的脉冲表明可能有一艘非常强大的天顶单位正在进入。当那艘强大的单位到达时，我们将面临一场重大战斗。
+我们检测到一个发出 {FactionColor}天顶&lt;/color&gt; 能量信号的探测机。它似乎在向银河系广播一个导航信号，返回的脉冲表明可能有一个非常强大的天顶单位正在进入。当那个强大的单位到达时，我们将面临一场重大战斗。
 
 如果它像我们多年来看到的其他天顶装置一样，我们也许能够用入侵与其系统进行交互。" />
 

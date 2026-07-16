@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
 	<!-- Core -->
@@ -640,7 +640,7 @@
 			
 			display_name="克赛迪安泊位"
 			display_name_for_sidebar="克赛迪安泊位"
-			description="这里正在利用小行星建造一艘巨型单位。"
+			description="这里正在利用小行星建造一个巨型单位。"
 
 			description_appender_dll="Xodian"
 			description_appender_type="Xodian.Xod_Berth"

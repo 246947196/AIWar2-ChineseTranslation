@@ -1,0 +1,24 @@
+Arcen Games 不为 Mod 提供技术支持。
+
+本 Mod 为 galaxy 新增了更多拥有特殊机制的打击舰（Strike Craft）和护卫舰（Frigate）舰线，以及使用这些舰船的全新初始舰队。
+其中许多取决于安装了哪些扩展内容。总共最多可新增 37 艘新舰船和 14 支初始舰队：
+
+原版：
+-> 打击舰（6）：Fusion Missile、Grappler Corvette、Gravitic Drainer Corvette、Liquifier、Pyotic Translocator Corvette、Shield Leech
+-> FRS 打击舰（3）：Initiator Heavy Corvette、Nucleon Fighter、Ravager Bot
+-> 护卫舰（7）：Beam Medic Light Frigate、Black Widow Frigate、Fusion-Interceptor Light Frigate、Norris Heavy Frigate、Paralyzer-Scrapper Frigate、Radar Light Frigate、Support Launcher Frigate
+-> FRS 护卫舰（1）：Flameblade Light Frigate
+----> 初始舰队（6）：Bomb Swarm Fleet、Counter Fleet、Exploiter Fleet、Light Frigate Fleet、Guard Fleet、Universal Fleet
+
+DLC 1 - The Spire Rises：
+-> 打击舰（5）：Ambush Beam Bot、Harmonic Micro-Fighter、Sniper Network、Turtle Heavy Corvette、Zombie Slayer
+-> 护卫舰（2）：Sniper Nest Light Frigate、Synergy Carrier
+-> FRS 护卫舰（1）：Attritioner Frigate
+----> 初始舰队（4）：Blockade Fleet、Formation Fleet、Harmony Fleet、Multiplier Fleet
+
+DLC 2 - Zenith Onslaught：
+-> 打击舰（5）：Rearguard、Storm Heavy Corvette、Tick Bot、Void Weaver、Warp Bomb
+-> FRS 打击舰（1）：Invasion Bomber
+-> 护卫舰（5）：Anvil Heavy Frigate、Assault Cruiser、Immortal Cruiser、Lightning Artillery Frigate、Scavenger Heavy Frigate
+-> FRS 护卫舰（1）：Phase Cruiser
+----> 初始舰队（4）：Elite Fleet、Paradimensional Fleet、Payback Fleet、Thunderstorm Fleet

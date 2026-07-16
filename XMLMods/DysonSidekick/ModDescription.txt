@@ -1,0 +1,9 @@
+这是一个由游戏主开发者之一 Badger 以 Mod 形式免费提供的迷你 DLC。
+
+本 Mod 提供多种玩家类型，包括暗天顶帝国（Dark Zenith Empire）、天罚融合帝国（Scourge Infused Empire）以及戴森帝国（Dyson Empire）。
+许多也可作为“副官”（Sidekick）游玩，类似于死灵法师副官（必须与一个帝国阵营结盟），可用于单人或多人对战。
+按下 F4 即可在可操控的阵营之间切换。
+
+此外还有大量新的 AI 类型，以及一些新的 AI 难度和其他好东西。
+
+Arcen Games 不为 Mod 提供技术支持。

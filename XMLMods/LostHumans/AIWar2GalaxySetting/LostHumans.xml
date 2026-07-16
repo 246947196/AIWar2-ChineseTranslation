@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <root>
 	<!-- Enablers -->
 	<galaxy_setting name="LostHumansTravelers" category="LostHumans" subcategory="EnableFeatures" display_name="旅行者" type="BoolToggle"
@@ -183,7 +183,7 @@ AI拥有若干个专门研究隐藏在银河系各处的各种外星种族的实
 
 	<galaxy_setting name="LostHumansConstructionConvoyStructuresToBuildPerPlanet" category="LostHumans" subcategory="ConstructionConvoys" display_name="建造护航队 每星球建筑数" type="IntSlider"
 		default="2" min="1" max="3" changeable_during_gameplay="true" is_advanced_setting="true"
-		description="每艘护航队单位在每个访问的星球上可以建造多少建筑？" />
+		description="每个护航队单位在每个访问的星球上可以建造多少建筑？" />
 
 	<galaxy_setting name="LostHumansConstructionConvoyBuildTimer" category="LostHumans" subcategory="ConstructionConvoys" display_name="建造建筑所需秒数" type="IntSlider"
 		default="60" min="30" max="120" changeable_during_gameplay="true" is_advanced_setting="true"

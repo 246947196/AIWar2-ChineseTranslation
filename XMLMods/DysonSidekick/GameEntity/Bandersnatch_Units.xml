@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- Defensive Structures -->
   <entity name="BandersnatchFortress" tags="BandersnatchFortress" ship_class_name="Superweapon"
@@ -107,7 +107,7 @@
 	  visuals_scale_multiplier="3"
           collision_priority="850"
           starting_mark_level="Markless" tech_upgrades_that_benefit_me="Unused"
-	  description="这艘强大的班达斯纳奇单位吸引敌方射击，帮助其余波次部队命中目标。"
+	  description="这个强大的班达斯纳奇单位吸引敌方射击，帮助其余波次部队命中目标。"
 	  cost_for_ai_to_purchase="11500" mark_level_scale_style="Templar" strength_multiplier="1"
 	  hull_points="500000" shield_points="3000000" speed="AlmostNone"
 	  metal_cost="800000" energy_consumption="25000"

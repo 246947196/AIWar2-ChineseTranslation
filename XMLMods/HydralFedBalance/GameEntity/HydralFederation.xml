@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
 	<entity name="HydralFederationHydral" npc_ship_cap_type="SpecialThingsToAlwaysSeed" is_expecting_to_not_be_encyclopedia_counted_at_all='false'
@@ -445,7 +445,7 @@
 				y_offset_of_icon="35"
 				collision_priority="800"
 				display_name="伊维克合闭者"
-				description="这艘几乎无法探测的单位装载着一件独特武器：合闭者加农炮。这门炮眩晕半径内的大量单位。绕过所有护盾，但无法瞄准固定建筑。"
+				description="这个几乎无法探测的单位装载着一件独特武器：合闭者加农炮。这门炮眩晕半径内的大量单位。绕过所有护盾，但无法瞄准固定建筑。"
 				blocks_enemy_claim_flows="true"
 				voice_group="Silent"
 				starting_mark_level="Markless" tech_upgrades_that_benefit_me="Unused"
@@ -675,7 +675,7 @@
 			y_offset_of_icon="35"
 			collision_priority="800"
 			display_name="博亚林巨兽"
-			description="一艘移动缓慢但拥有巨大耐久和自愈能力的单位。"
+			description="一个移动缓慢但拥有巨大耐久和自愈能力的单位。"
 			blocks_enemy_claim_flows="true"
 			voice_group="Silent"
 			starting_mark_level="Markless" tech_upgrades_that_benefit_me="Unused"
