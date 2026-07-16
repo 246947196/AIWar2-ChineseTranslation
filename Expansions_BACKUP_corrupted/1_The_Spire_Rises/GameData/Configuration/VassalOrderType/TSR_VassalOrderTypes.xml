@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  
+
+  
+  <vassal_order name="Scourge_BuildSpawnerOnPlanet" target_type="Planet" category="Construction" clear_all_orders_of_same_category_when_issued="true" display_name="在行星上建造孵化器" description="附庸天灾派系将在目标行星上建造一个孵化器。" />
+  
+  <vassal_order name="Scourge_NextArmoryShouldBe" target_type="None" category="Upgrades" clear_all_orders_of_same_category_when_issued="true" display_name="建造军械库类型" description="附庸天灾派系将按此风格建造下一个军械库。">
+    <option name="Thoraxian" display_name="索拉克斯" />
+    <option name="Evuck" display_name="Evuck" />
+    <option name="Neinzul" display_name="Neinzul" />
+    <option name="Peltian" display_name="Peltian" />
+    <option name="Thoraxian" display_name="Thoraxian" />
+  </vassal_order>
+</root>

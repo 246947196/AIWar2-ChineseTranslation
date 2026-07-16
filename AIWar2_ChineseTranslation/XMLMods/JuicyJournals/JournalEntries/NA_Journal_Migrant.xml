@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<journal name="NA_MigrantFleet_UnknownWormhole" sidebar_text="{FactionColor}神秘异常：&lt;/color&gt; 未知"
+			can_record_another_copy_if_already_recorded_in_this_campaign="false"
+			text_replacement_related_faction_color="true"
+		    text_replacement_related_player_name="true"
+			text_replacement_related_planet="true"
+			chat_text="指挥官，我们在 {PlanetName} 上发现了一些奇怪的异常现象，并已将我们的发现记录在你的日志中。"
+			is_partial_record="true" 
+            full_text="发件人：首席情报官雨果·道森
+情报部 - 指挥部
+
+致：指挥官 {PlanetName}
+
+指挥官，
+
+我们在 {PlanetName} 上的扫描仪报告了奇怪的异常现象。据我们所知，虫洞似乎在星系边缘打开了。然而，与我们已知的传统虫洞不同，这些虫洞似乎并非起源于我们的银河系，而且更奇怪的是它们在围绕该星区运行。
+
+我们注意到大量小型战机从虫洞中涌出，但它们在抵达我们的空间后正在迅速分解。我们的军事领导人报告说，它们在广播一个开放信号，我们能够远程复制，并且我们相信这些小单位是友好的。
+
+更值得注意的是，我们相信虫洞中有一个更大的信号来自一个比这些蜂群规模大得多的单位。可能值得亲自调查。我们将继续监控情况，并在了解更多信息后向你汇报。" />
+
+	<journal name="NA_MigrantFleet_UnknownMigrantArrives" sidebar_text="{FactionColor}移民者&lt;/color&gt; 移民者"
+			can_record_another_copy_if_already_recorded_in_this_campaign="false"
+			text_replacement_related_faction_color="true"
+		    text_replacement_related_player_name="true"
+			text_replacement_related_planet="true"
+			chat_text="指挥官，我们在 {PlanetName} 上之前定位到的虫洞已经关闭，但在那之前一个游荡飞地从里面出来了。"
+			is_partial_record="true" 
+            full_text="发件人：首席情报官雨果·道森
+情报部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+我们在 {PlanetName} 上的扫描仪报告说，一个更大的单位从虫洞中抵达，随后虫洞立即在它身后关闭。
+
+从我们能看到的情况来看，这个被称为游荡飞地的单位虽然本身很弱，但拥有我们从未见过的最强效的酸性武器。
+
+有趣的是，虫洞停止的那一刻，幼崽单位的生产也停止了。看来游荡飞地自身缺乏生产幼崽的能力。
+
+这个单位正在广播一个相对混乱的信号，我们正在努力解密，但我们已在本文底部进行了粗略翻译。不管这个信号的意图如何，幼崽之前广播的友谊信号也被这个"飞地"广播着，因此亲自调查可能符合我们的利益。
+
+翻译：困惑……又是金属……对我们来说它失败了……我们必须找到新的……幼崽不能白费。安全必……族人。" />
+
+	<journal name="NA_MigrantFleet_UnknownMigrantEscorted" sidebar_text="{FactionColor}移民者&lt;/color&gt; 抵达"
+				can_record_another_copy_if_already_recorded_in_this_campaign="false"
+				text_replacement_related_faction_color="true"
+		        text_replacement_related_player_name="true"
+				text_replacement_related_planet="true"
+				chat_text="指挥官，一个游荡飞地已安全抵达我们的领土。"
+				is_partial_record="true" 
+            full_text="发件人：尤安娜·派恩希尔博士
+宁苏研究部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+一个游荡飞地已安全抵达我们的领土。
+
+当它抵达并似乎意识到自己不再被攻击时，它开始慢慢地绕着行星移动，几乎好像是在寻找什么东西……
+
+我们的科学家为此准备了很长时间，他们没有失望。游荡飞地抵达的那一刻，扫描仪就探测到了其内部巨大的能量读数。
+
+据我们所知，游荡飞地内有两个大型能量源，一个位于单位中心附近，另一个靠近其引擎。
+
+我们已经翻译了更多它的语言，但仍然相当粗糙。
+
+翻译：好奇，金属……被……守护。也许，是的……确实是个好巢穴。" />
+
+	<journal name="NA_MigrantFleet_UnknownMigrantLeaves" sidebar_text="{FactionColor}移民者&lt;/color&gt; 房间"
+			can_record_another_copy_if_already_recorded_in_this_campaign="false"
+			text_replacement_related_faction_color="true"
+		    text_replacement_related_player_name="true"
+			text_replacement_related_planet="true"
+			chat_text="指挥官，一个在 {PlanetName} 上安家的宁苏给我们留下了一条信息……和一个临别礼物。"
+			is_partial_record="true" 
+            full_text="发件人：尤安娜·派恩希尔博士
+宁苏研究部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+有一段时间，一个移民宁苏在我们的行星上安了家，甚至协助了一些小规模战斗。然而，它似乎打开了另一个虫洞要离开这个银河系，并且已经穿了过去。
+
+但在它离开之前，发生了两件非常重要的事情。我们注意到最实际的事情是它留下了一个结构，我们的科学家称之为"宁苏房间"。据我们所知，一种全新的宁苏正在里面被创造，他们敦促我们尽可能保护它。
+
+另一件值得注意的事情是它留下的信息。由于它在我们的行星上停留时间相对较短，我们无法完善对其语言的理解，但意图是清楚的。
+
+信息：我们感谢你们这些骨之生灵。尽管我们……你们对我的使用……是必需的。我们将返……并带着更多我们的同类回来。请保……安全。" />
+
+	<journal name="NA_MigrantFleet_KnownWormhole" sidebar_text="{FactionColor}移民者&lt;/color&gt; 熟悉"
+			can_record_another_copy_if_already_recorded_in_this_campaign="false"
+			text_replacement_related_faction_color="true"
+		    text_replacement_related_player_name="true"
+			text_replacement_related_planet="true"
+			chat_text="指挥官，我们在 {PlanetName} 上的扫描仪检测到了一个熟悉的信号。"
+			is_partial_record="true" 
+            full_text="发件人：尤安娜·派恩希尔博士
+宁苏研究部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+我们有好消息！我们的科学家相信，之前与我们联系过的一个移民者正在返回。虫洞发出的信号与我们之前录制的一个信号音调相符。更令人兴奋的是，看起来这次它带来的不仅仅是幼崽。
+
+它正在用我们之前解密的频道广播一个似乎是目的地描述的信息，而该目的地似乎在我们的一个行星上！可以安全地认为它知道如何到达我们这里，并会在抵达后前往，但派遣护航队协助可能仍然是值得的。" />
+
+	<journal name="NA_MigrantFleet_KnownMigrantArrives" sidebar_text="{FactionColor}移民者&lt;/color&gt; 归来"
+			can_record_another_copy_if_already_recorded_in_this_campaign="false"
+			text_replacement_related_faction_color="true"
+		    text_replacement_related_player_name="true"
+			text_replacement_related_planet="true"
+			chat_text="指挥官，一个移民者进入了 {PlanetName}，上面带有与我们过去协助过的一个惊人相似的标记。"
+			is_partial_record="true" 
+            full_text="发件人：尤安娜·派恩希尔博士
+宁苏研究部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+我们已经确认了信号的来源，确实是我们以前见过的一个移民者。他们遵守了诺言，似乎正在全速前往我们的领土。更令人兴奋的是，看起来它带来了一些中型单位。
+
+我们最近成立的宁苏文化部门指出，这些可能更多是他们称为"族人"的单位，而它的信息中有一种更加振奋人心的语调。他们期待着与并非诞生于我们银河系的族人互动。
+
+信息：我们回来了，骨之生灵！我们非常高兴地探测到你们在如此巨大战乱和……向你们虚空之地迁移中的永恒……坚韧。
+
+考虑到它的较小护卫，我们的文化负责人强烈建议我们派遣援助以确保他们的到达。" />
+
+	<journal name="NA_MigrantFleet_KnownMigrantEscorted" sidebar_text="{FactionColor}移民者&lt;/color&gt; 骨之巢"
+					can_record_another_copy_if_already_recorded_in_this_campaign="false"
+					text_replacement_related_faction_color="true"
+		            text_replacement_related_player_name="true"
+					text_replacement_related_planet="true"
+					chat_text="指挥官，那个熟悉的游荡飞地已安全抵达我们的领土。"
+					is_partial_record="true" 
+            full_text="发件人：尤安娜·派恩希尔博士
+宁苏研究部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+那个熟悉的游荡飞地已安全抵达我们的领土。
+
+据我们的科学家所说，它似乎很高兴回来。虽然它年轻的族人护卫仍然紧贴着它，我们在行星上的许多单位和建筑都检测到来自小单位的扫描信号。
+
+看起来飞地正准备再次离开，因为检测到的能量源再次上升，但它似乎在……为离开准备它的年轻护卫，几乎是将它们推向我们的单位以建立联系。
+
+翻译：这些是骨之生灵，是……骨之巢。靠近它们……帮助它们，因为它们……在大崩溃后繁荣。" />
+
+<journal name="NA_MigrantFleet_KnownMigrantLeaves" sidebar_text="{FactionColor}移民者&lt;/color&gt; 循环"
+			can_record_another_copy_if_already_recorded_in_this_campaign="false"
+			text_replacement_related_faction_color="true"
+		    text_replacement_related_player_name="true"
+			text_replacement_related_planet="true"
+			chat_text="指挥官，在 {PlanetName} 附近看到的那个熟悉移民者已经再次跃迁出了我们的银河系。"
+			is_partial_record="true" 
+            full_text="发件人：尤安娜·派恩希尔博士
+宁苏研究部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+我们遗憾地报告，我们认识的那个移民者再次离开了我们的银河系。我们许多人都已经习惯了它们在和平空间中能看到的各种把戏。
+
+然而，这是有充分理由的。虽然这次它确实带来了一些族人，但它报告说还有更多族人需要它帮助穿越跃迁空间。它真正相信我们是宇宙的安全港之一，并认为往返旅程是值得的。我们必须继续提升自己的地位，以证明我们值得它的信任。
+
+尤其是如果关于人工智能对它们不断增加压力的传言属实的话。" />
+
+<journal name="NA_MigrantFleet_ClanlingBond" sidebar_text="{FactionColor}移民者&lt;/color&gt; 族人"
+			can_record_another_copy_if_already_recorded_in_this_campaign="false"
+			text_replacement_related_faction_color="true"
+		    text_replacement_related_player_name="true"
+			chat_text="指挥官，一个中等大小的宁苏单位开始模仿我们的行动。"
+			is_partial_record="true" 
+            full_text="发件人：尤安娜·派恩希尔博士
+宁苏研究部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+一个寿命较长的宁苏单位开始跟随我们的一个舰队领袖四处移动。它似乎不愿与其分离，并表现出我们认为的想要保护的意愿。更有趣的是，看起来这个我们一些人称之为"族人"的单位能够制造自己的幼崽来协助战斗。" />
+
+</root>

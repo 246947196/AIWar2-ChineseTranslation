@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<entity name="ShowdownDevice" voice_group="Silent" is_auto_scrapping_skipped_when_command_station_type_changes="false"
+	        thematic_groups="Zenith"
+		visuals="Assets/_DLC3/AI/ShowdownDevice/ShowdownDevice.prefab" visuals_bundle="exp3_neinzul_abyss"
+                draw_in_galaxy_view="true"
+		icon_name="Ships4/ShowdownDevice"
+		tags="ShowdownDevice,Capturable" gimbal_icon_size_multiplier="1.75"
+                journal_name_to_play_on_player_encounter="NA_ShowdownDevices_Journal"
+		category="Ship"
+		size_scale="13"
+		visuals_scale_multiplier="2.5"
+		y_offset_of_icon="20"
+		display_name="决战装置"
+		display_name_for_sidebar="决战装置"
+		description="如果你控制了3个决战装置，就可以通过骇入任意一个决战装置来触发与AI的最终决战。AI会对你发起大规模攻击；你必须在整个过程中至少保留3个决战装置存活。
+
+对于人类帝国来说，你可以通过占领行星来夺取决战装置。死灵法师则必须骇入决战装置才能夺取它。"
+		behavior="Stationary"
+		never_leaves_remains="false"
+		starting_mark_level="Markless"
+		cost_for_ai_to_purchase="200" strength_multiplier="2"
+		hull_points="200000" shield_points="600000" speed="Immobile"
+		metal_cost="800000" energy_consumption="25000"
+		armor_mm="300" albedo="0.7" mass_tx="7"
+                aip_on_death="5"
+                is_critical_infrastructure="true"
+                skip_drawing_ship_cap="true"
+                is_scrapping_by_player_disallowed="true"
+                metal_to_claim="400000"
+		ship_or_structure_explosion_sfx="StructureMidsize_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="StructureLostOnOtherPlanet_Explosion"
+		ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+		priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+                eligible_for_hacks="InitiateShowdown,ClaimShowdownDevice"
+		>
+		<ship_class_data can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.5" can_be_devoured="false"
+		>
+			<debuff_modifier debuff_type="WeaponPhase" multiplier="0" />
+		</ship_class_data>
+	</entity>
+
+        <entity name="GalacticControlShip_Diff1" copy_from="AIOverlordPhase2"
+				thematic_groups="AI"
+                special_entity_type="AIKingMobile"
+		tags="ShowsOnNormalDisplayMode"
+                multiplier_to_all_costs="0.1" multiplier_to_all_healths="0.1" damage_multiplier_to_all_weapons="0.1"
+                display_name="银河控制舰 (i1)"
+                description="从现已失效的曲速网络中解脱出来后，这个庞然大物现在可以将其所有难以理解的强大力量集中于一个目标：
+
+毁灭你。"
+          >
+	</entity>
+        <entity name="GalacticControlShip_Diff2" copy_from="AIOverlordPhase2"
+		thematic_groups="AI"
+                special_entity_type="AIKingMobile"
+		tags="ShowsOnNormalDisplayMode"
+                multiplier_to_all_costs="0.2" multiplier_to_all_healths="0.2" damage_multiplier_to_all_weapons="0.2"
+                display_name="银河控制舰 (i2)"
+                description="从现已失效的曲速网络中解脱出来后，这个庞然大物现在可以将其所有难以理解的强大力量集中于一个目标：
+
+毁灭你。"
+          >
+	</entity>
+        <entity name="GalacticControlShip_Diff3" copy_from="AIOverlordPhase2"
+		thematic_groups="AI"
+                special_entity_type="AIKingMobile"
+		tags="ShowsOnNormalDisplayMode"
+                multiplier_to_all_costs="0.4" multiplier_to_all_healths="0.4" damage_multiplier_to_all_weapons="0.4"
+                display_name="银河控制舰 (i3)"
+                description="从现已失效的曲速网络中解脱出来后，这个庞然大物现在可以将其所有难以理解的强大力量集中于一个目标：
+
+毁灭你。"
+          >
+	</entity>
+        <entity name="GalacticControlShip_Diff4" copy_from="AIOverlordPhase2"
+		thematic_groups="AI"
+                special_entity_type="AIKingMobile"
+		tags="ShowsOnNormalDisplayMode"
+                multiplier_to_all_costs="0.6" multiplier_to_all_healths="0.6" damage_multiplier_to_all_weapons="0.6"
+                display_name="银河控制舰 (i4)"
+                description="从现已失效的曲速网络中解脱出来后，这个庞然大物现在可以将其所有难以理解的强大力量集中于一个目标：
+
+毁灭你。"
+          >
+	</entity>
+        <entity name="GalacticControlShip_Diff5" copy_from="AIOverlordPhase2"
+		thematic_groups="AI"
+                special_entity_type="AIKingMobile"
+	        tags="ShowsOnNormalDisplayMode"
+                multiplier_to_all_costs="1.0" multiplier_to_all_healths="1.0" damage_multiplier_to_all_weapons="1.0"
+                display_name="银河控制舰 (i5)"
+                description="从现已失效的曲速网络中解脱出来后，这个庞然大物现在可以将其所有难以理解的强大力量集中于一个目标：
+                             
+毁灭你。"
+          >
+		<system name="W4" display_name="核爆"
+				category="Weapon" firing_timing="Never"			
+				damage_per_shot="200000" range="EssentiallyInfinite" shot_speed="Normal" rate_of_fire="Devourer"
+				shot_type_data="FlakShotAOEBurstAtEnd"
+				ravage_planet_and_all_units_on_it_on_death="true"
+				system_is_hidden_for_ui="true"
+				>
+		</system>
+	</entity>
+        <entity name="GalacticControlShip_Diff6" copy_from="AIOverlordPhase2"
+		thematic_groups="AI"
+                special_entity_type="AIKingMobile"
+		tags="ShowsOnNormalDisplayMode"
+                multiplier_to_all_costs="1.4" multiplier_to_all_healths="1.4" damage_multiplier_to_all_weapons="1.4"
+                display_name="银河控制舰 (i6)"
+                description="从现已失效的曲速网络中解脱出来后，这个庞然大物现在可以将其所有难以理解的强大力量集中于一个目标：
+
+毁灭你。"
+          >
+		<system name="W4" display_name="核爆"
+				category="Weapon" firing_timing="Never"			
+				damage_per_shot="200000" range="EssentiallyInfinite" shot_speed="Normal" rate_of_fire="Devourer"
+				shot_type_data="FlakShotAOEBurstAtEnd"
+				ravage_planet_and_all_units_on_it_on_death="true"
+				system_is_hidden_for_ui="true"
+				>
+		</system>
+	</entity>
+        <entity name="GalacticControlShip_Diff7" copy_from="AIOverlordPhase2"
+		thematic_groups="AI"
+                special_entity_type="AIKingMobile"
+		tags="ShowsOnNormalDisplayMode"
+                multiplier_to_all_costs="1.8" multiplier_to_all_healths="1.8" damage_multiplier_to_all_weapons="1.8"
+                display_name="银河控制舰 (i7)"
+                description="从现已失效的曲速网络中解脱出来后，这个庞然大物现在可以将其所有难以理解的强大力量集中于一个目标：
+
+毁灭你。"
+          >
+			<system name="W4" display_name="超级核爆"
+					category="Weapon" firing_timing="Never"			
+					damage_per_shot="3000000" range="EssentiallyInfinite" shot_speed="Normal" rate_of_fire="Devourer"
+					shot_type_data="FlakShotAOEBurstAtEnd"
+					ravage_current_and_adjacent_planets_and_all_units_on_it_on_death="true"
+					system_is_hidden_for_ui="true"
+			>
+			</system>
+	</entity>
+        <entity name="GalacticControlShip_Diff8" copy_from="AIOverlordPhase2"
+		thematic_groups="AI"
+                special_entity_type="AIKingMobile"
+		tags="ShowsOnNormalDisplayMode"
+                multiplier_to_all_costs="2.0" multiplier_to_all_healths="2.0" damage_multiplier_to_all_weapons="2.0"
+                display_name="银河控制舰 (i8)"
+                description="从现已失效的曲速网络中解脱出来后，这个庞然大物现在可以将其所有难以理解的强大力量集中于一个目标：
+
+毁灭你。"
+          >
+			<system name="W4" display_name="超级核爆"
+					category="Weapon" firing_timing="Never"			
+					damage_per_shot="3000000" range="EssentiallyInfinite" shot_speed="Normal" rate_of_fire="Devourer"
+					shot_type_data="FlakShotAOEBurstAtEnd"
+					ravage_current_and_adjacent_planets_and_all_units_on_it_on_death="true"
+					system_is_hidden_for_ui="true"
+			>
+			</system>
+	</entity>
+        <entity name="GalacticControlShip_Diff9" copy_from="AIOverlordPhase2"
+		thematic_groups="AI"
+                special_entity_type="AIKingMobile"
+		tags="ShowsOnNormalDisplayMode"
+                multiplier_to_all_costs="2.5" multiplier_to_all_healths="2.5" damage_multiplier_to_all_weapons="2.5"
+                display_name="银河控制舰 (i9)"
+                description="从现已失效的曲速网络中解脱出来后，这个庞然大物现在可以将其所有难以理解的强大力量集中于一个目标：
+
+毁灭你。"
+          >
+			<system name="W4" display_name="超级核爆"
+					category="Weapon" firing_timing="Never"			
+					damage_per_shot="3000000" range="EssentiallyInfinite" shot_speed="Normal" rate_of_fire="Devourer"
+					shot_type_data="FlakShotAOEBurstAtEnd"
+					ravage_current_and_adjacent_planets_and_all_units_on_it_on_death="true"
+					system_is_hidden_for_ui="true"
+			>
+			</system>
+	</entity>
+        <entity name="GalacticControlShip_Diff10" copy_from="AIOverlordPhase2"
+		thematic_groups="AI"
+                special_entity_type="AIKingMobile"
+		tags="ShowsOnNormalDisplayMode"
+                multiplier_to_all_costs="3.1" multiplier_to_all_healths="3.1" damage_multiplier_to_all_weapons="3.1"
+                display_name="银河控制舰 (i10)"
+                description="从现已失效的曲速网络中解脱出来后，这个庞然大物现在可以将其所有难以理解的强大力量集中于一个目标：
+
+毁灭你。"
+          >
+			<system name="W4" display_name="超级核爆"
+					category="Weapon" firing_timing="Never"			
+					damage_per_shot="3000000" range="EssentiallyInfinite" shot_speed="Normal" rate_of_fire="Devourer"
+					shot_type_data="FlakShotAOEBurstAtEnd"
+					ravage_current_and_adjacent_planets_and_all_units_on_it_on_death="true"
+					system_is_hidden_for_ui="true"
+			>
+			</system>
+	</entity>
+
+        
+</root>

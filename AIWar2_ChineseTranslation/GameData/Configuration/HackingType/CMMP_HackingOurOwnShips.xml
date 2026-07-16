@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <item name="RetrieveSpentScience" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_NullHackHandler" 
+        display_name="回收已消耗的科研点数" description="回收已投入到科技线或舰队上的科研点数。"
+        hack_completes_instantly="true"
+        cost_in_hacking_points="5"
+        local_hacker_required="false"
+        custom_hacking_display_string_instead_of_name="Retrieved {RelatedInt} Science From {RelatedString}"
+        custom_hacking_display_string_includes_related_string="true"
+        custom_hacking_display_string_includes_related_int="true"
+/>
+  
+  <item name="UnitWasCrippled" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_NullHackHandler"
+        display_name="单位受损" description="单位受损时损失入侵点数。"
+        hack_completes_instantly="true"
+        cost_in_hacking_points="0"
+        local_hacker_required="false"
+        custom_hacking_display_string_instead_of_name="{RelatedString} Was Crippled"
+        custom_hacking_display_string_includes_related_string="true"
+        custom_hacking_display_string_includes_related_int="true"
+/>
+
+  <item name="TransformShip" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_NullHackHandler"
+        display_name="转换单位形态" description="将一个单位从一种形态转换为另一种形态。"
+        hack_completes_instantly="true"
+        cost_in_hacking_points="5"
+        local_hacker_required="false"
+        custom_hacking_display_string_instead_of_name="Transformed {RelatedString}"
+        custom_hacking_display_string_includes_related_string="true"
+        custom_hacking_display_string_includes_related_int="true"
+/>
+
+  <item name="HackIncreaseReconRange" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_IncreaseReconRange" 
+      display_name="增加 {Target} 侦察范围" description="增加此 {Target} 的侦察范围（该单位周围区域可见的行星数量）。"
+      hack_completes_instantly="true"
+      local_hacker_required="false"
+      only_for_target_type="MyUnits"
+      cost_in_hacking_points="40"
+      cost_in_hacking_points_multiplier_per_times_same_unit_hacked="1.5"
+      display_name_and_description_insert_target_ship_name="true"
+        />
+
+  <item name="IncreaseHullDurability" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_IncreaseHullDurability"
+      display_name="增加船体耐久度" description="增加您在该行星上某个单位的船体耐久度。"
+      hack_completes_instantly="true"
+      local_hacker_required="true"
+      only_for_target_type="MyUnits"
+      cost_in_hacking_points="20"
+      cost_in_hacking_points_multiplier_per_times_same_unit_hacked="1.5"
+      only_show_once_per_planet_with_multiple_entities_granting_this="true"
+      skip_writing_who_this_hack_is_against="true"
+      have_sidebar_request_hacking_point_cost_range="true"
+        />
+
+  <item name="IncreaseShieldDurability" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_IncreaseShieldDurability"
+      display_name="增加护盾强度" description="增加您在该行星上某个单位的护盾耐久度（适用于个人护盾和气泡力场）。"
+      hack_completes_instantly="true"
+      local_hacker_required="true"
+      only_for_target_type="MyUnits"
+      cost_in_hacking_points="20"
+      cost_in_hacking_points_multiplier_per_times_same_unit_hacked="1.5"
+      only_show_once_per_planet_with_multiple_entities_granting_this="true"
+      skip_writing_who_this_hack_is_against="true"
+      have_sidebar_request_hacking_point_cost_range="true"
+        />
+
+  <item name="IncreaseWeaponPower" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_IncreaseWeaponPower"
+      display_name="增加武器威力" description="增加您在该行星上某个单位所有武器的攻击力。"
+      hack_completes_instantly="true"
+      local_hacker_required="true"
+      only_for_target_type="MyUnits"
+      cost_in_hacking_points="20"
+      cost_in_hacking_points_multiplier_per_times_same_unit_hacked="1.5"
+      only_show_once_per_planet_with_multiple_entities_granting_this="true"
+      skip_writing_who_this_hack_is_against="true"
+      have_sidebar_request_hacking_point_cost_range="true"
+        />
+  
+</root>

@@ -1,0 +1,2532 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<!-- Modifiers:
+	Plated: 2x armor mm, PPSC ship class
+	Armored (Green DZ Resource "Thaumite"): Hardened modifier, APSC ship class, costs Thaumite
+	
+	Guard: -50% health, shield increased so total health is 1.5x, hardened great-forcefield (range depends on ship type/size)
+	Protector (Blue DZ Resource "Chelonium"): Fortified incoming damage modifier, costs Chelonium
+	
+	Cloaked: Adds a cloaking device (strength depends on ship size), forces 0.7 albedo
+	Mercurial (Black DZ Resource "Skrith"): Goes in and out of Multiphase, weapons no longer immediately decloak, costs Skrith
+	
+	Strike: ~1.25x + 300 speed, 4 engine gX
+	Blitz (White DZ Resource "Alkahest"): 1.5x speed modifier for 5 seconds when new on the planet, weapons gain raid damage modifiers, costs Alkahest
+	
+	Killer: 1.25x damage, ~1.15x + 2000 range
+	Death (Red DZ Resource "Izumite"): Damage modifier vs low-health targets, ships explode on death (damage/range affected by ship type/size), costs Izumite
+	
+	Refracting: RPSC ship class, +25% health, +25% shield
+	Lucent (Blue Sappers Resource "Moonstone"): LPSC ship class, anti-raid incoming damage modifier, costs Moonstone
+	
+	Charged: +15% damage, ~1.2x + 2500 range
+	Radiant (Red Sappers Resource "Bloodstone"): Weapons have an ambush damage modifier, apply improved marauder goo and cause slight paralysis, costs Bloodstone
+	
+	Efficient: -20% metal/energy cost, +20% metal/energy production, + 40% Goo Output
+	Infused: Further -20% metal/energy cost, +20% metal/energy production, +40% drone/orbital capacity, +40% drone/orbital build/generation speed, +40% ship building capacity, 0.7x reload rate for unit-spawning weapons, +100% Goo Output
+	
+	Note: Octiron and Sappers Metallic Crystal count as metal for AMU's Universal Resource Integration
+	-->
+	
+	<!-- Potential Material Options:
+	Implosion Guardian (Marauder Raider)
+	Maugrim (black-red-orange)
+	Hunter/Seeker + killer (black-red ish)
+	-->
+
+	<!-- ######################### -->
+	<!-- # Marauder Tier 1 ships # -->
+	<!-- ######################### -->
+
+	<entity name="NeedleInterceptor" copy_from="AMU_StrikeCraftBase"
+		tags="MarauderShipTier1"
+		visuals="assets/_finalgamemeshes/fleetships/raider/raider.prefab"
+		material_override_path="assets/_finalgamemeshes/guardians/implosionguardian/implosionguardian.prefab"
+		icon_name="Ships1/Raider" icon_overlay="Overlays1/Turret_Pike"
+		size_scale="0.5"
+		visuals_scale_multiplier="2.6"
+		display_name="飞针拦截机"
+		display_name_for_sidebar="飞针拦截机 SC"
+		description_short="高速攻击单位，对低速目标造成高额伤害。"
+		description="NI-5飞针拦截机是凯泽掠夺者一种非常廉价基础的设计。它能够应对大量静止或低速移动的敌方类型，如货船以及行星防御设施。"
+		tech_upgrades_that_benefit_me="Raid,Light"
+		cost_for_ai_to_purchase="15" strength_multiplier="1.5"
+		hull_points="450" shield_points="0" speed="High"
+		metal_cost="500" energy_consumption="100"
+		armor_mm="20" albedo="0.3" engine_gx="12" mass_tx="0.1"
+		ship_class_name="PSC"
+	>
+		<system name="NI" display_name="飞针撞击炮"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="38" range="VeryTiny1" shot_speed="VeryFast" rate_of_fire="Normal"
+			shot_type_data="PikeShot_Gold"
+		>
+			<outgoing_damage_modifier based_on="CurrentSpeedIfMoving" comparison_type="AtMost" compared_to="400" multiplier="3" />
+		</system>
+	</entity>
+	
+	<entity name="NeedleInterceptorDrone" copy_from="NeedleInterceptor"
+		special_entity_type="DroneGeneral" gimbal_icon_size_multiplier="0.75"
+		display_name="飞针拦截机 无人机"
+		display_name_for_sidebar="飞针拦截机 DRN"
+		tech_upgrades_that_benefit_me="Unused"
+		self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="35"
+		cannot_target_or_alert_ai_reinforcement_spots="true"
+	>
+	</entity>
+
+	<entity name="PlatedNeedleInterceptor" copy_from="NeedleInterceptor"
+		tags="MarauderShipTier1,Plated"
+		icon_overlay="Overlays1/Turret_Bulwark"
+		display_name="镀层 飞针拦截机"
+		display_name_for_sidebar="镀层飞针拦截 SC"
+		description_short="高速攻击单位，对低速目标造成高额伤害。 此型号已升级，更加耐久和坚韧。"
+		description="P-NI-5镀层飞针拦截机是凯泽掠夺者一种非常廉价基础的设计。它能够应对大量静止或低速移动的敌方类型，如货船以及行星防御设施。镀层变体不仅能完全吸收部分来袭伤害，还能承受更多攻击并抵抗多种减益效果，但离子伤害再次变得有效。"
+		strength_multiplier="1.65"
+		metal_cost="625"
+		armor_mm="40"
+		ship_class_name="PPSC"
+	>
+	</entity>
+
+	<entity name="ArmoredNeedleInterceptor" copy_from="PlatedNeedleInterceptor" required_expansion_list="2_Zenith_Onslaught"
+		tags="MarauderShipTier1"
+		icon_overlay="Overlays1/DZ_Green_Stout"
+		display_name="装甲 飞针拦截机"
+		display_name_for_sidebar="装甲飞针拦截 SC"
+		description_short="高速攻击单位，对低速目标造成高额伤害。 此型号已升级，使用Thaumite变得更加耐久和坚韧。"
+		description="A-NI-5装甲飞针拦截机是凯泽掠夺者一种非常廉价基础的设计。它能够应对大量静止或低速移动的敌方类型，如货船以及行星防御设施。装甲变体不仅配备了比镀层船体更强大的装甲，还增加了硬化船体，防止单位受到过于强大攻击的过度伤害。此升级源自……「获取」的暗天顶Thaumite。"
+		strength_multiplier="1.8"
+		metal_cost="750"
+		damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.35"
+		ship_class_name="APSC"
+	>
+	</entity>
+	
+	
+	<entity name="MortarHeavyCorvette" copy_from="AMU_MediumCorvetteBase"
+		tags="MarauderShipTier1"
+		visuals="assets/_finalgamemeshes/fleetships/grenadelauncher2/grenadelauncher2.prefab"
+		material_override_path="assets/_finalgamemeshes/guardians/implosionguardian/implosionguardian.prefab"
+		icon_overlay="Overlays1/Turret_Grenade"
+		size_scale="3"
+		visuals_scale_multiplier="22.5"
+		display_name="迫击炮重型护卫舰"
+		display_name_for_sidebar="迫击炮 KH"
+		description_short="攻城护卫舰，配备远程武器，能造成可观伤害，但前提是命中大量目标。"
+		description="MH-8迫击炮重型护卫舰旨在通过在其进入射程之前阻止大量星战舰队来对抗它们。其武器缓慢但能像极少数其他单位一样高效处理大规模星战。"
+		tech_upgrades_that_benefit_me="Splash,Heavy"
+		cost_for_ai_to_purchase="289" strength_multiplier="1.5"
+		hull_points="10500" shield_points="5250" speed="AboveAverage1"
+		metal_cost="12000" energy_consumption="2000"
+		armor_mm="120" albedo="0.35" engine_gx="7" mass_tx="3"
+		ship_class_name="PSC"
+	>
+		<system name="MT" display_name="迫击炮"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="125" range="High1" shot_speed="UltraSlow" rate_of_fire="ExtremelyLow"
+			shot_type_data="FlakShotAOEBurstAtEnd"
+			area_of_effect_size="1500"
+			maximum_number_of_targets_hit_per_shot="25"
+		>
+		</system>
+	</entity>
+	
+	<entity name="MortarHeavyCorvetteDrone" copy_from="MortarHeavyCorvette"
+		special_entity_type="DroneGeneral" gimbal_icon_size_multiplier="0.9"
+		display_name="迫击炮重型护卫舰 无人机"
+		display_name_for_sidebar="迫击炮 DRN"
+		tech_upgrades_that_benefit_me="Unused"
+		self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="15"
+		cannot_target_or_alert_ai_reinforcement_spots="true"
+	>
+	</entity>
+	
+	<entity name="GuardMortarHeavyCorvette" copy_from="MortarHeavyCorvette"
+		tags="MarauderShipTier1"
+		icon_overlay="Overlays1/Starship_Shield"
+		shield_size_scale="2.25" is_stationary_forcefield="false" barred_from_vertex_animated_phasing="true"
+		my_forcefield_does_not_shrink="true" my_forcefield_has_no_penalty_for_enemies_firing_out_of_it="true"
+		display_name="守卫 迫击炮重型护卫舰"
+		display_name_for_sidebar="G 迫击炮 KH"
+		description_short="攻城护卫舰，配备远程武器，能造成可观伤害，但前提是命中大量目标。 此型号拥有更高的护盾容量和泡泡力场。"
+		description="G-MHK-8迫击炮重型护卫舰旨在通过在其进入射程之前阻止大量星战舰队来对抗它们。其武器缓慢但能像极少数其他单位一样高效处理大规模星战。守卫变体以牺牲船体为代价拥有显著更多的护盾，并用泡泡力场保护盟友。"
+		cost_for_ai_to_purchase="289"
+		metal_cost="13800" energy_consumption="2300"
+		hull_points="5500" shield_points="18375"
+	>
+	</entity>
+	
+	<entity name="ProtectorMortarHeavyCorvette" copy_from="GuardMortarHeavyCorvette" required_expansion_list="2_Zenith_Onslaught"
+		tags="MarauderShipTier1"
+		icon_overlay="Overlays1/DZ_Blue_Fortified"
+		display_name="保护者 迫击炮重型护卫舰"
+		display_name_for_sidebar="P 迫击炮 KH"
+		description_short="攻城护卫舰，配备远程武器，能造成可观伤害，但前提是命中大量目标。 此型号拥有更高的护盾容量和泡泡力场，并使用Chelonium进行了堡垒化强化。"
+		description="P-MHK-8迫击炮重型护卫舰旨在通过在其进入射程之前阻止大量星战舰队来对抗它们。其武器缓慢但能像极少数其他单位一样高效处理大规模星战。保护者变体不仅拥有守卫变体使用的相同力场技术，还能抵御更远距离的攻击——无论这些攻击是否针对其他单位。为此使用了大量……「捐献」的暗天顶Thaumite。"
+		cost_for_ai_to_purchase="289"
+		metal_cost="15600" energy_consumption="2600"
+	>
+		<incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="3000" multiplier="0.25" />
+	</entity>
+	
+	
+	<entity name="StingLightFrigate" copy_from="AMU_LightFrigateBase"
+		tags="MarauderShipTier1"
+		visuals="assets/_finalgamemeshes/starships/scoutstarship/scoutstarship.prefab"
+		material_override_path="assets/_finalgamemeshes/guardians/implosionguardian/implosionguardian.prefab"
+		icon_overlay="Overlays1/Starship_MercFlagship_Distractor"
+		size_scale="4.5"
+		visuals_scale_multiplier="2.6"
+		display_name="螫刺轻型护卫舰"
+		display_name_for_sidebar="螫刺轻护 FFL"
+		description_short="能够有效击穿护盾的护卫舰，但需要靠近目标。"
+		description="SLF-11螫刺轻型护卫舰长期作为凯泽掠夺者地堡破坏舰队的骨干服役。它廉价、平衡，尤其配合拦截机时对防御工事和大型护卫舰致命。但单独作战时严重缺乏反星战能力。"
+		tech_upgrades_that_benefit_me="Fusion,Light"
+		cost_for_ai_to_purchase="1000" strength_multiplier="1.3"
+		hull_points="18750" shield_points="37500" speed="AboveAverage5"
+		metal_cost="60000" energy_consumption="5000"
+		armor_mm="80" albedo="0.7" engine_gx="12" mass_tx="4.5"
+		ship_class_name="PSC"
+	>
+		<system name="SS" display_name="护盾螫刺"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="5000" range="Tiny3" shot_speed="Normal" rate_of_fire="RatherLow"
+			shot_type_data="PlasmaTorpedo"
+		>
+			<outgoing_damage_modifier based_on="MaxPersonalShield" comparison_type="AtLeast" compared_to="1" multiplier="4" added_multiplier_per_mark="0.2" applies_to="AllShields" />
+		</system>
+	</entity>
+	
+	<entity name="CloakedStingLightFrigate" copy_from="StingLightFrigate"
+		tags="MarauderShipTier1"
+		icon_overlay="Overlays2/Guardian_Stealth"
+		display_name="隐形 螫刺轻型护卫舰"
+		display_name_for_sidebar="隐形螫刺 FFL"
+		description_short="能够有效击穿护盾的护卫舰，但需要靠近目标。 此型号还具备隐形能力。"
+		description="C-SLF-11螫刺轻型护卫舰长期作为凯泽掠夺者地堡破坏舰队的骨干服役。它廉价、平衡，尤其配合拦截机时对防御工事和大型护卫舰致命。但单独作战时严重缺乏反星战能力。隐形变体配备隐形装置，但攻击时会暴露自身。"
+		metal_cost="66000" energy_consumption="7250"
+		albedo="0.7"
+	>
+		 <system name="C" display_name="隐形装置" category="Passive" cloaking_points="2000" cloaking_points_added_per_mark="1000" />
+	</entity>
+	
+	<entity name="MercurialStingLightFrigate" copy_from="CloakedStingLightFrigate" required_expansion_list="2_Zenith_Onslaught"
+		tags="MarauderShipTier1"
+		icon_overlay="Overlays1/DZ_Black_Sinister"
+		display_name="汞变 螫刺轻型护卫舰"
+		display_name_for_sidebar="汞变螫刺 FFL"
+		description_short="能够有效击穿护盾的护卫舰，但需要靠近目标。 此型号具备隐形能力，可在隐形状态下开火，并使用Skrith在正常态和多相态之间切换。"
+		description="M-SLF-11螫刺轻型护卫舰长期作为凯泽掠夺者地堡破坏舰队的骨干服役。它廉价、平衡，尤其配合拦截机时对防御工事和大型护卫舰致命。但单独作战时严重缺乏反星战能力。汞变变体拥有高级隐形装置，可在开火数次时保持隐藏，并在普通态和多相态之间切换。其隐形效果在此期间可能刷新。为此使用了大量……「获取」的暗天顶Skrith。"
+		metal_cost="72000" energy_consumption="9500"
+		alternative_state_of_matter="MultiPhase" phases_to_other_alternative_state_of_matter_after_seconds="40" phases_back_to_default_state_of_matter_after_seconds="10"
+	>
+		<system name="SS" display_name="消音 护盾螫刺" cloaking_percent_loss_from_firing="0.4" />
+	</entity>
+
+
+	<!-- ######################### -->
+	<!-- # Marauder Tier 2 ships # -->
+	<!-- ######################### -->
+
+	<entity name="TorpedoBomber" copy_from="AMU_StrikeCraftBase"
+		tags="MarauderShipTier2"
+		visuals="assets/_finalgamemeshes/fleetships/bomber/bomber.prefab"
+		material_override_path="assets/_finalgamemeshes/guardians/implosionguardian/implosionguardian.prefab"
+		icon_name="Ships1/Bomber" icon_overlay="Overlays1/Turret_Seeker"
+		size_scale="1.3"
+		visuals_scale_multiplier="6.5"
+		display_name="鱼雷轰炸机"
+		display_name_for_sidebar="鱼雷轰炸机 SC"
+		description_short="相对大型且缓慢的轰炸机，能将大型敌人化为灰烬。"
+		description="TB-4鱼雷轰炸机是凯泽掠夺者对重型护卫舰及以上尺寸所有物体的答案。其鱼雷缓慢且射程短，但地震飞弹与目标结构发生共振，共振体越大，伤害越大。"
+		tech_upgrades_that_benefit_me="Disruptive,Medium"
+		cost_for_ai_to_purchase="38" strength_multiplier="1.65"
+		hull_points="3750" shield_points="0" speed="AboveAverage2"
+		metal_cost="5000" energy_consumption="600"
+		armor_mm="50" albedo="0.3" engine_gx="10" mass_tx="0.4"
+		ship_class_name="PSC"
+	>
+		<system name="ST" display_name="地震鱼雷"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="125" range="Tiny2" shot_speed="Slow" rate_of_fire="FairlyLow"
+			shot_type_data="GuidedMissile"
+		>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="MultiplesOf" compared_to="1" multiplier="0.5" max_multiplier="8" />
+		</system>
+	</entity>
+	
+	<entity name="TorpedoBomberDrone" copy_from="TorpedoBomber"
+		special_entity_type="DroneGeneral" gimbal_icon_size_multiplier="0.75"
+		display_name="鱼雷 轰炸机 无人机"
+		display_name_for_sidebar="鱼雷轰炸机 DRN"
+		tech_upgrades_that_benefit_me="Unused"
+		self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="35"
+		cannot_target_or_alert_ai_reinforcement_spots="true"
+	>
+	</entity>
+
+	<entity name="StrikeTorpedoBomber" copy_from="TorpedoBomber"
+		tags="MarauderShipTier2"
+		icon_overlay="Overlays1/Starship_Raid"
+		display_name="突击 鱼雷轰炸机"
+		display_name_for_sidebar="突击鱼雷轰炸 SC"
+		description_short="相对大型且缓慢的轰炸机，能将大型敌人化为灰烬。 此型号拥有更高的速度和引擎gX等级。"
+		description="S-TB-4鱼雷轰炸机是凯泽掠夺者对重型护卫舰及以上尺寸所有物体的答案。其鱼雷缓慢且射程短，但地震飞弹与目标结构发生共振，共振体越大，伤害越大。突击变体配备了卓越引擎，赋予其更高的引擎功率和速度。"
+		speed="AboveAverage2"
+		metal_cost="5750" energy_consumption="780"
+		engine_gx="14"
+	>
+	</entity>
+
+	<entity name="BlitzTorpedoBomber" copy_from="StrikeTorpedoBomber" required_expansion_list="2_Zenith_Onslaught"
+		tags="MarauderShipTier2"
+		icon_overlay="Overlays1/DZ_White_Spirited"
+		display_name="闪击 鱼雷轰炸机"
+		display_name_for_sidebar="闪击鱼雷轰炸 SC"
+		description_short="相对大型且缓慢的轰炸机，能将大型敌人化为灰烬。 此型号拥有更高的速度和引擎gX等级，使用Alkahest抵达新行星时将变得极快且致命。"
+		description="B-TB-4鱼雷轰炸机是凯泽掠夺者对重型护卫舰及以上尺寸所有物体的答案。其鱼雷缓慢且射程短，但地震飞弹与目标结构发生共振，共振体越大，伤害越大。闪击变体拥有与突击变体相同的引擎，但引擎和武器受到虫洞能量虹吸的增强。建造、卸载后及穿越虫洞后，额外能量为飞船增压，使其异常快速和致命。为此使用了大量……「获得」的暗天顶Alkahest。"
+		metal_cost="6500" energy_consumption="960"
+		speed_multiplier_first_5_seconds_on_planet="2"
+	>
+		<system name="ST"
+		>
+				<outgoing_damage_modifier based_on="MyTimeAtPlanet" comparison_type="LessThan" compared_to="15" multiplier="2" />
+		</system>
+	</entity>
+	
+	
+	<entity name="DisrupterCorvette" copy_from="AMU_MediumCorvetteBase"
+		tags="MarauderShipTier2"
+		visuals="assets/_finalgamemeshes/fleetships/mlrscorvette/mlrscorvette.prefab"
+		material_override_path="assets/_finalgamemeshes/guardians/implosionguardian/implosionguardian.prefab"
+		icon_overlay="Overlays1/Turret_Jammer"
+		size_scale="2.5"
+		visuals_scale_multiplier="11.5"
+		display_name="干扰者护卫舰"
+		display_name_for_sidebar="干扰者 K"
+		description_short="坚韧的护卫舰，不直接造成伤害，而是削弱敌方武器和引擎，并为回收船体做准备。"
+		description="DC-21干扰者护卫舰是一艘支援舰艇，只要后方有舰队支持，就能使战斗天平向凯泽掠夺者倾斜。使用其分解-粘液技术废弃敌舰、削弱引擎和武器并将其转化为金属包，同时放大友军伤害，因此这些单位应为首要目标。"
+		tech_upgrades_that_benefit_me="Subterfuge,Medium"
+		cost_for_ai_to_purchase="989" strength_multiplier="1.1"
+		hull_points="11250" shield_points="5625" speed="AboveAverage4"
+		metal_cost="11000" energy_consumption="1500"
+		armor_mm="60" albedo="0.4" engine_gx="8" mass_tx="2.5"
+		ship_class_name="PSC"
+	>
+		<system name="GC" display_name="粘液炮"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="38" shots_per_salvo="3" range="Normal3" shot_speed="Normal" rate_of_fire="Devourer"
+			shot_type_data="ParalysisProngedShot_Blue"
+			base_engine_stun_per_shot="2" engine_stun_to_engine_gx_less_than="15" max_engine_stun_seconds="10"
+			base_enemy_weapon_reload_slowing_seconds_per_shot="3" max_enemy_weapon_reload_slowing_seconds="15" enemy_weapon_reload_slowing_to_armor_mm_less_than="70"
+		>
+<!-- TODO: GOO -->
+		</system>
+	</entity>
+	
+	<entity name="DisrupterCorvetteDrone" copy_from="DisrupterCorvette"
+		special_entity_type="DroneGeneral" gimbal_icon_size_multiplier="0.863"
+		display_name="干扰者 无人机"
+		display_name_for_sidebar="干扰者 DRN"
+		tech_upgrades_that_benefit_me="Unused"
+		self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="15"
+		cannot_target_or_alert_ai_reinforcement_spots="true"
+	>
+	</entity>
+
+	<entity name="PlatedDisrupterCorvette" copy_from="DisrupterCorvette"
+		tags="MarauderShipTier1,Plated"
+		icon_overlay="Overlays1/Turret_Bulwark"
+		display_name="镀层 干扰者护卫舰"
+		display_name_for_sidebar="P 干扰者 K"
+		description_short="坚韧的护卫舰，不直接造成伤害，而是削弱敌方武器和引擎，并为回收船体做准备。此型号已升级，更加耐久和坚韧。"
+		description="P-DC-21镀层干扰者护卫舰是一艘支援舰艇，只要后方有舰队支持，就能使战斗天平向凯泽掠夺者倾斜。使用其分解-粘液技术废弃敌舰、削弱引擎和武器并将其转化为金属包，同时放大友军伤害，因此这些单位应为首要目标。镀层变体不仅能完全吸收部分来袭伤害，还能承受更多攻击并抵抗多种减益效果，但离子伤害再次变得有效。"
+		cost_for_ai_to_purchase="989" strength_multiplier="1.21"
+		metal_cost="13750"
+		armor_mm="120"
+		ship_class_name="PPSC"
+	>
+	</entity>
+
+	<entity name="ArmoredDisrupterCorvette" copy_from="PlatedDisrupterCorvette" required_expansion_list="2_Zenith_Onslaught"
+		tags="MarauderShipTier1"
+		icon_overlay="Overlays1/DZ_Green_Stout"
+		display_name="装甲 干扰者护卫舰"
+		display_name_for_sidebar="A 干扰者 K"
+		description_short="坚韧的护卫舰，不直接造成伤害，而是削弱敌方武器和引擎，并为回收船体做准备。此型号已升级，使用Thaumite变得更加耐久和坚韧。"
+		description="A-DC-21装甲干扰者护卫舰是一艘支援舰艇，只要后方有舰队支持，就能使战斗天平向凯泽掠夺者倾斜。使用其分解-粘液技术废弃敌舰、削弱引擎和武器并将其转化为金属包，同时放大友军伤害，因此这些单位应为首要目标。装甲变体不仅配备了比镀层船体更强大的装甲，还增加了硬化船体，防止单位受到过于强大攻击的过度伤害。此升级源自……「获取」的暗天顶Thaumite。"
+		cost_for_ai_to_purchase="989" strength_multiplier="1.32"
+		metal_cost="16500"
+		damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.4"
+		ship_class_name="APSC"
+	>
+	</entity>
+	
+
+	<entity name="RampageFrigate" copy_from="AMU_MediumFrigateBase"
+		tags="MarauderShipTier2"
+		visuals="assets/_finalgamemeshes/starships/prototypeflagship/prototypeflagship.prefab"
+		material_override_path="assets/_finalgamemeshes/guardians/implosionguardian/implosionguardian.prefab"
+		icon_overlay="Overlays1/Turret_Ruffian"
+		size_scale="5"
+		visuals_scale_multiplier="3"
+		display_name="狂怒护卫舰"
+		display_name_for_sidebar="狂怒 FF"
+		description_short="强大的护卫舰，近乎一座缓慢移动的武器平台，能够应对众多敌人。"
+		description="RF-57狂怒护卫舰是凯泽掠夺者最早的设计之一，即使经过无数次迭代和改动，其设计理念与当前单位也略有不同。它缓慢、坚韧、武装到牙齿，是旨在应对一切挑战的舰队核心。"
+		tech_upgrades_that_benefit_me="Generalist,Medium"
+		cost_for_ai_to_purchase="2000" strength_multiplier="1.6"
+		hull_points="75000" shield_points="37500" speed="AboveAverage2"
+		metal_cost="100000" energy_consumption="7500"
+		armor_mm="90" albedo="0.5" engine_gx="17" mass_tx="5"
+		ship_class_name="PSC"
+	>
+		<system name="IC" display_name="撞击加农炮"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="125000" range="AboveAverage5" shot_speed="Slow" rate_of_fire="Sloth"
+			shot_type_data="MassDriver"
+		>
+			<outgoing_damage_modifier based_on="MaxHull" comparison_type="LessThan" compared_to="100000" multiplier="0" />
+		</system>
+		<system name="FK" display_name="高射炮"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="50" range="AboveAverage1" shot_speed="Normal" rate_of_fire="FairlyLow"
+			shots_per_salvo="5" added_shots_per_salvo_per_mark="1" fires_salvos_sequentially="true"
+			shot_type_data="FlakShotAOEBurstAtEnd"
+			area_of_effect_size="300"
+			maximum_number_of_targets_hit_per_shot="5"
+		  >
+		  <outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" comparison_type="LessThan" compared_to="50" multiplier="3" />
+		</system>
+		<system name="ML" display_name="部署多管火箭导弹"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="1" range="EssentiallyInfinite" shot_speed="Normal" rate_of_fire="ExtremelyLow"
+			shot_type_data="MLRSMissile"
+		>
+		  <outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="30" multiplier="2" />
+		</system>
+	</entity>
+
+	<entity name="KillerRampageFrigate" copy_from="RampageFrigate"
+		tags="MarauderShipTier2"
+		icon_overlay="Overlays2/Guardian_Temperamental"
+		display_name="杀手 狂怒护卫舰"
+		display_name_for_sidebar="K 狂怒 FF"
+		description_short="强大的护卫舰，近乎一座缓慢移动的武器平台，能够应对众多敌人。 此型号已升级，能在更远射程造成更高伤害。"
+		description="K-RF-57杀手狂怒护卫舰是凯泽掠夺者最早的设计之一，即使经过无数次迭代和改动，其设计理念与当前单位也略有不同。它缓慢、坚韧、武装到牙齿，是旨在应对一切挑战的舰队核心。「杀手」变体以更高的伤害和更远的武器射程为特色。"
+		metal_cost="105000" energy_consumption="12000"
+		damage_multiplier_to_all_weapons="1.25"
+	>
+		<system name="IC"
+			range="High2"
+		>
+		</system>
+		<system name="FK"
+			range="AboveAverage4"
+		  >
+		</system>
+		<system name="ML"
+			shot_type_data="KillerMLRSMissile"
+		>
+		</system>
+	</entity>
+
+	<entity name="DeathRampageFrigate" copy_from="KillerRampageFrigate" required_expansion_list="2_Zenith_Onslaught"
+		tags="MarauderShipTier2"
+		icon_overlay="Overlays1/DZ_Red_Enraged"
+		display_name="死亡 狂怒护卫舰"
+		display_name_for_sidebar="D 狂怒 FF"
+		description_short="强大的护卫舰，近乎一座缓慢移动的武器平台，能够应对众多敌人。 此型号拥有更优的射程和伤害，对低生命值目标尤为有效。被摧毁时会使用Izumite猛烈爆炸。"
+		description="D-RF-57死亡狂怒护卫舰是凯泽掠夺者最早的设计之一，即使经过无数次迭代和改动，其设计理念与当前单位也略有不同。它缓慢、坚韧、武装到牙齿，是旨在应对一切挑战的舰队核心。死亡变体拥有更远的射程和更高的伤害，对低生命值目标尤其凶残。如果自身被摧毁，反应堆过载，对爆炸半径内所有敌人造成伤害。这使用了大量……「失物招领」的暗天顶Izumite。"
+		metal_cost="110000" energy_consumption="16500"
+	>
+		<system name="IC"
+		>
+			<outgoing_damage_modifier based_on="TargetHullPercentageMissing" comparison_type="AtLeast" compared_to="67" multiplier="4" />
+		</system>
+		<system name="FK"
+		  >
+			<outgoing_damage_modifier based_on="TargetHullPercentageMissing" comparison_type="AtLeast" compared_to="67" multiplier="4" />
+		</system>
+		<system name="EF" display_name="爆炸终曲"
+			category="Weapon" firing_timing="OnlyInRange"
+			only_fires_on_death="true"
+			damage_per_shot="5000" range="Normal1" shot_speed="Normal" rate_of_fire="Devourer"
+			shot_type_data="FlakShotAOEBurstAtEnd"
+			area_of_effect_size="5000"
+			shots_detonate_immediately="true"
+			maximum_number_of_targets_hit_per_shot="40"
+			health_change_by_max_health_divided_by_this_per_attack="-1"
+		>
+			<outgoing_damage_modifier based_on="TargetHullPercentageMissing" comparison_type="AtLeast" compared_to="67" multiplier="4" />
+		</system>
+		<system name="ML"
+			shot_type_data="DeathMLRSMissile"
+		>
+		</system>
+	</entity>
+
+	<entity name="MLRSMissile" copy_from="AMU_LightFrigateBase"
+		visuals="Assets/_FinalGameMeshes/FleetShips/AutoBomb/AutoBomb.prefab" 
+		material_override_path="assets/_finalgamemeshes/guardians/implosionguardian/implosionguardian.prefab"
+		icon_name="Ships1/WarheadStyle1" icon_overlay="Overlays1/Turret_MLRS" gimbal_icon_size_multiplier="0.9"
+		size_scale="1"
+		visuals_scale_multiplier="5"
+		display_name="多管火箭导弹"
+		display_name_for_sidebar="多管火箭 子DRN"
+		description="正在前往释放大量子母弹的途中。"
+		tech_upgrades_that_benefit_me="Generalist,Heavy"
+		cost_for_ai_to_purchase="500" strength_multiplier="0.25"
+		self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="4" always_self_attritions="true"
+		hull_points="7500" shield_points="0" speed="High2"
+		metal_cost="200" energy_consumption="50"
+		armor_mm="10" albedo="0.3" engine_gx="7" mass_tx="2.1"
+		ship_class_name="PSC"
+	>
+		<system name="MS" display_name="释放导弹"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="250" range="Normal4" shot_speed="Normal" rate_of_fire="Devourer"
+			shots_per_salvo="20" added_shots_per_salvo_per_mark="5" fires_salvos_sequentially="false"
+			shot_type_data="FusionRocket"
+			health_change_by_max_health_divided_by_this_per_attack="-1"
+		>
+		  <outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="30" multiplier="2" />
+		</system>
+	</entity>
+
+	<entity name="KillerMLRSMissile" copy_from="MLRSMissile"
+		icon_overlay="Overlays2/Guardian_Temperamental"
+		display_name="杀手 多管火箭导弹"
+		display_name_for_sidebar="K 多管火箭 子DRN"
+		metal_cost="210" energy_consumption="80"
+		damage_multiplier_to_all_weapons="1.25"
+	>
+		<system name="MS"
+			range="AboveAverage2"
+		>
+		</system>
+	</entity>
+
+	<entity name="DeathMLRSMissile" copy_from="KillerMLRSMissile" required_expansion_list="2_Zenith_Onslaught"
+		icon_overlay="Overlays1/DZ_Red_Enraged"
+		display_name="死亡 多管火箭导弹"
+		display_name_for_sidebar="D 多管火箭 子DRN"
+		metal_cost="220" energy_consumption="110"
+	>
+		<system name="MS"
+		>
+			<outgoing_damage_modifier based_on="TargetHullPercentageMissing" comparison_type="AtLeast" compared_to="67" multiplier="4" />
+		</system>
+		<system name="EF" display_name="爆炸终曲"
+			category="Weapon" firing_timing="OnlyInRange"
+			only_fires_on_death="true"
+			damage_per_shot="188" range="Normal1" shot_speed="Normal" rate_of_fire="Devourer"
+			shot_type_data="FlakShotAOEBurstAtEnd"
+			area_of_effect_size="5000"
+			shots_detonate_immediately="true"
+			maximum_number_of_targets_hit_per_shot="40"
+			health_change_by_max_health_divided_by_this_per_attack="-1"
+		>
+			<outgoing_damage_modifier based_on="TargetHullPercentageMissing" comparison_type="AtLeast" compared_to="67" multiplier="4" />
+		</system>
+	</entity>
+
+
+	<!-- ######################### -->
+	<!-- # Marauder Tier 3 ships # -->
+	<!-- ######################### -->
+	
+	<entity name="HunterFighter" copy_from="AMU_StrikeCraftBase"
+		tags="MarauderShipTier3"
+		visuals="assets/_finalgamemeshes/fleetships/vampireclaw/vampireclaw.prefab"
+		material_override_path="assets/_finalgamemeshes/guardians/implosionguardian/implosionguardian.prefab"
+		icon_name="Ships1/Vampire_Claw" icon_overlay="Overlays1/Turret_Ambush"
+		size_scale="1"
+		visuals_scale_multiplier="7"
+		display_name="猎人战斗机"
+		display_name_for_sidebar="猎人战斗机 SC"
+		description_short="相当强大且昂贵的单位，射程近战级别，但对受伤敌人具有出色的每秒伤害。"
+		description="HF-17猎人战斗机旨在撕碎已被其他友军伤害的敌人。它们快速、坚韧、对减益效果有抵抗力，并能对已受伤敌人造成巨额伤害，但成本高昂且依赖敌人先被削弱。"
+		tech_upgrades_that_benefit_me="Melee,Medium"
+		cost_for_ai_to_purchase="45" strength_multiplier="1.25"
+		hull_points="5250" shield_points="0" speed="High2"
+		metal_cost="5500" energy_consumption="1000"
+		armor_mm="70" albedo="0.4" engine_gx="13" mass_tx="0.4"
+		ship_class_name="PSC"
+	>
+		<system name="DM" display_name="解物质器"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="38" range="AlmostNone2" shot_speed="Instant" rate_of_fire="Devourer"
+			shot_type_data="MeleeInvisible"
+		>
+			<outgoing_damage_modifier based_on="CurrentHullPercentage" comparison_type="AtMost" compared_to="70" multiplier="4" />
+		</system>
+	</entity>
+	
+	<entity name="HunterFighterDrone" copy_from="HunterFighter"
+		special_entity_type="DroneGeneral" gimbal_icon_size_multiplier="0.75"
+		display_name="猎人战斗机 无人机"
+		display_name_for_sidebar="猎人战斗机 DRN"
+		tech_upgrades_that_benefit_me="Unused"
+		self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="35"
+		cannot_target_or_alert_ai_reinforcement_spots="true"
+	>
+	</entity>
+	
+	<entity name="CloakedHunterFighter" copy_from="HunterFighter"
+		tags="MarauderShipTier3"
+		icon_overlay="Overlays2/Guardian_Stealth"
+		display_name="隐形 猎人战斗机"
+		display_name_for_sidebar="C 猎人战斗机 SC"
+		description_short="相当强大且昂贵的单位，射程近战级别，但对受伤敌人具有出色的每秒伤害。 此型号还具备隐形能力。"
+		description="C-HF-17猎人战斗机旨在撕碎已被其他友军伤害的敌人。它们快速、坚韧、对减益效果有抵抗力，并能对已受伤敌人造成巨额伤害，但成本高昂且依赖敌人先被削弱。隐形变体配备隐形装置，但攻击时会暴露自身。"
+		metal_cost="6050" energy_consumption="1450"
+		albedo="0.7"
+	>
+		 <system name="C" display_name="隐形装置" category="Passive" cloaking_points="3000" cloaking_points_added_per_mark="1500" />
+	</entity>
+	
+	<entity name="MercurialHunterFighter" copy_from="CloakedHunterFighter" required_expansion_list="2_Zenith_Onslaught"
+		tags="MarauderShipTier3"
+		icon_overlay="Overlays1/DZ_Black_Sinister"
+		display_name="汞变 猎人战斗机"
+		display_name_for_sidebar="C 猎人战斗机 SC"
+		description_short="相当强大且昂贵的单位，射程近战级别，但对受伤敌人具有出色的每秒伤害。 此型号具备隐形能力，可在隐形状态下开火，并使用Skrith在正常态和多相态之间切换。"
+		description="M-HF-17猎人战斗机旨在撕碎已被其他友军伤害的敌人。它们快速、坚韧、对减益效果有抵抗力，并能对已受伤敌人造成巨额伤害，但成本高昂且依赖敌人先被削弱。汞变变体拥有高级隐形装置，可在开火数次时保持隐藏，并在普通态和多相态之间切换。其隐形效果在此期间可能刷新。为此使用了大量……「获取」的暗天顶Skrith。"
+		metal_cost="6600" energy_consumption="1900"
+		alternative_state_of_matter="MultiPhase" phases_to_other_alternative_state_of_matter_after_seconds="40" phases_back_to_default_state_of_matter_after_seconds="10"
+	>
+		<system name="DM" display_name="消音 解物质器" cloaking_percent_loss_from_firing="0.05" />
+	</entity>
+	
+	
+	<entity name="AcidicLightCorvette" copy_from="AMU_LightCorvetteBase"
+		tags="MarauderShipTier3"
+		visuals="assets/_finalgamemeshes/fleetships/LightningCorvette/LightningCorvette.prefab"
+		material_override_path="assets/_finalgamemeshes/guardians/implosionguardian/implosionguardian.prefab"
+		icon_overlay="Overlays1/Turret_Acid"
+		size_scale="2.5"
+		visuals_scale_multiplier="7"
+		display_name="酸性轻型护卫舰"
+		display_name_for_sidebar="酸性 KL"
+		description_short="轻型护卫舰，设计用于增强友军伤害，但需要保护。"
+		description="ALC-49酸性轻型护卫舰是作为DC-21干扰者护卫舰的替代方案而创建的。DC-21通过削弱敌人保护盟友，而ALC-49则通过增加友军伤害来协助摧毁敌人。"
+		tech_upgrades_that_benefit_me="Technologist,Light"
+		cost_for_ai_to_purchase="1178" strength_multiplier="1.8"
+		hull_points="3000" shield_points="1500" speed="AboveAverage6"
+		metal_cost="7000" energy_consumption="1200"
+		armor_mm="50" albedo="0.35" engine_gx="12" mass_tx="2"
+		ship_class_name="PSC"
+	>
+		<system name="AS" display_name="酸液散布器"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="25" shots_per_salvo="6" range="Normal3" shot_speed="Normal" rate_of_fire="Normal"
+			shot_type_data="CorrosiveBlast"
+			damage_amplification="true" damage_amplification_duration="3" damage_amplification_flat="25" damage_amplification_flat_added_per_mark="5"
+		>
+		</system>
+	</entity>
+	
+	<entity name="AcidicLightCorvetteDrone" copy_from="AcidicLightCorvette"
+		special_entity_type="DroneGeneral" gimbal_icon_size_multiplier="0.825"
+		display_name="酸性轻型护卫舰 无人机"
+		display_name_for_sidebar="酸性 DRN"
+		tech_upgrades_that_benefit_me="Unused"
+		self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="15"
+		cannot_target_or_alert_ai_reinforcement_spots="true"
+	>
+	</entity>
+	
+	<entity name="StrikeAcidicLightCorvette" copy_from="AcidicLightCorvette"
+		tags="MarauderShipTier3"
+		icon_overlay="Overlays1/Starship_Raid"
+		display_name="突击 酸性轻型护卫舰"
+		display_name_for_sidebar="S 酸性 KL"
+		description_short="轻型护卫舰，设计用于增强友军伤害，但需要保护。 此型号拥有更高的速度和引擎gX等级。"
+		description="S-ALC-49突击酸性轻型护卫舰是作为DC-21干扰者护卫舰的替代方案而创建的。DC-21通过削弱敌人保护盟友，而ALC-49则通过增加友军伤害来协助摧毁敌人。突击变体配备了卓越引擎，赋予其更高的引擎功率和速度。"
+		speed="AboveAverage5"
+		metal_cost="7700" energy_consumption="1740"
+		engine_gx="16"
+	>
+	</entity>
+	
+	<entity name="BlitzAcidicLightCorvette" copy_from="StrikeAcidicLightCorvette" required_expansion_list="2_Zenith_Onslaught"
+		tags="MarauderShipTier3"
+		icon_overlay="Overlays1/DZ_White_Spirited"
+		display_name="闪击 酸性轻型护卫舰"
+		display_name_for_sidebar="B 酸性 KL"
+		description_short="轻型护卫舰，设计用于增强友军伤害，但需要保护。 此型号拥有更高的速度和引擎gX等级，使用Alkahest抵达新行星时将变得极快且致命。"
+		description="B-ALC-49闪击酸性轻型护卫舰是作为DC-21干扰者护卫舰的替代方案而创建的。DC-21通过削弱敌人保护盟友，而ALC-49则通过增加友军伤害来协助摧毁敌人。闪击变体拥有与突击变体相同的引擎，但引擎和武器受到虫洞能量虹吸的增强。建造、卸载后及穿越虫洞后，额外能量为飞船增压，使其异常快速和致命。为此使用了大量……「获得」的暗天顶Alkahest。"
+		metal_cost="8400" energy_consumption="2280"
+		speed_multiplier_first_5_seconds_on_planet="2"
+	>
+		<system name="AS"
+		>
+				<outgoing_damage_modifier based_on="MyTimeAtPlanet" comparison_type="LessThan" compared_to="12" multiplier="2" />
+		</system>
+	</entity>
+	
+	
+	<entity name="BulkHeavyFrigate" copy_from="AMU_HeavyFrigateBase"
+		tags="MarauderShipTier3"
+		visuals="assets/_finalgamemeshes/starships/assaultstarship/assaultstarship.prefab"
+		material_override_path="assets/_finalgamemeshes/guardians/implosionguardian/implosionguardian.prefab"
+		icon_overlay="Overlays1/MegaTurret_MiniFortress"
+		size_scale="5.5"
+		visuals_scale_multiplier="6.5"
+		display_name="堡垒重型护卫舰"
+		display_name_for_sidebar="堡垒 FFH"
+		description_short="高耐久护卫舰，用快子辐射和牵引光束支援凯泽掠夺者。"
+		description="BHF-2堡垒重型护卫舰是一种旨在携带极其强大支援装备的原型舰。其本身更像是支援舰而非战斗舰，BHF的目的是阻止大型和拥有强力护盾的敌人逃脱凯泽掠夺者的攻击。射程内的隐形单位将被迅速揭示，许多大型单位如护卫舰甚至运输船可能被其牵引光束捕获。"
+		tech_upgrades_that_benefit_me="Sentries,Heavy"
+		cost_for_ai_to_purchase="2500" strength_multiplier="1.6"
+		hull_points="300000" shield_points="150000" speed="AboveAverage1"
+		metal_cost="200000" energy_consumption="12000"
+		armor_mm="220" albedo="0.55" engine_gx="16" mass_tx="5.5"
+		ship_class_name="PSC"
+	>
+		<system name="MT" display_name="物质传输"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="1000" range="Normal6" shot_speed="Instant" rate_of_fire="Devourer"
+			shot_type_data="HeavyBeamInvisible" beam_weapon_visual_style="Laser_Red"
+			beam_length_multiplier="1" hits_all_intersecting_targets="false" shots_detonate_immediately="false"
+		>
+			<outgoing_damage_modifier based_on="CurrentHullPercentage" comparison_type="MultiplesOf" compared_to="1" multiplier="0.1" added_multiplier_per_mark="0.03" />
+			<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" comparison_type="GreaterThan" compared_to="0" multiplier="0" />
+		</system>
+		<system name="TB" display_name="牵引光束" category="Passive" tractor_range="Normal5" tractor_count="15" tractor_count_added_per_mark="3" tractor_hits_albedo_less_than="0.75" tractor_hits_engine_gx_less_than="19"/>
+		<system name="TA" display_name="快子阵列" category="Passive" tachyon_range="Normal5" tachyon_points="200" tachyon_points_added_per_mark="100" tachyon_hits_albedo_less_than="0.75" />
+	</entity>
+	
+	<entity name="GuardBulkHeavyFrigate" copy_from="BulkHeavyFrigate"
+		tags="MarauderShipTier3"
+		icon_overlay="Overlays1/Starship_Shield"
+		shield_size_scale="4.5" is_stationary_forcefield="false" barred_from_vertex_animated_phasing="true"
+		my_forcefield_does_not_shrink="true" my_forcefield_has_no_penalty_for_enemies_firing_out_of_it="true"
+		display_name="守卫 堡垒重型护卫舰"
+		display_name_for_sidebar="G 堡垒 FFH"
+		description_short="高耐久护卫舰，以快子辐射和牵引光束支援凯泽掠夺者舰队。此型号拥有更高的护盾容量和泡泡力场。"
+		description="G-BHF-2守卫堡垒重型护卫舰是一种旨在携带极其强大支援装备的原型舰。其本身更像是支援舰而非战斗舰，BHF的目的是阻止大型和拥有强力护盾的敌人逃脱凯泽掠夺者的攻击。射程内的隐形单位将被迅速揭示，许多大型单位如护卫舰甚至运输船可能被其牵引光束捕获。守卫变体以牺牲船体为代价拥有显著更多的护盾，并用泡泡力场保护盟友。"
+		cost_for_ai_to_purchase="2500"
+		hull_points="150000" shield_points="525000"
+		metal_cost="240000" energy_consumption="13800"
+	>
+	</entity>
+	
+	<entity name="ProtectorBulkHeavyFrigate" copy_from="GuardBulkHeavyFrigate" required_expansion_list="2_Zenith_Onslaught"
+		tags="MarauderShipTier3"
+		icon_overlay="Overlays1/DZ_Blue_Fortified"
+		display_name="保护者 堡垒重型护卫舰"
+		display_name_for_sidebar="P 堡垒 FFH"
+		description_short="高耐久护卫舰，以快子辐射和牵引光束支援凯泽掠夺者舰队。此型号拥有更高的护盾容量和泡泡力场，并使用Chelonium进行了堡垒化强化。"
+		description="P-BHF-2保护者堡垒重型护卫舰是一种旨在携带极其强大支援装备的原型舰。其本身更像是支援舰而非战斗舰，BHF的目的是阻止大型和拥有强力护盾的敌人逃脱凯泽掠夺者的攻击。射程内的隐形单位将被迅速揭示，许多大型单位如护卫舰甚至运输船可能被其牵引光束捕获。保护者变体不仅拥有守卫变体使用的相同力场技术，还能抵御更远距离的攻击——无论这些攻击是否针对其他单位。为此使用了大量……「捐献」的暗天顶Thaumite。"
+		cost_for_ai_to_purchase="2500"
+		metal_cost="280000" energy_consumption="15600"
+	>
+		<incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="4500" multiplier="0.25" />
+	</entity>
+	
+	
+	<entity name="LightshowCruiser" copy_from="AMU_CruiserBase" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught"
+		tags="MarauderShipTier3,MarauderRelicUnlockable"
+		visuals="assets/_finalgamemeshes/starships/sniperstarship/sniper_starship.prefab"
+		material_override_path="Assets/_DLC1/FactionIntegration/MarauderSpireRaider/MarauderSpireRaider.prefab" material_override_bundle="exp1_the_spire_rises"
+		icon_overlay="Overlays1/MegaTurret_Beam"
+		size_scale="6.5"
+		visuals_scale_multiplier="8.5"
+		display_name="光秀巡洋舰"
+		display_name_for_sidebar="光秀 CC"
+		description_short="攻击性火炮巡洋舰，配备自适应光束轰击，能应对多种敌人，但单独行动时也较脆弱。"
+		description="LC-9光秀巡洋舰使用极其强大的光束武器，并有一个额外特色：水晶矩阵可以设置为将单个强力光束聚焦到目标上，或分散对付多个敌人。这一点加上高伤害潜力，使巡洋舰对许多敌人都构成危险。"
+		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Concussion"
+		cost_for_ai_to_purchase="8000" strength_multiplier="3.5"
+		hull_points="300000" shield_points="150000" speed="AboveAverage3"
+		metal_cost="650000" energy_consumption="31000"
+		armor_mm="50" albedo="0.5" engine_gx="18" mass_tx="6.5"
+		ship_class_name="SiPSC"
+	>
+		<system name="HB" display_name="重型光束"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="6250" range="High3" shot_speed="Instant" rate_of_fire="Normal" shots_per_salvo="5" shots_per_target="5"
+			shot_type_data="HeavyBeamInvisible" beam_weapon_visual_style="Laser_Cyan"
+			beam_length_multiplier="1.3" hits_all_intersecting_targets="true" shots_detonate_immediately="true" 
+			maximum_number_of_targets_hit_per_shot="15"
+		>
+		</system>
+		<system name="PB" display_name="精准光束"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="375" range="ExtremelyHigh" shot_speed="Instant" rate_of_fire="Devourer"
+			shots_per_salvo="40" added_shots_per_salvo_per_mark="5" shots_per_target="40" added_shots_per_target_per_mark="5"
+			shot_type_data="HeavyBeamInvisible" beam_weapon_visual_style="Laser_Green"
+			beam_length_multiplier="1" hits_all_intersecting_targets="false" shots_detonate_immediately="false"
+		>
+		</system>
+	</entity>
+	
+	<entity name="KillerLightshowCruiser" copy_from="LightshowCruiser" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught"
+		tags="MarauderShipTier3,MarauderRelicUnlockable"
+		icon_overlay="Overlays2/Guardian_Temperamental"
+		display_name="杀手 光秀巡洋舰"
+		display_name_for_sidebar="K 光秀 CC"
+		description_short="攻击性火炮巡洋舰，配备自适应光束轰击，能应对多种敌人，但单独行动时也较脆弱。 此型号已升级，能在更远射程造成更高伤害。"
+		description="K-LC-9杀手光秀巡洋舰使用极其强大的光束武器，并有一个额外特色：水晶矩阵可以设置为将单个强力光束聚焦到目标上，或分散对付多个敌人。这一点加上高伤害潜力，使巡洋舰对许多敌人都构成危险。「杀手」变体以更高的伤害和更远的武器射程为特色。"
+		metal_cost="681500" energy_consumption="49600"
+		damage_multiplier_to_all_weapons="1.25"
+	>
+		<system name="HB"
+			range="ExtremelyHigh"
+		>
+		</system>
+		<system name="PB"
+			range="IncrediblyHigh"
+		>
+		</system>
+	</entity>
+	
+	<entity name="DeathLightshowCruiser" copy_from="KillerLightshowCruiser" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught"
+		tags="MarauderShipTier3,MarauderRelicUnlockable"
+		icon_overlay="Overlays1/DZ_Red_Enraged"
+		display_name="死亡 光秀巡洋舰"
+		display_name_for_sidebar="D 光秀 CC"
+		description_short="攻击性火炮巡洋舰，配备自适应光束轰击，能应对多种敌人，但单独行动时也较脆弱。 此型号拥有更优的射程和伤害，对低生命值目标尤为有效。被摧毁时会使用Izumite猛烈爆炸。"
+		description="D-LC-9死亡光秀巡洋舰使用极其强大的光束武器，并有一个额外特色：水晶矩阵可以设置为将单个强力光束聚焦到目标上，或分散对付多个敌人。这一点加上高伤害潜力，使巡洋舰对许多敌人都构成危险。死亡变体拥有更远的射程和更高的伤害，对低生命值目标尤其凶残。如果自身被摧毁，反应堆过载，对爆炸半径内所有敌人造成伤害。这使用了大量……「失物招领」的暗天顶Izumite。"
+		metal_cost="715000" energy_consumption="68200"
+	>
+		<system name="HB"
+		>
+			<outgoing_damage_modifier based_on="TargetHullPercentageMissing" comparison_type="AtLeast" compared_to="67" multiplier="4" />
+		</system>
+		<system name="PB"
+		>
+			<outgoing_damage_modifier based_on="TargetHullPercentageMissing" comparison_type="AtLeast" compared_to="67" multiplier="4" />
+		</system>
+		<system name="EF" display_name="爆炸终曲"
+			category="Weapon" firing_timing="OnlyInRange"
+			only_fires_on_death="true"
+			damage_per_shot="10000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Devourer"
+			shot_type_data="FlakShotAOEBurstAtEnd"
+			area_of_effect_size="8000"
+			shots_detonate_immediately="true"
+			maximum_number_of_targets_hit_per_shot="100"
+			health_change_by_max_health_divided_by_this_per_attack="-1"
+		>
+			<outgoing_damage_modifier based_on="TargetHullPercentageMissing" comparison_type="AtLeast" compared_to="67" multiplier="4" />
+		</system>
+	</entity>
+	
+	
+	<entity name="MineDestroyer" copy_from="AMU_DestroyerBase" required_expansion_list="3_The_Neinzul_Abyss"
+		tags="MarauderShipTier3"
+		visuals="Assets/_DLC3/BrutalGuardians/BrutalAmalgamDeltaGuardian/BrutalAmalgamDeltaGuardian.prefab" visuals_bundle="exp3_neinzul_abyss"
+		material_override_path="assets/_finalgamemeshes/guardians/implosionguardian/implosionguardian.prefab"
+		icon_overlay="Overlays1/Starship_Minelayer"
+		size_scale="6"
+		visuals_scale_multiplier="1.5"
+		display_name="雷区 驱逐舰"
+		display_name_for_sidebar="雷区 DD"
+		description_short="一艘缓慢「改造」星系以利于其所有者的驱逐舰：通过生产海量雷区。"
+		description="MD-67雷区驱逐舰是布雷舰系列护卫舰的升级版，将其力量与巡洋舰更大的底盘和轨道能力相结合。结果是一个不断喷出固定雷区的单位，更适合来回拉锯或偏防御的战斗。强大的重力发生器吸引敌人，使其被生成的雷区打击。"
+		tech_upgrades_that_benefit_me="Minefields"
+		cost_for_ai_to_purchase="8000" strength_multiplier="2"
+		hull_points="400000" shield_points="200000" speed="Normal2"
+		metal_cost="800000" energy_consumption="31000"
+		armor_mm="50" albedo="0.7" engine_gx="18" mass_tx="6.5"
+		build_points_per_second="1000" build_point_cost_for_per_second_construction="10000"
+		tag_to_spawn_from_for_build_point_for_per_second_construction="BlastMineFactory"
+		personal_ship_cap_for_per_second_build_point_construction="5"
+		ship_class_name="PSC"
+	>
+		<system name="GI" display_name="重力内爆器"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="350" range="Tiny2" shot_speed="Instant" rate_of_fire="FairlyLow"
+			shot_type_data="LightningExplosionAOEShot"
+			shots_detonate_immediately="true" area_of_effect_size="2000"
+			base_knockback_per_shot="-1500" added_knockback_per_shot_per_mark="-250" knockback_to_ships_mass_tx_less_than="4"
+			maximum_number_of_targets_hit_per_shot="50"
+		/>
+		<system name="C" display_name="隐形装置" category="Passive" cloaking_points="4000" cloaking_points_added_per_mark="2000" />
+	</entity>
+	
+	<entity name="BlastMineFactory" copy_from="AMU_SmallTurretBase" required_expansion_list="3_The_Neinzul_Abyss"
+		tags="BlastMineFactory"
+		visuals="Assets/_DLC3/Wards/ExplosiveWard/ExplosiveWard.prefab" visuals_bundle="exp3_neinzul_abyss"
+		material_override_path="assets/_finalgamemeshes/guardians/implosionguardian/implosionguardian.prefab"
+		icon_name="Ships2/Ward" icon_overlay="Overlays1/Starship_Minelayer"
+		size_scale="2" visuals_scale_multiplier="2.4"
+		display_name="爆破雷 工厂"
+		display_name_for_sidebar="爆破雷 F"
+		description_short="一艘用于生产雷区、环绕雷区驱逐舰轨道的隐形工厂。"
+		description="BMF-12爆破雷工厂只有一个目的：持续生成越来越多的爆破雷。工厂本身也只是一架由雷区驱逐舰建造的无人机。"
+		tech_upgrades_that_benefit_me="Minefields"
+		cost_for_ai_to_purchase="390" strength_multiplier="2"
+		hull_points="30000" shield_points="0" speed="Immobile"
+		metal_cost="40000" energy_consumption="100"
+		armor_mm="30" albedo="0.7" mass_tx="1"
+		orbits_parent_at_range="500" degrees_to_orbit_per_second="10"
+		immune_to_swapping_between_fleets="true" metal_cost_multiplier_for_scrapping="0"
+		ship_class_name="PSC"
+		build_points_per_second="1000" build_point_cost_for_per_second_construction="10000"
+		tag_to_spawn_from_for_build_point_for_per_second_construction="BlastMine"
+		personal_ship_cap_for_per_second_build_point_construction="100"
+		dies_if_parent_dies="true"
+		never_leaves_remains="true"
+	>
+		<system name="C" display_name="隐形装置" category="Passive" cloaking_points="2000" cloaking_points_added_per_mark="1000" />
+		<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+
+	<entity name="BlastMine" copy_from="AMU_SmallTurretBase" required_expansion_list="3_The_Neinzul_Abyss"
+		tags="BlastMine"
+		visuals="Assets/_FinalGameMeshes/Specials/Mines/MinefieldRegular.prefab"
+		material_override_path="assets/_finalgamemeshes/guardians/implosionguardian/implosionguardian.prefab"
+		icon_name="Ships1/Minefield" icon_overlay="Overlays1/MegaTurret_Fuseball"
+		size_scale="2.5"
+		visuals_scale_multiplier="0.8"
+		display_name="爆破雷"
+		display_name_for_sidebar="爆破雷 M"
+		description_short="一种设计用于爆破单个目标的雷，带有极其轻微的溅射伤害。"
+		description="BM-7爆破雷旨在将爆炸的冲击波引导至单个目标。未被引导的那部分力量仍可对射程内的敌人造成伤害。"
+		tech_upgrades_that_benefit_me="Minefields"
+		cost_for_ai_to_purchase="100" strength_multiplier="0.1"
+		hull_points="100" shield_points="0" speed="Immobile"
+		metal_cost="2000" energy_consumption="0"
+		armor_mm="30" albedo="0.3" mass_tx="0.1"
+		ship_class_name="PSC"
+		dies_if_parent_dies="true"
+		never_leaves_remains="true"
+	>
+		<system name="FB" display_name="聚焦爆破"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="15000" range="VeryTiny1" shot_speed="Instant" rate_of_fire="FairlyLow"
+			shot_type_data="LightningExplosionAOEShot"
+			shots_detonate_immediately="true" area_of_effect_size="1000" aoe_and_beam_damage_multiplier_to_non_primary_target="10"
+			health_change_by_max_health_divided_by_this_per_attack="-1"
+			maximum_number_of_targets_hit_per_shot="10"
+		/>
+		<system name="C" display_name="隐形装置" category="Passive" cloaking_points="500" cloaking_points_added_per_mark="250" />
+		<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+	
+	
+	<entity name="EfficientMineDestroyer" copy_from="MineDestroyer" required_expansion_list="3_The_Neinzul_Abyss"
+		icon_overlay="Overlays1/Turret_Scrap"
+		display_name="高效 雷区 驱逐舰"
+		display_name_for_sidebar="E 雷区 DD"
+		description_short="一艘缓慢「改造」星系以利于其所有者的驱逐舰：通过生产海量雷区。此型号金属和能源消耗更低。"
+		description="E-MD-67高效雷区驱逐舰是布雷舰系列护卫舰的升级版，将其力量与巡洋舰更大的底盘和轨道能力相结合。结果是一个不断喷出固定雷区的单位，更适合来回拉锯或偏防御的战斗。强大的重力发生器吸引敌人，使其被生成的雷区打击。高效变体采用优化设计，除了降低金属、能量和燃料（如启用）的生产与运营成本外，不提供其他属性提升。"
+		metal_cost="640000" energy_consumption="24800"
+		tag_to_spawn_from_for_build_point_for_per_second_construction="EfficientBlastMineFactory"
+	>
+	</entity>
+	
+	<entity name="EfficientBlastMineFactory" copy_from="BlastMineFactory" required_expansion_list="3_The_Neinzul_Abyss"
+		tags="EfficientBlastMineFactory"
+		icon_overlay="Overlays1/Turret_Scrap"
+		display_name="高效 爆破雷 工厂"
+		display_name_for_sidebar="E 爆破雷 F"
+		description_short="一艘用于生产雷区、环绕雷区驱逐舰轨道的隐形工厂。此型号金属和能源消耗更低。"
+		description="E-BMF-12高效爆破雷工厂只有一个目的：持续生成越来越多的爆破雷。工厂本身也是由雷区驱逐舰生产的。高效变体采用优化设计，除了降低金属、能量和燃料（如启用）的生产与运营成本外，不提供其他属性提升。"
+		metal_cost="32000" energy_consumption="80"
+		tag_to_spawn_from_for_build_point_for_per_second_construction="BlastMine"
+	>
+	</entity>
+
+	<entity name="EfficientBlastMine" copy_from="BlastMine" required_expansion_list="3_The_Neinzul_Abyss"
+		tags="EfficientBlastMine"
+		icon_overlay="Overlays1/Turret_Scrap"
+		display_name="高效 爆破雷"
+		display_name_for_sidebar="E 爆破雷 M"
+		description_short="一种设计用于爆破单个目标的雷，带有极其轻微的溅射伤害。此型号金属消耗更低。"
+		description="E-BM-7高效爆破雷旨在将爆炸的冲击波引导至单个目标。未被引导的那部分力量仍可对射程内的敌人造成伤害。高效变体采用优化设计，除了降低金属生产成本外，不提供其他属性提升。"
+		metal_cost="1600"
+	>
+	</entity>
+	
+	
+	<entity name="InfusedMineDestroyer" copy_from="EfficientMineDestroyer" required_expansion_list="3_The_Neinzul_Abyss"
+		icon_overlay="Overlays2/WormholeBorer_Mining"
+		display_name="灌注 雷区 驱逐舰"
+		display_name_for_sidebar="I 雷区 DD"
+		description_short="一艘缓慢「改造」星系以利于其所有者的驱逐舰：通过生产海量雷区。此型号金属和能源消耗更低，且生产速度更快、子单位更多。"
+		description="I-MD-67灌注雷区驱逐舰是布雷舰系列护卫舰的升级版，将其力量与巡洋舰更大的底盘和轨道能力相结合。结果是一个不断喷出固定雷区的单位，更适合来回拉锯或偏防御的战斗。强大的重力发生器吸引敌人，使其被生成的雷区打击。灌注变体使用混合材料使单位建造和维护更加便宜，可维持更多子单位并以更快的速度生产它们。"
+		metal_cost="480000" energy_consumption="18600"
+		build_points_per_second="1400"
+		tag_to_spawn_from_for_build_point_for_per_second_construction="InfusedBlastMineFactory"
+		personal_ship_cap_for_per_second_build_point_construction="7"
+	>
+	</entity>
+	
+	<entity name="InfusedBlastMineFactory" copy_from="EfficientBlastMineFactory" required_expansion_list="3_The_Neinzul_Abyss"
+		tags="InfusedBlastMineFactory"
+		icon_overlay="Overlays2/WormholeBorer_Mining"
+		display_name="灌注 爆破雷 工厂"
+		display_name_for_sidebar="I 爆破雷 F"
+		description_short="一艘用于生产雷区、环绕雷区驱逐舰轨道的隐形工厂。此型号金属和能源消耗更低，且生产速度更快。"
+		description="I-BMF-12灌注爆破雷工厂只有一个目的：持续生成越来越多的爆破雷。工厂本身也是由雷区驱逐舰生产的。高效变体采用优化设计，除了降低金属、能量和燃料（如启用）的生产与运营成本外，不提供其他属性提升。"
+		metal_cost="24000" energy_consumption="60"
+		tag_to_spawn_from_for_build_point_for_per_second_construction="InfusedBlastMine"
+	>
+	</entity>
+
+	<entity name="InfusedBlastMine" copy_from="EfficientBlastMine" required_expansion_list="3_The_Neinzul_Abyss"
+		tags="InfusedBlastMine"
+		icon_overlay="Overlays2/WormholeBorer_Mining"
+		display_name="灌注 爆破雷"
+		display_name_for_sidebar="I 爆破雷 M"
+		description_short="一种设计用于爆破单个目标的雷，带有极其轻微的溅射伤害。此型号金属消耗更低。"
+		description="I-BM-7灌注爆破雷旨在将爆炸的冲击波引导至单个目标。未被引导的那部分力量仍可对射程内的敌人造成伤害。灌注变体使用混合材料使单位建造和维护更加便宜，可维持更多子单位并以更快速度生产它们。"
+		metal_cost="1200"
+	>
+	</entity>
+
+
+	<!-- ############################ -->
+	<!-- # Marauder Tier 1 defenses # -->
+	<!-- ############################ -->
+
+	<entity name="ConsumerTurret" copy_from="AMU_SmallTurretBase"
+		tags="MarauderTurretTier1"
+		visuals="assets/_finalgamemeshes/turrets/needlerturret/needlerturret.prefab" lod_distance_overrides="100,450,4000"
+		icon_overlay="Overlays1/Turret_Shredder"
+		size_scale="1.5"
+		visuals_scale_multiplier="7.5"
+		display_name="消耗者 炮塔"
+		display_name_for_sidebar="消耗者 TUR"
+		description_short="小型但坚韧的炮塔，可将敌人转化为可回收金属。"
+		description="CT-58消耗者炮塔是凯泽掠夺者最古老的炮塔设计之一。多年来其主要用途变化不大，仍是一种相当坚韧的短程炮塔，擅长在摧毁敌人时将其转化为金属，但效率和效果不断变得更好。"
+		tech_upgrades_that_benefit_me="Melee,Turret"
+		cost_for_ai_to_purchase="400" strength_multiplier="1"
+		hull_points="50000" shield_points="125000"
+		metal_cost="20000" energy_consumption="1200"
+		armor_mm="120" albedo="0.45" mass_tx="1.5"
+		ship_class_name="PSC"
+	>
+		<system name="CS" display_name="消耗者 连射"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="400" range="Small5" shot_speed="VeryFast" rate_of_fire="Misery" shots_per_salvo="10"
+			shot_type_data="DoubleShot_Green"
+		>
+		</system>
+	</entity>
+
+	<entity name="RefractingConsumerTurret" copy_from="ConsumerTurret"
+		tags="MarauderTurretTier1"
+		icon_overlay="Overlays2/Turret_Knockback"
+		display_name="折射 消耗者 炮塔"
+		display_name_for_sidebar="R 消耗者 TUR"
+		description_short="小型但坚韧的炮塔，可将敌人转化为可回收金属。此型号采用折射材料制造，使其整体更坚韧，更难干扰船体。"
+		description="R-CT-58折射消耗者炮塔是凯泽掠夺者最古老的炮塔设计之一。多年来其主要用途变化不大，仍是一种相当坚韧的短程炮塔，擅长在摧毁敌人时将其转化为金属，但效率和效果不断变得更好。折射变体涂有RPSC材料，这是一种能抵抗酸蚀和异类伤害的新材料，同时拥有更高的耐久度。"
+		ship_class_name="RPSC"
+		multiplier_to_all_healths="1.25"
+	>
+	</entity>
+
+	<entity name="LucentConsumerTurret" copy_from="RefractingConsumerTurret" required_expansion_list="3_The_Neinzul_Abyss"
+		tags="MarauderTurretTier1"
+		icon_overlay="Overlays2/SapperMoonstoneCrystal"
+		display_name="光莹 消耗者 炮塔"
+		display_name_for_sidebar="L 消耗者 TUR"
+		description_short="小型但坚韧的炮塔，可将敌人转化为可回收金属。此型号将月长石织入船体，使其免疫相位效果，并高度抵抗异类伤害、酸蚀和死灵术。"
+		description="L-CT-58光莹消耗者炮塔是凯泽掠夺者最古老的炮塔设计之一。多年来其主要用途变化不大，仍是一种相当坚韧的短程炮塔，擅长在摧毁敌人时将其转化为金属，但效率和效果不断变得更好。光莹变体涂有LPSC材料，这是一种晶体-陶瓷混合材料，能极大抵抗酸蚀和异类伤害，同时拥有更高的耐久度。它使炮塔难以被侦测，在敌方瞄准系统调整前进一步降低伤害。此升级得以实现是因为使用了大量……「回收」的宁苏工兵月长石。"
+		ship_class_name="LPSC"
+	>
+      <incoming_damage_modifier based_on="TargetTimeAtPlanet" comparison_type="LessThan" compared_to="15" multiplier="0.5" />
+	</entity>
+
+	
+	<entity name="BreachTorpedoTurret" copy_from="AMU_SmallTurretBase"
+		tags="MarauderTurretTier1"
+		visuals="assets/_finalgamemeshes/turrets/missileturret/missile_turret.prefab"
+		icon_overlay="Overlays1/Turret_Seeker"
+		size_scale="3"
+		visuals_scale_multiplier="10"
+		display_name="突破 鱼雷 炮塔"
+		display_name_for_sidebar="Brc 鱼雷 TUR"
+		description_short="一种轻装甲鱼雷发射井，能够在护盾倒下后摧毁大型舰艇。"
+		description="BTC-39突破鱼雷炮塔是作为一种廉价的威慑手段对抗大型单位而设计的。飞弹在大型船体中产生地震冲击波，一旦达到5tx的临界点将变得更加毁灭性。结果是沿所有主要断层线发生灾难性船体破裂，单位将在其面前迅速瓦解。"
+		tech_upgrades_that_benefit_me="Disruptive,Turret"
+		cost_for_ai_to_purchase="700" strength_multiplier="1.5"
+		hull_points="20000" shield_points="40000"
+		metal_cost="40000" energy_consumption="2400"
+		armor_mm="50" albedo="0.45" mass_tx="3"
+		ship_class_name="PSC"
+	>
+		<system name="BT" display_name="突破 鱼雷"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="6000" range="Normal5" shot_speed="VeryFast" rate_of_fire="Low"
+			shot_type_data="GuidedMissile"
+		>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="5" applies_to="HullOnly" />
+		</system>
+	</entity>
+	
+	<entity name="ChargedBreachTorpedoTurret" copy_from="BreachTorpedoTurret"
+		tags="MarauderTurretTier1"
+		icon_overlay="Overlays2/DevourerGolem_Nemesis"
+		display_name="充能 突破 鱼雷 炮塔"
+		display_name_for_sidebar="C Brc 鱼雷 TUR"
+		description_short="一种轻装甲鱼雷发射井，能够在护盾倒下后摧毁大型舰艇。此型号经过增压，在更远射程造成更高伤害。"
+		description="C-BTC-39充能突破鱼雷炮塔是作为一种廉价的威慑手段对抗大型单位而设计的。飞弹在大型船体中产生地震冲击波，一旦达到5tx的临界点将变得更加毁灭性。结果是沿所有主要断层线发生灾难性船体破裂，单位将在其面前迅速瓦解。充能变体升级了舰载反应堆和传感器，赋予其更远射击和更高伤害的能力。"
+		damage_multiplier_to_all_weapons="1.15"
+	>
+		<system name="BT"
+			range="AboveAverage3"
+		>
+		</system>
+	</entity>
+	
+	<entity name="RadiantBreachTorpedoTurret" copy_from="ChargedBreachTorpedoTurret" required_expansion_list="3_The_Neinzul_Abyss"
+		tags="MarauderTurretTier1"
+		icon_overlay="Overlays2/SapperBloodstoneCrystal"
+		display_name="光辉 突破 鱼雷 炮塔"
+		display_name_for_sidebar="R Brc 鱼雷 TUR"
+		description_short="一种轻装甲鱼雷发射井，能够在护盾倒下后摧毁大型舰艇。此型号已升级，提升伤害和射程，配备超级分解粘液和伏击伤害加成及轻微眩晕。"
+		description="R-BTC-39光辉突破鱼雷炮塔是作为一种廉价的威慑手段对抗大型单位而设计的。飞弹在大型船体中产生地震冲击波，一旦达到5tx的临界点将变得更加毁灭性。结果是沿所有主要断层线发生灾难性船体破裂，单位将在其面前迅速瓦解。光辉变体拥有晶体电路，使武器和瞄准系统更加高效，并能在敌人反应前击中敌方传感器，使其眩晕并在调整前造成更多伤害。它还采用晶体生长技术增强分解粘液凝胶，使其威力更甚。为此使用了大量……「采集」的工兵血石。"
+	>
+		<system name="BT"
+			base_paralysis_seconds_per_shot="5" paralysis_to_ships_mass_tx_less_than="6.5"
+		>
+			<outgoing_damage_modifier based_on="TargetTimeAtPlanet" comparison_type="LessThan" compared_to="20" multiplier="1.5" />
+			<!-- Todo: Strong Goo -->
+		</system>
+	</entity>
+	
+
+	<entity name="ChainMinefield" copy_from="AMU_SmallTurretBase"
+		visuals="Assets/_FinalGameMeshes/Specials/Mines/MinefieldRegular.prefab"
+		icon_name="Ships1/Minefield" icon_overlay="Overlays1/Turret_Hailstorm"
+		size_scale="0.1"
+		visuals_scale_multiplier="0.03"
+		display_name="链式 雷场"
+		display_name_for_sidebar="链式 雷场"
+		description_short="大量隐形雷，一旦触发全部同时爆炸，造成巨额溅射伤害。"
+		description="CM-22链式雷场由大量极其微小的雷构成。它们在太空中基本不占用「空间」。雷本身非常微小，实际上存在于所有其他物体之间，但通过链式连接，每个雷场、每个雷网络的所有雷都会同时爆炸，在大范围内造成巨额伤害。"
+		tech_upgrades_that_benefit_me="Minefields"
+		build_sidebar_categories_i_am_part_of="Minefields"
+		cost_for_ai_to_purchase="100" strength_multiplier="0.1"
+		hull_points="100" shield_points="0" speed="Immobile"
+		metal_cost="3000" energy_consumption="300"
+		armor_mm="5" albedo="0.3" mass_tx="0.01"
+		ship_class_name="PSC"
+	>
+		<system name="M" display_name="地雷"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="1000" range="Normal1" shot_speed="Instant" rate_of_fire="Devourer"
+			shot_type_data="ExplosiveFlakBurst"
+			shots_detonate_immediately="true" area_of_effect_size="5000"
+			health_change_by_max_health_divided_by_this_per_attack="-1"
+			maximum_number_of_targets_hit_per_shot="150"
+		>
+		</system>
+		<system name="C" display_name="隐形装置" category="Passive" cloaking_points="100" cloaking_points_added_per_mark="50" />
+	</entity>
+
+	<entity name="ChargedChainMinefield" copy_from="ChainMinefield"
+		icon_overlay="Overlays2/DevourerGolem_Nemesis"
+		display_name="充能 链式 雷场"
+		display_name_for_sidebar="C 链式 雷场"
+		description_short="大量隐形雷，一旦触发全部同时爆炸，造成巨额溅射伤害。此型号经过增压，在更远射程造成更高伤害。"
+		description="C-CM-22充能链式雷场由大量极其微小的雷构成。它们在太空中基本不占用「空间」。雷本身非常微小，实际上存在于所有其他物体之间，但通过链式连接，每个雷场、每个雷网络的所有雷都会同时爆炸，在大范围内造成巨额伤害。充能变体升级了舰载反应堆和传感器，赋予其更远射击和更高伤害的能力。"
+		damage_multiplier_to_all_weapons="1.15"
+	>
+		<system name="M"
+			range="Normal6" area_of_effect_size="7100"
+		>
+		</system>
+	</entity>
+
+	<entity name="RadiantChainMinefield" copy_from="ChargedChainMinefield" required_expansion_list="3_The_Neinzul_Abyss"
+		icon_overlay="Overlays2/SapperBloodstoneCrystal"
+		display_name="光辉 链式 雷场"
+		display_name_for_sidebar="R 链式 雷场"
+		description_short="大量隐形雷，一旦触发全部同时爆炸，造成巨额溅射伤害。此型号已升级，提升伤害和射程，配备超级分解粘液和伏击伤害加成及轻微眩晕。"
+		description="R-CM-22光辉链式雷场由大量极其微小的雷构成。它们在太空中基本不占用「空间」。雷本身非常微小，实际上存在于所有其他物体之间，但通过链式连接，每个雷场、每个雷网络的所有雷都会同时爆炸，在大范围内造成巨额伤害。光辉变体拥有晶体电路，使武器和瞄准系统更加高效，并能在敌人反应前击中敌方传感器，使其眩晕并在调整前造成更多伤害。它还采用晶体生长技术增强分解粘液凝胶，使其威力更甚。为此使用了大量……「采集」的工兵血石。"
+	>
+		<system name="M"
+			base_paralysis_seconds_per_shot="10" paralysis_to_ships_mass_tx_less_than="3.5"
+		>
+			<outgoing_damage_modifier based_on="TargetTimeAtPlanet" comparison_type="LessThan" compared_to="5" multiplier="1.5" />
+			<!-- Todo: Strong Goo -->
+		</system>
+	</entity>
+
+
+	<!-- ############################ -->
+	<!-- # Marauder Tier 2 defenses # -->
+	<!-- ############################ -->
+
+	<entity name="Forceshield"
+		tags="MarauderTurretTier2"
+		npc_ship_cap_type="SpecialDefenses"
+		visuals="assets/_finalgamemeshes/buildings/forcefieldgenerator/forcefieldgeneratorlod0.prefab"
+		icon_name="Ships1/Shield_Generator"
+		category="Ship"
+		size_scale="3"
+		visuals_scale_multiplier="12.5"
+		collision_priority="20000" construction_priority="400" emergency_repair_priority_if_below_percentage="70" emergency_repair_only_if_engineer_modulus_of="4"
+		shield_size_scale="3.5" is_stationary_forcefield="true" barred_from_vertex_animated_phasing="true"
+		display_name="力场盾 发生器"
+		display_name_for_sidebar="力场盾"
+		description_short="保护凯泽掠夺者脆弱建筑，护盾可几乎完全吸收前几次攻击。"
+		description="FSG-9力场盾发生器本质上类似于人类残余使用的力场，但凯泽掠夺者做出了自己的改变。虽然实际护盾强度较低，但遭受火力时不再失去范围。此外在几乎满完整度时，护盾几乎可以完全抵消伤害，使其对单次强力攻击极为有效。"
+		behavior="Stationary"
+		voice_group="Turret"
+		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Forcefields" 
+		build_sidebar_categories_i_am_part_of="OtherDefenses"
+		cost_for_ai_to_purchase="3000"
+		hull_points="30000" shield_points="300000" speed="Immobile"
+		metal_cost="70000" energy_consumption="11500"
+		armor_mm="85" albedo="0.45" mass_tx="5"
+		fleet_membership="Planetary"
+		ship_or_structure_explosion_sfx="StructureMidsize_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="StructureLostOnOtherPlanet_Explosion"
+		priority_as_ai_target="ShieldGenerator" priority_as_frd_target="NotDangerous" priority_to_protect="MidFavoriteToy"
+		ship_class_name="PSC"
+	>
+		<incoming_damage_modifier based_on="MyCurrentPersonalShieldPercentage" comparison_type="GreaterThan" compared_to="99" multiplier="0.1" />
+		<metal_flow purpose="SelfConstruction" throughput="250"/>
+	</entity>
+
+	<entity name="RefractingForceshield" copy_from="Forceshield"
+		tags="MarauderTurretTier2"
+		icon_overlay="Overlays2/Turret_Knockback"
+		display_name="折射 力场盾 发生器"
+		display_name_for_sidebar="R 力场盾"
+		description_short="保护凯泽掠夺者脆弱建筑，护盾可几乎完全吸收前几次攻击。此型号采用折射材料制造，使其整体更坚韧，更难干扰船体。"
+		description="R-FSG-9折射力场盾发生器本质上类似于人类残余使用的力场，但凯泽掠夺者做出了自己的改变。虽然实际护盾强度较低，但遭受火力时不再失去范围。此外在几乎满完整度时，护盾几乎可以完全抵消伤害，使其对单次强力攻击极为有效。折射变体涂有RPSC材料，这是一种能抵抗酸蚀和异类伤害的新材料，同时拥有更高的耐久度。"
+		ship_class_name="RPSC"
+		multiplier_to_all_healths="1.25"
+	>
+	</entity>
+
+	<entity name="LucentForceshield" copy_from="RefractingForceshield" required_expansion_list="3_The_Neinzul_Abyss"
+		tags="MarauderTurretTier2"
+		icon_overlay="Overlays2/SapperMoonstoneCrystal"
+		display_name="光莹 力场盾 发生器"
+		display_name_for_sidebar="L 力场盾"
+		description_short="保护凯泽掠夺者脆弱建筑，护盾可几乎完全吸收前几次攻击。此型号将月长石织入船体，使其免疫相位效果，并高度抵抗异类伤害、酸蚀和死灵术。"
+		description="L-FSG-9光莹力场盾发生器本质上类似于人类残余使用的力场，但凯泽掠夺者做出了自己的改变。虽然实际护盾强度较低，但遭受火力时不再失去范围。此外在几乎满完整度时，护盾几乎可以完全抵消伤害，使其对单次强力攻击极为有效。光莹变体涂有LPSC材料，这是一种晶体-陶瓷混合材料，能极大抵抗酸蚀和异类伤害，同时拥有更高的耐久度。它使炮塔难以被侦测，在敌方瞄准系统调整前进一步降低伤害。此升级得以实现是因为使用了大量……「回收」的宁苏工兵月长石。"
+		ship_class_name="LPSC"
+	>
+      <incoming_damage_modifier based_on="TargetTimeAtPlanet" comparison_type="LessThan" compared_to="15" multiplier="0.5" />
+	</entity>
+	
+
+	<entity name="BeamSniperTurret" copy_from="AMU_SmallTurretBase"
+		tags="MarauderTurretTier2"
+		visuals="assets/_finalgamemeshes/turrets/sniperturret/sniperturret.prefab"
+		icon_name="Ships2/SomethingLaser" icon_overlay="Overlays1/MegaTurret_Beam"
+		size_scale="3.5"
+		visuals_scale_multiplier="15"
+		display_name="光束 狙击手 炮塔"
+		display_name_for_sidebar="光束 狙击手 TUR"
+		description_short="这种令人畏惧的炮塔旨在蒸发低反照率敌人，但自身较脆弱。"
+		description="BST-9光束狙击手炮塔是凯泽掠夺者数十年超光速武器技术发展的成果。其极其强大的快子光束发射器以超光速投射伤害，虽然目标更高的反照率会减少伤害，但这些炮塔的数量和力量足以极快速消灭几乎所有敌人。"
+		tech_upgrades_that_benefit_me="Technologist,Turret"
+		cost_for_ai_to_purchase="300" strength_multiplier="2.5"
+		hull_points="20000" shield_points="40000"
+		metal_cost="60000" energy_consumption="4500"
+		armor_mm="30" albedo="0.45" mass_tx="3.5"
+		ship_class_name="PSC"
+	>
+		<system name="PD" display_name="点 光束 防御"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="1500" range="EssentiallyInfinite" shot_speed="Instant" rate_of_fire="Devourer"
+			shot_type_data="HeavyBeamInvisible" beam_weapon_visual_style="Laser_Green"
+			beam_length_multiplier="1" hits_all_intersecting_targets="false" shots_detonate_immediately="false"
+		>
+			<outgoing_damage_modifier based_on="Albedo" comparison_type="MultiplesOf" compared_to="0.05" multiplier="-0.05" />
+		</system>
+	</entity>
+
+	<entity name="RefractingBeamSniperTurret" copy_from="BeamSniperTurret"
+		tags="MarauderTurretTier2"
+		icon_overlay="Overlays2/Turret_Knockback"
+		display_name="折射 光束 狙击手 炮塔"
+		display_name_for_sidebar="R 光束 狙击手 TUR"
+		description_short="这种令人畏惧的炮塔旨在蒸发低反照率敌人，但自身较脆弱。此型号采用折射材料制造，使其整体更坚韧，更难干扰船体。"
+		description="R-BST-9折射光束狙击手炮塔是凯泽掠夺者数十年超光速武器技术发展的成果。其极其强大的快子光束发射器以超光速投射伤害，虽然目标更高的反照率会减少伤害，但这些炮塔的数量和力量足以极快速消灭几乎所有敌人。折射变体涂有RPSC材料，这是一种能抵抗酸蚀和异类伤害的新材料，同时拥有更高的耐久度。"
+		ship_class_name="RPSC"
+		multiplier_to_all_healths="1.25"
+	>
+	</entity>
+
+	<entity name="LucentBeamSniperTurret" copy_from="RefractingBeamSniperTurret" required_expansion_list="3_The_Neinzul_Abyss"
+		tags="MarauderTurretTier2"
+		icon_overlay="Overlays2/SapperMoonstoneCrystal"
+		display_name="光莹 光束 狙击手 炮塔"
+		display_name_for_sidebar="L 光束 狙击手 TUR"
+		description_short="这种令人畏惧的炮塔旨在蒸发低反照率敌人，但自身较脆弱。此型号将月长石织入船体，使其免疫相位效果，并高度抵抗异类伤害、酸蚀和死灵术。"
+		description="L-BST-9光莹光束狙击手炮塔是凯泽掠夺者数十年超光速武器技术发展的成果。其极其强大的快子光束发射器以超光速投射伤害，虽然目标更高的反照率会减少伤害，但这些炮塔的数量和力量足以极快速消灭几乎所有敌人。光莹变体涂有LPSC材料，这是一种晶体-陶瓷混合材料，能极大抵抗酸蚀和异类伤害，同时拥有更高的耐久度。它使炮塔难以被侦测，在敌方瞄准系统调整前进一步降低伤害。此升级得以实现是因为使用了大量……「回收」的宁苏工兵月长石。"
+		ship_class_name="LPSC"
+	>
+      <incoming_damage_modifier based_on="TargetTimeAtPlanet" comparison_type="LessThan" compared_to="15" multiplier="0.5" />
+	</entity>
+	
+	
+	<entity name="GooMinefield" copy_from="AMU_SmallTurretBase"
+		tags="MarauderTurretTier2"
+		visuals="Assets/_FinalGameMeshes/Specials/Mines/MinefieldRegular.prefab"
+		icon_name="Ships1/Minefield" icon_overlay="Overlays1/Minefield_Acid"
+		size_scale="4"
+		visuals_scale_multiplier="1.2"
+		display_name="粘液 雷场"
+		display_name_for_sidebar="粘液 雷场"
+		description_short="一种抑制性雷区，不以造成伤害为主，而是用于堵塞敌人引擎和武器，为回收做准备。"
+		description="GM-3粘液雷场是作为预防袭击措施而创建的。一旦被触发，敌舰将被涂上凯泽掠夺者所谓的「黑鼻涕」，这是一种粘稠且具侵蚀性的化学混合物，由各种与金属结合的物质组成。它不仅降低单位的运行效率，一旦结构解体，其粘合性质还阻止金属散逸，使其留在原地以便快速回收。"
+		tech_upgrades_that_benefit_me="Minefields"
+		build_sidebar_categories_i_am_part_of="Minefields"
+		cost_for_ai_to_purchase="100" strength_multiplier="0.1"
+		hull_points="100" shield_points="0" speed="Immobile"
+		metal_cost="6000" energy_consumption="0"
+		armor_mm="5" albedo="0.3" mass_tx="0.01"
+		ship_class_name="PSC"
+	>
+		<system name="M" display_name="地雷"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="100" range="Normal1" shot_speed="Instant" rate_of_fire="Devourer" shots_per_salvo="50"
+			shot_type_data="CorrosiveBlast"
+			health_change_by_max_health_divided_by_this_per_attack="-20"
+			base_engine_stun_per_shot="2" added_engine_stun_per_shot_per_mark="1" engine_stun_to_engine_gx_less_than="10" max_engine_stun_seconds="30"
+			base_enemy_weapon_reload_slowing_seconds_per_shot="2" added_enemy_weapon_reload_slowing_seconds_per_shot_per_mark="1" enemy_weapon_reload_slowing_to_armor_mm_less_than="60"
+			added_target_evaluator="WeaponJamAsPrimary"
+		>
+		</system>
+		<system name="C" display_name="隐形装置" category="Passive" cloaking_points="2000" cloaking_points_added_per_mark="1000" />
+		<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+	
+	<entity name="ChargedGooMinefield" copy_from="GooMinefield"
+		tags="MarauderTurretTier2"
+		icon_overlay="Overlays2/DevourerGolem_Nemesis"
+		display_name="充能 粘液 雷场"
+		display_name_for_sidebar="C 粘液 雷场"
+		description_short="一种抑制性雷区，不以造成伤害为主，而是用于堵塞敌人引擎和武器，为回收做准备。此型号经过增压，在更远射程造成更高伤害。"
+		description="C-GM-3充能粘液雷场是作为预防袭击措施而创建的。一旦被触发，敌舰将被涂上凯泽掠夺者所谓的「黑鼻涕」，这是一种粘稠且具侵蚀性的化学混合物，由各种与金属结合的物质组成。它不仅降低单位的运行效率，一旦结构解体，其粘合性质还阻止金属散逸，使其留在原地以便快速回收。充能变体升级了舰载反应堆和传感器，赋予其更远射击和更高伤害的能力。"
+		damage_multiplier_to_all_weapons="1.15"
+	>
+		<system name="M"
+			range="Normal6" area_of_effect_size="7100"
+		>
+		</system>
+	</entity>
+	
+	<entity name="RadiantGooMinefield" copy_from="ChargedGooMinefield" required_expansion_list="3_The_Neinzul_Abyss"
+		tags="MarauderTurretTier2"
+		icon_overlay="Overlays2/SapperBloodstoneCrystal"
+		display_name="光辉 粘液 雷场"
+		display_name_for_sidebar="R 粘液 雷场"
+		description_short="一种抑制性雷区，不以造成伤害为主，而是用于堵塞敌人引擎和武器，为回收做准备。此型号已升级，提升伤害和射程，配备超级分解粘液和伏击伤害加成及轻微眩晕。"
+		description="R-GM-3光辉粘液雷场是作为预防袭击措施而创建的。一旦被触发，敌舰将被涂上凯泽掠夺者所谓的「黑鼻涕」，这是一种粘稠且具侵蚀性的化学混合物，由各种与金属结合的物质组成。它不仅降低单位的运行效率，一旦结构解体，其粘合性质还阻止金属散逸，使其留在原地以便快速回收。光辉变体拥有晶体电路，使武器和瞄准系统更加高效，并能在敌人反应前击中敌方传感器，使其眩晕并在调整前造成更多伤害。它还采用晶体生长技术增强分解粘液凝胶，使其威力更甚。为此使用了大量……「采集」的工兵血石。"
+	>
+		<system name="M"
+			base_paralysis_seconds_per_shot="4" paralysis_to_ships_mass_tx_less_than="2.5"
+		>
+			<outgoing_damage_modifier based_on="TargetTimeAtPlanet" comparison_type="LessThan" compared_to="4" multiplier="1.5" />
+			<!-- Todo: Strong Goo -->
+		</system>
+	</entity>
+
+
+	<!-- ############################ -->
+	<!-- # Marauder Tier 3 defenses # -->
+	<!-- ############################ -->
+
+	<entity name="BlockadeStation" copy_from="AMU_BigTurretBase"
+		tags="MarauderTurretTier3"
+		visuals="assets/_finalgamemeshes/turrets/tractorturret/tractor_turret.prefab"
+		icon_name="Ships1/TractorTurret"
+		size_scale="5"
+		visuals_scale_multiplier="10"
+		display_name="封锁 站"
+		display_name_for_sidebar="封锁 STN"
+		description_short="超重型防御哨站，配备牵引光束和粘液炮。死亡时在广阔区域爆炸并伤害敌人。"
+		description="BLST-1封锁站是一种新引入的原型掠夺者防御设施，较少依赖直接火力，而更多依赖耐久度和用牵引光束抑制敌人，并将粘液附着到射程内的敌人身上。该站的粘液储罐在死亡时会爆炸，对射程内所有敌人造成显著伤害，并为快速回收做好准备。"
+		tech_upgrades_that_benefit_me="Melee,Turret"
+		cost_for_ai_to_purchase="1800" strength_multiplier="0.9"
+		hull_points="400000" shield_points="200000"
+		metal_cost="200000" energy_consumption="10000"
+		armor_mm="150" albedo="0.5" mass_tx="5"
+		ship_class_name="PSC"
+	>
+		<system name="GC" display_name="粘液 散布器"
+		   category="Weapon" firing_timing="OnlyInRange"
+		   damage_per_shot="125" shots_per_salvo="10" range="AboveAverage2" shot_speed="Normal" rate_of_fire="Normal"
+		   shot_type_data="ParalysisProngedShot_Blue"
+		>
+		   <!-- TODO: GOO -->
+		</system>
+		<system name="EX" display_name="粘液 爆炸"
+			category="Weapon" firing_timing="OnlyInRange"
+			only_fires_on_death="true"
+			damage_per_shot="500" range="AboveAverage2" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+			shot_type_data="ExplosiveFlakBurst"
+			area_of_effect_size="15000" maximum_number_of_targets_hit_per_shot="1000"
+			shots_detonate_immediately="true"
+		>
+			<!-- TODO: GOO -->
+		</system>
+		<system name="TB" display_name="牵引光束" category="Passive" tractor_range="AboveAverage1" tractor_count="60" tractor_count_added_per_mark="30" tractor_hits_albedo_less_than="0.5" tractor_hits_engine_gx_less_than="20" />
+		<incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="7000" multiplier="0.5" />
+	</entity>
+
+	<entity name="RefractingBlockadeStation" copy_from="BlockadeStation"
+		tags="MarauderTurretTier3"
+		icon_overlay="Overlays2/Turret_Knockback"
+		display_name="折射 封锁 站"
+		display_name_for_sidebar="R 封锁 STN"
+		description_short="超重型防御哨站，配备牵引光束和粘液炮。死亡时在广阔区域爆炸并伤害敌人。此型号采用折射材料制造，使其整体更坚韧，更难干扰船体。"
+		description="R-BLST-1折射封锁站是一种新引入的原型掠夺者防御设施，较少依赖直接火力，而更多依赖耐久度和用牵引光束抑制敌人，并将粘液附着到射程内的敌人身上。该站的粘液储罐在死亡时会爆炸，对射程内所有敌人造成显著伤害，并为快速回收做好准备。折射变体涂有RPSC材料，这是一种能抵抗酸蚀和异类伤害的新材料，同时拥有更高的耐久度。"
+		ship_class_name="RPSC"
+		multiplier_to_all_healths="1.25"
+	>
+	</entity>
+
+	<entity name="LucentBlockadeStation" copy_from="RefractingBlockadeStation" required_expansion_list="3_The_Neinzul_Abyss"
+		tags="MarauderTurretTier3"
+		icon_overlay="Overlays2/SapperMoonstoneCrystal"
+		display_name="光莹 封锁 站"
+		display_name_for_sidebar="L 封锁 STN"
+		description_short="超重型防御哨站，配备牵引光束和粘液炮。死亡时在广阔区域爆炸并伤害敌人。此型号将月长石织入船体，使其免疫相位效果，并高度抵抗异类伤害、酸蚀和死灵术。"
+		description="L-BLST-1光莹封锁站是一种新引入的原型掠夺者防御设施，较少依赖直接火力，而更多依赖耐久度和用牵引光束抑制敌人，并将粘液附着到射程内的敌人身上。该站的粘液储罐在死亡时会爆炸，对射程内所有敌人造成显著伤害，并为快速回收做好准备。光莹变体涂有LPSC材料，这是一种晶体-陶瓷混合材料，能极大抵抗酸蚀和异类伤害，同时拥有更高的耐久度。它使炮塔难以被侦测，在敌方瞄准系统调整前进一步降低伤害。此升级得以实现是因为使用了大量……「回收」的宁苏工兵月长石。"
+		ship_class_name="LPSC"
+	>
+      <incoming_damage_modifier based_on="TargetTimeAtPlanet" comparison_type="LessThan" compared_to="15" multiplier="0.5" />
+	</entity>
+
+
+	<entity name="PhaseCannonTurret" copy_from="AMU_BigTurretBase"
+		tags="MarauderTurretTier3"
+		visuals="assets/_finalgamemeshes/turrets/beamcannon/beamcannon.prefab"
+		icon_name="Ships2/SomethingLaser" icon_overlay="Overlays1/MegaTurret_MassDriver"
+		size_scale="5"
+		visuals_scale_multiplier="14"
+		display_name="相位 加农炮 炮塔"
+		display_name_for_sidebar="相位 加农炮 TUR"
+		description_short="一种火炮炮塔，发射对力场和未损坏船体具有特殊特性的极不稳定单粒子炮弹。"
+		description="PC-12相位加农炮发射凯泽掠夺者用于跳跃驱动的相同粒子齐射。出膛后这些粒子将单位的部分随机传送到200万光年内的某处，实际上使其永远消失。只要船体密封，效果最强，任何破口都会导致大部分粒子在面对暴露的电流和等离子管道时消散。此外这些粒子与构成泡泡力场的粒子相互作用。然而粒子需要在飞行中充能，这意味着该武器无法近距离命中。"
+		tech_upgrades_that_benefit_me="Concussion,Turret"
+		cost_for_ai_to_purchase="2100" strength_multiplier="2"
+		hull_points="50000" shield_points="100000"
+		metal_cost="250000" energy_consumption="15000"
+		armor_mm="50" albedo="0.5" mass_tx="5"
+		ship_class_name="PSC"
+	>
+		<system name="TP" display_name="远距相移器"
+		   category="Weapon" firing_timing="OnlyInRange"
+		   damage_per_shot="20000" range="EssentiallyInfinite" shot_speed="HyperFast" rate_of_fire="Low"
+		   shot_type_data="EnergyWave"
+		>
+			<outgoing_damage_modifier based_on="TargetHullPercentageMissing" comparison_type="LessThan" compared_to="10" multiplier="5" applies_to="HullOnly" />
+			<outgoing_damage_modifier based_on="MaxBubbleForcefield" comparison_type="ATLeast" compared_to="1" multiplier="5" applies_to="AllShields" />
+			<outgoing_damage_modifier based_on="AttackDistance" comparison_type="LessThan" compared_to="7500" multiplier="0" />
+		</system>
+	</entity>
+	
+	<entity name="ChargedPhaseCannonTurret" copy_from="PhaseCannonTurret"
+		icon_overlay="Overlays2/DevourerGolem_Nemesis"
+		tags="MarauderTurretTier3"
+		display_name="充能 相位 加农炮 炮塔"
+		display_name_for_sidebar="C 相位 加农炮 TUR"
+		description_short="一种火炮炮塔，发射对力场和未损坏船体具有特殊特性的极不稳定单粒子炮弹。此型号经过增压，以更低最小射程造成更高伤害。"
+		description="C-PC-12充能相位加农炮发射凯泽掠夺者用于跳跃驱动的相同粒子齐射。出膛后这些粒子将单位的部分随机传送到200万光年内的某处，实际上使其永远消失。只要船体密封，效果最强，任何破口都会导致大部分粒子在面对暴露的电流和等离子管道时消散。此外这些粒子与构成泡泡力场的粒子相互作用。然而粒子需要在飞行中充能，这意味着该武器无法近距离命中。充能变体升级了舰载反应堆和传感器，赋予其在更低最小射程射击和造成更高伤害的能力。"
+		damage_multiplier_to_all_weapons="1.15"
+	>
+		<system name="TP"
+		>
+			<outgoing_damage_modifier based_on="AttackDistance" comparison_type="LessThan" compared_to="4150" multiplier="0" />
+		</system>
+	</entity>
+	
+	<entity name="RadiantPhaseCannonTurret" copy_from="ChargedPhaseCannonTurret" required_expansion_list="3_The_Neinzul_Abyss"
+		tags="MarauderTurretTier3"
+		icon_overlay="Overlays2/SapperBloodstoneCrystal"
+		display_name="光辉 相位 加农炮 炮塔"
+		display_name_for_sidebar="R 相位 加农炮 TUR"
+		description_short="一种火炮炮塔，发射对力场和未损坏船体具有特殊特性的极不稳定单粒子炮弹。此型号经过增压，以更低最小射程造成更高伤害。"
+		description="R-PC-12光辉相位加农炮发射凯泽掠夺者用于跳跃驱动的相同粒子齐射。出膛后这些粒子将单位的部分随机传送到200万光年内的某处，实际上使其永远消失。只要船体密封，效果最强，任何破口都会导致大部分粒子在面对暴露的电流和等离子管道时消散。此外这些粒子与构成泡泡力场的粒子相互作用。然而粒子需要在飞行中充能，这意味着该武器无法近距离命中。光辉变体拥有晶体电路，使武器和瞄准系统更加高效，并能在敌人反应前击中敌方传感器，使其眩晕并在调整前造成更多伤害。它还采用晶体生长技术增强分解粘液凝胶，使其威力更甚。为此使用了大量……「采集」的工兵血石。"
+	>
+		<system name="TP"
+			base_paralysis_seconds_per_shot="8" paralysis_to_ships_mass_tx_less_than="8"
+		>
+			<outgoing_damage_modifier based_on="TargetTimeAtPlanet" comparison_type="LessThan" compared_to="15" multiplier="1.5" />
+			<!-- Todo: Strong Goo -->
+		</system>
+	</entity>
+	
+
+	<entity name="AdaptorTurret" copy_from="AMU_MedTurretBase"
+		tags="MarauderTurretTier3"
+		visuals="assets/_finalgamemeshes/turrets/laserturret/laserturret.prefab" icon_overlay="Overlays2/BrutalAdaptiveGuardian"
+		size_scale="2.5"
+		visuals_scale_multiplier="11"
+		display_name="适配者 炮塔"
+		display_name_for_sidebar="适配者 TUR"
+		description_short="通用型炮塔，配备自适应多发连射，可自由聚焦或分散伤害。"
+		description="AT-90适配者炮塔不像某些三级掠夺者建筑那样是花哨的超级武器。它在设计和理念上相对简单，但经过数十年的多次迭代已变得非常复杂。在几乎所有方面——伤害、耐久度、射程、成本效率——都略高于平均水平，并能将其伤害聚焦到单个大型敌人或分散对付大量敌人，这种炮塔完善了凯泽掠夺者的防御能力。"
+		tech_upgrades_that_benefit_me="Generalist,Turret"
+		cost_for_ai_to_purchase="1200" strength_multiplier="1.25"
+		hull_points="45000" shield_points="90000"
+		metal_cost="50000" energy_consumption="2200"
+		armor_mm="80" albedo="0.45" mass_tx="2.5"
+		ship_class_name="PSC"
+	>
+		<system name="AC" display_name="自适应 加农炮"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="300" range="Normal6" shot_speed="Normal" rate_of_fire="SlightlyLow"
+			shots_per_salvo="100" shots_per_target="100"
+			shot_type_data="ArmorPiercingShell"
+		/>
+	</entity>
+
+	<entity name="RefractingAdaptorTurret" copy_from="AdaptorTurret"
+		tags="MarauderTurretTier3"
+		icon_overlay="Overlays2/Turret_Knockback"
+		display_name="折射 适配者 炮塔"
+		display_name_for_sidebar="R 适配者 TUR"
+		description_short="通用型炮塔，配备自适应多发连射，可自由聚焦或分散伤害。此型号采用折射材料制造，使其整体更坚韧，更难干扰船体。"
+		description="R-AT-90折射适配者炮塔不像某些三级掠夺者建筑那样是花哨的超级武器。它在设计和理念上相对简单，但经过数十年的多次迭代已变得非常复杂。在几乎所有方面——伤害、耐久度、射程、成本效率——都略高于平均水平，并能将其伤害聚焦到单个大型敌人或分散对付大量敌人，这种炮塔完善了凯泽掠夺者的防御能力。折射变体涂有RPSC材料，这是一种能抵抗酸蚀和异类伤害的新材料，同时拥有更高的耐久度。"
+		ship_class_name="RPSC"
+		multiplier_to_all_healths="1.25"
+	>
+	</entity>
+
+	<entity name="LucentAdaptorTurret" copy_from="RefractingAdaptorTurret" required_expansion_list="3_The_Neinzul_Abyss"
+		tags="MarauderTurretTier3"
+		icon_overlay="Overlays2/SapperMoonstoneCrystal"
+		display_name="光莹 适配者 炮塔"
+		display_name_for_sidebar="L 适配者 TUR"
+		description_short="通用型炮塔，配备自适应多发连射，可自由聚焦或分散伤害。此型号将月长石织入船体，使其免疫相位效果，并高度抵抗异类伤害、酸蚀和死灵术。"
+		description="L-AT-90光莹适配者炮塔不像某些三级掠夺者建筑那样是花哨的超级武器。它在设计和理念上相对简单，但经过数十年的多次迭代已变得非常复杂。在几乎所有方面——伤害、耐久度、射程、成本效率——都略高于平均水平，并能将其伤害聚焦到单个大型敌人或分散对付大量敌人，这种炮塔完善了凯泽掠夺者的防御能力。光莹变体涂有LPSC材料，这是一种晶体-陶瓷混合材料，能极大抵抗酸蚀和异类伤害，同时拥有更高的耐久度。它使炮塔难以被侦测，在敌方瞄准系统调整前进一步降低伤害。此升级得以实现是因为使用了大量……「回收」的宁苏工兵月长石。"
+		ship_class_name="LPSC"
+	>
+	</entity>
+	
+
+	<entity name="CoilBeamTurret" copy_from="AMU_BigTurretBase" required_expansion_list="1_The_Spire_Rises"
+		tags="MarauderTurretTier3"
+		visuals="Assets/_DLC1/Turrets/SolarFlareTurret/SolarFlareTurret.prefab" visuals_bundle="exp1_the_spire_rises"
+		material_override_path="Assets/_DLC1/FactionIntegration/MarauderSpireRaider/MarauderSpireRaider.prefab" material_override_bundle="exp1_the_spire_rises"
+		icon_name="Ships1/MegaTurret" icon_overlay="Overlays1/MegaTurret_Beam"
+		size_scale="6"
+		visuals_scale_multiplier="16"
+		display_name="线圈 光束 炮塔"
+		display_name_for_sidebar="线圈 光束 TUR"
+		description_short="由逆向工程尖塔技术制造的炮塔，发射大小两种强大的线圈光束。"
+		description="CBT-1线圈光束炮塔是凯泽掠夺者防御武器库的最新成员。通过收集到的残骸，他们的科学家成功复制了尖塔最具标志性的武器系统。然而这种炮塔不只有单一线圈光束，而是多个阵列：主发射器聚焦于高质量目标以快速摧毁它们，而点防御线圈光束清除试图近距离破坏炮塔的星战。"
+		tech_upgrades_that_benefit_me="Splash,Turret"
+		cost_for_ai_to_purchase="4200" strength_multiplier="1.8"
+		hull_points="350000" shield_points="175000"
+		metal_cost="325000" energy_consumption="13000"
+		armor_mm="70" albedo="0.45" mass_tx="6"
+		ship_class_name="SiPSC"
+	>
+		 <system name="PC" display_name="主 线圈 光束"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="8000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Devourer"
+			shot_type_data="HeavyBeamInvisible"
+			beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_Cyan"
+			hits_all_intersecting_targets="true"
+			shots_detonate_immediately="true"
+			is_coilbeam="true"
+		>
+		</system>
+		<system name="SC" display_name="副 线圈 光束"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="1000" range="Normal3" shot_speed="Normal" rate_of_fire="Devourer" shots_per_salvo="5"
+			shot_type_data="HeavyBeamInvisible"
+			beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_BlueBright"
+			hits_all_intersecting_targets="true"
+			shots_detonate_immediately="true"
+			is_coilbeam="true"
+		>
+		</system>
+	</entity>
+
+	<entity name="ChargedCoilBeamTurret" copy_from="CoilBeamTurret" required_expansion_list="1_The_Spire_Rises"
+		icon_overlay="Overlays2/DevourerGolem_Nemesis"
+		tags="MarauderTurretTier3"
+		display_name="充能 线圈 光束 炮塔"
+		display_name_for_sidebar="C 线圈 光束 TUR"
+		description_short="由逆向工程尖塔技术制造的炮塔，发射大小两种强大的线圈光束。此型号经过增压，在更远射程造成更高伤害。"
+		description="C-CBT-1充能线圈光束炮塔是凯泽掠夺者防御武器库的最新成员。通过收集到的残骸，他们的科学家成功复制了尖塔最具标志性的武器系统。然而这种炮塔不只有单一线圈光束，而是多个阵列：主发射器聚焦于高质量目标以快速摧毁它们，而点防御线圈光束清除试图近距离破坏炮塔的星战。充能变体升级了舰载反应堆和传感器，赋予其更远射击和更高伤害的能力。"
+		damage_multiplier_to_all_weapons="1.15"
+	>
+		<system name="PC"
+			range="High1"
+		>
+		</system>
+		<system name="SC"
+			range="AboveAverage2"
+		>
+		</system>
+	</entity>
+
+	<entity name="RadiantCoilBeamTurret" copy_from="ChargedCoilBeamTurret" required_expansion_list="1_The_Spire_Rises,3_The_Neinzul_Abyss"
+		tags="MarauderTurretTier3"
+		icon_overlay="Overlays2/SapperBloodstoneCrystal"
+		display_name="光辉 线圈 光束 炮塔"
+		display_name_for_sidebar="R 线圈 光束 TUR"
+		description_short="由逆向工程尖塔技术制造的炮塔，发射大小两种强大的线圈光束。此型号已升级，提升伤害和射程，配备超级分解粘液和伏击伤害加成及轻微眩晕。"
+		description="R-CBT-1光辉线圈光束炮塔是凯泽掠夺者防御武器库的最新成员。通过收集到的残骸，他们的科学家成功复制了尖塔最具标志性的武器系统。然而这种炮塔不只有单一线圈光束，而是多个阵列：主发射器聚焦于高质量目标以快速摧毁它们，而点防御线圈光束清除试图近距离破坏炮塔的星战。光辉变体拥有晶体电路，使武器和瞄准系统更加高效，并能在敌人反应前击中敌方传感器，使其眩晕并在调整前造成更多伤害。它还采用晶体生长技术增强分解粘液凝胶，使其威力更甚。为此使用了大量……「采集」的工兵血石。"
+	>
+		<system name="PC"
+			base_paralysis_seconds_per_shot="1" paralysis_to_ships_mass_tx_less_than="7"
+		>
+			<outgoing_damage_modifier based_on="TargetTimeAtPlanet" comparison_type="LessThan" compared_to="4" multiplier="1.5" />
+			<!-- Todo: Strong Goo -->
+		</system>
+		<system name="SC"
+			base_paralysis_seconds_per_shot="2" paralysis_to_ships_mass_tx_less_than="0.5"
+		>
+			<outgoing_damage_modifier based_on="TargetTimeAtPlanet" comparison_type="LessThan" compared_to="4" multiplier="1.5" />
+			<!-- Todo: Strong Goo -->
+		</system>
+	</entity>
+
+	
+	<entity name="CorrosiveTurret" copy_from="AMU_SmallTurretBase" required_expansion_list="3_The_Neinzul_Abyss"
+		tags="MarauderTurretTier3"
+		visuals="assets/_finalgamemeshes/turrets/mlrsturret/mlrsturret.prefab" icon_overlay="Overlays1/Minefield_Acid"
+		material_override_path="assets/_finalgamemeshes/guardians/implosionguardian/implosionguardian.prefab"
+		size_scale="2.5"
+		visuals_scale_multiplier="9"
+		display_name="腐蚀 炮塔"
+		display_name_for_sidebar="腐蚀 TUR"
+		description_short="一种将伤害作为腐蚀施加并施加粘液的炮塔，可穿透护盾但无法彻底击杀目标。"
+		description="CT-8腐蚀炮塔是一种新设计，它应用了凯泽掠夺者已在使用且效果极佳的毁灭性粘液的更危险版本。它会持续「啃食」活着的敌人一段时间，直到只剩下一具船壳，差最后一口气就会被摧毁。"
+		tech_upgrades_that_benefit_me="Fusion,Turret"
+		cost_for_ai_to_purchase="800" strength_multiplier="1.4"
+		hull_points="30000" shield_points="50000"
+		metal_cost="25000" energy_consumption="2700"
+		armor_mm="10" albedo="0.45" mass_tx="0.5"
+		ship_class_name="PSC"
+	>
+		<system name="CB" display_name="腐蚀 冲击"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="350" range="Normal4" shot_speed="Normal" rate_of_fire="Low"
+			shots_per_salvo="15"
+			shot_type_data="CorrosiveBlast" all_damage_is_corrosive="true"
+			base_engine_stun_per_shot="12" added_engine_stun_per_shot_per_mark="6" engine_stun_to_engine_gx_less_than="11" max_engine_stun_seconds="24"
+			base_enemy_weapon_reload_slowing_seconds_per_shot="8" added_enemy_weapon_reload_slowing_seconds_per_shot_per_mark="4" enemy_weapon_reload_slowing_to_armor_mm_less_than="70" max_enemy_weapon_reload_slowing_seconds="24"
+		>
+			<!-- TODO: GOO -->
+		</system>
+	</entity>
+	
+	<entity name="EfficientCorrosiveTurret" copy_from="CorrosiveTurret" required_expansion_list="3_The_Neinzul_Abyss"
+		icon_overlay="Overlays1/Turret_Scrap"
+		display_name="高效 腐蚀 炮塔"
+		display_name_for_sidebar="E 腐蚀 TUR"
+		description_short="一种将伤害作为腐蚀施加并施加粘液的炮塔，可穿透护盾但无法彻底击杀目标。此型号金属和能源消耗更低，且粘液效果增强。"
+		description="E-CT-8高效腐蚀炮塔是一种新设计，它应用了凯泽掠夺者已在使用且效果极佳的毁灭性粘液的更危险版本。它会持续「啃食」活着的敌人一段时间，直到只剩下一具船壳，差最后一口气就会被摧毁。高效变体采用优化设计，除了降低金属、能量和燃料（如启用）的生产与运营成本外，不提供其他属性提升。粘液也得到了改良，可产出更多金属。"
+		metal_cost="20000" energy_consumption="2160"
+	>
+		<system name="CB"
+		>
+			<!-- TODO: STRONGER GOO -->
+		</system>
+	</entity>
+	
+	<entity name="InfusedCorrosiveTurret" copy_from="EfficientCorrosiveTurret" required_expansion_list="3_The_Neinzul_Abyss"
+		icon_overlay="Overlays2/WormholeBorer_Mining"
+		display_name="灌注 腐蚀 炮塔"
+		display_name_for_sidebar="I 腐蚀 TUR"
+		description_short="一种将伤害作为腐蚀施加并施加粘液的炮塔，可穿透护盾但无法彻底击杀目标。此型号金属和能源成本进一步降低，同时通过粘液生成更多金属。"
+		description="I-CT-8灌注腐蚀炮塔是一种新设计，它应用了凯泽掠夺者已在使用且效果极佳的毁灭性粘液的更危险版本。它会持续「啃食」活着的敌人一段时间，直到只剩下一具船壳，差最后一口气就会被摧毁。灌注变体使用混合材料使单位建造和维护更加便宜，并将粘液效率提升到绝对极限。"
+		metal_cost="15000" energy_consumption="1620"
+	>
+		<system name="CB"
+		>
+			<!-- TODO: EVEN STRONGER GOO -->
+		</system>
+	</entity>
+	
+	
+	<!-- ################################ -->
+	<!-- # Marauder Tier 1 Centerpieces # -->
+	<!-- ################################ -->
+	
+	<entity name="AdaptorRaider" copy_from="AMU_BattleshipBase"
+		tags="MarauderCenterpieceTier1" is_ark="true"
+		visuals="assets/_finalgamemeshes/guardians/implosionguardian/implosionguardian.prefab"
+		icon_name="Ships1/MarauderRaider" icon_overlay="Overlays2/BrutalAdaptiveGuardian"
+		size_scale="7"
+		is_crippled_instead_of_dying="false" behavior="Attacker_Full"
+		visuals_scale_multiplier="7.7"
+		display_name="适配者 突击者"
+		display_name_for_sidebar="适配者 突击者"
+		description_short="来自凯泽掠夺者的老牌但依然强大的突击者，各方面皆通但无一精通。"
+		description="AR-68适配者突击者是在适配者炮塔之后不久设计的，秉承相同理念，但更廉价和简单。其瞄准系统和多角度炮塔配置使其火力可分散到众多小目标、聚焦到单个大敌人或介于两者之间。它搭载在拥有平均防护和速度的船体上。"
+		cost_for_ai_to_purchase="1000" strength_multiplier="1.3"
+		hull_points="500000" shield_points="250000" speed="AboveAverage2"
+		metal_cost="300000" energy_consumption="19000"
+		armor_mm="50" albedo="0.5" engine_gx="18" mass_tx="6.5"
+		eligible_for_hacks="IncreaseHullDurability,IncreaseWeaponPower"
+		ship_class_name="PSC"
+	>
+		<system name="AC" display_name="自适应 加农炮"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="500" range="Normal2" shot_speed="Normal" rate_of_fire="Normal"
+			shots_per_salvo="20" shots_per_target="20"
+			shot_type_data="ArmorPiercingShell"
+		/>
+		<hack_data hack_type="IncreaseHullDurability"
+			override_cost_in_hacking_points="20"
+			cost_in_hacking_points_multiplier_per_times_same_unit_hacked="1.5"
+			max_times_single_unit_can_be_hacked="1"
+		>
+			<custom_hack_data key="AddedMultiplierPerHack" value="1.5" />
+		</hack_data>
+		<hack_data hack_type="IncreaseWeaponPower"
+			override_cost_in_hacking_points="25"
+			cost_in_hacking_points_multiplier_per_times_same_unit_hacked="1.5"
+			max_times_single_unit_can_be_hacked="1"
+		>
+			<custom_hack_data key="AddedMultiplierPerHack" value="1.5" />
+		</hack_data>
+	</entity>
+	
+	<entity name="AdaptorRaider_Player" copy_from="AdaptorRaider" is_crippled_instead_of_dying="true" />
+	
+	<entity name="StrikeAdaptorRaider" copy_from="AdaptorRaider"
+		tags="MarauderCenterpieceTier1"
+		icon_overlay="Overlays1/Starship_Raid"
+		display_name="突击 适配者 突击者"
+		display_name_for_sidebar="S 适配者 突击者"
+		description_short="来自凯泽掠夺者的老牌但依然强大的突击者，各方面皆通但无一精通。此型号拥有更高的速度和引擎gX等级。"
+		description="S-AR-68突击适配者突击者是在适配者炮塔之后不久设计的，秉承相同理念，但更廉价和简单。其瞄准系统和多角度炮塔配置使其火力可分散到众多小目标、聚焦到单个大敌人或介于两者之间。它搭载在拥有平均防护和速度的船体上。突击变体配备了卓越引擎，赋予其更高的引擎功率和速度。"
+		speed="AboveAverage5"
+		engine_gx="22"
+	>
+		<hack_data hack_type="IncreaseHullDurability"
+			max_times_single_unit_can_be_hacked="2"
+		>
+		</hack_data>
+	</entity>
+	
+	<entity name="StrikeAdaptorRaider_Player" copy_from="StrikeAdaptorRaider" is_crippled_instead_of_dying="true" />
+	
+	<entity name="BlitzAdaptorRaider" copy_from="StrikeAdaptorRaider"
+		tags="MarauderCenterpieceTier1"
+		icon_overlay="Overlays1/DZ_White_Spirited"
+		display_name="闪击 适配者 突击者"
+		display_name_for_sidebar="S 适配者 突击者"
+		description_short="来自凯泽掠夺者的老牌但依然强大的突击者，各方面皆通但无一精通。此型号拥有更高的速度和引擎gX等级，使用Alkahest抵达新行星时将变得极快且致命。"
+		description="B-AR-68闪击适配者突击者是在适配者炮塔之后不久设计的，秉承相同理念，但更廉价和简单。其瞄准系统和多角度炮塔配置使其火力可分散到众多小目标、聚焦到单个大敌人或介于两者之间。它搭载在拥有平均防护和速度的船体上。闪击变体拥有与突击变体相同的引擎，但引擎和武器受到虫洞能量虹吸的增强。建造、卸载后及穿越虫洞后，额外能量为飞船增压，使其异常快速和致命。为此使用了大量……「获得」的暗天顶Alkahest。"
+		speed_multiplier_first_5_seconds_on_planet="2"
+	>
+		<system name="AC"
+		>
+				<outgoing_damage_modifier based_on="MyTimeAtPlanet" comparison_type="LessThan" compared_to="12" multiplier="2" />
+		</system>
+		<hack_data hack_type="IncreaseWeaponPower"
+			max_times_single_unit_can_be_hacked="2"
+		>
+		</hack_data>
+	</entity>
+	
+	<entity name="BlitzAdaptorRaider_Player" copy_from="BlitzAdaptorRaider" is_crippled_instead_of_dying="true" />
+	
+	
+	<entity name="LightRaider" copy_from="AMU_BattleshipBase"
+		tags="MarauderCenterpieceTier1" is_ark="true"
+		visuals="assets/_finalgamemeshes/guardians/laserguardian/laserguardian.prefab"
+		icon_name="Ships1/MarauderRaider" icon_overlay="Overlays1/Starship_MercFlagship"
+		is_crippled_instead_of_dying="false" behavior="Attacker_Full"
+		size_scale="7" visuals_scale_multiplier="7.8"
+		display_name="轻型 突击者"
+		display_name_for_sidebar="轻型 突击者"
+		description_short="来自凯泽掠夺者的老牌但依然强大的突击者，提供高速和良好火力。"
+		description="LR-54轻型突击者是凯泽掠夺者默认的进攻舰队航母。它速度快，可造成可观伤害，且可廉价批量生产。武器旨在高效处理标准护卫舰和星战。虽然它可以成为任何星际帝国侧翼的快速突击矛头，但主要弱点在于廉价材料限制了其耐久度。"
+		cost_for_ai_to_purchase="1000" strength_multiplier="1.3"
+		hull_points="400000" shield_points="200000" speed="AboveAverage2"
+		metal_cost="300000" energy_consumption="19000"
+		armor_mm="50" albedo="0.5" engine_gx="18" mass_tx="6.5"
+		eligible_for_hacks="IncreaseShieldDurability,IncreaseWeaponPower"
+		ship_class_name="PSC"
+	>
+		<system name="SB" display_name="穿甲弹"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="400" range="AboveAverage1" shot_speed="Normal" rate_of_fire="VeryLow"
+			shot_type_data="Sabot"
+		>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="100" />
+		</system>
+		<system name="PD" display_name="点防御"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="600" range="Normal1" shot_speed="Normal" rate_of_fire="High"
+			shots_per_salvo="5"
+			shot_type_data="ElegantCurl"
+		/>
+		<hack_data hack_type="IncreaseShieldDurability"
+			override_cost_in_hacking_points="20"
+			cost_in_hacking_points_multiplier_per_times_same_unit_hacked="1.5"
+			max_times_single_unit_can_be_hacked="1"
+		>
+			<custom_hack_data key="AddedMultiplierPerHack" value="1.5" />
+		</hack_data>
+		<hack_data hack_type="IncreaseWeaponPower"
+			override_cost_in_hacking_points="25"
+			cost_in_hacking_points_multiplier_per_times_same_unit_hacked="1.5"
+			max_times_single_unit_can_be_hacked="1"
+		>
+			<custom_hack_data key="AddedMultiplierPerHack" value="1.5" />
+		</hack_data>
+	</entity>
+	
+	<entity name="LightRaider_Player" copy_from="LightRaider" is_crippled_instead_of_dying="true" />
+	
+	<entity name="CloakedLightRaider" copy_from="LightRaider"
+		tags="MarauderCenterpieceTier1"
+		icon_overlay="Overlays2/Guardian_Stealth"
+		display_name="隐形 轻型 突击者"
+		display_name_for_sidebar="C 轻型 突击者"
+		description_short="来自凯泽掠夺者的老牌但依然强大的突击者，提供高速和良好火力。此型号还具备隐形能力。"
+		description="C-LR-54轻型突击者是凯泽掠夺者默认的进攻舰队航母。它速度快，可造成可观伤害，且可廉价批量生产。武器旨在高效处理标准护卫舰和星战。虽然它可以成为任何星际帝国侧翼的快速突击矛头，但主要弱点在于廉价材料限制了其耐久度。隐形变体配备隐形装置，但攻击时会暴露自身。"
+		albedo="0.7"
+	>
+		 <system name="C" display_name="隐形装置" category="Passive" cloaking_points="4000" cloaking_points_added_per_mark="2000" />
+		<hack_data hack_type="IncreaseShieldDurability"
+			max_times_single_unit_can_be_hacked="2"
+		>
+		</hack_data>
+	</entity>
+	
+	<entity name="CloakedLightRaider_Player" copy_from="CloakedLightRaider" is_crippled_instead_of_dying="true" />
+	
+	<entity name="MercurialLightRaider" copy_from="CloakedLightRaider"
+		tags="MarauderCenterpieceTier1"
+		icon_overlay="Overlays1/DZ_Black_Sinister"
+		display_name="汞变 轻型 突击者"
+		display_name_for_sidebar="M 轻型 突击者"
+		description_short="来自凯泽掠夺者的老牌但依然强大的突击者，提供高速和良好火力。此型号具备隐形能力，可在隐形状态下开火，并使用Skrith在正常态和多相态之间切换。"
+		description="M-LR-54轻型突击者是凯泽掠夺者默认的进攻舰队航母。它速度快，可造成可观伤害，且可廉价批量生产。武器旨在高效处理标准护卫舰和星战。虽然它可以成为任何星际帝国侧翼的快速突击矛头，但主要弱点在于廉价材料限制了其耐久度。汞变变体拥有高级隐形装置，可在开火数次时保持隐藏，并在普通态和多相态之间切换。其隐形效果在此期间可能刷新。为此使用了大量……「获取」的暗天顶Skrith。"
+		alternative_state_of_matter="MultiPhase" phases_to_other_alternative_state_of_matter_after_seconds="40" phases_back_to_default_state_of_matter_after_seconds="10"
+	>
+		<system name="SB" display_name="消音 穿甲弹" cloaking_percent_loss_from_firing="0.225" />
+		<system name="PD" display_name="消音 点防御" cloaking_percent_loss_from_firing="0.075" />
+		<hack_data hack_type="IncreaseWeaponPower"
+			max_times_single_unit_can_be_hacked="2"
+		>
+		</hack_data>
+	</entity>
+	
+	<entity name="MercurialLightRaider_Player" copy_from="MercurialLightRaider" is_crippled_instead_of_dying="true" />
+
+
+	<!-- ################################ -->
+	<!-- # Marauder Tier 2 Centerpieces # -->
+	<!-- ################################ -->
+
+	<entity name="DroneBattleship" copy_from="AMU_BattleshipBase"
+		tags="MarauderCenterpieceTier2" is_ark="true"
+		visuals="assets/_finalgamemeshes/guardians/carrierguardian/carrierguardian.prefab"
+		icon_name="Ships2/SomethingCyborg" icon_overlay="Overlays1/Starship_Carrier"
+		is_crippled_instead_of_dying="false" behavior="Attacker_Full"
+		size_scale="10"
+		visuals_scale_multiplier="12.5"
+		display_name="无人机 战列舰"
+		display_name_for_sidebar="无人机 战列舰"
+		description_short="先进的重型突击者，具备更强的「续航能力」，可通过持续无人机增援和远程核聚变炸弹火力进行补强。"
+		description="DBS-17是凯泽掠夺者有史以来建造的最坚固的设计之一。它被设计为一支笨重且相对缓慢的战斗力量的舰队领袖，但具有持续快速生产无人机的能力，可从攻防两面进行增援。此外它使用远程核聚变炸弹武器，在攻击建筑时具有致命效果。"
+		cost_for_ai_to_purchase="2000" strength_multiplier="1.6"
+		hull_points="1000000" shield_points="500000" speed="AboveAverage1"
+		metal_cost="500000" energy_consumption="24000"
+		armor_mm="150" albedo="0.5" engine_gx="20" mass_tx="7.5"
+		eligible_for_hacks="IncreaseShieldDurability,IncreaseHullDurability"
+		ship_class_name="PSC"
+		fleet_design_template_i_use_for_drones="DroneBattleship_Drones"
+	>
+		<metal_flow purpose="BuildingDronesInternally" throughput="500" increase_per_mark_level="250"/>
+		<system name="FB" display_name="核聚变炸弹"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="4000" range="High1" shot_speed="Slow" rate_of_fire="Normal"
+			shots_per_salvo="5"
+			shot_type_data="FusionBomb"
+			base_percent_damage_bypasses_personal_shields="0.9"	
+		>
+			<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="HullOnly" comparison_type="GreaterThan" compared_to="50" multiplier="1.1" />
+		</system>
+		<hack_data hack_type="IncreaseHullDurability"
+			override_cost_in_hacking_points="20"
+			cost_in_hacking_points_multiplier_per_times_same_unit_hacked="1.5"
+			max_times_single_unit_can_be_hacked="1"
+		>
+			<custom_hack_data key="AddedMultiplierPerHack" value="1.5" />
+		</hack_data>
+		<hack_data hack_type="IncreaseShieldDurability"
+			override_cost_in_hacking_points="20"
+			cost_in_hacking_points_multiplier_per_times_same_unit_hacked="1.5"
+			max_times_single_unit_can_be_hacked="1"
+		>
+			<custom_hack_data key="AddedMultiplierPerHack" value="1.5" />
+		</hack_data>
+	</entity>
+	
+	<entity name="DroneBattleship_Player" copy_from="DroneBattleship" is_crippled_instead_of_dying="true" />
+
+	<entity name="PlatedDroneBattleship" copy_from="DroneBattleship"
+		tags="MarauderCenterpieceTier2,Plated"
+		icon_overlay="Overlays1/Turret_Bulwark"
+		display_name="镀层 无人机 战列舰"
+		display_name_for_sidebar="P 无人机 战列舰"
+		description_short="先进的重型突击者，具备更强的「续航能力」，可通过持续无人机增援和远程核聚变炸弹火力进行补强。此型号已升级，更加耐久和坚韧。"
+		description="P-DBS-17是凯泽掠夺者有史以来建造的最坚固的设计之一。它被设计为一支笨重且相对缓慢的战斗力量的舰队领袖，但具有持续快速生产无人机的能力，可从攻防两面进行增援。此外它使用远程核聚变炸弹武器，在攻击建筑时具有致命效果。镀层变体不仅能完全吸收部分来袭伤害，还能承受更多攻击并抵抗多种减益效果，但离子伤害再次变得有效。"
+		cost_for_ai_to_purchase="2000" strength_multiplier="1.7"
+		hull_points="1250000"
+		armor_mm="300"
+		ship_class_name="PPSC"
+		fleet_design_template_i_use_for_drones="PlatedDroneBattleship_Drones"
+	>
+		<hack_data hack_type="IncreaseWeaponPower"
+			max_times_single_unit_can_be_hacked="2"
+		>
+		</hack_data>
+	</entity>
+	
+	<entity name="PlatedDroneBattleship_Player" copy_from="PlatedDroneBattleship" is_crippled_instead_of_dying="true" />
+
+	<entity name="ArmoredDroneBattleship" copy_from="PlatedDroneBattleship"
+		tags="MarauderCenterpieceTier2"
+		icon_overlay="Overlays1/DZ_Green_Stout"
+		display_name="装甲 无人机 战列舰"
+		display_name_for_sidebar="A 无人机 战列舰"
+		description_short="先进的重型突击者，具备更强的「续航能力」，可通过持续无人机增援和远程核聚变炸弹火力进行补强。此型号已升级，更加耐久和坚韧。"
+		description="A-DBS-17是凯泽掠夺者有史以来建造的最坚固的设计之一。它被设计为一支笨重且相对缓慢的战斗力量的舰队领袖，但具有持续快速生产无人机的能力，可从攻防两面进行增援。此外它使用远程核聚变炸弹武器，在攻击建筑时具有致命效果。装甲变体不仅配备了比镀层船体更强大的装甲，还增加了硬化船体，防止单位受到过于强大攻击的过度伤害。此升级源自……「获取」的暗天顶Thaumite。"
+		cost_for_ai_to_purchase="2000" strength_multiplier="1.8"
+		damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.05"
+		ship_class_name="APSC"
+		fleet_design_template_i_use_for_drones="ArmoredDroneBattleship_Drones"
+	>
+		<hack_data hack_type="IncreaseWeaponPower"
+			max_times_single_unit_can_be_hacked="2"
+		>
+		</hack_data>
+	</entity>
+	
+	<entity name="ArmoredDroneBattleship_Player" copy_from="ArmoredDroneBattleship" is_crippled_instead_of_dying="true" />
+	
+
+	<entity name="TachyonRaider" copy_from="AMU_BattleshipBase"
+		tags="MarauderCenterpieceTier2" is_ark="true"
+		visuals="assets/_finalgamemeshes/guardians/stealthguardian/stealthguardian.prefab"
+		icon_name="Ships1/MarauderRaider" icon_overlay="Overlays1/Starship_Sentry"
+		is_crippled_instead_of_dying="false" behavior="Attacker_Full"
+		size_scale="7"
+		visuals_scale_multiplier="7.8"
+		display_name="快子 突击者"
+		display_name_for_sidebar="快子 突击者"
+		description_short="高科技突击者，具备缓慢但覆盖全行星的破隐能力和反反照率武器，适用于防御一波波隐形敌人。"
+		description="TR-89快子突击者尽管相对较晚才加入凯泽掠夺者部队，但经历了大量设计变更。特别是快子阵列是绝密的在研技术，允许这艘突击者用快子辐射饱和整个行星，尽管速率较慢。正在开发以提升其功率，以及那些用于对抗曾经隐形敌人的烧蚀武器的威力。"
+		cost_for_ai_to_purchase="1400" strength_multiplier="1.6"
+		hull_points="250000" shield_points="250000" speed="AboveAverage5"
+		metal_cost="400000" energy_consumption="20000"
+		armor_mm="40" albedo="0.6" engine_gx="16" mass_tx="6.5"
+		eligible_for_hacks="IncreaseShieldDurability,IncreaseWeaponPower"
+		ship_class_name="PSC"
+	>
+		<system name="AP" display_name="烧蚀脉冲"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="1000" range="Normal3" shot_speed="Fast" rate_of_fire="High"
+			shots_per_salvo="10"
+			shot_type_data="LaserPulse_Pink"
+		>
+		  <outgoing_damage_modifier based_on="Albedo" comparison_type="AtLeast" compared_to="0.7" multiplier="5" />
+		</system>
+		<system name="TA" display_name="快子阵列" category="Passive" tachyon_range="EssentiallyInfinite" tachyon_points="2" tachyon_points_added_per_mark="1" tachyon_hits_albedo_less_than="0.75" />
+		<hack_data hack_type="IncreaseShieldDurability"
+			override_cost_in_hacking_points="20"
+			cost_in_hacking_points_multiplier_per_times_same_unit_hacked="1.5"
+			max_times_single_unit_can_be_hacked="1"
+		>
+			<custom_hack_data key="AddedMultiplierPerHack" value="1.5" />
+		</hack_data>
+		<hack_data hack_type="IncreaseWeaponPower"
+			override_cost_in_hacking_points="25"
+			cost_in_hacking_points_multiplier_per_times_same_unit_hacked="1.5"
+			max_times_single_unit_can_be_hacked="1"
+		>
+			<custom_hack_data key="AddedMultiplierPerHack" value="1.5" />
+		</hack_data>
+	</entity>
+	
+	<entity name="TachyonRaider_Player" copy_from="TachyonRaider" is_crippled_instead_of_dying="true" />
+
+	<entity name="RefractingTachyonRaider" copy_from="TachyonRaider"
+		tags="MarauderCenterpieceTier2"
+		icon_overlay="Overlays2/Turret_Knockback"
+		display_name="折射 快子 突击者"
+		display_name_for_sidebar="R 快子 突击者"
+		description_short="高科技突击者，具备缓慢但覆盖全行星的破隐能力和反反照率武器，适用于防御一波波隐形敌人。此型号采用折射材料制造，使其整体更坚韧，更难干扰船体。"
+		 description="R-TR-89折射快子突击者尽管相对较晚才加入凯泽掠夺者部队，但经历了大量设计变更。特别是快子阵列是绝密的在研技术，允许这艘突击者用快子辐射饱和整个行星，尽管速率较慢。正在开发以提升其功率，以及那些用于对抗曾经隐形敌人的烧蚀武器的威力。折射变体涂有RPSC材料，这是一种能抵抗酸蚀和异类伤害的新材料，同时拥有更高的耐久度。"
+		 ship_class_name="RPSC"
+		 multiplier_to_all_healths="1.25"
+	>
+		<hack_data hack_type="IncreaseWeaponPower"
+			max_times_single_unit_can_be_hacked="2"
+		>
+		</hack_data>
+	</entity>
+	
+	<entity name="RefractingTachyonRaider_Player" copy_from="RefractingTachyonRaider" is_crippled_instead_of_dying="true" />
+
+	<entity name="LucentTachyonRaider" copy_from="RefractingTachyonRaider"
+		tags="MarauderCenterpieceTier2"
+		icon_overlay="Overlays2/SapperMoonstoneCrystal"
+		display_name="光莹 快子 突击者"
+		display_name_for_sidebar="L 快子 突击者"
+		description_short="高科技突击者，具备缓慢但覆盖全行星的破隐能力和反反照率武器，适用于防御一波波隐形敌人。此型号将月长石织入船体，使其免疫相位效果，并高度抵抗异类伤害、酸蚀和死灵术。"
+		 description="L-TR-89光莹快子突击者尽管相对较晚才加入凯泽掠夺者部队，但经历了大量设计变更。特别是快子阵列是绝密的在研技术，允许这艘突击者用快子辐射饱和整个行星，尽管速率较慢。正在开发以提升其功率，以及那些用于对抗曾经隐形敌人的烧蚀武器的威力。光莹变体涂有LPSC材料，这是一种晶体-陶瓷混合材料，能极大抵抗酸蚀和异类伤害，同时拥有更高的耐久度。它使炮塔难以被侦测，在敌方瞄准系统调整前进一步降低伤害。此升级得以实现是因为使用了大量……「回收」的宁苏工兵月长石。"
+		 ship_class_name="LPSC"
+	>
+		<hack_data hack_type="IncreaseWeaponPower"
+			max_times_single_unit_can_be_hacked="2"
+		>
+		</hack_data>
+	</entity>
+	
+	<entity name="LucentTachyonRaider_Player" copy_from="LucentTachyonRaider" is_crippled_instead_of_dying="true" />
+
+
+	<!-- ################################ -->
+	<!-- # Marauder Tier 3 Centerpieces # -->
+	<!-- ################################ -->
+	
+	<entity name="AmplifierBattleship" copy_from="AMU_BattleshipBase"
+		tags="MarauderCenterpieceTier3" is_ark="true"
+		visuals="assets/_finalgamemeshes/guardians/carrierguardian/carrierguardian.prefab"
+		icon_name="Ships2/SomethingCyborg" icon_overlay="Overlays1/CommandStation_Military_Small"
+		is_crippled_instead_of_dying="false" behavior="Attacker_Full"
+		size_scale="10"
+		visuals_scale_multiplier="12.5"
+		display_name="放大器 战列舰"
+		display_name_for_sidebar="放大器 BB"
+		description_short="基于人类残余军用指挥站使用的相同技术建造，这是一艘能增强自身及盟友的移动支援舰。"
+		description="ABS-18改进了相当古老的人类技术，即军事指挥站。不过直到最近才被启用，Paramerium辐射屏蔽的突破使超光速旅行和全行星单位放大能在同一个单位上工作。电力消耗使单位紧张，其武器对如此尺寸的单位来说并不特别强大，但其耐久度可防止重要的舰队增强器在战斗中损失。"
+		cost_for_ai_to_purchase="2000" strength_multiplier="1.3"
+		hull_points="1750000" shield_points="875000" speed="Normal3"
+		metal_cost="700000" energy_consumption="29000"
+		armor_mm="180" albedo="0.4" engine_gx="21" mass_tx="8"
+		eligible_for_hacks="IncreaseShieldDurability,IncreaseWeaponPower"
+		allied_attack_multiplier="1.25" allied_speed_multiplier="1.25"
+		ship_class_name="PSC"
+	>
+		<system name="AB" display_name="反舰炮组"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="50000" range="High2" shot_speed="Slow" rate_of_fire="VeryLow"
+			shots_per_salvo="3" shots_per_target="3"
+			shot_type_data="MassDriver"
+		>
+			<outgoing_damage_modifier based_on="Mass_tx" comparison_type="GreaterThan" compared_to="5" multiplier="1.25" />
+		</system>
+		<system name="FC" display_name="高射 加农炮"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="250" range="Normal3" shot_speed="Fast" rate_of_fire="Normal"
+			shots_per_salvo="10" 
+			shot_type_data="FlakShotAOEBurstAtEnd"
+			area_of_effect_size="300"
+			maximum_number_of_targets_hit_per_shot="5"
+		>
+			<outgoing_damage_modifier based_on="Mass_tx" comparison_type="LessThan" compared_to="0.25" multiplier="1.25" />
+		</system>
+		<hack_data hack_type="IncreaseShieldDurability"
+			override_cost_in_hacking_points="20"
+			cost_in_hacking_points_multiplier_per_times_same_unit_hacked="1.5"
+			max_times_single_unit_can_be_hacked="1"
+		>
+			<custom_hack_data key="AddedMultiplierPerHack" value="1.5" />
+		</hack_data>
+		<hack_data hack_type="IncreaseWeaponPower"
+			override_cost_in_hacking_points="25"
+			cost_in_hacking_points_multiplier_per_times_same_unit_hacked="1.5"
+			max_times_single_unit_can_be_hacked="1"
+		>
+			<custom_hack_data key="AddedMultiplierPerHack" value="1.5" />
+		</hack_data>
+	</entity>
+	
+	<entity name="AmplifierBattleship_Player" copy_from="AmplifierBattleship" is_crippled_instead_of_dying="true" />
+	
+	<entity name="GuardAmplifierBattleship" copy_from="AmplifierBattleship"
+		tags="MarauderCenterpieceTier3"
+		icon_overlay="Overlays1/Starship_Shield"
+		shield_size_scale="8.5" is_stationary_forcefield="false" barred_from_vertex_animated_phasing="true"
+		my_forcefield_does_not_shrink="true" my_forcefield_has_no_penalty_for_enemies_firing_out_of_it="true"
+		display_name="守卫 放大器 战列舰"
+		display_name_for_sidebar="G 放大器 BB"
+		description_short="基于人类残余军用指挥站使用的相同技术建造，这是一艘能增强自身及盟友的移动支援舰。此型号拥有更高的护盾容量和泡泡力场。"
+		description="G-ABS-18改进了相当古老的人类技术，即军事指挥站。不过直到最近才被启用，Paramerium辐射屏蔽的突破使超光速旅行和全行星单位放大能在同一个单位上工作。电力消耗使单位紧张，其武器对如此尺寸的单位来说并不特别强大，但其耐久度可防止重要的舰队增强器在战斗中损失。守卫变体以牺牲船体为代价拥有显著更多的护盾，并用泡泡力场保护盟友。"
+		hull_points="875000" shield_points="3062500"
+	>
+		<hack_data hack_type="IncreaseWeaponPower"
+			max_times_single_unit_can_be_hacked="2"
+		>
+		</hack_data>
+	</entity>
+	
+	<entity name="GuardAmplifierBattleship_Player" copy_from="GuardAmplifierBattleship" is_crippled_instead_of_dying="true" />
+	
+	<entity name="ProtectorAmplifierBattleship" copy_from="GuardAmplifierBattleship"
+		tags="MarauderCenterpieceTier3"
+		icon_overlay="Overlays1/DZ_Blue_Fortified"
+		display_name="保护者 放大器 战列舰"
+		display_name_for_sidebar="P 放大器 BB"
+		description_short="基于人类残余军用指挥站使用的相同技术建造，这是一艘能增强自身及盟友的移动支援舰。此型号拥有更高的护盾容量和泡泡力场，并使用Chelonium进行了堡垒化强化。"
+		description="P-ABS-18改进了相当古老的人类技术，即军事指挥站。不过直到最近才被启用，Paramerium辐射屏蔽的突破使超光速旅行和全行星单位放大能在同一个单位上工作。电力消耗使单位紧张，其武器对如此尺寸的单位来说并不特别强大，但其耐久度可防止重要的舰队增强器在战斗中损失。保护者变体不仅拥有守卫变体使用的相同力场技术，还能抵御更远距离的攻击——无论这些攻击是否针对其他单位。为此使用了大量……「捐献」的暗天顶Thaumite。"
+	>
+		<incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="9000" multiplier="0.25" />
+		<hack_data hack_type="IncreaseWeaponPower"
+			max_times_single_unit_can_be_hacked="2"
+		>
+		</hack_data>
+	</entity>
+	
+	<entity name="ProtectorAmplifierBattleship_Player" copy_from="ProtectorAmplifierBattleship" is_crippled_instead_of_dying="true" />
+	
+	
+	<entity name="IonosphereRaider" copy_from="AMU_BattleshipBase"
+		tags="MarauderCenterpieceTier3" is_ark="true"
+		visuals="Assets/_FinalGameMeshes/Guardians/SpiderAndParalysisGuardian/ParalysisGuardian.prefab"
+		icon_name="Ships1/MarauderRaider" icon_overlay="Overlays1/MegaTurret_Ion"
+		is_crippled_instead_of_dying="false" behavior="Attacker_Full"
+		size_scale="6.5"
+		visuals_scale_multiplier="7.8"
+		display_name="电离层 突击者"
+		display_name_for_sidebar="电离层 突击者"
+		description_short="脆弱但极其危险的星战杀手，使用远程离子加农炮瓦解低级敌人单位。达到Mk7后武器升级为高级内爆器。"
+		description="IR-9电离层突击者是作为应对一波波战斗机的方式而开发的。远程离子加农炮以惊人速度消灭技术不够发达的敌人。为此这个单位所需的能量是巨大的，结构也脆弱，但强大的护盾发生器弥补了这一点。此外一旦这个单位达到Mk7，武器升级为不再是离子加农炮，而是一个内爆器，可撕裂敌船体并使护盾过载，无论等级。"
+		cost_for_ai_to_purchase="2400" strength_multiplier="1.6"
+		hull_points="125000" shield_points="375000" speed="AboveAverage6"
+		metal_cost="450000" energy_consumption="32000"
+		armor_mm="30" albedo="0.5" engine_gx="18" mass_tx="6.5"
+		eligible_for_hacks="IncreaseShieldDurability,IncreaseWeaponPower"
+		ship_class_name="PSC"
+	>
+		<system name="IC" display_name="离子 加农炮" max_mark_level_to_function="6"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="1000" range="High2" shot_speed="Fast" rate_of_fire="Devourer" fires_salvos_sequentially="true"
+			shots_per_salvo="10" max_stacks_allowed_to_kill_per_shot="5"
+			shot_type_data="ExtremelyLongRangeIon"
+			ion_percentage_per_mark_level_lower="0.4" ion_damage_to_albedo_less_than="0.4"
+		>
+		</system>
+		<system name="IM" display_name="内爆器" min_mark_level_to_function="7"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="100" range="High2" shot_speed="Fast" rate_of_fire="Devourer" fires_salvos_sequentially="true"
+			shots_per_salvo="10"
+			shot_type_data="ExtremelyLongRangeIon"
+			overdrives_shields="true"
+		>
+			<outgoing_damage_modifier based_on="MaxHull" comparison_type="MultiplesOf" compared_to="1000" multiplier="1" multiplier_is_additive="false" applies_to="HullOnly" />
+			<outgoing_damage_modifier based_on="CurrentHullPercentage" comparison_type="MultiplesOf" compared_to="1" multiplier="0.01" multiplier_is_additive="false" applies_to="HullOnly" />
+		</system>
+		<hack_data hack_type="IncreaseShieldDurability"
+			override_cost_in_hacking_points="20"
+			cost_in_hacking_points_multiplier_per_times_same_unit_hacked="1.5"
+			max_times_single_unit_can_be_hacked="1"
+		>
+			<custom_hack_data key="AddedMultiplierPerHack" value="1.5" />
+		</hack_data>
+		<hack_data hack_type="IncreaseWeaponPower"
+			override_cost_in_hacking_points="25"
+			cost_in_hacking_points_multiplier_per_times_same_unit_hacked="1.5"
+			max_times_single_unit_can_be_hacked="1"
+		>
+			<custom_hack_data key="AddedMultiplierPerHack" value="1.5" />
+		</hack_data>
+	</entity>
+	
+	<entity name="IonosphereRaider_Player" copy_from="IonosphereRaider" is_crippled_instead_of_dying="true" />
+	
+	<entity name="KillerIonosphereRaider" copy_from="IonosphereRaider"
+		tags="MarauderCenterpieceTier3"
+		icon_overlay="Overlays2/Guardian_Temperamental"
+		display_name="杀手 电离层 突击者"
+		display_name_for_sidebar="K 电离层 突击者"
+		description_short="脆弱但极其危险的星战杀手，使用远程离子加农炮瓦解低级敌人单位。达到Mk7后武器升级为高级内爆器。此型号已升级，能在更远射程造成更高伤害。"
+		description="K-IR-9杀手电离层突击者是作为应对一波波战斗机的方式而开发的。远程离子加农炮以惊人速度消灭技术不够发达的敌人。为此这个单位所需的能量是巨大的，结构也脆弱，但强大的护盾发生器弥补了这一点。此外一旦这个单位达到Mk7，武器升级为不再是离子加农炮，而是一个内爆器，可撕裂敌船体并使护盾过载，无论等级。「杀手」变体以更高的伤害和更远的武器射程为特色。"
+		damage_multiplier_to_all_weapons="1.25"
+	>
+		<system name="IC"
+			range="ExtremelyHigh"
+		>
+		</system>
+		<system name="IM"
+			range="ExtremelyHigh"
+		>
+		</system>
+		<hack_data hack_type="IncreaseWeaponPower"
+			max_times_single_unit_can_be_hacked="2"
+		>
+		</hack_data>
+	</entity>
+	
+	<entity name="KillerIonosphereRaider_Player" copy_from="KillerIonosphereRaider" is_crippled_instead_of_dying="true" />
+	
+	<entity name="DeathIonosphereRaider" copy_from="KillerIonosphereRaider"
+		tags="MarauderCenterpieceTier3"
+		icon_overlay="Overlays1/DZ_Red_Enraged"
+		display_name="死亡 电离层 突击者"
+		display_name_for_sidebar="D 电离层 突击者"
+		description_short="脆弱但极其危险的星战杀手，使用远程离子加农炮瓦解低级敌人单位。达到Mk7后武器升级为高级内爆器。此型号拥有更优的射程和伤害，对低生命值目标尤为有效。被摧毁时会使用Izumite猛烈爆炸。"
+		description="D-IR-9死亡电离层突击者是作为应对一波波战斗机的方式而开发的。远程离子加农炮以惊人速度消灭技术不够发达的敌人。为此这个单位所需的能量是巨大的，结构也脆弱，但强大的护盾发生器弥补了这一点。此外一旦这个单位达到Mk7，武器升级为不再是离子加农炮，而是一个内爆器，可撕裂敌船体并使护盾过载，无论等级。死亡变体拥有更远的射程和更高的伤害，对低生命值目标尤其凶残。如果自身被摧毁，反应堆过载，对爆炸半径内所有敌人造成伤害。这使用了大量……「失物招领」的暗天顶Izumite。"
+		damage_multiplier_to_all_weapons="1.25"
+	>
+		<system name="IC"
+		>
+			<outgoing_damage_modifier based_on="TargetHullPercentageMissing" comparison_type="AtLeast" compared_to="67" multiplier="4" />
+		</system>
+		<system name="IM"
+		>
+			<outgoing_damage_modifier based_on="TargetHullPercentageMissing" comparison_type="AtLeast" compared_to="67" multiplier="4" />
+		</system>
+		<system name="EF" display_name="爆炸终曲"
+			category="Weapon" firing_timing="OnlyInRange"
+			only_fires_on_death="true"
+			damage_per_shot="10000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Devourer"
+			shot_type_data="FlakShotAOEBurstAtEnd"
+			area_of_effect_size="10100"
+			shots_detonate_immediately="true"
+			maximum_number_of_targets_hit_per_shot="150"
+			health_change_by_max_health_divided_by_this_per_attack="-1"
+		>
+			<outgoing_damage_modifier based_on="TargetHullPercentageMissing" comparison_type="AtLeast" compared_to="67" multiplier="4" />
+		</system>
+		<hack_data hack_type="IncreaseWeaponPower"
+			max_times_single_unit_can_be_hacked="2"
+		>
+		</hack_data>
+	</entity>
+	
+	<entity name="DeathIonosphereRaider_Player" copy_from="DeathIonosphereRaider" is_crippled_instead_of_dying="true" />
+	
+	
+	<entity name="BeamDreadnought" copy_from="AMU_DreadnoughtBase"
+		tags="MarauderCenterpieceTier3" is_ark="true"
+		visuals="Assets/_DLC1/FactionIntegration/MarauderSpireRaider/MarauderSpireRaider.prefab" visuals_bundle="exp1_the_spire_rises"
+		icon_name="Ships2/SomethingCyborg" icon_overlay="Overlays2/Guardian_Beam"
+		is_crippled_instead_of_dying="false" behavior="Attacker_Full"
+		size_scale="12"
+		visuals_scale_multiplier="10"
+		display_name="光束 无畏舰"
+		display_name_for_sidebar="光束 无畏舰"
+		description_short="极其庞大、坚韧和强大的舰队领袖，配备极其强大的线圈光束和自适应激光炮。"
+		description="BD-1光束无畏舰无疑是凯泽掠夺者能以超过1的数量生产的最大最强单位。充满了改造的尖塔技术，使用他们的先进武器、护盾和结构设计，与凯泽掠夺者已有的强大工程能力融合，建议只在……「不光彩」的战斗中与这个单位交战，利用其尺寸、质量、装甲和有限射程来对抗它。"
+		cost_for_ai_to_purchase="4000" strength_multiplier="1.5"
+		hull_points="2000000" shield_points="3000000" speed="Normal2"
+		metal_cost="1200000" energy_consumption="50000"
+		armor_mm="220" albedo="0.6" engine_gx="22" mass_tx="10"
+		eligible_for_hacks="IncreaseShieldDurability,IncreaseWeaponPower"
+		ship_class_name="SiPSC"
+	>  
+		<system name="CB" display_name="线圈 光束"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="500000" range="High1" shot_speed="Normal" rate_of_fire="Normal"
+			shot_type_data="HeavyBeamInvisible"
+			beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_Cyan"
+			hits_all_intersecting_targets="true"
+			shots_detonate_immediately="true"
+			is_coilbeam="true"
+		>
+		</system>
+		<system name="AL" display_name="自适应 激光 脉冲"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="1500" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Misery"
+			shots_per_salvo="100" shots_per_target="10"
+			shot_type_data="LaserPulse_DeepBlue"
+		>
+		</system>
+		<hack_data hack_type="IncreaseShieldDurability"
+			override_cost_in_hacking_points="20"
+			cost_in_hacking_points_multiplier_per_times_same_unit_hacked="1.5"
+			max_times_single_unit_can_be_hacked="1"
+		>
+			<custom_hack_data key="AddedMultiplierPerHack" value="1.5" />
+		</hack_data>
+		<hack_data hack_type="IncreaseWeaponPower"
+			override_cost_in_hacking_points="25"
+			cost_in_hacking_points_multiplier_per_times_same_unit_hacked="1.5"
+			max_times_single_unit_can_be_hacked="1"
+		>
+			<custom_hack_data key="AddedMultiplierPerHack" value="1.5" />
+		</hack_data>
+	</entity>
+	
+	<entity name="BeamDreadnought_Player" copy_from="BeamDreadnought" is_crippled_instead_of_dying="true" />
+	
+	<entity name="ChargedBeamDreadnought" copy_from="BeamDreadnought"
+		icon_overlay="Overlays2/DevourerGolem_Nemesis"
+		tags="MarauderCenterpieceTier3"
+		display_name="充能 光束 无畏舰"
+		display_name_for_sidebar="C 光束 无畏舰"
+		description_short="极其庞大、坚韧和强大的舰队领袖，配备极其强大的线圈光束和自适应激光炮。此型号经过增压，在更远射程造成更高伤害。"
+		description="C-BD-1充能光束无畏舰无疑是凯泽掠夺者能以超过1的数量生产的最大最强单位。充满了改造的尖塔技术，使用他们的先进武器、护盾和结构设计，与凯泽掠夺者已有的强大工程能力融合，建议只在……「不光彩」的战斗中与这个单位交战，利用其尺寸、质量、装甲和有限射程来对抗它。充能变体升级了舰载反应堆和传感器，赋予其更远射击和更高伤害的能力。"
+		damage_multiplier_to_all_weapons="1.15"
+	>  
+		<system name="CB"
+			range="High2"
+		/>
+		<system name="AL"
+			range="AboveAverage5"
+		>
+		</system>
+		<hack_data hack_type="IncreaseWeaponPower"
+			max_times_single_unit_can_be_hacked="2"
+		>
+		</hack_data>
+	</entity>
+	
+	<entity name="ChargedBeamDreadnought_Player" copy_from="ChargedBeamDreadnought" is_crippled_instead_of_dying="true" />
+	
+	<entity name="RadiantBeamDreadnought" copy_from="ChargedBeamDreadnought"
+		tags="MarauderCenterpieceTier3"
+		icon_overlay="Overlays2/SapperBloodstoneCrystal"
+		display_name="光辉 光束 无畏舰"
+		display_name_for_sidebar="C 光束 无畏舰"
+		description_short="极其庞大、坚韧和强大的舰队领袖，配备极其强大的线圈光束和自适应激光炮。此型号已升级，提升伤害和射程，配备超级分解粘液和伏击伤害加成及轻微眩晕。"
+		description="R-BD-1光辉光束无畏舰无疑是凯泽掠夺者能以超过1的数量生产的最大最强单位。充满了改造的尖塔技术，使用他们的先进武器、护盾和结构设计，与凯泽掠夺者已有的强大工程能力融合，建议只在……「不光彩」的战斗中与这个单位交战，利用其尺寸、质量、装甲和有限射程来对抗它。光辉变体拥有晶体电路，使武器和瞄准系统更加高效，并能在敌人反应前击中敌方传感器，使其眩晕并在调整前造成更多伤害。它还采用晶体生长技术增强分解粘液凝胶，使其威力更甚。为此使用了大量……「采集」的工兵血石。"
+	>  
+		<system name="CB"
+			base_paralysis_seconds_per_shot="1" paralysis_to_ships_mass_tx_less_than="8"
+		>
+			<outgoing_damage_modifier based_on="TargetTimeAtPlanet" comparison_type="LessThan" compared_to="20" multiplier="1.5" />
+			<!-- Todo: Strong Goo -->
+		</system>
+		<system name="AL"
+			base_paralysis_seconds_per_shot="2" paralysis_to_ships_mass_tx_less_than="1"
+		>
+			<outgoing_damage_modifier based_on="TargetTimeAtPlanet" comparison_type="LessThan" compared_to="20" multiplier="1.5" />
+			<!-- Todo: Strong Goo -->
+		</system>
+		<hack_data hack_type="IncreaseWeaponPower"
+			max_times_single_unit_can_be_hacked="2"
+		>
+		</hack_data>
+	</entity>
+	
+	<entity name="RadiantBeamDreadnought_Player" copy_from="RadiantBeamDreadnought" is_crippled_instead_of_dying="true" />
+	
+	
+	
+	<entity name="TorpedoSubmarine" copy_from="AMU_BattleshipBase"
+		tags="MarauderCenterpieceTier3" is_ark="true"
+		visuals="assets/_dlc2/cruisers/trailblazercruiser/trailblazercruiser.prefab" visuals_bundle="exp2_zenith_onslaught"
+		material_override_path="assets/_finalgamemeshes/guardians/implosionguardian/implosionguardian.prefab"
+		icon_name="Ships1/MarauderRaider" icon_overlay="Overlays2/GuardPost_SinglePhase"
+		is_crippled_instead_of_dying="false" behavior="Attacker_Full"
+		size_scale="6"
+		visuals_scale_multiplier="3.5"
+		display_name="鱼雷 潜艇"
+		display_name_for_sidebar="鱼雷 潜艇"
+		description_short="实验型「潜艇」原型，可在普通态和多相态之间切换相位。其鱼雷只能在普通态使用，飞行时间较长但射程远、伤害巨大，并附带粘液。"
+		description="TS-3鱼雷潜艇用于研究天顶的物质状态变化技术。结果是一艘能够「潜入」多相态以重新装填极其强大鱼雷发射器弹舱的单位，可在远距离歼灭大型目标并用粘液进行处理。其弱点是当潜入多相态时，此时只能使用点防御，并对任何具有类似能力的单位脆弱。"
+		cost_for_ai_to_purchase="1400" strength_multiplier="1.2"
+		hull_points="100000" shield_points="25000" speed="AboveAverage1"
+		metal_cost="450000" energy_consumption="50000"
+		armor_mm="50" albedo="0.7" engine_gx="16" mass_tx="6"
+		eligible_for_hacks="IncreaseShieldDurability,IncreaseWeaponPower"
+		ship_class_name="PSC"
+		alternative_state_of_matter="MultiPhase" phases_to_other_alternative_state_of_matter_after_seconds="15" phases_back_to_default_state_of_matter_after_seconds="15"
+	>
+		<system name="MT" display_name="物质 鱼雷" care_about_state_of_matter_to_be_enabled="true" must_be_this_state_of_matter_to_be_enabled="Normal"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="50000" range="EssentiallyInfinite" shot_speed="Normal" rate_of_fire="Low"
+			shot_type_data="GuidedMissile"
+		>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="3" />
+			<!-- TODO: GOO -->
+		</system>
+		<system name="PD" display_name="点防御"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="500" range="Normal5" shot_speed="Normal" rate_of_fire="Misery"
+			shot_type_data="ArmorPiercingShell"
+		  >
+		</system>
+		<hack_data hack_type="IncreaseShieldDurability"
+			override_cost_in_hacking_points="20"
+			cost_in_hacking_points_multiplier_per_times_same_unit_hacked="1.5"
+			max_times_single_unit_can_be_hacked="1"
+		>
+			<custom_hack_data key="AddedMultiplierPerHack" value="1.5" />
+		</hack_data>
+		<hack_data hack_type="IncreaseWeaponPower"
+			override_cost_in_hacking_points="25"
+			cost_in_hacking_points_multiplier_per_times_same_unit_hacked="1.5"
+			max_times_single_unit_can_be_hacked="1"
+		>
+			<custom_hack_data key="AddedMultiplierPerHack" value="1.5" />
+		</hack_data>
+	</entity>
+	
+	<entity name="TorpedoSubmarine_Player" copy_from="TorpedoSubmarine" is_crippled_instead_of_dying="true" />
+	
+	<entity name="EfficientTorpedoSubmarine" copy_from="TorpedoSubmarine"
+		tags="MarauderCenterpieceTier3"
+		icon_overlay="Overlays1/Turret_Scrap"
+		display_name="高效 鱼雷 潜艇"
+		display_name_for_sidebar="E 鱼雷 潜艇"
+		description_short="实验型「潜艇」原型，可在普通态和多相态之间切换相位。其鱼雷只能在普通态使用，飞行时间较长但射程远、伤害巨大，并附带粘液。此型号金属和能源消耗更低，且粘液效果增强。"
+		description="E-TS-3高效鱼雷潜艇用于研究天顶的物质状态变化技术。结果是一艘能够「潜入」多相态以重新装填极其强大鱼雷发射器弹舱的单位，可在远距离歼灭大型目标并用粘液进行处理。其弱点是当潜入多相态时，此时只能使用点防御，并对任何具有类似能力的单位脆弱。高效变体采用优化设计，除了降低金属、能量和燃料（如启用）的生产与运营成本外，不提供其他属性提升。粘液也得到了改良，可产出更多金属。"
+		metal_cost="450000" energy_consumption="50000"
+	>
+		<system name="MT"
+		>
+			<!-- TODO: STRONGER GOO -->
+		</system>
+	</entity>
+	
+	<entity name="EfficientTorpedoSubmarine_Player" copy_from="EfficientTorpedoSubmarine" is_crippled_instead_of_dying="true" />
+	
+	<entity name="InfusedTorpedoSubmarine" copy_from="EfficientTorpedoSubmarine"
+		tags="MarauderCenterpieceTier3"
+		icon_overlay="Overlays2/WormholeBorer_Mining"
+		display_name="灌注 鱼雷 潜艇"
+		display_name_for_sidebar="I 鱼雷 潜艇"
+		description_short="实验型「潜艇」原型，可在普通态和多相态之间切换相位。其鱼雷只能在普通态使用，飞行时间较长但射程远、伤害巨大，并附带粘液。此型号金属和能源成本进一步降低，同时通过粘液生成更多金属。"
+		description="I-TS-3灌注鱼雷潜艇用于研究天顶的物质状态变化技术。结果是一艘能够「潜入」多相态以重新装填极其强大鱼雷发射器弹舱的单位，可在远距离歼灭大型目标并用粘液进行处理。其弱点是当潜入多相态时，此时只能使用点防御，并对任何具有类似能力的单位脆弱。灌注变体使用混合材料使单位建造和维护更加便宜，并将粘液效率提升到绝对极限。"
+		metal_cost="450000" energy_consumption="50000"
+	>
+		<system name="MT"
+		>
+			<!-- TODO: EVEN STRONGER GOO -->
+		</system>
+	</entity>
+	
+	<entity name="InfusedTorpedoSubmarine_Player" copy_from="InfusedTorpedoSubmarine" is_crippled_instead_of_dying="true" />
+	
+	
+	<!-- ##################### -->
+	<!-- # Marauder Outposts # -->
+	<!-- ##################### -->
+	
+	<entity name="MarauderCapital" copy_from="AMU_BigTurretBase" is_turret="false" thematic_groups="None"
+		tags="MarauderCapital"
+		npc_ship_cap_type="UnknownEntries"
+		visuals="Assets/_FinalGameMeshes/HumanOddities/MarauderOutpost/MarauderOutpost.prefab" gimbal_name="Marauder Outpost"
+		icon_name="Ships1/MarauderOutpost" icon_overlay="Overlays2/GuardPost_Shield"
+		size_scale="15"
+		visuals_scale_multiplier="6.6"
+		display_name="掠夺者 首都"
+		display_name_for_sidebar="掠夺者 首都"
+		description_short="凯泽掠夺者的当地总部。摧毁它将短暂使他们的部队陷入混乱，但该建筑装备精良且装甲厚重。"
+		description="MC-418掠夺者首都是凯泽掠夺者仍在服役的最古老设计。经过无数次迭代，设计在多个层面得到改进：轨道炮发射粘液，电子脉冲可对单个目标聚焦火力，导弹对小目标造成溅射伤害。此外多次加固的结构和改良的护盾使首都能够承受比普通前哨站更严酷的打击，使其成为需要击破的小型堡垒。"
+		cost_for_ai_to_purchase="6000"
+		hull_points="250000" shield_points="750000"
+		metal_cost="150000" energy_consumption="30000"
+		armor_mm="150" albedo="0.65" mass_tx="9"
+		ship_class_name="PSC"
+		grants_minor_faction_planet_control="true"
+	>   
+		<system name="GR" display_name="粘液 轨道炮"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="400" range="EssentiallyInfinite" shot_speed="VeryFast" rate_of_fire="High"
+			shots_per_salvo="6" added_shots_per_salvo_per_mark="1"
+			shot_type_data="ExtremeLongRangeRailgun"
+		>
+		  <!-- TODO: Goo -->
+			<outgoing_damage_modifier based_on="Albedo" comparison_type="AtMost" compared_to="0.3" multiplier="4" />    
+		</system>
+		<system name="EP" display_name="自适应电子脉冲"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="1000" range="High1" shot_speed="Normal" rate_of_fire="Low"
+			shots_per_salvo="6" shots_per_target="12" added_shots_per_salvo_per_mark="1"
+			shot_type_data="LaserPulse_DeepBlue"
+		>
+			<outgoing_damage_modifier based_on="EnergyUsage" comparison_type="AtLeast" compared_to="7000" multiplier="4" />
+		</system>
+		<system name="FR" display_name="爆炸核聚变火箭"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="150" range="AboveAverage5" shot_speed="Normal" rate_of_fire="SlightlyLow"
+			shots_per_salvo="15"
+			shot_type_data="FusionRocketFlakAoEBlast"
+			area_of_effect_size="500"
+			maximum_number_of_targets_hit_per_shot="5"
+		>
+			<outgoing_damage_modifier based_on="CurrentHullPercentage" comparison_type="AtMost" compared_to="30" multiplier="4" />
+		</system>
+	</entity>
+	
+	<entity name="MarauderSabotOutpost" copy_from="AMU_BigTurretBase" is_turret="false" thematic_groups="None"
+		npc_ship_cap_type="UnknownEntries"
+		visuals="Assets/_FinalGameMeshes/HumanOddities/MarauderOutpost/MarauderOutpost.prefab" gimbal_name="Marauder Outpost"
+		icon_name="Ships1/MarauderOutpost" icon_overlay="Overlays2/GuardPost_Sabot"
+		size_scale="10"
+		visuals_scale_multiplier="4.4"
+		display_name="穿甲弹 前哨"
+		display_name_for_sidebar="穿甲弹 OPST"
+		description_short="凯泽掠夺者的前哨站，占领行星并使其资源可被采集。此型号配有穿甲弹炮用于自卫。"
+		description="SO-297穿甲弹前哨容纳了穿梭机、运输船及其他民用舰艇的各种设施，即使没有采矿站也能收集金属。此外建造设施提供建造防御工事和单位的全部设备。此外还配备了一门远程穿甲弹武器，仅需几发就能撕裂大多数大型单位。"
+		cost_for_ai_to_purchase="3000"
+		hull_points="50000" shield_points="25000"
+		metal_cost="50000" energy_consumption="10000"
+		armor_mm="120" albedo="0.45" mass_tx="7"
+		ship_class_name="PSC"
+	>
+		<system name="SB" display_name="穿甲弹"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="1000" range="High1" shot_speed="Normal" rate_of_fire="ExtremelyLow"
+			shot_type_data="Sabot"
+		>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="100" />
+		</system>
+	</entity>
+	
+	<entity name="MarauderDroneOutpost" copy_from="AMU_BigTurretBase" is_turret="false" thematic_groups="None"
+		npc_ship_cap_type="UnknownEntries"
+		visuals="Assets/_FinalGameMeshes/HumanOddities/MarauderOutpost/MarauderOutpost.prefab" gimbal_name="Marauder Outpost"
+		icon_name="Ships1/MarauderOutpost" icon_overlay="Overlays2/Guardian_Carrier"
+		size_scale="10"
+		visuals_scale_multiplier="4.4"
+		display_name="无人机 前哨"
+		display_name_for_sidebar="无人机 OPST"
+		description_short="凯泽掠夺者的前哨站，占领行星并使其资源可被采集。此型号持续建造新的无人机。"
+		description="DO-189无人机前哨容纳了穿梭机、运输船及其他民用舰艇的各种设施，即使没有采矿站也能收集金属。此外建造设施提供建造防御工事和单位的全部设备。此外还配备了额外的建造船坞和发射舱，专门用于生产和释放大量廉价独立的无人机。"
+		cost_for_ai_to_purchase="3000"
+		hull_points="50000" shield_points="25000"
+		metal_cost="50000" energy_consumption="10000"
+		armor_mm="120" albedo="0.45" mass_tx="7"
+		ship_class_name="PSC"
+	>
+		<metal_flow purpose="BuildingDronesInternally" throughput="500"  increase_per_mark_level="250"/>
+	</entity>
+	
+	<entity name="MarauderForcefieldOutpost" copy_from="AMU_BigTurretBase" is_turret="false" thematic_groups="None"
+		npc_ship_cap_type="UnknownEntries"
+		visuals="Assets/_FinalGameMeshes/HumanOddities/MarauderOutpost/MarauderOutpost.prefab" gimbal_name="Marauder Outpost"
+		icon_name="Ships1/MarauderOutpost" icon_overlay="Overlays2/GuardPost_Shield"
+		size_scale="10"
+		visuals_scale_multiplier="4.4"
+		shield_size_scale="7.5" is_stationary_forcefield="true" barred_from_vertex_animated_phasing="true"
+		display_name="力场 前哨"
+		display_name_for_sidebar="力场 OPST"
+		description_short="凯泽掠夺者的前哨站，占领行星并使其资源可被采集。此型号拥有更高的护盾和泡泡力场。"
+		description="FO-148力场前哨容纳了穿梭机、运输船及其他民用舰艇的各种设施，即使没有采矿站也能收集金属。此外建造设施提供建造防御工事和单位的全部设备。此外还配备了强大的力场投影器，有效保护附近建筑和单位。"
+		cost_for_ai_to_purchase="3000"
+		hull_points="50000" shield_points="150000"
+		metal_cost="50000" energy_consumption="10000"
+		armor_mm="120" albedo="0.45" mass_tx="7"
+		ship_class_name="PSC"
+	>
+	</entity>
+	
+	<entity name="MarauderGeneratorOutpost" copy_from="AMU_BigTurretBase" is_turret="false" thematic_groups="None"
+		npc_ship_cap_type="UnknownEntries"
+		visuals="Assets/_FinalGameMeshes/HumanOddities/MarauderOutpost/MarauderOutpost.prefab" gimbal_name="Marauder Outpost"
+		icon_name="Ships1/MarauderOutpost" icon_overlay="Overlays2/GuardPost_Shield"
+		size_scale="10"
+		visuals_scale_multiplier="4.4"
+		display_name="发电 前哨"
+		display_name_for_sidebar="发电 OPST"
+		description_short="凯泽掠夺者的前哨站，占领行星并使其资源可被采集。此型号产出更多能源，拥有更坚固的船体。"
+		description="GO-7发电前哨容纳了穿梭机、运输船及其他民用舰艇的各种设施，即使没有采矿站也能收集金属。此外建造设施提供建造防御工事和单位的全部设备。此外它由更耐久的尖塔科技灌注材料制成，使其能产生额外能量以为更多单位供电。"
+		cost_for_ai_to_purchase="3000"
+		hull_points="50000" shield_points="150000"
+		metal_cost="50000" energy_consumption="10000"
+		armor_mm="120" albedo="0.45" mass_tx="7"
+		ship_class_name="SiPSC"
+	>
+	</entity>
+</root>

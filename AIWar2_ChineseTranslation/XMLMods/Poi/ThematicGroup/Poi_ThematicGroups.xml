@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  
+<thematic_group_type name="NaturalPhenomena" display_name="自然现象"
+     sort_order="50" group_type="UnitClass"
+     description="银河系中偶尔发现的奇观，在其位置造成行星范围的效果。"/>	
+
+<thematic_group_type name="Derelicts" display_name="废弃物"
+     sort_order="50" group_type="UnitClass"
+     description="银河系中偶尔发现的奇观，为修复者提供某种效果。"/>	
+
+</root>

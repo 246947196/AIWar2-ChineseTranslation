@@ -1,0 +1,754 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <entity name="CorrosiveGuardPost" thematic_groups="GuardPost,AI" special_entity_type="GuardPost" visuals="Assets/_FinalGameMeshes/AIBuildings/GuardPosts/Pike/GuardPostPike.prefab" icon_name="Ships1/GuardPost" icon_overlay="Overlays1/Warhead_Storm" gimbal_icon_size_multiplier="1.4" category="Ship" size_scale="5" y_offset_of_icon="30" visuals_scale_multiplier="13" collision_priority="1000" display_name="腐蚀守卫哨站" display_name_for_sidebar="Corrosive GP" description="该行星AI防御部队的存储设施，配备一门可发射腐蚀炮弹的加农炮。在被摧毁时，会向附近的舰船喷射最后一轮腐蚀爆炸物。摧毁该哨站将降低此处的最大增援容量。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="NecromancerDefense" cost_for_ai_to_purchase="200" hull_points="25000" shield_points="125000" speed="Immobile" metal_cost="80000" energy_consumption="10000" armor_mm="70" albedo="0.3" mass_tx="5" voice_group="Silent" ship_or_structure_explosion_sfx="Turret_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalGuardPost" priority_as_frd_target="NormalGuardPost" priority_to_protect="NormalGuardPost">
+    <ai_ship_group_membership name="PikeGuardPosts" weight="25" />
+	<ai_ship_group_membership name="PikeGuardPosts" weight="25" />
+	
+    <system name="W2" display_name="腐蚀终曲" category="Weapon" firing_timing="OnlyInRange" damage_per_shot="8000" range="Small1" shot_speed="Normal" rate_of_fire="Devourer" shots_per_salvo="10" fires_salvos_sequentially="false" shot_type_data="LightningExplosionAOEShot" cloaking_percent_loss_from_firing="0.1" all_damage_is_corrosive="true" only_fires_on_death="true" area_of_effect_size="4500" shots_detonate_immediately="true" maximum_number_of_targets_hit_per_shot="30" health_change_by_max_health_divided_by_this_per_attack="-1">
+			<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="90" multiplier="4" />
+	</system>
+	<system name="W2" display_name="Corrosive Finale" category="Weapon" firing_timing="OnlyInRange" only_fires_on_death="true" damage_per_shot="8000" range="Small1" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false" shot_type_data="LightningExplosionAOEShot" area_of_effect_size="4500" shots_detonate_immediately="true" maximum_number_of_targets_hit_per_shot="30" health_change_by_max_health_divided_by_this_per_attack="-1" all_damage_is_corrosive="true">
+			<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="90" multiplier="4" />
+		</system>
+  </entity>
+
+
+
+
+  <entity name="OrbitalUnarmedGuardPost1" copy_from="UnarmedGuardPost" display_name="轨道无武装守卫哨站" thematic_groups="AI,GuardPost,Orbital" display_name_for_sidebar="Orb Unarmed GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1">
+    <ai_ship_group_membership name="UnarmedOrbitalGuardPosts" weight="100" />
+  </entity>  
+  <entity name="OrbitalUnarmedGuardPost2" copy_from="UnarmedGuardPost" display_name="轨道无武装守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb Unarmed GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1">
+    <ai_ship_group_membership name="UnarmedOrbitalGuardPosts" weight="100" />
+  </entity>  
+ 
+
+<entity name="PikeGuardPost" is_partial_record="true" tech_upgrades_that_benefit_me="NecromancerDefense">
+	</entity> 
+<entity name="OrbitalPikeGuardPost1" copy_from="PikeGuardPost" display_name="轨道矛式守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb Pike GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalPikeGuardPosts" weight="100" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+ <entity name="OrbitalPikeGuardPost2" copy_from="PikeGuardPost" display_name="轨道矛式守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb Pike GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalPikeGuardPosts" weight="100" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>   
+  <entity name="OrbitalPikeGuardPost3" copy_from="PikeGuardPost" display_name="轨道矛式守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb Pike GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Any" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalPikeGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+<entity name="OrbitalPikeGuardPost4" copy_from="PikeGuardPost" display_name="轨道矛式守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb Pike GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Any" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalPikeGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+    <entity name="OrbitalPikeGuardPost5" copy_from="PikeGuardPost" display_name="轨道矛式守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb Pike GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Basic" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalPikeGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+<entity name="OrbitalPikeGuardPost6" copy_from="PikeGuardPost" display_name="轨道矛式守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb Pike GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Basic" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalPikeGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity> 
+   <entity name="OrbitalPikeGuardPost7" copy_from="PikeGuardPost" display_name="轨道矛式守卫哨站" required_expansion_list="1_The_Spire_Rises" thematic_groups="Hidden" display_name_for_sidebar="Orb Pike GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalPikeGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+<entity name="OrbitalPikeGuardPost8" copy_from="PikeGuardPost" display_name="轨道矛式守卫哨站" required_expansion_list="1_The_Spire_Rises" thematic_groups="Hidden" display_name_for_sidebar="Orb Pike GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalPikeGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>
+   <entity name="OrbitalPikeGuardPost9" copy_from="PikeGuardPost" display_name="轨道矛式守卫哨站" required_expansion_list="1_The_Spire_Rises" thematic_groups="Hidden" display_name_for_sidebar="Orb Pike GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1_Fusion" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalPikeGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+<entity name="OrbitalPikeGuardPost10" copy_from="PikeGuardPost" display_name="轨道矛式守卫哨站" required_expansion_list="1_The_Spire_Rises" thematic_groups="Hidden" display_name_for_sidebar="Orb Pike GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1_DPS" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalPikeGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity> 
+ <entity name="OrbitalPikeGuardPost11" copy_from="PikeGuardPost" display_name="轨道矛式守卫哨站" required_expansion_list="1_The_Spire_Rises" thematic_groups="Hidden" display_name_for_sidebar="Orb Pike GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1_Strike" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalPikeGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+<entity name="OrbitalPikeGuardPost12" copy_from="PikeGuardPost" display_name="轨道矛式守卫哨站" required_expansion_list="1_The_Spire_Rises" thematic_groups="Hidden" display_name_for_sidebar="Orb Pike GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1_Strike" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalPikeGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>    
+<entity name="OrbitalPikeGuardPost13" copy_from="PikeGuardPost" display_name="轨道矛式守卫哨站" required_expansion_list="1_The_Spire_Rises" thematic_groups="Hidden" display_name_for_sidebar="Orb Pike GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1_Debuff" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalPikeGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+<entity name="OrbitalPikeGuardPost14" copy_from="PikeGuardPost" display_name="轨道矛式守卫哨站" required_expansion_list="1_The_Spire_Rises" thematic_groups="Hidden" display_name_for_sidebar="Orb Pike GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1_Debuff" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalPikeGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity> 
+  
+<entity name="CorrosiveGuardPost1" copy_from="CorrosiveGuardPost" display_name="轨道腐蚀守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb Corr GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalPikeGuardPosts" weight="75" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+ <entity name="CorrosiveGuardPost2" copy_from="CorrosiveGuardPost" display_name="轨道腐蚀守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb Corr GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalPikeGuardPosts" weight="75" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>   
+  <entity name="CorrosiveGuardPost3" copy_from="CorrosiveGuardPost" display_name="轨道腐蚀守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb Corr GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Any" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalPikeGuardPosts" weight="15" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+<entity name="CorrosiveGuardPost4" copy_from="CorrosiveGuardPost" display_name="轨道腐蚀守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb Corr GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Any" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalPikeGuardPosts" weight="15" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+    <entity name="CorrosiveGuardPost5" copy_from="CorrosiveGuardPost" display_name="轨道腐蚀守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb Corr GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Basic" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalPikeGuardPosts" weight="15" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+<entity name="CorrosiveGuardPost6" copy_from="CorrosiveGuardPost" display_name="轨道腐蚀守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb Corr GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Basic" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalPikeGuardPosts" weight="15" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity> 
+   <entity name="CorrosiveGuardPost7" copy_from="CorrosiveGuardPost" display_name="轨道腐蚀守卫哨站" required_expansion_list="1_The_Spire_Rises" thematic_groups="Hidden" display_name_for_sidebar="Orb Corr GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalPikeGuardPosts" weight="15" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+<entity name="CorrosiveGuardPost8" copy_from="CorrosiveGuardPost" display_name="轨道腐蚀守卫哨站" required_expansion_list="1_The_Spire_Rises" thematic_groups="Hidden" display_name_for_sidebar="Orb Corr GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalPikeGuardPosts" weight="15" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>
+   <entity name="CorrosiveGuardPost9" copy_from="CorrosiveGuardPost" display_name="轨道腐蚀守卫哨站" required_expansion_list="1_The_Spire_Rises" thematic_groups="Hidden" display_name_for_sidebar="Orb Corr GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1_Fusion" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalPikeGuardPosts" weight="15" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+<entity name="CorrosiveGuardPost10" copy_from="CorrosiveGuardPost" display_name="轨道腐蚀守卫哨站" required_expansion_list="1_The_Spire_Rises" thematic_groups="Hidden" display_name_for_sidebar="Orb Corr GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1_DPS" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalPikeGuardPosts" weight="15" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity> 
+ <entity name="CorrosiveGuardPost11" copy_from="CorrosiveGuardPost" display_name="轨道腐蚀守卫哨站" required_expansion_list="1_The_Spire_Rises" thematic_groups="Hidden" display_name_for_sidebar="Orb Corr GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1_Strike" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalPikeGuardPosts" weight="15" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+<entity name="CorrosiveGuardPost12" copy_from="CorrosiveGuardPost" display_name="轨道腐蚀守卫哨站" required_expansion_list="1_The_Spire_Rises" thematic_groups="Hidden" display_name_for_sidebar="Orb Corr GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1_Strike" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalPikeGuardPosts" weight="15" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>    
+<entity name="CorrosiveGuardPost13" copy_from="CorrosiveGuardPost" display_name="轨道腐蚀守卫哨站" required_expansion_list="1_The_Spire_Rises" thematic_groups="Hidden" display_name_for_sidebar="Orb Corr GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1_Debuff" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalPikeGuardPosts" weight="15" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+<entity name="CorrosiveGuardPost14" copy_from="CorrosiveGuardPost" display_name="轨道腐蚀守卫哨站" required_expansion_list="1_The_Spire_Rises" thematic_groups="Hidden" display_name_for_sidebar="Orb Corr GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1_Debuff" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalPikeGuardPosts" weight="15" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>   
+
+<entity name="SabotGuardPost" is_partial_record="true" tech_upgrades_that_benefit_me="NecromancerDefense">
+	</entity> 
+
+<entity name="OrbitalSabotGuardPost1" copy_from="SabotGuardPost" display_name="轨道破坏者守卫哨站" thematic_groups="AI,GuardPost,Orbital" display_name_for_sidebar="Orb Sabot GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalNucleophilicSabotGuardPosts" weight="100" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+    <metal_flow purpose="BuildingDronesInternally" throughput="1200" increase_per_mark_level="800" />
+  </entity> 
+<entity name="OrbitalSabotGuardPost2" copy_from="SabotGuardPost" display_name="轨道破坏者守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb Sabot GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalNucleophilicSabotGuardPosts" weight="100" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>    
+<entity name="OrbitalSabotGuardPost3" copy_from="SabotGuardPost" display_name="轨道破坏者守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb Sabot GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Any" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalNucleophilicSabotGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+    <metal_flow purpose="BuildingDronesInternally" throughput="1200" increase_per_mark_level="800" />
+  </entity> 
+<entity name="OrbitalSabotGuardPost4" copy_from="SabotGuardPost" display_name="轨道破坏者守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb Sabot GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Any" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalNucleophilicSabotGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity> 
+<entity name="OrbitalSabotGuardPost5" copy_from="SabotGuardPost" display_name="轨道破坏者守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb Sabot GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Heavy" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalNucleophilicSabotGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+    <metal_flow purpose="BuildingDronesInternally" throughput="1200" increase_per_mark_level="800" />
+  </entity> 
+<entity name="OrbitalSabotGuardPost6" copy_from="SabotGuardPost" display_name="轨道破坏者守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb Sabot GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Heavy" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalNucleophilicSabotGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity> 
+<entity name="OrbitalSabotGuardPost7" copy_from="SabotGuardPost" display_name="轨道破坏者守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb Sabot GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Sniper" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalNucleophilicSabotGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+    <metal_flow purpose="BuildingDronesInternally" throughput="1200" increase_per_mark_level="800" />
+  </entity> 
+<entity name="OrbitalSabotGuardPost8" copy_from="SabotGuardPost" display_name="轨道破坏者守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb Sabot GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Sniper" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalNucleophilicSabotGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+<entity name="OrbitalSabotGuardPost9" copy_from="SabotGuardPost" display_name="轨道破坏者守卫哨站" required_expansion_list="1_The_Spire_Rises" thematic_groups="Hidden" display_name_for_sidebar="Orb Sabot GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalNucleophilicSabotGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+    <metal_flow purpose="BuildingDronesInternally" throughput="1200" increase_per_mark_level="800" />
+  </entity> 
+<entity name="OrbitalSabotGuardPost10" copy_from="SabotGuardPost" display_name="轨道破坏者守卫哨站" required_expansion_list="1_The_Spire_Rises" thematic_groups="Hidden" display_name_for_sidebar="Orb Sabot GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalNucleophilicSabotGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>    
+<entity name="OrbitalSabotGuardPost11" copy_from="SabotGuardPost" display_name="轨道破坏者守卫哨站" required_expansion_list="1_The_Spire_Rises" thematic_groups="Hidden" display_name_for_sidebar="Orb Sabot GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1_Fusion" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalNucleophilicSabotGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+    <metal_flow purpose="BuildingDronesInternally" throughput="1200" increase_per_mark_level="800" />
+  </entity> 
+<entity name="OrbitalSabotGuardPost12" copy_from="SabotGuardPost" display_name="轨道破坏者守卫哨站" required_expansion_list="1_The_Spire_Rises" thematic_groups="Hidden" display_name_for_sidebar="Orb Sabot GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1_DPS" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalNucleophilicSabotGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity> 
+<entity name="OrbitalSabotGuardPost13" copy_from="SabotGuardPost" display_name="轨道破坏者守卫哨站" required_expansion_list="1_The_Spire_Rises" thematic_groups="Hidden" display_name_for_sidebar="Orb Sabot GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1_Longrange" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalNucleophilicSabotGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+    <metal_flow purpose="BuildingDronesInternally" throughput="1200" increase_per_mark_level="800" />
+  </entity> 
+<entity name="OrbitalSabotGuardPost14" copy_from="SabotGuardPost" display_name="轨道破坏者守卫哨站" required_expansion_list="1_The_Spire_Rises" thematic_groups="Hidden" display_name_for_sidebar="Orb Sabot GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1_Longrange" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalNucleophilicSabotGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>    
+
+<entity name="ConcussionGuardPost" is_partial_record="true" tech_upgrades_that_benefit_me="NecromancerDefense">
+	</entity> 
+<entity name="OrbitalConcussionGuardPost1" copy_from="ConcussionGuardPost" display_name="轨道震荡守卫哨站" thematic_groups="AI,GuardPost,Orbital" display_name_for_sidebar="Orb Concussion GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalConcussionGuardPosts" weight="100" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+<entity name="OrbitalConcussionGuardPost2" copy_from="ConcussionGuardPost" display_name="轨道震荡守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb Concussion GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalConcussionGuardPosts" weight="100" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+<entity name="OrbitalConcussionGuardPost3" copy_from="ConcussionGuardPost" display_name="轨道震荡守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb Concussion GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Any" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalConcussionGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+<entity name="OrbitalConcussionGuardPost4" copy_from="ConcussionGuardPost" display_name="轨道震荡守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb Concussion GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Any" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalConcussionGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>   
+  <entity name="OrbitalConcussionGuardPost5" copy_from="ConcussionGuardPost" display_name="轨道震荡守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb Concussion GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Basic" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalConcussionGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+<entity name="OrbitalConcussionGuardPost6" copy_from="ConcussionGuardPost" display_name="轨道震荡守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb Concussion GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Basic" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalConcussionGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+<entity name="OrbitalConcussionGuardPost7" copy_from="ConcussionGuardPost" display_name="轨道震荡守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb Concussion GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Sniper" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalConcussionGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+<entity name="OrbitalConcussionGuardPost8" copy_from="ConcussionGuardPost" display_name="轨道震荡守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb Concussion GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Sniper" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalConcussionGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity> 
+<entity name="OrbitalConcussionGuardPost9" copy_from="ConcussionGuardPost" display_name="轨道震荡守卫哨站" required_expansion_list="1_The_Spire_Rises" thematic_groups="Hidden" display_name_for_sidebar="Orb Concussion GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalConcussionGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+<entity name="OrbitalConcussionGuardPost10" copy_from="ConcussionGuardPost" display_name="轨道震荡守卫哨站" required_expansion_list="1_The_Spire_Rises" thematic_groups="Hidden" display_name_for_sidebar="Orb Concussion GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalConcussionGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>    
+  <entity name="OrbitalConcussionGuardPost11" copy_from="ConcussionGuardPost" display_name="轨道震荡守卫哨站" required_expansion_list="1_The_Spire_Rises" thematic_groups="Hidden" display_name_for_sidebar="Orb Concussion GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1_Longrange" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalConcussionGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+<entity name="OrbitalConcussionGuardPost12" copy_from="ConcussionGuardPost" display_name="轨道震荡守卫哨站" required_expansion_list="1_The_Spire_Rises" thematic_groups="Hidden" display_name_for_sidebar="Orb Concussion GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1_Longrange" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalConcussionGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>
+ <entity name="OrbitalConcussionGuardPost13" copy_from="ConcussionGuardPost" display_name="轨道震荡守卫哨站" required_expansion_list="1_The_Spire_Rises" thematic_groups="Hidden" display_name_for_sidebar="Orb Concussion GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1_Debuff" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalConcussionGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+<entity name="OrbitalConcussionGuardPost14" copy_from="ConcussionGuardPost" display_name="轨道震荡守卫哨站" required_expansion_list="1_The_Spire_Rises" thematic_groups="Hidden" display_name_for_sidebar="Orb Concussion GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1_Decoy" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalConcussionGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity> 
+  
+<entity name="MLRSGuardPost" is_partial_record="true" tech_upgrades_that_benefit_me="NecromancerDefense">
+	</entity>   
+<entity name="OrbitalMLRSGuardPost1" copy_from="MLRSGuardPost" display_name="轨道多管火箭系统守卫哨站" thematic_groups="AI,GuardPost,Orbital" display_name_for_sidebar="Orb MLRS GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalMLRSGuardPosts" weight="100" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity> 
+<entity name="OrbitalMLRSGuardPost2" copy_from="MLRSGuardPost" display_name="轨道多管火箭系统守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb MLRS GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalMLRSGuardPosts" weight="100" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>    
+<entity name="OrbitalMLRSGuardPost3" copy_from="MLRSGuardPost" display_name="轨道多管火箭系统守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb MLRS GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Any" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalMLRSGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity> 
+<entity name="OrbitalMLRSGuardPost4" copy_from="MLRSGuardPost" display_name="轨道多管火箭系统守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb MLRS GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Any" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalMLRSGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>    
+<entity name="OrbitalMLRSGuardPost5" copy_from="MLRSGuardPost" display_name="轨道多管火箭系统守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb MLRS GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Basic" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalMLRSGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity> 
+<entity name="OrbitalMLRSGuardPost6" copy_from="MLRSGuardPost" display_name="轨道多管火箭系统守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb MLRS GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Basic" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalMLRSGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+<entity name="OrbitalMLRSGuardPost7" copy_from="MLRSGuardPost" display_name="轨道多管火箭系统守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb MLRS GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Strike" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalMLRSGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity> 
+<entity name="OrbitalMLRSGuardPost8" copy_from="MLRSGuardPost" display_name="轨道多管火箭系统守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb MLRS GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Strike" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalMLRSGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+<entity name="OrbitalMLRSGuardPost9" copy_from="MLRSGuardPost" display_name="轨道多管火箭系统守卫哨站" required_expansion_list="1_The_Spire_Rises" thematic_groups="Hidden" display_name_for_sidebar="Orb MLRS GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalMLRSGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity> 
+<entity name="OrbitalMLRSGuardPost10" copy_from="MLRSGuardPost" display_name="轨道多管火箭系统守卫哨站" required_expansion_list="1_The_Spire_Rises" thematic_groups="Hidden" display_name_for_sidebar="Orb MLRS GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalMLRSGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+<entity name="OrbitalMLRSGuardPost11" copy_from="MLRSGuardPost" display_name="轨道多管火箭系统守卫哨站" required_expansion_list="1_The_Spire_Rises" thematic_groups="Hidden" display_name_for_sidebar="Orb MLRS GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1_Strike" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalMLRSGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity> 
+<entity name="OrbitalMLRSGuardPost12" copy_from="MLRSGuardPost" display_name="轨道多管火箭系统守卫哨站" required_expansion_list="1_The_Spire_Rises" thematic_groups="Hidden" display_name_for_sidebar="Orb MLRS GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1_Strike" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalMLRSGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity> 
+<entity name="OrbitalMLRSGuardPost13" copy_from="MLRSGuardPost" display_name="轨道多管火箭系统守卫哨站" required_expansion_list="1_The_Spire_Rises" thematic_groups="Hidden" display_name_for_sidebar="Orb MLRS GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1_Fusion" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalMLRSGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity> 
+<entity name="OrbitalMLRSGuardPost14" copy_from="MLRSGuardPost" display_name="轨道多管火箭系统守卫哨站" required_expansion_list="1_The_Spire_Rises" thematic_groups="Hidden" display_name_for_sidebar="Orb MLRS GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1_Fusion" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalMLRSGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity> 
+
+<entity name="NucleophilicGuardPost" is_partial_record="true" tech_upgrades_that_benefit_me="NecromancerDefense">
+	</entity>  
+<entity name="OrbitalNucleophilicGuardPost1" copy_from="NucleophilicGuardPost" display_name="轨道亲核守卫哨站" thematic_groups="AI,GuardPost,Orbital" display_name_for_sidebar="Orb Nucleo GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalNucleophilicSabotGuardPosts" weight="100" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+
+<entity name="OrbitalNucleophilicGuardPost2" copy_from="NucleophilicGuardPost" display_name="轨道亲核守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb Nucleo GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalNucleophilicSabotGuardPosts" weight="100" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+<entity name="OrbitalNucleophilicGuardPost3" copy_from="NucleophilicGuardPost" display_name="轨道亲核守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb Nucleo GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Any" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalNucleophilicSabotGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+
+<entity name="OrbitalNucleophilicGuardPost4" copy_from="NucleophilicGuardPost" display_name="轨道亲核守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb Nucleo GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Any" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalNucleophilicSabotGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>   
+<entity name="OrbitalNucleophilicGuardPost5" copy_from="NucleophilicGuardPost" display_name="轨道亲核守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb Nucleo GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Basic" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalNucleophilicSabotGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+
+<entity name="OrbitalNucleophilicGuardPost6" copy_from="NucleophilicGuardPost" display_name="轨道亲核守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb Nucleo GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Basic" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalNucleophilicSabotGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>
+<entity name="OrbitalNucleophilicGuardPost7" copy_from="NucleophilicGuardPost" display_name="轨道亲核守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb Nucleo GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Heavy" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalNucleophilicSabotGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+
+<entity name="OrbitalNucleophilicGuardPost8" copy_from="NucleophilicGuardPost" display_name="轨道亲核守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb Nucleo GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Heavy" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalNucleophilicSabotGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>
+<entity name="OrbitalNucleophilicGuardPost9" copy_from="NucleophilicGuardPost" display_name="轨道亲核守卫哨站" required_expansion_list="1_The_Spire_Rises" thematic_groups="Hidden" display_name_for_sidebar="Orb Nucleo GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalNucleophilicSabotGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+
+<entity name="OrbitalNucleophilicGuardPost10" copy_from="NucleophilicGuardPost" display_name="轨道亲核守卫哨站" required_expansion_list="1_The_Spire_Rises" thematic_groups="Hidden" display_name_for_sidebar="Orb Nucleo GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalNucleophilicSabotGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity> 
+<entity name="OrbitalNucleophilicGuardPost11" copy_from="NucleophilicGuardPost" display_name="轨道亲核守卫哨站" required_expansion_list="1_The_Spire_Rises" thematic_groups="Hidden" display_name_for_sidebar="Orb Nucleo GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1_DPS" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalNucleophilicSabotGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+
+<entity name="OrbitalNucleophilicGuardPost12" copy_from="NucleophilicGuardPost" display_name="轨道亲核守卫哨站" required_expansion_list="1_The_Spire_Rises" thematic_groups="Hidden" display_name_for_sidebar="Orb Nucleo GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1_DPS" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalNucleophilicSabotGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>   
+<entity name="OrbitalNucleophilicGuardPost13" copy_from="NucleophilicGuardPost" display_name="轨道亲核守卫哨站" required_expansion_list="1_The_Spire_Rises" thematic_groups="Hidden" display_name_for_sidebar="Orb Nucleo GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1_Longrange" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalNucleophilicSabotGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+
+<entity name="OrbitalNucleophilicGuardPost14" copy_from="NucleophilicGuardPost" display_name="轨道亲核守卫哨站" required_expansion_list="1_The_Spire_Rises" thematic_groups="Hidden" display_name_for_sidebar="Orb Nucleo GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1_Debuff" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalNucleophilicSabotGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>    
+  
+ <entity name="ShieldGuardPost" is_partial_record="true" tech_upgrades_that_benefit_me="NecromancerDefense">
+	</entity> 
+  <entity name="OrbitalShieldGuardPost1" copy_from="ShieldGuardPost" display_name="轨道护盾守卫哨站" thematic_groups="AI,GuardPost,Orbital" display_name_for_sidebar="Orb Shield GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalShieldGuardPosts" weight="50" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+
+<entity name="OrbitalShieldGuardPost2" copy_from="ShieldGuardPost" display_name="轨道护盾守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb Shield GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalShieldGuardPosts" weight="50" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity> 
+  <entity name="OrbitalShieldGuardPost3" copy_from="ShieldGuardPost" display_name="轨道护盾守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb Shield GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Any" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalShieldGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+
+<entity name="OrbitalShieldGuardPost4" copy_from="ShieldGuardPost" display_name="轨道护盾守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb Shield GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Any" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalShieldGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity> 
+ <entity name="OrbitalShieldGuardPost5" copy_from="ShieldGuardPost" display_name="轨道护盾守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb Shield GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Strike" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalShieldGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+
+<entity name="OrbitalShieldGuardPost6" copy_from="ShieldGuardPost" display_name="轨道护盾守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb Shield GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Strike" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalShieldGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>
+ <entity name="OrbitalShieldGuardPost7" copy_from="ShieldGuardPost" display_name="轨道护盾守卫哨站" required_expansion_list="1_The_Spire_Rises" thematic_groups="Hidden" display_name_for_sidebar="Orb Shield GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1_Bastille" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalShieldGuardPosts" weight="50" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+
+<entity name="OrbitalShieldGuardPost8" copy_from="ShieldGuardPost" display_name="轨道护盾守卫哨站" required_expansion_list="1_The_Spire_Rises" thematic_groups="Hidden" display_name_for_sidebar="Orb Shield GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1_Bastille" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalShieldGuardPosts" weight="50" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+  
+ <entity name="StealthGuardPost" is_partial_record="true" tech_upgrades_that_benefit_me="NecromancerDefense">
+	</entity> 
+  <entity name="OrbitalStealthGuardPost1" copy_from="StealthGuardPost" display_name="轨道隐形守卫哨站" thematic_groups="AI,GuardPost,Orbital" display_name_for_sidebar="Orb Stealth GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalStealthGuardPosts" weight="100" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+
+<entity name="OrbitalStealthGuardPost2" copy_from="StealthGuardPost" display_name="轨道隐形守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb Stealth GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" tech_upgrades_that_benefit_me="NecromancerDefense">
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalStealthGuardPosts" weight="100" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity> 
+ <entity name="OrbitalStealthGuardPost3" copy_from="StealthGuardPost" display_name="轨道隐形守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb Stealth GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Cloak" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalStealthGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+
+<entity name="OrbitalStealthGuardPost4" copy_from="StealthGuardPost" display_name="轨道隐形守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb Stealth GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Cloak" tech_upgrades_that_benefit_me="NecromancerDefense">
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalStealthGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity> 
+ <entity name="OrbitalStealthGuardPost5" copy_from="StealthGuardPost" display_name="轨道隐形守卫哨站" required_expansion_list="1_The_Spire_Rises" thematic_groups="Hidden" display_name_for_sidebar="Orb Stealth GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1_EMP" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalStealthGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+
+<entity name="OrbitalStealthGuardPost6" copy_from="StealthGuardPost" display_name="轨道隐形守卫哨站" required_expansion_list="1_The_Spire_Rises" thematic_groups="Hidden" display_name_for_sidebar="Orb Stealth GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1_EMP" tech_upgrades_that_benefit_me="NecromancerDefense">
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalStealthGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity> 
+  
+ <entity name="OrbitalStealthGuardPost7" copy_from="StealthGuardPost" display_name="轨道隐形守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb Stealth GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="10" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalMine" tech_upgrades_that_benefit_me="NecromancerDefense">
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalStealthGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+ <entity name="OrbitalStealthGuardPost8" copy_from="StealthGuardPost" display_name="轨道隐形守卫哨站" thematic_groups="Hidden" display_name_for_sidebar="Orb Stealth GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="10" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalMine" tech_upgrades_that_benefit_me="NecromancerDefense">
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalStealthGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity> 
+ <entity name="OrbitalStealthGuardPost9" copy_from="StealthGuardPost" display_name="轨道隐形守卫哨站" thematic_groups="Hidden" required_expansion_list="2_Zenith_Onslaught" display_name_for_sidebar="Orb Stealth GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="10" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalMine_DLC2" tech_upgrades_that_benefit_me="NecromancerDefense">
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalStealthGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+   <entity name="OrbitalStealthGuardPost10" copy_from="StealthGuardPost" display_name="轨道隐形守卫哨站" thematic_groups="Hidden" required_expansion_list="2_Zenith_Onslaught" display_name_for_sidebar="Orb Stealth GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="10" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalMine_DLC2" tech_upgrades_that_benefit_me="NecromancerDefense">
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalStealthGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+
+
+ <entity name="PolarizedGuardPost" is_partial_record="true" required_expansion_list="2_Zenith_Onslaught" tech_upgrades_that_benefit_me="NecromancerDefense">
+	</entity> 
+<entity name="OrbitalPolarizedGuardPost1" copy_from="PolarizedGuardPost" display_name="轨道极化守卫哨站" required_expansion_list="2_Zenith_Onslaught" thematic_groups="Hidden" display_name_for_sidebar="Orb Polarized GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalPikeGuardPosts" weight="100" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+    <metal_flow purpose="BuildingDronesInternally" throughput="1200" increase_per_mark_level="800" />
+  </entity>  
+ <entity name="OrbitalPolarizedGuardPost2" copy_from="PolarizedGuardPost" display_name="轨道极化守卫哨站" required_expansion_list="2_Zenith_Onslaught" thematic_groups="AI,GuardPost,Orbital" display_name_for_sidebar="Orb Polarized GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalPikeGuardPosts" weight="100" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>   
+  <entity name="OrbitalPolarizedGuardPost3" copy_from="PolarizedGuardPost" display_name="轨道极化守卫哨站" required_expansion_list="2_Zenith_Onslaught" thematic_groups="Hidden" display_name_for_sidebar="Orb Polarized GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Any" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalPikeGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+<entity name="OrbitalPolarizedGuardPost4" copy_from="PolarizedGuardPost" display_name="轨道极化守卫哨站" required_expansion_list="2_Zenith_Onslaught" thematic_groups="Hidden" display_name_for_sidebar="Orb Polarized GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Any" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalPikeGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+    <entity name="OrbitalPolarizedGuardPost5" copy_from="PolarizedGuardPost" display_name="轨道极化守卫哨站" required_expansion_list="2_Zenith_Onslaught" thematic_groups="Hidden" display_name_for_sidebar="Orb Polarized GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Basic" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalPikeGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+<entity name="OrbitalPolarizedGuardPost6" copy_from="PolarizedGuardPost" display_name="轨道极化守卫哨站" required_expansion_list="2_Zenith_Onslaught" thematic_groups="Hidden" display_name_for_sidebar="Orb Polarized GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Basic" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalPikeGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity> 
+   <entity name="OrbitalPolarizedGuardPost7" copy_from="PolarizedGuardPost" display_name="轨道极化守卫哨站" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught" thematic_groups="Hidden" display_name_for_sidebar="Orb Polarized GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalPikeGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+<entity name="OrbitalPolarizedGuardPost8" copy_from="PolarizedGuardPost" display_name="轨道极化守卫哨站" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught" thematic_groups="Hidden" display_name_for_sidebar="Orb Polarized GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalPikeGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>
+   <entity name="OrbitalPolarizedGuardPost9" copy_from="PolarizedGuardPost" display_name="轨道极化守卫哨站" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught" thematic_groups="Hidden" display_name_for_sidebar="Orb Polarized GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1_Fusion" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalPikeGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+<entity name="OrbitalPolarizedGuardPost10" copy_from="PolarizedGuardPost" display_name="轨道极化守卫哨站" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught" thematic_groups="Hidden" display_name_for_sidebar="Orb Polarized GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1_DPS" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalPikeGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity> 
+ <entity name="OrbitalPolarizedGuardPost11" copy_from="PolarizedGuardPost" display_name="轨道极化守卫哨站" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught" thematic_groups="Hidden" display_name_for_sidebar="Orb Polarized GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1_Strike" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalPikeGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+<entity name="OrbitalPolarizedGuardPost12" copy_from="PolarizedGuardPost" display_name="轨道极化守卫哨站" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught" thematic_groups="Hidden" display_name_for_sidebar="Orb Polarized GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1_Strike" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalPikeGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>    
+<entity name="OrbitalPolarizedGuardPost13" copy_from="PolarizedGuardPost" display_name="轨道极化守卫哨站" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught" thematic_groups="Hidden" display_name_for_sidebar="Orb Polarized GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1_Debuff" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalPikeGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity>  
+<entity name="OrbitalPolarizedGuardPost14" copy_from="PolarizedGuardPost" display_name="轨道极化守卫哨站" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught" thematic_groups="Hidden" display_name_for_sidebar="Orb Polarized GP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_DLC1_Debuff" tech_upgrades_that_benefit_me="NecromancerDefense">
+    <ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+	<ai_ship_group_membership name="OrbitalPikeGuardPosts" weight="25" />
+	<ai_ship_group_membership name="AnyGuardPosts_FreeforAll" weight="1" />
+  </entity> 
+
+	
+	<entity name="SpireGuardPost" is_partial_record="true" required_expansion_list="1_The_Spire_Rises" tech_upgrades_that_benefit_me="NecromancerDefense">
+	</entity> 
+	<entity name="PeltianGuardPost" is_partial_record="true" required_expansion_list="1_The_Spire_Rises" tech_upgrades_that_benefit_me="NecromancerDefense">
+	</entity> 
+	
+	<entity name="BurlustGuardPost" is_partial_record="true" required_expansion_list="1_The_Spire_Rises" tech_upgrades_that_benefit_me="NecromancerDefense">
+	</entity> 
+	
+	<entity name="RagnarokGuardPostOne" is_partial_record="true" required_expansion_list="2_Zenith_Onslaught" tech_upgrades_that_benefit_me="NecromancerDefense">
+	</entity> 
+	
+	 <entity name="GladiatorGuardPostOne" is_partial_record="true" required_expansion_list="2_Zenith_Onslaught" tech_upgrades_that_benefit_me="NecromancerDefense">
+	</entity> 
+
+
+<entity name="OrbitalDireSabotGuardPost" copy_from="DireSabotGuardPost" display_name="轨道恐怖破坏守卫哨站" thematic_groups="AI,DireGuardPost,Orbital" display_name_for_sidebar="Orb Sabot DGP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Heavy">
+    <ai_ship_group_membership name="OrbitalHeavyBeamNucleophilicSabotDireGuardPosts" weight="100" />
+    <ai_ship_group_membership name="OrbitalNucleophilicSabotShredderDireGuardPosts" weight="100" />
+    <ai_ship_group_membership name="OrbitalNucleophilicSabotDireGuardPosts" weight="100" />
+    <ai_ship_group_membership name="OrbitalHeavyBeamNucleophilicSabotDireGuardPosts" weight="100" />	
+  </entity> 
+
+
+
+<entity name="OrbitalDireTeslaGuardPost" copy_from="DireTeslaGuardPost" display_name="轨道恐怖特斯拉守卫哨站" thematic_groups="AI,DireGuardPost,Orbital" display_name_for_sidebar="Orb Tesla DGP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Strike">
+    <ai_ship_group_membership name="OrbitalShredderTeslaDireGuardPosts" weight="100" />
+   	<ai_ship_group_membership name="OrbitalGravityTeslaDireGuardPosts" weight="100" />
+    <ai_ship_group_membership name="OrbitalHeavyBeamTeslaDireGuardPosts" weight="100" />
+    <ai_ship_group_membership name="OrbitalShredderTeslaDireGuardPosts" weight="100" />		
+  </entity> 
+
+
+<entity name="OrbitalDireHeavyBeamGuardPost" copy_from="DireHeavyBeamGuardPost" display_name="轨道恐怖重光束守卫哨站" thematic_groups="AI,DireGuardPost,Orbital" display_name_for_sidebar="Orb Beam DGP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Heavy">
+    <ai_ship_group_membership name="OrbitalSpiderHeavyBeamDireGuardPosts" weight="100" />
+	<ai_ship_group_membership name="OrbitalHeavyBeamTeslaDireGuardPosts" weight="100" />
+    <ai_ship_group_membership name="OrbitalHeavyBeamNucleophilicSabotDireGuardPosts" weight="100" />
+    <ai_ship_group_membership name="OrbitalSpiderHeavyBeamDireGuardPosts" weight="100" />			
+  </entity> 
+
+
+
+<entity name="OrbitalDireConcussionGuardPost" copy_from="DireConcussionGuardPost" display_name="轨道恐怖震荡守卫哨站" thematic_groups="AI,DireGuardPost,Orbital" display_name_for_sidebar="Orb Concussion DGP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Basic">
+    <ai_ship_group_membership name="OrbitalSpiderConcussionDireGuardPosts" weight="100" />
+	<ai_ship_group_membership name="OrbitalDireGuardPosts_FreeforAll" weight="100" />
+    <ai_ship_group_membership name="OrbitalParasiteConcussionDireGuardPosts" weight="100" />
+    <ai_ship_group_membership name="OrbitalSpiderConcussionDireGuardPosts" weight="100" />					
+  </entity> 
+
+<entity name="OrbitalDireParasiteGuardPost" copy_from="DireParasiteGuardPost" display_name="轨道恐怖寄生守卫哨站" thematic_groups="AI,DireGuardPost,Orbital" display_name_for_sidebar="Orb Parasite DGP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Any">
+    <ai_ship_group_membership name="OrbitalParasiteConcussionDireGuardPosts" weight="100" />
+	<ai_ship_group_membership name="OrbitalSpiderParasiteShredderDireGuardPosts" weight="100" />
+    <ai_ship_group_membership name="OrbitalSpiderParasiteDireGuardPosts" weight="100" />
+    <ai_ship_group_membership name="OrbitalParasiteTethuidaDireGuardPosts" weight="100" />
+    <ai_ship_group_membership name="OrbitalParasiteConcussionDireGuardPosts" weight="100" />						
+  </entity> 
+
+<entity name="OrbitalDireSpiderGuardPost" copy_from="DireSpiderGuardPost" display_name="轨道恐怖蜘蛛守卫哨站" thematic_groups="AI,DireGuardPost,Orbital" display_name_for_sidebar="Orb Spider DGP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Sniper">
+    <ai_ship_group_membership name="OrbitalSpiderHeavyBeamDireGuardPosts" weight="100" />
+	<ai_ship_group_membership name="OrbitalSpiderParasiteShredderDireGuardPosts" weight="100" />
+    <ai_ship_group_membership name="OrbitalSpiderParasiteDireGuardPosts" weight="100" />
+    <ai_ship_group_membership name="OrbitalGravitySpiderShredderTethuidaDireGuardPosts" weight="100" />
+    <ai_ship_group_membership name="OrbitalSpiderConcussionDireGuardPosts" weight="100" />
+    <ai_ship_group_membership name="OrbitalSpiderHeavyBeamDireGuardPosts" weight="100" />					
+  </entity> 
+
+<entity name="OrbitalDireNucleophilicGuardPost" copy_from="DireNucleophilicGuardPost" display_name="轨道恐怖亲核守卫哨站" thematic_groups="AI,DireGuardPost,Orbital" display_name_for_sidebar="Orb Nucleo DGP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Heavy">
+    <ai_ship_group_membership name="OrbitalHeavyBeamNucleophilicSabotDireGuardPosts" weight="100" />
+	<ai_ship_group_membership name="OrbitalNucleophilicSabotShredderDireGuardPosts" weight="100" />
+    <ai_ship_group_membership name="OrbitalNucleophilicSabotDireGuardPosts" weight="100" />	
+    <ai_ship_group_membership name="OrbitalHeavyBeamNucleophilicSabotDireGuardPosts" weight="100" />						
+  </entity> 
+  
+ <entity name="OrbitalDireGravityGuardPost" copy_from="DireGravityGuardPost" display_name="轨道恐怖重力守卫哨站" thematic_groups="AI,DireGuardPost,Orbital" display_name_for_sidebar="Orb Gravity DGP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Any">
+    <ai_ship_group_membership name="OrbitalGravitySpiderShredderTethuidaDireGuardPosts" weight="100" />
+	<ai_ship_group_membership name="OrbitalGravityTeslaDireGuardPosts" weight="100" />	
+    <ai_ship_group_membership name="OrbitalGravitySpiderShredderTethuidaDireGuardPosts" weight="100" />						
+  </entity> 
+
+ <entity name="OrbitalDireShredderShredderPost" copy_from="DireShredderGuardPost" display_name="轨道恐怖碎甲守卫哨站" thematic_groups="AI,DireGuardPost,Orbital" display_name_for_sidebar="Orb Gravity DGP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Any">
+    <entity_type_drawing_bag_used_on_death data_list="ShredderDrone" min_spawn_value_list="15" />
+    <ai_ship_group_membership name="OrbitalShredderTeslaDireGuardPosts" weight="100" />
+	<ai_ship_group_membership name="OrbitalSpiderParasiteShredderDireGuardPosts" weight="100" />
+    <ai_ship_group_membership name="OrbitalNucleophilicSabotShredderDireGuardPosts" weight="100" />
+    <ai_ship_group_membership name="OrbitalGravitySpiderShredderTethuidaDireGuardPosts" weight="100" />
+    <ai_ship_group_membership name="OrbitalShredderTeslaDireGuardPosts" weight="100" />						
+  </entity> 
+
+ <entity name="OrbitalDireTethuidaShredderPost" copy_from="DireTethuidaGuardPost" display_name="轨道恐怖泰图伊达守卫哨站" thematic_groups="AI,DireGuardPost,Orbital" display_name_for_sidebar="Orb Tethuida DGP" orbits_gravity_well_center_at_its_current_radius="true" degrees_to_orbit_per_second="-1" build_points_per_second="25" build_point_cost_for_per_second_construction="1000" personal_ship_cap_for_per_second_build_point_construction="5" tag_to_spawn_from_for_build_point_for_per_second_construction="OrbitalTurret_Any">
+    <entity_type_drawing_bag_used_on_death data_list="TethuidaDrone" min_spawn_value_list="15" />
+    <ai_ship_group_membership name="OrbitalGravitySpiderShredderTethuidaDireGuardPosts" weight="100" />
+	<ai_ship_group_membership name="OrbitalParasiteTethuidaDireGuardPosts" weight="100" />
+    <ai_ship_group_membership name="OrbitalMassTethuidaDireGuardPosts" weight="100" />
+    <ai_ship_group_membership name="OrbitalGravitySpiderShredderTethuidaDireGuardPosts" weight="100" />						
+  </entity> 
+
+
+</root>

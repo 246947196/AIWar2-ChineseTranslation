@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- The creation of our custom faction. -->
+  <faction name="SKCivilianIndustry"
+           display_name="民用工业" short_name="民用工业" processing_group="SKCivilianIndustry"
+           base_info_source="SKCivilianIndustryFactionBaseInfo"
+           deep_info_source="SKCivilianIndustryFactionDeepInfo"
+           team_center_color="Purple" team_border_color="cF8F8FF"
+           type="SpecialFaction" does_player_style_ship_upgrades="true"
+		   impact="Moderate"
+           CanBeFriendlyToPlayer="true"
+           CanBeOnMinorFactionTeam="true"
+		   RequiresMinorFactionTeammates="true"
+           description="由勤劳的人类组成的派系。随着你向其他行星扩张，他们也会跟随扩张，增强你的经济，并在你的殖民地上提供额外的防御和实用建筑。">
+    <custom_field name="Intensity" display_name="强度" description="该派系的整体效力等级。"
+          sort_group="200" setting_type="IntSlider" default="5" min="1" max="10" />
+    <custom_field name="Allegiance" display_name="归属阵营" description="该工业将支援哪个阵营？"
+          sort_group="250" setting_type="CustomDropdownArbitraryOptions" 
+          arbitrary_options="对玩家友好,次要派系红队,次要派系蓝队,次要派系绿队" default_option="对玩家友好" />
+	<npc_ship_cap name="Turrets" overriding_per_faction_cap_of_stacks="1000" /> <!-- Compared to most other factions, half of their mechanics Turrets. They should be optimal about packing them up and moving them, so we can be a bit less severe on their restrictions. -->
+	<npc_ship_cap name="SpecialThingsToAlwaysSeed" overriding_per_faction_cap_of_stacks="2000" />
+  </faction>
+</root>

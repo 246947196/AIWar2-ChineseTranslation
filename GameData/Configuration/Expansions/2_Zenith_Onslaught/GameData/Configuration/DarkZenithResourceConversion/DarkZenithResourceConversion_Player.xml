@@ -196,7 +196,7 @@
           TakeFactionMarkLevelMinusThis="0"
           NumberOfUnits="5"
           ForPlayer="true"
-          Description="强化单位需要切洛尼姆，拥有额外的防御系统">
+          Description="强化舰船需要切洛尼姆，拥有额外的防御系统">
     </record>
     <record name="Build Strikecraft Tier (Stout) (player)"
             display_name="建造坚固突袭舰编队"
@@ -209,7 +209,7 @@
           TakeFactionMarkLevelMinusThis="0"
           NumberOfUnits="5"
           ForPlayer="true"
-          Description="坚固单位需要索米特，更耐打">
+          Description="坚固舰船需要索米特，更耐打">
   </record>
   <record name="Build Strikecraft Tier (Sinister) (player)"
           display_name="建造邪恶突袭舰编队"
@@ -222,7 +222,7 @@
           TakeFactionMarkLevelMinusThis="0"
           NumberOfUnits="5"
           ForPlayer="true"
-          Description="邪恶单位需要斯克里思，拥有群体控制能力">
+          Description="邪恶舰船需要斯克里思，拥有群体控制能力">
   </record>
   <record name="Build Strikecraft Tier (Enraged) (player)"
           display_name="建造愤怒突袭舰编队"
@@ -235,7 +235,7 @@
           TakeFactionMarkLevelMinusThis="0"
           NumberOfUnits="5"
           ForPlayer="true"
-          Description="愤怒单位需要伊祖米特，拥有额外武器">
+          Description="愤怒舰船需要伊祖米特，拥有额外武器">
   </record>
   <record name="Build Strikecraft Tier (Spirited) (player)"
           display_name="建造灵动突袭舰编队"
@@ -248,7 +248,7 @@
           TakeFactionMarkLevelMinusThis="0"
           NumberOfUnits="5"
           ForPlayer="true"
-          Description="灵动单位需要阿卡赫斯特，具备隐形和高速能力">
+          Description="灵动舰船需要阿卡赫斯特，具备隐形和高速能力">
   </record>
   <!-- Guardian Tier -->
   <record name="Build Guardian Tier (player)"
@@ -285,7 +285,7 @@
           TakeFactionMarkLevelMinusThis="1"
           NumberOfUnits="3"
           ForPlayer="true"
-          Description="强化单位需要切洛尼姆，拥有额外的防御系统">
+          Description="强化舰船需要切洛尼姆，拥有额外的防御系统">
     </record>
     <record name="Build Guardian Tier (Stout) (player)"
             display_name="建造坚固守卫舰编队"
@@ -298,7 +298,7 @@
           TakeFactionMarkLevelMinusThis="1"
           NumberOfUnits="3"
           ForPlayer="true"
-          Description="坚固单位需要索米特，更耐打">
+          Description="坚固舰船需要索米特，更耐打">
   </record>
   <record name="Build Guardian Tier (Sinister) (player)"
           display_name="建造邪恶守卫舰编队"
@@ -311,7 +311,7 @@
           TakeFactionMarkLevelMinusThis="1"
           NumberOfUnits="3"
           ForPlayer="true"
-          Description="邪恶单位需要斯克里思，拥有群体控制能力">
+          Description="邪恶舰船需要斯克里思，拥有群体控制能力">
   </record>
   <record name="Build Guardian Tier (Enraged) (player)"
           display_name="建造愤怒守卫舰编队"
@@ -324,7 +324,7 @@
           TakeFactionMarkLevelMinusThis="1"
           NumberOfUnits="3"
           ForPlayer="true"
-          Description="愤怒单位需要伊祖米特，拥有额外武器">
+          Description="愤怒舰船需要伊祖米特，拥有额外武器">
   </record>
   <record name="Build Guardian Tier (Spirited) (player)"
           display_name="建造灵动守卫舰编队"
@@ -337,7 +337,7 @@
           TakeFactionMarkLevelMinusThis="1"
           NumberOfUnits="3"
           ForPlayer="true"
-          Description="灵动单位需要阿卡赫斯特，具备隐形和高速能力">
+          Description="灵动舰船需要阿卡赫斯特，具备隐形和高速能力">
     </record>
     <!-- Dire Tier -->
     <record name="Build Dire Tier (player)"
@@ -380,7 +380,7 @@
           TakeFactionMarkLevelMinusThis="2"
           NumberOfUnits="1"
           ForPlayer="true"
-          Description="强化单位需要切洛尼姆，拥有额外的防御系统">
+          Description="强化舰船需要切洛尼姆，拥有额外的防御系统">
     </record>
     <record name="Build Dire Tier (Stout) (player)"
             display_name="建造坚固恐怖舰编队"
@@ -393,7 +393,7 @@
           TakeFactionMarkLevelMinusThis="2"
           NumberOfUnits="1"
           ForPlayer="true"
-          Description="坚固单位需要索米特，更耐打">
+          Description="坚固舰船需要索米特，更耐打">
   </record>
   <record name="Build Dire Tier (Sinister) (player)"
           display_name="建造邪恶恐怖舰编队"
@@ -406,7 +406,7 @@
           TakeFactionMarkLevelMinusThis="2"
           NumberOfUnits="1"
           ForPlayer="true"
-          Description="邪恶单位需要斯克里思，拥有群体控制能力">
+          Description="邪恶舰船需要斯克里思，拥有群体控制能力">
   </record>
   <record name="Build Dire Tier (Enraged) (player)"
           display_name="建造愤怒恐怖舰编队"
@@ -419,7 +419,7 @@
           TakeFactionMarkLevelMinusThis="2"
           NumberOfUnits="1"
           ForPlayer="true"
-          Description="愤怒单位需要伊祖米特，拥有额外武器">
+          Description="愤怒舰船需要伊祖米特，拥有额外武器">
   </record>
   <record name="Build Dire Tier (Spirited) (player)"
           display_name="建造灵动恐怖舰编队"
@@ -432,7 +432,7 @@
           TakeFactionMarkLevelMinusThis="2"
           NumberOfUnits="1"
           ForPlayer="true"
-          Description="灵动单位需要阿卡赫斯特，具备隐形和高速能力">
+          Description="灵动舰船需要阿卡赫斯特，具备隐形和高速能力">
     </record>
 
     <!-- Pirate -->
@@ -518,7 +518,7 @@
           TakeFactionMarkLevelMinusThis="3"
           NumberOfUnits="1"
           ForPlayer="true"
-          Description="强化单位需要切洛尼姆，拥有额外的防御系统">
+          Description="强化舰船需要切洛尼姆，拥有额外的防御系统">
     </record>
     <record name="Build Exo Tier (Stout) (player)"
             display_name="建造坚固外域舰编队"
@@ -535,7 +535,7 @@
           TakeFactionMarkLevelMinusThis="3"
           NumberOfUnits="1"
           ForPlayer="true"
-          Description="坚固单位需要索米特，更耐打">
+          Description="坚固舰船需要索米特，更耐打">
   </record>
 
  <record name="Build Exo Tier (Sinister) (player)"
@@ -553,7 +553,7 @@
           TakeFactionMarkLevelMinusThis="3"
           NumberOfUnits="1"
           ForPlayer="true"
-          Description="邪恶单位需要斯克里思，拥有群体控制能力">
+          Description="邪恶舰船需要斯克里思，拥有群体控制能力">
   </record>
   <record name="Build Exo Tier (Enraged) (player)"
           display_name="建造愤怒外域舰编队"
@@ -570,7 +570,7 @@
           TakeFactionMarkLevelMinusThis="3"
           NumberOfUnits="1"
           ForPlayer="true"
-          Description="愤怒单位需要伊祖米特，拥有额外武器">
+          Description="愤怒舰船需要伊祖米特，拥有额外武器">
   </record>
   
   <record name="Build Exo Tier (Spirited) (player)"
@@ -588,7 +588,7 @@
 	  TakeFactionMarkLevelMinusThis="3"
           NumberOfUnits="1"
           ForPlayer="true"
-          Description="灵动单位需要阿卡赫斯特，具备隐形和高速能力">
+          Description="灵动舰船需要阿卡赫斯特，具备隐形和高速能力">
     </record>
 
   <!-- Unit Creation, Defensive Structures -->

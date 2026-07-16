@@ -6,7 +6,7 @@
            text_replacement_related_faction_color="true"
            full_text="指挥官，我们发现了非凡的东西。一颗可移动的行星！它正在缓慢移动，并在移动过程中更新其在虫洞网格中的链接。
 
-它似乎只是在自动驾驶，但行星上休眠的 nexus 可能有一些控制装置，如果我们能通过入侵激活它。" />
+它似乎只是在自动驾驶，但行星上休眠的 nexus 可能有一些控制装置，如果我们能通过黑客入侵激活它。" />
 
     <journal name="ZO_NomadPlanets_ActiveNexus" sidebar_text="{FactionColor}游牧行星&lt;/color&gt;: 激活游牧行星"
            can_record_another_copy_if_already_recorded_in_this_campaign="false"

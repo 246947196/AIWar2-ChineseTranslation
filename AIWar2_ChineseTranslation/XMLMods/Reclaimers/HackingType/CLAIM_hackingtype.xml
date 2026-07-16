@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+        <!-- This is the same as the destroyer/cruiser hack -->
+        <item name="HackToGrantShipLine_Reclaimers_Alien" copy_from="HackToGrantShipLine"
+                primary_response_strength_per_interval="6"
+                secondary_response_strength_per_interval="2"
+                cost_in_hacking_points="10"
+                hack_cost_multiplier_on_deepstrike_worlds="1"
+                hack_time_multiplier_on_deepstrike_worlds="1"
+                multiplier_to_hacking_point_cost_when_on_hostile_world="1"
+                multiplier_to_hacking_time_when_on_neutral_or_friendly_world="1.0"
+                hacking_points_against_this_faction_percentage_recorded_modifer="0.66"
+                display_name="生产舰队蓝图"
+                choice_text="将此蓝图投入生产？"
+                description="回收者有了新发现！通过外星残骸与人类智慧的某种结合，他们可以为你的舰队生产实际的可造单位。"
+
+                do_not_destroy_structure_after_hacking_multiple_times="true"
+        />
+
+        <item name="HackToGrantShipLine_Reclaimers_BST" copy_from="HackToGrantShipLine"
+                primary_response_strength_per_interval="6"
+                secondary_response_strength_per_interval="2"
+                cost_in_hacking_points="10"
+                hack_cost_multiplier_on_deepstrike_worlds="1"
+                hack_time_multiplier_on_deepstrike_worlds="1"
+                multiplier_to_hacking_point_cost_when_on_hostile_world="1"
+                multiplier_to_hacking_time_when_on_neutral_or_friendly_world="1.0"
+                hacking_points_against_this_faction_percentage_recorded_modifer="0.66"
+                display_name="生产战斗空间站蓝图"
+                choice_text="将此蓝图投入生产？"
+                description="回收者有了新发现！通过外星残骸与人类智慧的某种结合，他们可以为你的战斗空间站生产蓝图。"
+
+                is_for_granting_to_command_stations_and_battlestations="false"
+                granted_ship_count_includes_defensive_structure_cap_multiplier_of_hacker="true"
+                hacker_must_be_battlestation="true"
+
+                do_not_destroy_structure_after_hacking_multiple_times="true"
+        />
+
+        <item name="HackToGrantShipLine_Reclaimers_ODS" copy_from="HackToGrantShipLine"
+                primary_response_strength_per_interval="6"
+                secondary_response_strength_per_interval="2"
+                cost_in_hacking_points="10"
+                hack_cost_multiplier_on_deepstrike_worlds="1"
+                hack_time_multiplier_on_deepstrike_worlds="1"
+                multiplier_to_hacking_point_cost_when_on_hostile_world="1"
+                multiplier_to_hacking_time_when_on_neutral_or_friendly_world="1.0"
+                hacking_points_against_this_faction_percentage_recorded_modifer="0.66"
+                display_name="生产空间站蓝图"
+                choice_text="将此蓝图投入生产？"
+                description="回收者有了新发现！通过外星残骸与人类智慧的某种结合，他们可以为你的空间站生产防御蓝图。"
+
+                hacker_can_be_battlestation="true"
+                hacker_can_be_support_fleet="true"
+                is_for_granting_to_command_stations_and_battlestations="true"
+
+                do_not_destroy_structure_after_hacking_multiple_times="true"
+        />
+
+        <item
+                name="Reclaimers_ResearchShip_Hack"
+
+                dll_name="Reclaimers"
+                type_name="Reclaimers.Reclaimers_ResearchShip_Hack"
+
+                primary_response_strength_per_interval="0"
+                secondary_response_strength_per_interval="0"
+                primary_hacking_response_interval="30"
+                secondary_hacking_response_interval="10"
+                response_strength_on_completion="0"
+                exo_on_completion="false"
+                cost_in_hacking_points="10"
+                hack_cost_multiplier_on_deepstrike_worlds="1"
+                hack_time_multiplier_on_deepstrike_worlds="1"
+                multiplier_to_hacking_point_cost_when_on_hostile_world="1"
+                multiplier_to_hacking_time_when_on_neutral_or_friendly_world="1.0"
+                hacking_points_against_this_faction_percentage_recorded_modifer="0.0"
+                display_name="生产基础设施蓝图"
+                choice_text="将此蓝图投入生产？"
+                description="回收者有了新发现！通过外星残骸与人类智慧的某种结合，他们可以为你的银河基础设施生产蓝图。"
+                choice_text_height="0"
+                is_for_granting_to_command_stations_and_battlestations="false"
+                granted_ship_count_includes_defensive_structure_cap_multiplier_of_hacker="true"
+                hacker_must_be_battlestation="false"
+                do_not_destroy_structure_after_hacking_multiple_times="true"
+                destroy_hack_target_on_completion="false"
+                hack_duration="15"
+                is_a_grant_ship_style_hack="true"
+                choose_a_specific_ship_line_to_grant="true"
+                relatedstring_is_a_ship_type="true"
+                local_hacker_required="true"
+                use_closest_hacker_for_check="true"
+                for_player_type_tags_or_blank_if_for_all_empire_style_types="HumanEmpire"
+                />
+
+        <item
+                name="Reclaimers_Scrapyard_Hack"
+                dll_name="Reclaimers"
+                type_name="Reclaimers.Reclaimers_Scrapyard_Hack"
+                display_name="从单位生产线回收科技"
+                description="选择一条你的单位生产线，它将永久丢失，但你会获得科技作为回报。可以重复进行，但AI每次都会做出更多反应。"
+
+                hack_duration="15"
+
+                effect_per_second="5"
+                primary_response_increase_per_effect="1"
+
+                primary_hacking_response_interval="5"
+                primary_response_strength_per_interval="5"
+
+                secondary_hacking_response_interval="1"
+                secondary_response_strength_per_interval="0"
+                secondary_response_increase_per_effect="0"
+
+                response_strength_on_completion="0"
+
+                response_strength_multiplier_per_time_hacked_same_target="1.2"
+
+                cost_in_hacking_points="0"
+                
+                local_hacker_required="true"
+                aip_on_completion="0"
+                for_player_type_tags_or_blank_if_for_all_empire_style_types="HumanEmpire"
+                hacking_response_is_as_ai="true"
+
+                science_to_grant_on_completion="1000"
+                
+                do_not_destroy_structure_after_hacking_multiple_times="true"
+        />
+
+        <item
+                name="Reclaimers_Scrapyard_Transport_Hack"
+                dll_name="Reclaimers"
+                type_name="Reclaimers.Reclaimers_Scrapyard_Transport_Hack"
+                display_name="从运输舰回收科技"
+                description="选择一艘你的运输舰，它将永久丢失，但你会获得科技作为回报。可以重复进行，但AI每次都会做出更多反应。"
+
+                hack_duration="15"
+
+                effect_per_second="5"
+                primary_response_increase_per_effect="1"
+
+                primary_hacking_response_interval="5"
+                primary_response_strength_per_interval="5"
+
+                secondary_hacking_response_interval="1"
+                secondary_response_strength_per_interval="0"
+                secondary_response_increase_per_effect="0"
+
+                response_strength_on_completion="0"
+
+                response_strength_multiplier_per_time_hacked_same_target="1.2"
+
+                cost_in_hacking_points="0"
+                
+                local_hacker_required="true"
+                aip_on_completion="0"
+                for_player_type_tags_or_blank_if_for_all_empire_style_types="HumanEmpire"
+                hacking_response_is_as_ai="true"
+
+                science_to_grant_on_completion="750"
+                
+                do_not_destroy_structure_after_hacking_multiple_times="true"
+        />
+
+        <item
+                name="Reclaimers_Scrapyard_AlienHull_Hack"
+                dll_name="Reclaimers"
+                type_name="Reclaimers.Reclaimers_Scrapyard_AlienHull_Hack"
+                display_name="改装外星船体"
+                description="选择一条你的单位生产线，它将永久改装为外星船体，获得多项加成，并可通过外星科技进行一般性改进。"
+
+                hack_duration="15"
+
+                effect_per_second="5"
+                primary_response_increase_per_effect="1"
+
+                primary_hacking_response_interval="5"
+                primary_response_strength_per_interval="5"
+
+                secondary_hacking_response_interval="1"
+                secondary_response_strength_per_interval="0"
+                secondary_response_increase_per_effect="0"
+
+                response_strength_on_completion="0"
+
+                response_strength_multiplier_per_time_hacked_same_target="1.2"
+
+                cost_in_hacking_points="20"
+                
+                local_hacker_required="true"
+                aip_on_completion="0"
+                for_player_type_tags_or_blank_if_for_all_empire_style_types="HumanEmpire"
+                hacking_response_is_as_ai="true"
+                
+                do_not_destroy_structure_after_hacking_multiple_times="true"
+        />
+        
+        <item
+                name="Reclaimers_Jump_Hack"
+                dll_name="Reclaimers"
+                type_name="Reclaimers.Reclaimers_Jump_Hack"
+                display_name="启动跳跃引擎"
+                description="将此运输舰跳跃到你拥有的任何行星2跳范围内的一个行星。"
+
+                hack_duration="5"
+
+                effect_per_second="0"
+                primary_response_increase_per_effect="0"
+
+                primary_hacking_response_interval="1"
+                primary_response_strength_per_interval="0"
+
+                secondary_hacking_response_interval="1"
+                secondary_response_strength_per_interval="0"
+                secondary_response_increase_per_effect="0"
+
+                response_strength_on_completion="0"
+
+                response_strength_multiplier_per_time_hacked_same_target="1"
+
+                cost_in_hacking_points="0"
+
+                local_hacker_required="false"
+                aip_on_completion="0"
+                for_player_type_tags_or_blank_if_for_all_empire_style_types="HumanEmpire"
+                hacking_response_is_as_ai="true"
+                
+                do_not_destroy_structure_after_hacking_multiple_times="true"
+        />
+
+        <item
+                name="Reclaimers_Explore_Hack"
+                dll_name="Reclaimers"
+                type_name="Reclaimers.Reclaimers_Explore_Hack"
+                display_name="探索边疆"
+                description="有时你只是需要更多信息才能继续，甚至不知道具体该往哪个方向看。回收者可以帮助探索你的边疆，就像你占领了一个新行星一样。"
+
+                hack_duration="5"
+
+                effect_per_second="0"
+                primary_response_increase_per_effect="0"
+
+                primary_hacking_response_interval="1"
+                primary_response_strength_per_interval="0"
+
+                secondary_hacking_response_interval="1"
+                secondary_response_strength_per_interval="0"
+                secondary_response_increase_per_effect="0"
+
+                response_strength_on_completion="0"
+
+                response_strength_multiplier_per_time_hacked_same_target="0"
+
+                cost_in_hacking_points="12"
+
+                local_hacker_required="false"
+                aip_on_completion="0"
+                for_player_type_tags_or_blank_if_for_all_empire_style_types="HumanEmpire"
+                
+                do_not_destroy_structure_after_hacking_multiple_times="true"
+        />
+	
+</root>

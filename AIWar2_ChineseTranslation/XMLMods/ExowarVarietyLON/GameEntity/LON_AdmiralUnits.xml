@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- Contains solely new units for Admiral and copies nessecary to make the Admiral AI work, which are separated for clarity. If one of my new units needs something to make it work with admiral, e.g. ship group memberships, that will be in it's main record in the other file. If it's a basegame unit that's being changed for general exowar balance, that belongs in the main file. If it's a basegame unit that needs shipgroup tags, that *still* belongs in the main file, so that it can be in the same partial record as the balance changes. If it needs an entire extra COPY for Admiral to use, THAT will be here. Further, the rule is that the Admiral should use these copies in as few places as possible. So the regular units are to be used in all cases where the ai cost is not used.-->
+  <!-- Admiral Only Units and Structures:
+  ************************************************************************************************--> 
+ <!-- Diff 6 Lair is spawned only on diff 6, diff 7 lair is spawned on diffs 7 and 8, diff 9 lair is spawned on diffs 9 and 10. (At diffs 8 and 10, the number of them spawned increases instead.)--> 
+	<entity name="LONRearAdmiralExowarLair6" tags="LONRearAdmiralExowarLair_Diff6" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss"
+	    	thematic_groups="AI,ExogalacticWarFront"
+		visuals="assets/_finalgamemeshes/aionly/aisuperfortress2/aisuperfortress2.prefab"
+		icon_name="Ships4/BrutalGuardianLair" gimbal_icon_size_multiplier="1.75"
+		uses_large_health_bar="true" draw_in_galaxy_view="true"
+		category="Ship"
+		size_scale="25" visuals_scale_multiplier="35" y_offset_of_icon="60"
+		display_name="系外战争巢穴"
+		display_name_for_sidebar="系外巢穴"
+		description_short="功能类似于残酷守护者巢穴和突袭引擎的混合体。作为 AI 系外部队的极小型协调节点。当玩家单位在 1 个虫洞跳跃距离内出现时会变得恼火，五分钟后将转移部分力量来摧毁你。"
+		description="功能类似于残酷守护者巢穴和突袭引擎的混合体。该建筑作为 AI 系外战争战机后勤的极小型协调节点。它足够重要到与可怕护盾网络相连，但只是弱连接——摧毁该行星的可怕哨站就足以使其变得脆弱。当玩家单位在 1 个虫洞跳跃距离内出现时会变得恼火，五分钟后将转移部分力量来摧毁你，无情地派遣单位攻击你。请注意，AI 为其系外战争所认为的战机比我们的要大一些。"
+		behavior="Stationary"
+		never_leaves_remains="true"
+		is_major_ai_structure="true"
+		voice_group="Turret"
+		starting_mark_level="Markless"
+		cost_for_ai_to_purchase="200000"
+		hull_points="3000000" shield_points="6000000" speed="Immobile"
+		metal_cost="30000000" energy_consumption="1000000"
+		armor_mm="350" albedo="0.9" mass_tx="15"
+		ship_or_structure_explosion_sfx="StructureMidsize_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="StructureLostOnOtherPlanet_Explosion"
+		ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+		is_reinforcement_location="true" always_is_ai_turret_spawn_point="true"
+		external_invulnerability_unit_type="DireGuardPost"
+      		external_invulnerability_region="ThisPlanet"
+		priority_as_ai_target="IrreplaceableMisc" priority_as_frd_target="NotDangerous" priority_to_protect="BigFavoriteToy"
+		periodic_spawn_initial_delay="300" periodic_spawn_delay_between_spawns="1800" periodic_spawn_max_hops_to_trigger="1" periodic_spawn_never_stop_once_triggered="true" periodic_spawn_only_trigger_against_player="true" 				periodic_spawn_faction_for_unit="BorderAggression"
+		>
+    		<system name="W1" display_name="堡垒聚变火箭"
+                	category="Weapon" firing_timing="OnlyInRange"
+                	damage_per_shot="3000" range="High1" shot_speed="Normal" rate_of_fire="Normal"
+                	shots_per_salvo="30" fires_salvos_sequentially="false"
+                	shot_type_data="FusionRocket"    
+			>
+    		</system>
+		<entity_type_drawing_bag_used_on_periodic_spawning
+			display_name="生成一支系外战争波次"
+			parsed_data_type="AIShipGroupCategory"
+			data_list="LONRearAdmiralExoWaves"
+			spawn_count_type="Strength_BaseMark"
+			min_spawn_value_list="225000"
+			max_spawn_value_list="250000"
+		/>
+  	</entity>
+	<entity graphicsdone="true" copy_from="LONRearAdmiralExowarLair6" name="LONRearAdmiralExowarLair7" tags="LONRearAdmiralExowarLair_Diff7" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss" thematic_groups="Hidden"
+		hull_points="3500000" shield_points="7000000"
+		periodic_spawn_delay_between_spawns="1650"
+		>
+    		<system name="W1" display_name="堡垒聚变火箭"
+                	category="Weapon" firing_timing="OnlyInRange"
+                	damage_per_shot="3500" range="High1" shot_speed="Normal" rate_of_fire="Normal"
+                	shots_per_salvo="30" fires_salvos_sequentially="false"
+                	shot_type_data="FusionRocket"    
+			>
+      		<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="50" multiplier="2" />
+    		</system>
+    		<system name="W2" display_name="堡垒能量波"
+          		category="Weapon" firing_timing="OnlyInRange" shots_per_salvo="4"
+          		damage_per_shot="7000" range="High1" shot_speed="Normal" rate_of_fire="Low" fires_salvos_sequentially="true"
+          		shot_type_data="EnergyWave"
+			>
+      			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="6" />
+    		</system>
+		<entity_type_drawing_bag_used_on_periodic_spawning
+			display_name="生成一支系外战争波次"
+			parsed_data_type="AIShipGroupCategory"
+			data_list="LONRearAdmiralExoWaves"
+			spawn_count_type="Strength_BaseMark"
+			min_spawn_value_list="275000"
+			max_spawn_value_list="300000"
+		/>
+  	</entity>
+	<entity graphicsdone="true" copy_from="LONRearAdmiralExowarLair6" name="LONRearAdmiralExowarLair9" tags="LONRearAdmiralExowarLair_Diff9" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss" thematic_groups="Hidden"
+		hull_points="4500000" shield_points="9000000"
+		periodic_spawn_delay_between_spawns="1500"
+		>
+    		<system name="W1" display_name="堡垒聚变火箭"
+                	category="Weapon" firing_timing="OnlyInRange"
+                	damage_per_shot="4500" range="High1" shot_speed="Normal" rate_of_fire="Normal"
+                	shots_per_salvo="30" fires_salvos_sequentially="false"
+                	shot_type_data="FusionRocket"    
+			>
+      		<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="50" multiplier="2" />
+    		</system>
+    		<system name="W2" display_name="堡垒能量波"
+          		category="Weapon" firing_timing="OnlyInRange" shots_per_salvo="4"
+          		damage_per_shot="9000" range="High1" shot_speed="Normal" rate_of_fire="Low" fires_salvos_sequentially="true"
+          		shot_type_data="EnergyWave"
+			>
+      			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="6" />
+    		</system>
+		<entity_type_drawing_bag_used_on_periodic_spawning
+			display_name="生成一支系外战争波次"
+			parsed_data_type="AIShipGroupCategory"
+			data_list="LONRearAdmiralExoWaves"
+			spawn_count_type="Strength_BaseMark"
+			min_spawn_value_list="350000"
+			max_spawn_value_list="400000"
+		/>
+  	</entity>
+
+  <!-- Exowar Tier 1 Unit Copies:
+  ************************************************************************************************--> 
+
+  <!-- Exowar Tier 2 Unit Copies:
+  ************************************************************************************************--> 
+	<entity graphicsdone="true" copy_from="ExtragalacticWendigo" name="LONAdmiralExtragalacticWendigo" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss" thematic_groups="Hidden"
+		cost_for_ai_to_purchase="31674"
+		>
+		<ai_ship_group_membership name="LONExowarTier2Exoleaders" weight="100"/>
+  	</entity>
+
+	<entity graphicsdone="true" copy_from="ExtragalacticWyrm" name="LONAdmiralExtragalacticWyrm" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss" thematic_groups="Hidden"
+		cost_for_ai_to_purchase="14396"
+		>
+		<ai_ship_group_membership name="LONExowarTier2Exoleaders" weight="100"/>
+    	</entity>
+
+	<entity graphicsdone="true" copy_from="ExtragalacticChimera" name="LONAdmiralExtragalacticChimera" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss" thematic_groups="Hidden"
+		cost_for_ai_to_purchase="38976"
+		>
+		<ai_ship_group_membership name="LONExowarTier2Exoleaders" weight="100"/>
+  	</entity>
+
+	<entity graphicsdone="true" copy_from="LONExtragalacticCentaur" name="LONAdmiralExtragalacticCentaur" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss" thematic_groups="Hidden"
+		cost_for_ai_to_purchase="34915"
+		>
+		<ai_ship_group_membership name="LONExowarTier2Exoleaders" weight="150"/>
+  	</entity>
+
+	<entity graphicsdone="true" copy_from="LONExtragalacticLamassu" name="LONAdmiralExtragalacticLamassu" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss" thematic_groups="Hidden"
+		cost_for_ai_to_purchase="63700"
+		>
+		<ai_ship_group_membership name="LONExowarTier2Exoleaders" weight="200"/>
+  	</entity>
+
+	<entity graphicsdone="true" copy_from="LONExtragalacticTyphon" name="LONAdmiralExtragalacticTyphon" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss" thematic_groups="Hidden"
+		cost_for_ai_to_purchase="30720"
+		>
+		<ai_ship_group_membership name="LONExowarTier2Exoleaders" weight="200"/>
+  	</entity>
+
+	<entity graphicsdone="true" copy_from="LONExtragalacticStrix" name="LONAdmiralExtragalacticStrix" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss" thematic_groups="Hidden"
+		cost_for_ai_to_purchase="32130"
+		>
+		<ai_ship_group_membership name="LONExowarTier2Exoleaders" weight="50"/>
+  	</entity>
+
+	<entity graphicsdone="true" copy_from="LONExtragalacticPolaris" name="LONAdmiralExtragalacticPolaris" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss" thematic_groups="Hidden"
+		cost_for_ai_to_purchase="39909"
+		>
+		<ai_ship_group_membership name="LONExowarTier2Exoleaders" weight="20"/>
+  	</entity>
+
+	<entity graphicsdone="true" copy_from="LONExtragalacticOgre" name="LONAdmiralExtragalacticOgre" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss" thematic_groups="Hidden"
+		cost_for_ai_to_purchase="39909"
+		>
+		<ai_ship_group_membership name="LONExowarTier2Exoleaders" weight="20"/>
+  	</entity>
+
+  <!-- Exowar Tier 3 Unit Copies:
+  ************************************************************************************************--> 
+
+ 
+</root>

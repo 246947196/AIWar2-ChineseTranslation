@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<entity name="BeamMedicLightFrigate" copy_from="AMU_LightFrigateBase"
+		visuals="assets/_finalgamemeshes/starships/scoutstarship/scoutstarship.prefab"
+		icon_overlay="Overlays1/MegaTurret_Beam"
+		size_scale="4"
+		visuals_scale_multiplier="2.5"
+		display_name="光束医疗轻型护卫舰"
+		display_name_for_sidebar="光束医疗 FFL"
+		description_short="修复友军并协助建造，同时使用远程光束武器代谢敌人。"
+		description="工程师的维修光束是人类所有技术中研发最多的系统之一。建造和维修速度的提升可以轻易决定战斗的胜负、经济扩张的速度以及舰队重建的快慢。其中一个项目还专注于反转这一机制以分解敌人并将原材料用于更多建造。这造就了一个非凡的进攻性支援单位。"
+		tech_upgrades_that_benefit_me="Engineering,Light"
+		cost_for_ai_to_purchase="1032" strength_multiplier="2"
+		hull_points="150000" shield_points="75000" speed="Normal1"
+		metal_cost="70000" energy_consumption="6000"
+		armor_mm="40" albedo="0.4" engine_gx="14" mass_tx="4"
+		assist_range="High1"
+	>
+		<system name="RE" display_name="逆向工程光束"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="600" range="AboveAverage4" shot_speed="Normal" rate_of_fire="VeryLow" shots_per_salvo="3" fires_salvos_sequentially="true"
+			shot_type_data="HeavyBeamInvisible" beam_weapon_visual_style="Laser_GreenBright"
+			beam_length_multiplier="1.1"
+			hits_all_intersecting_targets="true"
+			shots_detonate_immediately="true"
+			maximum_number_of_targets_hit_per_shot="5"
+		>
+			<outgoing_damage_modifier based_on="CurrentHullPercentage" comparison_type="AtMost" compared_to="50" multiplier="3" />
+			<death_effect_damage type="Metabolization" tier_name="Gangsaw"/>
+		</system>
+		<metal_flow purpose="RepairingHullsOfFriendlies" throughput="500" increase_per_mark_level="500"/>
+		<metal_flow purpose="RepairingShieldsOfFriendlies" throughput="500" increase_per_mark_level="500"/>
+		<metal_flow purpose="RepairingEnginesOfFriendlies" throughput="500" increase_per_mark_level="500"/>
+		<metal_flow purpose="AssistConstruction" throughput="300" increase_per_mark_level="300"/>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="5" cap="9"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Frigate" weight="30" cap="9"/>
+		<fleet_membership name="MeleeWithSupportMix" ship_cap_group="Frigate" weight="30" cap="9"/>
+		<fleet_membership name="UnusualMix" ship_cap_group="Frigate" weight="30" cap="9"/>
+		<fleet_membership name="ZombificationAntiCounterMix" ship_cap_group="Frigate" weight="30" cap="9"/>
+	</entity>
+	
+	<entity name="BlackWidowFrigate" copy_from="AMU_MediumFrigateBase"
+		visuals="assets/_finalgamemeshes/guardians/TractorGuardian/TractorGuardian.prefab"
+		icon_overlay="Overlays1/DeathgripDrone"
+		size_scale="5"
+		visuals_scale_multiplier="4"
+		display_name="黑寡妇护卫舰"
+		display_name_for_sidebar="黑寡妇 FFM"
+		description_short="坚韧的护卫舰，配备短程牵引光束和麻痹武器，同时防御坚固。"
+		description="快速收集、麻痹然后摧毁敌人。速度很快，至少对中型护卫舰而言，但足够耐用，即使在被捕获的敌人攻击下也能生存。强化防御远程攻击以防止狙击手甚至偶尔的破坏者火力。人类单位设计师和军官都称黑寡妇护卫舰为"清洁工"。一次清理数十艘攻击艇的太空。"
+		tech_upgrades_that_benefit_me="Technologist,Medium"
+		cost_for_ai_to_purchase="1476" strength_multiplier="2"
+		hull_points="200000" shield_points="100000" speed="Normal3"
+		metal_cost="190000" energy_consumption="11000"
+		armor_mm="140" albedo="0.5" engine_gx="17" mass_tx="5"
+	>
+		<system name="DT" display_name="死握利爪"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="500" range="Small4" shot_speed="Normal" rate_of_fire="Low" shots_per_salvo="8"
+			shot_type_data="ParalysisProngedShot_Blue"
+			multiplier_damage_to_tractored_unit="5"
+			base_paralysis_seconds_per_shot="6" added_paralysis_seconds_per_shot_per_mark="1" paralysis_to_ships_mass_tx_less_than="3"
+		>
+		</system>
+		<system name="TB" display_name="牵引光束" category="Passive" tractor_range="Small3" tractor_count="30" tractor_count_added_per_mark="15" tractor_hits_albedo_less_than="0.4" tractor_hits_engine_gx_less_than="13" />
+		<incoming_damage_modifier based_on="AttackDistance" comparison_type="AtLeast" compared_to="3200" multiplier="0.2" />
+		<fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="5" cap="6"/>
+		<fleet_membership name="AbductorBomberMix" ship_cap_group="Frigate" weight="20" cap="6"/>
+		<fleet_membership name="BullyMix" ship_cap_group="Frigate" weight="20" cap="6"/>
+		<fleet_membership name="CrowdControlMix" ship_cap_group="Frigate" weight="20" cap="6"/>
+		<fleet_membership name="DebufferMix" ship_cap_group="Frigate" weight="20" cap="6"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Frigate" weight="20" cap="6"/>
+		<fleet_membership name="TractorMix" ship_cap_group="Frigate" weight="20" cap="6"/>
+	</entity>
+	
+	<entity name="FusionInterceptorLightFrigate" copy_from="AMU_MediumFrigateBase"
+		visuals="assets/_finalgamemeshes/starships/armorstarship/armorstarship.prefab"
+		icon_overlay="Overlays1/Starship_MercFlagship"
+		size_scale="4.5"
+		visuals_scale_multiplier="8"
+		display_name="聚变-拦截者轻型护卫舰"
+		display_name_for_sidebar="聚变-拦截 FFL"
+		description_short="使用强大的聚变炸弹攻击结构，同时用拦截者轨道炮狙击单位。"
+		description="合适的工作使用合适的工具可以带来天壤之别。因此一些单位现在携带了设计用于攻击结构和单位的不同武器。在这种情况下，重型聚变炸弹穿透大多数护盾直接对船体造成伤害，绕过了通常保护结构的强大能量层。作为交换，多门拦截者轨道炮被设计用于攻击从这些结构中出击或逃离的护卫攻击艇。"
+		tech_upgrades_that_benefit_me="Generalist,Light"
+		cost_for_ai_to_purchase="981" strength_multiplier="1.7"
+		hull_points="100000" shield_points="50000" speed="Normal3"
+		metal_cost="90000" energy_consumption="6000"
+		armor_mm="50" albedo="0.45" engine_gx="16" mass_tx="4.5"
+	>
+		<system name="FB" display_name="聚变炸弹"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="15000" range="Small3" shot_speed="Slow" rate_of_fire="Sloth"
+			shot_type_data="FusionBomb"
+			base_percent_damage_bypasses_personal_shields="0.9"
+			only_targets_static_units="true"
+		>
+			<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" comparison_type="AtLeast" compared_to="50" multiplier="1.1" />
+		</system>
+		<system name="IR" display_name="拦截者轨道炮"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="300" range="High1" shot_speed="VeryFast" rate_of_fire="Devourer" shots_per_salvo="5"
+			shot_type_data="ExtremeLongRangeRailgun"
+			only_targets_mobile_units="true"
+		>
+			<outgoing_damage_modifier based_on="CurrentSpeedIfMoving" comparison_type="AtLeast" compared_to="700" multiplier="3" />
+		</system>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="5" cap="9"/>
+		<fleet_membership name="AbductorBomberMix" ship_cap_group="Frigate" weight="20" cap="9"/>
+		<fleet_membership name="AntiStructureMix" ship_cap_group="Frigate" weight="20" cap="9"/>
+		<fleet_membership name="CooperativeFusionMix" ship_cap_group="Frigate" weight="20" cap="9"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Frigate" weight="20" cap="9"/>
+		<fleet_membership name="SniperMix" ship_cap_group="Frigate" weight="20" cap="9"/>
+		<fleet_membership name="UnusualMix" ship_cap_group="Frigate" weight="20" cap="9"/>
+	</entity>
+	
+	<entity name="NorrisHeavyFrigate" copy_from="AMU_HeavyFrigateBase"
+		visuals="assets/_finalgamemeshes/starships/shieldstarship/shieldstarship.prefab"
+		icon_overlay="Overlays2/Turret_Knockback"
+		size_scale="5.5"
+		visuals_scale_multiplier="5"
+		display_name="诺里斯重型护卫舰"
+		display_name_for_sidebar="诺里斯 FFH"
+		description_short="推移敌方非固定泡泡力场并可快速内爆护盾。极易受到聚变武器攻击。"
+		description="让敌方泡泡力场让路的一种方法，字面意义上的，是用动能冲击船体产生能量涌流。一旦与目标护盾接触，能量会反冲回宿主，只要护盾接触到被能量化的船体就会将其击退。此外，同样的效果还可用于直接应力力场发生器，使其输出反噬自身。"
+		tech_upgrades_that_benefit_me="Forcefields,Heavy"
+		cost_for_ai_to_purchase="1455" strength_multiplier="1.5"
+		hull_points="10000" shield_points="450000" speed="BelowAverage1"
+		metal_cost="140000" energy_consumption="20000"
+		armor_mm="10" albedo="0.8" engine_gx="12" mass_tx="5.5"
+		pushes_enemy_shields="true"
+	>
+		<system name="SI" display_name="护盾内爆鱼雷"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="500" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Low"
+			shot_type_data="GuidedMissile"
+		>
+			<outgoing_damage_modifier based_on="MaxPersonalShield" comparison_type="MultiplesOf" compared_to="1000" multiplier="0.1" multiplier_is_additive="false" applies_to="AllShields" />
+			<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" comparison_type="MultiplesOf" compared_to="1" multiplier="0.01" multiplier_is_additive="false" applies_to="AllShields" />
+		</system>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="5" cap="4"/>
+		<fleet_membership name="AntiLargeMix" ship_cap_group="Frigate" weight="25" cap="4"/>
+		<fleet_membership name="AntiStructureMix" ship_cap_group="Frigate" weight="25" cap="4"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Frigate" weight="25" cap="4"/>
+		<fleet_membership name="UnusualMix" ship_cap_group="Frigate" weight="25" cap="4"/>
+		<fleet_membership name="VeteranViciousMix" ship_cap_group="Frigate" weight="25" cap="4"/>
+	</entity>
+	
+	<entity name="ParalyzerScrapperFrigate" copy_from="AMU_MediumFrigateBase"
+		visuals="assets/_finalgamemeshes/humanoddities/tyrianiteleadermerc/tyrianiteleadermerc.prefab"
+		icon_overlay="Overlays1/Starship_MercFlagship_Distractor"
+		size_scale="5"
+		visuals_scale_multiplier="14"
+		display_name="麻痹-废弃者护卫舰"
+		display_name_for_sidebar="麻-拆 FFM"
+		description_short="麻痹甚至更重的结构，对单位使用导弹，目标受损越严重伤害越高。"
+		description="这艘护卫舰诞生于离子干扰星舰早期设计的图纸，该设计因仅有反结构能力而被认为过于"小众"。最终这一弱点通过将其伤害输出转换为额外的反舰导弹得到了缓解。人类内战中它被用于通过停止炮塔火力并攻击那些刚刚还认为阵地可守的舰队来压倒防御阵地。"
+		tech_upgrades_that_benefit_me="Generalist,Medium"
+		cost_for_ai_to_purchase="1482" strength_multiplier="1.6"
+		hull_points="150000" shield_points="75000" speed="BelowAverage2"
+		metal_cost="230000" energy_consumption="13000"
+		armor_mm="130" albedo="0.45" engine_gx="13" mass_tx="5"
+	>
+		<system name="PB" display_name="麻痹炸弹"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="200" range="High2" shot_speed="UltraSlow" rate_of_fire="Normal" shots_per_salvo="3"
+			shot_type_data="ParalysisProngedShot_Blue"
+			base_paralysis_seconds_per_shot="12" added_paralysis_seconds_per_shot_per_mark="2" paralysis_to_ships_mass_tx_less_than="7" added_target_evaluator="ParalyzerAsPrimary"
+			only_targets_static_units="true"
+		>
+		</system>
+		<system name="SM" display_name="废弃者导弹"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="500" range="AboveAverage1" shot_speed="Normal" rate_of_fire="High" shots_per_salvo="20"
+			shot_type_data="FusionRocket"
+			only_targets_mobile_units="true"
+		>
+			<outgoing_damage_modifier based_on="TargetHullPercentageMissing" comparison_type="MultiplesOf" compared_to="10" multiplier="0.5" />
+		</system>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="5" cap="6"/>
+		<fleet_membership name="AntiStructureMix" ship_cap_group="Frigate" weight="20" cap="6"/>
+		<fleet_membership name="CrowdControlMix" ship_cap_group="Frigate" weight="20" cap="6"/>
+		<fleet_membership name="DebufferMix" ship_cap_group="Frigate" weight="20" cap="6"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Frigate" weight="20" cap="6"/>
+		<fleet_membership name="MissileMix" ship_cap_group="Frigate" weight="20" cap="6"/>
+		<fleet_membership name="UnusualMix" ship_cap_group="Frigate" weight="20" cap="6"/>
+	</entity>
+	
+	<entity name="RadarLightFrigate" copy_from="AMU_LightFrigateBase"
+		visuals="assets/_finalgamemeshes/starships/scoutstarship/scoutstarship.prefab"
+		icon_overlay="Overlays1/Starship_Sentry"
+		size_scale="4"
+		visuals_scale_multiplier="2.5"
+		display_name="雷达轻型护卫舰"
+		display_name_for_sidebar="雷达 FFL"
+		description_short="揭露隐形敌人并在命中时放大友军伤害。伤害随目标反照率增加而升级。"
+		description="战斗哨兵护卫舰在第一个原型之后就成为对抗隐形攻击的典范。单位设计师更进一步，增加了大量雷达阵列和高速量子计算机。结果是一个不仅能够以惊人速度揭露隐形敌人，还能通过检查其多光谱光束武器击中时产生的"冲击波"找到敌方装甲最小应力点的单位。"
+		tech_upgrades_that_benefit_me="Sentries,Light"
+		cost_for_ai_to_purchase="812" strength_multiplier="3"
+		hull_points="70000" shield_points="35000" speed="AboveAverage1"
+		metal_cost="80000" energy_consumption="9000"
+		armor_mm="30" albedo="0.6" engine_gx="14" mass_tx="4"
+	>
+		<system name="AS" display_name="烧蚀扫描光束"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="100" range="Normal2" shot_speed="Normal" rate_of_fire="High" shots_per_salvo="10" fires_salvos_sequentially="true"
+			shot_type_data="HeavyBeamInvisible" beam_weapon_visual_style="Laser_Purple"
+			beam_length_multiplier="1"
+			hits_all_intersecting_targets="false"
+			shots_detonate_immediately="false"
+			damage_amplification="true" damage_amplification_duration="3" damage_amplification_mult="1.2"
+		>
+			<outgoing_damage_modifier based_on="Albedo" comparison_type="MultiplesOf" compared_to="0.1" multiplier="0.5" />
+		</system>
+		<system name="TA" display_name="快子阵列" category="Passive" tachyon_range="Normal6" tachyon_points="120" tachyon_points_added_per_mark="60" tachyon_hits_albedo_less_than="0.85" />
+		<fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="5" cap="9"/>
+		<fleet_membership name="AntiLargeMix" ship_cap_group="Frigate" weight="15" cap="9"/>
+		<fleet_membership name="AntiStructureMix" ship_cap_group="Frigate" weight="15" cap="9"/>
+		<fleet_membership name="AttritionerMix" ship_cap_group="Frigate" weight="15" cap="9"/>
+		<fleet_membership name="BasicOffensiveMix" ship_cap_group="Frigate" weight="15" cap="9"/>
+		<fleet_membership name="BullyMix" ship_cap_group="Frigate" weight="15" cap="9"/>
+		<fleet_membership name="CooperativeFusionMix" ship_cap_group="Frigate" weight="15" cap="9"/>
+		<fleet_membership name="FragileOffensiveMix" ship_cap_group="Frigate" weight="15" cap="9"/>
+		<fleet_membership name="MeleeWithSupportMix" ship_cap_group="Frigate" weight="15" cap="9"/>
+	</entity>
+	
+	<entity name="SupportLauncherFrigate" copy_from="AMU_MediumFrigateBase"
+		visuals="assets/_finalgamemeshes/starships/shieldstarship/shieldstarship.prefab"
+		icon_name="Ships1/Starship" icon_overlay="Overlays2/SpireSpyCradle_Greater"
+		size_scale="5"
+		visuals_scale_multiplier="4.5"
+		display_name="支援发射器护卫舰"
+		display_name_for_sidebar="支援发射器 FFM"
+		description_short="发射小型、会衰落的维修和泡泡力场站以支援前线。"
+		description="泡泡力场，尤其是大力场，是任何舰队都不嫌多的。为了打造终极支援护卫舰，这些力场与内置维修光束相结合。虽然持续受到小量伤害的单位无法被修复，但它们在力场下可以再生。这抵消了舰队在大规模战斗中的消耗，同时不限制对敌人造成的伤害。"
+		tech_upgrades_that_benefit_me="Forcefields,Medium"
+		cost_for_ai_to_purchase="1368" strength_multiplier="3"
+		hull_points="125000" shield_points="62500" speed="Normal2"
+		metal_cost="100000" energy_consumption="8000"
+		armor_mm="90" albedo="0.45" engine_gx="17" mass_tx="5"
+	>
+		<system name="PD" display_name="点防御"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="300" range="Normal1" shot_speed="Normal" rate_of_fire="Normal" shots_per_salvo="5"
+			shot_type_data="ArmorPiercingShell"
+		>
+		</system>
+		<system name="L1" display_name="部署支援护盾运载"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="1" range="EssentiallyInfinite" shot_speed="Normal" rate_of_fire="Sloth"
+			shot_type_data="SupportShield_Delivery"
+			system_is_hidden_for_ui="true"
+		>
+		</system>
+		<fleet_membership name="AddedToFleet" ship_cap_group="Frigate" weight="5" cap="6"/>
+		<fleet_membership name="FrigatesWithSupport" ship_cap_group="Frigate" weight="30" cap="6"/>
+		<fleet_membership name="SturdyOffensiveMix" ship_cap_group="Frigate" weight="30" cap="6"/>
+		<fleet_membership name="UnusualMix" ship_cap_group="Frigate" weight="30" cap="6"/>
+		<fleet_membership name="ZombificationAntiCounterMix" ship_cap_group="Frigate" weight="30" cap="6"/>
+	</entity>
+	
+	<entity name="SupportShield_Delivery" copy_from="AMU_LightFrigateBase"
+		visuals="Assets/_FinalGameMeshes/FleetShips/AutoBomb/AutoBomb.prefab" 
+		icon_name="Ships1/WarheadStyle1" icon_overlay="Overlays2/SpireSpyCradle_Greater" gimbal_icon_size_multiplier="0.9"
+		size_scale="2.1"
+		visuals_scale_multiplier="1"
+		display_name="支援护盾运载舱"
+		display_name_for_sidebar="支援护盾运载舱 PDRN"
+		description="正在前往部署支援护盾的途中。"
+		tech_upgrades_that_benefit_me="Forcefields,Heavy"
+		cost_for_ai_to_purchase="500" strength_multiplier="3"
+		self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="4"
+		always_self_attritions="true"
+		hull_points="10000" shield_points="0" speed="High"
+		metal_cost="40000" energy_consumption="0"
+		armor_mm="10" albedo="0.3" engine_gx="7" mass_tx="2.1"
+	>
+		<system name="SS" display_name="部署支援护盾"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="1" range="Small3" shot_speed="Normal" rate_of_fire="Devourer"
+			shot_type_data="MeleeInvisible"
+			health_change_by_max_health_divided_by_this_per_attack="-1"
+		>
+		</system>
+		<entity_type_drawing_bag_used_on_death data_list="SupportShield" />
+	</entity>
+	
+	<entity name="SupportShield" copy_from="AMU_LightFrigateBase"
+		visuals="assets/_finalgamemeshes/buildings/forcefieldgenerator/forcefieldgeneratorlod0.prefab"
+		icon_name="Ships1/Shield_Generator" icon_overlay="Overlays2/SpireSpyCradle_Greater" gimbal_icon_size_multiplier="1"
+		size_scale="0.8"
+		visuals_scale_multiplier="3.2"
+		display_name="支援护盾"
+		display_name_for_sidebar="支援护盾 PDRN"
+		description="保护附近的友军并修复前线。"
+		tech_upgrades_that_benefit_me="Forcefields,Heavy"
+		cost_for_ai_to_purchase="1500" strength_multiplier="3"
+		self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="2"
+		always_self_attritions="true"
+		hull_points="10000" shield_points="200000" speed="AlmostNone"
+		metal_cost="35000" energy_consumption="0"
+		armor_mm="30" albedo="0.45" engine_gx="3" mass_tx="2"
+		shield_size_scale="4" my_forcefield_does_not_shrink="false" my_forcefield_has_no_penalty_for_enemies_firing_out_of_it="true"
+		assist_range="Normal3"
+	>
+		<metal_flow purpose="RepairingHullsOfFriendlies" throughput="250" increase_per_mark_level="250"/>
+		<metal_flow purpose="RepairingShieldsOfFriendlies" throughput="250" increase_per_mark_level="250"/>
+		<metal_flow purpose="RepairingEnginesOfFriendlies" throughput="250" increase_per_mark_level="250"/>
+	</entity>
+	
+	
+	<entity name="FlamebladeLightFrigate" copy_from="AMU_LightFrigateBase" aip_when_granted_by_hack="35" tags="IncludeInFRS"
+		visuals="assets/_finalgamemeshes/guardians/sniperguardian/sniperguardian.prefab"
+		icon_overlay="Overlays2/DevourerGolem_Nemesis"
+		size_scale="3.5"
+		visuals_scale_multiplier="4.5"
+		display_name="焰刃轻型护卫舰"
+		display_name_for_sidebar="焰刃 FFL"
+		description_short="充当移动战术超级武器。极高伤害的多光束扇形武器，冷却时间极长。只能在结构完整性接近满值时开火。"
+		description="超级火力一直是制胜之道。在过去，足以摧毁整个行星的武器很常见，但幸运的是很少发射。AI的行星粉碎者没有这样的犹豫，那我们为何要有？是时候解封人类种族的全部火力，以一道巨大的毁灭性光束阵列将其释放，一举消灭我们所有的敌人。
+重要提示：这个单位需要大量时间充能其武器。必须将其保持在运输船外。在启用"显示武器活动详情"设置（个人设置 -> 显示）下，可看到下一次射击的冷却时间。"
+		tech_upgrades_that_benefit_me="Generalist,Light"
+		cost_for_ai_to_purchase="7980" strength_multiplier="120"
+		hull_points="25000" shield_points="5000" speed="BelowAverage2"
+		metal_cost="800000" energy_consumption="50000"
+		armor_mm="10" albedo="0.4" engine_gx="5" mass_tx="3.5"
+	>
+		<system name="FB" display_name="焰刃光束炮"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="2500" range="Planetary" shot_speed="Instant" rate_of_fire="OneThousand"
+			shot_type_data="HeavyBeamInvisible" beam_length_multiplier="1.1" beam_weapon_visual_style="Laser_Red"
+			hits_all_intersecting_targets="true"
+			shots_detonate_immediately="true"
+			number_beams_to_fire="80"
+			degrees_offset_per_beam="0.125"
+			>
+			<outgoing_damage_modifier based_on="MyHullPercentageMissing" comparison_type="AtLeast" compared_to="10" multiplier="0" />
+		</system>
+		<fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="10" cap="3"/>
+	</entity>
+</root>

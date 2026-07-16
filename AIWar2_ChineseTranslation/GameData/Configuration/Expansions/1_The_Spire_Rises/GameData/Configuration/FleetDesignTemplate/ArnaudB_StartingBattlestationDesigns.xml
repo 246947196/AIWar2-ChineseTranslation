@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+<!-- Designs Rules, are as follow: each starting battlestation has a thematic, each encourages the player to try a specific tactic, they need to be usable both defensively and offensively rather than outrageously good at either, they should avoid having multiple turrets of the same tech-type, they shouldn't have turrets that plain conflict with their purpose even as filler. Each design has three turrets -->
+
+<!-- Made for v.2.133 - by ArnaudB
+	  -->
+<!--
+*Normal size:
+name="SubverterTurret" - turn AI into allies - tech
+name="MakeshiftTurret" - fast building weak, explodes then releases drones - raid
+name="InterceptorTurret" - sniper with bonus vs fast moving - ambush
+name="SeekerTurret"	- Long range missiles vs high mass - concu
+name="MicroConcussiveMissileTurret"	- missiles spam vs 70-less armor - concu
+name="TranslocatorTurret" - generalist pushing away - disruptive
+name="JammerTurret"	- jam weapons for 70-less armor - disruptive
+name="ImploderTurret" - hit healthier targets harder - fusion
+name="FusionTurret"	- Rapid-fire ignore shielding - fusion
+name="BlasterTurret" - All-rounder no bonus - generalist
+name="CounterSniperTurret" - Long range with bonus vs distant - Subterfuge
+name="AblativeTurret" - bonus vs high albedo - Generalist
+name="HailstormTurret"	- fire exploding grenades bonus vs thin armour - Splash
+name="VampireTurret" - self-healing with low damage - subterfuge
+name="ScrapTurret"	- cheap no shield high damage die in 15sec - raid
+name="AcidTurret" - increase damage on multiple enemies - Tech
+name="HarmonicTurret" - Gain bonus damage the more Harmonic on planet - tech
+name="DeathgripTurret" - Tractor turrets with bonus vs caught - Melee
+name="ShredderTurret" - Very short range high damage - Melee
+name="RuffianTurret" - Cheap and resist sniper fire - Raid
+name="BastilleTurret" - Fragile with bonus damage under shield - Ambush
+name="BulwarkTurret" - Durable and decoy - Melee
+
+*Large size:
+name="CrusherTurret" - attract and kill in aoe - Melee
+name="EMPTurret" - MassParalyzer - ambush
+name="HoloceneMissileTurret" - Planet-wide slow plasma aoe - concu
+name="FuseballTurret" - high-damage shield-bypass - Fusion
+name="MiniFortress" - all-around fortress - Generalist
+name="BlitzkriegTurret"	- All-rounder with drones upon death- Raid
+name="SolarFlareTurret"	- Slow mass paralyze large enemies - Subterfuge
+name="GeminiTurret"	- Two weapons vs small and vs large - Tech
+-->
+
+<!--Revealer-->
+  <fleet_design name="Mod_TurtleDefenses" 
+        display_name="龟甲防御"
+        description="一种高度防御性的组合，旨在阻止各种攻击。拥有建造力场的独特能力。
+如果两次选择相同的起始战斗空间站，第二个将随机化。"
+        design_logic="InitialPlayerBattlestation" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"        
+        hidden_from_lists_above_harshness="200"
+        >
+	<ship_membership name="RevealerBattlestation" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="InterplanetaryEngineer" ship_cap_group="Civilian" weight="100" cap="4"/>
+	<ship_membership name="ImmobileForcefieldGenerator" ship_cap_group="OtherDefense" weight="100" cap="6"/>
+	<ship_membership name="BastilleTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+    <ship_membership name="CounterSniperTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+    <ship_membership name="TractorArray" ship_cap_group="OtherDefense" weight="100" cap="20"/>
+	<ship_membership name="TachyonArray" ship_cap_group="OtherDefense" weight="100" cap="10"/>
+  </fleet_design>
+  
+  <fleet_design name="Mod_IndiscretionDefenses"
+        display_name="冒进防御"
+        description="一种恶意的组合，专门用于强力反击使用突袭类单位的入侵。
+如果两次选择相同的起始战斗空间站，第二个将随机化。"
+        design_logic="InitialPlayerBattlestation" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+	<ship_membership name="RevealerBattlestation" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="InterplanetaryEngineer" ship_cap_group="Civilian" weight="100" cap="4"/>
+	<ship_membership name="AblativeTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+	<ship_membership name="JammerTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+    <ship_membership name="SubverterTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+    <ship_membership name="TractorArray" ship_cap_group="OtherDefense" weight="100" cap="20"/>
+	<ship_membership name="TachyonArray" ship_cap_group="OtherDefense" weight="100" cap="10"/>
+  </fleet_design>
+  
+  <fleet_design name="Mod_DenudingDefenses"
+        display_name="剥除防御"
+        description="相当激进地专注于突破防护并吸引注意力。在射程内极其强大，但面对更冷静、射程更远的对手则无能为力。
+如果两次选择相同的起始战斗空间站，第二个将随机化。"
+        design_logic="InitialPlayerBattlestation" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+	<ship_membership name="RevealerBattlestation" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="InterplanetaryEngineer" ship_cap_group="Civilian" weight="100" cap="4"/>
+	<ship_membership name="BulwarkTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+	<ship_membership name="FusionTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+	<ship_membership name="FuseballTurret" ship_cap_group="Turret" weight="100" cap="5"/>
+    <ship_membership name="TractorArray" ship_cap_group="OtherDefense" weight="100" cap="20"/>
+	<ship_membership name="TachyonArray" ship_cap_group="OtherDefense" weight="100" cap="10"/>
+  </fleet_design>
+  
+  <fleet_design name="Mod_ObservantDefenses"
+        display_name="敏锐防御"
+        description="一种全能型组合，能造成强大打击。将更强力的谐波炮塔集中部署在一颗行星上，同时将其余炮塔分散到你的各个行星上，这样你就能应对大多数问题。
+如果两次选择相同的起始战斗空间站，第二个将随机化。"
+        design_logic="InitialPlayerBattlestation" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+	<ship_membership name="RevealerBattlestation" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="InterplanetaryEngineer" ship_cap_group="Civilian" weight="100" cap="4"/>
+	<ship_membership name="SeekerTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+	<ship_membership name="BlasterTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+    <ship_membership name="HarmonicTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+    <ship_membership name="TractorArray" ship_cap_group="OtherDefense" weight="100" cap="20"/>
+	<ship_membership name="TachyonArray" ship_cap_group="OtherDefense" weight="100" cap="10"/>
+  </fleet_design>
+  
+  
+  <!--Engineer-->
+  <fleet_design name="Mod_InordinateDefenses"
+        display_name="过度防御"
+        description="这种配置的定义就是火力过剩。一切都是为了以压倒性力量快速消灭更大的威胁。不过要小心集群敌人。
+如果两次选择相同的起始战斗空间站，第二个将随机化。"
+        design_logic="InitialPlayerBattlestation" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+	<ship_membership name="EngineeringBattlestation" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="InterplanetaryEngineer" ship_cap_group="Civilian" weight="100" cap="4"/>
+	<ship_membership name="PlasmaTurret" ship_cap_group="Turret" weight="100" cap="5"/>
+    <ship_membership name="ImploderTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+	<ship_membership name="SeekerTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+    <ship_membership name="TractorArray" ship_cap_group="OtherDefense" weight="100" cap="20"/>
+	<ship_membership name="TachyonArray" ship_cap_group="OtherDefense" weight="100" cap="10"/>
+  </fleet_design>
+  
+  <fleet_design name="Mod_StupefyDefenses" 
+        display_name="眩晕防御"
+        description="如果你需要暂停战斗，这就是你要找的。到处都是瘫痪效果。不过还需要搭配其他东西来消灭敌人。
+如果两次选择相同的起始战斗空间站，第二个将随机化。"
+        design_logic="InitialPlayerBattlestation" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+	<ship_membership name="EngineeringBattlestation" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="InterplanetaryEngineer" ship_cap_group="Civilian" weight="100" cap="4"/>
+	<ship_membership name="EMPTurret" ship_cap_group="Turret" weight="100" cap="5"/>
+	<ship_membership name="SolarFlareTurret" ship_cap_group="Turret" weight="100" cap="5"/>
+	<ship_membership name="ParalysisMinefield" ship_cap_group="Turret" weight="100" cap="60"/>
+    <ship_membership name="TractorArray" ship_cap_group="OtherDefense" weight="100" cap="20"/>
+	<ship_membership name="TachyonArray" ship_cap_group="OtherDefense" weight="100" cap="10"/>
+  </fleet_design>
+  
+  <fleet_design name="Mod_RaiderDefenses" 
+        display_name="突袭者防御"
+        description="银河系中常见的仅用于突袭的战斗空间站的起始变体。这种单一专注的配置拥有比平常更多的炮塔，在进攻方面非常强大。部署成本低且速度快，但过于专精。
+如果两次选择相同的起始战斗空间站，第二个将随机化。"
+        design_logic="InitialPlayerBattlestation" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+	<ship_membership name="EngineeringBattlestation" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="InterplanetaryEngineer" ship_cap_group="Civilian" weight="100" cap="4"/>
+    <ship_membership name="MakeshiftTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+	<ship_membership name="ScrapTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+	<ship_membership name="BlitzkriegTurret" ship_cap_group="Turret" weight="100" cap="5"/>
+    <ship_membership name="TractorArray" ship_cap_group="OtherDefense" weight="100" cap="20"/>
+	<ship_membership name="TachyonArray" ship_cap_group="OtherDefense" weight="100" cap="10"/>
+  </fleet_design>
+  
+    <fleet_design name="Mod_ChewingDefenses" 
+        display_name="啃咬防御"
+        description="一种近距离组合，用于摧毁集群敌人和脆弱单位。其每秒伤害虽然分散，但胜过许多其他组合。
+如果两次选择相同的起始战斗空间站，第二个将随机化。"
+        design_logic="InitialPlayerBattlestation" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+	<ship_membership name="EngineeringBattlestation" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="InterplanetaryEngineer" ship_cap_group="Civilian" weight="100" cap="4"/>
+	<ship_membership name="MicroConcussiveMissileTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+    <ship_membership name="GrenadeLauncherTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+	<ship_membership name="ShredderTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+    <ship_membership name="TractorArray" ship_cap_group="OtherDefense" weight="100" cap="20"/>
+	<ship_membership name="TachyonArray" ship_cap_group="OtherDefense" weight="100" cap="10"/>
+  </fleet_design>
+  
+  <!--Grav-->
+   <fleet_design name="Mod_ArtilleryDefenses" 
+        display_name="火炮防御"
+        description="对于想要在原地消灭一切的攻城爱好者来说，这是全狙击组合的首选。不过别指望引力空间站能单枪匹马阻止敌人炸毁或狙击你的火炮阵地。
+如果两次选择相同的起始战斗空间站，第二个将随机化。"
+        design_logic="InitialPlayerBattlestation" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+	<ship_membership name="GraviticBattlestation" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="InterplanetaryEngineer" ship_cap_group="Civilian" weight="100" cap="4"/>
+	<ship_membership name="CounterSniperTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+	<ship_membership name="InterceptorTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+    <ship_membership name="TritiumSniperTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+    <ship_membership name="TractorArray" ship_cap_group="OtherDefense" weight="100" cap="20"/>
+	<ship_membership name="TachyonArray" ship_cap_group="OtherDefense" weight="100" cap="10"/>
+  </fleet_design>
+  
+    <fleet_design name="Mod_FishingDefenses" 
+        display_name="钓鱼防御"
+        description="用拦截炮塔引诱敌人靠近，用粉碎炮塔将其拉回，然后用特斯拉炮塔将其电死。这是一种协同组合，搭配引力空间站可防止猎物逃脱。
+如果两次选择相同的起始战斗空间站，第二个将随机化。"
+        design_logic="InitialPlayerBattlestation" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+	<ship_membership name="GraviticBattlestation" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="InterplanetaryEngineer" ship_cap_group="Civilian" weight="100" cap="4"/>
+	<ship_membership name="FortifiedTeslaTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+    <ship_membership name="InterceptorTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+	<ship_membership name="CrusherTurret" ship_cap_group="Turret" weight="100" cap="5"/>
+    <ship_membership name="TractorArray" ship_cap_group="OtherDefense" weight="100" cap="20"/>
+	<ship_membership name="TachyonArray" ship_cap_group="OtherDefense" weight="100" cap="10"/>
+  </fleet_design>
+  
+    <fleet_design name="Mod_DivorceDefenses" 
+        display_name="分离防御"
+        description="这种痛苦的组合旨在与敌方保持距离，同时用强大的攻击慢慢打击他们。效果极其显著，但代价高昂。
+如果两次选择相同的起始战斗空间站，第二个将随机化。"
+        design_logic="InitialPlayerBattlestation" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+	<ship_membership name="GraviticBattlestation" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="InterplanetaryEngineer" ship_cap_group="Civilian" weight="100" cap="4"/>
+    <ship_membership name="TranslocatorTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+	<ship_membership name="SpiderTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+	<ship_membership name="HoloceneMissileTurret" ship_cap_group="Turret" weight="100" cap="5"/>
+    <ship_membership name="TractorArray" ship_cap_group="OtherDefense" weight="100" cap="20"/>
+	<ship_membership name="TachyonArray" ship_cap_group="OtherDefense" weight="100" cap="10"/>
+  </fleet_design>
+  
+    <fleet_design name="Mod_DualityDefenses"
+        display_name="二元防御"
+        description="一种具有讽刺意味地使用核心技术的专业组合。无论敌人是小型还是大型，隐形还是非隐形，这种组合都能（在大多数情况下）应对。不过别指望有奇特的效果。
+如果两次选择相同的起始战斗空间站，第二个将随机化。"
+        design_logic="InitialPlayerBattlestation" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+	<ship_membership name="GraviticBattlestation" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="InterplanetaryEngineer" ship_cap_group="Civilian" weight="100" cap="4"/>
+    <ship_membership name="AblativeTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+	<ship_membership name="TritiumSniperTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+	<ship_membership name="GeminiTurret" ship_cap_group="Turret" weight="100" cap="5"/>
+    <ship_membership name="TractorArray" ship_cap_group="OtherDefense" weight="100" cap="20"/>
+	<ship_membership name="TachyonArray" ship_cap_group="OtherDefense" weight="100" cap="10"/>
+  </fleet_design>
+  
+  
+  <!--Shield-->
+    <fleet_design name="Mod_ImpregnableDefenses" required_expansion_list="1_The_Spire_Rises"
+        display_name="坚不可摧防御"
+        description="阻止敌军的最佳防御工事。配备牵引装置的炮塔在入口处阻止敌军，巴士底炮塔在出口处掩护，而高耸的堡垒则监视着这两处。护盾空间站可以为其巴士底炮塔提供掩护和伤害加成。
+如果两次选择相同的起始战斗空间站，第二个将随机化。"
+        design_logic="InitialPlayerBattlestation" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+	<ship_membership name="ShieldwallBattlestation" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="InterplanetaryEngineer" ship_cap_group="Civilian" weight="100" cap="4"/>
+    <ship_membership name="BastilleTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+	<ship_membership name="DeathgripTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+	<ship_membership name="MiniFortress" ship_cap_group="Turret" weight="100" cap="5"/>
+    <ship_membership name="TractorArray" ship_cap_group="OtherDefense" weight="100" cap="20"/>
+	<ship_membership name="TachyonArray" ship_cap_group="OtherDefense" weight="100" cap="10"/>
+  </fleet_design>
+  
+  <fleet_design name="Mod_EscalationDefenses" required_expansion_list="1_The_Spire_Rises"
+        display_name="升级防御"
+        description="一种强大的组合，旨在部署炮塔以获得不断增强的效果。酸液炮塔将提升对目标的伤害，临时炮塔则会提供一群爆炸无人机。最适合与集群舰队配合进行机动作战。
+如果两次选择相同的起始战斗空间站，第二个将随机化。"
+        design_logic="InitialPlayerBattlestation" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+	<ship_membership name="ShieldwallBattlestation" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="InterplanetaryEngineer" ship_cap_group="Civilian" weight="100" cap="4"/>
+	<ship_membership name="AcidTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+    <ship_membership name="HailstormTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+	<ship_membership name="MakeshiftTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+    <ship_membership name="TractorArray" ship_cap_group="OtherDefense" weight="100" cap="20"/>
+	<ship_membership name="TachyonArray" ship_cap_group="OtherDefense" weight="100" cap="10"/>
+  </fleet_design>
+  
+  <fleet_design name="Mod_TabloidDefenses" required_expansion_list="1_The_Spire_Rises"
+        display_name="小报防御"
+        description="一种折衷的组合，效率存疑，但不知为何出奇地全面。
+如果两次选择相同的起始战斗空间站，第二个将随机化。"
+        design_logic="InitialPlayerBattlestation" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+	<ship_membership name="ShieldwallBattlestation" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="InterplanetaryEngineer" ship_cap_group="Civilian" weight="100" cap="4"/>
+	<ship_membership name="NucleophilicTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+    <ship_membership name="RuffianTurret" ship_cap_group="Turret" weight="100" cap="25"/>
+	<ship_membership name="BeamCannon" ship_cap_group="Turret" weight="100" cap="5"/>
+    <ship_membership name="TractorArray" ship_cap_group="OtherDefense" weight="100" cap="20"/>
+	<ship_membership name="TachyonArray" ship_cap_group="OtherDefense" weight="100" cap="10"/>
+  </fleet_design>
+  
+  <!--
+  <fleet_design name="Mod_ShieldStartingDefenses" is_partial_record="false"
+        display_name="护盾（调整后）防御"
+        description="在你的母星上额外部署一个力场，以及少量非常强大的炮塔，还有狙击炮塔。
+        
+经过调整，除了自身的力场之外，还能提供额外的力场。从掩体后逐步将敌人击溃，即使速度可能不快，这是终极防御方案。"
+        design_logic="InitialPlayerBattlestation" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="ShieldwallBattlestation" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+    <ship_membership name="PlasmaTurret" ship_cap_group="Turret" weight="100" cap="6"/>
+    <ship_membership name="TritiumSniperTurret" ship_cap_group="Turret" weight="100" cap="30"/>
+	<ship_membership name="ForcefieldGenerator" ship_cap_group="OtherDefense" weight="100" cap="6"/>
+    <ship_membership name="TractorArray" ship_cap_group="OtherDefense" weight="100" cap="18"/>
+	<ship_membership name="TachyonArray" ship_cap_group="OtherDefense" weight="100" cap="12"/>
+  </fleet_design>
+
+  
+  <fleet_design name="Mod_EclecticStartingDefenses" is_partial_record="false"
+        display_name="多样（调整后）防御"
+        description="哇，这真是五花八门。有工程支援、一些常规炮塔、雷区、额外的牵引光束，还有一些移动哨兵护卫舰。做好应对任何情况的准备！
+        
+经过调整，以更精致的方式呈现出多样化。有一些工程师帮助建造一些强大的炮塔，还有一些用于拖延敌人的雷区。有哨兵护卫舰配合，这种设计最适合用于进攻。"
+        design_logic="InitialPlayerBattlestation" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="EngineeringBattlestation" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="CombatEngineer" ship_cap_group="Strike" weight="100" cap="30"/>
+	<ship_membership name="PlasmaTurret" ship_cap_group="Turret" weight="100" cap="6"/>
+	<ship_membership name="BeamCannon" ship_cap_group="Turret" weight="100" cap="6"/>
+	<ship_membership name="ParalysisMinefield" ship_cap_group="OtherDefense" weight="100" cap="70"/>
+    <ship_membership name="TractorArray" ship_cap_group="OtherDefense" weight="100" cap="30"/>
+    <ship_membership name="SentryFrigate" ship_cap_group="OtherDefense" weight="100" cap="6"/>
+  </fleet_design>
+
+
+
+  <fleet_design name="Mod_MinelayerStartingDefenses" is_partial_record="false"
+        display_name="布雷舰（调整后）防御"
+        description="大量各种类型的雷区，再加上范围伤害型炮塔，当你真的想把母星布置成一个陷阱时就用它。
+        
+经过调整，专注于雷区的伤害潜力，使其更易于使用和移动。反能量吞噬者炮塔用于对付绕过雷区的高威胁目标。一小队蜘蛛炮塔完善了这个奇特的组合。用这个配备牵引装置的空间站把敌人拖入雷区。"
+        design_logic="InitialPlayerBattlestation" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="EnsnarerBattlestation" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="NucleophilicTurret" ship_cap_group="Turret" weight="100" cap="30"/>
+	<ship_membership name="SpiderTurret" ship_cap_group="Turret" weight="100" min="20" max="4"/>
+    <ship_membership name="Minefield" ship_cap_group="OtherDefense" weight="100" cap="70"/>
+    <ship_membership name="AreaMinefield" ship_cap_group="OtherDefense" weight="100" cap="70"/>
+	<ship_membership name="TachyonArray" ship_cap_group="OtherDefense" weight="100" cap="12"/>
+  </fleet_design>
+  
+Not actually modified on account of serving as the basis for adjusting the others fleets.
+  <fleet_design name="Mod_WebbedStartingDefenses" is_partial_record="false"
+        display_name="蛛网防御"
+        description="这种组合非常适合对付隐形单位、引擎较弱的单位、小型单位群以及能源消耗高的单位。
+        
+目前尚未调整，因为它作为对比基准，使其他空间站更有用。它仍然是一种非常通用的组合，能够应对各种威胁。"
+        design_logic="InitialPlayerBattlestation" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="RevealerBattlestation" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+    <ship_membership name="SpiderTurret" ship_cap_group="Turret" weight="100" cap="30"/>
+    <ship_membership name="MLRSTurret" ship_cap_group="Turret" weight="100" cap="30"/>
+    <ship_membership name="NucleophilicTurret" ship_cap_group="Turret" weight="100" cap="30"/>
+    <ship_membership name="TractorArray" ship_cap_group="OtherDefense" weight="100" cap="18"/>
+	<ship_membership name="TachyonArray" ship_cap_group="OtherDefense" weight="100" cap="12"/>
+  </fleet_design>
+ -->
+</root>

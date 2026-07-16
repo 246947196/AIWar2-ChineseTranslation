@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <hook name="OnJournalFirstQueued"
+        description="当特定的最终日志条目首次排队时执行。即使该日志可以多次出现，也只会执行一次。"
+        mainobject_is="JournalEntryInCampaign" secondaryobject_is="JournalEntry" additionalobjects_are="null" context_is="Usable" />
+
+  <hook name="OnJournalQueued"
+        description="每当日志条目排队时执行。每个战役中可以执行多次，但前提是该日志可以多次出现。"
+        mainobject_is="JournalEntryInCampaign" secondaryobject_is="JournalEntry" additionalobjects_are="null" context_is="Usable" />
+
+  <hook name="OnJournalOpened"
+        description="每当玩家打开日志进行阅读时执行，就在文本显示之前。"
+        mainobject_is="JournalEntryInCampaign" secondaryobject_is="JournalEntry" additionalobjects_are="null" context_is="Usable" />
+
+  <hook name="OnJournalClosed"
+        description="每当日志条目关闭时执行。"
+        mainobject_is="JournalEntryInCampaign" secondaryobject_is="JournalEntry" additionalobjects_are="null" context_is="Usable" />
+
+  <hook name="OnCheatCommand"
+        description="模组处理命令消息的机会。"
+        mainobject_is="CmdName" secondaryobject_is="CmdReturnValue" additionalobjects_are="OnPlanet,CmdArgs" context_is="Usable" />
+
+  <hook name="OnUpdateReactiveShipGroups"
+        description="AI 更新其反应性舰队组后但在它们合成之前调用，以便外部代码可以添加更多内容。"
+        mainobject_is="null" secondaryobject_is="null" additionalobjects_are="null" context_is="Usable" />
+
+  <hook name="OnAIPChange"
+        description="当 AIP 发生变化时调用。"
+        mainobject_is="FInt Change" secondaryobject_is="AIPChangeReason" additionalobjects_are="null" context_is="null" />
+
+  <hook name="OnEndOfSeeding"
+        description="在星系播种结束时以及 AI 重新征服行星时调用。"
+        mainobject_is="AiFactionIfReconquestOrNull" secondaryobject_is="PlanetIfReconquestOrNull" additionalobjects_are="null" context_is="Usable" />
+
+  <hook name="GlobalEntityDescriptionAppender"
+        description="在为任何实体编写工具提示时调用，就在最后的特定状态消息之前。"
+        mainobject_is="ArcenCharacterBufferBase" secondaryobject_is="GameEntity_Squad" additionalobjects_are="null" context_is="Usable_HostAndClient" />
+
+    <hook name="MainGameVisualsInitialized"
+        description="在 ArcenMainGameVisuals 存在且主游戏摄像机设置完成后立即调用。"
+        mainobject_is="null" secondaryobject_is="null" additionalobjects_are="null" context_is="null" />
+
+    <hook name="LoadExternalData"
+        description="在 Engine_AIW2.LoadExternalDataLate 结束且所有表初始化完成后调用。"
+        mainobject_is="null" secondaryobject_is="null" additionalobjects_are="null" context_is="null" />
+
+    <hook name="ReloadSelectData"
+        description="在 Engine_AIW2.ReloadSelectDataFromXml 结束且其他表调用完成后调用。"
+        mainobject_is="null" secondaryobject_is="null" additionalobjects_are="null" context_is="null" />
+
+    <hook name="PostAllTableInitialize"
+        description="在 Engine_AIW2.DoPostAllTableInitializeWork 结束且所有表调用完成后调用。"
+        mainobject_is="null" secondaryobject_is="null" additionalobjects_are="null" context_is="null" />
+
+    <hook name="PrepForCompleteReload"
+        description="当模组/ DLC 发生更改时，在重启过程开始时调用。您可以检查它们的“已启用”当前值以确定是否被禁用。"
+        mainobject_is="null" secondaryobject_is="null" additionalobjects_are="null" context_is="null" />
+    <hook name="OnWorldClear"
+        description="每当调用 ArcenThreading.DoOnWorldClear() 时调用。此操作通常会连续多次调用，请勿使用它来初始化内容，仅用于清除内容。调用时 World.Instance.IsLoaded 将为 false。与世界一起清除的所有内容（包括大量基于时间的和其他池）也将很快被清除。"
+        mainobject_is="null" secondaryobject_is="null" additionalobjects_are="null" context_is="null" />
+
+</root>

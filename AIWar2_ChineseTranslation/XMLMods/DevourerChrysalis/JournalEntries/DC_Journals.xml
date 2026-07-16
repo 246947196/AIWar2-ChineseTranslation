@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+<journal name="DevourerChrysalis_Discovery_Beacon" sidebar_text="{FactionColor}{UnitTypeName}&lt;/color&gt; 已发现" can_record_another_copy_if_already_recorded_in_this_campaign="false"
+        text_replacement_related_faction_color="true"
+        text_replacement_related_planet="true"
+        text_replacement_related_unit_type="true"
+        chat_text="来自 GeorgeMurphy@Human-RnD.com 的新邮件 /// {FactionColor}{UnitTypeName}&lt;/color&gt; 已发现"
+        full_text="发件人：GeorgeMurphy@Human-RnD.com
+收件人：RemnantCommander@Human-Command.com
+主题：{FactionColor}{UnitTypeName}&lt;/color&gt; 已发现
+
+指挥官，
+我们在 {PlanetName} 上的扫描显示一个信标至少有 900 万年的历史。根据技术分析，我们确信它源自 Zenith，但我们并不确切知道它连接着什么。
+我们可以尝试入侵该系统以分析其先进技术，但这很可能会引起其所有者的注意。
+
+研发主管
+George Murphy" />
+
+<journal name="DevourerChrysalis_Discovery_NonTier4_HostileToAI_FromHack" sidebar_text="{FactionColor}{UnitTypeName}&lt;/color&gt; 已抵达 {PlanetName} " can_record_another_copy_if_already_recorded_in_this_campaign="false"
+        text_replacement_related_faction_color="true"
+        text_replacement_related_planet="true"
+        text_replacement_related_unit_type="true"
+        chat_text="来自 GeorgeMurphy@Human-RnD.com 的新邮件 /// {FactionColor}{UnitTypeName}&lt;/color&gt; 已抵达 {PlanetName}"
+        full_text="发件人：GeorgeMurphy@Human-RnD.com
+收件人：RemnantCommander@Human-Command.com
+主题：{FactionColor}{UnitTypeName}&lt;/color&gt; 已抵达 {PlanetName}
+
+指挥官，
+分析信标后，它似乎发射了某种紧急信号，现在我们已在 {PlanetName} 上探测到有史以来录入我们数据库的最大 Zenith 实体之一。它相当于一整颗小行星，全副武装，随时准备攻击。
+出于我们尚不了解的原因，它似乎只攻击敌对单位，从不攻击建筑，并以获取的金属为食。其攻击模式显示出类似动物的智能——专注于最近、最大的可攻击单位集群，但如果处于劣势并受伤，它会足够聪明地撤退到另一颗行星。我们的入侵者也表示，我们或许能够以某种形式与之沟通。
+
+与此 '{FactionColor}{UnitTypeName}&lt;/color&gt;' 交战可能会很困难。它覆盖着某种活的、自我再生的反应装甲，能够分析行星上的单位类型（即使处于隐形状态），当受到攻击时，它会将来袭的射击与相应的单位设计相匹配，从而改变预计的命中点形状或结构来反击射击，并将所有受到的伤害减少惊人的 90%。我们能想到造成全额伤害的唯一方法是使用其扫描仪无法完全分析的单位进行攻击。
+
+此外，每当吞噬者出现在 AI 行星上时，AI 的曲速网格就会发生波动。考虑到这个傀儡的体型和力量，我们只能假设 AI 会以强大的力量进行攻击。我们应尽最大努力不被卷入交火之中。
+
+另一方面，分析如此卓越的 Zenith 技术遗骸无疑将有助于我们的科研工作，如果 AI 能为我们削弱这个傀儡，那就更好了。
+
+最后，请注意，这并非像我们之前遇到的所有那些已死亡并复活的 Zenith。它是一个活着的、仍在进化的傀儡，只是在等待新的数据来改造自己，变得愈发强大。我们应该假设，我们进行的每一次入侵行为，吞噬者也会更多地了解我们、我们的技术、方法和战术，并会利用这些知识来强化自身。
+
+经过与我们的战术军官审查数据后，我们提出以下建议：
+
+-> 在没有强大力量的情况下与吞噬者傀儡作战只会造成巨大损失。我们应该避免这样做。
+-> 对其怀有敌意的派系的大型舰队集群会吸引它的注意，几乎就像诱饵一样。
+-> 如果它在我们的行星上，我们应该撤离我们的单位，但由于它不会攻击我们的建筑，因此无需担心我们的指挥站或固定防御设施的安全。
+-> 如果我们与它在同一行星上，任何旗舰都可以发起各种入侵来操纵吞噬者傀儡的 targeting。这通常需要消耗入侵点和金属，并可能导致吞噬者记住我们的所作所为。
+-> 我们可以预期，如果吞噬者傀儡在 AI 领土停留太久，AI 会尝试攻击它。此后不久，它可能会变得脆弱易攻。
+
+研发主管
+George Murphy" />
+
+<journal name="DevourerChrysalis_Discovery_Tier4_HostileToAI_FromHack" sidebar_text="{FactionColor}{UnitTypeName}&lt;/color&gt; 已抵达 {PlanetName}" can_record_another_copy_if_already_recorded_in_this_campaign="false"
+        text_replacement_related_faction_color="true"
+        text_replacement_related_planet="true"
+        text_replacement_related_unit_type="true"
+        chat_text="来自 GeorgeMurphy@Human-RnD.com 的新邮件 /// {FactionColor}{UnitTypeName}&lt;/color&gt; 已抵达 {PlanetName}"
+        full_text="发件人：GeorgeMurphy@Human-RnD.com
+收件人：RemnantCommander@Human-Command.com
+主题：{FactionColor}{UnitTypeName}&lt;/color&gt; 已抵达 {PlanetName}
+
+指挥官，
+分析信标后，它似乎发射了某种紧急信号，现在我们已在 {PlanetName} 上探测到有史以来录入我们数据库的最大 Zenith 实体。它相当于一整颗小行星，全副武装，随时准备攻击。
+它几乎攻击一切，并以获取的金属为食。其攻击模式显示出类似动物的智能——专注于最近、最大的可攻击单位集群，但如果处于劣势并受伤，它会足够聪明地撤退到另一颗行星。我们的入侵者也表示，我们或许能够以某种形式与之沟通，如果这个东西靠近我们的行星之一，我们最好做好准备……
+
+与此 '{FactionColor}{UnitTypeName}&lt;/color&gt;' 交战几乎是不可能的。除了它本身已经极其强大之外，它还覆盖着某种活的、自我再生的反应装甲，能够分析行星上的单位类型（即使处于隐形状态），当受到攻击时，它会将来袭的射击与相应的单位设计相匹配，从而改变预计的命中点形状或结构来反击射击，并将所有受到的伤害减少惊人的 90%。我们能想到造成全额伤害的唯一方法是使用其扫描仪无法完全分析的单位进行攻击。
+
+每当吞噬者出现在 AI 行星上时，AI 的曲速网格就会剧烈波动。考虑到这个傀儡的体型和力量，我们只能假设 AI 会以疯狂的力量进行攻击。我们应尽最大努力不被卷入交火之中。
+
+另一方面，分析如此卓越的 Zenith 技术遗骸将极大地扩展我们的科学知识，如果 AI 能为我们削弱这个傀儡，那就更好了。
+
+经过与我们的战术军官审查数据后，我们提出以下建议：
+
+-> 在没有强大力量的情况下与吞噬者傀儡作战只会造成巨大损失。我们应该避免这样做。如果它来到我们的行星之一，我们应该发起入侵来转移它的注意力。
+-> 对其怀有敌意的派系的大型舰队集群会吸引它的注意，几乎就像诱饵一样。
+-> 如果我们与它在同一行星上，任何旗舰都可以发起各种入侵来操纵吞噬者傀儡的 targeting。这通常需要消耗入侵点和金属，并可能导致吞噬者记住我们的所作所为。
+-> 我们可以预期，如果吞噬者傀儡在 AI 领土停留太久，AI 会尝试攻击它。此后不久，它可能会稍微变得脆弱易攻。
+
+研发主管
+George Murphy" />
+
+<journal name="DevourerChrysalis_Discovery_NonTier4_AlliedToAI_FromHack" sidebar_text="{FactionColor}{UnitTypeName}&lt;/color&gt; 已抵达 {PlanetName}" can_record_another_copy_if_already_recorded_in_this_campaign="false"
+        text_replacement_related_faction_color="true"
+        text_replacement_related_planet="true"
+        text_replacement_related_unit_type="true"
+        chat_text="来自 GeorgeMurphy@Human-RnD.com 的新邮件 /// {FactionColor}{UnitTypeName}&lt;/color&gt; 已抵达 {PlanetName}"
+        full_text="发件人：GeorgeMurphy@Human-RnD.com
+收件人：RemnantCommander@Human-Command.com
+主题：{FactionColor}{UnitTypeName}&lt;/color&gt; 已抵达 {PlanetName}
+
+指挥官，
+分析信标后，它似乎发射了某种紧急信号，现在我们已在 {PlanetName} 上探测到有史以来录入我们数据库的最大 Zenith 实体之一。它相当于一整颗小行星，全副武装，随时准备攻击。更糟的是：它与 AI 结盟。
+出于我们尚不了解的原因，它似乎只攻击敌对单位，从不攻击建筑，并以获取的金属为食。其攻击模式显示出类似动物的智能——专注于最近、最大的可攻击单位集群，但如果处于劣势并受伤，它会足够聪明地撤退到另一颗行星。我们的入侵者也表示，我们或许能够以某种形式与之沟通。
+
+与此 '{FactionColor}{UnitTypeName}&lt;/color&gt;' 交战可能会很困难。它覆盖着某种活的、自我再生的反应装甲，能够分析行星上的单位类型（即使处于隐形状态），当受到攻击时，它会将来袭的射击与相应的单位设计相匹配，从而改变预计的命中点形状或结构来反击射击，并将所有受到的伤害减少惊人的 90%。我们能想到造成全额伤害的唯一方法是使用其扫描仪无法完全分析的单位进行攻击。
+
+另一方面，分析如此卓越的 Zenith 技术遗骸无疑将有助于我们的科研工作。
+
+最后，请注意，这并非像我们之前遇到的所有那些已死亡并复活的 Zenith。它是一个活着的、仍在进化的傀儡，只是在等待新的数据来改造自己，变得愈发强大。我们应该假设，我们进行的每一次入侵行为，吞噬者也会更多地了解我们、我们的技术、方法和战术，并会利用这些知识来强化自身。
+
+经过与我们的战术军官审查数据后，我们提出以下建议：
+
+-> 在没有强大力量的情况下与吞噬者傀儡作战只会造成巨大损失。我们应该避免这样做。
+-> 对其怀有敌意的派系的大型舰队集群会吸引它的注意，几乎就像诱饵一样。
+-> 如果它在我们的行星上，我们应该撤离我们的单位，但由于它不会攻击我们的建筑，因此无需担心我们的指挥站或固定防御设施的安全。
+-> 如果我们与它在同一行星上，任何旗舰都可以发起各种入侵来操纵吞噬者傀儡的 targeting。这通常需要消耗入侵点和金属，并可能导致吞噬者记住我们的所作所为。
+
+研发主管
+George Murphy" />
+
+<journal name="DevourerChrysalis_Discovery_Tier4_AlliedToAI_FromHack" sidebar_text="{FactionColor}{UnitTypeName}&lt;/color&gt; 已抵达 {PlanetName}" can_record_another_copy_if_already_recorded_in_this_campaign="false"
+        text_replacement_related_faction_color="true"
+        text_replacement_related_planet="true"
+        text_replacement_related_unit_type="true"
+        chat_text="来自 GeorgeMurphy@Human-RnD.com 的新邮件 /// {FactionColor}{UnitTypeName}&lt;/color&gt; 已抵达 {PlanetName}"
+        full_text="发件人：GeorgeMurphy@Human-RnD.com
+收件人：RemnantCommander@Human-Command.com
+主题：{FactionColor}{UnitTypeName}&lt;/color&gt; 已抵达 {PlanetName}
+
+指挥官，
+分析信标后，它似乎发射了某种紧急信号，现在我们已在 {PlanetName} 上探测到有史以来录入我们数据库的最大 Zenith 实体。它相当于一整颗小行星，全副武装，随时准备攻击。更糟的是：它与 AI 结盟。
+它几乎攻击一切，并以获取的金属为食。其攻击模式显示出类似动物的智能——专注于最近、最大的可攻击单位集群，但如果处于劣势并受伤，它会足够聪明地撤退到另一颗行星。我们的入侵者也表示，我们或许能够以某种形式与之沟通，如果这个东西靠近我们的行星之一，我们最好做好准备……
+
+与此 '{FactionColor}{UnitTypeName}&lt;/color&gt;' 交战几乎是不可能的。除了它本身已经极其强大之外，它还覆盖着某种活的、自我再生的反应装甲，能够分析行星上的单位类型（即使处于隐形状态），当受到攻击时，它会将来袭的射击与相应的单位设计相匹配，从而改变预计的命中点形状或结构来反击射击，并将所有受到的伤害减少惊人的 90%。我们能想到造成全额伤害的唯一方法是使用其扫描仪无法完全分析的单位进行攻击。
+
+另一方面，分析如此卓越的 Zenith 技术遗骸将极大地扩展我们的科学知识。
+
+经过与我们的战术军官审查数据后，我们提出以下建议：
+
+-> 在没有强大力量的情况下与吞噬者傀儡作战只会造成巨大损失。我们应该避免这样做。如果它来到我们的行星之一，我们应该发起入侵来转移它的注意力。
+-> 对其怀有敌意的派系的大型舰队集群会吸引它的注意，几乎就像诱饵一样。
+-> 如果我们与它在同一行星上，任何旗舰都可以发起各种入侵来操纵吞噬者傀儡的 targeting。这通常需要消耗入侵点和金属，并可能导致吞噬者记住我们的所作所为。
+
+研发主管
+George Murphy" />
+
+<journal name="DevourerChrysalis_Discovery_NonTier4_AlliedToPlayer_FromHack" sidebar_text="{FactionColor}{UnitTypeName}&lt;/color&gt; 已抵达 {PlanetName}" can_record_another_copy_if_already_recorded_in_this_campaign="false"
+        text_replacement_related_faction_color="true"
+        text_replacement_related_planet="true"
+        text_replacement_related_unit_type="true"
+        chat_text="来自 GeorgeMurphy@Human-RnD.com 的新邮件 /// {FactionColor}{UnitTypeName}&lt;/color&gt; 已抵达 {PlanetName}"
+        full_text="发件人：GeorgeMurphy@Human-RnD.com
+收件人：RemnantCommander@Human-Command.com
+主题：{FactionColor}{UnitTypeName}&lt;/color&gt; 已抵达 {PlanetName}
+
+指挥官，
+分析信标后，它似乎发射了某种紧急信号，现在我们已在 {PlanetName} 上探测到有史以来录入我们数据库的最大 Zenith 实体之一。它相当于一整颗小行星，全副武装，随时准备攻击。但不知为何，它似乎喜欢我们。
+出于我们尚不了解的原因，它似乎只攻击敌对单位，从不攻击建筑，并以获取的金属为食。其攻击模式显示出类似动物的智能——专注于最近、最大的可攻击单位集群，但如果处于劣势并受伤，它会足够聪明地撤退到另一颗行星。我们的入侵者也表示，我们或许能够以某种形式与之沟通。
+
+我们的敌人将与这个 '{FactionColor}{UnitTypeName}&lt;/color&gt;' 交战会很困难。它覆盖着某种活的、自我再生的反应装甲，能够分析行星上的单位类型（即使处于隐形状态），当受到攻击时，它会将来袭的射击与相应的单位设计相匹配，从而改变预计的命中点形状或结构来反击射击，并将所有受到的伤害减少惊人的 90%。我们能想到造成全额伤害的唯一方法是使用其扫描仪无法完全分析的单位进行攻击。
+
+此外，每当吞噬者出现在 AI 行星上时，AI 的曲速网格就会发生波动。考虑到这个傀儡的体型和力量，我们只能假设 AI 会以强大的力量进行攻击。我们应尽最大努力不被卷入交火之中。
+
+最后，请注意，这并非像我们之前遇到的所有那些已死亡并复活的 Zenith。它是一个活着的、仍在进化的傀儡，只是在等待新的数据来改造自己，变得愈发强大。我们应该假设，我们进行的每一次入侵行为，吞噬者也会更多地了解我们、我们的技术、方法和战术，并会利用这些知识来强化自身。
+
+经过与我们的战术军官审查数据后，我们提出以下建议：
+
+-> 对其怀有敌意的派系的大型舰队集群会吸引它的注意，几乎就像诱饵一样。
+-> 如果它在我们的行星上，我们应该撤离我们的单位，但由于它不会攻击我们的建筑，因此无需担心我们的指挥站或固定防御设施的安全。
+-> 如果我们与它在同一行星上，任何旗舰都可以发起各种入侵来操纵吞噬者傀儡的 targeting。这通常需要消耗入侵点和金属，并可能导致吞噬者记住我们的所作所为。
+-> 我们可以预期，如果吞噬者傀儡在 AI 领土停留太久，AI 会尝试攻击它。此后不久，它可能会变得脆弱易攻。
+
+研发主管
+George Murphy" />
+
+<journal name="DevourerChrysalis_Discovery_Tier4_AlliedToPlayer_FromHack" sidebar_text="{FactionColor}{UnitTypeName}&lt;/color&gt; 已抵达 {PlanetName}" can_record_another_copy_if_already_recorded_in_this_campaign="false"
+        text_replacement_related_faction_color="true"
+        text_replacement_related_planet="true"
+        text_replacement_related_unit_type="true"
+        chat_text="来自 GeorgeMurphy@Human-RnD.com 的新邮件 /// {FactionColor}{UnitTypeName}&lt;/color&gt; 已抵达 {PlanetName}"
+        full_text="发件人：GeorgeMurphy@Human-RnD.com
+收件人：RemnantCommander@Human-Command.com
+主题：{FactionColor}{UnitTypeName}&lt;/color&gt; 已抵达 {PlanetName}
+
+指挥官，
+分析信标后，它似乎发射了某种紧急信号，现在我们已在 {PlanetName} 上探测到有史以来录入我们数据库的最大 Zenith 实体。它相当于一整颗小行星，全副武装，随时准备攻击。但不知为何，它似乎喜欢我们。
+它几乎攻击一切，并以获取的金属为食。其攻击模式显示出类似动物的智能——专注于最近、最大的可攻击单位集群，但如果处于劣势并受伤，它会足够聪明地撤退到另一颗行星。我们的入侵者也表示，我们或许能够以某种形式与之沟通。
+
+我们的敌人将与这个 '{FactionColor}{UnitTypeName}&lt;/color&gt;' 交战会很困难。除了它本身已经极其强大之外，它还覆盖着某种活的、自我再生的反应装甲，能够分析行星上的单位类型（即使处于隐形状态），当受到攻击时，它会将来袭的射击与相应的单位设计相匹配，从而改变预计的命中点形状或结构来反击射击，并将所有受到的伤害减少惊人的 90%。我们能想到造成全额伤害的唯一方法是使用其扫描仪无法完全分析的单位进行攻击。
+
+AI 的曲速网格每当吞噬者出现在 AI 行星上时就会剧烈波动。考虑到这个傀儡的体型和力量，我们只能假设 AI 会以疯狂的力量进行攻击。我们应尽最大努力不被卷入交火之中。
+
+经过与我们的战术军官审查数据后，我们提出以下建议：
+
+-> 对其怀有敌意的派系的大型舰队集群会吸引它的注意，几乎就像诱饵一样。
+-> 如果我们与它在同一行星上，任何旗舰都可以发起各种入侵来操纵吞噬者傀儡的 targeting。这通常需要消耗入侵点和金属，并可能导致吞噬者记住我们的所作所为。
+-> 我们可以预期，如果吞噬者傀儡在 AI 领土停留太久，AI 会尝试攻击它。此后不久，它可能会稍微变得脆弱易攻。
+
+研发主管
+George Murphy" />
+
+<journal name="DevourerChrysalis_Discovery_NonTier4_HostileToAI" sidebar_text="{FactionColor}{UnitTypeName}&lt;/color&gt; 在 {PlanetName} 上被探测到 " can_record_another_copy_if_already_recorded_in_this_campaign="false"
+        text_replacement_related_faction_color="true"
+        text_replacement_related_planet="true"
+        text_replacement_related_unit_type="true"
+        chat_text="来自 GeorgeMurphy@Human-RnD.com 的新邮件 /// {FactionColor}{UnitTypeName}&lt;/color&gt; 在 {PlanetName} 上被探测到"
+        full_text="发件人：GeorgeMurphy@Human-RnD.com
+收件人：RemnantCommander@Human-Command.com
+主题：{FactionColor}{UnitTypeName}&lt;/color&gt; 在 {PlanetName} 上被探测到
+
+指挥官，
+我们在 {PlanetName} 上探测到有史以来录入我们数据库的最大 Zenith 实体之一。它相当于一整颗小行星，全副武装，随时准备攻击。
+出于我们尚不了解的原因，它似乎只攻击敌对单位，从不攻击建筑，并以获取的金属为食。其攻击模式显示出类似动物的智能——专注于最近、最大的可攻击单位集群，但如果处于劣势并受伤，它会足够聪明地撤退到另一颗行星。我们的入侵者也表示，我们或许能够以某种形式与之沟通。
+
+与此 '{FactionColor}{UnitTypeName}&lt;/color&gt;' 交战可能会很困难。它覆盖着某种活的、自我再生的反应装甲，能够分析行星上的单位类型（即使处于隐形状态），当受到攻击时，它会将来袭的射击与相应的单位设计相匹配，从而改变预计的命中点形状或结构来反击射击，并将所有受到的伤害减少惊人的 90%。我们能想到造成全额伤害的唯一方法是使用其扫描仪无法完全分析的单位进行攻击。
+
+此外，每当吞噬者出现在 AI 行星上时，AI 的曲速网格就会发生波动。考虑到这个傀儡的体型和力量，我们只能假设 AI 会以强大的力量进行攻击。我们应尽最大努力不被卷入交火之中。
+
+另一方面，分析如此卓越的 Zenith 技术遗骸无疑将有助于我们的科研工作，如果 AI 能为我们削弱这个傀儡，那就更好了。
+
+最后，请注意，这并非像我们之前遇到的所有那些已死亡并复活的 Zenith。它是一个活着的、仍在进化的傀儡，只是在等待新的数据来改造自己，变得愈发强大。我们应该假设，我们进行的每一次入侵行为，吞噬者也会更多地了解我们、我们的技术、方法和战术，并会利用这些知识来强化自身。
+
+经过与我们的战术军官审查数据后，我们提出以下建议：
+
+-> 在没有强大力量的情况下与吞噬者傀儡作战只会造成巨大损失。我们应该避免这样做。
+-> 对其怀有敌意的派系的大型舰队集群会吸引它的注意，几乎就像诱饵一样。
+-> 如果它在我们的行星上，我们应该撤离我们的单位，但由于它不会攻击我们的建筑，因此无需担心我们的指挥站或固定防御设施的安全。
+-> 如果我们与它在同一行星上，任何旗舰都可以发起各种入侵来操纵吞噬者傀儡的 targeting。这通常需要消耗入侵点和金属，并可能导致吞噬者记住我们的所作所为。
+-> 我们可以预期，如果吞噬者傀儡在 AI 领土停留太久，AI 会尝试攻击它。此后不久，它可能会变得脆弱易攻。
+
+研发主管
+George Murphy" />
+
+<journal name="DevourerChrysalis_Discovery_Tier4_HostileToAI" sidebar_text="{FactionColor}{UnitTypeName}&lt;/color&gt; 在 {PlanetName} 上被探测到" can_record_another_copy_if_already_recorded_in_this_campaign="false"
+        text_replacement_related_faction_color="true"
+        text_replacement_related_planet="true"
+        text_replacement_related_unit_type="true"
+        chat_text="来自 GeorgeMurphy@Human-RnD.com 的新邮件 /// {FactionColor}{UnitTypeName}&lt;/color&gt; 在 {PlanetName} 上被探测到"
+        full_text="发件人：GeorgeMurphy@Human-RnD.com
+收件人：RemnantCommander@Human-Command.com
+主题：{FactionColor}{UnitTypeName}&lt;/color&gt; 在 {PlanetName} 上被探测到
+
+指挥官，
+我们在 {PlanetName} 上探测到有史以来录入我们数据库的最大 Zenith 实体。它相当于一整颗小行星，全副武装，随时准备攻击。
+它几乎攻击一切，并以获取的金属为食。其攻击模式显示出类似动物的智能——专注于最近、最大的可攻击单位集群，但如果处于劣势并受伤，它会足够聪明地撤退到另一颗行星。我们的入侵者也表示，我们或许能够以某种形式与之沟通，如果这个东西靠近我们的行星之一，我们最好做好准备……
+
+与此 '{FactionColor}{UnitTypeName}&lt;/color&gt;' 交战几乎是不可能的。除了它本身已经极其强大之外，它还覆盖着某种活的、自我再生的反应装甲，能够分析行星上的单位类型（即使处于隐形状态），当受到攻击时，它会将来袭的射击与相应的单位设计相匹配，从而改变预计的命中点形状或结构来反击射击，并将所有受到的伤害减少惊人的 90%。我们能想到造成全额伤害的唯一方法是使用其扫描仪无法完全分析的单位进行攻击。
+
+AI 的曲速网格每当吞噬者出现在 AI 行星上时就会剧烈波动。考虑到这个傀儡的体型和力量，我们只能假设 AI 会以疯狂的力量进行攻击。我们应尽最大努力不被卷入交火之中。
+
+另一方面，分析如此卓越的 Zenith 技术遗骸将极大地扩展我们的科学知识，如果 AI 能为我们削弱这个傀儡，那就更好了。
+
+经过与我们的战术军官审查数据后，我们提出以下建议：
+
+-> 在没有强大力量的情况下与吞噬者傀儡作战只会造成巨大损失。我们应该避免这样做。如果它来到我们的行星之一，我们应该发起入侵来转移它的注意力。
+-> 对其怀有敌意的派系的大型舰队集群会吸引它的注意，几乎就像诱饵一样。
+-> 如果我们与它在同一行星上，任何旗舰都可以发起各种入侵来操纵吞噬者傀儡的 targeting。这通常需要消耗入侵点和金属，并可能导致吞噬者记住我们的所作所为。
+-> 我们可以预期，如果吞噬者傀儡在 AI 领土停留太久，AI 会尝试攻击它。此后不久，它可能会稍微变得脆弱易攻。
+
+研发主管
+George Murphy" />
+
+<journal name="DevourerChrysalis_Discovery_NonTier4_AlliedToAI" sidebar_text="{FactionColor}{UnitTypeName}&lt;/color&gt; 在 {PlanetName} 上被探测到" can_record_another_copy_if_already_recorded_in_this_campaign="false"
+        text_replacement_related_faction_color="true"
+        text_replacement_related_planet="true"
+        text_replacement_related_unit_type="true"
+        chat_text="来自 GeorgeMurphy@Human-RnD.com 的新邮件 /// {FactionColor}{UnitTypeName}&lt;/color&gt; 在 {PlanetName} 上被探测到"
+        full_text="发件人：GeorgeMurphy@Human-RnD.com
+收件人：RemnantCommander@Human-Command.com
+主题：{FactionColor}{UnitTypeName}&lt;/color&gt; 在 {PlanetName} 上被探测到
+
+指挥官，
+我们在 {PlanetName} 上探测到有史以来录入我们数据库的最大 Zenith 实体之一。它相当于一整颗小行星，全副武装，随时准备攻击。更糟的是：它与 AI 结盟。
+出于我们尚不了解的原因，它似乎只攻击敌对单位，从不攻击建筑，并以获取的金属为食。其攻击模式显示出类似动物的智能——专注于最近、最大的可攻击单位集群，但如果处于劣势并受伤，它会足够聪明地撤退到另一颗行星。我们的入侵者也表示，我们或许能够以某种形式与之沟通。
+
+与此 '{FactionColor}{UnitTypeName}&lt;/color&gt;' 交战可能会很困难。它覆盖着某种活的、自我再生的反应装甲，能够分析行星上的单位类型（即使处于隐形状态），当受到攻击时，它会将来袭的射击与相应的单位设计相匹配，从而改变预计的命中点形状或结构来反击射击，并将所有受到的伤害减少惊人的 90%。我们能想到造成全额伤害的唯一方法是使用其扫描仪无法完全分析的单位进行攻击。
+
+另一方面，分析如此卓越的 Zenith 技术遗骸无疑将有助于我们的科研工作。
+
+最后，请注意，这并非像我们之前遇到的所有那些已死亡并复活的 Zenith。它是一个活着的、仍在进化的傀儡，只是在等待新的数据来改造自己，变得愈发强大。我们应该假设，我们进行的每一次入侵行为，吞噬者也会更多地了解我们、我们的技术、方法和战术，并会利用这些知识来强化自身。
+
+经过与我们的战术军官审查数据后，我们提出以下建议：
+
+-> 在没有强大力量的情况下与吞噬者傀儡作战只会造成巨大损失。我们应该避免这样做。
+-> 对其怀有敌意的派系的大型舰队集群会吸引它的注意，几乎就像诱饵一样。
+-> 如果它在我们的行星上，我们应该撤离我们的单位，但由于它不会攻击我们的建筑，因此无需担心我们的指挥站或固定防御设施的安全。
+-> 如果我们与它在同一行星上，任何旗舰都可以发起各种入侵来操纵吞噬者傀儡的 targeting。这通常需要消耗入侵点和金属，并可能导致吞噬者记住我们的所作所为。
+
+研发主管
+George Murphy" />
+
+<journal name="DevourerChrysalis_Discovery_Tier4_AlliedToAI" sidebar_text="{FactionColor}{UnitTypeName}&lt;/color&gt; 在 {PlanetName} 上被探测到" can_record_another_copy_if_already_recorded_in_this_campaign="false"
+        text_replacement_related_faction_color="true"
+        text_replacement_related_planet="true"
+        text_replacement_related_unit_type="true"
+        chat_text="来自 GeorgeMurphy@Human-RnD.com 的新邮件 /// {FactionColor}{UnitTypeName}&lt;/color&gt; 在 {PlanetName} 上被探测到"
+        full_text="发件人：GeorgeMurphy@Human-RnD.com
+收件人：RemnantCommander@Human-Command.com
+主题：{FactionColor}{UnitTypeName}&lt;/color&gt; 在 {PlanetName} 上被探测到
+
+指挥官，
+我们在 {PlanetName} 上探测到有史以来录入我们数据库的最大 Zenith 实体。它相当于一整颗小行星，全副武装，随时准备攻击。更糟的是：它与 AI 结盟。
+它几乎攻击一切，并以获取的金属为食。其攻击模式显示出类似动物的智能——专注于最近、最大的可攻击单位集群，但如果处于劣势并受伤，它会足够聪明地撤退到另一颗行星。我们的入侵者也表示，我们或许能够以某种形式与之沟通，如果这个东西靠近我们的行星之一，我们最好做好准备……
+
+与此 '{FactionColor}{UnitTypeName}&lt;/color&gt;' 交战几乎是不可能的。除了它本身已经极其强大之外，它还覆盖着某种活的、自我再生的反应装甲，能够分析行星上的单位类型（即使处于隐形状态），当受到攻击时，它会将来袭的射击与相应的单位设计相匹配，从而改变预计的命中点形状或结构来反击射击，并将所有受到的伤害减少惊人的 90%。我们能想到造成全额伤害的唯一方法是使用其扫描仪无法完全分析的单位进行攻击。
+
+另一方面，分析如此卓越的 Zenith 技术遗骸将极大地扩展我们的科学知识。
+
+经过与我们的战术军官审查数据后，我们提出以下建议：
+
+-> 在没有强大力量的情况下与吞噬者傀儡作战只会造成巨大损失。我们应该避免这样做。如果它来到我们的行星之一，我们应该发起入侵来转移它的注意力。
+-> 对其怀有敌意的派系的大型舰队集群会吸引它的注意，几乎就像诱饵一样。
+-> 如果我们与它在同一行星上，任何旗舰都可以发起各种入侵来操纵吞噬者傀儡的 targeting。这通常需要消耗入侵点和金属，并可能导致吞噬者记住我们的所作所为。
+
+研发主管
+George Murphy" />
+
+<journal name="DevourerChrysalis_Discovery_NonTier4_AlliedToPlayer" sidebar_text="{FactionColor}{UnitTypeName}&lt;/color&gt; 在 {PlanetName} 上被探测到" can_record_another_copy_if_already_recorded_in_this_campaign="false"
+        text_replacement_related_faction_color="true"
+        text_replacement_related_planet="true"
+        text_replacement_related_unit_type="true"
+        chat_text="来自 GeorgeMurphy@Human-RnD.com 的新邮件 /// {FactionColor}{UnitTypeName}&lt;/color&gt; 在 {PlanetName} 上被探测到"
+        full_text="发件人：GeorgeMurphy@Human-RnD.com
+收件人：RemnantCommander@Human-Command.com
+主题：{FactionColor}{UnitTypeName}&lt;/color&gt; 在 {PlanetName} 上被探测到
+
+指挥官，
+我们在 {PlanetName} 上探测到有史以来录入我们数据库的最大 Zenith 实体之一。它相当于一整颗小行星，全副武装，随时准备攻击。但不知为何，它似乎喜欢我们。
+出于我们尚不了解的原因，它似乎只攻击敌对单位，从不攻击建筑，并以获取的金属为食。其攻击模式显示出类似动物的智能——专注于最近、最大的可攻击单位集群，但如果处于劣势并受伤，它会足够聪明地撤退到另一颗行星。我们的入侵者也表示，我们或许能够以某种形式与之沟通。
+
+我们的敌人将与这个 '{FactionColor}{UnitTypeName}&lt;/color&gt;' 交战会很困难。它覆盖着某种活的、自我再生的反应装甲，能够分析行星上的单位类型（即使处于隐形状态），当受到攻击时，它会将来袭的射击与相应的单位设计相匹配，从而改变预计的命中点形状或结构来反击射击，并将所有受到的伤害减少惊人的 90%。我们能想到造成全额伤害的唯一方法是使用其扫描仪无法完全分析的单位进行攻击。
+
+此外，每当吞噬者出现在 AI 行星上时，AI 的曲速网格就会发生波动。考虑到这个傀儡的体型和力量，我们只能假设 AI 会以强大的力量进行攻击。我们应尽最大努力不被卷入交火之中。
+
+最后，请注意，这并非像我们之前遇到的所有那些已死亡并复活的 Zenith。它是一个活着的、仍在进化的傀儡，只是在等待新的数据来改造自己，变得愈发强大。我们应该假设，我们进行的每一次入侵行为，吞噬者也会更多地了解我们、我们的技术、方法和战术，并会利用这些知识来强化自身。
+
+经过与我们的战术军官审查数据后，我们提出以下建议：
+
+-> 对其怀有敌意的派系的大型舰队集群会吸引它的注意，几乎就像诱饵一样。
+-> 如果它在我们的行星上，我们应该撤离我们的单位，但由于它不会攻击我们的建筑，因此无需担心我们的指挥站或固定防御设施的安全。
+-> 如果我们与它在同一行星上，任何旗舰都可以发起各种入侵来操纵吞噬者傀儡的 targeting。这通常需要消耗入侵点和金属，并可能导致吞噬者记住我们的所作所为。
+-> 我们可以预期，如果吞噬者傀儡在 AI 领土停留太久，AI 会尝试攻击它。此后不久，它可能会变得脆弱易攻。
+
+研发主管
+George Murphy" />
+
+<journal name="DevourerChrysalis_Discovery_Tier4_AlliedToPlayer" sidebar_text="{FactionColor}{UnitTypeName}&lt;/color&gt; 在 {PlanetName} 上被探测到" can_record_another_copy_if_already_recorded_in_this_campaign="false"
+        text_replacement_related_faction_color="true"
+        text_replacement_related_planet="true"
+        text_replacement_related_unit_type="true"
+        chat_text="来自 GeorgeMurphy@Human-RnD.com 的新邮件 /// {FactionColor}{UnitTypeName}&lt;/color&gt; 在 {PlanetName} 上被探测到"
+        full_text="发件人：GeorgeMurphy@Human-RnD.com
+收件人：RemnantCommander@Human-Command.com
+主题：{FactionColor}{UnitTypeName}&lt;/color&gt; 在 {PlanetName} 上被探测到
+
+指挥官，
+我们在 {PlanetName} 上探测到有史以来录入我们数据库的最大 Zenith 实体。它相当于一整颗小行星，全副武装，随时准备攻击。但不知为何，它似乎喜欢我们。
+它几乎攻击一切，并以获取的金属为食。其攻击模式显示出类似动物的智能——专注于最近、最大的可攻击单位集群，但如果处于劣势并受伤，它会足够聪明地撤退到另一颗行星。我们的入侵者也表示，我们或许能够以某种形式与之沟通。
+
+我们的敌人将与这个 '{FactionColor}{UnitTypeName}&lt;/color&gt;' 交战会很困难。除了它本身已经极其强大之外，它还覆盖着某种活的、自我再生的反应装甲，能够分析行星上的单位类型（即使处于隐形状态），当受到攻击时，它会将来袭的射击与相应的单位设计相匹配，从而改变预计的命中点形状或结构来反击射击，并将所有受到的伤害减少惊人的 90%。我们能想到造成全额伤害的唯一方法是使用其扫描仪无法完全分析的单位进行攻击。
+
+AI 的曲速网格每当吞噬者出现在 AI 行星上时就会剧烈波动。考虑到这个傀儡的体型和力量，我们只能假设 AI 会以疯狂的力量进行攻击。我们应尽最大努力不被卷入交火之中。
+
+经过与我们的战术军官审查数据后，我们提出以下建议：
+
+-> 对其怀有敌意的派系的大型舰队集群会吸引它的注意，几乎就像诱饵一样。
+-> 如果我们与它在同一行星上，任何旗舰都可以发起各种入侵来操纵吞噬者傀儡的 targeting。这通常需要消耗入侵点和金属，并可能导致吞噬者记住我们的所作所为。
+-> 我们可以预期，如果吞噬者傀儡在 AI 领土停留太久，AI 会尝试攻击它。此后不久，它可能会稍微变得脆弱易攻。
+
+研发主管
+George Murphy" />
+
+<journal name="DevourerChrysalis_FirstChrysalis" sidebar_text="吞噬者蛹形态" can_record_another_copy_if_already_recorded_in_this_campaign="false"
+        text_replacement_related_faction_color="true"
+        text_replacement_related_planet="true"
+        text_replacement_related_unit_type="true"
+        chat_text="来自 GeorgeMurphy@Human-RnD.com 的新邮件 /// 吞噬者蛹形态"
+        full_text="发件人：GeorgeMurphy@Human-RnD.com
+收件人：RemnantCommander@Human-Command.com
+主题：吞噬者蛹形态
+
+指挥官，
+我们的传感器正在捕捉曾经强大的 {FactionColor}{UnitTypeName}&lt;/color&gt; 的残骸。但这个东西似乎还没有死，它显然已经转移到了一个替代存在位面，正在重建自己——比以前更好、更强。
+
+这或许对我们来说是一个机会。我们的科学和入侵员工希望趁吞噬者半休眠状态时进行探索。我们也许能够分析其部分技术，或影响其进化。
+
+研发主管
+George Murphy" />
+
+<journal name="DevourerChrysalis_FirstEnraging_NonTier4" sidebar_text="{FactionColor}{UnitTypeName}&lt;/color&gt; 被激怒" can_record_another_copy_if_already_recorded_in_this_campaign="false"
+        text_replacement_related_faction_color="true"
+        text_replacement_related_planet="true"
+        text_replacement_related_unit_type="true"
+        chat_text="来自 GeorgeMurphy@Human-RnD.com 的新邮件 /// {FactionColor}{UnitTypeName}&lt;/color&gt; 被激怒"
+        full_text="发件人：GeorgeMurphy@Human-RnD.com
+收件人：RemnantCommander@Human-Command.com
+主题：{FactionColor}{UnitTypeName}&lt;/color&gt; 被激怒
+
+指挥官，
+{PlanetName} 上的 {FactionColor}{UnitTypeName}&lt;/color&gt; 发生了某种情况。它的内部反应堆突然超载运行，武器功率增加了 50%，并且现在也开始 targeting 建筑了。
+
+我们假设一旦它恢复足够，就会恢复正常，但在此期间，我们应该认真考虑这对我们或我们的敌人所构成的增加后的威胁。
+
+研发主管
+George Murphy" />
+
+<journal name="DevourerChrysalis_FirstEnraging_Tier4" sidebar_text="{FactionColor}{UnitTypeName}&lt;/color&gt; 被激怒" can_record_another_copy_if_already_recorded_in_this_campaign="false"
+        text_replacement_related_faction_color="true"
+        text_replacement_related_planet="true"
+        text_replacement_related_unit_type="true"
+        chat_text="来自 GeorgeMurphy@Human-RnD.com 的新邮件 /// {FactionColor}{UnitTypeName}&lt;/color&gt; 被激怒"
+        full_text="发件人：GeorgeMurphy@Human-RnD.com
+收件人：RemnantCommander@Human-Command.com
+主题：{FactionColor}{UnitTypeName}&lt;/color&gt; 被激怒
+
+指挥官，
+{PlanetName} 上的 {FactionColor}{UnitTypeName}&lt;/color&gt; 发生了某种情况。它的内部反应堆突然超载运行，武器功率增加了 50%。
+
+我们假设一旦它恢复足够，就会恢复正常，但在此期间，我们应该认真考虑这对我们或我们的敌人所构成的进一步增加的威胁。
+
+研发主管
+George Murphy" />
+
+<journal name="DevourerChrysalis_AntagonizerSpawn" sidebar_text="{FactionColor}{UnitTypeName}&lt;/color&gt; 已生成" can_record_another_copy_if_already_recorded_in_this_campaign="false"
+        text_replacement_related_faction_color="true"
+        text_replacement_related_unit_type="true"
+        chat_text="来自 GeorgeMurphy@Human-RnD.com 的新邮件 /// {FactionColor}{UnitTypeName}&lt;/color&gt; 已生成"
+        full_text="发件人：GeorgeMurphy@Human-RnD.com
+收件人：RemnantCommander@Human-Command.com
+主题：{FactionColor}{UnitTypeName}&lt;/color&gt; 已生成
+
+指挥官，
+似乎 AI 已经部署了一种新设备来策反吞噬者傀儡。根据我们的分析，它旨在将一种持续信号直接传入傀儡的主处理器。我们还不确定 AI 将发送什么信息或指令，但它很可能旨在将吞噬者傀儡引向它的敌人，而不必浪费资源来防御它。
+
+如果我们能抽出时间，应该在 AI 能够使用它之前将其摧毁。
+
+研发主管
+George Murphy" />
+
+<journal name="DevourerChrysalis_AntagonizerWarpComplete" sidebar_text="{FactionColor}{UnitTypeName}&lt;/color&gt; 已抵达" can_record_another_copy_if_already_recorded_in_this_campaign="false"
+        text_replacement_related_faction_color="true"
+        text_replacement_related_unit_type="true"
+        chat_text="来自 GeorgeMurphy@Human-RnD.com 的新邮件 /// {FactionColor}{UnitTypeName}&lt;/color&gt; 已抵达"
+        full_text="发件人：GeorgeMurphy@Human-RnD.com
+收件人：RemnantCommander@Human-Command.com
+主题：{FactionColor}{UnitTypeName}&lt;/color&gt; 已抵达
+
+指挥官，
+AI 已经完成了其 {FactionColor}{UnitTypeName}&lt;/color&gt; 的曲速传送，吞噬者傀儡立即改变了行为。它现在将 AI 视为中立派系，并根据其协议，将攻击所有剩余敌人——包括我们在内。此外，AI 还将其部分技术赋予了吞噬者，提升了其技术等级。
+
+我们应该预期傀儡会 targeting 任何不与 AI 结盟的人，直到对抗装置被摧毁，如果吞噬者确实在朝我们而来，这应该是优先事项。
+
+研发主管
+George Murphy" />
+
+<journal name="DevourerChrysalis_AntagonizerDestroyed" sidebar_text="{FactionColor}{UnitTypeName}&lt;/color&gt; 已被摧毁" can_record_another_copy_if_already_recorded_in_this_campaign="false"
+        text_replacement_related_faction_color="true"
+        text_replacement_related_unit_type="true"
+        chat_text="来自 GeorgeMurphy@Human-RnD.com 的新邮件 /// {FactionColor}{UnitTypeName}&lt;/color&gt; 已被摧毁"
+        full_text="发件人：GeorgeMurphy@Human-RnD.com
+收件人：RemnantCommander@Human-Command.com
+主题：{FactionColor}{UnitTypeName}&lt;/color&gt; 已被摧毁
+
+指挥官，
+{FactionColor}{UnitTypeName}&lt;/color&gt; 已被摧毁，吞噬者傀儡似乎很愤怒。我们可以预期它在接下来的几分钟内会对 AI 及其盟友的单位有非常特定的饥饿感，这可能为我们提供与其并肩作战的机会。有了如此强大——尽管是暂时的——盟友，即使是设防严密的系统也应成为轻松的目标。
+
+研发主管
+George Murphy" />
+
+</root>

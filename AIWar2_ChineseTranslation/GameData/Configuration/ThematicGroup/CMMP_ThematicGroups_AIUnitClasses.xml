@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <thematic_group_type name="ExogalacticWarFront" display_name="河外战线"
+       sort_order="50" group_type="AIUnitClass"
+       description="人工智能为应对重大威胁而派往银河系的最大型战舰。有些战舰可能很难见到。"/>
+
+  <!-- DLC3! !-->
+
+  <thematic_group_type name="BrutalGuardian" display_name="残暴守护者"
+       sort_order="50" group_type="AIUnitClass"
+       description="体型巨大、令人恐惧的守护者，仅从巢穴中生成。"/>
+
+  <thematic_group_type name="Guardian" display_name="守护者"
+       sort_order="50" group_type="AIUnitClass"
+       description="守护者是较大型的移动单位，是人工智能主要的移动战力之一。"/>
+
+  <thematic_group_type name="DireGuardian" display_name="恐怖守护者"
+       sort_order="50" group_type="AIUnitClass"
+       description="恐怖守护者是大型移动人工智能单位，自身就是强大的战力。"/>
+
+  <thematic_group_type name="Reserves" display_name="人工智能预备队"
+       sort_order="50" group_type="AIUnitClass"
+       description="如果你攻击距离自己过远的行星（即深度打击），人工智能会从虫洞中派出的部队。"/>
+
+  <thematic_group_type name="AITurret" display_name="炮塔"
+       sort_order="50" group_type="AIUnitClass"
+       description="人工智能使用的炮塔型号。"/>
+
+  <thematic_group_type name="AIOtherDefense" display_name="其他防御设施"
+       sort_order="50" group_type="AIUnitClass"
+       description="人工智能使用的其他防御设施型号。"/>
+
+  <thematic_group_type name="GuardPost" display_name="守卫哨站"
+       sort_order="50" group_type="AIUnitClass"
+       description="守卫哨站是人工智能在其行星上的主要防御建筑，自身拥有一定火力，并储存增援单位。"/>
+
+  <thematic_group_type name="DireGuardPost" display_name="恐怖守卫哨站"
+       sort_order="50" group_type="AIUnitClass"
+       description="恐怖守卫哨站是人工智能在其母星和堡垒行星上的主要防御建筑，比普通哨站强大得多。"/>
+  
+</root>

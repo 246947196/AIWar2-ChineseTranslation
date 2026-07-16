@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <player_type name="HumanArkEmpire"
+        display_name="人类方舟帝国" short_name="Ark Empire" uncontrolled_name="Ark Empire" lobby_prefix="Ark Empire"
+        sort_order="100"
+        tags="HumanEmpire,CanDoSpireHacks"
+        base_info_source="HumanArkEmpireFactionBaseInfo"
+        deep_info_source="HumanArkEmpireFactionDeepInfo"
+        is_allowed_to_buy_from_zenith_trader="true"
+        is_subject_to_energy_brownouts="true"
+        is_considered_a_full_empire="true"
+        takes_ownership_of_starting_planet="true"
+        does_not_claim_planet_from_ai="true"
+        ship_counts_go_up_from_upgrades="true"
+        hacks_fail_when_hacking_points_exhausted="true"
+        uses_any_random_hacker_for_hacks="false"
+        reject_tech_upgrades_that_benefit_nothing="true"
+        fleets_only_show_mobile_strength_in_sidebar="false"
+        excess_metal_auto_gifts_to_player_types="HumanEmpire,HumanArkEmpire,SpireInfusedEmpire"
+        can_lose_game="true"
+        
+        default_center_color="cA3C1AD"
+        default_trim_color="cFEFDFF"
+               
+        mapgen_should_fuel_seed_for_me_if_fuel_is_enabled="true"
+        mapgen_should_arses_seed_for_me="true"
+        mapgen_should_coprocessors_seed_for_me="true"
+        mapgen_should_distributionnodes_seed_for_me="true"
+        mapgen_should_datacenters_seed_for_me="true"
+        mapgen_should_majordatacenters_seed_for_me="true"
+        mapgen_should_superterminals_seed_for_me="true"
+        mapgen_should_minorcapturables_seed_for_me="true"
+        mapgen_require_minorcapturable_tag=""
+        mapgen_should_zenithpowergenerators_seed_for_me="true"
+        mapgen_should_zenithmatterconverters_seed_for_me="true"
+        mapgen_should_officerfleets_seed_for_me="true"
+        mapgen_require_officerfleet_tag="NonArkOfficer"
+        mapgen_should_citadels_seed_for_me="true"
+        mapgen_require_citadel_tag=""
+        mapgen_should_supportfleets_seed_for_me="true"
+        mapgen_require_supportfleet_tag=""
+        mapgen_should_destroyers_seed_for_me="true"
+        mapgen_should_cruisers_seed_for_me="true"
+        mapgen_should_frses_seed_for_me="true"
+        mapgen_should_lonespire_seed_for_me="true"
+        mapgen_should_techvaults_seed_for_me="true"
+        mapgen_should_earlyofficers_seed_for_me="true"
+        mapgen_require_earlyofficer_tag="NonArkOfficer"
+        mapgen_should_tsses_seed_for_me="true"
+        mapgen_should_odsses_seed_for_me="true"
+        mapgen_should_mobilestrikefleets_seed_for_me="true"
+        mapgen_require_mobilestrikefleet_tag=""
+        mapgen_should_spirearchive_seed_for_me="true"
+        mapgen_should_outguard_seed_for_me="true"
+               
+        description="人类甚至没有控制一个家园行星，他们仅存在于一艘方舟之中，必须先占领一个起始行星，然后从那里开始建设。
+        
+与普通人类帝国相比，这是一种更具挑战性的体验。虽然你开局拥有一艘强大的方舟和一支舰队，但却缺少通常的双战斗空间站的支援。
+
+然而，这并非全是劣势。这艘方舟携带着其诞生位置周围多个星系的地图，而且只要你在其他来源的AIP值达到20之前占领第一颗行星，就无需消耗AIP。（这不包括该行星上的可占领目标。）
+
+这种模式基于游戏最早的测试版本以及游戏在Kickstarter上的设计。早在2017年，我们最终认为这种风格与经典的《AI战争》差异太大，但在2021年，它作为一种富有挑战性且有趣的新模式回归了。
+
+状态：这种模式基本功能正常，但我认为它缺少一些预期的额外防御建筑。"/>
+
+  <player_type name="SpireInfusedEmpire"
+        display_name="尖塔融合帝国" short_name="Spire Empire" uncontrolled_name="Spire Empire " lobby_prefix="Spire Empire"
+        sort_order="300"
+        tags="HumanEmpire,SpireInfusedEmpire,CanDoSpireHacks"
+        base_info_source="SpireInfusedHumanEmpireFactionBaseInfo"
+        deep_info_source="SpireInfusedHumanEmpireFactionDeepInfo"
+        is_allowed_to_buy_from_zenith_trader="true"
+        is_subject_to_energy_brownouts="true"
+        is_considered_a_full_empire="true"
+        takes_ownership_of_starting_planet="true"
+        ship_counts_go_up_from_upgrades="true"
+        hacks_fail_when_hacking_points_exhausted="true"
+        uses_any_random_hacker_for_hacks="false"
+        reject_tech_upgrades_that_benefit_nothing="true"
+        fleets_only_show_mobile_strength_in_sidebar="false"
+        excess_metal_auto_gifts_to_player_types="HumanEmpire,HumanArkEmpire,SpireInfusedEmpire"
+        can_lose_game="true"
+        counts_as_spire_faction="true"
+        must_be_only_one_of_myself="true"
+        disallowed_factions_when_present="FallenSpire"
+               
+        default_center_color="cFFFFFF"
+        default_trim_color="Silver"
+
+        mapgen_should_fuel_seed_for_me_if_fuel_is_enabled="true"
+        mapgen_should_arses_seed_for_me="true"
+        mapgen_should_coprocessors_seed_for_me="true"
+        mapgen_should_distributionnodes_seed_for_me="true"
+        mapgen_should_datacenters_seed_for_me="true"
+        mapgen_should_majordatacenters_seed_for_me="true"
+        mapgen_should_superterminals_seed_for_me="true"
+        mapgen_should_minorcapturables_seed_for_me="true"
+        mapgen_require_minorcapturable_tag=""
+        mapgen_should_zenithpowergenerators_seed_for_me="true"
+        mapgen_should_zenithmatterconverters_seed_for_me="true"
+        mapgen_should_officerfleets_seed_for_me="true"
+        mapgen_require_officerfleet_tag=""
+        mapgen_should_citadels_seed_for_me="true"
+        mapgen_require_citadel_tag=""
+        mapgen_should_supportfleets_seed_for_me="true"
+        mapgen_require_supportfleet_tag=""
+        mapgen_should_destroyers_seed_for_me="true"
+        mapgen_should_cruisers_seed_for_me="true"
+        mapgen_should_frses_seed_for_me="true"
+        mapgen_should_lonespire_seed_for_me="false"
+        mapgen_should_techvaults_seed_for_me="true"
+        mapgen_should_earlyofficers_seed_for_me="true"
+        mapgen_require_earlyofficer_tag=""
+        mapgen_should_tsses_seed_for_me="true"
+        mapgen_should_odsses_seed_for_me="true"
+        mapgen_should_mobilestrikefleets_seed_for_me="true"
+        mapgen_require_mobilestrikefleet_tag=""
+        mapgen_should_spirearchive_seed_for_me="true"
+        mapgen_should_outguard_seed_for_me="true"
+               
+        description="其功能与普通人类帝国非常相似，但从游戏开始就拥有尖塔城市和神器。
+        
+如果你熟悉堕落尖塔派系，通常它们是一个独立的派系，你只能通过各种方式收集尖塔遗物来发展它们。
+
+这个派系跳过了收集尖塔遗物的过程，但保留了堕落尖塔的其他优点：
+
+如果你喜欢堕落尖塔的任务式玩法，那么你应该使用普通人类帝国（或方舟帝国）并开启堕落尖塔战役。
+
+如果你只想要尖塔单位和直接正面进攻的游戏方式，那么这个派系就是为你准备的。"/>
+  
+</root>

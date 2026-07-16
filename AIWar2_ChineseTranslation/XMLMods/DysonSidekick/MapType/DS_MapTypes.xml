@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <map_type name="VaguelyModerate"
+            display_name="模糊"
+            description="这与经典地图相似，但有更多的连接被随机移除。"
+            dll_name="AIWarExternalDeepProcessingCode"
+            type_name="Arcen.AIW2.External.Mapgen_Test1"
+            author_line="Credit to Badger"
+            min_planets="40"
+            max_planets="300"
+            hidden_from_lists_above_harshness="2200"
+            >
+  </map_type>
+
+  <map_type name="Double"
+            display_name="双倍"
+            description="银河有两个大的星团，由一条单独的连接分开。"
+            dll_name="AIWarExternalDeepProcessingCode"
+            type_name="Arcen.AIW2.External.Mapgen_Pairs"
+            author_line="Credit to Badger"
+            min_planets="40"
+            max_planets="300"
+            hidden_from_lists_above_harshness="2200"
+            >
+  </map_type>
+
+  <map_type name="Solar_Systems_Lite"
+              display_name="简化太阳系"
+              description="该地图类型是由围绕中心环的一系列小环组成的。"
+              dll_name="AIWarExternalDeepProcessingCode"
+              type_name="Arcen.AIW2.External.Mapgen_Circles"
+              min_planets="40"
+              max_planets="300"
+
+              >
+    <map_option name="SolarSystemsLinkMethod" display_name="地图连接算法" description="地图的连接机制；控制地图连通性。">
+      <choice_value id="0" display_name="太阳系" description="通过太阳系方法连接行星。" related_int_value="0" />
+      <choice_value id="1" display_name="断裂" description="仅通过生成树连接行星。" related_int_value="1" />
+      <choice_value id="3" display_name="蛛网" description="通过加布里埃尔图连接行星。" related_int_value="2" />
+      <choice_value id="4" display_name="草垛" description="通过生成图连接行星。" related_int_value="3" />
+    </map_option>
+  </map_type>
+
+       <map_type name="Nebula"
+            display_name="星云"
+            description="作为星团类别下的一个选项"
+            dll_name="AIWarExternalDeepProcessingCode"
+            type_name="Arcen.AIW2.External.Mapgen_Nebula"
+            min_planets="40"
+            max_planets="300"
+            >
+       <map_option name="NumberOfNebulae" display_name="星云数量" description="有多少个不同的星云">
+         <choice_value id="0" display_name="低" description="" related_int_value="0" />
+         <choice_value id="1" display_name="中" description="" related_int_value="1" />
+         <choice_value id="2" display_name="高" description="" related_int_value="2" />
+       </map_option>
+       <map_option name="NebulaeConnectivity" display_name="连接类型" description="整体连通性水平">
+         <choice_value id="0" display_name="低" description="" related_int_value="0" />
+         <choice_value id="1" display_name="中" description="" related_int_value="1" />
+         <choice_value id="2" display_name="高" description="" related_int_value="2" />
+       </map_option>
+  </map_type>
+
+    <!--
+    <map_option name="OctopusNumArms" display_name="旋臂数量" description="地图链接机制；控制地图连通性。" default_id="2">
+      <choice_value id="0" display_name="二" description="" related_int_value="2"/>
+      <choice_value id="1" display_name="三" description="" related_int_value="3"/>
+      <choice_value id="2" display_name="四" description="" related_int_value="4" />
+      <choice_value id="3" display_name="五" description="" related_int_value="5" />
+      <choice_value id="4" display_name="六" description="" related_int_value="6" />
+      <choice_value id="5" display_name="七" description="" related_int_value="7" />
+      <choice_value id="6" display_name="八" description="" related_int_value="8" />
+      </map_option>
+      -->
+
+
+</root>

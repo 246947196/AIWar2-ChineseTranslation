@@ -1,0 +1,52 @@
+Radiant Dyson Tweaks，由 Radiant Phoenix 制作
+
+对我不太喜欢的戴森副官（Dyson Sidekick）/ 帝国（Empires）相关的若干内容进行了调整。
+
+堡垒旗舰（Stronghold Flagships）：
+* 尖塔（Spire）：
+	- 全部：主武器对 5tX 及以上目标拥有 x3 伤害加成
+	- 护卫舰与巡洋舰：新增多目标激光以应对小型舰船
+	- 巡洋舰：重命名为驱逐舰（destroyer），主武器如今拥有行星射程但射速降低
+	- 战列舰：基础伤害翻倍，无副武器
+* 天顶（Zenith）：
+	- 先驱（Pioneer）：攻击间隔从 6 秒缩短为 4 秒
+	- 伊米尔（Ymir）：攻击间隔从 6 秒缩短为 4 秒，攻击造成引擎伤害，外观微调
+	- 耶梦加得（Jormungandr）：如今使用耶梦加得的攻击变体：
+		1. “湮灭光束”（Annihilator beam），伤害*可能*略低
+		2. “相位炸弹”（Phasion Bomb）：使用带有阶位的守卫哨站版相位炸弹，每次齐射只发射一枚，且爆发略短（4/15 而非 5/16）
+* 纳因祖尔（Neinzul）：外观微调，以及：
+	- 基础型：攻击间隔从 6 秒缩短为 4 秒
+	- 爆能者（Blaster）：
+	- 独眼巨人（Cyclopean）：改为基于瘟疫虫群长老（Plagueswarm Elderling）（但用 4 道射线而非 32 道），而非独眼巨长老（Cyclopean Elderling）
+* 圣堂（Templar）：
+	- 先驱（Herald）：
+	- 先知（Prophet）：内爆鱼雷（Implosion Torpedo）现在造成少量 AOE 伤害，不必再花七小时来进化。
+	- 预兆者（Harbinger）：
+
+城区舰船（District ships）：
+
+* 尖塔城区舰船大多获得伤害增强：
+	- D1：Overtone：射程现为无限
+	- D1：Bloom：基础伤害 x3
+	- D1：Illumin：射速 x3，射程适度提升
+	- D2：Lightseeker：腐蚀伤害大幅提升（因重复计算，相当于基础伤害提升），总计约 +50% 伤害。射程提升。
+	- D2：Dawn：伤害 x6
+	- D2：护卫舰：伤害 x3
+	- D3：驱逐舰：伤害 x2
+	- D3：巡洋舰：伤害 x2
+	- D3：Overtone：无改动，原本就合适。
+
+* 天顶：
+	- D1：Sentinel：基础伤害 x3，射程提升
+
+* 圣堂：
+	- D1：Apprentice：基础伤害 x10
+	- D1：Page：现基于 Page 而非审判官（Inquisitor）
+	- D2：Knight：基础伤害 x3
+	- D3：Inquisitor：基础伤害 x3
+
+杂项：
+* 戴森副官运输舰：现在免疫被吞噬。
+
+BUG 修复：
+* 移除戴森圣堂城区舰船上的常规圣堂阵营标签，以防它们出现在常规圣堂阵营中。希望如此。

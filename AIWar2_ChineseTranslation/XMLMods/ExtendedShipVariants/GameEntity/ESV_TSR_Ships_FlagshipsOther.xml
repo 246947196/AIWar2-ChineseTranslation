@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<entity name="TransportFlagship_CyberCommand" copy_from="TransportFlagship_Base" required_expansion_list="1_The_Spire_Rises" tags="ShowsOnNormalDisplayMode,Capturable"
+		display_name="网络指挥运输旗舰"
+		display_name_for_sidebar="网络运输舰"
+		description="使用更强的护盾隐藏其非常脆弱的船体，船体内充满支持CPU核心以实现更容易的入侵，但也消耗更多金属和能量维护。"
+		tech_upgrade_that_is_used_for_my_direct_science="Direct_AgileTransport"
+		hull_points="75000" shield_points="425000"
+		metal_cost="250000" energy_consumption="25000"
+		metal_to_claim="150000" armor_mm="50"
+		hacking_effect_multiplier="0.9"
+		hacking_cost_for_other_fleet_leaders_of_same_type_to_become_me="40"
+		boost_to_planetary_metal_production_if_have_been_here_and_non_crippled_for_x_time="0.9"
+		boost_to_planetary_energy_production_if_have_been_here_and_non_crippled_for_x_time="0.9"
+	>
+	</entity>
+
+	<entity name="TransportFlagship_CyberCommand_Seeded" copy_from="TransportFlagship_CyberCommand" required_expansion_list="1_The_Spire_Rises" capturable_seed_weight="20" tags="ShowsOnNormalDisplayMode,Capturable"
+		special_entity_type="MobileStrikeCombatFleetFlagship" fleet_design_logic_i_grant_one_from="MobileCombatFleet"
+		capturable_can_seed_at_all="true"
+		hacking_cost_for_other_fleet_leaders_of_same_type_to_become_me="0"
+	>
+	</entity>
+	
+	<entity name="AcidicSupportFactory" copy_from="AMU_SupportFactoryBase" required_expansion_list="1_The_Spire_Rises" fleet_design_templates_i_always_grant="CombatEngineers,CombatSentryFrigates" capturable_can_seed_at_all="true"
+		tags="Capturable,ShowsOnNormalDisplayMode"
+		display_name="酸性工厂"
+		display_name_for_sidebar="酸性C-FAC"
+		description="机动设施旗舰。如果舰队旗舰在同一或相邻行星且缺少单位，将自动生产替代品直接跃迁到该旗舰。制造具有伤害放大效果的无人机。"
+		description_short="机动设施，自动替换附近舰队损失并修理附近单位。制造具有伤害放大效果的无人机。"
+		fleet_design_template_i_use_for_drones="AcidicDrones"
+		drone_starting_behavior_type="Attacker_Full"
+		hacking_cost_for_other_fleet_leaders_of_same_type_to_become_me="35"
+	>
+		<metal_flow purpose="BuildingDronesInternally" throughput="1500" increase_per_mark_level="750" />
+	</entity>
+</root>

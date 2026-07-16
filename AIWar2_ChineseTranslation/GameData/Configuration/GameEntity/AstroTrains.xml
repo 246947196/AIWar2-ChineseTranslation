@@ -1,0 +1,757 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <entity name="AstroTrainStation"
+          thematic_groups="AI,AstroTrain"   npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+			tags="AstroTrainStation,ShowsOnNormalDisplayMode"
+			draw_in_galaxy_view="true"
+			visuals="assets/_finalgamemeshes/resources/fuelrefinery/fuelrefinery.prefab" gimbal_name="AstroTrainStation"
+			icon_name="Ships1/AstroTrainStation" gimbal_icon_size_multiplier="1.5"
+			category="Ship"
+			visuals_scale_multiplier="11"
+		    size_scale="6"
+			y_offset_of_icon="30"
+			collision_priority="810"
+			display_name="星际列车站"
+      display_name_for_sidebar="列车站"
+			target_type_for_player="NeverAutotargetButAllowManualTarget"
+			description="星际列车通过这样的车站前往车库。摧毁车站将改变列车的路线。"
+			behavior="Stationary"
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="2800"
+			hull_points="50000" shield_points="100000" speed="Immobile"
+			armor_mm="100" albedo="0.2" mass_tx="4"
+			metal_cost="1085000" energy_consumption="15000"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			voice_group="Silent"
+      
+      priority_as_frd_target="MajorPlanetLevelObjective" priority_as_ai_target="MajorPlanetLevelObjective" priority_to_protect="MajorPlanetLevelObjective"
+			>
+  </entity
+		>
+
+  <entity name="AstroTrainDepot"
+          thematic_groups="AI,AstroTrain"  npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+			tags="AstroTrainDepot,ShowsOnNormalDisplayMode"
+			draw_in_galaxy_view="true"
+                        shows_on_galaxy_map_for_explored_planets="true"
+			visuals="assets/arcenbundle/structures/ai/astrotraindepot.prefab" gimbal_name="AstroTrainDepot"
+			icon_name="Ships1/AstroTrainDepot" gimbal_icon_size_multiplier="1.7"
+			category="Ship"
+			visuals_scale_multiplier="8.4"
+		    size_scale="7"
+			y_offset_of_icon="30"
+			collision_priority="810"
+			display_name="星际列车车库"
+      display_name_for_sidebar="列车库"
+			description="AI会将列车派往这个车库，然后一些令人印象深刻的事情将会发生。"
+			behavior="Stationary"
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="5600"
+			hull_points="50000" shield_points="100000" speed="Immobile"
+			metal_cost="1085000" energy_consumption="15000"
+			armor_mm="100" albedo="0.2" mass_tx="4"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			voice_group="Silent"
+			description_appender_dll="AIWarExternalCode"
+			description_appender_type="Arcen.AIW2.External.AstroTrainDepotDescriptionAppender"
+       is_reinforcement_location="true" always_is_ai_turret_spawn_point="true"
+      priority_as_frd_target="MajorPlanetLevelObjective" priority_as_ai_target="MajorPlanetLevelObjective" priority_to_protect="MajorPlanetLevelObjective"
+			>
+  </entity>
+
+
+  <!--- Astro Trains -->
+
+  <!-- Low Astro Trains -->
+  <entity name="AstroTrainCarrierStyle" cannot_be_stacked="true"
+          thematic_groups="AI,AstroTrain"   npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+			tags="AstroTrain,BecomesNecromancyMummy,AstroTrainLow,ShowsOnNormalDisplayMode"
+		  ship_class_name="AstroTrain"
+			draw_in_galaxy_view="true"
+			gimbal_icon_size_multiplier="2.25"
+			visuals="Assets/_FinalGameMeshes/Specials/AstroTrain/AstroTrainCarrierStyle.prefab"
+			icon_name="Ships1/AstroTrain" icon_overlay="Overlays1/AstroTrain_Carrier"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="7"
+			visuals_scale_multiplier="2"
+			y_offset_of_icon="10"
+			collision_priority="100"
+			display_name="运载型星际列车"
+      display_name_for_sidebar="运载列车"
+			description="这辆星际列车正在运送资源前往列车车库。"
+			fleet_design_template_i_use_for_drones="AstroTrainDrones"
+			drone_starting_behavior_type="Attacker_Full"
+			starting_mark_level="Mark1"
+			cost_for_ai_to_purchase="2000"
+			hull_points="1000000" shield_points="1000000" speed="AboveAverage4"
+			metal_cost="605000" energy_consumption="30000"
+			armor_mm="120" albedo="0.4" engine_gx="22" mass_tx="8"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			voice_group="Silent"
+			description_appender_dll="AIWarExternalCode"
+			description_appender_type="Arcen.AIW2.External.AstroTrainDescriptionAppender"
+      can_pass_through_enemy_forcefields="true"
+      priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+	  pushes_enemy_shields="true"
+      metal_to_grant_on_death="50000"
+			science_to_grant_on_death="150"
+			hacking_to_grant_on_death="3"
+			>
+    <metal_flow purpose="BuildingDronesInternally" throughput="25000"/>
+    <system name="WD" display_name="弹道双发炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="3000" range="Normal6" shot_speed="Normal" rate_of_fire="High"
+				shots_per_salvo="10" fires_salvos_sequentially="false"
+				shot_type_data="DoubleShot_Red"
+				
+				>
+    </system>
+    <system name="WL" display_name="毁灭者聚变炸弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="6000" range="Normal6" shot_speed="Slow" rate_of_fire="High"
+				shots_per_salvo="10" fires_salvos_sequentially="false"
+				shot_type_data="FusionBomb"
+				base_percent_damage_bypasses_personal_shields="1"
+				only_targets_static_units="true"
+				>
+    </system>
+  </entity>
+
+  <entity name="AstroTrainWithRegularWeapons" cannot_be_stacked="true"
+          thematic_groups="AI,AstroTrain"  npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+			tags="AstroTrain,BecomesNecromancyMummy,AstroTrainLow,ShowsOnNormalDisplayMode"
+		  ship_class_name="AstroTrain"
+			draw_in_galaxy_view="true"
+			gimbal_icon_size_multiplier="2.25"
+			visuals="Assets/_FinalGameMeshes/Specials/AstroTrain/AstroTrainWithRegularWeapons.prefab"
+			icon_name="Ships1/AstroTrain"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="7"
+			visuals_scale_multiplier="2"
+			y_offset_of_icon="10"
+			collision_priority="100"
+			display_name="战斗型星际列车"
+      display_name_for_sidebar="战斗列车"
+			description="这辆星际列车正在运送武器前往列车车库。"
+			starting_mark_level="Mark1"
+			cost_for_ai_to_purchase="2000"
+			hull_points="1100000" shield_points="1100000" speed="Normal2"
+			metal_cost="605000" energy_consumption="30000"
+			armor_mm="120" albedo="0.4" engine_gx="22" mass_tx="8"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			voice_group="Silent"
+			description_appender_dll="AIWarExternalCode"
+			description_appender_type="Arcen.AIW2.External.AstroTrainDescriptionAppender"
+      can_pass_through_enemy_forcefields="true"      
+      priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="MidNasty" priority_to_protect="BigFavoriteToy"
+	  pushes_enemy_shields="true"
+      metal_to_grant_on_death="50000"
+			science_to_grant_on_death="150"
+			hacking_to_grant_on_death="3"
+			>
+    <system name="WD" display_name="弹道双发炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="3500" range="Normal6" shot_speed="Normal" rate_of_fire="High"
+				shots_per_salvo="15" fires_salvos_sequentially="false"
+				shot_type_data="DoubleShot_Red"
+				
+				>
+    </system>
+        <system name="WO" display_name="制导导弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="4000" range="High2" shot_speed="Normal" rate_of_fire="VeryLow"
+                shots_per_salvo="10" fires_salvos_sequentially="false"
+				shot_type_data="GuidedMissile"
+				
+				>
+    </system>
+    <system name="WL" display_name="毁灭者聚变炸弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="6000" range="Normal6" shot_speed="Slow" rate_of_fire="High"
+				shots_per_salvo="10" fires_salvos_sequentially="false"
+				shot_type_data="FusionBomb"
+				base_percent_damage_bypasses_personal_shields="1"
+				only_targets_static_units="true"
+				>
+    </system>
+  </entity>
+
+  <entity name="AstroTrainTankStyle" cannot_be_stacked="true"
+          thematic_groups="AI,AstroTrain"  npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+			tags="AstroTrain,BecomesNecromancyMummy,AstroTrainLow,ShowsOnNormalDisplayMode"
+		  ship_class_name="AstroTrain"
+			draw_in_galaxy_view="true"
+			gimbal_icon_size_multiplier="2.25"
+			visuals="Assets/_FinalGameMeshes/Specials/AstroTrain/AstroTrainTankStyle.prefab"
+			icon_name="Ships1/AstroTrain"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="7"
+			visuals_scale_multiplier="2"
+			y_offset_of_icon="10"
+			collision_priority="100"
+			display_name="重装型星际列车"
+      display_name_for_sidebar="重装列车"
+			description="这辆星际列车正在运送资源前往列车车库。"
+			starting_mark_level="Mark1"
+			cost_for_ai_to_purchase="2000"
+			hull_points="2000000" shield_points="2000000" speed="BelowAverage2"
+			metal_cost="605000" energy_consumption="30000"
+			armor_mm="120" albedo="0.4" engine_gx="22" mass_tx="8"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			voice_group="Silent"
+			description_appender_dll="AIWarExternalCode"
+			description_appender_type="Arcen.AIW2.External.AstroTrainDescriptionAppender"
+      can_pass_through_enemy_forcefields="true"      
+      priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="MidNasty" priority_to_protect="BigFavoriteToy"
+	  pushes_enemy_shields="true"
+      metal_to_grant_on_death="50000"
+			science_to_grant_on_death="150"
+			hacking_to_grant_on_death="3"
+			>
+    <system name="WL" display_name="毁灭者聚变炸弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="6000" range="Normal5" shot_speed="Slow" rate_of_fire="High"
+				shots_per_salvo="10" fires_salvos_sequentially="false"
+				shot_type_data="FusionBomb"
+				base_percent_damage_bypasses_personal_shields="1"
+				only_targets_static_units="true"
+				>
+    </system>
+  </entity>
+
+  <!-- Medium Trains -->
+  <entity name="AstroTrainCarrierStyleMedium" cannot_be_stacked="true"
+          copy_from="AstroTrainCarrierStyle" npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+			tags="AstroTrain,BecomesNecromancyMummy,AstroTrainMed,ShowsOnNormalDisplayMode"
+		  ship_class_name="MediumAstroTrain"
+			hull_points="1500000" shield_points="1500000" speed="AboveAverage5"
+			metal_cost="605000" energy_consumption="10000"
+			fleet_design_template_i_use_for_drones="AstroTrainDrones"
+			drone_starting_behavior_type="Attacker_Full"
+			>
+    <metal_flow purpose="BuildingDronesInternally" throughput="25000"/>
+    <system name="WD" display_name="弹道双发炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="3500" range="Normal6" shot_speed="Normal" rate_of_fire="High"
+				shots_per_salvo="12" fires_salvos_sequentially="false"
+				shot_type_data="DoubleShot_Red"
+				
+				>
+    </system>
+    <system name="WL" display_name="毁灭者聚变炸弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="7000" range="Normal6" shot_speed="Slow" rate_of_fire="High"
+				shots_per_salvo="12" fires_salvos_sequentially="false"
+				shot_type_data="FusionBomb"
+				base_percent_damage_bypasses_personal_shields="1"
+				only_targets_static_units="true"
+				>
+    </system>
+  </entity>
+
+  <entity name="AstroTrainWithRegularWeaponsMedium" cannot_be_stacked="true"
+          copy_from="AstroTrainWithRegularWeapons"
+			tags="AstroTrain,BecomesNecromancyMummy,AstroTrainMed,ShowsOnNormalDisplayMode"
+		  ship_class_name="MediumAstroTrain"
+			hull_points="1600000" shield_points="1600000" speed="Normal3"
+			>
+    <system name="WD" display_name="弹道双发炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="5000" range="Normal6" shot_speed="Normal" rate_of_fire="High"
+				shots_per_salvo="20" fires_salvos_sequentially="false"
+				shot_type_data="DoubleShot_Red"
+				
+				>
+    </system>
+        <system name="WO" display_name="制导导弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="5000" range="High2" shot_speed="Normal" rate_of_fire="VeryLow"
+                shots_per_salvo="10" fires_salvos_sequentially="false"
+				shot_type_data="GuidedMissile"
+				
+				>
+    </system>
+    <system name="WL" display_name="毁灭者聚变炸弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="7000" range="Normal6" shot_speed="Slow" rate_of_fire="High"
+				shots_per_salvo="15" fires_salvos_sequentially="false"
+				shot_type_data="FusionBomb"
+				base_percent_damage_bypasses_personal_shields="1"
+				only_targets_static_units="true"
+				>
+    </system>
+  </entity>
+
+  <entity name="AstroTrainTankStyleMedium" cannot_be_stacked="true"
+          copy_from="AstroTrainTankStyle"
+			tags="AstroTrain,BecomesNecromancyMummy,AstroTrainMed,ShowsOnNormalDisplayMode"
+		  ship_class_name="MediumAstroTrain"
+			hull_points="2500000" shield_points="2500000" speed="Normal1"
+			>
+    <system name="WL" display_name="毁灭者聚变炸弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="7000" range="Normal5" shot_speed="Slow" rate_of_fire="High"
+				shots_per_salvo="15" fires_salvos_sequentially="false"
+				shot_type_data="FusionBomb"
+				base_percent_damage_bypasses_personal_shields="1"
+				only_targets_static_units="true"
+				>
+    </system>
+  </entity>
+
+  <!-- High Trains -->
+  <entity name="AstroTrainCarrierStyleHigh" cannot_be_stacked="true"
+          copy_from="AstroTrainCarrierStyle"
+			tags="AstroTrain,BecomesNecromancyMummy,AstroTrainHigh,ShowsOnNormalDisplayMode"
+		  ship_class_name="LargeAstroTrain"
+			hull_points="2500000" shield_points="2500000" speed="AboveAverage6"
+			metal_cost="605000" energy_consumption="30000"
+			fleet_design_template_i_use_for_drones="AstroTrainDrones"
+			drone_starting_behavior_type="Attacker_Full"
+			>
+    <metal_flow purpose="BuildingDronesInternally" throughput="25000"/>
+    <system name="WD" display_name="弹道双发炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="14000" range="Normal6" shot_speed="Normal" rate_of_fire="High"
+				shots_per_salvo="14" fires_salvos_sequentially="false"
+				shot_type_data="DoubleShot_Red"
+				
+				>
+    </system>
+    <system name="WL" display_name="毁灭者聚变炸弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="20000" range="Normal6" shot_speed="Slow" rate_of_fire="High"
+				shots_per_salvo="15" fires_salvos_sequentially="false"
+				shot_type_data="FusionBomb"
+				base_percent_damage_bypasses_personal_shields="1"
+				only_targets_static_units="true"
+				>
+    </system>
+  </entity>
+
+  <entity name="AstroTrainWithRegularWeaponsHigh" cannot_be_stacked="true"
+          copy_from="AstroTrainWithRegularWeapons"
+			tags="AstroTrain,BecomesNecromancyMummy,AstroTrainHigh,ShowsOnNormalDisplayMode"
+		  ship_class_name="LargeAstroTrain"
+			hull_points="2600000" shield_points="2600000" speed="Normal3"
+			>
+    <system name="WD" display_name="弹道双发炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="20000" range="Normal6" shot_speed="Normal" rate_of_fire="High"
+				shots_per_salvo="20" fires_salvos_sequentially="false"
+				shot_type_data="DoubleShot_Red"
+				
+				>
+    </system>
+        <system name="WO" display_name="制导导弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="10000" range="High2" shot_speed="Normal" rate_of_fire="VeryLow"
+                shots_per_salvo="10" fires_salvos_sequentially="false"
+				shot_type_data="GuidedMissile"
+				
+				>
+    </system>
+    <system name="WL" display_name="毁灭者聚变炸弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="15000" range="Normal6" shot_speed="Slow" rate_of_fire="High"
+				shots_per_salvo="15" fires_salvos_sequentially="false"
+				shot_type_data="FusionBomb"
+				base_percent_damage_bypasses_personal_shields="1"
+				only_targets_static_units="true"
+				>
+    </system>
+  </entity>
+
+  <entity name="AstroTrainTankStyleHigh" cannot_be_stacked="true"
+          copy_from="AstroTrainTankStyle"
+			tags="AstroTrain,BecomesNecromancyMummy,AstroTrainHigh,ShowsOnNormalDisplayMode"
+		  ship_class_name="LargeAstroTrain"
+			hull_points="3500000" shield_points="3500000" speed="Normal1"
+			>
+    <system name="WL" display_name="毁灭者聚变炸弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="17500" range="Normal5" shot_speed="Slow" rate_of_fire="High"
+				shots_per_salvo="25" fires_salvos_sequentially="false"
+				shot_type_data="FusionBomb"
+				base_percent_damage_bypasses_personal_shields="1"
+				only_targets_static_units="true"
+				>
+    </system>
+  </entity>
+
+  <!-- Train Gaurds -->
+  <entity name="NucleophilicTrainGuard" copy_from="NucleophilicGuardian" thematic_groups="AI,Guardian,AstroTrain"  
+          display_name="核能列车守卫"
+      display_name_for_sidebar="核能守卫"
+          tags="AstroTrainGuard"
+          speed="High"
+          description_appender_dll="AIWarExternalCode"
+	  description_appender_type="Arcen.AIW2.External.AstroTrainGuardDescriptionAppender"
+          />
+  <entity name="ConcussionTrainGuard" copy_from="ConcussionGuardian" thematic_groups="AI,Guardian,AstroTrain" 
+          display_name="震荡列车守卫"
+      display_name_for_sidebar="震荡守卫"
+          tags="AstroTrainGuard"
+          speed="High"
+          description_appender_dll="AIWarExternalCode"
+	  description_appender_type="Arcen.AIW2.External.AstroTrainGuardDescriptionAppender"
+          />
+  <entity name="ParalysisTrainGuard" copy_from="ParalysisGuardian" thematic_groups="AI,Guardian,AstroTrain" 
+          display_name="麻痹列车守卫"
+      display_name_for_sidebar="麻痹守卫"
+          tags="AstroTrainGuard"
+          speed="High"
+          description_appender_dll="AIWarExternalCode"
+	  description_appender_type="Arcen.AIW2.External.AstroTrainGuardDescriptionAppender"
+          />
+  <entity name="PlasmaTrainGuard" copy_from="PlasmaGuardian" thematic_groups="AI,Guardian,AstroTrain" 
+          display_name="等离子列车守卫"
+      display_name_for_sidebar="等离子守卫"
+          tags="AstroTrainGuard"
+          speed="High"
+          description_appender_dll="AIWarExternalCode"
+	  description_appender_type="Arcen.AIW2.External.AstroTrainGuardDescriptionAppender"
+          />
+  
+  <!-- Below are the Prototype units - just to organise it a little.
+  ************************************************************************************************
+  ************************************************************************************************
+  ************************************************************************************************--> 
+
+    <entity name="Fenrir" tags="DireGuardian,Fenrir"
+            thematic_groups="AI,AstroTrain"  	
+		  ship_class_name="AstroTrainPrototype"
+			draw_in_galaxy_view="true"
+            special_entity_type="AIDireGuardian" gimbal_icon_size_multiplier="1.5"
+            visuals="Assets/_FinalGameMeshes/AIExtragalactic/Tier1_ExtragalacticMaugrim/Tier1_ExtragalacticMaugrim.prefab"
+            icon_name="Ships2/SomethingAperture" icon_overlay="Overlays2/Guardian_Carrier"
+            uses_large_health_bar="true"
+            category="Ship"
+            size_scale="9.5"
+			visuals_scale_multiplier="110"
+            y_offset_of_icon="35"
+            collision_priority="800"
+            display_name="芬里尔"
+            description="'魔格林'飞船的下一代原型机。拥有能穿透多个目标的远程扇形光束武器，以及短程防空炮和一组无人机。"
+			fleet_design_template_i_use_for_drones="FenrirDrones"
+			drone_starting_behavior_type="Attacker_Full"
+            blocks_enemy_claim_flows="true"
+            voice_group="Silent"
+			starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+			cost_for_ai_to_purchase="3000"			
+			hull_points="10000000" shield_points="5000000" speed="BelowAverage2"
+			metal_cost="800000" energy_consumption="100000"
+			armor_mm="245" albedo="0.4" engine_gx="20" mass_tx="9"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"			
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			>				
+    <metal_flow purpose="BuildingDronesInternally" throughput="4500" />			
+    <system name="R9" display_name="颚部光束炮"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="60000" range="High2" shot_speed="Normal" rate_of_fire="VeryLow"
+			shot_type_data="HeavyBeamInvisible"
+			beam_length_multiplier="1.3"
+			hits_all_intersecting_targets="true"				
+			shots_detonate_immediately="true"
+			number_beams_to_fire="5" beam_weapon_visual_style="Laser_Cyan"
+			degrees_offset_per_beam="1"					
+			>
+    </system>
+    <system name="WJ" display_name="防空炮阵列"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="400" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Normal" 
+			shots_per_salvo="20" fires_salvos_sequentially="true"
+			shot_type_data="FlakShotAOEBurstAtEnd"
+			area_of_effect_size="300"
+			maximum_number_of_targets_hit_per_shot="9"
+			>				
+    </system>	
+    </entity>
+  
+    <entity name="Reanimator" tags="DireGuardian,Reanimator"
+	        thematic_groups="AI,AstroTrain"   
+		  ship_class_name="AstroTrainPrototype"
+	        draw_in_galaxy_view="true"	
+            special_entity_type="AIDireGuardian" gimbal_icon_size_multiplier="1.5"
+            visuals="Assets/_FinalGameMeshes/AIExtragalactic/Tier2_ExtragalacticReanimator/Tier2_ExtragalacticReanimator.prefab"
+            icon_name="Ships2/SomethingAperture" icon_overlay="Overlays2/Guardian_Tethuida"
+            uses_large_health_bar="true"
+            category="Ship"
+            size_scale="5.5"
+			visuals_scale_multiplier="60"
+            y_offset_of_icon="35"
+            collision_priority="800"
+            display_name="复生者"
+            description="'温迪戈'飞船的下一代原型机。能将敌人转化为友方单位，并释放无人机复活阵亡的盟友。"
+			fleet_design_template_i_use_for_drones="ReanimatorDrones"
+			drone_starting_behavior_type="Attacker_Full"
+            blocks_enemy_claim_flows="true"
+            voice_group="Silent"
+			starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+			cost_for_ai_to_purchase="3000"			
+			hull_points="20000000" shield_points="10000000" speed="BelowAverage2"
+			metal_cost="800000" energy_consumption="25000"
+			armor_mm="245" albedo="0.4" engine_gx="20" mass_tx="9"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"			
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			>				
+    <metal_flow purpose="BuildingDronesInternally" throughput="3000" />			
+    <system name="WR" display_name="复生射线"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="8000" range="AboveAverage4" shot_speed="Normal" rate_of_fire="High"
+            shots_per_salvo="50" fires_salvos_sequentially="false"
+			shot_type_data="NanocaustCurvedSicklyGreenShot"	added_target_evaluator="ZombifyAsPrimary"				
+			>
+            <death_effect_damage type="Nanocaustation" tier_name="Reanimator"/>
+    </system>
+    <system name="WT" display_name="复生冲击波"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="120000" range="AboveAverage4" shot_speed="Slow" rate_of_fire="Low" fires_salvos_sequentially="true"
+			shot_type_data="PlasmaTorpedoAOEBurstAtEnd" added_target_evaluator="ZombifyAsPrimary"
+			area_of_effect_size="1000"
+			aoe_spreads_damage_among_available_targets="true"
+			>
+			<death_effect_damage type="Nanocaustation" tier_name="Reanimator"/>
+    </system>	
+    </entity>
+
+    <entity name="Umbra" tags="DireGuardian,Umbra"
+	        thematic_groups="AI,AstroTrain"  
+		  ship_class_name="AstroTrainPrototype"
+            draw_in_galaxy_view="true"	        
+            special_entity_type="AIDireGuardian" gimbal_icon_size_multiplier="1.5"
+            visuals="Assets/_FinalGameMeshes/AIExtragalactic/Tier1_ExtragalacticTrespasser/Tier1_ExtragalacticTrespasser.prefab"
+            icon_name="Ships2/SomethingAperture" icon_overlay="Overlays2/Guardian_Stealth"
+            uses_large_health_bar="true"
+            category="Ship"
+            size_scale="9"
+			visuals_scale_multiplier="60"
+            y_offset_of_icon="35"
+            collision_priority="800"
+            display_name="暗影"
+            description="'幽灵'飞船的下一代原型机。具有隐形能力且难以被发现，能够完全无视力场和个人护盾。"
+            blocks_enemy_claim_flows="true"
+            voice_group="Silent"
+			starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+			cost_for_ai_to_purchase="3000"			
+			hull_points="10000000" shield_points="5000000" speed="BelowAverage2"
+			metal_cost="800000" energy_consumption="100000"
+			armor_mm="245" albedo="0.7" engine_gx="20" mass_tx="9"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"			
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			>					
+    <system name="WL" display_name="半影聚变炸弹"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="10000" range="AboveAverage1" shot_speed="Slow" rate_of_fire="VeryLow"
+			shots_per_salvo="35" fires_salvos_sequentially="false"
+			shot_type_data="FusionBomb" cloaking_percent_loss_from_firing="0.05"
+			base_percent_damage_bypasses_personal_shields="1"
+			fires_through_enemy_shields="true"
+			>
+    </system>
+    <system name="W2" display_name="暗影聚变迫击炮"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="80000" range="AboveAverage1" shot_speed="Slow" rate_of_fire="Normal" fires_salvos_sequentially="false"				
+			shot_type_data="FusionBomb" cloaking_percent_loss_from_firing="0.05"
+			base_percent_damage_bypasses_personal_shields="1"
+			fires_through_enemy_shields="true"
+			>
+			<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="HullOnly" comparison_type="AtLeast" compared_to="75" multiplier="1.5" />
+    </system>	
+    <system name="C" display_name="隐形装置"
+			category="Passive"
+			cloaking_points="10000"
+			>
+    </system>
+    </entity>
+
+    <entity name="Shellshocker" tags="DireGuardian,Shellshocker"
+	        thematic_groups="AI,AstroTrain"  
+		  ship_class_name="AstroTrainPrototype"
+            draw_in_galaxy_view="true"	        
+            special_entity_type="AIDireGuardian" gimbal_icon_size_multiplier="1.5"
+            visuals="Assets/_FinalGameMeshes/AIExtragalactic/Tier2_ExtragalacticShellshocker/Tier2_ExtragalacticShellshocker.prefab"
+            icon_name="Ships2/SomethingAperture" icon_overlay="Overlays2/Guardian_Grenade"
+            uses_large_health_bar="true"
+            category="Ship"
+            size_scale="4.8"
+			visuals_scale_multiplier="50"
+            y_offset_of_icon="35"
+            collision_priority="800"
+            display_name="震荡者"
+            description="'巨龙'飞船的下一代原型机。具有远程溅射伤害能力，并能对被击中的目标施加减益效果。"
+            blocks_enemy_claim_flows="true"
+            voice_group="Silent"
+			starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+			cost_for_ai_to_purchase="3000"			
+			hull_points="20000000" shield_points="10000000" speed="BelowAverage2"
+			metal_cost="800000" energy_consumption="100000"
+			armor_mm="245" albedo="0.4" engine_gx="20" mass_tx="9"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"			
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			>				
+	<system name="WJ" display_name="震荡榴弹"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="7500" range="High2" shot_speed="Normal" rate_of_fire="High"
+			shots_per_salvo="8" fires_salvos_sequentially="true"
+			shot_type_data="FlakShotAOEBurstAtEnd"
+			area_of_effect_size="900"
+			maximum_number_of_targets_hit_per_shot="10"
+			base_engine_stun_per_shot="30" engine_stun_to_engine_gx_less_than="14"
+			max_engine_stun_seconds="30"
+            base_enemy_weapon_reload_slowing_seconds_per_shot="20" enemy_weapon_reload_slowing_to_armor_mm_less_than="80"
+			max_enemy_weapon_reload_slowing_seconds="20"
+			>
+			<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="30" multiplier="6" />
+    </system>
+    </entity>
+
+    <entity name="Custodian" tags="DireGuardian,Custodian"
+	        thematic_groups="AI,AstroTrain"  
+		  ship_class_name="AstroTrainPrototype"
+	        draw_in_galaxy_view="true"
+            special_entity_type="AIDireGuardian" gimbal_icon_size_multiplier="1.5"
+            visuals="Assets/_FinalGameMeshes/AIExtragalactic/Tier3_ExtragalacticCommandDeck/Tier3_ExtragalacticCommandDeck.prefab"
+            icon_name="Ships2/SomethingAperture" icon_overlay="Overlays2/Guardian_Shield"
+            uses_large_health_bar="true"
+            category="Ship"
+            size_scale="12.5"
+			visuals_scale_multiplier="18"
+			y_offset_of_ship_in_visual_space="15"
+            y_offset_of_icon="35"
+            collision_priority="800"
+            display_name="守护者"
+            description="'雷霆之子'飞船的下一代原型机。比原版更容易生产但更弱。拥有远程攻击能力，能增强行星上的盟友，用力场保护他们，并在有守卫哨站时无敌。"
+			shield_size_scale="5" my_forcefield_does_not_shrink="true" max_count_per_npc_faction_before_stack="3" my_forcefield_has_no_penalty_for_enemies_firing_out_of_it="true"
+            blocks_enemy_claim_flows="true"
+            voice_group="Silent"
+			starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+			cost_for_ai_to_purchase="3000"			
+			hull_points="30000000" shield_points="15000000" speed="Normal3"
+			metal_cost="800000" energy_consumption="100000"
+			armor_mm="245" albedo="0.4" engine_gx="20" mass_tx="9"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"			
+      priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+          external_invulnerability_unit_tag=""
+          external_invulnerability_unit_type="GuardPost"
+          external_invulnerability_region="ThisPlanet"
+			allied_speed_multiplier="1.25"
+			allied_attack_multiplier="1.25"			
+			>				
+    <system name="WD" display_name="弹道散射双发炮"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="2000" range="Normal6" shot_speed="Normal" rate_of_fire="High"
+			shots_per_salvo="70" fires_salvos_sequentially="false"
+			shot_type_data="DoubleShot_Blue"				
+			>
+    </system>
+    <system name="Q1" display_name="特斯拉冲击炮"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="2500000" range="EssentiallyInfinite" shot_speed="Instant" rate_of_fire="PeriodicActivation" fires_salvos_sequentially="false"
+			shot_type_data="LightningExplosionAOEShot" cloaking_percent_loss_from_firing="0.1"
+			area_of_effect_size="4000"
+            aoe_spreads_damage_among_available_targets="true"				
+			>	
+    </system>	
+    </entity>
+
+    <entity name="WarspiteArtillery" tags="DireGuardian,WarspiteArtillery"
+	        thematic_groups="AI,AstroTrain"  
+		  ship_class_name="AstroTrainPrototype"
+            draw_in_galaxy_view="true"	 	        
+            special_entity_type="AIDireGuardian" gimbal_icon_size_multiplier="1.5"
+            visuals="Assets/_FinalGameMeshes/AIExtragalactic/Tier2_ExtragalacticWarspiteArtillery/Tier2_ExtragalacticWarspiteArtillery.prefab"
+            icon_name="Ships2/SomethingAperture" icon_overlay="Overlays1/MegaTurret_MassDriver"
+            uses_large_health_bar="true"
+            category="Ship"
+			size_scale="15"
+			visuals_scale_multiplier="125"
+            y_offset_of_icon="35"
+            collision_priority="800"
+            display_name="战争之怒火炮"
+            description="'奇美拉火炮'飞船的下一代原型机。持续进行远程轰击，影响小范围内所有目标。"
+            blocks_enemy_claim_flows="true"
+            voice_group="Silent"
+			starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+			cost_for_ai_to_purchase="3000"			
+			hull_points="10000000" shield_points="5000000" speed="BelowAverage2"
+			metal_cost="800000" energy_consumption="100000"
+			armor_mm="245" albedo="0.4" engine_gx="20" mass_tx="9"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"			
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			>
+		<data_extension name="DLC3" required_expansion_list="3_The_Neinzul_Abyss" immune_to_necromancy="true"/>
+		<entity_type_drawing_bag_used_on_death data_list="Warspite" />
+		<system name="WU" display_name="高能爆破弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="100000" range="InsanelyHigh" shot_speed="Slow" rate_of_fire="Devourer" fires_salvos_sequentially="true"
+				shot_type_data="FlakShotAOEBurstAtEnd"
+				area_of_effect_size="500"				
+				>
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="1.2" />
+		</system>
+    </entity>
+
+    <entity name="Warspite" tags="DireGuardian,Warspite"
+	        thematic_groups="AI,AstroTrain"  
+			ship_class_name="AstroTrainPrototype"
+            draw_in_galaxy_view="true"	        
+            special_entity_type="AIDireGuardian" gimbal_icon_size_multiplier="1.5"
+            visuals="Assets/_FinalGameMeshes/AIExtragalactic/Tier2_ExtragalacticWarspite/Tier2_ExtragalacticWarspite.prefab"
+            icon_name="Ships2/SomethingAperture" icon_overlay="Overlays2/Guardian_Tantruming"
+            uses_large_health_bar="true"
+            category="Ship"
+			size_scale="15"
+			visuals_scale_multiplier="125"
+            y_offset_of_icon="35"
+            collision_priority="800"
+            display_name="战争之怒"
+            description="原本隐藏在战争之怒火炮内部，现在非常愤怒。"
+            blocks_enemy_claim_flows="true"
+            voice_group="Silent"
+			starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+			cost_for_ai_to_purchase="3000"			
+			hull_points="10000000" shield_points="5000000" speed="BelowAverage2"
+			metal_cost="800000" energy_consumption="50000"
+			armor_mm="150" albedo="0.4" engine_gx="20" mass_tx="7"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"			
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			>			
+		<system name="WT" display_name="等离子冲击炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="150000" range="AboveAverage3" shot_speed="Slow" rate_of_fire="Normal"
+				shots_per_salvo="8" fires_salvos_sequentially="false"
+				shot_type_data="PlasmaTorpedo"
+				>     
+		</system>
+    </entity>  
+  
+</root>

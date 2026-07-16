@@ -1,0 +1,2517 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <entity name="NucleophilicGuardian"
+          thematic_groups="AI,Guardian"
+			special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+			visuals="assets/_finalgamemeshes/guardians/laserguardian/laserguardian.prefab"
+			icon_name="Ships1/Guardian" icon_overlay="Overlays2/Guardian_Nucleophilic"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="3.6"
+			visuals_scale_multiplier="4"
+			y_offset_of_icon="16"
+			collision_priority="400"
+			display_name="亲核守护者"
+	    display_name_for_sidebar="亲核守护舰"
+			description="发射快速电子脉冲，对能耗较高的单位造成更高伤害。"
+			blocks_enemy_claim_flows="true"
+			voice_group="Silent"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="525" strength_multiplier="1.5"			
+			hull_points="54000" shield_points="26000" speed="AboveAverage1"
+			metal_cost="80000" energy_consumption="7500"
+			armor_mm="50" albedo="0.3" engine_gx="7" mass_tx="5"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+      priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			>
+    <ai_ship_group_membership name="EyeGuardiansWithAntiLargeSupport" weight="100"/>			
+    <ai_ship_group_membership name="TutorialBasicGuardians" weight="100"/>
+    <ai_ship_group_membership name="AntiLargeGuardians" weight="100"/>
+    <ai_ship_group_membership name="EnergeticGuardians" weight="100"/>
+    <ai_ship_group_membership name="CoreGuardians" weight="100"/>	
+    <system name="R5" display_name="电子脉冲"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="3600" range="AboveAverage1" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="true"
+				shot_type_data="LaserPulse_RedLevel2"				
+				>
+				<outgoing_damage_modifier based_on="EnergyUsage" comparison_type="AtLeast" compared_to="7000" multiplier="6" />
+    </system>
+  </entity>
+
+			
+  <entity name="RoyalNucleophilicGuardian" display_name="皇家亲核守护者" copy_from="NucleophilicGuardian"
+	    display_name_for_sidebar="亲核皇家守护舰"
+            hull_points="108000" shield_points="52000"
+			cost_for_ai_to_purchase="785"
+			starting_mark_level="Mark1"
+  >
+    <ai_ship_group_membership name="RoyalEyeGuardiansWithAntiLargeSupport" weight="100"/>
+    <ai_ship_group_membership name="RoyalAntiLargeGuardians" weight="100"/>
+    <ai_ship_group_membership name="RoyalEnergeticGuardians" weight="100"/>
+    <ai_ship_group_membership name="RoyalCoreGuardians" weight="100"/>	
+    <system name="R5" damage_per_shot="7200" />
+  </entity>
+
+  
+  
+  <entity name="StealthGuardian"
+          thematic_groups="AI,Guardian"
+	  special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+          tags="WormholeInvasionGuardian"
+			visuals="assets/_finalgamemeshes/guardians/stealthguardian/stealthguardian.prefab"
+			icon_name="Ships1/Guardian" icon_overlay="Overlays2/Guardian_Stealth"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="3.6"
+			visuals_scale_multiplier="4"
+			y_offset_of_icon="16"
+			collision_priority="400"
+			display_name="隐形守护者"
+	    display_name_for_sidebar="隐形守护舰"
+			description="隐形守护者，可绕过个人护盾。"
+			blocks_enemy_claim_flows="true"
+			voice_group="Silent"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="700" strength_multiplier="2.2"		
+			hull_points="33000" shield_points="17000" speed="AboveAverage6"
+			metal_cost="80000" energy_consumption="7500"
+			armor_mm="50" albedo="0.7" engine_gx="9" mass_tx="5"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+      priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			>
+    <ai_ship_group_membership name="AntiStructureGuardians" weight="100"/>
+    <ai_ship_group_membership name="CloakingForcefieldAndCarrierGuardians" weight="100"/>
+    <ai_ship_group_membership name="SwarmerCloakingForcefieldAndCarrierGuardians" weight="100"/>	
+    <system name="WL" display_name="聚变炸弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="500" range="Small4" shot_speed="Slow" rate_of_fire="Normal" fires_salvos_sequentially="false"
+				shots_per_salvo="5"
+				shot_type_data="FusionBomb"
+				base_percent_damage_bypasses_personal_shields="0.9" cloaking_percent_loss_from_firing="0.2"
+				>
+				<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="HullOnly" comparison_type="AtLeast" compared_to="50" multiplier="1.5" />
+    </system>
+    <system name="C" display_name="隐形装置"
+				category="Passive"
+				cloaking_points="2000" cloaking_points_added_per_mark="1000"
+				>
+    </system>
+  </entity>
+  
+  <entity name="RoyalStealthGuardian" display_name="皇家隐形守护者" copy_from="StealthGuardian" 
+	    display_name_for_sidebar="隐形皇家守护舰"
+            hull_points="66000" shield_points="34000"
+			cost_for_ai_to_purchase="1045"
+			starting_mark_level="Mark1"
+  >
+    <ai_ship_group_membership name="RoyalAntiStructureGuardians" weight="100"/>	  
+    <system name="WL" damage_per_shot="1000" />
+  </entity>
+  
+  
+	<entity name="TritiumSniperGuardian"
+	        thematic_groups="AI,Guardian"
+			special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+			visuals="assets/_finalgamemeshes/guardians/sniperguardian/sniperguardian.prefab"
+			icon_name="Ships1/Guardian" icon_overlay="Overlays2/Guardian_Sniper"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="4.4"
+			visuals_scale_multiplier="4.3"
+			y_offset_of_icon="16"
+			collision_priority="400"
+			display_name="氚狙击守护者"
+			display_name_for_sidebar="狙击守护舰"
+			description="旨在从任何距离摧毁低辐射防护的单位，或近距离摧毁泡泡力场。"
+			blocks_enemy_claim_flows="true"
+			voice_group="Silent"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="450" strength_multiplier="2"		
+			hull_points="27000" shield_points="13000" speed="BelowAverage1"
+			metal_cost="80000" energy_consumption="7500"
+			armor_mm="40" albedo="0.4" engine_gx="14" mass_tx="5"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			cannot_target_or_alert_ai_reinforcement_spots="true"
+			priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			>
+		<ai_ship_group_membership name="BombardmentGuardiansWithSupport" weight="100"/>
+		<system name="Q9" display_name="氚轨道炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="180" range="EssentiallyInfinite" shot_speed="VeryFast" rate_of_fire="Misery" fires_salvos_sequentially="true"
+				shot_type_data="ExtremeLongRangeRailgun"				
+				>
+			<outgoing_damage_modifier based_on="Albedo" comparison_type="AtMost" compared_to="0.3" multiplier="8" />
+		</system>
+		<system name="V3" display_name="毒刺螺栓"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="400" range="AboveAverage2" shot_speed="Normal" rate_of_fire="VeryLow" fires_salvos_sequentially="true"
+				shot_type_data="StingerBolt"
+                priority_for_kiting="0"
+				>
+			<outgoing_damage_modifier applies_to="AllShields" based_on="MaxBubbleForcefield" comparison_type="GreaterThan" compared_to="10000" multiplier="4" />
+		</system>
+	</entity>
+	
+	<entity name="RoyalTritiumSniperGuardian" display_name="皇家氚狙击守护者"
+			display_name_for_sidebar="狙击皇家守护舰" copy_from="TritiumSniperGuardian" 
+			hull_points="54000" shield_points="26000"
+			cost_for_ai_to_purchase="675"
+			cannot_target_or_alert_ai_reinforcement_spots="true"
+			starting_mark_level="Mark1"
+			>
+		<ai_ship_group_membership name="RoyalBombardmentGuardiansWithSupport" weight="100"/>  
+		<system name="Q9" damage_per_shot="360" />
+		<system name="V3" damage_per_shot="800" />
+	</entity>
+	
+	<!-- Specialty sniper guardian exclusively used by AI Warden forces -->
+	<entity name="WardenSniperGuardian"
+	        thematic_groups="AI,Guardian"
+			special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+			visuals="assets/_finalgamemeshes/guardians/sniperguardian/sniperguardian.prefab"
+			icon_name="Ships1/Guardian" icon_overlay="Overlays2/HunterKiller_Rank2"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="4.4"
+			visuals_scale_multiplier="4.3"
+			y_offset_of_icon="16"
+			collision_priority="400"
+			display_name="典狱长狙击守护者"
+			display_name_for_sidebar="典狱长狙击守护舰"
+			description="旨在从远距离支援典狱长行动并压制敌人。"
+			blocks_enemy_claim_flows="true"
+			voice_group="Silent"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="550" strength_multiplier="2"
+			hull_points="40500" shield_points="19500" speed="BelowAverage1"
+			metal_cost="80000" energy_consumption="7500"
+			armor_mm="40" albedo="0.4" engine_gx="14" mass_tx="5"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			cannot_target_or_alert_ai_reinforcement_spots="true"
+			priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			>
+		<ai_ship_group_membership name="WardenGuardians" weight="100"/>
+		<system name="Q9" display_name="双抑制轨道炮"
+				category="Weapon" firing_timing="OnlyInRange" range="EssentiallyInfinite"
+				fires_salvos_sequentially="true" shot_type_data="ExtremeLongRangeRailgun"
+				damage_per_shot="250" shots_per_salvo="2" rate_of_fire="Misery" shot_speed="VeryFast"
+				base_enemy_weapon_reload_slowing_seconds_per_shot="3"
+				added_enemy_weapon_reload_slowing_seconds_per_shot_per_mark="2"
+				enemy_weapon_reload_slowing_to_armor_mm_less_than="85"
+				max_enemy_weapon_reload_slowing_seconds="15"
+				added_target_evaluator="WeaponJamAsPrimary">
+			<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="70" multiplier="4" />
+		</system>
+		<system name="V3" display_name="能量波"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="100" range="AboveAverage2" shot_speed="Normal" rate_of_fire="FairlyLow"
+                shots_per_salvo="12" fires_salvos_sequentially="false"
+                base_paralysis_seconds_per_shot="3" paralysis_to_ships_mass_tx_less_than="2" added_target_evaluator="ParalyzerAsPrimary"
+				base_knockback_per_shot="1000" added_knockback_per_shot_per_mark="400" knockback_to_ships_mass_tx_less_than="2"
+				shot_type_data="EnergyWave"
+                priority_for_kiting="0"
+                >
+		</system>
+	</entity>
+
+  
+  <entity name="ConcussionGuardian"
+          thematic_groups="AI,Guardian"
+			special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+			visuals="assets/_finalgamemeshes/guardians/missileguardian/missileguardian.prefab"
+			icon_name="Ships1/Guardian" icon_overlay="Overlays2/Guardian_Concussion"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="4.6"
+			visuals_scale_multiplier="4"
+			y_offset_of_icon="16"
+			collision_priority="400"
+			display_name="震荡守护者"
+	    display_name_for_sidebar="震荡守护舰"
+			description="发射远程导弹。"
+			blocks_enemy_claim_flows="true"
+			voice_group="Silent"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="450" strength_multiplier="1.5"
+			hull_points="26000" shield_points="14000" speed="BelowAverage2"
+			metal_cost="80000" energy_consumption="7500"
+			armor_mm="40" albedo="0.4" engine_gx="14" mass_tx="5"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+      priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			>
+    <ai_ship_group_membership name="TutorialBasicGuardians" weight="100"/>
+    <ai_ship_group_membership name="BombardmentGuardiansWithSupport" weight="100"/>
+    <ai_ship_group_membership name="CoreGuardians" weight="100"/>
+    <ai_ship_group_membership name="AntiArmorGuardians" weight="100"/>		
+    <system name="Q5" display_name="震荡导弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="450" range="High1" shot_speed="Normal" rate_of_fire="VeryLow"
+				shots_per_salvo="10" fires_salvos_sequentially="false"
+				shot_type_data="GuidedMissile"				
+				>
+				<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="50" multiplier="6" />
+    </system>
+  </entity>
+
+  <entity name="InstigatorConcussionGuardian"  copy_from="ConcussionGuardian" starting_mark_level="Mark1"  tags="InstigatorSpawn"
+			 >    
+  </entity>
+  
+  <entity name="RoyalConcussionGuardian" display_name="皇家震荡守护者" copy_from="ConcussionGuardian" 
+	    display_name_for_sidebar="震荡皇家守护舰"
+            hull_points="52000" shield_points="28000"
+			cost_for_ai_to_purchase="675"
+			starting_mark_level="Mark1"
+  >
+    <ai_ship_group_membership name="RoyalBombardmentGuardiansWithSupport" weight="100"/>
+    <ai_ship_group_membership name="RoyalCoreGuardians" weight="100"/>
+    <ai_ship_group_membership name="RoyalAntiArmorGuardians" weight="100"/>	
+    <system name="Q5" damage_per_shot="900" />
+  </entity>
+  
+  
+
+  <entity name="SpiderGuardian"
+          thematic_groups="AI,Guardian"
+			special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+			visuals="Assets/_FinalGameMeshes/Guardians/SpiderAndParalysisGuardian/SpiderGuardian.prefab"
+			icon_name="Ships1/Guardian" icon_overlay="Overlays2/Guardian_Spider"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="3.6"
+			visuals_scale_multiplier="2"
+			y_offset_of_icon="16"
+			collision_priority="400"
+			display_name="蜘蛛守护者"
+	    display_name_for_sidebar="蜘蛛守护舰"
+			description="速度快，配备霰弹枪式武器，能大幅减缓敌方行动。"
+			blocks_enemy_claim_flows="true"
+			voice_group="Silent"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="520" strength_multiplier="1.5"			
+			hull_points="54000" shield_points="26000" speed="AboveAverage4"
+			metal_cost="80000" energy_consumption="7500"
+			armor_mm="40" albedo="0.4" engine_gx="14" mass_tx="5"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+      priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			>
+    <ai_ship_group_membership name="TutorialBasicGuardians" weight="100"/>
+	<ai_ship_group_membership name="PoliceGuardians" weight="100"/>	
+	<ai_ship_group_membership name="BombardmentGuardiansWithSupport" weight="100"/>
+    <ai_ship_group_membership name="AntiMeleeGuardians" weight="100"/>
+    <ai_ship_group_membership name="MassCarrierGuardiansWithSupport" weight="100"/>	
+	<ai_ship_group_membership name="SwarmerMassCarrierGuardiansWithSupport" weight="100"/>
+    <ai_ship_group_membership name="WardenGuardians" weight="100"/>
+    <ai_ship_group_membership name="RiotPoliceGuardians" weight="100"/>		
+    <system name="Q4" display_name="蜘蛛加农炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="150" range="Normal4" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="false"
+				shots_per_salvo="30"
+				base_engine_stun_per_shot="12" added_engine_stun_per_shot_per_mark="3" engine_stun_to_engine_gx_less_than="14"
+				max_engine_stun_seconds="30" added_target_evaluator="EngineDamageAsMajorPrimary"
+				shot_type_data="EngineDisruptingShell"
+				>
+    </system>
+  </entity>
+  
+  <entity name="RoyalSpiderGuardian" display_name="皇家蜘蛛守护者" copy_from="SpiderGuardian" 
+	    display_name_for_sidebar="蜘蛛皇家守护舰"
+            hull_points="108000" shield_points="52000"
+			cost_for_ai_to_purchase="780"
+			starting_mark_level="Mark1"
+  >
+    <ai_ship_group_membership name="RoyalBombardmentGuardiansWithSupport" weight="100"/>
+    <ai_ship_group_membership name="RoyalAntiMeleeGuardians" weight="100"/>
+	<ai_ship_group_membership name="RoyalPoliceGuardians" weight="100"/>
+    <ai_ship_group_membership name="RoyalWardenGuardians" weight="100"/>	
+    <ai_ship_group_membership name="RoyalRiotPoliceGuardians" weight="100"/>		
+    <system name="Q4" damage_per_shot="300" base_engine_stun_per_shot="16" added_engine_stun_per_shot_per_mark="4" max_engine_stun_seconds="40" />
+  </entity>  
+  
+  
+  
+   <entity name="ParalysisGuardian"
+           thematic_groups="AI,Guardian"
+			special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+			visuals="Assets/_FinalGameMeshes/Guardians/SpiderAndParalysisGuardian/ParalysisGuardian.prefab"
+			icon_name="Ships1/Guardian" icon_overlay="Overlays2/Guardian_Paralysis"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="3.6"
+			visuals_scale_multiplier="2"
+			y_offset_of_icon="16"
+			collision_priority="400"
+			display_name="瘫痪守护者"
+	    display_name_for_sidebar="瘫痪守护舰"
+			description="会使多个目标瘫痪的令人不适的守护者。"
+			blocks_enemy_claim_flows="true"
+			voice_group="Silent"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="510" strength_multiplier="1.5"		
+			hull_points="54000" shield_points="26000" speed="AboveAverage4"
+			metal_cost="80000" energy_consumption="7500"
+			armor_mm="90" albedo="0.4" engine_gx="7" mass_tx="5"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+      priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			>
+    <ai_ship_group_membership name="ParalysisAndVampireGuardians" weight="100"/>			
+    <ai_ship_group_membership name="TutorialBasicGuardians" weight="100"/>
+	<ai_ship_group_membership name="LeecherGuardians" weight="100"/>
+    <ai_ship_group_membership name="RiotPoliceGuardians" weight="100"/>		
+    <system name="Q2" display_name="瘫痪螺栓"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="200" range="Normal4" shot_speed="Normal" rate_of_fire="Normal"
+				shots_per_salvo="20" fires_salvos_sequentially="false"
+				base_paralysis_seconds_per_shot="2" added_paralysis_seconds_per_shot_per_mark="1" paralysis_to_ships_mass_tx_less_than="2"
+				shot_type_data="ParalysisProngedShot_Blue" added_target_evaluator="ParalyzerAsPrimary"
+				>
+    </system>
+  </entity>
+  
+  <entity name="RoyalParalysisGuardian" display_name="皇家瘫痪守护者" copy_from="ParalysisGuardian"
+	    display_name_for_sidebar="瘫痪皇家守护舰"
+            hull_points="108000" shield_points="52000"
+			cost_for_ai_to_purchase="765"
+			starting_mark_level="Mark1"
+  >
+    <ai_ship_group_membership name="RoyalParalysisAndVampireGuardians" weight="100"/> 
+    <ai_ship_group_membership name="RoyalLeecherGuardians" weight="100"/>
+    <ai_ship_group_membership name="RoyalRiotPoliceGuardians" weight="100"/>		
+    <system name="Q2" damage_per_shot="400" base_paralysis_seconds_per_shot="4" added_paralysis_seconds_per_shot_per_mark="2"/>
+  </entity>
+  
+  
+
+  <entity name="TractorGuardian"
+          thematic_groups="AI,Guardian"
+	  special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+          tags="WormholeInvasionGuardian"
+			visuals="assets/_finalgamemeshes/guardians/TractorGuardian/TractorGuardian.prefab"
+			icon_name="Ships1/Guardian" icon_overlay="Overlays2/Guardian_Tractor"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="4.2"
+			visuals_scale_multiplier="3"
+			y_offset_of_icon="16"
+			collision_priority="400"
+			display_name="牵引守护者"
+	    display_name_for_sidebar="牵引守护舰"
+			description="拥有牵引光束，可固定或拖拽周围的单位。"
+			blocks_enemy_claim_flows="true"
+			voice_group="Silent"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="528" strength_multiplier="1.5"		
+			hull_points="54000" shield_points="26000" speed="Normal2"
+			is_disallowed_from_spawning_in_waves="true"
+			metal_cost="80000" energy_consumption="7500"
+			armor_mm="90" albedo="0.3" engine_gx="10" mass_tx="5"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+      priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			>
+    <ai_ship_group_membership name="BombardmentGuardiansWithSupport" weight="100"/>			
+	<ai_ship_group_membership name="PoliceGuardians" weight="100"/>
+    <ai_ship_group_membership name="AOEGuardiansWithMovementSupport" weight="100"/>	
+    <ai_ship_group_membership name="AntiStructureGuardians" weight="100"/>
+    <ai_ship_group_membership name="MassCarrierGuardiansWithSupport" weight="100"/>
+    <ai_ship_group_membership name="SwarmerMassCarrierGuardiansWithSupport" weight="100"/>	
+    <system name="WL" display_name="聚变炸弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="2000" range="Normal4" shot_speed="Normal" rate_of_fire="RatherLow" 
+				shots_per_salvo="5" fires_salvos_sequentially="false"
+				shot_type_data="FusionBomb"
+				base_percent_damage_bypasses_personal_shields="0.6" added_percent_damage_bypasses_personal_shields_per_mark="0.05"
+				>
+    </system>
+    <system name="T1" display_name="牵引光束"
+				category="Passive"
+				tractor_range="Normal4" tractor_count="60" tractor_count_added_per_mark="30" tractor_hits_albedo_less_than="0.5" tractor_hits_engine_gx_less_than="15"
+				>
+    </system>
+	<system name="T2" display_name="超光速子阵列"
+				category="Passive" tachyon_points="50" tachyon_points_added_per_mark="25" tachyon_range="Normal4" tachyon_hits_albedo_less_than="0.75"></system>
+  </entity>
+  
+  <entity name="RoyalTractorGuardian" display_name="皇家牵引守护者" copy_from="TractorGuardian"
+	    display_name_for_sidebar="牵引皇家守护舰"
+            hull_points="108000" shield_points="52000"
+          is_disallowed_from_spawning_in_waves="true"
+			cost_for_ai_to_purchase="792"
+			starting_mark_level="Mark1"
+  >
+    <ai_ship_group_membership name="RoyalBombardmentGuardiansWithSupport" weight="100"/>  
+	<ai_ship_group_membership name="RoyalPoliceGuardians" weight="100"/>  
+    <ai_ship_group_membership name="RoyalAOEGuardiansWithMovementSupport" weight="100"/>
+    <ai_ship_group_membership name="RoyalAntiStructureGuardians" weight="100"/>	
+    <system name="WL" damage_per_shot="4000" />
+  </entity>
+  
+	<!-- Specialty tractor guardian exclusively used by AI Warden forces -->
+	<entity name="WardenTractorGuardian" copy_from="TractorGuardian" icon_overlay="Overlays2/HunterKiller_Rank1" thematic_groups="AI,Guardian"
+			display_name="典狱长牵引守护者" display_name_for_sidebar="典狱长牵引守护舰"
+    description="快速反应单位，能在远距离使敌人引擎瘫痪，然后用牵引光束捕获敌人。"
+        is_disallowed_from_spawning_in_waves="true"
+			cost_for_ai_to_purchase="650"
+			starting_mark_level="Mark1"
+			hull_points="70000" shield_points="35000" speed="AboveAverage3"
+			>
+		<ai_ship_group_membership name="WardenGuardians" weight="100"/>
+		<system name="WL" display_name="驱动器干扰器"
+				damage_per_shot="150" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Low" fires_salvos_sequentially="true"
+				base_engine_stun_per_shot="6" added_engine_stun_per_shot_per_mark="2" engine_stun_to_engine_gx_less_than="14"
+				max_engine_stun_seconds="30" added_target_evaluator="EngineDamageAsMajorPrimary"
+				shots_per_salvo="25"
+				shot_type_data="EngineDisruptingShell"
+				base_percent_damage_bypasses_personal_shields="0" added_percent_damage_bypasses_personal_shields_per_mark="0"
+				>
+		</system>
+	</entity>
+  
+
+  <entity name="FortifiedTeslaGuardian"
+          thematic_groups="AI,Guardian"
+			special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+			visuals="assets/_finalgamemeshes/guardians/lightningguardian/lightningguardian.prefab"
+			icon_name="Ships1/Guardian" icon_overlay="Overlays2/Guardian_Tesla"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="3.6"
+			visuals_scale_multiplier="4"
+			y_offset_of_icon="16"
+			collision_priority="400"
+			display_name="强化特斯拉守护者"
+	    display_name_for_sidebar="特斯拉守护舰"
+			description="近距离战斗单位，若敌人超出其射程，则无法攻击到它。"
+			blocks_enemy_claim_flows="true"
+			voice_group="Silent"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="750" strength_multiplier="2.5"			
+			hull_points="54000" shield_points="26000" speed="BelowAverage2"
+			metal_cost="80000" energy_consumption="7500"
+			armor_mm="120" albedo="0.4" engine_gx="7" mass_tx="5"
+			can_pass_through_enemy_forcefields="true"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+      priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			>
+    <ai_ship_group_membership name="TutorialBasicGuardians" weight="100"/>
+    <ai_ship_group_membership name="AntiMeleeGuardians" weight="100"/>
+    <ai_ship_group_membership name="AOEGuardiansWithMovementSupport" weight="100"/>
+    <ai_ship_group_membership name="EyeGuardiansWithAOESupport" weight="100"/>	
+    <system name="Q1" display_name="特斯拉线圈"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="920" range="Tiny3" shot_speed="Normal" rate_of_fire="PeriodicActivation" fires_salvos_sequentially="false"
+				shot_type_data="LightningGuardianExplosionAOEShot"
+				area_of_effect_size="3200"				
+				shots_detonate_immediately="true"
+				maximum_number_of_targets_hit_per_shot="40"
+				>
+			<outgoing_damage_modifier based_on="Albedo" comparison_type="AtLeast" compared_to="0.7" multiplier="6" />	
+    </system>
+    <incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="2500" multiplier="0.01" />
+  </entity>
+
+  <entity name="InstigatorTeslaGuardian"  copy_from="FortifiedTeslaGuardian" starting_mark_level="Mark1"  tags="InstigatorSpawn"  >    
+  </entity>
+  
+  <entity name="RoyalFortifiedTeslaGuardian" display_name="皇家强化特斯拉守护者" copy_from="FortifiedTeslaGuardian" 
+	    display_name_for_sidebar="特斯拉皇家守护舰"
+            hull_points="108000" shield_points="52000"
+			cost_for_ai_to_purchase="1125"
+			starting_mark_level="Mark1"
+  >
+    <ai_ship_group_membership name="RoyalAntiMeleeGuardians" weight="100"/>
+    <ai_ship_group_membership name="RoyalAOEGuardiansWithMovementSupport" weight="100"/>
+    <ai_ship_group_membership name="RoyalEyeGuardiansWithAOESupport" weight="100"/>	
+    <system name="Q1" damage_per_shot="1840" />
+  </entity>
+
+  <entity name="GrenadeLauncherGuardian"
+          thematic_groups="AI,Guardian"
+			special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+			visuals="assets/_finalgamemeshes/guardians/flakguardian/flakguardian.prefab"
+			icon_name="Ships1/Guardian" icon_overlay="Overlays2/Guardian_Grenade"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="3.6"
+			visuals_scale_multiplier="4.3"
+			y_offset_of_icon="16"
+			collision_priority="400"
+			display_name="榴弹发射器守护者"
+	    display_name_for_sidebar="榴弹守护舰"
+			description="投掷手榴弹造成范围伤害，对护甲非常薄弱的目标极具杀伤力。"
+			blocks_enemy_claim_flows="true"
+			voice_group="Silent"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="600" strength_multiplier="2"	
+			hull_points="54000" shield_points="26000" speed="Normal1"
+			metal_cost="80000" energy_consumption="7500"
+			armor_mm="90" albedo="0.3" engine_gx="7" mass_tx="5"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+      priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			>
+    <ai_ship_group_membership name="EyeGuardiansWithAOESupport" weight="100"/>			
+    <ai_ship_group_membership name="TutorialBasicGuardians" weight="100"/>
+    <ai_ship_group_membership name="AOEGuardiansWithMovementSupport" weight="100"/>
+    <ai_ship_group_membership name="RiotPoliceGuardians" weight="100"/>
+    <ai_ship_group_membership name="AntiArmorGuardians" weight="100"/>	
+    <system name="WJ" display_name="手榴弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="660" range="Small4" shot_speed="Normal" rate_of_fire="VeryLow" 
+				shots_per_salvo="3" fires_salvos_sequentially="true"
+				shot_type_data="FlakShotAOEBurstAtEnd"
+				area_of_effect_size="350"
+				maximum_number_of_targets_hit_per_shot="9"
+				>
+				<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="30" multiplier="6" />
+    </system>
+  </entity>
+  
+  <entity name="InstigatorGrenadeLauncherGuardian"  copy_from="GrenadeLauncherGuardian" starting_mark_level="Mark1"  tags="InstigatorSpawn"
+			 >    
+  </entity>   
+
+  
+  <entity name="RoyalGrenadeLauncherGuardian" display_name="皇家榴弹发射器守护者"
+	    display_name_for_sidebar="榴弹皇家守护舰" copy_from="GrenadeLauncherGuardian"
+            hull_points="108000" shield_points="52000"
+			cost_for_ai_to_purchase="900"
+			starting_mark_level="Mark1"
+  >
+    <ai_ship_group_membership name="RoyalEyeGuardiansWithAOESupport" weight="100"/> 
+    <ai_ship_group_membership name="RoyalAOEGuardiansWithMovementSupport" weight="100"/>
+    <ai_ship_group_membership name="RoyalRiotPoliceGuardians" weight="100"/>
+    <ai_ship_group_membership name="RoyalAntiArmorGuardians" weight="100"/>	
+    <system name="WJ" shots_per_salvo="6" />
+  </entity>
+  
+  
+  
+  <entity name="PlasmaGuardian"
+          thematic_groups="AI,Guardian" 
+			special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+			visuals="assets/_finalgamemeshes/guardians/plasmaguardian/plasmaguardian.prefab"
+      icon_name="Ships1/Guardian" icon_overlay="Overlays2/Guardian_Plasma"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="3.6"
+			visuals_scale_multiplier="4"
+			y_offset_of_icon="16"
+			collision_priority="400"
+			display_name="等离子守护者"
+	    display_name_for_sidebar="等离子守护舰"
+			description="脆弱的远程轰炸舰，对力场有额外伤害。"
+			blocks_enemy_claim_flows="true"
+			voice_group="Silent"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="500" strength_multiplier="1.3"			
+			hull_points="40000" shield_points="20000" speed="BelowAverage2"
+			metal_cost="80000" energy_consumption="7500"
+			armor_mm="40" albedo="0.3" engine_gx="14" mass_tx="5"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+      priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			>
+    <ai_ship_group_membership name="EyeGuardiansWithAntiLargeSupport" weight="100"/>			
+	<ai_ship_group_membership name="BombardmentGuardiansWithSupport" weight="100"/>
+    <ai_ship_group_membership name="AntiLargeGuardians" weight="100"/>
+    <ai_ship_group_membership name="AntiStructureGuardians" weight="100"/>
+    <ai_ship_group_membership name="EnergeticGuardians" weight="100"/>		
+    <system name="WT" display_name="等离子鱼雷"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="15000" range="AboveAverage4" shot_speed="Slow" rate_of_fire="VeryLow" fires_salvos_sequentially="true"
+				shot_type_data="PlasmaTorpedo"
+
+				>
+      <outgoing_damage_modifier applies_to="AllShields" based_on="MaxBubbleForcefield" comparison_type="GreaterThan" compared_to="10000" multiplier="6" />
+    </system>
+  </entity>
+
+  <entity name="InstigatorPlasmaGuardian"  copy_from="PlasmaGuardian" starting_mark_level="Mark1"  tags="InstigatorSpawn"  >
+  </entity>
+  
+  <entity name="RoyalPlasmaGuardian" display_name="皇家等离子守护者" copy_from="PlasmaGuardian"
+	    display_name_for_sidebar="等离子皇家守护舰" 
+            hull_points="80000" shield_points="40000"
+			cost_for_ai_to_purchase="800"
+			starting_mark_level="Mark1"
+  >
+    <ai_ship_group_membership name="RoyalEyeGuardiansWithAntiLargeSupport" weight="100"/>  
+    <ai_ship_group_membership name="RoyalBombardmentGuardiansWithSupport" weight="100"/>
+    <ai_ship_group_membership name="RoyalAntiLargeGuardians" weight="100"/>
+    <ai_ship_group_membership name="RoyalAntiStructureGuardians" weight="100"/>
+    <ai_ship_group_membership name="RoyalEnergeticGuardians" weight="100"/>		
+    <system name="WT" damage_per_shot="30000" />
+  </entity>
+  
+  
+  
+   <entity name="ForcefieldGuardian"
+           thematic_groups="AI,Guardian"
+			special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+			visuals="assets/_finalgamemeshes/guardians/shieldguardian/shieldguardian.prefab"
+      icon_name="Ships1/Guardian" icon_overlay="Overlays2/Guardian_Shield"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="3.6"
+			visuals_scale_multiplier="4.3"
+			y_offset_of_icon="16"
+			collision_priority="450"
+			display_name="力场守护者"
+	    display_name_for_sidebar="力场守护舰"
+			description="该守护者用移动泡泡力场和一定火力支援友军。"
+			shield_size_scale="5" my_forcefield_does_not_shrink="true" max_count_per_npc_faction_before_stack="3" my_forcefield_has_no_penalty_for_enemies_firing_out_of_it="true"
+			blocks_enemy_claim_flows="true"
+			voice_group="Silent"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="740" strength_multiplier="1.5"			
+			hull_points="20000" shield_points="160000" speed="Normal2"
+			metal_cost="80000" energy_consumption="7500"
+			armor_mm="85" albedo="0.4" engine_gx="14" mass_tx="5"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+      priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			>
+    <ai_ship_group_membership name="AnyForcefieldGuardians" weight="1"/>
+    <ai_ship_group_membership name="SimpleForcefieldGuardians" weight="1"/>	
+    <ai_ship_group_membership name="TutorialForcefieldGuardians" weight="1"/>
+	<ai_ship_group_membership name="PoliceGuardians" weight="1"/>	
+    <ai_ship_group_membership name="CloakingForcefieldAndCarrierGuardians" weight="1"/>
+    <ai_ship_group_membership name="SwarmerCloakingForcefieldAndCarrierGuardians" weight="1"/>
+    <ai_ship_group_membership name="WardenGuardians" weight="1"/>
+    <ai_ship_group_membership name="RiotPoliceGuardians" weight="1"/>	
+     <system name="WW" display_name="弹道加农炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="800" range="Normal6" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+				shot_type_data="ArmorPiercingShell"				
+				>
+    </system>
+  </entity>
+  
+  <entity name="RoyalForcefieldGuardian" display_name="皇家力场守护者" copy_from="ForcefieldGuardian" 
+	    display_name_for_sidebar="力场皇家守护舰"
+            hull_points="40000" shield_points="320000"
+			cost_for_ai_to_purchase="1110"
+			starting_mark_level="Mark1"
+  >
+    <ai_ship_group_membership name="RoyalForcefieldGuardians" weight="1"/>
+	<ai_ship_group_membership name="RoyalPoliceGuardians" weight="1"/>
+    <ai_ship_group_membership name="RoyalWardenGuardians" weight="1"/>
+    <ai_ship_group_membership name="RoyalRiotPoliceGuardians" weight="1"/>		
+    <system name="WW" damage_per_shot="1600" />
+  </entity> 
+  
+  
+  
+  <entity name="PikeGuardian"
+          thematic_groups="AI,Guardian"
+			special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+			visuals="assets/_finalgamemeshes/guardians/needlerguardian/needlerguardian.prefab"
+            icon_name="Ships1/Guardian" icon_overlay="Overlays2/Guardian_Pike"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="3.6"
+			visuals_scale_multiplier="4"
+			y_offset_of_icon="16"
+			collision_priority="400"
+			display_name="长矛守护者"
+	    display_name_for_sidebar="长矛守护舰"
+			description="配备多连发佩塔尔火炮，对装甲完好的单位造成更高伤害。"
+			blocks_enemy_claim_flows="true"
+			voice_group="Silent"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="550" strength_multiplier="1.5"		
+			hull_points="54000" shield_points="26000" speed="Normal1"
+			metal_cost="80000" energy_consumption="7500"
+			armor_mm="70" albedo="0.3" engine_gx="7" mass_tx="5"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+      priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			>		
+    <ai_ship_group_membership name="TutorialBasicGuardians" weight="100"/>
+    <ai_ship_group_membership name="EyeGuardiansWithAntiLargeSupport" weight="100"/>
+    <ai_ship_group_membership name="HullPercentageGuardians" weight="100"/>	
+    <ai_ship_group_membership name="AntiLargeGuardians" weight="100"/>
+    <ai_ship_group_membership name="CoreGuardians" weight="100"/>
+    <ai_ship_group_membership name="AntiArmorGuardians" weight="100"/>	
+     <system name="V1" display_name="炸药包"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="600" range="Normal4" shot_speed="Normal" rate_of_fire="Normal"
+				shots_per_salvo="10" fires_salvos_sequentially="false"
+				shot_type_data="PikeShot_Gold"				
+				>
+	  <outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtLeast" compared_to="90" multiplier="6" />
+      <outgoing_damage_modifier based_on="CurrentHullPercentage" applies_to="HullOnly" comparison_type="AtLeast" compared_to="75" multiplier="2" />
+    </system>
+  </entity>
+  
+  <entity name="InstigatorPikeGuardian"  copy_from="PikeGuardian" starting_mark_level="Mark1"  tags="InstigatorSpawn"
+			 >    
+  </entity>  
+  
+  <entity name="RoyalPikeGuardian" display_name="皇家长矛守护者" copy_from="PikeGuardian" 
+	    display_name_for_sidebar="长矛皇家守护舰"
+            hull_points="108000" shield_points="52000"
+			cost_for_ai_to_purchase="825"
+			starting_mark_level="Mark1"
+  >
+    <ai_ship_group_membership name="RoyalEyeGuardiansWithAntiLargeSupport" weight="100"/>
+    <ai_ship_group_membership name="RoyalHullPercentageGuardians" weight="100"/>
+    <ai_ship_group_membership name="RoyalAntiLargeGuardians" weight="100"/>
+    <ai_ship_group_membership name="RoyalCoreGuardians" weight="100"/>
+    <ai_ship_group_membership name="RoyalAntiArmorGuardians" weight="100"/>	
+    <system name="V1" damage_per_shot="1200" />
+  </entity>
+  
+	<!-- Specialty Parasitic Pike guardian used exclusively by AI Warden forces -->
+	<entity name="ParasiticPikeGuardian" copy_from="PikeGuardian" icon_overlay="Overlays2/HunterKiller_Rank3"
+			display_name="寄生长矛守护者" display_name_for_sidebar="Warden P-Pike GU"
+			description="配备多连发佩塔尔火炮，对装甲完好的单位造成更高伤害。此外，炮弹还带有能将敌人转化为僵尸的载荷。"
+			hull_points="80000" shield_points="40000" speed="Normal3"
+			cost_for_ai_to_purchase="675"
+			starting_mark_level="Mark1"
+			>
+		<ai_ship_group_membership name="WardenGuardians" weight="100"/>
+		<system name="V1" >
+			<death_effect_damage type="Zombification" tier_name="Mugger"/>
+		</system>
+	</entity>
+  
+  <entity name="GravityGuardian"
+          thematic_groups="AI,Guardian"
+			special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+			visuals="assets/_finalgamemeshes/guardians/gravityguardian/gravityguardian.prefab"
+            icon_name="Ships1/Guardian" icon_overlay="Overlays2/Guardian_Gravity"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="3.6"
+			visuals_scale_multiplier="4"
+			y_offset_of_icon="16"
+			collision_priority="400"
+			display_name="引力守护者"
+	    display_name_for_sidebar="重力守护舰"
+			description="巨大的重力扭曲效果能在一定区域内减速敌舰。对引擎动力极差的目标造成额外伤害。"
+			blocks_enemy_claim_flows="true"
+			voice_group="Silent"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="580" strength_multiplier="1.7"			
+			hull_points="54000" shield_points="26000" speed="BelowAverage2"
+			metal_cost="80000" energy_consumption="7500"
+			armor_mm="50" albedo="0.3" engine_gx="8" mass_tx="5"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+      priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			>
+	<ai_ship_group_membership name="PoliceGuardians" weight="100"/>
+    <ai_ship_group_membership name="BombardmentGuardiansWithSupport" weight="100"/>
+    <ai_ship_group_membership name="AOEGuardiansWithMovementSupport" weight="100"/>
+    <ai_ship_group_membership name="AntiMeleeGuardians" weight="100"/>
+    <ai_ship_group_membership name="MassCarrierGuardiansWithSupport" weight="100"/>
+    <ai_ship_group_membership name="SwarmerMassCarrierGuardiansWithSupport" weight="100"/>	
+     <system name="WG" display_name="引力加农炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="200" range="Small4" shot_speed="Normal" rate_of_fire="Low" fires_salvos_sequentially="false"
+				shots_per_salvo="30"
+				shot_type_data="ElegantCurl"				
+				>
+		<outgoing_damage_modifier based_on="engine_gx" comparison_type="AtMost" compared_to="7" multiplier="6" />
+    </system>
+	<system name="G" display_name="引力核心"
+				category="Passive"
+				base_gravity_speed_multiplier="0.5" subtracted_gravity_speed_multiplier_per_mark="0" gravity_hits_engine_gx_less_than="14" gravity_range="Normal4"
+				>
+    </system>
+	<system name="T" display_name="超光速子阵列"
+				category="Passive" tachyon_points="50" tachyon_points_added_per_mark="25" tachyon_range="Normal1" tachyon_hits_albedo_less_than="0.75"></system>
+  </entity>
+  
+  <entity name="RoyalGravityGuardian" display_name="皇家引力守护者" copy_from="GravityGuardian" 
+	    display_name_for_sidebar="重力皇家守护舰"
+            hull_points="108000" shield_points="52000"
+			cost_for_ai_to_purchase="870"
+			starting_mark_level="Mark1"
+  >
+    <ai_ship_group_membership name="RoyalBombardmentGuardiansWithSupport" weight="100"/>  
+	<ai_ship_group_membership name="RoyalPoliceGuardians" weight="100"/>
+    <ai_ship_group_membership name="RoyalAOEGuardiansWithMovementSupport" weight="100"/>
+    <ai_ship_group_membership name="RoyalAntiMeleeGuardians" weight="100"/>	
+    <system name="WG" damage_per_shot="400" />
+  </entity>
+  
+  
+  
+  <entity name="HeavyBeamGuardian"
+          thematic_groups="AI,Guardian" 
+			special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+			visuals="assets/_finalgamemeshes/guardians/heavybeamguardian/heavybeamguardian.prefab"
+            icon_name="Ships1/Guardian" icon_overlay="Overlays2/Guardian_Beam"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="3.6"
+			visuals_scale_multiplier="4"
+			y_offset_of_icon="16"
+			collision_priority="400"
+			display_name="重型光束守护者"
+	    display_name_for_sidebar="重型光束守护舰"
+			description="用光束炮对直线上的多个目标造成巨大伤害。"
+			blocks_enemy_claim_flows="true"
+			voice_group="Silent"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="700" strength_multiplier="3"			
+			hull_points="40000" shield_points="20000" speed="BelowAverage2"
+			metal_cost="80000" energy_consumption="7500"
+			armor_mm="90" albedo="0.4" engine_gx="14" mass_tx="5"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+      priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			>
+    <ai_ship_group_membership name="EyeGuardiansWithAOESupport" weight="100"/>
+    <ai_ship_group_membership name="AOEGuardiansWithMovementSupport" weight="100"/>
+    <ai_ship_group_membership name="EnergeticGuardians" weight="100"/>		
+      <system name="R9" display_name="重型光束加农炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1350" range="AboveAverage4" shot_speed="Normal" rate_of_fire="Normal"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_Red"
+				hits_all_intersecting_targets="true"				
+				shots_detonate_immediately="true"
+				maximum_number_of_targets_hit_per_shot="9"
+				>
+    </system>
+  </entity>
+  
+  <entity name="RoyalHeavyBeamGuardian" display_name="皇家重型光束守护者" copy_from="HeavyBeamGuardian" 
+	    display_name_for_sidebar="重型光束皇家守护舰"
+            hull_points="80000" shield_points="40000"
+			cost_for_ai_to_purchase="1050"
+			starting_mark_level="Mark1"
+  >
+    <ai_ship_group_membership name="RoyalEyeGuardiansWithAOESupport" weight="100"/> 
+    <ai_ship_group_membership name="RoyalAOEGuardiansWithMovementSupport" weight="100"/>
+    <ai_ship_group_membership name="RoyalEnergeticGuardians" weight="100"/>		
+    <system name="R9" damage_per_shot="2700" />
+  </entity>
+  
+  
+  
+    <entity name="VampireGuardian"
+	        thematic_groups="AI,Guardian"
+			special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+			visuals="assets/_finalgamemeshes/guardians/vampireguardian/vampireguardian.prefab"
+            icon_name="Ships1/Guardian" icon_overlay="Overlays2/Guardian_Vampire"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="3.6"
+			visuals_scale_multiplier="4"
+			y_offset_of_icon="16"
+			collision_priority="400"
+			display_name="吸血鬼守护者"
+	    display_name_for_sidebar="吸血守护舰"
+			description="每当对目标造成伤害时，它都会自我修复。"
+			blocks_enemy_claim_flows="true"
+			voice_group="Silent"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="700" strength_multiplier="2"
+			hull_points="54000" shield_points="26000" speed="Normal1"
+			metal_cost="80000" energy_consumption="7500"
+			armor_mm="80" albedo="0.7" engine_gx="7" mass_tx="5"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+      priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			>
+    <ai_ship_group_membership name="ParalysisAndVampireGuardians" weight="100"/>			
+    <ai_ship_group_membership name="EyeGuardiansWithAntiLargeSupport" weight="100"/>
+    <ai_ship_group_membership name="LeecherGuardians" weight="100"/>
+    <ai_ship_group_membership name="AntiLargeGuardians" weight="100"/>
+    <ai_ship_group_membership name="CloakingForcefieldAndCarrierGuardians" weight="100"/>
+    <ai_ship_group_membership name="SwarmerCloakingForcefieldAndCarrierGuardians" weight="100"/>
+    <ai_ship_group_membership name="UndeadGuardians" weight="100"/>	
+      <system name="WD" display_name="吸血双发"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1250" range="Small2" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="true"
+				shot_type_data="DoubleShot_Red"			
+				health_change_per_damage_dealt="1"	
+				>
+    </system>
+    <system name="C" display_name="隐形装置"
+				category="Passive"
+				cloaking_points="2000"
+				cloaking_points_added_per_mark="1000"
+				>
+    </system>	
+  </entity>
+  
+  <entity name="RoyalVampireGuardian" display_name="皇家吸血鬼守护者" copy_from="VampireGuardian" 
+	    display_name_for_sidebar="吸血鬼皇家守护舰"
+            hull_points="108000" shield_points="52000"
+			cost_for_ai_to_purchase="1050"
+			starting_mark_level="Mark1"
+  >
+    <ai_ship_group_membership name="RoyalEyeGuardiansWithAntiLargeSupport" weight="100"/>  
+    <ai_ship_group_membership name="RoyalParalysisAndVampireGuardians" weight="100"/>
+	<ai_ship_group_membership name="RoyalLeecherGuardians" weight="100"/>
+    <ai_ship_group_membership name="RoyalAntiLargeGuardians" weight="100"/>
+    <ai_ship_group_membership name="RoyalUndeadGuardians" weight="100"/>	
+    <system name="WD" damage_per_shot="2500" />
+  </entity>
+  
+  
+  
+   <entity name="CarrierGuardian"
+           thematic_groups="AI,Guardian"
+			special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+			visuals="assets/_finalgamemeshes/guardians/carrierguardian/carrierguardian.prefab"
+            icon_name="Ships1/Guardian" icon_overlay="Overlays2/Guardian_Carrier"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="3.6"
+			visuals_scale_multiplier="4.3"
+			y_offset_of_icon="16"
+			collision_priority="400"
+			display_name="航母守护者"
+	    display_name_for_sidebar="航母守护舰"
+			description="当有敌对目标存在时，持续生成无人机。"
+			fleet_design_template_i_use_for_drones="CarrierGuardianDrones" is_disallowed_from_spawning_in_waves="true"
+			drone_starting_behavior_type="Attacker_Full"
+			blocks_enemy_claim_flows="true"
+			voice_group="Silent"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="450"			
+			hull_points="26000" shield_points="14000" speed="BelowAverage2"
+			metal_cost="80000" energy_consumption="7500"
+			armor_mm="110" albedo="0.3" engine_gx="14" mass_tx="5"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+      priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			>
+			<metal_flow purpose="BuildingDronesInternally" throughput="1500" increase_per_mark_level="1000"/>
+    <ai_ship_group_membership name="OverrunnerGuardians" weight="100"/>
+	<ai_ship_group_membership name="MassCarrierGuardiansWithSupport" weight="100"/>
+    <ai_ship_group_membership name="TemperamentalsWithSupport" weight="100"/>
+    <ai_ship_group_membership name="CloakingForcefieldAndCarrierGuardians" weight="100"/>	
+      <system name="WW" display_name="弹道加农炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1000" range="AboveAverage4" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+				shot_type_data="ArmorPiercingShell"				
+				>
+    </system>
+  </entity>
+
+  <entity name="SwarmerCarrierGuardian"  copy_from="CarrierGuardian" fleet_design_template_i_use_for_drones="SwarmerDrones" is_disallowed_from_spawning_in_waves="true" >
+    <ai_ship_group_membership name="SwarmerOverrunnerGuardians" weight="100"/> 
+    <ai_ship_group_membership name="SwarmerMassCarrierGuardiansWithSupport" weight="100"/>
+    <ai_ship_group_membership name="SwarmerTemperamentalsWithSupport" weight="100"/>
+    <ai_ship_group_membership name="SwarmerCloakingForcefieldAndCarrierGuardians" weight="100"/>	
+  </entity>
+  
+  <entity name="TethuidaGuardian"
+          thematic_groups="AI,Guardian"
+			special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+			visuals="assets/_finalgamemeshes/guardians/direteuthidaguardian/direteuthidaguardian.prefab"
+            icon_name="Ships1/Guardian" icon_overlay="Overlays2/Guardian_Tethuida"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="4"
+			visuals_scale_multiplier="1.2"
+			y_offset_of_icon="16"
+			collision_priority="400"
+			display_name="忒休达守护者"
+	    display_name_for_sidebar="忒修斯守护舰"
+			description="被该单位攻击受伤的敌人死亡后会变成己方僵尸。"
+			blocks_enemy_claim_flows="true"
+			voice_group="Silent"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="550" strength_multiplier="1.7"			
+			hull_points="54000" shield_points="26000" speed="BelowAverage2"
+			metal_cost="80000" energy_consumption="7500"
+			armor_mm="50" albedo="0.3" engine_gx="8" mass_tx="5"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+                        priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			>
+    <ai_ship_group_membership name="LeecherGuardians" weight="100"/>
+    <ai_ship_group_membership name="OverrunnerGuardians" weight="100"/>	
+    <ai_ship_group_membership name="SwarmerOverrunnerGuardians" weight="100"/>
+    <ai_ship_group_membership name="TemperamentalsWithSupport" weight="100"/>
+    <ai_ship_group_membership name="SwarmerTemperamentalsWithSupport" weight="100"/>
+    <ai_ship_group_membership name="UndeadGuardians" weight="100"/>	
+			 <system name="WR" display_name="寄生螺栓"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="100" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Misery" 
+				shots_per_salvo="15" fires_salvos_sequentially="false"
+				shot_type_data="ParasiteCurvedPinkShot" added_target_evaluator="ZombifyAsPrimary"                				
+				>
+         <death_effect_damage type="Zombification" tier_name="Parasite"/>
+    </system>
+	</entity>
+	
+  <entity name="RoyalTethuidaGuardian" display_name="皇家忒休达守护者" copy_from="TethuidaGuardian" 
+	    display_name_for_sidebar="忒修斯皇家守护舰"
+            hull_points="108000" shield_points="52000"
+			cost_for_ai_to_purchase="825"
+			starting_mark_level="Mark1"
+  >	
+    <ai_ship_group_membership name="RoyalLeecherGuardians" weight="100"/>
+    <ai_ship_group_membership name="RoyalUndeadGuardians" weight="100"/>	
+    <system name="WR" shots_per_salvo="30" />
+  </entity>	
+
+  <entity name="MLRSGuardian"
+          thematic_groups="AI,Guardian"
+			special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+			visuals="assets/_finalgamemeshes/guardians/mlrsguardian/mlrsguardian.prefab"
+            icon_name="Ships1/Guardian" icon_overlay="Overlays1/Turret_MLRS"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="4"
+			visuals_scale_multiplier="4.5"
+			y_offset_of_icon="16"
+			collision_priority="400"
+			display_name="多管火箭炮守护者"
+	    display_name_for_sidebar="多管火箭守护舰"
+			description="发射大量火箭弹，对濒死目标有额外伤害加成。"
+			blocks_enemy_claim_flows="true"
+			voice_group="Silent"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="630" strength_multiplier="1.7"			
+			hull_points="54000" shield_points="26000" speed="Normal2"
+			metal_cost="80000" energy_consumption="7500"
+			armor_mm="50" albedo="0.3" engine_gx="8" mass_tx="5"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+      priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			>
+    <ai_ship_group_membership name="LeecherGuardians" weight="100"/>
+    <ai_ship_group_membership name="HullPercentageGuardians" weight="100"/>
+    <ai_ship_group_membership name="CoreGuardians" weight="100"/>	
+    <system name="R1" display_name="微型火箭"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="160" range="Normal4" shot_speed="Normal" rate_of_fire="Normal"
+				shots_per_salvo="40" fires_salvos_sequentially="false"
+				shot_type_data="FusionRocket"				
+				>
+        <outgoing_damage_modifier based_on="CurrentHullPercentage" comparison_type="AtMost" compared_to="50" multiplier="2" />
+		<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="HullOnly" comparison_type="LessThan" compared_to="1" multiplier="1.5" />
+    </system>
+  </entity>
+  
+  <entity name="RoyalMLRSGuardian" display_name="皇家多管火箭炮守护者" copy_from="MLRSGuardian" 
+	    display_name_for_sidebar="多管火箭皇家守护舰"
+            hull_points="108000" shield_points="52000"
+			cost_for_ai_to_purchase="945"
+			starting_mark_level="Mark1"
+  >
+    <ai_ship_group_membership name="RoyalLeecherGuardians" weight="100"/>
+    <ai_ship_group_membership name="RoyalHullPercentageGuardians" weight="100"/>
+    <ai_ship_group_membership name="RoyalCoreGuardians" weight="100"/>	
+    <system name="R1" damage_per_shot="320" />
+  </entity>  
+
+  <entity name="TemperamentalGuardian"
+          thematic_groups="AI,Guardian"
+			special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+			visuals="Assets/_FinalGameMeshes/Guardians/FragmentingGuardian/TemperamentalGuardian.prefab"
+            icon_name="Ships1/Guardian" icon_overlay="Overlays2/Guardian_Temperamental"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="3.6"
+			visuals_scale_multiplier="2"
+			y_offset_of_icon="16"
+			collision_priority="400"
+			display_name="暴躁守护者"
+	    display_name_for_sidebar="暴躁守护舰"
+			description="通常非常脆弱，但如果该行星上的 AI 数量处于劣势，它会爆发强大力量。"
+			blocks_enemy_claim_flows="true"
+			voice_group="Silent"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="1200" strength_multiplier="3"			
+			hull_points="3000" shield_points="6000" speed="BelowAverage2"
+			metal_cost="80000" energy_consumption="7500"
+			armor_mm="50" albedo="0.3" engine_gx="14" mass_tx="5"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"			
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+	          transform_when_outnumbered="TantrumingGuardian" time_must_have_been_on_planet_before_transforming_if_outnumbered_or_outnumbering="2"
+            num_units_to_transform_into="1"
+          is_disallowed_from_spawning_in_waves="true"
+            destroy_on_load_if_more_than_this_number_on_planet="10"
+		    description_appender_dll="AIWarExternalCode"
+	        description_appender_type="Arcen.AIW2.External.QuiescentEyeAppender"
+			>
+    <ai_ship_group_membership name="EyeGuardiansWithAOESupport" weight="100"/>
+    <ai_ship_group_membership name="EyeGuardiansWithAntiLargeSupport" weight="100"/>	
+    <ai_ship_group_membership name="TemperamentalsWithSupport" weight="100"/>	
+      <system name="WW" display_name="弹道加农炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="300" range="Normal4" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+				shot_type_data="ArmorPiercingShell"				
+				>
+    </system>
+  </entity>
+  
+  <entity name="RoyalTemperamentalGuardian" display_name="皇家喜怒无常守护者" copy_from="TemperamentalGuardian"
+	    display_name_for_sidebar="暴躁皇家守护舰"
+          transform_when_outnumbered="RoyalTantrumingGuardian" time_must_have_been_on_planet_before_transforming_if_outnumbered_or_outnumbering="2"
+            hull_points="6000" shield_points="12000"
+			cost_for_ai_to_purchase="1800"
+			starting_mark_level="Mark1"
+  >
+    <ai_ship_group_membership name="RoyalEyeGuardiansWithAOESupport" weight="100"/>
+    <ai_ship_group_membership name="RoyalEyeGuardiansWithAntiLargeSupport" weight="100"/>	
+    <system name="WW" damage_per_shot="600" />
+  </entity>
+  
+  
+  
+  <entity name="TantrumingGuardian"
+          thematic_groups="AI,Guardian"
+			special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+			visuals="Assets/_FinalGameMeshes/Guardians/FragmentingGuardian/TantrumingGuardian.prefab"
+            icon_name="Ships1/Guardian" icon_overlay="Overlays2/Guardian_Tantruming"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="3.6"
+			visuals_scale_multiplier="2"
+			y_offset_of_icon="16"
+			collision_priority="500"
+			display_name="发脾气守护者"
+	    display_name_for_sidebar="发怒守护舰"
+			description="该守护者因 AI 在该行星上数量处于劣势而愤怒。"
+			blocks_enemy_claim_flows="true"
+			voice_group="Silent"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"			
+			cost_for_ai_to_purchase="300"			
+			hull_points="160000" shield_points="80000" speed="BelowAverage2"
+			metal_cost="80000" energy_consumption="7500"
+			armor_mm="50" albedo="0.7" engine_gx="15" mass_tx="5"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+	          transform_when_outnumbering="TemperamentalGuardian" time_must_have_been_on_planet_before_transforming_if_outnumbered_or_outnumbering="30"
+            num_units_to_transform_into="1"
+            destroy_on_load_if_more_than_this_number_on_planet="10"
+			is_disallowed_from_spawning_in_waves="true"
+		    description_appender_dll="AIWarExternalCode"
+	   description_appender_type="Arcen.AIW2.External.AlertedEyeAppender"
+			>
+      <system name="WW" display_name="弹道加农炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="3000" range="AboveAverage4" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+				shots_per_salvo="5"
+				shot_type_data="ArmorPiercingShell"				
+				>
+    </system>
+  </entity>
+  
+  <entity name="RoyalTantrumingGuardian" display_name="皇家发脾气守护者" copy_from="TantrumingGuardian" transform_when_outnumbering="RoyalTemperamentalGuardian" time_must_have_been_on_planet_before_transforming_if_outnumbered_or_outnumbering="30"
+	    display_name_for_sidebar="发怒皇家守护舰"
+            hull_points="320000" shield_points="160000"
+			starting_mark_level="Mark1"
+  >
+    <system name="WW" damage_per_shot="3000" shots_per_salvo="10" />
+  </entity>  
+  
+  
+  
+  
+  <entity name="FragmentingGuardian"
+          thematic_groups="AI,Guardian"
+			special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+			visuals="Assets/_FinalGameMeshes/Guardians/FragmentingGuardianAlt/FragmentingGuardian.prefab"
+            icon_name="Ships1/Guardian" icon_overlay="Overlays2/Guardian_Fragmenting"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="3.6"
+			visuals_scale_multiplier="1.7"
+			y_offset_of_icon="16"
+			collision_priority="400"
+			display_name="分裂守护者"
+	    display_name_for_sidebar="分裂守护舰"
+			description="相当弱小的守护者，但当所在行星上 AI 数量处于劣势时，会永久分裂成一群总体更致命的小型守护者。"
+			blocks_enemy_claim_flows="true"
+			voice_group="Silent"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+			cost_for_ai_to_purchase="900" strength_multiplier="3"			
+			hull_points="3000" shield_points="6000" speed="BelowAverage2"
+			metal_cost="80000" energy_consumption="7500"
+			armor_mm="50" albedo="0.3" engine_gx="14" mass_tx="5"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+	        transform_when_outnumbered="FragmentingGuardianShard" time_must_have_been_on_planet_before_transforming_if_outnumbered_or_outnumbering="2"
+            num_units_to_transform_into="8"
+            destroy_on_load_if_more_than_this_number_on_planet="40"
+			is_disallowed_from_spawning_in_waves="true"
+		    description_appender_dll="AIWarExternalCode"
+	        description_appender_type="Arcen.AIW2.External.QuiescentEyeAppender"
+			>
+    <ai_ship_group_membership name="EyeGuardiansWithAOESupport" weight="100"/>
+    <ai_ship_group_membership name="EyeGuardiansWithAntiLargeSupport" weight="100"/>	
+      <system name="WW" display_name="弹道加农炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="300" range="Normal4" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+				shot_type_data="ArmorPiercingShell"				
+				>
+    </system>
+  </entity>
+  
+  <entity name="RoyalFragmentingGuardian" display_name="皇家分裂守护者" copy_from="FragmentingGuardian"
+	    display_name_for_sidebar="分裂皇家守护舰"
+           num_units_to_transform_into="16"
+            destroy_on_load_if_more_than_this_number_on_planet="40"
+            hull_points="6000" shield_points="12000"
+          is_disallowed_from_spawning_in_waves="true"
+			cost_for_ai_to_purchase="900"
+			starting_mark_level="Mark1"
+  >
+    <ai_ship_group_membership name="RoyalEyeGuardiansWithAOESupport" weight="100"/> 
+    <ai_ship_group_membership name="RoyalEyeGuardiansWithAntiLargeSupport" weight="100"/>	
+    <system name="WW" damage_per_shot="600" />
+  </entity>
+  
+  
+  
+  <entity name="FragmentingGuardianShard"
+          thematic_groups="AI,Guardian"
+			special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+			visuals="Assets/_FinalGameMeshes/Guardians/FragmentingGuardianAlt/FragmentingGuardianShard.prefab"
+            icon_name="Ships1/Guardian" icon_overlay="Overlays2/Guardian_FragmentingShard"
+			uses_large_health_bar="false"
+			category="Ship"
+			size_scale="1.4"
+			visuals_scale_multiplier="0.8"
+			y_offset_of_icon="16"
+			collision_priority="100"
+			display_name="分裂守护者碎片"
+	    display_name_for_sidebar="Fragment-Shard GU"
+			description="分裂守护者分裂出的众多碎片之一。"
+			blocks_enemy_claim_flows="true"
+			voice_group="Silent"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"			
+			cost_for_ai_to_purchase="40"			
+			hull_points="10000" shield_points="5000" speed="BelowAverage2"
+			metal_cost="80000" energy_consumption="625"
+			armor_mm="40" albedo="0.4" engine_gx="14" mass_tx="2"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			is_disallowed_from_spawning_in_waves="true"
+            destroy_on_load_if_more_than_this_number_on_planet="100"
+                        priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			>
+      <system name="WW" display_name="弹道加农炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1600" range="Normal4" shot_speed="Normal" rate_of_fire="Misery" fires_salvos_sequentially="true"
+				shot_type_data="ArmorPiercingShell"				
+				>
+    </system>
+  </entity>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- Below this is where the Dire Guardians start. This is just to help organise it a little - Puffin !
+  ************************************************************************************************
+  ************************************************************************************************
+  ************************************************************************************************-->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <entity name="DireTeslaGuardian"
+          thematic_groups="AI,DireGuardian"
+            tags="DireGuardian,WormholeInvasionGuardian"
+            special_entity_type="AIDireGuardian" gimbal_icon_size_multiplier="1.5"
+            visuals="assets/_finalgamemeshes/guardians/lightningguardian/lightningguardian.prefab"
+            icon_name="Ships1/GuardianDire" icon_overlay="Overlays2/Guardian_Tesla"
+            uses_large_health_bar="true"
+            category="Ship"
+            size_scale="10.8"
+			visuals_scale_multiplier="12"
+            y_offset_of_icon="35"
+            collision_priority="800"
+            display_name="恐怖特斯拉守护者"
+					display_name_for_sidebar="特斯拉黑暗守护舰"
+            description="非常强大的单位，拥有范围特斯拉攻击，但有装填速度惩罚。"
+            blocks_enemy_claim_flows="true"
+            voice_group="Silent"
+			starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+			cost_for_ai_to_purchase="7500" strength_multiplier="2"	
+			hull_points="1400000" shield_points="700000" speed="BelowAverage1"
+			metal_cost="800000" energy_consumption="25000"
+			armor_mm="150" albedo="0.4" engine_gx="20" mass_tx="7"
+			can_pass_through_enemy_forcefields="true"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+      priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			>
+			 <system name="Q1" display_name="恐怖特斯拉线圈"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="5000" range="Tiny3" shot_speed="Normal" rate_of_fire="VeryLow" fires_salvos_sequentially="false"
+				shot_type_data="LightningGuardianExplosionAOEShot" added_target_evaluator="WeaponJamAsPrimary" 
+				area_of_effect_size="3200"				
+				shots_detonate_immediately="true"
+				maximum_number_of_targets_hit_per_shot="100"
+        base_enemy_weapon_reload_slowing_seconds_per_shot="20"
+        max_enemy_weapon_reload_slowing_seconds="20"		
+        enemy_weapon_reload_slowing_to_armor_mm_less_than="70"
+				>
+     </system>
+     <ai_ship_group_membership name="DireExoLeaders" weight="50"/>
+    <ai_ship_group_membership name="AnyDireGuardians" weight="100"/>
+	<ai_ship_group_membership name="DefensiveDireGuardians" weight="100"/>
+    <ai_ship_group_membership name="TutorialDireGuardians" weight="100"/>	  
+  </entity>
+	
+  <entity name="RoyalDireTeslaGuardian" display_name="皇家恐怖特斯拉守护者" copy_from="DireTeslaGuardian"
+					display_name_for_sidebar="特斯拉皇家黑暗守护舰"
+          tags="RoyalDireGuardian"
+            hull_points="2800000" shield_points="1400000"
+			cost_for_ai_to_purchase="11250"
+			
+  >
+    <ai_ship_group_membership name="RoyalDireGuardians" weight="100"/>
+	<ai_ship_group_membership name="RoyalDefensiveDireGuardians" weight="100"/>
+    <system name="Q1" damage_per_shot="10000"   />
+  </entity>
+  
+  
+  
+  <entity name="DireConcussionGuardian"
+          thematic_groups="AI,DireGuardian"
+	        tags="DireGuardian,WormholeInvasionGuardian"
+            special_entity_type="AIDireGuardian" gimbal_icon_size_multiplier="1.5"
+            visuals="assets/_finalgamemeshes/guardians/missileguardian/missileguardian.prefab" lod_distance_overrides="1500,3000,15000"
+          icon_name="Ships1/GuardianDire" icon_overlay="Overlays2/Guardian_Concussion"
+            uses_large_health_bar="true"
+            category="Ship"
+            size_scale="12"
+			visuals_scale_multiplier="10"
+            y_offset_of_icon="35"
+            collision_priority="800"
+            display_name="恐怖震荡守护者"
+					display_name_for_sidebar="震荡黑暗守护舰"
+            description="非常强大的单位，发射极具破坏力的导弹，能摧毁船体较薄的单位。"
+            blocks_enemy_claim_flows="true"
+            voice_group="Silent"
+			starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+			cost_for_ai_to_purchase="6500" strength_multiplier="1.4"			
+			hull_points="1400000" shield_points="700000" speed="BelowAverage2"
+			metal_cost="800000" energy_consumption="25000"
+			armor_mm="40" albedo="0.4" engine_gx="20" mass_tx="7"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+      priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			>
+    <ai_ship_group_membership name="AnyDireGuardians" weight="100"/>
+    <ai_ship_group_membership name="DefensiveDireGuardians" weight="100"/>
+    <ai_ship_group_membership name="DireExoLeaders" weight="100"/>
+    <ai_ship_group_membership name="TutorialDireGuardians" weight="100"/>
+			<system name="Q5" display_name="恐怖震荡导弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="6000" range="High1" shot_speed="Normal" rate_of_fire="Low"
+				shots_per_salvo="36" fires_salvos_sequentially="false"
+				shot_type_data="GuidedMissile" 			
+				>
+				<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="50" multiplier="6"  />
+    </system>
+  </entity>
+	
+  <entity name="RoyalDireConcussionGuardian" display_name="皇家恐怖震荡守护者" copy_from="DireConcussionGuardian" 
+					display_name_for_sidebar="震荡皇家黑暗守护舰"
+          tags="RoyalDireGuardian"
+          hull_points="2800000" shield_points="1400000"
+ 		  cost_for_ai_to_purchase="9750"	
+			
+  >
+    <ai_ship_group_membership name="RoyalDireGuardians" weight="100"/>
+	<ai_ship_group_membership name="RoyalDefensiveDireGuardians" weight="100"/>
+    <system name="Q5" shots_per_salvo="72"   />
+  </entity>
+  
+  
+  
+  <entity name="DirePlasmaGuardian"
+          thematic_groups="AI,DireGuardian"
+	        tags="DireGuardian,WormholeInvasionGuardian"
+            special_entity_type="AIDireGuardian" gimbal_icon_size_multiplier="1.5"
+            visuals="assets/_finalgamemeshes/guardians/plasmaguardian/plasmaguardian.prefab" lod_distance_overrides="500,1500,3000"
+          icon_name="Ships1/GuardianDire" icon_overlay="Overlays2/Guardian_Plasma"
+            uses_large_health_bar="true"
+            category="Ship"
+            size_scale="10.8"
+			visuals_scale_multiplier="12"
+            y_offset_of_icon="35"
+            collision_priority="800"
+            display_name="恐怖等离子守护者"
+					display_name_for_sidebar="等离子黑暗守护舰"
+            description="非常强大的单位，能对单个目标造成高额伤害，对力场造成的伤害更高。"
+            blocks_enemy_claim_flows="true"
+            voice_group="Silent"
+			starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+			cost_for_ai_to_purchase="5500" strength_multiplier="1.5"			
+			hull_points="1400000" shield_points="700000" speed="BelowAverage2"
+			metal_cost="800000" energy_consumption="25000"
+			armor_mm="40" albedo="0.4" engine_gx="20" mass_tx="7"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+      priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			>
+    <ai_ship_group_membership name="AnyDireGuardians" weight="100"/>
+    <ai_ship_group_membership name="DefensiveDireGuardians" weight="100"/>
+    <ai_ship_group_membership name="DireExoLeaders" weight="100"/>
+    <ai_ship_group_membership name="TutorialDireGuardians" weight="100"/>
+			<system name="WT" display_name="恐怖等离子鱼雷"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="360000" range="AboveAverage3" shot_speed="Slow" rate_of_fire="VeryLow" fires_salvos_sequentially="true"
+				shot_type_data="PlasmaTorpedoAOEBurstAtEnd"
+				>
+                <outgoing_damage_modifier applies_to="AllShields" based_on="MaxBubbleForcefield" comparison_type="GreaterThan" compared_to="10000" multiplier="6" />     
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+	
+  <entity name="RoyalDirePlasmaGuardian" display_name="皇家恐怖等离子守护者" copy_from="DirePlasmaGuardian" 
+					display_name_for_sidebar="等离子皇家黑暗守护舰"
+          tags="RoyalDireGuardian" hull_points="2800000" shield_points="1400000"
+          cost_for_ai_to_purchase="7750"		  
+			
+  >
+    <ai_ship_group_membership name="RoyalDireGuardians" weight="100"/>
+	<ai_ship_group_membership name="RoyalDefensiveDireGuardians" weight="100"/>
+    <system name="WT" damage_per_shot="720000"   />
+  </entity>
+  
+  
+  
+  <entity name="DireForcefieldGuardian"
+          thematic_groups="AI,DireGuardian"
+	        tags="DireGuardian"
+            special_entity_type="AIDireGuardian" gimbal_icon_size_multiplier="1.5"
+            visuals="assets/_finalgamemeshes/guardians/shieldguardian/shieldguardian.prefab"
+            icon_name="Ships1/GuardianDire" icon_overlay="Overlays2/Guardian_Shield"
+            uses_large_health_bar="true"
+            category="Ship"
+            size_scale="10.8"
+			visuals_scale_multiplier="12"
+            y_offset_of_icon="35"
+            collision_priority="850"
+            display_name="恐怖力场守护者"
+					display_name_for_sidebar="力场黑暗守护舰"
+            description="非常强大的单位，拥有非常强大且范围大的泡泡力场，但武器较弱。受其保护的单位将造成全额伤害。"
+            shield_size_scale="6" my_forcefield_does_not_shrink="true" max_count_per_npc_faction_before_stack="3" my_forcefield_has_no_penalty_for_enemies_firing_out_of_it="true"
+            blocks_enemy_claim_flows="true"
+            voice_group="Silent"
+			starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+			cost_for_ai_to_purchase="6700" strength_multiplier="0.8"
+			hull_points="1000000" shield_points="3500000" speed="Normal2"
+			metal_cost="800000" energy_consumption="25000"
+			armor_mm="85" albedo="0.4" engine_gx="20" mass_tx="7"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+      priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			>
+      <ai_ship_group_membership name="AnyDireGuardians" weight="100"/>
+      <ai_ship_group_membership name="DefensiveDireGuardians" weight="100"/>
+      <ai_ship_group_membership name="DireExoLeaders" weight="50"/>
+      <ai_ship_group_membership name="TutorialDireGuardians" weight="100"/>
+			  <system name="WW" display_name="恐怖弹道加农炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="40000" range="Normal6" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+				shot_type_data="ArmorPiercingShell"				
+				>
+    </system>
+	</entity>
+	
+  <entity name="RoyalDireForcefieldGuardian" display_name="皇家恐怖力场守护者" copy_from="DireForcefieldGuardian"
+         tags="RoyalDireGuardian"
+					display_name_for_sidebar="力场皇家黑暗守护舰"
+         hull_points="2000000" shield_points="4500000"
+		 cost_for_ai_to_purchase="10050"
+  >
+    <ai_ship_group_membership name="RoyalDireGuardians" weight="100"/>
+	<ai_ship_group_membership name="RoyalDefensiveDireGuardians" weight="100"/>
+    <system name="WW" damage_per_shot="80000"   />
+  </entity>
+  
+  
+  
+  
+  <entity name="DireHeavyBeamGuardian"
+          thematic_groups="AI,DireGuardian"
+	        tags="DireGuardian"
+            special_entity_type="AIDireGuardian" gimbal_icon_size_multiplier="1.5"
+            visuals="assets/_finalgamemeshes/guardians/heavybeamguardian/heavybeamguardian.prefab"
+            icon_name="Ships1/GuardianDire" icon_overlay="Overlays2/Guardian_Beam"
+            uses_large_health_bar="true"
+            category="Ship"
+            size_scale="10.8"
+			visuals_scale_multiplier="12.5"
+            y_offset_of_icon="35"
+            collision_priority="800"
+            display_name="恐怖重型光束守护者"
+					display_name_for_sidebar="重型光束黑暗守护舰"
+            description="比普通守护者强大得多的版本。"
+            blocks_enemy_claim_flows="true"
+            voice_group="Silent"
+			starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+			cost_for_ai_to_purchase="7770" strength_multiplier="2"			
+			hull_points="1400000" shield_points="700000" speed="BelowAverage2"
+			metal_cost="800000" energy_consumption="25000"
+			armor_mm="90" albedo="0.4" engine_gx="20" mass_tx="7"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+      priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			>
+    <ai_ship_group_membership name="AnyDireGuardians" weight="100"/>
+    <ai_ship_group_membership name="DefensiveDireGuardians" weight="100"/>
+    <ai_ship_group_membership name="DireExoLeaders" weight="100"/>
+    <ai_ship_group_membership name="TutorialDireGuardians" weight="100"/>
+			<system name="R9" display_name="恐怖重型光束加农炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="7500" range="High1" shot_speed="Normal" rate_of_fire="Misery"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_Red"
+				hits_all_intersecting_targets="true"				
+				shots_detonate_immediately="true"
+				maximum_number_of_targets_hit_per_shot="30"
+				>
+    </system>
+	</entity>
+	
+  <entity name="RoyalDireHeavyBeamGuardian" display_name="皇家恐怖重型光束守护者" copy_from="DireHeavyBeamGuardian" 
+					display_name_for_sidebar="重型光束皇家黑暗守护舰"
+           tags="RoyalDireGuardian" hull_points="2800000" shield_points="1400000"
+			
+			cost_for_ai_to_purchase="11655"
+  >
+    <ai_ship_group_membership name="RoyalDireGuardians" weight="100"/>
+	<ai_ship_group_membership name="RoyalDefensiveDireGuardians" weight="100"/>
+    <system name="R9" damage_per_shot="15000"   />
+  </entity>
+  
+  
+  
+  <entity name="DireParalysisGuardian"
+          thematic_groups="AI,DireGuardian"
+	        tags="DireGuardian,WormholeInvasionGuardian"
+            special_entity_type="AIDireGuardian" gimbal_icon_size_multiplier="1.5"
+            visuals="assets/_finalgamemeshes/guardians/widowguardian/widowguardian.prefab"
+          icon_name="Ships1/GuardianDire" icon_overlay="Overlays2/Guardian_Paralysis"
+            uses_large_health_bar="true"
+            category="Ship"
+            size_scale="10.8"
+			visuals_scale_multiplier="12"
+            y_offset_of_icon="35"
+            collision_priority="800"
+            display_name="恐怖寡妇守护者"
+					display_name_for_sidebar="寡妇黑暗守护舰"
+            description="如果瘫痪效果还不够糟的话，AI 还在这个恐怖守护者上安装了大型牵引阵列。"
+            blocks_enemy_claim_flows="true"
+            voice_group="Silent"
+			starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+			cost_for_ai_to_purchase="6350" strength_multiplier="1.5"
+          is_disallowed_from_spawning_in_waves="true"
+			hull_points="1400000" shield_points="700000" speed="BelowAverage2"
+			metal_cost="800000" energy_consumption="25000"
+			armor_mm="90" albedo="0.4" engine_gx="20" mass_tx="7"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+      priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			>
+    <ai_ship_group_membership name="AnyDireGuardians" weight="100"/>
+    <ai_ship_group_membership name="DefensiveDireGuardians" weight="100"/>
+    <ai_ship_group_membership name="DireExoLeaders" weight="100"/>
+    <ai_ship_group_membership name="TutorialDireGuardians" weight="100"/>
+			<system name="Q2" display_name="恐怖瘫痪螺栓"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1200" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Normal"
+				shots_per_salvo="60" fires_salvos_sequentially="false"
+				base_paralysis_seconds_per_shot="10"  paralysis_to_ships_mass_tx_less_than="4"
+				shot_type_data="ParalysisProngedShot_Blue" added_target_evaluator="ParalyzerAsPrimary"
+				>
+    </system>
+	<system name="T" display_name="恐怖牵引光束"
+				category="Passive"
+				tractor_range="AboveAverage1" tractor_count="550" tractor_hits_albedo_less_than="0.4" tractor_hits_engine_gx_less_than="18"
+				>
+    </system>
+  </entity>
+	
+  <entity name="RoyalDireParalysisGuardian" display_name="皇家恐怖寡妇守护者" copy_from="DireParalysisGuardian" 
+					display_name_for_sidebar="寡妇皇家黑暗守护舰"
+          tags="RoyalDireGuardian"
+            hull_points="2800000" shield_points="1400000"
+			
+			cost_for_ai_to_purchase="9525"
+  >
+    <ai_ship_group_membership name="RoyalDireGuardians" weight="100"/>
+	<ai_ship_group_membership name="RoyalDefensiveDireGuardians" weight="100"/>
+    <system name="Q2" damage_per_shot="2400" base_paralysis_seconds_per_shot="20"   />
+  </entity>		   
+
+  
+  
+  
+  <entity name="DireShredderGuardian"
+          thematic_groups="AI,DireGuardian"
+	        tags="DireGuardian"
+            special_entity_type="AIDireGuardian" gimbal_icon_size_multiplier="1.5"
+            visuals="assets/_finalgamemeshes/guardians/direshredderguardian/direshredderguardian.prefab"
+            icon_name="Ships1/GuardianDire" icon_overlay="Overlays2/Guardian_Shredder"
+            uses_large_health_bar="true"
+            category="Ship"
+            size_scale="10.8"
+			visuals_scale_multiplier="3"
+            y_offset_of_icon="35"
+            collision_priority="800"
+            display_name="恐怖碎纸机守护者"
+					display_name_for_sidebar="碎纸机黑暗守护舰"
+            description="持续生成非常可怕的近战无人机。"
+			fleet_design_template_i_use_for_drones="DireShredderGuardianDrones" is_disallowed_from_spawning_in_waves="true"
+			drone_starting_behavior_type="Attacker_Full"
+            blocks_enemy_claim_flows="true"
+            voice_group="Silent"
+			starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+			cost_for_ai_to_purchase="14140"	strength_multiplier="2.2"			
+			hull_points="1400000" shield_points="700000" speed="BelowAverage2"
+			metal_cost="800000" energy_consumption="25000"
+			armor_mm="150" albedo="0.4" engine_gx="20" mass_tx="7"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+      priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			>
+	<entity_type_drawing_bag_used_on_death data_list="ShredderDrone" min_spawn_value_list="15" />
+    <ai_ship_group_membership name="AnyDireGuardians" weight="100"/>
+    <ai_ship_group_membership name="DefensiveDireGuardians" weight="100"/>
+    <ai_ship_group_membership name="DireExoLeaders" weight="100"/>
+    <ai_ship_group_membership name="TutorialDireGuardians" weight="100"/>
+			<metal_flow purpose="BuildingDronesInternally" throughput="2500" />
+			 <system name="WW" display_name="恐怖弹道加农炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="10000" range="Normal4" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+				shot_type_data="ArmorPiercingShell"				
+				>
+    </system>
+	</entity>
+	
+  <entity name="RoyalDireShredderGuardian" display_name="皇家恐怖碎纸机守护者" copy_from="DireShredderGuardian" 
+					display_name_for_sidebar="碎纸机皇家黑暗守护舰"
+          tags="RoyalDireGuardian" hull_points="2800000" shield_points="1400000"
+		  fleet_design_template_i_use_for_drones="RoyalDireShredderGuardianDrones" is_disallowed_from_spawning_in_waves="true"
+			
+			cost_for_ai_to_purchase="21000"
+  >    
+    <entity_type_drawing_bag_used_on_death data_list="ShredderDrone" min_spawn_value_list="15" />
+    <ai_ship_group_membership name="RoyalDireGuardians" weight="100"/>
+	<ai_ship_group_membership name="RoyalDefensiveDireGuardians" weight="100"/>
+	<metal_flow purpose="BuildingDronesInternally" throughput="5000" />
+    <system name="WW" damage_per_shot="21000"   />
+  </entity>	
+  
+  
+  
+  <entity name="DireTethuidaGuardian"
+          thematic_groups="AI,DireGuardian"
+	        tags="DireGuardian"
+            special_entity_type="AIDireGuardian" gimbal_icon_size_multiplier="1.5"
+            visuals="assets/_finalgamemeshes/guardians/direteuthidaguardian/direteuthidaguardian.prefab"
+            icon_name="Ships1/GuardianDire" icon_overlay="Overlays2/Guardian_Tethuida"
+            uses_large_health_bar="true"
+            category="Ship"
+            size_scale="10.8"
+			visuals_scale_multiplier="3.6"
+            y_offset_of_icon="35"
+            collision_priority="800"
+            display_name="恐怖忒休达守护者"
+					display_name_for_sidebar="忒修斯黑暗守护舰"
+            description="生成能将你的单位转化为僵尸的快速无人机。"
+			fleet_design_template_i_use_for_drones="DireTeuthidaGuardianDrones" is_disallowed_from_spawning_in_waves="true"
+			drone_starting_behavior_type="Attacker_Full"
+            blocks_enemy_claim_flows="true"
+            voice_group="Silent"
+			starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+			cost_for_ai_to_purchase="14140"			
+			hull_points="1400000" shield_points="700000" speed="BelowAverage2"
+			metal_cost="800000" energy_consumption="25000"
+			armor_mm="50" albedo="0.3" engine_gx="20" mass_tx="7"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+      priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			>
+	<entity_type_drawing_bag_used_on_death data_list="TethuidaDrone" min_spawn_value_list="15" />
+    <ai_ship_group_membership name="AnyDireGuardians" weight="100"/>
+    <ai_ship_group_membership name="DefensiveDireGuardians" weight="100"/>
+    <ai_ship_group_membership name="DireExoLeaders" weight="100"/>
+    <ai_ship_group_membership name="TutorialDireGuardians" weight="100"/>
+			<metal_flow purpose="BuildingDronesInternally" throughput="2500" />
+			 <system name="WR" display_name="恐怖寄生螺栓"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="5000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Normal" 
+				shots_per_salvo="20" fires_salvos_sequentially="true"
+				shot_type_data="ParasiteCurvedPinkShot" added_target_evaluator="ZombifyAsPrimary"
+                				
+				>
+         <death_effect_damage type="Zombification" tier_name="Parasite"/>
+    </system>
+	</entity>
+	
+  <entity name="RoyalDireTethuidaGuardian" display_name="皇家恐怖忒休达守护者" copy_from="DireTethuidaGuardian" 
+					display_name_for_sidebar="忒修斯皇家黑暗守护舰"
+          tags="RoyalDireGuardian" hull_points="2800000" shield_points="1400000"
+            fleet_design_template_i_use_for_drones="RoyalDireTeuthidaGuardianDrones" is_disallowed_from_spawning_in_waves="true"
+			
+			cost_for_ai_to_purchase="21000"
+  >
+    <entity_type_drawing_bag_used_on_death data_list="TethuidaDrone" min_spawn_value_list="15" />
+    <ai_ship_group_membership name="RoyalDireGuardians" weight="100"/>
+	<ai_ship_group_membership name="RoyalDefensiveDireGuardians" weight="100"/>
+	<metal_flow purpose="BuildingDronesInternally" throughput="5000" />
+    <system name="WR" shots_per_salvo="40"  />
+  </entity>
+  
+  
+  
+  <entity name="DirePikeGuardian"
+          thematic_groups="AI,DireGuardian"
+	        tags="DireGuardian,WormholeInvasionGuardian"
+            special_entity_type="AIDireGuardian" gimbal_icon_size_multiplier="1.5"
+            visuals="assets/_finalgamemeshes/guardians/needlerguardian/needlerguardian.prefab"
+            icon_name="Ships1/GuardianDire" icon_overlay="Overlays2/Guardian_Pike"
+            uses_large_health_bar="true"
+            category="Ship"
+            size_scale="10.8"
+			visuals_scale_multiplier="12"
+            y_offset_of_icon="35"
+            collision_priority="800"
+            display_name="恐怖长矛守护者"
+					display_name_for_sidebar="长矛黑暗守护舰"
+            description="非常强大的单位，配备可怕的佩塔尔火炮，用于歼灭装甲目标。"
+            blocks_enemy_claim_flows="true"
+            voice_group="Silent"
+			starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+			cost_for_ai_to_purchase="8000" strength_multiplier="1.5"			
+			hull_points="1400000" shield_points="700000" speed="BelowAverage2"
+			metal_cost="800000" energy_consumption="25000"
+			armor_mm="70" albedo="0.3" engine_gx="20" mass_tx="7"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+      priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			>
+    <ai_ship_group_membership name="AnyDireGuardians" weight="100"/>
+    <ai_ship_group_membership name="DefensiveDireGuardians" weight="100"/>
+    <ai_ship_group_membership name="DireExoLeaders" weight="100"/>
+    <ai_ship_group_membership name="TutorialDireGuardians" weight="100"/>
+			<system name="V1" display_name="恐怖炸药包"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="4000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Misery"
+				shots_per_salvo="30" fires_salvos_sequentially="false"
+				shot_type_data="PikeShot_Gold"				
+				>
+	  <outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtLeast" compared_to="90" multiplier="6"  />
+      <outgoing_damage_modifier based_on="CurrentHullPercentage" applies_to="HullOnly" comparison_type="AtLeast" compared_to="75" multiplier="2"  />
+    </system>
+  </entity>
+	
+  <entity name="RoyalDirePikeGuardian" display_name="皇家恐怖长矛守护者" copy_from="DirePikeGuardian" 
+					display_name_for_sidebar="长矛皇家黑暗守护舰"
+          tags="RoyalDireGuardian" hull_points="2800000" shield_points="1400000"
+		  
+		  cost_for_ai_to_purchase="12000"
+  >
+    <ai_ship_group_membership name="RoyalDireGuardians" weight="100"/>
+	<ai_ship_group_membership name="RoyalDefensiveDireGuardians" weight="100"/>
+    <system name="V1" damage_per_shot="8000"   />
+  </entity>	
+  
+  
+  
+  <entity name="DireNucleophilicGuardian"
+          thematic_groups="AI,DireGuardian"
+	        tags="DireGuardian"
+            special_entity_type="AIDireGuardian" gimbal_icon_size_multiplier="1.5"
+            visuals="assets/_finalgamemeshes/guardians/laserguardian/laserguardian.prefab"
+            icon_name="Ships1/GuardianDire" icon_overlay="Overlays2/Guardian_Nucleophilic"
+            uses_large_health_bar="true"
+            category="Ship"
+            size_scale="10.8"
+			visuals_scale_multiplier="12"
+            y_offset_of_icon="35"
+            collision_priority="800"
+            display_name="恐怖亲核守护者"
+					display_name_for_sidebar="恐怖亲核守护舰"
+            description="非常强大的单位，对高能耗目标造成巨额伤害。"
+            blocks_enemy_claim_flows="true"
+            voice_group="Silent"
+			starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+			cost_for_ai_to_purchase="7000"	strength_multiplier="1.5"		
+			hull_points="1400000" shield_points="700000" speed="AboveAverage1"
+			metal_cost="800000" energy_consumption="25000"
+			armor_mm="50" albedo="0.3" engine_gx="20" mass_tx="7"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+      priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			>
+    <ai_ship_group_membership name="AnyDireGuardians" weight="100"/>
+    <ai_ship_group_membership name="DefensiveDireGuardians" weight="100"/>
+    <ai_ship_group_membership name="DireExoLeaders" weight="100"/>
+    <ai_ship_group_membership name="TutorialDireGuardians" weight="100"/>
+			<system name="R5" display_name="恐怖电子脉冲"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="80000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Misery" fires_salvos_sequentially="false"
+				shot_type_data="LaserPulse_RedLevel3"				
+				>
+				<outgoing_damage_modifier based_on="EnergyUsage" comparison_type="AtLeast" compared_to="7000" multiplier="6"  />
+    </system>
+  </entity>
+  
+  <entity name="RoyalDireNucleophilicGuardian" display_name="皇家恐怖亲核守护者"
+					display_name_for_sidebar="亲核皇家黑暗守护舰" copy_from="DireNucleophilicGuardian" 
+          tags="RoyalDireGuardian" hull_points="2800000" shield_points="1400000"
+			
+			cost_for_ai_to_purchase="10500"
+  >
+    <ai_ship_group_membership name="RoyalDireGuardians" weight="100"/>
+	<ai_ship_group_membership name="RoyalDefensiveDireGuardians" weight="100"/>
+    <system name="R5" damage_per_shot="160000"   />
+  </entity>
+  
+  
+  
+  <entity name="DireGrenadeLauncherGuardian"
+          thematic_groups="AI,DireGuardian"
+	        tags="DireGuardian"
+            special_entity_type="AIDireGuardian" gimbal_icon_size_multiplier="1.5"
+            visuals="assets/_finalgamemeshes/guardians/flakguardian/flakguardian.prefab"
+            icon_name="Ships1/GuardianDire" icon_overlay="Overlays2/Guardian_Grenade"
+            uses_large_health_bar="true"
+            category="Ship"
+            size_scale="10.8"
+			visuals_scale_multiplier="13"
+            y_offset_of_icon="35"
+            collision_priority="800"
+            display_name="恐怖榴弹发射器守护者"
+						display_name_for_sidebar="榴弹黑暗守护舰"
+            description="非常强大的单位，能歼灭成群的小型单位。"
+            blocks_enemy_claim_flows="true"
+            voice_group="Silent"
+			starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+			cost_for_ai_to_purchase="5700" strength_multiplier="1.5"			
+			hull_points="1400000" shield_points="700000" speed="BelowAverage2"
+			metal_cost="800000" energy_consumption="25000"
+			armor_mm="90" albedo="0.3" engine_gx="20" mass_tx="7"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+      priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			>
+    <ai_ship_group_membership name="AnyDireGuardians" weight="100"/>
+    <ai_ship_group_membership name="DefensiveDireGuardians" weight="100"/>
+        <ai_ship_group_membership name="DireExoLeaders" weight="100"/>
+    <ai_ship_group_membership name="TutorialDireGuardians" weight="100"/>
+			<system name="WJ" display_name="恐怖手榴弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="3200" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Low" 
+				shots_per_salvo="3" fires_salvos_sequentially="true"
+				shot_type_data="FlakShotAOEBurstAtEnd"
+				area_of_effect_size="900"
+				maximum_number_of_targets_hit_per_shot="40"
+				>
+				<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="30" multiplier="6" />
+    </system>
+  </entity>
+  
+  <entity name="RoyalDireGrenadeLauncherGuardian" display_name="皇家恐怖榴弹发射器守护者"
+					display_name_for_sidebar="榴弹皇家黑暗守护舰" copy_from="DireGrenadeLauncherGuardian" 
+          tags="RoyalDireGuardian" hull_points="2800000" shield_points="1400000"
+			
+			cost_for_ai_to_purchase="8550"
+  >
+    <ai_ship_group_membership name="RoyalDireGuardians" weight="100"/>
+	<ai_ship_group_membership name="RoyalDefensiveDireGuardians" weight="100"/>
+    <system name="WJ" shots_per_salvo="6"   />
+  </entity>
+
+  <entity name="DireVampireGuardian"
+          thematic_groups="AI,DireGuardian"
+	        tags="DireGuardian"
+            special_entity_type="AIDireGuardian" gimbal_icon_size_multiplier="1.5"
+            visuals="assets/_finalgamemeshes/guardians/vampireguardian/vampireguardian.prefab"
+            icon_name="Ships1/GuardianDire" icon_overlay="Overlays2/Guardian_Vampire"
+            uses_large_health_bar="true"
+            category="Ship"
+            size_scale="10.8"
+			visuals_scale_multiplier="13"
+            y_offset_of_icon="35"
+            collision_priority="800"
+            display_name="恐怖吸血鬼守护者"
+					display_name_for_sidebar="吸血鬼黑暗守护舰"
+            description="隐形的近距离吸血单位，在造成伤害的同时自我治疗。"
+            blocks_enemy_claim_flows="true"
+            voice_group="Silent"
+			starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+			cost_for_ai_to_purchase="9000" strength_multiplier="2"			
+			hull_points="1400000" shield_points="700000" speed="BelowAverage2"
+			metal_cost="800000" energy_consumption="25000"
+			armor_mm="80" albedo="0.7" engine_gx="20" mass_tx="7"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+      priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			>
+    <ai_ship_group_membership name="AnyDireGuardians" weight="100"/>
+    <ai_ship_group_membership name="DefensiveDireGuardians" weight="100"/>
+    <ai_ship_group_membership name="DireExoLeaders" weight="100"/>
+    <ai_ship_group_membership name="TutorialDireGuardians" weight="100"/>
+      <system name="WD" display_name="吸血双发"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="3000" range="Small2" shot_speed="Normal" rate_of_fire="Misery"
+				shots_per_salvo="20" fires_salvos_sequentially="false"
+				shot_type_data="DoubleShot_Red"
+				cloaking_percent_loss_from_firing="0.1"
+				health_change_per_damage_dealt="1"
+				>
+    </system>
+    <system name="C" display_name="隐形装置"
+				category="Passive"
+				cloaking_points="8000"
+				>
+    </system>
+  </entity>
+  
+  <entity name="RoyalDireVampireGuardian" display_name="皇家恐怖吸血鬼守护者" copy_from="DireVampireGuardian" 
+					display_name_for_sidebar="吸血鬼皇家黑暗守护舰"
+          tags="RoyalDireGuardian" hull_points="2800000" shield_points="1400000"
+			
+			cost_for_ai_to_purchase="13500"
+  >
+    <ai_ship_group_membership name="RoyalDireGuardians" weight="100"/>
+	<ai_ship_group_membership name="RoyalDefensiveDireGuardians" weight="100"/>
+    <system name="WD" damage_per_shot="6000"   />
+  </entity>
+
+  <entity name="DireTritiumSniperGuardian"
+          thematic_groups="AI,DireGuardian"
+	        tags="DireGuardian"
+            special_entity_type="AIDireGuardian" gimbal_icon_size_multiplier="1.5"
+            visuals="assets/_finalgamemeshes/guardians/sniperguardian/sniperguardian.prefab"
+            icon_name="Ships1/GuardianDire" icon_overlay="Overlays2/Guardian_Sniper"
+            uses_large_health_bar="true"
+            category="Ship"
+            size_scale="12"
+			visuals_scale_multiplier="13"
+            y_offset_of_icon="35"
+            collision_priority="800"
+            display_name="恐怖氚狙击守护者"
+						display_name_for_sidebar="狙击黑暗守护舰"
+            description="大型狙击单位，能歼灭缺乏辐射防护的单位。"
+            blocks_enemy_claim_flows="true"
+            voice_group="Silent"
+			starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+			cost_for_ai_to_purchase="8700" strength_multiplier="2"			
+			hull_points="1400000" shield_points="700000" speed="BelowAverage1"
+			metal_cost="800000" energy_consumption="25000"
+			armor_mm="40" albedo="0.4" engine_gx="20" mass_tx="7"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+      cannot_target_or_alert_ai_reinforcement_spots="true"
+			
+      priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			>
+    <ai_ship_group_membership name="AnyDireGuardians" weight="100"/>
+    <ai_ship_group_membership name="DefensiveDireGuardians" weight="100"/>
+    <ai_ship_group_membership name="DireExoLeaders" weight="100"/>
+    <ai_ship_group_membership name="TutorialDireGuardians" weight="100"/>
+    <system name="Q9" display_name="氚轨道炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1000" range="EssentiallyInfinite" shot_speed="VeryFast" rate_of_fire="Misery" 
+				shots_per_salvo="40" fires_salvos_sequentially="true"
+				shot_type_data="ExtremeLongRangeRailgun"				
+				>
+        <outgoing_damage_modifier based_on="Albedo" comparison_type="AtMost" compared_to="0.3" multiplier="8" />
+    </system>
+    <system name="V3" display_name="毒刺螺栓"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="10000" range="AboveAverage2" shot_speed="Normal" rate_of_fire="VeryLow" fires_salvos_sequentially="true"
+				shot_type_data="StingerBolt"
+                priority_for_kiting="0"
+				>
+      <outgoing_damage_modifier applies_to="AllShields" based_on="MaxBubbleForcefield" comparison_type="GreaterThan" compared_to="10000" multiplier="4" />
+    </system>
+  </entity>
+  
+  <entity name="RoyalDireTritiumSniperGuardian" display_name="皇家恐怖氚狙击守护者"
+			display_name_for_sidebar="狙击皇家黑暗守护舰" copy_from="DireTritiumSniperGuardian" 
+          tags="RoyalDireGuardian" hull_points="2800000" shield_points="1400000"
+      cannot_target_or_alert_ai_reinforcement_spots="true"
+			
+			cost_for_ai_to_purchase="13050"
+  >
+    <ai_ship_group_membership name="RoyalDireGuardians" weight="100"/>
+	<ai_ship_group_membership name="RoyalDefensiveDireGuardians" weight="100"/>
+    <system name="Q9" damage_per_shot="2000"   />
+	<system name="V3" damage_per_shot="20000"   />
+  </entity>
+
+  <entity name="DireGravityGuardian"
+          thematic_groups="AI,DireGuardian"
+	        tags="DireGuardian"
+            special_entity_type="AIDireGuardian" gimbal_icon_size_multiplier="1.5"
+            visuals="assets/_finalgamemeshes/guardians/gravityguardian/gravityguardian.prefab"
+            icon_name="Ships1/GuardianDire" icon_overlay="Overlays2/Guardian_Gravity"
+            uses_large_health_bar="true"
+            category="Ship"
+            size_scale="11.4"
+			visuals_scale_multiplier="13"
+            y_offset_of_icon="35"
+            collision_priority="800"
+            display_name="恐怖引力守护者"
+					display_name_for_sidebar="重力黑暗守护舰"
+            description="严重扭曲自身周围的重力，对敌对目标造成极大的减速效果。"
+            blocks_enemy_claim_flows="true"
+            voice_group="Silent"
+			starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+			cost_for_ai_to_purchase="8700" strength_multiplier="2"			
+			hull_points="1400000" shield_points="700000" speed="BelowAverage1"
+			metal_cost="800000" energy_consumption="25000"
+			armor_mm="50" albedo="0.3" engine_gx="20" mass_tx="7"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+      priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			>
+    <ai_ship_group_membership name="AnyDireGuardians" weight="100"/>
+    <ai_ship_group_membership name="DefensiveDireGuardians" weight="100"/>
+    <ai_ship_group_membership name="DireExoLeaders" weight="100"/>
+    <ai_ship_group_membership name="TutorialDireGuardians" weight="100"/>
+     <system name="WG" display_name="引力加农炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="2500" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Normal" 
+				shots_per_salvo="60" fires_salvos_sequentially="false"
+				shot_type_data="ElegantCurl"				
+				>
+		<outgoing_damage_modifier based_on="engine_gx" comparison_type="AtMost" compared_to="7" multiplier="6" />
+    </system>
+	<system name="G" display_name="引力核心"
+				category="Passive"
+				base_gravity_speed_multiplier="0.2" gravity_hits_engine_gx_less_than="14" gravity_range="AboveAverage3"
+				>
+    </system>
+  </entity>
+  
+  <entity name="RoyalDireGravityGuardian" display_name="皇家恐怖引力守护者" copy_from="DireGravityGuardian" 
+					display_name_for_sidebar="重力皇家黑暗守护舰"
+          tags="RoyalDireGuardian" hull_points="2800000" shield_points="1400000"
+			
+			cost_for_ai_to_purchase="13050"
+  >
+    <ai_ship_group_membership name="RoyalDireGuardians" weight="100"/>
+	<ai_ship_group_membership name="RoyalDefensiveDireGuardians" weight="100"/>
+    <system name="WG" damage_per_shot="5000"   />
+  </entity>
+
+  <entity name="DireStealthGuardian"
+          thematic_groups="AI,DireGuardian"
+	        tags="DireGuardian"
+            special_entity_type="AIDireGuardian" gimbal_icon_size_multiplier="1.5"
+            visuals="assets/_finalgamemeshes/guardians/stealthguardian/stealthguardian.prefab"
+            icon_name="Ships1/GuardianDire" icon_overlay="Overlays2/Guardian_Stealth"
+            uses_large_health_bar="true"
+            category="Ship"
+            size_scale="10.8"
+			visuals_scale_multiplier="13"
+            y_offset_of_icon="35"
+            collision_priority="800"
+            display_name="恐怖隐形守护者"
+					display_name_for_sidebar="隐形黑暗守护舰"
+            description="大型、快速的隐形单位，完全无视个人护盾。"
+            blocks_enemy_claim_flows="true"
+            voice_group="Silent"
+			starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+			cost_for_ai_to_purchase="8500" strength_multiplier="2"			
+			hull_points="1400000" shield_points="700000" speed="AboveAverage6"
+			metal_cost="800000" energy_consumption="25000"
+			armor_mm="50" albedo="0.7" engine_gx="20" mass_tx="7"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+      priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			>
+    <ai_ship_group_membership name="AnyDireGuardians" weight="100"/>
+    <ai_ship_group_membership name="DefensiveDireGuardians" weight="100"/>
+    <ai_ship_group_membership name="DireExoLeaders" weight="50"/>
+    <ai_ship_group_membership name="TutorialDireGuardians" weight="100"/>
+    <system name="WL" display_name="聚变炸弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="4000" range="Small4" shot_speed="Slow" rate_of_fire="Normal" fires_salvos_sequentially="false"
+				shots_per_salvo="20"
+				shot_type_data="FusionBomb"
+				base_percent_damage_bypasses_personal_shields="0.9" cloaking_percent_loss_from_firing="0.2"
+				>
+				<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="HullOnly" comparison_type="AtLeast" compared_to="50" multiplier="1.5" />
+    </system>
+    <system name="C" display_name="隐形装置"
+				category="Passive"
+				cloaking_points="8000"
+				>
+    </system>
+  </entity>
+  
+  <entity name="RoyalDireStealthGuardian" display_name="皇家恐怖隐形守护者" copy_from="DireStealthGuardian" 
+					display_name_for_sidebar="隐形皇家黑暗守护舰"
+          tags="RoyalDireGuardian" hull_points="2800000" shield_points="1400000"
+			
+			cost_for_ai_to_purchase="12750"
+  >
+    <ai_ship_group_membership name="RoyalDireGuardians" weight="100"/>
+	<ai_ship_group_membership name="RoyalDefensiveDireGuardians" weight="100"/>
+    <system name="WL" damage_per_shot="4000"   />
+  </entity>
+  
+  <entity name="DireMLRSGuardian"
+          thematic_groups="AI,DireGuardian"
+	        tags="DireGuardian"
+            special_entity_type="AIDireGuardian" gimbal_icon_size_multiplier="1.5"
+            visuals="assets/_finalgamemeshes/guardians/mlrsguardian/mlrsguardian.prefab"
+            icon_name="Ships1/GuardianDire" icon_overlay="Overlays1/Turret_MLRS"
+            uses_large_health_bar="true"
+            category="Ship"
+            size_scale="10.8"
+			visuals_scale_multiplier="13"
+            y_offset_of_icon="35"
+            collision_priority="800"
+            display_name="恐怖多管火箭炮守护者"
+					display_name_for_sidebar="多管火箭黑暗守护舰"
+            description="持续发射大量火箭弹。"
+            blocks_enemy_claim_flows="true"
+            voice_group="Silent"
+			starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+			cost_for_ai_to_purchase="10500" strength_multiplier="2"			
+			hull_points="1400000" shield_points="700000" speed="Normal1"
+			metal_cost="800000" energy_consumption="25000"
+			armor_mm="50" albedo="0.3" engine_gx="20" mass_tx="7"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+      priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			>
+    <ai_ship_group_membership name="AnyDireGuardians" weight="100"/>
+    <ai_ship_group_membership name="DefensiveDireGuardians" weight="100"/>
+    <ai_ship_group_membership name="DireExoLeaders" weight="100"/>
+    <ai_ship_group_membership name="TutorialDireGuardians" weight="100"/>
+    <system name="R1" display_name="微型火箭"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1600" range="Normal4" shot_speed="Normal" rate_of_fire="Normal"
+				shots_per_salvo="150" fires_salvos_sequentially="false"
+				shot_type_data="FusionRocket"				
+				>
+        <outgoing_damage_modifier based_on="CurrentHullPercentage" comparison_type="AtMost" compared_to="50" multiplier="2" />
+		<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="HullOnly" comparison_type="LessThan" compared_to="1" multiplier="1.5" />
+    </system>
+  </entity>
+  
+  <entity name="RoyalDireMLRSGuardian" display_name="皇家恐怖多管火箭炮守护者" copy_from="DireMLRSGuardian" 
+					display_name_for_sidebar="多管火箭皇家黑暗守护舰"
+          tags="RoyalDireGuardian" hull_points="2800000" shield_points="1400000"
+			
+			cost_for_ai_to_purchase="15750"
+  >
+    <ai_ship_group_membership name="RoyalDireGuardians" weight="100"/>
+	<ai_ship_group_membership name="RoyalDefensiveDireGuardians" weight="100"/>
+    <system name="R1" damage_per_shot="3200"   />
+  </entity>  
+  
+
+  <entity name="DireTemperamentalGuardian"
+          thematic_groups="AI,DireGuardian"
+	        tags="DireGuardian"
+            special_entity_type="AIDireGuardian" gimbal_icon_size_multiplier="1.5"
+            visuals="Assets/_FinalGameMeshes/Guardians/FragmentingGuardian/TemperamentalGuardian.prefab"
+            icon_name="Ships1/GuardianDire" icon_overlay="Overlays2/Guardian_Temperamental"
+            uses_large_health_bar="true"
+            category="Ship"
+            size_scale="10.8"
+			visuals_scale_multiplier="5"
+            y_offset_of_icon="35"
+            collision_priority="800"
+            display_name="恐怖喜怒无常守护者"
+					display_name_for_sidebar="暴躁黑暗守护舰"
+            description="体型庞大但较弱，当 AI 在该行星上数量处于劣势时会愤怒。"
+            blocks_enemy_claim_flows="true"
+            voice_group="Silent"
+			starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+			cost_for_ai_to_purchase="12000" strength_multiplier="2"			
+			hull_points="400000" shield_points="200000" speed="BelowAverage2"
+			metal_cost="800000" energy_consumption="25000"
+			armor_mm="50" albedo="0.3" engine_gx="20" mass_tx="7"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+      priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+	        transform_when_outnumbered="DireTantrumingGuardian" time_must_have_been_on_planet_before_transforming_if_outnumbered_or_outnumbering="2"
+            num_units_to_transform_into="1"
+            destroy_on_load_if_more_than_this_number_on_planet="10"
+			description_appender_dll="AIWarExternalCode"
+	        description_appender_type="Arcen.AIW2.External.QuiescentEyeAppender"
+			>
+	<ai_ship_group_membership name="DefensiveDireGuardians" weight="10"/>
+      <system name="WW" display_name="弹道加农炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="3000" range="Normal4" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+				shot_type_data="ArmorPiercingShell"				
+				>
+    </system>
+  </entity>
+  
+  <entity name="RoyalDireTemperamentalGuardian" display_name="皇家恐怖喜怒无常守护者" copy_from="DireTemperamentalGuardian" 
+					display_name_for_sidebar="暴躁皇家黑暗守护舰"
+          transform_when_outnumbered="RoyalDireTantrumingGuardian" time_must_have_been_on_planet_before_transforming_if_outnumbered_or_outnumbering="2"
+          tags="RoyalDireGuardian" hull_points="800000" shield_points="400000"
+			
+			cost_for_ai_to_purchase="18000"
+  >
+	<ai_ship_group_membership name="RoyalDefensiveDireGuardians" weight="10"/>
+    <system name="WW" damage_per_shot="6000"   />
+  </entity>
+
+  <entity name="DireTantrumingGuardian"
+          thematic_groups="AI,DireGuardian"
+	        tags="DireGuardian"
+            special_entity_type="AIDireGuardian" gimbal_icon_size_multiplier="1.5"
+            visuals="Assets/_FinalGameMeshes/Guardians/FragmentingGuardian/TantrumingGuardian.prefab"
+            icon_name="Ships1/GuardianDire" icon_overlay="Overlays2/Guardian_Tantruming"
+            uses_large_health_bar="true"
+            category="Ship"
+            size_scale="10.8"
+			visuals_scale_multiplier="5"
+            y_offset_of_icon="35"
+            collision_priority="800"
+            display_name="恐怖发脾气守护者"
+					display_name_for_sidebar="发怒黑暗守护舰"
+            description="体型庞大，因数量处于劣势而非常非常愤怒。"
+            blocks_enemy_claim_flows="true"
+            voice_group="Silent"
+			starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+			cost_for_ai_to_purchase="12000" strength_multiplier="2"			
+			hull_points="4000000" shield_points="2000000" speed="BelowAverage2"
+			metal_cost="800000" energy_consumption="25000"
+			armor_mm="50" albedo="0.3" engine_gx="20" mass_tx="7"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+      priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+	         transform_when_outnumbering="DireTemperamentalGuardian" time_must_have_been_on_planet_before_transforming_if_outnumbered_or_outnumbering="30"
+            num_units_to_transform_into="1"
+            destroy_on_load_if_more_than_this_number_on_planet="10"
+		    description_appender_dll="AIWarExternalCode"
+	        description_appender_type="Arcen.AIW2.External.AlertedEyeAppender"
+			>
+      <system name="WW" display_name="弹道加农炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="15000" range="AboveAverage4" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+				shots_per_salvo="20"
+				shot_type_data="ArmorPiercingShell"				
+				>
+    </system>
+  </entity>
+  
+  <entity name="RoyalDireTantrumingGuardian" display_name="皇家恐怖发脾气守护者" copy_from="DireTantrumingGuardian"
+					display_name_for_sidebar="发怒皇家黑暗守护舰"
+            transform_when_outnumbering="RoyalDireTemperamentalGuardian" time_must_have_been_on_planet_before_transforming_if_outnumbered_or_outnumbering="30"
+            tags="RoyalDireGuardian" hull_points="8000000" shield_points="4000000"
+			
+			cost_for_ai_to_purchase="18000"
+  >
+    <system name="WW" damage_per_shot="30000"   />
+  </entity> 
+
+  <entity name="DireFragmentingGuardian"
+          thematic_groups="AI,DireGuardian"
+	        tags="DireGuardian"
+            special_entity_type="AIDireGuardian" gimbal_icon_size_multiplier="1.5"
+            visuals="Assets/_FinalGameMeshes/Guardians/FragmentingGuardianAlt/FragmentingGuardian.prefab"
+            icon_name="Ships1/GuardianDire" icon_overlay="Overlays2/Guardian_Fragmenting"
+            uses_large_health_bar="true"
+            category="Ship"
+            size_scale="12"
+			visuals_scale_multiplier="5"
+            y_offset_of_icon="35"
+            collision_priority="800"
+            display_name="恐怖分裂守护者"
+					display_name_for_sidebar="分裂黑暗守护舰"
+            description="体型庞大但较弱，会分裂成许多相对更弱的碎片，组合起来则更加危险。"
+            blocks_enemy_claim_flows="true"
+            voice_group="Silent"
+			starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+			cost_for_ai_to_purchase="12000" strength_multiplier="2"			
+			hull_points="400000" shield_points="200000" speed="BelowAverage2"
+			metal_cost="800000" energy_consumption="25000"
+			armor_mm="40" albedo="0.4" engine_gx="20" mass_tx="7"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+      priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+	  	    transform_when_outnumbered="FragmentingGuardianShard" time_must_have_been_on_planet_before_transforming_if_outnumbered_or_outnumbering="2"
+            num_units_to_transform_into="50"
+            destroy_on_load_if_more_than_this_number_on_planet="40"
+		    description_appender_dll="AIWarExternalCode"
+	        description_appender_type="Arcen.AIW2.External.QuiescentEyeAppender"
+			>
+    <ai_ship_group_membership name="DefensiveDireGuardians" weight="10"/>
+      <system name="WW" display_name="弹道加农炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="3000" range="Normal4" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+				shot_type_data="ArmorPiercingShell"				
+				>
+    </system>
+  </entity>
+  
+  <entity name="RoyalDireFragmentingGuardian" display_name="皇家恐怖分裂守护者" copy_from="DireFragmentingGuardian" 
+					display_name_for_sidebar="分裂皇家黑暗守护舰"
+          tags="RoyalDireGuardian" hull_points="800000" shield_points="400000"
+		    num_units_to_transform_into="100"
+			
+			cost_for_ai_to_purchase="18000"
+  >
+    <ai_ship_group_membership name="RoyalDefensiveDireGuardians" weight="100"/>
+    <system name="WW" damage_per_shot="6000"   />
+  </entity>  
+	
+  <entity name="AIHunterKiller"
+            thematic_groups="AI,DireGuardian"
+	        tags="HunterKiller"
+            special_entity_type="AIDireGuardian" gimbal_icon_size_multiplier="1.5"
+            visuals="Assets/_FinalGameMeshes/AIOnly/HunterKiller/HunterKiller.prefab"
+            icon_name="Ships1/HunterKiller" icon_overlay="Overlays2/HunterKiller_Rank1"
+            uses_large_health_bar="true"
+            category="Ship"
+            size_scale="7"
+			visuals_scale_multiplier="14"
+            y_offset_of_icon="20"
+            collision_priority="800"
+            display_name="AI 猎杀者"
+			display_name_for_sidebar="猎杀者"
+            description="极其强大的 AI 守护者，专门用于摧毁人类文明的所有痕迹。"
+            blocks_enemy_claim_flows="true"
+            voice_group="Silent"
+			starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+			cost_for_ai_to_purchase="14000"			
+			hull_points="4000000" shield_points="2000000" speed="Normal2"
+			metal_cost="800000" energy_consumption="25000"
+			armor_mm="150" albedo="0.4" engine_gx="20" mass_tx="6"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+      priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			
+			>	
+   <system name="R9" display_name="质量不稳定光束"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="12000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Devourer"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_Red"
+				hits_all_intersecting_targets="false"				
+				shots_detonate_immediately="false"
+				>
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="3" />
+    </system>
+    <system name="WL" display_name="聚变炸弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="3000" range="AboveAverage1" shot_speed="Slow" rate_of_fire="High"
+                shots_per_salvo="35" fires_salvos_sequentially="false"
+				shot_type_data="FusionBomb"
+				base_percent_damage_bypasses_personal_shields="1" 
+				>
+			<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="HullOnly" comparison_type="AtLeast" compared_to="50" multiplier="1.5" />
+    </system>
+    <ai_ship_group_membership name="DireExoLeaders" weight="200"/>
+	<ship_class_data can_be_zombified_and_similar="false" />
+  </entity>	
+	
+  
+</root>

@@ -1,0 +1,1055 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+<!-- Cruisers. Elite frigates with cap of 1
+		Ambush: Trailblazer Cruiser.
+		Concussion (Artillery): Tempest Cruiser
+		Disruption: Swarm Cruiser
+		Fusion (Piercing): Voidpiercer Cruiser
+		Generalist: Valkyrie Cruiser
+		Melee: Starfish Cruiser
+		Raid: Blackguard Cruiser
+		Splash: Radiant Cruiser 
+		Subterfuge: Ethereal Cruiser
+		Technologist (Exotic): Gridlock Cruiser
+		-->
+
+<!-- Ambush: Trailblazer Cruiser. Swarmhost style sieger. Launches 'Trailblazer' that drops mines enroute to target and upon death releases drones with potent ambush bonuses that are strong on both offense and defense. -->
+<entity name="AmbushCruiser"
+            thematic_groups="Human,Cruiser"
+	        special_entity_type="Cruiser"
+			visuals="assets/_dlc2/cruisers/trailblazercruiser/trailblazercruiser.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships2/Cruiser" icon_overlay="Overlays2/Cruiser_Trailblazer" gimbal_icon_size_multiplier="1.25"
+			voice_group="Saboteur"  lod_distance_overrides="150,15000"
+			category="Ship"
+			size_scale="8.5"
+			visuals_scale_multiplier="4"
+			uses_large_health_bar="true"
+			collision_priority="100"
+			display_name="开拓者巡洋舰"
+			display_name_for_sidebar="开拓者CC" aip_when_granted_by_hack="15"
+			description="巡洋舰是一种精英级别的单位，每个舰队限拥有一艘；它们不属于标准单位序列，但有资格获得快速反应支援（FRS）单位提供的全舰队增益。开拓者巡洋舰本身的狙击轨道炮火力适中，但其主要攻击方式是发射开拓者飞行器，这些飞行器在接近敌人时会布设地雷，并且在被摧毁时会释放出具有强大伏击增益效果的无人机，这些无人机在进攻和防御方面都很出色。"
+			drone_starting_behavior_type="Attacker_Full"
+			starting_mark_level="Mark3" tech_upgrades_that_benefit_me="Ambush"
+			cost_for_ai_to_purchase="1600" strength_multiplier="1"
+			hull_points="714285" shield_points="285714" speed="Normal3"
+			metal_cost="500000" energy_consumption="45000"
+			armor_mm="175" engine_gx="16" albedo="0.4" mass_tx="6.5"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			cannot_target_or_alert_ai_reinforcement_spots="true"
+			absolute_max_cap_when_in_fleets="1"
+            priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+			>
+	<fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="100" cap="1"/>		
+	<system name="WZ" display_name="轨道炮"
+				category="Weapon" firing_timing="OnlyInRange"  range="EssentiallyInfinite" shot_speed="VeryFast" rate_of_fire="Normal" fires_salvos_sequentially="true" shot_type_data="ExtremeLongRangeRailgun"
+				damage_per_shot="1500" shots_per_salvo="4" added_shots_per_salvo_per_mark="4" multiplier_damage_to_tractored_unit="3"			
+				>
+		<outgoing_damage_modifier based_on="TargetTimeAtPlanet" comparison_type="LessThan" compared_to="15" multiplier="2" />
+    </system>
+ 	<system name="L" display_name="开拓者发射器"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="5" range="EssentiallyInfinite" shot_speed="Slow" rate_of_fire="PeriodicActivation" fires_salvos_sequentially="true" shot_type_data="Trailblazer" 
+				shots_per_salvo="1" added_shots_per_salvo_per_mark="1" 
+				>
+	</system>	
+	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+	
+<!--Concussion: Tempest Cruiser. Bombard style siege that fires in bursts and deals more damage to distant targets. Has additional kinetic buffer to repulse units that get too close and stuns their engines. -->	
+	<entity name="TempestCruiser"
+	        thematic_groups="Human,Cruiser"
+	        special_entity_type="Cruiser"
+			visuals="assets/_dlc2/cruisers/tempestcruiser/tempestcruiser.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships2/Cruiser" icon_overlay="Overlays2/Cruiser_Trebuchet" gimbal_icon_size_multiplier="1.25"
+			voice_group="Saboteur" lod_distance_overrides="150,200,400,15000"
+			category="Ship"
+			size_scale="8.5"
+			visuals_scale_multiplier="3"
+			uses_large_health_bar="true"
+			collision_priority="100"
+			display_name="风暴巡洋舰"
+			display_name_for_sidebar="风暴CC" aip_when_granted_by_hack="15"
+			description="巡洋舰是一种精英级别的单位，每个舰队限拥有一艘；它们不属于标准单位序列，但有资格获得快速反应支援（FRS）单位提供的全舰队增益。风暴巡洋舰是一种齐射式攻城舰，能对远距离目标造成更多伤害，并且拥有一个动能缓冲器，可击退过于靠近的单位并使其引擎瘫痪。此外，风暴巡洋舰可以在有敌对建筑的行星上建造投石机。这些投石机只能攻击建筑，但随着时间的推移，它们将摧毁行星防御设施。"
+			starting_mark_level="Mark3" tech_upgrades_that_benefit_me="Concussion"
+			cost_for_ai_to_purchase="1600" strength_multiplier="1"
+			hull_points="714285" shield_points="285714" speed="Normal3"
+			metal_cost="500000" energy_consumption="45000"
+			armor_mm="175" engine_gx="16" albedo="0.4" mass_tx="6.5"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			absolute_max_cap_when_in_fleets="1"
+            priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+			>
+	<fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="100" cap="1"/>			
+	<system name="WT" display_name="风暴鱼雷"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="9000" range="High2" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+				shot_type_data="EngineDisruptingShell"	 shots_per_salvo="8" added_shots_per_salvo_per_mark="2"
+				 use_alternate_rate_of_fire_after_x_shots="5" alternate_rate_of_fire="Sloth"  use_alternate_rate_of_fire_for_x_shots_before_reverting="1"
+				>
+				<outgoing_damage_modifier based_on="AttackDistance" comparison_type="MultiplesOf" compared_to="2000" multiplier="1" />
+	</system>  
+	<system name="B8" display_name="风暴冲击波"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="500" range="Normal1" shot_speed="Instant" rate_of_fire="FairlyLow" fires_salvos_sequentially="true"
+				shot_type_data="ExplosiveInvisible"
+				area_of_effect_size="4200"					
+				maximum_number_of_targets_hit_per_shot="50"
+				base_knockback_per_shot="2000" added_knockback_per_shot_per_mark="500" knockback_to_ships_mass_tx_less_than="7" added_target_evaluator="CanKnockback"
+				base_engine_stun_per_shot="15" added_engine_stun_per_shot_per_mark="3" max_engine_stun_seconds="30" engine_stun_to_engine_gx_less_than="22" 
+				>
+    </system>
+	<system name="L" display_name="部署投石机"
+				category="Weapon" firing_timing="OnlyInRange" damage_per_shot="5" range="Planetary" shot_speed="Slow" rate_of_fire="OneShot" fires_salvos_sequentially="true" 				
+				shot_type_data="Trebuchet"  only_targets_static_units="true" 
+				>
+	</system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+	
+	<!-- Trebuchet is created by the Tempest Cruiser only on enemy worlds containing immobile structures-->		
+<entity name="Trebuchet"
+        thematic_groups="Human,Cruiser"
+		special_entity_type="Cruiser"
+		visuals="Assets/_DLC2/Cruisers/TrebuchetDrone/TrebuchetDrone.prefab" visuals_bundle="exp2_zenith_onslaught"
+		icon_name="Ships3/Trebuchet" gimbal_icon_size_multiplier="1.25"
+		category="Ship"
+		icon_overlay="Overlays1/Starship_Siege" 
+		size_scale="2.55"
+		visuals_scale_multiplier="3.5"
+		collision_priority="100"
+		voice_group="Saboteur"
+		display_name="投石机"
+		description="由风暴巡洋舰制造的攻城器械。弹药耗尽后它将自毁，但会对建筑造成巨大伤害，尤其是像堡垒这类更大型的建筑。"
+		starting_mark_level="Mark3" tech_upgrades_that_benefit_me="Concussion"
+		cost_for_ai_to_purchase="150" strength_multiplier="1"
+		hull_points="100000" shield_points="0" speed="Immobile"
+		metal_cost="1000" energy_consumption="2000"
+		armor_mm="85" albedo="0.4"  mass_tx="0.2"
+		metal_cost_multiplier_for_scrapping="0"
+		immune_to_repairs="true"
+		immune_to_swapping_between_fleets="true"
+		self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="3"
+		ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+		>
+		   <system name="WU" display_name="质量驱动器"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="70000" range="Planetary" shot_speed="Normal" rate_of_fire="ExtremelyLow" fires_salvos_sequentially="true"
+				shot_type_data="ExtremelyLongRangeIon"   only_targets_static_units="true"
+				health_change_by_max_health_divided_by_this_per_attack="-10"
+				>
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="6" multiplier="6" />
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+
+
+<!-- Disruptive: Swarm Cruiser. Pike primary weapon but also produces mosquito drones with reverse tractors and specialize and swarming large units. -->
+<entity name="DisruptiveCruiser"
+            thematic_groups="Human,Cruiser"
+	        special_entity_type="Cruiser"
+			visuals="Assets/_DLC2/Cruisers/SwarmCruiser/SwarmCruiser.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships2/Cruiser" icon_overlay="Overlays2/Cruiser_Mosquito" gimbal_icon_size_multiplier="1.25"
+			voice_group="Saboteur"
+			category="Ship"
+			size_scale="11" lod_distance_overrides="200,600,15000"
+			visuals_scale_multiplier="5"
+			uses_large_health_bar="true"
+			collision_priority="100"
+			display_name="蜂群巡洋舰"
+			display_name_for_sidebar="蜂群CC" aip_when_granted_by_hack="15"
+			description="巡洋舰是一种精英级别的单位，每个舰队限拥有一艘；它们不属于标准单位序列，但有资格获得快速反应支援（FRS）单位提供的全舰队增益。蜂群巡洋舰配备了一门经过改装的长枪护卫舰主武器。它之所以得名，是因为它会定期产生一群带有反向牵引器的蚊子无人机，用于附着在敌人身上。这些蚊子无人机尤其擅长围攻大型单位。"
+			drone_starting_behavior_type="Attacker_Full"
+			starting_mark_level="Mark3" tech_upgrades_that_benefit_me="Disruptive"
+			cost_for_ai_to_purchase="1600" strength_multiplier="1.24"
+			hull_points="714285" shield_points="285714" speed="Normal3"
+			metal_cost="500000" energy_consumption="45000"
+			armor_mm="175" engine_gx="16" albedo="0.4" mass_tx="6.5"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			absolute_max_cap_when_in_fleets="1"
+            priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+			>
+	<fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="100" cap="1"/>			
+	<system name="V1" display_name="抑制炸弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="5000" range="Normal4" shot_speed="Normal" rate_of_fire="FairlyLow"
+				shots_per_salvo="5" added_shots_per_salvo_per_mark="5" fires_salvos_sequentially="false"
+				shot_type_data="PikeShot_Gold"		
+				base_enemy_weapon_reload_slowing_seconds_per_shot="6" added_enemy_weapon_reload_slowing_seconds_per_shot_per_mark="2" max_enemy_weapon_reload_slowing_seconds="18" enemy_weapon_reload_slowing_to_armor_mm_less_than="150"
+				>
+      <outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtLeast" compared_to="90" multiplier="3" />
+      <outgoing_damage_modifier based_on="CurrentHullPercentage" applies_to="HullOnly" comparison_type="AtLeast" compared_to="75" multiplier="2" />
+    </system>
+	
+	<system name="L1" display_name="蚊子蜂群发射器"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="5" range="Planetary" shot_speed="Slow" rate_of_fire="Sloth" fires_salvos_sequentially="true" 				
+				shot_type_data="MosquitoDrone"
+				shots_per_salvo="30" added_shots_per_salvo_per_mark="5"
+				
+				>
+	</system>	
+	<system name="L2" display_name="蚊子发射器"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="5" range="Planetary" shot_speed="Slow" rate_of_fire="SlightlyLow" fires_salvos_sequentially="true" 				
+				shot_type_data="MosquitoDrone"
+				shots_per_salvo="5" 
+				
+				>
+	</system>		
+	<ship_class_data can_be_zombified_and_similar="false" />
+</entity>
+
+<!-- Piercing (Fusion): Voidpiercer Cruiser. A powerhouse that can take on exogalatic threats as well as produce temporary singularity rifts that deal massive damage to strikecraft the enter its event horizion -->
+<entity name="FusionCruiser"
+            thematic_groups="Human,Cruiser"
+	        special_entity_type="Cruiser"
+			visuals="assets/_dlc2/cruisers/voicepiercercruiser/voicepiercercruiser.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships2/Cruiser" icon_overlay="Overlays2/Cruiser_Voicepiercer" gimbal_icon_size_multiplier="1.25"
+			voice_group="Saboteur"
+			category="Ship"
+			size_scale="8.5"
+			visuals_scale_multiplier="3"
+			collision_priority="100"
+			uses_large_health_bar="true"
+			display_name="虚空穿刺巡洋舰"
+			display_name_for_sidebar="虚空穿刺CC" aip_when_granted_by_hack="15"
+			description="巡洋舰是一种精英级别的单位，每个舰队限拥有一艘；它们不属于标准单位序列，但有资格获得快速反应支援（FRS）单位提供的全舰队增益。虚空穿刺巡洋舰是一艘强大的战舰，它凭借内爆武器甚至可以应对星系外的威胁，并且随着等级提升，该武器的装填速度会更快。这艘巡洋舰同样令小型飞船畏惧，因为它可以制造临时的奇点裂隙，对进入其事件视界的战机造成巨大伤害。"
+			starting_mark_level="Mark3" tech_upgrades_that_benefit_me="Fusion"
+			cost_for_ai_to_purchase="1600" strength_multiplier="1.8"
+			hull_points="1071428" shield_points="357143" speed="Normal1"
+			metal_cost="500000" energy_consumption="45000"
+			armor_mm="280" engine_gx="16" albedo="0.4" mass_tx="6.5"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			absolute_max_cap_when_in_fleets="1"
+            priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+			>
+		<fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="100" cap="1"/>		
+		<system name="T1" display_name="内爆鱼雷" category="Weapon" firing_timing="OnlyInRange" shot_type_data="PlasmaTorpedo" 
+				damage_per_shot="20000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="FairlyLow" fires_salvos_sequentially="false"
+				min_mark_level_to_function="3"	max_mark_level_to_function="3"				
+				>
+				<outgoing_damage_modifier based_on="CurrentHullPercentage" applies_to="HullOnly" comparison_type="MultiplesOf" compared_to="10" multiplier="1" />
+				<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="PersonalShieldOnly" comparison_type="AtLeast" compared_to="10" multiplier="4" />
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="GreaterThan" compared_to="5" multiplier="1.2" />
+		</system>
+		<system name="T2" display_name="内爆鱼雷" category="Weapon" firing_timing="OnlyInRange" shot_type_data="PlasmaTorpedo" 
+				damage_per_shot="20000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Low" fires_salvos_sequentially="false"
+				min_mark_level_to_function="4"	max_mark_level_to_function="4"				
+				>
+				<outgoing_damage_modifier based_on="CurrentHullPercentage" applies_to="HullOnly" comparison_type="MultiplesOf" compared_to="10" multiplier="1" />
+				<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="PersonalShieldOnly" comparison_type="AtLeast" compared_to="10" multiplier="4" />
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="GreaterThan" compared_to="5" multiplier="1.2" />
+		</system>
+		<system name="T3" display_name="内爆鱼雷" category="Weapon" firing_timing="OnlyInRange" shot_type_data="PlasmaTorpedo" 
+				damage_per_shot="20000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="SlightlyLow" fires_salvos_sequentially="false"
+				min_mark_level_to_function="5"	max_mark_level_to_function="5"				
+				>
+				<outgoing_damage_modifier based_on="CurrentHullPercentage" applies_to="HullOnly" comparison_type="MultiplesOf" compared_to="10" multiplier="1" />
+				<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="PersonalShieldOnly" comparison_type="AtLeast" compared_to="10" multiplier="4" />
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="GreaterThan" compared_to="5" multiplier="1.2" />
+		</system>
+		<system name="T4" display_name="内爆鱼雷" category="Weapon" firing_timing="OnlyInRange" shot_type_data="PlasmaTorpedo" 
+				damage_per_shot="20000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="false"
+				min_mark_level_to_function="6"	max_mark_level_to_function="6"				
+				>
+				<outgoing_damage_modifier based_on="CurrentHullPercentage" applies_to="HullOnly" comparison_type="MultiplesOf" compared_to="10" multiplier="1" />
+				<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="PersonalShieldOnly" comparison_type="AtLeast" compared_to="10" multiplier="4" />
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="GreaterThan" compared_to="5" multiplier="1.2" />
+		</system>
+		<system name="T5" display_name="内爆鱼雷" category="Weapon" firing_timing="OnlyInRange" shot_type_data="PlasmaTorpedo" 
+				damage_per_shot="20000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="false"
+				min_mark_level_to_function="7"	max_mark_level_to_function="7"				
+				>
+				<outgoing_damage_modifier based_on="CurrentHullPercentage" applies_to="HullOnly" comparison_type="MultiplesOf" compared_to="10" multiplier="1" />
+				<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="PersonalShieldOnly" comparison_type="AtLeast" compared_to="10" multiplier="4" />
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="GreaterThan" compared_to="5" multiplier="1.2" />
+		</system>
+		
+		<system name="L" display_name="虚空催化剂发射器"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="5" range="Planetary" shot_speed="Slow" rate_of_fire="Tortoise" fires_salvos_sequentially="true" shot_type_data="VoidCatalyst" shots_per_salvo="1"  
+				>
+		</system>	
+	<ship_class_data can_be_zombified_and_similar="false" />
+		</entity>
+	
+	<!--The Void and the Void Catalyst are created by the Voidpiercer Cruiser and create a temporary singularity -->
+	  <entity name="VoidCatalyst"
+	    thematic_groups="Human,Cruiser,Drone"
+		special_entity_type="SmallShipNotStackable"
+		visuals="Assets/_DLC2/Cruisers/VoidCatalyst/VoidCatalyst.prefab" visuals_bundle="exp2_zenith_onslaught"
+		icon_name="Ships3/VoidCatalyst" gimbal_icon_size_multiplier="1.25"
+		voice_group="Silent"
+		category="Ship"
+		size_scale="2"
+		visuals_scale_multiplier="2"
+		collision_priority="50"
+		display_name="虚空催化剂"
+		description="内部装有一个能够扭曲周围空间的装置。当催化剂被摧毁时，奇点装置将激活一个临时裂隙，将进入其事件视界的单位吸入，并造成巨大的内爆伤害。"
+		starting_mark_level="Mark3" tech_upgrades_that_benefit_me="Fusion"
+		self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="3"
+		always_self_attritions="true"
+		cost_for_ai_to_purchase="10" strength_multiplier="1"
+		hull_points="7500" shield_points="0" speed="Normal3" speed_multiplier_first_5_seconds_on_planet="2"
+		metal_cost="3000" energy_consumption="5000"
+		armor_mm="30" albedo="0.3" engine_gx="8" mass_tx="4"
+		ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+		shot_fired_sfx="BasicLaunchWhine_Firing"
+		priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+		immune_to_swapping_between_fleets="true"
+		drone_starting_behavior_type="Attacker_Full"
+		fleet_membership="Planetary"
+		cannot_target_or_alert_ai_reinforcement_spots="true"
+		>
+	<entity_type_drawing_bag_used_on_death data_list="Void" />
+		 <system name="WM" display_name="引爆"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1" range="AlmostNone" seek_range="Normal1" shot_speed="Instant" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+				shot_type_data="MeleeInvisible" added_target_evaluator="Melee"
+				system_is_hidden_for_ui="true"				
+				>	
+		</system>
+		<incoming_damage_modifier based_on="MyTimeAtPlanet" comparison_type="LessThan" compared_to="5" multiplier="0.25" />
+	<ship_class_data can_be_zombified_and_similar="false" />
+		</entity>
+		
+		 <entity name="Void"
+		    thematic_groups="Human,Cruiser,Drone"
+			visuals="assets/_dlc2/cruisers/void/void.prefab"  visuals_bundle="exp2_zenith_onslaught"
+      icon_name="Ships3/Void" gimbal_icon_size_multiplier="1.25"
+			uses_large_health_bar="true"
+			category="Ship" is_turret="true"
+			size_scale="3.6"
+			visuals_scale_multiplier="6"
+			y_offset_of_icon="16"
+			collision_priority="1000"
+			display_name="虚空"
+			description="由虚空催化剂释放的不稳定奇点。这个裂隙会将无法逃脱其事件视界的单位吸入，并以巨大的内爆力量将其粉碎。"
+			blocks_enemy_claim_flows="true"
+			voice_group="Silent"
+			starting_mark_level="Mark3" tech_upgrades_that_benefit_me="Fusion"
+			cost_for_ai_to_purchase="1200" strength_multiplier="1"			
+			hull_points="10000" shield_points="0" speed="Immobile"
+			metal_cost="6000" energy_consumption="5000"
+			armor_mm="80" albedo="0.45" mass_tx="20"
+			metal_cost_multiplier_for_scrapping="0"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+				self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="3.5"
+			always_self_attritions="true"
+			absolute_max_cap_when_in_fleets="1"
+			immune_to_swapping_between_fleets="true"
+			priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			>
+			<system name="WM" display_name="事件视界"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="100" shots_per_salvo="100" range="Small3" shot_speed="Instant" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+				base_knockback_per_shot="-1500" knockback_to_ships_mass_tx_less_than="6"
+				shot_type_data="MeleeInvisible" 				
+				>		
+			<outgoing_damage_modifier based_on="CurrentHullPercentage" applies_to="HullOnly" comparison_type="MultiplesOf" compared_to="10" multiplier="1" />
+			</system>
+		
+			<system name="B6" display_name="虚空"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="50000" range="VeryTiny1" shot_speed="Instant" rate_of_fire="Devourer" fires_salvos_sequentially="true"
+				shot_type_data="ExplosiveInvisible" area_of_effect_size="1500" shots_detonate_immediately="true" aoe_spreads_damage_among_available_targets="true"				
+				>	
+			<outgoing_damage_modifier based_on="CurrentHullPercentage" applies_to="HullOnly" comparison_type="MultiplesOf" compared_to="10" multiplier="1" />	
+			</system>
+	<ship_class_data can_be_zombified_and_similar="false" can_be_damaged="false" />
+  </entity>
+
+<!-- Generalist (Core): Valkyrie Cruiser. Resurrects fallen allies using its own health. Regenerates on its own and deals increasing damage the more damaged it is  -->
+<entity name="GeneralistCruiser"
+            thematic_groups="Human,Cruiser"
+	        special_entity_type="Cruiser"
+			visuals="Assets/_DLC2/Cruisers/ValkyrieCruiser/ValkyrieCruiser.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships2/Cruiser" icon_overlay="Overlays2/Cruiser_Valkyrie" gimbal_icon_size_multiplier="1.25"
+			voice_group="Saboteur"
+			category="Ship"
+			size_scale="4.5"
+			visuals_scale_multiplier="5" lod_distance_overrides="100,200,400,15000"
+			collision_priority="100"
+			uses_large_health_bar="true"
+			display_name="瓦尔基里巡洋舰"
+			display_name_for_sidebar="瓦尔基里CC" aip_when_granted_by_hack="15"
+			description="巡洋舰是一种精英级别的单位，每个舰队限拥有一艘；它们不属于标准单位序列，但有资格获得快速反应支援（FRS）单位提供的全舰队增益。瓦尔基里巡洋舰会消耗自身生命值来复活倒下的盟友。它能够自行恢复生命值，并且随着自身生命值的减少，造成的伤害会逐渐增加。"
+			regenerates_dying_ships_at_this_health_cost_ratio="1"
+			will_not_regenerate_dying_ships_if_health_below_this_percentage="0.5"
+			assist_range="Normal5" 
+			seconds_to_fully_regenerate_hull="400"
+			starting_mark_level="Mark3" tech_upgrades_that_benefit_me="Generalist"
+			cost_for_ai_to_purchase="1600" strength_multiplier="1.45"
+			hull_points="1000000" shield_points="0" speed="Normal3"
+			metal_cost="500000" energy_consumption="45000"
+			armor_mm="175" engine_gx="16" albedo="0.4" mass_tx="6.5"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			absolute_max_cap_when_in_fleets="1"
+            priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+			>
+	<fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="100" cap="1"/>			
+	<system name="W1" display_name="北极光战列炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="2000" range="Normal5" shot_speed="Normal" rate_of_fire="Misery" fires_salvos_sequentially="false"
+				shots_per_salvo="8" added_shots_per_salvo_per_mark="2"
+				shot_type_data="DoubleShot_Red"					
+				>
+		        <outgoing_damage_modifier based_on="MyHullPercentageMissing" comparison_type="MultiplesOf" compared_to="10" multiplier="1.4" max_multiplier="7" />
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+	
+<!-- Melee: Starfish Cruiser. Melee that creates automous limbs as it takes damage. Limbs can replicate virally, allowing the starfish to field a pseudo army in a long fight. -->
+<entity name="MeleeCruiser"
+            thematic_groups="Human,Cruiser"
+	        special_entity_type="Cruiser"
+			visuals="Assets/_DLC2/Cruisers/StarfishCruiser/StarfishCruiser.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships2/Cruiser" icon_overlay="Overlays2/Cruiser_Starfish"  gimbal_icon_size_multiplier="1.25"
+			voice_group="Saboteur"
+			category="Ship"
+			size_scale="7.5"
+			visuals_scale_multiplier="6"
+			collision_priority="100"
+			uses_large_health_bar="true"
+			display_name="海星巡洋舰"
+			display_name_for_sidebar="海星CC" aip_when_granted_by_hack="15"
+			description="巡洋舰是一种精英级别的单位，每个舰队限拥有一艘；它们不属于标准单位序列，但有资格获得快速反应支援（FRS）单位提供的全舰队增益。海星巡洋舰采用了天顶星科技，在受到伤害时会生成自主肢体。这些“臂肢”具有半智能，能够通过病毒式复制产生“食尸鬼”，使海星巡洋舰在持久战中能够组建一支临时军队。臂肢和食尸鬼都会自然损耗，但它们的吸血攻击能让它们在保持战斗状态时持续活跃。"
+			starting_mark_level="Mark3" tech_upgrades_that_benefit_me="Melee"
+			cost_for_ai_to_purchase="1600" strength_multiplier="1"
+			hull_points="1000000" shield_points="0" speed="AboveAverage6"
+			metal_cost="500000" energy_consumption="45000"
+			armor_mm="175" engine_gx="23" albedo="0.4" mass_tx="6.5"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			build_points_per_damage_taken="1.5"
+			unit_to_make_with_build_points_from_damage_taken="ViralArm"	
+			drone_starting_behavior_type="Attacker_Full"
+            priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+			>
+	<fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="100" cap="1"/>			
+    <system name="WM" display_name="近战武器"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="15000" range="AlmostNone" seek_range="Normal1" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="true"
+				shot_type_data="MeleeInvisible"		
+				health_change_per_damage_dealt="0.2"	
+				>
+    </system>	
+	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+
+<!-- Viral Arm and Ghoula version are spawned by the Starfish Destroyer, allowing it to field its own fleet during fights -->
+<entity name="ViralArm"
+            thematic_groups="Human,Cruiser,Drone"
+	        special_entity_type="Cruiser"
+			visuals="Assets/_DLC2/Cruisers/StarfishCruiser/ViralArm.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships3/ViralArm" gimbal_icon_size_multiplier="1.25"
+			voice_group="Saboteur"
+			category="Ship"
+			size_scale="4.5"
+			visuals_scale_multiplier="7"
+			collision_priority="100"
+			display_name="病毒臂"
+			description="这是从海星巡洋舰上断裂下来的半智能肢体。它具有自主性和传染性，只要处于战斗状态就会自我复制。这些原始的“臂”对于它们的病毒子嗣“古啦”而言，就像神经系统一样，如果原始的“臂”被摧毁，其对应的“古啦”也会随之消亡。"
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="2"
+			always_self_attritions="true"	
+			fleet_design_template_i_use_for_drones="ViralArmGhoula"
+			drone_starting_behavior_type="Attacker_Full"
+			unit_to_make_with_build_points="ViralArmGhoula"
+            base_ship_line_for_build_points="ViralArm"
+            build_points_per_damage_dealt="0.1"
+			starting_mark_level="Mark3" tech_upgrades_that_benefit_me="Melee"
+			cost_for_ai_to_purchase="150" strength_multiplier="1"
+			hull_points="100000" shield_points="0" speed="AboveAverage6"
+			metal_cost="500" energy_consumption="5000"
+			metal_cost_multiplier_for_scrapping="0"
+			armor_mm="120" engine_gx="22" albedo="0.4" mass_tx="6.5"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+			>
+			 <system name="WM" display_name="近战"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="7000" range="AlmostNone" seek_range="Normal1" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="true"
+				shot_type_data="MeleeInvisible"			
+				health_change_per_damage_dealt="1"
+				>
+			</system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+	
+	
+	<entity name="ViralArmGhoula"
+	        thematic_groups="Human,Cruiser,Drone"
+	        special_entity_type="Cruiser"
+    visuals="Assets/_DLC2/Cruisers/StarfishCruiser/ViralArmGhoula.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships3/ViralArmGhoula" gimbal_icon_size_multiplier="1.25"
+			voice_group="Saboteur"
+			category="Ship"
+			size_scale="4.5"
+			visuals_scale_multiplier="7"
+			collision_priority="100"
+			display_name="病毒臂古古拉"
+			description="古古拉是从海星巡洋舰上断裂下来的臂部的不完美复制品。如果产生这个古古拉的原始臂部被摧毁，所有相关的古古拉也会被摧毁。"
+			unit_to_make_with_build_points="ViralArmGhoula"
+            base_ship_line_for_build_points="ViralArm"
+            build_points_per_damage_dealt="0.05"
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="3"
+			always_self_attritions="true"	
+			starting_mark_level="Mark3" tech_upgrades_that_benefit_me="Melee"
+			cost_for_ai_to_purchase="150" strength_multiplier="1"
+			hull_points="100000" shield_points="0" speed="AboveAverage6"
+			metal_cost="500" energy_consumption="5000"
+			metal_cost_multiplier_for_scrapping="0"
+			armor_mm="120" engine_gx="22" albedo="0.4" mass_tx="6.5"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+			>
+			<fleet_membership name="ViralArmGhoula" ship_cap_group="Strike" weight="100" cap="4"/>
+			 <system name="WM" display_name="近战"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="7000" range="AlmostNone" seek_range="Normal1" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="true"
+				shot_type_data="MeleeInvisible"	
+				health_change_per_damage_dealt="1"		
+				>
+			</system>	
+	<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+	
+<!-- Raid: Blackguard Cruiser. Master of hit-and-run tactics, with special metabolism tools to convert destroyed enemies into metal for your economy -->
+<entity name="RaidCruiser"
+            thematic_groups="Human,Cruiser"
+	        special_entity_type="Cruiser"
+			visuals="Assets/_DLC2/Cruisers/BlackguardCruiser/BlackguardCruiser.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships2/Cruiser" icon_overlay="Overlays2/Cruiser_Blackguard"  gimbal_icon_size_multiplier="1.25"
+			voice_group="Saboteur"
+			category="Ship"
+			size_scale="8.5"
+			visuals_scale_multiplier="8" lod_distance_overrides="250,15000"
+			collision_priority="100"
+			uses_large_health_bar="true"
+			display_name="黑衣卫巡洋舰"
+			display_name_for_sidebar="黑衣卫CC" aip_when_granted_by_hack="15"
+			description="巡洋舰是一种精英级别的单位，每个舰队限拥有一艘；它们不属于标准单位序列，但有资格获得快速反应支援（FRS）单位提供的全舰队增益。黑衣卫巡洋舰是游击突袭战术的大师，配备了强大的连锁闪电武器，只能攻击移动单位。这艘巡洋舰还配备了特殊的突袭工具，用于从敌人那里窃取资源。其中最重要的工具是隐形的“ salvage depot ”，它会在有敌对静止建筑的行星上创建，秘密采集金属并对移动敌人施加更高的新陈代谢。该仓库可以在长时间冷却后重建。"
+			starting_mark_level="Mark3" tech_upgrades_that_benefit_me="Raid"
+			cost_for_ai_to_purchase="1600" strength_multiplier="3"
+			hull_points="142857" shield_points="428571" speed="VeryHigh1"
+			metal_cost="250000" energy_consumption="45000"
+			armor_mm="175" engine_gx="24" albedo="0.7" mass_tx="6.5"
+			can_pass_through_enemy_forcefields="true"
+			damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.1" 
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+			>
+	<fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="100" cap="1"/>			
+	<system name="Q6" display_name="暗影离子干扰器"
+				category="Weapon" firing_timing="OnlyInRange" damage_per_shot="6000" range="Normal4" shot_speed="Fast" rate_of_fire="PeriodicActivation" fires_salvos_sequentially="false"
+				shot_type_data="ExtremelyLongRangeIon" base_paralysis_seconds_per_shot="4" paralysis_to_ships_mass_tx_less_than="6" only_targets_static_units="true" base_percent_damage_bypasses_personal_shields="1" fires_through_enemy_shields="true" 
+				>		
+	</system>
+	<system name="CE" display_name="连锁闪电发射器"
+            category="Weapon" firing_timing="OnlyInRange"
+            damage_per_shot="10000" range="Normal4" shot_speed="Normal" rate_of_fire="VeryLow"
+            shot_type_data="HeavyBeamInvisible" beam_length_multiplier="1.3" shots_detonate_immediately="true" beam_weapon_visual_style="Lightning_Blue"
+            beam_chains_out_to_targets_x_times="2" beam_chains_out_to_target_min_range="400" beam_chains_out_to_targets_x_range="2000"
+            maximum_number_of_targets_hit_per_shot="50" beam_chains_out_to_max_targets_from_each_source="10"
+            only_targets_mobile_units="true"
+            added_target_evaluator="LowestHealthAsMajorPrimary"
+				>
+    </system>
+	<system name="L" display_name="部署打捞仓库"
+				category="Weapon" firing_timing="OnlyInRange" damage_per_shot="5" range="Planetary" shot_speed="Slow" rate_of_fire="OneShot" fires_salvos_sequentially="true" 				
+				shot_type_data="SalvageDepot" cloaking_percent_loss_from_firing="0.5" only_targets_static_units="true" 
+				>
+	</system>
+	<system name="C" display_name="隐形装置" category="Passive" cloaking_points="3000" cloaking_points_added_per_mark="1250">
+    </system>
+    </entity>
+	
+	<!-- Salvage Depot (Blackguard Destroyer unique spawn): Can only be built when an an enemy structure is present, so almost exclusively on enemy-owned planets. -->
+	<entity name="SalvageDepot"
+	        thematic_groups="Human,Cruiser,Drone"
+    visuals="Assets/_DLC2/HumanPlanet/SalvageDepot/SalvageDepot.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships3/BlackguardSalvageDepot" gimbal_icon_size_multiplier="0.75"
+			category="Ship"
+			size_scale="1.5" visuals_scale_multiplier="4"
+			collision_priority="900"
+			display_name="黑卫打捞站"
+			display_name_for_sidebar="黑卫打捞"
+			description="由黑卫巡洋舰放置的秘密打捞采集器。只有当行星上存在静止的敌方建筑时，打捞站才能生成，因为该打捞站旨在从敌对行星窃取资源。打捞站像普通采集器一样生产金属，还会用追踪器锁定移动单位，使其代谢加速。摧毁被打捞站锁定的单位可获得额外金属。"
+			behavior="Stationary"
+			starting_mark_level="Mark3"
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="1"
+			always_self_attritions="true"
+			cost_for_ai_to_purchase="200"
+			hull_points="2000" shield_points="4000" speed="Immobile"
+			metal_cost="1250" energy_consumption="500"
+			armor_mm="10" albedo="0.7" mass_tx="0.6"
+			metal_cost_multiplier_for_scrapping="0"
+			ship_or_structure_explosion_sfx="StructureMidsize_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="StructureLostOnOtherPlanet_Explosion"
+			voice_group="Civilian"
+			cannot_target_or_alert_ai_reinforcement_spots="true"
+			absolute_max_cap_when_in_fleets="1"
+			priority_as_ai_target="MinorResourceGeneration" priority_as_frd_target="IgnoreMe" priority_to_protect="SlightlyLessExpendable"
+			>
+	<resource_production type="Metal" amount="1040" increase_per_mark_level="520"/>
+	<system name="W1" display_name="回收器"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1" range="EssentiallyInfinite" seek_range="Normal1" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="false"
+				shot_type_data="MeleeInvisible"		shots_per_salvo="100"	cloaking_percent_loss_from_firing="0.01"
+				system_is_hidden_for_ui="true"
+				>
+				<death_effect_damage type="GreaterMetabolization" tier_name="SuperficialDamage"/>
+    </system>
+	<system name="C" display_name="隐形装置"
+				category="Passive"
+				cloaking_points="500"
+				cloaking_points_added_per_mark="250"
+				>
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+  </entity>
+
+
+<!-- Splash: Radiant Cruiser. Mobile heavy beam Cruiser. Releases 'starbursts' at different thresholds of damage. A solid all-rounder -->
+<entity name="SplashCruiser"
+        thematic_groups="Human,Cruiser"
+	    special_entity_type="Cruiser"
+			visuals="Assets/_DLC2/Cruisers/RadiantCruiser/RadiantCruiser.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships2/Cruiser" icon_overlay="Overlays2/Cruiser_Radiant" gimbal_icon_size_multiplier="1.25"
+			voice_group="Saboteur"
+			category="Ship"
+			size_scale="7.5" lod_distance_overrides="250,400,15000"
+			visuals_scale_multiplier="11"
+			collision_priority="100"
+			uses_large_health_bar="true"
+			display_name="辐射巡洋舰"
+			display_name_for_sidebar="辐射CC" aip_when_granted_by_hack="15"
+			description="巡洋舰是一种精英级别的单位，每个舰队限拥有一艘；它们不属于标准单位序列，但有资格获得快速反应支援（FRS）单位提供的全舰队增益。辐射巡洋舰围绕一门重型扇形光束炮建造。在战斗中受到足够伤害后，它会策略性地释放“星爆”，这些“星爆”会以星型图案发射光束，然后自毁。"
+			starting_mark_level="Mark3" tech_upgrades_that_benefit_me="Splash"
+			cost_for_ai_to_purchase="1600" strength_multiplier="2"
+			hull_points="1071428" shield_points="357243" speed="Normal1"
+			metal_cost="500000" energy_consumption="45000"
+			armor_mm="280" engine_gx="16" albedo="0.4" mass_tx="6.5"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			absolute_max_cap_when_in_fleets="1"
+			build_points_per_damage_taken="1.5"
+			unit_to_make_with_build_points_from_damage_taken="Starburst"
+			drone_starting_behavior_type="Attacker_Full"			
+            priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+			>
+		<fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="100" cap="1"/>		
+		 <system name="W1" display_name="小型末日光束炮"
+				category="Weapon" firing_timing="OnlyInRange" damage_per_shot="9000" range="AboveAverage4" shot_speed="Normal" rate_of_fire="FairlyLow" shot_type_data="HeavyBeamInvisible" beam_length_multiplier="1.3" hits_all_intersecting_targets="true" shots_detonate_immediately="true" maximum_number_of_targets_hit_per_shot="15" 
+				number_beams_to_fire="4" beam_weapon_visual_style="Lightning_Gold" degrees_offset_per_beam="1"    min_mark_level_to_function="1" max_mark_level_to_function="3" >
+		</system>
+		<system name="W2" display_name="小型末日光束炮"
+				category="Weapon" firing_timing="OnlyInRange" damage_per_shot="8000" range="AboveAverage4" shot_speed="Normal" rate_of_fire="FairlyLow" shot_type_data="HeavyBeamInvisible" beam_length_multiplier="1.3" hits_all_intersecting_targets="true" shots_detonate_immediately="true" maximum_number_of_targets_hit_per_shot="15"
+				number_beams_to_fire="6" beam_weapon_visual_style="Lightning_Gold" degrees_offset_per_beam="1"	min_mark_level_to_function="4" max_mark_level_to_function="4" >
+		</system>
+		<system name="W3" display_name="小型末日光束炮"
+				category="Weapon" firing_timing="OnlyInRange" damage_per_shot="7000" range="AboveAverage4" shot_speed="Normal" rate_of_fire="FairlyLow" shot_type_data="HeavyBeamInvisible" beam_length_multiplier="1.3" hits_all_intersecting_targets="true" shots_detonate_immediately="true" maximum_number_of_targets_hit_per_shot="15" 
+				number_beams_to_fire="8" beam_weapon_visual_style="Lightning_Gold" degrees_offset_per_beam="1"	min_mark_level_to_function="5" max_mark_level_to_function="5" >
+		</system>
+		<system name="W4" display_name="小型末日光束炮"
+				category="Weapon" firing_timing="OnlyInRange" damage_per_shot="6000" range="AboveAverage4" shot_speed="Normal" rate_of_fire="FairlyLow" shot_type_data="HeavyBeamInvisible" beam_length_multiplier="1.3" hits_all_intersecting_targets="true" shots_detonate_immediately="true" maximum_number_of_targets_hit_per_shot="15" 
+				number_beams_to_fire="10" beam_weapon_visual_style="Lightning_Gold" degrees_offset_per_beam="1"	min_mark_level_to_function="6" max_mark_level_to_function="6" >
+		</system>
+		<system name="W5" display_name="小型末日光束炮"
+				category="Weapon" firing_timing="OnlyInRange" damage_per_shot="5000" range="AboveAverage4" shot_speed="Normal" rate_of_fire="FairlyLow" shot_type_data="HeavyBeamInvisible" beam_length_multiplier="1.3" hits_all_intersecting_targets="true" shots_detonate_immediately="true" maximum_number_of_targets_hit_per_shot="15" 
+				number_beams_to_fire="12" beam_weapon_visual_style="Lightning_Gold" degrees_offset_per_beam="1"	min_mark_level_to_function="7" max_mark_level_to_function="7" >
+		</system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+		
+		</entity>
+		
+<!-- Starburst is created by the Radiant Cruiser as it takes damage-->		
+<entity name="Starburst"
+        thematic_groups="Human,Cruiser,Drone"
+		special_entity_type="Cruiser"
+		visuals="assets/_dlc2/cruisers/starburstprojectile/starburstprojectile.prefab" visuals_bundle="exp2_zenith_onslaught"
+		icon_name="Ships3/Starburst" gimbal_icon_size_multiplier="1"
+		category="Ship"
+		icon_overlay="Overlays1/MegaTurret_Beam" 
+		size_scale="1"
+		visuals_scale_multiplier="2.5" lod_distance_overrides="75,150,15000"
+		collision_priority="100"
+		voice_group="Saboteur"
+		display_name="星爆发射器"
+		description="一种行动缓慢的造物，它会寻找成群的敌人，释放其星爆模式的光束武器，由辐射巡洋舰策略性地释放。"
+		starting_mark_level="Mark3" tech_upgrades_that_benefit_me="Splash"
+		cost_for_ai_to_purchase="150" strength_multiplier="1"
+		hull_points="50000" shield_points="0" speed="Normal3"
+		metal_cost="1000" energy_consumption="0"
+		metal_cost_multiplier_for_scrapping="0"
+		armor_mm="90" albedo="0.4" engine_gx="3" mass_tx="0.2"
+		ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+		>
+		 <system name="WM" display_name="引爆"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1" range="AlmostNone" seek_range="Normal1" shot_speed="Instant" rate_of_fire="Snail" fires_salvos_sequentially="false"
+				shot_type_data="MeleeInvisible" added_target_evaluator="Melee"
+				system_is_hidden_for_ui="true"				
+				>	
+		</system>
+		<system name="B2" display_name="星爆光束"
+			category="Weapon" firing_timing="OnlyInRange" damage_per_shot="1500" range="Small5" shot_speed="Normal" rate_of_fire="Devourer" 
+			shot_type_data="HeavyBeamInvisible" beam_length_multiplier="1.3" hits_all_intersecting_targets="true" 
+			shots_detonate_immediately="true" maximum_number_of_targets_hit_per_shot="5" 
+			number_beams_to_fire="10" beam_weapon_visual_style="Lightning_Gold" degrees_offset_per_beam="36" seconds_for_beam_to_rotate_fully="30"   
+			health_change_by_max_health_divided_by_this_per_attack="-10"
+			>
+		</system>
+		<incoming_damage_modifier based_on="MyTimeAtPlanet" comparison_type="LessThan" compared_to="5" multiplier="0.10" />
+	<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+		
+
+<!-- Subterfuge: Ethereal Destroyer. Equipped with a cloaking device and wreak havoc on the enemy if it has sufficient support. Its primary weapon can paralyze large groups of ships and its secondary weapon is designed to slay the mightiest foes. This cruiser excels at covertly approaching powerful adversaries and dealing lethal bursts of damage, then retreating into cloak to prepare for another strike. -->
+<entity name="SubterfugeCruiser"
+            thematic_groups="Human,Cruiser"
+	        special_entity_type="Cruiser"
+			visuals="Assets/_DLC2/Cruisers/EtherealCruiser/EtherealCruiser.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships2/Cruiser" icon_overlay="Overlays2/Cruiser_Ethereal"  gimbal_icon_size_multiplier="1.25"
+			voice_group="Saboteur"
+			category="Ship"
+			size_scale="12.5"
+			visuals_scale_multiplier="3" lod_distance_overrides="200,400,15000"
+			collision_priority="100"
+			uses_large_health_bar="true"
+			display_name="幻影巡洋舰"
+			display_name_for_sidebar="幻影CC" aip_when_granted_by_hack="15"
+			description="巡洋舰是一种精英级别的单位，每个舰队限拥有一艘；它们不属于标准单位序列，但有资格获得快速反应支援（FRS）单位提供的全舰队增益。幻影巡洋舰配备了隐形装置，如果有足够的支援，它可以给敌人造成巨大破坏。它的主武器可以瘫痪大批单位，副武器则是为了击败最强大的敌人而设计的。这艘巡洋舰擅长秘密接近强大的对手，进行致命的爆发性攻击，然后隐入隐形状态，准备下一次攻击。"
+			starting_mark_level="Mark3" tech_upgrades_that_benefit_me="Subterfuge"
+			cost_for_ai_to_purchase="1600" strength_multiplier="3"
+			hull_points="142857" shield_points="428571" speed="VeryHigh1"
+			metal_cost="250000" energy_consumption="45000"
+			armor_mm="175" engine_gx="24" albedo="0.7" mass_tx="6.5"
+			can_pass_through_enemy_forcefields="true"
+			damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.1" 
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+			>
+	<fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="100" cap="1"/>			
+	<system name="Q6" display_name="离子分解器"
+				category="Weapon" firing_timing="OnlyInRange" damage_per_shot="5000" range="Small5" shot_speed="Fast" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+				shot_type_data="ExtremelyLongRangeIon" base_paralysis_seconds_per_shot="2" paralysis_to_ships_mass_tx_less_than="10" 
+				use_alternate_rate_of_fire_after_x_shots="5" alternate_rate_of_fire="ExtremelyLow"  use_alternate_rate_of_fire_for_x_shots_before_reverting="1" 
+				>
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="MultiplesOf" compared_to="1" multiplier="1" max_multiplier="15" />
+	</system>
+	<system name="Q1" display_name="麻痹特斯拉冲击"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="5000" range="Small5" shot_speed="Instant" rate_of_fire="PeriodicActivation" fires_salvos_sequentially="false"
+				shot_type_data="LightningExplosionAOEShot" 
+				base_paralysis_seconds_per_shot="8" added_paralysis_seconds_per_shot_per_mark="2" paralysis_to_ships_mass_tx_less_than="6"
+				area_of_effect_size="2000"
+				maximum_number_of_targets_hit_per_shot="100"				
+				>	
+    </system>
+	<system name="C" display_name="隐形装置" category="Passive" cloaking_points="3000" cloaking_points_added_per_mark="1250">
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+		
+<!-- Technologist (Exotic): Lockdown Cruiser. Heavy sniper with zombification. But produces frigate-class drone that transforms based on strength ratio of enemies present.  -->		
+<entity name="TechnologistCruiser"
+            thematic_groups="Human,Cruiser"
+	        special_entity_type="Cruiser"
+			visuals="Assets/_DLC2/Cruisers/LockdownCruiser/LockdownCruiser.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships2/Cruiser" icon_overlay="Overlays2/Cruiser_Lockdown" gimbal_icon_size_multiplier="1.25"
+			voice_group="Saboteur"
+			category="Ship"
+			size_scale="7.5"
+			visuals_scale_multiplier="7" lod_distance_overrides="300,15000"
+			collision_priority="100"
+			uses_large_health_bar="true"
+			display_name="封锁巡洋舰"
+			display_name_for_sidebar="封锁CC" aip_when_granted_by_hack="15"
+			description="巡洋舰是一种精英级别的单位，每个舰队限拥有一艘；它们不属于标准单位序列，但有资格获得快速反应支援（FRS）单位提供的全舰队增益。封锁巡洋舰装备了一种奇特的狙击武器，可将敌人僵尸化。不过，它的名字来源于其制造的独特护卫舰级无人机，该无人机可根据当前敌人的实力对比进行变形。它的防御形态可以阻止单位通过虫洞离开，而攻击形态则能够造成巨大伤害。"
+			starting_mark_level="Mark3" tech_upgrades_that_benefit_me="Technologist"
+			cost_for_ai_to_purchase="1600" strength_multiplier="1"
+			hull_points="714285" shield_points="285714" speed="Normal1"
+			metal_cost="500000" energy_consumption="45000"
+			armor_mm="175" engine_gx="16" albedo="0.4" mass_tx="6.5"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			absolute_max_cap_when_in_fleets="1"	
+			cannot_target_or_alert_ai_reinforcement_spots="true"
+            priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+			>
+		<fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="100" cap="1"/>		
+		<system name="R2" display_name="狙击扭曲波"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="3500" range="EssentiallyInfinite" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="true"
+				shot_type_data="EnergyWave"	
+				shots_per_salvo="8" added_shots_per_salvo_per_mark="2"					
+				>
+				<death_effect_damage type="Zombification" tier_name="Major"/>
+		</system>
+		<system name="L" display_name="僵局发射器"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="5" range="EssentiallyInfinite" shot_speed="Slow" rate_of_fire="OneShot" fires_salvos_sequentially="true" shot_type_data="Gridlock" shots_per_salvo="1"  
+				>
+		</system>	
+	<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+	
+<!-- Gridlock and Deadlock transform to and from each other based on ratio of enemy strength to player -->	
+
+	<entity name="Gridlock"
+	        thematic_groups="Human,Cruiser,Drone"
+			special_entity_type="Cruiser" gimbal_icon_size_multiplier="1.25"
+			visuals="Assets/_DLC2/Cruisers/GridlockDeadlock/Gridlock.prefab" visuals_bundle="exp2_zenith_onslaught"
+      icon_name="Ships3/Gridlock"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="2.5"
+			visuals_scale_multiplier="11"
+			y_offset_of_icon="16"
+			collision_priority="400"
+			display_name="锁定者"
+			description="封锁巡洋舰的变形形态。当敌方实力弱于我方时，这种“锁定者”形态将被激活。所有能量将从武器、护盾和引擎转移，用于驱动其引力核心，该核心可以在引力场内减缓敌人的速度，同时还有一个小型黑洞发生器，可阻止敌人通过虫洞逃脱。"
+			blocks_enemy_claim_flows="true"
+			voice_group="Silent"
+			starting_mark_level="Mark3" tech_upgrades_that_benefit_me="Technologist"
+			cost_for_ai_to_purchase="150" strength_multiplier="20"			
+			hull_points="200000" shield_points="0" speed="VeryVeryLittle1"
+			metal_cost="80000" energy_consumption="7500"
+			armor_mm="90" albedo="0.7" engine_gx="1" mass_tx="5"
+			metal_cost_multiplier_for_scrapping="0"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+	        transform_when_outnumbered="Deadlock" time_must_have_been_on_planet_before_transforming_if_outnumbered_or_outnumbering="20"
+            num_units_to_transform_into="1"
+			adds_black_hole_effect_for_entities_with_engine_gx_less_than="14"
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="1.1"
+			always_self_attritions="true"
+            destroy_on_load_if_more_than_this_number_on_planet="1"
+			absolute_max_cap_when_in_fleets="1"
+			immune_to_swapping_between_fleets="true"
+		    description_appender_dll="AIWarExternalCode"
+	        description_appender_type="Arcen.AIW2.External.QuiescentEyeAppender"
+			priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			>
+		<system name="G" display_name="引力核心"
+				category="Passive"
+				base_gravity_speed_multiplier="0.92" subtracted_gravity_speed_multiplier_per_mark="0.02" gravity_hits_engine_gx_less_than="14" gravity_range="InsanelyHigh"
+				>
+		</system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+  
+	<entity name="Deadlock"
+	        thematic_groups="Human,Cruiser,Drone"
+			special_entity_type="Cruiser" gimbal_icon_size_multiplier="1.25"
+			visuals="Assets/_DLC2/Cruisers/GridlockDeadlock/Deadlock.prefab" visuals_bundle="exp2_zenith_onslaught"
+      icon_name="Ships3/Deadlock"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="2.5"
+			visuals_scale_multiplier="8"
+			y_offset_of_icon="16"
+			collision_priority="500"
+			display_name="僵局者"
+			description="封锁巡洋舰的变形形态。当敌方实力强于我方时，这种“僵局者”形态将被激活。能量将分配给其强大的武器、护盾和引擎。"
+			blocks_enemy_claim_flows="true"
+			voice_group="Silent"
+			starting_mark_level="Mark3" tech_upgrades_that_benefit_me="Technologist"			
+			cost_for_ai_to_purchase="150"  strength_multiplier="0.5"				
+			hull_points="142857" shield_points="285714" speed="AboveAverage1"
+			metal_cost="80000" energy_consumption="7500"
+			armor_mm="90" albedo="0.7" engine_gx="15" mass_tx="5"
+			metal_cost_multiplier_for_scrapping="0"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+	        transform_when_outnumbering="Gridlock" time_must_have_been_on_planet_before_transforming_if_outnumbered_or_outnumbering="20"
+            num_units_to_transform_into="1"
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="1.1"
+			always_self_attritions="true"
+			absolute_max_cap_when_in_fleets="1"
+            destroy_on_load_if_more_than_this_number_on_planet="1"
+			immune_to_swapping_between_fleets="true"
+		    description_appender_dll="AIWarExternalCode"
+	   description_appender_type="Arcen.AIW2.External.AlertedEyeAppender"
+	    priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			>
+		<system name="WW" display_name="弹道炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="7000" range="AboveAverage4" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="false" shot_type_data="ArmorPiercingShell"	
+				shots_per_salvo="10" added_shots_per_salvo_per_mark="2"
+				>
+		</system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+	
+<!--Zenith Architrave Cruiser ************************************************-->
+
+
+<!--- Add fleet membership that works only for the ZA library. Placeholder here <fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="100" cap="1"/> -->	
+<entity name="ZASpartacusCruiser"
+            thematic_groups="Zenith,Architrave,Cruiser"
+	        special_entity_type="Cruiser"
+			visuals="Assets/_DLC2/Cruisers/SpartacusCruiser/SpartacusCruiser.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships2/Cruiser" icon_overlay="Overlays2/GuardPost_MultiPhase" gimbal_icon_size_multiplier="1.25"
+			voice_group="Saboteur"
+			category="Ship"
+			size_scale="5.5"
+			visuals_scale_multiplier="26"
+			uses_large_health_bar="true"
+			collision_priority="100"
+			display_name="斯巴达克斯巡洋舰"
+			display_name_for_sidebar="斯巴达克斯CC" aip_when_granted_by_hack="15"
+			description="只有通过一次大胆的前往天顶拱道主星的任务，并夺取他们的技术造福人类，才得以制造出斯巴达克斯巡洋舰。这艘巡洋舰融合了拱道族常见的神秘相位转换特性，会周期性地在正常相位和多相位之间转换。在现实空间中，它配备了三门相位武器，这些武器都能对没有护盾且能量消耗较低的目标进行相位转换。它的蛛网相位器拥有行星级射程，仅攻击移动目标，能使目标引擎瘫痪并将其拉向自身。它的电离相位器射程较短，旨在迅速消耗目标护盾以触发相位转换效果。它发射的相位炸弹可以完全绕过护盾防御，但在飞行过程中可能被击落。处于多相位状态时，斯巴达克斯巡洋舰会切换到它的锋刃光束，对受损单位造成巨大破坏，并发射永久处于多相位状态的拳剑无人机。巡洋舰是一种精英级别的单位，每个舰队限拥有一艘；它们不属于标准单位序列，但有资格获得快速反应支援（FRS）单位提供的全舰队增益。"				
+			starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Alien"
+			cost_for_ai_to_purchase="1600" strength_multiplier="0.7"
+			hull_points="600000" shield_points="400000" speed="AboveAverage4"
+			metal_cost="500000" energy_consumption="45000"
+			armor_mm="175" engine_gx="16" albedo="0.4" mass_tx="6.5"
+			alternative_state_of_matter="MultiPhase" phases_to_other_alternative_state_of_matter_after_seconds="20" phases_back_to_default_state_of_matter_after_seconds="20"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			absolute_max_cap_when_in_fleets="1"
+            priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+			>
+			<system name="R7" display_name="蛛网相位器"
+					category="Weapon" firing_timing="OnlyInRange"
+					damage_per_shot="1000" range="Planetary" shot_speed="Normal" rate_of_fire="Low" 
+					shots_per_salvo="100" fires_salvos_sequentially="false"
+					base_engine_stun_per_shot="16" added_engine_stun_per_shot_per_mark="4" engine_stun_to_engine_gx_less_than="16"
+					max_engine_stun_seconds="40" added_target_evaluator="EngineDamageAsMajorPrimary"
+					base_knockback_per_shot="-2000" added_knockback_per_shot_per_mark="500" knockback_to_ships_mass_tx_less_than="5.5"
+					shot_type_data="HeavyBeamInvisible" beam_length_multiplier="1"	beam_weapon_visual_style="Laser_Green"
+					state_of_matter_for_target_to_become="MultiPhase" inflicts_state_of_matter_on_target_for_seconds="30" cannot_inflict_state_of_matter_if_target_has_any_shields_up="true" cannot_inflict_state_of_matter_if_target_has_energy_usage_of_at_least="10000"
+					must_be_this_state_of_matter_to_be_enabled="Normal" care_about_state_of_matter_to_be_enabled="true" is_invisible_in_tooltips_if_not_a_match_by_state_of_matter="true"	
+					>	
+			</system>
+			<system name="W2" display_name="电离相位器"
+					category="Weapon" firing_timing="OnlyInRange"
+					damage_per_shot="5000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="VeryLow" 
+					shots_per_salvo="10" fires_salvos_sequentially="false"
+					shot_type_data="HeavyBeamInvisible" beam_length_multiplier="1"	 beam_weapon_visual_style="Laser_Green"
+					state_of_matter_for_target_to_become="MultiPhase" inflicts_state_of_matter_on_target_for_seconds="30" cannot_inflict_state_of_matter_if_target_has_any_shields_up="true" cannot_inflict_state_of_matter_if_target_has_energy_usage_of_at_least="250000"
+					must_be_this_state_of_matter_to_be_enabled="Normal" care_about_state_of_matter_to_be_enabled="true" is_invisible_in_tooltips_if_not_a_match_by_state_of_matter="true"
+					only_targets_mobile_units="true"
+					>	
+			<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="PersonalShieldOnly" comparison_type="AtLeast" compared_to="10" multiplier="4" />
+			</system>
+			<system name="R6" display_name="锋刃光束"
+					category="Weapon" firing_timing="OnlyInRange"
+					damage_per_shot="10000" range="AboveAverage1" shot_speed="VeryFast" rate_of_fire="High"
+					shots_per_salvo="10" fires_salvos_sequentially="false"
+					shot_type_data="HeavyBeamInvisible" beam_length_multiplier="1" beam_weapon_visual_style="Laser_Green"	
+					must_be_this_state_of_matter_to_be_enabled="MultiPhase" care_about_state_of_matter_to_be_enabled="true" is_invisible_in_tooltips_if_not_a_match_by_state_of_matter="true"		
+					>
+					<outgoing_damage_modifier based_on="TargetHullPercentageMissing" comparison_type="MultiplesOf" compared_to="10" multiplier="1" />
+			</system>
+			<system name="L1" display_name="相位炸弹发射器"
+					category="Weapon" firing_timing="OnlyInRange" shot_type_data="ZAPhasionBomb"
+					damage_per_shot="5" range="Planetary" shot_speed="Slow" rate_of_fire="Devourer" fires_salvos_sequentially="true"  
+					shots_per_salvo="1"  
+					use_alternate_rate_of_fire_after_x_shots="3" alternate_rate_of_fire="PeriodicActivation"  use_alternate_rate_of_fire_for_x_shots_before_reverting="1"
+					must_be_this_state_of_matter_to_be_enabled="Normal" care_about_state_of_matter_to_be_enabled="true"
+					>
+			</system>	
+			<system name="L2" display_name="相位拳剑发射器"
+					category="Weapon" firing_timing="OnlyInRange" shot_type_data="ArchitraveCestusPhased"
+					damage_per_shot="5" range="Planetary" shot_speed="Slow" rate_of_fire="PeriodicActivation" fires_salvos_sequentially="false"  
+					shots_per_salvo="30" added_shots_per_salvo_per_mark="5" 
+					must_be_this_state_of_matter_to_be_enabled="MultiPhase" care_about_state_of_matter_to_be_enabled="true"
+					>
+			</system>
+			<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Frigate" weight="100" cap="1" faction="ZenithArchitrave"/>
+	<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+	
+<!--Dark Zenith Cruiser ************************************************-->
+ 
+ <entity name="DZGungnirCruiser"
+            thematic_groups="Zenith,DarkZenith,Cruiser"
+	        special_entity_type="Cruiser"
+			visuals="Assets/_DLC2/Cruisers/GungnirCruiser/GungnirCruiser.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships2/Cruiser" icon_overlay="Overlays1/DZ_Blue_Fortified" gimbal_icon_size_multiplier="1.25"
+			voice_group="Saboteur"
+			category="Ship"
+			size_scale="5.5"
+			visuals_scale_multiplier="18"
+			uses_large_health_bar="true"
+			collision_priority="100"
+			display_name="冈格尼尔巡洋舰"
+			display_name_for_sidebar="冈格尼尔CC" aip_when_granted_by_hack="15"
+			description="冈格尼尔巡洋舰的诞生，得益于一项大胆的任务——前往黯之天顶的母星，夺取他们的技术并造福人类。这艘巡洋舰装备了弱化版的尤蒙刚德湮灭光束，但威力依然惊人。它还配备了鱼叉发射器和寻的炸弹发射器，前者能让最庞大的单位也动弹不得，后者发射的炮弹加速缓慢，若在飞行途中未被击落，将造成毁灭性伤害。该巡洋舰的船体由黯之天顶钟爱的电毒物质制成，当冈格尼尔巡洋舰受到攻击时，会立即向攻击者反馈伤害，使攻击者承受与冈格尼尔所受伤害成比例的损伤。巡洋舰是一种精英级别的单位，每个舰队限拥有一艘；它们不属于标准单位序列，但有资格获得快速反应支援（FRS）单位提供的全舰队增益。"			drone_starting_behavior_type="Attacker_Full"
+			starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Alien"
+			cost_for_ai_to_purchase="1600" strength_multiplier="2.5"
+			hull_points="900000" shield_points="450000" speed="Normal2"
+			metal_cost="500000" energy_consumption="45000"
+			armor_mm="245" engine_gx="16" albedo="0.4" mass_tx="6.5"
+			returns_this_percentage_of_damage_if_damaged_by_enemy_attack="0.15"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			absolute_max_cap_when_in_fleets="1"
+            priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+			>
+			<system name="B1" display_name="湮灭光束"
+					category="Weapon" firing_timing="OnlyInRange"
+					damage_per_shot="1500" range="AboveAverage5" shot_speed="Normal" rate_of_fire="High"
+					shot_type_data="HeavyBeamInvisible"
+					hits_all_intersecting_targets="true"
+					shots_detonate_immediately="true"
+					maximum_number_of_targets_hit_per_shot="30"
+					number_beams_to_fire="12" beam_weapon_visual_style="Laser_RedBlack"
+					distance_from_center_for_beam_emission="20"  
+					>
+			</system>
+			<system name="L1" display_name="标枪发射器"
+					category="Weapon" firing_timing="OnlyInRange" shot_type_data="DZJavelin"
+					damage_per_shot="5" range="Planetary" shot_speed="Slow" rate_of_fire="ExtremelyLow" fires_salvos_sequentially="true"  
+					shots_per_salvo="1"  
+					>
+			</system>
+			<system name="L2" display_name="寻的炸弹发射器"
+					category="Weapon" firing_timing="OnlyInRange" shot_type_data="DZSeekerBomb"
+					damage_per_shot="5" range="Planetary" shot_speed="Slow" rate_of_fire="Devourer" fires_salvos_sequentially="true"  
+					shots_per_salvo="1"  cloaking_percent_loss_from_firing="0.2"
+					use_alternate_rate_of_fire_after_x_shots="4" alternate_rate_of_fire="ExtremelyLow"  use_alternate_rate_of_fire_for_x_shots_before_reverting="1"
+					>
+			</system>
+			<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Frigate" weight="100" cap="1" faction="DarkZenith"/>
+	<ship_class_data can_be_zombified_and_similar="false" />
+			</entity>
+	
+</root>

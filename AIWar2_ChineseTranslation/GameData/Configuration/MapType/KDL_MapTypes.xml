@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+<!-- these solar ones don't work properly, were just proof-of-concept stuff
+  <map_type name="SolarSimple"
+              display_name="简易太阳系"
+              description="暂无描述"
+              dll_name="AIWarExternalDeepProcessingCode"
+              type_name="Arcen.AIW2.External.Mapgen_SolarSimple"
+  >
+  </map_type>
+  <map_type name="SolarWide"
+              display_name="广阔太阳系"
+              description="暂无描述"
+              dll_name="AIWarExternalDeepProcessingCode"
+              type_name="Arcen.AIW2.External.Mapgen_SolarWide"
+  >
+  </map_type>
+  <map_type name="SolarMaze"
+              display_name="太阳系迷宫"
+              description="暂无描述"
+              dll_name="AIWarExternalDeepProcessingCode"
+              type_name="Arcen.AIW2.External.Mapgen_SolarMaze"
+  >
+  </map_type>
+-->
+  <map_type name="ClustersMicrocosm"
+            display_name="微观集群"
+            description="集群以高度规则的形状排列。"
+              dll_name="AIWarExternalDeepProcessingCode"
+              type_name="Arcen.AIW2.External.Mapgen_ClustersRoot"
+              min_planets="40"
+              max_planets="300"
+
+  >
+    <map_option name="ClustersSpacing" display_name="集群间距" description="集群之间的间距是多少？" default_id="1">
+      <choice_value id="0" display_name="低" description="间距较小。" related_int_value="20" />
+      <choice_value id="1" display_name="中" description="间距适中。" related_int_value="50"/>
+      <choice_value id="2" display_name="高" description="间距较大。" related_int_value="80" />
+    </map_option>
+    <map_option name="ClusterRadius" display_name="集群半径" description="整体连通性水平。" default_id="1">
+      <choice_value id="0" display_name="小" description="集群相当小。" related_int_value="100" />
+      <choice_value id="1" display_name="中" description="集群稍小。" related_int_value="150" />
+      <choice_value id="2" display_name="大" description="像常规集群地图类型那样的较大集群。" related_int_value="200" />
+      <choice_value id="3" display_name="超大" description="比常规集群地图类型更大的集群。" related_int_value="300" />
+    </map_option>
+    <map_option name="RandomExtraConnections" display_name="随机额外连接"
+      description="集群内或集群之间应该有多少额外的连接？" default_id="1">
+      <choice_value id="0" display_name="无" description="除默认连接外无额外连接。" related_int_value="0" />
+      <choice_value id="1" display_name="五个" description="随机添加五个额外连接，但不与其他线路或行星重叠。" related_int_value="5" />
+      <choice_value id="2" display_name="十个" description="随机添加十个额外连接，但不与其他线路或行星重叠。" related_int_value="10" />
+      <choice_value id="3" display_name="十五个" description="随机添加十五个额外连接，但不与其他线路或行星重叠。" related_int_value="15" />
+      <choice_value id="4" display_name="二十个" description="随机添加二十个额外连接，但不与其他线路或行星重叠。" related_int_value="20" />
+      <choice_value id="5" display_name="二十五个" description="随机添加二十五个额外连接，但不与其他线路或行星重叠。" related_int_value="25" />
+      <choice_value id="6" display_name="三十个" description="随机添加三十个额外连接，但不与其他线路或行星重叠。" related_int_value="30" />
+    </map_option>
+  </map_type>
+
+  <map_type name="Tutorial_01"
+              is_hidden="true"
+              display_name="教程 01"
+              description="（无需使用）"
+              dll_name="AIWarExternalDeepProcessingCode"
+              type_name="Arcen.AIW2.External.Mapgen_Tutorial_01"
+              min_planets="40"
+              max_planets="300"
+
+  />
+  <map_type name="Snake"
+              display_name="螺旋蛇"
+              description="行星呈螺旋状排列，所有行星之间只有一条路径。这可能导致游戏极具挑战性，因为你无法轻易绕过强大的行星。"
+              dll_name="AIWarExternalDeepProcessingCode"
+              type_name="Arcen.AIW2.External.Mapgen_Concentric"
+              min_planets="40"
+              max_planets="300"
+            is_hidden="true"
+  >
+  </map_type>
+  <map_type name="Concentric"
+              display_name="同心环"
+              description="行星排列在同心环中。
+              
+在死亡愿望模式及以上不可用。"
+              dll_name="AIWarExternalDeepProcessingCode"
+              type_name="Arcen.AIW2.External.Mapgen_Concentric"
+              min_planets="40"
+              max_planets="300"
+              hidden_from_lists_above_harshness="2200"
+
+  >
+    <map_option name="ExtraRings" display_name="额外环数"
+      description="螺旋中应该有多少额外的环？" default_id="0">
+      <choice_value id="0" display_name="零个" description="无额外行星环。" related_int_value="0" />
+      <choice_value id="1" display_name="一个" description="一个额外行星环。" related_int_value="1" />
+      <choice_value id="2" display_name="两个" description="两个额外行星环。" related_int_value="2" />
+      <choice_value id="3" display_name="三个" description="三个额外行星环。" related_int_value="3" />
+    </map_option>
+    <map_option name="RandomExtraConnections" display_name="随机额外连接"
+      description="环之间应该有多少额外的连接？" default_id="2">
+      <choice_value id="0" display_name="无" description="除默认连接外无额外连接。" related_int_value="0" />
+      <choice_value id="1" display_name="五个" description="随机添加五个额外连接，但不与其他线路或行星重叠。" related_int_value="5" />
+      <choice_value id="2" display_name="十个" description="随机添加十个额外连接，但不与其他线路或行星重叠。" related_int_value="10" />
+      <choice_value id="3" display_name="十五个" description="随机添加十五个额外连接，但不与其他线路或行星重叠。" related_int_value="15" />
+      <choice_value id="4" display_name="二十个" description="随机添加二十个额外连接，但不与其他线路或行星重叠。" related_int_value="20" />
+      <choice_value id="5" display_name="二十五个" description="随机添加二十五个额外连接，但不与其他线路或行星重叠。" related_int_value="25" />
+      <choice_value id="6" display_name="三十个" description="随机添加三十个额外连接，但不与其他线路或行星重叠。" related_int_value="30" />
+    </map_option>
+    <map_option name="SpiralSnake" display_name="螺旋蛇模式？"
+      description="是否使用 '螺旋蛇' 模式？这是一个非常危险的模式，会让游戏变得超级困难。" default_id="0">
+      <choice_value id="0" display_name="否" description="环之间存在交叉连接。" related_int_value="0" />
+      <choice_value id="1" display_name="是" description="行星呈螺旋状排列，所有行星之间只有一条路径。这可能导致游戏极具挑战性，因为你无法轻易绕过强大的行星。
+                    
+如果你真的想要实现真正的螺旋蛇模式，请确保关闭随机额外连接。" related_int_value="1" />
+    </map_option>
+  </map_type>
+  <map_type name="X"
+              display_name="X 形布局"
+              description="行星被组织成四个不同的组，仅通过一个中心行星连接。
+
+此地图有许多独特功能，但与某些阵营和 AI 类型存在明显的平衡性问题。请自行承担使用风险。专家模式及以上不可用。"
+              dll_name="AIWarExternalDeepProcessingCode"
+              type_name="Arcen.AIW2.External.Mapgen_X"
+              min_planets="40"
+              max_planets="300"
+              hidden_from_lists_above_harshness="700"
+  >
+    <map_option name="RandomExtraConnections" display_name="随机额外连接"
+      description="环之间应该有多少额外的连接？" default_id="1">
+      <choice_value id="0" display_name="无" description="除默认连接外无额外连接。" related_int_value="0" />
+      <choice_value id="1" display_name="两个" description="随机添加两个额外连接，但不与其他线路或行星重叠。" related_int_value="2" />
+      <choice_value id="2" display_name="五个" description="随机添加五个额外连接，但不与其他线路或行星重叠。" related_int_value="5" />
+      <choice_value id="3" display_name="十个" description="随机添加十个额外连接，但不与其他线路或行星重叠。" related_int_value="10" />
+      <choice_value id="4" display_name="十五个" description="随机添加十五个额外连接，但不与其他线路或行星重叠。" related_int_value="15" />
+      <choice_value id="5" display_name="二十个" description="随机添加二十个额外连接，但不与其他线路或行星重叠。" related_int_value="20" />
+      <choice_value id="6" display_name="二十五个" description="随机添加二十五个额外连接，但不与其他线路或行星重叠。" related_int_value="25" />
+      <choice_value id="7" display_name="三十个" description="随机添加三十个额外连接，但不与其他线路或行星重叠。" related_int_value="30" />
+    </map_option>
+    <map_option name="GoForPerfectSymmetry" display_name="追求完美对称"
+      description="如果追求完美对称，行星数量会与实际请求的不同，因此你需要留意与请求行星数量的关系。" default_id="1">
+      <choice_value id="0" display_name="否" description="这看起来会更杂乱。" related_int_value="0" />
+      <choice_value id="1" display_name="是" description="这看起来会更整齐，而且可能会有比你要求更多的行星。出于性能考虑，请谨慎使用。" related_int_value="1" />
+    </map_option>
+  </map_type>
+  <map_type name="Grid"
+              display_name="网格布局"
+              description="行星被组织成有序的网格。"
+              dll_name="AIWarExternalDeepProcessingCode"
+              type_name="Arcen.AIW2.External.RootLatticeTypeGenerator"
+              min_planets="40"
+              max_planets="300"
+  >
+    <map_option name="GridType" display_name="网格类型" description="选择网格生成算法。">
+      <choice_value id="0" display_name="方形网格" description="将行星连接成方形网格。" related_int_value="0" />
+      <choice_value id="1" display_name="晶格" description="将行星连接成晶格。  " related_int_value="1" />
+      <choice_value id="2" display_name="交叉线" description="将行星连接成交叉线。" related_int_value="2" />
+    </map_option>
+    <map_option name="RandomExtraConnections" display_name="随机额外连接"
+      description="网格位置之间应该有多少额外的连接？" default_id="6">
+      <choice_value id="0" display_name="无" description="除默认连接外无额外连接。" related_int_value="0" />
+      <choice_value id="1" display_name="五个" description="随机添加五个额外连接，但不与其他线路或行星重叠。" related_int_value="5" />
+      <choice_value id="2" display_name="十个" description="随机添加十个额外连接，但不与其他线路或行星重叠。" related_int_value="10" />
+      <choice_value id="3" display_name="十五个" description="随机添加十五个额外连接，但不与其他线路或行星重叠。" related_int_value="15" />
+      <choice_value id="4" display_name="二十个" description="随机添加二十个额外连接，但不与其他线路或行星重叠。" related_int_value="20" />
+      <choice_value id="5" display_name="二十五个" description="随机添加二十五个额外连接，但不与其他线路或行星重叠。" related_int_value="25" />
+      <choice_value id="6" display_name="三十个" description="随机添加三十个额外连接，但不与其他线路或行星重叠。" related_int_value="30" />
+    </map_option>
+  </map_type>
+  <map_type name="Maze"
+              display_name="迷宫布局"
+              description="行星被组织成迷宫般的网格。
+              
+在死亡愿望模式及以上不可用。"
+              dll_name="AIWarExternalDeepProcessingCode"
+              type_name="Arcen.AIW2.External.RootLatticeTypeGenerator"
+              min_planets="40"
+              max_planets="300"
+              hidden_from_lists_above_harshness="2200"
+  >
+    <map_option name="MazeType" display_name="迷宫类型" description="选择迷宫生成算法。" default_id="3">
+      <choice_value id="0" display_name="A（直线）" description="通过递归回溯算法使用直线连接行星。" related_int_value="0" />
+      <choice_value id="1" display_name="B（直线，额外连接）" description="通过递归回溯算法使用直线和一些额外连接来连接行星。" related_int_value="1" />
+      <choice_value id="2" display_name="C（角度）" description="通过递归回溯算法使用角度连接行星。" related_int_value="2" />
+      <choice_value id="3" display_name="D（角度，额外连接）" description="通过递归回溯算法使用角度和一些额外连接来连接行星。" related_int_value="3" />
+    </map_option>
+    <map_option name="RandomExtraConnections" display_name="随机额外连接"
+      description="迷宫各位置之间应该有多少额外连接？" default_id="0">
+      <choice_value id="0" display_name="无" description="除默认连接外无额外连接。" related_int_value="0" />
+      <choice_value id="1" display_name="五个" description="随机添加五个额外连接，但不与其他线路或行星重叠。" related_int_value="5" />
+      <choice_value id="2" display_name="十个" description="随机添加十个额外连接，但不与其他线路或行星重叠。" related_int_value="10" />
+      <choice_value id="3" display_name="十五个" description="随机添加十五个额外连接，但不与其他线路或行星重叠。" related_int_value="15" />
+      <choice_value id="4" display_name="二十个" description="随机添加二十个额外连接，但不与其他线路或行星重叠。" related_int_value="20" />
+      <choice_value id="5" display_name="二十五个" description="随机添加二十五个额外连接，但不与其他线路或行星重叠。" related_int_value="25" />
+      <choice_value id="6" display_name="三十个" description="随机添加三十个额外连接，但不与其他线路或行星重叠。" related_int_value="30" />
+    </map_option>
+  </map_type>
+  <map_type name="Clusters"
+              display_name="集群布局"
+              description="行星被组织成多个集群，每个集群只有少数虫洞连接到其他集群。集群内的行星与集群内的其他行星有适度数量的连接。"
+              dll_name="AIWarExternalDeepProcessingCode"
+              type_name="Arcen.AIW2.External.Mapgen_ClustersRoot"
+              min_planets="40"
+              max_planets="300"
+  >
+    <map_option name="ClusterStyle" display_name="创建集群类型" description="允许您设置不同集群的数量。" default_id="5">
+      <choice_value id="0" display_name="大型" description="使用大型集群。" related_int_value="0" />
+      <choice_value id="1" display_name="中型" description="使用中型集群。" related_int_value="1" />
+      <choice_value id="2" display_name="星云" description="使用更多样化的中型集群。" related_int_value="2" />
+      <choice_value id="3" display_name="小型" description="使用小型集群。" related_int_value="3" />
+      <choice_value id="4" display_name="蝴蝶形" description="使用多样化的集群。" related_int_value="4" />
+      <choice_value id="5" display_name="破碎形" description="有一些有趣的分割。" related_int_value="5" />
+    </map_option>
+    <map_option name="RandomExtraConnections" display_name="随机额外连接"
+      description="集群内或集群间应该有多少额外连接？" default_id="1">
+      <choice_value id="0" display_name="无" description="除默认连接外无额外连接。" related_int_value="0" />
+      <choice_value id="1" display_name="五个" description="随机添加五个额外连接，但不与其他线路或行星重叠。" related_int_value="5" />
+      <choice_value id="2" display_name="十个" description="随机添加十个额外连接，但不与其他线路或行星重叠。" related_int_value="10" />
+      <choice_value id="3" display_name="十五个" description="随机添加十五个额外连接，但不与其他线路或行星重叠。" related_int_value="15" />
+      <choice_value id="4" display_name="二十个" description="随机添加二十个额外连接，但不与其他线路或行星重叠。" related_int_value="20" />
+      <choice_value id="5" display_name="二十五个" description="随机添加二十五个额外连接，但不与其他线路或行星重叠。" related_int_value="25" />
+      <choice_value id="6" display_name="三十个" description="随机添加三十个额外连接，但不与其他线路或行星重叠。" related_int_value="30" />
+    </map_option>
+  </map_type>
+  <map_type name="Wheel"
+              display_name="轮状布局"
+              description="行星呈轮状排列，有若干辐条和一个边缘环。"
+              dll_name="AIWarExternalDeepProcessingCode"
+              type_name="Arcen.AIW2.External.Mapgen_Wheel"
+              min_planets="40"
+              max_planets="300"
+  >
+  </map_type>
+  <map_type name="Honeycomb"
+              display_name="蜂窝布局"
+              description="行星呈六边形图案排列。
+              
+Not available on Deathwish mode and up."
+              dll_name="AIWarExternalDeepProcessingCode"
+              type_name="Arcen.AIW2.External.Mapgen_Honeycomb"
+              min_planets="40"
+              max_planets="300"
+              hidden_from_lists_above_harshness="2200"
+  >
+    <map_option name="Dissonance" display_name="破碎程度"
+      description="蜂窝状布局应破碎到何种程度？" default_id="2">
+      <choice_value id="0" display_name="极低" description="几乎不破碎，可能会有一些拥挤区域。" related_int_value="180" />
+      <choice_value id="1" display_name="正常" description="几乎不破碎，但会有一些有趣的空隙。" related_int_value="200" />
+      <choice_value id="2" display_name="稍高" description="布局会更多地破碎，导致更混乱的局面。" related_int_value="220" />
+      <choice_value id="3" display_name="高于平常" description="很多区域明显破碎。" related_int_value="250" />
+      <choice_value id="4" display_name="支离破碎" description="几乎无法辨认。地图的大部分都已破碎。" related_int_value="300" />
+    </map_option>
+    <map_option name="RandomExtraConnections" display_name="随机额外连接"
+      description="随机行星间应存在多少额外连接？" default_id="0">
+      <choice_value id="0" display_name="无" description="除默认连接外无额外连接。" related_int_value="0" />
+      <choice_value id="1" display_name="五个" description="随机添加五个额外连接，但不与其他线路或行星重叠。" related_int_value="5" />
+      <choice_value id="2" display_name="十个" description="随机添加十个额外连接，但不与其他线路或行星重叠。" related_int_value="10" />
+      <choice_value id="3" display_name="十五个" description="随机添加十五个额外连接，但不与其他线路或行星重叠。" related_int_value="15" />
+      <choice_value id="4" display_name="二十个" description="随机添加二十个额外连接，但不与其他线路或行星重叠。" related_int_value="20" />
+      <choice_value id="5" display_name="二十五个" description="随机添加二十五个额外连接，但不与其他线路或行星重叠。" related_int_value="25" />
+      <choice_value id="6" display_name="三十个" description="随机添加三十个额外连接，但不与其他线路或行星重叠。" related_int_value="30" />
+    </map_option>
+    <map_option name="SolarSnake" display_name="太阳系蛇形模式？"
+      description="是否使用太阳系蛇形模式？" default_id="0">
+      <choice_value id="0" display_name="否" description="这是一个普通的蜂窝状地图。" related_int_value="0" />
+      <choice_value id="1" display_name="是" description="行星排列成一系列蛇形线条，所有行星之间只有一条路径。这可能会导致游戏极具挑战性，因为您无法轻易绕过强大的行星。
+                    
+如果您真的希望实现真正的太阳系蛇形模式，请确保关闭随机额外连接。" related_int_value="1" />
+    </map_option>
+    <map_option name="SolarSnake" display_name="太阳系蛇形模式？" description="是否启用太阳系蛇形模式？" default_id="0">
+      <choice_value id="0" display_name="否" description="这是一个普通的蜂窝状地图。" related_int_value="0" />
+      <choice_value id="1" display_name="是" description="行星被组织成一系列蛇形线条，所有行星之间只有一条路径。这可能导致游戏极具挑战性，因为你无法轻易绕过强大的行星。\n\n如果您真的希望实现真正的太阳系蛇形模式，请确保关闭随机额外连接。" related_int_value="1" />
+    </map_option>
+  </map_type>
+  <map_type name="Encapsulated"
+              display_name="封装布局"
+              description="行星排列在一个外边缘内的大小集群中。有时集群之间相互连接，有时您必须穿过外边缘才能到达其他集群。\n\n挑战者模式及以上不可用。"
+              dll_name="AIWarExternalDeepProcessingCode"
+              type_name="Arcen.AIW2.External.Mapgen_Encapsulated"
+              min_planets="40"
+              max_planets="300"
+              hidden_from_lists_above_harshness="200"
+  >
+    <map_option name="EncapsulatedCircleSize" display_name="圆圈大小" description="选择圆圈大小。">
+      <choice_value id="0" display_name="小" description=""  related_int_value="0"/>
+      <choice_value id="1" display_name="中" description="" related_int_value="1" />
+      <choice_value id="2" display_name="大" description="" related_int_value="2" />
+    </map_option>
+  </map_type>
+  <map_type name="TestChamber"
+              is_hidden="true"
+              display_name="测试室"
+              description="~*~"
+              dll_name="AIWarExternalDeepProcessingCode"
+              type_name="Arcen.AIW2.External.Mapgen_TestChamber"
+              is_test_chamber="true"
+              min_planets="40"
+              max_planets="300"
+  >
+  </map_type>
+</root>

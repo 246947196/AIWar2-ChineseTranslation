@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <setting_subcategory parent="General" name="ScoutingCoreMechanics" display_name="核心侦察机制" color="46f0ff"
+      description="地图内容最初是如何被揭示的？"/>
+  <setting_subcategory parent="General" name="FogOfWar" display_name="战争迷雾" color="46f0ff"
+      description="在你之前侦察过的敌方领土中，你能看到多少？"/>
+  <setting_subcategory parent="General" name="Spoilers" display_name="剧透（类Roguelike元素）" color="46f0ff"
+      description="在你遇到敌人之前，有多少关于敌人的信息会对你隐藏？"/>
+
+  <setting_subcategory parent="General" name="MajorChallenges" display_name="主要挑战" color="46f0ff"
+      description="这些选项将显著影响游戏玩法，使其变得更加困难。"/>
+
+  <setting_subcategory parent="AI Behavior" name="CommonFeatures" display_name="常见特性" color="46f0ff"
+      description="这些行为被视为标准，但你可以调整它们。"/>
+  <setting_subcategory parent="AI Behavior" name="AdvancedDangers" display_name="高级危险" color="46f0ff"
+      description="这些行为完全不是标准的，但你可以开启它们来获得额外的挑战。"/>
+  <setting_subcategory parent="AI Behavior" name="Sandbox" display_name="沙盒" color="46f0ff"
+      description="这些行为完全不是标准的，但你可以启用它们来...只是为了娱乐并尝试不同的场景。其中许多会使游戏变得容易得多，但并非全部。"/>
+
+  <setting_subcategory parent="UnitBehavior" name="YourUnitIntelligence" display_name="你的单位智能" color="46f0ff"
+      description="你的单位应该如何处理某些情况？"/>
+  <setting_subcategory parent="UnitBehavior" name="AlliedUnitIntelligence" display_name="盟军单位智能" color="46f0ff"
+      description="盟军单位应该如何处理某些情况？"/>
+  <setting_subcategory parent="UnitBehavior" name="ExperimentalBehavior" display_name="实验性行为" color="46f0ff"
+      description="低级行为的实验性选项"/>
+  
+  <setting_subcategory parent="Allies" name="Economics" display_name="经济" color="46f0ff"
+      description="我们与盟友（NPC或其他玩家）之间有什么样的经济关系？"/>
+  <setting_subcategory parent="Allies" name="NPCScouting" display_name="NPC侦察" color="46f0ff"
+      description="我们与NPC盟友之间有什么样的侦察关系？"/>
+  <setting_subcategory parent="Allies" name="NPCBalance" display_name="NPC平衡" color="46f0ff"
+      description="NPC盟友如何影响与我们整体游戏的平衡？"/>
+
+  <setting_subcategory parent="MapGen" name="Cosmetic" display_name="外观" color="46f0ff"
+      description="这些设置影响名称和其他非游戏性内容。"/>
+  <setting_subcategory parent="MapGen" name="PlanetGravWellSizes" display_name="行星引力井大小" color="46f0ff"
+      description="这些设置影响各种行星上的空间大小。"/>  
+  <setting_subcategory parent="MapGen" name="RoguelikeAdditions" display_name="类Roguelike添加内容" color="46f0ff"
+      description="这些设置添加了随机化特性，使体验更具类Roguelike性质。"/>
+  <setting_subcategory parent="MapGen" name="FactionPositioning" display_name="派系定位" color="46f0ff"
+      description="这些设置影响派系在地图上相对彼此的位置。"/>
+  <setting_subcategory parent="MapGen" name="ExtraSeededItems" display_name="额外种子物品" color="46f0ff"
+      description="这些设置会在地图周围添加或删除额外的可能正常情况下不会出现的种子物品。这些可能对游戏平衡产生深远影响。"/>
+  <setting_subcategory parent="MapGen" name="ExtremeAdjustments" display_name="极端调整" color="46f0ff"
+      description="这些设置以重大方式影响银河系的填充方式，可能使事情变得更容易或更困难。"/>
+  <setting_subcategory parent="MapGen" name="CapturableDensity" display_name="可捕获目标密度" color="46f0ff"
+      description="这些设置影响各种可捕获物体的数量平衡，这可能对游戏平衡产生重大影响。"/>
+  <setting_subcategory parent="MapGen" name="DestroyablesDensity" display_name="可摧毁目标密度" color="46f0ff"
+      description="这些设置影响各种可摧毁物体的数量平衡，这可能对游戏平衡产生重大影响。"/>
+
+  <setting_subcategory parent="Balance" name="GlobalModifiers" display_name="全局修饰符" color="46f0ff"
+      description="这些设置改变所有船只，但也最终改变了游戏的感觉和流程。"/>
+  <setting_subcategory parent="Balance" name="HumanBalance" display_name="人类平衡" color="46f0ff"
+      description="这些设置改变了人类玩家的一些平衡性，但不是针对多人游戏中的任何特定帝国或类型的人类玩家。"/>
+  <setting_subcategory parent="Balance" name="OutguardBalance" display_name="前哨守卫平衡" color="46f0ff"
+      description="这些设置改变了前哨守卫的一些平衡性。"/>
+  <setting_subcategory parent="Balance" name="Permadeath" display_name="永久死亡" color="46f0ff"
+      description="这些设置允许你通过允许单位永久死亡来使游戏的某些部分更加紧张，而不是留下可以重建的残骸。"/>
+  <setting_subcategory parent="Balance" name="UnitStyleRelativeStrengths" display_name="单位类型相对强度" color="46f0ff"
+      description="这些设置改变了哪些单位组更强或更弱，以赋予游戏各种不同的风格。"/>
+	  
+  <setting_subcategory parent="Hidden" name="Hidden" display_name="隐藏" color="46f0ff"
+      description="这些隐藏设置通常不会被使用，但它们存在于游戏中供模组制作者和类似人员在他们的模组、完全转换等中使用。"/>	  
+</root>

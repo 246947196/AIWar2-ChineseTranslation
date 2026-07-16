@@ -15,7 +15,7 @@
            can_record_another_copy_if_already_recorded_in_this_campaign="false"
            text_replacement_related_faction_color="true"
         chat_text="指挥官，我们发现了一些友好的长老"
-        full_text="指挥官，我们发现了一些友好的长老。长老是强大的奈因祖尔单位。它们将定期产卵，卵将孵化成新的单位。
+        full_text="指挥官，我们发现了一些友好的长老。长老是强大的奈因祖尔舰船。它们将定期产卵，卵将孵化成新的舰船。
 
 当卵孵化时，长老将决定一个附近的小区域进行巡逻。进入其区域的敌人将被攻击。
 
@@ -25,7 +25,7 @@
            can_record_another_copy_if_already_recorded_in_this_campaign="false"
            text_replacement_related_faction_color="true"
         chat_text="我的陛下，我们观察到了一次长老入侵"
-        full_text="我的陛下，我们观察到了一次长老入侵。长老是强大的奈因祖尔单位。它们将定期产卵，卵将孵化成新的单位。
+        full_text="我的陛下，我们观察到了一次长老入侵。长老是强大的奈因祖尔舰船。它们将定期产卵，卵将孵化成新的舰船。
 
 当卵孵化时，长老将决定一个附近的小区域进行巡逻。进入其区域的敌人将被攻击。
 
@@ -43,7 +43,7 @@
 
 这对于理解何时何地可以猎杀长老非常有用。参考银河系菜单并选择&lt;color=#6718c7&gt;长老信息&lt;/color&gt;过滤器以获取有关长老的重要情报。
 
-一旦被追踪，我们可以将长老引诱到其区域内的一个行星上，按照我们的条件与之战斗。当我们需要&lt;color=#E16CFF&gt;精华&lt;/color&gt;而不是&lt;color=#3DE799&gt;入侵&lt;/color&gt;点数时，这种技术最有效。为旗舰添加隐形模块可以让你潜入敌方领土找到要追踪的长老，然后引诱它们走向毁灭。" />
+一旦被追踪，我们可以将长老引诱到其区域内的一个行星上，按照我们的条件与之战斗。当我们需要&lt;color=#E16CFF&gt;精华&lt;/color&gt;而不是&lt;color=#3DE799&gt;黑客&lt;/color&gt;点数时，这种技术最有效。为旗舰添加隐形模块可以让你潜入敌方领土找到要追踪的长老，然后引诱它们走向毁灭。" />
 
     <journal name="NA_Elderlings_Overview_Tracking" sidebar_text="{FactionColor}长老&lt;/color&gt;:  追踪"
            can_record_another_copy_if_already_recorded_in_this_campaign="false"

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <tip category="QuickTips" name="QT_PursuitMode" display_name="追击模式" sort_priority="888"
+        full_text="选中单位时，按V键可将其设为'追击模式'，这会使它们在该行星执行自动警戒任务。
+        
+这种模式非常适合防御，但在敌方行星上使用非常危险。" />
+
+    <tip category="QuickTips" name="QT_TractorHitting" display_name="牵引单位" sort_priority="888"
+       full_text="被牵引光束捕获的单位总能射击牵引光束的来源，即使通常情况下超出射程。" />
+
+  <tip category="QuickTips" name="QT_HowHack" display_name="如何进行入侵操作" sort_priority="888"
+        full_text="你的任何进攻舰队旗舰（运输舰、方舟、巨像等）都可以充当入侵者。将它们带到敌方行星并开始行动。" />
+
+
+  <tip category="QuickTips" name="QT_HowColonize" display_name="如何殖民行星" sort_priority="888"
+        full_text="一旦你摧毁了行星上的敌方指挥站，就可以建造自己的指挥站并占领该行星。你的任何进攻舰队旗舰（运输舰、方舟、巨像等）只需在场，然后你就可以从侧边栏的建造菜单中选择所需的指挥站类型。" />
+
+  
+  <tip category="QuickTips" name="QT_HowScience" display_name="如何获取更多科研点数" sort_priority="888"
+        full_text="一旦你摧毁了行星上的敌方指挥站，就可以建造自己的指挥站，它会自动为你收集科研点数。即使你不打算永久占领该行星，这也是个好主意，因为你为占领该行星付出了 AI 进度值（AIP）。你也可以使用入侵手段获取科研点数，但这会消耗宝贵的入侵点数。" />
+
+  
+  <tip category="QuickTips" name="QT_StackedForceF" display_name="叠加力场" sort_priority="888"
+        full_text="在你的主指挥站（或其他关键建筑）上叠加多个力场，可以保护它免受敌方持续攻击，并为你争取时间调集增援部队。" />
+
+
+  <tip category="QuickTips" name="QT_CClick" display_name="按住 C 键点击查看内容详情" sort_priority="888"
+        full_text="如果你按住 C 键并点击包含其他单位的各种单位/建筑，或者点击科技或敌方波次按钮，就可以获取很多有关内部单位或其他相关信息。这让规划变得容易多了！" />
+  
+
+  <tip category="QuickTips" name="QT_LoadUnload" display_name="运输舰装卸操作" sort_priority="888"
+        full_text="你的任何进攻舰队旗舰（运输舰、方舟、魔像等）都可以将其所属单位装载其中，然后作为运输舰使用。
+        
+按L键将选中的舰队装入其舰队旗舰。准备好后按U键卸载所有运输的单位。" />
+
+
+  <tip category="QuickTips" name="QT_Crippled" display_name="舰队旗舰只会受损" sort_priority="888"
+        full_text="你的进攻舰队旗舰（运输舰、方舟、魔像等）和防御用战斗空间站/堡垒不会被摧毁。
+        
+但是，当生命值降至1时，它们会变为'受损'状态，需要完全修复才能重新执行大部分功能。" />
+
+
+  <tip category="QuickTips" name="QT_BlockingWormholes" display_name="用力场封锁虫洞" sort_priority="888"
+        full_text="如果你在虫洞的敌方一侧放置力场，那么通过常规空间飞行的敌人将无法通过。但是，任何随波次传送进来的敌人仍然可以直接从另一侧出来。" />
+
+  <tip category="QuickTips" name="QT_ValueOfTransports" display_name="真正利用你的运输舰！" sort_priority="888"
+        full_text="不要忽视运输舰！它们让你能绕过那些危险但你不想占领的行星。虽然这样会导致帝国版图零散，但能保持更健康的AI进度值。
+
+你所有的进攻舰队核心单位，包括方舟和魔像，都能作为其舰队成员的运输舰。按L键可将选中舰队的所有单位装入其舰队旗舰，之后按U键卸载。" />
+
+
+  <tip category="QuickTips" name="QT_AttackRanges" display_name="武器射程" sort_priority="888"
+        full_text="注意攻击射程！按'z'键可以查看你的单位射程，按'shift'+'z'可以查看所有单位的射程。当你用小规模部队对抗多个警戒站时，尽量保持在尽可能少的警戒站攻击范围内。
+     
+敌方的大多数警戒站内部都储存着大量单位，如果过早激怒它们，你将面临更艰难的战斗。" />
+  
+  <tip category="QuickTips" name="QT_Scouting" display_name="侦察" sort_priority="888"
+        full_text="侦察过程相当自动化。你占领的每个行星都会为你提供更多侦察情报。但如果你真的想尽快了解某些情况，可以选择该行星，然后在入侵侧边栏菜单中有几个选项可供选择。" />
+
+
+  <tip category="QuickTips" name="QT_IntelTab" display_name="侧边栏情报选项卡" sort_priority="888"
+        full_text="如果不确定下一步该做什么，可以查看侧边栏的情报选项卡。它会汇总并整理你发现的关于银河系的所有信息，提供高层次的目标列表。  
+
+将鼠标悬停在情报条目上可获取更多信息，大多数情况下点击可查看目标。你还可以为不同目标设置优先级，这会在银河地图上显示。" />
+
+
+  <tip category="QuickTips" name="QT_BS_Cit" display_name="战斗空间站和堡垒" sort_priority="888"
+        full_text="战斗空间站和堡垒很重要但很稀有。你可以占领它们来获得可移动的炮塔、力场、雷区等防御设施，用于你的行星或敌方行星。
+        
+它们非常适合在敌方行星建立滩头阵地，或协助防守己方行星的战略要点。" />
+
+
+  <tip category="QuickTips" name="QT_GCAs" display_name="炮塔蓝图服务器和其他防御建筑蓝图服务器（TSS 和 ODSS）" sort_priority="888"
+        full_text="炮塔蓝图服务器和其他防御建筑蓝图服务器（TSS 和 ODSS）非常重要，因为它们可以为你所有的指挥站提供更多炮塔和其他防御选项。如果你想防御多个行星，就绝对需要黑入其中一些服务器。" />
+
+  <tip category="QuickTips" name="QT_Selection" display_name="默认情况下，拖动选择仅选中军事单位" sort_priority="888"
+        full_text="通常情况下，当你拖动选择框选择单位时，如果框内有任何军事单位，那么只会选中军事单位。这通常是最好的做法，但如果你想不管军事状态如何，都选中选择框内的所有单位，只需按住 Ctrl 键即可！" />
+
+  <tip category="QuickTips" name="QT_RCFleets" display_name="在侧边栏中右键点击舰队" sort_priority="888"
+        full_text="在侧边栏的舰队选项卡中，你可以右键点击以选中整个舰队。按住 Shift 键并右键点击舰队可以选择多个舰队。你还可以双击舰队核心单位以选中整个舰队。" />
+
+  <tip category="QuickTips" name="QT_PlanetSearch" display_name="按名称搜索行星" sort_priority="888"
+        full_text="在游戏中，如果你按下回车键调出聊天窗口，然后输入 'cmd:findp,yoursearchhere'，就可以按名称搜索行星。如果你输入行星名称的一部分，就可以按上箭头键和回车键重复执行命令，如果有多个匹配结果，还可以循环查看。" />
+
+  <tip category="QuickTips" name="QT_ShowStrengths" display_name="显示单位优缺点" sort_priority="888"
+       full_text="要查看哪些单位对特定单位有优势或劣势，按住 R 键并将鼠标悬停在该单位上；悬停文本会列出相关信息。" />
+
+  <tip category="QuickTips" name="QT_ChangeStartingPlanet" display_name="在游戏大厅中更改起始行星" sort_priority="888"
+    full_text="在自定义游戏大厅中，你可以通过点击另一个行星来更改起始行星。" />
+
+  <tip category="QuickTips" name="QT_ExploreWithHacking" display_name="用入侵手段探索" sort_priority="888"
+    full_text="你可以通过点击星系地图上未探索的行星并使用“探索行星”入侵手段来探索新行星。" />
+
+  <tip category="QuickTips" name="QT_EditFactions" display_name="编辑阵营菜单" sort_priority="888"
+    full_text="游戏中你可以按Esc键进入编辑阵营菜单，更改阵营颜色。
+
+在同一窗口中，你还可以调整尚未释放的信标阵营的强度。" />
+
+  <tip category="QuickTips" name="QT_EditPlanets" display_name="编辑行星" sort_priority="888"
+    full_text="从星系地图中，你可以使用屏幕底部的编辑按钮来标注行星。你可以更改行星名称、给自己留备注或设置一个在星系地图上可见的优先级标记。" />
+
+  <tip category="QuickTips" name="QT_WatchFleets" display_name="关注舰队" sort_priority="888"
+       full_text="在行星侧边栏中，你可以将某些舰队设置为关注状态，这样即使你查看其他行星，也总能看到这些舰队的生命值和实力。在尝试同时监控多场战斗时，这非常有用。" />
+  
+  <tip category="QuickTips" name="QT_WaitForStragglers" display_name="等待掉队单位" sort_priority="888"
+       full_text="在自动化设置中使用“等待掉队单位”设置，会让处于装载模式的旗舰在离开行星前等待其单位装载完毕。" />
+  
+  <tip category="QuickTips" name="QT_Respec" display_name="科研重置" sort_priority="888"
+    full_text="你可以使用科技侧边栏底部的“回收已花费科研点数”按钮来回收已花费的科研点数。点击该按钮可以撤销在单位、舰队或指挥站升级上花费的科研点数，让你可以在其他地方重新使用这些科研点数。" />
+
+  <tip category="QuickTips" name="QT_HoverNeutralFlagship" display_name="显示可用的旗舰线科技" sort_priority="888"
+    full_text="如果启用了“完整提示”，将鼠标悬停在中立旗舰上，它会列出升级其每条单位线的科技。这让评估潜在协同效应变得容易多了。" />
+
+  <tip category="QuickTips" name="QT_GolemHack" display_name="旗舰升级" sort_priority="888"
+       full_text="你可以花费科研点数提升旗舰等级来强化它们。这些科研点数之后可以在科技菜单底部回收。
+
+你也可以花费入侵点数永久升级你的旗舰。" />
+
+  <tip category="QuickTips" name="QT_Beachhead" display_name="建立滩头阵地" sort_priority="888"
+       full_text="你可以在 AI 行星上建造炮塔（建造速度会降低）。利用这一点来帮助攻打特别坚固的 AI 行星。" />
+
+  <tip category="QuickTips" name="QT_QueueUnload" display_name="移动后排队卸载命令" sort_priority="888"
+       full_text="你可以为旗舰下达银河地图移动命令，并指示它'到达后卸载单位'。为此，使用Shift键来排队命令。
+
+进入银河地图并选择已装载的旗舰。然后点击目标行星，按住Shift键并按U键。你的单位将在旗舰到达时自动卸载！" />
+
+  <!-- from the tip of the day channel on discord -->
+  <tip category="QuickTips" name="QT_WellMadeComposition" display_name="实力与舰队编成" sort_priority="888" author="Zweihand"
+       full_text="舰队实力并非一切；它只是根据某个单位的生命值和攻击力来估算实力。利用各种增益效果的协同舰队编成总能击败只有单一单位类型的舰队。" />
+
+  
+  <tip category="QuickTips" name="QT_DirectUpgrades" display_name="直接升级" sort_priority="888" author="zeusalmighty"
+       full_text="当你还不确定哪些武器科技最有用时，直接升级可能是一项很好的科研投资。升级你的指挥站——尤其是主行星上的指挥站——将提升你的防御能力和经济实力。" />
+  
+</root>

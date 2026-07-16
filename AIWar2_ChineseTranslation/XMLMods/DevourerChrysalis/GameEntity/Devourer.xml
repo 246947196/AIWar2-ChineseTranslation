@@ -1,0 +1,942 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<entity name="DevourerChrysalisBeacon" copy_from="MinorFactionBeacon"
+		tags="Beacon,DevourerChrysalisBeacon"
+		display_name="Zenith 信标" display_name_for_sidebar="Zenith 信标"
+		description="一个未知的 Zenith 信标，连接着一个未知的接收者。分析其技术会很有趣，但也可能引起所有者的注意。
+
+&lt;color=#f25e1c&gt;低影响：&lt;/color&gt; 此派系不会扩张，只有在被激怒时才能攻击建筑。有时能在战斗中造成巨大的局势转变。
+如果它达到或在第 4 级生成，则上述两点不再适用，届时即使未被激怒也能攻击建筑，并且除了游牧行星外几乎无法被击败，会立即击败同一行星上的任何其他敌对派系。"
+		target_type_for_player="NeverTarget"
+		eligible_for_hacks="Devourer_SumonHack"
+	>
+	</entity>
+
+
+
+	<entity name="Chrysalis_Tier1"
+		tags="ShowsOnNormalDisplayMode,DevourerChrysalis_Tier1" voice_group="Zenith" gimbal_icon_size_multiplier="2"
+		draw_in_galaxy_view="true"
+		visuals="assets/_finalgamemeshes/golems/devourergolem/devourergolem.prefab"
+		icon_name="Ships1/DevourerGolem" icon_overlay="Overlays2/HunterKiller_Rank1"
+		uses_large_health_bar="true"
+		category="Ship"
+		size_scale="16" 
+		visuals_scale_multiplier="1"
+		y_offset_of_icon="180"
+		collision_priority="100000" rotation_x_of_ship="90" rotation_z_of_ship="90"
+		display_name="吞噬者蛹 第 1 级"
+		display_name_for_sidebar="蛹 T1"
+		description="它正在……进化？"
+		behavior="Stationary"
+		starting_mark_level="Mark1" max_mark_level="3"
+		cost_for_ai_to_purchase="140000"
+		hull_points="1000000" shield_points="1000000" speed="Immobile"
+		armor_mm="1000" albedo="0.9" mass_tx="19"
+		metal_cost="30000000" energy_consumption="0"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+		ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+		shows_on_galaxy_map_for_explored_planets="true"
+		priority_as_ai_target="IgnoreMe" priority_as_frd_target="IgnoreMe" priority_to_protect="IgnoreMe"
+		multiplier_to_all_costs="3" multiplier_to_all_healths="2" damage_multiplier_to_all_weapons="2" multiplier_to_all_scales="1.2"
+		description_appender_dll="DevourerChrysalis"
+		description_appender_type="DevourerChrysalis.DevourerChrysalisDescriptionAppender"
+		eligible_for_hacks="Devourer_SingleShipLineHack_T1,Devourer_ChooseEvolution_T1,Devourer_DevolutionHack_T1,Devourer_MetalSiphonHack_T1"
+		strength_multiplier="0.1"
+	>
+		<system name="PassiveAntimatterTurrets" display_name="被动反物质炮塔"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="15" range="Planetary" shot_speed="Normal" rate_of_fire="Devourer"
+			shots_per_salvo="10" added_shots_per_salvo_per_mark="10" fires_salvos_sequentially="false"
+			shot_type_data="DevourerShot"
+			only_targets_mobile_units="true"
+			>
+			<outgoing_damage_modifier based_on="MyTimeAtPlanet" comparison_type="MultiplesOf" compared_to="1" multiplier="1" />
+		</system>
+		<ship_class_data can_be_damaged="false" />
+	</entity>
+
+	<entity name="Chrysalis_Tier2" copy_from="Chrysalis_Tier1" tags="ShowsOnNormalDisplayMode,DevourerChrysalis_Tier2"
+		y_offset_of_icon="210"
+		collision_priority="100000"
+		starting_mark_level="Mark2" max_mark_level="4"
+		display_name="吞噬者蛹 第 2 级"
+		display_name_for_sidebar="蛹 T2"
+		description="它正在……进化？又来了？！"
+		armor_mm="1250" mass_tx="20"
+		multiplier_to_all_costs="9" multiplier_to_all_healths="4" damage_multiplier_to_all_weapons="4" multiplier_to_all_scales="1.44"
+		eligible_for_hacks="Devourer_SingleShipLineHack_T2,Devourer_ChooseEvolution_T2,Devourer_DevolutionHack_T2,Devourer_MetalSiphonHack_T2"
+	>
+		<system name="PassiveAntimatterCannons" display_name="被动反物质加农炮"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="200" range="Planetary" shot_speed="Normal" rate_of_fire="High"
+			shots_per_salvo="1" added_shots_per_salvo_per_mark="1" fires_salvos_sequentially="false"
+			shot_type_data="DevourerShot"
+			only_targets_mobile_units="true"
+			>
+			<outgoing_damage_modifier based_on="MyTimeAtPlanet" comparison_type="MultiplesOf" compared_to="1" multiplier="1" />
+		</system>
+	</entity>
+
+	<entity name="Chrysalis_Tier3" copy_from="Chrysalis_Tier1" tags="ShowsOnNormalDisplayMode,DevourerChrysalis_Tier3"
+		y_offset_of_icon="240"
+		collision_priority="100000"
+		starting_mark_level="Mark3" max_mark_level="5"
+		display_name="吞噬者蛹 第 3 级"
+		display_name_for_sidebar="蛹 T3"
+		description="它正在……进化？又来了？！这东西到底能长多大？"
+		armor_mm="1500" mass_tx="21"
+		multiplier_to_all_costs="27" multiplier_to_all_healths="8" damage_multiplier_to_all_weapons="8" multiplier_to_all_scales="1.728"
+		eligible_for_hacks="Devourer_SingleShipLineHack_T3,Devourer_CenterpieceShipLineHack,Devourer_ChooseEvolution_T3,Devourer_DevolutionHack_T3,Devourer_MetalSiphonHack_T3"
+	>
+		<system name="PassiveAntimatterSaturator" display_name="被动反物质饱和器"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="1" range="Planetary" shot_speed="Normal" rate_of_fire="Devourer"
+			shots_per_salvo="1" fires_salvos_sequentially="false"
+			shot_type_data="ExplosiveInvisible" area_of_effect_size="600000"
+			only_targets_mobile_units="true"
+			shots_detonate_immediately="true"
+			>
+			<outgoing_damage_modifier based_on="MyTimeAtPlanet" comparison_type="MultiplesOf" compared_to="1" multiplier="1" />
+		</system>
+	</entity>
+	
+	
+	<!-- Tier 1 and base classes (just for holding the values) -->
+	
+	<entity name="DevourerGolem_Tier1" copy_from="DevourerGolem" tags="ShowsOnNormalDisplayMode,#Devourer_Evolution#Chrysalis_Tier1,Devourer_Tier1,#Devourer_ID#0,MainMobileDevourerIncludingEnraged"
+		starting_mark_level="Mark1" max_mark_level="3"
+		metal_cost="25000000" energy_consumption="5000000"
+		size_scale="16" 
+		visuals_scale_multiplier="1"
+		y_offset_of_icon="150"
+		collision_priority="100000"
+		display_name="吞噬者"
+		display_name_for_sidebar="吞 T1"
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破行星上的所有停火协议。"
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破行星上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。"
+		hull_points="5000000" shield_points="2500000" speed="VeryVeryLittle1"
+		armor_mm="300" engine_gx="25" mass_tx="18" albedo="0.9"
+		science_to_grant_on_death="2000"
+		multiplier_to_all_costs="1" multiplier_to_all_healths="1" damage_multiplier_to_all_weapons="1" multiplier_to_all_scales="1"
+		description_appender_dll="DevourerChrysalis"
+		description_appender_type="DevourerChrysalis.DevourerChrysalisDescriptionAppender"
+		strength_multiplier="1.5"
+		eligible_for_hacks="Devourer_AntagonizeHack_T1,Devourer_PacifyHack_T1,Devourer_EnticeHack_T1"
+		seconds_to_fully_regenerate_hull="1800" damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.1"
+		pushes_enemy_shields="false"
+	>
+		<system name="AntimatterRockets" min_mark_level_to_function="8" />
+		<system name="AntimatterJaws" display_name="反物质之颚"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="30000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Devourer" shots_per_salvo="30"
+			shot_type_data="DevourerShot"
+			only_targets_mobile_units="true"
+			health_change_per_damage_dealt="0.01"
+		>
+		</system>
+		<system name="AntiGolemArtillery" display_name="反傀儡火炮" min_mark_level_to_function="3"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="1000000" range="Planetary" shot_speed="Slow" rate_of_fire="Low"
+			shot_type_data="MassDriver"
+			only_targets_mobile_units="true"
+			health_change_per_damage_dealt="0.01"
+		>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="LessThan" compared_to="8" multiplier="0" />
+		</system>
+		<system name="GravityDisruptor" display_name="重力干扰器" min_mark_level_to_function="5"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="500" range="AboveAverage4" area_of_effect_size="12000"
+			shot_speed="Normal" rate_of_fire="Misery"
+			shot_type_data="ExplosiveInvisible"
+			base_engine_stun_per_shot="3" engine_stun_to_engine_gx_less_than="18" max_engine_stun_seconds="5"
+			only_targets_mobile_units="true"
+			shots_detonate_immediately="true"
+			health_change_per_damage_dealt="0.01"
+		>
+		</system>
+		<incoming_damage_modifier based_on="Albedo" comparison_type="LessThan" compared_to="0.9" multiplier="0.1" />
+		<ship_class_data can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.05" can_be_devoured="false"
+		>
+			<debuff_modifier debuff_type="WeaponPhase" multiplier="0" />
+		</ship_class_data>
+	</entity>
+	
+	<entity name="DevourerGolem_Enraged" copy_from="DevourerGolem_Tier1" tags="ShowsOnNormalDisplayMode,#EnragedModeOf#DevourerGolem_Tier1,MainMobileDevourerIncludingEnraged"
+		display_name="狂暴吞噬者"
+		display_name_for_sidebar="吞 T1 E"
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破行星上的所有停火协议。
+&lt;color=#ff8888&gt;狂暴：造成更多伤害，并会 targeting 建筑！&lt;/color&gt;"
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破行星上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。
+&lt;color=#ff8888&gt;狂暴：造成更多伤害，并会 targeting 建筑！&lt;/color&gt;"
+		damage_multiplier_to_all_weapons="1.5"
+	>
+		<system name="AntimatterJaws" only_targets_mobile_units="false" />
+		<system name="AntiGolemArtillery" only_targets_mobile_units="false" />
+		<system name="GravityDisruptor" only_targets_mobile_units="false" />
+		<ship_class_data can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.025" can_be_devoured="false"
+		>
+			<debuff_modifier debuff_type="WeaponPhase" multiplier="0" />
+		</ship_class_data>
+	</entity>
+	
+	<entity name="DevourerGolemTier2_Base" copy_from="DevourerGolem_Tier1"
+		display_name_for_sidebar="吞 T2"
+		starting_mark_level="Mark2" max_mark_level="4"
+		y_offset_of_icon="180"
+		armor_mm="400" engine_gx="25" mass_tx="19"
+		science_to_grant_on_death="4000"
+		multiplier_to_all_costs="3" multiplier_to_all_healths="2" damage_multiplier_to_all_weapons="2" multiplier_to_all_scales="1.2"
+		eligible_for_hacks="Devourer_AntagonizeHack_T2,Devourer_PacifyHack_T2,Devourer_EnticeHack_T2"
+		seconds_to_fully_regenerate_hull="2400" damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.08"
+	>
+		<system name="AntimatterJaws" health_change_per_damage_dealt="0.015" />
+		<system name="AntiGolemArtillery" health_change_per_damage_dealt="0.015" />
+		<system name="GravityDisruptor" health_change_per_damage_dealt="0.015" />
+		<ship_class_data can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.04" can_be_devoured="false"
+		>
+			<debuff_modifier debuff_type="WeaponPhase" multiplier="0" />
+		</ship_class_data>
+	</entity>
+	
+	<entity name="DevourerGolemTier3_Base" copy_from="DevourerGolemTier2_Base"
+		display_name_for_sidebar="吞 T3"
+		starting_mark_level="Mark3" max_mark_level="5"
+		y_offset_of_icon="210"
+		armor_mm="500" engine_gx="26" mass_tx="20"
+		science_to_grant_on_death="8000"
+		multiplier_to_all_costs="9" multiplier_to_all_healths="4" damage_multiplier_to_all_weapons="4" multiplier_to_all_scales="1.44"
+		eligible_for_hacks="Devourer_AntagonizeHack_T3,Devourer_PacifyHack_T3,Devourer_EnticeHack_T3"
+		seconds_to_fully_regenerate_hull="3000" damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.06"
+	>
+		<system name="AntimatterJaws" health_change_per_damage_dealt="0.02" />
+		<system name="AntiGolemArtillery" health_change_per_damage_dealt="0.02" />
+		<system name="GravityDisruptor" health_change_per_damage_dealt="0.02" />
+		<ship_class_data can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.03" can_be_devoured="false"
+		>
+			<debuff_modifier debuff_type="WeaponPhase" multiplier="0" />
+		</ship_class_data>
+	</entity>
+	
+	<entity name="DevourerGolemTier4_Base" copy_from="DevourerGolemTier3_Base"
+		display_name_for_sidebar="吞 T4"
+		starting_mark_level="Mark4" max_mark_level="7"
+		y_offset_of_icon="240"
+		armor_mm="600" engine_gx="27" mass_tx="21"
+		science_to_grant_on_death="50000"
+		multiplier_to_all_costs="27" multiplier_to_all_healths="8" damage_multiplier_to_all_weapons="8" multiplier_to_all_scales="1.728"
+		eligible_for_hacks="Devourer_AntagonizeHack_T4,Devourer_PacifyHack_T4,Devourer_EnticeHack_T4"
+		seconds_to_fully_regenerate_hull="3600" damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.05"
+	>
+		<system name="AntimatterJaws"
+			only_targets_mobile_units="false" health_change_per_damage_dealt="0.025"
+		>
+		</system>
+		<system name="AntiGolemArtillery"
+			only_targets_mobile_units="false" health_change_per_damage_dealt="0.025"
+		>
+		</system>
+		<system name="GravityDisruptor"
+			only_targets_mobile_units="false" health_change_per_damage_dealt="0.025"
+		>
+		</system>
+		<ship_class_data can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.02" can_be_devoured="false"
+		>
+			<debuff_modifier debuff_type="WeaponPhase" multiplier="0" />
+		</ship_class_data>
+	</entity>
+	
+	
+	<!-- TIER 2 -->
+	
+	<entity name="DevourerGolemTier2_Destroyer" copy_from="DevourerGolemTier2_Base" tags="ShowsOnNormalDisplayMode,#Devourer_Evolution#Chrysalis_Tier2,Devourer_Tier2,#Devourer_ID#00,MainMobileDevourerIncludingEnraged"
+		display_name="毁灭者吞噬者"
+		display_name_for_sidebar="吞 T2 毁灭"
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破行星上的所有停火协议。此变体侧重于高伤害输出。"
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破行星上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于高伤害输出，并在刚抵达行星时进一步减少受到的伤害。"
+		strength_multiplier="2"
+	>
+		<system name="AntimatterJaws" display_name="窄化反物质之颚"
+			damage_per_shot="75000" shots_per_salvo="15"
+		>
+		</system>
+		<system name="AntiGolemArtillery" display_name="重型反傀儡火炮"
+			damage_per_shot="3000000" rate_of_fire="ExtremelyLow"
+		>
+		</system>
+		<incoming_damage_modifier based_on="MyTimeAtPlanet" comparison_type="AtLeast" compared_to="30" multiplier="0.5" />
+	</entity>
+	
+	<entity name="DevourerGolemTier2_Destroyer_Enraged" copy_from="DevourerGolemTier2_Destroyer" tags="ShowsOnNormalDisplayMode,#EnragedModeOf#DevourerGolemTier2_Destroyer,MainMobileDevourerIncludingEnraged"
+		display_name="狂暴毁灭者吞噬者"
+		display_name_for_sidebar="吞 T2 E-毁灭"
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破行星上的所有停火协议。此变体侧重于高伤害输出。
+&lt;color=#ff8888&gt;狂暴：造成更多伤害，并会 targeting 建筑！&lt;/color&gt;"
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破行星上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于高伤害输出，并在刚抵达行星时进一步减少受到的伤害。
+&lt;color=#ff8888&gt;狂暴：造成更多伤害，并会 targeting 建筑！&lt;/color&gt;"
+		damage_multiplier_to_all_weapons="3"
+	>
+		<system name="AntimatterJaws" only_targets_mobile_units="false" />
+		<system name="AntiGolemArtillery" only_targets_mobile_units="false" />
+		<system name="GravityDisruptor" only_targets_mobile_units="false" />
+		<ship_class_data can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.02" can_be_devoured="false"
+		>
+			<debuff_modifier debuff_type="WeaponPhase" multiplier="0" />
+		</ship_class_data>
+	</entity>
+	
+	<entity name="DevourerGolemTier2_Tsunami" copy_from="DevourerGolemTier2_Base" tags="ShowsOnNormalDisplayMode,#Devourer_Evolution#Chrysalis_Tier2,Devourer_Tier2,#Devourer_ID#01,MainMobileDevourerIncludingEnraged"
+		display_name="海啸吞噬者"
+		display_name_for_sidebar="吞 T2 海啸"
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破行星上的所有停火协议。此变体侧重于范围和多目标伤害。"
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破行星上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于范围和多目标伤害，无论是通过范围爆炸还是分裂射击。在与留在行星上一段时间的敌人进行持久战时，它会进一步降低受到的伤害。"
+		strength_multiplier="1.75"
+	>
+		<system name="AntimatterJaws" display_name="溅射反物质之颚"
+			area_of_effect_size="500" aoe_spreads_damage_among_available_targets="false"
+			shot_type_data="DevourerShot_AOEBurstAtEnd"
+		>
+		</system>
+		<system name="AntiGolemArtillery" display_name="双联反傀儡火炮"
+			damage_per_shot="600000" shots_per_salvo="2"
+		>
+		</system>
+		<incoming_damage_modifier based_on="TargetTimeAtPlanet" comparison_type="AtLeast" compared_to="30" multiplier="0.75" />
+	</entity>
+	
+	<entity name="DevourerGolemTier2_Tsunami_Enraged" copy_from="DevourerGolemTier2_Tsunami" tags="ShowsOnNormalDisplayMode,#EnragedModeOf#DevourerGolemTier2_Tsunami,MainMobileDevourerIncludingEnraged"
+		display_name="狂暴海啸吞噬者"
+		display_name_for_sidebar="吞 T2 E-海啸"
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破行星上的所有停火协议。此变体侧重于范围和多目标伤害。
+&lt;color=#ff8888&gt;狂暴：造成更多伤害，并会 targeting 建筑！&lt;/color&gt;"
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破行星上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于范围和多目标伤害，无论是通过范围爆炸还是分裂射击。在与留在行星上一段时间的敌人进行持久战时，它会进一步降低受到的伤害。
+&lt;color=#ff8888&gt;狂暴：造成更多伤害，并会 targeting 建筑！&lt;/color&gt;"
+		damage_multiplier_to_all_weapons="3"
+	>
+		<system name="AntimatterJaws" only_targets_mobile_units="false" />
+		<system name="AntiGolemArtillery" only_targets_mobile_units="false" />
+		<system name="GravityDisruptor" only_targets_mobile_units="false" />
+		<ship_class_data can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.02" can_be_devoured="false"
+		>
+			<debuff_modifier debuff_type="WeaponPhase" multiplier="0" />
+		</ship_class_data>
+	</entity>
+	
+	
+	<!-- TIER 3 -->
+	
+	<entity name="DevourerGolemTier3_Mortar" copy_from="DevourerGolemTier3_Base" tags="ShowsOnNormalDisplayMode,#Devourer_Evolution#Chrysalis_Tier3,Devourer_Tier3,#Devourer_ID#000,MainMobileDevourerIncludingEnraged"
+		display_name="迫击炮吞噬者"
+		display_name_for_sidebar="吞 T3 迫炮"
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破行星上的所有停火协议。此变体侧重于远程范围轰炸。"
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破行星上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于远程范围轰炸，对范围内的所有目标造成全额伤害分摊。此外，它在更远距离上得到加固，并在到达行星后的最初几秒内进一步减少受到的伤害。"
+		strength_multiplier="2"
+	>
+		<system name="AntimatterJaws" display_name="散射反物质之颚"
+			damage_per_shot="75000" range="AboveAverage4" shots_per_salvo="15"
+			area_of_effect_size="1000" aoe_spreads_damage_among_available_targets="true"
+			shot_type_data="DevourerShot_AOEBurstAtEnd"
+		>
+		</system>
+		<system name="AntiGolemArtillery" display_name="重型反傀儡火炮"
+			damage_per_shot="3000000" rate_of_fire="ExtremelyLow"
+			area_of_effect_size="2500" aoe_spreads_damage_among_available_targets="false"
+			shot_type_data="MassDriver_AOEBurstAtEnd"
+		>
+		</system>
+		<system name="GravityDisruptor" display_name="远程重力干扰器"
+			range="High2" area_of_effect_size="18000"
+		>
+		</system>
+		<incoming_damage_modifier based_on="MyTimeAtPlanet" comparison_type="AtLeast" compared_to="30" multiplier="0.5" />
+		<incoming_damage_modifier based_on="AttackDistance" comparison_type="AtLeast" compared_to="5000" multiplier="0.5" />
+	</entity>
+	
+	<entity name="DevourerGolemTier3_Mortar_Enraged" copy_from="DevourerGolemTier3_Mortar" tags="ShowsOnNormalDisplayMode,#EnragedModeOf#DevourerGolemTier3_Mortar,MainMobileDevourerIncludingEnraged"
+		display_name="狂暴迫击炮吞噬者"
+		display_name_for_sidebar="吞 T3 E-迫炮"
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破行星上的所有停火协议。此变体侧重于远程范围轰炸。
+&lt;color=#ff8888&gt;狂暴：造成更多伤害，并会 targeting 建筑！&lt;/color&gt;"
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破行星上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于远程范围轰炸，对范围内的所有目标造成全额伤害分摊。此外，它在更远距离上得到加固，并在到达行星后的最初几秒内进一步减少受到的伤害。
+&lt;color=#ff8888&gt;狂暴：造成更多伤害，并会 targeting 建筑！&lt;/color&gt;"
+		damage_multiplier_to_all_weapons="6"
+	>
+		<system name="AntimatterJaws" only_targets_mobile_units="false" />
+		<system name="AntiGolemArtillery" only_targets_mobile_units="false" />
+		<system name="GravityDisruptor" only_targets_mobile_units="false" />
+		<ship_class_data can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.015" can_be_devoured="false"
+		>
+			<debuff_modifier debuff_type="WeaponPhase" multiplier="0" />
+		</ship_class_data>
+	</entity>
+	
+	<entity name="DevourerGolemTier3_Tank" copy_from="DevourerGolemTier3_Base" tags="ShowsOnNormalDisplayMode,#Devourer_Evolution#Chrysalis_Tier3,Devourer_Tier3,#Devourer_ID#001,MainMobileDevourerIncludingEnraged"
+		display_name="坦克吞噬者"
+		display_name_for_sidebar="吞 T3 坦克"
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破行星上的所有停火协议。此变体侧重于承受大量伤害。"
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破行星上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于通过改进的自我修复、硬化以及总体生命值和护盾来承受大量伤害。它在到达行星后的最初几秒内进一步减少受到的伤害。"
+		hull_points="15000000" shield_points="0"
+		strength_multiplier="2"
+		damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.03"
+	>
+		<system name="AntimatterJaws"
+			damage_per_shot="55000" shots_per_salvo="15" health_change_per_damage_dealt="0.03"
+		>
+		</system>
+		<system name="AntiGolemArtillery"
+			damage_per_shot="1800000" rate_of_fire="ExtremelyLow" health_change_per_damage_dealt="0.03"
+		>
+		</system>
+		<system name="GravityDisruptor"
+			damage_per_shot="400" health_change_per_damage_dealt="0.03"
+		>
+		</system>
+		<incoming_damage_modifier based_on="MyTimeAtPlanet" comparison_type="AtLeast" compared_to="30" multiplier="0.5" />
+	</entity>
+	
+	<entity name="DevourerGolemTier3_Tank_Enraged" copy_from="DevourerGolemTier3_Tank" tags="ShowsOnNormalDisplayMode,#EnragedModeOf#DevourerGolemTier3_Tank,MainMobileDevourerIncludingEnraged"
+		display_name="狂暴坦克吞噬者"
+		display_name_for_sidebar="吞 T3 E-坦克"
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破行星上的所有停火协议。此变体侧重于承受大量伤害。
+&lt;color=#ff8888&gt;狂暴：造成更多伤害，并会 targeting 建筑！&lt;/color&gt;"
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破行星上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于通过改进的自我修复、硬化以及总体生命值和护盾来承受大量伤害。它在到达行星后的最初几秒内进一步减少受到的伤害。
+&lt;color=#ff8888&gt;狂暴：造成更多伤害，并会 targeting 建筑！&lt;/color&gt;"
+		damage_multiplier_to_all_weapons="6"
+	>
+		<system name="AntimatterJaws" only_targets_mobile_units="false" />
+		<system name="AntiGolemArtillery" only_targets_mobile_units="false" />
+		<system name="GravityDisruptor" only_targets_mobile_units="false" />
+		<ship_class_data can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.015" can_be_devoured="false"
+		>
+			<debuff_modifier debuff_type="WeaponPhase" multiplier="0" />
+		</ship_class_data>
+	</entity>
+	
+	<entity name="DevourerGolemTier3_Swarm" copy_from="DevourerGolemTier3_Base" tags="ShowsOnNormalDisplayMode,#Devourer_Evolution#Chrysalis_Tier3,Devourer_Tier3,#Devourer_ID#010,MainMobileDevourerIncludingEnraged"
+		display_name="蜂群吞噬者"
+		display_name_for_sidebar="吞 T3 蜂群"
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破行星上的所有停火协议。此变体侧重于生成"小型"支援无人机。"
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破行星上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于生成"小型"支援无人机。"小型"是相对于蜂群吞噬者而言的，它们比我们物种建造过的大多数东西都要大得多。它还会从已在行星上一段时间的敌人那里进一步减少受到的伤害。"
+		drone_starting_behavior_type="Attacker_Full"
+		fleet_design_template_i_use_for_drones="DevourerGolemTier3_Swarm_Drones"
+		strength_multiplier="2.5"
+	>
+		<system name="AntimatterJaws" display_name="散射反物质之颚"
+			area_of_effect_size="500" aoe_spreads_damage_among_available_targets="false"
+			shot_type_data="DevourerShot_AOEBurstAtEnd"
+		>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtMost" compared_to="3" multiplier="2" />
+		</system>
+		<system name="AntiGolemArtillery" display_name="双联反傀儡火炮"
+			damage_per_shot="600000" shots_per_salvo="2"
+		>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="LessThan" compared_to="7" multiplier="0" />
+		</system>
+		<system name="GravityDisruptor" display_name="强化重力干扰器"
+			engine_stun_to_engine_gx_less_than="21"
+		>
+		</system>
+		<incoming_damage_modifier based_on="TargetTimeAtPlanet" comparison_type="AtLeast" compared_to="30" multiplier="0.75" />
+		<metal_flow purpose="BuildingDronesInternally" throughput="100000" />
+	</entity>
+	
+	<entity name="DevourerGolemTier3_Swarm_Enraged" copy_from="DevourerGolemTier3_Swarm" tags="ShowsOnNormalDisplayMode,#EnragedModeOf#DevourerGolemTier3_Swarm,MainMobileDevourerIncludingEnraged"
+		display_name="狂暴蜂群吞噬者"
+		display_name_for_sidebar="吞 T3 E-蜂群"
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破行星上的所有停火协议。此变体侧重于生成"小型"支援无人机。
+&lt;color=#ff8888&gt;狂暴：造成更多伤害，并会 targeting 建筑！&lt;/color&gt;"
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破行星上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于生成"小型"支援无人机。"小型"是相对于蜂群吞噬者而言的，它们比我们物种建造过的大多数东西都要大得多。它还会从已在行星上一段时间的敌人那里进一步减少受到的伤害。
+&lt;color=#ff8888&gt;狂暴：造成更多伤害，并会 targeting 建筑！&lt;/color&gt;"
+		damage_multiplier_to_all_weapons="6"
+		fleet_design_template_i_use_for_drones="DevourerGolemTier3_SwarmEnraged_Drones"
+	>
+		<system name="AntimatterJaws" only_targets_mobile_units="false" />
+		<system name="AntiGolemArtillery" only_targets_mobile_units="false" />
+		<system name="GravityDisruptor" only_targets_mobile_units="false" />
+		<metal_flow purpose="BuildingDronesInternally" throughput="150000" />
+		<ship_class_data can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.015" can_be_devoured="false"
+		>
+			<debuff_modifier debuff_type="WeaponPhase" multiplier="0" />
+		</ship_class_data>
+	</entity>
+	
+	<entity name="DevourerGolemTier3_Gravity" copy_from="DevourerGolemTier3_Base" tags="ShowsOnNormalDisplayMode,#Devourer_Evolution#Chrysalis_Tier3,Devourer_Tier3,#Devourer_ID#011,MainMobileDevourerIncludingEnraged"
+		display_name="重力吞噬者"
+		display_name_for_sidebar="吞 T3 重力"
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破行星上的所有停火协议。此变体侧重于重力武器。"
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破行星上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于重力武器，可以减慢敌人速度并利用这一点造成更多伤害，将大型敌人击退甚至吸引较小的敌人。它还拥有一个引力核心，并从已在行星上一段时间的敌人那里进一步减少受到的伤害。"
+		strength_multiplier="2.5"
+	>
+		<system name="AntimatterJaws" display_name="G-撕裂反物质之颚"
+			area_of_effect_size="500" aoe_spreads_damage_among_available_targets="false"
+			shot_type_data="DevourerShot_AOEBurstAtEnd"
+		>
+			<outgoing_damage_modifier based_on="CurrentSpeedIfMoving" comparison_type="AtMost" compared_to="200" multiplier="2" />
+		</system>
+		<system name="AntiGolemArtillery" display_name="双联反傀儡撞击器"
+			damage_per_shot="600000" shots_per_salvo="2"
+			base_knockback_per_shot="2000" added_knockback_per_shot_per_mark="500" knockback_to_ships_mass_tx_less_than="11"
+		>
+		</system>
+		<system name="GravityDisruptor" display_name="引力吸引器"
+			range="AboveAverage1" area_of_effect_size="8000"
+			base_knockback_per_shot="-1000" added_knockback_per_shot_per_mark="-250" knockback_to_ships_mass_tx_less_than="5"
+		>
+		</system>
+		<system name="GraviticCore" display_name="双曲线引力核心" category="Passive" base_gravity_speed_multiplier="0.8" subtracted_gravity_speed_multiplier_per_mark="0.05" gravity_hits_engine_gx_less_than="25" gravity_range="AboveAverage4" />
+		<incoming_damage_modifier based_on="TargetTimeAtPlanet" comparison_type="AtLeast" compared_to="30" multiplier="0.75" />
+	</entity>
+	
+	<entity name="DevourerGolemTier3_Gravity_Enraged" copy_from="DevourerGolemTier3_Gravity" tags="ShowsOnNormalDisplayMode,#EnragedModeOf#DevourerGolemTier3_Gravity,MainMobileDevourerIncludingEnraged"
+		display_name="狂暴重力吞噬者"
+		display_name_for_sidebar="吞 T3 E-重力"
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破行星上的所有停火协议。此变体侧重于重力武器。
+&lt;color=#ff8888&gt;狂暴：造成更多伤害，并会 targeting 建筑！&lt;/color&gt;"
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破行星上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于重力武器，可以减慢敌人速度并利用这一点造成更多伤害，将大型敌人击退甚至吸引较小的敌人。它还拥有一个引力核心，并从已在行星上一段时间的敌人那里进一步减少受到的伤害。
+&lt;color=#ff8888&gt;狂暴：造成更多伤害，并会 targeting 建筑！&lt;/color&gt;"
+		damage_multiplier_to_all_weapons="6"
+	>
+		<system name="AntimatterJaws" only_targets_mobile_units="false" />
+		<system name="AntiGolemArtillery" only_targets_mobile_units="false" />
+		<system name="GravityDisruptor" only_targets_mobile_units="false" />
+		<ship_class_data can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.015" can_be_devoured="false"
+		>
+			<debuff_modifier debuff_type="WeaponPhase" multiplier="0" />
+		</ship_class_data>
+	</entity>
+	
+	
+	<!-- TIER 4 -->
+	
+	<entity name="DevourerGolemTier4_Crystal" copy_from="DevourerGolemTier4_Base" tags="ShowsOnNormalDisplayMode,Devourer_Tier4,#Devourer_ID#0000,MainMobileDevourerIncludingEnraged"
+		display_name="水晶吞噬者"
+		display_name_for_sidebar="吞 T4 水晶"
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破行星上的所有停火协议。此变体侧重于极端伤害输出。"
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破行星上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于在范围内造成极端伤害输出，反物质之颚在命中目标间分摊伤害，而反傀儡火炮则对每个敌人造成全额爆炸伤害。此外，它在更远距离上得到加固，并在到达行星后的最初几秒内进一步减少受到的伤害。"
+		hull_points="2000000" shield_points="1000000"
+		strength_multiplier="1.75"
+	>
+		<system name="AntimatterJaws" display_name="反物质等离子之颚"
+			damage_per_shot="225000" range="AboveAverage4" shots_per_salvo="15"
+			area_of_effect_size="1000" aoe_spreads_damage_among_available_targets="true"
+			shot_type_data="DevourerShot_AOEBurstAtEnd" health_change_per_damage_dealt="0.015"
+		>
+		</system>
+		<system name="AntiGolemArtillery" display_name="水晶反傀儡火炮"
+			damage_per_shot="9000000" rate_of_fire="ExtremelyLow"
+			area_of_effect_size="2500" aoe_spreads_damage_among_available_targets="false"
+			shot_type_data="MassDriver_AOEBurstAtEnd" health_change_per_damage_dealt="0.015"
+		>
+		</system>
+		<system name="GravityDisruptor" display_name="同质异晶重力干扰器"
+			damage_per_shot="2500" range="High2" area_of_effect_size="18000" health_change_per_damage_dealt="0.015"
+		>
+		</system>
+		<system name="ImplosionBeam" display_name="内爆光束" min_mark_level_to_function="7"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="1" range="Planetary" shot_speed="Instant" rate_of_fire="Devourer"
+			shot_type_data="HeavyBeamInvisible"
+			beam_length_multiplier="1" beam_weapon_visual_style="Laser_GreenBright"
+			base_percent_damage_bypasses_personal_shields="0.15" health_change_per_damage_dealt="0.015"
+			>
+			<outgoing_damage_modifier based_on="MaxHull" comparison_type="MultiplesOf" compared_to="100" multiplier="1" multiplier_is_additive="false" applies_to="HullOnly" />
+			<outgoing_damage_modifier based_on="CurrentHullPercentage" comparison_type="MultiplesOf" compared_to="1" multiplier="0.01" multiplier_is_additive="false" applies_to="HullOnly" />
+			<outgoing_damage_modifier based_on="MaxPersonalShield" comparison_type="AtLeast" compared_to="1" multiplier="0" applies_to="AllShields" />
+		</system>
+		<incoming_damage_modifier based_on="MyTimeAtPlanet" comparison_type="AtLeast" compared_to="30" multiplier="0.5" />
+		<incoming_damage_modifier based_on="AttackDistance" comparison_type="AtLeast" compared_to="5000" multiplier="0.35" />
+	</entity>
+	
+	<entity name="DevourerGolemTier4_Crystal_Enraged" copy_from="DevourerGolemTier4_Crystal" tags="ShowsOnNormalDisplayMode,#EnragedModeOf#DevourerGolemTier4_Crystal,MainMobileDevourerIncludingEnraged"
+		display_name="狂暴水晶吞噬者"
+		display_name_for_sidebar="吞 T4 E-水晶"
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破行星上的所有停火协议。此变体侧重于极端伤害输出。
+&lt;color=#ff8888&gt;狂暴：造成更多伤害！&lt;/color&gt;"
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破行星上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于在范围内造成极端伤害输出，反物质之颚在命中目标间分摊伤害，而反傀儡火炮则对每个敌人造成全额爆炸伤害。此外，它在更远距离上得到加固，并在到达行星后的最初几秒内进一步减少受到的伤害。
+&lt;color=#ff8888&gt;狂暴：造成更多伤害！&lt;/color&gt;"
+		damage_multiplier_to_all_weapons="12" 
+	>
+		<ship_class_data can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.01" can_be_devoured="false"
+		>
+			<debuff_modifier debuff_type="WeaponPhase" multiplier="0" />
+		</ship_class_data>
+	</entity>
+	
+	<entity name="DevourerGolemTier4_Vengeful" copy_from="DevourerGolemTier4_Base" tags="ShowsOnNormalDisplayMode,Devourer_Tier4,#Devourer_ID#0001,MainMobileDevourerIncludingEnraged"
+		display_name="复仇吞噬者"
+		display_name_for_sidebar="吞 T4 复仇"
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破行星上的所有停火协议。此变体侧重于随着生命值降低而增强威力。"
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破行星上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于随着生命值降低而增强威力。其所有武器在每个 10% 生命值阈值处都会大幅超越原始威力，造成不断增加的範圍伤害。此外，它在更远距离上得到加固，并在到达行星后的最初几秒内进一步减少受到的伤害。"
+		strength_multiplier="10"
+	>
+		<system name="AntimatterJaws" display_name="散射反物质之颚"
+			damage_per_shot="37500" range="AboveAverage4" shots_per_salvo="15"
+			area_of_effect_size="1000" aoe_spreads_damage_among_available_targets="true"
+			shot_type_data="DevourerShot_AOEBurstAtEnd" health_change_per_damage_dealt="0.005"
+		>
+			<outgoing_damage_modifier based_on="MyHullPercentageMissing" comparison_type="MultiplesOf" compared_to="10" multiplier="0.15" />
+		</system>
+		<system name="AntiGolemArtillery" display_name="重型反傀儡火炮"
+			damage_per_shot="1500000" rate_of_fire="ExtremelyLow"
+			area_of_effect_size="2500" aoe_spreads_damage_among_available_targets="false"
+			shot_type_data="MassDriver_AOEBurstAtEnd" health_change_per_damage_dealt="0.005"
+		>
+			<outgoing_damage_modifier based_on="MyHullPercentageMissing" comparison_type="MultiplesOf" compared_to="10" multiplier="0.15" />
+		</system>
+		<system name="GravityDisruptor" display_name="远程重力干扰器"
+			range="High2" area_of_effect_size="18000" damage_per_shot="375" health_change_per_damage_dealt="0.005"
+		>
+			<outgoing_damage_modifier based_on="MyHullPercentageMissing" comparison_type="MultiplesOf" compared_to="10" multiplier="0.15" />
+		</system>
+		<system name="VengeanceBeams" display_name="复仇光束"
+			category="Weapon" firing_timing="WhenParentEntityHit"
+			damage_per_shot="1" returns_this_percentage_of_damage_when_firing_retalitatory_shot="0.25" range="Planetary" shot_speed="Normal" rate_of_fire="Devourer"
+			shot_type_data="HeavyBeamInvisible"
+			beam_length_multiplier="1" beam_weapon_visual_style="Laser_GreenBright"
+			hits_all_intersecting_targets="false"
+			shots_detonate_immediately="true" health_change_per_damage_dealt="0.005"
+		>
+		</system>
+		<incoming_damage_modifier based_on="MyTimeAtPlanet" comparison_type="AtLeast" compared_to="30" multiplier="0.5" />
+		<incoming_damage_modifier based_on="AttackDistance" comparison_type="AtLeast" compared_to="5000" multiplier="0.5" />
+		<ship_class_data can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0" can_be_devoured="false"
+		>
+			<debuff_modifier debuff_type="WeaponPhase" multiplier="0" />
+		</ship_class_data>
+	</entity>
+	
+	<entity name="DevourerGolemTier4_Vengeful_Enraged" copy_from="DevourerGolemTier4_Vengeful" tags="ShowsOnNormalDisplayMode,#EnragedModeOf#DevourerGolemTier4_Vengeful,MainMobileDevourerIncludingEnraged"
+		display_name="狂暴复仇吞噬者"
+		display_name_for_sidebar="吞 T4 E-复仇"
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破行星上的所有停火协议。此变体侧重于随着生命值降低而增强威力。
+&lt;color=#ff8888&gt;狂暴：造成更多伤害！&lt;/color&gt;"
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破行星上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于随着生命值降低而增强威力。其所有武器在每个 10% 生命值阈值处都会大幅超越原始威力，造成不断增加的範圍伤害。此外，它在更远距离上得到加固，并在到达行星后的最初几秒内进一步减少受到的伤害。
+&lt;color=#ff8888&gt;狂暴：造成更多伤害！&lt;/color&gt;"
+		damage_multiplier_to_all_weapons="12" />
+	
+	<entity name="DevourerGolemTier4_Hydra" copy_from="DevourerGolemTier4_Base" tags="ShowsOnNormalDisplayMode,Devourer_Tier4,#Devourer_ID#0010,MainMobileDevourerIncludingEnraged"
+		display_name="九头蛇吞噬者"
+		display_name_for_sidebar="吞 T4 九头蛇"
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破行星上的所有停火协议。此变体侧重于在受到伤害时生成自身的较小复制体。"
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破行星上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于在受到伤害时生成自身的较小复制体。每个复制体都是几乎完全相同但较小的副本，能够使用其各种武器攻击敌人。它们都在刚抵达行星时进一步减少受到的伤害。"
+		hull_points="15000000" shield_points="0"
+		strength_multiplier="5"
+		unit_to_make_with_build_points_from_damage_taken="DevourerTier4_GreaterHydraDrone"
+		build_points_per_damage_taken="3"
+	>
+		<system name="AntimatterJaws"
+			damage_per_shot="55000" shots_per_salvo="15"
+		>
+		</system>
+		<system name="AntiGolemArtillery"
+			damage_per_shot="1800000" rate_of_fire="ExtremelyLow"
+		>
+		</system>
+		<system name="GravityDisruptor"
+			damage_per_shot="400"
+		>
+		</system>
+		<system name="ShotAttraction" display_name="行星吸引器" category="Passive" attract_range_for_shots_against_allies="Planetary" min_mark_level_to_function="7" />
+		<incoming_damage_modifier based_on="MyTimeAtPlanet" comparison_type="AtLeast" compared_to="30" multiplier="0.5" />
+	</entity>
+	
+	<entity name="DevourerGolemTier4_Hydra_Enraged" copy_from="DevourerGolemTier4_Hydra" tags="ShowsOnNormalDisplayMode,#EnragedModeOf#DevourerGolemTier4_Hydra,MainMobileDevourerIncludingEnraged"
+		display_name="狂暴九头蛇吞噬者"
+		display_name_for_sidebar="吞 T4 E-九头蛇"
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破行星上的所有停火协议。此变体侧重于在受到伤害时生成自身的较小复制体。
+&lt;color=#ff8888&gt;狂暴：造成更多伤害！&lt;/color&gt;"
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破行星上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于在受到伤害时生成自身的较小复制体。每个复制体都是几乎完全相同但较小的副本，能够使用其各种武器攻击敌人。它们都在刚抵达行星时进一步减少受到的伤害。
+&lt;color=#ff8888&gt;狂暴：造成更多伤害！&lt;/color&gt;"
+		unit_to_make_with_build_points_from_damage_taken="DevourerTier4_GreaterHydraDrone_Enraged"
+		damage_multiplier_to_all_weapons="12"
+		damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.02"
+	>
+		<ship_class_data can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.01" can_be_devoured="false"
+		>
+			<debuff_modifier debuff_type="WeaponPhase" multiplier="0" />
+		</ship_class_data>
+	</entity>
+	
+	<entity name="DevourerGolemTier4_Regeneration" copy_from="DevourerGolemTier4_Base" tags="ShowsOnNormalDisplayMode,Devourer_Tier4,#Devourer_ID#0011,MainMobileDevourerIncludingEnraged"
+		display_name="再生吞噬者"
+		display_name_for_sidebar="吞 T4 E-再生"
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破行星上的所有停火协议。此变体侧重于在战斗中更快地再生自身。"
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破行星上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于在战斗中更快地再生自身，这使得持久战变得更加困难，尤其是结合其在刚抵达行星时进一步减少 incoming 伤害的能力。"
+		hull_points="15000000" shield_points="0"
+		seconds_to_fully_regenerate_hull="1000"
+		strength_multiplier="8"
+	>
+		<system name="AntimatterJaws" display_name="吸血反物质之颚"
+			damage_per_shot="44000" shots_per_salvo="15" health_change_per_damage_dealt="0.05"
+		>
+		</system>
+		<system name="AntiGolemArtillery" display_name="反傀儡火炮吸管"
+			damage_per_shot="1440000" rate_of_fire="ExtremelyLow" health_change_per_damage_dealt="0.05"
+		>
+		</system>
+		<system name="GravityDisruptor" display_name="重力引流干扰器"
+			damage_per_shot="360" health_change_per_damage_dealt="0.05"
+		>
+		</system>
+		<system name="MagnetarEMP" display_name="磁星 EMP" min_mark_level_to_function="7"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="1000" range="Planetary" shot_speed="Instant" rate_of_fire="Sloth"
+			area_of_effect_size="600000"
+			shot_type_data="PlasmaTorpedoAOEBurstAtEnd"
+			base_paralysis_seconds_per_shot="10" paralysis_to_ships_mass_tx_less_than="30"
+			shots_detonate_immediately="true" health_change_per_damage_dealt="0.05"
+			>
+		</system>
+		<incoming_damage_modifier based_on="MyTimeAtPlanet" comparison_type="AtLeast" compared_to="30" multiplier="0.5" />
+	</entity>
+	
+	<entity name="DevourerGolemTier4_Regeneration_Enraged" copy_from="DevourerGolemTier4_Regeneration" tags="ShowsOnNormalDisplayMode,#EnragedModeOf#DevourerGolemTier4_Regeneration,MainMobileDevourerIncludingEnraged"
+		display_name="狂暴再生吞噬者"
+		display_name_for_sidebar="吞 T4 E-再生"
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破行星上的所有停火协议。此变体侧重于在战斗中更快地再生自身。
+&lt;color=#ff8888&gt;狂暴：造成更多伤害！&lt;/color&gt;"
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破行星上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于在战斗中更快地再生自身，这使得持久战变得更加困难，尤其是结合其在刚抵达行星时进一步减少 incoming 伤害的能力。
+&lt;color=#ff8888&gt;狂暴：造成更多伤害！&lt;/color&gt;"
+		damage_multiplier_to_all_weapons="12"
+	>
+		<ship_class_data can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.01" can_be_devoured="false"
+		>
+			<debuff_modifier debuff_type="WeaponPhase" multiplier="0" />
+		</ship_class_data>
+	</entity>
+	
+	<entity name="DevourerGolemTier4_Hurricane" copy_from="DevourerGolemTier4_Base" tags="ShowsOnNormalDisplayMode,Devourer_Tier4,#Devourer_ID#0100,MainMobileDevourerIncludingEnraged"
+		display_name="飓风吞噬者"
+		display_name_for_sidebar="吞 T4 飓风"
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破行星上的所有停火协议。此变体侧重于无人机生成和加速自身无人机。"
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破行星上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于无人机生成，并加速自身无人机以及行星上的所有其他盟友，并在刚抵达行星时获得进一步的速度提升。此外，它还从已在行星上一段时间的攻击者那里进一步减少 incoming 伤害。"
+		speed_multiplier_first_5_seconds_on_planet="4" allied_speed_multiplier="1.5"
+		drone_starting_behavior_type="Attacker_Full"
+		fleet_design_template_i_use_for_drones="DevourerGolemTier4_Hurricane_Drones"
+		strength_multiplier="5"
+		damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.02"
+	>
+		<system name="AntimatterJaws" display_name="粉碎反物质之颚"
+			area_of_effect_size="500" aoe_spreads_damage_among_available_targets="false"
+			shot_type_data="DevourerShot_AOEBurstAtEnd"
+		>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtMost" compared_to="3" multiplier="2" />
+			<outgoing_damage_modifier based_on="CurrentHullPercentage" comparison_type="AtMost" compared_to="50" multiplier="2" />
+		</system>
+		<system name="AntiGolemArtillery" display_name="双联速射反傀儡火炮"
+			damage_per_shot="300000" shots_per_salvo="2" rate_of_fire="Misery"
+		>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="LessThan" compared_to="5" multiplier="0" />
+		</system>
+		<system name="GravityDisruptor" display_name="增强重力干扰器"
+			engine_stun_to_engine_gx_less_than="21"
+			damage_amplification_flat="100" damage_amplification_duration="2"
+		>
+		</system>
+		<system name="UltraTargetPainter" display_name="超级目标标记器" min_mark_level_to_function="7"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="1" range="Planetary" shot_speed="Instant" rate_of_fire="Devourer"
+			shot_type_data="HeavyBeamInvisible"
+			beam_length_multiplier="1" beam_weapon_visual_style="Laser_GreenBright"
+			damage_amplification_mult="1.5" damage_amplification_duration="1"
+			>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="MultiplesOf" compared_to="1" multiplier="1" />
+		</system>
+		<incoming_damage_modifier based_on="TargetTimeAtPlanet" comparison_type="AtLeast" compared_to="30" multiplier="0.75" />
+		<metal_flow purpose="BuildingDronesInternally" throughput="300000" />
+	</entity>
+	
+	<entity name="DevourerGolemTier4_Hurricane_Enraged" copy_from="DevourerGolemTier4_Hurricane" tags="ShowsOnNormalDisplayMode,#EnragedModeOf#DevourerGolemTier4_Hurricane,MainMobileDevourerIncludingEnraged"
+		display_name="狂暴飓风吞噬者"
+		display_name_for_sidebar="吞 T4 E-飓风"
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破行星上的所有停火协议。此变体侧重于无人机生成和加速自身无人机。
+&lt;color=#ff8888&gt;狂暴：造成更多伤害！&lt;/color&gt;"
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破行星上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于无人机生成，并加速自身无人机以及行星上的所有其他盟友，并在刚抵达行星时获得进一步的速度提升。此外，它还从已在行星上一段时间的攻击者那里进一步减少 incoming 伤害。
+&lt;color=#ff8888&gt;狂暴：造成更多伤害！&lt;/color&gt;"
+		damage_multiplier_to_all_weapons="12"
+		fleet_design_template_i_use_for_drones="DevourerGolemTier4_HurricaneEnraged_Drones"
+	>
+		<metal_flow purpose="BuildingDronesInternally" throughput="450000" />
+		<ship_class_data can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.01" can_be_devoured="false"
+		>
+			<debuff_modifier debuff_type="WeaponPhase" multiplier="0" />
+		</ship_class_data>
+	</entity>
+	
+	<entity name="DevourerGolemTier4_Phalanx" copy_from="DevourerGolemTier4_Base" tags="ShowsOnNormalDisplayMode,Devourer_Tier4,#Devourer_ID#0101,MainMobileDevourerIncludingEnraged"
+		display_name="方阵吞噬者"
+		display_name_for_sidebar="吞 T4 方阵"
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破行星上的所有停火协议。此变体侧重于无人机生成，并在有无人机存在时变得无敌。"
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破行星上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于无人机生成，并在有无人机存在时变得无敌。清除所有"小"鱼是一项艰巨的任务，因为每一个都非常耐用，但在尝试与父体吞噬者战斗时是必要的。此外，它还从已在行星上一段时间的攻击者那里进一步减少 incoming 伤害。"
+		external_invulnerability_unit_tag="DevourerTier4_PhalanxDrone"
+		external_invulnerability_region="ThisPlanet"
+		strength_multiplier="7.5"
+	>
+		<system name="AntimatterJaws" display_name="散射反物质之颚"
+			damage_per_shot="18000"
+			area_of_effect_size="500" aoe_spreads_damage_among_available_targets="false"
+			shot_type_data="DevourerShot_AOEBurstAtEnd"
+		>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtMost" compared_to="3" multiplier="2" />
+		</system>
+		<system name="AntiGolemArtillery" display_name="双联反傀儡火炮"
+			damage_per_shot="450000" shots_per_salvo="2"
+		>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="LessThan" compared_to="7" multiplier="0" />
+		</system>
+		<system name="GravityDisruptor" display_name="强化重力干扰器"
+			damage_per_shot="375"
+			engine_stun_to_engine_gx_less_than="21"
+		>
+		</system>
+		<system name="SwarmWorld" display_name="蜂群世界" min_mark_level_to_function="7"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="1" range="Planetary" shot_speed="Slow" rate_of_fire="ExtremelyLow"
+			shot_type_data="DevourerTier4_PhalanxDrone"
+		>
+		</system>
+		<incoming_damage_modifier based_on="TargetTimeAtPlanet" comparison_type="AtLeast" compared_to="30" multiplier="0.75" />
+	</entity>
+	
+	<entity name="DevourerGolemTier4_Phalanx_Enraged" copy_from="DevourerGolemTier4_Phalanx" tags="ShowsOnNormalDisplayMode,#EnragedModeOf#DevourerGolemTier4_Phalanx,MainMobileDevourerIncludingEnraged"
+		display_name="狂暴方阵吞噬者"
+		display_name_for_sidebar="吞 T4 E-方阵"
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破行星上的所有停火协议。此变体侧重于无人机生成，并在有无人机存在时变得无敌。
+&lt;color=#ff8888&gt;狂暴：造成更多伤害！&lt;/color&gt;"
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破行星上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于无人机生成，并在有无人机存在时变得无敌。清除所有"小"鱼是一项艰巨的任务，因为每一个都非常耐用，但在尝试与父体吞噬者战斗时是必要的。此外，它还从已在行星上一段时间的攻击者那里进一步减少 incoming 伤害。
+&lt;color=#ff8888&gt;狂暴：造成更多伤害！&lt;/color&gt;"
+		damage_multiplier_to_all_weapons="12" 
+	>
+		<system name="SwarmWorld" shot_type_data="DevourerTier4_PhalanxDrone_Enraged" >
+		</system>
+		<ship_class_data can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.01" can_be_devoured="false"
+		>
+			<debuff_modifier debuff_type="WeaponPhase" multiplier="0" />
+		</ship_class_data>
+	</entity>
+	
+	<entity name="DevourerGolemTier4_Warp" copy_from="DevourerGolemTier4_Base" tags="ShowsOnNormalDisplayMode,Devourer_Tier4,#Devourer_ID#0110,MainMobileDevourerIncludingEnraged"
+		display_name="曲速吞噬者"
+		display_name_for_sidebar="吞 T4 曲速"
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破行星上的所有停火协议。此变体侧重于物态变化，在多重相位中摧毁敌人。"
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破行星上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于物态变化，在多重相位中摧毁敌人，在交替物态中使用其大幅增强版的反物质之颚和反傀儡火炮。唯一的可乘之机是护盾必须被击破才能进行维度转移。除了频繁地无法被攻击外，它还从已在行星上一段时间的攻击者那里进一步减少 incoming 伤害。"
+		strength_multiplier="5"
+		alternative_state_of_matter="MultiPhase" phases_to_other_alternative_state_of_matter_after_seconds="35" phases_back_to_default_state_of_matter_after_seconds="15"
+	>
+		<system name="AntimatterJaws" display_name="相位 G-撕裂反物质之颚" must_be_this_state_of_matter_to_be_enabled="Normal" care_about_state_of_matter_to_be_enabled="true" is_invisible_in_tooltips_if_not_a_match_by_state_of_matter="true"	
+			area_of_effect_size="500" aoe_spreads_damage_among_available_targets="false"
+			shot_type_data="DevourerShot_AOEBurstAtEnd"
+			state_of_matter_for_target_to_become="MultiPhase" inflicts_state_of_matter_on_target_for_seconds="50" cannot_inflict_state_of_matter_if_target_has_any_shields_up="true" cannot_inflict_state_of_matter_if_target_has_energy_usage_of_at_least="5000"
+		>
+			<outgoing_damage_modifier based_on="CurrentSpeedIfMoving" comparison_type="AtMost" compared_to="200" multiplier="2" />
+		</system>
+		<system name="PhasedAntimatterJaws" display_name="相位 G-撕裂反物质之颚（相位）" must_be_this_state_of_matter_to_be_enabled="MultiPhase" care_about_state_of_matter_to_be_enabled="true" is_invisible_in_tooltips_if_not_a_match_by_state_of_matter="true"	
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="150000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Devourer" shots_per_salvo="30"
+			area_of_effect_size="500" aoe_spreads_damage_among_available_targets="false"
+			shot_type_data="DevourerShot_AOEBurstAtEnd"
+		>
+			<outgoing_damage_modifier based_on="CurrentSpeedIfMoving" comparison_type="AtMost" compared_to="200" multiplier="2" />
+		</system>
+		<system name="AntiGolemArtillery" display_name="相位双联反傀儡撞击器" must_be_this_state_of_matter_to_be_enabled="Normal" care_about_state_of_matter_to_be_enabled="true" is_invisible_in_tooltips_if_not_a_match_by_state_of_matter="true"	
+			damage_per_shot="600000" shots_per_salvo="2"
+			base_knockback_per_shot="2000" added_knockback_per_shot_per_mark="500" knockback_to_ships_mass_tx_less_than="11"
+			state_of_matter_for_target_to_become="MultiPhase" inflicts_state_of_matter_on_target_for_seconds="50" cannot_inflict_state_of_matter_if_target_has_any_shields_up="true" cannot_inflict_state_of_matter_if_target_has_energy_usage_of_at_least="500000"
+		>
+		</system>
+		<system name="PhasedAntiGolemArtillery" display_name="相位双联反傀儡撞击器（相位）" min_mark_level_to_function="3" must_be_this_state_of_matter_to_be_enabled="MultiPhase" care_about_state_of_matter_to_be_enabled="true" is_invisible_in_tooltips_if_not_a_match_by_state_of_matter="true"	
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="3000000" range="Planetary" shot_speed="Slow" rate_of_fire="Low" shots_per_salvo="2"
+			shot_type_data="MassDriver"
+			base_knockback_per_shot="2000" added_knockback_per_shot_per_mark="500" knockback_to_ships_mass_tx_less_than="11"
+		>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="LessThan" compared_to="8" multiplier="0" />
+		</system>
+		<system name="GravityDisruptor" display_name="空间干扰器"
+			range="AboveAverage1" area_of_effect_size="8000"
+			base_knockback_per_shot="-1000" added_knockback_per_shot_per_mark="-250" knockback_to_ships_mass_tx_less_than="5"
+			state_of_matter_for_target_to_become="MultiPhase" inflicts_state_of_matter_on_target_for_seconds="50" cannot_inflict_state_of_matter_if_target_has_any_shields_up="true" cannot_inflict_state_of_matter_if_target_has_energy_usage_of_at_least="1000"
+		>
+		</system>
+		<system name="ShieldEvaporator" display_name="护盾蒸发器" min_mark_level_to_function="7"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="1" range="Planetary" area_of_effect_size="600000"
+			shot_speed="Normal" rate_of_fire="Fifty"
+			shot_type_data="ExplosiveInvisible"
+			shots_detonate_immediately="true"
+			overdrives_shields="true"
+		>
+		</system>
+		<incoming_damage_modifier based_on="TargetTimeAtPlanet" comparison_type="AtLeast" compared_to="30" multiplier="0.75" />
+		<system name="GraviticCore" display_name="双曲线引力核心" category="Passive" base_gravity_speed_multiplier="0.8" subtracted_gravity_speed_multiplier_per_mark="0.05" gravity_hits_engine_gx_less_than="25" gravity_range="AboveAverage4" />
+	</entity>
+	
+	<entity name="DevourerGolemTier4_Warp_Enraged" copy_from="DevourerGolemTier4_Warp" tags="ShowsOnNormalDisplayMode,#EnragedModeOf#DevourerGolemTier4_Warp,MainMobileDevourerIncludingEnraged"
+		display_name="狂暴曲速吞噬者"
+		display_name_for_sidebar="吞 T4 E-曲速"
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破行星上的所有停火协议。此变体侧重于物态变化，在多重相位中摧毁敌人。
+&lt;color=#ff8888&gt;狂暴：造成更多伤害！&lt;/color&gt;"
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破行星上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于物态变化，在多重相位中摧毁敌人，在交替物态中使用其大幅增强版的反物质之颚和反傀儡火炮。唯一的可乘之机是护盾必须被击破才能进行维度转移。除了频繁地无法被攻击外，它还从已在行星上一段时间的攻击者那里进一步减少 incoming 伤害。
+&lt;color=#ff8888&gt;狂暴：造成更多伤害！&lt;/color&gt;"
+		damage_multiplier_to_all_weapons="12"
+	>
+		<ship_class_data can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.01" can_be_devoured="false"
+		>
+			<debuff_modifier debuff_type="WeaponPhase" multiplier="0" />
+		</ship_class_data>
+	</entity>
+	
+	<entity name="DevourerGolemTier4_Singularity" copy_from="DevourerGolemTier4_Base" tags="ShowsOnNormalDisplayMode,Devourer_Tier4,#Devourer_ID#0111,MainMobileDevourerIncludingEnraged"
+		display_name="奇点吞噬者"
+		display_name_for_sidebar="吞 T4 奇点"
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破行星上的所有停火协议。此变体侧重于极其强大的重力武器和效果。"
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破行星上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于极其强大的重力武器和效果。其火炮将敌人吸入碾压，由引力核心和抓取光束固定，并通过一个非常强大的黑洞机器阻止逃脱。"
+		adds_black_hole_effect_for_entities_with_engine_gx_less_than="24"
+		strength_multiplier="5"
+	>
+		<system name="AntimatterJaws" display_name="G-吸引反物质之颚"
+			area_of_effect_size="500" aoe_spreads_damage_among_available_targets="false"
+			shot_type_data="DevourerShot_AOEBurstAtEnd"
+			base_knockback_per_shot="-5000" added_knockback_per_shot_per_mark="-1250" knockback_to_ships_mass_tx_less_than="6"
+		>
+			<outgoing_damage_modifier based_on="CurrentSpeedIfMoving" comparison_type="AtMost" compared_to="200" multiplier="2" />
+		</system>
+		<system name="AntiGolemArtillery" display_name="双联反傀儡动能转换器"
+			damage_per_shot="600000" shots_per_salvo="2"
+			base_knockback_per_shot="-2000" added_knockback_per_shot_per_mark="-500" knockback_to_ships_mass_tx_less_than="20"
+		>
+		</system>
+		<system name="GravityDisruptor" display_name="奇点粉碎器"
+			damage_per_shot="50000"
+			range="Tiny3" area_of_effect_size="2500"
+			base_knockback_per_shot="-1000" added_knockback_per_shot_per_mark="-250" knockback_to_ships_mass_tx_less_than="5"
+		>
+		</system>
+		<system name="Grappler" display_name="引力抓取器" min_mark_level_to_function="7"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="1" shots_per_salvo="100" range="Planetary" shot_speed="Instant" rate_of_fire="Devourer"
+			shot_type_data="HeavyBeamInvisible"
+			beam_length_multiplier="1" beam_weapon_visual_style="Laser_GreenBright"
+			>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="LessThan" compared_to="10" multiplier="0" />
+		</system>
+		<system name="GraviticCore" display_name="双曲线引力核心" category="Passive" base_gravity_speed_multiplier="0.8" subtracted_gravity_speed_multiplier_per_mark="0.05" gravity_hits_engine_gx_less_than="25" gravity_range="AboveAverage4" />
+		<incoming_damage_modifier based_on="TargetTimeAtPlanet" comparison_type="AtLeast" compared_to="30" multiplier="0.75" />
+	</entity>
+	
+	<entity name="DevourerGolemTier4_Singularity_Enraged" copy_from="DevourerGolemTier4_Singularity" tags="ShowsOnNormalDisplayMode,#EnragedModeOf#DevourerGolemTier4_Singularity,MainMobileDevourerIncludingEnraged"
+		display_name="狂暴奇点吞噬者"
+		display_name_for_sidebar="吞 T4 E-奇点"
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破行星上的所有停火协议。此变体侧重于极其强大的重力武器和效果。
+&lt;color=#ff8888&gt;狂暴：造成更多伤害！&lt;/color&gt;"
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破行星上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于极其强大的重力武器和效果。其火炮将敌人吸入碾压，由引力核心和抓取光束固定，并通过一个非常强大的黑洞机器阻止逃脱。
+&lt;color=#ff8888&gt;狂暴：造成更多伤害！&lt;/color&gt;"
+		damage_multiplier_to_all_weapons="12"
+		>
+		<ship_class_data can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.01" can_be_devoured="false"
+		>
+			<debuff_modifier debuff_type="WeaponPhase" multiplier="0" />
+		</ship_class_data>
+	</entity>
+</root>

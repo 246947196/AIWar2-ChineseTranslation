@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+    <!-- 此文件中的所有内容都是为了给模组制作者使用而创建的星系设置，但玩家通常不希望看到或使用这些设置。
+	
+	     此处放置的任何内容的默认值应使普通游戏行为完全相同。 !-->
+
+    <galaxy_setting category="Hidden" subcategory="Hidden" is_advanced_setting="true" name="AIWavesAreRelentless" display_name="AI浪潮是无情的" type="BoolToggle" default="true" changeable_during_gameplay="true" is_hidden="true"
+      description="默认情况下，AI浪潮中的单位是'无情的' - 它们不会撤退，会战斗到死。
+	  
+禁用此选项可让它们在被压制时撤退。
+
+此设置不适用于一般用途，并被隐藏起来，仅供可能使用它的模组制作者查看。" />  
+  
+
+<!-- 前哨相关 -->
+
+<galaxy_setting category="Hidden" name="SpawnBeaconOnHomeworld" display_name="在母星上生成信标" type="BoolToggle" 
+    deprecated="true"
+    default="False"
+    description="通常，前哨信标位于距离你起始行星几跳远的地方。如果此设置开启，你将在母星上获得一个前哨信标。"  >
+  <harshness_override min_campaign_harshness_to_apply="0" fixed_value="False" />
+</galaxy_setting>
+
+<galaxy_setting category="Hidden" name="SpecificBeaconOnHomeworld" display_name="在母星上生成特定信标" type="BoolToggle" 
+    deprecated="true"
+    default="False"
+    description="通常，前哨信标位于距离你起始行星几跳远的地方。如果此设置开启，你将在母星上获得一个特定的前哨信标，前哨类型由下拉菜单选择。"  >
+  <harshness_override min_campaign_harshness_to_apply="0" fixed_value="False" />
+</galaxy_setting>
+
+<galaxy_setting category="Hidden" name="OutguardToSeed" display_name="要生成的前哨信标数量" type="IntSlider" 
+    default="5" min="0" max="8"
+    description="在整个星系中会生成多少个前哨信标？默认为5个。"  >
+  <harshness_override min_campaign_harshness_to_apply="0" fixed_value="5" />
+</galaxy_setting>
+
+<galaxy_setting category="Hidden" name="OutguardPerBeacon" display_name="每个信标的前哨数量" type="IntSlider" 
+    default="2" min="1" max="4"
+    description="每个信标有多少前哨？默认为2个。"  >
+  <harshness_override min_campaign_harshness_to_apply="0" fixed_value="2" />
+</galaxy_setting>
+
+<galaxy_setting category="Hidden" name="OutguardCostScaling" display_name="前哨成本缩放" type="CustomDropdownArbitraryOptions" 
+    arbitrary_options="0x,0.25x,0.5x,1x" default_option="1x"
+    description="降低前哨入侵的AiP和HaP成本。" >
+  <harshness_override min_campaign_harshness_to_apply="0" fixed_option="1x" />
+</galaxy_setting>
+
+</root>

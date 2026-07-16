@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <fleet_design name="GSFArmadaOne"
+        display_name="第一舰队"
+        description="非常耐久的旗舰，对所有目标都有良好的火力。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="ArmoredGolem" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="VWing" ship_cap_group="Strike" weight="100" cap="32"/>
+	<ship_membership name="PikeCorvette" ship_cap_group="Strike" weight="100" cap="32"/>
+	</fleet_design>
+
+  <fleet_design name="GSFArmadaTwo"
+        display_name="第二舰队"
+        description="脆弱的旗舰，可在不可思议的射程内歼灭单个目标。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="ArtilleryGolem" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="ConcussionCorvette" ship_cap_group="Strike" weight="100" cap="32"/>
+	<ship_membership name="FusionBomber" ship_cap_group="Strike" weight="100" cap="32"/>
+	</fleet_design>
+
+  <fleet_design name="GSFArmadaThree"
+        display_name="第三舰队"
+        description="通过伤害自身来复活在同一行星上阵亡友军单位的旗舰。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="RegeneratorGolem" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="Zapper" ship_cap_group="Strike" weight="100" cap="20"/>
+	<ship_membership name="Porcupine" ship_cap_group="Strike" weight="100" cap="40"/>
+	<ship_membership name="Ranger" ship_cap_group="Strike" weight="100" cap="20"/>
+  </fleet_design>
+
+  <fleet_design name="GSFArmadaFour"
+        display_name="第四舰队"
+        description="发射造成瘫痪的远程攻击，但相对其他旗舰非常脆弱。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+	<ship_membership name="CursedGolem" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="Raider" ship_cap_group="Strike" weight="100" cap="40"/>
+	<ship_membership name="Harasser" ship_cap_group="Strike" weight="100" cap="40"/>
+  </fleet_design>
+
+  <fleet_design name="GSFArmadaFive"
+        display_name="第五舰队"
+        description="能够吸入整个敌方舰队并将其转化为友方僵尸的旗舰。专精于对抗打击机。每级标记可攻击更多目标。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="BotnetGolem" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="SpacePlane" ship_cap_group="Strike" weight="100" cap="60"/>
+	<ship_membership name="Gunbot" ship_cap_group="Strike" weight="100" cap="80"/>
+  </fleet_design>
+
+  <fleet_design name="GSFArmadaSix"
+        display_name="第六舰队"
+        description="可以用牵引光束牵引大量敌方单位的旗舰。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="BlackWidowGolem" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="ConcussionCorvette" ship_cap_group="Strike" weight="100" cap="40"/>
+	<ship_membership name="SentinelGunboat" ship_cap_group="Strike" weight="100" cap="20"/>
+	</fleet_design>
+
+<fleet_design name="GSFArmadaSeven"
+        display_name="第七舰队"
+        description="持续生成大量黄蜂——速度较快且凶猛的攻击无人机的旗舰。"
+        design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
+        append_each_ship_description_to_main_description="true"
+        >
+    <ship_membership name="HiveGolem" ship_cap_group="Centerpiece" weight="100" cap="1"/>
+	<ship_membership name="HiveDrone" ship_cap_group="Strike" weight="100" cap="300"/>
+	<ship_membership name="Kite" ship_cap_group="Strike" weight="100" cap="40"/>
+	</fleet_design>
+</root>
+

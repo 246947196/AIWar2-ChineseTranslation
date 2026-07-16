@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<entity name="DevourerAdaption_SpikeFighter" copy_from="AMU_StrikeCraftBase" tags="#Devourer_HackEnabledBy#Chrysalis_Tier1"
+		visuals="assets/_finalgamemeshes/fleetships/lasergatling/laser_gatlingold.prefab"
+		icon_name="Ships1/AblativeGatling" icon_overlay="Overlays1/Turret_Ablative"
+		voice_group="Fighter"
+		size_scale="0.9"
+		visuals_scale_multiplier="8"
+		display_name="尖刺战斗机"
+		display_name_for_sidebar="尖刺战斗机 护卫"
+		description_short="小型战斗机，根据行星上每个单位延长其攻击范围。对高反照率敌人效果极佳。"
+		description="在分析吞噬者蛹时，人类科学家发现了如此巨大的实体如何工作的 targeting 方式。吞噬者没有中央传感器阵列，而是拥有数量惊人的小型传感器，它们相互连接形成一个 targeting 网络，不仅可以攻击整个行星的范围，而且精确到足以通过虫洞测量敌人。通过取样，我们自己的单位可以模仿这种技术。"
+		tech_upgrades_that_benefit_me="Generalist,Medium"
+		amount_added_to_range_per_ship_of_this_type_on_planet="10"
+		hull_points="3000" shield_points="0" speed="Normal1"
+		metal_cost="3000" energy_consumption="200"
+		armor_mm="40" engine_gx="8" mass_tx="0.21" albedo="0.9"
+		strength_multiplier="3"
+	>
+		<system name="NetworkBeam" display_name="网络光束"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="200" range="VeryTiny1" shot_speed="Normal" rate_of_fire="Misery"
+			shot_type_data="HeavyBeamInvisible"
+			beam_length_multiplier="1"
+			hits_all_intersecting_targets="false" beam_weapon_visual_style="Laser_Green"
+		>
+			<outgoing_damage_modifier based_on="Albedo" comparison_type="AtLeast" compared_to="0.45" multiplier="3" />
+		</system>
+	</entity>
+	
+	<entity name="DevourerAdaption_PhaseRaidFrigate" copy_from="AMU_LightFrigateBase" tags="#Devourer_HackEnabledBy#Chrysalis_Tier1"
+		visuals="assets/_finalgamemeshes/guardians/stealthguardian/stealthguardian.prefab"
+		icon_overlay="Overlays1/Starship_Raid"
+		voice_group="Melee"
+		size_scale="4"
+		visuals_scale_multiplier="4.5"
+		display_name="相位突袭护卫舰"
+		display_name_for_sidebar="相位突袭 护卫"
+		description_short="攻击飞行器在离开虫洞前相位脱离现实，以高速移动并绕过一切。在进入现实后短暂地发动巨大打击。"
+		description="吞噬者傀儡在"死亡"后会相位进入另一个维度，自我修复并自我增强。虽然产生如此巨大的空间扭曲以便我们随意进出其他维度目前遥不可及，但我们可以利用这个裂缝中的超空间穿越虫洞，不是通过其两端，而是穿过其中。这使我们能够短暂地保持不可触及的状态，非常适合定位一艘强大的突袭舰。"
+		tech_upgrades_that_benefit_me="Raid,Light"
+		hull_points="25000" shield_points="50000" speed="AboveAverage6"
+		metal_cost="50000" energy_consumption="6000"
+		armor_mm="30" engine_gx="19" mass_tx="4" albedo="0.9"
+		speed_multiplier_first_5_seconds_on_planet="3"
+		state_of_matter_to_become_on_wormhole_exit="MultiPhase" returns_to_default_state_of_matter_after_seconds_from_wormhole_exit="5"
+		strength_multiplier="2"
+	>
+		<system name="Warp Strike" display_name="曲速打击"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="3000" range="Tiny1" shot_speed="Normal" rate_of_fire="Normal"
+			shot_type_data="DevourerShot"
+		>
+			<outgoing_damage_modifier based_on="MyTimeAtPlanet" comparison_type="AtMost" compared_to="2" multiplier="5" />
+		</system>
+		<incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="5000" multiplier="0.1" />
+	</entity>
+	
+	<entity name="DevourerAdaption_RetaliatoryCorvette" copy_from="AMU_MediumCorvetteBase" tags="#Devourer_HackEnabledBy#Chrysalis_Tier1"
+		visuals="assets/_finalgamemeshes/fleetships/armorship/armorship.prefab"
+		icon_overlay="Overlays1/Turret_Bulwark"
+		voice_group="Bomber"
+		size_scale="2.5"
+		visuals_scale_multiplier="20"
+		display_name="报复型护卫艇"
+		display_name_for_sidebar="报复型 轻护"
+		description_short="配备反装甲鱼雷的护卫艇。受到攻击时发射报复性激光，将攻击者一半的伤害返还。"
+		description="吞噬者会适应我们的攻击。任何不具有 0.9 或更高反照率（此时吞噬者无法完全理解目标）的东西几乎完全"弹开"，因为其活体装甲会预期并反击射击。通过将此技术与我们自己的技术相结合，我们可以将能量脉冲直接引向我们的敌人。"
+		tech_upgrades_that_benefit_me="Generalist,Heavy"
+		hull_points="45000" shield_points="0" speed="BelowAverage2"
+		metal_cost="25000" energy_consumption="2000"
+		armor_mm="130" engine_gx="10" mass_tx="2.5" albedo="0.9"
+		strength_multiplier="3"
+	>
+		<system name="ArmorBreakerTorpedo" display_name="破甲鱼雷"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="700" range="AboveAverage1" shot_speed="Slow" rate_of_fire="VeryLow"
+			shot_type_data="GuidedMissile"
+		>
+			<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtLeast" compared_to="120" multiplier="3" />
+		</system>
+		<system name="RetalitoryLaser" display_name="报复性激光"
+			category="Weapon" firing_timing="WhenParentEntityHit"
+			damage_per_shot="1" returns_this_percentage_of_damage_when_firing_retalitatory_shot="0.5" range="Normal1" shot_speed="VeryFast" rate_of_fire="Devourer"
+			shot_type_data="LaserPulse_RedLevel1"
+		>
+		</system>
+	</entity>
+	
+	<entity name="DevourerAdaption_MortarGunboat" copy_from="AMU_StrikeCraftBase" tags="#Devourer_HackEnabledBy#DevourerGolemTier2_Destroyer"
+		visuals="assets/_finalgamemeshes/fleetships/grenadelauncher2/grenadelauncher2.prefab"
+		icon_name="Ships1/Corvette" icon_overlay="Overlays1/MegaTurret_Fuseball"
+		voice_group="AreaOfEffect"
+		size_scale="2.9"
+		visuals_scale_multiplier="26"
+		display_name="迫击炮炮艇"
+		display_name_for_sidebar="迫击炮 炮艇"
+		description_short="狙击手，配备缓慢的爆炸射击。高伤害但对次要目标较低，对极轻型敌人有额外伤害。"
+		description="分析由迫击炮吞噬者产生的蛹，让我们深入了解了其自适应爆炸弹壳。一种不稳定的混合物，不会简单地爆炸并在大范围内造成等量伤害，它几乎是……本能地将其装药集中针对单一对手而非其他目标。这允许更大的集中伤害，同时不阻止其对附近敌人造成高伤害。"
+		tech_upgrades_that_benefit_me="Splash,Heavy"
+		hull_points="15000" shield_points="5000" speed="BelowAverage2"
+		metal_cost="5000" energy_consumption="2000"
+		armor_mm="130" engine_gx="10" mass_tx="2.5" albedo="0.9"
+		strength_multiplier="2.5"
+	>
+		<system name="LongRangeMortar" display_name="远程迫击炮"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="1000" range="EssentiallyInfinite" shot_speed="Slow" rate_of_fire="ExtremelyLow"
+			shot_type_data="FlakShotAOEBurstAtEnd"
+			maximum_number_of_targets_hit_per_shot="10" area_of_effect_size="800" aoe_and_beam_damage_multiplier_to_non_primary_target="50"
+		>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtMost" compared_to="0.25" multiplier="2" />
+		</system>
+	</entity>
+	
+	<entity name="DevourerAdaption_AdaptiveBallisticFrigate" copy_from="AMU_MediumFrigateBase" tags="#Devourer_HackEnabledBy#DevourerGolemTier2_Tsunami"
+		visuals="assets/_finalgamemeshes/starships/prototypeflagship/prototypeflagship.prefab"
+		icon_overlay="Overlays1/Turret_Blaster"
+		size_scale="5"
+		visuals_scale_multiplier="2.5"
+		display_name="自适应弹道护卫舰"
+		display_name_for_sidebar="自适应弹道 护卫"
+		description_short="能够集中火力或分摊其 4 个相同武器系统的伤害。列出的 DPS 为单个武器的值。"
+		description="检查海啸吞噬者蛹可以让我们更深入地了解生物有机多重冗余分段武器系统如何链接和有效控制。不必在目标之间分散火力，这允许多个半智能炮塔——这项任务使用 AI 技术很容易，但现在无需 AI 技术也能实现。"
+		tech_upgrades_that_benefit_me="Generalist,Medium"
+		hull_points="150000" shield_points="75000" speed="Normal2"
+		metal_cost="200000" energy_consumption="7500"
+		armor_mm="90" engine_gx="20" mass_tx="5" albedo="0.9"
+		strength_multiplier="1.5"
+	>
+		<system name="BallisticCannon1" display_name="&lt;color=#dddd22&gt;4x&lt;/color&gt; 弹道加农炮"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="2000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="High"
+			shot_type_data="ArmorPiercingShell"
+		>
+		</system>
+		<system name="BallisticCannon2" display_name="&lt;color=#dddd22&gt;4x&lt;/color&gt; 弹道加农炮" system_is_hidden_for_ui="true" category="Weapon" firing_timing="OnlyInRange" damage_per_shot="2000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="High" shot_type_data="ArmorPiercingShell" ></system>
+		<system name="BallisticCannon3" display_name="&lt;color=#dddd22&gt;4x&lt;/color&gt; 弹道加农炮" system_is_hidden_for_ui="true" category="Weapon" firing_timing="OnlyInRange" damage_per_shot="2000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="High" shot_type_data="ArmorPiercingShell" ></system>
+		<system name="BallisticCannon4" display_name="&lt;color=#dddd22&gt;4x&lt;/color&gt; 弹道加农炮" system_is_hidden_for_ui="true" category="Weapon" firing_timing="OnlyInRange" damage_per_shot="2000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="High" shot_type_data="ArmorPiercingShell" ></system>
+	</entity>
+	
+	<entity name="DevourerAdaption_HunterBot" copy_from="AMU_StrikeCraftBase" tags="#Devourer_HackEnabledBy#Chrysalis_Tier2"
+		visuals="assets/_finalgamemeshes/fleetships/sniper/sniper.prefab"
+		icon_name="Ships1/Sniper" icon_overlay="Overlays1/Starship_Raid"
+		voice_group="Saboteur"
+		category="Ship" is_strikecraft="true"
+		size_scale="1.1"
+		visuals_scale_multiplier="6"
+		display_name="猎手机器人"
+		display_name_for_sidebar="猎手机器人 战机"
+		description_short="小型战机，在高生命值时伤害最高。装弹时重新隐形，几乎不可能被解除隐形。"
+		description="吞噬者的船体由超反射、活的、多调节合金制成，几乎可以反射所有射向它的能量。通过使用人类已知的金属制造具有类似特性的船体，并添加隐形装置，我们创造了一个几乎无法被解除隐形的单位。最重要的是，我们可以复制其部分武器技术，以获得可怕的攻击力。"
+		tech_upgrades_that_benefit_me="Subterfuge,Light"
+		hull_points="1500" shield_points="0" speed="AboveAverage2"
+		metal_cost="5000" energy_consumption="300"
+		armor_mm="40" engine_gx="7" mass_tx="0.11" albedo="0.9"
+		strength_multiplier="3"
+	>
+		<system name="FocusedLaser" display_name="聚焦激光"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="2000" range="Normal1" shot_speed="VeryFast" rate_of_fire="Sloth"
+			shot_type_data="LaserPulse_DeepBlue"
+		>
+			<outgoing_damage_modifier based_on="MyHullPercentageMissing" comparison_type="MultiplesOf" compared_to="10" multiplier="-0.08" />
+		</system>
+		<system name="Cloaker" display_name="隐形装置" category="Passive" cloaking_points="2000" cloaking_points_added_per_mark="1000" />
+	</entity>
+	
+	<entity name="DevourerAdaption_TransitoryCruiser" copy_from="AMU_CruiserBase" tags="#Devourer_HackEnabledBy#Chrysalis_Tier2"
+		visuals="assets/_finalgamemeshes/guardians/implosionguardian/implosionguardian.prefab"
+		icon_overlay="Overlays2/DevourerGolem_RavenousShadow"
+		size_scale="6.5"
+		visuals_scale_multiplier="8.8"
+		display_name="瞬态巡洋舰"
+		display_name_for_sidebar="瞬态 巡洋"
+		description_short="在现实和多重相位之间切换，每次 6 秒，与其恐怖武器的装填时间同步。"
+		description="随着我们对相位曲速技术的了解不断深入，我们现在可以将一个单位困在维度之间，就像钟摆在现实和多重相位之间每几秒摆动一次。通过将其与武器装填时间同步，我们可以创造出一个既能躲避敌人攻击又无需牺牲伤害的单位。而这个单位拥有一门真正恐怖的主炮和一些反战机麻痹能力。"
+		tech_upgrades_that_benefit_me="Ambush,Medium"
+		hull_points="400000" shield_points="200000" speed="Normal1"
+		metal_cost="400000" energy_consumption="15000"
+		armor_mm="70" engine_gx="23" mass_tx="6.5" albedo="0.9"
+		strength_multiplier="5"
+		alternative_state_of_matter="MultiPhase" phases_to_other_alternative_state_of_matter_after_seconds="6" phases_back_to_default_state_of_matter_after_seconds="6"
+	>
+		<system name="HyperNucleophilicCannon" display_name="超亲核加农炮"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="2000" range="AboveAverage4" shot_speed="Normal" rate_of_fire="ExtremelyLow"
+			shot_type_data="LaserPulse_RedLevel2"
+		>
+			<outgoing_damage_modifier based_on="EnergyUsage" comparison_type="AtLeast" compared_to="25000" multiplier="100" />
+		</system>
+		<system name="OverloadLightning" display_name="过载闪电"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="2000" range="Normal4" shot_speed="Normal" rate_of_fire="RatherLow" use_alternate_rate_of_fire_after_x_shots="1" alternate_rate_of_fire="Misery" use_alternate_rate_of_fire_for_x_shots_before_reverting="2"
+            shot_type_data="HeavyBeamInvisible" shots_detonate_immediately="true" beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_Green"
+            beam_chains_out_to_targets_x_times="2" beam_chains_out_to_max_targets_from_each_source="3" beam_chains_out_to_target_min_range="200" beam_chains_out_to_targets_x_range="1000" aoe_and_beam_damage_multiplier_to_non_primary_target="0.5"
+			base_paralysis_seconds_per_shot="2" added_paralysis_seconds_per_shot_per_mark="2" paralysis_to_ships_mass_tx_less_than="1"
+			added_target_evaluator="ParalyzerAsPrimary"
+		>
+		</system>
+	</entity>
+	
+	<entity name="DevourerAdaption_AntiShieldSniperPlatform" copy_from="AMU_HeavyFrigateBase" tags="#Devourer_HackEnabledBy#DevourerGolemTier3_Mortar"
+		visuals="assets/_finalgamemeshes/starships/sniperstarship/sniper_starship.prefab"
+		icon_overlay="Overlays1/Starship_Shield"
+		size_scale="6"
+		visuals_scale_multiplier="6.5"
+		display_name="反护盾狙击平台"
+		display_name_for_sidebar="反护盾狙击 平台"
+		description_short="几乎固定的平台，快速蒸发护盾，对泡泡力场效果更佳。如果先耗尽护盾，船体变得更强。"
+		description="检查迫击炮吞噬者的蛹时，我们进一步了解了远程轰炸武器。通过牺牲几乎所有的机动性，我们能够对敌人释放更多的火力，特别是那些有护盾的敌人，尤其是那些具有泡泡力场的敌人，从而围攻敌人的据点。此外，自适应船体技术允许我们在护盾下降时将额外能量引导至加固结构。"
+		tech_upgrades_that_benefit_me="Technologist,Heavy"
+		hull_points="100000" shield_points="500000" speed="AlmostNone"
+		metal_cost="180000" energy_consumption="10000"
+		armor_mm="70" engine_gx="3" mass_tx="6" albedo="0.9"
+		strength_multiplier="3"
+	>
+		<system name="AntiShieldSniper" display_name="反护盾狙击枪"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="2000" range="EssentiallyInfinite" shot_speed="Normal" rate_of_fire="Devourer"
+			shot_type_data="LaserPulse_Pink"
+		>
+			<outgoing_damage_modifier based_on="MaxPersonalShield" comparison_type="AtLeast" compared_to="1" multiplier="10" applies_to="AllShields" />
+			<outgoing_damage_modifier based_on="MaxBubbleForcefield" comparison_type="AtLeast" compared_to="1" multiplier="3" applies_to="AllShields" />
+		</system>
+		<incoming_damage_modifier based_on="MyShieldPercentageMissing" comparison_type="AtLeast" compared_to="100" multiplier="0.25" applies_to="HullOnly" />
+	</entity>
+	
+	<entity name="DevourerAdaption_BunkerBomber" copy_from="AMU_StrikeCraftBase" tags="#Devourer_HackEnabledBy#DevourerGolemTier3_Tank"
+		visuals="assets/_finalgamemeshes/fleetships/bomber/bomber.prefab"
+		icon_name="Ships1/Bomber" icon_overlay="Overlays1/Turret_Imploder"
+		voice_group="Bomber"
+		size_scale="1.22"
+		visuals_scale_multiplier="5"
+		display_name="堡垒轰炸机"
+		display_name_for_sidebar="堡垒轰炸机 战机"
+		description_short="轰炸机，其穿盾伤害随装甲提升而提升。高生命值时更坚韧，且需要至少 4 次单独射击才能摧毁。"
+		description="研究坦克吞噬者的装甲使我们能够采用一种新的单位结构方法：维度反应装甲，当 incoming 伤害达到一定阈值时，会自行扭曲进入另一个维度，带着子弹一起，为单位其余部分牺牲自己。作为回报，震颤聚变炸弹会打击装甲板并与之共振，装甲越多效果越差，对下方的船体造成振动伤害。"
+		tech_upgrades_that_benefit_me="Fusion,Medium"
+		hull_points="2250" shield_points="0" speed="Normal3"
+		metal_cost="8000" energy_consumption="600"
+		armor_mm="60" engine_gx="7" mass_tx="0.25" albedo="0.9"
+		strength_multiplier="3"
+		damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.33"
+	>
+		<system name="TremorFusionBomb" display_name="震颤聚变炸弹"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="150" range="Tiny4" shot_speed="Normal" rate_of_fire="Low"
+			shot_type_data="FusionBomb"
+			base_percent_damage_bypasses_personal_shields="1"
+		>
+			<outgoing_damage_modifier based_on="Armor_mm" comparison_type="MultiplesOf" compared_to="10" multiplier="0.5" max_multiplier="15" />
+		</system>
+		<incoming_damage_modifier based_on="MyHullPercentageMissing" comparison_type="AtMost" compared_to="10" multiplier="0.1" />
+	</entity>
+	
+	<entity name="DevourerAdaption_ImpactorTorpedoCarrier" copy_from="AMU_MediumFrigateBase" tags="#Devourer_HackEnabledBy#DevourerGolemTier3_Swarm"
+		visuals="assets/_finalgamemeshes/starships/siegestarship/siege_starship.prefab"
+		icon_overlay="Overlays2/DysonSentinel_Defender"
+		size_scale="5"
+		visuals_scale_multiplier="6.8"
+		display_name="撞击鱼雷运载舰"
+		display_name_for_sidebar="撞击鱼雷 运载"
+		description_short="每 4 秒部署一枚鱼雷，伤害随敌方总船体提升，有上限。脆弱但能迅速逃离直接战斗。"
+		description="检查第 3 级吞噬者超巨大的结构以及构建"较小"结构（如行星大小的吞噬者"无人机"）所需的条件，极大地增进了我们在船体技术方面的知识。它将来自摩擦、材料压缩和冲击的动能储存在动能电容器中，虽然我们无法建造任何足够大的东西来需要这样做，但我们现在可以将其直接释放到敌方船体中。"
+		tech_upgrades_that_benefit_me="Concussion,Medium"
+		hull_points="50000" shield_points="100000" speed="AboveAverage2"
+		metal_cost="500000" energy_consumption="10000"
+		armor_mm="60" engine_gx="21" mass_tx="5" albedo="0.9"
+		strength_multiplier="4"
+	>
+		<system name="DeployImpactorTorpedo" display_name="部署撞击鱼雷" system_is_hidden_for_ui="true"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="1" range="EssentiallyInfinite" shot_speed="Normal" rate_of_fire="Normal"
+			shot_type_data="DevourerAdaption_ImpactorTorpedo"
+		>
+			<outgoing_damage_modifier based_on="MaxHull" comparison_type="MultiplesOf" compared_to="1000" multiplier="0.1" max_multiplier="50" multiplier_is_additive="false" />
+		</system>
+	</entity>
+  
+	<entity name="DevourerAdaption_ImpactorTorpedo" copy_from="AMU_MediumFrigateBase"
+		visuals="Assets/_DLC1/Strikecraft/TeslaTorpedo/TeslaTorpedo.prefab" visuals_bundle="exp1_the_spire_rises"
+		icon_name="Ships1/WarheadStyle1" icon_overlay="Overlays2/DysonSentinel_Defender" gimbal_icon_size_multiplier="0.8"
+		voice_group="Silent"
+		size_scale="0.75"
+		visuals_scale_multiplier="3"
+		collision_priority="50"
+		display_name="撞击鱼雷"
+		display_name_for_sidebar="撞击鱼雷 无人机"
+		description="包含不稳定的纯动能装药，从内部压迫敌方结构直至其瓦解。"
+		tech_upgrades_that_benefit_me="Concussion,Medium"
+		self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="3"
+		always_self_attritions="true"
+		strength_multiplier="0.3"
+		hull_points="5000" shield_points="5000" speed="AboveAverage5"
+		metal_cost="3000" energy_consumption="0"
+		armor_mm="30" engine_gx="7" mass_tx="0.1" albedo="0.9"
+		shot_fired_sfx="BasicLaunchWhine_Firing"
+		immune_to_swapping_between_fleets="true"
+		fleet_membership="Planetary"
+	>
+		<system name="Impact" display_name="冲击"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="500" range="AlmostNone" seek_range="Normal1" shot_speed="Normal" rate_of_fire="Devourer"
+			shot_type_data="MeleeInvisible"
+			health_change_by_max_health_divided_by_this_per_attack="-1"
+		>
+			<outgoing_damage_modifier based_on="MaxHull" comparison_type="MultiplesOf" compared_to="1000" multiplier="0.1" max_multiplier="50" multiplier_is_additive="false" />
+		</system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+	
+	<entity name="DevourerAdaption_SchwarzschildFrigate" copy_from="AMU_HeavyFrigateBase" tags="#Devourer_HackEnabledBy#DevourerGolemTier3_Gravity"
+		visuals="assets/_finalgamemeshes/starships/shieldstarship/shieldstarship.prefab"
+		icon_overlay="Overlays2/Guardian_Gravity" gimbal_icon_size_multiplier="1.3"
+		size_scale="5.5"
+		visuals_scale_multiplier="5"
+		display_name="史瓦西重型护卫舰"
+		display_name_for_sidebar="史瓦西 重护"
+		description_short="以重力光束反击，将目标拉入进行毁灭性的近战攻击。还拥有引力核心，使逃跑几乎不可能。"
+		description="经过我们最近的分析，我们现在能够将微型奇点武器化，使其不会撕裂产生它们的单位或建筑。这允许进行可怕的近战攻击，并通过引导来自攻击的能量，利用史瓦西半径的报复性引力牵引，我们可以让敌人通过攻击那个将撕碎它们的单位来被拉入。"
+		tech_upgrades_that_benefit_me="Technologist,Heavy"
+		strength_multiplier="3"
+		hull_points="150000" shield_points="75000" speed="BelowAverage1"
+		metal_cost="170000" energy_consumption="15000"
+		armor_mm="10" engine_gx="22" mass_tx="5.5" albedo="0.9"
+		pushes_enemy_shields="true"
+	>
+		<system name="GravityTear" display_name="重力撕裂"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="7000" range="VeryTiny1" shot_speed="Instant" rate_of_fire="Devourer"
+			area_of_effect_size="1000" shots_detonate_immediately="true"
+			shot_type_data="ExplosiveInvisible"
+		>
+		</system>
+		<system name="RetalitoryGravityBeam" display_name="报复性重力光束"
+			category="Weapon" firing_timing="WhenParentEntityHit"
+			damage_per_shot="50" range="Planetary" shot_speed="Instant" rate_of_fire="Devourer"
+			shot_type_data="HeavyBeamInvisible" beam_length_multiplier="1" beam_weapon_visual_style="Laser_Green" hits_all_intersecting_targets="false"
+			base_knockback_per_shot="-500" added_knockback_per_shot_per_mark="-250" knockback_to_ships_mass_tx_less_than="2"
+		>
+		</system>
+		<system name="GraviticCore" display_name="引力核心" category="Passive" base_gravity_speed_multiplier="0.6" subtracted_gravity_speed_multiplier_per_mark="0.05" gravity_hits_engine_gx_less_than="14" gravity_range="Normal5" />
+	</entity>
+	
+	<entity name="DevourerAdaption_MaximCruiser" copy_from="AMU_CruiserBase" tags="#Devourer_HackEnabledBy#Chrysalis_Tier3"
+		visuals="assets/_finalgamemeshes/guardians/implosionguardian/implosionguardiancarrier.prefab"
+		icon_overlay="Overlays1/MegaTurret_MassDriver"
+		size_scale="6.75"
+		visuals_scale_multiplier="32"
+		display_name="马克西姆巡洋舰"
+		display_name_for_sidebar="马克西姆 巡洋"
+		description_short="作为一个活着的、不断成长的单位，巡洋舰之王装备精良，可以应对几乎任何敌人。"
+		description="我们成功地将从吞噬者蛹分析中获得的 Zenith 生物有机自我扩展与人类装甲和武器技术融合，创造了一个活着的、不断成长的单位。随着它升级，单位将自我优化，获得更高的伤害抗性和武器输出，最终成为一个极其优越的单位。即使在其默认形态下，其武器也足够多样化，可以应对从最小的机器人到巨大的傀儡的一切。"
+		tech_upgrades_that_benefit_me="Disruptive,Heavy"
+		hull_points="1800000" shield_points="900000" speed="BelowAverage1"
+		metal_cost="1200000" energy_consumption="150000"
+		armor_mm="140" engine_gx="22" mass_tx="6.75" albedo="0.9"
+		strength_multiplier="7"
+	>
+		<system name="AntimaterialCannon" display_name="反物质加农炮"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="15000" range="High2" shot_speed="Normal" rate_of_fire="VeryLow"
+			shot_type_data="DevourerShot"
+			base_enemy_weapon_reload_slowing_seconds_per_shot="2" added_enemy_weapon_reload_slowing_seconds_per_shot_per_mark="2" enemy_weapon_reload_slowing_to_armor_mm_less_than="250" max_enemy_weapon_reload_slowing_seconds="10"
+		>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="MultiplesOf" compared_to="1" multiplier="0.45" added_multiplier_per_mark="0.15" />
+		</system>
+		<system name="TranslocatorBeams" display_name="位移光束"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="300" range="Normal1" shot_speed="Normal" rate_of_fire="Misery"
+			shots_per_salvo="12" added_shots_per_salvo_per_mark="4"
+			shot_type_data="HeavyBeamInvisible"
+			beam_length_multiplier="1" beam_weapon_visual_style="Laser_Green"
+			hits_all_intersecting_targets="false"
+			base_knockback_per_shot="1500" added_knockback_per_shot_per_mark="750" knockback_to_ships_mass_tx_less_than="3"
+		>
+			<outgoing_damage_modifier based_on="AttackDistance" comparison_type="AtMost" compared_to="3500" multiplier="1.5" added_multiplier_per_mark="0.5" />
+		</system>
+		<system name="LaserGatling1" display_name="&lt;color=#dddd22&gt;3x&lt;/color&gt; 激光加特林"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="1500" range="High1" shot_speed="VeryFast" rate_of_fire="Devourer"
+			shot_type_data="LaserPulse_RedLevel2"
+		>
+			<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="50" multiplier="3" added_multiplier_per_mark="1" />
+		</system>
+		<system name="LaserGatling2" display_name="&lt;color=#dddd22&gt;3x&lt;/color&gt; 激光加特林" system_is_hidden_for_ui="true" category="Weapon" firing_timing="OnlyInRange" damage_per_shot="1500" range="High1" shot_speed="VeryFast" rate_of_fire="Devourer" shot_type_data="LaserPulse_RedLevel2" > <outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="50" multiplier="3" added_multiplier_per_mark="1" /> </system>
+		<system name="LaserGatling3" display_name="&lt;color=#dddd22&gt;3x&lt;/color&gt; 激光加特林" system_is_hidden_for_ui="true" category="Weapon" firing_timing="OnlyInRange" damage_per_shot="1500" range="High1" shot_speed="VeryFast" rate_of_fire="Devourer" shot_type_data="LaserPulse_RedLevel2" > <outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="50" multiplier="3" added_multiplier_per_mark="1" /> </system>
+		<incoming_damage_modifier based_on="AttackDistance" comparison_type="AtLeast" compared_to="3500" multiplier="0.76" added_multiplier_per_mark="-0.08" />
+	</entity>
+	
+	<entity name="DevourerAdaption_CellicateGolem" tags="#Devourer_HackEnabledBy#Chrysalis_Tier3" is_golem="true" capturable_can_seed_at_all="false"
+		special_entity_type="MobileOfficerCombatFleetFlagship"
+		visuals="assets/_finalgamemeshes/golems/devourergolem/devourergolem.prefab"
+		icon_name="Ships1/DevourerGolem" gimbal_icon_size_multiplier="1.5"
+		uses_large_health_bar="true"
+		voice_group="Melee"
+		category="Ship"
+		size_scale="16"
+		visuals_scale_multiplier="1"
+		collision_priority="100"
+		display_name="细胞傀儡"
+		display_name_for_sidebar="细胞傀儡"
+		description_short="从第 3 级吞噬者蛹的液态金属流中提取的强大傀儡。"
+		description="吞噬者傀儡已经变得如此强大，以至于其"血液"细胞（或者我们应该说"液态金属"细胞？）本身已经长到如此之大，以至于它们本身就成了全功率的傀儡。其主要功能是保持血管清洁并抵御任何可能的入侵者，因此该单位能够快速处理新到达行星的入侵者。"
+		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" tech_upgrade_that_is_used_for_my_direct_science="Direct_GolemRegen"
+		cost_for_ai_to_purchase="10"
+		hull_points="2000000" shield_points="1000000" speed="Normal3"
+		armor_mm="170" engine_gx="24" mass_tx="10" albedo="0.9"
+		metal_cost="2500000" energy_consumption="150000"
+		ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+		priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+		draw_in_galaxy_view="true" shows_on_galaxy_map_for_explored_planets="true" always_visible_to_players="true"
+		firing_delay_for_transported_ships="3"
+		strength_multiplier="2"
+		eligible_for_hacks="IncreaseShieldDurability,IncreaseHullDurability,IncreaseWeaponPower"
+		blocks_ceasefire_on_planet="true"
+	>
+		<hack_data hack_type="IncreaseShieldDurability"
+			override_cost_in_hacking_points="20"
+			cost_in_hacking_points_multiplier_per_times_same_unit_hacked="2"
+			max_times_single_unit_can_be_hacked="3"
+		>
+			<custom_hack_data key="AddedMultiplierPerHack" value="1.8" />
+		</hack_data>
+		<hack_data hack_type="IncreaseHullDurability"
+			override_cost_in_hacking_points="20"
+			cost_in_hacking_points_multiplier_per_times_same_unit_hacked="2"
+			max_times_single_unit_can_be_hacked="3"
+		>
+			<custom_hack_data key="AddedMultiplierPerHack" value="1.5" />
+		</hack_data>
+		<hack_data hack_type="IncreaseWeaponPower"
+			override_cost_in_hacking_points="20"
+			cost_in_hacking_points_multiplier_per_times_same_unit_hacked="2"
+			max_times_single_unit_can_be_hacked="3"
+		>
+			<custom_hack_data key="AddedMultiplierPerHack" value="1.5" />
+		</hack_data>
+		<system name="AntimatterJaws" display_name="反物质之颚"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="3000" range="Normal3" shot_speed="Normal" rate_of_fire="Devourer"
+			shot_type_data="DevourerShot"
+			shots_per_salvo="10"
+			health_change_per_damage_dealt="0.1"
+		>
+			<outgoing_damage_modifier based_on="TargetTimeAtPlanet" comparison_type="AtMost" compared_to="15" multiplier="3" added_multiplier_per_mark="1" />
+		</system>
+		<system name="AntimatterFang" display_name="反物质毒牙"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="180000" range="High1" shot_speed="Normal" rate_of_fire="VeryLow"
+			shot_type_data="DevourerShot_AOEBurstAtEnd"
+			area_of_effect_size="800" aoe_spreads_damage_among_available_targets="true"
+			health_change_per_damage_dealt="0.1"
+		>
+			<outgoing_damage_modifier based_on="TargetTimeAtPlanet" comparison_type="AtMost" compared_to="15" multiplier="3" added_multiplier_per_mark="1" />
+		</system>
+		<incoming_damage_modifier based_on="TargetTimeAtPlanet" comparison_type="AtMost" compared_to="30" multiplier="0.5" />
+	</entity>
+</root>

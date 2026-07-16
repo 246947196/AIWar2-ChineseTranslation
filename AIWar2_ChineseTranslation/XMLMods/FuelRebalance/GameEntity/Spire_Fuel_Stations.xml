@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<entity name="SpireMajorArgonFuelStation"  
+		copy_from="MajorArgonFuelStation" 
+		tags="SpireCityBuildMenu,ArgonFuel,If_Fuel_Enabled"
+		required_expansion_list="1_The_Spire_Rises"
+		thematic_groups="FallenSpire,Spire"
+		voice_group="Spire"
+		material_override_path="Assets/_FinalGameMeshes/Spire/SpireLostFrigate/SpireLostFrigate.prefab"
+		display_name="尖塔氩燃料发生器" 
+		display_name_for_sidebar="尖塔氩燃料"
+		description="高级尖塔城市可建造的燃料发生器。适用于为中小型飞船提供动力，将大量电力转化为燃料。每个行星仅限1个，全银河系所有尖塔燃料发生器总数不超过2个。"
+		build_sidebar_categories_i_am_part_of="SpireCity"
+		never_leaves_remains="false"
+		city_socket_cost="2"
+		name_for_city_sockets="Spire Casing"
+		name_for_city_sockets_short="Casing"
+		minimum_required_city_level_for_construction="7" 
+		base_ship_cap_in_custom_city="1" 
+		mark_level_scale_style="OriginalWithoutCapRise"
+		metal_cost="1000000"
+		energy_consumption="800000"
+		fuel_use="0"
+		base_galaxy_wide_cap_for_players_constructing="2"
+		galaxy_wide_cap_match_string="SpireFuel"
+            >	
+		<resource_production type="FuelArgon" amount="800000" />
+    </entity>
+	
+	<entity name="SpireMajorRadonFuelStation"  
+		copy_from="MajorRadonFuelStation" 
+		tags="SpireCityBuildMenu,RadonFuel,If_Fuel_Enabled"
+		required_expansion_list="1_The_Spire_Rises"
+		thematic_groups="FallenSpire,Spire"
+		voice_group="Spire"
+		material_override_path="Assets/_FinalGameMeshes/Spire/SpireLostFrigate/SpireLostFrigate.prefab"
+		display_name="尖塔氡燃料发生器" 
+		display_name_for_sidebar="尖塔氡燃料"
+		description="高级尖塔城市可建造的燃料发生器。适用于为炮塔和力场护盾提供动力，将大量电力转化为燃料。每个行星仅限1个，全银河系所有尖塔燃料发生器总数不超过2个。"
+		build_sidebar_categories_i_am_part_of="SpireCity"
+		never_leaves_remains="false"
+		city_socket_cost="2"
+		name_for_city_sockets="Spire Casing"
+		name_for_city_sockets_short="Casing"
+		minimum_required_city_level_for_construction="7" 
+		base_ship_cap_in_custom_city="1" 
+		mark_level_scale_style="OriginalWithoutCapRise"
+		metal_cost="1000000"
+		energy_consumption="800000"
+		fuel_use="0"
+		base_galaxy_wide_cap_for_players_constructing="2"
+		galaxy_wide_cap_match_string="SpireFuel"
+            >	
+		<resource_production type="FuelRadon" amount="800000" />
+    </entity>
+	
+	<entity name="SpireMajorXenonFuelStation"  
+		copy_from="MajorXenonFuelStation" 
+		tags="SpireCityBuildMenu,XenonFuel,If_Fuel_Enabled"
+		required_expansion_list="1_The_Spire_Rises"
+		thematic_groups="FallenSpire,Spire"
+		voice_group="Spire"
+		material_override_path="Assets/_FinalGameMeshes/Spire/SpireLostFrigate/SpireLostFrigate.prefab"
+		display_name="尖塔氙燃料发生器" 
+		display_name_for_sidebar="尖塔氙燃料"
+		description="高级尖塔城市可建造的燃料发生器。适用于为非常大型和强大的飞船提供动力，将大量电力转化为燃料。每个行星仅限1个，全银河系所有尖塔燃料发生器总数不超过2个。"
+		build_sidebar_categories_i_am_part_of="SpireCity"
+		never_leaves_remains="false"
+		city_socket_cost="2"
+		name_for_city_sockets="Spire Casing"
+		name_for_city_sockets_short="Casing"
+		minimum_required_city_level_for_construction="7" 
+		base_ship_cap_in_custom_city="1" 
+		mark_level_scale_style="OriginalWithoutCapRise"
+		metal_cost="1000000"
+		energy_consumption="800000"
+		fuel_use="0"
+		base_galaxy_wide_cap_for_players_constructing="2"
+		galaxy_wide_cap_match_string="SpireFuel"
+            >	
+		<resource_production type="FuelXenon" amount="800000" />
+    </entity>
+  
+</root>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  
+          
+    <faction name="ZenithDysonSphere" is_partial_record="true">
+    <custom_field name="SeedOnNomadIfPossible" is_advanced_setting="true" display_name="若可能则在游牧行星上生成" description="如果启用了游牧行星，则尝试在游牧行星上生成该派系。" sort_group="250" setting_type="BoolToggle" default="false" />
+  </faction>
+  <faction name="MacrophageInfestation" is_partial_record="true">
+    <custom_field name="SeedOnNomadIfPossible" is_advanced_setting="true" display_name="若可能则在游牧行星上生成" description="如果启用了游牧行星，则尝试在游牧行星上生成该派系。" sort_group="250" setting_type="BoolToggle" default="false" />
+  </faction>
+
+    <faction name="Scourge" is_partial_record="true" required_expansion_list="1_The_Spire_Rises">
+      
+        <custom_field name="FirstArmory" arbitrary_options="Zenith" />
+    </faction>
+
+
+  <faction name="DarkSpire" is_partial_record="true" description="银河系中的AI行星上存在着几座神秘而古老的建筑。它们无法被伤害，也没有武器，但当有飞船在同一行星上被摧毁时，它们会吸收能量。当它们吸收过多能量时会发生什么呢？  &lt;color=#f25e1c&gt;影响重大：&lt;/color&gt; 这个派系的玩法截然不同，通常是被动反应型的。根据事件的发展，它们可能几乎无所作为，也可能主宰整个银河系。   同时启用多个黑暗联盟成员会极大地增加游戏难度" ai_can_send_waves_against_this="false" CanBeHostileToAll="true" CanBeDarkAlliance="true">
+    <custom_field name="Allegiance" display_name="阵营" description="该派系默认是黑暗联盟的成员" sort_group="200" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Dark Alliance,Hostile To All" default_option="Dark Alliance" />
+  </faction>
+
+  <faction name="AI" is_partial_record="true">
+
+    <custom_field name="WormholeBorerIncomeModifier" is_advanced_setting="true" display_name="虫洞开凿器收入修正" description="允许你影响虫洞开凿器的生成速率。难度5及以上时启用虫洞开凿器。" sort_group="260" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Disabled,Slower,Normal,Faster,Very Fast" default_option="Normal" />
+    <custom_field name="StartingAILayout" is_advanced_setting="true" display_name="AI Layout" description="How to organize this AI's starting planets. By default AIs have a small cluster of planets around their homeworlds, then the rest of the planets are assigned randomly." sort_group="260" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Small Cluster,Large Cluster,Randomly Sized Cluster,Random" default_option="Small Cluster" />
+    <custom_field name="WormholeBorerIncomeModifier" is_advanced_setting="true" display_name="Wormhole Borer Income Modifier" description="Allows you to influence wormhole borer rate. Wormhole Borers are enabled for difficulties 5 and above." sort_group="260" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Disabled,Slower,Normal,Faster,Very Fast" default_option="Normal" />
+
+  </faction>
+
+</root>

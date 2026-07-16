@@ -1330,7 +1330,7 @@
 			y_offset_of_icon="30"
 			collision_priority="810"
 			display_name="尖塔维修中心" display_name_for_sidebar="尖塔维修"
-			description="该设施为友方受损单位提供快速维修服务。"
+			description="该设施为友方受损舰船提供快速维修服务。"
 			starting_mark_level="Mark1" build_sidebar_categories_i_am_part_of="SpireCity" this_unit_gets_direct_science_upgrades_from_central_fleet="true"
 			cost_for_ai_to_purchase="10000" strength_multiplier="1.2" city_socket_cost="1" name_for_city_sockets="Spire Casing" base_ship_cap_in_custom_city="2" added_ship_cap_in_custom_city_per_city_level="1" added_ship_cap_in_custom_city_per_city_level_above_level="1" mark_level_scale_style="OriginalWithoutCapRise"
 			name_for_city_sockets_short="Casing"

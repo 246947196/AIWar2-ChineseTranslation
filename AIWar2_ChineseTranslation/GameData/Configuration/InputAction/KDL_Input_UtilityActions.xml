@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <input_action name="HoldToAdjustFrameFrequencyInUI"
+      category="Hidden" display_name="按住以调整游戏速度样式"
+      description="~*~"
+      check_type="Custom" key="LeftControl" />
+  <input_action name="IncreaseFrameSize"
+      category="实用工具" display_name="提高模拟速度"
+      description="加快整个模拟的速度。使游戏时钟运行更快，事件发生更快，以及所有其他方面 —— 这是名副其实的快进功能。而且不会造成额外的CPU负载！"
+      dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Input_MainHandler"
+      default_should_override_saved_if_older_than_version="760_KeybindingsAgain"
+      key="Plus" />
+  <input_action name="DecreaseFrameSize"
+      category="实用工具" display_name="降低模拟速度"
+      description="降低整个模拟的速度。使游戏时钟运行更慢，事件发生更慢，以及所有其他方面 —— 这实际上是让游戏以慢动作运行，所以不会像改变游戏速度样式那样影响游戏平衡。"
+      dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Input_MainHandler"
+      default_should_override_saved_if_older_than_version="760_KeybindingsAgain"
+      key="Minus" />
+  <input_action name="IncreaseFrameFrequency"
+      category="实用工具" display_name="更快节奏的游戏速度样式"
+      description="每按一次这个键，单位移动速度和攻击力就会逐渐提高。这会导致战斗节奏更快，需要更快的点击速度。这会对游戏平衡产生影响。"
+      dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Input_MainHandler"
+      default_should_override_saved_if_older_than_version="760_KeybindingsAgain"
+      key="Plus" modifier_1="LeftControl" />
+  <input_action name="DecreaseFrameFrequency"
+      category="实用工具" display_name="更从容的游戏速度样式"
+      description="每按一次这个键，单位移动速度和攻击力就会逐渐降低。这会带来更深思熟虑的战斗体验，减少匆忙感。这会对游戏平衡产生影响。"
+      dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Input_MainHandler"
+      default_should_override_saved_if_older_than_version="760_KeybindingsAgain"
+      key="Minus" modifier_1="LeftControl" />
+  <input_action name="ShowShipRanges_All"
+      category="覆盖层" display_name="显示单位射程（所有单位）"
+      description="显示该行星上所有单位的所有武器攻击范围。"
+      default_should_override_saved_if_older_than_version="KeyRebindings_744"
+      check_type="Custom" key="Z" modifier_1="LeftShift" />
+  <input_action name="ShowShipRanges_Selected"
+      category="覆盖层" display_name="显示单位射程（仅选中的单位）"
+      description="显示你在该行星上选中的所有单位的所有武器攻击范围。"
+      default_should_override_saved_if_older_than_version="KeyRebindings_744"
+      check_type="Custom" key="Z" />
+  <input_action name="ShowShipRanges_Hovered"
+      category="覆盖层" display_name="显示单位射程（仅鼠标悬停的单位）"
+      description="显示你鼠标悬停的单位的所有武器攻击范围。"
+      default_should_override_saved_if_older_than_version="KeyRebindings_744"
+      check_type="Custom" key="Z" />
+  <input_action name="ShowShipOrders"
+      category="覆盖层" display_name="显示单位命令（仅玩家）"
+      description="显示指示你选中的单位移动命令的线条。"
+      default_should_override_saved_if_older_than_version="KeyRebindings_744"
+      check_type="Custom" key="LeftShift" />
+  <input_action name="MakePlanetClickSelectAndSwitchView"
+      category="通用" display_name="点击行星时同时选中并切换视图"
+      description="通常情况下，在星系地图上左键点击一个行星时，游戏只会选中该行星，而不会立即切换到行星视图。按住这个快捷键将使其不仅选中行星，还会一步到位地为你'切换到行星视图'。"
+      default_should_override_saved_if_older_than_version="KeyRebindings_744"
+      check_type="Custom" key="LeftControl" />
+
+  <input_action name="ShowPlanetNamesOnSinglePlanet"
+      category="覆盖层" display_name="显示行星名称（单行星视图）"
+      description="在单行星视图中显示行星名称。"
+      check_type="Custom" key="LeftControl" />
+
+  <input_action name="ShowPlanetNamesOnGalaxyMap"
+      category="覆盖层" display_name="显示行星名称（星系地图）"
+      description="在星系地图视图中显示所有行星的名称。"
+      check_type="Custom" key="LeftControl" />
+</root>

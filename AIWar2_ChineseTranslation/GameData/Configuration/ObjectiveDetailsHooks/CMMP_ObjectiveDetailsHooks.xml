@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--  PrimeObjectives
+        ***********************************************************************-->
+  
+  <objective_details_hook name="DestroyEnemyKing" category="PrimeObjectives"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.DestroyEnemyKing"
+          display_name_color="f5a5ff" finish_display_name_with_related_entity1_name_and_planet="true"
+          click_behavior="CenterOnRelatedEntity1" focus_type="FocusOnRelatedEntity1"
+          serialization_type="RelatedEntity1AndDisplayName" importance_calculation="RelatedEntity1Importance"
+          difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedEntity1"/>
+
+  <objective_details_hook name="FindEnemyKing" category="PrimeObjectives" 
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.FindEnemyKing"
+          display_name_color="f5a5ff" default_display_name="定位 AI 霸主"
+		  use_default_display_name_instead_of_display_name_base="true"
+          click_behavior="DoNothing" focus_type="FocusUnexploredPlanets"
+          serialization_type="Nothing" importance_calculation="RelatedEntity1Importance"
+          difficulty_method="Nothing"/>
+		  
+  <objective_details_hook name="DestroyCustomKing" category="PrimeObjectives" 
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.DestroyCustomKing"
+          default_display_name="摧毁中央指挥部"
+          click_behavior="UseClickHandler" focus_type="None"
+          serialization_type="Nothing" importance_calculation="NotSettable"
+		  finish_display_name_with_related_string="true" use_default_display_name_instead_of_display_name_base="true"
+          difficulty_method="Nothing"/>
+		  
+  <objective_details_hook name="LiberatePlanets" category="PrimeObjectives" 
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.LiberatePlanets"
+          default_display_name="从...解放行星"
+          click_behavior="UseClickHandler" focus_type="None"
+          serialization_type="Nothing" importance_calculation="NotSettable"
+		  finish_display_name_with_related_string="true" use_default_display_name_instead_of_display_name_base="true"
+          difficulty_method="Nothing"/>
+		  
+  <objective_details_hook name="LiberatePlanets_ExcludeHomeTerritory" category="PrimeObjectives" 
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.LiberatePlanets_ExcludeHomeTerritory"
+          default_display_name="从...解放非核心行星"
+          click_behavior="UseClickHandler" focus_type="None"
+          serialization_type="Nothing" importance_calculation="NotSettable"
+		  finish_display_name_with_related_string="true" use_default_display_name_instead_of_display_name_base="true"
+          difficulty_method="Nothing"/>
+		  
+  <objective_details_hook name="ExterminateMobileCombattants" category="PrimeObjectives" 
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.ExterminateMobileCombattants"
+          default_display_name="消灭...的移动军事力量"
+          click_behavior="UseClickHandler" focus_type="None"
+          serialization_type="Nothing" importance_calculation="NotSettable"
+		  finish_display_name_with_related_string="true" use_default_display_name_instead_of_display_name_base="true"
+          difficulty_method="Nothing"/>
+		  
+  <objective_details_hook name="ExterminateCombattants" category="PrimeObjectives" 
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.ExterminateCombattants"
+          default_display_name="消灭...的军事力量"
+          click_behavior="UseClickHandler" focus_type="None"
+          serialization_type="Nothing" importance_calculation="NotSettable"
+		  finish_display_name_with_related_string="true" use_default_display_name_instead_of_display_name_base="true"
+          difficulty_method="Nothing"/>
+		  
+  <objective_details_hook name="ExterminateAll" category="PrimeObjectives" 
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.ExterminateAll"
+          default_display_name="消灭全部"
+          click_behavior="UseClickHandler" focus_type="None"
+          serialization_type="Nothing" importance_calculation="NotSettable"
+		  finish_display_name_with_related_string="true" use_default_display_name_instead_of_display_name_base="true"
+          difficulty_method="Nothing"/>
+		  
+  <objective_details_hook name="SecureHomeworld" category="PrimeObjectives" 
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.SecureHomeworld"
+          default_display_name="确保"
+          click_behavior="UseClickHandler" focus_type="None"
+          serialization_type="Nothing" importance_calculation="NotSettable"
+		  finish_display_name_with_related_string="true" use_default_display_name_instead_of_display_name_base="true"
+          difficulty_method="Nothing"/>
+  
+  <!--  CriticalDestructionTargets
+        ***********************************************************************-->
+
+  <objective_details_hook name="DestroyToReduceProgress" category="CriticalDestructionTargets"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.DestroyToReduceProgress"
+          display_name_color="ff5782" finish_display_name_with_related_entity1_name_and_planet="true"
+          click_behavior="CenterOnRelatedEntity1" focus_type="FocusOnRelatedEntity1"
+          serialization_type="RelatedEntity1AndDisplayName" importance_calculation="RelatedEntity1Importance"
+          difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedEntity1"/>
+  <objective_details_hook name="DestroyToWeakenCPA" category="CriticalDestructionTargets"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.DestroyToWeakenCPA"
+          display_name_color="ff5782" finish_display_name_with_related_entity1_name_and_planet="true"
+          click_behavior="CenterOnRelatedEntity1" focus_type="FocusOnRelatedEntity1"
+          serialization_type="RelatedEntity1AndDisplayName" importance_calculation="RelatedEntity1Importance"
+          difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedEntity1"/>
+
+  <objective_details_hook name="HoldToReduceAIPLoseToRaiseAIP" category="CriticalDestructionTargets"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.HoldToReduceAIPLoseToRaiseAIP"
+          display_name_color="ff5782" finish_display_name_with_related_entity1_name_and_planet="true"
+          click_behavior="CenterOnRelatedEntity1" focus_type="FocusOnRelatedEntity1"
+          serialization_type="RelatedEntity1AndDisplayName" importance_calculation="RelatedEntity1Importance"
+          difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedEntity1"/>
+
+  <objective_details_hook name="HackToReduceProgress" category="CriticalDestructionTargets"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.HackToReduceProgress"
+          display_name_color="ff5782" finish_display_name_with_related_entity1_name_and_planet="true"
+          click_behavior="CenterOnRelatedEntity1" focus_type="FocusOnRelatedEntity1"
+          serialization_type="RelatedEntity1AndDisplayName" importance_calculation="RelatedEntity1Importance"
+          difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedEntity1"/>
+
+  <objective_details_hook name="DestroyInstigatorBase" category="CriticalDestructionTargets"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.DestroyInstigatorBase"
+          use_related_entity1_color_for_display_name="true" finish_display_name_with_related_entity1_name_and_planet="true"
+          click_behavior="CenterOnRelatedEntity1" focus_type="FocusOnRelatedEntity1"
+          serialization_type="RelatedEntity1AndDisplayName" importance_calculation="RelatedEntity1Importance"
+          difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedEntity1"/>
+
+  <objective_details_hook name="FindInstigatorBases" category="CriticalDestructionTargets"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.FindInstigatorBases"
+          display_name_color="ff5782" default_display_name="探索星系寻找煽动者基地"
+          click_behavior="DoNothing" focus_type="FocusUnexploredPlanets"
+          serialization_type="RelatedInt1Only" importance_calculation="NotSettable"
+          difficulty_method="Nothing"/>
+  
+  <!--  CriticalCapturables
+        ***********************************************************************-->
+
+  <objective_details_hook name="HackShipGranter" category="CriticalCapturables"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.HackShipGranter"
+          display_name_color="57ffca" finish_display_name_with_related_entity1_name_and_planet="true"
+          click_behavior="CenterOnRelatedEntity1" focus_type="FocusOnRelatedEntity1"
+          serialization_type="RelatedEntity1AndDisplayName" importance_calculation="RelatedEntity1Importance"
+          difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedEntity1"/>
+
+  <objective_details_hook name="HackShipCapLineGranter" category="CriticalCapturables"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.HackShipCapLineGranter"
+          display_name_color="ffd257" finish_display_name_with_related_entity1_name_and_planet="true"
+          click_behavior="CenterOnRelatedEntity1" focus_type="FocusOnRelatedEntity1"
+          serialization_type="RelatedEntity1AndDisplayName" importance_calculation="RelatedEntity1Importance"
+          difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedEntity1"/>
+
+  <objective_details_hook name="HackTechVault" category="CriticalCapturables"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.HackTechVault"
+          display_name_color="57e1ff" finish_display_name_with_related_entity1_name_and_planet="true"
+          click_behavior="CenterOnRelatedEntity1" focus_type="FocusOnRelatedEntity1"
+          serialization_type="RelatedEntity1AndDisplayName" importance_calculation="RelatedEntity1Importance"
+          difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedEntity1"/>
+
+  <objective_details_hook name="ClaimMinorForge" category="CriticalCapturables"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.ClaimSocketIncreaser"
+          display_name_color="a1ffa1" default_display_name="占领小型锻造厂 "
+          finish_display_name_with_related_entity1_planet_only="true"
+          use_default_display_name_instead_of_display_name_base="true"
+          click_behavior="CenterOnRelatedEntity1" focus_type="FocusOnRelatedEntity1"
+          serialization_type="RelatedEntity1Only" importance_calculation="RelatedEntity1Importance"
+          difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedEntity1"/>
+
+  <objective_details_hook name="ClaimMajorForge" category="CriticalCapturables"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.ClaimSocketIncreaser"
+          display_name_color="a1e8ff" default_display_name="占领大型锻造厂 "
+          finish_display_name_with_related_entity1_planet_only="true"
+          use_default_display_name_instead_of_display_name_base="true"
+          click_behavior="CenterOnRelatedEntity1" focus_type="FocusOnRelatedEntity1"
+          serialization_type="RelatedEntity1Only" importance_calculation="RelatedEntity1Importance"
+          difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedEntity1"/>
+
+  <!--  CapturableFlagships
+        ***********************************************************************-->
+
+  <objective_details_hook name="ReclaimFlagship_Base" category="CapturableFlagships"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.ReclaimFlagship"
+          display_name_color="afff77" default_display_name="占领舰队 " finish_display_name_with_related_entity1_planet_only="true"
+          use_default_display_name_instead_of_display_name_base="true"
+          click_behavior="CenterOnRelatedEntity1" focus_type="FocusOnRelatedEntity1"
+          serialization_type="RelatedEntity1Only" importance_calculation="RelatedEntity1Importance"
+          difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedEntity1"/>
+  
+  <objective_details_hook name="ReclaimFlagship_Officer" copy_from="ReclaimFlagship_Base"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.ReclaimFlagship"
+          display_name_color="cf6688" default_display_name="占领军官舰队 "
+          />
+  
+  <objective_details_hook name="ReclaimFlagship_Strike" copy_from="ReclaimFlagship_Base"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.ReclaimFlagship"
+          display_name_color="afff77" default_display_name="占领打击舰队 "
+          />
+
+  <objective_details_hook name="ReclaimFlagship_Support" copy_from="ReclaimFlagship_Base"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.ReclaimFlagship"
+          display_name_color="cfd988" default_display_name="占领支援舰队 "
+          />
+
+  <!--  CapturableBattlestations
+        ***********************************************************************-->
+  <objective_details_hook name="ReclaimBattlestation" category="CapturableBattlestations"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.ReclaimBattlestation"
+          display_name_color="cfd988" default_display_name="占领战斗基地 " finish_display_name_with_related_entity1_planet_only="true"
+          use_default_display_name_instead_of_display_name_base="true"
+          click_behavior="CenterOnRelatedEntity1" focus_type="FocusOnRelatedEntity1"
+          serialization_type="RelatedEntity1Only" importance_calculation="RelatedEntity1Importance"
+          difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedEntity1_DivideBy1000"/>
+
+  <objective_details_hook name="ReclaimCitadel" copy_from="ReclaimBattlestation"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.ReclaimBattlestation"
+          display_name_color="cfd988" default_display_name="占领要塞 " finish_display_name_with_related_entity1_planet_only="true"
+          use_default_display_name_instead_of_display_name_base="true"
+          click_behavior="CenterOnRelatedEntity1" focus_type="FocusOnRelatedEntity1"
+          serialization_type="RelatedEntity1Only" importance_calculation="RelatedEntity1Importance"
+          difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedEntity1_DivideBy1000"/>
+
+  <!--  MoreTurrets
+        ***********************************************************************-->
+  
+  <objective_details_hook name="CaptureGCA" category="MoreTurrets"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.CaptureGCA"
+          display_name_color="cfd988" default_display_name="入侵 GCA " finish_display_name_with_related_entity1_planet_only="true"
+          use_default_display_name_instead_of_display_name_base="true"
+          click_behavior="CenterOnRelatedEntity1" focus_type="FocusOnRelatedEntity1"
+          serialization_type="RelatedEntity1Only" importance_calculation="RelatedEntity1Importance"
+          difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedEntity1"/>
+
+  <objective_details_hook name="HackTSS" category="MoreTurrets"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.CaptureDSS"
+          display_name_color="cfd988" default_display_name="入侵 TSS " finish_display_name_with_related_entity1_planet_only="true"
+          use_default_display_name_instead_of_display_name_base="true"
+          click_behavior="CenterOnRelatedEntity1" focus_type="FocusOnRelatedEntity1"
+          serialization_type="RelatedEntity1Only" importance_calculation="RelatedEntity1Importance"
+          difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedEntity1"/>
+
+  <objective_details_hook name="HackODSS" category="MoreTurrets"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.CaptureDSS"
+          display_name_color="cfd988" default_display_name="入侵 ODSS " finish_display_name_with_related_entity1_planet_only="true"
+          use_default_display_name_instead_of_display_name_base="true"
+          click_behavior="CenterOnRelatedEntity1" focus_type="FocusOnRelatedEntity1"
+          serialization_type="RelatedEntity1Only" importance_calculation="RelatedEntity1Importance"
+          difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedEntity1"/>
+
+  <!--  ResourceGathering
+        ***********************************************************************-->
+  
+  <objective_details_hook name="HackSpireArchive" category="ResourceGathering"
+            dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.HackSpireArchive"
+            display_name_color="cfd988" default_display_name="入侵尖塔档案馆获取科技 " finish_display_name_with_related_entity1_planet_only="true"
+            use_default_display_name_instead_of_display_name_base="true"
+            click_behavior="CenterOnRelatedEntity1" focus_type="FocusOnRelatedEntity1"
+            serialization_type="RelatedEntity1Only" importance_calculation="RelatedEntity1Importance"
+            difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedEntity1"/>
+
+  <objective_details_hook name="AcquireScienceByDestruction" category="ResourceGathering"
+            dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.AcquireScienceByDestruction"
+            display_name_color="cfd988" default_display_name="通过摧毁获取科技 " finish_display_name_with_related_entity1_name_and_planet="true"
+            use_default_display_name_instead_of_display_name_base="true"
+            click_behavior="CenterOnRelatedEntity1" focus_type="FocusOnRelatedEntity1"
+            serialization_type="RelatedEntity1Only" importance_calculation="RelatedEntity1Importance"
+            difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedEntity1"/>
+
+  <objective_details_hook name="AcquireHackingByDestruction" category="ResourceGathering"
+            dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.AcquireHackingByDestruction"
+            display_name_color="cfd988" default_display_name="通过摧毁获取入侵点数 " finish_display_name_with_related_entity1_name_and_planet="true"
+            use_default_display_name_instead_of_display_name_base="true"
+            click_behavior="CenterOnRelatedEntity1" focus_type="FocusOnRelatedEntity1"
+            serialization_type="RelatedEntity1Only" importance_calculation="RelatedEntity1Importance"
+            difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedEntity1"/>
+
+  <objective_details_hook name="AcquireScienceAndHackingByDestruction" category="ResourceGathering"
+            dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.AcquireScienceAndHackingByDestruction"
+            display_name_color="cfd988" default_display_name="通过摧毁获取入侵点数和科技 " finish_display_name_with_related_entity1_name_and_planet="true"
+            use_default_display_name_instead_of_display_name_base="true"
+            click_behavior="CenterOnRelatedEntity1" focus_type="FocusOnRelatedEntity1"
+            serialization_type="RelatedEntity1Only" importance_calculation="RelatedEntity1Importance"
+            difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedEntity1"/>
+
+  <objective_details_hook name="AcquireScienceByDestructionOnPlanet" category="ResourceGathering"
+            dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.AcquireScienceByDestructionOnPlanet"
+            display_name_color="cfd988" default_display_name="通过摧毁获取科技 " finish_display_name_with_related_planet1="true"
+            use_default_display_name_instead_of_display_name_base="false"
+            click_behavior="CenterOnRelatedPlanet1" focus_type="FocusOnRelatedPlanet1"
+            serialization_type="RelatedPlanet1AndRelatedInt1" importance_calculation="RelatedPlanet1Importance"
+            difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedPlanet1"/>
+
+  <objective_details_hook name="AcquireHackingByDestructionOnPlanet" category="ResourceGathering"
+            dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.AcquireHackingByDestructionOnPlanet"
+            display_name_color="cfd988" default_display_name="通过摧毁获取入侵点数 " finish_display_name_with_related_planet1="true"
+            use_default_display_name_instead_of_display_name_base="false"
+            click_behavior="CenterOnRelatedPlanet1" focus_type="FocusOnRelatedPlanet1"
+            serialization_type="RelatedPlanet1AndRelatedInt1" importance_calculation="RelatedPlanet1Importance"
+            difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedPlanet1"/>
+
+  <objective_details_hook name="AcquireScienceAndHackingByDestructionOnPlanet" category="ResourceGathering"
+            dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.AcquireScienceAndHackingByDestructionOnPlanet"
+            display_name_color="cfd988" default_display_name="通过摧毁获取科技和入侵点数 " finish_display_name_with_related_planet1="true"
+            use_default_display_name_instead_of_display_name_base="false"
+            click_behavior="CenterOnRelatedPlanet1" focus_type="FocusOnRelatedPlanet1"
+            serialization_type="RelatedPlanet1AndRelatedInt1" importance_calculation="RelatedPlanet1Importance"
+            difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedPlanet1"/>
+
+  <objective_details_hook name="AcquireScienceFromPlanet" category="ResourceGathering"
+            dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.AcquireScienceFromPlanet"
+            display_name_color="cfd988" default_display_name="科技 " finish_display_name_with_related_planet1="true"
+            use_default_display_name_instead_of_display_name_base="true"
+            click_behavior="CenterOnRelatedPlanet1" focus_type="FocusOnRelatedPlanet1"
+            serialization_type="RelatedPlanet1AndRelatedInt1" importance_calculation="RelatedPlanet1Importance"
+            difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedPlanet1"/>
+
+  <objective_details_hook name="AcquireHackingFromPlanet" category="ResourceGathering"
+            dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.AcquireHackingFromPlanet"
+            display_name_color="cfd988" default_display_name="入侵点数 " finish_display_name_with_related_planet1="true"
+            use_default_display_name_instead_of_display_name_base="true"
+            click_behavior="CenterOnRelatedPlanet1" focus_type="FocusOnRelatedPlanet1"
+            serialization_type="RelatedPlanet1AndRelatedInt1" importance_calculation="RelatedPlanet1Importance"
+            difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedPlanet1"/>
+  
+  <objective_details_hook name="CaptureZenithPowerGenerator" category="ResourceGathering"
+            dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.CaptureZenithPowerGenerator"
+            display_name_color="cfd988" default_display_name="占领 ZPG 获取能量 " finish_display_name_with_related_entity1_planet_only="true"
+            use_default_display_name_instead_of_display_name_base="true"
+            click_behavior="CenterOnRelatedEntity1" focus_type="FocusOnRelatedEntity1"
+            serialization_type="RelatedEntity1Only" importance_calculation="RelatedEntity1Importance"
+            difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedEntity1"/>
+
+  <objective_details_hook name="CaptureZenithMatterConverter" category="ResourceGathering"
+            dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.CaptureZenithMatterConverter"
+            display_name_color="cfd988" default_display_name="占领 ZMC 获取金属 " finish_display_name_with_related_entity1_planet_only="true"
+            use_default_display_name_instead_of_display_name_base="true"
+            click_behavior="CenterOnRelatedEntity1" focus_type="FocusOnRelatedEntity1"
+            serialization_type="RelatedEntity1Only" importance_calculation="RelatedEntity1Importance"
+            difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedEntity1"/>
+  
+  <!--  OtherFactions
+        ***********************************************************************-->
+
+  <objective_details_hook name="InvestigateBeacon" category="OtherFactions"
+            dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.InvestigateBeacon"
+            use_related_entity1_color_for_display_name="true" default_display_name="调查 " finish_display_name_with_related_entity1_name_and_planet="true"
+            use_default_display_name_instead_of_display_name_base="true"
+            click_behavior="CenterOnRelatedEntity1" focus_type="FocusOnRelatedEntity1"
+            serialization_type="RelatedEntity1Only" importance_calculation="RelatedEntity1Importance"
+            difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedEntity1"/>
+
+  <objective_details_hook name="ExpandScourgeInfrastructure" category="OtherFactions"
+            dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.ExpandScourgeInfrastructure"
+            use_related_string_as_color="true" default_display_name="为天灾扩张创造空间"
+            use_default_display_name_instead_of_display_name_base="true"
+            click_behavior="DoNothing" focus_type="DarkenAllPlanet"
+            serialization_type="RelatedInt1AndRelatedInt2AndRelatedString" importance_calculation="NotSettable"
+            difficulty_method="Nothing"/>
+
+  <objective_details_hook name="DestroyScourgeInfrastructure" category="OtherFactions"
+            dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.DestroyScourgeInfrastructure"
+            use_related_string_as_color="true" default_display_name="摧毁天灾基础设施"
+            use_default_display_name_instead_of_display_name_base="true"
+            click_behavior="DoNothing" focus_type="DarkenAllPlanet"
+            serialization_type="RelatedInt1AndRelatedInt2AndRelatedInt3AndRelatedString" importance_calculation="NotSettable"
+            difficulty_method="Nothing"/>
+
+  <objective_details_hook name="FindNanocaust" category="OtherFactions"
+            dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.FindNanocaust"
+            use_related_string_as_color="true" default_display_name="寻找纳米焚烧"
+            use_default_display_name_instead_of_display_name_base="true"
+            click_behavior="DoNothing" focus_type="FocusUnexploredPlanets"
+            serialization_type="RelatedStringOnly" importance_calculation="NotSettable"
+            difficulty_method="Nothing"/>
+
+  <objective_details_hook name="FightNanocaustInvasion" category="OtherFactions"
+            dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.FightNanocaustInvasion"
+            use_related_string_as_color="true" default_display_name="对抗纳米焚烧入侵"
+            use_default_display_name_instead_of_display_name_base="true"
+            click_behavior="DoNothing" focus_type="DarkenAllPlanet"
+            serialization_type="RelatedStringOnly" importance_calculation="NotSettable"
+            difficulty_method="Nothing"/>
+
+  <objective_details_hook name="DestroySpireCitadel" category="OtherFactions"
+            dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.DestroySpireCitadel"
+            use_related_entity1_color_for_display_name="true" default_display_name="摧毁尖塔要塞 " finish_display_name_with_related_entity1_planet_only="true"
+            use_default_display_name_instead_of_display_name_base="true"
+            click_behavior="CenterOnRelatedEntity1" focus_type="FocusOnRelatedEntity1"
+            serialization_type="RelatedEntity1Only" importance_calculation="RelatedEntity1Importance"
+            difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedEntity1"/>
+
+  <objective_details_hook name="DestroySpireResearchLab" category="OtherFactions"
+            dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.DestroySpireResearchLab"
+            use_related_entity1_color_for_display_name="true" default_display_name="摧毁尖塔研究实验室 " finish_display_name_with_related_entity1_planet_only="true"
+            use_default_display_name_instead_of_display_name_base="true"
+            click_behavior="CenterOnRelatedEntity1" focus_type="FocusOnRelatedEntity1"
+            serialization_type="RelatedEntity1Only" importance_calculation="RelatedEntity1Importance"
+            difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedEntity1"/>
+
+  <objective_details_hook name="GetSpireDebris" category="OtherFactions"
+            dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.GetSpireDebris"
+            use_related_entity1_color_for_display_name="true" default_display_name="收集尖塔残骸 " finish_display_name_with_related_entity1_planet_only="true"
+            use_default_display_name_instead_of_display_name_base="true"
+            click_behavior="CenterOnRelatedEntity1" focus_type="FocusOnRelatedEntity1"
+            serialization_type="RelatedEntity1Only" importance_calculation="RelatedEntity1Importance"
+            difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedEntity1"/>
+
+  <objective_details_hook name="DestroyDysonAntagonizer" category="OtherFactions"
+            dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.DestroyDysonAntagonizer"
+            use_related_entity1_color_for_display_name="true" default_display_name="摧毁戴森对抗者 " finish_display_name_with_related_entity1_planet_only="true"
+            use_default_display_name_instead_of_display_name_base="true"
+            click_behavior="CenterOnRelatedEntity1" focus_type="FocusOnRelatedEntity1"
+            serialization_type="RelatedEntity1Only" importance_calculation="RelatedEntity1Importance"
+            difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedEntity1"/>
+
+  <objective_details_hook name="DestroyNanocaustHive" category="OtherFactions"
+            dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.DestroyNanocaustHive"
+            use_related_entity1_color_for_display_name="true" default_display_name="摧毁纳米焚烧巢穴 " finish_display_name_with_related_entity1_planet_only="true"
+            use_default_display_name_instead_of_display_name_base="true"
+            click_behavior="CenterOnRelatedEntity1" focus_type="FocusOnRelatedEntity1"
+            serialization_type="RelatedEntity1Only" importance_calculation="RelatedEntity1Importance"
+            difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedEntity1"/>
+
+  <objective_details_hook name="RescueDysonSphere" category="OtherFactions"
+            dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.RescueDysonSphere"
+            use_related_entity1_color_for_display_name="true" default_display_name="解放戴森球 " finish_display_name_with_related_entity1_planet_only="true"
+            use_default_display_name_instead_of_display_name_base="true"
+            click_behavior="CenterOnRelatedEntity1" focus_type="FocusOnRelatedEntity1"
+            serialization_type="RelatedEntity1Only" importance_calculation="RelatedEntity1Importance"
+            difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedEntity1"/>
+
+  <objective_details_hook name="FindDysonSpheres" category="OtherFactions"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.FindDysonSpheres"
+          use_related_string_as_color="true" default_display_name="探索星系寻找戴森球"
+          click_behavior="DoNothing" focus_type="FocusUnexploredPlanets"
+          serialization_type="RelatedInt1AndRelatedString" importance_calculation="NotSettable"
+          difficulty_method="Nothing"/>
+  
+  <!--  OtherCapturables
+        ***********************************************************************-->
+
+  <objective_details_hook name="HandleRiskAnalyzer" category="OtherCapturables"
+            dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.HandleRiskAnalyzer"
+            use_related_entity1_color_for_display_name="true" default_display_name="处理风险分析器 " finish_display_name_with_related_entity1_planet_only="true"
+            use_default_display_name_instead_of_display_name_base="true"
+            click_behavior="CenterOnRelatedEntity1" focus_type="FocusOnRelatedEntity1"
+            serialization_type="RelatedEntity1Only" importance_calculation="RelatedEntity1Importance"
+            difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedEntity1"/>
+
+  <objective_details_hook name="FindRiskAnalyzers" category="OtherCapturables"
+            dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.FindRiskAnalyzers"
+            display_name_color="cfd988" default_display_name="探索星系寻找风险分析器"
+            use_default_display_name_instead_of_display_name_base="true"
+            click_behavior="DoNothing" focus_type="FocusUnexploredPlanets"
+            serialization_type="RelatedInt1AndRelatedInt2" importance_calculation="NotSettable"
+            difficulty_method="Nothing"/>
+
+
+  <!--  OutguardBeacons
+        ***********************************************************************-->
+
+  <objective_details_hook name="HireOutguard" category="OutguardBeacons"
+            dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.HireOutguard"
+            display_name_color="9eff57" default_display_name="从信标联系前哨守卫 " finish_display_name_with_related_entity1_planet_only="true"
+            use_default_display_name_instead_of_display_name_base="true"
+            click_behavior="CenterOnRelatedEntity1" focus_type="FocusOnRelatedEntity1"
+            serialization_type="RelatedEntity1Only" importance_calculation="RelatedEntity1Importance"
+            difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedEntity1"/>
+
+  <objective_details_hook name="HackOutguardBeacon" category="OutguardBeacons"
+            dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.HackOutguardBeacon"
+            display_name_color="9eff57" default_display_name="入侵前哨守卫信标 " finish_display_name_with_related_entity1_planet_only="true"
+            use_default_display_name_instead_of_display_name_base="true"
+            click_behavior="CenterOnRelatedEntity1" focus_type="FocusOnRelatedEntity1"
+            serialization_type="RelatedEntity1Only" importance_calculation="RelatedEntity1Importance"
+            difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedEntity1"/>
+
+  <objective_details_hook name="FindOutguardBeacons" category="OutguardBeacons"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.FindOutguardBeacons"
+          display_name_color="9eff57" default_display_name="探索星系寻找前哨守卫基地"
+          click_behavior="DoNothing" focus_type="FocusUnexploredPlanets"
+          serialization_type="RelatedInt1Only" importance_calculation="NotSettable"
+          difficulty_method="Nothing"/>
+
+  <!--  OtherDestructionTargets
+        ***********************************************************************-->
+
+  <objective_details_hook name="DestroyAstroTrainDepot" category="OtherDestructionTargets"
+            dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.DestroyAstroTrainDepot"
+            use_related_entity1_color_for_display_name="true" default_display_name="摧毁星际列车站 " finish_display_name_with_related_entity1_planet_only="true"
+            use_default_display_name_instead_of_display_name_base="true"
+            click_behavior="CenterOnRelatedEntity1" focus_type="FocusOnRelatedEntity1"
+            serialization_type="RelatedEntity1Only" importance_calculation="RelatedEntity1Importance"
+            difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedEntity1"/>
+
+  <objective_details_hook name="DestroyUnknownAstroTrainDepot" category="OtherDestructionTargets"
+            dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.DestroyAstroTrainDepot"
+            use_related_entity1_color_for_display_name="true" default_display_name="在星系中寻找并摧毁一个星际列车站"
+            use_default_display_name_instead_of_display_name_base="true"
+            click_behavior="DoNothing" focus_type="FocusUnexploredPlanets"
+            serialization_type="RelatedEntity1Only" importance_calculation="RelatedEntity1Importance"
+            difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedEntity1"/>
+
+  <objective_details_hook name="FindAstroTrainDepots" category="OtherDestructionTargets"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.FindAstroTrainDepots"
+          use_related_string_as_color="true" default_display_name="探索星系寻找星际列车站"
+          click_behavior="DoNothing" focus_type="FocusUnexploredPlanets"
+          serialization_type="RelatedInt1AndRelatedString" importance_calculation="NotSettable"
+          difficulty_method="Nothing"/>
+  
+  <!--  BeginnerTips
+        ***********************************************************************-->
+
+  <objective_details_hook name="NeedTSSes" category="BeginnerTips"
+            dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.NeedTSSes"
+            display_name_color="8092ff" default_display_name="入侵你的第一个炮塔蓝图服务器"
+            use_default_display_name_instead_of_display_name_base="true"
+            click_behavior="DoNothing" focus_type="DarkenAllPlanet"
+            serialization_type="Nothing" importance_calculation="NotSettable"
+            difficulty_method="Nothing"/>
+
+  <objective_details_hook name="NeedGCAs" category="BeginnerTips"
+            dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.NeedGCAs"
+            display_name_color="8092ff" default_display_name="占领你的第一个全局指挥增强器"
+            use_default_display_name_instead_of_display_name_base="true"
+            click_behavior="DoNothing" focus_type="DarkenAllPlanet"
+            serialization_type="Nothing" importance_calculation="NotSettable"
+            difficulty_method="Nothing"/>
+
+  <objective_details_hook name="NeedFlagships" category="BeginnerTips"
+            dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.NeedFlagships"
+            display_name_color="8092ff" default_display_name="占领你的第一艘新旗舰"
+            use_default_display_name_instead_of_display_name_base="true"
+            click_behavior="DoNothing" focus_type="DarkenAllPlanet"
+            serialization_type="Nothing" importance_calculation="NotSettable"
+            difficulty_method="Nothing"/>
+
+  <objective_details_hook name="NeedARSs" category="BeginnerTips"
+            dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.NeedARSs"
+            display_name_color="8092ff" default_display_name="入侵你的第一个高级研究站"
+            use_default_display_name_instead_of_display_name_base="true"
+            click_behavior="DoNothing" focus_type="DarkenAllPlanet"
+            serialization_type="Nothing" importance_calculation="NotSettable"
+            difficulty_method="Nothing"/>
+
+  <objective_details_hook name="NeedEnergy" category="BeginnerTips"
+            dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.NeedEnergy"
+            display_name_color="8092ff" default_display_name="增加能量产出"
+            use_default_display_name_instead_of_display_name_base="true"
+            click_behavior="DoNothing" focus_type="DarkenAllPlanet"
+            serialization_type="Nothing" importance_calculation="NotSettable"
+            difficulty_method="Nothing"/>
+
+  <objective_details_hook name="BuildEngineers" category="BeginnerTips"
+            dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.BuildEngineers"
+            display_name_color="8092ff" default_display_name="建造工程师用于单位生产和维修"
+            use_default_display_name_instead_of_display_name_base="true"
+            click_behavior="DoNothing" focus_type="DarkenAllPlanet"
+            serialization_type="Nothing" importance_calculation="NotSettable"
+            difficulty_method="Nothing"/>
+
+  <objective_details_hook name="SpendScience" category="BeginnerTips"
+            dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.SpendScience"
+            display_name_color="8092ff" default_display_name="花费科技增强你的部队"
+            use_default_display_name_instead_of_display_name_base="true"
+            click_behavior="DoNothing" focus_type="DarkenAllPlanet"
+            serialization_type="Nothing" importance_calculation="NotSettable"
+            difficulty_method="Nothing"/>
+
+  <objective_details_hook name="EarlyExpansion" category="BeginnerTips"
+            dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.EarlyExpansion"
+            display_name_color="8092ff" default_display_name="占领几颗行星"
+            use_default_display_name_instead_of_display_name_base="true"
+            click_behavior="DoNothing" focus_type="DarkenAllPlanet"
+            serialization_type="Nothing" importance_calculation="NotSettable"
+            difficulty_method="Nothing"/>
+
+  <objective_details_hook name="DefendFromWaves" category="BeginnerTips"
+            dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.DefendFromWaves"
+            display_name_color="8092ff" default_display_name="准备抵御攻击波 " finish_display_name_with_related_planet1="true"
+            use_default_display_name_instead_of_display_name_base="true"
+            click_behavior="CenterOnRelatedPlanet1" focus_type="FocusOnRelatedPlanet1"
+            serialization_type="RelatedPlanet1Only" importance_calculation="RelatedPlanet1Importance"
+            difficulty_method="Nothing"/>
+
+  <objective_details_hook name="GateRaiding" category="BeginnerTips"
+            dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.GateRaiding"
+            display_name_color="8092ff" default_display_name="虫洞突袭"
+            use_default_display_name_instead_of_display_name_base="true"
+            click_behavior="CenterOnRelatedEntity1" focus_type="FocusOnRelatedEntity1"
+            serialization_type="RelatedEntity1AndRelatedInt1" importance_calculation="RelatedEntity1Importance"
+            difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedEntity1"/>
+
+  <objective_details_hook name="ScoutUnexplored" category="BeginnerTips"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.ScoutUnexplored"
+          display_name_color="8092ff"
+          click_behavior="DoNothing" focus_type="FocusUnexploredPlanets"
+          serialization_type="RelatedInt1AndDisplayName" importance_calculation="NotSettable"
+          difficulty_method="Nothing"/>
+
+
+  <objective_details_hook name="UpgradeNecroFlagships" category="BeginnerTips"
+          default_display_name="升级旗舰"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.UpgradeNecroFlagships"
+          display_name_color="8092ff"
+          click_behavior="DoNothing" focus_type="DarkenAllPlanet"
+          serialization_type="Nothing" importance_calculation="NotSettable"
+          difficulty_method="Nothing"/>
+
+  <objective_details_hook name="UpgradeNecroFlagshipVariants" category="BeginnerTips"
+          default_display_name="使用旗舰变体"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.UpgradeNecroFlagshipVariants"
+          display_name_color="8092ff"
+          click_behavior="DoNothing" focus_type="DarkenAllPlanet"
+          serialization_type="Nothing" importance_calculation="NotSettable"
+          difficulty_method="Nothing"/>
+
+  <objective_details_hook name="UpgradeNecropolises" category="BeginnerTips"
+          default_display_name="升级亡灵都市"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.UpgradeNecropolises"
+          display_name_color="8092ff"
+          click_behavior="DoNothing" focus_type="DarkenAllPlanet"
+          serialization_type="Nothing" importance_calculation="NotSettable"
+          difficulty_method="Nothing"/>
+
+  <objective_details_hook name="BuildNecropolises" category="BeginnerTips"
+          default_display_name="建造亡灵都市"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.BuildNecropolises"
+          display_name_color="8092ff"
+          click_behavior="DoNothing" focus_type="DarkenAllPlanet"
+          serialization_type="Nothing" importance_calculation="NotSettable"
+          difficulty_method="Nothing"/>
+
+  
+  <objective_details_hook name="UnusedSockets" category="BeginnerTips"
+          default_display_name="上的未使用插槽 "  finish_display_name_with_related_planet1="true"
+          use_default_display_name_instead_of_display_name_base="true"
+          dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.UnusedSockets"
+          display_name_color="8092ff"
+          click_behavior="CenterOnRelatedPlanet1" focus_type="FocusOnRelatedPlanet1"
+          serialization_type="RelatedPlanet1Only" importance_calculation="NotSettable"
+          difficulty_method="Nothing"/>
+
+
+</root>

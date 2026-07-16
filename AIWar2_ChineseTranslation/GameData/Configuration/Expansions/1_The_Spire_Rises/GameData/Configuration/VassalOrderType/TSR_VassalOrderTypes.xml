@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--Many different factions can use each one!  Define these in the mods or DLC that use them.  Don't worry about making them use DLC3.
+      The central code will handle that.-->
+
+  <!--Specific To Certain Factions - Logic in them is arbitrary and must be handled by the faction in question-->
+  <vassal_order name="Scourge_BuildSpawnerOnPlanet" target_type="Planet" category="Construction" clear_all_orders_of_same_category_when_issued="true"
+                display_name="在行星上建造孵化器"
+        description="附庸天灾派系将在目标行星上建造一个孵化器。"/>
+  
+  <vassal_order name="Scourge_NextArmoryShouldBe" target_type="None" category="Upgrades" clear_all_orders_of_same_category_when_issued="true"
+                display_name="建造军械库类型"
+        description="附庸天灾派系将按此风格建造下一个军械库。">
+    <option name="Burlust" display_name="伯拉斯特"/>
+    <option name="Evuck" display_name="伊沃克"/>
+    <option name="Neinzul" display_name="奈因祖尔"/>
+    <option name="Peltian" display_name="佩尔提安"/>
+    <option name="Thoraxian" display_name="索拉克斯"/>
+  </vassal_order>
+</root>

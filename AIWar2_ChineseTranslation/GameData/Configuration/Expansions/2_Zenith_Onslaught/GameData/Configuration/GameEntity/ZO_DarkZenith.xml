@@ -1,0 +1,2377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  
+
+  <!-- CostForAIToPurchase be reasonable; the DZ uses that for its hacking response -->
+
+  
+  <!-- Economic Stationary Structures -->
+  
+  <!-- You almost never want to use the DZTerminus directly in C#, you want to use a subtype.
+       Note that we need all these different units because we want differntly coloured models and differentiated icons.
+  -->
+    <entity name="DZTerminus"
+	        thematic_groups="Zenith,DarkZenith" npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+	        tags="DZTerminus,BaseDZTerminus,SapperImportantPoint"
+
+	        visuals="assets/_dlc2/zenith/dzterminus/dzterminus_red.prefab" visuals_bundle="exp2_zenith_onslaught" gimbal_name="AstroTrainDepot"
+	        icon_name="Ships3/DarkZenithTerminus" gimbal_icon_size_multiplier="1.5"
+		y_offset_of_icon="30"
+		voice_group="Silent"
+	        category="Ship"
+	        visuals_scale_multiplier="26" lod_distance_multiplier="1.4"
+				y_offset_of_ship_in_visual_space="50"
+				size_scale="6"
+	        collision_priority="810"
+	        display_name="黑暗天顶终端"
+		display_name_for_sidebar="DZ 终端"
+	        description="作为资源终端变体的基础存在。不应单独存在。"
+	        behavior="Stationary"
+	        starting_mark_level="Mark1"
+	        cost_for_ai_to_purchase="5600"
+            grants_minor_faction_planet_control="true"
+            hull_points="150000" shield_points="300000" speed="Immobile"
+            metal_cost="1085000" energy_consumption="15000"
+            armor_mm="90" albedo="0.6" mass_tx="6"
+            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            priority_as_ai_target="IrreplaceableMisc" priority_as_frd_target="NotDangerous" priority_to_protect="Irreplaceable"
+            description_appender_dll="AIWarExternalCode"
+	    description_appender_type="Arcen.AIW2.External.DarkZenithDescriptionAppender"
+            >
+    <system name="R5" display_name="激光脉冲"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Normal"
+				shots_per_salvo="20" fires_salvos_sequentially="false"
+				shot_type_data="LaserPulse_DeepBlue"				
+				>
+    </system>
+    </entity>
+
+        <entity  copy_from="DZTerminus" name="DZMetalTerminus"
+            icon_name="Ships3/DarkZenithTerminus" gimbal_icon_size_multiplier="1.5" icon_overlay="Overlays2/DarkZenithTerminus_Metal"
+            visuals="assets/_dlc2/zenith/dzterminus/dzterminus_metal.prefab" 
+            tags="DZTerminus,DZMetalTerminus"
+            display_name="黑暗天顶八铁（金属）终端"
+						display_name_for_sidebar="终端（金属）"
+            description="黑暗天顶的经济引擎。这个终端派出收割机从系统中的金属生成器收集八铁，这是一种宝贵的金属。这种金属对于构建黑暗天顶经济的所有部分都至关重要。"
+            >
+    </entity>
+
+  <entity  copy_from="DZTerminus" name="DZGreenTerminus"
+          icon_name="Ships3/DarkZenithTerminus" gimbal_icon_size_multiplier="1.5" icon_overlay="Overlays2/DarkZenithTerminus_Green"
+          visuals="assets/_dlc2/zenith/dzterminus/dzterminus_green.prefab" 
+          display_name="黑暗天顶萨乌米特（绿色）终端"
+						display_name_for_sidebar="终端（绿色）"
+            tags="DZTerminus,DZGreenTerminus"
+            description="黑暗天顶的经济引擎。这个终端生产绿资源——萨乌米特。通过在高压下处理八铁金属，它可以被转化为一种既轻又非常耐用的材料，能够承受巨大的力量。"
+            >
+  </entity>
+ 
+  <entity  copy_from="DZTerminus" name="DZBlueTerminus"
+          icon_name="Ships3/DarkZenithTerminus" gimbal_icon_size_multiplier="1.5" icon_overlay="Overlays2/DarkZenithTerminus_Blue"
+          visuals="assets/_dlc2/zenith/dzterminus/dzterminus_blue.prefab" 
+          display_name="黑暗天顶壳伦（蓝色）终端"
+						display_name_for_sidebar="终端（蓝色）"
+            tags="DZTerminus,DZBlueTerminus"
+            description="黑暗天顶的经济引擎。这个终端生产蓝色资源壳伦。壳伦是一种高导电性气体，可以增强力场发生器。"
+            >
+  </entity>
+ 
+  <entity  copy_from="DZTerminus" name="DZWhiteTerminus"
+          icon_name="Ships3/DarkZenithTerminus" gimbal_icon_size_multiplier="1.5" icon_overlay="Overlays2/DarkZenithTerminus_White"
+          visuals="assets/_dlc2/zenith/dzterminus/dzterminus_white.prefab" 
+          display_name="黑暗天顶阿尔卡赫斯特（白色）终端"
+						display_name_for_sidebar="终端（白色）"
+            tags="DZTerminus,DZWhiteTerminus"
+            description="黑暗天顶的经济引擎。这个终端生产白色资源阿尔卡赫斯特。阿尔卡赫斯特是由八铁生成的晶体结构，可以提升引擎和护盾性能。"
+            >
+    </entity>
+ 
+    <entity  copy_from="DZTerminus" name="DZRedTerminus"
+            icon_name="Ships3/DarkZenithTerminus" gimbal_icon_size_multiplier="1.5" icon_overlay="Overlays2/DarkZenithTerminus_Red"
+            visuals="assets/_dlc2/zenith/dzterminus/dzterminus_red.prefab" 
+            display_name="黑暗天顶伊祖米特（红色）终端"
+						display_name_for_sidebar="终端（红色）"
+            tags="DZTerminus,DZRedTerminus"
+            description="黑暗天顶的经济引擎。这个终端从其他几种资源中合成红色资源伊祖米特。伊祖米特是一种爆炸材料，可用于制造毁灭性武器。"
+            >
+    </entity>
+  
+    <entity  copy_from="DZTerminus" name="DZBlackTerminus"
+            icon_name="Ships3/DarkZenithTerminus" gimbal_icon_size_multiplier="1.5" icon_overlay="Overlays2/DarkZenithTerminus_Black"
+            visuals="assets/_dlc2/zenith/dzterminus/dzterminus_black.prefab" 
+            display_name="黑暗天顶斯克里思（黑色）终端"
+						display_name_for_sidebar="终端（黑色）"
+            tags="DZTerminus,DZBlackTerminus"
+            description="黑暗天顶的经济引擎。这个终端从其他几种资源中生产黑色资源斯克里思。斯克里思具有高放射性，可在各种武器中作为禁用剂使用。"
+            >
+  </entity>
+
+        <entity name="WarpingInDZTerminus"  
+                thematic_groups="Zenith,DarkZenith"	npc_ship_cap_type="SpecialThingsToAlwaysSeed"	
+            tags="WarpingInDZTerminus"
+            draw_in_galaxy_view="true"
+            visuals="assets/_dlc2/zenith/dzterminus/dzterminus_red.prefab"  visuals_bundle="exp2_zenith_onslaught" gimbal_name="AstroTrainDepot"
+            icon_name="Ships3/DarkZenithTerminus" icon_overlay="Overlays2/WarpingIn" gimbal_icon_size_multiplier="1.5" is_drawn_as_warping_in="true"
+            y_offset_of_icon="30"
+	    voice_group="Silent"
+            category="Ship"
+            visuals_scale_multiplier="26" lod_distance_multiplier="1.4"
+				y_offset_of_ship_in_visual_space="50"
+				size_scale="6"
+            collision_priority="810"
+            display_name="正在跃迁的黑暗天顶终端"
+	    display_name_for_sidebar="终端跃迁中"
+            description="黑暗天顶经济枢纽正在跃迁"
+            behavior="Stationary"
+            starting_mark_level="Mark1"
+            cost_for_ai_to_purchase="5600"
+            grants_minor_faction_planet_control="true"
+            hull_points="30000" shield_points="60000" speed="Immobile"
+            metal_cost="1085000" energy_consumption="15000"
+            armor_mm="90" albedo="0.6" mass_tx="6"
+            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            priority_as_ai_target="IrreplaceableMisc" priority_as_frd_target="NotDangerous" priority_to_protect="Irreplaceable"
+            >
+    </entity>
+
+    <entity name="DZEpistyle"
+	        thematic_groups="Zenith,DarkZenith"
+	    tags="DZEpistyle,ShowsOnNormalDisplayMode,GeneratesBonusHunterShips,SapperImportantPoint"
+	    draw_in_galaxy_view="true"
+	    visuals="assets/_dlc2/zenith/dzepistyle/dzepistyle.prefab" visuals_bundle="exp2_zenith_onslaught"
+	    icon_name="Ships3/DarkZenithEpistyle" gimbal_icon_size_multiplier="1.5"
+	    y_offset_of_icon="30"
+	    voice_group="Silent"
+	    category="Ship"
+	    size_scale="8" lod_distance_multiplier="3"
+	    visuals_scale_multiplier="22"
+	    y_offset_of_ship_in_visual_space="0"
+	    collision_priority="810"
+	    display_name="黑暗天顶柱顶过梁"
+			display_name_for_sidebar="黑暗天顶柱顶过梁"
+	    description="黑暗天顶建造设施的地方"
+	    behavior="Stationary"
+	    starting_mark_level="Mark1"
+            grants_minor_faction_planet_control="true"
+	    cost_for_ai_to_purchase="5600"
+            hull_points="150000" shield_points="300000" speed="Immobile"
+            metal_cost="1085000" energy_consumption="15000"
+            armor_mm="90" albedo="0.6" mass_tx="6"
+            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            priority_as_ai_target="IrreplaceableMisc" priority_as_frd_target="NotDangerous" priority_to_protect="Irreplaceable"
+            description_appender_dll="AIWarExternalCode"
+	    description_appender_type="Arcen.AIW2.External.DarkZenithDescriptionAppender"
+            >
+    <system name="R5" display_name="激光脉冲"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Normal"
+				shots_per_salvo="20" fires_salvos_sequentially="false"
+				shot_type_data="LaserPulse_DeepBlue"				
+				>
+    </system>
+    <system name="WS" display_name="穿甲弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="400" range="AboveAverage3" shot_speed="Normal" rate_of_fire="FairlyLow" fires_salvos_sequentially="true"
+				shot_type_data="Sabot"				
+				>
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="100" />
+    </system>	
+    </entity>
+  
+  
+  
+    <entity name="DZPirateEpistyle" copy_from="DZEpistyle" display_name="海盗柱顶过梁"
+			icon_name="Ships3/DarkZenithEpistyle_Pirate" display_name_for_sidebar="海盗柱顶过梁"
+	    tags="DZEpistyle,ShowsOnNormalDisplayMode,GeneratesBonusHunterShips,DZPirateEpistyle"
+	    visuals="assets/_dlc2/zenith/dzepistyle/dzepistylepiratical.prefab" visuals_bundle="exp2_zenith_onslaught"
+>
+    </entity>
+  
+  <entity name="WarpingInDZEpistyle" 
+          thematic_groups="Zenith,DarkZenith"  npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+          tags="WarpingInDZEpistyle"
+	  draw_in_galaxy_view="true"
+	  visuals="assets/_dlc2/zenith/dzepistyle/dzepistyle.prefab" visuals_bundle="exp2_zenith_onslaught" is_drawn_as_warping_in="true"
+	  icon_name="Ships3/DarkZenithEpistyle" icon_overlay="Overlays2/WarpingIn" gimbal_icon_size_multiplier="1.5"
+	  y_offset_of_icon="30"
+	  voice_group="Silent"
+	  category="Ship"
+	  size_scale="8" lod_distance_multiplier="3"
+	  visuals_scale_multiplier="22"
+	  y_offset_of_ship_in_visual_space="0"
+	  collision_priority="810"
+          display_name="正在跃迁的黑暗天顶柱顶过梁"
+						display_name_for_sidebar="柱顶过梁跃迁中"
+	  description="黑暗天顶柱顶过梁正在跃迁，这里是黑暗天顶建造设施的地方。"
+	  behavior="Stationary"
+	  starting_mark_level="Mark1"
+          grants_minor_faction_planet_control="true"
+	  cost_for_ai_to_purchase="5600"
+          hull_points="30000" shield_points="60000" speed="Immobile"
+          metal_cost="1085000" energy_consumption="15000"
+          armor_mm="90" albedo="0.6" mass_tx="6"
+          ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+          ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+          ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+          priority_as_ai_target="IrreplaceableMisc" priority_as_frd_target="NotDangerous" priority_to_protect="Irreplaceable"
+          >
+    </entity>
+
+    <!-- Mobile economic units -->
+        <entity name="DZConstructor"
+		        thematic_groups="Zenith,DarkZenith"
+                        tags="DZConstructor"
+                        special_entity_type="LargeShipNotStackable"
+            visuals="assets/_dlc2/zenith/dzconstructor/dzconstructor.prefab" visuals_bundle="exp2_zenith_onslaught"
+		    icon_name="Ships3/DarkZenithConstructor" gimbal_icon_size_multiplier="1.2"
+		    y_offset_of_icon="30"
+		    voice_group="Silent"
+		    category="Ship"
+		    size_scale="5.2"
+		    visuals_scale_multiplier="20"  lod_distance_overrides="150,240,15000"
+		    collision_priority="100"
+		    display_name="黑暗天顶建造者"
+				display_name_for_sidebar="黑暗天顶建造者"
+		    description="黑暗天顶用于建造新建筑的飞船。该飞船会飞到目的地，然后变形为要建造的建筑。"
+		    starting_mark_level="Markless"
+	        cost_for_ai_to_purchase="10"
+		    hull_points="75000" shield_points="7500" speed="VeryVeryLittle1"
+		    metal_cost="37500" energy_consumption="200"
+		    armor_mm="30" albedo="0.3" engine_gx="7" mass_tx="0.21"
+		    ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+		    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+            priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="Expendable"
+            description_appender_dll="AIWarExternalCode"
+		    description_appender_type="Arcen.AIW2.External.DarkZenithDescriptionAppender"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+
+        <entity name="DZTransport"
+		        thematic_groups="Zenith,DarkZenith" npc_ship_cap_type="FrigatesAndGuardians"
+                tags="DZTransport"
+            visuals="assets/_dlc2/zenith/dztransport/dztransport.prefab" visuals_bundle="exp2_zenith_onslaught"
+	    icon_name="Ships3/DarkZenithTransport"
+            gimbal_icon_size_multiplier="1.7"
+		    y_offset_of_icon="30"
+		    voice_group="Silent"
+		    category="Ship"
+		    size_scale="6.5"
+	    visuals_scale_multiplier="4"  lod_distance_overrides="150,240,300"
+		    collision_priority="100"
+		    display_name="黑暗天顶运输船"
+				display_name_for_sidebar="黑暗天顶运输船"
+		    description="黑暗天顶用于在终端和柱顶过梁之间运输资源的飞船。"
+		    starting_mark_level="Markless"
+	        cost_for_ai_to_purchase="10"
+		    hull_points="75000" shield_points="7500" speed="High"
+		    metal_cost="37500" energy_consumption="200"
+		    armor_mm="30" albedo="0.3" engine_gx="7" mass_tx="0.21"
+		    ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+		    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+                    priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="Expendable"
+                    description_appender_dll="AIWarExternalCode"
+		    description_appender_type="Arcen.AIW2.External.DarkZenithDescriptionAppender"
+			>
+	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+
+    <entity name="DZPrivateer"
+	        thematic_groups="Zenith,DarkZenith" npc_ship_cap_type="FrigatesAndGuardians"
+            tags="DZPrivateer"
+            visuals="assets/_dlc2/zenith/dztransport/dzprivateer.prefab" visuals_bundle="exp2_zenith_onslaught"
+	 
+	    icon_name="Ships3/DarkZenithPrivateer" gimbal_icon_size_multiplier="1.5"
+	    y_offset_of_icon="30"
+	    voice_group="Silent"
+	    category="Ship"
+	    size_scale="6.5"
+	    visuals_scale_multiplier="4"  lod_distance_overrides="150,240,300"
+	    collision_priority="100"
+	    display_name="黑暗天顶私掠船"
+			display_name_for_sidebar="黑暗天顶私掠船"
+	    description="海盗柱顶过梁用于从运输船劫持资源的飞船。"
+	    starting_mark_level="Mark1"
+	    cost_for_ai_to_purchase="10"
+	    hull_points="75000" shield_points="7500" speed="High"
+	    metal_cost="37500" energy_consumption="200"
+	    armor_mm="30" albedo="0.3" engine_gx="7" mass_tx="0.21"
+	    ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+            priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="Expendable"
+            description_appender_dll="AIWarExternalCode"
+	    description_appender_type="Arcen.AIW2.External.DarkZenithDescriptionAppender"
+	    >
+	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+
+    <entity name="DZHarvester"
+	        thematic_groups="Zenith,DarkZenith" npc_ship_cap_type="FrigatesAndGuardians"
+            tags="DZHarvester"
+            visuals="assets/_dlc2/zenith/dzmetalharvester/dzmetalharvester.prefab" visuals_bundle="exp2_zenith_onslaught"
+            icon_name="Ships3/DarkZenithMetalHarvester" gimbal_icon_size_multiplier="0.7"
+	    y_offset_of_icon="30"
+	    voice_group="Silent"
+	    category="Ship"
+	    size_scale="4.5"
+	    visuals_scale_multiplier="12"
+	    collision_priority="100"
+	    display_name="黑暗天顶金属采集器"
+			display_name_for_sidebar="DZ 金属采集器"
+	    description="在金属生成器处采集八铁，供其终端使用。"
+	    starting_mark_level="Mark1"
+	    cost_for_ai_to_purchase="10"
+	    hull_points="7500" shield_points="7500" speed="High"
+	    metal_cost="300" energy_consumption="200"
+	    armor_mm="30" albedo="0.3" engine_gx="7" mass_tx="0.21"
+	    ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+            priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="Expendable"
+            description_appender_dll="AIWarExternalCode"
+	    description_appender_type="Arcen.AIW2.External.DarkZenithDescriptionAppender"
+	    >
+	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+
+    <!-- Mobile Military -->
+    <!-- units are defined like this. There's a base unit, then 5 adjectives that can be applied, one per resource type.
+         So an Enraged Fortified Huskarl means it cost extra Red and Blue, for more damage and shields -->
+
+    <!-- Adjectives : Enraged ==> extra red cost, extra single target weapon
+                      Stout ==> extra green cost, more health/shields
+                      Sinister ==> extra black cost, extra CC weapon
+                      Fortified ==> extra blue cost, additoinal defensive system
+                      Spirited ==> extra white cost, cloaked
+             -->
+    <!-- Unit unit lines:
+        
+
+Tier 0: Strikecraft tier
+         Dregil ==> Very weak, but has something interesting it can do to compensate
+		 Huskarl ==> Low tier, but solid (strong strikecraft)
+       
+         Skald ==> Utility focus
+       
+         
+
+Tier 1: Guardian Tier (akin to royal guardians)
+      
+         Hersir ==> lower than Jarl, but still high
+         Dreng ==> stronger Huskarl
+		 Ulfsark ==> Pirate only. Melee berserker that hurts itself but is hardened to tank big hits
+
+Tier 2: Dire Tier (akin to D. royal guardians)
+         Merkismathr ==> Phases perioidcally, gaining ambush bonuses for a short time after it materializes
+         Jarl ==> High Tier
+         Coerl ==> Pirate Only
+
+Tier 3:  Golem Tier 
+         Einherjar ==> Should have 2 guns, and be tanky AF. Wants to get in and cause a ruckus. Focus is more just on DPS.
+         Ymir ==> Should have some really interesting new mechanic
+
+Pirate Only
+		Ulfsark  Tier 1 (Guardian)
+		Ceorl    Tier 2 (Dire)
+    -->
+
+    <!-- Here's how this works. I will define a base unit, then a few variants on each. Then I need to define ResourceConversions for each one -->
+
+<!-- Tier Zero: Strikecraft
+	Tier 0 Stout defined as a 50% health increase
+	Tier 0 Fortified defined as hardened 25% (fortified dregil reduces incoming damage to 25% of its max health)
+	Tier 0 Spirited defined as cloaking (5 shot decloak).
+	Tier 0 Enraged defined as the Burlust weapon system added as an additional weapon system to the base unit, with misc. stat adjustments to work with existing weapons
+	Tier 0 Sinister defined as an additional paralysis weapon -->
+ 
+ <!--Dregil -->
+ <entity name="DZDregil"
+         thematic_groups="Zenith,DarkZenith"
+            tags="DZTierZeroBase"
+      visuals="assets/_dlc2/zenith/dzdregil/dzdregil.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships3/DarkZenithDregil" 
+			voice_group="Raider"
+			size_scale="1.8"
+			visuals_scale_multiplier="6.5"
+			category="Ship" is_strikecraft="true"
+			collision_priority="100"
+			display_name="德雷吉尔"
+			description="黑暗天顶最弱小的单位之一，但它能用酸性极化武器快速腐蚀高护甲单位。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Alien"
+			cost_for_ai_to_purchase="160" strength_multiplier="1.4"
+			hull_points="4480" shield_points="0" speed="AboveAverage3"
+			metal_cost="1800" energy_consumption="175"
+			armor_mm="30" albedo="0.3" engine_gx="14" mass_tx="0.21"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			
+      priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+      >
+		<system name="WK" display_name="护甲极化器"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="80" range="Small2" shot_speed="Normal" rate_of_fire="High"
+				fires_salvos_sequentially="true" shot_type_data="LaserPulse_DeepBlue" cloaking_percent_loss_from_firing="0.2"	
+				damage_amplification="true" damage_amplification_duration="4" damage_amplification_flat="20" damage_amplification_flat_added_per_mark="10"
+				>
+			<outgoing_damage_modifier based_on="Armor_mm" comparison_type="MultiplesOf" compared_to="35" multiplier="1" max_multiplier="10" />
+		</system>
+    
+  </entity>
+
+	<entity name="DZDregilFortified" copy_from="DZDregil" display_name="强化德雷吉尔"
+          tags="DZTierZeroFortified,InitialInvasionReinforcements"
+          icon_overlay="Overlays1/DZ_Blue_Fortified" strength_multiplier="2.8"
+          damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.25"
+		  description="黑暗天顶最弱小的单位之一，但它能用酸性极化武器快速腐蚀高护甲单位。这个强化变体经过加固，能够抵御原本会将其摧毁的伤害。"
+          >
+	</entity>
+	<entity name="HumanDregilFortified" copy_from="DZDregilFortified" thematic_groups="Human,DarkZenith"
+			tags=" "
+			description="被人类缴获，这是黑暗天顶最弱小的单位之一，但它能用酸性极化武器快速腐蚀高护甲单位。这个强化变体经过加固，能够抵御原本会将其摧毁的伤害。"
+			starting_mark_level="Mark2"
+			>
+	<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="100" cap="32" faction="DarkZenith"/>
+	</entity>
+	
+	<entity name="DZDregilStout" copy_from="DZDregil" display_name="坚固德雷吉尔"
+           icon_overlay="Overlays1/DZ_Green_Stout"
+          tags="DZTierZeroStout"
+		  hull_points="6720"
+		  description="黑暗天顶最弱小的单位之一，但它能用酸性极化武器快速腐蚀高护甲单位。这个坚固变体比平时更耐用。"
+          >
+	</entity>
+	<entity name="HumanDregilStout" copy_from="DZDregilStout" thematic_groups="Human,DarkZenith"
+		    tags=" "
+			description="被人类缴获，这是黑暗天顶最弱小的单位之一，但它能用酸性极化武器快速腐蚀高护甲单位。这个坚固变体比平时更耐用。"
+			starting_mark_level="Mark2"
+			>
+	<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="100" cap="32" faction="DarkZenith"/>
+	</entity>
+	
+	
+	
+	<entity name="DZDregilSpirited" copy_from="DZDregil" display_name="灵动德雷吉尔"
+            icon_overlay="Overlays1/DZ_White_Spirited"
+          tags="DZTierZeroSpirited"
+		  albedo="0.7"
+		  description="黑暗天顶最弱小的单位之一，但它能用酸性极化武器快速腐蚀高护甲单位。这个灵动变体处于隐形状态。"
+		>
+		<system name="C" display_name="隐形装置"
+				category="Passive"
+				cloaking_points="2000" cloaking_points_added_per_mark="1000"
+				>
+		</system>
+	</entity>
+	
+	<entity name="HumanDregilSpirited" copy_from="DZDregilSpirited" thematic_groups="Human,DarkZenith"
+		    tags=" "
+			description="被人类缴获，这是黑暗天顶最弱小的单位之一，但它能用酸性极化武器快速腐蚀高护甲单位。这个灵动变体处于隐形状态。"
+			starting_mark_level="Mark2"
+			>
+		<system name="WK" cloaking_percent_loss_from_firing="1" />
+		<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="100" cap="32" faction="DarkZenith"/>
+	</entity>
+	
+	
+	<entity name="DZDregilEnraged" copy_from="DZDregil" display_name="暴怒德雷吉尔"
+           icon_overlay="Overlays1/DZ_Red_Enraged"
+            tags="DZTierZeroEnraged"
+			description="黑暗天顶最弱小的单位之一，但它能用酸性极化武器快速腐蚀高护甲单位。这个暴怒变体有一个额外的武器，随着德雷吉尔接近死亡而变得更强。"
+          >
+		  <system name="WD" display_name="狂怒加农炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="150" range="Small2" shot_speed="Normal" rate_of_fire="Misery" fires_salvos_sequentially="false"
+				shot_type_data="DoubleShot_Red"		cloaking_percent_loss_from_firing="0.2"		
+				>
+		        <outgoing_damage_modifier based_on="MyHullPercentageMissing" comparison_type="MultiplesOf" compared_to="20" multiplier="1" />
+			</system>
+	</entity>
+	<entity name="HumanDregilEnraged" copy_from="DZDregilEnraged" thematic_groups="Human,DarkZenith"
+			tags=" "
+			description="被人类缴获，这是黑暗天顶最弱小的单位之一，但它能用酸性极化武器快速腐蚀高护甲单位。这个暴怒变体有一个额外的武器，随着德雷吉尔接近死亡而变得更强。"
+			starting_mark_level="Mark2"
+			>
+	<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="100" cap="32" faction="DarkZenith"/>
+	</entity>
+	
+	<entity name="DZDregilSinister" copy_from="DZDregil" display_name="邪恶德雷吉尔"
+				icon_overlay="Overlays1/DZ_Black_Sinister"
+				tags="DZTierZeroSinister"
+				description="黑暗天顶最弱小的单位之一，但它能用酸性极化武器快速腐蚀高护甲单位。这个邪恶变体有一个额外的群体控制武器，可以麻痹敌人。"
+		>
+		<system name="R1" display_name="扭曲火箭"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="120" range="Small3" shot_speed="Normal" rate_of_fire="VeryLow"
+				shots_per_salvo="8" fires_salvos_sequentially="false"
+				shot_type_data="FusionRocket"	cloaking_percent_loss_from_firing="0.2"	
+				base_paralysis_seconds_per_shot="4" paralysis_to_ships_mass_tx_less_than="2" added_target_evaluator="ParalyzerAsPrimary">
+		</system>
+	</entity>
+	<entity name="HumanDregilSinister" copy_from="DZDregilSinister" thematic_groups="Human,DarkZenith"
+			tags=" "
+			description="被人类缴获，这是黑暗天顶最弱小的单位之一，但它能用酸性极化武器快速腐蚀高护甲单位。这个邪恶变体有一个额外的群体控制武器，可以麻痹敌人。"
+			starting_mark_level="Mark2"
+			>
+	<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="100" cap="32" faction="DarkZenith"/>
+	</entity>
+	
+ <!-- Skald -->	
+<entity name="DZSkald"
+        thematic_groups="Zenith,DarkZenith" npc_ship_cap_type="FrigatesAndGuardians"
+	  tags="DZTierZeroBase"
+			visuals="assets/_dlc2/zenith/dzskald/dzskald.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships3/DarkZenithSkald"
+			voice_group="Raider"
+			size_scale="1.8"
+			visuals_scale_multiplier="6.5" y_offset_of_ship_in_visual_space="-8"
+			category="Ship" is_strikecraft="true"
+			collision_priority="100"
+			display_name="斯卡尔德"
+			description="作为黑暗天顶的实用单位，斯卡尔德可以让敌人在短时间内相位消失，使其无法参与战斗。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Alien"
+			cost_for_ai_to_purchase="240" strength_multiplier="3"
+			hull_points="12000" shield_points="0" speed="BelowAverage1"
+			metal_cost="5400" energy_consumption="800"
+			armor_mm="110" albedo="0.3" engine_gx="7" mass_tx="0.3"
+			amount_added_to_damage_per_ship_of_this_type_on_planet="20" amount_added_to_damage_per_ship_of_this_type_on_planet_per_mark="20" max_amount_added_to_damage_per_ship_of_this_type_on_planet="400"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+      priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			>
+		<system name="R1" display_name="相位火箭"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="30" range="Normal4" shot_speed="Normal" rate_of_fire="PeriodicActivation"
+				shots_per_salvo="8" fires_salvos_sequentially="false"
+				shot_type_data="FusionRocket"	cloaking_percent_loss_from_firing="0.2"
+				state_of_matter_for_target_to_become="SoloPhase" inflicts_state_of_matter_on_target_for_seconds="5" cannot_inflict_state_of_matter_if_target_has_any_shields_up="true" cannot_inflict_state_of_matter_if_target_has_energy_usage_of_at_least="1000"				
+				>
+		</system>
+	</entity>
+	<entity name="DZSkaldFortified" copy_from="DZSkald" display_name="强化司卡尔德"
+            icon_overlay="Overlays1/DZ_Blue_Fortified" strength_multiplier="3.5"
+          tags="DZTierZeroFortified"
+		  damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.25"
+		  description="司卡尔德是黑暗天顶的实用单位，能让敌人短时间内脱离战斗。这个强化变体经过加固，能抵御原本致命的伤害。"
+		>
+	</entity>
+	<entity name="HumanSkaldFortified" copy_from="DZSkaldFortified" thematic_groups="Human,DarkZenith"
+			tags=" "
+			description="从黑暗天顶缴获的司卡尔德，能让敌人短时间内脱离战斗。这个强化变体经过加固，能抵御原本致命的伤害。"
+			starting_mark_level="Mark2"
+			>
+	<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="100" cap="16" faction="DarkZenith"/>
+	</entity>
+	
+	
+	<entity name="DZSkaldStout" copy_from="DZSkald" display_name="坚固司卡尔德"
+            icon_overlay="Overlays1/DZ_Green_Stout"
+          tags="DZTierZeroStout"
+		  hull_points="18000"
+		  description="司卡尔德是黑暗天顶的实用单位，能让敌人短时间内脱离战斗。这个坚固变体比平时更耐用。"
+		>
+	</entity>
+	<entity name="HumanSkaldStout" copy_from="DZSkaldStout" thematic_groups="Human,DarkZenith"
+			tags=" "
+			description="从黑暗天顶缴获的司卡尔德，能让敌人短时间内脱离战斗。这个坚固变体比平时更耐用。"
+			starting_mark_level="Mark2"
+			>
+	<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="100" cap="16" faction="DarkZenith"/>
+	</entity>
+	
+	<entity name="DZSkaldSpirited" copy_from="DZSkald" display_name="灵动司卡尔德"
+          icon_overlay="Overlays1/DZ_White_Spirited"
+          tags="DZTierZeroSpirited,InitialInvasionReinforcements"
+		  albedo="0.7"
+		  description="司卡尔德是黑暗天顶的实用单位，能让敌人短时间内脱离战斗。这个灵动变体处于隐形状态。"
+		>
+     <system name="C" display_name="隐形装置"
+				category="Passive"
+				cloaking_points="2000" cloaking_points_added_per_mark="1000"
+				>
+    </system>
+	</entity>
+	<entity name="HumanSkaldSpirited" copy_from="DZSkaldSpirited" thematic_groups="Human,DarkZenith"
+			tags=" "
+			description="从黑暗天顶缴获的司卡尔德，能让敌人短时间内脱离战斗。这个灵动变体处于隐形状态。"
+			starting_mark_level="Mark2"
+			>
+		<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="100" cap="16" faction="DarkZenith"/>
+		<system name="R1" cloaking_percent_loss_from_firing="1" />
+		</entity>
+	
+	<entity name="DZSkaldEnraged" copy_from="DZSkald" display_name="愤怒司卡尔德"
+            icon_overlay="Overlays1/DZ_Red_Enraged"
+            tags="DZTierZeroEnraged"
+			description="司卡尔德是黑暗天顶的实用单位，能让敌人短时间内脱离战斗。这个愤怒变体有一件额外的武器，随着司卡尔德生命值降低而变强。"
+          >
+		  <system name="WD" display_name="怒火加农炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="150" range="Small2" shot_speed="Normal" rate_of_fire="Misery" fires_salvos_sequentially="false"
+				shot_type_data="DoubleShot_Red"		cloaking_percent_loss_from_firing="0.2"		
+				>
+		        <outgoing_damage_modifier based_on="MyHullPercentageMissing" comparison_type="MultiplesOf" compared_to="20" multiplier="1" />
+			</system>
+	</entity>
+	<entity name="HumanSkaldEnraged" copy_from="DZSkaldEnraged" thematic_groups="Human,DarkZenith"
+			tags=" "
+			description="从黑暗天顶缴获的司卡尔德，能让敌人短时间内脱离战斗。这个愤怒变体有一件额外的武器，随着司卡尔德生命值降低而变强。"
+			starting_mark_level="Mark2"
+			>
+	<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="100" cap="16" faction="DarkZenith"/>
+	</entity>
+	
+	<entity name="DZSkaldSinister" copy_from="DZSkald" display_name="邪恶司卡尔德"
+		icon_overlay="Overlays1/DZ_Black_Sinister"
+				tags="DZTierZeroSinister"
+				description="司卡尔德是黑暗天顶的实用单位，能让敌人短时间内脱离战斗。这个邪恶变体有一件额外的群体控制武器，能麻痹敌人。"
+		>
+		<system name="R1" display_name="扭曲火箭"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="120" range="Small3" shot_speed="Normal" rate_of_fire="VeryLow"
+				shots_per_salvo="8" fires_salvos_sequentially="false"
+				shot_type_data="FusionRocket"	cloaking_percent_loss_from_firing="0.2"	
+		base_paralysis_seconds_per_shot="4" paralysis_to_ships_mass_tx_less_than="2" added_target_evaluator="ParalyzerAsPrimary">
+		</system>
+	</entity>
+	<entity name="HumanSkaldSinister" copy_from="DZSkaldSinister" thematic_groups="Human,DarkZenith"
+			tags=" "
+			description="从黑暗天顶缴获的司卡尔德，能让敌人短时间内脱离战斗。这个邪恶变体有一件额外的群体控制武器，能麻痹敌人。"
+			starting_mark_level="Mark2"
+			>
+	<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="100" cap="16" faction="DarkZenith"/>
+	</entity>
+	
+
+
+ <entity name="DZHuskarl"
+         thematic_groups="Zenith,DarkZenith" npc_ship_cap_type="FrigatesAndGuardians"
+            tags="DZTierZeroBase"
+	    visuals="Assets/_DLC2/Zenith/DZHuskarl/DZHuskarl.prefab" visuals_bundle="exp2_zenith_onslaught"
+	    icon_name="Ships3/DarkZenithHuskarl"
+	    y_offset_of_icon="30"
+	    voice_group="Silent"
+	    category="Ship"
+	    size_scale="0.9"
+	    visuals_scale_multiplier="11"
+	    collision_priority="100"
+	    display_name="哈斯卡尔"
+	    description="一个坚韧的低阶黑暗天顶单位。在一个小的保护区域内吸引伤害到自身，并将一部分伤害返还给攻击者。"
+	    starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Alien"
+	    cost_for_ai_to_purchase="360" strength_multiplier="2.4"
+	    hull_points="5200" shield_points="12800" speed="BelowAverage1"
+	    metal_cost="7800" energy_consumption="800"
+	    armor_mm="50" albedo="0.8" engine_gx="8" mass_tx="0.21"
+		returns_this_percentage_of_damage_if_damaged_by_enemy_attack="0.25"
+	    ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+            priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="Expendable"
+            description_appender_dll="AIWarExternalCode"
+	    description_appender_type="Arcen.AIW2.External.DarkZenithDescriptionAppender"
+            >
+		<system name="W1" display_name="放电攻击"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="300" range="Small3" shot_speed="Slow" rate_of_fire="Normal" fires_salvos_sequentially="true"
+				shot_type_data="LightningExplosionAOEShot" cloaking_percent_loss_from_firing="0.2"
+				>
+				<outgoing_damage_modifier applies_to="PersonalShieldOnly" based_on="CurrentPersonalShieldPercentage" comparison_type="AtLeast" compared_to="10" multiplier="4" />
+		</system>
+		<system name="A" display_name="吸引场"
+				category="Passive"
+				attract_range_for_shots_against_allies="Tiny4"
+				>
+		</system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+		</entity>
+	<entity name="DZHuskarlFortified" copy_from="DZHuskarl" display_name="强化哈斯卡尔"
+			icon_overlay="Overlays1/DZ_Blue_Fortified" strength_multiplier="3"
+          tags="DZTierZeroFortified"
+          damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.25"
+		  description="一个坚韧的低阶黑暗天顶单位。在一个小的保护区域内吸引伤害到自身，并将一部分伤害返还给攻击者。这个强化变体经过加固，能够抵御原本会致命的伤害。"
+		  >
+	</entity>
+	
+	<entity name="DZHuskarlStout" copy_from="DZHuskarl" display_name="健壮哈斯卡尔"
+          icon_overlay="Overlays1/DZ_Green_Stout"
+          tags="DZTierZeroStout,InitialInvasionReinforcements,DZHackResponse"
+          hull_points="18000"
+		  description="一个坚韧的低阶黑暗天顶单位。在一个小的保护区域内吸引伤害到自身，并将一部分伤害返还给攻击者。这个健壮变体比平常更耐用。"
+		  >
+	</entity>	
+	<entity name="DZHuskarlSpirited" copy_from="DZHuskarl" display_name="灵动哈斯卡尔"
+          icon_overlay="Overlays1/DZ_White_Spirited" strength_multiplier="3"
+          tags="DZTierZeroSpirited"
+		  description="一个坚韧的低阶黑暗天顶单位。在一个小的保护区域内吸引伤害到自身，并将一部分伤害返还给攻击者。这个灵动变体处于隐形状态。"
+		  >
+          <system name="C" display_name="隐形装置"
+				category="Passive"
+				cloaking_points="2000" cloaking_points_added_per_mark="1000"
+				>
+		</system>  
+	</entity>
+    <entity name="DZHuskarlEnraged" copy_from="DZHuskarl" display_name="愤怒哈斯卡尔"
+            icon_overlay="Overlays1/DZ_Red_Enraged"
+          tags="DZTierZeroEnraged"
+		  description="一个坚韧的低阶黑暗天顶单位。在一个小的保护区域内吸引伤害到自身，并将一部分伤害返还给攻击者。这个愤怒变体拥有一个额外的武器，随着哈斯卡尔接近死亡而变得更强。"
+			>
+		    <system name="WD" display_name="狂怒加农炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="150" range="Small3" shot_speed="Normal" rate_of_fire="Misery" fires_salvos_sequentially="false"
+				shot_type_data="DoubleShot_Red"		cloaking_percent_loss_from_firing="0.2"		
+				>
+		        <outgoing_damage_modifier based_on="MyHullPercentageMissing" comparison_type="MultiplesOf" compared_to="20" multiplier="1" />
+			</system>
+	</entity>
+	
+	<entity name="DZHuskarlSinister" copy_from="DZHuskarl" display_name="邪恶哈斯卡尔"
+          icon_overlay="Overlays1/DZ_Black_Sinister"
+          tags="DZTierZeroSinister,InitialInvasionReinforcements,DZHackResponse"
+		  description="一个坚韧的低阶黑暗天顶单位。在一个小的保护区域内吸引伤害到自身，并将一部分伤害返还给攻击者。这个邪恶变体拥有一个额外的群体控制武器，可以麻痹敌人。"
+          >
+		<system name="R1" display_name="扭曲火箭"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="120" range="Small3" shot_speed="Normal" rate_of_fire="VeryLow"
+				shots_per_salvo="8" fires_salvos_sequentially="false"
+				shot_type_data="FusionRocket"	cloaking_percent_loss_from_firing="0.2"	
+		base_paralysis_seconds_per_shot="4" paralysis_to_ships_mass_tx_less_than="2" added_target_evaluator="ParalyzerAsPrimary">
+		</system>
+	</entity>
+
+
+<!-- Tier 1: Guardian tier -->
+<!--Tier 1 Stout defined as +25% hulls and shields
+	Tier 1 fortified is defined as electrotoxic 20%.
+	Tier 1 Spirited defined as cloaking (5 shot decloak). Slightly more cloaking points than tier 0
+	Tier 1 Enraged defined as an extra piercing, single-target fusion attack. Stronger version of Tier 0 plus piercing
+	
+	Tier 1 Sinister defined as an extra MLRS weapon with paralysis (stronger version of tier 0) -->
+<!-- Hersir -->
+<entity name="DZHersir"
+        thematic_groups="Zenith,DarkZenith"
+            tags="DZTierOneBase"
+            special_entity_type="Frigate"
+	    gimbal_icon_size_multiplier="1.25"
+            visuals="Assets/_DLC2/Zenith/Z4_SpikyHorns/DZHersir.prefab" visuals_bundle="exp2_zenith_onslaught"
+	    icon_name="Ships3/DarkZenithHersir"
+	    size_scale="4.5"
+	    visuals_scale_multiplier="20"
+	    category="Ship"
+	    y_offset_of_icon="10"
+	    collision_priority="100"
+	    display_name="赫西尔战舰"
+	    description="一艘可怕的黑暗天顶战舰，装备了链式闪电发射器，用于摧毁成群的飞船，还配备了等离子鱼雷，用于摧毁建筑和强大的战舰。"
+	    starting_mark_level="Mark1"  tech_upgrades_that_benefit_me="Alien"
+		mark_level_scale_style="DarkZenith"
+	    cost_for_ai_to_purchase="1500" strength_multiplier="1.3"
+	    hull_points="128000" shield_points="64000" speed="BelowAverage1"
+	    metal_cost="120000" energy_consumption="7500"
+	    armor_mm="120" albedo="0.4" engine_gx="18" mass_tx="5"
+	    voice_group="Starship"
+	    ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	    ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            priority_as_ai_target="NormalStarship" priority_as_frd_target="BiggerStarship" priority_to_protect="SlightlyLessExpendable"
+	    >
+    	<system name="WT" display_name="内爆鱼雷" category="Weapon" firing_timing="OnlyInRange" shot_type_data="PlasmaTorpedo" 
+				damage_per_shot="2800" range="Normal1" shot_speed="Normal" rate_of_fire="FairlyLow" fires_salvos_sequentially="false"				
+				>
+				<outgoing_damage_modifier based_on="CurrentHullPercentage" applies_to="HullOnly" comparison_type="MultiplesOf" compared_to="10" multiplier="1" />
+				<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="PersonalShieldOnly" comparison_type="AtLeast" compared_to="10" multiplier="4" />
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="GreaterThan" compared_to="5" multiplier="1.2" />
+		</system>
+		<system name="CE" display_name="链式闪电发射器"
+            category="Weapon" firing_timing="OnlyInRange"
+            damage_per_shot="2000" range="Normal1" shot_speed="Normal" rate_of_fire="VeryLow"
+            shot_type_data="HeavyBeamInvisible"  beam_length_multiplier="1.3" shots_detonate_immediately="true"  beam_weapon_visual_style="Lightning_Blue"
+            beam_chains_out_to_targets_x_times="1" beam_chains_out_to_target_min_range="200" beam_chains_out_to_targets_x_range="2000"
+            beam_chains_out_to_max_targets_from_each_source="4"
+            only_targets_strikecraft_and_frigates="true" aoe_and_beam_damage_multiplier_to_non_primary_target="50" 
+            added_target_evaluator="LowestHealthAsMajorPrimary"
+				>
+		</system>
+		<system name="T" display_name="超光速粒子阵列"
+		category="Passive" tachyon_points="50" tachyon_range="Normal1" tachyon_hits_albedo_less_than="0.75"></system>
+	</entity>
+
+  
+	<entity name="DZHersirFortified" copy_from="DZHersir" display_name="强化版赫西尔战舰"
+            tags="DZTierOneFortified,DZHackResponse"
+            icon_overlay="Overlays1/DZ_Blue_Fortified"
+			returns_this_percentage_of_damage_if_damaged_by_enemy_attack="0.15"
+
+			description="一艘可怕的黑暗天顶战舰，装备了链式闪电发射器，用于摧毁成群的飞船，还配备了等离子鱼雷，用于摧毁建筑和强大的战舰。这个强化版会将受到的部分伤害返还给攻击者。"
+          >
+	</entity>
+	<entity name="HumanHersirFortified" copy_from="DZHersirFortified" thematic_groups="Human,DarkZenith"
+            tags=" "
+			starting_mark_level="Mark2"
+			description="从黑暗天顶缴获的赫西尔战舰，装备了链式闪电发射器，用于摧毁成群的飞船，还配备了等离子鱼雷，用于摧毁建筑和强大的战舰。这个强化版会将受到的部分伤害返还给攻击者。"
+          >
+	<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="100" cap="9" faction="DarkZenith"/>	  
+	</entity>
+	
+	<entity name="DZHersirStout" copy_from="DZHersir" display_name="坚固版赫西尔战舰"
+          icon_overlay="Overlays1/DZ_Green_Stout"
+          tags="DZTierOneStout,InitialInvasionReinforcements,DZHackResponse"
+          hull_points="160000" shield_points="80000"
+
+		  description="一艘可怕的黑暗天顶战舰，装备了链式闪电发射器，用于摧毁成群的飞船，还配备了等离子鱼雷，用于摧毁建筑和强大的战舰。这个坚固版比普通版更耐用。"
+          >
+	</entity>
+	<entity name="HumanHersirStout" copy_from="DZHersirStout" thematic_groups="Human,DarkZenith"
+            tags=" "
+            starting_mark_level="Mark2"
+			description="从黑暗天顶缴获的赫西尔战舰，装备了链式闪电发射器，用于摧毁成群的飞船，还配备了等离子鱼雷，用于摧毁建筑和强大的战舰。这个坚固版比普通版更耐用。"
+          >
+	<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="100" cap="9" faction="DarkZenith"/>	  
+	</entity>
+	
+	<entity name="DZHersirSpirited" copy_from="DZHersir"  display_name="灵动版赫西尔战舰"
+          icon_overlay="Overlays1/DZ_White_Spirited"
+          tags="DZTierOneSpirited,InitialInvasionReinforcements"
+		  speed="Normal1"
+	
+		  description="一艘可怕的黑暗天顶战舰，装备了链式闪电发射器，用于摧毁成群的飞船，还配备了等离子鱼雷，用于摧毁建筑和强大的战舰。这个灵动版处于隐形状态且速度更快。"
+          >
+		   <system name="C" display_name="隐形装置"
+				category="Passive"
+				cloaking_points="3000" cloaking_points_added_per_mark="1000"
+				>
+		   </system>
+	</entity>
+	<entity name="HumanHersirSpirited" copy_from="DZHersirSpirited" thematic_groups="Human,DarkZenith"
+            tags=" "
+			starting_mark_level="Mark2"
+			description="从黑暗天顶缴获的赫西尔战舰，装备了链式闪电发射器，用于摧毁成群的飞船，还配备了等离子鱼雷，用于摧毁建筑和强大的战舰。这个灵动版处于隐形状态且速度更快。"
+			>
+	<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="100" cap="9" faction="DarkZenith"/>	  
+	</entity>
+	
+	<entity name="DZHersirEnraged" copy_from="DZHersir" display_name="愤怒版赫西尔战舰"
+          icon_overlay="Overlays1/DZ_Red_Enraged"
+          tags="DZTierOneEnraged,DZHackResponse"
+
+		  description="一艘可怕的黑暗天顶战舰，装备了链式闪电发射器，用于摧毁成群的飞船，还配备了等离子鱼雷，用于摧毁建筑和强大的战舰。这个愤怒版有一个额外的武器，随着赫西尔战舰生命值降低而变强。"
+          >
+		  	<system name="WL" display_name="邪恶聚变爆能炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="500" range="Normal1" shot_speed="Slow" rate_of_fire="Misery"
+				shots_per_salvo="1" fires_salvos_sequentially="false"
+				shot_type_data="FusionBomb" cloaking_percent_loss_from_firing="0.2"
+				base_percent_damage_bypasses_personal_shields="0.65" 
+				>
+			    <outgoing_damage_modifier based_on="MyHullPercentageMissing" comparison_type="MultiplesOf" compared_to="20" multiplier="1" />	
+			    <outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="HullOnly" comparison_type="AtLeast" compared_to="75" multiplier="1.25" />
+			</system>
+	</entity>
+	<entity name="HumanHersirEnraged" copy_from="DZHersirEnraged" thematic_groups="Human,DarkZenith"
+            tags=" "
+			starting_mark_level="Mark2"
+			description="从黑暗天顶缴获的赫西尔战舰，装备了链式闪电发射器，用于摧毁成群的飞船，还配备了等离子鱼雷，用于摧毁建筑和强大的战舰。这个愤怒版有一个额外的武器，随着赫西尔战舰生命值降低而变强。"
+			>
+	<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="100" cap="9" faction="DarkZenith"/>	  
+	</entity>
+
+	<entity name="DZHersirSinister" copy_from="DZHersir" display_name="邪恶版赫西尔战舰"
+          icon_overlay="Overlays1/DZ_Black_Sinister"
+          tags="DZTierOneSinister,InitialInvasionReinforcements,DZHackResponse"
+
+		  description="一艘可怕的黑暗天顶战舰，装备了链式闪电发射器，用于摧毁成群的飞船，还配备了等离子鱼雷，用于摧毁建筑和强大的战舰。这个邪恶版有一个额外的群体控制武器，可以麻痹敌人。"
+          >
+		  <system name="R1" display_name="扭曲火箭"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="180" range="Normal1" shot_speed="Normal" rate_of_fire="VeryLow"
+				shots_per_salvo="16" fires_salvos_sequentially="false"
+				shot_type_data="FusionRocket"	cloaking_percent_loss_from_firing="0.2"	
+		base_paralysis_seconds_per_shot="6" paralysis_to_ships_mass_tx_less_than="3" added_target_evaluator="ParalyzerAsPrimary">
+		</system>
+	</entity>
+	<entity name="HumanHersirSinister" copy_from="DZHersirSinister" thematic_groups="Human,DarkZenith" 
+            tags=" "
+			starting_mark_level="Mark2"
+			description="从黑暗天顶缴获的赫西尔战舰，装备了链式闪电发射器，用于摧毁成群的飞船，还配备了等离子鱼雷，用于摧毁建筑和强大的战舰。这个邪恶版有一个额外的群体控制武器，可以麻痹敌人。"
+			>
+	<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="100" cap="9" faction="DarkZenith"/>	  
+	</entity>
+ 
+
+
+<!-- Dreng -->
+<entity name="DZDreng"
+        thematic_groups="Zenith,DarkZenith"
+          tags="DZTierOneBase"
+            special_entity_type="Frigate"
+	    gimbal_icon_size_multiplier="1.25"
+			visuals="Assets/_DLC2/Zenith/DZDreng/DZDreng.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships3/DarkZenithDreng"
+			size_scale="4.5"
+			visuals_scale_multiplier="20"
+			category="Ship"
+			y_offset_of_icon="10"
+			collision_priority="100"
+			display_name="德伦格舰"
+			description="赫斯卡尔舰的成熟形态，德伦格舰能够通过在一个小保护区域内吸引伤害，为其盟友提供更强的防御。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Alien"
+			mark_level_scale_style="DarkZenith"
+			cost_for_ai_to_purchase="1500"  strength_multiplier="1.5"	
+			hull_points="40000" shield_points="160000" speed="BelowAverage1"
+			metal_cost="160000" energy_consumption="7500"
+			armor_mm="50" albedo="0.8" engine_gx="10" mass_tx="5"
+			returns_this_percentage_of_damage_if_damaged_by_enemy_attack="0.15"
+			voice_group="Starship"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+      priority_as_ai_target="NormalStarship" priority_as_frd_target="BiggerStarship" priority_to_protect="SlightlyLessExpendable"
+			>
+    <system name="WJ" display_name="亵渎手雷"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="100" range="Small5" shot_speed="Normal" rate_of_fire="High"
+				shots_per_salvo="6" fires_salvos_sequentially="false"
+				shot_type_data="FlakShotAOEBurstAtEnd"
+				area_of_effect_size="300"
+				maximum_number_of_targets_hit_per_shot="9" cloaking_percent_loss_from_firing="0.2"
+				>
+	            <outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="30" multiplier="3" />
+    </system>	
+	<system name="A" display_name="吸引场"
+				category="Passive"
+				attract_range_for_shots_against_allies="Small1"
+				>
+		</system>
+	</entity>
+  
+ 
+    <entity name="DZDrengFortified" copy_from="DZDreng" display_name="强化德伦格舰"
+            tags="DZTierOneFortified,DZHackResponse"
+            icon_overlay="Overlays1/DZ_Blue_Fortified"
+			returns_this_percentage_of_damage_if_damaged_by_enemy_attack="0.25"
+
+			description="赫斯卡尔舰的成熟形态，德伦格舰能够通过在一个小保护区域内吸引伤害，为其盟友提供更强的防御。这种强化变体比平时能返还更大比例的受到的伤害。"
+			>
+	</entity>
+	<entity name="HumanDrengFortified" copy_from="DZDrengFortified" thematic_groups="Human,DarkZenith"
+            tags=" "
+			starting_mark_level="Mark2"
+			description="从黑暗天顶窃取而来，德伦格舰能够通过在一个小保护区域内吸引伤害，为其盟友提供更强的防御。这种强化变体比平时能返还更大比例的受到的伤害。"
+			>
+	<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="100" cap="9" faction="DarkZenith"/>	  
+	</entity>
+  
+	<entity name="DZDrengStout" copy_from="DZDreng" display_name="坚固德伦格舰"
+          icon_overlay="Overlays1/DZ_Green_Stout"
+          tags="DZTierOneStout,InitialInvasionReinforcements,DZHackResponse"
+          hull_points="50000" shield_points="200000"
+
+		  description="赫斯卡尔舰的成熟形态，德伦格舰能够通过在一个小保护区域内吸引伤害，为其盟友提供更强的防御。这种坚固变体比平时更耐用。"
+          >
+		
+	</entity>
+	<entity name="HumanDrengStout" copy_from="DZDrengStout" thematic_groups="Human,DarkZenith"
+            tags=" "
+			starting_mark_level="Mark2"
+		    description="从黑暗天顶窃取而来，德伦格舰能够通过在一个小保护区域内吸引伤害，为其盟友提供更强的防御。这种坚固变体比平时更耐用。"
+			>
+	<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="100" cap="9" faction="DarkZenith"/>	  
+	</entity>
+  
+   <entity name="DZDrengSpirited" copy_from="DZDreng" display_name="灵动德伦格舰"
+          icon_overlay="Overlays1/DZ_White_Spirited"
+          speed="Normal1" albedo="0.7"
+		  tags="DZTierOneSpirited,InitialInvasionReinforcements"
+
+		  description="赫斯卡尔舰的成熟形态，德伦格舰能够通过在一个小保护区域内吸引伤害，为其盟友提供更强的防御。这种灵动变体处于隐形状态且速度更快。"
+          >
+		   <system name="C" display_name="隐形装置"
+				category="Passive"
+				cloaking_points="3000" cloaking_points_added_per_mark="1000"
+				>
+		   </system>
+	</entity>
+	<entity name="HumanDrengSpirited" copy_from="DZDrengSpirited" thematic_groups="Human,DarkZenith"
+            tags=" "
+			starting_mark_level="Mark2"
+			description="从黑暗天顶窃取而来，德伦格舰能够通过在一个小保护区域内吸引伤害，为其盟友提供更强的防御。这种灵动变体处于隐形状态且速度更快。"
+			>
+		<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="100" cap="9" faction="DarkZenith"/>
+		<system name="WJ" cloaking_percent_loss_from_firing="1" />
+	</entity>
+  
+  
+  <entity name="DZDrengEnraged"  copy_from="DZDreng" display_name="愤怒德伦格舰"
+          icon_overlay="Overlays1/DZ_Red_Enraged"
+          tags="DZTierOneEnraged"
+
+		  description="赫斯卡尔舰的成熟形态，德伦格舰能够通过在一个小保护区域内吸引伤害，为其盟友提供更强的防御。这种愤怒变体有一件额外的武器，随着德伦格舰接近死亡，该武器会变得更强。"
+          >
+			<system name="WL" display_name="邪恶聚变爆能炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="500" range="Small5" shot_speed="Slow" rate_of_fire="Misery"
+				shots_per_salvo="1" fires_salvos_sequentially="false"
+				shot_type_data="FusionBomb" cloaking_percent_loss_from_firing="0.2"
+				base_percent_damage_bypasses_personal_shields="0.65" 
+				>
+			    <outgoing_damage_modifier based_on="MyHullPercentageMissing" comparison_type="MultiplesOf" compared_to="20" multiplier="1" />	
+			    <outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="HullOnly" comparison_type="AtLeast" compared_to="75" multiplier="1.25" />
+			</system>
+  </entity>
+	<entity name="HumanDrengEnraged" copy_from="DZDrengEnraged" thematic_groups="Human,DarkZenith"
+			tags=" "
+			starting_mark_level="Mark2"
+			description="从黑暗天顶窃取而来，德伦格舰能够通过在一个小保护区域内吸引伤害，为其盟友提供更强的防御。这种愤怒变体有一件额外的武器，随着德伦格舰接近死亡，该武器会变得更强。"
+			>
+	<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="100" cap="9" faction="DarkZenith"/>	  
+	</entity>
+  
+  <entity name="DZDrengSinister"  copy_from="DZDreng" display_name="邪恶德伦格舰"
+          icon_overlay="Overlays1/DZ_Black_Sinister"
+          tags="DZTierOneSinister,InitialInvasionReinforcements,DZHackResponse"
+	
+		  description="赫斯卡尔舰的成熟形态，德伦格舰能够通过在一个小保护区域内吸引伤害，为其盟友提供更强的防御。这种邪恶变体有一件额外的群体控制武器，能够麻痹敌人。"
+          >
+		  <system name="R1" display_name="扭曲火箭"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="180" range="Normal1" shot_speed="Normal" rate_of_fire="VeryLow"
+				shots_per_salvo="16" fires_salvos_sequentially="false"
+				shot_type_data="FusionRocket"	cloaking_percent_loss_from_firing="0.2"	
+		base_paralysis_seconds_per_shot="6" paralysis_to_ships_mass_tx_less_than="3" added_target_evaluator="ParalyzerAsPrimary">
+		</system>
+	</entity>
+	<entity name="HumanDrengSinister" copy_from="DZDrengSinister" thematic_groups="Human,DarkZenith"
+			tags=" "
+			starting_mark_level="Mark2"
+			description="从黑暗天顶窃取而来，德伦格舰能够通过在一个小保护区域内吸引伤害，为其盟友提供更强的防御。这种邪恶变体有一件额外的群体控制武器，能够麻痹敌人。"
+			>
+	<fleet_membership name="AddedToFleet_MinorFaction" ship_cap_group="Strike" weight="100" cap="9" faction="DarkZenith"/>	  
+	</entity>
+	
+
+  
+  <!--Ulfsark is now a tier 1 pirate-->
+  <entity name="DZUlfsark"
+          thematic_groups="Zenith,DarkZenith"
+          tags="DZPirateTier1"
+		  visuals="Assets/_DLC2/Zenith/DZUlfsark/DZUlfsark.prefab" visuals_bundle="exp2_zenith_onslaught" icon_overlay="Overlays2/Guardian_Shredder"
+      icon_name="Ships3/DarkZenithUlfsark"
+      uses_large_health_bar="true"
+      category="Ship"
+      size_scale="3.6"
+      visuals_scale_multiplier="12"
+      y_offset_of_icon="16"
+	  display_name="乌尔弗萨克"
+	  description="一艘强大的黑暗天顶飞船，仅由海盗柱顶过梁建造。它会带着杀戮的欲望冲入战场，攻击力度之大，因其鲁莽而自损。"
+	  collision_priority="810"
+          voice_group="Raider"
+
+	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Alien"
+	  mark_level_scale_style="DarkZenith"
+	  cost_for_ai_to_purchase="1000" 		
+	  hull_points="80000" shield_points="40000" speed="AboveAverage3"
+	  metal_cost="90000" energy_consumption="7500"
+          assist_range="Normal1"			
+	  armor_mm="50" albedo="0.3" engine_gx="18" mass_tx="5"
+	  can_pass_through_enemy_forcefields="true"
+	  damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.1" 
+	  ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+	  speed_multiplier_first_5_seconds_on_planet="1.5"
+	  firing_delay_for_transported_ships="6"
+          priority_as_ai_target="NormalStarship" priority_as_frd_target="BiggerStarship" priority_to_protect="SlightlyLessExpendable"
+	  >
+   <system name="WM" display_name="定身钳爪"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="8000" range="AlmostNone" seek_range="Normal1" shot_speed="Fast" rate_of_fire="High" fires_salvos_sequentially="false"
+				shot_type_data="MeleeInvisible"	added_target_evaluator="Melee"
+				base_engine_stun_per_shot="2" added_engine_stun_per_shot_per_mark="1" engine_stun_to_engine_gx_less_than="22" max_engine_stun_seconds="10"
+				health_change_per_damage_dealt="-0.33"
+				>
+    </system>
+  </entity>
+  
+
+<!--Tier 2: Dire Tier -->
+<!--Tier 2 Stout defined as +50% shields
+	Tier 2 fortified is defined as electrotoxic 20%.
+	Tier 2 Spirited defined as cloaking (5 shot decloak). Slightly more cloaking points than tier 1 AND speed increased to 800
+	Tier 2 enraged defined as an extra Javelin launcher + single target sabot weapon that deals bonus to tractored units (synergizes with javelin)
+	Tier 2 sinister defined as an extra Barbed Net launcher + multi target bombard weapon that deals bonus to tractored units (synergizes with barbed net) -->
+<entity name="DZJarl"
+        thematic_groups="Zenith,DarkZenith"
+          tags="DZTierTwoBase"
+          gimbal_icon_size_multiplier="1.5"
+          visuals="Assets/_DLC2/Zenith/DZJarl/DZJarl.prefab" visuals_bundle="exp2_zenith_onslaught"
+        
+          icon_name="Ships3/DarkZenithJarl" 
+          uses_large_health_bar="true"
+          category="Ship"
+          size_scale="12"
+	  visuals_scale_multiplier="24"
+          y_offset_of_icon="35"
+          collision_priority="800"
+          display_name="雅尔战舰"
+          description="一艘非常强大的黑暗天顶战舰，配备先进的连锁闪电发射器和反隐形装置。在生命受到威胁时，会召唤德伦格战舰到身边。"
+          blocks_enemy_claim_flows="true"
+          voice_group="Silent"
+	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Alien"
+		mark_level_scale_style="DarkZenith"
+	  cost_for_ai_to_purchase="6500" strength_multiplier="1.4"			
+	  hull_points="1000000" shield_points="500000" speed="BelowAverage2"
+	  metal_cost="600000" energy_consumption="25000"
+	 
+	  armor_mm="245" albedo="0.4" engine_gx="20" mass_tx="7"
+	  build_points_per_damage_taken="0.3"
+	  unit_to_make_with_build_points_from_damage_taken="DZDreng"
+	  ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+          priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+	  >
+   <system name="CE" display_name="连锁闪电发射器"
+            category="Weapon" firing_timing="OnlyInRange"
+            damage_per_shot="4000" range="Normal1" shot_speed="Normal" rate_of_fire="VeryLow"
+            shot_type_data="HeavyBeamInvisible"  beam_length_multiplier="1.3" shots_detonate_immediately="true"  beam_weapon_visual_style="Lightning_Blue"
+            beam_chains_out_to_targets_x_times="2" beam_chains_out_to_target_min_range="200" beam_chains_out_to_targets_x_range="2000"
+            beam_chains_out_to_max_targets_from_each_source="4"
+            aoe_and_beam_damage_multiplier_to_non_primary_target="50" 
+            
+				>
+		</system>
+		<system name="T" display_name="超光速粒子阵列"
+		category="Passive" tachyon_points="50" tachyon_range="Normal1" tachyon_hits_albedo_less_than="0.75"></system>
+	</entity>
+  
+	<entity name="DZJarlFortified" copy_from="DZJarl" display_name="强化雅尔战舰"
+            tags="DZTierTwoFortified"
+            icon_overlay="Overlays1/DZ_Blue_Fortified"
+			unit_to_make_with_build_points_from_damage_taken="DZDrengFortified"
+			returns_this_percentage_of_damage_if_damaged_by_enemy_attack="0.1"
+			description="一艘非常强大的黑暗天顶战舰，配备先进的连锁闪电发射器和反隐形装置。在生命受到威胁时，会召唤德伦格战舰到身边。这个强化变体在受到攻击时会将一部分伤害返还给攻击者。"
+          >
+	</entity>
+	<entity name="DZJarlStout"  copy_from="DZJarl" display_name="坚固雅尔战舰"
+          icon_overlay="Overlays1/DZ_Green_Stout"
+          tags="DZTierTwoStout,DZHackResponse"
+		  shield_points="750000"
+		  unit_to_make_with_build_points_from_damage_taken="DZDrengStout"
+		  description="一艘非常强大的黑暗天顶战舰，配备先进的连锁闪电发射器和反隐形装置。在生命受到威胁时，会召唤德伦格战舰到身边。这个坚固变体比平常更加耐用。"
+          >
+	</entity>
+	<entity name="DZJarlSpirted" copy_from="DZJarl" display_name="灵动雅尔战舰"
+            tags="DZTierTwoSpirited"
+            icon_overlay="Overlays1/DZ_White_Spirited"
+			speed="Normal3"
+			description="一艘非常强大的黑暗天顶战舰，配备先进的连锁闪电发射器和反隐形装置。在生命受到威胁时，会召唤德伦格战舰到身边。这个灵动变体具有隐形能力且速度更快。"
+          >
+		   <system name="C" display_name="隐形装置"
+				category="Passive"
+				cloaking_points="5000" cloaking_points_added_per_mark="1000"
+				>
+		   </system>
+	</entity>
+	<entity name="DZJarlEnraged" copy_from="DZJarl" display_name="愤怒雅尔战舰"
+          icon_overlay="Overlays1/DZ_Red_Enraged"
+          tags="DZTierTwoEnraged,DZHackResponse"
+		  unit_to_make_with_build_points_from_damage_taken="DZDrengEnraged"
+		  description="一艘非常强大的黑暗天顶战舰，配备先进的连锁闪电发射器和反隐形装置。在生命受到威胁时，会召唤德伦格战舰到身边。这个愤怒变体配备了鱼叉发射器，可将敌方单位固定，以便其恶毒穿甲武器集中火力攻击。"
+          >
+		    <system name="L" display_name="鱼叉发射器"
+				category="Weapon" firing_timing="OnlyInRange" shot_type_data="DZJavelin"
+				damage_per_shot="5" range="Planetary" shot_speed="Slow" rate_of_fire="Sloth" fires_salvos_sequentially="true"  
+				shots_per_salvo="1"  
+				>
+			</system>
+			<system name="WS" display_name="恶毒穿甲弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="100" range="High1" shot_speed="Normal" rate_of_fire="ExtremelyLow" fires_salvos_sequentially="true"
+				shot_type_data="Sabot" cloaking_percent_loss_from_firing="0.2" multiplier_damage_to_tractored_unit="2"
+				>
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="100" />
+		  </system>
+	</entity>
+	<entity name="DZJarlSinister" copy_from="DZJarl" display_name="邪恶雅尔战舰"
+			icon_overlay="Overlays1/DZ_Black_Sinister"
+			tags="DZTierTwoSinister"
+			description="一艘非常强大的黑暗天顶战舰，配备先进的连锁闪电发射器和反隐形装置。在生命受到威胁时，会召唤德伦格战舰到身边。这个邪恶变体配备了带刺网发射器，使其跟踪火箭能够造成巨大破坏。"
+			>
+		  <system name="L" display_name="网发射器"
+				category="Weapon" firing_timing="OnlyInRange" shot_type_data="DZExplosiveNet"
+				damage_per_shot="5" range="Planetary" shot_speed="Slow" rate_of_fire="PeriodicActivation" fires_salvos_sequentially="true"  
+				shots_per_salvo="1"  cloaking_percent_loss_from_firing="0.2"
+				>
+		</system>
+		<system name="R1" display_name="跟踪火箭"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="70" range="AboveAverage2" shot_speed="Slow" rate_of_fire="ExtremelyLow"
+				shots_per_salvo="30" fires_salvos_sequentially="true"
+				shot_type_data="FusionRocket"	multiplier_damage_to_tractored_unit="3"	cloaking_percent_loss_from_firing="0.2"		
+				>
+		</system>
+  </entity>
+
+<entity name="DZMerkismathr"
+        thematic_groups="Zenith,DarkZenith"
+          tags="DZTierTwoBase"
+          gimbal_icon_size_multiplier="1.5"
+          visuals="Assets/_DLC2/Zenith/DZMerkismathr/DZMerkismathr.prefab" visuals_bundle="exp2_zenith_onslaught"  
+          icon_name="Ships3/DarkZenithMerkismathr" 
+          uses_large_health_bar="true"
+          category="Ship"
+          size_scale="10.8"
+		  visuals_scale_multiplier="30" y_offset_of_ship_in_visual_space="40"
+          y_offset_of_icon="35"
+          collision_priority="800"
+          display_name="默基斯马瑟"
+          description="一艘难以捉摸且强大的黑暗天顶飞船。它会周期性地进入脱离战斗的相位状态，在此状态下无法与其他飞船互动。但当它回到正常状态时，其武器会在短时间内过载。"
+          blocks_enemy_claim_flows="true"
+          voice_group="Silent"
+	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Alien" 
+	  mark_level_scale_style="DarkZenith"
+	  cost_for_ai_to_purchase="5500" strength_multiplier="1.5"			
+	  hull_points="1000000" shield_points="500000" speed="BelowAverage2"
+	  metal_cost="600000" energy_consumption="25000"
+	
+	  armor_mm="245" albedo="0.4" engine_gx="20" mass_tx="7"
+	  ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+          priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+	  alternative_state_of_matter="SoloPhase" phases_to_other_alternative_state_of_matter_after_seconds="30" phases_back_to_default_state_of_matter_after_seconds="9"
+	  >
+    
+     <system name="R5" display_name="激光脉冲"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1250" range="AboveAverage1" shot_speed="Normal" rate_of_fire="VeryLow"
+				shots_per_salvo="20" fires_salvos_sequentially="true"
+				shot_type_data="LaserPulse_DeepBlue" cloaking_percent_loss_from_firing="0.2"
+				>
+        <outgoing_damage_modifier based_on="MyTimeAtPlanet" comparison_type="LessThan" compared_to="10" multiplier="4" />				
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+  </entity>
+      
+	<entity name="DZMerkismathrFortified" copy_from="DZMerkismathr" display_name="强化版默基斯马瑟"
+          display_name_for_sidebar="强化版默基"
+            tags="DZTierTwoFortified"
+            icon_overlay="Overlays1/DZ_Blue_Fortified" strength_multiplier="2"
+			returns_this_percentage_of_damage_if_damaged_by_enemy_attack="0.1"
+			description="一艘难以捉摸且强大的黑暗天顶飞船。它会周期性地进入脱离战斗的相位状态，在此状态下无法与其他飞船互动。但当它回到正常状态时，其武器会在短时间内过载。这个强化版会将一部分伤害返还给攻击者。"
+          >
+	</entity>
+	<entity name="DZMerkismathrStout"  copy_from="DZMerkismathr" display_name="坚固版默基斯马瑟"
+          icon_overlay="Overlays1/DZ_Green_Stout"
+          tags="DZTierTwoStout,DZHackResponse"
+		  shield_points="750000"
+		  description="一艘难以捉摸且强大的黑暗天顶飞船。它会周期性地进入脱离战斗的相位状态，在此状态下无法与其他飞船互动。但当它回到正常状态时，其武器会在短时间内过载。这个坚固版比普通版更耐用。"
+          >
+	</entity>
+	<entity name="DZMerkismathrSpirited" copy_from="DZMerkismathr" display_name="灵动版默基斯马瑟" display_name_for_sidebar="灵动版默基"
+            tags="DZTierTwoSpirited" strength_multiplier="2"
+            icon_overlay="Overlays1/DZ_White_Spirited"
+			speed="Normal3"
+			description="一艘难以捉摸且强大的黑暗天顶飞船。它会周期性地进入脱离战斗的相位状态，在此状态下无法与其他飞船互动。但当它回到正常状态时，其武器会在短时间内过载。这个灵动版处于隐形状态且速度更快。"
+          >
+		   <system name="C" display_name="隐形装置"
+				category="Passive"
+				cloaking_points="5000" cloaking_points_added_per_mark="1000"
+				>
+		   </system>
+	</entity>
+	<entity name="DZMerkismathrEnraged" copy_from="DZMerkismathr"  display_name="愤怒版默基斯马瑟"
+						display_name_for_sidebar="愤怒版默基"
+          icon_overlay="Overlays1/DZ_Red_Enraged"
+          tags="DZTierTwoEnraged"
+		  description="一艘难以捉摸且强大的黑暗天顶飞船。它会周期性地进入脱离战斗的相位状态，在此状态下无法与其他飞船互动。但当它回到正常状态时，其武器会在短时间内过载。这个愤怒版配备了一个鱼叉发射器，可将目标固定，以便其恶毒的穿甲武器集中火力攻击。"
+          >
+		  <system name="L" display_name="标枪发射器"
+				category="Weapon" firing_timing="OnlyInRange" shot_type_data="DZJavelin"
+				damage_per_shot="5" range="Planetary" shot_speed="Slow" rate_of_fire="PeriodicActivation" fires_salvos_sequentially="true"  
+				shots_per_salvo="1"  cloaking_percent_loss_from_firing="0.2"
+				>
+			</system>
+			<system name="WS" display_name="恶毒穿甲弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="100" range="High1" shot_speed="Normal" rate_of_fire="ExtremelyLow" fires_salvos_sequentially="true"
+				shot_type_data="Sabot" cloaking_percent_loss_from_firing="0.2" multiplier_damage_to_tractored_unit="2"
+				>
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="100" />
+		  </system>
+	</entity>
+	<entity name="DZMerkismathrSinister" copy_from="DZMerkismathr" display_name="邪恶版默基斯马瑟"
+						display_name_for_sidebar="邪恶版默基"
+          icon_overlay="Overlays1/DZ_Black_Sinister"
+          tags="DZTierTwoSinister"
+		  description="一艘难以捉摸且强大的黑暗天顶飞船。它会周期性地进入脱离战斗的相位状态，在此状态下无法与其他飞船互动。但当它回到正常状态时，其武器会在短时间内过载。这个邪恶版配备了一个带刺网发射器，使其跟踪火箭能够造成巨大破坏。"
+          >
+		  <system name="L" display_name="网发射器"
+				category="Weapon" firing_timing="OnlyInRange" shot_type_data="DZExplosiveNet"
+				damage_per_shot="5" range="Planetary" shot_speed="Slow" rate_of_fire="PeriodicActivation" fires_salvos_sequentially="true"  
+				shots_per_salvo="1"  cloaking_percent_loss_from_firing="0.2"
+				>
+		</system>
+		<system name="R1" display_name="跟踪火箭"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="70" range="AboveAverage2" shot_speed="Slow" rate_of_fire="ExtremelyLow"
+				shots_per_salvo="30" fires_salvos_sequentially="true"
+				shot_type_data="FusionRocket"	multiplier_damage_to_tractored_unit="3"	cloaking_percent_loss_from_firing="0.2"		
+				>
+		</system>
+	</entity>
+   
+ <!--Tier 2 Pirate -->	
+  <entity name="DZCoerl"
+          thematic_groups="Zenith,DarkZenith"
+          tags="DZPirateTier2"
+          gimbal_icon_size_multiplier="1.5"
+          visuals="Assets/_DLC2/Zenith/DZCoerl/DZCoerl.prefab" visuals_bundle="exp2_zenith_onslaught"
+          icon_name="Ships3/DarkZenithCoerl"
+          uses_large_health_bar="true"
+          category="Ship"
+          size_scale="14"
+	  visuals_scale_multiplier="20"
+          y_offset_of_icon="35"
+          collision_priority="800"
+          display_name="瑟奥尔"
+          description="一个非常强大的黑暗天顶单位，仅由海盗柱顶过梁建造。这些海盗单位喜欢借助隐形能力，在远离猎物的地方潜伏。它们的舷侧火炮只能攻击远处的单位，可利用这一弱点。但要小心它们发射的寻的炸弹，如果不将其击落，将会造成巨大伤害。"
+          blocks_enemy_claim_flows="true"
+          voice_group="Silent"
+	  starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Alien" does_not_use_multipliers_from_mark_level="true"
+	  mark_level_scale_style="DarkZenith"
+	  cost_for_ai_to_purchase="6500" strength_multiplier="1.4"			
+	  hull_points="2800000" shield_points="1400000" speed="AboveAverage1"
+	  metal_cost="600000" energy_consumption="25000"
+	  armor_mm="40" albedo="0.7" engine_gx="20" mass_tx="7"
+	  can_pass_through_enemy_forcefields="true"
+	  ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+          priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+	  >
+    <system name="W1" display_name="舷侧火炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="30000" range="ExtremelyHigh" shot_speed="Normal" rate_of_fire="Sloth" fires_salvos_sequentially="true"
+				shots_per_salvo="20"
+				shot_type_data="EngineDisruptingShell" cloaking_percent_loss_from_firing="0.2"	
+				>
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="1.2"/>
+				<outgoing_damage_modifier based_on="AttackDistance" comparison_type="LessThan" compared_to="5000" multiplier="0"/>	
+		</system>
+	<system name="L" display_name="寻的炸弹发射器"
+				category="Weapon" firing_timing="OnlyInRange" shot_type_data="DZSeekerBomb"
+				damage_per_shot="5" range="Planetary" shot_speed="Slow" rate_of_fire="PeriodicActivation" fires_salvos_sequentially="true"  
+				shots_per_salvo="1"  cloaking_percent_loss_from_firing="0.2"
+				>
+	</system>
+	 <system name="C" display_name="隐形装置"
+				category="Passive"
+				cloaking_points="4000" cloaking_points_added_per_mark="1000"
+				>
+    </system>
+  </entity>
+      
+<!-- Golem Tier. -->
+<!--Tier 3 Stout defined as +50% shields
+	Tier 3 fortified is defined as electrotoxic 20%.
+	Tier 3 Spirited defined as cloaking (5 shot decloak). Slightly more cloaking points than tier 2 AND speed increased to 1000
+	Tier 3 enraged defined as an extra Javelin launcher + single target sabot weapon that deals bonus to tractored units (synergizes with javelin). Sronger version of tier 2
+	Tier 3 sinister defined as an extra Barbed Net launcher + multi target bombard weapon that deals bonus to tractored units (synergizes with barbed net). Stronger version of tier 2 -->
+<entity name="DZEinherjar" 
+        thematic_groups="Zenith,DarkZenith"
+          tags="DZTierThreeBase,DZTierThree"
+          gimbal_icon_size_multiplier="1.5"
+	  visuals="Assets/_DLC2/Zenith/DZEinherjar/DZEinherjar.prefab" visuals_bundle="exp2_zenith_onslaught"
+          icon_name="Ships3/DarkZenithEinherjar"
+	  uses_large_health_bar="true"
+	  category="Ship"
+	  size_scale="16"
+	  visuals_scale_multiplier="70" y_offset_of_ship_in_visual_space="60"
+	  y_offset_of_icon="55"
+	  collision_priority="810"
+	  display_name="英灵战士" display_name_for_sidebar="英灵战士"
+	  description="一艘黑暗天顶的精英战舰，装备有能撕碎敌人的轨道炮，能暂时让目标受到来自所有来源的更多伤害。"
+	  starting_mark_level="Mark4" tech_upgrades_that_benefit_me="Alien" 
+	  mark_level_scale_style="DarkZenith"
+	  cost_for_ai_to_purchase="20000" strength_multiplier="2"			
+	  hull_points="1500000" shield_points="750000" speed="BelowAverage2"
+	  metal_cost="5000000" energy_consumption="50000"
+          assist_range="Normal1"			
+	  armor_mm="175" albedo="0.8" engine_gx="18" mass_tx="11"
+	  ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+	  speed_multiplier_first_5_seconds_on_planet="1.5"
+	  shows_on_galaxy_map_for_explored_planets="true" 
+	  firing_delay_for_transported_ships="6"
+          voice_group="Raider"
+          priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+	  >
+	<system name="W1" display_name="天顶撕碎轨道炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1450" range="High2" shot_speed="VeryFast" rate_of_fire="Low"
+				shots_per_salvo="60" fires_salvos_sequentially="false"
+				shot_type_data="ParalysisProngedShot_Blue"
+				damage_amplification="true" damage_amplification_duration="4" damage_amplification_mult="1.25"
+				>
+	<outgoing_damage_modifier based_on="CurrentHullPercentage" comparison_type="AtMost" compared_to="30" multiplier="2" /> 
+	</system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+  </entity>
+	<entity name="DZEinherjarFortified" copy_from="DZEinherjar" display_name="强化英灵战士" display_name_for_sidebar="强化英灵"
+          icon_overlay="Overlays1/DZ_Blue_Fortified" strength_multiplier="1.4"
+		  tags="DZTierThreeFortified,DZTierThree"
+		  returns_this_percentage_of_damage_if_damaged_by_enemy_attack="0.1"
+		  description="一艘黑暗天顶的精英战舰，装备有能撕碎敌人的轨道炮，能暂时让目标受到来自所有来源的更多伤害。这个强化变体在受到攻击时会将一部分伤害返还给攻击者。"
+		  >
+		  </entity>
+		  
+	<entity name="DZEinherjarStout" copy_from="DZEinherjar" display_name="坚韧英灵战士" display_name_for_sidebar="坚韧英灵"
+          icon_overlay="Overlays1/DZ_Green_Stout" strength_multiplier="1.2"
+          tags="DZTierThreeStout,DZTierThree"
+		  shield_points="1125000"
+		  description="一艘黑暗天顶的精英战舰，装备有能撕碎敌人的轨道炮，能暂时让目标受到来自所有来源的更多伤害。这个坚韧变体比普通版本更耐用。"
+          >
+	</entity>
+	<entity name="DZEinherjarSpirited" copy_from="DZEinherjar" display_name="灵动英灵战士" display_name_for_sidebar="灵动英灵"
+          icon_overlay="Overlays1/DZ_White_Spirited" strength_multiplier="1.4"
+          speed="Normal2"
+          tags="DZTierThreeSpirited,DZTierThree"
+		  description="一艘黑暗天顶的精英战舰，装备有能撕碎敌人的轨道炮，能暂时让目标受到来自所有来源的更多伤害。这个灵动变体具有隐形能力且速度更快。"
+          >
+		    <system name="C" display_name="隐形装置"
+				category="Passive"
+				cloaking_points="5000" cloaking_points_added_per_mark="1000"
+				>
+		   </system>
+  </entity>
+  
+  <entity name="DZEinherjarEnraged" copy_from="DZEinherjar" display_name="愤怒英灵战士" display_name_for_sidebar="愤怒英灵"
+          icon_overlay="Overlays1/DZ_Red_Enraged"
+          tags="DZTierThreeEnraged"
+		   description="一艘黑暗天顶的精英战舰，装备有能撕碎敌人的轨道炮，能暂时让目标受到来自所有来源的更多伤害。这个愤怒变体配备了一个鱼叉发射器，能将敌人固定在原地，以便其恶毒的穿甲武器进行集中火力攻击。"
+          >
+		  <system name="L" display_name="鱼叉发射器"
+				category="Weapon" firing_timing="OnlyInRange" shot_type_data="DZJavelin"
+				damage_per_shot="5" range="Planetary" shot_speed="Slow" rate_of_fire="Sloth" fires_salvos_sequentially="true"  
+				shots_per_salvo="2"  cloaking_percent_loss_from_firing="0.2"
+				>
+			</system>
+			<system name="WS" display_name="恶毒穿甲弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="100" range="High1" shot_speed="Normal" rate_of_fire="VeryLow" fires_salvos_sequentially="true"
+				shot_type_data="Sabot" cloaking_percent_loss_from_firing="0.2" multiplier_damage_to_tractored_unit="3"
+				>
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="100" />
+		  </system>
+  </entity>
+  
+  <entity name="DZEinherjarSinister" copy_from="DZEinherjar" display_name="邪恶英灵战士" display_name_for_sidebar="邪恶英灵"
+          icon_overlay="Overlays1/DZ_Black_Sinister"
+          tags="DZTierThreeSinister"
+		  description="一艘黑暗天顶的精英战舰，装备有能撕碎敌人的轨道炮，能暂时让目标受到来自所有来源的更多伤害。这个邪恶变体配备了一个带刺网发射器，能让其追踪火箭发挥更大威力。"
+          >
+		   <system name="L" display_name="网发射器"
+				category="Weapon" firing_timing="OnlyInRange" shot_type_data="DZExplosiveNet"
+				damage_per_shot="5" range="Planetary" shot_speed="Slow" rate_of_fire="PeriodicActivation" fires_salvos_sequentially="true"  
+				shots_per_salvo="2"  cloaking_percent_loss_from_firing="0.2"
+				>
+		</system>
+		<system name="R1" display_name="追踪火箭"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="140" range="AboveAverage2" shot_speed="Slow" rate_of_fire="ExtremelyLow"
+				shots_per_salvo="30" fires_salvos_sequentially="true"
+				shot_type_data="FusionRocket"	multiplier_damage_to_tractored_unit="3"	cloaking_percent_loss_from_firing="0.2"		
+				>
+		</system>
+  </entity>
+
+
+
+<entity name="DZYmir" display_name="尤弥尔" display_name_for_sidebar="尤弥尔"
+        thematic_groups="Zenith,DarkZenith"
+          tags="DZTierThreeBase,DZTierThree"
+          gimbal_icon_size_multiplier="1.5"
+          visuals="assets/_dlc2/zenith/dzymir/ymir.prefab" visuals_bundle="exp2_zenith_onslaught"
+	  icon_name="Ships3/DarkZenithYmir"
+	  uses_large_health_bar="true"
+	  category="Ship"
+	  size_scale="14"
+	  visuals_scale_multiplier="40"
+	  y_offset_of_icon="70"
+	  description="一个巨大的黑暗天顶单位，配备毁灭性的连锁闪电武器，可减慢敌人速度。"
+	  collision_priority="810"
+          voice_group="Raider"
+	  starting_mark_level="Mark4" tech_upgrades_that_benefit_me="Alien" 
+	  mark_level_scale_style="DarkZenith"
+	  cost_for_ai_to_purchase="10000" 		
+	  hull_points="2000000" shield_points="1000000" speed="BelowAverage1"
+	  metal_cost="5000000" energy_consumption="50000"
+          assist_range="Normal1"			
+	  armor_mm="280" albedo="0.7" engine_gx="18" mass_tx="11"
+	  ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+	  speed_multiplier_first_5_seconds_on_planet="1.5"
+	  shows_on_galaxy_map_for_explored_planets="true" 
+	  firing_delay_for_transported_ships="6"
+          priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+	  >
+      	<system name="B9" display_name="暴雪冲击"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="9250" range="AboveAverage4" shot_speed="Normal" rate_of_fire="FairlyLow"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="1.1"  beam_weapon_visual_style="Lightning_Blue"
+				aoe_and_beam_damage_multiplier_to_non_primary_target="20"				
+				beam_chains_out_to_targets_x_times="3"
+				beam_chains_out_to_target_min_range="200"
+				beam_chains_out_to_targets_x_range="2500"
+				beam_chains_out_to_max_targets_from_each_source="5"
+				shots_detonate_immediately="true"
+				maximum_number_of_targets_hit_per_shot="30"
+				added_target_evaluator="LowestHealthAsMajorPrimary"
+				base_engine_stun_per_shot="2" added_engine_stun_per_shot_per_mark="1" engine_stun_to_engine_gx_less_than="18" max_engine_stun_seconds="10"				
+				>
+				<outgoing_damage_modifier applies_to="AllShields" based_on="MaxBubbleForcefield" comparison_type="GreaterThan" compared_to="10000" multiplier="5" />
+		</system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+  </entity>
+  
+  <entity name="DZYmirFortified" copy_from="DZYmir" display_name="强化尤弥尔" display_name_for_sidebar="强化尤弥尔"
+          icon_overlay="Overlays1/DZ_Blue_Fortified" strength_multiplier="1.4"
+          tags="DZTierThreeFortified,DZTierThree"
+		  returns_this_percentage_of_damage_if_damaged_by_enemy_attack="0.1"
+		  description="一个巨大的黑暗天顶单位，配备毁灭性的连锁闪电武器，可减慢敌人速度。这个强化变体将一部分受到的伤害返还给攻击者。"
+          >
+  </entity>
+  
+  <entity name="DZYmirStout" copy_from="DZYmir" display_name="坚固尤弥尔" display_name_for_sidebar="坚固尤弥尔"
+          icon_overlay="Overlays1/DZ_Green_Stout" strength_multiplier="1.2"
+          tags="DZTierThreeStout,DZTierThree"
+		  shield_points="1500000"
+		  description="一个巨大的黑暗天顶单位，配备毁灭性的连锁闪电武器，可减慢敌人速度。这个坚固变体比普通变体更耐用。"
+          >
+  </entity>
+  
+  <entity name="DZYmirSpirited" copy_from="DZYmir" display_name="灵动尤弥尔" display_name_for_sidebar="灵动尤弥尔"
+          icon_overlay="Overlays1/DZ_White_Spirited" strength_multiplier="1.4"
+          speed="Normal2"
+          tags="DZTierThreeSpirited,DZTierThree"
+		  description="一个巨大的黑暗天顶单位，配备毁灭性的连锁闪电武器，可减慢敌人速度。这个灵动变体处于隐形状态且速度更快。"
+          >
+		    <system name="C" display_name="隐形装置"
+				category="Passive"
+				cloaking_points="5000" cloaking_points_added_per_mark="1000"
+				>
+		   </system>
+  </entity>
+  
+	
+  <entity name="DZYmirEnraged" copy_from="DZYmir" display_name="愤怒尤弥尔" display_name_for_sidebar="愤怒尤弥尔"
+          icon_overlay="Overlays1/DZ_Red_Enraged" strength_multiplier="1.2"
+          tags="DZTierThreeEnraged,DZTierThree"
+		  description="一个巨大的黑暗天顶单位，配备毁灭性的连锁闪电武器，可减慢敌人速度。这个愤怒变体配备了一个鱼叉发射器，可将敌人固定在原地，以便其恶毒的穿甲武器集中火力攻击。"
+          >
+		  <system name="L" display_name="鱼叉发射器"
+				category="Weapon" firing_timing="OnlyInRange" shot_type_data="DZJavelin"
+				damage_per_shot="5" range="Planetary" shot_speed="Slow" rate_of_fire="Sloth" fires_salvos_sequentially="true"  
+				shots_per_salvo="2" cloaking_percent_loss_from_firing="0.2"
+				>
+			</system>
+			<system name="WS" display_name="恶毒穿甲弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="100" range="High1" shot_speed="Normal" rate_of_fire="VeryLow" fires_salvos_sequentially="true"
+				shot_type_data="Sabot" cloaking_percent_loss_from_firing="0.2" multiplier_damage_to_tractored_unit="3"
+				>
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="100" />
+		  </system>
+  </entity>
+ 
+ <entity name="DZYmirSinister" copy_from="DZYmir" display_name="邪恶尤弥尔" display_name_for_sidebar="邪恶尤弥尔"
+          icon_overlay="Overlays1/DZ_Black_Sinister" strength_multiplier="1.2"
+          tags="DZTierThreeSinister,DZTierThree"
+		  description="一个巨大的黑暗天顶单位，配备毁灭性的连锁闪电武器，可减慢敌人速度。这个邪恶变体配备了一个带刺网发射器，使其跟踪火箭能够造成巨大破坏。"
+          >
+		   <system name="L" display_name="网发射器"
+				category="Weapon" firing_timing="OnlyInRange" shot_type_data="DZExplosiveNet"
+				damage_per_shot="5" range="Planetary" shot_speed="Slow" rate_of_fire="PeriodicActivation" fires_salvos_sequentially="true"  
+				shots_per_salvo="2"  cloaking_percent_loss_from_firing="0.2"
+				>
+		</system>
+		<system name="R1" display_name="跟踪火箭"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="140" range="AboveAverage2" shot_speed="Slow" rate_of_fire="ExtremelyLow"
+				shots_per_salvo="30" fires_salvos_sequentially="true"
+				shot_type_data="FusionRocket"	multiplier_damage_to_tractored_unit="3"	cloaking_percent_loss_from_firing="0.2"		
+				>
+		</system>
+  </entity>
+	
+<!-- The Jormugandr is the top tier DZ unit. Should be giant and scary. Something reminiscent of the devourer would be cool? Maybe like a snake whose head is reminiscent of the Devourer.
+
+     Power level: Needs to make a high-level Spire Fleet think three times about showing up. The Jormugandr's rules are 'must stay on DZ home planets unless they are attacked, in which case it gets a few minutes to rampage', so it can be made extremely strong without breaking the game. -->
+	 <entity name="DZJormugandr"
+	         thematic_groups="Zenith,DarkZenith,GolemEnemy"
+			tags="DZJormugandr,ShowsOnNormalDisplayMode,EssenceGranter" voice_group="Zenith" gimbal_icon_size_multiplier="2"
+			draw_in_galaxy_view="true"
+
+			visuals="assets/_dlc2/zenith/dzjormugandr/jormugandr.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships3/DarkZenithJormugandr"
+			uses_large_health_bar="true"
+			category="Ship"
+
+			size_scale="44"
+			visuals_scale_multiplier="11" y_offset_of_ship_in_visual_space="100"
+			y_offset_of_icon="150"
+			collision_priority="3000"
+			display_name="约尔曼冈德"
+			display_name_for_sidebar="约尔曼冈德"	
+			description="黑暗天顶舰队的巅峰之作，面对其强大力量，唯一明智的选择就是逃离。这个庞然大物大部分时间会守护黑暗天顶的母星，但一旦被激怒，它将在星系中横冲直撞。约尔曼冈德拥有毁灭性的聚焦光束，能将任何不幸挡在其路上的东西彻底摧毁。它还会定期发射一批追踪炸弹；如果这些炸弹在充能时未被击落，它们将对整个舰队造成巨大破坏。如果约尔曼冈德能以某种方式被击败，它的毁灭将是我们科学家的一大收获。"
+			behavior="Stationary"
+			starting_mark_level="Markless"
+			cost_for_ai_to_purchase="140000"
+			hull_points="100000000" shield_points="50000000" speed="VeryVeryLittle4"
+			armor_mm="350" albedo="1" engine_gx="25" mass_tx="19"
+			metal_cost="1085000" energy_consumption="100000"
+			seconds_to_fully_regenerate_hull="600"
+			immune_to_repairs="true"
+			custom_repair_impossible_for_seconds_after_damaged_by_enemy_max_15="15"
+			blocks_ceasefire_on_planet="true"
+			pushes_enemy_shields="true"
+			can_pass_through_enemy_forcefields="true"
+            shows_on_galaxy_map_for_explored_planets="true"
+			speed_multiplier_first_5_seconds_on_planet="2"
+			science_to_grant_on_death="1500"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			description_appender_dll="AIWarExternalCode"
+			description_appender_type="Arcen.AIW2.External.DarkZenithDescriptionAppender"
+			>
+    <system name="B1" display_name="湮灭光束"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="12000" range="AboveAverage5" shot_speed="Normal" rate_of_fire="High"
+				shot_type_data="HeavyBeamInvisible"
+				hits_all_intersecting_targets="true"
+				shots_detonate_immediately="true"
+				maximum_number_of_targets_hit_per_shot="50"
+				number_beams_to_fire="12" beam_weapon_visual_style="Laser_BlueBright"
+				distance_from_center_for_beam_emission="150"  
+            >
+    </system>
+	<system name="L" display_name="追踪炸弹发射器"
+				category="Weapon" firing_timing="OnlyInRange" shot_type_data="DZSeekerBombJormugandr"
+				damage_per_shot="5" range="Planetary" shot_speed="Slow" rate_of_fire="Devourer" fires_salvos_sequentially="true"  
+				shots_per_salvo="2"  cloaking_percent_loss_from_firing="0.2"
+				use_alternate_rate_of_fire_after_x_shots="4" alternate_rate_of_fire="ExtremelyLow"  use_alternate_rate_of_fire_for_x_shots_before_reverting="1"
+				>
+	</system>
+        <data_extension name="DLC3" required_expansion_list="3_The_Neinzul_Abyss"
+            necromancer_science_to_grant_on_death="1000"
+            necromancer_hacking_to_grant_on_death="20"
+            necromancer_resource_one_to_grant_on_death="10"/>
+
+	<ship_class_data can_be_zombified_and_similar="false" />
+  </entity>
+
+<!-- Defenes, drone weapons, and utility structures
+
+Defensive Structures 
+		Trelleborg (Weak turret). Chain lightning attack; primary target takes twice as much damage as secondary targets 
+		Atgeir (Weak Turret). Ion disruption blast attack; paralysis and negative knockback in a small area of effect
+		Skeggox (Strong Turret). Anti-armor and anti-massive
+		Ingelrii (Strong Turret). Anti-strikecraft
+
+Drones 
+		Javelin: Made by a defense post and the Ceorl. Incredibly fast melee drone that hits like a truck and turns into a tractor beam that can stop flagships briefly
+		Barbed Net: Made by a defense post and the Ceorl. Incredibly fast melee drone deals token AOE damage but turns into a cluster tractor beam with the electoxic property
+		Seeker Bomb: Made by a defense post and a tier 3 unit. First 5 seconds, has almost no speed and takes triple damage from all sources, but then streaks toward a target dealing extreme damage to target and moderate damage in aoe
+
+		
+Utility structures		
+		Impending Doombomb (Minefield): Visible and with a very weak engine. It will crawl towards flagships and latch on with reverse tractor. Will effecitvely one-shot these ships after 30 seconds
+	-->
+<!-- Defensive Structures -->
+        <entity name="DZTrelleborg"
+		        thematic_groups="Zenith,DarkZenith,Turret"
+	  tags="DZDefensiveStructureWeak,DZDefensiveStructure"
+			visuals="Assets/_DLC2/Zenith/DZTrelleborg/DZTrelleborg.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships3/ZenithTurret" icon_overlay="Overlays1/Turret_ChainLightning"
+			category="Ship" is_turret="true"
+                        never_leaves_remains="true"
+			size_scale="1.02"
+			visuals_scale_multiplier="8.1"
+			collision_priority="1000"
+			display_name="特雷勒堡炮塔"
+			description="一座强大的炮塔，用于阻止对黑暗天顶的攻击。"
+			behavior="Stationary"			
+			starting_mark_level="Mark4"
+			cost_for_ai_to_purchase="76" strength_multiplier="1.2"			
+			hull_points="27000" shield_points="6750" speed="Immobile"
+			metal_cost="60000" energy_consumption="450"
+			armor_mm="80" albedo="0.45" mass_tx="2"
+			voice_group="Turret"
+			fleet_membership="Planetary"
+			ship_or_structure_explosion_sfx="Turret_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+      priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable"
+      multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5"
+      >
+       <system name="CE" display_name="链式闪电发射器"
+            category="Weapon" firing_timing="OnlyInRange"
+            damage_per_shot="1750" range="Normal5" shot_speed="Normal" rate_of_fire="RatherLow"
+            shot_type_data="HeavyBeamInvisible"  beam_length_multiplier="1.3" shots_detonate_immediately="true"  beam_weapon_visual_style="Lightning_Blue"
+            beam_chains_out_to_targets_x_times="1" beam_chains_out_to_target_min_range="200" beam_chains_out_to_targets_x_range="2000"
+            beam_chains_out_to_max_targets_from_each_source="4"
+            only_targets_strikecraft_and_frigates="true" aoe_and_beam_damage_multiplier_to_non_primary_target="50" 
+            added_target_evaluator="LowestHealthAsMajorPrimary"
+				>
+		</system>
+  </entity>
+
+          <entity name="DZAtgeir"
+		          thematic_groups="Zenith,DarkZenith,Turret"
+	  tags="DZDefensiveStructureWeak,DZDefensiveStructure"
+			visuals="Assets/_DLC2/Zenith/DZTrelleborg/DZAtgeir.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships3/ZenithTurret" icon_overlay="Overlays2/Turret_Atgeir"
+			category="Ship" is_turret="true"
+			size_scale="1.02"
+                        never_leaves_remains="true"
+			visuals_scale_multiplier="8.1"
+			collision_priority="1000"
+			display_name="亚特盖尔炮塔"
+			description="一座强大的炮塔，用于阻止对黑暗天顶的攻击。"
+			behavior="Stationary"			
+			starting_mark_level="Mark4"
+			cost_for_ai_to_purchase="76" strength_multiplier="1.2"			
+			hull_points="27000" shield_points="6750" speed="Immobile"
+			metal_cost="60000" energy_consumption="450"
+			armor_mm="80" albedo="0.45" mass_tx="2"
+			voice_group="Turret"
+			fleet_membership="Planetary"
+			ship_or_structure_explosion_sfx="Turret_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+      priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable"
+      multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5"
+      >
+		<system name="WT" display_name="离子干扰爆破器" category="Weapon" firing_timing="OnlyInRange"  
+	        damage_per_shot="1600" range="AboveAverage2" shot_speed="Slow" rate_of_fire="RatherLow" fires_salvos_sequentially="true"
+			shot_type_data="PlasmaTorpedoAOEBurstAtEnd"
+	        area_of_effect_size="1500" aoe_spreads_damage_among_available_targets="true"
+			base_knockback_per_shot="-1500" knockback_to_ships_mass_tx_less_than="2" knockback_at_target_location="true" added_target_evaluator="CanKnockback"
+            base_paralysis_seconds_per_shot="6" paralysis_to_ships_mass_tx_less_than="5"
+			>
+        </system>		
+		</entity>  
+  
+        <entity name="DZSkeggox"
+		        thematic_groups="Zenith,DarkZenith,Turret"
+	  tags="DZDefensiveStructureStrong,DZDefensiveStructure"
+			visuals="Assets/_DLC2/Zenith/DZSkeggox/DZSkeggox.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships3/ZenithTurretStrong" icon_overlay="Overlays2/Turret_Skeggox" gimbal_icon_size_multiplier="1.4"
+			category="Ship" is_turret="true"
+			size_scale="4.02"
+			visuals_scale_multiplier="12.1"
+			collision_priority="1000"
+			display_name="斯凯格克斯炮塔"
+			description="一座强大的炮塔，用于阻止对黑暗天顶的攻击。该炮塔擅长消灭成群的战机。它发射一种网状投射物，在一定区域内爆炸，随后形成带刺的牵引光束，惩罚试图逃脱其控制的单位，将它们的伤害反弹回去。炮塔本身会发射导弹齐射，专门对付被困在网中的单位。"
+			behavior="Stationary"			
+			starting_mark_level="Mark4"
+			cost_for_ai_to_purchase="7600" strength_multiplier="1.2"			
+			hull_points="54000" shield_points="13500" speed="Immobile"
+			metal_cost="60000" energy_consumption="450"
+			armor_mm="80" albedo="0.45" mass_tx="2"
+			voice_group="Turret"
+			fleet_membership="Planetary"
+			ship_or_structure_explosion_sfx="Turret_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+      priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable"
+      multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5"
+      >
+	<system name="R1" display_name="追踪火箭"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="300" range="AboveAverage2" shot_speed="Normal" rate_of_fire="Low"
+				shots_per_salvo="30" fires_salvos_sequentially="false"
+				shot_type_data="FusionRocket"	multiplier_damage_to_tractored_unit="6"			
+				>
+    </system>
+    <system name="L" display_name="网发射器"
+				category="Weapon" firing_timing="OnlyInRange" shot_type_data="DZExplosiveNet"
+				damage_per_shot="5" range="Planetary" shot_speed="Slow" rate_of_fire="PeriodicActivation" fires_salvos_sequentially="true"  
+				shots_per_salvo="1" 
+				>
+	</system>
+  </entity>
+  
+   <entity name="DZIngelrii"
+           thematic_groups="Zenith,DarkZenith,Turret"
+	  tags="DZDefensiveStructureStrong,DZDefensiveStructure"
+			visuals="Assets/_DLC2/Zenith/DZSkeggox/DZIngelrii.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships3/ZenithTurretStrong" icon_overlay="Overlays2/Turret_Ingelrii" gimbal_icon_size_multiplier="1.4"
+			category="Ship" is_turret="true"
+			size_scale="4.02"
+			visuals_scale_multiplier="12.1"
+			collision_priority="1000"
+			display_name="英格尔里炮塔"
+			description="一座强大的炮塔，用于阻止对黑暗天顶的攻击。该炮塔擅长消灭大型且高护甲的目标。其主要武器经过极化处理，对更厚的护甲造成的伤害会不断增加。此外，它还会发射标枪，旨在先对大型敌人造成重大伤害，然后在短时间内将其牵引固定。"
+			behavior="Stationary"			
+			starting_mark_level="Mark4"
+			cost_for_ai_to_purchase="7600" strength_multiplier="1.2"			
+			hull_points="54000" shield_points="13500" speed="Immobile"
+			metal_cost="60000" energy_consumption="450"
+			armor_mm="80" albedo="0.45" mass_tx="2"
+			voice_group="Turret"
+			fleet_membership="Planetary"
+			ship_or_structure_explosion_sfx="Turret_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+      priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable"
+      multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5"
+      >
+  
+		 <system name="WK" display_name="护甲极化器"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="4000" shots_per_salvo="4" range="Normal4" shot_speed="Normal" rate_of_fire="Low"
+				fires_salvos_sequentially="true" shot_type_data="LaserPulse_DeepBlue"
+				>
+			<outgoing_damage_modifier based_on="Armor_mm" comparison_type="MultiplesOf" compared_to="35" multiplier="1" max_multiplier="10" />
+		</system>
+		<system name="L" display_name="鱼叉发射器"
+				category="Weapon" firing_timing="OnlyInRange" shot_type_data="DZJavelin"
+				damage_per_shot="5" range="Planetary" shot_speed="Slow" rate_of_fire="Tortoise" fires_salvos_sequentially="true"  
+				shots_per_salvo="1" 
+				>
+		</system>	
+        </entity>
+ 
+ 
+ <!-- Drones. These are spawned by certain Tier 3 units and defensive structures  -->
+ 
+   <entity name="DZJavelin"
+           thematic_groups="Zenith,DarkZenith,Drone"
+		special_entity_type="SmallShipNotStackable"
+		visuals="Assets/_DLC2/Zenith/HarpoonAndBola/HarpoonAndBola.prefab" visuals_bundle="exp2_zenith_onslaught"
+		icon_name="Ships3/Harpoon" gimbal_icon_size_multiplier="0.75"
+		voice_group="Silent"
+		category="Ship"
+		size_scale="2"
+		visuals_scale_multiplier="4"
+		collision_priority="50"
+		display_name="鱼叉飞弹"
+		description="这种飞弹会锁定大型移动敌人并造成巨额伤害，随后转变为锚定牵引光束，即使是巨像级单位也能被短暂定身。"
+		starting_mark_level="Mark1" 
+		self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="5"
+		always_self_attritions="true"
+		cost_for_ai_to_purchase="10" strength_multiplier="0.2"	
+		hull_points="2000" shield_points="0" speed="AboveAverage5" 
+		metal_cost="3000" energy_consumption="250"
+		armor_mm="30" albedo="0.3" engine_gx="22" mass_tx="2"
+		metal_cost_multiplier_for_scrapping="0"
+		ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+		shot_fired_sfx="BasicLaunchWhine_Firing"
+		priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+		immune_to_swapping_between_fleets="true"
+		drone_starting_behavior_type="Attacker_Full"
+		fleet_membership="Planetary"
+		cannot_target_or_alert_ai_reinforcement_spots="true"
+		>
+	<entity_type_drawing_bag_used_on_death data_list="DZAnchor" />
+		 <system name="WM" display_name="爆炸"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="60000" range="AlmostNone" seek_range="Normal1" shot_speed="Instant" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+				shot_type_data="MeleeInvisible" added_target_evaluator="Melee" only_targets_mobile_units="true"
+				health_change_by_max_health_divided_by_this_per_attack="-1"
+				>	
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="LessThan" compared_to="5" multiplier="0" />
+		</system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+		
+	<entity name="DZAnchor"	
+            thematic_groups="Zenith,DarkZenith,Drone"
+		visuals="Assets/_DLC2/Zenith/Anchor/Anchor.prefab" visuals_bundle="exp2_zenith_onslaught"
+      icon_name="Ships3/AnchorStruct" gimbal_icon_size_multiplier="0.75" 
+			voice_group="Silent"
+			category="Ship" is_strikecraft="true" behavior="Stationary"
+			size_scale="1.4"
+			visuals_scale_multiplier="4"
+			collision_priority="100"
+			display_name="鱼叉锚定器"
+			description="由鱼叉飞弹形成的锚定器，只能锁定主力舰，能在短时间内阻止其移动。"			
+			starting_mark_level="Mark1" 
+			cost_for_ai_to_purchase="10"
+			hull_points="50000" shield_points="0" speed="Immobile"
+			metal_cost="0" energy_consumption="100"
+			armor_mm="50" albedo="0.45" mass_tx="0.3"
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="10"
+			always_self_attritions="true"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"			
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+            fleet_membership="Planetary"
+			immune_to_swapping_between_fleets="true"
+			priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			>
+		<system name="T" display_name="锚定光束"
+				category="Passive"
+				tractor_range="VeryTiny3" tractor_count="1"  tractor_hits_albedo_less_than="1" tractor_hits_engine_gx_less_than="99" tractor_hits_mass_greater_than="5"
+				>
+		</system>
+	<incoming_damage_modifier based_on="MyTimeAtPlanet" comparison_type="LessThan" compared_to="5" multiplier="0" />
+	</entity>
+	
+ 
+  <entity name="DZExplosiveNet" display_name="爆炸网" copy_from="DZJavelin" icon_name="Ships3/ExplosiveNet"
+		  visuals="Assets/_DLC2/Zenith/ExplosiveAndBarbedNets/ExplosiveNet.prefab" visuals_bundle="exp2_zenith_onslaught"
+		  size_scale="1"
+	      visuals_scale_multiplier="4"
+          description="如果该飞弹接近主要目标进入近战范围，就会爆炸造成范围伤害，并转变为带刺牵引网，通过反射伤害来惩罚试图挣脱的单位。"
+		>
+	<entity_type_drawing_bag_used_on_death data_list="DZBarbedNet" />
+		<system name="WM" max_mark_level_to_function="0" /> 
+		<system name="W1" display_name="爆炸" category="Weapon" firing_timing="OnlyInRange" shot_type_data="ExplosiveFlakBurst"
+				damage_per_shot="2000" range="AlmostNone" seek_range="Normal1" shot_speed="Instant" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+				area_of_effect_size="1000" maximum_number_of_targets_hit_per_shot="20"			
+				>
+		</system>
+	</entity>	
+  
+  
+  <entity name="DZBarbedNet" display_name="带刺网" copy_from="DZAnchor" icon_name="Ships3/BarbedNet"
+			visuals="Assets/_DLC2/Zenith/ExplosiveAndBarbedNets/BarbedNet.prefab" visuals_bundle="exp2_zenith_onslaught"
+			size_scale="1"
+			visuals_scale_multiplier="4"
+			description="一种牵引网，旨在捕获小型单位，并通过反射攻击来惩罚它们试图挣脱的行为。"
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="3"
+			returns_this_percentage_of_damage_if_damaged_by_enemy_attack="0.50"
+		>
+		<system name="T" max_mark_level_to_function="0" /> 
+		<system name="T2" display_name="带刺网" category="Passive"
+				 tractor_range="Small3" tractor_count="20" tractor_hits_albedo_less_than="0.7" tractor_hits_engine_gx_less_than="14"
+				>
+		</system>
+		<incoming_damage_modifier based_on="MyTimeAtPlanet" comparison_type="LessThan" compared_to="5" multiplier="2" />
+	</entity>
+ 
+		
+	 <entity name="DZSeekerBomb"
+	         thematic_groups="Zenith,DarkZenith,Drone"	
+		special_entity_type="SmallShipNotStackable"
+		visuals="Assets/_DLC2/Zenith/SeekerBomb/SeekerBomb.prefab" visuals_bundle="exp2_zenith_onslaught"
+		icon_name="Ships3/SeekerBomb" gimbal_icon_size_multiplier="1.25"
+		voice_group="Silent"
+		category="Ship"
+		size_scale="2.4"
+		visuals_scale_multiplier="7"
+		collision_priority="50"
+		display_name="追踪炸弹"
+		description="追踪炸弹需要几秒时间加速，在达到全速前格外脆弱。在它们逼近并摧毁你的舰队前消灭它们。"
+		starting_mark_level="Mark1"  
+		self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="5"
+		always_self_attritions="true"
+		cost_for_ai_to_purchase="10" strength_multiplier="0.1" speed_multiplier_first_5_seconds_on_planet="0.1"
+		hull_points="10000" shield_points="0" speed="VeryHigh1" 
+		metal_cost="3000" energy_consumption="250"
+		armor_mm="50" albedo="0.3" engine_gx="22" mass_tx="2"
+		metal_cost_multiplier_for_scrapping="0"
+		ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+		shot_fired_sfx="BasicLaunchWhine_Firing"
+		priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+		immune_to_swapping_between_fleets="true"
+		fleet_membership="Planetary"
+		cannot_target_or_alert_ai_reinforcement_spots="true"
+		>
+		 <system name="WM" display_name="爆炸" category="Weapon" firing_timing="OnlyInRange" shot_type_data="ExplosiveFlakBurst"
+				damage_per_shot="25000" range="AlmostNone" seek_range="Normal1" shot_speed="Instant" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+				area_of_effect_size="1000" maximum_number_of_targets_hit_per_shot="20"	
+				aoe_and_beam_damage_multiplier_to_non_primary_target="30"
+				health_change_by_max_health_divided_by_this_per_attack="-1"
+				>
+		<outgoing_damage_modifier based_on="mass_tx" comparison_type="GreaterThan" compared_to="5" multiplier="1.2" />		
+		</system>
+		<incoming_damage_modifier based_on="MyTimeAtPlanet" comparison_type="LessThan" compared_to="5" multiplier="5" />
+	
+	<ship_class_data can_be_zombified_and_similar="false" />
+	</entity>
+
+<entity name="DZSeekerBombJormugandr" display_name="追踪炸弹" copy_from="DZSeekerBomb" icon_name="Ships3/SeekerBomb"
+		starting_mark_level="Mark7" 
+		>
+</entity>
+ 
+ <!-- Utility Structures -->
+  <entity name="DZTractorArray"
+          thematic_groups="Zenith,DarkZenith,OtherDefense"	
+          tags="DZUtilityStructureMedium,DZUtilityStructure"
+	  visuals="Assets/_DLC2/Zenith/BarbedTractorArray/BarbedTractorArray.prefab" visuals_bundle="exp2_zenith_onslaught"
+	  icon_name="Ships1/TractorTurret" icon_overlay="Overlays2/Turret_Mirror"
+	  size_scale="3"
+	  visuals_scale_multiplier="16"
+	  category="Ship"
+	  collision_priority="1000"
+	  display_name="带刺牵引阵列"
+		display_name_for_sidebar="带刺牵引器"
+	  description="锁定附近的敌方单位，阻止它们移动（但不阻止开火）。通过反射一部分伤害来惩罚攻击它的单位。"
+	  behavior="Stationary"
+	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Sentries,Turret" 
+	  build_sidebar_categories_i_am_part_of="OtherDefenses" destroys_self_until_not_over_ship_cap_if_planetary_command="true"
+	  max_count_seeded_as_ai_non_turret_defense="10"
+	  cost_for_ai_to_purchase="450"
+	  hull_points="60000" shield_points="60000" speed="Immobile"
+	  metal_cost="2100" energy_consumption="4500"
+	  armor_mm="50" albedo="0.45" mass_tx="0.3"
+	  returns_this_percentage_of_damage_if_damaged_by_enemy_attack="0.50"
+	  ship_or_structure_explosion_sfx="Turret_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+	  voice_group="Turret"
+	  fleet_membership="Planetary"
+	  absolute_max_cap_when_in_fleets="20"
+          priority_as_ai_target="LowGradeAnnoyance" priority_as_frd_target="LowGradeAnnoyance" priority_to_protect="SlightlyLessExpendable"
+	  >
+    <system name="T" display_name="牵引光束"
+	    category="Passive"
+	    tractor_range="Small5" tractor_count="42" tractor_count_added_per_mark="21" tractor_hits_albedo_less_than="0.4" tractor_hits_engine_gx_less_than="18"
+	    >
+    </system>
+  </entity>
+    <entity name="DZFocusedGravityGenerator"
+	        thematic_groups="Zenith,DarkZenith,OtherDefense"
+          tags="DZUtilityStructure,DZUtilityStructureMedium"
+	  visuals="Assets/_DLC2/Zenith/ConcussiveFieldGenerator/ConcussiveFieldGenerator.prefab" visuals_bundle="exp2_zenith_onslaught"
+	  icon_name="Ships1/FocusedGravityGenerator" icon_overlay="Overlays2/Turret_Knockback"
+	  category="Ship"
+	  size_scale="3"
+	  visuals_scale_multiplier="16"
+	  display_name="震荡场发生器"    
+    display_name_for_sidebar="震荡场"
+	  description="震荡力发生器，引爆时会造成轻微的范围伤害，但能将较大的敌人击退并使其引擎瘫痪。它可以快速连发，但之后需要一些时间重新装填。"
+	  behavior="Stationary"
+	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Alien" 
+	  build_sidebar_categories_i_am_part_of="OtherDefenses" destroys_self_until_not_over_ship_cap_if_planetary_command="true"
+	  max_count_seeded_as_ai_non_turret_defense="3"
+	  cost_for_ai_to_purchase="500"
+	  hull_points="60000" shield_points="60000" speed="Immobile"
+	  metal_cost="10000" energy_consumption="1200"
+	  armor_mm="50" albedo="0.45" mass_tx="0.3"
+	  ship_or_structure_explosion_sfx="Turret_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+	  voice_group="Turret"
+	  fleet_membership="Planetary"
+	  absolute_max_cap_when_in_fleets="10"
+          priority_as_ai_target="BigTurret" priority_as_frd_target="LowGradeAnnoyance" priority_to_protect="SlightlyLessExpendable"
+	  >
+    <system name="B8" display_name="震荡冲击波"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1000" range="Small3" shot_speed="Instant" rate_of_fire="PeriodicActivation" fires_salvos_sequentially="true"
+				shot_type_data="ExplosiveInvisible"
+				area_of_effect_size="4200"					
+				maximum_number_of_targets_hit_per_shot="50" cloaking_percent_loss_from_firing="0.2"
+				base_knockback_per_shot="2000" added_knockback_per_shot_per_mark="500" knockback_to_ships_mass_tx_less_than="7" added_target_evaluator="CanKnockback"
+				base_engine_stun_per_shot="6" added_engine_stun_per_shot_per_mark="3" max_engine_stun_seconds="18" engine_stun_to_engine_gx_less_than="22" 
+				 use_alternate_rate_of_fire_after_x_shots="1" alternate_rate_of_fire="Devourer"  use_alternate_rate_of_fire_for_x_shots_before_reverting="4"
+				>
+    </system>
+    </entity>
+    <entity name="DZTachyonArray" copy_from="TachyonArray" thematic_groups="Zenith,DarkZenith"
+            tags="DZUtilityStructureMedium"
+            >
+      </entity>
+
+<entity name="DZMinefield"	
+        thematic_groups="Zenith,DarkZenith,Mine"
+				tags="DZUtilityStructureCheap,DZUtilityStructure"
+			        visuals="Assets/_DLC2/Zenith/ImpendingDoombomb/ImpendingDoombomb.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships3/ImpendingDoombomb" icon_overlay="Overlays1/Starship_Minelayer"
+			special_entity_type="Minefield" category="Ship"
+			size_scale="2.5" gimbal_icon_size_multiplier="1.25"
+			visuals_scale_multiplier="14"
+			collision_priority="1"
+			display_name="迫近末日炸弹" display_name_for_sidebar="末日炸弹"
+			description="迫近的末日！！！这种地雷旨在摧毁魔像等大型单位。它的引擎非常弱，且没有隐形能力，但它非常坚固，几乎可以无视所有伤害。如果它接近大型单位，就会用反向牵引光束锁定目标。30秒后，它将发射一阵巨大的伤害，足以摧毁超级单位。强烈建议用大量单位摧毁它，或者通过虫洞逃离，因为这样可以摆脱地雷。"
+			behavior="Stationary"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Alien" 
+			build_sidebar_categories_i_am_part_of="Minefields" destroys_self_until_not_over_ship_cap_if_planetary_command="true"
+			max_count_seeded_as_ai_non_turret_defense="15"
+			cost_for_ai_to_purchase="500" strength_multiplier="0.1"
+			hull_points="10000" shield_points="0" speed="VeryVeryLittle1"
+			metal_cost="15000" energy_consumption="5000"
+			armor_mm="120" albedo="0.8" engine_gx="2" mass_tx="3"
+			damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.01"
+			voice_group="Silent"
+			fleet_membership="Planetary"
+			ship_or_structure_explosion_sfx="Turret_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			 absolute_max_cap_when_in_fleets="10"
+      priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable"
+			>
+    <system name="B4" display_name="迫近的末日"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="2000" range="VeryTiny1" shot_speed="Instant" rate_of_fire="Sloth" fires_salvos_sequentially="true"
+				shot_type_data="ExplosiveFlakBurst" base_percent_damage_bypasses_personal_shields="1" multiplier_damage_to_tractored_unit="10"
+				damage_amplification="true" damage_amplification_duration="3" damage_amplification_flat="10000" damage_amplification_flat_added_per_mark="0"
+				use_alternate_rate_of_fire_after_x_shots="1" alternate_rate_of_fire="Devourer"  use_alternate_rate_of_fire_for_x_shots_before_reverting="4"
+				health_change_by_max_health_divided_by_this_per_attack="-5"
+				>	
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="LessThan" compared_to="5" multiplier="0" />
+    </system>
+	<system name="T" display_name="牵引光束"
+				category="Passive" is_reverse_tractor_beam="true"
+				tractor_range="VeryTiny1" tractor_count="1"  tractor_hits_albedo_less_than="1" tractor_hits_engine_gx_less_than="99" tractor_hits_mass_greater_than="5"
+				>
+    </system>
+  </entity>
+  
+	<entity name="DZMinefieldZenithTrader"  copy_from="DZMinefield" is_auto_scrapping_skipped_when_command_station_type_changes="true" thematic_groups="Zenith,Mine"
+			tags=" "
+			starting_mark_level="Mark2" 
+			build_sidebar_categories_i_am_part_of="Minefields" 
+			fleet_membership="Planetary" 
+			description="这种地雷旨在摧毁魔像等大型单位。它的引擎非常弱，且没有隐形能力，但它非常坚固，几乎可以无视所有伤害。如果它接近大型单位，就会用反向牵引光束锁定目标。30秒后，它将发射一阵巨大的伤害，足以摧毁超级单位。强烈建议用大量单位摧毁它，或者通过虫洞逃离，因为这样可以摆脱地雷。"
+			base_galaxy_wide_cap_for_players_constructing="40" galaxy_wide_cap_match_string="DZMineZT"
+			>
+    <fleet_membership name="ZenithPurchases" ship_cap_group="OtherDefense" weight="100" cap="5"/>
+    <metal_flow purpose="SelfConstruction" throughput="1000"/>
+  </entity>
+ 
+   
+
+ 
+  <!-- DZ Miscellani Library and Beacon -->
+  <entity name="DZLibrary"
+          thematic_groups="Zenith,DarkZenith"
+	  tags="DZLibrary,HackForShipType,ShowsOnNormalDisplayMode"
+			visuals="Assets/_DLC2/Zenith/DZLibrary/DZLibrary.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships3/DarkZenithLibrary"
+			category="Ship" is_turret="true"
+			size_scale="6"
+			visuals_scale_multiplier="13"
+			collision_priority="1000"
+			display_name="黑暗天顶图书馆"
+			display_name_for_sidebar="黑暗天顶图书馆"
+			description="黑暗天顶知识的宝库。"
+			behavior="Stationary"			
+			starting_mark_level="Mark7"
+			cost_for_ai_to_purchase="76" strength_multiplier="1.2"			
+			hull_points="54000" shield_points="13500" speed="Immobile"
+			metal_cost="60000" energy_consumption="450"
+			armor_mm="80" albedo="0.45" mass_tx="2"
+			voice_group="Turret"
+			fleet_membership="Planetary"
+			ship_or_structure_explosion_sfx="Turret_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+                        target_type_for_player="NeverAutotargetButAllowManualTarget"
+                        priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable"
+                        multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5"
+                        eligible_for_hacks="HackToGrantShipLine_DarkZenith"
+                        grants_stuff_to_be_added_to_player_fleets="true"
+                        grants_stuff_to_be_added_to_player_fleets_strikecraft_options="5"
+                        grants_stuff_to_be_added_to_player_fleets_frigate_options="0"
+                        >
+	</entity>
+
+	<entity name="DZAthenaeum" copy_from="DZLibrary" display_name="黑暗天顶资料库" display_name_for_sidebar="黑暗天顶资料库" thematic_groups="Zenith,DarkZenith,Cruiser"
+                icon_overlay="Overlays2/DarkZenithTerminus_Black"
+	        tags="DZAthenaeum,HackForShipType,ShowsOnNormalDisplayMode"
+		eligible_for_hacks="HackToGrantCruiser_DarkZenith"
+		grants_stuff_to_be_added_to_player_fleets_strikecraft_options="0"
+                grants_stuff_to_be_added_to_player_fleets_frigate_options="1"
+		>
+	</entity>
+
+    <entity name="DZHjarn"
+	        thematic_groups="Zenith,DarkZenith"
+	  tags="DZHjarn,ShowsOnNormalDisplayMode"
+	  visuals="Assets/_DLC2/Zenith/DZHjarn/DZHjarn.prefab" visuals_bundle="exp2_zenith_onslaught"
+	  icon_name="Ships3/DarkZenithHjarn" gimbal_icon_size_multiplier="1.5"
+	  category="Ship" is_turret="true"
+	  size_scale="4"
+	  visuals_scale_multiplier="10" y_offset_of_ship_in_visual_space="60"
+	  collision_priority="1000"
+	  display_name="赫扬恩装置"
+	  description="通过将这颗行星转化为黑暗天顶风格，来引发芬布尔之冬。"
+	  behavior="Stationary"	
+	  starting_mark_level="Markless"
+	  cost_for_ai_to_purchase="76" strength_multiplier="1.2"	
+	  hull_points="54000" shield_points="13500" speed="Immobile"
+	  metal_cost="60000" energy_consumption="450"
+	  armor_mm="80" albedo="0.45" mass_tx="2"
+	  voice_group="Turret"
+	  fleet_membership="Planetary"
+	  ship_or_structure_explosion_sfx="Turret_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+          target_type_for_player="NeverAutotargetButAllowManualTarget"
+          priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable"
+          multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5"
+          description_appender_dll="AIWarExternalCode"
+	  description_appender_type="Arcen.AIW2.External.DarkZenithDescriptionAppender"
+          >
+  </entity>
+
+  <entity  copy_from="MinorFactionBeacon" name="DarkZenithBeacon"
+            tags="Beacon,DarkZenithBeacon" is_expecting_to_not_be_encyclopedia_counted_at_all="true"
+			thematic_groups="Beacon" icon_overlay="Overlays1/DZ_Red_Enraged"
+            
+            display_name="黑暗天顶召唤器" display_name_for_sidebar="黑暗天顶信标"
+            description="入侵此信标将使这个星系与一个黑暗星系保持一致。你可能会遭到入侵。非常可怕的入侵。
+
+请注意，如果这个信标被摧毁（可能是被天顶矿工吞噬了一颗行星），那么黑暗天顶将会入侵。这可太刺激了！
+
+&lt;color=#f25e1c&gt;高影响力：&lt;/color&gt;这个派系通过引入另一个极其强大的种族，极大地改变了游戏的玩法。"
+            target_type_for_player="NeverTarget"
+          >
+    </entity>
+
+    <!-- Copies of DZ units for the Ragnarok AI type. I'm doing some samples below, but you should replace this with "Real" versions once you've implemented them
+         Note that the Dark Spire units should be included, and if The Dark is Rising happens then those ships as well.
+
+         There are also some bonus defensive structures and some Guard Posts that are required; you can see examples below  -->
+ 
+   
+	<entity   copy_from="DZDregil" name="AIDZDregil" display_name="AI 德雷吉尔"  display_name_for_sidebar="AI 德雷吉尔" thematic_groups="Hidden" 
+            
+			 >
+      <ai_ship_group_membership name="DarkAllianceFleetships" weight="50"/>
+    </entity>
+	<entity   copy_from="DZDregilFortified" name="AIDregilFortified" display_name="AI 强化德雷吉尔"  display_name_for_sidebar="AI 强化德雷" thematic_groups="Hidden" 
+             cost_for_ai_to_purchase="190"
+			 >
+      <ai_ship_group_membership name="DarkAllianceFleetships" weight="33"/>
+    </entity>
+	<entity   copy_from="DZDregilEnraged" name="AIDZDregilEnraged" display_name="AI 暴怒德雷吉尔"  display_name_for_sidebar="AI 暴德雷" thematic_groups="Hidden" 
+             cost_for_ai_to_purchase="280"
+			 >
+      <ai_ship_group_membership name="DarkAllianceFleetships" weight="25"/>
+    </entity>
+	<entity   copy_from="DZHuskarl" name="AIDZHuskarl" display_name="AI 胡斯卡尔"  display_name_for_sidebar="AI 胡斯卡尔" thematic_groups="Hidden" 
+			>
+      <ai_ship_group_membership name="DarkAllianceFleetships" weight="50"/>
+    </entity>
+	<entity   copy_from="DZHuskarlStout" name="AIDZHuskarlStout" display_name="AI 健壮胡斯卡尔"  display_name_for_sidebar="AI 健胡斯" thematic_groups="Hidden" 
+              cost_for_ai_to_purchase="400"
+			>
+      <ai_ship_group_membership name="DarkAllianceFleetships" weight="33"/>
+    </entity>
+	<entity   copy_from="DZHuskarlSinister" name="AIDZHuskarlSinister" display_name="AI 邪恶胡斯卡尔"  display_name_for_sidebar="AI 邪胡斯" thematic_groups="Hidden" 
+              cost_for_ai_to_purchase="450"
+			>
+      <ai_ship_group_membership name="DarkAllianceFleetships" weight="25"/>
+    </entity>
+	
+	 <entity   copy_from="DZSkaldStout" name="AISkaldStout" display_name="AI 健壮斯卡尔德"  display_name_for_sidebar="AI 健斯卡" thematic_groups="Hidden" 
+              cost_for_ai_to_purchase="280"
+			>
+      <ai_ship_group_membership name="DarkAllianceFleetships" weight="33"/>
+    </entity>
+	 <entity   copy_from="DZSkaldSpirited" name="AISkaldSpirited" display_name="AI 活跃斯卡尔德"  display_name_for_sidebar="AI 活斯卡" thematic_groups="Hidden" 
+              cost_for_ai_to_purchase="280"
+			>
+      <ai_ship_group_membership name="DarkAllianceFleetships" weight="33"/>
+    </entity>
+    <entity  copy_from="DZHersir" name="AIHersir" display_name="AI 赫西尔"  display_name_for_sidebar="AI 赫西尔" thematic_groups="Hidden" 
+             starting_mark_level="Mark1" 
+			 >
+      <ai_ship_group_membership name="DarkAllianceGuardians" weight="50"/>
+    </entity>
+	 <entity  copy_from="DZHersirSpirited" name="AIHersirSpirited" display_name="AI 活跃赫西尔"  display_name_for_sidebar="AI 活赫西" thematic_groups="Hidden" 
+             starting_mark_level="Mark1" cost_for_ai_to_purchase="1800"
+			 >
+      <ai_ship_group_membership name="DarkAllianceGuardians" weight="33"/>
+    </entity>
+	<entity  copy_from="DZHersirSinister" name="AISinisterHersir" display_name="AI 邪恶赫西尔"  display_name_for_sidebar="AI 邪赫西" thematic_groups="Hidden" 
+             starting_mark_level="Mark1" cost_for_ai_to_purchase="2000"
+			 >
+      <ai_ship_group_membership name="DarkAllianceGuardians" weight="25"/>
+    </entity>
+	  <entity  copy_from="DZDreng" name="AIDreng" display_name="AI 德伦格"  display_name_for_sidebar="AI 德伦格" thematic_groups="Hidden" 
+             starting_mark_level="Mark1" 
+			 >
+      <ai_ship_group_membership name="DarkAllianceGuardians" weight="50"/>
+    </entity>
+	  <entity  copy_from="DZDrengFortified" name="AIDZDrengFortified" display_name="AI 强化德伦格"  display_name_for_sidebar="AI 强德伦" thematic_groups="Hidden" 
+             starting_mark_level="Mark1" cost_for_ai_to_purchase="1800"
+			 >
+      <ai_ship_group_membership name="DarkAllianceGuardians" weight="33"/>
+    </entity>
+	 <entity  copy_from="DZDrengEnraged" name="AIDZDrengEnraged" display_name="AI 暴怒德伦格"  display_name_for_sidebar="AI 暴德伦" thematic_groups="Hidden" 
+             starting_mark_level="Mark1" cost_for_ai_to_purchase="2000"
+			 >
+      <ai_ship_group_membership name="DarkAllianceGuardians" weight="25"/>
+    </entity>
+    <entity   copy_from="DZJarlStout" name="AIJarlStout" display_name="AI 健壮亚尔"   display_name_for_sidebar="AI 健亚尔" thematic_groups="Hidden" 
+             starting_mark_level="Mark6"
+			 >
+      <ai_ship_group_membership name="DarkAllianceDireGuardians" weight="33"/>
+    </entity>
+	<entity   copy_from="DZJarlSpirted" name="AIJarlSpirted" display_name="AI 活跃亚尔"   display_name_for_sidebar="AI 活亚尔" thematic_groups="Hidden" 
+             starting_mark_level="Mark6"
+			 >
+      <ai_ship_group_membership name="DarkAllianceDireGuardians" weight="33"/>
+    </entity>
+	<entity   copy_from="DZJarlFortified" name="AIJarlFortified" display_name="AI 强化亚尔"   display_name_for_sidebar="AI 强亚尔"  thematic_groups="Hidden" 
+             starting_mark_level="Mark6"
+			 >
+      <ai_ship_group_membership name="DarkAllianceDireGuardians" weight="33"/>
+    </entity>
+    <entity   copy_from="DZMerkismathrSinister" name="AIMerkismathrSinister" display_name="AI 邪恶默基斯马瑟"  display_name_for_sidebar="AI 邪默基" thematic_groups="Hidden" 
+             starting_mark_level="Mark7"
+			 >
+      <ai_ship_group_membership name="DarkAllianceExoLeaders" weight="33"/>
+    </entity>
+	 <entity   copy_from="DZMerkismathrEnraged" name="AIMerkismathrEnraged" display_name="AI 暴怒默基斯马瑟"  display_name_for_sidebar="AI 暴默基" thematic_groups="Hidden" 
+             starting_mark_level="Mark7"
+			 >
+      <ai_ship_group_membership name="DarkAllianceExoLeaders" weight="33"/>
+    </entity>
+
+    <entity  copy_from="DZTrelleborg" name="AITrelleborg" display_name="AI 特雷勒堡" thematic_groups="Hidden" 
+	    tags="AICopyOfDZDefensiveStructure"
+		starting_mark_level="Mark1"
+            >
+    </entity>
+  <entity name="RagnarokGuardPostOne"
+          thematic_groups="Zenith,DarkZenith,AI,GuardPost"
+	  special_entity_type="GuardPost"
+	  visuals="Assets/_DLC2/AI/RagnarokGuardPost/RagnarokGuardPost.prefab" visuals_bundle="exp2_zenith_onslaught"
+	  icon_name="Ships1/GuardPost" icon_overlay="Overlays2/Guardian_Tantruming"  gimbal_icon_size_multiplier="1.4"
+	  category="Ship"
+	  size_scale="5" y_offset_of_icon="30"
+	  visuals_scale_multiplier="11"
+	  collision_priority="1000"
+	  display_name="诸神黄昏岗哨"
+	  display_name_for_sidebar="诸神黄昏岗哨"
+	  description="一个致命的岗哨，融合了强大的黑暗天顶技术。其主武器发射离子冲击，可瘫痪敌方单位集群，并以磁力将单位吸向自身。尤其要小心其寻的炸弹发射器，它能摧毁单位。寻的炸弹在加速时较为脆弱，所以要趁此机会将其摧毁。"
+	  behavior="Stationary"
+	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused" strength_multiplier="3"	
+	  cost_for_ai_to_purchase="200"			
+	  hull_points="25000" shield_points="125000" speed="Immobile"
+	  metal_cost="80000" energy_consumption="10000"
+	  armor_mm="70" albedo="0.3" mass_tx="5"
+	  voice_group="Silent"
+	  ship_or_structure_explosion_sfx="Turret_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+	  
+          priority_as_ai_target="NormalGuardPost" priority_as_frd_target="NormalGuardPost" priority_to_protect="NormalGuardPost"
+	  >
+    <ai_ship_group_membership name="DarkAllianceGuardPosts" weight="10"/>
+   
+	<system name="WT" display_name="离子干扰冲击" category="Weapon" firing_timing="OnlyInRange"  
+	        damage_per_shot="3200" range="AboveAverage2" shot_speed="Slow" rate_of_fire="FairlyLow" fires_salvos_sequentially="true"
+			shot_type_data="PlasmaTorpedoAOEBurstAtEnd"
+	        area_of_effect_size="1500" aoe_spreads_damage_among_available_targets="true"
+			base_knockback_per_shot="-1500" knockback_to_ships_mass_tx_less_than="2" knockback_at_target_location="true" added_target_evaluator="CanKnockback"
+            base_paralysis_seconds_per_shot="6" paralysis_to_ships_mass_tx_less_than="5"
+			>
+        </system>	
+	<system name="L" display_name="寻的炸弹发射器"
+				category="Weapon" firing_timing="OnlyInRange" shot_type_data="DZSeekerBomb"
+				damage_per_shot="5" range="Planetary" shot_speed="Slow" rate_of_fire="PeriodicActivation" fires_salvos_sequentially="true"  
+				shots_per_salvo="1"  cloaking_percent_loss_from_firing="0.2"
+				>
+	</system>
+  </entity>
+
+</root>

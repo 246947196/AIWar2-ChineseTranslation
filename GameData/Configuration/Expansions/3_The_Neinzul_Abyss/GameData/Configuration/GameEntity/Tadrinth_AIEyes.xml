@@ -429,7 +429,7 @@
 			y_offset_of_icon="25"
 			display_name="侵略之眼"
 			display_name_for_sidebar="侵眼"
-			description="一座巨型工厂，能够快速生产侵略性单位，但必须直接由AI的曲速网络供电。只有当AI在该行星上兵力严重不足时，才会投入如此多的能量。"
+			description="一座巨型工厂，能够快速生产侵略性舰船，但必须直接由AI的曲速网络供电。只有当AI在该行星上兵力严重不足时，才会投入如此多的能量。"
 			behavior="Stationary"
 			never_leaves_remains="true"
 			starting_mark_level="Mark5"
@@ -474,7 +474,7 @@
 			y_offset_of_icon="25"
 			display_name="警戒状态侵略之眼"
       display_name_for_sidebar="侵眼 警戒"
-			description="此眼目前正由曲速网络供电，并持续生产侵略性单位。"
+			description="此眼目前正由曲速网络供电，并持续生产侵略性舰船。"
 			behavior="Stationary"
 			never_leaves_remains="true"
 			starting_mark_level="Mark5"
@@ -504,7 +504,7 @@
 			>	
 			
 			<entity_type_drawing_bag_used_on_periodic_spawning
-				display_name="各类侵略舰队单位和守护者"
+				display_name="各类侵略舰队舰船和守护者"
 				parsed_data_type="AIBudgetCategory,AIBudgetCategory"
 				data_list="BorderAggression,BorderAggression"
 				ai_budget_subcategories="NormalAIShipGroup,GuardianAIShipGroup"
@@ -533,7 +533,7 @@
 			y_offset_of_icon="25"
 			display_name="猎手之眼"
 			display_name_for_sidebar="猎手眼"
-			description="一座巨型工厂，能够快速为猎手舰队生产单位，但必须直接由AI的曲速网络供电。只有当AI在该行星上兵力严重不足时，才会投入如此多的能量。"
+			description="一座巨型工厂，能够快速为猎手舰队生产舰船，但必须直接由AI的曲速网络供电。只有当AI在该行星上兵力严重不足时，才会投入如此多的能量。"
 			behavior="Stationary"
 			never_leaves_remains="true"
 			starting_mark_level="Mark5"
@@ -578,7 +578,7 @@
 			y_offset_of_icon="25"
 			display_name="警戒状态猎手之眼"
       display_name_for_sidebar="猎手眼 警戒"
-			description="此眼目前正由曲速网络供电，并持续为猎手舰队生产单位。"
+			description="此眼目前正由曲速网络供电，并持续为猎手舰队生产舰船。"
 			behavior="Stationary"
 			never_leaves_remains="true"
 			starting_mark_level="Mark5"
@@ -608,7 +608,7 @@
 			>	
 			
 			<entity_type_drawing_bag_used_on_periodic_spawning
-				display_name="各类猎手舰队单位"
+				display_name="各类猎手舰队舰船"
 				parsed_data_type="AIBudgetCategory,AIBudgetCategory"
 				data_list="HunterFleet,HunterFleet"
 				ai_budget_subcategories="NormalAIShipGroup,GuardianAIShipGroup"
@@ -638,7 +638,7 @@
 			y_offset_of_icon="25"
 			display_name="守卫之眼"
 			display_name_for_sidebar="守卫眼"
-			description="一座巨型工厂，能够快速为守卫舰队生产单位，但必须直接由AI的曲速网络供电。只有当AI在该行星上兵力严重不足时，才会投入如此多的能量。"
+			description="一座巨型工厂，能够快速为守卫舰队生产舰船，但必须直接由AI的曲速网络供电。只有当AI在该行星上兵力严重不足时，才会投入如此多的能量。"
 			behavior="Stationary"
 			never_leaves_remains="true"
 			starting_mark_level="Mark5"
@@ -683,7 +683,7 @@
 			y_offset_of_icon="25"
 			display_name="警戒状态守卫之眼"
       display_name_for_sidebar="守卫眼 警戒"
-			description="此眼目前正由曲速网络供电，并持续为守卫舰队生产单位。"
+			description="此眼目前正由曲速网络供电，并持续为守卫舰队生产舰船。"
 			behavior="Stationary"
 			never_leaves_remains="true"
 			starting_mark_level="Mark5"
@@ -712,7 +712,7 @@
 			periodic_spawn_only_trigger_against_player="true"
 			>
 			<entity_type_drawing_bag_used_on_periodic_spawning
-				display_name="各类守卫舰队单位"
+				display_name="各类守卫舰队舰船"
 				parsed_data_type="AIBudgetCategory,AIBudgetCategory"
 				data_list="Warden"
 				ai_budget_subcategories="NormalAIShipGroup,GuardianAIShipGroup"
@@ -1166,7 +1166,7 @@
 			size_scale="5.7"
 			visuals_scale_multiplier="230"
 			display_name="恐怖等离子之眼"
-			description="一种极其强大的等离子束，必须直接由AI的曲速网络供电。只有当AI在该行星上兵力严重不足时，才会投入如此多的能量。这种恐怖变体的光束破坏力更强，并且对入侵具有抗性。"
+			description="一种极其强大的等离子束，必须直接由AI的曲速网络供电。只有当AI在该行星上兵力严重不足时，才会投入如此多的能量。这种恐怖变体的光束破坏力更强，并且对黑客攻击具有抗性。"
 			starting_mark_level="Mark7"
 			transform_when_outnumbered="DirePlasmaAlertedEye"
 			eligible_for_hacks="SabotageDire"
@@ -1213,7 +1213,7 @@
 			y_offset_of_icon="25"
 			display_name="恐怖禁卫之眼"
 			display_name_for_sidebar="恐禁眼"
-			description="一座巨大的工厂，能够为禁卫舰队快速生产飞船，但它必须直接由AI的曲速网络供电。只有当AI在该行星上兵力严重不足时，才会投入如此多的能量。这种恐怖变体对入侵具有抗性。"
+			description="一座巨大的工厂，能够为禁卫舰队快速生产飞船，但它必须直接由AI的曲速网络供电。只有当AI在该行星上兵力严重不足时，才会投入如此多的能量。这种恐怖变体对黑客攻击具有抗性。"
 			behavior="Stationary"
 			never_leaves_remains="true"
 			starting_mark_level="Mark7"

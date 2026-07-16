@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--Many different factions can use each one!  Define these in the mods or DLC that use them.  Don't worry about making them use DLC3.
+      The central code will handle that.-->
+
+  <!--Probably central fireteam logic can handle these.-->
+  <vassal_order name="MoveToPlanet" target_type="Planet" category="MovementAndAttack" reset_all_fireteam_targets="true"
+        description="尽可能多的附庸势力单位将移动到指定行星，执行他们的任务。"/>
+  <vassal_order name="AttackPlanet" target_type="Planet" category="MovementAndAttack" reset_all_fireteam_targets="true" mission_type="Offense"
+        description="附庸势力的进攻部队将以最大力量攻击目标行星上的敌人。"/>
+  <vassal_order name="AttackUnit" target_type="Unit" category="MovementAndAttack" reset_all_fireteam_targets="true"
+        description="附庸势力的进攻部队将以最大力量攻击指定的目标单位。"/>
+
+  <!--Specific To Certain Factions - Logic in them is arbitrary and must be handled by the faction in question-->
+  <vassal_order name="WaveBudgetAgainstPlanet" target_type="Planet" category="SecondaryPriority"
+        description="一旦附庸势力拥有足够的预算，就会向目标行星发起一波攻击。">
+    <!--Suggestion: don't use actual raw values in the base name which can't change.  Especially if you might want to change the values in the future.
+                    By using names based on intent, you can adjust these values without endangering any saves in the future.-->
+    <option name="wVerySmall" display_name="1000" optional_associated_integer="1000"
+            description="这是一波非常小的攻击，但可以快速发起。"/>
+    <option name="wStillSnall" display_name="5000" optional_associated_integer="5000"
+            description="这仍然是一波小攻击，但可以相对快速地发起。"/>
+    <option name="wLargerWave" display_name="45000" optional_associated_integer="45000"
+            description="这是一波大规模攻击，可能需要相当长的时间才能准备好。"/>
+  </vassal_order>
+  
+</root>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <expansion name="1_The_Spire_Rises" display_name="尖塔崛起" sort_order="1" abbreviation="TSR"
+             color_for_display="5ed9fb"
+          description="除了安装此扩展后任何游戏中都可使用的一些新可占领目标、炮塔和其他单位外，还有两个主要的新阵营。
+          
+天灾是你最大的敌人，是人工智能中最聪明、最危险的子群体。堕落尖塔是你最强大的盟友，为你提供前所未有的火力支援。
+
+初始发布日期：2020年2月27日"/>
+  
+  <expansion name="2_Zenith_Onslaught" display_name="天顶星攻势" sort_order="2" abbreviation="ZO"
+             color_for_display="ff7748"
+          description="除了为你的舰队提供新的精英单位外，安装此扩展后，任何游戏中都有多种地图和人工智能类型可供使用。
+
+此扩展还让天顶星势力回归；这些阵营，无论是敌是友，都为每一场游戏增添了全新的深度和复杂度。
+黑暗天顶星入侵。天顶星主殿宣示主权。天顶星矿工吞噬行星。流浪行星不断改写星图。
+
+初始发布日期：2021年5月18日"/>
+
+  <expansion name="3_The_Neinzul_Abyss" display_name="奈因祖尔深渊" sort_order="3" abbreviation="NA"
+          color_for_display="a67cb2"
+          description="我们之前曾遇到过奈因祖尔，但从未像现在这样；现在来见识他们的长老、野生蜂群、有用的工兵等全部力量吧。  
+		  
+一种新的“玩家类型”——死灵法师，也为你提供了全新的游戏方式——收集精华，对抗圣殿骑士，并收割你的敌人。
+
+初始发布日期：2022年4月22日"/>
+</root>

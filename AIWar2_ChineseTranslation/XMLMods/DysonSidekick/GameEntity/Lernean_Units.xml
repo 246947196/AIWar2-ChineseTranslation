@@ -1,0 +1,1255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- Defensive Structures -->
+
+  <!-- Fleetships -->
+  <entity name="FieryHydra"
+          thematic_groups="Strikecraft"
+          tags="DZTierZeroBase"
+          visuals="assets/_dlc2/zenith/dzdregil/dzdregil.prefab" visuals_bundle="exp2_zenith_onslaught"
+	  icon_name="Ships3/DarkZenithDregil" 
+	  voice_group="Raider"
+	  size_scale="1.8"
+	  visuals_scale_multiplier="6.5"
+	  category="Ship" is_strikecraft="true"
+	  collision_priority="100"
+	  display_name="烈焰九头蛇"
+	  description="这条反装甲九头蛇能用其酸性武器迅速摧毁敌人。"
+	  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Alien"
+	  cost_for_ai_to_purchase="160" strength_multiplier="1.4"
+	  hull_points="4480" shield_points="0" speed="AboveAverage3"
+	  metal_cost="1800" energy_consumption="175"
+	  armor_mm="30" albedo="0.3" engine_gx="14" mass_tx="0.21"
+	  ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+          priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+          >
+    <entity_type_drawing_bag_used_on_death data_list="FieryHydraHead" min_spawn_value_list="3" />
+    <ai_ship_group_membership name="HydraFleetships" weight="100"/>
+    <system name="WK" display_name="装甲极化器"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="80" range="Small2" shot_speed="Normal" rate_of_fire="High"
+	    fires_salvos_sequentially="true" shot_type_data="LaserPulse_DeepBlue" cloaking_percent_loss_from_firing="0.2"	
+	    damage_amplification="true" damage_amplification_duration="4" damage_amplification_flat="20" damage_amplification_flat_added_per_mark="10"
+	    >
+      <outgoing_damage_modifier based_on="Armor_mm" comparison_type="MultiplesOf" compared_to="35" multiplier="1" max_multiplier="10" />
+    </system>
+    
+  </entity>
+  <entity name="FieryHydraHead" copy_from="Vanguard" thematic_groups="Strikecraft,Drone"       
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="2"
+			always_self_attritions="true"
+			display_name="烈焰九头蛇首"
+			display_name_for_sidebar="烈焰九头蛇首" 
+			description="从火焰九头蛇上生成的头。"
+			hull_points="2100" speed="Normal1"
+			metal_cost_multiplier_for_scrapping="0.1"
+			armor_mm="30"
+			energy_consumption="0"
+			immune_to_swapping_between_fleets="true"
+			>
+    <system name="WW" damage_per_shot="10" rate_of_fire="Misery" shots_per_salvo="1" damage_amplification_flat="0" damage_amplification_flat_added_per_mark="0" />
+  </entity>
+
+
+  <!-- Guardians -->
+  <!-- Nucleophilic -->
+    <entity name="NucleophilicHydra"
+            thematic_groups="AI,Guardian"
+	    special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+            tags="ArkSidekickOptionGroup4"
+            tech_upgrades_that_benefit_me="Expatriate"
+            custom_arkempire_fleetcap="5"
+	    visuals="assets/_finalgamemeshes/guardians/laserguardian/laserguardian.prefab"
+            material_override_path="Assets/_FinalGameMeshes/Spire/DarkSpireWraith/DarkSpireWraith.prefab"
+	    icon_name="Ships3/SomethingWindow" icon_overlay="Overlays2/Guardian_Nucleophilic"
+	    uses_large_health_bar="true"
+	    category="Ship"
+	    size_scale="3.6"
+	    visuals_scale_multiplier="4"
+	    y_offset_of_icon="16"
+	    collision_priority="400"
+	    display_name="亲核九头蛇"
+	    display_name_for_sidebar="亲核九头蛇"
+	    description="发射快速电子脉冲，对高能耗单位造成更高伤害，死亡时生成较弱的自身复制体。"
+	    blocks_enemy_claim_flows="true"
+	    voice_group="Silent"
+	    starting_mark_level="Mark1" 
+	    cost_for_ai_to_purchase="625" strength_multiplier="1.5"			
+	    hull_points="44000" shield_points="26000" speed="AboveAverage1"
+	    metal_cost="80000" energy_consumption="7500"
+	    armor_mm="50" albedo="0.3" engine_gx="7" mass_tx="5"
+	    ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	    ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+	    >
+      <system name="WG" display_name="引力炮"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      damage_per_shot="60" range="Small1" shot_speed="Normal" rate_of_fire="Misery"
+	      shot_type_data="ElegantCurl"
+	      base_engine_stun_per_shot="5" 
+	      engine_stun_to_engine_gx_less_than="22"
+	      max_engine_stun_seconds="5" added_target_evaluator="EngineDamageAsMinorPart"
+	      >
+	<outgoing_damage_modifier based_on="engine_gx" comparison_type="AtMost" compared_to="7" multiplier="3" />		
+      </system>
+      <entity_type_drawing_bag_used_on_death data_list="NucleophilicHydraHead" min_spawn_value_list="3" />
+      <ai_ship_group_membership name="HydraGuardians" weight="100"/>
+    </entity>
+
+    <entity name="NucleophilicHydraHead" copy_from="NucleophilicHydra" thematic_groups="Guardian,Drone"     
+	    self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="2"
+            gimbal_icon_size_multiplier="1"
+            icon_name="Ships4/SomethingDragon" icon_overlay="Overlays2/Guardian_Nucleophilic"
+	    always_self_attritions="true"
+	    display_name="亲核九头蛇首"
+	    display_name_for_sidebar="亲核九头蛇首" 
+	    description="从亲核九头蛇守护者上生成的头。"
+	    hull_points="2100" speed="Normal1"
+	    metal_cost_multiplier_for_scrapping="0.1"
+	    armor_mm="30"
+	    energy_consumption="0"
+	    immune_to_all_damage_for_seconds_after_creation="8"
+	    immune_to_swapping_between_fleets="true"
+	    >
+      <system name="WG" damage_per_shot="50" rate_of_fire="Misery" shots_per_salvo="1" damage_amplification_flat="0" damage_amplification_flat_added_per_mark="0" />
+    </entity>
+
+    <!-- Vampire -->
+    <entity name="VampireHydra"
+            thematic_groups="AI,Guardian"
+	    special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+            tags="ArkSidekickOptionGroup4"
+            tech_upgrades_that_benefit_me="Expatriate"
+            custom_arkempire_fleetcap="5"
+	    visuals="assets/_finalgamemeshes/guardians/laserguardian/laserguardian.prefab"
+            material_override_path="Assets/_FinalGameMeshes/Spire/DarkSpireWraith/DarkSpireWraith.prefab"
+	    icon_name="Ships3/SomethingWindow" icon_overlay="Overlays2/Guardian_Vampire"
+	    uses_large_health_bar="true"
+	    category="Ship"
+	    size_scale="3.6"
+	    visuals_scale_multiplier="4"
+	    y_offset_of_icon="16"
+	    collision_priority="400"
+	    display_name="吸血鬼九头蛇"
+	    display_name_for_sidebar="吸血鬼九头蛇"
+	    description="隐形单位，造成伤害时自我治疗，死亡时生成较弱的自身复制体。"
+	    blocks_enemy_claim_flows="true"
+	    voice_group="Silent"
+	    starting_mark_level="Mark1" 
+	    cost_for_ai_to_purchase="625" strength_multiplier="1.5"			
+	    hull_points="44000" shield_points="26000" speed="AboveAverage1"
+	    metal_cost="80000" energy_consumption="7500"
+	    armor_mm="50" albedo="0.3" engine_gx="7" mass_tx="5"
+	    ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	    ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+	    >
+      <system name="WD" display_name="吸血鬼双发"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      damage_per_shot="1250" range="Small2" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="true"
+	      shot_type_data="DoubleShot_Red"			
+	      health_change_per_damage_dealt="1"	
+	      >
+      </system>
+      <system name="C" display_name="隐形装置"
+	      category="Passive"
+	      cloaking_points="2000"
+	      cloaking_points_added_per_mark="1000"
+	      >
+      </system>
+      <entity_type_drawing_bag_used_on_death data_list="VampireHydraHead" min_spawn_value_list="3" />
+      <ai_ship_group_membership name="HydraGuardians" weight="200"/>
+    </entity>
+
+    
+    <entity name="VampireHydraHead" copy_from="VampireHydra" thematic_groups="Guardian,Drone"     
+	    self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="2"
+            gimbal_icon_size_multiplier="1"
+            icon_name="Ships4/SomethingDragon" icon_overlay="Overlays2/Guardian_Vampire"
+	    always_self_attritions="true"
+	    display_name="吸血鬼九头蛇首"
+	    display_name_for_sidebar="吸血鬼九头蛇首" 
+	    description="从吸血九头蛇守护者上生成的头。"
+	    hull_points="2100" speed="Normal1"
+	    metal_cost_multiplier_for_scrapping="0.1"
+	    armor_mm="30"
+	    energy_consumption="0"
+	    immune_to_all_damage_for_seconds_after_creation="8"
+	    immune_to_swapping_between_fleets="true"
+	    >
+      <system name="WD" damage_per_shot="50" rate_of_fire="Misery" shots_per_salvo="1" damage_amplification_flat="0" damage_amplification_flat_added_per_mark="0" />
+      <system name="C" display_name="隐形装置"
+	      category="Passive"
+	      cloaking_points="0"
+	      cloaking_points_added_per_mark="0"
+	      >
+      </system>
+
+    </entity>
+
+    <!-- Polarizer -->
+    <entity name="PolarizerHydra"
+            thematic_groups="AI,Guardian"
+	    special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+	    visuals="Assets/_DLC2/AI/PolarizerGuardian/PolarizerGuardian.prefab" visuals_bundle="exp2_zenith_onslaught"
+	    icon_name="Ships3/SomethingWindow" icon_overlay="Overlays1/Guardian_Polarizer"
+	    uses_large_health_bar="true"
+	    category="Ship"
+	    size_scale="3.6"
+	    visuals_scale_multiplier="4"
+	    y_offset_of_icon="16"
+	    collision_priority="400"
+	    display_name="极化九头蛇"
+	    display_name_for_sidebar="极化九头蛇"
+	    description="一头肉搏型守护者，配备极化器阵列用来撕裂装甲敌人，死亡时生成较弱的自身复制体。"
+	    blocks_enemy_claim_flows="true"
+	    voice_group="Silent"
+	    starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+	    cost_for_ai_to_purchase="625" strength_multiplier="1.5"
+	    hull_points="44000" shield_points="26000" speed="AboveAverage1"
+	    metal_cost="80000" energy_consumption="7500"
+	    armor_mm="50" albedo="0.3" engine_gx="7" mass_tx="5"
+	    ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	    ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+	    >
+      <system name="W1" display_name="装甲极化阵列"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      damage_per_shot="150" range="Normal2" shot_speed="Normal" rate_of_fire="Normal"
+	      shots_per_salvo="10" fires_salvos_sequentially="true" shot_type_data="LaserPulse_DeepBlue"
+	      >
+	<outgoing_damage_modifier based_on="Armor_mm" comparison_type="MultiplesOf" compared_to="35" multiplier="1" max_multiplier="10" />
+	<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="3" />
+      </system>
+      <entity_type_drawing_bag_used_on_death data_list="PolarizerHydraHead" min_spawn_value_list="3" />
+      <ai_ship_group_membership name="HydraGuardians" weight="100"/>
+    </entity>
+    <entity name="PolarizerHydraHead" copy_from="PolarizerHydra" thematic_groups="Guardian,Drone"     
+	    self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="2"
+            gimbal_icon_size_multiplier="1"
+            icon_name="Ships4/SomethingDragon" icon_overlay="Overlays1/Guardian_Polarizer"
+	    always_self_attritions="true"
+	    display_name="极化九头蛇首"
+	    display_name_for_sidebar="极化九头蛇首" 
+	    description="从极化九头蛇守护者上生成的头。"
+	    hull_points="2100" speed="Normal1"
+	    metal_cost_multiplier_for_scrapping="0.1"
+	    armor_mm="30"
+	    energy_consumption="0"
+	    immune_to_all_damage_for_seconds_after_creation="8"
+	    immune_to_swapping_between_fleets="true"
+	    >
+      <system name="W1" damage_per_shot="50" rate_of_fire="Misery" shots_per_salvo="1" damage_amplification_flat="0" damage_amplification_flat_added_per_mark="0" />
+    </entity>
+<!-- Retribution -->
+    <entity name="RetributionHydra"
+            thematic_groups="AI,Guardian"
+	    special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+	    visuals="Assets/_DLC2/AI/RetributionGuardian/RetributionGuardian.prefab" visuals_bundle="exp2_zenith_onslaught"
+	    icon_name="Ships3/SomethingWindow" icon_overlay="Overlays2/Ark_RorqualHegira"
+	    uses_large_health_bar="true"
+	    category="Ship"
+	    size_scale="3.6"
+	    visuals_scale_multiplier="4"
+	    y_offset_of_icon="16"
+	    collision_priority="400"
+            tags="ArkSidekickOptionGroup3"
+            tech_upgrades_that_benefit_me="Expatriate"
+            custom_arkempire_fleetcap="5"
+	    display_name="报应九头蛇"
+	    display_name_for_sidebar="报应九头蛇"
+	    description="耐久的守护者，根据所受伤害进行复仇反击，死亡时生成较弱的自身复制体。"
+	    blocks_enemy_claim_flows="true"
+	    voice_group="Silent"
+	    starting_mark_level="Mark1" 
+	    cost_for_ai_to_purchase="625" strength_multiplier="1.5"			
+	    hull_points="44000" shield_points="26000" speed="AboveAverage1"
+	    metal_cost="80000" energy_consumption="7500"
+	    armor_mm="50" albedo="0.3" engine_gx="7" mass_tx="5"
+	    ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	    ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+	    >
+      <system name="W1" display_name="脉冲激光阵列"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      damage_per_shot="400" range="Normal3" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+	      shots_per_salvo="8"
+	      shot_type_data="LaserPulse_DeepBlue">
+      </system>
+      <system name="W2" display_name="报应反击"
+	      category="Weapon" firing_timing="WhenParentEntityHit" range="Normal3"
+	      returns_this_percentage_of_damage_when_firing_retalitatory_shot="1" shot_speed="Normal" fires_salvos_sequentially="false"
+	      damage_per_shot="100" rate_of_fire="Normal"
+	      shot_type_data="LaserPulse_RedLevel2">
+      </system>
+      <entity_type_drawing_bag_used_on_death data_list="RetributionHydraHead" min_spawn_value_list="3" />
+      <ai_ship_group_membership name="HydraGuardians" weight="100"/>
+    </entity>
+    <entity name="RetributionHydraHead" copy_from="RetributionHydra" thematic_groups="Guardian,Drone"     
+	    self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="2"
+            gimbal_icon_size_multiplier="1"
+            icon_name="Ships4/SomethingDragon" icon_overlay="Overlays2/Ark_RorqualHegira"
+	    always_self_attritions="true"
+	    display_name="报应九头蛇首"
+	    display_name_for_sidebar="报应九头蛇首" 
+	    description="从复仇九头蛇守护者上生成的头。"
+	    hull_points="2100" speed="Normal1"
+	    metal_cost_multiplier_for_scrapping="0.1"
+	    armor_mm="30"
+	    energy_consumption="0"
+	    immune_to_all_damage_for_seconds_after_creation="8"
+	    immune_to_swapping_between_fleets="true"
+	    >
+      <system name="W1" damage_per_shot="50" rate_of_fire="Misery" shots_per_salvo="1" damage_amplification_flat="0" damage_amplification_flat_added_per_mark="0" />
+      <system name="W2" damage_per_shot="10" />
+    </entity>
+
+    <!-- Corrosion -->
+    <entity name="CorrosionHydra"
+            thematic_groups="AI,Guardian"
+	    special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+	    visuals="assets/_finalgamemeshes/guardians/laserguardian/laserguardian.prefab"
+	    icon_name="Ships3/SomethingWindow" icon_overlay="Overlays1/Warhead_Storm"
+	    uses_large_health_bar="true"
+	    category="Ship"
+	    size_scale="3.6"
+	    visuals_scale_multiplier="4"
+	    y_offset_of_icon="16"
+            tags="ArkSidekickOptionGroup2"
+            tech_upgrades_that_benefit_me="Expatriate"
+            custom_arkempire_fleetcap="5"
+	    collision_priority="400"
+	    display_name="腐蚀九头蛇"
+	    display_name_for_sidebar="腐蚀九头蛇"
+	    description="一个装甲薄弱的守护者，拥有致命的腐蚀爆炸可溶解敌方船体。死亡时生成自身复制体向附近敌人喷洒酸液。"
+	    blocks_enemy_claim_flows="true"
+	    voice_group="Silent"
+	    starting_mark_level="Mark1"
+	    cost_for_ai_to_purchase="625" strength_multiplier="1.5"			
+	    hull_points="34000" shield_points="26000" speed="AboveAverage1"
+	    metal_cost="80000" energy_consumption="7500"
+	    armor_mm="50" albedo="0.3" engine_gx="7" mass_tx="5"
+	    ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	    ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+	    >
+      <system name="W1" display_name="腐蚀爆裂"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      damage_per_shot="50" range="Small1" shot_speed="Normal" rate_of_fire="Normal"
+	      shots_per_salvo="10" fires_salvos_sequentially="true" shot_type_data="CorrosiveBlast"
+              base_percent_damage_bypasses_personal_shields="1"
+	      corrosion_damage="100"
+	      corrosion_damage_added_per_mark="125"
+	      >
+	<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="90" multiplier="4"  />
+      </system>
+      <entity_type_drawing_bag_used_on_death data_list="CorrosionHydraHead" min_spawn_value_list="3" />
+      <ai_ship_group_membership name="HydraGuardians" weight="100"/>
+    </entity>
+    <entity name="CorrosionHydraHead" copy_from="CorrosionHydra" thematic_groups="Guardian,Drone"     
+	    self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="2"
+            gimbal_icon_size_multiplier="1"
+            icon_name="Ships4/SomethingDragon" icon_overlay="Overlays1/Warhead_Storm"
+	    always_self_attritions="true"
+	    display_name="腐蚀九头蛇首"
+	    display_name_for_sidebar="腐蚀九头蛇首" 
+	    description="从腐蚀九头蛇守护者上生成的头。"
+	    hull_points="2100" speed="Normal1"
+	    metal_cost_multiplier_for_scrapping="0.1"
+	    armor_mm="30"
+	    energy_consumption="0"
+	    immune_to_all_damage_for_seconds_after_creation="8"
+	    immune_to_swapping_between_fleets="true"
+	    >
+      <system name="W1" damage_per_shot="5" rate_of_fire="Misery" shots_per_salvo="1" damage_amplification_flat="0" damage_amplification_flat_added_per_mark="0" />
+      <system name="W2" display_name="腐蚀终曲"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      only_fires_on_death="true"
+	      damage_per_shot="800" range="VeryTiny3" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+	      shot_type_data="LightningExplosionAOEShot" 
+	      area_of_effect_size="1250"
+	      shots_detonate_immediately="true"
+	      maximum_number_of_targets_hit_per_shot="10"
+	      health_change_by_max_health_divided_by_this_per_attack="-1"
+	      all_damage_is_corrosive="true"
+	      >
+	<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="90" multiplier="4"  />
+      </system>
+
+    </entity>
+
+    <!-- Suppressing -->
+    <entity name="SuppressingHydra"
+            thematic_groups="AI,Guardian"
+	    special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+	    visuals="assets/_finalgamemeshes/guardians/laserguardian/laserguardian.prefab"
+            material_override_path="Assets/_FinalGameMeshes/Spire/DarkSpireWraith/DarkSpireWraith.prefab"
+	    icon_name="Ships3/SomethingWindow" icon_overlay="Overlays1/Guardian_SpeedBoost"
+	    uses_large_health_bar="true"
+	    category="Ship"
+	    size_scale="3.6"
+	    visuals_scale_multiplier="4"
+	    y_offset_of_icon="16"
+	    collision_priority="400"
+            tags="ArkSidekickOptionGroup5"
+            tech_upgrades_that_benefit_me="Expatriate"
+            custom_arkempire_fleetcap="5"
+
+	    display_name="压制九头蛇"
+	    display_name_for_sidebar="压制九头蛇"
+	    description="这个单位压制目标的武器，死亡时分裂为若干复制体。复制体死亡时爆炸并压制附近单位的武器。"
+	    blocks_enemy_claim_flows="true"
+	    voice_group="Silent"
+	    starting_mark_level="Mark1" 
+	    cost_for_ai_to_purchase="625" strength_multiplier="1.5"
+	    hull_points="34000" shield_points="26000" speed="AboveAverage1"
+	    metal_cost="80000" energy_consumption="7500"
+	    armor_mm="50" albedo="0.3" engine_gx="7" mass_tx="5"
+	    ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	    ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+	    >
+	 <system name="WJ" display_name="干扰榴弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1200" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+				shot_type_data="FlakShotAOEBurstAtEnd" added_target_evaluator="WeaponJamAsPrimary"
+				area_of_effect_size="500"
+				maximum_number_of_targets_hit_per_shot="16"
+        base_enemy_weapon_reload_slowing_seconds_per_shot="4" added_enemy_weapon_reload_slowing_seconds_per_shot_per_mark="1"
+		max_enemy_weapon_reload_slowing_seconds="20"
+        enemy_weapon_reload_slowing_to_armor_mm_less_than="60"
+				>
+    </system> 
+    <entity_type_drawing_bag_used_on_death data_list="SuppressingHydraHead" min_spawn_value_list="3" />
+    <ai_ship_group_membership name="HydraGuardians" weight="100"/>
+    </entity>
+    <entity name="SuppressingHydraHead" copy_from="SuppressingHydra" thematic_groups="Guardian,Drone"     
+	    self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="2"
+            gimbal_icon_size_multiplier="1"
+            icon_name="Ships4/SomethingDragon" icon_overlay="Overlays1/Guardian_SpeedBoost"
+	    always_self_attritions="true"
+	    display_name="压制九头蛇首"
+	    display_name_for_sidebar="压制九头蛇首" 
+	    description="从压制九头蛇守护者上生成的头。"
+	    hull_points="2100" speed="Normal1"
+	    metal_cost_multiplier_for_scrapping="0.1"
+	    armor_mm="30"
+	    energy_consumption="0"
+	    immune_to_all_damage_for_seconds_after_creation="8"
+	    immune_to_swapping_between_fleets="true"
+	    >
+      <system name="WJ" damage_per_shot="120" rate_of_fire="Misery" shots_per_salvo="1" damage_amplification_flat="0" damage_amplification_flat_added_per_mark="0" />
+      <system name="W2" display_name="干扰终曲"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      only_fires_on_death="true"
+	      damage_per_shot="800" range="VeryTiny3" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+	      shot_type_data="LightningExplosionAOEShot" 
+	      area_of_effect_size="1250"
+	      shots_detonate_immediately="true"
+              maximum_number_of_targets_hit_per_shot="20"
+              base_enemy_weapon_reload_slowing_seconds_per_shot="4" added_enemy_weapon_reload_slowing_seconds_per_shot_per_mark="1"
+	      max_enemy_weapon_reload_slowing_seconds="20"
+              enemy_weapon_reload_slowing_to_armor_mm_less_than="60"
+	      >
+      </system>
+    </entity>
+
+    <!-- Bleeding -->
+    <entity name="BleedingHydra"
+            thematic_groups="AI,Guardian"
+	    special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+	    visuals="assets/_finalgamemeshes/guardians/laserguardian/laserguardian.prefab"
+            material_override_path="Assets/_FinalGameMeshes/Spire/DarkSpireWraith/DarkSpireWraith.prefab"
+	    icon_name="Ships3/SomethingWindow" icon_overlay="Overlays2/SapperBloodstoneCrystal"
+	    uses_large_health_bar="true"
+	    category="Ship"
+	    size_scale="3.6"
+	    visuals_scale_multiplier="4"
+	    y_offset_of_icon="16"
+	    collision_priority="400"
+	    display_name="流血九头蛇"
+	    display_name_for_sidebar="流血九头蛇"
+	    description="这个单位吸取敌人的生命，对引擎较弱的单位尤为有效，死亡时分裂为自身的复制体。"
+	    blocks_enemy_claim_flows="true"
+	    voice_group="Silent"
+	    starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+	    cost_for_ai_to_purchase="625" strength_multiplier="1.5"
+	    hull_points="34000" shield_points="36000" speed="AboveAverage1"
+	    metal_cost="80000" energy_consumption="7500"
+	    armor_mm="50" albedo="0.3" engine_gx="7" mass_tx="5"
+	    ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	    ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+	    >
+      <system name="WG" display_name="鲜血炮"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      damage_per_shot="200" range="Small1" shot_speed="Normal" rate_of_fire="Misery"
+	      shot_type_data="ElegantCurl"
+	      max_engine_stun_seconds="5" added_target_evaluator="EngineDamageAsMinorPart"
+              health_change_per_damage_dealt="0.15"
+	      >
+	<outgoing_damage_modifier based_on="engine_gx" comparison_type="AtMost" compared_to="7" multiplier="3" />		
+      </system>
+      <entity_type_drawing_bag_used_on_death data_list="BleedingHydraHead" min_spawn_value_list="3" />
+      <ai_ship_group_membership name="HydraGuardians" weight="100"/>
+    </entity>
+    <entity name="BleedingHydraHead" copy_from="BleedingHydra" thematic_groups="Guardian,Drone"     
+	    self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="2"
+            gimbal_icon_size_multiplier="1"
+            icon_name="Ships4/SomethingDragon" 
+	    always_self_attritions="true"
+	    display_name="流血九头蛇首"
+	    display_name_for_sidebar="流血九头蛇首" 
+	    description="从流血九头蛇守护者上生成的头。"
+	    hull_points="2100" speed="Normal1"
+	    metal_cost_multiplier_for_scrapping="0.1"
+	    armor_mm="30"
+	    energy_consumption="0"
+	    immune_to_all_damage_for_seconds_after_creation="8"
+	    immune_to_swapping_between_fleets="true"
+	    >
+      <system name="WG" damage_per_shot="20" rate_of_fire="Misery" shots_per_salvo="1" damage_amplification_flat="0" damage_amplification_flat_added_per_mark="0" />
+    </entity>
+
+    <!-- Steel -->
+    <entity name="SteelHydra"
+            thematic_groups="AI,Guardian"
+	    special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+	    visuals="assets/_finalgamemeshes/guardians/laserguardian/laserguardian.prefab"
+            material_override_path="Assets/_FinalGameMeshes/Spire/DarkSpireWraith/DarkSpireWraith.prefab"
+	    icon_name="Ships3/SomethingWindow" icon_overlay="Overlays2/SapperMetallicCrystal"
+	    uses_large_health_bar="true"
+	    category="Ship"
+	    size_scale="3.6"
+	    visuals_scale_multiplier="4"
+	    y_offset_of_icon="16"
+	    collision_priority="400"
+	    display_name="钢铁九头蛇"
+	    display_name_for_sidebar="钢铁九头蛇"
+	    description="这个单位拥有强大的自适应多管炮，死亡时分裂为自身的复制体。"
+	    blocks_enemy_claim_flows="true"
+	    voice_group="Silent"
+	    starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+	    cost_for_ai_to_purchase="625" strength_multiplier="1.5"
+	    hull_points="34000" shield_points="26000" speed="AboveAverage1"
+	    metal_cost="80000" energy_consumption="7500"
+	    armor_mm="50" albedo="0.3" engine_gx="7" mass_tx="5"
+	    ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	    ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+	    >
+      <system name="W1" display_name="自适应炮"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      damage_per_shot="1000" range="Normal6" shot_speed="Normal" rate_of_fire="SlightlyLow"
+	      shots_per_salvo="20" shots_per_target="20"
+	      shot_type_data="ArmorPiercingShell"
+	      >
+      </system>
+      <entity_type_drawing_bag_used_on_death data_list="SteelHydraHead" min_spawn_value_list="3" />
+      <ai_ship_group_membership name="HydraGuardians" weight="100"/>
+    </entity>
+    <entity name="SteelHydraHead" copy_from="SteelHydra" thematic_groups="Guardian,Drone"     
+	    self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="2"
+            gimbal_icon_size_multiplier="1"
+            icon_name="Ships4/SomethingDragon"
+	    always_self_attritions="true"
+	    display_name="钢铁九头蛇首"
+	    display_name_for_sidebar="钢铁九头蛇首" 
+	    description="从钢铁九头蛇守护者上生成的头。"
+	    hull_points="2100" speed="Normal1"
+	    metal_cost_multiplier_for_scrapping="0.1"
+	    armor_mm="30"
+	    energy_consumption="0"
+	    immune_to_all_damage_for_seconds_after_creation="8"
+	    immune_to_swapping_between_fleets="true"
+	    >11
+      <system name="W1" damage_per_shot="200" rate_of_fire="Misery" shots_per_salvo="1" damage_amplification_flat="0" damage_amplification_flat_added_per_mark="0" />
+    </entity>
+
+    <!-- Spire -->
+    <entity name="SpireHydra"
+            thematic_groups="AI,Guardian"
+	    special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+	    visuals="assets/_finalgamemeshes/guardians/laserguardian/laserguardian.prefab"
+            material_override_path="Assets/_FinalGameMeshes/Spire/DarkSpireWraith/DarkSpireWraith.prefab"
+	    icon_name="Ships3/SomethingWindow" icon_overlay="Overlays2/WormholeBorer_Mining"
+	    uses_large_health_bar="true"
+	    category="Ship"
+	    size_scale="3.6"
+	    visuals_scale_multiplier="4"
+	    y_offset_of_icon="16"
+	    collision_priority="400"
+	    display_name="尖塔九头蛇"
+	    display_name_for_sidebar="尖塔九头蛇"
+	    description="这个单位拥有强大的线圈光束，死亡时分裂为自身的复制体。"
+	    blocks_enemy_claim_flows="true"
+	    voice_group="Silent"
+	    starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+	    cost_for_ai_to_purchase="625" strength_multiplier="1.5"
+	    hull_points="34000" shield_points="26000" speed="AboveAverage1"
+	    metal_cost="80000" energy_consumption="7500"
+	    armor_mm="50" albedo="0.3" engine_gx="7" mass_tx="5"
+	    ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	    ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+	    >
+    <system name="W1" unique_module_index="0" display_name="线圈光束"
+				module_point_cost="2" module_is_enabled_by_default_at_mark_level="1" module_screen_sort_group="0" modular_sidebar_name_prefix="C" modular_full_name_prefix="Coiled "
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="7500" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Devourer"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_Green"
+				hits_all_intersecting_targets="true"
+				shots_detonate_immediately="true"
+                is_coilbeam="true"
+				>
+    </system>
+    <entity_type_drawing_bag_used_on_death data_list="SpireHydraHead" min_spawn_value_list="3" />
+    <ai_ship_group_membership name="HydraGuardians" weight="100"/>
+    </entity>
+    <entity name="SpireHydraHead" copy_from="SpireHydra" thematic_groups="Guardian,Drone"     
+	    self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="2"
+            gimbal_icon_size_multiplier="1"
+            icon_name="Ships4/SomethingDragon"
+	    always_self_attritions="true"
+	    display_name="尖塔九头蛇首"
+	    display_name_for_sidebar="尖塔九头蛇首" 
+	    description="从尖塔九头蛇守护者上生成的头。"
+	    hull_points="2100" speed="Normal1"
+	    metal_cost_multiplier_for_scrapping="0.1"
+	    armor_mm="30"
+	    energy_consumption="0"
+	    immune_to_all_damage_for_seconds_after_creation="8"
+	    immune_to_swapping_between_fleets="true"
+	    >11
+      <system name="W1" damage_per_shot="200" />
+    </entity>
+
+    <!-- Burlust -->
+    <entity name="BurlustHydra"
+            thematic_groups="AI,Guardian"
+	    special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+	    visuals="assets/_finalgamemeshes/guardians/laserguardian/laserguardian.prefab"
+            material_override_path="Assets/_FinalGameMeshes/Spire/DarkSpireWraith/DarkSpireWraith.prefab"
+	    icon_name="Ships3/SomethingWindow" icon_overlay="Overlays2/Race_Burlust"
+	    uses_large_health_bar="true"
+	    category="Ship"
+	    size_scale="3.6"
+	    visuals_scale_multiplier="4"
+	    y_offset_of_icon="16"
+	    collision_priority="400"
+	    display_name="蛮族九头蛇"
+	    display_name_for_sidebar="蛮族九头蛇"
+	    description="这个单位生命值越低造成的伤害越高，死亡时分裂为自身的复制体。"
+	    blocks_enemy_claim_flows="true"
+	    voice_group="Silent"
+	    starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+	    cost_for_ai_to_purchase="625" strength_multiplier="1.5"
+	    hull_points="34000" shield_points="26000" speed="AboveAverage1"
+	    metal_cost="80000" energy_consumption="7500"
+	    armor_mm="50" albedo="0.3" engine_gx="7" mass_tx="5"
+	    ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	    ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+	    >
+      <system name="W1" display_name="蛮族战斗炮"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      damage_per_shot="4000" range="Small2" shot_speed="Normal" rate_of_fire="Misery" fires_salvos_sequentially="false"
+	      shot_type_data="DoubleShot_Red"
+	      >
+	<outgoing_damage_modifier based_on="MyHullPercentageMissing" comparison_type="MultiplesOf" compared_to="20" multiplier="1" />
+      </system>
+
+    <entity_type_drawing_bag_used_on_death data_list="BurlustHydraHead" min_spawn_value_list="3" />
+    <ai_ship_group_membership name="HydraGuardians" weight="100"/>
+    </entity>
+    <entity name="BurlustHydraHead" copy_from="BurlustHydra" thematic_groups="Guardian,Drone"     
+	    self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="2"
+            gimbal_icon_size_multiplier="1"
+            icon_name="Ships4/SomethingDragon"
+	    always_self_attritions="true"
+	    display_name="蛮族九头蛇首"
+	    display_name_for_sidebar="蛮族九头蛇首" 
+	    description="从暴怒九头蛇守护者上生成的头。"
+	    hull_points="2100" speed="Normal1"
+	    metal_cost_multiplier_for_scrapping="0.1"
+	    armor_mm="30"
+	    energy_consumption="0"
+	    immune_to_all_damage_for_seconds_after_creation="8"
+	    immune_to_swapping_between_fleets="true"
+	    >11
+      <system name="W1" damage_per_shot="200" />
+    </entity>
+
+    <!-- Neinzul -->
+    <entity name="NeinzulHydra"
+            thematic_groups="AI,Guardian"
+	    special_entity_type="AIGuardian" gimbal_icon_size_multiplier="1.25"
+	    visuals="assets/_finalgamemeshes/guardians/laserguardian/laserguardian.prefab"
+            material_override_path="Assets/_FinalGameMeshes/Spire/DarkSpireWraith/DarkSpireWraith.prefab"
+	    icon_name="Ships3/SomethingWindow" icon_overlay="Overlays2/Race_Neinzul"
+	    uses_large_health_bar="true"
+	    category="Ship"
+	    size_scale="3.6"
+	    visuals_scale_multiplier="4"
+	    y_offset_of_icon="16"
+	    collision_priority="400"
+	    display_name="奈祖尔九头蛇"
+	    display_name_for_sidebar="奈祖尔九头蛇"
+	    description="这个单位通过吞噬弱小敌人来治疗自己，并创造全敌对僵尸。死亡时分裂为自身的复制体。"
+	    blocks_enemy_claim_flows="true"
+	    voice_group="Silent"
+	    starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
+	    cost_for_ai_to_purchase="625" strength_multiplier="1.5"
+	    hull_points="34000" shield_points="26000" speed="AboveAverage1"
+	    metal_cost="80000" energy_consumption="7500"
+	    armor_mm="50" albedo="0.3" engine_gx="7" mass_tx="5"
+	    ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	    ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+	    >
+      <system name="W1" display_name="颠覆末日加速器"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      damage_per_shot="500" range="Small4" shot_speed="Normal" rate_of_fire="Misery"
+	      shots_per_salvo="5" fires_salvos_sequentially="false"
+	      shot_type_data="DoubleShot_Red"				
+	      health_change_per_damage_dealt="1"
+	      >
+        <outgoing_damage_modifier based_on="TargetHullPercentageMissing" comparison_type="MultiplesOf" compared_to="25" multiplier="1" />
+	<death_effect_damage type="Zombification_HostileToAll" tier_name="Parasite"/>	
+    </system>
+    <ship_class_data can_be_zombified_and_similar="false" />
+
+      <entity_type_drawing_bag_used_on_death data_list="NeinzulHydraHead" min_spawn_value_list="3" />
+      <ai_ship_group_membership name="HydraGuardians" weight="100"/>
+    </entity>
+    <entity name="NeinzulHydraHead" copy_from="NeinzulHydra" thematic_groups="Guardian,Drone"     
+	    self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="2"
+            gimbal_icon_size_multiplier="1"
+            icon_name="Ships4/SomethingDragon"
+	    always_self_attritions="true"
+	    display_name="奈祖尔九头蛇首"
+	    display_name_for_sidebar="奈祖尔九头蛇首" 
+	    description="从奈祖尔九头蛇守护者上生成的头。"
+	    hull_points="2100" speed="Normal1"
+	    metal_cost_multiplier_for_scrapping="0.1"
+	    armor_mm="30"
+	    energy_consumption="0"
+	    immune_to_all_damage_for_seconds_after_creation="8"
+	    immune_to_swapping_between_fleets="true"
+	    >11
+      <system name="W1" damage_per_shot="50" />
+    </entity>
+
+
+  <!-- Dire Guardians -->
+  <entity name="DireNucleophilicHydra"
+          thematic_groups="AI,DireGuardian"
+	  tags="DireGuardian"
+          special_entity_type="AIDireGuardian" gimbal_icon_size_multiplier="1.5"
+          visuals="assets/_finalgamemeshes/guardians/laserguardian/laserguardian.prefab"
+          icon_name="Ships4/SomethingHatch" icon_overlay="Overlays2/Guardian_Nucleophilic"
+          uses_large_health_bar="true"
+          category="Ship"
+          size_scale="10.8"
+	  visuals_scale_multiplier="12"
+          y_offset_of_icon="35"
+          collision_priority="800"
+          display_name="恐怖亲核九头蛇"
+	  display_name_for_sidebar="恐怖亲核九头蛇"
+          description="非常强大的单位，对高能耗目标造成惊人伤害。死亡时分裂为若干亲核九头蛇。"
+          blocks_enemy_claim_flows="true"
+          voice_group="Silent"
+	  starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+	  cost_for_ai_to_purchase="7000"	strength_multiplier="1.5"		
+	  hull_points="1400000" shield_points="700000" speed="AboveAverage1"
+	  metal_cost="800000" energy_consumption="25000"
+	  armor_mm="50" albedo="0.3" engine_gx="20" mass_tx="7"
+	  ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+          priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+	  >
+    <entity_type_drawing_bag_used_on_death data_list="NucleophilicHydra" min_spawn_value_list="3" />
+    <ai_ship_group_membership name="HydraDireGuardians" weight="100"/>
+    <system name="R5" display_name="恐怖电子脉冲"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="80000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Misery" fires_salvos_sequentially="false"
+	    shot_type_data="LaserPulse_RedLevel3"				
+	    >
+      <outgoing_damage_modifier based_on="EnergyUsage" comparison_type="AtLeast" compared_to="7000" multiplier="6"  />
+    </system>
+  </entity>
+
+  <entity name="DireVampireHydra"
+          thematic_groups="AI,DireGuardian"
+	  tags="DireGuardian"
+          special_entity_type="AIDireGuardian" gimbal_icon_size_multiplier="1.5"
+          visuals="assets/_finalgamemeshes/guardians/laserguardian/laserguardian.prefab"
+          icon_name="Ships4/SomethingHatch" icon_overlay="Overlays2/Guardian_Vampire"
+          uses_large_health_bar="true"
+          category="Ship"
+          size_scale="10.8"
+	  visuals_scale_multiplier="12"
+          y_offset_of_icon="35"
+          collision_priority="800"
+          display_name="恐怖吸血鬼九头蛇"
+	  display_name_for_sidebar="恐怖吸血鬼九头蛇"
+          description="非常强大的隐形单位，造成伤害时自我治疗。死亡时分裂为若干吸血九头蛇。"
+          blocks_enemy_claim_flows="true"
+          voice_group="Silent"
+	  starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+	  cost_for_ai_to_purchase="7000"	strength_multiplier="1.5"		
+	  hull_points="1400000" shield_points="700000" speed="AboveAverage1"
+	  metal_cost="800000" energy_consumption="25000"
+	  armor_mm="50" albedo="0.3" engine_gx="20" mass_tx="7"
+	  ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+          priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+	  >
+    <entity_type_drawing_bag_used_on_death data_list="VampireHydra" min_spawn_value_list="3" />
+    <ai_ship_group_membership name="HydraDireGuardians" weight="150"/>
+      <system name="WD" display_name="吸血鬼双发"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="3000" range="Small2" shot_speed="Normal" rate_of_fire="Misery"
+				shots_per_salvo="20" fires_salvos_sequentially="false"
+				shot_type_data="DoubleShot_Red"
+				cloaking_percent_loss_from_firing="0.1"
+				health_change_per_damage_dealt="1"
+				>
+    </system>
+    <system name="C" display_name="隐形装置"
+				category="Passive"
+				cloaking_points="8000"
+				>
+    </system>
+  </entity>
+
+  <entity name="DireSteelHydra"
+          thematic_groups="AI,DireGuardian"
+	  tags="DireGuardian"
+          special_entity_type="AIDireGuardian" gimbal_icon_size_multiplier="1.5"
+          visuals="assets/_finalgamemeshes/guardians/laserguardian/laserguardian.prefab"
+          icon_name="Ships4/SomethingHatch" icon_overlay="Overlays2/SapperMetallicCrystal"
+          uses_large_health_bar="true"
+          category="Ship"
+          size_scale="10.8"
+	  visuals_scale_multiplier="12"
+          y_offset_of_icon="35"
+          collision_priority="800"
+          display_name="恐怖钢铁九头蛇"
+	  display_name_for_sidebar="恐怖钢铁九头蛇"
+          description="非常强大的单位，使用自适应多管炮造成惊人伤害。死亡时分裂为若干钢铁九头蛇。"
+          blocks_enemy_claim_flows="true"
+          voice_group="Silent"
+	  starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+	  cost_for_ai_to_purchase="7000"	strength_multiplier="1.5"		
+	  hull_points="1400000" shield_points="700000" speed="AboveAverage1"
+	  metal_cost="800000" energy_consumption="25000"
+	  armor_mm="50" albedo="0.3" engine_gx="20" mass_tx="7"
+	  ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+          priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+	  >
+    <entity_type_drawing_bag_used_on_death data_list="SteelHydra" min_spawn_value_list="3" />
+    <ai_ship_group_membership name="HydraDireGuardians" weight="100"/>
+    <system name="W1" display_name="自适应炮"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="8000" range="Normal6" shot_speed="Normal" rate_of_fire="SlightlyLow"
+	    shots_per_salvo="60" shots_per_target="60"
+	    shot_type_data="ArmorPiercingShell"
+	    >
+      </system>
+
+  </entity>
+
+  <entity name="DirePolarizerHydra"
+          thematic_groups="AI,DireGuardian"
+	  tags="DireGuardian"
+          special_entity_type="AIDireGuardian" gimbal_icon_size_multiplier="1.5"
+          visuals="assets/_finalgamemeshes/guardians/laserguardian/laserguardian.prefab"
+          icon_name="Ships4/SomethingHatch" icon_overlay="Overlays1/Guardian_Polarizer"
+          uses_large_health_bar="true"
+          category="Ship"
+          size_scale="10.8"
+	  visuals_scale_multiplier="12"
+          y_offset_of_icon="35"
+          collision_priority="800"
+          display_name="恐怖极化九头蛇"
+	  display_name_for_sidebar="恐怖极化九头蛇"
+          description="非常强大的单位，使用极化器阵列对重装甲单位造成大量伤害。死亡时分裂为若干极化九头蛇。"
+          blocks_enemy_claim_flows="true"
+          voice_group="Silent"
+	  starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+	  cost_for_ai_to_purchase="7000"	strength_multiplier="1.5"		
+	  hull_points="1400000" shield_points="700000" speed="AboveAverage1"
+	  metal_cost="800000" energy_consumption="25000"
+	  armor_mm="50" albedo="0.3" engine_gx="20" mass_tx="7"
+	  ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+          priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+	  >
+    <entity_type_drawing_bag_used_on_death data_list="PolarizerHydra" min_spawn_value_list="3" />
+    <ai_ship_group_membership name="HydraDireGuardians" weight="100"/>
+      <system name="W1" display_name="装甲极化阵列"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      damage_per_shot="1500" range="Normal2" shot_speed="Normal" rate_of_fire="Normal"
+	      shots_per_salvo="20" fires_salvos_sequentially="true" shot_type_data="LaserPulse_DeepBlue"
+	      >
+	<outgoing_damage_modifier based_on="Armor_mm" comparison_type="MultiplesOf" compared_to="35" multiplier="1" max_multiplier="10" />
+	<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="3" />
+      </system>
+
+  </entity>
+
+  <entity name="DireRetributionHydra"
+          thematic_groups="AI,DireGuardian"
+	  tags="DireGuardian"
+          special_entity_type="AIDireGuardian" gimbal_icon_size_multiplier="1.5"
+          visuals="assets/_finalgamemeshes/guardians/laserguardian/laserguardian.prefab"
+          icon_name="Ships4/SomethingHatch" icon_overlay="Overlays2/Ark_RorqualHegira"
+          uses_large_health_bar="true"
+          category="Ship"
+          size_scale="10.8"
+	  visuals_scale_multiplier="12"
+          y_offset_of_icon="35"
+          collision_priority="800"
+          display_name="恐怖报应九头蛇"
+	  display_name_for_sidebar="恐怖报应九头蛇"
+          description="非常强大的单位，根据所受伤害进行复仇反击。死亡时分裂为若干复仇九头蛇。"
+          blocks_enemy_claim_flows="true"
+          voice_group="Silent"
+	  starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+	  cost_for_ai_to_purchase="7000"	strength_multiplier="1.5"		
+	  hull_points="1400000" shield_points="700000" speed="AboveAverage1"
+	  metal_cost="800000" energy_consumption="25000"
+	  armor_mm="50" albedo="0.3" engine_gx="20" mass_tx="7"
+	  ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+          priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+	  >
+    <entity_type_drawing_bag_used_on_death data_list="RetributionHydra" min_spawn_value_list="3" />
+    <ai_ship_group_membership name="HydraDireGuardians" weight="100"/>
+      <system name="W1" display_name="脉冲激光阵列"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      damage_per_shot="700" range="Normal3" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+	      shots_per_salvo="16"
+	      shot_type_data="LaserPulse_DeepBlue">
+      </system>
+      <system name="W2" display_name="报应反击"
+	      category="Weapon" firing_timing="WhenParentEntityHit" range="Normal3"
+	      returns_this_percentage_of_damage_when_firing_retalitatory_shot="1" shot_speed="Normal" fires_salvos_sequentially="false"
+	      damage_per_shot="100" rate_of_fire="Normal"
+	      shot_type_data="LaserPulse_RedLevel2">
+      </system>
+
+  </entity>
+
+  <entity name="DireCorrosionHydra"
+          thematic_groups="AI,DireGuardian"
+	  tags="DireGuardian"
+          special_entity_type="AIDireGuardian" gimbal_icon_size_multiplier="1.5"
+          visuals="assets/_finalgamemeshes/guardians/laserguardian/laserguardian.prefab"
+          icon_name="Ships4/SomethingHatch" icon_overlay="Overlays1/Warhead_Storm"
+          uses_large_health_bar="true"
+          category="Ship"
+          size_scale="10.8"
+	  visuals_scale_multiplier="12"
+          y_offset_of_icon="35"
+          collision_priority="800"
+          display_name="恐怖腐蚀九头蛇"
+	  display_name_for_sidebar="恐怖腐蚀九头蛇"
+          description="非常强大的单位，释放致命的腐蚀爆炸溶解敌方船体。死亡时分裂为若干腐蚀九头蛇。"
+          blocks_enemy_claim_flows="true"
+          voice_group="Silent"
+	  starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+	  cost_for_ai_to_purchase="7000"	strength_multiplier="1.5"		
+	  hull_points="1400000" shield_points="700000" speed="AboveAverage1"
+	  metal_cost="800000" energy_consumption="25000"
+	  armor_mm="50" albedo="0.3" engine_gx="20" mass_tx="7"
+	  ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+          priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+	  >
+    <entity_type_drawing_bag_used_on_death data_list="CorrosionHydra" min_spawn_value_list="3" />
+    <ai_ship_group_membership name="HydraDireGuardians" weight="100"/>
+    <system name="W1" display_name="腐蚀爆裂"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      damage_per_shot="500" range="Small1" shot_speed="Normal" rate_of_fire="Normal"
+	      shots_per_salvo="20" fires_salvos_sequentially="true" shot_type_data="CorrosiveBlast"
+              base_percent_damage_bypasses_personal_shields="1"
+	      corrosion_damage="500"
+	      corrosion_damage_added_per_mark="125"
+	      >
+	<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="90" multiplier="4"  />
+      </system>
+  </entity>
+
+  <entity name="DireSuppressingHydra"
+          thematic_groups="AI,DireGuardian"
+	  tags="DireGuardian"
+          special_entity_type="AIDireGuardian" gimbal_icon_size_multiplier="1.5"
+          visuals="assets/_finalgamemeshes/guardians/laserguardian/laserguardian.prefab"
+          icon_name="Ships4/SomethingHatch" icon_overlay="Overlays1/Guardian_SpeedBoost"
+          uses_large_health_bar="true"
+          category="Ship"
+          size_scale="10.8"
+	  visuals_scale_multiplier="12"
+          y_offset_of_icon="35"
+          collision_priority="800"
+          display_name="恐怖压制九头蛇"
+	  display_name_for_sidebar="恐怖压制九头蛇"
+          description="非常强大的单位，压制其目标的武器。死亡时分裂为若干压制九头蛇。"
+          blocks_enemy_claim_flows="true"
+          voice_group="Silent"
+	  starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+	  cost_for_ai_to_purchase="7000"	strength_multiplier="1.5"		
+	  hull_points="1400000" shield_points="700000" speed="AboveAverage1"
+	  metal_cost="800000" energy_consumption="25000"
+	  armor_mm="50" albedo="0.3" engine_gx="20" mass_tx="7"
+	  ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+          priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+	  >
+    <entity_type_drawing_bag_used_on_death data_list="CorrosionHydra" min_spawn_value_list="3" />
+    <ai_ship_group_membership name="HydraDireGuardians" weight="100"/>
+    <system name="WJ" display_name="干扰榴弹"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="4800" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+	    shot_type_data="FlakShotAOEBurstAtEnd" added_target_evaluator="WeaponJamAsPrimary"
+	    area_of_effect_size="500"
+	    maximum_number_of_targets_hit_per_shot="16"
+            base_enemy_weapon_reload_slowing_seconds_per_shot="4" added_enemy_weapon_reload_slowing_seconds_per_shot_per_mark="1"
+	    max_enemy_weapon_reload_slowing_seconds="20"
+            enemy_weapon_reload_slowing_to_armor_mm_less_than="60"
+	    >
+    </system> 
+  </entity>
+
+  <entity name="DireBleedingHydra"
+          thematic_groups="AI,DireGuardian"
+	  tags="DireGuardian"
+          special_entity_type="AIDireGuardian" gimbal_icon_size_multiplier="1.5"
+          visuals="assets/_finalgamemeshes/guardians/laserguardian/laserguardian.prefab"
+          material_override_path="Assets/_FinalGameMeshes/Spire/DarkSpireWraith/DarkSpireWraith.prefab"
+          icon_name="Ships4/SomethingHatch" icon_overlay="Overlays2/SapperBloodstoneCrystal"
+          uses_large_health_bar="true"
+          category="Ship"
+          size_scale="10.8"
+	  visuals_scale_multiplier="12"
+          y_offset_of_icon="35"
+          collision_priority="800"
+          display_name="恐怖流血九头蛇"
+	  display_name_for_sidebar="恐怖流血九头蛇"
+          description="非常强大的单位，吸取敌人的生命，对引擎较弱的单位尤为有效。死亡时分裂为若干流血九头蛇。"
+          blocks_enemy_claim_flows="true"
+          voice_group="Silent"
+	  starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+	  cost_for_ai_to_purchase="7000"	strength_multiplier="1.5"		
+	  hull_points="1400000" shield_points="700000" speed="AboveAverage1"
+	  metal_cost="800000" energy_consumption="25000"
+	  armor_mm="50" albedo="0.3" engine_gx="20" mass_tx="7"
+	  ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+          priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+	  >
+    <entity_type_drawing_bag_used_on_death data_list="BleedingHydra" min_spawn_value_list="3" />
+    <ai_ship_group_membership name="HydraDireGuardians" weight="100"/>
+      <system name="WG" display_name="鲜血炮"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      damage_per_shot="2000" range="Small1" shot_speed="Normal" rate_of_fire="Misery"
+	      shot_type_data="ElegantCurl"
+	      max_engine_stun_seconds="6" added_target_evaluator="EngineDamageAsMinorPart"
+              health_change_per_damage_dealt="0.15"
+	      >
+	<outgoing_damage_modifier based_on="engine_gx" comparison_type="AtMost" compared_to="5" multiplier="3" />
+      </system>
+  </entity>
+
+  <entity name="DireSpireHydra"
+          thematic_groups="AI,DireGuardian"
+	  tags="DireGuardian"
+          special_entity_type="AIDireGuardian" gimbal_icon_size_multiplier="1.5"
+          visuals="assets/_finalgamemeshes/guardians/laserguardian/laserguardian.prefab"
+          material_override_path="Assets/_FinalGameMeshes/Spire/DarkSpireWraith/DarkSpireWraith.prefab"
+          icon_name="Ships4/SomethingHatch" icon_overlay="Overlays2/WormholeBorer_Mining"
+          uses_large_health_bar="true"
+          category="Ship"
+          size_scale="10.8"
+	  visuals_scale_multiplier="12"
+          y_offset_of_icon="35"
+          collision_priority="800"
+          display_name="恐怖尖塔九头蛇"
+	  display_name_for_sidebar="恐怖尖塔九头蛇"
+          description="非常强大的单位，拥有强大的线圈光束。死亡时分裂为若干尖塔九头蛇。"
+          blocks_enemy_claim_flows="true"
+          voice_group="Silent"
+	  starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+	  cost_for_ai_to_purchase="7000"	strength_multiplier="1.5"		
+	  hull_points="1400000" shield_points="700000" speed="AboveAverage1"
+	  metal_cost="800000" energy_consumption="25000"
+	  armor_mm="50" albedo="0.3" engine_gx="20" mass_tx="7"
+	  ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+          priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+	  >
+    <entity_type_drawing_bag_used_on_death data_list="SpireHydra" min_spawn_value_list="3" />
+    <ai_ship_group_membership name="HydraDireGuardians" weight="100"/>
+    <system name="W1" unique_module_index="0" display_name="线圈光束"
+	    module_point_cost="2" module_is_enabled_by_default_at_mark_level="1" module_screen_sort_group="0" modular_sidebar_name_prefix="C" modular_full_name_prefix="Coiled "
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="1500" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Devourer"
+	    shot_type_data="HeavyBeamInvisible"
+	    beam_length_multiplier="1.4" beam_weapon_visual_style="Laser_Green"
+	    hits_all_intersecting_targets="true"
+	    shots_detonate_immediately="true"
+            is_coilbeam="true"
+	    >
+    </system>
+  </entity>
+
+  <entity name="DireNeinzulHydra"
+          thematic_groups="AI,DireGuardian"
+	  tags="DireGuardian"
+          special_entity_type="AIDireGuardian" gimbal_icon_size_multiplier="1.5"
+          visuals="assets/_finalgamemeshes/guardians/laserguardian/laserguardian.prefab"
+          material_override_path="Assets/_FinalGameMeshes/Spire/DarkSpireWraith/DarkSpireWraith.prefab"
+          icon_name="Ships4/SomethingHatch" icon_overlay="Overlays2/Race_Neinzul"
+          uses_large_health_bar="true"
+          category="Ship"
+          size_scale="10.8"
+	  visuals_scale_multiplier="12"
+          y_offset_of_icon="35"
+          collision_priority="800"
+          display_name="恐怖奈祖尔九头蛇"
+	  display_name_for_sidebar="恐怖尖塔九头蛇"
+          description="非常强大的单位，通过吞噬弱小敌人来治疗自己并创造全敌对僵尸。死亡时分裂为若干暴怒九头蛇。"
+          blocks_enemy_claim_flows="true"
+          voice_group="Silent"
+	  starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+	  cost_for_ai_to_purchase="7000"	strength_multiplier="1.5"		
+	  hull_points="1400000" shield_points="700000" speed="AboveAverage1"
+	  metal_cost="800000" energy_consumption="25000"
+	  armor_mm="50" albedo="0.3" engine_gx="20" mass_tx="7"
+	  ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+          priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+	  >
+    <entity_type_drawing_bag_used_on_death data_list="NeinzulHydra" min_spawn_value_list="3" />
+    <ai_ship_group_membership name="HydraDireGuardians" weight="100"/>
+      <system name="W1" display_name="颠覆末日加速器"
+	      category="Weapon" firing_timing="OnlyInRange"
+	      damage_per_shot="1000" range="Small4" shot_speed="Normal" rate_of_fire="Misery"
+	      shots_per_salvo="10" fires_salvos_sequentially="false"
+	      shot_type_data="DoubleShot_Red"				
+	      health_change_per_damage_dealt="1"
+	      >
+        <outgoing_damage_modifier based_on="TargetHullPercentageMissing" comparison_type="MultiplesOf" compared_to="25" multiplier="1" />
+	<death_effect_damage type="Zombification_HostileToAll" tier_name="Parasite"/>	
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+      <entity name="DireBurlustHydra"
+          thematic_groups="AI,DireGuardian"
+	  tags="DireGuardian"
+          special_entity_type="AIDireGuardian" gimbal_icon_size_multiplier="1.5"
+          visuals="assets/_finalgamemeshes/guardians/laserguardian/laserguardian.prefab"
+          material_override_path="Assets/_FinalGameMeshes/Spire/DarkSpireWraith/DarkSpireWraith.prefab"
+          icon_name="Ships4/SomethingHatch" icon_overlay="Overlays2/Race_Burlust"
+          uses_large_health_bar="true"
+          category="Ship"
+          size_scale="10.8"
+	  visuals_scale_multiplier="12"
+          y_offset_of_icon="35"
+          collision_priority="800"
+          display_name="恐怖蛮族九头蛇"
+	  display_name_for_sidebar="恐怖蛮族九头蛇"
+          description="非常强大的单位，生命值越低造成的伤害越高。死亡时分裂为若干暴怒九头蛇。"
+          blocks_enemy_claim_flows="true"
+          voice_group="Silent"
+	  starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+	  cost_for_ai_to_purchase="7000"	strength_multiplier="1.5"		
+	  hull_points="1400000" shield_points="700000" speed="AboveAverage1"
+	  metal_cost="800000" energy_consumption="25000"
+	  armor_mm="50" albedo="0.3" engine_gx="20" mass_tx="7"
+	  ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+	  ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+          priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+	  >
+        <ai_ship_group_membership name="HydraDireGuardians" weight="100"/>
+    <entity_type_drawing_bag_used_on_death data_list="BurlustHydra" min_spawn_value_list="3" />
+    <system name="W1" display_name="蛮族战斗炮"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="8000" range="Small2" shot_speed="Normal" rate_of_fire="Misery" fires_salvos_sequentially="false"
+	    shot_type_data="DoubleShot_Red"
+	    >
+      <outgoing_damage_modifier based_on="MyHullPercentageMissing" comparison_type="MultiplesOf" compared_to="20" multiplier="1" />
+    </system>
+  </entity>
+
+  <!-- Guard Posts -->
+
+  <!-- Wave Leaders -->
+  <entity name="HydraWaveLeader"
+          display_name="九头蛇滩头平台" display_name_for_sidebar="九头蛇滩头平台"
+	  thematic_groups="Templar"
+	  tags="HydraWaveLeader"
+	  visuals="Assets/_DLC3/Templar/TemplarHerald/TemplarHerald.prefab" visuals_bundle="exp3_neinzul_abyss"
+          material_override_path="Assets/_FinalGameMeshes/Nanocaust/Abomination/Abomination.prefab"
+	  icon_name="Ships3/SomethingThornEmbrace" gimbal_icon_size_multiplier="1.5"
+	  voice_group="Silent"
+	  category="Ship" special_entity_type="LoneGolem"
+	  size_scale="5.4"
+	  visuals_scale_multiplier="3"
+          collision_priority="850"
+          starting_mark_level="Markless" tech_upgrades_that_benefit_me="Unused" 
+	  description="这个强大的单位用于为AI突击部队提供滩头阵支援。行星消耗伤害削弱了防御，而气泡力场为进攻提供了耐久度。"
+	  cost_for_ai_to_purchase="11500" mark_level_scale_style="Templar" strength_multiplier="1"
+	  hull_points="500000" shield_points="3000000" speed="AlmostNone"
+	  metal_cost="800000" energy_consumption="25000"
+	  armor_mm="85" albedo="0.4" engine_gx="20" mass_tx="7"
+	  shield_size_scale="3.5" my_forcefield_does_not_shrink="true" max_count_per_npc_faction_before_stack="3" my_forcefield_has_no_penalty_for_enemies_firing_out_of_it="true"
+	  ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+          priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+          attrition_damage="200"
+	  max_attrition_damage="100000" added_max_attrition_damage_per_mark="25000"
+	  >
+    <data_extension name="DLC3"
+		    necromancer_science_to_grant_on_death="1"
+		    immune_to_necromancy="true"/>
+    <system name="W1" display_name="迫击炮"
+	    category="Weapon" firing_timing="OnlyInRange"
+	    damage_per_shot="1200" range="High2" shot_speed="Slow" rate_of_fire="High" fires_salvos_sequentially="false"
+	    shot_type_data="FlakShotAOEBurstAtEnd"
+	    area_of_effect_size="900"
+            aoe_spreads_damage_among_available_targets="true"
+	    >
+    </system>	
+
+    <ship_class_data can_be_zombified_and_similar="false" />
+  </entity>
+
+</root>

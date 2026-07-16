@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 <!-- Designs Rules, are as follow: each starting battlestation has a thematic, each encourages the player to try a specific tactic, they need to be usable both defensively and offensively rather than outrageously good at either, they should avoid having multiple turrets of the same tech-type, they shouldn't have turrets that plain conflict with their purpose even as filler. Each design has three turrets -->
 
@@ -60,7 +60,7 @@ name="GeminiTurret"	- Two weapons vs small and vs large - Tech
   
   <fleet_design name="Mod_IndiscretionDefenses"
         display_name="冒进防御"
-        description="一种恶意的组合，专门用于强力反击使用突袭类单位的入侵。
+        description="一种恶意的组合，专门用于强力反击使用突袭类舰船的入侵。
 如果两次选择相同的起始战斗空间站，第二个将随机化。"
         design_logic="InitialPlayerBattlestation" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
@@ -158,7 +158,7 @@ name="GeminiTurret"	- Two weapons vs small and vs large - Tech
   
     <fleet_design name="Mod_ChewingDefenses" 
         display_name="啃咬防御"
-        description="一种近距离组合，用于摧毁集群敌人和脆弱单位。其每秒伤害虽然分散，但胜过许多其他组合。
+        description="一种近距离组合，用于摧毁集群敌人和脆弱舰船。其每秒伤害虽然分散，但胜过许多其他组合。
 如果两次选择相同的起始战斗空间站，第二个将随机化。"
         design_logic="InitialPlayerBattlestation" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
@@ -343,7 +343,7 @@ name="GeminiTurret"	- Two weapons vs small and vs large - Tech
 Not actually modified on account of serving as the basis for adjusting the others fleets.
   <fleet_design name="Mod_WebbedStartingDefenses" is_partial_record="false"
         display_name="蛛网防御"
-        description="这种组合非常适合对付隐形单位、引擎较弱的单位、小型单位群以及能源消耗高的单位。
+        description="这种组合非常适合对付隐形舰船、引擎较弱的舰船、小型舰船群以及能源消耗高的舰船。
         
 目前尚未调整，因为它作为对比基准，使其他空间站更有用。它仍然是一种非常通用的组合，能够应对各种威胁。"
         design_logic="InitialPlayerBattlestation" weight="100" include_full_cap_of_each_type="true"

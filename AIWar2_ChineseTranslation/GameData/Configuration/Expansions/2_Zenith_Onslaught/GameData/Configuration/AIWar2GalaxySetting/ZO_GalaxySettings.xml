@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <!-- MapGen: ExtremeAdjustments -->
+    <galaxy_setting category="MapGen" subcategory="ExtremeAdjustments" name="AllPlanetsNomadic" display_name="游牧星系" type="BoolToggle" default="false"
+        description="启用此选项后，星系中的所有行星都将像游牧行星一样四处移动。它们不会像真正的游牧行星那样可被入侵，只是在星系中移动。
+
+这是一种相当疯狂且不平衡的游戏方式。让混沌之主统治吧！"
+        optional_dll_name="AIWarExternalCode" optional_type_name="Arcen.AIW2.External.GalaxySetting_NomadifyGalaxy" >
+        <harshness_override min_campaign_harshness_to_apply="700" fixed_value="false" />
+    </galaxy_setting>
+
+  <!-- MapGen: PlanetGravWellSizes-->
+  <galaxy_setting category="MapGen" subcategory="PlanetGravWellSizes" name="DarkZenithPlanetGravWellSize" display_name="暗天顶行星引力井大小" type="CustomDropdownCoreTable" related_table="PlanetGravWellSchema"
+      default_option="Cramped"
+      description="如果在本次游戏中使用暗天顶势力，选择暗天顶世界的大小（和/或可变性）。这些世界旨在给人留下深刻印象并令人恐惧。默认值为紧凑。" />
+</root>

@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <journal name="ZO_ZenithArchitrave_FirstFoundTerritory" sidebar_text="{FactionColor}天顶额枋：&lt;/color&gt;  首次探测到"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+		   text_replacement_related_player_name="true"
+        chat_text="指挥官，我们发现了一个 {FactionColor}天顶额枋&lt;/color&gt;"
+        is_partial_record="true" 
+           full_text="发件人：首席情报官雨果·道森
+情报部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+远程传感器已经识别出一些有趣的新型天顶形态。它们似乎非常有领土意识，所以攻击它们的领土听起来像是会引发一场重大战争的好方法。
+
+额枋是来自另一个宇宙的一个强大天顶帝国的远征部队。向这个宇宙投射力量对它们来说非常昂贵，它们只会零星地这样做；去与其他额枋战斗，保卫自己，或在不频繁的扩张尝试中。在和平时期，无法存放在生成器内部的单位会随时间缓慢 attrition，因为额枋无法负担维护它们。" />
+
+    <journal name="ZO_ZenithArchitrave_AllExplored" sidebar_text="{FactionColor}天顶额枋：&lt;/color&gt;  找到了母星传送门"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+		   text_replacement_related_player_name="true"
+           text_replacement_related_planet="true"
+        is_partial_record="true" 
+           full_text="发件人：尤里·哈米尔博士
+天顶研究部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+在花更多时间分析这个额枋之后，看起来我们也许可以通过入侵与它们通信。{PlanetName} 上有一个传送门，似乎是它们维持在银河系中存在的途径。
+
+虽然看起来我们无法摧毁这个传送门，但也许我们可以与它通信？某种临时休战可能值得为实现休战而进行的战斗。
+
+由于 ZA 的行星受到攻击的时间越长，它们会变得越强大，最容打击它们的时候是在它们处于和平状态时，因为这将是一场漫长的战斗。" />
+
+    <journal name="ZO_ZenithArchitrave_PioneerSpawn" sidebar_text="{FactionColor}天顶额枋：&lt;/color&gt;  先驱者"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+		   text_replacement_related_player_name="true"
+           chat_text="指挥官，{FactionColor}天顶额枋&lt;/color&gt; 正试图扩大其在银河系中的立足点。"
+        is_partial_record="true" 
+           full_text="发件人：尤里·哈米尔博士
+天顶研究部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+我们从 {FactionColor}天顶额枋&lt;/color&gt; 获取到一些新的能量信号。看起来是一些叫做先驱者的重要新单位。
+
+虽然额枋通常似乎满足于仅保持其传送门周围的母星领土，但看起来有时它们会聚集足够的能量来尝试扩张。希望一旦先驱者被处理掉，它们会恢复平静。攻击它们新征服的行星有望比攻击它们的母星领土引起的反应要小。" />
+
+    <journal name="ZO_ZenithArchitrave_CivilWarStart" sidebar_text="{FactionColor}天顶额枋：&lt;/color&gt;  内战"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+		   text_replacement_related_player_name="true"
+           chat_text="指挥官，{FactionColor}天顶额枋：&lt;/color&gt; 正在发生内战。"
+        is_partial_record="true" 
+           full_text="发件人：尤里·哈米尔博士
+天顶研究部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+看起来天顶额枋们已经开始了一场重大的本地战争。似乎它们已经不再关心人工智能，而只是试图互相攻击。
+
+也许是其中一个变得太强大了，其他几个联合起来对付它。无论原因如何，我们应该尽量远离它们。" />
+
+    <journal name="ZO_ZenithArchitrave_TruceStart" sidebar_text="{FactionColor}天顶额枋：&lt;/color&gt;  休战"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+		   text_replacement_related_player_name="true"
+           chat_text="指挥官，{FactionColor}天顶额枋：&lt;/color&gt; 已宣布与我们休战。"
+        is_partial_record="true" 
+           full_text="发件人：军事顾问安娜·斯诺
+舰队指挥部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+干得好！这应该允许我们使用 ZA 的领土而无需战斗。但要小心；这最多只是一个脆弱的联盟。
+
+看起来当它们正在扩张或处于内战中时，它们会忘记休战，直到它们再次恢复平静。" />
+
+    <journal name="ZO_ZenithArchitrave_TruceBrokenCivilWar" sidebar_text="{FactionColor}天顶额枋：&lt;/color&gt;  休战被打破（内战）"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+		   text_replacement_related_player_name="true"
+           chat_text="指挥官，{FactionColor}天顶额枋：&lt;/color&gt; 违反了我们的休战协议。"
+        is_partial_record="true" 
+           full_text="发件人：首席情报官雨果·道森
+情报部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+看来我们与天顶额枋之间脆弱的休战已被打破。它们正处于内战中，这似乎是它们现在唯一的优先事项。
+
+我们怀疑一旦内战结束，休战将再次生效。" />
+
+    <journal name="ZO_ZenithArchitrave_TruceBrokenExpansion" sidebar_text="{FactionColor}天顶额枋：&lt;/color&gt;  休战被打破（扩张）"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+		   text_replacement_related_player_name="true"
+           chat_text="指挥官，{FactionColor}天顶额枋：&lt;/color&gt; 违反了我们的休战协议。"
+        is_partial_record="true" 
+           full_text="发件人：首席情报官雨果·道森
+情报部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+看来我们与天顶额枋之间脆弱的休战已被打破。它们建造了一些先驱者来帮助扩张，在扩张期间，它们有比遵守休战更优先的事项。它们并非最守信用的种族。
+
+我们怀疑一旦所有先驱者都消失了，休战将再次生效。" />
+
+</root>

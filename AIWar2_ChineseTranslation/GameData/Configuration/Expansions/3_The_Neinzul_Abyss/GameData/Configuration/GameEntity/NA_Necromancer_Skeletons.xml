@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  
+<!-- Skeleton-Related Ships and structures. -->
+
+<!-- Basic Skeleton type. No role at all except to get shot at by his former buddies, but is fairly resistant to that! Also notable for going in the wormholes first to get shot at first. Very much a "Protector". !--> 
+
+
+    <entity name="BaseSkeleton" tags="NecromancerSlowAttrition,NecromancerBaseSkeleton,NecromancerShip,NecromancerBottomTier"
+	        thematic_groups="Neinzul,Necromancer"
+			visuals="Assets/_DLC3/Necromancer/Skeleton/Skeleton.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships4/NecromancerSkeleton"
+			voice_group="Silent"
+			category="Ship" is_strikecraft="true"
+			size_scale="2"
+			visuals_scale_multiplier="6"
+			collision_priority="100"
+			display_name="基础骷髅"
+			description="最弱的死灵法师爪牙，通过死灵法术召唤而来。随着时间推移会缓慢损耗（在死灵城中损耗更慢）。基础骷髅出人意料地耐打，但自身造成的伤害很低。当它们形成一定规模时，作为群体就会变得危险。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="SkeletonWeapon"
+			cost_for_ai_to_purchase="48"
+                        no_explicit_cap="true"
+	        hull_points="5000" shield_points="0" speed="Normal3"
+	        metal_cost="500" energy_consumption="10"
+	        armor_mm="50" albedo="0.3" engine_gx="7" mass_tx="0.21"
+			amount_added_to_damage_per_ship_of_this_type_on_planet="1" amount_added_to_damage_per_ship_of_this_type_on_planet_per_mark="1" max_amount_added_to_damage_per_ship_of_this_type_on_planet="1000"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+            immune_to_repairs="true"
+            transformation_countdown_only_during_combat="true"			
+            priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			multiplier_to_all_costs="1" multiplier_to_all_healths="1" damage_multiplier_to_all_weapons="1" 
+            >	
+    <system name="WD" display_name="骨片"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="75" range="Small5" shot_speed="Normal" rate_of_fire="Low"
+			shot_type_data="DoubleShot_Green"
+			>
+      <death_effect_damage type="Necromancy" tier_name="Minor"/>
+    </system>
+    <incoming_damage_modifier based_on="MyTimeAtPlanet" comparison_type="LessThan" compared_to="3" multiplier="0.25" />
+    </entity>
+	
+		<entity name="CagedSkeleton" copy_from="BaseSkeleton" tags="" thematic_groups="Neinzul,Necromancer,Drone"            
+            display_name="牢笼骷髅" display_name_for_sidebar="笼骷"
+	        description="最弱的死灵法师爪牙，由骷髅堆从坟墓中复活，被困在行星上战斗直至死亡。出人意料地耐打，但自身造成的伤害很低。当它们形成一定规模时，作为群体就会变得危险。"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="2"
+			visuals="Assets/_DLC3/Necromancer/SkeletonWeak/SkeletonWeak.prefab" visuals_bundle="exp3_neinzul_abyss"
+			size_scale="2"
+			visuals_scale_multiplier="7"
+			always_self_attritions="true"			
+			immune_to_swapping_between_fleets="true"
+			fleet_membership="Planetary"
+            >
+    </entity>
+	
+	<entity name="SummonedSkeleton" copy_from="BaseSkeleton" tags="" thematic_groups="Neinzul,Necromancer,Drone"            
+            display_name="召唤骷髅" display_name_for_sidebar="召骷"
+	        description="最弱的死灵法师爪牙，由死灵城召唤而来，被困在行星上战斗直至死亡。出人意料地耐打，但自身造成的伤害很低。当它们形成一定规模时，作为群体就会变得危险。"
+			tech_upgrades_that_benefit_me="NecromancerDefense"
+		  self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="2"
+			visuals="Assets/_DLC3/Necromancer/SkeletonWeak/SkeletonWeak.prefab" visuals_bundle="exp3_neinzul_abyss"
+      size_scale="2"
+			visuals_scale_multiplier="7"
+			always_self_attritions="true"			
+			immune_to_swapping_between_fleets="true"
+			fleet_membership="Planetary"
+            >
+    </entity>
+
+    <entity name="SkeletonAttritioner" copy_from="BaseSkeleton" tags="NecromancerOverLimitStrikecraftSummon,NecromancerFastAttrition"           
+            icon_overlay="Overlays2/SpireSpyCradle_Lesser" gimbal_icon_size_multiplier="0.6"
+            display_name="脆弱骷髅"
+	        description="骷髅的一种非常脆弱的变体，会快速损耗。当旗舰超过骷髅数量上限时会召唤这些骷髅。"
+            visuals="Assets/_DLC3/Necromancer/SkeletonWeak/SkeletonWeak.prefab" visuals_bundle="exp3_neinzul_abyss"
+            size_scale="2"
+	    visuals_scale_multiplier="7"
+            no_explicit_cap="true"
+            transformation_countdown_only_during_combat="true"
+	    multiplier_to_all_healths="0.3" damage_multiplier_to_all_weapons="1"
+	    max_amount_added_to_damage_per_ship_of_this_type_on_planet="500"
+            >
+    </entity>
+	
+	<entity name="CagedSkeletonAttritioner" copy_from="SkeletonAttritioner" tags="" thematic_groups="Neinzul,Necromancer,Drone"          
+            display_name="牢笼脆弱骷髅" display_name_for_sidebar="笼脆骷"
+	        description="骷髅的一种非常脆弱的变体，会快速损耗。由骷髅堆从坟墓中复活，被困在行星上战斗直至死亡。"
+            tech_upgrades_that_benefit_me="NecromancerDefense"
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="2"
+			always_self_attritions="true"			
+			immune_to_swapping_between_fleets="true"
+			fleet_membership="Planetary"
+            >
+    </entity>
+	
+	
+<!-- Bit of a Damage role for the Skeletons, but also Protector through some weapon jamming. Kill things quicker while stopping it doing as much in the meantime. !-->	
+	
+    <entity name="SkeletonWarrior" tags="Skeleton Warrior,NecromancerShip,SkeletonVariant,NecromancerBottomTier"
+	        thematic_groups="Neinzul,Necromancer" 
+			visuals="Assets/_DLC3/Necromancer/SkeletonWarrior/SkeletonWarrior.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships4/NecromancerSkeleton" icon_overlay="Overlays2/SkeletonWarrior"
+			voice_group="Silent"
+			category="Ship" is_strikecraft="true"
+			size_scale="2"
+			visuals_scale_multiplier="4.5"
+			collision_priority="100"
+
+			display_name="骷髅战士"
+
+			description="骷髅的强化形态，通过死灵法术召唤而来。在战斗一段时间后会衰退为普通骷髅。是一名近战战士，配备能干扰武器、穿透护甲的利刃。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="SkeletonWarriorWeapon"
+			cost_for_ai_to_purchase="66" strength_multiplier="1.1"
+			hull_points="9000" shield_points="0" speed="AboveAverage2"
+			metal_cost="750" energy_consumption="100"
+			armor_mm="120" albedo="0.5" engine_gx="7" mass_tx="0.3"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+            immune_to_repairs="true"
+            transformation_countdown_only_during_combat="true"
+            priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+	    multiplier_to_all_costs="1" multiplier_to_all_healths="1" damage_multiplier_to_all_weapons="1"
+            no_explicit_cap="true"
+            >	
+    <system name="WL" display_name="虚弱骨刃"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="350" range="AlmostNone" seek_range="Normal1" shot_speed="Fast" rate_of_fire="Misery" fires_salvos_sequentially="false"
+			shot_type_data="MeleeInvisible" added_target_evaluator="Melee"
+			base_enemy_weapon_reload_slowing_seconds_per_shot="4" added_enemy_weapon_reload_slowing_seconds_per_shot_per_mark="1"
+		    max_enemy_weapon_reload_slowing_seconds="10"
+            enemy_weapon_reload_slowing_to_armor_mm_less_than="75"			
+			>
+		<outgoing_damage_modifier based_on="Armor_mm" comparison_type="MultiplesOf" compared_to="35" multiplier="1" max_multiplier="10" />	
+		<death_effect_damage type="Necromancy" tier_name="Minor"/>
+    </system>
+	<incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="3400" multiplier="0.1" />
+    </entity>	
+  
+
+    <entity name="SkeletonWarriorBodyguard" copy_from="SkeletonWarrior" tags="NecromancerShip,NecromancerBodyguard"         
+            icon_overlay="Overlays2/SkeletonBodyguard"
+
+            display_name="战士保镖"
+
+	        description="骷髅的强化形态，由死灵城直接激活。是一名近战战士，配备能干扰武器、穿透护甲的利刃。"
+		immune_to_repairs="false"
+                no_explicit_cap="false"
+			multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"
+            >
+    </entity>
+	
+	<entity name="CagedSkeletonWarrior" copy_from="SkeletonWarriorBodyguard" tags="" thematic_groups="Neinzul,Necromancer,Drone"          
+
+            display_name="牢笼骷髅战士" display_name_for_sidebar="笼骷战"
+
+	        description="骷髅的强化形态，配备能干扰武器、穿透护甲的利刃。由骷髅堆从坟墓中复活，被困在行星上战斗直至死亡。"
+            tech_upgrades_that_benefit_me="NecromancerDefense"
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="2"
+			always_self_attritions="true"			
+			immune_to_swapping_between_fleets="true"
+			fleet_membership="Planetary"
+            >
+    </entity>
+	
+	
+<!-- Fully Damage role. Fragile, so going heavy on these in place of normal Skeletons means they'll die off pretty easily and you don't get much of a horde unless the base Skeletons are substituted somehow.
+     Though due to the range, once they're safe they'll probably last a while. !-->  
+
+    <entity name="SkeletonArcher" tags="Skeleton Archer,NecromancerShip,SkeletonVariant,NecromancerBottomTier"
+	        thematic_groups="Neinzul,Necromancer"
+			visuals="Assets/_DLC3/Necromancer/SkeletonArcher/SkeletonArcher.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships4/NecromancerSkeleton" icon_overlay="Overlays2/SkeletonArcher"
+			voice_group="Silent"
+			category="Ship" is_strikecraft="true"
+			size_scale="2.5"
+			visuals_scale_multiplier="5.5"
+			collision_priority="100"
+			display_name="骷髅弓箭手"
+	        description="骷髅的强化形态，通过死灵法术召唤而来。在战斗一段时间后会衰退为普通骷髅。这是一个远程且脆弱的单位，能有效摧毁气泡护盾（力场）。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="SkeletonArcherWeapon"
+			cost_for_ai_to_purchase="66" strength_multiplier="1.6"
+			hull_points="4000" shield_points="0" speed="Normal2"
+			metal_cost="750" energy_consumption="100"
+			armor_mm="50" albedo="0.4" engine_gx="7" mass_tx="0.3"
+			max_number_of_weapon_points="4"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+            immune_to_repairs="true"
+            transformation_countdown_only_during_combat="true"			
+            priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+	    multiplier_to_all_costs="1" multiplier_to_all_healths="1" damage_multiplier_to_all_weapons="1"
+            no_explicit_cap="true"
+            >	
+    <system name="B5" display_name="骨箭"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="300" range="High2" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+			shot_type_data="NanocaustCurvedSicklyGreenShot"
+			number_of_weapon_points_to_gain_on_firing="1"
+			>
+		<outgoing_damage_modifier applies_to="AllShields" based_on="MaxBubbleForcefield" comparison_type="GreaterThan" compared_to="10000" multiplier="5" />
+		<death_effect_damage type="Necromancy" tier_name="Minor"/>
+    </system>	
+	<system name="W2" display_name="致命一击"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="300" range="High2" shot_speed="Normal" rate_of_fire="PeriodicActivation" fires_salvos_sequentially="true"
+			shot_type_data="EnergyWave"  
+			number_of_weapon_points_to_consume_on_firing="4" additional_damage_modifier_per_weapon_point="2"
+			>
+		<outgoing_damage_modifier applies_to="AllShields" based_on="MaxBubbleForcefield" comparison_type="GreaterThan" compared_to="10000" multiplier="5" />
+    </system>	
+	<incoming_damage_modifier based_on="MyTimeAtPlanet" comparison_type="LessThan" compared_to="5" multiplier="0.2" />
+    </entity>  
+  
+    <entity name="SkeletonArcherBodyguard" copy_from="SkeletonArcher" tags="NecromancerShip,NecromancerBodyguard"         
+            icon_overlay="Overlays2/SkeletonArcherBodyguard"
+            display_name="弓箭手保镖"
+	        description="骷髅的强化形态，由死灵城直接激活。这是一个远程且脆弱的单位，能有效摧毁气泡护盾（力场）。"
+		immune_to_repairs="false"
+                no_explicit_cap="false"
+			multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"
+            >
+    </entity>
+	
+	<entity name="CagedSkeletonArcher" copy_from="SkeletonArcherBodyguard" tags="" thematic_groups="Neinzul,Necromancer,Drone"          
+            display_name="牢笼骷髅弓箭手" display_name_for_sidebar="笼骷弓"
+	        tech_upgrades_that_benefit_me="NecromancerDefense"
+			description="骷髅的一种强化但脆弱的形态，拥有远程攻击能力，能有效摧毁气泡护盾（力场）。由骷髅堆从坟墓中复活，被困在行星上战斗直至死亡。"
+            self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="2"
+			always_self_attritions="true"			
+			immune_to_swapping_between_fleets="true"
+			fleet_membership="Planetary"
+            >
+    </entity>
+	
+	
+<!-- Originally the Skeleton Detonator, repurposed as the Skeleton Rogue. Stealth, evasive, and bypasses shields. Frail !-->	
+	
+    <entity name="SkeletonDetonator" tags="Skeleton Rogue,NecromancerShip,SkeletonVariant,NecromancerBottomTier"
+	        thematic_groups="Neinzul,Necromancer"
+			visuals="Assets/_DLC3/Necromancer/SkeletonRogue/SkeletonRogue.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships4/NecromancerSkeleton" icon_overlay="Overlays2/SkeletonDetonator"
+			voice_group="Silent"
+			category="Ship" is_strikecraft="true"
+		  size_scale="2.5"
+			visuals_scale_multiplier="5.5"
+			collision_priority="100"
+			display_name="骷髅刺客"
+	        description="骷髅的强化形态，通过死灵法术召唤而来。在战斗一段时间后会衰退为普通骷髅。它具备隐形和闪避能力，攻击可无视护盾。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="SkeletonDetonatorWeapon"
+			cost_for_ai_to_purchase="66" strength_multiplier="1.2"
+			hull_points="5000" shield_points="0" speed="AboveAverage4"
+			metal_cost="750" energy_consumption="100"
+			armor_mm="50" albedo="0.7" engine_gx="14" mass_tx="0.3"
+			damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.25"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+            immune_to_repairs="true"
+            transformation_countdown_only_during_combat="true"			
+            priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+	    multiplier_to_all_costs="1" multiplier_to_all_healths="1" damage_multiplier_to_all_weapons="1"
+            no_explicit_cap="true"
+            >	
+    <system name="WM" display_name="坏死聚变炸弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="75" range="Normal1" shot_speed="Normal" rate_of_fire="Misery" fires_salvos_sequentially="true"
+				shot_type_data="FusionRocket"	
+				shots_per_salvo="3" shots_per_target="3"
+				base_percent_damage_bypasses_personal_shields="1"		
+				>
+	 <death_effect_damage type="Necromancy" tier_name="Minor"/>
+	</system>
+    <system name="C" display_name="隐形装置"
+				category="Passive"
+				cloaking_points="2000" cloaking_points_added_per_mark="1000"
+				>
+    </system>	
+    </entity> 	
+
+    <entity name="SkeletonDetonatorBodyguard" copy_from="SkeletonDetonator" tags="NecromancerShip,NecromancerBodyguard"         
+            icon_overlay="Overlays2/SkeletonDetonatorBodyguard"
+            display_name="刺客保镖"
+	    display_name_for_sidebar="刺保"
+            no_explicit_cap="false"
+	        description="骷髅的强化形态，由死灵城直接激活。具备隐形和闪避能力，攻击可无视护盾。"
+			immune_to_repairs="false"
+			multiplier_to_all_healths="1.5" damage_multiplier_to_all_weapons="1.5"
+            >
+    </entity>
+	
+	<entity name="CagedSkeletonDetonator" copy_from="SkeletonDetonatorBodyguard" tags="" thematic_groups="Neinzul,Necromancer,Drone"          
+            display_name="牢笼骷髅刺客" display_name_for_sidebar="笼骷刺"
+	        description="骷髅的一种强化形态，具备隐形和闪避能力，攻击可无视护盾。由骷髅堆从坟墓中复活，被困在行星上战斗直至死亡。"
+            tech_upgrades_that_benefit_me="NecromancerDefense"
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="2"
+			always_self_attritions="true"			
+			immune_to_swapping_between_fleets="true"
+			fleet_membership="Planetary"
+            >
+    </entity>
+	
+<!-- The Trapper role for the Skeletons, plus the only not self destructive area of effect for them. !-->	
+	
+	
+    <entity name="SkeletonMage" tags="Skeleton Mage,NecromancerShip,SkeletonVariant,NecromancerBottomTier"
+	        thematic_groups="Neinzul,Necromancer"
+			visuals="Assets/_DLC3/Necromancer/SkeletonMage/SkeletonMage.prefab" visuals_bundle="exp3_neinzul_abyss"
+			icon_name="Ships4/NecromancerSkeleton" icon_overlay="Overlays2/SkeletonMage"
+			voice_group="Silent"
+			category="Ship" is_strikecraft="true"
+			size_scale="3.2"
+			visuals_scale_multiplier="6.5"
+			collision_priority="100"
+			display_name="骷髅法师"
+	        description="骷髅的强化形态，通过死灵法术召唤而来。在战斗一段时间后会衰退为普通骷髅。法师们挥舞着可怕的连锁闪电武器，可暂时减速目标。"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="SkeletonMageWeapon"
+			cost_for_ai_to_purchase="66" strength_multiplier="1.1"
+			hull_points="12000" shield_points="6000" speed="Normal2"
+			metal_cost="2500" energy_consumption="250"
+			armor_mm="70" albedo="0.3" engine_gx="7" mass_tx="0.3"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+            immune_to_repairs="true"
+            transformation_countdown_only_during_combat="true"			
+            priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+	    multiplier_to_all_costs="1" multiplier_to_all_healths="1" damage_multiplier_to_all_weapons="1"
+            no_explicit_cap="true"
+            >	
+    <system name="CE" display_name="不洁闪电"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="300" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="true"
+            shot_type_data="HeavyBeamInvisible"
+            beam_length_multiplier="1.3" beam_weapon_visual_style="Lightning_Purple"
+            beam_chains_out_to_targets_x_times="2"
+            beam_chains_out_to_targets_x_range="1500"
+            shots_detonate_immediately="true"
+            maximum_number_of_targets_hit_per_shot="5"
+            beam_chains_out_to_max_targets_from_each_source="5"
+            added_target_evaluator="LowestHealthAsMajorPrimary"
+			base_engine_stun_per_shot="6" added_engine_stun_per_shot_per_mark="3" engine_stun_to_engine_gx_less_than="14"
+			max_engine_stun_seconds="24"		
+			>
+      <death_effect_damage type="Necromancy" tier_name="Minor"/>
+    </system>	
+    </entity> 		
+
+
+    <entity name="SkeletonMageBodyguard" copy_from="SkeletonMage" tags="NecromancerShip,NecromancerBodyguard"         
+            icon_overlay="Overlays2/SkeletonMageBodyguard"
+            display_name="法师保镖"
+	    description="骷髅的强化形态，由死灵城直接激活。法师们挥舞着可怕的连锁闪电武器，可暂时减速目标。"
+	    immune_to_repairs="false"
+	    multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"
+            no_explicit_cap="false"
+            >
+    </entity>
+	
+		<entity name="CagedSkeletonMage" copy_from="SkeletonMageBodyguard" tags="" thematic_groups="Neinzul,Necromancer,Drone"          
+            display_name="牢笼骷髅法师" display_name_for_sidebar="笼骷法"
+	        description="骷髅的强化形态，在撞击敌人时会发生强力爆炸，随后粉碎。由骷髅堆从坟墓中复活，被困在行星上战斗直至死亡。"
+            tech_upgrades_that_benefit_me="NecromancerDefense"
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="2"
+			always_self_attritions="true"			
+			immune_to_swapping_between_fleets="true"
+			fleet_membership="Planetary"
+            >
+    </entity>
+
+<!-- The Skeletons Infector role. Meant to go alongside the fact their Home increases the % chance for extra Skeletons each time. More infection, even more Skeletons.
+     Even self-revives once to add even more durability to itself, though isn't exactly in large enough numbers to replace the base Skeleton in that role.
+     This revival might be a bit busted...since you can technically keep building Bodyguards, sacrifice them to get a normal Lord...	 !-->
+	
+    <entity name="SkeletonLord" tags="Skeleton Lord,NecromancerShip,SkeletonVariant,NecromancerBottomTier"
+	    thematic_groups="Neinzul,Necromancer"  
+	    visuals="Assets/_DLC3/Necromancer/SkeletonLord/SkeletonLord.prefab" visuals_bundle="exp3_neinzul_abyss"
+	    icon_name="Ships4/NecromancerSkeleton" icon_overlay="Overlays2/SkeletonLord"
+	    voice_group="Silent"
+	    category="Ship" is_strikecraft="true"
+	    size_scale="3.6"
+			visuals_scale_multiplier="5.5"
+	    collision_priority="100"
+	    display_name="骷髅领主"
+	    description="骷髅的强化形态，通过死灵法术召唤而来。在战斗一段时间后会衰退为普通骷髅。是最强大的骷髅，能自我复活一次。"
+	    starting_mark_level="Mark1" tech_upgrades_that_benefit_me="SkeletonLordWeapon"
+	    cost_for_ai_to_purchase="66" strength_multiplier="1.1"
+	    hull_points="15000" shield_points="7500" speed="AboveAverage1"
+	    metal_cost="5000" energy_consumption="500"
+	    armor_mm="120" albedo="0.4" engine_gx="14" mass_tx="0.3"
+	    ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+            immune_to_repairs="true"
+            transformation_countdown_only_during_combat="true"
+            priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+	    multiplier_to_all_costs="1" multiplier_to_all_healths="1" damage_multiplier_to_all_weapons="1"
+            no_explicit_cap="true"
+            >
+    <entity_type_drawing_bag_used_on_death data_list="RevivedSkeletonLord" min_spawn_value_list="1" />
+    <system name="R5" display_name="复生激光"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="400" range="Normal4" shot_speed="Fast" rate_of_fire="High" 
+			shots_per_salvo="3" fires_salvos_sequentially="true"			
+			shot_type_data="LaserPulse_SicklyGreen"
+			added_target_evaluator="NecromancyAsPrimary"
+			>
+            <outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="3" />
+			<death_effect_damage type="Necromancy" tier_name="Major"/>
+    </system>		
+    </entity>
+
+    <entity name="SkeletonLordBodyguard" copy_from="SkeletonLord" tags="NecromancerShip,NecromancerBodyguard"         
+            icon_overlay="Overlays2/SkeletonLordBodyguard"
+            display_name="领主保镖"
+	    description="骷髅的强化形态，由死灵城直接激活。是最强大的骷髅，能自我复活一次。"
+	    immune_to_repairs="false"
+	    multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"
+            tech_upgrades_that_benefit_me="SkeletonLordWeapon"
+            no_explicit_cap="false"
+            >
+    <entity_type_drawing_bag_used_on_death data_list="RevivedSkeletonLord" min_spawn_value_list="1" />
+    </entity>
+
+    <entity name="RevivedSkeletonLord" copy_from="SkeletonLord" tags="NecromancerShip,NecromancerSlowAttrition" 
+            display_name="复生骷髅领主"
+            display_name_for_sidebar="复领"
+	        description="从致命一击下复活的骷髅领主，但比之前的形态更弱。"
+			immune_to_repairs="true"
+			transformation_countdown_only_during_combat="true"
+			multiplier_to_all_healths="0.75" damage_multiplier_to_all_weapons="0.75"
+            >
+    </entity>	
+	
+	
+	  <entity name="CagedSkeletonLord" 
+	    thematic_groups="Neinzul,Necromancer,Drone"
+	    visuals="Assets/_DLC3/Necromancer/SkeletonLord/SkeletonLord.prefab" visuals_bundle="exp3_neinzul_abyss"
+	    icon_name="Ships4/NecromancerSkeleton" icon_overlay="Overlays2/SkeletonLord"
+	    voice_group="Silent"
+	    category="Ship" is_strikecraft="true"
+	    size_scale="3.6"
+	    visuals_scale_multiplier="2"
+	    collision_priority="100"
+	    display_name="牢笼骷髅领主" display_name_for_sidebar="笼骷领"
+	    description="最强大的骷髅。由骷髅堆从坟墓中复活，被困在行星上战斗直至死亡。"
+	    starting_mark_level="Mark1" tech_upgrades_that_benefit_me="NecromancerDefense"
+	    cost_for_ai_to_purchase="66" strength_multiplier="1.1"
+	    hull_points="8000" shield_points="4000" speed="AboveAverage1"
+	    metal_cost="2000" energy_consumption="500"
+	    armor_mm="120" albedo="0.4" engine_gx="14" mass_tx="0.3"
+	    ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+            immune_to_repairs="true"
+            transformation_countdown_only_during_combat="true"
+            priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+	    multiplier_to_all_costs="1" multiplier_to_all_healths="1" damage_multiplier_to_all_weapons="1" 
+		self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="2"
+			always_self_attritions="true"			
+			immune_to_swapping_between_fleets="true"
+			fleet_membership="Planetary"
+            >		
+    <system name="R5" display_name="复生激光"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="400" range="Normal4" shot_speed="Fast" rate_of_fire="High" 
+			shots_per_salvo="3" fires_salvos_sequentially="true"			
+			shot_type_data="LaserPulse_SicklyGreen"
+			added_target_evaluator="NecromancyAsPrimary"
+			>
+            <death_effect_damage type="Necromancy" tier_name="Major"/>
+    </system>		
+    </entity>
+	
+
+
+
+    
+<!-- Summoned Ships/Structures -->
+
+	
+
+<!-- Skeleton-Related Structures -->
+
+    <entity name="SkeletonWarriorHome" tags="NecromancerBuildMenu,NecromancerFeedsFleet"
+	        thematic_groups="Neinzul,Necromancer" 
+	        visuals="Assets/_DLC3/Necromancer/NecroSkeletonHome/NecroSkeletonHome.prefab" visuals_bundle="exp3_neinzul_abyss"
+	        icon_name="Ships4/NecromancerSkeletonHome" icon_overlay="Overlays2/SkeletonWarrior"  gimbal_icon_size_multiplier="1.0"
+            voice_group="Spire"
+            uses_large_health_bar="true"
+            category="Ship"
+			size_scale="7"
+      visuals_scale_multiplier="14"
+			y_offset_of_icon="20"
+			collision_priority="1000"
+            display_name="骷髅战士之家" display_name_for_sidebar="骷髅战士"
+            description_short="此设施有时会为玩家提供骷髅战士而非普通骷髅。"
+            description="该设施可将被击毁的单位转化为骷髅战士而非普通骷髅。战士是耐打的近战单位。"
+            starting_mark_level="Markless" build_sidebar_categories_i_am_part_of="NecropolisSkeletons"
+            cost_for_ai_to_purchase="10000" strength_multiplier="0"           
+			hull_points="100000" shield_points="200000" speed="Immobile"
+            armor_mm="180" albedo="0.7" mass_tx="6"
+            metal_cost="8000" energy_consumption="1000"
+            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			city_socket_cost="1" name_for_city_sockets="Necropolis Hex" minimum_required_city_level_for_construction="1" base_ship_cap_in_custom_city="0"
+            name_for_city_sockets_short="Hex"
+            ship_type_name_to_grant_more_of_in_custom_fleet="SkeletonWarriorBodyguard" ship_type_count_to_grant_more_of_in_custom_fleet="15"            			
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+	        >
+					<data_extension name="DLC3"
+							skeleton_tag="Skeleton Warrior"
+							skeleton_type_percent="10"
+							skeleton_cap_increase="20"/>
+            <metal_flow purpose="SelfConstruction" throughput="2500"/>
+    </entity>
+        
+    <entity name="SkeletonArcherHome" copy_from="SkeletonWarriorHome" tags="NecromancerBuildMenu,NecromancerFeedsFleet"
+	        icon_name="Ships4/NecromancerSkeletonHome" icon_overlay="Overlays2/SkeletonArcher" gimbal_icon_size_multiplier="1.0"                        
+            display_name="骷髅弓箭手之家" display_name_for_sidebar="骷髅弓箭手"
+            description_short="此设施有时会为玩家提供骷髅弓箭手而非普通骷髅。"
+            description="该设施可将被击毁的单位转化为骷髅弓箭手而非普通骷髅。弓箭手是远程攻击单位，但较为脆弱。"
+			build_sidebar_categories_i_am_part_of="NecropolisSkeletons"
+            metal_cost="8000" energy_consumption="1000"
+			city_socket_cost="1" name_for_city_sockets="Necropolis Hex" minimum_required_city_level_for_construction="1" base_ship_cap_in_custom_city="0"
+            name_for_city_sockets_short="Hex"
+            
+            ship_type_name_to_grant_more_of_in_custom_fleet="SkeletonArcherBodyguard" ship_type_count_to_grant_more_of_in_custom_fleet="15"
+            >
+      <data_extension name="DLC3"
+          skeleton_tag="Skeleton Archer"
+          skeleton_type_percent="10"
+          skeleton_cap_increase="15"/>
+    </entity>
+	
+	
+    <entity name="SkeletonDetonatorHome" copy_from="SkeletonWarriorHome" tags="NecromancerBuildMenu,NecromancerFeedsFleet"
+	        icon_name="Ships4/NecromancerSkeletonHome" icon_overlay="Overlays2/SkeletonDetonator" gimbal_icon_size_multiplier="1.0"                        
+            display_name="骷髅刺客之家" display_name_for_sidebar="骷髅刺客"
+            description_short="此设施有时会为玩家提供骷髅刺客而非普通骷髅。"
+            description="该设施可将被击毁的单位转化为骷髅刺客而非普通骷髅。刺客具备隐形和闪避能力，攻击可无视护盾。"
+			build_sidebar_categories_i_am_part_of="NecropolisSkeletons"
+            metal_cost="8000" energy_consumption="1000"
+			city_socket_cost="1" name_for_city_sockets="Necropolis Hex" minimum_required_city_level_for_construction="1" base_ship_cap_in_custom_city="0"
+            name_for_city_sockets_short="Hex"
+            ship_type_name_to_grant_more_of_in_custom_fleet="SkeletonDetonatorBodyguard" ship_type_count_to_grant_more_of_in_custom_fleet="15"
+            >
+      <data_extension name="DLC3"
+          skeleton_tag="Skeleton Rogue"
+          skeleton_type_percent="10"
+          skeleton_cap_increase="15"/>
+    </entity>
+
+
+    <entity name="SkeletonMageHome" copy_from="SkeletonWarriorHome" tags="NecromancerBuildMenu,NecromancerFeedsFleet"
+	        icon_name="Ships4/NecromancerSkeletonHome" icon_overlay="Overlays2/SkeletonMage" gimbal_icon_size_multiplier="1.0"                        
+            display_name="骷髅法师之家" display_name_for_sidebar="骷髅法师"
+            description_short="此设施有时会为玩家提供骷髅法师而非普通骷髅。"
+            description="该设施可将被击毁的单位转化为骷髅法师而非普通骷髅。法师们挥舞着可怕的连锁闪电武器。"
+			build_sidebar_categories_i_am_part_of="NecropolisSkeletons"
+            metal_cost="12000" energy_consumption="2000"
+			city_socket_cost="1" name_for_city_sockets="Necropolis Hex" minimum_required_city_level_for_construction="2" base_ship_cap_in_custom_city="0"
+            name_for_city_sockets_short="Hex"
+            ship_type_name_to_grant_more_of_in_custom_fleet="SkeletonMageBodyguard" ship_type_count_to_grant_more_of_in_custom_fleet="5"
+            >
+      <data_extension name="DLC3"
+          skeleton_tag="Skeleton Mage"
+          skeleton_type_percent="5"
+          skeleton_cap_increase="10"/>
+    </entity>
+
+
+    <entity name="SkeletonLordHome" copy_from="SkeletonWarriorHome" tags="NecromancerBuildMenu,NecromancerFeedsFleet"
+	        icon_name="Ships4/NecromancerSkeletonHome" icon_overlay="Overlays2/SkeletonLord" gimbal_icon_size_multiplier="1.0"                        
+            display_name="骷髅领主之家" display_name_for_sidebar="骷髅领主"
+            description_short="此设施有时会为玩家提供骷髅领主而非普通骷髅。"
+            description="该设施可将被击毁的单位转化为骷髅领主而非普通骷髅。骷髅领主是最强的骷髅单位，同时还提供额外获得更多骷髅的微小几率。"
+			build_sidebar_categories_i_am_part_of="NecropolisSkeletons"
+            metal_cost="15000" energy_consumption="2500"
+			city_socket_cost="1" name_for_city_sockets="Necropolis Hex" minimum_required_city_level_for_construction="3" base_ship_cap_in_custom_city="0"
+            name_for_city_sockets_short="Hex"
+            ship_type_name_to_grant_more_of_in_custom_fleet="SkeletonLordBodyguard" ship_type_count_to_grant_more_of_in_custom_fleet="3"
+            >
+      <data_extension name="DLC3"
+						skeleton_tag="Skeleton Lord"
+            skeleton_type_percent="2"
+            skeleton_cap_increase="8"/>
+    </entity>
+		
+<!--This entity is deprecated. We have skeleton amplifers for this function
+
+    <entity name="SkeletonBonusCreation" copy_from="SkeletonWarriorHome" tags="NecromancerBuildMenu,NecromancerFeedsFleet"
+	    visuals="Assets/_DLC3/Necromancer/NecroBonusSkeletons/NecroBonusSkeletons.prefab" visuals_bundle="exp3_neinzul_abyss"
+      size_scale="8.5"
+      visuals_scale_multiplier="13"
+	    icon_name="Ships4/NecromancerSkeletonHome" icon_overlay="Overlays2/SkeletonLuck" gimbal_icon_size_multiplier="1.0"                        
+            display_name="骷髅额外生成设施" display_name_for_sidebar="骷髅增益"
+            description_short="该设施让玩家有额外机会获得更多骷髅"
+            description="当你获得单个骷髅时，该设施会让玩家有额外机会获得更多骷髅。如果你有 50% 的几率，那么你就有 50% 的几率获得一个额外骷髅。如果你有 150% 的几率，那么你有 100% 的几率获得两个骷髅，并有 50% 的几率获得第三个骷髅。"
+	    build_sidebar_categories_i_am_part_of="NecropolisSkeletons"
+	    city_socket_cost="2" name_for_city_sockets="Necropolis Hex" minimum_required_city_level_for_construction="1" base_ship_cap_in_custom_city="0"
+            name_for_city_sockets_short="Hex"
+            >
+      <data_extension name="DLC3"
+          skeleton_type_percent="0"
+          skeleton_tag=""
+          bonus_skeleton_percent="7"/>
+    </entity>
+
+-->
+</root>

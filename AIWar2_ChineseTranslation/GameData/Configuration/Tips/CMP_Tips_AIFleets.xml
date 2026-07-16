@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <tip category="AIFleets" name="SubFleets" display_name="AI 分舰队" sort_priority="100"
+        full_text="AI 在游戏中有多个分舰队，用于各种不同的目的。每个分舰队都有自己的预算、优势和劣势。" />
+
+  <tip category="AIFleets" name="WardenFleet" display_name="守卫舰队" sort_priority="200"
+        full_text="守卫舰队是一支纯粹的防御力量。它驻守在 AI 控制的行星或中立行星上。" />
+  <tip category="AIFleets" name="HunterFleet" display_name="猎手舰队" sort_priority="300"
+        full_text="猎手舰队是 AI 主要用于进攻的舰队，用于寻找你的防御弱点并发起攻击。在紧急情况下，它也可用于防御。猎手舰队是非常强大且狡猾的对手。
+
+AI 获取猎手舰队单位有多种方式，包括以下几种：
+- 当 AI 的守卫单位逃离你时，它们会加入威胁舰队。威胁舰队是一群组织混乱的 AI 单位，试图对你进行反击。如果它们在几分钟内找不到合适的攻击地点，就会加入猎手舰队。
+- 在更高难度下，AI 可能会直接将部分资源投入到猎手舰队的单位建造中。
+- 每当 AI 的部队摧毁一个指挥站时，AI 会突然获得一批猎手舰队的单位。
+- 当你与强大的次要派系盟友并肩作战时，AI 会生成额外的猎手舰队单位；这些单位可能会从一些意想不到的地方出现，攻击你的盟友，也可能会攻击你。
+
+AI 还会派遣猎手舰队单位对抗强大的派系，如非玩家盟友的纳米浩劫或掠夺者等派系。这些单位不会特意攻击你，但如果你挡了它们的路，就会与你交战。如果某些行星位于 AI 与其敌人之间，那么控制这些行星会变得非常困难。" />
+  <tip category="AIFleets" name="PraetorianGuard" display_name="禁卫军" sort_priority="400"
+        full_text="禁卫军是 AI 霸主的护卫队。它局限于 AI 霸主附近的行星，不过这些行星的归属没有限制。所以，如果你占领了 AI 母星附近的行星，就可以预料到禁卫军会有所行动。" />
+  <tip category="AIFleets" name="Instigators" display_name="煽动者" sort_priority="500"
+       full_text="大约每小时，AI 的煽动者会在星系中生成一个基地。每个基地的功能不同；有些会增强 AI 部队的能力，有些会生成 AI 进度值（AIP），有些会生成单位等等。你需要尽快摧毁这些煽动者基地。" />
+  <tip category="AIFleets" name="Reserves" display_name="预备队" sort_priority="500"
+       full_text="如果你在远离自己行星的地方与 AI 作战（即“深度打击”），AI 会生成数量越来越多的单位，看似无穷无尽。它们会赶走你所有进行深度打击的单位，但一旦你撤离，它们的单位就会全部撤回。
+
+你可以使用星系地图底部中央的搜索栏，查看哪些行星会触发深度打击。" />
+
+</root>

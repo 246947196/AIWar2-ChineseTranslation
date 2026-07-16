@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <display_mode name="Reducers"
+             display_name="AIP 削减器"
+             dll_name="AIWarExternalVisualizationCode"
+             type_name="Arcen.AIW2.ExternalVisualization.GalaxyMapDisplayMode_Reducers"
+             tooltip="忽略您在左侧下拉菜单中选择的阵营。显示任何能够降低AI进度（AIP）的单位。"
+      />
+    <display_mode name="AIDefenses"
+           display_name="AI 防御设施"
+           dll_name="AIWarExternalVisualizationCode"
+           type_name="Arcen.AIW2.ExternalVisualization.GalaxyMapDisplayMode_AIDefenses"
+           tooltip="忽略您在左侧下拉菜单中选择的阵营。以图标形式显示每个行星上的所有主要AI防御设施。在文本中，显示每个行星上所有敌对单位的强度。如果它比您当前选择的单位更强，则显示为橙色文本。如果它比您当前选择的单位强两倍以上，则显示为更深的橙色。如果它的强度不到您当前选择单位的一半，则显示为浅蓝色。"
+      />
+    <display_mode name="Capturables"
+           display_name="&lt;color=#5affce&gt;占领&lt;/color&gt;"
+           dll_name="AIWarExternalVisualizationCode"
+           type_name="Arcen.AIW2.ExternalVisualization.GalaxyMapDisplayMode_Targets"
+           tooltip="忽略您在左侧下拉菜单中选择的阵营。显示任何被认为可占领的单位，或者那些可能无法占领但纯粹为了被入侵以获取新资源而存在的单位。"
+      />
+</root>

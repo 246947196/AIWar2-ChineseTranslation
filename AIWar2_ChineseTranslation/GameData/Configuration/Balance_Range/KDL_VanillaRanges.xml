@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<range name="None" display_name="无" range="0" />
+	<range name="AlmostNone" display_name="极近" range="300" is_melee="true" />
+	<range name="AlmostNone2" display_name="极近" range="500" is_melee="true" />
+	<range name="VeryTiny1" display_name="超短1" range="1000" />
+	<range name="VeryTiny2" display_name="超短2" range="1125" />
+	<range name="VeryTiny3" display_name="超短3" range="1250" />
+	<range name="VeryTiny4" display_name="超短4" range="1500" />
+	<range name="Tiny1" display_name="很短1" range="1700" />
+  <range name="Tiny2" display_name="很短2" range="2000" />
+  <range name="Tiny3" display_name="很短3" range="2500" />
+  <range name="Tiny4" display_name="很短4" range="2800" />
+  <range name="Small1" display_name="短1" range="3200" />
+  <range name="Small2" display_name="短2" range="3500" />
+  <range name="Small3" display_name="短3" range="3800" />
+  <range name="Small4" display_name="短4" range="4000" />
+  <range name="Small5" display_name="短5" range="4200" />
+  <range name="Normal1" display_name="中1" range="5000" />
+  <range name="Normal2" display_name="中2" range="5200" />
+  <range name="Normal3" display_name="中3" range="5600" />
+  <range name="Normal4" display_name="中4" range="6000" />
+  <range name="Normal5" display_name="中5" range="6500" />
+  <range name="Normal6" display_name="中6" range="7100" />
+  <range name="AboveAverage1" display_name="较长1" range="8000" />
+  <range name="AboveAverage2" display_name="较长2" range="9000" />
+  <range name="AboveAverage3" display_name="较长3" range="10100" />
+  <range name="AboveAverage4" display_name="较长4" range="12000" />
+  <range name="AboveAverage5" display_name="较长5" range="14000" />
+  <range name="High1" display_name="长1" range="15000" />
+  <range name="High2" display_name="长2" range="18000" />
+  <range name="High3" display_name="长3" range="24000" />
+  <range name="ExtremelyHigh" display_name="超长" range="30000" />
+  <range name="IncrediblyHigh" display_name="极长" range="40000" />
+  <range name="InsanelyHigh" display_name="超极长" range="124000" />
+  <range name="Planetary" display_name="行星级" range="600000" />
+  <range name="EssentiallyInfinite" display_name="无限" range="9990999" is_sniper="true" />
+</root>

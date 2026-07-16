@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <tutorial category="Basics" name="BasicBasicsScoutingVision" display_name="教程 5 - 侦察与视野基础" sort_priority="5"
+        description="关于如何侦察银河系、追踪敌人动向以及情报选项卡的基础知识。" scenario="AftermathOfLosingTheAIWar"
+        do_not_serialize_setup_to_or_from_settings="true"
+        skip_determine_ai_ownership="true" skip_determine_ai_homeworlds="true" skip_assign_player_homeworlds="true"
+        force_map_type="Tutorial_01" force_map_seed="123456" skip_seed_special_entities="true"
+        skip_all_galaxy_wide_capturables_and_obstacles="true" skip_warden_bases="true" skip_all_waves="true"
+        debug_all_step_text_on_load="false"
+   >
+    <!--Setup for factions
+        *************************************-->
+    <!--You name any that you add beyond the built-in ones, or the following ones are built in:
+        NaturalObject - owned by nobody
+        AI - main AI
+        FirstPlayer - presumably the only player, given this is a tutorial.
+        PlayerBeyondTheFirst - any and all other players.
+        AIWardenFleet - warden fleet of the main AI.
+        AIHunterFleet - hunter fleet of the main AI.
+        AntiAIZombie, AntiPlayerZombie, AntagonizedDysonSphere - all just kind of plumbing stuff.
+        Instigators - the AI instigators.
+        Outguard - the outguard, if there are any that seed, etc. -->
+    <faction_initial_setup name="FirstPlayer" starting_planet_index="0"/>
+    <faction_initial_setup name="PlayerBeyondTheFirst" do_not_add_faction="true"/>
+    <faction_initial_setup name="Instigators" do_not_add_faction="true"/>
+    <faction_initial_setup name="Outguard" do_not_add_faction="true"/>
+    <faction_initial_setup name="AI">
+        <custom_field key="AIType" val="Tutorial_01"/>
+    </faction_initial_setup>
+	<faction_initial_setup name="WardenFleet" do_not_add_faction="true"/>
+	<faction_initial_setup name="HunterFleet" do_not_add_faction="true"/>
+	
+
+    <!--Setup for planet topography
+        *************************************-->
+    <!--Note that these tutorial planets allow you to define planets manually.  This ONLY works with the Tutorial_01 map type.
+        If you want to have a tutorial in a regular other map type of some other sort, you can do so, but these won't be read in in terms of placement and names.-->
+    <tutorial_planet name="Murdoch" x="0" y="0" is_blocked_to_npc_travel_via_wormholes="true">
+	  <link name="Aalst"/>
+      <link name="Abiteboul"/>
+	  <link name="Agrawal"/>
+    </tutorial_planet>
+	
+    <tutorial_planet name="Aalst" x="-75" y="150" is_blocked_to_npc_travel_via_wormholes="true"/>
+	<tutorial_planet name="Abiteboul" x="0" y="150" is_blocked_to_npc_travel_via_wormholes="true"/>
+	<tutorial_planet name="Agrawal" x="75" y="150" is_blocked_to_npc_travel_via_wormholes="true"/>
+	
+    <tutorial_planet name="Backus" x="-150" y="225" is_blocked_to_npc_travel_via_wormholes="true">
+	  <link name="Aalst"/>
+    </tutorial_planet>	
+	<tutorial_planet name="Bader" x="0" y="225" is_blocked_to_npc_travel_via_wormholes="true">
+	  <link name="Abiteboul"/>
+	</tutorial_planet>  
+	<tutorial_planet name="Bahl" x="150" y="225" is_blocked_to_npc_travel_via_wormholes="true">
+	  <link name="Agrawal"/>
+	</tutorial_planet>
+
+    <tutorial_planet name="Candlin" x="-150" y="300" is_blocked_to_npc_travel_via_wormholes="true">
+	  <link name="Backus"/>
+    </tutorial_planet>	
+	<tutorial_planet name="Cantrill" x="0" y="300" is_blocked_to_npc_travel_via_wormholes="true">
+	  <link name="Bader"/>
+	</tutorial_planet>  
+	<tutorial_planet name="Cardelli" x="150" y="300" is_blocked_to_npc_travel_via_wormholes="true">
+	  <link name="Bahl"/>
+	</tutorial_planet>	
+
+    <tutorial_planet name="Dahl" x="-150" y="375" is_blocked_to_npc_travel_via_wormholes="true">
+	  <link name="Candlin"/>
+    </tutorial_planet>	
+	<tutorial_planet name="Dam" x="0" y="375" is_blocked_to_npc_travel_via_wormholes="true">
+	  <link name="Cantrill"/>
+	</tutorial_planet>  
+	<tutorial_planet name="Das" x="150" y="375" is_blocked_to_npc_travel_via_wormholes="true">
+	  <link name="Cardelli"/>
+	</tutorial_planet>	
+	
+    <tutorial_planet name="Eades" x="-75" y="450" is_blocked_to_npc_travel_via_wormholes="true">
+	  <link name="Dahl"/>
+    </tutorial_planet>	
+	<tutorial_planet name="Easley" x="0" y="450" is_blocked_to_npc_travel_via_wormholes="true">
+	  <link name="Dam"/>
+	</tutorial_planet>  
+	<tutorial_planet name="Eckert" x="75" y="450" is_blocked_to_npc_travel_via_wormholes="true">
+	  <link name="Das"/>
+	</tutorial_planet>
+
+    <tutorial_planet name="Fahlman" x="0" y="600" is_blocked_to_npc_travel_via_wormholes="true">
+	  <link name="Eades"/>
+      <link name="Easley"/>
+	  <link name="Eckert"/>
+    </tutorial_planet>	
+	
+	
+	
+	
+	
+	
+
+	 
+	  
+
+
+
+
+    <!--Setup for planet ownership, etc
+        *************************************-->
+    <!--Note that these work for even non-manually-created maps.  Ownerships are either whatever you named the factions above, 
+        or are the built-in ones noted above.  You can match planets based on their added-index or their name.-->
+    <planet_ownership_and_spawning match_index="0" linked_faction_name="FirstPlayer" is_homeworld="true"
+          command_station_point="200,1000" skip_player_home_forcefield="false" skip_player_home_engineers="false"
+          skip_player_home_factory="false" skip_player_home_human_settlement="false" skip_player_home_human_cryogenic_pods="false"
+          skip_player_home_initial_combat_fleet="false" skip_player_home_initial_battlestation="false" skip_player_home_initial_support_fleet="false"
+          initial_combat_fleet="ClassicStartingFleet" initial_battlestation_fleet="ClassicStartingDefenses" initial_support_fleet=""
+          number_of_metal_spots="4" >
+    </planet_ownership_and_spawning>
+    <planet_ownership_and_spawning match_name="Aalst" linked_faction_name="AI" mark_level_index="1" number_of_metal_spots="5"
+            skip_ai_wormhole_sentinels="true" skip_ai_guardians="true" skip_ai_initial_turrets="true" skip_ai_guard_posts="false" skip_ai_initial_non_turret_defenses="true" skip_ai_initial_strikecraft="false">
+	</planet_ownership_and_spawning>
+	
+    <planet_ownership_and_spawning match_name="Abiteboul" linked_faction_name="AI" mark_level_index="1" number_of_metal_spots="5"
+            skip_ai_wormhole_sentinels="true" skip_ai_guardians="true" skip_ai_initial_turrets="true" skip_ai_guard_posts="false" skip_ai_initial_non_turret_defenses="true" skip_ai_initial_strikecraft="false">
+			<ship_placement faction="NaturalObject" type="TransportFlagship_Base" placement_point="1000,1000"/>
+	</planet_ownership_and_spawning>
+
+    <planet_ownership_and_spawning match_name="Agrawal" linked_faction_name="AI" mark_level_index="1" number_of_metal_spots="5"
+            skip_ai_wormhole_sentinels="true" skip_ai_guardians="true" skip_ai_initial_turrets="true" skip_ai_guard_posts="false" skip_ai_initial_non_turret_defenses="true" skip_ai_initial_strikecraft="false">
+	</planet_ownership_and_spawning>
+
+    <planet_ownership_and_spawning match_name="Backus" linked_faction_name="AI" mark_level_index="2" number_of_metal_spots="5"
+            skip_ai_wormhole_sentinels="true" skip_ai_guardians="true" skip_ai_initial_turrets="true" skip_ai_guard_posts="false" skip_ai_initial_non_turret_defenses="true" skip_ai_initial_strikecraft="false">
+	</planet_ownership_and_spawning>
+	
+    <planet_ownership_and_spawning match_name="Bader" linked_faction_name="AI" mark_level_index="2" number_of_metal_spots="5"
+            skip_ai_wormhole_sentinels="true" skip_ai_guardians="true" skip_ai_initial_turrets="true" skip_ai_guard_posts="false" skip_ai_initial_non_turret_defenses="true" skip_ai_initial_strikecraft="false">
+	</planet_ownership_and_spawning>
+
+    <planet_ownership_and_spawning match_name="Bahl" linked_faction_name="AI" mark_level_index="2" number_of_metal_spots="5"
+            skip_ai_wormhole_sentinels="true" skip_ai_guardians="true" skip_ai_initial_turrets="true" skip_ai_guard_posts="false" skip_ai_initial_non_turret_defenses="true" skip_ai_initial_strikecraft="false">
+	</planet_ownership_and_spawning>
+
+    <planet_ownership_and_spawning match_name="Candlin" linked_faction_name="AI" mark_level_index="3" number_of_metal_spots="5"
+            skip_ai_wormhole_sentinels="true" skip_ai_guardians="true" skip_ai_initial_turrets="true" skip_ai_guard_posts="false" skip_ai_initial_non_turret_defenses="true" skip_ai_initial_strikecraft="false">
+	</planet_ownership_and_spawning>
+	
+    <planet_ownership_and_spawning match_name="Cantrill" linked_faction_name="AI" mark_level_index="3" number_of_metal_spots="5"
+            skip_ai_wormhole_sentinels="true" skip_ai_guardians="true" skip_ai_initial_turrets="true" skip_ai_guard_posts="false" skip_ai_initial_non_turret_defenses="true" skip_ai_initial_strikecraft="false">
+			<ship_placement faction="NaturalObject" type="AdvancedResearchStationForTutorial" placement_point="1000,1000"/>
+	</planet_ownership_and_spawning>
+
+    <planet_ownership_and_spawning match_name="Cardelli" linked_faction_name="AI" mark_level_index="3" number_of_metal_spots="5"
+            skip_ai_wormhole_sentinels="true" skip_ai_guardians="true" skip_ai_initial_turrets="true" skip_ai_guard_posts="false" skip_ai_initial_non_turret_defenses="true" skip_ai_initial_strikecraft="false">
+	</planet_ownership_and_spawning>
+
+    <planet_ownership_and_spawning match_name="Dahl" linked_faction_name="AI" mark_level_index="3" number_of_metal_spots="5"
+            skip_ai_wormhole_sentinels="true" skip_ai_guardians="true" skip_ai_initial_turrets="true" skip_ai_guard_posts="false" skip_ai_initial_non_turret_defenses="true" skip_ai_initial_strikecraft="false">
+	</planet_ownership_and_spawning>
+	
+    <planet_ownership_and_spawning match_name="Das" linked_faction_name="AI" mark_level_index="3" number_of_metal_spots="5"
+            skip_ai_wormhole_sentinels="true" skip_ai_guardians="true" skip_ai_initial_turrets="true" skip_ai_guard_posts="false" skip_ai_initial_non_turret_defenses="true" skip_ai_initial_strikecraft="false">
+	</planet_ownership_and_spawning>
+
+    <planet_ownership_and_spawning match_name="Dam" linked_faction_name="AI" mark_level_index="3" number_of_metal_spots="5"
+            skip_ai_wormhole_sentinels="true" skip_ai_guardians="true" skip_ai_initial_turrets="true" skip_ai_guard_posts="false" skip_ai_initial_non_turret_defenses="true" skip_ai_initial_strikecraft="false">
+	</planet_ownership_and_spawning>	
+			
+    <planet_ownership_and_spawning match_name="Eades" linked_faction_name="AI" mark_level_index="3" number_of_metal_spots="5"
+            skip_ai_wormhole_sentinels="true" skip_ai_guardians="true" skip_ai_initial_turrets="true" skip_ai_guard_posts="false" skip_ai_initial_non_turret_defenses="true" skip_ai_initial_strikecraft="false">
+	</planet_ownership_and_spawning>
+	
+    <planet_ownership_and_spawning match_name="Easley" linked_faction_name="AI" mark_level_index="3" number_of_metal_spots="5"
+            skip_ai_wormhole_sentinels="true" skip_ai_guardians="true" skip_ai_initial_turrets="true" skip_ai_guard_posts="false" skip_ai_initial_non_turret_defenses="true" skip_ai_initial_strikecraft="false">
+	</planet_ownership_and_spawning>
+
+    <planet_ownership_and_spawning match_name="Eckert" linked_faction_name="AI" mark_level_index="3" number_of_metal_spots="5"
+            skip_ai_wormhole_sentinels="true" skip_ai_guardians="true" skip_ai_initial_turrets="true" skip_ai_guard_posts="false" skip_ai_initial_non_turret_defenses="true" skip_ai_initial_strikecraft="false">
+	</planet_ownership_and_spawning> 
+
+    <planet_ownership_and_spawning match_name="Fahlman" linked_faction_name="AI" mark_level_index="5" is_homeworld="true" number_of_metal_spots="8"
+            skip_ai_wormhole_sentinels="true" skip_ai_guardians="true" skip_ai_initial_turrets="true" skip_ai_guard_posts="false" skip_ai_initial_non_turret_defenses="true" skip_ai_initial_strikecraft="false">
+	</planet_ownership_and_spawning> 	
+
+    <!--Actual steps of the tutorial itself!
+    
+      For informaton about the conditions that you can use, and how to use them, 
+      please see this wiki page: https://wiki.arcengames.com/index.php?title=AI_War_2:_Tutorial_Step_Conditions
+      *************************************-->
+    <tutorial_step text_to_show="欢迎来到《AI战争2》的第五个教程。本教程涵盖了侦察银河系以发现外部世界、不同类型的视野以及情报选项卡的内容。
+	
+首先，前往银河系地图。">
+      <condition type="PlayerViewIsOnGalaxyMap"/>
+    </tutorial_step>
+	
+    <tutorial_step text_to_show="至今还未提及的一个概念是已探索、已监视和永久监视行星的区别。
+	
+看看我们母星旁边的行星。如果将鼠标悬停在它们上方，工具提示会显示'永久监视'，如果我们查看行星视图，我们可以实时看到这里的一切。
+
+永久监视意味着我们将永远拥有这里最新的信息，无论是战斗、需要处理的可怕威胁，还是其他任何情况。在任何游戏中，与我们母星相邻的行星总是处于永久监视状态。
+
+如果您还没有进入银河系地图，请前往银河系地图。
+
+&lt;color=#999999&gt;额外提示：行星旁边的数字代表那里力量的&lt;color=#FFB74B&gt;强度&lt;/color&gt;，包括您的移动部队（左上）和固定部队（左下），以及敌人的守卫（右上）和攻击性威胁（右下）。您可以阅读行星的工具提示以获取更多信息。&lt;/color&gt;">
+      <condition type="PlayerViewIsOnGalaxyMap"/>
+    </tutorial_step>
+
+    <tutorial_step text_to_show="现在让我们看看更远一些的行星。将鼠标悬停在这些行星的工具提示上，会告诉我们它们是已探索的。查看行星视图似乎仍然可以看到实时视图，虽然有些模糊。
+	
+这里的关键区别是我们只能看到过去在这里发现的东西。我们知道它们仍然在这里，因此可以追踪它们，但一旦它们离开行星，我们就不知道它们在哪里了。同样地，如果有新的部队到达，我们也不会知道。
+
+与我们母星附近的永久监视行星类似，任何距离我们母星2个连接或'跳跃'的行星都会被标记为已探索。
+
+现在是提及'已监视'状态的好时机。如果我们在通常只是已探索的行星上有单位，它就会变成已监视。当我们的单位在那里时，我们可以看到一切最新情况，就像永久监视一样，至少直到单位死亡或离开。物流站是这方面的另一个来源，它们有侦察能力可以监视几个跳跃范围内的行星。这个能力可以升级。
+
+再次提醒，如果您还没有进入银河系地图，请前往银河系地图。
+
+&lt;color=#999999&gt;额外提示：如果一个行星只是已探索，那么前面提到的&lt;color=#FFB74B&gt;强度&lt;/color&gt;数字旁边会有一个?，并且行星图标中会有一个短横线。&lt;/color&gt;">
+      <condition type="PlayerViewIsOnGalaxyMap"/>
+    </tutorial_step>
+
+    <tutorial_step text_to_show="比已探索行星更远的行星是未探索的。我们完全不知道那里有什么，如果有的话。查看行星视图会给我们一个非常扭曲的图像——没有多大用处。
+	
+这种状态的关键部分是我们的单位甚至无法前往这些行星——我们基本上被锁在外面。让我们采取行动解决这个问题！
+
+我们的起始舰队应该在此期间已经完成建造。前往行星{c1.PlanetName}并摧毁那里的指挥站。
+
+当您这样做时，一些信息将出现在此窗口底部。">
+      <condition type="EnemyShipsOfSpecialEntityOnPlanetLessThanOrEqualTo" planet_by_name="Aalst" special_entity_type="AICommandStationOriginal" count="0"/>
+    </tutorial_step>	
+
+    <tutorial_step text_to_show="您可能已经看到提到行星被探索。这是由于AI指挥站被摧毁而导致的，这通常是我们揭示银河系的方式。
+	
+这样做会导致一些与已探索行星直接相邻的未探索行星变成已探索状态。因此，通过占领领土和捕获事物，我们的信息会随着时间逐渐扩展。
+
+现在，我们之前看不到的一些未探索行星已经向我们显示出来了。
+
+嗯，如何使行星永久监视？为此，前往{c1.PlanetName}并打开&lt;color=#3DE799&gt;入侵&lt;/color&gt;选项卡。">
+      <condition type="PlayerViewIsOnSpecificPlanet" planet_by_name="Backus"/>
+	  <condition type="PlayerHasSidebarMenuOpen_Hacking"/>
+    </tutorial_step>
+	
+    <tutorial_step text_to_show="这里我们有选项对这个行星进行&lt;color=#3DE799&gt;监视行星入侵&lt;/color&gt;。与大多数&lt;color=#3DE799&gt;入侵&lt;/color&gt;不同，即使没有旗舰或我们的任何单位在场，也可以进行这种入侵。
+	
+这只能对已探索的行星进行，并且会使该行星永久监视。
+
+现在就这样做。">
+      <condition type="PlanetIsPermanentlyWatched" planet_by_name="Backus"/>
+    </tutorial_step>
+
+    <tutorial_step text_to_show="现在我们将永远拥有这里的最新信息，数字上的?和图标中的短横线都消失了。另外，我们也可以建造物流或军事指挥站，从中建造间谍单位，并将间谍放在这里作为隐形摄像头。
+                   
+现在让我们尝试另一种类似的&lt;color=#3DE799&gt;入侵&lt;/color&gt;，用于探索行星。这是摧毁AI指挥站的替代方法。它只能在与已探索行星相邻的未探索行星上进行，方式与摧毁站点类似。
+
+在行星{c1.PlanetName}上尝试一下。">
+      <condition type="PlanetHasBeenExplored" planet_by_name="Dahl"/>
+    </tutorial_step>
+
+    <tutorial_step text_to_show="现在我们来看看在银河系地图上时有用的选项卡。
+	
+打开情报选项卡。
+
+&lt;color=#999999&gt;额外提示：这个快捷键很简单，就是I。&lt;/color&gt;">
+      <condition type="PlayerHasSidebarMenuOpen_Intel"/>
+    </tutorial_step>
+
+    <tutorial_step text_to_show="这里我们有一个我们所知道的事物列表，按类别分组，例如主要目标、炮塔、新舰队、资源收集和初学者提示。
+
+这些事物包括对我们来说重要的可捕获物品，如新的舰队或外星技术。同样包括的还有重要的AI目标，比如霸主——他们的国王版本。
+
+最后，这里会注明您还有多少未收集的&lt;color=#7CE9FF&gt;科学&lt;/color&gt;或&lt;color=#3DE799&gt;入侵&lt;/color&gt;点数，以及一些关于要做的事情的提示。
+
+一般来说，如果您需要计划，或者对要做什么感到有些迷失，这是一个很好的选项卡。与许多其他选项卡一样，将鼠标悬停在这里的事物上会给您更多信息，如果适用，还会在银河系地图上突出显示所提及的事物。
+
+请注意，您可以在情报侧边栏中设置不同目标的优先级，这将反映在银河系地图上。
+
+目前，这结束了基础教程。到现在为止，您应该已经掌握了足够的知识，能够进行第一个基础快速入门并有很好的尝试。如果您想要更多信息，可以通过ESC菜单或主菜单访问'如何游戏'区域。
+
+&lt;color=#999999&gt;额外提示：对于可捕获物品或敌人目标，将鼠标悬停在该条目上会给出到达那里的难度/困难程度的粗略估计。&lt;/color&gt;">
+    </tutorial_step>	
+	
+  </tutorial>	
+	
+
+</root>

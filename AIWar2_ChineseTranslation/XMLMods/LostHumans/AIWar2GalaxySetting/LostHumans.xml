@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<!-- Enablers -->
+	<galaxy_setting name="LostHumansTravelers" category="LostHumans" subcategory="EnableFeatures" display_name="旅行者" type="BoolToggle"
+		default="true" changeable_during_gameplay="true"
+		description="影响相对较低。
+
+启用失落人类旅行者出现。这些人类没有自己的家园，赤贫地漂泊在银河系中。
+可能遇到他们穿梭于银河系各处。可能会对您的部队做出反应，也可能不会。看心情。
+
+在游戏中途禁用只会禁止新旅行者生成和所有交互。
+不会移除任何已存在的旅行者。"
+	/>
+
+	<galaxy_setting name="LostHumansColonies" category="LostHumans" display_name="失落殖民地" subcategory="EnableFeatures" type="BoolToggle"
+		default="true" changeable_during_gameplay="true"
+		description="中等影响。
+
+人类殖民地隐藏在整个银河系中。它们偶尔会请求援助。这些殖民地会带着随机舰队线生成到银河系中。
+
+如果您在援助请求过期前占领其所在行星，该行星的AIP消耗将比正常少5点。（无法通过此方式获得AIP。）
+您可以将单位产线从殖民地转移出来，而殖民地本身只要您保护就会持续提供资源。
+
+如果您未能在殖民地被占领前夺取其行星，AI将迫使他们向您发动攻击，包括其舰队线的波次进攻。
+唯一阻止的方法是摧毁殖民地，这将消耗5点AIP。
+
+在游戏中途禁用只会禁止新失落殖民地生成，并停止敌对失落殖民地生产单位。
+不会停止正在失联过程中的中立失落殖民地的任何逻辑，也不会移除您控制下的任何失落殖民地。"
+	/>
+
+	<galaxy_setting name="LostHumansRoguesEnabled" category="LostHumans" subcategory="EnableFeatures" display_name="浪客" type="BoolToggle"
+		default="false" changeable_during_gameplay="true"
+		description="默认中等影响。更改设置可能导致影响达到极高。
+
+启用失落人类浪客出现。这些人类穿梭银河系，试图劫持AI的舰队设计。
+AI会随时间推移建立防御来应对他们的干扰，但由于这些浪客极其狡猾，这只会导致更多敌对力量需要您来处理。
+
+不过并非全是坏处——您行星上的浪客会联系您并要求建造浪客公会。
+建成后，游荡到该行星的浪客会存入他们偷来的物资，为您提供持续不断的外星单位僵尸流。
+
+在游戏中途禁用只会禁止新浪客生成。不会停止任何其他逻辑。"
+	/>
+
+	<galaxy_setting name="LostHumansConstructionConvoyEnabled" category="LostHumans" subcategory="EnableFeatures" display_name="建造护航队" type="BoolToggle"
+		default="false" changeable_during_gameplay="true"
+		description="中等影响。
+
+偶尔中立单位舰队会抵达银河系，开始一段穿越星空的缓慢旅程。该旅程遵循固定路线，可通过建造护航队星图模式查看。
+
+这些中立单位会为所访问行星的所有者建造多种建筑，如地雷、牵引光束、引力发生器和炮塔。
+
+在游戏中途禁用只会禁止新建造护航队生成。不会停止任何其他逻辑。"
+	/>
+
+	<galaxy_setting name="LostHumansScourgeLab" category="LostHumans" subcategory="EnableFeatures" display_name="天灾实验室" type="BoolToggle"
+		default="false" changeable_during_gameplay="true"
+		description="中等影响。需要「尖塔崛起」扩展。
+
+AI拥有若干个专门研究隐藏在银河系各处的各种外星种族的实验室，配备了一些尚未被清洗的最聪明科学家。鉴于这些研究的性质，这些'实验室'更应该被称为要塞——为自我防卫和抵御任何救援尝试而建。
+
+极少数情况下，人类智慧能够战胜AI的纯粹处理能力，实验室上的人类将成功消除AI对该站的影响。然而在此过程中，他们会使实验室脱离AI的电网，使其失去防御能力。
+
+如果我们在此弱点期间夺取该行星，我们将能够修复并完全控制实验室，包括行星本地AI网格上各种数据包带来的大幅增加的科学和入侵点数，但占领实验室本身会多消耗20点AIP。如果我们未能及时占领，仍需消耗20点AIP才能摧毁它。
+
+无论成功与否，实验室随后都将投入军事用途，为拥有它的一方生产强大的「天灾」单位。最好确保它是您的。"
+	/>
+
+	<!-- Travelers-->
+	<galaxy_setting name="LostHumansTravelersCountInitial" category="LostHumans" subcategory="Travelers" display_name="旅行者初始生成数" type="IntSlider" 
+		default="5" min="1" max="10" changeable_during_gameplay="false"
+		description="游戏开始时生成多少旅行者？如果在游戏中途启用则无效果。" />
+
+	<galaxy_setting name="LostHumansTravelersSpawnTimer" category="LostHumans" subcategory="Travelers" display_name="旅行者生成间隔（分钟）" type="IntSlider" 
+		default="30" min="15" max="120" changeable_during_gameplay="true"
+		description="新旅行者在地图上生成的间隔分钟数。" />
+
+	<galaxy_setting name="LostHumansTravelersInteractionsTrustGain" category="LostHumans" subcategory="Travelers" display_name="每秒最大信任获取" type="IntSlider" 
+		default="5" min="1" max="10" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="旅行者拥有信任度机制，用于决定他们与您互动的可能性。当他们在您拥有兵力优势的行星上时会增加。
+
+这决定了他们每秒可获得的最大信任度。" />
+
+	<galaxy_setting name="LostHumansTravelersInteractionsTrustLost" category="LostHumans" subcategory="Travelers" display_name="每秒最大信任损失" type="IntSlider" 
+		default="1" min="1" max="10" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="旅行者拥有信任度机制，用于决定他们与您互动的可能性。当他们在您没有兵力或兵力处于劣势的行星上时会减少。
+
+这决定了他们每秒可能损失的最大信任度。" />
+
+	<!-- Lost Colonies -->
+	<galaxy_setting name="LostHumansColoniesFirstSpawnTimer" category="LostHumans" subcategory="LostColonies" display_name="殖民地首次生成" type="IntSlider" 
+		default="60" min="15" max="120" changeable_during_gameplay="false"
+		description="游戏开始后多少分钟生成第一个殖民地？" />
+
+	<galaxy_setting name="LostHumansColoniesSpawnInterval" category="LostHumans" subcategory="LostColonies" display_name="殖民地生成间隔" type="IntSlider" 
+		default="120" min="30" max="300" changeable_during_gameplay="true"
+		description="失散人类殖民地的生成间隔分钟数？
+
+此冷却时间在上一个殖民地生成后开始。" />
+
+	<galaxy_setting name="LostHumansColoniesRescueTimer" category="LostHumans" subcategory="LostColonies" display_name="殖民地救援计时器" type="IntSlider" 
+		default="15" min="5" max="20" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="殖民地生成后您需要在多少分钟内将其救出？
+
+如果在游戏中途更改可能会有意外结果。" />
+
+	<galaxy_setting name="LostHumansColoniesHostileInterval" category="LostHumans" subcategory="LostColonies" display_name="敌对殖民地间隔" type="IntSlider" 
+		default="5" min="1" max="30" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="每个敌对殖民地发送攻击波次的间隔分钟数。" />
+
+	<galaxy_setting name="LostHumansColoniesHostileStrength" category="LostHumans" subcategory="LostColonies" display_name="敌对殖民地强度" type="IntSlider" 
+		default="20" min="10" max="100" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="（大致）每个敌对殖民地每次攻击波次会派出多少强度？" />
+
+	<galaxy_setting name="LostHumansColoniesHostileStrengthIncreasePerHour" category="LostHumans" subcategory="LostColonies" display_name="敌对殖民地强度/小时" type="IntSlider"
+		default="6" min="0" max="100" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="每小时以此值增加敌对殖民地强度。" />
+
+	<galaxy_setting name="LostHumansColoniesHostileStrengthIncreasePer100AIP" category="LostHumans" subcategory="LostColonies" display_name="敌对殖民地强度/100AIP" type="IntSlider"
+		default="6" min="0" max="100" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="每100AIP以此值增加敌对殖民地强度。" />
+
+	<!-- Rogues -->
+	<galaxy_setting name="LostHumansRoguesCountInitial" category="LostHumans" subcategory="Rogues" display_name="初始游侠生成数" type="IntSlider"
+		default="2" min="1" max="5" changeable_during_gameplay="false"
+		description="游戏开始时会生成多少浪客？" />
+
+	<galaxy_setting name="LostHumansRoguesSpawnInterval" category="LostHumans" subcategory="Rogues" display_name="游侠生成间隔" type="IntSlider"
+		default="90" min="30" max="300" changeable_during_gameplay="true"
+		description="每个新游侠生成的间隔分钟数？" />
+
+	<galaxy_setting name="LostHumansRoguesStealingTime" category="LostHumans" subcategory="Rogues" display_name="游侠偷窃时间" type="IntSlider"
+		default="5" min="2" max="30" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="游侠从目标完成偷窃需要多少分钟？" />
+
+	<galaxy_setting name="LostHumansRoguesRelaxingTime" category="LostHumans" subcategory="Rogues" display_name="游侠休息时间" type="IntSlider"
+		default="10" min="2" max="30" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="游侠在公会存放货物后空闲多少分钟？" />
+
+	<galaxy_setting name="LostHumansRoguesFirewallWaveInterval" category="LostHumans" subcategory="Rogues" display_name="防火墙波次间隔" type="IntSlider"
+		default="10" min="1" max="30" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="防火墙生成的每个波次之间间隔多少分钟？（防火墙是对游侠偷窃行为回应生成的。）" />
+
+	<galaxy_setting name="LostHumansRoguesFirewallWaveStrength" category="LostHumans" subcategory="Rogues" display_name="防火墙波次强度" type="IntSlider"
+		default="20" min="10" max="100" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="（大致）每个防火墙每次攻击波次会派出多少强度？" />
+
+	<galaxy_setting name="LostHumansRoguesFirewallWaveStrengthIncreasePerHour" category="LostHumans" subcategory="Rogues" display_name="防火墙波次强度/小时" type="IntSlider"
+		default="6" min="0" max="100" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="每小时以此值增加防火墙波次强度。" />
+
+	<galaxy_setting name="LostHumansRoguesFirewallWaveStrengthIncreasePer100AIP" category="LostHumans" subcategory="Rogues" display_name="防火墙波次强度/100AIP" type="IntSlider"
+		default="6" min="0" max="100" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="每100AIP以此值增加防火墙波次强度。" />
+
+	<galaxy_setting name="LostHumansRoguesGuildWaveInterval" category="LostHumans" subcategory="Rogues" display_name="浪客公会 间隔" type="IntSlider"
+		default="5" min="1" max="15" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="浪客公会生成的每个波次之间间隔多少分钟？（当您的行星上有携带战利品的浪客时，浪客公会会出现在建造列表中。）" />
+
+	<galaxy_setting name="LostHumansRoguesGuildWaveStrength" category="LostHumans" subcategory="Rogues" display_name="浪客公会 强度" type="IntSlider"
+		default="10" min="10" max="100" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="（大致）每个浪客公会每次攻击波次会派出多少强度？" />
+
+	<galaxy_setting name="LostHumansRoguesGuildWaveStrengthIncreasePerHour" category="LostHumans" subcategory="Rogues" display_name="浪客公会 强度/小时" type="IntSlider"
+		default="3" min="0" max="100" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="每小时以此值增加浪客公会强度。" />
+
+	<galaxy_setting name="LostHumansRoguesGuildWaveStrengthIncreasePer100AIP" category="LostHumans" subcategory="Rogues" display_name="浪客公会 强度/100AIP" type="IntSlider"
+		default="3" min="0" max="100" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="每100AIP以此值增加浪客公会强度。" />
+
+	<!-- Construction Convoys -->
+	<galaxy_setting name="LostHumansConstructionConvoyInitialSpawn" category="LostHumans" subcategory="ConstructionConvoys" display_name="建造护航队 首次生成" type="IntSlider"
+		default="30" min="15" max="120" changeable_during_gameplay="false"
+		description="游戏开始后多少分钟生成第一个建造护航队？" />
+
+	<galaxy_setting name="LostHumansConstructionConvoyCooldownBetweenSpawns" category="LostHumans" subcategory="ConstructionConvoys" display_name="建造护航队 冷却时间" type="IntSlider"
+		default="45" min="15" max="120" changeable_during_gameplay="true"
+		description="护航队离开银河系后多少分钟生成新的护航队？" />
+
+	<galaxy_setting name="LostHumansConstructionConvoySpawnsPerConvoy" category="LostHumans" subcategory="ConstructionConvoys" display_name="建造护航队 生成数" type="IntSlider"
+		default="8" min="1" max="20" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="每个建造护航队生成多少个单位？" />
+
+	<galaxy_setting name="LostHumansConstructionConvoyStructuresToBuildPerPlanet" category="LostHumans" subcategory="ConstructionConvoys" display_name="建造护航队 每行星建筑数" type="IntSlider"
+		default="2" min="1" max="3" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="每个护航队单位在每个访问的行星上可以建造多少建筑？" />
+
+	<galaxy_setting name="LostHumansConstructionConvoyBuildTimer" category="LostHumans" subcategory="ConstructionConvoys" display_name="建造建筑所需秒数" type="IntSlider"
+		default="60" min="30" max="120" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="建造每个护航队建筑需要多少秒？" />
+
+	<!-- Scourge Lab -->
+	<galaxy_setting name="LostHumansScourgeLabFirstSpawnTimer" category="LostHumans" subcategory="ScourgeLabs" display_name="天灾实验室 首次生成" type="IntSlider"
+		default="90" min="30" max="240" changeable_during_gameplay="false"
+		description="游戏开始后多少分钟生成第一个天灾实验室？" />
+
+	<galaxy_setting name="LostHumansScourgeLabSpawnInterval" category="LostHumans" subcategory="ScourgeLabs" display_name="天灾实验室 生成间隔" type="IntSlider"
+		default="180" min="60" max="600" changeable_during_gameplay="true"
+		description="天灾实验室生成的间隔分钟数？
+
+此冷却时间在上一个实验室生成后开始。" />
+
+	<galaxy_setting name="LostHumansScourgeLabRescueTimer" category="LostHumans" subcategory="ScourgeLabs" display_name="天灾实验室 救援计时器" type="IntSlider"
+		default="15" min="5" max="20" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="天灾实验室生成后您需要在多少分钟内将其救出？
+
+如果在游戏中途更改可能会有意外结果。" />
+
+	<galaxy_setting name="LostHumansScourgeLabHostileInterval" category="LostHumans" subcategory="ScourgeLabs" display_name="天灾实验室 敌对波次间隔" type="IntSlider"
+		default="10" min="1" max="30" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="敌对天灾实验室生成的每个波次之间间隔多少分钟？" />
+
+	<galaxy_setting name="LostHumansScourgeLabHostileStrength" category="LostHumans" subcategory="ScourgeLabs" display_name="天灾实验室 敌对波次强度" type="IntSlider"
+		default="20" min="10" max="100" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="（大致）每个敌对天灾实验室每次攻击波次会派出多少强度？" />
+
+	<galaxy_setting name="LostHumansScourgeLabHostileStrengthIncreasePerHour" category="LostHumans" subcategory="ScourgeLabs" display_name="天灾实验室 敌对波次强度/小时" type="IntSlider"
+		default="6" min="0" max="100" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="每小时以此值增加敌对天灾实验室波次强度。" />
+
+	<galaxy_setting name="LostHumansScourgeLabHostileStrengthIncreasePer100AIP" category="LostHumans" subcategory="ScourgeLabs" display_name="天灾实验室 敌对波次强度/100AIP" type="IntSlider"
+		default="6" min="0" max="100" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="每100AIP以此值增加敌对天灾实验室波次强度。" />
+
+	<galaxy_setting name="LostHumansScourgeLabFriendlyInterval" category="LostHumans" subcategory="ScourgeLabs" display_name="天灾实验室 友方波次间隔" type="IntSlider"
+		default="5" min="1" max="15" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="友方天灾实验室生成的每个波次之间间隔多少分钟？" />
+
+	<galaxy_setting name="LostHumansScourgeLabFriendlyStrength" category="LostHumans" subcategory="ScourgeLabs" display_name="天灾实验室 友方波次强度" type="IntSlider"
+		default="10" min="10" max="100" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="（大致）每个友方天灾实验室每次攻击波次会派出多少强度？" />
+
+	<galaxy_setting name="LostHumansScourgeLabFriendlyStrengthIncreasePerHour" category="LostHumans" subcategory="ScourgeLabs" display_name="天灾实验室 友方波次强度/小时" type="IntSlider"
+		default="3" min="0" max="100" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="每小时以此值增加天灾实验室友方波次强度。" />
+
+	<galaxy_setting name="LostHumansScourgeLabFriendlyStrengthIncreasePer100AIP" category="LostHumans" subcategory="ScourgeLabs" display_name="天灾实验室 友方波次强度/100AIP" type="IntSlider"
+		default="3" min="0" max="100" changeable_during_gameplay="true" is_advanced_setting="true"
+		description="每100AIP以此值增加天灾实验室友方波次强度。" />
+
+</root>

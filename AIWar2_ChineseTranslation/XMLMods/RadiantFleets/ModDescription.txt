@@ -1,0 +1,49 @@
+Radiant Fleets，由 RadiantPhoenix 制作
+
+新舰队：
+<b>原版游戏：</b>
+* <b>撞击舰队（Ram Fleet）：</b>大量撞击舰（Rams），配一艘工厂运输舰作为补充。去和什么东西撞个头吧。
+* <b>突袭舰队（Raid Fleet）：</b>一支带隐形运输舰与突袭护卫舰的舰队。
+* <b>穿透舰队（Piercing Fleet）：</b>一支使用聚变科技的舰船组成的舰队。
+* <b>拦截要塞（Interceptor Citadel）：</b>我最爱的原版要塞，配常规工程师，但用战斗哨戒护卫舰取代固定超光速阵列。
+* <b>地下城主要塞（Dungeonmaster Citadel）：</b>一座新要塞，配常规工程师，但用战斗哨戒护卫舰取代固定超光速阵列。
+* <b>后门支援（Backdoor Support）：</b>后门工厂，常规配置。
+* <b>打击支援（Strike Support）：</b>这里的工厂其实是一艘运输舰，因此它能执行常规支援舰队做不到的入侵。
+<b>尖塔（Spire）：</b>
+* <b>辐射防御（Radiant Defenses）：</b>我最爱的炮塔。可能随时会有剧烈改动。
+* <b>伏击防御（Ambush Defenses）：</b>伏击科技炮塔
+* <b>穿透防御（Piercing Defenses）：</b>穿透科技炮塔
+<b>天顶（Zenith）：</b>
+* <b>伏击舰队（Ambush Fleet）：</b>伏击科技机动打击舰队。
+* <b>近战舰队（Melee Fleet）：</b>近战科技机动打击舰队，配一艘工厂旗舰来补充你的撞击舰。
+<b>纳因祖尔（Neinzul）：</b>
+* <b>破晓方舟（Daybreak Ark）：</b>破晓方舟。见下文
+
+新方舟（Arks）：
+<b>原版游戏：</b>
+* <b>切割者（Slicer）：</b>近战方舟，能消化并吸血其敌人。
+* <b>突袭运输舰（Raid Transport）：</b>超高速、隐形，且所载舰船无开火延迟。也没有武器。
+<b>尖塔（Spire）：</b>
+* <b>灰尖塔氛围（Gray Spire Ambiance）：</b>不久前，人类与灰尖塔还是贸易伙伴。这艘方舟会为你提供大量金属，以补充损失并资助你的建造。
+* <b>虹彩尖塔光谱（Chromatic Spire Spectrum）：</b>虹彩尖塔与大多数人合不来，但这是个例外。它的时空线圈会把你的敌人抛向 gravity well 各处，同时其消耗（attrition）会慢慢将他们窒息。（仅副官）
+<b>天顶（Zenith）：</b>
+* <b>碎裂之柱巨石（Shattered Pillar Megalith）：</b>我们宇宙中的天顶早已消亡……大体如此。碎裂之柱是少数幸存者之一，他们愿在这艘机动发电机上庇护你。
+* <b>海王方舟（Neptune Ark）：</b>潜伏于多重相位（MultiPhase）中，用无人机将受害者拖入多重相位加以吞噬。（仅副官）
+<b>纳因祖尔（Neinzul）：</b>
+* <b>破晓方舟（Daybreak Ark）：</b>一艘高速方舟，装备聚变武器并抵抗远程攻击者，旨在漫游地图打击大型、坚硬的目标。
+* <b>纳因祖尔哀悼者尾迹（Neinzul Mourner Wake）：</b>哀悼者哀悼什么？我们并不确定，但这艘舰船高速、隐形，并吸取敌人的生命，在将其作为僵尸复活以协助其幼体（Younglings）的同时治疗自身。
+
+新舰队舰船：
+<b>原版游戏：</b>
+* <b>聚变撞击舰（Fusion Ram）：</b>顾名思义。
+* <b>聚变突袭者（Fusion Raider）：</b>一把 Dagger，但拥有聚变、隐形与雷达阻尼。
+<b>尖塔（Spire）：</b>
+<b>天顶（Zenith）：</b>
+* <b>鱼叉（Harpoon）：</b>暗天顶鱼叉，如今作为打击舰加入你的舰队
+* <b>天顶捕鲸护卫舰（Zenith Whaling Frigate）：</b>一艘发射鱼叉的护卫舰。
+<b>纳因祖尔（Neinzul）：</b>
+
+其他新舰船：
+<b>原版游戏：</b>
+* <b>地下城主要塞（Dungeonmaster Citadel）：</b>远程吸血光束，要塞停留在行星上的时间越长，光束越强。
+* <b>工厂运输舰（Factory Transport）：</b>一艘同时也是工厂的运输舰。

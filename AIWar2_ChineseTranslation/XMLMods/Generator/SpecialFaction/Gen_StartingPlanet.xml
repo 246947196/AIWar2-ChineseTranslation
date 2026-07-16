@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <faction
+      name="Human"
+      is_partial_record="true"
+      >
+
+    <custom_field
+        is_hidden="true"
+        name="Populator_PlayerHomeworld_PreferredGalaxyRegion"
+        display_name="<color=#ff7e64>高级：</color>首选起始区域"
+        description="通常情况下玩家派系的起始行星要么完全随机，要么由玩家在大厅的地图选项卡中选择。但如果启用了改进生成器，您可以使用此选项引导随机算法，使其偏好更中心或更边缘的起始行星。"
+        requires_player_types="HumanEmpire,SpireInfusedEmpire,HumanArkEmpire,NecromancerEmpire"
+        is_advanced_setting="true"
+        sort_group="250"
+        setting_type="CustomDropdownArbitraryOptions"
+        arbitrary_options="Random,Centralized,Somewhat Centralized,Somewhat On Edge,Farthest Edge"
+        default_option="Random"
+        />
+
+    <custom_field
+        is_hidden="true"
+        name="Populator_PlayerHomeworld_PreferredLinks"
+        display_name="<color=#ff7e64>高级：</color>首选起始连通性"
+        description="通常情况下玩家派系的起始行星要么完全随机，要么由玩家在大厅的地图选项卡中选择。但如果启用了改进生成器，您可以使用此选项引导随机算法，使其偏好连接数更多或更少的起始行星。"
+        requires_player_types="HumanEmpire,SpireInfusedEmpire,HumanArkEmpire,NecromancerEmpire"
+        is_advanced_setting="true"
+        sort_group="250"
+        setting_type="CustomDropdownArbitraryOptions"
+        arbitrary_options="Random,Farthest Deadend,Prefer Deadends,Fewer Links,Average Links,More Links,Always Most Links"
+        default_option="Random"
+        />
+
+    <custom_field
+        is_hidden="true"
+        name="Populator_PlayerHomeworld_RandomizeOnStart"
+        display_name="玩家母星：开始时随机化"
+        description="通常情况下玩家派系的起始行星在大厅的地图选项卡中被选定并显示。但如果启用了改进生成器，您可以使用此选项在游戏开始前始终重新随机化起始行星。"
+        requires_player_types="HumanEmpire,SpireInfusedEmpire,HumanArkEmpire,NecromancerEmpire"
+        is_advanced_setting="true"
+        sort_group="250"
+        setting_type="BoolToggle"
+        default="false"
+        />
+
+  </faction>
+
+</root>

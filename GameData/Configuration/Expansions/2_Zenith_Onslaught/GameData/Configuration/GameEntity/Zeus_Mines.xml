@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
 <!-- New mines to give each weapon tech a unique version. Existing mines will be moved to this system once I figure out how to override game entities. -->
@@ -125,7 +125,7 @@
 			collision_priority="1"
 			display_name="内爆雷区"
 			display_name_for_sidebar="内爆地雷"
-			description="隐形炸药，内爆时造成范围聚变伤害，可穿透护盾并将目标拉向中心。对满生命值的单位造成更多伤害。每次内爆会损失其最大生命值的20%。"
+			description="隐形炸药，内爆时造成范围聚变伤害，可穿透护盾并将目标拉向中心。对满生命值的舰船造成更多伤害。每次内爆会损失其最大生命值的20%。"
 			behavior="Stationary"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Minefields,Fusion" 
 			build_sidebar_categories_i_am_part_of="Minefields" destroys_self_until_not_over_ship_cap_if_planetary_command="true"
@@ -187,7 +187,7 @@
 			collision_priority="1"
 			display_name="干扰雷区"
 			display_name_for_sidebar="干扰雷"
-			description="隐形炸药，引爆时造成范围较小但广泛的伤害，对高护甲敌人造成更多伤害。此外，该地雷会干扰除最厚护甲单位外所有单位的武器。与大多数地雷一样，每次引爆会损失其最大生命值的20%。"
+			description="隐形炸药，引爆时造成范围较小但广泛的伤害，对高护甲敌人造成更多伤害。此外，该地雷会干扰除最厚护甲舰船外所有舰船的武器。与大多数地雷一样，每次引爆会损失其最大生命值的20%。"
 			behavior="Stationary"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Minefields,Disruptive" 
 			build_sidebar_categories_i_am_part_of="Minefields" destroys_self_until_not_over_ship_cap_if_planetary_command="true"
@@ -520,7 +520,7 @@
 			collision_priority="100"
 			display_name="锚定雷区"
 			display_name_for_sidebar="锚定地雷"
-			description="由重型布雷护卫舰创建的临时牵引雷区，可锁定附近的敌方单位，阻止它们移动（但不阻止开火）。"			
+			description="由重型布雷护卫舰创建的临时牵引雷区，可锁定附近的敌方舰船，阻止它们移动（但不阻止开火）。"			
 			starting_mark_level="Mark1" 
 			cost_for_ai_to_purchase="10"
 			hull_points="5000" shield_points="0" speed="Immobile"
@@ -554,7 +554,7 @@
 			collision_priority="100"
 			display_name="不稳定重力发生器"
 			display_name_for_sidebar="不稳定重力发生器"
-			description="由轻型布雷护卫舰制造的不稳定重力发生器。会减缓周围区域内敌方单位的速度，且会迅速损耗。"
+			description="由轻型布雷护卫舰制造的不稳定重力发生器。会减缓周围区域内敌方舰船的速度，且会迅速损耗。"
 			starting_mark_level="Mark1" 
 			cost_for_ai_to_purchase="10"			
 			hull_points="100" shield_points="0" speed="Immobile"

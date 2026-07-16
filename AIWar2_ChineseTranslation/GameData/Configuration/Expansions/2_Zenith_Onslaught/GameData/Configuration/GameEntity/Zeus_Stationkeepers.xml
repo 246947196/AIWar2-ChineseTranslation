@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+<!-- New variety of stationkeepers: Drone Sentryposts
+		Drone Garrison: Military Command variant. Launches trailblazers that are meant to get in range before being destroyed, laying mines en route and releasing powerful, short-lived ambush drones.
+		Drone Reclamator: Economic Command variant. Advanced metal harvester that releases 'Reclamation Drones' that are weak but do metabolism damage 
+		Drone Stockade: Logistical Command variant. Hardened forcefield generator that spawns mosquito drones.-->
+
+<!-- Drone Garrison -->
+<entity name="DroneGarrison"
+            thematic_groups="Human,OtherDefense"		 
+			is_non_turret_defense="true"
+			visuals="assets/_dlc2/humanplanet/dronegarrison/dronegarrison.prefab"  visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships3/DroneGarrison" icon_overlay="Overlays1/CommandStation_Military"
+			visuals_scale_multiplier="7"
+			size_scale="2.40"
+			category="Ship"
+			collision_priority="900"
+			display_name="无人机卫戍站"
+			description="军事化岗哨站，在泡泡护盾的保护下能造成更多伤害，且只能通过指挥站建造。它会生产开拓者无人机，这些无人机在接近敌人近战范围时会布设地雷，并在战斗中吸引火力，释放致命的伏击无人机。卫戍站的等级越高，发射的开拓者无人机数量越多，最高五级。&lt;color=#FF5454&gt;每个行星最多建造1座！&lt;/color&gt;"
+			behavior="Stationary"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Sentries,CommandMilitary" 
+			build_sidebar_categories_i_am_part_of="OtherDefenses" destroys_self_until_not_over_ship_cap_if_planetary_command="true"
+			max_count_seeded_as_ai_non_turret_defense="1"
+			cost_for_ai_to_purchase="500" strength_multiplier="2"
+			hull_points="90000" shield_points="180000" speed="Immobile"
+			metal_cost="500000" energy_consumption="100000"
+			armor_mm="50" albedo="0.45" mass_tx="3"
+			ship_or_structure_explosion_sfx="Turret_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			voice_group="Turret"
+			fleet_membership="Planetary"
+			is_blocked_from_dss_grant_to_Battlestations_and_citadels="true"
+			absolute_max_cap_when_in_fleets="1"
+			priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="MidFavoriteToy"
+			>
+		<fleet_membership name="AddedToCommandStation" ship_cap_group="OtherDefense" weight="75" min="1" max="1"/>
+		<metal_flow purpose="SelfConstruction" throughput="100"/>
+			<system name="R5" display_name="激光脉冲"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="500" range="Normal6" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="false" 
+				shots_per_salvo="4" added_shots_per_salvo_per_mark="1"
+				shot_type_data="LaserPulse_RedLevel2" 
+				damage_modifier_while_under_forcefield="5"
+				>	
+			</system>
+		 	<system name="L1" display_name="开拓者无人机发射器"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="5" range="EssentiallyInfinite" shot_speed="Slow" rate_of_fire="PeriodicActivation" fires_salvos_sequentially="true" 				
+				shot_type_data="Trailblazer"
+				shots_per_salvo="2" added_shots_per_salvo_per_mark="1"
+				min_mark_level_to_function="1"	max_mark_level_to_function="4"	
+				>
+			</system>	
+			<system name="L2" display_name="开拓者无人机发射器"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="5" range="EssentiallyInfinite" shot_speed="Slow" rate_of_fire="PeriodicActivation" fires_salvos_sequentially="true" 				
+				shot_type_data="Trailblazer"
+				shots_per_salvo="5" 
+				min_mark_level_to_function="5"	max_mark_level_to_function="7"
+				>
+			</system>
+	</entity>
+	
+<!-- Drone Reclamator -->
+<entity name="DroneReclamator"	
+            thematic_groups="Human,OtherDefense"		 
+			is_non_turret_defense="true"
+			visuals="Assets/_DLC2/HumanPlanet/DroneReclamator/DroneReclamator.prefab"  visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships3/DroneReclamatorPost" icon_overlay="Overlays1/CommandStation_Economic"
+			visuals_scale_multiplier="7"
+			size_scale="2.40"
+			category="Ship"
+			collision_priority="900"
+			display_name="无人机回收站"
+			description="经济岗哨站，可开采金属，且只能通过指挥站建造。每三十秒生产回收无人机，这些无人机战斗能力有限，但能代谢敌人获取金属。回收站的等级越高，生产的无人机数量越多。&lt;color=#FF5454&gt;每个行星最多建造1座！&lt;/color&gt;"
+			behavior="Stationary"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Sentries,CommandEconomic" 
+			build_sidebar_categories_i_am_part_of="OtherDefenses" destroys_self_until_not_over_ship_cap_if_planetary_command="true"
+			max_count_seeded_as_ai_non_turret_defense="1"
+			cost_for_ai_to_purchase="500" strength_multiplier="5"
+			hull_points="90000" shield_points="180000" speed="Immobile"
+			metal_cost="1500000" energy_consumption="50000"
+			armor_mm="50" albedo="0.45" mass_tx="3"
+			ship_or_structure_explosion_sfx="Turret_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			voice_group="Turret"
+			fleet_membership="Planetary"
+			is_blocked_from_dss_grant_to_Battlestations_and_citadels="true"
+			 absolute_max_cap_when_in_fleets="1"
+			priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="MidFavoriteToy"
+			>
+		<fleet_membership name="AddedToCommandStation" ship_cap_group="OtherDefense" weight="75" min="1" max="1"/>
+		<metal_flow purpose="SelfConstruction" throughput="100"/>
+		<resource_production type="Metal" amount="500" increase_per_mark_level="100"/>	
+			<system name="L" display_name="回收无人机发射器"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="5" range="EssentiallyInfinite" shot_speed="Slow" rate_of_fire="Sloth" fires_salvos_sequentially="true" 				
+				shot_type_data="ReclamationDrone"
+				shots_per_salvo="40" added_shots_per_salvo_per_mark="5"
+				>
+			</system>
+	</entity>
+
+<!-- Drone Stockade -->
+<entity name="DroneStockade"
+            thematic_groups="Human,OtherDefense"			 
+			is_non_turret_defense="true"
+			is_stationary_forcefield="true"
+			visuals="Assets/_DLC2/HumanPlanet/DroneStockade/DroneStockade.prefab"  visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships3/DroneStockade" icon_overlay="Overlays1/CommandStation_Logistical"
+			visuals_scale_multiplier="7"
+			size_scale="2.40"
+			category="Ship"
+			collision_priority="900"
+			display_name="无人机堡垒"
+			description="后勤岗哨站，配备先进的泡泡护盾，不会降低护盾内单位的火力，且只能通过指挥站建造。当有敌人出现时，每三十秒释放蚊子无人机，释放的无人机数量随等级增加。&lt;color=#FF5454&gt;每个行星最多建造1座！&lt;/color&gt;"
+			behavior="Stationary"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Sentries,CommandLogistical" 
+			build_sidebar_categories_i_am_part_of="OtherDefenses" destroys_self_until_not_over_ship_cap_if_planetary_command="true"
+			max_count_seeded_as_ai_non_turret_defense="1"
+			cost_for_ai_to_purchase="5000" strength_multiplier="5"
+			shield_size_scale="4.5" my_forcefield_does_not_shrink="true" my_forcefield_has_no_penalty_for_enemies_firing_out_of_it="true"
+			hull_points="10000" shield_points="250000" speed="Immobile" moves_back_after_being_norrised="false"
+			metal_cost="1000000" energy_consumption="75000"
+			armor_mm="50" albedo="0.45" mass_tx="3"
+			ship_or_structure_explosion_sfx="Turret_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			voice_group="Turret"
+			fleet_membership="Planetary"
+			absolute_max_cap_when_in_fleets="1"
+			is_blocked_from_dss_grant_to_Battlestations_and_citadels="true"
+			priority_as_ai_target="ShieldGenerator" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="MidFavoriteToy"
+			>
+		<fleet_membership name="AddedToCommandStation" ship_cap_group="OtherDefense" weight="75" min="1" max="1"/>
+		<metal_flow purpose="SelfConstruction" throughput="100"/>
+			<system name="L" display_name="蚊子无人机发射器"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="5" range="EssentiallyInfinite" shot_speed="Slow" rate_of_fire="Sloth" fires_salvos_sequentially="true" 				
+				shot_type_data="MosquitoDrone"
+				shots_per_salvo="20" added_shots_per_salvo_per_mark="5"
+				>
+			</system>
+	</entity>
+  
+ </root>

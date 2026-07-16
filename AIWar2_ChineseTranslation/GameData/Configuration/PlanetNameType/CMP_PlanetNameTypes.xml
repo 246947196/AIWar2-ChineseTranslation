@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <planet_name_type name="Standard" display_name="标准" subdir="Standard" is_default="true"
+          description="灵感来自著名科学家，以及其他作品中真实和虚构的行星和地点名称。由Chris和Keith创建。" />
+  <planet_name_type name="NoGravitas" display_name="无重力" subdir="NoGravitas"
+          description="灵感来自一个相当幽默的科幻系列中的短语和飞船名称。由Draco18s创建(Chris编辑)。" />
+  <planet_name_type name="FantasyMonsters" display_name="幻想怪物" subdir="FantasyMonsters"
+          description="灵感来自几款幻想游戏中怪物的名称。由Zoutzakje创建(Chris编辑)。" />
+  <planet_name_type name="KahunasRealStars" display_name="卡胡纳的真实恒星" subdir="KahunasRealStars"
+          description="绝对庞大的真实恒星名称列表，修改为中国传统命名方式" />
+  <planet_name_type name="KahunasRealStarsNoCodenames" display_name="卡胡纳的无代号恒星" subdir="KahunasRealStarsNoCodenames"
+          description="绝对庞大的真实恒星名称列表，但不包括代号类名称。还有一些彩蛋在里面。由Kahuna创建。" />
+  <planet_name_type name="Mesopotamia" display_name="美索不达米亚" subdir="Mesopotamia"
+          description="古代美索不达米亚的城市和地点。由Badger创建。" />
+  <planet_name_type name="Cities_DE" display_name="城市(德国)" subdir="Cities_DE"
+          description="德国大多数城市都会出现在这里，如果它们的名称不超过10个字符。由Viss Valdyr创建。" />
+  <planet_name_type name="Cities_UK" display_name="城市(英国)" subdir="Cities_UK"
+          description="英国大多数城市都会出现在这里，如果它们的名称不超过10个字符。由Viss Valdyr创建。" />
+  <planet_name_type name="Cities_US" display_name="城市(美国)" subdir="Cities_US"
+          description="美国大多数城市都会出现在这里，如果它们的名称不超过10个字符。由Viss Valdyr创建。" />
+  <planet_name_type name="Cities_RUS" display_name="城市(俄罗斯)" subdir="Cities_RUS"
+          description="俄罗斯大多数城市都会出现在这里，如果它们的名称不超过10个字符。由Viss Valdyr创建。" />
+  <planet_name_type name="Cities_FRandSP" display_name="城市(法国/西班牙)" subdir="Cities_FRandSP"
+          description="法国和西班牙大多数城市都会出现在这里，如果它们的名称不超过10个字符。这是一个较短(且合并)的列表，因为他们大多数城市名称都很长！由Viss Valdyr创建。" />
+  <planet_name_type name="Cities_Nederlandse" display_name="城市(荷兰)" subdir="Cities_Nederlandse"
+           description="荷兰大多数城市、村庄和小村庄，名称不超过10个字符；还包括许多本地拼写变体。由GreatYng创建。" />
+  <planet_name_type name="Oddball" display_name="古怪" subdir="Oddball"
+           description="旨在给人一种历史感。一个充满战争和无聊侦察船长的历史。由Kizor创建。感谢Loweko、R. Jean Mathieu、Vornicus、McMartin、Reiver、Quasispace、Derakon、Kyoshyu和匿名者。" />
+  <planet_name_type name="RomanEmpire" display_name="罗马帝国" subdir="RomanEmpire"
+           description="罗马帝国历史上著名的地名" />
+  <planet_name_type name="HackerOS" display_name="黑客系统" subdir="HackerOS"
+           description="以黑客为主题的名字。由ZeroTheHero创建。" />
+  <planet_name_type name="League+" display_name="联盟+" subdir="AngelOfDeathLeague"
+          description="以某款流行MOBA游戏为主题的名字。由Angel of death创建。" />
+
+</root>

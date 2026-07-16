@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  
+  <unit_draw_style name="Draw All Unit Models" sort_order="0"
+           is_default="true"
+           display_name="绘制所有单位模型"
+           tooltip="所有单位模型都正常绘制。"
+           draw_cutoff="0"
+  />
+
+	<unit_draw_style name="Skip Small"  sort_order="10"
+			 display_name="跳过小型单位"
+			 tooltip="非常小、需要你放大才能看到的单位将被跳过。"
+			 draw_cutoff="100"
+  />
+
+	<unit_draw_style name="Skip Through Medium"  sort_order="20"
+			 display_name="跳过中小型单位"
+			 tooltip="中等及以下尺寸的单位将被跳过。"
+			 draw_cutoff="600"
+  />
+
+	<unit_draw_style name="Skip All Except Huge"  sort_order="30"
+			 display_name="仅绘制巨型单位"
+			 tooltip="非巨型单位（或舰队领袖）将被跳过。"
+			 draw_cutoff="900"
+  />
+
+	<unit_draw_style name="Skip Absolutely All"  sort_order="40"
+			 display_name="跳过所有单位"
+			 tooltip="所有单位图形都将被跳过，除非它们是行星的替代图形（如戴森球、天顶矿工）。"
+			 draw_cutoff="1200"
+  />
+  
+</root>

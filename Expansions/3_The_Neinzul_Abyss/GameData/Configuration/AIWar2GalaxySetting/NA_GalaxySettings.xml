@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <galaxy_setting category="AI Behavior" subcategory="CommonFeatures" name="EnhancedOverlord" display_name="强化霸主" type="BoolToggle" default="false" changeable_during_gameplay="true" description="启用此选项后，AI霸主的最终战斗将变得更具挑战性，会有额外的星系外打击部队和虫洞入侵。">
+      <harshness_override min_campaign_harshness_to_apply="200" fixed_value="true" />
+  </galaxy_setting>
+  
+  
+    <galaxy_setting category="AI Behavior" subcategory="CommonFeatures" name="EnableShutdownDevices" display_name="启用决战装置" type="BoolToggle" default="false" description="在各个行星上布置四个神秘装置。占领足够数量的装置后，你将能够破坏 warp 网格，阻止AI向我们的星系运送增援部队。你能在随后的对抗中存活下来吗？  触发决战装置结局将引发AI剩余部队与玩家之间的全面战争。" />
+
+  
+
+  <galaxy_setting category="AI Behavior" subcategory="AdvancedDangers" name="BrutalGuardianLairs" display_name="残暴守护者巢穴" type="IntSlider" default="0" min="0" max="6" changeable_during_gameplay="false" description="默认情况下处于关闭状态，但如果AI最高难度至少为8或你处于专家模式，则会强制开启。启用此选项后，AI将在星系中的某个位置生成3个残暴守护者巢穴，距离玩家母星至少5跳。目前，如果玩家位于地图中心，它们可能不会在诸如X的地图上生成。   5分钟时间结束后，拥有该巢穴的AI猎人舰队将生成一名残暴守护者。之后，每30分钟将再生成一名，直到所有玩家被摧毁或巢穴被摧毁。  一旦开始生成，在巢穴被摧毁之前不会停止。摧毁巢穴会增加AIP，但也会获得少量科学和入侵点数。如果巢穴所在行星的AI指挥站被摧毁，巢穴也会自毁。  如果巢穴为皇家AI生成，它将转变为皇家残暴守护者巢穴。">
+      <harshness_override min_campaign_harshness_to_apply="700" if_highest_ai_difficulty_is_at_least="8" min="3" />
+  </galaxy_setting>
+
+  <galaxy_setting category="AI Behavior" subcategory="AdvancedDangers" name="Venators" display_name="复仇者" type="BoolToggle" default="false" description="复仇者是AI强大的守护者。当你选择单位生产线时，AI将开始生成对你的部队有优势的单位。  这使得AI能够调整其获得的单位，从而更有效地作战。">
+      <harshness_override min_campaign_harshness_to_apply="200" fixed_value="true" />
+  </galaxy_setting>
+
+  
+
+    <galaxy_setting category="Necromancer" name="NecromancerFlagshipCrippleCost" display_name="旗舰受损扣除入侵点数" type="BoolToggle" default="false" changeable_during_gameplay="true" description="启用此选项后，每当亡灵巫师旗舰受损时，玩家将损失5点入侵点数。" optional_dll_name="AIWarExternalCode" optional_type_name="Arcen.AIW2.External.GalaxySetting_Necromancer">
+        <harshness_override min_campaign_harshness_to_apply="700" fixed_value="false" />
+    </galaxy_setting>
+
+  <galaxy_setting category="Necromancer" name="BoringNecroNames" display_name="亡者都市以行星命名" type="BoolToggle" default="false" changeable_during_gameplay="true" description="启用此选项后，新的亡者都市及其旗舰将以所在行星命名，而非采用主题性名称。" optional_dll_name="AIWarExternalCode" optional_type_name="Arcen.AIW2.External.GalaxySetting_Necromancer">
+  </galaxy_setting>
+
+        <galaxy_setting category="Necromancer" name="CrippledFlagshipCanPracticeNecromancy" display_name="受损旗舰仍可召唤单位" type="BoolToggle" default="false" changeable_during_gameplay="true" description="启用此选项后，受损的旗舰仍可通过亡灵法术召唤单位。" optional_dll_name="AIWarExternalCode" optional_type_name="Arcen.AIW2.External.GalaxySetting_Necromancer" />
+
+        <galaxy_setting category="Necromancer" name="ForgivingNecromancy" display_name="远程旗舰可进行亡灵召唤" type="BoolToggle" default="false" changeable_during_gameplay="true" description="启用此选项后，当你通过亡灵法术召唤单位时，如果行星1跳范围内没有合适的旗舰，系统将为你的新单位寻找其他位置的旗舰。" optional_dll_name="AIWarExternalCode" optional_type_name="Arcen.AIW2.External.GalaxySetting_Necromancer" />
+
+    <galaxy_setting category="Necromancer" name="SkeletonDecayInterval" display_name="骷髅衰变间隔" type="IntSlider" default="10" min="1" max="30" changeable_during_gameplay="true" description="亡灵巫师的骷髅在战斗中会随时间衰变；变种骷髅会衰变为基础骷髅，基础骷髅会衰变为虚弱骷髅。衰变过程将持续这么多分钟。" optional_dll_name="AIWarExternalCode" optional_type_name="Arcen.AIW2.External.GalaxySetting_Necromancer">
+        <harshness_override is_sandbox="true" max="300" />
+        <harshness_override min_campaign_harshness_to_apply="200" max="5" />
+    </galaxy_setting>
+    
+    <galaxy_setting category="Necromancer" name="WightDecayInterval" display_name="幽灵衰变间隔" type="IntSlider" default="10" min="1" max="30" changeable_during_gameplay="true" description="亡灵巫师的幽灵在战斗中会随时间衰变；变种幽灵会衰变为基础幽灵，基础幽灵会衰变为虚弱幽灵。衰变过程将持续这么多分钟。" optional_dll_name="AIWarExternalCode" optional_type_name="Arcen.AIW2.External.GalaxySetting_Necromancer">
+        <harshness_override is_sandbox="true" max="300" />
+        <harshness_override min_campaign_harshness_to_apply="200" max="5" />
+    </galaxy_setting>
+
+    <galaxy_setting category="Necromancer" name="BonusNecromancerResources" display_name="沙盒模式：额外资源" type="IntSlider" default="1" min="1" max="10" changeable_during_gameplay="true" description="当亡灵巫师获得资源时，他们将获得基础值乘以该设置的值。因此，如果设置为3，你将获得正常情况下3倍的入侵点数、科研点数和精华。  这仅适用于沙盒模式，会使游戏变得容易很多。" optional_dll_name="AIWarExternalCode" optional_type_name="Arcen.AIW2.External.GalaxySetting_Necromancer">
+        <harshness_override min_campaign_harshness_to_apply="200" fixed_value="1" />
+    </galaxy_setting>
+
+    <galaxy_setting category="Necromancer" name="BonusNecromancerSockets" display_name="沙盒模式：额外六边形格子" type="IntSlider" default="0" min="0" max="10" changeable_during_gameplay="true" description="亡灵巫师的所有亡者都市将获得这么多额外的六边形格子。  这仅适用于沙盒模式，会使游戏变得容易很多。" optional_dll_name="AIWarExternalCode" optional_type_name="Arcen.AIW2.External.GalaxySetting_Necromancer">
+        <harshness_override min_campaign_harshness_to_apply="200" fixed_value="0" />
+    </galaxy_setting>
+
+    <galaxy_setting category="Necromancer" name="BonusNecromancerRiftOptions" display_name="沙盒模式：额外裂隙破解选项" type="IntSlider" default="0" min="0" max="10" changeable_during_gameplay="true" description="亡灵巫师将获得这么多额外的裂隙破解选择。  这仅适用于沙盒模式，会使游戏变得容易很多。" optional_dll_name="AIWarExternalCode" optional_type_name="Arcen.AIW2.External.GalaxySetting_Necromancer">
+        <harshness_override min_campaign_harshness_to_apply="200" fixed_value="0" />
+    </galaxy_setting>
+
+    <galaxy_setting category="Necromancer" name="NecromancerSharkB" display_name="鲨鱼B" type="BoolToggle" default="false" changeable_during_gameplay="true" description="启用此选项后，每当亡灵巫师的亡者都市受损时，准备迎接敌人的强大反击。" optional_dll_name="AIWarExternalCode" optional_type_name="Arcen.AIW2.External.GalaxySetting_Necromancer">
+        <harshness_override min_campaign_harshness_to_apply="700" fixed_value="false" />
+    </galaxy_setting>
+
+    <galaxy_setting category="Necromancer" name="NecromancerScarceResources" display_name="资源稀缺" type="BoolToggle" default="false" changeable_during_gameplay="true" description="资源（尤其是精华）将变得更加稀有。" optional_dll_name="AIWarExternalCode" optional_type_name="Arcen.AIW2.External.GalaxySetting_Necromancer" />
+
+    <galaxy_setting category="Necromancer" name="NecromancerAutoLoad" display_name="旗舰自动装卸" type="BoolToggle" default="false" changeable_during_gameplay="true" description="当旗舰所在行星没有敌人时，亡灵巫师的单位将自动装载到旗舰中；当有敌人时，单位将自动卸载。  这是自动防御模式的一个子集，因此当自动防御模式启用时，此功能将自动禁用。" optional_dll_name="AIWarExternalCode" optional_type_name="Arcen.AIW2.External.GalaxySetting_Necromancer" />
+
+    
+  <galaxy_setting category="Necromancer" name="NecromancerAutoDefend" display_name="实验性：自动防御模式" changeable_during_gameplay="true" type="CustomDropdownArbitraryOptions" arbitrary_options="Disabled,Full Assistance" default_option="Disabled" description="你可以选择让你的戴森舰队自动作战。亡灵巫师舰队将协助你（或其他盟友派系），但不会主动攻击敌方行星或目标。  如果玩家控制此派系，此功能将自动禁用。  这允许亡灵巫师副手作为其他玩家派系的“附庸”，在战斗中自动提供帮助/防御你的行星。其他玩家可以通过按F4键定期切换到副手来做出经济决策。" optional_dll_name="AIWarExternalCode" optional_type_name="Arcen.AIW2.External.GalaxySetting_Necromancer" />
+
+  <galaxy_setting category="Necromancer" name="ChallengerElderlings" display_name="Challenger Elderlings" type="BoolToggle" default="false" changeable_during_gameplay="true" description="The game will buff the Elderlings as if you were in Challenger or above. This can stack with Spawn Additional Elderlings." optional_dll_name="AIWarExternalCode" optional_type_name="Arcen.AIW2.External.GalaxySetting_Necromancer">
+    <harshness_override min_campaign_harshness_to_apply="500" fixed_value="true" />
+  </galaxy_setting>
+
+
+</root>

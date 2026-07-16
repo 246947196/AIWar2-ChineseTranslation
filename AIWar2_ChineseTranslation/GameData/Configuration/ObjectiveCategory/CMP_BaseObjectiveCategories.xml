@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <objective_category name="PrimeObjectives" display_name="主要目标" sort_priority="1"
+        description="这些是你赢得战争所需达成的终极目标。你不需要完成所有目标，只需达成其中之一即可。" />
+
+  <objective_category name="BeginnerTips" display_name="新手提示" sort_priority="10"
+        description="专门为新指挥官提供的实用建议。" />
+
+  <objective_category name="CriticalDestructionTargets" display_name="关键目标" sort_priority="20"
+          description="虽然不是必须摧毁或入侵这些单位，但不这样做会让战争变得更加困难。探索星系以发现更多目标。" />
+
+  <objective_category name="CapturableFlagships" display_name="可夺取舰队" sort_priority="30"
+        description="夺取这些舰队将为你提供大量新的进攻（或支援）单位供你在地图上使用。" />
+
+  <objective_category name="MoreTurrets" display_name="更多防御塔" sort_priority="40"
+        description="入侵防御塔示意图服务器（TSS）将为你的所有指挥站提供各种额外防御设施，这是至关重要的。否则，你的行星将相当脆弱，难以自保。" />
+  
+  <objective_category name="CapturableBattlestations" display_name="可夺取战站" sort_priority="40"
+        description="修复这些战站（或堡垒）将使你能够更有效地加强行星防御。" />
+
+  <objective_category name="CriticalCapturables" display_name="关键可夺取目标" sort_priority="50"
+        description="虽然不是必须夺取这些单位，但不这样做会让战争变得更加困难。探索星系以发现更多目标。" />
+
+  
+
+  <objective_category name="ResourceGathering" display_name="资源收集" sort_priority="80"
+        description="你尚未获取的可用资源。" />
+  
+
+  <objective_category name="OutguardBeacons" display_name="前哨信标" sort_priority="200"
+        description="深入太空，入侵前哨信标以寻找新的前哨小队进行交流。不同小队的用处各不相同，到达难度也不尽相同。权衡利弊，选择值得投入时间和精力的信标进行入侵。" />
+
+  <objective_category name="OtherFactions" display_name="其他势力" sort_priority="300"
+        description="宇宙中还潜伏着什么？当你遇到其他势力时，他们可能会在这里提供机遇或挑战。" />
+
+  <objective_category name="OtherCapturables" display_name="其他可夺取目标" sort_priority="500"
+        description="这些单位可以被夺取，如果你这样做可能会扭转战局。从广义上讲，这类单位不被视为关键目标，但具体情况还需要你自己权衡。" />
+
+  <objective_category name="OtherDestructionTargets" display_name="其他可摧毁目标" sort_priority="600"
+        description="这些单位可以被摧毁，如果你这样做可能会扭转战局。从广义上讲，这类单位不被视为关键目标，但具体情况还需要你自己权衡。" />
+
+</root>

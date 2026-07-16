@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <journal name="DarkSpireFirstDetected" sidebar_text="{FactionColor}黑暗尖塔：&lt;/color&gt;  首次探测到"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+		   text_replacement_related_player_name="true"
+           chat_text="{FactionColor}黑暗尖塔：&lt;/color&gt; 已被目击"
+           is_partial_record="true"  
+           full_text="发件人：首席情报官雨果·道森
+情报部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+我们正在探测到一个新种族（我们称之为黑暗尖塔）的一些大型新建筑。这些"复仇发生器"似乎从附近单位的死亡中汲取能量。我们必须在那些行星上谨慎交战。" />
+
+  <journal name="DarkSpireConquestModeFromFallenSpire" sidebar_text="{FactionColor}黑暗尖塔：&lt;/color&gt;  征服模式已激活"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+		   text_replacement_related_player_name="true"
+           text_replacement_related_faction_color="true"
+        chat_text="黑暗尖塔已进入征服模式"
+        is_partial_record="true"  
+           full_text="发件人：首席情报官雨果·道森
+情报部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+我们检测到黑暗尖塔复仇发生器的一些重大新能量激增。看起来它们正在响应堕落的尖塔活动水平的提升。复仇发生器现在即使周围没有东西死亡也能产生少量能量。
+
+此外，它们似乎会更频繁地尝试建造新的复仇发生器。幸运的是，由于这些新发生器被如此迅速地传送进来，它们缺乏其他复仇发生器的无敌能力。" />
+
+  
+  <journal name="DarkSpireConquestModeFromDarkAlliance" sidebar_text="{FactionColor}黑暗尖塔：&lt;/color&gt;  征服模式已激活"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+		   text_replacement_related_player_name="true"
+        chat_text="黑暗尖塔已进入征服模式"
+        is_partial_record="true"  
+           full_text="发件人：首席情报官雨果·道森
+情报部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+我们检测到黑暗尖塔复仇发生器的一些重大新能量激增。看起来它们正在响应其黑暗联盟盟友的行动。复仇发生器现在即使周围没有东西死亡也能产生少量能量。
+
+此外，它们似乎会更频繁地尝试建造新的复仇发生器。幸运的是，由于这些新发生器被如此迅速地传送进来，它们缺乏其他复仇发生器的无敌能力。" />
+
+	<journal name="DarkSpireConquestModeFromCoalition" sidebar_text="{FactionColor}黑暗尖塔：&lt;/color&gt;  征服模式已激活"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+		   text_replacement_related_player_name="true"
+        chat_text="黑暗尖塔已进入征服模式"
+        is_partial_record="true"  
+           full_text="发件人：首席情报官雨果·道森
+情报部 - 指挥部
+
+致：指挥官 {PlayerName}
+
+指挥官，
+
+我们检测到黑暗尖塔复仇发生器的一些重大新能量激增。看起来联盟积极摧毁它们建筑的行为激起了它们更多的愤怒。复仇发生器现在即使周围没有东西死亡也能产生少量能量。
+
+此外，它们似乎会更频繁地尝试建造新的复仇发生器。幸运的是，由于这些新发生器被如此迅速地传送进来，它们缺乏其他复仇发生器的无敌能力。" />
+
+</root>

@@ -1,0 +1,335 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!--- Necromancer -->
+
+    <journal name="NA_Necromancer_Lore" sidebar_text="&lt;color=#a1ffa1&gt;简报：&lt;/color&gt; {FactionColor}亡灵法师&lt;/color&gt;"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+        is_partial_record="true" 
+            full_text="亡灵法师是一位强大的宁苏科技法师，它收割生命 &lt;color=#E16CFF&gt;精华&lt;/color&gt; 并用其驱动自己的帝国。
+
+它有两类主要的单位；最强大的单位在其可怕的死灵城中建造，但它也可以将坠落的单位召唤到己方。这些坠落的单位数量更多但威力较小。
+
+亡灵法师可以从裂缝中汲取 &lt;color=#E16CFF&gt;精华&lt;/color&gt;；这是从其他维度汲取能量，对其大片区域造成毁灭性打击。圣殿骑士来到银河系的这一部分是为了保护裂缝免受亡灵法师的攻击，亡灵法师将通过与圣殿骑士战斗获得 &lt;color=#7ce9ff&gt;科学&lt;/color&gt; 和 &lt;color=#3DE799&gt;入侵&lt;/color&gt;。
+巨大的宁苏远古者可以被猎杀以获取 &lt;color=#E16CFF&gt;精华&lt;/color&gt;，或者被击杀并研究以解锁强大的亡灵法师转化。&lt;color=#E16CFF&gt;精华&lt;/color&gt; 用于增强你的死灵城和旗舰。
+
+请参阅侧边栏的提示部分以获取亡灵法师游戏玩法概述，以及情报菜单以查看有用的目标。"
+ />
+
+    <journal name="NA_Necromancer_Introduction" sidebar_text="{FactionColor}亡灵：&lt;/color&gt; 概述"
+           is_for_the_tips_tab="true"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+        chat_text="吾主，欢迎来到你的命匣。提示中有一些说明。"
+        is_partial_record="true" 
+            full_text="吾主，我们在银河系的这个区域发现了一个丰富的裂缝源。凭借你在那里获得的力量，我们可以复兴我们被放逐的宁苏种族的命运。他人不了解我们从这些裂缝中收割生命力量所能获得的真正力量，但我们将向他们展示这一切。圣殿骑士渣滓已与这里强大的人工智能结盟，必须被无情粉碎。我们还探测到一些远古者，它们的生命力量我们也可以收割。
+
+我们已在此建立了一个命匣及其旗舰。你可以在命匣中建造有用的建筑（使用侧边栏中的建造菜单）；这些可以为我们提供新的、更强大的单位，使我们能够击败并复活我们的敌人。
+
+你需要摧毁一些指挥站来建造死灵城并增强你的力量。
+
+亡灵法师使用三种资源进行各种升级；&lt;color=#3DE799&gt;入侵&lt;/color&gt;、&lt;color=#7ce9ff&gt;科学&lt;/color&gt; 和 &lt;color=#E16CFF&gt;精华&lt;/color&gt;。你将使用 &lt;color=#7ce9ff&gt;科学&lt;/color&gt; 升级你的单位线，使用 &lt;color=#3DE799&gt;入侵&lt;/color&gt; 从裂缝中获取东西，使用 &lt;color=#E16CFF&gt;精华&lt;/color&gt; 改进你的旗舰或死灵城。有关更多详情，请参阅关于资源的提示条目。
+
+我们有两类单位；我们可以在死灵城建造的主力单位，以及我们用亡灵术召唤的较弱单位。我们可以从裂缝中获得更多种类的单位。
+
+只要我们在击杀敌人的行星上或其相邻行星上有旗舰，我们就可以通过亡灵术复活被击败的敌人单位。
+
+第一步是处理附近的裂缝。你需要先摧毁指挥站，然后入侵裂缝并在那里建造一座死灵城。然后我们应该寻找更多裂缝并猎杀远古者以获取 &lt;color=#E16CFF&gt;精华&lt;/color&gt;。"
+ />
+
+    <journal name="NA_Necromancer_Resources" sidebar_text="{FactionColor}亡灵&lt;/color&gt; &lt;color=#d267ff&gt;建议：&lt;/color&gt; 资源"
+           is_for_the_tips_tab="true"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+        is_partial_record="true" 
+            full_text="吾主，我们有几种资源可用；&lt;color=#7ce9ff&gt;科学&lt;/color&gt;、&lt;color=#3DE799&gt;入侵&lt;/color&gt; 和 &lt;color=#E16CFF&gt;精华&lt;/color&gt;。
+
+&lt;color=#7ce9ff&gt;科学&lt;/color&gt; 通过与圣殿骑士战斗获得；许多圣殿骑士单位或建筑在死亡时会给予我们 &lt;color=#7ce9ff&gt;科学&lt;/color&gt;。它用于通过科技菜单升级我们的单位，就像人类帝国一样。
+
+&lt;color=#3DE799&gt;入侵&lt;/color&gt; 通过与圣殿骑士战斗获得。领导定期攻击波次（与入侵裂缝无关的波次）的单位以及许多圣殿骑士的强力防御建筑是很好的来源。圣殿骑士建造者也是 &lt;color=#3DE799&gt;入侵&lt;/color&gt; 的绝佳来源，应优先处理以防止圣殿骑士扩张。&lt;color=#3DE799&gt;入侵&lt;/color&gt; 用于入侵裂缝以进行各种升级，以及一些与远古者相关的入侵。
+
+&lt;color=#E16CFF&gt;精华&lt;/color&gt; 通过裂缝入侵和与远古者战斗获得；许多远古者在死亡时会给予我们 &lt;color=#E16CFF&gt;精华&lt;/color&gt;。&lt;color=#E16CFF&gt;精华&lt;/color&gt; 用于建造新的死灵城，以及与旗舰和死灵城相关的升级。&lt;color=#E16CFF&gt;精华&lt;/color&gt; 是你最宝贵的资源。
+
+对于死亡时给予资源/升级的单位或建筑，你需要在行星上至少有 1 点强度的单位；你不需要亲自进行致命一击。如果你有非亡灵法师的盟军派系在没有你的行星上战斗，你将获得这些远程击杀的一小部分资源（但至少 1 点）。"/>
+
+    <journal name="NA_Necromancer_Necropolis" sidebar_text="{FactionColor}亡灵&lt;/color&gt; &lt;color=#75dd75&gt;建筑：&lt;/color&gt;  死灵城"
+           is_for_the_tips_tab="true"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+           chat_text="吾主，我们现在可以建造一座新的死灵城了！提示中有一些说明。"
+        is_partial_record="true" 
+            full_text="吾主，为了控制一个行星并增强我们的实力，我们将建造一座死灵城。有几种死灵城。
+
+主死灵城附带一艘新的旗舰。它们更昂贵，但拥有更多 &lt;color=#FFDEAD&gt;格子&lt;/color&gt;。我们的主死灵城是一种主死灵城。主死灵城的建造上限基于你拥有的总行星数；详情请参阅主死灵城的完整工具提示。
+
+次级死灵城不附带新的旗舰，但它可以 {FactionColor}增援&lt;/color&gt; 主死灵城以使其舰队更强大。在次级死灵城建造授予单位的建筑将把这些单位授予给我们正在增援的主死灵城的旗舰。
+
+防御死灵城不会获得旗舰或协助旗舰。相反，它允许建造防御建筑，并且是侦察信息的主要来源，因为它们关注附近的恒星。
+
+每座死灵城都有一定数量的 &lt;color=#FFDEAD&gt;格子&lt;/color&gt;；这些 &lt;color=#FFDEAD&gt;格子&lt;/color&gt; 允许你建造新的建筑以造福该死灵城。提高死灵城的等级将为你提供更多 &lt;color=#FFDEAD&gt;格子&lt;/color&gt;。选择建造什么建筑是亡灵法师策略的重要组成部分。
+
+你不能在敌方拥有的行星上建造死灵城。一旦建造，你不能转化或摧毁死灵城，但你可以通过入侵交换两个死灵城的位置。"
+        />
+
+  <journal name="NA_Necromancer_Phylactery" sidebar_text="{FactionColor}亡灵&lt;/color&gt; &lt;color=#75dd75&gt;建筑：&lt;/color&gt;  命匣"
+         is_for_the_tips_tab="true"
+         can_record_another_copy_if_already_recorded_in_this_campaign="false"
+         text_replacement_related_faction_color="true"
+      is_partial_record="true" 
+            full_text="吾主，你的帝国由这个包含你生命力量的命匣驱动；如果被摧毁，你的帝国将终结。
+
+你可以交换你的命匣行星和任何其他死灵城。这个仪式消耗 &lt;color=#E16CFF&gt;精华&lt;/color&gt;，并且会摧毁与死灵城和命匣相关的所有其他固定建筑，因此不应轻易进行。
+
+如果你的命匣即将被摧毁，并且你有足够的 &lt;color=#E16CFF&gt;精华&lt;/color&gt;，该仪式将自动以随机选择的非受重创死灵城施放。
+一般来说，你希望在此之前移动你的命匣，因为你可能会因为随机选择而失去关键死灵城上的建筑。"
+        />
+
+  <journal name="NA_Necromancer_Skeletons" sidebar_text="{FactionColor}亡灵&lt;/color&gt; &lt;color=#75dd75&gt;单位：&lt;/color&gt; 骷髅"
+             is_for_the_tips_tab="true"
+             can_record_another_copy_if_already_recorded_in_this_campaign="false"
+             text_replacement_related_faction_color="true"
+        chat_text="吾主，我们复活了第一具骷髅！详情请见提示。"
+        is_partial_record="true" 
+            full_text="吾主，当你的拥有亡灵术的部队复活一架小型战机时，它会作为骷髅归来。它们通常是你部队的关键部分。
+
+默认情况下，所有小型战机都被复活为普通骷髅。然而，通过在死灵城建造某些建筑，你可以召唤更强大的骷髅变体，或者为每架被击杀的小型战机召唤多个骷髅。
+
+这些骷髅变体之家还为该死灵城授予新的"护卫"骷髅，可以高效地在造船厂建造。
+
+每艘旗舰一次可以召唤的骷髅数量有上限，这受其主死灵城等级和你在增援死灵城中拥有的骷髅变体建筑数量的影响。
+
+骷髅天生不稳定。一些骷髅会从更复杂的形态退化到更简单的形态。一些会直接散架，随时间受到 attrition 伤害。有时这两个过程同时发生。
+
+你可以复活的骷髅数量有一个软上限；任何非护卫骷髅都计入此上限。超过上限复活的骷髅是"弱骷髅"，它们会非常快速地 attrition；尽管如此，它们仍可能在单场战斗中有用。
+
+你可以通过裂缝找到以下骷髅变体。每个变体建筑都附带一些变体护卫，这些是变体的更强版本，可以在死灵城和造船厂建造。
+
+骷髅战士：近战格斗者，可以干扰武器，对装甲越重的目标造成越高的伤害。
+骷髅弓箭手：远程但脆弱，擅长摧毁力场。
+骷髅盗贼：隐形、灵活的单位，使用融合伤害绕过个人护盾。擅长摧毁固定防御。
+骷髅法师：拥有强大的连锁闪电武器。
+骷髅领主：骷髅中最强者。中程格斗者，对大型敌人致命，并在受到致命伤害后自我复活一次。"
+        />
+    <journal name="NA_Necromancer_Wights" sidebar_text="{FactionColor}亡灵&lt;/color&gt; &lt;color=#75dd75&gt;单位：&lt;/color&gt; 怨灵"
+             is_for_the_tips_tab="true"
+             can_record_another_copy_if_already_recorded_in_this_campaign="false"
+             text_replacement_related_faction_color="true"
+        chat_text="吾主，我们复活了第一个怨灵！详情请见提示。"
+        is_partial_record="true" 
+            full_text="吾主，当你的拥有亡灵术的部队复活一个守卫级单位时，它会作为怨灵归来。它们通常是你部队的关键部分。
+
+默认情况下，所有守卫都被复活为普通怨灵。然而，通过在死灵城建造某些建筑，你可以召唤更强大的怨灵变体，或者为每个被击杀的守卫召唤多个怨灵。
+
+每艘旗舰一次可以召唤的怨灵数量有上限，这受其主死灵城等级和你在增援死灵城中拥有的怨灵变体建筑数量的影响。
+
+你可以复活的怨灵数量有一个软上限；任何非护卫怨灵都计入此上限。超过上限复活的怨灵是"弱怨灵"；这些 attrition 非常快，但在战斗中仍然有用。
+
+你可以通过裂缝找到以下怨灵变体。每个变体建筑都附带一些变体护卫，这些是变体的更强版本，可以在死灵城和造船厂建造。
+
+贪婪怨灵：比其他怨灵更脆弱，但可以通过吸血攻击自我治疗。
+附体怨灵：远程火炮，擅长摧毁高质量目标，但装填时间很长。
+传染怨灵：投掷手榴弹，在小范围内命中，在目标之间分摊伤害。
+幽灵怨灵：隐形并配备牵引器，发射类似特斯拉的武器，为其自毁序列充能。
+复仇怨灵：通过吸引武器火力来保护盟友，并将伤害反弹回攻击它的敌人。"
+        />
+
+    <journal name="NA_Necromancer_Mummies" sidebar_text="{FactionColor}亡灵&lt;/color&gt; &lt;color=#75dd75&gt;单位：&lt;/color&gt; 木乃伊"
+             is_for_the_tips_tab="true"
+             can_record_another_copy_if_already_recorded_in_this_campaign="false"
+             text_replacement_related_faction_color="true"
+        chat_text="吾主，我们复活了第一具木乃伊！详情请见提示。"
+        is_partial_record="true" 
+            full_text="吾主，当你的拥有亡灵术的部队复活一个恐怖守卫级单位时，它会作为木乃伊归来。这些是可获得的最强大的单位之一。
+
+默认情况下，所有恐怖守卫都被复活为普通木乃伊，但你可以通过入侵裂缝解锁更强的木乃伊变体。
+
+你可以通过裂缝找到以下木乃伊变体。每个变体建筑都附带一些变体护卫，这些是变体的更强版本，可以在死灵城和造船厂建造。
+
+皇家木乃伊：比普通木乃伊更强更快，但没有其他特殊功能。
+腐烂木乃伊：创建一个 attrition 场，缓慢退化敌舰。
+枯萎木乃伊：与普通木乃伊相同，但在死亡时分裂成四个木乃伊仆从。"
+        />
+
+    <journal name="NA_Necromancer_GuardPosts" sidebar_text="{FactionColor}亡灵&lt;/color&gt; &lt;color=#75dd75&gt;建筑：&lt;/color&gt;  守卫哨站"
+             is_for_the_tips_tab="true"
+             can_record_another_copy_if_already_recorded_in_this_campaign="false"
+             text_replacement_related_faction_color="true"
+        chat_text="吾主，我们已将一个人工智能守卫哨站转化为我们的服务！详情请见提示。"
+        is_partial_record="true" 
+            full_text="吾主，这个虚弱人工智能使用的守卫哨站非常适合我们的服务。
+
+我们可以通过直接摧毁它们来控制它们，如果被摧毁，我们可以在行星上建造死灵城后重建它们。
+
+我们甚至可以通过塔防科技线升级它们。"
+        />
+
+    <!-- Templar -->
+    <journal name="NA_Templar_Lore" sidebar_text="&lt;color=#a1ffa1&gt;简报：&lt;/color&gt; {FactionColor}圣殿骑士&lt;/color&gt;"
+             can_record_another_copy_if_already_recorded_in_this_campaign="false"
+             text_replacement_related_faction_color="true"
+        is_partial_record="true" 
+            full_text="圣殿骑士是一支致力于阻止任何人滥用纳米机器人技术统治他人的强大力量。他们被纳米浩劫的传言吸引到了银河系的这一部分。
+
+然而，当他们意识到有一个亡灵法师在从裂缝中收割时摧毁了无数亿生命时，纳米浩劫被遗忘了。" />
+    
+    <journal name="NA_Templar_Gameplay" sidebar_text="{FactionColor}圣殿骑士：&lt;/color&gt; 游戏玩法"
+             is_for_the_tips_tab="true"
+             can_record_another_copy_if_already_recorded_in_this_campaign="false"
+             text_replacement_related_faction_color="true"
+             chat_text="吾主，我们检测到一些圣殿骑士正在接近。"
+        is_partial_record="true" 
+            full_text="吾主，有一支圣殿骑士部队正在接近！圣殿骑士很强大，并且对我们的亡灵术免疫，但我们可以收割他们以获取资源来发展我们的王国！他们会建造强大的防御建筑，可以发射单位保卫附近的行星，并且还会从他们的城堡中向我们发动定期的突击波次。
+
+警惕这些突击波次；每当波次领袖遇到圣殿骑士防御建筑时，他们会集结更多单位加入他们的事业。这使得迅速摧毁他们的防御变得非常重要。"
+        />
+
+    <journal name="NA_Necromancer_Rifts" sidebar_text="{FactionColor}亡灵&lt;/color&gt; &lt;color=#dbad33&gt;目标：&lt;/color&gt; 裂缝"
+             is_for_the_tips_tab="true"
+             can_record_another_copy_if_already_recorded_in_this_campaign="false"
+             text_replacement_related_faction_color="true"
+             text_replacement_related_planet="true"
+             chat_text="吾主，我们在附近检测到一个裂缝！查看提示获取更多详情"
+             is_partial_record="true" 
+            full_text="吾主，我们刚刚在 {PlanetName} 上检测到一个裂缝！这是我们在银河系这个区域发现的第一个新裂缝，我们的传感器表明裂缝会随时间稳定地打开；这对我们来说确实是一个富饶的狩猎区！
+
+这个裂缝包含巨量的生命力量，我们可以通过用纳米机器人入侵它来提取。一旦提取，我们可以用这种力量升级我们的部队。
+
+裂缝提供各种各样的升级。范围从解锁新的单位类型、加强你的舰队、建造新的死灵城等等。每个裂缝都有其独特的升级选项。寻找裂缝进行收割是增加你力量的最佳方式。
+
+摧毁行星上的指挥站将使入侵裂缝变得便宜得多。
+
+随着你的旗舰和死灵城达到更高级别，新的升级将被解锁；裂缝会优先提供你可以使用的升级。
+
+在你入侵一个裂缝后，预期会有一波强大的圣殿骑士波次作为回应，所以要做好防御准备。
+
+你可以查看情报菜单，了解银河系中所有你能看到的裂缝位置。"
+        />
+
+    <journal name="NA_Necromancer_Amplifiers" sidebar_text="{FactionColor}亡灵&lt;/color&gt; &lt;color=#dbad33&gt;目标：&lt;/color&gt; 放大器"
+             is_for_the_tips_tab="true"
+             can_record_another_copy_if_already_recorded_in_this_campaign="false"
+             text_replacement_related_faction_color="true"
+             chat_text="吾主，提示侧边栏中有关于你帝国的新建议"
+             is_partial_record="true" 
+            full_text="吾主，通过捕获放大器，我们可以使特定旗舰的亡灵术更有效。放大器允许我们更有效地将敌人转化为所支援旗舰的骷髅/怨灵/木乃伊。要使用它们，你必须入侵该建筑以控制它，并在行星上建造一个舰队支援死灵城。"
+        />
+
+    <journal name="NA_Necromancer_MarkUpgrades" sidebar_text="{FactionColor}亡灵&lt;/color&gt; &lt;color=#d267ff&gt;建议：&lt;/color&gt; 等级升级"
+             is_for_the_tips_tab="true"
+             can_record_another_copy_if_already_recorded_in_this_campaign="false"
+             text_replacement_related_faction_color="true"
+             is_partial_record="true" 
+            full_text="吾主，增强我们部队的一个重要方式是通过花费 &lt;color=#E16CFF&gt;精华&lt;/color&gt; 来升级你的旗舰和死灵城。
+
+当你的旗舰升级时，它们会变得更强大，并且可以转化为更强的形态。
+
+当你的死灵城升级时，它们会获得更多 &lt;color=#FFDEAD&gt;格子&lt;/color&gt; 并且可以建造更多建筑。有些建筑需要更高等级的死灵城。
+
+随着你的旗舰和建筑达到更高级别，你将在裂缝中获得更强大的升级。"
+        />
+
+        <journal name="NA_Necromancer_Blueprints" sidebar_text="{FactionColor}亡灵&lt;/color&gt; &lt;color=#d267ff&gt;建议：&lt;/color&gt; 旗舰蓝图"
+             is_for_the_tips_tab="true"
+             can_record_another_copy_if_already_recorded_in_this_campaign="false"
+             text_replacement_related_faction_color="true"
+             is_partial_record="true" 
+            full_text="吾主，我们可以通过获取高级变体的蓝图将我们的旗舰转化为更强大的单位类型。这是增加我们帝国力量的关键方式，因为这些旗舰变体可能比常规旗舰强大得多。一旦你获得了蓝图，你就可以入侵你的旗舰将其转化为新的形态。转化可能消耗 &lt;color=#3DE799&gt;入侵&lt;/color&gt; 和 &lt;color=#E16CFF&gt;精华&lt;/color&gt;。
+
+我们可以通过裂缝获得某些较弱的旗舰蓝图，但最强的变体只能通过使用远古者转化入侵，然后赢得随后的战斗才能获得。"
+        />
+        <journal name="NA_Necromancer_Hexes" sidebar_text="{FactionColor}亡灵&lt;/color&gt; &lt;color=#d267ff&gt;建议：&lt;/color&gt; 格子"
+             is_for_the_tips_tab="true"
+             can_record_another_copy_if_already_recorded_in_this_campaign="false"
+             text_replacement_related_faction_color="true"
+             is_partial_record="true" 
+            full_text="吾主，分配死灵城资源是一门艺术。每座死灵城都有几个"&lt;color=#FFDEAD&gt;格子&lt;/color&gt;"，用于支持建造额外的建筑。其中一些建筑是防御性的，其他的提供实用功能或增强我们的舰队。
+
+有些玩家喜欢建造更多防御，另一些则喜欢专注于舰队力量并使用舰队作为移动防御。
+
+花费 &lt;color=#E16CFF&gt;精华&lt;/color&gt; 升级死灵城将解锁更多 &lt;color=#FFDEAD&gt;格子&lt;/color&gt;。"
+        />
+
+        <journal name="NA_Necromancer_Defenses" sidebar_text="{FactionColor}亡灵&lt;/color&gt; &lt;color=#d267ff&gt;建议：&lt;/color&gt; 防御"
+             is_for_the_tips_tab="true"
+             can_record_another_copy_if_already_recorded_in_this_campaign="false"
+             text_replacement_related_faction_color="true"
+             is_partial_record="true" 
+            full_text="吾主，重要的是要记住，我们的主要优势在于我们的移动舰队，无论进攻还是防御。我们有一些固定防御，但不如人类帝国那么多。尽早获得更多旗舰可能是明智之举，以便你可以用一些来防御。"
+        />
+
+        <journal name="NA_Necromancer_ResourceMonitoring" sidebar_text="{FactionColor}亡灵&lt;/color&gt; &lt;color=#d267ff&gt;建议：&lt;/color&gt; 资源监控"
+                 is_for_the_tips_tab="true"
+             can_record_another_copy_if_already_recorded_in_this_campaign="false"
+             text_replacement_related_faction_color="true"
+             chat_text="吾主，点击屏幕顶部资源栏中的精华符号将显示你在游戏过程中获取资源的方式。查看提示侧边栏以获取更多详情。"
+             is_partial_record="true" 
+            full_text="吾主，点击屏幕顶部资源栏中的 &lt;color=#E16CFF&gt;精华&lt;/color&gt; 符号将显示你在游戏过程中获取资源的方式。这对于了解哪些单位会授予资源非常有帮助。
+
+例如，如果你需要更多 &lt;color=#3DE799&gt;入侵&lt;/color&gt; 点，查看哪些单位类型过去曾提供过 &lt;color=#3DE799&gt;入侵&lt;/color&gt; 点会让你知道需要做什么。
+
+此外，悬停在"行星上的战斗"通知上会告诉你在该战斗中通过亡灵法师获得了多少资源以及复活了多少单位。
+
+查阅 &lt;color=#473004&gt;亡灵法师资源&lt;/color&gt; 银河地图过滤器，以识别富含 &lt;color=#E16CFF&gt;精华&lt;/color&gt;、&lt;color=#7ce9ff&gt;科学&lt;/color&gt; 和 &lt;color=#3DE799&gt;入侵&lt;/color&gt; 的行星。这个过滤器是决定攻击何处以获取我们所缺资源的有力工具。"
+        />
+
+        <journal name="NA_Necromancer_ShipyardsAreCritical" sidebar_text="{FactionColor}亡灵&lt;/color&gt; &lt;color=#75dd75&gt;建筑：&lt;/color&gt; 造船厂"
+                 is_for_the_tips_tab="true"
+             can_record_another_copy_if_already_recorded_in_this_campaign="false"
+             text_replacement_related_faction_color="true"
+             chat_text="吾主，我们可能需要额外的造船厂！查看提示侧边栏以获取更多详情。"
+             is_partial_record="true" 
+            full_text="吾主，我们谦卑地建议在每个死灵城专门留出一个格子用于造船厂。造船厂在舰队重建和修理方面比死灵城或旗舰高效得多。
+
+更重要的是，造船厂可以快速解除死灵城的受重创状态，而不需要你的主动关注。
+
+只要造船厂受到保护不被突袭，在牢固嵌入我们领土的行星上它们就不那么重要了。"
+        />
+
+        <journal name="NA_Necromancer_SpendModules" sidebar_text="{FactionColor}亡灵&lt;/color&gt; &lt;color=#d267ff&gt;建议：&lt;/color&gt; 模块"
+                 is_for_the_tips_tab="true"
+             can_record_another_copy_if_already_recorded_in_this_campaign="false"
+             text_replacement_related_faction_color="true"
+             chat_text="吾主，我们有未使用的模块来增强旗舰和死灵城！查看提示侧边栏以获取更多详情。"
+             is_partial_record="true" 
+            full_text="吾主，我们的旗舰和死灵城可以通过投入模块点来增强其能力。这些可以简单地增加它们的耐久度，增加额外的火力，甚至增加实用功能如隐形装置。
+
+由于每级会获得额外的模块点，明智的做法是切换配置以充分利用可用的模块点。"
+        />
+
+        <journal name="NA_Necromancer_Totems" sidebar_text="{FactionColor}亡灵&lt;/color&gt; &lt;color=#75dd75&gt;建筑：&lt;/color&gt; 图腾"
+                 is_for_the_tips_tab="true"
+             can_record_another_copy_if_already_recorded_in_this_campaign="false"
+             text_replacement_related_faction_color="true"
+             chat_text="吾主，我们应该考虑在图腾上投入更多！查看提示侧边栏以获取更多详情。"
+             is_partial_record="true" 
+            full_text="吾主，虽然我们的主要优势在于进攻能力，但我们也有强大的防御可用。
+
+图腾将实用功能与防御特性相结合。它们都拥有某种类型的"球体"，围绕图腾运行并提供独特的加成。以下是我们能创造的图腾：
+
+保护图腾：这些创造引力球体，通过吸引武器火力到自身来保护附近的盟友。几乎总是值得为每个死灵城配备一个近距离的。
+
+超光速粒子图腾：这些提供广泛的超光速粒子覆盖以解除单位隐形。它们的视界球体擅长消灭隐形单位以及其他具有高反照率的单位。
+
+生命力量图腾：这些是强大的防御者，发射吸血光束来补充生命力量。但它们的修复球体是其主要实用功能，提供比造船厂更快的修复。这些需要 2 个 &lt;color=#FFDEAD&gt;格子&lt;/color&gt; 才能运行，因此最适合在前沿行星上视情况使用。
+
+背信图腾：这些强大的图腾只能由防御死灵城建造，消耗三个 &lt;color=#FFDEAD&gt;格子&lt;/color&gt;，但它们异常强大。在基础层面上，它们像黑洞机器一样运作，阻止大多数单位通过虫洞离开。但它们的真正价值来自熵之球体，它们像轨道雷场一样运作，牵引单位被轨道死灵炸弹炸毁。"
+        />
+
+        <journal name="NA_Necromancer_Towers" sidebar_text="{FactionColor}亡灵&lt;/color&gt; &lt;color=#75dd75&gt;建筑：&lt;/color&gt; 塔楼"
+                 is_for_the_tips_tab="true"
+             can_record_another_copy_if_already_recorded_in_this_campaign="false"
+             text_replacement_related_faction_color="true"
+             chat_text="吾主，我们应该考虑在炮塔上投入更多！查看提示侧边栏以获取更多详情。"
+             is_partial_record="true" 
+            full_text="吾主，虽然我们的主要优势在于进攻能力，但我们也有强大的防御可用。非图腾防御属于我们的"塔防"技术。
+
+守卫哨站：通过我们的亡灵术接管的人工智能守卫哨站受益于我们的塔防技术。
+
+闪电塔：这些中程防御工事坚固，可以麻痹低质量单位，同时对能量消耗密集的单位造成更多伤害。此外，闪电塔根据附近其他闪电塔的数量获得谐波伤害。
+
+投石机：这种狙击射程的防御围绕引力井运行，距离目标越远造成额外伤害。因此，放置在引力井外围时最强。
+
+颅骨堆：这些建筑只能由防御死灵城建造，需要 2 个 &lt;color=#FFDEAD&gt;格子&lt;/color&gt; 才能运行，但可以生成大量的骷髅群。虽然 1 级时相当可怜，但每增加一级都会授予额外一种骷髅变体召唤。因此，我们谦卑地建议只在你已经投入了塔防科技的情况下建造这些。"
+        />
+
+</root>

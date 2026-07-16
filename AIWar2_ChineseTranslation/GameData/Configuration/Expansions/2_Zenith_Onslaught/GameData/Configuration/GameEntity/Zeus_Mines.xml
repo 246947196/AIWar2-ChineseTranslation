@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+<!-- New mines to give each weapon tech a unique version. Existing mines will be moved to this system once I figure out how to override game entities. -->
+	
+	<!--Ambush Post  (Ambush): Lures enemies to attack it so it can release ambush drones 
+		Kinetic Buffer (Artillery): Does very little damage and has slow rate of fire, but knocks even larger enemies back and stuns their engines. Unlike other minefields, the Kinetic Buffer doesn't self-destruct. It is somewhat tanky and has a smaller capsize.
+		Jammer Mine (Disruptive): Detonates for trivial area damage but jams the weapons of all but the thickest armored ships, losing 20% of its maximum health each time. Affects more ships than usual
+		Implosion Mine (Piercing): Implodes for decent area damage, pulling targets toward the center and dealing more damage to weakened ships. 4 second reload speed and slightly larger AOE than normal
+		Fragmenting Mine (Melee): Detonates for decent fusion area damage, and releases five fragments that deal decent single target fusion damage. Fragments only release when it is destroyed by an enemy, due to nature of the mechanic.
+		Reactive Dummy  (Raid):  Anti-raid mines. Target dummy that will attract the fire of shots fired in the area around the dummy. While it has no weapon of its own, it can reflect a portion of the damage it attracts.
+		Corruptive Mine (Exotic): Detonates with a corruptive burst that acidifies enemies, making them more vulnerable to subsequent attacks, and zombifies them.
+		Default Mine (Core)
+		Area Mine (Splash)
+		Paralysis Mine (Subterfuge)
+		
+		Minelayer Frigate: Proximity minefield one-shots and spreads damage in an area.
+		Heavy Minelayer Frigate: Anchor minefieled is a temporary tractor array
+		Light Minelayer Frigate: Unstable gravity generator that decays
+		-->
+		
+	<!-- Ambush Post (Ambush tech.) Lures enemies to attack it so it can release ambush drones -->	
+	<entity name="CorrosiveMinefield"			required_expansion_list="2_Zenith_Onslaught"
+	        thematic_groups="OtherDefense"
+			visuals="Assets/_DLC2/Minefields/AmbushPost/AmbushPost.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships1/Minefield" icon_overlay="Overlays1/Minefield_MetalAmbush"
+			special_entity_type="Minefield" category="Ship"
+			size_scale="2.5"
+			visuals_scale_multiplier="8"
+			collision_priority="1"
+			display_name="伏击哨站"
+			description="伪装成用于采矿的小行星，这个伏击哨站会释放擅长利用突袭优势的无人机。"
+			behavior="Stationary"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Minefields,Ambush" 
+			build_sidebar_categories_i_am_part_of="Minefields" destroys_self_until_not_over_ship_cap_if_planetary_command="true"
+			max_count_seeded_as_ai_non_turret_defense="15"
+			cost_for_ai_to_purchase="100" strength_multiplier="10"
+			hull_points="1000" shield_points="0" speed="Immobile"
+			metal_cost="4000" energy_consumption="400"
+			armor_mm="30" albedo="0.3" mass_tx="0.3"
+			voice_group="Silent"
+			fleet_membership="Planetary"
+			ship_or_structure_explosion_sfx="Turret_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			absolute_max_cap_when_in_fleets="200"
+			priority_as_ai_target="IrreplaceableResourceGeneration" priority_as_frd_target="IrreplaceableResourceGeneration" priority_to_protect="Irreplaceable"
+			>
+	<entity_type_drawing_bag_used_on_death data_list="AmbushDrone" min_spawn_value_list="10" />
+    <fleet_membership name="AddedToCommandStation" ship_cap_group="OtherDefense" weight="100" cap="10"/>
+    <fleet_membership name="Minelayer" ship_cap_group="OtherDefense" weight="100" cap="14"/>
+    <fleet_membership name="OtherDefenseFocus" ship_cap_group="OtherDefense" weight="10" cap="10"/>
+    <metal_flow purpose="SelfConstruction" throughput="150"/>
+	</entity>
+	
+	
+
+	<!-- Kinetic Buffer  (Concussion tech). Crowd control knockback and doesn't self-destruct. -->
+	<entity name="KineticMinefield"			required_expansion_list="2_Zenith_Onslaught"
+	        thematic_groups="Mine" 
+			visuals="Assets/_DLC2/Minefields/KineticBuffer/KineticBuffer.prefab"
+			icon_name="Ships1/Minefield" icon_overlay="Overlays1/Minefield_KineticBuffer" visuals_bundle="exp2_zenith_onslaught"
+			special_entity_type="Minefield" category="Ship"
+			size_scale="2.5"
+			visuals_scale_multiplier="5"
+			collision_priority="1"
+			display_name="动能缓冲器"
+			description="隐形的震荡力发生器，引爆时造成轻微范围伤害，但能将较大的敌人击退并使其引擎瘫痪。它可以快速连射，但需要时间重新装填和重新隐形。与其他雷区不同，动能缓冲器不会自毁。"
+			behavior="Stationary"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Minefields,Concussion" 
+			build_sidebar_categories_i_am_part_of="Minefields" destroys_self_until_not_over_ship_cap_if_planetary_command="true"
+			max_count_seeded_as_ai_non_turret_defense="5"
+			cost_for_ai_to_purchase="1000" strength_multiplier="0.2"
+			hull_points="30000" shield_points="0" speed="Immobile"
+			metal_cost="8000" energy_consumption="1000"
+			armor_mm="30" albedo="0.3" mass_tx="0.3"
+			voice_group="Silent"
+			fleet_membership="Planetary"
+			ship_or_structure_explosion_sfx="Turret_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			absolute_max_cap_when_in_fleets="100"
+			priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable"
+			>
+	<fleet_membership name="AddedToCommandStation" ship_cap_group="OtherDefense" weight="100" cap="8"/>
+    <fleet_membership name="Minelayer" ship_cap_group="OtherDefense" weight="100" cap="14"/>
+    <fleet_membership name="OtherDefenseFocus" ship_cap_group="OtherDefense" weight="10" cap="10"/>
+    <metal_flow purpose="SelfConstruction" throughput="150"/>
+    <system name="B8" display_name="冲击波"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="150" range="Small1" shot_speed="Instant" rate_of_fire="PeriodicActivation" fires_salvos_sequentially="true"
+				shot_type_data="ExplosiveInvisible"
+				area_of_effect_size="3200"					
+				maximum_number_of_targets_hit_per_shot="50" cloaking_percent_loss_from_firing="0.25"
+				base_knockback_per_shot="2000" added_knockback_per_shot_per_mark="500" knockback_to_ships_mass_tx_less_than="7" added_target_evaluator="CanKnockback"
+				base_engine_stun_per_shot="15" added_engine_stun_per_shot_per_mark="3" max_engine_stun_seconds="30" engine_stun_to_engine_gx_less_than="22" 
+				 use_alternate_rate_of_fire_after_x_shots="1" alternate_rate_of_fire="Devourer"  use_alternate_rate_of_fire_for_x_shots_before_reverting="4"
+				>
+				<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="50" multiplier="4" />
+    </system>
+	<system name="C" display_name="隐形装置"
+				category="Passive"
+				cloaking_points="2000" cloaking_points_added_per_mark="1000"
+				>
+    </system>
+	</entity>
+	
+	  <entity name="AIKineticMinefield"  copy_from="KineticMinefield" display_name="AI 动能雷区" thematic_groups="Hidden"
+			display_name_for_sidebar="动能地雷" only_cloaked_when_owning_planet="true"
+            >
+    <ai_ship_group_membership name="BasicMinefieldWormholeSentinels" weight="1"/>
+	<ai_ship_group_membership name="Mines" weight="100"/>
+	<ai_ship_group_membership name="AnyNonTurretDefenses_FreeforAll" weight="10"/>
+	<ai_ship_group_membership name="EnsnarerNonTurretDefenses_FreeforAll" weight="10"/>
+	<ai_ship_group_membership name="GhostNonTurretDefenses_FreeforAll" weight="10"/>	
+  </entity>
+
+
+	<!-- Implosion Minefiled  (Fusion tech). Pulls enemies in and does fusion and implosion damage --> 
+	<entity name="ImplosionMinefield"			required_expansion_list="2_Zenith_Onslaught"
+	        thematic_groups="Mine" 
+			visuals="Assets/_DLC2/Minefields/ImplosionMinefield/ImplosionMinefield.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships1/Minefield" icon_overlay="Overlays1/Minefield_Imploder"
+			special_entity_type="Minefield" category="Ship"
+			size_scale="2.5"
+			visuals_scale_multiplier="0.8"
+			collision_priority="1"
+			display_name="内爆雷区"
+			display_name_for_sidebar="内爆地雷"
+			description="隐形炸药，内爆时造成范围聚变伤害，可穿透护盾并将目标拉向中心。对满生命值的单位造成更多伤害。每次内爆会损失其最大生命值的20%。"
+			behavior="Stationary"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Minefields,Fusion" 
+			build_sidebar_categories_i_am_part_of="Minefields" destroys_self_until_not_over_ship_cap_if_planetary_command="true"
+			max_count_seeded_as_ai_non_turret_defense="15"
+			cost_for_ai_to_purchase="100" strength_multiplier="0.3"
+			hull_points="100" shield_points="0" speed="Immobile"
+			metal_cost="4000" energy_consumption="400"
+			armor_mm="30" albedo="0.3" mass_tx="0.3"
+			voice_group="Silent"
+			fleet_membership="Planetary"
+			ship_or_structure_explosion_sfx="Turret_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			absolute_max_cap_when_in_fleets="200"
+			priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable"
+			>
+	<fleet_membership name="AddedToCommandStation" ship_cap_group="OtherDefense" weight="100" cap="15"/>
+    <fleet_membership name="Minelayer" ship_cap_group="OtherDefense" weight="100" cap="32"/>
+    <fleet_membership name="OtherDefenseFocus" ship_cap_group="OtherDefense" weight="10" cap="14"/>
+    <metal_flow purpose="SelfConstruction" throughput="150"/>
+	    <system name="W1" display_name="内爆地雷"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="750" range="Tiny3" shot_speed="Instant" rate_of_fire="Misery" fires_salvos_sequentially="true"
+				shot_type_data="ExplosiveInvisible"
+				area_of_effect_size="1360"					
+				maximum_number_of_targets_hit_per_shot="20" cloaking_percent_loss_from_firing="0.05"
+				base_knockback_per_shot="-1360" added_knockback_per_shot_per_mark="0" knockback_to_ships_mass_tx_less_than="7" added_target_evaluator="CanKnockback"
+				base_percent_damage_bypasses_personal_shields="1" 				
+				health_change_by_max_health_divided_by_this_per_attack="-5"
+				>
+				<outgoing_damage_modifier based_on="CurrentHullPercentage" applies_to="HullOnly" comparison_type="MultiplesOf" compared_to="20" multiplier="1" />
+				<outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="HullOnly" comparison_type="GreaterThan" compared_to="50" multiplier="1" added_multiplier_per_mark="0.25" />
+    </system>
+
+	<system name="C" display_name="隐形装置"
+				category="Passive"
+				cloaking_points="2000" cloaking_points_added_per_mark="1000"
+				>
+    </system>
+	</entity>
+	
+	 <entity name="AIImplosionMinefield"  copy_from="ImplosionMinefield" display_name="AI 内爆雷区" thematic_groups="Hidden"
+			display_name_for_sidebar="内爆地雷" only_cloaked_when_owning_planet="true"
+            >
+    <ai_ship_group_membership name="BasicMinefieldWormholeSentinels" weight="1"/>
+	<ai_ship_group_membership name="Mines" weight="100"/>
+	<ai_ship_group_membership name="AnyNonTurretDefenses_FreeforAll" weight="10"/>
+	<ai_ship_group_membership name="EnsnarerNonTurretDefenses_FreeforAll" weight="10"/>
+	<ai_ship_group_membership name="GhostNonTurretDefenses_FreeforAll" weight="10"/>	
+  </entity>
+
+	<!-- Jammer Minefield (Disruptive tech). Minor damage but does weapon jams most targets and has wider AOE than typical --> 
+	<entity name="JammerMinefield"			required_expansion_list="2_Zenith_Onslaught"
+	        thematic_groups="Mine"
+    visuals="Assets/_DLC2/Minefields/JammerMinefield/JammerMinefield.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships1/Minefield" icon_overlay="Overlays1/Minefield_Jammer"
+			special_entity_type="Minefield" category="Ship"
+			size_scale="2.5"
+			visuals_scale_multiplier="0.8"
+			collision_priority="1"
+			display_name="干扰雷区"
+			display_name_for_sidebar="干扰雷"
+			description="隐形炸药，引爆时造成范围较小但广泛的伤害，对高护甲敌人造成更多伤害。此外，该地雷会干扰除最厚护甲单位外所有单位的武器。与大多数地雷一样，每次引爆会损失其最大生命值的20%。"
+			behavior="Stationary"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Minefields,Disruptive" 
+			build_sidebar_categories_i_am_part_of="Minefields" destroys_self_until_not_over_ship_cap_if_planetary_command="true"
+			max_count_seeded_as_ai_non_turret_defense="15"
+			cost_for_ai_to_purchase="100" strength_multiplier="0.1"
+			hull_points="100" shield_points="0" speed="Immobile"
+			metal_cost="4000" energy_consumption="400"
+			armor_mm="30" albedo="0.3" mass_tx="0.3"
+			voice_group="Silent"
+			fleet_membership="Planetary"
+			ship_or_structure_explosion_sfx="Turret_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			absolute_max_cap_when_in_fleets="200"
+			priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable"
+			>
+    <fleet_membership name="AddedToCommandStation" ship_cap_group="OtherDefense" weight="100" cap="8"/>
+    <fleet_membership name="Minelayer" ship_cap_group="OtherDefense" weight="100" cap="14"/>
+    <fleet_membership name="OtherDefenseFocus" ship_cap_group="OtherDefense" weight="10" cap="10"/>
+    <metal_flow purpose="SelfConstruction" throughput="150"/>
+    <system name="W1" display_name="干扰雷"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1000" range="Small3" shot_speed="Instant" rate_of_fire="SlightlyLow" fires_salvos_sequentially="true"
+				shot_type_data="ExplosiveInvisible"
+				area_of_effect_size="3200"					
+				maximum_number_of_targets_hit_per_shot="50" cloaking_percent_loss_from_firing="0.05"
+				base_enemy_weapon_reload_slowing_seconds_per_shot="5" added_enemy_weapon_reload_slowing_seconds_per_shot_per_mark="2" 
+				enemy_weapon_reload_slowing_to_armor_mm_less_than="180" max_enemy_weapon_reload_slowing_seconds="15" added_target_evaluator="WeaponJamAsPrimary"	
+				health_change_by_max_health_divided_by_this_per_attack="-5"
+				>		
+	<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtLeast" compared_to="90" multiplier="6" />			
+    </system>
+	
+	<system name="C" display_name="隐形装置"
+				category="Passive"
+				cloaking_points="2000" cloaking_points_added_per_mark="1000"
+				>
+    </system>
+	</entity>
+	
+	  <entity name="AIJammerMinefield"  copy_from="JammerMinefield" display_name="AI 干扰雷区" thematic_groups="Hidden"
+			display_name_for_sidebar="干扰雷" only_cloaked_when_owning_planet="true"
+            >
+    <ai_ship_group_membership name="BasicMinefieldWormholeSentinels" weight="1"/>
+	<ai_ship_group_membership name="Mines" weight="100"/>
+	<ai_ship_group_membership name="AnyNonTurretDefenses_FreeforAll" weight="10"/>
+	<ai_ship_group_membership name="EnsnarerNonTurretDefenses_FreeforAll" weight="10"/>
+	<ai_ship_group_membership name="GhostNonTurretDefenses_FreeforAll" weight="10"/>	
+  </entity>
+	
+	
+	
+	<!-- Reactive Dummy (Raid Tech). Anti-raid mines. Target dummy that will attract the fire of shots fired in the area around the dummy. While it has no weapon of its own, it can reflect a portion of the damage it attracts.-->
+	<entity name="FeedbackMinefield"			required_expansion_list="2_Zenith_Onslaught"
+            thematic_groups="OtherDefense"	
+			visuals="Assets/_DLC2/Minefields/ReactiveDummy/ReactiveDummy.prefab" visuals_bundle="exp2_zenith_onslaught"
+			visuals_scale_multiplier="7"
+	    icon_name="Ships1/Minefield" icon_overlay="Overlays1/Minefield_TargetDummy"
+			special_entity_type="Minefield" category="Ship"
+			size_scale="2.5"
+			collision_priority="1"
+			display_name="反应诱饵"
+			description="这种诱饵目标会吸引周围区域内的火力。虽然它本身没有武器，但可以反射一部分受到的伤害。将它们放置在不可替代的建筑附近或力场边缘时效果最佳。"
+			behavior="Stationary"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Minefields,Raid" 
+			build_sidebar_categories_i_am_part_of="Minefields" destroys_self_until_not_over_ship_cap_if_planetary_command="true"
+			max_count_seeded_as_ai_non_turret_defense="15"
+			cost_for_ai_to_purchase="1000" strength_multiplier="2"
+			hull_points="15000" shield_points="0" speed="Immobile"
+			metal_cost="8000" energy_consumption="50"
+			armor_mm="30" albedo="0.3" mass_tx="0.3"
+			voice_group="Silent"
+			fleet_membership="Planetary"
+			ship_or_structure_explosion_sfx="Turret_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			absolute_max_cap_when_in_fleets="200"
+			damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.34"
+			priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable"
+			>
+	<fleet_membership name="AddedToCommandStation" ship_cap_group="OtherDefense" weight="100" cap="15"/>
+    <fleet_membership name="Minelayer" ship_cap_group="OtherDefense" weight="100" cap="14"/>
+    <fleet_membership name="OtherDefenseFocus" ship_cap_group="OtherDefense" weight="10" cap="10"/>
+    <metal_flow purpose="SelfConstruction" throughput="535"/>
+	<system name="W1" display_name="吸引场"
+				category="Passive"
+				attract_range_for_shots_against_allies="Normal1"
+				>
+    </system>
+	<system name="R8" display_name="反应射击"
+				category="Weapon" firing_timing="WhenParentEntityHit" returns_this_percentage_of_damage_when_firing_retalitatory_shot="4"
+				shot_type_data="ExplosiveInvisible" shot_speed="Instant"
+				damage_per_shot="5" range="Normal1"   rate_of_fire="Sloth" fires_salvos_sequentially="true"
+				>
+		</system>
+
+  </entity>
+  
+  <entity name="AIReactiveDummy"  copy_from="FeedbackMinefield" display_name="AI 反应诱饵" thematic_groups="Hidden" 
+			display_name_for_sidebar="反应诱饵"
+            >
+    <ai_ship_group_membership name="BasicMinefieldWormholeSentinels" weight="1"/>
+	<ai_ship_group_membership name="Mines" weight="100"/>
+	<ai_ship_group_membership name="AnyNonTurretDefenses_FreeforAll" weight="10"/>
+	<ai_ship_group_membership name="EnsnarerNonTurretDefenses_FreeforAll" weight="10"/>
+	<ai_ship_group_membership name="GhostNonTurretDefenses_FreeforAll" weight="10"/>	
+  </entity>
+  
+
+
+	<!-- Corruption Minefield (Technologist/exotic tech). Detonates with a corruptive burst that acidifies enemies, making them more vulnerable to subsequent attacks, and zombifies them.-->
+	<entity name="WarpMinefield"			 required_expansion_list="2_Zenith_Onslaught"
+	        thematic_groups="Mine" 
+			visuals="Assets/_DLC2/Minefields/CorruptionMinefield/CorruptionMinefield.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships1/Minefield" icon_overlay="Overlays1/Minefield_Acid"
+			special_entity_type="Minefield" category="Ship"
+			size_scale="2.5"
+			collision_priority="1"
+			visuals_scale_multiplier="0.8"			
+			display_name="腐蚀雷区"
+			display_name_for_sidebar="腐蚀雷"
+			description="隐形炸药，引爆时会释放腐蚀能量，使敌人酸化，从而更容易受到后续攻击，还能将敌人僵尸化。与大多数地雷一样，每次引爆会损失其最大生命值的20%。"
+			behavior="Stationary"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Minefields,Technologist" 
+			build_sidebar_categories_i_am_part_of="Minefields" destroys_self_until_not_over_ship_cap_if_planetary_command="true"
+			max_count_seeded_as_ai_non_turret_defense="15"
+			cost_for_ai_to_purchase="1000" strength_multiplier="0.5"
+			hull_points="100" shield_points="0" speed="Immobile"
+			metal_cost="4000" energy_consumption="400"
+			armor_mm="30" albedo="0.3" mass_tx="0.3"
+			voice_group="Silent"
+			fleet_membership="Planetary"
+			ship_or_structure_explosion_sfx="Turret_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			 absolute_max_cap_when_in_fleets="200"
+      priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable"
+			>
+    <fleet_membership name="AddedToCommandStation" ship_cap_group="OtherDefense" weight="100" cap="15"/>
+    <fleet_membership name="Minelayer" ship_cap_group="OtherDefense" weight="100" cap="32"/>
+    <fleet_membership name="OtherDefenseFocus" ship_cap_group="OtherDefense" weight="10" cap="14"/>	
+    <metal_flow purpose="SelfConstruction" throughput="150"/>
+    <system name="W1" display_name="腐蚀雷"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="350" range="Tiny3" shot_speed="Instant" rate_of_fire="Devourer" fires_salvos_sequentially="true"
+				shot_type_data="ExplosiveInvisible" 
+                area_of_effect_size="1200"
+				maximum_number_of_targets_hit_per_shot="20" cloaking_percent_loss_from_firing="0.05"
+				damage_amplification="true" damage_amplification_duration="10" damage_amplification_flat="18" damage_amplification_flat_added_per_mark="7"
+				health_change_by_max_health_divided_by_this_per_attack="-5"
+				>	
+			<death_effect_damage type="Zombification" tier_name="Tethuida"/>	
+    </system>
+	
+	
+	<system name="C" display_name="隐形装置"
+				category="Passive"
+				cloaking_points="2000" cloaking_points_added_per_mark="1000"
+				>
+    </system>
+	</entity>
+	
+	  <entity name="AICorruptionMinefield"  copy_from="WarpMinefield" display_name="AI 腐蚀雷区" thematic_groups="Hidden"
+			display_name_for_sidebar="腐蚀雷" only_cloaked_when_owning_planet="true"
+            >
+    <ai_ship_group_membership name="BasicMinefieldWormholeSentinels" weight="1"/>
+	<ai_ship_group_membership name="Mines" weight="100"/>
+	<ai_ship_group_membership name="AnyNonTurretDefenses_FreeforAll" weight="10"/>
+	<ai_ship_group_membership name="EnsnarerNonTurretDefenses_FreeforAll" weight="10"/>
+	<ai_ship_group_membership name="GhostNonTurretDefenses_FreeforAll" weight="10"/>	
+  </entity>
+
+	<!--Fragmenting Minefield (Melee Tech).  Metabolizing Mine that splits into seeking drones-->
+	<entity name="FragmentingMinefield"			required_expansion_list="2_Zenith_Onslaught"
+	        thematic_groups="Mine"
+			visuals="Assets/_DLC2/Minefields/FragmentingMinefield/FragmentingMinefield.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships1/Minefield"	icon_overlay="Overlays1/Minefield_Fragmenting"
+			special_entity_type="Minefield" category="Ship"
+			size_scale="2.5"
+			visuals_scale_multiplier="0.8"
+			collision_priority="1"
+			display_name="分裂雷区"
+			display_name_for_sidebar="分裂雷"
+			description="隐形炸药，引爆时造成中等范围伤害，并释放代谢药剂，将敌人的残骸转化为可回收金属。此外，这种地雷会释放五个碎片，这些碎片能造成中等单体伤害，同样会对敌人进行代谢。每次爆炸会损失其最大生命值的20%，但只有在被敌人摧毁时才会释放碎片。"
+			behavior="Stationary"
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Minefields,Melee" 
+			build_sidebar_categories_i_am_part_of="Minefields" destroys_self_until_not_over_ship_cap_if_planetary_command="true"
+			max_count_seeded_as_ai_non_turret_defense="15"
+			cost_for_ai_to_purchase="100" strength_multiplier="0.1"
+			hull_points="100" shield_points="0" speed="Immobile"
+			metal_cost="4000" energy_consumption="400"
+			armor_mm="30" albedo="0.3" mass_tx="0.3"
+			drone_starting_behavior_type="Attacker_Full"
+			voice_group="Silent"
+			fleet_membership="Planetary"
+			ship_or_structure_explosion_sfx="Turret_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			absolute_max_cap_when_in_fleets="200"
+			priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable"
+			>
+	<entity_type_drawing_bag_used_on_death data_list="FragMine" min_spawn_value_list="5" />
+    <fleet_membership name="AddedToCommandStation" ship_cap_group="OtherDefense" weight="100" cap="20"/>
+    <fleet_membership name="Minelayer" ship_cap_group="OtherDefense" weight="100" cap="32"/>
+    <fleet_membership name="OtherDefenseFocus" ship_cap_group="OtherDefense" weight="10" cap="14"/>
+    <metal_flow purpose="SelfConstruction" throughput="150"/>
+		<system name="W1" display_name="分裂雷"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1200" range="Tiny3" shot_speed="Instant" rate_of_fire="Normal" fires_salvos_sequentially="true"
+				shot_type_data="ExplosiveInvisible"
+				area_of_effect_size="1200"						
+				maximum_number_of_targets_hit_per_shot="20" cloaking_percent_loss_from_firing="1"
+				health_change_by_max_health_divided_by_this_per_attack="-5"
+				>	
+			<death_effect_damage type="Metabolization" tier_name="Gangsaw"/>			
+		</system>
+		<system name="C" display_name="隐形装置"
+				category="Passive"
+				cloaking_points="2000" cloaking_points_added_per_mark="1000"
+				>
+		</system>
+  </entity>
+  
+    <entity name="AIFragmentingMinefield"  copy_from="FragmentingMinefield" display_name="AI 分裂雷区" thematic_groups="Hidden"
+			display_name_for_sidebar="分裂雷"  only_cloaked_when_owning_planet="true"
+            >
+	<entity_type_drawing_bag_used_on_death data_list="FragMine" min_spawn_value_list="5" />
+    <ai_ship_group_membership name="BasicMinefieldWormholeSentinels" weight="1"/>
+	<ai_ship_group_membership name="Mines" weight="100"/>
+	<ai_ship_group_membership name="AnyNonTurretDefenses_FreeforAll" weight="10"/>
+	<ai_ship_group_membership name="EnsnarerNonTurretDefenses_FreeforAll" weight="10"/>
+	<ai_ship_group_membership name="GhostNonTurretDefenses_FreeforAll" weight="10"/>	
+  </entity>
+  
+  <!-- Fragmenting Mine splits into five frag mines, stats below -->
+	<entity name="FragMine"			required_expansion_list="2_Zenith_Onslaught"
+            thematic_groups="Mine"
+			visuals="Assets/_DLC2/Minefields/FragmentingMinefield/FragMine.prefab" visuals_bundle="exp2_zenith_onslaught"
+            icon_name="Ships1/Minefield" icon_overlay="Overlays1/Minefield_Fusion" gimbal_icon_size_multiplier="1"
+			voice_group="Silent"
+			category="Ship" is_strikecraft="true"
+			size_scale="1.3"
+			visuals_scale_multiplier="0.9"
+			collision_priority="100"
+			display_name="分裂地雷"
+			description="带有聚变寻的推进装置的活性地雷碎片。"
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="2"
+			always_self_attritions="true"			
+			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Minefields,Melee"
+			cost_for_ai_to_purchase="10"
+			strength_multiplier="0.1"
+			hull_points="5000" shield_points="0" speed="Normal3"
+			metal_cost="50" energy_consumption="0"
+			metal_cost_multiplier_for_scrapping="0"
+			armor_mm="30" albedo="0.3" engine_gx="5" mass_tx="0.21"
+			ship_or_structure_explosion_sfx="ShipLarge_Explosion"			
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			fleet_membership="Planetary"
+			behavior="Attacker_Full"
+			immune_to_swapping_between_fleets="true"
+			is_blocked_from_transporting="true"
+			has_custom_move_order_and_no_other_direct_commands_can_be_given_from_player="true"
+            priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			>
+		<system name="W1" display_name="分裂地雷"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="6000" range="AlmostNone" shot_speed="Instant" rate_of_fire="Devourer" fires_salvos_sequentially="true"
+				shot_type_data="MeleeInvisible"	added_target_evaluator="Melee"
+				cloaking_percent_loss_from_firing="1"
+				health_change_by_max_health_divided_by_this_per_attack="-1"
+				>	
+			<death_effect_damage type="GreaterMetabolization" tier_name="BountyHunter"/>			
+		</system>
+		<incoming_damage_modifier based_on="MyTimeAtPlanet" comparison_type="LessThan" compared_to="3" multiplier="0" />
+		<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>	
+	
+<!--Mines below are special drones produced by Minelayer frigate variants -->
+<!-- Minelayer Minefield (Proximity Minefield) -->
+	<entity name="DroneProximityMinefield"	display_name="近距雷区"
+	        thematic_groups="Mine" 
+			display_name_for_sidebar="近距地雷" required_expansion_list="2_Zenith_Onslaught"
+			visuals="Assets/_DLC2/Minefields/ProximityMinefield/MinefieldProximity.prefab" visuals_bundle="exp2_zenith_onslaught"
+			size_scale="2.5"
+			visuals_scale_multiplier="0.8"
+			icon_name="Ships1/Minefield" icon_overlay="Overlays1/Minefield_Proximity" 		gimbal_icon_size_multiplier="0.75"  
+			collision_priority="1"
+			special_entity_type="Minefield" category="Ship"
+			description="由布雷护卫舰制造的隐形炸药。发射时会完全自毁，并将伤害扩散到爆炸范围内的所有单位。"
+			behavior="Stationary"
+			starting_mark_level="Mark1" 
+			max_count_seeded_as_ai_non_turret_defense="15"
+			cost_for_ai_to_purchase="100" strength_multiplier="0.1"
+			hull_points="100" shield_points="0" speed="Immobile"
+			metal_cost="4000" energy_consumption="400"
+			metal_cost_multiplier_for_scrapping="0"
+			armor_mm="30" albedo="0.3" mass_tx="0.3"
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="4"
+			always_self_attritions="true"
+			immune_to_swapping_between_fleets="true"
+			voice_group="Silent"
+			fleet_membership="Planetary"
+			ship_or_structure_explosion_sfx="Turret_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			absolute_max_cap_when_in_fleets="200"
+			priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable"
+			>		  
+	
+		<system name="B4" display_name="地雷"
+				category="Weapon" firing_timing="OnlyInRange" damage_per_shot="20000" range="Tiny3" 
+				area_of_effect_size="600" aoe_spreads_damage_among_available_targets="true" maximum_number_of_targets_hit_per_shot="10"
+				shot_speed="Instant" rate_of_fire="Devourer" fires_salvos_sequentially="true"
+				shot_type_data="ExplosiveFlakBurst" cloaking_percent_loss_from_firing="0.05"
+				health_change_by_max_health_divided_by_this_per_attack="-1"
+				>	
+		</system>
+		<system name="C" display_name="隐形装置"
+				category="Passive"
+				cloaking_points="2000" cloaking_points_added_per_mark="1000"
+				>
+		</system>
+	</entity>
+	
+  
+<!-- Heavy Minelayer Minefield (Anchor Minefield) -->
+	<entity name="DroneAnchorMinefield"			required_expansion_list="2_Zenith_Onslaught"
+			thematic_groups="Mine"
+			visuals="Assets/_DLC2/Minefields/AnchorMinefield/AnchorMinefield.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships1/Minefield" icon_overlay="Overlays1/Minefield_Tractor" gimbal_icon_size_multiplier="0.75" 
+			voice_group="Silent"
+			category="Ship" is_strikecraft="true" behavior="Stationary"
+			size_scale="2.5"
+			visuals_scale_multiplier="1"
+			collision_priority="100"
+			display_name="锚定雷区"
+			display_name_for_sidebar="锚定地雷"
+			description="由重型布雷护卫舰创建的临时牵引雷区，可锁定附近的敌方单位，阻止它们移动（但不阻止开火）。"			
+			starting_mark_level="Mark1" 
+			cost_for_ai_to_purchase="10"
+			hull_points="5000" shield_points="0" speed="Immobile"
+			metal_cost="0" energy_consumption="100"
+			armor_mm="50" albedo="0.45" mass_tx="0.3"
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="4"
+			always_self_attritions="true"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"			
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+            fleet_membership="Planetary"
+			immune_to_swapping_between_fleets="true"
+			priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+			
+			>
+		<system name="T" display_name="牵引光束"
+				category="Passive"
+				tractor_range="Small3" tractor_count="9" tractor_count_added_per_mark="3" tractor_hits_albedo_less_than="0.7" tractor_hits_engine_gx_less_than="17"
+				>
+		</system>
+		<incoming_damage_modifier based_on="MyTimeAtPlanet" comparison_type="LessThan" compared_to="10" multiplier="0" />
+	</entity>
+
+<!-- Light Minelayer Minefiled (Unstable Gravity Generator) -->
+	<entity name="DroneGravityMinefield"			 required_expansion_list="2_Zenith_Onslaught"
+            thematic_groups="Mine" 
+			visuals="Assets/_DLC2/General/UnstableGravityGenerator/UnstableGravityGenerator.prefab" visuals_bundle="exp2_zenith_onslaught"
+			icon_name="Ships1/Minefield" icon_overlay="Overlays1/Minefield_Gravity" gimbal_icon_size_multiplier="0.75" 
+			category="Ship" is_strikecraft="true" behavior="Stationary"
+			size_scale="1.20"
+			visuals_scale_multiplier="22"
+			collision_priority="100"
+			display_name="不稳定重力发生器"
+			display_name_for_sidebar="不稳定重力发生器"
+			description="由轻型布雷护卫舰制造的不稳定重力发生器。会减缓周围区域内敌方单位的速度，且会迅速损耗。"
+			starting_mark_level="Mark1" 
+			cost_for_ai_to_purchase="10"			
+			hull_points="100" shield_points="0" speed="Immobile"
+			metal_cost="0" energy_consumption="100"
+			armor_mm="50" albedo="0.45" mass_tx="0.3"
+			self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="4"
+			always_self_attritions="true"
+			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			voice_group="Turret"
+			fleet_membership="Planetary"
+			immune_to_swapping_between_fleets="true"
+			priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable"
+			>
+
+		<system name="G" display_name="引力核心"
+				category="Passive"
+				base_gravity_speed_multiplier="0.7" subtracted_gravity_speed_multiplier_per_mark="0.1" gravity_hits_engine_gx_less_than="14" gravity_range="Normal6"
+				>
+		</system>
+		<incoming_damage_modifier based_on="MyTimeAtPlanet" comparison_type="LessThan" compared_to="10" multiplier="0" />
+	</entity>
+</root>

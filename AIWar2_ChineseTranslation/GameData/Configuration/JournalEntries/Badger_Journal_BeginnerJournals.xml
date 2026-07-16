@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <journal name="Beginner_TooMuchAIP" sidebar_text="&lt;color=#ffd267&gt;概念:&lt;/color&gt; 警惕AIP值" is_for_the_tips_tab="true"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+        chat_text="指挥官，我们需要小心不要过多增加AIP。记住，我们正在进行游击战！
+
+清除行星（即击败所有AI防御而不摧毁指挥站或跃迁门）是个好策略；这样我们的舰队可以更安全地深入打击AI，而不会产生更多AIP。
+
+占领太多行星会导致AI迅速变得非常强大。"
+        full_text="指挥官，我们必须谨慎控制AIP值的增长。请记住，我们正在进行一场游击战役！
+
+最好的做法是使行星失去防御能力（即击败所有AI防御设施，但不摧毁指挥站或跃迁门）；这样能让我们的单位更深入地打击AI，同时又不会增加AIP值。
+
+占领过多行星会让AI迅速变得非常强大。" />
+
+  <journal name="Beginner_HackARS" sidebar_text="&lt;color=#d267ff&gt;建议:&lt;/color&gt; 高级研究站（单位）" is_for_the_tips_tab="true"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+           chat_text="指挥官，看来我们可以访问一些防守薄弱的高级研究站（ARS）。入侵它们是增强舰队实力的好方法！要入侵ARS，派旗舰前往该行星，然后查看入侵菜单。你可以在情报菜单中查看已发现的全部ARS列表。"
+           full_text="指挥官，看来我们有机会接触到一些防守薄弱的高级研究站（ARS）。
+
+入侵这些研究站是增强我们舰队实力的绝佳途径！
+
+你可以在情报菜单中找到所有已发现的高级研究站列表。" />
+
+  <journal name="Beginner_UpgradeMetal" sidebar_text="&lt;color=#d267ff&gt;建议:&lt;/color&gt; 提升金属收入" is_for_the_tips_tab="true"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+           chat_text="指挥官，看来我们的金属资源不足了！有两种简单方法提高金属产量：一是通过舰队菜单升级母星指挥站；二是通过科技菜单升级金属生产。最后还可以占领更多行星并在上面建造经济型或后勤型指挥站。"
+           full_text="指挥官，看来我们的金属储备不足了！
+
+有两种简单的方法可以增加金属产量。第一种是通过舰队菜单升级你的母星指挥站。第二种是通过科技菜单升级金属生成。
+
+最后，你还可以占领更多行星，并在那里建造经济或后勤指挥站。" />
+
+  <journal name="Beginner_HackDSS" sidebar_text="&lt;color=#d267ff&gt;建议:&lt;/color&gt; 炮塔蓝图服务器（炮塔）" is_for_the_tips_tab="true"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+           chat_text="指挥官，我们可以通过入侵一个或多个炮塔蓝图服务器（TSS）来提升防御。当你拥有足够多行星时，很难防守全部。入侵TSS可以增强所有指挥站、机动平台和堡垒。不同类型的增益效果不同，但总体而言，更多炮塔、雷区和防御设施对你有利。此外还有其他防御蓝图服务器（ODSS）可提供更多增益。"
+           full_text="指挥官，我们可以通过入侵一个或多个防御蓝图服务器（TSS）来加强防御。
+
+一旦你拥有足够多的行星，就很难防御所有行星。入侵防御蓝图服务器可以增强你所有指挥站、机动平台和堡垒的实力。 某些类型的设施从这些改进中受益更多，但总体而言，你会希望有更多炮塔、雷区和其他防御设施可用。" />
+
+    <journal name="Beginner_UseLoadMode" sidebar_text="&lt;color=#ffd267&gt;概念:&lt;/color&gt; 运输单位" is_for_the_tips_tab="true"
+             can_record_another_copy_if_already_recorded_in_this_campaign="false"
+             text_replacement_related_faction_color="true"
+             chat_text="指挥官，一个重要技巧是将旗舰设为『装载模式』。这能让它们作为运输舰在地图上快速移动单位。默认进入装载模式的快捷键是L，卸载按U。你可以在控制菜单中修改。"
+             full_text="指挥官，一个重要的技巧是让你的旗舰进入“装载模式”。这能让它们充当运输船，快速在地图上移动你的单位。
+
+处于装载模式的旗舰非常适合绕过AI防御，打击关键目标。
+
+进入装载模式的默认热键是“L”，卸载单位则按“U”。你可以在控制菜单中修改这些热键。" />
+
+    <journal name="Beginner_Automation" sidebar_text="&lt;color=#dbadfe&gt;信息:&lt;/color&gt; 自动化设置" is_for_the_tips_tab="true"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+             text_replacement_related_faction_color="true"
+             chat_text="指挥官，你应该考虑自动化一些行星防御选项。"
+             full_text="指挥官，你应该考虑自动化一些建造选项。在设置菜单的自动化选项下，有设置可以自动在你的行星上建造一些常见的防御单位。"
+             />
+
+    <journal name="Beginner_WaitForStragglers" sidebar_text="&lt;color=#dbadfe&gt;信息:&lt;/color&gt; 等待掉队单位" is_for_the_tips_tab="true"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+             text_replacement_related_faction_color="true"
+             full_text="指挥官，如果你需要将单位装载到旗舰上，然后立即移动旗舰，而旗舰在单位装载完成前就离开行星，这会很让人沮丧。你可以使用自动化设置中的“等待掉队单位”选项，让你的旗舰在离开行星前等待附近的单位装载完成；此设置适用于友方行星或没有敌人的中立行星。"
+/>
+
+    <journal name="Beginner_UpgradeFlagships" sidebar_text="&lt;color=#ffd267&gt;概念:&lt;/color&gt; 升级旗舰" is_for_the_tips_tab="true"
+             can_record_another_copy_if_already_recorded_in_this_campaign="false"
+             text_replacement_related_faction_color="true"
+             chat_text="指挥官，看来你的一些旗舰在战斗中受到重创。用科技至少升级一两次舰队核心单位，让它们更耐用、减少被重创的风险。你可以通过舰队菜单点击相关舰队进行升级。"
+             full_text="指挥官，看来你的一些旗舰在战斗中受到重创。
+
+用科技至少升级一两次舰队核心单位可能是值得的，这样能让它们更耐用，减少被重创的可能性。你可以通过舰队菜单点击相关舰队来进行升级。" />
+
+    <journal name="Beginner_WarpGateNearKing" sidebar_text="&lt;color=#ff6a30&gt;敌人:&lt;/color&gt; 跃迁门" is_for_the_tips_tab="true"
+             can_record_another_copy_if_already_recorded_in_this_campaign="false"
+             text_replacement_related_faction_color="true"
+             chat_text="指挥官，小心AI跃迁门。AI利用跃迁门向你的行星传送攻击波。狙杀跃迁门（重防行星旁的除外）可以控制AI侵略性，代价是少量AIP。目前母星因相邻行星上的跃迁门而易受AI攻击，我们需要加强母星防御或摧毁跃迁门以保护自己。"
+             full_text="指挥官，小心AI的跃迁门。
+
+跃迁门被AI用来向你的行星传送一波又一波的单位。狙击跃迁门（除了那些位于重兵防守行星旁边的跃迁门）可以让你控制AI的侵略性，尽管这会带来少量的AIP值增加。这种技巧被称为“跃迁门突袭”。
+
+目前，由于母星相邻行星上的跃迁门仍然存在，我们的母星容易受到AI的攻击波。我们要么加强母星的防御，要么考虑摧毁这些跃迁门，以更好地保护自己免受AI的攻击。
+
+摧毁跃迁门可以阻止攻击波的发射，但AI仍然可以通过这些行星派遣常规部队（如猎人单位）。" />
+
+    <journal name="Beginner_SpendScience" sidebar_text="&lt;color=#d267ff&gt;建议:&lt;/color&gt; 消耗科技值" is_for_the_tips_tab="true"
+             can_record_another_copy_if_already_recorded_in_this_campaign="false"
+             text_replacement_related_faction_color="true"
+             chat_text="指挥官，用科技点数升级单位是增强舰队实力的关键方法。囤积大量科技值会让游戏变得不必要地困难。"
+             full_text="指挥官，用你的科技值来升级单位是增强舰队实力的关键方法。
+
+囤积大量科技值会让游戏变得不必要地困难。
+
+此外！在游戏早期，花费500科技值直接升级行星所带来的额外防御强度和经济价值是无可比拟的。这将直接升级行星控制的所有单位，包括防护力场、金属提取器、驻留单位、行星拥有的所有炮塔，别忘了还会提升指挥站提供的全行星加成！" />
+
+        <journal name="Beginner_BuildTurrets" sidebar_text="&lt;color=#d267ff&gt;建议:&lt;/color&gt; 建造炮塔" is_for_the_tips_tab="true"
+             can_record_another_copy_if_already_recorded_in_this_campaign="false"
+             text_replacement_related_faction_color="true"
+             chat_text="指挥官，我们应该考虑建造一些炮塔来保卫行星。炮塔是一种非常强大的固定防御手段。"
+             full_text="指挥官，我们应该考虑建造一些炮塔来防御我们的行星。
+
+炮塔是一种非常强大的静态防御手段，你会希望在可能受到攻击的行星上部署它们。" />
+
+        <journal name="Beginner_WatchFleets" sidebar_text="&lt;color=#dbadfe&gt;信息:&lt;/color&gt; 关注舰队" is_for_the_tips_tab="true"
+             can_record_another_copy_if_already_recorded_in_this_campaign="false"
+             text_replacement_related_faction_color="true"
+             chat_text="指挥官，我们可以关注舰队，即使它们在其他行星上也能看到状态。详情请查看日志。"
+             full_text="指挥官，我们可以使用行星菜单来关注舰队，这样即使它们在遥远的行星上，我们也能看到它们的生命值和实力。这可以让你有效地同时监控多场战斗。关注你最重要的舰队是个好主意（注意，指挥站也被视为舰队！）。 
+
+有很多方法可以自定义这个功能；查看行星侧边栏的底部选项。例如，有些人喜欢将关注的舰队显示在行星侧边栏的单位列表上方。" />
+
+        <journal name="Beginner_QueueUnload" sidebar_text="&lt;color=#dbadfe&gt;信息:&lt;/color&gt; 队列舰队卸载" is_for_the_tips_tab="true"
+             can_record_another_copy_if_already_recorded_in_this_campaign="false"
+             text_replacement_related_faction_color="true"
+             chat_text="指挥官，排队卸载舰队的功能非常有用！给已装载的舰队下达移动命令后，按住Shift再按U即可在到达后排隊卸载。"
+             full_text="指挥官，队列舰队卸载功能非常有用！如果你有一艘满载的舰队，你可以在星系地图上给它下达移动命令，然后按住Shift键并按“U”键，在移动完成后队列卸载。
+
+你也可以用Shift键队列其他类型的命令，但能够告诉舰队“前往这场战斗，到达后卸载单位”是非常有用的。" />
+
+        <journal name="Beginner_HackNearbyARS" sidebar_text="&lt;color=#75ddff&gt;占领:&lt;/color&gt; 附近的高级研究站" is_for_the_tips_tab="true"
+             can_record_another_copy_if_already_recorded_in_this_campaign="false"
+             text_replacement_related_faction_color="true"
+             text_replacement_related_planet="true"
+             chat_text="指挥官，我们找到一个不错的附近目标；附近有一座高级研究站（ARS）。详情请查看侧边栏中的日志。"
+
+             full_text="指挥官，我们发现了一个不错的附近目标。{PlanetName}行星上有一个我们可以入侵的高级研究站（ARS）。AI利用高级研究站来研究单位的改进，通过入侵它，我们可以提升一艘旗舰的能力，使其能够建造AI研究出的单位之一。这是我们增强实力的最佳方法之一。
+
+要进行这次入侵，派一艘旗舰前往该行星，然后打开侧边栏中的入侵菜单。
+
+先占领该行星可以使某些类型的入侵成本大幅降低，包括高级研究站的入侵。你可能并不总是想占领有高级研究站的行星，但你可能想占领{PlanetName}行星。一般来说，入侵点数是一种重要的资源，所以如果你认为最终可能需要该行星，通常在入侵前占领它是个好主意。
+
+我们可以对任何高级研究站进行3次入侵，但每次入侵AI的反应都会更强烈，入侵点数的消耗也会更高；AI在检测到入侵时会改进其网络防火墙。由于成本和风险，你很少会想进行第三次入侵。不过，建议你立即至少入侵一次这个高级研究站，以增强你的舰队实力。
+
+你可以使用情报侧边栏菜单找到更多可以入侵的高级研究站。
+
+你将有多种选择来窃取哪种单位生产线。最简单的选择是选择一种与你现有单位和科技选择相协同的单位生产线。如果你已经有几种带有突袭能力的单位生产线，那么另一种突袭单位可能是个不错的选择。你也可以选择一种你熟悉且使用起来得心应手的单位生产线，或者选择一种能对抗某些主要敌人威胁的单位生产线……
+
+有很多不错的选择，有时候，当你感到不知所措时，最重要的是做出任何选择。" />
+
+        <journal name="Beginner_CaptureNearbyFlagship" sidebar_text="&lt;color=#75ddff&gt;占领:&lt;/color&gt; 旗舰" is_for_the_tips_tab="true"
+             can_record_another_copy_if_already_recorded_in_this_campaign="false"
+             text_replacement_related_faction_color="true"
+             text_replacement_related_planet="true"
+             chat_text="指挥官，我们找到一个不错的目标；附近有一艘旗舰。详情请查看侧边栏中的日志。"
+
+             full_text="指挥官，我们发现了一个不错的目标。附近的{PlanetName}行星上有一艘我们可以占领的旗舰。 
+
+通过摧毁那里的AI指挥站并建造我们自己的指挥站，我们将能够占领那里的所有中立建筑。这其中包括一艘旗舰！旗舰能为我们提供新的单位生产线。占领更多旗舰是增强我们力量的重要途径。
+
+你可以使用情报侧边栏菜单找到更多可以占领的旗舰。" />
+
+        <journal name="Beginner_NextSteps" sidebar_text="&lt;color=#d267ff&gt;建议:&lt;/color&gt; 下一步行动" is_for_the_tips_tab="true"
+             can_record_another_copy_if_already_recorded_in_this_campaign="false"
+             text_replacement_related_faction_color="true"
+             text_replacement_related_planet="true"
+             chat_text="指挥官，我们需要一些额外目标。请查看日志获取下一步建议。"
+
+             full_text="指挥官，现在你已经将势力扩展到母星系统之外，还有许多其他可能性可供你选择。 如果你在任何时候陷入困境，不确定该做什么，情报标签是寻找目标和任务的好方法。 你可能还会发现以下想法很有用：
+
+不要忽视你的星系防御，尤其是母星。 如果你的母星指挥站被摧毁，你将输掉游戏。 入侵TSS（炮塔蓝图服务器）以获得额外的炮塔防御，或入侵ODSS（其他防御蓝图服务器）以获得补充防御，并提升你的防御能力以跟上AI攻击波的强度。
+
+机动平台及其炮塔是强大的资产，在进攻和防御中都很有用。 不要忘记利用它们。
+
+占领拥有ARS、TSS或ODSS的星系将使这些建筑的入侵成本减半，但每占领一个星系，AIP值都会继续上升。 仔细考虑你需要占领哪些行星，哪些行星可以放弃。
+在占领任何星系之前，确保你有长期和短期的防御计划。 如果一个行星无法得到有效防御，有时只占领它足够长的时间来获取任何舰队或其他可占领物品，并提取入侵点数和科技值，然后撤回至更易防御的位置，可能会很有用。
+
+阅读你不熟悉的任何单位或建筑的提示信息。 知识就是力量； 有些单位可能比最初看起来更危险。 按住C键并点击任何科技升级、ARS等，以查看你即将获得的物品的更多详细信息。
+
+使用你的科技值； 你可以花费少量的入侵点数来退还你花费的科技值，以便日后重新投资。 使用与你现有武器科技相同的单位和炮塔尤其有价值。 如果你需要在特定位置获得经济提升或额外火力，直接升级指挥站会非常有帮助。
+
+访问Arcen discord，从乐于助人的玩家社区那里获得答案，特别是如果你遇到不理解的游戏元素。
+
+玩得开心，并谨慎选择你的策略！ 许多星系和挑战在等着你，有各种各样的派系可以帮助或阻碍你的前进。" />
+
+
+        <journal name="Beginner_FirstOfficer" sidebar_text="&lt;color=#ffd267&gt;概念:&lt;/color&gt; 军官舰队" is_for_the_tips_tab="true"
+             can_record_another_copy_if_already_recorded_in_this_campaign="false"
+             text_replacement_related_faction_color="true"
+             text_replacement_related_planet="true"
+             chat_text="指挥官，我们刚获得一支军官舰队！它们非常强大，日志中会解释其特性。"
+
+             full_text="指挥官，我们俘获了一个研究人员命名为“军官”级的单位。
+
+这些特殊单位可以成为我们主力舰队的核心，也可以根据其专长提供专门的支援。
+
+你可以使用详细舰队视图（默认按住“C”键并点击旗舰）从其他舰队转移单位。这可以包括舰队研究站的精英单位，它们将为军官单位提供加成。
+
+和其他旗舰一样，军官单位不会通过花费科技值解锁技术来提升实力。不过，你可以在详细舰队视图（默认按住“C”键并点击旗舰）中直接花费科技值来提升其直接实力。 
+
+许多军官单位也可以通过我们的入侵纳米机器得到显著提升。将单位移动到友方行星，查看入侵标签以了解详情。 
+
+请注意，这种力量并非没有代价。军官级单位可能会消耗大量能量，如果它们在战斗中受损，修复将需要大量金属。 " />
+
+
+        <journal name="Beginner_TechUnlocks" sidebar_text="&lt;color=#ffd267&gt;概念:&lt;/color&gt; 科技解锁" is_for_the_tips_tab="true"
+             can_record_another_copy_if_already_recorded_in_this_campaign="false"
+             text_replacement_related_faction_color="true"
+             text_replacement_related_planet="true"
+             chat_text="指挥官，科技菜单只是用科学点数升级舰队的两种方式之一。详细建议见日志。"
+             full_text="你可以通过将单位的等级从1提升到7来用科技值升级它们。 这可以通过几种方式实现。
+             
+最明显的方式是通过科技侧边栏（按T键）。 大多数单位与两项科技相关联，所以你选择的科技决定了哪些单位会升级。
+
+出于主题和清晰度的原因，科技通常以前缀“船体”或“武器”开头，但请记住，标签并不会特别影响你的武器或船体生命值；无论你如何升级，单位的提升方式都是相同的。
+
+你也可以从舰队详情窗口升级指挥站舰队和机动平台/堡垒舰队（包括其中的所有炮塔和单位！）。 你可以从舰队标签（F键）中选择，或者按住C键并点击舰队领袖。
+
+在行星上直接升级舰队往往是非常划算的，就科技值的投入回报而言。 这些升级通常也会带来重大的经济收益。
+
+也可以升级移动舰队领袖，如运输船（几乎总是不划算），或军官单位（巨像或方舟——划算程度不一）。
+
+在直接舰队升级和科技升级之间平衡你的科技值投资，在每场游戏中的情况都不同。 但最初对母星指挥站舰队进行两次升级几乎总是明智的。
+
+由于船体升级成本较高，通常在游戏后期再进行升级也是个好主意。 当你有很多舰队生产线能从中受益时，船体升级就会变得划算。
+
+如果你改变主意，你总是可以使用科技标签最底部的按钮退还花费在舰队或科技上的科技值。 这确实需要花费一些入侵点数，但在一场游戏中你通常可以负担得起进行一两次这样的操作，而不会缺少入侵点数。
+
+说到入侵点数，你也可以在舰队详情屏幕上通过花费入侵点数来升级甚至改造你的舰队领袖。 你可以将基本运输船升级为更高级的运输船类型，对机动兵工厂进行同样的操作，将巨像的船体生命值翻倍，或进行其他各种操作。" />
+
+        <journal name="Beginner_LowThreat" sidebar_text="&lt;color=#d267ff&gt;建议:&lt;/color&gt; 中度威胁" is_for_the_tips_tab="true"
+             can_record_another_copy_if_already_recorded_in_this_campaign="false"
+             text_replacement_related_faction_color="true"
+             text_replacement_related_planet="true"
+             chat_text="指挥官，看来AI开始对各行星积累威胁。"
+             full_text="&lt;b&gt;检测到AI中度威胁等级&lt;/b&gt;
+&lt;size=80%&gt;指挥官，我们的侦察表明，AI的部分部队已经察觉到我们的行动，并进入了“威胁”模式。&lt;/size&gt;
+
+&lt;b&gt;AI单位行为&lt;/b&gt;
+- 每个星系中的AI单位默认处于“守卫”行为，直到被干扰进入“威胁”模式。
+- 处于“威胁”模式的单位会变得更加激进，如果它们发现我们防御的弱点，可能会发起攻击。
+- 如果“威胁”模式的单位存活足够长的时间，它们将加入由猎人子程序控制的舰队，变得更加危险。
+- 选择屏幕顶部的黄色威胁图标将提供详细信息，如可见威胁的数量和位置。
+
+&lt;size=80%&gt;由于AI系统的分布式性质，单位默认具有独立的行为子程序。如果没有这种机制，我们的行动在开始前就会失败。&lt;/size&gt;
+
+&lt;b&gt;提示:&lt;/b&gt; 密切关注威胁估计，并考虑追捕大量“威胁”单位，以保持威胁水平可控。" />
+
+        <journal name="Beginner_HighThreat" sidebar_text="&lt;color=#d267ff&gt;建议:&lt;/color&gt; 大规模威胁" is_for_the_tips_tab="true"
+             can_record_another_copy_if_already_recorded_in_this_campaign="false"
+             text_replacement_related_faction_color="true"
+             text_replacement_related_planet="true"
+             chat_text="指挥官，看来AI对各行星积累了大量威胁。"
+             full_text="&lt;b&gt;检测到AI大规模威胁等级！&lt;/b&gt;
+&lt;size=80%&gt;指挥官，我们的侦察表明，AI的大量部队已经察觉到我们的行动，并进入了“威胁”模式。&lt;/size&gt;
+
+&lt;b&gt;高威胁等级非常危险&lt;/b&gt;
+有许多单位处于“威胁”模式非常危险，因为它们可能会以数量优势压倒我们的防御。
+
+考虑追捕大量“威胁”单位和/或加强我们的防御，以应对即将到来的攻击。" />
+
+        <journal name="Beginner_OutnumberedInAttack" sidebar_text="&lt;color=#d267ff&gt;建议:&lt;/color&gt; 寡不敌众的攻击" is_for_the_tips_tab="true"
+             can_record_another_copy_if_already_recorded_in_this_campaign="false"
+             text_replacement_related_faction_color="true"
+             text_replacement_related_planet="true"
+             chat_text="指挥官，我们在{PlanetName}上的部队严重寡不敌众。"
+             full_text="&lt;b&gt;我们严重寡不敌众！&lt;/b&gt;
+&lt;size=80%&gt;指挥官，我们的军事模拟表明，该星系中的敌人比我们目前的部队强大得多。&lt;/size&gt;
+
+&lt;b&gt;考虑重新集结并增强实力&lt;/b&gt;
+- 鉴于该星系中的实力差距，我们目前的攻击不太可能成功。
+- 一种选择是在星系的其他地方占领舰队和单位。
+- 另一种选择是花费我们的科技值来提升舰队实力，然后再发起攻击。
+
+&lt;b&gt;并非每个行星都需要占领&lt;/b&gt;
+如果这个行星不在我们的边界附近，且战略价值不大，那么绕过它是一个可行的选择。
+将单位装载到我们的运输船中（选中舰队后按“L”键），飞过该星系到达后方的行星，然后卸载（选中舰队后按“U”键卸载；注意你可以按住Shift键并按“U”键来队列卸载）可能是一个选择。
+
+&lt;b&gt;审查力量来源&lt;/b&gt;
+使用行星视图（默认按“P”键），查找该星系中AI力量的来源。 
+
+是否有活跃的监视眼、离子炮或堡垒需要在主力舰队进攻前进行突袭？
+
+&lt;b&gt;实力估计可能具有欺骗性&lt;/b&gt;
+实力并不一定表明一个单位在战斗中的表现。如果我们的单位能有效对抗行星上的AI部队，你可能会比数字显示的更容易取得胜利。" />
+
+        <journal name="Beginner_HandlingGuards" sidebar_text="&lt;color=#ffd267&gt;概念:&lt;/color&gt; 守卫单位" is_for_the_tips_tab="true"
+             can_record_another_copy_if_already_recorded_in_this_campaign="false"
+             text_replacement_related_faction_color="true"
+             text_replacement_related_planet="true"
+             chat_text="指挥官，我们在{PlanetName}上的部队主要在对付守卫部队。"
+             full_text="&lt;b&gt;星系中有许多守卫单位未察觉&lt;/b&gt;
+&lt;size=80%&gt;指挥官，我们的侦察表明，这个行星上有大量处于“守卫”模式的单位。&lt;/size&gt;
+
+如果我们惊动了这些单位但没有摧毁它们，它们将被激活并成为威胁。
+
+&lt;b&gt;提示:&lt;/b&gt; 考虑用足够的力量进行攻击，在守卫单位逃脱前将其消灭。
+
+&lt;b&gt;提示:&lt;/b&gt; 使用力场星舰、引擎干扰武器或牵引船是防止单位逃脱并再次作战的好方法。" />
+
+        <journal name="Beginner_Citadel" sidebar_text="&lt;color=#ffd267&gt;概念:&lt;/color&gt; 堡垒" is_for_the_tips_tab="true"
+             can_record_another_copy_if_already_recorded_in_this_campaign="false"
+             text_replacement_related_faction_color="true"
+             text_replacement_related_planet="true"
+             chat_text="指挥官，我们刚在{PlanetName}上获得第一座堡垒！"
+             full_text="&lt;b&gt;新堡垒&lt;/b&gt;
+&lt;size=80%&gt;指挥官，我们俘获了一座“堡垒”级防御建筑。&lt;/size&gt;
+
+这些移动防御站类似于我们开发的机动平台，但更专业、更强大。 
+
+堡垒本身是一个缓慢但强大的防御者，但其主要作用是在任何行星上建造专属的炮塔。 
+
+&lt;b&gt;升级&lt;/b&gt;
+
+我们开发了各种各样的负载配置，可以影响堡垒的武器系统，你可以用入侵点数进行更改（选中堡垒时按住“C”键）。
+
+和其他旗舰一样，可以花费科技值（选中堡垒时按住“C”键）来提升堡垒本身及其建造的炮塔的实力。 " />
+
+        <journal name="Beginner_EncounterAIEye" sidebar_text="&lt;color=#ff6a30&gt;敌人:&lt;/color&gt; AI监视眼" is_for_the_tips_tab="true"
+             can_record_another_copy_if_already_recorded_in_this_campaign="false"
+             text_replacement_related_faction_color="true"
+             text_replacement_related_planet="true"
+             chat_text="指挥官，我们在{PlanetName}上遭遇了AI监视眼！日志中有应对建议。"
+             full_text="&lt;b&gt;AI监视眼非常致命&lt;/b&gt;
+指挥官，监视眼是一种特别致命的AI武器，在你将部队派往该行星之前，应该仔细研究。
+
+如果AI敌对攻击者的实力大于AI防御者的实力，那么监视眼将被激活，你的单位将遭遇从非常糟糕到极其糟糕的情况。
+
+&lt;b&gt;突袭未激活的监视眼&lt;/b&gt;
+在有监视眼的行星上，一般策略是先派一小支精锐部队，在带入其余舰队之前摧毁监视眼。
+
+不幸的是，一些监视眼受到这些行星上的守卫哨所的保护！要使这些监视眼容易受到攻击，首先需要摧毁一些守卫哨所。
+
+这支小部队的规模需要足够小，以免激活监视眼，但又要足够强大，能够应对每个守卫哨所。可能需要进行打了就跑的袭击或自杀式攻击来完成这项任务。
+
+&lt;size=80%&gt;幸运的是，我们的舰队单位都是无人的，所以这些战术不会危及任何人的生命。&lt;/size&gt;
+
+&lt;b&gt;提示:&lt;/b&gt; 如果你在处理试图接近监视眼时释放出的部队，你可以在相邻行星上部署其他部队来“拦截”新产生的威胁。" />
+
+        <journal name="Beginner_EncounterTSS" sidebar_text="&lt;color=#57caff&gt;入侵:&lt;/color&gt; TSS（炮塔）" is_for_the_tips_tab="true"
+             can_record_another_copy_if_already_recorded_in_this_campaign="false"
+             text_replacement_related_faction_color="true"
+             text_replacement_related_planet="true"
+             chat_text="指挥官，我们在{PlanetName}上发现了一个炮塔蓝图服务器（TSS）！"
+             full_text="&lt;b&gt;可入侵炮塔设计&lt;/b&gt;
+&lt;size=80%&gt;指挥官，我们有机会渗透该星系中AI的网络。 &lt;/size&gt;
+
+该星系中的炮塔蓝图服务器容易受到我们的入侵纳米机器的攻击，我们可以提取有价值的防御炮塔设计。
+
+在清除该行星上的敌方部队后，切换到入侵标签（默认按“H”键），查看可用选项。 
+
+我们可以从每个网络分区中选择一种设计，然后就会被锁定，并且可以多次入侵同一服务器。
+
+如果我们胆子够大，可以摧毁AI指挥站，以减少AI的入侵反击，同时降低入侵这个TSS的成本。
+
+&lt;b&gt;一般入侵机制&lt;/b&gt;
+&lt;size=80%&gt;科学部门的几点说明:&lt;/size&gt;
+- 入侵总是需要消耗入侵点数，而入侵点数的供应是有限的。它们主要通过占领新行星获得，但摧毁AI分布节点也会提供少量入侵点数。
+- 入侵需要一段时间，在此期间，执行入侵的旗舰移动速度会非常慢，并且无法离开该行星。
+- AI会从被入侵的实体中生成单位，随着对同一AI的入侵次数增加，反击会更强。 
+- 如果你陷入绝境，可以右键点击屏幕顶部的入侵图标来取消入侵。" />
+
+        <journal name="Beginner_EncounterARS" sidebar_text="&lt;color=#57caff&gt;入侵:&lt;/color&gt; ARS（单位）" is_for_the_tips_tab="true"
+             can_record_another_copy_if_already_recorded_in_this_campaign="false"
+             text_replacement_related_faction_color="true"
+             text_replacement_related_planet="true"
+             chat_text="指挥官，我们在{PlanetName}上发现了一个高级研究站（ARS）！"
+             full_text="&lt;b&gt;可入侵单位设计&lt;/b&gt;
+&lt;size=80%&gt;指挥官，我们有机会渗透该星系中AI的单位蓝图网络。 &lt;/size&gt;
+
+该行星上的高级研究站容易受到我们的入侵纳米机器的攻击，我们可以提取有价值的单位设计，以增强我们的舰队实力。
+
+在清除该行星上的敌方部队后，切换到入侵标签（默认按“H”键），查看可用选项。 
+
+我们可以从每个网络分区中选择一种设计，然后就会被锁定，并且可以多次入侵同一服务器。
+
+如果我们胆子够大，可以摧毁AI指挥站，以减少AI的入侵反击，同时降低入侵这个TSS的成本。
+
+&lt;b&gt;一般入侵机制&lt;/b&gt;
+&lt;size=80%&gt;科学部门的几点说明:&lt;/size&gt;
+- 入侵总是需要消耗入侵点数，而入侵点数的供应是有限的。它们主要通过占领新行星获得，但摧毁AI分布节点也会提供少量入侵点数。
+- 入侵需要一段时间，在此期间，执行入侵的旗舰移动速度会非常慢，并且无法离开该行星。
+- AI会从被入侵的实体中生成单位，随着对同一AI的入侵次数增加，反击会更强。 
+- 如果你陷入绝境，可以右键点击屏幕顶部的入侵图标来取消入侵。" />
+
+        <journal name="Beginner_RaidEngine" sidebar_text="&lt;color=#ff6a30&gt;敌人:&lt;/color&gt; 突袭引擎" is_for_the_tips_tab="true"
+             can_record_another_copy_if_already_recorded_in_this_campaign="false"
+             text_replacement_related_faction_color="true"
+             text_replacement_related_planet="true"
+             chat_text="指挥官，我们在{PlanetName}上遭遇了突袭引擎！"
+             full_text="&lt;b&gt;威胁总结：突袭引擎&lt;/b&gt;
+&lt;size=80%&gt;指挥官，我们在{PlanetName}行星上检测到一个AI突袭引擎。只要我们在这个行星上有部队，这些设施就会生成相对强大的单位波来攻击我们。 &lt;/size&gt;
+
+当一个突袭引擎存在于AI控制的行星上时，你的部队到达2秒后，它将生成一波强度相当于标准波150%的单位，并每两分钟继续生成一波。这些单位可以从星系中与你领土相邻的任何跃迁门出现。
+
+突袭引擎相当脆弱，在集中火力攻击下会迅速崩溃。 
+
+不过，请记住，移除一个AI突袭引擎将使AI进度增加5。即使它因星系内指挥站被摧毁而自毁，也会发生这种情况。" />
+
+        <journal name="Beginner_OrbitalMassDriver" sidebar_text="&lt;color=#ff6a30&gt;敌人:&lt;/color&gt; 轨道质量驱动器" is_for_the_tips_tab="true"
+             can_record_another_copy_if_already_recorded_in_this_campaign="false"
+             text_replacement_related_faction_color="true"
+             text_replacement_related_planet="true"
+             chat_text="指挥官，我们在{PlanetName}上遭遇了轨道质量驱动器！"
+             full_text="&lt;b&gt;威胁总结：轨道质量驱动器（OMD）&lt;/b&gt;
+&lt;size=80%&gt;指挥官，我们在{PlanetName}行星上检测到一个轨道质量驱动器。这些设施对我们的旗舰构成了特别重大的威胁。 &lt;/size&gt;
+
+这些静态防御设施的射程几乎无限，对大质量单位（大于5 tX）造成极高的伤害。它们唯一的弱点是射击间隔时间长。
+
+力场也能有效地阻挡轨道质量驱动器的攻击。 
+
+轨道质量驱动器也可以通过入侵占领。
+
+&lt;b&gt;提示:&lt;/b&gt; 留下你的旗舰，派遣一支较小的具有高爆发能力的突击舰部队，迅速消灭轨道质量驱动器。" />
+
+        <journal name="Beginner_WormholeProjector" sidebar_text="&lt;color=#ff6a30&gt;敌人:&lt;/color&gt; 虫洞投影仪" is_for_the_tips_tab="true"
+             can_record_another_copy_if_already_recorded_in_this_campaign="false"
+             text_replacement_related_faction_color="true"
+             text_replacement_related_planet="true"
+             chat_text="指挥官，我们在{PlanetName}上遭遇了虫洞投影仪！"
+             full_text="&lt;b&gt;威胁总结：虫洞投影仪&lt;/b&gt;
+&lt;size=80%&gt;指挥官，我们在{PlanetName}行星上检测到一个虫洞投影仪。虫洞投影仪会在地图上创建新的虫洞连接，并由虫洞入侵触发。
+
+一旦虫洞投影仪受到足够的伤害，它将变得不稳定。一旦不稳定，投影仪将损坏，虫洞将很快消失。小心不要让你的舰队在虫洞消失时被困住！
+
+&lt;b&gt;提示:&lt;/b&gt; 一些玩家发现新的虫洞很有用，并不总是会摧毁投影仪。" />
+
+</root>

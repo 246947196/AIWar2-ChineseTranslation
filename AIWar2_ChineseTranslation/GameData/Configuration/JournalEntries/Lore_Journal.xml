@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <journal name="Base_Lore_Hunter" sidebar_text="&lt;color=#a1ffa1&gt;背景故事&lt;/color&gt;: {FactionColor}猎手舰队&lt;/color&gt;"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+		   text_replacement_related_player_name="true"
+            chat_text="{FactionColor}猎手舰队&lt;/color&gt;已侦测到"
+           full_text="发件人: 蒂莫西·科波菲尔博士
+人工智能研发部 - 总部指挥部
+
+收件人: {PlayerName}指挥官
+
+指挥官，
+
+我们发现了一个疑似人工智能子程序，由于它表现出类似捕食者的攻击性行为，我们目前将其命名为“猎手舰队”。
+
+到目前为止，我们的理论是，目前未执行警戒任务且已闲置一段时间的人工智能单位会被编入这个子程序，并且它们会比单独行动时更加主动和智能，前提是它们还没有被编入其他程序。
+
+在这些单位有可能逃脱、加入这个“猎手舰队”并在日后造成更大麻烦之前，尽可能多地摧毁它们对我们似乎是有利的。"
+           />
+    <journal name="Base_Lore_Reserves" sidebar_text="&lt;color=#a1ffa1&gt;背景故事&lt;/color&gt;: {FactionColor}人工智能预备队&lt;/color&gt;"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+		   text_replacement_related_player_name="true"
+            chat_text="{FactionColor}人工智能预备队&lt;/color&gt;来袭"
+           full_text="发件人: 蒂莫西·科波菲尔博士
+人工智能研发部 - 总部指挥部
+
+收件人: {PlayerName}指挥官
+
+指挥官，
+
+看来我们的纵深打击（在远离我们任何行星的地方攻击人工智能）触发了人工智能的防御反应。我们检测到多个虫洞正在开启，同时有单位信号正在接近。
+
+目前看来，向我们自己的领地靠近会使对方的反应部队通过这些虫洞撤回。然而，如果我们继续进行更远距离的纵深打击，我们预计对方的反应会更加强烈。"
+    />
+
+  <journal name="Base_Lore_Warden" sidebar_text="&lt;color=#a1ffa1&gt;背景故事&lt;/color&gt;: {FactionColor}守卫舰队&lt;/color&gt;"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+		   text_replacement_related_player_name="true"
+            chat_text="{FactionColor}守卫舰队&lt;/color&gt;已侦测到"
+           full_text="发件人: 蒂莫西·科波菲尔博士
+人工智能研发部 - 总部指挥部
+
+收件人: {PlayerName}指挥官
+
+指挥官，
+		   
+我们检测到一个人工智能子程序，由于它几乎完全是防御性的行为，目前被称为“守卫舰队”。
+
+目前的数据似乎表明，这是一支持续活跃的部队，会不断补充到一个未知的数量。我们有理由预计，随着我们对人工智能的警惕性提高，这个数量会增加。
+
+由于其强烈的防御行为，这个“守卫舰队”似乎不太可能直接攻击我们，甚至可能完全避开我们的行星，我们可以利用这一点，防止它在一个地方集结全部力量。"
+           />
+		   
+    <journal name="Base_Lore_Praetorian" sidebar_text="&lt;color=#a1ffa1&gt;背景故事&lt;/color&gt;: {FactionColor}禁卫军&lt;/color&gt;"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+		   text_replacement_related_player_name="true"
+            chat_text="{FactionColor}禁卫军&lt;/color&gt;已侦测到"
+           full_text="发件人: 蒂莫西·科波菲尔博士
+人工智能研发部 - 总部指挥部
+
+收件人: {PlayerName}指挥官
+
+指挥官，
+		   
+我们注意到了另一个人工智能子程序，名为“禁卫军”。
+
+这个子程序似乎与“守卫舰队”相似，但它被限制在人工智能“霸主”周围的区域，如果我们靠近，它会进行防御。
+
+它们似乎和“守卫舰队”一样有持续的增援，也有数量限制。
+
+最后一件事。如果我们攻击“霸主”，我们预计会引起强烈反应，可能会从星系的其他地方调集部队来支援。"
+    />
+
+  <journal name="Base_Lore_TheAI" sidebar_text="&lt;color=#a1ffa1&gt;背景故事&lt;/color&gt;: {FactionColor}人工智能&lt;/color&gt;"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+           full_text="在人类之间持续了 &lt;color=#ff6634&gt;800 年的星际内战&lt;/color&gt; 之后，我们终于创造出了一股将永远结束人类所有战争的力量：&lt;color=#ff6634&gt;人工智能&lt;/color&gt;。
+
+人工智能的力量迅速超越了人类，并控制了他们的大部分自动化部队，几乎将人类从银河系中抹去。 &lt;color=#ff6634&gt;只剩下零星的人类群体&lt;/color&gt;，躲藏在内战和随后人工智能发起的灭绝行动留下的残骸中。
+
+你指挥着最后一支规模可观的人类军事力量。它规模如此之小，以至于 &lt;color=#ff6634&gt;人工智能要么没有意识到它的存在，要么根本不在乎。&lt;/color&gt;
+
+可能巧合的是，星系外的某些事物似乎比人类更能分散人工智能的注意力。
+
+你必须壮大你的部队，从旧战争中夺取并重新激活舰队……但 &lt;color=#ff6634&gt;你必须小心&lt;/color&gt;，不要变得过于强大，以免引起人工智能的注意。
+
+获得足够的力量，夺取足够的舰队，夺回足够的行星，这样你就可以摧毁被称为“人工智能霸主”的巨大结构，并 &lt;color=#ff6634&gt;在人工智能甚至还没有完全意识到战争已经开始之前就结束这场新战争&lt;/color&gt;。
+
+如果你过于贪婪，如果你让自己变得过于具有威胁性，&lt;color=#ff6634&gt;如果你让人工智能意识到你可能是一个真正的威胁……&lt;/color&gt; 那么我们都将失去一切。
+
+你必须谨慎行事，避免分心和诱惑，像使用手术刀一样运用你的部队。要敢于冒险，要大胆，但不要试图成为征服者。&lt;color=#ff6634&gt;直击核心。&lt;/color&gt;" />
+
+  <journal name="Base_Lore_Zenith" sidebar_text="&lt;color=#a1ffa1&gt;背景故事&lt;/color&gt;: 泽尼斯人"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="false"
+           full_text="泽尼斯外星人是一个真正古老的种族，就在几百万年前，他们还是我们银河系大部分地区无可争议的主宰。然而，几十万年前，他们的文明崩溃了，只留下一个布满他们昔日辉煌遗迹的星系。
+
+目前人类还不知道泽尼斯帝国毁灭的确切原因，但可以肯定的是，它并没有完全消灭这个种族的所有成员。相反，它将他们分散并散布到了各个行星。一些泽尼斯人与其他物种（有机或无机）进行贸易。一些则处于一种非道德的状态下四处游荡，吞噬一切。
+
+这个种族剩下的大部分是被人类称为“傀儡”的废弃残骸，对泽尼斯人来说，这些“傀儡”在很大程度上就像人类的机器人一样。这些“傀儡”与他们的旧主人外形相似，但没有独立思考和自由意志。
+
+泽尼斯人还留下了一些偶尔可见的戴森球，但这些也更像是机器而非生物体。所有泽尼斯人的自动装置都包含机械和有机部分，戴森球也包含一些接近有感知能力的东西，但它们从来都不是独立的行为体。它们不是公民。除了几千年前分配给它们的任务之外，它们没有文化，没有目标。
+
+活着的泽尼斯人个体更为罕见，但确实存在。
+
+泽尼斯商人不与外界交流，但却出于未知原因在宇宙中四处兜售商品。据推测它具有感知能力，但极其神秘。目前还无法确定。
+
+黑暗泽尼斯人显然更具感知能力，而且显然经历了艰难的时期。他们似乎也不愿意交谈，但他们的武器装备、构造和战术并非自动装置所为。
+
+泽尼斯人建造了一些游牧行星，泽尼斯矿工吞噬行星来为他们无情的引擎提供动力。
+
+如果泽尼斯人的历史还有留存，解开它可能需要几代人的努力。目前我们只知道一些事情，但失去的——以及仍然存在但隐藏着的——的规模几乎难以想象。
+
+我们确实知道，他们的公民最初并不比一辆大型陆地车辆大，然后在几十年的时间里会成长到中型星际飞船的规模。由于他们独特的生物学特性，并不断用机械部件进行强化，他们似乎能够在大气层内外移动，并且在真空中生存而不受影响。根据他们想要承担的功能，公民可以将自己塑造成从战争到科学或哲学等多种不同用途。" />
+
+    <journal name="Expansion_Lore_Zenith" sidebar_text="&lt;color=#a1ffa1&gt;背景故事&lt;/color&gt;: 跨维度的泽尼斯人？"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="false"
+           full_text="长期以来，人们一直认为泽尼斯文明已完全毁灭。他们的战争机器和自动装置遍布我们的星系，但为数不多的幸存的有感知能力的公民长期以来被认为要么是独居的，要么是近乎野蛮的零散个体。
+           
+现在有新的情况发生了。来自多个鼎盛时期的泽尼斯文明的公民被发现了。他们从哪里来，或者他们一直藏在哪里？
+
+最有可能正确的理论——尽管说出来很奇怪——是这些个体来自多元宇宙中的相邻宇宙。到目前为止，科学家们已经无可争议地证实了多元宇宙的存在，但这将是首次观察到有东西在不同宇宙之间穿梭。
+
+也有可能存在另一种解释，这些新出现的泽尼斯人出于某种未知原因一直隐藏在我们星系的眼皮底下。但这些似乎只是仍然存在的更庞大帝国的一小部分，所以最简单的解释——奇怪的是——就是将目光投向多元宇宙。" />
+    
+  <journal name="Base_Lore_Spire" sidebar_text="&lt;color=#a1ffa1&gt;背景故事&lt;/color&gt;: {FactionColor}尖塔族&lt;/color&gt; "
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+        full_text="尖塔族是岩石/晶体生物，它们以能量为食，在有足够能量的情况下能够快速生长和繁殖，因此解放那些反应堆将使它们能够迅速建造城市和战舰。每个建筑或战舰都是一个活生生的尖塔族个体——就像泽尼斯人的傀儡一样，尖塔族是一种极其宏观的生命形式。
+
+看来人工智能已经在他们的母星系攻击了尖塔族；他们可能会成为对抗人工智能的强大盟友！
+
+人工智能已经捕获了大量尖塔族的反应堆，并正在秘密研究实验室中试验利用它们的能量。星系中还散落着一些过去战斗留下的尖塔族遗物。如果你帮助堕落的尖塔族复仇，将会引发与人工智能的一场史诗对决。" />
+
+  <journal name="Base_Lore_RiskAnalyzers" sidebar_text="&lt;color=#a1ffa1&gt;背景故事&lt;/color&gt;: {FactionColor}风险分析仪&lt;/color&gt; "
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+        full_text="风险分析仪是人工智能设备，它们可以定期扫描星系以寻找敌方部队，并在发现敌人时提高人工智能威胁等级（AIP）。摧毁一台风险分析仪会导致 AIP 一次性提升，但不会随着时间增加。然而，捕获一台风险分析仪可以让你向人工智能提供关于你有多和平且无威胁的虚假数据，从而降低 AIP。
+
+风险分析仪还能让人工智能不定期地向这里的敌人派遣星系外打击部队。捕获风险分析仪会使这些打击部队更加频繁，并且它们会优先攻击任何被捕获的风险分析仪。" />
+
+  <journal name="Base_Lore_Scourge" sidebar_text="&lt;color=#a1ffa1&gt;背景故事&lt;/color&gt;: {FactionColor}天灾军团&lt;/color&gt; "
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+        full_text="人工智能觉得需要一支辅助部队来清除小麻烦，而不必让其主处理器为琐事操心。人工智能将他们在阿尔森宇宙中征服的各种种族，通过基因工程进行改造，并将它们融合成一支新的强大力量来击溃敌人。
+
+天灾军团使用孵化器生产新兵，新兵会进化成战士和建造者。天灾军团的单位可以在军械库进行升级。随着这些建筑随着时间升级，它们会变得更强大，因此主动摧毁敌人天灾军团的基础设施（或保护盟友的基础设施）至关重要。" />
+
+</root>

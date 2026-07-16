@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!-- AJEA main settings -->
+	<setting name="AJEA_Enable" serialization_name="AJEAE" is_network_and_game_synced_setting="true"
+		category="Automation" subcategory="AJEA_Settings" display_name="启用自动调整能源助手" type="BoolToggle" default="false"
+		description="AJEA（自动调整能源助手）是AIW2的「智能电网」。如果您的净能源低于下面指定的数值，AJEA将自动建造更多物质转换器以达到或超过设定值。如果之后您的原始净能源允许摧毁其中一些，AJEA也会自动执行。
+实际上，AJEA能非常快速地防止低电力，同时尽量以最少的转换来最大化经济效率。但它仍然可能搞砸你的经济——转换效率并不高——不过如果出问题，你会收到通知提醒。
+ 
+以下情况下AJEA不会工作：
+当金属和能源收入均为负（没有mod或bug的话这几乎不可能发生），当所有运行中的物质转换器仍不足以匹配避免低电力所需的能源（可能在玩家失去大量行星但仍保留完整舰队时发生），以及当低电力正在进行中且AJEA可以匹配恢复能源所需的能量，但这样做会过快烧尽金属以至于在低电力结束前就用光了。
+
+指定的数值可能会在你尝试占领耗能超过设定的东西时增加（注意在任何非死愿难度下暂停占领会中止其占领，同时AJEA也会忽略它）。
+AJEA还会查看每个玩家当前的建造选择及其可能的建造数量（1倍、5倍、10倍、50倍，最多到可能的上限），必要时释放至少这么多能源。" />
+
+	<setting name="AJEA_AutoDetermineEnergyCount" serialization_name="AJEAA" is_network_and_game_synced_setting="true"
+		category="Automation" subcategory="AJEA_Settings" display_name="自动确定能源数量" type="BoolToggle" default="true"
+		description="如果启用，AJEA将保持可用的能源量基于当前需要增援的单位线。如果只建造星战，数量可能低至几百。如果建造大型巡洋舰或模组单位，数量可能高达数万。
+
+该数值在正常条件下和在低电力时会加到目标数值上。" />
+
+	<setting name="AJEA_ExtraEnergyCount" serialization_name="AJEAC" is_network_and_game_synced_setting="true"
+		category="Automation" subcategory="AJEA_Settings" display_name="目标能源" type="IntTextbox" default="5000" min="0" max="10000000"
+		description="如果可能的话，AJEA应该提供多少能源？通常这应该是最贵的建造单位所需的能源，再加一些。5,000能源是一个好的默认值，适用于几乎所有场景。
+如果你发现某个大型（可能是模组）单位无法建造，请检查AJEA是否提供足够的能源并相应调整此值。
+
+如果启用了「自动确定能源数量」，它会加到目标能源数值上。此时这只是为了防止刚一建造就立即阻塞所有单位建造的缓冲值。
+如果未启用「自动确定能源数量」，该值应略高于玩家当前可建造的最耗能单位，否则该单位可能因电力不足而永远无法建造。" />
+
+	<setting name="AJEA_ExtraEnergyCountInBrownout" serialization_name="AJEAB" is_network_and_game_synced_setting="true"
+		category="Automation" subcategory="AJEA_Settings" display_name="低电力时目标能源" type="IntTextbox" default="50000" min="0" max="10000000"
+		description="与上面的「目标能源」相同，但在玩家处于低电力时使用，替代正常值。在低电力期间，哪怕一瞬间负电也可能重置计时器，因此更需要避免能源赤字。
+
+它与「自动确定能源数量」设置的交互规则与上面普通「目标能源」相同。" />
+
+	<setting name="AJEA_AlwaysShowNotification" category="Automation" subcategory="AJEA_Settings" display_name="始终显示通知" type="BoolToggle" default="false"
+		description="通常AJEA不会在有派系严重失血或某种原因导致AJEA无法（合理地）稳定经济时显示通知。
+如果启用此设置，只要AJEA启用、运行且有转换器存在，它就会始终显示通知，这样便于观察经济状况。" />
+
+	<setting name="AJEA_DoPerSimStep" category="Automation" subcategory="AJEA_Settings" display_name="每模拟步执行" type="BoolToggle" default="false"
+		description="如果启用，AJEA将在每个模拟步中进行计算和可能的调整。注意此处只有主机的设置生效。
+每模拟步执行一次AJEA会增加CPU使用，但使其更灵敏。然而，由于能源消耗和生产的数值并非即时更新，可能导致转换器被错误建造或拆除。
+
+AIW2中模拟步尝试每秒执行10次。这不会因玩家加速或减速游戏速度而改变，但如果CPU无法跟上自然会变慢。" />
+	
+	<setting name="EDA_Enable" serialization_name="EDAE" is_network_and_game_synced_setting="true"
+		category="Automation" subcategory="EDA_Settings" display_name="启用实验性防御自动建造" type="BoolToggle" default="false"
+		description="EDA（实验性防御自动建造）一旦完成，应该会大大简化行星建造的繁琐工作。它旨在以合理的方式（尽管因游戏本质永远不可能完美）放置炮塔、重力发生器、力场等，而玩家只需对特定行星和单位启用和禁用该机制即可。" />
+</root>

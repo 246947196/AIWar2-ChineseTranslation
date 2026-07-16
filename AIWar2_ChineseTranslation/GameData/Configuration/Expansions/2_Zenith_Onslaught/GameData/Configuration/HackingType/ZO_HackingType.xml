@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+<!-- Nomad Planet Hacks -->
+  <item name="ActivateNomadStructure" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_ActivateNomadStructure" display_name="激活游牧控制结构"
+        description="此破解将激活这个已停用的结构；它将让你对该行星的移动有一定的控制权。你可以永久停止这颗游牧行星，或者让它撞向另一颗行星。
+
+此破解将为你提供额外的破解选项来控制这颗游牧行星，但不会对游戏玩法产生超出这些选项的修改。"
+        hacking_cost_per_second="0"
+        effect_per_second="1"
+        hack_duration="10"
+        hacking_cost_multiplier_per_attempt="0"
+        primary_hacking_response_interval="20"
+        primary_response_strength_per_interval="0.1"
+ 	      secondary_hacking_response_interval="0"
+	      secondary_response_strength_per_interval="0"
+        cost_in_hacking_points="20"
+        response_strength_on_completion="1.5"
+        only_for_ai_planets="false"
+        local_hacker_required="true"
+        hack_is_against_planet="false"
+        exo_on_completion="true"
+        
+/>
+
+  <item name="DeactivateNomadStructure" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_DeactivateNomadStructure" display_name="停止游牧行星"
+        description="此破解将停用游牧行星枢纽。它将永久停止行星的移动。"
+        destroy_hack_target_on_completion="true"
+        hacking_cost_per_second="0"
+        effect_per_second="1"
+        hack_duration="10"
+        hacking_cost_multiplier_per_attempt="0"
+        primary_hacking_response_interval="10"
+        primary_response_strength_per_interval="0.1"
+        cost_in_hacking_points="20"
+        response_strength_on_completion="1.5"
+        only_for_ai_planets="false"
+        local_hacker_required="true"
+        hack_is_against_planet="false"
+        exo_on_completion="true"
+        
+/>
+
+  <item name="SendNomadToNearestAIKing" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_SendNomadToNearestAIKing" display_name="选择游牧行星撞击目标"
+        description="激活后，这颗行星将飞向选定的目标并与之相撞，摧毁两颗行星。AI将对此做出非常强烈的反应，外生体强度将在第一分钟内稳步增加至峰值强度。"
+        hack_completes_instantly="true"
+        hacking_cost_multiplier_per_attempt="0"
+        cost_in_hacking_points="80"
+        response_strength_on_completion="1.5"
+        only_for_ai_planets="false"
+        local_hacker_required="false"
+        hack_is_against_planet="false"
+        exo_on_completion="true"
+        choose_a_specific_planet_to_target="true"
+/>
+
+  <!-- Zenith Miner Hacks -->
+    <item name="DestroyProbe" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_DestroyProbe" display_name="摧毁探测器" 
+          description="通过摧毁探测器，你将阻止天顶采矿者的到来。"
+        hacking_cost_per_second="0"
+        effect_per_second="1"
+        hack_duration="10"
+        hacking_cost_multiplier_per_attempt="0"
+        primary_hacking_response_interval="20"
+        primary_response_strength_per_interval="0.1"
+ 	secondary_hacking_response_interval="0"
+	secondary_response_strength_per_interval="0"
+        cost_in_hacking_points="10"
+        response_strength_on_completion="1.5"
+        local_hacker_required="true"
+        destroy_hack_target_on_completion="true"
+        
+        />
+    <item name="RerouteProbe" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_RerouteProbe" display_name="重新引导探测器" 
+          description="将探测器移动到你选择的相邻已探索行星。"
+        hack_completes_instantly="true"
+        hacking_cost_multiplier_per_attempt="0"
+        cost_in_hacking_points="15"
+        local_hacker_required="true"
+        destroy_hack_target_on_completion="true"
+        
+        choose_a_specific_planet_to_target="true"
+        must_choose_adjacent_planet="true"
+        />
+
+        <item name="ReprogramProbeForFasterShips" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_ReprogramProbeForFasterShips" display_name="重新编程探测器：更快的单位" 
+              description="通过重新编程这个探测器，你可以让天顶采矿者改变行星而不是摧毁它。
+
+此破解将使天顶采矿者降低行星重力，使所有在该行星上的单位移动速度更快。"
+        hacking_cost_per_second="0"
+        effect_per_second="1"
+        hack_duration="10"
+        hacking_cost_multiplier_per_attempt="0"
+        primary_hacking_response_interval="20"
+        primary_response_strength_per_interval="0.1"
+ 	secondary_hacking_response_interval="0"
+	secondary_response_strength_per_interval="0"
+        cost_in_hacking_points="10"
+        local_hacker_required="true"
+        
+/>
+
+        <item name="ReprogramProbeForSlowerShips" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_ReprogramProbeForSlowerShips" display_name="重新编程探测器：更慢的单位" 
+              description="通过重新编程这个探测器，你可以让天顶采矿者改变行星而不是摧毁它。
+
+此破解将使天顶采矿者增加行星重力，使所有在该行星上的单位移动速度更慢。"
+        hacking_cost_per_second="0"
+        effect_per_second="1"
+        hack_duration="10"
+        hacking_cost_multiplier_per_attempt="0"
+        primary_hacking_response_interval="20"
+        primary_response_strength_per_interval="0.1"
+ 	secondary_hacking_response_interval="0"
+	secondary_response_strength_per_interval="0"
+        cost_in_hacking_points="10"
+        local_hacker_required="true"
+        
+/>
+
+        <item name="MakePlanetNomadic" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_MakePlanetNomadic" display_name="重新编程探测器：使行星成为游牧行星" 
+              description="通过重新编程这个探测器，你可以让天顶采矿者改变行星而不是摧毁它。
+
+此破解将使行星成为游牧行星；它现在的行为将和游牧行星一样。请注意，这颗行星不会有游牧枢纽，所以你无法让它停止或撞击其他行星。"
+        hacking_cost_per_second="0"
+        effect_per_second="1"
+        hack_duration="10"
+        hacking_cost_multiplier_per_attempt="0"
+        primary_hacking_response_interval="20"
+        primary_response_strength_per_interval="0.1"
+ 	secondary_hacking_response_interval="0"
+	secondary_response_strength_per_interval="0"
+        cost_in_hacking_points="10"
+        local_hacker_required="true"
+        
+/>
+
+        <!-- ZA Hacks -->
+<item name="ZATruce" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_ZATruce" display_name="不稳定的休战" description="触发与天顶拱顶的临时休战。
+
+天顶拱顶将不再视你为敌对目标，除非它们处于扩张模式或内战状态。这意味着它们有时会对你保持和平，有时会对你怀有敌意；它们充其量只是不稳定的盟友，所以要保持谨慎。
+
+仅适用于“敌对所有”的拱顶。
+
+使用此破解将阻止对该传送门使用任何其他破解。"
+        hacking_cost_per_second="0"
+        effect_per_second="0"
+        hack_duration="300"
+        hacking_cost_multiplier_per_attempt="0"
+        primary_hacking_response_interval="15"
+        primary_response_strength_per_interval="0.1"
+ 	secondary_hacking_response_interval="10"
+	secondary_response_strength_per_interval="0.5"
+        tertiary_hacking_response_interval="25"
+	tertiary_response_strength_per_interval="1.0"
+        cost_in_hacking_points="10"
+        local_hacker_required="true"
+        
+        />
+
+    <item name="HackToGrantShipLine_ZenithArchitrave" copy_from="HackToGrantShipLine" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_GrantShipLine_DontDestroyTarget" display_name="授予单位生产线" 
+          description="此破解将授予一条新的单位生产线，但卡斯特拉将逐步淘汰并成为生产极其危险的拱顶单位的工厂。"
+        hack_duration="120"
+        primary_hacking_response_interval="30"
+        primary_response_strength_per_interval="1.5"
+	secondary_hacking_response_interval="20"
+	secondary_response_strength_per_interval="0.8"
+        cost_in_hacking_points="20"
+        response_strength_on_completion="1"
+        local_hacker_required="true"
+        hack_is_against_planet="false"
+        use_closest_hacker_for_check="true"
+        choose_a_specific_ship_line_to_grant="true"
+        choice_text="你想为这个入侵添加哪条单位生产线？"
+        choice_text_height="60"
+        destroy_hack_target_on_completion="true"
+        relatedstring_is_a_ship_type="true"
+        exo_on_completion="false"
+				number_of_times_individual_unit_can_be_hacked="1"
+        />
+    <item name="HackToGrantShipLine_ZenithArchitrave_Portal" display_name="授予巡洋舰" 
+          copy_from="HackToGrantShipLine_ZenithArchitrave"
+          description="此破解将授予一艘强大的巡洋舰，一条精英单位生产线，但将阻止对该传送门使用任何其他破解。"
+		  destroy_hack_target_on_completion="false"
+		  cost_in_hacking_points="40"
+		  hack_duration="300"
+		  number_of_times_individual_unit_can_be_hacked="1"
+                  destroy_hack_target_on_cancel="false"
+		  tertiary_hacking_response_interval="60"
+		  tertiary_response_strength_per_interval="1.5"
+/>
+
+<item name="ZAQuiesce" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_ZAQuiesce" display_name="使拱顶静止" 
+      description="暂时禁用拱顶传送门，并阻止天顶拱顶进入战争模式。这将使它们成为容易攻击的目标。
+
+当传送门解除封锁后，它们会对你非常不满。
+
+使用此破解将阻止对该传送门使用任何其他破解。"
+        hacking_cost_per_second="0"
+        effect_per_second="0"
+        hack_duration="120"
+        hacking_cost_multiplier_per_attempt="0"
+        primary_hacking_response_interval="15"
+        primary_response_strength_per_interval="0.75"
+ 	secondary_hacking_response_interval="10"
+	secondary_response_strength_per_interval="0.5"
+        tertiary_hacking_response_interval="30"
+	tertiary_response_strength_per_interval="1.0"
+        cost_in_hacking_points="10"
+        local_hacker_required="true"
+        
+        />
+
+<!-- DZ Hacks -->
+
+    <item name="HackToGrantShipLine_DarkZenith" copy_from="HackToGrantShipLine" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_GrantShipLine_DontDestroyTarget" display_name="授予单位生产线" 
+          description="此破解将授予一条新的单位生产线。"
+        hack_duration="120"
+		number_of_times_individual_unit_can_be_hacked="5"
+		hacking_cost_multiplier_per_attempt="1.25"
+		response_strength_multiplier_per_time_hacked_same_target="1.5"
+        primary_hacking_response_interval="30"
+        primary_response_strength_per_interval="1.5"
+		secondary_hacking_response_interval="20"
+		secondary_response_strength_per_interval="0.8"
+        cost_in_hacking_points="20"
+        response_strength_on_completion="1"
+        local_hacker_required="true"
+        hack_is_against_planet="false"
+        use_closest_hacker_for_check="true"
+        choose_a_specific_ship_line_to_grant="true"
+        choice_text="你想为这个入侵添加哪条单位生产线？"
+        destroy_hack_target_on_completion="false"
+        choice_text_height="60"
+        relatedstring_is_a_ship_type="true"
+	exo_on_completion="false"
+/>
+
+<item name="HackToGrantCruiser_DarkZenith" copy_from="HackToGrantShipLine_DarkZenith" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_GrantShipLine_DontDestroyTarget" display_name="授予巡洋舰" 
+		  cost_in_hacking_points="40"
+		  hack_duration="300"
+		  number_of_times_individual_unit_can_be_hacked="1"
+		  hacking_cost_multiplier_per_attempt="0"
+		  tertiary_hacking_response_interval="60"
+	      tertiary_response_strength_per_interval="1.5"
+/>
+</root>

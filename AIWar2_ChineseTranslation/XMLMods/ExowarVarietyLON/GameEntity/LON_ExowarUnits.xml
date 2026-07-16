@@ -1,0 +1,1685 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- Exowar Tier 1 Units:
+  ************************************************************************************************--> 
+
+	<entity name="LONExtragalacticEchidna" tags="ExtragalacticWar,BecomesNecromancyMummy,ExtragalacticWarTier1" ship_class_name="ExowarTier1"
+		thematic_groups="ExogalacticWarFront"
+		draw_in_galaxy_view="true"
+		visuals="assets/_finalgamemeshes/guardians/widowguardian/widowguardian.prefab"
+		icon_name="Ships4/ExoTier1" icon_overlay="Overlays2/Guardian_Shredder" gimbal_icon_size_multiplier="2"
+		voice_group="Silent"			
+		uses_large_health_bar="true"
+		category="Ship"
+            	size_scale="10.8"
+		visuals_scale_multiplier="11.5"
+		y_offset_of_icon="30"
+		collision_priority="810"
+		display_name="针鼹" override_faction_name="AI Exogalactic War Front"
+		description="速度极快，但射程几乎是零距离。它的愤怒不会随死亡而终结，因为必有怪物降临。"			
+		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+		cost_for_ai_to_purchase="50000" strength_multiplier="1.2"
+		hull_points="7000000" shield_points="2000000" speed="AboveAverage4"			
+		metal_cost="3500000" energy_consumption="25000"	
+		armor_mm="210" albedo="0.7" engine_gx="23" mass_tx="7"
+		can_pass_through_enemy_forcefields="true"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+		ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            	priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+		>
+		<entity_type_drawing_bag_used_on_death data_list="LONEchidnaNanoswarm" min_spawn_value_list="10" />
+    		<system name="M1" display_name="撕裂者"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="200000" range="VeryTiny3" shot_speed="Fast" rate_of_fire="Normal"
+			shot_type_data="MeleeInvisible"	added_target_evaluator="Melee"			
+			>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="2" />
+    		</system>
+    	</entity>
+	<entity graphicsdone="true" name="LONExtragalacticEchidna" is_partial_record="true" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss"
+		>
+		<ai_ship_group_membership name="LONExowarTier1Guardians" weight="100"/>
+		<ai_ship_group_membership name="LONExowarTier1Exoleaders" weight="20"/>
+		<ai_ship_group_membership name="LONExowarTier1ExoWaveUnits" weight="100"/>
+		<ai_ship_group_membership name="LONExowarTier1SingularFreakySurprises" weight="110"/>
+    	</entity>
+	<entity name="LONEchidnaNanoswarm" ship_class_name="ExowarTier1" 
+            	thematic_groups="Strikecraft"
+		visuals="Assets/_FinalGameMeshes/FleetShips/AutoBomb/AutoBomb.prefab" 
+		icon_name="Ships1/AutoBomb"
+		voice_group="Silent"
+		category="Ship" is_strikecraft="true"
+		size_scale="1.1"
+		visuals_scale_multiplier="5"
+		collision_priority="100"
+		display_name="混沌之卵"
+		description="无人自动炸弹，撞击时引爆，自我摧毁以造成麻痹和僵尸化，同时释放高伤害子母弹。"
+		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+		cost_for_ai_to_purchase="1000" strength_multiplier="0.3"
+		hull_points="200000" shield_points="0" speed="High"
+		metal_cost="10000" energy_consumption="175"
+		armor_mm="110" albedo="0.3" engine_gx="7" mass_tx="0.21"
+		ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+		priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+		>
+		<system name="WM" display_name="引爆"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="300" range="AlmostNone" seek_range="Normal1" shot_speed="Instant" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+			shot_type_data="ExplosiveFlakBurst"
+			area_of_effect_size="2000"
+			maximum_number_of_targets_hit_per_shot="90"
+			health_change_by_max_health_divided_by_this_per_attack="-1"
+			>
+			<death_effect_damage type="Zombification" tier_name="SuperficialDamage"/>
+		</system>
+		<data_extension name="DLC3" required_expansion_list="1_The_Spire_Rises,3_The_Neinzul_Abyss"
+			immune_to_necromancy="true"/>
+		<entity_type_drawing_bag_used_on_death data_list="LONEchidnaAutobomb" min_spawn_value_list="10" />
+	</entity>
+	<entity graphicsdone="true" copy_from="AutoBomb" name="LONEchidnaAutobomb" ship_class_name="ExowarTier1" display_name="愤怒之卵"
+		description="无人自动炸弹，撞击时引爆，自我摧毁并对区域造成大量伤害。"
+		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+		strength_multiplier="0.2"
+		hull_points="20000"
+		metal_cost="1000" 
+		>
+    		<system name="WM" 
+			damage_per_shot="8000"
+		>
+	  	</system>
+  	</entity>
+
+	<entity name="LONExtragalacticCyclops" tags="ExtragalacticWar,BecomesNecromancyMummy,ExtragalacticWarTier1" ship_class_name="ExowarTier1"
+		thematic_groups="ExogalacticWarFront"
+		draw_in_galaxy_view="true"
+		visuals="assets/_finalgamemeshes/golems/armoredgolem/armoredgolem.prefab"
+		icon_name="Ships4/ExoTier1" icon_overlay="Overlays2/Guardian_Nucleophilic" gimbal_icon_size_multiplier="2"
+		voice_group="Silent"			
+		uses_large_health_bar="true"
+		category="Ship"
+            	size_scale="10.4"
+		visuals_scale_multiplier="1.35"
+		y_offset_of_icon="70"
+		collision_priority="810"
+		display_name="独眼巨人" override_faction_name="AI Exogalactic War Front"
+		description="专为在火力下摧毁防御工事而优化的慢速单位。"
+		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+		cost_for_ai_to_purchase="40000" strength_multiplier="0.6"
+		hull_points="4000000" shield_points="4000000" speed="VeryVeryLittle4"			
+		metal_cost="2000000" energy_consumption="100000"	
+		armor_mm="250" albedo="0.4" engine_gx="12" mass_tx="7"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+		ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            	priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+		>		
+    		<system name="C1" display_name="能量爆发"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="5000" range="AboveAverage1" shot_speed="Slow" rate_of_fire="Devourer" 
+			shots_per_salvo="4" fires_salvos_sequentially="false"
+			shot_type_data="LaserPulse_Pink"
+			>
+    		</system>
+		<system name="C2" display_name="离子干扰阵列"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="1800" range="AboveAverage1" shot_speed="Fast" rate_of_fire="High" 
+			shots_per_salvo="64" fires_salvos_sequentially="false"
+			shot_type_data="ExtremelyLongRangeIon"
+			base_paralysis_seconds_per_shot="4" paralysis_to_ships_mass_tx_less_than="6"
+                	only_targets_static_units="true"
+			>
+    		</system>
+		<system name="B1" display_name="空间共振光束"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="150000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Devourer"
+			shots_per_salvo="3"
+			shot_type_data="HeavyBeamInvisible"
+			beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_Red"
+			hits_all_intersecting_targets="false"
+			shots_detonate_immediately="false"
+			only_targets_static_units="true"
+			>
+    		</system>
+		<incoming_damage_modifier based_on="MyTimeAtPlanet" comparison_type="LessThan" compared_to="20" multiplier="0.5" />
+		<incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="7500" multiplier="0.4" />
+    	</entity>
+ 	<!-- Disables the Cyclops from regular spawn if Neinzul Abyss is enabled because of the balance issue with wards.--> 
+	<entity graphicsdone="true" name="LONExtragalacticCyclops" is_partial_record="true" required_expansion_list="3_The_Neinzul_Abyss"
+		tags="BecomesNecromancyMummy"
+		>	
+    	</entity> 
+	<entity graphicsdone="true" name="LONExtragalacticCyclops" is_partial_record="true" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss"
+		>
+		<ai_ship_group_membership name="LONExowarTier1Guardians" weight="50"/>
+		<ai_ship_group_membership name="LONExowarTier1ExoWaveUnits" weight="50"/>
+		<ai_ship_group_membership name="LONExowarTier1SingularFreakySurprises" weight="12"/>
+		<ai_ship_group_membership name="LONExowarTier1Exoleaders" weight="100"/>
+    	</entity>
+	
+	<entity name="LONExtragalacticProteus" required_expansion_list="2_Zenith_Onslaught" ship_class_name="ExowarTier1Proteus"
+		tags="ExtragalacticWar,ExtragalacticWarTier1"
+		thematic_groups="ExogalacticWarFront"
+		draw_in_galaxy_view="true"
+		visuals="Assets/_FinalGameMeshes/AIExtragalactic/Tier3_ExtragalacticWarSlicerFrigate/Tier3_ExtragalacticWarSlicerFrigate.prefab"
+		icon_name="Ships4/ExoTier1" icon_overlay="Overlays2/Guardian_Shredder" gimbal_icon_size_multiplier="2"
+		voice_group="Silent"
+		uses_large_health_bar="true"
+		category="Ship"
+            	size_scale="4"
+		visuals_scale_multiplier="16"
+		y_offset_of_icon="30"
+		collision_priority="810"
+		display_name="普罗透斯" override_faction_name="AI Exogalactic War Front"
+		description="与其说是一艘船，不如说是一个伪装成船的贪婪蜂群。冲向敌人并开始吞噬它们。其无定形结构使其能够重组自身以减轻来自大型武器的伤害。"	
+		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+		cost_for_ai_to_purchase="48000" strength_multiplier="3"
+		hull_points="2000000" shield_points="0" speed="AboveAverage4"
+		metal_cost="1000000" energy_consumption="10000"	
+		armor_mm="70" albedo="0.85" engine_gx="22" mass_tx="6"
+		can_pass_through_enemy_forcefields="true"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+		ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            	priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+		damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.01"
+		>
+		<data_extension name="DLC3" required_expansion_list="1_The_Spire_Rises,3_The_Neinzul_Abyss"
+			immune_to_necromancy="true"/>
+		<entity_type_drawing_bag_used_on_death data_list="LONExtragalacticProteusStage2" min_spawn_value_list="4"/>
+    		<system name="M1" display_name="纳米机器人吸收"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="50000" range="VeryTiny4" shot_speed="Fast" rate_of_fire="Devourer"
+			shot_type_data="MeleeInvisible"	added_target_evaluator="Melee"
+			health_change_per_damage_dealt="0.5"
+			>
+    		</system>
+    	</entity>
+	<entity graphicsdone="true" name="LONExtragalacticProteus" is_partial_record="true" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss"
+		>
+		<ai_ship_group_membership name="LONExowarTier1Guardians" weight="100"/>
+		<ai_ship_group_membership name="LONExowarTier1Exoleaders" weight="10"/>
+		<ai_ship_group_membership name="LONExowarTier1ExoWaveUnits" weight="100"/>
+		<ai_ship_group_membership name="LONExowarTier1SingularFreakySurprises" weight="110"/>
+    	</entity>
+	<entity name="LONExtragalacticProteusStage2" required_expansion_list="2_Zenith_Onslaught" ship_class_name="ExowarTier1Proteus"
+		thematic_groups="ExogalacticWarFront"
+		special_entity_type="LargeShipNotStackable"
+		visuals="Assets/_FinalGameMeshes/AIExtragalactic/Tier3_ExtragalacticWarSlicerFrigate/Tier3_ExtragalacticWarSlicerFrigate.prefab"
+		icon_name="Ships4/ExoTier1" icon_overlay="Overlays2/Guardian_Shredder" gimbal_icon_size_multiplier="1.6"
+		voice_group="Silent"
+		uses_large_health_bar="true"
+		category="Ship"
+            	size_scale="3.2"
+		visuals_scale_multiplier="12.8"
+		y_offset_of_icon="30"
+		collision_priority="800"
+		display_name="重组普罗透斯" override_faction_name="AI Exogalactic War Front"
+		description="与其说是一艘船，不如说是一个伪装成船的贪婪蜂群。冲向敌人并开始吞噬它们。其无定形结构使其能够重组自身以减轻来自大型武器的伤害。"	
+		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+		cost_for_ai_to_purchase="12000" strength_multiplier="1.5"
+		hull_points="750000" shield_points="0" speed="AboveAverage4"
+		metal_cost="250000" energy_consumption="2500"
+		armor_mm="60" albedo="0.85" engine_gx="18" mass_tx="5"
+		can_pass_through_enemy_forcefields="true"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+		ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            	priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+		damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.03"
+		>
+		<data_extension name="DLC3" required_expansion_list="1_The_Spire_Rises,3_The_Neinzul_Abyss"
+			immune_to_necromancy="true"/>
+		<entity_type_drawing_bag_used_on_death data_list="LONExtragalacticProteusStage3" min_spawn_value_list="4"/>
+    		<system name="M1" display_name="纳米机器人吸收"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="25000" range="VeryTiny4" shot_speed="Fast" rate_of_fire="Devourer"
+			shot_type_data="MeleeInvisible"	added_target_evaluator="Melee"
+			health_change_per_damage_dealt="0.5"
+			>
+    		</system>
+    	</entity>
+	<entity name="LONExtragalacticProteusStage3" required_expansion_list="2_Zenith_Onslaught" ship_class_name="ExowarTier1Proteus"
+		tags="BecomesNecromancyWight"
+		thematic_groups="ExogalacticWarFront"
+		visuals="Assets/_FinalGameMeshes/AIExtragalactic/Tier3_ExtragalacticWarSlicerFrigate/Tier3_ExtragalacticWarSlicerFrigate.prefab"
+		icon_name="Ships4/ExoTier1" icon_overlay="Overlays2/Guardian_Shredder" gimbal_icon_size_multiplier="1.3"
+		voice_group="Silent"
+		uses_large_health_bar="true"
+		category="Ship"
+            	size_scale="2.533"
+		visuals_scale_multiplier="10"
+		y_offset_of_icon="30"
+		collision_priority="800"
+		display_name="衰落的普罗透斯" override_faction_name="AI Exogalactic War Front"
+		description="与其说是一艘船，不如说是一个伪装成船的贪婪蜂群。冲向敌人并开始吞噬它们。其无定形结构使其能够重组自身以减轻来自大型武器的伤害。"	
+		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+		cost_for_ai_to_purchase="3000" strength_multiplier="1.25"
+		hull_points="312500" shield_points="0" speed="AboveAverage4"
+		metal_cost="62500" energy_consumption="1250"
+		armor_mm="50" albedo="0.85" engine_gx="14" mass_tx="4"
+		can_pass_through_enemy_forcefields="true"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+		ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true" 
+            	priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+		damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.07"
+		>
+    		<system name="M1" display_name="纳米机器人吸收"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="25000" range="VeryTiny4" shot_speed="Fast" rate_of_fire="Misery"
+			shot_type_data="MeleeInvisible"	added_target_evaluator="Melee"
+			health_change_per_damage_dealt="0.5"
+			>
+    		</system>
+    	</entity>
+
+	<!-- Thank Starkelp for the name of this one, it's cool. -->
+	<entity name="LONExtragalacticMagni" required_expansion_list="2_Zenith_Onslaught" ship_class_name="ExowarTier1"
+		tags="ExtragalacticWar,BecomesNecromancyMummy,ExtragalacticWarTier1"
+		thematic_groups="ExogalacticWarFront"
+		draw_in_galaxy_view="true"
+		visuals="Assets/_DLC2/Zenith/DZJarl/DZJarl.prefab" visuals_bundle="exp2_zenith_onslaught"
+		 icon_name="Ships4/ExoTier1" icon_overlay="Overlays2/Guardian_Beam" gimbal_icon_size_multiplier="2"
+		voice_group="Silent"			
+		uses_large_health_bar="true"
+		category="Ship"
+            	size_scale="9"
+		visuals_scale_multiplier="20"
+		y_offset_of_icon="30"
+		collision_priority="810"
+		display_name="马格尼" override_faction_name="AI Exogalactic War Front"
+		description="使用偷来的天顶科技的大型单位。搭载了可怕的大型主光束武器，但速度慢且射程短。"
+		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+		cost_for_ai_to_purchase="62500" strength_multiplier="1.1"
+		hull_points="10000000" shield_points="3000000" speed="VeryVeryLittle4"			
+		metal_cost="3000000" energy_consumption="150000"
+		returns_this_percentage_of_damage_if_damaged_by_enemy_attack="0.10"
+		armor_mm="210" albedo="0.5" engine_gx="14" mass_tx="8"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+		ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            	priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+		>
+	    	<system name="B1" display_name="超重型光束炮"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="1000000" range="Normal1" shot_speed="Normal" rate_of_fire="ExtremelyLow"
+			shot_type_data="HeavyBeamInvisible"
+			beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_Red"
+			hits_all_intersecting_targets="false"				
+			shots_detonate_immediately="false"
+			>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="1.1" />
+			<outgoing_damage_modifier based_on="Albedo" comparison_type="AtLeast" compared_to="0.6" multiplier="3" />
+    		</system>
+		<system name="C1" display_name="能量爆发"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="2500" range="Normal1" shot_speed="Slow" rate_of_fire="Devourer" 
+			shots_per_salvo="20" fires_salvos_sequentially="false"				
+			shot_type_data="LaserPulse_Pink"
+			>
+    		</system>
+    	</entity>
+	<entity graphicsdone="true" name="LONExtragalacticMagni" is_partial_record="true" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss"
+		>
+		<ai_ship_group_membership name="LONExowarTier1Guardians" weight="40"/>
+		<ai_ship_group_membership name="LONExowarTier1Exoleaders" weight="100"/>
+		<ai_ship_group_membership name="LONExowarTier1ExoWaveUnits" weight="50"/>
+		<ai_ship_group_membership name="LONExowarTier1SingularFreakySurprises" weight="110"/>
+    	</entity>
+
+	<entity name="LONExtragalacticBasilisk" tags="ExtragalacticWar,BecomesNecromancyMummy,ExtragalacticWarTier1" required_expansion_list="3_The_Neinzul_Abyss" ship_class_name="ExowarTier1"
+		thematic_groups="ExogalacticWarFront"
+		draw_in_galaxy_view="true"
+	  	visuals="Assets/_DLC3/Venators/TruantVenator/TruantVenator.prefab" visuals_bundle="exp3_neinzul_abyss"
+		icon_name="Ships4/ExoTier1" icon_overlay="Overlays1/Warhead_Storm" gimbal_icon_size_multiplier="2"
+		voice_group="Silent"
+		uses_large_health_bar="true"
+		category="Ship"
+	 	size_scale="10"
+	  	visuals_scale_multiplier="4.2"
+		y_offset_of_icon="30"
+		collision_priority="810"
+		display_name="巴西利斯克" override_faction_name="AI Exogalactic War Front"
+		description="搭载了强大的腐蚀性武器，这个单位不容小觑，尽管它为何没有护盾仍然是个谜。"			
+		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+		cost_for_ai_to_purchase="46500" strength_multiplier="1.55"
+		hull_points="9000000" shield_points="0" speed="AboveAverage1"
+		metal_cost="3500000" energy_consumption="75000"	
+		armor_mm="210" albedo="0.3" engine_gx="21" mass_tx="7"
+		can_pass_through_enemy_forcefields="true"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+		ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            	priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+		>
+		<system name="W1" display_name="腐蚀喷雾"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1000" range="Normal1" shot_speed="Normal" rate_of_fire="Devourer"
+				shots_per_salvo="2" fires_salvos_sequentially="true"
+				shot_type_data="FlakShotAOEBurstAtEnd"
+				area_of_effect_size="600"				
+				maximum_number_of_targets_hit_per_shot="5"
+                		base_percent_damage_bypasses_personal_shields="1"
+				corrosion_damage="4000"
+				>
+    		</system>
+
+    	</entity>
+	<entity graphicsdone="true" name="LONExtragalacticBasilisk" is_partial_record="true" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss"
+		>
+		<ai_ship_group_membership name="LONExowarTier1Guardians" weight="100"/>
+		<ai_ship_group_membership name="LONExowarTier1Exoleaders" weight="100"/>
+		<ai_ship_group_membership name="LONExowarTier1ExoWaveUnits" weight="100"/>
+		<ai_ship_group_membership name="LONExowarTier1SingularFreakySurprises" weight="110"/>
+    	</entity>
+
+	<entity graphicsdone="true" name="ExtragalacticPhoenix" is_partial_record="true" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss"
+		>
+		<ai_ship_group_membership name="LONExowarTier1Guardians" weight="100"/>
+		<ai_ship_group_membership name="LONExowarTier1Exoleaders" weight="100"/>
+		<ai_ship_group_membership name="LONExowarTier1ExoWaveUnits" weight="100"/>
+		<ai_ship_group_membership name="LONExowarTier1SingularFreakySurprises" weight="90"/>
+    	</entity>
+
+	<entity graphicsdone="true" name="ExtragalacticMaugrim" is_partial_record="true" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss"
+		>
+		<ai_ship_group_membership name="LONExowarTier1Guardians" weight="100"/>
+		<ai_ship_group_membership name="LONExowarTier1Exoleaders" weight="100"/>
+		<ai_ship_group_membership name="LONExowarTier1ExoWaveUnits" weight="100"/>
+		<ai_ship_group_membership name="LONExowarTier1SingularFreakySurprises" weight="90"/>
+    	</entity>
+
+	<entity graphicsdone="true" name="ExtragalacticAIHunterSeeker" is_partial_record="true"
+		cost_for_ai_to_purchase="52000"
+		>
+    	</entity> 
+	<entity graphicsdone="true" name="ExtragalacticAIHunterSeeker" is_partial_record="true" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss"
+		>
+		<ai_ship_group_membership name="LONExowarTier1Guardians" weight="60"/>
+		<ai_ship_group_membership name="LONExowarTier1Exoleaders" weight="80"/>
+		<ai_ship_group_membership name="LONExowarTier1ExoWaveUnits" weight="100"/>
+		<ai_ship_group_membership name="LONExowarTier1SingularFreakySurprises" weight="90"/>
+    	</entity> 
+
+  <!-- Exowar Tier 2 Units:
+  ************************************************************************************************--> 
+	<entity name="LONExtragalacticPhoenixV2" tags="ExtragalacticWar,ExtragalacticWarTier2" ship_class_name="ExowarTier2"
+		thematic_groups="ExogalacticWarFront"
+		draw_in_galaxy_view="true"
+		visuals="Assets/_FinalGameMeshes/AIExtragalactic/Tier1_ExtralacticRaven/Tier1_ExtralacticRaven.prefab"
+		 icon_name="Ships4/ExoTier1" icon_overlay="Overlays2/Guardian_Nucleophilic" gimbal_icon_size_multiplier="2"
+		voice_group="Silent"			
+		uses_large_health_bar="true"
+		category="Ship"
+            	size_scale="6.2"
+		visuals_scale_multiplier="3"
+		y_offset_of_icon="30"
+		collision_priority="810"
+		display_name="不稳定凤凰" override_faction_name="AI Exogalactic War Front"
+		description="（就体型而言）相对快速的单位，配备快速连发激光脉冲。然而，其能量特征似乎有些异常……"
+		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+		cost_for_ai_to_purchase="45000"
+		hull_points="6000000" shield_points="3000000" speed="AboveAverage3"			
+		metal_cost="2000000" energy_consumption="75000"	
+		armor_mm="180" albedo="0.4" engine_gx="18" mass_tx="7"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+		ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            	priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+		>
+		<data_extension name="DLC3" required_expansion_list="1_The_Spire_Rises,3_The_Neinzul_Abyss"
+			immune_to_necromancy="true"/>
+		<entity_type_drawing_bag_used_on_death data_list="LONExtragalacticPhoenixV2Stage2"/>	
+    		<system name="C1" display_name="能量爆发"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="2500" range="AboveAverage1" shot_speed="Slow" rate_of_fire="Devourer" 
+			shots_per_salvo="40" fires_salvos_sequentially="false"				
+			shot_type_data="LaserPulse_Pink"
+			>
+    		</system>
+    	</entity>
+	<entity graphicsdone="true" name="LONExtragalacticPhoenixV2" is_partial_record="true" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss"
+		>
+		<ai_ship_group_membership name="LONExowarTier2ExoWaveUnits" weight="50"/>
+		<ai_ship_group_membership name="LONExowarTier2SingularFreakySurprises" weight="110"/>
+    	</entity>
+	<entity name="LONExtragalacticPhoenixV2Stage2" tags="BecomesNecromancyMummy" ship_class_name="ExowarTier2"
+		thematic_groups="ExogalacticWarFront"
+		draw_in_galaxy_view="true"
+		visuals="Assets/_FinalGameMeshes/AIExtragalactic/Tier1_ExtralacticRaven/Tier1_ExtralacticRaven.prefab"
+		 icon_name="Ships4/ExoTier2" icon_overlay="Overlays2/Guardian_Nucleophilic" gimbal_icon_size_multiplier="2"
+		voice_group="Silent"			
+		uses_large_health_bar="true"
+		category="Ship"
+            	size_scale="9.3"
+		visuals_scale_multiplier="4.5"
+		y_offset_of_icon="30"
+		collision_priority="810"
+		self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="0.5"
+		display_name="炽热凤凰" display_name_for_sidebar="炽凤" override_faction_name="AI Exogalactic War Front"
+		description="狂暴的过载版凤凰，从不稳定凤凰的灰烬中诞生。然而，其中涉及的奇异技术对单位本身并不完全健康。"
+		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+		cost_for_ai_to_purchase="65000" strength_multiplier="0.8"
+		hull_points="10000000" shield_points="0" speed="High2"			
+		metal_cost="1000000" energy_consumption="150000"	
+		armor_mm="180" albedo="0.8" engine_gx="23" mass_tx="7"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+		ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true" priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="Expendable"
+		should_not_be_given_normal_orders_by_ai_logic="true"
+		>		
+    		<system name="C1" display_name="狂暴能量爆发"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="6000" range="AboveAverage1" shot_speed="Slow" rate_of_fire="Devourer" 
+			shots_per_salvo="60" fires_salvos_sequentially="false"				
+			shot_type_data="LaserPulse_Pink"
+			>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="2" />
+    		</system>	
+    	</entity>
+	
+	<entity name="LONExtragalacticCentaur" tags="ExtragalacticWar,BecomesNecromancyMummy,ExtragalacticWarTier2" ship_class_name="ExowarTier2"
+		thematic_groups="ExogalacticWarFront"
+		draw_in_galaxy_view="true"
+		visuals="Assets/_FinalGameMeshes/AIExtragalactic/Tier3_ExtragalacticCommandDeck/Tier3_ExtragalacticCommandDeck.prefab"
+		 icon_name="Ships4/ExoTier2" icon_overlay="Overlays1/MegaTurret_MassDriver" gimbal_icon_size_multiplier="2"
+		voice_group="Silent"
+		uses_large_health_bar="true"
+		category="Ship"
+            	size_scale="9.5"
+		visuals_scale_multiplier="13.5"
+		y_offset_of_ship_in_visual_space="15"
+		y_offset_of_icon="30"
+		collision_priority="810"
+		display_name="半人马" override_faction_name="AI Exogalactic War Front"
+		description="使用各种武器干扰效果来防御接近敌人的远程轰炸单位。"			
+		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+		cost_for_ai_to_purchase="71000"
+		hull_points="15000000" shield_points="3000000" speed="Normal2"
+		metal_cost="5000000" energy_consumption="10000"	
+		armor_mm="245" albedo="0.2" engine_gx="20" mass_tx="9"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+		ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+		priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+		explicit_kite_distance="75000"
+		>
+		<system name="C1" display_name="质量干扰阵列"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="500" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Devourer"
+			shots_per_salvo="16" fires_salvos_sequentially="false"
+			shot_type_data="ElegantCurl"
+                	base_enemy_weapon_reload_slowing_seconds_per_shot="20" added_target_evaluator="WeaponJamAsPrimary"	
+			max_enemy_weapon_reload_slowing_seconds="40"
+                	enemy_weapon_reload_slowing_to_armor_mm_less_than="70"
+			>
+    		</system>
+		<system name="C2" display_name="干扰弹"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="10000" range="AboveAverage2" shot_speed="Normal" rate_of_fire="Devourer"
+			shots_per_salvo="3" fires_salvos_sequentially="false"
+			shot_type_data="ElegantCurl"
+                	base_enemy_weapon_reload_slowing_seconds_per_shot="20" added_target_evaluator="WeaponJamAsPrimary"	
+			max_enemy_weapon_reload_slowing_seconds="40"
+                	enemy_weapon_reload_slowing_to_armor_mm_less_than="150"
+			>
+    		</system>
+	    	<system name="C3" display_name="重型等离子鱼雷"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="250000" range="InsanelyHigh" shot_speed="Slow" rate_of_fire="Misery" 
+			shot_type_data="PlasmaTorpedo"
+			>
+    		</system>
+    	</entity>
+	<entity graphicsdone="true" name="LONExtragalacticCentaur" is_partial_record="true" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss"
+		>
+		<ai_ship_group_membership name="LONExowarTier2ExoWaveUnits" weight="100"/>
+		<ai_ship_group_membership name="LONExowarTier2SingularFreakySurprises" weight="110"/>
+    	</entity>
+
+	<entity name="LONExtragalacticLamassu" tags="ExtragalacticWar,BecomesNecromancyMummy,ExtragalacticWarTier2" ship_class_name="ExowarTier2"
+		thematic_groups="ExogalacticWarFront"
+		draw_in_galaxy_view="true"
+           	visuals="assets/_finalgamemeshes/guardians/shieldguardian/shieldguardian.prefab"
+           	 icon_name="Ships4/ExoTier2" icon_overlay="Overlays2/Guardian_Shield" gimbal_icon_size_multiplier="2"
+            	uses_large_health_bar="true"
+            	category="Ship"
+            	size_scale="21.6"
+		visuals_scale_multiplier="24"
+            	y_offset_of_icon="35"
+            	collision_priority="875"
+            	display_name="拉玛苏" override_faction_name="AI Exogalactic War Front"
+            	description="强大的单位，拥有异常强大且大型的球形力场护盾，但火力相对于体型较弱。受其保护的单位将造成全额伤害。"
+            	shield_size_scale="10" my_forcefield_does_not_shrink="true" my_forcefield_has_no_penalty_for_enemies_firing_out_of_it="true"
+            	voice_group="Silent"
+		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+		cost_for_ai_to_purchase="73000" strength_multiplier="0.7"
+		hull_points="4000000" shield_points="22000000" speed="Normal2"
+		metal_cost="4500000" energy_consumption="50000"
+		armor_mm="120" albedo="0.7" engine_gx="20" mass_tx="8"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+		ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            	priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+		>
+		<system name="C1" display_name="能量弹"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="4500" range="AboveAverage3" shot_speed="Slow" rate_of_fire="Devourer" 
+			shots_per_salvo="20" fires_salvos_sequentially="false"				
+			shot_type_data="LaserPulse_DeepBlue"
+			>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="2.5" />
+    		</system>
+	</entity>
+	<entity graphicsdone="true" name="LONExtragalacticLamassu" is_partial_record="true" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss"
+		>
+		<ai_ship_group_membership name="LONExowarTier2SingularFreakySurprises" weight="22"/>
+    	</entity>
+
+	<entity name="LONExtragalacticTyphon" tags="ExtragalacticWar,BecomesNecromancyMummy,ExtragalacticWarTier2" required_expansion_list="2_Zenith_Onslaught" ship_class_name="ExowarTier2"
+		thematic_groups="ExogalacticWarFront"
+		draw_in_galaxy_view="true"
+            	visuals="Assets/_DLC2/General/MinelayerFrigate/MinelayerFrigate.prefab" visuals_bundle="exp2_zenith_onslaught"
+		 icon_name="Ships4/ExoTier2" icon_overlay="Overlays1/Turret_Acid" gimbal_icon_size_multiplier="2"
+		voice_group="Silent"			
+		uses_large_health_bar="true"
+		category="Ship"
+		size_scale="15"
+		visuals_scale_multiplier="38"
+		y_offset_of_icon="30"
+		collision_priority="810"
+		display_name="堤丰" override_faction_name="AI Exogalactic War Front"
+		description="AI 释放的新恐怖。使用酸性武器软化目标，然后将其撕碎。任何试图反击的人都只会助长其邪恶的防御系统，造成更多屠杀。"			
+		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+		cost_for_ai_to_purchase="75000"
+		hull_points="20000000" shield_points="4000000" speed="Normal2"			
+		metal_cost="5000000" energy_consumption="125000"	
+		armor_mm="150" albedo="0.2" engine_gx="18" mass_tx="10"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+		ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            	priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+		>		
+		<system name="C1" display_name="酸息"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="200" range="Small5" shot_speed="Slow" rate_of_fire="Devourer" 
+			shots_per_salvo="10" fires_salvos_sequentially="false"	
+			shot_type_data="DoubleShot_Green"
+			damage_amplification="true" damage_amplification_duration="10" damage_amplification_flat="600"
+			>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="7" multiplier="5" />
+       			<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtLeast" compared_to="180" multiplier="2" />
+    		</system>
+		<system name="R1" display_name="酸液溅射系统"
+			category="Weapon" firing_timing="WhenParentEntityHit" 
+			shot_type_data="ExplosiveInvisible" shot_speed="Instant"
+			damage_per_shot="5" range="Normal3" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+			damage_amplification="true" damage_amplification_duration="10" damage_amplification_flat="600"
+			>
+		</system>
+    	</entity>
+	<entity graphicsdone="true" name="LONExtragalacticTyphon" is_partial_record="true" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss"
+		>
+		<ai_ship_group_membership name="LONExowarTier2ExoWaveUnits" weight="100"/>
+		<ai_ship_group_membership name="LONExowarTier2SingularFreakySurprises" weight="110"/>
+    	</entity>
+
+	<entity name="LONExtragalacticStrix" tags="ExtragalacticWar,BecomesNecromancyMummy,ExtragalacticWarTier2" required_expansion_list="2_Zenith_Onslaught" ship_class_name="ExowarTier2"
+			draw_in_galaxy_view="true"
+            		visuals="assets/_dlc2/golems/raijingolem/raijingolem.prefab" visuals_bundle="exp2_zenith_onslaught"
+			 icon_name="Ships4/ExoTier2" icon_overlay="Overlays1/MegaTurret_MassDriver" gimbal_icon_size_multiplier="2"
+			voice_group="Silent"			
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="15"
+			visuals_scale_multiplier="15"
+			y_offset_of_icon="30"
+			collision_priority="810"
+			display_name="斯特里克斯" override_faction_name="AI Exogalactic War Front"
+			description="偷来的天顶科技使这艘船能够结合旨在摧毁大型目标的强大武器和电毒船体，同时保持比大多数同体型单位更快的速度。"		
+			starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+			cost_for_ai_to_purchase="70000" strength_multiplier="0.9"
+			hull_points="11000000" shield_points="6000000" speed="AboveAverage4"
+			metal_cost="5000000" energy_consumption="65000"	
+			returns_this_percentage_of_damage_if_damaged_by_enemy_attack="0.30"
+			armor_mm="200" albedo="0.7" engine_gx="23" mass_tx="9"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            		priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+			>
+    		<system name="C1" display_name="吸血等离子炮"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="300000" range="Normal5" shot_speed="Slow" rate_of_fire="Normal" 
+			shots_per_salvo="2" fires_salvos_sequentially="true"
+			shot_type_data="PlasmaTorpedo"
+			health_change_per_damage_dealt="0.4"
+			>
+			<outgoing_damage_modifier based_on="TargetTimeAtPlanet" comparison_type="LessThan" compared_to="30" multiplier="3" />
+    		</system>
+    	</entity>
+	<entity graphicsdone="true" name="LONExtragalacticStrix" is_partial_record="true" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss"
+		>
+		<ai_ship_group_membership name="LONExowarTier2ExoWaveUnits" weight="100"/>
+		<ai_ship_group_membership name="LONExowarTier2SingularFreakySurprises" weight="165"/>
+    	</entity>
+
+	<entity name="LONExtragalacticDireProteus" required_expansion_list="2_Zenith_Onslaught" ship_class_name="ExowarTier2DireProteus"
+		tags="ExtragalacticWar,ExtragalacticWarTier2"
+		thematic_groups="ExogalacticWarFront"
+		draw_in_galaxy_view="true"
+		visuals="Assets/_FinalGameMeshes/AIExtragalactic/Tier3_ExtragalacticWarSlicerFrigate/Tier3_ExtragalacticWarSlicerFrigate.prefab"
+		icon_name="Ships4/ExoTier2" icon_overlay="Overlays2/Guardian_Shredder" gimbal_icon_size_multiplier="2"
+		voice_group="Silent"
+		uses_large_health_bar="true"
+		category="Ship"
+            	size_scale="6"
+		visuals_scale_multiplier="24"
+		y_offset_of_icon="30"
+		collision_priority="810"
+		display_name="可怕的普罗透斯" override_faction_name="AI Exogalactic War Front"
+		description="我们之前遇到过普罗透斯，它与其说是一艘船，不如说是一个伪装成船的贪婪蜂群。这个也一样。但更大。大得多。"	
+		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+		cost_for_ai_to_purchase="80000" strength_multiplier="3"
+		hull_points="5000000" shield_points="0" speed="AboveAverage4"
+		metal_cost="2000000" energy_consumption="35000"	
+		armor_mm="150" albedo="0.85" engine_gx="23" mass_tx="7"
+		can_pass_through_enemy_forcefields="true"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+		ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+		build_points_per_damage_taken="0.325"
+		unit_to_make_with_build_points_from_damage_taken="LONExtragalacticDireProteusStage2"
+            	priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+		damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.01"
+		>
+		<data_extension name="DLC3" required_expansion_list="1_The_Spire_Rises,3_The_Neinzul_Abyss"
+			immune_to_necromancy="true"/>
+		<entity_type_drawing_bag_used_on_death data_list="LONExtragalacticDireProteusStage2" min_spawn_value_list="1"/>
+    		<system name="M1" display_name="纳米机器人吸收"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="100000" range="VeryTiny4" shot_speed="Fast" rate_of_fire="Devourer"
+			shot_type_data="MeleeInvisible"	added_target_evaluator="Melee"
+			health_change_per_damage_dealt="0.5"
+			>
+    		</system>
+    	</entity>
+	<entity graphicsdone="true" name="LONExtragalacticDireProteus" is_partial_record="true" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss"
+		>
+		<ai_ship_group_membership name="LONExowarTier2ExoWaveUnits" weight="75"/>
+		<ai_ship_group_membership name="LONExowarTier2SingularFreakySurprises" weight="55"/>
+    	</entity>
+	<entity graphicsdone="true" copy_from="LONExtragalacticProteus" name="LONExtragalacticDireProteusStage2" required_expansion_list="2_Zenith_Onslaught" display_name="重生的可怕普罗透斯" display_name_for_sidebar="重生可怕普罗"
+		>
+		<entity_type_drawing_bag_used_on_death data_list="LONExtragalacticDireProteusStage3" min_spawn_value_list="4"/>
+  	</entity>
+	<entity graphicsdone="true" copy_from="LONExtragalacticProteusStage2" name="LONExtragalacticDireProteusStage3" required_expansion_list="2_Zenith_Onslaught" display_name="重组的可怕普罗透斯" display_name_for_sidebar="重组可怕普罗"
+		>
+		<entity_type_drawing_bag_used_on_death data_list="LONExtragalacticDireProteusStage4" min_spawn_value_list="4"/>
+  	</entity>
+	<entity graphicsdone="true" copy_from="LONExtragalacticProteusStage3" name="LONExtragalacticDireProteusStage4" required_expansion_list="2_Zenith_Onslaught" display_name="衰落的可怕普罗透斯" display_name_for_sidebar="衰落可怕普罗"
+		>
+		<system name="W2" display_name="感染终曲"
+			category="Weapon" firing_timing="OnlyInRange"
+			only_fires_on_death="true"
+			damage_per_shot="1100" range="Small1" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+			shot_type_data="LightningExplosionAOEShot" 
+			area_of_effect_size="4500"
+			shots_detonate_immediately="true"
+			maximum_number_of_targets_hit_per_shot="20"
+			health_change_by_max_health_divided_by_this_per_attack="-1"
+			>
+      			<death_effect_damage type="Nanocaustation" tier_name="LargeNanocaustShip"/>
+		</system>
+  	</entity>
+
+	<!-- Thank Dismiss for the name of this one, it's cool. -->
+	<entity name="LONExtragalacticPolaris" tags="ExtragalacticWar,BecomesNecromancyMummy,ExtragalacticWarTier2" required_expansion_list="3_The_Neinzul_Abyss" ship_class_name="ExowarTier2"
+		thematic_groups="ExogalacticWarFront"
+		draw_in_galaxy_view="true"
+            	visuals="Assets/_DLC3/Destroyers/SirenDestroyer/SirenDestroyer.prefab" visuals_bundle="exp3_neinzul_abyss"
+		icon_name="Ships4/ExoTier2" gimbal_icon_size_multiplier="2"
+		voice_group="Silent"			
+		uses_large_health_bar="true"
+		category="Ship"
+		size_scale="8.2"
+		visuals_scale_multiplier="3.8"
+		y_offset_of_icon="30"
+		collision_priority="810"
+		display_name="北极星" override_faction_name="AI Exogalactic War Front"
+		description="这个 AI 单位对混合反照率的舰队特别危险。如果遇到这样的舰队，它会以部分舰队为食来摧毁其余部分。"			
+		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+		cost_for_ai_to_purchase="68000" strength_multiplier="1.2"
+		hull_points="4000000" shield_points="8000000" speed="BelowAverage2"			
+		metal_cost="5000000" energy_consumption="50000"
+		armor_mm="150" albedo="0.9" engine_gx="18" mass_tx="9"
+		max_number_of_weapon_points="100"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+		ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            	priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+		>		
+		<system name="W1" display_name="肆虐能量虹吸"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="7500" range="High2" shot_speed="Fast" rate_of_fire="Devourer"
+			shots_per_salvo="5"
+               		shot_type_data="HeavyBeamInvisible"
+               		beam_length_multiplier="1" beam_weapon_visual_style="Laser_Purple"
+			number_of_weapon_points_to_gain_on_firing="1" 		
+			base_enemy_weapon_reload_slowing_seconds_per_shot="2"
+			max_enemy_weapon_reload_slowing_seconds="4"
+                	enemy_weapon_reload_slowing_to_armor_mm_less_than="150"	
+			>
+			<outgoing_damage_modifier based_on="Albedo" comparison_type="AtMost" compared_to="0.5" multiplier="0" />
+		</system>
+		<system name="W3" display_name="能量虹吸"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="7500" range="High2" shot_speed="Fast" rate_of_fire="Devourer"
+			shots_per_salvo="10"
+               		shot_type_data="HeavyBeamInvisible"
+               		beam_length_multiplier="1" beam_weapon_visual_style="Laser_Purple"
+			number_of_weapon_points_to_gain_on_firing="1" 		
+			base_enemy_weapon_reload_slowing_seconds_per_shot="2"
+			max_enemy_weapon_reload_slowing_seconds="4"
+                	enemy_weapon_reload_slowing_to_armor_mm_less_than="70"	
+			>
+			<outgoing_damage_modifier based_on="Albedo" comparison_type="AtMost" compared_to="0.6" multiplier="0" />
+		</system>
+	 	<system name="W2" display_name="新星光束阵列"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="11000" range="High2" shot_speed="Fast" rate_of_fire="Devourer"
+			shots_per_salvo="7"
+               		shot_type_data="HeavyBeamInvisible"
+               		beam_length_multiplier="1" beam_weapon_visual_style="Laser_BlueBright"
+			additional_damage_modifier_per_weapon_point="3" number_of_weapon_points_to_consume_on_firing="1"
+			>
+			<outgoing_damage_modifier based_on="Albedo" comparison_type="AtLeast" compared_to="0.5" multiplier="0" />
+    		</system>
+    	</entity>
+	<entity graphicsdone="true" name="LONExtragalacticPolaris" is_partial_record="true" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss"
+		>
+		<ai_ship_group_membership name="LONExowarTier2ExoWaveUnits" weight="20"/>
+		<ai_ship_group_membership name="LONExowarTier2SingularFreakySurprises" weight="110"/>
+    	</entity>
+
+	<entity name="LONExtragalacticOgre" tags="ExtragalacticWar,BecomesNecromancyMummy,ExtragalacticWarTier2" required_expansion_list="3_The_Neinzul_Abyss" ship_class_name="ExowarTier2"
+		thematic_groups="ExogalacticWarFront"
+		draw_in_galaxy_view="true"
+		visuals="Assets/_DLC3/Destroyers/ChainsawDestroyer/ChainsawDestroyer.prefab" visuals_bundle="exp3_neinzul_abyss"
+		icon_name="Ships4/ExoTier2" icon_overlay="Overlays1/MegaTurret_MassDriver" gimbal_icon_size_multiplier="2"
+		voice_group="Silent"			
+		uses_large_health_bar="true"
+		category="Ship"
+		size_scale="7.5"
+		visuals_scale_multiplier="3.5"
+		y_offset_of_icon="30"
+		collision_priority="810"
+		display_name="食人魔" override_faction_name="AI Exogalactic War Front"
+		description="这个 AI 单位对混合体型的舰队特别危险。其巨大的口中包含一个相位分解阵列，可以将较小的单位化为废料，为强大的废料冲击炮提供燃料。如果没有废料可用，火炮也能凑合，但在进食之后会强大得多。"
+		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+		cost_for_ai_to_purchase="75000" strength_multiplier="1.5"
+		hull_points="10000000" shield_points="2000000" speed="AboveAverage1"
+		metal_cost="5000000" energy_consumption="75000"
+		armor_mm="210" albedo="0.5" engine_gx="21" mass_tx="11"
+		max_number_of_weapon_points="21"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+		ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            	priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+		>
+		<system name="W1" display_name="吞噬之口"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="10000" range="AlmostNone2" shot_speed="Normal" rate_of_fire="Devourer"
+			shots_per_salvo="3"
+               		shot_type_data="HeavyBeamInvisible"
+               		beam_length_multiplier="1" beam_weapon_visual_style="Laser_PurpleBright"
+			number_of_weapon_points_to_gain_on_firing="1"
+			can_devour="true" devour_mass_lower_than="2.1"
+			>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="2.1" multiplier="0" />
+		</system>
+		<system name="W2" display_name="猎物吸引系统"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="1000" range="AboveAverage2" shot_speed="Normal" rate_of_fire="Devourer" 
+			shots_per_salvo="3" fires_salvos_sequentially="false"
+			base_engine_stun_per_shot="8" added_engine_stun_per_shot_per_mark="4" engine_stun_to_engine_gx_less_than="18"
+			max_engine_stun_seconds="40" added_target_evaluator="EngineDamageAsMajorPrimary"
+			base_knockback_per_shot="-3000" knockback_to_ships_mass_tx_less_than="2.1"
+			shot_type_data="HeavyBeamInvisible" beam_length_multiplier="1" beam_weapon_visual_style="Laser_Purple"
+			>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="2.1" multiplier="0" />
+		</system>
+	 		<system name="W3" display_name="废料冲击炮"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="4375" range="AboveAverage2" shot_speed="Fast" rate_of_fire="ExtremelyLow"
+			shots_per_salvo="3"
+               		shot_type_data="MassDriver"
+			additional_damage_modifier_per_weapon_point="2" number_of_weapon_points_to_consume_on_firing="6"
+			>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="4" multiplier="55" />
+    		</system>
+    	</entity>
+	<entity graphicsdone="true" name="LONExtragalacticOgre" is_partial_record="true" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss"
+		>
+		<ai_ship_group_membership name="LONExowarTier2ExoWaveUnits" weight="20"/>
+		<ai_ship_group_membership name="LONExowarTier2SingularFreakySurprises" weight="110"/>
+    	</entity>
+
+	<entity graphicsdone="true" name="AIDragon" is_partial_record="true" required_expansion_list="1_The_Spire_Rises"
+		hull_points="25000000" shield_points="12500000"
+		>
+		<system name="W2" display_name="尖塔线圈光束"
+			damage_per_shot="162500"
+			>
+    		</system>
+    	</entity>
+
+	<entity graphicsdone="true" name="ExtragalacticChimeraArtillery" is_partial_record="true"
+		cost_for_ai_to_purchase="77500"
+		hull_points="10000000" shield_points="4000000"
+		>
+    	</entity>
+	<entity graphicsdone="true" name="ExtragalacticChimeraArtillery" is_partial_record="true" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss"
+		>
+		<ai_ship_group_membership name="LONExowarTier2ExoWaveUnits" weight="50"/>
+		<ai_ship_group_membership name="LONExowarTier2SingularFreakySurprises" weight="72"/>
+    	</entity>
+	<entity graphicsdone="true" name="ExtragalacticChimera" is_partial_record="true"
+		hull_points="10000000" shield_points="4000000"
+		>
+    	</entity>
+
+	<entity graphicsdone="true" name="ExtragalacticWendigo" is_partial_record="true" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss"
+		>
+		<ai_ship_group_membership name="LONExowarTier2ExoWaveUnits" weight="50"/>
+		<ai_ship_group_membership name="LONExowarTier2SingularFreakySurprises" weight="90"/>
+    	</entity>
+
+	<entity graphicsdone="true" name="ExtragalacticPoltergeist" is_partial_record="true" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss"
+		>
+		<ai_ship_group_membership name="LONExowarTier2ExoWaveUnits" weight="75"/>
+		<ai_ship_group_membership name="LONExowarTier2SingularFreakySurprises" weight="90"/>
+    	</entity>
+
+	<entity graphicsdone="true" name="ExtragalacticWyrm" is_partial_record="true" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss"
+		>
+		<ai_ship_group_membership name="LONExowarTier2ExoWaveUnits" weight="100"/>
+		<ai_ship_group_membership name="LONExowarTier2SingularFreakySurprises" weight="90"/>
+    	</entity>
+
+  <!-- Exowar Tier 3 Units:
+  ************************************************************************************************--> 
+	<!-- Thank RocketAssistedPuffin for the name of this one, it's cool. -->
+	<entity name="LONExtragalacticRedback" tags="ExtragalacticWar,BecomesNecromancyMummy,ExtragalacticWarTier3" ship_class_name="ExowarTier3"
+		thematic_groups="ExogalacticWarFront"
+		draw_in_galaxy_view="true"
+		visuals="assets/_finalgamemeshes/golems/blackwidowgolem/blackwidowgolem.prefab"
+		 icon_name="Ships4/ExoTier3" icon_overlay="Overlays2/Guardian_Paralysis" gimbal_icon_size_multiplier="2"
+		voice_group="Silent"			
+		uses_large_health_bar="true"
+		category="Ship"
+            	size_scale="19"
+		visuals_scale_multiplier="2.65"
+		y_offset_of_icon="55"
+		collision_priority="810"
+		display_name="红背" override_faction_name="AI Exogalactic War Front"
+		description="该单位似乎是黑寡妇巨像的重大升级版。"			
+		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+		cost_for_ai_to_purchase="242000" strength_multiplier="1.4"
+		hull_points="40000000" shield_points="20000000" speed="AboveAverage2"			
+		metal_cost="6000000" energy_consumption="100000"	
+		armor_mm="300" albedo="0.8" engine_gx="22" mass_tx="13"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+		ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            	priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+		>
+    	<system name="C1" display_name="麻痹炮阵列"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="7500" range="AboveAverage3" shot_speed="Normal" rate_of_fire="RatherLow"
+			shots_per_salvo="125" fires_salvos_sequentially="false"
+			base_paralysis_seconds_per_shot="7" paralysis_to_ships_mass_tx_less_than="6"
+			shot_type_data="ElegantCurl"
+			multiplier_damage_to_tractored_unit="2"
+			>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtMost" compared_to="5.9" multiplier="2" />
+    		</system>
+		<system name="C2" display_name="麻痹破坏弹"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="400000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="RatherLow"
+			base_paralysis_seconds_per_shot="17" paralysis_to_ships_mass_tx_less_than="9"
+			shot_type_data="Sabot"
+			>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="5" />
+    		</system>
+		<system name="TB" display_name="超重型牵引阵列"
+			category="Passive"
+			tractor_range="AboveAverage1" tractor_count="500" tractor_hits_albedo_less_than="0.6" tractor_hits_engine_gx_less_than="20"
+			>
+    		</system>
+    	</entity>
+	<entity graphicsdone="true" name="LONExtragalacticRedback" is_partial_record="true" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss"
+		>
+		<ai_ship_group_membership name="ExowarTier3" weight="100"/>
+    	</entity>
+
+
+<!-- This next unit was inspired by CRC suggesting the name, so 10% of the blame is his. Enjoy!--> 
+	<entity name="LONExtragalacticGrendel" tags="ExtragalacticWar,BecomesNecromancyMummy,ExtragalacticWarTier3" ship_class_name="ExowarTier3"
+		thematic_groups="ExogalacticWarFront"
+		draw_in_galaxy_view="true"
+		visuals="Assets/_FinalGameMeshes/AIExtragalactic/Tier1_ExtragalacticTrespasser/Tier1_ExtragalacticTrespasser.prefab"
+		 icon_name="Ships4/ExoTier3" icon_overlay="Overlays2/Guardian_Stealth" gimbal_icon_size_multiplier="2"
+		voice_group="Silent"			
+		uses_large_health_bar="true"
+		category="Ship"
+            	size_scale="19"
+		visuals_scale_multiplier="110"
+		y_offset_of_icon="55"
+		collision_priority="810"
+		display_name="格伦德尔" override_faction_name="AI Exogalactic War Front"
+		description="这个令人不安的隐形单位专为捕食小型单位和建筑而存在。"			
+		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+		cost_for_ai_to_purchase="150000" strength_multiplier="2"
+		hull_points="15000000" shield_points="15000000" speed="BelowAverage2"			
+		metal_cost="5000000" energy_consumption="50000"
+		armor_mm="110" albedo="0.7" engine_gx="13" mass_tx="12"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+		ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            	priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+		>
+    	<system name="C1" display_name="恐怖炮阵列"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="10000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="PeriodicActivation"
+			shots_per_salvo="110" fires_salvos_sequentially="false"
+			shot_type_data="ParasiteCurvedPinkShot" cloaking_percent_loss_from_firing="0.25"
+			>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtMost" compared_to="4" multiplier="3" />
+			<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="60" multiplier="3" />
+    		</system>
+		<system name="C" display_name="黑暗披风"
+			category="Passive" cloaking_points="20000"
+		>	
+	</system>
+	<!-- This ship is intentionally not in the ship groups used by the Rear Admiral, because it's frankly too annoying to appear there. -->
+    	</entity>
+
+	<entity name="LONExtragalacticManticore" tags="ExtragalacticWar,BecomesNecromancyMummy,ExtragalacticWarTier3" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught" ship_class_name="ExowarTier3"
+		thematic_groups="ExogalacticWarFront"
+		draw_in_galaxy_view="true"
+		visuals="assets/_DLC2/Zenith/ZAMurmillo/ZAMurmilloSpire.prefab" visuals_bundle="exp2_zenith_onslaught"
+		icon_name="Ships4/ExoTier3" gimbal_icon_size_multiplier="2"
+		voice_group="Silent"			
+		uses_large_health_bar="true"
+		category="Ship"
+		size_scale="18"
+		visuals_scale_multiplier="40"
+		y_offset_of_icon="16"
+		blocks_ceasefire_on_planet="true"
+		collision_priority="810"
+		display_name="蝎尾狮" override_faction_name="AI Exogalactic War Front"
+		description="这个强大的 AI 单位似乎是尖塔和天顶技术的不洁融合体，结合了两者的最佳特性。"			
+		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+		cost_for_ai_to_purchase="410000" strength_multiplier="1.3"
+		hull_points="50000000" shield_points="40000000" speed="AboveAverage1"			
+		metal_cost="7000000" energy_consumption="125000"	
+		returns_this_percentage_of_damage_if_damaged_by_enemy_attack="0.30"
+		armor_mm="350" albedo="0.7" engine_gx="22" mass_tx="15"
+		can_pass_through_enemy_forcefields="true"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+		ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            	priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+		>
+    		<system name="B1" display_name="尖塔线圈光束"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="600000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Devourer"
+			shot_type_data="HeavyBeamInvisible"
+			beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_Red"
+			hits_all_intersecting_targets="true"				
+			shots_detonate_immediately="true"
+                	is_coilbeam="true"
+			>
+    		</system>
+		<system name="SA" display_name="天顶吸引场"
+			category="Passive"
+			attract_range_for_shots_against_allies="AboveAverage1"
+			/>
+    	</entity>
+	<entity graphicsdone="true" name="LONExtragalacticManticore" is_partial_record="true" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss"
+		>
+		<ai_ship_group_membership name="ExowarTier3" weight="40"/>
+    	</entity>
+
+	<entity name="LONExtragalacticHydra" tags="ExtragalacticWar,BecomesNecromancyMummy,ExtragalacticWarTier3" required_expansion_list="3_The_Neinzul_Abyss" ship_class_name="ExowarTier3"
+		thematic_groups="ExogalacticWarFront"
+		draw_in_galaxy_view="true"
+		visuals="Assets/_DLC3/Clanlings/NeinzulClanlingCassowary/NeinzulClanlingCassowary.prefab" visuals_bundle="exp3_neinzul_abyss"
+		icon_name="Ships4/ExoTier3" gimbal_icon_size_multiplier="2"
+		voice_group="Silent"
+		uses_large_health_bar="true"
+		category="Ship"
+		size_scale="11"
+		visuals_scale_multiplier="95"
+		y_offset_of_icon="16"
+		blocks_ceasefire_on_planet="true"
+		collision_priority="810"
+		display_name="勒拿" override_faction_name="AI Exogalactic War Front"
+		description="这个强大的 AI 单位似乎是'九头蛇'技术的巅峰，结合了临时自我复制和先进的腐蚀性武器。"			
+		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+		cost_for_ai_to_purchase="280000" strength_multiplier="2"
+		hull_points="50000000" shield_points="0" speed="AboveAverage1"
+		metal_cost="7000000" energy_consumption="100000"
+		armor_mm="300" albedo="0.5" engine_gx="20" mass_tx="12"
+		can_pass_through_enemy_forcefields="true"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+		ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+		seconds_to_fully_regenerate_hull="660"
+		build_points_per_damage_taken="1.15"
+		unit_to_make_with_build_points_from_damage_taken="LONExtragalacticHydraHead"
+            	priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+		>
+		<system name="W1" display_name="腐蚀喷雾"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1000" range="High1" shot_speed="Normal" rate_of_fire="Devourer"
+				shots_per_salvo="4" fires_salvos_sequentially="true"
+				shot_type_data="FlakShotAOEBurstAtEnd"
+				area_of_effect_size="600"				
+				maximum_number_of_targets_hit_per_shot="5"
+                		base_percent_damage_bypasses_personal_shields="1"
+				corrosion_damage="5000"
+				>
+    		</system>
+    	</entity>
+	<entity graphicsdone="true" name="LONExtragalacticHydra" is_partial_record="true" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss"
+		>
+		<ai_ship_group_membership name="ExowarTier3" weight="50"/>
+    	</entity>
+	<entity name="LONExtragalacticHydraHead" tags="BecomesNecromancyWight" required_expansion_list="3_The_Neinzul_Abyss" ship_class_name="ExowarTier3"
+		thematic_groups="ExogalacticWarFront"
+		visuals="Assets/_DLC3/Clanlings/NeinzulClanlingCassowary/NeinzulClanlingCassowary.prefab" visuals_bundle="exp3_neinzul_abyss"
+		icon_name="Ships4/ExoTier3" gimbal_icon_size_multiplier="1.8"
+		voice_group="Silent"			
+		uses_large_health_bar="true"
+		category="Ship"
+		size_scale="6"
+		visuals_scale_multiplier="50"
+		y_offset_of_icon="16"
+		collision_priority="800"
+		display_name="勒拿之首" override_faction_name="AI Exogalactic War Front"
+		description="从 AI 勒拿怪身上生成的首级，配备了先进的腐蚀性武器。"			
+		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+		cost_for_ai_to_purchase="38000" strength_multiplier="0.9"
+		hull_points="10000000" shield_points="0" speed="AboveAverage1"			
+		metal_cost="1000000" energy_consumption="5000"
+		armor_mm="300" albedo="0.5" engine_gx="20" mass_tx="11"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+		ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+		self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="1"
+		always_self_attritions="true"
+            	priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+		>
+		<system name="W1" display_name="腐蚀喷雾"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1000" range="High1" shot_speed="Normal" rate_of_fire="Devourer"
+				shots_per_salvo="4" fires_salvos_sequentially="true"
+				shot_type_data="FlakShotAOEBurstAtEnd"
+				area_of_effect_size="600"				
+				maximum_number_of_targets_hit_per_shot="4"
+                		base_percent_damage_bypasses_personal_shields="1"
+				corrosion_damage="4000"
+				>
+    		</system>
+    	</entity>
+
+	<entity graphicsdone="true" name="ExtragalacticAIHunterAnnihilator" is_partial_record="true" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss"
+		>
+		<ai_ship_group_membership name="ExowarTier3" weight="100"/>
+    	</entity>
+	<entity graphicsdone="true" name="ExtragalacticJackalope" is_partial_record="true" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss"
+		>
+		<ai_ship_group_membership name="ExowarTier3" weight="60"/>
+    	</entity>
+	<entity graphicsdone="true" name="ExtragalacticThunderbird" is_partial_record="true" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss"
+		>
+		<ai_ship_group_membership name="ExowarTier3" weight="60"/>
+    	</entity>
+
+  <!-- Exowar Tier 4 Units:
+  ************************************************************************************************ -->
+  
+   	<entity graphicsdone="true" name="ExtragalacticMothership" is_partial_record="true"
+		display_name="无畏舰" override_faction_name="AI Exogalactic War Front"
+		description="一颗巨大的武装小行星。AI 通常不会认为整个银河系都值得无畏舰关注。您到底做了什么？！"
+		strength_multiplier="2"
+		hull_points="300000000" shield_points="150000000" speed="BelowAverage1"
+		>		
+    	<system name="R9" display_name="末日线圈光束"
+			damage_per_shot="3125000" range="High1" shot_speed="Normal" rate_of_fire="Devourer"				
+			>
+    		</system>
+    		<system name="R5" display_name="点防御"
+			damage_per_shot="15625" range="High1" shot_speed="Normal" rate_of_fire="Misery"
+			shots_per_salvo="160" fires_salvos_sequentially="false"		
+			>
+    		</system>	
+    	</entity>
+	
+   	<entity graphicsdone="true" name="ExtragalacticPlanetCracker" is_partial_record="true"
+
+		hull_points="250000000" shield_points="125000000" speed="BelowAverage1"
+		>		
+    	<system name="WU" display_name="碎星者阵列"
+			damage_per_shot="562500"
+			shots_per_salvo="4"			
+			>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="1.2" />
+    		</system>
+    		<system name="R5" display_name="点防御"
+			damage_per_shot="15625" range="High1"
+			shots_per_salvo="160" fires_salvos_sequentially="false"				
+			>
+    		</system>	
+    	</entity> 
+
+	<entity name="LONExtragalacticTrueMothership" ship_class_name="ExowarTier4"
+		thematic_groups="ExogalacticWarFront"
+            	draw_in_galaxy_view="true"
+		tags="Mothership,ExtragalacticWar,BecomesNecromancyMummy,ExtragalacticWarTier4,MothershipAchievement"
+		visuals="Assets/_FinalGameMeshes/AIExtragalactic/Tier4_ExtragalacticMothership/Tier4_ExtragalacticMothership.prefab"
+		icon_name="Ships2/SomethingTargetPlanet" icon_overlay="Overlays2/Guardian_Carrier" gimbal_icon_size_multiplier="2"
+		voice_group="Silent"			
+		uses_large_health_bar="true"
+		category="Ship"
+		size_scale="36"
+		visuals_scale_multiplier="22"
+		y_offset_of_icon="30"
+		collision_priority="9000"
+		blocks_ceasefire_on_planet="true"
+		can_pass_through_enemy_forcefields="true"
+		display_name="母舰" override_faction_name="AI Exogalactic War Front"
+		description="一颗巨大的武装小行星，其机库中挤满了大量的蜂群无人机。AI 通常不会认为整个银河系都值得母舰关注。您到底做了什么？！"
+		fleet_design_template_i_use_for_drones="LONMothershipDrones"
+		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+		cost_for_ai_to_purchase="2012500" strength_multiplier="2.5"
+		hull_points="225000000" shield_points="150000000" speed="BelowAverage1"
+		metal_cost="7500000" energy_consumption="250000"	
+		armor_mm="250" albedo="0.7" engine_gx="25" mass_tx="20"			
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+		ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            	priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+		provides_ai_warp_entry_point="true"
+		>
+		<metal_flow purpose="BuildingDronesInternally" throughput="60000"/>	
+    		<system name="C1" display_name="火焰波"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="15625" range="High2" shot_speed="Normal" rate_of_fire="Devourer"
+			shots_per_salvo="80" fires_salvos_sequentially="false"
+			shot_type_data="FlameWave"
+			>
+    		</system>
+    	</entity>
+	<entity name="LONTrueMothershipDrone"
+		thematic_groups="Drone,ExogalacticWarFront"
+		visuals="Assets/_FinalGameMeshes/AIExtragalactic/Tier1_MaugrimDrone/Tier1_MaugrimDrone.prefab"
+		icon_name="Ships2/SomethingPortal" icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
+		voice_group="Silent" special_entity_type="DroneFrigate"
+		category="Ship"
+		size_scale="2.4"
+		visuals_scale_multiplier="12"
+		y_offset_of_icon="30"
+		collision_priority="810"
+		display_name="母舰蜂群无人机" display_name_for_sidebar="母舰无人机" override_faction_name="AI Exogalactic War Front"
+		description="装备了快速射击激光弹的大型无人机。以体型而言火力异常强大，并配备额外电容器，在发射后短时间内提供更多能量。"
+		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+		mark_level_scale_style="Strikecraft"
+		self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="50"
+		cost_for_ai_to_purchase="40"
+		hull_points="100000" shield_points="0" speed="AboveAverage5"
+		metal_cost="5000" energy_consumption="2500"
+		armor_mm="30" albedo="0.3" engine_gx="23" mass_tx="2"
+		ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+		immune_to_all_damage_for_seconds_after_creation="3"
+            	priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
+		>
+		<fleet_membership name="LONMothershipDrones" ship_cap_group="Frigate" weight="100" min="300" max="300"/>		
+    		<system name="C1" display_name="激光脉冲"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="20000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Misery"
+			shot_type_data="LaserPulse_RedLevel2"
+			>
+			<outgoing_damage_modifier based_on="MyTimeAtPlanet" comparison_type="LessThan" compared_to="10" multiplier="2" />
+    		</system>
+   		<incoming_damage_modifier based_on="MyTimeAtPlanet" comparison_type="LessThan" compared_to="10" multiplier="0.5" />
+    	</entity>	
+
+	<entity name="LONExowarSuperdragon" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught" ship_class_name="ExowarTier4"
+		thematic_groups="ExogalacticWarFront"
+		draw_in_galaxy_view="true"
+		tags="ExtragalacticWar,ExtragalacticWarTier4"
+		visuals="Assets/_DLC1/Arks/GrandSalvage/GrandSalvageDragon.prefab" visuals_bundle="exp1_the_spire_rises"
+		icon_name="Ships4/Dragon" gimbal_icon_size_multiplier="2.5"
+		voice_group="Silent"
+		uses_large_health_bar="true"
+		category="Ship"
+		size_scale="19.8"
+		visuals_scale_multiplier="33"
+		y_offset_of_icon="60"
+		collision_priority="8500"
+		blocks_ceasefire_on_planet="true"
+		display_name="兹梅-戈里内奇" override_faction_name="AI Prototype Testing Subroutines"
+		description="极其强大的 AI 单位，使用各种奇异科技。此类单位被部署应当引起我们的担忧——要么一些 AI 子程序开始担忧了，要么我们已经从害虫变成了试验对象。两种可能性都令人不安。"
+		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+		cost_for_ai_to_purchase="900000" strength_multiplier="2"
+		hull_points="87500000" shield_points="37500000" speed="AboveAverage4"
+		metal_cost="2000000" energy_consumption="250000"
+		returns_this_percentage_of_damage_if_damaged_by_enemy_attack="0.05"
+		armor_mm="350" albedo="0.7" engine_gx="25" mass_tx="16"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+		ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            	priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+		seconds_to_fully_regenerate_hull="360"
+		immune_to_repairs="true"
+		custom_repair_impossible_for_seconds_after_damaged_by_enemy_max_15="15"
+		>
+		<data_extension name="DLC3" required_expansion_list="3_The_Neinzul_Abyss"
+			immune_to_necromancy="true"/>
+		<entity_type_drawing_bag_used_on_death data_list="AIDragon,AIDZDragon,LONNeinzulDragon,LONNanocaustDragon" min_spawn_value_list="1" />
+   	<system name="C1" display_name="腐蚀性能量爆发"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="2500" range="AboveAverage4" shot_speed="Slow" rate_of_fire="Devourer" 
+			shots_per_salvo="200" fires_salvos_sequentially="false"
+			shot_type_data="DoubleShot_Green"
+			damage_amplification="true" damage_amplification_duration="10" damage_amplification_flat="1000"
+			>
+    		</system>
+		<system name="B1" display_name="尖塔线圈光束"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="162500" range="AboveAverage4" shot_speed="Normal" rate_of_fire="Devourer"
+			shot_type_data="HeavyBeamInvisible"
+			beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_Red"
+			hits_all_intersecting_targets="true"
+			shots_detonate_immediately="true"
+                	is_coilbeam="true"
+			>
+  		</system>
+		<system name="B2" display_name="连锁闪电炮"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="15000" range="AboveAverage4" shot_speed="Normal" rate_of_fire="Devourer"
+			shot_type_data="HeavyBeamInvisible"
+			beam_length_multiplier="1.1" beam_weapon_visual_style="Lightning_Red"
+			beam_chains_out_to_targets_x_times="3"
+			beam_chains_out_to_target_min_range="200"
+			beam_chains_out_to_targets_x_range="2500"
+			beam_chains_out_to_max_targets_from_each_source="5"
+			shots_detonate_immediately="true"
+			maximum_number_of_targets_hit_per_shot="30"
+			added_target_evaluator="LowestHealthAsMajorPrimary"
+			>
+			<outgoing_damage_modifier applies_to="AllShields" based_on="MaxBubbleForcefield" comparison_type="GreaterThan" compared_to="10000" multiplier="5" />
+		</system>
+     <system name="B3" display_name="纳米感染光束"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="120000" range="AboveAverage4" shot_speed="Normal" rate_of_fire="Devourer"
+			shot_type_data="HeavyBeamInvisible"
+			beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_Green"
+			hits_all_intersecting_targets="true"
+			shots_detonate_immediately="true"
+                	is_coilbeam="true"
+			>
+			<death_effect_damage type="Nanocaustation" tier_name="LargeNanocaustShip"/>
+    		</system>
+    	</entity>
+	<entity name="LONNeinzulDragon" tags="BecomesNecromancyMummy" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught"
+		draw_in_galaxy_view="true"
+		visuals="Assets/_DLC2/AI/AntiZenithDragon/AntiZenithDragon.prefab" visuals_bundle="exp2_zenith_onslaught"
+		icon_name="Ships4/Dragon" icon_overlay="Overlays1/Turret_Acid" gimbal_icon_size_multiplier="2"
+		voice_group="Silent"			
+		uses_large_health_bar="true"
+		category="Ship"
+		size_scale="9"
+		visuals_scale_multiplier="15"
+		y_offset_of_icon="30"
+		collision_priority="810"
+		display_name="AI 奈因祖龙"
+		description="极其先进的单位，通常部署用于防御新到达的奈因祖威胁。"
+		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+		cost_for_ai_to_purchase="37500"
+		hull_points="25000000" shield_points="5000000" speed="AboveAverage4"			
+		metal_cost="2000000" energy_consumption="150000"	
+		returns_this_percentage_of_damage_if_damaged_by_enemy_attack="0.05"
+		armor_mm="350" albedo="0.4" engine_gx="25" mass_tx="11"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+		ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+               	priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+		seconds_to_fully_regenerate_hull="360"
+		immune_to_repairs="true"
+		custom_repair_impossible_for_seconds_after_damaged_by_enemy_max_15="15"
+		>		
+		<system name="C2" display_name="腐蚀性能量爆发"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="2500" range="AboveAverage4" shot_speed="Slow" rate_of_fire="Devourer" 
+			shots_per_salvo="80" fires_salvos_sequentially="false"	
+			shot_type_data="DoubleShot_Green"
+			damage_amplification="true" damage_amplification_duration="10" damage_amplification_flat="1000"
+			>
+    		</system>
+		<ship_class_data can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.5" can_be_devoured="false"
+		>
+		<debuff_modifier debuff_type="WeaponPhase" multiplier="0" />
+		</ship_class_data>
+  	</entity>	
+
+   	<entity name="LONNanocaustDragon" tags="BecomesNecromancyMummy" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught"
+		draw_in_galaxy_view="true"
+		visuals="Assets/_DLC1/Arks/GrandSalvage/GrandSalvageDragon.prefab" visuals_bundle="exp1_the_spire_rises"
+		icon_name="Ships4/Dragon" icon_overlay="Overlays2/Guardian_Tethuida" gimbal_icon_size_multiplier="2"
+		voice_group="Silent"			
+		uses_large_health_bar="true"
+		category="Ship"
+		size_scale="9"
+		visuals_scale_multiplier="15"
+		y_offset_of_icon="30"
+		collision_priority="810"
+		display_name="AI 纳米浩劫龙" display_name_for_sidebar="AI 纳米龙"
+		description="极其先进的单位，通常部署用于防御新到达的纳米浩劫威胁。"
+		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+		cost_for_ai_to_purchase="37500"
+		hull_points="20000000" shield_points="10000000" speed="AboveAverage4"			
+		metal_cost="2000000" energy_consumption="150000"	
+		armor_mm="350" albedo="0.4" engine_gx="25" mass_tx="11"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+		ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+                priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+		>		
+    		<system name="W1" display_name="能量爆发"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="2500" range="AboveAverage4" shot_speed="Slow" rate_of_fire="Devourer" 
+			shots_per_salvo="40" fires_salvos_sequentially="false"				
+			shot_type_data="LaserPulse_SicklyGreen"
+			>
+    		</system>
+     <system name="B3" display_name="纳米感染光束"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="120000" range="AboveAverage4" shot_speed="Normal" rate_of_fire="Devourer"
+			shot_type_data="HeavyBeamInvisible"
+			beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_Green"
+			hits_all_intersecting_targets="true"
+			shots_detonate_immediately="true"
+                	is_coilbeam="true"
+			>
+			<death_effect_damage type="Nanocaustation" tier_name="LargeNanocaustShip"/>
+    		</system>
+		<ship_class_data can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.5" can_be_devoured="false"
+		>
+		<debuff_modifier debuff_type="WeaponPhase" multiplier="0" />
+		</ship_class_data>
+    	</entity>	
+
+
+
+  <!-- Exowar Tier 5 Units:
+  ************************************************************************************************--> 
+
+   	<entity graphicsdone="true" name="ExtragalacticFlenser" is_partial_record="true" 		display_name="剥皮者 - 拉型" display_name_for_sidebar="剥皮者-拉"
+		description="极其巨大的 AI 战舰。AI 最近切换到了其具有末日级威力的剥皮者系列的更强大设计。"
+		strength_multiplier="3.65"
+		hull_points="900000000" shield_points="600000000" speed="VeryVeryLittle2"
+		metal_cost="13000000"
+		albedo="0.95"
+		science_to_grant_on_death="2000"
+		tags="Mothership,ExtragalacticWar,BecomesNecromancyMummy,ExtragalacticWarTier5,FlenserAchievement"
+		>
+       		<data_extension name="DLC3" required_expansion_list="1_The_Spire_Rises,3_The_Neinzul_Abyss"
+            		necromancer_science_to_grant_on_death="1000"/>
+    		<system name="R9" display_name="拉之眼"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="62500" range="High2" shot_speed="Normal" rate_of_fire="Devourer"
+			shot_type_data="HeavyBeamInvisible"
+			hits_all_intersecting_targets="true"				
+			shots_detonate_immediately="true"
+			maximum_number_of_targets_hit_per_shot="30"
+			number_beams_to_fire="20" beam_weapon_visual_style="Laser_YellowBright"
+			degrees_offset_per_beam="1"			
+			>
+    		</system>
+     <system name="WU" display_name="阿波菲斯之祸炮"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="1700000" range="EssentiallyInfinite" shot_speed="Normal" rate_of_fire="Devourer"
+			shots_per_salvo="5"
+			shot_type_data="MassDriver"			
+			>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="1.2" />
+    		</system>
+		<system name="I1" display_name="太阳风"
+	     		category="Weapon" firing_timing="OnlyInRange"
+	     		damage_per_shot="100" range="InsanelyHigh" shot_speed="Fast" rate_of_fire="Devourer" fires_salvos_sequentially="true"
+		 	shots_per_salvo="50"
+		 	max_stacks_allowed_to_kill_per_shot="3"
+	     		shot_type_data="ExtremelyLongRangeIon"
+	     		ion_percentage_per_mark_level_lower="1" ion_damage_to_albedo_less_than="0.5"
+             		>
+     		</system>
+		<incoming_damage_modifier based_on="MyTimeAtPlanet" comparison_type="LessThan" compared_to="10" multiplier="0.8" />
+		<incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="15000" multiplier="0.25" />
+    	</entity>
+
+   	<entity name="LONExtragalacticFlenserZeus" required_expansion_list="1_The_Spire_Rises" ship_class_name="ExowarTier5"
+		thematic_groups="ExogalacticWarFront"
+            	draw_in_galaxy_view="true"
+		tags="Mothership,ExtragalacticWar,BecomesNecromancyMummy,ExtragalacticWarTier5,FlenserAchievement"
+		visuals="Assets/_FinalGameMeshes/AIExtragalactic/Tier5_ExtragalacticFlenser/Tier5_ExtragalacticFlenser.prefab" is_particularly_heavy_visual_model="true"
+		icon_name="Ships2/SomethingApocalypse" gimbal_icon_size_multiplier="2"
+		voice_group="Silent"			
+		uses_large_health_bar="true"
+		category="Ship"
+		size_scale="75"
+		visuals_scale_multiplier="70"
+		y_offset_of_icon="30"
+		collision_priority="10000"
+		display_name="剥皮者 - 宙斯型" display_name_for_sidebar="剥皮者-宙斯" override_faction_name="AI Exogalactic War Front"
+		description="极其巨大的 AI 战舰。这款具有末日级威力的剥皮者系列版本使用了偷来的尖塔科技。"
+      		blocks_ceasefire_on_planet="true"
+		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+		cost_for_ai_to_purchase="3522500" strength_multiplier="2.35"
+		hull_points="750000000" shield_points="750000000" speed="VeryVeryLittle2"
+		metal_cost="13000000" energy_consumption="1000000"	
+		armor_mm="350" albedo="0.7" engine_gx="26" mass_tx="25"	
+		science_to_grant_on_death="2000"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+		ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            	priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+		>
+       		<data_extension name="DLC3" required_expansion_list="3_The_Neinzul_Abyss"
+            		necromancer_science_to_grant_on_death="1000"/>
+		<system name="B1" display_name="克洛诺斯之祸"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="19687500" range="High1" shot_speed="Normal" rate_of_fire="Devourer"
+			shot_type_data="HeavyBeamInvisible"
+			beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_YellowBright"
+			hits_all_intersecting_targets="true"				
+			shots_detonate_immediately="true"
+               	 	is_coilbeam="true"				
+			>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="9" multiplier="1.3" />
+    		</system>
+     <system name="C1" display_name="泰坦之战的雷霆"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="6800000" range="EssentiallyInfinite" shot_speed="Fast" rate_of_fire="Normal"
+			shots_per_salvo="5"
+               		shot_type_data="HeavyBeamInvisible"
+               		beam_length_multiplier="1" beam_weapon_visual_style="Laser_Purple"
+			>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="1.1" />
+    		</system>
+		<system name="GC" display_name="引力风暴"
+			category="Passive"
+			base_gravity_speed_multiplier="0.4" gravity_hits_engine_gx_less_than="25" gravity_range="EssentiallyInfinite"
+			>
+    		</system>
+		<incoming_damage_modifier based_on="MyTimeAtPlanet" comparison_type="LessThan" compared_to="10" multiplier="0.8" />
+		<incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="25000" multiplier="0.5" />
+    	</entity>
+
+	<entity name="LONExtragalacticFlenserThor" required_expansion_list="2_Zenith_Onslaught" ship_class_name="ExowarTier5"
+		thematic_groups="ExogalacticWarFront"
+            	draw_in_galaxy_view="true"
+		tags="Mothership,ExtragalacticWar,BecomesNecromancyMummy,ExtragalacticWarTier5,FlenserAchievement"
+		visuals="Assets/_FinalGameMeshes/AIExtragalactic/Tier5_ExtragalacticFlenser/Tier5_ExtragalacticFlenser.prefab" is_particularly_heavy_visual_model="true"
+		icon_name="Ships2/SomethingApocalypse" gimbal_icon_size_multiplier="2"
+		voice_group="Silent"			
+		uses_large_health_bar="true"
+		category="Ship"
+		size_scale="75"
+		visuals_scale_multiplier="70"
+		y_offset_of_icon="30"
+		collision_priority="10000"
+		display_name="剥皮者 - 托尔型" display_name_for_sidebar="剥皮者-托尔" override_faction_name="AI Exogalactic War Front"
+		description="极其巨大的 AI 战舰。这款具有末日级威力的剥皮者系列版本使用了偷来的天顶科技。"
+      		blocks_ceasefire_on_planet="true"
+		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+		cost_for_ai_to_purchase="3522500" strength_multiplier="3.5"
+		hull_points="1400000000" shield_points="100000000" speed="VeryVeryLittle2"
+		returns_this_percentage_of_damage_if_damaged_by_enemy_attack="0.30"
+		metal_cost="13000000" energy_consumption="1000000"
+		armor_mm="450" albedo="0.7" engine_gx="25" mass_tx="26"
+		science_to_grant_on_death="2000"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+		ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            	priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+		>
+       		<data_extension name="DLC3" required_expansion_list="1_The_Spire_Rises,3_The_Neinzul_Abyss"
+            		necromancer_science_to_grant_on_death="1000"/>
+		<system name="B1" display_name="雷神之锤"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="34000000" range="High2" shot_speed="Normal" rate_of_fire="Normal"
+			shot_type_data="HeavyBeamInvisible"
+			beam_length_multiplier="1.1" beam_weapon_visual_style="Lightning_Red"
+			shots_detonate_immediately="true"
+			>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="7" multiplier="2" />
+    		</system>
+     <system name="B2" display_name="雷暴炮"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="800000" range="EssentiallyInfinite" shot_speed="Normal" rate_of_fire="Normal"
+			shot_type_data="HeavyBeamInvisible"
+			beam_length_multiplier="1.1" beam_weapon_visual_style="Lightning_Blue"				
+			beam_chains_out_to_targets_x_times="4"
+			beam_chains_out_to_target_min_range="200"
+			beam_chains_out_to_targets_x_range="7500"
+			beam_chains_out_to_max_targets_from_each_source="4"
+			shots_detonate_immediately="true"
+			maximum_number_of_targets_hit_per_shot="182"
+			>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="7" multiplier="0.5" />
+    		</system>
+		<incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="25000" multiplier="0.5" />
+    	</entity>
+
+	<entity name="LONExtragalacticFlenserOdin" required_expansion_list="2_Zenith_Onslaught" ship_class_name="ExowarTier5ODIN"
+		thematic_groups="ExogalacticWarFront"
+            	draw_in_galaxy_view="true"
+		tags="Mothership,ExtragalacticWar,BecomesNecromancyMummy,ExtragalacticWarTier5,FlenserAchievement"
+		visuals="Assets/_FinalGameMeshes/AIExtragalactic/Tier5_ExtragalacticFlenser/Tier5_ExtragalacticFlenser.prefab" is_particularly_heavy_visual_model="true"
+		icon_name="Ships2/SomethingApocalypse" gimbal_icon_size_multiplier="2"
+		voice_group="Silent"			
+		uses_large_health_bar="true"
+		category="Ship"
+		size_scale="75"
+		visuals_scale_multiplier="70"
+		y_offset_of_icon="30"
+		collision_priority="10000"
+		display_name="剥皮者 - 奥丁型" display_name_for_sidebar="剥皮者-奥丁" override_faction_name="AI Exogalactic War Front"
+		description="极其巨大的 AI 战舰。这款具有末日级威力的剥皮者系列版本使用了偷来的天顶科技……以及无尽的天顶暗影舰队。"
+		fleet_design_template_i_use_for_drones="LONOdinDrones"
+      		blocks_ceasefire_on_planet="true"
+		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
+		cost_for_ai_to_purchase="3522500" strength_multiplier="3.1"
+		hull_points="1100000000" shield_points="400000000" speed="VeryVeryLittle2"
+		metal_cost="13000000" energy_consumption="1000000"	
+		armor_mm="350" albedo="0.7" engine_gx="25" mass_tx="25"
+		alternative_state_of_matter="MultiPhase" phases_to_other_alternative_state_of_matter_after_seconds="105" phases_back_to_default_state_of_matter_after_seconds="15"
+		science_to_grant_on_death="1000"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+		ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+      		priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+		>
+       		<data_extension name="DLC3" required_expansion_list="1_The_Spire_Rises,3_The_Neinzul_Abyss"
+            		necromancer_science_to_grant_on_death="2000"/>
+		<metal_flow purpose="BuildingDronesInternally" throughput="1000000"/>
+		<system name="TA"
+			category="Passive" tachyon_points="1000" tachyon_range="EssentiallyInfinite" tachyon_hits_albedo_less_than="0.95"
+			>
+		</system>	
+    		<system name="B1" display_name="斯莱普尼尔"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="145000" range="High2" shot_speed="Normal" rate_of_fire="Devourer"
+			shot_type_data="HeavyBeamInvisible"
+			hits_all_intersecting_targets="true"
+			shots_detonate_immediately="true"
+			maximum_number_of_targets_hit_per_shot="30"
+			number_beams_to_fire="8" beam_weapon_visual_style="Laser_BlueBright"
+			distance_from_center_for_beam_emission="175"
+            		>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="10" multiplier="1.2" />
+    		</system>
+    		<system name="C1" display_name="永恒之枪"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="40000000" range="EssentiallyInfinite" shot_speed="Normal" rate_of_fire="Normal"
+			shot_type_data="MassDriver"
+			>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="1.2" />
+    		</system>
+		<incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="25000" multiplier="0.5" />
+    	</entity>
+	<entity name="LONEnslavedEinherjar" required_expansion_list="2_Zenith_Onslaught"
+          	gimbal_icon_size_multiplier="1.5"
+	  	visuals="Assets/_DLC2/Zenith/DZEinherjar/DZEinherjar.prefab" visuals_bundle="exp2_zenith_onslaught"
+          	icon_name="Ships3/DarkZenithEinherjar"
+	  	uses_large_health_bar="true"
+	  	voice_group="Silent" special_entity_type="DroneFrigate"
+		category="Ship"
+	  	size_scale="12"
+	  	visuals_scale_multiplier="52.5" y_offset_of_ship_in_visual_space="60"
+	  	y_offset_of_icon="55"
+	  	collision_priority="710"
+	  	display_name="被奴役的英灵战士" display_name_for_sidebar="英灵战士" override_faction_name="AI Exogalactic War Front"
+	  	description="一支精英暗天顶单位，装备了能撕裂敌人的轨道炮，暂时使目标受到来自所有来源的更多伤害。本舰处于 AI 控制之下。"
+	  	starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused"
+		mark_level_scale_style="DarkZenith"
+		self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="2"
+	  	cost_for_ai_to_purchase="20000" strength_multiplier="2"			
+	  	hull_points="1500000" shield_points="750000" speed="BelowAverage2"
+	  	metal_cost="5000000" energy_consumption="50000"		
+	  	armor_mm="175" albedo="0.8" engine_gx="18" mass_tx="11"
+	  	ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+	  	ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+          	priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="Expendable"
+	  	>
+		<fleet_membership name="LONOdinDrones" ship_cap_group="Frigate" weight="100" min="30" max="30"/>
+		<system name="C1" display_name="天顶撕裂轨道炮"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="1450" range="High2" shot_speed="VeryFast" rate_of_fire="Low"
+			shots_per_salvo="60" fires_salvos_sequentially="false"
+			shot_type_data="ParalysisProngedShot_Blue"
+			damage_amplification="true" damage_amplification_duration="4" damage_amplification_mult="1.25"
+			>
+			<outgoing_damage_modifier based_on="CurrentHullPercentage" comparison_type="AtMost" compared_to="30" multiplier="2" /> 
+		</system>
+    		<ship_class_data can_be_zombified_and_similar="false" />
+  	</entity>
+
+</root>

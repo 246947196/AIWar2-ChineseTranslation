@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <item name="Devourer_SumonHack" dll_name="DevourerChrysalis" type_name="DevourerChrysalis.Devourer_SumonHack" display_name="分析 Zenith 信标" description="我们的科学家可以分析该信标及其 Zenith 技术，但冒着引起其连接对象注意的风险。"
+        hack_duration="60"
+        primary_hacking_response_interval="1000"
+        primary_response_strength_per_interval="1"
+        cost_in_hacking_points="30"
+        response_strength_on_completion="1"
+        local_hacker_required="true"
+		hacker_can_be_battlestation="true"
+		hacker_can_be_support_fleet="true"
+		science_to_grant_on_completion="1000"
+		destroy_hack_target_on_completion="true"
+	/>
+	
+    <item name="Devourer_CenterpieceShipLineHack" dll_name="DevourerChrysalis" type_name="DevourerChrysalis.Devourer_CenterpieceShipLineHack" display_name="提取吞噬者细胞" description="吞噬者已经成长到如此之大和复杂，其自身的内部生物有机系统已开始产生相当于人类白细胞的产物，其大小相当于一个真正的傀儡。
+有了足够的金属、入侵点和时间，我们可以尝试提取并指挥一个，尽管报复很可能极其严重。"
+        hack_duration="600"
+        primary_hacking_response_interval="1000"
+        primary_response_strength_per_interval="1"
+        cost_in_hacking_points="60"
+        response_strength_on_completion="1"
+        local_hacker_required="true"
+		hacker_can_be_battlestation="true"
+		hacker_can_be_support_fleet="true"
+	/>
+	
+	<item name="Devourer_SingleShipLineHack_T1" dll_name="DevourerChrysalis" type_name="DevourerChrysalis.Devourer_SingleShipLineHack_T1" display_name="分析活体蛹" description="在这种状态下，吞噬者对我们的扫描设备的抵抗能力要弱得多。我们可以尝试分析其独特的特性，为自己创造新的单位系列。"
+        hack_duration="240"
+        primary_hacking_response_interval="1000"
+        primary_response_strength_per_interval="1"
+        cost_in_hacking_points="15"
+        response_strength_on_completion="1"
+        local_hacker_required="true"
+		choose_a_specific_ship_line_to_grant="true"
+        choice_text="您想将哪条单位系列添加到此入侵者的舰队中？"
+        choice_text_height="60"
+        relatedstring_is_a_ship_type="true"
+		hacker_can_be_support_fleet="true"
+	/>
+	
+	<item name="Devourer_SingleShipLineHack_T2" copy_from="Devourer_SingleShipLineHack_T1" type_name="DevourerChrysalis.Devourer_SingleShipLineHack_T2"
+        hack_duration="360"
+        cost_in_hacking_points="20"
+	/>
+	
+	<item name="Devourer_SingleShipLineHack_T3" copy_from="Devourer_SingleShipLineHack_T1" type_name="DevourerChrysalis.Devourer_SingleShipLineHack_T3"
+        hack_duration="480"
+        cost_in_hacking_points="25"
+	/>
+	
+    <item name="Devourer_AntagonizeHack_T1" dll_name="DevourerChrysalis" type_name="DevourerChrysalis.Devourer_AntagonizeHack_T1" display_name="激怒吞噬者" description="这是个坏主意，但它是可行的，作为指挥官，所有选项都应当呈报给您。
+长话短说：吞噬者如此巨大，以至于它需要一个类似于 AI 的内部通信网络。我们的入侵者有信心，只需在其系统中摸索几秒钟，就能帮助我们理解其他庞大而广泛的 AI。
+然而，我们确实预期吞噬者会暴力反应，并且至少在短时间内将我们及我们的盟友视为其主要目标。请注意后果。"
+        hack_duration="15"
+        primary_hacking_response_interval="1000"
+        primary_response_strength_per_interval="1"
+        cost_in_hacking_points="10"
+        response_strength_on_completion="1"
+        local_hacker_required="true"
+		hacker_can_be_battlestation="true"
+		hacker_can_be_support_fleet="true"
+	/>
+	
+    <item name="Devourer_AntagonizeHack_T2" copy_from="Devourer_AntagonizeHack_T1" type_name="DevourerChrysalis.Devourer_AntagonizeHack_T2"
+        hack_duration="20"
+        cost_in_hacking_points="20"
+	/>
+	
+    <item name="Devourer_AntagonizeHack_T3" copy_from="Devourer_AntagonizeHack_T1" type_name="DevourerChrysalis.Devourer_AntagonizeHack_T3"
+        hack_duration="25"
+        cost_in_hacking_points="30"
+	/>
+	
+    <item name="Devourer_AntagonizeHack_T4" copy_from="Devourer_AntagonizeHack_T1" type_name="DevourerChrysalis.Devourer_AntagonizeHack_T4"
+        hack_duration="30"
+        cost_in_hacking_points="40"
+	/>
+	
+    <item name="Devourer_PacifyHack_T1" dll_name="DevourerChrysalis" type_name="DevourerChrysalis.Devourer_PacifyHack_T1" display_name="安抚吞噬者" description="如果我们无法与吞噬者傀儡作战甚至无法容忍它，我们也许可以……喂饱它。如果半智能的 Zenith 杀戮机器的行为方式与动物相同，我们可以喂食并"请求"它暂时远离我们的行星。
+它的食物是金属，这次入侵对我们的目标帮助不大，但总比被吃掉要好。
+需要注意的是：这不会在吞噬者积极追击我们时清除它，而只是将问题推迟。然而，它会获得优先权。"
+        hack_duration="5"
+        primary_hacking_response_interval="1000"
+        primary_response_strength_per_interval="1"
+        cost_in_hacking_points="5"
+        response_strength_on_completion="1"
+        local_hacker_required="true"
+		hacker_can_be_battlestation="true"
+		hacker_can_be_support_fleet="true"
+	/>
+	
+    <item name="Devourer_PacifyHack_T2" copy_from="Devourer_PacifyHack_T1" type_name="DevourerChrysalis.Devourer_PacifyHack_T2"
+        cost_in_hacking_points="10"
+	/>
+	
+    <item name="Devourer_PacifyHack_T3" copy_from="Devourer_PacifyHack_T1" type_name="DevourerChrysalis.Devourer_PacifyHack_T3"
+        cost_in_hacking_points="15"
+	/>
+	
+    <item name="Devourer_PacifyHack_T4" copy_from="Devourer_PacifyHack_T1" type_name="DevourerChrysalis.Devourer_PacifyHack_T4"
+        cost_in_hacking_points="20"
+	/>
+	
+    <item name="Devourer_ChooseEvolution_T1" dll_name="DevourerChrysalis" type_name="DevourerChrysalis.Devourer_ChooseEvolution_T1" display_name="选择进化方向" description="虽然我们最终无法阻止吞噬者进化，但我们可以尝试操纵它所走的进化道路。每个蛹有两种可能的结果，我们可以选择对我们来说似乎不那么危险的一种。"
+        hack_duration="60"
+        primary_hacking_response_interval="1000"
+        primary_response_strength_per_interval="1"
+        cost_in_hacking_points="20"
+        response_strength_on_completion="1"
+        local_hacker_required="true"
+		hacker_can_be_battlestation="true"
+		hacker_can_be_support_fleet="true"
+	/>
+	
+    <item name="Devourer_ChooseEvolution_T2" copy_from="Devourer_ChooseEvolution_T1" type_name="DevourerChrysalis.Devourer_ChooseEvolution_T2"
+        hack_duration="90"
+		cost_in_hacking_points="30"
+	/>
+	
+    <item name="Devourer_ChooseEvolution_T3" copy_from="Devourer_ChooseEvolution_T1" type_name="DevourerChrysalis.Devourer_ChooseEvolution_T3"
+        hack_duration="120"
+		cost_in_hacking_points="40"
+	/>
+	
+    <item name="Devourer_DevolutionHack_T1" dll_name="DevourerChrysalis" type_name="DevourerChrysalis.Devourer_DevolutionHack_T1" display_name="退化吞噬者" description="在其进化状态下，我们拥有难得的机会来……毒害吞噬者傀儡。削弱它的力量。我们需要借助持续的 corrupted 金属流作为载体，并入侵其系统，以阻止它意识到自己正在被削弱。"
+        hack_duration="99999999"
+        primary_hacking_response_interval="1000"
+        primary_response_strength_per_interval="1"
+        cost_in_hacking_points="1" hacking_cost_per_second="1"
+        response_strength_on_completion="1"
+        local_hacker_required="true"
+		hacker_can_be_battlestation="true"
+		hacker_can_be_support_fleet="true"
+	/>
+	
+    <item name="Devourer_DevolutionHack_T2" copy_from="Devourer_DevolutionHack_T1" type_name="DevourerChrysalis.Devourer_DevolutionHack_T2"
+	/>
+	
+    <item name="Devourer_DevolutionHack_T3" copy_from="Devourer_DevolutionHack_T1" type_name="DevourerChrysalis.Devourer_DevolutionHack_T3"
+	/>
+	
+    <item name="Devourer_MetalSiphonHack_T1" dll_name="DevourerChrysalis" type_name="DevourerChrysalis.Devourer_MetalSiphonHack_T1" display_name="虹吸金属" description="现在吞噬者是一个液态金属流的大熔炉。我们也许可以利用它为我们自己的利益，提取一些我们可以自由使用的金属，但吞噬者无疑会注意到我们的努力。也就是说，它会攻击入侵者，并反过来改进自己的技术以进行报复。"
+        hack_duration="99999999"
+        primary_hacking_response_interval="1000"
+        primary_response_strength_per_interval="1"
+        cost_in_hacking_points="1" hacking_cost_per_second="0.1"
+        response_strength_on_completion="1"
+        local_hacker_required="true"
+		hacker_can_be_battlestation="true"
+		hacker_can_be_support_fleet="true"
+	/>
+	
+    <item name="Devourer_MetalSiphonHack_T2" copy_from="Devourer_MetalSiphonHack_T1" type_name="DevourerChrysalis.Devourer_MetalSiphonHack_T2"
+	/>
+	
+    <item name="Devourer_MetalSiphonHack_T3" copy_from="Devourer_MetalSiphonHack_T1" type_name="DevourerChrysalis.Devourer_MetalSiphonHack_T3"
+	/>
+	
+    <item name="Devourer_EnticeHack_T1" dll_name="DevourerChrysalis" type_name="DevourerChrysalis.Devourer_EnticeHack_T1" display_name="引诱吞噬者" description="通过使用足够的金属，使吞噬者傀儡觉得值得花时间，我们实际上能够向其导航系统"建议"目标。吞噬者将在一段时间内完全忽略所有其他派系，只追击目标及其所有盟友。"
+        hack_duration="30"
+        primary_hacking_response_interval="1000"
+        primary_response_strength_per_interval="1"
+        cost_in_hacking_points="20"
+        response_strength_on_completion="1"
+        local_hacker_required="true"
+		hacker_can_be_battlestation="true"
+		hacker_can_be_support_fleet="true"
+	/>
+	
+    <item name="Devourer_EnticeHack_T2" copy_from="Devourer_EnticeHack_T1" type_name="DevourerChrysalis.Devourer_EnticeHack_T2"
+        hack_duration="40"
+		cost_in_hacking_points="30"
+	/>
+	
+    <item name="Devourer_EnticeHack_T3" copy_from="Devourer_EnticeHack_T1" type_name="DevourerChrysalis.Devourer_EnticeHack_T3"
+        hack_duration="50"
+		cost_in_hacking_points="40"
+	/>
+	
+    <item name="Devourer_EnticeHack_T4" copy_from="Devourer_EnticeHack_T1" type_name="DevourerChrysalis.Devourer_EnticeHack_T4"
+        hack_duration="60"
+		cost_in_hacking_points="50"
+	/>
+</root>

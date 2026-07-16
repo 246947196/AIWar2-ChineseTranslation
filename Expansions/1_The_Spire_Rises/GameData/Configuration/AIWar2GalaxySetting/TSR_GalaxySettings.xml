@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  
+  <galaxy_setting name="DoomsdayMode" category="General" subcategory="MajorChallenges" display_name="末日模式" type="BoolToggle" default="false" changeable_during_gameplay="false" description="末日模式：每隔一段时间，银河系中的一个行星会被摧毁。随着时间推移，银河系将变得越来越小，导致令人窒息的结局。  被摧毁的行星不能是玩家的母星，玩家拥有的世界，AI母星或堡垒世界，或有玩家旗舰的行星。 你不会得到任何关于哪个行星将被摧毁的预警，随着时间推移，行星被摧毁的速度会变慢。  被摧毁的行星不会从任何来源产生任何AIP。" />
+
+    <galaxy_setting name="DoomsdayBaseInterval" category="General" subcategory="MajorChallenges" display_name="末日间隔" type="IntSlider" default="10" min="1" max="120" changeable_during_gameplay="false" is_advanced_setting="true" description="这是末日模式摧毁行星的大致基础间隔（以分钟为单位）；每次行星被摧毁后，间隔将增加；该间隔增加由间隔增长设置控制。摧毁时间总是会包含一些变化。" />
+
+    <galaxy_setting name="DoomsdayIncreaseRate" category="General" subcategory="MajorChallenges" display_name="末日间隔增长" type="IntSlider" default="60" min="5" max="600" changeable_during_gameplay="false" is_advanced_setting="true" description="每次末日模式摧毁一个行星，下一次摧毁将会慢这么多。" />
+
+    <galaxy_setting name="HorrorMovesPlayerStructures" category="Balance" subcategory="HumanBalance" display_name="变色恐怖移动玩家结构" type="BoolToggle" default="true" changeable_during_gameplay="true" is_advanced_setting="false" description="当启用变色恐怖阵营时，它可以在行星引力井周围移动它看到的任何结构。这可能会造成很多混乱，并且对希望对炮塔位置有很多控制的玩家来说非常令人沮丧。  禁用此选项将消除变色恐怖的主要缺点，因此会使游戏变得更容易。" />
+
+</root>

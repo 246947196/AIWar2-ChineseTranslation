@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <planet_name_type name="ChinesePlanets"
+                      display_name="中文行星"
+                      subdir="ChinesePlanets"
+                      description="写实恒星风——全部采用中国传统星官和恒星真实名称，涵盖三垣、星官附属星及恒星专名共372颗恒星。由汉化项目提供。"
+                      />
+</root>

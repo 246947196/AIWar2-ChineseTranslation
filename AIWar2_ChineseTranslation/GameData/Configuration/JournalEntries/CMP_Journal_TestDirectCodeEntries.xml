@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <journal name="CP_FullTest" sidebar_text="{FactionName} {UnitTypeName} 测试 {FactionColor}{PlanetName}&lt;/color&gt;" can_record_another_copy_if_already_recorded_in_this_campaign="true"
+        text_replacement_related_faction="true" 
+        text_replacement_related_faction_color="true"
+        text_replacement_related_planet="true"
+        text_replacement_related_unit_type="true"
+        chat_text="Chat text test: Faction name test: {FactionName} unit name test: {UnitTypeName} faction color on planet test: {FactionColor}{PlanetName}&lt;/color&gt;, check your journal tab!"
+        full_text="势力名称测试: {FactionName} 单位类型名称测试: {UnitTypeName} 行星上的势力颜色测试: {FactionColor}{PlanetName}&lt;/color&gt;, 这是完整文本。" />
+
+  <journal name="CP_GTest1" optional_group_id="CP_GTest" sidebar_text="T1: {FactionName} {UnitTypeName} 测试 {FactionColor}{PlanetName}&lt;/color&gt;"
+        text_replacement_related_faction="true" 
+        text_replacement_related_faction_color="true"
+        text_replacement_related_planet="true"
+        text_replacement_related_unit_type="true"
+        chat_text="T1: Chat text test: Faction name test: {FactionName} unit name test: {UnitTypeName} faction color on planet test: {FactionColor}{PlanetName}&lt;/color&gt;, check your journal tab!"
+        full_text="T1: 势力名称测试: {FactionName} 单位类型名称测试: {UnitTypeName} 行星上的势力颜色测试: {FactionColor}{PlanetName}&lt;/color&gt;, 这是完整文本。" />
+
+  <journal name="CP_GTest2" optional_group_id="CP_GTest" sidebar_text="T2: {FactionName} {UnitTypeName} 测试 {FactionColor}{PlanetName}&lt;/color&gt;"
+        text_replacement_related_faction="true" 
+        text_replacement_related_faction_color="true"
+        text_replacement_related_planet="true"
+        text_replacement_related_unit_type="true"
+        chat_text="T2: Chat text test: Faction name test: {FactionName} unit name test: {UnitTypeName} faction color on planet test: {FactionColor}{PlanetName}&lt;/color&gt;, check your journal tab!"
+        full_text="T2: 势力名称测试: {FactionName} 单位类型名称测试: {UnitTypeName} 行星上的势力颜色测试: {FactionColor}{PlanetName}&lt;/color&gt;, 这是完整文本。" />
+
+  <journal name="CP_GTest3" optional_group_id="CP_GTest" sidebar_text="T3: {FactionName} {UnitTypeName} 测试 {FactionColor}{PlanetName}&lt;/color&gt;"
+        text_replacement_related_faction="true"
+        text_replacement_related_faction_color="true"
+        text_replacement_related_planet="true"
+        text_replacement_related_unit_type="true"
+        chat_text="T3: Chat text test: Faction name test: {FactionName} unit name test: {UnitTypeName} faction color on planet test: {FactionColor}{PlanetName}&lt;/color&gt;, check your journal tab!"
+        full_text="T3: 势力名称测试: {FactionName} 单位类型名称测试: {UnitTypeName} 行星上的势力颜色测试: {FactionColor}{PlanetName}&lt;/color&gt;, 这是完整文本。" />
+  
+  <journal name="CP_CTest1" sidebar_text="C1: {FactionName} {UnitTypeName} 测试 {FactionColor}{PlanetName}&lt;/color&gt;"
+        name_of_alternate_if_id_already_recorded="CP_CTest2"
+        text_replacement_related_faction="true" 
+        text_replacement_related_faction_color="true"
+        text_replacement_related_planet="true"
+        text_replacement_related_unit_type="true"
+        chat_text="C1: Chat text test: Faction name test: {FactionName} unit name test: {UnitTypeName} faction color on planet test: {FactionColor}{PlanetName}&lt;/color&gt;, check your journal tab!"
+        full_text="C1: 势力名称测试: {FactionName} 单位类型名称测试: {UnitTypeName} 行星上的势力颜色测试: {FactionColor}{PlanetName}&lt;/color&gt;, 这是完整文本。" />
+
+  <journal name="CP_CTest2" sidebar_text="C2: {FactionName} {UnitTypeName} 测试 {FactionColor}{PlanetName}&lt;/color&gt;"
+        text_replacement_related_faction="true" 
+        text_replacement_related_faction_color="true"
+        text_replacement_related_planet="true"
+        text_replacement_related_unit_type="true"
+        chat_text="C2: Chat text test: Faction name test: {FactionName} unit name test: {UnitTypeName} faction color on planet test: {FactionColor}{PlanetName}&lt;/color&gt;, check your journal tab!"
+        full_text="C2: 势力名称测试: {FactionName} 单位类型名称测试: {UnitTypeName} 行星上的势力颜色测试: {FactionColor}{PlanetName}&lt;/color&gt;, 这是完整文本。" />
+</root>

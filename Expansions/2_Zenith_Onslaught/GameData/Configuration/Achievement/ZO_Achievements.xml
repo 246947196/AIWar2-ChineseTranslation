@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <achievement name="These Feet Are Made For Roaming" api_key="FEET_ROAMING" description="在启用'游牧银河系'的情况下获胜。" condition_type="WinWithGalaxySettingEnabled" condition_related_strings="AllPlanetsNomadic" level="gold" />
+  <achievement name="Uneasy Allies" api_key="UNEASY_ALLIES" description="通过入侵泽尼斯拱顶石的母星传送门与其达成临时休战。" condition_type="PerformHack" condition_related_strings="ZATruce" level="silver" />
+
+  <achievement name="Unmoored" api_key="UN_MOORED" description="使用泽尼斯矿工使一颗行星变成游牧行星。" condition_type="PerformHack" condition_related_strings="MakePlanetNomadic" level="bronze" />
+
+
+  
+ 
+   <achievement name="Cruise Control" api_key="CRUISE_CONTROL" description="通过入侵巡洋舰建造设施或从泽尼斯那里偷取来认领一艘巡洋舰。" condition_type="PerformHack" condition_related_strings="HackToGrantShipLine_Cruiser,HackToGrantShipLine_ZenithArchitrave_Portal,HackToGrantCruiser_DarkZenith" level="silver" />
+ 
+ <achievement name="It's Borrowing, Not Stealing" api_key="NOT_STEALING" description="通过入侵黑暗泽尼斯图书馆偷取黑暗泽尼斯单位设计。" condition_type="PerformHack" condition_related_strings="HackToGrantShipLine_DarkZenith" level="silver" />
+  
+   <achievement name="Set Phasers To Stun" api_key="PHASERS_TO_STUN" description="通过入侵兵营偷取泽尼斯拱顶石单位设计。" condition_type="PerformHack" condition_related_strings="HackToGrantShipLine_ZenithArchitrave" level="silver" />
+ 
+ 
+   <achievement name="Why Did It Have to Be Snakes?" api_key="HAVE_TO_BE_SNAKE" description="摧毁约尔蒙冈德。" condition_type="KillUnit" condition_related_strings="DZJormugandr" level="gold" />
+  
+  <achievement name="We Mine You!" api_key="WE_MINE_YOU" description="摧毁一艘泽尼斯矿工。" condition_type="KillUnit" condition_related_strings="ZenithMinerStationary,ZenithMinerMobile" condition_string_mode="Tag" level="silver" />
+ 
+   <achievement name="Phased And Confused" api_key="PHASED_CONFUSED" single_faction_based_victory_achievement="true" description="在启用强度&gt;=4的对所有敌对的泽尼斯拱顶石的情况下赢得游戏。" minor_faction_name="ZenithArchitrave" intensity_for_achievement="4" minor_faction_allegiance="Hostile To All" level="bronze">
+  </achievement>
+  <achievement name="Stay Off My Lawn" api_key="STAY_OFF_LAWN" single_faction_based_victory_achievement="true" description="在启用强度&gt;=7的对所有敌对的泽尼斯拱顶石的情况下赢得游戏。" minor_faction_name="ZenithArchitrave" intensity_for_achievement="7" minor_faction_allegiance="Hostile To All" level="silver">
+  </achievement>  
+  <achievement name="Trespassers Will Be Shot" api_key="TRESPASSERS_SHOT" single_faction_based_victory_achievement="true" description="在启用强度=10的对所有敌对的泽尼斯拱顶石的情况下赢得游戏。" minor_faction_name="ZenithArchitrave" intensity_for_achievement="10" minor_faction_allegiance="Hostile To All" level="gold">
+  </achievement>
+  
+   <achievement name="They Don't Appear To Be Friendly" api_key="DONT_APPEAR_FR" single_faction_based_victory_achievement="true" description="在启用强度&gt;=4的黑暗泽尼斯的情况下赢得游戏。" minor_faction_name="DarkZenith" intensity_for_achievement="4" minor_faction_allegiance="Dark Alliance" level="silver">
+  </achievement>
+  <achievement name="A New Foe Has Appeared" api_key="NEW_FOE_APPEAR" single_faction_based_victory_achievement="true" description="在启用强度&gt;=7的黑暗泽尼斯的情况下赢得游戏。" minor_faction_name="DarkZenith" intensity_for_achievement="7" minor_faction_allegiance="Dark Alliance" level="gold">
+  </achievement>  
+  <achievement name="It's Always Darkest Before the Dawn" api_key="DARKEST_BEFORE" single_faction_based_victory_achievement="true" description="在启用强度=10的黑暗泽尼斯的情况下赢得游戏。" minor_faction_name="DarkZenith" intensity_for_achievement="10" minor_faction_allegiance="Dark Alliance" level="platinum">
+  </achievement>
+  
+  
+  
+  <achievement name="Lab Rat" api_key="LAB_RAT" single_faction_based_victory_achievement="true" description="在任意难度下击败基因学家人工智能。" ai_type_name="Geneticist" intensity_for_achievement="1" level="silver">
+  </achievement>
+  <achievement name="Gene Slicer" api_key="GENE_SLICER" single_faction_based_victory_achievement="true" description="在难度&gt;=7下击败基因学家人工智能。" ai_type_name="Geneticist" intensity_for_achievement="7" level="gold">
+  </achievement>
+  <achievement name="Natural Selection" api_key="NATURAL_SELECTION" single_faction_based_victory_achievement="true" description="在难度&gt;=9下击败基因学家人工智能。" ai_type_name="Geneticist" intensity_for_achievement="9" level="platinum">
+  </achievement>
+  
+  <achievement name="Hammer Time" api_key="HAMMMER_TIME" single_faction_based_victory_achievement="true" description="在任意难度下击败尖塔族锤子人工智能。" ai_type_name="SpireHammer" intensity_for_achievement="1" level="bronze">
+  </achievement>
+  <achievement name="Brought A Gun To A Hammer Fight" api_key="GUN_HAMMER" single_faction_based_victory_achievement="true" description="在难度&gt;=7下击败尖塔族锤子人工智能。" ai_type_name="SpireHammer" intensity_for_achievement="7" level="silver">
+  </achievement>
+  <achievement name="The Spire Must Be Pushovers" api_key="SPIRE_PUSHOVER" single_faction_based_victory_achievement="true" description="在难度&gt;=9下击败尖塔族锤子人工智能。" ai_type_name="SpireHammer" intensity_for_achievement="9" level="gold">
+  </achievement>
+  
+  <achievement name="Calm Down" api_key="CALM_DOWN" single_faction_based_victory_achievement="true" description="在任意难度下击败复仇人工智能。" ai_type_name="Vengeful" intensity_for_achievement="1" level="bronze">
+  </achievement>
+  <achievement name="Don't Be So Petty" api_key="DONT_BE_PETTY" single_faction_based_victory_achievement="true" description="在难度&gt;=7下击败复仇人工智能。" ai_type_name="Vengeful" intensity_for_achievement="7" level="silver">
+  </achievement>
+  <achievement name="Why So Serious?" api_key="WHY_SO_SERIOUS" single_faction_based_victory_achievement="true" description="在难度&gt;=9下击败复仇人工智能。" ai_type_name="Vengeful" intensity_for_achievement="9" level="gold">
+  </achievement>
+
+<achievement name="Ad Astra per Aspera" api_key="AD_ASTRA" single_faction_based_victory_achievement="true" description="在任意难度下击败执法官人工智能。" ai_type_name="Aedile" intensity_for_achievement="1" level="bronze">
+  </achievement>
+  <achievement name="Non Ducor, Duco" api_key="NON_DUCOR_DUCO" single_faction_based_victory_achievement="true" description="在难度&gt;=7下击败执法官人工智能。" ai_type_name="Aedile" intensity_for_achievement="7" level="silver">
+  </achievement>
+  <achievement name="Vincit Qui Se Vincit" api_key="QUI_SE_VINCIT" single_faction_based_victory_achievement="true" description="在难度&gt;=9下击败执法官人工智能。" ai_type_name="Aedile" intensity_for_achievement="9" level="gold">
+  </achievement>
+  
+  <achievement name="Sic Semper Tyrannis" api_key="SIC_SEMPER_TYR" single_faction_based_victory_achievement="true" description="在任意难度下击败禁卫军人工智能。" ai_type_name="Praetor" intensity_for_achievement="1" level="bronze">
+  </achievement>
+  <achievement name="Et Tu, Brute?" api_key="ET_TU_BRUTE" single_faction_based_victory_achievement="true" description="在难度&gt;=7下击败禁卫军人工智能。" ai_type_name="Praetor" intensity_for_achievement="7" level="silver">
+  </achievement>
+  <achievement name="Veni Vidi Vici" api_key="VENI_VIDI_VICI" single_faction_based_victory_achievement="true" description="在难度&gt;=9下击败禁卫军人工智能。" ai_type_name="Praetor" intensity_for_achievement="9" level="gold">
+  </achievement>
+  
+    <achievement name="Can't Touch This" api_key="CANT_TOUCH" single_faction_based_victory_achievement="true" description="在任意难度下击败预备队人工智能。" ai_type_name="Reservist" intensity_for_achievement="1" level="bronze">
+  </achievement>
+  <achievement name="Off The Deep End" api_key="DEEP_END" single_faction_based_victory_achievement="true" description="在难度&gt;=7下击败预备队人工智能。" ai_type_name="Reservist" intensity_for_achievement="7" level="silver">
+  </achievement>
+  <achievement name="Should Have Brought the Kitchen Sink" api_key="KITCHEN_SINK" single_faction_based_victory_achievement="true" description="在难度&gt;=9下击败预备队人工智能。" ai_type_name="Reservist" intensity_for_achievement="9" level="gold">
+  </achievement>
+  
+  <achievement name="Last One Standing" api_key="LAST_ONE" single_faction_based_victory_achievement="true" description="在任意难度下击败角斗士人工智能。" ai_type_name="Gladiator" intensity_for_achievement="1" level="bronze">
+  </achievement>
+  <achievement name="Arena Champion" api_key="ARENA_CHAMP" single_faction_based_victory_achievement="true" description="在难度&gt;=7下击败角斗士人工智能。" ai_type_name="Gladiator" intensity_for_achievement="7" level="silver">
+  </achievement>
+  <achievement name="Coup de Grace" api_key="COUP_DE_GRACE" single_faction_based_victory_achievement="true" description="在难度&gt;=9下击败角斗士人工智能。" ai_type_name="Gladiator" intensity_for_achievement="9" level="gold">
+  </achievement>
+  
+   <achievement name="Chicken Little" api_key="CHICKEN_LITTLE" single_faction_based_victory_achievement="true" description="在任意难度下击败诸神黄昏人工智能。" ai_type_name="Ragnarok" intensity_for_achievement="1" level="bronze">
+  </achievement>
+  <achievement name="Apocalypse Never" api_key="APOC_NEVER" single_faction_based_victory_achievement="true" description="在难度&gt;=7下击败诸神黄昏人工智能。" ai_type_name="Ragnarok" intensity_for_achievement="7" level="silver">
+  </achievement>
+  <achievement name="The Chosen One" api_key="CHOSEN_ONE" single_faction_based_victory_achievement="true" description="在难度&gt;=9下击败诸神黄昏人工智能。" ai_type_name="Ragnarok" intensity_for_achievement="9" level="gold">
+  </achievement>
+  
+   <achievement name="We Will Dissimilate You" api_key="WE_WILL_DISS" single_faction_based_victory_achievement="true" description="在任意难度下击败野兽人工智能。" ai_type_name="Beast" intensity_for_achievement="1" level="silver">
+  </achievement>
+  <achievement name="Beauty Beats Brawn" api_key="BEATUY_BRAWN" single_faction_based_victory_achievement="true" description="在难度&gt;=7下击败野兽人工智能。" ai_type_name="Beast" intensity_for_achievement="7" level="gold">
+  </achievement>
+  <achievement name="Beast Master" api_key="BEAST_MASTER" single_faction_based_victory_achievement="true" description="在难度&gt;=9下击败野兽人工智能。" ai_type_name="Beast" intensity_for_achievement="9" level="platinum">
+  </achievement>
+  
+   <achievement name="The Vorpal Blade Went Snicker-Snack" api_key="VORPAL_BLADE" single_faction_based_victory_achievement="true" description="在任意难度下击败炸脖龙人工智能。" ai_type_name="Jabberwock" intensity_for_achievement="1" level="silver">
+  </achievement>
+  <achievement name="Thou Hast Slain the Jabberwock" api_key="SLAIN_JABBER" single_faction_based_victory_achievement="true" description="在难度&gt;=7下击败炸脖龙人工智能。" ai_type_name="Jabberwock" intensity_for_achievement="7" level="gold">
+  </achievement>
+  <achievement name="O Frabjous Day!" api_key="FRABJOUS_DAY" single_faction_based_victory_achievement="true" description="在难度&gt;=9下击败炸脖龙人工智能。" ai_type_name="Jabberwock" intensity_for_achievement="9" level="platinum">
+  </achievement>
+</root>

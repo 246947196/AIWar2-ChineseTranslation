@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- The creation of our custom faction. -->
+  <faction name="HydralFederation"
+           display_name="海德拉联邦" short_name="Hydral" processing_group="HydralFederation"
+           base_info_source="HydralFederationBaseInfo"
+           deep_info_source="HydralFederationDeepInfo"
+           team_center_color="Purple" team_border_color="cF8F8FF"
+           type="SpecialFaction"
+           must_be_at_most_one="true"
+		   impact="Brutal"
+           CanBeHostileToAll="true"
+           description="最后的海德拉已抵达银河系，并对所见所闻感到不悦。他们将试图慢慢接管银河系以关闭所有虫洞连接，带来强制和平。
+
+海德拉因人类和AI嗜血的过去而对两者毫无外交兴趣，将不惜一切代价将他们所谓的'peace'带到这个银河系。
+
+海德拉永远无法被真正阻止。通过我们科学家最好描述为'Time Travel Bullshit,'的方式，任何杀死其旗舰的尝试都只会导致它在别处重生。
+
+&lt;color=#f25e1c&gt;高影响：&lt;/color&gt; 这个派系就像一颗定时炸弹。它能够将几乎一切它杀死的转化为己用，如果放任不管将迅速失控。它的最终目标？关闭银河系，停止所有战争。它将用其巨大力量通过永久摧毁虫洞来慢慢关闭银河系，一次一个行星。
+
+当海德拉联邦接管AI行星时，他们会将所有AI建筑转化为工厂以生产联邦单位。此外，他们还会在其行星上的金属发生器周围被动建造这些工厂。">
+	  <custom_field name="Intensity" display_name="强度" description="他们对游戏玩法可能产生多大影响？
+
+注意：与许多其他派系不同，该派系在所有强度级别都会产生显著影响，因此默认为1。提高前请三思。"
+			sort_group="200" setting_type="IntSlider" default="1" min="1" max="10"/>
+	  <custom_field name="Allegiance" display_name="阵营" description="始终敌对所有人。"
+			  sort_group="250" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="敌对所有人" default_option="敌对所有人" />
+	  <custom_field name="InitialSpawnTime" display_name="生成计时器" description="游戏开始后多少分钟海德拉首次出现？"
+		sort_group="300" setting_type="IntSlider" default="120" min="10" max="600"/>
+	  <custom_field name="RandomInitialSpawnTime" is_advanced_setting="true" display_name="随机化生成计时器" description="随机化海德拉的生成计时器，介于上述值的 50% 到 100% 之间。"
+	   sort_group="350" setting_type="BoolToggle" default="true" />
+  </faction>
+</root>

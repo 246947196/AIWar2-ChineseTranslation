@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <journal name="ZO_ZenithMiners_InitialProbe" sidebar_text="{FactionColor}泽尼斯矿工&lt;/color&gt;: 发现泽尼斯矿工探测器"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+
+           full_text="指挥官，我们检测到一个发出{FactionColor}泽尼斯&lt;/color&gt;能量特征的探测器。它似乎正在向银河系广播归航信号，返回脉冲表明可能有一个非常强大的泽尼斯单位正在接近。当那个强大的单位到达时，我们将面临一场重大战斗。
+
+如果它像我们多年来见过的其他泽尼斯设备一样，我们或许可以使用入侵与其系统互动。" />
+
+    <journal name="ZO_ZenithMiners_InitialMiner" sidebar_text="{FactionColor}泽尼斯矿工&lt;/color&gt;:  泽尼斯矿工已到达"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+
+           full_text="指挥官，我们检测到了一个巨大的{FactionColor}泽尼斯魔像&lt;/color&gt;。它似乎能够影响行星本身；我们以前从未见过这样的事情发生。
+
+看起来这可能能够完全摧毁一颗行星，包括上面的所有东西。即使旗舰如果在行星上也会被永久摧毁。" />
+
+    <journal name="ZO_ZenithMiners_AttackingDyson" sidebar_text="{FactionColor}泽尼斯矿工&lt;/color&gt;:  戴森球受到攻击"
+             can_record_another_copy_if_already_recorded_in_this_campaign="false"
+             text_replacement_related_faction_color="true"
+
+           full_text="指挥官，我们一直认为没有什么能杀死戴森球，但也许我们错了。看起来一个泽尼斯矿工正在攻击一个戴森球！如果我们想拯救戴森球，我们需要立即行动。" />
+
+    <journal name="ZO_ZenithMiners_DysonDestroyed" sidebar_text="{FactionColor}泽尼斯矿工&lt;/color&gt;:  戴森球被摧毁"
+             can_record_another_copy_if_already_recorded_in_this_campaign="false"
+             text_replacement_related_faction_color="true"
+
+           full_text="指挥官，一个泽尼斯矿工杀死了一个戴森球。这是一个悲剧的日子。" />
+
+</root>

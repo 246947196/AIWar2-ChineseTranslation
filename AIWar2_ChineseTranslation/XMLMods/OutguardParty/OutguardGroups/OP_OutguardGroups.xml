@@ -1,0 +1,391 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<!--
+	<item name="MissileStrike" display_name="导弹打击" donate_to_player="true" on_spawn_behaviour="Attack" class="Offense" spawn_location="Manual_ByClick" aip_cost_on_contact="10" planetary_summoning_restriction="Any" seconds_allowed_to_exist="360000" times_allowed_to_summon="1" aip_per_additional_summon="100" time_between_summons_in_seconds="600" repair_time_in_seconds="1800" description="几吨导弹，任你瞄准。" parsed_data_type="EntityName" data_list="TeslaTorpedo" spawn_count_type="Strength_CurrentMark" min_spawn_value_list="10000" min_spawn_count_increase_per_aip_interval="1000" spawn_count_increase_aip_threshold="1" multi_pick_list="1" custom_bool_OutguardParty="True" />
+	-->
+
+	<item
+			name="ElderlingBreeders"
+			display_name="长老繁殖者"
+			donate_to_player="false"
+			on_spawn_behaviour="PatrolAdjacentFriendlyPlanets"
+			class="Defense"
+			spawn_location="Manual_ByClick"
+			aip_cost_on_contact="10"
+			planetary_summoning_restriction="NotAI"
+			seconds_allowed_to_exist="-1"
+			times_allowed_to_summon="1"
+			aip_per_additional_summon="100"
+			time_between_summons_in_seconds="600"
+			repair_time_in_seconds="1800"
+			description="繁殖者会产下一窝被灌输思想的长老幼体，用于防御和巡逻人类行星。"
+			parsed_data_type="Tag"
+			data_list="TameElderling"
+			spawn_count_type="RawCount"
+			is_in_random_pick_mode="true"
+			random_pick_count="1"
+			random_pick_count_base_value="1"
+			random_pick_count_increase_per_interval="1"
+			random_pick_aip_per_increase_interval="50"
+			custom_bool_OutguardParty="True"
+			/>
+
+	<!-- Duration/etc numbers are the same as Demeter's Cornucopia -->
+	<item
+			name="MobileSuperFactory"
+			display_name="机动超级设施"
+			donate_to_player="true"
+			on_spawn_behaviour="Attack"
+			class="Utility"
+			spawn_location="Manual_ByClick"
+			aip_cost_on_contact="10"
+			planetary_summoning_restriction="Any"
+			seconds_allowed_to_exist="360000"
+			times_allowed_to_summon="2"
+			aip_per_additional_summon="100"
+			time_between_summons_in_seconds="600"
+			repair_time_in_seconds="1200"
+			description="如果你把一座机动兵工厂做得像堡垒一样大会怎样？你会得到这座超级工厂，拥有4倍的无人机和工程师，加上10倍的修理和建造能力。如果不是通过在其生命周期内自我消耗来产生金属，它可能在几分钟内让你破产。"
+			parsed_data_type="EntityName"
+			data_list="SuperCombatFactory"
+			spawn_count_type="RawCount"
+			min_spawn_value_list="1"
+			custom_bool_OutguardParty="True"
+			/>
+
+	<item
+			name="PlanetaryDefenseOrbitals"
+			display_name="行星防御轨道站"
+			short_name="行星D轨道站"
+			on_spawn_behaviour="DefendLocalPlanet"
+			class="Stationary"
+			spawn_location="Manual_ByClick"
+			aip_cost_on_contact="10"
+			planetary_summoning_restriction="PlayerOnly"
+			seconds_allowed_to_exist="600"
+			times_allowed_to_summon="2"
+			aip_per_additional_summon="100"
+			time_between_summons_in_seconds="100"
+			repair_time_in_seconds="1200"
+			description="理论上能够防御整个行星，配备质量驱动器和用于快速目标的伯劳拦截机。即使它不归你所有，你也可以给这个外卫下达指令！开启'银河范围选项 > 盟友 > 共享友军NPC视野'以最有效地使用它。"
+			parsed_data_type="EntityName"
+			data_list="OrbitalMassDriver_Outguard"
+			spawn_count_type="RawCount"
+			min_spawn_value_list="1"
+			custom_bool_OutguardParty="True"
+			></item>
+
+	<item
+			name="OrbitalBombardment"
+			display_name="轨道轰炸"
+			short_name="轰炸"
+			on_spawn_behaviour="DefendLocalPlanet"
+			class="Stationary"
+			spawn_location="Manual_ByClick"
+			aip_cost_on_contact="10"
+			planetary_summoning_restriction="AIOnly"
+			seconds_allowed_to_exist="75"
+			times_allowed_to_summon="2"
+			aip_per_additional_summon="100"
+			time_between_summons_in_seconds="100"
+			repair_time_in_seconds="1200"
+			description="它的导弹会用完吗？是的，一分不差。但你肯定能留下深刻印象。即使它不归你所有，你也可以给这个外卫下达指令！开启'银河范围选项 > 盟友 > 共享友军NPC视野'以最有效地使用它。"
+			parsed_data_type="EntityName"
+			data_list="OrbitalMissileControl_Outguard"
+			spawn_count_type="RawCount"
+			min_spawn_value_list="1"
+			custom_bool_OutguardParty="True"
+			></item>
+
+	<item
+			name="TacticalShieldGenerator"
+			display_name="战术护盾发生器"
+			short_name="战术护盾发生器"
+			on_spawn_behaviour="DefendLocalPlanet"
+			class="Stationary"
+			spawn_location="Manual_ByClick"
+			aip_cost_on_contact="10"
+			planetary_summoning_restriction="Any"
+			seconds_allowed_to_exist="120"
+			times_allowed_to_summon="2"
+			aip_per_additional_summon="50"
+			time_between_summons_in_seconds="-1"
+			repair_time_in_seconds="120"
+			description="部署一个泡泡护盾发生器到战场或任何地方，无伤害惩罚。呼叫其中一个或全部，无冷却时间，随你选择。"
+			parsed_data_type="EntityName"
+			data_list="OutguardTacticalForcefieldGenerator"
+			spawn_count_type="RawCount"
+			min_spawn_value_list="1"
+			min_spawn_count_increase_per_aip_interval="0"
+			multi_pick_list="1"
+			custom_bool_OutguardParty="True"
+			/>
+
+	<!--
+	<item name="MirroredEnergyBomb" display_name="镜像能量炸弹" short_name="能量炸弹" on_spawn_behaviour="DefendLocalPlanet" class="Stationary" spawn_location="Manual_ByClick" aip_cost_on_contact="10" planetary_summoning_restriction="Any" seconds_allowed_to_exist="120" times_allowed_to_summon="1" aip_per_additional_summon="25" time_between_summons_in_seconds="100" repair_time_in_seconds="600" description="部署一个大型炸弹，带有反射射击，在蓄力时返回来袭火力。最终爆炸击中所有单位，包括你的。" parsed_data_type="EntityName" data_list="EnergyConverterIED" spawn_count_type="RawCount" min_spawn_value_list="1" min_spawn_count_increase_per_aip_interval="0" multi_pick_list="1" custom_bool_OutguardParty="True" /> 
+	-->
+
+	<item
+			name="HackingDroneOutguard"
+			display_name="入侵无人机操作员"
+			short_name="入侵无人机"
+			donate_to_player="true"
+			on_spawn_behaviour="DefendLocalPlanet"
+			class="Utility"
+			spawn_location="Manual_ByClick"
+			aip_cost_on_contact="10"
+			planetary_summoning_restriction="Any"
+			seconds_allowed_to_exist="90"
+			times_allowed_to_summon="1"
+			aip_per_additional_summon="-1"
+			time_between_summons_in_seconds="-1"
+			repair_time_in_seconds="300"
+			description="这架远程操作无人机能够入侵目标并保持隐形。约90秒后它会自毁，所以你最好在那之前转移任何单位生产线……哦对了，目标可能看不见这架无人机，但它会极度警觉其活动并发送更强的入侵响应。"
+			parsed_data_type="EntityName"
+			data_list="HackingDroneShip"
+			spawn_count_type="RawCount"
+			min_spawn_value_list="1"
+			min_spawn_count_increase_per_aip_interval="0"
+			multi_pick_list="1"
+			custom_bool_OutguardParty="True"
+			/>
+
+	<!-- For testing warheads
+	<item name="WarheadPartyPackOutguard" display_name="飞弹派对包" short_name="飞弹派对包" donate_to_player="true" on_spawn_behaviour="DefendLocalPlanet" class="Utility" spawn_location="Manual_ByClick" aip_cost_on_contact="10" planetary_summoning_restriction="Any" seconds_allowed_to_exist="90" times_allowed_to_summon="1" aip_per_additional_summon="-1" time_between_summons_in_seconds="-1" repair_time_in_seconds="300" description="曾经想知道'银河飞弹'是什么但懒得入侵灰色尖塔？我们送货到任何地点！" parsed_data_type="EntityName,EntityName,EntityName,EntityName" data_list="LightningWarheadFromSphere,StormWarheadFromSphere,EMPWarheadFromSphere,NuclearWarheadFromSphere" spawn_count_type="RawCount" min_spawn_value_list="1,1,1,1" min_spawn_count_increase_per_aip_interval="0" multi_pick_list="1,1,1,1" custom_bool_OutguardParty="True" /> 
+	-->
+
+	<item
+			name="ApocalypseWarheadOutguard"
+			display_name="天启飞弹"
+			donate_to_player="true"
+			on_spawn_behaviour="DefendLocalPlanet"
+			class="Stationary"
+			spawn_location="Manual_ByClick"
+			aip_cost_on_contact="10"
+			planetary_summoning_restriction="Any"
+			seconds_allowed_to_exist="10"
+			times_allowed_to_summon="1"
+			aip_per_additional_summon="-1"
+			time_between_summons_in_seconds="-1"
+			repair_time_in_seconds="3600"
+			description="投送一个爆炸后感染所有人的飞弹使其僵尸化。这对人类来说会是一个很好的武器，只是我们从未让僵尸变得友好。"
+			parsed_data_type="EntityName"
+			data_list="ApocalypseWarhead"
+			spawn_count_type="RawCount"
+			min_spawn_value_list="1"
+			min_spawn_count_increase_per_aip_interval="0"
+			spawn_count_increase_aip_threshold="0"
+			multi_pick_list="1"
+			custom_bool_OutguardParty="True"
+			/>
+
+	<item
+			name="ScarecrowGolem"
+			display_name="稻草人傀儡"
+			on_spawn_behaviour="DefendLocalPlanet"
+			class="Stationary"
+			spawn_location="Manual_ByClick"
+			aip_cost_on_contact="10"
+			planetary_summoning_restriction="Any"
+			seconds_allowed_to_exist="150"
+			times_allowed_to_summon="2"
+			aip_per_additional_summon="100"
+			time_between_summons_in_seconds="300"
+			repair_time_in_seconds="0"
+			description="从远处看非常像吞噬者傀儡，用作AI部队的稻草人。对远程火力有一定抵抗力，但总体上只是用来吓人而不是挨打。"
+			parsed_data_type="EntityName"
+			data_list="ScarecrowGolem"
+			spawn_count_type="RawCount"
+			min_spawn_value_list="1"
+			min_spawn_count_increase_per_aip_interval="0"
+			spawn_count_increase_aip_threshold="0"
+			multi_pick_list="1"
+			custom_bool_OutguardParty="True"
+			/>
+
+	<item
+			name="SuperBulwark"
+			display_name="超级堡垒"
+			description="这个防御承包商找到了快速设置防御的诀窍。他没有提供十个堡垒炮塔，而是将它们重新组装成一个拥有十倍力量的超级堡垒炮塔。但哪能止步于此？他还带来了动能缓冲器在其周围布雷。"
+
+			class="Stationary"
+			on_spawn_behaviour="DefendLocalPlanet"
+			spawn_location="Manual_ByClick"
+			
+			aip_cost_on_contact="10"
+			planetary_summoning_restriction="NotAI"
+			spawn_delay="10"
+			seconds_allowed_to_exist="300"
+			times_allowed_to_summon="1"
+			aip_per_additional_summon="100"
+			time_between_summons_in_seconds="1200"
+			repair_time_in_seconds="1800"
+
+			
+
+			parsed_data_type="EntityName,EntityName"
+			data_list="SuperBulwarkTurret,KineticMinefield_Outguard"
+			spawn_count_type="RawCount,RawCount"
+			min_spawn_count_increase_per_aip_interval="0,2"
+			spawn_count_increase_aip_threshold="25"
+			duplicate_pick_handling_list="AllowedForDifferentTiers"
+			min_spawn_value_list="1,4"
+			multi_pick_list="1,4"
+
+			custom_bool_OutguardParty="True"
+			/>
+	<!--
+	<item
+			name="JumpspaceBeacon"
+			display_name="跃迁空间信标"
+			on_spawn_behaviour="DefendLocalPlanet"
+			class="Stationary"
+			spawn_location="Manual_ByClick"
+			aip_cost_on_contact="10"
+			planetary_summoning_restriction="NotAI"
+			spawn_delay="60"
+			seconds_allowed_to_exist="15"
+			times_allowed_to_summon="10"
+			aip_per_additional_summon="150"
+			time_between_summons_in_seconds="1200"
+			repair_time_in_seconds="2400"
+			description="部署此信标一分钟后，我们所有机动舰队（非驻守模式）将跳跃到该位置，无论它们当前在哪个行星。"
+			parsed_data_type="EntityName"
+			data_list="JumpspaceBeacon"
+			spawn_count_type="RawCount"
+			min_spawn_value_list="1"
+			min_spawn_count_increase_per_aip_interval="0"
+			spawn_count_increase_aip_threshold="0"
+			multi_pick_list="1"
+			custom_bool_OutguardParty="True"
+			/>
+	-->
+
+	<item
+			name="CloakedLogisticalOutpost"
+			display_name="隐形后勤前哨站"
+			short_name="隐形后勤前哨站"
+			on_spawn_behaviour="DefendLocalPlanet"
+			class="Stationary"
+			spawn_location="Manual_ByClick"
+			aip_cost_on_contact="10"
+			planetary_summoning_restriction="Any"
+			seconds_allowed_to_exist="-1"
+			times_allowed_to_summon="2"
+			aip_per_additional_summon="100"
+			time_between_summons_in_seconds="100"
+			repair_time_in_seconds="1200"
+			description="无武器隐形前哨站，提升单位速度。这些是永久性建筑。用它们在破碎领土之间制造快速通道。"
+			parsed_data_type="EntityName"
+			data_list="CloakedLogisticalOutpost_Outguard"
+			spawn_count_type="RawCount"
+			min_spawn_value_list="1"
+			custom_bool_OutguardParty="True"
+			>
+	</item>
+<!--
+	<item
+			name="HospitalOutguard"
+			display_name="圣殿医护者"
+			short_name="医护者"
+			on_spawn_behaviour="DefendLocalPlanet"
+			class="Utility"
+			spawn_location="Manual_ByClick"
+			aip_cost_on_contact="10"
+			planetary_summoning_restriction="Any"
+			seconds_allowed_to_exist="600"
+			times_allowed_to_summon="2"
+			aip_per_additional_summon="100"
+			time_between_summons_in_seconds="300"
+			repair_time_in_seconds="900"
+			description="召唤一艘从圣殿骑士那里捕获的大型医院舰的援助。消耗自身船体在单位被摧毁前拯救它们。"
+
+			parsed_data_type="EntityName,EntityName"
+		data_list="OutguardFlagship,HospitalOutguard"
+		spawn_count_type="RawCount,Strength_CurrentMark"
+		min_spawn_value_list="1,7200"
+		min_spawn_count_increase_per_aip_interval="0,66"
+		spawn_count_increase_aip_threshold="1"
+		duplicate_pick_handling_list="AllowedForDifferentTiers"
+		multi_pick_list="1,10"
+
+			custom_bool_OutguardParty="True"
+			>
+	</item>
+-->
+
+	<!-- Just an idea: summon a batch of permanent interplanetary engineers -->
+	<!--
+	<item name="OutguardExpatEngineers" display_name="外籍'工程师'" on_spawn_behaviour="DefendLocalPlanet" class="Stationary" spawn_location="Manual_ByClick" aip_cost_on_contact="10" planetary_summoning_restriction="PlayerOnly" seconds_allowed_to_exist="600" times_allowed_to_summon="2" aip_per_additional_summon="100" time_between_summons_in_seconds="100" repair_time_in_seconds="1200" description="这些流浪汉说他们知道如何修理东西，只是没有扳手、培训、食物或衣服。" parsed_data_type="EntityName" data_list="ExpatEngineer" spawn_count_type="RawCount" min_spawn_value_list="10" min_spawn_count_increase_per_aip_interval="0" spawn_count_increase_aip_threshold="1" multi_pick_list="1">
+	</item>
+	-->
+
+	<!--
+	<item name="OutguardPhotonTorpedoFrigate" display_name="外星鱼雷护卫舰" donate_to_player="true" on_spawn_behaviour="DefendLocalPlanet" class="Stationary" spawn_location="Manual_ByClick" aip_cost_on_contact="10" planetary_summoning_restriction="PlayerOnly" seconds_allowed_to_exist="600" times_allowed_to_summon="2" aip_per_additional_summon="100" time_between_summons_in_seconds="100" repair_time_in_seconds="1200" description="这些外星单位是'外籍'是因为外星人远离家乡？不，是因为杀害它们的人类正在远离家乡飞行。" parsed_data_type="EntityName" data_list="AlienTorpedoFrigate" spawn_count_type="RawCount" min_spawn_value_list="10" min_spawn_count_increase_per_aip_interval="0" spawn_count_increase_aip_threshold="1" multi_pick_list="1">
+	</item>
+	-->
+
+	<item	name="ChromaticHusk"
+			display_name="色彩外壳"
+			short_name="色彩外壳"
+			on_spawn_behaviour="DefendLocalPlanet"
+			donate_to_player="false"
+			class="Defense"
+			spawn_location="Manual_ByClick"
+			aip_cost_on_contact="10"
+			planetary_summoning_restriction="Any"
+			seconds_allowed_to_exist="150"
+			times_allowed_to_summon="1"
+			aip_per_additional_summon="100"
+			time_between_summons_in_seconds="300"
+			repair_time_in_seconds="1800"
+			description="被即将失踪的探索者在太空中发现的废弃物。我们现在认为它只是在打盹。军方占有了它，掏空了内部（字面意义上），并接入其脊柱。有了这种力量，人类有了希望。"
+			parsed_data_type="EntityName"
+			data_list="ChromaticHusk"
+			spawn_count_type="RawCount"
+			min_spawn_value_list="1"
+			custom_bool_OutguardParty="True"
+			>
+	</item> 
+<!--
+	<item	name="GuardianFleet"
+			display_name="守卫舰队"
+			short_name="守卫舰队"
+			on_spawn_behaviour="PatrolAdjacentFriendlyPlanets"
+			donate_to_player="false"
+			class="Defense"
+			spawn_location="Manual_ByClick"
+			aip_cost_on_contact="10"
+			planetary_summoning_restriction="Any"
+			seconds_allowed_to_exist="150"
+			times_allowed_to_summon="10"
+			aip_per_additional_summon="100"
+			time_between_summons_in_seconds="1"
+			repair_time_in_seconds="900"
+			description="未受外籍技术改进。"
+
+			parsed_data_type="AIShipGroupCategory,AIShipGroupCategory"
+			data_list="AnyDireGuardians,AnyBasicGuardians"
+			spawn_count_type="RawCount,AIBudget"
+
+			
+
+			min_spawn_value_list="1,2000"
+			max_spawn_value_list="1,4000"
+			multi_pick_list="1"
+
+			
+			custom_bool_OutguardParty="True"
+			>
+	</item> 
+-->
+
+</root>
+
+<!-- 
+	is_in_random_pick_mode="true"
+	random_pick_count="1"
+			random_pick_count_base_value="1"
+			random_pick_count_increase_per_interval="1"
+			random_pick_aip_per_increase_interval="100" -->

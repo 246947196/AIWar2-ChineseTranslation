@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <journal name="ZO_ZenithArchitrave_FirstFoundTerritory" sidebar_text="{FactionColor}泽尼斯拱顶石&lt;/color&gt;:  首次检测"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+        chat_text="指挥官，我们发现了一个{FactionColor}泽尼斯拱顶石&lt;/color&gt;"
+        full_text="指挥官，远程传感器已经识别出一些有趣的新泽尼斯形态。它们似乎非常有领地意识，因此攻击它们的领土听起来像是引发一场重大战争的好方法。
+
+拱顶石是来自另一个宇宙的强大泽尼斯帝国的远征军。向这个宇宙投射力量对它们来说非常昂贵，它们只会偶尔这样做；与其他拱顶石作战，自卫，或在它们不频繁的扩张尝试中。在和平时期，无法存放在孵化场中的单位会随着时间慢慢损耗，因为拱顶石无法维持它们。" />
+
+    <journal name="ZO_ZenithArchitrave_AllExplored" sidebar_text="{FactionColor}泽尼斯拱顶石&lt;/color&gt;:  找到母星传送门"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+           text_replacement_related_planet="true"
+        full_text="指挥官，经过更多时间分析这个拱顶石，看起来我们或许可以通过入侵与它们进行通信。{PlanetName}上有一个传送门，似乎是它们在我们银河系中维持存在的手段。
+
+虽然看起来我们无法摧毁传送门，但也许我们可以通过入侵与它们通信？某种临时休战可能值得为实现休战而进行的战斗。
+
+由于拱顶石的行星受到攻击的时间越长，它们就会变得越强大，因此在它们和平时发动攻击将是最容易的，因为这将是一场漫长的战斗。
+
+（如果你在游戏大厅选择了玩家联盟拱顶石，那么它们将永远是你的盟友，尽管你不能入侵它们）" />
+
+    <journal name="ZO_ZenithArchitrave_PioneerSpawn" sidebar_text="{FactionColor}泽尼斯拱顶石&lt;/color&gt;:  先锋"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+           chat_text="指挥官，一个{FactionColor}泽尼斯拱顶石&lt;/color&gt;正在试图扩大其在我们银河系中的立足点。"
+        full_text="指挥官，我们从这个{FactionColor}泽尼斯拱顶石&lt;/color&gt;获得了一些新的能量特征。看起来是一些称为先锋的新主力舰。
+
+虽然拱顶石通常似乎满足于只控制它们传送门周围的母星领土，但看起来有时它们会积累足够的能量来尝试扩大控制。希望一旦先锋被处理，它们将回到休眠状态。攻击它们新征服的行星应该比攻击它们的母星领土引发更少的反应。" />
+
+    <journal name="ZO_ZenithArchitrave_CivilWarStart" sidebar_text="{FactionColor}泽尼斯拱顶石&lt;/color&gt;:  内战"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+           chat_text="指挥官，{FactionColor}泽尼斯拱顶石&lt;/color&gt;正在发生内战。"
+        full_text="指挥官，看起来泽尼斯拱顶石已经开始了一场重大的局部战争。似乎它们已经不再关心人工智能，只是试图互相攻击。
+
+也许其中一个变得太强大，其他拱顶石联合起来对抗它。无论原因是什么，我们应该尽量避开它们。" />
+
+    <journal name="ZO_ZenithArchitrave_TruceStart" sidebar_text="{FactionColor}泽尼斯拱顶石&lt;/color&gt;:  休战"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+           chat_text="指挥官，{FactionColor}泽尼斯拱顶石&lt;/color&gt;已经宣布与我们休战。"
+        full_text="指挥官，做得好！这应该允许我们在不战斗的情况下使用拱顶石领土。但要小心；这充其量是一种不稳定的联盟。
+
+当它们在扩张或内战中时，它们可能会忘记休战，直到它们再次休眠。" />
+
+    <journal name="ZO_ZenithArchitrave_TruceBrokenCivilWar" sidebar_text="{FactionColor}泽尼斯拱顶石&lt;/color&gt;:  休战破裂（内战）"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+           chat_text="指挥官，{FactionColor}泽尼斯拱顶石&lt;/color&gt;违反了我们的休战协议。"
+        full_text="指挥官，看来我们与泽尼斯拱顶石的不稳定休战已被打破。它们正处于内战中，这似乎是它们目前唯一的优先事项。
+
+我们怀疑一旦内战结束，休战将再次生效。" />
+
+    <journal name="ZO_ZenithArchitrave_TruceBrokenExpansion" sidebar_text="{FactionColor}泽尼斯拱顶石&lt;/color&gt;:  休战破裂（扩张）"
+           can_record_another_copy_if_already_recorded_in_this_campaign="false"
+           text_replacement_related_faction_color="true"
+           chat_text="指挥官，{FactionColor}泽尼斯拱顶石&lt;/color&gt;违反了我们的休战协议。"
+        full_text="指挥官，看来我们与泽尼斯拱顶石的不稳定休战已被打破。它们建造了一些先锋来帮助它们扩张，而在扩张期间，它们有比遵守休战更高的优先事项。它们不是最光荣的种族。
+
+我们怀疑一旦所有先锋被消灭，休战将再次生效。" />
+
+    
+</root>

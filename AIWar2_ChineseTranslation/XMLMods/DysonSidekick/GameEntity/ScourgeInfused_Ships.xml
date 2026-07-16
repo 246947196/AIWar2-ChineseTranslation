@@ -1,0 +1,2198 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+
+  <entity name="ScourgeInfusedSpawner" copy_from="ScourgeSpawner"
+
+          tags="ScourgeSpawner,ShowsOnNormalDisplayMode,GeneratesBonusHunterShips,SapperImportantPoint,ScourgeVassalSpawner"
+
+          build_sidebar_categories_i_am_part_of="ScourgeVassalBuild"
+
+          description="一座恐怖的怪物制造厂，将不幸的外星物种成员与AI技术融合，创造出令人作呕的仆从。它们将在战斗中协助你。"
+
+          eligible_for_hacks="MarkupSpawner"
+
+          metal_cost="1000000"
+
+          cost_in_resource_one="50"
+
+          can_be_given_orders_by_any_player_even_if_not_owner="true"
+
+          >
+
+    </entity>
+
+    <entity name="ScourgeInfusedArmory" copy_from="ScourgeArmory"
+
+            tags="ScourgeArmory,ShowsOnNormalDisplayMode,SapperImportantPoint,SpireInfusedBuildMenu,ScourgeVassalArmory"
+
+            build_sidebar_categories_i_am_part_of="ScourgeVassalBuild"
+
+            eligible_for_hacks="TransformArmory,MarkupArmory"
+
+            metal_cost="500000"
+
+            cost_in_resource_one="100"
+
+            can_be_given_orders_by_any_player_even_if_not_owner="true"
+
+          >
+
+    </entity>
+
+    <!-- Scourge Fortresses -->
+
+    <entity name="ScourgeVassalBurlustFortress" copy_from="ScourgeBurlustFortress"
+
+            build_sidebar_categories_i_am_part_of="ScourgeVassalBuild"
+
+            eligible_for_hacks="MarkupFortress"
+
+            tags="ScourgeFortress,ScourgeBurlustFortress,DefendsRegion,BurlustDefenseTierOne,TierOne"
+
+            description="由天灾建造的强固防御工事。使用布尔勒斯特人——一个狂暴而好战的种族——的部件，此要塞拥有高基础伤害，随船体生命值降低而增加。要塞还会生产舰船协助保卫周围行星。"
+
+            metal_cost="100000"
+
+            cost_in_resource_one="15"
+
+            can_be_given_orders_by_any_player_even_if_not_owner="true"
+
+            >
+
+    </entity>
+
+    <entity name="ScourgeVassalEvuckFortress" copy_from="ScourgeEvuckFortress"
+
+            build_sidebar_categories_i_am_part_of="ScourgeVassalBuild"
+
+            eligible_for_hacks="MarkupFortress"
+
+            tags="ScourgeFortress,ScourgeEvuckFortress,DefendsRegion,EvuckDefenseTierOne,TierOne"
+
+            description="由天灾建造的强固防御工事。使用埃瓦克人——一个安静、好学而阴险的种族——的部件，此要塞伤害相对较低，但能绕过护盾且可隐形。要塞还会生产舰船协助保卫周围行星。"
+
+            metal_cost="100000"
+
+            cost_in_resource_one="15"
+
+            can_be_given_orders_by_any_player_even_if_not_owner="true"
+
+            >
+
+    </entity>
+
+
+
+    <entity name="ScourgeVassalThoraxianFortress" copy_from="ScourgeThoraxianFortress"
+
+            build_sidebar_categories_i_am_part_of="ScourgeVassalBuild"
+
+            eligible_for_hacks="MarkupFortress"
+
+            tags="ScourgeFortress,ScourgeThoraxianFortress,DefendsRegion,ThoraxianDefenseTierOne,TierOne"
+
+            description="由天灾建造的强大防御工事。使用托拉克西亚人——一个如噩梦般骇人的钻地蜂巢意识物种——的部件，此要塞免疫远程火力，同时拖入并撕裂敌人。要塞还会生产舰船协助保卫周围行星。"
+
+            metal_cost="100000"
+
+            cost_in_resource_one="15"
+
+            can_be_given_orders_by_any_player_even_if_not_owner="true"
+
+            >
+
+    </entity>
+
+
+
+    <entity name="ScourgeVassalPeltianFortress" copy_from="ScourgePeltianFortress"
+
+            build_sidebar_categories_i_am_part_of="ScourgeVassalBuild"
+
+            eligible_for_hacks="MarkupFortress"
+
+            tags="ScourgeFortress,ScourgePeltianFortress,DefendsRegion,PeltianDefenseTierOne,TierOne"
+
+            description="由天灾建造的强大防御工事。使用佩尔提安人——一个弱小而爱好和平、却精通轰炸的种族——的部件，此要塞拥有无限射程，且目标越远造成的伤害越高。要塞还会生产舰船协助保卫周围行星。"
+
+            metal_cost="100000"
+
+            cost_in_resource_one="15"
+
+            can_be_given_orders_by_any_player_even_if_not_owner="true"
+
+            >
+
+      <system name="W1" display_name="佩尔蒂安迫击炮"
+
+	      category="Weapon" firing_timing="OnlyInRange"
+
+	      damage_per_shot="4000" range="EssentiallyInfinite" shot_speed="Slow" rate_of_fire="VeryLow"
+
+	      shots_per_salvo="5" fires_salvos_sequentially="false"
+
+	      shot_type_data="FlakShotAOEBurstAtEnd"
+
+	      area_of_effect_size="900"
+
+              aoe_spreads_damage_among_available_targets="true"
+
+	      >
+
+	<outgoing_damage_modifier based_on="AttackDistance" comparison_type="MultiplesOf" compared_to="2000" multiplier="1" max_multiplier="8"/>
+
+      </system>
+
+      <system name="W2" display_name="佩尔蒂安能量波"
+
+              category="Weapon" firing_timing="OnlyInRange" 
+
+              damage_per_shot="2500" range="EssentiallyInfinite" shot_speed="Normal" rate_of_fire="Normal"
+
+	      shots_per_salvo="4" fires_salvos_sequentially="false"
+
+              shot_type_data="EnergyWave"
+
+	      >
+
+	<outgoing_damage_modifier based_on="AttackDistance" comparison_type="MultiplesOf" compared_to="2000" multiplier="1" max_multiplier="8" />
+
+	<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="6" max_multiplier="12" />
+
+    </system>
+
+
+
+    </entity>
+
+
+
+    <entity name="ScourgeVassalNezinulFortress" copy_from="ScourgeNeinzulFortress"
+
+            build_sidebar_categories_i_am_part_of="ScourgeVassalBuild"
+
+            eligible_for_hacks="MarkupFortress"
+
+            tags="ScourgeFortress,ScourgeNeinzulFortress,DefendsRegion,NeinzulDefenseTierOne,TierOne"
+
+            description="由天灾建造的强大防御工事。使用奈祖尔——一个通常寿命短暂却拥有祖先记忆的物种——的部件，此要塞在造成伤害时自我治疗，对虚弱目标造成更高伤害，并创造全敌对的僵尸。要塞还会生产舰船协助保卫周围行星。"
+
+            metal_cost="100000"
+
+            cost_in_resource_one="15"
+
+            can_be_given_orders_by_any_player_even_if_not_owner="true"
+
+            >
+
+    </entity>
+
+    <entity name="ScourgeVassalSpireFortress" copy_from="ScourgeSpireFortress"
+
+            build_sidebar_categories_i_am_part_of="ScourgeVassalBuild"
+
+            tags="ScourgeFortress,ScourgeSpireFortress,DefendsRegion,SpireDefenseTierOne,TierOne"
+
+            eligible_for_hacks="MarkupFortress"
+
+            description="由天灾建造的强大防御工事。使用尖塔——一个拥有惊人科技的极强种族——的部件，搭载一门光子轰炸加农炮造成荒谬的伤害。要塞同时生产单位协助防御周围行星。"
+
+            metal_cost="100000"
+
+            cost_in_resource_one="15"
+
+            can_be_given_orders_by_any_player_even_if_not_owner="true"
+
+            >
+
+    </entity>
+
+    <entity name="ScourgeVassalZenithFortress" tags="ScourgeFortress,ScourgeZenithFortress,DefendsRegion,ZenithDefenseTierOne,TierOne"
+
+	        thematic_groups="Scourge,Spire" npc_ship_cap_type="LargeShips"
+
+	        visuals="Assets/_DLC1/Scourge/ScourgeFortress/ScourgeFortress_Spire.prefab" visuals_bundle="exp1_the_spire_rises"
+
+	        icon_name="Ships1/Fortress"             icon_overlay="Overlays2/Race_Zenith"
+
+                gimbal_icon_size_multiplier="1.5"
+
+		y_offset_of_icon="35"
+
+		category="Ship"
+
+		size_scale="6"
+
+		visuals_scale_multiplier="20"
+
+                collision_priority="800"
+
+                build_sidebar_categories_i_am_part_of="ScourgeVassalBuild"
+
+	        display_name="灾祸 Zenith Fortress"
+
+                display_name_for_sidebar="天顶堡垒"
+
+	        description="由天灾建造的强大防御工事。使用天顶的部件，拥有一个非常强大的酸化炮。要塞同时生产单位协助防御周围行星。"
+
+	        behavior="Stationary"
+
+		starting_mark_level="Mark1"
+
+		cost_for_ai_to_purchase="950"		
+
+		hull_points="400000" shield_points="400000" speed="Immobile"
+
+		energy_consumption="25000"
+
+		armor_mm="300" albedo="0.7" mass_tx="7"
+
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+
+		voice_group="Turret"
+
+                metal_cost="100000"
+
+                cost_in_resource_one="15"
+
+                eligible_for_hacks="MarkupFortress"
+
+                can_be_given_orders_by_any_player_even_if_not_owner="true"
+
+                priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+
+                description_appender_type="Arcen.AIW2.External.ScourgeGenericUnitDescriptionAppender"
+
+		>
+
+      <system name="WD" display_name="天顶颠覆酸液喷射"
+
+			category="Weapon" firing_timing="OnlyInRange"
+
+			damage_per_shot="120" range="AboveAverage4" shot_speed="Normal" rate_of_fire="Devourer" 
+
+			shots_per_salvo="40" fires_salvos_sequentially="false"
+
+			shot_type_data="DoubleShot_Green"
+
+			damage_amplification="true" damage_amplification_duration="10" damage_amplification_flat="180"
+
+			>
+
+    </system>
+
+	<ship_class_data can_be_zombified_and_similar="false" />
+
+    </entity>
+
+
+
+    <!-- Scourge Greater Fortresses -->
+
+    <entity name="ScourgeVassalBurlustGreaterFortress" copy_from="ScourgeBurlustFortress"
+
+            tags="ScourgeFortress,ScourgeBurlustGreaterFortress,DefendsRegion,BurlustDefenseTierTwo,TierTwo"
+
+            description="由天灾建造的极具威力的防御工事。使用布尔勒斯特人——一个狂暴而好战的种族——的部件，此大型要塞拥有高基础伤害，且只会随船体损耗而提升。更大要塞还会生产强力舰船协助保卫周围行星。"
+
+            eligible_for_hacks="MarkupFortress"
+
+            metal_cost="200000"
+
+            cost_in_resource_one="30"
+
+            hull_points="700000" shield_points="400000" speed="Immobile"
+
+            display_name_for_sidebar="要塞"
+
+            display_name="大型蛮族堡垒"
+
+            icon_name="Ships3/AttractiveMatrixFortress"
+
+            can_be_given_orders_by_any_player_even_if_not_owner="true"
+
+            build_sidebar_categories_i_am_part_of="ScourgeVassalBuild"
+
+            >
+
+    </entity>
+
+
+
+    <entity name="ScourgeVassalEvuckGreaterFortress" copy_from="ScourgeEvuckFortress"
+
+            tags="ScourgeFortress,ScourgeEvuckGreaterFortress,ScourgeEvuckFortress,DefendsRegion,EvuckDefenseTierTwo,TierTwo"
+
+            description="由天灾建造的强大防御工事。使用埃瓦克人——一个安静、好学而阴险的种族——的部件，此要塞伤害相对较低，但能绕过护盾且可隐形。更大要塞还会生产强力舰船协助保卫周围行星。"
+
+            eligible_for_hacks="MarkupFortress"
+
+            metal_cost="200000"
+
+            cost_in_resource_one="30"
+
+            hull_points="700000" shield_points="400000" speed="Immobile"
+
+            display_name_for_sidebar="伊瓦克大型堡垒"
+
+            display_name="大型伊瓦克堡垒"
+
+            icon_name="Ships3/AttractiveMatrixFortress"
+
+            can_be_given_orders_by_any_player_even_if_not_owner="true"
+
+            build_sidebar_categories_i_am_part_of="ScourgeVassalBuild"
+
+            >
+
+    </entity>
+
+
+
+    <entity name="ScourgeVassalThoraxianGreaterFortress" copy_from="ScourgeThoraxianFortress"
+
+            build_sidebar_categories_i_am_part_of="ScourgeVassalBuild"
+
+            eligible_for_hacks="MarkupFortress"
+
+            tags="ScourgeFortress,ScourgeThoraxianGreaterFortress,DefendsRegion,ThoraxianDefenseTierTwo,TierTwo"
+
+            description="由天灾建造的强大防御工事。使用托拉克西亚人——一个如噩梦般骇人的钻地蜂巢意识物种——的部件，此要塞免疫远程火力，同时拖入并撕裂敌人。更大要塞还会生产强力舰船协助保卫周围行星。"
+
+            metal_cost="200000"
+
+            cost_in_resource_one="30"
+
+            hull_points="700000" shield_points="400000" speed="Immobile"
+
+            display_name_for_sidebar="索拉克斯大型堡垒"
+
+            display_name="大型托拉西恩堡垒"
+
+            icon_name="Ships3/AttractiveMatrixFortress"
+
+            can_be_given_orders_by_any_player_even_if_not_owner="true"
+
+            >
+
+    </entity>
+
+
+
+    <entity name="ScourgeVassalPeltianGreaterFortress" copy_from="ScourgeVassalPeltianFortress"
+
+            build_sidebar_categories_i_am_part_of="ScourgeVassalBuild"
+
+            eligible_for_hacks="MarkupFortress"
+
+            tags="ScourgeFortress,ScourgePeltianGreaterFortress,DefendsRegion,PeltianDefenseTierTwo,TierTwo"
+
+            description="由天灾建造的强大防御工事。使用佩尔提安人——一个弱小而爱好和平、却精通轰炸的种族——的部件，此要塞拥有无限射程，距离目标越远造成的伤害越高。更大要塞还会生产强力舰船协助保卫周围行星。"
+
+            metal_cost="200000"
+
+            cost_in_resource_one="30"
+
+            hull_points="700000" shield_points="400000" speed="Immobile"
+
+            display_name_for_sidebar="佩尔蒂安大型堡垒"
+
+            display_name="大型佩尔蒂安堡垒"
+
+            icon_name="Ships3/AttractiveMatrixFortress"
+
+            can_be_given_orders_by_any_player_even_if_not_owner="true"
+
+            >
+
+    </entity>
+
+    <entity name="ScourgeVassalNezinulGreaterFortress" copy_from="ScourgeNeinzulFortress"
+
+            build_sidebar_categories_i_am_part_of="ScourgeVassalBuild"
+
+            eligible_for_hacks="MarkupFortress"
+
+            tags="ScourgeFortress,ScourgeNeinzulGreaterFortress,DefendsRegion,NeinzulDefenseTierTwo,TierTwo"
+
+            description="由天灾建造的强大防御工事。使用奈祖尔——一个通常寿命短暂却拥有祖先记忆的物种——的部件，此要塞在造成伤害时自我治疗，对虚弱目标造成更高伤害，并创造全敌对的僵尸。更大要塞还会生产强力舰船协助保卫周围行星。"
+
+            metal_cost="200000"
+
+            hull_points="700000" shield_points="400000" speed="Immobile"
+
+            cost_in_resource_one="30"
+
+            display_name_for_sidebar="奈祖尔大型堡垒"
+
+            display_name="大型奈祖尔堡垒"
+
+            icon_name="Ships3/AttractiveMatrixFortress"
+
+            can_be_given_orders_by_any_player_even_if_not_owner="true"
+
+            >
+
+    </entity>
+
+
+
+    <entity name="ScourgeVassalSpireGreaterFortress" copy_from="ScourgeSpireFortress"
+
+            build_sidebar_categories_i_am_part_of="ScourgeVassalBuild"
+
+            tags="ScourgeFortress,ScourgeSpireGreaterFortress,DefendsRegion,SpireDefenseTierTwo,TierTwo"
+
+            eligible_for_hacks="MarkupFortress"
+
+            description="由天灾建造的强大防御工事。使用尖塔——一个拥有惊人科技的极强种族——的部件，搭载一门光子轰炸加农炮造成荒谬的伤害。大型要塞同时生产强力单位协助防御周围行星。"
+
+            metal_cost="200000"
+
+            cost_in_resource_one="30"
+
+            hull_points="700000" shield_points="400000" speed="Immobile"
+
+            display_name_for_sidebar="尖塔大型堡垒"
+
+            display_name="高级尖塔堡垒"
+
+            icon_name="Ships3/AttractiveMatrixFortress"
+
+            can_be_given_orders_by_any_player_even_if_not_owner="true"
+
+            >
+
+    </entity>
+
+
+
+    <entity name="ScourgeVassalZenithGreaterFortress" copy_from="ScourgeVassalZenithFortress"
+
+            build_sidebar_categories_i_am_part_of="ScourgeVassalBuild"
+
+            tags="ScourgeFortress,ScourgeZenithGreaterFortress,DefendsRegion,ZenithDefenseTierTwo,TierTwo"
+
+            eligible_for_hacks="MarkupFortress"
+
+	    description="由天灾建造的强大防御工事。使用天顶的部件，拥有一个非常强大的酸化炮。大型要塞同时生产强力单位协助防御周围行星。"
+
+            metal_cost="200000"
+
+            cost_in_resource_one="30"
+
+            hull_points="700000" shield_points="400000" speed="Immobile"
+
+            display_name_for_sidebar="天顶大型堡垒"
+
+            display_name="大型天顶堡垒"
+
+            icon_name="Ships3/AttractiveMatrixFortress"
+
+            can_be_given_orders_by_any_player_even_if_not_owner="true"
+
+            >
+
+    </entity>
+
+
+
+
+
+    
+
+    <!--
+
+    <entity name="ScourgeVassalZenithFortress" copy_from="ScourgeZenithFortress"
+
+            build_sidebar_categories_i_am_part_of="ScourgeVassalBuild"
+
+            eligible_for_hacks="MarkupFortress"
+
+            metal_cost="500000"
+
+            >
+
+    </entity>
+
+    -->
+
+    <!-- Enemies for the AI -->
+
+    <!-- the Bane becomes a flagship for the player when defeated -->
+
+    <entity name="ScourgeBane" tags="AntiScourgeLeader"
+
+            npc_ship_cap_type="FrigatesAndGuardians" 
+
+            thematic_groups="Scourge"
+
+            draw_in_galaxy_view="true"
+
+	    visuals="Assets/_DLC3/Venators/NadirVenator/NadirVenator.prefab" visuals_bundle="exp3_neinzul_abyss"
+
+	    icon_name="Ships2/CoreShieldGenerator"
+
+            material_override_path="Assets/_FinalGameMeshes/Nanocaust/Aberration/Aberration.prefab"
+
+            gimbal_icon_size_multiplier="1.5"
+
+	    size_scale="2"
+
+	    visuals_scale_multiplier="2.5"
+
+	    y_offset_of_icon="15"
+
+	    voice_group="Silent"
+
+	    category="Ship"
+
+	    collision_priority="100"
+
+	    display_name="灾祸克星"
+
+            display_name_for_sidebar="灾祸克星"
+
+	    description="这个强大的单位是AI为对抗天灾而开发的原型。被击杀后可作为玩家旗舰认领。"
+
+	    starting_mark_level="Markless"
+
+	    cost_for_ai_to_purchase="500" strength_multiplier="1.1"
+
+	    hull_points="3200000" shield_points="4050000" speed="VeryHigh1"
+
+	    armor_mm="180" albedo="0.7" engine_gx="22" mass_tx="7"
+
+	    metal_cost="300000" energy_consumption="40000"
+
+	    ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+
+	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+
+            priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="MidFavoriteToy"
+
+	    is_scrapping_by_player_disallowed="true"
+
+            eligible_for_hacks="ClaimScourgeFlagship"
+
+            science_to_grant_on_death="2000"
+
+            reverts_to_neutral_on_death_if_permadeath_setting_is_false="BanePermadeath"
+
+          >
+
+    <system name="W1" display_name="反物质巨颚"
+
+	    category="Weapon" firing_timing="OnlyInRange"
+
+	    damage_per_shot="17500" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Devourer"
+
+	    shots_per_salvo="16" fires_salvos_sequentially="false"
+
+	    shot_type_data="DevourerShot_Nemesis"
+
+	    area_of_effect_size="900"
+
+            aoe_spreads_damage_among_available_targets="true"
+
+	    health_change_per_damage_dealt="0.2"
+
+	    >
+
+    </system>
+
+    <ship_class_data can_be_zombified_and_similar="false" can_be_fleet_supercharged="false" />
+
+    </entity>
+
+    
+
+    <!-- Flagships for the Scourge Infused Empire -->
+
+        <entity name="ScourgeBaneFlagship" tags="ScourgeInfusedFlagshipTierOne,ShowsOnNormalDisplayMode,BaneFlagship,HackAsIfCapturable,ScourgeFlagship"
+
+          thematic_groups="Scourge"
+
+	  special_entity_type="MobileOfficerCombatFleetFlagship" 	
+
+          draw_in_galaxy_view="true" shows_on_galaxy_map_for_explored_planets="true" always_visible_to_players="true"
+
+	  visuals="Assets/_DLC3/Venators/NadirVenator/NadirVenator.prefab" visuals_bundle="exp3_neinzul_abyss"
+
+	  icon_name="Ships2/CoreShieldGenerator"
+
+          material_override_path="Assets/_FinalGameMeshes/Nanocaust/Aberration/Aberration.prefab"
+
+          icon_overlay="Overlays2/Guardian_Spider"
+
+          gimbal_icon_size_multiplier="1.5"
+
+	  size_scale="2"
+
+	  visuals_scale_multiplier="2.5"
+
+	  y_offset_of_icon="15"
+
+	  voice_group="Silent"
+
+	  category="Ship"
+
+	  collision_priority="100"
+
+	  display_name="灾祸克星 Flagship"
+
+          display_name_for_sidebar="灾祸克星旗舰"
+
+	  description="此旗舰是AI为对抗天灾而开发的原型。击杀足够数量的敌人后将升级为更强大的形态。"
+
+	  starting_mark_level="Mark1"
+
+          seconds_to_fully_regenerate_hull="600"
+
+          custom_repair_impossible_for_seconds_after_damaged_by_enemy_max_15="15"
+
+	  cost_for_ai_to_purchase="500" strength_multiplier="1.1"
+
+	  hull_points="1200000" shield_points="650000" speed="High"
+
+	  armor_mm="180" albedo="0.7" engine_gx="22" mass_tx="7"
+
+	  metal_cost="300000" energy_consumption="40000"
+
+	  ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+
+          tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly"
+
+          tech_upgrade_that_is_used_for_my_direct_science="Direct_BaneFlagships"	is_upgradeable_by_direct_science="true"
+
+          priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="MidFavoriteToy"
+
+	  multiplier_to_all_costs="1" multiplier_to_all_healths="1" damage_multiplier_to_all_weapons="1" 
+
+	  assist_range="Normal1"
+
+	  firing_delay_for_transported_ships="6"
+
+	  is_scrapping_by_player_disallowed="true"
+
+          eligible_for_hacks="ClaimScourgeFlagship"
+
+          transform_after_kills="ScourgeRuinationFlagship"
+
+          kills_to_trigger_transformation="3000"
+
+          description_appender_dll="AIWarExternalCode"
+
+	  description_appender_type="Arcen.AIW2.External.ScourgeGenericUnitDescriptionAppender"
+
+          >
+
+    <metal_flow purpose="SelfConstruction" throughput="2500"/>
+
+    <metal_flow purpose="ClaimingNeutrals" throughput="500" increase_per_mark_level="200"/>
+
+    <metal_flow purpose="RepairingHullsOfFriendlies" throughput="150" increase_per_mark_level="250"/>
+
+    <metal_flow purpose="RepairingShieldsOfFriendlies" throughput="150" increase_per_mark_level="250"/>
+
+    <metal_flow purpose="RepairingEnginesOfFriendlies" throughput="150" increase_per_mark_level="250"/>
+
+    <metal_flow purpose="AssistSelfConstruction" throughput="200" increase_per_mark_level="200"/>
+
+    <metal_flow purpose="AssistFactoryConstruction" throughput="200" increase_per_mark_level="200"/>
+
+    <system name="R1" display_name="灾祸麻痹者"
+
+	    category="Weapon" firing_timing="OnlyInRange"
+
+	    damage_per_shot="1000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Low"
+
+	    base_engine_stun_per_shot="12" added_engine_stun_per_shot_per_mark="3" engine_stun_to_engine_gx_less_than="14"
+
+            base_paralysis_seconds_per_shot="2" added_paralysis_seconds_per_shot_per_mark="1" paralysis_to_ships_mass_tx_less_than="2"
+
+	    max_engine_stun_seconds="30" added_target_evaluator="EngineDamageAsMajorPrimary"
+
+	    shots_per_salvo="16" fires_salvos_sequentially="false"
+
+	    shot_type_data="NanocaustCurvedSicklyGreenShot"
+
+	    >
+
+    </system>
+
+    <ship_class_data can_be_zombified_and_similar="false" can_be_fleet_supercharged="false" />
+
+    </entity>
+
+
+
+    <entity name="ScourgeRuinationFlagship" tags="ScourgeInfusedFlagshipTierTwo,ShowsOnNormalDisplayMode,BaneFlagship,HackAsIfCapturable,ScourgeFlagship"
+
+          thematic_groups="Scourge"
+
+	  special_entity_type="MobileOfficerCombatFleetFlagship" 	
+
+          draw_in_galaxy_view="true" shows_on_galaxy_map_for_explored_planets="true" always_visible_to_players="true"
+
+	  visuals="Assets/_DLC3/Venators/NadirVenator/NadirVenator.prefab" visuals_bundle="exp3_neinzul_abyss"
+
+	  icon_name="Ships2/SomethingCyborg"
+
+          material_override_path="Assets/_FinalGameMeshes/Nanocaust/Aberration/Aberration.prefab"
+
+          icon_overlay="Overlays2/Guardian_Spider"
+
+          gimbal_icon_size_multiplier="1.5"
+
+	  size_scale="2"
+
+	  visuals_scale_multiplier="2.5"
+
+	  y_offset_of_icon="15"
+
+	  voice_group="Silent"
+
+	  category="Ship"
+
+	  collision_priority="100"
+
+	  display_name="灾祸 Ruination Flagship"
+
+          display_name_for_sidebar="灾祸毁灭旗舰"
+
+	  description="此旗舰是AI为对抗天灾而开发的原型。击杀足够数量的敌人后将升级为更强大的形态。."
+
+	  starting_mark_level="Mark1"
+
+          seconds_to_fully_regenerate_hull="600"
+
+          custom_repair_impossible_for_seconds_after_damaged_by_enemy_max_15="15"
+
+	  cost_for_ai_to_purchase="500" strength_multiplier="1.1"
+
+	  hull_points="2200000" shield_points="1050000" speed="High"
+
+	  armor_mm="180" albedo="0.7" engine_gx="22" mass_tx="7"
+
+	  metal_cost="300000" energy_consumption="40000"
+
+	  ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+
+          tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly"
+
+          tech_upgrade_that_is_used_for_my_direct_science="Direct_BaneFlagships"	is_upgradeable_by_direct_science="true"
+
+          priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="MidFavoriteToy"
+
+	  multiplier_to_all_costs="1" multiplier_to_all_healths="1" damage_multiplier_to_all_weapons="1" 
+
+	  assist_range="Normal1"
+
+	  firing_delay_for_transported_ships="6"
+
+	  is_scrapping_by_player_disallowed="true"
+
+          eligible_for_hacks="ClaimScourgeFlagship"
+
+          transform_after_kills="ScourgeMenacingFlagship"
+
+          kills_to_trigger_transformation="5000"
+
+          module_points_from_start="2" module_points_added_per_mark_level="1"
+
+          description_appender_dll="AIWarExternalCode"
+
+	  description_appender_type="Arcen.AIW2.External.ScourgeGenericUnitDescriptionAppender"
+
+          >
+
+    <metal_flow purpose="SelfConstruction" throughput="2500"/>
+
+    <metal_flow purpose="ClaimingNeutrals" throughput="500" increase_per_mark_level="200"/>
+
+    <metal_flow purpose="RepairingHullsOfFriendlies" throughput="150" increase_per_mark_level="250"/>
+
+    <metal_flow purpose="RepairingShieldsOfFriendlies" throughput="150" increase_per_mark_level="250"/>
+
+    <metal_flow purpose="RepairingEnginesOfFriendlies" throughput="150" increase_per_mark_level="250"/>
+
+    <metal_flow purpose="AssistSelfConstruction" throughput="200" increase_per_mark_level="200"/>
+
+    <metal_flow purpose="AssistFactoryConstruction" throughput="200" increase_per_mark_level="200"/>
+
+    <system name="W1" display_name="伊瓦克聚变迫击炮"
+
+	    category="Weapon" firing_timing="OnlyInRange"
+
+	    damage_per_shot="20000" range="High1" shot_speed="Slow" rate_of_fire="VeryLow" fires_salvos_sequentially="false"
+
+	    shot_type_data="PlasmaTorpedoAOEBurstAtEnd" cloaking_percent_loss_from_firing="0.2"
+
+	    area_of_effect_size="900"
+
+            aoe_spreads_damage_among_available_targets="true"
+
+	    base_percent_damage_bypasses_personal_shields="0.65" 
+
+	    >
+
+      <outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="HullOnly" comparison_type="AtLeast" compared_to="75" multiplier="1.25" />
+
+      <outgoing_damage_modifier based_on="AttackDistance" comparison_type="MultiplesOf" compared_to="3000" multiplier="1" max_multiplier="15" />
+
+    </system>
+
+    <system name="W2" display_name="伊瓦克离子干扰器"
+
+	    category="Weapon" firing_timing="OnlyInRange"
+
+	    damage_per_shot="600" range="High1" shot_speed="Fast" rate_of_fire="Low" fires_salvos_sequentially="false"
+
+	    shot_type_data="ExtremelyLongRangeIon" cloaking_percent_loss_from_firing="0.2"
+
+	    base_paralysis_seconds_per_shot="3" paralysis_to_ships_mass_tx_less_than="6"
+
+            only_targets_static_units="true"
+
+	    fires_through_enemy_shields="true"
+
+	    >
+
+    </system>
+
+          	<system name="M1" unique_module_index="1" display_name="强化船体"
+
+	  module_point_cost="1" module_screen_sort_group="10"
+
+	  category="Passive"
+
+	  module_stat_adjuster="HullHealth" module_stat_adjuster_multiplier="1.2"
+
+		>
+
+	</system>
+
+	<system name="M2" unique_module_index="2" display_name="强化护盾"
+
+	  module_point_cost="1" module_screen_sort_group="20"
+
+	  category="Passive"
+
+	  module_stat_adjuster="ShieldHealth" module_stat_adjuster_multiplier="1.2"
+
+		>
+
+	</system>
+
+	<system name="TB" unique_module_index="4" display_name="牵引光束"
+
+	  module_point_cost="2" module_screen_sort_group="40" modular_sidebar_name_prefix="E" modular_full_name_prefix="Ensnaring "
+
+	  category="Passive"
+
+	  tractor_range="AboveAverage1" tractor_count="11" tractor_count_added_per_mark="3" tractor_hits_albedo_less_than="0.5" tractor_hits_engine_gx_less_than="14"
+
+		>
+
+	</system>
+
+	<system name="GC" unique_module_index="5" display_name="引力核心"
+
+	  module_point_cost="2" module_screen_sort_group="50" modular_sidebar_name_prefix="G" modular_full_name_prefix="Gravitic "
+
+	  category="Passive"
+
+	  base_gravity_speed_multiplier="0.8" gravity_hits_engine_gx_less_than="14" gravity_range="AboveAverage3"
+
+		>
+
+	</system>
+
+	<system name="DC" unique_module_index="6" display_name="反隐形"
+
+	  module_point_cost="1" module_screen_sort_group="60" 
+
+	  category="Passive" 
+
+	  tachyon_points="50" tachyon_range="AboveAverage3" tachyon_points_added_per_mark="10" tachyon_hits_albedo_less_than="0.75"
+
+		>
+
+	</system>
+
+	<system name="CL" unique_module_index="7" display_name="隐形"
+
+	  module_point_cost="4" module_screen_sort_group="70" modular_sidebar_name_prefix="CL" modular_full_name_prefix="Cloaked "
+
+	  category="Passive"
+
+	  cloaking_points="2000" cloaking_points_added_per_mark="1000"
+
+		>
+
+	</system>
+
+        <system name="DG" display_name="恐惧凝视"  unique_module_index="8"
+
+                module_point_cost="4" module_screen_sort_group="80" modular_sidebar_name_prefix="DG" modular_full_name_prefix="Dreadful "
+
+	    category="Weapon" firing_timing="OnlyInRange"
+
+	    damage_per_shot="1200" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Low"
+
+	    base_engine_stun_per_shot="12" added_engine_stun_per_shot_per_mark="3" engine_stun_to_engine_gx_less_than="14"
+
+            base_paralysis_seconds_per_shot="2" added_paralysis_seconds_per_shot_per_mark="1" paralysis_to_ships_mass_tx_less_than="2"
+
+	    max_engine_stun_seconds="30" added_target_evaluator="EngineDamageAsMajorPrimary"
+
+	    shots_per_salvo="16" fires_salvos_sequentially="false"
+
+	    shot_type_data="NanocaustCurvedSicklyGreenShot"
+
+	    >
+
+        </system>
+
+
+
+    <ship_class_data can_be_zombified_and_similar="false" can_be_fleet_supercharged="false" />
+
+    </entity>
+
+
+
+    <entity name="ScourgeMenacingFlagship" tags="ScourgeInfusedFlagshipTierThree,ShowsOnNormalDisplayMode,BaneFlagship,HackAsIfCapturable,ScourgeFlagship"
+
+            icon_name="Ships4/VenatorNadir"
+
+            display_name="灾祸 Menacing Flagship"
+
+            display_name_for_sidebar="灾祸威胁旗舰"
+
+	    description="此旗舰是AI为对抗天灾而开发的原型。这是其最强大的形态。"
+
+          thematic_groups="Scourge"
+
+	  special_entity_type="MobileOfficerCombatFleetFlagship" 
+
+          draw_in_galaxy_view="true" shows_on_galaxy_map_for_explored_planets="true" always_visible_to_players="true"
+
+	  visuals="Assets/_DLC3/Venators/NadirVenator/NadirVenator.prefab" visuals_bundle="exp3_neinzul_abyss"
+
+          material_override_path="Assets/_FinalGameMeshes/Nanocaust/Aberration/Aberration.prefab"
+
+          icon_overlay="Overlays2/Guardian_Spider"
+
+          gimbal_icon_size_multiplier="1.5"
+
+	  size_scale="2"
+
+	  visuals_scale_multiplier="2.5"
+
+	  y_offset_of_icon="15"
+
+	  voice_group="Silent"
+
+	  category="Ship"
+
+	  collision_priority="100"
+
+	  starting_mark_level="Mark1"
+
+          seconds_to_fully_regenerate_hull="600"
+
+          custom_repair_impossible_for_seconds_after_damaged_by_enemy_max_15="15"
+
+	  cost_for_ai_to_purchase="500" strength_multiplier="1.1"
+
+	  hull_points="3200000" shield_points="3050000" speed="High"
+
+	  armor_mm="180" albedo="0.7" engine_gx="22" mass_tx="7"
+
+	  metal_cost="300000" energy_consumption="40000"
+
+	  ship_or_structure_explosion_sfx="ShipSmall_Explosion"
+
+	  ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+
+          tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly"
+
+          tech_upgrade_that_is_used_for_my_direct_science="Direct_BaneFlagships"	is_upgradeable_by_direct_science="true"
+
+          priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="MidFavoriteToy"
+
+	  multiplier_to_all_costs="1" multiplier_to_all_healths="1" damage_multiplier_to_all_weapons="1" 
+
+	  assist_range="Normal1"
+
+	  firing_delay_for_transported_ships="6"
+
+	  is_scrapping_by_player_disallowed="true"
+
+          eligible_for_hacks="ClaimScourgeFlagship"
+
+          module_points_from_start="4" module_points_added_per_mark_level="1"
+
+          description_appender_dll="AIWarExternalCode"
+
+	  description_appender_type="Arcen.AIW2.External.ScourgeGenericUnitDescriptionAppender"
+
+          >
+
+    <metal_flow purpose="SelfConstruction" throughput="2500"/>
+
+    <metal_flow purpose="ClaimingNeutrals" throughput="500" increase_per_mark_level="200"/>
+
+    <metal_flow purpose="RepairingHullsOfFriendlies" throughput="150" increase_per_mark_level="250"/>
+
+    <metal_flow purpose="RepairingShieldsOfFriendlies" throughput="150" increase_per_mark_level="250"/>
+
+    <metal_flow purpose="RepairingEnginesOfFriendlies" throughput="150" increase_per_mark_level="250"/>
+
+    <metal_flow purpose="AssistSelfConstruction" throughput="200" increase_per_mark_level="200"/>
+
+    <metal_flow purpose="AssistFactoryConstruction" throughput="200" increase_per_mark_level="200"/>
+
+    <system name="A1" display_name="伊瓦克聚变迫击炮"
+
+	    category="Weapon" firing_timing="OnlyInRange"
+
+	    damage_per_shot="30000" range="High1" shot_speed="Slow" rate_of_fire="VeryLow" fires_salvos_sequentially="false"
+
+	    shot_type_data="PlasmaTorpedoAOEBurstAtEnd" cloaking_percent_loss_from_firing="0.2"
+
+	    area_of_effect_size="900"
+
+            aoe_spreads_damage_among_available_targets="true"
+
+	    base_percent_damage_bypasses_personal_shields="0.65" 
+
+	    >
+
+      <outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="HullOnly" comparison_type="AtLeast" compared_to="75" multiplier="1.25" />
+
+      <outgoing_damage_modifier based_on="AttackDistance" comparison_type="MultiplesOf" compared_to="3000" multiplier="1" max_multiplier="15" />
+
+    </system>
+
+    <system name="A2" display_name="伊瓦克离子干扰器"
+
+	    category="Weapon" firing_timing="OnlyInRange"
+
+	    damage_per_shot="1200" range="High1" shot_speed="Fast" rate_of_fire="Low" fires_salvos_sequentially="false"
+
+	    shot_type_data="ExtremelyLongRangeIon" cloaking_percent_loss_from_firing="0.2"
+
+	    base_paralysis_seconds_per_shot="3" paralysis_to_ships_mass_tx_less_than="6"
+
+            only_targets_static_units="true"
+
+	    fires_through_enemy_shields="true"
+
+	    >
+
+    </system>	
+
+    <ship_class_data can_be_zombified_and_similar="false" can_be_fleet_supercharged="false" />
+
+          	<system name="M1" unique_module_index="1" display_name="强化船体"
+
+	  module_point_cost="2" module_screen_sort_group="10"
+
+	  category="Passive"
+
+	  module_stat_adjuster="HullHealth" module_stat_adjuster_multiplier="1.5"
+
+		>
+
+	</system>
+
+	<system name="M2" unique_module_index="2" display_name="强化护盾"
+
+	  module_point_cost="2" module_screen_sort_group="20"
+
+	  category="Passive"
+
+	  module_stat_adjuster="ShieldHealth" module_stat_adjuster_multiplier="1.5"
+
+		>
+
+	</system>
+
+	<system name="FF" unique_module_index="3" display_name="力场"
+
+	  module_point_cost="4" module_screen_sort_group="30" modular_sidebar_name_prefix="Pr" modular_full_name_prefix="Protector "
+
+	  category="Passive"
+
+	  module_stat_adjuster="BubbleForcefield" module_stat_adjuster_multiplier="1" module_stat_adjuster_radius="4600"
+
+		>
+
+	</system>
+
+	<system name="TB" unique_module_index="4" display_name="牵引光束"
+
+	  module_point_cost="2" module_screen_sort_group="40" modular_sidebar_name_prefix="E" modular_full_name_prefix="Ensnaring "
+
+	  category="Passive"
+
+	  tractor_range="AboveAverage1" tractor_count="22" tractor_count_added_per_mark="5" tractor_hits_albedo_less_than="0.5" tractor_hits_engine_gx_less_than="14"
+
+		>
+
+	</system>
+
+	<system name="GC" unique_module_index="5" display_name="引力核心"
+
+	  module_point_cost="4" module_screen_sort_group="50" modular_sidebar_name_prefix="G" modular_full_name_prefix="Gravitic "
+
+	  category="Passive"
+
+	  base_gravity_speed_multiplier="0.7" gravity_hits_engine_gx_less_than="14" gravity_range="AboveAverage3"
+
+		>
+
+	</system>
+
+	<system name="DC" unique_module_index="6" display_name="反隐形"
+
+	  module_point_cost="1" module_screen_sort_group="60" 
+
+	  category="Passive" 
+
+	  tachyon_points="50" tachyon_range="AboveAverage3" tachyon_points_added_per_mark="10" tachyon_hits_albedo_less_than="0.75"
+
+		>
+
+	</system>
+
+	<system name="CL" unique_module_index="7" display_name="隐形"
+
+	  module_point_cost="4" module_screen_sort_group="70" modular_sidebar_name_prefix="CL" modular_full_name_prefix="Cloaked "
+
+	  category="Passive"
+
+	  cloaking_points="2000" cloaking_points_added_per_mark="1000"
+
+		>
+
+	</system>
+
+	<system name="W2" unique_module_index="8" display_name="反护盾等离子弹"
+
+	  module_point_cost="1" module_screen_sort_group="80" modular_sidebar_name_prefix="P"
+
+	  category="Weapon" firing_timing="OnlyInRange"
+
+	  damage_per_shot="500" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+
+	  shot_type_data="PlasmaBolt"
+
+		>
+
+	<outgoing_damage_modifier applies_to="AllShields" based_on="MaxBubbleForcefield" comparison_type="GreaterThan" compared_to="10000" multiplier="10" />
+
+	</system>
+
+	<system name="W3" unique_module_index="9" display_name="聚变炸弹"
+
+	  module_point_cost="3" module_screen_sort_group="80" modular_sidebar_name_prefix="F"
+
+	  category="Weapon" firing_timing="OnlyInRange"
+
+	  damage_per_shot="5000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
+
+	  shot_type_data="FusionBolt"
+
+	  base_percent_damage_bypasses_personal_shields="1"
+
+		>
+
+	<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="3" />
+
+	</system>	
+
+	<system name="M3" unique_module_index="10" display_name="增强船体"
+
+	  module_point_cost="1" module_screen_sort_group="10"
+
+	  category="Passive"
+
+	  module_stat_adjuster="HullHealth" module_stat_adjuster_multiplier="1.25"
+
+		>
+
+	</system>
+
+	<system name="M4" unique_module_index="11" display_name="增强护盾"
+
+	  module_point_cost="1" module_screen_sort_group="20"
+
+	  category="Passive"
+
+	  module_stat_adjuster="ShieldHealth" module_stat_adjuster_multiplier="1.25"
+
+		>
+
+	</system>
+
+        <system name="DG" display_name="恐惧凝视"  unique_module_index="13"
+
+                module_point_cost="4" module_screen_sort_group="80" modular_sidebar_name_prefix="DG" modular_full_name_prefix="Dreadful "
+
+	    category="Weapon" firing_timing="OnlyInRange"
+
+	    damage_per_shot="1200" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Low"
+
+	    base_engine_stun_per_shot="12" added_engine_stun_per_shot_per_mark="3" engine_stun_to_engine_gx_less_than="14"
+
+            base_paralysis_seconds_per_shot="2" added_paralysis_seconds_per_shot_per_mark="1" paralysis_to_ships_mass_tx_less_than="2"
+
+	    max_engine_stun_seconds="30" added_target_evaluator="EngineDamageAsMajorPrimary"
+
+	    shots_per_salvo="16" fires_salvos_sequentially="false"
+
+	    shot_type_data="NanocaustCurvedSicklyGreenShot"
+
+	    >
+
+        </system>
+
+
+
+    </entity>
+
+
+
+    <!-- Seeds -->
+
+    <entity name="ScourgeSeed"
+
+	    thematic_groups="Scourge"
+
+	    tags="ScourgeSeed"
+
+	    voice_group="Spire" gimbal_icon_size_multiplier="1.5"
+
+	    draw_in_galaxy_view="true"
+
+	    visuals="Assets/_DLC1/FallenSpire/SpireDebris/SpireDebris1.prefab" visuals_bundle="exp1_the_spire_rises"
+
+	    icon_name="ShipsSpire/SpireDebris"
+
+	    uses_large_health_bar="true"
+
+	    category="Ship"
+
+	    size_scale="2"
+
+	    visuals_scale_multiplier="28"
+
+	    y_offset_of_icon="30"
+
+	    display_name="灾祸种子"
+
+	    description="这颗种子将长成一朵花，最终发育为一颗科波麦特水晶。花朵只能在AI行星上生长，因为它们汲取AI的能量源。AI会在其生长时发起攻击，因此你最好先肃清附近的一些行星。
+
+
+
+科波麦特水晶可被采集以获取资源。"
+
+	    collision_priority="810"
+
+	    starting_mark_level="Markless"
+
+            target_type_for_player="NeverAutotargetButAllowManualTarget"
+
+	    cost_for_ai_to_purchase="10000"
+
+	    hull_points="24000" shield_points="24000" speed="Normal1"
+
+	    armor_mm="180" albedo="0.7"  mass_tx="6"
+
+	    metal_cost="2000000" energy_consumption="15000"
+
+	    ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+
+	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+
+	    ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+
+            description_appender_dll="AIWarExternalCode"
+
+	    description_appender_type="Arcen.AIW2.External.ScourgeGenericUnitDescriptionAppender"
+
+	    >
+
+	<ship_class_data can_be_zombified_and_similar="false" />
+
+    </entity> 
+
+
+
+    <entity name="ScourgeFlower"
+
+	    thematic_groups="Scourge"
+
+	    tags="ScourgeFlower"
+
+	    voice_group="Spire"
+
+	    draw_in_galaxy_view="true"
+
+	    visuals="Assets/_DLC3/NeinzulSappers/SapperCrystal/SapperCrystal.prefab" visuals_bundle="exp3_neinzul_abyss"
+
+	    icon_name="Ships4/NeinzulCrystal" gimbal_icon_size_multiplier="1.3"
+
+	    uses_large_health_bar="true"
+
+	    category="Ship"
+
+	    size_scale="6"
+
+	    visuals_scale_multiplier="8"
+
+	    y_offset_of_icon="30"
+
+	    display_name="灾祸花"
+
+	    description="这朵花会随时间转化为科波麦特水晶，因为它们会汲取AI能量。若AI失去对该行星的控制，花朵便会枯死。AI会在其生长时发起攻击，因此你需要保护它们。
+
+
+
+科波麦特水晶可被采集以获取资源。"
+
+	    collision_priority="810"
+
+	    starting_mark_level="Markless"
+
+	    cost_for_ai_to_purchase="10000"
+
+	    hull_points="1000000" shield_points="2400000" speed="Normal1"
+
+	    armor_mm="180" albedo="0.7"  mass_tx="6"
+
+	    metal_cost="400000" energy_consumption="15000"
+
+            build_sidebar_categories_i_am_part_of="ScourgeVassalBuild"
+
+	    ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+
+	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+
+	    ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+
+            description_appender_dll="AIWarExternalCode"
+
+	    description_appender_type="Arcen.AIW2.External.ScourgeGenericUnitDescriptionAppender"
+
+	    >
+
+      <system name="Q5" display_name="树液爆裂"
+
+	      category="Weapon" firing_timing="OnlyInRange"
+
+	      damage_per_shot="450" range="AboveAverage3" shot_speed="Normal" rate_of_fire="High"
+
+	      shots_per_salvo="2" fires_salvos_sequentially="false" 
+
+	      shot_type_data="LaserPulse_RedLevel3"
+
+              base_enemy_weapon_reload_slowing_seconds_per_shot="8" added_enemy_weapon_reload_slowing_seconds_per_shot_per_mark="2" added_target_evaluator="WeaponJamAsPrimary"	
+
+	      max_enemy_weapon_reload_slowing_seconds="20"
+
+              enemy_weapon_reload_slowing_to_armor_mm_less_than="70"
+
+	      damage_modifier_while_under_forcefield="3"
+
+	      >
+
+      </system>
+
+
+
+	<ship_class_data can_be_zombified_and_similar="false" />
+
+    </entity>
+
+    <entity name="CorbomiteCrystal"
+
+	    thematic_groups="Scourge"
+
+	    voice_group="Spire"
+
+	    draw_in_galaxy_view="true"
+
+	    visuals="Assets/_DLC3/NeinzulSappers/SapperCrystalFlowering/SapperCrystalBloodstone.prefab" visuals_bundle="exp3_neinzul_abyss"
+
+	    visuals_scale_multiplier="8"
+
+	    y_offset_of_ship_in_visual_space="10"
+
+	    size_scale="6"
+
+            tags="CorbomiteCrystal"
+
+            icon_name="Ships4/NeinzulCrystal" icon_overlay="Overlays2/SapperBloodstoneCrystal"
+
+            display_name="科博米特水晶"
+
+	    display_name_for_sidebar="科博米特水晶"
+
+            description="一处科波麦特储库已由AI的能量波生成。"
+
+            speed="Immobile"
+
+	    uses_large_health_bar="true"
+
+	    category="Ship"
+
+	    y_offset_of_icon="30"
+
+	    collision_priority="810"
+
+	    starting_mark_level="Markless"
+
+	    cost_for_ai_to_purchase="10000"
+
+	    hull_points="1000000" shield_points="2400000"
+
+	    armor_mm="180" albedo="0.7"  mass_tx="6"
+
+	    metal_cost="400000" energy_consumption="15000"
+
+	    ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+
+	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+
+	    ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+
+            description_appender_dll="AIWarExternalCode"
+
+	    description_appender_type="Arcen.AIW2.External.ScourgeGenericUnitDescriptionAppender"
+
+	    >
+
+
+
+      <ship_class_data can_be_zombified_and_similar="false" />
+
+      <data_extension name="DLC3"
+
+                      necromancer_science_to_grant_on_death="2"
+
+                      dark_zenith_sidekick_science_to_grant_on_death="10"
+
+                      scourge_empire_corbomite_to_grant_on_death="40"
+
+                      spire_sidekick_science_to_grant_on_death="50"/>
+
+
+
+    </entity>
+
+
+
+    <entity name="ScourgeSummoner"
+
+	    thematic_groups="Scourge"
+
+	    voice_group="Spire"
+
+	    draw_in_galaxy_view="true"
+
+	    visuals="Assets/_DLC3/NeinzulSappers/SapperCrystalFlowering/SapperCrystalBloodstone.prefab" visuals_bundle="exp3_neinzul_abyss"
+
+	    visuals_scale_multiplier="8"
+
+	    y_offset_of_ship_in_visual_space="10"
+
+	    size_scale="6"
+
+            tags="ScourgeSummoner"
+
+
+
+            icon_name="Ships4/ExoTier3" icon_overlay="Overlays2/SapperBloodstoneCrystal"
+
+            display_name="天灾召唤者"
+
+	    display_name_for_sidebar="召唤者"
+
+            description="发射强力辐射脉冲吸引所有天灾单位到此建筑。如果它被摧毁，天灾将四散。拥有多个召唤者会混淆你的蜂群，不要这样做。
+
+
+
+此建筑相当耐打，若你正在赢得战斗则会自动削减自身。"
+
+            base_galaxy_wide_cap_for_players_constructing="1" galaxy_wide_cap_match_string="ScourgeSummoner"
+
+            speed="Immobile"
+
+	    uses_large_health_bar="true"
+
+            build_sidebar_categories_i_am_part_of="ScourgeVassalBuild"
+
+	    category="Ship"
+
+	    y_offset_of_icon="30"
+
+	    collision_priority="810"
+
+	    starting_mark_level="Markless"
+
+	    cost_for_ai_to_purchase="10000"
+
+	    hull_points="2500000" shield_points="240000"
+
+	    armor_mm="180" albedo="0.7"  mass_tx="6"
+
+            cost_in_resource_one="5"
+
+	    metal_cost="0"
+
+            energy_consumption="15000"
+
+	    ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+
+	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+
+	    ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+
+            priority_as_ai_target="IrreplaceableMisc" priority_as_frd_target="IrreplaceableMisc" priority_to_protect="BigFavoriteToy"
+
+            description_appender_dll="AIWarExternalCode"
+
+	    description_appender_type="Arcen.AIW2.External.ScourgeGenericUnitDescriptionAppender"
+
+	    >
+
+
+
+      <ship_class_data can_be_zombified_and_similar="false" />
+
+
+
+    </entity>
+
+    <!-- Bestiary -->
+
+    <entity name="ScourgeBestiary" tags="ScourgeBestiary,DefendsRegion,DefenseTierThree,TierThree,ShowsOnNormalDisplayMode"
+
+	    thematic_groups="Scourge,VeryMinorAliens" npc_ship_cap_type="LargeShips"
+
+            draw_in_galaxy_view="true"
+
+	    visuals="Assets/_DLC1/Scourge/ScourgeFortress/ScourgeFortress_Burlust.prefab" visuals_bundle="exp1_the_spire_rises"
+
+	    icon_name="Ships2/SomethingBrainJar" icon_overlay="Overlays2/Ark_Thanatos" gimbal_icon_size_multiplier="1.5"
+
+	    y_offset_of_icon="35"
+
+            build_sidebar_categories_i_am_part_of="ScourgeVassalBuild"
+
+	    category="Ship"
+
+	    size_scale="6"
+
+	    visuals_scale_multiplier="20"
+
+            collision_priority="800"
+
+	    display_name="天灾兽栏"
+
+            display_name_for_sidebar="生物图鉴"
+
+	    description="此建筑生产强大的天灾怪物来保卫你的领土。"
+
+	    behavior="Stationary"
+
+	    starting_mark_level="Mark1"
+
+	    cost_for_ai_to_purchase="950"
+
+	    hull_points="400000" shield_points="400000" speed="Immobile"
+
+	    metal_cost="500000"
+
+            cost_in_resource_one="25"
+
+            energy_consumption="25000"
+
+	    armor_mm="300" albedo="0.7" mass_tx="7"
+
+	    ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+
+	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+
+	    voice_group="Turret"
+
+            can_be_given_orders_by_any_player_even_if_not_owner="true"
+
+	    eligible_for_hacks="MarkupBestiary"
+
+            priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+
+            description_appender_type="Arcen.AIW2.External.ScourgeGenericUnitDescriptionAppender"
+
+		    >
+
+      <hack_data hack_type="Sabotage" override_cost_in_hacking_points="18" />
+
+    <system name="W1" display_name="蛮族战斗炮"
+
+				category="Weapon" firing_timing="OnlyInRange"
+
+				damage_per_shot="3000" range="High1" shot_speed="Normal" rate_of_fire="Misery"
+
+				shots_per_salvo="20" fires_salvos_sequentially="false"
+
+				shot_type_data="DoubleShot_Red"				
+
+				>
+
+		        <outgoing_damage_modifier based_on="MyHullPercentageMissing" comparison_type="MultiplesOf" compared_to="20" multiplier="1" />
+
+    </system>
+
+    <system name="W2" display_name="蛮族能量波"
+
+                category="Weapon" firing_timing="OnlyInRange" 
+
+                damage_per_shot="5000" range="High1" shot_speed="Normal" rate_of_fire="Normal"
+
+				shots_per_salvo="4" fires_salvos_sequentially="false"
+
+                shot_type_data="EnergyWave"
+
+				>
+
+                <outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="6" />
+
+			    <outgoing_damage_modifier based_on="MyHullPercentageMissing" comparison_type="MultiplesOf" compared_to="20" multiplier="1" />
+
+    </system>
+
+    </entity>
+
+
+
+    <!-- Ships for the DefendsRegion structures -->
+
+    <!-- Tier One -->
+
+
+
+    <entity name="NeinzulCutter"
+
+            tags="ScourgeDefender,NeinzulDefenderTierOne"
+
+            copy_from="NeinzulWarrior"
+
+            icon_name="Ships1/Unknown"
+
+            display_name="奈祖尔切割者"
+
+            display_name_for_sidebar="奈祖尔切割者"
+
+            allowed_hops_from_centerpiece="2"
+
+            cost_for_ai_to_purchase="180"
+
+            hull_points="52000" shield_points="14000" speed="AboveAverage1"
+
+            />
+
+    <entity name="PeltianCutter"
+
+            tags="ScourgeDefender,PeltianDefenderTierOne"
+
+            copy_from="PeltianWarrior"
+
+            icon_name="Ships1/Unknown"
+
+            display_name="佩尔蒂安切割者"
+
+            display_name_for_sidebar="佩尔蒂安切割者"
+
+            allowed_hops_from_centerpiece="2"
+
+            cost_for_ai_to_purchase="180"
+
+            hull_points="52000" shield_points="14000" speed="AboveAverage1"
+
+            />
+
+    <entity name="ThoraxianCutter"
+
+            tags="ScourgeDefender,ThoraxianDefenderTierOne"
+
+            copy_from="ThoraxianWarrior"
+
+            icon_name="Ships1/Unknown"
+
+            display_name="索拉克斯切割者"
+
+            display_name_for_sidebar="索拉克斯切割者"
+
+            allowed_hops_from_centerpiece="2"
+
+            cost_for_ai_to_purchase="180"
+
+            hull_points="52000" shield_points="14000" speed="AboveAverage1"
+
+            />
+
+    <entity name="BurlustCutter"
+
+            tags="ScourgeDefender,BurlustDefenderTierOne"
+
+            copy_from="BurlustWarrior"
+
+            icon_name="Ships1/Unknown"
+
+            display_name="蛮族切割者"
+
+            display_name_for_sidebar="蛮族切割者"
+
+            allowed_hops_from_centerpiece="2"
+
+            cost_for_ai_to_purchase="180"
+
+	    hull_points="80000" shield_points="0" speed="AboveAverage6"
+
+            />
+
+    <entity name="EvuckCutter"
+
+            tags="ScourgeDefender,EvuckDefenderTierOne"
+
+            copy_from="EvuckWarrior"
+
+            icon_name="Ships1/Unknown"
+
+            display_name="伊瓦克切割者"
+
+            display_name_for_sidebar="伊瓦克切割者"
+
+            allowed_hops_from_centerpiece="2"
+
+            cost_for_ai_to_purchase="180"
+
+            hull_points="52000" shield_points="14000" speed="AboveAverage1"
+
+            />
+
+    <entity name="SpireCutter"
+
+            tags="ScourgeDefender,SpireDefenderTierOne"
+
+            copy_from="SpireWarrior"
+
+            icon_name="Ships1/Unknown"
+
+            display_name="尖塔切割者"
+
+            display_name_for_sidebar="尖塔切割者"
+
+            allowed_hops_from_centerpiece="2"
+
+            cost_for_ai_to_purchase="180"
+
+            hull_points="52000" shield_points="14000" speed="AboveAverage1"
+
+            />
+
+    <entity name="ZenithCutter"
+
+            tags="ScourgeDefender,ZenithDefenderTierOne"
+
+            copy_from="ZenithWarrior"
+
+            icon_name="Ships1/Unknown"
+
+            display_name="天顶切割者"
+
+            display_name_for_sidebar="天顶切割者"
+
+            allowed_hops_from_centerpiece="2"
+
+            cost_for_ai_to_purchase="180"
+
+            hull_points="80000" shield_points="0" speed="AboveAverage1"
+
+            />
+
+    <!-- a temporary compatibility mode. Remove this later -->
+
+      <entity name="NeinzulDefender" copy_from="NeinzulCutter"
+
+        />
+
+      <entity name="PeltianDefender" copy_from="PeltianCutter"
+
+      />
+
+      <entity name="ThoraxianDefender" copy_from="ThoraxianCutter"
+
+      />
+
+      <entity name="BurlustDefender" copy_from="BurlustCutter"
+
+      />
+
+      <entity name="EvuckDefender" copy_from="EvuckCutter"
+
+      />
+
+      <entity name="SpireDefender" copy_from="SpireCutter"
+
+      />
+
+      <entity name="ZenithDefender" copy_from="ZenithCutter"
+
+        />
+
+
+
+    <!-- Tier Two -->
+
+    <entity name="NeinzulIronclad"
+
+            tags="ScourgeDefender,NeinzulDefenderTierTwo"
+
+            copy_from="NeinzulWarrior"
+
+            icon_name="Ships4/SomethingMask"
+
+            display_name="奈祖尔铁甲舰"
+
+            display_name_for_sidebar="奈祖尔铁甲舰"
+
+            allowed_hops_from_centerpiece="4"
+
+            cost_for_ai_to_purchase="180"
+
+            hull_points="102000" shield_points="24000" speed="AboveAverage1"
+
+            >
+
+      <system name="W1" display_name="颠覆末日加速器"
+
+	      category="Weapon" firing_timing="OnlyInRange"
+
+	      damage_per_shot="1500" range="Small4" shot_speed="Normal" rate_of_fire="Misery"
+
+	      shots_per_salvo="5" fires_salvos_sequentially="false"
+
+	      shot_type_data="DoubleShot_Red"				
+
+	      health_change_per_damage_dealt="1"
+
+	      >
+
+        <outgoing_damage_modifier based_on="TargetHullPercentageMissing" comparison_type="MultiplesOf" compared_to="25" multiplier="1" />
+
+	<death_effect_damage type="Zombification_HostileToAll" tier_name="Parasite"/>	
+
+      </system>
+
+    </entity>
+
+    <entity name="PeltianIronclad"
+
+            tags="ScourgeDefender,PeltianDefenderTierTwo"
+
+            copy_from="PeltianWarrior"
+
+            icon_name="Ships4/SomethingMask"
+
+            display_name="佩尔蒂安铁甲舰"
+
+            display_name_for_sidebar="佩尔蒂安铁甲舰"
+
+            allowed_hops_from_centerpiece="3"
+
+            cost_for_ai_to_purchase="180"
+
+            hull_points="102000" shield_points="24000" speed="AboveAverage1"
+
+            >
+
+      <system name="W1" display_name="佩尔蒂安迫击炮"
+
+	      category="Weapon" firing_timing="OnlyInRange"
+
+	      damage_per_shot="4500" range="High1" shot_speed="Slow" rate_of_fire="VeryLow" fires_salvos_sequentially="false"
+
+	      shot_type_data="FlakShotAOEBurstAtEnd"
+
+	      area_of_effect_size="900"
+
+              aoe_spreads_damage_among_available_targets="true"
+
+	      >
+
+	<outgoing_damage_modifier based_on="AttackDistance" comparison_type="MultiplesOf" compared_to="3000" multiplier="1" max_multiplier="10"/>	
+
+      </system>
+
+    </entity>
+
+    <entity name="ThoraxianIronclad"
+
+            tags="ScourgeDefender,ThoraxianDefenderTierTwo"
+
+            copy_from="ThoraxianWarrior"
+
+            icon_name="Ships4/SomethingMask"
+
+            display_name="索拉克斯铁甲舰"
+
+            display_name_for_sidebar="索拉克斯铁甲舰"
+
+            allowed_hops_from_centerpiece="3"
+
+            cost_for_ai_to_purchase="180"
+
+            hull_points="102000" shield_points="14000" speed="AboveAverage1"
+
+            >
+
+      <system name="W1" display_name="索拉克斯之爪"
+
+	      category="Weapon" firing_timing="OnlyInRange"
+
+	      damage_per_shot="4500" range="AlmostNone" seek_range="Normal1" shot_speed="Fast" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+
+	      shot_type_data="MeleeInvisible" added_target_evaluator="Melee"
+
+	      >
+
+      </system>
+
+      <incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="5600" multiplier="0.1" />
+
+    </entity>
+
+    <entity name="BurlustIronclad"
+
+            tags="ScourgeDefender,BurlustDefenderTierTwo"
+
+            copy_from="BurlustWarrior"
+
+            icon_name="Ships4/SomethingMask"
+
+            display_name="蛮族铁甲舰"
+
+            display_name_for_sidebar="铁甲舰"
+
+            allowed_hops_from_centerpiece="3"
+
+            cost_for_ai_to_purchase="180"
+
+	    hull_points="160000" shield_points="0" speed="AboveAverage6"
+
+            >
+
+      <system name="W1" display_name="蛮族战斗炮"
+
+	      category="Weapon" firing_timing="OnlyInRange"
+
+	      damage_per_shot="5000" range="Small2" shot_speed="Normal" rate_of_fire="Misery" fires_salvos_sequentially="false"
+
+	      shot_type_data="DoubleShot_Red"	
+
+	      >
+
+	<outgoing_damage_modifier based_on="MyHullPercentageMissing" comparison_type="MultiplesOf" compared_to="20" multiplier="1" />
+
+      </system>
+
+    </entity>
+
+    <entity name="EvuckIronclad"
+
+            tags="ScourgeDefender,EvuckDefenderTierTwo"
+
+            copy_from="EvuckWarrior"
+
+            icon_name="Ships4/SomethingMask"
+
+            display_name="伊瓦克铁甲舰"
+
+            display_name_for_sidebar="伊瓦克铁甲舰"
+
+            allowed_hops_from_centerpiece="3"
+
+            cost_for_ai_to_purchase="180"
+
+            hull_points="52000" shield_points="44000" speed="AboveAverage1"
+
+            >
+
+      <system name="W2" display_name="伊瓦克离子干扰器"
+
+	      category="Weapon" firing_timing="OnlyInRange"
+
+	      damage_per_shot="200" range="Small4" shot_speed="Fast" rate_of_fire="Low" fires_salvos_sequentially="false"
+
+	      shot_type_data="ExtremelyLongRangeIon" cloaking_percent_loss_from_firing="0.2"
+
+	      base_paralysis_seconds_per_shot="3" paralysis_to_ships_mass_tx_less_than="6"
+
+              only_targets_static_units="true"
+
+	      fires_through_enemy_shields="true"
+
+	      >
+
+      </system>
+
+      <system name="C" display_name="伊瓦克隐形装置"
+
+	      category="Passive" cloaking_points="2000" cloaking_points_added_per_mark="1000"
+
+	      >
+
+    </system>
+
+
+
+    </entity>
+
+
+
+    <entity name="SpireIronclad"
+
+            tags="ScourgeDefender,SpireDefenderTierTwo"
+
+            copy_from="SpireWarrior"
+
+            icon_name="Ships4/SomethingMask"
+
+            display_name="尖塔铁甲舰"
+
+            display_name_for_sidebar="尖塔铁甲舰"
+
+            allowed_hops_from_centerpiece="3"
+
+            cost_for_ai_to_purchase="180"
+
+            hull_points="102000" shield_points="34000" speed="AboveAverage1"
+
+            >
+
+      <system name="W1" display_name="尖塔线圈光束"
+
+	      category="Weapon" firing_timing="OnlyInRange"
+
+	      damage_per_shot="12500" range="AboveAverage4" shot_speed="Normal" rate_of_fire="High"
+
+	      shot_type_data="HeavyBeamInvisible"
+
+	      beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_Yellow"
+
+	      hits_all_intersecting_targets="true"				
+
+	      shots_detonate_immediately="true"
+
+              is_coilbeam="true"				
+
+	      >
+
+      </system>
+
+      </entity>
+
+    <entity name="ZenithIronclad"
+
+            tags="ScourgeDefender,ZenithDefenderTierTwo"
+
+            copy_from="ZenithWarrior"
+
+            icon_name="Ships4/SomethingMask"
+
+            display_name="天顶铁甲舰"
+
+            display_name_for_sidebar="天顶铁甲舰"
+
+            allowed_hops_from_centerpiece="3"
+
+            cost_for_ai_to_purchase="180"
+
+            hull_points="260000" shield_points="20000" speed="AboveAverage1"
+
+            >
+
+      <system name="WD" display_name="天顶酸液喷射"
+
+	      category="Weapon" firing_timing="OnlyInRange"
+
+	      damage_per_shot="10" range="Normal1" shot_speed="Normal" rate_of_fire="Misery" 
+
+	      shots_per_salvo="25" fires_salvos_sequentially="false"
+
+	      shot_type_data="DoubleShot_Green"
+
+	      damage_amplification="true" damage_amplification_duration="10" damage_amplification_flat="90"
+
+	      >
+
+        <outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtLeast" compared_to="90" multiplier="3" />
+
+      </system>
+
+    </entity>
+
+    <!-- Vanquisher -->
+
+    <entity name="VanquisherDefender"
+
+            tags="ScourgeDefender,DefenderTierThree"
+
+            copy_from="Subjugator"
+
+            icon_name="Ships3/SomethingScaryFace"
+
+            display_name="征服者"
+
+            material_override_path="Assets/_FinalGameMeshes/Nanocaust/Aberration/Aberration.prefab"
+
+            display_name_for_sidebar="征服者"
+
+            allowed_hops_from_centerpiece="4"
+
+            cost_for_ai_to_purchase="600"
+
+            hull_points="600000" shield_points="800000" speed="AboveAverage1"
+
+            starting_mark_level="Mark1" max_mark_level="7"
+
+            description="征服者是你的天灾附庸用于保卫其领土的极为强大的单位。"
+
+            > </entity>
+
+
+
+
+
+</root>
+
