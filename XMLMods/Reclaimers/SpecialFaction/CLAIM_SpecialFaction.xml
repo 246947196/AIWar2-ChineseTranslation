@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
      <faction
@@ -67,7 +67,7 @@
                     name="NumResearchOutposts"
                     is_advanced_setting="false"
                     display_name="研究前哨站数量"
-                    description="研究前哨站在游戏开始时随机分布在银河系中。每个都会为您提供一条舰船生产线（或其他东西）。默认为3。"
+                    description="研究前哨站在游戏开始时随机分布在银河系中。每个都会为您提供一条单位生产线（或其他东西）。默认为3。"
                     sort_group="250"
                     setting_type="IntSlider" 
                     default="3" 

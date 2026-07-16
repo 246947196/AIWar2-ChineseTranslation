@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
 	<entity	name="PhoenixDreadnought_HeatWave_Shot"
@@ -179,7 +179,7 @@
 			collision_priority="810"
 			display_name="闹鬼船坞"
 			display_name_for_sidebar="闹鬼船坞"
-			description="虽然废弃了几十年甚至几个世纪，机器却无法关闭，继续向太空倾泻僵尸舰船。某种程度仍在运行的敌友算法瞄准控制者行星的敌人。"
+			description="虽然废弃了几十年甚至几个世纪，机器却无法关闭，继续向太空倾泻僵尸单位。某种程度仍在运行的敌友算法瞄准控制者行星的敌人。"
 			starting_mark_level="Markless"
 			cost_for_ai_to_purchase="10000"
 			hull_points="200000" shield_points="0" speed="Immobile"
@@ -514,7 +514,7 @@
 			gimbal_icon_size_multiplier="1.5" 
 			collision_priority="0"
 			display_name="仙女守卫"
-			description="这些不寻常的生命形式保护与其结合的舰船。推测这是其生命周期的一部分，为星际传播而适应。"
+			description="这些不寻常的生命形式保护与其结合的单位。推测这是其生命周期的一部分，为星际传播而适应。"
 			behavior="Stationary"
 			starting_mark_level="Mark1"
 			cost_for_ai_to_purchase="28"
@@ -656,7 +656,7 @@
 			gimbal_icon_size_multiplier="1.5" 
 			collision_priority="0"
 			display_name="通量"
-			description="这颗行星处于持续的空间通量状态。舰船甚至通常固定的建筑在此异常经过附近时都会神秘地改变位置。"
+			description="这颗行星处于持续的空间通量状态。单位甚至通常固定的建筑在此异常经过附近时都会神秘地改变位置。"
 			behavior="Stationary"
 			starting_mark_level="Markless"
 			cost_for_ai_to_purchase="1000000"
@@ -919,7 +919,7 @@
 			collision_priority="0"
 			display_name="受控微型奇点"
 			display_name_for_sidebar="微型奇点"
-			description="一个被控制住的危险微型奇点，但阻挡舰船通行。"
+			description="一个被控制住的危险微型奇点，但阻挡单位通行。"
 			behavior="Stationary"
 			starting_mark_level="Markless"
 			cost_for_ai_to_purchase="10000"

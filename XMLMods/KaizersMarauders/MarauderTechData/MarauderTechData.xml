@@ -2,8 +2,8 @@
 <root>
 	<!-- All of the mark upgrade techs require the other mark upgrade techs to be at most 8 levels = 2 marks behind - this is to prevent KM from stacking too heavily into one tech -->
 	
-	<marauder_tech name="MarkLevels_FleetShips" display_name="Fleet Ship Mark Levels"
-		description="Upgrades the mark levels of all fleet ships. Starts at 1, each upgrade add a 25% for the starting mark level of newly spawned ships to be 1 greater than the natural number threshold (i.e. a mark level of 1.25 means that there's a 75% chance for the unit to spawn at mark level 1, and 25% chance of spawning at mark level 2').
+	<marauder_tech name="MarkLevels_FleetShips" display_name="舰队单位等级"
+		description="升级所有舰队单位的等级。 Starts at 1, each upgrade add a 25% for the starting mark level of newly spawned ships to be 1 greater than the natural number threshold (i.e. a mark level of 1.25 means that there's a 75% chance for the unit to spawn at mark level 1, and 25% chance of spawning at mark level 2').
 When it reaches a new threshold all existing units of lower mark can be upgraded to the threshold."
 		serialization_index="0"
 		base_research_time="60" research_time_multiplier_per_upgrade="1.1"
@@ -11,23 +11,23 @@ When it reaches a new threshold all existing units of lower mark can be upgraded
 		required_tech_list="1,2,3" required_tech_level_list="-2,-2,-2" />
 	
 	<marauder_tech name="MarkLevels_Defenses" display_name="防御 Mark Levels"
-		description="Upgrades the mark levels of all defenses. Starts at 1, each upgrade add a 25% for the starting mark level of newly spawned ships to be 1 greater than the natural number threshold (i.e. a mark level of 1.25 means that there's a 75% chance for the unit to spawn at mark level 1, and 25% chance of spawning at mark level 2').
+		description="升级所有防御的等级。 Starts at 1, each upgrade add a 25% for the starting mark level of newly spawned ships to be 1 greater than the natural number threshold (i.e. a mark level of 1.25 means that there's a 75% chance for the unit to spawn at mark level 1, and 25% chance of spawning at mark level 2').
 When it reaches a new threshold all existing units of lower mark can be upgraded to the threshold."
 		serialization_index="1"
 		base_research_time="60" research_time_multiplier_per_upgrade="1.1"
 		base_tech_level="1" tech_type="MarkLevels_Defenses"
 		required_tech_list="0,2,3" required_tech_level_list="-2,-2,-2" />
 	
-	<marauder_tech name="MarkLevels_Centerpieces" display_name="Centerpiece Mark Levels"
-		description="Upgrades the mark levels of all centerpieces. Starts at 1, each upgrade add a 25% for the starting mark level of newly spawned ships to be 1 greater than the natural number threshold (i.e. a mark level of 1.25 means that there's a 75% chance for the unit to spawn at mark level 1, and 25% chance of spawning at mark level 2').
+	<marauder_tech name="MarkLevels_Centerpieces" display_name="核心单位等级"
+		description="升级所有核心单位的等级。 Starts at 1, each upgrade add a 25% for the starting mark level of newly spawned ships to be 1 greater than the natural number threshold (i.e. a mark level of 1.25 means that there's a 75% chance for the unit to spawn at mark level 1, and 25% chance of spawning at mark level 2').
 When it reaches a new threshold all existing units of lower mark can be upgraded to the threshold."
 		serialization_index="2"
 		base_research_time="60" research_time_multiplier_per_upgrade="1.1"
 		base_tech_level="1" tech_type="MarkLevels_Centerpieces"
 		required_tech_list="0,1,3" required_tech_level_list="-2,-2,-2" />
 	
-	<marauder_tech name="MarkLevels_Economy" display_name="Economy Mark Levels"
-		description="Upgrades the mark levels of all economy units. Starts at 1, each upgrade add a 25% for the starting mark level of newly spawned ships to be 1 greater than the natural number threshold (i.e. a mark level of 1.25 means that there's a 75% chance for the unit to spawn at mark level 1, and 25% chance of spawning at mark level 2').
+	<marauder_tech name="MarkLevels_Economy" display_name="经济单位等级"
+		description="升级所有经济单位的等级。 Starts at 1, each upgrade add a 25% for the starting mark level of newly spawned ships to be 1 greater than the natural number threshold (i.e. a mark level of 1.25 means that there's a 75% chance for the unit to spawn at mark level 1, and 25% chance of spawning at mark level 2').
 When it reaches a new threshold all existing units of lower mark can be upgraded to the threshold."
 		serialization_index="3"
 		base_research_time="60" research_time_multiplier_per_upgrade="1.1"
@@ -543,8 +543,8 @@ When it reaches a new threshold all existing units of lower mark can be upgraded
 	For Tier 1 Entity Series:
 	
 	
-	<marauder_tech name="UnlockSeries" display_name="xxxxxxxx Series"
-		description="Unlocks the upgrades of the xxxxxxxx."
+	<marauder_tech name="UnlockSeries" display_name="xxxxxxxx系列"
+		description="解锁xxxxxxxx的升级。"
 		serialization_index="xxxxxxxx"
 		base_research_time="240" research_time_multiplier_per_upgrade="2"
 		base_tech_level="1" tech_type="UnlockEntityLine"
@@ -568,8 +568,8 @@ When it reaches a new threshold all existing units of lower mark can be upgraded
 	For Tier 2 Entity Series:
 	
 	
-	<marauder_tech name="UnlockSeries" display_name="xxxxxxxx Series"
-		description="Unlocks the base variant and upgrades of the xxxxxxxx."
+	<marauder_tech name="UnlockSeries" display_name="xxxxxxxx系列"
+		description="解锁xxxxxxxx的基础变体和升级。"
 		serialization_index="xxxxxxxx"
 		base_research_time="120" research_time_multiplier_per_upgrade="2"
 		base_tech_level="0" tech_type="UnlockEntityLine"
@@ -593,8 +593,8 @@ When it reaches a new threshold all existing units of lower mark can be upgraded
 	For Tier 3 Entity Series:
 	
 	
-	<marauder_tech name="UnlockSeries" display_name="xxxxxxxx Series"
-		description="Unlocks the base variant and upgrades of the xxxxxxxx."
+	<marauder_tech name="UnlockSeries" display_name="xxxxxxxx系列"
+		description="解锁xxxxxxxx的基础变体和升级。"
 		serialization_index="xxxxxxxx"
 		base_research_time="120" research_time_multiplier_per_upgrade="2"
 		base_tech_level="0" tech_type="UnlockEntityLine"
@@ -618,8 +618,8 @@ When it reaches a new threshold all existing units of lower mark can be upgraded
 	For Tier 4 Entity Series:
 	
 	
-	<marauder_tech name="UnlockSeries" display_name="xxxxxxxx Series" required_expansion_list="3_The_Neinzul_Abyss"
-		description="Unlocks the base variant and upgrades of the xxxxxxxx."
+	<marauder_tech name="UnlockSeries" display_name="xxxxxxxx系列" required_expansion_list="3_The_Neinzul_Abyss"
+		description="解锁xxxxxxxx的基础变体和升级。"
 		serialization_index="xxxxxxxx"
 		base_research_time="120" research_time_multiplier_per_upgrade="2"
 		base_tech_level="0" tech_type="UnlockEntityLine"

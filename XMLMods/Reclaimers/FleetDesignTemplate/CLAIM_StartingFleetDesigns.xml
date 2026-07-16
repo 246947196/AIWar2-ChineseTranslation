@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
       <fleet_design
                   name="ReclaimersFleet"
                   display_name="回收者舰队"
-                  description="试试新舰船。"
+                  description="试试新单位。"
                   design_logic="InitialPlayerFleet"
                   weight="0"
                   include_full_cap_of_each_type="true"
@@ -45,7 +45,7 @@
       <fleet_design
                   name="ReclaimersDefenses"
                   display_name="回收者防御"
-                  description="试试新舰船。"
+                  description="试试新单位。"
                   design_logic="InitialPlayerBattlestation"
                   weight="0"
                   include_full_cap_of_each_type="true"

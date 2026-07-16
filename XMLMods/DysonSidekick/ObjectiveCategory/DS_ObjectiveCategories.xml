@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
 
-  <objective_category name="DysonDrillables" display_name="Drillables" sort_priority="30"
+  <objective_category name="DysonDrillables" display_name="可钻探" sort_priority="30"
         description="这些可钻探物将为你提供坤迪亚。" />
 
-  <objective_category name="ArmadaStrategy" display_name="Armada Strategy" sort_priority="13"
+  <objective_category name="ArmadaStrategy" display_name="舰队策略" sort_priority="13"
         description="无敌舰队的战略目标——发展你的舰队、收集泰德瑞安并推进攻势。" />
 
-  <objective_category name="ScourgeInfusedStrategy" display_name="Scourge Strategy" sort_priority="14"
+  <objective_category name="ScourgeInfusedStrategy" display_name="灾祸策略" sort_priority="14"
         description="天灾注入帝国的战略目标——管理你的附庸、收集科波麦特并扩展你的力量。" />
 
-  <objective_category name="DZEmpireStrategy" display_name="Dark Zenith Strategy" sort_priority="15"
+  <objective_category name="DZEmpireStrategy" display_name="黑暗天顶策略" sort_priority="15"
         description="暗天顶帝国的战略目标——管理你的舰队、经济和科技树。" />
 
-  <objective_category name="DysonStrategy" display_name="Dyson Strategy" sort_priority="11"
+  <objective_category name="DysonStrategy" display_name="戴森策略" sort_priority="11"
         description="戴森Sidekick和帝国的战略目标——钻探获取坤迪亚、管理收割者威胁并建设你的联盟。" />
 
 

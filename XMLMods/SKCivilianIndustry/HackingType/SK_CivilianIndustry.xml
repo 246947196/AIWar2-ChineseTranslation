@@ -1,18 +1,18 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<root>
-	<!-- Disabled due to beacons being disabled
-	<item name="PrepareCivilianEscape" dll_name="SKCivilianIndustryBaseInfo" type_name="SKCivilianIndustry.Hacking.PrepareCivilianEscape" display_name="Free Captive Humans"
-			description="This Hack will free the humans from their captivity, and awaken your 民用工业."
-			hack_duration="120"
-			primary_hacking_response_interval="30"
-			primary_response_strength_per_interval="2.5"
-			secondary_hacking_response_interval="10"
-			secondary_response_strength_per_interval="0.5"
-			cost_in_hacking_points="15"
-			response_strength_on_completion="15"
-			local_hacker_required="true"
-			science_to_grant_on_completion="2000"
-			destroy_hack_target_on_completion="true"
-/>
-	-->
-</root>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!-- Disabled due to beacons being disabled
+	<item name="PrepareCivilianEscape" dll_name="SKCivilianIndustryBaseInfo" type_name="SKCivilianIndustry.Hacking.PrepareCivilianEscape" display_name="解救被俘人类"
+			description="此次入侵将把人类从囚禁中解放出来，并唤醒你的民用工业。"
+			hack_duration="120"
+			primary_hacking_response_interval="30"
+			primary_response_strength_per_interval="2.5"
+			secondary_hacking_response_interval="10"
+			secondary_response_strength_per_interval="0.5"
+			cost_in_hacking_points="15"
+			response_strength_on_completion="15"
+			local_hacker_required="true"
+			science_to_grant_on_completion="2000"
+			destroy_hack_target_on_completion="true"
+/>
+	-->
+</root>

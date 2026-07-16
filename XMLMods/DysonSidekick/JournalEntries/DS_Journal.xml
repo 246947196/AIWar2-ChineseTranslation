@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   <!-- TODO:
@@ -95,10 +95,10 @@ There's a structure on the map to unlock Spire Scourge, but it will cost 15 AIP.
 			can_record_another_copy_if_already_recorded_in_this_campaign="false"
 			text_replacement_related_faction_color="true"
 			text_replacement_related_planet="true"
-			full_text="戴森联盟是多个与人类结盟的种族的联合体。每个种族都有自己独特的舰船和优势。
+			full_text="戴森联盟是多个与人类结盟的种族的联合体。每个种族都有自己独特的单位和优势。
 
 你可以建造要塞；主要要塞提供旗舰，次级要塞强化旗舰（类似于死灵法师）。
-四个种族各使用区域来提升其科技等级。每个种族最初可以使用第一级单位，你可以建造区域来解锁更高级的舰船和防御。你的要塞需要达到更高的标记等级才能使用最强单位。
+四个种族各使用区域来提升其科技等级。每个种族最初可以使用第一级单位，你可以建造区域来解锁更高级的单位和防御。你的要塞需要达到更高的标记等级才能使用最强单位。
 你可以通过入侵菜单拆除要塞；这样做将返还建筑的基础建造成本。
 
 他们可以建造和升级戴森球；戴森球将为旗舰供能，使其自动协助你防御。
@@ -113,11 +113,11 @@ There's a structure on the map to unlock Spire Scourge, but it will cost 15 AIP.
 			text_replacement_related_faction_color="true"
 			text_replacement_related_planet="true"
                         is_for_the_tips_tab="true"
-			full_text="四个种族各有独特的舰船和防御，但他们也拥有你在整个游戏中需要的独特能力。
+			full_text="四个种族各有独特的单位和防御，但他们也拥有你在整个游戏中需要的独特能力。
 
-尖塔是专业的研究者，是科技发生器的主要来源；他们是你科技的主要来源。尖塔舰船是玻璃大炮，提供巨大伤害但需要保护。
+尖塔是专业的研究者，是科技发生器的主要来源；他们是你科技的主要来源。尖塔单位是玻璃大炮，提供巨大伤害但需要保护。
 奈祖尔是大师级工匠种族，是唯一能建造金属发生器的种族；他们是你的金属主要来源，没有他们你的帝国将举步维艰。
-天顶贡献了他们的巨型行星钻机；钻探行星是获取坤迪亚的主要方式。他们也可以少量使用科技发生器。天顶舰船擅长群体控制。
+天顶贡献了他们的巨型行星钻机；钻探行星是获取坤迪亚的主要方式。他们也可以少量使用科技发生器。天顶单位擅长群体控制。
 圣殿骑士是大师级战士。他们的要塞拥有出色的防御。"
                         />
            
@@ -162,7 +162,7 @@ There's a structure on the map to unlock Spire Scourge, but it will cost 15 AIP.
 			can_record_another_copy_if_already_recorded_in_this_campaign="false"
 			text_replacement_related_faction_color="true"
 			text_replacement_related_planet="true"
-			full_text="由于涉及巨大的能量，钻探坤迪亚将造成时空薄弱点。我们担心可能有一个强大的死灵法师派系可以利用这些薄弱点运送舰船过来。" />
+			full_text="由于涉及巨大的能量，钻探坤迪亚将造成时空薄弱点。我们担心可能有一个强大的死灵法师派系可以利用这些薄弱点运送单位过来。" />
 
   <journal name="DS_Reapers_Chrysalis" sidebar_text="{FactionColor}收割者&lt;/color&gt;：蛹"
 			can_record_another_copy_if_already_recorded_in_this_campaign="false"
@@ -180,7 +180,7 @@ Killing the Transports will let you take the Cuendillar for yourself." />
 			text_replacement_related_faction_color="true"
 			text_replacement_related_planet="true"
                         is_for_the_tips_tab="true"
-			full_text="我们的部队受到收割者的抵抗，他们是一个强大死灵法师派系的爪牙。他们会定期对你的部队发动攻击，并试图掠夺更多行星以建造更多舰船。
+			full_text="我们的部队受到收割者的抵抗，他们是一个强大死灵法师派系的爪牙。他们会定期对你的部队发动攻击，并试图掠夺更多行星以建造更多单位。
 
 收割者将根据戴森助手拥有的金属/科技发生器数量，以及游戏中被掠夺行星的数量和AIP，发动更强大的攻击。" />
 
@@ -190,7 +190,7 @@ Killing the Transports will let you take the Cuendillar for yourself." />
 	   text_replacement_related_planet="true"
            is_for_the_tips_tab="true"
            chat_text="指挥官，我们发现了一只可怕的劫掠者。详情请查看提示侧边栏。"
-	   full_text="一只可怕的劫掠者将飞往未被掠夺的行星，将其所有资源转化为收割者的强大舰船。收割者将从活跃的劫掠者那里获得大量舰船，所以如果可以的话，你需要尽快杀死它们。
+	   full_text="一只可怕的劫掠者将飞往未被掠夺的行星，将其所有资源转化为收割者的强大单位。收割者将从活跃的劫掠者那里获得大量单位，所以如果可以的话，你需要尽快杀死它们。
 
 一旦行星被掠夺，劫掠者将再次变为移动状态，飞往新的行星进行掠夺。" />
            
@@ -210,6 +210,6 @@ Killing the Transports will let you take the Cuendillar for yourself." />
 	   can_record_another_copy_if_already_recorded_in_this_campaign="false"
 	   text_replacement_related_faction_color="true"
 	   text_replacement_related_planet="true"
-	   full_text="戴森可以使用强大的混合体舰船；要获得某个种族的混合体，你需要将该种族提升到区域3；其他每个种族达到区域2或以上，你才能从第一个种族等级4或以上的要塞建造混合体。" />
+	   full_text="戴森可以使用强大的混合体单位；要获得某个种族的混合体，你需要将该种族提升到区域3；其他每个种族达到区域2或以上，你才能从第一个种族等级4或以上的要塞建造混合体。" />
   
 </root>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
     <faction name="Scourge" is_partial_record="true" required_expansion_list="1_The_Spire_Rises">
@@ -8,7 +8,7 @@
     </faction>
 
     <faction name="ScourgeVassal"
-             display_name="Scourge Vassal" short_name="Scourge" processing_group="Scourge"
+             display_name="灾祸附庸" short_name="灾祸" processing_group="Scourge"
       base_info_source="ScourgeVassalFactionBaseInfo"
       deep_info_source="ScourgeVassalFactionDeepInfo"
       team_center_color="Pink" team_border_color="c660000"
@@ -31,7 +31,7 @@
     </faction>
 
   <faction name="ScourgeCivilWar"
-           display_name="Scourge War" short_name="S War" processing_group="Scourge"
+           display_name="灾祸战争" short_name="灾祸战争" processing_group="Scourge"
            base_info_source="ScourgeCivilWarFactionBaseInfo"
            deep_info_source="ScourgeCivilWarFactionDeepInfo"
            team_center_color="Coyote" team_border_color="cF8F8FF"
@@ -60,7 +60,7 @@
     
   </faction>
   <faction name="TemplarWithoutNecromancer"
-           display_name="AI Templar" short_name="AI Templar" processing_group="Templar"
+           display_name="AI圣殿" short_name="AI圣殿" processing_group="Templar"
            base_info_source="TemplarFactionBaseInfo"
            deep_info_source="TemplarFactionDeepInfo"
            team_center_color="Coyote" team_border_color="c301934"
@@ -85,7 +85,7 @@ description="该变体的圣殿骑士无论是否有死灵法师都会为AI服�
   </faction>
 
   <faction name="Reapers"
-     display_name="Reapers" short_name="Reapers"
+     display_name="收割者" short_name="收割者"
      base_info_source="ReapersFactionBaseInfo"
      deep_info_source="ReapersFactionDeepInfo"
      team_center_color="Gunmetal" team_border_color="ByzantineBlue" processing_group="Reapers"
@@ -106,7 +106,7 @@ description="该变体的圣殿骑士无论是否有死灵法师都会为AI服�
   </faction>
 
   <faction name="ReapersWithoutDyson"
-     display_name="Reapers" short_name="Reapers"
+     display_name="收割者" short_name="收割者"
      base_info_source="ReapersFactionBaseInfo"
      deep_info_source="ReapersFactionDeepInfo"
      team_center_color="Gunmetal" team_border_color="ByzantineBlue" processing_group="Reapers"
@@ -177,25 +177,25 @@ Badger对此没有太多平衡数据，所以如果有问题请在discord上反�
 			sort_group="200" setting_type="CustomDropdownCoreTableSubset" default_option="RandomArk"
 			random_option_name="RandomArk" random_option_display_name="&lt;color=#ffd965&gt;随机&lt;/color&gt;" random_option_description="为Sidekick随机选择一个方舟。"/>
 		<custom_field requires_player_types="HumanArkSidekick"
-			name="ArkSidekickOptionGroup1" display_name="舰船线 1" related_table="ETag_ArkSidekickOptionGroup1" description="从你的方舟飞出的第一条舰船线是什么？"
+			name="ArkSidekickOptionGroup1" display_name="单位线 1" related_table="ETag_ArkSidekickOptionGroup1" description="从你的方舟飞出的第一条单位线是什么？"
 			sort_group="200" setting_type="CustomDropdownCoreTableSubset" default_option="RandomShipLine"
-			random_option_name="RandomShipLine" random_option_display_name="&lt;color=#ffd965&gt;随机&lt;/color&gt;" random_option_description="完全随机选择一条舰船线。"/>
+			random_option_name="RandomShipLine" random_option_display_name="&lt;color=#ffd965&gt;随机&lt;/color&gt;" random_option_description="完全随机选择一条单位线。"/>
 		<custom_field requires_player_types="HumanArkSidekick"
-			name="ArkSidekickOptionGroup2" display_name="舰船线 2" related_table="ETag_ArkSidekickOptionGroup2" description="从你的方舟飞出的第二条舰船线是什么？"
+			name="ArkSidekickOptionGroup2" display_name="单位线 2" related_table="ETag_ArkSidekickOptionGroup2" description="从你的方舟飞出的第二条单位线是什么？"
 			sort_group="200" setting_type="CustomDropdownCoreTableSubset" default_option="RandomShipLine"
-			random_option_name="RandomShipLine" random_option_display_name="&lt;color=#ffd965&gt;随机&lt;/color&gt;" random_option_description="完全随机选择一条舰船线。"/>
+			random_option_name="RandomShipLine" random_option_display_name="&lt;color=#ffd965&gt;随机&lt;/color&gt;" random_option_description="完全随机选择一条单位线。"/>
 		<custom_field requires_player_types="HumanArkSidekick"
-			name="ArkSidekickOptionGroup3" display_name="舰船线 3" related_table="ETag_ArkSidekickOptionGroup3" description="从你的方舟飞出的第三条舰船线是什么？"
+			name="ArkSidekickOptionGroup3" display_name="单位线 3" related_table="ETag_ArkSidekickOptionGroup3" description="从你的方舟飞出的第三条单位线是什么？"
 			sort_group="200" setting_type="CustomDropdownCoreTableSubset" default_option="RandomShipLine"
-			random_option_name="RandomShipLine" random_option_display_name="&lt;color=#ffd965&gt;随机&lt;/color&gt;" random_option_description="完全随机选择一条舰船线。"/>
+			random_option_name="RandomShipLine" random_option_display_name="&lt;color=#ffd965&gt;随机&lt;/color&gt;" random_option_description="完全随机选择一条单位线。"/>
 		<custom_field requires_player_types="HumanArkSidekick"
-			name="ArkSidekickOptionGroup4" display_name="舰船线 4" related_table="ETag_ArkSidekickOptionGroup4" description="从你的方舟飞出的第四条舰船线是什么？"
+			name="ArkSidekickOptionGroup4" display_name="单位线 4" related_table="ETag_ArkSidekickOptionGroup4" description="从你的方舟飞出的第四条单位线是什么？"
 			sort_group="200" setting_type="CustomDropdownCoreTableSubset" default_option="RandomShipLine"
-			random_option_name="RandomShipLine" random_option_display_name="&lt;color=#ffd965&gt;随机&lt;/color&gt;" random_option_description="完全随机选择一条舰船线。"/>
+			random_option_name="RandomShipLine" random_option_display_name="&lt;color=#ffd965&gt;随机&lt;/color&gt;" random_option_description="完全随机选择一条单位线。"/>
 		<custom_field requires_player_types="HumanArkSidekick"
-			name="ArkSidekickOptionGroup5" display_name="舰船线 5" related_table="ETag_ArkSidekickOptionGroup5" description="从你的方舟飞出的第五条舰船线是什么？"
+			name="ArkSidekickOptionGroup5" display_name="单位线 5" related_table="ETag_ArkSidekickOptionGroup5" description="从你的方舟飞出的第五条单位线是什么？"
 			sort_group="200" setting_type="CustomDropdownCoreTableSubset" default_option="RandomShipLine"
-			random_option_name="RandomShipLine" random_option_display_name="&lt;color=#ffd965&gt;随机&lt;/color&gt;" random_option_description="完全随机选择一条舰船线。"/>
+			random_option_name="RandomShipLine" random_option_display_name="&lt;color=#ffd965&gt;随机&lt;/color&gt;" random_option_description="完全随机选择一条单位线。"/>
 
                 <!-- Armada Empire Sidekick custom fields -->
     <custom_field requires_player_types="ArmadaEmpire"

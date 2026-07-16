@@ -19,7 +19,7 @@
 人类殖民地隐藏在整个银河系中。它们偶尔会请求援助。这些殖民地会带着随机舰队线生成到银河系中。
 
 如果您在援助请求过期前占领其所在星球，该星球的AIP消耗将比正常少5点。（无法通过此方式获得AIP。）
-您可以将舰船产线从殖民地转移出来，而殖民地本身只要您保护就会持续提供资源。
+您可以将单位产线从殖民地转移出来，而殖民地本身只要您保护就会持续提供资源。
 
 如果您未能在殖民地被占领前夺取其星球，AI将迫使他们向您发动攻击，包括其舰队线的波次进攻。
 唯一阻止的方法是摧毁殖民地，这将消耗5点AIP。
@@ -36,7 +36,7 @@
 AI会随时间推移建立防御来应对他们的干扰，但由于这些浪客极其狡猾，这只会导致更多敌对力量需要您来处理。
 
 不过并非全是坏处——您星球上的浪客会联系您并要求建造浪客公会。
-建成后，游荡到该星球的浪客会存入他们偷来的物资，为您提供持续不断的外星舰船僵尸流。
+建成后，游荡到该星球的浪客会存入他们偷来的物资，为您提供持续不断的外星单位僵尸流。
 
 在游戏中途禁用只会禁止新浪客生成。不会停止任何其他逻辑。"
 	/>
@@ -45,9 +45,9 @@ AI会随时间推移建立防御来应对他们的干扰，但由于这些浪客
 		default="false" changeable_during_gameplay="true"
 		description="中等影响。
 
-偶尔中立舰船舰队会抵达银河系，开始一段穿越星空的缓慢旅程。该旅程遵循固定路线，可通过建造护航队星图模式查看。
+偶尔中立单位舰队会抵达银河系，开始一段穿越星空的缓慢旅程。该旅程遵循固定路线，可通过建造护航队星图模式查看。
 
-这些中立舰船会为所访问星球的所有者建造多种建筑，如地雷、牵引光束、引力发生器和炮塔。
+这些中立单位会为所访问星球的所有者建造多种建筑，如地雷、牵引光束、引力发生器和炮塔。
 
 在游戏中途禁用只会禁止新建造护航队生成。不会停止任何其他逻辑。"
 	/>
@@ -179,11 +179,11 @@ AI拥有若干个专门研究隐藏在银河系各处的各种外星种族的实
 
 	<galaxy_setting name="LostHumansConstructionConvoySpawnsPerConvoy" category="LostHumans" subcategory="ConstructionConvoys" display_name="建造护航队 生成数" type="IntSlider"
 		default="8" min="1" max="20" changeable_during_gameplay="true" is_advanced_setting="true"
-		description="每个建造护航队生成多少艘舰船？" />
+		description="每个建造护航队生成多少个单位？" />
 
 	<galaxy_setting name="LostHumansConstructionConvoyStructuresToBuildPerPlanet" category="LostHumans" subcategory="ConstructionConvoys" display_name="建造护航队 每星球建筑数" type="IntSlider"
 		default="2" min="1" max="3" changeable_during_gameplay="true" is_advanced_setting="true"
-		description="每艘护航队舰船在每个访问的星球上可以建造多少建筑？" />
+		description="每艘护航队单位在每个访问的星球上可以建造多少建筑？" />
 
 	<galaxy_setting name="LostHumansConstructionConvoyBuildTimer" category="LostHumans" subcategory="ConstructionConvoys" display_name="建造建筑所需秒数" type="IntSlider"
 		default="60" min="30" max="120" changeable_during_gameplay="true" is_advanced_setting="true"

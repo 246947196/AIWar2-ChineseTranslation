@@ -24,7 +24,7 @@
 		<!--<map_option
 			name="MissingPlanets"
 			display_name="缺失行星"
-			description="Number of planets to remove (random)"
+			description="要移除的行星数量（随机）"
 			
 			type="CustomSliderArbitraryOptions"
 			option_names="0,1,2,3,5,7,10,12,15,17,20,25" 
@@ -66,7 +66,7 @@
 		<!--<map_option
 			name="MissingPlanets"
 			display_name="缺失行星"
-			description="Number of planets to remove (random)"
+			description="要移除的行星数量（随机）"
 			
 			type="CustomSliderArbitraryOptions"
 			option_names="0,1,2,3,5,7,10,12,15,17,20,25" 
@@ -169,7 +169,7 @@
 		<!--<map_option
 			name="xDimension"
 			display_name="宽度"
-			description="Number horizontal bricks"
+			description="水平砖块数"
 			
 			type="CustomSliderArbitraryOptions"
 			option_names="1,2,3,4,5,6,7,8,9,10,12,14,16,18,20" 
@@ -180,7 +180,7 @@
 		<map_option
 			name="yDimension"
 			display_name="高度"
-			description="Number vertical bricks"
+			description="垂直砖块数"
 			
 			type="CustomSliderArbitraryOptions"
 			option_names="1,2,3,4,5,6,7,8,9,10,12,14,16,18,20" 
@@ -390,8 +390,8 @@
 		>
 		<!--<map_option
 			name="FuseTrapezohedrons"
-			display_name="Fuse Trapezohedrons"
-			description="Remove the stem separating the trapezohedrons from the shaft."
+			display_name="融合偏方面体"
+			description="移除分隔偏方面体与轴杆的茎。"
 			type="BoolToggle" 
 			default_value="0"
 			>
@@ -546,7 +546,7 @@
 		<map_option
 			name="ExtraLinks"
 			display_name="额外链接"
-			description="Number of links to add (random)."
+			description="要添加的链接数量（随机）。"
 			
 			type="CustomSliderArbitraryOptions"
 			option_names="0,1,2,3,4,5,6,7,8,9,10,12,14,16,18,20,25,30,35,40,45,50,60,75,100" 
@@ -752,8 +752,8 @@
 	</map_type>
 	<!-- <map_type
 		name="Hardcoded"
-		display_name="Hardcoded"
-		description="Various hardcoded static maps"
+		display_name="硬编码"
+		description="各种硬编码静态地图"
 		dll_name="RadiantMaps"
 		type_name="RadiantMaps.HardcodeTypeGenerator"
 		min_planets="50"
@@ -762,8 +762,8 @@
 		
 		<map_option
 			name="Pattern"
-			display_name="Pattern"
-			description="Which hardcoded map to use"
+			display_name="模式"
+			description="要使用的硬编码地图"
 			default_id="1"
 			>
 				<choice_value
@@ -774,7 +774,7 @@
 					/>
 				<choice_value
 					id="1"
-					display_name="Globe 80"
+					display_name="球体80"
 					description=""
 					related_int_value="1"
 					/>

@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
     <faction name="AzarEmpire" 
     display_name="阿扎兰帝国入侵" short_name="阿扎兰帝国" processing_group="AzarEmpire"
     base_info_source="AzarEmpireFactionBaseInfo" deep_info_source="AzarEmpireFactionDeepInfo" team_center_color="cFFBF00" team_border_color="cF7E7CE"
     type="SpecialFaction"
-    description="阿扎兰帝国正在入侵银河系。它们是一个高度集权的帝国，将自己的星球带入银河系，从那里生产舰船来占领行星并建造建筑以增强其生产能力。
+    description="阿扎兰帝国正在入侵银河系。它们是一个高度集权的帝国，将自己的星球带入银河系，从那里生产单位来占领行星并建造建筑以增强其生产能力。
 
 &lt;color=#f25e1c&gt;影响可变：&lt;/color&gt;根据强度和入侵时间，该派系的影响将大不相同。例如，立即入侵、强度10将在高影响到极高影响之间，而较晚入侵则可能使其完全失败。以下是总体预期：
 它们一开始相对较弱，扩张困难，但只要有足够的时间，它们的设施将提供充足的生产力来接管银河系。它们的母星将是一个巨大的行星，能够容纳无数设施，即使没有太多领土，它们仍可能构成威胁！"

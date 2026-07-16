@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- Defensive Structures -->
   <entity name="WraithFortress" tags="WraithFortress" ship_class_name="Superweapon"
@@ -12,8 +12,8 @@
 	  size_scale="10"
 	  visuals_scale_multiplier="25"
           collision_priority="800"
-	  display_name="Wraith Fortress"
-          display_name_for_sidebar="Wr Fortress"
+	  display_name="幽灵堡垒"
+          display_name_for_sidebar="流浪者堡垒"
 	  description="极其强大的防御建筑，而且还是隐形的，雪上加霜。它会随时间缓慢恢复生命值。"
 	  behavior="Stationary"
           is_major_ai_structure="true"
@@ -36,7 +36,7 @@
         necromancer_hacking_to_grant_on_death="4"/>
     <hack_data hack_type="Sabotage" override_cost_in_hacking_points="11" />
     <metal_flow purpose="SelfConstruction" throughput="700"/>
-    <system name="R1" display_name="Wraith Fusion Rockets"
+    <system name="R1" display_name="幽灵聚变火箭"
                 category="Weapon" firing_timing="OnlyInRange"
                 damage_per_shot="1500" range="High1" shot_speed="Normal" rate_of_fire="Normal"
                 shots_per_salvo="30" fires_salvos_sequentially="false"
@@ -44,7 +44,7 @@
                 base_percent_damage_bypasses_personal_shields="1" 
 		>
     </system>
-    <system name="R2" display_name="Wraith Energy Wave"
+    <system name="R2" display_name="幽灵能量波"
           category="Weapon" firing_timing="OnlyInRange" shots_per_salvo="4"
           damage_per_shot="3750" range="High1" shot_speed="Normal" rate_of_fire="Low" fires_salvos_sequentially="true"
           shot_type_data="EnergyWave"
@@ -53,7 +53,7 @@
 	  >
       <outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="2" />
     </system>
-    <system name="C" display_name="Cloaking Device"
+    <system name="C" display_name="隐形装置"
 	    category="Passive" cloaking_points="6000" cloaking_points_added_per_mark="1000"
 	    >
     </system>
@@ -74,9 +74,9 @@
 	  visuals_scale_multiplier="24"
 	  y_offset_of_icon="30"
 	  collision_priority="810"
-	  display_name="Wraith Coordinator"
-          display_name_for_sidebar="Wr Coord"
-	  description="这艘强大的隐形舰船协调并统一各类幽魂舰种的行动。它通过麻痹敌人再将其僵尸化来引领AI霸主的防御。"
+	  display_name="幽灵协调者"
+          display_name_for_sidebar="流浪者协调者"
+	  description="这艘强大的隐形单位协调并统一各类幽魂舰种的行动。它通过麻痹敌人再将其僵尸化来引领AI霸主的防御。"
     starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
     cost_for_ai_to_purchase="49500"
     hull_points="10000000" shield_points="40000000" speed="AboveAverage3"
@@ -89,7 +89,7 @@
     should_never_count_as_threat="true"
     >
     <incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="2500" multiplier="0.20" />
-    <system name="WR" display_name="Wrathful Vengeance"
+    <system name="WR" display_name="愤怒复仇"
 	    category="Weapon" firing_timing="OnlyInRange"
 	    damage_per_shot="2000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Misery"
 	    shots_per_salvo="40" fires_salvos_sequentially="false"
@@ -102,7 +102,7 @@
       <outgoing_damage_modifier based_on="mass_tx" comparison_type="AtMost" compared_to="2" multiplier="2" />
       <death_effect_damage type="Zombification" tier_name="Parasite"/>
     </system>
-    <system name="C" display_name="Cloaking Device"
+    <system name="C" display_name="隐形装置"
 	    category="Passive" cloaking_points="6000" cloaking_points_added_per_mark="1000"
 	    >
     </system>

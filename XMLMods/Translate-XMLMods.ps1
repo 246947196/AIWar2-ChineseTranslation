@@ -38,7 +38,7 @@ function ConvertTo-Chinese {
     $result = $result -replace 'Laser', '激光'
     $result = $result -replace 'Rocket', '火箭'
     $result = $result -replace 'Torpedo', '鱼雷'
-    $result = $result -replace 'Warhead', '弹头'
+    $result = $result -replace 'Warhead', '飞弹'
     $result = $result -replace 'Cloak(?:ing)?', '隐形'
     $result = $result -replace 'Tractor', '牵引'
     $result = $result -replace 'Fortress', '堡垒'

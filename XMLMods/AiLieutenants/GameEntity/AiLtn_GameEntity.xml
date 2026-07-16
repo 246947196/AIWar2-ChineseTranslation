@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
 	<!-- Officers -->
@@ -91,7 +91,7 @@
 		visuals_scale_multiplier="13"
 		y_offset_of_icon="35"
 		collision_priority="800"
-		display_name="Hunter Fleet Lieutenant"
+		display_name="猎手舰队副官"
 		display_name_for_sidebar="猎手副官"
 		description="此AI负责领导猎手舰队。存活时舰队增援更快，但击杀后舰队将陷入混乱。"
 		blocks_enemy_claim_flows="true"
@@ -126,7 +126,7 @@
 				 />
 
 		<system name="W1"
-			display_name="Nanoswarm Launch"
+			display_name="纳米蜂群发射"
 			category="Weapon"
 			firing_timing="OnlyInRange"
 			damage_per_shot="5"
@@ -182,7 +182,7 @@
 		collision_priority="800"
 		display_name="后勤副官"
 		display_name_for_sidebar="后勤副官"
-		description="可以重建被摧毁的跃迁门和哨站。还建造能提升舰船速度的前哨站。它所在的行星还会获得额外增援。对新抵达的舰船造成极强的伏击伤害。"
+		description="可以重建被摧毁的跃迁门和哨站。还建造能提升单位速度的前哨站。它所在的行星还会获得额外增援。对新抵达的单位造成极强的伏击伤害。"
 		blocks_enemy_claim_flows="true"
 		voice_group="Silent"
 		starting_mark_level="Mark1"
@@ -440,7 +440,7 @@
 			collision_priority="100"
 			display_name="吸血鬼之爪无人机"
 			display_name_for_sidebar="吸血鬼无人机"
-			description="隐形近战舰船，造成伤害时可以治愈自身。"
+			description="隐形近战单位，造成伤害时可以治愈自身。"
 			starting_mark_level="Mark1"
 			tech_upgrades_that_benefit_me="Unused"
 			cost_for_ai_to_purchase="42"
@@ -638,7 +638,7 @@
 			y_offset_of_icon="30"
 			display_name="后勤速度助推器"
 			display_name_for_sidebar="速度助推器"
-			description="这个由后勤副官建造的支援结构极大地加速了AI舰船的速度。"
+			description="这个由后勤副官建造的支援结构极大地加速了AI单位的速度。"
 			behavior="Stationary"
 			automatically_dies_with_command_station="true"
 			never_leaves_remains="true"
@@ -899,7 +899,7 @@
 		size_scale="12"
 		visuals_scale_multiplier="3.5"
 		display_name="超级终端"
-		description="该建筑提供对 AI 核心网络的直接访问，您可以在此严重损害 AI 的处理能力。通过入侵该单位，您可以大幅降低 AI 进程，但 AI 将使用大量舰船猛烈回击以阻止您的入侵。摧毁该星球上的 AI 指挥站将使您无法使用超级终端。AI 锁定防火墙阻止进一步访问之前，您只能入侵超级终端一次。反击强度会因人类帝国的数量而增加，因此三个人类帝国将导致三倍强度的反击。"
+		description="该建筑提供对 AI 核心网络的直接访问，您可以在此严重损害 AI 的处理能力。通过入侵该单位，您可以大幅降低 AI 进程，但 AI 将使用大量单位猛烈回击以阻止您的入侵。摧毁该星球上的 AI 指挥站将使您无法使用超级终端。AI 锁定防火墙阻止进一步访问之前，您只能入侵超级终端一次。反击强度会因人类帝国的数量而增加，因此三个人类帝国将导致三倍强度的反击。"
 		triggers_general_readiness_on_ai_sentinels="true"
 		automatically_dies_with_command_station="true"
 		eligible_for_hacks="SubvertSuperTerminal,SubvertSuperTerminal_Diff8,SubvertSuperTerminal_Diff9,SubvertSuperTerminal_Diff10"
@@ -1115,7 +1115,7 @@
 			y_offset_of_icon="20"
 		display_name="守望者舰队火力基地"
 		display_name_for_sidebar="守望者火力基地"
-		description="由守望者副官建造。当附近有敌对力量时，它会给守望者舰队生成舰船。"
+		description="由守望者副官建造。当附近有敌对力量时，它会给守望者舰队生成单位。"
 			behavior="Stationary"
 			voice_group="Silent"
 			starting_mark_level="Markless"
@@ -1172,7 +1172,7 @@
 				></system>
 		<system
 				name="WS"
-				display_name="Sabot"
+				display_name="破片弹"
 				category="Weapon"
 				firing_timing="OnlyInRange"
 				damage_per_shot="400"

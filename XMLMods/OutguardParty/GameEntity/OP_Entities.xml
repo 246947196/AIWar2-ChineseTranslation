@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
 <!--
@@ -141,7 +141,7 @@
 			collision_priority="500"
 			display_name="超级机动兵工厂"
 			display_name_for_sidebar="C-S-FAC"
-			description="为战斗配装的机动超级工厂旗舰。如果舰队旗舰在同一或相邻行星且缺少舰船，将自动生产替代品直接跃迁到该旗舰。这个超大型变体拥有更多无人机和工程师。其修理和建造能力大幅扩展，并在其生命周期内自我消耗以生产金属。"
+			description="为战斗配装的机动超级工厂旗舰。如果舰队旗舰在同一或相邻行星且缺少单位，将自动生产替代品直接跃迁到该旗舰。这个超大型变体拥有更多无人机和工程师。其修理和建造能力大幅扩展，并在其生命周期内自我消耗以生产金属。"
 			description_short="机动超级工厂，自动替换附近舰队损失并修理附近单位。这个超大型变体拥有更多无人机、工程师和容量。在其生命周期内自我消耗以生产金属。"
 			fleet_design_template_i_use_for_drones="CombatSuperFactoryDrones"
 			drone_starting_behavior_type="Attacker_Full"
@@ -414,7 +414,7 @@
 		visuals_scale_multiplier="7"
 		collision_priority="50"
 		display_name="天启飞弹"
-		description="感染行星上所有舰船使其僵尸化。不幸的是，它们也恨我们。"
+		description="感染行星上所有单位使其僵尸化。不幸的是，它们也恨我们。"
 		starting_mark_level="Markless"
 		tech_upgrades_that_benefit_me="Unused"
 		cost_for_ai_to_purchase="10"
@@ -516,7 +516,7 @@
 			y_offset_of_icon="30"
 			display_name="隐形后勤前哨站"
 			display_name_for_sidebar="隐形后勤前哨站"
-			description="隐形无武装前哨站，提升友军舰船的速度。一条由它们组成的高速公路可以连接破碎的领土。"
+			description="隐形无武装前哨站，提升友军单位的速度。一条由它们组成的高速公路可以连接破碎的领土。"
 			behavior="Stationary"
 			automatically_dies_with_command_station="false"
 			never_leaves_remains="true"

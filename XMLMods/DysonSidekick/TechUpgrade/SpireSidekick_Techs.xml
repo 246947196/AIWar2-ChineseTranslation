@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
     <item name="SpireSidekickRangers" sort_group="200" sort_index="10" display_name="&lt;color=#cc00cc&gt;Spire:&lt;/color&gt; Warden" science_cost_per_time_unlocked="1200,3600,4800,5000,6500,7800" icon_path="assets/sci-fi_game_icons/icons/png/transparent/43_b.png" weapon_upgrade="false" for_player_type_tags="SpireSidekick" skips_rejection_if_benefits_nothing="true"
-          description="此升级将增强你的尖塔守望者舰船。"/>
+          description="此升级将增强你的尖塔守望者单位。"/>
 
 </root>

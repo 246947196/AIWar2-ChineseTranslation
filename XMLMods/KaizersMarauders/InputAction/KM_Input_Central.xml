@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <input_action name="KMUpgradeDisplayHotkey"
-      category="KM" display_name="Open/Close Resource Display"
+      category="KM" display_name="打开/关闭资源显示"
       description="Press this button to open the 凯泽掠夺者 Upgrade Display, an overview over all research options for 凯泽掠夺者."
       dll_name="KaizersMarauders_Base" type_name="KaizersMarauders_Base.KMUpgradeDisplayHotkey"
       check_type="ButtonPress" key="T" />

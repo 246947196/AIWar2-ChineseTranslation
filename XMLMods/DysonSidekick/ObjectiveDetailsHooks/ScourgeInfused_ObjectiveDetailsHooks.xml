@@ -2,7 +2,7 @@
 <root>
 
   <objective_details_hook name="ScourgeSpawners" category="ScourgeInfusedStrategy"
-          default_display_name="Build Spawners"
+          default_display_name="建造生成器"
           use_default_display_name_instead_of_display_name_base="true"
           dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.ScourgeSpawners"
           display_name_color="ff8877"
@@ -11,7 +11,7 @@
           difficulty_method="Nothing"/>
 
   <objective_details_hook name="ScourgeArmories" category="ScourgeInfusedStrategy"
-          default_display_name="Build Armories"
+          default_display_name="建造军械库"
           use_default_display_name_instead_of_display_name_base="true"
           dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.ScourgeArmories"
           display_name_color="ff8877"
@@ -20,7 +20,7 @@
           difficulty_method="Nothing"/>
 
   <objective_details_hook name="ScourgeCorbomite" category="ScourgeInfusedStrategy"
-          default_display_name="Grow Corbomite"
+          default_display_name="培育科博米特"
           use_default_display_name_instead_of_display_name_base="true"
           dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.ScourgeCorbomite"
           display_name_color="ff8877"
@@ -29,7 +29,7 @@
           difficulty_method="Nothing"/>
 
   <objective_details_hook name="ScourgeUpgradeInfrastructure" category="ScourgeInfusedStrategy"
-          default_display_name="Upgrade Scourge Infrastructure"
+          default_display_name="升级灾祸基础设施"
           use_default_display_name_instead_of_display_name_base="true"
           dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.ScourgeUpgradeInfrastructure"
           display_name_color="ffaa44"
@@ -38,7 +38,7 @@
           difficulty_method="Nothing"/>
 
   <objective_details_hook name="ScourgeUnlockRaces" category="ScourgeInfusedStrategy"
-          default_display_name="Unlock Alien Races"
+          default_display_name="解锁外星种族"
           use_default_display_name_instead_of_display_name_base="true"
           dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.ScourgeUnlockRaces"
           display_name_color="a1ffa1"

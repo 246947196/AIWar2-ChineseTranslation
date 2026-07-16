@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 	<entity name="DistributionNode" is_partial_record="true"
 		tags="DistributionNode,ShowsOnNormalDisplayMode"
@@ -127,7 +127,7 @@
 		visuals_scale_multiplier="2"
 		display_name="增援跃迁门"
 		display_name_for_sidebar="增援跃迁门"
-		description="这不像可以容纳大规模舰队通过的大型跃迁门，它一次只运输几艘舰船，为 AI 提供了一种更简单的方式来增援其所在星球。"
+		description="这不像可以容纳大规模舰队通过的大型跃迁门，它一次只运输几个单位，为 AI 提供了一种更简单的方式来增援其所在星球。"
 		description_short="略微增加行星增援。只有放任不管时才危险。"
 		behavior="Stationary"
 		collision_priority="10000"

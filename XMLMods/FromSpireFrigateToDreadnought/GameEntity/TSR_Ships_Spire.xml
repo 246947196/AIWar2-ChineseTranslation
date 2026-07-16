@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   <entity  copy_from="SpireBattleship" name="SpireBattleshipFlagshipFromFrigate" display_name="尖塔战列舰旗舰" display_name_for_sidebar="尖塔战列舰旗舰" is_scrapping_by_player_disallowed="true"
@@ -31,7 +31,7 @@
 			aip_to_claim="75"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" 
 			
-			description="一艘通过从人类储备中投入荒谬能量使其从孤零零的尖塔护卫舰生长而成的巨大尖塔无畏舰。这艘舰船单独即可压倒银河系中任何已知对手。"
+			description="一艘通过从人类储备中投入荒谬能量使其从孤零零的尖塔护卫舰生长而成的巨大尖塔无畏舰。这个单位单独即可压倒银河系中任何已知对手。"
 			energy_consumption="2500000"
 			>
 		<ship_class_data can_be_fleet_supercharged="false" />
@@ -50,9 +50,9 @@
 			visuals_scale_multiplier="3"
 			y_offset_of_icon="30"
 			collision_priority="4500"
-			display_name="Spire Battleship"
-			display_name_for_sidebar="Spire BB"
-			description="A large Spire warship."
+			display_name="尖塔战列舰"
+			display_name_for_sidebar="尖塔战列舰"
+			description="一艘大型尖塔战舰。"
 			starting_mark_level="Mark1" this_unit_gets_direct_science_upgrades_from_central_fleet="true"
 			cost_for_ai_to_purchase="34000" strength_multiplier="1.4"
 			hull_points="4800000" shield_points="4800000" speed="AboveAverage1"
@@ -93,9 +93,9 @@
 			visuals_scale_multiplier="2.3"
 			y_offset_of_icon="30"
 			collision_priority="5000"
-			display_name="Spire Dreadnought"
-			display_name_for_sidebar="Spire DN"
-			description="An enormous Spire warship."
+			display_name="尖塔无畏舰"
+			display_name_for_sidebar="尖塔无畏舰"
+			description="一艘巨型尖塔战舰。"
 			starting_mark_level="Mark1" this_unit_gets_direct_science_upgrades_from_central_fleet="true"
 			cost_for_ai_to_purchase="67000" strength_multiplier="1.4"
 			hull_points="9600000" shield_points="9600000" speed="AboveAverage1"
@@ -119,7 +119,7 @@
                 is_coilbeam="true"				
 				>
     </system>
-	<system name="LaserPulse" display_name="Spire Laser Pulse"
+	<system name="LaserPulse" display_name="尖塔激光脉冲"
 				category="Weapon" firing_timing="OnlyInRange"
 				damage_per_shot="36000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Misery"
 				shots_per_salvo="20" fires_salvos_sequentially="false"

@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <ai_type name="Flenserite"
   	   is_default="false"
-           display_name="Flenserite"
-           abbreviation="Flenserite"
+           display_name="剥皮者"
+           abbreviation="剥皮者"
            dll_name="AIWarExternalCode"
            type_name="Arcen.AIW2.External.AITypeController_Flenserite"
            ratio_of_superiority_at_which_threat_overruns="10"
@@ -52,7 +52,7 @@
            type_difficulty="Brutal"
            adaptive_difficulty="Unset"
            random_difficulty="Unset"
-            description="该AI在游戏开始时，其禁卫军中有一艘「剥皮者」，以及一些设计用于撕裂你的防御的新型舰船。
+            description="该AI在游戏开始时，其禁卫军中有一艘「剥皮者」，以及一些设计用于撕裂你的防御的新型单位。
 
 它具有极强的边境侵略性，并且相比波次（波次不频繁但强大）更倾向于CPA。
 
@@ -85,8 +85,8 @@
 
   <ai_type name="Ametor"
   	   is_default="false"
-           display_name="Ametor"
-           abbreviation="Ametor"
+           display_name="阿美托"
+           abbreviation="阿美托"
            dll_name="AIWarExternalCode"
            type_name="Arcen.AIW2.External.AITypeController_Ametor"
            ratio_of_superiority_at_which_threat_overruns="10"
@@ -135,7 +135,7 @@
            type_difficulty="Hard"
            adaptive_difficulty="Unset"
            random_difficulty="Unset"
-            description="该AI在游戏开始时，其禁卫军中有一艘母舰，同时也共享剥皮者的舰船。适合那些觉得剥皮者有点过强的玩家。
+            description="该AI在游戏开始时，其禁卫军中有一艘母舰，同时也共享剥皮者的单位。适合那些觉得剥皮者有点过强的玩家。
 
 它具有极强的边境侵略性，并且相比波次（波次不频繁但强大）更倾向于CPA。总体比剥皮者弱一些。"
          >
@@ -166,8 +166,8 @@
 
     <ai_type name="Miskatonic"
   	   is_default="false"
-           display_name="Miskatonic"
-           abbreviation="Miskatonic"
+           display_name="米斯卡托尼克"
+           abbreviation="米斯卡托尼克"
            dll_name="AIWarExternalCode"
            type_name="Arcen.AIW2.External.AITypeController_Miskatonic"
            ratio_of_superiority_at_which_threat_overruns="10"
@@ -245,8 +245,8 @@
 
   <ai_type name="Shadowen"
   	   is_default="false"
-           display_name="Shadowen"
-           abbreviation="Shadowen"
+           display_name="暗影行者"
+           abbreviation="暗影行者"
            dll_name="AIWarExternalCode"
            type_name="Arcen.AIW2.External.AITypeController_Shadowen"
            ratio_of_superiority_at_which_threat_overruns="10"
@@ -293,7 +293,7 @@
            support_structure_nasty_pick_tag="SupportStructureNastyPick"
            wildcard_nasty_pick_tag="WildCardNastyPick"
            type_difficulty="Hard"
-            description="该AI在游戏开始时，其禁卫军中有一艘「贪婪暗影」，以及各种其他强大的暗影舰船。
+            description="该AI在游戏开始时，其禁卫军中有一艘「贪婪暗影」，以及各种其他强大的暗影单位。
 
 该AI更侧重于用炮塔和哨站重兵防守其星球。"
   >
@@ -324,8 +324,8 @@
 
   <ai_type name="Lernean"
   	   is_default="false"
-           display_name="Lernaean"
-           abbreviation="Lernaean"
+           display_name="勒拿"
+           abbreviation="勒拿"
            dll_name="AIWarExternalCode"
            type_name="Arcen.AIW2.External.AITypeController_Lernean"
            ratio_of_superiority_at_which_threat_overruns="10"
@@ -404,8 +404,8 @@
 
   <ai_type name="Bandersnatch"
   	   is_default="false"
-           display_name="Bandersnatch"
-           abbreviation="Bandersnatch"
+           display_name="班达斯纳奇"
+           abbreviation="班达斯纳奇"
            dll_name="AIWarExternalCode"
            type_name="Arcen.AIW2.External.AITypeController_Bandersnatch"
            ratio_of_superiority_at_which_threat_overruns="10"
@@ -483,8 +483,8 @@
   </ai_type>
 
   <ai_type name="Chivalric" copy_from="FullEnsemble"
-           display_name="Chivalric"
-           abbreviation="Chivalric"
+           display_name="骑士风范"
+           abbreviation="骑士风范"
            is_default="false"
            type_name="Arcen.AIW2.External.AITypeController_Chivalric"
             description="这位心地善良的AI喜欢把你的旗舰留到最后处理。
@@ -495,8 +495,8 @@
     </ai_type>
 
     <ai_type name="Deepstriker" copy_from="FullEnsemble"
-           display_name="Deepstriker"
-           abbreviation="Deepstriker"
+           display_name="深度打击者"
+           abbreviation="深度打击者"
            is_default="false"
             description="该AI的霸主将始终获得AI预备队的帮助，无论它是否处于深度打击状态"
            overlord_always_in_deepstrike="true"
@@ -505,10 +505,10 @@
     </ai_type>
 
     <ai_type name="JubJubBird" copy_from="Jabberwock"
-             display_name="Jub Jub Bird"
+             display_name="咕咕鸟"
              abbreviation="JJB"
              is_default="false"
-      description="当心Jub Jub鸟！这是炸脖龙（Jabberwock），但同时也拥有帝国锻造（Forge of Empires）的舰船。这可能比炸脖龙更难。
+      description="当心Jub Jub鸟！这是炸脖龙（Jabberwock），但同时也拥有帝国锻造（Forge of Empires）的单位。这可能比炸脖龙更难。
 
 这可能是游戏中最难的AI类型。"
      >
@@ -588,9 +588,9 @@
            support_structure_nasty_pick_tag="SupportStructureNastyPick"
            wildcard_nasty_pick_tag="WildCardNastyPick"
            type_difficulty="Hard"
-            description="该AI类型在其子舰队中使用了多种不同的舰船类型。他们在守望者舰队中使用天灾，在边境侵略中使用奈祖尔，在禁卫军中使圣殿骑士。
+            description="该AI类型在其子舰队中使用了多种不同的单位类型。他们在守望者舰队中使用天灾，在边境侵略中使用奈祖尔，在禁卫军中使圣殿骑士。
 
-此外，他们拥有一支特别强大的猎手舰队，专注于隐形舰船。"
+此外，他们拥有一支特别强大的猎手舰队，专注于隐形单位。"
          >
     <budget_item type="Reinforcement" seconds_between_attempts_to_spend="300" normal_ship_group_cat="AnyReinforcements"
       spend_on_threshold="true"
@@ -620,8 +620,8 @@
 
   <ai_type name="Wanderer_DysonSidekick"
   	   is_default="false"
-           display_name="Wanderer"
-           abbreviation="Wander"
+           display_name="流浪者"
+           abbreviation="流浪"
            dll_name="AIWarExternalCode"
            type_name="Arcen.AIW2.External.AITypeController_Wanderer"
            ratio_of_superiority_at_which_threat_overruns="6"
@@ -700,8 +700,8 @@
 
   <ai_type name="Kzinti"
   	   is_default="false"
-           display_name="Kzinti"
-           abbreviation="Kzinti"
+           display_name="克津蒂"
+           abbreviation="克津蒂"
            dll_name="AIWarExternalCode"
            type_name="Arcen.AIW2.External.AITypeController_Kzinti"
            ratio_of_superiority_at_which_threat_overruns="10"
@@ -750,7 +750,7 @@
            type_difficulty="Brutal"
            adaptive_difficulty="Unset"
            random_difficulty="Unset"
-            description="该AI使用来自无敌舰队帝国的舰船。拥有相当强大的波次。
+            description="该AI使用来自无敌舰队帝国的单位。拥有相当强大的波次。
 
 它的难度可能应该设为Brutal（残暴），欢迎大家提供反馈。"
          >
@@ -781,8 +781,8 @@
 
     <ai_type name="Tiberian"
   	   is_default="false"
-           display_name="Tidal"
-           abbreviation="Tidal"
+           display_name="潮汐"
+           abbreviation="潮汐"
            dll_name="AIWarExternalCode"
            type_name="Arcen.AIW2.External.AITypeController_Tiberian"
            ratio_of_superiority_at_which_threat_overruns="10"
@@ -831,7 +831,7 @@
            type_difficulty="Hard"
            adaptive_difficulty="Unset"
            random_difficulty="Unset"
-            description="该AI使用注入了泰德瑞安的舰船；它们被摧毁时经常生成较弱的舰船，导致旷日持久的战斗。拥有强大的波次"
+            description="该AI使用注入了泰德瑞安的单位；它们被摧毁时经常生成较弱的单位，导致旷日持久的战斗。拥有强大的波次"
          >
     <budget_item type="Reinforcement" seconds_between_attempts_to_spend="300" normal_ship_group_cat="TiberianFleetships"
       spend_on_threshold="true"
@@ -860,8 +860,8 @@
 
   <ai_type name="TurretMaster"
   	   is_default="true"
-           display_name="Turret Master"
-           abbreviation="Ensemble"
+           display_name="炮塔大师"
+           abbreviation="合奏"
            dll_name="AIWarExternalCode"
            type_name="Arcen.AIW2.External.AITypeController_TurretMaster"
            ratio_of_superiority_at_which_threat_overruns="10"
@@ -940,8 +940,8 @@
 
   <ai_type name="Hateful"
   	   is_default="false"
-           display_name="Hateful"
-           abbreviation="Hateful"
+           display_name="憎恨"
+           abbreviation="憎恨"
            dll_name="AIWarExternalCode"
            type_name="Arcen.AIW2.External.AITypeController_Hateful"
            ratio_of_superiority_at_which_threat_overruns="10"
@@ -989,7 +989,7 @@
            support_structure_nasty_pick_tag="SupportStructureNastyPick"
            wildcard_nasty_pick_tag="WildCardNastyPick"
            type_difficulty="Brutal"
-            description="恨就对了！该AI类型大量使用玩家最讨厌的AI舰船，以及其它恶心惊喜。
+            description="恨就对了！该AI类型大量使用玩家最讨厌的AI单位，以及其它恶心惊喜。
 
 你一定会恨这个AI类型，否则包退钱。
 
@@ -1031,8 +1031,8 @@
 
   <ai_type name="Huntrix"
   	   is_default="false"
-           display_name="Huntrix"
-           abbreviation="Huntrix"
+           display_name="女猎手"
+           abbreviation="女猎手"
            dll_name="AIWarExternalCode"
            type_name="Arcen.AIW2.External.AITypeController_Huntrex"
            ratio_of_superiority_at_which_threat_overruns="10"

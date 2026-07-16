@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
 	<!--
@@ -123,7 +123,7 @@
 			/>
 
 	<!--
-	<item name="MirroredEnergyBomb" display_name="镜像能量炸弹" short_name="能量炸弹" on_spawn_behaviour="DefendLocalPlanet" class="Stationary" spawn_location="Manual_ByClick" aip_cost_on_contact="10" planetary_summoning_restriction="Any" seconds_allowed_to_exist="120" times_allowed_to_summon="1" aip_per_additional_summon="25" time_between_summons_in_seconds="100" repair_time_in_seconds="600" description="部署一个大型炸弹，带有反射射击，在蓄力时返回来袭火力。最终爆炸击中所有舰船，包括你的。" parsed_data_type="EntityName" data_list="EnergyConverterIED" spawn_count_type="RawCount" min_spawn_value_list="1" min_spawn_count_increase_per_aip_interval="0" multi_pick_list="1" custom_bool_OutguardParty="True" /> 
+	<item name="MirroredEnergyBomb" display_name="镜像能量炸弹" short_name="能量炸弹" on_spawn_behaviour="DefendLocalPlanet" class="Stationary" spawn_location="Manual_ByClick" aip_cost_on_contact="10" planetary_summoning_restriction="Any" seconds_allowed_to_exist="120" times_allowed_to_summon="1" aip_per_additional_summon="25" time_between_summons_in_seconds="100" repair_time_in_seconds="600" description="部署一个大型炸弹，带有反射射击，在蓄力时返回来袭火力。最终爆炸击中所有单位，包括你的。" parsed_data_type="EntityName" data_list="EnergyConverterIED" spawn_count_type="RawCount" min_spawn_value_list="1" min_spawn_count_increase_per_aip_interval="0" multi_pick_list="1" custom_bool_OutguardParty="True" /> 
 	-->
 
 	<item
@@ -141,7 +141,7 @@
 			aip_per_additional_summon="-1"
 			time_between_summons_in_seconds="-1"
 			repair_time_in_seconds="300"
-			description="这架远程操作无人机能够入侵目标并保持隐形。约90秒后它会自毁，所以你最好在那之前转移任何舰船生产线……哦对了，目标可能看不见这架无人机，但它会极度警觉其活动并发送更强的入侵响应。"
+			description="这架远程操作无人机能够入侵目标并保持隐形。约90秒后它会自毁，所以你最好在那之前转移任何单位生产线……哦对了，目标可能看不见这架无人机，但它会极度警觉其活动并发送更强的入侵响应。"
 			parsed_data_type="EntityName"
 			data_list="HackingDroneShip"
 			spawn_count_type="RawCount"
@@ -152,7 +152,7 @@
 			/>
 
 	<!-- For testing warheads
-	<item name="WarheadPartyPackOutguard" display_name="弹头派对包" short_name="弹头派对包" donate_to_player="true" on_spawn_behaviour="DefendLocalPlanet" class="Utility" spawn_location="Manual_ByClick" aip_cost_on_contact="10" planetary_summoning_restriction="Any" seconds_allowed_to_exist="90" times_allowed_to_summon="1" aip_per_additional_summon="-1" time_between_summons_in_seconds="-1" repair_time_in_seconds="300" description="曾经想知道'银河弹头'是什么但懒得入侵灰色尖塔？我们送货到任何地点！" parsed_data_type="EntityName,EntityName,EntityName,EntityName" data_list="LightningWarheadFromSphere,StormWarheadFromSphere,EMPWarheadFromSphere,NuclearWarheadFromSphere" spawn_count_type="RawCount" min_spawn_value_list="1,1,1,1" min_spawn_count_increase_per_aip_interval="0" multi_pick_list="1,1,1,1" custom_bool_OutguardParty="True" /> 
+	<item name="WarheadPartyPackOutguard" display_name="飞弹派对包" short_name="飞弹派对包" donate_to_player="true" on_spawn_behaviour="DefendLocalPlanet" class="Utility" spawn_location="Manual_ByClick" aip_cost_on_contact="10" planetary_summoning_restriction="Any" seconds_allowed_to_exist="90" times_allowed_to_summon="1" aip_per_additional_summon="-1" time_between_summons_in_seconds="-1" repair_time_in_seconds="300" description="曾经想知道'银河飞弹'是什么但懒得入侵灰色尖塔？我们送货到任何地点！" parsed_data_type="EntityName,EntityName,EntityName,EntityName" data_list="LightningWarheadFromSphere,StormWarheadFromSphere,EMPWarheadFromSphere,NuclearWarheadFromSphere" spawn_count_type="RawCount" min_spawn_value_list="1,1,1,1" min_spawn_count_increase_per_aip_interval="0" multi_pick_list="1,1,1,1" custom_bool_OutguardParty="True" /> 
 	-->
 
 	<item
@@ -276,7 +276,7 @@
 			aip_per_additional_summon="100"
 			time_between_summons_in_seconds="100"
 			repair_time_in_seconds="1200"
-			description="无武器隐形前哨站，提升舰船速度。这些是永久性建筑。用它们在破碎领土之间制造快速通道。"
+			description="无武器隐形前哨站，提升单位速度。这些是永久性建筑。用它们在破碎领土之间制造快速通道。"
 			parsed_data_type="EntityName"
 			data_list="CloakedLogisticalOutpost_Outguard"
 			spawn_count_type="RawCount"
@@ -299,7 +299,7 @@
 			aip_per_additional_summon="100"
 			time_between_summons_in_seconds="300"
 			repair_time_in_seconds="900"
-			description="召唤一艘从圣殿骑士那里捕获的大型医院舰的援助。消耗自身船体在舰船被摧毁前拯救它们。"
+			description="召唤一艘从圣殿骑士那里捕获的大型医院舰的援助。消耗自身船体在单位被摧毁前拯救它们。"
 
 			parsed_data_type="EntityName,EntityName"
 		data_list="OutguardFlagship,HospitalOutguard"
@@ -322,7 +322,7 @@
 	-->
 
 	<!--
-	<item name="OutguardPhotonTorpedoFrigate" display_name="外星鱼雷护卫舰" donate_to_player="true" on_spawn_behaviour="DefendLocalPlanet" class="Stationary" spawn_location="Manual_ByClick" aip_cost_on_contact="10" planetary_summoning_restriction="PlayerOnly" seconds_allowed_to_exist="600" times_allowed_to_summon="2" aip_per_additional_summon="100" time_between_summons_in_seconds="100" repair_time_in_seconds="1200" description="这些外星舰船是'外籍'是因为外星人远离家乡？不，是因为杀害它们的人类正在远离家乡飞行。" parsed_data_type="EntityName" data_list="AlienTorpedoFrigate" spawn_count_type="RawCount" min_spawn_value_list="10" min_spawn_count_increase_per_aip_interval="0" spawn_count_increase_aip_threshold="1" multi_pick_list="1">
+	<item name="OutguardPhotonTorpedoFrigate" display_name="外星鱼雷护卫舰" donate_to_player="true" on_spawn_behaviour="DefendLocalPlanet" class="Stationary" spawn_location="Manual_ByClick" aip_cost_on_contact="10" planetary_summoning_restriction="PlayerOnly" seconds_allowed_to_exist="600" times_allowed_to_summon="2" aip_per_additional_summon="100" time_between_summons_in_seconds="100" repair_time_in_seconds="1200" description="这些外星单位是'外籍'是因为外星人远离家乡？不，是因为杀害它们的人类正在远离家乡飞行。" parsed_data_type="EntityName" data_list="AlienTorpedoFrigate" spawn_count_type="RawCount" min_spawn_value_list="10" min_spawn_count_increase_per_aip_interval="0" spawn_count_increase_aip_threshold="1" multi_pick_list="1">
 	</item>
 	-->
 

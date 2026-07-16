@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   <journal name="FriendlyNanocaust_BeWaryOfWaveSnipes" sidebar_text="{FactionColor}纳米浩劫：&lt;/color&gt; 保护巢群"
@@ -28,7 +28,7 @@
 
 指挥官，
 
-我们的情报部门检测到一群纳米机器人入侵了银河系。我们称之为纳米浩劫。它们似乎愿意帮助我们对抗人工智能。它们的武器可以同化它们摧毁的舰船加入它们的舰队，使它们成为真正可怕的敌人。" />
+我们的情报部门检测到一群纳米机器人入侵了银河系。我们称之为纳米浩劫。它们似乎愿意帮助我们对抗人工智能。它们的武器可以同化它们摧毁的单位加入它们的舰队，使它们成为真正可怕的敌人。" />
 
         <journal name="Nanocaust_Unfriendly_InvasionStarts" sidebar_text="{FactionColor}纳米浩劫：&lt;/color&gt; 入侵开始"
            can_record_another_copy_if_already_recorded_in_this_campaign="false"
@@ -43,6 +43,6 @@
 
 指挥官，
 
-我们的情报部门检测到一群纳米机器人入侵了银河系。我们称之为纳米浩劫。它们的武器可以同化它们摧毁的舰船加入它们的舰队，使它们成为真正可怕的敌人。我们必须保持警惕。" />
+我们的情报部门检测到一群纳米机器人入侵了银河系。我们称之为纳米浩劫。它们的武器可以同化它们摧毁的单位加入它们的舰队，使它们成为真正可怕的敌人。我们必须保持警惕。" />
 
 </root>

@@ -4,7 +4,7 @@
 	<!--The basic AI version of the Gorgon Aggregate Body Frigate-->
 	<entity skip_export="true" copy_from="GorgonFrigate" name="AIGorgonGuardian" special_entity_type="AIGuardian"
         display_name="AI 戈耳工聚合体守护者" display_name_for_sidebar="AI 戈耳工 GU"
-		description="AI 控制的戈耳工聚合体。为麻痹武器供能，并在承受伤害时碎裂为独立的攻击舰船。"
+		description="AI 控制的戈耳工聚合体。为麻痹武器供能，并在承受伤害时碎裂为独立的攻击单位。"
 	    starting_mark_level="Mark1" cost_for_ai_to_purchase="950" tech_upgrades_that_benefit_me="Unused"
 		blocks_enemy_claim_flows="true">
 		<ai_ship_group_membership name="EyeGuardiansWithAntiLargeSupport" weight="100"/>

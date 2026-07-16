@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 	
 	<!-- Daybreak Ark -->
@@ -315,7 +315,7 @@
 		size_scale="2" visuals_scale_multiplier="2.2"
       	
 		display_name="哀悼者轰炸机" display_name_for_sidebar="NM轰炸机"
-		description="优秀的大型舰船杀手，能完全绕过其高护盾。"
+		description="优秀的大型单位杀手，能完全绕过其高护盾。"
 		
 		is_strikecraft="true"
 		

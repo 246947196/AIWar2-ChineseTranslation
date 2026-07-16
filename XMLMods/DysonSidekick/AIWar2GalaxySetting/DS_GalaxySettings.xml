@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
-  <galaxy_setting category="DysonSidekick" name="DysonAutoDefend" display_name="Auto-Defend Mode" changeable_during_gameplay="true"
+  <galaxy_setting category="DysonSidekick" name="DysonAutoDefend" display_name="自动防御模式" changeable_during_gameplay="true"
                   type="CustomDropdownArbitraryOptions" arbitrary_options="Disabled,Defense Only,Full Assistance" default_option="Disabled"
         description="你可以选择让你的戴森舰队自动作战。戴森舰队将协助你（或其他结盟派系），但不会自行攻击敌方星球或目标。
 
@@ -15,32 +15,32 @@
 
 这使得戴森Sidekick可以作为其他玩家派系的「附庸」，自动协助战斗/防御你的星球。其他玩家可以通过F4切换到Sidekick来周期性地做出经济选择。"/>
 
-  <galaxy_setting category="DysonSidekick"  name="BoringDysonNames" display_name="Strongholds Named After Planets" type="BoolToggle" 
+  <galaxy_setting category="DysonSidekick"  name="BoringDysonNames" display_name="用行星命名要塞" type="BoolToggle" 
                   default="false" changeable_during_gameplay="true"
                   description="启用此选项后，新的要塞及其旗舰将以它们所在的星球命名，而不是使用主题名称" >
   </galaxy_setting>
 
-  <galaxy_setting category="DysonSidekick"  name="ReaperRapidSpawn" display_name="Debug: Spawn some Reaper attacks much more often" type="BoolToggle" 
+  <galaxy_setting category="DysonSidekick"  name="ReaperRapidSpawn" display_name="调试：更频繁地生成收割者攻击" type="BoolToggle" 
                   default="false" changeable_during_gameplay="true"
                   description="收割者将更频繁地发动攻击。你会很快死亡，这仅用于调试/测试。" >
   </galaxy_setting>
 
   <!-- Necromancer -->
-  <galaxy_setting category="Necromancer"  name="BonusElderlings" display_name="Spawn Additional Elderlings" type="BoolToggle" 
+  <galaxy_setting category="Necromancer"  name="BonusElderlings" display_name="生成额外远古者" type="BoolToggle" 
                   default="false" changeable_during_gameplay="true"
                   description="将会有更多的远古者，且它们升级更快。目标是让玩家更容易获取精华。这是挑战者远古者的较弱版本，可以叠加使远古者更加可怕" 
                   optional_dll_name="AIWarExternalCode" optional_type_name="Arcen.AIW2.External.GalaxySetting_Necromancer"
                   >
   </galaxy_setting>
 
-  <galaxy_setting category="Necromancer"  name="ShieldTemplar" display_name="Shield Templar" type="BoolToggle" 
+  <galaxy_setting category="Necromancer"  name="ShieldTemplar" display_name="护盾圣殿骑士" type="BoolToggle" 
                   default="false" changeable_during_gameplay="true"
                   description="圣殿骑士将更注重防御力，但在攻击方面较弱。" 
                   optional_dll_name="AIWarExternalCode" optional_type_name="Arcen.AIW2.External.GalaxySetting_Necromancer"
                   >
   </galaxy_setting>
 
-  <galaxy_setting category="Necromancer" name="ZombiesGoToNecromancer" display_name="Sandbox: Zombies Go To Necromancer" type="BoolToggle" default="false" changeable_during_gameplay="true"
+  <galaxy_setting category="Necromancer" name="ZombiesGoToNecromancer" display_name="沙盒：僵尸归死灵法师" type="BoolToggle" default="false" changeable_during_gameplay="true"
         description="启用此选项后，当反AI僵尸本应生成时，游戏会将这些单位交给死灵法师派系。仅在启用了死灵法师时才有意义。这让死灵法师变得强大得多。" 
         optional_dll_name="AIWarExternalCode" optional_type_name="Arcen.AIW2.External.GalaxySetting_Necromancer"
         >
@@ -48,22 +48,22 @@
   </galaxy_setting>
 
   <!-- Dark Zenith Sidekick -->
-      <galaxy_setting category="DarkZenith"  name="PlayerControllingDZ" display_name="Under Player Control" type="BoolToggle" default="true"
+      <galaxy_setting category="DarkZenith"  name="PlayerControllingDZ" display_name="在玩家控制下" type="BoolToggle" default="true"
                     changeable_during_gameplay="true"
         description="启用此选项后，暗天顶军队由玩家控制。禁用时，暗天顶军队将以其典型智能运行。" />
-    <galaxy_setting category="DarkZenith"  name="ShipsRallyToNearestFlagshipDZ" display_name="Created Ships Rally To Flagship" type="BoolToggle" default="true"
+    <galaxy_setting category="DarkZenith"  name="ShipsRallyToNearestFlagshipDZ" display_name="新建舰船集结到旗舰" type="BoolToggle" default="true"
                     changeable_during_gameplay="true"
-        description="当新的DZ舰船被创建时，它会集结到其旗舰。这要求DZ处于玩家控制下；如果DZ不受玩家控制，此设置将被忽略。
+        description="当新的DZ单位被创建时，它会集结到其旗舰。这要求DZ处于玩家控制下；如果DZ不受玩家控制，此设置将被忽略。
 
 你可能希望启用此选项，除非你正在敌方战线后方进行打击。" />
 
     <!-- Armada Empire -->
-    <galaxy_setting category="ArmadaEmpire"  name="BoringArmadaNames" display_name="Starbases Named After Planets" type="BoolToggle" 
+    <galaxy_setting category="ArmadaEmpire"  name="BoringArmadaNames" display_name="用行星命名星站" type="BoolToggle" 
                   default="true" changeable_during_gameplay="true"
                   description="启用此选项后，新的星站及其旗舰将以它们所在的星球命名，而不是使用主题名称" >
   </galaxy_setting>
 
-  <galaxy_setting category="ArmadaEmpire" name="ArmadaAutoDefend" display_name="Auto-Defend Mode" changeable_during_gameplay="true"
+  <galaxy_setting category="ArmadaEmpire" name="ArmadaAutoDefend" display_name="自动防御模式" changeable_during_gameplay="true"
                   type="CustomDropdownArbitraryOptions" arbitrary_options="Disabled,Defense Only,Full Assistance" default_option="Disabled"
         description="你可以选择让你的无敌舰队舰队自动作战。无敌舰队舰队将协助你（或其他结盟派系），但不会自行攻击敌方星球或目标。
 
@@ -76,13 +76,13 @@
 这使得无敌舰队帝国可以作为其他玩家派系的「附庸」，自动协助战斗/防御你的星球。其他玩家可以通过F4切换到Sidekick来周期性地做出经济选择。"/>
 
   <!--
-  <galaxy_setting category="Balance"  name="ExoWarUnitsInExos" display_name="Allow Exos to spawn ExoWar Units" type="BoolToggle" 
+  <galaxy_setting category="Balance"  name="ExoWarUnitsInExos" display_name="允许Exo生成河外战争单位" type="BoolToggle" 
                   default="false" changeable_during_gameplay="true"
-                  description="When this is enabled, AI waves Exogalatic Waves can sometimes spawn Exo-War units" >
+                  description="启用此选项后，AI河外波次有时会生成河外战争单位。" >
   </galaxy_setting>
   -->
 
-  <galaxy_setting name="MoreARSOptions" category="Balance" is_advanced_setting="true" subcategory="HumanBalance" display_name="More ARS and TSS options" type="BoolToggle" default="false"
+  <galaxy_setting name="MoreARSOptions" category="Balance" is_advanced_setting="true" subcategory="HumanBalance" display_name="更多ARS和TSS选项" type="BoolToggle" default="false"
            description="通常每个ARS或TSS有4个选项。启用此选项后你将拥有更多选择。" >
   </galaxy_setting>
 

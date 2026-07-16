@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 	<!--
 	<entity name="SapperAmetrineCluster" tags="SapperAdvancedDefensiveStructure,PlaceNearImportantStructure,ACluster"
@@ -10,9 +10,9 @@
 		size_scale="2"
 		visuals_scale_multiplier="3.5"
 		collision_priority="1000"
-		display_name="Ametrine Cluster"
-	    display_name_for_sidebar="Ametrine CSTR"
-		description="Defensive structure, intended to be placed near important structures and resurrect fallen allies on the planet. This is built by the Sappers."
+		display_name="紫黄晶簇"
+	    display_name_for_sidebar="紫黄晶簇"
+		description="防御性建筑，旨在放置在重要结构附近并复活行星上倒下的盟友。由工兵建造。"
 		behavior="Stationary"              
 		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
 		build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true"
@@ -191,7 +191,7 @@
 		shield_size_scale="7"
 		display_name="电气石发生器"
 		display_name_for_sidebar="电气石发生器"
-		description="由工兵设计的引力和泡泡护盾发生器，用于辅助滩头行动而不会成为累赘。略微可移动，因此易受具有诺里斯效应的舰船移动影响。"
+		description="由工兵设计的引力和泡泡护盾发生器，用于辅助滩头行动而不会成为累赘。略微可移动，因此易受具有诺里斯效应的单位移动影响。"
 		behavior="Stationary"
 		voice_group="Turret"
     	moves_back_after_being_norrised="true"
@@ -359,7 +359,7 @@
 		collision_priority="100"
 		display_name="蔷薇辉石爆破者"
         display_name_for_sidebar="蔷薇辉石爆破者"
-		description="远程战斗机，擅长消灭成群的小型舰船和建筑。"
+		description="远程战斗机，擅长消灭成群的小型单位和建筑。"
 		starting_mark_level="Mark1"
 		cost_for_ai_to_purchase="45"
 		hull_points="13410" shield_points="0" speed="Normal1"
@@ -574,9 +574,9 @@
 	    size_scale="2.55"
 		visuals_scale_multiplier="5.5"
 		collision_priority="1000" construction_priority="50"
-		display_name="Aquamarine Bulwark"
-	    display_name_for_sidebar="Aquamarine BLWK"
-		description="Powerful Sapper defensive structure; Defends the entrances of the planet with various support tools."
+		display_name="海蓝宝石壁垒"
+	    display_name_for_sidebar="海蓝宝石壁垒"
+		description="强大的工兵防御结构；用各种支援工具防御行星入口。"
 		behavior="Stationary"			
 		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
 		cost_for_ai_to_purchase="600" strength_multiplier="1.3"			
@@ -592,7 +592,7 @@
 		description_appender_dll="AIWarExternalCode"
         description_appender_type="Arcen.AIW2.External.SappersDescriptionAppender"
 		>
-    	<system name="W2" display_name="Concussive Energy Wave"
+    	<system name="W2" display_name="震荡能量波"
 			category="Weapon" firing_timing="OnlyInRange"
 			damage_per_shot="5000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Low" 
 			shots_per_salvo="1" fires_salvos_sequentially="false"

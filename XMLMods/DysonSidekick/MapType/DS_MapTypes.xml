@@ -2,7 +2,7 @@
 <root>
 
   <map_type name="VaguelyModerate"
-            display_name="Vagueness"
+            display_name="模糊"
             description="这与经典地图相似，但有更多的连接被随机移除。"
             dll_name="AIWarExternalDeepProcessingCode"
             type_name="Arcen.AIW2.External.Mapgen_Test1"
@@ -14,7 +14,7 @@
   </map_type>
 
   <map_type name="Double"
-            display_name="Double"
+            display_name="双倍"
             description="银河有两个大的星团，由一条单独的连接分开。"
             dll_name="AIWarExternalDeepProcessingCode"
             type_name="Arcen.AIW2.External.Mapgen_Pairs"
@@ -26,7 +26,7 @@
   </map_type>
 
   <map_type name="Solar_Systems_Lite"
-              display_name="Solar Systems Lite"
+              display_name="简化太阳系"
               description="该地图类型是由围绕中心环的一系列小环组成的。"
               dll_name="AIWarExternalDeepProcessingCode"
               type_name="Arcen.AIW2.External.Mapgen_Circles"
@@ -43,7 +43,7 @@
   </map_type>
 
        <map_type name="Nebula"
-            display_name="Nebula"
+            display_name="星云"
             description="作为星团类别下的一个选项"
             dll_name="AIWarExternalDeepProcessingCode"
             type_name="Arcen.AIW2.External.Mapgen_Nebula"
@@ -51,26 +51,26 @@
             max_planets="300"
             >
        <map_option name="NumberOfNebulae" display_name="星云数量" description="有多少个不同的星云">
-         <choice_value id="0" display_name="Low" description="" related_int_value="0" />
-         <choice_value id="1" display_name="Medium" description="" related_int_value="1" />
-         <choice_value id="2" display_name="High" description="" related_int_value="2" />
+         <choice_value id="0" display_name="低" description="" related_int_value="0" />
+         <choice_value id="1" display_name="中" description="" related_int_value="1" />
+         <choice_value id="2" display_name="高" description="" related_int_value="2" />
        </map_option>
        <map_option name="NebulaeConnectivity" display_name="连接类型" description="整体连通性水平">
-         <choice_value id="0" display_name="Low" description="" related_int_value="0" />
-         <choice_value id="1" display_name="Medium" description="" related_int_value="1" />
-         <choice_value id="2" display_name="High" description="" related_int_value="2" />
+         <choice_value id="0" display_name="低" description="" related_int_value="0" />
+         <choice_value id="1" display_name="中" description="" related_int_value="1" />
+         <choice_value id="2" display_name="高" description="" related_int_value="2" />
        </map_option>
   </map_type>
 
     <!--
-    <map_option name="OctopusNumArms" display_name="Number of Arms" description="Linking Mechanism for Map; controls map connectivity." default_id="2">
-      <choice_value id="0" display_name="Two" description="" related_int_value="2"/>
-      <choice_value id="1" display_name="Three" description="" related_int_value="3"/>
-      <choice_value id="2" display_name="Four" description="" related_int_value="4" />
-      <choice_value id="3" display_name="Five" description="" related_int_value="5" />
-      <choice_value id="4" display_name="Six" description="" related_int_value="6" />
-      <choice_value id="5" display_name="Seven" description="" related_int_value="7" />
-      <choice_value id="6" display_name="Eight" description="" related_int_value="8" />
+    <map_option name="OctopusNumArms" display_name="旋臂数量" description="地图链接机制；控制地图连通性。" default_id="2">
+      <choice_value id="0" display_name="二" description="" related_int_value="2"/>
+      <choice_value id="1" display_name="三" description="" related_int_value="3"/>
+      <choice_value id="2" display_name="四" description="" related_int_value="4" />
+      <choice_value id="3" display_name="五" description="" related_int_value="5" />
+      <choice_value id="4" display_name="六" description="" related_int_value="6" />
+      <choice_value id="5" display_name="七" description="" related_int_value="7" />
+      <choice_value id="6" display_name="八" description="" related_int_value="8" />
       </map_option>
       -->
 

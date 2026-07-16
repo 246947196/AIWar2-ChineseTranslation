@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 	<!-- Tier 4 Infrastructure -->
 	<entity name="ImperialShipyard" tags="ImperialTier4Build,ImperialShipyard" npc_ship_cap_type="SpecialThingsToAlwaysSeed"
@@ -52,7 +52,7 @@
 		name="MagnifierImperial"
 		icon_overlay="Overlays2/SpireFortress_Lesser"
 		aip_on_death="0"
-		description="大幅提升此行星上友军舰船的伤害，略微提升速度。由于这是帝国AI添加的防御特性，死亡时不增加AIP。"
+		description="大幅提升此行星上友军单位的伤害，略微提升速度。由于这是帝国AI添加的防御特性，死亡时不增加AIP。"
 		tags="Magnifier,ImperialSpecialSpawn,ImperialTier3Build"
 		eligible_for_hacks="Reprogram,Sabotage"
 		target_type_for_player="AutotargetAlways"
@@ -286,7 +286,7 @@
         draw_in_galaxy_view="true"
         shows_on_galaxy_map_for_explored_planets="true" 
 	collision_priority="100"
-	description="帝国AI带来了这些舰船，帮助它建立一个横跨银河的帝国。它们会建造各种东西，从普通的守卫到可怕的傀儡，以及离子炮和质量驱动器，在您身后派出，以完成对这个银河系的控制。"
+	description="帝国AI带来了这些单位，帮助它建立一个横跨银河的帝国。它们会建造各种东西，从普通的守卫到可怕的傀儡，以及离子炮和质量驱动器，在您身后派出，以完成对这个银河系的控制。"
 	starting_mark_level="Mark1"
 	cost_for_ai_to_purchase="5000" mark_level_scale_style="Original"
 	hull_points="500000" shield_points="1500000" speed="AboveAverage1"

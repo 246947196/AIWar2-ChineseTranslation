@@ -1,401 +1,401 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<root>
-
-   <!-- Base Lost Human Ship the others copy_from. -->
-   
-  <entity name="BaseLostHumanShip"
-            thematic_groups="LostHumans,Human" 
-			special_entity_type="Frigate" gimbal_icon_size_multiplier="1.35"
-			visuals="assets/_finalgamemeshes/humanoddities/colonyship/colonyship.prefab"
-			icon_name="Ships1/ColonyShip"
-			size_scale="5"
-			visuals_scale_multiplier="6"
-			category="Ship"
-			y_offset_of_icon="15"
-			collision_priority="500"
-			display_name="突击护卫舰"
-			display_name_for_sidebar="突击重护卫舰"
-			description="所有其它失落人类舰船复制的模板基础。不应在游戏中出现。"
-			starting_mark_level="Markless" tech_upgrades_that_benefit_me="Unused" 
-			cost_for_ai_to_purchase="982"			
-			hull_points="198000" shield_points="82500" speed="Normal2"
-			metal_cost="100000" energy_consumption="9000"
-			armor_mm="140" engine_gx="16" albedo="0.4" mass_tx="5"
-			voice_group="Starship"
-			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
-			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
-			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"      
-            priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
-            >
-  </entity>   
-
-	<!--	Travelers -->
-    <entity name="LostHumansTraveler" display_name="失落人类旅行者" skip_export="true" copy_from="BaseLostHumanShip" tags="LostHumansTraveler"
-            hull_points="10000" shield_points="0" speed="BelowAverage1" cannot_be_stacked="true"
-			visuals="assets/_finalgamemeshes/humanoddities/colonyship/colonyship.prefab"
-			icon_name="Ships1/ColonyShip" icon_overlay="Overlays2/Guardian_Shield" gimbal_icon_size_multiplier="0.75"
-            description="由无家可归的人类驾驶，他们在银河系中漫无目的地游荡。"
-		    starting_mark_level="Markless" tech_upgrades_that_benefit_me="Unused" 
-            base_info_source="LostHumansPerUnitBaseInfo"
-            >
-	</entity>
-   
-   <!--     Military Spawns  -->
-	<entity name="LostHumansMilitiaCarrier" tags="LostHumansTravelerMilitarySpawn"
-	        thematic_groups="LostHumans,Human" 
-			gimbal_icon_size_multiplier="1.25"
-			visuals="assets/_finalgamemeshes/guardians/carrierguardian/carrierguardian.prefab"
-            icon_name="Ships1/Guardian" icon_overlay="Overlays2/Guardian_Carrier"
-			uses_large_health_bar="true"
-			category="Ship"
-			size_scale="3.6"
-			visuals_scale_multiplier="4.3"
-			y_offset_of_icon="16"
-			collision_priority="400" immune_to_repairs="true"
-			display_name="民兵航母"
-			display_name_for_sidebar="军用航母"
-			description="A relatively tanky ship that creates 无人机 to 攻击 hostiles. Held together by spit, duct tape, and dreams of a future free from the AI."
-			fleet_design_template_i_use_for_drones="CarrierGuardianDrones" is_disallowed_from_spawning_in_waves="true"
-			drone_starting_behavior_type="Attacker_Full"
-			blocks_enemy_claim_flows="true"
-			voice_group="Silent"
-			starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Expatriate"
-			cost_for_ai_to_purchase="450"
-			hull_points="260000" shield_points="26000" speed="BelowAverage2"
-			metal_cost="80000" energy_consumption="7500"
-			armor_mm="110" albedo="0.3" engine_gx="14" mass_tx="5"
-			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
-			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
-			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
-			
-			priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
-			>
-		<metal_flow purpose="BuildingDronesInternally" throughput="1000" increase_per_mark_level="1000"/>
-	</entity>
-
-	<!--     Economy Spawns  
-   -->
-
-	<entity name="LostHumansMiner" display_name="废弃采矿船" skip_export="true" copy_from="BaseLostHumanShip" tags="LostHumanTravelerEconomySpawn"
-			hull_points="100000" shield_points="10000" speed="BelowAverage1" cannot_be_stacked="true" immune_to_repairs="true" seconds_to_fully_regenerate_hull="600"
-			description="Crewed by no longer 失落人类s, this incredibly slow moving ship generates Metal, and produces Decoy 无人机.
-
-Due to the age of this ship, the only people who know how to repair it are the onboard crew.
-Can be assigned to a fleet key by pressing CTRL + #. Useful to pair these up into their own fleets, or as tagalongs to your 支援 fleets."
-			starting_mark_level="Mark2" tech_upgrades_that_benefit_me="MetalGeneration"
-			fleet_design_template_i_use_for_drones="DecoyDrones"
-			drone_starting_behavior_type="Attacker_Full"
-			visuals="assets/_finalgamemeshes/humanoddities/colonyship/colonyship.prefab"
-			icon_name="Ships1/ColonyShip" icon_overlay="Overlays2/DysonSentinel_Defender"
-            >
-		<metal_flow purpose="BuildingDronesInternally" throughput="1000" increase_per_mark_level="1000"/>
-		<resource_production type="Metal" amount="25" increase_per_mark_level="25"/>
-	</entity>
-
-	<!--     Utility Spawns  
-   -->
-
-	<entity name="LostHumansDerelictConstructor" display_name="废弃工程船" skip_export="true" copy_from="BaseLostHumanShip" tags="LostHumanTravelerUtilitySpawn"
-			 hull_points="100000" shield_points="10000" speed="BelowAverage1" cannot_be_stacked="true" immune_to_repairs="true" seconds_to_fully_regenerate_hull="600"
-			 description="Crewed by no longer 失落人类s, this incredibly slow moving ship boats an on board 工厂, and produces Combat 无人机.
-
-Due to the age of this ship, the only people who know how to repair it are the onboard crew.
-Can be assigned to a fleet key by pressing CTRL + #. Useful to pair these up into their own fleets, or as tagalongs to your 支援 fleets."
-			 starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Engineering"
-			 visuals="assets/_finalgamemeshes/humanoddities/colonyship/colonyship.prefab"
-			 icon_name="Ships1/ColonyShip" icon_overlay="Overlays2/Guardian_Tractor"
-			 assist_range="AboveAverage3"
-			 fleet_design_template_i_use_for_drones="CombatFactoryDrones"
-			 drone_starting_behavior_type="Attacker_Full"
-            >
-		<metal_flow purpose="FactoryConstructionForPlayerMobileFleets"	throughput="1000"	increase_per_mark_level="500"/>
-	</entity>
-
-	<entity name="LostHumansDerelictEngineerFrigate" display_name="废弃工程师护卫舰" skip_export="true" copy_from="BaseLostHumanShip" tags="LostHumanTravelerUtilitySpawn"
-			hull_points="100000" shield_points="10000" speed="BelowAverage1" cannot_be_stacked="true" immune_to_repairs="true" seconds_to_fully_regenerate_hull="600"
-			description="Crewed by no longer 失落人类s, this incredibly slow moving ship boats various engineering beams, and produces Combat 无人机.
-
-Due to the age of this ship, the only people who know how to repair it are the onboard crew.
-Can be assigned to a fleet key by pressing CTRL + #. Useful to pair these up into their own fleets, or as tagalongs to your 支援 fleets."
-			display_name_for_sidebar="Der Eng 护卫舰"
-			starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Engineering"
-			visuals="assets/_finalgamemeshes/humanoddities/colonyship/colonyship.prefab"
-			icon_name="Ships1/ColonyShip" icon_overlay="Overlays2/Guardian_Tractor"
-			assist_range="AboveAverage3"
-			fleet_design_template_i_use_for_drones="CombatFactoryDrones"
-			drone_starting_behavior_type="Attacker_Full"
-            >
-		<metal_flow purpose="AssistSelfConstruction"					throughput="1000"	increase_per_mark_level="500"/>
-		<metal_flow purpose="RepairingHullsOfFriendlies"				throughput="1000"	increase_per_mark_level="500"/>
-		<metal_flow purpose="RepairingShieldsOfFriendlies"				throughput="1000"	increase_per_mark_level="500"/>
-		<metal_flow purpose="RepairingEnginesOfFriendlies"				throughput="1000"	increase_per_mark_level="500"/>
-	</entity>
-
-	<!--	Colonies -->
-	<entity name="LostHumansColony" tags="ShowsOnNormalDisplayMode,LostHumansColony,Capturable"
-	        thematic_groups="LostHumans,Human" 
-            special_entity_type="MobileStrikeCombatFleetFlagship" fleet_design_logic_i_grant_one_from="MobileCombatFleet"
-            capturable_seed_weight="1" capturable_max_per_galaxy="999"
-		    visuals="assets/_finalgamemeshes/humanoddities/HomeHumanSettlement/HomeHumanSettlement.prefab"
-		    icon_name="Ships1/HomeHumanSettlement" gimbal_icon_size_multiplier="1.5"
-            size_scale="10"
-            visuals_scale_multiplier="12"
-            voice_group="Silent"
-            category="Ship"
-            collision_priority="10000"
-            display_name="人类殖民地"
-            description="Contains a 殖民地 of humans, previously lost to time. Outfitted with a number of disabled functions that we could enable upon capture, including left over fleet designs."
-            starting_mark_level="Markless" tech_upgrade_that_is_used_for_my_direct_science="Unused"
-            cost_for_ai_to_purchase="200"
-            hull_points="5000000" shield_points="0" speed="Immobile"
-            metal_cost="16000" energy_consumption="100"
-            armor_mm="230" albedo="0.5" mass_tx="4"
-            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
-            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
-            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
-            draw_in_galaxy_view="true"
-            shows_on_galaxy_map_for_explored_planets="true"
-            always_visible_to_players="true"
-            capturable_can_seed_at_all="false"
-            fleet_leader_type="Transport"
-            priority_as_ai_target="IrreplaceableAIPIncreaser" priority_as_frd_target="IgnoreMe" priority_to_protect="Irreplaceable"
-			assist_range="InsanelyHigh"
-            >
-			<metal_flow purpose="SelfConstruction"				throughput="500"/>
-		    <metal_flow purpose="RebuildingRemains"             throughput="5000" />
-		    <metal_flow purpose="RepairingHullsOfFriendlies"    throughput="5000" />
-		    <metal_flow purpose="RepairingShieldsOfFriendlies"  throughput="5000" />
-		    <metal_flow purpose="RepairingEnginesOfFriendlies"  throughput="5000" />
-		    <metal_flow purpose="AssistSelfConstruction"        throughput="5000" />
-		    <metal_flow purpose="AssistFactoryConstruction"     throughput="5000" />
-	</entity>
-
-	<entity name="LostHumansHostileColony" tags="ShowsOnNormalDisplayMode,LostHumansHostileColony"
-	        thematic_groups="LostHumans,Human" 
-		    visuals="assets/_finalgamemeshes/humanoddities/HomeHumanSettlement/HomeHumanSettlement.prefab"
-		    icon_name="Ships1/HomeHumanSettlement" gimbal_icon_size_multiplier="1.5"
-            size_scale="10"
-            visuals_scale_multiplier="12"
-            voice_group="Silent"
-            category="Ship"
-            collision_priority="10000"
-            display_name="被占领的人类殖民地" display_name_for_sidebar="占领殖民地"
-            description="Once contained a 殖民地 of free humans. It has now been taken over by the AI, and is churning out ships to 攻击 us. As we lack a ground army, we have no way to retake the 殖民地.
-
-There is no saving them now."
-            starting_mark_level="Markless" tech_upgrade_that_is_used_for_my_direct_science="Unused"
-            cost_for_ai_to_purchase="200"
-            hull_points="1000000" shield_points="0" speed="Immobile"
-            metal_cost="16000" energy_consumption="100"
-            armor_mm="230" albedo="0.5" mass_tx="4"
-            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
-            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
-            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
-            draw_in_galaxy_view="true"
-            shows_on_galaxy_map_for_explored_planets="true"
-            always_visible_to_players="true"
-            capturable_can_seed_at_all="false"
-            priority_as_ai_target="IrreplaceableAIPIncreaser" priority_as_frd_target="IgnoreMe" priority_to_protect="Irreplaceable"
-			aip_on_death="5"
-
-			base_info_source="LostHumansPerUnitBaseInfo"
-			description_appender_dll="LostHumansBaseInfo"
-			description_appender_type="SK.LostHumans.LostHumanRelentlessWaveDescriptionAppender"
-            >
-	</entity>
-
-	<!--	Rogues -->
-	<entity name="LostHumansRogue" display_name="失落人类浪客" skip_export="true" copy_from="BaseLostHumanShip" tags="LostHumansRogue"
-            hull_points="10000" shield_points="0" speed="BelowAverage1" cannot_be_stacked="true"
-			visuals="assets/_finalgamemeshes/humanoddities/colonyship/colonyship.prefab"
-			icon_name="Ships1/ColonyShip" icon_overlay="Overlays2/Guardian_Vampire" gimbal_icon_size_multiplier="0.75"
-            description="Crewed by the shrewd, this ship scours the galaxy for loot, annoying the AI as they do so.
-
-While they are on your planet, you can choose to invest in a 浪客公会 for them, and partake in the bounty they steal."
-		    starting_mark_level="Markless" tech_upgrades_that_benefit_me="Unused"
-			base_info_source="LostHumansPerUnitBaseInfo"
-			description_appender_dll="LostHumansBaseInfo"
-			description_appender_type="SK.LostHumans.RogueDescriptionAppender"
-            >
-	</entity>
-
-	<entity name="LostHumansRogueGuild" display_name="浪客公会" draw_in_galaxy_view="true" npc_ship_cap_type="SpecialThingsToAlwaysSeed"
-	        thematic_groups="LostHumans,Human" 
-            description="Requested by a number of our higher ups with contacts in fishy places, this structure would act as a home for any 浪客 in the galaxy, who will happily store their ill gotten goods, allowing us to make use of them."
-            tags="LostHumansRogueGuild" build_sidebar_categories_i_am_part_of="Infrastructure"
-            visuals="assets/_finalgamemeshes/humanbuildings/spacedock/spacedock.prefab"
-            gimbal_name="AstroTrainStation"
-            icon_name="Ships1/AstroTrainStation" gimbal_icon_size_multiplier="1.5"
-            category="Ship"
-            visuals_scale_multiplier="7.5" size_scale="7.5" y_offset_of_icon="30"
-            collision_priority="810"
-            behavior="Stationary"
-            starting_mark_level="Mark1"
-            cost_for_ai_to_purchase="90000"
-            hull_points="150000" shield_points="25000" speed="Immobile"
-            armor_mm="250" albedo="0.8" mass_tx="4"
-            metal_cost="800000" energy_consumption="200000"
-            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
-            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
-            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
-            voice_group="Silent"
-            priority_as_frd_target="MajorPlanetLevelObjective"
-            priority_as_ai_target="MajorPlanetLevelObjective"
-            priority_to_protect="IgnoreMe"
-            
-            tech_upgrades_that_benefit_me="CommandEconomic,CommandLogistical,CommandMilitary"
-			base_info_source="LostHumansPerUnitBaseInfo"
-			description_appender_dll="LostHumansBaseInfo"
-			description_appender_type="SK.LostHumans.PlayerFriendlyZombiesWaveDescriptionAppender"
-    >
-		<metal_flow purpose="SelfConstruction" throughput="250"/>
-	</entity>
-
-	<entity name="LostHumansRogueFirewall" tags="LostHumansRogueFirewall"
-	        thematic_groups="LostHumans,Human" 
-		    visuals="Assets/_FinalGameMeshes/AIBuildings/GuardPosts/Pike/GuardPostPike.prefab"
-			icon_name="Ships1/GuardPost" gimbal_icon_size_multiplier="0.9"
-            size_scale="10"
-            visuals_scale_multiplier="12"
-            voice_group="Silent"
-            category="Ship"
-            collision_priority="10000"
-            display_name="浪客防火墙"
-            description="因应游侠行动而生成，此建筑将不断释放无尽的无情波次舰船，直到被摧毁为止。"
-            starting_mark_level="Markless" tech_upgrade_that_is_used_for_my_direct_science="Unused"
-            cost_for_ai_to_purchase="200"
-            hull_points="100000" shield_points="0" speed="Immobile"
-            metal_cost="16000" energy_consumption="100"
-            armor_mm="230" albedo="0.5" mass_tx="4"
-            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
-            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
-            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
-            draw_in_galaxy_view="true"
-            shows_on_galaxy_map_for_explored_planets="true"
-            always_visible_to_players="true"
-            capturable_can_seed_at_all="false"
-            priority_as_ai_target="IrreplaceableAIPIncreaser" priority_as_frd_target="IgnoreMe" priority_to_protect="Irreplaceable"
-
-			base_info_source="LostHumansPerUnitBaseInfo"
-			description_appender_dll="LostHumansBaseInfo"
-			description_appender_type="SK.LostHumans.LostHumanRelentlessWaveDescriptionAppender"
-            >
-	</entity>
-
-	<!-- Construction Convoy -->
-	<entity name="LostHumansConstructionConvoy" display_name="失落人类 建造护航队" skip_export="true" copy_from="BaseLostHumanShip" tags="LostHumansConstructionConvoy" display_name_for_sidebar="人类建造车队"
-			hull_points="10000" shield_points="0" speed="AboveAverage2" cannot_be_stacked="true"
-			visuals="Assets/_FinalGameMeshes/Specials/AstroTrain/AstroTrainWithRegularWeapons.prefab"
-			size_scale="7"
-			visuals_scale_multiplier="2"			
-			icon_name="Ships1/AstroTrain" icon_overlay="Overlays2/Guardian_Shield" gimbal_icon_size_multiplier="0.75"
-			description="Crewed by dutiful humans, they have been commanded to reinforce various planets in the galaxy with extra defenses. They were never told who to reinforce them for, however..."
-			starting_mark_level="Markless" tech_upgrades_that_benefit_me="Unused"
-			base_info_source="LostHumansPerUnitBaseInfo"
-				>
-	</entity>
-
-	<!-- Scourge Lab -->
-	<entity name="LostHumansScourgeLab" tags="ShowsOnNormalDisplayMode,LostHumansScourgeLab,Capturable"
-	        thematic_groups="LostHumans,Human,Scourge" 
-            special_entity_type="BattlestationCitadel" fleet_design_templates_i_always_grant="EmptyTurrets"
-            capturable_seed_weight="1" capturable_max_per_galaxy="999"
-			visuals="assets/_finalgamemeshes/buildings/fortress/fortressai.prefab" lod_distance_overrides="2000,16000"
-			icon_name="Ships1/Fortress" gimbal_icon_size_multiplier="1.5"
-			y_offset_of_icon="35"
-			size_scale="9"
-			visuals_scale_multiplier="3"
-            category="Ship"
-            collision_priority="10000"
-            display_name="强化天灾实验室" display_name_for_sidebar="Fort 天灾实验室"
-            description="Contains a number of humanity's brightest minds, all stuck in a lab without power. Should we manage to capture the planet, the scientists will be able to power the 天灾实验室 back up, giving us a powerful 堡垒 and the ability to spawn a number of defensive zombies over time.
-
-Should we fail to save it, we will still need to pay its AIP cost, but we'll be paying it to destroy it, without gaining any bonus for it."
-            starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Citadels" this_centerpiece_grants_its_direct_science_upgrades_to_rest_of_fleet="true" 
-			tech_upgrade_that_is_used_for_my_direct_science="Direct_Battlestation"
-            cost_for_ai_to_purchase="200"
-            hull_points="2000000" shield_points="0"
-            metal_cost="500000" energy_consumption="50000"
-			armor_mm="300" albedo="0.7" mass_tx="8" engine_gx="14" speed="VeryVeryLittle2"
-			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
-			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
-			voice_group="Turret"
-            draw_in_galaxy_view="true"
-            shows_on_galaxy_map_for_explored_planets="true"
-            always_visible_to_players="true"
-            capturable_can_seed_at_all="false"
-            priority_as_ai_target="IrreplaceableAIPIncreaser" priority_as_frd_target="IgnoreMe" priority_to_protect="Irreplaceable"
-
-			base_info_source="LostHumansPerUnitBaseInfo"
-			description_appender_dll="LostHumansBaseInfo"
-			description_appender_type="SK.LostHumans.PlayerFriendlyZombiesWaveDescriptionAppender"
-			aip_to_claim="20"
-            >
-			<metal_flow purpose="SelfConstruction" throughput="500"/>
-			<system name="R1" display_name="堡垒聚变火箭"
-				category="Weapon" firing_timing="OnlyInRange"
-				damage_per_shot="1500" range="High1" shot_speed="Normal" rate_of_fire="Normal"
-				shots_per_salvo="30" fires_salvos_sequentially="false"
-				shot_type_data="FusionRocket"
-					>
-				<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="50" multiplier="2" />
-			</system>
-			<system name="R2" display_name="堡垒能量波"
-				  category="Weapon" firing_timing="OnlyInRange" shots_per_salvo="4"
-				  damage_per_shot="3750" range="High1" shot_speed="Normal" rate_of_fire="Low" fires_salvos_sequentially="true"
-				  shot_type_data="EnergyWave"
-					>
-				<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="6" />
-			</system>
-	</entity>
-
-	<entity name="LostHumansHostileScourgeLab" tags="ShowsOnNormalDisplayMode,LostHumansHostileScourgeLab"
-	        thematic_groups="LostHumans,Human,Scourge" 
-			visuals="assets/_finalgamemeshes/buildings/fortress/fortressai.prefab" lod_distance_overrides="2000,16000"
-			icon_name="Ships1/Fortress" gimbal_icon_size_multiplier="1.5"
-			y_offset_of_icon="35"
-			size_scale="9"
-			visuals_scale_multiplier="3"
-            category="Ship"
-            collision_priority="10000"
-            display_name="强化天灾实验室" display_name_for_sidebar="Fort 天灾实验室"
-            description="A 天灾实验室 that has fallen to the AI, and is currently sending waves upon waves of 天灾 at us unless we can manage to destroy it.
-
-We have yet to hear any response from the scientists within, and believe the worst."
-            starting_mark_level="Mark1" tech_upgrade_that_is_used_for_my_direct_science="Unused"
-            cost_for_ai_to_purchase="200"
-            hull_points="2000000" shield_points="0"
-            metal_cost="500000" energy_consumption="50000"
-			armor_mm="300" albedo="0.7" mass_tx="8" engine_gx="14" speed="VeryVeryLittle2"
-			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
-			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
-			voice_group="Turret"
-            draw_in_galaxy_view="true"
-            shows_on_galaxy_map_for_explored_planets="true"
-            always_visible_to_players="true"
-            capturable_can_seed_at_all="false"
-            priority_as_ai_target="IrreplaceableAIPIncreaser" priority_as_frd_target="IgnoreMe" priority_to_protect="Irreplaceable"
-
-			base_info_source="LostHumansPerUnitBaseInfo"
-			description_appender_dll="LostHumansBaseInfo"
-			description_appender_type="SK.LostHumans.LostHumanRelentlessWaveDescriptionAppender"
-			aip_on_death="20"
-            >
-		<system name="R1" display_name="堡垒聚变火箭"
-			category="Weapon" firing_timing="OnlyInRange"
-			damage_per_shot="1500" range="High1" shot_speed="Normal" rate_of_fire="Normal"
-			shots_per_salvo="30" fires_salvos_sequentially="false"
-			shot_type_data="FusionRocket"
-					>
-			<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="50" multiplier="2" />
-		</system>
-		<system name="R2" display_name="堡垒能量波"
-			  category="Weapon" firing_timing="OnlyInRange" shots_per_salvo="4"
-			  damage_per_shot="3750" range="High1" shot_speed="Normal" rate_of_fire="Low" fires_salvos_sequentially="true"
-			  shot_type_data="EnergyWave"
-					>
-			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="6" />
-		</system>
-	</entity>
-
-</root>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+   <!-- Base Lost Human Ship the others copy_from. -->
+   
+  <entity name="BaseLostHumanShip"
+            thematic_groups="LostHumans,Human" 
+			special_entity_type="Frigate" gimbal_icon_size_multiplier="1.35"
+			visuals="assets/_finalgamemeshes/humanoddities/colonyship/colonyship.prefab"
+			icon_name="Ships1/ColonyShip"
+			size_scale="5"
+			visuals_scale_multiplier="6"
+			category="Ship"
+			y_offset_of_icon="15"
+			collision_priority="500"
+			display_name="突击护卫舰"
+			display_name_for_sidebar="突击重护卫舰"
+			description="所有其它失落人类单位复制的模板基础。不应在游戏中出现。"
+			starting_mark_level="Markless" tech_upgrades_that_benefit_me="Unused" 
+			cost_for_ai_to_purchase="982"			
+			hull_points="198000" shield_points="82500" speed="Normal2"
+			metal_cost="100000" energy_consumption="9000"
+			armor_mm="140" engine_gx="16" albedo="0.4" mass_tx="5"
+			voice_group="Starship"
+			ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"      
+            priority_as_ai_target="NormalStarship" priority_as_frd_target="NormalStarship" priority_to_protect="SlightlyLessExpendable"
+            >
+  </entity>   
+
+	<!--	Travelers -->
+    <entity name="LostHumansTraveler" display_name="失落人类旅行者" skip_export="true" copy_from="BaseLostHumanShip" tags="LostHumansTraveler"
+            hull_points="10000" shield_points="0" speed="BelowAverage1" cannot_be_stacked="true"
+			visuals="assets/_finalgamemeshes/humanoddities/colonyship/colonyship.prefab"
+			icon_name="Ships1/ColonyShip" icon_overlay="Overlays2/Guardian_Shield" gimbal_icon_size_multiplier="0.75"
+            description="由无家可归的人类驾驶，他们在银河系中漫无目的地游荡。"
+		    starting_mark_level="Markless" tech_upgrades_that_benefit_me="Unused" 
+            base_info_source="LostHumansPerUnitBaseInfo"
+            >
+	</entity>
+   
+   <!--     Military Spawns  -->
+	<entity name="LostHumansMilitiaCarrier" tags="LostHumansTravelerMilitarySpawn"
+	        thematic_groups="LostHumans,Human" 
+			gimbal_icon_size_multiplier="1.25"
+			visuals="assets/_finalgamemeshes/guardians/carrierguardian/carrierguardian.prefab"
+            icon_name="Ships1/Guardian" icon_overlay="Overlays2/Guardian_Carrier"
+			uses_large_health_bar="true"
+			category="Ship"
+			size_scale="3.6"
+			visuals_scale_multiplier="4.3"
+			y_offset_of_icon="16"
+			collision_priority="400" immune_to_repairs="true"
+			display_name="民兵航母"
+			display_name_for_sidebar="军用航母"
+			description="一艘相对耐打的舰船，可制造无人机攻击敌人。全靠唾沫、胶带，以及对摆脱AI之未来的梦想勉强维持。"
+			fleet_design_template_i_use_for_drones="CarrierGuardianDrones" is_disallowed_from_spawning_in_waves="true"
+			drone_starting_behavior_type="Attacker_Full"
+			blocks_enemy_claim_flows="true"
+			voice_group="Silent"
+			starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Expatriate"
+			cost_for_ai_to_purchase="450"
+			hull_points="260000" shield_points="26000" speed="BelowAverage2"
+			metal_cost="80000" energy_consumption="7500"
+			armor_mm="110" albedo="0.3" engine_gx="14" mass_tx="5"
+			ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+			ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+			
+			priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
+			>
+		<metal_flow purpose="BuildingDronesInternally" throughput="1000" increase_per_mark_level="1000"/>
+	</entity>
+
+	<!--     Economy Spawns  
+   -->
+
+	<entity name="LostHumansMiner" display_name="废弃采矿船" skip_export="true" copy_from="BaseLostHumanShip" tags="LostHumanTravelerEconomySpawn"
+			hull_points="100000" shield_points="10000" speed="BelowAverage1" cannot_be_stacked="true" immune_to_repairs="true" seconds_to_fully_regenerate_hull="600"
+			description="由不再失落的人类操控，这艘移动极慢的舰船生产金属，并制造诱饵无人机。
+
+由于舰龄久远，唯一懂得修理它的人便是船上的船员。
+可按 CTRL + # 将其分配至舰队快捷键。适合将它们编成独立舰队，或作为你支援舰队的随行单位。"
+			starting_mark_level="Mark2" tech_upgrades_that_benefit_me="MetalGeneration"
+			fleet_design_template_i_use_for_drones="DecoyDrones"
+			drone_starting_behavior_type="Attacker_Full"
+			visuals="assets/_finalgamemeshes/humanoddities/colonyship/colonyship.prefab"
+			icon_name="Ships1/ColonyShip" icon_overlay="Overlays2/DysonSentinel_Defender"
+            >
+		<metal_flow purpose="BuildingDronesInternally" throughput="1000" increase_per_mark_level="1000"/>
+		<resource_production type="Metal" amount="25" increase_per_mark_level="25"/>
+	</entity>
+
+	<!--     Utility Spawns  
+   -->
+
+	<entity name="LostHumansDerelictConstructor" display_name="废弃工程船" skip_export="true" copy_from="BaseLostHumanShip" tags="LostHumanTravelerUtilitySpawn"
+			 hull_points="100000" shield_points="10000" speed="BelowAverage1" cannot_be_stacked="true" immune_to_repairs="true" seconds_to_fully_regenerate_hull="600"
+			 description="由不再失落的人类操控，这艘移动极慢的舰船内置一座工厂，并制造战斗无人机。
+
+由于舰龄久远，唯一懂得修理它的人便是船上的船员。
+可按 CTRL + # 将其分配至舰队快捷键。适合将它们编成独立舰队，或作为你支援舰队的随行单位。"
+			 starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Engineering"
+			 visuals="assets/_finalgamemeshes/humanoddities/colonyship/colonyship.prefab"
+			 icon_name="Ships1/ColonyShip" icon_overlay="Overlays2/Guardian_Tractor"
+			 assist_range="AboveAverage3"
+			 fleet_design_template_i_use_for_drones="CombatFactoryDrones"
+			 drone_starting_behavior_type="Attacker_Full"
+            >
+		<metal_flow purpose="FactoryConstructionForPlayerMobileFleets"	throughput="1000"	increase_per_mark_level="500"/>
+	</entity>
+
+	<entity name="LostHumansDerelictEngineerFrigate" display_name="废弃工程师护卫舰" skip_export="true" copy_from="BaseLostHumanShip" tags="LostHumanTravelerUtilitySpawn"
+			hull_points="100000" shield_points="10000" speed="BelowAverage1" cannot_be_stacked="true" immune_to_repairs="true" seconds_to_fully_regenerate_hull="600"
+			description="由不再失落的人类操控，这艘移动极慢的舰船配备多种工程光束，并制造战斗无人机。
+
+由于舰龄久远，唯一懂得修理它的人便是船上的船员。
+可按 CTRL + # 将其分配至舰队快捷键。适合将它们编成独立舰队，或作为你支援舰队的随行单位。"
+			display_name_for_sidebar="Der Eng 护卫舰"
+			starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Engineering"
+			visuals="assets/_finalgamemeshes/humanoddities/colonyship/colonyship.prefab"
+			icon_name="Ships1/ColonyShip" icon_overlay="Overlays2/Guardian_Tractor"
+			assist_range="AboveAverage3"
+			fleet_design_template_i_use_for_drones="CombatFactoryDrones"
+			drone_starting_behavior_type="Attacker_Full"
+            >
+		<metal_flow purpose="AssistSelfConstruction"					throughput="1000"	increase_per_mark_level="500"/>
+		<metal_flow purpose="RepairingHullsOfFriendlies"				throughput="1000"	increase_per_mark_level="500"/>
+		<metal_flow purpose="RepairingShieldsOfFriendlies"				throughput="1000"	increase_per_mark_level="500"/>
+		<metal_flow purpose="RepairingEnginesOfFriendlies"				throughput="1000"	increase_per_mark_level="500"/>
+	</entity>
+
+	<!--	Colonies -->
+	<entity name="LostHumansColony" tags="ShowsOnNormalDisplayMode,LostHumansColony,Capturable"
+	        thematic_groups="LostHumans,Human" 
+            special_entity_type="MobileStrikeCombatFleetFlagship" fleet_design_logic_i_grant_one_from="MobileCombatFleet"
+            capturable_seed_weight="1" capturable_max_per_galaxy="999"
+		    visuals="assets/_finalgamemeshes/humanoddities/HomeHumanSettlement/HomeHumanSettlement.prefab"
+		    icon_name="Ships1/HomeHumanSettlement" gimbal_icon_size_multiplier="1.5"
+            size_scale="10"
+            visuals_scale_multiplier="12"
+            voice_group="Silent"
+            category="Ship"
+            collision_priority="10000"
+            display_name="人类殖民地"
+            description="包含一处人类殖民地，此前已被时间所遗忘。配备若干被禁用的功能，我们占据后可重新启用，其中包括遗留的舰队设计。"
+            starting_mark_level="Markless" tech_upgrade_that_is_used_for_my_direct_science="Unused"
+            cost_for_ai_to_purchase="200"
+            hull_points="5000000" shield_points="0" speed="Immobile"
+            metal_cost="16000" energy_consumption="100"
+            armor_mm="230" albedo="0.5" mass_tx="4"
+            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            draw_in_galaxy_view="true"
+            shows_on_galaxy_map_for_explored_planets="true"
+            always_visible_to_players="true"
+            capturable_can_seed_at_all="false"
+            fleet_leader_type="Transport"
+            priority_as_ai_target="IrreplaceableAIPIncreaser" priority_as_frd_target="IgnoreMe" priority_to_protect="Irreplaceable"
+			assist_range="InsanelyHigh"
+            >
+			<metal_flow purpose="SelfConstruction"				throughput="500"/>
+		    <metal_flow purpose="RebuildingRemains"             throughput="5000" />
+		    <metal_flow purpose="RepairingHullsOfFriendlies"    throughput="5000" />
+		    <metal_flow purpose="RepairingShieldsOfFriendlies"  throughput="5000" />
+		    <metal_flow purpose="RepairingEnginesOfFriendlies"  throughput="5000" />
+		    <metal_flow purpose="AssistSelfConstruction"        throughput="5000" />
+		    <metal_flow purpose="AssistFactoryConstruction"     throughput="5000" />
+	</entity>
+
+	<entity name="LostHumansHostileColony" tags="ShowsOnNormalDisplayMode,LostHumansHostileColony"
+	        thematic_groups="LostHumans,Human" 
+		    visuals="assets/_finalgamemeshes/humanoddities/HomeHumanSettlement/HomeHumanSettlement.prefab"
+		    icon_name="Ships1/HomeHumanSettlement" gimbal_icon_size_multiplier="1.5"
+            size_scale="10"
+            visuals_scale_multiplier="12"
+            voice_group="Silent"
+            category="Ship"
+            collision_priority="10000"
+            display_name="被占领的人类殖民地" display_name_for_sidebar="占领殖民地"
+            description="曾容纳一处自由人类的殖民地。如今它已被AI占领，正在不停建造舰船攻击我们。由于我们缺乏地面部队，无法夺回该殖民地。
+
+现在已无力回天。"
+            starting_mark_level="Markless" tech_upgrade_that_is_used_for_my_direct_science="Unused"
+            cost_for_ai_to_purchase="200"
+            hull_points="1000000" shield_points="0" speed="Immobile"
+            metal_cost="16000" energy_consumption="100"
+            armor_mm="230" albedo="0.5" mass_tx="4"
+            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            draw_in_galaxy_view="true"
+            shows_on_galaxy_map_for_explored_planets="true"
+            always_visible_to_players="true"
+            capturable_can_seed_at_all="false"
+            priority_as_ai_target="IrreplaceableAIPIncreaser" priority_as_frd_target="IgnoreMe" priority_to_protect="Irreplaceable"
+			aip_on_death="5"
+
+			base_info_source="LostHumansPerUnitBaseInfo"
+			description_appender_dll="LostHumansBaseInfo"
+			description_appender_type="SK.LostHumans.LostHumanRelentlessWaveDescriptionAppender"
+            >
+	</entity>
+
+	<!--	Rogues -->
+	<entity name="LostHumansRogue" display_name="失落人类浪客" skip_export="true" copy_from="BaseLostHumanShip" tags="LostHumansRogue"
+            hull_points="10000" shield_points="0" speed="BelowAverage1" cannot_be_stacked="true"
+			visuals="assets/_finalgamemeshes/humanoddities/colonyship/colonyship.prefab"
+			icon_name="Ships1/ColonyShip" icon_overlay="Overlays2/Guardian_Vampire" gimbal_icon_size_multiplier="0.75"
+            description="由精明者操控，这艘舰船在银河中搜寻战利品，同时也惹恼了AI。
+
+当它们停留在你的行星上时，你可以选择为它们投资一座浪客公会，并分享它们所窃取的战利品。"
+		    starting_mark_level="Markless" tech_upgrades_that_benefit_me="Unused"
+			base_info_source="LostHumansPerUnitBaseInfo"
+			description_appender_dll="LostHumansBaseInfo"
+			description_appender_type="SK.LostHumans.RogueDescriptionAppender"
+            >
+	</entity>
+
+	<entity name="LostHumansRogueGuild" display_name="浪客公会" draw_in_galaxy_view="true" npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+	        thematic_groups="LostHumans,Human" 
+            description="由若干与可疑人物有联系的上级提出要求，此建筑将作为银河中任何浪客的栖身之所，他们会欣然存放不义之财，使我们得以加以利用。"
+            tags="LostHumansRogueGuild" build_sidebar_categories_i_am_part_of="Infrastructure"
+            visuals="assets/_finalgamemeshes/humanbuildings/spacedock/spacedock.prefab"
+            gimbal_name="AstroTrainStation"
+            icon_name="Ships1/AstroTrainStation" gimbal_icon_size_multiplier="1.5"
+            category="Ship"
+            visuals_scale_multiplier="7.5" size_scale="7.5" y_offset_of_icon="30"
+            collision_priority="810"
+            behavior="Stationary"
+            starting_mark_level="Mark1"
+            cost_for_ai_to_purchase="90000"
+            hull_points="150000" shield_points="25000" speed="Immobile"
+            armor_mm="250" albedo="0.8" mass_tx="4"
+            metal_cost="800000" energy_consumption="200000"
+            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            voice_group="Silent"
+            priority_as_frd_target="MajorPlanetLevelObjective"
+            priority_as_ai_target="MajorPlanetLevelObjective"
+            priority_to_protect="IgnoreMe"
+            
+            tech_upgrades_that_benefit_me="CommandEconomic,CommandLogistical,CommandMilitary"
+			base_info_source="LostHumansPerUnitBaseInfo"
+			description_appender_dll="LostHumansBaseInfo"
+			description_appender_type="SK.LostHumans.PlayerFriendlyZombiesWaveDescriptionAppender"
+    >
+		<metal_flow purpose="SelfConstruction" throughput="250"/>
+	</entity>
+
+	<entity name="LostHumansRogueFirewall" tags="LostHumansRogueFirewall"
+	        thematic_groups="LostHumans,Human" 
+		    visuals="Assets/_FinalGameMeshes/AIBuildings/GuardPosts/Pike/GuardPostPike.prefab"
+			icon_name="Ships1/GuardPost" gimbal_icon_size_multiplier="0.9"
+            size_scale="10"
+            visuals_scale_multiplier="12"
+            voice_group="Silent"
+            category="Ship"
+            collision_priority="10000"
+            display_name="浪客防火墙"
+            description="因应游侠行动而生成，此建筑将不断释放无尽的无情波次单位，直到被摧毁为止。"
+            starting_mark_level="Markless" tech_upgrade_that_is_used_for_my_direct_science="Unused"
+            cost_for_ai_to_purchase="200"
+            hull_points="100000" shield_points="0" speed="Immobile"
+            metal_cost="16000" energy_consumption="100"
+            armor_mm="230" albedo="0.5" mass_tx="4"
+            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            draw_in_galaxy_view="true"
+            shows_on_galaxy_map_for_explored_planets="true"
+            always_visible_to_players="true"
+            capturable_can_seed_at_all="false"
+            priority_as_ai_target="IrreplaceableAIPIncreaser" priority_as_frd_target="IgnoreMe" priority_to_protect="Irreplaceable"
+
+			base_info_source="LostHumansPerUnitBaseInfo"
+			description_appender_dll="LostHumansBaseInfo"
+			description_appender_type="SK.LostHumans.LostHumanRelentlessWaveDescriptionAppender"
+            >
+	</entity>
+
+	<!-- Construction Convoy -->
+	<entity name="LostHumansConstructionConvoy" display_name="失落人类 建造护航队" skip_export="true" copy_from="BaseLostHumanShip" tags="LostHumansConstructionConvoy" display_name_for_sidebar="人类建造车队"
+			hull_points="10000" shield_points="0" speed="AboveAverage2" cannot_be_stacked="true"
+			visuals="Assets/_FinalGameMeshes/Specials/AstroTrain/AstroTrainWithRegularWeapons.prefab"
+			size_scale="7"
+			visuals_scale_multiplier="2"			
+			icon_name="Ships1/AstroTrain" icon_overlay="Overlays2/Guardian_Shield" gimbal_icon_size_multiplier="0.75"
+			description="由尽职的人类操控，他们被命令用额外的防御强化银河系中的各个行星。然而，他们从未被告知为谁防御..."
+			starting_mark_level="Markless" tech_upgrades_that_benefit_me="Unused"
+			base_info_source="LostHumansPerUnitBaseInfo"
+				>
+	</entity>
+
+	<!-- Scourge Lab -->
+	<entity name="LostHumansScourgeLab" tags="ShowsOnNormalDisplayMode,LostHumansScourgeLab,Capturable"
+	        thematic_groups="LostHumans,Human,Scourge" 
+            special_entity_type="BattlestationCitadel" fleet_design_templates_i_always_grant="EmptyTurrets"
+            capturable_seed_weight="1" capturable_max_per_galaxy="999"
+			visuals="assets/_finalgamemeshes/buildings/fortress/fortressai.prefab" lod_distance_overrides="2000,16000"
+			icon_name="Ships1/Fortress" gimbal_icon_size_multiplier="1.5"
+			y_offset_of_icon="35"
+			size_scale="9"
+			visuals_scale_multiplier="3"
+            category="Ship"
+            collision_priority="10000"
+            display_name="强化天灾实验室" display_name_for_sidebar="Fort 天灾实验室"
+            description="包含人类众多最聪慧的头脑，全都困在一座断电的实验室里。若我们成功占据该行星，科学家们便能重新启动天灾实验室，为我们提供一座强大的堡垒，并能在一段时间后生成若干防御性僵尸。
+
+若我们未能拯救它，仍需支付其AIP代价，但那笔钱只是用来摧毁它，不会获得任何奖励。"
+            starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Citadels" this_centerpiece_grants_its_direct_science_upgrades_to_rest_of_fleet="true" 
+			tech_upgrade_that_is_used_for_my_direct_science="Direct_Battlestation"
+            cost_for_ai_to_purchase="200"
+            hull_points="2000000" shield_points="0"
+            metal_cost="500000" energy_consumption="50000"
+			armor_mm="300" albedo="0.7" mass_tx="8" engine_gx="14" speed="VeryVeryLittle2"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+			voice_group="Turret"
+            draw_in_galaxy_view="true"
+            shows_on_galaxy_map_for_explored_planets="true"
+            always_visible_to_players="true"
+            capturable_can_seed_at_all="false"
+            priority_as_ai_target="IrreplaceableAIPIncreaser" priority_as_frd_target="IgnoreMe" priority_to_protect="Irreplaceable"
+
+			base_info_source="LostHumansPerUnitBaseInfo"
+			description_appender_dll="LostHumansBaseInfo"
+			description_appender_type="SK.LostHumans.PlayerFriendlyZombiesWaveDescriptionAppender"
+			aip_to_claim="20"
+            >
+			<metal_flow purpose="SelfConstruction" throughput="500"/>
+			<system name="R1" display_name="堡垒聚变火箭"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1500" range="High1" shot_speed="Normal" rate_of_fire="Normal"
+				shots_per_salvo="30" fires_salvos_sequentially="false"
+				shot_type_data="FusionRocket"
+					>
+				<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="50" multiplier="2" />
+			</system>
+			<system name="R2" display_name="堡垒能量波"
+				  category="Weapon" firing_timing="OnlyInRange" shots_per_salvo="4"
+				  damage_per_shot="3750" range="High1" shot_speed="Normal" rate_of_fire="Low" fires_salvos_sequentially="true"
+				  shot_type_data="EnergyWave"
+					>
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="6" />
+			</system>
+	</entity>
+
+	<entity name="LostHumansHostileScourgeLab" tags="ShowsOnNormalDisplayMode,LostHumansHostileScourgeLab"
+	        thematic_groups="LostHumans,Human,Scourge" 
+			visuals="assets/_finalgamemeshes/buildings/fortress/fortressai.prefab" lod_distance_overrides="2000,16000"
+			icon_name="Ships1/Fortress" gimbal_icon_size_multiplier="1.5"
+			y_offset_of_icon="35"
+			size_scale="9"
+			visuals_scale_multiplier="3"
+            category="Ship"
+            collision_priority="10000"
+            display_name="强化天灾实验室" display_name_for_sidebar="Fort 天灾实验室"
+            description="一座已落入AI之手的天灾实验室，正在向我们源源不断地派出一波又一波天灾，除非我们能将其摧毁。
+
+我们至今未收到内部科学家的任何回应，恐怕凶多吉少。"
+            starting_mark_level="Mark1" tech_upgrade_that_is_used_for_my_direct_science="Unused"
+            cost_for_ai_to_purchase="200"
+            hull_points="2000000" shield_points="0"
+            metal_cost="500000" energy_consumption="50000"
+			armor_mm="300" albedo="0.7" mass_tx="8" engine_gx="14" speed="VeryVeryLittle2"
+			ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+			voice_group="Turret"
+            draw_in_galaxy_view="true"
+            shows_on_galaxy_map_for_explored_planets="true"
+            always_visible_to_players="true"
+            capturable_can_seed_at_all="false"
+            priority_as_ai_target="IrreplaceableAIPIncreaser" priority_as_frd_target="IgnoreMe" priority_to_protect="Irreplaceable"
+
+			base_info_source="LostHumansPerUnitBaseInfo"
+			description_appender_dll="LostHumansBaseInfo"
+			description_appender_type="SK.LostHumans.LostHumanRelentlessWaveDescriptionAppender"
+			aip_on_death="20"
+            >
+		<system name="R1" display_name="堡垒聚变火箭"
+			category="Weapon" firing_timing="OnlyInRange"
+			damage_per_shot="1500" range="High1" shot_speed="Normal" rate_of_fire="Normal"
+			shots_per_salvo="30" fires_salvos_sequentially="false"
+			shot_type_data="FusionRocket"
+					>
+			<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="50" multiplier="2" />
+		</system>
+		<system name="R2" display_name="堡垒能量波"
+			  category="Weapon" firing_timing="OnlyInRange" shots_per_salvo="4"
+			  damage_per_shot="3750" range="High1" shot_speed="Normal" rate_of_fire="Low" fires_salvos_sequentially="true"
+			  shot_type_data="EnergyWave"
+					>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="6" />
+		</system>
+	</entity>
+
+</root>

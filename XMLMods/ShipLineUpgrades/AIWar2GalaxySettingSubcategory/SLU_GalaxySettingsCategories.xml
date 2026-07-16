@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <setting_subcategory parent="Balance" name="ShipLineUpgrades" display_name="舰船线升级" color="46f0ff"
-      description="与舰船线升级模组相关的设置。" />
+  <setting_subcategory parent="Balance" name="ShipLineUpgrades" display_name="单位线升级" color="46f0ff"
+      description="与单位线升级模组相关的设置。" />
 </root>

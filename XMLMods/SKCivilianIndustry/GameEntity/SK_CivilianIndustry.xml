@@ -1,823 +1,823 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<root>
-    <!--    File contains stations and ships for the PlayerTrains faction.
-    -->
-	<!--    Beacon
-	        Can be Hacked to awaken the faction -->
-	<!--<entity skip_export="true" copy_from="MinorFactionBeacon" name="CivilianIndustryBeacon"
-            tags="Beacon,CivilianIndustryBeacon"
-            display_name="Enslaved 人类 Settlement"
-            description="The AI have captured a large number of our population during the war, and have put them to work.
-			
-Should we manage to hack this prison, we can reawaken our 民用工业."
-			target_type_for_player="NeverTarget"
-	        eligible_for_hacks="PrepareCivilianEscape"
-        >
-	</entity>-->
-    <!--    The main station of our faction.
-            Auto builds on player homeworlds.
-            Builds Cargo Ships and Militia Construction Ships
-    -->
-    <entity name="GrandStation" display_name="中央站"
-            description="贸易的中心枢纽。如果被摧毁，民用经济将崩溃。可受经济/后勤指挥和工程科技升级。"
-            tags="CivilianIndustryEntity,GrandStation,CargoShipProducer,ShowsOnNormalDisplayMode"
-            visuals="assets/_finalgamemeshes/humanbuildings/spacedock/spacedock.prefab"
-            gimbal_name="AstroTrainStation"
-            icon_name="Ships1/AstroTrainStation" gimbal_icon_size_multiplier="1.5"
-            category="Ship"
-            visuals_scale_multiplier="12" size_scale="12" y_offset_of_icon="30"
-            collision_priority="810"
-            behavior="Stationary"
-            starting_mark_level="Mark1"
-            cost_for_ai_to_purchase="90000"
-            hull_points="5000000" shield_points="100000" speed="Immobile"
-            armor_mm="250" albedo="0.8" mass_tx="4"
-            metal_cost="50000" energy_consumption="10000"
-            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
-            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
-            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
-            voice_group="Silent"
-            priority_as_frd_target="MajorPlanetLevelObjective"
-            priority_as_ai_target="MajorPlanetLevelObjective"
-            priority_to_protect="MajorPlanetLevelObjective"
-            
-            tech_upgrades_that_benefit_me="CommandEconomic,CommandLogistical,Engineering"
-    >
-    </entity>
-    <!--    Trade stations.
-            Auto builds on non homeworld planets.
-            Resources are always inported or exported through this station.
-    -->
-    <entity name="TradeStation" display_name="贸易站" draw_in_galaxy_view="true"
-            description="该星球贸易的中心。可受经济和后勤指挥及金属产出科技升级。"
-            tags="CivilianIndustryEntity,TradeStation,ShowsOnNormalDisplayMode,CenterOfTrade"
-            visuals="assets/_finalgamemeshes/humanbuildings/spacedock/spacedock.prefab"
-            gimbal_name="AstroTrainStation"
-            icon_name="Ships1/AstroTrainStation" gimbal_icon_size_multiplier="1.5"
-            category="Ship"
-            visuals_scale_multiplier="7.5" size_scale="7.5" y_offset_of_icon="30"
-            collision_priority="810"
-            behavior="Stationary"
-            starting_mark_level="Mark1"
-            cost_for_ai_to_purchase="90000"
-            hull_points="150000" shield_points="25000" speed="Immobile"
-            armor_mm="250" albedo="0.8" mass_tx="4"
-            metal_cost="10000" energy_consumption="5000"
-            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
-            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
-            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
-            voice_group="Silent"
-            priority_as_frd_target="MajorPlanetLevelObjective"
-            priority_as_ai_target="MajorPlanetLevelObjective"
-            priority_to_protect="IgnoreMe"
-            
-            tech_upgrades_that_benefit_me="CommandEconomic,CommandLogistical,MetalGeneration"
-            description_appender_dll="SKCivilianIndustryBaseInfo"
-            description_appender_type="SKCivilianIndustry.TradeStationDescriptionAppender"
-            base_info_source="SKCivTradeStationOrPostPerUnitBaseInfo"
-    >
-    </entity>
-    <!--	Trade Posts
-                    Build by player-controlled Battlestations and Citadels
-                    Acts like partial-potency trade stations.
-    -->
-    <entity name="TradePost" display_name="贸易哨站" copy_from="TradeStation" tags="CivilianIndustryEntity,TradePost,CenterOfTrade" draw_in_galaxy_view="false"
-                build_sidebar_categories_i_am_part_of="MilitiaBuildings"
-                special_entity_type="NPCFactionCenterpiece"
-                description="由军方资助的贸易哨站。可受经济和后勤指挥及金属产出科技升级。"
-                hull_points="250000" shield_points="500000"
-                metal_cost="500000" energy_consumption="50000"
-                visuals_scale_multiplier="5" size_scale="5"
-                tech_upgrades_that_benefit_me="CommandEconomic,CommandLogistical,MetalGeneration"
-                base_info_source="SKCivTradeStationOrPostPerUnitBaseInfo"
-    >
-        <metal_flow purpose="SelfConstruction" throughput="250"/>
-    </entity>
-    <!--    Cargo ship.
-            Used to transfer resources between trade stations and the grand station.
-    -->
-    <entity name="CargoShip" display_name="货船" cannot_be_stacked="true"
-            description="一艘民用贸易船。负责在你的各星球之间运输资源。可受金属产出和轻型科技升级。"
-            tags="CivilianIndustryEntity,CargoShip,ShowsOnNormalDisplayMode"
-            visuals="assets/_finalgamemeshes/humanoddities/colonyship/colonyship.prefab"
-            icon_name="Ships1/ColonyShip"
-            gimbal_icon_size_multiplier="0.75"
-            size_scale="1"
-            visuals_scale_multiplier="1"
-            category="Ship"
-            y_offset_of_icon="10"
-            collision_priority="900"
-            starting_mark_level="Mark1"
-            cost_for_ai_to_purchase="90000"
-            hull_points="50000" shield_points="0" speed="Normal1"
-            metal_cost="5000" energy_consumption="0"
-            armor_mm="300" engine_gx="22" albedo="0.8" mass_tx="33"
-            voice_group="Starship"
-            ship_or_structure_explosion_sfx="ShipStarship_Explosion"
-            strength_multiplier="0"
-            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
-            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
-            priority_as_ai_target="MinorResourceGeneration"
-            priority_as_frd_target="MinorResourceGeneration"
-            priority_to_protect="IgnoreMe"
-            
-            tech_upgrades_that_benefit_me="MetalGeneration,Light"
-            description_appender_dll="SKCivilianIndustryBaseInfo"
-            description_appender_type="SKCivilianIndustry.CargoShipDescriptionAppender"
-            base_info_source="SKCivCargoShipPerUnitBaseInfo"
-    >
-	<ship_class_data can_be_zombified_and_similar="false" />
-    </entity>
-    <!--    Militia Construction Ship.
-            Spawnt in response to hostlie threat.
-            Deploys into Outposts and Patrol Posts.
-    -->
-    <entity name="MilitiaConstructionShip" display_name="民兵工程船" skip_export="true" copy_from="AssaultFrigate" tags="MilitiaLeader,MilitiaConstructionShip,CivilianIndustryEntity"
-            hull_points="500000" shield_points="100000" speed="BelowAverage1" cannot_be_stacked="true"
-            description="一艘民兵船，携带着建造防御建筑所需的材料。可受工程和中型科技升级。"
-            description_appender_dll="SKCivilianIndustryBaseInfo"
-            description_appender_type="SKCivilianIndustry.MilitiaShipDescriptionAppender"
-            tech_upgrades_that_benefit_me="Engineering,Medium"
-            base_info_source="SKCivMilitiaPerUnitBaseInfo"
-    >
-        <system name="WL" range="Small5" max_mark_level_to_function="0" />
-        <system name="WW" range="Small5" max_mark_level_to_function="0" />
-	<ship_class_data can_be_zombified_and_similar="false" />
-    </entity>
-    <!--    Miltia outpost.
-            Built to fortify planets from hostile wormholes.
-    -->
-	<entity  name="MilitiaOutpost" tags="MilitiaLeader,MilitiaOutpost,CivilianIndustryEntity" npc_ship_cap_type="SpecialThingsToAlwaysSeed"
-	    visuals="assets/_finalgamemeshes/buildings/fortress/fortressai.prefab" lod_distance_overrides="2000,16000"
-	    icon_name="Ships1/Fortress" gimbal_icon_size_multiplier="1.5"
-		y_offset_of_icon="35"
-		category="Ship"
-	    size_scale="9"
-		visuals_scale_multiplier="3"
-        collision_priority="800"
-	    display_name="民兵前哨"
-	    description="民兵舰队的核心。为应对相邻星球上的 AI 威胁而建造。请求资源以建造固定防御工事。可受要塞和军事指挥科技升级。"
-	    behavior="Stationary"
-        is_major_ai_structure="true"
-		starting_mark_level="Mark1" max_mark_level="5"
-		cost_for_ai_to_purchase="3000"
-	    hull_points="500000" shield_points="1250000" speed="Immobile"
-		metal_cost="1500000" energy_consumption="50000"
-		armor_mm="300" albedo="0.7" mass_tx="7"
-		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
-		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
-		voice_group="Turret"
-		is_reinforcement_location="true" always_is_ai_turret_spawn_point="true"
-        priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
-	    description_appender_dll="SKCivilianIndustryBaseInfo"
-		description_appender_type="SKCivilianIndustry.MilitiaShipDescriptionAppender"
-        base_info_source="SKCivMilitiaPerUnitBaseInfo"
-		tech_upgrades_that_benefit_me="Citadels,CommandMilitary"
-		>
-		<metal_flow purpose="SelfConstruction" throughput="700"/>
-		<system name="W1" display_name="堡垒聚变火箭"
-					category="Weapon" firing_timing="OnlyInRange"
-					damage_per_shot="1000" range="High1" shot_speed="Normal" rate_of_fire="Normal"
-					shots_per_salvo="30" fires_salvos_sequentially="false"
-					shot_type_data="FusionRocket"
-				>
-			<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="50" multiplier="2" />
-		</system>
-		<system name="W2" display_name="堡垒能量波"
-			  category="Weapon" firing_timing="OnlyInRange" shots_per_salvo="4"
-			  damage_per_shot="2750" range="High1" shot_speed="Normal" rate_of_fire="Low" fires_salvos_sequentially="true"
-			  shot_type_data="EnergyWave"
-				>
-			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="6" />
-		</system>
-	</entity>
-    <!--    Militia Patrol Post
-            Built around mines on planets that still feel threatened after outpost placement.
-            Builds mobile fleets.
-    -->
-	<entity name="MilitiaPatrolPost" tags="MilitiaLeader,MilitiaPatrolPost,CivilianIndustryEntity" npc_ship_cap_type="SpecialThingsToAlwaysSeed"
-			visuals="Assets/_FinalGameMeshes/AIBuildings/GuardPosts/Stealth/GuardPostStealth.prefab" 
-			icon_name="Ships1/GuardPost" icon_overlay="Overlays2/GuardPost_Stealth" gimbal_icon_size_multiplier="1.4"
-			category="Ship"
-			size_scale="5" y_offset_of_icon="30"
-			visuals_scale_multiplier="13"
-			collision_priority="1000"
-		    display_name="民兵巡逻哨站" display_name_for_sidebar="民兵巡逻哨"
-			description="该星球 AI 守卫的存储结构，配备一门对新抵达者危险的激光加农炮。摧毁它将降低此地的最大增援容量。"
-			behavior="Stationary"
-			starting_mark_level="Mark1"
-			cost_for_ai_to_purchase="200"			
-			hull_points="250000" shield_points="750000" speed="Immobile"
-			metal_cost="80000" energy_consumption="10000"
-			armor_mm="50" albedo="0.7" mass_tx="5"
-			voice_group="Silent"
-			ship_or_structure_explosion_sfx="Turret_Explosion"
-			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
-			
-            priority_as_ai_target="NormalGuardPost" priority_as_frd_target="NormalGuardPost" priority_to_protect="NormalGuardPost"
-			description_appender_dll="SKCivilianIndustryBaseInfo"
-            description_appender_type="SKCivilianIndustry.MilitiaShipDescriptionAppender"
-            base_info_source="SKCivMilitiaPerUnitBaseInfo"
-            tech_upgrades_that_benefit_me="Citadels,Sentries"
-			>
-    <system name="W1" display_name="激光 Pulse"
-				category="Weapon" firing_timing="OnlyInRange"
-				damage_per_shot="1200" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Misery"
-				shots_per_salvo="5" fires_salvos_sequentially="true"
-				shot_type_data="LaserPulse_DeepBlue" cloaking_percent_loss_from_firing="0.1"
-				>
-        <outgoing_damage_modifier based_on="TargetTimeAtPlanet" comparison_type="LessThan" compared_to="9" multiplier="6" />				
-    </system>
-	  <system name="CD" display_name="隐形装置"
-				category="Passive" cloaking_points="2000" cloaking_points_added_per_mark="1000"
-				>
-    </system>	
-  </entity>
-	<!--	Advanced Militia Shipyards
-			Built around trade stations after all outposts and patrol posts have been built.
-			Requests large amounts of resources to build powerful Protector ships.
-	-->
-	<entity name="AdvancedCivilianShipyard" display_name="高级民用船坞" display_name_for_sidebar="高级民用船坞"
-            description="请求资源以建造强大的保护者舰船。必须保持存活才能使保护者舰船正常工作。"
-            tags="CivilianIndustryEntity,AdvancedCivilianShipyard,BuildsProtectors,MilitiaLeader,ShowsOnNormalDisplayMode"
-            visuals="assets/_finalgamemeshes/humanbuildings/spacedock/spacedock.prefab"
-			icon_name="Ships1/SpaceDock" gimbal_icon_size_multiplier="1.5"
-            category="Ship"
-            visuals_scale_multiplier="7.5" size_scale="7.5" y_offset_of_icon="30"
-            collision_priority="810"
-            behavior="Stationary"
-            starting_mark_level="Markless"
-            cost_for_ai_to_purchase="90000"
-            hull_points="150000" shield_points="25000" speed="Immobile"
-            armor_mm="250" albedo="0.8" mass_tx="4"
-            metal_cost="10000" energy_consumption="5000"
-            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
-            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
-            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
-            voice_group="Silent"
-            priority_as_frd_target="MajorPlanetLevelObjective"
-            priority_as_ai_target="MajorPlanetLevelObjective"
-            priority_to_protect="IgnoreMe"
-            
-            tech_upgrades_that_benefit_me="CommandEconomic,CommandLogistical,MetalGeneration"
-            description_appender_dll="SKCivilianIndustryBaseInfo"
-		    description_appender_type="SKCivilianIndustry.MilitiaShipDescriptionAppender"
-		    base_info_source="SKCivMilitiaPerUnitBaseInfo"
-    >
-    </entity>
-    <!--    Militia Headquarters
-            Built by player controlled Battlestations and Citadels
-            Builds mobile fleets.
-    -->
-	<entity name="MilitiaHeadquarters" tags="MilitiaLeader,MilitiaHeadquarters,CivilianIndustryEntity"
-			special_entity_type="NPCFactionCenterpiece"
-			visuals="Assets/_FinalGameMeshes/AIBuildings/GuardPosts/Forcefield/GuardPostForcefield.prefab"
-			icon_name="Ships1/GuardPost" icon_overlay="Overlays2/GuardPost_Shield" gimbal_icon_size_multiplier="1.4"
-			category="Ship"
-			size_scale="5" y_offset_of_icon="30"
-			visuals_scale_multiplier="13"
-			collision_priority="1000"
-			display_name="民兵总部" display_name_for_sidebar="民兵总部"
-            description="由军方资助的大型民兵舰队的核心。请求资源以建造机动部队来支援建造它的要塞或堡垒。可受堡垒和力场科技升级。"			behavior="Stationary"
-			shield_size_scale="5" my_forcefield_has_no_penalty_for_enemies_firing_out_of_it="true"
-			starting_mark_level="Mark1"
-			cost_for_ai_to_purchase="200"
-			hull_points="500000" shield_points="1250000" metal_cost="1000000" energy_consumption="100000"
-			speed="Immobile"
-			armor_mm="85" albedo="0.4" mass_tx="5"
-			voice_group="Silent"
-			ship_or_structure_explosion_sfx="Turret_Explosion"
-			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
-			
-            priority_as_ai_target="ShieldGenerator" priority_as_frd_target="NotDangerous" priority_to_protect="NormalGuardPost"
-			build_sidebar_categories_i_am_part_of="MilitiaBuildings"
-            description_appender_dll="SKCivilianIndustryBaseInfo"
-		    description_appender_type="SKCivilianIndustry.MilitiaShipDescriptionAppender"
-		    base_info_source="SKCivMilitiaPerUnitBaseInfo"
-            tech_upgrades_that_benefit_me="Citadels,Forcefields"
-			>
-		<metal_flow purpose="SelfConstruction" throughput="250"/>
-		<system name="W1" display_name="激光 Pulse"
-					category="Weapon" firing_timing="OnlyInRange"
-					damage_per_shot="2000" range="Normal6" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="true"
-					shot_type_data="LaserPulse_DeepBlue"
-				>
-		</system>
-	</entity>
-	<!--	Militia Protector Shipyards
-			Built by player controlled Battlestations and Citadels
-			Builds powerful Protector ships for the Battlestation
-	-->
-	<entity	name="MilitiaProtectorShipyards" display_name="民兵保护者船坞" skip_export="true" copy_from="MilitiaHeadquarters" display_name_for_sidebar="民兵保护者船坞"
-			tags="MilitiaLeader,MilitiaProtectorShipyards,BuildsProtectors,CivilianIndustryEntity"
-			metal_cost="3000000" energy_consumption="150000"
-			description="由军方资助的强大民兵舰队的核心。请求大量资源以建造强大的保护者舰船来支援建造它的要塞或堡垒。可受堡垒和力场科技升级。"
-			special_entity_type="NPCFactionCenterpiece"
-            build_sidebar_categories_i_am_part_of="MilitiaBuildings"
-            description_appender_dll="SKCivilianIndustryBaseInfo"
-            description_appender_type="SKCivilianIndustry.MilitiaShipDescriptionAppender"
-            base_info_source="SKCivMilitiaPerUnitBaseInfo"
-            tech_upgrades_that_benefit_me="Citadels,Forcefields"
-            absolute_max_cap_when_in_fleets="1">
-			<metal_flow purpose="SelfConstruction" throughput="250"/>
-	</entity>
-    <!--    Militia Barracks
-            Manually placed by the player.
-            Default 1 per planet, boosts the capacity of all turret/ship building militia buildings on the planet by 33%
-    -->
-    <entity name="MilitiaBarracks" display_name="民兵兵营" skip_export="true" copy_from="TradeStation" tags="MilitiaLeader,MilitiaBarracks,CivilianIndustryEntity"
-            special_entity_type="NPCFactionCenterpiece"
-            visuals="assets/_finalgamemeshes/humanbuildings/spacedock/spacedock.prefab"
-            build_sidebar_categories_i_am_part_of="MilitiaBuildings"
-            description="该区域地方防御力量的焦点。使本星球和相邻星球上民兵建筑的炮塔和舰船容量提升 15% + 每标记等级 5%，或固定提升 1，取较大值。可受指挥科技升级。"
-            metal_cost="5000000" energy_consumption="200000" absolute_max_cap_when_in_fleets="1"
-			tech_upgrades_that_benefit_me="CommandEconomic,CommandLogistical,CommandMilitary"
-    >
-        <metal_flow purpose="SelfConstruction" throughput="250"/>
-    </entity>
-    <!--    Ships and turrets spawnt by the militia part of the faction.
-    -->
-    <entity name="CivSniper" display_name="民用狙击手" skip_export="true" copy_from="Sniper"
-            tags="CivAmbushMobile,CivMobile,CivMilitiaSpawn"
-            multiplier_to_all_costs="2" multiplier_to_all_healths="2" shield_points="0"
-            damage_multiplier_to_all_weapons="2"
-            multiplier_to_all_scales="2"
-    >
-    </entity>
-    <entity name="CivRaptor" display_name="民用猛禽" skip_export="true" copy_from="Raptor"
-            tags="CivAmbushMobile,CivMobile,CivMilitiaSpawn"
-            multiplier_to_all_costs="2" multiplier_to_all_healths="2" shield_points="0"
-            damage_multiplier_to_all_weapons="2"
-            multiplier_to_all_scales="2"
-    >
-    </entity>
-    <entity name="CivAmbushTurret" display_name="民用伏击炮塔" skip_export="true" copy_from="AmbushTurret"
-            tags="CivAmbushTurret,CivTurret,CivMilitiaSpawn"
-            multiplier_to_all_costs="2" multiplier_to_all_healths="2" 
-            damage_multiplier_to_all_weapons="2"
-            multiplier_to_all_scales="2"
-    >
-    </entity>
-    <entity name="CrackerJack" display_name="巧手保护者" skip_export="true" copy_from="RaidFrigate"
-                tags="CivAmbushProtector,CivProtector,CivMilitiaSpawn"
-				armor_mm="180" albedo="0.6" engine_gx="25" mass_tx="25"	
-                description="强大的保护者，使用先进的伏击技术建造。该舰善于消灭最近抵达所在星球的一切部队。"
-                hull_points="1000000" shield_points="500000"
-                tech_upgrades_that_benefit_me="Ambush,Medium"
-				multiplier_to_all_scales="4" 
-    >
-        <system name="W1" display_name="巧手弹"
-                        category="Weapon" firing_timing="OnlyInRange" shots_per_salvo="15" fires_salvos_sequentially="true"
-                        damage_per_shot="1000" range="Normal3" shot_speed="Fast" rate_of_fire="High"
-                        shot_type_data="FusionBolt"
-                        base_percent_damage_bypasses_personal_shields="0.75"
-        >
-          <outgoing_damage_modifier based_on="TargetTimeAtPlanet" comparison_type="LessThan" compared_to="60" multiplier="5" />
-        </system>
-		<system name="W3" display_name="引擎劫持器"
-				category="Weapon" firing_timing="OnlyInRange"
-				damage_per_shot="100" range="Normal3" shot_speed="Normal" rate_of_fire="Misery"
-				shots_per_salvo="5" fires_salvos_sequentially="false"
-				shot_type_data="HeavyBeamInvisible"
-				beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_Red"
-				hits_all_intersecting_targets="true"
-				shots_detonate_immediately="true"
-				maximum_number_of_targets_hit_per_shot="5"
-				base_engine_stun_per_shot="1" 
-                engine_stun_to_engine_gx_less_than="18"
-				max_engine_stun_seconds="3" added_target_evaluator="EngineDamageAsMinorPart"
-				>
-		</system>
-	<ship_class_data can_be_zombified_and_similar="false" />
-    </entity>
-    
-    <entity name="CivConcussionCorvette" display_name="民用震荡护卫舰" skip_export="true" copy_from="ConcussionCorvette"
-            tags="CivConcussionMobile,CivMobile,CivMilitiaSpawn"
-            multiplier_to_all_costs="2" multiplier_to_all_healths="2" shield_points="0"
-            damage_multiplier_to_all_weapons="2"
-            multiplier_to_all_scales="2"
-    >
-    </entity>
-    <entity name="CivSiegeFrigate" display_name="民用攻城护卫舰" skip_export="true" copy_from="SiegeFrigate"
-            tags="CivConcussionMobile,CivMobile,CivMilitiaSpawn"
-            multiplier_to_all_costs="2" multiplier_to_all_healths="2" shield_points="0"
-            damage_multiplier_to_all_weapons="2"
-            multiplier_to_all_scales="2"
-    >
-    </entity>
-    <entity name="CivConcussionTurret" display_name="民用震荡炮塔" skip_export="true" copy_from="ConcussionTurret"
-            tags="CivConcussionTurret,CivTurret,CivMilitiaSpawn"
-            multiplier_to_all_costs="2" multiplier_to_all_healths="2" 
-            damage_multiplier_to_all_weapons="2"
-            multiplier_to_all_scales="2"
-    >
-    </entity>
-    <entity name="Thunderstrike" display_name="雷霆打击保护者" skip_export="true" copy_from="SiegeFrigate"
-                tags="CivConcussionProtector,CivProtector,CivMilitiaSpawn"
-				armor_mm="180" albedo="0.6" engine_gx="25" mass_tx="25"	
-                description="强大的保护者，使用先进的震荡技术建造。该舰擅长用强力范围击退来分散敌军，并粉碎低装甲目标。"
-                hull_points="1000000" shield_points="500000"
-                tech_upgrades_that_benefit_me="Concussion,Light"
-				multiplier_to_all_scales="2"
-    >
-        <system name="W1" display_name="雷霆鱼雷"
-                        category="Weapon" firing_timing="OnlyInRange"
-                        damage_per_shot="24000" range="AboveAverage3" shot_speed="Slow" rate_of_fire="Misery" fires_salvos_sequentially="true"
-                        shot_type_data="PlasmaTorpedoAOEBurstAtEnd"
-                        area_of_effect_size="2000"
-                        base_knockback_per_shot="5000" added_knockback_per_shot_per_mark="500" knockback_to_ships_mass_tx_less_than="5"
-                        aoe_spreads_damage_among_available_targets="true"
-        >
-        </system>
-		<system name="W2" display_name="Stormer"
-				category="Weapon" firing_timing="OnlyInRange"
-				damage_per_shot="1000" range="High2" shot_speed="Normal" rate_of_fire="Misery"
-				shot_type_data="GuidedMissile" shots_per_salvo="10" fires_salvos_sequentially="false"
-				>
-			<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="50" multiplier="4" />
-		</system>
-	<ship_class_data can_be_zombified_and_similar="false" />
-    </entity>
-
-    <entity name="CivPikeCorvette" display_name="民用长矛护卫舰" skip_export="true" copy_from="PikeCorvette"
-            tags="CivDisruptiveMobile,CivMobile,CivMilitiaSpawn"
-            multiplier_to_all_costs="2" multiplier_to_all_healths="2" shield_points="0"
-            damage_multiplier_to_all_weapons="2"
-            multiplier_to_all_scales="2"
-    >
-    </entity>
-    <entity name="CivAgravicPod" display_name="民用反重力舱" skip_export="true" copy_from="AgravicPod" display_name_for_sidebar="民用反重力舱"
-            tags="CivDisruptiveMobile,CivMobile,CivMilitiaSpawn"
-            multiplier_to_all_costs="2" multiplier_to_all_healths="2" shield_points="0"
-            damage_multiplier_to_all_weapons="2"
-            multiplier_to_all_scales="2"
-    >
-    </entity>
-    <entity name="CivPikeTurret" display_name="民用长矛炮塔" skip_export="true" copy_from="PikeTurret"
-            tags="CivDisruptiveTurret,CivTurret,CivMilitiaSpawn"
-            multiplier_to_all_costs="2" multiplier_to_all_healths="2" 
-            damage_multiplier_to_all_weapons="2"
-            multiplier_to_all_scales="2"
-    >
-    </entity>
-    <entity name="Paladin" display_name="圣骑士保护者" skip_export="true" copy_from="ForcefieldFrigate"
-                tags="CivDisruptiveProtector,CivProtector,CivMilitiaSpawn"
-				armor_mm="180" albedo="0.6" engine_gx="25" mass_tx="25"	
-                description="强大的保护者，使用先进的干扰技术建造。该舰以其强力减益效果、坚固力场和自愈能力成为保护盟友的终极利器。"
-                hull_points="500000" shield_points="1500000" shield_size_scale="6" my_forcefield_does_not_shrink="true"
-                tech_upgrades_that_benefit_me="Disruptive,Heavy"
-				multiplier_to_all_scales="2"
-    >
-        <system name="WW" damage_per_shot="160" rate_of_fire="Devourer" shots_per_salvo="32" range="AboveAverage3" fires_salvos_sequentially="true" display_name="虹吸压制加特林"
-                base_enemy_weapon_reload_slowing_seconds_per_shot="2" added_enemy_weapon_reload_slowing_seconds_per_shot_per_mark="1" enemy_weapon_reload_slowing_to_armor_mm_less_than="80" max_enemy_weapon_reload_slowing_seconds="10" added_target_evaluator="WeaponJamAsPrimary" health_change_per_damage_dealt="5"/>	
-        <system name="T" display_name="牵引光束"
-                category="Passive"
-                tractor_range="AboveAverage1" tractor_count="75" tractor_count_added_per_mark="25" tractor_hits_albedo_less_than="0.5" tractor_hits_engine_gx_less_than="15"/>
-	<ship_class_data can_be_zombified_and_similar="false" />
-    </entity>
-
-    <entity name="CivPulsarTank" display_name="民用脉冲坦克" skip_export="true" copy_from="PulsarTank" display_name_for_sidebar="民用脉冲坦克"
-            tags="CivFusionMobile,CivMobile,CivMilitiaSpawn"
-            multiplier_to_all_costs="2" multiplier_to_all_healths="2" shield_points="0"
-            damage_multiplier_to_all_weapons="2"
-            multiplier_to_all_scales="2"
-    >
-    </entity>
-    <entity name="CivAssaultFrigate" display_name="民用 突击护卫舰" skip_export="true" copy_from="AssaultFrigate"
-            tags="CivFusionMobile,CivMobile,CivMilitiaSpawn"
-            multiplier_to_all_costs="2" multiplier_to_all_healths="2" shield_points="0"
-            damage_multiplier_to_all_weapons="2"
-            multiplier_to_all_scales="2"
-    >
-    </entity>
-    <entity name="CivMLRSTurret" display_name="民用多管火箭炮塔" skip_export="true" copy_from="MLRSTurret"
-            tags="CivFusionTurret,CivTurret,CivMilitiaSpawn"
-            multiplier_to_all_costs="2" multiplier_to_all_healths="2" 
-            damage_multiplier_to_all_weapons="2"
-            multiplier_to_all_scales="2"
-    >
-    </entity>
-    <entity name="BrickBreaker" display_name="碎砖者保护者" skip_export="true" copy_from="AssaultFrigate"
-                tags="CivFusionProtector,CivProtector,CivMilitiaSpawn"
-				armor_mm="180" albedo="0.6" engine_gx="25" mass_tx="25"	
-                description="强大的保护者，使用先进的聚变技术建造。该舰善于摧毁大型敌方单位。"
-                hull_points="1000000" shield_points="500000"
-                tech_upgrades_that_benefit_me="Fusion,Heavy"
-				multiplier_to_all_scales="2"
-    >
-        <system name="W1" display_name="砖头炸弹"
-                category="Weapon" firing_timing="OnlyInRange"
-                damage_per_shot="15000" range="VeryTiny1" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="true"
-                shot_type_data="FusionBomb"	
-                base_percent_damage_bypasses_personal_shields="0"
-        >
-            <outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtLeast" compared_to="90" multiplier="4" />
-            <outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="4" />
-            <outgoing_damage_modifier based_on="Albedo" comparison_type="AtLeast" compared_to="0.7" multiplier="4" />
-        </system>
-	<ship_class_data can_be_zombified_and_similar="false" />
-    </entity>
-    
-    <entity name="CivVWing" display_name="民用V翼" skip_export="true" copy_from="VWing"
-            tags="CivGeneralistMobile,CivMobile,CivMilitiaSpawn"
-            multiplier_to_all_costs="2" multiplier_to_all_healths="2" shield_points="0"
-            damage_multiplier_to_all_weapons="2"
-            multiplier_to_all_scales="2"
-    >
-    </entity>
-    <entity name="CivAutocannonMinipod" display_name="民用机炮迷你舱" skip_export="true" copy_from="AutocannonMinipod"
-            tags="CivGeneralistMobile,CivMobile,CivMilitiaSpawn"
-            multiplier_to_all_costs="2" multiplier_to_all_healths="2" shield_points="0"
-            damage_multiplier_to_all_weapons="2"
-            multiplier_to_all_scales="2"
-    >
-    </entity>
-    <entity name="CivTritiumSniperTurret" display_name="民用氚狙击炮塔" skip_export="true" copy_from="TritiumSniperTurret"
-            tags="CivGeneralistTurret,CivTurret,CivMilitiaSpawn"
-            multiplier_to_all_costs="2" multiplier_to_all_healths="2" 
-            damage_multiplier_to_all_weapons="2"
-            multiplier_to_all_scales="2"
-    >
-    </entity>
-	<entity name="Hurricane" display_name="飓风保护者" skip_export="true" copy_from="TritiumSniperFrigate"
-                tags="CivGeneralistProtector,CivProtector,CivMilitiaSpawn"
-				armor_mm="180" albedo="0.6" engine_gx="25" mass_tx="25"	
-                description="强大的保护者，使用先进的通用技术建造。该舰提供广域重力发生器以及强力速射狙击弹。"
-                hull_points="1000000" shield_points="500000"
-                tech_upgrades_that_benefit_me="Generalist,Light"
-				multiplier_to_all_scales="2"
-    >
-	<system name="W1" display_name="飓风轨道炮"
-				category="Weapon" firing_timing="OnlyInRange"
-				damage_per_shot="800" range="EssentiallyInfinite" shot_speed="VeryFast" rate_of_fire="Misery"
-				shots_per_salvo="8" fires_salvos_sequentially="false"
-				shot_type_data="ExtremeLongRangeRailgun"				
-				>
-		<outgoing_damage_modifier based_on="AttackDistance" comparison_type="MultiplesOf" compared_to="6000" multiplier="1" />
-    </system>
-	<system name="G" display_name="风暴核心"
-				category="Passive"
-				base_gravity_speed_multiplier="0.81" subtracted_gravity_speed_multiplier_per_mark="0.01" gravity_hits_engine_gx_less_than="14" gravity_range="ExtremelyHigh"
-				>
-    </system>
-	<ship_class_data can_be_zombified_and_similar="false" />
-    </entity>
-    
-    <entity name="CivVampireClaw" display_name="民用吸血鬼之爪" skip_export="true" copy_from="VampireClaw"
-            tags="CivMeleeMobile,CivMobile,CivMilitiaSpawn"
-            multiplier_to_all_costs="2" multiplier_to_all_healths="2" shield_points="0"
-            damage_multiplier_to_all_weapons="2"
-            multiplier_to_all_scales="2"
-    >
-    </entity>
-    <entity name="CivMetabolizingGangsaw" display_name="民用代谢链锯" skip_export="true" copy_from="MetabolizingGangsaw"
-            tags="CivMeleeMobile,CivMobile,CivMilitiaSpawn"
-            multiplier_to_all_costs="2" multiplier_to_all_healths="2" shield_points="0"
-            damage_multiplier_to_all_weapons="2"
-            multiplier_to_all_scales="2"
-    >
-    </entity>
-    <entity name="CivKineticSpikeTurret" display_name="民用动能尖刺炮塔" skip_export="true" copy_from="EnsnarerFortifiedTeslaTurret"
-            tags="CivMeleeTurret,CivTurret,CivMilitiaSpawn"
-            description="一个极其简化的炮塔，配有一道牵引光束和一枚穿透所有护盾的动能尖刺弹。"
-			tech_upgrades_that_benefit_me="Melee,Turret"
-            multiplier_to_all_costs="2" multiplier_to_all_healths="2" 
-            damage_multiplier_to_all_weapons="2"
-            multiplier_to_all_scales="2"
-    >
-      <system name="Q1" max_mark_level_to_function="0"></system>
-      <system name="W1" display_name="动能尖刺"
-				  category="Weapon" firing_timing="OnlyInRange"
-				  damage_per_shot="5000" range="Normal2" shot_speed="Normal" rate_of_fire="Misery" fires_salvos_sequentially="true"
-				  shot_type_data="ArmorPiercingShell"	
-				  base_percent_damage_bypasses_personal_shields="1"
-				  >
-          <outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtLeast" compared_to="90" multiplier="3" />
-      </system>
-      <system name="T" tractor_count="1" tractor_count_added_per_mark="0" tractor_hits_albedo_less_than="0.5" tractor_hits_engine_gx_less_than="10"
-				>
-      </system>
-    </entity>
-	<entity name="Excalibur" display_name="圣剑保护者" skip_export="true" copy_from="VampireClaw" npc_ship_cap_type="FrigatesAndGuardians"
-                tags="CivMeleeProtector,CivProtector,CivMilitiaSpawn" icon_overlay="Overlays1/Starship_Assault"
-				armor_mm="180" albedo="0.6" engine_gx="25" mass_tx="25"	
-                description="强大的保护者，使用先进的近战技术建造。该舰移动缓慢但极其坚固，能牵引数量惊人的敌方目标。"
-                hull_points="1000000" shield_points="500000"
-                tech_upgrades_that_benefit_me="Melee,Heavy"
-				is_strikecraft="false" speed="BelowAverage1"
-				multiplier_to_all_scales="15" multiplier_to_all_costs="100"
-    >
-	<system name="W2" display_name="远程剑刃"
-				category="Weapon" firing_timing="OnlyInRange"
-				damage_per_shot="5000" shots_per_salvo="50" range="Small1" shot_speed="Fast" rate_of_fire="Misery" fires_salvos_sequentially="false"
-				shot_type_data="MeleeInvisible" added_target_evaluator="Melee"
-				health_change_per_damage_dealt="0"
-				>
-    </system>
-	<system name="C" display_name="隐形装置" max_mark_level_to_function="0" >
-    </system>
-	<system name="T" display_name="牵引刀刃"
-				category="Passive"
-				tractor_range="Tiny2" tractor_count="150" tractor_count_added_per_mark="30" tractor_hits_albedo_less_than="0.5" tractor_hits_engine_gx_less_than="18"
-				>
-    </system>
-	<incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="2000" multiplier="0.05" />
-	<ship_class_data can_be_zombified_and_similar="false" />
-    </entity>
-    
-    <entity name="CivRaider" display_name="民用突击者" skip_export="true" copy_from="Raider"
-            tags="CivRaidMobile,CivMobile,CivMilitiaSpawn"
-            multiplier_to_all_costs="2" multiplier_to_all_healths="2" shield_points="0"
-            damage_multiplier_to_all_weapons="2"
-            multiplier_to_all_scales="2"
-    >
-    </entity>
-    <entity name="CivRaidFrigate" display_name="民用突袭护卫舰" skip_export="true" copy_from="RaidFrigate"
-            tags="CivRaidMobile,CivMobile,CivMilitiaSpawn"
-            multiplier_to_all_costs="2" multiplier_to_all_healths="2" shield_points="0"
-            damage_multiplier_to_all_weapons="2"
-            multiplier_to_all_scales="2"
-    >
-    </entity>
-    <entity name="CivBlitzCannonTurret" display_name="民用闪击加农炮塔" skip_export="true" copy_from="TritiumSniperTurret"
-            tags="CivRaidTurret,CivTurret,CivMilitiaSpawn"
-            description="从任意距离猛烈轰击高血量舰船的船体。"
-			tech_upgrades_that_benefit_me="Raid,Turret"
-            multiplier_to_all_costs="2" multiplier_to_all_healths="2" 
-            damage_multiplier_to_all_weapons="2"
-            multiplier_to_all_scales="2"
-    >
-      <system name="Q9" max_mark_level_to_function="0"></system>
-      <system name="W1" display_name="闪击加农炮"
-				  category="Weapon" firing_timing="OnlyInRange"
-				  damage_per_shot="125" range="EssentiallyInfinite" shot_speed="VeryFast" rate_of_fire="Normal" fires_salvos_sequentially="true"
-				  shot_type_data="ExtremeLongRangeRailgun" cloaking_percent_loss_from_firing="0.1" base_percent_damage_bypasses_personal_shields="0.5"
-				  >
-          <outgoing_damage_modifier based_on="CurrentHullPercentage" applies_to="HullOnly" comparison_type="AtLeast" compared_to="75" multiplier="5" />
-      </system>
-    </entity>
-	<entity name="GrimReaper" display_name="死神保护者" skip_export="true" copy_from="RaidFrigate"
-                tags="CivRaidProtector,CivProtector,CivMilitiaSpawn"
-				armor_mm="180" albedo="0.6" engine_gx="25" mass_tx="25"	
-                description="强大的保护者，使用先进的突袭技术建造。该舰善于击杀较弱舰船以激发其狂怒。"
-                hull_points="1000000" shield_points="500000"
-                tech_upgrades_that_benefit_me="Raid,Medium"
-				multiplier_to_all_scales="4"
-    >
-	<system name="V6" display_name="死神弹"
-				category="Weapon" firing_timing="OnlyInRange"
-				damage_per_shot="3000" range="Normal3" shots_per_salvo="5" shot_speed="Fast" rate_of_fire="Devourer" fires_salvos_sequentially="false"
-				shot_type_data="FusionBolt"
-				base_percent_damage_bypasses_personal_shields="0"
-				health_change_per_damage_dealt="5"
-				>
-				<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="50" multiplier="4" />
-				<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtMost" compared_to="2" multiplier="4" />
-				<outgoing_damage_modifier based_on="Albedo" comparison_type="AtMost" compared_to="0.3" multiplier="4" />
-    </system>
-	<ship_class_data can_be_zombified_and_similar="false" />
-    </entity>
-    
-    <entity name="CivInhibitingTeslaCorvette" display_name="民用抑制特斯拉护卫舰" skip_export="true" copy_from="InhibitingTeslaCorvette"
-            tags="CivSplashMobile,CivMobile,CivMilitiaSpawn"
-            multiplier_to_all_costs="2" multiplier_to_all_healths="2" shield_points="0"
-            damage_multiplier_to_all_weapons="2"
-            multiplier_to_all_scales="2"
-    >
-    </entity>
-    <entity name="CivGrenadeLauncherCorvette" display_name="民用榴弹发射器护卫舰" skip_export="true" copy_from="GrenadeLauncherCorvette"
-            tags="CivSplashMobile,CivMobile,CivMilitiaSpawn"
-            multiplier_to_all_costs="2" multiplier_to_all_healths="2" shield_points="0"
-            damage_multiplier_to_all_weapons="2"
-            multiplier_to_all_scales="2"
-    >
-    </entity>
-    <entity name="CivFortifiedTeslaTurret" display_name="民用强化特斯拉炮塔" skip_export="true" copy_from="FortifiedTeslaTurret"
-            tags="CivSplashTurret,CivTurret,CivMilitiaSpawn"
-            multiplier_to_all_costs="2" multiplier_to_all_healths="2" 
-            damage_multiplier_to_all_weapons="2"
-            multiplier_to_all_scales="2"
-    >
-    </entity>
-	<entity name="Wildfire" display_name="野火保护者" skip_export="true" copy_from="GrenadeLauncherCorvette" npc_ship_cap_type="FrigatesAndGuardians"
-                tags="CivSplashProtector,CivProtector,CivMilitiaSpawn"
-				armor_mm="180" albedo="0.6" engine_gx="25" mass_tx="25"	
-                description="强大的保护者，使用先进的溅射技术建造。该舰向敌方部队发射一连串缓慢移动的手榴弹。"
-                hull_points="1000000" shield_points="500000"
-                tech_upgrades_that_benefit_me="Splash,Light"
-				is_strikecraft="false" multiplier_to_all_scales="6" multiplier_to_all_costs="100"
-    >
-	<system name="WJ" display_name="防空手榴弹"
-				category="Weapon" firing_timing="OnlyInRange"
-				damage_per_shot="8000" range="EssentiallyInfinite" shot_speed="Grenade" rate_of_fire="Normal" fires_salvos_sequentially="true"
-				shot_type_data="FlakShotAOEBurstAtEnd" shots_per_salvo="8"
-				area_of_effect_size="3200"
-				maximum_number_of_targets_hit_per_shot="8"
-				>
-				<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="50" multiplier="5" />
-    </system>
-	<ship_class_data can_be_zombified_and_similar="false" />
-    </entity>
-
-    <entity name="CivSpider" display_name="民用蜘蛛" skip_export="true" copy_from="Spider"
-            tags="CivSubterfugeMobile,CivMobile,CivMilitiaSpawn"
-            multiplier_to_all_costs="2" multiplier_to_all_healths="2" shield_points="0"
-            damage_multiplier_to_all_weapons="2"
-            multiplier_to_all_scales="2"
-    >
-    </entity>
-    <entity name="CivWarbirdFrigate" display_name="民用战鸟护卫舰" skip_export="true" copy_from="WarbirdFrigate"
-            tags="CivSubterfugeMobile,CivMobile,CivMilitiaSpawn"
-            multiplier_to_all_costs="2" multiplier_to_all_healths="2" shield_points="0"
-            damage_multiplier_to_all_weapons="2"
-            multiplier_to_all_scales="2"
-    >
-      <system name="Q2" shots_per_salvo="4" damage_per_shot="2240"></system>
-    </entity>
-    <entity name="CivSpiderTurret" display_name="民用蜘蛛 炮塔" skip_export="true" copy_from="SpiderTurret"
-            tags="CivSubterfugeTurret,CivTurret,CivMilitiaSpawn"
-            multiplier_to_all_costs="2" multiplier_to_all_healths="2" 
-            damage_multiplier_to_all_weapons="2"
-            multiplier_to_all_scales="2"
-    >
-    </entity>
-	<entity name="Tangler" display_name="缠绕者保护者" skip_export="true" copy_from="WarbirdFrigate"
-                tags="CivSubterfugeProtector,CivProtector,CivMilitiaSpawn"
-				armor_mm="180" albedo="0.6" engine_gx="25" mass_tx="25"	
-                description="强大的保护者，使用先进的诡计技术建造。该舰能够快速蒸发移动中的舰船并瘫痪其余的。"
-                hull_points="1000000" shield_points="500000"
-                tech_upgrades_that_benefit_me="Subterfuge,Light"
-				multiplier_to_all_scales="2"
-    >
-	<system name="W1" display_name="藤蔓穿刺者"
-				category="Weapon" firing_timing="OnlyInRange"
-				damage_per_shot="7000" range="Normal4" shot_speed="VeryFast" rate_of_fire="Misery"
-				shots_per_salvo="14" fires_salvos_sequentially="false"				
-				shot_type_data="ParalysisProngedShot_Blue"				
-				>
-		<outgoing_damage_modifier based_on="CurrentSpeedIfMoving" comparison_type="AtLeast" compared_to="700" multiplier="7" />
-    </system>
-	<system name="Q2" display_name="藤蔓喷洒器"
-				category="Weapon" firing_timing="OnlyInRange"
-				damage_per_shot="700" range="Tiny2" shot_speed="Normal" rate_of_fire="Normal"
-				shots_per_salvo="14" fires_salvos_sequentially="false"
-				shot_type_data="ParalysisProngedShot_Blue" added_target_evaluator="ParalyzerAsPrimary"
-				base_paralysis_seconds_per_shot="4" paralysis_to_ships_mass_tx_less_than="3" cloaking_percent_loss_from_firing="0.2"
-				>
-    </system>
-	<ship_class_data can_be_zombified_and_similar="false" />
-    </entity>
-    
-    <entity name="CivSentinelGunboat" display_name="民用哨兵炮艇" skip_export="true" copy_from="SentinelGunboat"
-            tags="CivTechnologistMobile,CivMobile,CivMilitiaSpawn"
-            multiplier_to_all_costs="2" multiplier_to_all_healths="2" shield_points="0"
-            damage_multiplier_to_all_weapons="2"
-            multiplier_to_all_scales="2"
-    >
-    </entity>
-    <entity name="CivEtherjet" display_name="民用以太喷射机" skip_export="true" copy_from="Etherjet"
-            tags="CivTechnologistMobile,CivMobile,CivMilitiaSpawn"
-            multiplier_to_all_costs="2" multiplier_to_all_healths="2" shield_points="0"
-            damage_multiplier_to_all_weapons="2"
-            multiplier_to_all_scales="2"
-    >
-    </entity>
-    <entity name="CivTechnoBabbleTurret" display_name="民用技术胡话炮塔" skip_export="true" copy_from="PikeTurret"
-              tags="CivTechnologistTurret,CivTurret,CivMilitiaSpawn"
-			  tech_upgrades_that_benefit_me="Technologist,Turret"
-              description="提供中程快子和碰碰加农炮，以提供进攻用途。"
-              multiplier_to_all_costs="2" multiplier_to_all_healths="2" 
-              damage_multiplier_to_all_weapons="2"
-              multiplier_to_all_scales="2"
-      >
-      <system name="V1" max_mark_level_to_function="0"></system>
-      <system name="W1" display_name="碰碰加农炮"
-				category="Weapon" firing_timing="OnlyInRange"
-				damage_per_shot="350" range="AboveAverage3" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="true"
-				shot_type_data="PikeShot_Gold" cloaking_percent_loss_from_firing="0.1"
-				>
-      </system>
-      <system name="T" display_name="快子阵列"
-				category="Passive"
-				tachyon_points="50" tachyon_points_added_per_mark="25" tachyon_range="AboveAverage3" tachyon_hits_albedo_less_than="0.75"
-				>
-      </system>
-    </entity>
-	<entity name="Orchestrator" display_name="指挥家保护者" skip_export="true" copy_from="CarrierGuardian"
-                tags="CivTechnologistProtector,CivProtector,CivMilitiaSpawn"
-				armor_mm="180" albedo="0.6" engine_gx="25" mass_tx="25"	
-                description="强大的保护者，使用先进的科技技术建造。该舰生成诱饵无人机，加速所在星球上的友军舰船，并提供全星球范围的快子覆盖。"
-                hull_points="1000000" shield_points="500000"
-                tech_upgrades_that_benefit_me="Technologist,Medium"
-				fleet_design_template_i_use_for_drones="DecoyDrones"
-				drone_starting_behavior_type="Attacker_Full"	
-				allied_speed_multiplier="1.05"
-				allied_speed_multiplier_added_per_mark="0.05"
-				multiplier_to_all_scales="3"
-    >
-	<system name="T" display_name="指挥阵列"
-	    category="Passive" tachyon_points="100" tachyon_points_added_per_mark="50" 
-		tachyon_range="EssentiallyInfinite" tachyon_hits_albedo_less_than="0.75"></system>
-	<ship_class_data can_be_zombified_and_similar="false" />
-    </entity>
-</root>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!--    File contains stations and ships for the PlayerTrains faction.
+    -->
+	<!--    Beacon
+	        Can be Hacked to awaken the faction -->
+	<!--<entity skip_export="true" copy_from="MinorFactionBeacon" name="CivilianIndustryBeacon"
+            tags="Beacon,CivilianIndustryBeacon"
+            display_name="Enslaved 人类 Settlement"
+            description="AI在战争中俘虏了我们大量人口，并强迫他们劳作。
+			
+若我们成功入侵这座监狱，便能唤醒我们的民用工业。"
+			target_type_for_player="NeverTarget"
+	        eligible_for_hacks="PrepareCivilianEscape"
+        >
+	</entity>-->
+    <!--    The main station of our faction.
+            Auto builds on player homeworlds.
+            Builds Cargo Ships and Militia Construction Ships
+    -->
+    <entity name="GrandStation" display_name="中央站"
+            description="贸易的中心枢纽。如果被摧毁，民用经济将崩溃。可受经济/后勤指挥和工程科技升级。"
+            tags="CivilianIndustryEntity,GrandStation,CargoShipProducer,ShowsOnNormalDisplayMode"
+            visuals="assets/_finalgamemeshes/humanbuildings/spacedock/spacedock.prefab"
+            gimbal_name="AstroTrainStation"
+            icon_name="Ships1/AstroTrainStation" gimbal_icon_size_multiplier="1.5"
+            category="Ship"
+            visuals_scale_multiplier="12" size_scale="12" y_offset_of_icon="30"
+            collision_priority="810"
+            behavior="Stationary"
+            starting_mark_level="Mark1"
+            cost_for_ai_to_purchase="90000"
+            hull_points="5000000" shield_points="100000" speed="Immobile"
+            armor_mm="250" albedo="0.8" mass_tx="4"
+            metal_cost="50000" energy_consumption="10000"
+            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            voice_group="Silent"
+            priority_as_frd_target="MajorPlanetLevelObjective"
+            priority_as_ai_target="MajorPlanetLevelObjective"
+            priority_to_protect="MajorPlanetLevelObjective"
+            
+            tech_upgrades_that_benefit_me="CommandEconomic,CommandLogistical,Engineering"
+    >
+    </entity>
+    <!--    Trade stations.
+            Auto builds on non homeworld planets.
+            Resources are always inported or exported through this station.
+    -->
+    <entity name="TradeStation" display_name="贸易站" draw_in_galaxy_view="true"
+            description="该星球贸易的中心。可受经济和后勤指挥及金属产出科技升级。"
+            tags="CivilianIndustryEntity,TradeStation,ShowsOnNormalDisplayMode,CenterOfTrade"
+            visuals="assets/_finalgamemeshes/humanbuildings/spacedock/spacedock.prefab"
+            gimbal_name="AstroTrainStation"
+            icon_name="Ships1/AstroTrainStation" gimbal_icon_size_multiplier="1.5"
+            category="Ship"
+            visuals_scale_multiplier="7.5" size_scale="7.5" y_offset_of_icon="30"
+            collision_priority="810"
+            behavior="Stationary"
+            starting_mark_level="Mark1"
+            cost_for_ai_to_purchase="90000"
+            hull_points="150000" shield_points="25000" speed="Immobile"
+            armor_mm="250" albedo="0.8" mass_tx="4"
+            metal_cost="10000" energy_consumption="5000"
+            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            voice_group="Silent"
+            priority_as_frd_target="MajorPlanetLevelObjective"
+            priority_as_ai_target="MajorPlanetLevelObjective"
+            priority_to_protect="IgnoreMe"
+            
+            tech_upgrades_that_benefit_me="CommandEconomic,CommandLogistical,MetalGeneration"
+            description_appender_dll="SKCivilianIndustryBaseInfo"
+            description_appender_type="SKCivilianIndustry.TradeStationDescriptionAppender"
+            base_info_source="SKCivTradeStationOrPostPerUnitBaseInfo"
+    >
+    </entity>
+    <!--	Trade Posts
+                    Build by player-controlled Battlestations and Citadels
+                    Acts like partial-potency trade stations.
+    -->
+    <entity name="TradePost" display_name="贸易哨站" copy_from="TradeStation" tags="CivilianIndustryEntity,TradePost,CenterOfTrade" draw_in_galaxy_view="false"
+                build_sidebar_categories_i_am_part_of="MilitiaBuildings"
+                special_entity_type="NPCFactionCenterpiece"
+                description="由军方资助的贸易哨站。可受经济和后勤指挥及金属产出科技升级。"
+                hull_points="250000" shield_points="500000"
+                metal_cost="500000" energy_consumption="50000"
+                visuals_scale_multiplier="5" size_scale="5"
+                tech_upgrades_that_benefit_me="CommandEconomic,CommandLogistical,MetalGeneration"
+                base_info_source="SKCivTradeStationOrPostPerUnitBaseInfo"
+    >
+        <metal_flow purpose="SelfConstruction" throughput="250"/>
+    </entity>
+    <!--    Cargo ship.
+            Used to transfer resources between trade stations and the grand station.
+    -->
+    <entity name="CargoShip" display_name="货船" cannot_be_stacked="true"
+            description="一艘民用贸易船。负责在你的各星球之间运输资源。可受金属产出和轻型科技升级。"
+            tags="CivilianIndustryEntity,CargoShip,ShowsOnNormalDisplayMode"
+            visuals="assets/_finalgamemeshes/humanoddities/colonyship/colonyship.prefab"
+            icon_name="Ships1/ColonyShip"
+            gimbal_icon_size_multiplier="0.75"
+            size_scale="1"
+            visuals_scale_multiplier="1"
+            category="Ship"
+            y_offset_of_icon="10"
+            collision_priority="900"
+            starting_mark_level="Mark1"
+            cost_for_ai_to_purchase="90000"
+            hull_points="50000" shield_points="0" speed="Normal1"
+            metal_cost="5000" energy_consumption="0"
+            armor_mm="300" engine_gx="22" albedo="0.8" mass_tx="33"
+            voice_group="Starship"
+            ship_or_structure_explosion_sfx="ShipStarship_Explosion"
+            strength_multiplier="0"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            priority_as_ai_target="MinorResourceGeneration"
+            priority_as_frd_target="MinorResourceGeneration"
+            priority_to_protect="IgnoreMe"
+            
+            tech_upgrades_that_benefit_me="MetalGeneration,Light"
+            description_appender_dll="SKCivilianIndustryBaseInfo"
+            description_appender_type="SKCivilianIndustry.CargoShipDescriptionAppender"
+            base_info_source="SKCivCargoShipPerUnitBaseInfo"
+    >
+	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+    <!--    Militia Construction Ship.
+            Spawnt in response to hostlie threat.
+            Deploys into Outposts and Patrol Posts.
+    -->
+    <entity name="MilitiaConstructionShip" display_name="民兵工程船" skip_export="true" copy_from="AssaultFrigate" tags="MilitiaLeader,MilitiaConstructionShip,CivilianIndustryEntity"
+            hull_points="500000" shield_points="100000" speed="BelowAverage1" cannot_be_stacked="true"
+            description="一艘民兵船，携带着建造防御建筑所需的材料。可受工程和中型科技升级。"
+            description_appender_dll="SKCivilianIndustryBaseInfo"
+            description_appender_type="SKCivilianIndustry.MilitiaShipDescriptionAppender"
+            tech_upgrades_that_benefit_me="Engineering,Medium"
+            base_info_source="SKCivMilitiaPerUnitBaseInfo"
+    >
+        <system name="WL" range="Small5" max_mark_level_to_function="0" />
+        <system name="WW" range="Small5" max_mark_level_to_function="0" />
+	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+    <!--    Miltia outpost.
+            Built to fortify planets from hostile wormholes.
+    -->
+	<entity  name="MilitiaOutpost" tags="MilitiaLeader,MilitiaOutpost,CivilianIndustryEntity" npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+	    visuals="assets/_finalgamemeshes/buildings/fortress/fortressai.prefab" lod_distance_overrides="2000,16000"
+	    icon_name="Ships1/Fortress" gimbal_icon_size_multiplier="1.5"
+		y_offset_of_icon="35"
+		category="Ship"
+	    size_scale="9"
+		visuals_scale_multiplier="3"
+        collision_priority="800"
+	    display_name="民兵前哨"
+	    description="民兵舰队的核心。为应对相邻星球上的 AI 威胁而建造。请求资源以建造固定防御工事。可受要塞和军事指挥科技升级。"
+	    behavior="Stationary"
+        is_major_ai_structure="true"
+		starting_mark_level="Mark1" max_mark_level="5"
+		cost_for_ai_to_purchase="3000"
+	    hull_points="500000" shield_points="1250000" speed="Immobile"
+		metal_cost="1500000" energy_consumption="50000"
+		armor_mm="300" albedo="0.7" mass_tx="7"
+		ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+		ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostMassive_Explosion"
+		voice_group="Turret"
+		is_reinforcement_location="true" always_is_ai_turret_spawn_point="true"
+        priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
+	    description_appender_dll="SKCivilianIndustryBaseInfo"
+		description_appender_type="SKCivilianIndustry.MilitiaShipDescriptionAppender"
+        base_info_source="SKCivMilitiaPerUnitBaseInfo"
+		tech_upgrades_that_benefit_me="Citadels,CommandMilitary"
+		>
+		<metal_flow purpose="SelfConstruction" throughput="700"/>
+		<system name="W1" display_name="堡垒聚变火箭"
+					category="Weapon" firing_timing="OnlyInRange"
+					damage_per_shot="1000" range="High1" shot_speed="Normal" rate_of_fire="Normal"
+					shots_per_salvo="30" fires_salvos_sequentially="false"
+					shot_type_data="FusionRocket"
+				>
+			<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="50" multiplier="2" />
+		</system>
+		<system name="W2" display_name="堡垒能量波"
+			  category="Weapon" firing_timing="OnlyInRange" shots_per_salvo="4"
+			  damage_per_shot="2750" range="High1" shot_speed="Normal" rate_of_fire="Low" fires_salvos_sequentially="true"
+			  shot_type_data="EnergyWave"
+				>
+			<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="6" />
+		</system>
+	</entity>
+    <!--    Militia Patrol Post
+            Built around mines on planets that still feel threatened after outpost placement.
+            Builds mobile fleets.
+    -->
+	<entity name="MilitiaPatrolPost" tags="MilitiaLeader,MilitiaPatrolPost,CivilianIndustryEntity" npc_ship_cap_type="SpecialThingsToAlwaysSeed"
+			visuals="Assets/_FinalGameMeshes/AIBuildings/GuardPosts/Stealth/GuardPostStealth.prefab" 
+			icon_name="Ships1/GuardPost" icon_overlay="Overlays2/GuardPost_Stealth" gimbal_icon_size_multiplier="1.4"
+			category="Ship"
+			size_scale="5" y_offset_of_icon="30"
+			visuals_scale_multiplier="13"
+			collision_priority="1000"
+		    display_name="民兵巡逻哨站" display_name_for_sidebar="民兵巡逻哨"
+			description="该星球 AI 守卫的存储结构，配备一门对新抵达者危险的激光加农炮。摧毁它将降低此地的最大增援容量。"
+			behavior="Stationary"
+			starting_mark_level="Mark1"
+			cost_for_ai_to_purchase="200"			
+			hull_points="250000" shield_points="750000" speed="Immobile"
+			metal_cost="80000" energy_consumption="10000"
+			armor_mm="50" albedo="0.7" mass_tx="5"
+			voice_group="Silent"
+			ship_or_structure_explosion_sfx="Turret_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			
+            priority_as_ai_target="NormalGuardPost" priority_as_frd_target="NormalGuardPost" priority_to_protect="NormalGuardPost"
+			description_appender_dll="SKCivilianIndustryBaseInfo"
+            description_appender_type="SKCivilianIndustry.MilitiaShipDescriptionAppender"
+            base_info_source="SKCivMilitiaPerUnitBaseInfo"
+            tech_upgrades_that_benefit_me="Citadels,Sentries"
+			>
+    <system name="W1" display_name="激光 Pulse"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1200" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Misery"
+				shots_per_salvo="5" fires_salvos_sequentially="true"
+				shot_type_data="LaserPulse_DeepBlue" cloaking_percent_loss_from_firing="0.1"
+				>
+        <outgoing_damage_modifier based_on="TargetTimeAtPlanet" comparison_type="LessThan" compared_to="9" multiplier="6" />				
+    </system>
+	  <system name="CD" display_name="隐形装置"
+				category="Passive" cloaking_points="2000" cloaking_points_added_per_mark="1000"
+				>
+    </system>	
+  </entity>
+	<!--	Advanced Militia Shipyards
+			Built around trade stations after all outposts and patrol posts have been built.
+			Requests large amounts of resources to build powerful Protector ships.
+	-->
+	<entity name="AdvancedCivilianShipyard" display_name="高级民用船坞" display_name_for_sidebar="高级民用船坞"
+            description="请求资源以建造强大的保护者单位。必须保持存活才能使保护者单位正常工作。"
+            tags="CivilianIndustryEntity,AdvancedCivilianShipyard,BuildsProtectors,MilitiaLeader,ShowsOnNormalDisplayMode"
+            visuals="assets/_finalgamemeshes/humanbuildings/spacedock/spacedock.prefab"
+			icon_name="Ships1/SpaceDock" gimbal_icon_size_multiplier="1.5"
+            category="Ship"
+            visuals_scale_multiplier="7.5" size_scale="7.5" y_offset_of_icon="30"
+            collision_priority="810"
+            behavior="Stationary"
+            starting_mark_level="Markless"
+            cost_for_ai_to_purchase="90000"
+            hull_points="150000" shield_points="25000" speed="Immobile"
+            armor_mm="250" albedo="0.8" mass_tx="4"
+            metal_cost="10000" energy_consumption="5000"
+            ship_or_structure_explosion_sfx="ShipLostMassive_Explosion"
+            ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
+            ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
+            voice_group="Silent"
+            priority_as_frd_target="MajorPlanetLevelObjective"
+            priority_as_ai_target="MajorPlanetLevelObjective"
+            priority_to_protect="IgnoreMe"
+            
+            tech_upgrades_that_benefit_me="CommandEconomic,CommandLogistical,MetalGeneration"
+            description_appender_dll="SKCivilianIndustryBaseInfo"
+		    description_appender_type="SKCivilianIndustry.MilitiaShipDescriptionAppender"
+		    base_info_source="SKCivMilitiaPerUnitBaseInfo"
+    >
+    </entity>
+    <!--    Militia Headquarters
+            Built by player controlled Battlestations and Citadels
+            Builds mobile fleets.
+    -->
+	<entity name="MilitiaHeadquarters" tags="MilitiaLeader,MilitiaHeadquarters,CivilianIndustryEntity"
+			special_entity_type="NPCFactionCenterpiece"
+			visuals="Assets/_FinalGameMeshes/AIBuildings/GuardPosts/Forcefield/GuardPostForcefield.prefab"
+			icon_name="Ships1/GuardPost" icon_overlay="Overlays2/GuardPost_Shield" gimbal_icon_size_multiplier="1.4"
+			category="Ship"
+			size_scale="5" y_offset_of_icon="30"
+			visuals_scale_multiplier="13"
+			collision_priority="1000"
+			display_name="民兵总部" display_name_for_sidebar="民兵总部"
+            description="由军方资助的大型民兵舰队的核心。请求资源以建造机动部队来支援建造它的要塞或堡垒。可受堡垒和力场科技升级。"			behavior="Stationary"
+			shield_size_scale="5" my_forcefield_has_no_penalty_for_enemies_firing_out_of_it="true"
+			starting_mark_level="Mark1"
+			cost_for_ai_to_purchase="200"
+			hull_points="500000" shield_points="1250000" metal_cost="1000000" energy_consumption="100000"
+			speed="Immobile"
+			armor_mm="85" albedo="0.4" mass_tx="5"
+			voice_group="Silent"
+			ship_or_structure_explosion_sfx="Turret_Explosion"
+			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
+			
+            priority_as_ai_target="ShieldGenerator" priority_as_frd_target="NotDangerous" priority_to_protect="NormalGuardPost"
+			build_sidebar_categories_i_am_part_of="MilitiaBuildings"
+            description_appender_dll="SKCivilianIndustryBaseInfo"
+		    description_appender_type="SKCivilianIndustry.MilitiaShipDescriptionAppender"
+		    base_info_source="SKCivMilitiaPerUnitBaseInfo"
+            tech_upgrades_that_benefit_me="Citadels,Forcefields"
+			>
+		<metal_flow purpose="SelfConstruction" throughput="250"/>
+		<system name="W1" display_name="激光 Pulse"
+					category="Weapon" firing_timing="OnlyInRange"
+					damage_per_shot="2000" range="Normal6" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="true"
+					shot_type_data="LaserPulse_DeepBlue"
+				>
+		</system>
+	</entity>
+	<!--	Militia Protector Shipyards
+			Built by player controlled Battlestations and Citadels
+			Builds powerful Protector ships for the Battlestation
+	-->
+	<entity	name="MilitiaProtectorShipyards" display_name="民兵保护者船坞" skip_export="true" copy_from="MilitiaHeadquarters" display_name_for_sidebar="民兵保护者船坞"
+			tags="MilitiaLeader,MilitiaProtectorShipyards,BuildsProtectors,CivilianIndustryEntity"
+			metal_cost="3000000" energy_consumption="150000"
+			description="由军方资助的强大民兵舰队的核心。请求大量资源以建造强大的保护者单位来支援建造它的要塞或堡垒。可受堡垒和力场科技升级。"
+			special_entity_type="NPCFactionCenterpiece"
+            build_sidebar_categories_i_am_part_of="MilitiaBuildings"
+            description_appender_dll="SKCivilianIndustryBaseInfo"
+            description_appender_type="SKCivilianIndustry.MilitiaShipDescriptionAppender"
+            base_info_source="SKCivMilitiaPerUnitBaseInfo"
+            tech_upgrades_that_benefit_me="Citadels,Forcefields"
+            absolute_max_cap_when_in_fleets="1">
+			<metal_flow purpose="SelfConstruction" throughput="250"/>
+	</entity>
+    <!--    Militia Barracks
+            Manually placed by the player.
+            Default 1 per planet, boosts the capacity of all turret/ship building militia buildings on the planet by 33%
+    -->
+    <entity name="MilitiaBarracks" display_name="民兵兵营" skip_export="true" copy_from="TradeStation" tags="MilitiaLeader,MilitiaBarracks,CivilianIndustryEntity"
+            special_entity_type="NPCFactionCenterpiece"
+            visuals="assets/_finalgamemeshes/humanbuildings/spacedock/spacedock.prefab"
+            build_sidebar_categories_i_am_part_of="MilitiaBuildings"
+            description="该区域地方防御力量的焦点。使本星球和相邻星球上民兵建筑的炮塔和单位容量提升 15% + 每标记等级 5%，或固定提升 1，取较大值。可受指挥科技升级。"
+            metal_cost="5000000" energy_consumption="200000" absolute_max_cap_when_in_fleets="1"
+			tech_upgrades_that_benefit_me="CommandEconomic,CommandLogistical,CommandMilitary"
+    >
+        <metal_flow purpose="SelfConstruction" throughput="250"/>
+    </entity>
+    <!--    Ships and turrets spawnt by the militia part of the faction.
+    -->
+    <entity name="CivSniper" display_name="民用狙击手" skip_export="true" copy_from="Sniper"
+            tags="CivAmbushMobile,CivMobile,CivMilitiaSpawn"
+            multiplier_to_all_costs="2" multiplier_to_all_healths="2" shield_points="0"
+            damage_multiplier_to_all_weapons="2"
+            multiplier_to_all_scales="2"
+    >
+    </entity>
+    <entity name="CivRaptor" display_name="民用猛禽" skip_export="true" copy_from="Raptor"
+            tags="CivAmbushMobile,CivMobile,CivMilitiaSpawn"
+            multiplier_to_all_costs="2" multiplier_to_all_healths="2" shield_points="0"
+            damage_multiplier_to_all_weapons="2"
+            multiplier_to_all_scales="2"
+    >
+    </entity>
+    <entity name="CivAmbushTurret" display_name="民用伏击炮塔" skip_export="true" copy_from="AmbushTurret"
+            tags="CivAmbushTurret,CivTurret,CivMilitiaSpawn"
+            multiplier_to_all_costs="2" multiplier_to_all_healths="2" 
+            damage_multiplier_to_all_weapons="2"
+            multiplier_to_all_scales="2"
+    >
+    </entity>
+    <entity name="CrackerJack" display_name="巧手保护者" skip_export="true" copy_from="RaidFrigate"
+                tags="CivAmbushProtector,CivProtector,CivMilitiaSpawn"
+				armor_mm="180" albedo="0.6" engine_gx="25" mass_tx="25"	
+                description="强大的保护者，使用先进的伏击技术建造。该舰善于消灭最近抵达所在星球的一切部队。"
+                hull_points="1000000" shield_points="500000"
+                tech_upgrades_that_benefit_me="Ambush,Medium"
+				multiplier_to_all_scales="4" 
+    >
+        <system name="W1" display_name="巧手弹"
+                        category="Weapon" firing_timing="OnlyInRange" shots_per_salvo="15" fires_salvos_sequentially="true"
+                        damage_per_shot="1000" range="Normal3" shot_speed="Fast" rate_of_fire="High"
+                        shot_type_data="FusionBolt"
+                        base_percent_damage_bypasses_personal_shields="0.75"
+        >
+          <outgoing_damage_modifier based_on="TargetTimeAtPlanet" comparison_type="LessThan" compared_to="60" multiplier="5" />
+        </system>
+		<system name="W3" display_name="引擎劫持器"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="100" range="Normal3" shot_speed="Normal" rate_of_fire="Misery"
+				shots_per_salvo="5" fires_salvos_sequentially="false"
+				shot_type_data="HeavyBeamInvisible"
+				beam_length_multiplier="1.3" beam_weapon_visual_style="Laser_Red"
+				hits_all_intersecting_targets="true"
+				shots_detonate_immediately="true"
+				maximum_number_of_targets_hit_per_shot="5"
+				base_engine_stun_per_shot="1" 
+                engine_stun_to_engine_gx_less_than="18"
+				max_engine_stun_seconds="3" added_target_evaluator="EngineDamageAsMinorPart"
+				>
+		</system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+    
+    <entity name="CivConcussionCorvette" display_name="民用震荡护卫舰" skip_export="true" copy_from="ConcussionCorvette"
+            tags="CivConcussionMobile,CivMobile,CivMilitiaSpawn"
+            multiplier_to_all_costs="2" multiplier_to_all_healths="2" shield_points="0"
+            damage_multiplier_to_all_weapons="2"
+            multiplier_to_all_scales="2"
+    >
+    </entity>
+    <entity name="CivSiegeFrigate" display_name="民用攻城星舰" skip_export="true" copy_from="SiegeFrigate"
+            tags="CivConcussionMobile,CivMobile,CivMilitiaSpawn"
+            multiplier_to_all_costs="2" multiplier_to_all_healths="2" shield_points="0"
+            damage_multiplier_to_all_weapons="2"
+            multiplier_to_all_scales="2"
+    >
+    </entity>
+    <entity name="CivConcussionTurret" display_name="民用震荡炮塔" skip_export="true" copy_from="ConcussionTurret"
+            tags="CivConcussionTurret,CivTurret,CivMilitiaSpawn"
+            multiplier_to_all_costs="2" multiplier_to_all_healths="2" 
+            damage_multiplier_to_all_weapons="2"
+            multiplier_to_all_scales="2"
+    >
+    </entity>
+    <entity name="Thunderstrike" display_name="雷霆打击保护者" skip_export="true" copy_from="SiegeFrigate"
+                tags="CivConcussionProtector,CivProtector,CivMilitiaSpawn"
+				armor_mm="180" albedo="0.6" engine_gx="25" mass_tx="25"	
+                description="强大的保护者，使用先进的震荡技术建造。该舰擅长用强力范围击退来分散敌军，并粉碎低装甲目标。"
+                hull_points="1000000" shield_points="500000"
+                tech_upgrades_that_benefit_me="Concussion,Light"
+				multiplier_to_all_scales="2"
+    >
+        <system name="W1" display_name="雷霆鱼雷"
+                        category="Weapon" firing_timing="OnlyInRange"
+                        damage_per_shot="24000" range="AboveAverage3" shot_speed="Slow" rate_of_fire="Misery" fires_salvos_sequentially="true"
+                        shot_type_data="PlasmaTorpedoAOEBurstAtEnd"
+                        area_of_effect_size="2000"
+                        base_knockback_per_shot="5000" added_knockback_per_shot_per_mark="500" knockback_to_ships_mass_tx_less_than="5"
+                        aoe_spreads_damage_among_available_targets="true"
+        >
+        </system>
+		<system name="W2" display_name="风暴者"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="1000" range="High2" shot_speed="Normal" rate_of_fire="Misery"
+				shot_type_data="GuidedMissile" shots_per_salvo="10" fires_salvos_sequentially="false"
+				>
+			<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="50" multiplier="4" />
+		</system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+
+    <entity name="CivPikeCorvette" display_name="民用长矛护卫舰" skip_export="true" copy_from="PikeCorvette"
+            tags="CivDisruptiveMobile,CivMobile,CivMilitiaSpawn"
+            multiplier_to_all_costs="2" multiplier_to_all_healths="2" shield_points="0"
+            damage_multiplier_to_all_weapons="2"
+            multiplier_to_all_scales="2"
+    >
+    </entity>
+    <entity name="CivAgravicPod" display_name="民用反重力舱" skip_export="true" copy_from="AgravicPod" display_name_for_sidebar="民用反重力舱"
+            tags="CivDisruptiveMobile,CivMobile,CivMilitiaSpawn"
+            multiplier_to_all_costs="2" multiplier_to_all_healths="2" shield_points="0"
+            damage_multiplier_to_all_weapons="2"
+            multiplier_to_all_scales="2"
+    >
+    </entity>
+    <entity name="CivPikeTurret" display_name="民用长矛炮塔" skip_export="true" copy_from="PikeTurret"
+            tags="CivDisruptiveTurret,CivTurret,CivMilitiaSpawn"
+            multiplier_to_all_costs="2" multiplier_to_all_healths="2" 
+            damage_multiplier_to_all_weapons="2"
+            multiplier_to_all_scales="2"
+    >
+    </entity>
+    <entity name="Paladin" display_name="圣骑士保护者" skip_export="true" copy_from="ForcefieldFrigate"
+                tags="CivDisruptiveProtector,CivProtector,CivMilitiaSpawn"
+				armor_mm="180" albedo="0.6" engine_gx="25" mass_tx="25"	
+                description="强大的保护者，使用先进的干扰技术建造。该舰以其强力减益效果、坚固力场和自愈能力成为保护盟友的终极利器。"
+                hull_points="500000" shield_points="1500000" shield_size_scale="6" my_forcefield_does_not_shrink="true"
+                tech_upgrades_that_benefit_me="Disruptive,Heavy"
+				multiplier_to_all_scales="2"
+    >
+        <system name="WW" damage_per_shot="160" rate_of_fire="Devourer" shots_per_salvo="32" range="AboveAverage3" fires_salvos_sequentially="true" display_name="虹吸压制加特林"
+                base_enemy_weapon_reload_slowing_seconds_per_shot="2" added_enemy_weapon_reload_slowing_seconds_per_shot_per_mark="1" enemy_weapon_reload_slowing_to_armor_mm_less_than="80" max_enemy_weapon_reload_slowing_seconds="10" added_target_evaluator="WeaponJamAsPrimary" health_change_per_damage_dealt="5"/>	
+        <system name="T" display_name="牵引光束"
+                category="Passive"
+                tractor_range="AboveAverage1" tractor_count="75" tractor_count_added_per_mark="25" tractor_hits_albedo_less_than="0.5" tractor_hits_engine_gx_less_than="15"/>
+	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+
+    <entity name="CivPulsarTank" display_name="民用脉冲坦克" skip_export="true" copy_from="PulsarTank" display_name_for_sidebar="民用脉冲坦克"
+            tags="CivFusionMobile,CivMobile,CivMilitiaSpawn"
+            multiplier_to_all_costs="2" multiplier_to_all_healths="2" shield_points="0"
+            damage_multiplier_to_all_weapons="2"
+            multiplier_to_all_scales="2"
+    >
+    </entity>
+    <entity name="CivAssaultFrigate" display_name="民用 突击星舰" skip_export="true" copy_from="AssaultFrigate"
+            tags="CivFusionMobile,CivMobile,CivMilitiaSpawn"
+            multiplier_to_all_costs="2" multiplier_to_all_healths="2" shield_points="0"
+            damage_multiplier_to_all_weapons="2"
+            multiplier_to_all_scales="2"
+    >
+    </entity>
+    <entity name="CivMLRSTurret" display_name="民用多管火箭炮塔" skip_export="true" copy_from="MLRSTurret"
+            tags="CivFusionTurret,CivTurret,CivMilitiaSpawn"
+            multiplier_to_all_costs="2" multiplier_to_all_healths="2" 
+            damage_multiplier_to_all_weapons="2"
+            multiplier_to_all_scales="2"
+    >
+    </entity>
+    <entity name="BrickBreaker" display_name="碎砖者保护者" skip_export="true" copy_from="AssaultFrigate"
+                tags="CivFusionProtector,CivProtector,CivMilitiaSpawn"
+				armor_mm="180" albedo="0.6" engine_gx="25" mass_tx="25"	
+                description="强大的保护者，使用先进的聚变技术建造。该舰善于摧毁大型敌方单位。"
+                hull_points="1000000" shield_points="500000"
+                tech_upgrades_that_benefit_me="Fusion,Heavy"
+				multiplier_to_all_scales="2"
+    >
+        <system name="W1" display_name="砖头炸弹"
+                category="Weapon" firing_timing="OnlyInRange"
+                damage_per_shot="15000" range="VeryTiny1" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="true"
+                shot_type_data="FusionBomb"	
+                base_percent_damage_bypasses_personal_shields="0"
+        >
+            <outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtLeast" compared_to="90" multiplier="4" />
+            <outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="4" />
+            <outgoing_damage_modifier based_on="Albedo" comparison_type="AtLeast" compared_to="0.7" multiplier="4" />
+        </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+    
+    <entity name="CivVWing" display_name="民用V翼" skip_export="true" copy_from="VWing"
+            tags="CivGeneralistMobile,CivMobile,CivMilitiaSpawn"
+            multiplier_to_all_costs="2" multiplier_to_all_healths="2" shield_points="0"
+            damage_multiplier_to_all_weapons="2"
+            multiplier_to_all_scales="2"
+    >
+    </entity>
+    <entity name="CivAutocannonMinipod" display_name="民用机炮迷你舱" skip_export="true" copy_from="AutocannonMinipod"
+            tags="CivGeneralistMobile,CivMobile,CivMilitiaSpawn"
+            multiplier_to_all_costs="2" multiplier_to_all_healths="2" shield_points="0"
+            damage_multiplier_to_all_weapons="2"
+            multiplier_to_all_scales="2"
+    >
+    </entity>
+    <entity name="CivTritiumSniperTurret" display_name="民用氚狙击炮塔" skip_export="true" copy_from="TritiumSniperTurret"
+            tags="CivGeneralistTurret,CivTurret,CivMilitiaSpawn"
+            multiplier_to_all_costs="2" multiplier_to_all_healths="2" 
+            damage_multiplier_to_all_weapons="2"
+            multiplier_to_all_scales="2"
+    >
+    </entity>
+	<entity name="Hurricane" display_name="飓风保护者" skip_export="true" copy_from="TritiumSniperFrigate"
+                tags="CivGeneralistProtector,CivProtector,CivMilitiaSpawn"
+				armor_mm="180" albedo="0.6" engine_gx="25" mass_tx="25"	
+                description="强大的保护者，使用先进的通用技术建造。该舰提供广域重力发生器以及强力速射狙击弹。"
+                hull_points="1000000" shield_points="500000"
+                tech_upgrades_that_benefit_me="Generalist,Light"
+				multiplier_to_all_scales="2"
+    >
+	<system name="W1" display_name="飓风轨道炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="800" range="EssentiallyInfinite" shot_speed="VeryFast" rate_of_fire="Misery"
+				shots_per_salvo="8" fires_salvos_sequentially="false"
+				shot_type_data="ExtremeLongRangeRailgun"				
+				>
+		<outgoing_damage_modifier based_on="AttackDistance" comparison_type="MultiplesOf" compared_to="6000" multiplier="1" />
+    </system>
+	<system name="G" display_name="风暴核心"
+				category="Passive"
+				base_gravity_speed_multiplier="0.81" subtracted_gravity_speed_multiplier_per_mark="0.01" gravity_hits_engine_gx_less_than="14" gravity_range="ExtremelyHigh"
+				>
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+    
+    <entity name="CivVampireClaw" display_name="民用吸血鬼之爪" skip_export="true" copy_from="VampireClaw"
+            tags="CivMeleeMobile,CivMobile,CivMilitiaSpawn"
+            multiplier_to_all_costs="2" multiplier_to_all_healths="2" shield_points="0"
+            damage_multiplier_to_all_weapons="2"
+            multiplier_to_all_scales="2"
+    >
+    </entity>
+    <entity name="CivMetabolizingGangsaw" display_name="民用代谢链锯" skip_export="true" copy_from="MetabolizingGangsaw"
+            tags="CivMeleeMobile,CivMobile,CivMilitiaSpawn"
+            multiplier_to_all_costs="2" multiplier_to_all_healths="2" shield_points="0"
+            damage_multiplier_to_all_weapons="2"
+            multiplier_to_all_scales="2"
+    >
+    </entity>
+    <entity name="CivKineticSpikeTurret" display_name="民用动能尖刺炮塔" skip_export="true" copy_from="EnsnarerFortifiedTeslaTurret"
+            tags="CivMeleeTurret,CivTurret,CivMilitiaSpawn"
+            description="一个极其简化的炮塔，配有一道牵引光束和一枚穿透所有护盾的动能尖刺弹。"
+			tech_upgrades_that_benefit_me="Melee,Turret"
+            multiplier_to_all_costs="2" multiplier_to_all_healths="2" 
+            damage_multiplier_to_all_weapons="2"
+            multiplier_to_all_scales="2"
+    >
+      <system name="Q1" max_mark_level_to_function="0"></system>
+      <system name="W1" display_name="动能尖刺"
+				  category="Weapon" firing_timing="OnlyInRange"
+				  damage_per_shot="5000" range="Normal2" shot_speed="Normal" rate_of_fire="Misery" fires_salvos_sequentially="true"
+				  shot_type_data="ArmorPiercingShell"	
+				  base_percent_damage_bypasses_personal_shields="1"
+				  >
+          <outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtLeast" compared_to="90" multiplier="3" />
+      </system>
+      <system name="T" tractor_count="1" tractor_count_added_per_mark="0" tractor_hits_albedo_less_than="0.5" tractor_hits_engine_gx_less_than="10"
+				>
+      </system>
+    </entity>
+	<entity name="Excalibur" display_name="圣剑保护者" skip_export="true" copy_from="VampireClaw" npc_ship_cap_type="FrigatesAndGuardians"
+                tags="CivMeleeProtector,CivProtector,CivMilitiaSpawn" icon_overlay="Overlays1/Starship_Assault"
+				armor_mm="180" albedo="0.6" engine_gx="25" mass_tx="25"	
+                description="强大的保护者，使用先进的近战技术建造。该舰移动缓慢但极其坚固，能牵引数量惊人的敌方目标。"
+                hull_points="1000000" shield_points="500000"
+                tech_upgrades_that_benefit_me="Melee,Heavy"
+				is_strikecraft="false" speed="BelowAverage1"
+				multiplier_to_all_scales="15" multiplier_to_all_costs="100"
+    >
+	<system name="W2" display_name="远程剑刃"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="5000" shots_per_salvo="50" range="Small1" shot_speed="Fast" rate_of_fire="Misery" fires_salvos_sequentially="false"
+				shot_type_data="MeleeInvisible" added_target_evaluator="Melee"
+				health_change_per_damage_dealt="0"
+				>
+    </system>
+	<system name="C" display_name="隐形装置" max_mark_level_to_function="0" >
+    </system>
+	<system name="T" display_name="牵引刀刃"
+				category="Passive"
+				tractor_range="Tiny2" tractor_count="150" tractor_count_added_per_mark="30" tractor_hits_albedo_less_than="0.5" tractor_hits_engine_gx_less_than="18"
+				>
+    </system>
+	<incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="2000" multiplier="0.05" />
+	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+    
+    <entity name="CivRaider" display_name="民用突击者" skip_export="true" copy_from="Raider"
+            tags="CivRaidMobile,CivMobile,CivMilitiaSpawn"
+            multiplier_to_all_costs="2" multiplier_to_all_healths="2" shield_points="0"
+            damage_multiplier_to_all_weapons="2"
+            multiplier_to_all_scales="2"
+    >
+    </entity>
+    <entity name="CivRaidFrigate" display_name="民用突袭星舰" skip_export="true" copy_from="RaidFrigate"
+            tags="CivRaidMobile,CivMobile,CivMilitiaSpawn"
+            multiplier_to_all_costs="2" multiplier_to_all_healths="2" shield_points="0"
+            damage_multiplier_to_all_weapons="2"
+            multiplier_to_all_scales="2"
+    >
+    </entity>
+    <entity name="CivBlitzCannonTurret" display_name="民用闪击加农炮塔" skip_export="true" copy_from="TritiumSniperTurret"
+            tags="CivRaidTurret,CivTurret,CivMilitiaSpawn"
+            description="从任意距离猛烈轰击高血量单位的船体。"
+			tech_upgrades_that_benefit_me="Raid,Turret"
+            multiplier_to_all_costs="2" multiplier_to_all_healths="2" 
+            damage_multiplier_to_all_weapons="2"
+            multiplier_to_all_scales="2"
+    >
+      <system name="Q9" max_mark_level_to_function="0"></system>
+      <system name="W1" display_name="闪击加农炮"
+				  category="Weapon" firing_timing="OnlyInRange"
+				  damage_per_shot="125" range="EssentiallyInfinite" shot_speed="VeryFast" rate_of_fire="Normal" fires_salvos_sequentially="true"
+				  shot_type_data="ExtremeLongRangeRailgun" cloaking_percent_loss_from_firing="0.1" base_percent_damage_bypasses_personal_shields="0.5"
+				  >
+          <outgoing_damage_modifier based_on="CurrentHullPercentage" applies_to="HullOnly" comparison_type="AtLeast" compared_to="75" multiplier="5" />
+      </system>
+    </entity>
+	<entity name="GrimReaper" display_name="死神保护者" skip_export="true" copy_from="RaidFrigate"
+                tags="CivRaidProtector,CivProtector,CivMilitiaSpawn"
+				armor_mm="180" albedo="0.6" engine_gx="25" mass_tx="25"	
+                description="强大的保护者，使用先进的突袭技术建造。该舰善于击杀较弱单位以激发其狂怒。"
+                hull_points="1000000" shield_points="500000"
+                tech_upgrades_that_benefit_me="Raid,Medium"
+				multiplier_to_all_scales="4"
+    >
+	<system name="V6" display_name="死神弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="3000" range="Normal3" shots_per_salvo="5" shot_speed="Fast" rate_of_fire="Devourer" fires_salvos_sequentially="false"
+				shot_type_data="FusionBolt"
+				base_percent_damage_bypasses_personal_shields="0"
+				health_change_per_damage_dealt="5"
+				>
+				<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="50" multiplier="4" />
+				<outgoing_damage_modifier based_on="mass_tx" comparison_type="AtMost" compared_to="2" multiplier="4" />
+				<outgoing_damage_modifier based_on="Albedo" comparison_type="AtMost" compared_to="0.3" multiplier="4" />
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+    
+    <entity name="CivInhibitingTeslaCorvette" display_name="民用抑制特斯拉护卫舰" skip_export="true" copy_from="InhibitingTeslaCorvette"
+            tags="CivSplashMobile,CivMobile,CivMilitiaSpawn"
+            multiplier_to_all_costs="2" multiplier_to_all_healths="2" shield_points="0"
+            damage_multiplier_to_all_weapons="2"
+            multiplier_to_all_scales="2"
+    >
+    </entity>
+    <entity name="CivGrenadeLauncherCorvette" display_name="民用榴弹发射器护卫舰" skip_export="true" copy_from="GrenadeLauncherCorvette"
+            tags="CivSplashMobile,CivMobile,CivMilitiaSpawn"
+            multiplier_to_all_costs="2" multiplier_to_all_healths="2" shield_points="0"
+            damage_multiplier_to_all_weapons="2"
+            multiplier_to_all_scales="2"
+    >
+    </entity>
+    <entity name="CivFortifiedTeslaTurret" display_name="民用强化特斯拉炮塔" skip_export="true" copy_from="FortifiedTeslaTurret"
+            tags="CivSplashTurret,CivTurret,CivMilitiaSpawn"
+            multiplier_to_all_costs="2" multiplier_to_all_healths="2" 
+            damage_multiplier_to_all_weapons="2"
+            multiplier_to_all_scales="2"
+    >
+    </entity>
+	<entity name="Wildfire" display_name="野火保护者" skip_export="true" copy_from="GrenadeLauncherCorvette" npc_ship_cap_type="FrigatesAndGuardians"
+                tags="CivSplashProtector,CivProtector,CivMilitiaSpawn"
+				armor_mm="180" albedo="0.6" engine_gx="25" mass_tx="25"	
+                description="强大的保护者，使用先进的溅射技术建造。该舰向敌方部队发射一连串缓慢移动的手榴弹。"
+                hull_points="1000000" shield_points="500000"
+                tech_upgrades_that_benefit_me="Splash,Light"
+				is_strikecraft="false" multiplier_to_all_scales="6" multiplier_to_all_costs="100"
+    >
+	<system name="WJ" display_name="防空手榴弹"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="8000" range="EssentiallyInfinite" shot_speed="Grenade" rate_of_fire="Normal" fires_salvos_sequentially="true"
+				shot_type_data="FlakShotAOEBurstAtEnd" shots_per_salvo="8"
+				area_of_effect_size="3200"
+				maximum_number_of_targets_hit_per_shot="8"
+				>
+				<outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="50" multiplier="5" />
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+
+    <entity name="CivSpider" display_name="民用蜘蛛" skip_export="true" copy_from="Spider"
+            tags="CivSubterfugeMobile,CivMobile,CivMilitiaSpawn"
+            multiplier_to_all_costs="2" multiplier_to_all_healths="2" shield_points="0"
+            damage_multiplier_to_all_weapons="2"
+            multiplier_to_all_scales="2"
+    >
+    </entity>
+    <entity name="CivWarbirdFrigate" display_name="民用战鸟星舰" skip_export="true" copy_from="WarbirdFrigate"
+            tags="CivSubterfugeMobile,CivMobile,CivMilitiaSpawn"
+            multiplier_to_all_costs="2" multiplier_to_all_healths="2" shield_points="0"
+            damage_multiplier_to_all_weapons="2"
+            multiplier_to_all_scales="2"
+    >
+      <system name="Q2" shots_per_salvo="4" damage_per_shot="2240"></system>
+    </entity>
+    <entity name="CivSpiderTurret" display_name="民用蜘蛛 炮塔" skip_export="true" copy_from="SpiderTurret"
+            tags="CivSubterfugeTurret,CivTurret,CivMilitiaSpawn"
+            multiplier_to_all_costs="2" multiplier_to_all_healths="2" 
+            damage_multiplier_to_all_weapons="2"
+            multiplier_to_all_scales="2"
+    >
+    </entity>
+	<entity name="Tangler" display_name="缠绕者保护者" skip_export="true" copy_from="WarbirdFrigate"
+                tags="CivSubterfugeProtector,CivProtector,CivMilitiaSpawn"
+				armor_mm="180" albedo="0.6" engine_gx="25" mass_tx="25"	
+                description="强大的保护者，使用先进的诡计技术建造。该舰能够快速蒸发移动中的单位并瘫痪其余的。"
+                hull_points="1000000" shield_points="500000"
+                tech_upgrades_that_benefit_me="Subterfuge,Light"
+				multiplier_to_all_scales="2"
+    >
+	<system name="W1" display_name="藤蔓穿刺者"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="7000" range="Normal4" shot_speed="VeryFast" rate_of_fire="Misery"
+				shots_per_salvo="14" fires_salvos_sequentially="false"				
+				shot_type_data="ParalysisProngedShot_Blue"				
+				>
+		<outgoing_damage_modifier based_on="CurrentSpeedIfMoving" comparison_type="AtLeast" compared_to="700" multiplier="7" />
+    </system>
+	<system name="Q2" display_name="藤蔓喷洒器"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="700" range="Tiny2" shot_speed="Normal" rate_of_fire="Normal"
+				shots_per_salvo="14" fires_salvos_sequentially="false"
+				shot_type_data="ParalysisProngedShot_Blue" added_target_evaluator="ParalyzerAsPrimary"
+				base_paralysis_seconds_per_shot="4" paralysis_to_ships_mass_tx_less_than="3" cloaking_percent_loss_from_firing="0.2"
+				>
+    </system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+    
+    <entity name="CivSentinelGunboat" display_name="民用哨兵炮艇" skip_export="true" copy_from="SentinelGunboat"
+            tags="CivTechnologistMobile,CivMobile,CivMilitiaSpawn"
+            multiplier_to_all_costs="2" multiplier_to_all_healths="2" shield_points="0"
+            damage_multiplier_to_all_weapons="2"
+            multiplier_to_all_scales="2"
+    >
+    </entity>
+    <entity name="CivEtherjet" display_name="民用以太喷射机" skip_export="true" copy_from="Etherjet"
+            tags="CivTechnologistMobile,CivMobile,CivMilitiaSpawn"
+            multiplier_to_all_costs="2" multiplier_to_all_healths="2" shield_points="0"
+            damage_multiplier_to_all_weapons="2"
+            multiplier_to_all_scales="2"
+    >
+    </entity>
+    <entity name="CivTechnoBabbleTurret" display_name="民用技术胡话炮塔" skip_export="true" copy_from="PikeTurret"
+              tags="CivTechnologistTurret,CivTurret,CivMilitiaSpawn"
+			  tech_upgrades_that_benefit_me="Technologist,Turret"
+              description="提供中程快子和碰碰加农炮，以提供进攻用途。"
+              multiplier_to_all_costs="2" multiplier_to_all_healths="2" 
+              damage_multiplier_to_all_weapons="2"
+              multiplier_to_all_scales="2"
+      >
+      <system name="V1" max_mark_level_to_function="0"></system>
+      <system name="W1" display_name="碰碰加农炮"
+				category="Weapon" firing_timing="OnlyInRange"
+				damage_per_shot="350" range="AboveAverage3" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="true"
+				shot_type_data="PikeShot_Gold" cloaking_percent_loss_from_firing="0.1"
+				>
+      </system>
+      <system name="T" display_name="快子阵列"
+				category="Passive"
+				tachyon_points="50" tachyon_points_added_per_mark="25" tachyon_range="AboveAverage3" tachyon_hits_albedo_less_than="0.75"
+				>
+      </system>
+    </entity>
+	<entity name="Orchestrator" display_name="指挥家保护者" skip_export="true" copy_from="CarrierGuardian"
+                tags="CivTechnologistProtector,CivProtector,CivMilitiaSpawn"
+				armor_mm="180" albedo="0.6" engine_gx="25" mass_tx="25"	
+                description="强大的保护者，使用先进的科技技术建造。该舰生成诱饵无人机，加速所在星球上的友军单位，并提供全星球范围的快子覆盖。"
+                hull_points="1000000" shield_points="500000"
+                tech_upgrades_that_benefit_me="Technologist,Medium"
+				fleet_design_template_i_use_for_drones="DecoyDrones"
+				drone_starting_behavior_type="Attacker_Full"	
+				allied_speed_multiplier="1.05"
+				allied_speed_multiplier_added_per_mark="0.05"
+				multiplier_to_all_scales="3"
+    >
+	<system name="T" display_name="指挥阵列"
+	    category="Passive" tachyon_points="100" tachyon_points_added_per_mark="50" 
+		tachyon_range="EssentiallyInfinite" tachyon_hits_albedo_less_than="0.75"></system>
+	<ship_class_data can_be_zombified_and_similar="false" />
+    </entity>
+</root>

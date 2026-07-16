@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
 	<!-- Partials -->
@@ -701,7 +701,7 @@
             copy_from="DiehardGuardPost"
             display_name="死硬派狂暴岗哨"
             display_name_for_sidebar="死硬派狂暴GP"
-            description="随船体损失更猛烈地重击附近舰船。略微提升所有友军伤害。死亡时加成增加。"
+            description="随船体损失更猛烈地重击附近单位。略微提升所有友军伤害。死亡时加成增加。"
 
             icon_overlay="Overlays2/Turret_Garnet"
 
@@ -748,7 +748,7 @@
 
             display_name="反舰队者"
             display_name_for_sidebar="反舰队者"
-            description="阻止敌方舰队在此行星上建造新舰船。"
+            description="阻止敌方舰队在此行星上建造新单位。"
 
             visuals="assets/_finalgamemeshes/aibuildings/blackholemachine/blackholemachine.prefab"
             icon_name="Ships2/SomethingPower"
@@ -882,7 +882,7 @@
 			tags="DiehardSupportStructureNastyPick"
 			display_name="死硬派放大器"
 			display_name_for_sidebar="死硬派放大器"
-			description="大幅提升此行星上友军舰船的伤害，略微提升速度。此变体在毁灭后仍会停留一段时间，提供比正常更高的加成。"
+			description="大幅提升此行星上友军单位的伤害，略微提升速度。此变体在毁灭后仍会停留一段时间，提供比正常更高的加成。"
 
 			hull_points="300000" 
 			shield_points="0"
@@ -899,7 +899,7 @@
 			tags="NormalPlanetNastyPick,DiehardSupportStructureNastyPick"
 			display_name="AI修理厂"
 			display_name_for_sidebar="AI修理厂"
-			description="从残骸和自身金属供应中生产翻新舰船。"
+			description="从残骸和自身金属供应中生产翻新单位。"
 			visuals="assets/_finalgamemeshes/aibuildings/blackholemachine/blackholemachine.prefab"
 			icon_name="Ships4/SomethingCog"
 			gimbal_icon_size_multiplier="1.75"
@@ -1651,7 +1651,7 @@
             collision_priority="400"
             display_name="死硬派工程守卫"
             display_name_for_sidebar="死硬派工程GU"
-            description="即使在战斗中也能修理AI舰船并产生谐波无人机。"
+            description="即使在战斗中也能修理AI单位并产生谐波无人机。"
             blocks_enemy_claim_flows="true"
             voice_group="Silent"
             starting_mark_level="Mark1"

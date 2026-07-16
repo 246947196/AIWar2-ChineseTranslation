@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 	<faction name="KaizersMarauders" team_center_color="c00563B" team_border_color="cFF5A36"
-		display_name="凯泽掠夺者" short_name="Kaizers" processing_group="KaizersMarauders"
+		display_name="凯泽掠夺者" short_name="掠夺者" processing_group="KaizersMarauders"
 		base_info_source="KaizersMarauderFactionInfo_Base"
 		deep_info_source="KaizersMarauderFactionInfo_Deep"
 		type="SpecialFaction"
@@ -23,7 +23,7 @@ Note that Kaizer is barred from spawning by default and must be enabled.
 		icon_name_for_lobby="Ships1/MarauderOutpost"
 		defeat_condition="HasNoStrength"
 	>
-		<custom_field name="Intensity" display_name="Intensity" description="How much of an impact are they likely to have on gameplay? 
+		<custom_field name="Intensity" display_name="强度" description="How much of an impact are they likely to have on gameplay? 
 		It's recommended to raise this from 5 with higher AI difficulties or with more factions.
 		At intensity 8+ the AI 戴森 Antagonize will regularly appear."
 			sort_group="200" setting_type="IntSlider" default="5" min="1" max="10"/>

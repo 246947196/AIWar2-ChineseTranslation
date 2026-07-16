@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
 	<entity name="DevourerAntagonizer"
@@ -16,7 +16,7 @@
 		display_name="吞噬者对抗装置"
 		display_name_for_sidebar="吞噬者 对抗"
 		description="AI 建造了一个设备，辐射出与吞噬者傀儡共振的能量。它似乎是一个持续的数据流，操纵着傀儡的传感系统，阻止其追击 AI，从而将其引向 AI 的敌人。
-如果我们不想面对一个吞掉我们所有舰船的巨型怪物，就应该摧毁这个设备。一旦被摧毁，吞噬者很可能会在接下来的一段时间内将之前的"主人"视为主要敌人。"
+如果我们不想面对一个吞掉我们所有单位的巨型怪物，就应该摧毁这个设备。一旦被摧毁，吞噬者很可能会在接下来的一段时间内将之前的"主人"视为主要敌人。"
 		behavior="Stationary"
 		starting_mark_level="Mark1"
 		cost_for_ai_to_purchase="100000"
@@ -48,7 +48,7 @@
 	<entity name="DevourerHunter_DirePlasmaGuardian" copy_from="DirePlasmaGuardian" tags="DevourerHunter_Tier0_Normal,AllDevourerHunters"
 		display_name_for_sidebar="DH 等离子 守卫"
 		override_faction_name="AI 吞噬者猎手" albedo="0.9" strength_multiplier="1.3"
-		description="非常强大的舰船，对单个目标造成高伤害，对力场伤害更高。AI 进行了一些仓促的改装，利用完美的辐射反射来偷袭吞噬者傀儡，并在刚抵达时减少伤害。作为射程和力场伤害降低的交换，其对所有护盾的输出得到了提升。"
+		description="非常强大的单位，对单个目标造成高伤害，对力场伤害更高。AI 进行了一些仓促的改装，利用完美的辐射反射来偷袭吞噬者傀儡，并在刚抵达时减少伤害。作为射程和力场伤害降低的交换，其对所有护盾的输出得到了提升。"
 		damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.5"
 	>
 		<system name="PlasmaTorpedo" range="Normal6"
@@ -62,7 +62,7 @@
 	<entity name="DevourerHunter_RoyalDirePlasmaGuardian" copy_from="RoyalDirePlasmaGuardian" tags="DevourerHunter_Tier0_Royal,AllDevourerHunters"
 		display_name_for_sidebar="DH 等离子 皇家守卫"
 		override_faction_name="AI 吞噬者猎手" albedo="0.9" strength_multiplier="1.3"
-		description="非常强大的舰船，对单个目标造成高伤害，对力场伤害更高。AI 进行了一些仓促的改装，利用完美的辐射反射来偷袭吞噬者傀儡，并在刚抵达时减少伤害。作为射程和力场伤害降低的交换，其对所有护盾的输出得到了提升。"
+		description="非常强大的单位，对单个目标造成高伤害，对力场伤害更高。AI 进行了一些仓促的改装，利用完美的辐射反射来偷袭吞噬者傀儡，并在刚抵达时减少伤害。作为射程和力场伤害降低的交换，其对所有护盾的输出得到了提升。"
 		damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.5"
 	>
 		<system name="PlasmaTorpedo" range="Normal6"
@@ -77,7 +77,7 @@
 	<entity name="DevourerHunter_DireNucleophilicGuardian" copy_from="DireNucleophilicGuardian" tags="DevourerHunter_Tier0_Normal,AllDevourerHunters"
 		display_name_for_sidebar="DH 亲核 守卫"
 		override_faction_name="AI 吞噬者猎手" albedo="0.9" strength_multiplier="1.4"
-		description="非常强大的舰船，对高能量使用的目标造成惊人的伤害。AI 进行了一些仓促的改装，利用完美的辐射反射来偷袭吞噬者傀儡，并在刚抵达时减少伤害。"
+		description="非常强大的单位，对高能量使用的目标造成惊人的伤害。AI 进行了一些仓促的改装，利用完美的辐射反射来偷袭吞噬者傀儡，并在刚抵达时减少伤害。"
 		damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.5"
 	>
 		<incoming_damage_modifier based_on="MyTimeAtPlanet" comparison_type="AtMost" compared_to="5" multiplier="0.5" />
@@ -86,7 +86,7 @@
 	<entity name="DevourerHunter_RoyalDireNucleophilicGuardian" copy_from="DireNucleophilicGuardian" tags="DevourerHunter_Tier0_Royal,AllDevourerHunters"
 		display_name_for_sidebar="DH 亲核 皇家守卫"
 		override_faction_name="AI 吞噬者猎手" albedo="0.9" strength_multiplier="1.4"
-		description="非常强大的舰船，对高能量使用的目标造成惊人的伤害。AI 进行了一些仓促的改装，利用完美的辐射反射来偷袭吞噬者傀儡，并在刚抵达时减少伤害。"
+		description="非常强大的单位，对高能量使用的目标造成惊人的伤害。AI 进行了一些仓促的改装，利用完美的辐射反射来偷袭吞噬者傀儡，并在刚抵达时减少伤害。"
 		damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.5"
 	>
 		<incoming_damage_modifier based_on="MyTimeAtPlanet" comparison_type="AtMost" compared_to="5" multiplier="0.5" />
@@ -111,7 +111,7 @@
 		override_faction_name="AI 吞噬者猎手" albedo="0.9" strength_multiplier="1.25"
 		fleet_design_template_i_use_for_drones="DevourerHunter_MaugrimDrones"
 		drone_starting_behavior_type="Stationary"
-		description="大型舰船，配备威力极高的光束武器，并发射大型无人机作为支援。AI 进行了一些改装，利用完美的辐射反射来偷袭吞噬者傀儡，并在刚抵达时减少伤害。"
+		description="大型单位，配备威力极高的光束武器，并发射大型无人机作为支援。AI 进行了一些改装，利用完美的辐射反射来偷袭吞噬者傀儡，并在刚抵达时减少伤害。"
 		damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.4"
 	>
 		<incoming_damage_modifier based_on="MyTimeAtPlanet" comparison_type="AtMost" compared_to="10" multiplier="0.4" />
@@ -246,7 +246,7 @@
 	<entity name="DevourerHunter_Thunderbird" copy_from="ExtragalacticThunderbird" tags="DevourerHunter_Tier3,AllDevourerHunters"
 		display_name_for_sidebar="DH 雷鸟"
 		override_faction_name="AI 吞噬者猎手" albedo="0.9" strength_multiplier="2"
-		description="大型指挥舰船，增强此星球上的盟友，同时使用大型特斯拉爆裂攻击横跨星球。AI 进行了广泛的改装，利用完美的辐射反射来偷袭吞噬者傀儡，并在刚抵达时减少伤害。其特斯拉爆裂加农炮只有大约四分之一的面积，但伤害翻倍。"
+		description="大型指挥单位，增强此星球上的盟友，同时使用大型特斯拉爆裂攻击横跨星球。AI 进行了广泛的改装，利用完美的辐射反射来偷袭吞噬者傀儡，并在刚抵达时减少伤害。其特斯拉爆裂加农炮只有大约四分之一的面积，但伤害翻倍。"
 		damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.2"
 	>
 		<system name="TeslaCoil" damage_per_shot="17000000" area_of_effect_size="1400" />
@@ -275,7 +275,7 @@
 	<entity name="DevourerHunter_PlanetCracker" copy_from="ExtragalacticPlanetCracker" tags="DevourerHunter_Tier4,AllDevourerHunters"
 		display_name_for_sidebar="DH 行星破碎者"
 		override_faction_name="AI 吞噬者猎手" albedo="0.9" strength_multiplier="3"
-		description="巨型舰船，配备能够歼灭甚至一些最强大舰船的武器。AI 进行了专门的改装，利用完美的辐射反射来偷袭吞噬者傀儡，并在刚抵达时减少伤害。其行星破碎者阵列已聚焦为一次强大的攻击，对超高质量目标造成大幅提升的伤害。作为交换，激光点防御的威力显著降低。"
+		description="巨型单位，配备能够歼灭甚至一些最强大单位的武器。AI 进行了专门的改装，利用完美的辐射反射来偷袭吞噬者傀儡，并在刚抵达时减少伤害。其行星破碎者阵列已聚焦为一次强大的攻击，对超高质量目标造成大幅提升的伤害。作为交换，激光点防御的威力显著降低。"
 		damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.1"
 	>
 		<system name="MassDriver" display_name="行星破碎者" damage_per_shot="1800000" shots_per_salvo="1"

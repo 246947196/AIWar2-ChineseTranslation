@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
     <faction name="FantasyUndead" 
     display_name="亡灵军团" short_name="亡灵" processing_group="FantasyUndead"
@@ -30,7 +30,7 @@
     display_name="天堂领域入侵" short_name="天堂领域" processing_group="FantasyHeavenlyRealmInvasion"
     base_info_source="FantasyHeavenBase" deep_info_source="FantasyHeavenDeep" team_center_color="cFFF8DC" team_border_color="c0095B6"
     type="SpecialFaction"
-    description="天堂领域已裁定该银河系需要净化。在清除所有邪恶的幌子下，它们将定期对行星发动打击以建立防御阵地，然后全力入侵。之后，它们将向银河系所有成员发布任务，只要这些任务未完成，它们就可以跃迁舰船来亲自完成。
+    description="天堂领域已裁定该银河系需要净化。在清除所有邪恶的幌子下，它们将定期对行星发动打击以建立防御阵地，然后全力入侵。之后，它们将向银河系所有成员发布任务，只要这些任务未完成，它们就可以跃迁单位来亲自完成。
 &lt;color=#f25e1c&gt;高/极高影响：&lt;/color&gt;天堂领域是一个比大多数派系都慢的派系，其机制依赖于临时的活动状态，在此期间它们会攻击敌人，其他时候则主要保持防御。"
 		ai_can_send_waves_against_this="true" 
 		can_use_spire_debris="false"

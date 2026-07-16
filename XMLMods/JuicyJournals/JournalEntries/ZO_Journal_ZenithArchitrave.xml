@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   <journal name="ZO_ZenithArchitrave_FirstFoundTerritory" sidebar_text="{FactionColor}天顶额枋：&lt;/color&gt;  首次探测到"
@@ -16,7 +16,7 @@
 
 远程传感器已经识别出一些有趣的新型天顶形态。它们似乎非常有领土意识，所以攻击它们的领土听起来像是会引发一场重大战争的好方法。
 
-额枋是来自另一个宇宙的一个强大天顶帝国的远征部队。向这个宇宙投射力量对它们来说非常昂贵，它们只会零星地这样做；去与其他额枋战斗，保卫自己，或在不频繁的扩张尝试中。在和平时期，无法存放在生成器内部的舰船会随时间缓慢 attrition，因为额枋无法负担维护它们。" />
+额枋是来自另一个宇宙的一个强大天顶帝国的远征部队。向这个宇宙投射力量对它们来说非常昂贵，它们只会零星地这样做；去与其他额枋战斗，保卫自己，或在不频繁的扩张尝试中。在和平时期，无法存放在生成器内部的单位会随时间缓慢 attrition，因为额枋无法负担维护它们。" />
 
     <journal name="ZO_ZenithArchitrave_AllExplored" sidebar_text="{FactionColor}天顶额枋：&lt;/color&gt;  找到了母星传送门"
            can_record_another_copy_if_already_recorded_in_this_campaign="false"
@@ -50,7 +50,7 @@
 
 指挥官，
 
-我们从 {FactionColor}天顶额枋&lt;/color&gt; 获取到一些新的能量信号。看起来是一些叫做先驱者的重要新舰船。
+我们从 {FactionColor}天顶额枋&lt;/color&gt; 获取到一些新的能量信号。看起来是一些叫做先驱者的重要新单位。
 
 虽然额枋通常似乎满足于仅保持其传送门周围的母星领土，但看起来有时它们会聚集足够的能量来尝试扩张。希望一旦先驱者被处理掉，它们会恢复平静。攻击它们新征服的行星有望比攻击它们的母星领土引起的反应要小。" />
 

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 	<entity name="RPSF_Transport_Factory" copy_from="TransportFlagship_Base"
 		thematic_groups="Human,Transport"
@@ -9,7 +9,7 @@
 		tech_upgrades_that_benefit_me="Engineering" 
 		display_name="工厂旗舰"
 		display_name_for_sidebar="工厂运输舰"
-		description="极快且相对耐久的旗舰，没有武器，主要用于快速穿梭舰队并在突袭攻击中保护它们。如果舰队旗舰在同一或相邻行星且缺少舰船，将自动生产替代品直接跃迁到该旗舰。"
+		description="极快且相对耐久的旗舰，没有武器，主要用于快速穿梭舰队并在突袭攻击中保护它们。如果舰队旗舰在同一或相邻行星且缺少单位，将自动生产替代品直接跃迁到该旗舰。"
 		boost_to_planetary_metal_production_if_have_been_here_and_non_crippled_for_x_time="0.9"
 		boost_to_planetary_energy_production_if_have_been_here_and_non_crippled_for_x_time="0.9"
 		fleet_leader_type="Transport" hacking_cost_for_other_fleet_leaders_of_same_type_to_become_me="7"

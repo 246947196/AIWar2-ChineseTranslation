@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   <journal name="DS_SpireSidekick_Introduction" sidebar_text="{FactionColor}尖塔助手&lt;/color&gt;：介绍"
 			can_record_another_copy_if_already_recorded_in_this_campaign="false"
 			text_replacement_related_faction_color="true"
 			text_replacement_related_planet="true"
-			full_text="尖塔助手的工作方式与陨落尖塔战役基本相同，但你只控制尖塔舰船。
+			full_text="尖塔助手的工作方式与陨落尖塔战役基本相同，但你只控制尖塔单位。
 
 你可以使用额外的建筑类型和更多外壳。尖塔助手比陨落尖塔强大得多，因此你可能需要调高难度。
 
-通过与AI战斗获得入侵点数；摧毁其指挥站是主要来源，以及击杀特定类型的AI舰船。" />
+通过与AI战斗获得入侵点数；摧毁其指挥站是主要来源，以及击杀特定类型的AI单位。" />
 
 </root>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
 	<entity name="PhotonTorpedo"
@@ -165,7 +165,7 @@
         visuals="Assets/_DLC3/Necromancer/_FlagshipBase/PaladinTransport.prefab" visuals_bundle="exp3_neinzul_abyss"
         visuals_scale_multiplier="32"
 
-        description="可能是因为这些黏液，但舰船卸载后准备战斗的速度比标准快得多。"
+        description="可能是因为这些黏液，但单位卸载后准备战斗的速度比标准快得多。"
       >
 </entity>
 -->
@@ -294,7 +294,7 @@
 
 		display_name="整流护卫舰"
 		display_name_for_sidebar="整流FFA"
-		description="用强大的闪电打击目标，连锁到附近目标造成较小伤害。高能量消耗的舰船受到最严重的打击。被摧毁时剧烈爆炸，伤害敌友双方。"
+		description="用强大的闪电打击目标，连锁到附近目标造成较小伤害。高能量消耗的单位受到最严重的打击。被摧毁时剧烈爆炸，伤害敌友双方。"
 		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Splash,Alien"
 
 		collision_priority="600"
@@ -663,7 +663,7 @@
 		collision_priority="100"
 
 		display_name="纳米撕裂者"
-		description="撕裂舰船，在身后留下纳米云。"
+		description="撕裂单位，在身后留下纳米云。"
 
 		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Melee,Alien"
 		
@@ -1034,7 +1034,7 @@
 		tags="IncludeInReclaimersOutpost"
 		special_entity_type="Cruiser"
 		icon_overlay="Overlays2/TemplarElite"
-		description="此圣殿护卫舰的致命一击将舰船转化为同盟仆从。我们不知道其原理，但至少确定不是宗教狂热。"
+		description="此圣殿护卫舰的致命一击将单位转化为同盟仆从。我们不知道其原理，但至少确定不是宗教狂热。"
 		starting_mark_level="Mark1"
 		tech_upgrades_that_benefit_me="Subterfuge,Alien"
 		>
@@ -1164,7 +1164,7 @@
 
 	display_name="耶塔·麦耶特"
 	display_name_for_sidebar="耶塔·麦耶特"
-	description="拉入舰船，然后牵引自身并抛射。"
+	description="拉入单位，然后牵引自身并抛射。"
 
 	starting_mark_level="Mark1"
 	tech_upgrades_that_benefit_me="Subterfuge,Alien"
@@ -1228,7 +1228,7 @@
 		collision_priority="500"
 		display_name="蝎子护卫舰"
 		display_name_for_sidebar="蝎子护卫舰"
-		description="专门拉近距离敌方舰船，逐一处理。"
+		description="专门拉近距离敌方单位，逐一处理。"
 		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Subterfuge,Alien"
 		cost_for_ai_to_purchase="1000" strength_multiplier="2"
 		hull_points="120000" shield_points="60000" speed="AboveAverage2"
@@ -2062,7 +2062,7 @@ plus metabolism -->
 			uses_large_health_bar="true"
 			display_name="原型战列巡洋舰"
 			display_name_for_sidebar="原型BC" aip_when_granted_by_hack="15"
-			description="这艘独特的舰船是新型外星武器的重要测试平台。其主炮稳定，但当需要击杀特定目标时，启用最合适的模块，尽管没有一个是完全调谐的，也会对本舰造成伤害。"
+			description="这艘独特的单位是新型外星武器的重要测试平台。其主炮稳定，但当需要击杀特定目标时，启用最合适的模块，尽管没有一个是完全调谐的，也会对本舰造成伤害。"
 			
             starting_mark_level="Mark1" 
             tech_upgrades_that_benefit_me="Alien" 
@@ -2382,7 +2382,7 @@ plus metabolism -->
         collision_priority="100"
 
         display_name="I翼"
-        description="使被击中的舰船变得不稳定。"
+        description="使被击中的单位变得不稳定。"
 
         starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Alien"
         
@@ -2433,7 +2433,7 @@ plus metabolism -->
         special_entity_type="None" 
         
         display_name="不稳定爆炸" 
-        description="受到不稳定性影响的舰船死亡时，在区域内造成伤害的爆炸。"
+        description="受到不稳定性影响的单位死亡时，在区域内造成伤害的爆炸。"
 
         visuals="assets/arcenbundle/other/wormhole.prefab"
         ship_skips_traditional_rendering="true"

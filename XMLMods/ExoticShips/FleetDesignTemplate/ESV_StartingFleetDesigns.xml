@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   <fleet_design name="ExS_BombSwarmFleet"
         display_name="炸弹蜂群舰队"
-        description="拥有大量可制造的飞弹，这支舰队可以同时歼灭结构和舰船，但消耗大量金属。如需额外火力，光束医疗护卫舰在工厂附近时还能帮助更快地建造舰船。"
+        description="拥有大量可制造的飞弹，这支舰队可以同时歼灭结构和单位，但消耗大量金属。如需额外火力，光束医疗护卫舰在工厂附近时还能帮助更快地建造单位。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >
@@ -29,7 +29,7 @@
 
   <fleet_design name="ExS_GuardFleet"
         display_name="守卫舰队"
-        description="由更坚韧和缓慢的舰船组成，这支舰队擅长持久战。抓钩护卫舰对付小型舰船，重型聚变轰炸机对付任何有护盾的目标，反过来可由支援发射器护卫舰保护和修复。"
+        description="由更坚韧和缓慢的单位组成，这支舰队擅长持久战。抓钩护卫舰对付小型单位，重型聚变轰炸机对付任何有护盾的目标，反过来可由支援发射器护卫舰保护和修复。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >
@@ -42,7 +42,7 @@
 
   <fleet_design name="ExS_LightFrigateFleet"
         display_name="轻型护卫舰队"
-        description="拥有所有初始舰队中最少的舰船线，只有聚变-拦截者和雷达轻型护卫舰各一线，这支舰队可能看起来弱小，但其火力和强度非同寻常。"
+        description="拥有所有初始舰队中最少的单位线，只有聚变-拦截者和雷达轻型护卫舰各一线，这支舰队可能看起来弱小，但其火力和强度非同寻常。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >
@@ -157,7 +157,7 @@
 
   <fleet_design name="ExS_PaybackFleet" required_expansion_list="2_Zenith_Onslaught"
         display_name="复仇舰队"
-        description="以超出敌人预期的力量进行反击，这支舰队使用暗镜和拾荒者重型护卫舰进行火力反击。多艘后卫舰帮助治疗受损舰船以获得更强的耐力和伤害返还潜力。"
+        description="以超出敌人预期的力量进行反击，这支舰队使用暗镜和拾荒者重型护卫舰进行火力反击。多艘后卫舰帮助治疗受损单位以获得更强的耐力和伤害返还潜力。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >
@@ -184,7 +184,7 @@
 
   <fleet_design name="ExS_StartTest" required_expansion_list="1_The_Spire_Rises,2_Zenith_Onslaught,3_The_Neinzul_Abyss"
         display_name="测试舰队"
-        description="用于测试的所有 ExS 舰船。"
+        description="用于测试的所有 ExS 单位。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >

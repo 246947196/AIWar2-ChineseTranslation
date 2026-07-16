@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
         <ai_type        name="Copycat"
@@ -50,7 +50,7 @@
                         support_structure_nasty_pick_tag="SupportStructureNastyPick"
                         wildcard_nasty_pick_tag="WildCardNastyPick"
                         type_difficulty="Hard"
-                        description="将你的舰船复制品加入其舰队。当你建造空间站时发送再征服波次。当AIP降低时建造煽动者。建造与你相同的炮塔。"
+                        description="将你的单位复制品加入其舰队。当你建造空间站时发送再征服波次。当AIP降低时建造煽动者。建造与你相同的炮塔。"
                         custom_neverRandom="true"
                         >
                 <budget_item
@@ -1260,7 +1260,7 @@
                         dll_name="PoiDeep"
                         type_name="Poi.AITypeController_Monolithic"
                         type_difficulty="Moderate"
-                        description="这个毫不掩饰的AI发送完全单一舰船类型的波次，并将所有防御建在行星中心。波次比通常稍强。"
+                        description="这个毫不掩饰的AI发送完全单一单位类型的波次，并将所有防御建在行星中心。波次比通常稍强。"
 
                         multiplier_for_budget_wave="1.3"
 
@@ -1275,7 +1275,7 @@
                         dll_name="PoiDeep"
                         type_name="Poi.AITypeController_Indecisive"
                         type_difficulty="Easier"
-                        description="这个AI无法下定决心。其波次拥有比正常更多的舰船类型，并将所有防御建在行星边缘。波次比通常稍强。"
+                        description="这个AI无法下定决心。其波次拥有比正常更多的单位类型，并将所有防御建在行星边缘。波次比通常稍强。"
 
                         multiplier_for_budget_wave="1.3"
 

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 	<faction name="Reprocessors"
            display_name="再处理器"
@@ -11,7 +11,7 @@
            player_discoverable="false"
 		   ai_can_send_waves_against_this="false"
            ai_threat_against_this_faction_goes_back_to_guarding="true"
-           description="一个栖息在深空中并喜欢用舰船攻击的派系，但必须研究新型舰船。
+           description="一个栖息在深空中并喜欢用单位攻击的派系，但必须研究新型单位。
 
 &lt;color=#f25e1c&gt;低影响：&lt;/color&gt;该派系偶尔会跃迁进入，可能会偷走几架小型战斗机。它的'攻击'通常微不足道且无害。"
            impact="Easier"

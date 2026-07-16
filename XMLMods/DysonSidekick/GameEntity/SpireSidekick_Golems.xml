@@ -6,7 +6,7 @@
           tags="ShowsOnNormalDisplayMotde,SpireGolem"
           material_override_path="Assets/_FinalGameMeshes/Spire/SpireLostFrigate/SpireLostFrigate.prefab"
 	  display_name="装甲尖塔魔像"
-	  display_name_for_sidebar="Armored S GOL"
+	  display_name_for_sidebar="装甲尖塔傀儡"
           icon_overlay="Overlays2/Spire_Imperial"
           eligible_for_hacks="ClaimSpireFlagship"
           tech_upgrade_that_is_used_for_my_direct_science="Direct_SpireSidekickGolems"
@@ -16,43 +16,43 @@
           seconds_to_fully_regenerate_hull="600"
           module_points_from_start="2" module_points_added_per_mark_level="1"
           >
-          <system name="M1" unique_module_index="1" display_name="Reinforced Hull"
+          <system name="M1" unique_module_index="1" display_name="强化船体"
 	    module_point_cost="2" module_screen_sort_group="10"
 	    category="Passive"
 	    module_stat_adjuster="HullHealth" module_stat_adjuster_multiplier="1.5"
 	    >
     </system>
-    <system name="M2" unique_module_index="2" display_name="Reinforced Shield"
+    <system name="M2" unique_module_index="2" display_name="强化护盾"
 	    module_point_cost="2" module_screen_sort_group="20"
 	    category="Passive"
 	    module_stat_adjuster="ShieldHealth" module_stat_adjuster_multiplier="1.5"
 	    >
     </system>
-    <system name="FF" unique_module_index="3" display_name="Forcefield"
+    <system name="FF" unique_module_index="3" display_name="力场"
 	    module_point_cost="4" module_screen_sort_group="30" modular_sidebar_name_prefix="Pr" modular_full_name_prefix="Protector "
 	    category="Passive"
 	    module_stat_adjuster="BubbleForcefield" module_stat_adjuster_multiplier="1" module_stat_adjuster_radius="4600"
 	    >
     </system>
-    <system name="GC" unique_module_index="4" display_name="Gravitic Core"
+    <system name="GC" unique_module_index="4" display_name="引力核心"
 	    module_point_cost="4" module_screen_sort_group="50" modular_sidebar_name_prefix="G" modular_full_name_prefix="Gravitic "
 	    category="Passive"
 	    base_gravity_speed_multiplier="0.7" gravity_hits_engine_gx_less_than="14" gravity_range="AboveAverage3"
 	    >
     </system>
-    <system name="DC" unique_module_index="5" display_name="Decloaker"
+    <system name="DC" unique_module_index="5" display_name="反隐形"
 	    module_point_cost="1" module_screen_sort_group="60" 
 	    category="Passive" 
 	    tachyon_points="50" tachyon_range="AboveAverage3" tachyon_points_added_per_mark="10" tachyon_hits_albedo_less_than="0.75"
 	    >
     </system>
-    <system name="CL" unique_module_index="6" display_name="Cloaking"
+    <system name="CL" unique_module_index="6" display_name="隐形"
 	    module_point_cost="4" module_screen_sort_group="70" modular_sidebar_name_prefix="CL" modular_full_name_prefix="Cloaked "
 	    category="Passive"
 	    cloaking_points="2000" cloaking_points_added_per_mark="1000"
 	    >
     </system>
-    <system name="W2" unique_module_index="7" display_name="Anti-Shield Plasma Bolt"
+    <system name="W2" unique_module_index="7" display_name="反护盾等离子弹"
 	    module_point_cost="3" module_screen_sort_group="80" modular_sidebar_name_prefix="P"
 	    category="Weapon" firing_timing="OnlyInRange"
 	    damage_per_shot="2500" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
@@ -60,7 +60,7 @@
 	    >
       <outgoing_damage_modifier applies_to="AllShields" based_on="MaxBubbleForcefield" comparison_type="GreaterThan" compared_to="10000" multiplier="10" />
     </system>	
-    <system name="W3" unique_module_index="8" display_name="Fusion Bomb"
+    <system name="W3" unique_module_index="8" display_name="聚变炸弹"
 	    module_point_cost="3" module_screen_sort_group="80" modular_sidebar_name_prefix="F"
 	    category="Weapon" firing_timing="OnlyInRange"
 	    damage_per_shot="5000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
@@ -69,13 +69,13 @@
 	    >
       <outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="3" />
     </system>
-    <system name="M3" unique_module_index="10" display_name="Enhanced Hull"
+    <system name="M3" unique_module_index="10" display_name="增强船体"
 	    module_point_cost="1" module_screen_sort_group="10"
 	    category="Passive"
 	    module_stat_adjuster="HullHealth" module_stat_adjuster_multiplier="1.25"
 	    >
     </system>
-    <system name="M4" unique_module_index="11" display_name="Enhanced Shield"
+    <system name="M4" unique_module_index="11" display_name="增强护盾"
 	    module_point_cost="1" module_screen_sort_group="20"
 	    category="Passive"
 	    module_stat_adjuster="ShieldHealth" module_stat_adjuster_multiplier="1.25"
@@ -88,7 +88,7 @@
           tags="ShowsOnNormalDisplayMode,SpireGolem,Capturable"
           material_override_path="Assets/_FinalGameMeshes/Spire/SpireLostFrigate/SpireLostFrigate.prefab"
 	  display_name="傀儡网络尖塔魔像"
-	  display_name_for_sidebar="Botnet S GOL"
+	  display_name_for_sidebar="僵尸网络尖塔傀儡"
 	  aip_to_claim="0"
           metal_to_claim="0"
           metal_cost="1000000"
@@ -98,43 +98,43 @@
           tech_upgrade_that_is_used_for_my_direct_science="Direct_SpireSidekickGolems"
           module_points_from_start="2" module_points_added_per_mark_level="1"
           >
-        <system name="M1" unique_module_index="1" display_name="Reinforced Hull"
+        <system name="M1" unique_module_index="1" display_name="强化船体"
 	    module_point_cost="2" module_screen_sort_group="10"
 	    category="Passive"
 	    module_stat_adjuster="HullHealth" module_stat_adjuster_multiplier="1.5"
 	    >
     </system>
-    <system name="M2" unique_module_index="2" display_name="Reinforced Shield"
+    <system name="M2" unique_module_index="2" display_name="强化护盾"
 	    module_point_cost="2" module_screen_sort_group="20"
 	    category="Passive"
 	    module_stat_adjuster="ShieldHealth" module_stat_adjuster_multiplier="1.5"
 	    >
     </system>
-    <system name="FF" unique_module_index="3" display_name="Forcefield"
+    <system name="FF" unique_module_index="3" display_name="力场"
 	    module_point_cost="4" module_screen_sort_group="30" modular_sidebar_name_prefix="Pr" modular_full_name_prefix="Protector "
 	    category="Passive"
 	    module_stat_adjuster="BubbleForcefield" module_stat_adjuster_multiplier="1" module_stat_adjuster_radius="4600"
 	    >
     </system>
-    <system name="GC" unique_module_index="4" display_name="Gravitic Core"
+    <system name="GC" unique_module_index="4" display_name="引力核心"
 	    module_point_cost="4" module_screen_sort_group="50" modular_sidebar_name_prefix="G" modular_full_name_prefix="Gravitic "
 	    category="Passive"
 	    base_gravity_speed_multiplier="0.7" gravity_hits_engine_gx_less_than="14" gravity_range="AboveAverage3"
 	    >
     </system>
-    <system name="DC" unique_module_index="5" display_name="Decloaker"
+    <system name="DC" unique_module_index="5" display_name="反隐形"
 	    module_point_cost="1" module_screen_sort_group="60" 
 	    category="Passive" 
 	    tachyon_points="50" tachyon_range="AboveAverage3" tachyon_points_added_per_mark="10" tachyon_hits_albedo_less_than="0.75"
 	    >
     </system>
-    <system name="CL" unique_module_index="6" display_name="Cloaking"
+    <system name="CL" unique_module_index="6" display_name="隐形"
 	    module_point_cost="4" module_screen_sort_group="70" modular_sidebar_name_prefix="CL" modular_full_name_prefix="Cloaked "
 	    category="Passive"
 	    cloaking_points="2000" cloaking_points_added_per_mark="1000"
 	    >
     </system>
-    <system name="W2" unique_module_index="7" display_name="Anti-Shield Plasma Bolt"
+    <system name="W2" unique_module_index="7" display_name="反护盾等离子弹"
 	    module_point_cost="3" module_screen_sort_group="80" modular_sidebar_name_prefix="P"
 	    category="Weapon" firing_timing="OnlyInRange"
 	    damage_per_shot="2500" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
@@ -142,7 +142,7 @@
 	    >
       <outgoing_damage_modifier applies_to="AllShields" based_on="MaxBubbleForcefield" comparison_type="GreaterThan" compared_to="10000" multiplier="10" />
     </system>	
-    <system name="W3" unique_module_index="8" display_name="Fusion Bomb"
+    <system name="W3" unique_module_index="8" display_name="聚变炸弹"
 	    module_point_cost="3" module_screen_sort_group="80" modular_sidebar_name_prefix="F"
 	    category="Weapon" firing_timing="OnlyInRange"
 	    damage_per_shot="5000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
@@ -151,13 +151,13 @@
 	    >
       <outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="3" />
     </system>
-    <system name="M3" unique_module_index="10" display_name="Enhanced Hull"
+    <system name="M3" unique_module_index="10" display_name="增强船体"
 	    module_point_cost="1" module_screen_sort_group="10"
 	    category="Passive"
 	    module_stat_adjuster="HullHealth" module_stat_adjuster_multiplier="1.25"
 	    >
     </system>
-    <system name="M4" unique_module_index="11" display_name="Enhanced Shield"
+    <system name="M4" unique_module_index="11" display_name="增强护盾"
 	    module_point_cost="1" module_screen_sort_group="20"
 	    category="Passive"
 	    module_stat_adjuster="ShieldHealth" module_stat_adjuster_multiplier="1.25"
@@ -169,7 +169,7 @@
           tags="ShowsOnNormalDisplayMode,SpireGolem,Capturable"
           material_override_path="Assets/_FinalGameMeshes/Spire/SpireLostFrigate/SpireLostFrigate.prefab"
 	  display_name="火炮尖塔魔像"
-	  display_name_for_sidebar="Artillery S GOL"
+	  display_name_for_sidebar="火炮尖塔傀儡"
 	  aip_to_claim="0"
           metal_to_claim="0"
           metal_cost="1000000"
@@ -179,43 +179,43 @@
           tech_upgrade_that_is_used_for_my_direct_science="Direct_SpireSidekickGolems"
           module_points_from_start="2" module_points_added_per_mark_level="1"
           >
-        <system name="M1" unique_module_index="1" display_name="Reinforced Hull"
+        <system name="M1" unique_module_index="1" display_name="强化船体"
 	    module_point_cost="2" module_screen_sort_group="10"
 	    category="Passive"
 	    module_stat_adjuster="HullHealth" module_stat_adjuster_multiplier="1.5"
 	    >
     </system>
-    <system name="M2" unique_module_index="2" display_name="Reinforced Shield"
+    <system name="M2" unique_module_index="2" display_name="强化护盾"
 	    module_point_cost="2" module_screen_sort_group="20"
 	    category="Passive"
 	    module_stat_adjuster="ShieldHealth" module_stat_adjuster_multiplier="1.5"
 	    >
     </system>
-    <system name="FF" unique_module_index="3" display_name="Forcefield"
+    <system name="FF" unique_module_index="3" display_name="力场"
 	    module_point_cost="4" module_screen_sort_group="30" modular_sidebar_name_prefix="Pr" modular_full_name_prefix="Protector "
 	    category="Passive"
 	    module_stat_adjuster="BubbleForcefield" module_stat_adjuster_multiplier="1" module_stat_adjuster_radius="4600"
 	    >
     </system>
-    <system name="GC" unique_module_index="4" display_name="Gravitic Core"
+    <system name="GC" unique_module_index="4" display_name="引力核心"
 	    module_point_cost="4" module_screen_sort_group="50" modular_sidebar_name_prefix="G" modular_full_name_prefix="Gravitic "
 	    category="Passive"
 	    base_gravity_speed_multiplier="0.7" gravity_hits_engine_gx_less_than="14" gravity_range="AboveAverage3"
 	    >
     </system>
-    <system name="DC" unique_module_index="5" display_name="Decloaker"
+    <system name="DC" unique_module_index="5" display_name="反隐形"
 	    module_point_cost="1" module_screen_sort_group="60" 
 	    category="Passive" 
 	    tachyon_points="50" tachyon_range="AboveAverage3" tachyon_points_added_per_mark="10" tachyon_hits_albedo_less_than="0.75"
 	    >
     </system>
-    <system name="CL" unique_module_index="6" display_name="Cloaking"
+    <system name="CL" unique_module_index="6" display_name="隐形"
 	    module_point_cost="4" module_screen_sort_group="70" modular_sidebar_name_prefix="CL" modular_full_name_prefix="Cloaked "
 	    category="Passive"
 	    cloaking_points="2000" cloaking_points_added_per_mark="1000"
 	    >
     </system>
-    <system name="W2" unique_module_index="7" display_name="Anti-Shield Plasma Bolt"
+    <system name="W2" unique_module_index="7" display_name="反护盾等离子弹"
 	    module_point_cost="3" module_screen_sort_group="80" modular_sidebar_name_prefix="P"
 	    category="Weapon" firing_timing="OnlyInRange"
 	    damage_per_shot="2500" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
@@ -223,7 +223,7 @@
 	    >
       <outgoing_damage_modifier applies_to="AllShields" based_on="MaxBubbleForcefield" comparison_type="GreaterThan" compared_to="10000" multiplier="10" />
     </system>	
-    <system name="W3" unique_module_index="8" display_name="Fusion Bomb"
+    <system name="W3" unique_module_index="8" display_name="聚变炸弹"
 	    module_point_cost="3" module_screen_sort_group="80" modular_sidebar_name_prefix="F"
 	    category="Weapon" firing_timing="OnlyInRange"
 	    damage_per_shot="5000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
@@ -232,13 +232,13 @@
 	    >
       <outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="3" />
     </system>
-    <system name="M3" unique_module_index="10" display_name="Enhanced Hull"
+    <system name="M3" unique_module_index="10" display_name="增强船体"
 	    module_point_cost="1" module_screen_sort_group="10"
 	    category="Passive"
 	    module_stat_adjuster="HullHealth" module_stat_adjuster_multiplier="1.25"
 	    >
     </system>
-    <system name="M4" unique_module_index="11" display_name="Enhanced Shield"
+    <system name="M4" unique_module_index="11" display_name="增强护盾"
 	    module_point_cost="1" module_screen_sort_group="20"
 	    category="Passive"
 	    module_stat_adjuster="ShieldHealth" module_stat_adjuster_multiplier="1.25"
@@ -250,7 +250,7 @@
           tags="ShowsOnNormalDisplayMode,SpireGolem,Capturable"
           material_override_path="Assets/_FinalGameMeshes/Spire/SpireLostFrigate/SpireLostFrigate.prefab"
 	  display_name="诅咒尖塔魔像"
-	  display_name_for_sidebar="Cursed S GOL"
+	  display_name_for_sidebar="诅咒尖塔傀儡"
 	  aip_to_claim="0"
           icon_overlay="Overlays2/Spire_Imperial"
           eligible_for_hacks="ClaimSpireFlagship"
@@ -260,43 +260,43 @@
           tech_upgrade_that_is_used_for_my_direct_science="Direct_SpireSidekickGolems"
           module_points_from_start="2" module_points_added_per_mark_level="1"
           >
-        <system name="M1" unique_module_index="1" display_name="Reinforced Hull"
+        <system name="M1" unique_module_index="1" display_name="强化船体"
 	    module_point_cost="2" module_screen_sort_group="10"
 	    category="Passive"
 	    module_stat_adjuster="HullHealth" module_stat_adjuster_multiplier="1.5"
 	    >
     </system>
-    <system name="M2" unique_module_index="2" display_name="Reinforced Shield"
+    <system name="M2" unique_module_index="2" display_name="强化护盾"
 	    module_point_cost="2" module_screen_sort_group="20"
 	    category="Passive"
 	    module_stat_adjuster="ShieldHealth" module_stat_adjuster_multiplier="1.5"
 	    >
     </system>
-    <system name="FF" unique_module_index="3" display_name="Forcefield"
+    <system name="FF" unique_module_index="3" display_name="力场"
 	    module_point_cost="4" module_screen_sort_group="30" modular_sidebar_name_prefix="Pr" modular_full_name_prefix="Protector "
 	    category="Passive"
 	    module_stat_adjuster="BubbleForcefield" module_stat_adjuster_multiplier="1" module_stat_adjuster_radius="4600"
 	    >
     </system>
-    <system name="GC" unique_module_index="4" display_name="Gravitic Core"
+    <system name="GC" unique_module_index="4" display_name="引力核心"
 	    module_point_cost="4" module_screen_sort_group="50" modular_sidebar_name_prefix="G" modular_full_name_prefix="Gravitic "
 	    category="Passive"
 	    base_gravity_speed_multiplier="0.7" gravity_hits_engine_gx_less_than="14" gravity_range="AboveAverage3"
 	    >
     </system>
-    <system name="DC" unique_module_index="5" display_name="Decloaker"
+    <system name="DC" unique_module_index="5" display_name="反隐形"
 	    module_point_cost="1" module_screen_sort_group="60" 
 	    category="Passive" 
 	    tachyon_points="50" tachyon_range="AboveAverage3" tachyon_points_added_per_mark="10" tachyon_hits_albedo_less_than="0.75"
 	    >
     </system>
-    <system name="CL" unique_module_index="6" display_name="Cloaking"
+    <system name="CL" unique_module_index="6" display_name="隐形"
 	    module_point_cost="4" module_screen_sort_group="70" modular_sidebar_name_prefix="CL" modular_full_name_prefix="Cloaked "
 	    category="Passive"
 	    cloaking_points="2000" cloaking_points_added_per_mark="1000"
 	    >
     </system>
-    <system name="W2" unique_module_index="7" display_name="Anti-Shield Plasma Bolt"
+    <system name="W2" unique_module_index="7" display_name="反护盾等离子弹"
 	    module_point_cost="3" module_screen_sort_group="80" modular_sidebar_name_prefix="P"
 	    category="Weapon" firing_timing="OnlyInRange"
 	    damage_per_shot="2500" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
@@ -304,7 +304,7 @@
 	    >
       <outgoing_damage_modifier applies_to="AllShields" based_on="MaxBubbleForcefield" comparison_type="GreaterThan" compared_to="10000" multiplier="10" />
     </system>	
-    <system name="W3" unique_module_index="8" display_name="Fusion Bomb"
+    <system name="W3" unique_module_index="8" display_name="聚变炸弹"
 	    module_point_cost="3" module_screen_sort_group="80" modular_sidebar_name_prefix="F"
 	    category="Weapon" firing_timing="OnlyInRange"
 	    damage_per_shot="5000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
@@ -313,13 +313,13 @@
 	    >
       <outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="3" />
     </system>
-    <system name="M3" unique_module_index="10" display_name="Enhanced Hull"
+    <system name="M3" unique_module_index="10" display_name="增强船体"
 	    module_point_cost="1" module_screen_sort_group="10"
 	    category="Passive"
 	    module_stat_adjuster="HullHealth" module_stat_adjuster_multiplier="1.25"
 	    >
     </system>
-    <system name="M4" unique_module_index="11" display_name="Enhanced Shield"
+    <system name="M4" unique_module_index="11" display_name="增强护盾"
 	    module_point_cost="1" module_screen_sort_group="20"
 	    category="Passive"
 	    module_stat_adjuster="ShieldHealth" module_stat_adjuster_multiplier="1.25"
@@ -330,8 +330,8 @@
   <entity name="SidekickRetributionGolem" copy_from="RetributionGolem"
           tags="ShowsOnNormalDisplayMode,SpireGolem,Capturable"
           material_override_path="Assets/_FinalGameMeshes/Spire/SpireLostFrigate/SpireLostFrigate.prefab"
-	  display_name="Retribution Spire Golem"
-	  display_name_for_sidebar="Retribution S GOL"
+	  display_name="报应尖塔傀儡"
+	  display_name_for_sidebar="报应尖塔傀儡"
 	  aip_to_claim="0"
           metal_to_claim="0"
           metal_cost="1000000"
@@ -341,43 +341,43 @@
           tech_upgrade_that_is_used_for_my_direct_science="Direct_SpireSidekickGolems"
           module_points_from_start="2" module_points_added_per_mark_level="1"
           >
-        <system name="M1" unique_module_index="1" display_name="Reinforced Hull"
+        <system name="M1" unique_module_index="1" display_name="强化船体"
 	    module_point_cost="2" module_screen_sort_group="10"
 	    category="Passive"
 	    module_stat_adjuster="HullHealth" module_stat_adjuster_multiplier="1.5"
 	    >
     </system>
-    <system name="M2" unique_module_index="2" display_name="Reinforced Shield"
+    <system name="M2" unique_module_index="2" display_name="强化护盾"
 	    module_point_cost="2" module_screen_sort_group="20"
 	    category="Passive"
 	    module_stat_adjuster="ShieldHealth" module_stat_adjuster_multiplier="1.5"
 	    >
     </system>
-    <system name="FF" unique_module_index="3" display_name="Forcefield"
+    <system name="FF" unique_module_index="3" display_name="力场"
 	    module_point_cost="4" module_screen_sort_group="30" modular_sidebar_name_prefix="Pr" modular_full_name_prefix="Protector "
 	    category="Passive"
 	    module_stat_adjuster="BubbleForcefield" module_stat_adjuster_multiplier="1" module_stat_adjuster_radius="4600"
 	    >
     </system>
-    <system name="GC" unique_module_index="4" display_name="Gravitic Core"
+    <system name="GC" unique_module_index="4" display_name="引力核心"
 	    module_point_cost="4" module_screen_sort_group="50" modular_sidebar_name_prefix="G" modular_full_name_prefix="Gravitic "
 	    category="Passive"
 	    base_gravity_speed_multiplier="0.7" gravity_hits_engine_gx_less_than="14" gravity_range="AboveAverage3"
 	    >
     </system>
-    <system name="DC" unique_module_index="5" display_name="Decloaker"
+    <system name="DC" unique_module_index="5" display_name="反隐形"
 	    module_point_cost="1" module_screen_sort_group="60" 
 	    category="Passive" 
 	    tachyon_points="50" tachyon_range="AboveAverage3" tachyon_points_added_per_mark="10" tachyon_hits_albedo_less_than="0.75"
 	    >
     </system>
-    <system name="CL" unique_module_index="6" display_name="Cloaking"
+    <system name="CL" unique_module_index="6" display_name="隐形"
 	    module_point_cost="4" module_screen_sort_group="70" modular_sidebar_name_prefix="CL" modular_full_name_prefix="Cloaked "
 	    category="Passive"
 	    cloaking_points="2000" cloaking_points_added_per_mark="1000"
 	    >
     </system>
-    <system name="W2" unique_module_index="7" display_name="Anti-Shield Plasma Bolt"
+    <system name="W2" unique_module_index="7" display_name="反护盾等离子弹"
 	    module_point_cost="3" module_screen_sort_group="80" modular_sidebar_name_prefix="P"
 	    category="Weapon" firing_timing="OnlyInRange"
 	    damage_per_shot="2500" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
@@ -385,7 +385,7 @@
 	    >
       <outgoing_damage_modifier applies_to="AllShields" based_on="MaxBubbleForcefield" comparison_type="GreaterThan" compared_to="10000" multiplier="10" />
     </system>	
-    <system name="W3" unique_module_index="8" display_name="Fusion Bomb"
+    <system name="W3" unique_module_index="8" display_name="聚变炸弹"
 	    module_point_cost="3" module_screen_sort_group="80" modular_sidebar_name_prefix="F"
 	    category="Weapon" firing_timing="OnlyInRange"
 	    damage_per_shot="5000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
@@ -394,13 +394,13 @@
 	    >
       <outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="3" />
     </system>
-    <system name="M3" unique_module_index="10" display_name="Enhanced Hull"
+    <system name="M3" unique_module_index="10" display_name="增强船体"
 	    module_point_cost="1" module_screen_sort_group="10"
 	    category="Passive"
 	    module_stat_adjuster="HullHealth" module_stat_adjuster_multiplier="1.25"
 	    >
     </system>
-    <system name="M4" unique_module_index="11" display_name="Enhanced Shield"
+    <system name="M4" unique_module_index="11" display_name="增强护盾"
 	    module_point_cost="1" module_screen_sort_group="20"
 	    category="Passive"
 	    module_stat_adjuster="ShieldHealth" module_stat_adjuster_multiplier="1.25"
@@ -412,8 +412,8 @@
   <entity name="SidekickFrenzyGolem" copy_from="SoloFrenzyGolem"
           tags="ShowsOnNormalDisplayMode,SpireGolem,Capturable"
           material_override_path="Assets/_FinalGameMeshes/Spire/SpireLostFrigate/SpireLostFrigate.prefab"
-	  display_name="Frenzy S Golem"
-	  display_name_for_sidebar="Frenzy S GOL"
+	  display_name="狂暴尖塔傀儡"
+	  display_name_for_sidebar="狂暴尖塔傀儡"
 	  aip_to_claim="0"
           metal_to_claim="0"
           metal_cost="1000000"
@@ -423,43 +423,43 @@
           tech_upgrade_that_is_used_for_my_direct_science="Direct_SpireSidekickGolems"
           module_points_from_start="2" module_points_added_per_mark_level="1"
           >
-    <system name="M1" unique_module_index="1" display_name="Reinforced Hull"
+    <system name="M1" unique_module_index="1" display_name="强化船体"
 	    module_point_cost="2" module_screen_sort_group="10"
 	    category="Passive"
 	    module_stat_adjuster="HullHealth" module_stat_adjuster_multiplier="1.5"
 	    >
     </system>
-    <system name="M2" unique_module_index="2" display_name="Reinforced Shield"
+    <system name="M2" unique_module_index="2" display_name="强化护盾"
 	    module_point_cost="2" module_screen_sort_group="20"
 	    category="Passive"
 	    module_stat_adjuster="ShieldHealth" module_stat_adjuster_multiplier="1.5"
 	    >
     </system>
-    <system name="FF" unique_module_index="3" display_name="Forcefield"
+    <system name="FF" unique_module_index="3" display_name="力场"
 	    module_point_cost="4" module_screen_sort_group="30" modular_sidebar_name_prefix="Pr" modular_full_name_prefix="Protector "
 	    category="Passive"
 	    module_stat_adjuster="BubbleForcefield" module_stat_adjuster_multiplier="1" module_stat_adjuster_radius="4600"
 	    >
     </system>
-    <system name="GC" unique_module_index="4" display_name="Gravitic Core"
+    <system name="GC" unique_module_index="4" display_name="引力核心"
 	    module_point_cost="4" module_screen_sort_group="50" modular_sidebar_name_prefix="G" modular_full_name_prefix="Gravitic "
 	    category="Passive"
 	    base_gravity_speed_multiplier="0.7" gravity_hits_engine_gx_less_than="14" gravity_range="AboveAverage3"
 	    >
     </system>
-    <system name="DC" unique_module_index="5" display_name="Decloaker"
+    <system name="DC" unique_module_index="5" display_name="反隐形"
 	    module_point_cost="1" module_screen_sort_group="60" 
 	    category="Passive" 
 	    tachyon_points="50" tachyon_range="AboveAverage3" tachyon_points_added_per_mark="10" tachyon_hits_albedo_less_than="0.75"
 	    >
     </system>
-    <system name="CL" unique_module_index="6" display_name="Cloaking"
+    <system name="CL" unique_module_index="6" display_name="隐形"
 	    module_point_cost="4" module_screen_sort_group="70" modular_sidebar_name_prefix="CL" modular_full_name_prefix="Cloaked "
 	    category="Passive"
 	    cloaking_points="2000" cloaking_points_added_per_mark="1000"
 	    >
     </system>
-    <system name="W2" unique_module_index="7" display_name="Anti-Shield Plasma Bolt"
+    <system name="W2" unique_module_index="7" display_name="反护盾等离子弹"
 	    module_point_cost="3" module_screen_sort_group="80" modular_sidebar_name_prefix="P"
 	    category="Weapon" firing_timing="OnlyInRange"
 	    damage_per_shot="2500" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
@@ -467,7 +467,7 @@
 	    >
       <outgoing_damage_modifier applies_to="AllShields" based_on="MaxBubbleForcefield" comparison_type="GreaterThan" compared_to="10000" multiplier="10" />
     </system>	
-    <system name="W3" unique_module_index="8" display_name="Fusion Bomb"
+    <system name="W3" unique_module_index="8" display_name="聚变炸弹"
 	    module_point_cost="3" module_screen_sort_group="80" modular_sidebar_name_prefix="F"
 	    category="Weapon" firing_timing="OnlyInRange"
 	    damage_per_shot="5000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="true"
@@ -476,13 +476,13 @@
 	    >
       <outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="3" />
     </system>
-    <system name="M3" unique_module_index="10" display_name="Enhanced Hull"
+    <system name="M3" unique_module_index="10" display_name="增强船体"
 	    module_point_cost="1" module_screen_sort_group="10"
 	    category="Passive"
 	    module_stat_adjuster="HullHealth" module_stat_adjuster_multiplier="1.25"
 	    >
     </system>
-    <system name="M4" unique_module_index="11" display_name="Enhanced Shield"
+    <system name="M4" unique_module_index="11" display_name="增强护盾"
 	    module_point_cost="1" module_screen_sort_group="20"
 	    category="Passive"
 	    module_stat_adjuster="ShieldHealth" module_stat_adjuster_multiplier="1.25"

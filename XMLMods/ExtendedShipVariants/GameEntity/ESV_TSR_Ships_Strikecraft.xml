@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
     <entity name="BeamBombard" copy_from="Bombard" required_expansion_list="1_The_Spire_Rises"
 		icon_overlay="Overlays2/SpireSpyCradle_Greater"
@@ -36,7 +36,7 @@
 		visuals_scale_multiplier="6.4"
 		display_name="紧凑型轰炸舰"
 		display_name_for_sidebar="紧凑型轰炸舰SC"
-		description="较小、较便宜且较弱的轰炸舰变体，使用尖塔晶体基合金以获得更高的移动和攻击速度，但总体伤害较低。同时为量产优化，允许更高舰船数量。"
+		description="较小、较便宜且较弱的轰炸舰变体，使用尖塔晶体基合金以获得更高的移动和攻击速度，但总体伤害较低。同时为量产优化，允许更高单位数量。"
 		tech_upgrades_that_benefit_me="Concussion,Medium"
 		hull_points="4500" speed="Normal1"
 		metal_cost="13000" energy_consumption="750"
@@ -63,7 +63,7 @@
 		icon_overlay="Overlays1/MegaTurret_Beam"
 		display_name="轨道轰炸舰"
 		display_name_for_sidebar="轨道轰炸舰SC"
-		description="比人类科技更接近尖塔，具有惊人的超高射程光束湮灭潜力，尤其对刚到达的敌人。最好将本舰视为快速部署的高脆弱轨道炮塔，而非靠自身推进力移动和生存的舰船。"
+		description="比人类科技更接近尖塔，具有惊人的超高射程光束湮灭潜力，尤其对刚到达的敌人。最好将本舰视为快速部署的高脆弱轨道炮塔，而非靠自身推进力移动和生存的单位。"
 		tech_upgrades_that_benefit_me="Ambush,Heavy"
 		hull_points="4000" speed="VeryVeryLittle1"
 		metal_cost="40000" energy_consumption="1750"
@@ -85,7 +85,7 @@
 		icon_overlay="Overlays2/GuardPost_Stealth"
 		display_name="隐形病毒撕裂者"
 		display_name_for_sidebar="隐形病毒撕裂SC"
-		description="脆弱的近战舰船，在造成伤害时生成自身的复制体。自身和复制体均可保持隐形最多6次攻击。"
+		description="脆弱的近战单位，在造成伤害时生成自身的复制体。自身和复制体均可保持隐形最多6次攻击。"
 		tech_upgrades_that_benefit_me="Subterfuge,Medium"
 		cost_for_ai_to_purchase="250" strength_multiplier="2.5"
 		hull_points="2250" speed="Normal3"
@@ -119,7 +119,7 @@
 		icon_overlay="Overlays2/GuardPostDire_Parasite"
 		display_name="寄生病毒撕裂者"
 		display_name_for_sidebar="寄生病毒撕裂SC"
-		description="近战舰船，在造成伤害时生成自身的复制体。自身和复制体随后从敌人处生成僵尸化复制体。"
+		description="近战单位，在造成伤害时生成自身的复制体。自身和复制体随后从敌人处生成僵尸化复制体。"
 		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Technologist,Heavy"
 		cost_for_ai_to_purchase="300" strength_multiplier="3"
 		hull_points="4500" shield_points="0" speed="Normal1"

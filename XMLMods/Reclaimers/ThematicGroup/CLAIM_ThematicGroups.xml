@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   <thematic_group_type 
@@ -6,6 +6,6 @@
           display_name="回收者"
           sort_order="50" 
           group_type="Coalition"
-          description="回收者收集了各种外星舰船蓝图，有时可在其前哨站获得。"/>
+          description="回收者收集了各种外星单位蓝图，有时可在其前哨站获得。"/>
   
 </root>

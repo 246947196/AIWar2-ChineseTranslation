@@ -39,7 +39,7 @@
             displaces_other_ships_planet_tier="true"
 			
 			display_name="阿尼卡——熵之慈悲"
-			display_name_for_sidebar="Anicca"
+			display_name_for_sidebar="阿尼卡"
 			description="不再受苦，不再存在。"
 
 			behavior="Attacker_Full"
@@ -79,7 +79,7 @@
             <!-- 
 		<system
 				name="W1"
-				display_name="Anicca"
+				display_name="阿尼卡"
 				category="Weapon"
 				firing_timing="OnlyInRange"
 				damage_per_shot="25000"
@@ -110,7 +110,7 @@
     
         <system
 				name="W1"
-				display_name="Anicca"
+				display_name="阿尼卡"
 				category="Weapon"
 				firing_timing="OnlyInRange"
 				damage_per_shot="2500"
@@ -136,7 +136,7 @@
 <!--
 		<system
 				name="W2"
-				display_name="Anatta"
+				display_name="阿难陀"
 				category="Weapon"
 				firing_timing="OnlyInRange"
 				damage_per_shot="25000"
@@ -162,7 +162,7 @@
 <!--
 		<system
 				name="W3"
-				display_name="Dukka"
+				display_name="杜卡"
 				category="Weapon"
 				firing_timing="OnlyInRange"
 				damage_per_shot="500000"

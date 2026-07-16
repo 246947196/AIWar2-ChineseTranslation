@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   <!-- long term plan: split this into per-ship-line upgrades -->
@@ -9,7 +9,7 @@
   <item name="TerranScryer" sort_group="12" sort_index="5" display_name="&lt;color=#ffb37b&gt;Terran:&lt;/color&gt; Scryer" science_cost_per_time_unlocked="800,1200,3600,4800,5000,6500" icon_path="assets/sci-fi_game_icons/icons/png/transparent/52_b.png" weapon_upgrade="false" for_player_type_tags="ArmadaEmpire" skips_rejection_if_benefits_nothing="false"
         description="此升级将提升人类洞察者的标记等级。"/>
   <item name="TerranSabre" sort_group="12" sort_index="10" display_name="&lt;color=#ffb37b&gt;Terran:&lt;/color&gt; Sabre" science_cost_per_time_unlocked="600,900,1500,2000,2500,3500" icon_path="assets/sci-fi_game_icons/icons/png/transparent/53_b.png" weapon_upgrade="false" for_player_type_tags="ArmadaEmpire" skips_rejection_if_benefits_nothing="true"
-        description="此升级将提升人类军刀的标记等级。军刀是通过入侵敌方舰船创造的。"/>
+        description="此升级将提升人类军刀的标记等级。军刀是通过入侵敌方单位创造的。"/>
 
 
   

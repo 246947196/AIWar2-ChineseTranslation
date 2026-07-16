@@ -15,7 +15,7 @@
             y_offset_of_icon="35"
             collision_priority="800"
             display_name="利尔"
-			description="利尔是一艘拥有极高耐久和强大腐化特性的舰船。释放强大的克纳伦无人机，若不立即清除将造成巨额伤害。
+			description="利尔是一艘拥有极高耐久和强大腐化特性的单位。释放强大的克纳伦无人机，若不立即清除将造成巨额伤害。
 
 附近任何死亡的物体都将被转化为其无尽虚空大军的一部分，甚至可以无限复活其所在星球上阵亡的任何单位。"
             blocks_enemy_claim_flows="true"

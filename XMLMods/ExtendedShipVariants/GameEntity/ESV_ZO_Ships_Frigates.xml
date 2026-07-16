@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
     <entity name="DarkerGravityMirrorFrigate" copy_from="DarkerMirrorFrigate" required_expansion_list="2_Zenith_Onslaught"
 		display_name="暗黑引力镜护卫舰"
 		display_name_for_sidebar="D.引力镜FFH"
-		description="通过吸引攻击来保护附近舰船，然后主动寻求报复。除了伤害攻击者外还使其减速。"
+		description="通过吸引攻击来保护附近单位，然后主动寻求报复。除了伤害攻击者外还使其减速。"
 		tech_upgrades_that_benefit_me="Subterfuge,Heavy"
 		strength_multiplier="1.2"
 		>
@@ -27,7 +27,7 @@
     <entity name="DarkerEchoFrigate" copy_from="DarkerMirrorFrigate" required_expansion_list="2_Zenith_Onslaught"
 		display_name="暗黑回声护卫舰"
 		display_name_for_sidebar="暗黑回声FFH"
-		description="通过吸引攻击来保护附近舰船，然后主动寻求报复。死亡时重生为回声，仅持续短暂时间。"
+		description="通过吸引攻击来保护附近单位，然后主动寻求报复。死亡时重生为回声，仅持续短暂时间。"
 		tech_upgrades_that_benefit_me="Technologist,Heavy"
 		strength_multiplier="1.35"
 		>

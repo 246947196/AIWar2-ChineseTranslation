@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 <!-- Note: in theory you aren't supposed to play Dyson and Necromancer at the same time since they both use ResourceOne, but it actually seems to work fine most of the time.
      'uses resource one' will prevent the dyson and necromancer from working together; this will resolve some minor UI glitches, but isn't worth disabling the necromancer/DS interaction -->
   <player_type name="DysonSidekick"
-        display_name="Dyson Sidekick" short_name="Dyson" auto_name_postfix=" (D)" uncontrolled_name="Dyson" lobby_prefix="Dyson Sidekick "
+        display_name="戴森球伙伴" short_name="戴森" auto_name_postfix=" (D)" uncontrolled_name="Dyson" lobby_prefix="Dyson Sidekick "
         sort_order="410"
         tags="DysonSidekick,Sidekick,DoesNotGetMetalGenerators"
         base_info_source="DysonSidekickFactionBaseInfo"
@@ -31,7 +31,7 @@
         uses_metal="true"
         uses_necromancer_hacking_and_science="false"
         uses_resource_1="true"
-        resource_1_display_name="Cuendillar"
+        resource_1_display_name="玉石"
         resource_1_color="e16cff"
         resource_1_icon="Res_NecromancerEssence"
         mapgen_should_socketincreasers_seed_for_me="true"
@@ -68,7 +68,7 @@
                
         mapgen_should_all_guard_posts_be_armed="false"
 
-        description="戴森Sidekick允许玩家扮演一个试图建造戴森球的种族联盟。你将控制天顶、尖塔、奈祖尔和圣殿骑士的舰船。你将建造每个种族的大小要塞，从而获得不同的舰船。
+        description="戴森Sidekick允许玩家扮演一个试图建造戴森球的种族联盟。你将控制天顶、尖塔、奈祖尔和圣殿骑士的单位。你将建造每个种族的大小要塞，从而获得不同的单位。
 与死灵法师一样，大型要塞授予旗舰，小型要塞允许增强。与死灵法师不同的是，你可以通过入侵菜单拆除要塞，收回部分投入的资源。这允许你重新配置你的舰队。
 
 为了建造戴森球，你需要掠夺一些行星，通过建造巨大的钻机来获取原材料。由于行星会以这种方式被消耗，小型地图会让戴森Sidekick更加困难。
@@ -76,7 +76,7 @@
 启用戴森Sidekick还会在游戏中添加「收割者」派系以增加额外挑战；使用难度滑块来改变收割者带来的影响程度。
 天顶矿工也能增加有趣的挑战。
 
-这个派系自带「自动防御盟友」设置，意味着新手可以只专注于建造基础设施，让他们的舰船自动战斗。
+这个派系自带「自动防御盟友」设置，意味着新手可以只专注于建造基础设施，让他们的单位自动战斗。
 
 限制：你实际上无法输掉游戏，因此你必须配合其他玩家类型游玩；这与死灵法师Sidekick的限制相同。
 
@@ -85,7 +85,7 @@
 这只是一个模组，没有Arcen的官方支持。"/>
 
   <player_type name="DysonEmpire"
-        display_name="Dyson Empire" short_name="Dyson" auto_name_postfix=" (D)" uncontrolled_name="Dyson" lobby_prefix="Dyson Empire "
+        display_name="戴森帝国" short_name="戴森" auto_name_postfix=" (D)" uncontrolled_name="Dyson" lobby_prefix="Dyson Empire "
         sort_order="400"
         tags="DysonSidekick,DysonEmpire,DoesNotGetMetalGenerators"
         base_info_source="DysonSidekickFactionBaseInfo"
@@ -109,7 +109,7 @@
         uses_metal="true"
         uses_necromancer_hacking_and_science="false"
         uses_resource_1="true"
-        resource_1_display_name="Cuendillar"
+        resource_1_display_name="玉石"
         resource_1_color="e16cff"
         resource_1_icon="Res_NecromancerEssence"
         mapgen_should_socketincreasers_seed_for_me="true"
@@ -148,7 +148,7 @@
 
         description="戴森帝国的运作方式与戴森Sidekick相同，除了你在母星上有一个不可移动的「王」单位。此外，建议将收割者难度调低，因为你是帝国。
 
-戴森Sidekick允许玩家扮演一个试图建造戴森球的种族联盟。你将控制天顶、尖塔、奈祖尔和圣殿骑士的舰船。你将建造每个种族的大小要塞，从而获得不同的舰船。
+戴森Sidekick允许玩家扮演一个试图建造戴森球的种族联盟。你将控制天顶、尖塔、奈祖尔和圣殿骑士的单位。你将建造每个种族的大小要塞，从而获得不同的单位。
 与死灵法师一样，大型要塞授予旗舰，小型要塞允许增强。与死灵法师不同的是，你可以通过入侵菜单拆除要塞，收回部分投入的资源。这允许你重新配置你的舰队。
 
 为了建造戴森球，你需要掠夺一些行星，通过建造巨大的钻机来获取原材料。由于行星会以这种方式被消耗，小型地图会让戴森Sidekick更加困难。
@@ -163,7 +163,7 @@
 这只是一个模组，没有Arcen的官方支持。"/>
 
   <player_type name="HumanArkSidekick"
-        display_name="Human Ark Sidekick" short_name="Ark Sidekick" uncontrolled_name="Uncontrolled Ark Sidekick " lobby_prefix="Player Ark Sidekick "
+        display_name="人类方舟伙伴" short_name="方舟伙伴" uncontrolled_name="Uncontrolled Ark Sidekick " lobby_prefix="Player Ark Sidekick "
         sort_order="110"
         tags="HumanArkSidekick,HumanEmpire,Sidekick,CanDoSpireHacks"
         base_info_source="HumanArkEmpireFactionBaseInfo"
@@ -225,7 +225,7 @@
 该玩家类型还起始带有一个战斗空间站和一个支援舰队。"/>
 
   <player_type name="SpireSidekick"
-        display_name="Spire Sidekick" short_name="Spire" auto_name_postfix=" (Spire)" uncontrolled_name="Spire" lobby_prefix="Spire "
+        display_name="尖塔伙伴" short_name="尖塔" auto_name_postfix=" (Spire)" uncontrolled_name="Spire" lobby_prefix="Spire "
         sort_order="850"
         tags="SpireSidekick,Sidekick,CanDoSpireHacks"
         base_info_source="SpireSidekickFactionBaseInfo"
@@ -310,7 +310,7 @@ Written by Badger。这只是一个模组，没有Arcen的官方支持。"/>
   </player_type>
 
     <player_type name="ScourgeInfusedHumanEmpire"
-        display_name="Scourge-Infused Empire" short_name="Scourge Empire" uncontrolled_name="Scourge Empire " lobby_prefix="Scourge Empire"
+        display_name="灾祸浸染帝国" short_name="灾祸帝国" uncontrolled_name="Scourge Empire " lobby_prefix="Scourge Empire"
         sort_order="500"
         tags="HumanEmpire,ScourgeInfusedHumanEmpire,ScourgeInfusedEmpire,CanDoSpireHacks"
         base_info_source="ScourgeInfusedHumanEmpireFactionBaseInfo"
@@ -325,7 +325,7 @@ Written by Badger。这只是一个模组，没有Arcen的官方支持。"/>
         reject_tech_upgrades_that_benefit_nothing="true"
         fleets_only_show_mobile_strength_in_sidebar="false"
         uses_resource_1="true"
-        resource_1_display_name="Corbomite"
+        resource_1_display_name="科博米特"
         resource_1_color="e16cff"
         resource_1_icon="Res_NecromancerEssence"
 
@@ -372,7 +372,7 @@ Written by Badger。这只是一个模组，没有Arcen的官方支持。"/>
 你将拥有额外的天灾防御选项。天灾军队独立运作，但你可以通过在星球上建造天灾召唤者来请求他们的援助。"/>
 
     <player_type name="ArmadaEmpire"
-        display_name="Armada Empire" short_name="Armada" uncontrolled_name="Armada " lobby_prefix="Armada Empire"
+        display_name="舰队帝国" short_name="舰队" uncontrolled_name="Armada " lobby_prefix="Armada Empire"
         sort_order="600"
         tags="ArmadaEmpire,DoesNotGetMetalGenerators"
         base_info_source="ArmadaFactionBaseInfo"
@@ -392,7 +392,7 @@ Written by Badger。这只是一个模组，没有Arcen的官方支持。"/>
         fleets_only_show_mobile_strength_in_sidebar="false"
         uses_metal="true"
         uses_resource_1="true"
-        resource_1_display_name="Tyderian"
+        resource_1_display_name="泰德"
         resource_1_color="e16cff"
         resource_1_icon="Res_NecromancerEssence"
 
@@ -438,9 +438,9 @@ Written by Badger。这只是一个模组，没有Arcen的官方支持。"/>
 
 description="无敌舰队帝国是一个由人类和基拉西领导的种族联盟，团结起来对抗AI。
 
-基拉西提供耐打的舰船但伤害较低，而人类提供伤害但较不耐打。无敌舰队可以通过在地图上找到额外的星站来进一步增强其舰船。拥有多样化的舰船通常对无敌舰队来说是个好主意！
+基拉西提供耐打的单位但伤害较低，而人类提供伤害但较不耐打。无敌舰队可以通过在地图上找到额外的星站来进一步增强其单位。拥有多样化的单位通常对无敌舰队来说是个好主意！
 
-启用无敌舰队后，地图上还会出现大量的泰德瑞安矿脉感染。这些建筑可能导致各种负面情况（特别是建造额外的AI舰船），摧毁它们将为你提供所需的资源。你可以对矿脉进行各种入侵操作以获取更多资源。 "/>
+启用无敌舰队后，地图上还会出现大量的泰德瑞安矿脉感染。这些建筑可能导致各种负面情况（特别是建造额外的AI单位），摧毁它们将为你提供所需的资源。你可以对矿脉进行各种入侵操作以获取更多资源。 "/>
 
     <!-- voodoo sidekick? like the orig necromancer with zombies-->
 

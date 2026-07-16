@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <fleet_design name="ASFArmadaSix"
         display_name="第六舰队"
@@ -24,7 +24,7 @@
 	</fleet_design>
 
   <fleet_design name="ASFArmadaEight"
-        display_name="Armada Eight"
+        display_name="舰队 八"
         description="拥有火炮式武器且持续伤害当前行星上所有敌人的方舟。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
@@ -48,7 +48,7 @@
 
   <fleet_design name="ASFArmadaTen"
         display_name="第十舰队"
-        description="由众多其他舰船部件组成的方舟。装有重力发生器，能够将敌人拉入并碾碎。"
+        description="由众多其他单位部件组成的方舟。装有重力发生器，能够将敌人拉入并碾碎。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >

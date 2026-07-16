@@ -12,7 +12,7 @@
 	
 	<!--TO DO: In Configuration, create folder "FleetLeaderTypeData" and make xml file for Fleet leader type in order to have unique special_entity_type for Dyson Moons
 	
-	<fleet_leader_type name="DysonMoon" display_name="Dyson Moon" required_special_entity_type="DysonMoon"/>
+	<fleet_leader_type name="DysonMoon" display_name="戴森之月" required_special_entity_type="DysonMoon"/>
 	
 	For some reason, this is giving me an error when I try to create it, regardless if I simply try to add this to the existing basegame file-->
 
@@ -42,7 +42,7 @@
 			category="Ship" 
 			visuals_scale_multiplier="4.8" size_scale="3.9"
 			collision_priority="500"
-			display_name="Moon Factory"
+			display_name="卫星工厂"
 			display_name_for_sidebar="卫星工厂"
 			description="Orbital factory of an alien moon. If a 舰队 旗舰 is on the same or adjacent planet, and is missing ships, then this will automatically produce replacements which will warp directly to that 旗舰."
 			description_short="移动设施，自动替换附近舰队损失并维修附近单位。"
@@ -75,7 +75,7 @@
 	
 	
 	<!--Zenith Moon-->
-	<entity name="DysonZenithMoon" display_name="Zenith Moon" display_name_for_sidebar="Zenith Moon"
+	<entity name="DysonZenithMoon" display_name="天顶之月" display_name_for_sidebar="天顶之月"
 			thematic_groups="DysonSidekick"
 			special_entity_type="BattlestationBasic" fleet_design_templates_i_always_grant="ZenithMoon"
 			capturable_can_seed_at_all="false" capturable_seed_weight="10" capturable_max_per_galaxy="6"
@@ -115,7 +115,7 @@
 		<metal_flow purpose="RepairingEnginesOfFriendlies" throughput="3000" increase_per_mark_level="3000"/>
 		<metal_flow purpose="AssistSelfConstruction" throughput="3000" increase_per_mark_level="1500"/>
 		<metal_flow purpose="FactoryConstructionForPlayerMobileFleets" throughput="4000" increase_per_mark_level="1000" />
-		<system name="W1" display_name="Antimatter Beams"
+		<system name="W1" display_name="反物质光束"
 				category="Weapon" firing_timing="OnlyInRange"
 				damage_per_shot="8000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="ExtremelyLow"
 				shot_type_data="HeavyBeamInvisible"
@@ -130,7 +130,7 @@
 
 	<!--Neinzul Moon-->
 	<entity name="DysonNeinzulMoon" copy_from="DysonZenithMoon"
-			display_name="Neinzul Moon" display_name_for_sidebar="Neinzul Moon"
+			display_name="奈祖尔之月" display_name_for_sidebar="奈祖尔之月"
 			thematic_groups="DysonSidekick"
 			icon_overlay="Overlays2/Race_Neinzul"
 			fleet_design_templates_i_always_grant="NeinzulMoon"
@@ -139,21 +139,21 @@
 			strength_multiplier="1.1"
 			>
 		<system name="W1" max_mark_level_to_function="0"></system>
-		<system name="L1" display_name="Siren Spawn"
+		<system name="L1" display_name="塞壬生成"
 					category="Weapon" firing_timing="OnlyInRange"
 					damage_per_shot="5" range="EssentiallyInfinite" shot_speed="Normal" rate_of_fire="ExtremelyLow" fires_salvos_sequentially="true"
 					shot_type_data="DysonSirenDrone"
 					shots_per_salvo="3" added_shots_per_salvo_per_mark="3"
 					>
 			</system>
-			<system name="L2" display_name="Harpy Spawn"
+			<system name="L2" display_name="鹰身女妖生成"
 					category="Weapon" firing_timing="OnlyInRange"
 					damage_per_shot="5" range="EssentiallyInfinite" shot_speed="Normal" rate_of_fire="ExtremelyLow" fires_salvos_sequentially="true"
 					shot_type_data="DysonHarpyDrone"
 					shots_per_salvo="3" added_shots_per_salvo_per_mark="3"
 					>
 			</system>
-			<system name="L3" display_name="Wisp Spawn"
+			<system name="L3" display_name="幽魂生成"
 					category="Weapon" firing_timing="OnlyInRange"
 					damage_per_shot="5" range="EssentiallyInfinite" shot_speed="Normal" rate_of_fire="ExtremelyLow" fires_salvos_sequentially="true"
 					shot_type_data="DysonWispDrone"
@@ -164,7 +164,7 @@
 		</entity>
                 
 	        <entity name="DysonSpireMoon" copy_from="DysonZenithMoon"
-			display_name="Spire Moon" display_name_for_sidebar="Spire Moon"
+			display_name="尖塔之月" display_name_for_sidebar="尖塔之月"
 			thematic_groups="DysonSidekick"
                         icon_overlay="Overlays2/NecromancerFlagship_Harrowing" 
 			tags="DirectBuilder,ShowsOnNormalDisplayMode,DysonMoon,SpireMoon"
@@ -175,7 +175,7 @@
                 </entity>
 	
 	        <entity name="DysonTemplarMoon" copy_from="DysonZenithMoon"
-			display_name="Templar Moon" display_name_for_sidebar="Templar Moon"
+			display_name="圣殿骑士之月" display_name_for_sidebar="圣殿骑士之月"
 			thematic_groups="DysonSidekick"
                         icon_overlay="Overlays2/TemplarElite"
 			tags="DirectBuilder,ShowsOnNormalDisplayMode,DysonMoon,TemplarMoon"

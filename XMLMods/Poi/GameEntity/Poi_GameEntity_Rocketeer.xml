@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
 	<!-- RocketeerDronesFleet -->
@@ -1289,7 +1289,7 @@
 			collision_priority="800"
 			display_name="可怕特斯拉鱼雷守卫"
 			display_name_for_sidebar="特斯拉鱼雷DGU"
-			description="非常强大的舰船，拥有AOE特斯拉攻击但装填速度惩罚。此变体也发射特斯拉鱼雷。"
+			description="非常强大的单位，拥有AOE特斯拉攻击但装填速度惩罚。此变体也发射特斯拉鱼雷。"
 			blocks_enemy_claim_flows="true"
 			voice_group="Silent"
 			starting_mark_level="Mark7"

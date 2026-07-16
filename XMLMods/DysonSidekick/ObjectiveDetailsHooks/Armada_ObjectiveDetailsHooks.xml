@@ -2,7 +2,7 @@
 <root>
 
   <objective_details_hook name="ArmadaUnclaimedStarbase" category="CriticalCapturables"
-          default_display_name="Claim Starbase on "  finish_display_name_with_related_planet1="true"
+          default_display_name="占领星站于"  finish_display_name_with_related_planet1="true"
           use_default_display_name_instead_of_display_name_base="true"
           dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.ArmadaUnclaimedStarbase"
           display_name_color="57ffca"
@@ -11,7 +11,7 @@
           difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedEntity1"/>
 
   <objective_details_hook name="ArmadaClaimStarbases" category="ArmadaStrategy"
-          default_display_name="Claim Starbases"
+          default_display_name="占领星站"
           use_default_display_name_instead_of_display_name_base="true"
           dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.ArmadaClaimStarbases"
           display_name_color="ffb347"
@@ -20,7 +20,7 @@
           difficulty_method="Nothing"/>
 
   <objective_details_hook name="ArmadaSwarmTactics" category="ArmadaStrategy"
-          default_display_name="Swarm Lures and Launchers"
+          default_display_name="蜂群诱饵与发射器"
           use_default_display_name_instead_of_display_name_base="true"
           dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.ArmadaSwarmTactics"
           display_name_color="ffb347"
@@ -29,7 +29,7 @@
           difficulty_method="Nothing"/>
 
   <objective_details_hook name="ArmadaMining" category="ArmadaStrategy"
-          default_display_name="Mining for Resources"
+          default_display_name="资源开采"
           use_default_display_name_instead_of_display_name_base="true"
           dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.ArmadaMining"
           display_name_color="ffb347"
@@ -38,7 +38,7 @@
           difficulty_method="Nothing"/>
 
   <objective_details_hook name="ArmadaRangers" category="ArmadaStrategy"
-          default_display_name="Rangers"
+          default_display_name="游侠"
           use_default_display_name_instead_of_display_name_base="true"
           dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.ArmadaRangers"
           display_name_color="ffb347"
@@ -47,7 +47,7 @@
           difficulty_method="Nothing"/>
 
   <objective_details_hook name="ArmadaFightTyderian" category="ArmadaStrategy"
-          default_display_name="Fight Tyderian for Resources"
+          default_display_name="为资源与泰德战斗"
           use_default_display_name_instead_of_display_name_base="true"
           dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.ArmadaFightTyderian"
           display_name_color="ffb347"

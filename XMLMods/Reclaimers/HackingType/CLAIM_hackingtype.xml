@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
         <!-- This is the same as the destroyer/cruiser hack -->
@@ -13,7 +13,7 @@
                 hacking_points_against_this_faction_percentage_recorded_modifer="0.66"
                 display_name="生产舰队蓝图"
                 choice_text="将此蓝图投入生产？"
-                description="回收者有了新发现！通过外星残骸与人类智慧的某种结合，他们可以为你的舰队生产实际的可造舰船。"
+                description="回收者有了新发现！通过外星残骸与人类智慧的某种结合，他们可以为你的舰队生产实际的可造单位。"
 
                 do_not_destroy_structure_after_hacking_multiple_times="true"
         />
@@ -98,8 +98,8 @@
                 name="Reclaimers_Scrapyard_Hack"
                 dll_name="Reclaimers"
                 type_name="Reclaimers.Reclaimers_Scrapyard_Hack"
-                display_name="从舰船生产线回收科技"
-                description="选择一条你的舰船生产线，它将永久丢失，但你会获得科技作为回报。可以重复进行，但AI每次都会做出更多反应。"
+                display_name="从单位生产线回收科技"
+                description="选择一条你的单位生产线，它将永久丢失，但你会获得科技作为回报。可以重复进行，但AI每次都会做出更多反应。"
 
                 hack_duration="15"
 
@@ -169,7 +169,7 @@
                 dll_name="Reclaimers"
                 type_name="Reclaimers.Reclaimers_Scrapyard_AlienHull_Hack"
                 display_name="改装外星船体"
-                description="选择一条你的舰船生产线，它将永久改装为外星船体，获得多项加成，并可通过外星科技进行一般性改进。"
+                description="选择一条你的单位生产线，它将永久改装为外星船体，获得多项加成，并可通过外星科技进行一般性改进。"
 
                 hack_duration="15"
 

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
 
@@ -16,7 +16,7 @@
 			y_offset_of_icon="10"
 			collision_priority="100"
 	  display_name="可怕巨噬细胞"
-	  description="可怕巨噬细胞从其他舰船和建筑中收获金属并喂养其关联的 Telium。它是巨噬细胞的一种突变体，能够捕食同类，速度更快且配备了破坏弹药。"
+	  description="可怕巨噬细胞从其他单位和建筑中收获金属并喂养其关联的 Telium。它是巨噬细胞的一种突变体，能够捕食同类，速度更快且配备了破坏弹药。"
 			starting_mark_level="Mark1"
 			cost_for_ai_to_purchase="25000"			
 			hull_points="3600000" shield_points="2400000" speed="Normal1"
@@ -235,7 +235,7 @@
 			collision_priority="100"
 	  display_name="可怕巨噬细胞航母"
 			display_name_for_sidebar="巨噬细胞航母"
-			description="可怕巨噬细胞航母从其他舰船和建筑中收获金属并喂养其相关的 Telium。巨噬细胞的突变体，向其敌人释放蜂群。几乎所有东西都会忽略它而关注其无人机，但您可能不应该这样做。"
+			description="可怕巨噬细胞航母从其他单位和建筑中收获金属并喂养其相关的 Telium。巨噬细胞的突变体，向其敌人释放蜂群。几乎所有东西都会忽略它而关注其无人机，但您可能不应该这样做。"
 			starting_mark_level="Mark1"
 			fleet_design_template_i_use_for_drones="MacrophageDrones"
 			drone_starting_behavior_type="Attacker_Full"
@@ -277,7 +277,7 @@
 			collision_priority="100"
 	  display_name="进化可怕巨噬细胞航母"
 			display_name_for_sidebar="EV 巨噬航母"
-			description="进化的可怕巨噬细胞航母从其他舰船和建筑中收获金属并喂养其相关的 Telium。巨噬细胞的突变体，向其敌人释放蜂群。几乎所有东西都会忽略它而关注其无人机，但您可能不应该这样做。由于进化超越了普通航母的限制，它能够更快地释放更多无人机，并获得了一种额外类型。非常具有攻击性。"
+			description="进化的可怕巨噬细胞航母从其他单位和建筑中收获金属并喂养其相关的 Telium。巨噬细胞的突变体，向其敌人释放蜂群。几乎所有东西都会忽略它而关注其无人机，但您可能不应该这样做。由于进化超越了普通航母的限制，它能够更快地释放更多无人机，并获得了一种额外类型。非常具有攻击性。"
 			starting_mark_level="Mark1"
 			fleet_design_template_i_use_for_drones="MacrophageDronesLarge"
 			drone_starting_behavior_type="Attacker_Full"
@@ -559,7 +559,7 @@
 		    collision_priority="900"
 	  display_name="可怕巨噬突变体"
 			display_name_for_sidebar="巨噬突变体"
-		    description="突变体是一艘用于转化为可怕巨噬细胞防御结构的舰船。"
+		    description="突变体是一艘用于转化为可怕巨噬细胞防御结构的单位。"
 		    starting_mark_level="Mark1"
 	        cost_for_ai_to_purchase="10"
 		    hull_points="500000" shield_points="250000" speed="VeryVeryLittle1"
@@ -669,7 +669,7 @@
 			y_offset_of_icon="10"
 			collision_priority="100"
 	  display_name="可怕巨噬殖民者"
-	  description="一艘既强大又罕见的可怕巨噬细胞舰船，它结合了采集者和航母的武器和能力并将其放大。这个怪物的任务是转化为一个新的可怕 Telium。"
+	  description="一艘既强大又罕见的可怕巨噬细胞单位，它结合了采集者和航母的武器和能力并将其放大。这个怪物的任务是转化为一个新的可怕 Telium。"
 			starting_mark_level="Mark1"
 			cost_for_ai_to_purchase="250000"			
 			hull_points="25000000" shield_points="12500000" speed="AlmostNone"

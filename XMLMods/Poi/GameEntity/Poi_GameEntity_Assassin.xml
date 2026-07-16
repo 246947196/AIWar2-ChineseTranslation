@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
 	<entity
@@ -234,7 +234,7 @@
 			collision_priority="800"
 			display_name="可怕腐蚀守卫"
 			display_name_for_sidebar="腐蚀DGU"
-			description="一个装甲薄弱的守卫，用致命的腐蚀爆炸弥补伤害不足，溶解敌人的船体。死亡时，向附近舰船喷射最后的腐蚀爆炸。"
+			description="一个装甲薄弱的守卫，用致命的腐蚀爆炸弥补伤害不足，溶解敌人的船体。死亡时，向附近单位喷射最后的腐蚀爆炸。"
 			blocks_enemy_claim_flows="true"
 			voice_group="Silent"
 			starting_mark_level="Mark7"

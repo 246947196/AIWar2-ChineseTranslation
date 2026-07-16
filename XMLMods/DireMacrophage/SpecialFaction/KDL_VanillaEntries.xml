@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
     <faction name="DireMacrophageInfestation" 
     display_name="可怕巨噬细胞感染" short_name="可怕巨噬细胞" processing_group="DireMacrophage"
     base_info_source="DireMacrophageFactionBaseInfo" deep_info_source="DireMacrophageFactionDeepInfo" team_center_color="c343434" team_border_color="c36454F"
     type="SpecialFaction"
-    description="银河系正被一种更强大的巨大生物巨噬细胞变体入侵。它们与普通巨噬细胞一样以 AI 为食获取金属，也会试图吞噬您的舰船。
+    description="银河系正被一种更强大的巨大生物巨噬细胞变体入侵。它们与普通巨噬细胞一样以 AI 为食获取金属，也会试图吞噬您的单位。
 
 &lt;color=#f25e1c&gt;高影响：&lt;/color&gt;该派系会扩张，尽管方式与原始版本不同，并且通常不会在早期造成不可挽回的损害。虽然一开始有点慢，但随着时间的推移会变得更强，并且可能变得非常有影响力。战斗越多，该派系就会变得越强大，只要局势不完全一边倒。
 从游戏风格来看，它们是防御型巨兽，而它们的进攻能力由于无智能的游荡而仍然有限。"

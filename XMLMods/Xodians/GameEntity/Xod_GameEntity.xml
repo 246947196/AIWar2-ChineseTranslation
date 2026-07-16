@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
 	<!-- Core -->
@@ -16,7 +16,7 @@
 			collision_priority="810"
 			display_name="克赛迪安门"
 			display_name_for_sidebar="克赛迪安门"
-			description="此门使克赛迪安巨型舰船能够在遥远位置之间穿梭。"
+			description="此门使克赛迪安巨型单位能够在遥远位置之间穿梭。"
 			behavior="Stationary"
 			starting_mark_level="Markless"
 			cost_for_ai_to_purchase="2000"
@@ -55,7 +55,7 @@
 			collision_priority="810"
 			display_name="克赛迪安燃料"
 			display_name_for_sidebar="克赛迪安燃料"
-			description="克赛迪安巨型舰船的燃料来源。没有它，它们的力量会大大减弱。"
+			description="克赛迪安巨型单位的燃料来源。没有它，它们的力量会大大减弱。"
 			behavior="Stationary"
 			starting_mark_level="Markless"
 			cost_for_ai_to_purchase="2000"
@@ -328,7 +328,7 @@
 			collision_priority="810"
 			display_name="克赛迪安维修基地"
 			display_name_for_sidebar="克赛迪安维修基地"
-			description="该克赛迪安基地制造无人机来修复受损舰船。"
+			description="该克赛迪安基地制造无人机来修复受损单位。"
 			starting_mark_level="Mark7"
 			tech_upgrades_that_benefit_me="Unused"
 			does_not_use_multipliers_from_mark_level="true"
@@ -376,7 +376,7 @@
 			collision_priority="810"
 			display_name="克赛迪安维修无人机"
 			display_name_for_sidebar="克赛迪安维修无人机"
-			description="该克赛迪安无人机环绕受损舰船进行维修。"
+			description="该克赛迪安无人机环绕受损单位进行维修。"
 			starting_mark_level="Mark1"
 			tech_upgrades_that_benefit_me="Unused"
 			does_not_use_multipliers_from_mark_level="true"
@@ -640,7 +640,7 @@
 			
 			display_name="克赛迪安泊位"
 			display_name_for_sidebar="克赛迪安泊位"
-			description="这里正在利用小行星建造一艘巨型舰船。"
+			description="这里正在利用小行星建造一艘巨型单位。"
 
 			description_appender_dll="Xodian"
 			description_appender_type="Xodian.Xod_Berth"
@@ -928,7 +928,7 @@
 			collision_priority="1"
 			display_name="克赛迪安 AI 核心"
 			display_name_for_sidebar="克赛迪安 AI 核心"
-			description="克赛迪安 AI 的裸露外壳，已剥离巨型舰船的装甲。本质上是逃生舱，如果它们能够返回家园，就可以被改装成新的巨型舰船。"
+			description="克赛迪安 AI 的裸露外壳，已剥离巨型单位的装甲。本质上是逃生舱，如果它们能够返回家园，就可以被改装成新的巨型单位。"
 			behavior="Stationary"
 			starting_mark_level="Mark1"
 			tech_upgrades_that_benefit_me="Unused"

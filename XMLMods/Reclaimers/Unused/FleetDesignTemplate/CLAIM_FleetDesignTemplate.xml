@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   <!--
 <fleet_design 
   name="AlienStartingFleet"
   display_name="外星舰队"
-  description="人类使用自己的舰船已经输掉了战争。这次我们不会了。小心，我们完全不知道这些东西如何运作。"
+  description="人类使用自己的单位已经输掉了战争。这次我们不会了。小心，我们完全不知道这些东西如何运作。"
   design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
   append_each_ship_description_to_main_description="true"
   >

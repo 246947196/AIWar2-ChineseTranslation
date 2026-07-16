@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <journal name="Scourge_Infusion_Overview" sidebar_text="{FactionColor}天灾&lt;/color&gt;：概述"
 			can_record_another_copy_if_already_recorded_in_this_campaign="false"
 			text_replacement_related_faction_color="true"
 			text_replacement_related_planet="true"
-			full_text="天灾灌注帝国可以建造和管理其天灾盟友。要增强你的主力天灾部队，你需要建造大量生成器；这些生成器产生天灾舰船。天灾舰船会在军械库中自我升级；建造军械库允许舰船进化为该种族的舰船。更高标记的军械库允许你的舰船达到更高标记。
+			full_text="天灾灌注帝国可以建造和管理其天灾盟友。要增强你的主力天灾部队，你需要建造大量生成器；这些生成器产生天灾单位。天灾单位会在军械库中自我升级；建造军械库允许单位进化为该种族的单位。更高标记的军械库允许你的单位达到更高标记。
 
-要塞生产舰船防御其行星周围区域，兽栏也是如此。兽栏生产一艘非常强大的舰船，要塞生产大量小型舰船。
+要塞生产单位防御其行星周围区域，兽栏也是如此。兽栏生产一艘非常强大的单位，要塞生产大量小型单位。
 
 你可以通过在特定行星上建造召唤者来召唤你的所有天灾部队；天灾将飞往该行星进行攻击。
 

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 	<!-- This file is the main unit and all sub-units of the Jupiter Pattern Flenser. 
 Yes, this thing seriously has it's own file. That's because I think it's going to be enormous and I'd like to still be able to find stuff in the main file.
@@ -67,7 +67,7 @@ Yes, this thing seriously has it's own file. That's because I think it's going t
 		collision_priority="8000"
 		can_pass_through_enemy_forcefields="true"
 		display_name="朱诺" override_faction_name="AI Exogalactic War Front"
-		description="木星型剥皮者的强大子单位。在主船体周围生成保护屏障，并使用强大的击退武器击退较小的舰船。"
+		description="木星型剥皮者的强大子单位。在主船体周围生成保护屏障，并使用强大的击退武器击退较小的单位。"
 		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
 		cost_for_ai_to_purchase="2012500" strength_multiplier="2.5"
 		hull_points="100000000" shield_points="100000000" speed="Immobile"
@@ -133,7 +133,7 @@ Yes, this thing seriously has it's own file. That's because I think it's going t
 		collision_priority="8000"
 		can_pass_through_enemy_forcefields="true"
 		display_name="密涅瓦" override_faction_name="AI Exogalactic War Front"
-		description="木星型剥皮者的强大子单位。在主船体周围生成保护屏障，并使用强大的击退武器击退较小的舰船。"
+		description="木星型剥皮者的强大子单位。在主船体周围生成保护屏障，并使用强大的击退武器击退较小的单位。"
 		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
 		cost_for_ai_to_purchase="2012500" strength_multiplier="2.25"
 		hull_points="100000000" shield_points="50000000" speed="Immobile"
@@ -350,7 +350,7 @@ Yes, this thing seriously has it's own file. That's because I think it's going t
 		collision_priority="8000"
 		can_pass_through_enemy_forcefields="true"
 		display_name="维纳斯" override_faction_name="AI Exogalactic War Front"
-		description="木星型剥皮者的强大子单位。以惊人的速度将附近较小的舰船转化为 AI 控制。"
+		description="木星型剥皮者的强大子单位。以惊人的速度将附近较小的单位转化为 AI 控制。"
 		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
 		cost_for_ai_to_purchase="2012500" strength_multiplier="2.5"
 		hull_points="100000000" shield_points="50000000" speed="Immobile"
@@ -387,7 +387,7 @@ Yes, this thing seriously has it's own file. That's because I think it's going t
 		collision_priority="8000"
 		can_pass_through_enemy_forcefields="true"
 		display_name="火星" override_faction_name="AI Exogalactic War Front"
-		description="木星型剥皮者的强大子单位。使用强大的光束武器攻击附近舰船，并增强整个星球上的 AI 舰船。"
+		description="木星型剥皮者的强大子单位。使用强大的光束武器攻击附近单位，并增强整个星球上的 AI 单位。"
 		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
 		cost_for_ai_to_purchase="2012500" strength_multiplier="3.5"
 		hull_points="100000000" shield_points="50000000" speed="Immobile"
@@ -429,7 +429,7 @@ Yes, this thing seriously has it's own file. That's because I think it's going t
 		collision_priority="8000"
 		can_pass_through_enemy_forcefields="true"
 		display_name="水星" override_faction_name="AI Exogalactic War Front"
-		description="木星型剥皮者的强大子单位。除了加速星球上的友方舰船外，它还使用先进的隐形系统，其调校如此精良，以至于可以在几乎不干扰隐身场的情况下开火。"
+		description="木星型剥皮者的强大子单位。除了加速星球上的友方单位外，它还使用先进的隐形系统，其调校如此精良，以至于可以在几乎不干扰隐身场的情况下开火。"
 		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
 		cost_for_ai_to_purchase="2012500" strength_multiplier="5.5"
 		hull_points="100000000" shield_points="50000000" speed="Immobile"
@@ -682,7 +682,7 @@ Yes, this thing seriously has it's own file. That's because I think it's going t
 		regenerates_dying_ships_at_this_health_cost_ratio="1"
 		can_pass_through_enemy_forcefields="true"
 		display_name="阿波罗" override_faction_name="AI Exogalactic War Front"
-		description="木星型剥皮者的强大子单位。在主船体周围生成保护屏障，并使用强大的击退武器击退较小的舰船。"
+		description="木星型剥皮者的强大子单位。在主船体周围生成保护屏障，并使用强大的击退武器击退较小的单位。"
 		starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
 		cost_for_ai_to_purchase="2012500" strength_multiplier="2.25"
 		hull_points="140000000" shield_points="10000000" speed="Immobile"

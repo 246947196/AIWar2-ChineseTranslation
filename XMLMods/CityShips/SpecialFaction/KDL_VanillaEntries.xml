@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
     <faction name="CityShips" 
     display_name="流浪城市舰" short_name="城市舰" processing_group="CityShips"
@@ -7,7 +7,7 @@
 	description="一艘流浪城市舰已抵达银河系。它将尝试在银河系中建造建筑以变得更加繁荣和强大。
 
 &lt;color=#f25e1c&gt;高影响：&lt;/color&gt;根据强度和入侵时间，该派系的影响将大不相同。例如，立即入侵、强度10将在中等到高影响之间，而较晚入侵则可能使其完全失败。请注意，杀死城市舰将使该派系无法建造新建筑。以下是总体预期：
-驾驶着强大的舰船游荡，如果它们成功播种并升级了一些建筑，这个敌人的影响就会显现。即使它们在这个努力中失败了，城市舰仍然是一个值得注意的敌人。"
+驾驶着强大的单位游荡，如果它们成功播种并升级了一些建筑，这个敌人的影响就会显现。即使它们在这个努力中失败了，城市舰仍然是一个值得注意的敌人。"
 		ai_can_send_waves_against_this="true" 
 		can_use_spire_debris="false"
 		impact="Moderate" 

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 	<entity name="DevourerChrysalisBeacon" copy_from="MinorFactionBeacon"
 		tags="Beacon,DevourerChrysalisBeacon"
@@ -114,8 +114,8 @@
 		collision_priority="100000"
 		display_name="吞噬者"
 		display_name_for_sidebar="吞 T1"
-		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一艘舰船，能自我再生，并打破星球上的所有停火协议。"
-		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数舰船而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。"
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破星球上的所有停火协议。"
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。"
 		hull_points="5000000" shield_points="2500000" speed="VeryVeryLittle1"
 		armor_mm="300" engine_gx="25" mass_tx="18" albedo="0.9"
 		science_to_grant_on_death="2000"
@@ -166,9 +166,9 @@
 	<entity name="DevourerGolem_Enraged" copy_from="DevourerGolem_Tier1" tags="ShowsOnNormalDisplayMode,#EnragedModeOf#DevourerGolem_Tier1,MainMobileDevourerIncludingEnraged"
 		display_name="狂暴吞噬者"
 		display_name_for_sidebar="吞 T1 E"
-		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一艘舰船，能自我再生，并打破星球上的所有停火协议。
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破星球上的所有停火协议。
 &lt;color=#ff8888&gt;狂暴：造成更多伤害，并会 targeting 建筑！&lt;/color&gt;"
-		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数舰船而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。
 &lt;color=#ff8888&gt;狂暴：造成更多伤害，并会 targeting 建筑！&lt;/color&gt;"
 		damage_multiplier_to_all_weapons="1.5"
 	>
@@ -253,8 +253,8 @@
 	<entity name="DevourerGolemTier2_Destroyer" copy_from="DevourerGolemTier2_Base" tags="ShowsOnNormalDisplayMode,#Devourer_Evolution#Chrysalis_Tier2,Devourer_Tier2,#Devourer_ID#00,MainMobileDevourerIncludingEnraged"
 		display_name="毁灭者吞噬者"
 		display_name_for_sidebar="吞 T2 毁灭"
-		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一艘舰船，能自我再生，并打破星球上的所有停火协议。此变体侧重于高伤害输出。"
-		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数舰船而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于高伤害输出，并在刚抵达星球时进一步减少受到的伤害。"
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破星球上的所有停火协议。此变体侧重于高伤害输出。"
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于高伤害输出，并在刚抵达星球时进一步减少受到的伤害。"
 		strength_multiplier="2"
 	>
 		<system name="AntimatterJaws" display_name="窄化反物质之颚"
@@ -271,9 +271,9 @@
 	<entity name="DevourerGolemTier2_Destroyer_Enraged" copy_from="DevourerGolemTier2_Destroyer" tags="ShowsOnNormalDisplayMode,#EnragedModeOf#DevourerGolemTier2_Destroyer,MainMobileDevourerIncludingEnraged"
 		display_name="狂暴毁灭者吞噬者"
 		display_name_for_sidebar="吞 T2 E-毁灭"
-		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一艘舰船，能自我再生，并打破星球上的所有停火协议。此变体侧重于高伤害输出。
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破星球上的所有停火协议。此变体侧重于高伤害输出。
 &lt;color=#ff8888&gt;狂暴：造成更多伤害，并会 targeting 建筑！&lt;/color&gt;"
-		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数舰船而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于高伤害输出，并在刚抵达星球时进一步减少受到的伤害。
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于高伤害输出，并在刚抵达星球时进一步减少受到的伤害。
 &lt;color=#ff8888&gt;狂暴：造成更多伤害，并会 targeting 建筑！&lt;/color&gt;"
 		damage_multiplier_to_all_weapons="3"
 	>
@@ -289,8 +289,8 @@
 	<entity name="DevourerGolemTier2_Tsunami" copy_from="DevourerGolemTier2_Base" tags="ShowsOnNormalDisplayMode,#Devourer_Evolution#Chrysalis_Tier2,Devourer_Tier2,#Devourer_ID#01,MainMobileDevourerIncludingEnraged"
 		display_name="海啸吞噬者"
 		display_name_for_sidebar="吞 T2 海啸"
-		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一艘舰船，能自我再生，并打破星球上的所有停火协议。此变体侧重于范围和多目标伤害。"
-		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数舰船而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于范围和多目标伤害，无论是通过范围爆炸还是分裂射击。在与留在星球上一段时间的敌人进行持久战时，它会进一步降低受到的伤害。"
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破星球上的所有停火协议。此变体侧重于范围和多目标伤害。"
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于范围和多目标伤害，无论是通过范围爆炸还是分裂射击。在与留在星球上一段时间的敌人进行持久战时，它会进一步降低受到的伤害。"
 		strength_multiplier="1.75"
 	>
 		<system name="AntimatterJaws" display_name="溅射反物质之颚"
@@ -308,9 +308,9 @@
 	<entity name="DevourerGolemTier2_Tsunami_Enraged" copy_from="DevourerGolemTier2_Tsunami" tags="ShowsOnNormalDisplayMode,#EnragedModeOf#DevourerGolemTier2_Tsunami,MainMobileDevourerIncludingEnraged"
 		display_name="狂暴海啸吞噬者"
 		display_name_for_sidebar="吞 T2 E-海啸"
-		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一艘舰船，能自我再生，并打破星球上的所有停火协议。此变体侧重于范围和多目标伤害。
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破星球上的所有停火协议。此变体侧重于范围和多目标伤害。
 &lt;color=#ff8888&gt;狂暴：造成更多伤害，并会 targeting 建筑！&lt;/color&gt;"
-		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数舰船而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于范围和多目标伤害，无论是通过范围爆炸还是分裂射击。在与留在星球上一段时间的敌人进行持久战时，它会进一步降低受到的伤害。
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于范围和多目标伤害，无论是通过范围爆炸还是分裂射击。在与留在星球上一段时间的敌人进行持久战时，它会进一步降低受到的伤害。
 &lt;color=#ff8888&gt;狂暴：造成更多伤害，并会 targeting 建筑！&lt;/color&gt;"
 		damage_multiplier_to_all_weapons="3"
 	>
@@ -329,8 +329,8 @@
 	<entity name="DevourerGolemTier3_Mortar" copy_from="DevourerGolemTier3_Base" tags="ShowsOnNormalDisplayMode,#Devourer_Evolution#Chrysalis_Tier3,Devourer_Tier3,#Devourer_ID#000,MainMobileDevourerIncludingEnraged"
 		display_name="迫击炮吞噬者"
 		display_name_for_sidebar="吞 T3 迫炮"
-		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一艘舰船，能自我再生，并打破星球上的所有停火协议。此变体侧重于远程范围轰炸。"
-		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数舰船而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于远程范围轰炸，对范围内的所有目标造成全额伤害分摊。此外，它在更远距离上得到加固，并在到达星球后的最初几秒内进一步减少受到的伤害。"
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破星球上的所有停火协议。此变体侧重于远程范围轰炸。"
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于远程范围轰炸，对范围内的所有目标造成全额伤害分摊。此外，它在更远距离上得到加固，并在到达星球后的最初几秒内进一步减少受到的伤害。"
 		strength_multiplier="2"
 	>
 		<system name="AntimatterJaws" display_name="散射反物质之颚"
@@ -356,9 +356,9 @@
 	<entity name="DevourerGolemTier3_Mortar_Enraged" copy_from="DevourerGolemTier3_Mortar" tags="ShowsOnNormalDisplayMode,#EnragedModeOf#DevourerGolemTier3_Mortar,MainMobileDevourerIncludingEnraged"
 		display_name="狂暴迫击炮吞噬者"
 		display_name_for_sidebar="吞 T3 E-迫炮"
-		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一艘舰船，能自我再生，并打破星球上的所有停火协议。此变体侧重于远程范围轰炸。
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破星球上的所有停火协议。此变体侧重于远程范围轰炸。
 &lt;color=#ff8888&gt;狂暴：造成更多伤害，并会 targeting 建筑！&lt;/color&gt;"
-		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数舰船而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于远程范围轰炸，对范围内的所有目标造成全额伤害分摊。此外，它在更远距离上得到加固，并在到达星球后的最初几秒内进一步减少受到的伤害。
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于远程范围轰炸，对范围内的所有目标造成全额伤害分摊。此外，它在更远距离上得到加固，并在到达星球后的最初几秒内进一步减少受到的伤害。
 &lt;color=#ff8888&gt;狂暴：造成更多伤害，并会 targeting 建筑！&lt;/color&gt;"
 		damage_multiplier_to_all_weapons="6"
 	>
@@ -374,8 +374,8 @@
 	<entity name="DevourerGolemTier3_Tank" copy_from="DevourerGolemTier3_Base" tags="ShowsOnNormalDisplayMode,#Devourer_Evolution#Chrysalis_Tier3,Devourer_Tier3,#Devourer_ID#001,MainMobileDevourerIncludingEnraged"
 		display_name="坦克吞噬者"
 		display_name_for_sidebar="吞 T3 坦克"
-		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一艘舰船，能自我再生，并打破星球上的所有停火协议。此变体侧重于承受大量伤害。"
-		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数舰船而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于通过改进的自我修复、硬化以及总体生命值和护盾来承受大量伤害。它在到达星球后的最初几秒内进一步减少受到的伤害。"
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破星球上的所有停火协议。此变体侧重于承受大量伤害。"
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于通过改进的自我修复、硬化以及总体生命值和护盾来承受大量伤害。它在到达星球后的最初几秒内进一步减少受到的伤害。"
 		hull_points="15000000" shield_points="0"
 		strength_multiplier="2"
 		damage_taken_cannot_be_more_than_this_percentage_of_max_health="0.03"
@@ -398,9 +398,9 @@
 	<entity name="DevourerGolemTier3_Tank_Enraged" copy_from="DevourerGolemTier3_Tank" tags="ShowsOnNormalDisplayMode,#EnragedModeOf#DevourerGolemTier3_Tank,MainMobileDevourerIncludingEnraged"
 		display_name="狂暴坦克吞噬者"
 		display_name_for_sidebar="吞 T3 E-坦克"
-		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一艘舰船，能自我再生，并打破星球上的所有停火协议。此变体侧重于承受大量伤害。
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破星球上的所有停火协议。此变体侧重于承受大量伤害。
 &lt;color=#ff8888&gt;狂暴：造成更多伤害，并会 targeting 建筑！&lt;/color&gt;"
-		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数舰船而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于通过改进的自我修复、硬化以及总体生命值和护盾来承受大量伤害。它在到达星球后的最初几秒内进一步减少受到的伤害。
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于通过改进的自我修复、硬化以及总体生命值和护盾来承受大量伤害。它在到达星球后的最初几秒内进一步减少受到的伤害。
 &lt;color=#ff8888&gt;狂暴：造成更多伤害，并会 targeting 建筑！&lt;/color&gt;"
 		damage_multiplier_to_all_weapons="6"
 	>
@@ -416,8 +416,8 @@
 	<entity name="DevourerGolemTier3_Swarm" copy_from="DevourerGolemTier3_Base" tags="ShowsOnNormalDisplayMode,#Devourer_Evolution#Chrysalis_Tier3,Devourer_Tier3,#Devourer_ID#010,MainMobileDevourerIncludingEnraged"
 		display_name="蜂群吞噬者"
 		display_name_for_sidebar="吞 T3 蜂群"
-		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一艘舰船，能自我再生，并打破星球上的所有停火协议。此变体侧重于生成"小型"支援无人机。"
-		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数舰船而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于生成"小型"支援无人机。"小型"是相对于蜂群吞噬者而言的，它们比我们物种建造过的大多数东西都要大得多。它还会从已在星球上一段时间的敌人那里进一步减少受到的伤害。"
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破星球上的所有停火协议。此变体侧重于生成"小型"支援无人机。"
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于生成"小型"支援无人机。"小型"是相对于蜂群吞噬者而言的，它们比我们物种建造过的大多数东西都要大得多。它还会从已在星球上一段时间的敌人那里进一步减少受到的伤害。"
 		drone_starting_behavior_type="Attacker_Full"
 		fleet_design_template_i_use_for_drones="DevourerGolemTier3_Swarm_Drones"
 		strength_multiplier="2.5"
@@ -444,9 +444,9 @@
 	<entity name="DevourerGolemTier3_Swarm_Enraged" copy_from="DevourerGolemTier3_Swarm" tags="ShowsOnNormalDisplayMode,#EnragedModeOf#DevourerGolemTier3_Swarm,MainMobileDevourerIncludingEnraged"
 		display_name="狂暴蜂群吞噬者"
 		display_name_for_sidebar="吞 T3 E-蜂群"
-		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一艘舰船，能自我再生，并打破星球上的所有停火协议。此变体侧重于生成"小型"支援无人机。
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破星球上的所有停火协议。此变体侧重于生成"小型"支援无人机。
 &lt;color=#ff8888&gt;狂暴：造成更多伤害，并会 targeting 建筑！&lt;/color&gt;"
-		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数舰船而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于生成"小型"支援无人机。"小型"是相对于蜂群吞噬者而言的，它们比我们物种建造过的大多数东西都要大得多。它还会从已在星球上一段时间的敌人那里进一步减少受到的伤害。
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于生成"小型"支援无人机。"小型"是相对于蜂群吞噬者而言的，它们比我们物种建造过的大多数东西都要大得多。它还会从已在星球上一段时间的敌人那里进一步减少受到的伤害。
 &lt;color=#ff8888&gt;狂暴：造成更多伤害，并会 targeting 建筑！&lt;/color&gt;"
 		damage_multiplier_to_all_weapons="6"
 		fleet_design_template_i_use_for_drones="DevourerGolemTier3_SwarmEnraged_Drones"
@@ -464,8 +464,8 @@
 	<entity name="DevourerGolemTier3_Gravity" copy_from="DevourerGolemTier3_Base" tags="ShowsOnNormalDisplayMode,#Devourer_Evolution#Chrysalis_Tier3,Devourer_Tier3,#Devourer_ID#011,MainMobileDevourerIncludingEnraged"
 		display_name="重力吞噬者"
 		display_name_for_sidebar="吞 T3 重力"
-		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一艘舰船，能自我再生，并打破星球上的所有停火协议。此变体侧重于重力武器。"
-		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数舰船而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于重力武器，可以减慢敌人速度并利用这一点造成更多伤害，将大型敌人击退甚至吸引较小的敌人。它还拥有一个引力核心，并从已在星球上一段时间的敌人那里进一步减少受到的伤害。"
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破星球上的所有停火协议。此变体侧重于重力武器。"
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于重力武器，可以减慢敌人速度并利用这一点造成更多伤害，将大型敌人击退甚至吸引较小的敌人。它还拥有一个引力核心，并从已在星球上一段时间的敌人那里进一步减少受到的伤害。"
 		strength_multiplier="2.5"
 	>
 		<system name="AntimatterJaws" display_name="G-撕裂反物质之颚"
@@ -491,9 +491,9 @@
 	<entity name="DevourerGolemTier3_Gravity_Enraged" copy_from="DevourerGolemTier3_Gravity" tags="ShowsOnNormalDisplayMode,#EnragedModeOf#DevourerGolemTier3_Gravity,MainMobileDevourerIncludingEnraged"
 		display_name="狂暴重力吞噬者"
 		display_name_for_sidebar="吞 T3 E-重力"
-		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一艘舰船，能自我再生，并打破星球上的所有停火协议。此变体侧重于重力武器。
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破星球上的所有停火协议。此变体侧重于重力武器。
 &lt;color=#ff8888&gt;狂暴：造成更多伤害，并会 targeting 建筑！&lt;/color&gt;"
-		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数舰船而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于重力武器，可以减慢敌人速度并利用这一点造成更多伤害，将大型敌人击退甚至吸引较小的敌人。它还拥有一个引力核心，并从已在星球上一段时间的敌人那里进一步减少受到的伤害。
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于重力武器，可以减慢敌人速度并利用这一点造成更多伤害，将大型敌人击退甚至吸引较小的敌人。它还拥有一个引力核心，并从已在星球上一段时间的敌人那里进一步减少受到的伤害。
 &lt;color=#ff8888&gt;狂暴：造成更多伤害，并会 targeting 建筑！&lt;/color&gt;"
 		damage_multiplier_to_all_weapons="6"
 	>
@@ -512,8 +512,8 @@
 	<entity name="DevourerGolemTier4_Crystal" copy_from="DevourerGolemTier4_Base" tags="ShowsOnNormalDisplayMode,Devourer_Tier4,#Devourer_ID#0000,MainMobileDevourerIncludingEnraged"
 		display_name="水晶吞噬者"
 		display_name_for_sidebar="吞 T4 水晶"
-		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一艘舰船，能自我再生，并打破星球上的所有停火协议。此变体侧重于极端伤害输出。"
-		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数舰船而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于在范围内造成极端伤害输出，反物质之颚在命中目标间分摊伤害，而反傀儡火炮则对每个敌人造成全额爆炸伤害。此外，它在更远距离上得到加固，并在到达星球后的最初几秒内进一步减少受到的伤害。"
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破星球上的所有停火协议。此变体侧重于极端伤害输出。"
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于在范围内造成极端伤害输出，反物质之颚在命中目标间分摊伤害，而反傀儡火炮则对每个敌人造成全额爆炸伤害。此外，它在更远距离上得到加固，并在到达星球后的最初几秒内进一步减少受到的伤害。"
 		hull_points="2000000" shield_points="1000000"
 		strength_multiplier="1.75"
 	>
@@ -551,9 +551,9 @@
 	<entity name="DevourerGolemTier4_Crystal_Enraged" copy_from="DevourerGolemTier4_Crystal" tags="ShowsOnNormalDisplayMode,#EnragedModeOf#DevourerGolemTier4_Crystal,MainMobileDevourerIncludingEnraged"
 		display_name="狂暴水晶吞噬者"
 		display_name_for_sidebar="吞 T4 E-水晶"
-		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一艘舰船，能自我再生，并打破星球上的所有停火协议。此变体侧重于极端伤害输出。
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破星球上的所有停火协议。此变体侧重于极端伤害输出。
 &lt;color=#ff8888&gt;狂暴：造成更多伤害！&lt;/color&gt;"
-		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数舰船而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于在范围内造成极端伤害输出，反物质之颚在命中目标间分摊伤害，而反傀儡火炮则对每个敌人造成全额爆炸伤害。此外，它在更远距离上得到加固，并在到达星球后的最初几秒内进一步减少受到的伤害。
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于在范围内造成极端伤害输出，反物质之颚在命中目标间分摊伤害，而反傀儡火炮则对每个敌人造成全额爆炸伤害。此外，它在更远距离上得到加固，并在到达星球后的最初几秒内进一步减少受到的伤害。
 &lt;color=#ff8888&gt;狂暴：造成更多伤害！&lt;/color&gt;"
 		damage_multiplier_to_all_weapons="12" 
 	>
@@ -566,8 +566,8 @@
 	<entity name="DevourerGolemTier4_Vengeful" copy_from="DevourerGolemTier4_Base" tags="ShowsOnNormalDisplayMode,Devourer_Tier4,#Devourer_ID#0001,MainMobileDevourerIncludingEnraged"
 		display_name="复仇吞噬者"
 		display_name_for_sidebar="吞 T4 复仇"
-		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一艘舰船，能自我再生，并打破星球上的所有停火协议。此变体侧重于随着生命值降低而增强威力。"
-		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数舰船而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于随着生命值降低而增强威力。其所有武器在每个 10% 生命值阈值处都会大幅超越原始威力，造成不断增加的範圍伤害。此外，它在更远距离上得到加固，并在到达星球后的最初几秒内进一步减少受到的伤害。"
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破星球上的所有停火协议。此变体侧重于随着生命值降低而增强威力。"
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于随着生命值降低而增强威力。其所有武器在每个 10% 生命值阈值处都会大幅超越原始威力，造成不断增加的範圍伤害。此外，它在更远距离上得到加固，并在到达星球后的最初几秒内进一步减少受到的伤害。"
 		strength_multiplier="10"
 	>
 		<system name="AntimatterJaws" display_name="散射反物质之颚"
@@ -609,17 +609,17 @@
 	<entity name="DevourerGolemTier4_Vengeful_Enraged" copy_from="DevourerGolemTier4_Vengeful" tags="ShowsOnNormalDisplayMode,#EnragedModeOf#DevourerGolemTier4_Vengeful,MainMobileDevourerIncludingEnraged"
 		display_name="狂暴复仇吞噬者"
 		display_name_for_sidebar="吞 T4 E-复仇"
-		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一艘舰船，能自我再生，并打破星球上的所有停火协议。此变体侧重于随着生命值降低而增强威力。
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破星球上的所有停火协议。此变体侧重于随着生命值降低而增强威力。
 &lt;color=#ff8888&gt;狂暴：造成更多伤害！&lt;/color&gt;"
-		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数舰船而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于随着生命值降低而增强威力。其所有武器在每个 10% 生命值阈值处都会大幅超越原始威力，造成不断增加的範圍伤害。此外，它在更远距离上得到加固，并在到达星球后的最初几秒内进一步减少受到的伤害。
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于随着生命值降低而增强威力。其所有武器在每个 10% 生命值阈值处都会大幅超越原始威力，造成不断增加的範圍伤害。此外，它在更远距离上得到加固，并在到达星球后的最初几秒内进一步减少受到的伤害。
 &lt;color=#ff8888&gt;狂暴：造成更多伤害！&lt;/color&gt;"
 		damage_multiplier_to_all_weapons="12" />
 	
 	<entity name="DevourerGolemTier4_Hydra" copy_from="DevourerGolemTier4_Base" tags="ShowsOnNormalDisplayMode,Devourer_Tier4,#Devourer_ID#0010,MainMobileDevourerIncludingEnraged"
 		display_name="九头蛇吞噬者"
 		display_name_for_sidebar="吞 T4 九头蛇"
-		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一艘舰船，能自我再生，并打破星球上的所有停火协议。此变体侧重于在受到伤害时生成自身的较小复制体。"
-		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数舰船而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于在受到伤害时生成自身的较小复制体。每个复制体都是几乎完全相同但较小的副本，能够使用其各种武器攻击敌人。它们都在刚抵达星球时进一步减少受到的伤害。"
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破星球上的所有停火协议。此变体侧重于在受到伤害时生成自身的较小复制体。"
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于在受到伤害时生成自身的较小复制体。每个复制体都是几乎完全相同但较小的副本，能够使用其各种武器攻击敌人。它们都在刚抵达星球时进一步减少受到的伤害。"
 		hull_points="15000000" shield_points="0"
 		strength_multiplier="5"
 		unit_to_make_with_build_points_from_damage_taken="DevourerTier4_GreaterHydraDrone"
@@ -644,9 +644,9 @@
 	<entity name="DevourerGolemTier4_Hydra_Enraged" copy_from="DevourerGolemTier4_Hydra" tags="ShowsOnNormalDisplayMode,#EnragedModeOf#DevourerGolemTier4_Hydra,MainMobileDevourerIncludingEnraged"
 		display_name="狂暴九头蛇吞噬者"
 		display_name_for_sidebar="吞 T4 E-九头蛇"
-		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一艘舰船，能自我再生，并打破星球上的所有停火协议。此变体侧重于在受到伤害时生成自身的较小复制体。
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破星球上的所有停火协议。此变体侧重于在受到伤害时生成自身的较小复制体。
 &lt;color=#ff8888&gt;狂暴：造成更多伤害！&lt;/color&gt;"
-		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数舰船而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于在受到伤害时生成自身的较小复制体。每个复制体都是几乎完全相同但较小的副本，能够使用其各种武器攻击敌人。它们都在刚抵达星球时进一步减少受到的伤害。
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于在受到伤害时生成自身的较小复制体。每个复制体都是几乎完全相同但较小的副本，能够使用其各种武器攻击敌人。它们都在刚抵达星球时进一步减少受到的伤害。
 &lt;color=#ff8888&gt;狂暴：造成更多伤害！&lt;/color&gt;"
 		unit_to_make_with_build_points_from_damage_taken="DevourerTier4_GreaterHydraDrone_Enraged"
 		damage_multiplier_to_all_weapons="12"
@@ -661,8 +661,8 @@
 	<entity name="DevourerGolemTier4_Regeneration" copy_from="DevourerGolemTier4_Base" tags="ShowsOnNormalDisplayMode,Devourer_Tier4,#Devourer_ID#0011,MainMobileDevourerIncludingEnraged"
 		display_name="再生吞噬者"
 		display_name_for_sidebar="吞 T4 E-再生"
-		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一艘舰船，能自我再生，并打破星球上的所有停火协议。此变体侧重于在战斗中更快地再生自身。"
-		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数舰船而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于在战斗中更快地再生自身，这使得持久战变得更加困难，尤其是结合其在刚抵达星球时进一步减少 incoming 伤害的能力。"
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破星球上的所有停火协议。此变体侧重于在战斗中更快地再生自身。"
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于在战斗中更快地再生自身，这使得持久战变得更加困难，尤其是结合其在刚抵达星球时进一步减少 incoming 伤害的能力。"
 		hull_points="15000000" shield_points="0"
 		seconds_to_fully_regenerate_hull="1000"
 		strength_multiplier="8"
@@ -694,9 +694,9 @@
 	<entity name="DevourerGolemTier4_Regeneration_Enraged" copy_from="DevourerGolemTier4_Regeneration" tags="ShowsOnNormalDisplayMode,#EnragedModeOf#DevourerGolemTier4_Regeneration,MainMobileDevourerIncludingEnraged"
 		display_name="狂暴再生吞噬者"
 		display_name_for_sidebar="吞 T4 E-再生"
-		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一艘舰船，能自我再生，并打破星球上的所有停火协议。此变体侧重于在战斗中更快地再生自身。
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破星球上的所有停火协议。此变体侧重于在战斗中更快地再生自身。
 &lt;color=#ff8888&gt;狂暴：造成更多伤害！&lt;/color&gt;"
-		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数舰船而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于在战斗中更快地再生自身，这使得持久战变得更加困难，尤其是结合其在刚抵达星球时进一步减少 incoming 伤害的能力。
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于在战斗中更快地再生自身，这使得持久战变得更加困难，尤其是结合其在刚抵达星球时进一步减少 incoming 伤害的能力。
 &lt;color=#ff8888&gt;狂暴：造成更多伤害！&lt;/color&gt;"
 		damage_multiplier_to_all_weapons="12"
 	>
@@ -709,8 +709,8 @@
 	<entity name="DevourerGolemTier4_Hurricane" copy_from="DevourerGolemTier4_Base" tags="ShowsOnNormalDisplayMode,Devourer_Tier4,#Devourer_ID#0100,MainMobileDevourerIncludingEnraged"
 		display_name="飓风吞噬者"
 		display_name_for_sidebar="吞 T4 飓风"
-		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一艘舰船，能自我再生，并打破星球上的所有停火协议。此变体侧重于无人机生成和加速自身无人机。"
-		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数舰船而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于无人机生成，并加速自身无人机以及星球上的所有其他盟友，并在刚抵达星球时获得进一步的速度提升。此外，它还从已在星球上一段时间的攻击者那里进一步减少 incoming 伤害。"
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破星球上的所有停火协议。此变体侧重于无人机生成和加速自身无人机。"
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于无人机生成，并加速自身无人机以及星球上的所有其他盟友，并在刚抵达星球时获得进一步的速度提升。此外，它还从已在星球上一段时间的攻击者那里进一步减少 incoming 伤害。"
 		speed_multiplier_first_5_seconds_on_planet="4" allied_speed_multiplier="1.5"
 		drone_starting_behavior_type="Attacker_Full"
 		fleet_design_template_i_use_for_drones="DevourerGolemTier4_Hurricane_Drones"
@@ -750,9 +750,9 @@
 	<entity name="DevourerGolemTier4_Hurricane_Enraged" copy_from="DevourerGolemTier4_Hurricane" tags="ShowsOnNormalDisplayMode,#EnragedModeOf#DevourerGolemTier4_Hurricane,MainMobileDevourerIncludingEnraged"
 		display_name="狂暴飓风吞噬者"
 		display_name_for_sidebar="吞 T4 E-飓风"
-		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一艘舰船，能自我再生，并打破星球上的所有停火协议。此变体侧重于无人机生成和加速自身无人机。
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破星球上的所有停火协议。此变体侧重于无人机生成和加速自身无人机。
 &lt;color=#ff8888&gt;狂暴：造成更多伤害！&lt;/color&gt;"
-		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数舰船而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于无人机生成，并加速自身无人机以及星球上的所有其他盟友，并在刚抵达星球时获得进一步的速度提升。此外，它还从已在星球上一段时间的攻击者那里进一步减少 incoming 伤害。
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于无人机生成，并加速自身无人机以及星球上的所有其他盟友，并在刚抵达星球时获得进一步的速度提升。此外，它还从已在星球上一段时间的攻击者那里进一步减少 incoming 伤害。
 &lt;color=#ff8888&gt;狂暴：造成更多伤害！&lt;/color&gt;"
 		damage_multiplier_to_all_weapons="12"
 		fleet_design_template_i_use_for_drones="DevourerGolemTier4_HurricaneEnraged_Drones"
@@ -767,8 +767,8 @@
 	<entity name="DevourerGolemTier4_Phalanx" copy_from="DevourerGolemTier4_Base" tags="ShowsOnNormalDisplayMode,Devourer_Tier4,#Devourer_ID#0101,MainMobileDevourerIncludingEnraged"
 		display_name="方阵吞噬者"
 		display_name_for_sidebar="吞 T4 方阵"
-		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一艘舰船，能自我再生，并打破星球上的所有停火协议。此变体侧重于无人机生成，并在有无人机存在时变得无敌。"
-		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数舰船而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于无人机生成，并在有无人机存在时变得无敌。清除所有"小"鱼是一项艰巨的任务，因为每一个都非常耐用，但在尝试与父体吞噬者战斗时是必要的。此外，它还从已在星球上一段时间的攻击者那里进一步减少 incoming 伤害。"
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破星球上的所有停火协议。此变体侧重于无人机生成，并在有无人机存在时变得无敌。"
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于无人机生成，并在有无人机存在时变得无敌。清除所有"小"鱼是一项艰巨的任务，因为每一个都非常耐用，但在尝试与父体吞噬者战斗时是必要的。此外，它还从已在星球上一段时间的攻击者那里进一步减少 incoming 伤害。"
 		external_invulnerability_unit_tag="DevourerTier4_PhalanxDrone"
 		external_invulnerability_region="ThisPlanet"
 		strength_multiplier="7.5"
@@ -802,9 +802,9 @@
 	<entity name="DevourerGolemTier4_Phalanx_Enraged" copy_from="DevourerGolemTier4_Phalanx" tags="ShowsOnNormalDisplayMode,#EnragedModeOf#DevourerGolemTier4_Phalanx,MainMobileDevourerIncludingEnraged"
 		display_name="狂暴方阵吞噬者"
 		display_name_for_sidebar="吞 T4 E-方阵"
-		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一艘舰船，能自我再生，并打破星球上的所有停火协议。此变体侧重于无人机生成，并在有无人机存在时变得无敌。
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破星球上的所有停火协议。此变体侧重于无人机生成，并在有无人机存在时变得无敌。
 &lt;color=#ff8888&gt;狂暴：造成更多伤害！&lt;/color&gt;"
-		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数舰船而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于无人机生成，并在有无人机存在时变得无敌。清除所有"小"鱼是一项艰巨的任务，因为每一个都非常耐用，但在尝试与父体吞噬者战斗时是必要的。此外，它还从已在星球上一段时间的攻击者那里进一步减少 incoming 伤害。
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于无人机生成，并在有无人机存在时变得无敌。清除所有"小"鱼是一项艰巨的任务，因为每一个都非常耐用，但在尝试与父体吞噬者战斗时是必要的。此外，它还从已在星球上一段时间的攻击者那里进一步减少 incoming 伤害。
 &lt;color=#ff8888&gt;狂暴：造成更多伤害！&lt;/color&gt;"
 		damage_multiplier_to_all_weapons="12" 
 	>
@@ -819,8 +819,8 @@
 	<entity name="DevourerGolemTier4_Warp" copy_from="DevourerGolemTier4_Base" tags="ShowsOnNormalDisplayMode,Devourer_Tier4,#Devourer_ID#0110,MainMobileDevourerIncludingEnraged"
 		display_name="曲速吞噬者"
 		display_name_for_sidebar="吞 T4 曲速"
-		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一艘舰船，能自我再生，并打破星球上的所有停火协议。此变体侧重于物态变化，在多重相位中摧毁敌人。"
-		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数舰船而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于物态变化，在多重相位中摧毁敌人，在交替物态中使用其大幅增强版的反物质之颚和反傀儡火炮。唯一的可乘之机是护盾必须被击破才能进行维度转移。除了频繁地无法被攻击外，它还从已在星球上一段时间的攻击者那里进一步减少 incoming 伤害。"
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破星球上的所有停火协议。此变体侧重于物态变化，在多重相位中摧毁敌人。"
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于物态变化，在多重相位中摧毁敌人，在交替物态中使用其大幅增强版的反物质之颚和反傀儡火炮。唯一的可乘之机是护盾必须被击破才能进行维度转移。除了频繁地无法被攻击外，它还从已在星球上一段时间的攻击者那里进一步减少 incoming 伤害。"
 		strength_multiplier="5"
 		alternative_state_of_matter="MultiPhase" phases_to_other_alternative_state_of_matter_after_seconds="35" phases_back_to_default_state_of_matter_after_seconds="15"
 	>
@@ -875,9 +875,9 @@
 	<entity name="DevourerGolemTier4_Warp_Enraged" copy_from="DevourerGolemTier4_Warp" tags="ShowsOnNormalDisplayMode,#EnragedModeOf#DevourerGolemTier4_Warp,MainMobileDevourerIncludingEnraged"
 		display_name="狂暴曲速吞噬者"
 		display_name_for_sidebar="吞 T4 E-曲速"
-		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一艘舰船，能自我再生，并打破星球上的所有停火协议。此变体侧重于物态变化，在多重相位中摧毁敌人。
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破星球上的所有停火协议。此变体侧重于物态变化，在多重相位中摧毁敌人。
 &lt;color=#ff8888&gt;狂暴：造成更多伤害！&lt;/color&gt;"
-		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数舰船而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于物态变化，在多重相位中摧毁敌人，在交替物态中使用其大幅增强版的反物质之颚和反傀儡火炮。唯一的可乘之机是护盾必须被击破才能进行维度转移。除了频繁地无法被攻击外，它还从已在星球上一段时间的攻击者那里进一步减少 incoming 伤害。
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于物态变化，在多重相位中摧毁敌人，在交替物态中使用其大幅增强版的反物质之颚和反傀儡火炮。唯一的可乘之机是护盾必须被击破才能进行维度转移。除了频繁地无法被攻击外，它还从已在星球上一段时间的攻击者那里进一步减少 incoming 伤害。
 &lt;color=#ff8888&gt;狂暴：造成更多伤害！&lt;/color&gt;"
 		damage_multiplier_to_all_weapons="12"
 	>
@@ -890,8 +890,8 @@
 	<entity name="DevourerGolemTier4_Singularity" copy_from="DevourerGolemTier4_Base" tags="ShowsOnNormalDisplayMode,Devourer_Tier4,#Devourer_ID#0111,MainMobileDevourerIncludingEnraged"
 		display_name="奇点吞噬者"
 		display_name_for_sidebar="吞 T4 奇点"
-		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一艘舰船，能自我再生，并打破星球上的所有停火协议。此变体侧重于极其强大的重力武器和效果。"
-		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数舰船而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于极其强大的重力武器和效果。其火炮将敌人吸入碾压，由引力核心和抓取光束固定，并通过一个非常强大的黑洞机器阻止逃脱。"
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破星球上的所有停火协议。此变体侧重于极其强大的重力武器和效果。"
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于极其强大的重力武器和效果。其火炮将敌人吸入碾压，由引力核心和抓取光束固定，并通过一个非常强大的黑洞机器阻止逃脱。"
 		adds_black_hole_effect_for_entities_with_engine_gx_less_than="24"
 		strength_multiplier="5"
 	>
@@ -928,9 +928,9 @@
 	<entity name="DevourerGolemTier4_Singularity_Enraged" copy_from="DevourerGolemTier4_Singularity" tags="ShowsOnNormalDisplayMode,#EnragedModeOf#DevourerGolemTier4_Singularity,MainMobileDevourerIncludingEnraged"
 		display_name="狂暴奇点吞噬者"
 		display_name_for_sidebar="吞 T4 E-奇点"
-		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一艘舰船，能自我再生，并打破星球上的所有停火协议。此变体侧重于极其强大的重力武器和效果。
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破星球上的所有停火协议。此变体侧重于极其强大的重力武器和效果。
 &lt;color=#ff8888&gt;狂暴：造成更多伤害！&lt;/color&gt;"
-		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数舰船而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于极其强大的重力武器和效果。其火炮将敌人吸入碾压，由引力核心和抓取光束固定，并通过一个非常强大的黑洞机器阻止逃脱。
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破星球上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于极其强大的重力武器和效果。其火炮将敌人吸入碾压，由引力核心和抓取光束固定，并通过一个非常强大的黑洞机器阻止逃脱。
 &lt;color=#ff8888&gt;狂暴：造成更多伤害！&lt;/color&gt;"
 		damage_multiplier_to_all_weapons="12"
 		>

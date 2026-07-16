@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
 	<entity name="HydralFederationHydral" npc_ship_cap_type="SpecialThingsToAlwaysSeed" is_expecting_to_not_be_encyclopedia_counted_at_all='true'
@@ -15,7 +15,7 @@
 			y_offset_of_icon="30"
 			collision_priority="10000"
 			display_name="海德拉联邦旗舰" display_name_for_sidebar="海德拉旗舰"
-			description="海德拉联邦的核心。极其耐久，对锁定任何尺寸的舰船都非常有效。
+			description="海德拉联邦的核心。极其耐久，对锁定任何尺寸的单位都非常有效。
 			
 被摧毁后重生。
 
@@ -60,7 +60,7 @@
         collision_priority="800"
 	    display_name="海德拉联邦船坞"
 		display_name_for_sidebar="海德拉船坞"
-	    description="持续为海德拉联邦生产舰船。"
+	    description="持续为海德拉联邦生产单位。"
 	    behavior="Stationary"
 		starting_mark_level="Markless"  tech_upgrades_that_benefit_me="Unused"
 		cost_for_ai_to_purchase="3000"
@@ -324,7 +324,7 @@
 			  collision_priority="100"
 			  display_name="博亚林族"
 			  display_name_for_sidebar="博亚林族"
-			  description="可以说是联邦中最耐久的成员，博亚林族拥有非常强大但缓慢的近战攻击，并对来自远程舰船的任何伤害有大幅减免。"
+			  description="可以说是联邦中最耐久的成员，博亚林族拥有非常强大但缓慢的近战攻击，并对来自远程单位的任何伤害有大幅减免。"
 			  starting_mark_level="Markless"
 			  cost_for_ai_to_purchase="120"
 			  hull_points="240000" shield_points="0" speed="AboveAverage6"
@@ -450,7 +450,7 @@
 				y_offset_of_icon="35"
 				collision_priority="800"
 				display_name="伊维克合闭者"
-				description="这艘几乎无法探测的舰船装载着一件独特武器：合闭者加农炮。这门炮眩晕半径内的大量舰船。绕过所有护盾，但无法瞄准固定建筑。"
+				description="这艘几乎无法探测的单位装载着一件独特武器：合闭者加农炮。这门炮眩晕半径内的大量单位。绕过所有护盾，但无法瞄准固定建筑。"
 				blocks_enemy_claim_flows="true"
 				voice_group="Silent"
 				starting_mark_level="Markless" tech_upgrades_that_benefit_me="Unused"
@@ -492,7 +492,7 @@
 					y_offset_of_icon="35"
 					collision_priority="800"
 					display_name="佩尔蒂安火箭发射井" display_name_for_sidebar="佩尔蒂安火箭井"
-					description="称其为舰船实在过于慷慨，因为他们只是把一些引擎和装甲绑到一个在太空中漂流时发现的废弃导弹发射井上。"
+					description="称其为单位实在过于慷慨，因为他们只是把一些引擎和装甲绑到一个在太空中漂流时发现的废弃导弹发射井上。"
 					blocks_enemy_claim_flows="true"
 					voice_group="Silent"
 					starting_mark_level="Markless" tech_upgrades_that_benefit_me="Unused"
@@ -554,7 +554,7 @@
 			y_offset_of_icon="35"
 			collision_priority="800"
 			display_name="索拉克斯猎杀者" display_name_for_sidebar="索拉克斯 H/K"
-			description="精英中的精英。索拉克斯猎杀者追杀单个目标至死，将目标及任何不幸靠近它们的舰船拖出阵型，在孤立中摧毁。"
+			description="精英中的精英。索拉克斯猎杀者追杀单个目标至死，将目标及任何不幸靠近它们的单位拖出阵型，在孤立中摧毁。"
 			blocks_enemy_claim_flows="true"
 			voice_group="Silent"
 			starting_mark_level="Markless" tech_upgrades_that_benefit_me="Unused"
@@ -680,7 +680,7 @@
 			y_offset_of_icon="35"
 			collision_priority="800"
 			display_name="博亚林巨兽"
-			description="一艘移动缓慢但拥有巨大耐久和自愈能力的舰船。"
+			description="一艘移动缓慢但拥有巨大耐久和自愈能力的单位。"
 			blocks_enemy_claim_flows="true"
 			voice_group="Silent"
 			starting_mark_level="Markless" tech_upgrades_that_benefit_me="Unused"

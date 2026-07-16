@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
 	<entity name="TransportFlagship_Engineering" copy_from="TransportFlagship_Base" tags="ShowsOnNormalDisplayMode,Capturable"
@@ -32,7 +32,7 @@
 	<entity name="TransportFlagship_Vanguard" copy_from="TransportFlagship_Base" tags="ShowsOnNormalDisplayMode,Capturable"
 		display_name="先锋运输旗舰"
 		display_name_for_sidebar="先锋运输"
-		description="为进攻和破封锁而设计，拥有更高船体和在新行星上短时间内抵抗来袭伤害的能力。舰船卸货经过优化，攻击延迟更短。"
+		description="为进攻和破封锁而设计，拥有更高船体和在新行星上短时间内抵抗来袭伤害的能力。单位卸货经过优化，攻击延迟更短。"
 		tech_upgrade_that_is_used_for_my_direct_science="Direct_AgileTransport"
 		capturable_can_seed_at_all="false"
 		firing_delay_for_transported_ships="2"
@@ -54,7 +54,7 @@
 	<entity name="TransportFlagship_Tugboat" copy_from="TransportFlagship_Base" tags="ShowsOnNormalDisplayMode,Capturable"
 		display_name="拖船运输旗舰"
 		display_name_for_sidebar="拖船运输"
-		description="比其他运输舰慢，但会建造少量拖船无人机，加速舰队中所有较慢的舰船并寻找敌人进行减速。"
+		description="比其他运输舰慢，但会建造少量拖船无人机，加速舰队中所有较慢的单位并寻找敌人进行减速。"
 		tech_upgrade_that_is_used_for_my_direct_science="Direct_AgileTransport"
 		speed="AboveAverage6"
 		hacking_cost_for_other_fleet_leaders_of_same_type_to_become_me="20"
@@ -118,7 +118,7 @@
 		tags="Capturable,ShowsOnNormalDisplayMode"
 		display_name="代谢工厂"
 		display_name_for_sidebar="代谢C-FAC"
-		description="机动设施旗舰。如果舰队旗舰在同一或相邻行星且缺少舰船，将自动生产替代品直接跃迁到该旗舰。也向近距敌人发射代谢无人机，在更大消耗战中帮助产生金属。"
+		description="机动设施旗舰。如果舰队旗舰在同一或相邻行星且缺少单位，将自动生产替代品直接跃迁到该旗舰。也向近距敌人发射代谢无人机，在更大消耗战中帮助产生金属。"
 		description_short="机动设施，自动替换附近舰队损失并修理附近单位。通过代谢支援盟友。"
 		fleet_design_template_i_use_for_drones="ConsumerDrones"
 		drone_starting_behavior_type="Attacker_Full"
@@ -131,7 +131,7 @@
 		tags="Capturable,ShowsOnNormalDisplayMode"
 		display_name="救援工厂"
 		display_name_for_sidebar="救援C-FAC"
-		description="机动设施旗舰。如果舰队旗舰在同一或相邻行星且缺少舰船，将自动生产替代品直接跃迁到该旗舰。不发射攻击无人机，而是发射可作为舰船自救紧急跃迁信标的小型信标。"
+		description="机动设施旗舰。如果舰队旗舰在同一或相邻行星且缺少单位，将自动生产替代品直接跃迁到该旗舰。不发射攻击无人机，而是发射可作为单位自救紧急跃迁信标的小型信标。"
 		description_short="机动设施，自动替换附近舰队损失并修理附近单位。通过复活无人机支援盟友。"
 		hacking_cost_for_other_fleet_leaders_of_same_type_to_become_me="40"
 	>
@@ -148,7 +148,7 @@
 		tags="Capturable,ShowsOnNormalDisplayMode"
 		display_name="传送工厂"
 		display_name_for_sidebar="传送C-FAC"
-		description="机动设施旗舰。如果舰队旗舰在同一或相邻行星且缺少舰船，将自动生产替代品直接跃迁到该旗舰。推开附近低质量敌人并使其短暂瘫痪。"
+		description="机动设施旗舰。如果舰队旗舰在同一或相邻行星且缺少单位，将自动生产替代品直接跃迁到该旗舰。推开附近低质量敌人并使其短暂瘫痪。"
 		description_short="机动设施，自动替换附近舰队损失并修理附近单位。推开附近低质量敌人并使其短暂瘫痪。"
 		hacking_cost_for_other_fleet_leaders_of_same_type_to_become_me="30"
 	>

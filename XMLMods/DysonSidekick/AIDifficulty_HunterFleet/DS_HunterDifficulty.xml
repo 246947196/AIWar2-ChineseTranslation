@@ -3,7 +3,7 @@
   <!-- Nota Bene: if adding a new BonusAntiTaggedUnitIncome you must add the GeneratesBonusHunterShips tag to the units in question
        for performance reasons -->
   <record name="Difficulty_ZR"
-       display_name="Zerg Rush"
+       display_name="虫族冲锋"
        hunter_fleet_starting_budget="6000"
        hunter_bonus_income_per_minute="1000"
        overconfidence_ratio="0.6"

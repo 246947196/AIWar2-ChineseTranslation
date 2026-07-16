@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 	<entity name="ObstructorWing" copy_from="VWing"
 		 icon_overlay="Overlays1/Turret_Spider"
@@ -62,7 +62,7 @@
 		 icon_overlay="Overlays1/Starship_MercFlagship"
 		 display_name="阿尔法打击翼"
 		 display_name_for_sidebar="A.打击翼SC"
-		 description="各方面升级的打击翼：更快、更强、更多舰船。利用虫洞的跨维度能量更长时间充能，获得极高速度和持久伏击伤害加成。"
+		 description="各方面升级的打击翼：更快、更强、更多单位。利用虫洞的跨维度能量更长时间充能，获得极高速度和持久伏击伤害加成。"
 		 speed_multiplier_first_5_seconds_on_planet="4"
 		 hull_points="3750" armor_mm="60" 
 		 cost_for_ai_to_purchase="30" metal_cost="3500" energy_consumption="600"
@@ -82,7 +82,7 @@
 		 icon_overlay="Overlays1/Starship_Sentry"
 		 display_name="眼魔"
 		 display_name_for_sidebar="眼魔SC"
-		 description="隐形舰船，目标能量消耗越高伤害越高，对抗休眠防御者时更高。"
+		 description="隐形单位，目标能量消耗越高伤害越高，对抗休眠防御者时更高。"
 		 cost_for_ai_to_purchase="30"
 		 strength_multiplier="1.3"
 		 >
@@ -182,7 +182,7 @@
 		  icon_overlay="Overlays1/MegaTurret_MiniFortress"
 		  display_name="强化抗重力荚舱"
 		  display_name_for_sidebar="强化抗重力荚舱SC"
-		  description="对高功率引擎舰船极度危险，同时几乎无伤接近高伤害目标。"
+		  description="对高功率引擎单位极度危险，同时几乎无伤接近高伤害目标。"
 		  hull_points="3600"
 		  >
 			<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="10" cap="32"/>		
@@ -309,7 +309,7 @@
 		  icon_overlay="Overlays1/MegaTurret_MassDriver"
 		  display_name="虚空轰炸机"
 		  display_name_for_sidebar="虚空轰炸机SC"
-		  description="升级版太空轰炸机，配备高度实验性的次元护盾。即使在较近距离，护盾也能将舰船移出现实，使所有攻击仅造成一小部分护盾伤害。其最大弱点是近战和穿盾攻击，两者都能穿透防御层。"
+		  description="升级版太空轰炸机，配备高度实验性的次元护盾。即使在较近距离，护盾也能将单位移出现实，使所有攻击仅造成一小部分护盾伤害。其最大弱点是近战和穿盾攻击，两者都能穿透防御层。"
 		  speed_multiplier_first_5_seconds_on_planet="2"
 		  starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Subterfuge,Light"
 		  speed="AboveAverage3"

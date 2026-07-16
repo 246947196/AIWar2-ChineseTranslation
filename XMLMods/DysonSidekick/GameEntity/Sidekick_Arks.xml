@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   <!-- Base Game Arks -->
@@ -181,7 +181,7 @@
 	      visuals_scale_multiplier="1.5"
 	      y_offset_of_icon="70"
 	      display_name="装甲魔像"
-	      display_name_for_sidebar="Armored GOL"
+	      display_name_for_sidebar="装甲傀儡"
 	     description="非常耐打的旗舰，对所有目标都有良好的火力。"
 	      collision_priority="810"
 	      metal_to_claim="5000000"
@@ -214,14 +214,14 @@
 			max_times_single_unit_can_be_hacked="2">
 	  <custom_hack_data key="AddedMultiplierPerHack" value="1.5" />
 	</hack_data>
-	<system name="WX" display_name="Zenith Ballistic Vortex"
+	<system name="WX" display_name="天顶弹道漩涡"
 		category="Weapon" firing_timing="OnlyInRange"
 		damage_per_shot="4000" range="AboveAverage3" shot_speed="Slow" rate_of_fire="Misery"
 		shots_per_salvo="20" fires_salvos_sequentially="false"
 		shot_type_data="ElegantCurl"
 		>
 		</system>
-		<system name="WS" display_name="Zenith Sabot"
+		<system name="WS" display_name="天顶破片弹"
 				category="Weapon" firing_timing="OnlyInRange"
 				damage_per_shot="8000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Misery" fires_salvos_sequentially="true"
 				shot_type_data="Sabot"				
@@ -258,7 +258,7 @@
 	 y_offset_of_icon="70"
 	 collision_priority="100"
 	 display_name="火炮魔像"
-	 display_name_for_sidebar="Artillery GOL"
+	 display_name_for_sidebar="火炮傀儡"
 	 description="脆弱的旗舰，能在极远的距离消灭单个目标。"
 	 metal_to_claim="5000000"
 	 aip_to_claim="12"
@@ -303,9 +303,9 @@
 	 size_scale="6.5"
 	 visuals_scale_multiplier="1.44"
 	 y_offset_of_icon="75"
-	 display_name="Regenerator Golem"
-	 display_name_for_sidebar="Regen GOL"
-	 description="旗舰，通过自伤来复活同一星球上阵亡的友军舰船。"
+	 display_name="再生傀儡"
+	 display_name_for_sidebar="再生傀儡"
+	 description="旗舰，通过自伤来复活同一星球上阵亡的友军单位。"
 	 collision_priority="810"
 	 regenerates_dying_ships_at_this_health_cost_ratio="0.3"
 	 will_not_regenerate_dying_ships_if_health_below_this_percentage="0.2"
@@ -355,7 +355,7 @@
 	 visuals_scale_multiplier="1.44"
 	 y_offset_of_icon="70"
 	 display_name="诅咒魔像"
-	 display_name_for_sidebar="Cursed GOL"
+	 display_name_for_sidebar="诅咒傀儡"
 	 description="发射造成麻痹效果的远程射击，但相比其他旗舰非常脆弱。"
 	 collision_priority="810"
 	 metal_to_claim="2000000"
@@ -401,8 +401,8 @@
 	 size_scale="8"
 	 y_offset_of_icon="55"
 	 collision_priority="810"
-	 display_name="Hive Golem"
-	 display_name_for_sidebar="Hive GOL"
+	 display_name="蜂巢傀儡"
+	 display_name_for_sidebar="蜂巢傀儡"
 	 description="旗舰，持续生成大量黄蜂无人机，速度较快且攻击凶猛。"
 	 fleet_design_template_i_use_for_drones="HiveGolemDrones"
 	 drone_starting_behavior_type="Attacker_Full"
@@ -449,8 +449,8 @@
 	 size_scale="11.5"
 	 visuals_scale_multiplier="11"
 	 y_offset_of_icon="70"
-	 display_name="Retribution Golem"
-	 display_name_for_sidebar="Retribution GOL"
+	 display_name="报应傀儡"
+	 display_name_for_sidebar="报应傀儡"
 	 description="极其耐打的魔像，反弹所受到的部分伤害并具有自我再生能力。"
 	 collision_priority="810"
 	 metal_to_claim="5000000"
@@ -526,7 +526,7 @@
    <resource_production type="FuelArgon" amount="500000" />
    <resource_production type="FuelRadon" amount="500000" />
    <metal_flow purpose="FactoryConstructionForPlayerMobileFleets" throughput="3000" increase_per_mark_level="2000"/>
-       <system name="W1" display_name="Broadside Artillery"
+       <system name="W1" display_name="舷侧火炮"
 	    category="Weapon" firing_timing="OnlyInRange"
 	    damage_per_shot="52000" range="ExtremelyHigh" shot_speed="Normal" rate_of_fire="VeryLow" fires_salvos_sequentially="true"
 	    shots_per_salvo="25"
@@ -535,7 +535,7 @@
       <outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="5" multiplier="1.2"/>
       <outgoing_damage_modifier based_on="AttackDistance" comparison_type="LessThan" compared_to="8000" multiplier="0"/>
     </system>
-    <system name="R9" display_name="Bow Disintegration Ray"
+    <system name="R9" display_name="舰首瓦解射线"
 	    category="Weapon" firing_timing="OnlyInRange"
 	    damage_per_shot="26000" range="AboveAverage2" shot_speed="Normal" rate_of_fire="Devourer"
 	    shot_type_data="HeavyBeamInvisible"
@@ -545,7 +545,7 @@
 	    >
       <outgoing_damage_modifier based_on="mass_tx" comparison_type="LessThan" compared_to="2" multiplier="0"/>
     </system>
-    <system name="W2" display_name="Aft Plasma Cannon"
+    <system name="W2" display_name="舰尾等离子炮"
 	    category="Weapon" firing_timing="OnlyInRange"
 	    damage_per_shot="33000" range="AboveAverage2" shot_speed="Slow" rate_of_fire="PeriodicActivation" fires_salvos_sequentially="true"
 	    shot_type_data="PlasmaTorpedoAOEBurstAtEnd"
@@ -577,7 +577,7 @@
    <resource_production type="FuelArgon" amount="500000" />
    <resource_production type="FuelRadon" amount="500000" />
    <metal_flow purpose="FactoryConstructionForPlayerMobileFleets" throughput="3000" increase_per_mark_level="2000"/>
-   <system name="Q7" display_name="Gaunt Jaws"
+   <system name="Q7" display_name="枯瘦巨颚"
 	   category="Weapon" firing_timing="OnlyInRange"
 	   damage_per_shot="5000" range="Normal1" shot_speed="Normal" rate_of_fire="Devourer"
 	   shots_per_salvo="8" fires_salvos_sequentially="false"
@@ -587,7 +587,7 @@
 	   health_change_per_damage_dealt="0.2"
 	   > 
     </system>
-    <system name="W1" display_name="Metallic Hunger"
+    <system name="W1" display_name="金属饥饿"
 	    category="Weapon" firing_timing="OnlyInRange"
 	    damage_per_shot="600" range="Normal5" shot_speed="Normal" rate_of_fire="VeryLow" fires_salvos_sequentially="true"
 	    shot_type_data="FlakShotAOEBurstAtEnd"
@@ -679,7 +679,7 @@
         fleet_leader_type="HomeArk"
         >
 
-      <system name="Q7" display_name="Gaunt Jaws"
+      <system name="Q7" display_name="枯瘦巨颚"
 	   category="Weapon" firing_timing="OnlyInRange"
 	   damage_per_shot="5000" range="Normal1" shot_speed="Normal" rate_of_fire="Devourer"
 	   shots_per_salvo="8" fires_salvos_sequentially="false"

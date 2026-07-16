@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
 
-	<ship_class_data name="UniversalNemesisClass" display_name="Universal Nemesis" short_name="复仇女神"
+	<ship_class_data name="UniversalNemesisClass" display_name="宇宙复仇者" short_name="复仇女神"
         can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.1" can_be_devoured="false"
 	>
 		<debuff_modifier debuff_type="WeaponPhase" multiplier="0" />
 	</ship_class_data>
 	
-	<ship_class_data name="GreaterLeagueOfEvilClass" display_name="Greater League Of Evil" short_name="邪恶联盟"
+	<ship_class_data name="GreaterLeagueOfEvilClass" display_name="邪恶大联盟" short_name="邪恶联盟"
         can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.5" can_be_devoured="false"
 	>
 		<debuff_modifier debuff_type="WeaponPhase" multiplier="0" />

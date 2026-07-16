@@ -2,7 +2,7 @@
 <root>
 
   <player_type name="DarkZenithEmpire"
-        display_name="Dark Zenith Empire" short_name="Dark Zenith" auto_name_postfix=" (DZ)" uncontrolled_name="Dark Zenith" lobby_prefix="DZ Empire "
+        display_name="黑暗天顶帝国" short_name="黑暗天顶" auto_name_postfix=" (DZ)" uncontrolled_name="Dark Zenith" lobby_prefix="DZ Empire "
         sort_order="800"
         tags="DarkZenith,DarkZenithEmpire"
         base_info_source="DarkZenithSidekickFactionBaseInfo"
@@ -29,7 +29,7 @@
         uses_metal="false"
         uses_necromancer_hacking_and_science="false"
         uses_resource_1="false"
-        resource_1_display_name="Essence"
+        resource_1_display_name="精华"
         resource_1_color="e16cff"
         resource_1_icon="Res_NecromancerEssence"
         mapgen_should_fuel_seed_for_me_if_fuel_is_enabled="false"
@@ -72,7 +72,7 @@
 Written by Badger。这只是一个模组，没有Arcen的官方支持。"/>
   
   <player_type name="DarkZenithSidekick"
-        display_name="Dark Zenith Sidekick" short_name="Dark Zenith" auto_name_postfix=" (DZ)" uncontrolled_name="Dark Zenith" lobby_prefix="DZ Sidekick "
+        display_name="黑暗天顶伙伴" short_name="黑暗天顶" auto_name_postfix=" (DZ)" uncontrolled_name="Dark Zenith" lobby_prefix="DZ Sidekick "
         sort_order="810"
         tags="DarkZenith,DarkZenithSidekick"
         base_info_source="DarkZenithSidekickFactionBaseInfo"
@@ -100,7 +100,7 @@ Written by Badger。这只是一个模组，没有Arcen的官方支持。"/>
         uses_metal="false"
         uses_necromancer_hacking_and_science="false"
         uses_resource_1="false"
-        resource_1_display_name="Essence"
+        resource_1_display_name="精华"
         resource_1_color="e16cff"
         resource_1_icon="Res_NecromancerEssence"
                

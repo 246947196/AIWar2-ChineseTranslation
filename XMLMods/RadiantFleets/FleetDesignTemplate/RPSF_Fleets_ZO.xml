@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 	
 	
 	<!-- Ambush --> 
 	<fleet_design name="RPSF_Mobile_Ambush"
 		display_name="伏击舰队"
-		description="使用伏击技术的舰船集合。"
+		description="使用伏击技术的单位集合。"
 		design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
 		append_each_ship_description_to_main_description="true"
 		required_expansion_list="2_Zenith_Onslaught"
@@ -20,7 +20,7 @@
 	<!-- Melee --> 
 	<fleet_design name="RPSF_Mobile_Melee"
 		display_name="近战舰队"
-		description="使用近战技术的舰船集合，大多数使用自杀式攻击。好在你的旗舰可以重建它们！"
+		description="使用近战技术的单位集合，大多数使用自杀式攻击。好在你的旗舰可以重建它们！"
 		design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
 		append_each_ship_description_to_main_description="true"
 		required_expansion_list="2_Zenith_Onslaught"
@@ -35,7 +35,7 @@
 	<!-- Piercing ("Fusion") --> 
 	<fleet_design name="RPSF_Mobile_Fusion"
 		display_name="穿透舰队"
-		description="使用穿透技术的舰船集合"
+		description="使用穿透技术的单位集合"
 		design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
 		append_each_ship_description_to_main_description="true"
 		required_expansion_list="2_Zenith_Onslaught"

@@ -58,12 +58,12 @@
 
   <!-- A few even more evil tweaks to the Spire Destroyer, already a truly hated ship -->
   <entity name="HatefulSpireIronclad" copy_from="AISpireDestroyerB"
-          display_name="AI Spire Ironclad"
-	  display_name_for_sidebar="AI Iron"
+          display_name="AI尖塔铁甲舰"
+	  display_name_for_sidebar="AI铁甲舰"
 	  description="一艘尖塔驱逐舰的AI复制品，带有一些新的仇恨增强。小心它的尸化炮！"
           cost_for_ai_to_purchase="4200"
           >
-    <system name="W1" display_name="Spire Coil Beam"
+    <system name="W1" display_name="尖塔线圈光束"
 	    category="Weapon" firing_timing="OnlyInRange"
 	    damage_per_shot="12000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Devourer"
 	    shot_type_data="HeavyBeamInvisible"
@@ -81,12 +81,12 @@
 
 
   <entity name="HatefulSpireAcidifier" copy_from="AISpireDestroyerB"
-          display_name="AI Spire Acidifier"
-	  display_name_for_sidebar="AI Acid"
+          display_name="AI尖塔酸化者"
+	  display_name_for_sidebar="AI酸化者"
 	  description="一艘尖塔驱逐舰的AI复制品，带有一些新的仇恨增强。此光束也会造成腐蚀伤害！"
           cost_for_ai_to_purchase="4200"
           >
-    <system name="W1" display_name="Spire Coil Beam"
+    <system name="W1" display_name="尖塔线圈光束"
 	    category="Weapon" firing_timing="OnlyInRange"
 	    damage_per_shot="12000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Devourer"
 	    shot_type_data="HeavyBeamInvisible"
@@ -221,7 +221,7 @@
 	name="MinorAlarmPost_Hateful" copy_from="AlarmPostZT"
 	tags="AlarmPost,HatefulAlarmPost"
 	npc_ship_cap_type="SpecialDefenses"
-	display_name="Minor Alarm Post"
+	display_name="小型警戒哨站"
 	description="以压倒性兵力攻击此星球将集结附近星球的AI部队前来防御。与普通警报柱不同，此警报柱在死亡时不增加AIP。"
 	>
     </entity>
@@ -240,8 +240,8 @@
 	    visuals_scale_multiplier="24"
 	    y_offset_of_icon="30"
 	    collision_priority="810"
-	    display_name="Khorne"
-            display_name_for_sidebar="Khorne"
+	    display_name="恐虐"
+            display_name_for_sidebar="恐虐"
 	  description="血祭血神！颅献颅座！牛奶献给恐虐麦片！"
           starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
           cost_for_ai_to_purchase="49500"
@@ -254,7 +254,7 @@
           priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="BigFavoriteToy"
           >
       <incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="2500" multiplier="0.20" />
-      <system name="R9" display_name="Reality Destabilisation Beam"
+      <system name="R9" display_name="现实失稳光束"
 	      category="Weapon" firing_timing="OnlyInRange"
 	      damage_per_shot="60000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Devourer"
 	      shot_type_data="HeavyBeamInvisible"
@@ -264,7 +264,7 @@
 	      >
         <outgoing_damage_modifier based_on="mass_tx" comparison_type="AtLeast" compared_to="4" multiplier="7" />
       </system>
-      <system name="WL" display_name="Fusion Bomb"
+      <system name="WL" display_name="聚变炸弹"
 	      category="Weapon" firing_timing="OnlyInRange"
 	      damage_per_shot="18000" range="AboveAverage1" shot_speed="Slow" rate_of_fire="High"
               shots_per_salvo="35" fires_salvos_sequentially="false"
@@ -275,7 +275,7 @@
 	      >
         <outgoing_damage_modifier based_on="CurrentPersonalShieldPercentage" applies_to="HullOnly" comparison_type="AtLeast" compared_to="50" multiplier="1.5" />
       </system>
-      <system name="Q4" display_name="Spider Cannon"
+      <system name="Q4" display_name="蜘蛛炮"
 	      category="Weapon" firing_timing="OnlyInRange"
 	      damage_per_shot="10000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="false"
 	      shots_per_salvo="30"
@@ -285,7 +285,7 @@
 	      shot_type_data="EngineDisruptingShell"
 	      >
       </system>
-    <system name="C" display_name="Cloaking Device"
+    <system name="C" display_name="隐形装置"
 	    category="Passive" cloaking_points="10000" cloaking_points_added_per_mark="1000"
 	    >
     </system>

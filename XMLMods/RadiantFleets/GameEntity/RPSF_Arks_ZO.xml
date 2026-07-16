@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 	
 	<!-- Shattered Pillar Zenith?  (the purple ones) 
@@ -245,7 +245,7 @@
 		shield_points="62500"
 	
 		display_name="海王星漩涡" display_name_for_sidebar="海王星漩涡"
-		description="寻找敌方舰船并将其拖入海王星的领域。"
+		description="寻找敌方单位并将其拖入海王星的领域。"
 		
 		speed="AboveAverage1"
 		

@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
     <entity name="TranslocatorSniperFrigate" copy_from="TritiumSniperFrigate"
 			icon_overlay="Overlays1/Turret_Translocator"
-			display_name="传送狙击护卫舰"
+			display_name="传送狙击星舰"
 			display_name_for_sidebar="传送狙击FFG"
-			description="擅长远距离摧毁舰船，在极远距离更佳。通过推开接近的敌人来保护自己。"
+			description="擅长远距离摧毁单位，在极远距离更佳。通过推开接近的敌人来保护自己。"
 			tech_upgrades_that_benefit_me="Generalist,Medium"
 			cost_for_ai_to_purchase="1000" strength_multiplier="2.5"
 			hull_points="120000" shield_points="60000" speed="Normal2"

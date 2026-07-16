@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <fleet_design name="MSFImperialFleet"
         display_name="帝国舰队"
@@ -89,7 +89,7 @@
 
 <fleet_design name="MSFDemo"
         display_name="民主舰队"
-        description="该舰队由早期地球联邦时期的舰船组成。缺少主力舰，但以战斗机和护卫艇的多功能性弥补。"
+        description="该舰队由早期地球联邦时期的单位组成。缺少主力舰，但以战斗机和护卫艇的多功能性弥补。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >
@@ -102,7 +102,7 @@
 
 <fleet_design name="MSFArmoured" required_expansion_list="2_Zenith_Onslaught"
         display_name="装甲舰队"
-        description="该舰队由重装甲舰船组成。精通破门和突破行动。"
+        description="该舰队由重装甲单位组成。精通破门和突破行动。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >
@@ -115,7 +115,7 @@
 
 <fleet_design name="MSFAlliance" required_expansion_list="2_Zenith_Onslaught"
         display_name="联盟舰队"
-        description="该舰队由天顶和人类部队的舰船组成。由于先进科技，这支银河联盟的所有舰船以 MKII 开局。绝望时期需要绝望措施。"
+        description="该舰队由天顶和人类部队的单位组成。由于先进科技，这支银河联盟的所有单位以 MKII 开局。绝望时期需要绝望措施。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >
@@ -126,7 +126,7 @@
 
 <fleet_design name="MSFMissileFleet" required_expansion_list="1_The_Spire_Rises"
         display_name="导弹舰队"
-        description="由一艘配备制导导弹的运输舰和发射远程制导导弹的舰船组成的舰队。对抗短程单位表现出色。制导导弹需要工厂和金属来重新装填。"
+        description="由一艘配备制导导弹的运输舰和发射远程制导导弹的单位组成的舰队。对抗短程单位表现出色。制导导弹需要工厂和金属来重新装填。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >
@@ -139,7 +139,7 @@
 
 <fleet_design name="MSFRetribution" required_expansion_list="2_Zenith_Onslaught"
         display_name="复仇舰队"
-        description="由几何立方体和其他异星舰船组成的舰队。非常擅长承受和反射伤害，但整体速度偏慢，且容易受到反装甲武器的攻击。"
+        description="由几何立方体和其他异星单位组成的舰队。非常擅长承受和反射伤害，但整体速度偏慢，且容易受到反装甲武器的攻击。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >

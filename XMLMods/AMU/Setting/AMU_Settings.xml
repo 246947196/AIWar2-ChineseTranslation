@@ -14,17 +14,17 @@ AJEA还会查看每个玩家当前的建造选择及其可能的建造数量（1
 
 	<setting name="AJEA_AutoDetermineEnergyCount" serialization_name="AJEAA" is_network_and_game_synced_setting="true"
 		category="Automation" subcategory="AJEA_Settings" display_name="自动确定能源数量" type="BoolToggle" default="true"
-		description="如果启用，AJEA将保持可用的能源量基于当前需要增援的舰船线。如果只建造星战，数量可能低至几百。如果建造大型巡洋舰或模组舰船，数量可能高达数万。
+		description="如果启用，AJEA将保持可用的能源量基于当前需要增援的单位线。如果只建造星战，数量可能低至几百。如果建造大型巡洋舰或模组单位，数量可能高达数万。
 
 该数值在正常条件下和在低电力时会加到目标数值上。" />
 
 	<setting name="AJEA_ExtraEnergyCount" serialization_name="AJEAC" is_network_and_game_synced_setting="true"
 		category="Automation" subcategory="AJEA_Settings" display_name="目标能源" type="IntTextbox" default="5000" min="0" max="10000000"
-		description="如果可能的话，AJEA应该提供多少能源？通常这应该是最贵的建造舰船所需的能源，再加一些。5,000能源是一个好的默认值，适用于几乎所有场景。
-如果你发现某艘大型（可能是模组）舰船无法建造，请检查AJEA是否提供足够的能源并相应调整此值。
+		description="如果可能的话，AJEA应该提供多少能源？通常这应该是最贵的建造单位所需的能源，再加一些。5,000能源是一个好的默认值，适用于几乎所有场景。
+如果你发现某艘大型（可能是模组）单位无法建造，请检查AJEA是否提供足够的能源并相应调整此值。
 
-如果启用了「自动确定能源数量」，它会加到目标能源数值上。此时这只是为了防止刚一建造就立即阻塞所有舰船建造的缓冲值。
-如果未启用「自动确定能源数量」，该值应略高于玩家当前可建造的最耗能舰船，否则该舰船可能因电力不足而永远无法建造。" />
+如果启用了「自动确定能源数量」，它会加到目标能源数值上。此时这只是为了防止刚一建造就立即阻塞所有单位建造的缓冲值。
+如果未启用「自动确定能源数量」，该值应略高于玩家当前可建造的最耗能单位，否则该单位可能因电力不足而永远无法建造。" />
 
 	<setting name="AJEA_ExtraEnergyCountInBrownout" serialization_name="AJEAB" is_network_and_game_synced_setting="true"
 		category="Automation" subcategory="AJEA_Settings" display_name="低电力时目标能源" type="IntTextbox" default="50000" min="0" max="10000000"

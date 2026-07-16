@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
     <entity name="ElectricBlaster" copy_from="ElectricBomber" required_expansion_list="2_Zenith_Onslaught"
 		icon_overlay="Overlays1/Turret_Tesla"
@@ -117,7 +117,7 @@
     <entity name="ExemplarPolaraider" copy_from="Polaraider" required_expansion_list="2_Zenith_Onslaught" aip_when_granted_by_hack="14" tags="IncludeInFRS"
 		display_name="典范极地巡游者"
 		display_name_for_sidebar="典范极地巡游者SC"
-		description="突袭和入侵用打击机，其武器对更高装甲总值越来越有效。提升少量舰船生产线的速度和攻击力。"
+		description="突袭和入侵用打击机，其武器对更高装甲总值越来越有效。提升少量单位生产线的速度和攻击力。"
 		supercharges_attack_power_of_rest_of_player_fleet="1.25" supercharges_min_speed_of_rest_of_player_fleet="true"
 		supercharges_only_apply_when_fleet_line_count_is_x_or_less="5"
 		>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
     <item name="Devourer_SumonHack" dll_name="DevourerChrysalis" type_name="DevourerChrysalis.Devourer_SumonHack" display_name="分析 Zenith 信标" description="我们的科学家可以分析该信标及其 Zenith 技术，但冒着引起其连接对象注意的风险。"
         hack_duration="60"
@@ -25,7 +25,7 @@
 		hacker_can_be_support_fleet="true"
 	/>
 	
-	<item name="Devourer_SingleShipLineHack_T1" dll_name="DevourerChrysalis" type_name="DevourerChrysalis.Devourer_SingleShipLineHack_T1" display_name="分析活体蛹" description="在这种状态下，吞噬者对我们的扫描设备的抵抗能力要弱得多。我们可以尝试分析其独特的特性，为自己创造新的舰船系列。"
+	<item name="Devourer_SingleShipLineHack_T1" dll_name="DevourerChrysalis" type_name="DevourerChrysalis.Devourer_SingleShipLineHack_T1" display_name="分析活体蛹" description="在这种状态下，吞噬者对我们的扫描设备的抵抗能力要弱得多。我们可以尝试分析其独特的特性，为自己创造新的单位系列。"
         hack_duration="240"
         primary_hacking_response_interval="1000"
         primary_response_strength_per_interval="1"
@@ -33,7 +33,7 @@
         response_strength_on_completion="1"
         local_hacker_required="true"
 		choose_a_specific_ship_line_to_grant="true"
-        choice_text="您想将哪条舰船系列添加到此入侵者的舰队中？"
+        choice_text="您想将哪条单位系列添加到此入侵者的舰队中？"
         choice_text_height="60"
         relatedstring_is_a_ship_type="true"
 		hacker_can_be_support_fleet="true"

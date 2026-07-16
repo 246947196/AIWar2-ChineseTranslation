@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <fleet_design name="ESV_ThirdEyeStartingFleet"
         display_name="第三眼舰队"
-        description="混合了强大的反大型舰船和一艘目标标记运输旗舰来摧毁大型目标，旨在游戏后期发挥其全部潜力。"
+        description="混合了强大的反大型单位和一艘目标标记运输旗舰来摧毁大型目标，旨在游戏后期发挥其全部潜力。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >
@@ -15,7 +15,7 @@
   
   <fleet_design name="ESV_TurboStartingFleet"
         display_name="涡轮舰队"
-        description="快速反应舰船，配备灵活运输旗舰。兼具突袭和伏击能力。"
+        description="快速反应单位，配备灵活运输旗舰。兼具突袭和伏击能力。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >
@@ -41,7 +41,7 @@
   
   <fleet_design name="ESV_GeneratorStartingFleet"
         display_name="发生器舰队"
-        description="生产并使用金属通过工程运输旗舰修理舰船，能够比其他舰队更持久地维持攻击并进行更大规模的消耗战。"
+        description="生产并使用金属通过工程运输旗舰修理单位，能够比其他舰队更持久地维持攻击并进行更大规模的消耗战。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >
@@ -54,7 +54,7 @@
   
   <fleet_design name="ESV_GravityStartingFleet"
         display_name="引力舰队"
-        description="使用非常慢的舰船配合拖船运输旗舰将其加速到可观的速度值，同时减速敌人，利用其缓慢和无法接近的弱点。"
+        description="使用非常慢的单位配合拖船运输旗舰将其加速到可观的速度值，同时减速敌人，利用其缓慢和无法接近的弱点。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >
@@ -67,7 +67,7 @@
   
   <fleet_design name="ESV_PartisanStartingFleet"
         display_name="游击队舰队"
-        description="使用隐形运输旗舰和多个隐形或强化舰船，深入敌后摧毁敌方据点。"
+        description="使用隐形运输旗舰和多个隐形或强化单位，深入敌后摧毁敌方据点。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >

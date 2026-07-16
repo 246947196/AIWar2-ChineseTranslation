@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <entity name="ForcefieldGenerator" is_partial_record="true"
 			shield_size_scale="4"
 			display_name="力场护盾发生器"
-			description="保护附近的舰船和建筑。受其保护的单位将造成一半的常规伤害。略微可移动，因此易受具有诺里斯效应的舰船推动。仅提供给指挥站。"
+			description="保护附近的单位和建筑。受其保护的单位将造成一半的常规伤害。略微可移动，因此易受具有诺里斯效应的单位推动。仅提供给指挥站。"
 			
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Forcefields,Command" 
 			
@@ -26,7 +26,7 @@
   <entity name="StartingForcefieldGenerator" is_partial_record="true"
    absolute_max_cap_when_in_fleets="0"
 			    collision_priority="11000" mark_level_scale_style="PlayerHomeForcefield" speed="Immobile"
-					description="保护附近的舰船和建筑。受其保护的单位将造成一半的常规伤害。完全不可移动，因此无法被诺里斯效应推动。">>
+					description="保护附近的单位和建筑。受其保护的单位将造成一半的常规伤害。完全不可移动，因此无法被诺里斯效应推动。">>
     <fleet_membership name="PlayerHomeCommand" ship_cap_group="OtherDefense" weight="100" cap="0"/>
   </entity>
   

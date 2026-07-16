@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
 	<entity name="RPSF_Misc_Template"
@@ -167,7 +167,7 @@
 		>
 	</entity>
 	<!--<entity name="RPSF_Exo_Template"
-		display_name="RPSF EXO"
+		display_name="RPSF 外部行动"
 		ship_class_name="ExowarTier1"
 		thematic_groups="ExogalacticWarFront" voice_group="Silent"     
 		draw_in_galaxy_view="true" uses_large_health_bar="true"
@@ -253,8 +253,8 @@
 		y_offset_of_icon="20"
 		category="Ship"
 		collision_priority="500"
-		display_name="RPSF C-FAC"
-		description="机动设施旗舰。如果舰队旗舰在同一或相邻行星且缺少舰船，将自动生产替代品直接跃迁到该旗舰。"
+		display_name="RPSF C-制造厂"
+		description="机动设施旗舰。如果舰队旗舰在同一或相邻行星且缺少单位，将自动生产替代品直接跃迁到该旗舰。"
 		tech_upgrades_that_benefit_me="Engineering"
 		tech_upgrade_that_is_used_for_my_direct_science="Direct_CombatFactory"
 		starting_mark_level="Mark1" is_upgradeable_by_direct_science="true" this_centerpiece_grants_its_direct_science_upgrades_to_rest_of_fleet="true" 

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
 	<entity	name="Claim_ArtificialWormhole"
@@ -49,7 +49,7 @@
 			category="Ship"
 			collision_priority="10000"
 			display_name="色彩方舟"
-			description="这艘方舟旗舰拥有第一个也是唯一一个足以驱动如此大型舰船进行多次跳跃的跳跃驱动器。其主武器干扰敌方武器，点防御系统随机传送附近敌人离开。"
+			description="这艘方舟旗舰拥有第一个也是唯一一个足以驱动如此大型单位进行多次跳跃的跳跃驱动器。其主武器干扰敌方武器，点防御系统随机传送附近敌人离开。"
 			aip_to_claim="7"
 			metal_to_claim="500000"
 			starting_mark_level="Mark1"
@@ -389,7 +389,7 @@
 			collision_priority="1000"
 			display_name="研究前哨站"
 			display_name_for_sidebar="研究前哨站"
-			description="回收者研究设施。他们对可安全回收的碎片进行秘密研究。此站专门研究舰队舰船蓝图。"
+			description="回收者研究设施。他们对可安全回收的碎片进行秘密研究。此站专门研究舰队单位蓝图。"
 			starting_mark_level="Markless"
 			cost_for_ai_to_purchase="200"
 			aip_on_death="0"
@@ -658,7 +658,7 @@
 			collision_priority="1000"
 			display_name="废料场"
 			display_name_for_sidebar="废料场"
-			description="回收者分析报废舰船的设施。入侵此设施并选择一条舰船生产线捐赠给科学。"
+			description="回收者分析报废单位的设施。入侵此设施并选择一条单位生产线捐赠给科学。"
 			starting_mark_level="Markless"
 			cost_for_ai_to_purchase="200"
 			aip_on_death="0"
@@ -703,7 +703,7 @@
 			collision_priority="1000"
 			display_name="母站"
 			display_name_for_sidebar="母站"
-			description="回收者主站，舰船在此建造。"
+			description="回收者主站，单位在此建造。"
 			starting_mark_level="Markless"
 			cost_for_ai_to_purchase="200"
 			aip_on_death="0"
@@ -811,7 +811,7 @@
 			collision_priority="100"
 			display_name="研究船"
 			display_name_for_sidebar="研究船"
-			description="这艘回收者舰船深入深空发现有用的蓝图。"
+			description="这艘回收者单位深入深空发现有用的蓝图。"
 			starting_mark_level="Mark1"
 			cost_for_ai_to_purchase="10"
 			hull_points="75000" shield_points="75000" speed="AboveAverage1"

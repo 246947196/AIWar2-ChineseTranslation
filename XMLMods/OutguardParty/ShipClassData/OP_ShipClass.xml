@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
 	<ship_class_data 
-						name="HackerShipClass" display_name="入侵舰船类型" short_name="入侵" copy_from="DefaultShipClass"
+						name="HackerShipClass" display_name="入侵单位类型" short_name="入侵" copy_from="DefaultShipClass"
 						can_be_damaged="false"
 						>
 	</ship_class_data>

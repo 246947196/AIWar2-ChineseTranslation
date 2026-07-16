@@ -2,7 +2,7 @@
 <root>
 
   <objective_details_hook name="CuendillarAsteroid" category="DysonDrillables"
-          default_display_name="Cuendillar Asteroid on "  finish_display_name_with_related_planet1="true"
+          default_display_name="玉石小行星于"  finish_display_name_with_related_planet1="true"
           use_default_display_name_instead_of_display_name_base="true"
           dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.CuendillarAsteroid"
           display_name_color="8888ff"
@@ -11,7 +11,7 @@
           difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedEntity1"/>
 
   <objective_details_hook name="CuendillarPlanetoidObj" category="DysonDrillables"
-          default_display_name="Cuendillar Planetoid on "  finish_display_name_with_related_planet1="true"
+          default_display_name="玉石小行星于"  finish_display_name_with_related_planet1="true"
           use_default_display_name_instead_of_display_name_base="true"
           dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.CuendillarPlanetoid"
           display_name_color="88ff88"
@@ -20,7 +20,7 @@
           difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedEntity1"/>
 
       <objective_details_hook name="ReaperChrysalisObj" category="DysonDrillables"
-          default_display_name="Chrysalis on "  finish_display_name_with_related_planet1="true"
+          default_display_name="蛹于"  finish_display_name_with_related_planet1="true"
           use_default_display_name_instead_of_display_name_base="true"
           dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.ReaperChrsyalis"
           display_name_color="ff8888"
@@ -29,7 +29,7 @@
           difficulty_method="GetPlayerDifficultyToRouteToPlanet_RelatedEntity1"/>
 
   <objective_details_hook name="DysonDrilling" category="DysonStrategy"
-          default_display_name="Drilling for Cuendillar"
+          default_display_name="钻探玉石"
           use_default_display_name_instead_of_display_name_base="true"
           dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.DysonDrilling"
           display_name_color="e16cff"
@@ -38,7 +38,7 @@
           difficulty_method="Nothing"/>
 
   <objective_details_hook name="DysonReapers" category="DysonStrategy"
-          default_display_name="The Reaper Threat"
+          default_display_name="收割者威胁"
           use_default_display_name_instead_of_display_name_base="true"
           dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.DysonReapers"
           display_name_color="e16cff"
@@ -47,7 +47,7 @@
           difficulty_method="Nothing"/>
 
   <objective_details_hook name="DysonMoons" category="DysonStrategy"
-          default_display_name="Moons"
+          default_display_name="卫星"
           use_default_display_name_instead_of_display_name_base="true"
           dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.DysonMoons"
           display_name_color="e16cff"
@@ -56,7 +56,7 @@
           difficulty_method="Nothing"/>
 
   <objective_details_hook name="DysonRaceSpecializations" category="DysonStrategy"
-          default_display_name="Race Specializations"
+          default_display_name="种族专精"
           use_default_display_name_instead_of_display_name_base="true"
           dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.DysonRaceSpecializations"
           display_name_color="e16cff"
@@ -65,7 +65,7 @@
           difficulty_method="Nothing"/>
 
   <objective_details_hook name="DysonSphere" category="DysonStrategy"
-          default_display_name="The Dyson Sphere"
+          default_display_name="戴森球"
           use_default_display_name_instead_of_display_name_base="true"
           dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.DysonSphere"
           display_name_color="e16cff"
@@ -74,7 +74,7 @@
           difficulty_method="Nothing"/>
 
   <objective_details_hook name="DysonUnusedSockets" category="BeginnerTips"
-          default_display_name="Unused Sockets on "  finish_display_name_with_related_planet1="true"
+          default_display_name="未用插槽于"  finish_display_name_with_related_planet1="true"
           use_default_display_name_instead_of_display_name_base="true"
           dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.DysonUnusedSockets"
           display_name_color="8092ff"

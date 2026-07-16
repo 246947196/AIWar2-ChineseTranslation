@@ -7,7 +7,7 @@
              tooltip="Shows primarily 'standard' information, but also integrates Deepstrike Information."
       />
     <display_mode name="CuendillarAmount"
-             display_name="Cuendillar Remaining"
+             display_name="玉石 Remaining"
              dll_name="AIWarExternalVisualizationCode"
              type_name="Arcen.AIW2.ExternalVisualization.GalaxyMapDisplayMode_CuendillarAmount"
              tooltip="Shows how much cuendillar there is per planet. Only meaningful for Dyson Sidekick or Dyson Empire."

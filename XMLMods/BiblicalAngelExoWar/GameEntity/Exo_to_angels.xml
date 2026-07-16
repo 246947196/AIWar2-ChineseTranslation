@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <entity name="Usurper" 
 			is_partial_record="true"
@@ -116,7 +116,7 @@
   <entity name="LONExtragalacticFlenserJupiterWardJuno"
 			required_mod_list="ExowarVarietyLON"
 			is_partial_record="true"
-			description="朱庇特型伊斯拉菲尔的一部分的强大子单位。在主船体周围生成保护屏障，并使用强大的击退武器击退较小舰船。"
+			description="朱庇特型伊斯拉菲尔的一部分的强大子单位。在主船体周围生成保护屏障，并使用强大的击退武器击退较小单位。"
 			>
   </entity>
   
@@ -130,7 +130,7 @@
   <entity name="LONExtragalacticFlenserJupiterWardMinerva"
 			required_mod_list="ExowarVarietyLON"
 			is_partial_record="true"
-			description="朱庇特型伊斯拉菲尔的一部分的强大子单位。在主船体周围生成保护屏障，并使用强大的击退武器击退较小舰船。"
+			description="朱庇特型伊斯拉菲尔的一部分的强大子单位。在主船体周围生成保护屏障，并使用强大的击退武器击退较小单位。"
 			>
   </entity>
   
@@ -144,7 +144,7 @@
   <entity name="LONExtragalacticCeresWard"
 			required_mod_list="ExowarVarietyLON"
 			is_partial_record="true"
-			description="朱庇特型伊斯拉菲尔的一部分的子子单位。在其母舰船体周围生成保护屏障，并生产一群AI守护者。"
+			description="朱庇特型伊斯拉菲尔的一部分的子子单位。在其母单位体周围生成保护屏障，并生产一群AI守护者。"
 			>
   </entity>
   
@@ -158,21 +158,21 @@
   <entity name="LONExtragalacticFlenserJupiterWardVenus"
 			required_mod_list="ExowarVarietyLON"
 			is_partial_record="true"
-			description="朱庇特型伊斯拉菲尔的一部分的强大子单位。以可怕的速度将附近较小舰船转化为AI控制。"
+			description="朱庇特型伊斯拉菲尔的一部分的强大子单位。以可怕的速度将附近较小单位转化为AI控制。"
 			>
   </entity>
   
   <entity name="LONExtragalacticFlenserJupiterWardMars"
 			required_mod_list="ExowarVarietyLON"
 			is_partial_record="true"
-			description="朱庇特型伊斯拉菲尔的一部分的强大子单位。使用强大的光束武器对抗附近舰船，并增强整个行星上的AI舰船。"
+			description="朱庇特型伊斯拉菲尔的一部分的强大子单位。使用强大的光束武器对抗附近单位，并增强整个行星上的AI单位。"
 			>
   </entity>
   
   <entity name="LONExtragalacticFlenserJupiterWardMercury"
 			required_mod_list="ExowarVarietyLON"
 			is_partial_record="true"
-			description="朱庇特型伊斯拉菲尔的一部分的强大子单位。除了加速行星上的友军舰船外，还使用先进的隐形系统，其调谐如此之好，可以在几乎不干扰隐形场的情况下开火。"
+			description="朱庇特型伊斯拉菲尔的一部分的强大子单位。除了加速行星上的友军单位外，还使用先进的隐形系统，其调谐如此之好，可以在几乎不干扰隐形场的情况下开火。"
 			>
   </entity>
   
@@ -200,7 +200,7 @@
   <entity name="LONExtragalacticFlenserJupiterWardApollo"
 			required_mod_list="ExowarVarietyLON"
 			is_partial_record="true"
-			description="朱庇特型伊斯拉菲尔的一部分的强大子单位。在主船体周围生成保护屏障，并使用强大的击退武器击退较小舰船。"
+			description="朱庇特型伊斯拉菲尔的一部分的强大子单位。在主船体周围生成保护屏障，并使用强大的击退武器击退较小单位。"
 			>
   </entity>
   
@@ -253,7 +253,7 @@
 			is_partial_record="true"
 			display_name="沙姆谢尔"
 			display_name_for_sidebar="沙姆谢尔"
-			description="下一版"拉米艾尔"舰船的高级原型。更易于生产，但比原型弱。远程爆破，增强行星上的盟友，用力场保护它们，如果有哨站存在则无敌。"
+			description="下一版"拉米艾尔"单位的高级原型。更易于生产，但比原型弱。远程爆破，增强行星上的盟友，用力场保护它们，如果有哨站存在则无敌。"
 			>
   </entity>
   
@@ -309,7 +309,7 @@
 			is_partial_record="true"
 			display_name="桑达尔丰"
 			display_name_for_sidebar="桑达尔丰"
-			description="下一版"拉斐尔"舰船的高级原型。将敌人转化到己方，释放无人机带回阵亡盟友。"
+			description="下一版"拉斐尔"单位的高级原型。将敌人转化到己方，释放无人机带回阵亡盟友。"
 			>
   </entity>
   
@@ -338,7 +338,7 @@
 			is_partial_record="true"
 			display_name="乌姆布里尔"
 			display_name_for_sidebar="乌姆布里尔"
-			description="下一版"阿兹瑞尔"舰船的高级原型。隐形且极难被发现，能够完全无视力场和个人护盾。"
+			description="下一版"阿兹瑞尔"单位的高级原型。隐形且极难被发现，能够完全无视力场和个人护盾。"
 			>
   </entity>
   
@@ -353,7 +353,7 @@
 			is_partial_record="true"
 			display_name="马特里尔"
 			display_name_for_sidebar="马特里尔"
-			description="下一版"萨奇尔"舰船的高级原型。远程溅射伤害，同时削弱被击中的目标。"
+			description="下一版"萨奇尔"单位的高级原型。远程溅射伤害，同时削弱被击中的目标。"
 			>
   </entity>
   
@@ -376,7 +376,7 @@
 			is_partial_record="true"
 			display_name="图列尔火炮"
 			display_name_for_sidebar="图列尔火炮"
-			description="下一版"阿拉基尔火炮"舰船的高级原型。持续远程爆破，影响小爆炸半径内的一切。"
+			description="下一版"阿拉基尔火炮"单位的高级原型。持续远程爆破，影响小爆炸半径内的一切。"
 			>
   </entity>
   
@@ -408,7 +408,7 @@
 			is_partial_record="true"
 			display_name="炽热巴比埃尔"
 			display_name_for_sidebar="炽热巴比"
-			description="横冲直撞、过载的Barbiel版本，从不稳定Barbiel的灰烬中诞生。无论涉及何种外来技术，对舰船来说都不太健康。"
+			description="横冲直撞、过载的Barbiel版本，从不稳定Barbiel的灰烬中诞生。无论涉及何种外来技术，对单位来说都不太健康。"
 			>
   </entity>
   
@@ -522,7 +522,7 @@
 			is_partial_record="true"
 			display_name="萨哈奎尔"
 			display_name_for_sidebar="萨哈奎尔"	
-			description="下一版"阿巴图尔"舰船的高级原型。拥有能够贯穿多个目标的远程扇形光束，以及短程防空炮和一组无人机。"
+			description="下一版"阿巴图尔"单位的高级原型。拥有能够贯穿多个目标的远程扇形光束，以及短程防空炮和一组无人机。"
 			>
   </entity>
   

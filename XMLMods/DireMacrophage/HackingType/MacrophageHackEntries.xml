@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
 <item name="HackToGrantShipLine_DireMacrophage" copy_from="HackToGrantShipLine" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_GrantShipLine" 
-        display_name="引诱可怕巨噬细胞舰船线" description="入侵此堡垒将使执行入侵的舰队获得一些可怕巨噬细胞舰船。并摧毁该堡垒。"
+        display_name="引诱可怕巨噬细胞单位线" description="入侵此堡垒将使执行入侵的舰队获得一些可怕巨噬细胞单位。并摧毁该堡垒。"
 		hack_duration="60"
         primary_hacking_response_interval="45"
         primary_response_strength_per_interval="1.5"
@@ -13,7 +13,7 @@
         hack_is_against_planet="false"
         use_closest_hacker_for_check="true"
         choose_a_specific_ship_line_to_grant="true"
-        choice_text="您想将哪条舰船线添加到入侵者的舰队中？"
+        choice_text="您想将哪条单位线添加到入侵者的舰队中？"
         choice_text_height="60"
         relatedstring_is_a_ship_type="true"
         exo_on_completion="false"

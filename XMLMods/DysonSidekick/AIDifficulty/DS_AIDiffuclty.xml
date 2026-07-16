@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- We have first difficulty 9.5, which is between 9 and 10 in power. Then we have the new difficulties which are
        intended to keep the game difficulty but have fewer ships in the galaxy to make it easier to play multiplayer -->
     <!-- 9.5 -->
   <record name="ModSupportDifficulty_95"
-       display_name="Difficulty 9.5"
+       display_name="难度 9.5"
        budget_base_income="77"
        budget_income_multiplier_for_AIP_Over_10="0.9"
        budget_income_multiplier_for_AIP_Over_50="1.8"
@@ -96,7 +96,7 @@
 
   <!-- Note: to support universal difficulty settings for hunter/warden/etc, the name of a Modded AI Difficulty must contain the string "ModSupport" and will be treated as Difficulty 8 -->
   <record name="ModSupportWilyBadger"
-       display_name="Wily Badger"
+       display_name="狡猾獾"
        budget_base_income="14"
        budget_income_multiplier_for_AIP_Over_10="0.09"
        budget_income_multiplier_for_AIP_Over_50="0.16"
@@ -182,11 +182,11 @@
        BaseBunkerSpawnInterval="1800"
        BaseBunkerStrengthMultiplier="1.0"
        number_of_ten_minute_increments_before_homeworld_is_fully_defensible="60"
-        description="该AI特别聪明，但经济上弱得多。目标是让游戏仍然有挑战性，同时保持银河中更少的舰船以便更好地进行多人游戏。我的初步估计是会大约在6.5左右。"
+        description="该AI特别聪明，但经济上弱得多。目标是让游戏仍然有挑战性，同时保持银河中更少的单位以便更好地进行多人游戏。我的初步估计是会大约在6.5左右。"
   >
   </record>
     <record name="ModSupportPowerfulBadger"
-       display_name="Powerful Badger"
+       display_name="强力獾"
        budget_base_income="14"
        budget_income_multiplier_for_AIP_Over_10="0.09"
        budget_income_multiplier_for_AIP_Over_50="0.16"
@@ -272,12 +272,12 @@
        BaseBunkerSpawnInterval="1800"
        BaseBunkerStrengthMultiplier="1.0"
        number_of_ten_minute_increments_before_homeworld_is_fully_defensible="60"
-        description="该AI特别聪明，但经济上弱得多。目标是让游戏仍然有挑战性，同时保持银河中更少的舰船以便更好地进行多人游戏。该AI通过较早到达更高标记等级以及对入侵和反击的强烈响应来弥补整体舰船数量的不足。我的估计是会大约在7.5左右"
+        description="该AI特别聪明，但经济上弱得多。目标是让游戏仍然有挑战性，同时保持银河中更少的单位以便更好地进行多人游戏。该AI通过较早到达更高标记等级以及对入侵和反击的强烈响应来弥补整体单位数量的不足。我的估计是会大约在7.5左右"
   >
   </record>
 
   <record name="ModSupportSneakyBadger"
-       display_name="Sneaky Badger"
+       display_name="偷袭獾"
        budget_base_income="18"
        budget_income_multiplier_for_AIP_Over_10="0.09"
        budget_income_multiplier_for_AIP_Over_50="0.16"
@@ -363,11 +363,11 @@
        BaseBunkerSpawnInterval="1800"
        BaseBunkerStrengthMultiplier="1.0"
        number_of_ten_minute_increments_before_homeworld_is_fully_defensible="60"
-        description="该AI难度在经济上大约相当于6，但它有一些额外的狡猾特性，比如较早解锁虫洞入侵。它的舰船会更快加入猎手，并且更加谨慎。它们也非常喜欢击杀金属发生器。"
+        description="该AI难度在经济上大约相当于6，但它有一些额外的狡猾特性，比如较早解锁虫洞入侵。它的单位会更快加入猎手，并且更加谨慎。它们也非常喜欢击杀金属发生器。"
   >
   </record>
   <record name="ModSupportCoreBadget"
-       display_name="Core Badger"
+       display_name="核心獾"
        budget_base_income="10"
        budget_income_multiplier_for_AIP_Over_10="0.09"
        budget_income_multiplier_for_AIP_Over_50="0.16"
@@ -457,7 +457,7 @@
   >
   </record>
   <record name="ModSupportShark"
-       display_name="Shark"
+       display_name="鲨鱼"
        budget_base_income="13"
        budget_income_multiplier_for_AIP_Over_10="0.09"
        budget_income_multiplier_for_AIP_Over_50="0.16"
@@ -548,7 +548,7 @@
   </record>
 
   <record name="ModSupportLumberingBadger"
-       display_name="Lumbering Badger"
+       display_name="笨重獾"
        budget_base_income="90"
        budget_income_multiplier_for_AIP_Over_10="1.4"
        budget_income_multiplier_for_AIP_Over_50="2.2"
@@ -637,7 +637,7 @@
   </record>
 
   <record name="ModSupportExoBadger"
-       display_name="Exo Badger"
+       display_name="河外獾"
        budget_base_income="16"
        budget_income_multiplier_for_AIP_Over_10="0.09"
        budget_income_multiplier_for_AIP_Over_50="0.16"
@@ -723,7 +723,7 @@
        BaseBunkerSpawnInterval="1800"
        BaseBunkerStrengthMultiplier="1.0"
        number_of_ten_minute_increments_before_homeworld_is_fully_defensible="60"
-        description="该AI将所有智能控制调到了最高但收入调低了。此外，它极大地偏向河外战争舰船"
+        description="该AI将所有智能控制调到了最高但收入调低了。此外，它极大地偏向河外战争单位"
   >
   </record>
 

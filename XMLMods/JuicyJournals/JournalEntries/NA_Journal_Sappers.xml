@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   <journal name="EOTA_Sappers_Overview_PlayerAllied" sidebar_text="{FactionColor}工兵部队：&lt;/color&gt;  概述"
@@ -18,7 +18,7 @@
 
 首先，他们建造一些常见类型的防御设施；炮塔、牵引器等。
 其次，他们可以建造滩头标枪；这些建筑会向我们在战斗中的远程行星发射炮塔。
-第三，他们可以建造瞭望塔，发射临时舰船来防御附近的行星。" />
+第三，他们可以建造瞭望塔，发射临时单位来防御附近的行星。" />
 
       <journal name="EOTA_Vassal_Gameplay" sidebar_text="&lt;color=59bfff&gt;提示：&lt;/color&gt; 附庸派系"
              can_record_another_copy_if_already_recorded_in_this_campaign="false"

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
 	<!-- Nemesis -->
@@ -91,7 +91,7 @@
 			<outgoing_damage_modifier based_on="mass_tx" comparison_type="LessThan" compared_to="7.1" multiplier="0" />
 		<!--number_of_weapon_points_to_gain_on_firing="20" number_of_weapon_points_to_consume_on_firing="200" additional_damage_modifier_per_weapon_point="500"<outgoing_damage_modifier based_on="MaxHull" comparison_type="MultiplesOf" compared_to="500000" multiplier="1" />-->
 		</system>
-		<system name="T" display_name="Incredible Tachyon Array"
+		<system name="T" display_name="不可思议的快子阵列"
 				category="Passive" tachyon_points="25" tachyon_range="EssentiallyInfinite" tachyon_hits_albedo_less_than="0.85"
 				>
 		</system>
@@ -135,7 +135,7 @@
 							necromancer_hacking_to_grant_on_death="4"
                             immune_to_necromancy="true"
                             />
-		<system name="WT" display_name="Preparations..."
+		<system name="WT" display_name="准备中..."
 			category="Weapon" firing_timing="OnlyInRange"
 			damage_per_shot="1" range="InsanelyHigh" shot_speed="Normal" rate_of_fire="Normal" 
 			shots_per_salvo="50" fires_salvos_sequentially="false"
@@ -145,7 +145,7 @@
 			shot_type_data="HeavyBeamInvisible" beam_length_multiplier="1" beam_weapon_visual_style="Laser_PurpleBright"
 			>	
 		</system>
-		<system name="W2" display_name="Extinguishing Destruction"
+		<system name="W2" display_name="熄灭毁灭"
 			category="Weapon" firing_timing="OnlyInRange"
 			damage_per_shot="100000" range="AboveAverage2" shot_speed="Normal" rate_of_fire="Sloth" fires_salvos_sequentially="true" 
 			shots_per_salvo="25" shots_per_target="250"
@@ -159,7 +159,7 @@
 			salvo_shot_min_delay="25"
             salvo_shot_max_delay="50"-->
 		</system>	
-		<system name="L" display_name="Catastrophic Remnants"
+		<system name="L" display_name="灾难残骸"
 				category="Weapon" firing_timing="OnlyInRange" shot_type_data="UniversalCatastrophe"
 				damage_per_shot="5" range="Planetary" shot_speed="Slow" rate_of_fire="Glacial" fires_salvos_sequentially="true"  
 				shots_per_salvo="2"  cloaking_percent_loss_from_firing="0.2"
@@ -170,7 +170,7 @@
 					tractor_range="AboveAverage1" tractor_count="250"  tractor_hits_albedo_less_than="0.7" tractor_hits_engine_gx_less_than="19" tractor_hits_mass_less_than="7"
 					>
 		</system>
-		<system name="T" display_name="Incredible Tachyon Array"
+		<system name="T" display_name="不可思议的快子阵列"
 				category="Passive" tachyon_points="25" tachyon_range="EssentiallyInfinite" tachyon_hits_albedo_less_than="0.85"
 				>
 		</system>
@@ -188,9 +188,9 @@
 	    size_scale="4"
 		visuals_scale_multiplier="10"
         collision_priority="7000"
-	    display_name="Universal Cataclysm"
+	    display_name="宇宙灾变"
 		display_name_for_sidebar="大灾变"
-	    description="The Universal Cataclysm carries with it an untold amounts of destruction."
+	    description="宇宙灾变携带着难以计数的毁灭。"
 		starting_mark_level="Markless"  tech_upgrades_that_benefit_me="Unused"
 		cost_for_ai_to_purchase="3000"
 		hull_points="2000000" shield_points="1000000" speed="AboveAverage1"
@@ -257,19 +257,19 @@
 				>
 		<!--<outgoing_damage_modifier based_on="MaxHull" comparison_type="MultiplesOf" compared_to="1000000" multiplier="1" />-->
 		</system>
-		<system name="L" display_name="Universal Ruin Launcher"
+		<system name="L" display_name="宇宙毁灭发射器"
 				category="Weapon" firing_timing="OnlyInRange" shot_type_data="UniversalNemesisRuin"
 				damage_per_shot="5" range="Planetary" shot_speed="Slow" rate_of_fire="ExtremelyLow" fires_salvos_sequentially="true"  
 				cloaking_percent_loss_from_firing="0.2"
 				>
 		</system>
-		<system name="L2" display_name="Disastrous Resolution"
+		<system name="L2" display_name="灾难决议"
 				category="Weapon" firing_timing="OnlyInRange" shot_type_data="UniversalDisaster"
 				damage_per_shot="5" range="Planetary" shot_speed="Slow" rate_of_fire="Glacial" fires_salvos_sequentially="true"  
 				shots_per_salvo="2"  cloaking_percent_loss_from_firing="0.2"
 				>
 		</system>
-		<system name="T" display_name="Incredible Tachyon Array"
+		<system name="T" display_name="不可思议的快子阵列"
 				category="Passive" tachyon_points="25" tachyon_range="EssentiallyInfinite" tachyon_hits_albedo_less_than="0.85"
 				>
 		</system>
@@ -313,9 +313,9 @@
 	    size_scale="4"
 		visuals_scale_multiplier="10"
         collision_priority="800"
-	    display_name="Universal Catastrophe"
+	    display_name="宇宙浩劫"
 		display_name_for_sidebar="灾难"
-	    description="The Universal Catastrophe is far more personal than the Cataclysm, but still very far."
+	    description="宇宙浩劫比灾变更具针对性，但仍然非常遥远。"
 		starting_mark_level="Markless"  tech_upgrades_that_benefit_me="Unused"
 		cost_for_ai_to_purchase="3000"
 		hull_points="800000" shield_points="1600000" speed="Immobile"
@@ -376,7 +376,7 @@
 				>
 				<!--<outgoing_damage_modifier based_on="MaxHull" comparison_type="MultiplesOf" compared_to="250000" multiplier="1" />	-->			
 		</system>
-		<system name="CE" display_name="Chain Lightning Emitter"
+		<system name="CE" display_name="连锁闪电发射器"
             category="Weapon" firing_timing="OnlyInRange"
             damage_per_shot="8000" range="Normal2" shot_speed="Normal" rate_of_fire="VeryLow"
             shot_type_data="HeavyBeamInvisible"  beam_length_multiplier="1.3" shots_detonate_immediately="true"  beam_weapon_visual_style="Lightning_Blue"
@@ -386,13 +386,13 @@
 				>
 				<!--<outgoing_damage_modifier based_on="MaxHull" comparison_type="MultiplesOf" compared_to="250000" multiplier="1" />-->
 		</system>
-		<system name="L" display_name="Scum And Villainy"
+		<system name="L" display_name="渣滓与恶徒"
 				category="Weapon" firing_timing="OnlyInRange" shot_type_data="UniversalVillain"
 				damage_per_shot="5" range="Planetary" shot_speed="Slow" rate_of_fire="Minute" fires_salvos_sequentially="true"  
 				shots_per_salvo="2"  cloaking_percent_loss_from_firing="0.2"
 				>
 		</system>
-		<system name="T" display_name="Incredible Tachyon Array"
+		<system name="T" display_name="不可思议的快子阵列"
 				category="Passive" tachyon_points="25" tachyon_range="EssentiallyInfinite" tachyon_hits_albedo_less_than="0.85"
 				>
 		</system>
@@ -409,9 +409,9 @@
 	    size_scale="4"
 		visuals_scale_multiplier="10"
         collision_priority="800"
-	    display_name="Universal Disaster"
+	    display_name="宇宙灾难"
 		display_name_for_sidebar="灾难"
-	    description="The Universal Disaster is something that happens to others."
+	    description="宇宙灾难是发生在其他人身上的事。"
 		starting_mark_level="Markless"  tech_upgrades_that_benefit_me="Unused"
 		cost_for_ai_to_purchase="3000"
 		hull_points="800000" shield_points="1600000" speed="Immobile"
@@ -497,9 +497,9 @@
 	    size_scale="4"
 		visuals_scale_multiplier="10"
         collision_priority="800"
-	    display_name="Universal Villain"
+	    display_name="宇宙恶徒"
 		display_name_for_sidebar="反派"
-	    description="The Universal Villain oversees a small section of space. Made by greater evil."
+	    description="宇宙恶徒监管着一小片空间。由更巨大的邪恶制造。"
 		starting_mark_level="Markless"  tech_upgrades_that_benefit_me="Unused"
 		cost_for_ai_to_purchase="3000"
 		hull_points="125000" shield_points="125000" speed="Immobile"
@@ -598,7 +598,7 @@
 				necromancer_science_to_grant_on_death="40"
 				necromancer_hacking_to_grant_on_death="2"
 				/>
-		<system name="W1" display_name="Retaliative Laser Array"
+		<system name="W1" display_name="报复激光阵列"
 			category="Weapon" firing_timing="WhenParentEntityHit" range="AboveAverage3"
 			returns_this_percentage_of_damage_when_firing_retalitatory_shot="1.25" shot_speed="Normal" fires_salvos_sequentially="false"
 			damage_per_shot="100" rate_of_fire="Normal"
@@ -636,7 +636,7 @@
         collision_priority="8000"
 	    display_name="廉价普遍灾祸"
 		display_name_for_sidebar="B 级灾难"
-	    description="被入侵的普遍灾祸，被剥离了腐化力量和大部分战斗力。不会自行衰减，也失去了将敌人转化为盟友的能力。但其与主人的联系仍然存在——被它摧毁的每艘舰船及其自身死亡都将增强邪恶联盟，如同普通邪恶联盟舰船的效果。"
+	    description="被入侵的普遍灾祸，被剥离了腐化力量和大部分战斗力。不会自行衰减，也失去了将敌人转化为盟友的能力。但其与主人的联系仍然存在——被它摧毁的每个单位及其自身死亡都将增强邪恶联盟，如同普通邪恶联盟单位的效果。"
 		starting_mark_level="Mark2"
 		mark_level_scale_style="UN_HackedShips"
 		tech_upgrades_that_benefit_me="Alien"
@@ -658,7 +658,7 @@
 				>
 				<!--<outgoing_damage_modifier based_on="MaxHull" comparison_type="MultiplesOf" compared_to="250000" multiplier="1" />	-->			
 		</system>
-		<system name="CE" display_name="Chain Lightning Emitter"
+		<system name="CE" display_name="连锁闪电发射器"
             category="Weapon" firing_timing="OnlyInRange"
             damage_per_shot="1600" range="Normal2" shot_speed="Normal" rate_of_fire="VeryLow"
             shot_type_data="HeavyBeamInvisible"  beam_length_multiplier="1.3" shots_detonate_immediately="true"  beam_weapon_visual_style="Lightning_Blue"
@@ -683,7 +683,7 @@
         collision_priority="8000"
 	    display_name="廉价普遍反派"
 		display_name_for_sidebar="B 级反派"
-	    description="被入侵的普遍反派，被剥离了腐化力量和大部分战斗力。不会自行衰减，也失去了将敌人转化为盟友的能力。但其与主人的联系仍然存在——被它摧毁的每艘舰船及其自身死亡都将增强邪恶联盟，如同普通邪恶联盟舰船的效果。"
+	    description="被入侵的普遍反派，被剥离了腐化力量和大部分战斗力。不会自行衰减，也失去了将敌人转化为盟友的能力。但其与主人的联系仍然存在——被它摧毁的每个单位及其自身死亡都将增强邪恶联盟，如同普通邪恶联盟单位的效果。"
 		starting_mark_level="Mark2" 
 		mark_level_scale_style="UN_HackedShips"
 		tech_upgrades_that_benefit_me="Alien"

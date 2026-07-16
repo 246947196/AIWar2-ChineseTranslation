@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!--These "MoonFleets" are completely hand-designed battlestation-stlye fleets unique to each race: Zenith, Neinzul, Spire, and Templar.
       
@@ -8,7 +8,7 @@
 
 
   <fleet_design name="ZenithMoon"
-        display_name="Zenith Moon"
+        display_name="天顶之月"
         description="天顶之月配备有旨在撕碎并软化装甲以促进代谢的炮塔。"
         design_logic="Special" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
@@ -24,8 +24,8 @@
   </fleet_design>
 
   <fleet_design name="NeinzulMoon"
-                display_name="Neinzul Moon"
-                description="奈祖尔之月配备有谐波炮塔，用于掠夺装甲薄弱的舰船并将敌人转化为有用的僵尸。"
+                display_name="奈祖尔之月"
+                description="奈祖尔之月配备有谐波炮塔，用于掠夺装甲薄弱的单位并将敌人转化为有用的僵尸。"
                 design_logic="Special" weight="100" include_full_cap_of_each_type="true"
                 append_each_ship_description_to_main_description="true"
                 >
@@ -40,7 +40,7 @@
   </fleet_design>
 
   <fleet_design name="SpireMoon"
-                display_name="Spire Moon"
+                display_name="尖塔 Moon"
                 description="尖塔之月配备有各种远程炮塔。"
                 design_logic="Special" weight="100" include_full_cap_of_each_type="true"
                 append_each_ship_description_to_main_description="true"
@@ -56,7 +56,7 @@
   </fleet_design>
 
     <fleet_design name="TemplarMoon"
-                display_name="Templar Moon"
+                display_name="圣殿骑士之月"
                 description="圣殿骑士之月配备有各种远程炮塔。"
                 design_logic="Special" weight="100" include_full_cap_of_each_type="true"
                 append_each_ship_description_to_main_description="true"

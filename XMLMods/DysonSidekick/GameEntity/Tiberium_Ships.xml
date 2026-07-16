@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   <entity name="TiberiumVein"
@@ -15,8 +15,8 @@
 	  size_scale="12"
           gimbal_icon_size_multiplier="2.0"
 	  collision_priority="810"
-	  display_name="Tyderian Vein"
-	  display_name_for_sidebar="T Vein"
+	  display_name="泰德矿脉"
+	  display_name_for_sidebar="泰德矿脉"
 	  description="泰德瑞安矿脉传播着泰德瑞安的影响；随着其等级提升，它会增强AI的力量。"
 	  behavior="Stationary"
 	  starting_mark_level="Mark1"
@@ -34,7 +34,7 @@
           description_appender_dll="AIWarExternalCode"
 	  description_appender_type="Arcen.AIW2.External.TiberiumDescriptionAppender"
           >
-    <system name="R5" display_name="Laser Pulse"
+    <system name="R5" display_name="激光脉冲"
 	    category="Weapon" firing_timing="OnlyInRange"
 	    damage_per_shot="1000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Normal"
 	    shots_per_salvo="20" fires_salvos_sequentially="false"
@@ -67,9 +67,9 @@
 	  size_scale="12"
           gimbal_icon_size_multiplier="2.0"
 	  collision_priority="810"
-	  display_name="Tyderian Summoner"
-	  display_name_for_sidebar="T Summoner"
-	  description="泰德瑞安召唤者处于多相位空间；它会周期性地生成被泰德瑞安扭曲的强大AI舰船。你必须派旗舰进入多相位空间将其摧毁。"
+	  display_name="泰德召唤者"
+	  display_name_for_sidebar="泰德召唤者"
+	  description="泰德瑞安召唤者处于多相位空间；它会周期性地生成被泰德瑞安扭曲的强大AI单位。你必须派旗舰进入多相位空间将其摧毁。"
 	  behavior="Stationary"
 	  starting_mark_level="Markless"
 	  cost_for_ai_to_purchase="5600"
@@ -86,7 +86,7 @@
           description_appender_dll="AIWarExternalCode"
 	  description_appender_type="Arcen.AIW2.External.TiberiumDescriptionAppender"
           >
-    <system name="R5" display_name="Laser Pulse"
+    <system name="R5" display_name="激光脉冲"
 	    category="Weapon" firing_timing="OnlyInRange"
 	    damage_per_shot="1000" range="AboveAverage3" shot_speed="Normal" rate_of_fire="Normal"
 	    shots_per_salvo="20" fires_salvos_sequentially="false"
@@ -120,8 +120,8 @@
             category="Ship"
             y_offset_of_icon="10"
             collision_priority="100"
-            display_name="Wurrif"
-			description="伍里夫轻巡洋舰通过在一个小型保护区域内将伤害吸引到自己身上来保护友军。这是一艘由泰德瑞安进化而来的AI舰船。"
+            display_name="沃里夫"
+			description="伍里夫轻巡洋舰通过在一个小型保护区域内将伤害吸引到自己身上来保护友军。这是一艘由泰德瑞安进化而来的AI单位。"
             starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Alien"
             mark_level_scale_style="DarkZenith"
             cost_for_ai_to_purchase="1500"  strength_multiplier="1.5"
@@ -135,7 +135,7 @@
             ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
             priority_as_ai_target="NormalStarship" priority_as_frd_target="BiggerStarship" priority_to_protect="SlightlyLessExpendable"
             >
-      <system name="WJ" display_name="Tyderian Grenade"
+      <system name="WJ" display_name="泰德榴弹"
               category="Weapon" firing_timing="OnlyInRange"
               damage_per_shot="100" range="Small5" shot_speed="Normal" rate_of_fire="High"
               shots_per_salvo="6" fires_salvos_sequentially="false"
@@ -148,7 +148,7 @@
               >
         <outgoing_damage_modifier based_on="Armor_mm" comparison_type="AtMost" compared_to="30" multiplier="3" />
       </system>
-      <system name="A" display_name="Attractant Field"
+      <system name="A" display_name="吸引场"
               category="Passive"
               attract_range_for_shots_against_allies="Small1"
               >
@@ -171,8 +171,8 @@
 	    category="Ship"
 	    y_offset_of_icon="10"
 	    collision_priority="100"
-	    display_name="FwSen Raider"
-	    description="这艘大型突袭舰内部隐藏着数艘弗森舰船。一旦突袭舰被摧毁，这些舰船将蜂拥而出继续战斗。"
+	    display_name="弗森袭击者"
+	    description="这艘大型突袭舰内部隐藏着数艘弗森单位。一旦突袭舰被摧毁，这些单位将蜂拥而出继续战斗。"
 	    starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Alien"
 	    mark_level_scale_style="DarkZenith"
 	    cost_for_ai_to_purchase="4500"  strength_multiplier="1.5"	
@@ -187,7 +187,7 @@
             priority_as_ai_target="NormalStarship" priority_as_frd_target="BiggerStarship" priority_to_protect="SlightlyLessExpendable"
 	    >
       <ship_class_data can_be_zombified_and_similar="false" />
-      <system name="WJ" display_name="Carrier Grenade"
+      <system name="WJ" display_name="运载榴弹"
 	      category="Weapon" firing_timing="OnlyInRange"
 	      damage_per_shot="100" range="Small5" shot_speed="Normal" rate_of_fire="High"
 	      shots_per_salvo="6" fires_salvos_sequentially="false"
@@ -220,8 +220,8 @@
 	    category="Ship"
 	    y_offset_of_icon="10"
 	    collision_priority="100"
-	    display_name="Wurrif Raider"
-	    description="这艘大型突袭舰内部隐藏着数艘伍里夫舰船。一旦突袭舰被摧毁，这些舰船将蜂拥而出继续战斗。"
+	    display_name="沃里夫 Raider"
+	    description="这艘大型突袭舰内部隐藏着数艘伍里夫单位。一旦突袭舰被摧毁，这些单位将蜂拥而出继续战斗。"
 	    starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Alien"
 	    mark_level_scale_style="DarkZenith"
 	    cost_for_ai_to_purchase="4500"  strength_multiplier="1.5"	
@@ -236,7 +236,7 @@
             priority_as_ai_target="NormalStarship" priority_as_frd_target="BiggerStarship" priority_to_protect="SlightlyLessExpendable"
 	    >
       <ship_class_data can_be_zombified_and_similar="false" />
-      <system name="WJ" display_name="Carrier Grenade"
+      <system name="WJ" display_name="运载榴弹"
 	      category="Weapon" firing_timing="OnlyInRange"
 	      damage_per_shot="100" range="Small5" shot_speed="Normal" rate_of_fire="High"
 	      shots_per_salvo="6" fires_salvos_sequentially="false"
@@ -272,8 +272,8 @@
 	    category="Ship"
 	    y_offset_of_icon="10"
 	    collision_priority="100"
-	    display_name="FwSen"
-	    description="弗森轻巡洋舰擅长攻击护盾。这是一艘被泰德瑞安增强的AI舰船。"
+	    display_name="弗森"
+	    description="弗森轻巡洋舰擅长攻击护盾。这是一艘被泰德瑞安增强的AI单位。"
 	    starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Alien"
 	    mark_level_scale_style="DarkZenith"
 	    cost_for_ai_to_purchase="1500"  strength_multiplier="1.5"	
@@ -287,7 +287,7 @@
 	    ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
             priority_as_ai_target="NormalStarship" priority_as_frd_target="BiggerStarship" priority_to_protect="SlightlyLessExpendable"
 	    >
-      <system name="Q3" display_name="Stinger Bolt"
+      <system name="Q3" display_name="刺针弹"
 	      category="Weapon" firing_timing="OnlyInRange"
 	      damage_per_shot="2250" range="Normal3" shot_speed="Normal" rate_of_fire="Normal" fires_salvos_sequentially="false"
 	      shots_per_salvo="8"
@@ -312,8 +312,8 @@
 	    visuals_scale_multiplier="4"
 	    y_offset_of_icon="16"
 	    collision_priority="400"
-	    display_name="Tyderian Guardian"
-	    display_name_for_sidebar="Tydr GU"
+	    display_name="泰德守卫"
+	    display_name_for_sidebar="泰德守卫"
 	    description="被可怕的泰德瑞安灌注，这位守护者拥有一门强大的狙击炮。"
 	    blocks_enemy_claim_flows="true"
 	    voice_group="Silent"
@@ -329,7 +329,7 @@
             priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
 	    >
       <entity_type_drawing_bag_used_on_death data_list="JoyfulNadir,HappyNadir" min_spawn_value_list="1" />
-      <system name="ES" display_name="Escalation Sniper"
+      <system name="ES" display_name="升级狙击者"
 	      category="Weapon" firing_timing="OnlyInRange"
 	      damage_per_shot="1500" range="High1" shot_speed="VeryFast" rate_of_fire="High"
               shots_per_salvo="3"
@@ -355,9 +355,9 @@
 	    category="Ship"
 	    y_offset_of_icon="10"
 	    collision_priority="100"
-	    display_name="Shree"
+	    display_name="什里"
 	    hull_points="345000" shield_points="175000" speed="BelowAverage1"
-			description="希瑞战列巡洋舰装备有泰德瑞安强化的僵尸化武器，可将我方舰船转化。"
+			description="希瑞战列巡洋舰装备有泰德瑞安强化的僵尸化武器，可将我方单位转化。"
 	    starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Alien"
 	    mark_level_scale_style="DarkZenith"
 	    cost_for_ai_to_purchase="4000"  strength_multiplier="1.5"
@@ -371,7 +371,7 @@
             priority_as_ai_target="NormalStarship" priority_as_frd_target="BiggerStarship" priority_to_protect="SlightlyLessExpendable"
 	    >
             <entity_type_drawing_bag_used_on_death data_list="TiberiumGuardian" min_spawn_value_list="1" />
-      <system name="B5" display_name="Energy Drain"
+      <system name="B5" display_name="能量汲取"
 	      category="Weapon" firing_timing="OnlyInRange"
 	      damage_per_shot="100" shots_per_salvo="15" range="Normal1" shot_speed="Normal" rate_of_fire="PeriodicActivation" fires_salvos_sequentially="false"
 	      shot_type_data="HeavyBeamInvisible" beam_length_multiplier="1" beam_weapon_visual_style="Laser_YellowBright"
@@ -381,7 +381,7 @@
 	      >  
 	<death_effect_damage type="Zombification" tier_name="Minor"/>
       </system>	
-      <system name="W2" display_name="Omega Blast"
+      <system name="W2" display_name="欧米伽爆裂"
 	      category="Weapon" firing_timing="OnlyInRange"
 	      damage_per_shot="6000" range="Normal1" shot_speed="Fast" rate_of_fire="FairlyLow" fires_salvos_sequentially="true"
 	      shot_type_data="LaserPulse_RedLevel2"
@@ -389,7 +389,7 @@
 	<outgoing_damage_modifier based_on="EnergyUsage" comparison_type="MultiplesOf" compared_to="2500" multiplier="1" max_multiplier="15" />
 	<death_effect_damage type="Zombification" tier_name="Minor"/>
       </system>
-      <system name="T" display_name="Tractor Beam"
+      <system name="T" display_name="牵引光束"
 				category="Passive"
 				tractor_range="Normal1" tractor_count="30" tractor_count_added_per_mark="15" tractor_hits_albedo_less_than="0.4" tractor_hits_engine_gx_less_than="18"
 				>
@@ -416,7 +416,7 @@
 	    size_scale="1.02"
 	    visuals_scale_multiplier="8.1"
 	    collision_priority="1000"
-	    display_name="Pweck"
+	    display_name="普威克"
 	    description="这座由泰德瑞安供能的战斗炮台配备了强大的连锁闪电武器。"
 	    behavior="Stationary"
 	    starting_mark_level="Mark4"
@@ -431,7 +431,7 @@
             priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable"
             multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5"
             >
-      <system name="CE" display_name="Chain Lightning Emitter"
+      <system name="CE" display_name="连锁闪电发射器"
               category="Weapon" firing_timing="OnlyInRange"
               damage_per_shot="1750" range="Normal5" shot_speed="Normal" rate_of_fire="RatherLow"
               shot_type_data="HeavyBeamInvisible"  beam_length_multiplier="1.3" shots_detonate_immediately="true"  beam_weapon_visual_style="Lightning_Blue"
@@ -453,7 +453,7 @@
             never_leaves_remains="true"
 	    visuals_scale_multiplier="8.1"
 	    collision_priority="1000"
-	    display_name="Ruuk"
+	    display_name="鲁克"
 	    description="一座由泰德瑞安供能的炮塔，发射离子鱼雷，麻痹并击退敌人。"
 	    behavior="Stationary"
 	    starting_mark_level="Mark4"
@@ -468,7 +468,7 @@
             priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable"
             multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5"
             >
-      <system name="WT" display_name="Ion Disruption Blast" category="Weapon" firing_timing="OnlyInRange"  
+      <system name="WT" display_name="离子干扰爆裂" category="Weapon" firing_timing="OnlyInRange"  
 	      damage_per_shot="1600" range="AboveAverage2" shot_speed="Slow" rate_of_fire="RatherLow" fires_salvos_sequentially="true"
 	      shot_type_data="PlasmaTorpedoAOEBurstAtEnd"
 	      area_of_effect_size="1500" aoe_spreads_damage_among_available_targets="true"
@@ -491,8 +491,8 @@
 	visuals_scale_multiplier="4"
 	y_offset_of_icon="16"
 	collision_priority="400"
-	display_name="Tyderian Dire Guardian"
-	display_name_for_sidebar="Tydr D GU"
+	display_name="泰德恐怖守卫"
+	display_name_for_sidebar="泰德恐怖守卫"
 	description="被可怕的泰德瑞安灌注，这位守护者会吸引附近的敌方火力。蓄能释放强大的泰德瑞安爆破。"
 	blocks_enemy_claim_flows="true"
 	voice_group="Silent"
@@ -507,7 +507,7 @@
 	ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
         priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
 	>
-    <system name="R5" display_name="Tyderian Wve"
+    <system name="R5" display_name="泰德波纹"
 	    category="Weapon" firing_timing="OnlyInRange"
 	    damage_per_shot="3000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="High" fires_salvos_sequentially="true"
 	    shot_type_data="LaserPulse_RedLevel2"
@@ -515,7 +515,7 @@
 	    >
       <outgoing_damage_modifier based_on="EnergyUsage" comparison_type="AtLeast" compared_to="7000" multiplier="6" />
     </system>
-    <system name="W2" display_name="Tyderian Blast"
+    <system name="W2" display_name="泰德爆裂"
 	    category="Weapon" firing_timing="OnlyInRange"
 	    damage_per_shot="300" range="High2" shot_speed="Normal" rate_of_fire="PeriodicActivation" fires_salvos_sequentially="true"
             shot_type_data="HeavyBeamInvisible"  beam_length_multiplier="1.3" shots_detonate_immediately="true"  beam_weapon_visual_style="Lightning_Blue"
@@ -528,7 +528,7 @@
       <outgoing_damage_modifier applies_to="AllShields" based_on="MaxBubbleForcefield" comparison_type="GreaterThan" compared_to="10000" multiplier="5" />
     </system>	
 
-    <system name="A" display_name="Shot Attraction Matrix"
+    <system name="A" display_name="弹射吸引矩阵"
             category="Passive"
             attract_range_for_shots_against_allies="Small2" >
     </system>
@@ -560,9 +560,9 @@
 	    collision_priority="50"
 	    category="Ship"
 	    y_offset_of_icon="10"
-	    display_name="Tyderian Dropship"
+	    display_name="泰德运输船"
 	    hull_points="4500" shield_points="175000" speed="High"
-	    description="这艘巨大的舰船是包裹着泰德瑞安蝗虫群的空壳；它在战斗中迅速死亡以释放其虫群。"
+	    description="这艘巨大的单位是包裹着泰德瑞安蝗虫群的空壳；它在战斗中迅速死亡以释放其虫群。"
 	    starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Alien"
 	    mark_level_scale_style="DarkZenith"
 	    cost_for_ai_to_purchase="4000"  strength_multiplier="1.5"
@@ -576,7 +576,7 @@
             description_appender_dll="AIWarExternalCode"
 	    description_appender_type="Arcen.AIW2.External.TiberiumDescriptionAppender"
 	    >
-      <system name="W2" display_name="Ablative Blast"
+      <system name="W2" display_name="烧蚀爆裂"
 	      category="Weapon" firing_timing="OnlyInRange"
 	      damage_per_shot="100" range="Normal1" shot_speed="Fast" rate_of_fire="FairlyLow" fires_salvos_sequentially="true"
 	      shot_type_data="LaserPulse_RedLevel2"
@@ -601,8 +601,8 @@
 	   visuals_scale_multiplier="2"
 	   y_offset_of_icon="16"
 	   collision_priority="400"
-	   display_name="Tyderian Locust"
-	   display_name_for_sidebar="Tydr Lcst"
+	   display_name="泰德蝗虫"
+	   display_name_for_sidebar="泰德蝗虫"
 	   description="这些蝗虫装备了强大的泰德瑞安武器，可损坏目标的引擎。蝗虫被杀时会生成一只小型蝗虫。
 
 蝗虫从拥有高级泰德瑞安矿脉的区域生成。你应该摧毁矿脉以防止它们来临。"
@@ -618,7 +618,7 @@
 	   ship_or_structure_explosion_sfx_happens_if_not_mine_and_on_other_planet="true"
            priority_as_ai_target="MidNasty" priority_as_frd_target="MidNasty" priority_to_protect="SlightlyLessExpendable"
 	   >
-      <system name="Q2" display_name="Tyderian Disruptor"
+      <system name="Q2" display_name="泰德干扰器"
 	      category="Weapon" firing_timing="OnlyInRange"
 	      damage_per_shot="200" range="Normal4" shot_speed="Normal" rate_of_fire="Normal"
 	      shots_per_salvo="20" fires_salvos_sequentially="false"
@@ -637,12 +637,12 @@
 	   icon_name="Ships2/Nanobot_Center"  icon_overlay="Overlays2/Guardian_Spider"
            tags="AttritioningLocust"
            gimbal_icon_size_multiplier="0.8"
-	   display_name="Tyderian L Locust"
-	   display_name_for_sidebar="Tydr L Lcst"
+	   display_name="泰德大型蝗虫"
+	   display_name_for_sidebar="泰德大型蝗虫"
 	   description="泰德瑞安小型蝗虫继续作战，不过要弱得多。"
 	   hull_points="14000" shield_points="6000" speed="High"
            >
-      <system name="Q2" display_name="Tyderian Disruptor"
+      <system name="Q2" display_name="泰德干扰器"
 	      category="Weapon" firing_timing="OnlyInRange"
 	      damage_per_shot="100" range="Normal4" shot_speed="Normal" rate_of_fire="Normal"
 	      shots_per_salvo="10" fires_salvos_sequentially="false"
@@ -658,7 +658,7 @@
 
     <!-- The big ships -->
     <entity name="TiberiumAbomination"  thematic_groups="Armada"
-            display_name="Tyderian Abomination" display_name_for_sidebar="Tydr A"
+            display_name="泰德憎恶" display_name_for_sidebar="泰德憎恶"
 	    tags="TiberiumAbomination"
 	    visuals="Assets/_DLC3/Elderlings/DecadentElderling/DecadentElderling.prefab" visuals_bundle="exp3_neinzul_abyss"
             material_override_path="Assets/_FinalGameMeshes/Nanocaust/Abomination/Abomination.prefab"
@@ -678,7 +678,7 @@
 	    armor_mm="180" albedo="0.7" engine_gx="22" mass_tx="7"
 	    description="这头可怕的泰德瑞安怪物是被不明智的无敌舰队势力召唤而来。
 
-它会将舰船吸向自己以便吞噬，在此过程中恢复生命值。"
+它会将单位吸向自己以便吞噬，在此过程中恢复生命值。"
 	    science_to_grant_on_death="50"
 	    ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
 	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
@@ -698,7 +698,7 @@
                       immune_to_necromancy="true"
                       />
 
-      <system name="WT" display_name="Tyderian Lure"
+      <system name="WT" display_name="泰德诱饵"
 	      category="Weapon" firing_timing="OnlyInRange"
 	      damage_per_shot="2000" range="AboveAverage4" shot_speed="Normal" rate_of_fire="Low" 
 	      shots_per_salvo="50" fires_salvos_sequentially="false"
@@ -708,7 +708,7 @@
 	      shot_type_data="HeavyBeamInvisible" beam_length_multiplier="1" beam_weapon_visual_style="Laser_YellowBright"
 	      >	
       </system>
-      <system name="WJ" display_name="Devour"
+      <system name="WJ" display_name="吞噬"
 	      category="Weapon" firing_timing="OnlyInRange"
 	      damage_per_shot="1000" range="Small5" shot_speed="Normal" rate_of_fire="VeryLow" fires_salvos_sequentially="true"
 	      shots_per_salvo="10" shot_type_data="MeleeInvisible"
@@ -721,7 +721,7 @@
     </entity>
 
     <entity name="TiberiumDesolation"  thematic_groups="Armada"
-            display_name="Tyderian Desolation" display_name_for_sidebar="Tydr D"
+            display_name="泰德荒芜" display_name_for_sidebar="泰德荒芜"
 	    tags="TiberiumDesolation"
             visuals="Assets/_DLC3/BrutalGuardians/BrutalAmalgamAlphaGuardian/BrutalAmalgamAlphaGuardian.prefab" visuals_bundle="exp3_neinzul_abyss"
             material_override_path="Assets/_FinalGameMeshes/Nanocaust/Abomination/Abomination.prefab"
@@ -739,7 +739,7 @@
 	    armor_mm="180" albedo="0.7" engine_gx="22" mass_tx="7"
 	    description="这头可怕的泰德瑞安怪物领导着AI的CPA进攻无敌舰队。它射程很广，你必须接近它才能造成真正的伤害。
 
-死亡时会生成额外的泰德瑞安强化舰船。"
+死亡时会生成额外的泰德瑞安强化单位。"
 	    science_to_grant_on_death="100"
 	    ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
 	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
@@ -760,7 +760,7 @@
                       immune_to_necromancy="true"
                       />
       <incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="2500" multiplier="0.4" />
-      <system name="WN" display_name="Nucleon Petard"
+      <system name="WN" display_name="核子炸药"
 	      category="Weapon" firing_timing="OnlyInRange"
 	      damage_per_shot="4000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Normal"
 	      shots_per_salvo="6" fires_salvos_sequentially="false"
@@ -770,7 +770,7 @@
 	<outgoing_damage_modifier based_on="CurrentHullPercentage" applies_to="HullOnly" comparison_type="AtLeast" compared_to="75" multiplier="1.5"  />
 	<outgoing_damage_modifier based_on="EnergyUsage" comparison_type="AtLeast" compared_to="7000" multiplier="2"  />
       </system>
-      <system name="WC" display_name="Ablative Cannon"
+      <system name="WC" display_name="烧蚀炮"
 	      category="Weapon" firing_timing="OnlyInRange"
 	      damage_per_shot="3000" range="Normal5" shot_speed="Normal" rate_of_fire="Normal"
 	      shots_per_salvo="50" fires_salvos_sequentially="false"
@@ -783,7 +783,7 @@
     </entity>
 
     <entity name="TiberiumEscaton"  thematic_groups="Armada"
-            display_name="Tyderian Eschaton" display_name_for_sidebar="Tydr E"
+            display_name="泰德终末" display_name_for_sidebar="泰德终末"
 	    tags="TiberiumEschaton"
             visuals="Assets/_DLC3/BrutalGuardians/BrutalAmalgamAlphaGuardian/BrutalAmalgamAlphaGuardian.prefab" visuals_bundle="exp3_neinzul_abyss"
             material_override_path="Assets/_DLC1/GraySpire/GraySpireIllumin/GraySpireIllumin.prefab"  material_override_bundle="exp1_the_spire_rises"
@@ -821,7 +821,7 @@
                       scourge_empire_corbomite_to_grant_on_death="5"
                       immune_to_necromancy="true"
                       />
-      <system name="V9" display_name="Fiery Blast"
+      <system name="V9" display_name="烈焰爆裂"
 	      category="Weapon" firing_timing="OnlyInRange"
 	      damage_per_shot="9000" range="Normal3" shot_speed="Fast" rate_of_fire="Devourer" 
 	      shots_per_salvo="32" fires_salvos_sequentially="true"
@@ -830,7 +830,7 @@
       </system>
 
       <incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="2500" multiplier="0.4" />
-      <system name="WN" display_name="Nucleon Petard"
+      <system name="WN" display_name="核子炸药"
 	      category="Weapon" firing_timing="OnlyInRange"
 	      damage_per_shot="4000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Normal"
 	      shots_per_salvo="6" fires_salvos_sequentially="false"
@@ -840,7 +840,7 @@
 	<outgoing_damage_modifier based_on="CurrentHullPercentage" applies_to="HullOnly" comparison_type="AtLeast" compared_to="75" multiplier="1.5"  />
 	<outgoing_damage_modifier based_on="EnergyUsage" comparison_type="AtLeast" compared_to="7000" multiplier="2"  />
       </system>
-      <system name="WC" display_name="Ablative Cannon"
+      <system name="WC" display_name="烧蚀炮"
 	      category="Weapon" firing_timing="OnlyInRange"
 	      damage_per_shot="3000" range="Normal5" shot_speed="Normal" rate_of_fire="Normal"
 	      shots_per_salvo="50" fires_salvos_sequentially="false"
@@ -862,7 +862,7 @@
 	    size_scale="2"
 	    visuals_scale_multiplier="30"
 	    collision_priority="100"
-	    display_name="Pustule"
+	    display_name="脓疱"
 	    description="一颗恐怖的酸液与胆汁球体。对击中的目标具有极强的腐蚀性。"
 	    starting_mark_level="Markless" tech_upgrades_that_benefit_me="Unused"
 	    cost_for_ai_to_purchase="6" strength_multiplier="0.2"
@@ -879,7 +879,7 @@
 	    immune_to_swapping_between_fleets="true"
             priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
             >
-      <system name="W1" display_name="Acid Blast"
+      <system name="W1" display_name="酸液爆裂"
 	      category="Weapon" firing_timing="OnlyInRange"
 	      range="VeryTiny4" shot_speed="Fast" rate_of_fire="Devourer" fires_salvos_sequentially="true"
               damage_per_shot="200"
@@ -895,7 +895,7 @@
 
     
     <entity name="TiberiumTorment"  thematic_groups="Armada"
-            display_name="Tyderian Torment" display_name_for_sidebar="Tydr T"
+            display_name="泰德折磨" display_name_for_sidebar="泰德折磨"
 	    tags="TiberiumTorment"
             visuals="Assets/_DLC3/BrutalGuardians/BrutalAmalgamAlphaGuardian/BrutalAmalgamAlphaGuardian.prefab" visuals_bundle="exp3_neinzul_abyss"
             material_override_path="Assets/_FinalGameMeshes/Nanocaust/Abomination/Abomination.prefab"
@@ -911,9 +911,9 @@
 	    hull_points="3000000" shield_points="200000" speed="AboveAverage2"
 	    metal_cost="800000" energy_consumption="45000"
 	    armor_mm="180" albedo="0.7" engine_gx="22" mass_tx="7"
-	    description="这艘舰船被泰德瑞安无尽地折磨；它使用强大的腐蚀炮。
+	    description="这个单位被泰德瑞安无尽地折磨；它使用强大的腐蚀炮。
 
-死亡时会生成额外的泰德瑞安强化舰船。"
+死亡时会生成额外的泰德瑞安强化单位。"
 	    science_to_grant_on_death="100"
 	    ship_or_structure_explosion_sfx="ShipGuardian_Explosion"
 	    ship_or_structure_explosion_if_on_other_planet_sfx="ShipLargeLostOnOtherPlanet_Explosion"
@@ -934,7 +934,7 @@
                       immune_to_necromancy="true"
                       />
       <incoming_damage_modifier based_on="AttackDistance" comparison_type="GreaterThan" compared_to="2500" multiplier="0.4" />
-      <system name="WN" display_name="Corrosive Petard"
+      <system name="WN" display_name="腐蚀炸药"
 	      category="Weapon" firing_timing="OnlyInRange"
 	      damage_per_shot="2000" range="AboveAverage1" shot_speed="Normal" rate_of_fire="Normal"
 	      shots_per_salvo="6" fires_salvos_sequentially="false"
@@ -943,7 +943,7 @@
 	      corrosion_damage_added_per_mark="300"
 	      >
       </system>
-      <system name="W2" display_name="Corrosive Finale"
+      <system name="W2" display_name="腐蚀终曲"
 	      category="Weapon" firing_timing="OnlyInRange"
 	      only_fires_on_death="true"
 	      damage_per_shot="12000" range="Tiny2" shot_speed="Normal" rate_of_fire="Devourer" fires_salvos_sequentially="false"
@@ -956,7 +956,7 @@
 	      >
       </system>
 
-      <system name="WC" display_name="Ablative Cannon"
+      <system name="WC" display_name="烧蚀炮"
 	      category="Weapon" firing_timing="OnlyInRange"
 	      damage_per_shot="3000" range="Normal5" shot_speed="Normal" rate_of_fire="Normal"
 	      shots_per_salvo="50" fires_salvos_sequentially="false"
@@ -1043,7 +1043,7 @@
     <entity name="TiberiumFinalBoss" copy_from="TiberiumEscaton"
 	    hull_points="6000000" shield_points="1200000" speed="AboveAverage4"
             >
-      <system name="C" display_name="Cloaking Device"
+      <system name="C" display_name="隐形装置"
 	    category="Passive" cloaking_points="10000" cloaking_points_added_per_mark="1000"
 	    >
     </system>

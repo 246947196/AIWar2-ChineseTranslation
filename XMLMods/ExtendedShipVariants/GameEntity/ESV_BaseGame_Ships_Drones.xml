@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 	<entity name="TugboatDrone" copy_from="AMU_DroneBase"
 		icon_overlay="Overlays1/AstroTrain_Carrier"
 		display_name="拖船无人机"
 		display_name_for_sidebar="拖船无人机"
-		description="产生引力链接以加速舰队内的舰船，并接近以减速敌人。"
+		description="产生引力链接以加速舰队内的单位，并接近以减速敌人。"
 		self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="1"
 		hull_points="2000" speed="Normal2"
 		metal_cost="1500" energy_consumption="500"
@@ -81,7 +81,7 @@
 		collision_priority="100"
 		display_name="救援信标"
 		display_name_for_sidebar="救援信标PDRN"
-		description="用于紧急跃迁操作的信标。友军舰船可以航行到这里自救，并从信标的补给中修理舰船。"
+		description="用于紧急跃迁操作的信标。友军单位可以航行到这里自救，并从信标的补给中修理单位。"
 		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly"
 		self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="1"
 		always_self_attritions="true"

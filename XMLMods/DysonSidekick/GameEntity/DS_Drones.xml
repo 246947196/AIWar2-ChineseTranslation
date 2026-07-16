@@ -112,7 +112,7 @@
 	
 	<!--Manticore Quill. Launched from the Manticore-->
 
-	<entity name="ManticoreQuill"	display_name="Manticore Quill" display_name_for_sidebar="Quill"
+	<entity name="ManticoreQuill"	display_name="蝎尾狮羽箭" display_name_for_sidebar="羽箭"
 	        thematic_groups="DysonSidekick,Drone" npc_ship_cap_type="Strikecraft"
 			special_entity_type="DroneGeneral"
 		    visuals="Assets/_DLC3/Younglings/NeinzulYounglingBee/NeinzulYounglingBee.prefab" visuals_bundle="exp3_neinzul_abyss"
@@ -137,7 +137,7 @@
 			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
                         priority_as_ai_target="NormalFleetship" priority_as_frd_target="NormalFleetship" priority_to_protect="Expendable"
 			>
-		<system name="WM" display_name="Quill Strike"
+		<system name="WM" display_name="羽箭打击"
 					category="Weapon" firing_timing="OnlyInRange"
 					damage_per_shot="1000" range="AlmostNone" seek_range="Normal1" shot_speed="Fast" rate_of_fire="Devourer" fires_salvos_sequentially="false"
 					shot_type_data="MeleeInvisible" added_target_evaluator="Melee"
@@ -322,7 +322,7 @@
   <entity name="DysonMiniRamDrone" copy_from="DysonMiniRam"
           special_entity_type="DroneGeneral"
           icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
-          display_name="迷你冲车无人机" display_name_for_sidebar="Mini Ram DRN"
+          display_name="迷你冲车无人机" display_name_for_sidebar="迷你冲无人"
 	  description="迷你攻城锤的升级无人机形态。"
 	  immune_to_repairs="false"
 	  multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"
@@ -333,7 +333,7 @@
   <entity name="DysonArmorRotterDrone" copy_from="DysonArmorRotter"
           special_entity_type="DroneGeneral"
           icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
-          display_name="腐甲者无人机" display_name_for_sidebar="Armor Rotter DRN"
+          display_name="腐甲者无人机" display_name_for_sidebar="锈蚀者无人"
 	  description="尖塔装甲锈蚀者的升级无人机形态。"
 	  immune_to_repairs="false"
 	  multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"
@@ -371,7 +371,7 @@
     <entity name="DysonSpireDestroyerDrone" copy_from="DysonSpireDestroyer"
           special_entity_type="DroneGeneral"
           icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
-          display_name="Spire Destroyer Drone"
+          display_name="尖塔 Destroyer Drone"
 	  description="尖塔驱逐舰的升级无人机形态。"
 	  immune_to_repairs="false"
 	  multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"
@@ -383,7 +383,7 @@
     <entity name="DysonSpireCruiserDrone" copy_from="DysonSpireCruiser"
           special_entity_type="DroneGeneral"
           icon_overlay="Overlays1/Drone" gimbal_icon_size_multiplier="0.6"
-          display_name="Spire Cruiser Drone"
+          display_name="尖塔 Cruiser Drone"
 	  description="尖塔巡洋舰的升级无人机形态。"
 	  immune_to_repairs="false"
 	  multiplier_to_all_healths="1.3" damage_multiplier_to_all_weapons="1.3"

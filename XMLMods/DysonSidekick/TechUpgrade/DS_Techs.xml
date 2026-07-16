@@ -1,51 +1,51 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   <!-- Districts -->
   <item name="DysonSpireDistrict" sort_group="10" sort_index="1" display_name="&lt;color=#ffb37b&gt;Districts:&lt;/color&gt; Spire" upgrade_resource="Resource1" science_cost_per_time_unlocked="25,55" icon_path="assets/sci-fi_game_icons/icons/png/transparent/57_b.png" weapon_upgrade="false" for_player_type_tags="DysonSidekick" skips_rejection_if_benefits_nothing="true"
-        description="此升级将提升尖塔的区域等级。这将解锁新的舰船和建筑。（必须升级要塞才能建造更高级区域的舰船）"/>
+        description="此升级将提升尖塔的区域等级。这将解锁新的单位和建筑。（必须升级要塞才能建造更高级区域的单位）"/>
   <item name="DysonNeinzulDistrict" sort_group="10" sort_index="2" display_name="&lt;color=#7bb3ff&gt;Districts:&lt;/color&gt; Neinzul" upgrade_resource="Resource1" science_cost_per_time_unlocked="25,55" icon_path="assets/sci-fi_game_icons/icons/png/transparent/58_b.png" weapon_upgrade="false" for_player_type_tags="DysonSidekick" skips_rejection_if_benefits_nothing="true"
-        description="此升级将提升奈祖尔的区域等级。这将解锁新的舰船和建筑。（必须升级要塞才能建造更高级区域的舰船）"/>
+        description="此升级将提升奈祖尔的区域等级。这将解锁新的单位和建筑。（必须升级要塞才能建造更高级区域的单位）"/>
   <item name="DysonZenithDistrict" sort_group="10" sort_index="3" display_name="&lt;color=#b3ff73&gt;Districts:&lt;/color&gt; Zenith" upgrade_resource="Resource1" science_cost_per_time_unlocked="25,55" icon_path="assets/sci-fi_game_icons/icons/png/transparent/56_b.png" weapon_upgrade="false" for_player_type_tags="DysonSidekick" skips_rejection_if_benefits_nothing="true"
-        description="此升级将提升天顶的区域等级。这将解锁新的舰船和建筑。（必须升级要塞才能建造更高级区域的舰船）"/>
+        description="此升级将提升天顶的区域等级。这将解锁新的单位和建筑。（必须升级要塞才能建造更高级区域的单位）"/>
   <item name="DysonTemplarDistrict" sort_group="10" sort_index="4" display_name="&lt;color=#cccccc&gt;Districts:&lt;/color&gt; Templar" upgrade_resource="Resource1" science_cost_per_time_unlocked="15,45" icon_path="assets/sci-fi_game_icons/icons/png/transparent/55_b.png" weapon_upgrade="false" for_player_type_tags="DysonSidekick" skips_rejection_if_benefits_nothing="true"
-        description="此升级将提升圣殿骑士的区域等级。这将解锁新的舰船和建筑。（必须升级要塞才能建造更高级区域的舰船）"/>
+        description="此升级将提升圣殿骑士的区域等级。这将解锁新的单位和建筑。（必须升级要塞才能建造更高级区域的单位）"/>
 
   <item name="DysonSpireTierOne" sort_group="12" sort_index="1" display_name="&lt;color=#ffb37b&gt;Spire:&lt;/color&gt; District One" science_cost_per_time_unlocked="800,1200,3600,4800,5000,6500" icon_path="assets/sci-fi_game_icons/icons/png/transparent/57_b.png" weapon_upgrade="false" for_player_type_tags="DysonSidekick" skips_rejection_if_benefits_nothing="true"
-        description="此升级将提升第一区域尖塔舰船的标记等级。"/>
+        description="此升级将提升第一区域尖塔单位的标记等级。"/>
   <item name="DysonNeinzulTierOne" sort_group="12" sort_index="2" display_name="&lt;color=#7bb3ff&gt;Neinzul:&lt;/color&gt; District One" science_cost_per_time_unlocked="800,1200,3600,4800,5000,6500" icon_path="assets/sci-fi_game_icons/icons/png/transparent/58_b.png" weapon_upgrade="false" for_player_type_tags="DysonSidekick" skips_rejection_if_benefits_nothing="true"
-        description="此升级将提升第一区域奈祖尔舰船的标记等级。"/>
+        description="此升级将提升第一区域奈祖尔单位的标记等级。"/>
   
   <item name="DysonZenithTierOne" sort_group="12" sort_index="3" display_name="&lt;color=#b3ff7b&gt;Zenith:&lt;/color&gt; District One" science_cost_per_time_unlocked="800,1200,3600,4800,5000,6500" icon_path="assets/sci-fi_game_icons/icons/png/transparent/56_b.png" weapon_upgrade="false" for_player_type_tags="DysonSidekick" skips_rejection_if_benefits_nothing="true"
-        description="此升级将提升第一区域天顶舰船的标记等级。"/>
+        description="此升级将提升第一区域天顶单位的标记等级。"/>
   
   <item name="DysonTemplarTierOne" sort_group="12" sort_index="4" display_name="&lt;color=#cccccc&gt;Templar:&lt;/color&gt; District One" science_cost_per_time_unlocked="800,1200,3600,4800,5000,6500" icon_path="assets/sci-fi_game_icons/icons/png/transparent/55_b.png" weapon_upgrade="false" for_player_type_tags="DysonSidekick" skips_rejection_if_benefits_nothing="true"
-        description="此升级将提升第一区域圣殿骑士舰船的标记等级。"/>
+        description="此升级将提升第一区域圣殿骑士单位的标记等级。"/>
 
   <item name="DysonSpireTierTwo" sort_group="13" sort_index="1" display_name="&lt;color=#ffb37b&gt;Spire:&lt;/color&gt; District Two" science_cost_per_time_unlocked="1200,1600,2400,3600,5000,7600" icon_path="assets/sci-fi_game_icons/icons/png/transparent/57_b.png" weapon_upgrade="false" for_player_type_tags="DysonSidekick" skips_rejection_if_benefits_nothing="true"
-        description="此升级将提升第二区域尖塔舰船的标记等级。"
+        description="此升级将提升第二区域尖塔单位的标记等级。"
         />
   <item name="DysonNeinzulTierTwo" sort_group="13" sort_index="2" display_name="&lt;color=#7bb3ff&gt;Neinzul:&lt;/color&gt; District Two" science_cost_per_time_unlocked="1200,1600,2400,3600,5000,7600" icon_path="assets/sci-fi_game_icons/icons/png/transparent/58_b.png" weapon_upgrade="false" for_player_type_tags="DysonSidekick" skips_rejection_if_benefits_nothing="true"
-        description="此升级将提升第二区域奈祖尔舰船的标记等级。"
+        description="此升级将提升第二区域奈祖尔单位的标记等级。"
         />
   <item name="DysonZenithTierTwo" sort_group="13" sort_index="3" display_name="&lt;color=#b3ff7b&gt;Zenith:&lt;/color&gt; District Two" science_cost_per_time_unlocked="1200,1600,2400,3600,5000,7600" icon_path="assets/sci-fi_game_icons/icons/png/transparent/56_b.png" weapon_upgrade="false" for_player_type_tags="DysonSidekick" skips_rejection_if_benefits_nothing="true"
-        description="此升级将提升第二区域天顶舰船的标记等级。"
+        description="此升级将提升第二区域天顶单位的标记等级。"
         />
   <item name="DysonTemplarTierTwo" sort_group="13" sort_index="4" display_name="&lt;color=#cccccc&gt;Templar:&lt;/color&gt; District Two" science_cost_per_time_unlocked="1200,1600,2400,3600,5000,7600" icon_path="assets/sci-fi_game_icons/icons/png/transparent/55_b.png" weapon_upgrade="false" for_player_type_tags="DysonSidekick" skips_rejection_if_benefits_nothing="true"
-        description="此升级将提升第二区域圣殿骑士舰船的标记等级。"
+        description="此升级将提升第二区域圣殿骑士单位的标记等级。"
         />
 
   <item name="DysonSpireTierThree" sort_group="14" sort_index="1" display_name="&lt;color=#ffb37b&gt;Spire:&lt;/color&gt; District Three" science_cost_per_time_unlocked="1600,2400,3600,5000,7600,10000" icon_path="assets/sci-fi_game_icons/icons/png/transparent/57_b.png" weapon_upgrade="false" for_player_type_tags="DysonSidekick" skips_rejection_if_benefits_nothing="true"
-        description="此升级将提升第三区域尖塔舰船的标记等级。"
+        description="此升级将提升第三区域尖塔单位的标记等级。"
         />
   <item name="DysonNeinzulTierThree" sort_group="14" sort_index="2" display_name="&lt;color=#7bb3ff&gt;Neinzul:&lt;/color&gt; District Three" science_cost_per_time_unlocked="1600,2400,3600,5000,7600,10000" icon_path="assets/sci-fi_game_icons/icons/png/transparent/58_b.png" weapon_upgrade="false" for_player_type_tags="DysonSidekick" skips_rejection_if_benefits_nothing="true"
-        description="此升级将提升第三区域奈祖尔舰船的标记等级。"
+        description="此升级将提升第三区域奈祖尔单位的标记等级。"
         />
   <item name="DysonZenithTierThree" sort_group="14" sort_index="3" display_name="&lt;color=#b3ff7b&gt;Zenith:&lt;/color&gt; District Three" science_cost_per_time_unlocked="1600,2400,3600,5000,7600,10000" icon_path="assets/sci-fi_game_icons/icons/png/transparent/56_b.png" weapon_upgrade="false" for_player_type_tags="DysonSidekick" skips_rejection_if_benefits_nothing="true"
-        description="此升级将提升第三区域天顶舰船的标记等级。"
+        description="此升级将提升第三区域天顶单位的标记等级。"
         />
   <item name="DysonTemplarTierThree" sort_group="14" sort_index="4" display_name="&lt;color=#cccccc&gt;Templar:&lt;/color&gt; District Three" science_cost_per_time_unlocked="1600,2400,3600,5000,7600,10000" icon_path="assets/sci-fi_game_icons/icons/png/transparent/55_b.png" weapon_upgrade="false" for_player_type_tags="DysonSidekick" skips_rejection_if_benefits_nothing="true"
-        description="此升级将提升第三区域圣殿骑士舰船的标记等级。"
+        description="此升级将提升第三区域圣殿骑士单位的标记等级。"
         />
 
   <!-- Defenses -->
@@ -64,7 +64,7 @@
          description="此升级将使你的钻机和运输船更加耐打。"/>
 
    <item name="DysonHybrid" sort_group="35" sort_index="4" display_name="&lt;color=#2343d1&gt;Hybrid:&lt;/color&gt;" science_cost_per_time_unlocked="1600,2400,3600,5000,7600,10000" icon_path="assets/sci-fi_game_icons/icons/png/transparent/10_b.png" weapon_upgrade="false" for_player_type_tags="DysonSidekick" skips_rejection_if_benefits_nothing="true"
-         description="此升级将提升混合体舰船的标记等级。（混合体舰船需要一个种族的区域3和另一个种族的区域2，但可在任何要塞建造）"/>
+         description="此升级将提升混合体单位的标记等级。（混合体单位需要一个种族的区域3和另一个种族的区域2，但可在任何要塞建造）"/>
 
   <item name="DysonSphereWeapon" sort_group="40" sort_index="4" display_name="&lt;color=#dd2343&gt;Sphere:&lt;/color&gt;" upgrade_resource="Resource1" science_cost_per_time_unlocked="10,20,30,50,70,90" icon_path="assets/sci-fi_game_icons/icons/png/transparent/33_b.png" weapon_upgrade="true" for_player_type_tags="DysonSidekick" skips_rejection_if_benefits_nothing="false"
         description="此升级将提升戴森球的威力。达到7级标记时，它们将完全激活并触发一场与收割者-AI联盟的大规模战斗。"/>

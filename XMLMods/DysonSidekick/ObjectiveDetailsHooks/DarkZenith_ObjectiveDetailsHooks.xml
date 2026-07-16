@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   <objective_details_hook name="DZFleetMenu" category="DZEmpireStrategy"
-          default_display_name="Check the Fleets Menu"
+          default_display_name="查看舰队菜单"
           use_default_display_name_instead_of_display_name_base="true"
           dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.DZFleetMenu"
           display_name_color="55aaff"
@@ -11,7 +11,7 @@
           difficulty_method="Nothing"/>
 
   <objective_details_hook name="DZEconomy" category="DZEmpireStrategy"
-          default_display_name="Build Your Economy"
+          default_display_name="发展经济"
           use_default_display_name_instead_of_display_name_base="true"
           dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.DZEconomy"
           display_name_color="55aaff"
@@ -20,7 +20,7 @@
           difficulty_method="Nothing"/>
 
   <objective_details_hook name="DZTechTree" category="DZEmpireStrategy"
-          default_display_name="The Tech Tree"
+          default_display_name="科技树"
           use_default_display_name_instead_of_display_name_base="true"
           dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.DZTechTree"
           display_name_color="55aaff"
@@ -29,7 +29,7 @@
           difficulty_method="Nothing"/>
 
   <objective_details_hook name="DZShipVariants" category="DZEmpireStrategy"
-          default_display_name="Ship Variants"
+          default_display_name="单位变体"
           use_default_display_name_instead_of_display_name_base="true"
           dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.DZShipVariants"
           display_name_color="55aaff"
@@ -38,7 +38,7 @@
           difficulty_method="Nothing"/>
 
   <objective_details_hook name="DZFimbulwinter" category="DZEmpireStrategy"
-          default_display_name="The Fimbulwinter"
+          default_display_name="芬布尔之冬"
           use_default_display_name_instead_of_display_name_base="true"
           dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.DZFimbulwinter"
           display_name_color="55aaff"
@@ -47,7 +47,7 @@
           difficulty_method="Nothing"/>
 
   <objective_details_hook name="DZNadir" category="DZEmpireStrategy"
-          default_display_name="Nadir Forces"
+          default_display_name="奈迪尔部队"
           use_default_display_name_instead_of_display_name_base="true"
           dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.DZNadir"
           display_name_color="ff8877"

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <fleet_design name="GSFArmadaOne"
         display_name="第一舰队"
@@ -24,7 +24,7 @@
 
   <fleet_design name="GSFArmadaThree"
         display_name="第三舰队"
-        description="通过伤害自身来复活在同一行星上阵亡友军舰船的旗舰。"
+        description="通过伤害自身来复活在同一行星上阵亡友军单位的旗舰。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >
@@ -58,7 +58,7 @@
 
   <fleet_design name="GSFArmadaSix"
         display_name="第六舰队"
-        description="可以用牵引光束牵引大量敌方舰船的旗舰。"
+        description="可以用牵引光束牵引大量敌方单位的旗舰。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >

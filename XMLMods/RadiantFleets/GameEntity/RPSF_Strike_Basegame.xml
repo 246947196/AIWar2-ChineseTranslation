@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 	<entity copy_from="Dagger" name="RPSF_Strike_Raid_Fusion"
 		thematic_groups="Strikecraft,Human"
@@ -6,7 +6,7 @@
 		
 		display_name="聚变袭击者"
 		display_name_for_sidebar="F突袭"
-		description="快速的隐形舰船，绕过大多数护盾"
+		description="快速的隐形单位，绕过大多数护盾"
 		
 		tech_upgrades_that_benefit_me="Fusion,Raid" 
 		cost_for_ai_to_purchase="1000" strength_multiplier="2"

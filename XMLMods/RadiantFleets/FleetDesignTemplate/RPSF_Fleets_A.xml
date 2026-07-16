@@ -59,7 +59,7 @@
 	<!-- Raid -->
 	<fleet_design name="RPSF_Mobile_Raid"
 		display_name="突袭舰队"
-		description="突袭护卫舰和魅影持续作战。"
+		description="突袭星舰和魅影持续作战。"
 		design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
 		append_each_ship_description_to_main_description="true"
 		>
