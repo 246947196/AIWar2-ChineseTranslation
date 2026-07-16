@@ -7,47 +7,47 @@ Radiant Pruning，由 Radiant Phoenix 制作
 只应出现以下舰船：
 
 <b>伏击（Ambush）：</b>
-* Veteran Sniper
-* Ambush Carrier（无 DLC2）
-* Light Minelayer Frigate（DLC2）
+* 资深狙击手（Veteran Sniper）
+* 伏击航母星舰（Ambush Carrier）（无 DLC2）
+* 轻型布雷护卫舰（Light Minelayer Frigate）（DLC2）
 
 <b>火炮（Artillery）：</b>
-* Kite（无 DLC3）
-* Stealth Bombard（DLC3）
-* Devastator Frigate
+* 风筝（Kite）（无 DLC3）
+* 隐形轰炸舰（Stealth Bombard）（DLC3）
+* Devastator Frigate（待汉化）
 
 <b>核心（Core）：</b>
-* Gunbot
-* Tritium Sniper Frigate
+* 炮艇（Gunbot）
+* 氚狙击星舰（Tritium Sniper Frigate）
 
 <b>干扰（Disruptive）：</b>
-* Porcupine（无 DLC2）
-* Polarizer（DLC2）
-* Suppressor Frigate
+* 豪猪（Porcupine）（无 DLC2）
+* 极化器（Polarizer）（DLC2）
+* 压制星舰（Suppressor Frigate）
 
 <b>异种（Exotic）：</b>
-* Medic Gunboat
-* Cloaked Mugger Frigate
-* Phantasmal Host Frigate（DLC2）
+* 医疗炮艇（Medic Gunboat）
+* 隐形抢劫者星舰（Cloaked Mugger Frigate）
+* 幻影宿主护卫舰（Phantasmal Host Frigate）（DLC2）
 
 <p>近战（Melee）：</b>
-* Vicious Vampire Claw
-* Blade Spawner Frigate（DLC3）
+* 凶恶吸血爪（Vicious Vampire Claw）
+* 刀刃生成护卫舰（Blade Spawner Frigate）（DLC3）
 
 <b>穿透（Piercing）：</b>
-* Fusion Bomber（无 DLC2）
-* Electric Bomber（DLC2）
-* Cloaked Mugger Frigate
+* 聚变轰炸机（Fusion Bomber）（无 DLC2）
+* 电击轰炸机（Electric Bomber）（DLC2）
+* 隐形抢劫者星舰（Cloaked Mugger Frigate）
 
 <b>突袭（Raid）：</b>
-* Mirage
-* Stealth Bombard（DLC3）
-* Apparition Frigate
+* 幻影战机（Mirage）
+* 隐形轰炸舰（Stealth Bombard）（DLC3）
+* 幻影星舰（Apparition Frigate）
 
 <p>溅射（Splash）：</b>
-* Molotov
-* Tesla Torpedo Frigate（DLC1）
+* 燃烧瓶（Molotov）
+* 特斯拉鱼雷护卫舰（Tesla Torpedo Frigate）（DLC1）
 
 <p>诡计（Subterfuge）：</b>
-* Eyebot
-* Warbird Hydra Frigate
+* 眼魔（Eyebot）
+* 战鸟九头蛇星舰（Warbird Hydra Frigate）
