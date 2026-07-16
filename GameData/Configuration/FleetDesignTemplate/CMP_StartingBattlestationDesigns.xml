@@ -48,7 +48,7 @@
   
   
   <fleet_design name="EclecticStartingDefenses"
-        display_name="多样防御站"
+        display_name="复合防御阵列"
         description="哇，这个组合非常多样化。有工程强化设施、一些常规炮塔、雷区、额外的牵引光束，还有一些移动哨兵护卫舰。做好应对任何情况的准备！\n如果两次选择相同的起始防御站，第二个将随机生成。"
         design_logic="InitialPlayerBattlestation" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"

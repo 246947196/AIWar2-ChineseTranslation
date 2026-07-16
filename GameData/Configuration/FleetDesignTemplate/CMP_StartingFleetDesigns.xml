@@ -13,7 +13,7 @@
 
 
   <fleet_design name="ClassicStartingFleet"
-        display_name="默认舰队"
+        display_name="主力舰队"
         description="这种默认组合在任何特定方面都不算突出，但对任何敌人都能全面应对。护盾更是锦上添花。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"

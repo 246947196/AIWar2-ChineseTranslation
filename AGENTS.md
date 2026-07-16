@@ -528,3 +528,25 @@ patch 前必须从 `AIWar2_Data\Managed\` 复制原始 DLL（禁止在已 patch 
 ### 已知剩余未翻译
 1. `Window_PrototypeInGameHoverEntityInfo.cs:373` — `" of "` 涉及英文语序，需改代码结构才能正确翻译
 2. WorldTMPFontPatch.csproj — `BindingFlags` 编译错误（需修复 csproj 引用）
+
+## 最近翻译修订记录 (2026-07-16 第6批)
+
+2026-07-16 修訂了一批艦隊/機動平台名稱翻譯，使其更貼近英文原意：
+
+| 文件 | 舊值 | 新值 |
+|------|------|------|
+| `CMP_StartingFleetDesigns.xml` | 默认舰队 | **主力舰队** |
+| `CMP_StartingSupportFleetDesigns.xml` | 战斗支援舰队 | **工兵支援舰队** |
+| `CMP_StartingBattlestationDesigns.xml` | 多样防御站 | **复合防御阵列** |
+| `ArnaudB_StartingBattlestationDesigns.xml` (Spire Rises) | 过度防御 | **火力碾压** |
+| `ArnaudB_StartingBattlestationDesigns.xml` (Spire Rises) | 剥除防御 | **破甲打击** |
+| `ZO_Battlestations.xml` (Zenith Onslaught) | 逆转防御 | **绝地崩雷网** |
+| `tools/ilpatch/ArcenAIW2Core.merged.json` | ` Cmd` (未译) | **` 中枢`**（行星名+Cmd→如"天牢 中枢"） |
+
+### 上批遗留機動平台名前綴修訂（同批次）
+
+| 舊值 | 新值 |
+|------|------|
+| X型战斗站（display_name_prefix） | 去掉前綴，僅顯示"機動平台" |
+| 引力型机动平台 | 重力型机动平台 |
+| 捕获型机动平台 | 诱捕型机动平台 |

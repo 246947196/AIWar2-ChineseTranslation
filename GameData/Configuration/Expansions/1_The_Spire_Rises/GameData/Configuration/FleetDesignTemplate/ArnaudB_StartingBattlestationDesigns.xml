@@ -75,7 +75,7 @@ name="GeminiTurret"	- Two weapons vs small and vs large - Tech
   </fleet_design>
   
   <fleet_design name="Mod_DenudingDefenses"
-        display_name="剥除防御"
+        display_name="破甲打击"
         description="相当激进地专注于突破防护并吸引注意力。在射程内极其强大，但面对更冷静、射程更远的对手则无能为力。
 如果两次选择相同的起始战斗空间站，第二个将随机化。"
         design_logic="InitialPlayerBattlestation" weight="100" include_full_cap_of_each_type="true"
@@ -109,7 +109,7 @@ name="GeminiTurret"	- Two weapons vs small and vs large - Tech
   
   <!--Engineer-->
   <fleet_design name="Mod_InordinateDefenses"
-        display_name="过度防御"
+        display_name="火力碾压"
         description="这种配置的定义就是火力过剩。一切都是为了以压倒性力量快速消灭更大的威胁。不过要小心集群敌人。
 如果两次选择相同的起始战斗空间站，第二个将随机化。"
         design_logic="InitialPlayerBattlestation" weight="100" include_full_cap_of_each_type="true"
