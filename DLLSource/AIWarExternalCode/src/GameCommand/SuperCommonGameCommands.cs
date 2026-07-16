@@ -1,4 +1,4 @@
-﻿using Arcen.AIW2.Core;
+using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -1036,7 +1036,7 @@ namespace Arcen.AIW2.External
                                 '（' + fleetMembershipForTypeUnlessFleetChanges.Fleet.CalculateRemainingCitySockets() + " 可用，需要 " + typeToPlace.CitySocketCost + "）。通常升级你的城市以增加数量。", ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
                             break;
                         case ArcenRejectionReason.FleetCenterpieceIsMissing:
-                            World_AIW2.Instance.QueueChatMessageOrCommand( "舰队没有核心舰船：" + typeToPlace.DisplayName, ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
+                            World_AIW2.Instance.QueueChatMessageOrCommand( "舰队没有核心单位：" + typeToPlace.DisplayName, ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
                             break;
                         case ArcenRejectionReason.FleetDoesNotContainThisType:
                             World_AIW2.Instance.QueueChatMessageOrCommand( "舰队设计不包含 " + typeToPlace.DisplayName, ChatType.ShowLocallyOnly, "CannotDoThatThing", null );

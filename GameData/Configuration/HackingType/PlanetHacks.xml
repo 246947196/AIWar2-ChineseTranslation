@@ -2,7 +2,7 @@
 <root>
 
   <item name="DeploySpyNanites_Watch" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_DeploySpyNanites_Watch" 
-      display_name="监视行星" description="此黑客功能部署间谍纳米机器人，使你能够永久监视该行星。
+      display_name="监视行星" description="此入侵功能部署间谍纳米机器人，使你能够永久监视该行星。
         
 你也可以使用后勤或军事指挥站的侦察能力，或者使用间谍来替代此功能。但如果你需要监视一个远离你边境的行星，那么纳米机器人可能是最佳选择。"
       hack_completes_instantly="true"
@@ -13,7 +13,7 @@
         />
 
   <item name="DeploySpyNanites_Explore" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_DeploySpyNanites_Explore" 
-      display_name="探索行星" description="此黑客功能部署间谍纳米机器人来探索该行星。"
+      display_name="探索行星" description="此入侵功能部署间谍纳米机器人来探索该行星。"
       hack_completes_instantly="true"
       cost_in_hacking_points="5"
       local_hacker_required="false"

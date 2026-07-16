@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- General -->
   <galaxy_setting category="General" name="ShowAdvancedGalaxyAndFactionOptions" display_name="显示高级星系和派系选项" type="BoolToggle" default="false" changeable_during_gameplay="true"
@@ -82,13 +82,13 @@
 
   <galaxy_setting category="AI Behavior" subcategory="CommonFeatures" is_advanced_setting="true" name="TsunamiCPA" display_name="海啸式跨行星攻击" type="BoolToggle" 
       default="true" changeable_during_gameplay="true"
-      description="启用此功能会改变跨行星攻击（CPA）的逻辑。由CPA释放的舰船现在会从各个地方涌入你的帝国，形成一场混乱而刺激的冲击，而不是加入猎人舰队并等待时机。
+      description="启用此功能会改变跨行星攻击（CPA）的逻辑。由CPA释放的单位现在会从各个地方涌入你的帝国，形成一场混乱而刺激的冲击，而不是加入猎人舰队并等待时机。
       
-这种鲁莽的攻击可能会为你的其他敌人创造令人惊讶的突破口，或者导致你清理大量杂乱到达的舰船。无论哪种方式，这都将是一个事件。
+这种鲁莽的攻击可能会为你的其他敌人创造令人惊讶的突破口，或者导致你清理大量杂乱到达的单位。无论哪种方式，这都将是一个事件。
 
-此外，由于CPA使用如此错开的方式，你可以零星地防御，它会派出比平常多两倍的舰船。这对你来说可能非常有利，因为它会大大削弱AI行星的防御，但也伴随着固有的危险。
+此外，由于CPA使用如此错开的方式，你可以零星地防御，它会派出比平常多两倍的单位。这对你来说可能非常有利，因为它会大大削弱AI行星的防御，但也伴随着固有的危险。
 
-禁用此功能会导致CPA的舰船加入AI威胁，它们的攻击将更加计算周密。" />
+禁用此功能会导致CPA的单位加入AI威胁，它们的攻击将更加计算周密。" />
 
   <galaxy_setting category="AI Behavior" subcategory="CommonFeatures" is_advanced_setting="true" name="WormholeInvasionMode" display_name="虫洞入侵模式" type="CustomDropdownArbitraryOptions"
                   arbitrary_options="Planet Linking,Exogalactic Wormhole,Send As Waves" default_option="Planet Linking"
@@ -107,9 +107,9 @@
 
   <galaxy_setting category="AI Behavior" subcategory="CommonFeatures" is_advanced_setting="true" name="GuardAggroDistance" display_name="警卫激怒距离" type="IntSlider" 
       default="5000" min="3000" max="10000"
-      description="在什么距离下，警卫站会释放其内部舰船，或者站在警卫站附近的舰船会离开岗位攻击敌人？默认为5000。
+      description="在什么距离下，警卫站会释放其内部单位，或者站在警卫站附近的单位会离开岗位攻击敌人？默认为5000。
       
-请注意，如果警卫站或其中一艘舰船被击中，它们无论距离多远都会立即激怒。这是关于它们注意到一个正在被动的人。"  >
+请注意，如果警卫站或其中一个单位被击中，它们无论距离多远都会立即激怒。这是关于它们注意到一个正在被动的人。"  >
       <harshness_override is_sandbox="true" min="0" max="50000" />
       <harshness_override min_campaign_harshness_to_apply="200" min="5000" />
   </galaxy_setting>
@@ -154,9 +154,9 @@
             description="见上面鲨鱼B的描述。通常情况下，除了最低AI强度级别外，某种程度的鲨鱼B响应是不可避免的。然而，此设置完全禁用鲨鱼B响应。失去指挥站永远不会触发外星系波次。"
             />
 
-  <galaxy_setting category="AI Behavior" subcategory="AdvancedDangers" name="PostHackingExoStrengthMultiplier" display_name="增加黑客入侵外星系响应" type="IntSlider" default="1"
+  <galaxy_setting category="AI Behavior" subcategory="AdvancedDangers" name="PostHackingExoStrengthMultiplier" display_name="增加入侵外星系响应" type="IntSlider" default="1"
                   min="1" max="10"
-                  description="在某些黑客入侵结束时，AI会派出额外的外星系打击部队。这个设置将大大增加该打击的强度。" >
+                  description="在某些入侵结束时，AI会派出额外的外星系打击部队。这个设置将大大增加该打击的强度。" >
       <harshness_override min_campaign_harshness_to_apply="200" min="2" />
       <harshness_override min_campaign_harshness_to_apply="700" min="4" />
       <harshness_override min_campaign_harshness_to_apply="2500" min="6" />
@@ -222,7 +222,7 @@
              
 如果你准备增加趣味性，并愿意接受一些潜在的非常具有挑战性的地图设计，那么这个功能将随机交换2至6级行星的级别。
 
-它将按照你要求的交换次数进行，最多300次，并且在交换时会毫不犹豫地重叠自己。它不会交换任何母星，或这些行星上的舰船。
+它将按照你要求的交换次数进行，最多300次，并且在交换时会毫不犹豫地重叠自己。它不会交换任何母星，或这些行星上的单位。
 
 为了保持趣味性，默认值为6。" />
 
@@ -231,7 +231,7 @@
              
 如果你准备增加趣味性，并愿意接受一些潜在的非常具有挑战性的地图设计，那么这个功能将随机交换1至4级行星的级别。
 
-它将按照你要求的交换次数进行，最多300次，并且在交换时会毫不犹豫地重叠自己。它不会交换任何母星，或这些行星上的舰船。这可能导致4级行星出现在玩家母星旁边，这实际上可能是一个有趣的机会。
+它将按照你要求的交换次数进行，最多300次，并且在交换时会毫不犹豫地重叠自己。它不会交换任何母星，或这些行星上的单位。这可能导致4级行星出现在玩家母星旁边，这实际上可能是一个有趣的机会。
 
 为了保持趣味性，默认值为2。" />
 
@@ -332,7 +332,7 @@
 
   <galaxy_setting category="MapGen" subcategory="CapturableDensity" name="AdvancedResearchStationsToSeed" is_advanced_setting="true" display_name="高级研究站生成数量" type="CustomDropdownArbitraryOptions" 
       arbitrary_options="0x,0.5x,0.75x,1x,1.25x,1.5x,1.75x,2x,2.5x,3x" default_option="1x"
-      description="根据星系中的行星数量和人类帝国派系数量，游戏会生成一定数量的基础高级研究站(ARS)供你发现。这些研究站可以(重复)破解，为你的一支舰队提供额外的舰船生产线，使其更加强大。
+      description="根据星系中的行星数量和人类帝国派系数量，游戏会生成一定数量的基础高级研究站(ARS)供你发现。这些研究站可以(重复)破解，为你的一支舰队提供额外的单位生产线，使其更加强大。
       
 除非你选择0x，否则总会为每个母星附近生成1个研究站，并在星系其他区域生成额外数量(可在此控制)。" >
       <harshness_override min_campaign_harshness_to_apply="200" fixed_option="1x" />
@@ -340,14 +340,14 @@
 
   <galaxy_setting name="BaseTechVaultsToSeed" category="MapGen" subcategory="CapturableDensity" is_advanced_setting="true" display_name="基础科技宝库生成数量" type="IntSlider" 
           default="3" min="0" max="5"
-           description="科技宝库散布在星系各处，你可以通过破解它们来获得新技术，但需要消耗黑客点数。" >
+            description="科技宝库散布在星系各处，你可以通过破解它们来获得新技术，但需要消耗入侵点数。" >
       <harshness_override is_sandbox="true" min="0" max="20" />
       <harshness_override min_campaign_harshness_to_apply="200" fixed_value="0" />
   </galaxy_setting>
 
   <galaxy_setting name="SeedExtraTechVaultsInMultiplayer" category="MapGen" subcategory="CapturableDensity" is_advanced_setting="true" display_name="多人游戏中生成额外科技宝库" 
            type="BoolToggle" default="true"
-           description="科技宝库散布在星系各处，你可以通过破解它们来获得新技术，但需要消耗黑客点数。
+            description="科技宝库散布在星系各处，你可以通过破解它们来获得新技术，但需要消耗入侵点数。
 
 如果启用此选项，每增加一名玩家就会额外生成一个科技宝库。" >
       <harshness_override min_campaign_harshness_to_apply="200" fixed_value="false" />
@@ -355,7 +355,7 @@
   
   <galaxy_setting category="MapGen" subcategory="CapturableDensity" name="FleetResearchStationsToSeed" is_advanced_setting="true" display_name="舰队研究站生成数量" type="CustomDropdownArbitraryOptions" 
       arbitrary_options="0x,0.5x,0.75x,1x,1.25x,1.5x,1.75x,2x,2.5x,3x" default_option="1x"
-      description="根据星系中的行星数量和人类帝国派系数量，游戏会生成一定数量的舰队研究站(FRS)供你发现。这些研究站可以破解，为你的一支舰队提供特殊的舰船生产线，并附带全舰队范围的加成。" >
+      description="根据星系中的行星数量和人类帝国派系数量，游戏会生成一定数量的舰队研究站(FRS)供你发现。这些研究站可以破解，为你的一支舰队提供特殊的单位生产线，并附带全舰队范围的加成。" >
       <harshness_override min_campaign_harshness_to_apply="200" fixed_option="1x" />
   </galaxy_setting>
 
@@ -401,7 +401,7 @@
   <galaxy_setting name="DistributionNodesToSeed" category="MapGen" subcategory="DestroyablesDensity" is_advanced_setting="true" display_name="最大分配节点数量" type="IntSlider" 
          default="6" min="0" max="12"
          description="
-分配节点是星系中黑客点数（HAP）的主要来源，也是在不占领行星的情况下获得科学/HAP的唯一途径之一。
+分配节点是星系中入侵点数（HAP）的主要来源，也是在不占领行星的情况下获得科学/HAP的唯一途径之一。
 
 默认情况下，每个星系有6个。更改这个数量可能会降低HAP和科学的价值，所以要谨慎处理。">
       <harshness_override is_sandbox="true" min="0" max="20" />
@@ -414,7 +414,7 @@
    你可以在游戏过程中随时调整此数值。" />
 
   <galaxy_setting name="StackingCutoffPlayers" category="Performance" is_advanced_setting="true" display_name="玩家单位开始堆叠的数量" type="IntSlider" default="30" min="6" max="90" changeable_during_gameplay="true"
-             description="当一个舰队在同一星球上有这么多同类型的移动玩家单位时，游戏会开始将它们堆叠显示。设置过高可能导致性能问题，即使是停泊的舰船也会影响性能，战斗时更甚。
+             description="当一个舰队在同一星球上有这么多同类型的移动玩家单位时，游戏会开始将它们堆叠显示。设置过高可能导致性能问题，即使是停泊的单位也会影响性能，战斗时更甚。
            
    你可以在游戏过程中随时调整此数值。" />
 
@@ -426,7 +426,7 @@
             type="BoolToggle"
             default="false"
             changeable_during_gameplay="true"
-            description="正常堆叠算法会为每个派系在每个星球上的每种单位类型设定固定数量的编队。启用实验性堆叠后，我们会改为计算每个派系在每个星球上的所有类型舰船数量。"
+            description="正常堆叠算法会为每个派系在每个星球上的每种单位类型设定固定数量的编队。启用实验性堆叠后，我们会改为计算每个派系在每个星球上的所有类型单位数量。"
             />
 
   <galaxy_setting
@@ -458,15 +458,15 @@
   <galaxy_setting name="CoarseProcessBackgroundPlanets" category="Performance" is_advanced_setting="true" display_name="高级：粗略处理背景星球" type="BoolToggle" default="true" changeable_during_gameplay="true"
              description="除非你遇到模拟问题，否则应该保持开启。这会使背景星球占用的处理资源大大减少，特别是当多个第三方派系在战斗而你甚至看不到时。" />
 
-  <galaxy_setting name="MaxShipSystemsToCalculatePerTargetingPass" category="Performance" is_advanced_setting="true" display_name="每次目标计算处理的舰船系统最大数量" type="IntSlider" default="500" min="50" max="1000" changeable_during_gameplay="true"
-             description="此值越低，舰船对射程内新目标的反应越慢，但这在超大型游戏中更为重要。此值越高，舰船反应越快，但如果大量舰船同时获得新命令，游戏可能会出现卡顿。
+  <galaxy_setting name="MaxShipSystemsToCalculatePerTargetingPass" category="Performance" is_advanced_setting="true" display_name="每次目标计算处理的单位系统最大数量" type="IntSlider" default="500" min="50" max="1000" changeable_during_gameplay="true"
+             description="此值越低，单位对射程内新目标的反应越慢，但这在超大型游戏中更为重要。此值越高，单位反应越快，但如果大量单位同时获得新命令，游戏可能会出现卡顿。
            
   在多玩家游戏中，计算负载仅由主机承担，但将数据集成到主游戏的负载由主机和所有客户端共同承担。
 
   默认值500已经使用了很长时间，但在超大型游戏中你可能需要考虑降低此值。" />
 
-  <galaxy_setting name="MaxTargetsPerShipSystemPerTargetingPass" category="Performance" is_advanced_setting="true" display_name="每次目标计算每个舰船系统的最大目标数" type="IntSlider" default="15" min="3" max="50" changeable_during_gameplay="true"
-           description="此值越低，每艘舰船的目标列表越短，这能保持处理速度，但如果所有目标都被消灭，舰船需要等待新的目标计算周期。此值越高，在大量目标被消灭前提供更多冗余目标，但也会增加CPU负载。
+  <galaxy_setting name="MaxTargetsPerShipSystemPerTargetingPass" category="Performance" is_advanced_setting="true" display_name="每次目标计算每个单位系统的最大目标数" type="IntSlider" default="15" min="3" max="50" changeable_during_gameplay="true"
+           description="此值越低，每个单位的目标列表越短，这能保持处理速度，但如果所有目标都被消灭，单位需要等待新的目标计算周期。此值越高，在大量目标被消灭前提供更多冗余目标，但也会增加CPU负载。
            
 在任何机器上计算此值的CPU负载都可以忽略不计，但将数据集成到主游戏的CPU负载存在于主机和所有客户端上。
 
@@ -483,13 +483,13 @@
   <!-- Balance: UnitStyleRelativeStrengths -->
   <galaxy_setting name="StrikecraftHullAndShields" category="Balance" subcategory="UnitStyleRelativeStrengths" is_advanced_setting="true" display_name="战机护甲和护盾" type="CustomDropdownArbitraryOptions" 
             arbitrary_options="0.5x,0.75x,1x,1.5x,2x,2.5x,3x,3.5x,4x,5x,6x" default_option="2x"
-          description="战机是指你和AI使用的所有小型舰船。调整它们的护甲和护盾值可以改变它们在游戏中的核心地位。当前默认设置为2倍。如果想要更快速的小型舰船战斗，可以降低这个值。" >
+          description="战机是指你和AI使用的所有小型单位。调整它们的护甲和护盾值可以改变它们在游戏中的核心地位。当前默认设置为2倍。如果想要更快速的小型单位战斗，可以降低这个值。" >
       <harshness_override min_campaign_harshness_to_apply="200" fixed_option="2x" />
   </galaxy_setting>
 
   <galaxy_setting name="StrikecraftAttackPower" category="Balance" subcategory="UnitStyleRelativeStrengths" is_advanced_setting="true" display_name="战机攻击力" type="CustomDropdownArbitraryOptions" 
             arbitrary_options="0.5x,0.75x,1x,1.5x,2x,2.5x,3x,3.5x,4x,5x,6x" default_option="1.5x"
-          description="战机是指你和AI使用的所有小型舰船。调整它们的攻击力可以改变它们在游戏中的核心地位。当前默认设置为1.5倍。如果想要小型舰船在战斗中贡献较小，可以降低这个值。" >
+          description="战机是指你和AI使用的所有小型单位。调整它们的攻击力可以改变它们在游戏中的核心地位。当前默认设置为1.5倍。如果想要小型单位在战斗中贡献较小，可以降低这个值。" >
       <harshness_override min_campaign_harshness_to_apply="200" fixed_option="1.5x" />
   </galaxy_setting>
 
@@ -507,13 +507,13 @@
 
   <galaxy_setting name="FrigatesGuardiansHullAndShields" category="Balance" subcategory="UnitStyleRelativeStrengths" is_advanced_setting="true" display_name="护卫舰/守护者护甲和护盾" type="CustomDropdownArbitraryOptions" 
           arbitrary_options="0.5x,0.75x,1x,1.5x,2x,2.5x,3x,3.5x,4x,5x,6x" default_option="1x"
-          description="护卫舰和守护者是您和AI使用的所有中型机动舰船。调整它们的护甲和护盾值可以增强或减弱它们在游戏中的核心存在感。目前，它们的默认护甲和护盾设置为1倍。" >
+          description="护卫舰和守护者是您和AI使用的所有中型机动单位。调整它们的护甲和护盾值可以增强或减弱它们在游戏中的核心存在感。目前，它们的默认护甲和护盾设置为1倍。" >
       <harshness_override min_campaign_harshness_to_apply="200" fixed_option="1x" />
   </galaxy_setting>
 
   <galaxy_setting name="FrigatesGuardiansAttackPower" category="Balance" subcategory="UnitStyleRelativeStrengths" is_advanced_setting="true" display_name="护卫舰/守护者攻击力" type="CustomDropdownArbitraryOptions" 
           arbitrary_options="0.5x,0.75x,1x,1.5x,2x,2.5x,3x,3.5x,4x,5x,6x" default_option="1x"
-          description="护卫舰和守护者是您和AI使用的所有中型机动舰船。调整它们的攻击力可以增强或减弱它们在游戏中的核心存在感。目前，它们的默认攻击力设置为1倍。" >
+          description="护卫舰和守护者是您和AI使用的所有中型机动单位。调整它们的攻击力可以增强或减弱它们在游戏中的核心存在感。目前，它们的默认攻击力设置为1倍。" >
       <harshness_override min_campaign_harshness_to_apply="200" fixed_option="1x" />
   </galaxy_setting>
   <!-- Balance: HumanBalance -->
@@ -528,14 +528,14 @@
       <harshness_override min_campaign_harshness_to_apply="200" fixed_value="true" />
   </galaxy_setting>
 
-  <galaxy_setting name="EnableFuel" category="Balance" subcategory="HumanBalance" display_name="人类舰船使用燃料" type="BoolToggle" default="false"
+  <galaxy_setting name="EnableFuel" category="Balance" subcategory="HumanBalance" display_name="人类单位使用燃料" type="BoolToggle" default="false"
            description="这是一个对游戏整体流程有巨大影响的功能。后勤专家模式及以上必须启用，但你可以在任何难度下使用它。
            
 这可能是后勤专家模式最核心的功能，它本质上为你提供了多种永久性弱点供AI攻击，同时在决定如何扩张帝国时也需要更多考虑。
            
-启用燃料后，你不仅需要考虑舰船的金属和能量，还需要考虑燃料。
+启用燃料后，你不仅需要考虑单位的金属和能量，还需要考虑燃料。
 
-哪些单位使用燃料？大多数小型和中型军用舰船消耗氩气(Argon)，这种燃料相对常见。军官(方舟和魔像)和精英(驱逐舰和巡洋舰)使用氙气(Xenon)，这种燃料更难获得。炮塔、力场等使用氡气(Radon)，其常见程度与氩气相当。
+哪些单位使用燃料？大多数小型和中型军用单位消耗氩气(Argon)，这种燃料相对常见。军官(方舟和魔像)和精英(驱逐舰和巡洋舰)使用氙气(Xenon)，这种燃料更难获得。炮塔、力场等使用氡气(Radon)，其常见程度与氩气相当。
 
 从哪里获得燃料？你开始时有一定量的氩气和氡气。你需要通过占领行星并控制这些结构来获取更多燃料。这些结构也是氙气的来源。" >
       <harshness_override min_campaign_harshness_to_apply="1700" fixed_value="true" />
@@ -545,14 +545,14 @@
            changeable_during_gameplay="true"
            description="默认关闭。
            
-通常情况下，当某种燃料耗尽时，你将无法建造依赖该燃料的舰船。启用此设置后，你可以超额使用燃料。
+通常情况下，当某种燃料耗尽时，你将无法建造依赖该燃料的单位。启用此设置后，你可以超额使用燃料。
 
-无论此选项是否启用，你都可能面临燃料短缺(通常是由于燃料结构被摧毁)。在这种情况下，使用该燃料的舰船将获得更弱的护甲、护盾和攻击力，燃料危机越严重，削弱程度越大。
+无论此选项是否启用，你都可能面临燃料短缺(通常是由于燃料结构被摧毁)。在这种情况下，使用该燃料的单位将获得更弱的护甲、护盾和攻击力，燃料危机越严重，削弱程度越大。
 
-燃料危机无论如何都是个问题，但此选项允许你故意让自己陷入燃料危机，或在燃料危机期间仍能建造受影响类型的舰船。" />
+燃料危机无论如何都是个问题，但此选项允许你故意让自己陷入燃料危机，或在燃料危机期间仍能建造受影响类型的单位。" />
 
   <galaxy_setting name="DisableFleetWideBonuses" category="Balance" subcategory="HumanBalance" display_name="禁用舰队范围加成" type="BoolToggle" default="false"
-           description="来自舰队研究站(FRS)的舰船是强大的舰船，同时也会给舰队其他成员提供加成。在专家模式及以上，这被认为过于强大。因此，它们仍然是强大的舰船生产线，但不再给舰队其他成员提供加成。" >
+           description="来自舰队研究站(FRS)的单位是强大的单位，同时也会给舰队其他成员提供加成。在专家模式及以上，这被认为过于强大。因此，它们仍然是强大的单位生产线，但不再给舰队其他成员提供加成。" >
       <harshness_override min_campaign_harshness_to_apply="700" fixed_value="true" />
   </galaxy_setting>
 
@@ -574,12 +574,12 @@
   </galaxy_setting>
   
   <galaxy_setting name="MobileShipsBailOutToNearestFriendlyPlanetOnCrippling" category="Balance" is_advanced_setting="true" subcategory="HumanBalance" display_name="重创时：撤退到最近的友方行星" type="BoolToggle" default="false" changeable_during_gameplay="true"
-           description="当玩家的移动舰船被重创时，它会立即'撤退'到最近的盟友行星。如果没有这样的行星，则会被送到最近的中立行星。如果仍然没有合适目标，它将留在原地。默认关闭。" >
+           description="当玩家的移动单位被重创时，它会立即'撤退'到最近的盟友行星。如果没有这样的行星，则会被送到最近的中立行星。如果仍然没有合适目标，它将留在原地。默认关闭。" >
       <harshness_override min_campaign_harshness_to_apply="700" fixed_value="true" />
   </galaxy_setting>
   
   <galaxy_setting name="MobileShipsBailOutToNearestHomePlanetOnCrippling" category="Balance" is_advanced_setting="true" subcategory="HumanBalance" display_name="重创时：撤退到最近的母星" type="BoolToggle" default="false" changeable_during_gameplay="true"
-           description="当玩家的移动舰船被重创时，它会立即'撤退'到最近的盟友母星。如果没有可用的母星，或者它已经在母星上，则会移动到最近的盟友行星。如果没有这样的行星，则会被送到最近的中立行星。如果仍然没有合适目标，它将留在原地。默认关闭。"  >
+           description="当玩家的移动单位被重创时，它会立即'撤退'到最近的盟友母星。如果没有可用的母星，或者它已经在母星上，则会移动到最近的盟友行星。如果没有这样的行星，则会被送到最近的中立行星。如果仍然没有合适目标，它将留在原地。默认关闭。"  >
       <harshness_override min_campaign_harshness_to_apply="2500" fixed_value="true" />
   </galaxy_setting>
 
@@ -589,25 +589,25 @@
       <harshness_override min_campaign_harshness_to_apply="2500" fixed_option="4x" />
   </galaxy_setting>
 
-  <galaxy_setting name="CostInHackingPointsWhenCrippled" category="Balance" subcategory="HumanBalance" is_advanced_setting="true" display_name="单位受损时损失的黑客点数" type="IntSlider" 
+  <galaxy_setting name="CostInHackingPointsWhenCrippled" category="Balance" subcategory="HumanBalance" is_advanced_setting="true" display_name="单位受损时损失的入侵点数" type="IntSlider" 
              default="0" min="0" max="20"
-             description="每次初次受损时，你会损失多少（如果有）黑客点数？单位的默认值为0。" >
+             description="每次初次受损时，你会损失多少（如果有）入侵点数？单位的默认值为0。" >
       <harshness_override min_campaign_harshness_to_apply="2500" min="10" />
   </galaxy_setting>
 
   <galaxy_setting name="HumanMetalDiscountsForLowerMarkUnits" category="Balance" is_advanced_setting="true" subcategory="HumanBalance" display_name="人类：低等级单位的金属折扣" type="BoolToggle" default="true"
-           description="在等级差异很大的舰队中，等级较低的舰船建造和修理成本会大幅降低。不适用于无人机。
+           description="在等级差异很大的舰队中，等级较低的单位建造和修理成本会大幅降低。不适用于无人机。
 
-比最高等级低1级的舰船成本为90%。低2级为75%。低3级为55%，低4级为35%，低5级为25%，低6级为10%。
+比最高等级低1级的单位成本为90%。低2级为75%。低3级为55%，低4级为35%，低5级为25%，低6级为10%。
 
-在人类崛起和挑战者模式下默认开启，但在某些方面使经济变得更加简单。不过，它也提供了更多使用所有舰船的价值，这也是不错的。" />
+在人类崛起和挑战者模式下默认开启，但在某些方面使经济变得更加简单。不过，它也提供了更多使用所有单位的价值，这也是不错的。" />
 
   <galaxy_setting name="HumanEnergyDiscountsForLowerMarkUnits" category="Balance" is_advanced_setting="true" subcategory="HumanBalance" display_name="人类：低等级单位的能源折扣" type="BoolToggle" default="true"
-           description="在等级差异很大的舰队中，等级较低的舰船运行成本会变得更便宜。不适用于无人机。
+           description="在等级差异很大的舰队中，等级较低的单位运行成本会变得更便宜。不适用于无人机。
            
-比最高等级低1级的舰船能源需求为90%。低2级为75%。低3级为60%，低4级为45%，低5级为30%，低6级为20%。
+比最高等级低1级的单位能源需求为90%。低2级为75%。低3级为60%，低4级为45%，低5级为30%，低6级为20%。
 
-在人类崛起和挑战者模式下默认开启，但在某些方面使经济变得更加简单。不过，它也提供了更多使用所有舰船的价值，这也是不错的。" />
+在人类崛起和挑战者模式下默认开启，但在某些方面使经济变得更加简单。不过，它也提供了更多使用所有单位的价值，这也是不错的。" />
 
   <galaxy_setting name="CivilAuthorityRepaymentMultiplier" category="Balance" subcategory="HumanBalance" is_advanced_setting="true" display_name="民政当局偿还倍数" type="CustomDropdownArbitraryOptions"
       arbitrary_options="0.1x,0.25x,0.5x,0.75x,1x,1.5x,2x,2.5x,3x,3.5x,4x,5x,6x" default_option="0.25x"
@@ -645,7 +645,7 @@
   </galaxy_setting>
 
   <galaxy_setting name="HumansCanTractorEnemiesThroughWormholes" category="Balance" is_advanced_setting="true" subcategory="HumanBalance" display_name="人类可以通过虫洞牵引敌人" type="BoolToggle" default="true"
-           description="默认开启。通常，如果你的牵引光束捕获了敌人，你可以将他们拖过虫洞。敌人也可以对你做同样的事。如果禁用此设置，则你的舰船在通过虫洞时会放弃它们的猎物。
+           description="默认开启。通常，如果你的牵引光束捕获了敌人，你可以将他们拖过虫洞。敌人也可以对你做同样的事。如果禁用此设置，则你的单位在通过虫洞时会放弃它们的猎物。
            
 这主要是高级玩法的特定内容，一些聪明的玩家能够以某种利用漏洞的方式设置'反向滩头堡'。" >
       <harshness_override min_campaign_harshness_to_apply="2500" fixed_value="false" />
@@ -668,29 +668,29 @@
       >
       <harshness_override min_campaign_harshness_to_apply="200" fixed_value="true" />
   </galaxy_setting>
-  <galaxy_setting name="BattlestationsGetHacksForAll" category="Balance" is_advanced_setting="true" subcategory="HumanBalance" display_name="战斗站接收所有黑客攻击获得的炮塔" type="BoolToggle" default="true"
-           description="默认开启。通常，战斗站会接收所有黑客攻击获得的炮塔和其他防御结构。如果禁用此设置，则战斗站不会接收炮塔或其他防御结构，除非是针对该特定战斗站的黑客攻击。（堡垒和指挥站仍会接收所有黑客攻击获得的结构）"
+  <galaxy_setting name="BattlestationsGetHacksForAll" category="Balance" is_advanced_setting="true" subcategory="HumanBalance" display_name="战斗站接收所有入侵获得的炮塔" type="BoolToggle" default="true"
+           description="默认开启。通常，战斗站会接收所有入侵获得的炮塔和其他防御结构。如果禁用此设置，则战斗站不会接收炮塔或其他防御结构，除非是针对该特定战斗站的入侵。（堡垒和指挥站仍会接收所有入侵获得的结构）"
       >
       <harshness_override min_campaign_harshness_to_apply="700" fixed_value="false" />
   </galaxy_setting>
   <galaxy_setting name="CanSelectivelyClaimPlanets" category="Balance" is_advanced_setting="true" subcategory="HumanBalance" display_name="可以选择性地声明行星" type="BoolToggle" default="true"
            description="默认开启。通常，可以暂停对可捕获物的声明，以避免承担声明它们的成本和/或冒险被摧毁。如果禁用此设置，则无法避免这些成本/风险。
 
-对于旗舰和其他被削弱而不是死亡的舰船或结构，与声明它们相关的任何成本都会立即产生。对于其他可声明物，无法暂停对它们的声明。"
+对于旗舰和其他被削弱而不是死亡的单位或结构，与声明它们相关的任何成本都会立即产生。对于其他可声明物，无法暂停对它们的声明。"
       >
       <harshness_override min_campaign_harshness_to_apply="700" fixed_value="false" />
   </galaxy_setting>
   
-  <galaxy_setting category="Balance" subcategory="GlobalModifiers" name="HumanCombatShipSpeedLimit" display_name="战斗舰船速度上限" type="IntTextbox"
+  <galaxy_setting category="Balance" subcategory="GlobalModifiers" name="HumanCombatShipSpeedLimit" display_name="战斗单位速度上限" type="IntTextbox"
 				  default="3000" min="2500" max="4000" changeable_during_gameplay="true"
-				  description="速度加成叠加可以使原本缓慢的舰船获得极高的速度。特别是那些通常容易被围攻消灭的长射程舰船，通过风筝战术会变得极其强大。此设置规定了所有武装舰船的绝对最高速度。仅影响玩家舰船。" >
+				  description="速度加成叠加可以使原本缓慢的单位获得极高的速度。特别是那些通常容易被围攻消灭的长射程单位，通过风筝战术会变得极其强大。此设置规定了所有武装单位的绝对最高速度。仅影响玩家单位。" >
       <harshness_override is_sandbox="true" min="2500" max="1000000" />
       <harshness_override min_campaign_harshness_to_apply="700" max="3000" />
   </galaxy_setting>
   
-  <galaxy_setting category="Balance" subcategory="GlobalModifiers" name="HumanNonCombatShipSpeedLimit" display_name="非战斗舰船速度上限" type="IntTextbox"
+  <galaxy_setting category="Balance" subcategory="GlobalModifiers" name="HumanNonCombatShipSpeedLimit" display_name="非战斗单位速度上限" type="IntTextbox"
 				  default="6000" min="3750" max="7500" changeable_during_gameplay="true"
-				  description="速度加成叠加可以使原本缓慢的舰船获得极高的速度。此设置规定了所有非武装舰船的绝对最高速度。仅影响玩家舰船。" >
+				  description="速度加成叠加可以使原本缓慢的单位获得极高的速度。此设置规定了所有非武装单位的绝对最高速度。仅影响玩家单位。" >
       <harshness_override is_sandbox="true" min="3750" max="1000000" />
       <harshness_override min_campaign_harshness_to_apply="700" max="6000" />
   </galaxy_setting>
@@ -709,7 +709,7 @@
 
   <!-- Balance: OutguardBalance-->
   <galaxy_setting name="OutguardAlsoCostXenon" category="Balance" is_advanced_setting="true" subcategory="OutguardBalance" display_name="前哨守卫同时消耗氙气" type="BoolToggle" default="true"
-           description="默认关闭。在专家模式及以上强制开启，当没有启用燃料时无效。启用后，声明前哨守卫的黑客行动每消耗1点AIP将永久从您的库存中移除5000点氙气（通常是50000点氙气）。
+            description="默认关闭。在专家模式及以上强制开启，当没有启用燃料时无效。启用后，声明前哨守卫的入侵行动每消耗1点AIP将永久从您的库存中移除5000点氙气（通常是50000点氙气）。
 
 此外，开启此选项后，如果您拥有任何前哨守卫且氙气余额为零或更少，它们的效能将会降低。" >
       <harshness_override min_campaign_harshness_to_apply="200" fixed_value="true" />
@@ -717,14 +717,14 @@
   
 <!-- Balance: GlobalModifiers -->
   <galaxy_setting name="LinearSpeedBonusScaling" category="Balance" subcategory="GlobalModifiers" display_name="线性行星速度加成缩放" type="BoolToggle" default="false" changeable_during_gameplay="true"
-          description="通常情况下，当舰船为所有者及其盟友提供行星速度加成时，加成是按指数级缩放的。3艘具有1.5倍行星速度加成的舰船会将速度提升至1.5 x 1.5 x 1.5 = 3.375倍。
-如果启用此设置，速度加成将改为线性叠加，在上述例子中(每艘舰船不再提供1.5倍而是+0.5倍行星速度加成)速度仅为1 + (0.5 + 0.5 + 0.5) = 2.5倍正常速度。
+          description="通常情况下，当单位为所有者及其盟友提供行星速度加成时，加成是按指数级缩放的。3个具有1.5倍行星速度加成的单位会将速度提升至1.5 x 1.5 x 1.5 = 3.375倍。
+如果启用此设置，速度加成将改为线性叠加，在上述例子中(每个单位不再提供1.5倍而是+0.5倍行星速度加成)速度仅为1 + (0.5 + 0.5 + 0.5) = 2.5倍正常速度。
 这可以避免在有大量单位提供速度加成的行星上出现荒谬的速度值。" >
   </galaxy_setting>
   
-  <galaxy_setting name="AllShipAttackRanges" category="Balance" subcategory="GlobalModifiers" is_advanced_setting="true" display_name="所有舰船攻击范围" type="CustomDropdownArbitraryOptions"
+  <galaxy_setting name="AllShipAttackRanges" category="Balance" subcategory="GlobalModifiers" is_advanced_setting="true" display_name="所有单位攻击范围" type="CustomDropdownArbitraryOptions"
           arbitrary_options="0.1x,0.2x,0.3x,0.4x,0.5x,0.6x,0.7x,0.8x,0.9x,1x,1.1x,1.2x,1.3x" default_option="0.8x"
-          description="允许你调整星系中所有舰船(包括你的和敌人的)的有效攻击范围。当然不会影响'无限'狙击范围。也会影响牵引光束。默认值为0.8倍，以避免'小世界'问题(即所有敌人同时在行星上攻击你)。
+          description="允许你调整星系中所有单位(包括你的和敌人的)的有效攻击范围。当然不会影响'无限'狙击范围。也会影响牵引光束。默认值为0.8倍，以避免'小世界'问题(即所有敌人同时在行星上攻击你)。
 
 这确实意味着你需要更策略性地布置自己的炮塔。不过，你的炮塔自然比AI的炮塔有更远的射程。" >
       <harshness_override min_campaign_harshness_to_apply="200" fixed_option="0.8x" />

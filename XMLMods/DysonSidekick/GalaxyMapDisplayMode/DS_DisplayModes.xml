@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
     <display_mode name="DeepstrikeIntegration"
-             display_name="&lt;color=#562f5e&gt;Deepstrike Integration&lt;/color&gt;"
+             display_name="&lt;color=#562f5e&gt;深度打击整合&lt;/color&gt;"
              dll_name="AIWarExternalVisualizationCode"
              type_name="Arcen.AIW2.ExternalVisualization.GalaxyMapDisplayMode_DeepstrikeIntegration"
-             tooltip="Shows primarily 'standard' information, but also integrates Deepstrike Information."
+             tooltip="主要显示『标准』信息，同时整合深度打击相关信息。"
       />
     <display_mode name="CuendillarAmount"
-             display_name="玉石 Remaining"
+             display_name="玉石剩余量"
              dll_name="AIWarExternalVisualizationCode"
              type_name="Arcen.AIW2.ExternalVisualization.GalaxyMapDisplayMode_CuendillarAmount"
-             tooltip="Shows how much cuendillar there is per planet. Only meaningful for Dyson Sidekick or Dyson Empire."
+             tooltip="显示每颗星球上的玉石数量。仅对戴森球伙伴或戴森帝国有意义。"
       />
 
     <display_mode name="ShowNetMetal"
-             display_name="&lt;color=#33ffcc&gt;Net Metal&lt;/color&gt;"
+             display_name="&lt;color=#33ffcc&gt;净金属&lt;/color&gt;"
              dll_name="AIWarExternalVisualizationCode"
              type_name="Arcen.AIW2.ExternalVisualization.GalaxyMapDisplayMode_ShowNetMetal"
-             tooltip="Shows the net metal change for each planet."
+             tooltip="显示每颗星球的净金属变化。"
       />
 
     <display_mode name="ShowEnergyMetal"
-             display_name="&lt;color=#bd8811&gt;Net Energy&lt;/color&gt;"
+             display_name="&lt;color=#bd8811&gt;净能量&lt;/color&gt;"
              dll_name="AIWarExternalVisualizationCode"
              type_name="Arcen.AIW2.ExternalVisualization.GalaxyMapDisplayMode_ShowNetEnergy"
-             tooltip="Shows the net energy change for each planet."
+             tooltip="显示每颗星球的净能量变化。"
       />
 
 </root>

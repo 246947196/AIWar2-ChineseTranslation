@@ -71,7 +71,7 @@ namespace Arcen.AIW2.External
 
             tooltipBuffer.Clear();
             if ( data.AbsorbShipsMode )
-                tooltipBuffer.Add( "预备队正在撤离。一旦所有舰船撤离，虫洞将开始不稳定并消失。\n" );
+                tooltipBuffer.Add( "预备队正在撤离。一旦所有单位撤离，虫洞将开始不稳定并消失。\n" );
             else if ( data.TimeForNextWormhole <= -1 )
                 tooltipBuffer.Add( "AI 预备队正在响应您的深袭\n" );
             else

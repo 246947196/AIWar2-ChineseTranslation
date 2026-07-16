@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
 <!-- Armored Golem Entries -->
@@ -343,7 +343,7 @@
 			y_offset_of_icon="75"
 			display_name="再生魔像"
 			display_name_for_sidebar="再生魔像"
-			description="通过牺牲自身生命值来复活同一星球上阵亡友军舰船的旗舰。"
+			description="通过牺牲自身生命值来复活同一星球上阵亡友军单位的旗舰。"
 			collision_priority="810"
 			regenerates_dying_ships_at_this_health_cost_ratio="0.3"
 			will_not_regenerate_dying_ships_if_health_below_this_percentage="0.2"
@@ -400,7 +400,7 @@
 			y_offset_of_icon="75"
 			display_name="再生魔像"
 			display_name_for_sidebar="再生魔像"
-			description="通过伤害自身来复活同一星球上阵亡友军舰船的魔像。这是AI对古代天顶星人的复刻和模仿，是一种可怕的武器。"
+			description="通过伤害自身来复活同一星球上阵亡友军单位的魔像。这是AI对古代天顶星人的复刻和模仿，是一种可怕的武器。"
 			collision_priority="810"
 			regenerates_dying_ships_at_this_health_cost_ratio="1"
 			will_not_regenerate_dying_ships_if_health_below_this_percentage="0.2"
@@ -446,7 +446,7 @@
 			y_offset_of_icon="75"
 			display_name="再生魔像 EX"
 			display_name_for_sidebar="再生魔像"
-			description="通过牺牲自身生命值来复活同一星球上阵亡友军舰船的旗舰。"
+			description="通过牺牲自身生命值来复活同一星球上阵亡友军单位的旗舰。"
 			collision_priority="810"
 			regenerates_dying_ships_at_this_health_cost_ratio="0.75"
 			will_not_regenerate_dying_ships_if_health_below_this_percentage="0.2"
@@ -1218,7 +1218,7 @@
 			visuals_scale_multiplier="1.5"
 			y_offset_of_icon="70"
 			display_name="无敌欧穆"
-			description="真正无敌且火力强大的舰船，只能通过作弊手段引入游戏。由于无法被摧毁，非常适合用于测试破解效果。"
+			description="真正无敌且火力强大的单位，只能通过作弊手段引入游戏。由于无法被摧毁，非常适合用于测试破解效果。"
 			collision_priority="810"
 			metal_to_claim="5000000"
 			aip_to_claim="20"
@@ -1245,7 +1245,7 @@
 			special_entity_type="MobileOfficerCombatFleetFlagship" fleet_design_logic_i_grant_one_from="MobileCombatFleet"
 			tags="ShowsOnNormalDisplayMode,Capturable" capturable_seed_weight="0" capturable_max_per_galaxy="0"      
 			display_name="无敌欧穆"
-			description="真正无敌且火力强大的舰船，只能通过作弊手段引入游戏。由于无法被摧毁，非常适合用于测试破解效果。"			
+			description="真正无敌且火力强大的单位，只能通过作弊手段引入游戏。由于无法被摧毁，非常适合用于测试破解效果。"			
 			>
 		<system name="WX" display_name="天顶星弹道漩涡"
 				category="Weapon" firing_timing="OnlyInRange"

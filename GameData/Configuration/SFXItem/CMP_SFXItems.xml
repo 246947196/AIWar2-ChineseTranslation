@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   
   <!--**************************************************Weapons**************************************************-->
@@ -319,7 +319,7 @@
        chat_message_from="Watch Commander" chat_message_color="6ba9ff">
     <sub_item index="0" is_funny="false" chat_text="一支人类抵抗组织已与人工智能交火。"/>
     <sub_item index="1" is_funny="false" chat_text="盟军抵抗舰队正在加入战斗。"/>
-    <sub_item index="2" is_funny="false" chat_text="检测到舰船。敌我识别信号显示为友军。"/>
+    <sub_item index="2" is_funny="false" chat_text="检测到单位。敌我识别信号显示为友军。"/>
   </sfx>
 
   <sfx name="ArkChiefOfStaff_FriendlyMaraudersReinforcingPlayer" bus="Alert" bundle_name="aiwar2voice"
@@ -353,7 +353,7 @@
        filename="assets/voice/arkchiefofstaff/marauders/marauders attacking planet player is attacking/000_voice.prefab"
        min_time_between_plays_of_group="20" min_time_between_plays_of_each_item="40"
        chat_message_from="Watch Commander" chat_message_color="6ba9ff" >
-    <sub_item index="0" is_funny="false" chat_text="掠夺者部队正在解除隐形状态。不过他们没有攻击我们的舰船。"/>
+    <sub_item index="0" is_funny="false" chat_text="掠夺者部队正在解除隐形状态。不过他们没有攻击我们的单位。"/>
     <sub_item index="1" is_funny="false" chat_text="掠夺者部队正在攻击我们的目标。敌人的敌人……"/>
     <sub_item index="2" is_funny="false" chat_text="这次掠夺者部队决定提供帮助了。"/>
   </sfx>
@@ -421,10 +421,10 @@
        min_time_between_plays_of_group="15" min_time_between_plays_of_each_item="60" 
        chat_message_from="Watch Commander" chat_message_color="6ba9ff" >
     <sub_item index="0" is_funny="false" chat_text="本地扫描器发现目标：它们正朝着中央指挥部前进。"/>
-    <sub_item index="1" is_funny="false" chat_text="在母星上检测到敌对舰船。"/>
+    <sub_item index="1" is_funny="false" chat_text="在母星上检测到敌对单位。"/>
     <sub_item index="2" is_funny="false" chat_text="外层防御已被突破：母星正在遭受攻击。"/>
-    <sub_item index="3" is_funny="false" chat_text="母星上有舰船。它们正在直击要害。"/>
-    <sub_item index="4" is_funny="false" chat_text="它们来了！敌对舰船正在母星轨道上。"/>
+    <sub_item index="3" is_funny="false" chat_text="母星上有单位。它们正在直击要害。"/>
+    <sub_item index="4" is_funny="false" chat_text="它们来了！敌对单位正在母星轨道上。"/>
   </sfx>
 
   <sfx name="ArkChiefOfStaff_CriticalPlanetUnderAttack" bus="Alert" bundle_name="aiwar2voice"

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- Ships : Sniper, Sentinel, Ramifier, TackleDrone. (Ambush, Core, Tech twice).
   
@@ -6,7 +6,7 @@
 
   <fleet_design name="AssaultFleet"
         display_name="突击舰队"
-        description="这是一支强悍的舰船组合，其中一艘护卫舰能够瘫痪敌方炮塔。其箭猪级舰船能造成巨大伤害，但十分脆弱。"
+        description="这是一支强悍的单位组合，其中一艘护卫舰能够瘫痪敌方炮塔。其箭猪级单位能造成巨大伤害，但十分脆弱。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >
@@ -40,7 +40,7 @@
  
   <fleet_design name="DenialStartingFleet"
         display_name="拒止舰队"
-        description="这支舰队专注于压制敌人，同时其余舰船负责消灭关键目标并清理残余敌军。"
+        description="这支舰队专注于压制敌人，同时其余单位负责消灭关键目标并清理残余敌军。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >

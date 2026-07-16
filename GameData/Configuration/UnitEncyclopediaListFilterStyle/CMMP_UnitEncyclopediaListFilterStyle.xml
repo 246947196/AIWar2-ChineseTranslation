@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   <display_mode name="None" is_default="true" sort_order="1"  display_name="未应用筛选器" tooltip="未添加额外筛选"
@@ -165,7 +165,7 @@
            dll_name="AIWarExternalVisualizationCode" type_name="Arcen.AIW2.ExternalVisualization.UnitEncyclopediaListFilterStyle_Main" />
 
   <display_mode name="Weapon_X_IonDamage" display_name="武器 - 离子伤害" sort_order="50"
-           tooltip="仅包含拥有造成离子伤害武器的单位（通常能直接摧毁等级低于自身的舰船）。"
+           tooltip="仅包含拥有造成离子伤害武器的单位（通常能直接摧毁等级低于自身的单位）。"
            dll_name="AIWarExternalVisualizationCode" type_name="Arcen.AIW2.ExternalVisualization.UnitEncyclopediaListFilterStyle_Main" />
 
   <display_mode name="Weapon_X_ShieldOverdrive" display_name="武器 - 护盾过载" sort_order="50"
@@ -209,7 +209,7 @@
            dll_name="AIWarExternalVisualizationCode" type_name="Arcen.AIW2.ExternalVisualization.UnitEncyclopediaListFilterStyle_Main" />
 
   <display_mode name="Weapon_X_TractoredBonus" display_name="武器 - 牵引加成" sort_order="50"
-           tooltip="仅包含拥有对被其牵引光束控制的舰船造成额外伤害武器的单位。"
+           tooltip="仅包含拥有对被其牵引光束控制的单位造成额外伤害武器的单位。"
            dll_name="AIWarExternalVisualizationCode" type_name="Arcen.AIW2.ExternalVisualization.UnitEncyclopediaListFilterStyle_Main" />
 
   <display_mode name="Weapon_X_UnderFFBonus" display_name="武器 - 力场下加成" sort_order="50"
@@ -429,11 +429,11 @@
            dll_name="AIWarExternalVisualizationCode" type_name="Arcen.AIW2.ExternalVisualization.UnitEncyclopediaListFilterStyle_Main" />
 
   <display_mode name="BlackHole" display_name="黑洞效应" sort_order="50"
-           tooltip="仅包含具有黑洞效应，能阻止引擎较弱的敌方舰船离开所在星球的单位。"
+           tooltip="仅包含具有黑洞效应，能阻止引擎较弱的敌方单位离开所在星球的单位。"
            dll_name="AIWarExternalVisualizationCode" type_name="Arcen.AIW2.ExternalVisualization.UnitEncyclopediaListFilterStyle_Main" />
 
   <display_mode name="AggroInvisible" display_name="仇恨隐形" sort_order="50"
-           tooltip="仅包含无法攻击会引发仇恨反应的敌方舰船的单位。"
+           tooltip="仅包含无法攻击会引发仇恨反应的敌方单位的单位。"
            dll_name="AIWarExternalVisualizationCode" type_name="Arcen.AIW2.ExternalVisualization.UnitEncyclopediaListFilterStyle_Main" />
 
   <display_mode name="AIAccelerator" display_name="AI 加速装置" sort_order="50"
@@ -501,7 +501,7 @@
            dll_name="AIWarExternalVisualizationCode" type_name="Arcen.AIW2.ExternalVisualization.UnitEncyclopediaListFilterStyle_Main" />
 
   <display_mode name="FleetWideBonuses" display_name="舰队范围加成" sort_order="50"
-           tooltip="仅包含能为其舰队内其他舰船提供全舰队范围加成的单位。（专家模式下不适用）。"
+           tooltip="仅包含能为其舰队内其他单位提供全舰队范围加成的单位。（专家模式下不适用）。"
            dll_name="AIWarExternalVisualizationCode" type_name="Arcen.AIW2.ExternalVisualization.UnitEncyclopediaListFilterStyle_Main" />
 
   <display_mode name="DeathSpawn" display_name="死亡生成" sort_order="50"

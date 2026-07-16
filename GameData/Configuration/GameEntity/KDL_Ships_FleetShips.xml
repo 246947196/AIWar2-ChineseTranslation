@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 	<!-- V-Wing main entity -->
 	<entity name="VWing"
@@ -169,7 +169,7 @@
 			thematic_groups="Strikecraft" 
 			display_name="寄生聚变轰炸机"
 			display_name_for_sidebar="寄生轰炸机"
-			description="出色的建筑杀手,能够完全无视建筑物的护盾,而且会使舰船(通常不包括建筑物)在死亡时变成僵尸。"
+			description="出色的建筑杀手,能够完全无视建筑物的护盾,而且会使单位(通常不包括建筑物)在死亡时变成僵尸。"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Fusion,Technologist">
 			
 		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="10" cap="25"/>
@@ -208,7 +208,7 @@
 			display_name_for_sidebar="终极轰炸机" aip_when_granted_by_hack="12"
 			tags="IncludeInFRS" supercharges_hull_of_rest_of_player_fleet="1.5" supercharges_attack_power_of_rest_of_player_fleet="1.5"
 			starting_mark_level="Mark3" supercharges_only_apply_when_fleet_line_count_is_x_or_less="5"
-			description="出色的建筑杀手,能够完全无视建筑物的护盾。在小型舰队中与少量其他舰船类型一起使用效果最佳,能够让所有舰船变得更强大和耐用。">
+			description="出色的建筑杀手,能够完全无视建筑物的护盾。在小型舰队中与少量其他单位类型一起使用效果最佳,能够让所有单位变得更强大和耐用。">
 			
 		<fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="10" cap="35"/>
 	</entity>
@@ -302,7 +302,7 @@
 			tech_upgrades_that_benefit_me="Expatriate"
 			display_name="大头针巡逻艇"
 			display_name_for_sidebar="大头针 K"
-			description="掠夺者使用的变体舰船,体型较大,发射成排导弹摧毁装甲薄的目标。"
+			description="掠夺者使用的变体单位,体型较大,发射成排导弹摧毁装甲薄的目标。"
 			cost_for_ai_to_purchase="50" strength_multiplier="2"
 			hull_points="4100" metal_cost="3050" energy_consumption="400" armor_mm="50"
 			aip_when_granted_by_hack="4" >
@@ -326,7 +326,7 @@
 			collision_priority="100"
 			display_name="长矛巡逻艇"
 			display_name_for_sidebar="长矛巡逻艇"
-			description="特别擅长对付高装甲舰船,尤其是剩余船体较多的目标。"
+			description="特别擅长对付高装甲单位,尤其是剩余船体较多的目标。"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Disruptive,Medium" tags="ArkEmpireOptionGroup3" custom_arkempire_fleetcap="32"
 			cost_for_ai_to_purchase="31" strength_multiplier="1.4"
 			hull_points="2900" shield_points="0" speed="Normal1"
@@ -361,7 +361,7 @@
 	<entity name="Porcupine" copy_from="PikeCorvette" display_name="豪猪" thematic_groups="Strikecraft"
 		display_name_for_sidebar="豪猪"
                 tags="ArkSidekickOptionGroup3"
-		description="脆弱但伤害极高的打击舰，擅长摧毁高装甲舰船，尤其是剩余船体较多的目标"
+		description="脆弱但伤害极高的打击舰，擅长摧毁高装甲单位，尤其是剩余船体较多的目标"
 		hull_points="2200" cost_for_ai_to_purchase="21"
 		>
 		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="20" cap="32"/>
@@ -378,14 +378,14 @@
 	
 	<entity name="OutguardPorcupine" copy_from="Porcupine" display_name="前哨豪猪" thematic_groups="Strikecraft,Outguard,IsolatedHumanResistance"            
 			display_name_for_sidebar="豪猪" tags="XenophonStrikecraft"	
-			description="脆弱但伤害极高的打击舰，擅长摧毁高装甲舰船，尤其是剩余船体较多的目标"
+			description="脆弱但伤害极高的打击舰，擅长摧毁高装甲单位，尤其是剩余船体较多的目标"
 			starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Expatriate"
 			>
 	</entity>
 	
 	<entity name="ParasiticPikeCorvette" copy_from="PikeCorvette" display_name="寄生长矛巡逻艇" thematic_groups="Strikecraft"
 			display_name_for_sidebar="长矛 K 寄生"
-			description="特别擅长对付高装甲舰船，尤其是剩余船体较多的目标。还能使目标在死亡时变成友方僵尸"
+			description="特别擅长对付高装甲单位，尤其是剩余船体较多的目标。还能使目标在死亡时变成友方僵尸"
 			tech_upgrades_that_benefit_me="Disruptive,Technologist">
 			
 		<fleet_membership name="AntiLargeMix" ship_cap_group="Strike" weight="20" cap="20"/>
@@ -405,7 +405,7 @@
 			tags="IncludeInFRS" tech_upgrades_that_benefit_me="Expatriate"
 			display_name="长戟巡逻艇"
 			display_name_for_sidebar="长戟 K"
-			description="掠夺者通常使用的变体舰船，对高装甲舰船特别有效，但由于使用更重的弹药，每次齐射发射次数较少"
+			description="掠夺者通常使用的变体单位，对高装甲单位特别有效，但由于使用更重的弹药，每次齐射发射次数较少"
 			hull_points="3500" metal_cost="2200"
 			aip_when_granted_by_hack="2" >
 			
@@ -428,7 +428,7 @@
 			category="Ship" is_strikecraft="true"
 			collision_priority="100"
 			display_name="眼魔"
-			description="隐形舰船，目标的能量消耗越高，造成的伤害越大"
+			description="隐形单位，目标的能量消耗越高，造成的伤害越大"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Subterfuge,Medium"
 			cost_for_ai_to_purchase="26" strength_multiplier="1.6"
 			hull_points="2100" shield_points="0" speed="Normal1"
@@ -493,7 +493,7 @@
 			visuals_scale_multiplier="10"
 			collision_priority="100"
 			display_name="先锋舰"
-			description="速度慢但装甲厚重的舰船，能使敌人受到更多伤害，使用虫洞后会暂时获得伤害抗性"
+			description="速度慢但装甲厚重的单位，能使敌人受到更多伤害，使用虫洞后会暂时获得伤害抗性"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Technologist,Heavy" tags="ArkEmpireOptionGroup2" custom_arkempire_fleetcap="15"
 			cost_for_ai_to_purchase="80"
 			hull_points="12000" shield_points="0" speed="Normal1"
@@ -528,7 +528,7 @@
 
 	<entity name="OutguardVanguard" copy_from="Vanguard" display_name="前哨先锋舰" thematic_groups="Strikecraft,Outguard,IsolatedHumanResistance"
 			display_name_for_sidebar="先锋舰" tags="LobarStrikecraft"	
-			description="脆弱但伤害极高的打击舰，擅长摧毁高装甲舰船，尤其是剩余船体较多的目标"
+			description="脆弱但伤害极高的打击舰，擅长摧毁高装甲单位，尤其是剩余船体较多的目标"
 			tech_upgrades_that_benefit_me="Expatriate"
 			>
 	</entity>
@@ -551,7 +551,7 @@
 
 	<entity name="VanguardHydra" copy_from="Vanguard" thematic_groups="Strikecraft" 
 			display_name="先锋九头蛇"	tech_upgrades_that_benefit_me="Technologist,Medium"
-			description="具有一定耐久性和装甲的舰船，能使敌人受到更多伤害，使用虫洞后会暂时获得伤害抗性，并在死亡时生成小型复制体"
+			description="具有一定耐久性和装甲的单位，能使敌人受到更多伤害，使用虫洞后会暂时获得伤害抗性，并在死亡时生成小型复制体"
 			hull_points="6000" speed="Normal3"
 			armor_mm="70"
 			cost_for_ai_to_purchase="100" >
@@ -599,7 +599,7 @@
 			collision_priority="100"
 			display_name="自动炮小型舱"
 			display_name_for_sidebar="自动炮"
-			description="快速、隐形且脆弱的蜂群舰，擅长围攻装甲较厚的舰船"
+			description="快速、隐形且脆弱的蜂群舰，擅长围攻装甲较厚的单位"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Generalist,Light" tags="ArkEmpireOptionGroup1,ArkSidekickOptionGroup1" custom_arkempire_fleetcap="70"
 			cost_for_ai_to_purchase="14" strength_multiplier="1.4"
 			hull_points="1200" shield_points="0" speed="AboveAverage6"
@@ -815,7 +815,7 @@
 			visuals_scale_multiplier="14"
 			collision_priority="100"
 			display_name="重力舱"
-			description="对高引擎功率舰船极其危险，可用于加固重力场和牵引场薄弱的位置"
+			description="对高引擎功率单位极其危险，可用于加固重力场和牵引场薄弱的位置"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Medium,Disruptive"
 			cost_for_ai_to_purchase="31" strength_multiplier="1.6"
 			hull_points="2400" shield_points="0" speed="Normal3"
@@ -886,7 +886,7 @@
 			category="Ship" is_strikecraft="true"
 			collision_priority="100"
 			display_name="烧蚀加特林"
-			description="对高反射率舰船极其危险，能利用敌方自身的防御系统反制它们"
+			description="对高反射率单位极其危险，能利用敌方自身的防御系统反制它们"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Light,Generalist" tags="ArkEmpireOptionGroup1,ArkSidekickOptionGroup1" custom_arkempire_fleetcap="70"
 			cost_for_ai_to_purchase="18" strength_multiplier="1.4"
 			hull_points="1500" shield_points="0" speed="Normal3"
@@ -994,7 +994,7 @@
 	</entity>
   
 	<entity name="OutguardMLRSCorvette" copy_from="MLRSCorvette" display_name="前哨多管火箭巡逻艇" tags="XenophonStrikecraft" thematic_groups="Strikecraft,Outguard,IsolatedHumanResistance"
-			description="脆弱但伤害极高的打击舰，擅长摧毁高装甲舰船"
+			description="脆弱但伤害极高的打击舰，擅长摧毁高装甲单位"
 			starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Expatriate"
 			>
 	</entity>
@@ -1052,7 +1052,7 @@
 			category="Ship" is_strikecraft="true"
 			collision_priority="100"
 			display_name="突袭者"
-			description="快速且灵活的舰船，免疫大多数减速效果，包括黑洞机器的减速效果"
+			description="快速且灵活的单位，免疫大多数减速效果，包括黑洞机器的减速效果"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Light,Raid" tags="ArkEmpireOptionGroup5,ArkSidekickOptionGroup5" custom_arkempire_fleetcap="32"
 			cost_for_ai_to_purchase="30"
 			hull_points="5000" shield_points="0" speed="AboveAverage4"
@@ -1114,7 +1114,7 @@
   
 	<entity name="Dagger" copy_from="Raider" display_name="匕首" thematic_groups="Strikecraft"
 			display_name_for_sidebar="匕首"
-			description="极快、灵活且伤害高的舰船，几乎没有任何耐久性，但免疫大多数减速效果"
+			description="极快、灵活且伤害高的单位，几乎没有任何耐久性，但免疫大多数减速效果"
 			hull_points="2500" speed="High"  cost_for_ai_to_purchase="20"
 			>
 		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="20" cap="32"/>			
@@ -1135,7 +1135,7 @@
 			display_name_for_sidebar="涡轮突袭者" aip_when_granted_by_hack="14"
 			tags="IncludeInFRS" supercharges_min_speed_of_rest_of_player_fleet="true"
 			starting_mark_level="Mark3" supercharges_only_apply_when_fleet_line_count_is_x_or_less="6"
-			description="快速且灵活的舰船，免疫大多数减速效果。在小型舰队中与少量极慢速舰船类型一起使用效果最佳，能让所有舰船都变得更快">
+			description="快速且灵活的单位，免疫大多数减速效果。在小型舰队中与少量极慢速单位类型一起使用效果最佳，能让所有单位都变得更快">
 		
 		<fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="10" cap="32"/>
 	</entity>
@@ -1151,7 +1151,7 @@
 			visuals_scale_multiplier="6"
 			collision_priority="100"
 			display_name="猛禽"
-			description="极快、隐形且射程远的虫洞伏击专家，对高引擎功率舰船特别有效，尤其是刚使用虫洞的舰船"
+			description="极快、隐形且射程远的虫洞伏击专家，对高引擎功率单位特别有效，尤其是刚使用虫洞的单位"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Light,Ambush"
 			cost_for_ai_to_purchase="28" strength_multiplier="1.6"
 			hull_points="1200" shield_points="0" speed="High"
@@ -1537,7 +1537,7 @@
 			visuals_scale_multiplier="4.3"
 			collision_priority="100"
 			display_name="脉冲星坦克"
-			description="使用虫洞后，能在一段时间内发射超充炮弹的慢速舰船。"
+			description="使用虫洞后，能在一段时间内发射超充炮弹的慢速单位。"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Ambush,Heavy"
 			cost_for_ai_to_purchase="66" strength_multiplier="1.1"
 			hull_points="9300" shield_points="0" speed="BelowAverage2"
@@ -1594,7 +1594,7 @@
 	<entity name="PulsarPunk" copy_from="PulsarTank" thematic_groups="Strikecraft" 
 			display_name="脉冲朋克舰"
 			display_name_for_sidebar="脉冲朋克舰"	
-			description="速度适中、耐久性强的舰船，使用虫洞后能造成更多伤害，还能抓取并拖拽敌方舰船。"
+			description="速度适中、耐久性强的单位，使用虫洞后能造成更多伤害，还能抓取并拖拽敌方单位。"
 			tech_upgrades_that_benefit_me="Ambush,Medium"
 			hull_points="7500" speed="Normal3"
 			armor_mm="70"
@@ -1632,7 +1632,7 @@
 			display_name_for_sidebar="守护坦克" aip_when_granted_by_hack="12"
 			tags="IncludeInFRS" supercharges_hull_of_rest_of_player_fleet="2.0"
 			starting_mark_level="Mark3" supercharges_only_apply_when_fleet_line_count_is_x_or_less="4"
-			description="慢速舰船，使用虫洞后一段时间内会发射超充炮弹。适合与少量其他强大舰船组成军官舰队，大幅提高小舰队的耐久性。">
+			description="慢速单位，使用虫洞后一段时间内会发射超充炮弹。适合与少量其他强大单位组成军官舰队，大幅提高小舰队的耐久性。">
 	
 		<fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="10" cap="15"/>
 	</entity>
@@ -1746,7 +1746,7 @@
 			display_name_for_sidebar="包围蛛" aip_when_granted_by_hack="12"
 			tags="IncludeInFRS" supercharges_shields_of_rest_of_player_fleet="2.0"
 			starting_mark_level="Mark3" supercharges_only_apply_when_fleet_line_count_is_x_or_less="5"
-			description="对中距离的敌舰施加减速效果。适合与少量护卫舰组成小型舰队时使用，可以增强所有同伴舰船的护盾。">
+			description="对中距离的敌舰施加减速效果。适合与少量护卫舰组成小型舰队时使用，可以增强所有同伴单位的护盾。">
 		
 		<fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="10" cap="32"/>
 	</entity>
@@ -1763,7 +1763,7 @@
 			collision_priority="100"
 			display_name="吸血爪"
 			display_name_for_sidebar="吸血爪"
-			description="潜行近战舰船，在造成伤害时自我修复。"
+			description="潜行近战单位，在造成伤害时自我修复。"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Melee,Medium"
 			cost_for_ai_to_purchase="42" strength_multiplier="1.6"
 			hull_points="4000" shield_points="0" speed="AboveAverage1"
@@ -1817,7 +1817,7 @@
 
 	<entity name="Absorber" copy_from="VampireClaw" display_name="吸收者" thematic_groups="Strikecraft" 
 			display_name_for_sidebar="吸收者"
-			description="潜行近战舰船，伤害较低，但攻击时能极大地自我修复。"
+			description="潜行近战单位，伤害较低，但攻击时能极大地自我修复。"
 			cost_for_ai_to_purchase="36"
 			>
 		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="20" cap="32"/>		
@@ -1845,7 +1845,7 @@
 			collision_priority="100"
 			display_name="代谢锯"
 			display_name_for_sidebar="代谢锯"
-			description="近战舰船，攻击时会对自己造成伤害，但也会从目标中提取金属增加你的收入。"
+			description="近战单位，攻击时会对自己造成伤害，但也会从目标中提取金属增加你的收入。"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Melee,Heavy"
 			cost_for_ai_to_purchase="42" strength_multiplier="0.9"
 			hull_points="4200" shield_points="0" speed="AboveAverage5"
@@ -1897,7 +1897,7 @@
   
 	<entity name="Barnacle" copy_from="MetabolizingGangsaw" display_name="藤壶" thematic_groups="Strikecraft" 
 			display_name_for_sidebar="藤壶"
-			description="近战舰船，在造成伤害时会对自己造成伤害，但会对目标施加移动和武器减速效果，同时从目标中提取金属增加你的收入。" 
+			description="近战单位，在造成伤害时会对自己造成伤害，但会对目标施加移动和武器减速效果，同时从目标中提取金属增加你的收入。" 
 			tech_upgrades_that_benefit_me="Melee,Subterfuge"       
 			>
 		<fleet_membership name="AddedToFleet" ship_cap_group="Strike" weight="20" cap="32"/> 
@@ -1912,7 +1912,7 @@
   
 	<entity name="FusionSaw" copy_from="MetabolizingGangsaw" display_name="聚变锯" thematic_groups="Strikecraft" 
 			display_name_for_sidebar="聚变锯"
-			description="近战舰船，攻击时会对自己造成伤害，但能极大地绕过目标的个人护盾。"   
+			description="近战单位，攻击时会对自己造成伤害，但能极大地绕过目标的个人护盾。"   
 			speed="AboveAverage2"
 			tech_upgrades_that_benefit_me="Melee,Fusion"
 			>
@@ -2060,7 +2060,7 @@
 			visuals_scale_multiplier="3.8"
 			collision_priority="100"
 			display_name="以太喷射机"
-			description="快速的蜂群类型，具有令人惊讶的耐久性和强大的能力（制造成本也非常昂贵），能够抓住舰船并拖动，同时保持完全隐形。"
+			description="快速的蜂群类型，具有令人惊讶的耐久性和强大的能力（制造成本也非常昂贵），能够抓住单位并拖动，同时保持完全隐形。"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Technologist,Light"
 			cost_for_ai_to_purchase="92" strength_multiplier="1.4"
 			hull_points="8400" shield_points="0" speed="AboveAverage4"
@@ -2116,7 +2116,7 @@
 	<entity name="Thief" copy_from="Etherjet" display_name="窃贼" thematic_groups="Strikecraft"
 			is_disallowed_from_spawning_in_waves="true"
 			display_name_for_sidebar="窃贼"
-			description="非常快速的蜂群类型，具有令人惊讶的耐久性和强大的能力（制造成本也非常昂贵），伤害较低但非常擅长使用牵引光束偷取舰船，同时保持完全隐形。"
+			description="非常快速的蜂群类型，具有令人惊讶的耐久性和强大的能力（制造成本也非常昂贵），伤害较低但非常擅长使用牵引光束偷取单位，同时保持完全隐形。"
 			speed="AboveAverage6"
 			metal_cost="6800"
 			engine_gx="17"
@@ -2349,7 +2349,7 @@
 			display_name_for_sidebar="煽动寄生者" aip_when_granted_by_hack="12"
 			tags="IncludeInFRS" supercharges_attack_power_of_rest_of_player_fleet="1.5"
 			starting_mark_level="Mark3" supercharges_only_apply_when_fleet_line_count_is_x_or_less="6"
-			description="在摧毁目标方面效果不佳，但能使目标在死亡时变成盟军僵尸。适合与少量高伤害输出舰船组成小舰队，使它们的攻击力更强。">
+			description="在摧毁目标方面效果不佳，但能使目标在死亡时变成盟军僵尸。适合与少量高伤害输出单位组成小舰队，使它们的攻击力更强。">
 		
 		<fleet_membership name="OtherHackables" ship_cap_group="Strike" weight="10" cap="32"/>
 	</entity>

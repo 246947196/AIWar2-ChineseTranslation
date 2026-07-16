@@ -133,7 +133,7 @@ namespace Arcen.AIW2.External
             if ( !string.IsNullOrEmpty( starbaseDescription ) )
                 buffer.Add( starbaseDescription ).Add( "\n\n" );
             buffer.Add( "一个未认领的舰队星站位于" ).Add( Objective.RelatedEntity1.GetPlanetName_Safe(), ObjectiveColors.Reward ).Add( "。\n\n" );
-            buffer.Add( "占领后可获得新的" ).Add( "舰船类型", ObjectiveColors.Keyword ).Add( "。" );
+            buffer.Add( "占领后可获得新的" ).Add( "单位类型", ObjectiveColors.Keyword ).Add( "。" );
         }
     }
 
@@ -144,7 +144,7 @@ namespace Arcen.AIW2.External
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
             buffer.Add( "舰队帝国可以通过认领散布在银河各处的", ObjectiveColors.Hint ).Add( "星站", "ffaa44" ).Add( "来扩张。\n\n" );
-            buffer.Add( "每个星站都是一个行动基地：它容纳你的舰队、生产游侠，并锚定你的采矿补给线。地图上的星站可让你获得强大的新型舰船类型，并且升级也更便宜。\n\n" );
+            buffer.Add( "每个星站都是一个行动基地：它容纳你的舰队、生产游侠，并锚定你的采矿补给线。地图上的星站可让你获得强大的新型单位类型，并且升级也更便宜。\n\n" );
             buffer.Add( "未认领的星站在情报菜单的关键可占领物下列出。", ObjectiveColors.Hint );
         }
     }

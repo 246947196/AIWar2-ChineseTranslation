@@ -28,7 +28,7 @@ namespace Arcen.AIW2.External
                         chatHandlerOrNull.PlanetToView = Target.Planet;
 
                     World_AIW2.Instance.QueueChatMessageOrCommand(
-                        "人类黑客刚刚在 " + Target.GetPlanetName_Safe() + " 摧毁了一个 " + Target.TypeData.GetDisplayName(), ChatType.LogToCentralChat,
+                        "人类入侵者刚刚在 " + Target.GetPlanetName_Safe() + " 摧毁了一个 " + Target.TypeData.GetDisplayName(), ChatType.LogToCentralChat,
                         chatHandlerOrNull );
                 }
 
@@ -53,7 +53,7 @@ namespace Arcen.AIW2.External
                         chatHandlerOrNull.PlanetToView = Target.Planet;
 
                     World_AIW2.Instance.QueueChatMessageOrCommand(
-                        "人类黑客未能在 " + Target.GetPlanetName_Safe() + " 摧毁任何东西", ChatType.LogToCentralChat, chatHandlerOrNull );
+                        "人类入侵者未能在 " + Target.GetPlanetName_Safe() + " 摧毁任何东西", ChatType.LogToCentralChat, chatHandlerOrNull );
                 }
             }
 
@@ -89,11 +89,11 @@ namespace Arcen.AIW2.External
                         chatHandlerOrNull.SquadToView = LazyLoadSquadWrapper.Create( Target );
 
                     World_AIW2.Instance.QueueChatMessageOrCommand(
-                        "人类黑客刚刚在 " + Target.GetPlanetName_Safe() + " 重新编程了一个 " + Target.TypeData.GetDisplayName(),
+                        "人类入侵者刚刚在 " + Target.GetPlanetName_Safe() + " 重新编程了一个 " + Target.TypeData.GetDisplayName(),
                         ChatType.LogToCentralChat, chatHandlerOrNull );
                 }
 
-                EndpointFunctions.TransferEntityToFaction( Target, Hacker.PlanetFaction.Faction, "重新编程黑客！" );
+                EndpointFunctions.TransferEntityToFaction( Target, Hacker.PlanetFaction.Faction, "重新编程入侵！" );
             }
             else
             {
@@ -104,7 +104,7 @@ namespace Arcen.AIW2.External
                         chatHandlerOrNull.PlanetToView = Target.Planet;
 
                     World_AIW2.Instance.QueueChatMessageOrCommand(
-                        "人类黑客未能在 " + Target.GetPlanetName_Safe() + " 重新编程任何东西", ChatType.LogToCentralChat, chatHandlerOrNull );
+                        "人类入侵者未能在 " + Target.GetPlanetName_Safe() + " 重新编程任何东西", ChatType.LogToCentralChat, chatHandlerOrNull );
                 }
             }
 

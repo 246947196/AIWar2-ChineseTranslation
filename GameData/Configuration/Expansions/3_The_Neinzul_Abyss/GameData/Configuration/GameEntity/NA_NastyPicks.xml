@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
 
@@ -15,7 +15,7 @@
 			y_offset_of_icon="20"
 			display_name="轨道惯性导弹炮台"
 			display_name_for_sidebar="轨道IMB"
-			description="一种轨道防御结构，利用长距离对敌人造成巨大伤害。使用惯性导弹击退过于靠近的小型舰船，将其击退并使其引擎瘫痪。惯性导弹对免疫击退效果的舰船造成更高伤害。"
+			description="一种轨道防御结构，利用长距离对敌人造成巨大伤害。使用惯性导弹击退过于靠近的小型单位，将其击退并使其引擎瘫痪。惯性导弹对免疫击退效果的单位造成更高伤害。"
 			behavior="Stationary"
 			never_leaves_remains="false"
 			starting_mark_level="Mark2"

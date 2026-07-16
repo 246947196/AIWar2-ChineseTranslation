@@ -1,8 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <input_action name="Debug_StartTestChamber"
       category="Debug" display_name="启动测试房间"
-      description="如果您想测试舰船平衡性，可以使用'测试房间'来进行。填写[安装位置]/GameData/Configuration/TestChamber/中的XML文件，然后在主菜单界面按下此键进入。"
+      description="如果您想测试单位平衡性，可以使用'测试房间'来进行。填写[安装位置]/GameData/Configuration/TestChamber/中的XML文件，然后在主菜单界面按下此键进入。"
       dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Input_DebugHandler"
       default_should_override_saved_if_older_than_version="KeyRebindings_744"
       key="None" />
@@ -69,8 +69,8 @@
       default_should_override_saved_if_older_than_version="3803_Testing"
       key="F7" />
   <input_action name="Debug_ToggleHideGimbals"
-      category="实用工具" display_name="切换隐藏舰船万向节"
-      description="隐藏舰船万向节，适用于截图。再次按下以显示万向节。"
+      category="实用工具" display_name="切换隐藏单位万向节"
+      description="隐藏单位万向节，适用于截图。再次按下以显示万向节。"
       dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Input_DebugHandler"
       default_should_override_saved_if_older_than_version="3803_Testing"
       key="None" />

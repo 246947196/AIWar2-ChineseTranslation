@@ -1,4 +1,4 @@
-﻿using Arcen.AIW2.Core;
+using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -58,7 +58,7 @@ namespace Arcen.AIW2.External
                     GameEntity_Squad castle = data.HomeCastle.GetSquad();
                     if ( castle != null )
                     {
-                        Buffer.Add( "此舰船从 " ).Add( castle.TypeData.GetDisplayName(), "a1ffa1" ).Add( " 调度，在 " ).Add( castle.Planet.Name, "ffa1a1" );
+                        Buffer.Add( "此单位从 " ).Add( castle.TypeData.GetDisplayName(), "a1ffa1" ).Add( " 调度，在 " ).Add( castle.Planet.Name, "ffa1a1" );
                         TemplarPerUnitBaseInfo castleData = castle.TryGetExternalBaseInfoAs<TemplarPerUnitBaseInfo>();
                         Planet defensePlanet = null;
                         if ( castleData != null )
@@ -83,11 +83,11 @@ namespace Arcen.AIW2.External
                     }
                 }
                 else if ( RelatedEntityTypeData.IsCombatant && RelatedEntityTypeData.IsMobileCombatant )
-                    Buffer.Add( "此舰船被调度攻击玩家。" );
+                    Buffer.Add( "此单位被调度攻击玩家。" );
 
                 if ( data.StrengthRalliedToWave > 0 && debug )
                 {
-                    Buffer.Add( "此舰船已集结 " ).Add( data.StrengthRalliedToWave, "a1ffa1" ).Add( " 战力。" );
+                    Buffer.Add( "此单位已集结 " ).Add( data.StrengthRalliedToWave, "a1ffa1" ).Add( " 战力。" );
                 }
             }
             catch ( Exception ) { }

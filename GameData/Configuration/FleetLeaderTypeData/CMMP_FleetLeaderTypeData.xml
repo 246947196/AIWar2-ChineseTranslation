@@ -5,7 +5,7 @@
   <fleet_leader_type name="Officer" display_name="军官舰" required_special_entity_type="MobileOfficerCombatFleetFlagship"/>
   <fleet_leader_type name="Battlestation" display_name="战斗空间站" required_special_entity_type="BattlestationBasic"/>
   <fleet_leader_type name="Citadel" display_name="堡垒" required_special_entity_type="BattlestationCitadel"/>
-  <fleet_leader_type name="MobileSupport" display_name="支援工厂" required_special_entity_type="MobileSupportFleetFlagship"/>
+  <fleet_leader_type name="MobileSupport" display_name="支援机动兵工厂" required_special_entity_type="MobileSupportFleetFlagship"/>
   <fleet_leader_type name="SpireLostFrigate" display_name="尖塔失落护卫舰" required_special_entity_type="MobileOfficerCombatFleetFlagship"/>
   <fleet_leader_type name="HomeArk" display_name="方舟" required_special_entity_type="HumanHomeArk"/>
   

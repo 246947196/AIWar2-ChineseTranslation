@@ -58,7 +58,7 @@
        sort_order="50" group_type="UnitClass"
        description="堡垒站是可移动的舰队领袖单位，可以在行星之间移动并在上面建造各种防御结构，而且自身也是相当强大的战斗单位。"/> 
 
-  <thematic_group_type name="Factory" display_name="工厂单位"
+  <thematic_group_type name="Factory" display_name="兵工厂单位"
        sort_order="50" group_type="UnitClass"
        description="用于建造单位以充实你的移动舰队的单位。"/> 
 
@@ -66,9 +66,9 @@
        sort_order="50" group_type="UnitClass"
        description="常见的舰队领袖单位，没有武器，但通常有其他优势。"/>
 
-  <thematic_group_type name="Warhead" display_name="弹头武器"
+  <thematic_group_type name="Warhead" display_name="飞弹武器"
           sort_order="50" group_type="UnitClass"
-          description="弹头武器是你可以通过黑客手段获取的巨型武器，使用一次后就会消失。它们通常非常强大，大多数在DLC1中。"/>
+           description="飞弹武器是你可以通过入侵手段获取的巨型武器，使用一次后就会消失。它们通常非常强大，大多数在DLC1中。"/>
 
   <thematic_group_type name="Drone" display_name="无人机"
           sort_order="99997" group_type="UnitClass"

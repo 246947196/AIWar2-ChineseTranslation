@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 	
 <!-- New Outguard for Zenith Onslaught-->	
@@ -66,7 +66,7 @@
 			voice_group="Turret"
 			category="Ship" is_turret="true"
 			collision_priority="1000"
-			display_name="舰船压缩机"
+			display_name="单位压缩机"
 			description="经过改造的回收设施；现在是一座堡垒，它会将敌人吸入，然后在自我修复的过程中对敌人进行猛烈压缩。"
 			behavior="Stationary"			
 			starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Expatriate"
@@ -116,7 +116,7 @@
 			collision_priority="1000"
 			display_name="安抚干扰炮塔"
 			display_name_for_sidebar="安抚干扰炮"
-			description="作为舰船压缩机回收舰船时的安全措施，该炮塔可使武器系统失效。"
+			description="作为单位压缩机回收单位时的安全措施，该炮塔可使武器系统失效。"
 			behavior="Stationary"			
 			starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Expatriate"
 			build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true"
@@ -155,7 +155,7 @@
 			collision_priority="1000"
 			display_name="强力酸液炮塔"
 			display_name_for_sidebar="强力酸液炮"
-			description="一种先进的酸液炮塔，能够腐蚀比普通炮塔更厚的装甲，使舰船压缩机能更有效地回收舰船。它能攻击多个敌人，并使敌人在短时间内承受更多伤害。"
+			description="一种先进的酸液炮塔，能够腐蚀比普通炮塔更厚的装甲，使单位压缩机能更有效地回收单位。它能攻击多个敌人，并使敌人在短时间内承受更多伤害。"
 			behavior="Stationary"			
 			starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Expatriate"
 			build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true"
@@ -417,9 +417,9 @@
 <!--Shade. Special units for Shades of Hades merc. Stronger apparition -->
 	<entity name="Shade"  copy_from="Apparition" 
       thematic_groups="IsolatedHumanResistance,Outguard"
-			display_name="阴影护卫舰"
-			display_name_for_sidebar="阴影护卫舰"
-			description="精英幻影护卫舰，配备离子干扰器，可使静态气泡护盾短路，造成暂时瘫痪。"
+			display_name="阴影星舰"
+			display_name_for_sidebar="阴影星舰"
+			description="精英幻影星舰，配备离子干扰器，可使静态气泡护盾短路，造成暂时瘫痪。"
 			starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Expatriate"
 			>			
 		<system name="V6" display_name="聚变螺栓"
@@ -548,7 +548,7 @@
 			collision_priority="1000"
 			display_name="引力裂隙"
 			display_name_for_sidebar="引力裂隙"
-			description="虚空召唤者前哨站利用曲速网格制造的不稳定奇点。这个裂隙会吸引那些无法逃脱其事件视界的舰船，并以巨大的内爆力将它们碾碎。此外，裂隙产生的引力会减缓除最强引擎舰船之外的所有舰船的速度，并阻止它们通过虫洞离开。"
+			description="虚空召唤者前哨站利用曲速网格制造的不稳定奇点。这个裂隙会吸引那些无法逃脱其事件视界的单位，并以巨大的内爆力将它们碾碎。此外，裂隙产生的引力会减缓除最强引擎单位之外的所有单位的速度，并阻止它们通过虫洞离开。"
 			blocks_enemy_claim_flows="true"
 			voice_group="Silent"
 			starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Expatriate"

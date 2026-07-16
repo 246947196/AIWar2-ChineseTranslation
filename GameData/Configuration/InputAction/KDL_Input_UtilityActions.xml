@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <input_action name="HoldToAdjustFrameFrequencyInUI"
       category="Hidden" display_name="按住以调整游戏速度样式"
@@ -18,34 +18,34 @@
       key="Minus" />
   <input_action name="IncreaseFrameFrequency"
       category="实用工具" display_name="更快节奏的游戏速度样式"
-      description="每按一次这个键，舰船移动速度和攻击力就会逐渐提高。这会导致战斗节奏更快，需要更快的点击速度。这会对游戏平衡产生影响。"
+      description="每按一次这个键，单位移动速度和攻击力就会逐渐提高。这会导致战斗节奏更快，需要更快的点击速度。这会对游戏平衡产生影响。"
       dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Input_MainHandler"
       default_should_override_saved_if_older_than_version="760_KeybindingsAgain"
       key="Plus" modifier_1="LeftControl" />
   <input_action name="DecreaseFrameFrequency"
       category="实用工具" display_name="更从容的游戏速度样式"
-      description="每按一次这个键，舰船移动速度和攻击力就会逐渐降低。这会带来更深思熟虑的战斗体验，减少匆忙感。这会对游戏平衡产生影响。"
+      description="每按一次这个键，单位移动速度和攻击力就会逐渐降低。这会带来更深思熟虑的战斗体验，减少匆忙感。这会对游戏平衡产生影响。"
       dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Input_MainHandler"
       default_should_override_saved_if_older_than_version="760_KeybindingsAgain"
       key="Minus" modifier_1="LeftControl" />
   <input_action name="ShowShipRanges_All"
-      category="覆盖层" display_name="显示舰船射程（所有舰船）"
-      description="显示该行星上所有舰船的所有武器攻击范围。"
+      category="覆盖层" display_name="显示单位射程（所有单位）"
+      description="显示该行星上所有单位的所有武器攻击范围。"
       default_should_override_saved_if_older_than_version="KeyRebindings_744"
       check_type="Custom" key="Z" modifier_1="LeftShift" />
   <input_action name="ShowShipRanges_Selected"
-      category="覆盖层" display_name="显示舰船射程（仅选中的舰船）"
-      description="显示你在该行星上选中的所有舰船的所有武器攻击范围。"
+      category="覆盖层" display_name="显示单位射程（仅选中的单位）"
+      description="显示你在该行星上选中的所有单位的所有武器攻击范围。"
       default_should_override_saved_if_older_than_version="KeyRebindings_744"
       check_type="Custom" key="Z" />
   <input_action name="ShowShipRanges_Hovered"
-      category="覆盖层" display_name="显示舰船射程（仅鼠标悬停的舰船）"
-      description="显示你鼠标悬停的舰船的所有武器攻击范围。"
+      category="覆盖层" display_name="显示单位射程（仅鼠标悬停的单位）"
+      description="显示你鼠标悬停的单位的所有武器攻击范围。"
       default_should_override_saved_if_older_than_version="KeyRebindings_744"
       check_type="Custom" key="Z" />
   <input_action name="ShowShipOrders"
-      category="覆盖层" display_name="显示舰船命令（仅玩家）"
-      description="显示指示你选中的舰船移动命令的线条。"
+      category="覆盖层" display_name="显示单位命令（仅玩家）"
+      description="显示指示你选中的单位移动命令的线条。"
       default_should_override_saved_if_older_than_version="KeyRebindings_744"
       check_type="Custom" key="LeftShift" />
   <input_action name="MakePlanetClickSelectAndSwitchView"

@@ -234,7 +234,7 @@ namespace Arcen.AIW2.External
         {
             buffer.Add( "收割者", "ff8888" ).Add( "是戴森联盟面临的主要派系特定威胁。它们直接猎取库恩达。\n\n" );
             buffer.Add( "收割者茧", "ff4444" ).Add( "是需要关注的关键威胁。在茧孵化前摧毁它可消除其会生成的波次并回收其储存的库恩达。如果茧孵化，可能触发全面收割者入侵。\n\n" );
-            buffer.Add( "不要完全忽视收割者。", "ffcccc" ).Add( "如果不加控制，它们可以通过收割AI舰船变得极其强大。\n\n" );
+            buffer.Add( "不要完全忽视收割者。", "ffcccc" ).Add( "如果不加控制，它们可以通过收割AI单位变得极其强大。\n\n" );
             buffer.Add( "茧在情报菜单中列为目标。", "ffaaaa" );
         }
     }
@@ -257,7 +257,7 @@ namespace Arcen.AIW2.External
         public MouseHandlingResult ClickHandler( ActualObjective Objective ) { return MouseHandlingResult.None; }
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "戴森联盟由四个种族组成，每个种族在建造其据点时贡献不同的舰船和资源收入。\n\n" );
+            buffer.Add( "戴森联盟由四个种族组成，每个种族在建造其据点时贡献不同的单位和资源收入。\n\n" );
             buffer.Add( "尖塔", "88aaff" ).Add( "据点可生产大量科技。\n" );
             buffer.Add( "天顶", "aaffaa" ).Add( "据点可生产较少量金属和科技。\n" );
             buffer.Add( "Neinzul", "ffaaaa" ).Add( "据点可生产金属和入侵点数。\n" );

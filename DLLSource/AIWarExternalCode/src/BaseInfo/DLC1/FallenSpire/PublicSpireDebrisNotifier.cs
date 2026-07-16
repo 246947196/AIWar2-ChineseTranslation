@@ -1,4 +1,4 @@
-﻿using Arcen.AIW2.Core;
+using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -91,9 +91,9 @@ namespace Arcen.AIW2.External
                         tooltipBuffer.Add( " 残骸将被 " ).Add( destFaction.GetDisplayName(), destFaction.FactionCenterColor.ColorHexBrighter );
                         debugCode = 250;
                         if ( destFaction.Type == FactionType.AI )
-                            tooltipBuffer.Add( " 将其转化为强大的尖塔舰船使用。" );
+                            tooltipBuffer.Add( " 将其转化为强大的尖塔单位使用。" );
                         else
-                            tooltipBuffer.Add( " 将利用其技术建造新舰船。" );
+                            tooltipBuffer.Add( " 将利用其技术建造新单位。" );
                     }
                     tooltipBuffer.Add( "\n" );
                 }

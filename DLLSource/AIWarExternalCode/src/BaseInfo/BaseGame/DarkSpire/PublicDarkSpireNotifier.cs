@@ -1,4 +1,4 @@
-﻿using Arcen.AIW2.Core;
+using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -43,7 +43,7 @@ namespace Arcen.AIW2.External
 
             tooltipBuffer.Add( "<color=#" ).Add( colorString ).Add( ">" );
             tooltipBuffer.Add( "黑暗尖塔</color> 复仇打击将在 ").AddHoursAndMinutes(Data.eventTimeRemaining - World_AIW2.Instance.GameSecond).Add("后启动。" );
-            tooltipBuffer.Add( "\n\n" ).Add( "\t复仇打击将使星系中所有复仇发生器同时产生大量舰船。" );
+            tooltipBuffer.Add( "\n\n" ).Add( "\t复仇打击将使星系中所有复仇发生器同时产生大量单位。" );
             Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( null, tooltipBuffer.GetStringAndResetForNextUpdate() );
             return true;
         }

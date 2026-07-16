@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   
   <display_mode name="ByName" is_default="true" sort_order="1"  display_name="按名称" tooltip="按名称排序。"
@@ -7,10 +7,10 @@
   <display_mode name="ByShortName" sort_order="2"  display_name="按简称" tooltip="按简称排序。"
            dll_name="AIWarExternalVisualizationCode" type_name="Arcen.AIW2.ExternalVisualization.UnitEncyclopediaSortStyle_Main" />
 
-  <display_mode name="ByLineStrength" sort_order="3"  display_name="按队列强度" tooltip="队列强度是该舰船标准队列的强度。"
+  <display_mode name="ByLineStrength" sort_order="3"  display_name="按队列强度" tooltip="队列强度是该单位标准队列的强度。"
            dll_name="AIWarExternalVisualizationCode" type_name="Arcen.AIW2.ExternalVisualization.UnitEncyclopediaSortStyle_Main" />
   
-  <display_mode name="ByStrengthValue" sort_order="4"  display_name="按强度价值" tooltip="价值是强度相对于舰船金属成本的归一化值。"
+  <display_mode name="ByStrengthValue" sort_order="4"  display_name="按强度价值" tooltip="价值是强度相对于单位金属成本的归一化值。"
            dll_name="AIWarExternalVisualizationCode" type_name="Arcen.AIW2.ExternalVisualization.UnitEncyclopediaSortStyle_Main" />
   
   <display_mode name="ByArmor" sort_order="50"  display_name="按护甲" tooltip="按护甲厚度排序，并在每行显示该值。"
@@ -28,31 +28,31 @@
   <display_mode name="BySpeed" sort_order="50"  display_name="按速度" tooltip="按移动速度排序，并在每行显示该值。"
            dll_name="AIWarExternalVisualizationCode" type_name="Arcen.AIW2.ExternalVisualization.UnitEncyclopediaSortStyle_Main" />
 
-  <display_mode name="ByLineEnergy" sort_order="101"  display_name="按队列能量" tooltip="为该舰船标准队列供电所需的能量。"
+  <display_mode name="ByLineEnergy" sort_order="101"  display_name="按队列能量" tooltip="为该单位标准队列供电所需的能量。"
            dll_name="AIWarExternalVisualizationCode" type_name="Arcen.AIW2.ExternalVisualization.UnitEncyclopediaSortStyle_Main" />
   
-  <display_mode name="ByLineMetal" sort_order="102"  display_name="按队列金属成本" tooltip="该舰船标准队列的金属成本。"
+  <display_mode name="ByLineMetal" sort_order="102"  display_name="按队列金属成本" tooltip="该单位标准队列的金属成本。"
            dll_name="AIWarExternalVisualizationCode" type_name="Arcen.AIW2.ExternalVisualization.UnitEncyclopediaSortStyle_Main" />
 
-  <display_mode name="ByLineHull" sort_order="103"  display_name="按队列船体值" tooltip="该舰船标准队列的船体点数。"
+  <display_mode name="ByLineHull" sort_order="103"  display_name="按队列船体值" tooltip="该单位标准队列的船体点数。"
            dll_name="AIWarExternalVisualizationCode" type_name="Arcen.AIW2.ExternalVisualization.UnitEncyclopediaSortStyle_Main" />
 
-  <display_mode name="ByLineShields" sort_order="104"  display_name="按队列护盾值" tooltip="该舰船标准队列的护盾点数"
+  <display_mode name="ByLineShields" sort_order="104"  display_name="按队列护盾值" tooltip="该单位标准队列的护盾点数"
            dll_name="AIWarExternalVisualizationCode" type_name="Arcen.AIW2.ExternalVisualization.UnitEncyclopediaSortStyle_Main" />
 
-  <display_mode name="ByLineHealth" sort_order="105"  display_name="按队列生命值" tooltip="该舰船标准队列的船体和护盾总和。"
+  <display_mode name="ByLineHealth" sort_order="105"  display_name="按队列生命值" tooltip="该单位标准队列的船体和护盾总和。"
            dll_name="AIWarExternalVisualizationCode" type_name="Arcen.AIW2.ExternalVisualization.UnitEncyclopediaSortStyle_Main" />
 
   <display_mode name="ByHealthValue" sort_order="106"  display_name="按生命值价值" tooltip="船体和护盾总和相对于金属成本的归一化值。"
            dll_name="AIWarExternalVisualizationCode" type_name="Arcen.AIW2.ExternalVisualization.UnitEncyclopediaSortStyle_Main" />
 
-  <display_mode name="ByLineDps" sort_order="107"  display_name="按队列每秒伤害" tooltip="该舰船标准队列的每秒伤害值。"
+  <display_mode name="ByLineDps" sort_order="107"  display_name="按队列每秒伤害" tooltip="该单位标准队列的每秒伤害值。"
            dll_name="AIWarExternalVisualizationCode" type_name="Arcen.AIW2.ExternalVisualization.UnitEncyclopediaSortStyle_Main" />
 
   <display_mode name="ByDpsValue" sort_order="108"  display_name="按每秒伤害价值" tooltip="每秒伤害相对于金属成本的归一化值。"
            dll_name="AIWarExternalVisualizationCode" type_name="Arcen.AIW2.ExternalVisualization.UnitEncyclopediaSortStyle_Main" />
 
-  <display_mode name="ByAICost" sort_order="109"  display_name="按AI成本" tooltip="AI使用其预算为该舰船支付的价格。"
+  <display_mode name="ByAICost" sort_order="109"  display_name="按AI成本" tooltip="AI使用其预算为该单位支付的价格。"
            dll_name="AIWarExternalVisualizationCode" type_name="Arcen.AIW2.ExternalVisualization.UnitEncyclopediaSortStyle_Main" />
 
   <display_mode name="ByAIValue" sort_order="110"  display_name="按AI价值" tooltip="强度相对于AI成本的归一化值。"

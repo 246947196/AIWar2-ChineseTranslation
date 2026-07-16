@@ -290,7 +290,7 @@ namespace Arcen.AIW2.External
                             debugCode = 200;
                             Faction localFaction = World_AIW2.Instance.GetPlayerFactionForUIOrNull();
                             debugCode = 300;
-                            tooltipBuffer.Add( "<b><u>黑客： " ).Add( Info.HackingType.DisplayName ).Add( "</u></b>\n" );
+                            tooltipBuffer.Add( "<b><u>入侵： " ).Add( Info.HackingType.DisplayName ).Add( "</u></b>\n" );
                             tooltipBuffer.Add("更新此门楣以建造以下内容： ");
                             conversion.ToBuffer( tooltipBuffer );
                             //tooltipBuffer.Add("internal: " + conversion.InternalName);
@@ -553,8 +553,8 @@ namespace Arcen.AIW2.External
                             debugCode = 200;
                             Faction localFaction = World_AIW2.Instance.GetPlayerFactionForUIOrNull();
                             debugCode = 300;
-                            tooltipBuffer.Add( "<b><u>黑客： " ).Add( Info.HackingType.DisplayName ).Add( "</u></b>\n" );
-                            tooltipBuffer.Add("更新此门楣以集结舰船至： ");
+                            tooltipBuffer.Add( "<b><u>入侵： " ).Add( Info.HackingType.DisplayName ).Add( "</u></b>\n" );
+                            tooltipBuffer.Add("更新此门楣以集结单位至： ");
                             tooltipBuffer.Add(flagship.TypeData.GetDisplayName() , "a1ffa1").Add( " on ").Add( flagship.Planet.Name, "ffa1a1");
                             Fleet fleet = flagship.FleetMembership.Fleet;
                             tooltipBuffer.Add("\n").Add("快捷键 ").Add( fleet.TiedToKeybindIndexOneIndexed, "ff23ff" );
@@ -1021,7 +1021,7 @@ namespace Arcen.AIW2.External
                             debugCode = 200;
                             Faction localFaction = World_AIW2.Instance.GetPlayerFactionForUIOrNull();
                             debugCode = 300;
-                            tooltipBuffer.Add( "<b><u>黑客： " ).Add( Info.HackingType.DisplayName ).Add( "</u></b>\n" );
+                            tooltipBuffer.Add( "<b><u>入侵： " ).Add( Info.HackingType.DisplayName ).Add( "</u></b>\n" );
                             tooltipBuffer.Add("这将占领此卫星并将其转变为 ").Add(moonData.GetDisplayName(), "a1ffa1").Add("。\n");
 
                             debugCode = 400;
@@ -1398,7 +1398,7 @@ namespace Arcen.AIW2.External
                             debugCode = 200;
                             Faction localFaction = World_AIW2.Instance.GetPlayerFactionForUIOrNull();
                             debugCode = 300;
-                            tooltipBuffer.Add( "<b><u>黑客： " ).Add( Info.HackingType.DisplayName ).Add( "</u></b>\n" );
+                            tooltipBuffer.Add( "<b><u>入侵： " ).Add( Info.HackingType.DisplayName ).Add( "</u></b>\n" );
                             tooltipBuffer.Add("将此军械库转变为 " + typeData.InternalName + " 种族。");
                             tooltipBuffer.Add("\n\n").Add( typeData.description);
                         }

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <ai_type name="FullEnsemble"
   	   is_default="true"
@@ -82,7 +82,7 @@
            abbreviation="Simple"
            type_name="Arcen.AIW2.External.AITypeController_SimpleEnsemble"
            type_difficulty="Easier"
-           description="与完全编队大体相似，但减少了一些特殊舰船变体。这里仍有很多内容，但探索时不会遇到太多疯狂的东西。"
+           description="与完全编队大体相似，但减少了一些特殊单位变体。这里仍有很多内容，但探索时不会遇到太多疯狂的东西。"
   >
     <budget_item type="Reinforcement" seconds_between_attempts_to_spend="300" normal_ship_group_cat="SimpleReinforcements"
       spend_on_threshold="true"
@@ -202,7 +202,7 @@
            display_name="狙击手"
            abbreviation="Sniper"
            type_difficulty="Moderate"
-           description="专注于远程舰船和炮塔。"
+           description="专注于远程单位和炮塔。"
   >
       <budget_item type="Reinforcement" seconds_between_attempts_to_spend="300" normal_ship_group_cat="SniperReinforcements"
                  spend_on_threshold="true"
@@ -233,7 +233,7 @@
            display_name="护盾克星"
            abbreviation="Shield Hater"
            type_difficulty="Easier"
-           description="专注于对护盾特别有效的舰船和武器。"
+           description="专注于对护盾特别有效的单位和武器。"
   >
     <budget_item type="Reinforcement" seconds_between_attempts_to_spend="300" normal_ship_group_cat="AnyReinforcements"
       spend_on_threshold="true"
@@ -301,7 +301,7 @@
            display_name="陷阱大师"
            abbreviation="Ensnarer"
            type_difficulty="Moderate"
-           description="专注于使用牵引光束的舰船和炮塔。"
+           description="专注于使用牵引光束的单位和炮塔。"
   >
       <budget_item type="Reinforcement" seconds_between_attempts_to_spend="300" normal_ship_group_cat="EnsnarerReinforcements"
       spend_on_threshold="true"
@@ -396,7 +396,7 @@
            ratio_of_inferiority_at_which_threat_retreats="2"
            ratio_of_inferiority_at_which_defense_hunkers_down="2"
            ratio_of_inferiority_at_which_guard_ships_go_threat="5"
-           description="当人类舰船在其行星上徒劳牺牲时，会发动规模更大的反击。"
+           description="当人类单位在其行星上徒劳牺牲时，会发动规模更大的反击。"
            counterattack_multiplier="2.0"
   >
     </ai_type>
@@ -405,7 +405,7 @@
            display_name="幽灵"
            type_difficulty="Moderate"
            abbreviation="Ghost"
-           description="专注于使用隐形技术的舰船和防御设施。"
+           description="专注于使用隐形技术的单位和防御设施。"
   >
       <budget_item type="Reinforcement" seconds_between_attempts_to_spend="300" normal_ship_group_cat="CloakingHeavyReinforcements"
                  spend_on_threshold="true"
@@ -501,7 +501,7 @@
            display_name="蜂群"
            abbreviation="Swarmer"
            type_difficulty="Hard"
-           description="非常喜欢拥有大量蜂群类型单位，以及那些死亡时会生成更多单位的舰船。"
+           description="非常喜欢拥有大量蜂群类型单位，以及那些死亡时会生成更多单位的单位。"
   >
     <budget_item type="Reinforcement" seconds_between_attempts_to_spend="300" normal_ship_group_cat="SwarmerReinforcements"
                  spend_on_threshold="true"
@@ -631,7 +631,7 @@
            display_name="单向门大师"
            abbreviation="Doormaster"
            type_difficulty="Easier"
-           description="在其行星上拥有许多黑洞机器，这些机器会阻止大多数完好无损的舰船离开。"
+           description="在其行星上拥有许多黑洞机器，这些机器会阻止大多数完好无损的单位离开。"
            type_name="Arcen.AIW2.External.AITypeController_OneWayDoormaster"
   >
   </ai_type>  

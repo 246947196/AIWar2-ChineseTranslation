@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   <faction name="Human" is_partial_record="true">
@@ -8,23 +8,23 @@
           sort_group="200" setting_type="CustomDropdownCoreTableSubset" default_option="RandomArk"
           random_option_name="RandomArk" random_option_display_name="&lt;color=#ffd965&gt;随机&lt;/color&gt;" random_option_description="为人类随机选择一个方舟。"/>
     <custom_field requires_player_types="HumanArkEmpire"
-          name="ArkEmpireOptionGroup1" display_name="舰船生产线 1" related_table="ETag_ArkEmpireOptionGroup1" description="从你的方舟起飞的第一支舰队将是什么类型？"
+          name="ArkEmpireOptionGroup1" display_name="单位生产线 1" related_table="ETag_ArkEmpireOptionGroup1" description="从你的方舟起飞的第一支舰队将是什么类型？"
           sort_group="200" setting_type="CustomDropdownCoreTableSubset" default_option="RandomShipLine"
           random_option_name="RandomShipLine" random_option_display_name="&lt;color=#ffd965&gt;随机&lt;/color&gt;" random_option_description="完全随机选择一支舰队类型。"/>
     <custom_field requires_player_types="HumanArkEmpire"
-          name="ArkEmpireOptionGroup2" display_name="舰船生产线 2" related_table="ETag_ArkEmpireOptionGroup2" description="从你的方舟起飞的第二支舰队将是什么类型？"
+          name="ArkEmpireOptionGroup2" display_name="单位生产线 2" related_table="ETag_ArkEmpireOptionGroup2" description="从你的方舟起飞的第二支舰队将是什么类型？"
           sort_group="200" setting_type="CustomDropdownCoreTableSubset" default_option="RandomShipLine"
           random_option_name="RandomShipLine" random_option_display_name="&lt;color=#ffd965&gt;随机&lt;/color&gt;" random_option_description="完全随机选择一支舰队类型。"/>
     <custom_field requires_player_types="HumanArkEmpire"
-          name="ArkEmpireOptionGroup3" display_name="舰船生产线 3" related_table="ETag_ArkEmpireOptionGroup3" description="从你的方舟起飞的第三支舰队将是什么类型？"
+          name="ArkEmpireOptionGroup3" display_name="单位生产线 3" related_table="ETag_ArkEmpireOptionGroup3" description="从你的方舟起飞的第三支舰队将是什么类型？"
           sort_group="200" setting_type="CustomDropdownCoreTableSubset" default_option="RandomShipLine"
           random_option_name="RandomShipLine" random_option_display_name="&lt;color=#ffd965&gt;随机&lt;/color&gt;" random_option_description="完全随机选择一支舰队类型。"/>
     <custom_field requires_player_types="HumanArkEmpire"
-          name="ArkEmpireOptionGroup4" display_name="舰船生产线 4" related_table="ETag_ArkEmpireOptionGroup4" description="从你的方舟起飞的第四支舰队将是什么类型？"
+          name="ArkEmpireOptionGroup4" display_name="单位生产线 4" related_table="ETag_ArkEmpireOptionGroup4" description="从你的方舟起飞的第四支舰队将是什么类型？"
           sort_group="200" setting_type="CustomDropdownCoreTableSubset" default_option="RandomShipLine"
           random_option_name="RandomShipLine" random_option_display_name="&lt;color=#ffd965&gt;随机&lt;/color&gt;" random_option_description="完全随机选择一支舰队类型。"/>
     <custom_field requires_player_types="HumanArkEmpire"
-          name="ArkEmpireOptionGroup5" display_name="舰船生产线 5" related_table="ETag_ArkEmpireOptionGroup5" description="从你的方舟起飞的第五支舰队将是什么类型？"
+          name="ArkEmpireOptionGroup5" display_name="单位生产线 5" related_table="ETag_ArkEmpireOptionGroup5" description="从你的方舟起飞的第五支舰队将是什么类型？"
           sort_group="200" setting_type="CustomDropdownCoreTableSubset" default_option="RandomShipLine"
           random_option_name="RandomShipLine" random_option_display_name="&lt;color=#ffd965&gt;随机&lt;/color&gt;" random_option_description="完全随机选择一支舰队类型。"/>
 
@@ -32,8 +32,8 @@
     <!-- Spire-Infused Empire custom fields. -->
 
     <custom_field requires_player_types="SpireInfusedEmpire" name="ExpertMode"
-                  is_advanced_setting="true" display_name="&lt;color=#65d9ff&gt;尖塔&lt;/color&gt;: 专家模式(减缓尖塔舰船)"
-                  description="使尖塔舰船速度变慢。这会增加部署城市时所需的战略规划。"
+                  is_advanced_setting="true" display_name="&lt;color=#65d9ff&gt;尖塔&lt;/color&gt;: 专家模式(减缓尖塔单位)"
+                  description="使尖塔单位速度变慢。这会增加部署城市时所需的战略规划。"
                   sort_group="250" setting_type="BoolToggle" default="false"
 
         />

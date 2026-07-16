@@ -1,4 +1,4 @@
-﻿using Arcen.Universal;
+using Arcen.Universal;
 using Arcen.AIW2.Core;
 using System;
 
@@ -331,7 +331,7 @@ namespace Arcen.AIW2.External
                         int metalToRebuild = 0;
 
                         if ( showVerboseDetails )
-                            buffer.Add( "舰船线详情：" );
+                            buffer.Add( "单位线详情：" );
                         SortedShipLines.Clear();
                         foreach ( FleetMembership mem in fleet.MemberGroupsUnsorted_Sim )
                         {
@@ -382,7 +382,7 @@ namespace Arcen.AIW2.External
                                 buffer.Add( "已完成所有建造\n" );
                             else if ( metalToRebuild > 0 )
                             {
-                                buffer.Add( "重建损失舰船所需金属：" );
+                                buffer.Add( "重建损失单位所需金属：" );
                                 buffer.StartColor( "ccccee" );
                                 buffer.Add( "<b>" );
                                 ArcenExternalUIUtilities.WriteRoundedNumberWithSuffix( buffer, metalToRebuild, true, false );

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!--These "InitialPlayerBattlestation" are completely hand-designed battlestation-stlye fleets that are very inflexible by design.
       They are intended to be basic starting points that you can choose at the start of the game,
@@ -14,7 +14,7 @@
 
   <fleet_design name="ClassicStartingDefenses"
         display_name="默认防御站"
-        description="这种默认组合擅长在敌方舰船通过虫洞时进行拦截或减速，并且对中型目标具有强大火力。\n如果两次选择相同的起始防御站，第二个将随机生成。"
+        description="这种默认组合擅长在敌方单位通过虫洞时进行拦截或减速，并且对中型目标具有强大火力。\n如果两次选择相同的起始防御站，第二个将随机生成。"
         design_logic="InitialPlayerBattlestation" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >
@@ -84,7 +84,7 @@
 
   <fleet_design name="WebbedStartingDefenses"
         display_name="蛛网防御站"
-        description="这个组合非常适合对抗隐形舰船、引擎较弱的舰船、小型舰船群以及能源运营成本高的舰船。\n如果两次选择相同的起始防御站，第二个将随机生成。"
+        description="这个组合非常适合对抗隐形单位、引擎较弱的单位、小型单位群以及能源运营成本高的单位。\n如果两次选择相同的起始防御站，第二个将随机生成。"
         design_logic="InitialPlayerBattlestation" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >

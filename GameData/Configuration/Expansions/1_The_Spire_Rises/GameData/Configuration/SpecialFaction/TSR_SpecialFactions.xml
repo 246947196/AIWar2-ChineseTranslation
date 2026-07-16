@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <faction name="FallenSpire"
            display_name="陨落尖塔" short_name="陨落尖塔" processing_group="FallenSpire"
@@ -30,7 +30,7 @@
     <custom_field name="DebugMode" is_advanced_setting="true" display_name="超级简单模式" description="适合只想快速体验陨落尖塔的玩家，这会大幅降低AI反应强度并加快遗物生成速度。"
               sort_group="250" setting_type="BoolToggle" default="false" /> 
 
-    <custom_field name="ExpertMode" is_advanced_setting="true" display_name="专家模式(减缓尖塔舰船)" description="使尖塔舰船速度变慢。这会增加部署城市时所需的战略规划。"
+    <custom_field name="ExpertMode" is_advanced_setting="true" display_name="专家模式(减缓尖塔单位)" description="使尖塔单位速度变慢。这会增加部署城市时所需的战略规划。"
               sort_group="250" setting_type="BoolToggle" default="false" />
 
   </faction>
@@ -115,9 +115,9 @@
                   sort_group="200" setting_type="IntSlider" default="5" min="1" max="10"/>
 	  <custom_field name="SphereType" display_name="星体类型" description="哪种尖塔将入驻这个星体？根据你的选择，它们的整体特性，甚至所处的星体都会发生变化。
 
-灰色尖塔是最和平的，也是唯一愿意与你完全结盟的类型，只要你远离他们的星体。他们可以移动到距离星体最多 4 跳的位置。他们的星体可以被黑客入侵以获取弹头。
+灰色尖塔是最和平的，也是唯一愿意与你完全结盟的类型，只要你远离他们的星体。他们可以移动到距离星体最多 4 跳的位置。他们的星体可以被入侵以获取飞弹。
 
-多彩尖塔相当具有侵略性，其实力远超除帝国尖塔外的所有派系。它们只在开火前给你片刻警告。它们可以移动到距离星体最多 2 跳的位置。它们的星体可以被黑客入侵以获取星际武器。"
+多彩尖塔相当具有侵略性，其实力远超除帝国尖塔外的所有派系。它们只在开火前给你片刻警告。它们可以移动到距离星体最多 2 跳的位置。它们的星体可以被入侵以获取星际武器。"
                   sort_group="250" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Gray,Chromatic" default_option="Gray" />
 	  <custom_field name="PartOfTheAntiDarkSpireCoalition" is_advanced_setting="true" display_name="反黑暗尖塔联盟成员" 
 		description="如果启用分裂尖塔，允许该派系加入反黑暗尖塔联盟。"
@@ -138,7 +138,7 @@
 		       impact="Moderate"
 		       CanBeHostileToAll="true"
            exclude_from_za_territory="true"
-           description="在银河系中添加一个灰色尖塔戴森球。灰色尖塔是最和平的，也是唯一愿意与你完全结盟的类型，只要你远离他们的星体。他们还可以作为外星飞船和弹头蓝图的来源。
+           description="在银河系中添加一个灰色尖塔戴森球。灰色尖塔是最和平的，也是唯一愿意与你完全结盟的类型，只要你远离他们的星体。他们还可以作为外星飞船和飞弹蓝图的来源。
 
 &lt;color=#f25e1c&gt;中等影响:&lt;/color&gt; 虽然能在其母星周围制造显著威胁，但通常不会长时间阻碍你。在某些情况下，只要你尊重他们的边界，他们可能会成为可接受的盟友。"
            >
@@ -184,13 +184,13 @@
 	   CanBeHostileToAll="true"
            exclude_from_za_territory="true"
            templar_avoids_me="true"
-           description="启用分裂尖塔，这是黑暗尖塔与银河系中所有星体派系之间的大规模战争。星体派系将派出小型特遣部队，联合起来试图拆解黑暗尖塔的虚空巨构以获取部件，而黑暗尖塔的虚空巨构则更有可能扩张。随着黑暗尖塔的虚空巨构被摧毁，它们将留下残骸，星体派系将为各自的派系争夺额外收入而战斗。昔日的朋友可能成为明日的敌人。
+           description="启用分裂尖塔，这是黑暗尖塔与银河系中所有星体派系之间的大规模战争。星体派系将派出小型特遣部队，联合起来试图废弃黑暗尖塔的虚空巨构以获取部件，而黑暗尖塔的虚空巨构则更有可能扩张。随着黑暗尖塔的虚空巨构被摧毁，它们将留下残骸，星体派系将为各自的派系争夺额外收入而战斗。昔日的朋友可能成为明日的敌人。
 
 启用此派系时，将自动生成一个灰色星体和一个多彩星体，这些派系将使用为此派系设置的强度。
 
 将自动添加一个黑暗尖塔派系，并且可以单独配置。
 
-如果你帮助灰色尖塔或多彩尖塔变得足够强大，你将能够入侵它们，以获取弹头（灰色尖塔）或星际武器（多彩尖塔）。
+如果你帮助灰色尖塔或多彩尖塔变得足够强大，你将能够入侵它们，以获取飞弹（灰色尖塔）或星际武器（多彩尖塔）。
 
 &lt;color=#f25e1c&gt;高影响:&lt;/color&gt; 启用此选项后，你不仅会添加两个星体派系和一个黑暗尖塔派系，而且每个派系都会比正常情况下更强大，并积极参战。除了你自己的战争之外，你还需要担心另一场战争。
 

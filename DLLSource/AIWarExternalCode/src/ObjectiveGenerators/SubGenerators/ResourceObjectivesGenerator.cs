@@ -1,4 +1,4 @@
-﻿using Arcen.AIW2.Core;
+using Arcen.AIW2.Core;
 using System;
 
 using System.Text;
@@ -1005,11 +1005,11 @@ namespace Arcen.AIW2.External
                     }
                 }
                 buffer.Add( "+1 ", "ffa1a1").Add(" <color=#a1ffa1>" + upgrades[i].DisplayName + "</color>\n");
-                buffer.Add("<size=80%>\t你当前有 <color=#a1ffa1>" + shipLinesForThisTech + "</color> 条舰船线将从中受益。" );
+                buffer.Add("<size=80%>\t你当前有 <color=#a1ffa1>" + shipLinesForThisTech + "</color> 条单位线将从中受益。" );
                 if ( shipLinesForThisTech > 1 )
-                    buffer.Add( "\n\t\t这些舰船是 " + shipListStr );
+                    buffer.Add( "\n\t\t这些单位是 " + shipListStr );
                 else if ( shipLinesForThisTech == 1 )
-                    buffer.Add( "\n\t\t该舰船是 " + shipListStr );
+                    buffer.Add( "\n\t\t该单位是 " + shipListStr );
                 buffer.Add("</size>\n");
             }
             output = buffer.GetStringAndResetForNextUpdate();

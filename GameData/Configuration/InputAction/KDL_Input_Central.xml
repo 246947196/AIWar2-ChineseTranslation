@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <input_action name="SelectUnit"
       category="关键" display_name="选择单位"
@@ -30,26 +30,26 @@
       check_type="Custom" key="LeftShift" />
   
   <input_action name="IncreaseShipAndPlanetTooltipDetailBy1_Key1"
-      category="提示信息/详情" display_name="增加舰船和行星工具提示详情（按键1）"
-      description="默认情况下，关于舰船和行星的信息会大量缩写。要查看更多详情，请按住此处指定的（按键1）或下面指定的（按键2）。要查看完整详情，请同时按住两个按键。
+      category="提示信息/详情" display_name="增加单位和行星工具提示详情（按键1）"
+      description="默认情况下，关于单位和行星的信息会大量缩写。要查看更多详情，请按住此处指定的（按键1）或下面指定的（按键2）。要查看完整详情，请同时按住两个按键。
       
       在设置菜单的工具提示部分，您还可以将默认详细程度从“缩写”调整为“中等”或“高”。在这种情况下，将无法查看缩写版本，并且这些按键中的一个或多个可能会冗余。"
       check_type="Custom" key="LeftControl" />
   <input_action name="IncreaseShipAndPlanetTooltipDetailBy1_Key2"
-      category="提示信息/详情" display_name="增加舰船和行星工具提示详情（按键2）"
-      description="默认情况下，关于舰船和行星的信息会大量缩写。要查看更多详情，请按住此处指定的（按键2）或上面指定的（按键1）。要查看完整详情，请同时按住两个按键。
+      category="提示信息/详情" display_name="增加单位和行星工具提示详情（按键2）"
+      description="默认情况下，关于单位和行星的信息会大量缩写。要查看更多详情，请按住此处指定的（按键2）或上面指定的（按键1）。要查看完整详情，请同时按住两个按键。
       
 在设置菜单的工具提示部分，您还可以将默认详细程度从“缩写”调整为“中等”或“高”。在这种情况下，将无法查看缩写版本，并且这些按键中的一个或多个可能会冗余。"
       check_type="Custom" key="LeftAlt" />
 
   <input_action name="TakeSafestPath"
       category="选择" display_name="选择星系中最安全的路径"
-      description="在下达命令让舰船在行星之间移动时，按住此按钮可确保您的舰船选择星系中最安全的路径。"
+      description="在下达命令让单位在行星之间移动时，按住此按钮可确保您的单位选择星系中最安全的路径。"
       check_type="Custom" key="LeftAlt" default_should_override_saved_if_older_than_version="2120_NewHotkeys"/>
 
   <input_action name="TakeShortestPath"
       category="选择" display_name="选择星系中最短的路径"
-      description="在下达命令让舰船在行星之间移动时，按住此按钮可确保您的舰船选择星系中最短的路径。"
+      description="在下达命令让单位在行星之间移动时，按住此按钮可确保您的单位选择星系中最短的路径。"
       check_type="Custom" key="LeftControl" default_should_override_saved_if_older_than_version="2120_NewHotkeys" />
 
   <input_action name="SuppressTechUpgradePrompt"
@@ -58,8 +58,8 @@
       check_type="Custom" key="X" />
 
   <input_action name="HoldToSeeShipStrengthsAndWeaknesses"
-      category="提示信息/详情" display_name="按住查看舰船优缺点"
-      description="在查看舰船工具提示时按住此键，常规提示将替换为该舰船的优势和劣势信息。"
+      category="提示信息/详情" display_name="按住查看单位优缺点"
+      description="在查看单位工具提示时按住此键，常规提示将替换为该单位的优势和劣势信息。"
       check_type="Custom" key="R" />
 
   <input_action name="AddToSelection"

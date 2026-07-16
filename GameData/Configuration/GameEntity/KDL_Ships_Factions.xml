@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <entity name="MinorFactionBeacon"
           thematic_groups="Hidden" is_expecting_to_not_be_encyclopedia_counted_at_all="true"
@@ -36,7 +36,7 @@
 
 你的首席科学官指出，打开它可能会导致人类灭绝。而你的一位军事顾问认为，人类有机会在这个新威胁摧毁AI的同时幸存下来。无论如何，事情都会变得...很刺激。
 
-&lt;color=#f25e1c&gt;极高影响力：&lt;/color&gt;这个派系会不断扩张，并可能造成不可挽回的损害。由于能够捕获敌方舰船，它也是最强大的派系之一。它很可能会主导整个游戏进程，需要特殊的策略来应对。"
+&lt;color=#f25e1c&gt;极高影响力：&lt;/color&gt;这个派系会不断扩张，并可能造成不可挽回的损害。由于能够捕获敌方单位，它也是最强大的派系之一。它很可能会主导整个游戏进程，需要特殊的策略来应对。"
 	      target_type_for_player="NeverAutotargetButAllowManualTarget"
           >
    </entity>
@@ -91,7 +91,7 @@
 			collision_priority="810"
 			display_name="吞噬者巨像"
       display_name_for_sidebar="吞噬者巨像"
-			description="这个几乎无敌的巨像在银河系中游荡，吞噬它遇到的移动舰船来为自己提供能量和修复。单位不会自动瞄准它，最好的选择就是逃跑。同时它还会打破所到之处的任何停火协议。"
+			description="这个几乎无敌的巨像在银河系中游荡，吞噬它遇到的移动单位来为自己提供能量和修复。单位不会自动瞄准它，最好的选择就是逃跑。同时它还会打破所到之处的任何停火协议。"
 			behavior="Stationary"
       blocks_ceasefire_on_planet="true"
 			starting_mark_level="Markless"

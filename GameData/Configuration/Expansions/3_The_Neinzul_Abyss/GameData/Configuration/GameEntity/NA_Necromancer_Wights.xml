@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 <!-- Wight-related ships and structures -->
 
@@ -230,7 +230,7 @@
             display_name_for_sidebar="幽灵食尸鬼"
             description="一名强大的死灵法师爪牙，通过死灵法术召唤而来。在战斗一段时间后会衰变为普通食尸鬼。会向被牵引光束捕获的受害者发射不洁闪电。当它死亡时，会剧烈爆炸，对最多20个附近的敌方单位造成伤害。
 			
-爆炸对每个受害者造成的伤害起始于幽灵食尸鬼普通攻击伤害的一半，但会随着舰船积累的能量而增加，最多可达其主武器伤害的10倍。"
+爆炸对每个受害者造成的伤害起始于幽灵食尸鬼普通攻击伤害的一半，但会随着单位积累的能量而增加，最多可达其主武器伤害的10倍。"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="SpectralWightWeapon"
 			mark_level_scale_style="Frigate"
 			cost_for_ai_to_purchase="500" strength_multiplier="1.1"
@@ -382,7 +382,7 @@
             display_name="贪婪食尸鬼巢穴"
             display_name_for_sidebar="贪婪食巢"
             description_short="该设施有时会为玩家提供贪婪食尸鬼而非普通食尸鬼。"
-            description="该设施允许将被击杀的舰船转化为贪婪食尸鬼而非普通食尸鬼。这些单位拥有大量生命窃取能力和伤害，但耐久性较低。"
+            description="该设施允许将被击杀的单位转化为贪婪食尸鬼而非普通食尸鬼。这些单位拥有大量生命窃取能力和伤害，但耐久性较低。"
             starting_mark_level="Markless" build_sidebar_categories_i_am_part_of="NecropolisWights"
             cost_for_ai_to_purchase="10000" strength_multiplier="0"           
             hull_points="100000" shield_points="200000" speed="Immobile"
@@ -408,7 +408,7 @@
             display_name="被附身食尸鬼巢穴"
             display_name_for_sidebar="附食巢穴"
             description_short="该设施有时会为玩家提供被附身的食尸鬼而非普通食尸鬼。"
-            description="该设施允许将被击杀的舰船转化为被附身的食尸鬼而非普通食尸鬼。这些单位是玻璃大炮，每次开火都会伤害自身，但死亡时会生成一个普通食尸鬼。"
+            description="该设施允许将被击杀的单位转化为被附身的食尸鬼而非普通食尸鬼。这些单位是玻璃大炮，每次开火都会伤害自身，但死亡时会生成一个普通食尸鬼。"
 			build_sidebar_categories_i_am_part_of="NecropolisWights"
             metal_cost="8000" energy_consumption="1000"
 			city_socket_cost="1" name_for_city_sockets="Necropolis Hex" minimum_required_city_level_for_construction="1" base_ship_cap_in_custom_city="0"
@@ -426,7 +426,7 @@
             display_name="感染性食尸鬼巢穴"
             display_name_for_sidebar="感食巢穴"
             description_short="该设施有时会为玩家提供感染性食尸鬼而非普通食尸鬼。"
-            description="该设施允许将被击杀的舰船转化为感染性食尸鬼而非普通食尸鬼。它们比其他食尸鬼拥有更强的死灵法术，并且更擅长传播这种效果。"
+            description="该设施允许将被击杀的单位转化为感染性食尸鬼而非普通食尸鬼。它们比其他食尸鬼拥有更强的死灵法术，并且更擅长传播这种效果。"
 	    build_sidebar_categories_i_am_part_of="NecropolisWights"
             metal_cost="8000" energy_consumption="1000"
 	    city_socket_cost="1" name_for_city_sockets="Necropolis Hex" minimum_required_city_level_for_construction="1" base_ship_cap_in_custom_city="0"
@@ -444,7 +444,7 @@
             display_name="幽灵食尸鬼巢穴"
             display_name_for_sidebar="幽食巢穴"
             description_short="该设施有时会为玩家提供幽灵食尸鬼而非普通食尸鬼。"
-            description="该设施允许将被击杀的舰船转化为幽灵食尸鬼而非普通食尸鬼。这些单位会发射高伤害的不洁闪电。"
+            description="该设施允许将被击杀的单位转化为幽灵食尸鬼而非普通食尸鬼。这些单位会发射高伤害的不洁闪电。"
 			build_sidebar_categories_i_am_part_of="NecropolisWights"
             metal_cost="8000" energy_consumption="1000"
 			city_socket_cost="1" name_for_city_sockets="Necropolis Hex" minimum_required_city_level_for_construction="2" base_ship_cap_in_custom_city="0"
@@ -462,7 +462,7 @@
             display_name="复仇食尸鬼巢穴"
             display_name_for_sidebar="复食巢穴"
             description_short="该设施有时会为玩家提供复仇食尸鬼而非普通食尸鬼。"
-            description="该设施允许将被击杀的舰船转化为复仇食尸鬼而非普通食尸鬼。这些单位拥有电毒效果，并且死亡后会复活一次。"
+            description="该设施允许将被击杀的单位转化为复仇食尸鬼而非普通食尸鬼。这些单位拥有电毒效果，并且死亡后会复活一次。"
 			build_sidebar_categories_i_am_part_of="NecropolisWights"
             metal_cost="8000" energy_consumption="1000"
 			city_socket_cost="1" name_for_city_sockets="Necropolis Hex" minimum_required_city_level_for_construction="2" base_ship_cap_in_custom_city="0"

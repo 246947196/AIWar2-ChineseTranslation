@@ -1233,7 +1233,7 @@ namespace Arcen.AIW2.External
             }
             public override void HandleMouseover()
             {
-                Window_AtMouseTooltipPanelBesideSidebar.bPanel.Instance.SetText( $"拆解你当前选中的所有单位？(快捷键: <color=yellow>{InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( KeyCombo )}</color>)",
+                Window_AtMouseTooltipPanelBesideSidebar.bPanel.Instance.SetText( $"废弃你当前选中的所有单位？(快捷键: <color=yellow>{InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( KeyCombo )}</color>)",
                     "GeneralTooltipScale" );
             }
         }

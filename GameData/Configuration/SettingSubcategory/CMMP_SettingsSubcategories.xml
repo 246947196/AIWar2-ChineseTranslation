@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <setting_subcategory parent="Game" name="UX" display_name="用户体验" color="46f0ff"
       description="关于易用性和用户体验的相关设置。"/>
@@ -36,8 +36,8 @@
       description="调整鼠标在HUD中的行为。"/>
   <setting_subcategory parent="Display" name="Sidebar" display_name="侧边栏" color="46f0ff"
       description="游戏侧边栏的相关配置。"/>
-  <setting_subcategory parent="Display" name="SelectedShips" display_name="选中舰船/舰队窗口" color="46f0ff"
-      description="调整屏幕右下角显示的选中舰船/舰队窗口。"/>  
+  <setting_subcategory parent="Display" name="SelectedShips" display_name="选中单位/舰队窗口" color="46f0ff"
+      description="调整屏幕右下角显示的选中单位/舰队窗口。"/>  
   <setting_subcategory parent="Display" name="HUDScale" display_name="HUD缩放" color="46f0ff"
       description="调整游戏HUD和图标在屏幕上的显示大小。"/>
 
@@ -123,7 +123,7 @@
   <setting_subcategory parent="TooltipCustomization" name="Tooltips_General" display_name="通用工具提示" color="46f0ff"
       description="适用于工具提示的通用设置，或适用于多个工具提示类别的设置。"/>
   <setting_subcategory parent="TooltipCustomization" name="Tooltips_Entity" display_name="实体工具提示" color="46f0ff"
-      description="适用于舰船和建筑工具提示的设置。"/>
+      description="适用于单位和建筑工具提示的设置。"/>
   <setting_subcategory parent="TooltipCustomization" name="Tooltips_TechSidebar" display_name="科技侧边栏工具提示" color="46f0ff"
       description="适用于科技侧边栏内工具提示的设置。"/>
 </root>

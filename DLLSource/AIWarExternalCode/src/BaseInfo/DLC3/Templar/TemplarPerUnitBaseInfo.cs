@@ -321,7 +321,7 @@ namespace Arcen.AIW2.External
                     Buffer_ForShipsInside.Add( pair.Key.GetDisplayName(), "909090" ).Add( " x" + this.ShipsInside[pair.Key].ToString(), markByOrdinal.ColorHex );
             }
             if ( shipsFound == 0 )
-                Buffer_ForShipsInside.Add( "无舰船。\n" );
+                Buffer_ForShipsInside.Add( "无单位。\n" );
             else
             {
                 int strengthInside = GetTotalStrengthInside( entity ) / 1000;

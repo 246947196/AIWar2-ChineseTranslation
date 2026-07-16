@@ -486,9 +486,9 @@ Buffer.Add( "<color=#c74639>不可行：</color> " );
                     GameEntity_Squad hacker = HackingUtils.GetPreferredHacker( Info.TargetShip, Info.HackingType, Info.TargetPlanet, true );
                     if ( Engine_Universal.CurrentPopups.Count > 0 ) //we got some sort of warning telling us we can't do this
                         return MouseHandlingResult.PlayClickDeniedSound;
-                    ModalPopupData.CreateAndLogYesNoStyle( DoHack, null, "确定吗", "你确定要对 " + upgrade.DisplayName + " 执行黑客 " + Info.HackingType.DisplayName +
+                    ModalPopupData.CreateAndLogYesNoStyle( DoHack, null, "确定吗", "你确定要对 " + upgrade.DisplayName + " 执行入侵 " + Info.HackingType.DisplayName +
                          " 吗？\n \n" + "<color=#888888>要禁用此提示，请进入游戏设置，在游戏选项卡下将其关闭。或者按住 " +
-                         InputActionTypeDataTable.GetActionByName_FairlySlow( "SuppressTechUpgradePrompt" ).GetHumanReadableKeyCombo() + " 同时点击升级按钮以跳过一次。</color>", "是，黑客", "不，不要" );
+                         InputActionTypeDataTable.GetActionByName_FairlySlow( "SuppressTechUpgradePrompt" ).GetHumanReadableKeyCombo() + " 同时点击升级按钮以跳过一次。</color>", "是，入侵", "不，不要" );
                  }
                  else
                      DoHack();
@@ -615,7 +615,7 @@ Buffer.Add( "<color=#c74639>不可行：</color> " );
                         debugCode = 200;
                         Faction localFaction = World_AIW2.Instance.GetPlayerFactionForUIOrNull();
                         debugCode = 300;
-                        tooltipBuffer.Add( "<b><u>黑客： " ).Add( Info.HackingType.DisplayName ).Add( "</u></b>\n" );
+                        tooltipBuffer.Add( "<b><u>入侵： " ).Add( Info.HackingType.DisplayName ).Add( "</u></b>\n" );
                         tooltipBuffer.Add("此升级允许你将任何合适标记等级的旗舰转变为 ").Add(upgrade.RelatedShip.GetDisplayName(), "a1ffa1").Add("，消耗精华。\n");
 
                         if ( upgrade.MinFlagshipLevel  > 1 )
@@ -730,7 +730,7 @@ Buffer.Add( "<color=#c74639>不可行：</color> " );
         }
         public override void GetTooltipForTarget(ArcenCharacterBufferBase buffer, GameEntity_Squad target, Planet planet, HackingType Type)
         {
-            buffer.Add("\n此黑客将转变 <color=#a1ffa1>" + target.TypeData.GetDisplayName() + "</color>。");
+            buffer.Add("\n此入侵将转变 <color=#a1ffa1>" + target.TypeData.GetDisplayName() + "</color>。");
             Faction localFaction = World_AIW2.Instance.GetLocalPlayerFactionOrNull();
             DLC3GameEntityTypeDataExtension Target_DLC3TypeData = target.TypeData.TryGetDataExtensionAs<DLC3GameEntityTypeDataExtension>( "DLC3" );
             GameEntityTypeData transformedUnit = GameEntityTypeDataTable.Instance.GetRowByNameOrNullIfNotFound( Target_DLC3TypeData?.NameForElderlingTransformation );
@@ -743,7 +743,7 @@ Buffer.Add( "<color=#c74639>不可行：</color> " );
                     buffer.Add( "AI 进度 (AIP) 将<color=#ffdf72>增加 " ).Add( transformedUnit.AIPOnDeath ).Add( "</color>，且" );
                 }
                 buffer.Add("你将能够转变任何标记等级为 ").Add(upgrade.MinFlagshipLevel);
-                buffer.Add(" 的旗舰为 ").Add(upgrade.RelatedShip.GetDisplayName(), "a1ffa1").Add("，消耗黑客点和精华。");
+                buffer.Add(" 的旗舰为 ").Add(upgrade.RelatedShip.GetDisplayName(), "a1ffa1").Add("，消耗入侵点和精华。");
                 buffer.Add("\n\n");
                 EntityText.GetTooltip( buffer, null, null, upgrade.RelatedShip, 1,
                         localFaction, (byte)upgrade.MinFlagshipLevel, FromSidebarType.Sidebar_MultipleUnits,
@@ -917,7 +917,7 @@ Buffer.Add( "<color=#c74639>不可行：</color> " );
         }
         public override void GetTooltipForTarget(ArcenCharacterBufferBase buffer, GameEntity_Squad target, Planet planet, HackingType Type)
         {
-            buffer.Add("\n此黑客将追踪 <color=#a1ffa1>" + target.TypeData.GetDisplayName() + "</color>。");
+            buffer.Add("\n此入侵将追踪 <color=#a1ffa1>" + target.TypeData.GetDisplayName() + "</color>。");
         }
         public override void DoOneSecondOfHackingLogic_HackSpecificLogic( GameEntity_Squad Target, Planet planet, GameEntity_Squad Hacker, ArcenHostOnlySimContext Context, HackingType type, HackingEvent Event )
         {
@@ -1026,7 +1026,7 @@ Buffer.Add( "<color=#c74639>不可行：</color> " );
 buffer.Add("不足 ");
                              
                          if (hapShort)
-                             buffer.StartHacking(false).Add("黑客点").EndColor();
+                             buffer.StartHacking(false).Add("入侵点").EndColor();
                                  
                          if (essShort)
                          {
@@ -1145,7 +1145,7 @@ buffer.Add("不足 ");
                 else if ( upgrade.Type == NecromancerUpgradeType.IncreaseSkeletonCap || upgrade.Type == NecromancerUpgradeType.IncreaseWightCap )
                 {
                     debugCode = 330;
-                    buffer.Add("此升级将增加每类 ").Add(upgrade.ShipForCapIncrease.GetDisplayName(), "a1ffa1").Add(" 的舰船上限 " ).Add( upgrade.CapIncrease, "a1ffa1" ).Add("，仅限此旗舰。\n");
+                    buffer.Add("此升级将增加每类 ").Add(upgrade.ShipForCapIncrease.GetDisplayName(), "a1ffa1").Add(" 的单位上限 " ).Add( upgrade.CapIncrease, "a1ffa1" ).Add("，仅限此旗舰。\n");
                 }
                 else if ( upgrade.Type == NecromancerUpgradeType.IncreaseSkeletonSoftCap )
                 {
@@ -1183,7 +1183,7 @@ buffer.Add("不足 ");
 
                 if ( upgrade.AdditionalAIPCost > 0 || upgrade.AdditionalEssenceCost > 0 || upgrade.AdditionalHapCost > 0)
                 {
-                    buffer.Pad().NewLineIfNeeded().Add("此黑客花费 ");
+                    buffer.Pad().NewLineIfNeeded().Add("此入侵花费 ");
                     
                     int counter = 0;
                     if ( upgrade.AdditionalAIPCost > 0 )

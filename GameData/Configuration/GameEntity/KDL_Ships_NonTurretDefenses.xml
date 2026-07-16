@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <entity name="TractorArray"
             thematic_groups="OtherDefense"  
@@ -10,7 +10,7 @@
 			collision_priority="1000" construction_priority="50"
 			display_name="牵引阵列"
 			display_name_for_sidebar="牵引器"
-			description="锁定附近的敌方舰船，阻止它们移动（但不阻止开火）。"
+			description="锁定附近的敌方单位，阻止它们移动（但不阻止开火）。"
 			behavior="Stationary"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Sentries,Turret" 
 			build_sidebar_categories_i_am_part_of="OtherDefenses" destroys_self_until_not_over_ship_cap_if_planetary_command="true"
@@ -83,7 +83,7 @@
 			shield_size_scale="5"
 			display_name="力场发生器"
 			display_name_for_sidebar="力场"
-			description="保护附近的舰船和建筑。受此保护的单位造成的伤害将减半。有轻微移动能力，因此可能会被具有诺里斯效应的舰船推动。"
+			description="保护附近的单位和建筑。受此保护的单位造成的伤害将减半。有轻微移动能力，因此可能会被具有诺里斯效应的单位推动。"
 			behavior="Stationary"
 			voice_group="Turret"
       moves_back_after_being_norrised="true"
@@ -112,7 +112,7 @@
           copy_from="ForcefieldGenerator" starting_mark_level="Mark1" metal_cost="160000" hull_points="100000" shield_points="500000" shield_size_scale="5" mass_tx="6"
           destroys_self_until_not_over_ship_cap_if_planetary_command="false" is_auto_scrapping_skipped_when_command_station_type_changes="true" absolute_max_cap_when_in_fleets="3"
           collision_priority="11000" construction_priority="400" mark_level_scale_style="PlayerHomeForcefield" speed="Immobile" moves_back_after_being_norrised="false"
-          description="保护附近的舰船和建筑。受此保护的单位造成的伤害将减半。完全无法移动，因此不会被诺里斯效应推动。"
+          description="保护附近的单位和建筑。受此保护的单位造成的伤害将减半。完全无法移动，因此不会被诺里斯效应推动。"
           >
     <fleet_membership name="PlayerHomeCommand" ship_cap_group="OtherDefense" weight="100" cap="1"/>
   </entity>
@@ -122,7 +122,7 @@
           display_name_for_sidebar="力场"
           shield_points="500000" my_forcefield_has_no_penalty_for_enemies_firing_out_of_it="true"
           collision_priority="9000" construction_priority="400" absolute_max_cap_when_in_fleets="6" speed="Immobile" moves_back_after_being_norrised="false"
-          description="保护附近的舰船和建筑。完全无法移动，因此不会被诺里斯效应推动。"
+          description="保护附近的单位和建筑。完全无法移动，因此不会被诺里斯效应推动。"
           >
   </entity>
 
@@ -132,7 +132,7 @@
           shield_points="500000" my_forcefield_has_no_penalty_for_enemies_firing_out_of_it="true"
           collision_priority="9000" construction_priority="400" absolute_max_cap_when_in_fleets="6" moves_back_after_being_norrised="true"
           max_count_seeded_as_ai_non_turret_defense="2" 
-          description="保护附近的舰船和建筑。"
+          description="保护附近的单位和建筑。"
           >
     <ai_ship_group_membership name="AnyNonTurretDefenses_FreeforAll" weight="8"/>
     <ai_ship_group_membership name="EnsnarerNonTurretDefenses_FreeforAll" weight="8"/> 
@@ -143,14 +143,14 @@
           display_name="固定力场发生器"
 					display_name_for_sidebar="力场固定器"
           speed="Immobile" construction_priority="400" moves_back_after_being_norrised="false"
-					description="保护附近的舰船和建筑。受此保护的单位造成的伤害将减半。完全无法移动，因此不会被诺里斯效应推动。">
+					description="保护附近的单位和建筑。受此保护的单位造成的伤害将减半。完全无法移动，因此不会被诺里斯效应推动。">
     <fleet_membership name="PlayerMilitaryCommand" ship_cap_group="OtherDefense" weight="100" cap="0"/>
   </entity>
 
   <entity name="ZenithForcefieldGenerator"  copy_from="ForcefieldGenerator" is_auto_scrapping_skipped_when_command_station_type_changes="true" thematic_groups="OtherDefense,Zenith" 
           metal_cost="800000" display_name="天顶力场发生器" 
           display_name_for_sidebar="天顶力场" 
-          description="经过大幅升级的力场，可保护附近的舰船和建筑。受此保护的单位造成的伤害将减半。完全无法移动，因此不会被诺里斯效应推动。如果你在星系中已经拥有两个，商人将不会向你出售此物品。"
+          description="经过大幅升级的力场，可保护附近的单位和建筑。受此保护的单位造成的伤害将减半。完全无法移动，因此不会被诺里斯效应推动。如果你在星系中已经拥有两个，商人将不会向你出售此物品。"
           collision_priority="11000" construction_priority="400" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Alien"
 					shield_points="1050000" shield_size_scale="6.3" absolute_max_cap_when_in_fleets="1"
           build_sidebar_categories_i_am_part_of="OtherDefenses" destroys_self_until_not_over_ship_cap_if_planetary_command="false"
@@ -174,7 +174,7 @@
 			collision_priority="1000"
 			display_name="超光速粒子阵列"
       display_name_for_sidebar="超光速粒子"
-			description="揭示附近隐形的敌方舰船。"
+			description="揭示附近隐形的敌方单位。"
 			behavior="Stationary"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Sentries,Turret" 
 			build_sidebar_categories_i_am_part_of="OtherDefenses" destroys_self_until_not_over_ship_cap_if_planetary_command="true"
@@ -232,7 +232,7 @@
 			visuals_scale_multiplier="4" is_non_turret_defense="true"
 			display_name="聚焦重力发生器"
       display_name_for_sidebar="重力发生器"
-			description="减缓自身周围区域内敌对舰船的速度。效果可叠加。"
+			description="减缓自身周围区域内敌对单位的速度。效果可叠加。"
 			behavior="Stationary"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Sentries,Turret" 
 			build_sidebar_categories_i_am_part_of="OtherDefenses" destroys_self_until_not_over_ship_cap_if_planetary_command="true"

@@ -40,7 +40,7 @@
   <entity name="DarkSpireVengeanceGeneratorVulnerable"  copy_from="DarkSpireVengeanceGenerator"
 	  tags="DarkSpire,VengeanceGenerator,ShowsOnNormalDisplayMode,VengeanceGeneratorVulnerable,SapperImportantPoint"
           icon_overlay="Overlays2/Guardian_Spider"
-          description="神秘古老的结构，形似叛变尖塔派系的建筑。由于被黑客入侵，这个复仇发生器现在可以被摧毁。它正在产生大量能量，且每当有飞船在同一星球死亡时能量都会增加。当发生器达到临界质量时，它(以及银河系中任何其他发生器)都能生成一些非常危险的飞船。玩家已通过黑客攻击使其变得脆弱。"
+          description="神秘古老的结构，形似叛变尖塔派系的建筑。由于被入侵，这个复仇发生器现在可以被摧毁。它正在产生大量能量，且每当有飞船在同一星球死亡时能量都会增加。当发生器达到临界质量时，它(以及银河系中任何其他发生器)都能生成一些非常危险的飞船。玩家已通过入侵使其变得脆弱。"
           hull_points="200000" shield_points="700000" speed="Immobile"
           eligible_for_hacks=""
           priority_as_ai_target="NormalStarship" priority_as_frd_target="BiggerStarship" priority_to_protect="Expendable"

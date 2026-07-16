@@ -431,7 +431,7 @@ namespace Arcen.AIW2.External
             string color = entity.GetFactionCenterColorHexBrighter_Safe();
 
             buffer.AddObjectiveEntityHeader( entity, color );
-            buffer.Add( "跨星球攻击是AI舰船攻击你星球的强大浪潮。摧毁所有此类建筑（包括" ).Add( entity.GetPlanetName_Safe(), color ).Add( "上的这个）将削弱下一次CPA。" );
+            buffer.Add( "跨星球攻击是AI单位攻击你星球的强大浪潮。摧毁所有此类建筑（包括" ).Add( entity.GetPlanetName_Safe(), color ).Add( "上的这个）将削弱下一次CPA。" );
         }
     }
 
@@ -513,12 +513,12 @@ namespace Arcen.AIW2.External
                 if ( Objective.RelatedEntity1.TypeData.GetHasTag( "DysonSphere" ) )
                 {
                     debugStage = 200;
-                    buffer.AddObjectiveEntityHeader( Objective.RelatedEntity1, Objective.RelatedEntity1.GetFactionCenterColorHexBrighter_Safe() ).Add( "入侵" + Objective.RelatedEntity1.GetPlanetName_Safe() + "上的它将获得一种新舰船类型。入侵戴森球很危险，不应轻率行事。" );
+                    buffer.AddObjectiveEntityHeader( Objective.RelatedEntity1, Objective.RelatedEntity1.GetFactionCenterColorHexBrighter_Safe() ).Add( "入侵" + Objective.RelatedEntity1.GetPlanetName_Safe() + "上的它将获得一种新单位类型。入侵戴森球很危险，不应轻率行事。" );
                 }
                 else if ( Objective.RelatedEntity1.TypeData.GetHasTag( "VengeanceGenerator" ) )
                 {
                     debugStage = 300;
-                    buffer.AddObjectiveEntityHeader( Objective.RelatedEntity1, Objective.RelatedEntity1.GetFactionCenterColorHexBrighter_Safe() ).Add( "入侵" + Objective.RelatedEntity1.GetPlanetName_Safe() + "上的它将获得一种新舰船类型。入侵黑暗尖塔极其危险，不应轻率行事。" );
+                    buffer.AddObjectiveEntityHeader( Objective.RelatedEntity1, Objective.RelatedEntity1.GetFactionCenterColorHexBrighter_Safe() ).Add( "入侵" + Objective.RelatedEntity1.GetPlanetName_Safe() + "上的它将获得一种新单位类型。入侵黑暗尖塔极其危险，不应轻率行事。" );
                 }
                 else
                 {
@@ -610,7 +610,7 @@ namespace Arcen.AIW2.External
                 return;
             }
             buffer.Add( "入侵" ).Add( Objective.RelatedEntity1.TypeData.GetDisplayName(), Objective.RelatedEntity1.GetFactionCenterColorHexBrighter_Safe() ).Add( "上的" ).Add( Objective.RelatedEntity1.GetPlanetName_Safe(), Objective.RelatedPlanet1.GetControllingFaction().FactionCenterColor.ColorHexBrighter )
-                .Add( "将使执行入侵的舰队中的一条舰船线容量翻倍（你可选择哪条线）。" );
+                .Add( "将使执行入侵的舰队中的一条单位线容量翻倍（你可选择哪条线）。" );
         }
     }
 }

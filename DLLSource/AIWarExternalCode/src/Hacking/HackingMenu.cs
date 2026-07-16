@@ -47,7 +47,7 @@ namespace Arcen.AIW2.External
                 this.PopulateItemsToShow(listOfItemsForCanBeHacked, Target, planet, Type);
             } catch (Exception e ) {
                 ArcenDebugging.ArcenDebugLogSingleLine( "HackingMenu-GetCanBeHacked error from PopulateItemsToShow: " + e, Verbosity.ShowAsError );
-                rejectionReason = "查找可黑客选项列表时出错。";
+                rejectionReason = "查找可入侵选项列表时出错。";
                 return Hackable.NotSureIfHasBeenHackedHacked_Hide;
             }
 
@@ -85,7 +85,7 @@ namespace Arcen.AIW2.External
             } else if (shouldShow) {
                 return Hackable.NeverBeHacked_ButStillShow;
             } else {
-                rejectionReason = "HackingImplementation_WithMenu 永远无法被黑客";
+                rejectionReason = "HackingImplementation_WithMenu 永远无法被入侵";
                 return Hackable.NeverCanBeHacked_Hide;
             }
         }
@@ -214,12 +214,12 @@ namespace Arcen.AIW2.External
                     if ( Engine_Universal.CurrentPopups.Count > 0 ) //we got some sort of warning telling us we can't do this
                         return MouseHandlingResult.PlayClickDeniedSound;
                     ArcenCharacterBuffer buffer = ArcenCharacterBuffer.GetFromPoolOrCreate("HackingMenu-Prompt-buffer");
-                    buffer.Add("确定要进行黑客：").Add(Info.HackingType.DisplayName).Add(" 以 ");
+                    buffer.Add("确定要进行入侵：").Add(Info.HackingType.DisplayName).Add(" 以 ");
                     Implementation.GetDisplayNameForItem(buffer, item);
                     buffer.Add("？\n \n" + "<color=#888888>要禁用此提示，请进入游戏设置，在游戏选项卡下将其关闭。或者按住 ");
                     buffer.Add(InputActionTypeDataTable.GetActionByName_FairlySlow( "SuppressTechUpgradePrompt" ).GetHumanReadableKeyCombo());
                     buffer.Add(" 同时点击升级按钮以跳过一次。</color>");
-                    ModalPopupData.CreateAndLogYesNoStyle( DoHack, null, "确定吗", buffer.ToStringAndReturnToPool(), "是，黑客", "不，不要" );
+                    ModalPopupData.CreateAndLogYesNoStyle( DoHack, null, "确定吗", buffer.ToStringAndReturnToPool(), "是，入侵", "不，不要" );
                 } else {
                     DoHack();
                 }

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   <!-- Music is either tagged with "Exciting" or not. Exciting means in-game there's some sort of reasonably large battle happening with at least a few strength on your side and an enemy's side.
@@ -21,7 +21,7 @@
   <music name="Anti-Gravity" displayname="反重力" type="InGame"  bundle_name="aiwar2music" filename="assets/music/ingame/anti-gravity.mp3" description="此曲目来自基础游戏；专为《AI战争2》制作"/>
   <music name="Into The Eye Of The Black Hole" displayname="进入黑洞之眼" type="InGame" bundle_name="aiwar2music" filename="assets/music/ingame/into the eye of the black hole.mp3" description="此曲目来自基础游戏；专为《AI战争2》制作" tags="Peaceful"/>
   <music name="StarsSuite" displayname="星之组曲" type="InGame" bundle_name="aiwar2music" filename="assets/music/ingame/starssuite.mp3" description="此曲目来自基础游戏；专为《AI战争2》制作" tags="Exciting"/>
-  <music name="Abandoned Ship-VM" displayname="废弃舰船-VM" type="InGame" bundle_name="aiwar2music" filename="assets/music/ingame/abandoned ship-vm.mp3" description="此曲目来自基础游戏；专为《AI战争2》制作" tags="Peaceful"/>
+  <music name="Abandoned Ship-VM" displayname="废弃单位-VM" type="InGame" bundle_name="aiwar2music" filename="assets/music/ingame/abandoned ship-vm.mp3" description="此曲目来自基础游戏；专为《AI战争2》制作" tags="Peaceful"/>
   <music name="Absolute Zero-VM" displayname="绝对零度-VM" type="InGame" bundle_name="aiwar2music" filename="assets/music/ingame/absolute zero-vm.mp3" description="此曲目来自基础游戏；专为《AI战争2》制作" tags="Peaceful"/>
   <music name="Bouncing Lights-VM" displayname="跳动之光-VM" type="InGame" bundle_name="aiwar2music" filename="assets/music/ingame/bouncing lights-vm.mp3" description="此曲目来自基础游戏；专为《AI战争2》制作" tags="Exciting"/>
   <music name="Event Horizon-VM" displayname="事件视界-VM" type="InGame" bundle_name="aiwar2music" filename="assets/music/ingame/event horizon-vm.mp3" description="此曲目来自基础游戏；专为《AI战争2》制作" tags="Exciting"/>

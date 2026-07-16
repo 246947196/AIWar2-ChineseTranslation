@@ -1,4 +1,4 @@
-﻿using Arcen.Universal;
+using Arcen.Universal;
 using Arcen.AIW2.Core;
 using System;
 
@@ -519,7 +519,7 @@ namespace Arcen.AIW2.External
                                 if ( fleet.IsFleetInTransportLoadMode )
                                 {
                                     buffer.StartColor( QuickColors.NewValue );
-                                    buffer.Add( "\n舰队处于运输装载模式，所有舰船尝试进入旗舰。" );
+                                    buffer.Add( "\n舰队处于运输装载模式，所有单位尝试进入旗舰。" );
                                     buffer.EndColor();
                                 }
                                 break;
@@ -982,9 +982,9 @@ namespace Arcen.AIW2.External
                 case FleetCategoryPurpose.PlanetCommand:
                     return "你在行星上的每个指挥站都有一支以基础、实用或经济单位为主的小型部队。但是，如果你从天顶商人处购买了其他独特的俘获物，这里也可能有一些威力惊人的固定位置武器。";
                 case FleetCategoryPurpose.MobileOfficerFleetFlagship:
-                    return "一支非常灵活的战斗力量，拥有大量小型打击艇和护卫舰，中央还有一艘庞大、可怕、令人兴奋的旗舰。这艘旗舰本身通常就是一种威胁，可能是方舟或傀儡，但也可以作为所有小型舰船的运输载体。";
+                    return "一支非常灵活的战斗力量，拥有大量小型打击艇和护卫舰，中央还有一艘庞大、可怕、令人兴奋的旗舰。这艘旗舰本身通常就是一种威胁，可能是方舟或傀儡，但也可以作为所有小型单位的运输载体。";
                 case FleetCategoryPurpose.MobileStrikeFleetFlagship:
-                    return "你最灵活的战斗力量：通常用于进攻，但也能够根据需要回防你的行星。完全由小型打击艇和护卫舰组成，围绕一个在战斗中基本无用的核心运输舰。所有军事力量都来自你的中小型舰船，运输舰则负责将这些舰船快速运送到各处，并在工厂范围内批量生产新舰船。";
+                    return "你最灵活的战斗力量：通常用于进攻，但也能够根据需要回防你的行星。完全由小型打击艇和护卫舰组成，围绕一个在战斗中基本无用的核心运输舰。所有军事力量都来自你的中小型单位，运输舰则负责将这些单位快速运送到各处，并在工厂范围内批量生产新单位。";
                 case FleetCategoryPurpose.MobileSupportFleetFlagship:
                     return "不寻常的支援舰队，能够作为你进攻或防守舰队的力量倍增器、在远程打击中提供远程补给，或执行其他令人意想不到的次要任务。";
                 case FleetCategoryPurpose.DZEconomy:

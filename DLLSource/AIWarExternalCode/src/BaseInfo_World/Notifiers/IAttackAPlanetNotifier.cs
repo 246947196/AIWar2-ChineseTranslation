@@ -1,4 +1,4 @@
-﻿using Arcen.AIW2.Core;
+using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -188,7 +188,7 @@ namespace Arcen.AIW2.External
                         if ( harvest.Count > 0 )
                         {
                             debugStage = 11800;
-                            tooltipBuffer.Add( "\n\n<b>" ).Add( "死灵法师在本场战斗中召唤的舰船：", "ffa1a1" ).Add( "</b>\n" );
+                            tooltipBuffer.Add( "\n\n<b>" ).Add( "死灵法师在本场战斗中召唤的单位：", "ffa1a1" ).Add( "</b>\n" );
                             int size = 100;
                             if ( harvest.Count > 20 )
                                 size = 50;

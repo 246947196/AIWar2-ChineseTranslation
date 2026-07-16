@@ -1,4 +1,4 @@
-﻿using Arcen.AIW2.Core;
+using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -38,7 +38,7 @@ namespace Arcen.AIW2.External
                     Buffer.Add("此矿脉有 ").Add( data.Points, "ffaaff" ).Add(" 点数将用于 ").Add( data.NextUpgrade.ToFriendlyString(), "cc2277" ).Add("。" );
                     if ( data.AutoDefenseBuildPoints > 0 )
                     {
-                        Buffer.Add("矿脉还在建造舰船以保卫其周围领地；它有 ").Add( data.AutoDefenseBuildPoints, "a1ffa1" ).Add( " 防御建造点数。" );
+                        Buffer.Add("矿脉还在建造单位以保卫其周围领地；它有 ").Add( data.AutoDefenseBuildPoints, "a1ffa1" ).Add( " 防御建造点数。" );
                     }
                     return;
                 }

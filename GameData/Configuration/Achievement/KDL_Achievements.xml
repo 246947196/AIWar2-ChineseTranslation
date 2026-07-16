@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <achievement name="Fully Arrayed" api_key="FULLY_ARRAYED"
                single_faction_based_victory_achievement="true"
@@ -794,7 +794,7 @@
                >
   </achievement>
   <achievement name="Lots Of Hacking" api_key="LOTS_OF_HACKING"
-  	       description="拥有1000个黑客点数。"
+  	       description="拥有1000个入侵点数。"
                acquire_resource_achievement="true"
                resource="Hacking"
                amount_of_resource="1000"
@@ -803,21 +803,21 @@
   </achievement>
 
   <achievement name="Kills: Warrior" api_key="KILLS_WARRIOR"
-  	       description="在一局游戏中击杀30000艘舰船。"
+  	       description="在一局游戏中击杀30000个单位。"
                kill_ships_achievement="true"
                ships_killed="30000"
                level="bronze"
                >
   </achievement>
   <achievement name="Kills: Merciless" api_key="KILLS_MERCILESS"
-  	       description="在一局游戏中击杀75000艘舰船。"
+  	       description="在一局游戏中击杀75000个单位。"
                kill_ships_achievement="true"
                ships_killed="75000"
                level="silver"
                >
   </achievement>
   <achievement name="Kills: Xenocidal" api_key="KILLS_XENOCIDAL"
-  	       description="在一局游戏中击杀200000艘舰船。"
+  	       description="在一局游戏中击杀200000个单位。"
                kill_ships_achievement="true"
                ships_killed="200000"
                level="gold"
@@ -825,21 +825,21 @@
   </achievement> 
   
   <achievement name="Losses: In The Midst Of A Cold, Dark Winter" api_key="LOSSES_IN_THE_M"
-  	       description="在一局游戏中损失30000艘舰船。"
+  	       description="在一局游戏中损失30000个单位。"
                kill_ships_achievement="true"
                ships_lost="30000"
                level="bronze"
                >
   </achievement>
   <achievement name="Losses: For The Greater Good" api_key="LOSSES_FOR_THE_"
-  	       description="在一局游戏中损失75000艘舰船。"
+  	       description="在一局游戏中损失75000个单位。"
                kill_ships_achievement="true"
                ships_lost="75000"
                level="silver"
                >
   </achievement>
   <achievement name="Losses: What Have We Done" api_key="LOSSES_WHAT_HAV"
-  	       description="在一局游戏中损失200000艘舰船。"
+  	       description="在一局游戏中损失200000个单位。"
                kill_ships_achievement="true"
                ships_lost="200000"
                level="gold"
@@ -847,7 +847,7 @@
   </achievement>
   
   <achievement name="The Real Bloodbath" api_key="THE_REAL_BLOODB"
-  	       description="在一局游戏中损失和击杀100000艘舰船。"
+  	       description="在一局游戏中损失和击杀100000个单位。"
                kill_ships_achievement="true"
                ships_lost="100000"
                ships_killed="100000"
@@ -935,13 +935,13 @@
   />
 
   <achievement name="Research Grant" api_key="RESEARCH_GRANT"
-    description="入侵一个高级研究站以解锁新的舰船生产线。"
+    description="入侵一个高级研究站以解锁新的单位生产线。"
     condition_type="PerformHack"
     condition_related_strings="HackToGrantShipLine_ARS"
     level="bronze"
   />
   <achievement name="Knowledge is Power" api_key="KNOWLEDGE_IS_PO"
-    description="入侵一个高级研究站以重新随机它能提供的舰船生产线。"
+    description="入侵一个高级研究站以重新随机它能提供的单位生产线。"
     condition_type="PerformHack"
     condition_related_strings="RerollARS"
     level="bronze"
@@ -1096,7 +1096,7 @@
   />
 
   <achievement name="Teach a Man to Fish..." api_key="TEACH_A_MAN_TO_"
-    description="将一种舰船类型提升到 VII 级。"
+    description="将一种单位类型提升到 VII 级。"
     condition_type="UpgradeFleetLineToMark"
     condition_magnitude="7"
     level="gold"

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   <journal name="Base_Lore_Hunter" sidebar_text="&lt;color=#a1ffa1&gt;背景故事&lt;/color&gt;: {FactionColor}猎手舰队&lt;/color&gt;"
@@ -17,7 +17,7 @@
 
 到目前为止，我们的理论是，目前未执行警戒任务且已闲置一段时间的人工智能单位会被编入这个子程序，并且它们会比单独行动时更加主动和智能，前提是它们还没有被编入其他程序。
 
-在这些舰船有可能逃脱、加入这个“猎手舰队”并在日后造成更大麻烦之前，尽可能多地摧毁它们对我们似乎是有利的。"
+在这些单位有可能逃脱、加入这个“猎手舰队”并在日后造成更大麻烦之前，尽可能多地摧毁它们对我们似乎是有利的。"
            />
     <journal name="Base_Lore_Reserves" sidebar_text="&lt;color=#a1ffa1&gt;背景故事&lt;/color&gt;: {FactionColor}人工智能预备队&lt;/color&gt;"
            can_record_another_copy_if_already_recorded_in_this_campaign="false"
@@ -31,7 +31,7 @@
 
 指挥官，
 
-看来我们的纵深打击（在远离我们任何星球的地方攻击人工智能）触发了人工智能的防御反应。我们检测到多个虫洞正在开启，同时有舰船信号正在接近。
+看来我们的纵深打击（在远离我们任何星球的地方攻击人工智能）触发了人工智能的防御反应。我们检测到多个虫洞正在开启，同时有单位信号正在接近。
 
 目前看来，向我们自己的领地靠近会使对方的反应部队通过这些虫洞撤回。然而，如果我们继续进行更远距离的纵深打击，我们预计对方的反应会更加强烈。"
     />

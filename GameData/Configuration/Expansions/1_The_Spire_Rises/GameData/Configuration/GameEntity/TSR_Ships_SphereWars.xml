@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
 	<!-- 	Shared Units -->
@@ -66,7 +66,7 @@
 			collision_priority="100"
 			display_name="顶点收集者"
 			display_name_for_sidebar="Z收集者"
-			description="这种大型舰船用于被动收集银河系中黑暗尖塔残骸的资源。由于其宿主球体提供的护盾，普通单位通常无法将其作为目标。"
+			description="这种大型单位用于被动收集银河系中黑暗尖塔残骸的资源。由于其宿主球体提供的护盾，普通单位通常无法将其作为目标。"
 			voice_group="Zenith"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
 			cost_for_ai_to_purchase="600"
@@ -103,7 +103,7 @@
 			collision_priority="100"
 			display_name="灰尖塔收集者"
 			display_name_for_sidebar="GS收集者"
-			description="这种大型舰船用于被动收集银河系中黑暗尖塔残骸的资源。由于其宿主球体提供的护盾，普通单位通常无法将其作为目标。"
+			description="这种大型单位用于被动收集银河系中黑暗尖塔残骸的资源。由于其宿主球体提供的护盾，普通单位通常无法将其作为目标。"
 			voice_group="Spire"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
 			cost_for_ai_to_purchase="600"
@@ -141,7 +141,7 @@
 			collision_priority="100"
 			display_name="彩色尖塔收集者"
 			display_name_for_sidebar="CS收集者"
-			description="这种大型舰船用于被动收集银河系中黑暗尖塔残骸的资源。由于其宿主球体提供的护盾，普通单位通常无法将其作为目标。"
+			description="这种大型单位用于被动收集银河系中黑暗尖塔残骸的资源。由于其宿主球体提供的护盾，普通单位通常无法将其作为目标。"
 			voice_group="Spire"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
 			cost_for_ai_to_purchase="600"

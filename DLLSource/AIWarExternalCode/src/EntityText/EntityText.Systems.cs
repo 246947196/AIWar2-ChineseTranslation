@@ -1,4 +1,4 @@
-﻿
+
 using System;
 using Arcen.Universal;
 using Arcen.AIW2.Core;
@@ -1053,7 +1053,7 @@ namespace Arcen.AIW2.External
                             }
                             else
                             {
-                                buffer.Add("麻痹",TextStyle.System_Label2).Add("：上述武器的射击完全瘫痪敌方舰船 <color=#ffdf72>" );
+                                buffer.Add("麻痹",TextStyle.System_Label2).Add("：上述武器的射击完全瘫痪敌方单位 <color=#ffdf72>" );
                                 buffer.AddNumberMoreReadable( ForMark.ParalysisSecondsPerShot );
                                 buffer.Add( "s</color> 如果目标质量小于 <color=#ffdf72>" );
                                 buffer.Add( Type.ParalysisToShipsMass_tXLessThan.ReadableString );
@@ -1074,7 +1074,7 @@ namespace Arcen.AIW2.External
 
                             if ( detailLevel >= TooltipDetail.Medium )
                             {
-                                buffer.Add("：上述武器的射击完全无视力场，正常伤害力场下的舰船。" );
+                                buffer.Add("：上述武器的射击完全无视力场，正常伤害力场下的单位。" );
                             }
                             
                             buffer.Close( TextStyle.System_Line2 );
@@ -1103,7 +1103,7 @@ namespace Arcen.AIW2.External
                         {
                             buffer.Open( TextStyle.System_Line2 );
                             
-                            buffer.Add("多重击杀",TextStyle.System_Label2).Add("：每击可击杀 <color=#ffdf72>").Add(Type.MaxStacksToKill).Add("</color> 个堆叠舰船。" );
+                            buffer.Add("多重击杀",TextStyle.System_Label2).Add("：每击可击杀 <color=#ffdf72>").Add(Type.MaxStacksToKill).Add("</color> 个堆叠单位。" );
                             
                             buffer.Close( TextStyle.System_Line2 );
                         }
@@ -1392,9 +1392,9 @@ namespace Arcen.AIW2.External
                                 else
                                     buffer.Add( "本舰射击 AoE 中心。" );
                                 if ( ForMark.KnockbackPerShot > 0 )
-                                    buffer.Add( "舰船可被推离的最大距离为 <color=#ffdf72>" );
+                                    buffer.Add( "单位可被推离的最大距离为 <color=#ffdf72>" );
                                 else
-                                    buffer.Add( "舰船可被拉近的最大距离为 <color=#ffdf72>" );
+                                    buffer.Add( "单位可被拉近的最大距离为 <color=#ffdf72>" );
                                 buffer.AddNumberMoreReadable( ForMark.KnockbackPerShot );
                                 buffer.Add( "</color>，随目标质量接近最大质量 <color=#ffdf72>" );
                                 buffer.Add( Type.KnockbackPerShotToShipsMass_tXLessThan );
@@ -1838,7 +1838,7 @@ namespace Arcen.AIW2.External
                         if (Type.IsReverseTractorBeam)
                             buffer.Add("抓住一艘敌舰，本舰随之移动。敌舰无法离开本星球。本舰所有武器均视为在抓取目标射程内。目标被视为被牵引以触发增益。");
                         else
-                            buffer.Add("将敌舰固定原地，使其完全无法移动。被牵引的舰船始终可以攻击牵引源（反之则不一定）。");
+                            buffer.Add("将敌舰固定原地，使其完全无法移动。被牵引的单位始终可以攻击牵引源（反之则不一定）。");
                         buffer.Close(TextStyle.System_Line2);
                         buffer.Close(TextStyle.System_Sub_Lines);
                     }

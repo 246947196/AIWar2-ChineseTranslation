@@ -267,12 +267,12 @@ namespace Arcen.AIW2.ExternalVisualization
         {
             //ROW 1
             Buffer.Add( "\n" ).Add( "<pos=20>" );
-            Buffer.StartColor( QuickColors.HeaderMid ).AddNumberMoreReadable( BurningDyingShips.Count ).EndColor().Add( " 濒死舰船<pos=200>" );
+            Buffer.StartColor( QuickColors.HeaderMid ).AddNumberMoreReadable( BurningDyingShips.Count ).EndColor().Add( " 濒死单位<pos=200>" );
             Buffer.StartColor( QuickColors.HeaderMid ).AddNumberMoreReadable( ActiveSpecialEffects.Count ).EndColor().Add( " 活跃特效" );
             //ROW 2
             Buffer.Add( "\n" ).Add( "<pos=20>" );
             Buffer.StartColor( QuickColors.HeaderMid ).AddNumberMoreReadable( ActiveShots.GetActiveListLength() ).EndColor().Add( " 活跃射击<pos=200>" );
-            Buffer.StartColor( QuickColors.HeaderMid ).AddNumberMoreReadable( ActiveSquads.Count ).EndColor().Add( " 活跃舰船" );
+            Buffer.StartColor( QuickColors.HeaderMid ).AddNumberMoreReadable( ActiveSquads.Count ).EndColor().Add( " 活跃单位" );
             //ROW 3
             Buffer.Add( "\n" ).Add( "<pos=20>" );
             Buffer.StartColor( QuickColors.HeaderMid ).AddNumberMoreReadable( LooseOtherObjects.Count ).EndColor().Add( " 活跃其他<pos=200>" );
@@ -280,7 +280,7 @@ namespace Arcen.AIW2.ExternalVisualization
             //ROW 4
             Buffer.Add( "\n" ).Add( "<pos=20>" );
             Buffer.StartColor( QuickColors.HeaderMid ).AddNumberMoreReadable( VisualObjectRemovalRequests.Count ).EndColor().Add( " 对象移除<pos=200>" );
-            Buffer.StartColor( QuickColors.HeaderMid ).AddNumberMoreReadable( IInstancedRendererRemovalRequests.Count ).EndColor().Add( " 舰船移除" );
+            Buffer.StartColor( QuickColors.HeaderMid ).AddNumberMoreReadable( IInstancedRendererRemovalRequests.Count ).EndColor().Add( " 单位移除" );
             //ROW 4
             Buffer.Add( "\n" ).Add( "<pos=20>" );
             Buffer.StartColor( QuickColors.HeaderMid ).AddNumberMoreReadable( SoundPlaybackRequestsImmediate.Count ).EndColor().Add( " 音效请求<pos=200>" );

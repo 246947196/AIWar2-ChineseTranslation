@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <entity name="RorqualHegira"
       thematic_groups="ArkCapturable,Human"
@@ -162,7 +162,7 @@
 			category="Ship"
 			collision_priority="10000"
 			display_name="吉恩,虚空之家"
-			description="非常强大的移动设施方舟旗舰。如果某支舰队的旗舰在同一行星或相邻行星上,且该舰队缺少战舰,则会自动生产替代舰船并直接传送到该旗舰处。同时也能生产无人机,并产生一些能量。"
+			description="非常强大的移动设施方舟旗舰。如果某支舰队的旗舰在同一行星或相邻行星上,且该舰队缺少战舰,则会自动生产替代单位并直接传送到该旗舰处。同时也能生产无人机,并产生一些能量。"
 			fleet_design_template_i_use_for_drones="GrynDrones"
 			drone_starting_behavior_type="Attacker_Full"
 			aip_to_claim="9"
@@ -269,7 +269,7 @@
 			category="Ship"
 			collision_priority="10000"
 			display_name="兰花"
-			description="这艘方舟旗舰专注于超快速治疗。它还能生成救援孢子,这些孢子会牺牲自己来修复你的其他舰船。"
+			description="这艘方舟旗舰专注于超快速治疗。它还能生成救援孢子,这些孢子会牺牲自己来修复你的其他单位。"
 			aip_to_claim="7"
 			metal_to_claim="500000"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" tech_upgrade_that_is_used_for_my_direct_science="Direct_ArkGeneral"

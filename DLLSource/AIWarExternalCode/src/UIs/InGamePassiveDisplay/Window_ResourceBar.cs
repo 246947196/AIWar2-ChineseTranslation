@@ -416,9 +416,9 @@ namespace Arcen.AIW2.External
                     PlanetFaction pFaction = planet.GetPlanetFactionForFaction( localFaction );
                     if ( pFaction != null )
                     {
-                        text += "\n右键点击将切换你的舰船是否会途经此星球。";
+                        text += "\n右键点击将切换你的单位是否会途经此星球。";
                         if ( pFaction != null && pFaction.GetPlanetFactionBooleanFlag( PlanetFactionBooleanFlag.DoNotPathThrough ) )
-                            text += "\n你的舰船将不会途经此星球。";
+                            text += "\n你的单位将不会途经此星球。";
                     }
                 }
 
@@ -759,7 +759,7 @@ namespace Arcen.AIW2.External
                 {
                     case ResourceType.FuelArgon:
                         fuelName = "氩燃料";
-                        fuelUse = "氩是一种全球资源，用于运行你的主力战斗舰船。";
+                        fuelUse = "氩是一种全球资源，用于运行你的主力战斗单位。";
                         colorGood = "ff8e32";
                         colorTotal = "eb481d";
                         consumedTotal = forFaction.FuelArgonConsumption;
@@ -1406,7 +1406,7 @@ namespace Arcen.AIW2.External
                     return;
                 }
 
-                Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, "黑客：通用纳米机器，用于强化己方单位、破坏敌方单位或从敌方窃取资源。注意，你处于目标丰富的环境中，可能连可用入侵的三分之一都负担不起。明智地选择入侵，占领更多星球或摧毁分发节点以获取更多入侵点。另外注意：你对 AI 使用的入侵点越多，AI 对你入侵的回应就越强烈。只有花费在 AI 拥有的结构上的点才会计入。\n" + GetHackerAddendum() + GetHackingLevelText() + "\n\n点击此图标将显示你所有入侵操作的详细历史。" );
+                Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, "入侵：通用纳米机器，用于强化己方单位、破坏敌方单位或从敌方窃取资源。注意，你处于目标丰富的环境中，可能连可用入侵的三分之一都负担不起。明智地选择入侵，占领更多星球或摧毁分发节点以获取更多入侵点。另外注意：你对 AI 使用的入侵点越多，AI 对你入侵的回应就越强烈。只有花费在 AI 拥有的结构上的点才会计入。\n" + GetHackerAddendum() + GetHackingLevelText() + "\n\n点击此图标将显示你所有入侵操作的详细历史。" );
             }
             private string GetHackingLevelText()
             {
@@ -1478,9 +1478,9 @@ namespace Arcen.AIW2.External
                         World_AIW2.Instance.CurrentGalaxy.GetPlanetByIndex( hacker.ActiveHack_Planet ) );
                     int secondsLeft = totalDuration - secondsSoFar;
                     if ( totalDuration > 0 ) //any hack that has an explicit time duration
-                        output += "  <color=#f5a1ff>黑客在 " + hacker.GetPlanetName_Safe() +" 完成工作剩余时间：" + Engine_Universal.ToHoursAndMinutesString( secondsLeft ) + "</color>\n";
+                        output += "  <color=#f5a1ff>入侵在 " + hacker.GetPlanetName_Safe() +" 完成工作剩余时间：" + Engine_Universal.ToHoursAndMinutesString( secondsLeft ) + "</color>\n";
                     else //this is for things with a variable time, like the superterminal hack
-                        output += "  <color=#f5a1ff>黑客在 " + hacker.GetPlanetName_Safe() +" 的工作已用时间：" + Engine_Universal.ToHoursAndMinutesString( secondsSoFar ) + "</color>\n";
+                        output += "  <color=#f5a1ff>入侵在 " + hacker.GetPlanetName_Safe() +" 的工作已用时间：" + Engine_Universal.ToHoursAndMinutesString( secondsSoFar ) + "</color>\n";
                 }
                 return output;
             }
@@ -2586,7 +2586,7 @@ namespace Arcen.AIW2.External
                         }
                     }
                 }
-                tooltipBuffer.Add("\n<size=60%>左键点击查看性能统计。中键查看阵营调试信息。右键查看 NPC 舰船容量信息。</size>");
+                tooltipBuffer.Add("\n<size=60%>左键点击查看性能统计。中键查看阵营调试信息。右键查看 NPC 单位容量信息。</size>");
                 Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( Element, tooltipBuffer.GetStringAndResetForNextUpdate() );
             }
 
@@ -2600,7 +2600,7 @@ namespace Arcen.AIW2.External
                     Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "派系联盟详情", "关闭",
                         delegate ( ArcenDoubleCharacterBuffer Buffer ) { return tAttackSafe.GetFactionAllianceDetails( Buffer ); } );
                 else if ( input.RightButtonClicked )
-                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "NPC 舰船容量详情", "关闭",
+                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "NPC 单位容量详情", "关闭",
                         delegate ( ArcenDoubleCharacterBuffer Buffer ) { return tAttackSafe.GetNPCShipCapDetails( Buffer ); } );
                 else
                     Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "性能统计", "关闭",
@@ -2917,7 +2917,7 @@ namespace Arcen.AIW2.External
                     Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "派系联盟详情", "关闭",
                         delegate ( ArcenDoubleCharacterBuffer Buffer ) { return tAttackSafe.GetFactionAllianceDetails( Buffer ); } );
                 else if ( input.RightButtonClicked )
-                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "NPC 舰船容量详情", "关闭",
+                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "NPC 单位容量详情", "关闭",
                         delegate ( ArcenDoubleCharacterBuffer Buffer ) { return tAttackSafe.GetNPCShipCapDetails( Buffer ); } );
                 else
                     Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "性能统计", "关闭",
@@ -2956,7 +2956,7 @@ namespace Arcen.AIW2.External
                     Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "派系联盟详情", "关闭",
                         delegate ( ArcenDoubleCharacterBuffer Buffer ) { return tAttackSafe.GetFactionAllianceDetails( Buffer ); } );
                 else if ( input.RightButtonClicked )
-                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "NPC 舰船容量详情", "关闭",
+                    Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "NPC 单位容量详情", "关闭",
                         delegate ( ArcenDoubleCharacterBuffer Buffer ) { return tAttackSafe.GetNPCShipCapDetails( Buffer ); } );
                 else
                     Window_ModalSelfUpdatingTextWindow.Instance.Open( 0.5f, 2f, "性能统计", "关闭",
@@ -3136,7 +3136,7 @@ namespace Arcen.AIW2.External
             }
             if ( forFaction.TotalMetalMetabolized > 0 )
             {
-                Buffer.Add( "\n所有舰船消耗的金属总计：<color=#ccccee>" ).AddNumberMoreReadable( forFaction.TotalMetalMetabolized ).EndColor();
+                Buffer.Add( "\n所有单位消耗的金属总计：<color=#ccccee>" ).AddNumberMoreReadable( forFaction.TotalMetalMetabolized ).EndColor();
             }
 
             //Science
@@ -3151,11 +3151,11 @@ namespace Arcen.AIW2.External
                 Buffer.Add("\n\t如果需要更多科技，你可以在 ").Add("尖塔要塞", "ffb37b").Add(" 建造 ").Add("科技发电机", "7CE9FF").Add("。");
             //Hacking
             income = factionBaseInfo.HackingIncomeLastSecond;
-            Buffer.Add("\n黑客收入：" ).Add( income.ToString(), ArcenExternalUIUtilities.HackingTextColor ).Add("\n\t基础黑客收入：").Add( factionBaseInfo.Income.BaseHackingIncomePerSecond, "a1ffa1" );
+            Buffer.Add("\n入侵收入：" ).Add( income.ToString(), ArcenExternalUIUtilities.HackingTextColor ).Add("\n\t基础入侵收入：").Add( factionBaseInfo.Income.BaseHackingIncomePerSecond, "a1ffa1" );
             if ( factionBaseInfo.HackingGenerators.Count > 0 )
             {
                 //FInt additionalIncome = factionBaseInfo.Income.HackingIncomePerGeneratorPerSecond * factionBaseInfo.HackingGenerators.Count;
-                Buffer.Add("\n\t来自 ").Add( factionBaseInfo.HackingGenerators.Count, "ffa1a1" ).Add(" 个黑客发电机，每个产生 ").Add( factionBaseInfo.Income.HackingIncomePerGeneratorPerSecond, "a1a1ff" ).Add(" 加上 ").Add( factionBaseInfo.Income.HackingIncomePerGeneratorPerSecondIncreasePerMarkLevel, "a1ffa1" ).Add(" 每标记等级。");
+                Buffer.Add("\n\t来自 ").Add( factionBaseInfo.HackingGenerators.Count, "ffa1a1" ).Add(" 个入侵发电机，每个产生 ").Add( factionBaseInfo.Income.HackingIncomePerGeneratorPerSecond, "a1a1ff" ).Add(" 加上 ").Add( factionBaseInfo.Income.HackingIncomePerGeneratorPerSecondIncreasePerMarkLevel, "a1ffa1" ).Add(" 每标记等级。");
             }
             /*
             //ResourceOneT

@@ -793,7 +793,7 @@ namespace Arcen.AIW2.External
                     World_AIW2.Instance.QueueGameCommand( ForFaction, command, true );
                 }, 
                 null, 
-                "拆解选中的单位？", "你确定要拆解当前选中的单位吗？", "是的，销毁它们", "不，等等！" );
+                "废弃选中的单位？", "你确定要废弃当前选中的单位吗？", "是的，销毁它们", "不，等等！" );
         }
 
         public static void TogglePlanetFactionBooleanFlagAtCurrentPlanet( Faction ForFaction, GameCommandSource Source, PlanetFactionBooleanFlag Flag)

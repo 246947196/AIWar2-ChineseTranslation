@@ -70,10 +70,10 @@
           max_campaign_harshness_to_display="200" fixed_value_if_above_campaign_harshness="12000" sandbox_max="500000"
           description="该玩家开始时有多少科技？默认是1.5万。开始时有更多科技被视为作弊，但你可以设置最多5万。" />
     <custom_field  requires_player_types="HumanEmpire,SpireInfusedEmpire"
-          name="StartingHacking" is_advanced_setting="true" display_name="&lt;color=#ff7e64&gt;高级:&lt;/color&gt; 初始黑客点数"
+          name="StartingHacking" is_advanced_setting="true" display_name="&lt;color=#ff7e64&gt;高级:&lt;/color&gt; 初始入侵点数"
           sort_group="430" setting_type="IntTextbox" default="60" min="0" max="120"
           max_campaign_harshness_to_display="200" fixed_value_if_above_campaign_harshness="48" sandbox_max="5000"
-          description="该玩家开始时有多少黑客点数(HaP)？默认是60。开始时有更多点数被视为作弊，但你可以设置最多120。" />
+          description="该玩家开始时有多少入侵点数(HaP)？默认是60。开始时有更多点数被视为作弊，但你可以设置最多120。" />
   </faction>  
     
   <faction name="DevourerGolem"

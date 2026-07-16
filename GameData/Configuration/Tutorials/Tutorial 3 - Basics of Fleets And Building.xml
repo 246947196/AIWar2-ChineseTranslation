@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   <tutorial category="Basics" name="BasicFleetsAndBuilding" display_name="教程 3 - 舰队和建筑基础" sort_priority="3"
@@ -75,7 +75,7 @@
       For informaton about the conditions that you can use, and how to use them, 
       please see this wiki page: https://wiki.arcengames.com/index.php?title=AI_War_2:_Tutorial_Step_Conditions
       *************************************-->
-    <tutorial_step text_to_show="欢迎来到《AI战争2》的第三个教程。本教程将介绍舰队系统的基础知识，包括我们所有单位所在的舰队，以及如何建造这些单位、舰船和结构。
+    <tutorial_step text_to_show="欢迎来到《AI战争2》的第三个教程。本教程将介绍舰队系统的基础知识，包括我们所有单位所在的舰队，以及如何建造这些单位、单位和结构。
 	
 你会在这个星球上看到两个新单位：一艘运输旗舰和一个引力战斗站。
 

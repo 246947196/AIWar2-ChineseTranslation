@@ -97,7 +97,7 @@ namespace Arcen.AIW2.External
                         var buffer = this.Buffer;
                         buffer.Add( "不足 " );
                         bool first = true;
-                        if ( hapShort )  { if ( !first ) buffer.Add( ", " ); buffer.StartHacking( false ).Add( "黑客点" ).EndColor();   first = false; }
+                        if ( hapShort )  { if ( !first ) buffer.Add( ", " ); buffer.StartHacking( false ).Add( "入侵点" ).EndColor();   first = false; }
                         if ( res1Short ) { if ( !first ) buffer.Add( ", " ); buffer.StartResourceOne( false ).Add( res1Name ).EndColor(); first = false; }
                         if ( res2Short ) { if ( !first ) buffer.Add( ", " ); buffer.AddResourceTwo( res2Name, true );                        first = false; }
                         if ( res3Short ) { if ( !first ) buffer.Add( ", " ); buffer.AddResourceThree( res3Name, true );                     first = false; }
@@ -170,7 +170,7 @@ namespace Arcen.AIW2.External
                  breach.AdditionalResourceOneCost > 0 || breach.AdditionalResourceTwoCost > 0 ||
                  breach.AdditionalResourceThreeCost > 0 )
             {
-                buffer.Pad().NewLineIfNeeded().Add( "此黑客花费 " );
+                buffer.Pad().NewLineIfNeeded().Add( "此入侵花费 " );
                 int counter = 0;
                 if ( breach.AdditionalAIPCost > 0 )
                 {
@@ -277,7 +277,7 @@ namespace Arcen.AIW2.External
             if ( Hacker.ActiveHack_DurationThusFar == 1 )
             {
                 ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.Normal, null, "Apkallu 联络",
-                    "我们……感知到你了。请保持你的黑客信标激活，以便我们逃脱。\n\n\n<size=80%>详情请见日志。</size>", "确定" );
+                    "我们……感知到你了。请保持你的入侵信标激活，以便我们逃脱。\n\n\n<size=80%>详情请见日志。</size>", "确定" );
                 Faction apkallu = FactionUtilityMethods.Instance.GetApkalluFaction();
                 World_AIW2.Instance.QueueLogJournalEntryToSidebar( "Apkallu_FirstContact", string.Empty, apkallu, null, null, OnClient.DoThisOnHostOnly_WillBeSentToClients );
             }
@@ -301,7 +301,7 @@ namespace Arcen.AIW2.External
         {
             if ( Target.CurrentStateOfMatter == StateOfMatterTypeDataTable.Instance.DefaultRow )
             {
-                RejectionReasonDescription = "此 Ziggurat 已被黑客入侵";
+                RejectionReasonDescription = "此 Ziggurat 已被入侵";
                 return Hackable.NeverCanBeHacked_Hide;
             }
             ApkalluFactionBaseInfo apkalluBase = HackerFaction.TryGetExternalBaseInfoAs<ApkalluFactionBaseInfo>();

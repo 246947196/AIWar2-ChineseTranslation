@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!--Note: multiple items here can use the same dll and type/class.  
   Having multiple entries in here simplifies setting up titles and descriptions by a huge amount.-->
@@ -174,11 +174,11 @@
             name="HackToGrantShipLine"
             dll_name="AIWarExternalCode"
             type_name="Arcen.AIW2.External.Hacking_GrantShipLine"
-            display_name="通用舰船生产线授予基础"
+            display_name="通用单位生产线授予基础"
             short_name="Grant Line"
-            description="该建筑正在研究几种舰船设计。在 AI 察觉并让该站点自毁之前，尝试通过破解突破安全系统可以获取其中一个项目。
+            description="该建筑正在研究几种单位设计。在 AI 察觉并让该站点自毁之前，尝试通过破解突破安全系统可以获取其中一个项目。
 
-这将允许玩家为执行破解的旗舰（离目标最近的那艘）授予一条新的舰船生产线。"
+这将允许玩家为执行破解的旗舰（离目标最近的那个）授予一条新的单位生产线。"
             hack_duration="30"
             primary_hacking_response_interval="30"
             primary_response_strength_per_interval="3"
@@ -189,7 +189,7 @@
             local_hacker_required="true"
             use_closest_hacker_for_check="true"
             choose_a_specific_ship_line_to_grant="true"
-            choice_text="您希望为这艘执行破解的舰船所在舰队添加哪条舰船生产线？"
+            choice_text="您希望为这艘执行破解的单位所在舰队添加哪条单位生产线？"
             choice_text_height="60"
             hold_key_for_verbose="true"
             relatedstring_is_a_ship_type="true"
@@ -212,9 +212,9 @@
             multiplier_to_hacking_point_cost_when_on_hostile_world="2"
             multiplier_to_hacking_time_when_on_neutral_or_friendly_world="0.5"
             hacking_points_against_this_faction_percentage_recorded_modifer="0.66"
-            display_name="窃取实验性舰船生产线"
+            display_name="窃取实验性单位生产线"
             short_name="Steal Exp.Line"
-            description="该建筑正在研究先进的原型舰船设计。在 AI 察觉并让该站点自毁之前，您可以通过破解获取其中一个设计的蓝图。成功破解将为执行破解的舰队授予一条强大的新舰船生产线；之后它可以被转移到其他舰队。"
+            description="该建筑正在研究先进的原型单位设计。在 AI 察觉并让该站点自毁之前，您可以通过破解获取其中一个设计的蓝图。成功破解将为执行破解的舰队授予一条强大的新单位生产线；之后它可以被转移到其他舰队。"
             />
 
     <item
@@ -228,7 +228,7 @@
             hacking_points_against_this_faction_percentage_recorded_modifer="0.66"
             display_name="窃取精英巡洋舰生产线"
             short_name="Steal Cruiser"
-            description="该设施正在建造精英巡洋舰生产线，但尚未准备好部署（对您来说很幸运）。您可以通过破解获取它们的蓝图，之后 AI 会察觉并让该站点自毁。成功破解将为执行破解的舰队授予一条强大的新舰船生产线；之后它可以被转移到其他舰队。任何给定舰队中只能有一条精英舰船生产线。"
+            description="该设施正在建造精英巡洋舰生产线，但尚未准备好部署（对您来说很幸运）。您可以通过破解获取它们的蓝图，之后 AI 会察觉并让该站点自毁。成功破解将为执行破解的舰队授予一条强大的新单位生产线；之后它可以被转移到其他舰队。任何给定舰队中只能有一条精英单位生产线。"
             />
 
     <item
@@ -242,7 +242,7 @@
             hacking_points_against_this_faction_percentage_recorded_modifer="0.66"
             display_name="窃取精英驱逐舰生产线"
             short_name="Steal Destroyer"
-            description="该设施正在建造精英驱逐舰生产线，但尚未准备好部署（对您来说很幸运）。您可以通过破解获取它们的蓝图，之后 AI 会察觉并让该站点自毁。成功破解将为执行破解的舰队授予一条强大的新舰船生产线；之后它可以被转移到其他舰队。任何给定舰队中只能有一条精英舰船生产线。"
+            description="该设施正在建造精英驱逐舰生产线，但尚未准备好部署（对您来说很幸运）。您可以通过破解获取它们的蓝图，之后 AI 会察觉并让该站点自毁。成功破解将为执行破解的舰队授予一条强大的新单位生产线；之后它可以被转移到其他舰队。任何给定舰队中只能有一条精英单位生产线。"
             />
 
     <item
@@ -255,11 +255,11 @@
             multiplier_to_hacking_point_cost_when_on_hostile_world="2"
             multiplier_to_hacking_time_when_on_neutral_or_friendly_world="0.5"
             hacking_points_against_this_faction_percentage_recorded_modifer="0.66"
-            display_name="窃取 AI 舰船生产线"
+            display_name="窃取 AI 单位生产线"
             short_name="Steal Line"
-            description="该建筑的三个独立区域正在研究各种舰船设计。大多数设计明显源自人类，但 AI 一直在进行各种改进，在某些情况下还融入了外星技术。在 AI 察觉并关闭该区域之前，你可以通过破解每个区域获取其中一个设计的蓝图。一旦三个区域都被攻破，该站点将自毁。
+            description="该建筑的三个独立区域正在研究各种单位设计。大多数设计明显源自人类，但 AI 一直在进行各种改进，在某些情况下还融入了外星技术。在 AI 察觉并关闭该区域之前，你可以通过破解每个区域获取其中一个设计的蓝图。一旦三个区域都被攻破，该站点将自毁。
         
-一次成功的破解将为执行破解的舰队授予一条新的舰船生产线，然后揭示下一个区域的全新潜在舰船生产线；之后它可以被转移到其他舰队。
+一次成功的破解将为执行破解的舰队授予一条新的单位生产线，然后揭示下一个区域的全新潜在单位生产线；之后它可以被转移到其他舰队。
 
 随着你多次破解该建筑，AI 的反击会越来越猛烈；因此一定要小心。最后一个区域的破解成本也可能高得令人望而却步，所以除非你别无选择，否则可能只破解前两个区域就够了。"
             />
@@ -268,10 +268,10 @@
             name="HackToGrantShipLine_ARSTutorial"
             copy_from="HackToGrantShipLine_ARS"
             number_of_times_individual_unit_can_be_hacked="1"
-            display_name="窃取 AI 舰船生产线"
-            description="由于这是教程，该建筑仅在一个区域内研究各种舰船设计。在主游戏中，你最多可以破解三次来窃取蓝图，但在本教程中只能破解一次。在 AI 察觉并关闭该区域之前，你可以通过破解获取其中一个设计的蓝图。一旦所有区域（在教程中只有一个）都被攻破，该站点将自毁。
+            display_name="窃取 AI 单位生产线"
+            description="由于这是教程，该建筑仅在一个区域内研究各种单位设计。在主游戏中，你最多可以破解三次来窃取蓝图，但在本教程中只能破解一次。在 AI 察觉并关闭该区域之前，你可以通过破解获取其中一个设计的蓝图。一旦所有区域（在教程中只有一个）都被攻破，该站点将自毁。
         
-一次成功的破解将为执行破解的舰队授予一条新的舰船生产线，然后揭示下一个区域的全新潜在舰船生产线；之后它可以被转移到其他舰队。
+一次成功的破解将为执行破解的舰队授予一条新的单位生产线，然后揭示下一个区域的全新潜在单位生产线；之后它可以被转移到其他舰队。
 
 通常情况下，随着你多次破解该建筑，AI 的反击会越来越猛烈；因此在主游戏中，是否继续破解是一个需要权衡的选择。最后一个区域的破解成本也可能高得令人望而却步，所以除非你别无选择，否则在主游戏中可能只破解前两个区域就够了。在本教程中，你无需担心这些问题。"
             />
@@ -386,9 +386,9 @@
             copy_from="HackToGrantShipLine"
             dll_name="AIWarExternalCode"
             type_name="Arcen.AIW2.External.Hacking_GrantShipLine_DontDestroyTarget"
-            display_name="窃取黑暗尖塔舰船生产线"
+            display_name="窃取黑暗尖塔单位生产线"
             short_name="Steal Line"
-            description="破解这个复仇发生器将为执行破解的舰队提供一些黑暗尖塔舰船，但这可能会带来毁灭性的后果；你是否愿意在深渊中点燃一把火？"
+            description="破解这个复仇发生器将为执行破解的舰队提供一些黑暗尖塔单位，但这可能会带来毁灭性的后果；你是否愿意在深渊中点燃一把火？"
             number_of_times_individual_unit_can_be_hacked="3"
             cost_in_hacking_points_multiplier_per_times_same_unit_hacked="1.5"
             do_not_destroy_structure_after_hacking_multiple_times="true"
@@ -407,7 +407,7 @@
             hack_is_against_planet="false"
             use_closest_hacker_for_check="true"
             choose_a_specific_ship_line_to_grant="true"
-            choice_text="您希望为执行破解的舰船所在舰队添加哪条舰船生产线？"
+            choice_text="您希望为执行破解的单位所在舰队添加哪条单位生产线？"
             choice_text_height="60"
             destroy_hack_target_on_completion="false"
             relatedstring_is_a_ship_type="true"
@@ -418,7 +418,7 @@
             copy_from="HackToGrantShipLine"
             dll_name="AIWarExternalCode"
             type_name="Arcen.AIW2.External.Hacking_GrantShipLine_DontDestroyTarget"
-            display_name="借用人类抵抗战士舰船生产线"
+            display_name="借用人类抵抗战士单位生产线"
             short_name="Borrow Line"
             description="人类抵抗战士说：“希望这能帮到你！”"
             hack_duration="10"
@@ -435,7 +435,7 @@
             hack_is_against_planet="false"
             use_closest_hacker_for_check="true"
             choose_a_specific_ship_line_to_grant="true"
-            choice_text="您希望为执行破解的舰船所在舰队添加哪条舰船生产线？"
+            choice_text="您希望为执行破解的单位所在舰队添加哪条单位生产线？"
             choice_text_height="60"
             relatedstring_is_a_ship_type="true"
             science_to_grant_on_completion="1000"
@@ -445,7 +445,7 @@
             />
 
         <!-- this hack is for the Zenith Onslaught -->
-       <!-- <item name="SynthesizeDysonAntagonizer" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_SynthesizeDysonAntagonizer" display_name="拆解戴森对抗器" description="这将摧毁戴森对抗器，并让你有能力建造自己的戴森对抗器。"
+       <!-- <item name="SynthesizeDysonAntagonizer" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_SynthesizeDysonAntagonizer" display_name="废弃戴森对抗器" description="这将摧毁戴森对抗器，并让你有能力建造自己的戴森对抗器。"
         hack_duration="240"
         hacking_cost_multiplier_per_attempt="0"
         primary_hacking_response_interval="10"

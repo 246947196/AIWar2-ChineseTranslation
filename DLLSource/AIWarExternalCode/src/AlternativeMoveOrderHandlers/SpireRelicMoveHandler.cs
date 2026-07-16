@@ -90,7 +90,7 @@ namespace Arcen.AIW2.External
                             if ( chatHandlerOrNull != null )
                                 chatHandlerOrNull.SquadToView = LazyLoadSquadWrapper.Create( RelatedEntity );
 
-                            World_AIW2.Instance.QueueChatMessageOrCommand( "此圣物只能送往起始星球，但该星球已有尖塔城市，此圣物已无法使用。建议拆解。",
+                            World_AIW2.Instance.QueueChatMessageOrCommand( "此圣物只能送往起始星球，但该星球已有尖塔城市，此圣物已无法使用。建议废弃。",
                                 ChatType.LogToCentralChat, "CannotDoThatThing", chatHandlerOrNull );
                         }
                         break;
@@ -193,7 +193,7 @@ namespace Arcen.AIW2.External
                             if ( chatHandlerOrNull != null )
                                 chatHandlerOrNull.SquadToView = LazyLoadSquadWrapper.Create( RelatedEntity );
 
-                            World_AIW2.Instance.QueueChatMessageOrCommand( "此圣物只能送往起始星球，但该星球已有尖塔城市，此圣物已无法使用。建议拆解。",
+                            World_AIW2.Instance.QueueChatMessageOrCommand( "此圣物只能送往起始星球，但该星球已有尖塔城市，此圣物已无法使用。建议废弃。",
                                 ChatType.LogToCentralChat, "CannotDoThatThing", chatHandlerOrNull );
                         }
                         break;

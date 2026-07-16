@@ -1,4 +1,4 @@
-﻿using Arcen.AIW2.Core;
+using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -101,7 +101,7 @@ namespace Arcen.AIW2.External
                 if ( strengthToShow >= 1 )
                     Buffer.Add( "，约 " ).Add( ArcenExternalUIUtilities.GUI_StrengthTextColorAndIcon ).Add( strengthToShow, "a1ffa1" );
                 Buffer.Add( "。瞭望塔最大 " ).Add( ArcenExternalUIUtilities.GUI_StrengthTextColorAndIcon ).Add( (globaldata.MaxWatchtowerStrength / 1000), "ff1a1a" ).Add( "。\n" );
-                Buffer.Add( "它有 " ).Add( data.MetalStored, "a1ffa1" ).Add( " 金属可用于购买新舰船。\n" );
+                Buffer.Add( "它有 " ).Add( data.MetalStored, "a1ffa1" ).Add( " 金属可用于购买新单位。\n" );
                 Planet helpPlanet = data.PlanetWatchtowerWantsToHelp;
                 if ( helpPlanet != null )
                     Buffer.Add( "我们检测到至少在 " + helpPlanet.Name + " 有敌人需要协助战斗。\n" );

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
     <entity name="Neophyte"
 	        thematic_groups="Scourge" npc_ship_cap_type="SpecialLowCapGroup"
@@ -1063,7 +1063,7 @@
 			collision_priority="810"
 			display_name="征服者"
       display_name_for_sidebar="征服者"
-			description="AI使用这些可怕的舰船收割其他种族加入Scourge。让我们看看它是否会让你成为下一个战利品..."
+			description="AI使用这些可怕的单位收割其他种族加入Scourge。让我们看看它是否会让你成为下一个战利品..."
 			starting_mark_level="Mark1" max_mark_level="3"
 			cost_for_ai_to_purchase="10000"
 			hull_points="3200000" shield_points="1600000" speed="AboveAverage1"
@@ -1107,7 +1107,7 @@
 			collision_priority="810"
 			display_name="复仇者"
       display_name_for_sidebar="复仇者"
-			description="一艘巨大的舰船，是将最近吸收的种族特性与征服者结合的结果。"
+			description="一个巨大的单位，是将最近吸收的种族特性与征服者结合的结果。"
 			starting_mark_level="Markless"
 			cost_for_ai_to_purchase="140000" strength_multiplier="5"
 			hull_points="5600000" shield_points="2800000" speed="AboveAverage6"

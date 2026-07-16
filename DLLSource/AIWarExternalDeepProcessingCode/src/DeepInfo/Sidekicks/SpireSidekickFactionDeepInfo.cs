@@ -1,4 +1,4 @@
-﻿
+
 using Arcen.AIW2.Core;
 using System;
 
@@ -2331,9 +2331,9 @@ namespace Arcen.AIW2.External
                             if ( faction.RandomImpact != TypeDifficulty.Unset &&
                                  !faction.HasBeenSeenByPlayer &&
                                  !GameSettings.Current.GetBoolBySetting( "ShowRandomAIType" ) )
-                                workingBuffer.Add( "一个" ).Add( "随机阵营", factionToUse.FactionCenterColor.ColorHexBrighter ).Add( "已获取" + debris.GetPlanetName_Safe() + "上的尖塔残骸。他们将利用此残骸建造使用尖塔技术的新舰船类型" );
+                                workingBuffer.Add( "一个" ).Add( "随机阵营", factionToUse.FactionCenterColor.ColorHexBrighter ).Add( "已获取" + debris.GetPlanetName_Safe() + "上的尖塔残骸。他们将利用此残骸建造使用尖塔技术的新单位类型" );
                             else
-                                workingBuffer.Add( factionToUse.GetDisplayName(), factionToUse.FactionCenterColor.ColorHexBrighter ).Add( "已获取" + debris.GetPlanetName_Safe() + "上的尖塔残骸。他们将利用此残骸建造使用尖塔技术的新舰船类型" );
+                                workingBuffer.Add( factionToUse.GetDisplayName(), factionToUse.FactionCenterColor.ColorHexBrighter ).Add( "已获取" + debris.GetPlanetName_Safe() + "上的尖塔残骸。他们将利用此残骸建造使用尖塔技术的新单位类型" );
                         }
                         else
                         {

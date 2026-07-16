@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   <entity name="HRFMedNucleophilicShip" copy_from="NucleophilicGuardian" special_entity_type="Frigate" thematic_groups="Guardian,IsolatedHumanResistance" 
@@ -64,7 +64,7 @@
 			tech_upgrades_that_benefit_me="Expatriate"
 			display_name="戟防御者"
 			display_name_for_sidebar="戟防御者"
-			description="这种变体对高装甲舰船特别有效，但由于使用更重的弹药，每次齐射发射的炮弹较少。"
+			description="这种变体对高装甲单位特别有效，但由于使用更重的弹药，每次齐射发射的炮弹较少。"
 			hull_points="3500" metal_cost="2200" >
 		<system name="V1" display_name="重型佩塔德"
 				damage_per_shot="110" shots_per_salvo="2">
@@ -88,7 +88,7 @@
 			tech_upgrades_that_benefit_me="Expatriate"
 			display_name="针垫防御者"
 			display_name_for_sidebar="针垫防御"
-			description="这种变体舰船比普通舰船更大，发射的导弹齐射对轻装甲目标具有毁灭性效果。"
+			description="这种变体单位比普通单位更大，发射的导弹齐射对轻装甲目标具有毁灭性效果。"
 			cost_for_ai_to_purchase="50" strength_multiplier="2"
 			hull_points="4100" metal_cost="3050" energy_consumption="400" armor_mm="50" >
 		<system name="Q5" display_name="震荡导弹"
@@ -140,7 +140,7 @@
 
   <entity name="HRFAssaultFrigate"  copy_from="AssaultFrigate"  starting_mark_level="Mark2" tags="HighHRFSpawn,HRFSpawn" thematic_groups="Frigate,IsolatedHumanResistance" 
           tech_upgrades_that_benefit_me="Expatriate"
-          display_name="突击护卫舰防御者"
+          display_name="突击星舰防御者"
 		  display_name_for_sidebar="突击防御FFH" ></entity>
 
   <entity name="HRFResearchCenter" voice_group="Silent" thematic_groups="IsolatedHumanResistance" 

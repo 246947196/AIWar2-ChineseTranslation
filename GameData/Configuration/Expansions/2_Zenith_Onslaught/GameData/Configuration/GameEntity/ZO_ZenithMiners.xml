@@ -15,7 +15,7 @@
 			collision_priority="810" has_special_immunity_to_planet_tier_displacement="true"
 			display_name="天顶矿工探测器"
 			target_type_for_player="NeverTarget"
-			description="天顶矿工的高级探测器；在对一个星系进行充分扫描后，矿工会抵达并吞噬该星系。不过看起来它容易受到黑客攻击。"
+			description="天顶矿工的高级探测器；在对一个星系进行充分扫描后，矿工会抵达并吞噬该星系。不过看起来它容易受到入侵。"
 			behavior="Stationary"
 			starting_mark_level="Markless"
 			cost_for_ai_to_purchase="2800" blocks_ceasefire_on_planet="true"

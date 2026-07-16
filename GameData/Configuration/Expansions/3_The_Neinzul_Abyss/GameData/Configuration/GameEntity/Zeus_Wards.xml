@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
 <!-- Wards.
@@ -67,7 +67,7 @@ Destroyer Wards
 			visuals_scale_multiplier="4"
 			collision_priority="1"
 			display_name="动能守卫"
-			description="动能守卫会将过于靠近的小型舰船推开，并对护甲薄弱的敌人造成巨额伤害。"
+			description="动能守卫会将过于靠近的小型单位推开，并对护甲薄弱的敌人造成巨额伤害。"
 			behavior="Stationary"
 			starting_mark_level="Mark3" tech_upgrades_that_benefit_me="Concussion" 
 			cost_for_ai_to_purchase="1000" strength_multiplier="0.2"
@@ -110,7 +110,7 @@ Destroyer Wards
 			visuals_scale_multiplier="2"
 			collision_priority="100"
 			display_name="拦截守卫"
-			description="守护在巨兽驱逐舰周围，能减慢进入其防御区域的单位速度，并惩罚引擎薄弱的舰船。"
+			description="守护在巨兽驱逐舰周围，能减慢进入其防御区域的单位速度，并惩罚引擎薄弱的单位。"
 			starting_mark_level="Mark3" tech_upgrades_that_benefit_me="Generalist"
 			cost_for_ai_to_purchase="28"
 			hull_points="4000" shield_points="0" speed="AboveAverage1"
@@ -159,7 +159,7 @@ Destroyer Wards
 			collision_priority="1000" construction_priority="50"
 			display_name="钳制守卫"
 			display_name_for_sidebar="钳制守卫"
-			description="钳制守卫环绕在驯兽师驱逐舰周围，用牵引光束捕获小型舰船，并在它们脆弱时发动攻击。"
+			description="钳制守卫环绕在驯兽师驱逐舰周围，用牵引光束捕获小型单位，并在它们脆弱时发动攻击。"
 			behavior="Stationary"
 			starting_mark_level="Mark3" tech_upgrades_that_benefit_me="Disruptive" 
 			max_count_seeded_as_ai_non_turret_defense="10"
@@ -560,7 +560,7 @@ Destroyer Wards
 			visuals_scale_multiplier="2.7"
 			collision_priority="1"
 			display_name="排斥守卫"
-			description="环绕旗舰运行，通过惯性火箭击退小型舰船。抵抗其击退效果的舰船将受到更多伤害。可以装载到运输船中。"
+			description="环绕旗舰运行，通过惯性火箭击退小型单位。抵抗其击退效果的单位将受到更多伤害。可以装载到运输船中。"
 			behavior="Stationary"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Forcefields,Citadels" 
 			cost_for_ai_to_purchase="1000" strength_multiplier="3"
@@ -638,7 +638,7 @@ Destroyer Wards
 			visuals_scale_multiplier="3.2"
 			collision_priority="1"
 			display_name="穿甲守卫"
-			description="对大型目标极具破坏力，但对小型舰船效果不佳。非常耐用，但造价昂贵。可装载进运输船。"
+			description="对大型目标极具破坏力，但对小型单位效果不佳。非常耐用，但造价昂贵。可装载进运输船。"
 			behavior="Stationary"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Forcefields,Citadels" 
 			cost_for_ai_to_purchase="1000" strength_multiplier="1"
@@ -758,7 +758,7 @@ Destroyer Wards
 			visuals_scale_multiplier="4"
 			collision_priority="1"
 			display_name="天使守卫"
-			description="利用自身生命值复活倒下的盟友，并且在非战斗状态下会自我再生。配备了强大的离子辐射炮，能够重创低等级且反照率抗性较差的舰船。"
+			description="利用自身生命值复活倒下的盟友，并且在非战斗状态下会自我再生。配备了强大的离子辐射炮，能够重创低等级且反照率抗性较差的单位。"
 			behavior="Stationary"
 			starting_mark_level="Mark5" tech_upgrades_that_benefit_me="Forcefields,Citadels" 
 			cost_for_ai_to_purchase="1000" strength_multiplier="3"
@@ -841,7 +841,7 @@ Destroyer Wards
 			visuals_scale_multiplier="8"
 			collision_priority="100"
 			display_name="涅因祖尔蝗虫"
-			description="自由漫游的涅因祖尔幼体，数量越多越危险，尤其是对受损舰船。如果其母体涅因祖尔守卫被摧毁，它也会死亡。可装载进运输船。"
+			description="自由漫游的涅因祖尔幼体，数量越多越危险，尤其是对受损单位。如果其母体涅因祖尔守卫被摧毁，它也会死亡。可装载进运输船。"
 			starting_mark_level="Mark5" tech_upgrades_that_benefit_me="Alien"
 			cost_for_ai_to_purchase="28" strength_multiplier="1.6"
 			hull_points="6500" shield_points="0" speed="AboveAverage1"

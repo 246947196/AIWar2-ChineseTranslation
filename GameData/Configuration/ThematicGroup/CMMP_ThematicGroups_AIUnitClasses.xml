@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   <thematic_group_type name="ExogalacticWarFront" display_name="河外战线"
@@ -33,7 +33,7 @@
 
   <thematic_group_type name="GuardPost" display_name="守卫哨站"
        sort_order="50" group_type="AIUnitClass"
-       description="守卫哨站是人工智能在其星球上的主要防御建筑，自身拥有一定火力，并储存增援舰船。"/>
+       description="守卫哨站是人工智能在其星球上的主要防御建筑，自身拥有一定火力，并储存增援单位。"/>
 
   <thematic_group_type name="DireGuardPost" display_name="恐怖守卫哨站"
        sort_order="50" group_type="AIUnitClass"

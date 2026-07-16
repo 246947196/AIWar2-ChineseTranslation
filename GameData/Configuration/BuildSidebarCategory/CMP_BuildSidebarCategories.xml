@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>  
   
   <!--这些建造分类的目的是在侧边栏中为玩家组织建造项目。
@@ -9,7 +9,7 @@
       
       除了侧边栏的组织方式外，这些分类不会影响游戏其他方面。
       重申：这纯粹是侧边栏上对玩家直接建造的
-      舰船/结构的视觉组织方式。
+      单位/结构的视觉组织方式。
       
       它没有游戏玩法、生成或其他结构上的意义，
       也不会影响游戏运行方式。-->
@@ -35,7 +35,7 @@
                   for_player_type_tags="HumanEmpire"
 	/>
   <build_category name="StationKeepers" sort_index="40" display_name="空间站守卫"
-    description="大型且危险的机动舰船，但必须停留在本地行星上。"
+    description="大型且危险的机动单位，但必须停留在本地行星上。"
                   for_player_type_tags="HumanEmpire"
 	/>
   <build_category name="CommandStations" sort_index="50" display_name="指挥站"

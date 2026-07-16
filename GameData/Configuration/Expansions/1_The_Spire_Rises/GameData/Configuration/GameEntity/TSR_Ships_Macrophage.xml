@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 	  <entity name="SpireMacrophageHarvester"
 		        thematic_groups="Macrophage,VeryMinorAliens,FallenSpire"
@@ -15,7 +15,7 @@
 				collision_priority="100"
 				display_name="尖塔感染巨噬细胞"
 				display_name_for_sidebar="尖塔巨噬"
-				description="巨噬细胞从其他舰船和结构中收割金属并供养其关联的Telium。这个收割者已融入尖塔科技，进化出了强大的气泡护盾。"
+				description="巨噬细胞从其他单位和结构中收割金属并供养其关联的Telium。这个收割者已融入尖塔科技，进化出了强大的气泡护盾。"
 			shield_size_scale="5" my_forcefield_does_not_shrink="true" my_forcefield_has_no_penalty_for_enemies_firing_out_of_it="true"
 			starting_mark_level="Mark1"
 			cost_for_ai_to_purchase="18000"			

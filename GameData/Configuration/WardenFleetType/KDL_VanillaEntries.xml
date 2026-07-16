@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <warden_type name="BaseOriented" is_default="true"
             display_name="基地导向型" abbreviation="基地导向型"
@@ -25,7 +25,7 @@
   
     <warden_type name="KiteMaster" copy_from="BaseOriented"
             display_name="风筝大师" abbreviation="风筝大师"
-            description="在大多数方面与预测型监守舰队相同，但其舰船开始使用你也能使用的风筝战术。这使得它们更难被追击！"
+            description="在大多数方面与预测型监守舰队相同，但其单位开始使用你也能使用的风筝战术。这使得它们更难被追击！"
             MustCampOnNinjaBases="false"
             AutoKite="true"
   >

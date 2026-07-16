@@ -1,4 +1,4 @@
-﻿using Arcen.Universal;
+using Arcen.Universal;
 using Arcen.AIW2.Core;
 using System;
 
@@ -715,9 +715,9 @@ namespace Arcen.AIW2.External
                         {
                             var data = Core.Stacking.Data.Get( localPlanet );
                             
-                            AddNum( data.ShipCount, "#舰船" );
+                            AddNum( data.ShipCount, "#单位" );
                             AddNum( data.SquadCount, "#小队" );
-                            AddNum( data.ShipsNotStackable, "#不可堆叠舰船" );
+                            AddNum( data.ShipsNotStackable, "#不可堆叠单位" );
                             AddNum( data.SquadsNotStackable, "#不可堆叠小队" );
                             //AddNum( data.ShipsStackable, "#ShipsCanStck" );
                             //AddNum( data.SquadsStackable, "#SquadsCanStck" );
@@ -751,7 +751,7 @@ namespace Arcen.AIW2.External
                     #region Entity Counts
                     //ROW 1B
                     Buffer.Add( "<pos=20>" );
-                    Buffer.StartColor( QuickColors.HeaderMid ).AddNumberMoreReadable( AudioAndSimilarHandler.TotalShips ).EndColor().Add( " 舰船<pos=200>" );
+                    Buffer.StartColor( QuickColors.HeaderMid ).AddNumberMoreReadable( AudioAndSimilarHandler.TotalShips ).EndColor().Add( " 单位<pos=200>" );
                     Buffer.StartColor( QuickColors.HeaderMid ).AddNumberMoreReadable( AudioAndSimilarHandler.TotalStandaloneShips ).EndColor().Add( " 小队" );
                     Buffer.Add( "\n" ).Add( "<pos=20>" );
                     Buffer.StartColor( QuickColors.HeaderMid ).AddNumberMoreReadable( AudioAndSimilarHandler.TotalUnstackableSquads ).EndColor().Add( " 不可堆叠" );
@@ -775,11 +775,11 @@ namespace Arcen.AIW2.External
                     //ROW 3A
                     Buffer.Add( "\n" ).Add( "<pos=20>" );
                     Buffer.StartColor( QuickColors.HeaderMid ).AddNumberMoreReadable( World_AIW2.Instance.TotalShotsHit ).EndColor().Add( " 命中<pos=200>" );
-                    Buffer.StartColor( QuickColors.HeaderMid ).AddNumberMoreReadable( World_AIW2.Instance.TotalShipsKilled ).EndColor().Add( " 击杀舰船" );
+                    Buffer.StartColor( QuickColors.HeaderMid ).AddNumberMoreReadable( World_AIW2.Instance.TotalShipsKilled ).EndColor().Add( " 击杀单位" );
                     //ROW 3B
                     Buffer.Add( "\n" ).Add( "<pos=20>" );
                     Buffer.StartColor( QuickColors.HeaderMid ).AddNumberMoreReadable( TimeBasedPoolBase.GetCountOfQuarantinedItemsInAllPools() ).EndColor().Add( " 时间隔离<pos=200>" );
-                    Buffer.StartColor( QuickColors.HeaderMid ).AddNumberMoreReadable( GameEntity_Squad.TotalShipsQuarantined ).EndColor().Add( " 隔离舰船" );
+                    Buffer.StartColor( QuickColors.HeaderMid ).AddNumberMoreReadable( GameEntity_Squad.TotalShipsQuarantined ).EndColor().Add( " 隔离单位" );
                     #endregion
                     
                     if ( !ArcenNetworkAuthority.IsClient ) //these do not run on the client
@@ -1157,7 +1157,7 @@ namespace Arcen.AIW2.External
                     
                     //ROW 3
                     Buffer.Add( "\n" ).Add( "<pos=20>" );
-                    Buffer.StartColor( QuickColors.HeaderMid ).AddNumberMoreReadable( GameEntity_Squad.NumberRawSquadsCreated ).EndColor().Add( " 已创建舰船<pos=200>" );
+                    Buffer.StartColor( QuickColors.HeaderMid ).AddNumberMoreReadable( GameEntity_Squad.NumberRawSquadsCreated ).EndColor().Add( " 已创建单位<pos=200>" );
                     Buffer.StartColor( QuickColors.HeaderMid ).AddNumberMoreReadable( WrapperedAddonObjectOrParticleField.TotalAddonObjectsInstantiated ).EndColor().Add( " 附件/粒子" );
                     //ROW 4
                     Buffer.Add( "\n" ).Add( "<pos=20>" );
@@ -1306,7 +1306,7 @@ namespace Arcen.AIW2.External
                     tooltipBuffer.StartColor( loadColor ).Add( LoadName ).Add( " / 负载分数 " ).AddNumberMoreReadable( totalLoad ).EndColor();
                     tooltipBuffer.Add( "\n" ).Add( Explantion );
                 }
-                tooltipBuffer.Add( "\n\n请注意，负载估算仅为估算值；如果你在游戏中通过信标黑客添加了更多阵营，负载可能会上升。你可以在下方的帧率和模拟速度计数器中看到实际性能，那些才是真实数据。此提示信息旨在预测你在长期游戏中可能遇到的情况。" );
+                tooltipBuffer.Add( "\n\n请注意，负载估算仅为估算值；如果你在游戏中通过信标入侵添加了更多阵营，负载可能会上升。你可以在下方的帧率和模拟速度计数器中看到实际性能，那些才是真实数据。此提示信息旨在预测你在长期游戏中可能遇到的情况。" );
                 tooltipBuffer.Add( "\n负载等级原因：\n" ).Add( summaryBuffer.GetStringAndResetForNextUpdate() );
                 tooltipBuffer.Add( "\n\n点击此按钮查看详情。" );
 
@@ -1328,7 +1328,7 @@ namespace Arcen.AIW2.External
                 }
                 popupBuffer.Add( "\n\n负载等级详细原因：\n" ).Add( detailsBuffer.GetStringAndResetForNextUpdate() );
 
-                popupBuffer.Add( "\n\n请注意，负载估算仅为估算值；如果你在游戏中通过信标黑客添加了更多阵营，负载可能会上升。你可以在下方的帧率和模拟速度计数器中看到实际性能，那些才是真实数据。此提示信息旨在预测你在长期游戏中可能遇到的情况。" );
+                popupBuffer.Add( "\n\n请注意，负载估算仅为估算值；如果你在游戏中通过信标入侵添加了更多阵营，负载可能会上升。你可以在下方的帧率和模拟速度计数器中看到实际性能，那些才是真实数据。此提示信息旨在预测你在长期游戏中可能遇到的情况。" );
 
                 ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.TallWide, null, "预测的游戏全程CPU负载详情", popupBuffer.GetStringAndResetForNextUpdate(), "确定" );
 

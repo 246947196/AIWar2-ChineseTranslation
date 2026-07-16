@@ -67,7 +67,7 @@ namespace Arcen.AIW2.External
                 buffer.Add( "." );
                 if ( eligibleTargets.Count > 1 )
                 {
-                    buffer.Add( "  你可以在发起黑客后选择要联系的对象。" );
+                    buffer.Add( "  你可以在发起入侵后选择要联系的对象。" );
                     if ( minCost != maxCost )
                         buffer.Add( "  联系他们的 AI 进度成本从 " ).Add( minCost ).Add( " 到 " ).Add( maxCost )
                               .Add( "，取决于你的选择。" );
@@ -1405,7 +1405,7 @@ namespace Arcen.AIW2.External
         public override string GetDynamicDescription(
             GameEntity_Squad target, GameEntity_Squad hackerOrNull, Planet planet, Faction hackerFaction, HackingType hackingType )
         {
-            string output = "此黑客将让你从以下科技的升级中选择一项： ";
+            string output = "此入侵将让你从以下科技的升级中选择一项： ";
 
             List<TechUpgrade> techs = TechUpgrade.GetTemporaryTechUpgradeList( "Hacking_GrantTech-GetDynamicDescription-techs", 10f );
             if ( techs == null ) //blocked for teardown/shutdown; bail

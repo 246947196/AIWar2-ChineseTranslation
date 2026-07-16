@@ -878,7 +878,7 @@ namespace Arcen.AIW2.External
                         if ( isCenterpiece && relatedSquadOrNull.ActiveHack != null && speedMultiplierWhileHacking > FInt.One )
                         {
                             this.WriteSpeedBuffsStartIfNeeded( buffer, useIcons, ref wroteBuffStart, ref wroteSpeedBuffStart );
-                                buffer.Add( "黑客入侵：" ).AddPercentRoundedDynamically( (speedMultiplierWhileHacking - 1) * 100 );
+                                buffer.Add( "入侵：" ).AddPercentRoundedDynamically( (speedMultiplierWhileHacking - 1) * 100 );
                         }
 
                         if ( owningFactionOrNull != null && relatedSquadOrNull.Planet != null && relatedSquadOrNull.Planet.IsFimbulwintered && owningFactionOrNull.BenefitsFromFimbulwinter )
@@ -1189,7 +1189,7 @@ namespace Arcen.AIW2.External
                             if ( isCenterpiece && relatedSquadOrNull.ActiveHack != null && speedMultiplierWhileHacking < FInt.One )
                             {
                                 this.WriteSpeedDebuffsStartIfNeeded( buffer, useIcons, ref wroteDebuffStart, ref wroteSpeedDebuffStart );
-                            buffer.Add( "黑客入侵：" ).AddPercentRoundedDynamically( (speedMultiplierWhileHacking - 1) * 100 );
+                            buffer.Add( "入侵：" ).AddPercentRoundedDynamically( (speedMultiplierWhileHacking - 1) * 100 );
                             }
 
                             if ( owningFactionOrNull != null && relatedSquadOrNull.Planet != null && relatedSquadOrNull.Planet.IsFimbulwintered && !owningFactionOrNull.BenefitsFromFimbulwinter )
@@ -1221,7 +1221,7 @@ namespace Arcen.AIW2.External
                             this.WriteDecloakDebuffsStartIfNeeded( buffer, useIcons, true, ref wroteDebuffStart, ref wroteCloakBuffStart );
                             if ( relatedSquadOrNull.ActiveHack != null )
                             {
-                                buffer.Add( "，因黑客禁用" );
+                                buffer.Add( "，因入侵禁用" );
                             } else if ( relatedSquadOrNull.GetIsCrippled() )
                             {
                                 buffer.Add( "，残废" );
@@ -1409,7 +1409,7 @@ namespace Arcen.AIW2.External
                                 if (secondsIHaveBeenThreat > -1 && orders != null)
                                 {
                                     buffer.Open(TextStyle.Newline_NoLabel);
-                                    buffer.Add( "该舰船曾作为威胁针对 " );
+                                    buffer.Add( "该单位曾作为威胁针对 " );
                                     if (againstFaction != null)
                                         buffer.AddFactionNameInItsColor(againstFaction, true);
                                     else
@@ -1421,7 +1421,7 @@ namespace Arcen.AIW2.External
                                 if ( againstPlanet != null && secondsIHaveBeenWaiting > -1 )
                                 {
                                     buffer.Open(TextStyle.Newline_NoLabel)
-                                          .Add( "该舰船一直在等待攻击 " )
+                                          .Add( "该单位一直在等待攻击 " )
                                           .AddPlanetNameFormated(againstPlanet,true)
                                           .Add(" 持续 ").AddMinutesAndSeconds(secondsIHaveBeenWaiting)
                                           .Close(TextStyle.Newline_NoLabel);
@@ -1431,17 +1431,17 @@ namespace Arcen.AIW2.External
                                 {
                                     if ( etype.NotEligibleToJoinHunterFleet || etype.IsDrone )
                                     {
-                                        buffer.Open(TextStyle.Newline_NoLabel).Add( "该舰船不会加入猎杀舰队，因为其类型。" ).Close(TextStyle.Newline_NoLabel);
+                                        buffer.Open(TextStyle.Newline_NoLabel).Add( "该单位不会加入猎杀舰队，因为其类型。" ).Close(TextStyle.Newline_NoLabel);
                                     }
                                     else
                                     if ( againstFaction != null && againstFaction.Type != FactionType.Player )
                                     {
-                                        buffer.Open(TextStyle.Newline_NoLabel).Add( "该舰船不会加入猎杀舰队，因为未以玩家为目标。" ).Close(TextStyle.Newline_NoLabel);
+                                        buffer.Open(TextStyle.Newline_NoLabel).Add( "该单位不会加入猎杀舰队，因为未以玩家为目标。" ).Close(TextStyle.Newline_NoLabel);
                                     }
                                     else
                                     if ( aidif == null )
                                     {
-                                        buffer.Open(TextStyle.Newline_NoLabel).Add( "该舰船不会加入猎杀舰队，因为未连接到哨兵。" ).Close(TextStyle.Newline_NoLabel);
+                                        buffer.Open(TextStyle.Newline_NoLabel).Add( "该单位不会加入猎杀舰队，因为未连接到哨兵。" ).Close(TextStyle.Newline_NoLabel);
                                     }
                                     else
                                     {
@@ -2543,7 +2543,7 @@ namespace Arcen.AIW2.External
                         buffer
                             .Add("<voffset=0.05em>（</voffset>")
                             .AddColor( upgrade.UIOnly_Tech_ShipLinesAffected, ArcenExternalUIUtilities.ShipLineIncreaseColor )
-                            .Add( " 舰船 " )
+                            .Add( " 单位 " )
                             .AddColor( upgrade.UIOnly_Tech_DefensiveLinesAffected, ArcenExternalUIUtilities.DefenseLineIncreaseColor )
                             .Add(" 防御<voffset=0.05em>）</voffset>");
                     }
@@ -4482,7 +4482,7 @@ namespace Arcen.AIW2.External
             FInt comparisonFInt = FInt.Zero;
             bool forceDoesNotMeetCriteria = false;
 
-            buffer.Add( "<color=#50abff>\n对敌方舰船的伤害倍率如下：</color>\n" );
+            buffer.Add( "<color=#50abff>\n对敌方单位的伤害倍率如下：</color>\n" );
 
             bool wroteAny = false;
             foreach ( KeyValuePair<GameEntityTypeData, ShipDataByMark> pair in strongAgainst_Ships_EnemiesHave )

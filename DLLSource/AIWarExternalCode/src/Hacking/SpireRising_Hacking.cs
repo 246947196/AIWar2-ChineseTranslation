@@ -172,7 +172,7 @@ namespace Arcen.AIW2.External
             }
             if ( baseInfo.IsCurrentlyAngryDueToHack )
             {
-                RejectionReasonDescription = $"{baseInfo.SphereType} Sphere 仍因之前的黑客行为对你感到愤怒。它将在 {baseInfo.HackedAngerDurationInSeconds - baseInfo.SecondsSinceLastHack} 秒后冷静下来并重新可被黑客。";
+                RejectionReasonDescription = $"{baseInfo.SphereType} Sphere 仍因之前的入侵行为对你感到愤怒。它将在 {baseInfo.HackedAngerDurationInSeconds - baseInfo.SecondsSinceLastHack} 秒后冷静下来并重新可被入侵。";
                 return Hackable.AlreadyHasBeenHacked_ButStillShow;
             }
             short timesWon = 0;
@@ -181,7 +181,7 @@ namespace Arcen.AIW2.External
             int requiredPoints = 2 + (baseInfo.TimesHackedForUnits * 2);
             if ( timesWon + baseInfo.TotalTimesHacked - baseInfo.TimesHackedForUnits < requiredPoints )
             {
-                RejectionReasonDescription = $"{Target.TypeData.DisplayName} 不够强大，无法从中窃取。它有 {timesWon + baseInfo.TotalTimesHacked - baseInfo.TimesHackedForUnits} 分，需要 {requiredPoints} 分。它通过在分裂尖塔事件中占领最多资源来获得积分，或者通过你对其黑客以增加其预算、强度或范围来获得积分。";
+                RejectionReasonDescription = $"{Target.TypeData.DisplayName} 不够强大，无法从中窃取。它有 {timesWon + baseInfo.TotalTimesHacked - baseInfo.TimesHackedForUnits} 分，需要 {requiredPoints} 分。它通过在分裂尖塔事件中占领最多资源来获得积分，或者通过你对其入侵以增加其预算、强度或范围来获得积分。";
                 return Hackable.NeverBeHacked_ButStillShow;
             }
 
@@ -263,7 +263,7 @@ namespace Arcen.AIW2.External
             }
             if ( baseInfo.IsCurrentlyAngryDueToHack )
             {
-                RejectionReasonDescription = $"{baseInfo.SphereType} Sphere 仍因之前的黑客行为对你感到愤怒。它将在 {baseInfo.HackedAngerDurationInSeconds - baseInfo.SecondsSinceLastHack} 秒后冷静下来并重新可被黑客。";
+                RejectionReasonDescription = $"{baseInfo.SphereType} Sphere 仍因之前的入侵行为对你感到愤怒。它将在 {baseInfo.HackedAngerDurationInSeconds - baseInfo.SecondsSinceLastHack} 秒后冷静下来并重新可被入侵。";
                 return Hackable.AlreadyHasBeenHacked_ButStillShow;
             }
             short timesWon = 0;
@@ -272,7 +272,7 @@ namespace Arcen.AIW2.External
             int requiredPoints = 5;
             if ( timesWon + baseInfo.TotalTimesHacked - baseInfo.TimesHackedForUnits < requiredPoints )
             {
-                RejectionReasonDescription = $"{Target.TypeData.DisplayName} 不够强大，无法从中窃取。它有 {timesWon + baseInfo.TotalTimesHacked - baseInfo.TimesHackedForUnits} 分，需要 {requiredPoints} 分。它通过在分裂尖塔事件中占领最多资源来获得积分，或者通过你对其黑客以增加其预算、强度或范围来获得积分。";
+                RejectionReasonDescription = $"{Target.TypeData.DisplayName} 不够强大，无法从中窃取。它有 {timesWon + baseInfo.TotalTimesHacked - baseInfo.TimesHackedForUnits} 分，需要 {requiredPoints} 分。它通过在分裂尖塔事件中占领最多资源来获得积分，或者通过你对其入侵以增加其预算、强度或范围来获得积分。";
                 return Hackable.NeverBeHacked_ButStillShow;
             }
 

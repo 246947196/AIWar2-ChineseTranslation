@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 <!-- Nomad Planet Hacks -->
   <item name="ActivateNomadStructure" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_ActivateNomadStructure" display_name="激活游牧控制结构"
@@ -82,10 +82,10 @@
         must_choose_adjacent_planet="true"
         />
 
-        <item name="ReprogramProbeForFasterShips" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_ReprogramProbeForFasterShips" display_name="重新编程探测器：更快的舰船" 
+        <item name="ReprogramProbeForFasterShips" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_ReprogramProbeForFasterShips" display_name="重新编程探测器：更快的单位" 
               description="通过重新编程这个探测器，你可以让天顶采矿者改变行星而不是摧毁它。
 
-此破解将使天顶采矿者降低行星重力，使所有在该行星上的舰船移动速度更快。"
+此破解将使天顶采矿者降低行星重力，使所有在该行星上的单位移动速度更快。"
         hacking_cost_per_second="0"
         effect_per_second="1"
         hack_duration="10"
@@ -99,10 +99,10 @@
         
 />
 
-        <item name="ReprogramProbeForSlowerShips" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_ReprogramProbeForSlowerShips" display_name="重新编程探测器：更慢的舰船" 
+        <item name="ReprogramProbeForSlowerShips" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_ReprogramProbeForSlowerShips" display_name="重新编程探测器：更慢的单位" 
               description="通过重新编程这个探测器，你可以让天顶采矿者改变行星而不是摧毁它。
 
-此破解将使天顶采矿者增加行星重力，使所有在该行星上的舰船移动速度更慢。"
+此破解将使天顶采矿者增加行星重力，使所有在该行星上的单位移动速度更慢。"
         hacking_cost_per_second="0"
         effect_per_second="1"
         hack_duration="10"
@@ -156,8 +156,8 @@
         
         />
 
-    <item name="HackToGrantShipLine_ZenithArchitrave" copy_from="HackToGrantShipLine" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_GrantShipLine_DontDestroyTarget" display_name="授予舰船生产线" 
-          description="此破解将授予一条新的舰船生产线，但卡斯特拉将逐步淘汰并成为生产极其危险的拱顶舰船的工厂。"
+    <item name="HackToGrantShipLine_ZenithArchitrave" copy_from="HackToGrantShipLine" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_GrantShipLine_DontDestroyTarget" display_name="授予单位生产线" 
+          description="此破解将授予一条新的单位生产线，但卡斯特拉将逐步淘汰并成为生产极其危险的拱顶单位的工厂。"
         hack_duration="120"
         primary_hacking_response_interval="30"
         primary_response_strength_per_interval="1.5"
@@ -169,7 +169,7 @@
         hack_is_against_planet="false"
         use_closest_hacker_for_check="true"
         choose_a_specific_ship_line_to_grant="true"
-        choice_text="你想为这个黑客添加哪条舰船生产线？"
+        choice_text="你想为这个入侵添加哪条单位生产线？"
         choice_text_height="60"
         destroy_hack_target_on_completion="true"
         relatedstring_is_a_ship_type="true"
@@ -178,7 +178,7 @@
         />
     <item name="HackToGrantShipLine_ZenithArchitrave_Portal" display_name="授予巡洋舰" 
           copy_from="HackToGrantShipLine_ZenithArchitrave"
-          description="此破解将授予一艘强大的巡洋舰，一条精英舰船生产线，但将阻止对该传送门使用任何其他破解。"
+          description="此破解将授予一艘强大的巡洋舰，一条精英单位生产线，但将阻止对该传送门使用任何其他破解。"
 		  destroy_hack_target_on_completion="false"
 		  cost_in_hacking_points="40"
 		  hack_duration="300"
@@ -211,8 +211,8 @@
 
 <!-- DZ Hacks -->
 
-    <item name="HackToGrantShipLine_DarkZenith" copy_from="HackToGrantShipLine" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_GrantShipLine_DontDestroyTarget" display_name="授予舰船生产线" 
-          description="此破解将授予一条新的舰船生产线。"
+    <item name="HackToGrantShipLine_DarkZenith" copy_from="HackToGrantShipLine" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_GrantShipLine_DontDestroyTarget" display_name="授予单位生产线" 
+          description="此破解将授予一条新的单位生产线。"
         hack_duration="120"
 		number_of_times_individual_unit_can_be_hacked="5"
 		hacking_cost_multiplier_per_attempt="1.25"
@@ -227,7 +227,7 @@
         hack_is_against_planet="false"
         use_closest_hacker_for_check="true"
         choose_a_specific_ship_line_to_grant="true"
-        choice_text="你想为这个黑客添加哪条舰船生产线？"
+        choice_text="你想为这个入侵添加哪条单位生产线？"
         destroy_hack_target_on_completion="false"
         choice_text_height="60"
         relatedstring_is_a_ship_type="true"

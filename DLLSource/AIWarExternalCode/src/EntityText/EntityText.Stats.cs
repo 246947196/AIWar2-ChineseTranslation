@@ -259,7 +259,7 @@ namespace Arcen.AIW2.External
                      panelMode == Window_InGameHoverEntityInfo.Mode.Build*/ )
                         {
                             if ( Config.UseText )
-                                buffer.Add( "黑客 AIP： " );
+                                buffer.Add( "入侵 AIP： " );
 
                             if ( Squad.TypeData.AIPWhenGrantedByHack > FInt.Zero )
                                 buffer.WrapAIPMoreReadable( Squad.TypeData.AIPWhenGrantedByHack, Config.UseIcons, false );

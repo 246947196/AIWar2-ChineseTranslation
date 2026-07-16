@@ -1,4 +1,4 @@
-﻿using Arcen.AIW2.Core;
+using Arcen.AIW2.Core;
 using System;
 
 using System.Text;
@@ -66,7 +66,7 @@ namespace Arcen.AIW2.External
 
             buffer.Add( "如何侦察：\n" );
             buffer.Add( "  摧毁 AI 指挥站", ObjectiveColors.Keyword ).Add( " 会自动侦察附近星球。\n" );
-            buffer.Add( "  使用 ", "ffeecc" ).Add( "破解", "3de799" ).Add( " 从远处侦察，无需派遣舰船。", "ffeecc" );
+            buffer.Add( "  使用 ", "ffeecc" ).Add( "破解", "3de799" ).Add( " 从远处侦察，无需派遣单位。", "ffeecc" );
         }
     }
 }

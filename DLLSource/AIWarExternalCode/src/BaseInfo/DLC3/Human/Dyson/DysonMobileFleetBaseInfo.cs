@@ -166,7 +166,7 @@ namespace Arcen.AIW2.External
             DysonSidekickFactionBaseInfo baseInfo = this.AttachedFleet.Faction.TryGetExternalBaseInfoAs<DysonSidekickFactionBaseInfo>();
             if (baseInfo.AvailableBlueprints.GetDisplayList().Count == 0) {
                 buffer.NewLine();
-                buffer.Add("您可以通过裂隙或使用变形长老黑客技术找到蓝图。");
+                buffer.Add("您可以通过裂隙或使用变形长老入侵技术找到蓝图。");
             }
         }
         #endregion

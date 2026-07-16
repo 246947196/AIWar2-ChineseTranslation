@@ -395,7 +395,7 @@ namespace Arcen.AIW2.External
             NecromancerEmpireFactionBaseInfo baseInfo = this.AttachedFleet.Faction.TryGetExternalBaseInfoAs<NecromancerEmpireFactionBaseInfo>();
             if (baseInfo.AvailableBlueprints.GetDisplayList().Count == 0) {
                 buffer.NewLine();
-                buffer.Add("您可以通过裂隙或使用变形长老黑客技术找到蓝图。");
+                buffer.Add("您可以通过裂隙或使用变形长老入侵技术找到蓝图。");
             }
         }
         #endregion

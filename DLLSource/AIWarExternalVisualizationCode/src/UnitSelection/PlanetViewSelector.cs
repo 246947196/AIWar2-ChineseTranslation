@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Arcen.AIW2.Core;
 using UnityEngine;
 using Arcen.Universal;
@@ -1318,7 +1318,7 @@ namespace Arcen.AIW2.ExternalVisualization
                                 if ( targetPlanet != null )
                                 {
                                     if ( targetPlanet.IntelLevel == PlanetIntelLevel.Unexplored )
-                                        World_AIW2.Instance.QueueChatMessageOrCommand( "无法派遣舰船至星球 " + targetPlanet.Name + ", because it has not been explored via scouting.", ChatType.ShowLocallyOnly, null );
+                                        World_AIW2.Instance.QueueChatMessageOrCommand( "无法派遣单位至星球 " + targetPlanet.Name + ", because it has not been explored via scouting.", ChatType.ShowLocallyOnly, null );
                                     else
                                     {
                                         workingSquadsThatNeedOtherKindsOfOrders.Clear();

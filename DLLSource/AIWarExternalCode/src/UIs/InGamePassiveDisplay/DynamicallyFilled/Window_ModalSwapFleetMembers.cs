@@ -1,4 +1,4 @@
-﻿using Arcen.Universal;
+using Arcen.Universal;
 using Arcen.AIW2.Core;
 using System;
 
@@ -685,13 +685,13 @@ namespace Arcen.AIW2.External
                         {
                             questionText = "确定要交换从舰队 <color=#7dffc3>" + fleetToSwapOut.GetName() +
                                 "</color> 与舰队 <color=#7dffc3>" + memPairToSwapIn.Fleet.GetName() + "</color> 之间的所有非旗舰舰线吗？";
-                            questionText += "  如果舰船不在新旗舰所在星球上或舰线已加载，这将自动报废双向交换的任何现有舰船。";
+                            questionText += "  如果单位不在新旗舰所在星球上或舰线已加载，这将自动报废双向交换的任何现有单位。";
                         }
                         else
                         {
                             questionText = "确定要交换 " + (memToSwapOutOrNull == null ? "空白槽位" : memToSwapOutOrNull.TypeData.GetDisplayName()) + " 从舰队 <color=#7dffc3>" + fleetToSwapOut.GetName() +
                                 "</color> 换取 " + memPairToSwapIn.TypeData.GetDisplayName() + " 从舰队 <color=#7dffc3>" + memPairToSwapIn.Fleet.GetName() + "</color>？";
-                            questionText += "  如果舰船不在新旗舰所在星球上或舰线已加载，这将自动报废两种类型的现有舰船。";
+                            questionText += "  如果单位不在新旗舰所在星球上或舰线已加载，这将自动报废两种类型的现有单位。";
                         }
 
                         ModalPopupData.CreateAndLogYesNoStyle( delegate
@@ -755,7 +755,7 @@ namespace Arcen.AIW2.External
                     }
 
                     string question = "确定要交换 " + memToSwapOut.TypeData.GetDisplayName() + " 从舰队 <color=#7dffc3>" + memToSwapOut.Fleet.GetName() +
-                            "</color> 换取来自舰队 <color=#7dffc3>" + fleetPairToSwapIn.GetName() + "</color> 的空槽位吗？这将自动报废被交换类型的现有舰船。";
+                            "</color> 换取来自舰队 <color=#7dffc3>" + fleetPairToSwapIn.GetName() + "</color> 的空槽位吗？这将自动报废被交换类型的现有单位。";
 
                     ModalPopupData.CreateAndLogYesNoStyle( delegate
                     {
@@ -918,7 +918,7 @@ namespace Arcen.AIW2.External
                     questionText += "  这将交换舰队旗舰。";
                 }
 
-                questionText += "  如果舰船不在新旗舰所在星球上或舰线已加载，这将自动报废两种类型的现有舰船。";
+                questionText += "  如果单位不在新旗舰所在星球上或舰线已加载，这将自动报废两种类型的现有单位。";
 
                 ModalPopupData.CreateAndLogYesNoStyle( delegate
                 {

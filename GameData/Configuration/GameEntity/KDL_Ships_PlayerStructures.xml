@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <entity name="HumanHomeCommandStation"
             thematic_groups="Human" 
@@ -320,7 +320,7 @@
 			visuals_scale_multiplier="4.8" size_scale="3.9"
 			y_offset_of_icon="20"
 			collision_priority="1000" construction_priority="200"
-			display_name="工厂"
+			display_name="兵工厂"
 			description="固定设施。若舰队旗舰位于同一星球或相邻星球，且舰只缺失，该设施将自动生产补充舰只并直接传送到旗舰处"
       description_short="自动补充附近舰队的损失。"
 			behavior="Stationary"
@@ -595,7 +595,7 @@
      collision_priority="1000"
      display_name="高级研究站"
 		display_name_for_sidebar="高级研究站"
-     description="该建筑的三个独立区域正在进行舰船设计研究。最多可进行三次入侵以窃取蓝图。当前区域包含以下蓝图。其他区域在该区域被入侵前处于隐藏状态。"
+     description="该建筑的三个独立区域正在进行单位设计研究。最多可进行三次入侵以窃取蓝图。当前区域包含以下蓝图。其他区域在该区域被入侵前处于隐藏状态。"
      behavior="Stationary"
      starting_mark_level="Markless"
      cost_for_ai_to_purchase="200"
@@ -623,7 +623,7 @@
      draw_in_galaxy_view="true"
      display_name="高级研究站"
 		  display_name_for_sidebar="高级研究站"
-     description="由于这是教程，舰船设计仅在一个区域进行研究。在主游戏中，你最多可入侵三次以窃取蓝图。当前区域包含以下蓝图，但你不必这样做（每次入侵成本都会增加）。在教程中，你只能入侵一次。"
+     description="由于这是教程，单位设计仅在一个区域进行研究。在主游戏中，你最多可入侵三次以窃取蓝图。当前区域包含以下蓝图，但你不必这样做（每次入侵成本都会增加）。在教程中，你只能入侵一次。"
      eligible_for_hacks="HackToGrantShipLine_ARSTutorial"
 >
   </entity>
@@ -633,7 +633,7 @@
      draw_in_galaxy_view="true"
      display_name="高级研究站"
      display_name_for_sidebar="高级研究站"
-     description="该建筑的三个独立区域正在进行舰船设计研究。最多可进行三次入侵以窃取蓝图。当前区域包含以下蓝图。其他区域在该区域被入侵前处于隐藏状态。"
+     description="该建筑的三个独立区域正在进行单位设计研究。最多可进行三次入侵以窃取蓝图。当前区域包含以下蓝图。其他区域在该区域被入侵前处于隐藏状态。"
      eligible_for_hacks="HackToGrantShipLine_ARS"
      grants_stuff_to_be_added_to_player_fleets_strikecraft_options="2"
      grants_stuff_to_be_added_to_player_fleets_frigate_options="1"

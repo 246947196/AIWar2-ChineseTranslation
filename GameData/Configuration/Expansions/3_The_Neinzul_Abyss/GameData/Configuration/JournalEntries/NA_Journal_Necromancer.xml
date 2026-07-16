@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
     <!--- 死灵法师 -->
 
@@ -7,9 +7,9 @@
            text_replacement_related_faction_color="true"
         full_text="死灵法师是一个强大的奈因祖尔技术法师，它收割生命&lt;color=#E16CFF&gt;精华&lt;/color&gt;并用它来为它的帝国提供动力。
 
-它有两个主要类别的舰船；最强大的是在它可怕的死灵城中建造的，但它也可以将倒下的舰船提升到它的一方。这些倒下的舰船数量要多得多，但威力较小。
+它有两个主要类别的单位；最强大的是在它可怕的死灵城中建造的，但它也可以将倒下的单位提升到它的一方。这些倒下的单位数量要多得多，但威力较小。
 
-死灵法师可以从裂隙中汲取&lt;color=#E16CFF&gt;精华&lt;/color&gt;；这是从其他维度汲取能量，摧毁了它们的大片区域。圣殿骑士来到银河系的这个部分是为了保护裂隙免受死灵法师的攻击，死灵法师将通过与圣殿骑士作战获得&lt;color=#7ce9ff&gt;科学&lt;/color&gt;和&lt;color=#3DE799&gt;黑客&lt;/color&gt;。
+死灵法师可以从裂隙中汲取&lt;color=#E16CFF&gt;精华&lt;/color&gt;；这是从其他维度汲取能量，摧毁了它们的大片区域。圣殿骑士来到银河系的这个部分是为了保护裂隙免受死灵法师的攻击，死灵法师将通过与圣殿骑士作战获得&lt;color=#7ce9ff&gt;科学&lt;/color&gt;和&lt;color=#3DE799&gt;入侵&lt;/color&gt;。
 巨大的奈因祖尔长老可以被猎取&lt;color=#E16CFF&gt;精华&lt;/color&gt;，或者被杀死并研究以允许强大的死灵法师转换。&lt;color=#E16CFF&gt;精华&lt;/color&gt;用于增强你的死灵城和旗舰。
 
 有关死灵法师游戏玩法的概述，请参阅侧边栏的提示部分，有关有用目标的Intel菜单。" />
@@ -22,15 +22,15 @@
         chat_text="我的陛下，欢迎来到你的魂器。提示中有一些说明。"
         full_text="我的陛下，我们在这个银河系区域发现了丰富的裂隙源。通过你在那里获得的力量，我们可以复兴我们被放逐的奈因祖尔种族的命运。其他人不理解我们从收割这些裂隙中的生命力量中获得的真正力量，但我们将向他们展示一切。圣殿骑士渣滓已经与这里强大的人工智能结盟，必须被无情地粉碎。我们还检测到一些长老，我们也可以收割它们的生命力量。
 
-我们在这里建立了一个魂器及其旗舰。你可以在你的魂器中有用的结构（使用侧边栏的建造菜单）；这些可以赋予我们新的、更强大的舰船，使我们能够击败并复活我们的敌人。
+我们在这里建立了一个魂器及其旗舰。你可以在你的魂器中有用的结构（使用侧边栏的建造菜单）；这些可以赋予我们新的、更强大的单位，使我们能够击败并复活我们的敌人。
 
 你将需要摧毁一些指挥站来建造死灵城并加强你的部队。
 
-死灵法师使用三种资源进行各种升级；&lt;color=#3DE799&gt;黑客&lt;/color&gt;、&lt;color=#7ce9ff&gt;科学&lt;/color&gt;和&lt;color=#E16CFF&gt;精华&lt;/color&gt;。你将使用&lt;color=#7ce9ff&gt;科学&lt;/color&gt;来升级你的舰船系列，&lt;color=#3DE799&gt;黑客&lt;/color&gt;从裂隙中获取东西，&lt;color=#E16CFF&gt;精华&lt;/color&gt;来改善你的旗舰或死灵城。有关更多详细信息，请参阅资源提示条目。
+死灵法师使用三种资源进行各种升级；&lt;color=#3DE799&gt;入侵&lt;/color&gt;、&lt;color=#7ce9ff&gt;科学&lt;/color&gt;和&lt;color=#E16CFF&gt;精华&lt;/color&gt;。你将使用&lt;color=#7ce9ff&gt;科学&lt;/color&gt;来升级你的单位系列，&lt;color=#3DE799&gt;入侵&lt;/color&gt;从裂隙中获取东西，&lt;color=#E16CFF&gt;精华&lt;/color&gt;来改善你的旗舰或死灵城。有关更多详细信息，请参阅资源提示条目。
 
-我们有两个类别的舰船；我们可以在死灵城中建造的主力舰，以及我们用死灵术召唤的较弱舰船。我们可以从裂隙中获得更多类型的舰船。
+我们有两个类别的单位；我们可以在死灵城中建造的主力舰，以及我们用死灵术召唤的较弱单位。我们可以从裂隙中获得更多类型的单位。
 
-只要我们在有被杀敌人的星球或相邻星球上有旗舰，我们就可以通过死灵术提升我们被击败敌人的舰船。
+只要我们在有被杀敌人的星球或相邻星球上有旗舰，我们就可以通过死灵术提升我们被击败敌人的单位。
 
 第一步是处理附近的裂隙。你将需要先杀死指挥站，然后入侵裂隙并在那里建造一个死灵城。然后我们应该寻找更多裂隙并猎取长老以获得&lt;color=#E16CFF&gt;精华&lt;/color&gt;。" />
  />
@@ -39,15 +39,15 @@
            is_for_the_tips_tab="true"
            can_record_another_copy_if_already_recorded_in_this_campaign="false"
            text_replacement_related_faction_color="true"
-        full_text="我的陛下，我们有几种可用的资源；&lt;color=#7ce9ff&gt;科学&lt;/color&gt;、&lt;color=#3DE799&gt;黑客&lt;/color&gt;和&lt;color=#E16CFF&gt;精华&lt;/color&gt;。
+        full_text="我的陛下，我们有几种可用的资源；&lt;color=#7ce9ff&gt;科学&lt;/color&gt;、&lt;color=#3DE799&gt;入侵&lt;/color&gt;和&lt;color=#E16CFF&gt;精华&lt;/color&gt;。
 
-&lt;color=#7ce9ff&gt;科学&lt;/color&gt;通过与圣殿骑士作战获得；许多圣殿骑士舰船或建筑将在死亡时赋予我们&lt;color=#7ce9ff&gt;科学&lt;/color&gt;。它用于通过技术菜单升级我们的舰船，就像人类帝国一样。
+&lt;color=#7ce9ff&gt;科学&lt;/color&gt;通过与圣殿骑士作战获得；许多圣殿骑士单位或建筑将在死亡时赋予我们&lt;color=#7ce9ff&gt;科学&lt;/color&gt;。它用于通过技术菜单升级我们的单位，就像人类帝国一样。
 
-&lt;color=#3DE799&gt;黑客&lt;/color&gt;通过与圣殿骑士作战获得。领导定期攻击波的舰船（与入侵裂隙无关的波）以及圣殿骑士许多强大的防御结构是很好的来源。圣殿骑士建造者也是&lt;color=#3DE799&gt;黑客&lt;/color&gt;的极好来源，应该优先考虑以防止圣殿骑士扩张。&lt;color=#3DE799&gt;黑客&lt;/color&gt;用于入侵裂隙以获得各种升级，以及一些与长老相关的入侵。
+&lt;color=#3DE799&gt;入侵&lt;/color&gt;通过与圣殿骑士作战获得。领导定期攻击波的单位（与入侵裂隙无关的波）以及圣殿骑士许多强大的防御结构是很好的来源。圣殿骑士建造者也是&lt;color=#3DE799&gt;入侵&lt;/color&gt;的极好来源，应该优先考虑以防止圣殿骑士扩张。&lt;color=#3DE799&gt;入侵&lt;/color&gt;用于入侵裂隙以获得各种升级，以及一些与长老相关的入侵。
 
 &lt;color=#E16CFF&gt;精华&lt;/color&gt;通过裂隙入侵和与长老作战获得；许多长老将在死亡时赋予我们&lt;color=#E16CFF&gt;精华&lt;/color&gt;。&lt;color=#E16CFF&gt;精华&lt;/color&gt;用于建造新的死灵城，以及旗舰和死灵城相关的升级。&lt;color=#E16CFF&gt;精华&lt;/color&gt;是你最宝贵的资源。
 
-对于在死亡时授予资源/升级的舰船或建筑，你需要在星球上至少有1艘舰船的力量；你不需要实际发出致命一击。如果你有非死灵法师的盟友派系在没有你的情况下在星球上作战，你将获得少量（但至少1）这些远程击杀的资源。" />
+对于在死亡时授予资源/升级的单位或建筑，你需要在星球上至少有1个单位的力量；你不需要实际发出致命一击。如果你有非死灵法师的盟友派系在没有你的情况下在星球上作战，你将获得少量（但至少1）这些远程击杀的资源。" />
 
     <journal name="NA_Necromancer_Necropolis" sidebar_text="{FactionColor}死灵&lt;/color&gt; &lt;color=#75dd75&gt;建筑:&lt;/color&gt;  死灵城"
            is_for_the_tips_tab="true"
@@ -79,7 +79,7 @@
 通常你会想要在这种情况发生之前移动你的魂器，因为你可能会因为随机选择而失去关键死灵城上的结构。" />
         />
 
-  <journal name="NA_Necromancer_Skeletons" sidebar_text="{FactionColor}死灵&lt;/color&gt; &lt;color=#75dd75&gt;舰船:&lt;/color&gt; 骷髅"
+  <journal name="NA_Necromancer_Skeletons" sidebar_text="{FactionColor}死灵&lt;/color&gt; &lt;color=#75dd75&gt;单位:&lt;/color&gt; 骷髅"
              is_for_the_tips_tab="true"
              can_record_another_copy_if_already_recorded_in_this_campaign="false"
              text_replacement_related_faction_color="true"
@@ -100,11 +100,11 @@
 
 骷髅战士：近战格斗手，会干扰武器，目标装甲越厚重，造成的伤害越高。
 骷髅弓箭手：远程但脆弱，擅长摧毁力场。
-骷髅盗贼：隐形、灵活的舰船，使用聚变伤害来绕过个人护盾。非常适合摧毁静态防御。
+骷髅盗贼：隐形、灵活的单位，使用聚变伤害来绕过个人护盾。非常适合摧毁静态防御。
 骷髅法师：拥有强大的连锁闪电武器
 骷髅领主：骷髅中最强大的。中程格斗手，对大型敌人致命，在受到致命伤害后可以复活一次。" />
         />
-    <journal name="NA_Necromancer_Wights" sidebar_text="{FactionColor}死灵&lt;/color&gt; &lt;color=#75dd75&gt;舰船:&lt;/color&gt; 亡灵"
+    <journal name="NA_Necromancer_Wights" sidebar_text="{FactionColor}死灵&lt;/color&gt; &lt;color=#75dd75&gt;单位:&lt;/color&gt; 亡灵"
              is_for_the_tips_tab="true"
              can_record_another_copy_if_already_recorded_in_this_campaign="false"
              text_replacement_related_faction_color="true"
@@ -126,19 +126,19 @@
 复仇亡灵：通过吸引武器火力来保护盟友，并将伤害反射回射击它的敌人。" />
         />
 
-    <journal name="NA_Necromancer_Mummies" sidebar_text="{FactionColor}死灵&lt;/color&gt; &lt;color=#75dd75&gt;舰船:&lt;/color&gt;:  木乃伊"
+    <journal name="NA_Necromancer_Mummies" sidebar_text="{FactionColor}死灵&lt;/color&gt; &lt;color=#75dd75&gt;单位:&lt;/color&gt;:  木乃伊"
              is_for_the_tips_tab="true"
              can_record_another_copy_if_already_recorded_in_this_campaign="false"
              text_replacement_related_faction_color="true"
         chat_text="我的陛下，我们已经提升了我们的第一个木乃伊！有关更多详细信息，请参阅提示。"
-        full_text="我的陛下，每当你拥有死灵术的部队复活一个可怕守护者级别的单位时，它都会作为木乃伊返回。这些是可以获得的最强大的舰船之一。
+        full_text="我的陛下，每当你拥有死灵术的部队复活一个可怕守护者级别的单位时，它都会作为木乃伊返回。这些是可以获得的最强大的单位之一。
 
 默认情况下，所有可怕守护者都被复活为普通木乃伊，但你可以通过入侵裂隙解锁更强大的木乃伊变体。
 
 你可以通过裂隙找到以下木乃伊变体。每个变体建筑都带有一些变体保镖，可以在死灵城和造船厂建造的更强大的变体版本。
 
 皇家木乃伊：比普通木乃伊强大得多且更快，但没有其他特殊功能。
- decay 木乃伊：创建一个损耗场，缓慢退化敌方舰船。
+ decay 木乃伊：创建一个损耗场，缓慢退化敌方单位。
 枯萎木乃伊：与普通木乃伊相同，但在死亡时分裂成四个木乃伊仆从。" />
         />
 
@@ -167,7 +167,7 @@
              can_record_another_copy_if_already_recorded_in_this_campaign="false"
              text_replacement_related_faction_color="true"
              chat_text="我的陛下，我们检测到一些圣殿骑士正在接近。"
-        full_text="我的陛下，有一支圣殿骑士部队正在接近！圣殿骑士很强大并且对我们的死灵术免疫，但我们可以收割它们以获得资源来发展我们的王国！它们将建造强大的防御结构，可以发射舰船来保卫附近的星球，它们还将从它们的城堡中定期向我们发动攻击波。
+        full_text="我的陛下，有一支圣殿骑士部队正在接近！圣殿骑士很强大并且对我们的死灵术免疫，但我们可以收割它们以获得资源来发展我们的王国！它们将建造强大的防御结构，可以发射单位来保卫附近的星球，它们还将从它们的城堡中定期向我们发动攻击波。
 
 要小心这些攻击波；每当波次领袖遇到圣殿骑士防御结构时，他们会召集更多单位加入他们的事业。这使得快速摧毁它们的防御变得非常重要。" />
         />
@@ -218,7 +218,7 @@
              is_for_the_tips_tab="true"
              can_record_another_copy_if_already_recorded_in_this_campaign="false"
              text_replacement_related_faction_color="true"
-             full_text="我的陛下，我们可以通过获得高级变体的蓝图将我们的旗舰转换为更强大的舰船类型。这是增加我们帝国力量的关键方法，因为这些旗舰变体可能比常规旗舰强大得多。一旦你获得了蓝图，你就入侵你的旗舰将其转换为新的形式。转换可能需要&lt;color=#3DE799&gt;黑客&lt;/color&gt;和&lt;color=#E16CFF&gt;精华&lt;/color&gt;。
+             full_text="我的陛下，我们可以通过获得高级变体的蓝图将我们的旗舰转换为更强大的单位类型。这是增加我们帝国力量的关键方法，因为这些旗舰变体可能比常规旗舰强大得多。一旦你获得了蓝图，你就入侵你的旗舰将其转换为新的形式。转换可能需要&lt;color=#3DE799&gt;入侵&lt;/color&gt;和&lt;color=#E16CFF&gt;精华&lt;/color&gt;。
 
 我们可以通过裂隙获得某些较弱的旗舰蓝图，但最强大的变体只能通过使用转换长老入侵，然后赢得随后的战斗来获得。" />
         />
@@ -245,13 +245,13 @@
              can_record_another_copy_if_already_recorded_in_this_campaign="false"
              text_replacement_related_faction_color="true"
              chat_text="我的陛下，点击屏幕顶部资源栏中的精华符号将向你展示你在游戏过程中如何获得资源。有关更多详细信息，请参阅提示侧边栏。"
-             full_text="我的陛下，点击屏幕顶部资源栏中的&lt;color=#E16CFF&gt;精华&lt;/color&gt;符号将向你展示你在游戏过程中如何获得资源。这对了解哪些舰船将授予资源非常有帮助。
+             full_text="我的陛下，点击屏幕顶部资源栏中的&lt;color=#E16CFF&gt;精华&lt;/color&gt;符号将向你展示你在游戏过程中如何获得资源。这对了解哪些单位将授予资源非常有帮助。
 
-例如，如果你需要更多&lt;color=#3DE799&gt;黑客&lt;/color&gt;点数，那么看到哪些舰船类型在过去授予了&lt;color=#3DE799&gt;黑客&lt;/color&gt;点数将给你一些想法，你需要做什么。
+例如，如果你需要更多&lt;color=#3DE799&gt;入侵&lt;/color&gt;点数，那么看到哪些单位类型在过去授予了&lt;color=#3DE799&gt;入侵&lt;/color&gt;点数将给你一些想法，你需要做什么。
 
-此外，将鼠标悬停在'星球战斗'通知上将告诉你你在那场战斗中通过死灵术获得了多少资源以及你提升了多少舰船。
+此外，将鼠标悬停在'星球战斗'通知上将告诉你你在那场战斗中通过死灵术获得了多少资源以及你提升了多少单位。
 
-参考&lt;color=#473004&gt;死灵法师资源&lt;/color&gt;银河系地图过滤器来识别富含&lt;color=#E16CFF&gt;精华&lt;/color&gt;、&lt;color=#7ce9ff&gt;科学&lt;/color&gt;和&lt;color=#3DE799&gt;黑客&lt;/color&gt;的星球。这个过滤器是确定在何处攻击以获取我们缺乏资源的强大工具。" />
+参考&lt;color=#473004&gt;死灵法师资源&lt;/color&gt;银河系地图过滤器来识别富含&lt;color=#E16CFF&gt;精华&lt;/color&gt;、&lt;color=#7ce9ff&gt;科学&lt;/color&gt;和&lt;color=#3DE799&gt;入侵&lt;/color&gt;的星球。这个过滤器是确定在何处攻击以获取我们缺乏资源的强大工具。" />
         />
 
         <journal name="NA_Necromancer_ShipyardsAreCritical" sidebar_text="{FactionColor}死灵&lt;/color&gt; &lt;color=#75dd75&gt;建筑:&lt;/color&gt; 造船厂"
@@ -287,11 +287,11 @@
 
 保护图腾：这些创建吸引球体，通过吸引武器火力来保卫附近的盟友。在近距离内，每个死灵城几乎总是值得获得一个。
 
-超光速图腾：这些提供广泛的超光速覆盖来解隐舰船。它们的视界球体擅长摧毁隐形舰船以及其他高反射率的舰船。
+超光速图腾：这些提供广泛的超光速覆盖来解隐单位。它们的视界球体擅长摧毁隐形单位以及其他高反射率的单位。
 
 生命力量图腾：这些是强大的防御者，因为它们发射吸血光束来补充它们的生命力量。但它们的修复球体是它们的主要实用性，因为这些甚至比造船厂提供更快的修理。这些需要2个&lt;color=#FFDEAD&gt;六边形&lt;/color&gt;才能运行，因此最好根据情况使用，更适合在前沿星球上。
 
-诡诈图腾：这些强大的图腾只能由防御死灵城建造，需要三个&lt;color=#FFDEAD&gt;六边形&lt;/color&gt;，但它们异常强大。在基本层面上，它们的作用类似于黑洞机器，阻止大多数舰船通过虫洞离开。但它们真正的价值来自于它们的熵球体，这些球体的作用类似于轨道雷区，将舰船牵引到会被轨道死灵炸弹炸毁的位置。" />
+诡诈图腾：这些强大的图腾只能由防御死灵城建造，需要三个&lt;color=#FFDEAD&gt;六边形&lt;/color&gt;，但它们异常强大。在基本层面上，它们的作用类似于黑洞机器，阻止大多数单位通过虫洞离开。但它们真正的价值来自于它们的熵球体，这些球体的作用类似于轨道雷区，将单位牵引到会被轨道死灵炸弹炸毁的位置。" />
         />
 
         <journal name="NA_Necromancer_Towers" sidebar_text="{FactionColor}死灵&lt;/color&gt; &lt;color=#75dd75&gt;建筑:&lt;/color&gt; 塔"
@@ -303,7 +303,7 @@
 
 哨站：通过我们的死灵术接管的人工智能哨站受益于我们的塔防技术。
 
-闪电塔：这些中程防御高度设防，可以麻痹低质量舰船，同时对能量消耗大的舰船造成更多伤害。此外，闪电塔根据存在的其他闪电塔数量获得谐波伤害。
+闪电塔：这些中程防御高度设防，可以麻痹低质量单位，同时对能量消耗大的单位造成更多伤害。此外，闪电塔根据存在的其他闪电塔数量获得谐波伤害。
 
 投石机：这个狙击手射程的防御围绕重力井轨道运行，距离目标越远，造成的伤害越多。因此，当沿着重力井周边放置时，它们是最强大的。
 

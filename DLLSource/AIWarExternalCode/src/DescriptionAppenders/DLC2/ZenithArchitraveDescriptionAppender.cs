@@ -1,4 +1,4 @@
-﻿using Arcen.AIW2.Core;
+using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -50,9 +50,9 @@ namespace Arcen.AIW2.External
             if ( debug )
             {
                 if ( faction.HasObtainedSpireDebris )
-                    Buffer.Add( "舰船标签：" ).Add( data.TagForShipsIncludingSpire, "a1ffa1" );
+                    Buffer.Add( "单位标签：" ).Add( data.TagForShipsIncludingSpire, "a1ffa1" );
                 else
-                    Buffer.Add( "舰船标签：" ).Add( data.TagForShips, "a1ffa1" );
+                    Buffer.Add( "单位标签：" ).Add( data.TagForShips, "a1ffa1" );
                 int strength = globaldata.GetAllowedPeaceStrengthForSpawner( RelatedEntityOrNull, diff ) / 1000;
                 Buffer.Add( " 和平时支持 " ).Add( strength, "a1ffa1" ).Add( " 战力。" );
                 Buffer.Add( "当前金属：" + globaldata.MetalReserves ).Add( "。" );

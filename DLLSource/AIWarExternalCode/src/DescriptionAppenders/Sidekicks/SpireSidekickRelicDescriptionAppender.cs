@@ -1,4 +1,4 @@
-﻿using Arcen.AIW2.Core;
+using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -64,7 +64,7 @@ namespace Arcen.AIW2.External
                     if ( !printedIntro)
                     {
                         printedIntro = true;
-                        Buffer.Add("您所有防御舰船的统计：\n");
+                        Buffer.Add("您所有防御单位的统计：\n");
                     }
                     Buffer.Add("\t").Add(kv.Key.Name, "a1a1ff").Add(": ").Add( kv.Value, "a1ffa1" ).Add("\n");
                     continue;

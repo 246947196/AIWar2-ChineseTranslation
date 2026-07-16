@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>  
   
   <!--The purpose of these build categories is to organize things for the player on the sidebar.
@@ -24,8 +24,8 @@
                   description="用于强化你的木乃伊的建筑。"
   />
 
-  <build_category name="NecropolisUnitConstructors" sort_index="20" display_name="舰船"
-                  description="用于建造新舰船的建筑。"
+  <build_category name="NecropolisUnitConstructors" sort_index="20" display_name="单位"
+                  description="用于建造新单位的建筑。"
                   />
   <build_category name="NecromancerUtility" sort_index="5" display_name="实用设施"
                   description="用于建设你的死灵法师墓地的建筑。"

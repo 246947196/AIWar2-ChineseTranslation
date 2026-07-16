@@ -1,4 +1,4 @@
-﻿using Arcen.AIW2.Core;
+using Arcen.AIW2.Core;
 using System;
 
 using Arcen.Universal;
@@ -101,7 +101,7 @@ namespace Arcen.AIW2.External
             buffer.Add( "军械库", "ff8877" ).Add( "让你的天灾战士得以进化。\n\n" );
             buffer.Add( "当战士到达军械库时，它可以进化成该军械库的种族特定变体：更强大的进化战士，或进一步成为强大的混合体。更高等级的军械库允许战士达到更高等级。\n\n" );
             buffer.Add( "通过科技树解锁的每个种族都会启用一种新型军械库和要塞。每个已解锁种族至少建造一个军械库，让你的战士可以专精。\n\n" );
-            buffer.Add( "怪物图鉴", "ff8877" ).Add( "是一种相关建筑：每个图鉴生产一艘极其强大的舰船来防御附近星球。" );
+            buffer.Add( "怪物图鉴", "ff8877" ).Add( "是一种相关建筑：每个图鉴生产一个极其强大的单位来防御附近星球。" );
             buffer.Add( "要塞", "ff8877" ).Add( "为其周边星球生产防御舰队。", ObjectiveColors.Hint );
         }
     }
@@ -127,7 +127,7 @@ namespace Arcen.AIW2.External
         {
             int count = Objective.RelatedInt1;
             buffer.Add( count.ToString(), "ffaa44" ).Add( count == 1 ? " 个天灾建筑已" : " 个天灾建筑已", ObjectiveColors.Hint ).Add( "积累足够的经验可供升级。\n\n" );
-            buffer.Add( "打开建筑上的入侵菜单进行升级。更高等级的生成器产生更多战士，更高等级的军械库允许战士达到更高等级，更高等级的怪物图鉴生产更强大的舰船。\n\n" );
+            buffer.Add( "打开建筑上的入侵菜单进行升级。更高等级的生成器产生更多战士，更高等级的军械库允许战士达到更高等级，更高等级的怪物图鉴生产更强大的单位。\n\n" );
             buffer.Add( "检查通知面板以查看准备升级的具体建筑。", ObjectiveColors.Hint );
         }
     }
@@ -143,7 +143,7 @@ namespace Arcen.AIW2.External
             buffer.Add( unlocked.ToString(), ObjectiveColors.Reward ).Add( " / " ).Add( total.ToString(), "ffaa44" ).Add( " 外星种族已解锁。\n\n" );
             buffer.Add( "通过科技树解锁种族可启用：\n" );
             buffer.Add( "  鈥?特定种族的", ObjectiveColors.Hint ).Add( "军械库", "ff8877" ).Add( "让战士进化为该种族的变体。\n" );
-            buffer.Add( "  鈥?特定种族的", ObjectiveColors.Hint ).Add( "要塞", "ff8877" ).Add( "生产该种族的防御舰船。\n\n" );
+            buffer.Add( "  鈥?特定种族的", ObjectiveColors.Hint ).Add( "要塞", "ff8877" ).Add( "生产该种族的防御单位。\n\n" );
             buffer.Add( "解锁种族的第二级可启用混合体形态。\n\n" );
             buffer.Add( "可用种族：Burlust、Evuck、Thoraxian、Peltian、Neinzul、Spire、Zenith。", ObjectiveColors.Hint );
         }

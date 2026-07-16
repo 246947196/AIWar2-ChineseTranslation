@@ -120,7 +120,7 @@
 		aip_per_additional_summon="100"
 		time_between_summons_in_seconds="300"
 		repair_time_in_seconds="1200"
-		description="在当前战争爆发前，他们曾是一家防务承包商。现在，只要付出代价，他们就会用他们的力场护卫舰和蜘蛛机器人帮助防御附近的友方和中立星球。"
+		description="在当前战争爆发前，他们曾是一家防务承包商。现在，只要付出代价，他们就会用他们的力场星舰和蜘蛛机器人帮助防御附近的友方和中立星球。"
 		
 		parsed_data_type="EntityName,Tag"
 		data_list="OutguardFlagship,AnvilSecuritiesForcefieldFrigate,AnvilSecuritiesSpider"

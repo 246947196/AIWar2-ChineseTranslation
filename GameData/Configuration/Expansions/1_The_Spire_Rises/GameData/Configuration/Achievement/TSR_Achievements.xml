@@ -114,7 +114,7 @@
 
 <!--尖塔族球体/分裂尖塔族 -->
  <achievement name="Push The Red Button" api_key="PUSH_BUTTON"
-    description="偷取一枚灰色尖塔族弹头。"
+    description="偷取一枚灰色尖塔族飞弹。"
     condition_type="PerformHack"
     condition_related_strings="HackToStealWarhead_SpireSphere"
     level="silver"

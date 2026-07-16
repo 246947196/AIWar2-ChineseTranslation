@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
 
@@ -14,7 +14,7 @@
 			visuals_scale_multiplier="1.6"
 			collision_priority="100"
 			display_name="亵渎者"
-			description="融合了尖塔技术的强大纳米感染舰船，拥有极其恐怖的战斗力。"
+			description="融合了尖塔技术的强大纳米感染单位，拥有极其恐怖的战斗力。"
 			starting_mark_level="Markless"
 			cost_for_ai_to_purchase="4800" strength_multiplier="4"
 			hull_points="500000" shield_points="250000" speed="BelowAverage1"

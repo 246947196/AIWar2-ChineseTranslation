@@ -157,7 +157,7 @@ namespace Arcen.AIW2.External
 
             if ( faction.StoredHacking < upgrade.BlueprintTransformCostInHacking )
             {
-                World_AIW2.Instance.QueueChatMessageOrCommand( "黑客点数不足；你需要" + upgrade.BlueprintTransformCostInHacking + "，而你的阵营" + faction.GetDisplayName() +
+                World_AIW2.Instance.QueueChatMessageOrCommand( "入侵点数不足；你需要" + upgrade.BlueprintTransformCostInHacking + "，而你的阵营" + faction.GetDisplayName() +
                     "仅有" + faction.StoredHacking, ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
                 return;
             }
@@ -170,8 +170,8 @@ namespace Arcen.AIW2.External
             FInt costForActiveHacks = HackingUtils.CalculateActiveHackingCosts(faction);
             if ( faction.StoredHacking < upgrade.BlueprintTransformCostInHacking + costForActiveHacks)
             {
-                World_AIW2.Instance.QueueChatMessageOrCommand( "黑客点数不足；你需要" + upgrade.BlueprintTransformCostInHacking + "，而你的阵营" + faction.GetDisplayName() +
-                    "在活跃黑客之后仅有" + (faction.StoredHacking - costForActiveHacks), ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
+                World_AIW2.Instance.QueueChatMessageOrCommand( "入侵点数不足；你需要" + upgrade.BlueprintTransformCostInHacking + "，而你的阵营" + faction.GetDisplayName() +
+                    "在活跃入侵之后仅有" + (faction.StoredHacking - costForActiveHacks), ChatType.ShowLocallyOnly, "CannotDoThatThing", null );
                 return;
             }
 

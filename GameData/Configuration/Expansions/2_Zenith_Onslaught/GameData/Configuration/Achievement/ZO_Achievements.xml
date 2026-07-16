@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   <achievement name="These Feet Are Made For Roaming" api_key="FEET_ROAMING"
@@ -39,14 +39,14 @@
   />
  
  <achievement name="It's Borrowing, Not Stealing" api_key="NOT_STEALING"
-    description="通过入侵黑暗泽尼斯图书馆偷取黑暗泽尼斯舰船设计。"
+    description="通过入侵黑暗泽尼斯图书馆偷取黑暗泽尼斯单位设计。"
     condition_type="PerformHack"
     condition_related_strings="HackToGrantShipLine_DarkZenith"
     level="silver"
   />
   
    <achievement name="Set Phasers To Stun" api_key="PHASERS_TO_STUN"
-    description="通过入侵兵营偷取泽尼斯拱顶石舰船设计。"
+    description="通过入侵兵营偷取泽尼斯拱顶石单位设计。"
     condition_type="PerformHack"
     condition_related_strings="HackToGrantShipLine_ZenithArchitrave"
     level="silver"

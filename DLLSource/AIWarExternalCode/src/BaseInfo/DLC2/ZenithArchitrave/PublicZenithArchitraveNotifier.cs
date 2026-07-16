@@ -1,4 +1,4 @@
-﻿using Arcen.AIW2.Core;
+using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -156,7 +156,7 @@ namespace Arcen.AIW2.External
                 }
             }
 
-            tooltipBuffer.Add( "\n内战中的拱顶石阵营异常强大，会生产大量魔像互相战斗。一旦挑起战争的" ).Add( architravePlurality ).Add( "被削弱，战争将结束，其他拱顶石阵营将撤回各自的领地。\n您的舰船和星球可能会被卷入战火。" );
+            tooltipBuffer.Add( "\n内战中的拱顶石阵营异常强大，会生产大量魔像互相战斗。一旦挑起战争的" ).Add( architravePlurality ).Add( "被削弱，战争将结束，其他拱顶石阵营将撤回各自的领地。\n您的单位和星球可能会被卷入战火。" );
 
             if ( Data.anyTruce )
                 tooltipBuffer.Add( "\n在内战结束之前，拱顶石阵营将无视与您的任何休战协议。" );

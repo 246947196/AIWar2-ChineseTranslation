@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   <entity name="Spore"
@@ -122,7 +122,7 @@
 			y_offset_of_icon="10"
 			collision_priority="100"
 			display_name="巨噬体"
-			description="巨噬细胞从其他舰船和建筑中采集金属，并供给与其关联的 Telium。"
+			description="巨噬细胞从其他单位和建筑中采集金属，并供给与其关联的 Telium。"
 			starting_mark_level="Mark1"
 			cost_for_ai_to_purchase="18000"			
 			hull_points="1800000" shield_points="1200000" speed="BelowAverage1"

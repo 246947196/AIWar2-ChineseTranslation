@@ -1,4 +1,4 @@
-﻿using Arcen.AIW2.Core;
+using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -15,22 +15,22 @@ namespace Arcen.AIW2.External
         
         public const string SpaceAfterIcon = "<space=0.1em>";
         
-        public static readonly FixedTextFormatingStats Metal = new FixedTextFormatingStats( "Metal", "ccccee", "Res_Metal", SpaceAfterIcon );
-        public static readonly FixedTextFormatingStats Energy = new FixedTextFormatingStats( "Energy", "ffde00", "Res_Energy", SpaceAfterIcon );
-        public static readonly FixedTextFormatingStats Argon = new FixedTextFormatingStats( "Argon", "ff8e32", "Res_FuelArgon");
-        public static readonly FixedTextFormatingStats Radon = new FixedTextFormatingStats( "Radon", "be69ff", "Res_FuelRadon");
-        public static readonly FixedTextFormatingStats Xenon = new FixedTextFormatingStats( "Xenon", "5bcbff", "Res_FuelXenon");
-        public static readonly FixedTextFormatingStats Essence = new FixedTextFormatingStats( "Essence", "e16cff", "Res_NecromancerEssence");
-        public static readonly FixedTextFormatingStats Cuendillar = new FixedTextFormatingStats( "Cuendillar", "e16cff", "Res_MigrantWormhole");
+        public static readonly FixedTextFormatingStats Metal = new FixedTextFormatingStats( "金属", "ccccee", "Res_Metal", SpaceAfterIcon );
+        public static readonly FixedTextFormatingStats Energy = new FixedTextFormatingStats( "能量", "ffde00", "Res_Energy", SpaceAfterIcon );
+        public static readonly FixedTextFormatingStats Argon = new FixedTextFormatingStats( "氩", "ff8e32", "Res_FuelArgon");
+        public static readonly FixedTextFormatingStats Radon = new FixedTextFormatingStats( "氡", "be69ff", "Res_FuelRadon");
+        public static readonly FixedTextFormatingStats Xenon = new FixedTextFormatingStats( "氙", "5bcbff", "Res_FuelXenon");
+        public static readonly FixedTextFormatingStats Essence = new FixedTextFormatingStats( "精华", "e16cff", "Res_NecromancerEssence");
+        public static readonly FixedTextFormatingStats Cuendillar = new FixedTextFormatingStats( "库恩达", "e16cff", "Res_MigrantWormhole");
         
-        public static readonly FixedTextFormatingStats Science = new FixedTextFormatingStats( "Science", "7ce9ff", "Res_Science");
-        public static readonly FixedTextFormatingStats Hacking = new FixedTextFormatingStats( "Hacking", "3de799", "Res_Hack");
+        public static readonly FixedTextFormatingStats Science = new FixedTextFormatingStats( "科技", "7ce9ff", "Res_Science");
+        public static readonly FixedTextFormatingStats Hacking = new FixedTextFormatingStats( "入侵", "3de799", "Res_Hack");
 
 
-        public static readonly FixedTextFormatingStats Strength = new FixedTextFormatingStats( "Strength", "ffb74b", "Res_Strength");
+        public static readonly FixedTextFormatingStats Strength = new FixedTextFormatingStats( "战力", "ffb74b", "Res_Strength");
         public static readonly FixedTextFormatingStats AIP = new FixedTextFormatingStats( "AIP", "FF5454", "Res_AIP", SpaceAfterIcon );
         public static readonly FixedTextFormatingStats AIPReduction = new FixedTextFormatingStats( "AIPReduction", "ffbca1", "Res_AIP", SpaceAfterIcon );
-        public static readonly FixedTextFormatingStats Threat = new FixedTextFormatingStats( "Threat", "FFB74B", "Res_Threat", SpaceAfterIcon );
+        public static readonly FixedTextFormatingStats Threat = new FixedTextFormatingStats( "威胁", "FFB74B", "Res_Threat", SpaceAfterIcon );
         
         public static readonly FixedTextFormatingStats Range = new FixedTextFormatingStats( "射程", ColorMath.OrangeRed.GetHexCode() );
         

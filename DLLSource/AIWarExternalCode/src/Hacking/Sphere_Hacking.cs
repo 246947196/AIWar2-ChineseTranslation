@@ -26,7 +26,7 @@ namespace Arcen.AIW2.External
             }
             if ( baseInfo.IsCurrentlyAngryDueToHack )
             {
-                RejectionReasonDescription = $"{baseInfo.SphereType} Sphere 仍因之前的黑客行为对你感到愤怒。它将在 {baseInfo.HackedAngerDurationInSeconds - baseInfo.SecondsSinceLastHack} 秒后冷静下来并重新可被黑客。";
+                RejectionReasonDescription = $"{baseInfo.SphereType} Sphere 仍因之前的入侵行为对你感到愤怒。它将在 {baseInfo.HackedAngerDurationInSeconds - baseInfo.SecondsSinceLastHack} 秒后冷静下来并重新可被入侵。";
                 return Hackable.AlreadyHasBeenHacked_ButStillShow;
             }
 
@@ -109,7 +109,7 @@ namespace Arcen.AIW2.External
             }
             if ( baseInfo.IsCurrentlyAngryDueToHack )
             {
-                RejectionReasonDescription = $"{baseInfo.SphereType} Sphere 仍因之前的黑客行为对你感到愤怒。它将在 {baseInfo.HackedAngerDurationInSeconds - baseInfo.SecondsSinceLastHack} 秒后冷静下来并重新可被黑客。";
+                RejectionReasonDescription = $"{baseInfo.SphereType} Sphere 仍因之前的入侵行为对你感到愤怒。它将在 {baseInfo.HackedAngerDurationInSeconds - baseInfo.SecondsSinceLastHack} 秒后冷静下来并重新可被入侵。";
                 return Hackable.AlreadyHasBeenHacked_ButStillShow;
             }
 
@@ -189,7 +189,7 @@ namespace Arcen.AIW2.External
 
             if ( baseInfo.IsCurrentlyAngryDueToHack )
             {
-                RejectionReasonDescription = $"{baseInfo.SphereType} Sphere 仍因之前的黑客行为对你感到愤怒。它将在 {baseInfo.HackedAngerDurationInSeconds - baseInfo.SecondsSinceLastHack} 秒后冷静下来并重新可被黑客。";
+                RejectionReasonDescription = $"{baseInfo.SphereType} Sphere 仍因之前的入侵行为对你感到愤怒。它将在 {baseInfo.HackedAngerDurationInSeconds - baseInfo.SecondsSinceLastHack} 秒后冷静下来并重新可被入侵。";
                 return Hackable.AlreadyHasBeenHacked_ButStillShow;
             }
 
@@ -263,13 +263,13 @@ namespace Arcen.AIW2.External
 
             if ( baseInfo.TimesHackedForUnits >= Type.NumberOfTimesIndividualUnitCanBeHacked )
             {
-                RejectionReasonDescription = $"你只能为舰船线路黑客 Dyson {Type.NumberOfTimesIndividualUnitCanBeHacked} 次。";
+                RejectionReasonDescription = $"你只能为单位线路入侵 Dyson {Type.NumberOfTimesIndividualUnitCanBeHacked} 次。";
                 return Hackable.AlreadyHasBeenHacked_Hide;
             }
 
             if ( baseInfo.IsCurrentlyAngryDueToHack )
             {
-                RejectionReasonDescription = $"{baseInfo.SphereType} Sphere 仍因之前的黑客行为对你感到愤怒。它将在 {baseInfo.HackedAngerDurationInSeconds - baseInfo.SecondsSinceLastHack} 秒后冷静下来并重新可被黑客。";
+                RejectionReasonDescription = $"{baseInfo.SphereType} Sphere 仍因之前的入侵行为对你感到愤怒。它将在 {baseInfo.HackedAngerDurationInSeconds - baseInfo.SecondsSinceLastHack} 秒后冷静下来并重新可被入侵。";
                 return Hackable.AlreadyHasBeenHacked_ButStillShow;
             }
             return base.GetCanBeHacked( Target, HackerOrNull, planet, HackerFaction, Type, RelatedStringOrNull, RelatedIntOrNull, out RejectionReasonDescription );

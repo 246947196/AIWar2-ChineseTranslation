@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>    
 
 
@@ -72,7 +72,7 @@
 			collision_priority="600"
 			display_name="武士护卫舰"
 			display_name_for_sidebar="武士FFM"
-			description="坚定的近战护卫舰，其吸血之刃可以轻易穿透缺乏护盾或护甲的舰船。战斗时，它会召唤武士刀协助作战。"
+			description="坚定的近战护卫舰，其吸血之刃可以轻易穿透缺乏护盾或护甲的单位。战斗时，它会召唤武士刀协助作战。"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Medium,Melee"
 			cost_for_ai_to_purchase="1200"
 			hull_points="198000" shield_points="82500" speed="AboveAverage2"
@@ -141,7 +141,7 @@
 			collision_priority="600"
 			display_name="拳击手护卫舰"
 			display_name_for_sidebar="拳击手FFH"
-			description="速度缓慢但极其耐用的强大舰船。擅长攻击单个强大目标，对大量小型舰船较为脆弱。受到伤害时会排出散热片，吸引敌方火力，保护其半径内的盟友。"
+			description="速度缓慢但极其耐用的强大单位。擅长攻击单个强大目标，对大量小型单位较为脆弱。受到伤害时会排出散热片，吸引敌方火力，保护其半径内的盟友。"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Heavy,Disruptive"
 			cost_for_ai_to_purchase="1200"
 			hull_points="315000" shield_points="127500" speed="BelowAverage2"

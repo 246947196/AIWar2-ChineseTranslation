@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   
@@ -492,7 +492,7 @@
 			collision_priority="1000"
             display_name="骷髅战士之家" display_name_for_sidebar="骷髅战士"
             description_short="此设施有时会为玩家提供骷髅战士而非普通骷髅。"
-            description="该设施可将被击毁的舰船转化为骷髅战士而非普通骷髅。战士是耐打的近战单位。"
+            description="该设施可将被击毁的单位转化为骷髅战士而非普通骷髅。战士是耐打的近战单位。"
             starting_mark_level="Markless" build_sidebar_categories_i_am_part_of="NecropolisSkeletons"
             cost_for_ai_to_purchase="10000" strength_multiplier="0"           
 			hull_points="100000" shield_points="200000" speed="Immobile"
@@ -517,7 +517,7 @@
 	        icon_name="Ships4/NecromancerSkeletonHome" icon_overlay="Overlays2/SkeletonArcher" gimbal_icon_size_multiplier="1.0"                        
             display_name="骷髅弓箭手之家" display_name_for_sidebar="骷髅弓箭手"
             description_short="此设施有时会为玩家提供骷髅弓箭手而非普通骷髅。"
-            description="该设施可将被击毁的舰船转化为骷髅弓箭手而非普通骷髅。弓箭手是远程攻击单位，但较为脆弱。"
+            description="该设施可将被击毁的单位转化为骷髅弓箭手而非普通骷髅。弓箭手是远程攻击单位，但较为脆弱。"
 			build_sidebar_categories_i_am_part_of="NecropolisSkeletons"
             metal_cost="8000" energy_consumption="1000"
 			city_socket_cost="1" name_for_city_sockets="Necropolis Hex" minimum_required_city_level_for_construction="1" base_ship_cap_in_custom_city="0"
@@ -536,7 +536,7 @@
 	        icon_name="Ships4/NecromancerSkeletonHome" icon_overlay="Overlays2/SkeletonDetonator" gimbal_icon_size_multiplier="1.0"                        
             display_name="骷髅刺客之家" display_name_for_sidebar="骷髅刺客"
             description_short="此设施有时会为玩家提供骷髅刺客而非普通骷髅。"
-            description="该设施可将被击毁的舰船转化为骷髅刺客而非普通骷髅。刺客具备隐形和闪避能力，攻击可无视护盾。"
+            description="该设施可将被击毁的单位转化为骷髅刺客而非普通骷髅。刺客具备隐形和闪避能力，攻击可无视护盾。"
 			build_sidebar_categories_i_am_part_of="NecropolisSkeletons"
             metal_cost="8000" energy_consumption="1000"
 			city_socket_cost="1" name_for_city_sockets="Necropolis Hex" minimum_required_city_level_for_construction="1" base_ship_cap_in_custom_city="0"
@@ -554,7 +554,7 @@
 	        icon_name="Ships4/NecromancerSkeletonHome" icon_overlay="Overlays2/SkeletonMage" gimbal_icon_size_multiplier="1.0"                        
             display_name="骷髅法师之家" display_name_for_sidebar="骷髅法师"
             description_short="此设施有时会为玩家提供骷髅法师而非普通骷髅。"
-            description="该设施可将被击毁的舰船转化为骷髅法师而非普通骷髅。法师们挥舞着可怕的连锁闪电武器。"
+            description="该设施可将被击毁的单位转化为骷髅法师而非普通骷髅。法师们挥舞着可怕的连锁闪电武器。"
 			build_sidebar_categories_i_am_part_of="NecropolisSkeletons"
             metal_cost="12000" energy_consumption="2000"
 			city_socket_cost="1" name_for_city_sockets="Necropolis Hex" minimum_required_city_level_for_construction="2" base_ship_cap_in_custom_city="0"
@@ -572,7 +572,7 @@
 	        icon_name="Ships4/NecromancerSkeletonHome" icon_overlay="Overlays2/SkeletonLord" gimbal_icon_size_multiplier="1.0"                        
             display_name="骷髅领主之家" display_name_for_sidebar="骷髅领主"
             description_short="此设施有时会为玩家提供骷髅领主而非普通骷髅。"
-            description="该设施可将被击毁的舰船转化为骷髅领主而非普通骷髅。骷髅领主是最强的骷髅单位，同时还提供额外获得更多骷髅的微小几率。"
+            description="该设施可将被击毁的单位转化为骷髅领主而非普通骷髅。骷髅领主是最强的骷髅单位，同时还提供额外获得更多骷髅的微小几率。"
 			build_sidebar_categories_i_am_part_of="NecropolisSkeletons"
             metal_cost="15000" energy_consumption="2500"
 			city_socket_cost="1" name_for_city_sockets="Necropolis Hex" minimum_required_city_level_for_construction="3" base_ship_cap_in_custom_city="0"

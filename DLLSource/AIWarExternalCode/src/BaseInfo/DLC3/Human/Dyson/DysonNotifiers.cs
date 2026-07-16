@@ -203,7 +203,7 @@ namespace Arcen.AIW2.External
                     tooltipBuffer.Add("\n").Add("新的运输船将在 ").Add( (data.TimeForNextTransport - World_AIW2.Instance.GameSecond), "0044ff" ).Add(" 秒后派遣。 ");
                     if ( data.TotalCuendillarDrilled > 0 )
                         tooltipBuffer.Add("\n").Add("到目前为止你已开采 ").Add( (data.TotalCuendillarDrilled), "ff4444" ).Add(" 库恩达 ").Add(" 并派遣了 " ).Add( data.TransportsSent, "a1ffa1" ).Add(" 艘运输船从这个星球。");
-                    tooltipBuffer.Add("\n\n").Add("警告！", "ffa1a1").Add(" 钻探完成后，星球将被蹂躏；这将释放巨大能量，摧毁星球上几乎所有的舰船和建筑（包括金属发生器、ARS 等）。" );
+                    tooltipBuffer.Add("\n\n").Add("警告！", "ffa1a1").Add(" 钻探完成后，星球将被蹂躏；这将释放巨大能量，摧毁星球上几乎所有的单位和建筑（包括金属发生器、ARS 等）。" );
                 }
             }
             catch ( Exception e )
@@ -397,7 +397,7 @@ namespace Arcen.AIW2.External
             {
                 string color = ArcenExternalUIUtilities.GetColorForNomadMoveTime( time );
                 tooltipBuffer.Add("收割者将在 ").Add( time.ToString(), color ).Add(" 秒后发动攻击。\n");
-                tooltipBuffer.Add("\t此攻击产生的蹂躏者将试图钻探和蹂躏星球，在此过程中产生大量新的敌方舰船。");
+                tooltipBuffer.Add("\t此攻击产生的蹂躏者将试图钻探和蹂躏星球，在此过程中产生大量新的敌方单位。");
             }
             else
                 tooltipBuffer.Add("收割者即将发动攻击。");
@@ -572,7 +572,7 @@ namespace Arcen.AIW2.External
             tooltipBuffer.Clear();
             if ( Data.EntityList.Count == 0 )
                 return true;
-            tooltipBuffer.Add("地图上有蹂躏者！它们将蹂躏星球，使你无法获得库恩达，并在此过程中产生大量舰船。\n");
+            tooltipBuffer.Add("地图上有蹂躏者！它们将蹂躏星球，使你无法获得库恩达，并在此过程中产生大量单位。\n");
             tooltipBuffer.Add("以下是蹂躏者：\n");
             for ( int i = 0; i < Data.EntityList.Count; i++ )
             {
@@ -585,11 +585,11 @@ namespace Arcen.AIW2.External
                 {
                     ReapersPerUnitBaseInfo data = ravager.TryGetExternalBaseInfoAs<ReapersPerUnitBaseInfo>();
                     if ( data == null )
-                        tooltipBuffer.Add("\t在 ").Add(ravager.Planet.Name, "ffbba1").Add(" 当前正在钻探并生产敌方舰船。\n");
+                        tooltipBuffer.Add("\t在 ").Add(ravager.Planet.Name, "ffbba1").Add(" 当前正在钻探并生产敌方单位。\n");
                     else
                     {
                         string color = ArcenExternalUIUtilities.GetColorForNomadMoveTime( data.SecondsTillRavage );
-                        tooltipBuffer.Add("\t星球 ").Add(ravager.Planet.Name, "ffbba1" ).Add(" 将在 ").Add( data.SecondsTillRavage.ToString(), color ).Add( " 秒后被蹂躏，并将在 ").Add( data.SecondsTillTroopSpawn, "a1a1ff" ).Add(" 秒后下次生产舰船。\n");
+                        tooltipBuffer.Add("\t星球 ").Add(ravager.Planet.Name, "ffbba1" ).Add(" 将在 ").Add( data.SecondsTillRavage.ToString(), color ).Add( " 秒后被蹂躏，并将在 ").Add( data.SecondsTillTroopSpawn, "a1a1ff" ).Add(" 秒后下次生产单位。\n");
                     }
                 }
                     
@@ -810,10 +810,10 @@ namespace Arcen.AIW2.External
                     if (spawnTime >= 0)
                     {
                         string color = ArcenExternalUIUtilities.GetColorForNomadMoveTime( spawnTime );
-                        tooltipBuffer.Add("\t将在 ").Add(spawnTime.ToString(), color).Add(" 秒后孵化，生成传送门和许多其他敌方舰船。\n");
+                        tooltipBuffer.Add("\t将在 ").Add(spawnTime.ToString(), color).Add(" 秒后孵化，生成传送门和许多其他敌方单位。\n");
                     }
                     else
-                        tooltipBuffer.Add("\t它即将孵化，生成传送门和许多其他敌方舰船。\n");
+                        tooltipBuffer.Add("\t它即将孵化，生成传送门和许多其他敌方单位。\n");
                     tooltipBuffer.Add("\t剩余 ").Add( data.CuendillarRemaining, "ff4444" ).Add(" 库恩达\n");
                     if ( Data.BoolList.Count > 0 &&
                          Data.BoolList[0] )

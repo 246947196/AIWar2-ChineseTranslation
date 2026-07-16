@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
     <entity name="BellePrime"
@@ -341,7 +341,7 @@
 			visuals_scale_multiplier="15"
 			collision_priority="100"
 			display_name="索拉特号"
-			description="方舟旗舰，没有显著的战斗能力，但速度比大多数舰船快，且被黑客攻击时反应较弱。"
+			description="方舟旗舰，没有显著的战斗能力，但速度比大多数单位快，且被入侵攻击时反应较弱。"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" tech_upgrade_that_is_used_for_my_direct_science="Direct_ArkGeneral"
 			cost_for_ai_to_purchase="4800"
 			aip_to_claim="9"
@@ -416,7 +416,7 @@
 			visuals_scale_multiplier="15"
 			collision_priority="100"
 			display_name="大型打捞船"
-			description="由众多其他舰船部件组成的方舟。装备了重力发生器，能够吸引敌人并将其碾碎。"
+			description="由众多其他单位部件组成的方舟。装备了重力发生器，能够吸引敌人并将其碾碎。"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly" tech_upgrade_that_is_used_for_my_direct_science="Direct_ArkGeneral"
 			cost_for_ai_to_purchase="4800"
 			aip_to_claim="9"

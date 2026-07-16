@@ -10,7 +10,7 @@
 		aip_per_additional_summon="85"
 		time_between_summons_in_seconds="360"
 		repair_time_in_seconds="720"
-		description="冥河魅影是一支精锐且神秘的突袭部队，由一群魅影战机、精英幻影护卫舰和一队强化型幻影战机组成。他们偏好打了就跑的战术，不会停留太久。"
+		description="冥河魅影是一支精锐且神秘的突袭部队，由一群魅影战机、精英幻影星舰和一队强化型幻影战机组成。他们偏好打了就跑的战术，不会停留太久。"
 		
 		parsed_data_type="EntityName"
 		data_list="Shade,HadesMirage"

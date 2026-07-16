@@ -1,4 +1,4 @@
-﻿using Arcen.AIW2.Core;
+using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -16,7 +16,7 @@ namespace Arcen.AIW2.External
             //Buffer.Add( "Necromancer ship\n" );
             if ( RelatedEntityOrNull.TypeData.GetHasTag("Igor") )
             {
-                Buffer.Add( "<size=40%>警告：此舰船是艾比号</size>", "808080" );
+                Buffer.Add( "<size=40%>警告：此单位是艾比号</size>", "808080" );
             }
         }
     }

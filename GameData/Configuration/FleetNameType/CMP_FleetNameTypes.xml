@@ -1,13 +1,13 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <fleet_name_type name="Random" display_name="随机" subdir="Random"
           description="随机生成的名称。" />
   <fleet_name_type name="Ancient Gods" display_name="远古诸神" subdir="AncientGods"
           description="各种希腊和罗马神灵。（由 StarKelp 创建）" />
-  <fleet_name_type name="British Ships" display_name="英国舰船" subdir="BritishShips"
-          description="基于英国海军的舰船。（由 StarKelp 创建）" />
-  <fleet_name_type name="US Ships" display_name="美国舰船" subdir="US_Ships"
-          description="基于美国海军的舰船。（由 StarKelp 创建）" />
+  <fleet_name_type name="British Ships" display_name="英国单位" subdir="BritishShips"
+          description="基于英国海军的单位。（由 StarKelp 创建）" />
+  <fleet_name_type name="US Ships" display_name="美国单位" subdir="US_Ships"
+          description="基于美国海军的单位。（由 StarKelp 创建）" />
   <fleet_name_type name="US States" display_name="美国各州" subdir="US_States"
           description="美国的各个州。（由 StarKelp 创建）" />
    <fleet_name_type name="Mathematicians" display_name="数学家" subdir="Mathematicians"

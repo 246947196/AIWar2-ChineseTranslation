@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
     <display_mode name="Reducers"
              display_name="AIP 削减器"
@@ -10,7 +10,7 @@
            display_name="AI 防御设施"
            dll_name="AIWarExternalVisualizationCode"
            type_name="Arcen.AIW2.ExternalVisualization.GalaxyMapDisplayMode_AIDefenses"
-           tooltip="忽略您在左侧下拉菜单中选择的阵营。以图标形式显示每个星球上的所有主要AI防御设施。在文本中，显示每个星球上所有敌对单位的强度。如果它比您当前选择的舰船更强，则显示为橙色文本。如果它比您当前选择的舰船强两倍以上，则显示为更深的橙色。如果它的强度不到您当前选择舰船的一半，则显示为浅蓝色。"
+           tooltip="忽略您在左侧下拉菜单中选择的阵营。以图标形式显示每个星球上的所有主要AI防御设施。在文本中，显示每个星球上所有敌对单位的强度。如果它比您当前选择的单位更强，则显示为橙色文本。如果它比您当前选择的单位强两倍以上，则显示为更深的橙色。如果它的强度不到您当前选择单位的一半，则显示为浅蓝色。"
       />
     <display_mode name="Capturables"
            display_name="&lt;color=#5affce&gt;占领&lt;/color&gt;"

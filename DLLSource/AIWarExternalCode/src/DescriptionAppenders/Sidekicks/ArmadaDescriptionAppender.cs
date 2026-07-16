@@ -133,7 +133,7 @@ namespace Arcen.AIW2.External
                     if ( data.ScienceTransported > 0 )
                         Buffer.Add("此运输船携带 " ).Add( data.ScienceTransported, "7CE9FF" ).Add(" 科技。" );
                     if ( data.HackingTransported > 0 )
-                        Buffer.Add("此运输船携带 " ).Add( data.HackingTransported, "dd3377" ).Add(" 黑客。" );
+                        Buffer.Add("此运输船携带 " ).Add( data.HackingTransported, "dd3377" ).Add(" 入侵。" );
                     if ( data.TiberiumTransported > 0 )
                         Buffer.Add("此运输船携带 " ).Add(data.TiberiumTransported.ToString(), RelatedEntityOrNull.PlanetFaction.Faction.Resource1Color).Add(" 钛矿。" );
 

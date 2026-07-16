@@ -321,7 +321,7 @@ A bit more powerful than the other low-tier Nadier, and worth a bit more 资源.
 	    collision_priority="100"
 	    display_name="幽灵奈迪尔"
             display_name_for_sidebar="幽灵奈迪尔"
-	    description="These heavily shielded 隐形 ships do extra damage to high-mass enemies, to allow them to take down the larger enemy ships."
+	    description="这些重装护盾的隐形舰船对高质敌舰造成额外伤害，使其能够击毁更大型的敌方舰船。"
 	    starting_mark_level="Mark1"
 	    cost_for_ai_to_purchase="1250"
             mark_level_scale_style="AntiDarkZenith"

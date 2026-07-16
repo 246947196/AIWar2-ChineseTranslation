@@ -157,7 +157,7 @@ namespace Arcen.AIW2.External
                     tooltipBuffer.StartColor( loadColor ).Add( LoadName ).Add( " / 负载分数 " ).AddNumberMoreReadable( totalLoad ).EndColor();
                     tooltipBuffer.Add( "\n" ).Add( Explantion );
                 }
-                tooltipBuffer.Add( "\n\n请注意，负载估算仅供参考；如果在游戏中通过信标黑客添加更多派系，负载可能会上升。" );
+                tooltipBuffer.Add( "\n\n请注意，负载估算仅供参考；如果在游戏中通过信标入侵添加更多派系，负载可能会上升。" );
                 tooltipBuffer.Add( "\n负载等级原因：\n" ).Add( summaryBuffer.GetStringAndResetForNextUpdate() );
                 if ( ArcenNetworkAuthority.DesiredStatus != DesiredMultiplayerStatus.Client )
                     tooltipBuffer.Add( "\n\n要查看更详细信息，请右键点击此按钮。" );
@@ -184,7 +184,7 @@ namespace Arcen.AIW2.External
                     }
                     popupBuffer.Add( "\n\n负载等级详细原因：\n" ).Add( detailsBuffer.GetStringAndResetForNextUpdate() );
 
-                    popupBuffer.Add( "\n\n请注意，负载估算仅供参考；如果在游戏中通过信标黑客添加更多派系，负载可能会上升。" );
+                    popupBuffer.Add( "\n\n请注意，负载估算仅供参考；如果在游戏中通过信标入侵添加更多派系，负载可能会上升。" );
 
                     ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.TallWide, null, "预计CPU负载详情", popupBuffer.GetStringAndResetForNextUpdate(), "确定" );
 

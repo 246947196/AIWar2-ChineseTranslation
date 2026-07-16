@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   <ai_type name="Aggressor" copy_from="FullEnsemble"
@@ -202,7 +202,7 @@
            type_difficulty="Hard"
            description="可以使用圣殿骑士和远古族单位，以及常规的AI单位。非常危险。
 
-英勇型AI的大多数舰船不会与死灵法师产生任何特殊互动。"
+英勇型AI的大多数单位不会与死灵法师产生任何特殊互动。"
   >
     <budget_item type="Reinforcement" seconds_between_attempts_to_spend="300" normal_ship_group_cat="HeroicFleetships"
       spend_on_threshold="true"
@@ -261,7 +261,7 @@
            display_name="疾行者"
            abbreviation="Speedster"
            is_default="false"
-           description="使用快速舰船进行攻击，并且在所有行星上都部署了速度增幅器。"
+           description="使用快速单位进行攻击，并且在所有行星上都部署了速度增幅器。"
            type_difficulty="Moderate"
            >          
       <budget_item type="Reinforcement" seconds_between_attempts_to_spend="300" normal_ship_group_cat="AnyReinforcements"

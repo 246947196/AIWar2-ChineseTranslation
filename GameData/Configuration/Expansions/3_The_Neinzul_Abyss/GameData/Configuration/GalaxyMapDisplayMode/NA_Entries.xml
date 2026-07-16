@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root> 
   <display_mode name="WildHiveInfestations"
            display_name="&lt;color=#6718c7&gt;野蜂巢侵扰&lt;/color&gt;"
@@ -11,7 +11,7 @@
            display_name="&lt;color=#473004&gt;亡灵巫师资源&lt;/color&gt;"
            dll_name="AIWarExternalVisualizationCode"
            type_name="Arcen.AIW2.ExternalVisualization.GalaxyMapDisplayMode_Necromancer"
-           tooltip="此视图专供亡灵巫师使用。它展示他们从星球获得的奖励，以及每个星球上许多重要的舰船和/或建筑。"
+           tooltip="此视图专供亡灵巫师使用。它展示他们从星球获得的奖励，以及每个星球上许多重要的单位和/或建筑。"
   />
   
   <display_mode name="ElderlingInformation"
@@ -20,7 +20,7 @@
            type_name="Arcen.AIW2.ExternalVisualization.GalaxyMapDisplayMode_ElderlingInformation"
            tooltip="一张专门展示长老族信息的地图。默认情况下，它只显示你已在地图上发现的长老族，以及虫卵孵化剩余的时间。
 
-当你在地图上对长老族使用追踪黑客后，此地图会更新更多信息，包括可以点击被黑客入侵的长老族以查看其领地。"
+当你在地图上对长老族使用追踪入侵后，此地图会更新更多信息，包括可以点击被入侵的长老族以查看其领地。"
   />
   
 </root>

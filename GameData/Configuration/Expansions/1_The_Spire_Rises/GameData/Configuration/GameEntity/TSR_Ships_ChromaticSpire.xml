@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
 	<!-- 	Chromatic Spire Dyson Sphere -->
@@ -52,7 +52,7 @@
 			collision_priority="100"
 			display_name="泛音号"
 			display_name_for_sidebar="泛音号"
-			description="泛音级护卫舰是彩色尖塔常用的护卫舰船。"			
+			description="泛音级护卫舰是彩色尖塔常用的护卫单位。"			
 			starting_mark_level="Markless"
 			cost_for_ai_to_purchase="225"
 			hull_points="48000" shield_points="0" speed="Normal1"
@@ -88,7 +88,7 @@
 			collision_priority="100"
 			display_name="绽放号"
 			display_name_for_sidebar="绽放号"
-			description="绽放级重型护卫舰是彩色尖塔使用的先进护卫舰船。当它的等离子炮弹爆炸时，还会对附近的多个单位造成一定程度的伤害。"			
+			description="绽放级重型护卫舰是彩色尖塔使用的先进护卫单位。当它的等离子炮弹爆炸时，还会对附近的多个单位造成一定程度的伤害。"			
 			starting_mark_level="Markless"
 			cost_for_ai_to_purchase="900"
 			hull_points="1200000" shield_points="0" speed="BelowAverage2"
@@ -128,7 +128,7 @@
 			collision_priority="100"
 			display_name="乳光号"
 			display_name_for_sidebar="乳光号"
-			description="乳光级轻型巡洋舰是彩色尖塔开发的先进指挥控制舰船。"			
+			description="乳光级轻型巡洋舰是彩色尖塔开发的先进指挥控制单位。"			
 			starting_mark_level="Markless"
 			cost_for_ai_to_purchase="2400" strength_multiplier="1.5"
 			hull_points="8400000" shield_points="0" speed="BelowAverage2"
@@ -306,7 +306,7 @@
 			visuals_scale_multiplier="14"
 			collision_priority="100"
 			display_name="彩色尖塔激怒器" display_name_for_sidebar="彩尖激怒器"
-			description="一种奇特的尖塔结构，从水晶体上脱落下来。拆解它以激活它，这将激怒银河系中所有的彩色尖塔，它们会不择手段地摧毁它。"
+			description="一种奇特的尖塔结构，从水晶体上脱落下来。废弃它以激活它，这将激怒银河系中所有的彩色尖塔，它们会不择手段地摧毁它。"
 			starting_mark_level="Markless"
 			cost_for_ai_to_purchase="120"
 			hull_points="4000000" shield_points="2000000" speed="AboveAverage1"
@@ -331,7 +331,7 @@
 			visuals_scale_multiplier="14"
 			collision_priority="100"
 			display_name="彩色尖塔激怒器" display_name_for_sidebar="彩尖激怒器"
-			description="一种奇特的尖塔结构，从水晶体上脱落下来。拆解它以激活它，这将激怒银河系中所有的彩色尖塔，它们会不择手段地摧毁它。"
+			description="一种奇特的尖塔结构，从水晶体上脱落下来。废弃它以激活它，这将激怒银河系中所有的彩色尖塔，它们会不择手段地摧毁它。"
 			starting_mark_level="Markless"
 			cost_for_ai_to_purchase="120"
 			hull_points="4000000" shield_points="2000000" speed="AboveAverage1"
@@ -358,7 +358,7 @@
 			visuals_scale_multiplier="14"
 			collision_priority="100"
 			display_name="彩色尖塔激怒器" display_name_for_sidebar="彩尖激怒器"
-			description="一种奇特的尖塔结构，从水晶体上脱落下来。拆解它以激活它，这将激怒银河系中所有的彩色尖塔，它们会不择手段地摧毁它。"
+			description="一种奇特的尖塔结构，从水晶体上脱落下来。废弃它以激活它，这将激怒银河系中所有的彩色尖塔，它们会不择手段地摧毁它。"
 			starting_mark_level="Markless"
 			cost_for_ai_to_purchase="120"
 			hull_points="4000000" shield_points="2000000" speed="AboveAverage1"

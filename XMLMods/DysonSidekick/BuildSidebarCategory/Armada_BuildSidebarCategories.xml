@@ -21,42 +21,42 @@
                   description="实用。"
                   />
   <build_category name="ArmadaDefenses" sort_index="30" display_name="防御"
-                  description="防御."
+                  description="防御。"
                   />
 
   <build_category name="ArmadaMinesT1" sort_index="50" display_name="矿井"
-                  description="Building a new 矿场." granted_by_any_mobile_fleet="true"
+                  description="建造一座新的矿场。" granted_by_any_mobile_fleet="true"
                   for_player_type_tags="ArmadaEmpire"
                   custom_sidebar_category_info_dll="AIWarExternalCode"
                   custom_sidebar_category_info_type="Arcen.AIW2.External.DirectBuild_Mine_T1"
                   />
   <build_category name="ArmadaMinesT2" sort_index="50" display_name="矿井"
-                  description="Building a new 矿场." granted_by_any_mobile_fleet="true"
+                  description="建造一座新的矿场。" granted_by_any_mobile_fleet="true"
                   for_player_type_tags="ArmadaEmpire"
                   custom_sidebar_category_info_dll="AIWarExternalCode"
                   custom_sidebar_category_info_type="Arcen.AIW2.External.DirectBuild_Mine_T2"
                   />
   <build_category name="ArmadaMinesT3" sort_index="50" display_name="矿井"
-                  description="Building a new 矿场." granted_by_any_mobile_fleet="true"
+                  description="建造一座新的矿场。" granted_by_any_mobile_fleet="true"
                   for_player_type_tags="ArmadaEmpire"
                   custom_sidebar_category_info_dll="AIWarExternalCode"
                   custom_sidebar_category_info_type="Arcen.AIW2.External.DirectBuild_Mine_T3"
                   />
   <build_category name="ArmadaMinesT4" sort_index="50" display_name="矿井"
-                  description="Building a new 矿场." granted_by_any_mobile_fleet="true"
+                  description="建造一座新的矿场。" granted_by_any_mobile_fleet="true"
                   for_player_type_tags="ArmadaEmpire"
                   custom_sidebar_category_info_dll="AIWarExternalCode"
                   custom_sidebar_category_info_type="Arcen.AIW2.External.DirectBuild_Mine_T4"
                   />
   <build_category name="ArmadaSwarm" sort_index="50" display_name="蜂群"
-                  description="建筑 related to the Swarm." granted_by_any_mobile_fleet="true"
+                  description="与蜂群相关的建筑。" granted_by_any_mobile_fleet="true"
                   for_player_type_tags="ArmadaEmpire"
                   custom_sidebar_category_info_dll="AIWarExternalCode"
                   custom_sidebar_category_info_type="Arcen.AIW2.External.DirectBuild_Swarm"
                   />
 
   <build_category name="ArmadaStarbases" sort_index="50" display_name="星站"
-                  description="Building a new 星站." granted_by_any_mobile_fleet="true"
+                  description="建造一座新的星站。" granted_by_any_mobile_fleet="true"
                   for_player_type_tags="ArmadaEmpire"
                   custom_sidebar_category_info_dll="AIWarExternalCode"
                   custom_sidebar_category_info_type="Arcen.AIW2.External.DirectBuild_Starbase"

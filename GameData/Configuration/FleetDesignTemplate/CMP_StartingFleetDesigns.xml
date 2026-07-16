@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!--These "InitialPlayerFleet" are completely hand-designed fleets that are very inflexible by design.
       They are intended to be basic starting points that you can choose at the start of the game,
@@ -74,7 +74,7 @@
 
   <fleet_design name="DoorkickerStartingFleet"
         display_name="破门者舰队"
-        description="稍微侧重于突破单位，兼具一定的群体控制能力，必要时还有攻城护卫舰来给大型目标开大洞。"
+        description="稍微侧重于突破单位，兼具一定的群体控制能力，必要时还有攻城星舰来给大型目标开大洞。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >
@@ -89,7 +89,7 @@
 
   <fleet_design name="ConsumerStartingFleet"
         display_name="吞噬者舰队"
-        description="主要专注于吞噬敌方舰船和建筑，同时也配备了足够的轰炸机用于破坏目标，还有大型狙击星际飞船从远处提供火力支援。"
+        description="主要专注于吞噬敌方单位和建筑，同时也配备了足够的轰炸机用于破坏目标，还有大型狙击星际飞船从远处提供火力支援。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >

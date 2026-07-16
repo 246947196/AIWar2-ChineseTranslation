@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- The Hive is the first Nanobot Center created -->
   <entity name="NanobotCenter_Hive"
@@ -72,7 +72,7 @@
 			collision_priority="810"
 			display_name="正在跃迁的纳米机器人中心"
 			display_name_for_sidebar="纳米中心跃迁"
-			description="纳米浩劫势力正在建造一个用于建造舰船的中心。"
+			description="纳米浩劫势力正在建造一个用于建造单位的中心。"
 			behavior="Stationary"
 			voice_group="Silent"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
@@ -103,7 +103,7 @@
 			collision_priority="810"
 			display_name="纳米机器人中心"
 			display_name_for_sidebar="纳米中心"
-			description="建造纳米机器人舰船以征服银河系。"
+			description="建造纳米机器人单位以征服银河系。"
 			behavior="Stationary"
 			voice_group="Silent"
 			allied_speed_multiplier="3"

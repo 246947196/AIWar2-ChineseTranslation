@@ -43,7 +43,7 @@
 
 <galaxy_setting category="Hidden" name="OutguardCostScaling" display_name="前哨成本缩放" type="CustomDropdownArbitraryOptions" 
     arbitrary_options="0x,0.25x,0.5x,1x" default_option="1x"
-    description="降低前哨黑客攻击的AiP和HaP成本。" >
+    description="降低前哨入侵的AiP和HaP成本。" >
   <harshness_override min_campaign_harshness_to_apply="0" fixed_option="1x" />
 </galaxy_setting>
 

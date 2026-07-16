@@ -69,7 +69,7 @@
           difficulty_method="Nothing"/>
 
   <objective_details_hook name="HackRifts" category="NecromancerStrategy"
-          default_display_name="黑客入侵圣堂裂隙"
+          default_display_name="入侵圣堂裂隙"
           dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.HackRifts"
           display_name_color="ffcf6b"
           click_behavior="DoNothing" focus_type="DarkenAllPlanet"

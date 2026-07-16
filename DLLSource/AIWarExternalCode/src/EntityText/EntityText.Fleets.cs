@@ -1,4 +1,4 @@
-﻿
+
 using System;
 using Arcen.Universal;
 using Arcen.AIW2.Core;
@@ -1175,7 +1175,7 @@ namespace Arcen.AIW2.External
                                         {
                                             buffer.Add( "无法为舰队建造 " )
                                                 .AddFactionColoredString(fleet.GetName(), fleet.Faction)
-                                                .Add( " 因为某些舰船线路被阻塞。" );
+                                                .Add( " 因为某些单位线路被阻塞。" );
                                         }
                                         
                                         buffer.Close(TextStyle.Attr_Line);
@@ -1239,7 +1239,7 @@ namespace Arcen.AIW2.External
                         {
                             buffer
                                 .Open(extra_text_style)
-                                .Add( "卸载舰船有 " ).Add( Squad.TypeData.FiringDelayForTransportedShips, "a1ffa1" ).Add( " 秒开火延迟。" )
+                                .Add( "卸载单位有 " ).Add( Squad.TypeData.FiringDelayForTransportedShips, "a1ffa1" ).Add( " 秒开火延迟。" )
                                 .Close(extra_text_style);
                         }
                     }
@@ -1351,7 +1351,7 @@ namespace Arcen.AIW2.External
                              relatedMemFleetOrNull.FleetOnFriendlyPlanet && 
                              !isCity )
                         {
-                            buffer.Add( "该舰队位于友方星球，可更快重建舰船" ).EndStatement(EndStatementStyle.Normal);
+                            buffer.Add( "该舰队位于友方星球，可更快重建单位" ).EndStatement(EndStatementStyle.Normal);
                         }
                         */
 

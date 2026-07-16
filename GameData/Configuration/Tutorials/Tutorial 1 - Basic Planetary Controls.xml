@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   <tutorial category="Basics" name="BasicPlanetaryControls" display_name="教程 1 - 基本行星控制" sort_priority="1"
@@ -111,7 +111,7 @@
 	
 要命令你的护卫舰攻击其中一个，只需右键点击它。摧毁所有无人机。
 
-&lt;color=#aaaaaa&gt;额外提示1：你将在未来了解更多关于模式的内容，但你可以通过按V键将此舰船设置为追击模式，让它自动追击无人机。&lt;/color&gt;
+&lt;color=#aaaaaa&gt;额外提示1：你将在未来了解更多关于模式的内容，但你可以通过按V键将此单位设置为追击模式，让它自动追击无人机。&lt;/color&gt;
 
 &lt;color=#888888&gt;额外提示2：你可以使用加号和减号键，或屏幕左下角的按钮，轻松改变时间流速，让战斗进行得更快。&lt;/color&gt;">
       <condition type="EnemyShipsOfSpecificTypeOnPlanetLessThanOrEqualTo" planet_by_name="Murdoch" entity_type="TargetDrone" count="0"/>

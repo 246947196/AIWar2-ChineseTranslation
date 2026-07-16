@@ -344,8 +344,8 @@ namespace Arcen.AIW2.External
             if ( hackCost > faction.StoredHacking )
             {
                 if ( faction.GetIsLocalFaction() )
-                    ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.Normal, null, "黑客点数不足！",
-                        "派系 " + faction.GetDisplayName() + " 没有足够的黑客点数来完成 " + hackToDo.DisplayName, "确定" );
+                    ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.Normal, null, "入侵点数不足！",
+                        "派系 " + faction.GetDisplayName() + " 没有足够的入侵点数来完成 " + hackToDo.DisplayName, "确定" );
                 return;
             }
 

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!--  PrimeObjectives
         ***********************************************************************-->
@@ -537,7 +537,7 @@
 
   <objective_details_hook name="BuildEngineers" category="BeginnerTips"
             dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.BuildEngineers"
-            display_name_color="8092ff" default_display_name="建造工程师用于舰船生产和维修"
+            display_name_color="8092ff" default_display_name="建造工程师用于单位生产和维修"
             use_default_display_name_instead_of_display_name_base="true"
             click_behavior="DoNothing" focus_type="DarkenAllPlanet"
             serialization_type="Nothing" importance_calculation="NotSettable"

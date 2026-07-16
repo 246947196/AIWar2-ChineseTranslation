@@ -4,7 +4,7 @@
              visuals_bundle="aiwar2goodiebox" visuals="assets/shotparts/lines/claimline.prefab"
              z_length_of_original_object="1.18" x_scale_multiplier="1" y_scale_multiplier="1"/>
   
-  <line_type name="Hacking" display_name="黑客攻击" hardcoded_type="Hacking" 
+  <line_type name="Hacking" display_name="入侵" hardcoded_type="Hacking" 
              visuals_bundle="aiwar2goodiebox" visuals="assets/shotparts/lines/hackline.prefab"
              z_length_of_original_object="1.18" x_scale_multiplier="1" y_scale_multiplier="1" />
   
@@ -16,11 +16,11 @@
              visuals_bundle="aiwar2goodiebox" visuals="assets/shotparts/lines/repairlinestarved.prefab"
              z_length_of_original_object="1.18" x_scale_multiplier="1" y_scale_multiplier="1" />
   
-  <line_type name="AssistFactory" display_name="增强工厂" hardcoded_type="AssistFactory" 
+  <line_type name="AssistFactory" display_name="增强兵工厂" hardcoded_type="AssistFactory" 
              visuals_bundle="aiwar2goodiebox" visuals="assets/shotparts/lines/assistfactoryline.prefab"
              z_length_of_original_object="1.18" x_scale_multiplier="1" y_scale_multiplier="1" />
   
-  <line_type name="AssistFactoryStarved" display_name="增强工厂（耗尽）" hardcoded_type="AssistFactoryStarved" 
+  <line_type name="AssistFactoryStarved" display_name="增强兵工厂（耗尽）" hardcoded_type="AssistFactoryStarved" 
              visuals_bundle="aiwar2goodiebox" visuals="assets/shotparts/lines/assistfactorylinestarved.prefab"
              z_length_of_original_object="1.18" x_scale_multiplier="1" y_scale_multiplier="1" />
   

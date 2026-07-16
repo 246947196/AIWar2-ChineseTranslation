@@ -289,9 +289,9 @@ namespace Arcen.AIW2.External
                     bool useTsunami = World_AIW2.Instance.Setup.GetBoolBySetting( "TsunamiCPA" );
                     debugCode = 12300;
                     if ( !useTsunami )
-                        buffer.Add( "\n" ).Add( "跨星球攻击一次性在大范围星系内解放大量 AI 守卫舰船。它不会生成新舰船，而是将原本守卫各星球的舰船转变为对您的活跃威胁。在亲眼看到之前，您不会知道 CPA 中有什么，甚至不知道它有多强。一般来说，AIP 越高，CPA 越强。这些舰船转变为威胁后，最可能的结果是加入猎手舰队并在更晚的时候袭击您，但您永远无法确定。如果您想要更刺激和有趣的 CPA,请考虑在星系选项中启用'海啸 CPA'选项。" );
+                        buffer.Add( "\n" ).Add( "跨星球攻击一次性在大范围星系内解放大量 AI 守卫单位。它不会生成新单位，而是将原本守卫各星球的单位转变为对您的活跃威胁。在亲眼看到之前，您不会知道 CPA 中有什么，甚至不知道它有多强。一般来说，AIP 越高，CPA 越强。这些单位转变为威胁后，最可能的结果是加入猎手舰队并在更晚的时候袭击您，但您永远无法确定。如果您想要更刺激和有趣的 CPA,请考虑在星系选项中启用'海啸 CPA'选项。" );
                     else
-                        buffer.Add( "\n" ).Add( "跨星球攻击一次性在大范围星系内解放大量 AI 守卫舰船。它不会生成新舰船，而是将原本守卫各星球的舰船转变为一波汹涌的攻击者，它们将从四面八方在不同时间到达。在亲眼看到之前，您不会知道 CPA 中有什么，甚至不知道它有多强。一般来说，AIP 越高，CPA 越强。由于您正在使用激动人心的海啸 CPA 选项，您将有机会在自己的防御中击落大量 AI 舰船...但同时它们可能会制造危险的缺口供猎手利用，或者凭借纯粹的数量优势碾压您的防御。" );
+                        buffer.Add( "\n" ).Add( "跨星球攻击一次性在大范围星系内解放大量 AI 守卫单位。它不会生成新单位，而是将原本守卫各星球的单位转变为一波汹涌的攻击者，它们将从四面八方在不同时间到达。在亲眼看到之前，您不会知道 CPA 中有什么，甚至不知道它有多强。一般来说，AIP 越高，CPA 越强。由于您正在使用激动人心的海啸 CPA 选项，您将有机会在自己的防御中击落大量 AI 单位...但同时它们可能会制造危险的缺口供猎手利用，或者凭借纯粹的数量优势碾压您的防御。" );
                 }
                 else
                 {
@@ -299,7 +299,7 @@ namespace Arcen.AIW2.External
                     buffer.Add( "\n" ).Add( FontSizes.MUCH_SMALLER_SIZE_PLUS_A_TAD_STRING );
                     debugCode = 13200;
                     buffer.Add( "<color=#3f6c9e>按住 </color><color=#4486d1>" ).Add( InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "HoldAndClickToViewDetailsOfContents" ) )
-                            .Add( "</color> <color=#3f6c9e>并点击此处查看波次中所有舰船类型的详细信息。</color>  " );
+                            .Add( "</color> <color=#3f6c9e>并点击此处查看波次中所有单位类型的详细信息。</color>  " );
                     buffer.Add( "</size>" );
                 }
                 debugCode = 13300;

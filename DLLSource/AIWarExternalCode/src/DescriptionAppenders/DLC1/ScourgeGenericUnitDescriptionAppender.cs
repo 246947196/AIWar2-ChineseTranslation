@@ -1,4 +1,4 @@
-﻿using Arcen.AIW2.Core;
+using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -104,7 +104,7 @@ namespace Arcen.AIW2.External
                 }
                 if ( isVassal && RelatedEntityOrNull.TypeData.GetHasTag("ScourgeSummoner"))
                 {
-                    Buffer.Add("\n").Add("此建筑是一个召唤者，吸引所有友方舰船");
+                    Buffer.Add("\n").Add("此建筑是一个召唤者，吸引所有友方单位");
                 }
                 if ( RelatedEntityOrNull.TypeData.GetHasTag("ScourgeVassalArmory") && isVassal )
                 {

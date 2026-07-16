@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   <journal name="NA_ShowdownDevices_Journal" sidebar_text="{FactionColor}决战装置&lt;/color&gt;:  概述"
@@ -13,7 +13,7 @@
            can_record_another_copy_if_already_recorded_in_this_campaign="false"                                                                                                                                                                
            text_replacement_related_faction_color="true"                                                                                                                                                                                       
         chat_text="人工智能霸主已经变成了银河控制舰！"                                                                                                                                                                            
-        full_text="指挥官，人工智能霸主已经变成了银河控制舰！它似乎暂时改变了相位，所以我们的武器无法击中它，它正在向我们的家园指挥站前进！在它重新进入与我们舰船的相位之前，我们将无法击中它。
+        full_text="指挥官，人工智能霸主已经变成了银河控制舰！它似乎暂时改变了相位，所以我们的武器无法击中它，它正在向我们的家园指挥站前进！在它重新进入与我们单位的相位之前，我们将无法击中它。
 
 我们认为相位变化只有在它在堡垒世界上时才是可持续的。这艘新的银河控制舰武装非常强大；我们可能需要一些新的策略来对付它。它似乎特别擅长摧毁攻击机。" />               
 

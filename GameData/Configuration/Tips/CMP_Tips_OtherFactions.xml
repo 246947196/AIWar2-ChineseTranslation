@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   <tip category="OtherFactions" name="Factions_DysonSphere" display_name="戴森球" sort_priority="1000"
@@ -28,9 +28,9 @@
 
 
   <tip category="OtherFactions" name="Factions_Macrophage" display_name="巨噬体" sort_priority="1000"
-        full_text="这个派系是由巨型有机巨噬体组成的入侵者。它们以金属为食，吞噬遇到的舰船和建筑，尤其喜欢攻击AI(因为你还没遇到过它们)。
+        full_text="这个派系是由巨型有机巨噬体组成的入侵者。它们以金属为食，吞噬遇到的单位和建筑，尤其喜欢攻击AI(因为你还没遇到过它们)。
         
-巨噬体生活在称为Telium的群落中，这些群落对AI是隐藏的。Telium会派出巨噬体通过摧毁人类或AI舰船来收集金属。当群落获得足够金属后，会产生隐形无害的孢子游荡在星系中。当孢子遇到其他Telium的孢子时，可以繁殖产生新群落。
+巨噬体生活在称为Telium的群落中，这些群落对AI是隐藏的。Telium会派出巨噬体通过摧毁人类或AI单位来收集金属。当群落获得足够金属后，会产生隐形无害的孢子游荡在星系中。当孢子遇到其他Telium的孢子时，可以繁殖产生新群落。
 
 默认情况下，它们对人类和AI都怀有敌意——但幸运的是它们不太聪明。
 
@@ -59,12 +59,12 @@
 AI利用分析仪的信息来证明定期发动外银河打击部队(Exostrikes)攻击你的合理性。" />
 
   <tip category="OtherFactions" name="Factions_DarkSpire" display_name="黑暗尖塔" sort_priority="1000"
-        full_text="一些神秘古老的结构存在于整个星系的AI星球上。它们无法被伤害，也没有武器，但会吸收同星球上舰船死亡时的能量。吸收过多会发生什么？
+        full_text="一些神秘古老的结构存在于整个星系的AI星球上。它们无法被伤害，也没有武器，但会吸收同星球上单位死亡时的能量。吸收过多会发生什么？
 
 当有黑暗尖塔复仇发生器的星球上死亡足够多单位时，复仇发生器会释放强大力量攻击视线内一切目标。" />
 
 <tip category="OtherFactions" name="Factions_ZenithTrader" display_name="天顶商人" sort_priority="1000"
-        full_text="这些外星商人乐于与任何能支付费用的人做生意。他们在星系中四处奔波，为人类和 AI 玩家提供特殊舰船（收费高昂）。" />
+        full_text="这些外星商人乐于与任何能支付费用的人做生意。他们在星系中四处奔波，为人类和 AI 玩家提供特殊单位（收费高昂）。" />
 
 <tip category="OtherFactions" name="Factions_Marauders" display_name="掠夺者" sort_priority="1000"
         full_text="掠夺者是生活在深空的强大势力，会通过传统推进方式(从星系边缘而非虫洞)偶尔袭击人类或AI星球。无人知晓其起源，但它们似乎融合了人类和AI技术。

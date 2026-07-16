@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   <!-- Templar ships can be owned by any AI faction, or by the Templar faction itself 
@@ -67,7 +67,7 @@
 			visuals_scale_multiplier="10"
 			y_offset_of_ship_in_visual_space="-1"
 			collision_priority="810"
-			description="这是圣殿骑士最简单的防御建筑。它是一些防御舰船的基地，这些舰船会保卫附近的星球。"
+			description="这是圣殿骑士最简单的防御建筑。它是一些防御单位的基地，这些单位会保卫附近的星球。"
 			behavior="Stationary"
 			starting_mark_level="Mark1"
 			cost_for_ai_to_purchase="500" mark_level_scale_style="Templar"
@@ -100,7 +100,7 @@
   <entity  name="TemplarInitialEncampment" copy_from="TemplarEncampment" display_name="圣殿骑士薄弱营地" display_name_for_sidebar="圣薄营"
            tags="TemplarInitialEncampment,TemplarPrimaryDefensiveStructure,TemplarEncampment"
            icon_overlay="Overlays1/Turret_Pike"
-           description="这是圣殿骑士最薄弱的防御建筑，会比平常提供更多的科研点数和黑客点数。它是一些防御舰船的基地，这些舰船会保卫附近的星球。"
+           description="这是圣殿骑士最薄弱的防御建筑，会比平常提供更多的科研点数和入侵点数。它是一些防御单位的基地，这些单位会保卫附近的星球。"
 		   starting_mark_level="Markless"
            hull_points="60000" shield_points="25000" speed="Immobile"
 		   eligible_for_hacks="None"
@@ -126,7 +126,7 @@
 			visuals="Assets/_DLC3/Templar/TemplarEncampment/TemplarEliteEncampment.prefab" visuals_bundle="exp3_neinzul_abyss"
 			icon_overlay="Overlays2/TemplarElite"
 			starting_mark_level="Mark1"
-			description="这是圣殿骑士最简单的防御建筑。它是一些防御舰船的基地，这些舰船会保卫附近的星球。此建筑已针对对抗死灵法师进行了特殊改装。"
+			description="这是圣殿骑士最简单的防御建筑。它是一些防御单位的基地，这些单位会保卫附近的星球。此建筑已针对对抗死灵法师进行了特殊改装。"
 			multiplier_to_all_healths="3" damage_multiplier_to_all_weapons="3"
 			>
 		<data_extension name="DLC3"
@@ -147,7 +147,7 @@
 			visuals_scale_multiplier="32"
 			y_offset_of_ship_in_visual_space="30"
 			collision_priority="810"
-			description="这是一个强大的圣殿骑士防御建筑。它是一些防御舰船的基地，这些舰船会保卫附近的星球。"
+			description="这是一个强大的圣殿骑士防御建筑。它是一些防御单位的基地，这些单位会保卫附近的星球。"
 			behavior="Stationary"
 			starting_mark_level="Mark1"
 			cost_for_ai_to_purchase="500" mark_level_scale_style="Templar"
@@ -189,7 +189,7 @@
             tags="TemplarEliteMidTierStructure,TemplarPrimaryDefensiveStructure,TemplarFastness"
             visuals="Assets/_DLC3/Templar/TemplarFastness/TemplarEliteFastness.prefab" visuals_bundle="exp3_neinzul_abyss"
             icon_overlay="Overlays2/TemplarElite"
-            description="这是一个强大的圣殿骑士防御建筑。它是一些防御舰船的基地，这些舰船会保卫附近的星球。此建筑已针对对抗死灵法师进行了特殊改装。"
+            description="这是一个强大的圣殿骑士防御建筑。它是一些防御单位的基地，这些单位会保卫附近的星球。此建筑已针对对抗死灵法师进行了特殊改装。"
             multiplier_to_all_healths="3" damage_multiplier_to_all_weapons="3"
             >
             <data_extension name="DLC3"
@@ -212,7 +212,7 @@
 			visuals_scale_multiplier="16"
 			y_offset_of_ship_in_visual_space="140"
 			collision_priority="810"
-			description="这是一个非常强大的圣殿骑士防御建筑。它会派出一些舰船来保卫附近的星球。"
+			description="这是一个非常强大的圣殿骑士防御建筑。它会派出一些单位来保卫附近的星球。"
 			behavior="Stationary"
 			starting_mark_level="Mark1"
 			cost_for_ai_to_purchase="500" mark_level_scale_style="Templar"
@@ -265,7 +265,7 @@
           tags="TemplarEliteHighTierStructure,TemplarPrimaryDefensiveStructure,TemplarCastle"
           icon_overlay="Overlays2/TemplarElite"
           visuals="Assets/_DLC3/Templar/TemplarCastle/TemplarEliteCastle.prefab" visuals_bundle="exp3_neinzul_abyss"
-          description="这是一个非常强大的圣殿骑士防御建筑。它是一些防御舰船的基地，这些舰船会保卫附近的星球。此建筑已针对对抗死灵法师进行了特殊改装。"
+          description="这是一个非常强大的圣殿骑士防御建筑。它是一些防御单位的基地，这些单位会保卫附近的星球。此建筑已针对对抗死灵法师进行了特殊改装。"
           multiplier_to_all_healths="3" damage_multiplier_to_all_weapons="3"
           >
     <data_extension name="DLC3"
@@ -402,7 +402,7 @@
         draw_in_galaxy_view="true"
         shows_on_galaxy_map_for_explored_planets="true" 
 	collision_priority="100"
-	description="圣殿骑士将使用这个巨大的建筑平台建造新的防御建筑。它们行动缓慢，依靠引擎伤害来摆脱攻击者，但杀死这些建造者将获得大量的科研点数和黑客点数。它们还会造成范围伤害以抵御成群的攻击者。
+	description="圣殿骑士将使用这个巨大的建筑平台建造新的防御建筑。它们行动缓慢，依靠引擎伤害来摆脱攻击者，但杀死这些建造者将获得大量的科研点数和入侵点数。它们还会造成范围伤害以抵御成群的攻击者。
 
 这些是关键目标；摧毁建造者将限制圣殿骑士的扩张能力。"
 	starting_mark_level="Mark1"
@@ -818,7 +818,7 @@
 			icon_overlay="Overlays2/TemplarElite"
 			cost_for_ai_to_purchase="1400"
 		    hull_points="224000" shield_points="112000" 
-		    description="驱魔人是一艘强大的圣殿骑士护卫舰，能在自身周围造成范围伤害，尤其擅长击杀反照率高的舰船，如隐形舰船。在被摧毁时，会释放最后一次爆炸。这些精英版本是专门为对抗死灵法师而改装的。"
+		    description="驱魔人是一艘强大的圣殿骑士护卫舰，能在自身周围造成范围伤害，尤其擅长击杀反照率高的单位，如隐形单位。在被摧毁时，会释放最后一次爆炸。这些精英版本是专门为对抗死灵法师而改装的。"
             >
 		<data_extension name="DLC3"
           necromancer_science_to_grant_on_death="0"
@@ -999,7 +999,7 @@
 			visuals_scale_multiplier="3.5"
 			voice_group="Silent"
 			collision_priority="400"
-			description="圣殿骑士的狡猾驱逐舰，管家号处于隐形状态，配备两种麻痹武器，分别专门针对大型单体舰船和小型舰船群。"
+			description="圣殿骑士的狡猾驱逐舰，管家号处于隐形状态，配备两种麻痹武器，分别专门针对大型单体单位和小型单位群。"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
 			cost_for_ai_to_purchase="6500" mark_level_scale_style="Templar" strength_multiplier="2"			
 			hull_points="140000" shield_points="280000" speed="AboveAverage1"
@@ -1051,7 +1051,7 @@
 			visuals_scale_multiplier="6.5"
 			voice_group="Silent"
 			collision_priority="400"
-			description="圣殿骑士的支援型驱逐舰，医护骑士号会以自身生命值为代价为倒下的盟友恢复生命值，并且可以在非战斗状态下自我恢复。它配备一种行星级射程的攻击武器，旨在摧毁刚抵达的舰船。"
+			description="圣殿骑士的支援型驱逐舰，医护骑士号会以自身生命值为代价为倒下的盟友恢复生命值，并且可以在非战斗状态下自我恢复。它配备一种行星级射程的攻击武器，旨在摧毁刚抵达的单位。"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
 			cost_for_ai_to_purchase="6500" mark_level_scale_style="Templar" strength_multiplier="2"			
 			hull_points="420000" shield_points="0" speed="Normal1"
@@ -1091,7 +1091,7 @@
 			voice_group="Silent"
 			category="Ship" special_entity_type="AIDireGuardian"
 			collision_priority="400"
-			description="圣殿骑士的强大驱逐舰，大团长号利用反向牵引光束控制大型舰船，以优化其聚焦战斗炮，造成巨大伤害。"
+			description="圣殿骑士的强大驱逐舰，大团长号利用反向牵引光束控制大型单位，以优化其聚焦战斗炮，造成巨大伤害。"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Unused"
 			cost_for_ai_to_purchase="6500" mark_level_scale_style="Templar" strength_multiplier="2"			
 			hull_points="280000" shield_points="140000" speed="Normal3"
@@ -1341,7 +1341,7 @@
 	<entity name="AISquire" copy_from="TemplarSquire" display_name="AI 侍从战机" display_name_for_sidebar="AI 侍从"
 			thematic_groups="Hidden" 
 			tags="AISquire" is_strikecraft="true"
-			description="侍从战机是一种基础的圣殿骑士突击战机，擅长从远处向小股敌人投掷手榴弹，这对小型舰船尤其致命。它经过调整，可用于通用 AI 作战。"
+			description="侍从战机是一种基础的圣殿骑士突击战机，擅长从远处向小股敌人投掷手榴弹，这对小型单位尤其致命。它经过调整，可用于通用 AI 作战。"
 			multiplier_to_all_healths="1" damage_multiplier_to_all_weapons="0.75"
 			>
 		<data_extension name="DLC3"
@@ -1355,7 +1355,7 @@
     <entity name="AIPage" copy_from="TemplarPage" display_name="AI 侍从战机" display_name_for_sidebar="AI 侍从"
 			thematic_groups="Hidden" 
 			tags="AIPage" is_strikecraft="true"
-			description="这是一种圣殿骑士蜂群式突击战机，拥有强化外壳，尤其擅长对抗重装甲且体积庞大的舰船。为通用 AI 用途进行了适配。"
+			description="这是一种圣殿骑士蜂群式突击战机，拥有强化外壳，尤其擅长对抗重装甲且体积庞大的单位。为通用 AI 用途进行了适配。"
 			multiplier_to_all_healths="1" damage_multiplier_to_all_weapons="0.75"
 			>
 		<data_extension name="DLC3"
@@ -1384,7 +1384,7 @@
     <entity name="AISergeant" copy_from="TemplarSergeant" display_name="AI 审判官" display_name_for_sidebar="AI 审判官"
 			thematic_groups="Hidden" 
 			tags="AISergeant" special_entity_type="AIGuardian"
-			description="这是一种脆弱但致命的圣殿骑士护卫舰，“审判官”是一种隐形轰炸舰，会进行齐射，并在再次齐射前隐形。其武器专门用于摧毁拥有强大引擎的舰船。"
+			description="这是一种脆弱但致命的圣殿骑士护卫舰，“审判官”是一种隐形轰炸舰，会进行齐射，并在再次齐射前隐形。其武器专门用于摧毁拥有强大引擎的单位。"
 			multiplier_to_all_healths="0.8" damage_multiplier_to_all_weapons="0.65"
 			>
 		<data_extension name="DLC3"
@@ -1397,7 +1397,7 @@
 	<entity name="AITemplarExorcist" copy_from="TemplarExorcist" display_name="AI 驱魔师" display_name_for_sidebar="AI 驱魔师"
 			thematic_groups="Hidden" 
 			tags="AISergeant" special_entity_type="AIGuardian"
-			description="这是一种强大的圣殿骑士护卫舰，“驱魔师”会在自身周围造成爆发性范围伤害，尤其擅长击杀反照率高的舰船，如隐形舰船。在被摧毁时，会释放最后一次爆炸。为通用 AI 用途进行了适配。"
+			description="这是一种强大的圣殿骑士护卫舰，“驱魔师”会在自身周围造成爆发性范围伤害，尤其擅长击杀反照率高的单位，如隐形单位。在被摧毁时，会释放最后一次爆炸。为通用 AI 用途进行了适配。"
 			multiplier_to_all_healths="0.8" damage_multiplier_to_all_weapons="0.65"
            >
 		<data_extension name="DLC3"
@@ -1438,7 +1438,7 @@
 	<entity name="AISeneshal" copy_from="TemplarSeneschal" display_name="AI 执事舰"
 			thematic_groups="AI" 
 			tags="AISeneschal" special_entity_type="AIDireGuardian"
-			description="执事舰是一艘狡猾的圣殿骑士驱逐舰，它具备隐形能力，并且拥有两种麻痹武器，分别专门针对单个大型舰船和小型舰船群。"
+			description="执事舰是一艘狡猾的圣殿骑士驱逐舰，它具备隐形能力，并且拥有两种麻痹武器，分别专门针对单个大型单位和小型单位群。"
 			starting_mark_level="Mark7" does_not_use_multipliers_from_mark_level="true"
 		    cost_for_ai_to_purchase="8000" strength_multiplier="4"			
 		 	hull_points="700000" shield_points="1400000"
@@ -1457,7 +1457,7 @@
 	<entity name="AIHospitaller" copy_from="TemplarHospitaller" display_name="AI 医护舰" display_name_for_sidebar="AI 医护"
 			thematic_groups="AI" 
 			tags="AIHospitaller" special_entity_type="AIDireGuardian"
-			description="医护舰是一艘辅助型的圣殿骑士驱逐舰，它可以牺牲自身生命值来复活倒下的盟友，并且能够在非战斗状态下自我恢复。它还拥有一种行星范围的攻击能力，旨在摧毁刚抵达的舰船。已针对通用 AI 使用进行了适配。"
+			description="医护舰是一艘辅助型的圣殿骑士驱逐舰，它可以牺牲自身生命值来复活倒下的盟友，并且能够在非战斗状态下自我恢复。它还拥有一种行星范围的攻击能力，旨在摧毁刚抵达的单位。已针对通用 AI 使用进行了适配。"
 			starting_mark_level="Mark7" does_not_use_multipliers_from_mark_level="true"
 		    cost_for_ai_to_purchase="9000" strength_multiplier="4"			
 		 	hull_points="4200000" shield_points="0"
@@ -1475,7 +1475,7 @@
 			thematic_groups="AI" 
             tags="AIGrandMaster" 
 			special_entity_type="AIDireGuardian"
-			description="大导师舰是一艘强大的圣殿骑士驱逐舰，它使用反向牵引光束控制大型舰船，从而让其聚焦的战列炮发挥出惊人的伤害。已针对通用 AI 使用进行了适配。"
+			description="大导师舰是一艘强大的圣殿骑士驱逐舰，它使用反向牵引光束控制大型单位，从而让其聚焦的战列炮发挥出惊人的伤害。已针对通用 AI 使用进行了适配。"
 			starting_mark_level="Mark7" does_not_use_multipliers_from_mark_level="true"
 		    cost_for_ai_to_purchase="7000" strength_multiplier="4"			
 		 	hull_points="1400000" shield_points="700000"

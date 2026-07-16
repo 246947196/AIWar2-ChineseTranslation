@@ -1,4 +1,4 @@
-﻿using Arcen.AIW2.Core;
+using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -163,7 +163,7 @@ namespace Arcen.AIW2.External
                     GameEntity_Squad HomeStronghold = data.HomeStronghold.GetSquad();
                     if ( HomeStronghold != null )
                     {
-                        Buffer.Add("此舰船仅可用于防御 ").Add(HomeStronghold.Planet.Name, "a1a1ff").Add( " 上的 " ).Add( HomeStronghold.TypeData.GetDisplayName(), "a1ffa1" ).Add( " 附近的星球。" );
+                        Buffer.Add("此单位仅可用于防御 ").Add(HomeStronghold.Planet.Name, "a1a1ff").Add( " 上的 " ).Add( HomeStronghold.TypeData.GetDisplayName(), "a1ffa1" ).Add( " 附近的星球。" );
                     }
                 }
                 if ( RelatedEntityTypeData.GetHasTag("DysonDrill") && data != null )

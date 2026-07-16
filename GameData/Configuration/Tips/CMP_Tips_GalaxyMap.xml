@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   <tip category="GalaxyMap" name="WormholeLinkColour" display_name="理解虫洞连接颜色" sort_priority="1000"
@@ -19,7 +19,7 @@
 
 如果一个AI行星与非AI行星相邻，但AI行星没有跃迁门（这意味着AI无法发动攻击波），连接线会显示得特别细。
 
-如果你选中了单位并将鼠标悬停在某个行星上，你的舰船将要使用的连接线会显示得特别粗，并使用你的玩家颜色。" />
+如果你选中了单位并将鼠标悬停在某个行星上，你的单位将要使用的连接线会显示得特别粗，并使用你的玩家颜色。" />
 
 
   <tip category="GalaxyMap" name="PlanetMarkLevelColors" display_name="额外内容：星球等级颜色的含义" sort_priority="2000"

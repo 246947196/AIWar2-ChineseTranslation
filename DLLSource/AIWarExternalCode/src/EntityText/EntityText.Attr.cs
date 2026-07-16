@@ -294,13 +294,13 @@ namespace Arcen.AIW2.External
                                 }
                                 break;
                             case ResourceType.Hacking:
-                                buffer.Add( " 当位于有剩余黑客点的星球时。" );
+                                buffer.Add( " 当位于有剩余入侵点的星球时。" );
                                 break;
                             case ResourceType.Science:
                                 buffer.Add( " 当位于有剩余科技的星球时。" );
                                 break;
                             case ResourceType.FuelArgon:
-                                buffer.Add( "（用于主力战斗舰船）。" );
+                                buffer.Add( "（用于主力战斗单位）。" );
                                 break;
                             case ResourceType.FuelRadon:
                                 buffer.Add( "（用于炮塔和力场）。" );
@@ -769,7 +769,7 @@ namespace Arcen.AIW2.External
                     
                     buffer
                         .Add( "黑洞效应", Attr_Label)
-                        .Add("：敌方舰船低于 " )
+                        .Add("：敌方单位低于 " )
                         .AddNumber(Squad.TypeData.AddsBlackHoleEffectForEntitiesWithEngine_gxLessThan, TextTerm.Engine_gX, TermUse.Icon)
                         .Add( " 无法离开此行星（除非残废）。" );
                     
@@ -779,7 +779,7 @@ namespace Arcen.AIW2.External
                 if ( Squad.TypeData.AddsBlackHoleEffectForAllEntitiesPeriod )
                 {
                     buffer.BeginStatement(Attr_Line);
-                    buffer.Add( "超级黑洞效应", Attr_Label).Add("：任何阵营或状态的舰船都无法离开此星球。" );
+                    buffer.Add( "超级黑洞效应", Attr_Label).Add("：任何阵营或状态的单位都无法离开此星球。" );
                     buffer.EndStatement(Attr_Line);
                 }
                 #endregion 
@@ -1259,10 +1259,10 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                     buffer.BeginStatement(Attr_Line);
                     
                     if ( Squad.TypeData.HackingEffectMultiplier < FInt.One )
-                        buffer.Add( "黑客加成", Attr_Label);
+                        buffer.Add( "入侵加成", Attr_Label);
                     else
-                        buffer.Add( "黑客惩罚", Attr_Label);
-                    buffer.Add( "：此单位进行的所有黑客入侵的响应时间倍率为 <color=#ffdf72>" ).AddNumberMoreReadable( Squad.TypeData.HackingEffectMultiplier ).Add( "x</color>。" );
+                        buffer.Add( "入侵惩罚", Attr_Label);
+                    buffer.Add( "：此单位进行的所有入侵的响应时间倍率为 <color=#ffdf72>" ).AddNumberMoreReadable( Squad.TypeData.HackingEffectMultiplier ).Add( "x</color>。" );
                     
                     buffer.EndStatement(Attr_Line);
                 }
@@ -1329,7 +1329,7 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                             {
                                 buffer.Add( "<color=#f2ae1c>舰队加成限制已超：</color> <color=#e0c266>舰队加成仅在拥有 " ).Add(
                                     Squad.TypeData.SuperchargesOnlyApplyWhenFleetLineCountIsXOrLess )
-                                    .Add( " 条或更少非旗舰、非精英舰船线时启用，但当前舰队中有 " ).Add( superchargeBonusLimiter ).Add( " 条。</color>" );
+                                    .Add( " 条或更少非旗舰、非精英单位线时启用，但当前舰队中有 " ).Add( superchargeBonusLimiter ).Add( " 条。</color>" );
                             }
                             else 
                             if ( relatedMembershipOrNull == null || 
@@ -1339,9 +1339,9 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                                         Squad.TypeData.SuperchargesOnlyApplyWhenFleetLineCountIsXOrLess );
 
                                 if ( relatedMembershipOrNull != null )
-                                    buffer.Add( " 条或更少非旗舰、非精英舰船线时启用，当前有 " ).Add( superchargeBonusLimiter ).Add( " 条。</color>" );
+                                    buffer.Add( " 条或更少非旗舰、非精英单位线时启用，当前有 " ).Add( superchargeBonusLimiter ).Add( " 条。</color>" );
                                 else
-                                    buffer.Add( " 条或更少非旗舰、非精英舰船线时启用。</color>" );
+                                    buffer.Add( " 条或更少非旗舰、非精英单位线时启用。</color>" );
                             }
                         }
                     }
@@ -1639,7 +1639,7 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                         buffer
                             .Add( "如果" )
                             .Add( "玩家", TextStyle.PlayerType_Name)
-                            .Add( " 为此舰船线路骇入 " )
+                            .Add( " 为此单位线路骇入 " )
                             .AddNumber( Squad.TypeData.AIPWhenGrantedByHack, prefix, TextTerm.AIP, TermUse.Icon )
                             .Add( "." );
                         
@@ -1734,7 +1734,7 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                             hasDoneHeader = true;
                             buffer.BeginStatement(Attr_Line);
                             //buffer.Open(TextStyle.Attr_Line);
-                            buffer.Add( "可黑客", Attr_Label).Add("： " );
+                            buffer.Add( "可入侵", Attr_Label).Add("： " );
                         }
                         else
                         if (counter > 0)
@@ -1774,7 +1774,7 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                                 buffer.Add(" 可用");
                             else
                                 buffer.Add("1 / ").Add(numChoices);
-                            buffer.Add(" 舰船线路");
+                            buffer.Add(" 单位线路");
                             }
                             else
                             {
@@ -1843,13 +1843,13 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                 #region IsElite
                 debugstage = 3010;
                 if ( (Squad.TypeData.IsElite) && Config.Detail >= TooltipDetail.Medium )
-                    buffer.BeginStatement(Attr_Line).Add( "精英：每支舰队只能加入一条精英舰船线" ).EndStatement(Attr_Line);
+                    buffer.BeginStatement(Attr_Line).Add( "精英：每支舰队只能加入一条精英单位线" ).EndStatement(Attr_Line);
                 #endregion
                 
                 #region ProvidesAIWarpEntryPoint
                 debugstage = 3020;
                 if ( (Squad.TypeData.ProvidesAIWarpEntryPoint || Squad.TypeData.IsWarpBeacon) && Config.Detail >= TooltipDetail.Medium )
-                    buffer.BeginStatement(Attr_Line).Add( "允许 AI 舰船在此跃迁进入" ).EndStatement(Attr_Line);
+                    buffer.BeginStatement(Attr_Line).Add( "允许 AI 单位在此跃迁进入" ).EndStatement(Attr_Line);
                 #endregion
                 
                 #region FleetMembershipStyle.Planetary
@@ -2356,7 +2356,7 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                     buffer.Add( "<color=#ff5bf2>不追你" );
                     if ( Config.Detail >= TooltipDetail.Full )
                     {
-                        buffer.Add( "：</color> 此舰船会在你接近时开火，否则忽略你。它正忙于猎杀 " );
+                        buffer.Add( "：</color> 此单位会在你接近时开火，否则忽略你。它正忙于猎杀 " );
                         buffer.Add( Squad.CalculateFactionIsChasingInsteadOfHumans() );
                         buffer.Add( "。" );
                     } 
@@ -3062,7 +3062,7 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                             {
                                 buffer
                                     .BeginStatement(TextStyle.WarnText)
-                                    .Add( "此舰船通常可被运输，但当前无法装载入任何运输船，因为 " )
+                                    .Add( "此单位通常可被运输，但当前无法装载入任何运输船，因为 " )
                                 .Add( Extensions.ToString(noTransport) )
                                 .EndStatement(TextStyle.WarnText);
                         }
@@ -3101,7 +3101,7 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                         if ( !skipBecauseWrittenElsewhere )
                         {
                             //HandleNewline( buffer, ref haveDoneNewLine );
-                            buffer.BeginStatement(TextStyle.WarnText).Add( "舰船已禁用：" );
+                            buffer.BeginStatement(TextStyle.WarnText).Add( "单位已禁用：" );
 
                             switch ( rejectionReason )
                             {
@@ -3282,7 +3282,7 @@ buffer.Add( "Exo/Raid Engine: Spawns waves and exo strikes" );
                     {
                         buffer.BeginStatement(TextStyle.WarnText);
                         debugstage = 87394010;
-                        buffer.Add( "此单位正在黑客入侵。期间速度降低、解除隐形，且无法离开星球。" );
+                        buffer.Add( "此单位正在入侵。期间速度降低、解除隐形，且无法离开星球。" );
                         buffer.EndStatement(TextStyle.WarnText);
                     }
                     #endregion

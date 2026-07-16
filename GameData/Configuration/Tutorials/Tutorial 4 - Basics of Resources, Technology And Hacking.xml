@@ -1,8 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
-  <tutorial category="Basics" name="BasicResourcesTechnologyAndHacking" display_name="教程 4 - 资源、科技和黑客攻击基础" sort_priority="4"
-        description="可用资源的基础知识、技术系统以及黑客的工作原理。" scenario="AftermathOfLosingTheAIWar"
+  <tutorial category="Basics" name="BasicResourcesTechnologyAndHacking" display_name="教程 4 - 资源、科技和入侵基础" sort_priority="4"
+        description="可用资源的基础知识、技术系统以及入侵的工作原理。" scenario="AftermathOfLosingTheAIWar"
         do_not_serialize_setup_to_or_from_settings="true"
         skip_determine_ai_ownership="true" skip_determine_ai_homeworlds="true" skip_assign_player_homeworlds="true"
         force_map_type="Tutorial_01" force_map_seed="123456" skip_seed_special_entities="true"
@@ -75,7 +75,7 @@
       For informaton about the conditions that you can use, and how to use them, 
       please see this wiki page: https://wiki.arcengames.com/index.php?title=AI_War_2:_Tutorial_Step_Conditions
       *************************************-->
-    <tutorial_step text_to_show="欢迎来到AI战争2的第四个教程。本教程将介绍主要资源、科技系统以及黑客攻击的运作方式。
+    <tutorial_step text_to_show="欢迎来到AI战争2的第四个教程。本教程将介绍主要资源、科技系统以及入侵的运作方式。
 	
 首先，让我们再次查看建造菜单。">
       <condition type="PlayerHasSidebarMenuOpen_Build"/>
@@ -137,7 +137,7 @@
 
 现在我们将介绍最后一种资源。但首先，您应该在这里通过战斗站建造一些防御设施——我们不想让我们的母星无人防守！
 
-然后，我们需要将舰队移动到{c1.PlanetName}。一旦到达那里，将视图发送到那里并打开&lt;color=#3DE799&gt;黑客攻击&lt;/color&gt;标签。确保带上所有部队！
+然后，我们需要将舰队移动到{c1.PlanetName}。一旦到达那里，将视图发送到那里并打开&lt;color=#3DE799&gt;入侵&lt;/color&gt;标签。确保带上所有部队！
 
 &lt;color=#999999&gt;额外提示：早期通过这种方式升级您的母星可以获得大量额外收入！&lt;/color&gt;">
       <condition type="PlayerHasCountOfSpecificShipOnPlanet" planet_by_name="Midlander" entity_type="TransportFlagship_Starter" count="1"/>
@@ -147,21 +147,21 @@
 	  <condition type="PlayerHasSidebarMenuOpen_Hacking"/>
     </tutorial_step>	
 
-    <tutorial_step text_to_show="这里有几个选项。每个选项都显示&lt;color=#3DE799&gt;黑客点&lt;/color&gt;消耗和持续时间。将鼠标悬停在上面会告诉我们它们的作用。有些针对行星上的特定单位并说明是什么，否则就是对整个行星进行操作。
+    <tutorial_step text_to_show="这里有几个选项。每个选项都显示&lt;color=#3DE799&gt;入侵点&lt;/color&gt;消耗和持续时间。将鼠标悬停在上面会告诉我们它们的作用。有些针对行星上的特定单位并说明是什么，否则就是对整个行星进行操作。
 
-&lt;color=#3DE799&gt;黑客点&lt;/color&gt;是执行&lt;color=#3DE799&gt;黑客攻击&lt;/color&gt;所使用的资源，用绿色微芯片图标表示，可在顶部看到。像&lt;color=#7CE9FF&gt;科学点&lt;/color&gt;一样，获取方式有2种，但主要方式也是从占领的行星中提取，每个行星都有有限的数量。
+&lt;color=#3DE799&gt;入侵点&lt;/color&gt;是执行&lt;color=#3DE799&gt;入侵&lt;/color&gt;所使用的资源，用绿色微芯片图标表示，可在顶部看到。像&lt;color=#7CE9FF&gt;科学点&lt;/color&gt;一样，获取方式有2种，但主要方式也是从占领的行星中提取，每个行星都有有限的数量。
 
-我们想执行&lt;color=#3DE799&gt;窃取AI舰船线黑客攻击&lt;/color&gt;。这里有一个高级研究站，可以为&lt;color=#3DE799&gt;黑客攻击&lt;/color&gt;舰队提供新型单位。
+我们想执行&lt;color=#3DE799&gt;窃取AI单位线入侵&lt;/color&gt;。这里有一个高级研究站，可以为&lt;color=#3DE799&gt;入侵&lt;/color&gt;舰队提供新型单位。
 
-我们把整个舰队带到这里是因为大多数&lt;color=#3DE799&gt;黑客攻击&lt;/color&gt;都会引发响应——AI并不高兴。在完成之前，敌人会定期出现并试图阻止您。这个&lt;color=#3DE799&gt;黑客攻击&lt;/color&gt;目前难度不大，极少数攻击不会引发响应。
+我们把整个舰队带到这里是因为大多数&lt;color=#3DE799&gt;入侵&lt;/color&gt;都会引发响应——AI并不高兴。在完成之前，敌人会定期出现并试图阻止您。这个&lt;color=#3DE799&gt;入侵&lt;/color&gt;目前难度不大，极少数攻击不会引发响应。
 
-您可以将鼠标悬停在顶部的资源数量上，查看AI响应的强度。您对同一个AI进行的&lt;color=#3DE799&gt;黑客攻击&lt;/color&gt;越多，这个强度就越高。纳米瘟疫等派系的反应略有不同。您还可以看到对响应强度的估计，用盾牌表示。 
+您可以将鼠标悬停在顶部的资源数量上，查看AI响应的强度。您对同一个AI进行的&lt;color=#3DE799&gt;入侵&lt;/color&gt;越多，这个强度就越高。纳米瘟疫等派系的反应略有不同。您还可以看到对响应强度的估计，用盾牌表示。 
 
-开始&lt;color=#3DE799&gt;黑客攻击&lt;/color&gt;，等攻击完成后我们再继续。
+开始&lt;color=#3DE799&gt;入侵&lt;/color&gt;，等攻击完成后我们再继续。
 
-&lt;color=#999999&gt;额外提示1：&lt;color=#3DE799&gt;黑客攻击&lt;/color&gt;由最接近目标的旗舰执行。在&lt;color=#3DE799&gt;黑客攻击&lt;/color&gt;进行期间，它不能离开行星。&lt;/color&gt;
+&lt;color=#999999&gt;额外提示1：&lt;color=#3DE799&gt;入侵&lt;/color&gt;由最接近目标的旗舰执行。在&lt;color=#3DE799&gt;入侵&lt;/color&gt;进行期间，它不能离开行星。&lt;/color&gt;
 
-&lt;color=#999999&gt;额外提示2：左键点击屏幕顶部的&lt;color=#3DE799&gt;黑客攻击&lt;/color&gt;通知可以取消攻击。如果响应过于强烈，这会很有用。&lt;/color&gt;">">
+&lt;color=#999999&gt;额外提示2：左键点击屏幕顶部的&lt;color=#3DE799&gt;入侵&lt;/color&gt;通知可以取消攻击。如果响应过于强烈，这会很有用。&lt;/color&gt;">">
       <condition type="EnemyShipsOfSpecificTypeOnPlanetLessThanOrEqualTo" planet_by_name="Midlander" entity_type="AdvancedResearchStationForTutorial" count="0"/>
     </tutorial_step>
 

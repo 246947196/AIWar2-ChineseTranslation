@@ -83,7 +83,7 @@ namespace Arcen.AIW2.External
             int numberOfTimesHacked = this.GetNumberOfTimesHacked( target, hackingType );
             int maxTimesHacked = this.GetNumberOfTimesCanBeHacked( target, hackingType );
 
-            buffer.Add( "\n<color=#96afe0>已黑客 " ).Add( numberOfTimesHacked ).Add( " / " ).Add( maxTimesHacked ).Add( " 次。</color>" );
+            buffer.Add( "\n<color=#96afe0>已入侵 " ).Add( numberOfTimesHacked ).Add( " / " ).Add( maxTimesHacked ).Add( " 次。</color>" );
 
             return buffer.GetStringAndResetForNextUpdate();
         }
@@ -179,9 +179,9 @@ namespace Arcen.AIW2.External
                 buffer.Add( "." );
                 if ( eligibleTargets.Count > 1 )
                 {
-                    buffer.Add( "  你可以在发起黑客后选择目标。" );
+                    buffer.Add( "  你可以在发起入侵后选择目标。" );
                     if ( minCost.IntValue != maxCost.IntValue )
-                        buffer.Add( "  黑客点成本从 " ).Add( minCost.IntValue ).Add( " 到 " ).Add( maxCost.IntValue ).Add( "，取决于你的选择。" );
+                        buffer.Add( "  入侵点成本从 " ).Add( minCost.IntValue ).Add( " 到 " ).Add( maxCost.IntValue ).Add( "，取决于你的选择。" );
                 }
             }
             else
@@ -306,9 +306,9 @@ namespace Arcen.AIW2.External
                     GameEntity_Squad hacker = HackingUtils.GetPreferredHacker( Info.TargetShip, Info.HackingType, Info.TargetPlanet, true );
                     if ( Engine_Universal.CurrentPopups.Count > 0 ) //we got some sort of warning telling us we can't do this
                         return MouseHandlingResult.PlayClickDeniedSound;
-                    ModalPopupData.CreateAndLogYesNoStyle( DoHack, null, "确定吗", "你确定要对 " + target.GetTypeDisplayNameSafe() + " 执行黑客 " + Info.HackingType.DisplayName +
+                    ModalPopupData.CreateAndLogYesNoStyle( DoHack, null, "确定吗", "你确定要对 " + target.GetTypeDisplayNameSafe() + " 执行入侵 " + Info.HackingType.DisplayName +
                         " 吗？\n \n" + "<color=#888888>要禁用此提示，请进入游戏设置，在游戏选项卡下将其关闭。或者按住 " +
-                        InputActionTypeDataTable.GetActionByName_FairlySlow( "SuppressTechUpgradePrompt" ).GetHumanReadableKeyCombo() + " 同时点击升级按钮以跳过一次。</color>", "是，黑客", "不，不要" );
+                        InputActionTypeDataTable.GetActionByName_FairlySlow( "SuppressTechUpgradePrompt" ).GetHumanReadableKeyCombo() + " 同时点击升级按钮以跳过一次。</color>", "是，入侵", "不，不要" );
                 }
                 else
                     DoHack();
@@ -354,7 +354,7 @@ namespace Arcen.AIW2.External
                 {
                     Faction localFaction = World_AIW2.Instance.GetPlayerFactionForUIOrNull();
 
-                    tooltipBuffer.Add( "<b><u>黑客： " ).Add( Info.HackingType.DisplayName ).Add( "</u></b>\n" );
+                    tooltipBuffer.Add( "<b><u>入侵： " ).Add( Info.HackingType.DisplayName ).Add( "</u></b>\n" );
 
                     if ( LastSubItemDropdownWriter != null )
                         LastSubItemDropdownWriter( tooltipBuffer, target, Info.HackFaction, Info.HackingType );

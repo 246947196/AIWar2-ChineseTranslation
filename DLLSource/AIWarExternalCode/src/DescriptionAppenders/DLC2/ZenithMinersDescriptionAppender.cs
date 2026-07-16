@@ -1,4 +1,4 @@
-﻿using Arcen.AIW2.Core;
+using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -30,9 +30,9 @@ namespace Arcen.AIW2.External
                 else if ( data.Effect == ZenithMinerEffect.RavagePlanet )
                     Buffer.Add( "蹂躏星球！这将破坏该星球并移除其大部分资源，但它仍将是星系的一部分。" );
                 else if ( data.Effect == ZenithMinerEffect.SlowShipsOnPlanet )
-                    Buffer.Add( "增加行星引力以永久 " ).Add( "减慢", "a1ffa1" ).Add( " 该星球上所有舰船的速度。" );
+                    Buffer.Add( "增加行星引力以永久 " ).Add( "减慢", "a1ffa1" ).Add( " 该星球上所有单位的速度。" );
                 else if ( data.Effect == ZenithMinerEffect.SpeedupShipsOnPlanet )
-                    Buffer.Add( "降低行星引力以永久 " ).Add( "加速", "a1ffa1" ).Add( " 该星球上所有舰船的速度。" );
+                    Buffer.Add( "降低行星引力以永久 " ).Add( "加速", "a1ffa1" ).Add( " 该星球上所有单位的速度。" );
                 else if ( data.Effect == ZenithMinerEffect.MakePlanetNomadic )
                     Buffer.Add( "使该星球像游牧星球一样在星系中移动。" );
                 else

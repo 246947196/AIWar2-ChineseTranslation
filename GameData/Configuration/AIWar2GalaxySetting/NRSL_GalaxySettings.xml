@@ -62,56 +62,56 @@
 		description="通常当你达到'AIP永不低于'的AIP数量时，实际AIP底线仍在你之下，你可以在这个确切的AIP值保持相当长一段时间。如果设置为true，底线将从该相同值开始，因此任何AIP增加都会不可避免地导致一些有效增加。" >
 	</galaxy_setting>
 
-	<galaxy_setting category="Extended" subcategory="AIP" is_advanced_setting="true" name="SabotageHacksCauseAIP" display_name="破坏性黑客攻击导致AIP" type="BoolToggle" changeable_during_gameplay="false"
+	<galaxy_setting category="Extended" subcategory="AIP" is_advanced_setting="true" name="SabotageHacksCauseAIP" display_name="破坏性入侵导致AIP" type="BoolToggle" changeable_during_gameplay="false"
 		default="false"
 		description="通常，当你通过破坏摧毁AI结构时，这会规避通常由其破坏引起的任何AIP。此选项允许你更改这一点，这会显著影响HaP的整体价值。" >
 	</galaxy_setting>
 
     <!-- Hacking Points -->
 
-	<galaxy_setting category="Extended" subcategory="Resources_Hacking" is_advanced_setting="true" name="HackingPoints_Amount" display_name="行星黑客点数" type="IntTextbox" changeable_during_gameplay="false"
+	<galaxy_setting category="Extended" subcategory="Resources_Hacking" is_advanced_setting="true" name="HackingPoints_Amount" display_name="行星入侵点数" type="IntTextbox" changeable_during_gameplay="false"
 		default="30" min="0" max="100"
-		description="一个行星上可以收集多少黑客点数？最大值为100。" >
+		description="一个行星上可以收集多少入侵点数？最大值为100。" >
 		<harshness_override is_sandbox="true" min="0" max="10000" />
 		<harshness_override min_campaign_harshness_to_apply="200" max="25" />
 	</galaxy_setting>
 		
-	<galaxy_setting category="Extended" subcategory="Resources_Hacking" is_advanced_setting="true" name="HackingPoints_Adjacence" display_name="行星黑客点数相邻加成" type="IntTextbox" changeable_during_gameplay="false"
+	<galaxy_setting category="Extended" subcategory="Resources_Hacking" is_advanced_setting="true" name="HackingPoints_Adjacence" display_name="行星入侵点数相邻加成" type="IntTextbox" changeable_during_gameplay="false"
 		default="5" min="0" max="50"
-		description="当玩家拥有彼此相邻的多个行星时，每个行星可以收获额外的黑客点数。这定义了有多少（如果有的话）。最大值为50。" >
+		description="当玩家拥有彼此相邻的多个行星时，每个行星可以收获额外的入侵点数。这定义了有多少（如果有的话）。最大值为50。" >
 		<harshness_override min_campaign_harshness_to_apply="200" max="5" />
 	</galaxy_setting>
 		
-	<galaxy_setting category="Extended" subcategory="Resources_Hacking" is_advanced_setting="true" name="HackingPoints_Variance" display_name="行星黑客点数变异率 (%)" type="IntSlider" changeable_during_gameplay="false"
+	<galaxy_setting category="Extended" subcategory="Resources_Hacking" is_advanced_setting="true" name="HackingPoints_Variance" display_name="行星入侵点数变异率 (%)" type="IntSlider" changeable_during_gameplay="false"
 		default="0" min="0" max="100"
-		description="一个行星上可收集的黑客点数量可能会有多少百分比的变化？例如，如果一个行星平均有30个黑客点数，变异率设置为50%，则每个行星将随机拥有15到45个黑客点数。
+		description="一个行星上可收集的入侵点数量可能会有多少百分比的变化？例如，如果一个行星平均有30个入侵点数，变异率设置为50%，则每个行星将随机拥有15到45个入侵点数。
 如果变异率设置为0，则每个行星都将拥有上面设置的确切数量。
 请注意，相邻加成不受此设置影响。" >
 		<harshness_override min_campaign_harshness_to_apply="200" fixed_value="0" />
 	</galaxy_setting>
 
-	<galaxy_setting category="Extended" subcategory="Resources_Hacking" is_advanced_setting="true" name="HackingPointsScaling" display_name="行星黑客点数缩放（多人游戏）" type="CustomDropdownArbitraryOptions" changeable_during_gameplay="false"
+	<galaxy_setting category="Extended" subcategory="Resources_Hacking" is_advanced_setting="true" name="HackingPointsScaling" display_name="行星入侵点数缩放（多人游戏）" type="CustomDropdownArbitraryOptions" changeable_during_gameplay="false"
 		arbitrary_options="软衰减,线性衰减,无衰减,个人收获" default_option="软衰减"
-		description="在多个玩家的情况下，从行星收集的黑客点数量可能会根据玩家人数而减少。全量由上述设置确定。缩放选项是：
+		description="在多个玩家的情况下，从行星收集的入侵点数量可能会根据玩家人数而减少。全量由上述设置确定。缩放选项是：
 
 软衰减 --> 1名玩家：全量 | 2名玩家：每人2/3 | 3+名玩家：每人1/2。
-玩家从所有行星接收黑客点数，无论哪个玩家拥有它们，但不是全量。合起来他们收到的比单个玩家要多。
+玩家从所有行星接收入侵点数，无论哪个玩家拥有它们，但不是全量。合起来他们收到的比单个玩家要多。
 
 线性衰减 --> 1名玩家：全量，2名玩家：每人1/2，3名玩家：每人1/3，4名玩家：每人1/4。
-玩家从所有行星接收黑客点数，无论哪个玩家拥有它们，但不是全量。单个玩家会获得的数量在所有玩家之间平均分配。
+玩家从所有行星接收入侵点数，无论哪个玩家拥有它们，但不是全量。单个玩家会获得的数量在所有玩家之间平均分配。
 
 无衰减 --> 1+名玩家：全量
-玩家从所有行星接收黑客点数，无论哪个玩家拥有它们，每个玩家都获得全量。
+玩家从所有行星接收入侵点数，无论哪个玩家拥有它们，每个玩家都获得全量。
 
 个人收获 --> 1+名玩家：全量
-玩家接收全量的黑客点数，但只在他们拥有的行星上收获。如果小派系或其他非玩家来源产生AIP，并且AIP生成黑客点数，作为后备，使用'无衰减'逻辑。" >
+玩家接收全量的入侵点数，但只在他们拥有的行星上收获。如果小派系或其他非玩家来源产生AIP，并且AIP生成入侵点数，作为后备，使用'无衰减'逻辑。" >
 		<harshness_override min_campaign_harshness_to_apply="200" fixed_option="软衰减" />
 	</galaxy_setting>
 
-	<galaxy_setting category="Extended" subcategory="Resources_Hacking" is_advanced_setting="true" name="HackingPoints_PerAIP" display_name="来自AIP的黑客点数 (%)" type="IntTextbox" changeable_during_gameplay="false"
+	<galaxy_setting category="Extended" subcategory="Resources_Hacking" is_advanced_setting="true" name="HackingPoints_PerAIP" display_name="来自AIP的入侵点数 (%)" type="IntTextbox" changeable_during_gameplay="false"
 		default="0" min="0" max="1000"
-		description="当为玩家生成AIP时，也会生成多少黑客点数？
-例如，如果设置为50，则每1个AIP，玩家将获得0.5个黑客点数。这遵循'行星黑客点数缩放（多人游戏）'设置中定义的相同规则。" >
+		description="当为玩家生成AIP时，也会生成多少入侵点数？
+例如，如果设置为50，则每1个AIP，玩家将获得0.5个入侵点数。这遵循'行星入侵点数缩放（多人游戏）'设置中定义的相同规则。" >
 		<harshness_override is_sandbox="true" max="10000" />
 		<harshness_override min_campaign_harshness_to_apply="200" fixed_value="0" />
 	</galaxy_setting>

@@ -1,4 +1,4 @@
-﻿using Arcen.AIW2.Core;
+using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -61,14 +61,14 @@ namespace Arcen.AIW2.External
                     if ( entity.GetShouldBeVisibleBasedOnPlanetIntel() )
                     {
                         if ( !anyPrinted )
-                            tooltipBuffer.Add("您可见的舰船：\n");
+                            tooltipBuffer.Add("您可见的单位：\n");
                         anyPrinted = true;
                         tooltipBuffer.Add("\t").AddShipIconInline(entity.TypeData,World_AIW2.Instance.GetLocalPlayerFactionOrNaturalObjectsNeverNull()).Add(" ");
                         tooltipBuffer.Add(entity.TypeData.GetDisplayName()).Add(" 在 ").Add(entity.Planet.Name, faction.FactionCenterColor.ColorHexBrighter).Add("\n");
                     }
                 }
                 if (!anyPrinted )
-                    tooltipBuffer.Add("\n").Add("没有可见的舰船").Add("\n");
+                    tooltipBuffer.Add("\n").Add("没有可见的单位").Add("\n");
 
             }
             catch ( Exception e )

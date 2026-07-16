@@ -1254,7 +1254,7 @@ namespace Arcen.AIW2.External
                     {
                         if ( detailLevel == TooltipDetail.Full )
                         {
-                            buffer.Add( "黑客AIP: " );
+                            buffer.Add( "入侵AIP: " );
                         }
                         if ( entityType.AIPWhenGrantedByHack > FInt.Zero )
                         {
@@ -1861,7 +1861,7 @@ namespace Arcen.AIW2.External
                         if ( isCenterpiece && relatedSquadOrNull.ActiveHack != null && speedMultiplierWhileHacking > FInt.One )
                         {
                             Window_PrototypeInGameHoverEntityInfoUtils.WriteSpeedBuffsStartIfNeeded( buffer, false, ref wroteBuffStart, ref wroteSpeedBuffStart );
-                            buffer.Add( "黑客入侵: " ).AddPercentRoundedDynamically( (speedMultiplierWhileHacking - 1) * 100 );
+                            buffer.Add( "入侵: " ).AddPercentRoundedDynamically( (speedMultiplierWhileHacking - 1) * 100 );
                         }
 
                         if ( owningFactionOrNull != null && relatedSquadOrNull.Planet != null && relatedSquadOrNull.Planet.IsFimbulwintered && owningFactionOrNull.BenefitsFromFimbulwinter )
@@ -2167,7 +2167,7 @@ namespace Arcen.AIW2.External
                             if ( isCenterpiece && relatedSquadOrNull.ActiveHack != null && speedMultiplierWhileHacking < FInt.One )
                             {
                                 Window_PrototypeInGameHoverEntityInfoUtils.WriteSpeedDebuffsStartIfNeeded( buffer, false, ref wroteDebuffStart, ref wroteSpeedDebuffStart );
-                                buffer.Add( "黑客入侵: " ).AddPercentRoundedDynamically( (speedMultiplierWhileHacking - 1) * 100 );
+                                buffer.Add( "入侵: " ).AddPercentRoundedDynamically( (speedMultiplierWhileHacking - 1) * 100 );
                             }
 
                             if ( owningFactionOrNull != null && relatedSquadOrNull.Planet != null && relatedSquadOrNull.Planet.IsFimbulwintered && !owningFactionOrNull.BenefitsFromFimbulwinter )
@@ -2199,7 +2199,7 @@ namespace Arcen.AIW2.External
                             Window_PrototypeInGameHoverEntityInfoUtils.WriteDecloakDebuffsStartIfNeeded( buffer, false, true, ref wroteDebuffStart, ref wroteCloakBuffStart );
                             if ( relatedSquadOrNull.ActiveHack != null )
                             {
-                                buffer.Add( ", 因黑客入侵而禁用" );
+                                buffer.Add( ", 因入侵而禁用" );
                             } else if ( relatedSquadOrNull.GetIsCrippled() )
                             {
                                 buffer.Add( ", 已致残" );
@@ -2333,7 +2333,7 @@ namespace Arcen.AIW2.External
                     buffer.EndColor();
 
                     if ( relatedMembershipOrNull != null && localPlayerFaction.NetEnergy < relatedMembershipOrNull.GetEnergyUsage() && relatedMembershipOrNull.GetEnergyUsage() > 0 )
-                        buffer.Add( "\n" ).StartColor( QuickColors.Danger ).Add( "该舰船需要 " ).Add( relatedMembershipOrNull.GetEnergyUsage() )
+                        buffer.Add( "\n" ).StartColor( QuickColors.Danger ).Add( "该单位需要 " ).Add( relatedMembershipOrNull.GetEnergyUsage() )
                             .Add( " 能量才能运作，但你只有 " ).Add( localPlayerFaction.NetEnergy ).Add( " available." ).EndColor();
                 }*/
 
@@ -2525,7 +2525,7 @@ namespace Arcen.AIW2.External
                         if ( hackingPointsLost > 0 )
                         {
                             buffer.Add( "每次致残时还将损失 " ).Add(
-                                hackingPointsLost ).Add( " 个黑客点数。  " );
+                                hackingPointsLost ).Add( " 个入侵点数。  " );
                         }
                         buffer.EndColor();
                     }
@@ -2868,7 +2868,7 @@ namespace Arcen.AIW2.External
                                 buffer.Add( " 能量。  " );
                                 break;
                             case ResourceType.Hacking:
-                                buffer.Add( " 黑客点数/秒（在有剩余黑客点数的星球上）。  " );
+                                buffer.Add( " 入侵点数/秒（在有剩余入侵点数的星球上）。  " );
                                 break;
                             case ResourceType.Science:
                                 buffer.Add( " 科学点数/秒（在有剩余科学点数的星球上）。  " );
@@ -2982,7 +2982,7 @@ namespace Arcen.AIW2.External
                                 buffer.Add( " 氙气燃料在本星球生产。  " );
                                 break;
                             case ResourceType.Hacking:
-                                buffer.Add( " 黑客点数/秒在本星球收集（如果有剩余黑客点数）。  " );
+                                buffer.Add( " 入侵点数/秒在本星球收集（如果有剩余入侵点数）。  " );
                                 break;
                             case ResourceType.Science:
                                 buffer.Add( " 科学点数/秒在本星球收集（如果有剩余科学点数）。  " );
@@ -3130,11 +3130,11 @@ namespace Arcen.AIW2.External
                     Faction localFaction = World_AIW2.Instance.GetPlayerFactionForUIOrNull();
                     debugStage = 3800501;
                     if ( relatedSquadOrNull.ShipGrantsList.Count <= 0 )
-                        buffer.Add( "由于某种原因，此单位没有可授予的舰船！（这是一个BUG，请附带存档报告。）  " );
+                        buffer.Add( "由于某种原因，此单位没有可授予的单位！（这是一个BUG，请附带存档报告。）  " );
                     else
                     {
                         debugStage = 3800601;
-                        buffer.Add( "  可授予的舰船编制（选择其一）: " );
+                        buffer.Add( "  可授予的单位编制（选择其一）: " );
                         ShipLineEntry entry = null;
                         for ( int i = 0; i < relatedSquadOrNull.ShipGrantsList.Count; i++ )
                         {
@@ -3205,11 +3205,11 @@ namespace Arcen.AIW2.External
                     debugStage = 3855;
                     Faction localFaction = World_AIW2.Instance.GetPlayerFactionForUIOrNull();
                     if ( relatedSquadOrNull.ShipGrantsList.Count <= 0 )
-                        buffer.Add( "由于某种原因，此单位没有可授予的舰船！（这是一个BUG，请附带存档报告。）  " );
+                        buffer.Add( "由于某种原因，此单位没有可授予的单位！（这是一个BUG，请附带存档报告。）  " );
                     else
                     {
                         debugStage = 3856;
-                        buffer.Add( "  可授予的舰船编制（选择其一）: " );
+                        buffer.Add( "  可授予的单位编制（选择其一）: " );
                         ShipLineEntry entry = null;
                         for ( int i = 0; i < relatedSquadOrNull.ShipGrantsList.Count; i++ )
                         {
@@ -3272,7 +3272,7 @@ namespace Arcen.AIW2.External
                 }
                 debugStage = 390;
                 if ( relatedEntityTypeData.RegeneratesDyingShipsAtThisHealthCostRatio > FInt.Zero )
-                    buffer.Add( "当此星球上的友方单位将要死亡时，此舰船改为减少自身生命值来复活它们。效率为每 <color=#ffdf72>" )
+                    buffer.Add( "当此星球上的友方单位将要死亡时，此单位改为减少自身生命值来复活它们。效率为每 <color=#ffdf72>" )
                         .Add( relatedEntityTypeData.RegeneratesDyingShipsAtThisHealthCostRatio.ReadableString ).Add( " 生命恢复</color>。  " );
 
                 debugStage = 395;
@@ -3325,15 +3325,15 @@ namespace Arcen.AIW2.External
                     buffer.Add( "<color=#f25e1c>黑洞效应</color>: 引擎功率低于 <color=#ffdf72>" ).Add(
                         relatedEntityTypeData.AddsBlackHoleEffectForEntitiesWithEngine_gxLessThan ).Add( "gx</color> 的敌舰无法离开此星球。致残单位无论引擎功率如何均可离开。 " );
                 else if ( relatedEntityTypeData.AddsBlackHoleEffectForAllEntitiesPeriod )
-                    buffer.Add( "<color=#f25e1c>超级黑洞效应</color>: 任何舰船都无法离开此星球。  无论友军、敌军、致残单位，均不例外。 " );
+                    buffer.Add( "<color=#f25e1c>超级黑洞效应</color>: 任何单位都无法离开此星球。  无论友军、敌军、致残单位，均不例外。 " );
 
                 debugStage = 425;
 
                 if ( relatedEntityTypeData.CannotTargetOrAlertAIReinforcementSpots )
                 {
-                    buffer.Add( "<color=#f25e1c>仇恨隐形</color>: 包含守卫的敌方目标舰船和建筑（主要是守卫哨所）无法探测此舰船，此舰船也无法向那些目标开火。 " );
+                    buffer.Add( "<color=#f25e1c>仇恨隐形</color>: 包含守卫的敌方目标单位和建筑（主要是守卫哨所）无法探测此单位，此单位也无法向那些目标开火。 " );
                     if ( detailLevel >= TooltipDetail.Full )
-                        buffer.Add( "一旦那些目标被警觉并释放其守卫进行战斗，此舰船即可攻击那些目标。  " );
+                        buffer.Add( "一旦那些目标被警觉并释放其守卫进行战斗，此单位即可攻击那些目标。  " );
                 }
 
                 debugStage = 430;
@@ -3825,7 +3825,7 @@ namespace Arcen.AIW2.External
                     }
                     else if ( relatedEntityTypeData.MaxAmountAddedToDamagePerShipOfThisTypeOnPlanet > 0 )
                     {
-                        buffer.Add( "<color=#f25e1c>和谐</color>: 此舰船对本星球上每个此类型单位造成 <color=#ffdf72>" );
+                        buffer.Add( "<color=#f25e1c>和谐</color>: 此单位对本星球上每个此类型单位造成 <color=#ffdf72>" );
                         buffer.Add( relatedMarkLevelData.AmountAddedToDamagePerShipOfThisTypeOnPlanet );
                         buffer.Add( "</color> 额外伤害，每发子弹最高 <color=#ffdf72>" );
                         buffer.Add( relatedEntityTypeData.MaxAmountAddedToDamagePerShipOfThisTypeOnPlanet );
@@ -3833,7 +3833,7 @@ namespace Arcen.AIW2.External
                     }
                     else
                     {
-                        buffer.Add( "<color=#f25e1c>和谐</color>: 此舰船对本星球上每个此类型单位造成 <color=#ffdf72>" );
+                        buffer.Add( "<color=#f25e1c>和谐</color>: 此单位对本星球上每个此类型单位造成 <color=#ffdf72>" );
                         buffer.Add( relatedMarkLevelData.AmountAddedToDamagePerShipOfThisTypeOnPlanet );
                         buffer.Add( "</color> 额外伤害。  " );
                     }
@@ -3885,7 +3885,7 @@ namespace Arcen.AIW2.External
                 //    }
                 //}
                 if ( relatedEntityTypeData.HackingEffectMultiplier != FInt.One )
-                    buffer.Add( "<color=#f25e1c>黑客加成</color>: 此单位进行的所有黑客入侵的AI反应乘以 <color=#ffdf72>" ).Add(relatedEntityTypeData.HackingEffectMultiplier.ReadableString).Add("倍</color>。  " );
+                    buffer.Add( "<color=#f25e1c>入侵加成</color>: 此单位进行的所有入侵的AI反应乘以 <color=#ffdf72>" ).Add(relatedEntityTypeData.HackingEffectMultiplier.ReadableString).Add("倍</color>。  " );
 
                 if ( !AIWar2GalaxySettingQuickAccess.DisableFleetWideBonuses )
                 {
@@ -3927,16 +3927,16 @@ namespace Arcen.AIW2.External
                         if ( isSuperchargeLimited )
                             buffer.Add( "<color=#f2ae1c>舰队加成限制已超:</color> <color=#e0c266>舰队范围加成仅在拥有 " ).Add(
                                 relatedEntityTypeData.SuperchargesOnlyApplyWhenFleetLineCountIsXOrLess )
-                                .Add( " 条或更少非旗舰、非精英舰船编制的舰队中生效，但此舰队有 " ).Add( superchargeBonusLimiter ).Add( " 条。</color>  " );
+                                .Add( " 条或更少非旗舰、非精英单位编制的舰队中生效，但此舰队有 " ).Add( superchargeBonusLimiter ).Add( " 条。</color>  " );
                         else if ( relatedMembershipOrNull == null || detailLevel >= TooltipDetail.Full )
                         {
                             buffer.Add( "<color=#7cf21c>舰队加成限制:</color> <color=#9ce066>舰队范围加成仅在拥有 " ).Add(
                                     relatedEntityTypeData.SuperchargesOnlyApplyWhenFleetLineCountIsXOrLess );
 
                             if ( relatedMembershipOrNull != null )
-                                buffer.Add( " 条或更少非旗舰、非精英舰船编制的舰队中生效，此舰队仅有 " ).Add( superchargeBonusLimiter ).Add( " 条。</color>  " );
+                                buffer.Add( " 条或更少非旗舰、非精英单位编制的舰队中生效，此舰队仅有 " ).Add( superchargeBonusLimiter ).Add( " 条。</color>  " );
                             else
-                                buffer.Add( " 条或更少非旗舰、非精英舰船编制的舰队中生效。</color>  " );
+                                buffer.Add( " 条或更少非旗舰、非精英单位编制的舰队中生效。</color>  " );
                         }
                     }
                     if ( relatedEntityTypeData.CannotBeSuperchargedWhenInSuperchargedFleet && detailLevel >= TooltipDetail.Full )
@@ -4086,7 +4086,7 @@ namespace Arcen.AIW2.External
                 }
                 if ( relatedEntityTypeData.ScienceToGrantOnDeath > 0 && relatedEntityTypeData.HackingToGrantOnDeath > 0 )
                 {
-                    buffer.Add( "如果").Add( playerClarification).Add("玩家击杀此单位，获得<color=#ffdf72>" ).Add ( relatedEntityTypeData.ScienceToGrantOnDeath ).Add(" 科学</color> 和 <color=#ffdf72>").Add(relatedEntityTypeData.HackingToGrantOnDeath).Add(" 黑客点数。</color>");
+                    buffer.Add( "如果").Add( playerClarification).Add("玩家击杀此单位，获得<color=#ffdf72>" ).Add ( relatedEntityTypeData.ScienceToGrantOnDeath ).Add(" 科学</color> 和 <color=#ffdf72>").Add(relatedEntityTypeData.HackingToGrantOnDeath).Add(" 入侵点数。</color>");
                 }
                 else if(relatedEntityTypeData.ScienceToGrantOnDeath > 0 )
                 {
@@ -4094,7 +4094,7 @@ namespace Arcen.AIW2.External
                 }
                 else if(relatedEntityTypeData.HackingToGrantOnDeath > 0 )
                 {
-                    buffer.Add( "如果").Add( playerClarification ).Add("玩家击杀此单位，获得<color=#ffdf72>" ).Add ( relatedEntityTypeData.HackingToGrantOnDeath ).Add(" 黑客点数。</color>");
+                    buffer.Add( "如果").Add( playerClarification ).Add("玩家击杀此单位，获得<color=#ffdf72>" ).Add ( relatedEntityTypeData.HackingToGrantOnDeath ).Add(" 入侵点数。</color>");
                 }
                 debugStage = 1020;
 
@@ -4110,7 +4110,7 @@ namespace Arcen.AIW2.External
                 if ( DetailFlags.HasFlag( ShipExtraDetailFlags.AIPCostOnGrant ) || DetailFlags.HasFlag( ShipExtraDetailFlags.AnyGrantHackInfo ) )
                 {
                     if ( relatedEntityTypeData.AIPWhenGrantedByHack > 0 )
-                        buffer.Add( "\n<color=#ff9072>如果通过黑客入侵获取此单位，AI 进程 (AIP) 将增加 " ).Add( relatedEntityTypeData.AIPWhenGrantedByHack.ReadableString ).Add( "。</color>\n" );
+                        buffer.Add( "\n<color=#ff9072>如果通过入侵获取此单位，AI 进程 (AIP) 将增加 " ).Add( relatedEntityTypeData.AIPWhenGrantedByHack.ReadableString ).Add( "。</color>\n" );
                 }
 
                 debugStage = 1500;
@@ -4373,12 +4373,12 @@ namespace Arcen.AIW2.External
                 debugStage = 3010;
 
                 if ( (relatedEntityTypeData.IsElite) && detailLevel >= TooltipDetail.Medium )
-                    buffer.Add( "精英：每支舰队只能添加一条精英舰船线。  " );
+                    buffer.Add( "精英：每支舰队只能添加一条精英单位线。  " );
 
                 debugStage = 3020;
 
                 if ( ( relatedEntityTypeData.ProvidesAIWarpEntryPoint || relatedEntityTypeData.IsWarpBeacon ) && detailLevel >= TooltipDetail.Medium )
-                    buffer.Add( "允许 AI 舰船跃迁至此。  " );
+                    buffer.Add( "允许 AI 单位跃迁至此。  " );
 
                 debugStage = 3030;
 
@@ -4425,9 +4425,9 @@ namespace Arcen.AIW2.External
                     if (percentageToReturnOfMetalAsInt > 0) {
                         int metalCostForScrapping = (markStats.MetalCost * relatedEntityTypeData.MetalCostMultiplierForScrapping * percentageToReturnOfMetalAsFIntMult).GetNearestIntPreferringHigher();
                         if ( relatedEntityTypeData.MetalCostMultiplierForScrapping == FInt.Zero ) {
-                            buffer.Add( "拆解此单位不获得金属。  ");
+                            buffer.Add( "废弃此单位不获得金属。  ");
                         } else {
-                            buffer.Add( "在友方星球拆解此单位返还 ").AddMetal_MoreReadable(metalCostForScrapping, true).Add("。  ");
+                            buffer.Add( "在友方星球废弃此单位返还 ").AddMetal_MoreReadable(metalCostForScrapping, true).Add("。  ");
                         }
                     }
                 }
@@ -4651,7 +4651,7 @@ namespace Arcen.AIW2.External
                     buffer.Add( "\n<color=#ff5bf2>不是追你" );
                     if ( detailLevel >= TooltipDetail.Full )
                     {
-                        buffer.Add( "：</color>如果你靠近该舰船它会向你开火，但除此之外它会忽略你。它正忙于追捕 " );
+                        buffer.Add( "：</color>如果你靠近该单位它会向你开火，但除此之外它会忽略你。它正忙于追捕 " );
                         buffer.Add( relatedSquadOrNull.CalculateFactionIsChasingInsteadOfHumans() );
                         buffer.Add( "。  " );
                         if (showDebugInfoInTooltip) {
@@ -4780,15 +4780,15 @@ namespace Arcen.AIW2.External
                                     "，持续 " + secondsIHaveBeenWaiting + " 秒。 ");
                             }
                             if ( relatedSquadOrNull.TypeData.NotEligibleToJoinHunterFleet || relatedSquadOrNull.TypeData.IsDrone )
-                                buffer.Add( "此类舰船将留在威胁舰队中，而不会加入猎手。" );
+                                buffer.Add( "此类单位将留在威胁舰队中，而不会加入猎手。" );
                             else if (againstFaction != null && againstFaction.Type!= FactionType.Player )
-                                buffer.Add( "此舰船将留在威胁舰队中，因为它不针对人类。" );
+                                buffer.Add( "此单位将留在威胁舰队中，因为它不针对人类。" );
                             else
                             {
                                 Faction facOrNull = relatedSquadOrNull.GetFactionOrNull_Safe();
                                 AISentinelsCoreData factionExternal = facOrNull == null ? null : facOrNull.TryGetAISentinelsCoreData()?.SentinelInfo;
                                 if ( factionExternal == null )
-                                    buffer.Add( "此舰船将留在威胁舰队中，因其未链接到哨兵蜂巢思维。" );
+                                    buffer.Add( "此单位将留在威胁舰队中，因其未链接到哨兵蜂巢思维。" );
                                 else
                                 {
                                     int secondsIHaveBeenWaiting = World_AIW2.Instance.GameSecond - relatedSquadOrNull.StartedWaitingAtGameSecond;
@@ -4800,7 +4800,7 @@ namespace Arcen.AIW2.External
                                     int secondsIHaveBeenThreatfleet = relatedSquadOrNull.BecameThreatfleetAtGameSecond <= 0 ? 0 : World_AIW2.Instance.GameSecond - relatedSquadOrNull.BecameThreatfleetAtGameSecond;
                                     int hunterFleetExistsThreshold = factionExternal.AIDifficulty.SecondsThreatExistsAsThreatBeforeJoiningHunterFleet;
 
-                                    buffer.Add( "此舰船将在 " ).Add( hunterFleetWaitThreshold - secondsIHaveBeenWaiting )
+                                    buffer.Add( "此单位将在 " ).Add( hunterFleetWaitThreshold - secondsIHaveBeenWaiting )
                                         .Add( " 秒的待机攻击时间后离开威胁舰队加入猎手，或在经过 " ).Add( hunterFleetExistsThreshold - secondsIHaveBeenThreatfleet )
                                         .Add( " 秒的存在时间后离开。" );
                                 }
@@ -4884,7 +4884,7 @@ namespace Arcen.AIW2.External
                     {
                         debugStage = 546100;
                         if ( relatedSquadOrNull.HasBeenRemovedFromSim || relatedSquadOrNull.ToBeRemovedAtEndOfThisFrame)
-                            buffer.Add( "<color=#ff5842>此舰船已死亡。</color>  " );
+                            buffer.Add( "<color=#ff5842>此单位已死亡。</color>  " );
                         else
                             buffer.Add( "<color=#ff5842>错误：我的舰队成员资格为空！</color>  " );
                     }
@@ -4937,14 +4937,14 @@ namespace Arcen.AIW2.External
                             if ( relatedEntityTypeData.FiringDelayForTransportedShips > FInt.Zero && !isCity )
                             {
                                 if ( detailLevel < TooltipDetail.Full )
-                                    buffer.Add( "卸载的舰船有 " ).Add( relatedEntityTypeData.FiringDelayForTransportedShips, "a1ffa1" ).Add( " 秒的开火延迟。" );
+                                    buffer.Add( "卸载的单位有 " ).Add( relatedEntityTypeData.FiringDelayForTransportedShips, "a1ffa1" ).Add( " 秒的开火延迟。" );
                                 else if ( detailLevel >= TooltipDetail.Medium )
-                                    buffer.Add( "从此旗舰卸载的舰船有 " ).Add( relatedEntityTypeData.FiringDelayForTransportedShips, "a1ffa1" ).Add( " 秒后才能开火。" );
+                                    buffer.Add( "从此旗舰卸载的单位有 " ).Add( relatedEntityTypeData.FiringDelayForTransportedShips, "a1ffa1" ).Add( " 秒后才能开火。" );
                             }
                         }
                         if ( detailLevel >= TooltipDetail.Full && relatedMemFleetOrNull != null && relatedMemFleetOrNull.FleetOnFriendlyPlanet && !isCity )
                         {
-                            buffer.Add( "此舰队位于友方星球，可以更快重建舰船。" );
+                            buffer.Add( "此舰队位于友方星球，可以更快重建单位。" );
                         }
 
                         if ( relatedMemFleetOrNull != null && relatedMemFleetOrNull.IsFleetInTransportLoadMode && !isCity )
@@ -4952,7 +4952,7 @@ namespace Arcen.AIW2.External
                             if ( detailLevel < TooltipDetail.Full )
                                 buffer.Add( "运输就绪模式。" );
                             else
-                                buffer.Add( "我的舰队处于运输就绪模式，所有舰船正试图进入舱位。" );
+                                buffer.Add( "我的舰队处于运输就绪模式，所有单位正试图进入舱位。" );
                         }
 
                         debugStage = 5465;
@@ -5082,9 +5082,9 @@ namespace Arcen.AIW2.External
                     if ( relatedSquadOrNull.ActiveHack != null )
                     {
                         debugStage = 87394010;
-                        buffer.Add("此单位正在黑客入侵；它将引擎能量转移到黑客矩阵，因此速度降低且无法离开星球。");
+                        buffer.Add("此单位正在入侵；它将引擎能量转移到入侵矩阵，因此速度降低且无法离开星球。");
                         if ( relatedSquadOrNull.GetMaxCloakingPoints() > 0 )
-                            buffer.Add("黑客入侵会禁用舰船的隐形系统。");
+                            buffer.Add("入侵会禁用单位的隐形系统。");
                     }
                     #endregion
 
@@ -5396,13 +5396,13 @@ namespace Arcen.AIW2.External
                                             buffer.Add( "\n无法为舰队 " ).StartColor( EntityText.GetProportionalStrengthColor( 1 ) ).Add( fleet.GetName() ).EndColor()
                                             .Add( " 建造，能量不足。  " );
                                         else
-                                            buffer.Add( "\n无法为舰队 " ).StartColor( EntityText.GetProportionalStrengthColor( 1 ) ).Add( fleet.GetName() ).EndColor().Add( " 建造，某些舰船线被阻挡。请检查能量可用性。  " );
+                                            buffer.Add( "\n无法为舰队 " ).StartColor( EntityText.GetProportionalStrengthColor( 1 ) ).Add( fleet.GetName() ).EndColor().Add( " 建造，某些单位线被阻挡。请检查能量可用性。  " );
                                     }
                                 }
 
                             }
                             if ( foundAnyFleets && !wroteAboutAnyFleets )
-                                buffer.Add( "一个或多个相关舰队在此工厂范围内，但已达舰船上限，无需行动。" );
+                                buffer.Add( "一个或多个相关舰队在此工厂范围内，但已达单位上限，无需行动。" );
                             else if ( !foundAnyFleets )
                             {
                                 if ( !hasSupportingFactoriesInRangeEverBeenSet )
@@ -5574,7 +5574,7 @@ namespace Arcen.AIW2.External
                         {
                             debugStage = 5503;
                             buffer.Add( "按住 " ).Add( InputActionTypeDataTable.GetActionByName_FairlySlow( "HoldToGiveOrdersToStationaryFlagships" ).GetHumanReadableKeyCombo() )
-                                .Add( " 使此旗舰听取命令。否则，舰队其余单位执行命令，旗舰持有命令，从旗舰出现的新舰船继承这些命令。  " );
+                                .Add( " 使此旗舰听取命令。否则，舰队其余单位执行命令，旗舰持有命令，从旗舰出现的新单位继承这些命令。  " );
                             if ( detailLevel >= TooltipDetail.Full )
                             {
                                 buffer.Add( "你可以在舰队侧边栏页签中了解更多信息并更改其模式。找到此旗舰的舰队并点击它。" );
@@ -5802,7 +5802,7 @@ namespace Arcen.AIW2.External
                     if ( detailLevel < TooltipDetail.Full )
                         buffer.Add( " 因黑洞机器而无法离开星球。 " );
                     else
-                        buffer.Add( " 此舰船受到黑洞机器影响而无法离开星球。你必须摧毁黑洞机器才能逃脱。 " );
+                        buffer.Add( " 此单位受到黑洞机器影响而无法离开星球。你必须摧毁黑洞机器才能逃脱。 " );
                     }
 
                     debugStage = 6020;
@@ -5920,7 +5920,7 @@ namespace Arcen.AIW2.External
                         CannotTransportReason noTransportBase = relatedSquadOrNull.TypeData.GetCanBeTransported();
                         if ( noTransportBase != CannotTransportReason.TranportingIsFine )
                         {
-                            //Don't bother telling me about that, actually.  buffer.StartColor( QuickColors.HeaderDull ).Add( "该舰船永远无法被运输。  " ).EndColor();
+                            //Don't bother telling me about that, actually.  buffer.StartColor( QuickColors.HeaderDull ).Add( "该单位永远无法被运输。  " ).EndColor();
                         }
                         else
                         {
@@ -5929,7 +5929,7 @@ namespace Arcen.AIW2.External
                             {
                                 //HandleNewline( buffer, ref haveDoneNewLine );
 
-                                buffer.StartColor( QuickColors.OldValue ).Add( "此舰船通常可被运输，但目前无法装入任何运输船，因为 " ).Add(
+                                buffer.StartColor( QuickColors.OldValue ).Add( "此单位通常可被运输，但目前无法装入任何运输船，因为 " ).Add(
                                     EnumNameCache.GetName( noTransport ) ).Add( "。  " ).EndColor();
                             }
                         }
@@ -5952,7 +5952,7 @@ namespace Arcen.AIW2.External
                         if ( !skipBecauseWrittenElsewhere )
                         {
                             //HandleNewline( buffer, ref haveDoneNewLine );
-                            buffer.StartColor( QuickColors.OldValue ).Add( "舰船已禁用：" );
+                            buffer.StartColor( QuickColors.OldValue ).Add( "单位已禁用：" );
 
                             switch ( rejectionReason )
                             {
@@ -6342,7 +6342,7 @@ namespace Arcen.AIW2.External
                     
                     debugStage = 200;
                     if ( isOnDeath )
-                        buffer.StartColor( damageColor ).Add( "舰船死亡时开火" ).EndColor().Add( ", " );
+                        buffer.StartColor( damageColor ).Add( "单位死亡时开火" ).EndColor().Add( ", " );
                     else 
                     if ( isRetaliatory )
                         buffer.StartColor( damageColor ).Add( "被命中时开火" ).EndColor().Add( ", " );
@@ -6413,7 +6413,7 @@ namespace Arcen.AIW2.External
                     else if ( systemData.ShotsDetonateImmediately &&
                         //beam weapons detonate immediately but still have a range
                         systemData.BeamLengthMultiplier <= FInt.Zero )
-                        buffer.StartColor( damageColor ).Add( "从舰船引爆" ).EndColor();
+                        buffer.StartColor( damageColor ).Add( "从单位引爆" ).EndColor();
                     else if ( systemData.IsMelee )
                         buffer.StartColor( damageColor ).Add( "近战范围" ).EndColor();
                     else
@@ -7062,7 +7062,7 @@ namespace Arcen.AIW2.External
                             }
                             else
                             {
-                                buffer.Add( "<color=#f25e1c>穿透力场射击</color>: 上述武器的射击完全无视力场，如同其不存在，正常伤害力场下的舰船。  " );
+                                buffer.Add( "<color=#f25e1c>穿透力场射击</color>: 上述武器的射击完全无视力场，如同其不存在，正常伤害力场下的单位。  " );
                             }
                         }
                         #endregion
@@ -7160,8 +7160,8 @@ namespace Arcen.AIW2.External
                             if ( systemData.DevourFunctionNameUpper.Length <= 0 )
                                 systemData.DevourFunctionNameUpper = systemData.DevourFunctionName.ToUpper();
 
-                            buffer.Add( "<color=#f25e1c>" ).Add( systemData.DevourFunctionNameUpper ).Add( "</color>：如果目标舰船同级或更低，且质量低于 <color=#ffdf72>" )
-                                .Add( systemData.DevourMassLowerThan.ReadableString ).Add( "tX</color>，则秒杀目标舰船。" );
+                            buffer.Add( "<color=#f25e1c>" ).Add( systemData.DevourFunctionNameUpper ).Add( "</color>：如果目标单位同级或更低，且质量低于 <color=#ffdf72>" )
+                                .Add( systemData.DevourMassLowerThan.ReadableString ).Add( "tX</color>，则秒杀目标单位。" );
                         }
                         #endregion
 
@@ -7191,7 +7191,7 @@ namespace Arcen.AIW2.External
                             if ( detailLevel < TooltipDetail.Full )
                                 buffer.Add( "<color=#f25e1c>护盾过载</color>: 完全摧毁护盾，但无法伤害船体。  " );
                             else
-                                buffer.Add( "<color=#f25e1c>护盾过载</color>: 上述武器的射击完全摧毁目标舰船的护盾——包括整个气泡力场。但此武器无法伤害船体。  " );
+                                buffer.Add( "<color=#f25e1c>护盾过载</color>: 上述武器的射击完全摧毁目标单位的护盾——包括整个气泡力场。但此武器无法伤害船体。  " );
                         }
                         #endregion
 
@@ -7279,7 +7279,7 @@ namespace Arcen.AIW2.External
                         {
                             HandleNewlineAndSize( buffer, ref haveDoneNewLineAndSize );
 
-                            buffer.Add( "<color=#f25e1c>近战武器</color>: 此舰船必须进入目标的接触范围内才能击中。  " );
+                            buffer.Add( "<color=#f25e1c>近战武器</color>: 此单位必须进入目标的接触范围内才能击中。  " );
                         }
                         #endregion
 
@@ -7363,7 +7363,7 @@ namespace Arcen.AIW2.External
                                     {
                                         buffer.Add( "目标被推开 <color=#ffdf72>" );
                                         buffer.AddNumberMoreReadable( systemStats.KnockbackPerShot );
-                                        buffer.Add( "</color> 远离此舰船，如果质量 <= <color=#ffdf72>" );
+                                        buffer.Add( "</color> 远离此单位，如果质量 <= <color=#ffdf72>" );
                                         buffer.Add( systemData.KnockbackPerShotToShipsMass_tXLessThan );
                                         buffer.Add( " tX</color>。击退效果随质量增加而减弱。  " );
                                     }
@@ -7382,7 +7382,7 @@ namespace Arcen.AIW2.External
                                     {
                                         buffer.Add( "目标被拉向 <color=#ffdf72>" );
                                         buffer.AddNumberMoreReadable( systemStats.KnockbackPerShot );
-                                        buffer.Add( "</color> 此舰船，如果质量 <= <color=#ffdf72>" );
+                                        buffer.Add( "</color> 此单位，如果质量 <= <color=#ffdf72>" );
                                         buffer.Add( systemData.KnockbackPerShotToShipsMass_tXLessThan );
                                         buffer.Add( " tX</color>。击退效果随质量增加而减弱。  " );
                                     }
@@ -7407,13 +7407,13 @@ namespace Arcen.AIW2.External
                                 else
                                     buffer.Add( "被拉向 " );
                                 if ( !systemData.KnockbackAtTargetLocation )
-                                    buffer.Add( "此舰船。" );
+                                    buffer.Add( "此单位。" );
                                 else
-                                    buffer.Add( "此舰船射击的AOE中心。" );
+                                    buffer.Add( "此单位射击的AOE中心。" );
                                 if ( systemStats.KnockbackPerShot > 0 )
-                                    buffer.Add( "舰船可被推开的距离上限为 <color=#ffdf72>" );
+                                    buffer.Add( "单位可被推开的距离上限为 <color=#ffdf72>" );
                                 else
-                                    buffer.Add( "舰船可被拉近的距离上限为 <color=#ffdf72>" );
+                                    buffer.Add( "单位可被拉近的距离上限为 <color=#ffdf72>" );
                                 buffer.AddNumberMoreReadable( systemStats.KnockbackPerShot );
                                 buffer.Add( "</color>，随目标质量接近上限 <color=#ffdf72>" );
                                 buffer.Add( systemData.KnockbackPerShotToShipsMass_tXLessThan );
@@ -7684,14 +7684,14 @@ namespace Arcen.AIW2.External
                         }
                         else
                         {
-                            buffer.Add( "隐形", cloakColor ).Add( "：此舰船有 <color=#ffdf72>" );
+                            buffer.Add( "隐形", cloakColor ).Add( "：此单位有 <color=#ffdf72>" );
                             buffer.AddNumberMoreReadable( systemStats.CloakingPoints );
                             buffer.Add( "</color> 最大隐形点数。只要当前隐形点数高于零，敌人就看不到它（尽管可能被探测到）。  " );
                             if ( systemData.ParentEntityTypeData.IsCombatant )
-                                buffer.Add( "此舰船每次开火将消耗 " )
+                                buffer.Add( "此单位每次开火将消耗 " )
                                     .Add( Mathf.RoundToInt( maxWeaponCloakingReductionCost.ToFloatNonSim() * 100f ) )
                                     .Add( "% 的隐形点数。" );
-                            buffer.Add( "在 " ).Add( ExternalConstants.Instance.SecondsToWaitBeforeRecloaking ).Add( " 秒未损失隐形点数后，此舰船将恢复所有损失的点数。" );
+                            buffer.Add( "在 " ).Add( ExternalConstants.Instance.SecondsToWaitBeforeRecloaking ).Add( " 秒未损失隐形点数后，此单位将恢复所有损失的点数。" );
                         }
                         if ( systemData.CareAboutStateOfMatterToBeEnabled )
                             WriteSystemStateOfMatterSuffix( buffer, systemData, relatedSquadOrNull );
@@ -8158,7 +8158,7 @@ namespace Arcen.AIW2.External
                 else if ( detailLevel < TooltipDetail.Medium )
                     buffer.Add( upgrade.UIOnly_Tech_ShipLinesAffected.ToString(), ArcenExternalUIUtilities.ShipLineIncreaseColor ).Add(" 条线、").Add( upgrade.UIOnly_Tech_DefensiveLinesAffected.ToString(),  ArcenExternalUIUtilities.DefenseLineIncreaseColor ).Add(" 条线");
                 else
-                    buffer.Add( upgrade.UIOnly_Tech_ShipLinesAffected.ToString(), ArcenExternalUIUtilities.ShipLineIncreaseColor ).Add(" 条舰船线和 ").Add( upgrade.UIOnly_Tech_DefensiveLinesAffected.ToString(),  ArcenExternalUIUtilities.DefenseLineIncreaseColor ).Add(" 条防御线");
+                    buffer.Add( upgrade.UIOnly_Tech_ShipLinesAffected.ToString(), ArcenExternalUIUtilities.ShipLineIncreaseColor ).Add(" 条单位线和 ").Add( upgrade.UIOnly_Tech_DefensiveLinesAffected.ToString(),  ArcenExternalUIUtilities.DefenseLineIncreaseColor ).Add(" 条防御线");
             }
             buffer.Add( ")" ).EndColor();
         }
@@ -8206,7 +8206,7 @@ namespace Arcen.AIW2.External
                 bool forceDoesNotMeetCriteria = false;
 
                 debugStage = 400;
-                buffer.Add( "<color=#ff7150>\n你的舰船对此单位有以下伤害倍率：</color>\n" );
+                buffer.Add( "<color=#ff7150>\n你的单位对此单位有以下伤害倍率：</color>\n" );
 
                 bool wroteAny = false;
                 foreach ( KeyValuePair<GameEntityTypeData, ShipDataByMark> pair in weakAgainst_Ships_ThatYouHave )
@@ -8282,7 +8282,7 @@ namespace Arcen.AIW2.External
                 buffer.Add( "\n" );
 
                 debugStage = 3200;
-                buffer.Add( "<color=#ffe450>\n以下你可捕获的舰船对此单位有以下伤害倍率：</color>\n" );
+                buffer.Add( "<color=#ffe450>\n以下你可捕获的单位对此单位有以下伤害倍率：</color>\n" );
 
                 wroteAny = false;
 
@@ -8384,7 +8384,7 @@ namespace Arcen.AIW2.External
             FInt comparisonFInt = FInt.Zero;
             bool forceDoesNotMeetCriteria = false;
 
-            buffer.Add( "<color=#50abff>\n对敌方舰船有以下伤害倍率：</color>\n" );
+            buffer.Add( "<color=#50abff>\n对敌方单位有以下伤害倍率：</color>\n" );
 
             bool wroteAny = false;
             foreach ( KeyValuePair<GameEntityTypeData, ShipDataByMark> pair in strongAgainst_Ships_EnemiesHave )
@@ -8539,13 +8539,13 @@ namespace Arcen.AIW2.External
             if ( squad.TypeData.GrantsStuffToBeAddedToPlayerFleets )
             {
                 if ( squad.ShipGrantsList != null && squad.ShipGrantsList.Count > 0 )
-                    return "此处可用舰船的详情";
+                    return "此处可用单位的详情";
             }
             if ( squad.TypeData.IsFleetLeader )
             {
                 //show any fleets -- what they have in them
                 //if ( squad.HasNotYetBeenFullyClaimed || squad.GetFactionTypeSafe() != FactionType.Player )
-                return "此舰队中所含舰船的详情";
+                return "此舰队中所含单位的详情";
             }
             if ( squad.AIReinforcementPointContents != null && squad.AIReinforcementPointContents.Count > 0 )
             {
@@ -8731,7 +8731,7 @@ namespace Arcen.AIW2.External
                         int cap = entry.TypeData.MarkScaleStyle.GetResultingCapFromSquadCapMultiplierList_WhenYouKnowBaseCap( entry.TypeData, entry.BaseNumShips, entry.BaseNumShips, markStatsForDisplay.MarkLevel );
 
                         EntityText.GetTooltip( buffer, null, null,
-                                entry.TypeData, null, localFaction.FactionCenterColor.ColorHexBrighter, " - 黑客以选择一项", cap,
+                                entry.TypeData, null, localFaction.FactionCenterColor.ColorHexBrighter, " - 入侵以选择一项", cap,
                                 localFaction, markLevel, FromSidebarType.NonSidebar_SingleUnit, ShipExtraDetailFlags.AIPCostOnGrant | ShipExtraDetailFlags.BuildInfo, 
                                 1.0f, true );
                         buffer.Add( "\n\n" );
@@ -8747,7 +8747,7 @@ namespace Arcen.AIW2.External
                 {
                     Faction localFaction = World_AIW2.Instance.GetPlayerFactionForUIOrNull();
                     ShipLineEntry entry = null;
-                    buffer.Add( "<u>可窃取的舰船：</u>\n" );
+                    buffer.Add( "<u>可窃取的单位：</u>\n" );
                     for ( int i = 0; i < squad.ShipGrantsList.Count; i++ )
                     {
                         entry = squad.ShipGrantsList[i];
@@ -8757,7 +8757,7 @@ namespace Arcen.AIW2.External
                         int cap = entry.TypeData.MarkScaleStyle.GetResultingCapFromSquadCapMultiplierList_WhenYouKnowBaseCap( entry.TypeData, entry.BaseNumShips, entry.BaseNumShips, markStatsForDisplay.MarkLevel );
 
                         EntityText.GetTooltip( buffer, null, null,
-                                entry.TypeData, null, localFaction.FactionCenterColor.ColorHexBrighter, " - 黑客以选择一项", cap, 
+                                entry.TypeData, null, localFaction.FactionCenterColor.ColorHexBrighter, " - 入侵以选择一项", cap, 
                                 localFaction, markLevel, FromSidebarType.NonSidebar_SingleUnit, ShipExtraDetailFlags.AIPCostOnGrant | ShipExtraDetailFlags.BuildInfo, 
                                 1.0f, true );
                         buffer.Add( "\n\n" );
@@ -8776,7 +8776,7 @@ namespace Arcen.AIW2.External
                     bool isForCapture = squadFleet.GetFactionType_Safe() == FactionType.NaturalObject;
                     Faction localFaction = World_AIW2.Instance.GetPlayerFactionForUIOrNull();
 
-                    buffer.Add( "<u>舰队中的舰船线：</u>\n" );
+                    buffer.Add( "<u>舰队中的单位线：</u>\n" );
                     foreach ( FleetMembership mem in squadFleet.MemberGroupsSorted_NonSim_ForUIOnly_SeriouslyDoNotCallFromBGCode() )
                     {
                         if ( mem.TypeData.IsFleetLeader )
@@ -8813,7 +8813,7 @@ namespace Arcen.AIW2.External
                 #region show the contents of fleet leaders that are transports
                 if ( squadFleet != null && squadFleet.GetHasAnyMobileFleetTransportContents() )
                 {
-                    buffer.Add( "<u>旗舰运输的舰船：</u>\n" );
+                    buffer.Add( "<u>旗舰运输的单位：</u>\n" );
                     foreach ( FleetMembership mem in squadFleet.MemberGroupsSorted_NonSim_ForUIOnly_SeriouslyDoNotCallFromBGCode() )
                     {
                         if ( mem.TypeData.IsFleetLeader )
@@ -8835,7 +8835,7 @@ namespace Arcen.AIW2.External
                 byte markLevelOfContents = squad.GetMarkLevelOfContents();
 
                 #region show ai reinforcement point contents
-                buffer.Add( "<u>此AI增援点包含的舰船：</u>\n" );
+                buffer.Add( "<u>此AI增援点包含的单位：</u>\n" );
                 RefPair<GameEntityTypeData, int> pair;
                 for ( int i = 0; i < squad.AIReinforcementPointContents.Count; i++ )
                 {

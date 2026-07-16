@@ -308,8 +308,8 @@ namespace Arcen.AIW2.External
                         if ( faction.StoredHacking < newType.HackingCostForOtherFleetLeadersOfSameTypeToBecomeMe )
                         {
                             if ( faction.GetIsLocalFaction() )
-                                ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.Normal, null, "黑客点数不足！",
-                                    "派系 " + faction.GetDisplayName() + " 没有足够的黑客点数来转化 " + entity.TypeData.DisplayName, "确定" );
+                                ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.Normal, null, "入侵点数不足！",
+                                    "派系 " + faction.GetDisplayName() + " 没有足够的入侵点数来转化 " + entity.TypeData.DisplayName, "确定" );
                             return;
                         }
                         if ( entity.GetIsCrippled() )

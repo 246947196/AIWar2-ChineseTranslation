@@ -1,4 +1,4 @@
-﻿using Arcen.AIW2.Core;
+using Arcen.AIW2.Core;
 using System;
 
 using System.Text;
@@ -422,7 +422,7 @@ namespace Arcen.AIW2.External
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
             buffer.Add( "裂隙给你什么\n", ObjectiveColors.Header );
-            buffer.Add( "舰船和升级", ObjectiveColors.Reward ).Add( "：裂隙提供直接增强你军队的舰船和升级。\n" );
+            buffer.Add( "单位和升级", ObjectiveColors.Reward ).Add( "：裂隙提供直接增强你军队的单位和升级。\n" );
             buffer.Add( "旗舰蓝图", ObjectiveColors.Reward ).Add( "：某些裂隙解锁强大的旗舰变体。\n\n" );
 
             buffer.Add( "关键提示\n", ObjectiveColors.Header );
@@ -458,7 +458,7 @@ namespace Arcen.AIW2.External
             if ( riftType != null )
                 buffer.AddShipIconInline( riftType, templarFaction, TextStyle.Ship_Sprite_Ency ).Add( " " );
             buffer.Add( "圣殿骑士裂隙", ObjectiveColors.Reward ).Add( "\n\n" );
-            buffer.Add( "入侵它们以获得舰船、升级和旗舰蓝图。\n\n" );
+            buffer.Add( "入侵它们以获得单位、升级和旗舰蓝图。\n\n" );
 
             buffer.Add( "查看提示和日志侧边栏以获取更多详情。" );
         }
@@ -617,9 +617,9 @@ namespace Arcen.AIW2.External
             int towerUpgrades = playerFaction.TechUnlocks[towerTech.RowIndexNonSim] + playerFaction.FreeTechUnlocks[towerTech.RowIndexNonSim];
 
             if ( skeletonUpgrades < 2 )
-                buffer.Add( "\n骷髅（舰船科技）", ObjectiveColors.Reward );
+                buffer.Add( "\n骷髅（单位科技）", ObjectiveColors.Reward );
             if ( wightUpgrades < 2 )
-                buffer.Add( "\n尸妖（舰船科技）", ObjectiveColors.Reward );
+                buffer.Add( "\n尸妖（单位科技）", ObjectiveColors.Reward );
             if ( towerUpgrades < 2 )
                 buffer.Add( "\n塔防（防御科技）", ObjectiveColors.Reward );
 

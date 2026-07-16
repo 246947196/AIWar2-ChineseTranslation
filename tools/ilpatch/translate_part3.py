@@ -12,7 +12,7 @@ translations = {
     " rows?": " 行?",
     ": this.MaxHullFinal (": ": this.MaxHullFinal (",
     " * multiplier ": " * 倍率 ",
-    ". Ship line ": "。舰船线 ",
+    ". Ship line ": "。单位线 ",
     "[null?]": "[null?]",
     "[empty!?]": "[empty!?]",
     "' has a null system at index ": " 在索引处有空系统 ",

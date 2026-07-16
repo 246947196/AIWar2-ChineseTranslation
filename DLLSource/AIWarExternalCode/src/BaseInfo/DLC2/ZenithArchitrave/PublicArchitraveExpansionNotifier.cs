@@ -79,7 +79,7 @@ namespace Arcen.AIW2.External
             else if ( Data.eventTimeRemaining > 0 )
             {
                 string timerColor = ArcenExternalUIUtilities.GetColorForNomadMoveTime( Data.eventTimeRemaining ); //timerColor gets more red the sooner the pioneers will appear
-                tooltipBuffer.Add( Data.Faction.StartFactionColourForLog() + "天顶拱门</color> 将在 " ).AddHoursAndMinutes( Data.eventTimeRemaining, timerColor ).Add( " 后进入扩张模式。\n在扩张模式下，拱门将建造一些先锋船——强大的舰船，可转化为拱门的新的生产设施。他们将保持扩张模式，直到所有先锋被击杀或转化。" );
+                tooltipBuffer.Add( Data.Faction.StartFactionColourForLog() + "天顶拱门</color> 将在 " ).AddHoursAndMinutes( Data.eventTimeRemaining, timerColor ).Add( " 后进入扩张模式。\n在扩张模式下，拱门将建造一些先锋船——强大的单位，可转化为拱门的新的生产设施。他们将保持扩张模式，直到所有先锋被击杀或转化。" );
                 ZenithArchitraveFactionBaseInfo gdata = Data.Faction.TryGetExternalBaseInfoAs<ZenithArchitraveFactionBaseInfo>();
                 if ( gdata != null )
                 {

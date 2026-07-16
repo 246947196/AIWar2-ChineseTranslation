@@ -979,7 +979,7 @@ namespace Arcen.AIW2.External
 
             EntityText.ShowDetails(
                     0.25f, 2f,
-                    "舰船线路详情", "关闭",
+                    "单位线路详情", "关闭",
                     (b)=>
                     {
                         EntityText.GetContents(b, obj);

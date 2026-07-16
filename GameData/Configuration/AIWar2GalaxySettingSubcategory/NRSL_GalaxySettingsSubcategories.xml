@@ -6,8 +6,8 @@
   <setting_subcategory parent="Extended" name="AIP" display_name="AI进度" color="46f0ff"
       description="与AI进度及其增长相关的设置。"/>
 	  
-  <setting_subcategory parent="Extended" name="Resources_Hacking" display_name="黑客点数" color="46f0ff"
-      description="与黑客攻击及其点数获取相关的设置。"/>
+  <setting_subcategory parent="Extended" name="Resources_Hacking" display_name="入侵点数" color="46f0ff"
+      description="与入侵及其点数获取相关的设置。"/>
 	  
   <setting_subcategory parent="Extended" name="Resources_Science" display_name="科学点数" color="46f0ff"
       description="与科学研究及其点数获取相关的设置。"/>

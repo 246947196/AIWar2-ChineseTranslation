@@ -335,7 +335,7 @@ namespace Arcen.AIW2.External
                 switch ( this.Excuse )
                 {
                     case HackingExcuse.NoHackerHere:
-                        buffer.Add( "你在这个星球上没有黑客" );
+                        buffer.Add( "你在这个星球上没有入侵" );
                         return;
                     case HackingExcuse.NothingHackableHere:
                         buffer.Add( "此处无可入侵目标" );
@@ -720,29 +720,29 @@ namespace Arcen.AIW2.External
                 if ( this._type.LocalHackerRequired )
                 {
                     if ( this._type.HackerMustBeBattlestation )
-                        tooltipBuffer.Add( "<color=#59ffa3>黑客必须是此星球上的战斗阵地或堡垒。</color>" );
+                        tooltipBuffer.Add( "<color=#59ffa3>入侵必须是此星球上的战斗阵地或堡垒。</color>" );
                     else
                     {
                         if ( this._type.HackerCanBeBattlestation )
                         {
                             if ( this._type.HackerCanBeSupportFleet )
                             {
-                                tooltipBuffer.Add( "<color=#59ffa3>黑客可以是此星球上的运输船、军官、支援工厂或战斗阵地。</color>" );
+                                tooltipBuffer.Add( "<color=#59ffa3>入侵可以是此星球上的运输船、军官、支援机动兵工厂或战斗阵地。</color>" );
                             }
                             else
                             {
-                                tooltipBuffer.Add( "<color=#59ffa3>黑客可以是此星球上的运输船、军官或战斗阵地。</color>" );
+                                tooltipBuffer.Add( "<color=#59ffa3>入侵可以是此星球上的运输船、军官或战斗阵地。</color>" );
                             }
                         }
                         else
                         {
                             if ( this._type.HackerCanBeSupportFleet )
                             {
-                                tooltipBuffer.Add( "<color=#59ffa3>黑客可以是此星球上的运输船、军官或支援工厂。</color>" );
+                                tooltipBuffer.Add( "<color=#59ffa3>入侵可以是此星球上的运输船、军官或支援机动兵工厂。</color>" );
                             }
                             else
                             {
-                                tooltipBuffer.Add( "<color=#59ffa3>黑客可以是此星球上的运输船或军官。</color>" );
+                                tooltipBuffer.Add( "<color=#59ffa3>入侵可以是此星球上的运输船或军官。</color>" );
                             }
                         }
                     }

@@ -284,26 +284,26 @@ namespace Arcen.AIW2.External
                         if ( !Condition.UserHasOpenedDocksMenu.GetMetNow() )
                         {
                             WriteHeader( Buffer, 4, maxHeader );
-                            Buffer.Add( "要建造舰船，打开船坞标签，点击或按 ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("OpenBuildTab")).Add(" 一次。" );
+                            Buffer.Add( "要建造单位，打开船坞标签，点击或按 ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("OpenBuildTab")).Add(" 一次。" );
                         }
                         else if(Condition.UserHasOpenedDocksMenu.GetMetNow() )
                         {
                             WriteHeader( Buffer, 5, maxHeader );
-                            Buffer.Add( "现在我们需要建造一些小型的\"舰队舰船\"来准备战斗。\n\n在船坞菜单中，你可以看到可建造的舰船。图标下方的数字是你能同时拥有的该类型舰船的最大数量。").Add("\n").
-                                Add("建造队列会自动循环，会持续建造所选单位直到你让它停止。\n你可以通过建造队列上方的'暂停'按钮暂停建造，但现在先不要暂停；首先我们需要建造一支舰队！\n\n点击每种舰船类型的图标来加入队列。").Add("\n\n").
-                                Add("当前有 5 种舰船可供建造。侦查舰仅用于探索，我们稍后会用到它们。其他是初始战斗舰船。");
+                            Buffer.Add( "现在我们需要建造一些小型的\"舰队单位\"来准备战斗。\n\n在船坞菜单中，你可以看到可建造的单位。图标下方的数字是你能同时拥有的该类型单位的最大数量。").Add("\n").
+                                Add("建造队列会自动循环，会持续建造所选单位直到你让它停止。\n你可以通过建造队列上方的'暂停'按钮暂停建造，但现在先不要暂停；首先我们需要建造一支舰队！\n\n点击每种单位类型的图标来加入队列。").Add("\n\n").
+                                Add("当前有 5 种单位可供建造。侦查舰仅用于探索，我们稍后会用到它们。其他是初始战斗单位。");
                         }
                         else if ( !Condition.UserHasQueuedAllFleetShips.GetMetNow() )
                         {
                             WriteHeader( Buffer, 6, maxHeader );
-                            Buffer.Add( "在\"太空船坞\"下点击所有当前可建造的舰船类型。点击后舰船模型会高亮，表示正在建造。" ).Add( "\n" );
+                            Buffer.Add( "在\"太空船坞\"下点击所有当前可建造的单位类型。点击后单位模型会高亮，表示正在建造。" ).Add( "\n" );
                         }
                         break;
                     case ConditionGroup.BuildInitialFleet:
                         if (! Condition.UserHasEnoughEnergy.GetMetNow() )
                         {
                             WriteHeader( Buffer, 7, maxHeader );
-                            Buffer.Add( "看起来在建造完所有舰队舰船之前能量用完了。你需要废弃一些多余的单位或建筑才能继续教程。要废弃一个或一组单位，选中它们并按 ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "ScrapUnits" )).Add("\n\n");
+                            Buffer.Add( "看起来在建造完所有舰队单位之前能量用完了。你需要废弃一些多余的单位或建筑才能继续教程。要废弃一个或一组单位，选中它们并按 ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "ScrapUnits" )).Add("\n\n");
                         }
                         else if(! Condition.UserHasUnpausedAIShipGroup.GetMetNow() )
                         {
@@ -313,7 +313,7 @@ namespace Arcen.AIW2.External
                         else if ( !Condition.UserHasBuiltAllFleetShips.GetMetNow() )
                         {
                             WriteHeader( Buffer, 9, maxHeader );
-                            Buffer.Add( "你的舰队正在建造！不过可能需要一些时间。你可以查看'船坞'菜单了解剩余舰船数量。\n\n");
+                            Buffer.Add( "你的舰队正在建造！不过可能需要一些时间。你可以查看'船坞'菜单了解剩余单位数量。\n\n");
                             Buffer.Add( "你可以通过按 " ).Add( InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "IncreaseFrameSize" ) )
                                 .Add( " 或 " ).Add( InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "DecreaseFrameSize" ) ).Add(" 加速或减速时间。\n\n")
                             .Add( "现在我们将等待每种类型的最大数量建造完成。" ).Add( "\n\n" );
@@ -339,7 +339,7 @@ namespace Arcen.AIW2.External
                         {
                             WriteHeader( Buffer, 12, maxHeader );
                             Buffer.Add( "接下来，将所有已选单位加入第一个控制组，按 ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "ModifyControlGroup" )).Add(" + X,X 是一个数字。例如你可以使用 " ).Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("ModifyControlGroup")).Add(" + 1 作为控制组 1。游戏中最多可以定义 10 个控制组，但现在我们用一个控制组包含所有单位。").Add( "\n\n" );
-                            Buffer.Add( "完成后，让我们重新打开船坞菜单，这样新建舰船可以直接集结到你的舰队。" ).Add( "\n" );
+                            Buffer.Add( "完成后，让我们重新打开船坞菜单，这样新建单位可以直接集结到你的舰队。" ).Add( "\n" );
                         }
                         else if( !Condition.UserHasOpenedDocksMenu.GetMetNow() )
                         {
@@ -349,19 +349,19 @@ namespace Arcen.AIW2.External
                         else if ( !Condition.UserHasSetSpaceDockToRallyToControlGroup1.GetMetNow() )
                         {
                             WriteHeader( Buffer, 14, maxHeader );
-                            Buffer.Add("你可以通过'集结'按钮将新建舰船集结到固定位置，或通过'编组'按钮集结到编组。")
+                            Buffer.Add("你可以通过'集结'按钮将新建单位集结到固定位置，或通过'编组'按钮集结到编组。")
                                 .Add("我们想使用编组按钮，所以按下它。集结激活时图标将变为绿色。").Add("\n\n")
-                                .Add("这也会自动将所有新建舰船发送到控制组的位置，并将它们加入控制组。" ).Add( "\n\n" )
-                                .Add( "注意每个船坞可以设置不同的集结方式。所以如果你希望护卫舰和舰队舰船一起集结（目前你确实希望如此），那么点击两者的按钮。" );
+                                .Add("这也会自动将所有新建单位发送到控制组的位置，并将它们加入控制组。" ).Add( "\n\n" )
+                                .Add( "注意每个船坞可以设置不同的集结方式。所以如果你希望护卫舰和舰队单位一起集结（目前你确实希望如此），那么点击两者的按钮。" );
                         }
                         else if ( !Condition.MovingToMiddlePlanet_UserHasGivenAllMilitaryShipsMoveOrder.GetMetNow() )
                         {
                             WriteHeader( Buffer, 15, maxHeader );
                             Buffer.Add("最后，派遣你的舰队前往下一个星球。星球右侧有一个虫洞；你可能需要向右平移才能看到。选中你的单位后，按住 ")
                                 .Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("SendThroughWormhole"))
-                                .Add(" - ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("GiveOrdersToUnit")).Add(" 虫洞或虫洞上方名称，让舰船穿过虫洞前往下一个星球。" ).Add( "\n\n" )
-                                .Add("注意！之后如果你远距离旅行，只需切换到银河地图并悬停在任何星球上。它将显示你的舰船将要经过的路线。然后按 ")
-                                .Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("GiveOrdersToUnit")).Add(" 你的舰船将直接前往目的地。").Add( "\n" );
+                                .Add(" - ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("GiveOrdersToUnit")).Add(" 虫洞或虫洞上方名称，让单位穿过虫洞前往下一个星球。" ).Add( "\n\n" )
+                                .Add("注意！之后如果你远距离旅行，只需切换到银河地图并悬停在任何星球上。它将显示你的单位将要经过的路线。然后按 ")
+                                .Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("GiveOrdersToUnit")).Add(" 你的单位将直接前往目的地。").Add( "\n" );
                         }
                         break;
                     case ConditionGroup.SwitchToMiddlePlanet:
@@ -382,7 +382,7 @@ namespace Arcen.AIW2.External
                             WriteHeader( Buffer, 18, maxHeader );
                             Buffer.Add( "这是银河视图，在实际游戏中你的大部分策略都在这里制定。" ).Add( "\n" );
                             Buffer.Add( InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("MakePlanetClickSelectAndSwitchView"))
-                                .Add(" - ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("SelectUnit")).Add(" 中间那颗星球，也就是你刚命令舰船前往的地方。").Add( "\n" );
+                                .Add(" - ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("SelectUnit")).Add(" 中间那颗星球，也就是你刚命令单位前往的地方。").Add( "\n" );
                         }
                         else if ( !Condition.MovingToMiddlePlanet_UserHasUnpausedTheGame.GetMetNow() )
                         {
@@ -395,21 +395,21 @@ namespace Arcen.AIW2.External
                         if ( !Condition.UserHasOpenedShipsMenu.GetMetNow() )
                         {
                             WriteHeader( Buffer, 20, maxHeader );
-                            Buffer.Add("在等待舰队到达时，让我们打开舰船侧边栏菜单，点击或按 ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("OpenShipsTab")).Add("。这将显示星球上的所有舰船，是管理战斗的常用方式。你可以看到你的单位，也可以通过点击舰船侧边栏中的图标来选择它们。").Add("\n\n")
+                            Buffer.Add("在等待舰队到达时，让我们打开舰船侧边栏菜单，点击或按 ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("OpenShipsTab")).Add("。这将显示星球上的所有单位，是管理战斗的常用方式。你可以看到你的单位，也可以通过点击舰船侧边栏中的图标来选择它们。").Add("\n\n")
                                 .Add("侧边栏还会显示双方的小队数量和战力值；战力是你部队强大程度的指标，显示在 stylized S 旁边的数字。" ).Add( "\n" );
                         }
                         if ( !Condition.MovingToMiddlePlanet_EnoughMilitaryShipsHaveArrived.GetMetNow() )
                         {
                             WriteHeader( Buffer, 21, maxHeader );
                             Buffer.Add("如果你的游戏仍处于暂停状态，按 ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("TogglePause")).Add("（或 ")
-                                .Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("TogglePauseAlt")).Add(" 取消暂停。我们稍等片刻，让舰船到达并开始行动。" ).Add( "\n" );
+                                .Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("TogglePauseAlt")).Add(" 取消暂停。我们稍等片刻，让单位到达并开始行动。" ).Add( "\n" );
                         }
                         break;
                     case ConditionGroup.TakeMiddlePlanet:
                         if ( !Condition.UserHasRidMiddlePlanetOfDefenses.GetMetNow() )
                         {
                             WriteHeader( Buffer, 22, maxHeader );
-                            Buffer.Add( "你可以通过右键点击位置或目标来移动所选单位。这个星球由守卫哨站防御，靠近时会生成 AI 舰队舰船。让我们先把部队移向守卫哨站并将其摧毁。你需要保持舰队集中以最大化火力。" )
+                            Buffer.Add( "你可以通过右键点击位置或目标来移动所选单位。这个星球由守卫哨站防御，靠近时会生成 AI 舰队单位。让我们先把部队移向守卫哨站并将其摧毁。你需要保持舰队集中以最大化火力。" )
                                 .Add(" 也就是说，你也可以将部队设为追击模式，点击 ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("ToggleFRD")).Add("，让它们自行选择目标。").Add( "\n\n" );
                             Buffer.Add( "可能需要多次进攻，如果最初几次失利，你可能需要建造新舰队。你可能会看到增援部队集结到你的舰队；这是你之前设置的编组集结。" ).Add( "\n\n" );
 
@@ -419,7 +419,7 @@ namespace Arcen.AIW2.External
                         else if ( !Condition.UserHasFreedMiddlePlanetController.GetMetNow() )
                         {
                             WriteHeader( Buffer, 23, maxHeader );
-                            Buffer.Add( "做得好！现在对敌人虫洞和\"指挥站\"下达攻击命令（如果尚未下达），让舰船摧毁它们。" ).Add( "\n\n" );
+                            Buffer.Add( "做得好！现在对敌人虫洞和\"指挥站\"下达攻击命令（如果尚未下达），让单位摧毁它们。" ).Add( "\n\n" );
 
                             Buffer.Add( "你的单位通常不会在没有命令的情况下攻击这些目标，因为摧毁它们会触发\"AI 进度\"增加，即 AI 攻击你的积极性提高。" ).Add( "\n" );
                         }
@@ -432,7 +432,7 @@ namespace Arcen.AIW2.External
                         }
                         else if(! Condition.UserHasBuiltEnergyCollectorOnMiddlePlanet.GetMetNow())
                         {
-                            Buffer.Add( "游戏中的关键资源之一是能量；能量是一种全局资源，允许你建造舰船、炮塔和其他关键建筑。获取能量的主要方式是在每个星球上建造能量收集器。让我们在你的新星球上建造一个。你可以在建造菜单的基础设施部分找到它" ).Add( "\n\n" )
+                            Buffer.Add( "游戏中的关键资源之一是能量；能量是一种全局资源，允许你建造单位、炮塔和其他关键建筑。获取能量的主要方式是在每个星球上建造能量收集器。让我们在你的新星球上建造一个。你可以在建造菜单的基础设施部分找到它" ).Add( "\n\n" )
                                 .Add("注意你可以通过设置菜单中的自动化选项让能量收集器在你的星球上自动建造。") ;
                         }
                         break;
@@ -446,42 +446,42 @@ namespace Arcen.AIW2.External
                           else if(!Condition.UserHasScoutedFinalPlanet.GetMetNow() )
                           {
                             WriteHeader( Buffer, 26, maxHeader );
-                            Buffer.Add("侦查舰是隐形、快速但无武装的舰船，用于在攻击前获取星球情报，或监视敌人的活动。侦查舰属于舰队舰船，在太空船坞建造。这个星球上应该已经有一些了，选中它们然后切换到银河地图。" ).Add( "\n\n" )
+                            Buffer.Add("侦查舰是隐形、快速但无武装的单位，用于在攻击前获取星球情报，或监视敌人的活动。侦查舰属于舰队单位，在太空船坞建造。这个星球上应该已经有一些了，选中它们然后切换到银河地图。" ).Add( "\n\n" )
                                 .Add("你可以从银河地图给单位下达命令。由于你已经选中了一些侦查舰，").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("MakePlanetClickSelectAndSwitchView"))
                                 .Add(" - ").Add(InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction("GiveOrdersToUnit")).Add(" 最后星球以派遣侦查舰。提前了解敌人防御将帮助你选择攻击哪些星球以及如何攻击。\n");
                           }
                           else if(!Condition.UserHasBuiltFrigateConstructor.GetMetNow() )
                           {
                               WriteHeader( Buffer, 27, maxHeader );
-                              Buffer.Add( "敌方星球是 Mark 2 星球，比你刚占领的 Mark 1 星球强大得多。你需要加强你的舰队才能击败它。首先，我们要建造护卫舰。让我们回到起始星球建造一个护卫舰船坞；它在建造菜单中太空船坞附近。" ).Add( "\n\n" );
+                              Buffer.Add( "敌方星球是 Mark 2 星球，比你刚占领的 Mark 1 星球强大得多。你需要加强你的舰队才能击败它。首先，我们要建造护卫舰。让我们回到起始星球建造一个护卫单位坞；它在建造菜单中太空船坞附近。" ).Add( "\n\n" );
                           }
                           else if(!Condition.UserHasBuiltFrigate.GetMetNow() )
                           {
                             WriteHeader( Buffer, 28, maxHeader );
-                            Buffer.Add( "护卫舰明显比舰队舰船更强，这使它们成为宝贵的工具。首先，打开船坞菜单，点击护卫舰船坞的'编组'按钮，让建造的单位集结到你的舰队。然后点击突击护卫舰开始建造。" ).Add( "\n\n" );
+                            Buffer.Add( "护卫舰明显比舰队单位更强，这使它们成为宝贵的工具。首先，打开船坞菜单，点击护卫单位坞的'编组'按钮，让建造的单位集结到你的舰队。然后点击突击星舰开始建造。" ).Add( "\n\n" );
                           }
                           else if(!Condition.UserHasOpenedScienceMenu.GetMetNow() && !Condition.UserHasUpgradedThings.GetMetNow() )
                           {
                             WriteHeader( Buffer, 29, maxHeader );
-                            Buffer.Add( "你还需要升级一些舰队舰船。升级单位会让它们变得更强大，并允许你建造更多。让我们打开科技菜单看看。" ).Add( "\n\n" );
+                            Buffer.Add( "你还需要升级一些舰队单位。升级单位会让它们变得更强大，并允许你建造更多。让我们打开科技菜单看看。" ).Add( "\n\n" );
                           }
                           else if(!Condition.UserHasUpgradedThings.GetMetNow() )
                           {
                             WriteHeader( Buffer, 30, maxHeader );
-                            Buffer.Add( "悬停在单位上时会告诉你升级后能变强多少。升级一些舰队舰船（最上面的类别），然后我们进攻。注意你可能不想升级侦查舰，因为它不是战斗单位。" ).Add( "\n\n" );
+                            Buffer.Add( "悬停在单位上时会告诉你升级后能变强多少。升级一些舰队单位（最上面的类别），然后我们进攻。注意你可能不想升级侦查舰，因为它不是战斗单位。" ).Add( "\n\n" );
                         }
                         break;
                     case ConditionGroup.ActuallyTakeThirdPlanet:
                         if ( !Condition.UserHasEnoughEnergy.GetMetNow() )
                         {
                             WriteHeader( Buffer, 31, maxHeader );
-                            Buffer.Add( "你需要更多能量来建造更多舰船。获取能量的主要方式是在每个星球上建造能量收集器——确保每个星球都有一个！如果你的领土不足以支持能量需求，你也可以选中单位并点击 " )
+                            Buffer.Add( "你需要更多能量来建造更多单位。获取能量的主要方式是在每个星球上建造能量收集器——确保每个星球都有一个！如果你的领土不足以支持能量需求，你也可以选中单位并点击 " )
                                 .Add( InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "ScrapUnits" ) ).Add( " 来废弃单位。\n\n" );
                         }
                         else if ( !Condition.UserHasFreedLastPlanet.GetMetNow() )
                         {
                             WriteHeader( Buffer, 33, maxHeader );
-                            Buffer.Add( "摧毁最后一颗星球以完成教程。你可能需要多次攻击，或升级更多舰船才能做到" ).Add( "\n\n" );
+                            Buffer.Add( "摧毁最后一颗星球以完成教程。你可能需要多次攻击，或升级更多单位才能做到" ).Add( "\n\n" );
                         }
                         else if ( !Condition.TutorialIsOver.GetMetNow() )
                         {

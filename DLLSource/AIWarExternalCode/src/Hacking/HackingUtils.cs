@@ -380,8 +380,8 @@ namespace Arcen.AIW2.External
             }
             if ( countOfValidHackers > 1 && ShowErrorIfMultipleOptions )
             {
-                ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.Normal, null, MustBeSelected ? "选择了多个黑客" : "存在多个黑客",
-                    "你当前有多个 " + ErrorGroupName + (MustBeSelected ? " 在此星球上被选中" : " 在此星球上") + "，我们无法确定你要使用哪个进行黑客。请选择一个黑客后重试。", "确定" );
+                ModalPopupData.CreateAndLogOKStyle( PopupSizeStyle.Normal, null, MustBeSelected ? "选择了多个入侵" : "存在多个入侵",
+                    "你当前有多个 " + ErrorGroupName + (MustBeSelected ? " 在此星球上被选中" : " 在此星球上") + "，我们无法确定你要使用哪个进行入侵。请选择一个入侵者后重试。", "确定" );
                 result = null;
                 return false;
             }
@@ -559,7 +559,7 @@ namespace Arcen.AIW2.External
             Faction localFaction = World_AIW2.Instance.GetLocalPlayerFactionOrNull();
             if ( localFaction == null )
             {
-                lastNoHackReason = "你没有控制任何派系，因此无法进行黑客行为。";
+                lastNoHackReason = "你没有控制任何派系，因此无法进行入侵行为。";
                 return false;
             }
 
@@ -581,13 +581,13 @@ namespace Arcen.AIW2.External
             FInt costForActiveHacks = CalculateActiveHackingCosts(localFaction);
             if ( localFaction.StoredHacking < cost )
             {
-                lastNoHackReason = "你没有足够的黑客点。";
+                lastNoHackReason = "你没有足够的入侵点。";
                 return false;
             }
             if ( localFaction.StoredFactionResourceOne < HackTypeToChooseFor.GetResourceOneCostForTarget( TargetToChooseFor ) )
             {
                 if ( NecromancerEmpireFactionBaseInfo.GetIsThisANecromancerFaction( localFaction ) )
-                    lastNoHackReason = "你没有足够的精华。你需要黑客裂隙或与长老战斗以获得更多精华。";
+                    lastNoHackReason = "你没有足够的精华。你需要入侵裂隙或与长老战斗以获得更多精华。";
                 else if ( ScourgeInfusedHumanEmpireFactionBaseInfo.GetIsThisAScourgeEmpireFaction( localFaction ))
                     lastNoHackReason = "你没有足够的 Corbomite。";
                 else
@@ -612,19 +612,19 @@ namespace Arcen.AIW2.External
 
             if ( localFaction.StoredHacking < cost + costForActiveHacks )
             {
-                lastNoHackReason = "由于你正在进行的黑客行为，你没有足够的黑客点。";
+                lastNoHackReason = "由于你正在进行的入侵行为，你没有足够的入侵点。";
                 return false;
             }
 
             if ( localPlanetFaction == null )
             {
-                lastNoHackReason = "你在此星球没有本地派系，因此无法进行黑客行为。";
+                lastNoHackReason = "你在此星球没有本地派系，因此无法进行入侵行为。";
                 return false;
             }
 
             if ( hacker == null )
             {
-                lastNoHackReason = "此处没有有效的黑客。";
+                lastNoHackReason = "此处没有有效的入侵。";
                 return false;
             }
 
@@ -632,7 +632,7 @@ namespace Arcen.AIW2.External
             {
                 if ( hacker.ActiveHack != null )
                 {
-                    lastNoHackReason = "一次只能进行一个探索黑客行为。";
+                    lastNoHackReason = "一次只能进行一个探索入侵行为。";
                     return false;
                 }
             }
@@ -654,12 +654,12 @@ namespace Arcen.AIW2.External
                 }
                 if ( foundActiveHackByMe )
                 {
-                    lastNoHackReason = "你在此星球上有一个正在进行的黑客行为。";
+                    lastNoHackReason = "你在此星球上有一个正在进行的入侵行为。";
                     return false;
                 }
                 if ( foundActiveHackByAnotherFaction )
                 {
-                    lastNoHackReason = "一个盟友在此星球上有一个正在进行的黑客行为。";
+                    lastNoHackReason = "一个盟友在此星球上有一个正在进行的入侵行为。";
                     return false;
                 }
             }

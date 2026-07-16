@@ -1,6 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
-	<ship_class_data name="DefaultShipClass" display_name="舰船类别" short_name="默认"
+	<ship_class_data name="DefaultShipClass" display_name="单位类别" short_name="默认"
 		
 		is_default="true"
 		
@@ -39,7 +39,7 @@
 	</ship_class_data>
     
 	<!-- For tooltip testing -->
-	<ship_class_data name="HorribleShipClass" display_name="恐怖舰船类别" short_name="恐怖"
+	<ship_class_data name="HorribleShipClass" display_name="恐怖单位类别" short_name="恐怖"
 		
 		gravitic_core_effect_multiplier="0.7"
 		
@@ -74,7 +74,7 @@
 		<exotic_damage_modifier exotic_type="Ion" multiplier="0" added_count="0" />
 	</ship_class_data>
     
-	<ship_class_data name="HeroShip" display_name="英雄舰船" short_name="英雄"
+	<ship_class_data name="HeroShip" display_name="英雄单位" short_name="英雄"
 		can_receive_debuffs="false"
 		can_receive_death_effects="false"
 		can_receive_exotic_damage="false"
@@ -82,28 +82,28 @@
 	>
 	</ship_class_data>
     
-	<ship_class_data name="ExowarTier1" display_name="外星战争舰船 第1级" short_name="外星战船 T1"
+	<ship_class_data name="ExowarTier1" display_name="外星战争单位 第1级" short_name="外星战船 T1"
         can_be_zombified_and_similar="false" final_incoming_exotic_damage_multiplier="0.8" can_be_devoured="false"
 	>
 		<debuff_modifier debuff_type="WeaponPhase" multiplier="0" />
 	</ship_class_data>
 	
-	<ship_class_data name="ExowarTier2" display_name="外星战争舰船 第2级" short_name="外星战船 T2" copy_from="ExowarTier1"
+	<ship_class_data name="ExowarTier2" display_name="外星战争单位 第2级" short_name="外星战船 T2" copy_from="ExowarTier1"
         final_incoming_exotic_damage_multiplier="0.65"
 	>
 	</ship_class_data>
 	
-	<ship_class_data name="ExowarTier3" display_name="外星战争舰船 第3级" short_name="外星战船 T3" copy_from="ExowarTier1"
+	<ship_class_data name="ExowarTier3" display_name="外星战争单位 第3级" short_name="外星战船 T3" copy_from="ExowarTier1"
         final_incoming_exotic_damage_multiplier="0.5"
 	>
 	</ship_class_data>
 	
-	<ship_class_data name="ExowarTier4" display_name="外星战争舰船 第4级" short_name="外星战船 T4" copy_from="ExowarTier1"
+	<ship_class_data name="ExowarTier4" display_name="外星战争单位 第4级" short_name="外星战船 T4" copy_from="ExowarTier1"
         final_incoming_exotic_damage_multiplier="0.35"
 	>
 	</ship_class_data>
 	
-	<ship_class_data name="ExowarTier5" display_name="外星战争舰船 第5级" short_name="外星战船 T5" copy_from="ExowarTier1"
+	<ship_class_data name="ExowarTier5" display_name="外星战争单位 第5级" short_name="外星战船 T5" copy_from="ExowarTier1"
         final_incoming_exotic_damage_multiplier="0.2"
 	>
 	</ship_class_data>

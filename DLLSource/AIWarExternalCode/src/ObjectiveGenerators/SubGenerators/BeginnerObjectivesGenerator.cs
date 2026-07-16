@@ -334,8 +334,8 @@ namespace Arcen.AIW2.External
         {
             buffer.Add( "早期占领星球可让你获得更多" ).Add( "科技", "7ce9ff" ).Add( "、" ).Add( "金属", "ccccee" ).Add( "和" ).Add( "入侵点数", "3de799" ).Add( "。目标是大约3-4个星球（足以建立强大经济而不会使" ).Add( "AI进程", "ff8888" ).Add( "增长过快）。\n\n" );
             buffer.Add( "好的早期目标：\n" );
-            buffer.Add( "  旗舰", ObjectiveColors.Keyword ).Add( "：提供新的舰船线以增强进攻能力。\n" );
-            buffer.Add( "  高级研究站（ARS）", ObjectiveColors.Keyword ).Add( "：入侵它们以为入侵舰队提供新的舰船线。\n" );
+            buffer.Add( "  旗舰", ObjectiveColors.Keyword ).Add( "：提供新的单位线以增强进攻能力。\n" );
+            buffer.Add( "  高级研究站（ARS）", ObjectiveColors.Keyword ).Add( "：入侵它们以为入侵舰队提供新的单位线。\n" );
             buffer.Add( "  炮塔蓝图服务器（TSS）", ObjectiveColors.Keyword ).Add( "：入侵它们以使你所有星球都能建造更多炮塔。\n\n" );
             buffer.Add( "查看情报菜单和银河地图以在附近找到这些目标。", "ffeecc" );
         }
@@ -354,12 +354,12 @@ namespace Arcen.AIW2.External
 
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "将", "7ce9ff" ).Add( "科技", "7ce9ff" ).Add( "投入研究是最有影响力的行动之一。早期专注于一两种使多个舰船线受益的" ).Add( "武器科技", ObjectiveColors.Keyword ).Add( "，然后扩展到" ).Add( "船体科技", ObjectiveColors.Keyword ).Add( "用于进攻、" ).Add( "炮塔科技", ObjectiveColors.Keyword ).Add( "用于防御，或随着舰队发展选择其他武器科技。\n\n" );
+            buffer.Add( "将", "7ce9ff" ).Add( "科技", "7ce9ff" ).Add( "投入研究是最有影响力的行动之一。早期专注于一两种使多个单位线受益的" ).Add( "武器科技", ObjectiveColors.Keyword ).Add( "，然后扩展到" ).Add( "船体科技", ObjectiveColors.Keyword ).Add( "用于进攻、" ).Add( "炮塔科技", ObjectiveColors.Keyword ).Add( "用于防御，或随着舰队发展选择其他武器科技。\n\n" );
             buffer.Add( "强力的早期选择：\n" );
             buffer.Add( "  力场1级", ObjectiveColors.Keyword ).Add( "：增强所有力场，在攻击期间争取更多时间。\n" );
             buffer.Add( "  工程师1级", ObjectiveColors.Keyword ).Add( "：使所有工程师工作更快，节省大量时间。\n\n" );
             buffer.Add( "你也可以将科技直接投入星球或舰队以提升其" ).Add( "等级", ObjectiveColors.Keyword ).Add( "。关键早期优先级：将你的" ).Add( "母星升级到3级", ObjectiveColors.Keyword ).Add( "（对其产出的提升显著，这是科技的最佳早期用途之一）。\n\n" );
-            buffer.Add( "通过占领星球或入侵AI星球获得更多科技。在侦察更多银河并了解可用舰船和机会之前，保留科技储备也是可以的。", "ffeecc" );
+            buffer.Add( "通过占领星球或入侵AI星球获得更多科技。在侦察更多银河并了解可用单位和机会之前，保留科技储备也是可以的。", "ffeecc" );
         }
     }
 
@@ -376,7 +376,7 @@ namespace Arcen.AIW2.External
 
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "工程师", ObjectiveColors.Keyword ).Add( "可以更快地建造单位并修复战斗中受损的舰船。在活跃星球上有足够的工程师能显著影响你从攻击中恢复的速度。\n\n" );
+            buffer.Add( "工程师", ObjectiveColors.Keyword ).Add( "可以更快地建造单位并修复战斗中受损的单位。在活跃星球上有足够的工程师能显著影响你从攻击中恢复的速度。\n\n" );
             buffer.Add( "你可以通过" ).Add( "设置 → 自动化", ObjectiveColors.Keyword ).Add( "菜单在所有星球上自动建造或自动FRD工程师。\n\n" );
             buffer.Add( "在3级时，工程师获得隐形能力，使其在战斗中更难被击杀。", "ffeecc" );
         }
@@ -398,7 +398,7 @@ namespace Arcen.AIW2.External
             buffer.Add( "产生更多" ).Add( "能量", "ffde00" ).Add( "的主要方式是建造" ).Add( "经济", ObjectiveColors.Keyword ).Add( "和" ).Add( "后勤指挥站", ObjectiveColors.Keyword ).Add( "。占领更多星球以放置这些指挥站，或转换现有的军事指挥站。\n\n" );
             buffer.Add( "如果指挥站提供的能量仍不够：\n" );
             buffer.Add( "  物质转换器", ObjectiveColors.Keyword ).Add( "：将金属转化为能量。\n" );
-            buffer.Add( "  废弃不需要的舰船", ObjectiveColors.Keyword ).Add( "：提供临时能量提升。\n\n" );
+            buffer.Add( "  废弃不需要的单位", ObjectiveColors.Keyword ).Add( "：提供临时能量提升。\n\n" );
             buffer.Add( "提升指挥站的等级也会增加其能量产出。", "ffeecc" );
         }
     }
@@ -416,8 +416,8 @@ namespace Arcen.AIW2.External
 
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "占领", ObjectiveColors.Keyword ).Add( "移动战斗旗舰", ObjectiveColors.Keyword ).Add( "是提升你进攻力量的主要方式之一。每艘旗舰解锁新的舰船线。\n\n" );
-            buffer.Add( "你可以从旗舰中混合搭配舰船线，按自己的喜好组建舰队。你可以把旗舰想象成变异的棋子，各有优劣。\n\n" );
+            buffer.Add( "占领", ObjectiveColors.Keyword ).Add( "移动战斗旗舰", ObjectiveColors.Keyword ).Add( "是提升你进攻力量的主要方式之一。每艘旗舰解锁新的单位线。\n\n" );
+            buffer.Add( "你可以从旗舰中混合搭配单位线，按自己的喜好组建舰队。你可以把旗舰想象成变异的棋子，各有优劣。\n\n" );
             buffer.Add( "使用银河地图或情报菜单在附近寻找值得占领的舰队。", "ffeecc" );
         }
     }
@@ -473,7 +473,7 @@ namespace Arcen.AIW2.External
 
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "入侵" ).Add( "高级研究站", ObjectiveColors.Keyword ).Add( "（ARS）可为入侵舰队提供一条新的舰船线。\n\n" );
+            buffer.Add( "入侵" ).Add( "高级研究站", ObjectiveColors.Keyword ).Add( "（ARS）可为入侵舰队提供一条新的单位线。\n\n" );
             buffer.Add( "入侵ARS是增强你舰队的关键方式。\n\n" );
             buffer.Add( "使用银河地图或情报菜单在附近寻找好的目标。", "ffeecc" );
         }

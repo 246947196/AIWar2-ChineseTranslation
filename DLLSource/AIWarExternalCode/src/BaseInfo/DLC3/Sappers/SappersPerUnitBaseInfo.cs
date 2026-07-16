@@ -238,7 +238,7 @@ namespace Arcen.AIW2.External
                     Buffer_ForShipsInside.Add( pair.Key.GetDisplayName(), "909090" ).Add( " x" + this.ShipsInside[pair.Key].ToString(), markByOrdinal.ColorHex ).Add( ", " );
             }
             if ( shipsFound == 0 )
-                Buffer_ForShipsInside.Add( "无舰船" );
+                Buffer_ForShipsInside.Add( "无单位" );
             this.ShipsInside_ForUI = Buffer_ForShipsInside.GetStringAndResetForNextUpdate();
         }
     }

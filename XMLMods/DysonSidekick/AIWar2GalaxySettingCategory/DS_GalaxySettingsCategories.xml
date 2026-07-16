@@ -2,11 +2,11 @@
 <root>
 
   <setting_category name="DysonSidekick" display_name="戴森球伙伴"
-                    description="Settings related to the 戴森 Sidekick faction."/>
+                    description="戴森伙伴派系的相关设置。"/>
   <setting_category name="DarkZenith" display_name="黑暗天顶伙伴"
-                    description="Settings related to how the Dark 天顶 Sidekick behaves during the game."/>
+                    description="关于黑暗天顶伙伴在游戏中行为方式的相关设置。"/>
 
   <setting_category name="ArmadaEmpire" display_name="舰队帝国"
-                    description="Settings related to how the 无敌舰队 Empire behaves during the game."/>
+                    description="关于无敌舰队帝国在游戏中行为方式的相关设置。"/>
 
 </root>

@@ -1,4 +1,4 @@
-﻿using Arcen.AIW2.Core;
+using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -174,7 +174,7 @@ namespace Arcen.AIW2.External
             }
             public override void HandleMouseover()
             {
-                Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, "外围守卫是反AI的散兵游勇，可以被召唤来为你暂时作战。在银河系各处，你会找到外围守卫信标，可以用来联络特定的外围守卫团体。如果你入侵了某个星球上的信标，就可以雇佣另一端的任何外围守卫团体。外围守卫相比普通舰船的两个关键优势是不需要消耗能量，而且可以更快地被召唤。不过，他们会自行行动。" );
+                Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, "外围守卫是反AI的散兵游勇，可以被召唤来为你暂时作战。在银河系各处，你会找到外围守卫信标，可以用来联络特定的外围守卫团体。如果你入侵了某个星球上的信标，就可以雇佣另一端的任何外围守卫团体。外围守卫相比普通单位的两个关键优势是不需要消耗能量，而且可以更快地被召唤。不过，他们会自行行动。" );
             }
         }
         #endregion

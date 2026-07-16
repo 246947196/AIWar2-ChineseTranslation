@@ -12,7 +12,7 @@ namespace Arcen.AIW2.External
         {
             if ( Target.TypeData.GetHasTag( "NanobotHackedHive" ) )
             {
-                RejectionReasonDescription = "纳米虫群已被黑客入侵。";
+                RejectionReasonDescription = "纳米虫群已被入侵。";
                 return Hackable.NeverCanBeHacked_Hide;
             }
             if ( HackerOrNull != null &&
@@ -97,7 +97,7 @@ namespace Arcen.AIW2.External
                     chatHandlerOrNull.SquadToView = LazyLoadSquadWrapper.Create( hackedHive );
 
                 World_AIW2.Instance.QueueChatMessageOrCommand( Target.StartFactionColourForLog_Safe() + "纳米虫群蜂巢</color> 已在 " +
-                    Target.GetPlanetName_Safe() + " 上被黑客入侵", ChatType.LogToCentralChat, "ArkChiefOfStaff_NanocaustHacked", chatHandlerOrNull );
+                    Target.GetPlanetName_Safe() + " 上被入侵", ChatType.LogToCentralChat, "ArkChiefOfStaff_NanocaustHacked", chatHandlerOrNull );
             }
             return true;
         }

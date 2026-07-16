@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   <tip category="AIMechanisms" name="AIMechanisms_Waves" display_name="波次攻击" sort_priority="888"
@@ -11,7 +11,7 @@
   <tip category="AIMechanisms" name="AIMechanisms_CPA" display_name="跨星球攻击（CPA）" sort_priority="888"
         full_text="经过较长时间（单个 AI 大约需要 2 小时）后，会宣布发起“跨星球攻击”（CPA）。
 
-AI 会调集大量守卫其星球的舰船来攻击你；这些舰船不会生成新单位。这些舰船可能来自任何等级的星球，所以你可能会遭遇一些等级非常高的舰船。 
+AI 会调集大量守卫其星球的单位来攻击你；这些单位不会生成新单位。这些单位可能来自任何等级的星球，所以你可能会遭遇一些等级非常高的单位。 
 
 与波次攻击不同，这种攻击并非针对某个特定星球。
 
@@ -74,7 +74,7 @@ AI 会调集大量守卫其星球的舰船来攻击你；这些舰船不会生�
 
 如果你想进行“深度打击”行动而不被打断，就必须偶尔占领更远的星球，以扩大安全区域。
 
-你进行深度打击的时间越长，预备队就会源源不断地派出越来越多的舰船。不过，" />
+你进行深度打击的时间越长，预备队就会源源不断地派出越来越多的单位。不过，" />
 
 
 

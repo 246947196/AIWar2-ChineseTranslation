@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Arcen.AIW2.Core;
 using Arcen.Universal;
 
@@ -18,9 +18,9 @@ namespace Arcen.AIW2.External
             int perc = ((baseInfo.Strength.Display * 100) / baseInfo.GetMaxStrength).GetNearestIntPreferringHigher() ;
             Buffer.Add( $"此星环当前正在支持其在星系中总战力的 {perc}%。" );
             if ( !baseInfo.IsCurrentlyAngryDueToHack && !baseInfo.IsAntagonized ) {
-                Buffer.Add( "来自此星环的舰船最多可航行到距离星环<color=#a1ffa1>").Add( baseInfo.NormalHopLimit ).Add("</color> 跳的位置。" );
+                Buffer.Add( "来自此星环的单位最多可航行到距离星环<color=#a1ffa1>").Add( baseInfo.NormalHopLimit ).Add("</color> 跳的位置。" );
             } else {
-                Buffer.Add( "来自此星环的舰船通常最多可航行到距离星环<color=#a1ffa1>" ).Add( baseInfo.NormalHopLimit)
+                Buffer.Add( "来自此星环的单位通常最多可航行到距离星环<color=#a1ffa1>" ).Add( baseInfo.NormalHopLimit)
                     .Add("</color> 跳的位置，但目前正在扩大范围" );
                 if (baseInfo.IsAntagonized) {
                     Buffer.Add(" 以回应位�")

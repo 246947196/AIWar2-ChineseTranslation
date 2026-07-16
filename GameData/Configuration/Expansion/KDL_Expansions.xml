@@ -1,8 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <expansion name="1_The_Spire_Rises" display_name="尖塔崛起" sort_order="1" abbreviation="TSR"
              color_for_display="5ed9fb"
-          description="除了安装此扩展后任何游戏中都可使用的一些新可占领目标、炮塔和其他舰船外，还有两个主要的新阵营。
+          description="除了安装此扩展后任何游戏中都可使用的一些新可占领目标、炮塔和其他单位外，还有两个主要的新阵营。
           
 天灾是你最大的敌人，是人工智能中最聪明、最危险的子群体。堕落尖塔是你最强大的盟友，为你提供前所未有的火力支援。
 
@@ -10,7 +10,7 @@
   
   <expansion name="2_Zenith_Onslaught" display_name="天顶星攻势" sort_order="2" abbreviation="ZO"
              color_for_display="ff7748"
-          description="除了为你的舰队提供新的精英舰船外，安装此扩展后，任何游戏中都有多种地图和人工智能类型可供使用。
+          description="除了为你的舰队提供新的精英单位外，安装此扩展后，任何游戏中都有多种地图和人工智能类型可供使用。
 
 此扩展还让天顶星势力回归；这些阵营，无论是敌是友，都为每一场游戏增添了全新的深度和复杂度。
 黑暗天顶星入侵。天顶星主殿宣示主权。天顶星矿工吞噬行星。流浪行星不断改写星图。

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
 <!-- Totems
@@ -101,7 +101,7 @@
             y_offset_of_icon="30"
             collision_priority="810"
 			mark_level_scale_style="NecromancerDefenses"
-			description="死灵法师揭露隐形敌人的主要手段。洞察之球环绕图腾，对高反照率的舰船（如带有隐形场的舰船）造成毁灭性伤害。"
+			description="死灵法师揭露隐形敌人的主要手段。洞察之球环绕图腾，对高反照率的单位（如带有隐形场的单位）造成毁灭性伤害。"
             starting_mark_level="Mark1" tech_upgrades_that_benefit_me="NecromancerTotems"
             cost_for_ai_to_purchase="10000" strength_multiplier="1"   
             hull_points="100000" shield_points="500000" speed="Immobile"
@@ -148,7 +148,7 @@
 				size_scale="2.5"
 				visuals_scale_multiplier="3"
 				collision_priority="1"
-				description="由超光速图腾创造的球体，专门用于摧毁隐形舰船和其他高反照率的舰船。"
+				description="由超光速图腾创造的球体，专门用于摧毁隐形单位和其他高反照率的单位。"
 				behavior="Stationary"
 				starting_mark_level="Mark1" tech_upgrades_that_benefit_me="NecromancerTotems" 
 				cost_for_ai_to_purchase="1000" strength_multiplier="1"
@@ -287,7 +287,7 @@
             y_offset_of_icon="30"
             collision_priority="810"
 			mark_level_scale_style="NecromancerDefenses"
-			description="死灵法师最强大的图腾，仅防御型亡者都市可用。它具有黑洞发生器效果，阻止大多数舰船通过虫洞逃离，并在广阔区域内减缓舰船速度。其主要武器对被困在牵引光束中的舰船造成额外伤害。它会创造熵之球环绕图腾，将舰船困在牵引光束中。这些球体还会制造自己的雷区，对被困在牵引光束中的舰船造成严重破坏。"
+			description="死灵法师最强大的图腾，仅防御型亡者都市可用。它具有黑洞发生器效果，阻止大多数单位通过虫洞逃离，并在广阔区域内减缓单位速度。其主要武器对被困在牵引光束中的单位造成额外伤害。它会创造熵之球环绕图腾，将单位困在牵引光束中。这些球体还会制造自己的雷区，对被困在牵引光束中的单位造成严重破坏。"
             starting_mark_level="Mark1" tech_upgrades_that_benefit_me="NecromancerTotems"
             cost_for_ai_to_purchase="10000" strength_multiplier="1"   
             hull_points="100000" shield_points="500000" speed="Immobile"
@@ -340,7 +340,7 @@
 				size_scale="2.5"
 				visuals_scale_multiplier="3"
 				collision_priority="1"
-				description="这个球体用牵引光束困住舰船，并释放熵雷在范围内环绕，对被困在光束中的舰船造成严重破坏。"
+				description="这个球体用牵引光束困住单位，并释放熵雷在范围内环绕，对被困在光束中的单位造成严重破坏。"
 				behavior="Stationary"
 				starting_mark_level="Mark1" tech_upgrades_that_benefit_me="NecromancerTotems" 
 				cost_for_ai_to_purchase="1000" strength_multiplier="1"
@@ -378,7 +378,7 @@
 				size_scale="2.5"
 				visuals_scale_multiplier="9"
 				collision_priority="1"
-				description="一个可补充的雷区，环绕熵之球，摧毁被困在球体牵引光束中的舰船。"
+				description="一个可补充的雷区，环绕熵之球，摧毁被困在球体牵引光束中的单位。"
 				behavior="Stationary"
 				starting_mark_level="Mark1" tech_upgrades_that_benefit_me="NecromancerTotems" 
 				cost_for_ai_to_purchase="1000" strength_multiplier="0.25"

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   <tutorial category="Basics" name="BasicGalacticControls" display_name="教程 2 - 基本星系控制" sort_priority="2"
@@ -122,7 +122,7 @@
 
 记住，你可以使用TAB按钮或点击左上角的当前行星名称来在行星视图和星系地图视图之间切换。
 
-&lt;color=#999999&gt;额外提示：按键盘上的M按钮将选择当前行星上的所有军事舰船。&lt;/color&gt;">
+&lt;color=#999999&gt;额外提示：按键盘上的M按钮将选择当前行星上的所有军事单位。&lt;/color&gt;">
       <condition type="PlayerViewIsOnGalaxyMap"/>
 	  <condition type="PlayerHasSelectedCountOfSpecificShip" entity_type="RaidFrigate" count="3"/>
     </tutorial_step>	

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
       <entity name="PlayerDysonAntagonizer"
 	      thematic_groups="DysonSphere,Zenith"
@@ -43,7 +43,7 @@
           collision_priority="900"
           display_name="小型氩燃料站"
           display_name_for_sidebar="氩燃料站"
-          description="人类内战遗留的小型燃料站，可为小型和中型舰船提供动力，并具备有限机动性以便于防御。"
+          description="人类内战遗留的小型燃料站，可为小型和中型单位提供动力，并具备有限机动性以便于防御。"
           behavior="Stationary"
           build_sidebar_categories_i_am_part_of="Infrastructure"
           never_leaves_remains="true"
@@ -111,7 +111,7 @@
         collision_priority="900"
         display_name="小型氙燃料站"
         display_name_for_sidebar="氙燃料站"
-        description="人类内战遗留的小型燃料站，可为大型强力舰船提供动力，并具备有限机动性以便于防御。"
+        description="人类内战遗留的小型燃料站，可为大型强力单位提供动力，并具备有限机动性以便于防御。"
         behavior="Stationary"
         build_sidebar_categories_i_am_part_of="Infrastructure"
         never_leaves_remains="true"
@@ -268,7 +268,7 @@
             collision_priority="800"
             display_name="掠夺者无畏舰"
 						display_name_for_sidebar="掠夺者DN"
-            description="被称为'单人舰队'，这艘巨型掠夺者战舰能够从远处发动毁灭性齐射。但在近距离面对大量小型舰船时较为脆弱。"
+            description="被称为'单人舰队'，这艘巨型掠夺者战舰能够从远处发动毁灭性齐射。但在近距离面对大量小型单位时较为脆弱。"
             blocks_enemy_claim_flows="true"
             voice_group="Silent"
 			starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"

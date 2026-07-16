@@ -13,7 +13,7 @@
         hack_is_against_planet="false"
         use_closest_hacker_for_check="true"
         choose_a_specific_ship_line_to_grant="true"
-        choice_text="Which ship line would you like to add to the fleet of this hacker?"
+        choice_text="你希望为这名黑客的舰队添加哪条单位线？"
         choice_text_height="60"
         relatedstring_is_a_ship_type="true"
         exo_on_completion="false"

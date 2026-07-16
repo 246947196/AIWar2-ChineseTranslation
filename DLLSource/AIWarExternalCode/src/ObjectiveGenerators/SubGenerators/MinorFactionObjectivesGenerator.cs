@@ -679,7 +679,7 @@ namespace Arcen.AIW2.External
 
         public void TooltipHandler( ArcenDoubleCharacterBuffer buffer, ActualObjective Objective )
         {
-            buffer.Add( "天灾可以成为强大的敌人。早期你可以通过摧毁他们用于建造和升级舰船的基础设施来削弱他们。后期，特别是如果他们处于高强度或周围有高级AI时，你可能需要封锁银河部分区域，并定期清除他们的战士，以免他们进化……以免为时过晚。" ).Add( "\n" );
+            buffer.Add( "天灾可以成为强大的敌人。早期你可以通过摧毁他们用于建造和升级单位的基础设施来削弱他们。后期，特别是如果他们处于高强度或周围有高级AI时，你可能需要封锁银河部分区域，并定期清除他们的战士，以免他们进化……以免为时过晚。" ).Add( "\n" );
             if ( Objective.RelatedInt2 == 1 )
                 buffer.Add( "银河中可见" ).Add( Objective.RelatedInt2 ).Add( "个天灾生成器。\n" );
             else if ( Objective.RelatedInt2 > 1 )
@@ -712,7 +712,7 @@ namespace Arcen.AIW2.External
         {
             buffer.Add( "在星球" ).Add( Objective.RelatedEntity1.GetPlanetName_Safe() )
                 .Add( "上有一个" ).Add( Objective.RelatedEntity1.TypeData.DisplayName )
-                .Add( "。如果你将戴森球从AI的影响中解放出来，它的舰船将协助你对抗附近星球上的敌人。" );
+                .Add( "。如果你将戴森球从AI的影响中解放出来，它的单位将协助你对抗附近星球上的敌人。" );
         }
     }
 

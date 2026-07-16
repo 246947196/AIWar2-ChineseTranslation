@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
  <entity name="ShredderDrone"
          thematic_groups="Drone"  
@@ -362,7 +362,7 @@
 		collision_priority="100"
 		display_name="救援孢子"
 		display_name_for_sidebar="救援孢子"
-		description="由兰花方舟释放的搜救纳米机器工厂。可以消耗自身来传送并修复盟军舰船。"
+		description="由兰花方舟释放的搜救纳米机器工厂。可以消耗自身来传送并修复盟军单位。"
 		starting_mark_level="Mark1" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly"
 		self_attritions_X_percent_per_second_if_parent_ship_not_on_planet="1"
 		always_self_attritions="true"

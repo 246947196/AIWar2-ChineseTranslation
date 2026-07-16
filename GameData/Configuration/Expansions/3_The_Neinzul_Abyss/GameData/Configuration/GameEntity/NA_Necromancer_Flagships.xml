@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
     <!-- Necromancer Flagships. Each Necropolis starts with a Base Flagship, but you can change the Flagship form by getting Blueprints.
@@ -144,7 +144,7 @@
 	    collision_priority="10000"
 	    display_name="恐怖旗舰"
             display_name_for_sidebar="恐舰"
-	    description="这艘死灵法师旗舰拥有两种麻痹武器，一种针对小型舰船，另一种针对中型舰船。"
+	    description="这艘死灵法师旗舰拥有两种麻痹武器，一种针对小型单位，另一种针对中型单位。"
 	    starting_mark_level="Mark1"
 	    cost_for_ai_to_purchase="500" strength_multiplier="1.1"
 	    hull_points="800000" shield_points="400000" speed="High"
@@ -551,7 +551,7 @@
 			size_scale="24" visuals_scale_multiplier="60" y_offset_of_ship_in_visual_space="120" y_offset_of_icon="140"
             display_name_for_sidebar="惰舰"
 	        hull_points="1000000" shield_points="500000" metal_cost="1000000"
-			description="这艘死灵法师旗舰进行齐射攻击，对引擎强大或移动迅速的舰船造成额外伤害；它是通过献祭一名怠惰的古灵获得的。"
+			description="这艘死灵法师旗舰进行齐射攻击，对引擎强大或移动迅速的单位造成额外伤害；它是通过献祭一名怠惰的古灵获得的。"
             >
 		<system name="R1" range="Normal3" max_mark_level_to_function="0" />
 		<system name="V1" display_name="怠惰齐射"
@@ -606,7 +606,7 @@
         icon_name="Ships4/NecromancerFlagship" icon_overlay="Overlays2/NecromancerFlagship_Decadent"
         display_name_for_sidebar="堕舰"
 	    hull_points="1600000" shield_points="500000" metal_cost="1500000"
-		description="这艘死灵法师旗舰会将舰船拉向自身并吞噬它们；它是通过献祭一名堕落的古灵获得的。"
+		description="这艘死灵法师旗舰会将单位拉向自身并吞噬它们；它是通过献祭一名堕落的古灵获得的。"
             >
     	<system name="R1" range="Normal3" max_mark_level_to_function="0" />
 		<system name="WT" display_name="堕落鱼钩"
@@ -678,7 +678,7 @@
 			armor_mm="180" albedo="0.7" engine_gx="22" mass_tx="7"
 			metal_cost="1500000" energy_consumption="40000"
 			hull_points="1100000" shield_points="1100000" speed="High"
-			description="这艘死灵法师旗舰拥有先进的牵引光束，可牵制与其自身大小相当的舰船；它是通过献祭一名嫉妒的古灵获得的。"
+			description="这艘死灵法师旗舰拥有先进的牵引光束，可牵制与其自身大小相当的单位；它是通过献祭一名嫉妒的古灵获得的。"
 			returns_this_percentage_of_damage_if_damaged_by_enemy_attack="0.15"	
 			ship_or_structure_explosion_sfx="ShipSmall_Explosion"
 			ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion"
@@ -785,7 +785,7 @@
             icon_name="Ships4/NecromancerFlagship" icon_overlay="Overlays2/NecromancerFlagship_Blasphemous"
             display_name_for_sidebar="渎舰"
 	        hull_points="2000000" shield_points="1000000" metal_cost="3000000"
-			description="这艘死灵法师旗舰是通过献祭一名渎神长者获得的。它配备一门专门针对大型目标的爆破炮。在对付大量舰船时，它可以将六道光束聚焦于一点，攻击相交的目标，并根据旗舰比目标高出的等级造成伤害。"		
+			description="这艘死灵法师旗舰是通过献祭一名渎神长者获得的。它配备一门专门针对大型目标的爆破炮。在对付大量单位时，它可以将六道光束聚焦于一点，攻击相交的目标，并根据旗舰比目标高出的等级造成伤害。"		
             >
     <system name="R1" range="Normal3" max_mark_level_to_function="0" />
 	<system name="R9" display_name="渎神光束"

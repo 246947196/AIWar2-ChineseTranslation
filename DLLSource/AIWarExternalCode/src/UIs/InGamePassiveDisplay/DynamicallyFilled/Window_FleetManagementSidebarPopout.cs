@@ -711,15 +711,15 @@ namespace Arcen.AIW2.External
 
                     if ( fleet.Category == FleetCategory.PlayerPlanetaryCommand )
                         builder.Append( " " ).Append( resourceName ).Append( " 来升级位于星球 " ).Append( fleet.Planet == null ? "null" : fleet.GetPlanetName_Safe() )
-                            .Append( " 的舰队，提升一个标记等级？\n\n这不会对战斗站、堡垒或星球舰队之外的其他舰船生效。但它会使星球舰队内的所有舰船受益（达到其个人最高等级）。\n\n这是改善经济或在银河系特定地点加强防御的绝佳方式。但必须谨慎操作，因为 " + resourceName + " 是不可再生资源。\n\n如果你失去这个星球后重新夺回，或选择更改此处的指挥站类型，你已支付的升级将保持不变。" );
+                            .Append( " 的舰队，提升一个标记等级？\n\n这不会对战斗站、堡垒或星球舰队之外的其他单位生效。但它会使星球舰队内的所有单位受益（达到其个人最高等级）。\n\n这是改善经济或在银河系特定地点加强防御的绝佳方式。但必须谨慎操作，因为 " + resourceName + " 是不可再生资源。\n\n如果你失去这个星球后重新夺回，或选择更改此处的指挥站类型，你已支付的升级将保持不变。" );
                     else if ( fleet.Category == FleetCategory.PlayerBattlestation ) //battlestation or citadel
                         builder.Append( " " ).Append( resourceName ).Append( " 来升级舰队 " ).Append( fleet.GetName() )
-                            .Append( " ，提升一个标记等级？\n\n这仅影响该特定战斗站/堡垒及其舰队成员，不影响该舰队所在星球上的其他舰船或炮台。但它会使该舰队内的所有舰船受益（达到其个人最高等级）。\n\n这是以可在银河系中移动的方式改善防御的绝佳方式。但必须谨慎操作，因为 " + resourceName +" 是不可再生资源。" );
+                            .Append( " ，提升一个标记等级？\n\n这仅影响该特定战斗站/堡垒及其舰队成员，不影响该舰队所在星球上的其他单位或炮台。但它会使该舰队内的所有单位受益（达到其个人最高等级）。\n\n这是以可在银河系中移动的方式改善防御的绝佳方式。但必须谨慎操作，因为 " + resourceName +" 是不可再生资源。" );
                     else
                     {
                         if ( centerpOrNull.TypeData.ThisCenterpieceGrantsItsDirectScienceUpgradesToRestOfFleet )
                             builder.Append( " " ).Append( resourceName ).Append( " 来升级舰队 " ).Append( fleet.GetName() )
-                                .Append( " ，提升一个标记等级？\n\n这仅影响该特定旗舰的舰队，但会使该舰队内的所有舰船受益（达到其个人最高等级）。\n\n这是改善特定打击部队的绝佳方式。但必须谨慎操作，因为 " + resourceName + " 是不可再生资源。" );
+                                .Append( " ，提升一个标记等级？\n\n这仅影响该特定旗舰的舰队，但会使该舰队内的所有单位受益（达到其个人最高等级）。\n\n这是改善特定打击部队的绝佳方式。但必须谨慎操作，因为 " + resourceName + " 是不可再生资源。" );
                         else
                             builder.Append( " " ).Append( resourceName ).Append( " 来升级旗舰 " ).Append( centerpOrNull.TypeData.DisplayName )
                                 .Append( " ，提升一个标记等级？\n\n这仅影响该特定旗舰，不影响其舰队成员（如果有的话）。必须谨慎操作，因为 " + resourceName + " 是不可再生资源。" );
@@ -809,12 +809,12 @@ namespace Arcen.AIW2.External
                 if ( AmountToRefund > 0 )
                 {
                     buffer.Add( "\n<color=#27f985>（括号中为当前标记等级的数值。）</color>\n\n" );
-                    buffer.Add( "<color=#aaaaaa>将降低本舰队中以下舰船的标记等级（降低 " ).Add( UpgradesSoFar ).Add( " 级）：</color>\n" );
+                    buffer.Add( "<color=#aaaaaa>将降低本舰队中以下单位的标记等级（降低 " ).Add( UpgradesSoFar ).Add( " 级）：</color>\n" );
                 }
                 else
                 {
                     buffer.Add( "\n<color=#27f985>（括号中为上一标记等级的数值，新增内容以<i>斜体</i>显示。）</color>\n\n" );
-                    buffer.Add( "<color=#aaaaaa>将提升本舰队中以下舰船的标记等级（提升一级）：</color>\n" );
+                    buffer.Add( "<color=#aaaaaa>将提升本舰队中以下单位的标记等级（提升一级）：</color>\n" );
                 }
 
                 buffer.Add( "\n\n" );
@@ -937,7 +937,7 @@ namespace Arcen.AIW2.External
                     return;
 
                 float centerPopupScale = GameSettings.Current.GetFloatBySetting( "CentralPopupTextScale" );
-                Window_ModalSelfUpdatingTextWindow_Wide.Instance.Open( 0.25f, 2f, "科技升级舰船详情", "关闭",
+                Window_ModalSelfUpdatingTextWindow_Wide.Instance.Open( 0.25f, 2f, "科技升级单位详情", "关闭",
                     delegate ( ArcenDoubleCharacterBuffer Buffer ) { return WriteDetailsOfATFleetUpgradeContents( Buffer, fleetToUpgrade, CostToUpgradeScienceOrOtherwise, AmountToRefund, 
                         UpgradesSoFar, centerPopupScale ); } );
             }
@@ -960,7 +960,7 @@ namespace Arcen.AIW2.External
 
                 if ( centerpOrNull != null && centerpOrNull.TypeData.ThisCenterpieceGrantsItsDirectScienceUpgradesToRestOfFleet )
                 {
-                    tooltipBuffer.Add( "这种类型的舰队可以通过直接消耗科技点来升级（所有舰船都会受益）。目前已被升级 " )
+                    tooltipBuffer.Add( "这种类型的舰队可以通过直接消耗科技点来升级（所有单位都会受益）。目前已被升级 " )
                         .Add( upgradesSoFar )
                         .Add( " 次。这是一种非常节省科技点的获取更多金属收入或能量产出的方式。\n\n如果这是行星舰队，请注意更改指挥站类型、失去星球后重新夺回都不会导致你在此星球上的升级丢失。" );
                 }
@@ -977,14 +977,14 @@ namespace Arcen.AIW2.External
                     }
                     tooltipBuffer.Add( "这种类型的旗舰可以通过 ");
                     tooltipBuffer.Add ( fleet.GetResourceTextColorAndIconNeededForNextLevelUp() );
-                    tooltipBuffer.Add(" 直接升级，但不会升级其舰队内的所有舰船。目前已被升级 " )
+                    tooltipBuffer.Add(" 直接升级，但不会升级其舰队内的所有单位。目前已被升级 " )
                         .Add( upgradesSoFar )
                         .Add( " 次。" );
                 }
                 if ( RefundAmount > 0 )
                     tooltipBuffer.Add( "\n当前你可以获得 " )
                         .Add( RefundAmount )
-                        .Add( " 科技点的退还，将所有受影响的舰船回退 " ).Add( upgradesSoFar )
+                        .Add( " 科技点的退还，将所有受影响的单位回退 " ).Add( upgradesSoFar )
                         .Add( " 个标记等级。" );
 
                 bool upgradeEntireFleet = centerpOrNull != null && centerpOrNull.TypeData.ThisCenterpieceGrantsItsDirectScienceUpgradesToRestOfFleet;
@@ -1005,9 +1005,9 @@ namespace Arcen.AIW2.External
                     if ( isFirst )
                     {
                         if ( RefundAmount > 0 )
-                            tooltipBuffer.Add( "\n<b><u><size=110%>将降低以下舰船的标记等级（降低 " ).Add( upgradesSoFar ).Add( " 级）：</b></u></size>\n" );
+                            tooltipBuffer.Add( "\n<b><u><size=110%>将降低以下单位的标记等级（降低 " ).Add( upgradesSoFar ).Add( " 级）：</b></u></size>\n" );
                         else
-                            tooltipBuffer.Add( "\n<b><u><size=110%>将提升以下舰船的标记等级（提升一级）：</b></u></size>\n" );
+                            tooltipBuffer.Add( "\n<b><u><size=110%>将提升以下单位的标记等级（提升一级）：</b></u></size>\n" );
                         isFirst = false;
                     }
                     else
@@ -1034,13 +1034,13 @@ namespace Arcen.AIW2.External
                 if ( shipStrengthIncrease != 0 )
                 {
                     tooltipBuffer.Add( shipStrengthIncrease < 0 ? "\n所有 " : "\n所有 " )
-                        .Add( "舰船", ArcenExternalUIUtilities.ShipLineIncreaseColor ).Add( " 的总战力变化约为 " )
+                        .Add( "单位", ArcenExternalUIUtilities.ShipLineIncreaseColor ).Add( " 的总战力变化约为 " )
                         .Add( ArcenExternalUIUtilities.GUI_StrengthTextIcon_AndShipLineIncreaseColor ).StartColor( ArcenExternalUIUtilities.ShipLineIncreaseColor )
                         .AddStrengthTiered( shipStrengthIncrease ).EndColor().Add( "。共影响 " );
                     if ( fleet.UIOnly_Fleet_ShipLinesAffected == 1 )
-                        tooltipBuffer.Add( fleet.UIOnly_Fleet_ShipLinesAffected, ArcenExternalUIUtilities.ShipLineIncreaseColor ).Add( " 条舰船线。" );
+                        tooltipBuffer.Add( fleet.UIOnly_Fleet_ShipLinesAffected, ArcenExternalUIUtilities.ShipLineIncreaseColor ).Add( " 条单位线。" );
                     else if ( fleet.UIOnly_Fleet_ShipLinesAffected > 1 )
-                        tooltipBuffer.Add( fleet.UIOnly_Fleet_ShipLinesAffected, ArcenExternalUIUtilities.ShipLineIncreaseColor ).Add( " 条舰船线。" );
+                        tooltipBuffer.Add( fleet.UIOnly_Fleet_ShipLinesAffected, ArcenExternalUIUtilities.ShipLineIncreaseColor ).Add( " 条单位线。" );
                 }
 
 
@@ -1090,7 +1090,7 @@ namespace Arcen.AIW2.External
                 {
                     tooltipBuffer.Add( "\n" ).Add( FontSizes.MUCH_SMALLER_SIZE_PLUS_A_TAD_STRING );
                     tooltipBuffer.Add( "<color=#3f6c9e>按住 </color><color=#4486d1>" ).Add( InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "HoldAndClickToViewDetailsOfContents" ) )
-                            .Add( "</color> <color=#3f6c9e>并点击此处可查看此次科技消耗升级的所有舰船详情。</color>  " );
+                            .Add( "</color> <color=#3f6c9e>并点击此处可查看此次科技消耗升级的所有单位详情。</color>  " );
                     if ( GameSettings.Current.GetBoolBySetting( "UpgradeShipPrompt" ) )
                     {
                         tooltipBuffer.Add( "<color=#3f6c9e>按住 </color><color=#4486d1>" ).Add( InputActionTypeDataTable.Instance.GetHumanReadableKeyComboForAction( "SuppressTechUpgradePrompt" ) )
@@ -1349,7 +1349,7 @@ namespace Arcen.AIW2.External
 
             public override void HandleMouseover()
             {
-                Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, "不同舰队拥有不同的最大战力，但通过科技升级其中的舰船/建筑可以使其更强大。\n\n请注意，最大战力假设所有舰船/建筑都已部署，而当前战力则基于实际已建造的数量。" );
+                Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, "不同舰队拥有不同的最大战力，但通过科技升级其中的单位/建筑可以使其更强大。\n\n请注意，最大战力假设所有单位/建筑都已部署，而当前战力则基于实际已建造的数量。" );
             }
         }
         #endregion
@@ -1370,9 +1370,9 @@ namespace Arcen.AIW2.External
             public static void TooltipForFactoryConstructionStatus( ArcenUI_Element Element )
             {
                 if ( Instance._fleetToManage.IsFleetInTransportLoadMode )
-                    Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( Element, "舰队处于运输装载模式，所有舰船都会尝试进入旗舰。\n\n工厂为该舰队建造的新舰船将直接进入旗舰，旗舰所在星球上的现有舰船将以3倍速度移动并装入旗舰。\n\n位于其他星球上的舰船将照常行动。默认按 'U' 键可将舰船从旗舰中卸出。" );
+                    Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( Element, "舰队处于运输装载模式，所有单位都会尝试进入旗舰。\n\n工厂为该舰队建造的新单位将直接进入旗舰，旗舰所在星球上的现有单位将以3倍速度移动并装入旗舰。\n\n位于其他星球上的单位将照常行动。默认按 'U' 键可将单位从旗舰中卸出。" );
                 else
-                    Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( Element, "舰队未处于运输模式，舰船可自由行动。如果你想让它们装入旗舰以进行安全保管（或隐身，或在旗舰速度较快时更快通过），可以默认按 'L' 键将它们装入。它们只能在与旗舰同一星球时装入。" );
+                    Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( Element, "舰队未处于运输模式，单位可自由行动。如果你想让它们装入旗舰以进行安全保管（或隐身，或在旗舰速度较快时更快通过），可以默认按 'L' 键将它们装入。它们只能在与旗舰同一星球时装入。" );
             }
         }
         #endregion
@@ -1558,7 +1558,7 @@ namespace Arcen.AIW2.External
 
             public static void TooltipForFactoryConstructionStatus( ArcenUI_Element Element )
             {
-                Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( Element, "通常情况下，位于该舰队旗舰同一星球或相邻星球上的所有工厂都会为该舰队建造舰船（如果需要的话）。\n\n如果你金属短缺或单纯希望该舰队不再补充舰船，你可以禁用该舰队的建造。" );
+                Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( Element, "通常情况下，位于该舰队旗舰同一星球或相邻星球上的所有工厂都会为该舰队建造单位（如果需要的话）。\n\n如果你金属短缺或单纯希望该舰队不再补充单位，你可以禁用该舰队的建造。" );
             }
         }
         #endregion
@@ -1607,7 +1607,7 @@ namespace Arcen.AIW2.External
 
             public static void TooltipForIsFleetFlagshipStationaryStatus( ArcenUI_Element Element )
             {
-                Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( Element, "有些旗舰适合战斗，而有些适合留在后方。退后多远取决于你。\n\n当设置为 <color=#4fffb2>'执行所有命令'</color> 时，它将像舰队中的其他舰船一样行动。这对巨像和方舟非常适用。但对没有武装的运输舰则不太合适。\n\n当设置为 <color=#ee3198>'旗舰驻停模式'</color> 时，旗舰将停留在原地，存储（但不执行）你下达的所有命令。假设这些命令是给舰队其余成员和从旗舰中产生的舰船的。<b>这是将旗舰部署在一个星球上，同时为其单位设置到邻近星球集结点的好方法，还有其他用途。</b>\n\n要在驻停旗舰模式下覆盖此设置，请在向旗舰下达命令时按住 " +
+                Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( Element, "有些旗舰适合战斗，而有些适合留在后方。退后多远取决于你。\n\n当设置为 <color=#4fffb2>'执行所有命令'</color> 时，它将像舰队中的其他单位一样行动。这对巨像和方舟非常适用。但对没有武装的运输舰则不太合适。\n\n当设置为 <color=#ee3198>'旗舰驻停模式'</color> 时，旗舰将停留在原地，存储（但不执行）你下达的所有命令。假设这些命令是给舰队其余成员和从旗舰中产生的单位的。<b>这是将旗舰部署在一个星球上，同时为其单位设置到邻近星球集结点的好方法，还有其他用途。</b>\n\n要在驻停旗舰模式下覆盖此设置，请在向旗舰下达命令时按住 " +
                     InputActionTypeDataTable.GetActionByName_FairlySlow( "HoldToGiveOrdersToStationaryFlagships" ).GetHumanReadableKeyCombo() + "。旗舰将像没有驻停模式一样执行命令。这非常适合快速向你的无武装运输舰和它们所支援的舰队其余部分下达不同命令。" );
             }
         }
@@ -1707,7 +1707,7 @@ namespace Arcen.AIW2.External
 
             public static void TooltipForIsFleetFlagshipAllowedToUseMovementModes( ArcenUI_Element Element )
             {
-                Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( Element, "你的旗舰通常很重要，你不希望它们在追击模式或攻击移动模式下四处游荡。然而，你经常需要将它们设置为这些模式，以便它们建造的舰船以这些模式出现。\n\n当设置为 <color=#4ff9ff>'除非直接命令否则不动'</color> 时，它将按预期行动，使旗舰忽略追击模式等，但其创建的舰船会被放入该模式（并遵守该模式）。\n\n当设置为 <color=#ffc74f>'接到指令则巡逻'</color> 模式时，旗舰将在追击模式下追击，在攻击移动模式下攻击，等等。这对某些情况下的方舟和巨像很有用，甚至对战斗工厂（在和平星球上）也有用。" );
+                Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( Element, "你的旗舰通常很重要，你不希望它们在追击模式或攻击移动模式下四处游荡。然而，你经常需要将它们设置为这些模式，以便它们建造的单位以这些模式出现。\n\n当设置为 <color=#4ff9ff>'除非直接命令否则不动'</color> 时，它将按预期行动，使旗舰忽略追击模式等，但其创建的单位会被放入该模式（并遵守该模式）。\n\n当设置为 <color=#ffc74f>'接到指令则巡逻'</color> 模式时，旗舰将在追击模式下追击，在攻击移动模式下攻击，等等。这对某些情况下的方舟和巨像很有用，甚至对机动兵工厂（在和平星球上）也有用。" );
             }
         }
         #endregion
@@ -1898,7 +1898,7 @@ namespace Arcen.AIW2.External
                     buffer.Add(currentlyBolstering.GetName()).Add("。");
                     if (anythingToBolster) {
                         buffer.Add(" 如果你想更改，可以点击此处操作。但在此期间，该舰队将从这个 ");
-                        buffer.Add(cityTerm).Add(" 获得所有移动舰船生产的好处。");
+                        buffer.Add(cityTerm).Add(" 获得所有移动单位生产的好处。");
                     }
                 }
                 Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( Element, buffer.ToStringAndReturnToPool() );
@@ -2395,7 +2395,7 @@ namespace Arcen.AIW2.External
             
             public override void HandleMouseover()
             {
-                Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, "空槽位允许你通过入侵 ARS 来填充空槽位，或通过与其他舰队交换舰船线来定制你的舰队。" );
+                Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, "空槽位允许你通过入侵 ARS 来填充空槽位，或通过与其他舰队交换单位线来定制你的舰队。" );
             }
         }
         #endregion
@@ -2442,9 +2442,9 @@ namespace Arcen.AIW2.External
                     return;
 
                 if ( mem.TypeData.IsModular )
-                    Window_AtMouseTooltipPanelNarrow.bPanel.Instance.SetText( this.Element, "这是模块化舰船！你可以在此处控制整个舰队线的装备配置。同一条线中的所有舰船共享它们的装备。" );
+                    Window_AtMouseTooltipPanelNarrow.bPanel.Instance.SetText( this.Element, "这是模块化单位！你可以在此处控制整个舰队线的装备配置。同一条线中的所有单位共享它们的装备。" );
                 else
-                    Window_AtMouseTooltipPanelNarrow.bPanel.Instance.SetText( this.Element, "这不是模块化舰船线。如果是的话，你将在此处控制其装备。" );
+                    Window_AtMouseTooltipPanelNarrow.bPanel.Instance.SetText( this.Element, "这不是模块化单位线。如果是的话，你将在此处控制其装备。" );
             }
         }
         #endregion
@@ -2484,7 +2484,7 @@ namespace Arcen.AIW2.External
 
             public override void HandleMouseover()
             {
-                Window_AtMouseTooltipPanelNarrow.bPanel.Instance.SetText( this.Element, "如果你不希望该舰队的特定部分由本星球或相邻星球的工厂自动补充，你可以暂停建造，这样就不会建造该类型的新舰船。" );
+                Window_AtMouseTooltipPanelNarrow.bPanel.Instance.SetText( this.Element, "如果你不希望该舰队的特定部分由本星球或相邻星球的工厂自动补充，你可以暂停建造，这样就不会建造该类型的新单位。" );
             }
         }
         #endregion
@@ -2510,7 +2510,7 @@ namespace Arcen.AIW2.External
 
             public override void HandleMouseover()
             {
-                Window_AtMouseTooltipPanelNarrow.bPanel.Instance.SetText( this.Element, "将此舰船类型与你控制的另一个移动舰队中的不同类型交换。" );
+                Window_AtMouseTooltipPanelNarrow.bPanel.Instance.SetText( this.Element, "将此单位类型与你控制的另一个移动舰队中的不同类型交换。" );
             }
         }
         #endregion
@@ -2561,7 +2561,7 @@ namespace Arcen.AIW2.External
 
             public override void HandleMouseover()
             {
-                Window_AtMouseTooltipPanelNarrow.bPanel.Instance.SetText( this.Element, "从你或人类盟友控制的其他舰队中交换一条或多条舰船线。" );
+                Window_AtMouseTooltipPanelNarrow.bPanel.Instance.SetText( this.Element, "从你或人类盟友控制的其他舰队中交换一条或多条单位线。" );
             }
         }
         #endregion

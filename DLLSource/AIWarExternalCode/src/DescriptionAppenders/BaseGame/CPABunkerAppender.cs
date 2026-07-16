@@ -1,4 +1,4 @@
-﻿using Arcen.AIW2.Core;
+using Arcen.AIW2.Core;
 using Arcen.Universal;
 using System;
 
@@ -17,7 +17,7 @@ namespace Arcen.AIW2.External
             AIDifficulty difficulty = baseInfo.SentinelInfo.AIDifficulty;
             int strengthPerBunker = baseInfo.GetCPABunkerStrength();
             strengthPerBunker = strengthPerBunker / 1000; //for UI
-            Buffer.Add("当CPA触发时，此碉堡将释放约").Add( strengthPerBunker, "a1ffa1" ).Add( ArcenExternalUIUtilities.GUI_StrengthTextColorAndIcon ).Add(" 的舰船。" );
+            Buffer.Add("当CPA触发时，此碉堡将释放约").Add( strengthPerBunker, "a1ffa1" ).Add( ArcenExternalUIUtilities.GUI_StrengthTextColorAndIcon ).Add(" 的单位。" );
         }
     }
 }

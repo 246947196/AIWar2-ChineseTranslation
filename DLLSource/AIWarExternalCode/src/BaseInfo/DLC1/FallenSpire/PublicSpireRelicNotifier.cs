@@ -53,7 +53,7 @@ namespace Arcen.AIW2.External
             Planet relicPlanet = World_AIW2.Instance.GetPlanetByIndex( Data.planetIdx );
             if ( Data.inSearchMode )
             {
-                tooltipBuffer.Add( "星系中某个地方有一个尖塔遗物。您必须通过黑客入侵星球来搜索它。搜索时您会了解到该星球距离遗物有多远；您可以利用这些信息推断出实际的星球。请注意，搜索次数越多，AI对获取该遗物的反应就越强！\n" );
+                tooltipBuffer.Add( "星系中某个地方有一个尖塔遗物。您必须通过入侵星球来搜索它。搜索时您会了解到该星球距离遗物有多远；您可以利用这些信息推断出实际的星球。请注意，搜索次数越多，AI对获取该遗物的反应就越强！\n" );
                 if ( Data.Int16List.Count > 0 ) //searchedPlanetList
                 {
                     tooltipBuffer.Add( "已搜索星球：" );

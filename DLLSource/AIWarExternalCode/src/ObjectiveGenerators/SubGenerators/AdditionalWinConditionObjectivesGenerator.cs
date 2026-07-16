@@ -1,4 +1,4 @@
-﻿using Arcen.AIW2.Core;
+using Arcen.AIW2.Core;
 using System;
 
 using System.Text;
@@ -361,7 +361,7 @@ namespace Arcen.AIW2.External
                 if ( totalVisibleApplicableStrength > 0 )
                     buffer.Add( "\n我们观测到合计" ).WrapStrengthTruncated( totalVisibleApplicableStrength, true, false ).Add( "的兵力在银河中。" );
                 else
-                    buffer.Add( "\n我们的读数显示他们存在，但迄今为止我们看不到他们的舰船。我们需要进一步探索银河。" );
+                    buffer.Add( "\n我们的读数显示他们存在，但迄今为止我们看不到他们的单位。我们需要进一步探索银河。" );
             }
         }
     }
@@ -388,7 +388,7 @@ namespace Arcen.AIW2.External
             Faction faction = World_AIW2.Instance.Factions[Objective.RelatedInt1];
             buffer.Add( "阻止机器威胁必须始终是我们的首要目标 - 只要它存在于我们的银河中，人类就不可能有安全的未来 - 但同时我们也在与" )
                 .AddFactionNameInItsColor( faction )
-                .Add( "交战。\n要彻底结束当前战争，我们需要摧毁他们所有的军事力量，包括攻击舰船和行星防御。" );
+                .Add( "交战。\n要彻底结束当前战争，我们需要摧毁他们所有的军事力量，包括攻击单位和行星防御。" );
             if ( planet != null )
             {
                 buffer.Add( "\n他们" );
@@ -403,7 +403,7 @@ namespace Arcen.AIW2.External
                 if ( totalVisibleApplicableStrength > 0 )
                     buffer.Add( "\n我们观测到合计" ).WrapStrengthTruncated( totalVisibleApplicableStrength, true, false ).Add( "的兵力在银河中。" );
                 else
-                    buffer.Add( "\n我们的读数显示他们存在，但迄今为止我们看不到他们的舰船。我们需要进一步探索银河。" );
+                    buffer.Add( "\n我们的读数显示他们存在，但迄今为止我们看不到他们的单位。我们需要进一步探索银河。" );
             }
         }
     }
@@ -445,7 +445,7 @@ namespace Arcen.AIW2.External
                 if ( totalVisibleApplicableStrength > 0 )
                     buffer.Add( "\n我们观测到合计" ).WrapStrengthTruncated( totalVisibleApplicableStrength, true, false ).Add( "的兵力在银河中。" );
                 else
-                    buffer.Add( "\n我们的读数显示他们存在，但迄今为止我们看不到他们的舰船。我们需要进一步探索银河。" );
+                    buffer.Add( "\n我们的读数显示他们存在，但迄今为止我们看不到他们的单位。我们需要进一步探索银河。" );
             }
         }
     }

@@ -234,12 +234,12 @@
 
 现在，我们之前看不到的一些未探索行星已经向我们显示出来了。
 
-嗯，如何使行星永久监视？为此，前往{c1.PlanetName}并打开&lt;color=#3DE799&gt;黑客&lt;/color&gt;选项卡。">
+嗯，如何使行星永久监视？为此，前往{c1.PlanetName}并打开&lt;color=#3DE799&gt;入侵&lt;/color&gt;选项卡。">
       <condition type="PlayerViewIsOnSpecificPlanet" planet_by_name="Backus"/>
 	  <condition type="PlayerHasSidebarMenuOpen_Hacking"/>
     </tutorial_step>
 	
-    <tutorial_step text_to_show="这里我们有选项对这个行星进行&lt;color=#3DE799&gt;监视行星黑客攻击&lt;/color&gt;。与大多数&lt;color=#3DE799&gt;黑客攻击&lt;/color&gt;不同，即使没有旗舰或我们的任何单位在场，也可以进行这种黑客攻击。
+    <tutorial_step text_to_show="这里我们有选项对这个行星进行&lt;color=#3DE799&gt;监视行星入侵&lt;/color&gt;。与大多数&lt;color=#3DE799&gt;入侵&lt;/color&gt;不同，即使没有旗舰或我们的任何单位在场，也可以进行这种入侵。
 	
 这只能对已探索的行星进行，并且会使该行星永久监视。
 
@@ -249,7 +249,7 @@
 
     <tutorial_step text_to_show="现在我们将永远拥有这里的最新信息，数字上的?和图标中的短横线都消失了。另外，我们也可以建造物流或军事指挥站，从中建造间谍单位，并将间谍放在这里作为隐形摄像头。
                    
-现在让我们尝试另一种类似的&lt;color=#3DE799&gt;黑客攻击&lt;/color&gt;，用于探索行星。这是摧毁AI指挥站的替代方法。它只能在与已探索行星相邻的未探索行星上进行，方式与摧毁站点类似。
+现在让我们尝试另一种类似的&lt;color=#3DE799&gt;入侵&lt;/color&gt;，用于探索行星。这是摧毁AI指挥站的替代方法。它只能在与已探索行星相邻的未探索行星上进行，方式与摧毁站点类似。
 
 在行星{c1.PlanetName}上尝试一下。">
       <condition type="PlanetHasBeenExplored" planet_by_name="Dahl"/>
@@ -267,7 +267,7 @@
 
 这些事物包括对我们来说重要的可捕获物品，如新的舰队或外星技术。同样包括的还有重要的AI目标，比如霸主——他们的国王版本。
 
-最后，这里会注明您还有多少未收集的&lt;color=#7CE9FF&gt;科学&lt;/color&gt;或&lt;color=#3DE799&gt;黑客&lt;/color&gt;点数，以及一些关于要做的事情的提示。
+最后，这里会注明您还有多少未收集的&lt;color=#7CE9FF&gt;科学&lt;/color&gt;或&lt;color=#3DE799&gt;入侵&lt;/color&gt;点数，以及一些关于要做的事情的提示。
 
 一般来说，如果您需要计划，或者对要做什么感到有些迷失，这是一个很好的选项卡。与许多其他选项卡一样，将鼠标悬停在这里的事物上会给您更多信息，如果适用，还会在银河系地图上突出显示所提及的事物。
 

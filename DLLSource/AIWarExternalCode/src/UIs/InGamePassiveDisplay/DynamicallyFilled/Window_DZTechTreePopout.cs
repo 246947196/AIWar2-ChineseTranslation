@@ -1,4 +1,4 @@
-﻿using Arcen.Universal;
+using Arcen.Universal;
 using Arcen.AIW2.Core;
 using System;
 using UnityEngine;
@@ -88,7 +88,7 @@ namespace Arcen.AIW2.External
         private static string GetUpgradeDescription( DZUpgrade upgrade )
         {
             if ( upgrade.UnlockShipTier )
-                return "解锁舰船等级 " + upgrade.RelatedInteger1;
+                return "解锁单位等级 " + upgrade.RelatedInteger1;
             if ( upgrade.UnlockShipVariant )
                 return "解锁 " + DarkZenithFactionBaseInfoRoot.GetShipVariantTypeFromResource( upgrade.RelatedResource ) + " 变体（等级 " + upgrade.RelatedInteger1 + "）";
             if ( upgrade.UnlockMarkLevel )
@@ -344,7 +344,7 @@ namespace Arcen.AIW2.External
         {
             public override void GetTextToShowFromVolatile( ArcenDoubleCharacterBuffer Buffer )
             {
-                Buffer.Add( "<b>舰船变体</b>", "ffd27f" );
+                Buffer.Add( "<b>单位变体</b>", "ffd27f" );
             }
         }
 
@@ -433,7 +433,7 @@ namespace Arcen.AIW2.External
         {
             public override void GetTextToShowFromVolatile( ArcenDoubleCharacterBuffer Buffer )
             {
-                Buffer.Add( "<b>舰船等级 / 标记等级进度</b>", "ffd27f" );
+                Buffer.Add( "<b>单位等级 / 标记等级进度</b>", "ffd27f" );
             }
         }
 

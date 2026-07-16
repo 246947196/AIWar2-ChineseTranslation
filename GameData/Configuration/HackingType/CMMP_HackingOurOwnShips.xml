@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   <item name="RetrieveSpentScience" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_NullHackHandler" 
@@ -12,7 +12,7 @@
 />
   
   <item name="UnitWasCrippled" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_NullHackHandler"
-        display_name="单位受损" description="单位受损时损失黑客点数。"
+        display_name="单位受损" description="单位受损时损失入侵点数。"
         hack_completes_instantly="true"
         cost_in_hacking_points="0"
         local_hacker_required="false"
@@ -22,7 +22,7 @@
 />
 
   <item name="TransformShip" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_NullHackHandler"
-        display_name="转换舰船形态" description="将一艘舰船从一种形态转换为另一种形态。"
+        display_name="转换单位形态" description="将一个单位从一种形态转换为另一种形态。"
         hack_completes_instantly="true"
         cost_in_hacking_points="5"
         local_hacker_required="false"

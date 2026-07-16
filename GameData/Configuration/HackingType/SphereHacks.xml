@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 <!--	All hacking_response_strength_per_interval values are based on 1 minute of budget for the Sphere
 		Aka, primary_response_strength_per_interval="2" would spawn 2 minutes worth of budget at once
@@ -6,7 +6,7 @@
 <!-- 	Taking Units -->
 
 <item name="HackToGrantShipLine_Sphere" copy_from="HackToGrantShipLine" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_GrantShipLine_Sphere" 
-          display_name="窃取戴森舰船生产线" description="这将使玩家能够为破解旗舰（离目标最近的那艘）获取一条新的舰船生产线。
+          display_name="窃取戴森单位生产线" description="这将使玩家能够为破解旗舰（离目标最近的那艘）获取一条新的单位生产线。
 
 This hack will Antagonize the Dyson Sphere against you for a while."
 		number_of_times_individual_unit_can_be_hacked="3"

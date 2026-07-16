@@ -313,7 +313,7 @@
 		icon_overlay="Overlays1/Warhead_Storm"
 		display_name="残暴EMP守护者（耗尽状态）"
 		display_name_for_sidebar="EMP暴守（耗）"
-		description="已释放EMP弹头的觉醒守护者原型，正移动以用麻痹眩晕冲击打击更多目标。"
+		description="已释放EMP飞弹的觉醒守护者原型，正移动以用麻痹眩晕冲击打击更多目标。"
 		strength_multiplier="1.5"
 	>
 		<system name="WA" display_name="激活" min_mark_level_to_function="8" />

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
    <entity name="AIDragon" tags="AIDragon"	
@@ -14,7 +14,7 @@
 			y_offset_of_icon="30"
 			collision_priority="810"
 			display_name="AI尖塔巨龙"
-			description="极为先进的舰船，部署用于防御新出现的尖塔威胁。"
+			description="极为先进的单位，部署用于防御新出现的尖塔威胁。"
 			starting_mark_level="Mark7" tech_upgrades_that_benefit_me="Unused" does_not_use_multipliers_from_mark_level="true"
 			cost_for_ai_to_purchase="37500"
 			hull_points="20000000" shield_points="10000000" speed="AboveAverage4"			

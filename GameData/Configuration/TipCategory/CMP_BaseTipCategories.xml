@@ -19,7 +19,7 @@
   <tip_category name="DefensiveStrategies" display_name="防御策略" sort_priority="1200"
         description="关于如何保护自己的详细策略和信息。" />
   
-  <tip_category name="Hacking" display_name="黑客技术" sort_priority="1400"
+  <tip_category name="Hacking" display_name="入侵技术" sort_priority="1400"
         description="关于使用通用纳米机器对抗自己或敌人的所有知识。" />
 
   <tip_category name="AIFleets" display_name="AI 分舰队" sort_priority="2000"

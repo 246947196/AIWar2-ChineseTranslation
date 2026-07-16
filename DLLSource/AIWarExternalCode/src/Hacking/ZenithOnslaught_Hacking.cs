@@ -54,7 +54,7 @@ namespace Arcen.AIW2.External
             // }
             // if ( Target.Planet.NomadTargetPlanetIdx >= 0 )
             // {
-            //     RejectionReasonDescription = "此黑客已完成";
+            //     RejectionReasonDescription = "此入侵已完成";
             //     return Hackable.NeverCanBeHacked_Hide;
             // }
             return base.GetCanBeHacked( Target, HackerOrNull, planet, HackerFaction, Type, RelatedStringOrNull, RelatedIntOrNull, out RejectionReasonDescription );
@@ -152,7 +152,7 @@ namespace Arcen.AIW2.External
 
             if ( data.RemainingDuration < this.GetTotalSecondsToHack( Target, planet, HackerOrNull, Type ) )
             {
-                RejectionReasonDescription = "在采矿者到达前没有足够时间完成黑客行为";
+                RejectionReasonDescription = "在采矿者到达前没有足够时间完成入侵行为";
                 return Hackable.NeverBeHacked_ButStillShow;
             }
             return base.GetCanBeHacked( Target, HackerOrNull, planet, HackerFaction, Type, RelatedStringOrNull, RelatedIntOrNull, out RejectionReasonDescription );
@@ -203,7 +203,7 @@ namespace Arcen.AIW2.External
 
             if ( data.RemainingDuration < this.GetTotalSecondsToHack( Target, planet, HackerOrNull, Type ) )
             {
-                RejectionReasonDescription = "在采矿者到达前没有足够时间完成黑客行为";
+                RejectionReasonDescription = "在采矿者到达前没有足够时间完成入侵行为";
                 return Hackable.NeverBeHacked_ButStillShow;
             }
             return base.GetCanBeHacked( Target, HackerOrNull, planet, HackerFaction, Type, RelatedStringOrNull, RelatedIntOrNull, out RejectionReasonDescription );
@@ -257,7 +257,7 @@ namespace Arcen.AIW2.External
 
             if ( data.RemainingDuration < this.GetTotalSecondsToHack( Target, planet, HackerOrNull, Type ) )
             {
-                RejectionReasonDescription = "在采矿者到达前没有足够时间完成黑客行为";
+                RejectionReasonDescription = "在采矿者到达前没有足够时间完成入侵行为";
                 return Hackable.NeverBeHacked_ButStillShow;
             }
             return base.GetCanBeHacked( Target, HackerOrNull, planet, HackerFaction, Type, RelatedStringOrNull, RelatedIntOrNull, out RejectionReasonDescription );
@@ -281,7 +281,7 @@ namespace Arcen.AIW2.External
 
             if ( data.RemainingDuration < this.GetTotalSecondsToHack( Target, planet, HackerOrNull, Type ) )
             {
-                RejectionReasonDescription = "在采矿者到达前没有足够时间完成黑客行为";
+                RejectionReasonDescription = "在采矿者到达前没有足够时间完成入侵行为";
                 return Hackable.NeverBeHacked_ButStillShow;
             }
             return base.GetCanBeHacked( Target, HackerOrNull, planet, HackerFaction, Type, RelatedStringOrNull, RelatedIntOrNull, out RejectionReasonDescription );
@@ -305,7 +305,7 @@ namespace Arcen.AIW2.External
 
             if ( data.RemainingDuration < this.GetTotalSecondsToHack( Target, planet, HackerOrNull, Type ) )
             {
-                RejectionReasonDescription = "在采矿者到达前没有足够时间完成黑客行为";
+                RejectionReasonDescription = "在采矿者到达前没有足够时间完成入侵行为";
                 return Hackable.NeverBeHacked_ButStillShow;
             }
             return base.GetCanBeHacked( Target, HackerOrNull, planet, HackerFaction, Type, RelatedStringOrNull, RelatedIntOrNull, out RejectionReasonDescription );
@@ -330,7 +330,7 @@ namespace Arcen.AIW2.External
             ZenithArchitraveFactionBaseInfo globalData = faction.TryGetExternalBaseInfoAs<ZenithArchitraveFactionBaseInfo>();
             if ( ArcenStrings.Equals( faction.BaseInfo.Allegiance, "Friendly To Players" ) )
             {
-                RejectionReasonDescription = "你不能黑客你的盟友；此黑客仅适用于对所有人敌对的 Architraves";
+                RejectionReasonDescription = "你不能入侵你的盟友；此入侵仅适用于对所有人敌对的 Architraves";
                 return Hackable.NeverBeHacked_ButStillShow;
             }
             if ( faction.BaseInfo.Allegiance != "Hostile To All" )
@@ -341,7 +341,7 @@ namespace Arcen.AIW2.External
 
             if ( globalData.PlayersArchitraveIsFriendlyToward.Contains( HackerFaction.FactionIndex ) )
             {
-                RejectionReasonDescription = "此黑客已完成";
+                RejectionReasonDescription = "此入侵已完成";
                 return Hackable.NeverCanBeHacked_Hide;
             }
             return base.GetCanBeHacked( Target, HackerOrNull, planet, HackerFaction, Type, RelatedStringOrNull, RelatedIntOrNull, out RejectionReasonDescription );
@@ -385,13 +385,13 @@ namespace Arcen.AIW2.External
             ZenithArchitraveFactionBaseInfo globalData = faction.TryGetExternalBaseInfoAs<ZenithArchitraveFactionBaseInfo>();
             if ( ArcenStrings.Equals( faction.BaseInfo.Allegiance, "Friendly To Players" ) )
             {
-                RejectionReasonDescription = "你不能黑客你的盟友；此黑客仅适用于敌对的 Architraves";
+                RejectionReasonDescription = "你不能入侵你的盟友；此入侵仅适用于敌对的 Architraves";
                 return Hackable.NeverBeHacked_ButStillShow;
             }
 
             if ( globalData.PlayersArchitraveHates.Contains( HackerFaction.FactionIndex ) )
             {
-                RejectionReasonDescription = "此黑客已完成";
+                RejectionReasonDescription = "此入侵已完成";
                 return Hackable.NeverCanBeHacked_Hide;
             }
             return base.GetCanBeHacked( Target, HackerOrNull, planet, HackerFaction, Type, RelatedStringOrNull, RelatedIntOrNull, out RejectionReasonDescription );

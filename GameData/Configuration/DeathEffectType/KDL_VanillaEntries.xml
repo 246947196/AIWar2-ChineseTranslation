@@ -1,11 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 	<item name="Zombification" scale="10000"
        	dll_name="AIWarExternalDeepProcessingCode" type_name="Arcen.AIW2.External.DeathEffect_Zombification"
         description_prefix="僵尸化"
         description_damage_name="僵尸化"
         description_conditions="如果目标是移动战斗单位（部分免疫除外）"
-        description_of_effects="该舰船的阵营获得一个目标的盟友副本"
+        description_of_effects="该单位的阵营获得一个目标的盟友副本"
         description_added_note_for_player="僵尸将自行移动和攻击。"
 		is_some_kind_of_normal_zombification="true"
         >
@@ -54,7 +54,7 @@
         description_prefix="代谢"
         description_damage_name="代谢"
         description_conditions=""
-        description_of_effects="该舰船的阵营立即获得目标金属成本的20%，最多5000金属。"
+        description_of_effects="该单位的阵营立即获得目标金属成本的20%，最多5000金属。"
         description_added_note_for_player=""
         >
     <offense_tier name="None" ability_multiplier="0" />
@@ -72,7 +72,7 @@
         description_prefix="高级代谢"
         description_damage_name="代谢"
         description_conditions=""
-        description_of_effects="该舰船的阵营立即获得目标金属成本的50%，最多50000金属。"
+        description_of_effects="该单位的阵营立即获得目标金属成本的50%，最多50000金属。"
         description_added_note_for_player=""
         >
     <offense_tier name="None" ability_multiplier="0" />
@@ -90,7 +90,7 @@
         description_prefix="死灵术"
         description_damage_name="死灵"
         description_conditions=""
-        description_of_effects="该舰船的阵营立即将此舰船转化为仆从"
+        description_of_effects="该单位的阵营立即将此单位转化为仆从"
         description_added_note_for_player=""
         >
     <offense_tier name="None" ability_multiplier="0" />
