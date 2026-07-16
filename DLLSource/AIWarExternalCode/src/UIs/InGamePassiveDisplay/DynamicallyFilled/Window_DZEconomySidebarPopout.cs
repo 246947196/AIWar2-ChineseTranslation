@@ -634,7 +634,7 @@ namespace Arcen.AIW2.External
                           .Add( " " + DarkZenithFactionBaseInfoRoot.ResourceFancyName[res] );
                     any = true;
                 }
-                if ( !any ) Buffer.Add( "none", "666666" );
+                if ( !any ) Buffer.Add( "无", "666666" );
 
                 if ( epd.NextConversion == null ) return;
                 Buffer.Add( "   需求：", "888888" );
@@ -649,7 +649,7 @@ namespace Arcen.AIW2.External
                     Buffer.Add( have + "/" + kv.Value, col ).Add( " " + DarkZenithFactionBaseInfoRoot.ResourceFancyName[kv.Key] );
                     anyNeed = true;
                 }
-                if ( !anyNeed ) Buffer.Add( "nothing", "a1ffa1" );
+                if ( !anyNeed ) Buffer.Add( "无需求", "a1ffa1" );
             }
 
             public override bool GetShouldBeHidden()
@@ -673,10 +673,10 @@ namespace Arcen.AIW2.External
                 int eligible = CountEligibleDepositFlagships( ep, epd );
                 if ( eligible <= 0 )
                 {
-                    Buffer.Add( "⬇ none here", "555555" );
+                    Buffer.Add( "⬇ 此处无", "555555" );
                     return;
                 }
-                Buffer.Add( "⬇ Deposit ×" + eligible, "a1ffa1" );
+                Buffer.Add( "⬇ 存入 ×" + eligible, "a1ffa1" );
             }
 
             public override bool GetShouldBeHidden()
@@ -721,7 +721,7 @@ namespace Arcen.AIW2.External
                 }
                 else
                 {
-                    Buffer.Add( "  Cost: ", "888888" );
+                    Buffer.Add( "  成本：", "888888" );
                     bool any = false;
                     foreach ( KeyValuePair<DZResource, int> kv in conv.Cost )
                     {

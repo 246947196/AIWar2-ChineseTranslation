@@ -171,15 +171,15 @@ namespace Arcen.AIW2.External
             {
                 if ( (_updatesToRefund.Count + _fleetsToRefund.Count) == 0 )
                 {
-                    Buffer.StartColor( "777777" ).Add( "Ok" );
+                    Buffer.StartColor( "777777" ).Add( "确定" );
                 }
                 else
                 {
                     //Buffer.Add( "<align=left>" );
                     //Buffer.Add( "<pos=5>" );
-                    Buffer.Add( "      Ok" );
+                    Buffer.Add( "      确定" );
                     Buffer.StartColor( ArcenExternalUIUtilities.HackingTextColor );
-                    Buffer.Add( "   <size=70%><voffset=0.2em>(Cost: " );
+                    Buffer.Add( "   <size=70%><voffset=0.2em>（花费：" );
                     Buffer.Add( ArcenExternalUIUtilities.HackingTextColorAndIcon );
                     Buffer.Add( GetHackingPointCost() );
                     Buffer.Add( ")" );

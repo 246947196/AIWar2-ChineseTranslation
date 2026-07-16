@@ -722,7 +722,7 @@ namespace Arcen.AIW2.External
                     else
                     {
                         if ( faction.Type == FactionType.AI )
-                            Buffer.Add( "Mark " + planet.MarkLevelForAIOnly.Ordinal +": " +this.Element.CreatedByCodeDirective.Identifier.CodeDirectiveTagString, factionColor );
+                            Buffer.Add( "等级 " + planet.MarkLevelForAIOnly.Ordinal +"： " +this.Element.CreatedByCodeDirective.Identifier.CodeDirectiveTagString, factionColor );
                         else
                             Buffer.Add( this.Element.CreatedByCodeDirective.Identifier.CodeDirectiveTagString, factionColor );
                     }

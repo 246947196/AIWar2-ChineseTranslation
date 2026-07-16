@@ -350,7 +350,7 @@ namespace Arcen.AIW2.External
         {
             public override void GetTextToShowFromVolatile( ArcenDoubleCharacterBuffer Buffer )
             {
-                Buffer.Add( "<b>DZ Logistics</b>", "a1d4ff" );
+                Buffer.Add( "<b>暗天顶后勤</b>", "a1d4ff" );
             }
         }
 
@@ -466,20 +466,20 @@ namespace Arcen.AIW2.External
 
                 if ( building == 0 && queued == 0 )
                 {
-                    Buffer.Add( "none queued", "666666" );
+                    Buffer.Add( "无队列", "666666" );
                     return;
                 }
 
                 bool first = true;
                 if ( building > 0 )
                 {
-                    Buffer.Add( building.ToString(), "a1d4ff" ).Add( " building", "888888" );
+                    Buffer.Add( building.ToString(), "a1d4ff" ).Add( " 建造中", "888888" );
                     first = false;
                 }
                 if ( queued > 0 )
                 {
                     if ( !first ) Buffer.Add( ", " );
-                    Buffer.Add( queued.ToString(), "a1ffa1" ).Add( " queued", "888888" );
+                    Buffer.Add( queued.ToString(), "a1ffa1" ).Add( " 已队列", "888888" );
                 }
             }
         }

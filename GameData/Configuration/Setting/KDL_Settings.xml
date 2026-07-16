@@ -206,8 +206,8 @@
             description="有些玩家喜欢为支援旗舰使用特定数字键位。当获得新的支援旗舰(或游戏开始时)，它的起始键位将是这个选定的数字(或更高数字)。"/>
 
     <setting name="LowestDefaultKeybindingForBattlestation" serialization_name="LDK-Bat" is_network_and_game_synced_setting="true"
-            category="Automation" subcategory="Fleets" display_name="战斗站默认键位" type="IntSlider" default="-1" min="-1" max="7" default_should_override_user_value_if_older_than_version="Unity2018_2" is_advanced_setting="true"
-            description="有些玩家喜欢为战斗站旗舰使用特定数字键位。当获得新的战斗站(或游戏开始时)，它的起始键位将是这个选定的数字(或更高数字)。
+            category="Automation" subcategory="Fleets" display_name="机动平台默认键位" type="IntSlider" default="-1" min="-1" max="7" default_should_override_user_value_if_older_than_version="Unity2018_2" is_advanced_setting="true"
+            description="有些玩家喜欢为机动平台旗舰使用特定数字键位。当获得新的机动平台(或游戏开始时)，它的起始键位将是这个选定的数字(或更高数字)。
 
 如果设为-1，此设置将被禁用"/>
 

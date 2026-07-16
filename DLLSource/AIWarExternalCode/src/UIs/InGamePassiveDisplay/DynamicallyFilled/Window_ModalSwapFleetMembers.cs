@@ -69,9 +69,9 @@ namespace Arcen.AIW2.External
                 bool isFleetLeader = Instance._member == null ? false : Instance._member.TypeData.IsFleetLeader;
 
                 if ( isFleetLeader )
-                    Buffer.Add( "<size=90%>Fleet: " ).Add( Instance._fleet.GetName(), "a1a1ff" ).Add( ", Swap All Members Other Than Flagship</size>");
+                    Buffer.Add( "<size=90%>舰队：" ).Add( Instance._fleet.GetName(), "a1a1ff" ).Add( "，交换除旗舰外的所有成员</size>");
                 else
-                    Buffer.Add( "<size=95%>Fleet: " ).Add( Instance._fleet.GetName(), "a1a1ff" ).Add( ", Swap Away: " ).Add(
+                    Buffer.Add( "<size=95%>舰队：" ).Add( Instance._fleet.GetName(), "a1a1ff" ).Add( "，换入：" ).Add(
                       Instance._member == null ? "空槽位" : Instance._member.TypeData.GetDisplayName(), "a1ffa1" ).Add( "</size>" );
             }
         }
@@ -574,7 +574,7 @@ namespace Arcen.AIW2.External
                     Fleet fleetPair = this.fleetPairWithEmptySlot;
                     Buffer.Add( "<align=left>" );
                     Buffer.Add( "<pos=5>" );
-                    string slot = "Empty Slots:";
+                    string slot = "空槽位：";
                     Buffer.Add( slot, "a9a9a9" );
                     Buffer.Add( "</pos>" );
 
@@ -582,9 +582,9 @@ namespace Arcen.AIW2.External
                     Buffer.StartColor( "9370db" );
                     Buffer.Add( " " ).Add( fleetPair.CalculateRemainingShipLineSlotCount() ); //number of ships
                     if ( fleetPair.CalculateIsEliteSlotFilled() )
-                        Buffer.Add( " <size=75%>(0x Elite)</size>" );
+                        Buffer.Add( " <size=75%>(0x 精英)</size>" );
                     else
-                        Buffer.Add( " <size=75%>(1x Elite)</size>" );
+                        Buffer.Add( " <size=75%>(1x 精英)</size>" );
                     Buffer.EndColor();
                     Buffer.Add( "</pos>" );
                     //                Buffer.Add("</pos>");
@@ -801,7 +801,7 @@ namespace Arcen.AIW2.External
                     {
                         int eliteCount = fleetPairToSwapIn.CalculateIsEliteSlotFilled() ? 0 : 1;
                         Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, "舰队可用空槽位: " + fleetPairToSwapIn.GetName() + ": " +
-                            fleetPairToSwapIn.CalculateRemainingShipLineSlotCount() + " <size=75%>(" + eliteCount + "x Elite Slot)</size>" );
+                            fleetPairToSwapIn.CalculateRemainingShipLineSlotCount() + " <size=75%>(" + eliteCount + "x 精英槽位)</size>" );
                     }
                     else
                         Window_AtMouseTooltipPanelBesideSidebar.bPanel.Instance.SetText( "空项！", "ShipTooltipScale" );

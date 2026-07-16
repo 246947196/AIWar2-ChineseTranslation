@@ -115,7 +115,7 @@
 	<journal name="ExpertUpLimitedBattlestations_Intro" sidebar_text="&lt;color=#ffd267&gt;概念:&lt;/color&gt; 限制战列舰使用" is_for_the_tips_tab="true"
 			 can_record_another_copy_if_already_recorded_in_this_campaign="false"
 			 text_replacement_related_faction_color="true"
-		  chat_text="指挥官，如果你是第一次遇到仅有一个起始战斗站的情况，你可能想了解原因。"
+		  chat_text="指挥官，如果你是第一次遇到仅有一个起始机动平台的情况，你可能想了解原因。"
 		  full_text="在默认的“人类崛起”模式的标准玩法中，有经验的《AI 战争 2》玩家发现，在敌方星球上建造炮塔的滩头推进策略比主要依靠机动舰队和单位更为有效。专家模式旨在实现一种更平衡的玩法，让滩头推进策略仍可使用，但不会过于强大。
 
 正如你可能已经注意到的，你只能选择一艘战列舰，而不是默认的两艘。此外，通过入侵技术从 TSS 获取额外炮塔时，只有在为战列舰单独使用 3 倍选项时，这些炮塔才会分配给战列舰。使用 1 倍选项时，这些炮塔只会分配给你的指挥站，战列舰的炮塔配置不会改变。

@@ -124,7 +124,7 @@ public static class WaveUtils
         Faction SendingFaction = World_AIW2.Instance.GetFactionByIndex( wave.SendingFactionIndex );
         if ( wave.isActuallyACrossPlanetAttack )
         {
-            buffer.Add( "CPA\n", SendingFaction.FactionCenterColor.ColorHexBrighter );
+            buffer.Add( "跨星攻击\n", SendingFaction.FactionCenterColor.ColorHexBrighter );
             buffer.Add( ArcenExternalUIUtilities.GUI_StrengthTextColorAndIcon );
             buffer.Add( "???" );
         }
@@ -144,6 +144,6 @@ public static class WaveUtils
         if ( secondsRemaining > 0 ) 
             return buffer.AddSecondsRemaining( secondsRemaining );
         else
-            return buffer.Add( "SOON" );
+            return buffer.Add( "即将" );
     }
 }

@@ -4,7 +4,7 @@
   <!--这些建造分类的目的是在侧边栏中为玩家组织建造项目。
       这里的"建造项目"指的是"通过直接放置建造的物品"。
       
-      这些项目包括战斗站、指挥站或Zenith商人
+      这些项目包括机动平台、指挥站或Zenith商人
       在行星上为你提供的任何可建造物品。
       
       除了侧边栏的组织方式外，这些分类不会影响游戏其他方面。
@@ -23,7 +23,7 @@
                   for_player_type_tags="HumanEmpire"
   />
   <build_category name="Turrets" sort_index="20" display_name="炮塔"
-    description="你的行星需要炮塔！你的机动舰队需要外出作战，而炮塔单独就能对抗大约10倍于其数量的机动部队。也就是说，你也可以在敌方领土建立炮塔桥头堡给他们制造麻烦，所以考虑时不时地把战斗站带到敌人那里去。"
+    description="你的行星需要炮塔！你的机动舰队需要外出作战，而炮塔单独就能对抗大约10倍于其数量的机动部队。也就是说，你也可以在敌方领土建立炮塔桥头堡给他们制造麻烦，所以考虑时不时地把机动平台带到敌人那里去。"
                   for_player_type_tags="HumanEmpire"
 	/>
 	<build_category name="OtherDefenses" sort_index="30" display_name="其他防御"

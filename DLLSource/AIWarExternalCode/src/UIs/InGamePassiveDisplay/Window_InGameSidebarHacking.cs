@@ -421,7 +421,7 @@ namespace Arcen.AIW2.External
                             }
                             else
                             {
-                                buffer.Add(flagship.TypeData.GetDisplayName(), "ffa1a1").Add( " on ").Add( flagship.Planet.Name, "a1a1ff");
+                                buffer.Add(flagship.TypeData.GetDisplayName(), "ffa1a1").Add( " - ").Add( flagship.Planet.Name, "a1a1ff");
                             }
                         }
                     }

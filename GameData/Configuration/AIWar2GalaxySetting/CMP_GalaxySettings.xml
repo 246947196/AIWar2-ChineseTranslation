@@ -316,7 +316,7 @@
 
   <galaxy_setting category="MapGen" subcategory="CapturableDensity" name="TurretSchematicServersToSeed" is_advanced_setting="true" display_name="炮塔图纸服务器生成数量" type="CustomDropdownArbitraryOptions" 
       arbitrary_options="0x,0.5x,0.75x,1x,1.25x,1.5x,1.75x,2x,2.5x,3x" default_option="1x"
-      description="根据星系中的行星数量和人类帝国派系数量，游戏会生成一定数量的炮塔图纸服务器(TSS)供你发现。这些是你获取更多炮塔的途径，如果你想建立强大的防御体系，破解它们至关重要！每次破解(可重复)都会为你提供新的炮塔、地雷、牵引光束等防御设施，可用于所有指挥站、战斗站和要塞。
+      description="根据星系中的行星数量和人类帝国派系数量，游戏会生成一定数量的炮塔图纸服务器(TSS)供你发现。这些是你获取更多炮塔的途径，如果你想建立强大的防御体系，破解它们至关重要！每次破解(可重复)都会为你提供新的炮塔、地雷、牵引光束等防御设施，可用于所有指挥站、机动平台和要塞。
       
 除非你选择0x，否则总会为每个母星附近生成1个服务器，并在星系其他区域生成额外数量(可在此控制)。" >
       <harshness_override min_campaign_harshness_to_apply="200" fixed_option="1x" />
@@ -324,7 +324,7 @@
 
   <galaxy_setting category="MapGen" subcategory="CapturableDensity" name="OtherDefensiveSchematicServersToSeed" is_advanced_setting="true" display_name="其他防御图纸服务器生成数量" type="CustomDropdownArbitraryOptions" 
       arbitrary_options="0x,0.5x,0.75x,1x,1.25x,1.5x,1.75x,2x,2.5x,3x" default_option="1x"
-      description="根据星系中的行星数量和人类帝国派系数量，游戏会生成一定数量的其他防御图纸服务器(ODSS)供你发现。这些是你获取更多地雷、哨兵和其他防御设施的途径，破解它们有一定价值，如果你的游戏风格偏好这些元素则非常有用。每次破解(可重复)都会为你提供新的炮塔、地雷、牵引光束等防御设施，可用于所有指挥站、战斗站和要塞。
+      description="根据星系中的行星数量和人类帝国派系数量，游戏会生成一定数量的其他防御图纸服务器(ODSS)供你发现。这些是你获取更多地雷、哨兵和其他防御设施的途径，破解它们有一定价值，如果你的游戏风格偏好这些元素则非常有用。每次破解(可重复)都会为你提供新的炮塔、地雷、牵引光束等防御设施，可用于所有指挥站、机动平台和要塞。
       
 除非你选择0x，否则总会为每个母星附近生成1个服务器，并在星系其他区域生成额外数量(可在此控制)。" >
       <harshness_override min_campaign_harshness_to_apply="200" fixed_option="1x" />
@@ -615,8 +615,8 @@
       <harshness_override min_campaign_harshness_to_apply="700" fixed_option="0.1x" />
   </galaxy_setting>
 	
-  <galaxy_setting name="BattlestationDirectUpgradesCostMore" category="Balance" is_advanced_setting="true" subcategory="HumanBalance" display_name="战斗站直接升级花费更多" type="BoolToggle" default="false"
-           description="高级玩家从战斗站和堡垒中获得很多收益，以至于考虑到它们的输出能力，直接升级成本过低。然而，对于大多数新玩家来说，战斗站似乎用途相对较少，而直接技术的较低成本是发现其真正潜力的好方法。
+  <galaxy_setting name="BattlestationDirectUpgradesCostMore" category="Balance" is_advanced_setting="true" subcategory="HumanBalance" display_name="机动平台直接升级花费更多" type="BoolToggle" default="false"
+           description="高级玩家从机动平台和堡垒中获得很多收益，以至于考虑到它们的输出能力，直接升级成本过低。然而，对于大多数新玩家来说，机动平台似乎用途相对较少，而直接技术的较低成本是发现其真正潜力的好方法。
 
 此设置在较简单的战役类型中默认关闭，但在更高难度下变为强制开启。" >
       <harshness_override min_campaign_harshness_to_apply="200" fixed_value="true" />
@@ -668,8 +668,8 @@
       >
       <harshness_override min_campaign_harshness_to_apply="200" fixed_value="true" />
   </galaxy_setting>
-  <galaxy_setting name="BattlestationsGetHacksForAll" category="Balance" is_advanced_setting="true" subcategory="HumanBalance" display_name="战斗站接收所有入侵获得的炮塔" type="BoolToggle" default="true"
-           description="默认开启。通常，战斗站会接收所有入侵获得的炮塔和其他防御结构。如果禁用此设置，则战斗站不会接收炮塔或其他防御结构，除非是针对该特定战斗站的入侵。（堡垒和指挥站仍会接收所有入侵获得的结构）"
+  <galaxy_setting name="BattlestationsGetHacksForAll" category="Balance" is_advanced_setting="true" subcategory="HumanBalance" display_name="机动平台接收所有入侵获得的炮塔" type="BoolToggle" default="true"
+           description="默认开启。通常，机动平台会接收所有入侵获得的炮塔和其他防御结构。如果禁用此设置，则机动平台不会接收炮塔或其他防御结构，除非是针对该特定机动平台的入侵。（堡垒和指挥站仍会接收所有入侵获得的结构）"
       >
       <harshness_override min_campaign_harshness_to_apply="700" fixed_value="false" />
   </galaxy_setting>

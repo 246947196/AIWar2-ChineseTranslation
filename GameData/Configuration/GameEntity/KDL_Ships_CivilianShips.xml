@@ -69,7 +69,7 @@
 	  hull_points="8000" shield_points="0" immune_to_swapping_between_fleets="true"
 	  is_blocked_from_dss_grant_to_Battlestations_and_citadels="false"
 	  is_blocked_from_dss_grant_to_commandstations="true"
-	  description="修理附近的友军单位并协助附近的建造项目。仅限战斗站和堡垒使用。"
+	  description="修理附近的友军单位并协助附近的建造项目。仅限机动平台和堡垒使用。"
 	  >
     <fleet_membership name="GeneralTurrets" ship_cap_group="Civilian" weight="100" cap="9"/>
     <fleet_membership name="MonochromeTurrets" ship_cap_group="Civilian" weight="100" cap="12"/>

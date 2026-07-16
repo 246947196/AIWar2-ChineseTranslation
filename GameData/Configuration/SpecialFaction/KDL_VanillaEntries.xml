@@ -29,16 +29,16 @@
           sort_group="200" setting_type="CustomDropdownCoreTableSubset" default_option="ClassicStartingFleet"
           random_option_name="RandomCombatFleet" random_option_display_name="&lt;color=#ffd965&gt;随机&lt;/color&gt;" random_option_description="随机选择一个初始战斗舰队。"/>
     <custom_field requires_player_types="HumanEmpire,SpireInfusedEmpire"
-          name="StartingBattlestation1" display_name="初始战斗站1" related_table="InitialPlayerBattlestations" 
-          description="选择该人类派系防御的第一个战斗站。它将在战役过程中大幅扩展，但这将决定您在游戏初期可用的内容。"
+          name="StartingBattlestation1" display_name="初始机动平台1" related_table="InitialPlayerBattlestations" 
+          description="选择该人类派系防御的第一个机动平台。它将在战役过程中大幅扩展，但这将决定您在游戏初期可用的内容。"
           sort_group="210" setting_type="CustomDropdownCoreTableSubset" default_option="RandomBattlestation"
-          random_option_name="RandomBattlestation" random_option_display_name="&lt;color=#ffd965&gt;随机&lt;/color&gt;" random_option_description="随机选择一个初始战斗站。" />
+          random_option_name="RandomBattlestation" random_option_display_name="&lt;color=#ffd965&gt;随机&lt;/color&gt;" random_option_description="随机选择一个初始机动平台。" />
     <custom_field requires_player_types="HumanEmpire,SpireInfusedEmpire"
-          name="StartingBattlestation2" display_name="初始战斗站2" related_table="InitialPlayerBattlestations" 
-          description="选择该人类派系防御的第二个战斗站。它将在战役过程中大幅扩展，但这将决定您在游戏初期可用的内容。"
+          name="StartingBattlestation2" display_name="初始机动平台2" related_table="InitialPlayerBattlestations" 
+          description="选择该人类派系防御的第二个机动平台。它将在战役过程中大幅扩展，但这将决定您在游戏初期可用的内容。"
           max_campaign_harshness_to_display="700"
           sort_group="215" setting_type="CustomDropdownCoreTableSubset" default_option="RandomBattlestation"
-          random_option_name="RandomBattlestation" random_option_display_name="&lt;color=#ffd965&gt;随机&lt;/color&gt;" random_option_description="随机选择一个初始战斗站。" />
+          random_option_name="RandomBattlestation" random_option_display_name="&lt;color=#ffd965&gt;随机&lt;/color&gt;" random_option_description="随机选择一个初始机动平台。" />
     <custom_field requires_player_types="HumanEmpire,SpireInfusedEmpire"
           name="StartingSupportFleet" display_name="初始支援舰队" related_table="InitialPlayerSupportFleets" description="选择该人类派系的初始支援舰队。"
           sort_group="220" setting_type="CustomDropdownCoreTableSubset" default_option="StartingCombatEngineerAndFactoryCombo" 

@@ -55,4 +55,4 @@ PowerfulCommandStations - 权威即实力
 * 每次入侵给予的工程师与星际单位更少，它们原本过于充裕，而 ODSS 扇区数量翻倍使它们过于强大。
 ** 工程师描述现在提及在第 3 阶获得隐形。
 ** 调整了指挥站上的工程师数量。
-** 超光速与牵引阵列仍会配发给战斗站（battlestations）与城堡（citadels）。
+** 超光速与牵引阵列仍会配发给机动平台（battlestations）与城堡（citadels）。

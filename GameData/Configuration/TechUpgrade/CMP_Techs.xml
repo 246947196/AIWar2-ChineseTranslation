@@ -31,7 +31,7 @@
   <item name="Heavy" short_name="Heavy" sort_group="50" sort_index="300" display_name="&lt;color=#fa7bff&gt;船体：&lt;/color&gt; 重型船体" science_cost_per_time_unlocked="4000,6000" icon_path="assets/sci-fi_game_icons/icons/png/transparent/25_b.png" tags="Hull,HullStandard" for_player_type_tags="HumanEmpire"
         description="重型单位有各种尺寸和能力，但通常装甲量从大到非常大。高装甲量不会带来任何自然加成，但往往与高船体生命值同时存在。有一些专门的高装甲杀手单位，但除此之外很少有单位对它们有加成。"/>
   <item name="Turret" short_name="Turret" sort_group="50" sort_index="400" display_name="&lt;color=#fa7bff&gt;船体：&lt;/color&gt; 炮塔" science_cost_per_time_unlocked="5000,9000" icon_path="assets/sci-fi_game_icons/icons/png/transparent/42_b.png" tags="Hull,HullTurret,SpecialBonus" for_player_type_tags="HumanEmpire"
-        description="炮塔是没人费心加装引擎的武器。它们通常由指挥站、战斗站或要塞建造。一般在友方领土，但也可用于进攻滩头阵地。"/>
+        description="炮塔是没人费心加装引擎的武器。它们通常由指挥站、机动平台或要塞建造。一般在友方领土，但也可用于进攻滩头阵地。"/>
   <item name="Alien" short_name="Alien" sort_group="50" sort_index="500" display_name="&lt;color=#fa7bff&gt;船体：&lt;/color&gt; 外星船体" science_cost_per_time_unlocked="1000,2500,4000,5500,7000" icon_path="assets/sci-fi_game_icons/icons/png/transparent/50_b.png" tags="Hull,HullOtherFaction" for_player_type_tags="HumanEmpire"
         skips_rejection_if_benefits_nothing="true"
       description="除非你专门入侵某些派系获取，否则不太可能遇到外星船体。受益的单位可能极其强大且形态功能多样。仅影响直接由你指挥的外星单位，不影响盟友派系。"/>
@@ -60,9 +60,9 @@
   <item name="Forcefields" short_name="Forcefield" sort_group="80" sort_index="400" display_name="&lt;color=#908dfe&gt;防御：&lt;/color&gt; 力场" science_cost_per_time_unlocked="1500,1500,2250,2250,3000,3000" icon_path="assets/sci-fi_game_icons/icons/png/transparent/24_b.png" tags="Defense" for_player_type_tags="HumanEmpire"
         description="升级你在各指挥站建造的所有气泡力场。同时改进移动式气泡力场发生器(力场星舰等)。"/>
   <item name="Citadels" short_name="M.Fort" sort_group="80" sort_index="410" display_name="&lt;color=#908dfe&gt;防御：&lt;/color&gt; 移动要塞" science_cost_per_time_unlocked="1500,2300,2600,2800" icon_path="assets/sci-fi_game_icons/icons/png/transparent/9_b.png" tags="Defense,SpecialBonus" for_player_type_tags="HumanEmpire"
-        description="升级你可能拥有或获得的任何战斗站或要塞。这些结构允许你在自己的星球或敌人的星球上作为'滩头阵地'建造额外的防御炮塔、地雷等。"/>
+        description="升级你可能拥有或获得的任何机动平台或要塞。这些结构允许你在自己的星球或敌人的星球上作为'滩头阵地'建造额外的防御炮塔、地雷等。"/>
   <item name="Minefields" short_name="Minefield" sort_group="80" sort_index="420" display_name="&lt;color=#908dfe&gt;防御：&lt;/color&gt; 雷区" science_cost_per_time_unlocked="600,1250,2250,3500" icon_path="assets/sci-fi_game_icons/icons/png/transparent/88_b.png" tags="Defense" for_player_type_tags="HumanEmpire"
-        description="雷区由指挥站、战斗站或要塞建造。它们并不常见，所以你可能只想在确定会拥有它们时才投资。"/>
+        description="雷区由指挥站、机动平台或要塞建造。它们并不常见，所以你可能只想在确定会拥有它们时才投资。"/>
   <item name="Sentries" short_name="St.Keeper" sort_group="80" sort_index="430" display_name="&lt;color=#908dfe&gt;防御：&lt;/color&gt; 站台守卫" science_cost_per_time_unlocked="500,1000,2000,2500" icon_path="assets/sci-fi_game_icons/icons/png/transparent/73_b.png" tags="Defense,SpecialBonus" for_player_type_tags="HumanEmpire"
         description="站台守卫通常是绑定在特定星球重力井的移动护卫舰。它们作为舰队的一部分帮助防御指挥站。"/>
 
