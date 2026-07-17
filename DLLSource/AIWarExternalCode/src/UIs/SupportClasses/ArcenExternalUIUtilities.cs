@@ -49,7 +49,7 @@ namespace Arcen.AIW2.External
         public static readonly FixedTextFormatingStats Albedo = new FixedTextFormatingStats( "反照率", ColorMath.LightPurple.GetHexCode(), "ShipStats_Albedo", SpaceAfterIcon );
         public static readonly FixedTextFormatingStats Engine = new FixedTextFormatingStats( "引擎", ColorMath.LightWhipBlue.GetHexCode(), "ShipStats_EnginePower", SpaceAfterIcon );
 
-        public static readonly FixedTextFormatingStats Mark = new FixedTextFormatingStats( "Mark" );
+        public static readonly FixedTextFormatingStats Mark = new FixedTextFormatingStats( "等级" );
         
         public static readonly FixedTextFormatingStats Buffs = new FixedTextFormatingStats( "增益", "0ba70b");
         public static readonly FixedTextFormatingStats BuffsLight = new FixedTextFormatingStats( "增益亮", "007c00");
@@ -300,8 +300,8 @@ namespace Arcen.AIW2.External
             switch ( FuelType )
             {
                 case ResourceType.FuelArgon:
-                    fuelName = "Argon Fuel";
-                    fuelUse = "Argon is a global resource required to run your main combat ships.";
+                    fuelName = "氩燃料";
+                    fuelUse = "氩是一种全局资源，用于运行你的主力战斗单位。";
                     colorGood = "ff8e32";
                     colorTotal = "eb481d";
                     consumed = localFaction.FuelArgonConsumption;
@@ -310,8 +310,8 @@ namespace Arcen.AIW2.External
                     overuseRatio = localFaction.FuelArgonOveruseRatio;
                     break;
                 case ResourceType.FuelRadon:
-                    fuelName = "Radon Fuel";
-                    fuelUse = "Radon is a global resource required to run your turrets and forcefields.";
+                    fuelName = "氡燃料";
+                    fuelUse = "氡是一种全局资源，用于运行你的炮塔和力场护盾。";
                     colorGood = "be69ff";
                     colorTotal = "9622d8";
                     consumed = localFaction.FuelRadonConsumption;
@@ -320,8 +320,8 @@ namespace Arcen.AIW2.External
                     overuseRatio = localFaction.FuelRadonOveruseRatio;
                     break;
                 case ResourceType.FuelXenon:
-                    fuelName = "Xenon Fuel";
-                    fuelUse = "Xenon is a global resource required to run your officers, elites, and outguard.";
+                    fuelName = "氙燃料";
+                    fuelUse = "氙是一种全局资源，用于运行你的军官、精英和外卫部队。";
                     colorGood = "5bcbff";
                     colorTotal = "28a8e3";
                     consumed = localFaction.FuelXenonConsumption;

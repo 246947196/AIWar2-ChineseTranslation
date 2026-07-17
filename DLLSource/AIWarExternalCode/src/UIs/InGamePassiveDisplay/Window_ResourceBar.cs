@@ -492,12 +492,12 @@ namespace Arcen.AIW2.External
                     (ExternalConstants.Instance.FramesToWaitBeforeBrownoutStarts / 10 ) +
                     " 秒将导致<color=#cc8400>电压不足</color>。在<color=#cc8400>电压不足</color>期间，你所有的力场护盾将被禁用。当电力恢复时，它们需要 " +
                     ExternalConstants.Instance.SecondsToWaitBeforeBrownoutEnds +
-                    " 秒才能重新上线。\n\n点击此图标将显示能源使用和生产的详细分类。";
+                    " 秒才能重新上线。\n\n点击此图标将显示能量使用和生产的详细分类。";
                 Window_AtMouseTooltipPanelWide.bPanel.Instance.SetText( this.Element, text );
             }
             public override MouseHandlingResult HandleClick_Subclass( MouseHandlingInput input )
             {
-                Window_ModalSelfUpdatingTextWindow_Wide.Instance.Open( 0.5f, 2f, "当前能源生产和消耗", "关闭",
+                Window_ModalSelfUpdatingTextWindow_Wide.Instance.Open( 0.5f, 2f, "当前能量生产和消耗", "关闭",
                       delegate( ArcenDoubleCharacterBuffer Buffer ) { return GetEnergyData( Buffer ); } );
                 return MouseHandlingResult.None;
             }
@@ -521,7 +521,7 @@ namespace Arcen.AIW2.External
                     return false;
 
                 if ( forFaction.UI_EnergyGiftedFromMe > 0 )
-                    Buffer.Add( "我发送给其他帝国的能源：<color=#FFDE00>" ).AddNumberMoreReadable( forFaction.UI_EnergyGiftedFromMe ).Add( "</color>\n\n" );
+                    Buffer.Add( "我发送给其他帝国的能量：<color=#FFDE00>" ).AddNumberMoreReadable( forFaction.UI_EnergyGiftedFromMe ).Add( "</color>\n\n" );
 
                 workingPlanets.Clear();
                 foreach ( Planet planet in World_AIW2.Instance.Planets( false ) )
@@ -563,7 +563,7 @@ namespace Arcen.AIW2.External
 
                 if ( workingPlanets.Count > 0 )
                 {
-                    Buffer.Add( "每个星球消耗的能源：\n" );
+                    Buffer.Add( "每个星球消耗的能量：\n" );
                     for ( int i = 0; i < workingPlanets.Count; i++ )
                     {
                         KeyValuePair<Planet, int> pair = workingPlanets[i];
@@ -575,7 +575,7 @@ namespace Arcen.AIW2.External
 
                 if ( workingFleets.Count > 0 )
                 {
-                    Buffer.Add( "每个舰队消耗的能源：\n" );
+                    Buffer.Add( "每个舰队消耗的能量：\n" );
                     for ( int i = 0; i < workingFleets.Count; i++ )
                     {
                         KeyValuePair<Fleet, int> pair = workingFleets[i];
@@ -597,7 +597,7 @@ namespace Arcen.AIW2.External
 
                 if ( workingPlanets.Count > 0 )
                 {
-                    Buffer.Add( "每个星球生产的能源：\n" );
+                    Buffer.Add( "每个星球生产的能量：\n" );
                     workingPlanets.Sort( static delegate ( KeyValuePair<Planet, int> L, KeyValuePair<Planet, int> R )
                     {
                         int val = R.Value.CompareTo( L.Value ); //desc
@@ -616,7 +616,7 @@ namespace Arcen.AIW2.External
 
                 if ( forFaction.UI_EnergyGiftedToMe > 0 )
                 {
-                    Buffer.Add( "其他帝国发送给我的能源：<color=#e59400>" ).AddNumberMoreReadable( forFaction.UI_EnergyGiftedToMe ).Add( "</color>\n" );
+                    Buffer.Add( "其他帝国发送给我的能量：<color=#e59400>" ).AddNumberMoreReadable( forFaction.UI_EnergyGiftedToMe ).Add( "</color>\n" );
                     Buffer.Add( "\n\n" );
                 }
 
@@ -792,7 +792,7 @@ namespace Arcen.AIW2.External
                 if ( extraConsumed > 0 )
                 {
                     Buffer.Add( "\n额外 " ).Add( fuelName ).Add( " 因过去行为永久消耗：<color=#" ).Add( colorGood ).Add( ">" )
-                        .AddNumberMoreReadable( extraConsumed ).Add( "</color>\n<size=80%>通常永久消耗来自诸如入侵以联系外衛部队等行为。\n</size>" );
+                        .AddNumberMoreReadable( extraConsumed ).Add( "</color>\n<size=80%>通常永久消耗来自诸如入侵以联系外卫部队等行为。\n</size>" );
                 }
 
                 workingPlanets.Clear();
@@ -1248,11 +1248,11 @@ namespace Arcen.AIW2.External
                 if ( highestDifficulty.AIPAbsoluteFloor > startingAIP && aipTotal < highestDifficulty.AIPAbsoluteFloor )
                 {
                     tooltipBuffer.Add( "值得注意的是，您的起始 AIP 仅为 " ).Add( startingAIP ).Add( "，因此您获得的前 " ).Add(
-                        highestDifficulty.AIPAbsoluteFloor - startingAIP ).Add( " AIP 实际上是'免费的。'" );
+                        highestDifficulty.AIPAbsoluteFloor - startingAIP ).Add( " AIP 实际上是「免费的」。" );
                 }
 
                 tooltipBuffer.Add( "\n<color=#f97331>AIP 永不低于：" + aipNeverReducesBelow + "</color>" );
-                tooltipBuffer.Add( "\n无论 AIP 下限如何，都不会发生会导致 AIP 缩减到此金额以下的减少，或在低于此金额时缩减。" );
+                tooltipBuffer.Add( "\n无论 AIP 下限如何，都不会发生导致 AIP 减少到下限以下的情况。当 AIP 已经低于此金额时，也不会再减少。" );
                 //
 
                 tooltipBuffer.Add("\n");
@@ -1349,7 +1349,7 @@ namespace Arcen.AIW2.External
                         if ( change.Floor != FInt.Zero &&
                              change.Floor.IntValue > runningTotal.IntValue )
                         {
-                            floorOverride = " Floor (actual: " + runningTotal.IntValue + ")";
+                            floorOverride = " 下限（实际：" + runningTotal.IntValue + "）";
                             runningTotalForOutput = change.Floor;
                         }
                         if ( superterminalChange != FInt.Zero )
@@ -1744,7 +1744,7 @@ namespace Arcen.AIW2.External
                     total += pair.Value;
                 }
                 if ( total > 0 )
-                    Buffer.Add( "\nTotal " ).Add( forFaction.Resource1TextColorAndIcon.Length > 0 ? forFaction.Resource1TextColorAndIcon : World_AIW2.Instance.Resource1TextColorAndIcon ).Add( ": " + total ).Add( "\n" );
+                    Buffer.Add( "\n总计 " ).Add( forFaction.Resource1TextColorAndIcon.Length > 0 ? forFaction.Resource1TextColorAndIcon : World_AIW2.Instance.Resource1TextColorAndIcon ).Add( ": " + total ).Add( "\n" );
                 total = 0;
                 if ( factionBaseInfo.ScienceEarnedPerUnitType.Count > 0 )
                     Buffer.Add( "\n以下是你获取科技的方式：\n" );
@@ -1775,7 +1775,7 @@ namespace Arcen.AIW2.External
                     total += pair.Value;
                 }
                 if ( total > 0 )
-                    Buffer.Add( "\nTotal " ).Add( ArcenExternalUIUtilities.ScienceTextColorAndIcon ).Add( ": " + total );
+                    Buffer.Add( "\n总计 " ).Add( ArcenExternalUIUtilities.ScienceTextColorAndIcon ).Add( ": " + total );
 
                 return true;
             }
@@ -3244,7 +3244,7 @@ namespace Arcen.AIW2.External
                 Buffer.Add( "\t" ).Add( pair.Key.Name, "a1a1ff" ).Add( " — " );
                 if ( currentTier < 4 )
                 {
-                    string mineWord = minesUntilNextTier == 1 ? "座矿" : "座矿";
+                    string mineWord = minesUntilNextTier == 1 ? "处矿井" : "处矿井";
                     Buffer.Add( "您可以在此星球上再开采 " ).Add( minesUntilNextTier, "ffa1a1" ).Add( " " ).Add( mineWord );
                     if ( currentTier == 3 )
                         Buffer.Add( " 直到需要 4 级矿。矿井已深入超出想象；只有最极端的钻头才能到达剩余部分。\n" );

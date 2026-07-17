@@ -237,8 +237,8 @@
 			size_scale="3"
 			visuals_scale_multiplier="16"
 			collision_priority="100"
-			display_name="冲击巡逻艇"
-			display_name_for_sidebar="冲击巡逻艇"
+			display_name="震荡巡逻艇"
+			display_name_for_sidebar="震荡巡逻艇"
 			description="发射导弹,对装甲薄的目标造成巨大伤害。"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Concussion,Light" tags="ArkEmpireOptionGroup3,ArkSidekickOptionGroup3" custom_arkempire_fleetcap="32"
 			cost_for_ai_to_purchase="30" strength_multiplier="2"
@@ -270,8 +270,8 @@
 	</entity>
 	
 	<entity name="GhostConcussionCorvette" copy_from="ConcussionCorvette" thematic_groups="Strikecraft" 
-			albedo="0.7" display_name="幽灵冲击巡逻艇"  strength_multiplier="2.2" cost_for_ai_to_purchase="40"
-			display_name_for_sidebar="幽灵冲击巡逻艇" >
+			albedo="0.7" display_name="幽灵震荡巡逻艇"  strength_multiplier="2.2" cost_for_ai_to_purchase="40"
+			display_name_for_sidebar="幽灵震荡巡逻艇" >
 			
 		<fleet_membership name="CloakedMix" ship_cap_group="Strike" weight="100" cap="32"/>		
 		<ai_ship_group_membership name="GhostStrikecraft" weight="100"/>
@@ -528,7 +528,7 @@
 
 	<entity name="OutguardVanguard" copy_from="Vanguard" display_name="前哨先锋舰" thematic_groups="Strikecraft,Outguard,IsolatedHumanResistance"
 			display_name_for_sidebar="先锋舰" tags="LobarStrikecraft"	
-			description="脆弱但伤害极高的打击舰，擅长摧毁高装甲单位，尤其是剩余船体较多的目标"
+			description="速度慢但装甲厚重的单位，能使敌人受到更多伤害，使用虫洞后会暂时获得伤害抗性。"
 			tech_upgrades_that_benefit_me="Expatriate"
 			>
 	</entity>
@@ -597,8 +597,8 @@
 			visuals_scale_multiplier="8"
 			category="Ship" is_strikecraft="true"
 			collision_priority="100"
-			display_name="自动炮小型舱"
-			display_name_for_sidebar="自动炮"
+			display_name="机炮迷你舱"
+			display_name_for_sidebar="迷你舱"
 			description="快速、隐形且脆弱的蜂群舰，擅长围攻装甲较厚的单位"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Generalist,Light" tags="ArkEmpireOptionGroup1,ArkSidekickOptionGroup1" custom_arkempire_fleetcap="70"
 			cost_for_ai_to_purchase="14" strength_multiplier="1.4"
@@ -633,8 +633,8 @@
 		</system>
 	</entity>
   
-	<entity name="Gunbot" copy_from="AutocannonMinipod" display_name="炮艇" thematic_groups="Strikecraft" 
-			display_name_for_sidebar="炮艇"	
+	<entity name="Gunbot" copy_from="AutocannonMinipod" display_name="械卒" thematic_groups="Strikecraft" 
+			display_name_for_sidebar="械卒"	
 			description="快速且隐形的蜂群舰，耐久度极低但对厚装甲目标造成极高伤害"
 			hull_points="900" metal_cost="1000"  cost_for_ai_to_purchase="12"
 			>
@@ -814,7 +814,7 @@
 			size_scale="1.3"
 			visuals_scale_multiplier="14"
 			collision_priority="100"
-			display_name="重力舱"
+			display_name="反重力舱"
 			description="对高引擎功率单位极其危险，可用于加固重力场和牵引场薄弱的位置"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Medium,Disruptive"
 			cost_for_ai_to_purchase="31" strength_multiplier="1.6"
