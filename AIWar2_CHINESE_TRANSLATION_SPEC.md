@@ -514,6 +514,9 @@ ilpatch inspect "PatchedAssemblies\ArcenAIW2Visualization.dll" "起始行星归�
 - **部分字符串没翻到**：字典 key 与 DLL 内原文不一致（多/少空格、`\n`、标签差异）。用 `ilpatch inspect <dll> <子串>` 比对真实原文。
 - **游戏崩溃**：检查是否误翻了事件标识符或改动了非 `ldstr` 指令。
 - **部署位置**：核心 DLL 经 `ilpatch` 改完后，提交进仓库 `PatchedAssemblies/`（`.bak` 不入库），由 `deploy.ps1` 在部署时优先拷贝到游戏 `PatchedAssemblies/`，`AssemblyRedirector` 在加载前读取。无需手动放置（见 8.8）。
+- **部署时 deploy.ps1 报 `xxx 已存在` 或部署后翻译不生效**：`ilpatch patch` 在目标 DLL 被占用时会输出 `.new.dll` 而非直接覆盖。如果残留的 `.new.dll` 存在于 `AIWar2_Data\Managed\` 中，deploy.ps1 会优先检测并使用它（而非原始 DLL），导致部署了已损坏或错误版本的 DLL。修复：部署前删除 `AIWar2_Data\Managed\` 下所有 `.new.dll` 文件。
+- **ilpatch 在已汉化的 DLL 上重复运行**：`ilpatch patch` 按字典 key（英文原文）精确匹配 ldstr。如果 DLL 已被上一个 patch 替换为中文 ldstr，再次运行 `ilpatch patch` 时英文 key 找不到匹配，所有条目被跳过（无声失败）。`ilpatch extract` 在已汉化的 DLL 上运行会提取中文 ldstr 作为 key，生成的字典无法与英文原版 DLL 匹配。必须始终从游戏原版的英文 DLL 开始 patch。
+- **禁止用 PowerShell `>` 重定向提取二进制文件**：`git show <sha>:<path> > out.dll` 会损坏二进制文件（`>` 在 PowerShell 中默认用 UTF-16LE 编码写入，破坏 DLL PE 结构）。必须改用 `git checkout <sha> -- <path>` 或 `Copy-Item` 恢复二进制文件。
 
 #### 8.15.9 并行翻译（多代理分片）经验
 
