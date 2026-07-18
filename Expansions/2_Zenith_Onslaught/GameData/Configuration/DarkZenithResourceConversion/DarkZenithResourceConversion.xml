@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   
   <record name="Make Green" display_name="制造索米特" index="1" IsResourceCreation="true" CostInMetal="3000" GreenOutput="300">

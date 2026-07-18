@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   
   <record name="Make Green (player)" display_name="制造索米特" index="1" IsResourceCreation="true" CostInMetal="150" GreenOutput="80" ForPlayer="true">
@@ -38,15 +38,15 @@
   <record name="Build Strikecraft Tier (Mark 2) (player)" display_name="建造突袭舰编队（2型）" index="101" CostInMetal="3000" UnitTagToBuild="DZTierZeroBase" IsOffensive="true" MarkLevel="2" TakeFactionMarkLevelMinusThis="-1" NumberOfUnits="6" ForPlayer="true">
     </record>
 
-    <record name="Build Strikecraft Tier (Fortified) (player)" display_name="建造强化突袭舰编队" index="102" CostInMetal="2000" CostInBlue="180" UnitTagToBuild="DZTierZeroFortified" IsOffensive="true" MarkLevel="0" TakeFactionMarkLevelMinusThis="0" NumberOfUnits="5" ForPlayer="true" Description="强化单位需要切洛尼姆，拥有额外的防御系统">
+    <record name="Build Strikecraft Tier (Fortified) (player)" display_name="建造强化突袭舰编队" index="102" CostInMetal="2000" CostInBlue="180" UnitTagToBuild="DZTierZeroFortified" IsOffensive="true" MarkLevel="0" TakeFactionMarkLevelMinusThis="0" NumberOfUnits="5" ForPlayer="true" Description="强化舰船需要切洛尼姆，拥有额外的防御系统">
     </record>
-    <record name="Build Strikecraft Tier (Stout) (player)" display_name="建造坚固突袭舰编队" index="103" CostInMetal="2000" CostInGreen="180" UnitTagToBuild="DZTierZeroStout" IsOffensive="true" MarkLevel="0" TakeFactionMarkLevelMinusThis="0" NumberOfUnits="5" ForPlayer="true" Description="坚固单位需要索米特，更耐打">
+    <record name="Build Strikecraft Tier (Stout) (player)" display_name="建造坚固突袭舰编队" index="103" CostInMetal="2000" CostInGreen="180" UnitTagToBuild="DZTierZeroStout" IsOffensive="true" MarkLevel="0" TakeFactionMarkLevelMinusThis="0" NumberOfUnits="5" ForPlayer="true" Description="坚固舰船需要索米特，更耐打">
   </record>
-  <record name="Build Strikecraft Tier (Sinister) (player)" display_name="建造邪恶突袭舰编队" index="104" CostInMetal="2400" CostInBlack="180" UnitTagToBuild="DZTierZeroSinister" IsOffensive="true" MarkLevel="0" TakeFactionMarkLevelMinusThis="0" NumberOfUnits="5" ForPlayer="true" Description="邪恶单位需要斯克里思，拥有群体控制能力">
+  <record name="Build Strikecraft Tier (Sinister) (player)" display_name="建造邪恶突袭舰编队" index="104" CostInMetal="2400" CostInBlack="180" UnitTagToBuild="DZTierZeroSinister" IsOffensive="true" MarkLevel="0" TakeFactionMarkLevelMinusThis="0" NumberOfUnits="5" ForPlayer="true" Description="邪恶舰船需要斯克里思，拥有群体控制能力">
   </record>
-  <record name="Build Strikecraft Tier (Enraged) (player)" display_name="建造愤怒突袭舰编队" index="105" CostInMetal="2400" CostInRed="180" UnitTagToBuild="DZTierZeroEnraged" IsOffensive="true" MarkLevel="0" TakeFactionMarkLevelMinusThis="0" NumberOfUnits="5" ForPlayer="true" Description="愤怒单位需要伊祖米特，拥有额外武器">
+  <record name="Build Strikecraft Tier (Enraged) (player)" display_name="建造愤怒突袭舰编队" index="105" CostInMetal="2400" CostInRed="180" UnitTagToBuild="DZTierZeroEnraged" IsOffensive="true" MarkLevel="0" TakeFactionMarkLevelMinusThis="0" NumberOfUnits="5" ForPlayer="true" Description="愤怒舰船需要伊祖米特，拥有额外武器">
   </record>
-  <record name="Build Strikecraft Tier (Spirited) (player)" display_name="建造灵动突袭舰编队" index="106" CostInMetal="2000" CostInWhite="180" UnitTagToBuild="DZTierZeroSpirited" IsOffensive="true" MarkLevel="0" TakeFactionMarkLevelMinusThis="0" NumberOfUnits="5" ForPlayer="true" Description="灵动单位需要阿卡赫斯特，具备隐形和高速能力">
+  <record name="Build Strikecraft Tier (Spirited) (player)" display_name="建造灵动突袭舰编队" index="106" CostInMetal="2000" CostInWhite="180" UnitTagToBuild="DZTierZeroSpirited" IsOffensive="true" MarkLevel="0" TakeFactionMarkLevelMinusThis="0" NumberOfUnits="5" ForPlayer="true" Description="灵动舰船需要阿卡赫斯特，具备隐形和高速能力">
   </record>
   
   <record name="Build Guardian Tier (player)" display_name="建造守卫舰编队" index="110" CostInMetal="4000" UnitTagToBuild="DZTierOneBase" IsOffensive="true" MarkLevel="0" TakeFactionMarkLevelMinusThis="1" NumberOfUnits="4" ForPlayer="true">
@@ -54,15 +54,15 @@
    <record name="Build Guardian Tier (Mark 3) (player)" display_name="建造守卫舰编队（3型）" index="111" CostInMetal="6000" UnitTagToBuild="DZTierOneBase" IsOffensive="true" MarkLevel="3" TakeFactionMarkLevelMinusThis="-1" NumberOfUnits="5" ForPlayer="true">
     </record>
 
-    <record name="Build Guardian Tier (Fortified) (player)" display_name="建造强化守卫舰编队" index="112" CostInMetal="3600" CostInBlue="250" UnitTagToBuild="DZTierOneFortified" IsOffensive="true" MarkLevel="0" TakeFactionMarkLevelMinusThis="1" NumberOfUnits="3" ForPlayer="true" Description="强化单位需要切洛尼姆，拥有额外的防御系统">
+    <record name="Build Guardian Tier (Fortified) (player)" display_name="建造强化守卫舰编队" index="112" CostInMetal="3600" CostInBlue="250" UnitTagToBuild="DZTierOneFortified" IsOffensive="true" MarkLevel="0" TakeFactionMarkLevelMinusThis="1" NumberOfUnits="3" ForPlayer="true" Description="强化舰船需要切洛尼姆，拥有额外的防御系统">
     </record>
-    <record name="Build Guardian Tier (Stout) (player)" display_name="建造坚固守卫舰编队" index="113" CostInMetal="3600" CostInGreen="250" UnitTagToBuild="DZTierOneStout" IsOffensive="true" MarkLevel="0" TakeFactionMarkLevelMinusThis="1" NumberOfUnits="3" ForPlayer="true" Description="坚固单位需要索米特，更耐打">
+    <record name="Build Guardian Tier (Stout) (player)" display_name="建造坚固守卫舰编队" index="113" CostInMetal="3600" CostInGreen="250" UnitTagToBuild="DZTierOneStout" IsOffensive="true" MarkLevel="0" TakeFactionMarkLevelMinusThis="1" NumberOfUnits="3" ForPlayer="true" Description="坚固舰船需要索米特，更耐打">
   </record>
-  <record name="Build Guardian Tier (Sinister) (player)" display_name="建造邪恶守卫舰编队" index="114" CostInMetal="3600" CostInBlack="300" UnitTagToBuild="DZTierOneSinister" IsOffensive="true" MarkLevel="0" TakeFactionMarkLevelMinusThis="1" NumberOfUnits="3" ForPlayer="true" Description="邪恶单位需要斯克里思，拥有群体控制能力">
+  <record name="Build Guardian Tier (Sinister) (player)" display_name="建造邪恶守卫舰编队" index="114" CostInMetal="3600" CostInBlack="300" UnitTagToBuild="DZTierOneSinister" IsOffensive="true" MarkLevel="0" TakeFactionMarkLevelMinusThis="1" NumberOfUnits="3" ForPlayer="true" Description="邪恶舰船需要斯克里思，拥有群体控制能力">
   </record>
-  <record name="Build Guardian Tier (Enraged) (player)" display_name="建造愤怒守卫舰编队" index="115" CostInMetal="3600" CostInRed="300" UnitTagToBuild="DZTierOneEnraged" IsOffensive="true" MarkLevel="0" TakeFactionMarkLevelMinusThis="1" NumberOfUnits="3" ForPlayer="true" Description="愤怒单位需要伊祖米特，拥有额外武器">
+  <record name="Build Guardian Tier (Enraged) (player)" display_name="建造愤怒守卫舰编队" index="115" CostInMetal="3600" CostInRed="300" UnitTagToBuild="DZTierOneEnraged" IsOffensive="true" MarkLevel="0" TakeFactionMarkLevelMinusThis="1" NumberOfUnits="3" ForPlayer="true" Description="愤怒舰船需要伊祖米特，拥有额外武器">
   </record>
-  <record name="Build Guardian Tier (Spirited) (player)" display_name="建造灵动守卫舰编队" index="116" CostInMetal="3600" CostInWhite="250" UnitTagToBuild="DZTierOneSpirited" IsOffensive="true" MarkLevel="0" TakeFactionMarkLevelMinusThis="1" NumberOfUnits="3" ForPlayer="true" Description="灵动单位需要阿卡赫斯特，具备隐形和高速能力">
+  <record name="Build Guardian Tier (Spirited) (player)" display_name="建造灵动守卫舰编队" index="116" CostInMetal="3600" CostInWhite="250" UnitTagToBuild="DZTierOneSpirited" IsOffensive="true" MarkLevel="0" TakeFactionMarkLevelMinusThis="1" NumberOfUnits="3" ForPlayer="true" Description="灵动舰船需要阿卡赫斯特，具备隐形和高速能力">
     </record>
     
     <record name="Build Dire Tier (player)" display_name="建造恐怖舰编队" index="120" CostInMetal="10000" CostInBlue="300" CostInGreen="300" CostInWhite="300" UnitTagToBuild="DZTierTwoBase" IsOffensive="true" MarkLevel="0" TakeFactionMarkLevelMinusThis="2" NumberOfUnits="1" ForPlayer="true">
@@ -70,15 +70,15 @@
  <record name="Build Dire Tier (Mark 4) (player)" display_name="建造恐怖舰编队（4型）" index="121" CostInMetal="22000" CostInGreen="500" CostInBlue="500" CostInWhite="500" UnitTagToBuild="DZTierTwoBase" IsOffensive="true" MarkLevel="4" TakeFactionMarkLevelMinusThis="-1" NumberOfUnits="1" ForPlayer="true">
     </record>
 
-    <record name="Build Dire Tier (Fortified) (player)" display_name="建造强化恐怖舰编队" index="122" CostInMetal="20000" CostInBlue="500" UnitTagToBuild="DZTierTwoFortified" IsOffensive="true" MarkLevel="0" TakeFactionMarkLevelMinusThis="2" NumberOfUnits="1" ForPlayer="true" Description="强化单位需要切洛尼姆，拥有额外的防御系统">
+    <record name="Build Dire Tier (Fortified) (player)" display_name="建造强化恐怖舰编队" index="122" CostInMetal="20000" CostInBlue="500" UnitTagToBuild="DZTierTwoFortified" IsOffensive="true" MarkLevel="0" TakeFactionMarkLevelMinusThis="2" NumberOfUnits="1" ForPlayer="true" Description="强化舰船需要切洛尼姆，拥有额外的防御系统">
     </record>
-    <record name="Build Dire Tier (Stout) (player)" display_name="建造坚固恐怖舰编队" index="123" CostInMetal="20000" CostInGreen="500" UnitTagToBuild="DZTierTwoStout" IsOffensive="true" MarkLevel="0" TakeFactionMarkLevelMinusThis="2" NumberOfUnits="1" ForPlayer="true" Description="坚固单位需要索米特，更耐打">
+    <record name="Build Dire Tier (Stout) (player)" display_name="建造坚固恐怖舰编队" index="123" CostInMetal="20000" CostInGreen="500" UnitTagToBuild="DZTierTwoStout" IsOffensive="true" MarkLevel="0" TakeFactionMarkLevelMinusThis="2" NumberOfUnits="1" ForPlayer="true" Description="坚固舰船需要索米特，更耐打">
   </record>
-  <record name="Build Dire Tier (Sinister) (player)" display_name="建造邪恶恐怖舰编队" index="124" CostInMetal="25000" CostInBlack="500" UnitTagToBuild="DZTierTwoSinister" IsOffensive="true" MarkLevel="0" TakeFactionMarkLevelMinusThis="2" NumberOfUnits="1" ForPlayer="true" Description="邪恶单位需要斯克里思，拥有群体控制能力">
+  <record name="Build Dire Tier (Sinister) (player)" display_name="建造邪恶恐怖舰编队" index="124" CostInMetal="25000" CostInBlack="500" UnitTagToBuild="DZTierTwoSinister" IsOffensive="true" MarkLevel="0" TakeFactionMarkLevelMinusThis="2" NumberOfUnits="1" ForPlayer="true" Description="邪恶舰船需要斯克里思，拥有群体控制能力">
   </record>
-  <record name="Build Dire Tier (Enraged) (player)" display_name="建造愤怒恐怖舰编队" index="125" CostInMetal="25000" CostInRed="500" UnitTagToBuild="DZTierTwoEnraged" IsOffensive="true" MarkLevel="0" TakeFactionMarkLevelMinusThis="2" NumberOfUnits="1" ForPlayer="true" Description="愤怒单位需要伊祖米特，拥有额外武器">
+  <record name="Build Dire Tier (Enraged) (player)" display_name="建造愤怒恐怖舰编队" index="125" CostInMetal="25000" CostInRed="500" UnitTagToBuild="DZTierTwoEnraged" IsOffensive="true" MarkLevel="0" TakeFactionMarkLevelMinusThis="2" NumberOfUnits="1" ForPlayer="true" Description="愤怒舰船需要伊祖米特，拥有额外武器">
   </record>
-  <record name="Build Dire Tier (Spirited) (player)" display_name="建造灵动恐怖舰编队" index="126" CostInMetal="20000" CostInWhite="500" UnitTagToBuild="DZTierTwoSpirited" IsOffensive="true" MarkLevel="0" TakeFactionMarkLevelMinusThis="2" NumberOfUnits="1" ForPlayer="true" Description="灵动单位需要阿卡赫斯特，具备隐形和高速能力">
+  <record name="Build Dire Tier (Spirited) (player)" display_name="建造灵动恐怖舰编队" index="126" CostInMetal="20000" CostInWhite="500" UnitTagToBuild="DZTierTwoSpirited" IsOffensive="true" MarkLevel="0" TakeFactionMarkLevelMinusThis="2" NumberOfUnits="1" ForPlayer="true" Description="灵动舰船需要阿卡赫斯特，具备隐形和高速能力">
     </record>
 
     
@@ -95,17 +95,17 @@
   <record name="Build Exo Tier (Mark 7) (player)" display_name="建造外域舰编队（7型）" index="141" CostInMetal="50000" CostInBlue="700" CostInGreen="700" CostInWhite="700" CostInRed="700" CostInBlack="700" UnitTagToBuild="DZTierThreeBase" IsOffensive="true" MarkLevel="7" TakeFactionMarkLevelMinusThis="-1" NumberOfUnits="1" ForPlayer="true">
     </record>
 
-    <record name="Build Exo Tier (Fortified) (player)" display_name="建造强化外域舰编队" index="142" CostInMetal="35000" CostInBlue="1000" CostInGreen="500" CostInWhite="500" CostInRed="250" CostInBlack="250" UnitTagToBuild="DZTierThreeFortified" IsOffensive="true" MarkLevel="0" TakeFactionMarkLevelMinusThis="3" NumberOfUnits="1" ForPlayer="true" Description="强化单位需要切洛尼姆，拥有额外的防御系统">
+    <record name="Build Exo Tier (Fortified) (player)" display_name="建造强化外域舰编队" index="142" CostInMetal="35000" CostInBlue="1000" CostInGreen="500" CostInWhite="500" CostInRed="250" CostInBlack="250" UnitTagToBuild="DZTierThreeFortified" IsOffensive="true" MarkLevel="0" TakeFactionMarkLevelMinusThis="3" NumberOfUnits="1" ForPlayer="true" Description="强化舰船需要切洛尼姆，拥有额外的防御系统">
     </record>
-    <record name="Build Exo Tier (Stout) (player)" display_name="建造坚固外域舰编队" index="143" CostInMetal="35000" CostInGreen="500" CostInBlue="500" CostInWhite="1000" CostInRed="250" CostInBlack="250" UnitTagToBuild="DZTierThreeStout" IsOffensive="true" MarkLevel="0" TakeFactionMarkLevelMinusThis="3" NumberOfUnits="1" ForPlayer="true" Description="坚固单位需要索米特，更耐打">
+    <record name="Build Exo Tier (Stout) (player)" display_name="建造坚固外域舰编队" index="143" CostInMetal="35000" CostInGreen="500" CostInBlue="500" CostInWhite="1000" CostInRed="250" CostInBlack="250" UnitTagToBuild="DZTierThreeStout" IsOffensive="true" MarkLevel="0" TakeFactionMarkLevelMinusThis="3" NumberOfUnits="1" ForPlayer="true" Description="坚固舰船需要索米特，更耐打">
   </record>
 
- <record name="Build Exo Tier (Sinister) (player)" display_name="建造邪恶外域舰编队" index="144" CostInMetal="35000" CostInGreen="500" CostInBlue="500" CostInWhite="250" CostInRed="250" CostInBlack="1000" UnitTagToBuild="DZTierThreeSinister" IsOffensive="true" MarkLevel="0" TakeFactionMarkLevelMinusThis="3" NumberOfUnits="1" ForPlayer="true" Description="邪恶单位需要斯克里思，拥有群体控制能力">
+ <record name="Build Exo Tier (Sinister) (player)" display_name="建造邪恶外域舰编队" index="144" CostInMetal="35000" CostInGreen="500" CostInBlue="500" CostInWhite="250" CostInRed="250" CostInBlack="1000" UnitTagToBuild="DZTierThreeSinister" IsOffensive="true" MarkLevel="0" TakeFactionMarkLevelMinusThis="3" NumberOfUnits="1" ForPlayer="true" Description="邪恶舰船需要斯克里思，拥有群体控制能力">
   </record>
-  <record name="Build Exo Tier (Enraged) (player)" display_name="建造愤怒外域舰编队" index="145" CostInMetal="35000" CostInGreen="500" CostInBlue="500" CostInWhite="250" CostInRed="1000" CostInBlack="250" UnitTagToBuild="DZTierThreeEnraged" IsOffensive="true" MarkLevel="0" TakeFactionMarkLevelMinusThis="3" NumberOfUnits="1" ForPlayer="true" Description="愤怒单位需要伊祖米特，拥有额外武器">
+  <record name="Build Exo Tier (Enraged) (player)" display_name="建造愤怒外域舰编队" index="145" CostInMetal="35000" CostInGreen="500" CostInBlue="500" CostInWhite="250" CostInRed="1000" CostInBlack="250" UnitTagToBuild="DZTierThreeEnraged" IsOffensive="true" MarkLevel="0" TakeFactionMarkLevelMinusThis="3" NumberOfUnits="1" ForPlayer="true" Description="愤怒舰船需要伊祖米特，拥有额外武器">
   </record>
   
-  <record name="Build Exo Tier (Spirited) (player)" display_name="建造灵动外域舰编队" index="146" CostInMetal="35000" CostInGreen="500" CostInBlue="500" CostInWhite="1000" CostInRed="250" CostInBlack="250" UnitTagToBuild="DZTierThreeSpirited" IsOffensive="true" MarkLevel="0" TakeFactionMarkLevelMinusThis="3" NumberOfUnits="1" ForPlayer="true" Description="灵动单位需要阿卡赫斯特，具备隐形和高速能力">
+  <record name="Build Exo Tier (Spirited) (player)" display_name="建造灵动外域舰编队" index="146" CostInMetal="35000" CostInGreen="500" CostInBlue="500" CostInWhite="1000" CostInRed="250" CostInBlack="250" UnitTagToBuild="DZTierThreeSpirited" IsOffensive="true" MarkLevel="0" TakeFactionMarkLevelMinusThis="3" NumberOfUnits="1" ForPlayer="true" Description="灵动舰船需要阿卡赫斯特，具备隐形和高速能力">
     </record>
 
   

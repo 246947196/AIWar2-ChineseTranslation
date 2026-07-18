@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   <achievement name="These Feet Are Made For Roaming" api_key="FEET_ROAMING" description="在启用'游牧银河系'的情况下获胜。" condition_type="WinWithGalaxySettingEnabled" condition_related_strings="AllPlanetsNomadic" level="gold" />
@@ -11,9 +11,9 @@
  
    <achievement name="Cruise Control" api_key="CRUISE_CONTROL" description="通过入侵巡洋舰建造设施或从泽尼斯那里偷取来认领一艘巡洋舰。" condition_type="PerformHack" condition_related_strings="HackToGrantShipLine_Cruiser,HackToGrantShipLine_ZenithArchitrave_Portal,HackToGrantCruiser_DarkZenith" level="silver" />
  
- <achievement name="It's Borrowing, Not Stealing" api_key="NOT_STEALING" description="通过入侵黑暗泽尼斯图书馆偷取黑暗泽尼斯单位设计。" condition_type="PerformHack" condition_related_strings="HackToGrantShipLine_DarkZenith" level="silver" />
+ <achievement name="It's Borrowing, Not Stealing" api_key="NOT_STEALING" description="通过入侵黑暗泽尼斯图书馆偷取黑暗泽尼斯舰船设计。" condition_type="PerformHack" condition_related_strings="HackToGrantShipLine_DarkZenith" level="silver" />
   
-   <achievement name="Set Phasers To Stun" api_key="PHASERS_TO_STUN" description="通过入侵兵营偷取泽尼斯拱顶石单位设计。" condition_type="PerformHack" condition_related_strings="HackToGrantShipLine_ZenithArchitrave" level="silver" />
+   <achievement name="Set Phasers To Stun" api_key="PHASERS_TO_STUN" description="通过入侵兵营偷取泽尼斯拱顶石舰船设计。" condition_type="PerformHack" condition_related_strings="HackToGrantShipLine_ZenithArchitrave" level="silver" />
  
  
    <achievement name="Why Did It Have to Be Snakes?" api_key="HAVE_TO_BE_SNAKE" description="摧毁约尔蒙冈德。" condition_type="KillUnit" condition_related_strings="DZJormugandr" level="gold" />

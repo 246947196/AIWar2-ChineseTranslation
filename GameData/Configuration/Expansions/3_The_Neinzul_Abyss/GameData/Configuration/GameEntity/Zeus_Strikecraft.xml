@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 
 <root>
 
@@ -55,7 +55,7 @@
 			visuals_scale_multiplier="4.8"
 			category="Ship" is_strikecraft="true"
 			collision_priority="100"
-			description="一个速度缓慢、带有隐形装置的单位，能够不受阻碍地穿过力场。它能吞噬敌人，将敌人的废金属转化为可回收资源。"
+			description="一艘速度缓慢、带有隐形装置的舰船，能够不受阻碍地穿过力场。它能吞噬敌人，将敌人的废金属转化为可回收资源。"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Disruptive,Raid"
 			cost_for_ai_to_purchase="10"
 			hull_points="8200" shield_points="0" speed="Normal3"
@@ -144,7 +144,7 @@
 			visuals_scale_multiplier="6"
 			collision_priority="100"
 			display_name="隐形轰炸舰"
-			description="能连续发射威力强大、射程极远的等离子鱼雷，但造价昂贵且装填时间极长。它带有隐形装置，速度比同类单位更快，但也更加脆弱。"
+			description="能连续发射威力强大、射程极远的等离子鱼雷，但造价昂贵且装填时间极长。它带有隐形装置，速度比同类舰船更快，但也更加脆弱。"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Concussion,Raid"
 			cost_for_ai_to_purchase="120" strength_multiplier="2"
 			hull_points="4000" shield_points="0" speed="Normal3"
@@ -186,7 +186,7 @@
 			visuals_scale_multiplier="7"
 			collision_priority="100"
 			display_name="拦截舰"
-			description="通过惯性火箭击退小型单位进行掩护。抵抗其击退效果的单位将受到更多伤害。"
+			description="通过惯性火箭击退小型舰船进行掩护。抵抗其击退效果的舰船将受到更多伤害。"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Concussion,Medium"
 			cost_for_ai_to_purchase="66" strength_multiplier="1.1"
 			hull_points="9300" shield_points="0" speed="Normal2"

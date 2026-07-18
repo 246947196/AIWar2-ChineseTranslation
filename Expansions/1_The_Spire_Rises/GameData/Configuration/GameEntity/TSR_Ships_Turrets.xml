@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
-    <entity name="SubverterTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/SubverterTurret/SubverterTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/Turret" icon_overlay="Overlays1/Turret_Parasite" voice_group="Turret" category="Ship" is_turret="true" size_scale="1.02" visuals_scale_multiplier="2.04" collision_priority="1000" construction_priority="50" display_name="颠覆者炮台" display_name_for_sidebar="Subverter TUR" description="通常伤害较低，但随着目标变弱伤害会增加，还会将其僵尸化。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Technologist,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="72" strength_multiplier="1.2" hull_points="5400" shield_points="13500" speed="Immobile" metal_cost="6000" energy_consumption="450" armor_mm="80" albedo="0.45" mass_tx="2" fleet_membership="Planetary" ship_or_structure_explosion_sfx="Turret_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
+    <entity name="SubverterTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/SubverterTurret/SubverterTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/Turret" icon_overlay="Overlays1/Turret_Parasite" voice_group="Turret" category="Ship" is_turret="true" size_scale="1.02" visuals_scale_multiplier="2.04" collision_priority="1000" construction_priority="50" display_name="颠覆者炮台" display_name_for_sidebar="颠覆者炮台" description="通常伤害较低，但随着目标变弱伤害会增加，还会将其僵尸化。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Technologist,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="72" strength_multiplier="1.2" hull_points="5400" shield_points="13500" speed="Immobile" metal_cost="6000" energy_consumption="450" armor_mm="80" albedo="0.45" mass_tx="2" fleet_membership="Planetary" ship_or_structure_explosion_sfx="Turret_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
     <fleet_membership name="AddedToCommandStation" ship_cap_group="Turret" weight="100" cap="10" />
     <fleet_membership name="GeneralTurrets" ship_cap_group="Turret" weight="100" cap="16" />    
     <fleet_membership name="MonochromeTurrets" ship_cap_group="Turret" weight="100" cap="25" />
@@ -27,7 +27,7 @@
     <ai_ship_group_membership name="SubverterJammerTurrets" weight="100" />		
     </entity>
 
-    <entity name="EnsnarerSubverterTurret" copy_from="AISubverterTurret" display_name="诱捕者 AI 颠覆者炮台" thematic_groups="AITurret" display_name_for_sidebar="Ens Subverter TUR">
+    <entity name="EnsnarerSubverterTurret" copy_from="AISubverterTurret" display_name="诱捕者 AI 颠覆者炮台" thematic_groups="AITurret" display_name_for_sidebar="缠结颠覆者炮台">
     <ai_ship_group_membership name="EnsnarerTurrets_FreeforAll" weight="100" />
 	<ai_ship_group_membership name="EnsnarerSubverterTurrets" weight="100" />
 	<ai_ship_group_membership name="EnsnarerTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -43,13 +43,13 @@
     </system>
     </entity>
 
-  <entity name="HumanEnsnarerSubverterTurret" copy_from="SubverterTurret" display_name="诱捕者颠覆者炮台" thematic_groups="Turret" display_name_for_sidebar="Ens Subverter TUR">
+  <entity name="HumanEnsnarerSubverterTurret" copy_from="SubverterTurret" display_name="诱捕者颠覆者炮台" thematic_groups="Turret" display_name_for_sidebar="缠结颠覆者炮台">
     <fleet_membership name="EnsnarerTurrets" ship_cap_group="Turret" weight="100" cap="16" />
     <system name="T" display_name="牵引光束" category="Passive" tractor_range="Small5" tractor_count="20" tractor_count_added_per_mark="2" tractor_hits_albedo_less_than="0.5" tractor_hits_engine_gx_less_than="10">
     </system>
   </entity>
 
-    <entity name="GhostSubverterTurret" copy_from="AISubverterTurret" display_name="幽灵 AI 颠覆者炮台" thematic_groups="AITurret" display_name_for_sidebar="Ghost Subvert TUR">
+    <entity name="GhostSubverterTurret" copy_from="AISubverterTurret" display_name="幽灵 AI 颠覆者炮台" thematic_groups="AITurret" display_name_for_sidebar="幽灵颠覆者炮台">
     <ai_ship_group_membership name="GhostTurrets_FreeforAll" weight="100" />
 	<ai_ship_group_membership name="GhostSubverterTurrets" weight="100" />
 	<ai_ship_group_membership name="GhostTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -65,7 +65,7 @@
     </system>
     </entity>	
 
-    <entity name="MakeshiftTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/MakeshiftTurret/MakeshiftTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/Turret" icon_overlay="Overlays1/Turret_Makeshift" voice_group="Turret" category="Ship" is_turret="true" size_scale="1.02" visuals_scale_multiplier="5.95" collision_priority="1000" construction_priority="50" display_name="临时炮台" display_name_for_sidebar="Makeshift TUR" description="相当弱的炮台，但建造速度非常快，并且在有敌人时会不断有部件脱落，产生类似爆炸引擎的效果。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Raid,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="75" strength_multiplier="1.2" hull_points="5400" shield_points="13500" speed="Immobile" metal_cost="3000" energy_consumption="450" armor_mm="80" albedo="0.45" mass_tx="2" fleet_membership="Planetary" ship_or_structure_explosion_sfx="Turret_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
+    <entity name="MakeshiftTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/MakeshiftTurret/MakeshiftTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/Turret" icon_overlay="Overlays1/Turret_Makeshift" voice_group="Turret" category="Ship" is_turret="true" size_scale="1.02" visuals_scale_multiplier="5.95" collision_priority="1000" construction_priority="50" display_name="临时炮台" display_name_for_sidebar="临时炮台" description="相当弱的炮台，但建造速度非常快，并且在有敌人时会不断有部件脱落，产生类似爆炸引擎的效果。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Raid,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="75" strength_multiplier="1.2" hull_points="5400" shield_points="13500" speed="Immobile" metal_cost="3000" energy_consumption="450" armor_mm="80" albedo="0.45" mass_tx="2" fleet_membership="Planetary" ship_or_structure_explosion_sfx="Turret_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
     <fleet_membership name="AddedToCommandStation" ship_cap_group="Turret" weight="100" cap="10" />
     <fleet_membership name="GeneralTurrets" ship_cap_group="Turret" weight="100" cap="16" />    
     <fleet_membership name="MonochromeTurrets" ship_cap_group="Turret" weight="100" cap="25" />
@@ -86,7 +86,7 @@
     <ai_ship_group_membership name="MakeshiftBlitzkriegTurrets" weight="100" />		
     </entity>
 
-    <entity name="EnsnarerMakeshiftTurret" copy_from="AIMakeshiftTurret" display_name="诱捕者 AI 临时炮台" thematic_groups="AITurret" display_name_for_sidebar="Ens Makeshift TUR">
+    <entity name="EnsnarerMakeshiftTurret" copy_from="AIMakeshiftTurret" display_name="诱捕者 AI 临时炮台" thematic_groups="AITurret" display_name_for_sidebar="缠结临时炮台">
     <ai_ship_group_membership name="EnsnarerTurrets_FreeforAll" weight="100" />
 		<ai_ship_group_membership name="EnsnarerMakeshiftTurrets" weight="100" />
 		<ai_ship_group_membership name="EnsnarerTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -95,13 +95,13 @@
     </system>
     </entity>
 
-    <entity name="HumanEnsnarerMakeshiftTurret" copy_from="MakeshiftTurret" display_name="诱捕者临时炮台" thematic_groups="Turret" display_name_for_sidebar="Ens Makeshift TUR">
+    <entity name="HumanEnsnarerMakeshiftTurret" copy_from="MakeshiftTurret" display_name="诱捕者临时炮台" thematic_groups="Turret" display_name_for_sidebar="缠结临时炮台">
     <fleet_membership name="EnsnarerTurrets" ship_cap_group="Turret" weight="100" cap="16" />
   	<system name="T" display_name="牵引光束" category="Passive" tractor_range="Small5" tractor_count="20" tractor_count_added_per_mark="2" tractor_hits_albedo_less_than="0.5" tractor_hits_engine_gx_less_than="10">
     </system>
     </entity>
 
-    <entity name="GhostMakeshiftTurret" copy_from="AIMakeshiftTurret" display_name="幽灵 AI 临时炮台" thematic_groups="AITurret" display_name_for_sidebar="Ghost Makeshft TUR">
+    <entity name="GhostMakeshiftTurret" copy_from="AIMakeshiftTurret" display_name="幽灵 AI 临时炮台" thematic_groups="AITurret" display_name_for_sidebar="幽灵临时炮台">
     <ai_ship_group_membership name="GhostTurrets_FreeforAll" weight="100" />
 	<ai_ship_group_membership name="GhostMakeshiftTurrets" weight="100" />
 	<ai_ship_group_membership name="GhostTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -110,7 +110,7 @@
     </system>
     </entity>	
   
-    <entity name="CrusherTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/CrusherTurret/CrusherTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/MegaTurret" icon_overlay="Overlays1/MegaTurret_Gravity" voice_group="Turret" category="Ship" is_turret="true" size_scale="1.95" visuals_scale_multiplier="6.8" collision_priority="1000" construction_priority="50" display_name="粉碎者炮台" display_name_for_sidebar="Crusher TUR" description="大型炮台，会将敌人拉近，然后开始猛烈压缩它们。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Melee,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="1500" hull_points="37500" shield_points="52500" speed="Immobile" metal_cost="30000" energy_consumption="2250" armor_mm="120" albedo="0.45" mass_tx="3" fleet_membership="Planetary" ship_or_structure_explosion_sfx="StructureSmall_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
+    <entity name="CrusherTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/CrusherTurret/CrusherTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/MegaTurret" icon_overlay="Overlays1/MegaTurret_Gravity" voice_group="Turret" category="Ship" is_turret="true" size_scale="1.95" visuals_scale_multiplier="6.8" collision_priority="1000" construction_priority="50" display_name="粉碎者炮台" display_name_for_sidebar="粉碎者炮台" description="大型炮台，会将敌人拉近，然后开始猛烈压缩它们。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Melee,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="1500" hull_points="37500" shield_points="52500" speed="Immobile" metal_cost="30000" energy_consumption="2250" armor_mm="120" albedo="0.45" mass_tx="3" fleet_membership="Planetary" ship_or_structure_explosion_sfx="StructureSmall_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
     <fleet_membership name="AddedToCommandStation" ship_cap_group="Turret" weight="100" cap="2" />
     <fleet_membership name="GeneralTurrets" ship_cap_group="Turret" weight="100" cap="3" />
     <fleet_membership name="MonochromeTurrets" ship_cap_group="Turret" weight="100" cap="5" />
@@ -122,7 +122,7 @@
     </system>	
     </entity> 
 
-	<entity name="InterceptorTurret" tags="SniperTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/InterceptorTurret/InterceptorTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/Turret" icon_overlay="Overlays1/Turret_Interceptor" voice_group="Turret" category="Ship" is_turret="true" size_scale="1.1" visuals_scale_multiplier="2.38" collision_priority="1000" construction_priority="50" display_name="拦截者炮台" display_name_for_sidebar="Interceptor TUR" description="射程无限，对高速移动目标造成严重伤害。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Ambush,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="58" strength_multiplier="1.8" hull_points="2700" shield_points="6750" speed="Immobile" metal_cost="7500" energy_consumption="600" armor_mm="80" albedo="0.45" mass_tx="2" fleet_membership="Planetary" ship_or_structure_explosion_sfx="Turret_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" cannot_target_or_alert_ai_reinforcement_spots="true" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
+	<entity name="InterceptorTurret" tags="SniperTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/InterceptorTurret/InterceptorTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/Turret" icon_overlay="Overlays1/Turret_Interceptor" voice_group="Turret" category="Ship" is_turret="true" size_scale="1.1" visuals_scale_multiplier="2.38" collision_priority="1000" construction_priority="50" display_name="拦截者炮台" display_name_for_sidebar="拦截者炮台" description="射程无限，对高速移动目标造成严重伤害。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Ambush,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="58" strength_multiplier="1.8" hull_points="2700" shield_points="6750" speed="Immobile" metal_cost="7500" energy_consumption="600" armor_mm="80" albedo="0.45" mass_tx="2" fleet_membership="Planetary" ship_or_structure_explosion_sfx="Turret_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" cannot_target_or_alert_ai_reinforcement_spots="true" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
     <fleet_membership name="AddedToCommandStation" ship_cap_group="Turret" weight="100" cap="10" />
     <fleet_membership name="GeneralTurrets" ship_cap_group="Turret" weight="100" cap="16" />    
     <fleet_membership name="MonochromeTurrets" ship_cap_group="Turret" weight="100" cap="25" />
@@ -142,7 +142,7 @@
     <ai_ship_group_membership name="InterceptorHoloceneTurrets" weight="100" />	
     </entity>
 
-	<entity name="EnsnarerInterceptorTurret" copy_from="AIInterceptorTurret" display_name="诱捕者 AI 拦截者炮台" thematic_groups="AITurret" display_name_for_sidebar="Ens Intercept TUR">
+	<entity name="EnsnarerInterceptorTurret" copy_from="AIInterceptorTurret" display_name="诱捕者 AI 拦截者炮台" thematic_groups="AITurret" display_name_for_sidebar="缠结拦截者炮台">
     <ai_ship_group_membership name="EnsnarerTurrets_FreeforAll" weight="100" />
 	<ai_ship_group_membership name="EnsnarerInterceptorTurrets" weight="100" />
 	<ai_ship_group_membership name="EnsnarerTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -153,13 +153,13 @@
     </system>
     </entity>
 
-	<entity name="HumanEnsnarerInterceptorTurret" copy_from="InterceptorTurret" display_name="诱捕者拦截者炮台" thematic_groups="Turret" display_name_for_sidebar="Ens Intercept TUR">
+	<entity name="HumanEnsnarerInterceptorTurret" copy_from="InterceptorTurret" display_name="诱捕者拦截者炮台" thematic_groups="Turret" display_name_for_sidebar="缠结拦截者炮台">
     <fleet_membership name="EnsnarerTurrets" ship_cap_group="Turret" weight="100" cap="16" />
   	<system name="T" display_name="牵引光束" category="Passive" tractor_range="Small5" tractor_count="20" tractor_count_added_per_mark="2" tractor_hits_albedo_less_than="0.5" tractor_hits_engine_gx_less_than="10">
     </system>
     </entity>
 
-    <entity name="GhostInterceptorTurret" copy_from="AIInterceptorTurret" display_name="幽灵 AI 拦截者炮台" thematic_groups="AITurret" display_name_for_sidebar="Ghost Intercep TUR">
+    <entity name="GhostInterceptorTurret" copy_from="AIInterceptorTurret" display_name="幽灵 AI 拦截者炮台" thematic_groups="AITurret" display_name_for_sidebar="幽灵拦截者炮台">
     <ai_ship_group_membership name="GhostTurrets_FreeforAll" weight="100" />
 	<ai_ship_group_membership name="GhostInterceptorTurrets" weight="100" />
 	<ai_ship_group_membership name="GhostTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -178,7 +178,7 @@
     <system name="W1" damage_per_shot="80" />
     </entity> 	
 
-    <entity name="SeekerTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/SeekerTurret/SeekerTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/Turret" icon_overlay="Overlays1/Turret_Seeker" voice_group="Turret" category="Ship" is_turret="true" size_scale="1.02" visuals_scale_multiplier="1.36" collision_priority="1000" construction_priority="50" display_name="追踪者炮台" display_name_for_sidebar="Seeker TUR" description="远程炮台，发射适合攻击高质量目标的导弹。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Concussion,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="76" strength_multiplier="1.6" hull_points="4500" shield_points="7500" speed="Immobile" metal_cost="6000" energy_consumption="450" armor_mm="80" albedo="0.45" mass_tx="2" fleet_membership="Planetary" ship_or_structure_explosion_sfx="Turret_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
+    <entity name="SeekerTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/SeekerTurret/SeekerTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/Turret" icon_overlay="Overlays1/Turret_Seeker" voice_group="Turret" category="Ship" is_turret="true" size_scale="1.02" visuals_scale_multiplier="1.36" collision_priority="1000" construction_priority="50" display_name="追踪者炮台" display_name_for_sidebar="追踪者炮台" description="远程炮台，发射适合攻击高质量目标的导弹。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Concussion,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="76" strength_multiplier="1.6" hull_points="4500" shield_points="7500" speed="Immobile" metal_cost="6000" energy_consumption="450" armor_mm="80" albedo="0.45" mass_tx="2" fleet_membership="Planetary" ship_or_structure_explosion_sfx="Turret_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
     <fleet_membership name="AddedToCommandStation" ship_cap_group="Turret" weight="100" cap="10" />
     <fleet_membership name="GeneralTurrets" ship_cap_group="Turret" weight="100" cap="16" />    
     <fleet_membership name="MonochromeTurrets" ship_cap_group="Turret" weight="100" cap="25" />
@@ -201,7 +201,7 @@
     <ai_ship_group_membership name="NucleophilicSeekerTurrets" weight="100" />	
     </entity>
 	
-    <entity name="EnsnarerSeekerTurret" copy_from="AISeekerTurret" display_name="诱捕者 AI 追踪者炮台" thematic_groups="AITurret" display_name_for_sidebar="Ens Seeker TUR">
+    <entity name="EnsnarerSeekerTurret" copy_from="AISeekerTurret" display_name="诱捕者 AI 追踪者炮台" thematic_groups="AITurret" display_name_for_sidebar="缠结追踪者炮台">
     <ai_ship_group_membership name="EnsnarerTurrets_FreeforAll" weight="100" />
 	<ai_ship_group_membership name="EnsnarerSeekerTurrets" weight="100" />
 	<ai_ship_group_membership name="EnsnarerTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -215,13 +215,13 @@
     </system>
     </entity>
 	
-    <entity name="HumanEnsnarerSeekerTurret" copy_from="SeekerTurret" display_name="诱捕者追踪者炮台" thematic_groups="Turret" display_name_for_sidebar="Ens Seeker TUR">
+    <entity name="HumanEnsnarerSeekerTurret" copy_from="SeekerTurret" display_name="诱捕者追踪者炮台" thematic_groups="Turret" display_name_for_sidebar="缠结追踪者炮台">
     <fleet_membership name="EnsnarerTurrets" ship_cap_group="Turret" weight="100" cap="16" />
   	<system name="T" display_name="牵引光束" category="Passive" tractor_range="Small5" tractor_count="20" tractor_count_added_per_mark="2" tractor_hits_albedo_less_than="0.5" tractor_hits_engine_gx_less_than="10">
     </system>
     </entity>
 
-    <entity name="GhostSeekerTurret" copy_from="AISeekerTurret" display_name="幽灵 AI 追踪者炮台" thematic_groups="AITurret" display_name_for_sidebar="Ghost Seeker TUR">
+    <entity name="GhostSeekerTurret" copy_from="AISeekerTurret" display_name="幽灵 AI 追踪者炮台" thematic_groups="AITurret" display_name_for_sidebar="幽灵追踪者炮台">
     <ai_ship_group_membership name="GhostTurrets_FreeforAll" weight="100" />
 	<ai_ship_group_membership name="GhostSeekerTurrets" weight="100" />
 	<ai_ship_group_membership name="GhostTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -235,7 +235,7 @@
     </system>
     </entity> 	
 	
-    <entity name="MicroConcussiveMissileTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/MicroMissileTurret/MicroMissileTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/Turret" icon_overlay="Overlays1/Turret_MicroMissile" voice_group="Turret" category="Ship" is_turret="true" size_scale="1.02" visuals_scale_multiplier="1.53" collision_priority="1000" construction_priority="50" display_name="微型震荡导弹炮台" display_name_for_sidebar="Micro Concuss TUR" description="发射具有一定穿甲能力的震荡导弹。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Concussion,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="58" strength_multiplier="1.4" hull_points="4500" shield_points="7500" speed="Immobile" metal_cost="6000" energy_consumption="450" armor_mm="80" albedo="0.45" mass_tx="2" fleet_membership="Planetary" ship_or_structure_explosion_sfx="Turret_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
+    <entity name="MicroConcussiveMissileTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/MicroMissileTurret/MicroMissileTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/Turret" icon_overlay="Overlays1/Turret_MicroMissile" voice_group="Turret" category="Ship" is_turret="true" size_scale="1.02" visuals_scale_multiplier="1.53" collision_priority="1000" construction_priority="50" display_name="微型震荡导弹炮台" display_name_for_sidebar="微型震荡炮台" description="发射具有一定穿甲能力的震荡导弹。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Concussion,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="58" strength_multiplier="1.4" hull_points="4500" shield_points="7500" speed="Immobile" metal_cost="6000" energy_consumption="450" armor_mm="80" albedo="0.45" mass_tx="2" fleet_membership="Planetary" ship_or_structure_explosion_sfx="Turret_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
     <fleet_membership name="AddedToCommandStation" ship_cap_group="Turret" weight="100" cap="10" />
     <fleet_membership name="GeneralTurrets" ship_cap_group="Turret" weight="100" cap="16" />    
     <fleet_membership name="MonochromeTurrets" ship_cap_group="Turret" weight="100" cap="25" />
@@ -255,7 +255,7 @@
     <ai_ship_group_membership name="MicroConcussionJammerTurrets" weight="100" />	
     </entity>
 
-    <entity name="EnsnarerMicroConcussiveMissileTurret" copy_from="AIInterceptorTurret" display_name="诱捕者 AI 微型震荡导弹炮台" thematic_groups="AITurret" display_name_for_sidebar="Ens MicrConcus TUR">
+    <entity name="EnsnarerMicroConcussiveMissileTurret" copy_from="AIInterceptorTurret" display_name="诱捕者 AI 微型震荡导弹炮台" thematic_groups="AITurret" display_name_for_sidebar="缠结微型震荡炮台">
     <ai_ship_group_membership name="EnsnarerTurrets_FreeforAll" weight="100" />
 	<ai_ship_group_membership name="EnsnarerMicroConcussiveMissileTurrets" weight="100" />
 	<ai_ship_group_membership name="EnsnarerTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -266,13 +266,13 @@
     </system>
     </entity>
 
-    <entity name="HumanEnsnarerMicroConcussiveMissileTurret" copy_from="InterceptorTurret" display_name="诱捕者微型震荡导弹炮台" thematic_groups="Turret" display_name_for_sidebar="Ens MConcuss TUR">
+    <entity name="HumanEnsnarerMicroConcussiveMissileTurret" copy_from="InterceptorTurret" display_name="诱捕者微型震荡导弹炮台" thematic_groups="Turret" display_name_for_sidebar="缠结微型震荡炮台">
       <fleet_membership name="EnsnarerTurrets" ship_cap_group="Turret" weight="100" cap="16" />
       <system name="T" display_name="牵引光束" category="Passive" tractor_range="Small5" tractor_count="20" tractor_count_added_per_mark="2" tractor_hits_albedo_less_than="0.5" tractor_hits_engine_gx_less_than="10">
       </system>
     </entity>
 
-    <entity name="GhostMicroConcussiveMissileTurret" copy_from="AIInterceptorTurret" display_name="幽灵 AI 微型震荡导弹炮台" thematic_groups="AITurret" display_name_for_sidebar="Ghost MConcuss TUR">
+    <entity name="GhostMicroConcussiveMissileTurret" copy_from="AIInterceptorTurret" display_name="幽灵 AI 微型震荡导弹炮台" thematic_groups="AITurret" display_name_for_sidebar="幽灵微型震荡炮台">
     <ai_ship_group_membership name="GhostTurrets_FreeforAll" weight="100" />
 	<ai_ship_group_membership name="GhostMicroConcussiveMissileTurrets" weight="100" />
 	<ai_ship_group_membership name="GhostTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -283,7 +283,7 @@
     </system>
     </entity> 	
 
-    <entity name="EMPTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/EMPTurret/EMPTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/MegaTurret" icon_overlay="Overlays1/MegaTurret_Paralysis" voice_group="Turret" category="Ship" is_turret="true" size_scale="2.21" visuals_scale_multiplier="11.9" collision_priority="1000" construction_priority="50" display_name="电磁脉冲炮台" display_name_for_sidebar="EMP TUR" description="大型炮台，造成的伤害较小，但能大面积瘫痪敌人。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Ambush,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="1500" hull_points="37500" shield_points="52500" speed="Immobile" metal_cost="45000" energy_consumption="2250" armor_mm="120" albedo="0.7" mass_tx="3" fleet_membership="Planetary" ship_or_structure_explosion_sfx="StructureSmall_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
+    <entity name="EMPTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/EMPTurret/EMPTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/MegaTurret" icon_overlay="Overlays1/MegaTurret_Paralysis" voice_group="Turret" category="Ship" is_turret="true" size_scale="2.21" visuals_scale_multiplier="11.9" collision_priority="1000" construction_priority="50" display_name="电磁脉冲炮台" display_name_for_sidebar="电磁脉冲炮台" description="大型炮台，造成的伤害较小，但能大面积瘫痪敌人。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Ambush,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="1500" hull_points="37500" shield_points="52500" speed="Immobile" metal_cost="45000" energy_consumption="2250" armor_mm="120" albedo="0.7" mass_tx="3" fleet_membership="Planetary" ship_or_structure_explosion_sfx="StructureSmall_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
     <fleet_membership name="AddedToCommandStation" ship_cap_group="Turret" weight="100" cap="2" />
     <fleet_membership name="GeneralTurrets" ship_cap_group="Turret" weight="100" cap="3" />
     <fleet_membership name="MonochromeTurrets" ship_cap_group="Turret" weight="100" cap="5" />
@@ -295,7 +295,7 @@
     </system>	
     </entity>
 
-	<entity name="HoloceneMissileTurret" tags="SniperTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/HoloceneMissileTurret/HoloceneMissileTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/MegaTurret" icon_overlay="Overlays1/MegaTurret_Concussion" voice_group="Turret" category="Ship" is_turret="true" size_scale="2.04" visuals_scale_multiplier="8.07" collision_priority="1000" construction_priority="50" display_name="全新世导弹炮台" display_name_for_sidebar="Holocene TUR" description="大型炮台，缓慢发射巨大的爆炸性等离子导弹，覆盖整个行星。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Concussion,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="870" strength_multiplier="2.3" hull_points="19000" shield_points="25000" speed="Immobile" metal_cost="45000" energy_consumption="3000" armor_mm="120" albedo="0.45" mass_tx="3" fleet_membership="Planetary" ship_or_structure_explosion_sfx="StructureSmall_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
+	<entity name="HoloceneMissileTurret" tags="SniperTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/HoloceneMissileTurret/HoloceneMissileTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/MegaTurret" icon_overlay="Overlays1/MegaTurret_Concussion" voice_group="Turret" category="Ship" is_turret="true" size_scale="2.04" visuals_scale_multiplier="8.07" collision_priority="1000" construction_priority="50" display_name="全新世导弹炮台" display_name_for_sidebar="全新世炮台" description="大型炮台，缓慢发射巨大的爆炸性等离子导弹，覆盖整个行星。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Concussion,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="870" strength_multiplier="2.3" hull_points="19000" shield_points="25000" speed="Immobile" metal_cost="45000" energy_consumption="3000" armor_mm="120" albedo="0.45" mass_tx="3" fleet_membership="Planetary" ship_or_structure_explosion_sfx="StructureSmall_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
     <fleet_membership name="AddedToCommandStation" ship_cap_group="Turret" weight="100" cap="2" />
     <fleet_membership name="GeneralTurrets" ship_cap_group="Turret" weight="100" cap="3" />
     <fleet_membership name="MonochromeTurrets" ship_cap_group="Turret" weight="100" cap="5" />
@@ -319,7 +319,7 @@
     <ai_ship_group_membership name="SniperTurrets_InterceptorHoloceneTurrets" weight="100" />		
     </entity>
 
-	<entity name="EnsnarerHoloceneMissileTurret" copy_from="AIHoloceneMissileTurret" display_name="诱捕者 AI 全新世炮台" thematic_groups="AITurret" display_name_for_sidebar="Ens Holocene TUR">
+	<entity name="EnsnarerHoloceneMissileTurret" copy_from="AIHoloceneMissileTurret" display_name="诱捕者 AI 全新世炮台" thematic_groups="AITurret" display_name_for_sidebar="缠结全新世炮台">
     <ai_ship_group_membership name="EnsnarerTurrets_FreeforAll" weight="100" />
 	<ai_ship_group_membership name="EnsnarerHoloceneMissileTurrets" weight="100" />
 	<ai_ship_group_membership name="EnsnarerTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -332,13 +332,13 @@
     </system>
     </entity>
 
-	<entity name="HumanEnsnarerHoloceneMissileTurret" copy_from="HoloceneMissileTurret" display_name="诱捕者全新世炮台" thematic_groups="Turret" display_name_for_sidebar="Ens Holocene TUR">
+	<entity name="HumanEnsnarerHoloceneMissileTurret" copy_from="HoloceneMissileTurret" display_name="诱捕者全新世炮台" thematic_groups="Turret" display_name_for_sidebar="缠结全新世炮台">
     <fleet_membership name="EnsnarerTurrets" ship_cap_group="Turret" weight="100" cap="5" />
   	<system name="T" display_name="牵引光束" category="Passive" tractor_range="Small5" tractor_count="20" tractor_count_added_per_mark="2" tractor_hits_albedo_less_than="0.5" tractor_hits_engine_gx_less_than="10">
     </system>
     </entity>
 
-    <entity name="GhostHoloceneMissileTurret" copy_from="AIHoloceneMissileTurret" display_name="幽灵 AI 全新世炮台" thematic_groups="AITurret" display_name_for_sidebar="Ghost Holocene TUR">
+    <entity name="GhostHoloceneMissileTurret" copy_from="AIHoloceneMissileTurret" display_name="幽灵 AI 全新世炮台" thematic_groups="AITurret" display_name_for_sidebar="幽灵全新世炮台">
     <ai_ship_group_membership name="GhostTurrets_FreeforAll" weight="100" />
 	<ai_ship_group_membership name="GhostHoloceneMissileTurrets" weight="100" />
 	<ai_ship_group_membership name="GhostTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -351,7 +351,7 @@
     </system>
     </entity> 	
 
-    <entity name="TranslocatorTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/TranslocatorTurret/TranslocatorTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/Turret" icon_overlay="Overlays1/Turret_Translocator" voice_group="Turret" category="Ship" is_turret="true" size_scale="1.02" visuals_scale_multiplier="8.5" collision_priority="1000" construction_priority="50" display_name="传送器炮台" display_name_for_sidebar="Translocator TUR" description="还算不错的通用型炮台，还能将击中的敌人推开。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Disruptive,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="75" strength_multiplier="1.2" hull_points="5400" shield_points="13500" speed="Immobile" metal_cost="6000" energy_consumption="450" armor_mm="80" albedo="0.45" mass_tx="2" fleet_membership="Planetary" ship_or_structure_explosion_sfx="Turret_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
+    <entity name="TranslocatorTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/TranslocatorTurret/TranslocatorTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/Turret" icon_overlay="Overlays1/Turret_Translocator" voice_group="Turret" category="Ship" is_turret="true" size_scale="1.02" visuals_scale_multiplier="8.5" collision_priority="1000" construction_priority="50" display_name="传送器炮台" display_name_for_sidebar="传送器炮台" description="还算不错的通用型炮台，还能将击中的敌人推开。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Disruptive,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="75" strength_multiplier="1.2" hull_points="5400" shield_points="13500" speed="Immobile" metal_cost="6000" energy_consumption="450" armor_mm="80" albedo="0.45" mass_tx="2" fleet_membership="Planetary" ship_or_structure_explosion_sfx="Turret_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
     <fleet_membership name="AddedToCommandStation" ship_cap_group="Turret" weight="100" cap="10" />
     <fleet_membership name="GeneralTurrets" ship_cap_group="Turret" weight="100" cap="16" />    
     <fleet_membership name="MonochromeTurrets" ship_cap_group="Turret" weight="100" cap="25" />
@@ -373,7 +373,7 @@
     <ai_ship_group_membership name="TranslocatorFortifiedTeslaTurrets" weight="100" />		
     </entity>
 
-    <entity name="EnsnarerTranslocatorTurret" copy_from="AITranslocatorTurret" display_name="诱捕者 AI 传送器炮台" thematic_groups="AITurret" display_name_for_sidebar="Ens Translocat TUR">
+    <entity name="EnsnarerTranslocatorTurret" copy_from="AITranslocatorTurret" display_name="诱捕者 AI 传送器炮台" thematic_groups="AITurret" display_name_for_sidebar="缠结传送器炮台">
     <ai_ship_group_membership name="EnsnarerTurrets_FreeforAll" weight="100" />
 	<ai_ship_group_membership name="EnsnarerTranslocatorTurrets" weight="100" />
 	<ai_ship_group_membership name="EnsnarerTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -385,13 +385,13 @@
     </system>
     </entity>
 
-    <entity name="HumanEnsnarerTranslocatorTurret" copy_from="TranslocatorTurret" display_name="诱捕者传送器炮台" thematic_groups="Turret" display_name_for_sidebar="Ens Translocat TUR">
+    <entity name="HumanEnsnarerTranslocatorTurret" copy_from="TranslocatorTurret" display_name="诱捕者传送器炮台" thematic_groups="Turret" display_name_for_sidebar="缠结传送器炮台">
     <fleet_membership name="EnsnarerTurrets" ship_cap_group="Turret" weight="100" cap="16" />
   	<system name="T" display_name="牵引光束" category="Passive" tractor_range="Small5" tractor_count="20" tractor_count_added_per_mark="2" tractor_hits_albedo_less_than="0.5" tractor_hits_engine_gx_less_than="10">
     </system>
     </entity>
 
-    <entity name="GhostTranslocatorTurret" copy_from="AITranslocatorTurret" display_name="幽灵 AI 传送器炮台" thematic_groups="AITurret" display_name_for_sidebar="Ghost Transloc TUR">
+    <entity name="GhostTranslocatorTurret" copy_from="AITranslocatorTurret" display_name="幽灵 AI 传送器炮台" thematic_groups="AITurret" display_name_for_sidebar="幽灵传送器炮台">
     <ai_ship_group_membership name="GhostTurrets_FreeforAll" weight="100" />
 	<ai_ship_group_membership name="GhostTranslocatorTurrets" weight="100" />
 	<ai_ship_group_membership name="GhostTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -403,7 +403,7 @@
     </system>
     </entity> 	
 
-    <entity name="JammerTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/JammerTurret/JammerTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/Turret" icon_overlay="Overlays1/Turret_Jammer" voice_group="Turret" category="Ship" is_turret="true" size_scale="1.1" visuals_scale_multiplier="6.8" collision_priority="1000" construction_priority="50" display_name="干扰器炮台" display_name_for_sidebar="Jammer TUR" description="伤害一般，但能干扰敌人武器，使其射速明显减慢。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Disruptive,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="75" strength_multiplier="1.2" hull_points="5400" shield_points="13500" speed="Immobile" metal_cost="6000" energy_consumption="450" armor_mm="80" albedo="0.45" mass_tx="2" fleet_membership="Planetary" ship_or_structure_explosion_sfx="Turret_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
+    <entity name="JammerTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/JammerTurret/JammerTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/Turret" icon_overlay="Overlays1/Turret_Jammer" voice_group="Turret" category="Ship" is_turret="true" size_scale="1.1" visuals_scale_multiplier="6.8" collision_priority="1000" construction_priority="50" display_name="干扰器炮台" display_name_for_sidebar="干扰器炮台" description="伤害一般，但能干扰敌人武器，使其射速明显减慢。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Disruptive,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="75" strength_multiplier="1.2" hull_points="5400" shield_points="13500" speed="Immobile" metal_cost="6000" energy_consumption="450" armor_mm="80" albedo="0.45" mass_tx="2" fleet_membership="Planetary" ship_or_structure_explosion_sfx="Turret_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
     <fleet_membership name="AddedToCommandStation" ship_cap_group="Turret" weight="100" cap="10" />
     <fleet_membership name="GeneralTurrets" ship_cap_group="Turret" weight="100" cap="16" />    
     <fleet_membership name="MonochromeTurrets" ship_cap_group="Turret" weight="100" cap="25" />
@@ -426,7 +426,7 @@
     <ai_ship_group_membership name="SubverterJammerTurrets" weight="100" />		
     </entity>
 	
-    <entity name="EnsnarerJammerTurret" copy_from="AIJammerTurret" display_name="诱捕者 AI 干扰器炮台" thematic_groups="AITurret" display_name_for_sidebar="Ens Jammer TUR">
+    <entity name="EnsnarerJammerTurret" copy_from="AIJammerTurret" display_name="诱捕者 AI 干扰器炮台" thematic_groups="AITurret" display_name_for_sidebar="缠结干扰器炮台">
     <ai_ship_group_membership name="EnsnarerTurrets_FreeforAll" weight="100" />
 	<ai_ship_group_membership name="EnsnarerJammerTurrets" weight="100" />
 	<ai_ship_group_membership name="EnsnarerTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -441,13 +441,13 @@
     </system>
     </entity>
 	
-    <entity name="HumanEnsnarerJammerTurret" copy_from="JammerTurret" display_name="诱捕者干扰器炮台" thematic_groups="Turret" display_name_for_sidebar="Ens Jammer TUR">
+    <entity name="HumanEnsnarerJammerTurret" copy_from="JammerTurret" display_name="诱捕者干扰器炮台" thematic_groups="Turret" display_name_for_sidebar="缠结干扰器炮台">
     <fleet_membership name="EnsnarerTurrets" ship_cap_group="Turret" weight="100" cap="16" />
   	<system name="T" display_name="牵引光束" category="Passive" tractor_range="Small5" tractor_count="20" tractor_count_added_per_mark="2" tractor_hits_albedo_less_than="0.5" tractor_hits_engine_gx_less_than="10">
     </system>
     </entity>
 
-    <entity name="GhostJammerTurret" copy_from="AIJammerTurret" display_name="幽灵 AI 干扰器炮台" thematic_groups="AITurret" display_name_for_sidebar="Ghost Jammer TUR">
+    <entity name="GhostJammerTurret" copy_from="AIJammerTurret" display_name="幽灵 AI 干扰器炮台" thematic_groups="AITurret" display_name_for_sidebar="幽灵干扰器炮台">
     <ai_ship_group_membership name="GhostTurrets_FreeforAll" weight="100" />
 	<ai_ship_group_membership name="GhostJammerTurrets" weight="100" />
 	<ai_ship_group_membership name="GhostTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -462,7 +462,7 @@
     </system>
     </entity> 	
 
-    <entity name="FuseballTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/FuseballTurret/FuseballTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/MegaTurret" icon_overlay="Overlays1/MegaTurret_Fuseball" voice_group="Turret" category="Ship" is_turret="true" size_scale="2.3" visuals_scale_multiplier="3.82" collision_priority="1000" construction_priority="50" display_name="熔球炮台" display_name_for_sidebar="Fuseball TUR" description="大型炮台，发射能造成高伤害并能绕过大多数护盾的能量弹。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Fusion,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="870" strength_multiplier="2.5" hull_points="25000" shield_points="35000" speed="Immobile" metal_cost="45000" energy_consumption="2250" armor_mm="120" albedo="0.45" mass_tx="3" fleet_membership="Planetary" ship_or_structure_explosion_sfx="StructureSmall_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
+    <entity name="FuseballTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/FuseballTurret/FuseballTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/MegaTurret" icon_overlay="Overlays1/MegaTurret_Fuseball" voice_group="Turret" category="Ship" is_turret="true" size_scale="2.3" visuals_scale_multiplier="3.82" collision_priority="1000" construction_priority="50" display_name="熔球炮台" display_name_for_sidebar="熔球炮台" description="大型炮台，发射能造成高伤害并能绕过大多数护盾的能量弹。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Fusion,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="870" strength_multiplier="2.5" hull_points="25000" shield_points="35000" speed="Immobile" metal_cost="45000" energy_consumption="2250" armor_mm="120" albedo="0.45" mass_tx="3" fleet_membership="Planetary" ship_or_structure_explosion_sfx="StructureSmall_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
     <fleet_membership name="AddedToCommandStation" ship_cap_group="Turret" weight="100" cap="2" />
     <fleet_membership name="GeneralTurrets" ship_cap_group="Turret" weight="100" cap="3" />
     <fleet_membership name="MonochromeTurrets" ship_cap_group="Turret" weight="100" cap="5" />
@@ -481,7 +481,7 @@
     <ai_ship_group_membership name="SubverterFuseballTurrets" weight="100" />	
     </entity>
 	
-    <entity name="EnsnarerFuseballTurret" copy_from="AIFuseballTurret" display_name="诱捕者 AI 熔球炮台" thematic_groups="AITurret" display_name_for_sidebar="Ens Fuseball TUR">
+    <entity name="EnsnarerFuseballTurret" copy_from="AIFuseballTurret" display_name="诱捕者 AI 熔球炮台" thematic_groups="AITurret" display_name_for_sidebar="缠结熔球炮台">
     <ai_ship_group_membership name="EnsnarerTurrets_FreeforAll" weight="100" />
 	<ai_ship_group_membership name="EnsnarerFuseballTurrets" weight="100" />
 	<ai_ship_group_membership name="EnsnarerTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -491,13 +491,13 @@
     </system>
     </entity>
 	
-    <entity name="HumanEnsnarerFuseballTurret" copy_from="FuseballTurret" display_name="诱捕者熔球炮台" thematic_groups="Turret" display_name_for_sidebar="Ens Fuseball TUR">
+    <entity name="HumanEnsnarerFuseballTurret" copy_from="FuseballTurret" display_name="诱捕者熔球炮台" thematic_groups="Turret" display_name_for_sidebar="缠结熔球炮台">
     <fleet_membership name="EnsnarerTurrets" ship_cap_group="Turret" weight="100" cap="5" />
   	<system name="T" display_name="牵引光束" category="Passive" tractor_range="Small5" tractor_count="20" tractor_count_added_per_mark="2" tractor_hits_albedo_less_than="0.5" tractor_hits_engine_gx_less_than="10">
     </system>
     </entity>
 
-    <entity name="GhostFuseballTurret" copy_from="AIFuseballTurret" display_name="幽灵 AI 熔球炮台" thematic_groups="AITurret" display_name_for_sidebar="Ghost Fuseball TUR">
+    <entity name="GhostFuseballTurret" copy_from="AIFuseballTurret" display_name="幽灵 AI 熔球炮台" thematic_groups="AITurret" display_name_for_sidebar="幽灵熔球炮台">
     <ai_ship_group_membership name="GhostTurrets_FreeforAll" weight="100" />
 	<ai_ship_group_membership name="GhostFuseballTurrets" weight="100" />
 	<ai_ship_group_membership name="GhostTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -507,7 +507,7 @@
     </system>
     </entity> 	
 
-    <entity name="ImploderTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/ImploderTurret/ImploderTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/Turret" icon_overlay="Overlays1/Turret_Imploder" voice_group="Turret" category="Ship" is_turret="true" size_scale="1.02" visuals_scale_multiplier="5.95" collision_priority="1000" construction_priority="50" display_name="内爆者炮台" display_name_for_sidebar="Imploder TUR" description="伤害有些低，但目标越健康，对其船体造成的伤害就越大。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Fusion,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="70" strength_multiplier="1.2" hull_points="5400" shield_points="13500" speed="Immobile" metal_cost="6000" energy_consumption="450" armor_mm="80" albedo="0.45" mass_tx="2" fleet_membership="Planetary" ship_or_structure_explosion_sfx="Turret_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
+    <entity name="ImploderTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/ImploderTurret/ImploderTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/Turret" icon_overlay="Overlays1/Turret_Imploder" voice_group="Turret" category="Ship" is_turret="true" size_scale="1.02" visuals_scale_multiplier="5.95" collision_priority="1000" construction_priority="50" display_name="内爆者炮台" display_name_for_sidebar="内爆器炮台" description="伤害有些低，但目标越健康，对其船体造成的伤害就越大。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Fusion,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="70" strength_multiplier="1.2" hull_points="5400" shield_points="13500" speed="Immobile" metal_cost="6000" energy_consumption="450" armor_mm="80" albedo="0.45" mass_tx="2" fleet_membership="Planetary" ship_or_structure_explosion_sfx="Turret_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
     <fleet_membership name="AddedToCommandStation" ship_cap_group="Turret" weight="100" cap="10" />
     <fleet_membership name="GeneralTurrets" ship_cap_group="Turret" weight="100" cap="16" />    
     <fleet_membership name="MonochromeTurrets" ship_cap_group="Turret" weight="100" cap="25" />
@@ -529,7 +529,7 @@
     <ai_ship_group_membership name="MLRSImploderTurrets" weight="100" />		
     </entity>
 	
-    <entity name="EnsnarerImploderTurret" copy_from="AIImploderTurret" display_name="诱捕者 AI 内爆者炮台" thematic_groups="AITurret" display_name_for_sidebar="Ens Imploder TUR">
+    <entity name="EnsnarerImploderTurret" copy_from="AIImploderTurret" display_name="诱捕者 AI 内爆者炮台" thematic_groups="AITurret" display_name_for_sidebar="缠结内爆器炮台">
     <ai_ship_group_membership name="EnsnarerTurrets_FreeforAll" weight="100" />
 	<ai_ship_group_membership name="EnsnarerImploderTurrets" weight="100" />
 	<ai_ship_group_membership name="EnsnarerTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -542,13 +542,13 @@
     </system>
     </entity>
 	
-    <entity name="HumanEnsnarerImploderTurret" copy_from="ImploderTurret" display_name="诱捕者内爆者炮台" thematic_groups="Turret" display_name_for_sidebar="Ens Imploder TUR">
+    <entity name="HumanEnsnarerImploderTurret" copy_from="ImploderTurret" display_name="诱捕者内爆者炮台" thematic_groups="Turret" display_name_for_sidebar="缠结内爆器炮台">
     <fleet_membership name="EnsnarerTurrets" ship_cap_group="Turret" weight="100" cap="16" />
   	<system name="T" display_name="牵引光束" category="Passive" tractor_range="Small5" tractor_count="20" tractor_count_added_per_mark="2" tractor_hits_albedo_less_than="0.5" tractor_hits_engine_gx_less_than="10">
     </system>
     </entity>
 
-    <entity name="GhostImploderTurret" copy_from="AIImploderTurret" display_name="幽灵 AI 内爆者炮台" thematic_groups="AITurret" display_name_for_sidebar="Ghost Imploder TUR">
+    <entity name="GhostImploderTurret" copy_from="AIImploderTurret" display_name="幽灵 AI 内爆者炮台" thematic_groups="AITurret" display_name_for_sidebar="幽灵内爆器炮台">
     <ai_ship_group_membership name="GhostTurrets_FreeforAll" weight="100" />
 	<ai_ship_group_membership name="GhostImploderTurrets" weight="100" />
 	<ai_ship_group_membership name="GhostTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -561,7 +561,7 @@
     </system>
     </entity> 	
 
-    <entity name="FusionTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/FusionTurret/FusionTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/Turret" icon_overlay="Overlays1/Turret_Fusion" voice_group="Turret" category="Ship" is_turret="true" size_scale="1.02" visuals_scale_multiplier="2.38" collision_priority="1000" construction_priority="50" display_name="散射炮台" display_name_for_sidebar="Dispersion TUR" description="射速快，对个人护盾造成巨大伤害，但对护盾外的伤害很低。是很棒的支援炮台。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Fusion,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="75" strength_multiplier="1.2" hull_points="5400" shield_points="13500" speed="Immobile" metal_cost="6000" energy_consumption="450" armor_mm="80" albedo="0.45" mass_tx="2" fleet_membership="Planetary" ship_or_structure_explosion_sfx="Turret_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
+    <entity name="FusionTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/FusionTurret/FusionTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/Turret" icon_overlay="Overlays1/Turret_Fusion" voice_group="Turret" category="Ship" is_turret="true" size_scale="1.02" visuals_scale_multiplier="2.38" collision_priority="1000" construction_priority="50" display_name="散射炮台" display_name_for_sidebar="散射炮台" description="射速快，对个人护盾造成巨大伤害，但对护盾外的伤害很低。是很棒的支援炮台。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Fusion,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="75" strength_multiplier="1.2" hull_points="5400" shield_points="13500" speed="Immobile" metal_cost="6000" energy_consumption="450" armor_mm="80" albedo="0.45" mass_tx="2" fleet_membership="Planetary" ship_or_structure_explosion_sfx="Turret_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
     <fleet_membership name="AddedToCommandStation" ship_cap_group="Turret" weight="100" cap="10" />
     <fleet_membership name="GeneralTurrets" ship_cap_group="Turret" weight="100" cap="16" />    
     <fleet_membership name="MonochromeTurrets" ship_cap_group="Turret" weight="100" cap="25" />
@@ -580,7 +580,7 @@
     <ai_ship_group_membership name="SubverterFusionTurrets" weight="100" />	
     </entity>
 	
-    <entity name="EnsnarerFusionTurret" copy_from="AIFusionTurret" display_name="诱捕者 AI 散射炮台" thematic_groups="AITurret" display_name_for_sidebar="Ens Dispersion TUR">
+    <entity name="EnsnarerFusionTurret" copy_from="AIFusionTurret" display_name="诱捕者 AI 散射炮台" thematic_groups="AITurret" display_name_for_sidebar="缠结散射炮台">
     <ai_ship_group_membership name="EnsnarerTurrets_FreeforAll" weight="100" />
 	<ai_ship_group_membership name="EnsnarerFusionTurrets" weight="100" />
 	<ai_ship_group_membership name="EnsnarerTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -590,13 +590,13 @@
     </system>
     </entity>
 	
-    <entity name="HumanEnsnarerFusionTurret" copy_from="FusionTurret" display_name="诱捕者散射炮台" thematic_groups="Turret" display_name_for_sidebar="Ens Dispersion TUR">
+    <entity name="HumanEnsnarerFusionTurret" copy_from="FusionTurret" display_name="诱捕者散射炮台" thematic_groups="Turret" display_name_for_sidebar="缠结散射炮台">
     <fleet_membership name="EnsnarerTurrets" ship_cap_group="Turret" weight="100" cap="16" />
   	<system name="T" display_name="牵引光束" category="Passive" tractor_range="Small5" tractor_count="20" tractor_count_added_per_mark="2" tractor_hits_albedo_less_than="0.5" tractor_hits_engine_gx_less_than="10">
     </system>
     </entity>
 
-    <entity name="GhostFusionTurret" copy_from="AIFusionTurret" display_name="幽灵 AI 散射炮台" thematic_groups="AITurret" display_name_for_sidebar="Ghost Dispers TUR">
+    <entity name="GhostFusionTurret" copy_from="AIFusionTurret" display_name="幽灵 AI 散射炮台" thematic_groups="AITurret" display_name_for_sidebar="幽灵散射炮台">
     <ai_ship_group_membership name="GhostTurrets_FreeforAll" weight="100" />
 	<ai_ship_group_membership name="GhostFusionTurrets" weight="100" />
 	<ai_ship_group_membership name="GhostTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -606,7 +606,7 @@
     </system>
     </entity> 	
 
-    <entity name="BlasterTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/BlasterTurret/BlasterTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/Turret" icon_overlay="Overlays1/Turret_Blaster" voice_group="Turret" category="Ship" is_turret="true" size_scale="1.02" visuals_scale_multiplier="6.8" collision_priority="1000" construction_priority="50" display_name="爆破者炮台" display_name_for_sidebar="Blaster TUR" description="坚实的全能型炮台，造成的伤害比普通炮台高，但没有额外加成或特殊效果。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Generalist,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="80" strength_multiplier="1.2" hull_points="5400" shield_points="13500" speed="Immobile" metal_cost="6000" energy_consumption="450" armor_mm="80" albedo="0.45" mass_tx="2" fleet_membership="Planetary" ship_or_structure_explosion_sfx="Turret_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
+    <entity name="BlasterTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/BlasterTurret/BlasterTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/Turret" icon_overlay="Overlays1/Turret_Blaster" voice_group="Turret" category="Ship" is_turret="true" size_scale="1.02" visuals_scale_multiplier="6.8" collision_priority="1000" construction_priority="50" display_name="爆破者炮台" display_name_for_sidebar="爆破炮台" description="坚实的全能型炮台，造成的伤害比普通炮台高，但没有额外加成或特殊效果。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Generalist,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="80" strength_multiplier="1.2" hull_points="5400" shield_points="13500" speed="Immobile" metal_cost="6000" energy_consumption="450" armor_mm="80" albedo="0.45" mass_tx="2" fleet_membership="Planetary" ship_or_structure_explosion_sfx="Turret_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
     <fleet_membership name="AddedToCommandStation" ship_cap_group="Turret" weight="100" cap="10" />
     <fleet_membership name="GeneralTurrets" ship_cap_group="Turret" weight="100" cap="16" />    
     <fleet_membership name="MonochromeTurrets" ship_cap_group="Turret" weight="100" cap="25" />
@@ -629,7 +629,7 @@
     <ai_ship_group_membership name="ShredderBlasterTurrets" weight="100" />	
     </entity>
 	
-    <entity name="EnsnarerBlasterTurret" copy_from="AIBlasterTurret" display_name="诱捕者 AI 爆破者炮台" thematic_groups="AITurret" display_name_for_sidebar="Ens Blaster TUR">
+    <entity name="EnsnarerBlasterTurret" copy_from="AIBlasterTurret" display_name="诱捕者 AI 爆破者炮台" thematic_groups="AITurret" display_name_for_sidebar="缠结爆破炮台">
     <ai_ship_group_membership name="EnsnarerTurrets_FreeforAll" weight="100" />
 	<ai_ship_group_membership name="EnsnarerBlasterTurrets" weight="100" />
 	<ai_ship_group_membership name="EnsnarerTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -644,13 +644,13 @@
     </system>
     </entity>
 	
-    <entity name="HumanEnsnarerBlasterTurret" copy_from="BlasterTurret" display_name="诱捕者爆破者炮台" thematic_groups="Turret" display_name_for_sidebar="Ens Blaster TUR">
+    <entity name="HumanEnsnarerBlasterTurret" copy_from="BlasterTurret" display_name="诱捕者爆破者炮台" thematic_groups="Turret" display_name_for_sidebar="缠结爆破炮台">
     <fleet_membership name="EnsnarerTurrets" ship_cap_group="Turret" weight="100" cap="16" />
   	<system name="T" display_name="牵引光束" category="Passive" tractor_range="Small5" tractor_count="20" tractor_count_added_per_mark="2" tractor_hits_albedo_less_than="0.5" tractor_hits_engine_gx_less_than="10">
     </system>
     </entity>
 
-    <entity name="GhostBlasterTurret" copy_from="AIBlasterTurret" display_name="幽灵 AI 爆破者炮台" thematic_groups="AITurret" display_name_for_sidebar="Ghost Blaster TUR">
+    <entity name="GhostBlasterTurret" copy_from="AIBlasterTurret" display_name="幽灵 AI 爆破者炮台" thematic_groups="AITurret" display_name_for_sidebar="幽灵爆破炮台">
     <ai_ship_group_membership name="GhostTurrets_FreeforAll" weight="100" />
 	<ai_ship_group_membership name="GhostBlasterTurrets" weight="100" />
 	<ai_ship_group_membership name="GhostTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -665,7 +665,7 @@
     </system>
     </entity> 	
 
-    <entity name="MiniFortress" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/MiniFortress/MiniFortress.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/MegaTurret" icon_overlay="Overlays1/MegaTurret_MiniFortress" voice_group="Turret" category="Ship" is_turret="true" size_scale="2.55" visuals_scale_multiplier="5.5" collision_priority="1000" construction_priority="50" display_name="迷你堡垒" display_name_for_sidebar="Mini Fort TUR" description="小型通用防御建筑。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Generalist,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="560" strength_multiplier="1.3" hull_points="37500" shield_points="52500" speed="Immobile" metal_cost="70000" energy_consumption="5000" armor_mm="80" albedo="0.45" mass_tx="4" fleet_membership="Planetary" ship_or_structure_explosion_sfx="Turret_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
+    <entity name="MiniFortress" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/MiniFortress/MiniFortress.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/MegaTurret" icon_overlay="Overlays1/MegaTurret_MiniFortress" voice_group="Turret" category="Ship" is_turret="true" size_scale="2.55" visuals_scale_multiplier="5.5" collision_priority="1000" construction_priority="50" display_name="迷你堡垒" display_name_for_sidebar="迷你堡垒炮台" description="小型通用防御建筑。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Generalist,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="560" strength_multiplier="1.3" hull_points="37500" shield_points="52500" speed="Immobile" metal_cost="70000" energy_consumption="5000" armor_mm="80" albedo="0.45" mass_tx="4" fleet_membership="Planetary" ship_or_structure_explosion_sfx="Turret_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
     <fleet_membership name="AddedToCommandStation" ship_cap_group="Turret" weight="100" cap="2" />
     <fleet_membership name="GeneralTurrets" ship_cap_group="Turret" weight="100" cap="3" />
     <fleet_membership name="MonochromeTurrets" ship_cap_group="Turret" weight="100" cap="5" />
@@ -677,11 +677,11 @@
     </system>	
     </entity>
 	
-    <entity name="AIMiniFortress" copy_from="MiniFortress" range_multiplier_to_all_weapons="0.75" thematic_groups="AITurret" display_name="AI 迷你堡垒" display_name_for_sidebar="Mini Fort TUR" multiplier_to_all_costs="5" second_multiplier_to_all_healths="1" second_damage_multiplier_to_all_weapons="1" multiplier_to_all_scales="1">   
+    <entity name="AIMiniFortress" copy_from="MiniFortress" range_multiplier_to_all_weapons="0.75" thematic_groups="AITurret" display_name="AI 迷你堡垒" display_name_for_sidebar="迷你堡垒炮台" multiplier_to_all_costs="5" second_multiplier_to_all_healths="1" second_damage_multiplier_to_all_weapons="1" multiplier_to_all_scales="1">   
     <ai_ship_group_membership name="FortressBaronMiniForts" weight="100" />
     </entity>	
 
-    <entity name="BulwarkTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/BulwarkTurret/BulwarkTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/Turret" icon_overlay="Overlays1/Turret_Bulwark" voice_group="Turret" category="Ship" is_turret="true" size_scale="1.53" visuals_scale_multiplier="1.53" collision_priority="1000" construction_priority="50" display_name="壁垒炮台" display_name_for_sidebar="Bulwark TUR" description="大型且非常耐用的炮台，使用一种类似涂料的材料干扰瞄准系统，吸引一些火力。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Melee,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="1500" hull_points="10250" shield_points="25650" speed="Immobile" metal_cost="18000" energy_consumption="450" armor_mm="80" albedo="0.45" mass_tx="2" fleet_membership="Planetary" ship_or_structure_explosion_sfx="StructureSmall_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
+    <entity name="BulwarkTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/BulwarkTurret/BulwarkTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/Turret" icon_overlay="Overlays1/Turret_Bulwark" voice_group="Turret" category="Ship" is_turret="true" size_scale="1.53" visuals_scale_multiplier="1.53" collision_priority="1000" construction_priority="50" display_name="壁垒炮台" display_name_for_sidebar="壁垒炮台" description="大型且非常耐用的炮台，使用一种类似涂料的材料干扰瞄准系统，吸引一些火力。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Melee,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="1500" hull_points="10250" shield_points="25650" speed="Immobile" metal_cost="18000" energy_consumption="450" armor_mm="80" albedo="0.45" mass_tx="2" fleet_membership="Planetary" ship_or_structure_explosion_sfx="StructureSmall_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="BigThreateningWeapon" priority_as_frd_target="BigThreateningWeapon" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
     <fleet_membership name="AddedToCommandStation" ship_cap_group="Turret" weight="100" cap="10" />
     <fleet_membership name="GeneralTurrets" ship_cap_group="Turret" weight="100" cap="16" />    
     <fleet_membership name="MonochromeTurrets" ship_cap_group="Turret" weight="100" cap="25" />
@@ -691,7 +691,7 @@
     <system name="A" display_name="干扰金属" category="Passive" attract_range_for_shots_against_allies="Small2" />
     </entity>
 
-    <entity name="BlitzkriegTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/BlitzkriegTurret/BlitzkriegTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/MegaTurret" icon_overlay="Overlays1/MegaTurret_Blitzkrieg" voice_group="Turret" category="Ship" is_turret="true" size_scale="3.06" visuals_scale_multiplier="6.8" collision_priority="1000" construction_priority="50" display_name="闪电战炮台" display_name_for_sidebar="Blitz TUR" description="大型炮台，造成通用伤害，偶尔会释放一群改装的建造无人机攻击在场的敌人。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Raid,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="483" strength_multiplier="2" hull_points="25000" shield_points="35000" speed="Immobile" metal_cost="30000" energy_consumption="2250" armor_mm="120" albedo="0.45" mass_tx="3" fleet_membership="Planetary" ship_or_structure_explosion_sfx="Turret_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
+    <entity name="BlitzkriegTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/BlitzkriegTurret/BlitzkriegTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/MegaTurret" icon_overlay="Overlays1/MegaTurret_Blitzkrieg" voice_group="Turret" category="Ship" is_turret="true" size_scale="3.06" visuals_scale_multiplier="6.8" collision_priority="1000" construction_priority="50" display_name="闪电战炮台" display_name_for_sidebar="闪电炮台" description="大型炮台，造成通用伤害，偶尔会释放一群改装的建造无人机攻击在场的敌人。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Raid,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="483" strength_multiplier="2" hull_points="25000" shield_points="35000" speed="Immobile" metal_cost="30000" energy_consumption="2250" armor_mm="120" albedo="0.45" mass_tx="3" fleet_membership="Planetary" ship_or_structure_explosion_sfx="Turret_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
     <fleet_membership name="AddedToCommandStation" ship_cap_group="Turret" weight="100" cap="2" />
     <fleet_membership name="GeneralTurrets" ship_cap_group="Turret" weight="100" cap="3" />
     <fleet_membership name="MonochromeTurrets" ship_cap_group="Turret" weight="100" cap="5" />
@@ -712,7 +712,7 @@
     <ai_ship_group_membership name="MakeshiftBlitzkriegTurrets" weight="100" />		
     </entity>
 
-    <entity name="EnsnarerBlitzkriegTurret" copy_from="AIBlitzkriegTurret" display_name="诱捕者 AI 闪电战炮台" thematic_groups="AITurret" display_name_for_sidebar="Ens Blitz TUR">
+    <entity name="EnsnarerBlitzkriegTurret" copy_from="AIBlitzkriegTurret" display_name="诱捕者 AI 闪电战炮台" thematic_groups="AITurret" display_name_for_sidebar="缠结闪电炮台">
     <ai_ship_group_membership name="EnsnarerTurrets_FreeforAll" weight="100" />
 	<ai_ship_group_membership name="EnsnarerBlitzkriegTurrets" weight="100" />
 	<ai_ship_group_membership name="EnsnarerTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -722,13 +722,13 @@
     </system>
     </entity>
 
-    <entity name="HumanEnsnarerBlitzkriegTurret" copy_from="BlitzkriegTurret" display_name="诱捕者闪电战炮台" thematic_groups="Turret" display_name_for_sidebar="Ens Blitz TUR">
+    <entity name="HumanEnsnarerBlitzkriegTurret" copy_from="BlitzkriegTurret" display_name="诱捕者闪电战炮台" thematic_groups="Turret" display_name_for_sidebar="缠结闪电炮台">
     <fleet_membership name="EnsnarerTurrets" ship_cap_group="Turret" weight="100" cap="5" />
   	<system name="T" display_name="牵引光束" category="Passive" tractor_range="Small5" tractor_count="20" tractor_count_added_per_mark="2" tractor_hits_albedo_less_than="0.5" tractor_hits_engine_gx_less_than="10">
     </system>
     </entity>
 
-    <entity name="GhostBlitzkriegTurret" copy_from="AIBlitzkriegTurret" display_name="幽灵 AI 闪电战炮台" thematic_groups="AITurret" display_name_for_sidebar="Ghost Blitz TUR">
+    <entity name="GhostBlitzkriegTurret" copy_from="AIBlitzkriegTurret" display_name="幽灵 AI 闪电战炮台" thematic_groups="AITurret" display_name_for_sidebar="幽灵闪电炮台">
     <ai_ship_group_membership name="GhostTurrets_FreeforAll" weight="100" />
 	<ai_ship_group_membership name="GhostBlitzkriegTurrets" weight="100" />
 	<ai_ship_group_membership name="GhostTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -738,7 +738,7 @@
     </system>
     </entity>	
 
-	<entity name="CounterSniperTurret" tags="SniperTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/CounterSniperTurret/CounterSniperTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/Turret" icon_overlay="Overlays1/Turret_CounterSniper" voice_group="Turret" category="Ship" is_turret="true" size_scale="1.02" visuals_scale_multiplier="5.1" collision_priority="1000" construction_priority="50" display_name="反狙击炮台" display_name_for_sidebar="Counter-Snipe TUR" description="射程无限，目标越远造成的伤害越高，非常适合反狙击。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Subterfuge,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="93" strength_multiplier="3" hull_points="2700" shield_points="6750" speed="Immobile" metal_cost="7500" energy_consumption="600" armor_mm="80" albedo="0.45" mass_tx="2" fleet_membership="Planetary" ship_or_structure_explosion_sfx="Turret_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" cannot_target_or_alert_ai_reinforcement_spots="true" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
+	<entity name="CounterSniperTurret" tags="SniperTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/CounterSniperTurret/CounterSniperTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/Turret" icon_overlay="Overlays1/Turret_CounterSniper" voice_group="Turret" category="Ship" is_turret="true" size_scale="1.02" visuals_scale_multiplier="5.1" collision_priority="1000" construction_priority="50" display_name="反狙击炮台" display_name_for_sidebar="反狙击炮台" description="射程无限，目标越远造成的伤害越高，非常适合反狙击。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Subterfuge,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="93" strength_multiplier="3" hull_points="2700" shield_points="6750" speed="Immobile" metal_cost="7500" energy_consumption="600" armor_mm="80" albedo="0.45" mass_tx="2" fleet_membership="Planetary" ship_or_structure_explosion_sfx="Turret_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" cannot_target_or_alert_ai_reinforcement_spots="true" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
     <fleet_membership name="AddedToCommandStation" ship_cap_group="Turret" weight="100" cap="10" />
     <fleet_membership name="GeneralTurrets" ship_cap_group="Turret" weight="100" cap="16" />    
     <fleet_membership name="MonochromeTurrets" ship_cap_group="Turret" weight="100" cap="25" />
@@ -760,7 +760,7 @@
     <ai_ship_group_membership name="CounterSniperPlasmaTurrets" weight="100" />	
     </entity> 
 	
-	<entity name="EnsnarerCounterSniperTurret" copy_from="AICounterSniperTurret" display_name="诱捕者 AI 反狙击炮台" thematic_groups="AITurret" display_name_for_sidebar="Ens Cnt-Snipe TUR">
+	<entity name="EnsnarerCounterSniperTurret" copy_from="AICounterSniperTurret" display_name="诱捕者 AI 反狙击炮台" thematic_groups="AITurret" display_name_for_sidebar="缠结反狙击炮台">
     <ai_ship_group_membership name="EnsnarerTurrets_FreeforAll" weight="100" />
 	<ai_ship_group_membership name="EnsnarerCounterSniperTurrets" weight="100" />
 	<ai_ship_group_membership name="EnsnarerTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -773,14 +773,14 @@
     </system>
     </entity> 
 	
-	<entity name="HumanEnsnarerCounterSniperTurret" copy_from="CounterSniperTurret" display_name="诱捕者反狙击炮台" thematic_groups="Turret" display_name_for_sidebar="Ens Cnt-Snipe TUR">
+	<entity name="HumanEnsnarerCounterSniperTurret" copy_from="CounterSniperTurret" display_name="诱捕者反狙击炮台" thematic_groups="Turret" display_name_for_sidebar="缠结反狙击炮台">
     <fleet_membership name="EnsnarerTurrets" ship_cap_group="Turret" weight="100" cap="16" />
     
   	<system name="T" display_name="牵引光束" category="Passive" tractor_range="Small5" tractor_count="20" tractor_count_added_per_mark="2" tractor_hits_albedo_less_than="0.5" tractor_hits_engine_gx_less_than="10">
     </system>
     </entity>
 
-    <entity name="GhostCounterSniperTurret" copy_from="AICounterSniperTurret" display_name="幽灵 AI 反狙击炮台" thematic_groups="AITurret" display_name_for_sidebar="Ghost CntSnipe TUR">
+    <entity name="GhostCounterSniperTurret" copy_from="AICounterSniperTurret" display_name="幽灵 AI 反狙击炮台" thematic_groups="AITurret" display_name_for_sidebar="幽灵反狙击炮台">
     <ai_ship_group_membership name="GhostTurrets_FreeforAll" weight="100" />
 	<ai_ship_group_membership name="GhostCounterSniperTurrets" weight="100" />
 	<ai_ship_group_membership name="GhostTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -803,7 +803,7 @@
     <system name="W1" damage_per_shot="260" />
     </entity> 	
 
-    <entity name="AblativeTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/AblativeTurret/AblativeTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/Turret" icon_overlay="Overlays1/Turret_Ablative" voice_group="Turret" category="Ship" is_turret="true" size_scale="1.02" visuals_scale_multiplier="5.1" collision_priority="1000" construction_priority="50" display_name="烧蚀炮台" display_name_for_sidebar="Ablative TUR" description="对具有高辐射护盾的单位造成严重伤害。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Generalist,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="75" strength_multiplier="1.2" hull_points="5400" shield_points="13500" speed="Immobile" metal_cost="6000" energy_consumption="450" armor_mm="80" albedo="0.45" mass_tx="2" fleet_membership="Planetary" ship_or_structure_explosion_sfx="Turret_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
+    <entity name="AblativeTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/AblativeTurret/AblativeTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/Turret" icon_overlay="Overlays1/Turret_Ablative" voice_group="Turret" category="Ship" is_turret="true" size_scale="1.02" visuals_scale_multiplier="5.1" collision_priority="1000" construction_priority="50" display_name="烧蚀炮台" display_name_for_sidebar="烧蚀炮台" description="对具有高辐射护盾的单位造成严重伤害。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Generalist,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="75" strength_multiplier="1.2" hull_points="5400" shield_points="13500" speed="Immobile" metal_cost="6000" energy_consumption="450" armor_mm="80" albedo="0.45" mass_tx="2" fleet_membership="Planetary" ship_or_structure_explosion_sfx="Turret_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
     <fleet_membership name="AddedToCommandStation" ship_cap_group="Turret" weight="100" cap="10" />
     <fleet_membership name="GeneralTurrets" ship_cap_group="Turret" weight="100" cap="16" />    
     <fleet_membership name="MonochromeTurrets" ship_cap_group="Turret" weight="100" cap="25" />
@@ -825,7 +825,7 @@
     <ai_ship_group_membership name="DeathgripAblativeTurrets" weight="100" />	
     </entity>
 	
-    <entity name="HumanEnsnarerAblativeTurret" copy_from="AIAblativeTurret" display_name="诱捕者 AI 烧蚀炮台" thematic_groups="Turret" display_name_for_sidebar="Ens Ablative TUR">
+    <entity name="HumanEnsnarerAblativeTurret" copy_from="AIAblativeTurret" display_name="诱捕者 AI 烧蚀炮台" thematic_groups="Turret" display_name_for_sidebar="缠结烧蚀炮台">
     <ai_ship_group_membership name="EnsnarerTurrets_FreeforAll" weight="100" />
 	<ai_ship_group_membership name="EnsnarerAblativeTurrets" weight="100" />
 	<ai_ship_group_membership name="EnsnarerTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -837,13 +837,13 @@
     </system>
     </entity>
 
-  <entity name="EnsnarerAblativeTurret" copy_from="AblativeTurret" display_name="诱捕者烧蚀炮台" thematic_groups="AITurret" display_name_for_sidebar="Ens Ablative TUR">
+  <entity name="EnsnarerAblativeTurret" copy_from="AblativeTurret" display_name="诱捕者烧蚀炮台" thematic_groups="AITurret" display_name_for_sidebar="缠结烧蚀炮台">
     <fleet_membership name="EnsnarerTurrets" ship_cap_group="Turret" weight="100" cap="16" />
     <system name="T" display_name="牵引光束" category="Passive" tractor_range="Small5" tractor_count="20" tractor_count_added_per_mark="2" tractor_hits_albedo_less_than="0.5" tractor_hits_engine_gx_less_than="10">
     </system>
   </entity>
 
-    <entity name="GhostAblativeTurret" copy_from="AIAblativeTurret" display_name="幽灵 AI 烧蚀炮台" thematic_groups="AITurret" display_name_for_sidebar="Ghost Ablative TUR">
+    <entity name="GhostAblativeTurret" copy_from="AIAblativeTurret" display_name="幽灵 AI 烧蚀炮台" thematic_groups="AITurret" display_name_for_sidebar="幽灵烧蚀炮台">
     <ai_ship_group_membership name="GhostTurrets_FreeforAll" weight="100" />
 	<ai_ship_group_membership name="GhostAblativeTurrets" weight="100" />
 	<ai_ship_group_membership name="GhostTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -855,7 +855,7 @@
     </system>
     </entity> 	
 
-    <entity name="HailstormTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/HailstormTurret/HailstormTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/Turret" icon_overlay="Overlays1/Turret_Hailstorm" voice_group="Turret" category="Ship" is_turret="true" size_scale="1.02" visuals_scale_multiplier="1.53" collision_priority="1000" construction_priority="50" display_name="冰雹风暴炮台" display_name_for_sidebar="Hailstorm TUR" description="发射一阵手榴弹，爆炸后产生弹片，能够撕碎薄护甲目标。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Splash,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="120" strength_multiplier="1.2" hull_points="9450" shield_points="23600" speed="Immobile" metal_cost="6000" energy_consumption="450" armor_mm="80" albedo="0.45" mass_tx="2" fleet_membership="Planetary" ship_or_structure_explosion_sfx="Turret_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
+    <entity name="HailstormTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/HailstormTurret/HailstormTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/Turret" icon_overlay="Overlays1/Turret_Hailstorm" voice_group="Turret" category="Ship" is_turret="true" size_scale="1.02" visuals_scale_multiplier="1.53" collision_priority="1000" construction_priority="50" display_name="冰雹风暴炮台" display_name_for_sidebar="雹暴炮台" description="发射一阵手榴弹，爆炸后产生弹片，能够撕碎薄护甲目标。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Splash,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="120" strength_multiplier="1.2" hull_points="9450" shield_points="23600" speed="Immobile" metal_cost="6000" energy_consumption="450" armor_mm="80" albedo="0.45" mass_tx="2" fleet_membership="Planetary" ship_or_structure_explosion_sfx="Turret_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
     <fleet_membership name="AddedToCommandStation" ship_cap_group="Turret" weight="100" cap="10" />
     <fleet_membership name="GeneralTurrets" ship_cap_group="Turret" weight="100" cap="16" />    
     <fleet_membership name="MonochromeTurrets" ship_cap_group="Turret" weight="100" cap="25" />
@@ -876,7 +876,7 @@
     <ai_ship_group_membership name="AblativeHailstormGrenadeTurrets" weight="100" />		
     </entity>
 
-    <entity name="EnsnarerHailstormTurret" copy_from="AIHailstormTurret" display_name="诱捕者 AI 冰雹风暴炮台" thematic_groups="AITurret" display_name_for_sidebar="Ens Hailstorm TUR">
+    <entity name="EnsnarerHailstormTurret" copy_from="AIHailstormTurret" display_name="诱捕者 AI 冰雹风暴炮台" thematic_groups="AITurret" display_name_for_sidebar="缠结雹暴炮台">
     <ai_ship_group_membership name="EnsnarerTurrets_FreeforAll" weight="100" />
 	<ai_ship_group_membership name="EnsnarerHailstormTurrets" weight="100" />
 	<ai_ship_group_membership name="EnsnarerTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -888,13 +888,13 @@
     </system>
     </entity>
 
-    <entity name="HumanEnsnarerHailstormTurret" copy_from="HailstormTurret" display_name="诱捕者冰雹风暴炮台" thematic_groups="Turret" display_name_for_sidebar="Ens Hailstorm TUR">
+    <entity name="HumanEnsnarerHailstormTurret" copy_from="HailstormTurret" display_name="诱捕者冰雹风暴炮台" thematic_groups="Turret" display_name_for_sidebar="缠结雹暴炮台">
     <fleet_membership name="EnsnarerTurrets" ship_cap_group="Turret" weight="100" cap="16" />
   	<system name="T" display_name="牵引光束" category="Passive" tractor_range="Small5" tractor_count="20" tractor_count_added_per_mark="2" tractor_hits_albedo_less_than="0.5" tractor_hits_engine_gx_less_than="10">
     </system>
     </entity>
 
-    <entity name="GhostHailstormTurret" copy_from="AIHailstormTurret" display_name="幽灵 AI 冰雹炮塔" thematic_groups="AITurret" display_name_for_sidebar="Ghost Hail TUR">
+    <entity name="GhostHailstormTurret" copy_from="AIHailstormTurret" display_name="幽灵 AI 冰雹炮塔" thematic_groups="AITurret" display_name_for_sidebar="幽灵雹暴炮台">
     <ai_ship_group_membership name="GhostTurrets_FreeforAll" weight="100" />
 	<ai_ship_group_membership name="GhostHailstormTurrets" weight="100" />
 	<ai_ship_group_membership name="GhostTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -906,7 +906,7 @@
     </system>
     </entity> 	
  	
-    <entity name="VampireTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/VampireTurret/VampireTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/Turret" icon_overlay="Overlays1/Turret_Vampire" voice_group="Turret" category="Ship" is_turret="true" size_scale="1.02" visuals_scale_multiplier="1.87" collision_priority="1000" construction_priority="50" display_name="吸血鬼炮台" display_name_for_sidebar="Vampire TUR" description="伤害较低，但能从目标身上吸取生命值。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Technologist,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="73" strength_multiplier="1.2" hull_points="5400" shield_points="13500" speed="Immobile" metal_cost="6000" energy_consumption="450" armor_mm="80" albedo="0.45" mass_tx="2" fleet_membership="Planetary" ship_or_structure_explosion_sfx="Turret_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
+    <entity name="VampireTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/VampireTurret/VampireTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/Turret" icon_overlay="Overlays1/Turret_Vampire" voice_group="Turret" category="Ship" is_turret="true" size_scale="1.02" visuals_scale_multiplier="1.87" collision_priority="1000" construction_priority="50" display_name="吸血鬼炮台" display_name_for_sidebar="吸血鬼炮台" description="伤害较低，但能从目标身上吸取生命值。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Technologist,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="73" strength_multiplier="1.2" hull_points="5400" shield_points="13500" speed="Immobile" metal_cost="6000" energy_consumption="450" armor_mm="80" albedo="0.45" mass_tx="2" fleet_membership="Planetary" ship_or_structure_explosion_sfx="Turret_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
     <fleet_membership name="AddedToCommandStation" ship_cap_group="Turret" weight="100" cap="10" />
     <fleet_membership name="GeneralTurrets" ship_cap_group="Turret" weight="100" cap="16" />    
     <fleet_membership name="MonochromeTurrets" ship_cap_group="Turret" weight="100" cap="25" />
@@ -925,7 +925,7 @@
     <ai_ship_group_membership name="VampireAcidTurrets" weight="100" />	
     </entity>
 	
-    <entity name="EnsnarerVampireTurret" copy_from="AIVampireTurret" display_name="缠结AI吸血鬼炮台" thematic_groups="AITurret" display_name_for_sidebar="Ens Vampire TUR">
+    <entity name="EnsnarerVampireTurret" copy_from="AIVampireTurret" display_name="缠结AI吸血鬼炮台" thematic_groups="AITurret" display_name_for_sidebar="缠结吸血鬼炮台">
     <ai_ship_group_membership name="EnsnarerTurrets_FreeforAll" weight="100" />
 	  <ai_ship_group_membership name="EnsnarerVampireTurrets" weight="100" />
 	  <ai_ship_group_membership name="EnsnarerTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -935,13 +935,13 @@
     </system>
     </entity>
 	
-    <entity name="HumanEnsnarerVampireTurret" copy_from="VampireTurret" display_name="缠结吸血鬼炮台" thematic_groups="Turret" display_name_for_sidebar="Ens Vampire TUR">
+    <entity name="HumanEnsnarerVampireTurret" copy_from="VampireTurret" display_name="缠结吸血鬼炮台" thematic_groups="Turret" display_name_for_sidebar="缠结吸血鬼炮台">
     <fleet_membership name="EnsnarerTurrets" ship_cap_group="Turret" weight="100" cap="16" />
   	<system name="T" display_name="牵引光束" category="Passive" tractor_range="Small5" tractor_count="20" tractor_count_added_per_mark="2" tractor_hits_albedo_less_than="0.5" tractor_hits_engine_gx_less_than="10">
     </system>
     </entity>
 
-    <entity name="GhostVampireTurret" copy_from="AIVampireTurret" display_name="幽灵AI吸血鬼炮台" thematic_groups="AITurret" display_name_for_sidebar="Ghost Vampire TUR">
+    <entity name="GhostVampireTurret" copy_from="AIVampireTurret" display_name="幽灵AI吸血鬼炮台" thematic_groups="AITurret" display_name_for_sidebar="幽灵吸血鬼炮台">
     <ai_ship_group_membership name="GhostTurrets_FreeforAll" weight="100" />
 	<ai_ship_group_membership name="GhostVampireTurrets" weight="100" />
 	<ai_ship_group_membership name="GhostTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -951,7 +951,7 @@
     </system>
     </entity> 	
 
-    <entity name="SolarFlareTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/SolarFlareTurret/SolarFlareTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/MegaTurret" icon_overlay="Overlays1/MegaTurret_SolarFlare" voice_group="Turret" category="Ship" is_turret="true" size_scale="2.72" visuals_scale_multiplier="6.8" collision_priority="1000" construction_priority="50" display_name="太阳耀斑炮台" display_name_for_sidebar="Solar Flare TUR" description="大型炮台，配备射速较慢的光束武器，可瘫痪多个大型目标。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Subterfuge,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="600" strength_multiplier="2.4" hull_points="25000" shield_points="35000" speed="Immobile" metal_cost="45000" energy_consumption="2250" armor_mm="120" albedo="0.45" mass_tx="3" fleet_membership="Planetary" ship_or_structure_explosion_sfx="StructureSmall_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
+    <entity name="SolarFlareTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/SolarFlareTurret/SolarFlareTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/MegaTurret" icon_overlay="Overlays1/MegaTurret_SolarFlare" voice_group="Turret" category="Ship" is_turret="true" size_scale="2.72" visuals_scale_multiplier="6.8" collision_priority="1000" construction_priority="50" display_name="太阳耀斑炮台" display_name_for_sidebar="太阳耀斑炮台" description="大型炮台，配备射速较慢的光束武器，可瘫痪多个大型目标。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Subterfuge,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="600" strength_multiplier="2.4" hull_points="25000" shield_points="35000" speed="Immobile" metal_cost="45000" energy_consumption="2250" armor_mm="120" albedo="0.45" mass_tx="3" fleet_membership="Planetary" ship_or_structure_explosion_sfx="StructureSmall_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
     <fleet_membership name="AddedToCommandStation" ship_cap_group="Turret" weight="100" cap="2" />
     <fleet_membership name="GeneralTurrets" ship_cap_group="Turret" weight="100" cap="3" />
     <fleet_membership name="MonochromeTurrets" ship_cap_group="Turret" weight="100" cap="5" />
@@ -972,7 +972,7 @@
     <ai_ship_group_membership name="PlasmaSolarFlareTurrets" weight="100" />		
     </entity>
 	
-    <entity name="EnsnarerSolarFlareTurret" copy_from="AISolarFlareTurret" display_name="缠结AI太阳耀斑炮台" thematic_groups="AITurret" display_name_for_sidebar="Ens SolarFlare TUR">
+    <entity name="EnsnarerSolarFlareTurret" copy_from="AISolarFlareTurret" display_name="缠结AI太阳耀斑炮台" thematic_groups="AITurret" display_name_for_sidebar="缠结太阳耀斑炮台">
     <ai_ship_group_membership name="EnsnarerTurrets_FreeforAll" weight="100" />
 	<ai_ship_group_membership name="EnsnarerSolarFlareTurrets" weight="100" />
 	<ai_ship_group_membership name="EnsnarerTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -985,13 +985,13 @@
     </system>
     </entity>
 	
-    <entity name="HumanEnsnarerSolarFlareTurret" copy_from="SolarFlareTurret" display_name="缠结太阳耀斑炮台" thematic_groups="Turret" display_name_for_sidebar="Ens SolarFlare TUR">
+    <entity name="HumanEnsnarerSolarFlareTurret" copy_from="SolarFlareTurret" display_name="缠结太阳耀斑炮台" thematic_groups="Turret" display_name_for_sidebar="缠结太阳耀斑炮台">
     <fleet_membership name="EnsnarerTurrets" ship_cap_group="Turret" weight="100" cap="5" />
   	<system name="T" display_name="牵引光束" category="Passive" tractor_range="Small5" tractor_count="20" tractor_count_added_per_mark="2" tractor_hits_albedo_less_than="0.5" tractor_hits_engine_gx_less_than="10">
     </system>
     </entity>
 
-    <entity name="GhostSolarFlareTurret" copy_from="AISolarFlareTurret" display_name="幽灵AI太阳耀斑炮台" thematic_groups="AITurret" display_name_for_sidebar="Ghost S Flare TUR">
+    <entity name="GhostSolarFlareTurret" copy_from="AISolarFlareTurret" display_name="幽灵AI太阳耀斑炮台" thematic_groups="AITurret" display_name_for_sidebar="幽灵太阳耀斑炮台">
     <ai_ship_group_membership name="GhostTurrets_FreeforAll" weight="100" />
 	<ai_ship_group_membership name="GhostSolarFlareTurrets" weight="100" />
 	<ai_ship_group_membership name="GhostTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -1004,7 +1004,7 @@
     </system>
     </entity> 	
 
-    <entity name="ScrapTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/ScrapTurret/ScrapTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/Turret" icon_overlay="Overlays1/Turret_Scrap" voice_group="Turret" category="Ship" is_turret="true" size_scale="1.02" visuals_scale_multiplier="2.72" collision_priority="1000" construction_priority="50" display_name="废料炮台" display_name_for_sidebar="Scrap TUR" description="建造成本较低，没有护盾，伤害显著较高，但开火时会自我摇晃解体，射击20次后会被摧毁。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Raid,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="75" strength_multiplier="0.6" hull_points="18900" shield_points="0" speed="Immobile" metal_cost="4000" energy_consumption="450" armor_mm="80" albedo="0.45" mass_tx="2" fleet_membership="Planetary" ship_or_structure_explosion_sfx="Turret_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
+    <entity name="ScrapTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/ScrapTurret/ScrapTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/Turret" icon_overlay="Overlays1/Turret_Scrap" voice_group="Turret" category="Ship" is_turret="true" size_scale="1.02" visuals_scale_multiplier="2.72" collision_priority="1000" construction_priority="50" display_name="废料炮台" display_name_for_sidebar="废料炮台" description="建造成本较低，没有护盾，伤害显著较高，但开火时会自我摇晃解体，射击20次后会被摧毁。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Raid,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="75" strength_multiplier="0.6" hull_points="18900" shield_points="0" speed="Immobile" metal_cost="4000" energy_consumption="450" armor_mm="80" albedo="0.45" mass_tx="2" fleet_membership="Planetary" ship_or_structure_explosion_sfx="Turret_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
     <fleet_membership name="AddedToCommandStation" ship_cap_group="Turret" weight="100" cap="10" />
     <fleet_membership name="GeneralTurrets" ship_cap_group="Turret" weight="100" cap="16" />    
     <fleet_membership name="MonochromeTurrets" ship_cap_group="Turret" weight="100" cap="25" />
@@ -1023,7 +1023,7 @@
     <ai_ship_group_membership name="ScrapJammerTurrets" weight="100" />		
     </entity>
 	
-    <entity name="EnsnarerScrapTurret" copy_from="AIScrapTurret" display_name="缠结AI废料炮台" thematic_groups="AITurret" display_name_for_sidebar="Ens Scrap TUR">
+    <entity name="EnsnarerScrapTurret" copy_from="AIScrapTurret" display_name="缠结AI废料炮台" thematic_groups="AITurret" display_name_for_sidebar="缠结废料炮台">
     <ai_ship_group_membership name="EnsnarerTurrets_FreeforAll" weight="100" />
 	<ai_ship_group_membership name="EnsnarerScrapTurrets" weight="100" />
 	<ai_ship_group_membership name="EnsnarerTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -1033,13 +1033,13 @@
     </system>
     </entity>
 	
-    <entity name="HumanEnsnarerScrapTurret" copy_from="ScrapTurret" display_name="缠结废料炮台" thematic_groups="Turret" display_name_for_sidebar="Ens Scrap TUR">
+    <entity name="HumanEnsnarerScrapTurret" copy_from="ScrapTurret" display_name="缠结废料炮台" thematic_groups="Turret" display_name_for_sidebar="缠结废料炮台">
     <fleet_membership name="EnsnarerTurrets" ship_cap_group="Turret" weight="100" cap="16" />
   	<system name="T" display_name="牵引光束" category="Passive" tractor_range="Small5" tractor_count="20" tractor_count_added_per_mark="2" tractor_hits_albedo_less_than="0.5" tractor_hits_engine_gx_less_than="10">
     </system>
     </entity>
 
-    <entity name="GhostScrapTurret" copy_from="AIScrapTurret" display_name="幽灵AI废料炮台" thematic_groups="AITurret" display_name_for_sidebar="Ghost Scrap TUR">
+    <entity name="GhostScrapTurret" copy_from="AIScrapTurret" display_name="幽灵AI废料炮台" thematic_groups="AITurret" display_name_for_sidebar="幽灵废料炮台">
     <ai_ship_group_membership name="GhostTurrets_FreeforAll" weight="100" />
 	<ai_ship_group_membership name="GhostScrapTurrets" weight="100" />
 	<ai_ship_group_membership name="GhostTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -1049,7 +1049,7 @@
     </system>
     </entity> 	
 
-    <entity name="GeminiTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/GeminiTurret/GeminiTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/MegaTurret" icon_overlay="Overlays1/MegaTurret_Gemini" voice_group="Turret" category="Ship" is_turret="true" size_scale="2.3" visuals_scale_multiplier="7.65" collision_priority="1000" construction_priority="50" display_name="双子炮台" display_name_for_sidebar="Gemini TUR" description="大型炮台，配备两种独立武器，一种用于攻击小型目标，另一种用于攻击大型目标，但如果不能正确使用两种武器，火力会比正常情况弱。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Technologist,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="480" strength_multiplier="2" hull_points="25000" shield_points="35000" speed="Immobile" metal_cost="45000" energy_consumption="2250" armor_mm="120" albedo="0.45" mass_tx="3" fleet_membership="Planetary" ship_or_structure_explosion_sfx="StructureSmall_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
+    <entity name="GeminiTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/GeminiTurret/GeminiTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/MegaTurret" icon_overlay="Overlays1/MegaTurret_Gemini" voice_group="Turret" category="Ship" is_turret="true" size_scale="2.3" visuals_scale_multiplier="7.65" collision_priority="1000" construction_priority="50" display_name="双子炮台" display_name_for_sidebar="双子炮台" description="大型炮台，配备两种独立武器，一种用于攻击小型目标，另一种用于攻击大型目标，但如果不能正确使用两种武器，火力会比正常情况弱。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Technologist,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="480" strength_multiplier="2" hull_points="25000" shield_points="35000" speed="Immobile" metal_cost="45000" energy_consumption="2250" armor_mm="120" albedo="0.45" mass_tx="3" fleet_membership="Planetary" ship_or_structure_explosion_sfx="StructureSmall_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
     <fleet_membership name="AddedToCommandStation" ship_cap_group="Turret" weight="100" cap="2" />
     <fleet_membership name="GeneralTurrets" ship_cap_group="Turret" weight="100" cap="3" />
     <fleet_membership name="MonochromeTurrets" ship_cap_group="Turret" weight="100" cap="5" />
@@ -1073,7 +1073,7 @@
     <ai_ship_group_membership name="GeminiBeamCannonTurrets" weight="100" />	
     </entity>
 	
-    <entity name="EnsnarerGeminiTurret" copy_from="AIGeminiTurret" display_name="缠结AI双子炮台" thematic_groups="AITurret" display_name_for_sidebar="Ens Gemini TUR">
+    <entity name="EnsnarerGeminiTurret" copy_from="AIGeminiTurret" display_name="缠结AI双子炮台" thematic_groups="AITurret" display_name_for_sidebar="缠结双子炮台">
     <ai_ship_group_membership name="EnsnarerTurrets_FreeforAll" weight="100" />
 	<ai_ship_group_membership name="EnsnarerGeminiTurrets" weight="100" />
 	<ai_ship_group_membership name="EnsnarerTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -1085,13 +1085,13 @@
     </system>
     </entity>
 	
-    <entity name="HumanEnsnarerGeminiTurret" copy_from="GeminiTurret" display_name="缠结双子炮台" thematic_groups="Turret" display_name_for_sidebar="Ens Gemini TUR">
+    <entity name="HumanEnsnarerGeminiTurret" copy_from="GeminiTurret" display_name="缠结双子炮台" thematic_groups="Turret" display_name_for_sidebar="缠结双子炮台">
     <fleet_membership name="EnsnarerTurrets" ship_cap_group="Turret" weight="100" cap="5" />
   	<system name="T" display_name="牵引光束" category="Passive" tractor_range="Small5" tractor_count="20" tractor_count_added_per_mark="2" tractor_hits_albedo_less_than="0.5" tractor_hits_engine_gx_less_than="10">
     </system>
     </entity>
 
-    <entity name="GhostGeminiTurret" copy_from="AIGeminiTurret" display_name="幽灵AI双子炮台" thematic_groups="AITurret" display_name_for_sidebar="Ghost Gemini TUR">
+    <entity name="GhostGeminiTurret" copy_from="AIGeminiTurret" display_name="幽灵AI双子炮台" thematic_groups="AITurret" display_name_for_sidebar="幽灵双子炮台">
     <ai_ship_group_membership name="GhostTurrets_FreeforAll" weight="100" />
 	<ai_ship_group_membership name="GhostGeminiTurrets" weight="100" />
 	<ai_ship_group_membership name="GhostTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -1103,7 +1103,7 @@
     </system>
     </entity>
 
-    <entity name="AcidTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/AcidTurret/AcidTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/Turret" icon_overlay="Overlays1/Turret_Acid" voice_group="Turret" category="Ship" is_turret="true" size_scale="1.02" visuals_scale_multiplier="7.22" collision_priority="1000" construction_priority="50" display_name="酸液炮台" display_name_for_sidebar="Acid TUR" description="攻击多个敌人，使其暂时承受更多伤害。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Technologist,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="81" strength_multiplier="1.4" hull_points="5400" shield_points="13500" speed="Immobile" metal_cost="6000" energy_consumption="450" armor_mm="80" albedo="0.45" mass_tx="2" fleet_membership="Planetary" ship_or_structure_explosion_sfx="Turret_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
+    <entity name="AcidTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/AcidTurret/AcidTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/Turret" icon_overlay="Overlays1/Turret_Acid" voice_group="Turret" category="Ship" is_turret="true" size_scale="1.02" visuals_scale_multiplier="7.22" collision_priority="1000" construction_priority="50" display_name="酸液炮台" display_name_for_sidebar="酸液炮台" description="攻击多个敌人，使其暂时承受更多伤害。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Technologist,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="81" strength_multiplier="1.4" hull_points="5400" shield_points="13500" speed="Immobile" metal_cost="6000" energy_consumption="450" armor_mm="80" albedo="0.45" mass_tx="2" fleet_membership="Planetary" ship_or_structure_explosion_sfx="Turret_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
     <fleet_membership name="AddedToCommandStation" ship_cap_group="Turret" weight="100" cap="10" />
     <fleet_membership name="GeneralTurrets" ship_cap_group="Turret" weight="100" cap="16" />    
     <fleet_membership name="MonochromeTurrets" ship_cap_group="Turret" weight="100" cap="25" />
@@ -1125,7 +1125,7 @@
     <ai_ship_group_membership name="AcidAmbushTurrets" weight="100" />	
     </entity>
 
-    <entity name="EnsnarerAcidTurret" copy_from="AIAcidTurret" display_name="缠结AI酸液炮台" thematic_groups="AITurret" display_name_for_sidebar="Ens Acid TUR">
+    <entity name="EnsnarerAcidTurret" copy_from="AIAcidTurret" display_name="缠结AI酸液炮台" thematic_groups="AITurret" display_name_for_sidebar="缠结酸液炮台">
     <ai_ship_group_membership name="EnsnarerTurrets_FreeforAll" weight="100" />
 	<ai_ship_group_membership name="EnsnarerAcidTurrets" weight="100" />
 	<ai_ship_group_membership name="EnsnarerTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -1138,13 +1138,13 @@
     </system>
     </entity>
   
-  <entity name="HumanEnsnarerAcidTurret" copy_from="AcidTurret" display_name="缠结酸液炮台" thematic_groups="Turret" display_name_for_sidebar="Ens Acid TUR">
+  <entity name="HumanEnsnarerAcidTurret" copy_from="AcidTurret" display_name="缠结酸液炮台" thematic_groups="Turret" display_name_for_sidebar="缠结酸液炮台">
     <fleet_membership name="EnsnarerTurrets" ship_cap_group="Turret" weight="100" cap="16" />
     <system name="T" display_name="牵引光束" category="Passive" tractor_range="Small5" tractor_count="20" tractor_count_added_per_mark="2" tractor_hits_albedo_less_than="0.5" tractor_hits_engine_gx_less_than="10">
     </system>
   </entity>
 
-    <entity name="GhostAcidTurret" copy_from="AIAcidTurret" display_name="幽灵AI酸液炮台" thematic_groups="AITurret" display_name_for_sidebar="Ghost Acid TUR">
+    <entity name="GhostAcidTurret" copy_from="AIAcidTurret" display_name="幽灵AI酸液炮台" thematic_groups="AITurret" display_name_for_sidebar="幽灵酸液炮台">
     <ai_ship_group_membership name="GhostTurrets_FreeforAll" weight="100" />
 	<ai_ship_group_membership name="GhostAcidTurrets" weight="100" />
 	<ai_ship_group_membership name="GhostTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -1157,7 +1157,7 @@
     </system>
     </entity>
 
-    <entity name="HarmonicTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/HarmonicTurret/HarmonicTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/Turret" icon_overlay="Overlays1/Turret_Harmonic" voice_group="Turret" category="Ship" is_turret="true" size_scale="1.02" visuals_scale_multiplier="7.22" collision_priority="1000" construction_priority="50" display_name="谐波炮台" display_name_for_sidebar="Harmonic TUR" description="低功率速射，但在同一行星上每多一座该炮台，伤害就会增加，直至达到上限。" amount_added_to_damage_per_ship_of_this_type_on_planet="120" amount_added_to_damage_per_ship_of_this_type_on_planet_per_mark="20" max_amount_added_to_damage_per_ship_of_this_type_on_planet="12000" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Subterfuge,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="162" strength_multiplier="1.4" hull_points="5400" shield_points="13500" speed="Immobile" metal_cost="7500" energy_consumption="600" armor_mm="80" albedo="0.45" mass_tx="2" fleet_membership="Planetary" ship_or_structure_explosion_sfx="Turret_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
+    <entity name="HarmonicTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/HarmonicTurret/HarmonicTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/Turret" icon_overlay="Overlays1/Turret_Harmonic" voice_group="Turret" category="Ship" is_turret="true" size_scale="1.02" visuals_scale_multiplier="7.22" collision_priority="1000" construction_priority="50" display_name="谐波炮台" display_name_for_sidebar="谐波炮台" description="低功率速射，但在同一行星上每多一座该炮台，伤害就会增加，直至达到上限。" amount_added_to_damage_per_ship_of_this_type_on_planet="120" amount_added_to_damage_per_ship_of_this_type_on_planet_per_mark="20" max_amount_added_to_damage_per_ship_of_this_type_on_planet="12000" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Subterfuge,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="162" strength_multiplier="1.4" hull_points="5400" shield_points="13500" speed="Immobile" metal_cost="7500" energy_consumption="600" armor_mm="80" albedo="0.45" mass_tx="2" fleet_membership="Planetary" ship_or_structure_explosion_sfx="Turret_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
     <fleet_membership name="AddedToCommandStation" ship_cap_group="Turret" weight="100" cap="10" />
     <fleet_membership name="GeneralTurrets" ship_cap_group="Turret" weight="100" cap="16" />    
     <fleet_membership name="MonochromeTurrets" ship_cap_group="Turret" weight="100" cap="25" />
@@ -1174,7 +1174,7 @@
     <ai_ship_group_membership name="TurretTrapWormholeSentinels_FreeforAll" weight="100" />	
     </entity>
 
-    <entity name="EnsnarerHarmonicTurret" copy_from="AIHarmonicTurret" display_name="缠结AI谐波炮台" thematic_groups="AITurret" display_name_for_sidebar="Ens Harmonic TUR">
+    <entity name="EnsnarerHarmonicTurret" copy_from="AIHarmonicTurret" display_name="缠结AI谐波炮台" thematic_groups="AITurret" display_name_for_sidebar="缠结谐波炮台">
     <ai_ship_group_membership name="EnsnarerTurrets_FreeforAll" weight="100" />
 		<ai_ship_group_membership name="EnsnarerHarmonicTurrets" weight="100" />
 		<ai_ship_group_membership name="EnsnarerTurretTrapWormholeSentinels_FreeforAll" weight="100" />	
@@ -1182,13 +1182,13 @@
     </system>
     </entity>
 
-    <entity name="HumanEnsnarerHarmonicTurret" copy_from="HarmonicTurret" display_name="缠结谐波炮台" thematic_groups="Turret" display_name_for_sidebar="Ens Harmonic TUR">
+    <entity name="HumanEnsnarerHarmonicTurret" copy_from="HarmonicTurret" display_name="缠结谐波炮台" thematic_groups="Turret" display_name_for_sidebar="缠结谐波炮台">
     <fleet_membership name="EnsnarerTurrets" ship_cap_group="Turret" weight="100" cap="16" />
   	<system name="T" display_name="牵引光束" category="Passive" tractor_range="Small5" tractor_count="20" tractor_count_added_per_mark="2" tractor_hits_albedo_less_than="0.5" tractor_hits_engine_gx_less_than="10">
     </system>
     </entity>
 
-    <entity name="GhostHarmonicTurret" copy_from="AIHarmonicTurret" display_name="幽灵AI谐波炮台" thematic_groups="AITurret" display_name_for_sidebar="Ghost Harmonic TUR">
+    <entity name="GhostHarmonicTurret" copy_from="AIHarmonicTurret" display_name="幽灵AI谐波炮台" thematic_groups="AITurret" display_name_for_sidebar="幽灵谐波炮台">
     <ai_ship_group_membership name="GhostTurrets_FreeforAll" weight="100" />
 	<ai_ship_group_membership name="GhostHarmonicTurrets" weight="100" />
 	<ai_ship_group_membership name="GhostTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -1196,7 +1196,7 @@
     </system>
     </entity>
 
-    <entity name="DeathgripTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/DeathgripTurret/DeathgripTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/Turret" icon_overlay="Overlays1/Turret_Deathgrip" voice_group="Turret" category="Ship" is_turret="true" size_scale="1.02" visuals_scale_multiplier="1.87" collision_priority="1000" construction_priority="50" display_name="死亡握力炮台" display_name_for_sidebar="Deathgrip TUR" description="配备少量牵引光束，对被牵引的单位造成更高伤害。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Melee,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="108" strength_multiplier="1.2" hull_points="8100" shield_points="20250" speed="Immobile" metal_cost="6000" energy_consumption="450" armor_mm="80" albedo="0.45" mass_tx="2" fleet_membership="Planetary" ship_or_structure_explosion_sfx="Turret_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
+    <entity name="DeathgripTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/DeathgripTurret/DeathgripTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/Turret" icon_overlay="Overlays1/Turret_Deathgrip" voice_group="Turret" category="Ship" is_turret="true" size_scale="1.02" visuals_scale_multiplier="1.87" collision_priority="1000" construction_priority="50" display_name="死亡握力炮台" display_name_for_sidebar="死亡握力炮台" description="配备少量牵引光束，对被牵引的单位造成更高伤害。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Melee,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="108" strength_multiplier="1.2" hull_points="8100" shield_points="20250" speed="Immobile" metal_cost="6000" energy_consumption="450" armor_mm="80" albedo="0.45" mass_tx="2" fleet_membership="Planetary" ship_or_structure_explosion_sfx="Turret_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
     <fleet_membership name="AddedToCommandStation" ship_cap_group="Turret" weight="100" cap="10" />
     <fleet_membership name="GeneralTurrets" ship_cap_group="Turret" weight="100" cap="16" />    
     <fleet_membership name="MonochromeTurrets" ship_cap_group="Turret" weight="100" cap="25" />
@@ -1219,7 +1219,7 @@
     <ai_ship_group_membership name="ShredderDeathgripTurrets" weight="100" />	
     </entity>
 
-    <entity name="EnsnarerDeathgripTurret" copy_from="AIDeathgripTurret" display_name="缠结AI死亡握力炮台" range_multiplier_to_all_weapons="1" thematic_groups="AITurret" display_name_for_sidebar="Ens Deathgrip TUR">
+    <entity name="EnsnarerDeathgripTurret" copy_from="AIDeathgripTurret" display_name="缠结AI死亡握力炮台" range_multiplier_to_all_weapons="1" thematic_groups="AITurret" display_name_for_sidebar="缠结死亡握力炮台">
     <ai_ship_group_membership name="EnsnarerTurrets_FreeforAll" weight="100" />
 	<ai_ship_group_membership name="EnsnarerDeathgripTurrets" weight="100" />
 	<ai_ship_group_membership name="EnsnarerTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -1231,13 +1231,13 @@
     </system>
     </entity>
 
-    <entity name="HumanEnsnarerDeathgripTurret" copy_from="DeathgripTurret" display_name="缠结死亡握力炮台" range_multiplier_to_all_weapons="1" thematic_groups="Turret" display_name_for_sidebar="Ens Deathgrip TUR">
+    <entity name="HumanEnsnarerDeathgripTurret" copy_from="DeathgripTurret" display_name="缠结死亡握力炮台" range_multiplier_to_all_weapons="1" thematic_groups="Turret" display_name_for_sidebar="缠结死亡握力炮台">
     <fleet_membership name="EnsnarerTurrets" ship_cap_group="Turret" weight="100" cap="16" />
   	<system name="T" display_name="牵引光束" category="Passive" tractor_range="Normal2" tractor_count="20" tractor_count_added_per_mark="10" tractor_hits_albedo_less_than="0.5" tractor_hits_engine_gx_less_than="10">
     </system>
     </entity>
 
-    <entity name="GhostDeathgripTurret" copy_from="AIDeathgripTurret" display_name="幽灵AI死亡握力炮台" thematic_groups="AITurret" display_name_for_sidebar="Ghost Deathgrp TUR">
+    <entity name="GhostDeathgripTurret" copy_from="AIDeathgripTurret" display_name="幽灵AI死亡握力炮台" thematic_groups="AITurret" display_name_for_sidebar="幽灵死亡握力炮台">
     <ai_ship_group_membership name="GhostTurrets_FreeforAll" weight="100" />
 	<ai_ship_group_membership name="GhostDeathgripTurrets" weight="100" />
 	<ai_ship_group_membership name="GhostTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -1249,7 +1249,7 @@
     </system>
     </entity> 
 
-    <entity name="ShredderTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/ShredderTurret/ShredderTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/Turret" icon_overlay="Overlays1/Turret_Shredder" voice_group="Turret" category="Ship" is_turret="true" size_scale="1.02" visuals_scale_multiplier="2.21" collision_priority="1000" construction_priority="50" display_name="碎甲炮台" display_name_for_sidebar="Shredder TUR" description="射程极短，但具有较高的通用伤害和一定的新陈代谢伤害。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Melee,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="127" strength_multiplier="1.2" hull_points="8100" shield_points="20250" speed="Immobile" metal_cost="6000" energy_consumption="450" armor_mm="80" albedo="0.45" mass_tx="2" fleet_membership="Planetary" ship_or_structure_explosion_sfx="Turret_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
+    <entity name="ShredderTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/ShredderTurret/ShredderTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/Turret" icon_overlay="Overlays1/Turret_Shredder" voice_group="Turret" category="Ship" is_turret="true" size_scale="1.02" visuals_scale_multiplier="2.21" collision_priority="1000" construction_priority="50" display_name="碎甲炮台" display_name_for_sidebar="碎甲炮台" description="射程极短，但具有较高的通用伤害和一定的新陈代谢伤害。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Melee,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="127" strength_multiplier="1.2" hull_points="8100" shield_points="20250" speed="Immobile" metal_cost="6000" energy_consumption="450" armor_mm="80" albedo="0.45" mass_tx="2" fleet_membership="Planetary" ship_or_structure_explosion_sfx="Turret_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
     <fleet_membership name="AddedToCommandStation" ship_cap_group="Turret" weight="100" cap="10" />
     <fleet_membership name="GeneralTurrets" ship_cap_group="Turret" weight="100" cap="16" />    
     <fleet_membership name="MonochromeTurrets" ship_cap_group="Turret" weight="100" cap="25" />
@@ -1270,7 +1270,7 @@
     <ai_ship_group_membership name="ShredderDeathgripTurrets" weight="100" />	
     </entity>
 
-    <entity name="EnsnarerShredderTurret" copy_from="AIShredderTurret" display_name="缠结AI碎甲炮台" range_multiplier_to_all_weapons="1" thematic_groups="AITurret" display_name_for_sidebar="Ens Shredder TUR">
+    <entity name="EnsnarerShredderTurret" copy_from="AIShredderTurret" display_name="缠结AI碎甲炮台" range_multiplier_to_all_weapons="1" thematic_groups="AITurret" display_name_for_sidebar="缠结碎甲炮台">
     <ai_ship_group_membership name="EnsnarerTurrets_FreeforAll" weight="100" />
 	<ai_ship_group_membership name="EnsnarerShredderTurrets" weight="100" />
 	<ai_ship_group_membership name="EnsnarerTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -1281,13 +1281,13 @@
     </system>
     </entity>
 
-    <entity name="HumanEnsnarerShredderTurret" copy_from="ShredderTurret" display_name="缠结碎甲炮台" range_multiplier_to_all_weapons="1" thematic_groups="Turret" display_name_for_sidebar="Ens Shredder TUR">
+    <entity name="HumanEnsnarerShredderTurret" copy_from="ShredderTurret" display_name="缠结碎甲炮台" range_multiplier_to_all_weapons="1" thematic_groups="Turret" display_name_for_sidebar="缠结碎甲炮台">
     <fleet_membership name="EnsnarerTurrets" ship_cap_group="Turret" weight="100" cap="16" />
   	<system name="T" display_name="牵引光束" category="Passive" tractor_range="Small5" tractor_count="20" tractor_count_added_per_mark="2" tractor_hits_albedo_less_than="0.5" tractor_hits_engine_gx_less_than="10">
     </system>
     </entity>
 
-    <entity name="GhostShredderTurret" copy_from="AIShredderTurret" display_name="幽灵AI碎甲炮台" thematic_groups="AITurret" display_name_for_sidebar="Ghost Shredder TUR">
+    <entity name="GhostShredderTurret" copy_from="AIShredderTurret" display_name="幽灵AI碎甲炮台" thematic_groups="AITurret" display_name_for_sidebar="幽灵碎甲炮台">
     <ai_ship_group_membership name="GhostTurrets_FreeforAll" weight="100" />
 	<ai_ship_group_membership name="GhostShredderTurrets" weight="100" />
 	<ai_ship_group_membership name="GhostTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -1298,7 +1298,7 @@
     </system>
     </entity>
 	
-    <entity name="RuffianTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/RuffianTurret/RuffianTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/Turret" icon_overlay="Overlays1/Turret_Ruffian" voice_group="Turret" category="Ship" is_turret="true" size_scale="1.02" visuals_scale_multiplier="1.44" collision_priority="1000" construction_priority="50" display_name="无赖炮台" display_name_for_sidebar="Ruffian TUR" description="建造成本略低，射程较远，且能抵御敌方远程火力。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Raid,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="52" strength_multiplier="1.2" hull_points="4500" shield_points="7500" speed="Immobile" metal_cost="4000" energy_consumption="450" armor_mm="80" albedo="0.45" mass_tx="2" fleet_membership="Planetary" ship_or_structure_explosion_sfx="Turret_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
+    <entity name="RuffianTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/RuffianTurret/RuffianTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/Turret" icon_overlay="Overlays1/Turret_Ruffian" voice_group="Turret" category="Ship" is_turret="true" size_scale="1.02" visuals_scale_multiplier="1.44" collision_priority="1000" construction_priority="50" display_name="无赖炮台" display_name_for_sidebar="无赖炮台" description="建造成本略低，射程较远，且能抵御敌方远程火力。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Raid,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="52" strength_multiplier="1.2" hull_points="4500" shield_points="7500" speed="Immobile" metal_cost="4000" energy_consumption="450" armor_mm="80" albedo="0.45" mass_tx="2" fleet_membership="Planetary" ship_or_structure_explosion_sfx="Turret_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
     <fleet_membership name="AddedToCommandStation" ship_cap_group="Turret" weight="100" cap="10" />
     <fleet_membership name="GeneralTurrets" ship_cap_group="Turret" weight="100" cap="16" />    
     <fleet_membership name="MonochromeTurrets" ship_cap_group="Turret" weight="100" cap="25" />
@@ -1318,7 +1318,7 @@
     <ai_ship_group_membership name="RuffianFortifiedTeslaTurrets" weight="100" />	
     </entity>
 
-    <entity name="EnsnarerRuffianTurret" copy_from="AIRuffianTurret" display_name="缠结AI无赖炮台" thematic_groups="AITurret" display_name_for_sidebar="Ens Ruffian TUR">
+    <entity name="EnsnarerRuffianTurret" copy_from="AIRuffianTurret" display_name="缠结AI无赖炮台" thematic_groups="AITurret" display_name_for_sidebar="缠结无赖炮台">
     <ai_ship_group_membership name="EnsnarerTurrets_FreeforAll" weight="100" />
 	<ai_ship_group_membership name="EnsnarerRuffianTurrets" weight="100" />
 	<ai_ship_group_membership name="EnsnarerTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -1328,13 +1328,13 @@
     </system>
     </entity>
 
-    <entity name="HumanEnsnarerRuffianTurret" copy_from="RuffianTurret" display_name="缠结无赖炮台" thematic_groups="Turret" display_name_for_sidebar="Ens Ruffian TUR">
+    <entity name="HumanEnsnarerRuffianTurret" copy_from="RuffianTurret" display_name="缠结无赖炮台" thematic_groups="Turret" display_name_for_sidebar="缠结无赖炮台">
     <fleet_membership name="EnsnarerTurrets" ship_cap_group="Turret" weight="100" cap="16" />
   	<system name="T" display_name="牵引光束" category="Passive" tractor_range="Small5" tractor_count="20" tractor_count_added_per_mark="2" tractor_hits_albedo_less_than="0.5" tractor_hits_engine_gx_less_than="10">
     </system>
     </entity>
 
-    <entity name="GhostRuffianTurret" copy_from="AIRuffianTurret" display_name="幽灵AI无赖炮台" thematic_groups="AITurret" display_name_for_sidebar="Ghost Ruffian TUR">
+    <entity name="GhostRuffianTurret" copy_from="AIRuffianTurret" display_name="幽灵AI无赖炮台" thematic_groups="AITurret" display_name_for_sidebar="幽灵无赖炮台">
     <ai_ship_group_membership name="GhostTurrets_FreeforAll" weight="100" />
 	<ai_ship_group_membership name="GhostRuffianTurrets" weight="100" />
 	<ai_ship_group_membership name="GhostTurretTrapWormholeSentinels_FreeforAll" weight="100" />
@@ -1344,7 +1344,7 @@
     </system>
     </entity>
 
-    <entity name="BastilleTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/BastilleTurret/BastilleTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/Turret" icon_overlay="Overlays1/Turret_Bastille" voice_group="Turret" category="Ship" is_turret="true" size_scale="1.02" visuals_scale_multiplier="2.3" collision_priority="1000" construction_priority="50" display_name="巴士底狱炮台" display_name_for_sidebar="Bastille TUR" description="脆弱的炮台，射程较远，可对抗类似射程的敌人。在力场掩护下伤害更高，但无法攻击近距离敌人。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Ambush,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="75" strength_multiplier="1.2" hull_points="4500" shield_points="7500" speed="Immobile" metal_cost="4000" energy_consumption="450" armor_mm="80" albedo="0.45" mass_tx="2" fleet_membership="Planetary" ship_or_structure_explosion_sfx="Turret_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
+    <entity name="BastilleTurret" thematic_groups="Turret" visuals="Assets/_DLC1/Turrets/BastilleTurret/BastilleTurret.prefab" visuals_bundle="exp1_the_spire_rises" icon_name="Ships1/Turret" icon_overlay="Overlays1/Turret_Bastille" voice_group="Turret" category="Ship" is_turret="true" size_scale="1.02" visuals_scale_multiplier="2.3" collision_priority="1000" construction_priority="50" display_name="巴士底狱炮台" display_name_for_sidebar="巴士底狱炮台" description="脆弱的炮台，射程较远，可对抗类似射程的敌人。在力场掩护下伤害更高，但无法攻击近距离敌人。" behavior="Stationary" starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Ambush,Turret" build_sidebar_categories_i_am_part_of="Turrets" destroys_self_until_not_over_ship_cap_if_planetary_command="true" cost_for_ai_to_purchase="75" strength_multiplier="1.2" hull_points="4500" shield_points="7500" speed="Immobile" metal_cost="4000" energy_consumption="450" armor_mm="80" albedo="0.45" mass_tx="2" fleet_membership="Planetary" ship_or_structure_explosion_sfx="Turret_Explosion" ship_or_structure_explosion_if_on_other_planet_sfx="ShipLostOnOtherPlanet_Explosion" priority_as_ai_target="NormalTurret" priority_as_frd_target="NormalTurret" priority_to_protect="Expendable" multiplier_to_all_costs="5" multiplier_to_all_healths="5" damage_multiplier_to_all_weapons="5" multiplier_to_all_scales="2.5">
     <fleet_membership name="AddedToCommandStation" ship_cap_group="Turret" weight="100" cap="10" />
     <fleet_membership name="GeneralTurrets" ship_cap_group="Turret" weight="100" cap="16" />    
     <fleet_membership name="MonochromeTurrets" ship_cap_group="Turret" weight="100" cap="25" />

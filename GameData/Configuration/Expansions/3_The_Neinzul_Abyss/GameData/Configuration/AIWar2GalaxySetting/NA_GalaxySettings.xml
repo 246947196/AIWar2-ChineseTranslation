@@ -128,7 +128,7 @@ optional_dll_name="AIWarExternalCode" optional_type_name="Arcen.AIW2.External.Ga
 
     
   <galaxy_setting category="Necromancer" name="NecromancerAutoDefend" display_name="实验性：自动防御模式" changeable_during_gameplay="true"
-                  type="CustomDropdownArbitraryOptions" arbitrary_options="Disabled,全面协助" default_option="Disabled"
+                  type="CustomDropdownArbitraryOptions" arbitrary_options="Disabled,Full Assistance" default_option="Disabled"
         description="你可以选择让你的戴森舰队自动作战。亡灵巫师舰队将协助你（或其他盟友派系），但不会主动攻击敌方行星或目标。
 
 如果玩家控制此派系，此功能将自动禁用。

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
     <entity name="Bombard"
 	        thematic_groups="Strikecraft" 
@@ -52,7 +52,7 @@
 			visuals_scale_multiplier="6"
 			collision_priority="100"
 			display_name="病毒粉碎者"
-			description="近战单位，在造成伤害时会自我复制。"
+			description="近战舰船，在造成伤害时会自我复制。"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Melee,Heavy"
 			cost_for_ai_to_purchase="200" strength_multiplier="2"
 			hull_points="4000" shield_points="0" speed="AboveAverage1"

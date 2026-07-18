@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>    
 
 	<!-- ZO Riot Control Cruiser -->
@@ -20,7 +20,7 @@
 			uses_large_health_bar="true"
 			display_name="防暴控制巡洋舰"
 			display_name_for_sidebar="防暴控制指挥舰" aip_when_granted_by_hack="15"
-			description="巡洋舰是一种精英级单位，每支舰队限造一艘；它们不计入标准单位序列，但可以享受由FRS单位提供的全舰队加成。防暴控制巡洋舰专门用于压制和消灭大批低等级骚乱目标。"
+			description="巡洋舰是一种精英级舰船，每支舰队限造一艘；它们不计入标准舰船序列，但可以享受由FRS舰船提供的全舰队加成。防暴控制巡洋舰专门用于压制和消灭大批低等级骚乱目标。"
 			assist_range="Normal5" 
 			starting_mark_level="Mark3" tech_upgrades_that_benefit_me="Expatriate"
 			cost_for_ai_to_purchase="1600"

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
     <entity name="Marauder_Spire_Raider"
@@ -14,7 +14,7 @@
 			collision_priority="100"
 			display_name="尖塔掠夺者护卫舰"
 			display_name_for_sidebar="尖塔掠夺FFH"
-			description="一种融合了尖塔和AI技术的奇特掠夺者单位。"
+			description="一种融合了尖塔和AI技术的奇特掠夺者舰船。"
 			starting_mark_level="Mark3" does_not_use_multipliers_from_mark_level="true"
 			cost_for_ai_to_purchase="3000"
 			hull_points="350000" shield_points="125000" speed="BelowAverage1"

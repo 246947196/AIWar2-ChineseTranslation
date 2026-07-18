@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- A combination of starting options for fleets. These do not override existing fleets but are additions.
 You can copy the fleets below as templates to create your own starting fleets.
@@ -41,7 +41,7 @@ You can copy the fleets below as templates to create your own starting fleets.
 
   <fleet_design name="DemolitionFleet"
         display_name="火力舰队"
-        description="一支由专注于爆炸的单位组成的舰队。火力强大，但速度较慢且缺乏针对性。"
+        description="一支由专注于爆炸的舰船组成的舰队。火力强大，但速度较慢且缺乏针对性。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >
@@ -73,7 +73,7 @@ You can copy the fleets below as templates to create your own starting fleets.
 
   <fleet_design name="BroadsideFleet"
         display_name="舷侧火力舰队"
-        description="一支由高伤害、远程且昂贵的单位组成的舰队，可进行压倒性的首轮打击。普遍装填时间长，速度慢，因此装填时需迅速重新定位。"
+        description="一支由高伤害、远程且昂贵的舰船组成的舰队，可进行压倒性的首轮打击。普遍装填时间长，速度慢，因此装填时需迅速重新定位。"
         design_logic="InitialPlayerFleet" weight="100" include_full_cap_of_each_type="true"
         append_each_ship_description_to_main_description="true"
         >

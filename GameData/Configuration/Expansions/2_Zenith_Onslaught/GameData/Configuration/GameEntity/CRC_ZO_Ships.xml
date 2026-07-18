@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>    
 
 	<!-- ZO Electric Bomber
@@ -238,7 +238,7 @@
 			collision_priority="600"
 			display_name="暗影镜像护卫舰"
 			display_name_for_sidebar="暗影镜像FFH"
-			description="通过吸引火力保护附近单位，并对攻击者进行报复性反击。"
+			description="通过吸引火力保护附近舰船，并对攻击者进行报复性反击。"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="Generalist,Heavy"
 			cost_for_ai_to_purchase="1200"
 			hull_points="250000" shield_points="150000" speed="Normal2"
@@ -371,9 +371,9 @@
 			y_offset_of_icon="15"
 			collision_priority="500"
 			aip_when_granted_by_hack="10" tags="IncludeInFRS"
-			display_name="原型突击星舰"
+			display_name="原型突击护卫舰"
 			display_name_for_sidebar="原型突击FFH"
-			description="拥有模块化武器系统的突击星舰原型机。"
+			description="拥有模块化武器系统的突击护卫舰原型机。"
 			starting_mark_level="Mark2" tech_upgrades_that_benefit_me="Expatriate"
 			cost_for_ai_to_purchase="1350"
 			hull_points="240000" shield_points="100000" speed="AboveAverage1"

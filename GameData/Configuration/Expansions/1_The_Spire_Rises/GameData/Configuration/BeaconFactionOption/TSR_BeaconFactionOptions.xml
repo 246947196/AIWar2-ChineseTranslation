@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 	<!--
 		Fallen Spire Faction
@@ -62,61 +62,61 @@
 		</hack_choice>
 
 		<!-- Intensity 1 Expert Mode -->
-		<hack_choice name="Intensity1ExpertMode" factions_included="FallenSpire" display_name="强度 1 专家模式" description="一个有趣且简单的挑战，你的尖塔单位速度比正常情况慢。">
+		<hack_choice name="Intensity1ExpertMode" factions_included="FallenSpire" display_name="强度 1 专家模式" description="一个有趣且简单的挑战，你的尖塔舰船速度比正常情况慢。">
 			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="1" />
 			<custom_field_value included_faction_index="0" field_name="ExpertMode" field_value="true" />
 		</hack_choice>
 		
 		<!-- Intensity 2 Expert Mode -->
-		<hack_choice name="Intensity2ExpertMode" factions_included="FallenSpire" display_name="强度 2 专家模式" description="一个有趣且非常轻松的挑战，你的尖塔单位速度比正常情况慢。">
+		<hack_choice name="Intensity2ExpertMode" factions_included="FallenSpire" display_name="强度 2 专家模式" description="一个有趣且非常轻松的挑战，你的尖塔舰船速度比正常情况慢。">
 			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="2" />
 			<custom_field_value included_faction_index="0" field_name="ExpertMode" field_value="true" />
 		</hack_choice>
 		
 		<!-- Intensity 3 Expert Mode -->
-		<hack_choice name="Intensity3ExpertMode" factions_included="FallenSpire" display_name="强度 3 专家模式" description="一个有趣且轻松的挑战，你的尖塔单位速度比正常情况慢。">
+		<hack_choice name="Intensity3ExpertMode" factions_included="FallenSpire" display_name="强度 3 专家模式" description="一个有趣且轻松的挑战，你的尖塔舰船速度比正常情况慢。">
 			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="3" />
 			<custom_field_value included_faction_index="0" field_name="ExpertMode" field_value="true" />
 		</hack_choice>
 		
 		<!-- Intensity 4 Expert Mode -->
-		<hack_choice name="Intensity4ExpertMode" factions_included="FallenSpire" display_name="强度 4 专家模式" description="一个有趣且合理的挑战，你的尖塔单位速度比正常情况慢。">
+		<hack_choice name="Intensity4ExpertMode" factions_included="FallenSpire" display_name="强度 4 专家模式" description="一个有趣且合理的挑战，你的尖塔舰船速度比正常情况慢。">
 			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="4" />
 			<custom_field_value included_faction_index="0" field_name="ExpertMode" field_value="true" />
 		</hack_choice>
 		
 		<!-- Intensity 5 Expert Mode -->
-		<hack_choice name="Intensity5ExpertMode" factions_included="FallenSpire" display_name="强度 5 专家模式" description="一个有趣且中等的挑战，你的尖塔单位速度比正常情况慢。">
+		<hack_choice name="Intensity5ExpertMode" factions_included="FallenSpire" display_name="强度 5 专家模式" description="一个有趣且中等的挑战，你的尖塔舰船速度比正常情况慢。">
 			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="5" />
 			<custom_field_value included_faction_index="0" field_name="ExpertMode" field_value="true" />
 		</hack_choice>
 		
 		<!-- Intensity 6 Expert Mode -->
-		<hack_choice name="Intensity6ExpertMode" factions_included="FallenSpire" display_name="强度 6 专家模式" description="一个有趣且更大的挑战，你的尖塔单位速度比正常情况慢。">
+		<hack_choice name="Intensity6ExpertMode" factions_included="FallenSpire" display_name="强度 6 专家模式" description="一个有趣且更大的挑战，你的尖塔舰船速度比正常情况慢。">
 			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="6" />
 			<custom_field_value included_faction_index="0" field_name="ExpertMode" field_value="true" />
 		</hack_choice>
 
 		<!-- Intensity 7 Expert Mode -->
-		<hack_choice name="Intensity7ExpertMode" factions_included="FallenSpire" display_name="强度 7 专家模式" description="一个有趣且更大的挑战，你的尖塔单位速度比正常情况慢。">
+		<hack_choice name="Intensity7ExpertMode" factions_included="FallenSpire" display_name="强度 7 专家模式" description="一个有趣且更大的挑战，你的尖塔舰船速度比正常情况慢。">
 			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="7" />
 			<custom_field_value included_faction_index="0" field_name="ExpertMode" field_value="true" />
 		</hack_choice>
 		
 		<!-- Intensity 8 Expert Mode -->
-		<hack_choice name="Intensity8ExpertMode" factions_included="FallenSpire" display_name="强度 8 专家模式" description="一个有趣且极其大的挑战，你的尖塔单位速度比正常情况慢。">
+		<hack_choice name="Intensity8ExpertMode" factions_included="FallenSpire" display_name="强度 8 专家模式" description="一个有趣且极其大的挑战，你的尖塔舰船速度比正常情况慢。">
 			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="8" />
 			<custom_field_value included_faction_index="0" field_name="ExpertMode" field_value="true" />
 		</hack_choice>
 
 		<!-- Intensity 9 Expert Mode -->
-		<hack_choice name="Intensity9ExpertMode" factions_included="FallenSpire" display_name="强度 9 专家模式" description="一个有趣且极其大的挑战，你的尖塔单位速度比正常情况慢。">
+		<hack_choice name="Intensity9ExpertMode" factions_included="FallenSpire" display_name="强度 9 专家模式" description="一个有趣且极其大的挑战，你的尖塔舰船速度比正常情况慢。">
 			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="9" />
 			<custom_field_value included_faction_index="0" field_name="ExpertMode" field_value="true" />
 		</hack_choice>
 
 		<!-- Intensity 10 Expert Mode -->
-		<hack_choice name="Intensity10ExpertMode" factions_included="FallenSpire" display_name="强度 10 专家模式" description="一个有趣且极其大的挑战，你的尖塔单位速度比正常情况慢。">
+		<hack_choice name="Intensity10ExpertMode" factions_included="FallenSpire" display_name="强度 10 专家模式" description="一个有趣且极其大的挑战，你的尖塔舰船速度比正常情况慢。">
 			<custom_field_value included_faction_index="0" field_name="Intensity" field_value="10" />
 			<custom_field_value included_faction_index="0" field_name="ExpertMode" field_value="true" />
 		</hack_choice>

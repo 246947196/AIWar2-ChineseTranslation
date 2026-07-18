@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   <faction name="Human" is_partial_record="true">
@@ -25,7 +25,7 @@
                   related_faction_name="Templar" />
 
     <custom_field name="Templar_Difficulty"  display_name="圣殿骑士难度" requires_player_types="NecromancerSidekick,NecromancerEmpire"
-                  sort_group="220" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="匹配最强AI,1,2,3,4,5,6,7,8,9,10" default_option="匹配最强AI"
+                  sort_group="220" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Matches Strongest AI,1,2,3,4,5,6,7,8,9,10" default_option="Matches Strongest AI"
                   related_faction_name="Templar" />
 <!-- Elderling options -->
     <custom_field requires_player_types="NecromancerSidekick,NecromancerEmpire"
@@ -34,7 +34,7 @@
                   related_faction_name="ElderlingsAgainstNecromancer" />
 
     <custom_field name="Elderling_Difficulty" display_name="古灵族难度" requires_player_types="NecromancerSidekick,NecromancerEmpire"
-                  sort_group="320" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="匹配最强AI,1,2,3,4,5,6,7,8,9,10" default_option="匹配最强AI"
+                  sort_group="320" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Matches Strongest AI,1,2,3,4,5,6,7,8,9,10" default_option="Matches Strongest AI"
                   related_faction_name="ElderlingsAgainstNecromancer" />
 
     <!-- Advanced Options -->
@@ -49,7 +49,7 @@
           name="BonusWightCap" is_advanced_setting="true" display_name="额外幽灵上限" description="增加此数值将允许你比正常情况召唤更多幽灵。"
 		      sort_group="820" setting_type="IntSlider" default="0" min="0" max="200"/>
         <custom_field requires_player_types="NecromancerSidekick,NecromancerEmpire"
-          name="BonusStartingWight" is_advanced_setting="true" display_name="额外起始幽灵" description="启用此设置将使死灵法师开局拥有一条额外的幽灵单位生产线；这旨在让游戏稍微简单一些。"
+          name="BonusStartingWight" is_advanced_setting="true" display_name="额外起始幽灵" description="启用此设置将使死灵法师开局拥有一条额外的幽灵舰船生产线；这旨在让游戏稍微简单一些。"
           sort_group="930" setting_type="BoolToggle" default="false"
           />
           <custom_field requires_player_types="NecromancerSidekick,NecromancerEmpire"
