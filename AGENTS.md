@@ -408,6 +408,31 @@ ChatLog 条目中包含 `<link=N>` 标签用于可点击交互（如点击跳转
 
 **`GetCampaign` 双重匹配**（`SaveLoadMethods.GetCampaign` L212）：搜索组时同时匹配 `c.DisplayName == name`（传入的编码名）和 `c.DisplayName == decodedName`（解码后的中文），确保 `Window_SaveGameMenu.OnOpen` 等在 `World.Instance.CampaignName` 为任意状态时都能找到正确组。
 
+##### 存档目录名嵌套乱码 BUG：Encode 二次编码（2026-07-18）
+
+**现象**：中文战役名（如「人类崛起」）的存档目录出现 `~u4EBA...`、`~~u4EBA...`、`~~~~u4EBA...` 三种嵌套乱码目录，游戏无法读取。
+
+**根因**：写入端 `SaveWorldToDisk()` L899 与 `GameSaver.DoSave()` L28 对战役名/存档名**连续调用两次编码**：
+1. `EncodeForCondensedFormat()` → `人类崛起` → `~u4EBA~u7C7B~u5D1B~u8D77`（正确文件名）
+2. 紧接着 `ConvertToCondensedFormat()` → 内部走 `AddString_Condensed` 序列化管道，被 `PatchCharMapping.AddStringCondensed_EncodePrefix` **再次编码**，把已编码串里的 `~` 转义成 `~~`（`~u4EBA` → `~~u4EBA`）。不同保存代码路径对同一字符串多次经 `ConvertToCondensedFormat`，叠加出 `~~~~u` 三层嵌套。
+
+> 注：此前"第一次尝试（失败）"记录称 `ConvertToCondensedFormat` 不走 `AddString_Condensed`，**实测相反**——它走，故必然二次编码。
+
+**修复**：`PatchCharMapping.cs` 的 `CondensedStringEscape.Encode` 改为**幂等**。遍历遇 `~` 时先判断是否已是合法编码序列（`~~` 或 `~uXXXX`）：若是则整段原样输出，不再重复转义。
+
+```csharp
+if (c == EscapeChar)
+{
+    if (i + 1 < s.Length && s[i + 1] == EscapeChar) { /* '~~' 原样 */ ...; i++; continue; }
+    if (i + 5 < s.Length && s[i + 1] == 'u' && IsHex4(s[i+2..i+5])) { /* '~uXXXX' 原样 */ ...; i += 5; continue; }
+    sb.Append(EscapeChar).Append(EscapeChar); // 裸 '~' 才转义
+}
+```
+
+**验证**：`人类崛起` 经两次 `ConvertToCondensedFormat`，修复前得 `~~u4EBA...`，修复后两次结果一致（`~u4EBA...`）且 decode 回 `人类崛起`；旧损坏名 `~~u4EBA...`/`~~~~u4EBA...` 再编码不再恶化。读端 `Decode` 原本即幂等，无需改动。已 `build.ps1` + `deploy.ps1` 部署（游戏版本 5.825）。
+
+**教训**：任何「先手动编码、再走 `AddString_Condensed` 序列化」的写入路径，都依赖 `Encode` 幂等，否则必产生嵌套乱码。新增此类路径时须确认编码函数可重入。
+
 ### 部署
 
 `deploy.ps1` 自动部署到 `BepInEx/plugins/ChineseTranslation/`。

@@ -76,6 +76,14 @@ internal static class CondensedStringEscape
     }
 
     /// <summary>Encode a string so it survives the condensed 7-bit charset losslessly.</summary>
+    /// <remarks>
+    /// Idempotent: if the input is already in encoded form (contains literal '~~' or
+    /// '~uXXXX' sequences produced by a previous Encode call), those sequences are copied
+    /// verbatim instead of being re-escaped. This prevents nested corruption such as
+    /// '~u4EBA' -&gt; '~~u4EBA' -&gt; '~~~~u4EBA', which happened because the game runs
+    /// already-encoded campaign/save names through ConvertToCondensedFormat (which routes
+    /// through AddString_Condensed a second time).
+    /// </remarks>
     internal static string Encode(string s)
     {
         if (string.IsNullOrEmpty(s)) return s;
@@ -85,17 +93,50 @@ internal static class CondensedStringEscape
         for (int i = 0; i < s.Length; i++)
         {
             char c = s[i];
-            if (c == EscapeChar || !IsSupported(c))
+            if (c == EscapeChar)
+            {
+                // Already-escaped escape char: '~~' -> copy both verbatim.
+                if (i + 1 < s.Length && s[i + 1] == EscapeChar)
+                {
+                    if (sb == null)
+                    {
+                        sb = new StringBuilder(s.Length + 16);
+                        sb.Append(s, 0, i);
+                    }
+                    sb.Append(EscapeChar).Append(EscapeChar);
+                    i++;
+                    continue;
+                }
+                // Already-encoded unicode escape: '~uXXXX' -> copy the whole sequence verbatim.
+                if (i + 5 < s.Length && s[i + 1] == 'u'
+                    && IsHex(s[i + 2]) && IsHex(s[i + 3]) && IsHex(s[i + 4]) && IsHex(s[i + 5]))
+                {
+                    if (sb == null)
+                    {
+                        sb = new StringBuilder(s.Length + 16);
+                        sb.Append(s, 0, i);
+                    }
+                    sb.Append(EscapeChar).Append('u')
+                      .Append(s[i + 2]).Append(s[i + 3]).Append(s[i + 4]).Append(s[i + 5]);
+                    i += 5;
+                    continue;
+                }
+                // A bare '~' that is not part of a valid escape: escape it.
+                if (sb == null)
+                {
+                    sb = new StringBuilder(s.Length + 16);
+                    sb.Append(s, 0, i);
+                }
+                sb.Append(EscapeChar).Append(EscapeChar);
+            }
+            else if (!IsSupported(c))
             {
                 if (sb == null)
                 {
                     sb = new StringBuilder(s.Length + 16);
                     sb.Append(s, 0, i);
                 }
-                if (c == EscapeChar)
-                    sb.Append(EscapeChar).Append(EscapeChar);
-                else
-                    sb.Append(EscapeChar).Append('u').Append(((int)c).ToString("X4"));
+                sb.Append(EscapeChar).Append('u').Append(((int)c).ToString("X4"));
             }
             else
             {
