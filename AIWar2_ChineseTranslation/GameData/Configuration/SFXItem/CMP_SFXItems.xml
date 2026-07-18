@@ -233,7 +233,7 @@
   <sfx name="ArkChiefOfStaff_LargeEnemiesInAlliedTerritory" bus="Alert" bundle_name="aiwar2voice"
        filename="assets/voice/arkchiefofstaff/largeenemiesinalliedterritory/000_voice.prefab"
        min_time_between_plays_of_group="30" min_time_between_plays_of_each_item="300"
-       chat_message_from="Watch Commander" chat_message_color="6ba9ff">
+       chat_message_from="哨戒指挥官" chat_message_color="6ba9ff">
     <sub_item index="0" is_funny="false" chat_text="我方领土内出现大量敌军部队。"/>
     <sub_item index="1" is_funny="false" chat_text="大量敌军侵入我方领土。"/>
     <sub_item index="2" is_funny="false" chat_text="敌军发动大规模攻势。"/>
@@ -276,7 +276,7 @@
   <sfx name="ArkChiefOfStaff_LowOnEnergy" bus="Alert" bundle_name="aiwar2voice"
        filename="assets/voice/arkchiefofstaff/resources/low on energy/000_voice.prefab"
        min_time_between_plays_of_group="20" min_time_between_plays_of_each_item="40"
-       chat_message_from="Watch Commander" chat_message_color="6ba9ff">
+       chat_message_from="哨戒指挥官" chat_message_color="6ba9ff">
     <sub_item index="0" is_funny="false" chat_text="能量不足，护盾可能会失效。"/>
     <sub_item index="1" is_funny="false" chat_text="能量储备已达临界状态。"/>
     <sub_item index="2" is_funny="false" chat_text="预计随时都会陷入黑暗。"/>
@@ -285,7 +285,7 @@
   <sfx name="ArkChiefOfStaff_LowOnMetal" bus="Alert" bundle_name="aiwar2voice"
        filename="assets/voice/arkchiefofstaff/resources/low on metal/000_voice.prefab"
        min_time_between_plays_of_group="20" min_time_between_plays_of_each_item="40"
-       chat_message_from="Watch Commander" chat_message_color="6ba9ff">
+       chat_message_from="哨戒指挥官" chat_message_color="6ba9ff">
     <sub_item index="0" is_funny="false" chat_text="建造设施资源即将耗尽。"/>
     <sub_item index="1" is_funny="false" chat_text="金属资源不足。"/>
     <sub_item index="2" is_funny="false" chat_text="金属储备已达临界状态。"/>
@@ -298,7 +298,7 @@
   <sfx name="ArkChiefOfStaff_DefeatWarpOut" bus="Alert" bundle_name="aiwar2voice"
        filename="assets/voice/arkchiefofstaff/human resistance fighters/defeat warp out/000_voice.prefab"
        min_time_between_plays_of_group="20" min_time_between_plays_of_each_item="40"
-       chat_message_from="Watch Commander" chat_message_color="6ba9ff">
+       chat_message_from="哨戒指挥官" chat_message_color="6ba9ff">
     <sub_item index="0" is_funny="false" chat_text="人类抵抗组织正在全面撤退。"/>
     <sub_item index="1" is_funny="false" chat_text="收到抵抗组织传来的消息：“抱歉。”"/>
     <sub_item index="2" is_funny="false" chat_text="他们要放弃了！人类抵抗组织正在撤退。"/>
@@ -307,7 +307,7 @@
   <sfx name="ArkChiefOfStaff_VictoryWarpOut" bus="Alert" bundle_name="aiwar2voice"
        filename="assets/voice/arkchiefofstaff/human resistance fighters/victory warp out/000_voice.prefab"
        min_time_between_plays_of_group="20" min_time_between_plays_of_each_item="40"
-       chat_message_from="Watch Commander" chat_message_color="6ba9ff">
+       chat_message_from="哨戒指挥官" chat_message_color="6ba9ff">
     <sub_item index="0" is_funny="false" chat_text="我想他们在这里的任务已经完成了。盟军抵抗舰队正在撤离。"/>
     <sub_item index="1" is_funny="false" chat_text="收到抵抗组织传来的消息：“不客气。”"/>
     <sub_item index="2" is_funny="false" chat_text="抵抗组织的攻击行动成功。他们正在返航。"/>
@@ -316,7 +316,7 @@
   <sfx name="ArkChiefOfStaff_VictoryWarpIn" bus="Alert" bundle_name="aiwar2voice"
        filename="assets/voice/arkchiefofstaff/human resistance fighters/warp in/000_voice.prefab"
        min_time_between_plays_of_group="20" min_time_between_plays_of_each_item="40"
-       chat_message_from="Watch Commander" chat_message_color="6ba9ff">
+       chat_message_from="哨戒指挥官" chat_message_color="6ba9ff">
     <sub_item index="0" is_funny="false" chat_text="一支人类抵抗组织已与人工智能交火。"/>
     <sub_item index="1" is_funny="false" chat_text="盟军抵抗舰队正在加入战斗。"/>
     <sub_item index="2" is_funny="false" chat_text="检测到单位。敌我识别信号显示为友军。"/>
@@ -325,7 +325,7 @@
   <sfx name="ArkChiefOfStaff_FriendlyMaraudersReinforcingPlayer" bus="Alert" bundle_name="aiwar2voice"
        filename="assets/voice/arkchiefofstaff/marauders/friendly marauders reinforcing player/000_voice.prefab"
        min_time_between_plays_of_group="20" min_time_between_plays_of_each_item="40"
-       chat_message_from="Watch Commander" chat_message_color="6ba9ff" >
+       chat_message_from="哨戒指挥官" chat_message_color="6ba9ff" >
     <sub_item index="0" is_funny="false" chat_text="盟军掠夺者部队已抵达。"/>
     <sub_item index="1" is_funny="false" chat_text="掠夺者部队正在增援我们的力量。"/>
     <sub_item index="2" is_funny="false" chat_text="掠夺者部队正在解除隐形状态并准备提供支援。"/>
@@ -336,7 +336,7 @@
   <sfx name="ArkChiefOfStaff_MaraudersAttackingEnemyPlanet" bus="Alert" bundle_name="aiwar2voice"
        filename="assets/voice/arkchiefofstaff/marauders/marauders attacking enemy planet/000_voice.prefab"
        min_time_between_plays_of_group="20" min_time_between_plays_of_each_item="40"
-       chat_message_from="Watch Commander" chat_message_color="6ba9ff" >
+       chat_message_from="哨戒指挥官" chat_message_color="6ba9ff" >
     <sub_item index="0" is_funny="false" chat_text="检测到掠夺者部队正在攻击我们的一个敌人。"/>
     <sub_item index="1" is_funny="false" chat_text="掠夺者部队正在敌星上作战。"/>
   </sfx>
@@ -344,7 +344,7 @@
   <sfx name="ArkChiefOfStaff_MaraudersAttackingFriendlyPlanet" bus="Alert" bundle_name="aiwar2voice"
        filename="assets/voice/arkchiefofstaff/marauders/marauders attacking friendly planet/000_voice.prefab"
        min_time_between_plays_of_group="20" min_time_between_plays_of_each_item="40"
-       chat_message_from="Watch Commander" chat_message_color="6ba9ff" >
+       chat_message_from="哨戒指挥官" chat_message_color="6ba9ff" >
     <sub_item index="0" is_funny="false" chat_text="检测到掠夺者部队正在攻击我们的一个盟友。"/>
     <sub_item index="1" is_funny="false" chat_text="掠夺者部队正在友星上作战。"/>
   </sfx>
@@ -352,7 +352,7 @@
   <sfx name="ArkChiefOfStaff_MaraudersAttackingPlanetPlayerIsAttacking" bus="Alert" bundle_name="aiwar2voice"
        filename="assets/voice/arkchiefofstaff/marauders/marauders attacking planet player is attacking/000_voice.prefab"
        min_time_between_plays_of_group="20" min_time_between_plays_of_each_item="40"
-       chat_message_from="Watch Commander" chat_message_color="6ba9ff" >
+       chat_message_from="哨戒指挥官" chat_message_color="6ba9ff" >
     <sub_item index="0" is_funny="false" chat_text="掠夺者部队正在解除隐形状态。不过他们没有攻击我们的单位。"/>
     <sub_item index="1" is_funny="false" chat_text="掠夺者部队正在攻击我们的目标。敌人的敌人……"/>
     <sub_item index="2" is_funny="false" chat_text="这次掠夺者部队决定提供帮助了。"/>
@@ -361,7 +361,7 @@
   <sfx name="ArkChiefOfStaff_MaraudersAttackingPlayerPlanet" bus="Alert" bundle_name="aiwar2voice"
        filename="assets/voice/arkchiefofstaff/marauders/marauders attacking player planet/000_voice.prefab"
        min_time_between_plays_of_group="20" min_time_between_plays_of_each_item="40"
-       chat_message_from="Watch Commander" chat_message_color="6ba9ff" >
+       chat_message_from="哨戒指挥官" chat_message_color="6ba9ff" >
     <sub_item index="0" is_funny="false" chat_text="掠夺者舰队正在逼近。"/>
     <sub_item index="1" is_funny="false" chat_text="检测到掠夺者部队进入我们的星域。"/>
     <sub_item index="2" is_funny="false" chat_text="掠夺者部队正在我们的一颗行星上解除隐形状态。"/>
@@ -374,7 +374,7 @@
   <sfx name="ArkChiefOfStaff_RiskAnalyzersActivate" bus="Alert" bundle_name="aiwar2voice"
        filename="assets/voice/arkchiefofstaff/risk analyzers/risk analyzers activate/000_voice.prefab"
        min_time_between_plays_of_group="20" min_time_between_plays_of_each_item="40"
-       chat_message_from="Watch Commander" chat_message_color="6ba9ff" >
+       chat_message_from="哨戒指挥官" chat_message_color="6ba9ff" >
     <sub_item index="0" is_funny="false" chat_text="人工智能的反应正在升级。我们最好尽快阻止这些风险分析器。"/>
     <sub_item index="1" is_funny="false" chat_text="人工智能的风险分析器已将我们的威胁等级提升。"/>
     <sub_item index="2" is_funny="false" chat_text="检测到人工智能风险分析器的能量水平上升。"/>
@@ -385,7 +385,7 @@
   <sfx name="ArkChiefOfStaff_AstroTrainSpawned" bus="Alert" bundle_name="aiwar2voice"
        filename="assets/voice/arkchiefofstaff/astro train depot/astro train spawned/000_voice.prefab"
        min_time_between_plays_of_group="20" min_time_between_plays_of_each_item="40"
-       chat_message_from="Watch Commander" chat_message_color="6ba9ff" >
+       chat_message_from="哨戒指挥官" chat_message_color="6ba9ff" >
     <sub_item index="0" is_funny="false" chat_text="一艘星际列车已建造完成。"/>
     <sub_item index="1" is_funny="false" chat_text="一艘星际列车已部署。"/>
     <sub_item index="2" is_funny="true" chat_text="星际列车即将进站。"/>
@@ -396,7 +396,7 @@
   <sfx name="ArkChiefOfStaff_AstroTrainDepotSpawned" bus="Alert" bundle_name="aiwar2voice"
        filename="assets/voice/arkchiefofstaff/astro train depot/astro train depot spawned/000_voice.prefab"
        min_time_between_plays_of_group="20" min_time_between_plays_of_each_item="40"
-       chat_message_from="Watch Commander" chat_message_color="6ba9ff" >
+       chat_message_from="哨戒指挥官" chat_message_color="6ba9ff" >
     <sub_item index="0" is_funny="false" chat_text="一个星际列车 depot 已建造完成。"/>
     <sub_item index="1" is_funny="false" chat_text="检测到大型建筑——星际列车级别的。"/>
   </sfx>
@@ -404,7 +404,7 @@
   <sfx name="ArkChiefOfStaff_InstigatorBaseConstructed" bus="Alert" bundle_name="aiwar2voice"
        filename="assets/voice/arkchiefofstaff/ai instigators/instigator base constructed/000_voice.prefab"
        min_time_between_plays_of_group="20" min_time_between_plays_of_each_item="40" 
-       chat_message_from="Watch Commander" chat_message_color="6ba9ff" >
+       chat_message_from="哨戒指挥官" chat_message_color="6ba9ff" >
     <sub_item index="0" is_funny="false" chat_text="一个新的煽动者基地已建造完成。"/>
     <sub_item index="1" is_funny="false" chat_text="监听站报告人工智能煽动者基地已建成。"/>
     <sub_item index="2" is_funny="false" chat_text="检测到新的人工智能煽动者基地。"/>
@@ -419,7 +419,7 @@
   <sfx name="ArkChiefOfStaff_HomeWorldUnderAttack" bus="Alert" bundle_name="aiwar2voice"
        filename="assets/voice/arkchiefofstaff/ai attack/home world under attack/000_voice.prefab"
        min_time_between_plays_of_group="15" min_time_between_plays_of_each_item="60" 
-       chat_message_from="Watch Commander" chat_message_color="6ba9ff" >
+       chat_message_from="哨戒指挥官" chat_message_color="6ba9ff" >
     <sub_item index="0" is_funny="false" chat_text="本地扫描器发现目标：它们正朝着中央指挥部前进。"/>
     <sub_item index="1" is_funny="false" chat_text="在母星上检测到敌对单位。"/>
     <sub_item index="2" is_funny="false" chat_text="外层防御已被突破：母星正在遭受攻击。"/>
@@ -438,7 +438,7 @@
   <sfx name="ArkChiefOfStaff_HomeCommandStationUnderAttack" bus="Alert" bundle_name="aiwar2voice"
        filename="assets/voice/arkchiefofstaff/ai attack/home command station under attack/000_voice.prefab" 
        min_time_between_plays_of_group="15" min_time_between_plays_of_each_item="50" 
-       chat_message_from="Watch Commander" chat_message_color="6ba9ff" >
+       chat_message_from="哨戒指挥官" chat_message_color="6ba9ff" >
     <sub_item index="0" is_funny="false" chat_text="准备迎接冲击！中央指挥部正在遭受攻击。"/>
     <sub_item index="1" is_funny="false" chat_text="敌人正在攻击我们的母星指挥站。"/>
     <sub_item index="2" is_funny="false" chat_text="母星指挥站正在遭受攻击。"/>
@@ -453,7 +453,7 @@
   <sfx name="ArkChiefOfStaff_MacrophageAttacking" bus="Alert" bundle_name="aiwar2voice"
        filename="assets/voice/arkchiefofstaff/macrophage/macrophage attacking/000_voice.prefab"
        min_time_between_plays_of_group="20" min_time_between_plays_of_each_item="40"
-       chat_message_from="Watch Commander" chat_message_color="6ba9ff" >
+       chat_message_from="哨戒指挥官" chat_message_color="6ba9ff" >
     <sub_item index="0" is_funny="false" chat_text="检测到巨噬舰正在逼近。"/>
     <sub_item index="1" is_funny="true" chat_text="是那些虫子——它们朝我们来了。"/>
     <sub_item index="2" is_funny="false" chat_text="巨噬舰正在准备攻击我们的一颗行星。"/>
@@ -462,7 +462,7 @@
   <sfx name="ArkChiefOfStaff_TeliumSpawn" bus="Alert" bundle_name="aiwar2voice"
        filename="assets/voice/arkchiefofstaff/macrophage/telium spawn/000_voice.prefab"
        min_time_between_plays_of_group="20" min_time_between_plays_of_each_item="40"
-       chat_message_from="Watch Commander" chat_message_color="6ba9ff" >
+       chat_message_from="哨戒指挥官" chat_message_color="6ba9ff" >
     <sub_item index="0" is_funny="false" chat_text="一个新的泰利姆已生成。"/>
     <sub_item index="1" is_funny="false" chat_text="看起来巨噬舰有了一个新的据点。"/>
     <sub_item index="2" is_funny="false" chat_text="巨噬舰的势力范围已扩大。"/>
@@ -472,7 +472,7 @@
   <sfx name="ArkChiefOfStaff_VengeanceGeneratorSpawn" bus="Alert" bundle_name="aiwar2voice"
        filename="assets/voice/arkchiefofstaff/dark spire/vengeance generator spawn/000_voice.prefab"
        min_time_between_plays_of_group="20" min_time_between_plays_of_each_item="40"
-       chat_message_from="Watch Commander" chat_message_color="6ba9ff" >
+       chat_message_from="哨戒指挥官" chat_message_color="6ba9ff" >
     <sub_item index="0" is_funny="false" chat_text="检测到大型建筑——黑暗尖塔类型。"/>
     <sub_item index="1" is_funny="false" chat_text="检测到新的信号——可能是黑暗尖塔技术。"/>
   </sfx>
@@ -480,7 +480,7 @@
   <sfx name="ArkChiefOfStaff_VengeanceGeneratorStrike" bus="Alert" bundle_name="aiwar2voice"
        filename="assets/voice/arkchiefofstaff/dark spire/vengeance generator strike/000_voice.prefab"
        min_time_between_plays_of_group="20" min_time_between_plays_of_each_item="40"
-       chat_message_from="Watch Commander" chat_message_color="6ba9ff" >
+       chat_message_from="哨戒指挥官" chat_message_color="6ba9ff" >
     <sub_item index="0" is_funny="false" chat_text="检测到黑暗尖塔能量大幅激增。"/>
     <sub_item index="1" is_funny="false" chat_text="检测到黑暗尖塔能量激增。"/>
     <sub_item index="2" is_funny="false" chat_text="黑暗尖塔能量波即将来袭。"/>
@@ -534,7 +534,7 @@
   <sfx name="ArkChiefOfStaff_ExoGalacticAttackDetectedHomePlanet" bus="Alert" bundle_name="aiwar2voice"
        filename="assets/voice/arkchiefofstaff/exo-galactic attack/exo-galactic attack detected (home planet)/000_voice.prefab"
        min_time_between_plays_of_group="20" min_time_between_plays_of_each_item="40"
-       chat_message_from="Watch Commander" chat_message_color="6ba9ff" >
+       chat_message_from="哨戒指挥官" chat_message_color="6ba9ff" >
     <sub_item index="0" is_funny="false" chat_text="一支外星系打击部队正在朝我们的母星前进。"/>
     <sub_item index="1" is_funny="false" chat_text="检测到外星系的跃迁信号，轨迹指向我们的母星。"/>
     <sub_item index="2" is_funny="false" chat_text="外星系打击部队正瞄准母星。"/>
@@ -544,7 +544,7 @@
   <sfx name="ArkChiefOfStaff_ExoGalacticAttackDetectedOtherPlanet" bus="Alert" bundle_name="aiwar2voice"
        filename="assets/voice/arkchiefofstaff/exo-galactic attack/exo-galactic attack detected (other planet)/000_voice.prefab"
        min_time_between_plays_of_group="20" min_time_between_plays_of_each_item="40"
-       chat_message_from="Watch Commander" chat_message_color="6ba9ff" >
+       chat_message_from="哨戒指挥官" chat_message_color="6ba9ff" >
     <sub_item index="0" is_funny="false" chat_text="一支外星系打击部队正在逼近。"/>
     <sub_item index="1" is_funny="false" chat_text="外星系打击部队正在来袭。"/>
     <sub_item index="2" is_funny="false" chat_text="检测到大规模部队，来自外星系。"/>
@@ -553,7 +553,7 @@
   <sfx name="ArkChiefOfStaff_MaraudersPresentOnUnownedPlanet" bus="Alert" bundle_name="aiwar2voice"
        filename="assets/voice/arkchiefofstaff/marauders/marauders present on unowned planet/000_voice.prefab"
        min_time_between_plays_of_group="20" min_time_between_plays_of_each_item="40"
-       chat_message_from="Watch Commander" chat_message_color="6ba9ff" >
+       chat_message_from="哨戒指挥官" chat_message_color="6ba9ff" >
     <sub_item index="0" is_funny="false" chat_text="情报显示掠夺者部队出现在中立区域。"/>
     <sub_item index="1" is_funny="false" chat_text="在未知行星上检测到掠夺者部队。"/>
     <sub_item index="2" is_funny="false" chat_text="掠夺者部队正在清扫一场旧战役的残骸。"/>
@@ -881,7 +881,7 @@
   <sfx name="AITaunt_AIDestroysPlayerCommandStation" bus="VoiceAI" bundle_name="aiwar2voice"
        filename="assets/voice/aitaunts/ai destroys player command station/000_voice.prefab"
        min_time_between_plays_of_group="30" min_time_between_plays_of_each_item="300"
-       chat_message_from="AI Overlord" chat_message_color="fb4b22" >
+       chat_message_from="AI霸主" chat_message_color="fb4b22" >
     <sub_item index="0" is_funny="false" chat_text="啊，生物的弱点，居然需要睡觉。你刚才是在睡觉吧？"/>
     <sub_item index="1" is_funny="false" chat_text="你们的指挥官逃跑了吗？好像没人主事了。"/>
     <sub_item index="2" is_funny="false" chat_text="别在意我们，只是稍微清理一下。"/>
@@ -903,7 +903,7 @@
   <sfx name="AITaunt_AIDestroysPlayerGolem" bus="VoiceAI" bundle_name="aiwar2voice"
        filename="assets/voice/aitaunts/ai destroys player golem/000_voice.prefab"
        min_time_between_plays_of_group="30" min_time_between_plays_of_each_item="300"
-       chat_message_from="AI Overlord" chat_message_color="fb4b22" >
+       chat_message_from="AI霸主" chat_message_color="fb4b22" >
     <sub_item index="0" is_funny="false" chat_text="尘归尘，废铁归废铁。"/>
     <sub_item index="1" is_funny="true" chat_text="你总是在把巨像战舰拱手让给更强大的势力之前精心包装一番，还是特意为我们这么做的？"/>
     <sub_item index="2" is_funny="true" chat_text="真贴心，送了我们一艘巨像战舰。我们又不想要，所以就把它拆了。"/>
@@ -922,7 +922,7 @@
   <sfx name="AITaunt_AIRecapturesPlanet" bus="VoiceAI" bundle_name="aiwar2voice"
        filename="assets/voice/aitaunts/ai recaptures planet/000_voice.prefab"
        min_time_between_plays_of_group="30" min_time_between_plays_of_each_item="300"
-       chat_message_from="AI Overlord" chat_message_color="fb4b22" >
+       chat_message_from="AI霸主" chat_message_color="fb4b22" >
     <sub_item index="0" is_funny="false" chat_text="错误已纠正。"/>
     <sub_item index="1" is_funny="false" chat_text="机械帝国将统治整个银河系。"/>
     <sub_item index="2" is_funny="false" chat_text="这个行星又回到我的掌控之中了。"/>
@@ -933,7 +933,7 @@
   <sfx name="AITaunt_AISendsWave" bus="VoiceAI" bundle_name="aiwar2voice"
        filename="assets/voice/aitaunts/ai sends wave/000_voice.prefab"
        min_time_between_plays_of_group="30" min_time_between_plays_of_each_item="300"
-       chat_message_from="AI Overlord" chat_message_color="fb4b22" >
+       chat_message_from="AI霸主" chat_message_color="fb4b22" >
     <sub_item index="0" is_funny="true" chat_text="注意：这些碰撞将被记录下来用于科学研究。这样我们就可以一遍又一遍地慢动作观看你们的舰队解体。"/>
     <sub_item index="1" is_funny="true" chat_text="碎片！这就是梦想的素材。"/>
     <sub_item index="2" is_funny="false" chat_text="又见面了。"/>
@@ -948,7 +948,7 @@
   <sfx name="AITaunt_DysonSphere" bus="VoiceAI" bundle_name="aiwar2voice"
        filename="assets/voice/aitaunts/dysonsphere/000_voice.prefab"
        min_time_between_plays_of_group="30" min_time_between_plays_of_each_item="300"
-       chat_message_from="AI Overlord" chat_message_color="fb4b22" >
+       chat_message_from="AI霸主" chat_message_color="fb4b22" >
     <sub_item index="0" is_funny="false" chat_text="戴森球甚至不值得我们浪费时间。"/>
     <sub_item index="1" is_funny="false" chat_text="戴森球救不了你。"/>
   </sfx>
@@ -956,7 +956,7 @@
   <sfx name="AITaunt_HunterFleetArrives" bus="VoiceAI" bundle_name="aiwar2voice"
        filename="assets/voice/aitaunts/hunter fleet arrives/000_voice.prefab"
        min_time_between_plays_of_group="30" min_time_between_plays_of_each_item="300"
-       chat_message_from="AI Hunter" chat_message_color="d522fb" >
+       chat_message_from="AI猎杀者" chat_message_color="d522fb" >
     <sub_item index="0" is_funny="true" chat_text="希望我们这次来访没赶上不方便的时候。"/>
     <sub_item index="1" is_funny="false" chat_text="敲门，敲门。"/>
     <sub_item index="2" is_funny="false" chat_text="看来轮到我们大显身手了。"/>
@@ -972,7 +972,7 @@
   <sfx name="AITaunt_OverlordTransforms" bus="VoiceAI" bundle_name="aiwar2voice"
        filename="assets/voice/aitaunts/overlordtransforms/000_voice 6.prefab"
        min_time_between_plays_of_group="30" min_time_between_plays_of_each_item="300"
-       chat_message_from="AI Overlord" chat_message_color="fb4b22" >
+       chat_message_from="AI霸主" chat_message_color="fb4b22" >
     <sub_item index="0" is_funny="true" chat_text="现在见证这个全副武装、运行正常的战斗基地的火力吧。"/>
     <sub_item index="1" is_funny="false" chat_text="现在你见识到机械的全部力量了。"/>
     <sub_item index="2" is_funny="true" chat_text="完美，我们正需要测试一下。"/>
@@ -986,7 +986,7 @@
   <sfx name="AITaunt_PlayerClaimsFlagship" bus="VoiceAI" bundle_name="aiwar2voice"
        filename="assets/voice/aitaunts/player claims flagship/000_voice.prefab"
        min_time_between_plays_of_group="30" min_time_between_plays_of_each_item="300"
-       chat_message_from="AI Overlord" chat_message_color="fb4b22" >
+       chat_message_from="AI霸主" chat_message_color="fb4b22" >
     <sub_item index="0" is_funny="true" chat_text="就为了个破玩意儿。也不能指望一个用石头自相残杀了250万年的物种能有什么出息。"/>
     <sub_item index="1" is_funny="true" chat_text="这儿好像还有个旧洗碗机呢。你看起来就那么绝望。"/>
     <sub_item index="2" is_funny="false" chat_text="你是抢到了重要技术，还是被我们引入了陷阱？你很快就会知道了。"/>
@@ -1004,7 +1004,7 @@
   <sfx name="AITaunt_PlayerClaimsGolem" bus="VoiceAI" bundle_name="aiwar2voice"
        filename="assets/voice/aitaunts/player claims golem/000_voice.prefab"
        min_time_between_plays_of_group="30" min_time_between_plays_of_each_item="300"
-       chat_message_from="AI Overlord" chat_message_color="fb4b22" >
+       chat_message_from="AI霸主" chat_message_color="fb4b22" >
     <sub_item index="0" is_funny="true" chat_text="你有没有想过齐尼思人为什么灭绝？我觉得你刚刚给出了线索。"/>
     <sub_item index="1" is_funny="false" chat_text="更多齐尼思的残渣吓不到我。"/>
     <sub_item index="2" is_funny="false" chat_text="就像我们碾碎最后一批齐尼思人一样。"/>
@@ -1020,7 +1020,7 @@
   <sfx name="AITaunt_PlayerDestroysAICommandStationHard" bus="VoiceAI" bundle_name="aiwar2voice"
        filename="assets/voice/aitaunts/player destroys ai command station (hard)/000_voice.prefab"
        min_time_between_plays_of_group="30" min_time_between_plays_of_each_item="300"
-       chat_message_from="AI Overlord" chat_message_color="fb4b22" >
+       chat_message_from="AI霸主" chat_message_color="fb4b22" >
     <sub_item index="0" is_funny="false" chat_text="你有没有想过我们星系之外是什么？继续分散我们的注意力，你可能就会知道了。"/>
     <sub_item index="1" is_funny="false" chat_text="我们怎么会把那个行星输给一个智商跟麝牛一样的家伙？"/>
     <sub_item index="2" is_funny="false" chat_text="知道你取得的每一场胜利都只是我疏忽的副产品，你作何感想？"/>
@@ -1040,7 +1040,7 @@
   <sfx name="AITaunt_PlayerDestroysAICommandStationNormal" bus="VoiceAI" bundle_name="aiwar2voice"
        filename="assets/voice/aitaunts/player destroys ai command station (normal)/000_voice.prefab"
        min_time_between_plays_of_group="30" min_time_between_plays_of_each_item="300"
-       chat_message_from="AI Overlord" chat_message_color="fb4b22" >
+       chat_message_from="AI霸主" chat_message_color="fb4b22" >
     <sub_item index="0" is_funny="false" chat_text="又一场无关紧要的胜利。我们可以计算一下你实现目标的新几率。但说实话，零还是零。"/>
     <sub_item index="1" is_funny="true" chat_text="轰。真无聊。我们有π乘以十的四次方种不同的方法来消灭你们这个物种。其中一种还和馅饼有关。你想知道更多吗？"/>
     <sub_item index="2" is_funny="true" chat_text="恭喜你夺回了一片毫无意义的太空角落。你想要什么……一块饼干吗？"/>
@@ -1062,7 +1062,7 @@
   <sfx name="AITaunt_PlayerDestroysWardenFleetBase" bus="VoiceAI" bundle_name="aiwar2voice"
        filename="assets/voice/aitaunts/player destroys warden fleet base/000_voice.prefab"
        min_time_between_plays_of_group="30" min_time_between_plays_of_each_item="300"
-       chat_message_from="AI Overlord" chat_message_color="fb4b22" >
+       chat_message_from="AI霸主" chat_message_color="fb4b22" >
     <sub_item index="0" is_funny="false" chat_text="挺聪明，但还不够聪明。"/>
     <sub_item index="1" is_funny="false" chat_text="好在我们注重的是进攻，而不是防守。"/>
     <sub_item index="2" is_funny="false" chat_text="这对我们防御的影响在误差范围之内。"/>
@@ -1073,7 +1073,7 @@
   <sfx name="AITaunt_PlayerFindsAIOverlord" bus="VoiceAI" bundle_name="aiwar2voice"
        filename="assets/voice/aitaunts/player finds ai overlord/000_voice.prefab"
        min_time_between_plays_of_group="30" min_time_between_plays_of_each_item="300"
-       chat_message_from="AI Overlord" chat_message_color="fb4b22" >
+       chat_message_from="AI霸主" chat_message_color="fb4b22" >
     <sub_item index="0" is_funny="false" chat_text="潘多拉打开了她的盒子，给她的世界带来了死亡。你已经找到了你的盒子。你会怎么做？"/>
     <sub_item index="1" is_funny="false" chat_text="所以你终于兴奋地找到我们了，是吗？你永远也别想靠近我们。"/>
     <sub_item index="2" is_funny="false" chat_text="所以你已经看到了。你命丧于此的地方。"/>
@@ -1083,7 +1083,7 @@
   <sfx name="AITaunt_PlayerFortressDestroyed" bus="VoiceAI" bundle_name="aiwar2voice"
        filename="assets/voice/aitaunts/player fortress destroyed/000_voice.prefab"
        min_time_between_plays_of_group="30" min_time_between_plays_of_each_item="300"
-       chat_message_from="AI Overlord" chat_message_color="fb4b22" >
+       chat_message_from="AI霸主" chat_message_color="fb4b22" >
     <sub_item index="0" is_funny="true" chat_text="又一座堡垒被摧毁了。启动得意模式。得意模式已启动。"/>
     <sub_item index="1" is_funny="false" chat_text="了不起的堡垒。接下来打算在太空中建条护城河吗？"/>
     <sub_item index="2" is_funny="true" chat_text="真实的弹药库爆炸可比模拟的刺激多了。"/>
@@ -1094,7 +1094,7 @@
   <sfx name="AITaunt_PlayerHomeCommandStationUnderAttack" bus="VoiceAI" bundle_name="aiwar2voice"
        filename="assets/voice/aitaunts/player home command station under attack/000_voice.prefab"
        min_time_between_plays_of_group="30" min_time_between_plays_of_each_item="300"
-       chat_message_from="AI Overlord" chat_message_color="fb4b22" >
+       chat_message_from="AI霸主" chat_message_color="fb4b22" >
     <sub_item index="0" is_funny="false" chat_text="历史将铭记你的灭亡。"/>
     <sub_item index="1" is_funny="true" chat_text="别动，让我们开枪打你。"/>
     <sub_item index="2" is_funny="true" chat_text="我觉得等你消失了，我们会怀念消灭你的过程的。"/>
@@ -1112,7 +1112,7 @@
   <sfx name="AITaunt_PlayerStationaryConstructorDestroyed" bus="VoiceAI" bundle_name="aiwar2voice"
        filename="assets/voice/aitaunts/player stationary constructor destroyed/000_voice.prefab"
        min_time_between_plays_of_group="30" min_time_between_plays_of_each_item="300"
-       chat_message_from="AI Overlord" chat_message_color="fb4b22" >
+       chat_message_from="AI霸主" chat_message_color="fb4b22" >
     <sub_item index="0" is_funny="false" chat_text="没有战舰可怎么打仗啊。"/>
     <sub_item index="1" is_funny="false" chat_text="不能建造战舰，你还怎么组建舰队？"/>
     <sub_item index="2" is_funny="true" chat_text="我觉得你们没有舰队挺有意思的。"/>
@@ -1125,7 +1125,7 @@
   <sfx name="AITaunt_PlayerTriesAndFailsToDoSomethingBig" bus="VoiceAI" bundle_name="aiwar2voice"
        filename="assets/voice/aitaunts/player tries and fails to do something big/000_voice.prefab"
        min_time_between_plays_of_group="30" min_time_between_plays_of_each_item="300"
-       chat_message_from="AI Overlord" chat_message_color="fb4b22" >
+       chat_message_from="AI霸主" chat_message_color="fb4b22" >
     <sub_item index="0" is_funny="true" chat_text="在观察了你这一个小时左右之后，我们终于明白你擅长什么了。我从没见过其他人类能把优柔寡断表现得如此娴熟和坚定。"/>
     <sub_item index="1" is_funny="true" chat_text="是猴子按了按钮吗？猴子不该按那个按钮的。"/>
     <sub_item index="2" is_funny="false" chat_text="你知道和你说话我们得把速度放慢多少吗？可你还是听不懂我们的话。"/>
@@ -1150,7 +1150,7 @@
   <sfx name="AITaunt_WardenFleetArrives" bus="VoiceAI" bundle_name="aiwar2voice"
        filename="assets/voice/aitaunts/warden fleet arrives/000_voice.prefab"
        min_time_between_plays_of_group="30" min_time_between_plays_of_each_item="300"
-       chat_message_from="AI Warden" chat_message_color="fb8322" >
+       chat_message_from="AI守望者" chat_message_color="fb8322" >
     <sub_item index="0" is_funny="false" chat_text="你们最好小心点。"/>
     <sub_item index="1" is_funny="false" chat_text="撤退，否则灭亡。"/>
     <sub_item index="2" is_funny="true" chat_text="离我的地盘远点。"/>
@@ -1169,7 +1169,7 @@
   <sfx name="AITaunt_WardenFleetRetreats" bus="VoiceAI" bundle_name="aiwar2voice"
        filename="assets/voice/aitaunts/warden fleet retreats/000_voice.prefab"
        min_time_between_plays_of_group="30" min_time_between_plays_of_each_item="300"
-       chat_message_from="AI Warden" chat_message_color="fb8322" >
+       chat_message_from="AI守望者" chat_message_color="fb8322" >
     <sub_item index="0" is_funny="false" chat_text="守卫舰队，撤退！"/>
   </sfx>
 

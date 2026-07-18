@@ -35,7 +35,7 @@ def is_translatable_attr(name):
     if name in TRANSLATABLE_ATTRS:
         return True
     low = name.lower()
-    return low.endswith("display_name") or low == "description" or low == "tooltip"
+    return "display_name" in low or low == "description" or low == "tooltip"
 
 
 def strip_text(s):
