@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<root>
-    <planet_name_type name="My Planet Names (this affects the sort order in the dropdown)"
-                      display_name="我的行星名称"
-                      subdir="MyPlanetNames"
-                      description="所有行星都以毛茸茸的虚拟主播命名。等等，什么？！"
-                      />
-</root>

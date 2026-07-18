@@ -1,5 +1,0 @@
-Mod 示例：行星名
-Author McModface
-EM:PN
-AAAAAA
-disabled
