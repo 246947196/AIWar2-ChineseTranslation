@@ -376,20 +376,37 @@ ChatLog 条目中包含 `<link=N>` 标签用于可点击交互（如点击跳转
 
 **与捕获覆盖层的关系**：编码方案修复了序列化管道（根源修复），但**聊天 TMP 渲染层**仍受修改版 TMP FontEngine 限制，`ChatLog`/`BasicText` 的中文覆盖层（capture → overlay）作为渲染兜底仍需保留。
 
-##### 额外修复：存档名存/读双端编解码（2026-07-18）
+##### 额外修复：战役名/存档名存读双端编解码（2026-07-18）
 
-**第一次尝试（失败）**：只在 `SaveGameData.Load()` 中解码 `~uXXXX` → 中文。
+**问题**：`ConvertToCondensedFormat` 走内部 CharMapping 将非 ASCII 压成 `_`，导致战役文件夹名和存档文件名均为 `_`。
 
-失败原因：`ConvertToCondensedFormat` 走的是内部 CharMapping（直接压成 `_`），**不走 `AddString_Condensed`**（PatchCharMapping 的补丁点）。所以磁盘上的文件名已经是 `_`，读端解码毫无意义。
+**第一次尝试（失败）**：只在 `SaveGameData.Load()` 中解码存档名。失败原因：`ConvertToCondensedFormat` **不走 `AddString_Condensed`**（PatchCharMapping 补丁点），磁盘文件名已永久损坏为 `_`，读端解码无意义。
 
-**最终修复**：在 `ConvertToCondensedFormat` 前先编码，保证写入端的文件名就是 `~uXXXX`。
+**最终修复**：`EncodeForCondensedFormat` + `DecodeCondensedSaveName` 实现双向编解码。编码在 `ConvertToCondensedFormat` 前调用，保证磁盘文件名为 `~uXXXX`（109 字符表内合法 Windows 文件名）。解码在三个展示边界调用。
 
-| 端 | 方法 | 位置 |
-|----|------|------|
-| 写入编码 | `EncodeForCondensedFormat()` | `SaveLoadMethods.SaveWorldToDisk()` + `GameSaver.DoSave()`，在 `ConvertToCondensedFormat` 前调用 |
-| 读取解码 | `DecodeCondensedSaveName()` | `SaveGameData.Load()`，`Path.GetFileNameWithoutExtension` 后立即解码 |
+**`EncodeForCondensedFormat` 逻辑**：`~` → `~~`，表外字符（中文等）→ `~uXXXX`。
 
-`EncodeForCondensedFormat` 逻辑：`~` → `~~`，中文/其他表外字符 → `~uXXXX`。编码后全部字符在 109 字符表内，`ConvertToCondensedFormat` 原样通过。磁盘文件名 `~uXXXX`（合法 Windows 文件名），读端解码还原。
+**写入端**（战役名 + 存档名均在 `ConvertToCondensedFormat` 前编码）：
+
+| 位置 | 变量 |
+|------|------|
+| `SaveLoadMethods.SaveWorldToDisk()` L897, L901 | `world.CampaignName`, `SaveName` |
+| `GameSaver.DoSave()` L28, L40 | `campaignName`, `SaveName` |
+
+**读取端**：
+
+| 位置 | 变量 | 作用 |
+|------|------|------|
+| `SaveGameData.Load()` L315 | `saveName` | 存档列表展示 |
+| `ParseCampaignFolders()` L411+ | `group.DisplayName` | 战役列表按钮 |
+| `SaveLoadMethods.cs` L1108 | `World.Instance.CampaignName` | 加载后 World 状态 |
+| `Window_InGameEscapeMenu.cs` L365 | `World.Instance.CampaignName` | 逃脱菜单展示 |
+| `Window_SaveGameMenu.cs` L275 | `World.Instance.CampaignName` | 保存菜单标题 |
+| `GetCampaign()` L212+ | 编码名/解码名双重匹配 | 避免 `GetCampaign` 因 DisplayName 已解码而找不到组 |
+
+**关键函数**在 `SaveGameData.cs:258-305`：`EncodeForCondensedFormat()` + `DecodeCondensedSaveName()`。
+
+**`GetCampaign` 双重匹配**（`SaveLoadMethods.GetCampaign` L212）：搜索组时同时匹配 `c.DisplayName == name`（传入的编码名）和 `c.DisplayName == decodedName`（解码后的中文），确保 `Window_SaveGameMenu.OnOpen` 等在 `World.Instance.CampaignName` 为任意状态时都能找到正确组。
 
 ### 部署
 
