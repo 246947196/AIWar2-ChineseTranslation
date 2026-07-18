@@ -34,20 +34,20 @@ namespace Arcen.AIW2.External
 
         public override void AddDescription(ArcenCharacterBufferBase Buffer)
         {
-            Buffer.Add("Starting Budget: ").AddNumberMoreReadable(this.PraetorianStartingBudget);
-            Buffer.Add("\nStrength Cap At 100 AIP: ").AddStrength_MoreReadable(this.GetStrengthCapAtAIP( 100 ), true);
-            Buffer.Add("\nStrength Cap At 300 AIP: ").AddStrength_MoreReadable(this.GetStrengthCapAtAIP( 300 ), true);
-            Buffer.Add("\nStrength Cap At 700 AIP: ").AddStrength_MoreReadable(this.GetStrengthCapAtAIP( 700 ), true);
-            Buffer.Add("\n<size=75%>(Income Is Based Off Main AI Type And Main AI Difficulty Level)</size>");
-            Buffer.Add("\nOverconfidence Ratio: ").AddNumberMoreReadable(this.OverconfidenceRatio);
-            Buffer.Add("\nTop-Tier Units: ").Add(this.CanUseTopTierUnits ? "Available" : "Unavailable");
+            Buffer.Add("初始预算: ").AddNumberMoreReadable(this.PraetorianStartingBudget);
+            Buffer.Add("\n100 AIP 时强度上限: ").AddStrength_MoreReadable(this.GetStrengthCapAtAIP( 100 ), true);
+            Buffer.Add("\n300 AIP 时强度上限: ").AddStrength_MoreReadable(this.GetStrengthCapAtAIP( 300 ), true);
+            Buffer.Add("\n700 AIP 时强度上限: ").AddStrength_MoreReadable(this.GetStrengthCapAtAIP( 700 ), true);
+            Buffer.Add("\n<size=75%>(收入基于主AI类型和主AI难度等级)</size>");
+            Buffer.Add("\n过度自信比率: ").AddNumberMoreReadable(this.OverconfidenceRatio);
+            Buffer.Add("\n顶级单位: ").Add(this.CanUseTopTierUnits ? "可用" : "不可用");
 
             if ( this.CanUseTopTierUnits ) {
-                Buffer.Add(" After ").Add(this.AIPForTopTierUnlock).Add(" AIP");
+                Buffer.Add(" 在 ").Add(this.AIPForTopTierUnlock).Add(" AIP后");
             }
 
-            Buffer.Add("\nNever Camp Closer Than ").Add(this.NeverCampCloserThanXHopsToHostileTerritory).Add(" Hops To Hostile Territory");
-            Buffer.Add("\n<size=75%>Any Extra Mark Levels Based On Main AI Difficulty</size>");
+            Buffer.Add("\n从不扎营近于 ").Add(this.NeverCampCloserThanXHopsToHostileTerritory).Add(" 跳至敌对领土");
+            Buffer.Add("\n<size=75%>额外标记等级基于主AI难度</size>");
         }
 
         #region Pooling
