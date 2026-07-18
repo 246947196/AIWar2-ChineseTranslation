@@ -49,7 +49,7 @@ namespace Arcen.AIW2.External
             int load = 70 + (Intensity * 5);
 
             if ( OptionalExplainCalculation != null )
-                OptionalExplainCalculation.Add( load ).Add( " Load From Macrophage" );
+                OptionalExplainCalculation.Add( load ).Add( " 来自巨噬细胞感染的负载" );
             return load;
         }
 

@@ -53,7 +53,7 @@ namespace Arcen.AIW2.External
             int load = 70 + (Intensity * 5);
 
             if ( OptionalExplainCalculation != null )
-                OptionalExplainCalculation.Add( load ).Add( " Load From Scourge" );
+                OptionalExplainCalculation.Add( load ).Add( " 来自天灾的负载" );
             return load;
         }
         #region DoFactionGeneralAggregationsPausedOrUnpaused

@@ -33,7 +33,7 @@ namespace Arcen.AIW2.External
             int load = 40 + (Intensity * 5);
 
             if ( OptionalExplainCalculation != null )
-                OptionalExplainCalculation.Add( load ).Add( " Load From ScourgeCivilWar" );
+                OptionalExplainCalculation.Add( load ).Add( " 来自天灾内战的负载" );
             return load;
         }
 

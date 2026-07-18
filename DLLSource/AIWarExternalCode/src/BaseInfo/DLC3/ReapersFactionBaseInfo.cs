@@ -74,7 +74,7 @@ namespace Arcen.AIW2.External
             int load = 40 + (Intensity * 5);
 
             if ( OptionalExplainCalculation != null )
-                OptionalExplainCalculation.Add( load ).Add( " Load From Reapers" );
+                OptionalExplainCalculation.Add( load ).Add( " 来自收割者的负载" );
             return load;
         }
 

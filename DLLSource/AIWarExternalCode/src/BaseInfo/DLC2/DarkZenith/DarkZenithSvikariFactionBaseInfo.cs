@@ -17,7 +17,7 @@ namespace Arcen.AIW2.External
             int load = 60 + (Intensity * 10);
 
             if ( OptionalExplainCalculation != null )
-                OptionalExplainCalculation.Add( load ).Add( " Load From Svikari" );
+                OptionalExplainCalculation.Add( load ).Add( " 来自斯维卡里的负载" );
             return load;
         }
 

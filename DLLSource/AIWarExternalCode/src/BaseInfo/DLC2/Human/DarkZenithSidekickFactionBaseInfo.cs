@@ -26,7 +26,7 @@ namespace Arcen.AIW2.External
             int load = 60 + (Intensity * 10);
 
             if ( OptionalExplainCalculation != null )
-                OptionalExplainCalculation.Add( load ).Add( " Load From Dark Zenith" );
+                OptionalExplainCalculation.Add( load ).Add( " 来自黑暗天顶的负载" );
             return load;
         }
         protected override void SubSerializeFactionTo( SerMetaData MetaData, ArcenSerializationBuffer Buffer, SerializationCommandType SerializationCmdType )

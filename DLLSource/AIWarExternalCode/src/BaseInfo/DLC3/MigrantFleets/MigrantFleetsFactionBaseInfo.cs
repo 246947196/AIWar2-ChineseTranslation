@@ -183,7 +183,7 @@ namespace Arcen.AIW2.External
             int load = 50 + (Intensity * 8);
 
             if ( OptionalExplainCalculation != null )
-                OptionalExplainCalculation.Add( load ).Add( " Load From Migrant Fleets" );
+                OptionalExplainCalculation.Add( load ).Add( " 来自移民舰队的负载" );
             return load;
         }
 

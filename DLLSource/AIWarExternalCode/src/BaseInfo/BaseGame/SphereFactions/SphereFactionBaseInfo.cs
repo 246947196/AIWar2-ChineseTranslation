@@ -840,7 +840,7 @@ namespace Arcen.AIW2.External
             int load = 10 + (Intensity * 6);
 
             if ( OptionalExplainCalculation != null )
-                OptionalExplainCalculation.Add( load ).Add( $" Load From {SphereType} Spire Sphere" );
+                OptionalExplainCalculation.Add( load ).Add( $" 来自 {SphereType} 尖塔领域的负载" );
             return load;
         }
         #if false

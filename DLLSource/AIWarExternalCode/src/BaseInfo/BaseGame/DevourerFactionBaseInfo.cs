@@ -39,7 +39,7 @@ namespace Arcen.AIW2.External
         public override float CalculateYourPortionOfPredictedGameLoad_Where100IsANormalAI( ArcenCharacterBufferBase OptionalExplainCalculation )
         {
             if ( OptionalExplainCalculation != null )
-                OptionalExplainCalculation.Add( "15 Load From Zenith Devourer" );
+                OptionalExplainCalculation.Add( "15 来自吞噬者的负载" );
             return 15;
         }
 

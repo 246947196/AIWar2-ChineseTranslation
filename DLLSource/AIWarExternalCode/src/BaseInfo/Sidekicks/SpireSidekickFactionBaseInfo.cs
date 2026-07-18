@@ -291,7 +291,7 @@ namespace Arcen.AIW2.External
         public override float CalculateYourPortionOfPredictedGameLoad_Where100IsANormalAI( ArcenCharacterBufferBase OptionalExplainCalculation )
         {
             if ( OptionalExplainCalculation != null )
-                OptionalExplainCalculation.Add( "70 Load From Fallen Spire Faction" );
+                OptionalExplainCalculation.Add( "70 来自陨落尖塔阵营的负载" );
             return 70;
         }
 

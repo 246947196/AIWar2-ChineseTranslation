@@ -159,7 +159,7 @@ namespace Arcen.AIW2.External
             int load = 60 + (Intensity * 5);
 
             if ( OptionalExplainCalculation != null )
-                OptionalExplainCalculation.Add( load ).Add( " Load From Marauders" );
+                OptionalExplainCalculation.Add( load ).Add( " 来自掠夺者的负载" );
             return load;
         }
 

@@ -38,7 +38,7 @@ namespace Arcen.AIW2.External
         public override float CalculateYourPortionOfPredictedGameLoad_Where100IsANormalAI( ArcenCharacterBufferBase OptionalExplainCalculation )
         {
             if ( OptionalExplainCalculation != null )
-                OptionalExplainCalculation.Add( "1 Load From Missing Faction" );
+                OptionalExplainCalculation.Add( "1 来自缺失派系的负载" );
             return 1;
         }
 

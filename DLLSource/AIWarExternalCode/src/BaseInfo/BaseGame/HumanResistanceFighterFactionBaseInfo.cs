@@ -45,7 +45,7 @@ namespace Arcen.AIW2.External
         public override float CalculateYourPortionOfPredictedGameLoad_Where100IsANormalAI( ArcenCharacterBufferBase OptionalExplainCalculation )
         {
             if ( OptionalExplainCalculation != null )
-                OptionalExplainCalculation.Add( "20 Load From Human Resistance Fighters" );
+                OptionalExplainCalculation.Add( "20 来自人类抵抗军的负载" );
             return 20;
         }
 

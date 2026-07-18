@@ -63,7 +63,7 @@ namespace Arcen.AIW2.External
         public override float CalculateYourPortionOfPredictedGameLoad_Where100IsANormalAI( ArcenCharacterBufferBase OptionalExplainCalculation )
         {
             if ( OptionalExplainCalculation != null )
-                OptionalExplainCalculation.Add( "30 Load From Neinzul Elderlings" );
+                OptionalExplainCalculation.Add( "30 来自奈因祖尔长老的负载" );
             return 30;
         }
 

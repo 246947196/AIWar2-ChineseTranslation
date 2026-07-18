@@ -316,7 +316,7 @@ namespace Arcen.AIW2.External
             int load = 50 + (Intensity * 8);
 
             if ( OptionalExplainCalculation != null )
-                OptionalExplainCalculation.Add( load ).Add( " Load From Nanocaust" );
+                OptionalExplainCalculation.Add( load ).Add( " 来自纳米灾变的负载" );
             return load;
         }
 

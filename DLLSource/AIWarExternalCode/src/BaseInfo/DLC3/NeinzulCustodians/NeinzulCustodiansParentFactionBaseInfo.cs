@@ -46,7 +46,7 @@ namespace Arcen.AIW2.External
         public override float CalculateYourPortionOfPredictedGameLoad_Where100IsANormalAI( ArcenCharacterBufferBase OptionalExplainCalculation )
         {
             if ( OptionalExplainCalculation != null )
-                OptionalExplainCalculation.Add( "90 Load From Neinzul Custodians" );
+                OptionalExplainCalculation.Add( "90 来自奈因祖尔守护者的负载" );
             return 90;
         }
 

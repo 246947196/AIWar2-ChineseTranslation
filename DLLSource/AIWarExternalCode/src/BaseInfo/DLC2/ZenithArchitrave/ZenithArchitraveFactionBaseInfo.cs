@@ -339,7 +339,7 @@ namespace Arcen.AIW2.External
             int load = 60 + (Intensity * 10);
 
             if ( OptionalExplainCalculation != null )
-                OptionalExplainCalculation.Add( load ).Add( " Load From Zenith Architrave" );
+                OptionalExplainCalculation.Add( load ).Add( " 来自天顶拱门的负载" );
             return load;
         }
 

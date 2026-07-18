@@ -46,7 +46,7 @@ namespace Arcen.AIW2.External
         public override float CalculateYourPortionOfPredictedGameLoad_Where100IsANormalAI( ArcenCharacterBufferBase OptionalExplainCalculation )
         {
             if ( OptionalExplainCalculation != null )
-                OptionalExplainCalculation.Add( "5 Load From Nomad Planets" );
+                OptionalExplainCalculation.Add( "5 来自游牧行星的负载" );
             return 5;
         }
 

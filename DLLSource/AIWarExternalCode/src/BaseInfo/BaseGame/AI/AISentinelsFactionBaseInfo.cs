@@ -160,17 +160,17 @@ namespace Arcen.AIW2.External
                     case TypeDifficulty.Brutal:
                         load += 40;
                         if ( OptionalExplainCalculation != null )
-                            OptionalExplainCalculation.Add( "\n   +40 From Brutal AI Type" );
+                            OptionalExplainCalculation.Add( "\n   +40 来自残酷 AI 类型" );
                         break;
                     case TypeDifficulty.Hard:
                         load += 20;
                         if ( OptionalExplainCalculation != null )
-                            OptionalExplainCalculation.Add( "\n   +20 From Hard AI Type" );
+                            OptionalExplainCalculation.Add( "\n   +20 来自困难 AI 类型" );
                         break;
                     case TypeDifficulty.Moderate:
                         load += 20;
                         if ( OptionalExplainCalculation != null )
-                            OptionalExplainCalculation.Add( "\n   +20 From Moderate AI Type" );
+                            OptionalExplainCalculation.Add( "\n   +20 来自中等 AI 类型" );
                         break;
                 }
             }
@@ -178,30 +178,30 @@ namespace Arcen.AIW2.External
             if ( this.SentinelInfo.AIDifficulty != null && this.SentinelInfo.AIDifficulty.Difficulty > 6 )
             {
                 if ( OptionalExplainCalculation != null )
-                    OptionalExplainCalculation.Add( "\n   +" ).Add( ((this.SentinelInfo.AIDifficulty.Difficulty - 6) * 15) ).Add( " AI Difficulty " ).Add( this.SentinelInfo.AIDifficulty.Difficulty );
+                    OptionalExplainCalculation.Add( "\n   +" ).Add( ((this.SentinelInfo.AIDifficulty.Difficulty - 6) * 15) ).Add( " AI 难度 " ).Add( this.SentinelInfo.AIDifficulty.Difficulty );
                 load += ((this.SentinelInfo.AIDifficulty.Difficulty - 6) * 15);
             }
             if ( this.WardenInfo.AIDifficulty != null && this.WardenInfo.AIDifficulty.Difficulty > 6 )
             {
                 if ( OptionalExplainCalculation != null )
-                    OptionalExplainCalculation.Add( "\n   +" ).Add( ((this.WardenInfo.AIDifficulty.Difficulty - 6) * 6) ).Add( " AI Warden Difficulty " ).Add( this.WardenInfo.AIDifficulty.Difficulty );
+                    OptionalExplainCalculation.Add( "\n   +" ).Add( ((this.WardenInfo.AIDifficulty.Difficulty - 6) * 6) ).Add( " AI 守卫难度 " ).Add( this.WardenInfo.AIDifficulty.Difficulty );
                 load += ((this.WardenInfo.AIDifficulty.Difficulty - 6) * 6);
             }
             if ( this.HunterInfo.AIDifficulty != null && this.HunterInfo.AIDifficulty.Difficulty > 6 )
             {
                 if ( OptionalExplainCalculation != null )
-                    OptionalExplainCalculation.Add( "\n   +" ).Add( ((this.HunterInfo.AIDifficulty.Difficulty - 6) * 12) ).Add( " AI Hunter Difficulty " ).Add( this.HunterInfo.AIDifficulty.Difficulty );
+                    OptionalExplainCalculation.Add( "\n   +" ).Add( ((this.HunterInfo.AIDifficulty.Difficulty - 6) * 12) ).Add( " AI 猎手难度 " ).Add( this.HunterInfo.AIDifficulty.Difficulty );
                 load += ((this.HunterInfo.AIDifficulty.Difficulty - 6) * 12);
             }
             if ( this.PraetorianInfo.AIDifficulty != null && this.PraetorianInfo.AIDifficulty.Difficulty > 6 )
             {
                 if ( OptionalExplainCalculation != null )
-                    OptionalExplainCalculation.Add( "\n   +" ).Add( ((this.PraetorianInfo.AIDifficulty.Difficulty - 6) * 3) ).Add( " AI Praetorian Difficulty " ).Add( this.PraetorianInfo.AIDifficulty.Difficulty );
+                    OptionalExplainCalculation.Add( "\n   +" ).Add( ((this.PraetorianInfo.AIDifficulty.Difficulty - 6) * 3) ).Add( " AI 禁卫军难度 " ).Add( this.PraetorianInfo.AIDifficulty.Difficulty );
                 load += ((this.PraetorianInfo.AIDifficulty.Difficulty - 6) * 3);
             }
 
             if ( OptionalExplainCalculation != null )
-                OptionalExplainCalculation.Add( "\n   Total: " ).Add( load ).Add( " Load From AI Faction" );
+                OptionalExplainCalculation.Add( "\n   总计：" ).Add( load ).Add( " 来自 AI 阵营的负载" );
             return load;
         }
 

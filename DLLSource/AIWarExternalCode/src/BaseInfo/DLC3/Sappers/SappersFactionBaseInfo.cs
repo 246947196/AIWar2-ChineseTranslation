@@ -100,7 +100,7 @@ namespace Arcen.AIW2.External
             int load = 50 + (Intensity * 8);
 
             if ( OptionalExplainCalculation != null )
-                OptionalExplainCalculation.Add( load ).Add( " Load From Neinzul Sappers" );
+                OptionalExplainCalculation.Add( load ).Add( " 来自奈因祖尔工兵的负载" );
             return load;
         }
 

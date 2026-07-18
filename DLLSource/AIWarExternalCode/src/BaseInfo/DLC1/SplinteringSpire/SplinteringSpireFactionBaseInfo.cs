@@ -668,7 +668,7 @@ namespace Arcen.AIW2.External
             int load = 30 + Intensity * 3;
 
             if ( OptionalExplainCalculation != null )
-                OptionalExplainCalculation.Add( load ).Add( " Load From Splintering Spire" );
+                OptionalExplainCalculation.Add( load ).Add( " 来自分裂尖塔的负载" );
 
             return load;
         }
