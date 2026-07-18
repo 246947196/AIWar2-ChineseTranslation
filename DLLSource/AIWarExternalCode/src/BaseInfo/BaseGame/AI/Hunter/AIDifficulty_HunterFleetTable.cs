@@ -21,17 +21,17 @@ namespace Arcen.AIW2.External
 
         public override void AddDescription(ArcenCharacterBufferBase Buffer)
         {
-            Buffer.Add("Starting Budget: ").AddNumberMoreReadable(this.HunterStartingBudget);
-            Buffer.Add("\nBonus Budget Per Minute: ").AddNumberMoreReadable(this.HunterBonusIncomePerMinute);
-            Buffer.Add("\n<size=75%>(All Other Income Is Passive From Donations From Sentinels Or Wardens)</size>");
-            Buffer.Add("\nOverconfidence Ratio: ").AddNumberMoreReadable(this.OverconfidenceRatio);
-            Buffer.Add("\nDire Guardians: ").Add(this.CanUseDireGuardians ? "Available" : "Unavailable");
+            Buffer.Add("初始预算: ").AddNumberMoreReadable(this.HunterStartingBudget);
+            Buffer.Add("\n每分钟额外预算: ").AddNumberMoreReadable(this.HunterBonusIncomePerMinute);
+            Buffer.Add("\n<size=75%>(所有其他收入来自哨兵或守卫的被动捐赠)</size>");
+            Buffer.Add("\n过度自信比率: ").AddNumberMoreReadable(this.OverconfidenceRatio);
+            Buffer.Add("\n恐怖守卫: ").Add(this.CanUseDireGuardians ? "可用" : "不可用");
 
             if ( this.CanUseDireGuardians ) {
-                Buffer.Add(" After ").Add(this.AIPForDireUnlock).Add(" AIP");
+                Buffer.Add(" 在 ").Add(this.AIPForDireUnlock).Add(" AIP后");
             }
 
-            Buffer.Add("\nWaits For Reinforcements: ").Add(this.CanWaitForReinforcements ? "They Can" : "They Cannot");
+            Buffer.Add("\n等待增援: ").Add(this.CanWaitForReinforcements ? "会等待" : "不会等待");
         }
 
         #region Pooling

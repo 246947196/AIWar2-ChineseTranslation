@@ -83,16 +83,16 @@ namespace Arcen.AIW2.External
         public override void AddDescription( ArcenCharacterBufferBase Buffer )
         {
             Buffer.Add(this.Description).NewLine();
-            Buffer.Add("\nBudget Scale: ").AddNumberMoreReadable(this.Budget_BudgetScaleVisualOnly);
-            Buffer.Add("\nAI Reserves Interval (Lower Is Harder): ").AddNumberMoreReadable(this.AIReservesIncomeIncreaseInterval);
-            Buffer.Add("\nDefense General Scale: ").AddNumberMoreReadable(this.DefensiveCapMultiplier_Ongoing);
-            Buffer.Add("\nMultiplier To Your Hacking Event Intervals: ").AddNumberMoreReadable(this.MultiplierToGlobalHackingEventIntervals);
-            Buffer.Add("\nAIP Floor Multiplier: ").AddNumberMoreReadable(this.AIPFloorMultiplierPercent).Add("%");
-            Buffer.Add("\nAIP Never Reduces Below: ").AddNumberMoreReadable(this.AIPNeverReducesBelow);
-            Buffer.Add("\nExtragalactic Income Per 10 AIP: ").AddNumberMoreReadable(this.ExtragalacticIncomePer10AIP);
-            Buffer.Add("\nAdded Praetorian Mark Levels Above Ambient: ").AddNumberMoreReadable(this.AddedPraetorianMarkLevelsAboveAmbient);
-            Buffer.Add("\nScale Of Strength Sent After Players Lose Command Stations: ").AddNumberMoreReadable(this.SharkB2_BaseStrength.GetNearestIntPreferringHigher()).Add(" / ").AddNumberMoreReadable(this.SharkB2_BonusStrengthPerAIP.GetNearestIntPreferringHigher());
-            Buffer.Add("\nOverconfidence Ratio: ").Add(this.OverconfidenceRatio);
+            Buffer.Add("\n预算规模: ").AddNumberMoreReadable(this.Budget_BudgetScaleVisualOnly);
+            Buffer.Add("\nAI后备队间隔(越低越难): ").AddNumberMoreReadable(this.AIReservesIncomeIncreaseInterval);
+            Buffer.Add("\n防御总规模: ").AddNumberMoreReadable(this.DefensiveCapMultiplier_Ongoing);
+            Buffer.Add("\n入侵事件间隔倍数: ").AddNumberMoreReadable(this.MultiplierToGlobalHackingEventIntervals);
+            Buffer.Add("\nAIP下限倍数: ").AddNumberMoreReadable(this.AIPFloorMultiplierPercent).Add("%");
+            Buffer.Add("\nAIP永不降至低于: ").AddNumberMoreReadable(this.AIPNeverReducesBelow);
+            Buffer.Add("\n每10 AIP河外收入: ").AddNumberMoreReadable(this.ExtragalacticIncomePer10AIP);
+            Buffer.Add("\n额外执政官等级(高于环境等级): ").AddNumberMoreReadable(this.AddedPraetorianMarkLevelsAboveAmbient);
+            Buffer.Add("\n玩家失去指挥站后派遣的强度规模: ").AddNumberMoreReadable(this.SharkB2_BaseStrength.GetNearestIntPreferringHigher()).Add(" / ").AddNumberMoreReadable(this.SharkB2_BonusStrengthPerAIP.GetNearestIntPreferringHigher());
+            Buffer.Add("\n过度自信比率: ").Add(this.OverconfidenceRatio);
         }
 
         #region Pooling
