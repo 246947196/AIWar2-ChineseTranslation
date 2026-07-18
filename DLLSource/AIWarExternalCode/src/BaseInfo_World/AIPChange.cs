@@ -164,52 +164,52 @@ namespace Arcen.AIW2.External
             switch ( this.Reason )
             {
                 case AIPChangeReason.InitialValue:
-                    reasonText = "Initial Value";
+                    reasonText = "初始值";
                     break;
                 case AIPChangeReason.AutoIncrease:
-                    reasonText = "Auto Increase";
+                    reasonText = "自动增长";
                     break;
                 case AIPChangeReason.EntityDeath:
-                    reasonText = "Death Of {0}";
+                    reasonText = "摧毁{0}";
                     break;
                 case AIPChangeReason.EntityClaim:
-                    reasonText = "{0} Claimed";
+                    reasonText = "占领{0}";
                     break;
                 case AIPChangeReason.Hacking:
-                    reasonText = "Hacking {0}";
+                    reasonText = "骇入{0}";
                     break;
                 case AIPChangeReason.FleetConcentration:
-                    reasonText = "Fleets Too Concentrated At {0}";
+                    reasonText = "舰队在{0}过度集中";
                     break;
                 case AIPChangeReason.Debug:
-                    reasonText = "Debug {0}";
+                    reasonText = "调试{0}";
                     break;
                 case AIPChangeReason.RiskAnalyzer:
-                    reasonText = "the Risk Analyzers";
+                    reasonText = "风险分析器";
                     break;
                 case AIPChangeReason.PlanetCapture:
-                    reasonText = "Capturing Planet"; //we don't have the plaent linked
+                    reasonText = "占领星球"; //we don't have the plaent linked
                     break;
                 case AIPChangeReason.FailedHacking:
-                    reasonText = "Hacking {0}";
+                    reasonText = "骇入{0}失败";
                     break;
                 case AIPChangeReason.PlanetDrilling:
-                    reasonText = "Drilling {0}";
+                    reasonText = "钻探{0}";
                     break;
                 case AIPChangeReason.FactionEscalation:
-                    reasonText = "Faction Escalation";
+                    reasonText = "派系升级";
                     break;
 
                 default:
-                    reasonText = "BUG: Unknown AIPChangeReason " + this.Reason;
+                    reasonText = "BUG: 未知 AIPChangeReason " + this.Reason;
                     break;
             }
 
             string reason = Engine_Universal.SafeFormat( reasonText, entityTypeName );
             if ( this.Change >= 0 )
-                return Engine_Universal.SafeFormat( "<color=#ff0000>+{1} AIP</color> From {0}", reason, this.Change.ToDoubleNonSim().ToString( "#,##0.##" ) );
+                return Engine_Universal.SafeFormat( "<color=#ff0000>+{1} AIP</color> 来自{0}", reason, this.Change.ToDoubleNonSim().ToString( "#,##0.##" ) );
             else
-                return Engine_Universal.SafeFormat( "<color=#00ff00>-{1} AIP</color> From {0}", reason, (-this.Change.ToDoubleNonSim()).ToString( "#,##0.##" ) );
+                return Engine_Universal.SafeFormat( "<color=#00ff00>-{1} AIP</color> 来自{0}", reason, (-this.Change.ToDoubleNonSim()).ToString( "#,##0.##" ) );
         }
 
         public override void AppendStateForInterfaceDisplay( ArcenCharacterBufferBase buffer )
