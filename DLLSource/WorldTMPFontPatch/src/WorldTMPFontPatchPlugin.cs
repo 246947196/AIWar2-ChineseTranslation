@@ -222,9 +222,13 @@ public class WorldTMPFontPatchPlugin : BaseUnityPlugin
         // 2x render resolution to combat CanvasScaler pixelation
         Rect parentRect = __instance.rectTransform.rect;
         var rt = t.rectTransform;
-        rt.anchorMin = new Vector2(0.5f, 0.5f);
-        rt.anchorMax = new Vector2(0.5f, 0.5f);
+        // [FIX] keep horizontal centered (x=0.5, same as original) but anchor vertical to
+        // top (y=1) so the overlay top aligns with TMP's UpperLeft text origin. This fixes the
+        // vertical drift on new messages without disturbing the horizontal position.
+        rt.anchorMin = new Vector2(0.5f, 1f);
+        rt.anchorMax = new Vector2(0.5f, 1f);
         rt.sizeDelta = new Vector2(parentRect.width * 2f, parentRect.height * 2f);
+        rt.anchoredPosition = new Vector2(0f, 0f);
         rt.localScale = new Vector3(0.5f, 0.5f, 1f);
 
         t.font = cachedLegacyFont;
@@ -238,6 +242,7 @@ public class WorldTMPFontPatchPlugin : BaseUnityPlugin
         t.raycastTarget = false;
 
         Log($"OVERLAY: created as child, fontSize={fontSize * 2} (2x), parent={parentRect.width}x{parentRect.height}");
+        Log($"OVERLAY: anchor=(0.5,1) anchoredPos=({rt.anchoredPosition.x},{rt.anchoredPosition.y}) localPos=({rt.localPosition.x},{rt.localPosition.y}) parentRect=({parentRect.x},{parentRect.y},{parentRect.width},{parentRect.height})");
     }
 
     // ========== Message type classification ==========
@@ -271,8 +276,9 @@ public class WorldTMPFontPatchPlugin : BaseUnityPlugin
             if (legacy == null) { UnityEngine.Object.Destroy(go); return null; }
 
             var rt = legacy.rectTransform;
-            rt.anchorMin = new Vector2(0.5f, 0.5f);
-            rt.anchorMax = new Vector2(0.5f, 0.5f);
+            // [FIX] same anchor as OnChatLogOverlay: horizontal centered, vertical top.
+            rt.anchorMin = new Vector2(0.5f, 1f);
+            rt.anchorMax = new Vector2(0.5f, 1f);
             rt.localScale = new Vector3(0.5f, 0.5f, 1f);
 
             legacy.font = cachedLegacyFont;
@@ -288,10 +294,15 @@ public class WorldTMPFontPatchPlugin : BaseUnityPlugin
             Log($"OVERLAY: on-demand created for '{tmp.name}', fontSize={fontSize * 2} (2x)");
         }
 
-        // Refresh sizeDelta from current parent rect — OnEnable may fire before layout,
-        // but set_text (which triggers us) guarantees layout is complete.
+        // [FIX] Refresh sizeDelta from current parent rect. BasicText's height changes with
+        // content and its on-demand creation path has no initial sizeDelta, so it MUST be set
+        // here. For ChatLog this is a stable re-apply (size set at OnEnable). The vertical drift
+        // was fixed by the top anchor (y=1), not by removing this line.
         Rect parentRect = tmp.rectTransform.rect;
         legacy.rectTransform.sizeDelta = new Vector2(parentRect.width * 2f, parentRect.height * 2f);
+        Vector3 ap = legacy.rectTransform.anchoredPosition;
+        Vector3 lp = legacy.rectTransform.localPosition;
+        Log($"ENSURE: name='{tmp.name}' parentRect=({parentRect.x},{parentRect.y},{parentRect.width},{parentRect.height}) anchoredPos=({ap.x},{ap.y}) localPos=({lp.x},{lp.y}) sizeDelta=({legacy.rectTransform.sizeDelta.x},{legacy.rectTransform.sizeDelta.y})");
 
         return legacy;
     }

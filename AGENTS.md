@@ -232,6 +232,7 @@ DLLSource/WorldTMPFontPatch/
 3. **捕获过滤**：`!hasNonAscii`，不依赖 `<color>` 或 `：` 格式假设
 4. **ChatLog 时间格式**：`<u>Xs</u>`（纯秒数如 `1s`、`13s`），不是 `HH:MM`。正则用 `[^<]+` 匹配
 5. **Overlay**：TMP 子级（跟着 ScrollRect 滚动），`raycastTarget=false`，字号 `TMP.fontSize * 0.65`，左缩进 0，`lineSpacing=0.9664`
+6. **Overlay 锚点约定（2026-07-18 修复垂直漂移）**：`anchorMin/anchorMax = (0.5, 1)` —— **水平 x=0.5 保持居中（与原版一致），垂直 y=1 顶部对齐**。垂直漂移根因是锚点 y 用了居中 (0.5,0.5)，overlay 中心跟着滚动父 rect 的中心动，新消息自动滚到底部时父中心漂移一个屏幕高度。改 y=1 让 overlay 顶部对齐 TMP 的 UpperLeft 文本起点即修。⚠️ 只改 y，**切勿把 x 也改成 0**（会变成左对齐，破坏水平居中位置）。`EnsureOverlay` 的 `sizeDelta = parentRect*2` 刷新**必须保留**（BasicText 高度随内容变、on-demand 创建路径无初始 sizeDelta，删掉会塌成 100×100）
 6. **Harmony 兼容**：只用 `Harmony.CreateAndPatchAll(typeof(WorldTMPFontPatchPlugin))`，不引用被 AssemblyRedirector 替换的程序集（ArcenAIW2Core）。引用 `ArcenUniversal.dll` 仅用于 `ArcenSerializationBuffer`——该类型不受 redirector 影响
 
 **补丁列表**：`WorldTMPFontPatchPlugin.cs` 共 5 个 Harmony 补丁，覆盖 ChatLog 和 BasicText 两个 TMP 组件。`PatchCharMapping.cs` 额外提供 2 个序列化层补丁：
@@ -249,6 +250,24 @@ DLLSource/WorldTMPFontPatch/
 **调试日志**：`BepInEx/ChatLogRestore.txt`，每次启动覆写。记录 CAPTURE、FULL_TEXT、MATCH_OK/FAILED、FINAL_LEGACY_TEXT 和 overlay rect 位置。
 
 **实测效果**：所有消息类型（JOURNAL/TIP/PLAYER_CHAT/WARDEN）均能正确恢复中文。内容匹配幂等，滚动条正常，鼠标不拦截。
+
+#### ChatLog 覆盖层垂直漂移修复记录（2026-07-18）
+
+**现象**：聊天框有新消息时，中文覆盖层垂直方向漂移，每次偏移量不同，约 50% 概率回到正确位置，偏移量约等于往下滚一个屏幕的距离。刚开局正常。
+
+**排查**：`WorldTMPFontPatch` 插件本身**无每帧刷新位置的代码**（无 `Update`/`LateUpdate`/`Coroutine`）。`TextMeshProUGUI.InternalUpdate` 每帧跑但 ChatLog/BasicText 因 `NeedsChineseOverlay` 直接 return。覆盖层是 TMP 子对象，其屏幕位置由 Unity Transform 层级自动跟随父节点（ScrollRect 滚动 Content）决定——"每帧漂"是 Transform 跟随，非插件代码。
+
+**根因**：overlay 锚点原为居中 `(0.5, 0.5)`。ChatLog 是 ScrollRect 下的 TMP，新消息触发自动滚到底部时，父 TMP 的 `rectTransform` 中心在滚动动画过程中移动一个屏幕高度，居中锚点让 overlay 中心跟着父中心漂。
+
+**修复（已验证，效果更好但仍不完美）**：锚点 `(0.5, 0.5)` → `(0.5, 1)`：水平 x 保持 0.5 居中（不动），垂直 y 改 1 顶部对齐。
+
+**两次失败尝试（教训）**：
+1. 第一版把锚点改成 `(0, 1)`（x=0 左上）——垂直修好，但**破坏了水平居中位置**（ChatLog 文字被钉到左边）。
+2. 第二版在改锚点同时**删掉 `EnsureOverlay` 里 `sizeDelta = parentRect*2` 的刷新**——BasicText（右上角瞬时消息）的 on-demand 创建路径无初始 sizeDelta，删掉后塌成默认 `100×100`，文字裁切/塌陷，破坏显示。
+
+**最终版**：锚点 `(0.5, 1)` + 保留 `EnsureOverlay` 的 `sizeDelta` 刷新。验证：ChatLog 垂直不漂、水平居中恢复；BasicText 不再塌陷。
+
+**仍不完美（已知）**：像素化（Legacy Text + CanvasScaler 固有限制，见下）；覆盖层与 TMP 的字符宽度差异导致的链接点击偏移（见下）仍在。垂直漂移为"基本修复"，极端滚动时序下仍可能偶有轻微偏差。
 
 #### 已知限制：Overlay 文字像素化
 
