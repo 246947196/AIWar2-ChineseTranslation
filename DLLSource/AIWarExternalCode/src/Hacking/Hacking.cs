@@ -737,28 +737,28 @@ namespace Arcen.AIW2.External
 
             if ( HackerOrNull == null )
             {
-                RejectionReasonDescription = "No valid hackers here.";
+                RejectionReasonDescription = "此处没有合法的黑客单位。";
 
                 return Hackable.NeverBeHacked_ButStillShow;
             }
 
             if ( HackerOrNull.TypeData.SpecialType == SpecialEntityType.MobileSupportFleetFlagship && !Type.HackerCanBeSupportFleet )
             {
-                RejectionReasonDescription = "No valid hackers here.";
+                RejectionReasonDescription = "此处没有合法的黑客单位。";
                 return Hackable.NeverBeHacked_ButStillShow;
             }
 
             if ( (HackerOrNull.TypeData.SpecialType == SpecialEntityType.BattlestationBasic ||
-                  HackerOrNull.TypeData.SpecialType == SpecialEntityType.BattlestationCitadel) &&
+                   HackerOrNull.TypeData.SpecialType == SpecialEntityType.BattlestationCitadel) &&
                  (!Type.HackerCanBeBattlestation && !Type.HackerMustBeBattlestation) )
             {
-                RejectionReasonDescription = "No valid hackers here.";
+                RejectionReasonDescription = "此处没有合法的黑客单位。";
                 return Hackable.NeverBeHacked_ButStillShow;
             }
 
             if ( HackerOrNull.TypeData.SpecialType == SpecialEntityType.MobileCustomCityFedFleetFlagship )
             {
-                RejectionReasonDescription = "No valid hackers here.";
+                RejectionReasonDescription = "此处没有合法的黑客单位。";
                 return Hackable.NeverBeHacked_ButStillShow;
             }
             if ( Type.NumberOfTimesIndividualUnitCanBeHacked > 0 &&
