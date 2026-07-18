@@ -1918,7 +1918,7 @@ namespace Arcen.AIW2.External
                         if ( minPlanetsLeftToExplore > maxToExplore )
                             minPlanetsLeftToExplore = maxToExplore;
 
-                        stringBuilder.Append( "<color=#999999>Notice:</color> Explored " ).Append( Mathf.Max( minPlanetsLeftToExplore, planetsToExplore.Count ) ).Append( " planets adjacent to existing explored planets: " );
+                        stringBuilder.Append( "<color=#999999>提示：</color>已探索 " ).Append( Mathf.Max( minPlanetsLeftToExplore, planetsToExplore.Count ) ).Append( " 颗与已有已探索行星相邻的行星：" );
                         bool isFirst = true;
 
                         //2. Now explore all the planets that are directly adjacent to naturally-explored space.
@@ -1998,7 +1998,7 @@ namespace Arcen.AIW2.External
                                     if ( isFirst )
                                         isFirst = false;
                                     else
-                                        stringBuilder.Append( ", " );
+                                    stringBuilder.Append( "、" );
                                     stringBuilder.Append( planet.Name );
                                 }
                                 //if we previously hack-explored this, then convert it to natural exploration
