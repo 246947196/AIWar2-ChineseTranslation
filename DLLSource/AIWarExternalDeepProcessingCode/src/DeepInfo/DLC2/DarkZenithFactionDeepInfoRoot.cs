@@ -3837,19 +3837,19 @@ namespace Arcen.AIW2.External
                     {
                         debugCode = 400;
                         data.Resource = DZResource.Red;
-                        DarkZenithResourceConversionTable.Instance.AddConversionToListByName( data.ConversionList, "Make Izumite", AttachedFaction );
+                        DarkZenithResourceConversionTable.Instance.AddResourceConversionToList( data.ConversionList, DZResource.Red, AttachedFaction );
                     }
                     else if ( squad.TypeData.GetHasTag( "DZGreenTerminus" ) )
                     {
                         debugCode = 500;
                         data.Resource = DZResource.Green;
-                        DarkZenithResourceConversionTable.Instance.AddConversionToListByName( data.ConversionList, "Make Thaumite", AttachedFaction );
+                        DarkZenithResourceConversionTable.Instance.AddResourceConversionToList( data.ConversionList, DZResource.Green, AttachedFaction );
                     }
                     else if ( squad.TypeData.GetHasTag( "DZWhiteTerminus" ) )
                     {
                         debugCode = 600;
                         data.Resource = DZResource.White;
-                        DarkZenithResourceConversionTable.Instance.AddConversionToListByName( data.ConversionList, "Make Alkahest", AttachedFaction );
+                        DarkZenithResourceConversionTable.Instance.AddResourceConversionToList( data.ConversionList, DZResource.White, AttachedFaction );
 
                         tracingBuffer?.Add( "Hopefully adding white terminus, conversion list length  " + data.ConversionList.Count );
                     }
@@ -3857,13 +3857,13 @@ namespace Arcen.AIW2.External
                     {
                         debugCode = 700;
                         data.Resource = DZResource.Black;
-                        DarkZenithResourceConversionTable.Instance.AddConversionToListByName( data.ConversionList, "Make Skrith", AttachedFaction );
+                        DarkZenithResourceConversionTable.Instance.AddResourceConversionToList( data.ConversionList, DZResource.Black, AttachedFaction );
                     }
                     else if ( squad.TypeData.GetHasTag( "DZBlueTerminus" ) )
                     {
                         debugCode = 800;
                         data.Resource = DZResource.Blue;
-                        DarkZenithResourceConversionTable.Instance.AddConversionToListByName( data.ConversionList, "Make Chelonium", AttachedFaction );
+                        DarkZenithResourceConversionTable.Instance.AddResourceConversionToList( data.ConversionList, DZResource.Blue, AttachedFaction );
 
                         tracingBuffer?.Add( "Hopefully adding blue terminus, conversion list length  " + data.ConversionList.Count );
                     }

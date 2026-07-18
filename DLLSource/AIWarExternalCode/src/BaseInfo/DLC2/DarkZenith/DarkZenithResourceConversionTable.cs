@@ -302,7 +302,7 @@ namespace Arcen.AIW2.External
                 throw new Exception( errors + " problems in DZResourceConversionTables. See above error messages\n" );
 
         }
-        public void AddConversionToListByName( List<DZResourceConversion> list, string name, Faction faction )
+        public void AddResourceConversionToList( List<DZResourceConversion> list, DZResource resource, Faction faction )
         {
             int numPriorRows = list.Count;
             DarkZenithFactionBaseInfoRoot gData = faction.GetExternalBaseInfoAs<DarkZenithFactionBaseInfoRoot>();
@@ -318,12 +318,34 @@ namespace Arcen.AIW2.External
                      !gData.MinorFactionAllied && this.Rows[i].ForMinorFactionAllied ||
                      !gData.PlayerAllied && this.Rows[i].ForHumanAllied )
                     continue;
-                //note that we have the same display name for each allegiance variant conversion
-                if ( row.DisplayName == name )
-                    list.Add( row );
+                if ( row.InternalName == "Make Red" || row.InternalName.StartsWith( "Make Red " ) )
+                {
+                    if ( resource == DZResource.Red )
+                    { list.Add( row ); continue; }
+                }
+                if ( row.InternalName == "Make Green" || row.InternalName.StartsWith( "Make Green " ) )
+                {
+                    if ( resource == DZResource.Green )
+                    { list.Add( row ); continue; }
+                }
+                if ( row.InternalName == "Make White" || row.InternalName.StartsWith( "Make White " ) )
+                {
+                    if ( resource == DZResource.White )
+                    { list.Add( row ); continue; }
+                }
+                if ( row.InternalName == "Make Blue" || row.InternalName.StartsWith( "Make Blue " ) )
+                {
+                    if ( resource == DZResource.Blue )
+                    { list.Add( row ); continue; }
+                }
+                if ( row.InternalName == "Make Black" || row.InternalName.StartsWith( "Make Black " ) )
+                {
+                    if ( resource == DZResource.Black )
+                    { list.Add( row ); continue; }
+                }
             }
             if ( list.Count == numPriorRows )
-                throw new Exception( "Could not find a conversion list for <" + name + "> player allied? " + gData.PlayerAllied + " minor faction allied? " + gData.MinorFactionAllied );
+                throw new Exception( "Could not find a conversion list for resource " + resource + " player allied? " + gData.PlayerAllied + " minor faction allied? " + gData.MinorFactionAllied );
 
         }
 
@@ -342,12 +364,12 @@ namespace Arcen.AIW2.External
                      !gData.MinorFactionAllied && row.ForMinorFactionAllied ||
                      !gData.PlayerAllied && row.ForHumanAllied )
                     continue;
-                //note that we have the same display name for each allegiance variant conversion
-                if ( row.DisplayName == "Build Metal Terminus" ||
-                     row.DisplayName == "Build White Terminus" ||
-                     row.DisplayName == "Build Blue Terminus" ||
-                     row.DisplayName == "Build Epistyle" ||
-                     row.DisplayName == "Build Transport" )
+                string internalName = row.InternalName;
+                if ( internalName == "Build Metal Terminus" || internalName.StartsWith( "Build Metal Terminus " ) ||
+                     internalName == "Build White Terminus" || internalName.StartsWith( "Build White Terminus " ) ||
+                     internalName == "Build Blue Terminus" || internalName.StartsWith( "Build Blue Terminus " ) ||
+                     internalName == "Build Epistyle" || internalName.StartsWith( "Build Epistyle " ) ||
+                     internalName == "Build Transport" || internalName.StartsWith( "Build Transport " ) )
                     list.Add( row );
             }
         }
@@ -367,10 +389,10 @@ namespace Arcen.AIW2.External
                      !gData.MinorFactionAllied && row.ForMinorFactionAllied ||
                      !gData.PlayerAllied && row.ForHumanAllied )
                     continue;
-                //note that we have the same display name for each allegiance variant conversion
-                if ( row.DisplayName == "Build Harvester" ||
-                     row.DisplayName == "Build Epistyle" ||
-                     row.DisplayName == "Build Transport" )
+                string internalName = row.InternalName;
+                if ( internalName == "Build Harvester" || internalName.StartsWith( "Build Harvester " ) ||
+                     internalName == "Build Epistyle" || internalName.StartsWith( "Build Epistyle " ) ||
+                     internalName == "Build Transport" || internalName.StartsWith( "Build Transport " ) )
                 {
                     list.Add( row );
                 }
