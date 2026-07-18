@@ -895,9 +895,12 @@ namespace Arcen.AIW2.External
             if ( (ArcenTime.TimeSinceStartF - world.lastSaveTime) < 2 )
                 return;
 
-            world.CampaignName = ArcenStrings.MakeValidFilename( world.CampaignName, false );
-            world.CampaignName = SaveGameData.EncodeForCondensedFormat( world.CampaignName );
-            world.CampaignName = world.CampaignName.ConvertToCondensedFormat();
+            // 编码使用局部变量，绝不写回 world.CampaignName：
+            // 运行期 CampaignName 应为解码态（中文），一旦写回编码串，
+            // 后续再次保存会对其再次 EncodeForCondensedFormat 产生二次编码（~~uXXXX）。
+            string encodedCampaignName = ArcenStrings.MakeValidFilename( world.CampaignName, false );
+            encodedCampaignName = SaveGameData.EncodeForCondensedFormat( encodedCampaignName );
+            encodedCampaignName = encodedCampaignName.ConvertToCondensedFormat();
 
             SaveName = ArcenStrings.MakeValidFilename( SaveName, false );
             SaveName = SaveGameData.EncodeForCondensedFormat( SaveName );
@@ -909,8 +912,8 @@ namespace Arcen.AIW2.External
             //ArcenDebugging.ArcenDebugLog( "calling SaveWorldToDisk" );
             
             string saveDirectoryPath = Engine_Universal.CurrentPlayerDataDirectory + "Save/";
-            if ( world.CampaignName.Length > 0 )
-                saveDirectoryPath += world.CampaignName + "/";
+            if ( encodedCampaignName.Length > 0 )
+                saveDirectoryPath += encodedCampaignName + "/";
 
             if ( !Directory.Exists( saveDirectoryPath ) )
                 Directory.CreateDirectory( saveDirectoryPath );
@@ -1183,7 +1186,7 @@ namespace Arcen.AIW2.External
                             Save.setEverything(world);
                             Save.author = author;
                             Save.PlayersString = null;
-                            Save.campaignName = world.CampaignName;
+                            Save.campaignName = Group.DisplayName;
                             //Save.setMapType(mapType);
                             Save.isquickstart = true;
                             Save.isscenario = !isfilequickstart;
@@ -1199,7 +1202,7 @@ namespace Arcen.AIW2.External
                         else
                         {
                             Save.setEverything(world);
-                            Save.campaignName = world.CampaignName;
+                            Save.campaignName = Group.DisplayName;
                             Save.isquickstart = false;
                             Save.isscenario = false;
                         }

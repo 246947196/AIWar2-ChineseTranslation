@@ -34,7 +34,8 @@ namespace Arcen.AIW2.External
                 return;
             }
 
-            World.Instance.CampaignName = campaignName;
+            // 不写回 World.Instance.CampaignName：运行期 CampaignName 维持解码态（中文），
+            // 写回编码串会导致后续再次保存时二次编码（~~uXXXX）。
 
             SaveName = ArcenStrings.MakeValidFilename( SaveName, false );
             SaveName = SaveGameData.EncodeForCondensedFormat( SaveName );
