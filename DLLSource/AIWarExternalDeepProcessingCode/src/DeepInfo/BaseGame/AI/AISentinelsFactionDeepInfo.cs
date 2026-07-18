@@ -941,7 +941,7 @@ namespace Arcen.AIW2.External
                                     if ( chatHandlerOrNull != null )
                                         chatHandlerOrNull.PlanetToView = targetPlanet;
 
-                                    World_AIW2.Instance.QueueChatMessageOrCommand( AttachedFaction.StartFactionColourForLog() + "AI</color> spawning a wave against <color=#" + colorForTarget + ">" + 
+                                    World_AIW2.Instance.QueueChatMessageOrCommand( AttachedFaction.StartFactionColourForLog() + "AI</color> 向 <color=#" + colorForTarget + ">" + 
                                         targetPlanet.Name + "</color>", ChatType.LogToCentralChat, taunt, chatHandlerOrNull );
 
                                     //definitely taunt
