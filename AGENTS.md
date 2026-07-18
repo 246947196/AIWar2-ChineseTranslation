@@ -109,6 +109,7 @@ Control Bindings 菜单左侧分类按钮显示的是 `InputAction` XML 文件�
 - **`$ErrorActionPreference = "Stop"`**：任何源文件缺失时立即终止，不静默继续
 - **字体部署**：`sarasa_gothic` 目录使用 `-Recurse` 递归复制，确保字体文件完整
 - **DLL 部署**：自动 `New-Item` 创建 `GameData/ModdableLogicDLLs/` 目标目录
+- **`.new.dll` 残留清理**（2026-07-18 修复）：`Get-ChildItem` 加 `-Recurse` 递归扫描 `AIWar2_Data/Managed/`、`PatchedAssemblies/`、汉化项目 `PatchedAssemblies/` 三个目录及其子目录（含 `patched/` 子目录）。ilpatch 运行时若 DLL 被游戏锁定会生成 `.new.dll` fallback，这些文件会"静默覆盖"真正的 patch DLL 导致翻译回退，必须递归清理干净
 
 ## 编译
 
@@ -572,3 +573,35 @@ patch 前必须从 `AIWar2_Data\Managed\` 复制原始 DLL（禁止在已 patch 
 |------|------|------|
 | `XMLMods/ChinesePlanetNames/ModDescription.txt` | AI War 2 汉化项目：中文行星名 | **中文行星名** |
 | `XMLMods/ChinesePlanetNames/ModDetails.txt` | AI War 2 汉化项目：中文行星名 | **中文行星名** |
+
+## 最近修复记录 (2026-07-18)
+
+### 加载界面条目回退英文问题（根因：IL patch 未部署）
+
+**现象**：修改某些文件后，加载界面（loading screen）的条目回退为英文。
+
+**根因链路**：
+1. `deploy.ps1` 第154行存在多余的 `}`（PowerShell 括号匹配错误），导致整个脚本解析失败
+2. 脚本失败 → IL patch DLL 未部署到 `PatchedAssemblies/`
+3. `AssemblyRedirector` 加载不到 patch DLL → 回退原版英文 DLL
+4. 加载界面文本（来自 `ArcenUniversal.dll` / `ArcenAIW2Core.dll` 的 ldstr）显示英文
+
+**修复**：修正 deploy.ps1 语法错误，IL patch 重新部署，166 条翻译生效。
+
+### 待改进项落实
+
+本次会话落实了以下待改进项：
+
+| 项目 | 修复内容 | 文件 |
+|------|---------|------|
+| `.new.dll` 残留清理 | `Get-ChildItem` 加 `-Recurse`，递归扫描 3 个目录及其子目录（含 `patched/`），避免子目录 `.new.dll` 漏清导致翻译回退 | `deploy.ps1` 第34行 |
+| IL patch 过时条目 | 移除 5 个在当前 DLL 中已不存在的 missing 条目（游戏更新移除了这些文本），验证结果 8 applied, 0 pending, 0 missing | `tools/ilpatch/ArcenAIW2Visualization.merged.json` |
+| 模组元数据翻译 | `<u>Xodians</u>` → `<u>克赛迪安</u>`（与 `SpecialFaction.xml` 中 `display_name` 一致） | `XMLMods/Xodians/ModDetails.txt` |
+| 扩展翻译合并脚本重构 | 新增 `overlay_children()` 递归函数，支持 `map_option > choice_value` 等多层嵌套的翻译覆盖；匹配策略改为 (tag,name) → (tag,id) → tag 位置回退 | `merge_expansion_translations.py` |
+| 地图类型描述翻译 | 蜂窝布局"死愿模式及以上不可用"翻译；EOTA 地图类型文案优化（"最小为N个行星"→"最小行星数为N个"）+ 格式统一 | `KDL_MapTypes.xml`、`EOTA_MapTypes.xml` |
+
+### 教训
+
+- **deploy.ps1 语法错误是静默杀手**：PowerShell 解析失败时不一定报明显错误，可能导致整个部署链路中断而翻译回退。修改 deploy.ps1 后必须验证括号匹配（`$openings = (Get-Content deploy.ps1 -Raw) -split '' | ? { $_ -eq '{' }; $closings = ...`）并实际运行一次确认无误
+- **`.new.dll` 必须递归清理**：ilpatch 的 fallback 文件可能出现在 `patched/` 子目录，非递归扫描会漏掉，导致旧 patch 覆盖新 patch
+- **IL patch 字典需跟随游戏更新**：游戏更新移除某些文本后，字典中对应条目变为 missing，verify_patch.py 会报警。定期清理过时条目保持字典与 DLL 同步

@@ -232,7 +232,7 @@
               display_name="蜂窝布局"
               description="行星呈六边形图案排列。
               
-Not available on Deathwish mode and up."
+死愿模式及以上不可用。"
               dll_name="AIWarExternalDeepProcessingCode"
               type_name="Arcen.AIW2.External.Mapgen_Honeycomb"
               min_planets="40"

@@ -41,8 +41,72 @@ def strip_text(s):
     return s.strip() if s else ""
 
 
+def overlay_children(target_parent, oe_parent):
+    """Recursively overlay the children of oe_parent onto target_parent.
+
+    Children are matched by (tag, name) when available, then by (tag, id)
+    (e.g. <choice_value> has no name but carries an id), and finally by tag
+    positionally as a fallback. Only translatable attributes + text are
+    overlaid; gameplay attributes (related_int_value, dll_name, ...) are kept
+    from the English source. Matching children recurse so arbitrary nesting
+    (map_type > map_option > choice_value) is handled correctly.
+    """
+    se_by_name = {}
+    se_by_id = {}
+    se_by_tag = {}
+    se_index_used = {}
+    for c in list(target_parent):
+        if not isinstance(c.tag, str):
+            continue
+        nm = c.get("name")
+        if nm is not None:
+            se_by_name.setdefault((c.tag, nm), []).append(c)
+        cid = c.get("id")
+        if cid is not None:
+            se_by_id.setdefault((c.tag, cid), []).append(c)
+        se_by_tag.setdefault(c.tag, []).append(c)
+
+    for oc in list(oe_parent):
+        if not isinstance(oc.tag, str):
+            continue
+        target_se = None
+        nm = oc.get("name")
+        cid = oc.get("id")
+        if nm is not None:
+            lst = se_by_name.get((oc.tag, nm))
+            if lst:
+                target_se = lst.pop(0)
+        if target_se is None and cid is not None:
+            lst = se_by_id.get((oc.tag, cid))
+            if lst:
+                target_se = lst.pop(0)
+        if target_se is None:
+            # fall back to tag-only positional matching
+            tag_list = se_by_tag.get(oc.tag, [])
+            idx = se_index_used.get(oc.tag, 0)
+            if idx < len(tag_list):
+                target_se = tag_list[idx]
+                se_index_used[oc.tag] = idx + 1
+        if target_se is None:
+            # override entry not present in the English source: keep as-is
+            target_parent.append(oc)
+            continue
+
+        # overlay translatable attributes (display_name / description / tooltip ...)
+        for k, v in oc.attrib.items():
+            if is_translatable_attr(k) and strip_text(v):
+                target_se.set(k, v)
+        # overlay text content (only when the override actually provides text)
+        oc_text = strip_text(oc.text)
+        if oc_text:
+            target_se.text = oc.text
+        # recurse into deeper levels
+        if list(oc):
+            overlay_children(target_se, oc)
+
+
 def overlay_element(target_parent_root, oe):
-    """Overlay a single override entry (oe) onto the matching target element."""
+    """Overlay a single override entry (oe) onto the matching top-level target element."""
     oe_name = oe.get("name")
     tag = oe.tag
     match = None
@@ -73,64 +137,9 @@ def overlay_element(target_parent_root, oe):
     if oe_text:
         match.text = oe.text
 
-    # overlay child elements, matching by tag + name attribute when available,
-    # falling back to tag-only with index tracking (avoids all overrides landing
-    # on the first child when multiple share the same tag, e.g. multiple <system>).
-    oe_children = list(oe)
-    if oe_children:
-        se_children = list(match)
-        se_by_tag = {}
-        se_by_tag_name = {}
-        se_index_used = {}
-        for c in se_children:
-            se_by_tag.setdefault(c.tag, []).append(c)
-            cname = c.get("name")
-            if cname is not None:
-                key = (c.tag, cname)
-                se_by_tag_name.setdefault(key, []).append(c)
-        for oc in oe_children:
-            oc_name = oc.get("name")
-            target_se = None
-            named = []
-            if oc_name is not None:
-                key = (oc.tag, oc_name)
-                named = se_by_tag_name.get(key, [])
-                if named:
-                    target_se = named.pop(0)
-            if target_se is None:
-                # fall back to tag-only, using next unused index
-                tag_list = se_by_tag.get(oc.tag, [])
-                idx = se_index_used.get(oc.tag, 0)
-                while idx < len(tag_list) and tag_list[idx] in named:
-                    idx += 1
-                if idx < len(tag_list):
-                    target_se = tag_list[idx]
-                    se_index_used[oc.tag] = idx + 1
-                elif tag_list:
-                    target_se = tag_list[0]
-            if target_se is not None:
-                # only overlay translatable attributes (not name, category, gameplay values)
-                for ck, cv in oc.attrib.items():
-                    if is_translatable_attr(ck) and strip_text(cv):
-                        target_se.set(ck, cv)
-                # overlay text content
-                oc_text_val = strip_text(oc.text)
-                if oc_text_val:
-                    target_se.text = oc.text
-                # overlay nested children recursively (one level is enough for journals)
-                oc_grand = list(oc)
-                if oc_grand:
-                    cand_grand = list(target_se)
-                    g_by_tag = {}
-                    for g in cand_grand:
-                        g_by_tag.setdefault(g.tag, []).append(g)
-                    for og in oc_grand:
-                        if og.tag in g_by_tag:
-                            g_by_tag[og.tag][0].text = og.text
-                        else:
-                            target_se.append(og)
-            else:
-                match.append(oc)
+    # overlay child elements recursively (handles map_option > choice_value, etc.)
+    if list(oe):
+        overlay_children(match, oe)
 
 
 def main():

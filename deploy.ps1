@@ -31,7 +31,7 @@ $patchedDir = Join-Path $gameDir "PatchedAssemblies"
 $transPatched = Join-Path $translationDir "PatchedAssemblies"
 foreach ($dir in @($managedDir, $patchedDir, $transPatched)) {
     if (Test-Path $dir) {
-        $leftovers = Get-ChildItem $dir -Filter "*.new.dll" -ErrorAction SilentlyContinue
+        $leftovers = Get-ChildItem $dir -Filter "*.new.dll" -Recurse -ErrorAction SilentlyContinue
         foreach ($f in $leftovers) {
             Remove-Item $f.FullName -Force
             Write-Host "  Cleaned .new.dll residue: $($f.Name)" -ForegroundColor DarkYellow
