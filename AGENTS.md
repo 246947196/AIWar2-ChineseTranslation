@@ -433,6 +433,25 @@ if (c == EscapeChar)
 
 **教训**：任何「先手动编码、再走 `AddString_Condensed` 序列化」的写入路径，都依赖 `Encode` 幂等，否则必产生嵌套乱码。新增此类路径时须确认编码函数可重入。
 
+##### 自动存档 .savemet 路径不匹配（2026-07-18）
+
+**现象**：中文战役名（如「人类崛起」）自动存档时抛 `System.IO.DirectoryNotFoundException`，`.savemet` 写入失败，堆栈为 `SaveWorldToDisk` → `SaveMetaData` → `File.WriteAllLines`。运行期 `World.CampaignName` 维持**解码态（中文）**。
+
+**根因**：`SaveWorldToDisk()`（L901-903）用**编码名** `~u4EBA~u7C7B~u5D1B~u8D77` 创建存档目录，但其末尾调用的 `SaveMetaData()` 经 `Create_ForWorld()`（L196）从 `world.CampaignName`/`saveName` 重新拼路径——这两个值仍是**未编码的中文**，于是 `.savemet` 被指向不存在的 `Save/人类崛起/` 目录而崩溃。写入端（目录已建好）与读端（`Create_ForWorld` 重建路径）对战役名/存档名的编码态不一致。
+
+**修复**：`SaveGameData.Create_ForWorld()` 内部对 `campaignName` 和 `saveName` 同样走 `EncodeForCondensedFormat(ArcenStrings.MakeValidFilename(name, false))`，使 `.savemet` 路径与 `SaveWorldToDisk` 已创建的编码目录一致；并补防御性 `Directory.CreateDirectory`。
+
+```csharp
+campaignName = SaveGameData.EncodeForCondensedFormat( ArcenStrings.MakeValidFilename( campaignName, false ) );
+saveName     = SaveGameData.EncodeForCondensedFormat( ArcenStrings.MakeValidFilename( saveName, false ) );
+```
+
+> 注意：写入端 `SaveWorldToDisk`/`GameSaver.DoSave` 已改为**只编码局部变量、绝不写回 `world.CampaignName`**（L898 注释），故 `Create_ForWorld` 读到的永远是解码态中文，必须在自身内编码，不能在调用方编码后传入（否则与 `LoadOrCreateMetaFile` L1210 等已持真实磁盘路径的 `Save` 对象冲突，导致二次编码）。
+
+**验证**：重启游戏后，`人类崛起` 战役可正常自动存档，`.savemet` 写入 `~u4EBA...` 目录无误。已编译部署 `AIWarExternalCode.dll`（版本 5.825）。
+
+**教训**：任何从 `world.CampaignName`/`World.Instance.CampaignName` 重建磁盘路径的代码（不限于 `SaveWorldToDisk`），都必须用编码名，与「运行期 CampaignName 为解码态」的约定保持一致，否则路径对不上。
+
 ### 部署
 
 `deploy.ps1` 自动部署到 `BepInEx/plugins/ChineseTranslation/`。
