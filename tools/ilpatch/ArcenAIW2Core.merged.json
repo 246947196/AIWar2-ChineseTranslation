@@ -407,6 +407,8 @@
   " from stack of size ": "，来源堆栈大小为 ",
   " gives a bonus to incoming damage based on some sort of distance check.  This is kinda fine, but the AI won't adjust its targeting to handle that properly, so it's not really ideal.": "",
   " hacking points.": " 入侵点数。",
+  " costing ": " 花费 ",
+  " left)": " 剩余)",
   " had a blank Base_Range set, which is an error!  Set to a random value to avoid issues.": " 的 Base_Range 为空白，这是一个错误！已设为随机值以避免问题。",
   " had a difficulty of ": " 的难度为 ",
   " had a primary response interval of 0": "",

@@ -1,5 +1,5 @@
 # Build script for translated DLLs
-# Usage: .\build.ps1
+# Usage: .\tools\build.ps1
 
 $ErrorActionPreference = "Stop"
 $baseDir = Split-Path -Parent $MyInvocation.MyCommand.Path

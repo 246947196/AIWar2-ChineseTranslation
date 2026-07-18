@@ -1,8 +1,8 @@
 # AI War 2 Update Detection Script
 # Usage:
-#   .\check_update.ps1                  -- Detect changes, generate report
-#   .\check_update.ps1 -snapshot        -- Take baseline snapshot (fails if exists)
-#   .\check_update.ps1 -snapshot -force -- Force overwrite snapshot
+#   .\tools\check_update.ps1                  -- Detect changes, generate report
+#   .\tools\check_update.ps1 -snapshot        -- Take baseline snapshot (fails if exists)
+#   .\tools\check_update.ps1 -snapshot -force -- Force overwrite snapshot
 
 param(
     [switch]$snapshot,

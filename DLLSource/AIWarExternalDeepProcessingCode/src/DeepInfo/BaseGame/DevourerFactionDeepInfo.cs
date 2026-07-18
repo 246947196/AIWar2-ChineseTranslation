@@ -82,8 +82,8 @@ namespace Arcen.AIW2.External
                 if ( chatHandlerOrNull != null )
                     chatHandlerOrNull.SquadToView = LazyLoadSquadWrapper.Create( SquadSeenOrNull );
 
-                World_AIW2.Instance.QueueChatMessageOrCommand( "Commander, we've made first contact with a giant " + SquadSeenOrNull.StartFactionColourForLog_Safe() +
-                    "Devourer Golem</color> on " + SquadSeenOrNull.GetPlanetName_Safe(), ChatType.LogToCentralChat, "ArkChiefOfStaff_PlayerGainsDevourerIntel", chatHandlerOrNull );
+                World_AIW2.Instance.QueueChatMessageOrCommand( "指挥官，我们与一颗巨大的" + SquadSeenOrNull.StartFactionColourForLog_Safe() +
+                    "吞噬魔像</color>在" + SquadSeenOrNull.GetPlanetName_Safe() + "上首次接触。", ChatType.LogToCentralChat, "ArkChiefOfStaff_PlayerGainsDevourerIntel", chatHandlerOrNull );
             }
         }
         private void UpdateAllegiance(Faction faction)
@@ -176,7 +176,7 @@ namespace Arcen.AIW2.External
                                 if ( chatHandlerOrNull != null )
                                     chatHandlerOrNull.PlanetToView = entity.Planet;
 
-                                World_AIW2.Instance.QueueChatMessageOrCommand( entity.StartFactionColourForLog_Safe() + "Devourer Golem</color> destroyed on " + entity.GetPlanetName_Safe(),
+                                World_AIW2.Instance.QueueChatMessageOrCommand( entity.StartFactionColourForLog_Safe() + "吞噬魔像</color>在" + entity.GetPlanetName_Safe() + "被摧毁。",
                                     ChatType.LogToCentralChat, string.Empty, chatHandlerOrNull );
                             }
                         }

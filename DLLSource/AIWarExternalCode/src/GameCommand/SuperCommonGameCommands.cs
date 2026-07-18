@@ -826,7 +826,7 @@ namespace Arcen.AIW2.External
                                             if ( chatHandlerOrNull != null )
                                                 chatHandlerOrNull.SquadToView = LazyLoadSquadWrapper.Create( entity );
 
-                                            World_AIW2.Instance.QueueChatMessageOrCommand( "Starting hack of type: <color=#a1ff22>" + entity.ActiveHack.DisplayName + "</color>" + addedText,
+                                            World_AIW2.Instance.QueueChatMessageOrCommand( "开始入侵，类型：<color=#a1ff22>" + entity.ActiveHack.DisplayName + "</color>" + addedText,
                                                 ChatType.LogToCentralChat, string.Empty, chatHandlerOrNull );
                                         }
                                     }
