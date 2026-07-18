@@ -147,7 +147,8 @@ MSBuild：`C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe`
 ```
 DLLSource/WorldTMPFontPatch/
 ├── src/
-│   └── WorldTMPFontPatchPlugin.cs
+│   ├── WorldTMPFontPatchPlugin.cs
+│   └── PatchCharMapping.cs        ← 转义编码序列化修复（2026-07-18）
 └── WorldTMPFontPatch.csproj
 ```
 
@@ -193,21 +194,30 @@ DLLSource/WorldTMPFontPatch/
 
 ---
 
-### 聊天中文 `_` 问题（序列化损坏，最终方案 v3）
+### 聊天中文 `_` 问题（序列化损坏，已根治）
 
-**2026-07-14 最终结论**。聊天窗口（ChatLog）中文显示为 `_` 的完整链路已定位并解决。
+**2026-07-18 最终方案**。聊天窗口（ChatLog）中文显示为 `_` 的完整链路已定位并**根治**。
 
-#### 根因链路
+#### 根因链路（2026-07-18 dnlib IL 分析确认）
 
 ```
-输入框中文 → AddString_Condensed(WRITE, 我们的 CharMapping 补丁让中文通过 ✅)
-  → ReadString_Condensed(READ, 普通 IL 方法, 原以为 InternalCall, 中文变 _ ❌)
-    → ChatLog 存 _ → 显示 _
+输入框中文 → AddString_Condensed → InternalAdd → AddRaw → WriteBits_Char(c, fullUnicode:false)
+  → GetCharIndexFromMapping(c)  ← 中文 U+4E00+ 超出 CharMapping 表范围（max U+2205）
+  → 返回兜底索引 4 → 按 7bit 写入索引 4
+  → ReadString_Condensed 读出索引 4 → SupportedCharList[4] == '_'
 ```
 
-**勘误（2026-07-14 修正）：** 经实际反射验证，`ReadString_Condensed`、`FillString_Condensed`、`ReadChar_Condensed` 在 `ArcenDeserializationBufferModern` 上均为**普通 IL 方法**（各有 700B/11B/149B IL 体），**不是 InternalCall**，Harmony 可直接 Patch。整 `ArcenUniversal.dll` 含 0 个 InternalCall 方法。之前记录的"InternalCall 无法 patch"不适用于当前版本。
+**关键发现**：数据在**写入存档那一刻就已损坏**，读端无法恢复。索引 4 是单向兜底，原文信息丢失。位宽硬编码 7bit，格式无自描述标记。
 
-#### 最终方案：三层捕获 + 内容匹配恢复 + Legacy Text 覆盖层
+**勘误（2026-07-14 修正）：** `ReadString_Condensed`、`FillString_Condensed`、`ReadChar_Condensed` 在 `ArcenDeserializationBufferModern` 上均为**普通 IL 方法**（各有 700B/11B/149B IL 体），**不是 InternalCall**，Harmony 可直接 Patch。
+
+#### 双轨方案：转义编码（序列化根治）+ Legacy Text 覆盖层（渲染兜底）
+
+**序列化层**（`PatchCharMapping.cs`，2026-07-18 新增）：
+- `AddString_Condensed` Prefix：写入前将表外字符编码为 `~uXXXX`
+- `ReadString_Condensed` Postfix：读出后解码还原
+
+**渲染层**（`WorldTMPFontPatchPlugin.cs`，2026-07-14 原有，保留作为 TMP 渲染兜底）：
 
 | 组件 | 位置 | 作用 |
 |------|------|------|
@@ -224,11 +234,13 @@ DLLSource/WorldTMPFontPatch/
 5. **Overlay**：TMP 子级（跟着 ScrollRect 滚动），`raycastTarget=false`，字号 `TMP.fontSize * 0.65`，左缩进 0，`lineSpacing=0.9664`
 6. **Harmony 兼容**：只用 `Harmony.CreateAndPatchAll(typeof(WorldTMPFontPatchPlugin))`，不引用被 AssemblyRedirector 替换的程序集（ArcenAIW2Core）。引用 `ArcenUniversal.dll` 仅用于 `ArcenSerializationBuffer`——该类型不受 redirector 影响
 
-**补丁列表**：`WorldTMPFontPatchPlugin.cs` 共 5 个 Harmony 补丁，覆盖 ChatLog 和 BasicText 两个 TMP 组件：
+**补丁列表**：`WorldTMPFontPatchPlugin.cs` 共 5 个 Harmony 补丁，覆盖 ChatLog 和 BasicText 两个 TMP 组件。`PatchCharMapping.cs` 额外提供 2 个序列化层补丁：
 
 | 方法 | 类型 | 作用 |
 |------|------|------|
 | `ArcenSerializationBuffer.AddString_Condensed` | Prefix | 捕获序列化原文（`RelatedString` 含非 ASCII） |
+| `ArcenSerializationBuffer.AddString_Condensed` | Prefix (Priority.Low) | **转义编码**表外字符（PatchCharMapping） |
+| `ArcenDeserializationBufferModern.ReadString_Condensed` | Postfix | **解码**还原 `~uXXXX`（PatchCharMapping） |
 | `Text.OnEnable` | Postfix | 替换所有 Legacy Text 字体为 Microsoft YaHei |
 | `TextMeshProUGUI.OnEnable` | Postfix | 创建 ChatLog + BasicText 中文覆盖层 |
 | `TMP_Text.set_text` | Postfix | 恢复中文文本到覆盖层（按组件名分发两种正则） |
@@ -317,7 +329,7 @@ ChatLog 条目中包含 `<link=N>` 标签用于可点击交互（如点击跳转
 3. **I18NFont4UnityGame 冲突** — 该插件 patch `Text.OnEnable` 且内部 NRE，导致所有尝试 AddComponent<Text>() 的操作都崩溃
 4. **输入框中文** — 输入框本身能显示中文（原因不明，可能 I18NFont4UnityGame 处理了 TMP_InputField），但提交后序列化损坏
 
-#### 序列化层修复尝试（全部失败）
+#### 序列化层修复尝试
 
 **目标**：从根源修复 `ReadString_Condensed` / `AddString_Condensed`，让中文字符能正确通过序列化管道，不依赖捕获+覆盖层。
 
@@ -334,11 +346,35 @@ ChatLog 条目中包含 `<link=N>` 标签用于可点击交互（如点击跳转
 
 **根因**：`GetUltraEfficientStyleThatFits(int max)` 的 BaseBits 算法存在 2^n 边界锁死问题。超过 2^7=128 后无论加多少字符，BaseBits 不跟随增长到 8，导致索引 ≥128 的字符编码溢出为 0→`?`。该算法是为 ASCII 范围（109 字符，7 位）设计的，无法安全扩展到 Unicode 范围。
 
-**结论**：序列化层不可修复。不破坏旧存档的前提下，游戏的自定义二进制压缩编码无法支持中文。捕获覆盖层（capture → overlay）方案已实现并验证有效，覆盖 ChatLog 和右上角瞬时消息（BasicText）两个组件。
+**结论**：不破坏旧存档的前提下，无法通过修改 CharMapping/位宽来支持中文。改用**转义编码**方案（见下方），对所有 condensed 字符串做表内无损编码，100% 兼容旧存档格式。
 
-**唯一经用户验证有效的方案**：捕获覆盖层（capture → overlay），覆盖 ChatLog 和 BasicText 两个 TMP 组件。`SupportedCharList` 静态扩展至 ≤128 字（109 ASCII + ≤19 汉字）亦可工作，但覆盖层方案词汇量不受限。
+##### 成功方案：转义编码（Escape Codec）
 
-#### 可行方向的线索
+**2026-07-18 实现**。在 `PatchCharMapping.cs` 中实现。
+
+**原理**：不更改位格式，在表内字符集做无损编码（类似 UTF-7/quoted-printable）：
+
+| 原文 | 编码后 | 说明 |
+|------|--------|------|
+| `~` | `~~` | 转义符自转义 |
+| 任意表外字符（如 `中`） | `~u4E2D` | `~u` + 4 位十六进制 |
+
+编码后字符全部在 109 字符表内 → 位流与旧格式 100% 一致。旧存档读取行为不变。
+
+**Harmony 补丁**（`PatchCharMapping.cs`）：
+
+| 方法 | 补丁类型 | 作用 |
+|------|---------|------|
+| `ArcenSerializationBuffer.AddString_Condensed` | Prefix (`Priority.Low`) | 写入前将表外字符编码为 `~uXXXX` |
+| `ArcenDeserializationBufferModern.ReadString_Condensed` | Postfix | 读出后将 `~uXXXX` 解码回原文 |
+
+**效果**：
+- 对所有 condensed 字符串生效：行星名、聊天、行星备注、存档名等
+- 旧存档中 2026-07-18 前已损坏的名字（已是 `_`）无法恢复
+- Multiplayer 需要所有客户端都装汉化
+- 行星名现在存读档后保持中文（配合 WorldTMPFontPatch 字体替换显示正常）
+
+**与捕获覆盖层的关系**：编码方案修复了序列化管道（根源修复），但**聊天 TMP 渲染层**仍受修改版 TMP FontEngine 限制，`ChatLog`/`BasicText` 的中文覆盖层（capture → overlay）作为渲染兜底仍需保留。
 
 ### 部署
 
