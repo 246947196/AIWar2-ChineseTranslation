@@ -309,7 +309,7 @@
 默认：根据强度在多个行星上生成单个Telium。
 单独Telium：生成一个不会扩张但具有极高生产能力的愤怒Telium。
 集群Telium：根据强度在银河系中生成成对的Telium。"
-          sort_group="300" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="默认,单独碲矿,集群碲矿" default_option="默认" />
+          sort_group="300" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="默认,单独特利姆,集群特利姆" default_option="默认" />
 
   </faction>
   

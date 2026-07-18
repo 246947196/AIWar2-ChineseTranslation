@@ -50,8 +50,8 @@
   </entity>
 
   <entity name="Brawler" copy_from="AssaultFrigate" tech_upgrades_that_benefit_me="Heavy,Concussion" thematic_groups="Frigate" 
-      display_name="格斗星舰"
-			display_name_for_sidebar="格斗星舰"
+      display_name="肉搏星舰"
+			display_name_for_sidebar="肉搏星舰"
 			description="耐用且速度较慢的星舰，发射大量导弹将敌人击退、减速，并对移动缓慢的目标造成重创。"
 			hull_points="315000" shield_points="127500" metal_cost="200000" energy_consumption="10000"
 			speed="Normal1"
@@ -511,8 +511,8 @@
     </system>
   </entity>
   
-  <entity name="Ramifier" copy_from="TritiumSniperFrigate" display_name="分裂星舰" thematic_groups="Frigate" 
-    display_name_for_sidebar="分裂星舰"
+  <entity name="Ramifier" copy_from="TritiumSniperFrigate" display_name="分支星舰" thematic_groups="Frigate" 
+    display_name_for_sidebar="分支星舰"
 			description="发射大型放射性炮弹，对反照率低和质量高的目标有额外加成，可从任何距离攻击。"
       cannot_target_or_alert_ai_reinforcement_spots="true"
 			>

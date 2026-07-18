@@ -116,7 +116,7 @@
 	<!--<entity copy_from="MinorFactionBeacon" name="NeinzulCustodiansBeacon" tags="Beacon,NeinzulCustodiansBeacon" 
 			is_expecting_to_not_be_encyclopedia_counted_at_all="true"
             thematic_groups="Beacon" icon_overlay="Overlays2/Turret_Lazurite"
-		    display_name="Neinzul Custodians Beacon" display_name_for_sidebar="N Cust BEAC"
+		    display_name="内因祖尔守护者信标" display_name_for_sidebar="内守信标"
 		    description="A relatively large collection of Neinzul that have found their way to our galaxy have fractured due to disagreements, each new small force reaching out to potential allies.
 
 While no longer collectively strong, they will show undying loyalty to any that accept them.

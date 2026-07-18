@@ -115,9 +115,9 @@
                   sort_group="200" setting_type="IntSlider" default="5" min="1" max="10"/>
 	  <custom_field name="SphereType" display_name="星体类型" description="哪种尖塔将入驻这个星体？根据你的选择，它们的整体特性，甚至所处的星体都会发生变化。
 
-The Gray Spire are the most peaceful, and are the only type that are willing to fully ally themselves with you, so long as you stay away from their Sphere. They can wander up to 4 hops away from their Sphere planet. Their Sphere can be hacked for Warheads.
+灰色尖塔是最和平的，也是唯一愿意与你完全结盟的类型，只要你远离他们的星体。他们可以移动到距离星体最多 4 跳的位置。他们的星体可以被入侵以获取弹头。
 
-The Chromatic Spire are quite aggressive, and far outclass all but the Imperial Spire in strength. They will only give you a momentary warning before firing. They can wander up to 2 hops away from their Sphere planet. Their Sphere can be hacked for Interplanetary Weapons."
+多彩尖塔相当具有侵略性，其实力远超除帝国尖塔外的所有派系。它们只在开火前给你片刻警告。它们可以移动到距离星体最多 2 跳的位置。它们的星体可以被入侵以获取星际武器。"
                   sort_group="250" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Gray,Chromatic" default_option="Gray" />
 	  <custom_field name="PartOfTheAntiDarkSpireCoalition" is_advanced_setting="true" display_name="反黑暗尖塔联盟成员" 
 		description="如果启用分裂尖塔，允许该派系加入反黑暗尖塔联盟。"
@@ -127,7 +127,7 @@ The Chromatic Spire are quite aggressive, and far outclass all but the Imperial 
 
   <faction name="SpireSphere_Gray"
            display_name="灰色尖塔戴森球" short_name="灰色球" processing_group="SplinteringSpire"
-           custom_NameForLobby="Dyson Sphere: &lt;color=#A1A1A1&gt;Gray&lt;/color&gt;"
+           custom_NameForLobby="戴森球: &lt;color=#A1A1A1&gt;灰色&lt;/color&gt;"
            base_info_source="SphereFactionBaseInfo"
            deep_info_source="SphereFactionDeepInfo"
            team_center_color="Gray" team_border_color="cF8F8FF"
@@ -149,7 +149,7 @@ The Chromatic Spire are quite aggressive, and far outclass all but the Imperial 
 
   <faction name="SpireSphere_Chromatic"
            display_name="多彩尖塔球" short_name="多彩球" processing_group="SplinteringSpire"
-           custom_NameForLobby="Dyson Sphere: &lt;color=#FF00FF&gt;Chromatic&lt;/color&gt;"
+           custom_NameForLobby="戴森球: &lt;color=#FF00FF&gt;多彩&lt;/color&gt;"
            base_info_source="SphereFactionBaseInfo"
            deep_info_source="SphereFactionDeepInfo"
            team_center_color="cFF00FF" team_border_color="cF8F8FF"

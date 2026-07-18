@@ -1,5 +1,0 @@
-AI War 2 汉化项目：中文行星名
-Arcen Community
-CN:PlanetNames
-FFFFFF
-enabled
