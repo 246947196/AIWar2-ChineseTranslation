@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <player_type name="HumanEmpire" 
-        display_name="人类帝国" short_name="Human Empire" uncontrolled_name="Human Empire" lobby_prefix="Human Empire"
+        display_name="人类帝国" short_name="人类帝国" uncontrolled_name="人类帝国" lobby_prefix="人类帝国"
         sort_order="100"
         tags="HumanEmpire,CanDoSpireHacks"
         base_info_source="HumanEmpireFactionBaseInfo"

@@ -2,7 +2,7 @@
 <root>
 
   <player_type name="HumanArkEmpire"
-        display_name="人类方舟帝国" short_name="Ark Empire" uncontrolled_name="Ark Empire" lobby_prefix="Ark Empire"
+        display_name="人类方舟帝国" short_name="方舟帝国" uncontrolled_name="方舟帝国" lobby_prefix="方舟帝国"
         sort_order="100"
         tags="HumanEmpire,CanDoSpireHacks"
         base_info_source="HumanArkEmpireFactionBaseInfo"
@@ -65,7 +65,7 @@
 状态：这种模式基本功能正常，但我认为它缺少一些预期的额外防御建筑。"/>
 
   <player_type name="SpireInfusedEmpire"
-        display_name="尖塔融合帝国" short_name="Spire Empire" uncontrolled_name="Spire Empire " lobby_prefix="Spire Empire"
+        display_name="尖塔融合帝国" short_name="尖塔帝国" uncontrolled_name="尖塔帝国 " lobby_prefix="尖塔帝国"
         sort_order="300"
         tags="HumanEmpire,SpireInfusedEmpire,CanDoSpireHacks"
         base_info_source="SpireInfusedHumanEmpireFactionBaseInfo"

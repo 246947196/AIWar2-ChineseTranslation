@@ -2,7 +2,7 @@
 <root>
   
 <player_type name="NecromancerEmpire"
-    display_name="死灵法师帝国" short_name="Necro Empire" auto_name_postfix=" (Necro Empire)" uncontrolled_name="Necro Empire" lobby_prefix="Necro Empire"
+    display_name="死灵法师帝国" short_name="死灵帝国" auto_name_postfix=" (死灵帝国)" uncontrolled_name="死灵帝国" lobby_prefix="死灵帝国"
     default_center_color="c0BDA51"
     default_trim_color="c36454F"
     sort_order="300"
@@ -82,7 +82,7 @@
 请查看游戏内提示以获取更详细的说明。"/>
 
 <player_type name="NecromancerSidekick"
-        display_name="死灵法师副手" short_name="Necro Sidekick" auto_name_postfix=" (Necro Sidekick)" uncontrolled_name="Necro Sidekick" lobby_prefix="Necro Sidekick"
+        display_name="死灵法师副手" short_name="死灵副手" auto_name_postfix=" (死灵副手)" uncontrolled_name="死灵副手" lobby_prefix="死灵副手"
         copy_from="NecromancerEmpire"
         sort_order="310"
         tags="Necromancer,NecromancerSidekick,Sidekick"

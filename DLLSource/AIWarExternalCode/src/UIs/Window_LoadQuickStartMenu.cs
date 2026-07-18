@@ -896,7 +896,7 @@ namespace Arcen.AIW2.External
                 
                 if (cond == "HasPlayerType")
                 {
-                    if (this.save.playerType?.Contains("Human Empire") == true)
+                    if (this.save.playerType?.Contains("人类帝国") == true)
                         return false;
                     
                     return !string.IsNullOrEmpty(this.save.playerType);
