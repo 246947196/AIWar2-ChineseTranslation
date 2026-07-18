@@ -1233,13 +1233,13 @@ namespace Arcen.AIW2.External
                     chatHandlerOrNull.SquadToView = LazyLoadSquadWrapper.Create( entity );
 
                 if (transformIntoBaseTransport) {
-                    World_AIW2.Instance.QueueChatMessageOrCommand( prefix + originalEntityName + " of fleet " + entity.GetFleetName_Safe() +
-                            " was crippled on " + entity.GetPlanetName_Safe()
-                            + " beyond our ability to repair. Command transfered to " + entity.TypeData.DisplayName
-                            + " on " + nearestAlliedPlanet.Name
-                            + postfix, ChatType.LogToCentralChat, chatHandlerOrNull );
+                    World_AIW2.Instance.QueueChatMessageOrCommand( prefix + originalEntityName + "（隶属舰队 " + entity.GetFleetName_Safe() +
+                            "）在 " + entity.GetPlanetName_Safe()
+                            + " 受损过重，已超出修复能力。指挥权转移至 " + entity.TypeData.DisplayName
+                            + "（位于 " + nearestAlliedPlanet.Name
+                            + "）" + postfix, ChatType.LogToCentralChat, chatHandlerOrNull );
                 } else {
-                    World_AIW2.Instance.QueueChatMessageOrCommand( prefix + originalEntityName + " of fleet " + entity.GetFleetName_Safe() + " on " + entity.GetPlanetName_Safe() + " bailed out to "
+                    World_AIW2.Instance.QueueChatMessageOrCommand( prefix + originalEntityName + "（隶属舰队 " + entity.GetFleetName_Safe() + "，位于 " + entity.GetPlanetName_Safe() + "）撤退至 "
                             + nearestAlliedPlanet.Name + postfix, ChatType.LogToCentralChat, chatHandlerOrNull );
                 }
                 entity.WarpToPlanetAtSafePointNearCommandStationIfPossible( nearestAlliedPlanet, Context, "Bailed Out At Cripple-Time!" );
