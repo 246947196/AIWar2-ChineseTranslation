@@ -199,12 +199,19 @@ namespace Arcen.AIW2.External
             if (string.IsNullOrEmpty(campaignName))
                 LOG.Msg("Warning: Created SaveGameData '{0}' has no CampaignName set because neither does the current World.", saveName);
 
+            // 运行期 CampaignName / saveName 维持解码态（中文）。SaveWorldToDisk 已在磁盘上以
+            // 编码名（~uXXXX）创建目录与 .save 文件，故 .savemet 必须指向同一编码路径，
+            // 否则 File.WriteAllLines 会写入不存在的中文目录 -> DirectoryNotFoundException。
+            campaignName = SaveGameData.EncodeForCondensedFormat( ArcenStrings.MakeValidFilename( campaignName, false ) );
+            saveName = SaveGameData.EncodeForCondensedFormat( ArcenStrings.MakeValidFilename( saveName, false ) );
+
             string saveDirectoryPath = Engine_Universal.CurrentPlayerDataDirectory + "Save/";
             if ( campaignName.Length > 0 )
                 saveDirectoryPath += campaignName + "/";
 
-            //if ( !Directory.Exists( saveDirectoryPath ) )
-                //Directory.CreateDirectory( saveDirectoryPath );
+            // 兜底：确保 .savemet 目标目录存在（SaveWorldToDisk 已创建，此处防御性重建）。
+            if ( !Directory.Exists( saveDirectoryPath ) )
+                Directory.CreateDirectory( saveDirectoryPath );
 
             string saveFileName = saveDirectoryPath + saveName;
 
