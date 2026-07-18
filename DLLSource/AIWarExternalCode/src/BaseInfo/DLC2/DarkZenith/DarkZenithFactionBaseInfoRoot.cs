@@ -556,7 +556,7 @@ namespace Arcen.AIW2.External
                     if ( otherFaction.SpecialFactionData.InternalName == "DarkZenith" )
                     {
                         string allegiance = otherFaction.BaseInfo.Allegiance;
-                        if ( ArcenStrings.Equals( allegiance, "Friendly To Players" ) )
+                        if ( ArcenStrings.Equals( allegiance, "对玩家友好" ) )
                         {
                             HasAnyPlayerAllies = true;
                             break;
@@ -621,47 +621,47 @@ namespace Arcen.AIW2.External
             }
             if ( string.IsNullOrEmpty( allegiance ) )
             {
-                this.SetNewAllegianceIntoCoreSettings( "Dark Alliance" );
+                this.SetNewAllegianceIntoCoreSettings( "黑暗同盟" );
             }
-            if ( ArcenStrings.Equals( allegiance, "Dark Alliance" ) )
+            if ( ArcenStrings.Equals( allegiance, "黑暗同盟" ) )
             {
-                AllegianceHelper.AllyThisFactionToMinorFactionTeam( faction, "Dark Alliance" );
+                AllegianceHelper.AllyThisFactionToMinorFactionTeam( faction, "黑暗同盟" );
                 this.DarkAlliance = true;
             }
-            else if ( ArcenStrings.Equals( allegiance, "Allied To AI" ) )
+            else if ( ArcenStrings.Equals( allegiance, "对AI友好" ) )
             {
                 AllegianceHelper.AllyThisFactionToAI( faction );
                 AIAllied = true;
             }
-            else if ( ArcenStrings.Equals( allegiance, "Friendly To Players" ) )
+            else if ( ArcenStrings.Equals( allegiance, "对玩家友好" ) )
             {
                 AllegianceHelper.AllyThisFactionToHumans( faction );
                 PlayerAllied = true;
                 this.PlayerAllied = true;
             }
-            else if ( ArcenStrings.Equals( allegiance, "Civil War" ) )
+            else if ( ArcenStrings.Equals( allegiance, "内战" ) )
             {
                 AllegianceHelper.SetAlliesForScourgeCivilWar( this.AttachedFaction );
                 this.InCivilWar = true;
             }
 
-            else if ( ArcenStrings.Equals( allegiance, "Minor Faction Team Red" ) )
+            else if ( ArcenStrings.Equals( allegiance, "小派系小队红" ) )
             {
                 MinorFactionAllied = true;
-                AllegianceHelper.AllyThisFactionToMinorFactionTeam( faction, "Minor Faction Team Red" );
+                AllegianceHelper.AllyThisFactionToMinorFactionTeam( faction, "小派系小队红" );
                 this.MinorFactionAllied = true;
             }
-            else if ( ArcenStrings.Equals( allegiance, "Minor Faction Team Blue" ) )
+            else if ( ArcenStrings.Equals( allegiance, "小派系小队蓝" ) )
             {
                 MinorFactionAllied = true;
                 this.MinorFactionAllied = true;
-                AllegianceHelper.AllyThisFactionToMinorFactionTeam( faction, "Minor Faction Team Blue" );
+                AllegianceHelper.AllyThisFactionToMinorFactionTeam( faction, "小派系小队蓝" );
             }
-            else if ( ArcenStrings.Equals( allegiance, "Minor Faction Team Green" ) )
+            else if ( ArcenStrings.Equals( allegiance, "小派系小队绿" ) )
             {
                 MinorFactionAllied = true;
                 this.MinorFactionAllied = true;
-                AllegianceHelper.AllyThisFactionToMinorFactionTeam( faction, "Minor Faction Team Green" );
+                AllegianceHelper.AllyThisFactionToMinorFactionTeam( faction, "小派系小队绿" );
             }
         }
         #endregion

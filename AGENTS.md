@@ -465,12 +465,25 @@ XMLMods/ChinesePlanetNames/
 
 【教训】翻译大型 UI 文件（如 Window_InGameHoverEntityInfo.cs 8390 行、Window_ResourceBar.cs 3413 行）时，必须遍历所有区块确保无遗漏。
 
+修改 part 文件后需运行 merge 生成 merged.json：
+```powershell
+python tools/ilpatch/merge_all.py ArcenAIW2Core
+# 如遇回归检查（pre-existing 格式不匹配的 key 导致退出），加 --force 恢复
+python tools/ilpatch/merge_all.py ArcenAIW2Core --force
+```
+
 ## IL 补丁验证
 
-Patch 后运行：
+**ilpatch 条目丢失检测**（2026-07-18 新增）：ilpatch 写回 DLL 后会重新计算 ldstr 条目数，如果比原始条目数少则报警 `[patch] WARNING: dnlib writer dropped N ldstr entries!`。这是 dnlib 元数据写入器的已知 bug，会影响少量字符串的翻译生效。
+
+Patch 后运行验证（覆盖全部 3 个核心 DLL）：
 ```powershell
 python tools/ilpatch/verify_patch.py PatchedAssemblies\ArcenAIW2Core.dll tools\ilpatch\ArcenAIW2Core.merged.json
+python tools/ilpatch/verify_patch.py PatchedAssemblies\ArcenUniversal.dll tools\ilpatch\ArcenUniversal.merged.json
+python tools/ilpatch/verify_patch.py PatchedAssemblies\ArcenAIW2Visualization.dll tools\ilpatch\ArcenAIW2Visualization.merged.json
 ```
+
+`deploy.ps1` 会自动运行上述 3 个验证，任一失败即报警。
 
 验证原理：`ilpatch dump-ldstr <dll> <out.json>` 直读 #US 堆全部 ldstr 为 JSON 数组。`verify_patch.py` 加载后逐一检查 key/value 是否存在，0 盲区。
 

@@ -192,15 +192,15 @@ namespace Arcen.AIW2.External
                     }
                     if ( this.Rows[i].ForHumanAllied )
                     {
-                        if ( ArcenStrings.Equals( factionAllegiance, "Friendly To Players" ) )
+                        if ( ArcenStrings.Equals( factionAllegiance, "对玩家友好" ) )
                         {
                             return this.Rows[i];
                         }
                     }
                     else if ( this.Rows[i].ForAIAllied )
                     {
-                        if ( ArcenStrings.Equals( factionAllegiance, "Allied To AI" ) ||
-                             ArcenStrings.Equals( factionAllegiance, "Civil War" ) )
+                        if ( ArcenStrings.Equals( factionAllegiance, "对AI友好" ) ||
+                             ArcenStrings.Equals( factionAllegiance, "内战" ) )
                             
                         {
                             return this.Rows[i];
@@ -220,7 +220,7 @@ namespace Arcen.AIW2.External
                     else
                     {
                         if ( !ArcenStrings.Equals( factionAllegiance, "MinorFaction" ) &&
-                             !ArcenStrings.Equals( factionAllegiance, "Friendly To Players" ) )
+                             !ArcenStrings.Equals( factionAllegiance, "对玩家友好" ) )
                             return this.Rows[i];
                     }
                 }

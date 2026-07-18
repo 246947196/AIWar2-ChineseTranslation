@@ -18,7 +18,7 @@
 		defeat_condition="HasNoStrength">
         <npc_ship_cap name="Strikecraft"    overriding_per_faction_cap_of_stacks="5000" />
         <custom_field name="Intensity"      display_name="强度" description="这个派系到底有多可怕？" sort_group="200" setting_type="IntSlider" default="3" min="1" max="10"/>
-        <custom_field name="Allegiance"     display_name="阵营" description="该派系对 AI、人类友好，还是对谁也不友好？" sort_group="250" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Hostile To All,Friendly To Players,Hostile To Players Only,Minor Faction Team Red,Minor Faction Team Blue,Minor Faction Team Green" default_option="Hostile To All" />
+        <custom_field name="Allegiance"     display_name="阵营" description="该派系对 AI、人类友好，还是对谁也不友好？" sort_group="250" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="对所有敌对,对玩家友好,仅对玩家敌对,小派系小队红,小派系小队蓝,小派系小队绿" default_option="对所有敌对" />
 	<custom_field name="InvasionTime" display_name="入侵时刻" description="阿扎兰帝国可以设定在游戏中的某个未知时间入侵银河，或立即入侵。立即生成是最可怕的选项，有时会使游戏极其困难。"
                   sort_group="300" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Immediate,Early Game,Mid Game,Late Game" default_option="Immediate"/>
     <custom_field name="SpawnNearPlayer" is_advanced_setting="true" display_name="在玩家附近生成" description="除非对你友好，否则绝对不推荐。"

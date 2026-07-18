@@ -142,7 +142,7 @@ namespace Arcen.AIW2.External
             //pick the initial time, then add some randomness
             string allegiance = AttachedFaction.BaseInfo.Allegiance;
             string invasionTime = this.IsSvikari ? "Join Allied Factions" : AttachedFaction.GetStringValueForCustomFieldOrDefaultValue( "InvasionTime", true );
-            if ( invasionTime == "Join Allied Factions" && allegiance == "Dark Alliance" )
+            if ( invasionTime == "Join Allied Factions" && allegiance == "黑暗同盟" )
                 invasionTime = "Mid Game"; //override; join allied faction isn't meaningful with Dark Alliance
 
             if ( invasionTime == "Join Allied Factions" || invasionTime == "Svikari" )

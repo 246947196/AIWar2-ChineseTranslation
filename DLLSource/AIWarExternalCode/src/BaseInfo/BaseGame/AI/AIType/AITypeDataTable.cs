@@ -14,21 +14,43 @@ namespace Arcen.AIW2.External
             switch ( Type )
             {
                 case TypeDifficulty.Any:
-                    return "#df09ff"; //darker purple
+                    return "#df09ff";
                 case TypeDifficulty.Unset:
                     break;
                 case TypeDifficulty.Easier:
-                    return "#66ffce"; //light cyan-ish green
+                    return "#66ffce";
                 case TypeDifficulty.Moderate:
-                    return "#ffe066"; //golden yellow
+                    return "#ffe066";
                 case TypeDifficulty.Hard:
-                    return "#ff3232"; //angry red
+                    return "#ff3232";
                 case TypeDifficulty.Brutal:
-                    return "#ff3fd9"; //purple
+                    return "#ff3fd9";
                 case TypeDifficulty.SuperCat:
-                    return "#ff0066"; //bright red / fuschia-ish
+                    return "#ff0066";
             }
             return "#ffffff";
+        }
+
+        public static string GetChineseDisplayName( this TypeDifficulty Type )
+        {
+            switch ( Type )
+            {
+                case TypeDifficulty.Any:
+                    return "全部";
+                case TypeDifficulty.Unset:
+                    return "未设置";
+                case TypeDifficulty.Easier:
+                    return "简单";
+                case TypeDifficulty.Moderate:
+                    return "中等";
+                case TypeDifficulty.Hard:
+                    return "困难";
+                case TypeDifficulty.Brutal:
+                    return "残暴";
+                case TypeDifficulty.SuperCat:
+                    return "难度 10";
+            }
+            return "未知";
         }
     }
 
@@ -114,13 +136,13 @@ namespace Arcen.AIW2.External
             if ( this.displayNameAndColor == null )
             {
                 if ( this.AdaptiveDifficulty != TypeDifficulty.Unset )
-                    this.displayNameAndColor = "Adaptive <color=" + this.AdaptiveDifficulty.GetHexColor() + ">" + this.AdaptiveDifficulty + "</color>";
+                    this.displayNameAndColor = "自适应 <color=" + this.AdaptiveDifficulty.GetHexColor() + ">" + this.AdaptiveDifficulty.GetChineseDisplayName() + "</color>";
                 else if ( this.RandomDifficulty != TypeDifficulty.Unset )
-                    this.displayNameAndColor = "Random <color=" + this.RandomDifficulty.GetHexColor() + ">" + this.RandomDifficulty + "</color>";
+                    this.displayNameAndColor = "随机 <color=" + this.RandomDifficulty.GetHexColor() + ">" + this.RandomDifficulty.GetChineseDisplayName() + "</color>";
                 else if ( this.Difficulty == TypeDifficulty.Unset )
                     this.displayNameAndColor = this.DisplayName;
                 else
-                    this.displayNameAndColor = "<color=" + this.Difficulty.GetHexColor() + ">" + this.Difficulty + "</color>  " + this.DisplayName;
+                    this.displayNameAndColor = "<color=" + this.Difficulty.GetHexColor() + ">" + this.Difficulty.GetChineseDisplayName() + "</color>  " + this.DisplayName;
             }
             return this.displayNameAndColor;
         }

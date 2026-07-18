@@ -6,7 +6,7 @@
     <custom_field name="Intensity" display_name="强度" description="这决定了拱壁派的整体实力预算；拱壁派建造单位的速度有多快，他们尝试扩张领地的频率（以及扩张的效果如何）等等..." sort_group="200" setting_type="IntSlider" default="5" min="1" max="10" />
     <custom_field name="NumberToSeed" is_advanced_setting="true" display_name="领地大小" description="拱壁派将宣称多少颗行星作为他们的基础领地。" sort_group="300" setting_type="IntSlider" default="4" min="2" max="8" />
 
-    <custom_field name="Allegiance" display_name="阵营" description="这个派系是否属于某个次要派系阵营？" sort_group="400" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Friendly To Players,Hostile To All,Minor Faction Team Red,Minor Faction Team Blue,Minor Faction Team Green" default_option="Hostile To All" />
+    <custom_field name="Allegiance" display_name="阵营" description="这个派系是否属于某个次要派系阵营？" sort_group="400" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="对玩家友好,对所有敌对,小派系小队红,小派系小队蓝,小派系小队绿" default_option="对所有敌对" />
     <custom_field name="CivilWarEnabled" display_name="内战启用" description="当星系中有多个拱壁派势力时，他们有时会爆发内战，这可能会迫使玩家寻找掩护。" sort_group="500" setting_type="BoolToggle" default="false" />
     <custom_field name="DebugMode" is_advanced_setting="true" display_name="超强模式" description="将强度调至 11；这会使拱壁派变得极其强大。保证会让你的游戏变得不平衡且混乱；不建议在正常游戏中使用。" sort_group="550" setting_type="BoolToggle" default="false" />
   </faction>
@@ -29,7 +29,7 @@
         <npc_ship_cap name="Strikecraft" overriding_per_faction_cap_of_stacks="1000" />
         <npc_ship_cap name="Turrets" overriding_per_faction_cap_of_stacks="1000" />
     <custom_field name="Intensity" display_name="强度" description="这个派系将会变得多强大" sort_group="200" setting_type="IntSlider" default="5" min="1" max="10" />
-    <custom_field name="Allegiance" display_name="阵营" description="这个派系在设定上是黑暗联盟的成员。" sort_group="400" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Dark Alliance,Hostile To All,Minor Faction Team Red,Minor Faction Team Blue,Minor Faction Team Green" default_option="Dark Alliance" />
+    <custom_field name="Allegiance" display_name="阵营" description="这个派系在设定上是黑暗联盟的成员。" sort_group="400" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="黑暗同盟,对所有敌对,小派系小队红,小派系小队蓝,小派系小队绿" default_option="黑暗同盟" />
     <custom_field name="EnableFimbulwinter" is_advanced_setting="true" display_name="启用芬布尔之冬" description="启用后，黑暗天顶将尝试引发芬布尔之冬，将星系中的所有行星改造得更适合他们的需求。黑暗天顶将开始改造他们占领的行星；一旦改造完成，黑暗天顶及其盟友在这些行星上会更强大，而他们的敌人则会变弱。" sort_group="500" setting_type="BoolToggle" default="true" />
     <custom_field name="InvasionTime" is_advanced_setting="true" display_name="入侵时间" description="黑暗天顶何时会入侵星系？在全面入侵时，黑暗天顶会将新的行星连接到星系地图中。  注意：立即入侵会极其困难。" sort_group="600" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Early Game,Mid Game,Late Game,Immediate" default_option="Mid Game" />
 
@@ -42,7 +42,7 @@
     <npc_ship_cap name="Strikecraft" overriding_per_faction_cap_of_stacks="1000" />
     <npc_ship_cap name="Turrets" overriding_per_faction_cap_of_stacks="1000" />
     <custom_field name="Intensity" display_name="强度" description="这个派系将会变得多强大" sort_group="200" setting_type="IntSlider" default="5" min="1" max="10" />
-    <custom_field name="Allegiance" display_name="阵营" description="这些天顶势力是黑暗联盟的叛徒。" sort_group="300" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Friendly To Players,Minor Faction Team Red,Minor Faction Team Blue,Minor Faction Team Green" default_option="Friendly To Players" />
+    <custom_field name="Allegiance" display_name="阵营" description="这些天顶势力是黑暗联盟的叛徒。" sort_group="300" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="对玩家友好,小派系小队红,小派系小队蓝,小派系小队绿" default_option="对玩家友好" />
     <custom_field name="EnableFimbulwinter" is_advanced_setting="true" display_name="启用芬布尔之冬" description="启用后，黑暗天顶斯维卡里将尝试引发芬布尔之冬，将星系中的所有行星改造得更适合他们及其盟友的需求。斯维卡里将开始改造他们占领的行星；一旦改造完成，斯维卡里及其盟友在这些行星上会更强大，而他们的敌人则会变弱。" sort_group="500" setting_type="BoolToggle" default="false" />
     
     <vassal_order order_type="MoveToPlanet" sort_group="100" />

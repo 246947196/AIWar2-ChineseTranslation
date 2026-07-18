@@ -347,7 +347,7 @@ namespace Arcen.AIW2.External
             ConfigurationForFaction config = ConfigurationForFaction.Create( CurrentFactions.Count, "ScourgeCivilWar", dataToAdd );
             config.ShouldNeverBeRetainedInLobby = true; //remove these "extra random" factions from the game lobby when reopened
             config.SetCustomFieldValue( "Intensity", intensity.ToString() );
-            config.SetCustomFieldValue( "Allegiance", "Civil War" );
+            config.SetCustomFieldValue( "Allegiance", "内战" );
 
             config.FactionCenterColor = TeamColorDefinitionTable.Instance.GetRandomRow();
             if ( debug )
@@ -444,7 +444,7 @@ namespace Arcen.AIW2.External
                     if ( debug )
                         ArcenDebugging.ArcenDebugLogSingleLine("Randomly choosing working allegiance with " + random, Verbosity.DoNotShow );
                     if ( random < 33 )
-                        workingAllegiance = "Friendly To Players";
+                        workingAllegiance = "对玩家友好";
                     else if ( random < 66 )
                         workingAllegiance = "Minor Faction Allied";
                     else
@@ -505,15 +505,15 @@ namespace Arcen.AIW2.External
                         continue;
                     }
 
-                    if ( workingAllegiance == "Friendly To Players" && ! data.CanBeFriendlyToPlayer )
+                    if ( workingAllegiance == "对玩家友好" && ! data.CanBeFriendlyToPlayer )
                     {
                         if ( debug )
                             ArcenDebugging.ArcenDebugLogSingleLine("\tFriendly Mismatch", Verbosity.DoNotShow );
                         continue;
                     }
-                    if ( workingAllegiance == "Minor Faction Team Green" ||
-                         workingAllegiance == "Minor Faction Team Red" ||
-                         workingAllegiance == "Minor Faction Team Blue" ||
+                    if ( workingAllegiance == "小派系小队绿" ||
+                         workingAllegiance == "小派系小队红" ||
+                         workingAllegiance == "小派系小队蓝" ||
                          workingAllegiance.Contains( "Minor Faction Allied"  ) )
                     {
                         if ( !data.CanBeOnMinorFactionTeam )
@@ -599,9 +599,9 @@ namespace Arcen.AIW2.External
                     //update the settings on the new faction
                     if ( fieldName == "Allegiance" )
                     {
-                        if (workingAllegiance == "Friendly To Players" )
+                        if (workingAllegiance == "对玩家友好" )
                         {
-                            config.SetCustomFieldValue( fieldName, "Friendly To Players" );
+                            config.SetCustomFieldValue( fieldName, "对玩家友好" );
                         }
                         if (workingAllegiance == "Hostile to Player" ) 
                         {
@@ -609,21 +609,21 @@ namespace Arcen.AIW2.External
                             if ( config.SpecialFactionData.CanBeDarkAlliance )
                             {
                                 if ( Engine_Universal.PermanentQualityRandom.Next(0, 100 ) < 65 )
-                                    config.SetCustomFieldValue( fieldName, "Dark Alliance" ); //prefer to be Dark Alliance
+                                    config.SetCustomFieldValue( fieldName, "黑暗同盟" ); //prefer to be Dark Alliance
                                 else
-                                    config.SetCustomFieldValue( fieldName, "Hostile To All" ); //but somtimes just hostile to all (which we know is an option)
+                                    config.SetCustomFieldValue( fieldName, "对所有敌对" ); //but somtimes just hostile to all (which we know is an option)
                             }
                             else if ( config.SpecialFactionData.CanBeAlliedToAI && config.SpecialFactionData.CanBeHostileToAll )
                             {
                                 if ( Engine_Universal.PermanentQualityRandom.Next(0, 100 ) < 50 )
-                                    config.SetCustomFieldValue( fieldName, "Allied To AI" );
+                                    config.SetCustomFieldValue( fieldName, "对AI友好" );
                                 else
-                                    config.SetCustomFieldValue( fieldName, "Hostile To All" );
+                                    config.SetCustomFieldValue( fieldName, "对所有敌对" );
                             }
                             else if ( config.SpecialFactionData.CanBeAlliedToAI )
-                                config.SetCustomFieldValue( fieldName, "Allied To AI" );
+                                config.SetCustomFieldValue( fieldName, "对AI友好" );
                             else
-                                config.SetCustomFieldValue( fieldName, "Hostile To All" );
+                                config.SetCustomFieldValue( fieldName, "对所有敌对" );
                         }
                         if ( workingAllegiance == "Minor Faction Allied" )
                         {
@@ -640,17 +640,17 @@ namespace Arcen.AIW2.External
                                 int random = Engine_Universal.PermanentQualityRandom.Next(0, 100 );
                                 if ( random <= percentChanceRed )
                                 {
-                                    config.SetCustomFieldValue( fieldName, "Minor Faction Team Red" );
+                                    config.SetCustomFieldValue( fieldName, "小派系小队红" );
                                     foundTeam = true;
                                 }
                                 else if ( random <= percentChanceBlue + percentChanceRed )
                                 {
-                                    config.SetCustomFieldValue( fieldName, "Minor Faction Team Blue" );
+                                    config.SetCustomFieldValue( fieldName, "小派系小队蓝" );
                                     foundTeam = true;
                                 }
                                 else
                                 {
-                                    config.SetCustomFieldValue( fieldName, "Minor Faction Team Green" );
+                                    config.SetCustomFieldValue( fieldName, "小派系小队绿" );
                                     foundTeam = true;
                                 }
                             } while (retries-- > 0 && !foundTeam );
@@ -752,11 +752,11 @@ namespace Arcen.AIW2.External
                     continue;
                 if ( !includeFactionsRequiringTeammates && testConfig.SpecialFactionData.RequiresMinorFactionTeammates )
                     continue;
-                if ( testConfig.GetStringValueForCustomFieldOrDefaultValue( "Allegiance", false ).Contains( "Minor Faction Team Red" ) )
+                if ( testConfig.GetStringValueForCustomFieldOrDefaultValue( "Allegiance", false ).Contains( "小派系小队红" ) )
                     red++;
-                if ( testConfig.GetStringValueForCustomFieldOrDefaultValue( "Allegiance", false ).Contains( "Minor Faction Team Blue" ) )
+                if ( testConfig.GetStringValueForCustomFieldOrDefaultValue( "Allegiance", false ).Contains( "小派系小队蓝" ) )
                     blue++;
-                if ( testConfig.GetStringValueForCustomFieldOrDefaultValue( "Allegiance", false ).Contains( "Minor Faction Team Green" ) )
+                if ( testConfig.GetStringValueForCustomFieldOrDefaultValue( "Allegiance", false ).Contains( "小派系小队绿" ) )
                     green++;
             }
 
@@ -931,13 +931,13 @@ namespace Arcen.AIW2.External
                 else if ( bonusAllegiances == "Hostile" )
                     config.SetCustomFieldValue( "Allegiance", "Hostile to Player" );
                 else if ( bonusAllegiances == "Player Friendly" )
-                    config.SetCustomFieldValue( "Allegiance", "Friendly To Players" );
+                    config.SetCustomFieldValue( "Allegiance", "对玩家友好" );
                 else if ( bonusAllegiances == "Balanced" )
                 {
                     if ( i % 3 == 0 )
                         config.SetCustomFieldValue( "Allegiance", "Hostile to Player" );
                     if ( i % 3 == 1 )
-                        config.SetCustomFieldValue( "Allegiance", "Friendly To Players" );
+                        config.SetCustomFieldValue( "Allegiance", "对玩家友好" );
                     if ( i % 3 == 2 )
                         config.SetCustomFieldValue( "Allegiance", "Random" );
                 }

@@ -89,7 +89,7 @@ namespace Arcen.AIW2.External
         private void UpdateAllegiance(Faction faction)
         {
             bool localDebug = false;
-            if(ArcenStrings.Equals(this.Allegiance, "Hostile To All") || ArcenStrings.Equals(this.Allegiance, "HostileToAll") ||
+            if(ArcenStrings.Equals(this.Allegiance, "对所有敌对") || ArcenStrings.Equals(this.Allegiance, "HostileToAll") ||
                string.IsNullOrEmpty(this.Allegiance ))
             {
                 this.humanAllied = false;
@@ -101,7 +101,7 @@ namespace Arcen.AIW2.External
                 //make sure this isn't set wrong somehow
                 AllegianceHelper.EnemyThisFactionToAll( faction );
             }
-            else if(ArcenStrings.Equals(this.Allegiance, "Hostile To Players Only") ||
+            else if(ArcenStrings.Equals(this.Allegiance, "仅对玩家敌对") ||
                     ArcenStrings.Equals(this.Allegiance, "HostileToPlayers"))
             {
                 this.aiAllied = true;
@@ -109,29 +109,29 @@ namespace Arcen.AIW2.External
                 if(localDebug)
                     ArcenDebugging.ArcenDebugLogSingleLine("This Devourer faction should be friendly to the AI and hostile to players", Verbosity.DoNotShow );
             }
-            else if(ArcenStrings.Equals(this.Allegiance, "Minor Faction Team Red") )
+            else if(ArcenStrings.Equals(this.Allegiance, "小派系小队红") )
             {
                 if(localDebug)
                     ArcenDebugging.ArcenDebugLogSingleLine("This Devourer faction is on team red", Verbosity.DoNotShow );
-                AllegianceHelper.AllyThisFactionToMinorFactionTeam(faction, "Minor Faction Team Red");
+                AllegianceHelper.AllyThisFactionToMinorFactionTeam(faction, "小派系小队红");
             }
-            else if(ArcenStrings.Equals(this.Allegiance, "Minor Faction Team Blue") )
+            else if(ArcenStrings.Equals(this.Allegiance, "小派系小队蓝") )
             {
                 if(localDebug)
                     ArcenDebugging.ArcenDebugLogSingleLine("This Devourer faction is on team blue", Verbosity.DoNotShow );
 
-                AllegianceHelper.AllyThisFactionToMinorFactionTeam(faction, "Minor Faction Team Blue");
+                AllegianceHelper.AllyThisFactionToMinorFactionTeam(faction, "小派系小队蓝");
             }
-            else if(ArcenStrings.Equals(this.Allegiance, "Minor Faction Team Green") )
+            else if(ArcenStrings.Equals(this.Allegiance, "小派系小队绿") )
             {
                 if(localDebug)
                     ArcenDebugging.ArcenDebugLogSingleLine("This Devourer faction is on team green", Verbosity.DoNotShow );
 
-                AllegianceHelper.AllyThisFactionToMinorFactionTeam(faction, "Minor Faction Team Green");
+                AllegianceHelper.AllyThisFactionToMinorFactionTeam(faction, "小派系小队绿");
             }
 
             else if(ArcenStrings.Equals(this.Allegiance, "HostileToAI") ||
-                    ArcenStrings.Equals(this.Allegiance, "Friendly To Players"))
+                    ArcenStrings.Equals(this.Allegiance, "对玩家友好"))
             {
                 this.humanAllied = true;
                 AllegianceHelper.AllyThisFactionToHumans(faction);

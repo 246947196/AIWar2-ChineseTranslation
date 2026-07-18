@@ -9,6 +9,36 @@ $ErrorActionPreference = "Stop"
 Write-Host "=== AI War 2 Deployment ===" -ForegroundColor Cyan
 Write-Host ""
 
+# ---- Pre-flight: game process check ----
+$gameProc = Get-Process -Name "AIWar2" -ErrorAction SilentlyContinue
+if ($gameProc) {
+    Write-Host "WARNING: AI War 2 is still running!" -ForegroundColor Yellow
+    Write-Host "  Patched DLLs will NOT take effect until the game is restarted." -ForegroundColor Yellow
+    Write-Host "  Also, ilpatch may produce .new.dll if the Managed DLLs are locked." -ForegroundColor Yellow
+    $choice = Read-Host "  Close game now? (y/N)"
+    if ($choice -eq 'y') {
+        Stop-Process -Name "AIWar2" -Force
+        Start-Sleep -Seconds 2
+        Write-Host "  Game closed." -ForegroundColor Green
+    }
+}
+
+# ---- Clean .new.dll residues from Managed and PatchedAssemblies ----
+# These are left over from previous ilpatch runs when DLLs were locked.
+# They silently override the real patched DLLs and cause translations to revert.
+$managedDir = Join-Path $gameDir "AIWar2_Data\Managed"
+$patchedDir = Join-Path $gameDir "PatchedAssemblies"
+$transPatched = Join-Path $translationDir "PatchedAssemblies"
+foreach ($dir in @($managedDir, $patchedDir, $transPatched)) {
+    if (Test-Path $dir) {
+        $leftovers = Get-ChildItem $dir -Filter "*.new.dll" -ErrorAction SilentlyContinue
+        foreach ($f in $leftovers) {
+            Remove-Item $f.FullName -Force
+            Write-Host "  Cleaned .new.dll residue: $($f.Name)" -ForegroundColor DarkYellow
+        }
+    }
+}
+
 # ---- Version check ----
 $snapshotFile = Join-Path $translationDir "translation_snapshot.json"
 if (-not (Test-Path $snapshotFile)) {
@@ -100,6 +130,27 @@ foreach ($asm in @("ArcenAIW2Core", "ArcenAIW2Visualization", "ArcenUniversal"))
     }
 }
 Write-Host "BepInEx framework deployed" -ForegroundColor Green
+
+# ---- Verify IL-patched DLLs ----
+$verifyScript = Join-Path $translationDir "tools\ilpatch\verify_patch.py"
+$transPatched = Join-Path $translationDir "PatchedAssemblies"
+$deployedPatched = Join-Path $gameDir "PatchedAssemblies"
+
+foreach ($asmName in @("ArcenAIW2Core", "ArcenUniversal", "ArcenAIW2Visualization")) {
+    $mergedJson = Join-Path $translationDir "tools\ilpatch\$asmName.merged.json"
+    $deployedDll = "$deployedPatched\$asmName.dll"
+    
+    if ((Test-Path $verifyScript) -and (Test-Path $mergedJson) -and (Test-Path $deployedDll)) {
+        Write-Host "  Verifying $asmName..." -ForegroundColor Yellow
+        $result = & python $verifyScript $deployedDll $mergedJson 2>&1
+        if ($LASTEXITCODE -eq 0) {
+            Write-Host "    PASS: $asmName" -ForegroundColor Green
+        } else {
+            Write-Host "    FAIL: $asmName - some translations may not have been written" -ForegroundColor Red
+            Write-Host "    Run: python tools/ilpatch/verify_patch.py PatchedAssemblies\$asmName.dll tools/ilpatch/$asmName.merged.json" -ForegroundColor Gray
+        }
+    }
+}
 
 # Deploy I18NFont4UnityGame plugin
 Write-Host ""
@@ -336,6 +387,16 @@ Write-Host "arcenui AssetBundle deployment checked" -ForegroundColor Green
 
 Write-Host ""
 Write-Host "=== Deployment Complete ===" -ForegroundColor Cyan
+Write-Host ""
+if ($gameProc) {
+    Write-Host "IMPORTANT: Restart AI War 2 for the new translations to take effect!" -ForegroundColor Yellow
+}
+Write-Host "If translations still show English after restart, check:" -ForegroundColor Gray
+Write-Host "  1. Was ilpatch run? Confirm: dotnet tools/ilpatch/bin/ilpatch.dll dump-ldstr" -ForegroundColor Gray
+Write-Host "     PatchedAssemblies/ArcenAIW2Core.dll | findstr 等待" -ForegroundColor Gray
+Write-Host "  2. Is AssemblyRedirector.dll in BepInEx/patchers/?" -ForegroundColor Gray
+Write-Host "  3. Run: python tools/ilpatch/verify_patch.py" -ForegroundColor Gray
+Write-Host "     PatchedAssemblies\ArcenAIW2Core.dll tools\ilpatch\ArcenAIW2Core.merged.json" -ForegroundColor Gray
 Write-Host ""
 Write-Host "Press Enter to exit..."
 Read-Host

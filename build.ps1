@@ -19,53 +19,53 @@ $bepInExProjects = @(
 
 function Build-MSBuildProject {
     param($projPath)
-    Write-Host "Building $([System.IO.Path]::GetFileName($projPath))..." -ForegroundColor Cyan
+    $projName = [System.IO.Path]::GetFileName($projPath)
+    Write-Host "Building $projName..." -ForegroundColor Cyan
+    
+    # Record pre-build hash for cache detection
+    $projDir = Split-Path $projPath
+    $dllName = [System.IO.Path]::GetFileNameWithoutExtension($projName) + ".dll"
+    $outDll = Join-Path $baseDir "DLLBin\$dllName"
+    $preHash = $null
+    if (Test-Path $outDll) {
+        $preHash = (Get-FileHash $outDll -Algorithm SHA256).Hash
+    }
+    
     # Clean obj/Release to avoid stale incremental cache
-    $objDir = Join-Path (Split-Path $projPath) "obj\Release"
+    $objDir = Join-Path $projDir "obj\Release"
     if (Test-Path $objDir) {
         Remove-Item -Recurse -Force $objDir
     }
-    return & $msbuild $projPath /t:Build /p:Configuration=Release "/p:CscToolPath=$roslynDir" /nologo 2>&1
+    
+    $buildOutput = & $msbuild $projPath /t:Build /p:Configuration=Release "/p:CscToolPath=$roslynDir" /nologo 2>&1
+    
+    # Post-build hash comparison
+    $objDll = Join-Path $projDir "obj\Release\$dllName"
+    if (Test-Path $objDll) {
+        Copy-Item $objDll $outDll -Force
+        $postHash = (Get-FileHash $outDll -Algorithm SHA256).Hash
+        $size = [math]::Round((Get-Item $outDll).Length / 1KB)
+        if ($preHash -and $preHash -eq $postHash) {
+            Write-Host "  WARNING: $dllName hash unchanged ($size KB) - cache may be stale!" -ForegroundColor DarkYellow
+            Write-Host "  If translations didn't take effect, run: Remove-Item -Recurse -Force '$objDir'" -ForegroundColor DarkYellow
+        } else {
+            Write-Host "  OK: $dllName ($size KB)" -ForegroundColor Green
+        }
+    } else {
+        Write-Host "  FAILED: $dllName not found" -ForegroundColor Red
+        $buildOutput | Select-Object -Last 10
+        exit 1
+    }
 }
 
 foreach ($proj in $projects) {
     $projPath = Join-Path $baseDir $proj
-    $output = Build-MSBuildProject $projPath
-    
-    $projDir = Split-Path $projPath
-    $dllName = [System.IO.Path]::GetFileNameWithoutExtension($proj) + ".dll"
-    $objDll = Join-Path $projDir "obj\Release\$dllName"
-    $binDll = Join-Path $baseDir "DLLBin\$dllName"
-    
-    if (Test-Path $objDll) {
-        Copy-Item $objDll $binDll -Force
-        $size = [math]::Round((Get-Item $binDll).Length / 1KB)
-        Write-Host "  OK: $dllName ($size KB)" -ForegroundColor Green
-    } else {
-        Write-Host "  FAILED: $dllName not found" -ForegroundColor Red
-        $output | Select-Object -Last 10
-        exit 1
-    }
+    Build-MSBuildProject $projPath
 }
 
 foreach ($proj in $bepInExProjects) {
     $projPath = Join-Path $baseDir $proj
-    $output = Build-MSBuildProject $projPath
-    
-    $projDir = Split-Path $projPath
-    $dllName = [System.IO.Path]::GetFileNameWithoutExtension($proj) + ".dll"
-    $binDll = Join-Path $projDir "bin\Release\$dllName"
-    $outputDll = Join-Path $baseDir "DLLBin\$dllName"
-    
-    if (Test-Path $binDll) {
-        Copy-Item $binDll $outputDll -Force
-        $size = [math]::Round((Get-Item $outputDll).Length / 1KB)
-        Write-Host "  OK: $dllName ($size KB)" -ForegroundColor Green
-    } else {
-        Write-Host "  FAILED: $dllName not found at $binDll" -ForegroundColor Red
-        $output | Select-Object -Last 10
-        exit 1
-    }
+    Build-MSBuildProject $projPath
 }
 
 # Build arcenui AssetBundle (patch with Chinese translations)

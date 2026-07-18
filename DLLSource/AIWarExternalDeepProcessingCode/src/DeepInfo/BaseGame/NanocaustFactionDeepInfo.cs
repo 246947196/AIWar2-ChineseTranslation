@@ -1592,14 +1592,14 @@ namespace Arcen.AIW2.External
         {
             bool localDebug = false;
             if ( this.BaseInfo.hasBeenHacked || ArcenStrings.Equals( this.BaseInfo.Allegiance, "HostileToAI" ) ||
-                 ArcenStrings.Equals( this.BaseInfo.Allegiance, "Friendly To Players" ) )
+                 ArcenStrings.Equals( this.BaseInfo.Allegiance, "对玩家友好" ) )
             {
                 this.BaseInfo.humanAllied = true;
                 AllegianceHelper.AllyThisFactionToHumans( faction );
                 if ( localDebug )
                     ArcenDebugging.ArcenDebugLogSingleLine( "This Nanocaust faction should be hostile to the AI and friendly to players", Verbosity.DoNotShow );
             }
-            else if ( ArcenStrings.Equals( this.BaseInfo.Allegiance, "Hostile To All" ) ||
+            else if ( ArcenStrings.Equals( this.BaseInfo.Allegiance, "对所有敌对" ) ||
                ArcenStrings.Equals( this.BaseInfo.Allegiance, "HostileToAll" ) || //this line is for compatibility with older (pre-lobby rework) save games.
                string.IsNullOrEmpty( this.BaseInfo.Allegiance ) )
             {
@@ -1608,14 +1608,14 @@ namespace Arcen.AIW2.External
                 if ( string.IsNullOrEmpty( this.BaseInfo.Allegiance ) )
                 {
                     ArcenDebugging.ArcenDebugLogSingleLine( "empty Nanocaust allegiance, so fixing it to hate everyone", Verbosity.ShowAsError );
-                    this.BaseInfo.SetNewAllegianceIntoCoreSettings( "Hostile To All" );
+                    this.BaseInfo.SetNewAllegianceIntoCoreSettings( "对所有敌对" );
                 }
                 if ( localDebug )
                     ArcenDebugging.ArcenDebugLogSingleLine( "This Nanocaust faction should be hostile to all (default)", Verbosity.DoNotShow );
                 //make sure this isn't set wrong somehow
                 AllegianceHelper.EnemyThisFactionToAll( faction );
             }
-            else if ( ArcenStrings.Equals( this.BaseInfo.Allegiance, "Hostile To Players Only" ) ||
+            else if ( ArcenStrings.Equals( this.BaseInfo.Allegiance, "仅对玩家敌对" ) ||
                     ArcenStrings.Equals( this.BaseInfo.Allegiance, "HostileToPlayers" ) )
             {
                 this.BaseInfo.aiAllied = true;
@@ -1623,25 +1623,25 @@ namespace Arcen.AIW2.External
                 if ( localDebug )
                     ArcenDebugging.ArcenDebugLogSingleLine( "This Nanocaust faction should be friendly to the AI and hostile to players", Verbosity.DoNotShow );
             }
-            else if ( ArcenStrings.Equals( this.BaseInfo.Allegiance, "Minor Faction Team Red" ) )
+            else if ( ArcenStrings.Equals( this.BaseInfo.Allegiance, "小派系小队红" ) )
             {
                 if ( localDebug )
                     ArcenDebugging.ArcenDebugLogSingleLine( "This Nanocaust faction is on team red", Verbosity.DoNotShow );
-                AllegianceHelper.AllyThisFactionToMinorFactionTeam( faction, "Minor Faction Team Red" );
+                AllegianceHelper.AllyThisFactionToMinorFactionTeam( faction, "小派系小队红" );
             }
-            else if ( ArcenStrings.Equals( this.BaseInfo.Allegiance, "Minor Faction Team Blue" ) )
+            else if ( ArcenStrings.Equals( this.BaseInfo.Allegiance, "小派系小队蓝" ) )
             {
                 if ( localDebug )
                     ArcenDebugging.ArcenDebugLogSingleLine( "This Nanocaust faction is on team blue", Verbosity.DoNotShow );
 
-                AllegianceHelper.AllyThisFactionToMinorFactionTeam( faction, "Minor Faction Team Blue" );
+                AllegianceHelper.AllyThisFactionToMinorFactionTeam( faction, "小派系小队蓝" );
             }
-            else if ( ArcenStrings.Equals( this.BaseInfo.Allegiance, "Minor Faction Team Green" ) )
+            else if ( ArcenStrings.Equals( this.BaseInfo.Allegiance, "小派系小队绿" ) )
             {
                 if ( localDebug )
                     ArcenDebugging.ArcenDebugLogSingleLine( "This Nanocaust faction is on team green", Verbosity.DoNotShow );
 
-                AllegianceHelper.AllyThisFactionToMinorFactionTeam( faction, "Minor Faction Team Green" );
+                AllegianceHelper.AllyThisFactionToMinorFactionTeam( faction, "小派系小队绿" );
             }
 
             else

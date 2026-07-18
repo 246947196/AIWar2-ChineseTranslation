@@ -1049,7 +1049,7 @@ namespace Arcen.AIW2.External
 
                             AISentinelsFactionBaseInfo factionExternal = faction.TryGetAISentinelsCoreData();
                             
-                            var budget = factionExternal.SentinelInfo.ExtragalacticBudgets.FirstOrDefault(b => b.Target != null && string.Equals(b.Target.AgainstFactionAllegiance, "Friendly To Players", StringComparison.InvariantCultureIgnoreCase));
+                            var budget = factionExternal.SentinelInfo.ExtragalacticBudgets.FirstOrDefault(b => b.Target != null && string.Equals(b.Target.AgainstFactionAllegiance, "对玩家友好", StringComparison.InvariantCultureIgnoreCase));
                             if (budget == null)
                                 return;
                             budget.Budget = FInt.FromParts(budget.NextExtragalacticUnitToBuy.CostForAIToPurchase, 0);

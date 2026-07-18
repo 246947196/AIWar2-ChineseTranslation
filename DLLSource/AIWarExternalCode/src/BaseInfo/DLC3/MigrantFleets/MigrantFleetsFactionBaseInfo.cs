@@ -249,7 +249,7 @@ namespace Arcen.AIW2.External
             string allegiance = Allegiance;
             switch ( allegiance )
             {
-                case "Friendly To Players":
+                case "对玩家友好":
                     AllegianceHelper.AllyThisFactionToHumans( AttachedFaction );
                     humanAlly = true;
                     break;

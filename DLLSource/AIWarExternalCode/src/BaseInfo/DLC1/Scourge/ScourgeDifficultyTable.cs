@@ -147,7 +147,7 @@ namespace Arcen.AIW2.External
             if ( ArcenStrings.Equals( allegianceTemp, "Player" ) )
                 TypeDataObject.PlayerAllied = true;
             else if ( ArcenStrings.Equals( allegianceTemp, "AI" ) ||
-                      ArcenStrings.Equals( allegianceTemp, "Civil War" ))
+                      ArcenStrings.Equals( allegianceTemp, "内战" ))
                 TypeDataObject.AIAllied = true;
             else if ( ArcenStrings.Equals( allegianceTemp, "MinorFaction" ) )
                 TypeDataObject.MinorFactionAllied = true;
@@ -225,15 +225,15 @@ namespace Arcen.AIW2.External
                     continue;
                 if ( debug )
                     ArcenDebugging.ArcenDebugLogSingleLine( "GetDifficultyForFaction: Checking <" + row.ToString() + "> for  " + faction.ToString() + " allegiance: " + factionAllegiance, Verbosity.DoNotShow );
-                if ( ArcenStrings.Equals( factionAllegiance, "Allied To AI" ) ||
-                     ArcenStrings.Equals( factionAllegiance, "Civil War" ))
+                if ( ArcenStrings.Equals( factionAllegiance, "对AI友好" ) ||
+                     ArcenStrings.Equals( factionAllegiance, "内战" ))
                 {
                     if ( !row.AIAllied )
                         continue;
                     outputRow = row;
                     break;
                 }
-                else if ( ArcenStrings.Equals( factionAllegiance, "Friendly To Players" ) )
+                else if ( ArcenStrings.Equals( factionAllegiance, "对玩家友好" ) )
                 {
                     if ( !row.PlayerAllied )
                         continue;

@@ -1,10 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
     <faction name="Scourge" is_partial_record="true" required_expansion_list="1_The_Spire_Rises">
       <!--Just to add Civil War to the allegiances to support Scourge Civil War-->
     <custom_field name="Allegiance" display_name="归属" description="该派系对AI还是玩家友好？让其与玩家结盟会使游戏简单得多。"
-                  sort_group="250" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Allied To AI,Friendly To Players,Minor Faction Team Red,Minor Faction Team Blue,Minor Faction Team Green,Civil War" default_option="Allied To AI" />
+                  sort_group="250" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="对AI友好,对玩家友好,小派系小队红,小派系小队蓝,小派系小队绿,内战" default_option="对AI友好" />
     </faction>
 
     <faction name="ScourgeVassal"
@@ -19,7 +19,7 @@
       auto_add_singleton_of_faction_when_any_count_of_other_player_types_present="ScourgeInfusedHumanEmpire"
       >
       <custom_field name="Allegiance" display_name="归属" description="每个天灾派系（每个AI一个）对AI友好，但彼此之间敌对。这些派系也都对你敌对。"
-                  sort_group="250" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Friendly To Players" default_option="Friendly To Players" />
+                  sort_group="250" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="对玩家友好" default_option="对玩家友好" />
 
     </faction>
 
@@ -51,7 +51,7 @@
 提高强度会加快天灾建造单位或建筑的速度、单位个体升级的速度、他们能建造的顶级单位数量以及生产单位的速度。在强度6时天灾可以运用其全部智能。"
                   sort_group="200" setting_type="IntSlider" default="5" min="1" max="10"/>
     <custom_field name="Allegiance" display_name="归属" description="每个天灾派系（每个AI一个）对AI友好，但彼此之间敌对。这些派系也都对你敌对。"
-                  sort_group="250" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Civil War" default_option="Civil War" />
+                  sort_group="250" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="内战" default_option="内战" />
 
     <custom_field name="AllowDarkZenith" display_name="允许暗天顶" description="并非只生成天灾派系（每个AI一个），其中一些派系可能被替换为暗天顶斯维卡里。"
                    sort_group="930" setting_type="BoolToggle" default="false"/>
@@ -80,7 +80,7 @@ description="该变体的圣殿骑士无论是否有死灵法师都会为AI服�
     <custom_field name="Intensity" display_name="强度" description="它们对游戏玩法可能产生多大影响？"
 		  sort_group="200" setting_type="IntSlider" default="5" min="1" max="10"/>
     <custom_field name="Allegiance" display_name="归属" description="圣殿骑士始终与AI结盟。"
-                  sort_group="250" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Allied To AI" default_option="Allied To AI" />
+                  sort_group="250" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="对AI友好" default_option="对AI友好" />
 
   </faction>
 
@@ -99,7 +99,7 @@ description="该变体的圣殿骑士无论是否有死灵法师都会为AI服�
      takes_difficulty_from_dyson_sidekick="true"
            >
     <custom_field name="Allegiance" display_name="归属" description="该派系始终与所有人敌对。"
-                   sort_group="250" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Hostile To All" default_option="Hostile To All" />
+                   sort_group="250" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="对所有敌对" default_option="对所有敌对" />
     <custom_field name="Intensity" display_name="强度" description="它们对游戏玩法可能产生多大影响？如果强度太低，死灵法师可用的资源会较少。"
  		  sort_group="200" setting_type="IntSlider" default="-1" min="0" max="10"/>
 
@@ -125,7 +125,7 @@ Badger对此没有太多平衡数据，所以如果有问题请在discord上反�
      can_use_spire_debris="false"
            >
     <custom_field name="Allegiance" display_name="归属" description="该派系始终与所有人敌对。"
-                   sort_group="250" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Hostile To All" default_option="Hostile To All" />
+                   sort_group="250" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="对所有敌对" default_option="对所有敌对" />
     <custom_field name="Intensity" display_name="强度" description="它们对游戏玩法可能产生多大影响？目前仅支持强度5。"
 		  sort_group="200" setting_type="IntSlider" default="5" min="1" max="10"/>
 
@@ -219,14 +219,14 @@ Badger对此没有太多平衡数据，所以如果有问题请在discord上反�
     <faction name="DarkZenith" is_partial_record="true" >
       <!--Just add this one option to the existing field-->
       <custom_field name="Allegiance" display_name="归属" description="该派系在背景设定中是黑暗联盟的成员。"
-                    sort_group="400" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Dark Alliance,Allied To AI,Hostile To All,Minor Faction Team Red,Minor Faction Team Blue,Minor Faction Team Green" default_option="Dark Alliance" />
+                    sort_group="400" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="黑暗同盟,对AI友好,对所有敌对,小派系小队红,小派系小队蓝,小派系小队绿" default_option="黑暗同盟" />
 
     </faction>
 
     <faction name="DarkZenithSvikari" is_partial_record="true" >
       <!--Just add this one option to the existing field-->
     <custom_field name="Allegiance" display_name="归属" description="这些天顶是黑暗联盟的叛徒。"
-                  sort_group="300" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Friendly To Players,Minor Faction Team Red,Minor Faction Team Blue,Minor Faction Team Green,Allied To AI,Civil War" default_option="Friendly To Players" />
+                  sort_group="300" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="对玩家友好,小派系小队红,小派系小队蓝,小派系小队绿,对AI友好,内战" default_option="对玩家友好" />
     </faction>
 
   

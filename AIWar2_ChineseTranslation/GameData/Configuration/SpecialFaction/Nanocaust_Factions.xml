@@ -20,7 +20,7 @@
           sort_group="200" setting_type="IntSlider" default="5" min="1" max="10" />
       <custom_field name="Allegiance" display_name="派系立场" description="这个派系对AI、人类还是中立？注意：与玩家结盟的纳米灾变会快速增加AIP。您可以通过一些银河设置来调整此行为。"
                     sort_group="250" setting_type="CustomDropdownArbitraryOptions" 
-                    arbitrary_options="Hostile To All,Friendly To Players,Hostile To Players Only,Minor Faction Team Red,Minor Faction Team Blue,Minor Faction Team Green" default_option="Hostile To All"/>
+                    arbitrary_options="对所有敌对,对玩家友好,仅对玩家敌对,小派系小队红,小派系小队蓝,小派系小队绿" default_option="对所有敌对"/>
     <custom_field name="InvasionTime" display_name="入侵时间" description="可以设置纳米灾变在游戏中的某个未知时间入侵银河系，或者立即开始。立即生成是最可怕的，有时会使游戏变得异常困难。"
                   sort_group="300" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Immediate,Early Game,Mid Game,Late Game" default_option="Mid Game" />
       <custom_field name="SpawnNearPlayer" is_advanced_setting="true" display_name="在玩家附近生成" description="这通常是致命的，除非是友好的纳米灾变。"

@@ -1310,7 +1310,7 @@ namespace Arcen.AIW2.External
                                 }
 
                                 if ( ArcenStrings.Equals( faction.BaseInfo.Allegiance, "Allied To Players" ) ||
-                                     ArcenStrings.Equals( faction.BaseInfo.Allegiance, "Friendly To Players" ) )
+                                     ArcenStrings.Equals( faction.BaseInfo.Allegiance, "对玩家友好" ) )
                                     World_AIW2.Instance.QueueChatMessageOrCommand( "An " + faction.StartFactionColourForLog() + "Allied Scourge</color> Subjugator has spawned in the galaxy!", ChatType.LogToCentralChat, chatHandlerOrNull );
                                 else if ( spawnerForSummoning.Planet.IntelLevel > PlanetIntelLevel.Unexplored )
                                     World_AIW2.Instance.QueueChatMessageOrCommand( "A " + faction.StartFactionColourForLog() + "Scourge</color> Subjugator has spawned in the galaxy!", ChatType.LogToCentralChat, chatHandlerOrNull );

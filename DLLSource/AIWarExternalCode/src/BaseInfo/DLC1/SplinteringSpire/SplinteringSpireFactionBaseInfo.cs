@@ -364,7 +364,7 @@ namespace Arcen.AIW2.External
                     AttachedFaction.MakeFriendlyTo( otherFaction );
                     otherFaction.MakeFriendlyTo( AttachedFaction );
                 }
-                else if ( otherFaction.BaseInfo.Source.InternalName == "DarkSpireFactionBaseInfo" || otherFaction.BaseInfo.Allegiance == "Dark Alliance" )
+                else if ( otherFaction.BaseInfo.Source.InternalName == "DarkSpireFactionBaseInfo" || otherFaction.BaseInfo.Allegiance == "黑暗同盟" )
                 {
                     // Fight what we're designed to fight.
                     AttachedFaction.MakeHostileTo( otherFaction );

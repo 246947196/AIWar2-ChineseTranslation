@@ -71,9 +71,9 @@ namespace Arcen.AIW2.External
             ConfigurationForFaction cfg = this.AttachedFaction.Config;
             Intensity = cfg.GetIntValueForCustomFieldOrDefaultValue( "Intensity", true );
             string allegiance = this.Allegiance;
-            MinorFactionAllied = ArcenStrings.Equals( allegiance, "Minor Faction Team Red" ) ||
-                                 ArcenStrings.Equals( allegiance, "Minor Faction Team Blue" ) ||
-                                 ArcenStrings.Equals( allegiance, "Minor Faction Team Green" );
+            MinorFactionAllied = ArcenStrings.Equals( allegiance, "小派系小队红" ) ||
+                                 ArcenStrings.Equals( allegiance, "小派系小队蓝" ) ||
+                                 ArcenStrings.Equals( allegiance, "小派系小队绿" );
             if ( AttachedFaction.MinFireteamStrength == -1 )
                 AttachedFaction.MinFireteamStrength = 2000;
             if ( AttachedFaction.MaxFireteamStrength == -1 )
@@ -99,12 +99,12 @@ namespace Arcen.AIW2.External
             Faction faction = this.AttachedFaction;
             if ( ArcenStrings.Equals( allegiance, "AI Allied" ) || string.IsNullOrEmpty( allegiance ) )
                 AllegianceHelper.AllyThisFactionToAI( faction );
-            else if ( ArcenStrings.Equals( allegiance, "Minor Faction Team Red" ) )
-                AllegianceHelper.AllyThisFactionToMinorFactionTeam( faction, "Minor Faction Team Red" );
-            else if ( ArcenStrings.Equals( allegiance, "Minor Faction Team Blue" ) )
-                AllegianceHelper.AllyThisFactionToMinorFactionTeam( faction, "Minor Faction Team Blue" );
-            else if ( ArcenStrings.Equals( allegiance, "Minor Faction Team Green" ) )
-                AllegianceHelper.AllyThisFactionToMinorFactionTeam( faction, "Minor Faction Team Green" );
+            else if ( ArcenStrings.Equals( allegiance, "小派系小队红" ) )
+                AllegianceHelper.AllyThisFactionToMinorFactionTeam( faction, "小派系小队红" );
+            else if ( ArcenStrings.Equals( allegiance, "小派系小队蓝" ) )
+                AllegianceHelper.AllyThisFactionToMinorFactionTeam( faction, "小派系小队蓝" );
+            else if ( ArcenStrings.Equals( allegiance, "小派系小队绿" ) )
+                AllegianceHelper.AllyThisFactionToMinorFactionTeam( faction, "小派系小队绿" );
             else
                 AllegianceHelper.AllyThisFactionToAI( faction );
         }

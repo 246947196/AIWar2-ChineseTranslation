@@ -474,18 +474,18 @@ namespace Arcen.AIW2.External
         {
             bool localDebug = false;
             string allegiance = this.Allegiance;
-            if ( ArcenStrings.Equals( allegiance, "Hostile To All" ) || string.IsNullOrEmpty( allegiance ) )
+            if ( ArcenStrings.Equals( allegiance, "对所有敌对" ) || string.IsNullOrEmpty( allegiance ) )
             {
                 this.PlayerAllied = false;
                 this.aiAllied = false;
                 if ( string.IsNullOrEmpty( allegiance ) ) //just fix it to be hostile to all
-                    this.SetNewAllegianceIntoCoreSettings( "Hostile To All" );
+                    this.SetNewAllegianceIntoCoreSettings( "对所有敌对" );
                 if ( localDebug )
                     ArcenDebugging.ArcenDebugLogSingleLine( "This Marauder faction should be hostile to all (default)", Verbosity.DoNotShow );
                 //make sure this isn't set wrong somehow
                 AllegianceHelper.EnemyThisFactionToAll( this.AttachedFaction );
             }
-            else if ( ArcenStrings.Equals( allegiance, "Hostile To Players Only" ) ||
+            else if ( ArcenStrings.Equals( allegiance, "仅对玩家敌对" ) ||
                     ArcenStrings.Equals( allegiance, "HostileToPlayers" ) )
             {
                 this.aiAllied = true;
@@ -495,7 +495,7 @@ namespace Arcen.AIW2.External
 
             }
             else if ( ArcenStrings.Equals( allegiance, "HostileToAI" ) ||
-                    ArcenStrings.Equals( allegiance, "Friendly To Players" ) )
+                    ArcenStrings.Equals( allegiance, "对玩家友好" ) )
             {
                 this.PlayerAllied = true;
                 AllegianceHelper.AllyThisFactionToHumans( this.AttachedFaction );
@@ -503,25 +503,25 @@ namespace Arcen.AIW2.External
                     ArcenDebugging.ArcenDebugLogSingleLine( "This Marauder faction should be hostile to the AI and friendly to players", Verbosity.DoNotShow );
 
             }
-            else if ( ArcenStrings.Equals( allegiance, "Minor Faction Team Red" ) )
+            else if ( ArcenStrings.Equals( allegiance, "小派系小队红" ) )
             {
                 if ( localDebug )
                     ArcenDebugging.ArcenDebugLogSingleLine( this.AttachedFaction.GetDisplayName() + " is on team red", Verbosity.DoNotShow );
-                AllegianceHelper.AllyThisFactionToMinorFactionTeam( this.AttachedFaction, "Minor Faction Team Red" );
+                AllegianceHelper.AllyThisFactionToMinorFactionTeam( this.AttachedFaction, "小派系小队红" );
             }
-            else if ( ArcenStrings.Equals( allegiance, "Minor Faction Team Blue" ) )
+            else if ( ArcenStrings.Equals( allegiance, "小派系小队蓝" ) )
             {
                 if ( localDebug )
                     ArcenDebugging.ArcenDebugLogSingleLine( this.AttachedFaction.GetDisplayName() + " is on team blue", Verbosity.DoNotShow );
 
-                AllegianceHelper.AllyThisFactionToMinorFactionTeam( this.AttachedFaction, "Minor Faction Team Blue" );
+                AllegianceHelper.AllyThisFactionToMinorFactionTeam( this.AttachedFaction, "小派系小队蓝" );
             }
-            else if ( ArcenStrings.Equals( allegiance, "Minor Faction Team Green" ) )
+            else if ( ArcenStrings.Equals( allegiance, "小派系小队绿" ) )
             {
                 if ( localDebug )
                     ArcenDebugging.ArcenDebugLogSingleLine( this.AttachedFaction.GetDisplayName() + " is on team green", Verbosity.DoNotShow );
 
-                AllegianceHelper.AllyThisFactionToMinorFactionTeam( this.AttachedFaction, "Minor Faction Team Green" );
+                AllegianceHelper.AllyThisFactionToMinorFactionTeam( this.AttachedFaction, "小派系小队绿" );
             }
 
             else

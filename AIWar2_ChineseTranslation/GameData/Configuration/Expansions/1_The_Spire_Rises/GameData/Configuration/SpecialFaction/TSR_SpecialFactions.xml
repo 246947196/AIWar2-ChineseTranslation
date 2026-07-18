@@ -25,7 +25,7 @@
 	遗物列车只会在你拥有两座尖塔城市后出现，之前不会出现。"
                   sort_group="200" setting_type="IntSlider" default="5" min="1" max="10"/>
     <custom_field name="Allegiance" display_name="阵营关系" description="该派系对玩家友好。"
-                  sort_group="250" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Friendly To Players" default_option="Friendly To Players" />
+                  sort_group="250" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="对玩家友好" default_option="对玩家友好" />
 
     <custom_field name="DebugMode" is_advanced_setting="true" display_name="超级简单模式" description="适合只想快速体验陨落尖塔的玩家，这会大幅降低AI反应强度并加快遗物生成速度。"
               sort_group="250" setting_type="BoolToggle" default="false" /> 
@@ -65,7 +65,7 @@
 建议将此值设为与AI主要难度相等。"
                   sort_group="200" setting_type="IntSlider" default="5" min="1" max="10"/>
     <custom_field name="Allegiance" display_name="阵营" description="这个派系是AI的盟友还是玩家的盟友？成为玩家的盟友会使游戏变得容易得多。"
-                  sort_group="250" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Allied To AI,Friendly To Players,Minor Faction Team Red,Minor Faction Team Blue,Minor Faction Team Green" default_option="Allied To AI" />
+                  sort_group="250" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="对AI友好,对玩家友好,小派系小队红,小派系小队蓝,小派系小队绿" default_option="对AI友好" />
 
     <custom_field name="ExtraStrongMode" is_advanced_setting="true" display_name="沙盒: 超强模式" description="启用此设置会使天灾比正常情况下强大得多。
 

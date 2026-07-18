@@ -170,7 +170,7 @@ namespace Arcen.AIW2.External
                         ArcenDebugging.ArcenDebugLogSingleLine( "found match by index " + list[i].ToString(), Verbosity.DoNotShow );
                     return list[i];
                 }
-                if ( faction.BaseInfo.Allegiance == "Hostile To All" ) //if we are hostile to all, we must match the faction index
+                if ( faction.BaseInfo.Allegiance == "对所有敌对" ) //if we are hostile to all, we must match the faction index
                 {
                     if ( debug )
                         ArcenDebugging.ArcenDebugLogSingleLine( "skipping " + list[i].ToString() + " since this faction is hostile to all so we must match in index", Verbosity.DoNotShow );
@@ -184,7 +184,7 @@ namespace Arcen.AIW2.External
                 }
 
                 if ( (list[i].Target.AgainstFactionAllegiance == faction.BaseInfo.Allegiance) ||
-                     (list[i].Target.AgainstFactionAllegiance == "Friendly To Players" && faction.Type == FactionType.Player) )
+                     (list[i].Target.AgainstFactionAllegiance == "对玩家友好" && faction.Type == FactionType.Player) )
                 {
                     if ( debug )
                         ArcenDebugging.ArcenDebugLogSingleLine( "found match by allegiance " + list[i].ToString(), Verbosity.DoNotShow );
@@ -215,7 +215,7 @@ namespace Arcen.AIW2.External
                     if ( !AIFaction.GetIsHostileTowards( faction ) )
                         continue;
                     if ( this.Target.AgainstFactionAllegiance == faction.BaseInfo.Allegiance ||
-                        (this.Target.AgainstFactionAllegiance == "Friendly To Players" && // Player friendly includes both players and... those friendly.
+                        (this.Target.AgainstFactionAllegiance == "对玩家友好" && // Player friendly includes both players and... those friendly.
                         (faction.Type == FactionType.Player || faction.GetIsFriendlyToAnyPlayerFaction())) )
                         factionsToCheck.Add( faction );
                 }

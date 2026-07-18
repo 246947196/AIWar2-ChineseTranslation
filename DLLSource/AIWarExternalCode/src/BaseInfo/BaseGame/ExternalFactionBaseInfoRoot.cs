@@ -329,19 +329,19 @@ namespace Arcen.AIW2.External
 
             if ( !string.IsNullOrWhiteSpace(this.Allegiance) )
             {
-	            if ( this.Allegiance == "Friendly To Players" )
+	            if ( this.Allegiance == "对玩家友好" )
 	                buffer.Add( "友善", "a1ffa1" );
-	            else if ( this.Allegiance == "Allied To AI" )
+	            else if ( this.Allegiance == "对AI友好" )
 	                buffer.Add( "AI联盟", "ffa1a1" );
-	            else if ( this.Allegiance == "Minor Faction Team Red" )
+	            else if ( this.Allegiance == "小派系小队红" )
 	                buffer.Add( "红队", "ff3800" );
-	            else if ( this.Allegiance == "Minor Faction Team Blue" )
+	            else if ( this.Allegiance == "小派系小队蓝" )
 	                buffer.Add( "蓝队", "1A2DFF" );
-	            else if ( this.Allegiance == "Minor Faction Team Green" )
+	            else if ( this.Allegiance == "小派系小队绿" )
 	                buffer.Add( "绿队", "3fff00" );
-	            else if ( this.Allegiance == "Dark Alliance" )
+	            else if ( this.Allegiance == "黑暗同盟" )
 	                buffer.Add( "黑暗联盟", "666666" );
-                else if ( this.Allegiance == "Hostile To All")
+                else if ( this.Allegiance == "对所有敌对")
                     buffer.Add( "敌对", "ff4a32" );
 	            else
 	                buffer.Add( this.Allegiance, "dddddd" );

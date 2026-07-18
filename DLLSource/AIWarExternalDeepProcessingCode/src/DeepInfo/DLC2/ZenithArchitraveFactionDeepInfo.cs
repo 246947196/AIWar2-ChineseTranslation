@@ -187,7 +187,7 @@ namespace Arcen.AIW2.External
                         }
                     }
                     else if ( AttachedFaction.BaseInfo.Allegiance == otherFaction.BaseInfo.Allegiance &&
-                         AttachedFaction.BaseInfo.Allegiance != "Hostile To All" )
+                         AttachedFaction.BaseInfo.Allegiance != "对所有敌对" )
                     {
                         //if we are on the same team
                         AttachedFaction.MakeFriendlyTo( otherFaction );
@@ -254,28 +254,28 @@ namespace Arcen.AIW2.External
                 if ( localDebug )
                     ArcenDebugging.ArcenDebugLogSingleLine( "UpdateAllegiance: non-civil-war path. TimeLastCivilWarEnded " + BaseInfo.TimeLastCivilWarEnded + " and now its " + World_AIW2.Instance.GameSecond, Verbosity.DoNotShow );
                 //non-civil war. Friendly to our Team
-                if ( ArcenStrings.Equals( allegiance, "Minor Faction Team Red" ) )
+                if ( ArcenStrings.Equals( allegiance, "小派系小队红" ) )
                 {
                     BaseInfo.MinorFactionAllied = true;
                     if ( localDebug )
                         ArcenDebugging.ArcenDebugLogSingleLine( AttachedFaction.ToString() + " is on team red", Verbosity.DoNotShow );
-                    AllegianceHelper.AllyThisFactionToMinorFactionTeam( AttachedFaction, "Minor Faction Team Red" );
+                    AllegianceHelper.AllyThisFactionToMinorFactionTeam( AttachedFaction, "小派系小队红" );
                 }
-                else if ( ArcenStrings.Equals( allegiance, "Minor Faction Team Blue" ) )
+                else if ( ArcenStrings.Equals( allegiance, "小派系小队蓝" ) )
                 {
                     BaseInfo.MinorFactionAllied = true;
                     if ( localDebug )
                         ArcenDebugging.ArcenDebugLogSingleLine( AttachedFaction.ToString() + " is on team blue", Verbosity.DoNotShow );
-                    AllegianceHelper.AllyThisFactionToMinorFactionTeam( AttachedFaction, "Minor Faction Team Blue" );
+                    AllegianceHelper.AllyThisFactionToMinorFactionTeam( AttachedFaction, "小派系小队蓝" );
                 }
-                else if ( ArcenStrings.Equals( allegiance, "Minor Faction Team Green" ) )
+                else if ( ArcenStrings.Equals( allegiance, "小派系小队绿" ) )
                 {
                     BaseInfo.MinorFactionAllied = true;
                     if ( localDebug )
                         ArcenDebugging.ArcenDebugLogSingleLine( AttachedFaction.ToString() + " is on team green", Verbosity.DoNotShow );
-                    AllegianceHelper.AllyThisFactionToMinorFactionTeam( AttachedFaction, "Minor Faction Team Green" );
+                    AllegianceHelper.AllyThisFactionToMinorFactionTeam( AttachedFaction, "小派系小队绿" );
                 }
-                else if ( ArcenStrings.Equals( allegiance, "Friendly To Players" ) )
+                else if ( ArcenStrings.Equals( allegiance, "对玩家友好" ) )
                 {
                     BaseInfo.PlayerAllied = true;
                     AllegianceHelper.AllyThisFactionToHumans( AttachedFaction );

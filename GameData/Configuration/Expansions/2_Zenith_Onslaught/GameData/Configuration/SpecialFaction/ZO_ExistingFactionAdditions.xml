@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
   
@@ -29,7 +29,7 @@
            CanBeDarkAlliance="true"
            >
     <custom_field name="Allegiance" display_name="阵营" description="该派系默认是黑暗联盟的成员"
-          sort_group="200" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Dark Alliance,Hostile To All" default_option="Dark Alliance" />
+          sort_group="200" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="黑暗同盟,对所有敌对" default_option="黑暗同盟" />
   </faction>
 
   <faction name="AI" is_partial_record="true" >

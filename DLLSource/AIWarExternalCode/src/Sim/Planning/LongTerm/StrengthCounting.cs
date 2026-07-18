@@ -818,7 +818,7 @@ namespace Arcen.AIW2.External
                           !entity.TypeData.DoesNotGiveAlliesVision &&
                           planet.StrengthCountingOnly_Working_LastGameSecondHadPlayerNonVassalAllyShipsOnPlanet < World_AIW2.Instance.GameSecond )
                 {
-                    if ( faction.BaseInfo.Allegiance == "Friendly To Players" || 
+                    if ( faction.BaseInfo.Allegiance == "对玩家友好" || 
                          faction.SpecialFactionData.AlwaysFriendlyToPlayers )
                     {
                         Interlocked.Exchange( ref planet.StrengthCountingOnly_Working_LastGameSecondHadPlayerNonVassalAllyShipsOnPlanet, World_AIW2.Instance.GameSecond );
@@ -983,7 +983,7 @@ namespace Arcen.AIW2.External
             if ( entity.FireteamSpecificationOrNull != null && entity.FireteamSpecificationOrNull.IsActive() )
             {
                 if ( !String.IsNullOrEmpty( entity.FireteamSpecificationOrNull.AgainstFactionAllegiance ) &&
-                        entity.FireteamSpecificationOrNull.AgainstFactionAllegiance != "Friendly To Players" )
+                        entity.FireteamSpecificationOrNull.AgainstFactionAllegiance != "对玩家友好" )
                 {
                     return true;
                 } else if ( entity.FireteamSpecificationOrNull.AgainstFaction != null )
@@ -1010,7 +1010,7 @@ namespace Arcen.AIW2.External
             if ( entity.FireteamSpecificationOrNull != null && entity.FireteamSpecificationOrNull.IsActive() )
             {
                 if ( !String.IsNullOrEmpty( entity.FireteamSpecificationOrNull.AgainstFactionAllegiance ) &&
-                        entity.FireteamSpecificationOrNull.AgainstFactionAllegiance != "Friendly To Players" )
+                        entity.FireteamSpecificationOrNull.AgainstFactionAllegiance != "对玩家友好" )
                 {
                     return entity.FireteamSpecificationOrNull.AgainstFactionAllegiance;
                 } else if ( entity.FireteamSpecificationOrNull.AgainstFaction != null )
@@ -1036,7 +1036,7 @@ namespace Arcen.AIW2.External
             if ( entity.FireteamSpecificationOrNull != null && entity.FireteamSpecificationOrNull.IsActive() )
             {
                 if ( !String.IsNullOrEmpty( entity.FireteamSpecificationOrNull.AgainstFactionAllegiance ) &&
-                        entity.FireteamSpecificationOrNull.AgainstFactionAllegiance != "Friendly To Players" )
+                        entity.FireteamSpecificationOrNull.AgainstFactionAllegiance != "对玩家友好" )
                 {
                     return -2;
                 } else if ( entity.FireteamSpecificationOrNull.AgainstFaction != null )

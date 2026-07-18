@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
      <faction
@@ -29,8 +29,8 @@
                     description="始终对玩家友好。"
                     sort_group="300"
                     setting_type="CustomDropdownArbitraryOptions"
-                    arbitrary_options="Friendly To Players"
-                    default_option="Friendly To Players"
+                    arbitrary_options="对玩家友好"
+                    default_option="对玩家友好"
                     />
 
           <custom_field

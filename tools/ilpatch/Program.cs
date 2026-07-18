@@ -174,6 +174,26 @@ class Program
         using (var verify = ModuleDefMD.Load(outPath))
         {
             if (verify.Types.Count == 0) throw new Exception("written module failed to reload");
+            // Count ldstr in the written module to detect dropped entries
+            int writtenLdstr = 0;
+            foreach (var type in AllTypes(verify))
+                foreach (var method in type.Methods)
+                {
+                    if (method.Body == null) continue;
+                    foreach (var instr in method.Body.Instructions)
+                    {
+                        if (instr.OpCode == OpCodes.Ldstr) writtenLdstr++;
+                    }
+                }
+            // Original ldstr count = replaced + skipped (from the patching loop above)
+            int originalLdstr = replaced + skipped;
+            int dropped = originalLdstr - writtenLdstr;
+            Console.Error.WriteLine($"[patch] ldstr count: original={originalLdstr} (replaced={replaced}, skipped={skipped}), written={writtenLdstr}, dropped={dropped}");
+            if (dropped > 0)
+            {
+                Console.Error.WriteLine($"[patch] WARNING: dnlib writer dropped {dropped} ldstr entries! (original {originalLdstr}, written {writtenLdstr})");
+                Console.Error.WriteLine("[patch] This is a dnlib metadata writer bug. Affected translations will not take effect.");
+            }
         }
 
         bool overwrote = false;

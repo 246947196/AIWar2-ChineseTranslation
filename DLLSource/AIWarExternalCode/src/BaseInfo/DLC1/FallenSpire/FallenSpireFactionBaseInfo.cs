@@ -242,7 +242,7 @@ namespace Arcen.AIW2.External
             {
                 //this is for the regular Fallen Spire, not the spire infused empire
                 if ( String.IsNullOrEmpty( this.Allegiance ) )
-                    this.SetNewAllegianceIntoCoreSettings( "Friendly To Players" );
+                    this.SetNewAllegianceIntoCoreSettings( "对玩家友好" );
             }
         }
         #endregion

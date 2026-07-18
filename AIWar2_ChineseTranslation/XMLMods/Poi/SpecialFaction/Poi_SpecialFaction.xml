@@ -30,8 +30,8 @@
                     description="该派系始终对所有势力敌对。"
                     sort_group="250"
                     setting_type="CustomDropdownArbitraryOptions" 
-                    arbitrary_options="Hostile To All"
-                    default_option="Hostile To All"
+                    arbitrary_options="对所有敌对"
+                    default_option="对所有敌对"
                     is_hidden="true"
                     />
 

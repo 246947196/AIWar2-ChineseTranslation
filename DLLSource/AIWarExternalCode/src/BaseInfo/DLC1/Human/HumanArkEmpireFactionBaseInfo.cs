@@ -28,7 +28,7 @@ namespace Arcen.AIW2.External
             var str = fac.GetStringValueForCustomFieldOrDefaultValue( "StartingArk", false );
             if ( str == "RandomArk" )
             {
-                buffer.Add( "Random" ).Add( " Ark" );
+                buffer.Add( "随机" ).Add( "方舟" );
                 goto done;
             }
 

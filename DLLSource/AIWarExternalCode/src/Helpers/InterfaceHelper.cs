@@ -55,7 +55,7 @@ namespace Arcen.AIW2.External
                         Buffer.StartColor( faction.FactionCenterColor.ColorHexBrighter ).Add( "未发现随机" ).EndColor(); //don't show the player these factions at all
                     if ( GameSettings.Current.GetBoolBySetting( "HideRandomFactionType" ) )
                     {
-                        Buffer.StartColor( faction.FactionCenterColor.ColorHexBrighter ).Add( "随机 " ).Add( EnumNameCache.GetName( faction.RandomImpact ) ).EndColor();
+                        Buffer.StartColor( faction.FactionCenterColor.ColorHexBrighter ).Add( "随机 " ).Add( faction.RandomImpact.GetChineseDisplayName() ).EndColor();
                     }
                     else
                         Buffer.StartColor( faction.FactionCenterColor.ColorHexBrighter ).Add( faction.GetDisplayName() ).EndColor();
@@ -108,7 +108,7 @@ namespace Arcen.AIW2.External
                     
                     if ( hideRandomFactionType )
                     {
-                        Buffer.StartColor( faction.FactionCenterColor.ColorHexBrighter ).Add( "随机 " ).Add( EnumNameCache.GetName( faction.RandomImpact ) ).EndColor();
+                        Buffer.StartColor( faction.FactionCenterColor.ColorHexBrighter ).Add( "随机 " ).Add( faction.RandomImpact.GetChineseDisplayName() ).EndColor();
                         factionDisplaysRandom = false;
                     }
                     else
@@ -148,7 +148,7 @@ namespace Arcen.AIW2.External
                                 if ( showRandomAiType )
                                     Buffer.Add( " 自适应（" + sentinelsExt.AIType.DisplayName + "）： " );
                                 else
-                                    Buffer.Add( " 自适应 " ).Add( EnumNameCache.GetName( sentinelsExt.AdaptiveAIDifficulty ) ).Add( "： " );
+                                    Buffer.Add( " 自适应 " ).Add( sentinelsExt.AdaptiveAIDifficulty.GetChineseDisplayName() ).Add( "： " );
                             }
                             else
                                 Buffer.Add( " " + sentinelsExt.AIType.DisplayName + ": " );
@@ -297,43 +297,43 @@ namespace Arcen.AIW2.External
                 {
                     debugCode = 1100;
                     string allegianceColor = "";
-                    if ( allegiance == "Allied To AI" )
+                    if ( allegiance == "对AI友好" )
                     {
                         Faction aiFaction = World_AIW2.Instance.AIFactions[0];
                         if ( aiFaction != null )
                             allegianceColor = aiFaction.FactionCenterColor.ColorHexBrighter;
                     }
-                    if ( allegiance == "Friendly To Players" )
+                    if ( allegiance == "对玩家友好" )
                     {
-                        allegiance = "Friendly";
+                        allegiance = "友好";
                         Faction playerFaction = World_AIW2.Instance.GetLocalPlayerFactionOrNull();
                         if ( playerFaction != null )
                             allegianceColor = playerFaction.FactionCenterColor.ColorHexBrighter;
                     }
-                    if ( allegiance == "Hostile To All" )
+                    if ( allegiance == "对所有敌对" )
                     {
-                        allegiance = "Hostile To All";
+                        allegiance = "对所有敌对";
                         allegianceColor = "dd5050";
                     }
-                    if ( allegiance == "Dark Alliance" )
+                    if ( allegiance == "黑暗同盟" )
                     {
-                        allegiance = "Dark Alliance";
+                        allegiance = "黑暗同盟";
                         allegianceColor = "e62495";
                     }
 
-                    if ( allegiance == "Minor Faction Team Red" )
+                    if ( allegiance == "小派系小队红" )
                     {
-                        allegiance = "Team Red";
+                        allegiance = "红队";
                         allegianceColor = "993030";
                     }
-                    if ( allegiance == "Minor Faction Team Green" )
+                    if ( allegiance == "小派系小队绿" )
                     {
-                        allegiance = "Team Green";
+                        allegiance = "绿队";
                         allegianceColor = "309930";
                     }
-                    if ( allegiance == "Minor Faction Team Blue" )
+                    if ( allegiance == "小派系小队蓝" )
                     {
-                        allegiance = "Team Blue";
+                        allegiance = "蓝队";
                         allegianceColor = "303090";
                     }
                     if ( allegianceColor == "" )

@@ -884,16 +884,16 @@ namespace Arcen.AIW2.External
             
             string masterAi = "";
             if (AIWar2GalaxySettingTable.GetIsBoolSettingEnabledByName_DuringGame( "FactionDetailsAreSecret" ))
-                masterAi = "Secret";
+                masterAi = "秘密";
             else if ( mostIntenseAi != null )
             {
                 var aidata = mostIntenseAi.TryGetAISentinelsCoreData()?.SentinelInfo;
                 if ( aidata != null )
                 {
                     if ( aidata.WasRandomAIType )
-                        masterAi = "Random";
+                        masterAi = "随机";
                     else if ( aidata.AdaptiveAIDifficulty != TypeDifficulty.Unset )
-                        masterAi = "Adaptive";
+                        masterAi = "自适应";
                     else
                         masterAi = aidata.AIType.GetDisplayName();
                 }
@@ -904,7 +904,7 @@ namespace Arcen.AIW2.External
             
             this.difficulty = "";
             if (AIWar2GalaxySettingTable.GetIsBoolSettingEnabledByName_DuringGame( "FactionDetailsAreSecret" ))
-                this.difficulty = "Secret";
+                this.difficulty = "秘密";
             else 
             if ( maxAiOrAllyIntensity > 0 )
             {
@@ -933,7 +933,7 @@ namespace Arcen.AIW2.External
                     
                     buffer.StartColor(dtype.GetHexColor());
                         
-                    buffer.Add(Extensions.ToString(dtype));
+                    buffer.Add(dtype.GetChineseDisplayName());
 
                     // the count of pluses based on factions
                     int numPlus = numExtraHighImpactHostiles;
@@ -1125,25 +1125,25 @@ namespace Arcen.AIW2.External
             
             if (!string.IsNullOrEmpty(this.difficulty) && this.difficulty != "nullDiff")
             {
-                buffer.Add( "\nDifficulty: "+Tabs+Tabs );
+                buffer.Add( "\n难度： "+Tabs+Tabs );
                 buffer.Add( this.difficulty );
             }
             
             if (!string.IsNullOrEmpty(this.mapType))
             {
-                buffer.Add( "\nMap Type: "+Tabs );
+                buffer.Add( "\n地图类型： "+Tabs );
                 buffer.Add( this.mapType );
             }
             
             if (!this.isquickstart)
             {
-                buffer.Add( "\nMap Seed: "+Tabs );
+                buffer.Add( "\n地图种子： "+Tabs );
                 buffer.Add( this.seed );
             }
             
             if (!string.IsNullOrEmpty(this.masterAIType))
             {
-                buffer.Add( "\nAI Type: "+Tabs+Tabs );
+                buffer.Add( "\nAI类型： "+Tabs+Tabs );
                 buffer.Add( this.masterAIType );
             }
             

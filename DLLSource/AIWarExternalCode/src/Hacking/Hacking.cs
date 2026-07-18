@@ -1074,7 +1074,7 @@ namespace Arcen.AIW2.External
                     Faction targetFacOrNull = Target.GetFactionOrNull_Safe();
                     if ( targetFacOrNull != null )
                     {
-                        if ( ArcenStrings.Equals( targetFacOrNull.BaseInfo.Allegiance, "Friendly To Players" ) )
+                        if ( ArcenStrings.Equals( targetFacOrNull.BaseInfo.Allegiance, "对玩家友好" ) )
                         {
                             RejectionReasonDescription = "You cannot hack your allies";
                             return Hackable.NeverBeHacked_ButStillShow;

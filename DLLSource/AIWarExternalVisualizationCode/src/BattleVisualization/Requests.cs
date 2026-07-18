@@ -479,14 +479,14 @@ namespace Arcen.AIW2.ExternalVisualization
                     if ( RAllegiance == null && LAllegiance != null )
                         return 1;
                     //friendly to players first
-                    if ( (LAllegiance == "Friendly To Players" && RAllegiance != "Friendly To Players") )
+                    if ( (LAllegiance == "对玩家友好" && RAllegiance != "对玩家友好") )
                         return -1;
-                    if ( (RAllegiance == "Friendly To Players" && LAllegiance != "Friendly To Players") )
+                    if ( (RAllegiance == "对玩家友好" && LAllegiance != "对玩家友好") )
                         return 1;
                     // //hostile to all at the bottom
-                    if ( (LAllegiance == "Hostile To All" && RAllegiance != "Hostile To All") )
+                    if ( (LAllegiance == "对所有敌对" && RAllegiance != "对所有敌对") )
                         return 1;
-                    if ( (RAllegiance == "Hostile To All" && LAllegiance != "Hostile To All") )
+                    if ( (RAllegiance == "对所有敌对" && LAllegiance != "对所有敌对") )
                         return -1;
                     return LAllegiance.CompareTo( RAllegiance );
                 } );

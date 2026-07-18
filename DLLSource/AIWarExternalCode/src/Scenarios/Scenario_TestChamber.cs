@@ -42,7 +42,7 @@ namespace Arcen.AIW2.External
             if ( dataToAdd == null )
                 throw new Exception("Could not find AI faction");
             ConfigurationForFaction config = ConfigurationForFaction.Create( CurrentFactions.Count, "AI2", dataToAdd );
-            //config.SetCustomFieldValue("Allegiance", "Hostile To All");
+            //config.SetCustomFieldValue("Allegiance", "对所有敌对");
             config.ShouldNeverBeRetainedInLobby = true;
             config.FactionCenterColor = TeamColorDefinitionTable.Instance.GetRandomRow();
             

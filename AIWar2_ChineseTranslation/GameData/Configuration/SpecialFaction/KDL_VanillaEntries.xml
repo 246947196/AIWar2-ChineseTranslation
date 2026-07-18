@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 
 <root>
   <faction name="Human" display_name="玩家派系" short_name="Human" processing_group="Human"
@@ -98,7 +98,7 @@
            icon_name_for_lobby="Ships1/DevourerGolem"
            >
     <custom_field name="Allegiance" display_name="派系立场" description="这个派系对AI、人类还是中立？"
-          sort_group="200" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Hostile To All,Friendly To Players,Hostile To Players Only,Minor Faction Team Red,Minor Faction Team Blue,Minor Faction Team Green" default_option="Hostile To All" />
+          sort_group="200" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="对所有敌对,对玩家友好,仅对玩家敌对,小派系小队红,小派系小队蓝,小派系小队绿" default_option="对所有敌对" />
   </faction>
   
   <faction name="ZenithDysonSphere"
@@ -184,7 +184,7 @@
 	  将此值设置为与AI主要难度相等比较合适。"
           sort_group="200" setting_type="IntSlider" default="5" min="1" max="10"/>
       <custom_field name="Allegiance" display_name="派系立场" description="这个派系对AI、人类还是中立？"
-                    sort_group="250" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Hostile To All,Friendly To Players,Hostile To Players Only,Minor Faction Team Red,Minor Faction Team Blue,Minor Faction Team Green" default_option="Hostile To All" />
+                    sort_group="250" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="对所有敌对,对玩家友好,仅对玩家敌对,小派系小队红,小派系小队蓝,小派系小队绿" default_option="对所有敌对" />
       <custom_field name="Intelligence" display_name="智能等级" description="掠夺者扩张时应使用什么策略？战术家(Tactician)更聪明，蛮力(Brute Force)更简单直接"
                     sort_group="250" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Tactician,Brute Force" default_option="Tactician" />
       <custom_field name="InvasionTime" display_name="入侵时间" description="可以设置掠夺者在游戏中的某个未知时间开始入侵银河系，或者立即开始。"
@@ -304,7 +304,7 @@
       <custom_field name="Intensity" display_name="强度" description="这个派系有多可怕？"
           sort_group="200" setting_type="IntSlider" default="5" min="1" max="10"/>
       <custom_field name="Allegiance" display_name="派系立场" description="这个派系对AI、人类还是中立？"
-          sort_group="250" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Hostile To All,Friendly To Players,Hostile To Players Only,Minor Faction Team Red,Minor Faction Team Blue,Minor Faction Team Green" default_option="Hostile To All" />
+          sort_group="250" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="对所有敌对,对玩家友好,仅对玩家敌对,小派系小队红,小派系小队蓝,小派系小队绿" default_option="对所有敌对" />
       <custom_field name="SpawningOptions" display_name="生成选项" description="修改该派系的生成方式。
 默认：根据强度在多个行星上生成单个Telium。
 单独Telium：生成一个不会扩张但具有极高生产能力的愤怒Telium。

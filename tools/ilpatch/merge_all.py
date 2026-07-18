@@ -1,47 +1,36 @@
-import json, os, sys
+import json, os, sys, shutil, glob, re
 
 DLL = sys.argv[1] if len(sys.argv) > 1 else "ArcenAIW2Core"
-PART_COUNT = 99  # auto-detect: scan up to 99
+FORCE = "--force" in sys.argv
 HERE = os.path.dirname(os.path.abspath(__file__))
+# Adjust for working directory
+if not os.path.exists(os.path.join(HERE, "tools/ilpatch")):
+    HERE = os.getcwd()
 
-SKELETON = os.path.join(HERE, f"{DLL}.extract.json")
-OUTPUT = os.path.join(HERE, f"{DLL}.merged.json")
+SKELETON = os.path.join(HERE, "tools/ilpatch", f"{DLL}.extract.json")
+OUTPUT = os.path.join(HERE, "tools/ilpatch", f"{DLL}.merged.json")
 
 with open(SKELETON, "r", encoding="utf-8") as f:
     skeleton = json.load(f)
 
+# Extract translations from all part files
+part_files = sorted(glob.glob(os.path.join(HERE, "tools/ilpatch", f"{DLL}.part*.json")))
 translations = {}
-for i in range(1, PART_COUNT + 1):
-    part_path = os.path.join(HERE, f"{DLL}.part{i}.json")
-    if not os.path.exists(part_path):
-        continue
-    with open(part_path, "r", encoding="utf-8-sig") as f:
-        content = f.read().strip()
-    # Wrap fragment in braces to make valid JSON
-    if content.startswith("{") and not content.endswith("}"):
-        content = content.rstrip(",") + "}"
-    elif not content.startswith("{") and not content.endswith("}"):
-        content = "{" + content.rstrip(",") + "}"
-    elif not content.startswith("{") and content.endswith("}"):
-        content = "{" + content
-    try:
-        part = json.loads(content)
-    except json.JSONDecodeError as e:
-        print(f"Warning: could not parse {part_path}: {e}")
-        continue
-    count = 0
-    for key, val in part.items():
-        if not val.strip():
-            continue
+for pf in part_files:
+    with open(pf, "r", encoding="utf-8") as f:
+        content = f.read()
+    pattern = re.compile(r'^\s*"((?:[^"\\]|\\.)*)"\s*:\s*"((?:[^"\\]|\\.)*)"\s*,?\s*$', re.MULTILINE)
+    for m in pattern.finditer(content):
+        key = m.group(1)
+        val = m.group(2)
         while '\\\\' in key:
             key = key.replace('\\\\', '\\')
         key = key.replace('\\n', '\n').replace('\\t', '\t').replace('\\r', '\r')
-        while '\\\\' in val:
-            val = val.replace('\\\\', '\\')
-        val = val.replace('\\n', '\n').replace('\\t', '\t').replace('\\r', '\r')
-        translations[key] = val
-        count += 1
-    print(f"Part{i}: extracted {count} translations")
+        if val.strip():
+            while '\\\\' in val:
+                val = val.replace('\\\\', '\\')
+            val = val.replace('\\n', '\n').replace('\\t', '\t').replace('\\r', '\r')
+            translations[key] = val
 
 injected = 0
 for key, val in translations.items():
@@ -49,9 +38,9 @@ for key, val in translations.items():
         skeleton[key] = val
         injected += 1
     else:
-        print(f"Warning: key not found in skeleton: {key[:80]}...")
+        print("Warning: key not found in skeleton: " + repr(key[:60]))
 
-# --- Regression check: detect previously translated keys that went silent ---
+# Regression check
 OLD_MERGED = OUTPUT + ".bak"
 if os.path.exists(OLD_MERGED):
     with open(OLD_MERGED, "r", encoding="utf-8") as f:
@@ -65,20 +54,23 @@ if os.path.exists(OLD_MERGED):
     version_changed = overlap < 0.9
     if lost:
         print(f"\n*** REGRESSION [{DLL}]: {len(lost)} previously translated keys went empty! ***")
-        for k in sorted(lost)[:20]:
-            print(f"  LOST: {k[:80]}")
-        if len(lost) > 20:
-            print(f"  ... and {len(lost) - 20} more")
+        for k in sorted(lost)[:10]:
+            print(f"  LOST: {k[:60]}")
         if version_changed:
-            print(f"  → Skeleton changed (game version update), continuing.")
+            print("  -> Skeleton changed (game version update), continuing.")
+        elif FORCE:
+            print("  -> FORCE mode: recovering lost keys from .bak and continuing.")
+            for k in lost:
+                if k in old and old[k] and old[k].strip():
+                    skeleton[k] = old[k]
+                    print(f"  RECOVERED: {k[:60]}")
         else:
-            print(f"  → Skeleton unchanged — {len(lost)} translation(s) lost due to format mismatch!")
+            print("  -> Skeleton unchanged. Use --force to recover from .bak and continue.")
             sys.exit(1)
 
+# Write
 with open(OUTPUT, "w", encoding="utf-8") as f:
     json.dump(skeleton, f, ensure_ascii=False, indent=2)
-
-import shutil
 shutil.copy2(OUTPUT, OLD_MERGED)
 
 total = len(skeleton)

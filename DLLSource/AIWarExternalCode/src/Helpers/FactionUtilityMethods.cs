@@ -2069,7 +2069,7 @@ namespace Arcen.AIW2.External
                     continue;
                 if ( faction.Type == FactionType.Player )
                     powerLevel += faction.OverallPowerLevel;
-                if ( faction.BaseInfo.Allegiance == "Friendly To Players" )
+                if ( faction.BaseInfo.Allegiance == "对玩家友好" )
                     powerLevel += faction.OverallPowerLevel;
             }
             return powerLevel;

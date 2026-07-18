@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
 
 <!--
@@ -49,7 +49,7 @@
     <custom_field name="Vassal" display_name="附庸" description="该阵营将听从玩家的命令"
                   sort_group="300" setting_type="BoolToggle" default="false" is_advanced_setting="true" />
     <custom_field name="Allegiance" display_name="效忠对象" description="这些天顶星人是黑暗联盟的叛徒。"
-                  sort_group="300" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Friendly To Players,Minor Faction Team Red,Minor Faction Team Blue,Minor Faction Team Green,Allied To AI" default_option="Friendly To Players" />
+                  sort_group="300" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="对玩家友好,小派系小队红,小派系小队蓝,小派系小队绿,对AI友好" default_option="对玩家友好" />
 
   </faction>
 -->

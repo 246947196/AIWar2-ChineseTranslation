@@ -141,7 +141,7 @@ namespace Arcen.AIW2.External
                 {
                     if ( this.Rows[i].Allegiance == "Player" )
                     {
-                        if ( ArcenStrings.Equals( factionAllegiance, "Friendly To Players" ) )
+                        if ( ArcenStrings.Equals( factionAllegiance, "对玩家友好" ) )
                         {
                             return this.Rows[i];
                         }
@@ -154,7 +154,7 @@ namespace Arcen.AIW2.External
                     }
                     else if ( this.Rows[i].Allegiance == "AI" )
                     {
-                        if ( ArcenStrings.Equals( factionAllegiance, "Allied To AI" ) )
+                        if ( ArcenStrings.Equals( factionAllegiance, "对AI友好" ) )
                             return this.Rows[i];
                     }
                 }

@@ -779,7 +779,7 @@ namespace Arcen.AIW2.External
                 {
                     if ( debug )
                         ArcenDebugging.ArcenDebugLogSingleLine( "Considering " + otherFaction.GetDisplayName() + " found player ally: " + foundPlayerAlly, Verbosity.DoNotShow );
-                    string playerAllegiance = "Friendly To Players"; //all player allied factions are tagged this way, and players are implicitly tagged this way too
+                    string playerAllegiance = "对玩家友好"; //all player allied factions are tagged this way, and players are implicitly tagged this way too
                     ExtragalacticBudget budget = ExtragalacticBudget.GetBudgetFromList( budgets, otherFaction );
                     if ( budget == null )
                     {
@@ -796,7 +796,7 @@ namespace Arcen.AIW2.External
                             budget = ExtragalacticBudget.Create( playerAllegiance, FInt.Zero, null );
                         }
                         else if ( string.IsNullOrEmpty( otherFaction.BaseInfo.Allegiance ) ||
-                             otherFaction.BaseInfo.Allegiance == "Hostile To All" )
+                             otherFaction.BaseInfo.Allegiance == "对所有敌对" )
                         {
                             if ( debug )
                                 ArcenDebugging.ArcenDebugLogSingleLine( "B", Verbosity.DoNotShow );
@@ -6457,7 +6457,7 @@ namespace Arcen.AIW2.External
                         return; //if the faction is defeated, no more extragalactic war units
                     }
 
-                    if ( budget.Target.AgainstFactionAllegiance == "Friendly To Players" )
+                    if ( budget.Target.AgainstFactionAllegiance == "对玩家友好" )
                     {
                         Faction localFaction = World_AIW2.Instance.GetLocalPlayerFactionOrNull();
                         if ( localFaction != null && ArcenNetworkAuthority.GetIsHostMode() )
@@ -6548,7 +6548,7 @@ namespace Arcen.AIW2.External
                         debugCode = 742;
                         ArcenPoint spawnPoint = king.WorldLocation;
                         debugCode = 750;
-                        if ( budget.Target.AgainstFactionAllegiance != "Friendly To Players" )
+                        if ( budget.Target.AgainstFactionAllegiance != "对玩家友好" )
                         {
                             debugCode = 755;
                             //if this is not against a player, lets see if we can get to any of the planets we'd like to
@@ -6602,7 +6602,7 @@ namespace Arcen.AIW2.External
                         debugCode = 900;
 
                         entity.Orders.SetBehaviorDirectlyInSim( EntityBehaviorType.Attacker_Full ); //is okay, main thread
-                        if ( budget.Target.IsActive() && budget.Target.AgainstFactionAllegiance != "Friendly To Players" )
+                        if ( budget.Target.IsActive() && budget.Target.AgainstFactionAllegiance != "对玩家友好" )
                         {
                             //the budget can be inactive if this is an old save game. Stuff "against the player" can be used against anyone, like threat against -1
                             if ( entity.FireteamSpecificationOrNull == null ) //Chris notes: setup happens when it's pulled from the pool if this is null
@@ -6625,7 +6625,7 @@ namespace Arcen.AIW2.External
                                 workingBuffer.Add(" a " );
 
                             workingBuffer.Add( name, "dfaa32" );
-                            if ( budget.Target.IsActive() && budget.Target.AgainstFactionAllegiance != "Friendly To Players" )
+                            if ( budget.Target.IsActive() && budget.Target.AgainstFactionAllegiance != "对玩家友好" )
                             {
                                 workingBuffer.Add( " " );
                                 budget.Target.ToDisplayString( workingBuffer );

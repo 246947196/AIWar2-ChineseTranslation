@@ -328,12 +328,12 @@ namespace Arcen.AIW2.External
         {
             Faction faction = Target.GetFactionOrNull_Safe();
             ZenithArchitraveFactionBaseInfo globalData = faction.TryGetExternalBaseInfoAs<ZenithArchitraveFactionBaseInfo>();
-            if ( ArcenStrings.Equals( faction.BaseInfo.Allegiance, "Friendly To Players" ) )
+            if ( ArcenStrings.Equals( faction.BaseInfo.Allegiance, "对玩家友好" ) )
             {
                 RejectionReasonDescription = "你不能入侵你的盟友；此入侵仅适用于对所有人敌对的 Architraves";
                 return Hackable.NeverBeHacked_ButStillShow;
             }
-            if ( faction.BaseInfo.Allegiance != "Hostile To All" )
+            if ( faction.BaseInfo.Allegiance != "对所有敌对" )
             {
                 RejectionReasonDescription = "你只能与对所有人敌对的 Architraves 达成休战";
                 return Hackable.NeverBeHacked_ButStillShow;
@@ -383,7 +383,7 @@ namespace Arcen.AIW2.External
         {
             Faction faction = Target.GetFactionOrNull_Safe();
             ZenithArchitraveFactionBaseInfo globalData = faction.TryGetExternalBaseInfoAs<ZenithArchitraveFactionBaseInfo>();
-            if ( ArcenStrings.Equals( faction.BaseInfo.Allegiance, "Friendly To Players" ) )
+            if ( ArcenStrings.Equals( faction.BaseInfo.Allegiance, "对玩家友好" ) )
             {
                 RejectionReasonDescription = "你不能入侵你的盟友；此入侵仅适用于敌对的 Architraves";
                 return Hackable.NeverBeHacked_ButStillShow;

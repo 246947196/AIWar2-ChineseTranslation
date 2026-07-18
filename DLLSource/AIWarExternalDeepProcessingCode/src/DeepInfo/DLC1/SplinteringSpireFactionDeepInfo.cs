@@ -57,7 +57,7 @@ namespace Arcen.AIW2.External
         }
 
         #region Awakening
-        public bool CoalitionIsAwakenedFromDarkAlliance => ((DarkZenithFactionBaseInfo.Instance?.Allegiance ?? "none") == "Dark Alliance") && ((DarkZenithFactionBaseInfo.Instance?.Epistyles.GetDisplayList()?.Count ?? 0) > 0) && ((DarkZenithFactionBaseInfo.Instance?.WarpingInEpistyles.GetDisplayList()?.Count ?? 0) > 0);
+        public bool CoalitionIsAwakenedFromDarkAlliance => ((DarkZenithFactionBaseInfo.Instance?.Allegiance ?? "none") == "黑暗同盟") && ((DarkZenithFactionBaseInfo.Instance?.Epistyles.GetDisplayList()?.Count ?? 0) > 0) && ((DarkZenithFactionBaseInfo.Instance?.WarpingInEpistyles.GetDisplayList()?.Count ?? 0) > 0);
         public bool CoalitionIsAwakenedFromConquestMode => DarkSpireFactionBaseInfo.Instance?.ConquestMode ?? false;
         public bool CoalitionIsAwakenedFromTiime => World_AIW2.Instance.GameSecond >= BaseInfo.CoalitionLateAwakeningSecond;
 

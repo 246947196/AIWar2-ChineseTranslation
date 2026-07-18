@@ -2,57 +2,57 @@
 <root>
   <map_type name="CrazyBranching" display_name="疯狂分支" description="行星被组织成选定数量的不同群组，通过一个中央枢纽相连。除此之外，连接方式会变得更加疯狂，形成分支。大多数情况下，这里有不少关键节点可供探索！                在死亡愿望模式及更高难度下不可用。" dll_name="AIWarExternalDeepProcessingCode" type_name="Arcen.AIW2.External.Mapgen_CrazySymmetric" min_planets="40" max_planets="300" hidden_from_lists_above_harshness="2200">
     <map_option name="NumberOfGroups" display_name="群组数量" description="应该有多少个群组？" default_id="1">
-      <choice_value id="0" display_name="Two" description="Two groups only." related_int_value="2" />
-      <choice_value id="1" display_name="Three" description="Three groups." related_int_value="3" />
-      <choice_value id="2" display_name="Four" description="Four groups." related_int_value="4" />
-      <choice_value id="3" display_name="Five" description="Five groups." related_int_value="5" />
-      <choice_value id="4" display_name="Six" description="Six groups." related_int_value="6" />
+      <choice_value id="0" display_name="两个" description="仅两个群组。" related_int_value="2" />
+      <choice_value id="1" display_name="三个" description="三个群组。" related_int_value="3" />
+      <choice_value id="2" display_name="四个" description="四个群组。" related_int_value="4" />
+      <choice_value id="3" display_name="五个" description="五个群组。" related_int_value="5" />
+      <choice_value id="4" display_name="六个" description="六个群组。" related_int_value="6" />
     </map_option>
     <map_option name="MinPlanetsPerBranch" display_name="每个分支的最小行星数" description="每个分支点允许的最小行星数是多少？如果你将此设置为等于或大于最大行星数，它将始终取两者中的最大值。" default_id="0">
-      <choice_value id="0" display_name="Two" description="Two planets is the minimum." related_int_value="2" />
-      <choice_value id="1" display_name="Three" description="Three planets is the minimum." related_int_value="3" />
-      <choice_value id="2" display_name="Four" description="Four planets is the minimum." related_int_value="4" />
-      <choice_value id="3" display_name="Five" description="Five planets is the minimum." related_int_value="5" />
-      <choice_value id="4" display_name="Six" description="Six planets is the minimum." related_int_value="6" />
-      <choice_value id="5" display_name="Seven" description="Seven planets is the minimum." related_int_value="7" />
-      <choice_value id="6" display_name="Eight" description="Eight planets is the minimum." related_int_value="8" />
-      <choice_value id="7" display_name="Nine" description="Nine planets is the minimum." related_int_value="9" />
-      <choice_value id="8" display_name="Ten" description="Ten planets is the minimum." related_int_value="10" />
-      <choice_value id="9" display_name="Eleven" description="Eleven planets is the minimum." related_int_value="11" />
+      <choice_value id="0" display_name="两个" description="最少两个行星。" related_int_value="2" />
+      <choice_value id="1" display_name="三个" description="最少三个行星。" related_int_value="3" />
+      <choice_value id="2" display_name="四个" description="最少四个行星。" related_int_value="4" />
+      <choice_value id="3" display_name="五个" description="最少五个行星。" related_int_value="5" />
+      <choice_value id="4" display_name="六个" description="最少六个行星。" related_int_value="6" />
+      <choice_value id="5" display_name="七个" description="最少七个行星。" related_int_value="7" />
+      <choice_value id="6" display_name="八个" description="最少八个行星。" related_int_value="8" />
+      <choice_value id="7" display_name="九个" description="最少九个行星。" related_int_value="9" />
+      <choice_value id="8" display_name="十个" description="最少十个行星。" related_int_value="10" />
+      <choice_value id="9" display_name="十一个" description="最少十一个行星。" related_int_value="11" />
     </map_option>
     <map_option name="MaxPlanetsPerBranch" display_name="每个分支的最大行星数" description="每个分支点允许的最大行星数是多少？如果你将此设置为等于或小于最小行星数，它将始终取两者中的最大值。" default_id="5">
-      <choice_value id="0" display_name="Two" description="Two planets is the maximum." related_int_value="2" />
-      <choice_value id="1" display_name="Three" description="Three planets is the maximum." related_int_value="3" />
-      <choice_value id="2" display_name="Four" description="Four planets is the maximum." related_int_value="4" />
-      <choice_value id="3" display_name="Five" description="Five planets is the maximum." related_int_value="5" />
-      <choice_value id="4" display_name="Six" description="Six planets is the maximum." related_int_value="6" />
-      <choice_value id="5" display_name="Seven" description="Seven planets is the maximum." related_int_value="7" />
-      <choice_value id="6" display_name="Eight" description="Eight planets is the maximum." related_int_value="8" />
-      <choice_value id="7" display_name="Nine" description="Nine planets is the maximum." related_int_value="9" />
-      <choice_value id="8" display_name="Ten" description="Ten planets is the maximum." related_int_value="10" />
-      <choice_value id="9" display_name="Eleven" description="Eleven planets is the maximum." related_int_value="11" />
+      <choice_value id="0" display_name="两个" description="最多两个行星。" related_int_value="2" />
+      <choice_value id="1" display_name="三个" description="最多三个行星。" related_int_value="3" />
+      <choice_value id="2" display_name="四个" description="最多四个行星。" related_int_value="4" />
+      <choice_value id="3" display_name="五个" description="最多五个行星。" related_int_value="5" />
+      <choice_value id="4" display_name="六个" description="最多六个行星。" related_int_value="6" />
+      <choice_value id="5" display_name="七个" description="最多七个行星。" related_int_value="7" />
+      <choice_value id="6" display_name="八个" description="最多八个行星。" related_int_value="8" />
+      <choice_value id="7" display_name="九个" description="最多九个行星。" related_int_value="9" />
+      <choice_value id="8" display_name="十个" description="最多十个行星。" related_int_value="10" />
+      <choice_value id="9" display_name="十一个" description="最多十一个行星。" related_int_value="11" />
     </map_option>
     <map_option name="ForceSinglePlanetEvery" display_name="每X个分支强制单个行星" description="每隔一定数量的分支，是否应该在继续之前只有一个子节点？" default_id="0">
-      <choice_value id="0" display_name="Every 2 Branches" description="Do this every two branches deep." related_int_value="2" />
-      <choice_value id="1" display_name="Every 3 Branches" description="Do this every three branches deep." related_int_value="3" />
-      <choice_value id="3" display_name="None" description="Don't ever force this" related_int_value="0" />
+      <choice_value id="0" display_name="每两个分支" description="每两个分支深度执行一次。" related_int_value="2" />
+      <choice_value id="1" display_name="每三个分支" description="每三个分支深度执行一次。" related_int_value="3" />
+      <choice_value id="3" display_name="无" description="从不强制此操作" related_int_value="0" />
     </map_option>
     <map_option name="StartingSpacing" display_name="行星初始间距" description="最内层行星之间的距离有多远？这也会影响后续行星的间距，但影响程度取决于间距衰减。" default_id="2">
-      <choice_value id="0" display_name="Large" description="Large distance at first." related_int_value="100" />
-      <choice_value id="1" display_name="Medium" description="Medium distance at first." related_int_value="80" />
-      <choice_value id="2" display_name="Comfortable" description="Comfortable distance at first." related_int_value="60" />
-      <choice_value id="3" display_name="Small" description="Small distance at first." related_int_value="40" />
-      <choice_value id="4" display_name="Tiny" description="Tiny distance at first.  May not generate full maps with high spacing falloffs." related_int_value="20" />
+      <choice_value id="0" display_name="大" description="初始距离大。" related_int_value="100" />
+      <choice_value id="1" display_name="中" description="初始距离中等。" related_int_value="80" />
+      <choice_value id="2" display_name="舒适" description="初始距离舒适。" related_int_value="60" />
+      <choice_value id="3" display_name="小" description="初始距离小。" related_int_value="40" />
+      <choice_value id="4" display_name="极小" description="初始距离极小。高间距衰减时可能无法生成完整地图。" related_int_value="20" />
     </map_option>
     <map_option name="PlanetSpacingFalloff" display_name="行星间距衰减" description="随着你离中心越来越远，行星之间的距离会变小。但会变小多少呢？" default_id="3">
-      <choice_value id="0" display_name="A Huge Amount" description="A huge amount of falloff." related_int_value="300" />
-      <choice_value id="1" display_name="A Large Amount" description="A large amount of falloff." related_int_value="220" />
-      <choice_value id="2" display_name="A Moderate Amount" description="A moderate amount of falloff." related_int_value="180" />
-      <choice_value id="3" display_name="A Smaller Amount" description="A smaller amount of falloff." related_int_value="140" />
-      <choice_value id="4" display_name="A Tiny Amount" description="A tiny amount of falloff." related_int_value="120" />
-      <choice_value id="5" display_name="None" description="No falloff at all." related_int_value="120" />
-      <choice_value id="6" display_name="A Little Inverted" description="This actually gets a bit longer with distance, instead!" related_int_value="80" />
-      <choice_value id="7" display_name="More Inverted" description="This actually gets a substantially longer with distance, instead!" related_int_value="60" />
+      <choice_value id="0" display_name="极大" description="衰减幅度极大。" related_int_value="300" />
+      <choice_value id="1" display_name="很大" description="衰减幅度很大。" related_int_value="220" />
+      <choice_value id="2" display_name="中等" description="衰减幅度中等。" related_int_value="180" />
+      <choice_value id="3" display_name="较小" description="衰减幅度较小。" related_int_value="140" />
+      <choice_value id="4" display_name="极小" description="衰减幅度极小。" related_int_value="120" />
+      <choice_value id="5" display_name="无" description="完全没有衰减。" related_int_value="120" />
+      <choice_value id="6" display_name="轻微反转" description="随着距离增加，间距反而略微增大！" related_int_value="80" />
+      <choice_value id="7" display_name="较大反转" description="随着距离增加，间距反而显著增大！" related_int_value="60" />
     </map_option>
   </map_type>
 </root>

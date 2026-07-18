@@ -924,8 +924,9 @@ GameData/QuickStarts2/
 | 5 | C# `JsonSerializer.Deserialize` 拒绝 JSON 字符串中的原始控制字符 | merged.json 含原始 0x0A 时 deserialize 失败 | Python 的 `json.dump` 默认已正确转义控制字符为 `\n`/`\t` |
 
 **回归校验**：`merge_parts.py`/`merge_all.py` 在写 merged.json 前对比 `.bak`，自动检测 skeleton 是否变化：
-- skeleton 不变 → 任何翻译丢失视为格式 bug，`sys.exit(1)` 终止
+- skeleton 不变 → 任何翻译丢失视为格式 bug，默认 `sys.exit(1)` 终止
 - skeleton 变了（游戏版本更新）→ 告警不终止
+- 可传 `--force` 参数：遇到回归时自动从 `.bak` 恢复丢失的翻译并继续，不退出
 
 **新增 `ilpatch dump-ldstr` 模式**（2026-07-11）：
 - 读取 DLL 中所有唯一 ldstr，不经过 `LooksTranslatable` 过滤，直接用 `JsonSerializer` 输出为 JSON 数组 `["str1","str2",...]`

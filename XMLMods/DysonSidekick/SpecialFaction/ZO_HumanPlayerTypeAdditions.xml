@@ -36,6 +36,6 @@
 
     <custom_field   requires_player_types="DarkZenithSidekick,DarkZenithEmpire" is_advanced_setting="true"
         name="Allegiance" display_name="归属" description="这些天顶忠于玩家。"
-                  sort_group="900" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Friendly To Players" default_option="Friendly To Players" />
+                  sort_group="900" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="对玩家友好" default_option="对玩家友好" />
   </faction>
 </root>

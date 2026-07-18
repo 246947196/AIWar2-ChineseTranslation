@@ -87,8 +87,8 @@ namespace Arcen.AIW2.External
         public byte FactionMarkLevel => (byte)Math.Min( 7, 1 + (World_AIW2.Instance.GameSecond / Difficulty.EntireFactionMarkUpEveryXSeconds) );
         public byte GetMarkLevelFor( GameEntity_Squad entity ) => (byte)Math.Min( 7, FactionMarkLevel + (entity.GetSecondsSinceCreation() / Difficulty.IndividualUnitMarkUpAfterAliveEveryXSeconds) );
 
-        public bool PlayerAllied => Allegiance == "Friendly To Players";
-        public bool AIAllied => Allegiance == "Allied To AI";
+        public bool PlayerAllied => Allegiance == "对玩家友好";
+        public bool AIAllied => Allegiance == "对AI友好";
         public int EveryXFireteamAsDefense => PlayerAllied ? ParentInfo.Behavior_Player_EveryXFireteamAsDefense : ParentInfo.Behavior_NPC_EveryXFireteamAsDefense;
         public int AttackHops => PlayerAllied ? ParentInfo.Behavior_Player_HopsFromTerritoryToAttack : ParentInfo.Behavior_NPC_HopsFromTerritoryToAttack;
         public FInt HullRetreatRatio => PlayerAllied ? ParentInfo.Behavior_Player_HullRatioToRetreatAt : ParentInfo.Behavior_NPC_HullRatioToRetreatAt;
@@ -166,10 +166,10 @@ namespace Arcen.AIW2.External
         {
             switch ( Allegiance )
             {
-                case "Allied To AI":
+                case "对AI友好":
                     AllegianceHelper.AllyThisFactionToAI( AttachedFaction );
                     break;
-                case "Friendly To Players":
+                case "对玩家友好":
                     AllegianceHelper.AllyThisFactionToHumans( AttachedFaction );
                     break;
                 default:

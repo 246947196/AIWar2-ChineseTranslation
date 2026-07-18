@@ -54,7 +54,7 @@ namespace Arcen.AIW2.External
                 return; //during game quit
 
             string thisFactionAllegiance = thisBaseInfo.Allegiance;
-            bool thisFactionIsAI = thisFaction.Type == FactionType.AI || thisSpecialData.AlliedToAIByDefault || thisFactionAllegiance == "Allied To AI";
+            bool thisFactionIsAI = thisFaction.Type == FactionType.AI || thisSpecialData.AlliedToAIByDefault || thisFactionAllegiance == "对AI友好";
 
             bool debug = false;
             if ( debug )
@@ -79,13 +79,13 @@ namespace Arcen.AIW2.External
                         continue;
 
                     string otherFactionAllegiance = otherBaseInfo.Allegiance;
-                    bool otherFactionIsAI = otherFaction.Type == FactionType.AI || otherSpecialData.AlliedToAIByDefault || otherFactionAllegiance == "Allied To AI";
+                    bool otherFactionIsAI = otherFaction.Type == FactionType.AI || otherSpecialData.AlliedToAIByDefault || otherFactionAllegiance == "对AI友好";
 
                     if ( debug )
                         ArcenDebugging.ArcenDebugLogSingleLine( "\tSetting relationship to " + otherFaction.GetDisplayName() + " allegiance " + otherFactionAllegiance, Verbosity.DoNotShow );
 
-                    if ( String.Equals( thisFactionAllegiance, "Hostile To All", StringComparison.OrdinalIgnoreCase ) ||
-                         String.Equals( otherFactionAllegiance, "Hostile To All", StringComparison.OrdinalIgnoreCase ) )
+                    if ( String.Equals( thisFactionAllegiance, "对所有敌对", StringComparison.OrdinalIgnoreCase ) ||
+                         String.Equals( otherFactionAllegiance, "对所有敌对", StringComparison.OrdinalIgnoreCase ) )
                     {
                         thisFaction.MakeHostileTo( otherFaction );
                         otherFaction.MakeHostileTo( thisFaction );
@@ -100,14 +100,14 @@ namespace Arcen.AIW2.External
                         thisFaction.MakeFriendlyTo( otherFaction );
                         otherFaction.MakeFriendlyTo( thisFaction );
                     }
-                    else if ( thisFactionAllegiance == "Friendly To Players" && otherSpecialData.AlliedToAIByDefault ||
-                              otherFactionAllegiance == "Friendly To Players" && thisSpecialData.AlliedToAIByDefault )
+                    else if ( thisFactionAllegiance == "对玩家友好" && otherSpecialData.AlliedToAIByDefault ||
+                              otherFactionAllegiance == "对玩家友好" && thisSpecialData.AlliedToAIByDefault )
                     {
                         thisFaction.MakeHostileTo( otherFaction );
                         otherFaction.MakeHostileTo( thisFaction );
                     }
-                    else if ( thisFactionAllegiance == "Friendly To Players" && otherFaction.Type == FactionType.Player ||
-                              otherFactionAllegiance == "Friendly To Players" && thisFaction.Type == FactionType.Player )
+                    else if ( thisFactionAllegiance == "对玩家友好" && otherFaction.Type == FactionType.Player ||
+                              otherFactionAllegiance == "对玩家友好" && thisFaction.Type == FactionType.Player )
                     {
                         if ( debug )
                             ArcenDebugging.ArcenDebugLogSingleLine( "\t\tPlayer and ally", Verbosity.DoNotShow );
@@ -269,9 +269,9 @@ namespace Arcen.AIW2.External
                     switch ( thisFactionAllegiance )
                     {
                         //if we are on a team together, nothing can break our bond
-                        case "Minor Faction Team Red":
-                        case "Minor Faction Team Blue":
-                        case "Minor Faction Team Green":
+                        case "小派系小队红":
+                        case "小派系小队蓝":
+                        case "小派系小队绿":
                             {
                                 thisFaction.MakeFriendlyTo( otherFaction );
                                 otherFaction.MakeFriendlyTo( thisFaction );
@@ -368,7 +368,7 @@ namespace Arcen.AIW2.External
                     continue; //during game quit
 
                 if ( otherFaction.Type == FactionType.AI || otherSpecialData.AlliedToAIByDefault ||
-                   otherBaseInfo.Allegiance == "Allied To AI" )
+                   otherBaseInfo.Allegiance == "对AI友好" )
                 {
                     thisFaction.MakeFriendlyTo( otherFaction );
                     otherFaction.MakeFriendlyTo( thisFaction );
@@ -397,7 +397,7 @@ namespace Arcen.AIW2.External
                     continue; //during game quit
 
                 if ( otherFaction.Type == FactionType.AI || otherSpecialData.AlliedToAIByDefault ||
-                   otherBaseInfo.Allegiance == "Allied To AI" )
+                   otherBaseInfo.Allegiance == "对AI友好" )
                 {
                     thisFaction.MakeFriendlyTo( otherFaction );
                     otherFaction.MakeFriendlyTo( thisFaction );
@@ -511,19 +511,19 @@ namespace Arcen.AIW2.External
             if ( string.IsNullOrWhiteSpace(name) )
                 return CommonAllegiances.Unknown;
             
-	        if ( name == "Friendly To Players" )
+	        if ( name == "对玩家友好" )
 	            return CommonAllegiances.FriendlyToPlayers;
-	        if ( name == "Allied To AI" )
+	        if ( name == "对AI友好" )
                 return CommonAllegiances.AlliedToAI;
-            if ( name == "Minor Faction Team Red" )
+            if ( name == "小派系小队红" )
 	            return CommonAllegiances.RedTeam;
-	        if ( name == "Minor Faction Team Blue" )
+	        if ( name == "小派系小队蓝" )
 	            return CommonAllegiances.BlueTeam;
-	        if ( name == "Minor Faction Team Green" )
+	        if ( name == "小派系小队绿" )
 	            return CommonAllegiances.GreenTeam;
-	        if ( name == "Dark Alliance" )
+	        if ( name == "黑暗同盟" )
 	            return CommonAllegiances.DarkAlliance;
-            if ( name == "Hostile To All")
+            if ( name == "对所有敌对")
                 return CommonAllegiances.HostileToAll;
 	        
 	        return CommonAllegiances.Unknown;
@@ -545,22 +545,22 @@ namespace Arcen.AIW2.External
                     }
                 case CommonAllegiances.RedTeam:
                     {
-                        AllegianceHelper.AllyThisFactionToMinorFactionTeam(faction, "Minor Faction Team Red");
+                        AllegianceHelper.AllyThisFactionToMinorFactionTeam(faction, "小派系小队红");
                         break;
                     }
                 case CommonAllegiances.BlueTeam:
                     {
-                        AllegianceHelper.AllyThisFactionToMinorFactionTeam(faction, "Minor Faction Team Blue");
+                        AllegianceHelper.AllyThisFactionToMinorFactionTeam(faction, "小派系小队蓝");
                         break;
                     }
                 case CommonAllegiances.GreenTeam:
                     {
-                        AllegianceHelper.AllyThisFactionToMinorFactionTeam(faction, "Minor Faction Team Green");
+                        AllegianceHelper.AllyThisFactionToMinorFactionTeam(faction, "小派系小队绿");
                         break;
                     }
                 case CommonAllegiances.DarkAlliance:
                     {
-                        AllegianceHelper.AllyThisFactionToMinorFactionTeam( faction, "Dark Alliance" );
+                        AllegianceHelper.AllyThisFactionToMinorFactionTeam( faction, "黑暗同盟" );
                         break;
                     }
                 case CommonAllegiances.HostileToAll:

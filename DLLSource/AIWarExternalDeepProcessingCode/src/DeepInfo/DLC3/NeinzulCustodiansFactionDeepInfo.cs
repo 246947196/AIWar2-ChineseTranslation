@@ -190,10 +190,10 @@ namespace Arcen.AIW2.External
             Planet spawnPlanet = null;
             switch ( BaseInfo.Allegiance )
             {
-                case "Allied To AI":
+                case "对AI友好":
                     spawnPlanet = FactionUtilityMethods.Instance.findFirstAIKing( false );
                     break;
-                case "Friendly To Players":
+                case "对玩家友好":
                     spawnPlanet = FactionUtilityMethods.Instance.findHumanKing( false );
                     break;
                 default:
