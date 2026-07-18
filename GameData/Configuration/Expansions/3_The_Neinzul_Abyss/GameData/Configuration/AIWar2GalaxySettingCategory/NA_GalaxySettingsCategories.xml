@@ -2,5 +2,5 @@
 <root>
 
   <setting_category name="Necromancer" display_name="死灵法师"
-      description="Settings related to Necromancer factions."/>
+      description="与死灵法师派系相关的设置。"/>
 </root>

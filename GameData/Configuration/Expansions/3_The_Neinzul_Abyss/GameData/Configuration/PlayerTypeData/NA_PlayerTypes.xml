@@ -56,7 +56,7 @@
     mapgen_should_all_guard_posts_be_armed="true"
     
     uses_resource_1="true"
-    resource_1_display_name="Essence"
+    resource_1_display_name="精华"
     resource_1_color="e16cff"
     resource_1_icon="Res_NecromancerEssence" 
     

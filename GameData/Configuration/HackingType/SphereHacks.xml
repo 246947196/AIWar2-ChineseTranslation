@@ -8,7 +8,7 @@
 <item name="HackToGrantShipLine_Sphere" copy_from="HackToGrantShipLine" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_GrantShipLine_Sphere" 
           display_name="窃取戴森单位生产线" description="这将使玩家能够为破解旗舰（离目标最近的那艘）获取一条新的单位生产线。
 
-This hack will Antagonize the Dyson Sphere against you for a while."
+此黑客行为将使戴森球在一段时间内对你产生敌意。"
 		number_of_times_individual_unit_can_be_hacked="3"
 		do_not_destroy_structure_after_hacking_multiple_times="true"
 		cost_in_hacking_points_multiplier_per_times_same_unit_hacked="1"
@@ -30,7 +30,7 @@ This hack will Antagonize the Dyson Sphere against you for a while."
 		hack_is_against_planet="false"
 		use_closest_hacker_for_check="true"
 		choose_a_specific_ship_line_to_grant="true"
-		choice_text="Which ship line would you like to add to the fleet of this hacker?"
+		choice_text="你想为该黑客的舰队添加哪条单位生产线？"
 		choice_text_height="60"
 		destroy_hack_target_on_completion="false"
 		relatedstring_is_a_ship_type="true"
@@ -41,10 +41,10 @@ This hack will Antagonize the Dyson Sphere against you for a while."
 <!--	Making the sphere stronger -->
 
 <item name="IncreaseSphereProduction" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_IncreaseSphereProduction" display_name="增加球体产量" 
-        description="This Hack will increase this Sphere's per second budget by +200% per hack. Stacks additively.
-Note that when the Sphere ship capacity is below 10%, its budget is tripled.
+        description="此黑客行为将使该球体的每秒预算增加 +200%，每次累加。
+注意：当球体舰船容量低于 10% 时，其预算翻三倍。
 
-Expect the Sphere to react angrily to messing with its systems. It'll eventually calm down and can become a useful ally. Hopefully the AI doesn't have a way to make it hostile against us."
+球体会对干扰其系统感到愤怒。它最终会冷静下来，并可能成为一个有用的盟友。希望 AI 没有办法让它对我们产生敌意。"
         hack_duration="20"
         primary_hacking_response_interval="30"
         primary_response_strength_per_interval="0.75"
@@ -56,9 +56,9 @@ Expect the Sphere to react angrily to messing with its systems. It'll eventually
 />
 
 <item name="IncreaseSphereMaxStrength" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_IncreaseSphereStrength" display_name="增加球体最大强度" 
-        description="This Hack will increase this Sphere's Max Strength by +200% per hack. Stacks additively.
+        description="此黑客行为将使该球体的最大强度增加 +200%，每次累加。
 
-Expect the Sphere to react angrily to messing with its systems. It'll eventually calm down and can become a useful ally. Hopefully the AI doesn't have a way to make it hostile against us."
+球体会对干扰其系统感到愤怒。它最终会冷静下来，并可能成为一个有用的盟友。希望 AI 没有办法让它对我们产生敌意。"
         hack_duration="20"
         primary_hacking_response_interval="30"
         primary_response_strength_per_interval="0.75"
@@ -70,9 +70,9 @@ Expect the Sphere to react angrily to messing with its systems. It'll eventually
 />
 
 <item name="IncreaseSphereHopRange" dll_name="AIWarExternalCode" type_name="Arcen.AIW2.External.Hacking_IncreaseSphereHops" display_name="增加球体跳跃范围" 
-        description="This Hack will increase the number of hops that ships built by this sphere will wander by 1.
+        description="此黑客行为将使该球体建造的舰船巡视跳跃数增加 1。
 
-Expect the Sphere to react angrily to messing with its systems. It'll eventually calm down and can become a useful ally. Hopefully the AI doesn't have a way to make it hostile against us."
+球体会对干扰其系统感到愤怒。它最终会冷静下来，并可能成为一个有用的盟友。希望 AI 没有办法让它对我们产生敌意。"
         hack_duration="60"
         primary_hacking_response_interval="30"
         primary_response_strength_per_interval="0.75"
