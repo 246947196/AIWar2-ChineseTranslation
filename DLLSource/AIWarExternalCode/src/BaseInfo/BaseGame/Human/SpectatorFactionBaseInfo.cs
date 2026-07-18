@@ -24,7 +24,7 @@ namespace Arcen.AIW2.External
 
         public override void WriteFactionSlotStatus( ArcenCharacterBufferBase buffer )
         {
-            buffer.Add( "<i>Omniscient But Uninvolved</i>" );
+            buffer.Add( "<i>全知但旁观</i>" );
         }
     }
 }

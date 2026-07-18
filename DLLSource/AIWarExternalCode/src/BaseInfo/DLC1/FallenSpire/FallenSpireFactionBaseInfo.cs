@@ -948,7 +948,7 @@ namespace Arcen.AIW2.External
             if (fac.Type != FactionType.Player)
             {
                 //buffer.Add("<size=75%><voffset=0.1em><i>     Enselle-illumin</i></voffset></size>", fac.FactionCenterColor.ColorHex );
-                buffer.Add( "Intensity " ).Add(Intensity);
+                buffer.Add( "强度 " ).Add(Intensity);
                 return;
             }
 

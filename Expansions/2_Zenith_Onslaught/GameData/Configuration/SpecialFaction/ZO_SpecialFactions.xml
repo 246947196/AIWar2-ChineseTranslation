@@ -20,7 +20,7 @@
 
         <faction name="NomadPlanets" display_name="游牧行星" short_name="Nomads" processing_group="NomadPlanets" base_info_source="NomadPlanetsFactionBaseInfo" deep_info_source="NomadPlanetsFactionDeepInfo" team_center_color="Gray" team_border_color="AIWC_Teal" type="SpecialFaction" must_be_at_most_one="true" impact="Easier" CanBeHostileToAll="true" CanBeFriendlyToPlayer="true" ai_threat_against_this_faction_goes_back_to_guarding="true" ai_should_not_have_hunter_against_this="true" description="游牧行星在星系地图中缓慢移动。        &lt;color=#f25e1c&gt;低影响:&lt;/color&gt; 游牧行星在移动过程中会创建和移除与自身的虫洞连接，因此很难建立防御关键点。" icon_name_for_lobby="Ships3/NomadNexus">
     <custom_field name="Intensity" display_name="行星数量" description="要生成多少颗行星" sort_group="200" setting_type="IntSlider" default="5" min="1" max="10" />
-    <custom_field name="NomadMovementSpeed" is_advanced_setting="true" display_name="移动速度" description="游牧行星在星系中移动的速度有多快？" sort_group="210" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Slow,Medium,Fast" default_option="Medium" />
+    <custom_field name="NomadMovementSpeed" is_advanced_setting="true" display_name="移动速度" description="游牧行星在星系中移动的速度有多快？" sort_group="210" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="慢,中,快" default_option="中" />
 
           <custom_field name="DebugMode" is_advanced_setting="true" display_name="超快速移动" description="使游牧行星频繁移动。仅用于调试测试" sort_group="250" setting_type="BoolToggle" default="false" />
         </faction>
@@ -31,7 +31,7 @@
     <custom_field name="Intensity" display_name="强度" description="这个派系将会变得多强大" sort_group="200" setting_type="IntSlider" default="5" min="1" max="10" />
     <custom_field name="Allegiance" display_name="阵营" description="这个派系在设定上是黑暗联盟的成员。" sort_group="400" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="黑暗同盟,对所有敌对,小派系小队红,小派系小队蓝,小派系小队绿" default_option="黑暗同盟" />
     <custom_field name="EnableFimbulwinter" is_advanced_setting="true" display_name="启用芬布尔之冬" description="启用后，黑暗天顶将尝试引发芬布尔之冬，将星系中的所有行星改造得更适合他们的需求。黑暗天顶将开始改造他们占领的行星；一旦改造完成，黑暗天顶及其盟友在这些行星上会更强大，而他们的敌人则会变弱。" sort_group="500" setting_type="BoolToggle" default="true" />
-    <custom_field name="InvasionTime" is_advanced_setting="true" display_name="入侵时间" description="黑暗天顶何时会入侵星系？在全面入侵时，黑暗天顶会将新的行星连接到星系地图中。  注意：立即入侵会极其困难。" sort_group="600" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Early Game,Mid Game,Late Game,Immediate" default_option="Mid Game" />
+    <custom_field name="InvasionTime" is_advanced_setting="true" display_name="入侵时间" description="黑暗天顶何时会入侵星系？在全面入侵时，黑暗天顶会将新的行星连接到星系地图中。  注意：立即入侵会极其困难。" sort_group="600" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="游戏早期,游戏中期,游戏后期,立即" default_option="游戏中期" />
 
     <vassal_order order_type="MoveToPlanet" sort_group="100" />
     <vassal_order order_type="AttackPlanet" sort_group="200" />

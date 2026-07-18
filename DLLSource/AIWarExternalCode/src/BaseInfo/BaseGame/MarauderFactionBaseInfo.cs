@@ -187,13 +187,13 @@ namespace Arcen.AIW2.External
             {
                 //initialize the marauder invasion time
                 string invasionTime = cfg.GetStringValueForCustomFieldOrDefaultValue( "InvasionTime", true );
-                if ( invasionTime == "Immediate" )
+                if ( invasionTime == "立即" )
                     faction.InvasionTime = 1;
-                else if ( invasionTime == "Early Game" )
+                else if ( invasionTime == "游戏早期" )
                     faction.InvasionTime = 1 * (60 * 60); // 1 hr in
-                else if ( invasionTime == "Mid Game" )
+                else if ( invasionTime == "游戏中期" )
                     faction.InvasionTime = 2 * (60 * 60); // 2 hr in
-                else if ( invasionTime == "Late Game" )
+                else if ( invasionTime == "游戏后期" )
                     faction.InvasionTime = 3 * (60 * 60); // 3 hr in
                 if ( faction.InvasionTime > 1 )
                 {
@@ -208,7 +208,7 @@ namespace Arcen.AIW2.External
 
 
             string intelligence = cfg.GetStringValueForCustomFieldOrDefaultValue( "Intelligence", true );
-            this.IsInFireteamMode = intelligence != "Brute Force";
+            this.IsInFireteamMode = intelligence != "蛮力";
 
             if ( !this.IsInFireteamMode )
             {

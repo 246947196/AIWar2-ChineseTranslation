@@ -30,7 +30,7 @@ namespace Arcen.AIW2.External
             //in the lobby
             if ( World_AIW2.Instance.InSetupPhase ) 
             {
-                buffer.Add( "Needs A Friend" );
+                buffer.Add( "需要结盟" );
             }
            
             //in game

@@ -1310,7 +1310,7 @@ namespace Arcen.AIW2.External
             //in the lobby
             if ( World_AIW2.Instance.InSetupPhase ) 
             {
-                buffer.Add( "Empire Is Ready" );
+                buffer.Add( "帝国就绪" );
             }
            
             //in game

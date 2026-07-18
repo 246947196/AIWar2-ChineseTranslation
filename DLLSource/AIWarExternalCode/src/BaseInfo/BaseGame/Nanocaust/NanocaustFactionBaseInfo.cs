@@ -337,13 +337,13 @@ namespace Arcen.AIW2.External
             if ( faction.InvasionTime == -1 )
             {
                 //initialize the nanocaust invasion time
-                if ( invasionTime == "Immediate" )
+                if ( invasionTime == "立即" )
                     faction.InvasionTime = 1;
-                else if ( invasionTime == "Early Game" )
+                else if ( invasionTime == "游戏早期" )
                     faction.InvasionTime = 1 * (60 * 60); // 1 hr in
-                else if ( invasionTime == "Mid Game" )
+                else if ( invasionTime == "游戏中期" )
                     faction.InvasionTime = 2 * (60 * 60); // 2 hr in
-                else if ( invasionTime == "Late Game" )
+                else if ( invasionTime == "游戏后期" )
                     faction.InvasionTime = 3 * (60 * 60); // 3 hr in
                 if ( faction.InvasionTime > 1 )
                 {

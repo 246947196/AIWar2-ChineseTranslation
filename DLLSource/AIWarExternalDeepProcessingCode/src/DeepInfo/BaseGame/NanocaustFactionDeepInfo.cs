@@ -57,7 +57,7 @@ namespace Arcen.AIW2.External
             Tutorial tutorialData = World_AIW2.Instance.TutorialOrNull;
             if ( tutorialData != null && tutorialData.SkipNanocaustHivesAndBeacons )
                 return;
-            if ( AttachedFaction.GetStringValueForCustomFieldOrDefaultValue( "InvasionTime", true ) == "Immediate" )
+            if ( AttachedFaction.GetStringValueForCustomFieldOrDefaultValue( "InvasionTime", true ) == "立即" )
             {
                 AttachedFaction.HasDoneInvasionStyleAction = true;
                 bool isSeeded = false;
@@ -801,7 +801,7 @@ namespace Arcen.AIW2.External
             try{
             debugCode = 100;
             string intelligence = AttachedFaction.GetStringValueForCustomFieldOrDefaultValue( "Intelligence", true );
-            this.BaseInfo.IsInFireteamMode = intelligence != "Brute Force";
+            this.BaseInfo.IsInFireteamMode = intelligence != "蛮力";
             UpdateAllegiance( AttachedFaction );
             if ( tracing )
             {

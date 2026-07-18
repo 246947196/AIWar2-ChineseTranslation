@@ -16,7 +16,7 @@ namespace Arcen.AIW2.External
             //in the lobby
             if ( World_AIW2.Instance.InSetupPhase ) 
             {
-                buffer.Add( "Sidekick Needs A Player Friend" );
+                buffer.Add( "需要玩家结盟" );
                 return;
             }
 

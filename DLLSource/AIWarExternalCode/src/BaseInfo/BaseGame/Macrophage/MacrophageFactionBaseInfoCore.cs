@@ -259,7 +259,7 @@ namespace Arcen.AIW2.External
                 }
 
                 if ( !this.IsEnraged && !this.IsTamed &&
-                    ArcenStrings.Equals( this.AttachedFaction.GetStringValueForCustomFieldOrDefaultValue( "SpawningOptions", true ), "Lone Telium" ) )
+                    ArcenStrings.Equals( this.AttachedFaction.GetStringValueForCustomFieldOrDefaultValue( "SpawningOptions", true ), "单独碲矿" ) )
                     isLoner = true; // Give up on expanding.
                 if ( this.EffectiveIntensity >= MinBerserkIntensity || isLoner )
                     canBerserk = true; // Get angry when threatened.
@@ -282,7 +282,7 @@ namespace Arcen.AIW2.External
 
             if ( isLoner )
             {
-                buffer.Add( "  Lone Telium" );
+                buffer.Add( "  独立碲矿" );
             }
         }
         #endregion

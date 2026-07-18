@@ -22,12 +22,12 @@
                     sort_group="250" setting_type="CustomDropdownArbitraryOptions" 
                     arbitrary_options="对所有敌对,对玩家友好,仅对玩家敌对,小派系小队红,小派系小队蓝,小派系小队绿" default_option="对所有敌对"/>
     <custom_field name="InvasionTime" display_name="入侵时间" description="可以设置纳米灾变在游戏中的某个未知时间入侵银河系，或者立即开始。立即生成是最可怕的，有时会使游戏变得异常困难。"
-                  sort_group="300" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Immediate,Early Game,Mid Game,Late Game" default_option="Mid Game" />
+                  sort_group="300" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="立即,游戏早期,游戏中期,游戏后期" default_option="游戏中期" />
       <custom_field name="SpawnNearPlayer" is_advanced_setting="true" display_name="在玩家附近生成" description="这通常是致命的，除非是友好的纳米灾变。"
                   sort_group="300" setting_type="BoolToggle" default="false"  />
 
       <custom_field name="Intelligence" display_name="智能等级" description="纳米灾变扩张时应使用什么策略？战术家(Tactician)更聪明，蛮力(Brute Force)更简单直接。"
-          sort_group="250" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Tactician,Brute Force" default_option="Tactician" />
+          sort_group="250" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="战术家,蛮力" default_option="战术家" />
 
       <custom_field name="SpawnPlanet" is_advanced_setting="true" display_name="生成行星" description="通常纳米灾变会在银河系现有行星上生成。如果设为true，它们会获得一个连接至银河系的新母星作为巢穴。"
           sort_group="400" setting_type="BoolToggle" default="false"  />

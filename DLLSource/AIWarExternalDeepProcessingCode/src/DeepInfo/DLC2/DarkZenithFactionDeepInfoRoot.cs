@@ -150,16 +150,16 @@ namespace Arcen.AIW2.External
                 AttachedFaction.InvasionTime = -1;
                 BaseInfo.JoinAlliedFactions = true;
             }
-            else if ( invasionTime == "Immediate" || invasionTime == "Full Invasion")
+            else if ( invasionTime == "立即" || invasionTime == "Full Invasion")
             {
                 if ( this.IsHumanSidekick )
                     AttachedFaction.InvasionTime = 1;
                 else
                     AttachedFaction.InvasionTime = 10;
             }
-            else if ( invasionTime == "Early Game" )
+            else if ( invasionTime == "游戏早期" )
                 AttachedFaction.InvasionTime = (3 * (60 * 60)) / 2; //1.5 hr in
-            else if ( invasionTime == "Mid Game" )
+            else if ( invasionTime == "游戏中期" )
                 AttachedFaction.InvasionTime = (7 * (60 * 60)) / 2; //3.5 hr in
             else
                 AttachedFaction.InvasionTime = 5 * (60 * 60); //5 hr in

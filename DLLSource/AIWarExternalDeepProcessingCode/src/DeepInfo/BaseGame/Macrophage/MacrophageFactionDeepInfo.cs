@@ -33,10 +33,10 @@ namespace Arcen.AIW2.External
 
             switch ( AttachedFaction.GetStringValueForCustomFieldOrDefaultValue( "SpawningOptions", true ) )
             {
-                case "Clustered Telia":
+                case "集群碲矿":
                     isClustered = true;
                     break;
-                case "Lone Telium":
+                case "单独碲矿":
                     isLoner = true;
                     break;
                 default:

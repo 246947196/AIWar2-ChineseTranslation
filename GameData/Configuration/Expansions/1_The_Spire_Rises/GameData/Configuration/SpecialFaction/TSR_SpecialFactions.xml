@@ -115,9 +115,9 @@
                   sort_group="200" setting_type="IntSlider" default="5" min="1" max="10"/>
 	  <custom_field name="SphereType" display_name="星体类型" description="哪种尖塔将入驻这个星体？根据你的选择，它们的整体特性，甚至所处的星体都会发生变化。
 
-The Gray Spire are the most peaceful, and are the only type that are willing to fully ally themselves with you, so long as you stay away from their Sphere. They can wander up to 4 hops away from their Sphere planet. Their Sphere can be hacked for Warheads.
+灰色尖塔最为和平，只要你远离它们的星体，它们就愿意与你完全结盟。它们最远可离开星体行星4跳距离。它们的星体可被入侵以获得弹头。
 
-The Chromatic Spire are quite aggressive, and far outclass all but the Imperial Spire in strength. They will only give you a momentary warning before firing. They can wander up to 2 hops away from their Sphere planet. Their Sphere can be hacked for Interplanetary Weapons."
+彩色尖塔则相当激进，其实力仅次于帝国尖塔。它们开火前只会给你片刻警告。它们最远可离开星体行星2跳距离。它们的星体可被入侵以获得星际武器。"
                   sort_group="250" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Gray,Chromatic" default_option="Gray" />
 	  <custom_field name="PartOfTheAntiDarkSpireCoalition" is_advanced_setting="true" display_name="反黑暗尖塔联盟成员" 
 		description="如果启用分裂尖塔，允许该派系加入反黑暗尖塔联盟。"

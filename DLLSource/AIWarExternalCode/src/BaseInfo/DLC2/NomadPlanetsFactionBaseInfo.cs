@@ -213,11 +213,11 @@ namespace Arcen.AIW2.External
         public override void DoPerSecondLogic_Stage2Aggregating_OnMainThreadAndPartOfSim_ClientAndHost( ArcenClientOrHostSimContextCore Context )
         {
             string requestedSpeed = AttachedFaction.GetStringValueForCustomFieldOrDefaultValue( "NomadMovementSpeed", true );
-            if ( requestedSpeed == "Slow" )
+            if ( requestedSpeed == "慢" )
                 BaseMoveTime = BaseMoveTimeSlow;
-            else if ( requestedSpeed == "Medium" )
+            else if ( requestedSpeed == "中" )
                 BaseMoveTime = BaseMoveTimeMedium;
-            else if ( requestedSpeed == "Fast" )
+            else if ( requestedSpeed == "快" )
                 BaseMoveTime = BaseMoveTimeFast;
 
             NomadPlanetList.ClearConstructionListForStartingConstruction();
