@@ -576,6 +576,34 @@ patch 前必须从 `AIWar2_Data\Managed\` 复制原始 DLL（禁止在已 patch 
 
 ## 最近修复记录 (2026-07-18)
 
+### DarkZenith 终端崩溃 — C# DisplayName 匹配因汉化 XML display_name 变为中文而失败
+
+**现象**：Dark Zenith 金属终端 HandleTerminiiAndEpistyles 抛异常崩溃，错误 "doesn't have a list. Resource Metal"。
+
+**根因**：C# 代码（`DarkZenithResourceConversionTable.cs`）在筛选转换项时使用 `row.DisplayName` 做精确字符串匹配（如 `== "Build Harvester"`）。汉化将 XML 中 `display_name` 属性全部改为中文后，所有匹配失败，`ConversionList` 为空，最终导致 `HasList=true` 但列表为空的崩溃。
+
+**原始 XML 注释曾有警告**：
+```xml
+<!-- Note that the C# uses both the display name and the internal name,
+     so be wary about changing them for pre-existing units -->
+```
+
+**受影响的 C# 方法**：
+
+| 方法 | 匹配内容 |
+|------|---------|
+| `AddMetalHarvesterBuildablesToList` | "Build Harvester"、"Build Epistyle"、"Build Transport" |
+| `AddBaseBuildablesToList` | "Build Metal Terminus"、"Build White Terminus"、"Build Blue Terminus"、"Build Epistyle"、"Build Transport" |
+| `AddConversionToListByName` | "Make Izumite"、"Make Thaumite"、"Make Alkahest"、"Make Skrith"、"Make Chelonium" |
+
+**修复方案**：将所有 `row.DisplayName` 比较改为使用 `row.InternalName`（对应 XML `name` 属性，不受翻译影响）：
+
+1. `AddMetalHarvesterBuildablesToList` / `AddBaseBuildablesToList`：`==` 精确匹配 → `InternalName.StartsWith()` / `==` 组合匹配
+2. `AddConversionToListByName` → 重写为 `AddResourceConversionToList`，改用 `DZResource` 枚举参数 + `InternalName` 匹配
+3. 5 处调用处同步更新
+
+**教训**：**禁止翻译 `display_name` 属性**。C# 代码可能依赖 `DisplayName` 做逻辑匹配（不仅是 UI 显示）。修改 XML 前必须 grep C# 源码确认 `DisplayName` 的使用方式。更安全的做法是：若需匹配，用 `name`（InternalName）而非 `display_name`（DisplayName）。
+
 ### 加载界面条目回退英文问题（根因：IL patch 未部署）
 
 **现象**：修改某些文件后，加载界面（loading screen）的条目回退为英文。
