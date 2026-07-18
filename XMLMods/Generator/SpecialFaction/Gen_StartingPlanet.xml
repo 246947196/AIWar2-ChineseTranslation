@@ -15,7 +15,7 @@
         is_advanced_setting="true"
         sort_group="250"
         setting_type="CustomDropdownArbitraryOptions"
-        arbitrary_options="Random,Centralized,Somewhat Centralized,Somewhat On Edge,Farthest Edge"
+        arbitrary_options="随机,中央,较中央,较边缘,最边缘"
         default_option="Random"
         />
 
@@ -28,7 +28,7 @@
         is_advanced_setting="true"
         sort_group="250"
         setting_type="CustomDropdownArbitraryOptions"
-        arbitrary_options="Random,Farthest Deadend,Prefer Deadends,Fewer Links,Average Links,More Links,Always Most Links"
+        arbitrary_options="随机,最远死角,偏好死角,较少连接,平均连接,较多连接,始终最多连接"
         default_option="Random"
         />
 

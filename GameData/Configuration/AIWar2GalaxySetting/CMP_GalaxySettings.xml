@@ -59,7 +59,7 @@
   
   <!-- AI Waves -->
   <galaxy_setting category="AI Waves" name="WaveWarning" is_advanced_setting="true" display_name="波次提前警告" 
-      type="CustomDropdownArbitraryOptions" arbitrary_options="None,Short,Medium,Long" default_option="Medium"
+      type="CustomDropdownArbitraryOptions" arbitrary_options="无,短,中,长" default_option="中"
       description="对即将到来的波次给予多少提前警告？" >
       <harshness_override min_campaign_harshness_to_apply="2500" fixed_option="None" />
   </galaxy_setting>
@@ -91,7 +91,7 @@
 禁用此功能会导致CPA的单位加入AI威胁，它们的攻击将更加计算周密。" />
 
   <galaxy_setting category="AI Behavior" subcategory="CommonFeatures" is_advanced_setting="true" name="WormholeInvasionMode" display_name="虫洞入侵模式" type="CustomDropdownArbitraryOptions"
-                  arbitrary_options="Planet Linking,Exogalactic Wormhole,Send As Waves" default_option="Planet Linking"
+                  arbitrary_options="行星连接,河外虫洞,以波次发送" default_option="行星连接"
  changeable_during_gameplay="true"
       description="AI会定期通过虫洞入侵来攻击你。有几种不同类型的虫洞入侵。
 
@@ -260,7 +260,7 @@
         <harshness_override min_campaign_harshness_to_apply="200" fixed_value="0" />
     </galaxy_setting>
 
-      <galaxy_setting category="MapGen" subcategory="RoguelikeAdditions" name="ExtraFactionRandomness" display_name="额外随机派系" type="CustomDropdownArbitraryOptions" arbitrary_options="None,Totally Random,Easy,Medium,Hard,Brutal,Three Hard Factions" default_option="None"
+      <galaxy_setting category="MapGen" subcategory="RoguelikeAdditions" name="ExtraFactionRandomness" display_name="额外随机派系" type="CustomDropdownArbitraryOptions" arbitrary_options="无,完全随机,简单,中等,困难,残酷,三个困难派系" default_option="无"
 
         description="游戏开始时，在已选派系的基础上添加一些随机派系。从游戏大厅你不会知道它们是什么；当与'不显示未遇到的随机派系'设置结合时，这意味着你根本不知道外面有什么。
 
@@ -269,7 +269,7 @@
 这可能是一种非常激烈的模式。游戏不保证由此产生的情景可以获胜。"
         />
     <galaxy_setting category="MapGen" subcategory="RoguelikeAdditions" name="ExtraFactionAllegiances" display_name="额外随机派系阵营" type="CustomDropdownArbitraryOptions" 
-            arbitrary_options="Totally Random,Hostile,Player Friendly,Balanced" default_option="Totally Random"
+            arbitrary_options="完全随机,敌对,对玩家友好,平衡" default_option="完全随机"
             description="在选择额外随机派系时，可以控制这些派系的阵营关系。
 
     平衡模式会尝试提供不同阵营的均衡组合"

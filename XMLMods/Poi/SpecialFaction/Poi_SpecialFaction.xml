@@ -42,7 +42,7 @@
                     description="看到有废弃物或异常的行星有多常见或多罕见？"
                     sort_group="250"
                     setting_type="CustomDropdownArbitraryOptions" 
-                    arbitrary_options="Everywhere,Common,Uncommon,Rare"
+                    arbitrary_options="到处,常见,罕见,稀有"
                     default_option="Common"
                     />
 
@@ -53,7 +53,7 @@
                     description="某些异常比其他更具破坏性。此设置允许你调整生成类型的平衡。"
                     sort_group="260"
                     setting_type="CustomDropdownArbitraryOptions" 
-                    arbitrary_options="Balanced,Friendly,Hostile"
+                    arbitrary_options="平衡,友好,敌对"
                     default_option="Balanced"
                     />
 

@@ -139,7 +139,7 @@ Badger对此没有太多平衡数据，所以如果有问题请在discord上反�
     
     <custom_field requires_player_types="DysonSidekick,DysonEmpire"
                   name="DysonStartingMoon" display_name="起始月球" description="你想从哪个月球开始？"
-                  sort_group="100" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Zenith,Neinzul,Templar,Spire,Random" default_option="Random"/>
+                  sort_group="100" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Zenith,Neinzul,Templar,Spire,随机" default_option="随机"/>
 
     <custom_field requires_player_types="DysonSidekick,DysonEmpire"
                   name="DysonSidekickIncome" display_name="收入" description="戴森Sidekick获得多少收入？数值越高意味着更多资源。"
@@ -211,7 +211,7 @@ Badger对此没有太多平衡数据，所以如果有问题请在discord上反�
 
     <custom_field  requires_player_types="ArmadaEmpire"
                    name="ArmadaStartingStarbase" display_name="起始星站" description="你起始时拥有的星站类型"
-                   sort_group="100" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Terran,Kilrathi,Random" default_option="Random"/>
+                   sort_group="100" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Terran,Kilrathi,随机" default_option="随机"/>
 
   </faction>
 

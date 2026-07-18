@@ -1523,7 +1523,7 @@ namespace Arcen.AIW2.External
                         requestedDiffStr = cfg.GetStringValueForCustomFieldOrDefaultValue( "Templar_Difficulty", true );
                     else
                         requestedDiffStr = cfg.GetStringValueForCustomFieldOrDefaultValue( "Elderling_Difficulty", true );
-                    if ( requestedDiffStr == "Matches Strongest AI" )
+                    if ( requestedDiffStr == "匹配最强AI" )
                         diff = GetHighestAIDifficulty();
                     else
                         diff = Int32.Parse(requestedDiffStr);
@@ -1551,7 +1551,7 @@ namespace Arcen.AIW2.External
                     int diff = 0;
                     if ( faction.SpecialFactionData.InternalName == "Reapers" )
                         requestedDiffStr = cfg.GetStringValueForCustomFieldOrDefaultValue( "DysonSidekickIntensity", true );
-                    if ( requestedDiffStr == "Matches Strongest AI" )
+                    if ( requestedDiffStr == "匹配最强AI" )
                         diff = GetHighestAIDifficulty();
                     else
                         diff = Int32.Parse(requestedDiffStr);
@@ -1578,7 +1578,7 @@ namespace Arcen.AIW2.External
                     int diff = 0;
                     if ( faction.SpecialFactionData.InternalName == "TiberiumInfestationForArmada" )
                         requestedDiffStr = cfg.GetStringValueForCustomFieldOrDefaultValue( "ArmadaDifficulty", true );
-                    if ( requestedDiffStr == "Matches Strongest AI" )
+                    if ( requestedDiffStr == "匹配最强AI" )
                         diff = GetHighestAIDifficulty();
                     else
                         diff = Int32.Parse(requestedDiffStr);
@@ -1605,7 +1605,7 @@ namespace Arcen.AIW2.External
                     int diff = 0;
                     if ( faction.SpecialFactionData.InternalName == "MalwareForApkallu" || faction.SpecialFactionData.InternalName == "MalwareForApkalluEmpire")
                         requestedDiffStr = cfg.GetStringValueForCustomFieldOrDefaultValue( "Malware_Difficulty", true );
-                    if ( requestedDiffStr == "Matches Strongest AI" )
+                    if ( requestedDiffStr == "匹配最强AI" )
                         diff = GetHighestAIDifficulty();
                     else
                         diff = Int32.Parse(requestedDiffStr);

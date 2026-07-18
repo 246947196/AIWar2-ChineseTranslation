@@ -417,8 +417,8 @@ namespace Arcen.AIW2.External
                         RandomFactionType randomType = RandomFactionTypeTable.Instance.GetRowByName(fieldValue);
                         if ( randomType.AlwaysHostileToAll )
                         {
-                            workingAllegiance = "Hostile to Player";
-                            allegianceToCopyToNewFaction = "Hostile to Player";
+                            workingAllegiance = "对玩家敌对";
+                            allegianceToCopyToNewFaction = "对玩家敌对";
                             allegianceOverride = true;
                         }
                         availableFactions = randomType.IncludedFactions;
@@ -446,9 +446,9 @@ namespace Arcen.AIW2.External
                     if ( random < 33 )
                         workingAllegiance = "对玩家友好";
                     else if ( random < 66 )
-                        workingAllegiance = "Minor Faction Allied";
+                        workingAllegiance = "小派系结盟";
                     else
-                        workingAllegiance = "Hostile to Player";
+                        workingAllegiance = "对玩家敌对";
                 }
 
                 for ( int j = 0; j < availableFactions.Count; j++ )
@@ -514,7 +514,7 @@ namespace Arcen.AIW2.External
                     if ( workingAllegiance == "小派系小队绿" ||
                          workingAllegiance == "小派系小队红" ||
                          workingAllegiance == "小派系小队蓝" ||
-                         workingAllegiance.Contains( "Minor Faction Allied"  ) )
+                         workingAllegiance.Contains( "小派系结盟"  ) )
                     {
                         if ( !data.CanBeOnMinorFactionTeam )
                         {
@@ -544,7 +544,7 @@ namespace Arcen.AIW2.External
                             }
                         }
                     }
-                    if ( workingAllegiance == "Hostile to Player" && !(data.CanBeAlliedToAI || data.CanBeHostileToAll ) )
+                    if ( workingAllegiance == "对玩家敌对" && !(data.CanBeAlliedToAI || data.CanBeHostileToAll ) )
                     {
                         if ( debug )
                             ArcenDebugging.ArcenDebugLogSingleLine("\tHostile Mismatch", Verbosity.DoNotShow );
@@ -603,7 +603,7 @@ namespace Arcen.AIW2.External
                         {
                             config.SetCustomFieldValue( fieldName, "对玩家友好" );
                         }
-                        if (workingAllegiance == "Hostile to Player" ) 
+                        if (workingAllegiance == "对玩家敌对" ) 
                         {
                             //we want hostile to player
                             if ( config.SpecialFactionData.CanBeDarkAlliance )
@@ -625,7 +625,7 @@ namespace Arcen.AIW2.External
                             else
                                 config.SetCustomFieldValue( fieldName, "对所有敌对" );
                         }
-                        if ( workingAllegiance == "Minor Faction Allied" )
+                        if ( workingAllegiance == "小派系结盟" )
                         {
                             int percentChanceRed, percentChanceGreen, percentChanceBlue;
                             GetTeamPercentages (CurrentFactions, out percentChanceRed, out percentChanceGreen, out percentChanceBlue, randomlyChosenFactionData.RequiresMinorFactionTeammates);
@@ -871,32 +871,32 @@ namespace Arcen.AIW2.External
             //the extra randomness influences the impact of the factions and how many there will be added
             int minToAdd = 3;
             int maxToAdd = 8;
-            if ( extraRandomness == "Easy" )
+            if ( extraRandomness == "简单" )
             {
                 minToAdd = 2;
                 maxToAdd = 4;
             }
-            else if ( extraRandomness == "Medium" )
+            else if ( extraRandomness == "中等" )
             {
                 minToAdd = 3;
                 maxToAdd = 6;
             }
-            else if ( extraRandomness == "Hard" )
+            else if ( extraRandomness == "困难" )
             {
                 minToAdd = 4;
                 maxToAdd = 7;
             }
-            else if ( extraRandomness == "Brutal" )
+            else if ( extraRandomness == "残酷" )
             {
                 minToAdd = 4;
                 maxToAdd = 8;
             }
-            else if ( extraRandomness == "Brutal" )
+            else if ( extraRandomness == "残酷" )
             {
                 minToAdd = 4;
                 maxToAdd = 8;
             }
-            else if ( extraRandomness == "Three Hard Factions" )
+            else if ( extraRandomness == "三个困难派系" )
             {
                 minToAdd = 3;
                 maxToAdd = 3;
@@ -926,16 +926,16 @@ namespace Arcen.AIW2.External
                 ConfigurationForFaction config = ConfigurationForFaction.Create( CurrentFactions.Count, "RandomFaction", randomFactionData );
                 config.ShouldNeverBeRetainedInLobby = true; //remove these "extra random" factions from the game lobby when reopened
                 config.SetCustomFieldValue( "Impact", GetRandomImpact(extraRandomness) );
-                if ( bonusAllegiances == "Totally Random" )
+                if ( bonusAllegiances == "完全随机" )
                     config.SetCustomFieldValue( "Allegiance", "Random" );
-                else if ( bonusAllegiances == "Hostile" )
-                    config.SetCustomFieldValue( "Allegiance", "Hostile to Player" );
-                else if ( bonusAllegiances == "Player Friendly" )
+                else if ( bonusAllegiances == "敌对" )
+                    config.SetCustomFieldValue( "Allegiance", "对玩家敌对" );
+                else if ( bonusAllegiances == "对玩家友好" )
                     config.SetCustomFieldValue( "Allegiance", "对玩家友好" );
-                else if ( bonusAllegiances == "Balanced" )
+                else if ( bonusAllegiances == "平衡" )
                 {
                     if ( i % 3 == 0 )
-                        config.SetCustomFieldValue( "Allegiance", "Hostile to Player" );
+                        config.SetCustomFieldValue( "Allegiance", "对玩家敌对" );
                     if ( i % 3 == 1 )
                         config.SetCustomFieldValue( "Allegiance", "对玩家友好" );
                     if ( i % 3 == 2 )
@@ -951,41 +951,40 @@ namespace Arcen.AIW2.External
         }
         public string GetRandomImpact(string extraRandomness)
         {
-            if ( extraRandomness == "Totally Random" )
+            if ( extraRandomness == "完全随机" )
                 return "any";
             int percentEasy = 20;
             int percentMedium = 30;
             int percentHard = 20;
-            //int percentBrutal = 10;
-            if ( extraRandomness == "Easy" )
+            if ( extraRandomness == "简单" )
             {
                 percentEasy = 40;
                 percentMedium = 30;
                 percentHard = 20;
                 //percentBrutal = 10;
             }
-            if ( extraRandomness == "Medium" )
+            if ( extraRandomness == "中等" )
             {
                 percentEasy = 30;
                 percentMedium = 55;
                 percentHard = 15;
                 //percentBrutal = 15;
             }
-            if ( extraRandomness == "Hard" )
+            if ( extraRandomness == "困难" )
             {
                 percentEasy = 10;
                 percentMedium = 30;
                 percentHard = 40;
                 //percentBrutal = 20;
             }
-            if ( extraRandomness == "Brutal" )
+            if ( extraRandomness == "残酷" )
             {
                 percentEasy = 10;
                 percentMedium = 30;
                 percentHard = 30;
                 //percentBrutal = 30;
             }
-            if ( extraRandomness == "Three Hard Factions" )
+            if ( extraRandomness == "三个困难派系" )
             {
                 percentEasy = 0;
                 percentMedium = 0;

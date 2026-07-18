@@ -283,7 +283,7 @@ namespace Arcen.AIW2.External
             Faction faction = squad.PlanetFaction.Faction;
             bool inWardenMode = false;
             bool inTiberiumMode = false;
-            if ( World_AIW2.Instance.Setup.GetStringBySetting("DysonAutoDefend") == "Defense Only")
+            if ( World_AIW2.Instance.Setup.GetStringBySetting("DysonAutoDefend") == "仅防御")
                 inWardenMode = true;
             if ( forceWardenMode )
                 inWardenMode = true;

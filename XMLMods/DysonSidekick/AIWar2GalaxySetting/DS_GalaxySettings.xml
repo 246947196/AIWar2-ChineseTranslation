@@ -2,7 +2,7 @@
 <root>
 
   <galaxy_setting category="DysonSidekick" name="DysonAutoDefend" display_name="自动防御模式" changeable_during_gameplay="true"
-                  type="CustomDropdownArbitraryOptions" arbitrary_options="Disabled,Defense Only,Full Assistance" default_option="Disabled"
+                  type="CustomDropdownArbitraryOptions" arbitrary_options="Disabled,仅防御,全面协助" default_option="Disabled"
         description="你可以选择让你的戴森舰队自动作战。戴森舰队将协助你（或其他结盟派系），但不会自行攻击敌方行星或目标。
 
 如果玩家正在控制该派系，自动防御模式将自动禁用；这使得作为Sidekick控制时更加高效。
@@ -64,7 +64,7 @@
   </galaxy_setting>
 
   <galaxy_setting category="ArmadaEmpire" name="ArmadaAutoDefend" display_name="自动防御模式" changeable_during_gameplay="true"
-                  type="CustomDropdownArbitraryOptions" arbitrary_options="Disabled,Defense Only,Full Assistance" default_option="Disabled"
+                  type="CustomDropdownArbitraryOptions" arbitrary_options="Disabled,仅防御,全面协助" default_option="Disabled"
         description="你可以选择让你的无敌舰队舰队自动作战。无敌舰队舰队将协助你（或其他结盟派系），但不会自行攻击敌方行星或目标。
 
 仅防御意味着戴森舰队不会前往敌方行星。全面协助允许它们随你进入敌方领土。

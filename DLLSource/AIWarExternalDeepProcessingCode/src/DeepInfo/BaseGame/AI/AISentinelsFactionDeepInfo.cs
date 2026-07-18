@@ -5259,13 +5259,13 @@ namespace Arcen.AIW2.External
             if ( debug )
                 ArcenDebugging.ArcenDebugLogSingleLine( this.AttachedFaction.GetDisplayName() + " using wormhole invasion mode " +  World_AIW2.Instance.Setup.GetStringBySetting("WormholeInvasionMode"), Verbosity.DoNotShow );
             //CHRIS TODO: Changing this setting under Galaxy Settings options and hitting "Save" doesn't seem to work
-            if ( World_AIW2.Instance.Setup.GetStringBySetting("WormholeInvasionMode") == "Planet Linking" )
+            if ( World_AIW2.Instance.Setup.GetStringBySetting("WormholeInvasionMode") == "行星连接" )
             {
                 if ( debug )
                     ArcenDebugging.ArcenDebugLogSingleLine("doing planet linking", Verbosity.DoNotShow );
                 TryToSpendBudget_WormholeInvasion_PlanetLinking( Context );
             }
-            else if ( World_AIW2.Instance.Setup.GetStringBySetting("WormholeInvasionMode") == "Exogalactic Wormhole" )
+            else if ( World_AIW2.Instance.Setup.GetStringBySetting("WormholeInvasionMode") == "河外虫洞" )
             {
                 if ( debug )
                     ArcenDebugging.ArcenDebugLogSingleLine("spawning Exogalactic Wormhole", Verbosity.DoNotShow );

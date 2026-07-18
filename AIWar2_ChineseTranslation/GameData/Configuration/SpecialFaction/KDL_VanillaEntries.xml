@@ -186,9 +186,9 @@
       <custom_field name="Allegiance" display_name="派系立场" description="这个派系对AI、人类还是中立？"
                     sort_group="250" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="对所有敌对,对玩家友好,仅对玩家敌对,小派系小队红,小派系小队蓝,小派系小队绿" default_option="对所有敌对" />
       <custom_field name="Intelligence" display_name="智能等级" description="掠夺者扩张时应使用什么策略？战术家(Tactician)更聪明，蛮力(Brute Force)更简单直接"
-                    sort_group="250" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Tactician,Brute Force" default_option="Tactician" />
+                    sort_group="250" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="战术家,蛮力" default_option="战术家" />
       <custom_field name="InvasionTime" display_name="入侵时间" description="可以设置掠夺者在游戏中的某个未知时间开始入侵银河系，或者立即开始。"
-                    sort_group="300" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Immediate,Early Game,Mid Game,Late Game" default_option="Immediate" />
+                    sort_group="300" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="立即,游戏早期,游戏中期,游戏后期" default_option="立即" />
       <vassal_order order_type="MoveToPlanet" sort_group="100"/>
       <vassal_order order_type="AttackPlanet" sort_group="200"/>
       <vassal_order order_type="AttackUnit" sort_group="250"/>
@@ -309,7 +309,7 @@
 默认：根据强度在多个行星上生成单个Telium。
 单独Telium：生成一个不会扩张但具有极高生产能力的愤怒Telium。
 集群Telium：根据强度在银河系中生成成对的Telium。"
-          sort_group="300" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Default,Lone Telium,Clustered Telia" default_option="Default" />
+          sort_group="300" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="默认,单独特利姆,集群特利姆" default_option="默认" />
 
   </faction>
   

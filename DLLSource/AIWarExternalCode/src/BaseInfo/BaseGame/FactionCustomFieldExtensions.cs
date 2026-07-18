@@ -25,13 +25,13 @@ namespace Arcen.AIW2.External
             string fieldValue = ParentObject.GetStringValueForCustomFieldOrDefaultValue( "WormholeBorerIncomeModifier", ErrorOnMissingField );
             if ( fieldValue == "Disabled" )
                 return FInt.Zero;
-            if ( fieldValue == "Slower" )
+            if ( fieldValue == "较慢" )
                 return FInt.FromParts( 0, 500 );
-            if ( fieldValue == "Normal" )
+            if ( fieldValue == "正常" )
                 return FInt.One;
-            if ( fieldValue == "Faster" )
+            if ( fieldValue == "较快" )
                 return FInt.FromParts( 1, 500 );
-            if ( fieldValue == "Very Fast" )
+            if ( fieldValue == "非常快" )
                 return FInt.FromParts( 2, 000 );
             if ( fieldValue.Length == 0 ) //older saves, etc
                 return FInt.One;
@@ -46,15 +46,15 @@ namespace Arcen.AIW2.External
         {
             //no chance of erroring, since you have to have DLC2 in for this to be a thing
             string fieldValue = ParentObject.GetStringValueForCustomFieldOrDefaultValue( "StartingAIPlanetRatio", false ); 
-            if ( fieldValue == "Very Small" )
+            if ( fieldValue == "非常小" )
                 return AIStartSize.VerySmall;
-            if ( fieldValue == "Small" )
+            if ( fieldValue == "小" )
                 return AIStartSize.Small;
-            if ( fieldValue == "Normal" )
+            if ( fieldValue == "正常" )
                 return AIStartSize.Normal;
-            if ( fieldValue == "Large" )
+            if ( fieldValue == "大" )
                 return AIStartSize.Large;
-            if ( fieldValue == "Huge" )
+            if ( fieldValue == "巨大" )
                 return AIStartSize.Huge;
             if ( fieldValue.Length == 0 ) //older saves, etc
                 return AIStartSize.Normal;
