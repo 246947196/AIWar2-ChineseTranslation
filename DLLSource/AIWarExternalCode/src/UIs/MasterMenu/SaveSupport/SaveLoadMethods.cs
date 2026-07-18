@@ -894,7 +894,6 @@ namespace Arcen.AIW2.External
                 return;
 
             world.CampaignName = ArcenStrings.MakeValidFilename( world.CampaignName, false );
-            world.CampaignName = SaveGameData.EncodeForCondensedFormat( world.CampaignName );
             world.CampaignName = world.CampaignName.ConvertToCondensedFormat();
 
             SaveName = ArcenStrings.MakeValidFilename( SaveName, false );

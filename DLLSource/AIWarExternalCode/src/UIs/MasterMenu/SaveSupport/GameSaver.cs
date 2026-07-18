@@ -25,7 +25,6 @@ namespace Arcen.AIW2.External
             }
 
             string campaignName = ArcenStrings.MakeValidFilename( World.Instance.CampaignName, false );
-            campaignName = SaveGameData.EncodeForCondensedFormat( campaignName );
             campaignName = campaignName.ConvertToCondensedFormat();
 
             if ( ArcenStrings.IsEmpty( campaignName ) )
