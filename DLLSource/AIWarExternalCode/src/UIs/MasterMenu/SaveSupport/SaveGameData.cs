@@ -1114,12 +1114,12 @@ namespace Arcen.AIW2.External
                 //buffer.Add( this.campaignName )
                 //const string Tabs = "  ";
                 
-                buffer.Add( "Last Modified: "+Tabs );
+                buffer.Add( "最后修改： "+Tabs );
                 buffer.Add( this.lastModified.ToShortDateString() );
                 buffer.Add( "  " );
                 buffer.Add( this.lastModified.ToShortTimeString() );
                 
-                buffer.Add( "\nGame Time: "+Tabs );
+                buffer.Add( "\n游戏时间： "+Tabs );
                 buffer.AddHoursAndMinutes( this.secondsSinceGameStart );
             }
             
@@ -1149,7 +1149,7 @@ namespace Arcen.AIW2.External
             
             if (!string.IsNullOrEmpty(this.playerType))
             {
-                buffer.Add( "\nPlayer Type: "+Tabs );
+                buffer.Add( "\n玩家阵营： "+Tabs );
                 buffer.Add( this.playerType );
             }
             
@@ -1157,18 +1157,18 @@ namespace Arcen.AIW2.External
             {
                 if (!string.IsNullOrEmpty(this.PlayersString))
                 {
-                    buffer.Add( "\nPlayers: "+Tabs+Tabs );
+                    buffer.Add( "\n玩家人数： "+Tabs+Tabs );
                     buffer.Add( this.PlayersString );
                 }
 
-                buffer.Add( "\nTimes Loaded: "+Tabs );
+                buffer.Add( "\n已读档次数： "+Tabs );
                 buffer.Add( this.numTimesLoaded );
                 //buffer.Add( "\nFile Size: " );
                 //buffer.AddBytesWithFormat( this.filesizeInBytes );
             
                 if (this.DlcInUse.Count > 0)
                 {
-                    buffer.Add( "\nDLC Used: "+Tabs );
+                    buffer.Add( "\n扩展包： "+Tabs );
                     int counter = 0;
                     foreach (var dlc in this.DlcInUse)
                     {
@@ -1181,7 +1181,7 @@ namespace Arcen.AIW2.External
                 
                 if (this.ModInUse.Count > 0)
                 {
-                    buffer.Add( "\nMods Used: "+Tabs );
+                    buffer.Add( "\n模组： "+Tabs );
                     int counter = 0;
                     foreach (var mod in this.ModInUse)
                     {
