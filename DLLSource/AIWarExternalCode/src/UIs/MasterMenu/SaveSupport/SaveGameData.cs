@@ -255,6 +255,31 @@ namespace Arcen.AIW2.External
             return save;
         }
 
+        private static string DecodeCondensedSaveName( string name )
+        {
+            if ( string.IsNullOrEmpty( name ) || name.IndexOf( '~' ) < 0 )
+                return name;
+            System.Text.StringBuilder sb = new( name.Length );
+            for ( int i = 0; i < name.Length; i++ )
+            {
+                char c = name[i];
+                if ( c != '~' ) { sb.Append( c ); continue; }
+                if ( i + 1 < name.Length && name[i + 1] == '~' ) { sb.Append( '~' ); i++; continue; }
+                if ( i + 5 < name.Length && name[i + 1] == 'u'
+                    && Uri.IsHexDigit( name[i + 2] ) && Uri.IsHexDigit( name[i + 3] )
+                    && Uri.IsHexDigit( name[i + 4] ) && Uri.IsHexDigit( name[i + 5] ) )
+                {
+                    int code = ( Uri.FromHex( name[i + 2] ) << 12 ) | ( Uri.FromHex( name[i + 3] ) << 8 )
+                        | ( Uri.FromHex( name[i + 4] ) << 4 ) | Uri.FromHex( name[i + 5] );
+                    sb.Append( (char)code );
+                    i += 5;
+                    continue;
+                }
+                sb.Append( '~' );
+            }
+            return sb.ToString();
+        }
+
         public static SaveGameData Load( string saveFullFilename )
         {
 #if POOLED
@@ -263,8 +288,8 @@ namespace Arcen.AIW2.External
             var save = new SaveGameData();
 #endif
             save.saveFullFilename = saveFullFilename;
-            save.saveName = Path.GetFileNameWithoutExtension(saveFullFilename);
-            save.campaignName = Path.GetDirectoryName(saveFullFilename);
+            save.saveName = DecodeCondensedSaveName( Path.GetFileNameWithoutExtension( saveFullFilename ) );
+            save.campaignName = Path.GetDirectoryName( saveFullFilename );
             save.LoadMetaData();
             
             return save;
