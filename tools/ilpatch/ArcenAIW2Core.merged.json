@@ -151,6 +151,7 @@
   " Behind Unmapped Conn Rows (diag, was phantom-hold)": "",
   " Cl Ships To Ask": "",
   " Cl Ships To Del": "",
+  " Cmd": " 中枢",
   " CoreNetworkMessageType: ": " CoreNetworkMessageType：",
   " Could not load the campaign in question because it uses expansions/mods that are not installed:\n\n": " 无法加载该战役，因为它使用了未安装的扩展/模组：\n\n",
   " Could not load the campaign in question because you don't have the requisite expansions or mods installed:\n\n": " 无法加载该战役，因为你未安装所需的扩展或模组：\n\n",
