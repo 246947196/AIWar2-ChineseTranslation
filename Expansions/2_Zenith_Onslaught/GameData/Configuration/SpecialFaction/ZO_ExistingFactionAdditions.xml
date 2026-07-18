@@ -23,7 +23,7 @@
   <faction name="AI" is_partial_record="true">
 
     <custom_field name="StartingAIPlanetRatio" is_advanced_setting="true" display_name="初始AI帝国规模" description="控制该AI在游戏开始时拥有的行星数量。所有非玩家起始行星都将由AI控制" sort_group="260" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Very Small,Small,Normal,Large,Huge" default_option="Normal" />
-    <custom_field name="StartingAILayout" is_advanced_setting="true" display_name="AI布局" description="如何组织该AI的起始行星。默认情况下，AI会在其母星周围拥有一小簇行星，其余行星将随机分配。" sort_group="260" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Small Cluster,Large Cluster,Randomly Sized Cluster,Random" default_option="Small Cluster" />
+    <custom_field name="StartingAILayout" is_advanced_setting="true" display_name="AI布局" description="如何组织该AI的起始行星。默认情况下，AI会在其母星周围拥有一小簇行星，其余行星将随机分配。" sort_group="260" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="小簇,大簇,随机大小簇,随机" default_option="Small Cluster" />
     <custom_field name="WormholeBorerIncomeModifier" is_advanced_setting="true" display_name="虫洞开凿器收入修正" description="允许你影响虫洞开凿器的生成速率。难度5及以上时启用虫洞开凿器。" sort_group="260" setting_type="CustomDropdownArbitraryOptions" arbitrary_options="Disabled,Slower,Normal,Faster,Very Fast" default_option="Normal" />
 
   </faction>

@@ -66,13 +66,13 @@ namespace Arcen.AIW2.External
         public static AIOwnershipLayout CustomData_StartingAILayout( this Faction ParentObject )
         {
             string fieldValue = ParentObject.GetStringValueForCustomFieldOrDefaultValue( "StartingAILayout", false );
-            if ( fieldValue == "Small Cluster" || fieldValue == "Normal" )
+            if ( fieldValue == "小簇" || fieldValue == "Normal" )
                 return AIOwnershipLayout.SmallCluster;
-            if ( fieldValue == "Large Cluster" )
+            if ( fieldValue == "大簇" )
                 return AIOwnershipLayout.LargeCluster;
-            if ( fieldValue == "Randomly Sized Cluster" )
+            if ( fieldValue == "随机大小簇" )
                 return AIOwnershipLayout.RandomCluster;
-            if ( fieldValue == "Random" )
+            if ( fieldValue == "随机" )
                 return AIOwnershipLayout.Random;
             if ( fieldValue.Length == 0 ) //older saves, etc
                 return AIOwnershipLayout.SmallCluster;
