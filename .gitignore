@@ -24,3 +24,6 @@ tools/ilpatch/*.extract.json
 
 # WorkBuddy session data
 .workbuddy/
+
+# AI War 1 对照表（非本项目文件）
+1代中英对照表.csv
