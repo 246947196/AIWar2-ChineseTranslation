@@ -206,10 +206,11 @@ namespace Arcen.AIW2.External
         public static bool GetCampaign( string name, bool createIfMissing, out CampaignOrQuickstartGroup campaign )
         {
             campaign = null;
+            string decodedName = SaveGameData.DecodeCondensedSaveName( name );
             
             foreach (var c in SortedCampaignNames)
             {
-                if (c.DisplayName == name)
+                if ( c.DisplayName == name || c.DisplayName == decodedName )
                 {
                     campaign = c;
                     return true;
@@ -408,6 +409,7 @@ namespace Arcen.AIW2.External
                 
                 CampaignOrQuickstartGroup group;
                 SaveLoadMethods.GetCampaign(campaignName, true, out group);
+                group.DisplayName = SaveGameData.DecodeCondensedSaveName( campaignName );
                 
                 if (group.TimeOfLastSave < mostRecentTime)
                     group.TimeOfLastSave = mostRecentTime;
@@ -894,6 +896,7 @@ namespace Arcen.AIW2.External
                 return;
 
             world.CampaignName = ArcenStrings.MakeValidFilename( world.CampaignName, false );
+            world.CampaignName = SaveGameData.EncodeForCondensedFormat( world.CampaignName );
             world.CampaignName = world.CampaignName.ConvertToCondensedFormat();
 
             SaveName = ArcenStrings.MakeValidFilename( SaveName, false );
@@ -1104,7 +1107,7 @@ namespace Arcen.AIW2.External
                                 Action a2 = ()=>
                                 {
                                     World_AIW2.Instance.Setup.ChangedSinceLastMapGenCall = false;
-                                    World.Instance.CampaignName = Group.DisplayName;//Path.GetFileNameWithoutExtension( Group.DisplayName );
+                                    World.Instance.CampaignName = SaveGameData.DecodeCondensedSaveName( Group.DisplayName );
                                     
                                     log?.Msg("In Post Action #2: world={0:x} campaign={5} numDlc={1} numMods={2} mapType={3} ironman={4}", 
                                             world.GetHashCode(), 

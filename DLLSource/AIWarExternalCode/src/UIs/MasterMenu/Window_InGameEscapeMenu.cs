@@ -362,7 +362,7 @@ namespace Arcen.AIW2.External
                         Buffer.StartColor( QuickColors.HeaderBright ).Add( "<b>教程：</b> " ).EndColor().Add( World_AIW2.Instance.TutorialOrNull.DisplayName ).Add( "\n" );
                     else
                     {
-                        Buffer.StartColor( QuickColors.HeaderBright ).Add( "<b>战役：</b> " ).EndColor().Add( World.Instance.CampaignName ).Add( "\n" );
+                        Buffer.StartColor( QuickColors.HeaderBright ).Add( "<b>战役：</b> " ).EndColor().Add( SaveGameData.DecodeCondensedSaveName( World.Instance.CampaignName ) ).Add( "\n" );
 
                         if ( World_AIW2.Instance.CampaignType == null )
                             World_AIW2.Instance.CampaignType = CampaignTypeDataTable.EasiestNonSandboxType;

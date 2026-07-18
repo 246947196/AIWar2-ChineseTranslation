@@ -272,7 +272,7 @@ namespace Arcen.AIW2.External
         {
             public override void GetTextToShowFromVolatile( ArcenDoubleCharacterBuffer buffer )
             {
-                buffer.Add( World.Instance.CampaignName );
+                buffer.Add( SaveGameData.DecodeCondensedSaveName( World.Instance.CampaignName ) );
             }
             public override void OnUpdate()
             {
