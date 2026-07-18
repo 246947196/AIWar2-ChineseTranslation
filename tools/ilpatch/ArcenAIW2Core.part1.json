@@ -1,5 +1,6 @@
 {
   " earned ": " 获得了 ",
+  "Unlocked ": "已解锁 ",
   "*********** Client Notices Syncs Are Wrong! *********": "",
   "Missing PKID on client: Client has no idea about any ship with pkid ": "",
   "TypeData-Mismatch: Client thinks squad with pkid ": "",

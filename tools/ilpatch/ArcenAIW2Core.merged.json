@@ -347,6 +347,7 @@
   " configured to use resource 3, but no Resource3Icon set!": "",
   " connected.": " 已连接。",
   " could not be unlocked for reason: ": "",
+  "Unlocked ": "已解锁 ",
   " could not find a faction to be put in charge of, which is fine.": " 未找到可负责的阵营，这没问题。",
   " could not find any between ": "",
   " custom fields on it, but none of them were named '": "",
