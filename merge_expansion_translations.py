@@ -28,7 +28,9 @@ EXP_OVERRIDE_ROOT = os.path.join(MOD_DIR, "GameData", "Configuration", "Expansio
 
 TRANSLATABLE_ATTRS = {"display_name", "description", "tooltip", "default_display_name",
                       "plural_display_name", "short_display_name", "custom_NameForLobby",
-                      "arbitrary_options", "default_option"}
+                      "arbitrary_options", "default_option",
+                      "sidebar_text", "chat_text", "full_text", "short_name",
+                      "chat_text_2", "full_text_2"}
 
 
 def is_translatable_attr(name):
