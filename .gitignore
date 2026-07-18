@@ -21,3 +21,6 @@ PatchedAssemblies/*.bak
 tools/ilpatch/bin/
 tools/ilpatch/obj/
 tools/ilpatch/*.extract.json
+
+# WorkBuddy session data
+.workbuddy/
