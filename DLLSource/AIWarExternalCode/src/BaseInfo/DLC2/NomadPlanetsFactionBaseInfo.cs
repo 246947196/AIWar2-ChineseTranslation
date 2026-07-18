@@ -159,7 +159,7 @@ namespace Arcen.AIW2.External
         {
             string value = AttachedFaction.GetStringValueForCustomFieldOrDefaultValue( "Intensity", false );
             if ( value != null )
-                buffer.Add( "Count in Galaxy: " ).Add( value );
+                buffer.Add( "星系数量: " ).Add( value );
         }
         #endregion
 
