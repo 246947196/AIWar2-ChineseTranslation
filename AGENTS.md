@@ -376,11 +376,20 @@ ChatLog 条目中包含 `<link=N>` 标签用于可点击交互（如点击跳转
 
 **与捕获覆盖层的关系**：编码方案修复了序列化管道（根源修复），但**聊天 TMP 渲染层**仍受修改版 TMP FontEngine 限制，`ChatLog`/`BasicText` 的中文覆盖层（capture → overlay）作为渲染兜底仍需保留。
 
-##### 额外修复：存档菜单显示解码（2026-07-18）
+##### 额外修复：存档名存/读双端编解码（2026-07-18）
 
-存档名在磁盘上存储为 `~uXXXX` 编码形式。存档菜单从 `Path.GetFileNameWithoutExtension()` 读取文件名时，不走 `ReadString_Condensed`，因此显示为编码形式。
+**第一次尝试（失败）**：只在 `SaveGameData.Load()` 中解码 `~uXXXX` → 中文。
 
-修复：在 `SaveGameData.Load()` 中新增 `DecodeCondensedSaveName()`，读取文件名后立即解码 `~uXXXX` → 原始 Unicode。存档菜单列表和读档页面正确显示中文。点击存档回填输入框时，保存管道的 `ConvertToCondensedFormat` 会重新编码，编解码幂等，不破坏文件名。
+失败原因：`ConvertToCondensedFormat` 走的是内部 CharMapping（直接压成 `_`），**不走 `AddString_Condensed`**（PatchCharMapping 的补丁点）。所以磁盘上的文件名已经是 `_`，读端解码毫无意义。
+
+**最终修复**：在 `ConvertToCondensedFormat` 前先编码，保证写入端的文件名就是 `~uXXXX`。
+
+| 端 | 方法 | 位置 |
+|----|------|------|
+| 写入编码 | `EncodeForCondensedFormat()` | `SaveLoadMethods.SaveWorldToDisk()` + `GameSaver.DoSave()`，在 `ConvertToCondensedFormat` 前调用 |
+| 读取解码 | `DecodeCondensedSaveName()` | `SaveGameData.Load()`，`Path.GetFileNameWithoutExtension` 后立即解码 |
+
+`EncodeForCondensedFormat` 逻辑：`~` → `~~`，中文/其他表外字符 → `~uXXXX`。编码后全部字符在 109 字符表内，`ConvertToCondensedFormat` 原样通过。磁盘文件名 `~uXXXX`（合法 Windows 文件名），读端解码还原。
 
 ### 部署
 
