@@ -255,7 +255,31 @@ namespace Arcen.AIW2.External
             return save;
         }
 
-        private static string DecodeCondensedSaveName( string name )
+        public static string EncodeForCondensedFormat( string name )
+        {
+            if ( string.IsNullOrEmpty( name ) )
+                return name;
+            System.Text.StringBuilder sb = null;
+            for ( int i = 0; i < name.Length; i++ )
+            {
+                char c = name[i];
+                if ( c == '~' || c > 126 || ( c < 32 && c != '\n' && c != '\r' ) )
+                {
+                    if ( sb == null ) { sb = new( name.Length + 16 ); sb.Append( name, 0, i ); }
+                    if ( c == '~' )
+                        sb.Append( "~~" );
+                    else
+                        sb.Append( '~' ).Append( 'u' ).Append( ((int)c).ToString( "X4" ) );
+                }
+                else
+                {
+                    sb?.Append( c );
+                }
+            }
+            return sb?.ToString() ?? name;
+        }
+
+        public static string DecodeCondensedSaveName( string name )
         {
             if ( string.IsNullOrEmpty( name ) || name.IndexOf( '~' ) < 0 )
                 return name;

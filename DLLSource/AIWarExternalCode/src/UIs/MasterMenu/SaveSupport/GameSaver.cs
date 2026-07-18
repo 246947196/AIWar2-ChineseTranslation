@@ -25,7 +25,8 @@ namespace Arcen.AIW2.External
             }
 
             string campaignName = ArcenStrings.MakeValidFilename( World.Instance.CampaignName, false );
-            campaignName = World.Instance.CampaignName.ConvertToCondensedFormat();
+            campaignName = SaveGameData.EncodeForCondensedFormat( campaignName );
+            campaignName = campaignName.ConvertToCondensedFormat();
 
             if ( ArcenStrings.IsEmpty( campaignName ) )
             {
@@ -36,6 +37,7 @@ namespace Arcen.AIW2.External
             World.Instance.CampaignName = campaignName;
 
             SaveName = ArcenStrings.MakeValidFilename( SaveName, false );
+            SaveName = SaveGameData.EncodeForCondensedFormat( SaveName );
             SaveName = SaveName.ConvertToCondensedFormat();
 
             if ( Engine_Universal.RunStatus != RunStatus.GameStart )
