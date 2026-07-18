@@ -27,7 +27,8 @@ MOD_DIR = os.path.join(GAME_DIR, "AIWar2_ChineseTranslation")
 EXP_OVERRIDE_ROOT = os.path.join(MOD_DIR, "GameData", "Configuration", "Expansions")
 
 TRANSLATABLE_ATTRS = {"display_name", "description", "tooltip", "default_display_name",
-                      "plural_display_name", "short_display_name", "custom_NameForLobby"}
+                      "plural_display_name", "short_display_name", "custom_NameForLobby",
+                      "arbitrary_options", "default_option"}
 
 
 def is_translatable_attr(name):
