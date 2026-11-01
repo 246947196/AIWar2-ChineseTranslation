@@ -1096,3 +1096,35 @@ python tools\patch_external_dlls.py --refresh-base   # 重新取基线并重打
 
 `deploy.ps1` 会比对 `external_base.json` 里的基线哈希：与游戏当前 DLL 不一致时
 自动跳过外部 DLL 并提示重打，不会把旧补丁铺进新版本。
+
+## 事故记录：翻译把查找键翻掉了（2026-11-01 深夜）
+
+### 现象
+
+外部代码 DLL 打上补丁后进游戏，日志里刷了 **86 条** `Could not find '名称'`。
+我第一轮验收只看 `error|exception` 关键词，漏了它 —— 这条不带这些字样。
+
+### 根因
+
+字典里有一条 `"Name" -> "名称"`。但 `Name` 在 C# 里是**表列的查找键**（代码
+`TryGetColumn("Name")` 之类），不是显示文本。字面量被替换后查表必然失败。
+
+这是「按原文精确匹配」这套机制的固有风险：只有跑起来才知道哪些字符串是键。
+
+### 处理
+
+1. 新增 `tools/ilpatch/never_translate.txt`：列出**永不翻译**的字面量（当前只有
+   `Name`）。`harvest_cs_tm.py` 抽取时会跳过它们。
+2. 重新抽字典（5,704 → 5,703 条）、重打补丁、重部署。23:31 那次运行 46 行日志、
+   `Could not find '...'` 归零、0 条 error/exception。
+3. 新增 `tools/check_run.py`：按规则扫日志，`Could not find 'X'` 判为**致命**
+   （因为它几乎必然意味着译文吃掉了查找键）。以后每次进游戏验收都跑它。
+
+### 教训
+
+- **验收不能只 grep error/exception**。这个游戏的报错还有 `Could not find 'X'`、
+  `XmlException` 这类"功能性失败"，字面上不带 error。
+- 游戏**每次启动都会截断** `PlayerData/ArcenDebugLog.txt`，所以验证必须在退出后
+  立刻做；隔一次启动证据就没了（这次就差点没法复盘）。
+- 以后再遇到 `Could not find '中文'`，把那个中文对应的英文加进 `never_translate.txt`，
+  重跑 `harvest_cs_tm.py --write` + `patch_external_dlls.py` 即可。

@@ -71,11 +71,26 @@ def plausible(en, zh):
     return 0.15 <= r <= 1.4
 
 
+NEVER_FILE = os.path.join(PROJECT, 'tools', 'ilpatch', 'never_translate.txt')
+
+
+def load_never():
+    """被 C# 当作查找键用的字面量，翻译会让查表失败，必须保留英文。"""
+    words = set()
+    if os.path.exists(NEVER_FILE):
+        for line in open(NEVER_FILE, encoding='utf-8'):
+            line = line.strip()
+            if line and not line.startswith('#'):
+                words.add(line)
+    return words
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--write', action='store_true')
     args = ap.parse_args()
 
+    never = load_never()
     game_files = dict(walk_cs(SRC_GAME))
     pairs = collections.defaultdict(dict)
     stat = collections.Counter()
@@ -103,6 +118,9 @@ def main():
             prio = 0 if len(en_lits) == 1 else 1   # 单字面量改动块最可信
             for raw_en, raw_zh in zip(en_lits, zh_lits):
                 en, zh = unescape(raw_en), unescape(raw_zh)
+                if en in never:
+                    stat['skip_never'] += 1
+                    continue
                 if not plausible(en, zh):
                     continue
                 prev = pairs[asm].get(en)
@@ -121,6 +139,8 @@ def main():
     print(f'抽出译文对 {stat["pair"]} 条，唯一英文 {uniq}，同词多译 {len(multi)}')
     print(f'  跳过的改动块（字面量数不等，代码有变动）: {stat["skip_count_mismatch"]}')
     print(f'  跳过文件（游戏侧无同名）: {stat["no_counterpart"]}')
+    if stat['skip_never']:
+        print(f'  按 never_translate.txt 跳过: {stat["skip_never"]}')
     for asm, d in sorted(pairs.items()):
         hi = sum(1 for v in d.values() if v[1] == 0)
         print(f'  {asm}: {len(d)} 条（高置信 {hi}）')

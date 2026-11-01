@@ -76,11 +76,17 @@ def main():
                 continue
             shutil.copy2(game_dll, base)
             print(f'  取基线: {asm} <- {os.path.relpath(game_dll, GAME)}')
-        # 基线必须与游戏当前 DLL 一致，否则说明游戏更新过
-        if os.path.exists(game_dll) and sha(game_dll) != sha(base):
-            print(f'  !! {asm} 的基线与游戏当前 DLL 不一致（游戏更新过？）')
-            print(f'     先跑: python tools\\patch_external_dlls.py --refresh-base')
-            return 1
+        # 游戏当前 DLL 要么是未打补丁的原版（== 基线），要么是我们上一轮部署的产物
+        # （== 记录的 dll_sha256）。两者都不是才说明游戏更新过。
+        if os.path.exists(game_dll):
+            cur = sha(game_dll)
+            known = {sha(base)}
+            if asm in info and info[asm].get('dll_sha256'):
+                known.add(info[asm]['dll_sha256'])
+            if cur not in known:
+                print(f'  !! {asm} 的基线与游戏当前 DLL 不一致（游戏更新过？）')
+                print(f'     先跑: python tools\\patch_external_dlls.py --refresh-base')
+                return 1
 
         out = os.path.join(BIN_DIR, f'{asm}.dll')
         dct = os.path.join(DICT_DIR, f'{asm}.external.json')
