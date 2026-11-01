@@ -190,6 +190,13 @@ def main():
                 if en in never:
                     stat['skip_never'] += 1
                     continue
+                if re.match(r'^</?[A-Za-z][^>]*>$', en.strip()):
+                    # 富文本标签（</size>、<b>）绝不能被当文本配对，否则会出现
+                    # 「</size> -> 前」这种误译，把满屏文字尾巴都变成"前"
+                    stat['skip_markup'] += 1
+                    continue
+                    stat['skip_never'] += 1
+                    continue
                 if not plausible(en, zh):
                     continue
                 prev = pairs[asm].get(en)
@@ -210,6 +217,8 @@ def main():
     print(f'  跳过文件（游戏侧无同名）: {stat["no_counterpart"]}')
     if stat['skip_never']:
         print(f'  按 never_translate.txt 跳过: {stat["skip_never"]}')
+    if stat['skip_markup']:
+        print(f'  跳过富文本标签: {stat["skip_markup"]}')
     for asm, d in sorted(pairs.items()):
         hi = sum(1 for v in d.values() if v[1] == 0)
         print(f'  {asm}: {len(d)} 条（高置信 {hi}）')
