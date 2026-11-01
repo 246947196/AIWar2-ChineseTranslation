@@ -887,3 +887,53 @@ XML 解析器（含 ElementTree）都会把属性值里的换行正规化成空�
 | `XMLMods/Translate-XMLMods.ps1`、`-v2.ps1` | 一次性脚本、绝对路径写死，已被 `localize_xml.py` 取代 |
 | 5 个 `.pdb`、`WorldTMPFontPatch.dll.bak_234841`、`ArcenAIW2Core.dll.bak2`、`hack_start_patch.json`、`verify_dump.json` | 构建产物/临时备份 |
 | 125 个 `.save`/`.savemet` | 游戏自动生成的快速开局存档，与游戏目录内同名文件逐字节相同（md5 全等） |
+
+## 核心 DLL 重打补丁（2026-11-01 对 5.850 执行）
+
+### 流程（每次游戏更新后照做）
+
+```powershell
+# 1. 从原版拷一份再打，绝不能直接打 AIWar2_Data\Managed 里的原件
+copy "..\AIWar2_Data\Managed\ArcenAIW2Core.dll" "PatchedAssemblies\ArcenAIW2Core.dll"
+
+# 2. IL 字面量替换（原地写回，首次会生成 .bak）
+.\tools\ilpatch\bin\ilpatch.exe patch "PatchedAssemblies\ArcenAIW2Core.dll" "tools\ilpatch\ArcenAIW2Core.merged.json"
+
+# 3. 验证：pending/missing 必须都是 0
+python tools\ilpatch\verify_patch.py "PatchedAssemblies\ArcenAIW2Core.dll" "tools\ilpatch\ArcenAIW2Core.merged.json"
+```
+
+`ilpatch` 若报 `target locked; wrote side-by-side`，是 Windows 索引/杀软瞬时占用，
+把 `xxx.new.dll` 改名覆盖回 `xxx.dll` 即可（deploy.ps1 也会清理 `.new.dll`）。
+
+### 本次结果（5.850）
+
+| DLL | 应用条目 | pending | missing | ldstr 丢弃 |
+|-----|---------|---------|---------|-----------|
+| ArcenAIW2Core | 790 | 0 | 0 | 0 |
+| ArcenUniversal | 166 | 0 | 0 | 0 |
+| ArcenAIW2Visualization | 8 | 0 | 0 | 0 |
+
+清理了 3 条过期条目（游戏把 `Error: tried to read non-existent setting '` 改写成
+`Error: tried to ` + ` non-existent setting '` 两段拼接；`TypeWriter.TypeId` 是自映射占位）。
+
+### 坑：merge_all.py 会静默清空字典
+
+`merge_all.py` 用 `<DLL>.extract.json` 当骨架注入 part 分片译文。骨架一旦过期
+（不是从当前 DLL 抽的），注入就是 0 条，而脚本照样写盘 —— `merged.json` 变成
+2,469 条空值，**785 条中文全丢**。本次已复现并回滚。
+
+已加安全闸：分片有译文但注入 0 条时直接中止，并提示重新 `ilpatch extract` 生成骨架。
+正确顺序是：**先用当前 DLL 重抽骨架，再 merge**。
+
+```powershell
+.\tools\ilpatch\bin\ilpatch.exe extract "..\AIWar2_Data\Managed\ArcenAIW2Core.dll" "tools\ilpatch\ArcenAIW2Core.extract.json"
+python tools\ilpatch\merge_all.py ArcenAIW2Core
+```
+
+### DLL 侧剩余待译
+
+`translation_gaps_dll.tsv`（不入库）列出「可译但未译」的 ldstr：Core 1,726 /
+Universal 1,418 / Visualization 113，共 3,257 条。注意 `LooksTranslatable`
+口径很宽，里面大量是日志与内部标识符，真正玩家可见的需要按运行时采集来筛，
+不能直接当工作量。

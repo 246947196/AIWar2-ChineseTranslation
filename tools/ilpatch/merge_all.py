@@ -40,6 +40,17 @@ for key, val in translations.items():
     else:
         print("Warning: key not found in skeleton: " + repr(key[:60]))
 
+# 安全闸：分片里有译文却一条都对不上骨架，说明骨架过期了。
+# 此时若继续写盘，merged.json 会被清成一堆空值（翻译全丢），必须中止。
+if translations and injected == 0:
+    print()
+    print("*** ERROR: 分片里 %d 条译文，没有一条能对上 skeleton（注入 0 条）***" % len(translations))
+    print("*** 说明 %s.extract.json 已过期（不是从当前 DLL 抽取的）。***" % DLL)
+    print("*** 先重新抽取骨架再合并：***")
+    print("***   tools/ilpatch/bin/ilpatch.exe extract <当前DLL> tools/ilpatch/%s.extract.json ***" % DLL)
+    print("*** 已中止，merged.json 未被修改。***")
+    sys.exit(1)
+
 # Regression check
 OLD_MERGED = OUTPUT + ".bak"
 if os.path.exists(OLD_MERGED):

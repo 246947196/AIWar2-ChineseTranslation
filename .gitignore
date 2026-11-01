@@ -41,3 +41,9 @@ translation_gaps.tsv
 # 游戏自动生成的快速开局存档副本（与游戏目录内同名文件逐字节相同）
 *.save
 *.savemet
+
+# 旧版补丁 DLL 归档（可从 git 历史恢复）
+PatchedAssemblies/old_*/
+
+# DLL 待译清单（由 ilpatch extract + merged.json 差集生成）
+translation_gaps_dll.tsv
