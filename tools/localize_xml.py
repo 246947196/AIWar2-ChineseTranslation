@@ -59,6 +59,11 @@ SAFE_ATTRS = {
 RISKY_ATTRS = {'category', 'text', 'value', 'abbreviation', 'default_option',
                'arbitrary_options', 'name_for_city_sockets_short'}
 
+# 这些属性的值是**选项标识/枚举**，代码会拿它做比较（例如银河设置的选项值被当作
+# Devourer 的 allegiance），翻了就会抛 unknown allegiance。一律保留英文。
+NEVER_ATTRS = {'field_value', 'default_option', 'arbitrary_options',
+               'minor_faction_allegiance', 'allegiance'}
+
 _ENTITIES = {'&quot;': '"', '&apos;': "'", '&lt;': '<', '&gt;': '>', '&amp;': '&'}
 
 
@@ -418,6 +423,10 @@ def _collect_from_dir(root):
             return
         for p in walk_xml(base):
             rel = os.path.relpath(p, base)
+            # 跳过 7 月遗留的「嵌套镜像」GameData/Configuration/Expansions/<exp>/...
+            # 它是旧部署布局的残留，游戏会重复加载（日志里 Overwrote old entry 就是它）
+            if label == 'GameData' and rel.replace('\\', '/').startswith('Configuration/Expansions/'):
+                continue
             try:
                 text = open(p, encoding='utf-8', newline='').read()
             except OSError:
@@ -443,6 +452,9 @@ def _collect_from_zip(zpath):
                 continue
             parts = name.split('/')
             if parts[0] == 'GameData' and len(parts) > 2:
+                # 跳过旧布局的嵌套镜像：GameData/Configuration/Expansions/<exp>/...
+                if parts[1] == 'Configuration' and len(parts) > 3 and parts[2] == 'Expansions':
+                    continue
                 label, rel = 'GameData', '/'.join(parts[1:])
             elif parts[0] == 'XMLMods' and len(parts) > 2:
                 label, rel = 'XMLMods', '/'.join(parts[1:])
@@ -505,6 +517,12 @@ def cmd_build(args):
             hits = 0
             for at in iter_attrs(text):
                 attr = at.name
+                if attr in NEVER_ATTRS:
+                    stats['kept_en'] += 1
+                    continue
+                if attr in NEVER_ATTRS:
+                    stats['kept_en'] += 1
+                    continue
                 safe = attr in SAFE_ATTRS
                 if not safe and attr not in RISKY_ATTRS:
                     continue
