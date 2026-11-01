@@ -94,6 +94,24 @@ def xml_attribute_names():
     return names
 
 
+def command_key_literals():
+    """代码里赋给 RelatedString 的字面量。这些是**命令键**，翻译后
+    HandleCommand 会报 "Unknown RelatedString '中文'"。"""
+    keys = set()
+    rx = re.compile(r'RelatedString\s*=\s*"([^"]*)"')
+    for dp, _, fn in os.walk(SRC_GAME):
+        for f in fn:
+            if not f.endswith('.cs'):
+                continue
+            try:
+                text = open(os.path.join(dp, f), encoding='utf-8-sig', errors='ignore').read()
+            except OSError:
+                continue
+            for m in rx.finditer(text):
+                keys.add(m.group(1))
+    return keys
+
+
 def load_never():
     """被 C# 当作查找键用的字面量，翻译会让查表失败，必须保留英文。"""
     words = set()
@@ -110,7 +128,7 @@ def main():
     ap.add_argument('--write', action='store_true')
     args = ap.parse_args()
 
-    never = load_never() | xml_attribute_names()
+    never = load_never() | xml_attribute_names() | command_key_literals()
     game_files = dict(walk_cs(SRC_GAME))
     pairs = collections.defaultdict(dict)
     stat = collections.Counter()

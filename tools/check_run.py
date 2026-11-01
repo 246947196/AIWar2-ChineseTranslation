@@ -31,6 +31,9 @@ RULES = [
     (re.compile(r'ArgumentException: Mesh'), 'UI 顶点超限（长文本一次性渲染）', False),
     (re.compile(r'\bERROR\b'), '游戏自报错误', False),
     (re.compile(r'^System\.\w*Exception:'), '表/行解析异常（多半也是译文吃了枚举值）', True),
+    (re.compile(r"Unknown RelatedString '(.*)'"), '命令键被翻掉了', True),
+    (re.compile(r"unknown \w+ allegiance"), '阵营归属枚举被翻掉了', True),
+    (re.compile(r"Unknown \w+ '([^']*[\u4e00-\u9fff][^']*)'"), '某处按名查找拿到中文（键被翻）', True),
 ]
 
 # 已知无害：游戏自己的随机派系资格检查
