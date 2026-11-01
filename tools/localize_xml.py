@@ -62,6 +62,11 @@ RISKY_ATTRS = {'category', 'text', 'value', 'abbreviation', 'default_option',
 _ENTITIES = {'&quot;': '"', '&apos;': "'", '&lt;': '<', '&gt;': '>', '&amp;': '&'}
 
 
+def _normcrlf(s):
+    # 同一段文本在不同文件里可能 CRLF / LF 混用，归一再查表，否则同一句会分裂成两个键
+    return s.replace('\r\n', '\n').replace('\r', '\n')
+
+
 def unesc(s):
     return unescape(s)
 
@@ -325,6 +330,48 @@ def _uncell(s):
 
 # ---------------------------------------------------------------- build
 
+IGNORE_FILE = os.path.join(PROJECT, 'translation_ignore.txt')
+
+
+def load_ignore():
+    pats = []
+    if os.path.exists(IGNORE_FILE):
+        for line in open(IGNORE_FILE, encoding='utf-8'):
+            line = line.strip()
+            if not line or line.startswith('#'):
+                continue
+            try:
+                pats.append(re.compile(line))
+            except re.error:
+                pass
+    return pats
+
+
+def ignored(val, pats):
+    return any(p.search(val) for p in pats)
+
+
+IGNORE_FILE = os.path.join(PROJECT, 'translation_ignore.txt')
+
+
+def load_ignore():
+    pats = []
+    if os.path.exists(IGNORE_FILE):
+        for line in open(IGNORE_FILE, encoding='utf-8'):
+            line = line.strip()
+            if not line or line.startswith('#'):
+                continue
+            try:
+                pats.append(re.compile(line))
+            except re.error:
+                pass
+    return pats
+
+
+def ignored(val, pats):
+    return any(p.search(val) for p in pats)
+
+
 def load_tm():
     """en -> {ctx: {zh: count}}"""
     tm = {}
@@ -335,7 +382,7 @@ def load_tm():
             parts = line.rstrip('\n').split('\t')
             if len(parts) < 3:
                 continue
-            en, zh, ctx = _uncell(parts[0]), _uncell(parts[1]), parts[2]
+            en, zh, ctx = _normcrlf(_uncell(parts[0])), _uncell(parts[1]), parts[2]
             tm.setdefault(en, {}).setdefault(ctx, {}).setdefault(zh, 0)
             tm[en][ctx][zh] += 1
     return tm
@@ -352,36 +399,96 @@ def pick(entry, ctx):
     return tally.most_common(1)[0][0] if tally else None
 
 
-def cmd_build(args):
-    tm = load_tm()
-    root = game_root()
-    out_root = args.out or OUT_DIR
-    if os.path.isdir(out_root) and not args.keep:
-        shutil.rmtree(out_root)
-    stats = collections.Counter()
-    gaps = []
-    files_out = []
+def _collect_from_dir(root):
+    """从游戏目录读取 (label, rel, text)。"""
+    items = []
 
-    sources = []
-    cfg = os.path.join(root, 'GameData')
-    sources.append(('GameData', cfg))
-    exp_dir = os.path.join(root, 'Expansions')
-    if os.path.isdir(exp_dir):
-        for exp in sorted(os.listdir(exp_dir)):
-            sub = os.path.join(exp_dir, exp, 'GameData')
-            if os.path.isdir(sub):
-                sources.append((f'Expansions/{exp}/GameData', sub))
-    mods = os.path.join(root, 'XMLMods')
-    if os.path.isdir(mods):
-        sources.append(('XMLMods', mods))
-
-    for label, base in sources:
+    def add(label, base):
+        if not os.path.isdir(base):
+            return
         for p in walk_xml(base):
             rel = os.path.relpath(p, base)
             try:
                 text = open(p, encoding='utf-8', newline='').read()
             except OSError:
                 continue
+            items.append((label, rel, text))
+
+    add('GameData', os.path.join(root, 'GameData'))
+    exp_dir = os.path.join(root, 'Expansions')
+    if os.path.isdir(exp_dir):
+        for exp in sorted(os.listdir(exp_dir)):
+            add(f'Expansions/{exp}/GameData', os.path.join(exp_dir, exp, 'GameData'))
+    add('XMLMods', os.path.join(root, 'XMLMods'))
+    return items
+
+
+def _collect_from_zip(zpath):
+    """从备份 zip 读取 (label, rel, text)——部署之后游戏目录已是中文，必须用备份当源。"""
+    import zipfile
+    items = []
+    with zipfile.ZipFile(zpath) as z:
+        for name in z.namelist():
+            if not name.lower().endswith('.xml'):
+                continue
+            parts = name.split('/')
+            if parts[0] == 'GameData' and len(parts) > 2:
+                label, rel = 'GameData', '/'.join(parts[1:])
+            elif parts[0] == 'XMLMods' and len(parts) > 2:
+                label, rel = 'XMLMods', '/'.join(parts[1:])
+            elif parts[0] == 'Expansions' and len(parts) > 3 and parts[2] == 'GameData':
+                label, rel = f'Expansions/{parts[1]}/GameData', '/'.join(parts[3:])
+            else:
+                continue
+            try:
+                items.append((label, rel, z.read(name).decode('utf-8')))
+            except (UnicodeDecodeError, KeyError):
+                continue
+    return items
+
+
+def _looks_deployed(items, limit=60):
+    """抽样判断源目录是不是已经是中文（部署过），避免把中文当原文。"""
+    sampled = translated = 0
+    for _, _, text in items[:limit]:
+        for at in iter_attrs(text):
+            if at.name not in SAFE_ATTRS:
+                continue
+            val = unesc(at.raw)
+            if not (_prose(val) or CJK.search(val)):
+                continue
+            sampled += 1
+            if CJK.search(val):
+                translated += 1
+    return sampled > 0 and translated / sampled > 0.2, sampled, translated
+
+
+def cmd_build(args):
+    tm = load_tm()
+    root = game_root()
+    out_root = args.out or OUT_DIR
+
+    if getattr(args, 'from_zip', None):
+        items = _collect_from_zip(args.from_zip)
+        print(f'源: 备份 {os.path.basename(args.from_zip)}（{len(items)} 个 XML）')
+    else:
+        items = _collect_from_dir(root)
+        deployed, sampled, translated = _looks_deployed(items)
+        if deployed:
+            print('!! 游戏目录里的文本已经是中文（多半是上一轮部署的结果）。')
+            print(f'!! 抽样 {sampled} 条文本属性，其中 {translated} 条是中文。')
+            print('!! 直接 build 会把中文当原文，命中率极低。用备份当源：')
+            print('!!   python tools\\localize_xml.py build --from-zip _backup\\game_xxx.zip')
+            return 1
+
+    if os.path.isdir(out_root) and not args.keep:
+        shutil.rmtree(out_root)
+    ignore = load_ignore()
+    stats = collections.Counter()
+    gaps = []
+    files_out = []
+
+    for label, rel, text in items:
             pieces = []
             pos = 0
             hits = 0
@@ -390,10 +497,10 @@ def cmd_build(args):
                 safe = attr in SAFE_ATTRS
                 if not safe and attr not in RISKY_ATTRS:
                     continue
-                val = unesc(at.raw)
+                val = _normcrlf(unesc(at.raw))
                 entry = tm.get(val)
                 if not entry:
-                    if safe and _prose(val):
+                    if safe and _prose(val) and not ignored(val, ignore):
                         stats['gap'] += 1
                         gaps.append((f'{label}/{rel}', at.tag, attr, val))
                     continue
@@ -412,7 +519,7 @@ def cmd_build(args):
             if not hits:
                 continue
             pieces.append(text[pos:])
-            dst = os.path.join(out_root, label.replace('/', os.sep), rel)
+            dst = os.path.join(out_root, label.replace('/', os.sep), rel.replace('/', os.sep))
             os.makedirs(os.path.dirname(dst), exist_ok=True)
             with open(dst, 'w', encoding='utf-8', newline='') as f:
                 f.write(''.join(pieces))
@@ -490,6 +597,8 @@ def main():
     b = sub.add_parser('build')
     b.add_argument('--out', default=None)
     b.add_argument('--keep', action='store_true', help='保留上次输出（默认先清空）')
+    b.add_argument('--from-zip', dest='from_zip', default=None,
+                   help='用备份 zip 当源（部署过之后游戏目录已是中文，必须用这个）')
     sub.add_parser('stats')
     args = ap.parse_args()
     if args.cmd == 'extract':

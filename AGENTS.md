@@ -1019,3 +1019,35 @@ python tools\localize_xml.py build    # 先生成 XML
 注意：`Pause` 之类的暂停必须写成
 `try { if ([Environment]::UserInteractive -and $Host.Name -eq 'ConsoleHost') { Read-Host } } catch { }`
 —— 只判 `UserInteractive` 不够，管道/自动化场景下 `Read-Host` 仍会抛异常。
+
+
+## XML 补译（2026-11-01 第二轮）
+
+缺口从 714 行降到 56 行，新增约 380 条译文进 `zh_tm.tsv`：
+
+| 批次 | 内容 | 条数 |
+|------|------|------|
+| 1-2 | AI 嘲讽语音字幕（SFXItem，顾问播报时的字幕） | 221 |
+| 3 | 派系单位名、设置项、短 UI 文本 | 100 |
+| 4 | 设置/派系描述、DZ 经济与收割者长文 | 32 |
+
+### 两个必须记住的坑
+
+1) **部署过之后不能再直接 `build`**
+`build` 默认读游戏目录，而部署已经把中文铺进去了，于是"原文"变成中文，
+命中率骤降到个位数（实测只出 9 个文件）。现在 `build` 会抽样检测并直接中止，
+提示改用备份当源：
+`python tools\localize_xml.py build --from-zip _backup\game_xxx.zip`
+
+2) **同一段文本会因换行差异分裂成两个键**
+教程正文在不同副本里，`\n` 有时是真换行、有时是字面量两个字符（`\r\n` 同理），
+导致 TM 里同一个键存了两份、却都对不上当前源。已在 `load_tm` 与查表处加
+CRLF 归一；仍有 50 条教程因为「字面量 \n」与「真换行」并存而没匹配上，
+待后续统一处理。
+
+### 缺口忽略清单
+
+`translation_ignore.txt`（正则，一行一条）用来把开发者测试件排除在缺口之外：
+`Cheat-only` 测试装置、`Hit Test` 靶机、`Test Beam/Chain Lightning` 调试武器、
+`Ohmu Height/Ohmu Ltng` 光束可视化摆件、`[DEBUG]` 条目、以及 Kilrathi 等
+外星专有舰名（保留原文）。这批共 45 条，翻译它们没有意义。

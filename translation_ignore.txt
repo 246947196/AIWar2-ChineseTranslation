@@ -1,0 +1,33 @@
+# 缺口清单忽略规则（正则，一行一条）。匹配到的英文不会出现在 translation_gaps.tsv。
+# 用途：开发者测试单位、作弊调试件 —— 这些只出现在作弊菜单/调试工具里，不值得翻译。
+^\s*Cheat-only
+^\s*Hit Test
+Test Beam
+Test Chain Lightning
+Test Plasma
+Test Shells
+Test Shot
+Test Tractor
+^Ohmu Height
+^Ohmu Ltng
+^Ohmu Lightning
+^Ohmu .*Bright
+^Ohmu Red-Black
+^Ohmu Beam Swarm
+^Invincible Ohmu
+^Fighter (No Shields|Shielded)
+^Long (No Shields|Shielded)
+^Round (No Shields|Shielded)
+^Tilted (No Shields|Shielded)
+^Stack Shielded
+\bGU$
+Chat text test
+^Shooter Bypass$
+Chat text test
+^Shooter Bypass$
+Kilrathi:</color> (Goran|KorLarh|Avicenna|Dralthi|Shoklar|Grikath|Jrathek)$
+^Israfel - Ra Pattern$
+^\[DEBUG\]:
+Kilrathi:</color> (Goran|KorLarh|Avicenna|Dralthi|Shoklar|Grikath|Jrathek)$
+^Israfel - Ra Pattern$
+^\[DEBUG\]:
