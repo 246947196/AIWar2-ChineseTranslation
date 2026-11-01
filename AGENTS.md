@@ -1055,3 +1055,44 @@ CRLF 归一。
 `Cheat-only` 测试装置、`Hit Test` 靶机、`Test Beam/Chain Lightning` 调试武器、
 `Ohmu Height/Ohmu Ltng` 光束可视化摆件、`[DEBUG]` 条目、以及 Kilrathi 等
 外星专有舰名（保留原文）。这批共 45 条，翻译它们没有意义。
+
+## 外部代码 DLL：不再源码分叉，改 IL 补丁（2026-11-01）
+
+### 问题
+
+`DLLBin/AIWarExternal*.dll` 原本是 `DLLSource/`（7 月源码分叉）编译出来的。装到
+5.850 上等于把游戏的代码逻辑退回 7 月 —— 和整份 XML 分叉是同一个病。
+
+### 现在
+
+只把**字符串**搬到当前版本的 DLL 上（IL 字面量替换，和核心 DLL 同一套工具）：
+
+| 文件 | 作用 |
+|------|------|
+| `tools/harvest_cs_tm.py` | 把 DLLSource 的中文按**行 diff** 对齐到游戏当前源码，抽出 (英文, 中文) 对 |
+| `tools/ilpatch/<asm>.external.json` | 抽出的字典（每程序集一份） |
+| `tools/patch_external_dlls.py` | 从基线 DLL 复制 → ilpatch → 写回 `DLLBin/`，并记录基线哈希 |
+| `tools/ilpatch/external_base.json` | 基线哈希，供 deploy.ps1 判断补丁是否还匹配当前游戏 |
+| `DLLBin/_base/` | 未打补丁的当前版本 DLL（不入库，可重新生成） |
+
+抽取口径：只取「游戏侧不含中文、汉化侧含中文、长度比例合理」的对；同一英文多译时
+优先「单字面量改动块」（置信度最高），共 5,958 条。
+
+### 结果（5.850）
+
+| DLL | 替换 ldstr | 含中文 ldstr |
+|-----|-----------|-------------|
+| AIWarExternalCode | 9,898 | 5,360 |
+| AIWarExternalDeepProcessingCode | 304 | 132 |
+| AIWarExternalVisualizationCode | 116 | 98 |
+
+三份 `dropped=0`（dnlib 未丢条目），实机启动 45 秒无异常。
+
+### 游戏更新后
+
+```
+python tools\patch_external_dlls.py --refresh-base   # 重新取基线并重打
+```
+
+`deploy.ps1` 会比对 `external_base.json` 里的基线哈希：与游戏当前 DLL 不一致时
+自动跳过外部 DLL 并提示重打，不会把旧补丁铺进新版本。

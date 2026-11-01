@@ -80,6 +80,14 @@ foreach ($name in @('ArcenUIAssetRedirect.dll', 'WorldTMPFontPatch.dll')) {
         $sources += @{ Path = $src; Entry = "_payload/BepInEx/plugins/ChineseTranslation/$name" }
     }
 }
+# 4b) 外部代码 DLL 的译文补丁产物（覆盖游戏的 GameData\ModdableLogicDLLs）
+foreach ($name in @('AIWarExternalCode.dll', 'AIWarExternalDeepProcessingCode.dll',
+                    'AIWarExternalVisualizationCode.dll')) {
+    $src = Join-Path $projectDir "DLLBin\$name"
+    if (Test-Path $src) {
+        $sources += @{ Path = $src; Entry = "_payload/GameData/ModdableLogicDLLs/$name" }
+    }
+}
 # 5) arcenui UI 包（212MB，压缩后约 35MB）
 $bundleSrc = Join-Path $gameDir "BepInEx\plugins\ChineseTranslation\AssetBundles_Win\arcenui"
 if ((-not $NoBundle) -and (Test-Path $bundleSrc)) {

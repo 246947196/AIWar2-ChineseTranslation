@@ -464,18 +464,35 @@ Write-Host ""
 Write-Host "Deploying translated DLLs..." -ForegroundColor Yellow
 $dllBinDir = Join-Path $translationDir "DLLBin"
 if (Test-Path $dllBinDir) {
-    # AIWarExternal* 是「7 月源码分叉」编译出来的，装上去等于把游戏的代码逻辑
-    # 退回 7 月（和整份 XML 分叉同理）。除非显式 -IncludeExternalDlls，默认跳过；
-    # 正确做法是把译文抽成 IL 补丁打到当前版本的 DLL 上（见 AGENTS）。
+    # 外部代码 DLL（AIWarExternal*）现在是「当前版本 DLL + IL 译文补丁」，
+    # 不再是 7 月的源码分叉。是否安全由 tools\ilpatch\external_base.json 里记录的
+    # 基线哈希判断：基线与游戏当前 DLL 一致才允许覆盖；游戏更新过就跳过并提示重打。
+    $baseInfoPath = Join-Path $translationDir "tools\ilpatch\external_base.json"
+    $baseInfo = @{}
+    if (Test-Path $baseInfoPath) {
+        (Get-Content $baseInfoPath -Raw | ConvertFrom-Json).PSObject.Properties |
+            ForEach-Object { $baseInfo[$_.Name] = $_.Value }
+    }
     $skippedForked = @()
     $dllFiles = Get-ChildItem $dllBinDir -Filter "*.dll" | Where-Object {
+        if ($_.Name -notlike 'AIWarExternal*') { return $true }
         if ($IncludeExternalDlls) { return $true }
-        if ($_.Name -like 'AIWarExternal*') { $skippedForked += $_.Name; return $false }
+        $asm = [System.IO.Path]::GetFileNameWithoutExtension($_.Name)
+        $rec = $baseInfo[$asm]
+        if (-not $rec) { $skippedForked += "$($_.Name)（无基线记录）"; return $false }
+        $curGameDll = Join-Path $gameDir "GameData\ModdableLogicDLLs\$($_.Name)"
+        if (-not (Test-Path $curGameDll)) { $skippedForked += "$($_.Name)（游戏内无此 DLL）"; return $false }
+        $curHash = (Get-FileHash $curGameDll -Algorithm SHA256).Hash.ToLower()
+        if ($curHash -ne $rec.base_sha256) {
+            $skippedForked += "$($_.Name)（游戏已更新，基线不符）"
+            return $false
+        }
         return $true
     }
     if ($skippedForked.Count -gt 0) {
-        Write-Host "  跳过 7 月源码分叉的外部代码 DLL（加 -IncludeExternalDlls 强制部署）:" -ForegroundColor Yellow
+        Write-Host "  跳过外部代码 DLL：" -ForegroundColor Yellow
         $skippedForked | ForEach-Object { Write-Host "    $_" -ForegroundColor DarkYellow }
+        Write-Host "    游戏更新后请重跑: python tools\patch_external_dlls.py --refresh-base" -ForegroundColor DarkYellow
     }
     $dllDest = Join-Path $gameDir "GameData\ModdableLogicDLLs"
     New-Item -ItemType Directory -Path $dllDest -Force | Out-Null
