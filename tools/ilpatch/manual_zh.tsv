@@ -16,3 +16,16 @@ Helps you plan your strategy; this lists your active objectives. Left-click on a
 Story entries for your current campaign, newest first; left-click one to read it in full, or right-click to dismiss it as read without opening it.	当前战役的剧情条目，最新的在最前；左键点击可完整阅读，右键点击可标记为已读而不打开。
 Gameplay and strategy tips you've unlocked, newest first; left-click one to read it in full, or right-click to dismiss it as read without opening it.	你已解锁的玩法与策略提示，最新的在最前；左键点击可完整阅读，右键点击可标记为已读而不打开。
 Outguard are anti-AI mercenary groups you can call in once you've hacked the beacon they answer to; they don't cost energy and summon faster than regular ships, but act on their own once deployed.	外卫是反 AI 的雇佣兵团；入侵它们所回应的信标后即可呼叫。它们不消耗能量，召唤速度也快于常规舰船，但部署后会自行行动。
+No structures currently costing upkeep.	目前没有任何建筑产生维护费用。
+Your King unit.  If this is destroyed, you lose.	你的「王」单位。它一旦被摧毁，你就输了。
+Opens the Flagship Upgrades panel: every flagship with a mark-level upgrade (paid for with Science) or a form transform (usually paid for with Hacking) currently available, with a buy button right on each row.	打开旗舰升级面板：列出当前可用的、带等级升级（用科技点支付）或形态转换（通常用入侵点数支付）的每艘旗舰，每行都有购买按钮。
+<b>Upkeep Costs</b>	<b>维护费用</b>
+<b>Top Metal Recipients</b>	<b>金属接收最多</b>
+<b>Metal Flows</b>	<b>金属流向</b>
+<color=#6bffec>Metal Flows: 	<color=#6bffec>金属流向：
+<b>Metal Income by Planet</b>	<b>各星球金属收入</b>
+<b>Metal Spending Across All Planets</b>	<b>全星球金属支出</b>
+<b>Flagship Upgrades</b>	<b>旗舰升级</b>
+Flagship Upgrades	旗舰升级
+Local Fleets (	本地舰队 (
+Watched Fleets (	监视中的舰队 (
