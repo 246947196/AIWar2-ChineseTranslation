@@ -355,6 +355,34 @@ def load_ignore():
 KEYSTR_FILE = os.path.join(PROJECT, 'tools', 'key_strings.txt')
 
 
+# 当前版本解析器不认、但 7 月分叉里塞进去的属性：生成时直接删掉，
+# 否则游戏会弹 "Unrequested attribute 'Description'"。
+DEPRECATED_ATTRS = {'Description'}
+
+
+def sanitize(rel, text):
+    rel_l = rel.replace('\\', '/')
+    if 'DarkZenithResourceConversion' not in rel_l:
+        return text
+    for a in DEPRECATED_ATTRS:
+        text = re.sub(r'\s+' + a + r'="[^"]*"', '', text)
+    return text
+
+
+# 当前版本解析器不认、但 7 月分叉里塞进去的属性：生成时直接删掉，
+# 否则游戏会弹 "Unrequested attribute 'Description'"。
+DEPRECATED_ATTRS = {'Description'}
+
+
+def sanitize(rel, text):
+    rel_l = rel.replace('\\', '/')
+    if 'DarkZenithResourceConversion' not in rel_l:
+        return text
+    for a in DEPRECATED_ATTRS:
+        text = re.sub(r'\s+' + a + r'="[^"]*"', '', text)
+    return text
+
+
 def load_keystrings():
     """C# 里参与 ==/!=/Equals/case 比较的字面量。
 
@@ -431,7 +459,7 @@ def _collect_from_dir(root):
                 text = open(p, encoding='utf-8', newline='').read()
             except OSError:
                 continue
-            items.append((label, rel, text))
+            items.append((label, rel, sanitize(rel, text)))
 
     add('GameData', os.path.join(root, 'GameData'))
     exp_dir = os.path.join(root, 'Expansions')
@@ -512,6 +540,7 @@ def cmd_build(args):
     files_out = []
 
     for label, rel, text in items:
+            text = sanitize(rel, text)
             pieces = []
             pos = 0
             hits = 0
