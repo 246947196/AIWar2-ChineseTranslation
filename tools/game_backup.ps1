@@ -68,8 +68,21 @@ if ($Restore) {
         Write-Host "ERROR: 游戏正在运行，先关掉再回滚" -ForegroundColor Red; exit 1
     }
     Write-Host "回滚 $Restore -> $gameDir" -ForegroundColor Yellow
-    [System.IO.Compression.ZipFile]::ExtractToDirectory((Resolve-Path $Restore).Path, $gameDir, $true)
-    Write-Host "完成。" -ForegroundColor Green
+    # 逐个解压，跳过清单文件（_backup_manifest.json 只给程序看，不该落进游戏目录）
+    $zip = [System.IO.Compression.ZipFile]::OpenRead((Resolve-Path $Restore).Path)
+    $restored = 0
+    try {
+        foreach ($e in $zip.Entries) {
+            if ($e.FullName -eq '_backup_manifest.json') { continue }
+            if ($e.FullName.EndsWith('/')) { continue }
+            $target = Join-Path $gameDir ($e.FullName -replace '/', '\')
+            $dir = Split-Path $target -Parent
+            if (-not (Test-Path $dir)) { New-Item -ItemType Directory -Path $dir -Force | Out-Null }
+            [void][System.IO.Compression.ZipFileExtensions]::ExtractToFile($e, $target, $true)
+            $restored++
+        }
+    } finally { $zip.Dispose() }
+    Write-Host "完成，还原 $restored 个文件。" -ForegroundColor Green
     exit 0
 }
 
