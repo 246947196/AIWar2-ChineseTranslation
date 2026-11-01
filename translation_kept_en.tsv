@@ -1,0 +1,183 @@
+# 故意保留英文的 XML 值：这些是选项标识/枚举，代码会拿它做字符串比较
+# 属性	值	出现文件
+allegiance	AI	AIScourgeDifficulty.xml
+allegiance	MinorFaction	MinorFactionScourgeDifficulty.xml
+allegiance	Player	PlayerScourgeDifficulty.xml
+arbitrary_options	0,1,2,3,4,5,6,7,8,9,10	CML_ShieldSettings.xml
+arbitrary_options	0,2,3,4,5	CLAIM_SpecialFaction.xml
+arbitrary_options	0.1x,0.25x,0.5x,0.75x,1x,1.5x,2x,2.5x,3x,3.5x,4x,5x,6x	CMP_GalaxySettings.xml
+arbitrary_options	0.1x,0.2x,0.3x,0.4x,0.5x,0.6x,0.7x,0.8x,0.9x,1x,1.1x,1.2x,1.3x	CMP_GalaxySettings.xml
+arbitrary_options	0.5x,0.75x,1x,1.5x,2x,2.5x,3x,3.5x,4x,5x,6x	CMP_GalaxySettings.xml
+arbitrary_options	0x,0.25x,0.5x,1x	Unused_GalaxySettings.xml
+arbitrary_options	0x,0.5x,0.75x,1x,1.25x,1.5x,1.75x,2x,2.5x,3x	CMP_GalaxySettings.xml
+arbitrary_options	0x,1x,2x,3x	OP_GalaxySettings.xml
+arbitrary_options	1,2,3,4,5,6,7,8,9	CML_ShieldSettings.xml
+arbitrary_options	1x,1.1x,1.25x,1.35x,1.5x,1.75x,2x,2.5x,3x,3.5x,4x,4.5x,5x,5.5x,6x	CMP_GalaxySettings.xml
+arbitrary_options	1x,1.1x,1.2x,1.3x,1.4x,1.5x,1.6x,1.7,1.8,1.9,2.0	GalaxySettings.xml
+arbitrary_options	5,10,20,30	CLAIM_SpecialFaction.xml
+arbitrary_options	Allied To AI	DS_SpecialFaction.xml
+arbitrary_options	Allied To AI,Friendly To Players,Minor Faction Team Red,Minor Faction Team Blue,Minor Faction Team Green	VanillaEntries.xml
+arbitrary_options	Allied To AI,Friendly To Players,Minor Faction Team Red,Minor Faction Team Blue,Minor Faction Team Green,Civil War	DS_SpecialFaction.xml
+arbitrary_options	Ascendancy	Xu_SpecialFaction.xml
+arbitrary_options	Balanced,Friendly,Hostile	Poi_SpecialFaction.xml
+arbitrary_options	Balanced,Hunter,Warden,Berserk,Coward	VanillaEntries.xml
+arbitrary_options	Chromatic	VanillaEntries.xml
+arbitrary_options	Chrysalis No Loop,Chrysalis Loop,Respawn As Itself,Respawn As Random Devourer Of Tier	KDL_VanillaEntries.xml
+arbitrary_options	Civil War	DS_SpecialFaction.xml
+arbitrary_options	Dark Alliance	VanillaEntries.xml
+arbitrary_options	Dark Alliance,Allied To AI,Hostile To All,Minor Faction Team Red,Minor Faction Team Blue,Minor Faction Team Green	DS_SpecialFaction.xml
+arbitrary_options	Dark Alliance,Hostile To All	VanillaEntries.xml
+arbitrary_options	Dark Alliance,Hostile To All,Minor Faction Team Red,Minor Faction Team Blue,Minor Faction Team Green	ZO_SpecialFactions.xml
+arbitrary_options	Dark Alliance,Minor Faction Team Red,Minor Faction Team Blue,Minor Faction Team Green	VanillaEntries.xml
+arbitrary_options	Default,Invasion	KDL_VanillaEntries.xml
+arbitrary_options	Default,Lone Telium,Clustered Telia	KDL_VanillaEntries.xml
+arbitrary_options	Devourer (T1),Destroyer Devourer (T2),Tsunami Devourer (T2),Random (T2),Mortar Devourer (T3),Tank Devourer (T3),Swarm Devourer (T3),Gravity Devourer (T3),Random (T3),Crystal Devourer (T4),Vengeful Devourer (T4),Hydra Devourer (T4),Regeneration Devourer (T4),Hurricane Devourer (T4),Phalanx Devourer (T4),Warp Devourer (T4),Singularity Devourer (T4),Random (T4),Any	KDL_VanillaEntries.xml
+arbitrary_options	Disabled,Defense Only,Full Assistance	DS_GalaxySettings.xml
+arbitrary_options	Disabled,Full Assistance	NA_GalaxySettings.xml
+arbitrary_options	Disabled,Open Beacons	CMP_GalaxySettings.xml
+arbitrary_options	Disabled,Random	VanillaEntries.xml
+arbitrary_options	Disabled,Random,Bravery,Patience,Kindness,Perseverance,Justice,Integrity	NA_SpecialFactions.xml
+arbitrary_options	Disabled,Slower,Normal,Faster,Very Fast	AIAndSubfactions.xml
+arbitrary_options	Early Game,Mid Game,Late Game,Immediate	ZO_SpecialFactions.xml
+arbitrary_options	Early Game,Mid Game,Late Game,Immediate,Only From Beacon	VanillaEntries.xml
+arbitrary_options	Easier,Moderate,Hard,Brutal,Any	Badger_RandomSpecialFactions.xml
+arbitrary_options	Enabled,Disabled	AIAndSubfactions.xml
+arbitrary_options	Everywhere,Common,Uncommon,Rare	Poi_SpecialFaction.xml
+arbitrary_options	Exogalactic Wormhole,Send As Waves	GalaxySettings.xml
+arbitrary_options	Friendly To Players	DS_SpecialFaction.xml
+arbitrary_options	Friendly To Players,Hostile To All,Minor Faction Team Red,Minor Faction Team Blue,Minor Faction Team Green	VanillaEntries.xml
+arbitrary_options	Friendly To Players,Hostile to Player,Minor Faction Allied,Allied To AI,Minor Faction Team Red,Minor Faction Team Blue,Minor Faction Team Green,Random	Badger_RandomSpecialFactions.xml
+arbitrary_options	Friendly To Players,Hostile to Player,Minor Faction Allied,Random	Badger_RandomSpecialFactions.xml
+arbitrary_options	Friendly To Players,Minor Faction Team Red,Minor Faction Team Blue,Minor Faction Team Green	SK_CivilianIndustry.xml
+arbitrary_options	Friendly To Players,Minor Faction Team Red,Minor Faction Team Blue,Minor Faction Team Green,Allied To AI,Civil War	DS_SpecialFaction.xml
+arbitrary_options	Gray	VanillaEntries.xml
+arbitrary_options	Gray,Chromatic	VanillaEntries.xml
+arbitrary_options	Hostile To All	Ds_SpecialFaction.xml
+arbitrary_options	Hostile To All,Friendly To Players,Hostile To Players Only,Minor Faction Team Red,Minor Faction Team Blue,Minor Faction Team Green	KDL_VanillaEntries.xml
+arbitrary_options	Hostile To All,Friendly To Players,Hostile To Players Only,Minor Faction Team Red,Minor Faction Team Blue,Minor Faction Team Green,Dark Alliance	KDL_VanillaEntries.xml
+arbitrary_options	Hostile To All,Hostile To Players Only,Minor Faction Team Red,Minor Faction Team Blue,Minor Faction Team Green	KDL_VanillaEntries.xml
+arbitrary_options	Immediate,Early Game,Mid Game,Late Game	KDL_VanillaEntries.xml
+arbitrary_options	Matches Strongest AI,1,2,3,4,5,6,7,8,9,10	NA_HumanPlayerTypeAdditions.xml
+arbitrary_options	Medusa,Asclepius,Chameleon,Random	ZO_HumanPlayerTypeAdditions.xml
+arbitrary_options	Minor Faction Team Blue	VanillaEntries.xml
+arbitrary_options	Minor Faction Team Green	VanillaEntries.xml
+arbitrary_options	Minor Faction Team Red	VanillaEntries.xml
+arbitrary_options	Never,~1 Hour,~30 Minutes	Nanocaust_Factions.xml
+arbitrary_options	None,Short,Medium,Long	CMP_GalaxySettings.xml
+arbitrary_options	None,Totally Random,Easy,Medium,Hard,Brutal,Three Hard Factions	CMP_GalaxySettings.xml
+arbitrary_options	Planet Linking,Exogalactic Wormhole,Send As Waves	CMP_GalaxySettings.xml
+arbitrary_options	Random,Burlust,Evuck,Neinzul,Peltian,Thoraxian	ZO_HumanPlayerTypeAdditions.xml
+arbitrary_options	Random,Burlust,Evuck,Neinzul,Peltian,Thoraxian,Zenith	VanillaEntries.xml
+arbitrary_options	Random,Centralized,Somewhat Centralized,Somewhat On Edge,Farthest Edge	Gen_StartingPlanet.xml
+arbitrary_options	Random,Farthest Deadend,Prefer Deadends,Fewer Links,Average Links,More Links,Always Most Links	Gen_StartingPlanet.xml
+arbitrary_options	Slow,Medium,Fast	VanillaEntries.xml
+arbitrary_options	Small Cluster,Large Cluster,Randomly Sized Cluster,Random	AIAndSubfactions.xml
+arbitrary_options	Soft Decline,Linear Decline,No Decline,Individual Harvest	NRSL_GalaxySettings.xml
+arbitrary_options	Svikari,Full Invasion	ZO_HumanPlayerTypeAdditions.xml
+arbitrary_options	Tactician,Brute Force	KDL_VanillaEntries.xml
+arbitrary_options	Terran,Kilrathi,Random	DS_SpecialFaction.xml
+arbitrary_options	Totally Random,Hostile,Player Friendly,Balanced	CMP_GalaxySettings.xml
+arbitrary_options	Very Small,Small,Normal,Large,Huge	AIAndSubfactions.xml
+arbitrary_options	Zenith	ZO_ExistingFactionAdditions.xml
+arbitrary_options	Zenith,Neinzul	DS_SpecialFaction.xml
+arbitrary_options	Zenith,Neinzul,Templar,Spire,Random	DS_SpecialFaction.xml
+default_option	0	CML_ShieldSettings.xml
+default_option	0.25x	CMP_GalaxySettings.xml
+default_option	0.8x	CMP_GalaxySettings.xml
+default_option	0x	GalaxySettings.xml
+default_option	1.3x	GalaxySettings.xml
+default_option	1.5x	CMP_GalaxySettings.xml
+default_option	1x	CMP_GalaxySettings.xml
+default_option	20	CLAIM_SpecialFaction.xml
+default_option	2x	CMP_GalaxySettings.xml
+default_option	3	CLAIM_SpecialFaction.xml
+default_option	4	CML_ShieldSettings.xml
+default_option	4x	Unused_GalaxySettings.xml
+default_option	7	CML_ShieldSettings.xml
+default_option	AIWC_Green	AIAndSubfactions.xml
+default_option	AIWC_Red	AIAndSubfactions.xml
+default_option	AIWC_RoyalBlue	AIAndSubfactions.xml
+default_option	Allied To AI	DS_SpecialFaction.xml
+default_option	Ascendancy	Xu_SpecialFaction.xml
+default_option	Balanced	Poi_SpecialFaction.xml
+default_option	BaseOriented	AIAndSubfactions.xml
+default_option	Chromatic	VanillaEntries.xml
+default_option	Chrysalis No Loop	KDL_VanillaEntries.xml
+default_option	Civil War	DS_SpecialFaction.xml
+default_option	ClassicStartingFleet	KDL_VanillaEntries.xml
+default_option	Common	Poi_SpecialFaction.xml
+default_option	Compact	CMP_GalaxySettings.xml
+default_option	Cramped	ZO_GalaxySettings.xml
+default_option	Crescendo	AiLtn_SpecialFaction.xml
+default_option	Dark Alliance	DS_SpecialFaction.xml
+default_option	Default	KDL_VanillaEntries.xml
+default_option	Devourer (T1)	KDL_VanillaEntries.xml
+default_option	Difficulty_7	AIAndSubfactions.xml
+default_option	Disabled	CMP_GalaxySettings.xml
+default_option	Enabled	AIAndSubfactions.xml
+default_option	Exogalactic Wormhole	GalaxySettings.xml
+default_option	Friendly To Players	DS_SpecialFaction.xml
+default_option	Full Invasion	ZO_HumanPlayerTypeAdditions.xml
+default_option	FullEnsemble	AIAndSubfactions.xml
+default_option	Gray	VanillaEntries.xml
+default_option	Hostile To All	KDL_VanillaEntries.xml
+default_option	HumanEmpire	KDL_VanillaEntries.xml
+default_option	Immediate	KDL_VanillaEntries.xml
+default_option	Late Game	VanillaEntries.xml
+default_option	Matches Strongest AI	NA_HumanPlayerTypeAdditions.xml
+default_option	Medium	CMP_GalaxySettings.xml
+default_option	Mid Game	Nanocaust_Factions.xml
+default_option	Minor Faction Allied	Badger_RandomSpecialFactions.xml
+default_option	Minor Faction Team Blue	VanillaEntries.xml
+default_option	Minor Faction Team Green	VanillaEntries.xml
+default_option	Minor Faction Team Red	VanillaEntries.xml
+default_option	Moderate	Badger_RandomSpecialFactions.xml
+default_option	Modest	CMP_GalaxySettings.xml
+default_option	Never	Nanocaust_Factions.xml
+default_option	No Decline	NRSL_GalaxySettings.xml
+default_option	None	CMP_GalaxySettings.xml
+default_option	Normal	AIAndSubfactions.xml
+default_option	Open Beacons	CMP_GalaxySettings.xml
+default_option	Planet Linking	CMP_GalaxySettings.xml
+default_option	PureRandom	Badger_RandomSpecialFactions.xml
+default_option	Random	CMP_GalaxySettings.xml
+default_option	RandomArk	DS_SpecialFaction.xml
+default_option	RandomBattlestation	KDL_VanillaEntries.xml
+default_option	RandomCombatFleet	Factions.xml
+default_option	RandomEasier	AIAndSubfactions.xml
+default_option	RandomShipLine	DS_SpecialFaction.xml
+default_option	RandomSupportFleet	Factions.xml
+default_option	ReasonableRandom	CMP_GalaxySettings.xml
+default_option	Small Cluster	AIAndSubfactions.xml
+default_option	Soft Decline	NRSL_GalaxySettings.xml
+default_option	Standard	CMP_GalaxySettings.xml
+default_option	StartingCombatEngineerAndFactoryCombo	KDL_VanillaEntries.xml
+default_option	Tactician	KDL_VanillaEntries.xml
+default_option	Totally Random	CMP_GalaxySettings.xml
+default_option	TrueClassic	Unused_GalaxySettings.xml
+default_option	UnlockMorgue	NA_HumanPlayerTypeAdditions.xml
+default_option	Zenith	DS_SpecialFaction.xml
+default_option	c009E60	AIAndSubfactions.xml
+default_option	cF4C431	AIAndSubfactions.xml
+default_option	cFF3365	AIAndSubfactions.xml
+field_value	1	CMMP_BeaconFactionOptions.xml
+field_value	10	CMMP_BeaconFactionOptions.xml
+field_value	2	CMMP_BeaconFactionOptions.xml
+field_value	3	CMMP_BeaconFactionOptions.xml
+field_value	4	CMMP_BeaconFactionOptions.xml
+field_value	5	CMMP_BeaconFactionOptions.xml
+field_value	6	CMMP_BeaconFactionOptions.xml
+field_value	7	CMMP_BeaconFactionOptions.xml
+field_value	8	CMMP_BeaconFactionOptions.xml
+field_value	9	CMMP_BeaconFactionOptions.xml
+field_value	Allied To AI	BeaconFactionOptions.xml
+field_value	Dark Alliance	BeaconFactionOptions.xml
+field_value	Friendly To Players	CMMP_BeaconFactionOptions.xml
+field_value	Hostile To All	CMMP_BeaconFactionOptions.xml
+field_value	Hostile To Players Only	CMMP_BeaconFactionOptions.xml
+field_value	Immediate	CMMP_BeaconFactionOptions.xml
+field_value	true	CMMP_BeaconFactionOptions.xml
+minor_faction_allegiance	Allied To AI	Achievements.xml
+minor_faction_allegiance	Dark Alliance	Achievements.xml
+minor_faction_allegiance	Friendly To Players	KDL_Achievements.xml
+minor_faction_allegiance	Hostile To All	KDL_Achievements.xml
