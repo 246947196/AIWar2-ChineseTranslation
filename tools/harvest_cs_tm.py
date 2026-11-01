@@ -94,6 +94,37 @@ def xml_attribute_names():
     return names
 
 
+def setting_option_values():
+    """XML 里所有「选项值」属性能取到的值（default_option / field_value /
+    arbitrary_options / allegiance 等）。
+
+    这些值是设置项的实际取值，代码会拿它做比较（例如
+    GetStringBySetting("ExtraFactionRandomness") 的返回值）。与它们同名的字面量
+    一旦翻译，就会报 "Could not parse ..." 或 "unknown ..."。"""
+    import glob, zipfile
+    vals = set()
+    cands = sorted(glob.glob(os.path.join(PROJECT, '_backup', '00_ORIGINAL*.zip')))
+    if not cands:
+        return vals
+    attrs = ('default_option', 'field_value', 'arbitrary_options',
+             'allegiance', 'minor_faction_allegiance')
+    try:
+        z = zipfile.ZipFile(cands[0])
+        for n in z.namelist():
+            if not n.endswith('.xml'):
+                continue
+            t = z.read(n).decode('utf-8', errors='ignore')
+            for a in attrs:
+                for m in re.finditer(a + r'="([^"]*)"', t):
+                    for piece in m.group(1).split(','):
+                        piece = piece.strip()
+                        if piece:
+                            vals.add(piece)
+    except Exception:
+        pass
+    return vals
+
+
 def command_key_literals():
     """代码里赋给 RelatedString 的字面量。这些是**命令键**，翻译后
     HandleCommand 会报 "Unknown RelatedString '中文'"。"""
@@ -128,7 +159,7 @@ def main():
     ap.add_argument('--write', action='store_true')
     args = ap.parse_args()
 
-    never = load_never() | xml_attribute_names() | command_key_literals()
+    never = load_never() | xml_attribute_names() | command_key_literals() | setting_option_values()
     game_files = dict(walk_cs(SRC_GAME))
     pairs = collections.defaultdict(dict)
     stat = collections.Counter()
