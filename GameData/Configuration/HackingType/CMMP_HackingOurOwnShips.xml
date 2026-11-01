@@ -26,7 +26,7 @@
         hack_completes_instantly="true"
         cost_in_hacking_points="5"
         local_hacker_required="false"
-        custom_hacking_display_string_instead_of_name="Transformed {RelatedString}"
+        custom_hacking_display_string_instead_of_name="将 {RelatedString} 变形"
         custom_hacking_display_string_includes_related_string="true"
         custom_hacking_display_string_includes_related_int="true"
 />

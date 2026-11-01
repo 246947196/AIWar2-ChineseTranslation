@@ -29,7 +29,7 @@ namespace Arcen.AIW2.External
                     if ( FiringSystemOrNull != null && FiringSystemOrNull.ParentEntity.GetFactionTypeSafe() == FactionType.AI )
                     {
                         debugStage = 1200;
-                        World_AIW2.Instance.QueueChatMessageOrCommand( entity.GetPlanetName_Safe() + " command station destroyed!", ChatType.LogToCentralChat, string.Empty, chatHandlerOrNull );
+                        World_AIW2.Instance.QueueChatMessageOrCommand( entity.GetPlanetName_Safe() + " 指挥站已被摧毁！", ChatType.LogToCentralChat, string.Empty, chatHandlerOrNull );
                         if ( Context.RandomToUse.Next( 0, 10 ) < 8 )
                             Engine_AIW2.Instance.PresentationLayer.PlaySoundByType( SoundPropagation.HostDirectedPlay, SFXItemType_NonPositional.PlayerControllerDestroyed );
                         else
@@ -39,7 +39,7 @@ namespace Arcen.AIW2.External
                     else
                     {
                         debugStage = 1300;
-                        World_AIW2.Instance.QueueChatMessageOrCommand( entity.GetPlanetName_Safe() + " command station destroyed!", ChatType.LogToCentralChat, string.Empty, chatHandlerOrNull );
+                        World_AIW2.Instance.QueueChatMessageOrCommand( entity.GetPlanetName_Safe() + " 指挥站已被摧毁！", ChatType.LogToCentralChat, string.Empty, chatHandlerOrNull );
                         Engine_AIW2.Instance.PresentationLayer.PlaySoundByType( SoundPropagation.HostDirectedPlay, SFXItemType_NonPositional.PlanetLost );
                     }
 
@@ -60,7 +60,7 @@ namespace Arcen.AIW2.External
                         if ( chatHandlerOrNull != null )
                             chatHandlerOrNull.PlanetToView = entity.Planet;
 
-                        World_AIW2.Instance.QueueChatMessageOrCommand( entity.GetPlanetName_Safe() + " command station destroyed!", ChatType.LogToCentralChat,
+                        World_AIW2.Instance.QueueChatMessageOrCommand( entity.GetPlanetName_Safe() + " 指挥站已被摧毁！", ChatType.LogToCentralChat,
                             "ArkChiefOfStaff_DysonLiberatedFromPlayer", chatHandlerOrNull );
                     }
                     debugStage = 2400;

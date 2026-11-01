@@ -56,3 +56,7 @@ dist/
 
 # 外部代码 DLL 的未打补丁基线（由游戏目录取得，可重新生成）
 DLLBin/_base/
+# 补丁过程中的临时文件
+_*.merged.tmp.json
+tools/ilpatch/_dump.json
+tools/batches/*.txt

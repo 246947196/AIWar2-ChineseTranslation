@@ -655,7 +655,17 @@ namespace Arcen.AIW2.External
                     if ( chatHandlerOrNull != null )
                         chatHandlerOrNull.PlanetToView = Sphere.Construction.Planet;
 
-                    World_AIW2.Instance.QueueChatMessageOrCommand( "You've found a " + AttachedFaction.StartFactionColourForLog() + SphereType + " Dyson Sphere</color> on " + Sphere.Construction.GetPlanetName_Safe() + ".", ChatType.LogToCentralChat, "ArkChiefOfStaff_PlayerGainsDysonIntel", chatHandlerOrNull );
+                    string sphereTypeDisplayName;
+                    switch ( SphereType )
+                    {
+                        case SphereType_GraySpire: sphereTypeDisplayName = "灰色尖塔"; break;
+                        case SphereType_ChromaticSpire: sphereTypeDisplayName = "多彩尖塔"; break;
+                        case SphereType_ImperialSpire: sphereTypeDisplayName = "帝国尖塔"; break;
+                        case SphereType_DarkSpire: sphereTypeDisplayName = "暗塔"; break;
+                        case SphereType_Zenith: sphereTypeDisplayName = "天顶"; break;
+                        default: sphereTypeDisplayName = SphereType; break;
+                    }
+                    World_AIW2.Instance.QueueChatMessageOrCommand( "你发现了一个" + AttachedFaction.StartFactionColourForLog() + sphereTypeDisplayName + "戴森球</color>，位于" + Sphere.Construction.GetPlanetName_Safe() + "。" , ChatType.LogToCentralChat, "ArkChiefOfStaff_PlayerGainsDysonIntel", chatHandlerOrNull );
                     switch ( SphereType )
                     {
                         case SphereType_GraySpire:
@@ -861,7 +871,7 @@ namespace Arcen.AIW2.External
                         if ( chatHandlerOrNull != null )
                             chatHandlerOrNull.PlanetToView = entity.Planet;
 
-                        World_AIW2.Instance.QueueChatMessageOrCommand( entity.GetPlanetName_Safe() + " command station destroyed!", ChatType.LogToCentralChat,
+                        World_AIW2.Instance.QueueChatMessageOrCommand( entity.GetPlanetName_Safe() + " 指挥站已被摧毁！", ChatType.LogToCentralChat,
                             "ArkChiefOfStaff_DysonLiberatedFromPlayer", chatHandlerOrNull );
                     }
                     debugStage = 2400;

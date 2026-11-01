@@ -6,6 +6,7 @@ using System.Text.RegularExpressions;
 using BepInEx;
 using HarmonyLib;
 using TMPro;
+using UnityEngine.UI;
 
 namespace WorldTMPFontPatch
 {
@@ -55,16 +56,44 @@ namespace WorldTMPFontPatch
         [HarmonyPatch(typeof(TMP_Text), "set_text")]
         private static void OnSetText(string value)
         {
-            if (string.IsNullOrEmpty(value) || value.Length < 4) return;
-            if (Cjk.IsMatch(value)) return;              // 已经译好
-            if (!HasLatin.IsMatch(value)) return;        // 纯数字/符号
+            Record(value, "TMP");
+        }
+
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(UnityEngine.UI.Text), "set_text")]
+        private static void OnLegacySetText(string value)
+        {
+            Record(value, "UI.Text");
+        }
+
+        /// <summary>记录一条：value 是最终渲染的字符串，src 标记走了哪条渲染路径。</summary>
+        private static void Record(string value, string src)
+        {
+            if (string.IsNullOrEmpty(value) || value.Length < 2) return;
+            if (Cjk.IsMatch(value)) return;               // 已经译好
+            if (!HasLatin.IsMatch(value)) return;         // 纯数字/符号
             if (NumberOnly.IsMatch(value)) return;
+
+            string caller = "";
+            try
+            {
+                var st = new System.Diagnostics.StackTrace(3, false);   // 跳过 Harmony 的 detour 包装
+                var f = st.GetFrame(0);
+                if (f != null && f.GetMethod() != null)
+                {
+                    var m = f.GetMethod();
+                    caller = (m.DeclaringType != null ? m.DeclaringType.Name : "") + "." + m.Name;
+                }
+            }
+            catch { }
+
+            string key = value + "\u0001" + src + "\u0001" + caller;
             lock (Gate)
             {
                 int c;
-                Seen.TryGetValue(value, out c);
-                Seen[value] = c + 1;
-                if (++_dirty >= 80) FlushLocked();
+                Seen.TryGetValue(key, out c);
+                Seen[key] = c + 1;
+                if (++_dirty >= 60) FlushLocked();
             }
         }
 
@@ -79,11 +108,15 @@ namespace WorldTMPFontPatch
             try
             {
                 var sb = new StringBuilder();
-                sb.AppendLine("# 运行时采集：渲染过但仍是英文的字符串（count<TAB>text）");
+                sb.AppendLine("# 运行时采集：渲染过但仍是英文的字符串\tcount\t路径\t调用方\ttext");
                 foreach (var kv in Seen)
                 {
-                    string t = kv.Key.Replace("\r", "").Replace("\n", "\\n").Replace("\t", "\\t");
-                    sb.Append(kv.Value).Append('\t').AppendLine(t);
+                    string[] parts = kv.Key.Split('\u0001');
+                    string t = parts[0].Replace("\r", "").Replace("\n", "\\n").Replace("\t", "\\t");
+                    string src = parts.Length > 1 ? parts[1] : "";
+                    string caller = parts.Length > 2 ? parts[2] : "";
+                    sb.Append(kv.Value).Append('\t').Append(src).Append('\t')
+                      .Append(caller).Append('\t').AppendLine(t);
                 }
                 File.WriteAllText(_outPath, sb.ToString(), new UTF8Encoding(false));
                 _dirty = 0;

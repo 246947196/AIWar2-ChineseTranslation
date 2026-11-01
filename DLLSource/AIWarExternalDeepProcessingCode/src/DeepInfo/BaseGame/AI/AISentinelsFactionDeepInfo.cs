@@ -1828,8 +1828,8 @@ namespace Arcen.AIW2.External
                     AttachedFaction.CurrentGeneralMarkLevel_Base = mark.Ordinal;
 
                     if ( ArcenNetworkAuthority.GetIsHostMode() )
-                        World_AIW2.Instance.QueueChatMessageOrCommand( "The general mark level of <color=#" + AttachedFaction.FactionCenterColor.ColorHexBrighter + ">" + 
-                            AttachedFaction.GetDisplayName() + "</color> has increased to " + mark.Ordinal + " because of AI Progress.", ChatType.LogToCentralChat, string.Empty, null );
+                        World_AIW2.Instance.QueueChatMessageOrCommand( "<color=#" + AttachedFaction.FactionCenterColor.ColorHexBrighter + ">" +
+                            AttachedFaction.GetDisplayName() + "</color> 的常规等级已提升至 " + mark.Ordinal + "，原因是 AI 进度。", ChatType.LogToCentralChat, string.Empty, null );
                 }
             }
 
@@ -1850,8 +1850,8 @@ namespace Arcen.AIW2.External
                             {
                                     AttachedFaction.CurrentGeneralMarkLevel_Base = 2;
                                     if ( ArcenNetworkAuthority.GetIsHostMode() )
-                                        World_AIW2.Instance.QueueChatMessageOrCommand( "The general mark level of <color=#" + AttachedFaction.FactionCenterColor.ColorHexBrighter + ">" +
-                                            AttachedFaction.GetDisplayName() + "</color> has increased to " + 2 + " because of human aggression on their mark 7 worlds.", ChatType.LogToCentralChat, string.Empty, null );
+                                        World_AIW2.Instance.QueueChatMessageOrCommand( "<color=#" + AttachedFaction.FactionCenterColor.ColorHexBrighter + ">" +
+                                            AttachedFaction.GetDisplayName() + "</color> 的常规等级已提升至 " + 2 + "，原因是玩家在其 7 级行星上的侵略行为。", ChatType.LogToCentralChat, string.Empty, null );
                                     continue;
                                 }
                             }
@@ -1873,8 +1873,8 @@ namespace Arcen.AIW2.External
                             {
                                     AttachedFaction.CurrentGeneralMarkLevel_Base = 3;
                                     if ( ArcenNetworkAuthority.GetIsHostMode() )
-                                        World_AIW2.Instance.QueueChatMessageOrCommand( "The general mark level of <color=#" + AttachedFaction.FactionCenterColor.ColorHexBrighter + ">" +
-                                            AttachedFaction.GetDisplayName() + "</color> has increased to " + 3 + " because of human aggression at their homeworld.", ChatType.LogToCentralChat, string.Empty, null );
+                                        World_AIW2.Instance.QueueChatMessageOrCommand( "<color=#" + AttachedFaction.FactionCenterColor.ColorHexBrighter + ">" +
+                                            AttachedFaction.GetDisplayName() + "</color> 的常规等级已提升至 " + 3 + "，原因是玩家在其母星上的侵略行为。", ChatType.LogToCentralChat, string.Empty, null );
                                     continue;
                                 }
                             }

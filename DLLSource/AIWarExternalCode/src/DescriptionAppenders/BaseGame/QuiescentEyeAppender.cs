@@ -23,23 +23,23 @@ namespace Arcen.AIW2.External
             int numFleetsAntagonizing = RelatedEntityOrNull.Planet.PlayerFleetsAtPlanet_Current.Count;
             if ( RelatedEntityTypeData.OutnumberedByStrength )
             {
-                Buffer.Add( " If the Strength of AI-opposed units on this planet becomes greater than the AI's strength, this unit will become alerted. " );
+                Buffer.Add( " 当此行星上对抗 AI 的单位的战力超过 AI 的战力时，该单位将进入警戒状态。 " );
             }
             else if ( RelatedEntityTypeData.OutnumberedByXFleets > 0 )
             {
                 debugCode = 300;
                 if ( numFleetsAntagonizing == 0 )
-                    Buffer.Add( " If ships from " ).Add( RelatedEntityTypeData.OutnumberedByXFleets, "cfd988" ).Add( " fleets are on this planet, this unit will become alerted. " );
+                    Buffer.Add( " 当来自 " ).Add( RelatedEntityTypeData.OutnumberedByXFleets, "cfd988" ).Add( " 支舰队的舰船位于此行星上时，该单位将进入警戒状态。 " );
                 else
-                    Buffer.Add( " If ships from " ).Add( (RelatedEntityTypeData.OutnumberedByXFleets - numFleetsAntagonizing), "cfd988" ).Add( " more fleets are on this planet, this unit will become alerted. " );
+                    Buffer.Add( " 当再有 " ).Add( (RelatedEntityTypeData.OutnumberedByXFleets - numFleetsAntagonizing), "cfd988" ).Add( " 支舰队的舰船位于此行星上时，该单位将进入警戒状态。 " );
             }
             else
             {
                 debugCode = 400;
                 if ( NumUnitsUntilAntagonizing != NumAlliedUnitsOnPlanet )
-                    Buffer.Add( " If " ).Add( NumUnitsUntilAntagonizing, "cfd988" ).Add( " more AI-opposed units are on this planet, this unit will become alerted. " );
+                    Buffer.Add( " 当再有 " ).Add( NumUnitsUntilAntagonizing, "cfd988" ).Add( " 个对抗 AI 的单位位于此行星上时，该单位将进入警戒状态。 " );
                 else
-                    Buffer.Add( " If more than " ).Add( NumAlliedUnitsOnPlanet, "cfd988" ).Add( " AI-opposed units are on this planet, this unit will become alerted. " );
+                    Buffer.Add( " 当超过 " ).Add( NumAlliedUnitsOnPlanet, "cfd988" ).Add( " 个对抗 AI 的单位位于此行星上时，该单位将进入警戒状态。 " );
             }
             } catch ( Exception e)
             {

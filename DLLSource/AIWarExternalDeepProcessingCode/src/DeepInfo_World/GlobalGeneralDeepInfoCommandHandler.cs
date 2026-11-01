@@ -448,9 +448,9 @@ namespace Arcen.AIW2.External
                     {
                         ExoOptions options = ExoOptions.CreateWithDefaults( kingUnit, strengthForAttack.GetNearestIntPreferringHigher(), null, killingFactionOrNull );
                         if ( entityThatDiedOrNull != null )
-                            options.exoText = "<color=#ff2233>The AI is sending an Exogalactic Strikeforce after the death of the command station on </color><color=#a1ffa1>" + entityThatDiedOrNull.Planet.Name + ".</color>";
+                            options.exoText = "<color=#ff2233>在 </color><color=#a1ffa1>" + entityThatDiedOrNull.Planet.Name + "</color><color=#ff2233> 的指挥站被摧毁后，AI 正在派遣一支河外打击部队。</color>";
                         else
-                            options.exoText = "<color=#ff2233>The AI is sending an Exogalactic Strikeforce after the death of the " + typeDataOrNull.GetDisplayName() + " on </color><color=#a1ffa1>" + planetForDeathOrNull.Name + ".</color>";
+                            options.exoText = "<color=#ff2233>在 </color><color=#a1ffa1>" + planetForDeathOrNull.Name + "</color><color=#ff2233> 的 " + typeDataOrNull.GetDisplayName() + " 被摧毁后，AI 正在派遣一支河外打击部队。</color>";
                         ExoGalacticAttackManager.SendExoGalacticAttack( options, Context );
                     }
                 }
