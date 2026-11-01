@@ -30,3 +30,14 @@ tools/ilpatch/*.extract.json
 
 # 过期扩展备份
 Expansions_BACKUP_corrupted/
+
+# 生成物：python tools/localize_xml.py build 的产出（每次按当前游戏版本现生成）
+build_output/
+translation_gaps.tsv
+
+# 构建符号
+*.pdb
+
+# 游戏自动生成的快速开局存档副本（与游戏目录内同名文件逐字节相同）
+*.save
+*.savemet

@@ -237,7 +237,18 @@ Write-Host "I18NFont4UnityGame plugin deployed" -ForegroundColor Green
 # Deploy translation XML files
 Write-Host ""
 Write-Host "Deploying translation XML files..." -ForegroundColor Yellow
-$transConfigDir = Join-Path $translationDir "GameData\Configuration"
+
+# 优先使用「按当前游戏版本现生成」的 XML（老做法是整份 XML 分叉，会把游戏数值
+# 一并退回分叉那天）。生成命令：python tools\localize_xml.py build
+$genRoot = Join-Path $translationDir "build_output"
+$useGenerated = Test-Path (Join-Path $genRoot "GameData\Configuration")
+if ($useGenerated) {
+    $transConfigDir = Join-Path $genRoot "GameData\Configuration"
+    Write-Host "  使用 build_output（按当前游戏版本生成，数值/新字段不会被回退）" -ForegroundColor Green
+} else {
+    $transConfigDir = Join-Path $translationDir "GameData\Configuration"
+    Write-Host "  WARNING: 未找到 build_output，退回使用整份 XML 分叉（可能与当前游戏版本不符）" -ForegroundColor Yellow
+}
 $gameConfigDir = Join-Path $gameDir "GameData\Configuration"
 
 # NOTE: Expansion (DLC) overrides live under GameData\Configuration\Expansions\ but must be
@@ -318,17 +329,43 @@ if (Test-Path $transExpQuickStartsDir) {
 # translated text wins without losing any game content.
 Write-Host ""
 Write-Host "Merging expansion (DLC) translation overrides into game expansions..." -ForegroundColor Yellow
-$mergeScript = Join-Path $translationDir "merge_expansion_translations.py"
-if (Test-Path $mergeScript) {
-    python $mergeScript
+if ($useGenerated) {
+    $genExp = Join-Path $genRoot "Expansions"
+    $expCopied = 0
+    if (Test-Path $genExp) {
+        Get-ChildItem -Path $genExp -Directory | ForEach-Object {
+            $srcCfg = Join-Path $_.FullName "GameData\Configuration"
+            $dstCfg = Join-Path $gameDir "Expansions\$($_.Name)\GameData\Configuration"
+            if (Test-Path $srcCfg) {
+                Get-ChildItem -Path $srcCfg -Recurse -Filter "*.xml" | ForEach-Object {
+                    $rel = $_.FullName.Substring($srcCfg.Length + 1)
+                    $dst = Join-Path $dstCfg $rel
+                    $dstDir = Split-Path $dst -Parent
+                    if (-not (Test-Path $dstDir)) { New-Item -ItemType Directory -Path $dstDir -Force | Out-Null }
+                    Copy-Item $_.FullName $dst -Force
+                    $expCopied++
+                }
+            }
+        }
+    }
+    Write-Host "  Copied $expCopied expansion XML files from build_output" -ForegroundColor Green
 } else {
-    Write-Host "  ERROR: merge_expansion_translations.py not found; DLC translations NOT deployed" -ForegroundColor Red
+    $mergeScript = Join-Path $translationDir "merge_expansion_translations.py"
+    if (Test-Path $mergeScript) {
+        python $mergeScript
+    } else {
+        Write-Host "  ERROR: merge_expansion_translations.py not found; DLC translations NOT deployed" -ForegroundColor Red
+    }
 }
 
 # Deploy XMLMods translation files
 Write-Host ""
 Write-Host "Deploying XMLMods translation files..." -ForegroundColor Yellow
-$transModsDir = Join-Path $translationDir "XMLMods"
+if ($useGenerated) {
+    $transModsDir = Join-Path $genRoot "XMLMods"
+} else {
+    $transModsDir = Join-Path $translationDir "XMLMods"
+}
 $gameModsDir = Join-Path $gameDir "XMLMods"
 
 if (Test-Path $transModsDir) {

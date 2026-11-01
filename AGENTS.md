@@ -819,3 +819,54 @@ LoadAllFoundXmlFilesIntoMemory debugStage 4000: System.Xml.XmlException:
 | `XMLMods/Generator/MapType/Gen_MapTypes.xml` | 丢 12 / 多 12 个元素 | 地图选项结构错位 |
 
 处置原则：这些是**整文件覆盖**的固有代价，不能靠手改修；应由「翻译记忆 + 生成器」按当前游戏 XML 重新生成（见 SPEC 待办）。
+
+## 翻译记忆（TM）与 XML 生成（2026-11-01 起）
+
+### 为什么改
+
+旧做法是把整份 XML 复制一份再手改成中文，等于把游戏数据**分叉**在复制那天。
+2026-07-18 的分叉放到 5.850 上，会覆盖 **2,515 处**游戏数值（例：尖塔武器
+`damage_per_shot` 游戏已改 73200，分叉里还是 1800），并丢掉 74 个新魔像元素。
+这不是"翻译没做完"，是**部署即回退**。
+
+### 现在的结构
+
+| 文件 | 角色 |
+|------|------|
+| `zh_tm.tsv` | **唯一真源**。一行 = 英文原文 + 中文 + 上下文（`tag:attr`） |
+| `tools/localize_xml.py` | `extract` 抽 TM / `build` 生成 / `stats` 看覆盖率 |
+| `build_output/` | 生成物，**不入库**。按当前游戏 XML 现生成，只含被改动的文件 |
+| `translation_gaps.tsv` | 生成物，未命中的玩家可见英文（待补清单），不入库 |
+
+### 日常流程
+
+```
+python tools\localize_xml.py build     # 按当前游戏版本生成 build_output（约 4 秒）
+.\deploy.ps1                           # 自动优先使用 build_output
+```
+
+游戏更新后**不需要**做三方合并：直接 `build` 一遍，数值/新字段/新单位自动跟
+上游走；改写过英文的句子会掉进 `translation_gaps.tsv`，按清单补 `zh_tm.tsv` 即可。
+
+### 关键设计
+
+1. **按英文原文匹配**，不按元素路径 —— 元素改名、换文件、被复制都不会丢译文
+2. **只替换文本属性**：`SAFE_ATTRS` 里的直接替换；`category`/`text`/`value` 这类
+   可能与技术标识撞车的属性，仅当 TM 记录过同一 `tag:attr` 上下文时才替换
+3. **字节级外科手术**：不重新序列化 XML，属性顺序、缩进、注释、数值全部原样保留
+4. 同一英文多译法（当前 919 组）：优先同上下文，其次取 TM 里出现最多的译法
+
+### 自检口径
+
+`build` 自检：属性 231,346 个，文本替换 21,864 处，**非文本属性改动 0 处**，
+623 个输出文件全部可解析。
+
+### 已清理的废文件（2026-11-01）
+
+| 文件 | 原因 |
+|------|------|
+| `temp_check.json` | 7 月遗留的临时比对数据，无任何脚本引用 |
+| `tools/check_translation.ps1` | 已被 `check_update.ps1` 取代 |
+| `XMLMods/Translate-XMLMods.ps1`、`-v2.ps1` | 一次性脚本、绝对路径写死，已被 `localize_xml.py` 取代 |
+| 5 个 `.pdb`、`WorldTMPFontPatch.dll.bak_234841`、`ArcenAIW2Core.dll.bak2`、`hack_start_patch.json`、`verify_dump.json` | 构建产物/临时备份 |
+| 125 个 `.save`/`.savemet` | 游戏自动生成的快速开局存档，与游戏目录内同名文件逐字节相同（md5 全等） |
