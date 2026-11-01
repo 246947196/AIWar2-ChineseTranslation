@@ -6,7 +6,8 @@
 #   .\deploy.ps1 -GameDir "E:\SteamLibrary\steamapps\common\AI War 2"
 
 param(
-    [string]$GameDir = ""
+    [string]$GameDir = "",
+    [switch]$Force
 )
 
 $translationDir = $PSScriptRoot
@@ -156,15 +157,24 @@ if (-not $latest) {
 $gameVersion = $latest.Version
 
 if ($snapshotVersion -ne $gameVersion) {
-    Write-Host "ERROR: Baseline version ($snapshotVersion) does not match game version ($gameVersion)." -ForegroundColor Red
-    Write-Host "Game may have been updated. Run check_update.ps1 first." -ForegroundColor Yellow
-    Write-Host ""
-    Write-Host "Press Enter to exit..."
-    Read-Host
-    exit 1
+    Write-Host "WARNING: 基线版本 ($snapshotVersion) 与游戏版本 ($gameVersion) 不一致。" -ForegroundColor Yellow
+    Write-Host "  XML 部分没问题：build_output 是按当前游戏版本现生成的，不会回退数值。" -ForegroundColor Gray
+    Write-Host "  DLL 部分有风险：IL 补丁是针对特定游戏 DLL 做的，版本不符可能导致启动异常。" -ForegroundColor Yellow
+    $genExists = Test-Path (Join-Path $translationDir "build_output\GameData\Configuration")
+    if (-not $genExists) {
+        Write-Host "ERROR: 既没有匹配的基线，也没有 build_output —— 部署会把游戏数据退回旧版本，已中止。" -ForegroundColor Red
+        Write-Host "  先执行: python tools\localize_xml.py build" -ForegroundColor Yellow
+        exit 1
+    }
+    if (-not $Force) {
+        $ans = Read-Host "  继续部署？(y/N)"
+        if ($ans -ne 'y') { Write-Host "  已取消。" -ForegroundColor Yellow; exit 1 }
+    } else {
+        Write-Host "  已指定 -Force，继续。" -ForegroundColor Yellow
+    }
+} else {
+    Write-Host "Version OK: baseline $snapshotVersion = game $gameVersion" -ForegroundColor Green
 }
-
-Write-Host "Version OK: baseline $snapshotVersion = game $gameVersion" -ForegroundColor Green
 Write-Host ""
 
 # Deploy BepInEx framework
