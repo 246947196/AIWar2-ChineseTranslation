@@ -385,6 +385,12 @@ def load_tm():
             en, zh, ctx = _normcrlf(_uncell(parts[0])), _uncell(parts[1]), parts[2]
             tm.setdefault(en, {}).setdefault(ctx, {}).setdefault(zh, 0)
             tm[en][ctx][zh] += 1
+            # 缺口 TSV 里换行被存成字面量 \\n，早期手工补译时留下了这种键。
+            # 这里给同一句再登记一个「反斜杠还原成真换行」的别名，两种写法都能命中。
+            en2 = _normcrlf(en.replace('\\r\\n', '\n').replace('\\n', '\n').replace('\\t', '\t'))
+            if en2 != en:
+                tm.setdefault(en2, {}).setdefault(ctx, {}).setdefault(zh, 0)
+                tm[en2][ctx][zh] += 1
     return tm
 
 
