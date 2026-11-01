@@ -83,6 +83,7 @@
   <ItemGroup>
     <Compile Include="src\WorldTMPFontPatchPlugin.cs" />
     <Compile Include="src\PatchCharMapping.cs" />
+    <Compile Include="src\TextCapture.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -32,7 +32,25 @@ public class WorldTMPFontPatchPlugin : BaseUnityPlugin
 
         PatchCharMapping.Ensure();
         Harmony.CreateAndPatchAll(typeof(WorldTMPFontPatchPlugin));
+        TextCapture.Init();
         EnsureFonts();
+    }
+
+    private void OnApplicationQuit()
+    {
+        TextCapture.Flush();
+    }
+
+    private float _nextCaptureFlush;
+
+    private void Update()
+    {
+        // 定期落盘：强杀进程时 OnApplicationQuit 不会执行，靠这个保住数据
+        if (Time.unscaledTime >= _nextCaptureFlush)
+        {
+            _nextCaptureFlush = Time.unscaledTime + 15f;
+            TextCapture.Flush();
+        }
     }
 
     private static void Log(string msg)

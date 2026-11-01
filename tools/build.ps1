@@ -1,8 +1,11 @@
 # Build script for translated DLLs
 # Usage: .\tools\build.ps1
+#        .\tools\build.ps1 -BepInExOnly   # 只编译 BepInEx 插件（外部代码 DLL 现在走 IL 补丁，不重编译）
+
+param([switch]$BepInExOnly)
 
 $ErrorActionPreference = "Stop"
-$baseDir = Split-Path -Parent $MyInvocation.MyCommand.Path
+$baseDir = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)   # 项目根（tools 的上一级）
 $msbuild = "C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe"
 $roslynDir = "C:\Users\Administrator\AppData\Local\Temp\roslyn412\tasks\net472"
 
@@ -11,6 +14,7 @@ $projects = @(
     "DLLSource\AIWarExternalDeepProcessingCode\AIWarExternalDeepProcessingCode.csproj",
     "DLLSource\AIWarExternalVisualizationCode\AIWarExternalVisualizationCode.csproj"
 )
+if ($BepInExOnly) { $projects = @() }
 
 $bepInExProjects = @(
     "DLLSource\ArcenUIAssetRedirect\ArcenUIAssetRedirect.csproj",
