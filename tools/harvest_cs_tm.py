@@ -125,11 +125,27 @@ def setting_option_values():
     return vals
 
 
-def command_key_literals():
-    """代码里赋给 RelatedString 的字面量。这些是**命令键**，翻译后
-    HandleCommand 会报 "Unknown RelatedString '中文'"。"""
+def code_key_literals():
+    """代码里所有「拿字符串当键」的字面量。
+
+    这个游戏普遍把显示字符串当标识符用：比较、switch、字典索引、设置项取值……
+    凡是出现在这些位置的字面量，一旦翻译就会失配（报 Could not find / Unknown /
+    unknown ... allegiance / parse 失败）。这里是穷举，而不是踩一个补一个：
+      ==/!=、case、Equals、Contains、StartsWith/EndsWith、["x"] 索引、
+      GetXxxBySetting、RelatedString 赋值、TryGetValue/GetValue/GetAttribute
+    """
+    pats = [
+        r'[=!]=\s*"([^"]*)"',
+        r'\bcase\s+"([^"]*)"\s*:',
+        r'\.Equals\(\s*"([^"]*)"',
+        r'\.Contains\(\s*"([^"]*)"',
+        r'\.(?:StartsWith|EndsWith)\(\s*"([^"]*)"',
+        r'\[\s*"([^"]*)"\s*\]',
+        r'Get\w*BySetting\(\s*"([^"]*)"',
+        r'RelatedString\s*=\s*"([^"]*)"',
+        r'(?:TryGetValue|GetValue|GetAttribute|HasAttribute)\(\s*"([^"]*)"',
+    ]
     keys = set()
-    rx = re.compile(r'RelatedString\s*=\s*"([^"]*)"')
     for dp, _, fn in os.walk(SRC_GAME):
         for f in fn:
             if not f.endswith('.cs'):
@@ -138,8 +154,11 @@ def command_key_literals():
                 text = open(os.path.join(dp, f), encoding='utf-8-sig', errors='ignore').read()
             except OSError:
                 continue
-            for m in rx.finditer(text):
-                keys.add(m.group(1))
+            for rx in pats:
+                for m in re.finditer(rx, text):
+                    v = m.group(1)
+                    if v and len(v) >= 2:
+                        keys.add(v)
     return keys
 
 
@@ -159,7 +178,7 @@ def main():
     ap.add_argument('--write', action='store_true')
     args = ap.parse_args()
 
-    never = load_never() | xml_attribute_names() | command_key_literals() | setting_option_values()
+    never = load_never() | xml_attribute_names() | code_key_literals() | setting_option_values()
     game_files = dict(walk_cs(SRC_GAME))
     pairs = collections.defaultdict(dict)
     stat = collections.Counter()
