@@ -39,6 +39,35 @@ foreach ($dir in @($managedDir, $patchedDir, $transPatched)) {
     }
 }
 
+# ---- Pre-flight: XML validation ----
+# 属性值里的裸 < > 或半角 " 会让 .NET XmlDocument 抛异常，整个文件被游戏跳过，
+# 结果是该模组/实体全部回退英文甚至消失，而且日志里只有一行，极难发现。
+# 校验失败一律中止部署，避免把坏文件铺到游戏里。
+$xmlGuard = Join-Path $translationDir "tools\xml_guard.py"
+if (Test-Path $xmlGuard) {
+    $pythonCmd = Get-Command python -ErrorAction SilentlyContinue
+    if ($pythonCmd) {
+        Push-Location $translationDir
+        try {
+            & python $xmlGuard validate
+            $guardExit = $LASTEXITCODE
+        } finally {
+            Pop-Location
+        }
+        if ($guardExit -ne 0) {
+            Write-Host ""
+            Write-Host "ERROR: XML 校验未通过，已中止部署。" -ForegroundColor Red
+            Write-Host "  自动修复：python tools\\xml_guard.py fix --apply" -ForegroundColor Yellow
+            Write-Host "  结构比对：python tools\\xml_guard.py diff" -ForegroundColor Yellow
+            exit 1
+        }
+        Write-Host "  XML 校验通过" -ForegroundColor Green
+    }
+    else {
+        Write-Host "WARNING: 未找到 python，跳过 XML 校验" -ForegroundColor Yellow
+    }
+}
+
 # ---- Version check ----
 $snapshotFile = Join-Path $translationDir "translation_snapshot.json"
 if (-not (Test-Path $snapshotFile)) {

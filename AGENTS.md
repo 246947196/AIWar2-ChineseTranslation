@@ -764,3 +764,58 @@ patch 前必须从 `AIWar2_Data\Managed\` 复制原始 DLL（禁止在已 patch 
 - **deploy.ps1 语法错误是静默杀手**：PowerShell 解析失败时不一定报明显错误，可能导致整个部署链路中断而翻译回退。修改 deploy.ps1 后必须验证括号匹配（`$openings = (Get-Content deploy.ps1 -Raw) -split '' | ? { $_ -eq '{' }; $closings = ...`）并实际运行一次确认无误
 - **`.new.dll` 必须递归清理**：ilpatch 的 fallback 文件可能出现在 `patched/` 子目录，非递归扫描会漏掉，导致旧 patch 覆盖新 patch
 - **IL patch 字典需跟随游戏更新**：游戏更新移除某些文本后，字典中对应条目变为 missing，verify_patch.py 会报警。定期清理过时条目保持字典与 DLL 同步
+
+## 修复记录 (2026-11-01) — XML 破损治理与结构漂移体检
+
+### 现象
+
+31 个 `XMLMods` 文件无法被 .NET `XmlDocument` 解析（游戏原件全部正常），
+游戏日志 `PlayerData/ArcenDebugLog.txt` 里刷屏：
+
+```
+LoadAllFoundXmlFilesIntoMemory debugStage 4000: System.Xml.XmlException:
+'<' , hexadecimal value 0x3C, is an invalid attribute character.
+```
+
+解析失败 = 该文件被整份跳过，模组里的实体/日志/派系全部丢失，表现为
+"文本回退英文、单位消失"，且只在日志里留一行，肉眼不可见。
+
+### 根因分布
+
+| 类型 | 数量 | 说明 |
+|------|------|------|
+| 属性值里写了半角双引号 `"` | 22 | 原文用单引号（`the 'Warden Fleet'`），译文改成了 `"守卫舰队"` |
+| 属性值里裸写 `<color=...>` | 6 | 原件是 `&lt;color=#ffd965&gt;`，译文直接写成了标签 |
+| 重复属性 + 丢字段 | 1 | `CityShips/GameEntity.xml` 的 `W2/W4` 武器被改掉了 5 个战斗属性 |
+| 属性名打成 `==` | 1 | `MSD_Drones.xml` 的 `display_name==` |
+
+### 修法
+
+新增 `tools/xml_guard.py`，三个子命令：
+
+| 命令 | 用途 |
+|------|------|
+| `validate` | 校验全部 XML 能否解析，失败返回码 1（可挂 CI / 部署前哨） |
+| `fix --dry-run` / `--apply` | 自动修复：属性值内裸 `<` `>` → `&lt;` `&gt;`，裸 `"` → `&quot;`。只碰**解析失败**的文件，合法文件一个字不动 |
+| `diff` | 对照游戏原件按「祖先链+name」比对属性集与元素集，查翻译过程中丢失的字段/元素 |
+
+结果：`validate` 从 29 个失败 → 0 个；`diff` 报出 50 个文件仍有结构差异，需随翻译更新补齐（见下）。
+
+`deploy.ps1` 增加 **XML 校验前哨**：校验不通过直接中止部署，避免坏文件铺进游戏。
+
+### 新增翻译规则（补充 §翻译规则）
+
+- 属性值内**禁止**出现裸 `<` `>` 和半角 `"`；需要引号写 `&quot;`，需要富文本写 `&lt;color=#xxxxxx&gt;文本&lt;/color&gt;`
+- 中文引号不要为了"看起来对"而改成半角：原文是单引号就保留单引号语义，或用 `「」`
+
+### 待处理的结构漂移（diff 结果，按影响排序）
+
+| 文件 | 差异 | 影响 |
+|------|------|------|
+| `GameData/Configuration/GameEntity/KDL_Ships_Golems.xml` | 丢 74 个元素、3 处属性 | 5.84x 新增的魔像单位整体缺失 |
+| `XMLMods/SKCivilianIndustry/GameEntity/SK_CivilianIndustry.xml` | 丢 30 处 `max_count_per_npc_faction_before_stack` | 民用舰数量上限失效 |
+| `GameData/Configuration/EntityLineType/KDL_EntityLineTypes.xml` | 丢 25 处 `pulse_*` / `flicker_*` / `jagged_*` | 引力井连线动画特效丢失 |
+| `GameData/Configuration/GameEntity/Marauders.xml` | 丢 5 个元素、3 处属性 | 掠夺者新单位缺失 |
+| `XMLMods/Generator/MapType/Gen_MapTypes.xml` | 丢 12 / 多 12 个元素 | 地图选项结构错位 |
+
+处置原则：这些是**整文件覆盖**的固有代价，不能靠手改修；应由「翻译记忆 + 生成器」按当前游戏 XML 重新生成（见 SPEC 待办）。

@@ -5,7 +5,7 @@
             display_name="黑暗球体"
             short_name="黑暗球体"
             processing_group="DarkSphere"
-            custom_NameForLobby="戴森球: <color=#242124>黑暗</color>"
+            custom_NameForLobby="戴森球: &lt;color=#242124&gt;黑暗&lt;/color&gt;"
             base_info_source="Ds_Faction_Base"
             deep_info_source="Ds_Faction_Deep"
             team_center_color="c242124"
@@ -18,9 +18,9 @@
             exclude_from_za_territory="true"
             defeat_condition="AllKingsDead_IncludingSubfactions"
             must_defeat="true"
-            description="向银河系添加一次<color=#242124>黑暗球体</color>入侵。黑暗球体是一个智能巨型结构，寻求通过灭绝来终结宇宙万物的苦难。
+            description="向银河系添加一次&lt;color=#242124&gt;黑暗球体&lt;/color&gt;入侵。黑暗球体是一个智能巨型结构，寻求通过灭绝来终结宇宙万物的苦难。
 
-<color=#f25e1c>致命影响：</color>这到底是从哪个地狱来的？"
+&lt;color=#f25e1c&gt;致命影响：&lt;/color&gt;这到底是从哪个地狱来的？"
             >
         <custom_field
                 name="Intensity"

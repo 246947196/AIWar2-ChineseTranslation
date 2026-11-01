@@ -235,7 +235,7 @@
 			always_self_attritions="true"
 			cannot_target_or_alert_ai_reinforcement_spots="true"
 			collision_priority="100"
-			display_name=="风暴前哨多飞弹导弹 飞弹"
+			display_name="风暴前哨多飞弹导弹 飞弹"
 			display_name_for_sidebar="风暴前哨飞弹"
 			description="即将完成的爆炸。"
 			starting_mark_level="Mark1" tech_upgrades_that_benefit_me="UpgradeMeFromFleetOnly"

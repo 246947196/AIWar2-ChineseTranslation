@@ -9,7 +9,7 @@
     <custom_field
         is_hidden="true"
         name="Populator_PlayerHomeworld_PreferredGalaxyRegion"
-        display_name="<color=#ff7e64>高级：</color>首选起始区域"
+        display_name="&lt;color=#ff7e64&gt;高级：&lt;/color&gt;首选起始区域"
         description="通常情况下玩家派系的起始行星要么完全随机，要么由玩家在大厅的地图选项卡中选择。但如果启用了改进生成器，您可以使用此选项引导随机算法，使其偏好更中心或更边缘的起始行星。"
         requires_player_types="HumanEmpire,SpireInfusedEmpire,HumanArkEmpire,NecromancerEmpire"
         is_advanced_setting="true"
@@ -22,7 +22,7 @@
     <custom_field
         is_hidden="true"
         name="Populator_PlayerHomeworld_PreferredLinks"
-        display_name="<color=#ff7e64>高级：</color>首选起始连通性"
+        display_name="&lt;color=#ff7e64&gt;高级：&lt;/color&gt;首选起始连通性"
         description="通常情况下玩家派系的起始行星要么完全随机，要么由玩家在大厅的地图选项卡中选择。但如果启用了改进生成器，您可以使用此选项引导随机算法，使其偏好连接数更多或更少的起始行星。"
         requires_player_types="HumanEmpire,SpireInfusedEmpire,HumanArkEmpire,NecromancerEmpire"
         is_advanced_setting="true"

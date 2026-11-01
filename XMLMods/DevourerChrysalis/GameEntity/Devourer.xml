@@ -416,8 +416,8 @@
 	<entity name="DevourerGolemTier3_Swarm" copy_from="DevourerGolemTier3_Base" tags="ShowsOnNormalDisplayMode,#Devourer_Evolution#Chrysalis_Tier3,Devourer_Tier3,#Devourer_ID#010,MainMobileDevourerIncludingEnraged"
 		display_name="蜂群吞噬者"
 		display_name_for_sidebar="吞 T3 蜂群"
-		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破行星上的所有停火协议。此变体侧重于生成"小型"支援无人机。"
-		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破行星上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于生成"小型"支援无人机。"小型"是相对于蜂群吞噬者而言的，它们比我们物种建造过的大多数东西都要大得多。它还会从已在行星上一段时间的敌人那里进一步减少受到的伤害。"
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破行星上的所有停火协议。此变体侧重于生成&quot;小型&quot;支援无人机。"
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破行星上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于生成&quot;小型&quot;支援无人机。&quot;小型&quot;是相对于蜂群吞噬者而言的，它们比我们物种建造过的大多数东西都要大得多。它还会从已在行星上一段时间的敌人那里进一步减少受到的伤害。"
 		drone_starting_behavior_type="Attacker_Full"
 		fleet_design_template_i_use_for_drones="DevourerGolemTier3_Swarm_Drones"
 		strength_multiplier="2.5"
@@ -444,9 +444,9 @@
 	<entity name="DevourerGolemTier3_Swarm_Enraged" copy_from="DevourerGolemTier3_Swarm" tags="ShowsOnNormalDisplayMode,#EnragedModeOf#DevourerGolemTier3_Swarm,MainMobileDevourerIncludingEnraged"
 		display_name="狂暴蜂群吞噬者"
 		display_name_for_sidebar="吞 T3 E-蜂群"
-		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破行星上的所有停火协议。此变体侧重于生成"小型"支援无人机。
+		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破行星上的所有停火协议。此变体侧重于生成&quot;小型&quot;支援无人机。
 &lt;color=#ff8888&gt;狂暴：造成更多伤害，并会 targeting 建筑！&lt;/color&gt;"
-		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破行星上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于生成"小型"支援无人机。"小型"是相对于蜂群吞噬者而言的，它们比我们物种建造过的大多数东西都要大得多。它还会从已在行星上一段时间的敌人那里进一步减少受到的伤害。
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破行星上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于生成&quot;小型&quot;支援无人机。&quot;小型&quot;是相对于蜂群吞噬者而言的，它们比我们物种建造过的大多数东西都要大得多。它还会从已在行星上一段时间的敌人那里进一步减少受到的伤害。
 &lt;color=#ff8888&gt;狂暴：造成更多伤害，并会 targeting 建筑！&lt;/color&gt;"
 		damage_multiplier_to_all_weapons="6"
 		fleet_design_template_i_use_for_drones="DevourerGolemTier3_SwarmEnraged_Drones"
@@ -768,7 +768,7 @@
 		display_name="方阵吞噬者"
 		display_name_for_sidebar="吞 T4 方阵"
 		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破行星上的所有停火协议。此变体侧重于无人机生成，并在有无人机存在时变得无敌。"
-		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破行星上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于无人机生成，并在有无人机存在时变得无敌。清除所有"小"鱼是一项艰巨的任务，因为每一个都非常耐用，但在尝试与父体吞噬者战斗时是必要的。此外，它还从已在行星上一段时间的攻击者那里进一步减少 incoming 伤害。"
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破行星上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于无人机生成，并在有无人机存在时变得无敌。清除所有&quot;小&quot;鱼是一项艰巨的任务，因为每一个都非常耐用，但在尝试与父体吞噬者战斗时是必要的。此外，它还从已在行星上一段时间的攻击者那里进一步减少 incoming 伤害。"
 		external_invulnerability_unit_tag="DevourerTier4_PhalanxDrone"
 		external_invulnerability_region="ThisPlanet"
 		strength_multiplier="7.5"
@@ -804,7 +804,7 @@
 		display_name_for_sidebar="吞 T4 E-方阵"
 		description_short="一个巨大而强大的 Zenith 傀儡。试图杀死遇到的每一个单位，能自我再生，并打破行星上的所有停火协议。此变体侧重于无人机生成，并在有无人机存在时变得无敌。
 &lt;color=#ff8888&gt;狂暴：造成更多伤害！&lt;/color&gt;"
-		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破行星上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于无人机生成，并在有无人机存在时变得无敌。清除所有"小"鱼是一项艰巨的任务，因为每一个都非常耐用，但在尝试与父体吞噬者战斗时是必要的。此外，它还从已在行星上一段时间的攻击者那里进一步减少 incoming 伤害。
+		description="一个古老而极其强大的 Zenith 傀儡，能够自我再生并打破行星上的停火协议。其反应装甲可阻挡 90% 的 incoming 伤害（对大多数单位而言）。它致力于在其感知范围内 targeting 最大数量的敌舰，除非某个派系做好了战斗准备，否则最佳选择是逃跑。我们的单位不会自动攻击。此变体侧重于无人机生成，并在有无人机存在时变得无敌。清除所有&quot;小&quot;鱼是一项艰巨的任务，因为每一个都非常耐用，但在尝试与父体吞噬者战斗时是必要的。此外，它还从已在行星上一段时间的攻击者那里进一步减少 incoming 伤害。
 &lt;color=#ff8888&gt;狂暴：造成更多伤害！&lt;/color&gt;"
 		damage_multiplier_to_all_weapons="12" 
 	>

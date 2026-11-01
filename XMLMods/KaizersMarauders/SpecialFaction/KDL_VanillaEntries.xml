@@ -14,7 +14,7 @@ As their technology is similar to the 人类 Remnant large parts of it can be...
 In Kaizer the game receives another alternate victory condition. If this powerful boss is defeated in combat and 废弃 hacked the player can gain an incredibly powerful centerpiece that can easily break open a path to the AI's 堡垒 and home worlds, taking on entire fleets by itself in the process and win the game - before the AI's response overwhelms the player's planets.
 Note that Kaizer is barred from spawning by default and must be enabled.
 
-<color=#f25e1c>HIGHLY VARIABLE IMPACT:</color> This faction expands, and can do irreparable damage. If allowed to expand enough, they can be an enormous threat or powerful ally."
+&lt;color=#f25e1c&gt;HIGHLY VARIABLE IMPACT:&lt;/color&gt; This faction expands, and can do irreparable damage. If allowed to expand enough, they can be an enormous threat or powerful ally."
 		can_use_spire_debris="true"
 		impact="Moderate"
 		CanBeFriendlyToPlayer="true"

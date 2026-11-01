@@ -77,7 +77,7 @@
         cost_in_hacking_points="40"
 	/>
 	
-    <item name="Devourer_PacifyHack_T1" dll_name="DevourerChrysalis" type_name="DevourerChrysalis.Devourer_PacifyHack_T1" display_name="安抚吞噬者" description="如果我们无法与吞噬者傀儡作战甚至无法容忍它，我们也许可以……喂饱它。如果半智能的 Zenith 杀戮机器的行为方式与动物相同，我们可以喂食并"请求"它暂时远离我们的行星。
+    <item name="Devourer_PacifyHack_T1" dll_name="DevourerChrysalis" type_name="DevourerChrysalis.Devourer_PacifyHack_T1" display_name="安抚吞噬者" description="如果我们无法与吞噬者傀儡作战甚至无法容忍它，我们也许可以……喂饱它。如果半智能的 Zenith 杀戮机器的行为方式与动物相同，我们可以喂食并&quot;请求&quot;它暂时远离我们的行星。
 它的食物是金属，这次入侵对我们的目标帮助不大，但总比被吃掉要好。
 需要注意的是：这不会在吞噬者积极追击我们时清除它，而只是将问题推迟。然而，它会获得优先权。"
         hack_duration="5"
@@ -157,7 +157,7 @@
     <item name="Devourer_MetalSiphonHack_T3" copy_from="Devourer_MetalSiphonHack_T1" type_name="DevourerChrysalis.Devourer_MetalSiphonHack_T3"
 	/>
 	
-    <item name="Devourer_EnticeHack_T1" dll_name="DevourerChrysalis" type_name="DevourerChrysalis.Devourer_EnticeHack_T1" display_name="引诱吞噬者" description="通过使用足够的金属，使吞噬者傀儡觉得值得花时间，我们实际上能够向其导航系统"建议"目标。吞噬者将在一段时间内完全忽略所有其他派系，只追击目标及其所有盟友。"
+    <item name="Devourer_EnticeHack_T1" dll_name="DevourerChrysalis" type_name="DevourerChrysalis.Devourer_EnticeHack_T1" display_name="引诱吞噬者" description="通过使用足够的金属，使吞噬者傀儡觉得值得花时间，我们实际上能够向其导航系统&quot;建议&quot;目标。吞噬者将在一段时间内完全忽略所有其他派系，只追击目标及其所有盟友。"
         hack_duration="30"
         primary_hacking_response_interval="1000"
         primary_response_strength_per_interval="1"

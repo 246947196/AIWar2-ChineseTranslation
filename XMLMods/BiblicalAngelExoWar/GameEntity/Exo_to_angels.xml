@@ -253,7 +253,7 @@
 			is_partial_record="true"
 			display_name="沙姆谢尔"
 			display_name_for_sidebar="沙姆谢尔"
-			description="下一版"拉米艾尔"单位的高级原型。更易于生产，但比原型弱。远程爆破，增强行星上的盟友，用力场保护它们，如果有哨站存在则无敌。"
+			description="下一版&quot;拉米艾尔&quot;单位的高级原型。更易于生产，但比原型弱。远程爆破，增强行星上的盟友，用力场保护它们，如果有哨站存在则无敌。"
 			>
   </entity>
   
@@ -309,7 +309,7 @@
 			is_partial_record="true"
 			display_name="桑达尔丰"
 			display_name_for_sidebar="桑达尔丰"
-			description="下一版"拉斐尔"单位的高级原型。将敌人转化到己方，释放无人机带回阵亡盟友。"
+			description="下一版&quot;拉斐尔&quot;单位的高级原型。将敌人转化到己方，释放无人机带回阵亡盟友。"
 			>
   </entity>
   
@@ -338,7 +338,7 @@
 			is_partial_record="true"
 			display_name="乌姆布里尔"
 			display_name_for_sidebar="乌姆布里尔"
-			description="下一版"阿兹瑞尔"单位的高级原型。隐形且极难被发现，能够完全无视力场和个人护盾。"
+			description="下一版&quot;阿兹瑞尔&quot;单位的高级原型。隐形且极难被发现，能够完全无视力场和个人护盾。"
 			>
   </entity>
   
@@ -353,7 +353,7 @@
 			is_partial_record="true"
 			display_name="马特里尔"
 			display_name_for_sidebar="马特里尔"
-			description="下一版"萨奇尔"单位的高级原型。远程溅射伤害，同时削弱被击中的目标。"
+			description="下一版&quot;萨奇尔&quot;单位的高级原型。远程溅射伤害，同时削弱被击中的目标。"
 			>
   </entity>
   
@@ -376,7 +376,7 @@
 			is_partial_record="true"
 			display_name="图列尔火炮"
 			display_name_for_sidebar="图列尔火炮"
-			description="下一版"阿拉基尔火炮"单位的高级原型。持续远程爆破，影响小爆炸半径内的一切。"
+			description="下一版&quot;阿拉基尔火炮&quot;单位的高级原型。持续远程爆破，影响小爆炸半径内的一切。"
 			>
   </entity>
   
@@ -522,7 +522,7 @@
 			is_partial_record="true"
 			display_name="萨哈奎尔"
 			display_name_for_sidebar="萨哈奎尔"	
-			description="下一版"阿巴图尔"单位的高级原型。拥有能够贯穿多个目标的远程扇形光束，以及短程防空炮和一组无人机。"
+			description="下一版&quot;阿巴图尔&quot;单位的高级原型。拥有能够贯穿多个目标的远程扇形光束，以及短程防空炮和一组无人机。"
 			>
   </entity>
   
