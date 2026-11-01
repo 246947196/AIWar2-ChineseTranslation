@@ -93,6 +93,27 @@ def main():
         if not os.path.exists(dct):
             print(f'  !! 缺少字典 {os.path.relpath(dct, PROJECT)}，先跑 harvest_cs_tm.py --write')
             return 1
+        # 合并人工译文覆盖层（重抽字典不会冲掉这些）
+        manual = os.path.join(DICT_DIR, 'manual_zh.tsv')
+        if os.path.exists(manual):
+            try:
+                d = json.load(open(dct, encoding='utf-8'))
+                n = 0
+                for line in open(manual, encoding='utf-8'):
+                    line = line.rstrip('\n')
+                    if not line or line.startswith('#') or '\t' not in line:
+                        continue
+                    en, zh = line.split('\t', 1)
+                    if en and zh and d.get(en) != zh:
+                        d[en] = zh
+                        n += 1
+                if n:
+                    dct = os.path.join(DICT_DIR, f'_{asm}.merged.tmp.json')
+                    json.dump(d, open(dct, 'w', encoding='utf-8', newline='\n'),
+                              ensure_ascii=False, indent=1, sort_keys=True)
+                    print(f'    合并人工译文 {n} 条')
+            except Exception as e:
+                print(f'    !! 人工译文合并失败: {e}')
         shutil.copy2(base, out)
         bak = out + '.bak'
         if os.path.exists(bak):

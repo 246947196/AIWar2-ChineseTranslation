@@ -1,0 +1,18 @@
+﻿All Your Fleets	你的全部舰队
+At Local Planet	当前星球
+Call in Outguard	呼叫外卫
+Campaign Journal	战役日志
+Direct Build	直接建造
+Gameplay and Strategy Tips	玩法与策略提示
+Hack Target At Planet	入侵本星球目标
+Intel Reports	情报报告
+Tech Unlocks	科技解锁
+Shows the fleets at the planet you're currently viewing, grouped by owner, plus any fleets you've Watched.	显示你当前查看的星球上的舰队（按归属分组），以及你监视的舰队。
+This tab is for management of your fleets, so left-clicking a fleet opens the fleet management window.  If you want to select a fleet from this screen, you can, but you'll need to right-click it.	这个页签用于管理你的舰队：左键点击舰队会打开舰队管理窗口。如果你只是想在这里选中某支舰队，也可以，但要右键点击它。
+Choose a buildable structure and click in the planet gravwell to build.	选择一个可建造的建筑，然后在星球引力井内点击即可建造。
+Spend Science here to unlock higher-level units and structures; more techs appear as you capture fleets with ships that can benefit from them.	在这里花费科技点，解锁更高等级的单位与建筑；随着你缴获含有受益舰船的舰队，会出现更多科技。
+Hacking is done with flagships at the same planet unless otherwise specified. Many structures and planets have potential hacks. 	除非另有说明，入侵由同一星球上的旗舰执行。许多建筑与星球都有可入侵的项目。
+Helps you plan your strategy; this lists your active objectives. Left-click on an Objective to focus on it, or right-click to cycle its priority between lower, normal, and higher.	帮你规划战略：这里列出你当前的目标。左键点击目标可聚焦它，右键点击可在较低、普通、较高之间循环切换优先级。
+Story entries for your current campaign, newest first; left-click one to read it in full, or right-click to dismiss it as read without opening it.	当前战役的剧情条目，最新的在最前；左键点击可完整阅读，右键点击可标记为已读而不打开。
+Gameplay and strategy tips you've unlocked, newest first; left-click one to read it in full, or right-click to dismiss it as read without opening it.	你已解锁的玩法与策略提示，最新的在最前；左键点击可完整阅读，右键点击可标记为已读而不打开。
+Outguard are anti-AI mercenary groups you can call in once you've hacked the beacon they answer to; they don't cost energy and summon faster than regular ships, but act on their own once deployed.	外卫是反 AI 的雇佣兵团；入侵它们所回应的信标后即可呼叫。它们不消耗能量，召唤速度也快于常规舰船，但部署后会自行行动。
