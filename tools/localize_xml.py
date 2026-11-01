@@ -347,25 +347,29 @@ def load_ignore():
     return pats
 
 
+KEYSTR_FILE = os.path.join(PROJECT, 'tools', 'key_strings.txt')
+
+
+def load_keystrings():
+    """C# 里参与 ==/!=/Equals/case 比较的字面量。
+
+    这个游戏把显示字符串当代码用；这些值一旦翻成中文，代码里的比较就会失配
+    （轻则表项丢失，重则空列表崩溃），所以它们在 XML 里必须保留英文。
+    """
+    ks = set()
+    if os.path.exists(KEYSTR_FILE):
+        for line in open(KEYSTR_FILE, encoding='utf-8'):
+            line = line.rstrip('\n')
+            if line and not line.startswith('#'):
+                ks.add(line.replace('\\n', '\n'))
+    return ks
+
+
 def ignored(val, pats):
     return any(p.search(val) for p in pats)
 
 
 IGNORE_FILE = os.path.join(PROJECT, 'translation_ignore.txt')
-
-
-def load_ignore():
-    pats = []
-    if os.path.exists(IGNORE_FILE):
-        for line in open(IGNORE_FILE, encoding='utf-8'):
-            line = line.strip()
-            if not line or line.startswith('#'):
-                continue
-            try:
-                pats.append(re.compile(line))
-            except re.error:
-                pass
-    return pats
 
 
 def ignored(val, pats):
@@ -490,6 +494,7 @@ def cmd_build(args):
     if os.path.isdir(out_root) and not args.keep:
         shutil.rmtree(out_root)
     ignore = load_ignore()
+    keystr = load_keystrings()
     stats = collections.Counter()
     gaps = []
     files_out = []
@@ -504,6 +509,11 @@ def cmd_build(args):
                 if not safe and attr not in RISKY_ATTRS:
                     continue
                 val = _normcrlf(unesc(at.raw))
+                if getattr(args, 'avoid_keys', False) and val in keystr:
+                    # 只挡「被代码比较」的值。默认关闭：实测代码比较的多是 InternalName，
+                    # 与 display_name 无关，全局封锁会把阵营名、地图选项名一起挡掉。
+                    stats['kept_en'] += 1
+                    continue
                 entry = tm.get(val)
                 if not entry:
                     if safe and _prose(val) and not ignored(val, ignore):
@@ -533,7 +543,8 @@ def cmd_build(args):
             stats['file'] += 1
 
     print(f'生成 {stats["file"]} 个文件，替换 {stats["hit"]} 处，'
-          f'未命中文本 {stats["gap"]} 处')
+          f'未命中文本 {stats["gap"]} 处，'
+          f'因被代码比较而保留英文 {stats["kept_en"]} 处')
     print(f'输出目录: {os.path.relpath(out_root, PROJECT)}')
 
     gaps.sort()
@@ -603,6 +614,8 @@ def main():
     b = sub.add_parser('build')
     b.add_argument('--out', default=None)
     b.add_argument('--keep', action='store_true', help='保留上次输出（默认先清空）')
+    b.add_argument('--avoid-keys', dest='avoid_keys', action='store_true',
+                   help='对 tools/key_strings.txt 里的值保留英文（默认关闭：多数比较用的是 InternalName）')
     b.add_argument('--from-zip', dest='from_zip', default=None,
                    help='用备份 zip 当源（部署过之后游戏目录已是中文，必须用这个）')
     sub.add_parser('stats')

@@ -1,4 +1,25 @@
-# 这些字面量被 C# 当作**查找键**用，翻译会让查表失败，必须保留英文。
-# 症状：ArcenDebugLog 里刷 "Could not find '中文'"。
-# 发现新的就往下加。
+# 这些字面量被 C# 当作**查找键/枚举值**用，翻译会让比较失败。
+# 症状：ArcenDebugLog 里刷 "Could not find '中文'" 或 "System.Exception: ... resource None /
+#       Unknown allegiance ..."（异常体是多行，注意连非时间戳行一起看）。
+# 发现新的就往下加，然后重跑 harvest_cs_tm.py --write 与 patch_external_dlls.py。
 Name
+# 阵营归属（ScourgeDifficulty 表按此分支）
+Player
+AI
+MinorFaction
+# 敌对/友好关系字符串
+Friendly To Players
+Hostile To All
+Neutral
+# 资源枚举（DZ 升级表 RelatedResource 按此查表）
+Metal
+Energy
+Science
+Hacking
+Argon
+Radon
+Xenon
+Essence
+Cuendillar
+Strength
+Threat

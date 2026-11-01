@@ -30,6 +30,7 @@ RULES = [
     (re.compile(r'MissingMethodException|TypeLoadException'), '程序集/版本不匹配', True),
     (re.compile(r'ArgumentException: Mesh'), 'UI 顶点超限（长文本一次性渲染）', False),
     (re.compile(r'\bERROR\b'), '游戏自报错误', False),
+    (re.compile(r'^System\.\w*Exception:'), '表/行解析异常（多半也是译文吃了枚举值）', True),
 ]
 
 # 已知无害：游戏自己的随机派系资格检查
@@ -46,15 +47,7 @@ def main():
         return 2
     lines = open(LOG, encoding='utf-8', errors='ignore').read().split('\n')
 
-    if not args.all:
-        # 取最后一个「Hello Steam user」之后的部分（一次运行大致以它收尾前开始）
-        stamp = None
-        for i, l in enumerate(lines):
-            m = re.match(r'(\d+/\d+/\d+ \d+:\d+:\d+ [AP]M)', l)
-            if m:
-                stamp = m.group(1).split(' ')[0]
-        if stamp:
-            lines = [l for l in lines if l.startswith(stamp) or '\t' not in l]
+    # 不再按时间戳过滤：异常体是多行的，续行不带时间戳，一过滤就漏（上次就是这么漏的）
 
     findings = []
     for l in lines:
