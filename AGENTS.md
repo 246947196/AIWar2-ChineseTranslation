@@ -1128,3 +1128,22 @@ python tools\patch_external_dlls.py --refresh-base   # 重新取基线并重打
   立刻做；隔一次启动证据就没了（这次就差点没法复盘）。
 - 以后再遇到 `Could not find '中文'`，把那个中文对应的英文加进 `never_translate.txt`，
   重跑 `harvest_cs_tm.py --write` + `patch_external_dlls.py` 即可。
+
+### 补充：属性名也被翻了（2026-11-01 23:47 用户截图）
+
+界面弹出 `遇到错误！Could not find '类型'`，OuterXml 显示
+`<condition type="PlayerHasDoneAnyOnPlanetCameraPanning" />`。
+
+根因：字典里 `type -> 类型`。代码按**属性名** "type" 查 XML 属性，字面量被替换后
+就查不到（文件本身没被改，OuterXml 里属性名仍是 type）。
+
+自动化防护：`harvest_cs_tm.py` 现在从 `_backup/00_ORIGINAL*.zip` 里抽出全部 XML
+属性名（3,202 个），与字典键求交集并强制跳过 —— 与属性名同名的字面量一律不翻。
+命中的是 `type / albedo / armor / max` 四条。
+
+验证：部署后的 `AIWarExternalCode.dll` 里 `type` 仍在、`类型` 已消失；
+运行日志 0 条 `Could not find '...'`、0 条 `System.Exception`。
+
+教训：**验证必须进到游戏里**（主菜单加载不出来这些错误）。上次我只跑到主菜单
+就宣布"归零"，用户一进游戏就弹错。以后验收 = 启动 → 进一次战役/教程 → 退出 →
+`python tools\check_run.py`。

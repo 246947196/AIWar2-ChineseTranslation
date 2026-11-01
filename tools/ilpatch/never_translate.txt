@@ -23,3 +23,9 @@ Essence
 Cuendillar
 Strength
 Threat
+# 与 XML 属性名撞车的字面量（代码会按名字查属性，翻了就查不到）
+# 判定方法：把原始 XML 的所有属性名取出来，与字典键求交集
+type
+albedo
+armor
+max

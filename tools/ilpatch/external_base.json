@@ -1,8 +1,8 @@
 {
   "AIWarExternalCode": {
     "base_sha256": "0140b1cc0c948333512cf29b678c4430a21a82a075b4edd4db6eac4da12d43ce",
-    "cjk": 5350,
-    "dll_sha256": "fd80fe54e0ee2b268f1973a0582d15e1a54dbb0b9fb5eaf5946b61219bd02e2b"
+    "cjk": 5347,
+    "dll_sha256": "4ef5972083dfb8d254077be04c2bfb96b0347ab571a0e52d10234b27e9888c81"
   },
   "AIWarExternalDeepProcessingCode": {
     "base_sha256": "7e3eeef2806c9cceece9f0d13460c5d00b5849dfe2b4fd83216a7a1a2ae661b0",

@@ -74,6 +74,26 @@ def plausible(en, zh):
 NEVER_FILE = os.path.join(PROJECT, 'tools', 'ilpatch', 'never_translate.txt')
 
 
+def xml_attribute_names():
+    """原始 XML 里出现过的属性名。代码会按名字查属性，这些词不能翻。"""
+    import glob, zipfile
+    names = set()
+    cands = sorted(glob.glob(os.path.join(PROJECT, '_backup', '00_ORIGINAL*.zip')))
+    if not cands:
+        return names
+    try:
+        z = zipfile.ZipFile(cands[0])
+        for n in z.namelist():
+            if not n.endswith('.xml'):
+                continue
+            text = z.read(n).decode('utf-8', errors='ignore')
+            for m in re.finditer(r'\s([A-Za-z_][\w.-]*)\s*=\s*"', text):
+                names.add(m.group(1))
+    except Exception:
+        pass
+    return names
+
+
 def load_never():
     """被 C# 当作查找键用的字面量，翻译会让查表失败，必须保留英文。"""
     words = set()
@@ -90,7 +110,7 @@ def main():
     ap.add_argument('--write', action='store_true')
     args = ap.parse_args()
 
-    never = load_never()
+    never = load_never() | xml_attribute_names()
     game_files = dict(walk_cs(SRC_GAME))
     pairs = collections.defaultdict(dict)
     stat = collections.Counter()
