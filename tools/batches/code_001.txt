@@ -1,1 +1,50 @@
 		Considering updating customfileddefinitions for the randomly chosen faction. 
+		One of us is an AI ally and the other is not
+		Seriously considering whether we can create a 
+	An unknown planet in the galaxy will succumb to the Fimbulwinter in 
+	Hacking points spent against this faction: <color=#3DE799>
+	Path A: setting aip left from command station to 0
+	Path A: setting aip left from warp gate to 0
+	Path B: setting aip left from command station to 0 IncreaseAIP: 
+	Path B: setting aip left from warp gate to 0. IncreaseAIP: 
+	There are too many factions in the game to add any more.
+	This is a fissure and can't use the candidate
+	This is a nexus and can't use the candidate
+	We have this already, and you're only allowed one
+	Will next check for scourge invasion in 
+\n	ChooseWaveTarget: adding possibleSpawnPoint to Possible list: 
+\n	World_AIW2.Instance.SimulationProfile.LongTermPlanningOnServerInterval_Frames=
+\n	drone gun picking spawn point, parent radius is 
+\n<pos=40>LODDistancesFromVis Not Set For Some Reason!
+\n<pos=40>LODMeshesFromVis Not Set For Some Reason!
+\nDebug: next chrysalis will spawn in : 
+\nDebug: next lunar invasion will spawn in : 
+\nDebug: next planetoid drill will spawn in : 
+\nDebug: next planetoid will spawn in : 
+\nSquad Fleet Squad Fleet ReasonCode List: 
+\nState of Scourge Fireteams for intensity 
+\nThis is how many wave leaders will be spawned: 
+  \nSquad Fleet Squad Fleet ReasonCode List: 
+   <-- OVER CUTOFF, planner should be combining these
+ (fixed; not tied to a planet or unit)
+ (patch body IL references a missing member)
+ DEBUG_TURN_OFF_MAIN_SIM_EXECUTION
+ Doesn't know what it is doing.
+ Hit exception in HandleScienceIncome for DS Sidekick: 
+ Risk Analyzers in the galaxy that you have not found yet. Risk Analyers will increase AIP every hour if the AI controls them, decrease AIP every hour if you control them, and do nothing if they are on a neutral planet.\n
+ SHOULD_NOT_RUN_GAME_STYLE_LOGIC
+ Target is blocking victory, returning true.
+ Warriors that could upgrade but that are busy: 
+ ai purchase cost to the new unit's hangars.\n
+ allow your Scourge Warriors to evolve.\n\n
+ and distance to hostile from best 
+ and is actively boring a new wormhole to 
+ and is at or above max territory size.\n
+ and is below max territory size (num spawners 
+ and required str for next exo: 
+ any Temen whose route holds more hostile strength than the Pilgrim itself\n
+ are a related structure: each produces a single exceptionally powerful ship to defend nearby planets. 
+ are the foundation of your Scourge forces.\n\n
+ as a build choice for the incoming fleet. AI cost: 
+ as a build choice for the incoming fleet. We have now chosen 
+ as the faction for these calculations.

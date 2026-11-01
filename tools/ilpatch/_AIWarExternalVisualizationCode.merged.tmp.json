@@ -117,6 +117,8 @@
  " put up an admittedly valiant fight, but not nearly enough to stop the utter destruction of your home planet ": "舰队确实进行了英勇的战斗，但远不足以阻止你的母星",
  " the \"Hide Unexplored Planets\" setting was enabled.": "已启用'隐藏未探索星球'设置。",
  " was settled out of desperation.  We now have an entire galaxy in which humans can grow and learn in peace.": "是出于绝望才定居的。我们现在拥有了整个人类可以和平成长和学习的银河系。",
+ "% faster than normal due to decreased gravity. ": "% 因重力降低，移动速度比正常更快。 ",
+ "% slower than normal due to increased gravity. ": "% 因重力增加，移动速度比正常更慢。 ",
  ", because it has not been explored via scouting and": "，因为该星球尚未通过侦察探索且",
  ", because it has not been explored via scouting.": "派遣舰队，因为它尚未通过侦察探索。",
  ", because: ": "，原因：",
