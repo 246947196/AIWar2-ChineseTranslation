@@ -104,6 +104,9 @@ def main():
                     if not line or line.startswith('#') or '\t' not in line:
                         continue
                     en, zh = line.split('\t', 1)
+                    # 人工译文文件里换行/制表符用 \n \t 表示，这里还原
+                    en = en.replace('\\n', '\n').replace('\\t', '\t')
+                    zh = zh.replace('\\n', '\n').replace('\\t', '\t')
                     if en and zh and d.get(en) != zh:
                         d[en] = zh
                         n += 1

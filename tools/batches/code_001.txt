@@ -1,0 +1,10 @@
+		Considering updating customfileddefinitions for the randomly chosen faction. 
+	Hacking points spent against this faction: <color=#3DE799>
+	There are too many factions in the game to add any more.
+	Trigger deactivated due to ai difficulty; highest diff: {0} and required {1}
+\n	ChooseWaveTarget: adding possibleSpawnPoint to Possible list: 
+\n\n<color=#888888>Click to go to its planet.</color>
+\n\n<i>Each new Temen adds to the haul, and longer journeys bring better resources.</i>
+\n\n<i>Lesser Pilgrims from shrines only carry Metal, Hacking and Science.</i>
+\n\n<size=85%><color=#999999>Clicking on this icon will show a detailed history of all the hacks you have done.</color></size>
+\n\n<size=85%><color=#999999>Left clicking on this icon will show an interactive metal flow breakdown. Right clicking will show the old-style plain text summary.</color></size>

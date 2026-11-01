@@ -35,3 +35,10 @@ Strength	战力
 Fleet	舰队
 Description	描述
 Cost	成本
+	Hacking points spent against this faction: <color=#3DE799>	\n已对该派系投入的入侵点数：<color=#3DE799>
+	There are too many factions in the game to add any more.	游戏中的派系已经太多，无法再添加。
+\n\n<color=#888888>Click to go to its planet.</color>	\n\n<color=#888888>点击前往其所在星球。</color>
+\n\n<i>Each new Temen adds to the haul, and longer journeys bring better resources.</i>	\n\n<i>每新增一个特门都会增加收获，旅程越长带回的资源越好。</i>
+\n\n<i>Lesser Pilgrims from shrines only carry Metal, Hacking and Science.</i>	\n\n<i>来自神龛的低阶朝圣者只携带金属、入侵点和科学点。</i>
+\n\n<size=85%><color=#999999>Clicking on this icon will show a detailed history of all the hacks you have done.</color></size>	\n\n<size=85%><color=#999999>点击此图标可查看你所有入侵的详细历史。</color></size>
+\n\n<size=85%><color=#999999>Left clicking on this icon will show an interactive metal flow breakdown. Right clicking will show the old-style plain text summary.</color></size>	\n\n<size=85%><color=#999999>左键点击此图标可查看交互式金属流向明细；右键点击则显示传统纯文本摘要。</color></size>
