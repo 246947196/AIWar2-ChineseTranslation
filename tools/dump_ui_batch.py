@@ -51,7 +51,8 @@ def main():
     if os.path.exists(manual):
         for line in open(manual, encoding='utf-8'):
             if '\t' in line and not line.startswith('#'):
-                known.add(line.split('\t', 1)[0])
+                k = line.split('\t', 1)[0]
+                known.add(k.replace('\\n', '\n').replace('\\t', '\t'))
 
     def wc(s):
         return len(WORDS.findall(TAG.sub(' ', s)))
@@ -69,6 +70,15 @@ def main():
         if not (t[0].isupper() or t[0] == '<'):
             return False
         if re.search(r'(SKIP|AIP|debugStage|Path [AB]|TID\d|\.cs\b|==|!=|->)', s):
+            return False
+        # 内部日志/报错的一贯开头，玩家永远看不到
+        if re.match(r'^(Bug|Cannot|Could not|Couldn|Unknown|Invalid|Missing|Expected|Failed|'
+                    r'Warning|Error|Calling|Returning|Skipping|Adding|Removing|Set |Get|Trying|'
+                    r'Found |No |Not |Unable|Null|Empty|Index|Assert|Check)', t):
+            return False
+        # 界面文本通常是"对玩家说话"的：含 you/your/this/that，或以祈使句开头
+        if not re.search(r'\b(you|your|You|Your|this|This|that|That)\b', t) \
+           and not re.match(r'^(Click|Press|Hold|Select|Choose|If |When |Once |The |Each )', t):
             return False
         if not re.search(r'[.!?:]$|[.!?:]\s|<', t):
             # 没有标点也不是富文本，多半是日志

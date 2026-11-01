@@ -1,0 +1,50 @@
+Quickstarts you create yourself show up here.\nThey are located on disk at [aiw2_root]/PlayerData/QuickStarts
+Reducing AI Progress is critical to your survival. 
+Remember, you can also hack to destroy a Warp Gate.
+Scrap all the units you currently have selected? (Hotkey: <color=yellow>
+Show only the structures that are ready to upgrade, or every structure.
+Skip quickstart folder '{0}' because contains no saves that would be listed.
+Spawners are built using Corbomite. Place them across the galaxy to project Scourge strength into new regions. Keep in mind that Spawners need time to mark up again if destroyed.\n\n
+Spawns Warriors; higher marks bank more metal for them. Mark 7 Spawners let you field Subjugators.
+Spire City has no open sockets. Perhaps it is crippled, or you don't own the planet?
+Spire Global Data is null. This is perplexing
+Spire isn't on. This is perplexing
+Stop this planet's non-repair metal spending (claiming, rebuilding remains, and construction assist) via Hold Fire. Repairs of existing friendly ships are deliberately left alone, since Hold Fire also stops a ship from fighting back. Click again (Resume) to release everything this button held.
+The AI is dead, so all its sub factions stop getting income anything. 
+The Apkallu ask for your help. They have not said what this costs them.
+The Apkallu believe the Disruptor can overload the Nebular Splice (the Malware's engineered connection to the Apsu), and sever their ability to send forces into this galaxy.\n\n
+The Apkallu sages were ambushed by the Malware, their fleet scattered and their Ziggurats seized. Help them survive and recover their people.\n\n
+The Apkallu take their Renegade allies from the Apsu, not from a Reliquary.
+The Armory's race must have its hybrid unlocked: that is the second level of the race's tech.\n\n
+The Dark Zenith have a different economy, and the player does not have much control over it. Their Terminii will produce resources, which are brought to the Epistyles with Transports.\nThey get science by spreading the Fimbulwinter.
+The Dark Zenith manage themselves on autopilot, but the Fleets Menu is how you direct their priorities.
+The Disruptor did not sever the Malware's link to the Apsu; it opened it. Their fleet has crossed over, and the Apostate now commands from worlds that did not exist an hour ago.\n\n
+The ambush scattered more than the Ziggurats. Parts of the Apkallu fleet were trapped in the Apsu during the strike, fighting desperately against the main Malware armada.\n\n
+The hacker fleet already has a filled elite slot, so cannot hack to gain another elite.
+The king is dead. This faction now stops doing anything
+The marks and experience your Scourge needs for Subjugators, the Nemesis, evolving and hybridizing.
+The rows show how much experience each one needs to reach the given mark; divide by the rate for the time it takes.\n\n
+The stolen line will be granted to ALL of your command stations and citadels. In this campaign, battlestations don't receive it (see the 'Battlestations receive turrets from hacks for all' galaxy setting); they only get turrets from hacks for that particular battlestation.
+The stolen line will be granted to ALL of your command stations, battlestations, and citadels.
+The target is not a wild Telium.
+There are Apkallu Ziggurats elsewhere in the galaxy, held by the Malware. None are currently visible from your explored planets.\n\n
+There should always be structures when building a defensive structure (that was checked earlier).
+These are strange, multi-phasic ships, out of phase with our galaxy. For now, there is nothing you can do with them.
+This IP addresss is in the newer IPV6 format!  This is probably not supported by most of the networking frameworks, and also not needed. \n\nThe goal of IPV6, long-term, is to provide more addresses for more people and applicances around the world.  It's a great idea, and most modern network cards support them as an option, but not a lot of networks actually use them.  This has been a work in progress since 1995, but was only internationally accepted in 2017.  And even in the year 2020, when this tooltip was written, it's not really something you need to worry about.
+This Migrant has returned to your galaxy yet again, and needs no guidance to reach your territory. It spawned in on 
+This Sphere is currently supporting {0}% of it's total strength in the galaxy. 
+This Spore has a limited lifetime, and will despawn soon: 
+This Terminus is using the following to create new resources: 
+This faction is trapped. Cloaked builder metal 
+This hack will transform the flagship of <color=#a1a1a1>
+This is an Armory of corrupted <color=#
+This is probably bad: '{0}' faction's LooseFleet is null??
+This is probably bad: '{0}' faction's LooseFleet is suppose to dump its contents????
+This is safe, but not free: 
+This planet has already had its guard posts weakened by a previous hack!
+This planet has already had its turrets weakened by a previous hack!
+This planet has not yet been explored!
+This planet is not owned by an AI!
+This structure spawns ships which are <color=#a1ffa1>
+This structure spawns ships with Strength <color=#a1ffa1>
+This structure temporarily boosts the AI <color=#ff0000>

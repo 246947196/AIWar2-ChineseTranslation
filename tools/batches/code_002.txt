@@ -1,0 +1,50 @@
+ Instigator Bases in the galaxy that you have not found yet. Each insigator base will significantly strengthen the AI in some way
+ Outguard Beacons in the galaxy that you have not found yet. Find them to establish contact with small other pockets of humanity who can be brought out of hiding to help you.
+ Returning 0 because the faction ceases hack responses if all AIs have been defeated, they all were.
+ Returning 0 because the faction ceases hack responses if defeated, and it either has the FactionIsDefeated flag set or no does not block victories at the moment.
+ Scenario Exception in scenario DoPerSimStepLogic_OnMainThreadAndPartOfSim: 
+ Spikes. Letting protocols complete will relax this.
+ Target faction was null, return true.
+ Target is blocking victory, returning true.
+ The Strength of AI-opposed units on this planet is or has recently been greater than the AI's strength, so this unit is alerted for now. 
+ There are {0} clanlings stored within, ready to attack any that agitate hives or workers on this planet.
+ This hive considers you part of its ecosystem, and is producing friendly clanlings to defend you. Next spawn in: 
+ Warriors that could upgrade but that are busy: 
+ You do not have too many units on this planet, so this unit will probably stop being alerted before long.
+</color> None of your selected ships are ready or able to attack this.  They are all in loading mode, or unable to leave another planet, or lack weapons, etc.
+</color> None of your selected ships can currently damage 
+</color> Please select some ships before trying to attack.
+</color> back to re-allocate as you wish. \n\n Please note that there is no way to get a refund on spent hacking points.
+</color> because of incompatible self-hacking between the types
+</color> with tachyon radiation to reveal cloaked enemies!
+</color>.  The number on the right shows the rate at which you are gaining or losing it.\n\n<b>Total Stored: <color=#ccccee>
+</color><color=#3f6c9e> and click for the full Protocol and every breach.</color></size>
+</color><color=#3f6c9e> and click for the full Protocol.</color></size>
+<b><size=120%>Hacking</size></b>\n\nGeneral-purpose nanomachines used to improve your own units, sabotage enemies, or steal from enemies.  Note that you are in a target-rich environment, and likely cannot afford even a third of the hacks available to you.  Choose your hacks wisely, and capture more planets or destroy distribution nodes to get more hacking points.\n\nThe more hacking points you use against an AI, the stronger that AI's response to your hacks will be.  Only points spent against an AI-owned structure count.  Note that an individual hack may have a response far more aggressive than the generalized AI response level shown below.\n
+<b><size=120%>Metal</size></b>\n\nRequired to build things.  After you un-pause the game, the number on the right will show the rate at which you are gaining or losing it.\n\n<b>Total Stored: <color=#ccccee>
+<b><size=120%>Science</size></b>\n\nSpend it to unlock higher-level units and structures.  It is gained primarily by claiming new planets and holding them for a while.\n\nThere is a limited amount that scientists can learn from what they find in each system, so you'll need to keep finding new research targets for them.\n\nA single ship type can be upgraded by multiple tech upgrades, so be sure to consider your options carefully.\n\nMore techs will appear in the tech sidebar as you capture fleets with ships that can benefit from them.
+<b>If the AI destroys it on 
+<b>If they succeed, the AI Progress will rise by 
+<color=#6699ff>Dmg absorbed:</color> its share of the damage the fleet took (shields vs. hull).\n
+<color=#66ff66>Firing:</color> how much of the battle it spent shooting, versus idle with nothing in range.\n
+<color=#888888>No Subjugator on the way. One takes 
+<color=#999999>This fleet hasn't fought a battle on its current planet yet, so there's nothing to show. Moving the flagship to a different planet starts a new battle there and resets this data.</color>\n
+<color=#aa88ff>Pinned:</color> share of the fleet's damage that landed on enemies this line was holding in place (engine stun, tractor, paralysis).\n
+<color=#aadd66>Dmg enabled:</color> extra damage other lines dealt thanks to this line's acid, tractor, attack aura, or supercharge.</size>\n\n
+<color=#cc99ff>CC impact:</color> damage the fleet avoided because this line shut down enemy weapons (paralysis, phase, reload slow, knockback). Estimated from the enemies' listed DPS, so treat it as a best case.\n
+<color=#ff6666>Dmg dealt:</color> its share of the fleet's damage. "% of listed DPS" compares that to what its stats say; over 100% is normal for area damage, bonuses, and allies' acid.\n
+<color=#ff731e>ERROR!  Planet of this ship is 
+<color=#ff731e>ERROR!  The fleet membership for this ship does not actually contain it!</color>  
+<color=#ffcc88>What your pilgrims brought back on their last 
+<pos=40>LODDistancesFromVis Not Set For Some Reason!
+<pos=40>LODMeshesFromVis Not Set For Some Reason!
+<size=90%>\nYou have already unlocked this upgrade 
+A Lamassu takes its shape from the Body structure in its Ziggurat's sockets.
+A Warrior with enough experience marks up when it visits an Armory, but never past that Armory's mark. Structures wait for you to upgrade them from Scourge Command (click Corbomite in the resource bar); the Upgrade Scourge Infrastructure entry in the Intel menu counts the ones that are ready.\n\n
+A base Warrior. It evolves into an Armory's race when it reaches a high enough mark and visits a high enough mark Armory; see Thresholds.
+A door into the Apsu. On the other side, the Malware are still attacking the Apkallu's allies.
+A hybrid: an evolved Warrior that visited an Armory of another race. Hybrids gain experience at half speed.\n\n
+A planet can only have one of a Spawner, an Armory, or a Bestiary, and only one Fortress; the build menu will hide whichever of these a planet can no longer accept.\n\n
+A planet cannot have a Spawner alongside an Armory or a Bestiary, and two Spawners must be at least two hops apart; the build menu will hide Spawners wherever that would be the case.\n\n
+A second Ziggurat is still held by the Malware. The Apkallu need it; capturing it may reveal more about what the Malware are truly doing in this galaxy.\n\n
+AIWar2GalaxySettingChanged_Int: Could not find AIWar2GalaxySetting with internal name '
