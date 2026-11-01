@@ -1,8 +1,53 @@
 ﻿# AI War 2 Deployment Script
 # Deploy all translation components to game directory
+#
+# 路径可移植：默认按「脚本所在目录 = 汉化项目目录、其父目录 = 游戏根目录」推导，
+# 也可以用 -GameDir 显式指定，例如：
+#   .\deploy.ps1 -GameDir "E:\SteamLibrary\steamapps\common\AI War 2"
 
-$translationDir = "D:\Steam\steamapps\common\AI War 2\AIWar2_ChineseTranslation"
-$gameDir = "D:\Steam\steamapps\common\AI War 2"
+param(
+    [string]$GameDir = ""
+)
+
+$translationDir = $PSScriptRoot
+if ([string]::IsNullOrWhiteSpace($translationDir)) {
+    $translationDir = (Get-Location).Path
+}
+
+function Resolve-GameDir([string]$explicit) {
+    if ($explicit -and (Test-Path (Join-Path $explicit "AIWar2.exe"))) { return (Resolve-Path $explicit).Path }
+    $parent = Split-Path $translationDir -Parent
+    if ($parent -and (Test-Path (Join-Path $parent "AIWar2.exe"))) { return $parent }
+    # 兜底：从 Steam 注册表找库目录
+    foreach ($key in @('HKCU:\Software\Valve\Steam', 'HKLM:\SOFTWARE\WOW6432Node\Valve\Steam')) {
+        try {
+            $steam = (Get-ItemProperty -Path $key -ErrorAction Stop).SteamPath
+            if (-not $steam) { continue }
+            $libs = @($steam)
+            $vdf = Join-Path $steam 'steamapps\libraryfolders.vdf'
+            if (Test-Path $vdf) {
+                $libs += (Select-String -Path $vdf -Pattern '"path"\s+"([^"]+)"' -AllMatches |
+                          ForEach-Object { $_.Matches } | ForEach-Object { $_.Groups[1].Value -replace '\\\\', '\' })
+            }
+            foreach ($lib in $libs) {
+                $cand = Join-Path $lib 'steamapps\common\AI War 2'
+                if (Test-Path (Join-Path $cand "AIWar2.exe")) { return (Resolve-Path $cand).Path }
+            }
+        } catch { }
+    }
+    return ""
+}
+
+$gameDir = Resolve-GameDir $GameDir
+if (-not $gameDir) {
+    Write-Host "ERROR: 找不到 AI War 2 游戏目录。" -ForegroundColor Red
+    Write-Host "  请把汉化项目放在游戏目录下，或用参数指定：" -ForegroundColor Yellow
+    Write-Host '    .\deploy.ps1 -GameDir "E:\SteamLibrary\steamapps\common\AI War 2"' -ForegroundColor Yellow
+    exit 1
+}
+
+Write-Host "  游戏目录: $gameDir"
+Write-Host "  汉化目录: $translationDir"
 
 $ErrorActionPreference = "Stop"
 
