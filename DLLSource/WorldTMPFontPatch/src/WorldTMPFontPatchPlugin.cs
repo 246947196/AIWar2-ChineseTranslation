@@ -245,6 +245,7 @@ public class WorldTMPFontPatchPlugin : BaseUnityPlugin
         // vertical drift on new messages without disturbing the horizontal position.
         rt.anchorMin = new Vector2(0.5f, 1f);
         rt.anchorMax = new Vector2(0.5f, 1f);
+        rt.pivot = new Vector2(0.5f, 1f);   // 顶部枢轴：行数变化时向下长，字不跳
         rt.sizeDelta = new Vector2(parentRect.width * 2f, parentRect.height * 2f);
         rt.anchoredPosition = new Vector2(0f, 0f);
         rt.localScale = new Vector3(0.5f, 0.5f, 1f);
@@ -297,6 +298,9 @@ public class WorldTMPFontPatchPlugin : BaseUnityPlugin
             // [FIX] same anchor as OnChatLogOverlay: horizontal centered, vertical top.
             rt.anchorMin = new Vector2(0.5f, 1f);
             rt.anchorMax = new Vector2(0.5f, 1f);
+            // pivot 必须在顶部：sizeDelta 随行数变化时，若 pivot 在中心，
+            // 文本框会以中心为轴上下扩张，字就跟着上下跳（聊天框的抖动就是这个）
+            rt.pivot = new Vector2(0.5f, 1f);
             rt.localScale = new Vector3(0.5f, 0.5f, 1f);
 
             legacy.font = cachedLegacyFont;
