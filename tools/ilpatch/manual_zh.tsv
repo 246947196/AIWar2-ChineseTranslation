@@ -237,3 +237,11 @@ Please correct the configuration so that the faction: 	请修正配置，使该�
 Sorry!  Can't generate a proper map.  We need a specific unit called AICommandStation for its name.  You can mark it as deprecated, so it does not show up in game, but its radius will be used for the sizing of other entities.	抱歉！无法生成合格的地图。我们需要一个名为 AICommandStation 的特定单位来命名。你可以把它标记为弃用，这样它就不会出现在……
 None Known	未知
 You Are Viewing: 	你正在查看： 
+\n(Shortcut key: <color=#996f4c>	\n（快捷键：<color=#996f4c>
+</color></b>\n<b>Total Inflow: <color=#ccccee>	</color></b>\n<b>总流入：<color=#ccccee>
+</color></b>\n<b>Total Outflow: <color=#ffa1a1>	</color></b>\n<b>总流出：<color=#ffa1a1>
+</color></b>\n<b>Balance With Civilian Authorities: <color=#ffd940>	</color></b>\n<b>与平民当局的结余：<color=#ffd940>
+</color>  (Repayment Rate: <color=#ffe479>	</color>  （偿还率：<color=#ffe479>
+?\n \n<color=#888888>To disable this prompt, go into Game Settings, under the Game tab, and toggle this to OFF.  Or just hold down 	?\n \n<color=#888888>要关闭此提示，请进入游戏设置，在「游戏」标签下把它切成关闭。或者按住 
+AI response level for 	AI 反应等级：
+\n\tSpending Possible: 	\n\t可用支出： 
