@@ -73,24 +73,35 @@ def esc(s):
 # ---------------------------------------------------------------- 扫描器
 
 class Attr:
-    __slots__ = ('tag', 'name', 'start', 'end', 'raw')
+    __slots__ = ('tag', 'name', 'start', 'end', 'raw', 'path')
 
-    def __init__(self, tag, name, start, end, raw):
+    def __init__(self, tag, name, start, end, raw, path):
         self.tag = tag
         self.name = name
         self.start = start
         self.end = end
         self.raw = raw
+        self.path = path
 
     @property
     def ctx(self):
         return f'{self.tag}:{self.name}'
 
 
+_KEY_ATTRS = ('name', 'id', 'key', 'internal_name')
+
+
 def iter_attrs(text):
-    """遍历 XML 属性，返回带原文区间的 Attr（start/end 指向引号内的值）。"""
+    """遍历 XML 属性，返回带原文区间与元素路径的 Attr。
+
+    必须走文本扫描而不是 ElementTree：游戏 XML 的描述里有**字面换行**，
+    而任何符合规范的 XML 解析器都会把属性值里的换行正规化成空格，
+    于是 en 与 zh 的键永远对不上（多行描述全部漏翻）。
+    path 用「祖先链+name」表示，用于按元素身份配对。
+    """
     n = len(text)
     i = 0
+    stack = []
     while i < n:
         if text.startswith('<!--', i):
             j = text.find('-->', i)
@@ -116,17 +127,19 @@ def iter_attrs(text):
             i = n if close < 0 else close + 1
             continue
         i = k
-        # 属性循环
+        attrs = []
+        self_closing = False
         while i < n:
             while i < n and text[i] in ' \t\r\n':
                 i += 1
             if i >= n:
                 break
+            if text.startswith('/>', i):
+                self_closing = True
+                i += 2
+                break
             if text[i] == '>':
                 i += 1
-                break
-            if text.startswith('/>', i):
-                i += 2
                 break
             m = i
             while m < n and text[m] not in ' \t\r\n=/>':
@@ -144,11 +157,28 @@ def iter_attrs(text):
                     ve = text.find(q, vs)
                     if ve < 0:
                         ve = n
-                    if name and not closing:
-                        yield Attr(tag, name, vs, ve, text[vs:ve])
+                    if name:
+                        attrs.append((name, vs, ve))
                     i = ve + 1
                     continue
             i = max(m, i + 1)
+
+        if closing:
+            if stack and (stack[-1] == tag or stack[-1].startswith(tag + '#')):
+                stack.pop()
+            continue
+
+        ident = None
+        for a, vs, ve in attrs:
+            if a in _KEY_ATTRS:
+                ident = f'{tag}#{text[vs:ve]}'
+                break
+        ident = ident or tag
+        path = tuple(stack) + (ident,)
+        for a, vs, ve in attrs:
+            yield Attr(tag, a, vs, ve, text[vs:ve], path)
+        if not self_closing:
+            stack.append(ident)
 
 
 # ---------------------------------------------------------------- 路径映射
@@ -202,6 +232,15 @@ def index_el(root):
 
 # ---------------------------------------------------------------- extract
 
+def scan_map(path):
+    """(元素路径, 属性名) -> 原文值（保留字面换行）"""
+    d = {}
+    text = open(path, encoding='utf-8', newline='').read()
+    for at in iter_attrs(text):
+        d.setdefault((at.path, at.name), at.raw)
+    return d
+
+
 def cmd_extract(args):
     root = game_root()
     buckets = collections.defaultdict(lambda: collections.defaultdict(set))
@@ -218,24 +257,24 @@ def cmd_extract(args):
                 skipped_no_orig += 1
                 continue
             try:
-                cur = index_el(ET.parse(p).getroot())
-                ref = index_el(ET.parse(orig).getroot())
+                ET.parse(p)
+                ET.parse(orig)
             except ET.ParseError:
                 continue
-            for k, cel in cur.items():
-                gel = ref.get(k)
-                if gel is None:
+            cur = scan_map(p)
+            ref = scan_map(orig)
+            for (path, a), cru in cur.items():
+                gru = ref.get((path, a))
+                if gru is None:
                     continue
-                tag = cel.tag
-                for a, cv in cel.attrib.items():
-                    gv = gel.get(a)
-                    if gv is None or not cv or not gv:
-                        continue
-                    if not CJK.search(cv) or CJK.search(gv) or cv == gv:
-                        continue
-                    ctx = f'{tag}:{a}'
-                    buckets[(gv, cv)][ctx].add(rel)
-                    pair += 1
+                cv, gv = unesc(cru), unesc(gru)
+                if not cv or not gv:
+                    continue
+                if not CJK.search(cv) or CJK.search(gv) or cv == gv:
+                    continue
+                ctx = f'{path[-1].split("#")[0]}:{a}'
+                buckets[(gv, cv)][ctx].add(rel)
+                pair += 1
 
     rows = []
     for (en, zh), ctxmap in buckets.items():
