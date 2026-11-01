@@ -50,3 +50,6 @@ translation_gaps_dll.tsv
 
 # 游戏原文件备份（体积大，按需生成）
 _backup/
+
+# 发布包（体积大，按需生成）
+dist/

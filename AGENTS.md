@@ -989,3 +989,33 @@ python tools\localize_xml.py build    # 现生成 XML
 
 未中文化的 134 个实体是测试实体（`Hit Test Fighter ...`）与 5.84x 新增魔像光束
 单位，与 `translation_gaps.tsv` 对得上。本次运行日志 0 条 error/exception。
+
+## 发布包（给玩家用的一键安装）
+
+```powershell
+python tools\localize_xml.py build    # 先生成 XML
+.\tools\make_release.ps1              # 产出 dist\AIWar2_Chinese_v<版本>_<日期>.zip
+.\tools\make_release.ps1 -NoBundle    # 不含 arcenui（包体小很多，菜单按钮保持英文）
+```
+
+包结构：
+
+| 内容 | 说明 |
+|------|------|
+| `安装.ps1` | 自动找游戏目录 → 备份 → 覆盖；找不到时支持 `-GameDir` |
+| `卸载.ps1` | `-Backup <zip>` 完整还原；不带参数只删插件与补丁 DLL |
+| `说明.txt` | 安装/卸载/排错 |
+| `_payload\` | 与游戏目录同构：XML（GameData/Expansions/XMLMods）、PatchedAssemblies、BepInEx、arcenui |
+
+打包实现要点：**直接流式写入 zip，不落暂存目录**。早先的暂存方案会在 `dist\_stage`
+生成 600 多个临时文件，清理时被环境的安全删除闸门拦下，且多次拷贝拖慢一倍。
+
+实测（5.850 含 UI 包）：657 个文件，zip 59 MB，打包 2.7 秒。其中 arcenui
+211.5 MB 压缩到 35.2 MB（bundle 里主要是文本，压缩率很高）。
+
+安装器已在沙盒验证：路径映射正确（`_payload\BepInEx\patchers\AssemblyRedirector.dll`
+→ 游戏目录对应位置），无非交互终端报错。
+
+注意：`Pause` 之类的暂停必须写成
+`try { if ([Environment]::UserInteractive -and $Host.Name -eq 'ConsoleHost') { Read-Host } } catch { }`
+—— 只判 `UserInteractive` 不够，管道/自动化场景下 `Read-Host` 仍会抛异常。

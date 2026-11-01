@@ -138,7 +138,7 @@ if (-not (Test-Path $snapshotFile)) {
     Write-Host "ERROR: No baseline snapshot found. Run check_update.ps1 -snapshot first." -ForegroundColor Red
     Write-Host ""
     Write-Host "Press Enter to exit..."
-if ([Environment]::UserInteractive -and $Host.Name -eq 'ConsoleHost') { Read-Host "按回车退出" }
+try { if ([Environment]::UserInteractive -and $Host.Name -eq 'ConsoleHost') { Read-Host "按回车退出" } } catch { }
     exit 1
 }
 
@@ -150,7 +150,7 @@ if (-not (Test-Path $versionFile)) {
     Write-Host "ERROR: Game version file KDL_GameVersions.xml not found." -ForegroundColor Red
     Write-Host ""
     Write-Host "Press Enter to exit..."
-if ([Environment]::UserInteractive -and $Host.Name -eq 'ConsoleHost') { Read-Host "按回车退出" }
+try { if ([Environment]::UserInteractive -and $Host.Name -eq 'ConsoleHost') { Read-Host "按回车退出" } } catch { }
     exit 1
 }
 
@@ -168,7 +168,7 @@ if (-not $latest) {
     Write-Host "ERROR: Cannot parse game version number." -ForegroundColor Red
     Write-Host ""
     Write-Host "Press Enter to exit..."
-if ([Environment]::UserInteractive -and $Host.Name -eq 'ConsoleHost') { Read-Host "按回车退出" }
+try { if ([Environment]::UserInteractive -and $Host.Name -eq 'ConsoleHost') { Read-Host "按回车退出" } } catch { }
     exit 1
 }
 
@@ -550,4 +550,4 @@ Write-Host "  3. Run: python tools/ilpatch/verify_patch.py" -ForegroundColor Gra
 Write-Host "     PatchedAssemblies\ArcenAIW2Core.dll tools\ilpatch\ArcenAIW2Core.merged.json" -ForegroundColor Gray
 Write-Host ""
 Write-Host "Press Enter to exit..."
-if ([Environment]::UserInteractive -and $Host.Name -eq 'ConsoleHost') { Read-Host "按回车退出" }
+try { if ([Environment]::UserInteractive -and $Host.Name -eq 'ConsoleHost') { Read-Host "按回车退出" } } catch { }
