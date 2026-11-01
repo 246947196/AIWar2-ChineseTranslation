@@ -1,0 +1,2504 @@
+	
+		
+			Building Unlocked
+			Checking breach 
+			No, that planet is not under attack
+			No, the enemy is too strong
+			No, there are enemies
+			No, there is a Dyson Sphere
+			No, there is a VG
+			No, there is an eye
+			No, there is no threat
+			No, this is a hostile planet
+			No, this is deepstrike
+			No, this isn't one of our planets
+			No, we are in Warden mode
+			Yes, that planet is under attack
+		 path A; hostile owner
+		 path B; no friends
+		 path C; enemies!
+		Adding 
+		After update, 
+		Checking if unlocked via breach
+		Checking whether 
+		Considering updating customfileddefinitions for the randomly chosen faction. 
+		Despawning 
+		Found new furthest planet 
+		Has the correct race
+		Matched allegiance
+		No, a defensive Duru only builds defenses
+		No, city too low level
+		No, only buildable at a Major Duru
+		No, only buildable at a defensive Duru
+		Not from the dismantled stronghold. SKIP
+		One of us is an AI ally and the other is not
+		Player and ally
+		Potentially adding more mark levels above base: 
+		Tag: 
+		The relationship is Friendly 
+		The relationship is Hostile 
+		The relationship is Neutral 
+		Tiberium Mode
+		Warden Mode
+		ai allies
+		building has AprahantiBuildMenuOnly but  starbase doenst have ArmadaAprahanti
+		building has SkrinBuildMenuOnly but  starbase doenst have ArmadaSkrin
+		checkout potential point 
+		defensive structure '
+		do not search through 
+		matched type
+		ship '
+	 
+	 For exo response 
+	 Player requested allegiance: 
+	 Player-requested impact 
+	 We get resources; multiplier 
+	 path a
+	 path b
+	 path c
+	 prop for 
+	Adding 
+	Adding  
+	Allied To AI Mismatch
+	Already completed
+	And we have cap 
+	Assigned 
+	Attempting to despawn 
+	Attempting to kill 
+	Available strength 3: 
+	Beacon option 
+	C: low tier base: 
+	Calculating the score for 
+	Cant appear in a breach
+	Cap for  
+	Checking 
+	Checking for fleet 
+	Checking if 
+	Checking if we can build 
+	Choosing 
+	Choosing preferred upgrade
+	Chose 
+	Could not find this unit
+	Creating a planet at 
+	Despawning 
+	Distance: 
+	Excluded due to 
+	Excluding 
+	Faction 
+	FindTopEntriesForSystem_Shortlist_HalfImportantAndInAnyRange for 
+	FindTopEntriesForSystem_Shortlist_VeryImportant 
+	FindTopEntriesForSystem_Shortlist_VeryImportant adding 
+	Friendly Mismatch
+	Getting planets under attack for a 
+	Getting threatened planets for a flagship on 
+	GiveAnnouncement is 
+	Going to 
+	Group 
+	Has preferred upgrade 
+	Has the correct districts
+	Has the correct drilling
+	Has the correct race
+	Has the right starbase mark level
+	Has the right stronghole mark level
+	HasWonBattle for ships attacking 
+	Heading to 
+	Hostile Mismatch
+	Kill Unit Achievement
+	Making a new budget for 
+	Minor Faction Team Mistmatch
+	Missing required breach 
+	Needed resources: moon 
+	Needs to rebuild
+	No, path A
+	No, path B
+	No, path C
+	No, path D
+	No, path E
+	No, path F
+	Not changing AIP; the player has already paid. IncreaseAIP 
+	Nothing to do?
+	Path A: setting aip left from command station to 0
+	Path A: setting aip left from warp gate to 0
+	Path B: setting aip left from command station to 0 IncreaseAIP: 
+	Path B: setting aip left from warp gate to 0. IncreaseAIP: 
+	Planet 
+	Propogate No (enemies present): 
+	Propogate No (hostile controlling faction): 
+	RandomFactionCombo '
+	Retreating to 
+	Seed Beacon with tag '
+	Setting relationship to 
+	Skip 
+	Skipping all final responses because the target faction 
+	Skipping currPlanet 
+	Skipping newPlanet 
+	Spawned 
+	Spawning 
+	Spawning a 
+	Splitting 
+	Strength increase for 
+	There are too many factions in the game to add any more.
+	These 
+	This has been hacked 
+	This is a fissure and can't use the candidate
+	This is a nexus and can't use the candidate
+	Upgrade Fleet Line Achievement. (
+	We are already in a battle!
+	We are already on a threatened planet!
+	We are definitely destroying 
+	We are en route to a battle at 
+	We are heading to 
+	We are heading to part of of 
+	We did not find a metal user player, and a non-spectator player, so are skipping beacon option 
+	We have 
+	We have found 
+	We have now spawned 
+	We have this already, and you're only allowed one
+	We need to retreat!
+	We will despawn all 
+	We've NOT found any instance of faction 
+	We've found a pre-existing instance of faction 
+	We've found a pre-existing instance of player type 
+	after adjust, 
+	budget 
+	decided to show 
+	defense 
+	early bailout, no attack strength
+	early bailout, no target
+	is too close (
+	iterating over the tags 
+	meetsRequirements: 
+	no potential connections found
+	path A; random
+	path B; metal
+	path C; blood
+	path D; moon
+	path E; random
+	skip; overkill
+	spawning wave leader 
+	sum 
+	updated base to 
+	used pairs: 
+	we have 
+
+
+ 
+  
+    
+      Best closest: 
+    A: 
+    B: 
+    C: 
+    D: 
+    E
+    Planets were too close
+    Shifting 
+    a: 
+    b: 
+    link added sucessfully
+   diff: 
+   world_BottomLeft.y: 
+  Blob 
+  Circles added
+  Spreading groups out... 
+  checking 
+ Marauder Faction 
+ NOT GENERATE A PLANET BAD JUJU GURU #253421 (more than 1000 failures trying to add planets in rectangle with clusters, so maybe not room?)
+ NOT GENERATE A PLANET BAD JUJU GURU #253421 (more than 1000 failures trying to add planets in rectangle, so maybe not room?)
+ Nanocaust defeated
+
+ RelatedEntity or TypeData null
+ Ship is unassigned
+ Trying to link planets lists
+ Trying to link planets lists, attempting to make 
+ between lists with 
+ inner 
+ outer 
+ percent check: Red: 
+ ships are to go after 
+ ships are to go after -1 X
+ triggering
+### LOOP START (primary target already hit in Path C or P): 
+### LOOP START: 
+(After report) NSTUID-A Match: 
+(After report) NSTUID-B Match: 
+(After report) PKID Match: 
+(After report) that's all the matches we found
+(BUG) Tried to place a command station upgrade, instead of triggering a transform.
+*** Randomly chose 
+**********
+?
+??
+???
+A
+A 
+A, len 
+A1
+A:
+AI Empire Size Calculation
+AI Faction 
+AI Reserves.Notifications Error at debug stage 
+AI ThreatChunks Error: 
+AI homeworld 
+AI king on 
+AI special faction error DoPerSecondLogic_Stage3Main, debug stage: 
+AI type 
+AI type is null
+AIP for 
+AIPChange.ToString() debug code 
+AIReserves LRP 
+AIReserves were in absorb mode, and total ms: 
+AIReserves were in fully active, and total ms: 
+AIReserves were not active, and total ms: 
+AIWar2GalaxySettingChanged_Int: '
+AIWar2GalaxySettingChanged_Int: Could not find AIWar2GalaxySetting with internal name '
+AIWar2GalaxySettingChanged_Int: RelatedIntegers count != 1!
+AIWar2GalaxySettingChanged_Int: RelatedString2 null!
+AIWar2GalaxySettingChanged_String: '
+AIWar2GalaxySettingChanged_String: Could not find AIWar2GalaxySetting with internal name '
+AIWar2GalaxySettingChanged_String: RelatedString2 null!
+AIWar2GalaxySettingChanged_String: RelatedString3 null!
+ARS or FRS: 
+ASK LOG: AI_FLEE_THRT from planet 
+Aborting all current threads...
+Activate wormhole: 
+ActuallyFireSalvoAtTargetPriorityList error at debugStage 
+Add or upgrade outposts
+Added new fleet: countOfFleetsActuallyHere: 
+Adding 
+Adding 0.1 for a mark 5 flagship
+Adding 0.1 for a mark 5 necropolis
+Adding a circle
+Adding conversions with tag 
+Adding group 
+Adding missions for 
+Adding new AIP change of 
+Adding planet to clear 
+Adding points in start screen
+Adding unlocked conversions
+After dequeuing, we had 
+After launching CPA, my remaining budget is 
+After scanning all planets, there are 
+Always self-attritioning units like 
+Analyzers: owned by AI: 
+Another hop taken of the sphere; now at 
+Anti-AI wave headed toward 
+Apkallu power level 
+ApkalluFactionBaseInfo Stage2 debugCode 
+ApkalluFactionBaseInfo.DoRefreshFromFactionSettings debugCode 
+ApkalluFactionBaseInfo: null ApkalluDifficultyTable instance
+ApkalluFactionDeepInfo Stage3 debugCode 
+ApkalluFactionDeepInfo.DoLongRangePlanning debugCode 
+ApkalluFactionDeepInfo.RecalculateApkalluCityBuildingContents debugCode 
+ArcenExecutionManager CleanupAll!  ThreadID: 
+ArcenExecutionManager InitializeIfNeeded!  ThreadID: 
+ArcenExecutionManager Run!  ThreadID: 
+ArcenExecutionManager SoleContext missing!
+ArcenExecutionManager.MessageFromMainThreadToMe_ExecutionRequested: 
+ArcenExecutionManager.RunAllContexts()
+ArcenLongTermContinuousPlanningContextManager.DoLongTermPlanning();
+ArcenLongTermContinuousPlanningContextManager.RunAllContexts()
+ArcenLongTermIntermittentPlanningContext.DoLongTermPlanningMassivelyParalle();mayLaunchAnyThreads=
+ArcenLongTermIntermittentPlanningContext.Helper_CheckForRunningFactionThread(
+ArcenLongTermIntermittentPlanningContext.RunAllContexts()
+ArcenShortTermPlanningManager.ParallelRunAllContext error for context 
+ArcenShortTermPlanningManager.RunAllContextsOnBackgroundThreadsFromMainSimThread Error: 
+ArcenShortTermPlanningManager.RunAnExecutionPair_AsABackgroundTask Error: 
+Armada CanBeBonusStartingSkeleton: 
+Armada DoPostInitializationAndSortingLogic_BackgroundThreads RowCount: 
+ArmadaEmpireFactionDeepInfo: mine 
+Asked for extra faction randomness of '
+Assign 
+Assigning homeworld ring 
+Astro Train Budget Boost: Could not find faction for 
+Astro Train Depot Event: Could not find faction for 
+Astro Train Station spawning on  
+AstroTrains DoDepotEvent Hit exception at code 
+At 
+Attempted to kill 
+Attempting to add ship to 
+Attempting to update marauder outposts at 
+AudioAndSimilarHandler Error at debug stage 
+Automatically unlocking 
+B
+B 
+B1
+B: Exception in Notification BG Set at stage 
+BUG! FIXME
+BUG! percentages given to getRandomLinkMethod do not add up to 100
+BUG:  
+BUG: AI_FLEE_THRT Trying to send AI ships from planet 
+BUG: An Astro train depot cannot have NumUnitsToSpawn > 0 and StrengthAssociated > 0. Currently Depot class 
+BUG: Astro Trains depot 
+BUG: Cthonic praetorian seed could not find type 
+BUG: MapGeneration: invalid Lattice type  
+BUG: No C# definition for how to handle a 
+BUG: No available entry in AstroTrainBehaviorTypeTable
+BUG: Ship is no longer spawning, so it should not have called UpdateAntiSpawnStatus
+BUG: Ship is no longer spawning, so it should not have called UpdateSpawnStatus
+BUG: Ship is on burningAndDying list but has not exploded
+BUG: SpawnNewUnitFromDepot: null planet passed in
+BUG: ThreatChunk-1610 Trying to send AI ships from planet 
+BUG: VG on 
+BUG: a squad is ordered to explode but has not taken lethal damage
+BUG: allowedToCapture null planet
+BUG: called getMostCommonPlanetForRegiment() again for a fireteam regiment before the last call finished.  Will break both calls.
+BUG: could not find hunter faction for 
+BUG: could not find planet on which to spawn a new train depot. Did you conquer the entire galaxy?
+BUG: could not find planet on which to spawn train. Did you conquer the entire galaxy?
+BUG: could not generate enough points with rectancle and clusgers
+BUG: could not update Minor Faction AIP without nanocaust mgr being initialized
+BUG: during AssignDefenseValuesTo_HostOnly the ai type was null; set it to default. This is because the default name in xml is set to something that doesn't exist.
+BUG: entityToSpawnAt is null
+
+BUG: faction is not set in aip change for risk analyzers
+BUG: failed to parse MetalHarvesterCanHold: 
+BUG: for Human Marauders, outpostSpawnInterval must be < secondsForMarkIIUpgrade so the code can correctly spawn new outposts
+BUG: linking regions with unknown algorithm
+BUG: nanocaustInfectedPlanet, nanobotCenters entry[PKID 
+BUG: nanocaustInfectedPlanet, the planet passed in is null somehow
+BUG: nanocaustInfectedPlanet, warpingInNanobotCenters entry[PKID 
+BUG: no Default harvest ratio defined in the XML
+BUG: no MacrophageEnragedHarvester tag found
+BUG: no MacrophageHarvestern tag found
+BUG: no MacrophageSpore tag found
+BUG: no Telium tag found
+BUG: no hunter fleet found
+BUG: no macrophagetelium defined for spawning
+BUG: no praetorian guard found while spawning cthonic praetorian for 
+BUG: no praetorian guard was found while spawning Wanderer Praetorian Leader for 
+BUG: no praetorian guard was found while spawning Wraith Praetorian Leader for 
+BUG: no praetorian guard was found while spawning dragons for 
+BUG: no praetorian guard was found while spawning flenser for 
+BUG: no praetorian guard was found while spawning kzinti praetorian for 
+BUG: no squad actually set during SetFormationPositionFromSquad of type 
+BUG: no telium for harvester on 
+BUG: null planet with index 
+BUG: planet is null in locus attempt, bizarrely
+BUG: ship killed is not part of target squad. squad 
+BUG: shipsTakingHits is null
+BUG: shipsTakingHits[
+BUG: shot heading for ship with null relatedTypeData
+BUG: somehow this ai faction has no allies, not even including itself
+BUG: squad 
+BUG: too many tokens in ParseOneMetaDataLine; next was 
+BUG: train on 
+BUG: type.PrimaryHackResponseInterval was 
+BUG: zenith miner effect 
+BUG?!?!?!
+BackDoor: 
+Base Color:  
+BaseBudget 
+Battlegroup 
+Before hit: 
+Blank DataForMark for ship of type 
+Blank Entity.Orders for ship of type 
+Blank Faction for ship of type 
+Blank PlanetFaction for ship of type 
+Blocking victory due to 
+Blocking victory due to Homeworld 
+Box one contents: 
+Breach on 
+Bug: Could not find planet to spawn antagonizer.
+Bug: ExoIncomePerPlayherRiskAnalyzer XML not set
+Bug: PlanWave had no target planet
+Bug: Your Astro Train Depot ids are out of order for 
+Bug: Your Scourge Type ids are out of order for 
+Bug: assembling fireteam found in regiment: 
+Bug: failed to find the radius
+Bug: time interval 
+Build moon rings
+BuildDuru: No RelatedEntityIDs!
+BuildDuru: typeToPlace == null!
+BuildForMembershipsByBuildPoints: Build points attempt for 
+BuildSidebar.OnUpdateDirectPlacement error at debugStage 
+Building a 
+Burndie:
+BurningAndDyingProgress add: 
+Buying a 
+C
+C1
+C: Exception in Notification BG Set at stage 
+CIVIL_WAR_TEST: CheckForCivilWarOnDeathWhenNoneLeft: YesStart
+CIVIL_WAR_TEST: GalaxySetting_AICivilWar: 
+CIVIL_WAR_TEST: GalaxySetting_AICivilWar: Yes Start
+CIVIL_WAR_TEST: TriggerCivilWarWhenNoneLeft: 
+CPALogic 
+CacheForPathingMode GetFromPoolOrCreate
+CalculateMatchesOnBackgroundThread exception at debugStage 
+CalculateRequestedFlows exception hit. debugCode 
+CalculateShipsThatYouHave exception at stage 
+Called 
+Called MakeAIHostileToOtherAIs() on a non-AI faction of type: 
+CampaignType: Could not find CampaignTypeData with internal name '
+CampaignType: RelatedString2 null!
+Can build
+Can build via neinzul district
+Can build via spire district
+Can build via templar district
+Can build via zenith district
+Can't display summary of ArmadaUpgrade 
+Can't display summary of DysonUpgrade 
+Can't display summary of NecromancerUpgrade 
+Can't link between 
+CanPlanetBuildDefenses: 
+Cannot GetSafePlacementPoint_Internal, because entity type passed in was null!
+Cannot Helper_GetPointAroundACenterButNotTooCloseToOtherItems, because entity type passed in was null!
+Cannot Helper_SeedAroundPoint, because entity type passed in was null!
+Cannot Helper_SeedAroundWormholes, because entity type passed in was null!
+Cannot Helper_SeedRandomDisperse, because entity type passed in was null!
+Cannot build: no district requirements met
+Cannot tell if placement point is safe, because entity type passed in was null!
+Capping links for 
+Category 
+Center screen display error at stage 
+CheckForShotAOEDetonation error at debugStage 
+CheckForShotAOEDetonation: Null ShotHitNeverNull!
+CheckIfPlayerHasSeenFaction_HostOnly error in faction: 
+CheckSquadForUpdates error: 
+Checking 
+Checking Row 
+Checking achievement  
+Checking for a planet owned by 
+Checking for overlap against 
+Checking for overlap against already used planet 
+Checking for planets under attack by allies
+Checking for potential fissure planets near 
+Checking for warp gates adjacent to 
+Checking guardians to see if they match 
+Checking if 
+Checking if fully connected 
+Checking radius 
+Checking raider Planet 
+Checking rangers to see if they match 
+Checking whether 
+Checking whether to show 
+Checking whether we can build 
+ChooseWaveTarget exception at debugStage 
+ChooseWaveTarget: No Warp Gates left in the galaxy. I think the AI might be dead
+ChooseWaveTarget: No sufficiently weak targets to attack
+Choosing from 
+Choosing new protocol at 
+Choosing to add 
+Chose 
+Citadel: 
+City for fleet 
+Clear!
+Cluster 
+Compass. centerSizeParm 
+Completed Task Group: TID
+Completed WorldStepLogic: TID
+Computing AIP generated by the death of 
+Considering 
+Considering dire guardian 
+Considering exoleader 
+Considering fleetship 
+Considering guardian 
+Considering reinforcing 
+CorePersonalNotificationGenerator.GeneratePersonalNotificationOnClientOrHost_BackgroundThread Error at debug stage 
+Could not connnect to a null connection!
+Could not convert 
+Could not copy from 
+Could not create a preset, because the campaign name is empty!
+Could not create save, because the campaign name is empty!
+Could not delete all savegames in the campaign, because the campaign name is empty!
+Could not delete savegame, because the campaign name is empty!
+Could not find GlobalEntityDescriptionAppender
+Could not find OnCheatCommand Hook
+Could not find T_Lu_Noise_34 on the lightning explosion prefab, so dying ships keep the stock dissolve noise.
+Could not find a faction with name <
+Could not find a living AI faction to send this exo. Have you won the game?
+Could not find a living AI faction to send this invasion. Have you won the game?
+Could not find a spawn location for exo
+Could not find any armed or unarmed guard posts at planet!
+Could not find entityData for immobile ravager
+Could not find faction with factionIndex 
+Could not find faction with fleet 
+Could not find faction with lookup name for tutorials and such matching '
+Could not find factionExternal AI Difficulty for praetorian guard, and there was no default row!
+Could not find factionExternal for praetorian guard
+Could not find fallen spire difficuly for intensity 
+Could not find gameEntityType with name 
+Could not find group data for 
+Could not find journalClosedHook
+Could not find journalOpenedHook
+Could not find ratio for 
+Could not find ratio for  null faction
+Could not find resolution for TempValue_Int 
+Could not find resolution matching 
+Could not find suitable target for Risk Analyzer exo strike
+Could not find targetFleet!
+Could not find tech '
+Could not find tech with name '
+Could not find the additive burn material on the lightning explosion prefab, so ships don't scorch.
+Could not find the ship type '
+Could not find valid warp gate for exo wave
+Could not ironman-save, because the campaign name is empty!
+Could not rename campaign, because the campaign name is empty!
+Could not run an autosave, because the campaign name is empty!
+Could not save your game!  We tried to create a backup but your operating system told us access was denied.  This may be a temporary condition that will resolve itself in a few minutes, but we did not want to proceed with the actual save operation as that involves deleting the existing save file, which could leave you with no save if the operating system continued to forbid us write access.
+Could not save, because the campaign name is empty!
+Could not save, because the save name is empty!
+Couldn't find Necromancer Faction info when trying to fix per-fleet upgrade information. 
+Couldn't find a chrysalis planet; retry soon
+Couldn't find a planetoid planet; retry soon
+Crash Path: Moving nomad planet 
+Create wormhole: 
+CreateGalaxies: Finding homeworld 
+Created a new fleet, 
+Creating 
+Creating a new stack of 
+Creating defenses for 
+Creating minimum spanning tree now
+Crisis has happened
+Cross threading issue?  factionData for 
+Cull from lodLevel 
+Current Time: 
+Current time: 
+Current wave budget 
+CustomData_AIDifficulty: Unknown field value '
+CustomData_AIType: Unknown field value '
+CustomData_WormholeBorerIncomeModifier: Unknown field value '
+CustomFactionFieldDropdown: Passed a blank factionFieldName '
+CustomFactionFieldDropdown: Passed a blank factionFieldValue '
+CustomFactionFieldDropdown: RelatedIntegers count != 1!
+CustomFactionFieldDropdown: RelatedString2 null!
+CustomFactionFieldDropdown: RelatedString3 null!
+D
+D1
+D: Exception in Notification BG Set at stage 
+DEBUG_FORCE_SIM_EXECUTION_HANG is set: SimExecution.Execute() is now hanging on purpose. 
+DEBUG_FORCE_SIM_EXECUTION_HANG released.
+DECOL CHECK: 
+DECOL Thread:
+DZ Invasion with difficulty: 
+DZ base invasion strength: 
+DZ invasion strength after factoring current player strength (
+DZ invasion strength after factoring in ai difficulty: 
+DZ invasion strength after factoring in empire (
+DZ invasion strength after factoring in overall power level: 
+DZ planet spawned: 
+DZ planets spawned: 
+DZ points: 
+Dark Spire LRP error: 
+Dark Spire: 
+Dark Zenith LRP debugCode 
+DarkSpire net energy could not increase because of null darkSpireBaseInfo.PerPlanet[entity.Planet.Index]
+DarkSpire net energy on 
+DarkSpire.Notifications Error at debug stage 
+DarkSpireSvikariDifficultyTable: no row for intensity 
+DataForFaction_CustomFieldDefinitionChanged: RelatedIntegers count != 1!
+DataForFaction_CustomFieldDefinitionChanged: RelatedString2 null!
+DataForFaction_CustomFieldDefinitionChanged: RelatedString3 null!
+DataForFaction_CustomFieldDefinitionChanged: faction at factionArrayIndex 
+DataForFaction_CustomFieldDefinitionChanged: factionArrayIndex was 
+DeactivateAndReturnToPool wormhole: 
+DeactivateAndReturnToPool: 
+Decloaking target: 
+DecollisionPlanning Exception: 
+DelegateHelper_AreaBoostPlanning_TryToBoost: Error at debug stage 
+DelegateHelper_ProtectionPlanning_TryToProtectOrDisplace error at debug stage 
+DeployComposition: GetRelentlessWaveLogicForThisAI: Faction Found: 
+Deploying 
+Deploying ships on 
+Depot 
+Destroying 
+Destroying all ships associated with mobile fleet 
+Destroying all ships associated with stronghold fleet 
+DetachVisObjectFromSim: 
+DetermineAiHomeworlds start!
+DetermineAiOwnership In New Style
+Did not find suitable outguardenary information
+Disbanding 
+Discarded (Because Fully Started) Lobby Setup Changes Requested: '
+Discarded (Because Game Not Yet Started) Post-Lobby Setup Change: '
+Discarded (Because Not Yet Fully Started) Galaxy Option Changes Requested: '
+Discarded (Because Starting) Lobby Setup Changes Requested: '
+Do DZ invasion!
+Do Malware invasion!
+DoCombatPerStepLogic outer error: 
+DoFactionPerStepLogic outer error: 
+DoLongTermPlanning IntermittentError: 
+DoLongTermPlanning_MassivelyParallelThreads: 
+DoOnPlayerVictory enter
+DoPlanetPerStepLogic Error for planet 
+DoShotHitLogic: Null ShotHitNeverNull!
+DoShotHitLogic_Inner A error at debugStage 
+DoShotMovement: Error at debug stage 
+DoSingleBudgetLoopIteration_OnMainThreadAndPartOfSim Error: 
+DoSystemStep error at debugStage 
+DoWormholeTraversalLogic error at debugStage 
+Doing LRP update for 
+Doing full invasion logic with difficulty 
+Doing post initialization logic for Scourge Type Data
+Donating 
+Donating some ships!
+Donating team 
+DrawAOEExplosions is not on!
+DrawSquadOrders error: 
+DrawSquadRanges error: 
+Drones do not give the Dark Spire energy
+DropVisualEffectAtSuperGlobal3DPositionWithTTL Warning: Null ArcenSpecialEffectGroup passed in, so could not do explosion.
+Dropping an effect for shot 
+During necrofleet upgrade: upgrade == null!
+During placement: No RelatedEntityIDs == null!
+During placement: No RelatedEntityIDs!
+During placement: No RelatedIntegers!
+During placement: fleetThatThisGoesInto == null!
+During placement: typeToPlace == null!
+During transform flagship: No RelatedEntityIDs == null!
+During transform flagship: No RelatedEntityIDs!
+Dying outguard:
+Dyson CanBeBonusStartingSkeleton: 
+Dyson DoPostInitializationAndSortingLogic_BackgroundThreads RowCount: 
+E, vertical distance
+E1, vertical distance
+E: Exception in ShipIconImageBase.RenderContents at stage 
+ERROR: Firing between planets! 
+Edit planet save fail: 
+EditFleetName: Passed a blank newFleetName '
+EditFleetName: RelatedString2 null!
+EditPlanet: Planet with index 
+EditPlanet: RelatedIntegers count != 1!
+EditPlanet: empty string passed for planet name!
+Elderlings found best planet to invade 
+ElderlingsDescriptionAppender error at debugStage 
+Empty location for decollision orders!
+End of OnUpdateDirectPlacement
+Enqueing test outguard 
+Enraged Macrophage 
+Entity 
+Entity warping out (No more enemy fleet)
+Entity warping out (no allies)
+EntityLineTypeTable.Instance.DoAnyDrawsFromMainThread error: 
+Error During placement: fleetMembershipForType == null!  Was this from an MP client? 
+Error at about campaign stage: 
+Error during DoPerSimStepLogic_OnMainThreadAndPartOfSim debug number 
+Error during ReactToShotHittingSquad debug number 
+Error fetching chat entry. Last Entry count: 
+Error ib BudgetBoost Astro Train: could not find GetSentinelsExternal factionExternalOrNull for 
+Error in AI type 
+Error in ApkalluObjectivesGenerator generation: 
+Error in ArmadaObjectivesGenerator generation: 
+Error in DarkZenithObjectivesGenerator: 
+Error in DysonSidekickObjectivesGenerator: 
+Error in FlagshipObjectivesGenerator generation: 
+Error in GameCommand_CreateSpeedGroup debugStage 
+Error in KingObjectivesGenerator generation: 
+Error in Macrophage long range planning at debugStage 
+Error in MalwareObjectivesGenerator generation: 
+Error in MinorFactionObjectivesGenerator generation: 
+Error in NecromancerObjectivesGenerator generation: 
+Error in Outguard DespawningGroups: 
+Error in Outguard Update repair counters: 
+Error in PerFrame_CalculateEffectiveFleetData, debugStage 
+Error in PreFillFactionBasedData inner entity loop innerDebugStage: 
+Error in ResourceObjectivesGenerator generation: 
+Error in ScourgeInfusedObjectivesGenerator: 
+Error in ScoutingObjectivesGenerator generation: 
+Error in Ship.Rendership debugStep 
+Error in Window_InGameHoverEntityInfo, outguard unit display: 
+Error in WriteAnySpecialDisplayCodeForHackedShipTooltip for '
+Error in clearing fireteam speed groups: 
+Error in clicking No button: 
+Error in clicking OK button: 
+Error in clicking Yes button: 
+Error in graftliveship at 
+Error in hacking notifier mouseover at debugStage 
+Error in network connection attempt: 
+Error in targeting core calculation of importance 
+Error in targeting logic 
+Error when trying to load faction settings prior to Deserialization. We need to load this in order to detect prior Zenith factions, but loading it this early fails on Spire spheres. Error is not fatal, so is being skipped. If, however, you are having issues loading an old Dyson Sphere save, please report this error to Mantis; 
+Error! Could not get BaseInfo as ExternalFactionBaseInfoRoot for faction 
+Error! passed in null Context for faction 
+Error! passed in null PathCacheData for faction 
+Error! passed in null faction to InnerFindPath_Raw!
+Error! passed in null pathfinder for faction 
+Error, unable to find Spire Infested Telium.
+Error: AstroTrainBehaviorTypeTable::GetRandomRowWithIntensity(
+EstimateTotalDifficulty exception at debugStage 
+Evaluating 
+Exception 
+Exception IAttackAPlanetNotifier.MouseoverHandler exception at debugStage 
+Exception checking Malware invasion state in GenerateApkalluJourneyObjectives: 
+Exception for material '
+Exception hit during Hacking_GrantShipLine DoSuccessfulCompletionLogic_Extra debug code 
+Exception hit during Hacking_LureElderling DoSuccessfulCompletionLogic_Extra debug code 
+Exception hit during Hacking_RiftHack DoSuccessfulCompletionLogic_Extra debug code 
+Exception hit during Hacking_TrackElderling DoSuccessfulCompletionLogic_Extra debug code 
+Exception hit during Hacking_TransformNecromancerFlagship DoSuccessfulCompletionLogic_Extra debug code 
+Exception hit during send nomad to ai homeworld DoOneSecondOfHackingLogic_AsPartOfMainSim debug code 
+Exception in AI.DoLongRangePlanning_OnBackgroundNonSimThread_Subclass stage 
+Exception in AI.DoOnAnyDeathLogic_MyFactionUnitsOnly_HostOnly stage 
+Exception in AOE calculation target accumulation: 
+Exception in AreaBoostPlanning.Execute:
+Exception in AstroTrainNotifier.ContentGetter at stage 
+Exception in BaseScenario.DoOnAnyDeathLogic_HostOnly stage 
+Exception in BreachMalwareNexus.TooltipHandler: 
+Exception in BrownoutNotifier.RenderContents at stage 
+Exception in BuildDestabilizer.TooltipHandler: 
+Exception in CalculateIsPlanetEligibleForDeepStrike_VeryExpensiveDoOnBackgroundThreadOnly debugCode 
+Exception in ChromaticHorrorNotifier.ContentGetter at stage 
+Exception in CounterattackNotifier.RenderContents at stage 
+Exception in CuendillarAsteroid.TooltipHandler: 
+Exception in CuendillarPlanetoid.TooltipHandler: 
+Exception in DecollisionPlanning.Inner_CheckForCollisionOrMakeEntityMove. debug num 
+Exception in DelegateHelper_AreaBoostPlanning_CheckAttractsShotsAgainstAllies at stage 
+Exception in DestroyConstructor.TooltipHandler debugStage 
+Exception in DestroyPhasicGenerator.TooltipHandler: 
+Exception in DevourerNotifier.ContentGetter at stage 
+Exception in DirectPlacementCategory.DebugUpdate at stage 
+Exception in DoAICounterattackForcesPerSecondLogic at debugStage 
+Exception in DoWorldStepLogic_ClientOrHost_FromSimBGThread at debugStage 
+Exception in DoWorldSuffixLogic, debugStage 
+Exception in DysonAntagonizerNotifier.ContentGetter at stage 
+Exception in EndTheInvasion.TooltipHandler: 
+Exception in ExoNotifier.ContentGetter at stage 
+Exception in EyeNotifier.ContentGetter at stage 
+Exception in FleetCategory.DebugUpdate at stage 
+Exception in GameCommand_DecollideUnits_MoveManyToMany. debug num 
+Exception in GameCommand_MoveManyToMany. debug num 
+Exception in GenerateDysonSphereObjectives at stage 
+Exception in GetAIToPurchaseCostPresentForBudgetType, debugStage 
+Exception in GetEnemiesInTerritorialSphere: 
+Exception in GetMinAndMaxCostToHackForSidebar for selfhacking base: 
+Exception in GravityPlanning.Execute:
+Exception in HackRift.TooltipHandler debugStage 
+Exception in HackShipGranter.TooltipHandler debugStage 
+Exception in HackingNotifier.ContentGetter at stage 
+Exception in HandleLODsAndShipPartAnimations P1 stage 
+Exception in HandleLODsAndShipPartAnimations P2 stage 
+Exception in HandleWaveLeaders debugCode 
+Exception in HumanSpireInfusedEmpireFactionDeepInfo.DoOnAnyDeathLogic_MyFactionUnitsOnly_HostOnly stage 
+Exception in IAttackAPlanetNotifier.ContentGetter at stage 
+Exception in Independent AI Fleet SubType stage 
+Exception in InitializeTech debugCode 
+Exception in InstigatorNotifier.ContentGetter at stage 
+Exception in LamassuReshapeNotifier.ContentGetter at stage 
+Exception in MacrophageNotifier.ContentGetter at stage 
+Exception in MalwareBetrayalCountdownNotifier.ContentGetter at stage 
+Exception in MalwareBetrayedNotifier.ContentGetter at stage 
+Exception in MalwareBreachNotifier.ContentGetter at stage 
+Exception in MalwareConduitNotifier.ContentGetter at stage 
+Exception in MalwareConvergence.TooltipHandler: 
+Exception in MalwareConvergenceNotifier.ContentGetter at stage 
+Exception in MalwareFissure.TooltipHandler: 
+Exception in MalwareInvasionCountdownNotifier.ContentGetter at stage 
+Exception in MalwareNexusNotifier.ContentGetter at stage 
+Exception in MetalFlowPlanning_NPC.Execute:
+Exception in MetalFlowPlanning_Player.Execute:
+Exception in MigrantFleetsNotifier.RenderContents at stage 
+Exception in MovementPlanning.Execute:
+Exception in NanocaustNotifier.ContentGetter at stage 
+Exception in NemesisNotifier.RenderContents at stage 
+Exception in NomadPlanetMoveNotifier.RenderContents at stage 
+Exception in NonClosure_PerGravitySource at stage 
+Exception in NonClosure_PerTachyonSource at stage 
+Exception in NonClosure_PerTractorSource at stage 
+Exception in OutguardGranterDescriptionAppender: 
+Exception in OutguardPartyNotifier.ContentGetter at stage 
+Exception in PlanetCeasefireNotifier.ContentGetter at stage 
+Exception in PrivateDevourerNotifier.ContentGetter at stage 
+Exception in PrivateHackingNotifier.ContentGetter at stage 
+Exception in PrivateNomadPlanetNotifier.RenderContents at stage 
+Exception in ProtectionPlanning.Execute:
+Exception in PublicAIDrillNotifier.RenderContents at stage 
+Exception in PublicAIReservesNotifier.RenderContents at stage 
+Exception in PublicArchitraveExpansionNotifier.RenderContents at stage 
+Exception in PublicArmadaCPANotifier.RenderContents at stage 
+Exception in PublicDZHjarnNotifier.ContentGetter at stage 
+Exception in PublicDZInvasionNotifier.ContentGetter at stage 
+Exception in PublicDarkSpireLocusNotifier.ContentGetter at stage 
+Exception in PublicDarkSpireNotifier.ContentGetter at stage 
+Exception in PublicDysonBuildingNotifier.RenderContents at stage 
+Exception in PublicDysonDrillNotifier.RenderContents at stage 
+Exception in PublicImperialSpireNotifier.RenderContents at stage 
+Exception in PublicReaperChrysalisNotifier.RenderContents at stage 
+Exception in PublicRelicTrainNotifier.ContentGetter at stage 
+Exception in PublicSpireCityUpgradeNotifier.RenderContents at stage 
+Exception in PublicSpireDebrisNotifier.RenderContents at stage 
+Exception in PublicSpireRelicNotifier.RenderContents at stage 
+Exception in PublicTemplarWaveNotifier.RenderContents at stage 
+Exception in PublicZenithArchitraveNotifier.RenderContents at stage 
+Exception in PublicZenithMinerNotifier.RenderContents at stage 
+Exception in RaidEngineNotifier.ContentGetter at stage 
+Exception in ReaperChrsyalis.TooltipHandler: 
+Exception in RenegadeSpireDescriptionAppender
+Exception in Scourge Stage2 debugStage 
+Exception in ScourgeFlowerNotifier.RenderContents at stage 
+Exception in ScourgeUpgradableStructureNotifier.RenderContents at stage 
+Exception in ShipIconImageBase.RenderContents at stage 
+Exception in ShowdownDevicesNotifier.ContentGetter at stage 
+Exception in SpecialFaction_AIWarden.DoOnAnyDeathLogic_MyFactionUnitsOnly_HostOnly stage 
+Exception in SpecialFaction_AstroTrains.DoOnAnyDeathLogic_MyFactionUnitsOnly_HostOnly stage 
+Exception in SpecialFaction_ChromaticHorror.DoOnAnyDeathLogic_MyFactionUnitsOnly_HostOnly stage 
+Exception in SpecialFaction_DarkSpire.DoOnAnyDeathLogic_HostOnly_FromCentralLoop_NotJustMyOwnShips stage 
+Exception in SpecialFaction_Devourer.DoOnAnyDeathLogic_MyFactionUnitsOnly_HostOnly stage 
+Exception in SpecialFaction_Elderlings.DoOnAnyDeathLogic_MyFactionUnitsOnly_HostOnly stage 
+Exception in SpecialFaction_Macrophage.DoOnAnyDeathLogic_HostOnly_FromCentralLoop_NotJustMyOwnShips stage 
+Exception in SpecialFaction_Macrophage.DoOnAnyDeathLogic_MyFactionUnitsOnly_HostOnly stage 
+Exception in SpecialFaction_NomadPlanets.DoOnAnyDeathLogic_MyFactionUnitsOnly_HostOnly stage 
+Exception in SpecialFaction_Sappers.DoOnAnyDeathLogic_MyFactionUnitsOnly_HostOnly stage 
+Exception in SpecialFaction_ZenithMiners.DoOnAnyDeathLogic_MyFactionUnitsOnly_HostOnly stage 
+Exception in SphereFactionNotifier.RenderContents at stage 
+Exception in SplinteringSpireCollectorNotifier.RenderContents at stage 
+Exception in SplinteringSpireDismantleNotifier.RenderContents at stage 
+Exception in StrengthCounting.DoPlanetFactionStepLogic_Aggregations at debugStep 
+Exception in StrengthCounting.RunStrengthCounting at outerDebugStage 
+Exception in TachyonPlanning.Execute:
+Exception in UnspentModulePointsNotifier.RenderContents at stage 
+Exception in UpdateContentFromVolatile for the single text element:
+Exception in WarpingInOutguardNotifier.ContentGetter at stage 
+Exception in WildHivesNotifier.RenderContents at stage 
+Exception in WormholeBorerNotifier.RenderContents at stage 
+Exception in WriteSystemInfo at debugStage: 
+Exception in ZA stage 2, debugCode 
+Exception in ZenithTraderFactionDeepInfo.DoOnAnyDeathLogic_MyFactionUnitsOnly_HostOnly stage 
+Exception in ZenithTraderNotifier.ContentGetter at stage 
+Exception in armada LRP debugCode 
+Exception in bShipIcon.RenderContents at stage 
+Exception in btnDirectPlacementIcon.UpdateContentFromVolatile at stage 
+Exception in btnFleetIcon.UpdateContentFromVolatile at stage 
+Exception in btnNotification.HandleMouseover at stage 
+Exception in btnScienceTech.UpdateContentFromVolatile_FleetUpgrade at stage 
+Exception in btnScienceTech.UpdateContentFromVolatile_TechUpgrade at stage 
+Exception in calculating fleet health at debugCode 
+Exception in dyson LRP debugCode 
+Exception in entity tooltip text generation at stage 
+Exception in getMostCommonPlanetForRegiment: 
+Exception in linked planet examination A, linkedNeighborDebugLevel: 
+Exception in linked planet examination B, linkedNeighborDebugLevel: 
+Exception in necromancer LRP debugCode 
+Exception in pathfinding debugStage 
+Exception in planet tooltip text generation at stage 
+Exception in prototype entity tooltip text generation at stage 
+Exception in selection info text generation:
+Exception in standing planet orders text generation at stage 
+Exception in tiberium LRP debugCode 
+Exception serialzing a fireteam at stage 
+Exception when trying to check achievement '
+Exception when trying to log achievements: 
+Execute_TransformUnits: debug code 
+ExecutionerDescriptionAppender error: 
+Exeption in HandleMouseEvent_GalaxyView right-click code: 
+Exiting coilbeam calculations because all possible hit events were used up.
+Exo not in right range; 
+Exo unset; DZ is too weak
+Extra P Distance from center P: 
+FAIL trying to launch counterattack because missing planet faction!
+FINAL TEXT: 
+FINISH BaseInfo Stage1 
+FINISH BaseInfo Stage2 
+FINISH BaseInfo Stage2A 
+FINISH BaseInfo Stage3 
+FINISH BaseInfo UpdatePowerLevel 
+FINISH Fleet PerSecond Calculations
+FINISH Hacking Difficulty Estimate Calculations
+FINISH PerSecond And DeepInfo bits
+FINISH Planet Influence Calculations
+FINISH Planet View Calculations
+FINISH SpeedGroup
+FINISH Stage3 
+FINISH Stage4 
+FINISH WorldSecondLogic
+FLAGFLAG Spawning a new telium on 
+FLAGFLAGFLAG harvester 
+Faction 
+Faction IsCurrentlyWaitingOnThread
+Faction RunOnBackgroundThread: 
+Faction done: 
+Faction start: 
+Faction teardown 1: 
+Faction teardown 2: 
+FactionGift: RelatedIntegers count != 1!
+FactionGift: RelatedIntegers2 count != 1!
+FactionGift: RelatedIntegers3 count != 1!
+FactionGift: faction at factionArrayIndex 
+FactionGift: factionArrayIndex was 
+FactionGift: giftAmount <= 0!
+FactionGift: giftType is blank!
+FactionGift: playerType at factionArrayIndex 
+FactionGift: targetFaction at targetFactionArrayIndex 
+FactionGift: targetFactionArrayIndex was 
+FactionGift: targetPlayerType at targetFactionArrayIndex 
+FactionGift: unknown giftType '
+FactionNameChanged: RelatedIntegers count != 1!
+FactionNameChanged: faction at factionArrayIndex 
+FactionNameChanged: factionArrayIndex was 
+FactionOwnershipChanged: RelatedIntegers count != 2!
+FactionType.AI: AIHomeworld: probably a success.
+FactionType.AI: NonHomeworld: probably a success.
+Factions in long-term: 
+Failed Sphere Notifier
+Failed to find entityData for 
+FallenSpire.Notifications Error at debug stage 
+FallenSpire.WriteCityTooltipDetails Error at debug stage 
+Field value for 
+Figuring out what 
+Figuring out what to do with group 
+Filling block 
+FilteredTargetCount:
+Final Effect Countdown begun
+FindProtectingForcefieldToHitInsteadOfTarget error at debugStage 
+FindTopEntriesForSystem_Shortlist_HalfImportantAndInAnyRange has 
+FindTopEntriesForSystem_Shortlist_VeryImportant potential 
+Finding a suitable planet for a dyson antagonizer. Default params: minHopsFromHumanPlanet 
+Finding a suitable spawn entity
+Finding furthest planet in a direction, starting at angle 
+Finding the next stop for the relic train on  
+Finish S-T task: 
+Finished Loading Logic for Macrophage 
+Finished adding links
+Fire shot: 
+Fireteam 
+Fixing selected item in names to be 
+FlagForRemoval: 
+Flagship 
+Fleet 
+FleetBehaviorLRP hit exception: 
+FleetKeybindIndex: RelatedIntegers2.Count == 0!
+Flowering 
+Flushing reinforcement points on 
+For 
+For AI faction 
+For budget 
+For intensity 
+For ring 
+For tech 
+For the requested allegiance 
+Found 
+Found PKID in planetfaction lists but and central lists BUT it was null in the central registry: 
+Found PKID in planetfaction lists but not central lists: 
+Found PKID twice: 
+Found a squad still in a PlanetFaction list after it was already in quarantine, yikes!
+Found faction 
+Found no potential connections between lists with 
+Found planet 
+Found potential point 
+Found ship 
+Found subsidiary 
+Found the edge at radius 
+Friendly Wild Hives MoveClanlings_LRP Error at debug stage 
+Gained 
+Galaxy Option Change Requested: '
+Galaxy complete! Galaxy has 
+Galaxy has too few planets for seeding this many factions!  There's not enough room to spread them out.
+Galaxy is not fully connected. First, reconnect 
+GalaxyMapDisplayMode_ElderlingInformation.WriteLeftRightTextPerDisplayModeType Error at debug stage 
+GameCommand_BelatedlyCreateFaction: RelatedString is blank!=!
+GameCommand_BelatedlyCreateFactionsFromBeacon: 
+GameCommand_BelatedlyCreateFactionsFromBeacon: RelatedString is blank!=!
+GameCommand_BelatedlyCreateFactionsFromBeacon: could not parse TargetImpact '
+GameCommand_BelatedlyCreateFactionsFromBeacon: could not resolve a random enemy for target impact 
+GameCommand_ChangeBolsterTarget: Could not find bolsteredFleetID with ID: 
+GameCommand_ChangeBolsterTarget: Could not find bolsteringFleet with ID: 
+GameCommand_ChangeBolsterTarget: RelatedIntegers count != 1!
+GameCommand_EditShipModule: Could not find entity type data with name: 
+GameCommand_EditShipModule: Could not find fleet with ID: 
+GameCommand_EditShipModule: Could not find system on entity data with uniqueModuleIndex: 
+GameCommand_EditShipModule: RelatedIntegers count != 2 and RelatedIntegers2 != 2!
+GameCommand_QueueOutguard.Execute() called.
+GameCommand_QueueOutguard.Execute() early out already queued.
+GameCommand_SendMagurToLocation: No RelatedEntityIDs!
+GameCommand_SendMagurToLocation: No RelatedIntegers!
+GameCommand_SendSpireRelicToLocation: No RelatedEntityIDs!
+GameCommand_SendSpireRelicToLocation: No RelatedIntegers!
+GameCommand_SendSpireSidekickRelicToLocation: No RelatedEntityIDs!
+GameCommand_SendSpireSidekickRelicToLocation: No RelatedIntegers!
+GameCommand_SendSpireSidekickRelicToLocation: attempted to use this command for a 
+GameCommand_SetFRDTarget!
+GameCommand_SetTargetList!
+GameCommand_SyncPersonalSetting: Could not find personal setting with serialization_name '
+GameCommand_SyncPersonalSetting: Could not find player account with PKID 
+GameCommand_UnitSetCommands exception at debugStage 
+GameCommand_UnpauseOnly: 
+GameCommand_UpgradeSpireCity: No RelatedEntityIDs!
+GenerateShipGrantingStructureObjectives HackForShipType exception at debugStage 
+GenerateShipLineCapIncreasingStructureObjectives HackForShipTypeCapIncrease exception at debugStage 
+Generating poitns in setUpPoints. CirclePlacement 
+Generic DoOneSecond 
+Generic DoSuccessfulCompletionLogic  <
+GetAISentinelsCoreData: Could not find any parent AI faction for faction of type 
+GetAISentinelsDeepLogic: Could not find any parent AI faction for faction of type 
+GetDifficultyForFaction: 
+GetDifficultyForFaction: Checking <
+GetExpectsToBeOverkilled: 
+GetPlanetsWithConstructors: scanning entity whose name is  
+GetPointTowardsOther Shot is at position out of range! 
+GetPointTowardsOther Shot target 
+GetRandomTypeByCategory: no AI types are tagged with adaptive category '
+GetRowByFaction: no definition for 
+GetRowForIntensity: 
+GetShouldBeHiddenIfBothFalse 
+Getting next faction upgrade (starting with counter 
+GiftFleetToFaction: RelatedIntegers2.Count != 1!
+GiftFleetToFaction: fleetToGiveInReturn did not have category PlayerPlanetaryCommand on a PlayerPlanetaryCommand!
+GiftFleetToFaction: fleetToGiveInReturn was null on a PlayerPlanetaryCommand!
+GiftFleetToFaction: giftingFaction was null!
+GiftFleetToFaction: giftingFaction was otherFaction!
+GiftFleetToFaction: giftingPlanetFaction was null on a PlayerPlanetaryCommand!
+GiftFleetToFaction: giftingPlanetFaction.FleetUsedAtPlanet != fleetToGift on a PlayerPlanetaryCommand!
+GiftFleetToFaction: otherFaction was null from index 
+GiftFleetToFaction: otherPlanetFaction was null on a PlayerPlanetaryCommand!
+GiftFleetToFaction: planetOfFleet was null on a PlayerPlanetaryCommand!
+Giving units orders to travel to 
+Got 
+Got a 
+Got invalid command for 
+Got mark level 
+Got power level 
+Granting 
+Gravity source: 
+Gravity sources to try checking at: 
+Guard_Guardian_PatrollingLogic debugStage: 
+HEY!  IsSimulationArtificiallyStopped: 
+HRF has just warped out! (defeat)
+HRF has just warped out! (victory)
+HRF with budget 
+HRF: target planet is null for no obvious reason. This is a confusing bug
+Hacking difficulty multiplier for difficulty 
+HackingImplementation_WithTargetMenu-GetDynamicDescription error: 
+HackingMenu-AddAllButtonsForSingularChoiceInSubMenu error: 
+HackingMenu-GetCanBeHacked error from PopulateItemsToShow: 
+HackingMenu-GetCanBeHacked error: 
+Hacking_GrantShipLine_DontDestroyTarget.GetCanBeHacked: Error at debug stage 
+Had to repair the centerpiece for NPC general fleet with type 
+Had to repair the centerpiece for NPC trader fleet with type 
+Had to repair the centerpiece for PlayerBattlestation fleet with type 
+Had to repair the centerpiece for PlayerMobile fleet with type 
+Had to repair the centerpiece for drone fleet with type 
+Handle ships that should patrol
+HandleConstructorsLRP: 
+HandleEnemyKingAttackers: 
+HandleSpecialEffectRequests Error at debug stage 
+HandleSquadShipCreationRequests error: 
+Handling request 
+Handling request to spawn 
+Harmless warning: AI:SeedEntities called with tag '
+Harmless warning: Mapgen_SeedSpecialEntities called with tag '
+HarmonyIntegration.ApplyPatchesFromAssembly: cannot apply patches for mod '
+HarmonyIntegration.ApplyPatchesFromAssembly: mod '
+HarmonyIntegration.ApplyPatchesFromAssembly: null assembly passed for mod '
+HarmonyIntegration.Initialize: failed to construct Harmony instance. Mod method-patching will not be available. Error: 
+HarmonyIntegration: MOD '
+HarmonyIntegration: initialized shared Harmony instance '
+Harvester 
+HarvestersToEnrage must be < HarvesterLimit
+Heading for wormhole, so skipping decollision for entity 
+Helper_SeedGuardians debug code 
+Helper_SeedGuardians on 
+Helper_SeedGuardians start on 
+Helper_SeedStartingBaseUnit: Error: No unit available with tag 
+Helper_SendThreatOnRaid debugCode 
+Helper_SpawnUnitsForOutguardGroup: planet 
+High-tier breach response: transferred 
+Hit  exception in GetNextTransportDestination code 
+Hit Exception in ZA LRP. debugCode 
+Hit Null shot when rewiring
+Hit a buffer in DZ description appender debug code 
+Hit an Exception in PreFillFactionBasedData. debugCode 
+Hit an exceprion during DoInvasion, debugCode 
+Hit an exception during Malware DoInvasion, debugCode 
+Hit an exception in BuildStructureIfPossible debugCode 
+Hit an exception in GetPlanetForCombatStructure debugCode 
+Hit an exception in HandleCastlesSim debugCode 
+Hit an exception in HandleImmobileRavagers debugCode 
+Hit an exception in HandleRiftsSim debugCode 
+Hit bug in borer mouseover handler code 
+Hit crash in HandleGatewaysSim debugCode 
+Hit debugCode 
+Hit debugStage 
+Hit ecxeption in GetNextRavagerPlanet debugCode 
+Hit error in GetPlanetInNeedOfBeachheading debugCode 
+Hit error in ProduceShipsIfNecessary debugCode 
+Hit exception 
+Hit exception code 
+Hit exception code in ProduceDefenses 
+Hit exception debugCode 
+Hit exception during DZ ReactToHackingStep_AsPartOfMainSim debugCode 
+Hit exception during Dark Spire stage3. debugCode 
+Hit exception during DeployDragons debugcode 
+Hit exception during HandleAchievementsEarned debugCode 
+Hit exception during HandleAutobuildForSpecificFaction debugCode 
+Hit exception during HandleConstructorsLRP code 
+Hit exception during HandleHarvestersLRP code 
+Hit exception during HandlePrivateersSim code 
+Hit exception during HandleUnitMarkups debugCode 
+Hit exception during HowMuchDoWeNeedResourcesFrom code 
+Hit exception during Outguard LRP debugCode 
+Hit exception during TakeIronmanSave debugCode 
+Hit exception during TakeQuitSave debugCode 
+Hit exception during TransferRequestedInventoryFrom code 
+Hit exception during TransferRequiredResourcesWithConversionMax code 
+Hit exception during TriggerSharkB debugStage 
+Hit exception during armada stage 2 debugCode 
+Hit exception during dyson stage 2 debugCode 
+Hit exception during elderlings LRP debugCode 
+Hit exception during necromancer stage 2 debugCode 
+Hit exception during sappers LRP debugCode 
+Hit exception during tiberium stage 2 debugCode 
+Hit exception in  UpdateRiftContentsSim debugCode 
+Hit exception in AI Reserves debugStage 
+Hit exception in AI UpdateDeepstrikePlanetsUnderAttack debugStage 
+Hit exception in AIReserves LRP. debugCode 
+Hit exception in AITypeData.AddDescription() debugCode 
+Hit exception in AddToTooltip_MidSection_ForEntity from DLC3 debugCode 
+Hit exception in AnalyzeFriendlyToHostileBalance debugCode 
+Hit exception in ApkalluCityFleetBaseInfo AddToGetBaseSquadCapWithAdditions debugCode 
+Hit exception in ApplyVassalMissionsToTargets debugCode 
+Hit exception in Armada Fleet AddToGetBaseSquadCapWithAdditions debugCode 
+Hit exception in ArmadaUpgradeEvent::ToDebugString debugCode 
+Hit exception in AstroTrainGuardDescriptionAppender debugCode 
+Hit exception in BuildShipsLookup debugCode 
+Hit exception in CPA AttackTargetPlanet debugCode 
+Hit exception in CPALogic LRP. debugCode 
+Hit exception in CalculateCapabilityFactor 
+Hit exception in CalculateSquadAndShipCounts debugCode 
+Hit exception in Chaotic generation. code 
+Hit exception in ClaimMoon: 
+Hit exception in ClearPlanetLooseStuffAndSpecialEffects debugCode 
+Hit exception in ConvertMerkismathrForSidekick debugCode 
+Hit exception in ConvertRelicIntoCity. debugCode 
+Hit exception in CreateProjectorDefenses debugCode 
+Hit exception in CurrentlyAttackingFactionFromPlanet 
+Hit exception in DZ notifications debugCode 
+Hit exception in DZPopulatePlanet code 
+Hit exception in Debris notification mouseover handler, code 
+Hit exception in Debug_SpawnShips. debugStage 
+Hit exception in DeleteAllSaveGames debugCode 
+Hit exception in DeployEscortsIfNecessary debugCode 
+Hit exception in DeployGuardsIfNecessary debugCode 
+Hit exception in DestroyPlanetsIfNecessary debugCode 
+Hit exception in DismantleStronghold debugCode 
+Hit exception in DoOnAnyDeathLogic_FromCentralLoop_NotJustMyOwnShips_HostOnly Armada Sidekick debugCode 
+Hit exception in DoOnAnyDeathLogic_FromCentralLoop_NotJustMyOwnShips_HostOnly Dyson Sidekick debugCode 
+Hit exception in DoOnAnyDeathLogic_FromCentralLoop_NotJustMyOwnShips_HostOnly Malware Sidekick debugCode 
+Hit exception in DoOnAnyDeathLogic_FromCentralLoop_NotJustMyOwnShips_HostOnly Scourge Infused Empire debugCode 
+Hit exception in Dyson Fleet AddToGetBaseSquadCapWithAdditions debugCode 
+Hit exception in DysonUpgradeEvent::ToDebugString debugCode 
+Hit exception in Elderlings notification code, debugCode 
+Hit exception in EmitOnAOEParticles. Debug number 
+Hit exception in ExecuteResourceConversion for 
+Hit exception in Fireteam::calculateAvailableStrength debugCode 
+Hit exception in Fireteam::calculateEnemyStrength debugCode 
+Hit exception in GameCommand ChatCommand. debugStage 
+Hit exception in GameCommand CreateNewPlanet. debugCode 
+Hit exception in GameCommand UnlinkPlanets. debugCode 
+Hit exception in GetDarkZenithSidekickStateForDisplay 
+Hit exception in GetDarkZenithSidekickUpgradesForDisplay debugCode 
+Hit exception in GetFireteamRetreatPoint_OnBackgroundNonSimThread_Subclass code 
+Hit exception in GetLargeClusterHomworldRadius code 
+Hit exception in GetNewCastleLocation debugCode 
+Hit exception in GetNextConversion for 
+Hit exception in GetPreferredHacker code 
+Hit exception in GetRaidTraversalDifficulty debugCode 
+Hit exception in GetShipToSummonViaNecromancy debugCode 
+Hit exception in GetShouldThisNecromancerFactionGetARewardBasedOnThisKill debugCode 
+Hit exception in GetStartAndDestinationPlanet debugCode 
+Hit exception in GetTargetAndLurkPlanets for 
+Hit exception in GetTextToShowFromVolatile 
+Hit exception in GetTextToShowFromVolatile for 
+Hit exception in GetWormholeBorerTargets code 
+Hit exception in Getwavecomposition debugCode 
+Hit exception in HandleAdversariesSim debugCode 
+Hit exception in HandleCivilWarBonusAttacks debugCode 
+Hit exception in HandleConstructorsLRP debugCode 
+Hit exception in HandleConstructorsSim debugCode 
+Hit exception in HandleCuendillarDrills_MainSim debugCode 
+Hit exception in HandleDeathWithEffectApplied_AfterFullDeathOrPartOfStackDeath debugCode 
+Hit exception in HandleHarvestersSim code 
+Hit exception in HandleInitialInvasionBuffs code 
+Hit exception in HandleJormuandr 
+Hit exception in HandleJournal debugCode 
+Hit exception in HandleLunarInvasionSim debugCode 
+Hit exception in HandlePlanetDrillingAndOverloading debugCode 
+Hit exception in HandlePrivateersLRP code 
+Hit exception in HandleShowdownDevices debugCode 
+Hit exception in HandleSpireBuffs debugCode 
+Hit exception in HandleSpireDebris at debugCode 
+Hit exception in HandleTerminiiAndEpistyles code 
+Hit exception in HandleWormholeBorers_MainSim debugCode 
+Hit exception in HasResourcesAvailable code 
+Hit exception in Helper_MakeThreatShipsFight debugCode 
+Hit exception in Helper_SendExoGalacticAttack_SingleExoTarget debugCode 
+Hit exception in InitIfPossible debugCode 
+Hit exception in InitializeResourceConversionsIfNecessary debugCode 
+Hit exception in IsImperialSpireActive debugCode 
+Hit exception in KnownWavesAgainstHumanWorlds enumerator: 
+Hit exception in LamassuReshapeNotifier mouseover handler, code 
+Hit exception in LaunchWormholeInvasion debugCode 
+Hit exception in LayEggs debugCode 
+Hit exception in Malware SpawnWave debugCode 
+Hit exception in MalwareBetrayalCountdownNotifier mouseover handler: 
+Hit exception in MalwareBetrayedNotifier mouseover handler: 
+Hit exception in MalwareBreachNotifier mouseover handler, code 
+Hit exception in MalwareConduitNotifier mouseover handler, code 
+Hit exception in MalwareConvergenceNotifier mouseover handler, code 
+Hit exception in MalwareInvasionCountdownNotifier mouseover handler: 
+Hit exception in MalwareNexusNotifier mouseover handler, code 
+Hit exception in MalwarePopulatePlanet code 
+Hit exception in MigrantFleets notification mouseover handler, code 
+Hit exception in Mouseover for Astro Trains. debugCode 
+Hit exception in Mouseover for Showdown Devices. debugCode 
+Hit exception in NadirManager.SpawnNadirForce debugCode 
+Hit exception in NadirManager.TickDarkZenithSidekickDirector debugCode 
+Hit exception in Nebula generation. code 
+Hit exception in Necromancer Fleet AddToGetBaseSquadCapWithAdditions debugCode 
+Hit exception in Necromancer::GetBestFleetForShip debugCode 
+Hit exception in NecromancerEmpireFactionDeepInfo::GetNumShipsToCreate debugCode 
+Hit exception in NecromancerUpgradeEvent::ToDebugString debugCode 
+Hit exception in Outguard DoOnSpawnsOnDeath_AfterFullDeathOrPartOfStackDeath_HostOnly debugCode 
+Hit exception in PayForResourceConversion debugCode 
+Hit exception in PerUnit serializeTo debugCode 
+Hit exception in PlanWave. DebugCode 
+Hit exception in PlaySFX_ShotHitting. Debug number 
+Hit exception in PlayerPotluck. debugStage 
+Hit exception in PlayerShipSpawn. debugStage 
+Hit exception in PlayerShipSpawnSpecific. debugStage 
+Hit exception in ProcessSappers debugCode 
+Hit exception in ProduceGolems debugCode 
+Hit exception in ProduceRegularShips debugCode 
+Hit exception in ProduceSpawners. debugCode 
+Hit exception in RandomFactionType.GetDescription() debugCode 
+Hit exception in ReactToPowerLevel_HostOnly debugCode 
+Hit exception in Reaper Necromancer, debugCode 
+Hit exception in Reapers AttackTargetPlanet debugCode 
+Hit exception in Reapers DoPerSecondLogic_Stage2Aggregating_OnMainThreadAndPartOfSim debugCode 
+Hit exception in Reapers Stage 3 debugCode 
+Hit exception in ReapersFactionDeepInfo::CalculateSpeed debugCode 
+Hit exception in ReapersLogic LRP. debugCode 
+Hit exception in RecalculateArmadaStarbaseBuildingContents_MainThreadSimOnly debugCode 
+Hit exception in RecalculateCityBuildingContents 
+Hit exception in RecalculateDysonStrongholdBuildingContents_MainThreadSimOnly debugCode 
+Hit exception in ReconnectGalaxyIfNecessary debugCode 
+Hit exception in RelentlessWave AttackTargetPlanet debugCode 
+Hit exception in RelentlessWave DoPerSecondLogic_Stage2Aggregating_OnMainThreadAndPartOfSim debugCode 
+Hit exception in RelentlessWaveLogic LRP. debugCode 
+Hit exception in RemoveCompletedMissions 
+Hit exception in ReturnShipsToCastles debugCode 
+Hit exception in ReturnShipsToWatchtowers debugCode 
+Hit exception in Sappers notification code, debugCode 
+Hit exception in Scourge Civil War Logic LRP. debugCode 
+Hit exception in ScourgeCivilWar DoPerSecondLogic_Stage2Aggregating_OnMainThreadAndPartOfSim debugCode 
+Hit exception in ScourgeCivilWar Stage 3 debugCode 
+Hit exception in SendShipToSpawner debugCode 
+Hit exception in SendUnitToArmoryToUpgradeIfNecessary debugCode 
+Hit exception in SendUnitToRandomBuilding at debugCode 
+Hit exception in SetRelicDestination for Spire Sidekic. debugCode 
+Hit exception in SortFactionsForDisplay cb_factionSortDebugCode 
+Hit exception in SpawnArmadaStructure in DeepInfo. Debug code 
+Hit exception in Templar AttackTargetPlanet debugCode 
+Hit exception in Templar DoPerSecondLogic_Stage2Aggregating_OnMainThreadAndPartOfSim debugCode 
+Hit exception in Templar ReactToHackingStep_AsPartOfMainSim debugCode 
+Hit exception in Templar Stage 3 debugCode 
+Hit exception in TemplarFactionDeepInfo::CalculateSpeed debugCode 
+Hit exception in TemplarLogic LRP. debugCode 
+Hit exception in TransferUnneededResourcesTo code 
+Hit exception in Trigger Attack A debugCode 
+Hit exception in TriggerAttack B debugCode 
+Hit exception in UpdateBeachheaders debugCode 
+Hit exception in UpdateConstructors debugCode 
+Hit exception in UpdateNomadPlanets. debugCode 
+Hit exception in UpdateNonSerializedFields_LRP debugCode 
+Hit exception in UpdatePotentialPlanetsToBuildOn code 
+Hit exception in UpdateTerritoryIfPossible debugCode 
+Hit exception in UpdateWatchtowers debugCode 
+Hit exception in WildHives notification mouseover handler, code 
+Hit exception in Wormhole Invasion Stage 3 debugCode 
+Hit exception in WormholeInvasion DoFactionGeneralAggregationsPausedOrUnpaused debugCode 
+Hit exception in WriteFleetHealth debugCode 
+Hit exception in ZA GLobalData SerializeTo debugCode 
+Hit exception in ZA notifications debugCode 
+Hit exception in ZM mouseover notification debugCode 
+Hit exception in Zenith Miners notification code, debugCode 
+Hit exception in ai drill notification mouseover handler, code 
+Hit exception in armada building notification mouseover handler, code 
+Hit exception in astro train Deep Stage3 debugCode 
+Hit exception in astro train LRP debugCode 
+Hit exception in btnTextWithIcon.GetTextToShowFromVolatile debugCode 
+Hit exception in dyson building notification mouseover handler, code 
+Hit exception in dyson drill notification mouseover handler, code 
+Hit exception in fallen spire LRP, debugCode 
+Hit exception in fallen spire stage3 sim. debugCode 
+Hit exception in handleJournals debugCode 
+Hit exception in marauders stage 2, code 
+Hit exception in mouseover for WarpingInOutguardNotifier. debugCode 
+Hit exception in mouseover for a flagship: 
+Hit exception in mouseover for a hacking upgrade 
+Hit exception in mouseover for a scourge armory. debugCode 
+Hit exception in mouseover for a transformation: 
+Hit exception in mouseover for wormhole invasions. debugCode 
+Hit exception in nanocaust stage 3. debugCode 
+Hit exception in necromancer wave notification mouseover handler, code 
+Hit exception in scourge empire spawn nadir. debugCode 
+Hit exception in scourge empire stage3 sim. debugCode 
+Hit exception in scourge infused empire LRP, debugCode 
+Hit exception in spire infused empire LRP, debugCode 
+Hit exception in spire sidekick LRP, debugCode 
+Hit exception in spire sidekick spawn nadir. debugCode 
+Hit exception in spire sidekick stage3 sim. debugCode 
+Hit exception in stage3 debugCode 
+Hit exception in tThreat GetTextToShowFromVolatile debugCode 
+Hit exception when trying to move 
+Hit exception while HatchEggs debugCode 
+Hit exceptions in FlagObjectsForSyncIfNecessary debugCode 
+Hit exceptions in WriteFactionsToBuffer debugCode 
+Hit excpetion in HandleRelicTrains debugCode 
+Hit excpetion in choose epistyle GetCanHackForThisItem debugCode 
+Hit excpetion in rift hack GetCanHackForThisItem debugCode 
+Hit excpetion in transform armory GetCanHackForThisItem debugCode 
+Hit excpetion in transform flagship GetCanHackForThisItem debugCode 
+Hit shield! 
+Homeworld adjacent planets:
+HostOnlyJournalsAndAutosaveAndSimilarHandler Error at debug stage 
+Hostile total strength: 
+How many guardians does 
+How many rangers does 
+Human Entity destroyed: 
+HumanMarauders GetShouldAttackNormallyExcludedTarget error:
+I have 
+I have created my points, now let's make the planets
+
+I have spawned 
+Identifying 
+Ignoring 
+Ignoring a squad of 
+Impact pops: 
+Impact pops: no loaded shot material uses Arcen/Shot Emissive yet, so pops are off until one loads.
+In BuildForMembershipsByBuildPoints, debugCode 
+In DZResourceConversion table, 
+In HandleTransportsSim debugCode 
+In PerSecond_UpdateFleetData, debugCode 
+Incorrect enemy mark mapping EA! : 
+Incorrect mark mapping A! : 
+Incorrect mark mapping B! : 
+Incorrect mark mapping C! : 
+Incorrect mark mapping D! : 
+Incorrect mark mapping E! : 
+Incorrect markless mapping MA! : 
+Incorrect markless mapping MB! : 
+Index 
+Index collision in DZResourceconversion table; '
+Initializing our first planet destruction time to be 
+Initially invading 
+InnerFindPath_Raw error at debugStage 
+InnerFindPath_RawSinglePathfinder error at debugStage 
+Instancing not enabled on material 
+Instigator LRP error: 
+InternalCreateActualShotForSalvo error at debugStage 
+Invalid CurrentPosition 
+Invalid pos of 
+Issuing command to be 
+It is 
+Iterate over all 
+Iteration for 
+Journal oops!  Could not find any entries with OptionalGroupID of '
+Journal oops!  Could not find any entries with name / uniqueID of '
+Journal oops!  Empty list of entries with OptionalGroupID of '
+Journal oops!  Looks like no name or group was specified to log to the journal? (Name: '
+KeepAndPickets: 
+Kill 
+Killed ship! 
+Killing the AI king on
+Killing the human king on
+LOBBY_WTH: GameCommand_SetupOnly_RequestSetupChanges: 
+LRP: moving borer from 
+LamassuLRP 
+Launching Wormhole Invasion with assaultStrength 
+Launching anti-Armada CPA with strength 
+Link and add wormholes between 
+Linking 
+Linking nearest neighbnord with method 
+Linking planets
+List all budgets before finding the budget for 
+Lobby Setup Changes Requested: '
+LocalPlayerWorldBaseInfo.DoPerSecondNonSimNotificationUpdates_OnBackgroundNonSimThread_NonBlocking_ClientOrHost Error at debug stage 
+Locus Checking the VG 
+Logging all current threads...
+Lone Wanderer LRP error: 
+LongTermContinuousError in '
+LongTermContinuousError: 
+Looking for MinorFactionSubType 
+Loop over all the Marauder units to see what's happening
+Luring Elderlings to 
+MINOR BUG: ship killed is already on Dying list. squad 
+MORE countSpawned 
+MP Error: 
+MP planet-order gate dropped command=
+Macrophage Enraged LRP error: 
+Macrophage harvester 
+Making sure planets are fully connected A
+Malware AIPIncreaseWave: raised AIP by 
+Malware Adversary killed by a player: mark dropped to 
+Malware AdversaryModulePoint: granted module point to 
+Malware AdversaryTransformation: advanced to Mark
+Malware AdversaryTransformation: already at max mark
+Malware AssignUnitToFireteam: 
+Malware AssignUnitToFireteam: assigned 
+Malware AssignUnitToFireteam: created new team id=
+Malware AssignUnitToFireteam: skip team id=
+Malware AssignUnitToFireteam: team id=
+Malware ConnectMalwarePlanets: linked Splice planet '
+Malware ExecuteProtocol_AdversaryUpgrade: no adversary found to upgrade
+Malware ExecuteProtocol_ClaimPlanet: could not find CthonicKernel entity type
+Malware ExecuteProtocol_MultiPhasicWave: no entity with tag MalwareMultiPhasicCarrier found
+Malware ExecuteProtocol_Transformation: could not find entity with tag 
+Malware InjectorProbe death: no entity with tag MalwareDaemonSpike found
+Malware LinkNewPlanets: ConnectMalwarePlanets failed — cluster may be unconnected.
+Malware LinkNewPlanets: linking 
+Malware LinkNewPlanets: no Malware planets found to link.
+Malware LinkNewPlanets: no Splices found — cluster will be unconnected. (AI may already be dead, which is fine.)
+Malware LinkNewPlanets: wormhole on Malware planet '
+Malware LinkNewPlanets: wormhole on Splice planet '
+Malware SpawnAdversary: could not find MalwareAdversary entity
+Malware SpawnArchonOnOverlordKill: could not find MalwareArchon entity type
+Malware SpawnWave: StackingCutoffNPCs is 0, wave won't spawn
+Malware SpawnWave: no entity with tag 
+Malware TransformationHunter: AI has no hunter fleet
+Malware TransformationHunter: CreateNew returned null for 
+Malware TransformationHunter: could not find MalwareAvenger entity
+Malware TransformationHunter: no AI faction found
+Malware TransformationHunter: spawned 
+Malware TransformationLocust: could not find MalwareLocust entity
+Malware TransformationLocust: spawned 
+ManageProtocols: no Adversary present, skipping protocol selection
+MapIntForLobby: RelatedIntegers count != 1!
+MapIntForLobby: RelatedIntegers2 must be set!
+MapSeed: RelatedIntegers count != 1!
+MapType: Could not find MapTypeData with internal name '
+MapType: RelatedString2 null!
+Marauder Faction 
+Marauder LRP error: 
+Mark 1 outpost spawned. Now spawn 
+Memory leak detected at RapidAntiLeakPoolable '
+Memory leak!  Pool was null for squad 
+Metal warning threshold: 
+Method: gabriel
+Method: nearestNeighbor
+Method: rng
+Method: spanning
+Migrant Fleets LRP error: 
+Migrant Fleets Notifier Error at debug stage 
+Missing AIBorderAggression subfaction for AI faction '
+Missing AICrossPlanetAttacker subfaction for AI faction '
+Missing AIRelentlessWave subfaction for AI faction '
+Missing AIWarden subfaction for AI faction '
+Missing HunterFleet subfaction for AI faction '
+Missing HunterInfo.AIDifficulty for AI faction '
+Missing HunterInfo.SubType for AI faction '
+Missing PraetorianGuard subfaction for AI faction '
+Missing PraetorianInfo.AIDifficulty for AI faction '
+Missing PraetorianInfo.SubType for AI faction '
+Missing SentinelInfo.AIDifficulty for AI faction '
+Missing SentinelInfo.AIType for AI faction '
+Missing WardenInfo.AIDifficulty for AI faction '
+Missing WardenInfo.SubType for AI faction '
+Missing material on renderer for ship: 
+Missing material on renderer for shot: 
+Missing parent AI for AI subfaction '
+Modder command had error.  Faction:
+Modder command issued with null RelatedModdableCommandCode.  For faction:
+Modder command issued with null faction. ModderCommands require a faction as one of their arguments
+More Outguard Groups were requested than are defined in the XML. Either turn down the number of seeded beacons, the number of outguards per beacon or add new groups. You have  
+MovementPlanning Error at debugStage 
+Moving a crashing planet; there are 
+Moving nomad planet 
+Multi shot stage 1
+Multi-phase filter material made from 
+Multi-phase overlay material made from 
+Music track isn't listed in either group!
+NEW PLANET
+NEW TEXT:
+Nadir director: 
+Nanocaust GetShouldAttackNormallyExcludedTarget error:
+Nanocaust LRP error: 
+Nanocaust faction 
+Nanocaust is attacking 
+NanocaustFactionBaseInfoConstructor(): <no arguments>
+NanocaustPersonalNotificationGenerator.GeneratePersonalNotificationOnClientOrHost_BackgroundThread Error at debug stage 
+Necromancer CanBeBonusStartingSkeleton: 
+Necromancer DoPostInitializationAndSortingLogic_BackgroundThreads RowCount: 
+Necromancy Practiced (necromancer path) Spawned a 
+Necromancy Practiced (regular player path) Spawned a 
+New2: 
+New: 
+No ArcenGimbalSprite found on object '
+No EntityTypeFactionVisualData defined on squad object 
+No GameEntityTypeData defined on squad object 
+No MacrophageEnragedFactionBaseInfo.Instance!  Can't enrage a harvester...
+No RelatedEntity defined for squad of RelatedFactionData of 
+No RelatedEntityIDs passed to GameCommand_CustomOrder! These should be the ships recieving the custom order.
+No RelatedIntegers passed to GameCommand_EditFleetData!
+No RelatedString passed to GameCommand_CustomOrder!
+No RepairMissingCenterpieceFromMembershipContents logic for fleet.Category:
+No Spire Debris defined in XML
+No SubInstancedRenderer was able to be initialized on object named '
+No ToBeQueued bool included! 
+No elderlings per unit base info on 
+No ff object for
+No good choices, so choose a random one
+No human homeworlds or AI homeworlds in the following list:
+No multi-phase material to make the 
+No new planets were available to link for the DZ!
+No non-destroyed planets available to link!
+No outguard faction base info
+No planets in list to AssignDefenseValuesTo_HostOnly!
+No planets left; break
+No planets on which to set turret status.
+No potential connections found!
+No root switch entry found for 
+No spire battleship defined?
+No spire cruiser defined?
+No spire destroyer defined?
+No spire dreadnaught defined?
+No state material to make 
+No suitable Dark Zenith spawning point was found
+No suitable location found
+No top tier castles, so we can't spawn any
+No transportation destinations
+No type data?
+No valid entities were found to spawn
+No valid planets, retry
+No valid wave possible for SendWave (hacking or raid engine)
+Nomad assigned!
+Nomad cleanup!
+Nomad.Notifications Error at debug stage 
+Non-Tutorial-Style AssignDefenseValuesTo_HostOnly
+Not Spawning a new outpost on 
+Not close enough to player
+Not enough planets, stopping.
+Nothing set up for ShipRenderStatus
+Now lets try to spawn our forces; 
+Null ArcenShot InstancedRenderer on 
+Null BattlefieldVisualSingleton.Instance
+Null CampaignName!
+Null DeepInfo on faction 
+Null Faction for this controllingPFaction: 
+Null HackingType passed to GetPreferredHacker!
+Null ISpecialEffect from lodGroup 
+Null MacrophageBaseInfo passed in to MacrophageDeepLink.SpawnNewHarvester!
+Null MalwarePerUnitBaseInfo on 
+Null RelatedString passed to DuringGameOnly_RequestGalaxySettingChanges!
+Null RelatedString passed to GameCommand_EditFleetData!
+Null RelatedString passed to HandleCommand!
+Null ShipLastDeathMaterial on 
+Null ShipMultiPhasingMaterial_Still!
+Null ShipMultiPhasingMaterial_VertexAnimated!
+Null ShipNonLastDeathMaterial on 
+Null ShipRemainsMaterial!
+Null ShipSoloPhasingMaterial_Still!
+Null ShipSoloPhasingMaterial_VertexAnimated!
+Null ShipSpawnMaterial!
+Null ShipUnderConstructionMaterial!
+Null ShipUnderConstructionStalledMaterial!
+Null SpecialEffectGroup_Death on 
+Null TemplarPerUnitBaseInfo on 
+Null UnityObject on Gimbal for squad 
+Null bPrefabColor.Original!
+Null centerpiece on Drone fleet 
+Null centerpiece on PlayerPlanetaryCommand planet 
+Null controllingPFaction for this planet!
+Null current planet for 
+Null entity, so skipping decollision.
+Null faction on 
+Null faction on thread 
+Null flagship on fleet '
+Null fleetToManage found in GameCommand_EditFleetData when attempting to get ID 
+Null from GetOutguardPerUnitBaseInfoExt for 
+Null mapConfig passed into getSettingValueMapSettingOptionChoice_Expensive!
+Null order from Create_Move_Decollision!
+Null planet passed to GetPreferredHacker!
+Null sentinelsExternal on faction of type 
+Null wormhole, so skipping decollision for entity 
+Null-seed because newEntity is null!
+Null-seed because pFaction is null!
+Null-seed because point == ArcenPoint.ZeroZeroPoint
+Number of planets in main ring is sufficient. Returning early.
+
+Number of rings 
+OLD TEXT:
+ORDER FROM HUMAN: ASSIST
+ORDER FROM HUMAN: ATTACK
+ORDER FROM HUMAN: MOVE
+ORDER FROM HUMAN: WORMHOLE
+Oi!  Tried to run DoEntityFramePlanningLogic_Collision on the FakeEntity!  How did this even get into the game?  Faction: 
+Oi!  Tried to run DoEntityFramePlanningLogic_TargetPrioritizing on the FakeEntity!  How did this even get into the game?  Faction: 
+Oi!  Tried to run ReevaluateUnitOrders on the FakeEntity!  How did this even get into the game?  Faction: 
+Oi!  Tried to run TallyEntitiesForPossibleStacking_NonPlayer on the FakeEntity!  How did this even get into the game?  Faction: 
+Oi!  Tried to run TallyEntitiesForPossibleStacking_PlayerOnly on the FakeEntity!  How did this even get into the game?  Faction: 
+Omitting 
+OnClaim for 
+Ongoing message error at stage 
+Only could seed 
+Oops!  Squad with display type of 
+Original: 
+Our new Telia is being built for a regular subfaction. The Telia 
+Our new Telia is being built for the Tamed subfaction on 
+Outguard Ships ships on 
+Outguard outguard data was set!
+OutguardFactionDeepInfo.SeedStartingEntities_LaterEverythingElse exception at code '
+OutputC:
+
+Overall campaign is: 
+PATH 
+Parsed Astro train depot 
+Parsed Instigator effect 
+Parsed harvest ratio 
+Parsing eligible random faction 
+Parsing faction config 
+Path A for 
+Path A for entity death of 
+Path A; single AI type victory for 
+Path B for 
+Path B for entity death of 
+Path C for 
+Path D for 
+Path E for 
+PathBetweenPlanetsForFaction GetFromPoolOrCreate
+PathCache GetFromPoolOrCreate
+PerFrame_CheckForPlayerFleetLoading exception at stage 
+PerSecondNonSimPlanning Error: 
+PerSecondSimRepair Error: 
+PerSecondSimRepair-DoCentralLoop_ClientAndHost at debugStage 
+PerSimStep: Launch this wave
+PerSimStep: There are 
+PerSimStep: Warp Gate on planet 
+PerSimStep: currentTime 
+Picking random planet
+Placing guard post count: 
+Planet 
+PlanetNameType: Could not find PlanetNameTypeData with internal name '
+PlanetNameType: RelatedString2 null!
+PlanetPathfinderBasic const
+PlanetPathfinderConservative const
+PlanetPathfinderWarden const
+PlanetPing: Planet with index 
+PlanetPing: RelatedIntegers count != 1!
+PlanetPing: RelatedPoints count != 1!
+Planets in ring: 
+Play delayed!
+Play energy effect
+Play low metal effect
+Play metal exhausted effect
+PlayNetworkSoundPlaybackRequeste error! The sound clip '
+Player 
+Points per ring 
+PossibleTargetCount:
+Potential bug: planet 
+Potential linkes are 
+Potential links are 
+PreCalculateAllRepairableTargetsForPlanetFaction exception hit. debugCode 
+PreCalculateClaimableTargetsForPlanetFaction exception hit. debugCode 
+PreCalculateFactoryAssistConstTargetsForPlanetFaction exception hit. debugCode 
+PreCalculateFactoryTargetsForPlanetFaction exception hit. debugCode 
+PreCalculateRemainsRebuildTargetsForPlanetFaction exception hit. debugCode 
+PreCalculateSelfAssistConstTargetsForPlanetFaction exception hit. debugCode 
+Present fleet strength: 
+ProcessCoreLogicForArbitraryFrameOnMainThread exception at debugStage 
+Processing Depots at 
+Processing new planet 
+Processing trains en route at 
+Processing: 
+PruneBreaches: keeping 
+PruneBreaches: removing 
+QueueLogJournalEntryToSidebar: journal entry not found: '
+Queueing frd command with 
+Quick select: 
+Randomly assigned 
+Randomly choosing working allegiance with 
+Range:
+ReactToShotHittingSquad Error at debug number
+ReactToShotHittingSquad: 
+RecalculateAICounterattackForcesStrength exception at debugStage 
+RecalculateApkalluCityBuildingContents; checking what 
+RecalculateSpireCityMobileFleetContents_MainThreadSimOnly at debugStage 
+Reconquest Seeding for 
+Reinforce: Found null ShipGroup for 
+ReinforceSpecificPlanet error at debugStage 
+Reinforced 
+Reinforcement Event About To Start: 
+Reinforcement Event For: 
+Reinforcement Event Internals Finished: 
+Reinforcement Loop For List Of Planets: 
+Reinforcement PARTIAL Event For Planet: 
+RelatedEntity null on shot during TryWiringUpShotToTarget!
+RelentlessWaveLogic 
+Removing mission 
+Removing planet 
+RenderShip error: 
+RenderSquad error: 
+Renegade found best friendly planet 
+Renegade invasion picked 
+RenegadeSpire LRP error: 
+RenegadeSpireDifficultyTable: no row for intensity 
+Requested area boost planning for 
+Requested to find the king of 
+Returning spire armory
+Ring 
+Row 
+Run 
+RunStrengthCounting exception in wave IncomingStrength calculations, debugStage 
+START And BaseInfo Stage1 
+START And BaseInfo Stage2 
+START And BaseInfo Stage2A 
+START And BaseInfo Stage3 
+START And BaseInfo UpdatePowerLevel 
+START Fleet PerSecond Calculations
+START Hacking Difficulty Estimate Calculations
+START PerSecond And DeepInfo bits
+START Planet Influence Calculations
+START Planet View Calculations
+START SpeedGroup
+START Stage3 
+START Stage4 
+START Thread DoShortTermPlanning
+START WorldSecondLogic
+START trying to launch counterattack!
+Sappers Stage3 error: 
+Savegame path: '
+Scorch overlay material made for 
+Scourge Long Range Planning Error 
+Scourge found best friendly planet 
+Scourge found best weak planet 
+Seed 
+Seed: 
+SeedStartingEntities_LaterEverythingElse: RiskAnalyzers were asked to seed, but then told to seed zero of themselves?
+SeedWormholesForPlanet from planet 
+Seeded 
+Seeding 
+Seeding bonus astro train station on 
+Seems the king is already dead or we are already there?
+Send client index 
+SendUnitToUpgradeStructureIfPossible for Scourge hit debugCode 
+Sending Raiders from 
+Sending a reconquest wave with 
+Sending an Exo with strength 
+Sending exo with total strength 
+Sending threat right for command station
+Sending: 
+Set rotation to 
+SetFleetBehavior: RelatedIntegers2.Count == 0!
+SetPlanetViewedByPlayerAccount: RelatedIntegers count != 1!
+SetPlanetViewedByPlayerAccount: RelatedIntegers2 count != 1!
+SetPlanet_UIImportance: RelatedIntegers count != 1!
+SetPlanet_UIImportance: RelatedIntegers2 count != 1!
+SetUnit_UIImportance: RelatedIntegers count != 1!
+SetUnit_UIImportance: RelatedIntegers2 count != 1!
+Setting relic destination for 
+Setting starting faction relationships for 
+Setting: settingName: 
+Setup-Only Ongoing message error at stage 
+Ship 
+Ship death: 
+Ship death: unknowns!
+ShipDeathExplosion row '
+ShipDeathExplosion rows '
+Shot sim ID 
+Shot target 
+Shot target was null!
+ShotAOEEffect '
+ShotAOEEffect rows '
+Sim repair: cleaned up 
+Sim repair: removing duplicate copy of squad: 
+Sim repair: removing duplicate squad with ID in central registry: 
+Sim repair: replacing dead squad with ID in central registry: 
+SimExecution Error for context context '
+SimExecution appears stuck: its internal execution flag has been held for 
+Skip 
+SkipDetermineAiOwnership Because Tutorial
+Skipping 
+Skipping LRP since we haven't run sim to determing when to fully strike
+Skipping SharkB because no enemy strength on planet when scrapped.
+Skipping SharkB because specified off in settings.
+Skipping SharkB because was already destroyed when scrapped.
+Skipping SharkB because was already remains when scrapped.
+Skipping SharkB because was still under construction when scrapped.
+Skipping all responses to 
+Skipping building a guardian from 
+Skipping building a ranger from 
+Small rings: 
+Somehow there are no actual factions available for debris. This is a BUG (or you have won the game)
+
+Somehow there's no asteroid or chrysalis on 
+Sorry!  Can't generate a proper map.  We need a specific unit called AICommandStation for its name.  
+Sorry!  Can't generate a proper map.  We need a specific unit called DireSabotGuardPost for its name.  
+Spawn CPA Now!
+Spawn CPA in 
+Spawn regular wave now! Faction: 
+Spawn wave in 
+SpawnBreachEntities: could not resolve entity for breach 
+SpawnBreachEntities: no faction available for side 
+SpawnEntry: entity_type '
+SpawnTeliumIfAble error at debugStage 
+SpawnWave invoked, target faction index 
+SpawnWave: debugCode 
+Spawned 
+Spawned a 
+Spawned a new harvester 
+Spawned troops for 
+Spawning 
+Spawning J for planet 
+Spawning Outguard 
+Spawning a new Mark 1 outpost on 
+Spawning a new fissure! Lets find eligible planets
+Spawning a stack of 
+Spawning a torment
+Spawning at override from Wave code
+Spawning entities for breach
+Spawning some maddened elderligns! will spawn them next at 
+Spawning wave directly on target. find the wormhole from 
+Spawning wave on AI planet 
+Spawning wave on remote planet and travel to target planet
+
+SpecialShipActionNotificationGenerator.GeneratePersonalNotificationOnClientOrHost_BackgroundThread Error at debug stage 
+Spending wave budget; queing a wave with budget 
+SpireHarvestersToEnrage must be < SpireHarvesterLimit
+SpireSidekick.Notifications Error at debug stage 
+SpireSidekick.WriteCityTooltipDetails Error at debug stage 
+Splitting 
+Spreading Complete
+Spreading blobs out... 
+Squad 
+Squad sat around for 0.8 seconds after death, so was cleaned up.
+SquadDyingProgress: 
+SquadStackPlanning Exception: 
+SquadVis: Squad 
+Stage 2: planet 
+Starbase for fleet 
+Start RunAllContexts (
+Start S-T task: 
+Start SimExecution: TID
+Start Task Group: TID
+Start WorldStepLogic: TID
+Start of OnUpdateDirectPlacement
+Starting SimExecution!  ThreadID: 
+Starting Target Planning Thread
+StartingIndexChanges: RelatedIntegers and RelatedIntegers2 count mismatch!
+StrengthCounting
+StrengthCounting.DoPlanetFactionStepLogic_Phase2: missing planetfaction for planet 
+Stronghold for fleet 
+Strongpoints: 
+Style 1: Adding extra link between 
+Style 2: Adding extra link between 
+Style 3: Adding extra link between 
+SubInstancedRenderer had to be fixed for RelatedFactionData of 
+SwapAllNonFlagshipFleetMembers: No RelatedIntegers2 passed in!
+SwapAllNonFlagshipFleetMembers: Null fleetToSwapWith found when attempting to get ID 
+SwapFleetMemberWithEmpty: FleetMembership '
+SwapFleetMemberWithEmpty: GameEntityTypeData '
+SwapFleetMemberWithEmpty: No RelatedIntegers2 passed in!
+SwapFleetMemberWithEmpty: Null fleetWithEmptySlot found when attempting to get ID 
+SwapFleetMemberWithEmpty: RelatedIntegers3.Count != 1!
+SwapFleetMemberWithEmpty: RelatedIntegers4.Count != 1!
+SwapFleetMemberWithEmpty: RelatedString2 null!
+SwapFleetMemberWithEmpty: Tried to swap a fleet leader with empty, which is not valid!
+SwapFleetMemberWithEmpty: fleetWithEmptySlot did not actually have any empty slots!
+SwapFleetMemberWithEmpty: fleetWithEmptySlot does not have room for any more elite lines!
+SwapFleetMembers: FleetMembership '
+SwapFleetMembers: GameEntityTypeData '
+SwapFleetMembers: No RelatedIntegers2 passed in!
+SwapFleetMembers: Null fleetToSwapFrom found when attempting to get ID 
+SwapFleetMembers: RelatedIntegers3.Count != 2!
+SwapFleetMembers: RelatedIntegers4.Count != 2!
+SwapFleetMembers: RelatedString2 null!
+SwapFleetMembers: RelatedString3 null!
+SwapFleetMembers: Tried to swap a fleet leader between fleets, which is not valid!
+Sync me. My new WI override launch time is 
+Sync me. My new override launch time is 
+Sync'ing global data
+THIS EXO WAS 0 STRENGTH, PROBABLY NOT WHAT YOU WANTED
+TLP for 
+TODO: write journal
+Tachyon planning for emitter: 
+TargetListPlanning Exception: 
+Tech mouseover error at debugStage 
+Templar 
+TemplarLogic 
+Test Chamber DetermineAiOwnership
+The AI Overlord is dead?
+
+The Zenith Trader is visiting 
+The exo response interval is 
+The human king is dead, so just chill
+The king is dead, so just chill
+The macrophage on 
+The warp gate has been destroyed. Spawning wave instead at the Master Controller
+
+There are 
+There are no AI factions in the current game!  Please add one to continue.
+There are no adjacent non-raider planets to 
+There was null ModalPopupData found in Window_ModalOK at Engine_Universal.CurrentPopups[0]!  Now there are 
+There were 
+This Devourer faction is on team blue
+This Devourer faction is on team green
+This Devourer faction is on team red
+This Devourer faction should be friendly to the AI and hostile to players
+This Devourer faction should be hostile to all (default)
+This Devourer faction should be hostile to the AI and friendly to players
+This Macrophage faction should be friendly to the AI and hostile to players
+This Macrophage faction should be hostile to all (default)
+This Macrophage faction should be hostile to the AI and friendly to players
+This Marauder faction should be friendly to the AI and hostile to players
+This Marauder faction should be hostile to all (default)
+This Marauder faction should be hostile to the AI and friendly to players
+This Nanocaust faction is on team blue
+This Nanocaust faction is on team green
+This Nanocaust faction is on team red
+This Nanocaust faction should be friendly to the AI and hostile to players
+This Nanocaust faction should be hostile to all (default)
+This Nanocaust faction should be hostile to the AI and friendly to players
+This active squad is null
+This fireteam 
+This fleet is bolstering 
+This is the last group
+This macrophage faction is on team blue
+This macrophage faction is on team green
+This macrophage faction is on team red
+This planet is weak! 
+This request did not specify a point, so choose 
+Time spent getting targets: 
+Time to take an autosave at 
+TimeForNextCPA: 
+TimeForNextWormhole: 
+Toggle GUI
+Toggle Gimbals
+ToggleFleetMembershipConstructionStatus: FleetMembership '
+ToggleFleetMembershipConstructionStatus: GameEntityTypeData '
+ToggleFleetMembershipConstructionStatus: No RelatedIntegers2 passed in!
+ToggleFleetMembershipConstructionStatus: RelatedString2 null!
+ToggleIsFleetOnPlayerWatchlist: RelatedIntegers.Count != 2!
+TogglePause: 
+Too few AI planets; don't spawn a train
+Too few AIPForMarkLevel on AI difficulty 
+Tooltip Position Error at debugStage 
+Total number of planets generated: 
+Total planets: 
+Train 
+Train Depot 
+Transferring 
+TransformApkalluFlagship: RelatedString2 (breach name) is empty
+TransformApkalluFlagship: breach '
+TransformApkalluFlagship: faction has no ApkalluFactionBaseInfo
+TransformApkalluFlagship: no RelatedEntityIDs
+Transforming 
+Tried to ArcenShortTermPlanningManager.RunAllContextsOnBackgroundThreadsFromMainSimThread, but it was already running!
+Tried to MetalFlowPlanning.Execute, but it was already running!
+Tried to call GetAISentinelsCoreData on a faction of type 
+Tried to call GetAISentinelsDeepLogic on a faction of type 
+Tried to start thread '
+Tried to write to invalid ship! 
+Tried to write to invalid shot! 
+Trigger the crisis
+Triggering achievement 
+Triggering necromancy on 
+Triggering new achievement 
+Trim Color:  
+TrueLocationByTimeout triggered by ??? during TryWiringUpShotToTarget!
+TrueLocationByTimeout triggered by targetSquad null during TryWiringUpShotToTarget!
+TryResolveRandomEnemyForImpact: unknown RandomFactionType '
+TryToSpendBudget error: 
+TryWiringUpShotToTarget Error at debug stage 
+Trying to create a minimum spanning tree with 
+Trying to play line 
+Trying to repair memberships from PlayerPlanetaryCommand planet 
+Trying to spawn 
+Trying to spend CPA budget of 
+Tutorial But Not SkipDetermineAiOwnership
+Tutorial-Style AssignDefenseValuesTo_HostOnly
+Unable to find an entity with tag 
+Unable to make sure galaxy is connected!
+Undefined ObjectiveHoverFocusType: 
+Undefined click behavior: 
+Unexpected nanocaust intensity 
+Unexpected rejection reason from Faction.CanUnlockTech in OnUpdateScience: 
+Unexpected subfaction '
+Unimplemented ObjectiveEntityTypeFilter.
+Unit 
+UnityObject null on GimbalVisualizer
+Unknown BeaconTypeForSeeding '
+Unknown Necromancer Upgrade to grant on death 
+Unknown NecromancerUpgradeTarget 
+Unknown RelatedString '
+Unknown wave warning type <
+UnlockRequirements: 
+Unlocking things based on upgrade 
+UpdateAllegiance: civil war path. civilWarRetreatMode 
+UpdateAllegiance: non-civil-war path. TimeLastCivilWarEnded 
+UpdateContentFromVolatile 
+UpdateFireteams for 
+UpdateInvasionTime_HostOnly error in faction: 
+UpdatePlanetInfluence_HostOnly error in faction: 
+UpdatePowerLevel error in faction: 
+UpdateRegiments for 
+UpdateSquadForcefieldsAndSuch error: 
+UpdateSquadMovementAndRotation error: 
+UpdateSquadShips error: 
+UpdateSquadStatusFromEntity error: 
+Updating extragalactic budgets
+Updating missions for 
+Updating outguard state for 
+Updating ship 
+Updating ship counters for 
+UpgradeConstructors: found nanobot center Mark 1 on  
+UpgradeConstructors: found nanobot center Mark II on  
+UpgradeFleetViaScience: Not IsUpgradeableByDirectScience, or centerpiece missing!
+Upping nanocaust progress by 
+Using 
+Using dest planet 
+Using link method 
+Using planet 
+Using post-hack pulse with strength 
+Using primary response 
+Using random linking method number 
+Using start planet 
+Using upgrade percentage 
+Value from simpleLinkMethod was 
+Variant: Missing!!
+Variant: Realistic
+Variant: Simple
+VisLayerNoLivingOrDyingShipsLeftInSquad: 
+VisLayerRelatedEntityInstancedRendererMismatch: 
+VisLayerRelatedEntityNotIsConsideredActive: 
+Visual: Squad 
+WARNING ONLY UNLESS HUGE REPEATS: RapidAntiLeakPoolable expiration for EntityAttributeCollection '
+Waiting On Server, at frame 
+Warning! The beacon lookup name '
+Warning: 
+Warning: AISubFactionDeepInfo.DoSingleBudgetLoopIteration found case where entityToSpawnAt is null
+Warning: AISubFactionDeepInfo.DoSingleBudgetLoopIteration found case where entityToSpawnAt.Planet is null
+Warning: AISubFactionDeepInfo.DoSingleBudgetLoopIteration found case where fac is null
+Warning: AISubFactionDeepInfo.DoSingleBudgetLoopIteration found case where planetFaction is null
+Warning: Auto-building setting 
+Warning: Could not find any entity type for auto-building setting 
+Warning: FactionG is null
+Warning: GetWormholeStatus encountered exception on debugLine==
+Warning: Helper_GetShouldExclude found Factions[
+Warning: TypeData is null
+Warning: WriteEntityPlanetViewText encountered exception on debugLine==
+Warning: WriteNameText found faction == null
+Warning: WriteNameText found faction.TeamColor == null
+Warning: WriteNameText found planet == null
+Warning: tried to close StackMenuWindowController 
+Was looking for a wormhole on the far side of 
+Wave count: 
+WaveDisplay.AppendStateForInterfaceDisplay exception hit. debugCode 
+We are currently trying to build a nexus, don't protocols change yet 
+We are destroying 
+We are moving 
+We are spawning 
+We can safely link 
+We chose 
+We detected 
+We found <
+We get a free territory if possible!
+We got 
+We have 
+We have already assigned 
+We have failed to spawn the new Telium. Removing the invalid Telium and trying again.
+We have reached our destination on 
+We have spores from 
+We have successfully spawnt the new Telium on 
+We might get a different mummy type. rand 
+We might get a different skeleton type. rand 
+We might get a different wight type. rand 
+We now have 
+We requested the row for 
+Welcome to the D18 Bubbles generator
+
+Welcome to the D18 Density Map generator
+
+Welcome to the D18 Linked Rings v2 generator
+
+Welcome to the D18 Mesh generator
+
+Welcome to the D18 Swirl generator
+
+Welcome to the test generator
+
+What?  The AI got budget back from trying to seed guardians? 
+What?  The AI got budget back from trying to seed non-turret defenses? 
+What?  The AI got budget back from trying to seed strikecraft remainder? 
+What?  The AI got budget back from trying to seed strikecraft? 
+What?  The AI got budget back from trying to seed turrets? 
+When killing 
+When paying for 
+Whoops? exception 
+Whoops? exception in ApkalluDescriptionAppender
+Whoops? exception in ArmadaDescriptionAppender
+Whoops? exception in DysonSidekickDescriptionAppender
+Wild Hives Notifier Error at debug stage 
+Window_MapSetup: Map type is 
+Window_MapSetup: handling 
+WorkingDestination_OnlyWriteFromMovementPlanning Shot target 
+WorkingDestination_OnlyWriteFromMovementPlanning Shot target was null!
+World_AIW2.Instance.Network_CurrentFrameNumber 
+World_AIW2.Instance.SetupStoredLongTerm.ChangedSinceLastMapGenCall: '
+Wormhole option: 
+WriteFleetTooltip exception at stage 
+WriteWeakAgainst exception at stage 
+Wrong type send to ShipVisualizer.Activate(): 
+You attempted to give vassal orders, but there are no vassals in the game
+You must have fewer planets than 
+You've lost too many showdown devices
+ZigLRP 
+ZigLRP start 
+Zombie Anti-AI LRP Pathing error: 
+[PilgrimDebug] 
+[PilgrimDebug] Grant: 
+[PilgrimDebug] Guaranteed: 
+[PilgrimDebug] LesserPilgrim at Ziggurat on 
+[PilgrimDebug] Pilgrim (
+[PilgrimDebug] Roll=
+[PilgrimDebug] Top-tier split: 
+[PilgrimDebug] Weights: 
+active combat missions for vassal 
+add match: 
+adding some random connections
+adjusting score, since we already have a wormhole to here
+after hit: 
+ai allied? 
+allowed summoners: 
+allowed to add scourge: 
+also trigger some ravagers along with the chrysalis hatch
+aoe
+apkallu flagship is null
+assist:
+attack:
+attempt 
+bTeamColor: RelatedIntegers count != 1!
+bTeamColor: RelatedString2 null!
+bTeamColor: RelatedString2 unknown value '
+bTeamColor: RelatedString3 null!
+bTeamColor: TeamColorDefinition '
+bTeamColor: faction at factionArrayIndex 
+bTeamColor: factionArrayIndex was 
+badActivationCount: 
+base income 
+base lifetime for 
+base time: 
+base wave size: 
+base wave strength 
+battle on 
+breach is null
+budget 
+budgetPerSecond 
+budgets is null
+built a city
+calling SaveWorldToDisk
+camp units error, debugCode 
+campaignName: 
+can't deploy outguard: no currentPlanet
+can't deploy outguard: no local player faction found
+caught exception 
+center 
+center P Distance from parent P: 
+centerOfScreenXInWorldCoordinates: 
+checking if 
+checking if we are in civil war. 
+checking if we can build guardians for 
+checking if we can build rangers for 
+checking whether should run ArcenLongTermPlanningContext.RunAllContexts()
+choosing inter-region link method 
+choosing not to link resgions 
+click:
+command.RelatedIntegers == null in GameCommand_ClearAllOrdersOfTheseShips!
+command.RelatedIntegers == null in GameCommand_DecollideUnits_MoveManyToMany with decollision!
+command.RelatedIntegers == null in GameCommand_SetWormholePath!
+command.RelatedIntegers is empty in GameCommand_RetrieveSpentScience!
+command.RelatedIntegers.Count(
+command.RelatedIntegers2.Count(
+command.RelatedIntegers4.Count(
+command.RelatedPoints == null in GameCommand_DecollideUnits_MoveManyToMany!
+command.RelatedPoints == null in GameCommand_MoveManyToManyPoints!
+command.RelatedPoints == null in GameCommand_MoveManyToOnePoint!
+command.RelatedPoints.Count < 1 in GameCommand_MoveManyToOnePoint!
+command.RelatedPoints.Count(
+command.RelatedString is empty in GameCommand_RetrieveSpentScience!
+confusingly, we have no castleData for 
+considering building a nexus; 
+could not find factionExternal for random AI faction
+could not find line
+create a wormhole projector
+create wormhole to planet 
+created central planets: 
+creating centered grid with 
+creating minimum spanning tree
+culling the planets list to make sure there's a safe path there from 
+current difficulty 
+currentPlanet  
+dFactionType_Add: Could not find SpecialFactionData with internal name '
+dFactionType_Add: RelatedString2 null!
+dFactionType_Remove: RelatedIntegers count != 1!
+dFactionType_Remove: Trying to remove factionConfigIndex 
+death_explosion_variant_colors: could not read '
+debug code 
+debugCode 
+debugCode: 
+depot 
+didnt find a suitable fleet
+difficulty uninitialized
+dire A
+dire B
+disrupted 
+doing planet linking
+donating ship to  
+empty Nanocaust allegiance, so fixing it to hate everyone
+energy warning threshold: 
+entity 
+entity: 
+executionContext RUN!
+executionContextsDone: 
+exo income per 10 AIP 
+exo strength 
+exo strength: 
+fail path A
+failed to find long range planning data on 
+failed to find someplace to build an egg for 
+finalSize: 
+findAIKing: No AI king found, but game has not been won!
+flagship is null
+forRect points 
+found 
+found Faction 
+found force adjacent to player king. King is on 
+found match by allegiance 
+found match by index 
+friendly 
+galaxy fully connected!
+generating 
+generating points in a big circle
+get raid traversal difficulty for 
+getPlanetForNexus: 
+getPlanetForNexus: adversary=
+getting some upgrades! we currently have 
+getting the Faction object for 
+got method 
+got moon 
+got perunit
+got random type; rand 
+got request to react to hacking of 
+got request to react to hacking without a target (presumably an anti-Planet hack with multiplier 
+got thickness 
+guards abandon posts to go after 
+guards abandon posts to go after -1 a
+handle additional faction adds
+handle random factions
+handle swarm lures
+handleLODsAndShipPartAnimations. Burning 
+handling 
+harshness: 
+hasTakenLethalDamage so skip: 
+hit debugCode 
+hit exception in DoRefreshFromFactionSettings debugCode 
+hit exception in Elderlings DoRefreshFromFactionSettings debugCode 
+hit exception in ShipLinesRaised debugCode 
+hit exception in handlemobileravagerslrp debugCode 
+hit exception in templar DoRefreshFromFactionSettings, Exception: 
+hit vassal mission exception 
+hitsall: no entity type named 
+hops from 
+huh?
+human king on 
+i wish I could stop myself from going  
+iNumPlanets: RelatedIntegers count != 1!
+income uninitialized
+incremenet 
+init
+initial point, go up
+invasion strength: 
+is there any breach response left?
+isGalaxyFullyConnected is empty
+it is 
+kingAttacker: 
+kingUnit = 
+launch exo
+launch wormhole invasion
+launching wave at 
+linkPlanetLists: Trying to link planets lists, attempting to make 
+linking central clusters together
+linking last two central clusters together to make a ring
+linking resgions 
+livegraftship:
+lowering fleet strength component from 
+malware base invasion strength per planet: 
+malware invasion strength after factoring current player strength (
+malware invasion strength after factoring in ai difficulty: 
+malware invasion strength after factoring in overall power level: 
+manager uninitialized, so don't do any LongRangePlanning until it gets initialized
+markaschanged
+matrixArrayLength of 
+metalFlows RUN!
+minHopsFromHumanPlanet 
+minMaxY: 
+must we spawn with allies? 
+netIncrease: 
+new location 
+no fleet info for 
+no perunit
+no praetorian, so go after 
+no praetorian, so go after -1 b
+no protocol for 
+no rows in armada difficulty
+no rows in armada income
+no rows in dyson sidekick difficulty
+no rows in dyson sidekick income
+no rows in elderling difficulty
+no rows in sapper difficulty
+no rows in tiberium difficulty
+no rows to exclude
+no stations close enough to humans, pick a random station
+no typeData found!
+notes: 
+null instance of diff table
+null instance of diff table, you probably need to add Surrogate Table XML
+null instance of diff table; you probably need to add Surrogate Table XML
+null instance of income table
+null squad fixed in central registry: 
+ooh, we had 
+override budget
+
+override launch time
+
+overriding speed limit for group 
+p1 create wormhole to planet 
+parsing malware locust 
+parts 
+path A: null buildingInfo
+path Neinzul 2
+path Neinzul 3
+path Templar 2
+path Templar 3
+path a
+path b
+path spire 2
+path spire 3
+path zenith 2
+path zenith 3
+pathCache: 
+percentageFromSyncPointToFinish 
+planet 
+planet is null
+playerPlanetFaction is null for 
+playing border
+playing critical
+playing enemy
+playing homeworld, nanocaust? 
+playing major attack
+playing neutral
+playing our planet
+points generated from multiple circles
+populate PlanetPoints list
+
+populating some breaches! there are 
+position set: 
+pre: Time for next relic spawn 
+processing 
+processing category 
+processing faction upgrade 
+processing fleet upgrade 
+processing income 
+protectingShields Debug_IgnoresDamage 
+protectingShields FoundProtectorButCouldNotHitDueToFiniteHitCountAOE 
+protectingShields count to check: 
+protectingShields found nothing?
+protectingShields to be removed at index 
+protectingShields yay return protector 
+protectingShields.Count == 0 at shieldType 
+random moon: 
+randomly chosen pair; 
+reapers: 
+red: 
+removing 
+request.Location 
+request.RemainingTimeDelayBeforePlay: 
+required: 
+reset energy counter
+reset metal counter
+result after adjusting for hostile mobiles: 
+result after adjusting for my strength: 
+resulting power level: 
+retreat threat on 
+retry 
+return one of 
+returning 
+rewire shot 
+scaleA: 
+seed duru 2
+seed duru 3
+seed duru 4
+semi-low con: 
+sending 
+setAnySizes: 
+setting influence
+ships are going 
+ships are going after  -1 tractor c 
+ships on 
+should be impossible?
+should throttle? 
+size of image: 
+skip, unable find teammates
+skipping 
+spawnOutguardGroup at 
+spawnOutguardGroup: rejected - 
+spawned 
+spawner lifetime for 
+spawning 
+spawning Exogalactic Wormhole
+spawning a nadir force with strength 
+spawning a new 
+spawning a seed
+spawning an adversary, time last had: 
+spawning exo with budget 
+spawning lone frigates?
+spawning near 
+spawning on planet index 
+spawning one of 
+spawning some 
+spawning wormhole invasion with budget 
+spawningRanger 
+squad still existed in planetfaction despite being in death registry: 
+squad still existed in planetfaction despite being removed: 
+stage 1 nearest neighbor
+stage 2
+strengthForAttack = 
+strengthUnits 
+strong enough!
+system
+systemIndex 
+tAltFor_dCustomDropdown GetTextToShowFromVolatile: Error at debug stage 
+tBodyText.scrollbar after: 
+tBodyText.scrollbar before: 
+telium 
+time till next seed spawn 
+too close to player? 
+topmostScale: 
+total central planets: 
+total percentage for extra chrysalis: 
+total strength: 
+traces generated up until exception was hit: 
+triggering entry 
+try start!
+trying to find armada base info
+trying to place a 
+unit 
+upgradeConstructors: scanning entity whose name is  
+upgradeThisWarriorOrBuilder: exception. debugCode 
+using 
+using already chosen NextProtocol
+using bonus strength multiplier 
+using periodic exo response 
+using planet layout 
+using secondary response 
+using tertiary response 
+war time: 
+wasMission 
+we are confused about the tracing buffer; its null but tracing is on
+we could not find the DestinationPlanet for a wormhole invasion
+we could not find the StartPlanet for a wormhole invasion
+we have 
+we have as an option 
+whoops; type 
+wormhole:
+wrapperCounterA: 
+wrapperCounterB: 
+wrapperCounterC: 

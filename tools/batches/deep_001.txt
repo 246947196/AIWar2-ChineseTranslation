@@ -1,1 +1,1 @@
-		This is a basic defensive structure, this planet is friendly and it's adjacent to a non-friendly. This is a preferred location.
+			No, that planet is not under attack

@@ -483,7 +483,11 @@ if (Test-Path $dllBinDir) {
         $curGameDll = Join-Path $gameDir "GameData\ModdableLogicDLLs\$($_.Name)"
         if (-not (Test-Path $curGameDll)) { $skippedForked += "$($_.Name)（游戏内无此 DLL）"; return $false }
         $curHash = (Get-FileHash $curGameDll -Algorithm SHA256).Hash.ToLower()
-        if ($curHash -ne $rec.base_sha256) {
+        # 游戏里的文件要么是原版（== 基线），要么是我们上一次部署的产物
+        # （== 记录的 dll_sha256）。两者都不是才说明游戏真的更新过。
+        $known = @($rec.base_sha256)
+        if ($rec.dll_sha256) { $known += $rec.dll_sha256 }
+        if ($curHash -notin $known) {
             $skippedForked += "$($_.Name)（游戏已更新，基线不符）"
             return $false
         }

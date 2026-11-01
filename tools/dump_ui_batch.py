@@ -25,6 +25,9 @@ DLLS = {
 }
 
 CJK = re.compile(r'[\u4e00-\u9fff]')
+# 技术串：出现在这些上下文里的必是内部报错或反射调用，不是给人看的
+TECH = re.compile(r'(TID|Harmony|Reflection|JIT|\.cs\b|==|!=|->|\{0\}|\{1\}|Exception|'
+                  r'StackTrace|\bnull\b|\bNull\b|\benum\b|Xml|xml_)')
 TAG = re.compile(r'<[^>]+>')
 WORDS = re.compile(r"[A-Za-z][A-Za-z'\-]+")
 
@@ -58,30 +61,20 @@ def main():
         return len(WORDS.findall(TAG.sub(' ', s)))
 
     def sentence_like(s):
-        """日志行 vs 界面句子的区分。
+        """只排除**技术串**，不再按首字符/人称筛。
 
-        日志行通常以制表符/多空格开头、没有句末标点、且常含代码味的关键词。
-        界面句子则以大写字母或富文本标签开头，通常带标点。"""
+        之前的规则（首字符须大写、必须含 you/your）会漏掉以标点或标签开头的
+        界面文本，也会漏掉纯标签型文本（Balance With Civilian Authorities:）。
+        """
         t = s.strip()
         if not t:
             return False
-        if s[:1] in ('\t', ' ') and not s.lstrip()[:1].isupper():
+        if TECH.search(s):
             return False
-        if not (t[0].isupper() or t[0] == '<'):
-            return False
-        if re.search(r'(SKIP|AIP|debugStage|Path [AB]|TID\d|\.cs\b|==|!=|->)', s):
-            return False
-        # 内部日志/报错的一贯开头，玩家永远看不到
-        if re.match(r'^(Bug|Cannot|Could not|Couldn|Unknown|Invalid|Missing|Expected|Failed|'
-                    r'Warning|Error|Calling|Returning|Skipping|Adding|Removing|Set |Get|Trying|'
-                    r'Found |No |Not |Unable|Null|Empty|Index|Assert|Check)', t):
-            return False
-        # 界面文本通常是"对玩家说话"的：含 you/your/this/that，或以祈使句开头
-        if not re.search(r'\b(you|your|You|Your|this|This|that|That)\b', t) \
-           and not re.match(r'^(Click|Press|Hold|Select|Choose|If |When |Once |The |Each )', t):
-            return False
-        if not re.search(r'[.!?:]$|[.!?:]\s|<', t):
-            # 没有标点也不是富文本，多半是日志
+        if re.match(r'^(Bug|Cannot|Could not|Couldn|Unknown|Invalid|Missing|Expected|'
+                    r'Failed|Warning|Error|Calling|Returning|Skipping|Adding|Removing|'
+                    r'Set |Get |Trying|Found |No |Not |Unable|Null|Empty|Index|Assert|'
+                    r'Check|Oi!|BUG)', t):
             return False
         return True
 

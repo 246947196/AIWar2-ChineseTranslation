@@ -1,1 +1,1 @@
-	Hacking points spent against this faction: <color=#3DE799>
+		Considering updating customfileddefinitions for the randomly chosen faction. 
