@@ -47,3 +47,6 @@ PatchedAssemblies/old_*/
 
 # DLL 待译清单（由 ilpatch extract + merged.json 差集生成）
 translation_gaps_dll.tsv
+
+# 游戏原文件备份（体积大，按需生成）
+_backup/

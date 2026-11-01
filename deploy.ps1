@@ -7,7 +7,8 @@
 
 param(
     [string]$GameDir = "",
-    [switch]$Force
+    [switch]$Force,
+    [switch]$IncludeExternalDlls
 )
 
 $translationDir = $PSScriptRoot
@@ -69,6 +70,23 @@ if ($gameProc) {
     }
 }
 
+# ---- 备份游戏原文件（任何覆盖之前）----
+# 部署会改写游戏自己的 Configuration / XMLMods / ModdableLogicDLLs 等，
+# 没有备份就无法回滚。只备份游戏原装部分，BepInEx 与 PatchedAssemblies 是
+# 汉化产物，不占备份体积。
+$backupScript = Join-Path $translationDir "tools\game_backup.ps1"
+if (Test-Path $backupScript) {
+    & $backupScript -GameDir $gameDir
+    if (-not $?) {
+        Write-Host "ERROR: 备份失败，已中止部署（不做无备份的覆盖）。" -ForegroundColor Red
+        exit 1
+    }
+} else {
+    Write-Host "WARNING: 未找到 tools\game_backup.ps1，跳过备份" -ForegroundColor Yellow
+    $ans = Read-Host "  没有备份仍继续？(y/N)"
+    if ($ans -ne 'y') { Write-Host "  已取消。" -ForegroundColor Yellow; exit 1 }
+}
+
 # ---- Clean .new.dll residues from Managed and PatchedAssemblies ----
 # These are left over from previous ilpatch runs when DLLs were locked.
 # They silently override the real patched DLLs and cause translations to revert.
@@ -120,7 +138,7 @@ if (-not (Test-Path $snapshotFile)) {
     Write-Host "ERROR: No baseline snapshot found. Run check_update.ps1 -snapshot first." -ForegroundColor Red
     Write-Host ""
     Write-Host "Press Enter to exit..."
-    Read-Host
+if ([Environment]::UserInteractive -and $Host.Name -eq 'ConsoleHost') { Read-Host "按回车退出" }
     exit 1
 }
 
@@ -132,7 +150,7 @@ if (-not (Test-Path $versionFile)) {
     Write-Host "ERROR: Game version file KDL_GameVersions.xml not found." -ForegroundColor Red
     Write-Host ""
     Write-Host "Press Enter to exit..."
-    Read-Host
+if ([Environment]::UserInteractive -and $Host.Name -eq 'ConsoleHost') { Read-Host "按回车退出" }
     exit 1
 }
 
@@ -150,7 +168,7 @@ if (-not $latest) {
     Write-Host "ERROR: Cannot parse game version number." -ForegroundColor Red
     Write-Host ""
     Write-Host "Press Enter to exit..."
-    Read-Host
+if ([Environment]::UserInteractive -and $Host.Name -eq 'ConsoleHost') { Read-Host "按回车退出" }
     exit 1
 }
 
@@ -446,7 +464,19 @@ Write-Host ""
 Write-Host "Deploying translated DLLs..." -ForegroundColor Yellow
 $dllBinDir = Join-Path $translationDir "DLLBin"
 if (Test-Path $dllBinDir) {
-    $dllFiles = Get-ChildItem $dllBinDir -Filter "*.dll"
+    # AIWarExternal* 是「7 月源码分叉」编译出来的，装上去等于把游戏的代码逻辑
+    # 退回 7 月（和整份 XML 分叉同理）。除非显式 -IncludeExternalDlls，默认跳过；
+    # 正确做法是把译文抽成 IL 补丁打到当前版本的 DLL 上（见 AGENTS）。
+    $skippedForked = @()
+    $dllFiles = Get-ChildItem $dllBinDir -Filter "*.dll" | Where-Object {
+        if ($IncludeExternalDlls) { return $true }
+        if ($_.Name -like 'AIWarExternal*') { $skippedForked += $_.Name; return $false }
+        return $true
+    }
+    if ($skippedForked.Count -gt 0) {
+        Write-Host "  跳过 7 月源码分叉的外部代码 DLL（加 -IncludeExternalDlls 强制部署）:" -ForegroundColor Yellow
+        $skippedForked | ForEach-Object { Write-Host "    $_" -ForegroundColor DarkYellow }
+    }
     $dllDest = Join-Path $gameDir "GameData\ModdableLogicDLLs"
     New-Item -ItemType Directory -Path $dllDest -Force | Out-Null
     foreach ($dll in $dllFiles) {
@@ -520,4 +550,4 @@ Write-Host "  3. Run: python tools/ilpatch/verify_patch.py" -ForegroundColor Gra
 Write-Host "     PatchedAssemblies\ArcenAIW2Core.dll tools\ilpatch\ArcenAIW2Core.merged.json" -ForegroundColor Gray
 Write-Host ""
 Write-Host "Press Enter to exit..."
-Read-Host
+if ([Environment]::UserInteractive -and $Host.Name -eq 'ConsoleHost') { Read-Host "按回车退出" }

@@ -937,3 +937,55 @@ python tools\ilpatch\merge_all.py ArcenAIW2Core
 Universal 1,418 / Visualization 113，共 3,257 条。注意 `LooksTranslatable`
 口径很宽，里面大量是日志与内部标识符，真正玩家可见的需要按运行时采集来筛，
 不能直接当工作量。
+
+## 部署与回滚（2026-11-01）
+
+### 备份
+
+`tools/game_backup.ps1` 在覆盖游戏任何文件之前备份**游戏原装**部分：
+
+| 备份范围 | 说明 |
+|---------|------|
+| `GameData\Configuration`、`GameData\ModdableLogicDLLs`、`GameData\QuickStarts2` | 配置与外部代码 DLL |
+| `XMLMods`、`TotalConversions` | 模组与总转换 |
+| `Expansions\*\GameData` | 三个 DLC |
+
+不备份 `BepInEx`、`PatchedAssemblies`——两者都是汉化产物，卸载直接删即可。
+
+实测：3,346 个文件 / 172.9 MB → 压缩 56.2 MB，耗时 5 秒，落在 `_backup/game_<时间戳>.zip`。
+
+```
+.\tools\game_backup.ps1                      # 手动备份
+.\tools\game_backup.ps1 -List                # 列出备份
+.\tools\game_backup.ps1 -Restore _backup\game_xxx.zip   # 回滚
+```
+
+`deploy.ps1` 会自动先跑备份，备份失败立即中止（不做无备份的覆盖）。
+
+### 部署
+
+```powershell
+python tools\localize_xml.py build    # 现生成 XML
+.\deploy.ps1                          # 备份 → XML 校验 → 部署
+```
+
+`deploy.ps1` 参数：`-GameDir` 指定游戏目录、`-Force` 跳过版本确认、
+`-IncludeExternalDlls` 强制部署外部代码 DLL。
+
+**外部代码 DLL 默认跳过**：`DLLBin\AIWarExternal*.dll` 是 7 月源码分叉编译的，
+装上去等于把代码逻辑退回 7 月。正确解法是把译文抽成 IL 补丁打到当前 DLL 上。
+
+### 2026-11-01 部署实测（5.850）
+
+| 项目 | 数量 |
+|------|------|
+| GameData 配置 XML | 167 |
+| 扩展（DLC）配置 XML | 128 |
+| XMLMods | 321 |
+| QuickStarts2 tooltip（本体 + DLC） | 95 + 4 |
+| TotalConversions | 3 |
+| arcenui 重打 | 243 条替换 / 214 跳过 / 1 条未译（`Mods`） |
+| 实体名中文化率 | **94.1%**（2,133 / 2,267，游戏自 dump 的 GameEntityReferenceData.csv 实测） |
+
+未中文化的 134 个实体是测试实体（`Hit Test Fighter ...`）与 5.84x 新增魔像光束
+单位，与 `translation_gaps.tsv` 对得上。本次运行日志 0 条 error/exception。
