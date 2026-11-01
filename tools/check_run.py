@@ -34,7 +34,12 @@ RULES = [
 ]
 
 # 已知无害：游戏自己的随机派系资格检查
-BENIGN = [re.compile(r'Could not find a faction with name <.*> that is eligible to be random')]
+# 原版就有的噪声（2026-11-01 用原版 XML+DLL 对照实验确认，汉化前后完全一致）
+BENIGN = [
+    re.compile(r'Could not find a faction with name <.*> that is eligible to be random'),
+    re.compile(r"Warning Only: No entries found for table '"),
+    re.compile(r'Overwrote old entry for'),
+]
 
 
 def main():
